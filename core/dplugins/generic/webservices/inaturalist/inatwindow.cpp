@@ -68,11 +68,15 @@
 namespace DigikamGenericINatPlugin
 {
 
-// iNaturalist.org allows up to 20 photos for each observation and
-// scales down photos to 2048 pixels.
-enum { MAX_OBSERVATION_PHOTOS = 20,
-       MAX_DIMENSION          = 2048
-     };
+/**
+ * iNaturalist.org allows up to 20 photos for each observation and
+ * scales down photos to 2048 pixels.
+ */
+enum
+{
+    MAX_OBSERVATION_PHOTOS = 20,
+    MAX_DIMENSION          = 2048
+};
 
 class Q_DECL_HIDDEN INatWindow::Private
 {
@@ -124,6 +128,7 @@ public:
     QSpinBox*               imageQualitySpinBox;
 
     // account info
+
     QString                 username;
     QString                 name;
     QUrl                    iconUrl;
@@ -132,6 +137,7 @@ public:
     QProgressDialog*        authProgressDlg;
 
     // identification
+
     QLabel*                 identificationImage;
     QLabel*                 identificationLabel;
     bool                    identificationFromVision;
@@ -142,6 +148,7 @@ public:
     QComboBox*              placesComboBox;
 
     // additional options
+
     QPushButton*            moreOptionsButton;
     QWidget*                moreOptionsWidget;
     QSpinBox*               photoMaxTimeDiffSpB;
@@ -154,6 +161,7 @@ public:
     DItemsList*             imglst;
 
     // observation
+
     Taxon                   identification;
     bool                    latLonValid;
     double                  latitude;
@@ -169,7 +177,8 @@ INatWindow::INatWindow(DInfoInterface* const iface,
                        QWidget* const /*parent*/,
                        const QString& serviceName)
     : WSToolDialog(nullptr, QString::fromLatin1("%1 Export Dialog").
-                   arg(serviceName)), d(new Private)
+                   arg(serviceName)),
+       d(new Private)
 {
     d->iface       = iface;
     d->serviceName = serviceName;
@@ -177,14 +186,13 @@ INatWindow::INatWindow(DInfoInterface* const iface,
     setModal(false);
 
     KSharedConfigPtr config = KSharedConfig::openConfig();
-    KConfigGroup grp = config->group(QString::fromLatin1("%1 Export Settings").
-                                     arg(d->serviceName));
+    KConfigGroup grp        = config->group(QString::fromLatin1("%1 Export Settings").
+                                            arg(d->serviceName));
 
     if (grp.exists())
     {
-        qCDebug(DIGIKAM_WEBSERVICES_LOG)
-                << QString::fromLatin1("%1 Export Settings").arg(d->serviceName) <<
-                "exists, deleting it.";
+        qCDebug(DIGIKAM_WEBSERVICES_LOG) << QString::fromLatin1("%1 Export Settings").arg(d->serviceName)
+                                         << "exists, deleting it.";
         grp.deleteGroup();
     }
 
@@ -192,17 +200,20 @@ INatWindow::INatWindow(DInfoInterface* const iface,
     d->widget      = new INatWidget(this, iface, serviceName);
 
     // Account
-    d->userNameDisplayLabel = d->widget->getUserNameLabel();
-    d->changeUserButton     = d->widget->getChangeUserBtn();
-    d->removeAccount        = d->widget->d->removeAccount;
-    d->accountIcon          = d->widget->d->accountIcon;
+
+    d->userNameDisplayLabel     = d->widget->getUserNameLabel();
+    d->changeUserButton         = d->widget->getChangeUserBtn();
+    d->removeAccount            = d->widget->d->removeAccount;
+    d->accountIcon              = d->widget->d->accountIcon;
 
     // Options
-    d->resizeCheckBox      = d->widget->getResizeCheckBox();
-    d->dimensionSpinBox    = d->widget->getDimensionSpB();
-    d->imageQualitySpinBox = d->widget->getImgQualitySpB();
+
+    d->resizeCheckBox           = d->widget->getResizeCheckBox();
+    d->dimensionSpinBox         = d->widget->getDimensionSpB();
+    d->imageQualitySpinBox      = d->widget->getImgQualitySpB();
 
     // Observation & indentification
+
     d->identificationImage      = d->widget->d->identificationImage;
     d->identificationLabel      = d->widget->d->identificationLabel;
     d->closestKnownObservation  = d->widget->d->closestKnownObservation;
@@ -217,9 +228,11 @@ INatWindow::INatWindow(DInfoInterface* const iface,
     d->closestObservationMaxSpB = d->widget->d->closestObservationMaxSpB;
 
     // Image list
-    d->imglst = d->widget->d->imglst;
+
+    d->imglst                   = d->widget->d->imglst;
 
     // max dimension supported by iNaturalist.org
+
     d->dimensionSpinBox->setMaximum(MAX_DIMENSION);
     d->dimensionSpinBox->setValue(MAX_DIMENSION);
 
@@ -257,35 +270,26 @@ INatWindow::INatWindow(DInfoInterface* const iface,
     connect(d->talker, SIGNAL(signalBusy(bool)),
             this, SLOT(slotBusy(bool)));
 
-    connect(d->talker, SIGNAL(signalLinkingSucceeded(const QString&,
-                              const QString&, const QUrl&)),
-            this, SLOT(slotLinkingSucceeded(const QString&, const QString&,
-                                            const QUrl&)));
+    connect(d->talker, SIGNAL(signalLinkingSucceeded(const QString&,const QString&,const QUrl&)),
+            this, SLOT(slotLinkingSucceeded(const QString&,const QString&,const QUrl&)));
 
     connect(d->talker, SIGNAL(signalLinkingFailed(const QString&)),
             this, SLOT(slotLinkingFailed(const QString&)));
 
-    connect(d->talker, SIGNAL(signalLoadUrlSucceeded(const QUrl&,
-                              const QByteArray&)),
-            this, SLOT(slotLoadUrlSucceeded(const QUrl&, const QByteArray&)));
+    connect(d->talker, SIGNAL(signalLoadUrlSucceeded(const QUrl&,const QByteArray&)),
+            this, SLOT(slotLoadUrlSucceeded(const QUrl&,const QByteArray&)));
 
     connect(d->talker, SIGNAL(signalNearbyPlaces(const QStringList&)),
             this, SLOT(slotNearbyPlaces(const QStringList&)));
 
-    connect(d->talker, SIGNAL(signalNearbyObservation(const INatTalker::
-                              NearbyObservation&)),
-            this, SLOT(slotNearbyObservation(const INatTalker::
-                       NearbyObservation&)));
+    connect(d->talker, SIGNAL(signalNearbyObservation(const INatTalker::NearbyObservation&)),
+            this, SLOT(slotNearbyObservation(const INatTalker::NearbyObservation&)));
 
-    connect(d->talker, SIGNAL(signalObservationCreated(const
-                              INatTalker::PhotoUploadRequest&)),
-            this, SLOT(slotObservationCreated(const
-                       INatTalker::PhotoUploadRequest&)));
+    connect(d->talker, SIGNAL(signalObservationCreated(const INatTalker::PhotoUploadRequest&)),
+            this, SLOT(slotObservationCreated(const INatTalker::PhotoUploadRequest&)));
 
-    connect(d->talker, SIGNAL(signalPhotoUploaded(const
-                              INatTalker::PhotoUploadResult&)),
-            this, SLOT(slotPhotoUploaded(const
-                                         INatTalker::PhotoUploadResult&)));
+    connect(d->talker, SIGNAL(signalPhotoUploaded(const INatTalker::PhotoUploadResult&)),
+            this, SLOT(slotPhotoUploaded(const INatTalker::PhotoUploadResult&)));
 
     connect(d->talker, SIGNAL(signalObservationDeleted(int)),
             this, SLOT(slotObservationDeleted(int)));
@@ -325,8 +329,10 @@ INatWindow::INatWindow(DInfoInterface* const iface,
 
     connect(d->taxonPopup, SIGNAL(signalTaxonSelected(const Taxon&, bool)),
             this, SLOT(slotTaxonSelected(const Taxon&, bool)));
+
     connect(d->taxonPopup, SIGNAL(signalTaxonDeselected()),
             this, SLOT(slotTaxonDeselected()));
+
     connect(d->taxonPopup, SIGNAL(signalComputerVision()),
             this, SLOT(slotComputerVision()));
 
@@ -350,35 +356,38 @@ void INatWindow::switchUser(bool restoreToken)
 
     d->apiTokenExpiresTimer.stop();
     d->talker->unLink();
-    d->username = d->name = QString();
-    d->iconUrl = QUrl();
+    d->username                    = QString();
+    d->name                        = QString();
+    d->iconUrl                     = QUrl();
     d->widget->updateLabels(QString());
 
     // User gets to select a username unless the timer calls us because
     // our token has expired.
+
     if (restoreToken)
     {
         userName = d->selectUser->getUserName();
     }
 
     // If we have a username, restore api token and cookies.
+
     if (!userName.isEmpty() &&
         d->talker->restoreApiToken(userName, cookies, restoreToken))
     {
         // Done if api token has been restored, browser is not called anymore.
+
         qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Login skipped; restored api_token "
-                                         "for user" << userName;
+                                            "for user" << userName;
         return;
     }
 
     // Pass cookies to browser; if "remember me" is checked on iNaturalist
     // website, the brower will re-login without user interaction for 14 days.
+
     QPointer<INatBrowserDlg> dlg = new INatBrowserDlg(userName, cookies, this);
 
-    connect(dlg, SIGNAL(signalApiToken(const QString&,
-                                       const QList<QNetworkCookie>&)),
-            d->talker, SLOT(slotApiToken(const QString&,
-                                         const QList<QNetworkCookie>&)));
+    connect(dlg, SIGNAL(signalApiToken(const QString&,const QList<QNetworkCookie>&)),
+            d->talker, SLOT(slotApiToken(const QString&,const QList<QNetworkCookie>&)));
 
     dlg->exec();
 }
@@ -413,7 +422,7 @@ void INatWindow::slotFinished()
 void INatWindow::setUiInProgressState(bool inProgress)
 {
     setRejectButtonMode(inProgress ? QDialogButtonBox::Cancel
-                        : QDialogButtonBox::Close);
+                                   : QDialogButtonBox::Close);
 
     if (inProgress)
     {
@@ -461,7 +470,6 @@ static const char SETTING_DISTANCE[]  = "Max Distance";
 static const char SETTING_CLOSEST[]   = "Closest Observation";
 static const char SETTING_EXTENDED[]  = "Extended Options";
 
-
 void INatWindow::readSettings(const QString& uname)
 {
     KSharedConfigPtr config = KSharedConfig::openConfig();
@@ -473,8 +481,7 @@ void INatWindow::readSettings(const QString& uname)
     d->resizeCheckBox->setChecked(grp.readEntry(SETTING_RESIZE, true));
     d->dimensionSpinBox->setValue(grp.readEntry(SETTING_DIM, 2048));
     d->imageQualitySpinBox->setValue(grp.readEntry(SETTING_QUALITY, 90));
-    d->widget->getPhotoIdCheckBox()->setChecked(grp.
-            readEntry(SETTING_INAT_IDS, false));
+    d->widget->getPhotoIdCheckBox()->setChecked(grp.readEntry(SETTING_INAT_IDS, false));
     d->photoMaxTimeDiffSpB->setValue(grp.readEntry(SETTING_TIME_DIFF, 5));
     d->photoMaxDistanceSpB->setValue(grp.readEntry(SETTING_DISTANCE, 15));
     d->closestObservationMaxSpB->setValue(grp.readEntry(SETTING_CLOSEST, 500));
@@ -485,15 +492,12 @@ void INatWindow::readSettings(const QString& uname)
 void INatWindow::writeSettings()
 {
     KSharedConfigPtr config = KSharedConfig::openConfig();
-    QString groupName       = QString::fromLatin1("%1 %2 Export Settings").
-                              arg(d->serviceName, d->username);
+    QString groupName       = QString::fromLatin1("%1 %2 Export Settings").arg(d->serviceName, d->username);
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Group name is:" << groupName;
 
-    if (QString::compare(QString::fromLatin1("%1 Export Settings").
-                         arg(d->serviceName), groupName) == 0)
+    if (QString::compare(QString::fromLatin1("%1 Export Settings").arg(d->serviceName), groupName) == 0)
     {
-        qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Not writing entry of group" <<
-                                         groupName;
+        qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Not writing entry of group" << groupName;
         return;
     }
 
@@ -502,15 +506,13 @@ void INatWindow::writeSettings()
     grp.writeEntry(SETTING_RESIZE,    d->resizeCheckBox->isChecked());
     grp.writeEntry(SETTING_DIM,       d->dimensionSpinBox->value());
     grp.writeEntry(SETTING_QUALITY,   d->imageQualitySpinBox->value());
-    grp.writeEntry(SETTING_INAT_IDS,  d->widget->getPhotoIdCheckBox()->
-                   isChecked());
+    grp.writeEntry(SETTING_INAT_IDS,  d->widget->getPhotoIdCheckBox()->isChecked());
     grp.writeEntry(SETTING_TIME_DIFF, d->photoMaxTimeDiffSpB->value());
     grp.writeEntry(SETTING_DISTANCE,  d->photoMaxDistanceSpB->value());
     grp.writeEntry(SETTING_CLOSEST,   d->closestObservationMaxSpB->value());
     grp.writeEntry(SETTING_EXTENDED,  d->moreOptionsButton->isChecked());
 
-    qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Entry of group" << groupName <<
-                                     "written";
+    qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Entry of group" << groupName << "written";
 }
 
 void INatWindow::slotMoreOptionsButton(bool setting)
@@ -535,12 +537,11 @@ void INatWindow::slotLinkingSucceeded(const QString& username,
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Linking succeeded for user"
                                      << username;
     d->username = username;
-    d->name = name;
-    d->iconUrl = iconUrl;
-    d->apiTokenExpiresTimer.start(1000 *
-                                  std::max(d->talker->apiTokenExpiresIn(), 1));
+    d->name     = name;
+    d->iconUrl  = iconUrl;
+    d->apiTokenExpiresTimer.start(1000 * std::max(d->talker->apiTokenExpiresIn(), 1));
 
-    if (!d->name.isEmpty() && d->name != d->username)
+    if (!d->name.isEmpty() && (d->name != d->username))
     {
         d->userNameDisplayLabel->setText(QString::fromLatin1("<b>%1 (%2)</b>").
                                          arg(d->username, d->name));
@@ -619,14 +620,12 @@ void INatWindow::slotRemoveAccount()
     }
 
     KSharedConfigPtr config = KSharedConfig::openConfig();
-    QString groupName = QString::fromLatin1("%1 %2 Export Settings").
-                        arg(d->serviceName, d->username);
-    KConfigGroup grp  = config->group(groupName);
+    QString groupName       = QString::fromLatin1("%1 %2 Export Settings").arg(d->serviceName, d->username);
+    KConfigGroup grp        = config->group(groupName);
 
     if (grp.exists())
     {
-        qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Removing Account having group" <<
-                                         groupName;
+        qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Removing Account having group" << groupName;
         grp.deleteGroup();
     }
 
@@ -635,8 +634,9 @@ void INatWindow::slotRemoveAccount()
 
     d->accountIcon->hide();
     d->userNameDisplayLabel->setText(QString());
-    d->username = d->name = QString();
-    d->iconUrl = QUrl();
+    d->username = QString();
+    d->name     = QString();
+    d->iconUrl  = QUrl();
 }
 
 void INatWindow::slotAuthCancel()
@@ -653,12 +653,12 @@ void INatWindow::slotTaxonSelected(const Taxon& taxon, bool fromVision)
 {
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Taxon" << taxon.name() << "selected"
                                      << (fromVision ? "from vision."
-                                         : "from auto-completion.");
+                                                    : "from auto-completion.");
 
     if (d->identification != taxon)
     {
         d->identification = taxon;
-        QString name = QLatin1String("<h3>") + taxon.htmlName();
+        QString name      = QLatin1String("<h3>") + taxon.htmlName();
 
         if (!taxon.commonName().isEmpty())
         {
@@ -672,8 +672,7 @@ void INatWindow::slotTaxonSelected(const Taxon& taxon, bool fromVision)
 
         startButton()->setEnabled(d->observationDateTime.isValid() &&
                                   d->latLonValid && !d->inCancel &&
-                                  d->imglst->imageUrls().count() <=
-                                  MAX_OBSERVATION_PHOTOS);
+                                  (d->imglst->imageUrls().count() <= MAX_OBSERVATION_PHOTOS));
 
         if (d->latLonValid)
         {
@@ -703,7 +702,7 @@ void INatWindow::slotTaxonDeselected()
     {
         qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Taxon deselected.";
         d->identificationFromVision = false;
-        d->identification = Taxon();
+        d->identification           = Taxon();
         d->identificationLabel->setText(i18n("<i>no valid identification</i>"));
         d->identificationImage->hide();
         slotNearbyObservation(INatTalker::NearbyObservation());
@@ -715,7 +714,7 @@ void INatWindow::slotLoadUrlSucceeded(const QUrl& url, const QByteArray& data)
 {
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Image" << url << "received.";
 
-    if (url == d->identification.squareUrl())
+    if      (url == d->identification.squareUrl())
     {
         QImage image;
         image.loadFromData(data);
@@ -734,7 +733,7 @@ void INatWindow::slotLoadUrlSucceeded(const QUrl& url, const QByteArray& data)
 void INatWindow::updateProgressBarValue(unsigned diff)
 {
     int value = d->widget->progressBar()->value();
-    value += diff;
+    value    += diff;
     d->widget->progressBar()->setValue(value);
 
     if (value == d->widget->progressBar()->maximum())
@@ -751,10 +750,8 @@ void INatWindow::updateProgressBarMaximum(unsigned diff)
         d->widget->progressBar()->setMaximum(diff);
         d->widget->progressBar()->setValue(0);
         setUiInProgressState(true);
-        d->widget->progressBar()->progressScheduled(i18n("iNaturalist Export"),
-                true, true);
-        d->widget->progressBar()->progressThumbnailChanged(
-            QIcon::fromTheme(QLatin1String("dk-inat")).pixmap(22, 22));
+        d->widget->progressBar()->progressScheduled(i18n("iNaturalist Export"), true, true);
+        d->widget->progressBar()->progressThumbnailChanged(QIcon::fromTheme(QLatin1String("dk-inat")).pixmap(22, 22));
     }
     else
     {
@@ -770,7 +767,7 @@ void INatWindow::slotUser1()
 {
     if (d->imglst->imageUrls().isEmpty() || !d->latLonValid ||
         d->inCancel ||
-        d->imglst->imageUrls().count() > MAX_OBSERVATION_PHOTOS ||
+        (d->imglst->imageUrls().count() > MAX_OBSERVATION_PHOTOS) ||
         !d->observationDateTime.isValid() || !d->identification.isValid())
     {
         qCDebug(DIGIKAM_WEBSERVICES_LOG) << "NOT uploading observation.";
@@ -814,8 +811,8 @@ void INatWindow::slotUser1()
                                      << d->identification.name() << "from"
                                      << obsDateTime << "with"
                                      << d->imglst->imageUrls().count()
-                                     << (d->imglst->imageUrls().count() == 1 ?
-                                         "picture." : "pictures.");
+                                     << ((d->imglst->imageUrls().count() == 1) ? "picture."
+                                                                               : "pictures.");
     QJsonObject jsonObservation;
     jsonObservation.insert(QLatin1String("observation"), QJsonValue(params));
     updateProgressBarMaximum(1 + d->imglst->imageUrls().count());
@@ -829,6 +826,7 @@ void INatWindow::slotUser1()
     d->talker->createObservation(QJsonDocument(jsonObservation).toJson(),
                                  request);
     // Clear data, user can work on the next observation.
+
     d->imglst->listView()->clear();
     slotTaxonDeselected();
     d->identificationEdit->clear();
@@ -852,7 +850,7 @@ void INatWindow::slotObservationCreated(const INatTalker::PhotoUploadRequest&
                                      << "created, uploading first picture.";
     updateProgressBarValue(1);
 
-    if (d->inCancel)
+    if      (d->inCancel)
     {
         cancelUpload(request);
     }
@@ -940,6 +938,7 @@ void INatWindow::slotNearbyPlaces(const QStringList& places)
         if (place == selected)
         {
             // Keep previous selection if it is still an option.
+
             d->placesComboBox->setCurrentText(selected);
         }
     }
@@ -961,8 +960,7 @@ void INatWindow::slotNearbyObservation(const INatTalker::NearbyObservation&
     QString red1(QLatin1String(""));
     QString red2(QLatin1String(""));
 
-    if (nearbyObservation.m_distanceMeters >
-        d->closestObservationMaxSpB->value())
+    if (nearbyObservation.m_distanceMeters > d->closestObservationMaxSpB->value())
     {
         red1 = QLatin1String("<font color=\"red\">");
         red2 = QLatin1String("</font>");
@@ -985,16 +983,20 @@ void INatWindow::slotImageListChanged()
     static const QLatin1Char lf('\n');
 
     // number of digits printed for latitude and longitude
-    enum { COORD_PRECISION = 5 };
+
+    enum
+    {
+        COORD_PRECISION = 5
+    };
 
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Updating image list.";
 
     bool      latLonValid = false;
-    double    latitude = 0.0;
-    double    longitude = 0.0;
+    double    latitude    = 0.0;
+    double    longitude   = 0.0;
     QDateTime observationTime;
 
-    DItemsListView* listView = d->widget->d->imglst->listView();
+    DItemsListView* const listView = d->widget->d->imglst->listView();
 
     for (auto url : d->imglst->imageUrls())
     {
@@ -1004,36 +1006,36 @@ void INatWindow::slotImageListChanged()
         }
 
         DItemInfo info(d->iface->itemInfo(url));
-        DItemsListViewItem* item = listView->findItem(url);
-        QDateTime dateTime = info.dateTime();
+        DItemsListViewItem* const item = listView->findItem(url);
+        QDateTime dateTime             = info.dateTime();
         QString dt;
 
         if (dateTime.isValid())
         {
             // show date and time of photo, our observation
+
             if (!observationTime.isValid())
             {
                 observationTime = dateTime;
-                dt = dateTime.toString(Qt::SystemLocaleShortDate) + lf +
-                     i18n("observation time");
+                dt              = dateTime.toString(Qt::SystemLocaleShortDate) + lf +
+                                  i18n("observation time");
                 QBrush brush(Qt::black);
                 item->setForeground(ItemDate, brush);
             }
             else
             {
                 // show time difference from observation
-                int difference = int(qAbs(dateTime.secsTo(observationTime)));
 
-                dt = localizedTimeDifference(difference) + lf +
-                     i18n("from observation");
-                QBrush brush(difference > 60 * d->photoMaxTimeDiffSpB->value()
-                             ? Qt::red : Qt::black);
+                int difference = int(qAbs(dateTime.secsTo(observationTime)));
+                dt             = localizedTimeDifference(difference) + lf +
+                                 i18n("from observation");
+                QBrush brush((difference > 60 * d->photoMaxTimeDiffSpB->value()) ? Qt::red : Qt::black);
                 item->setForeground(ItemDate, brush);
             }
         }
         else
         {
-            dt = i18n("not available");
+            dt         = i18n("not available");
             QFont font = item->font(ItemDate);
             font.setItalic(true);
             item->setFont(ItemDate, font);
@@ -1048,23 +1050,24 @@ void INatWindow::slotImageListChanged()
             if (latLonValid)
             {
                 // show distance from observation coordinates
+
                 double distance = distanceBetween(latitude, longitude,
                                                   info.latitude(),
                                                   info.longitude());
-                gps = localizedDistance(distance,'f', 0) + lf +
-                      i18n("from observation");
-                QBrush brush(distance > d->photoMaxDistanceSpB->value()
-                             ? Qt::red : Qt::black);
+                gps             = localizedDistance(distance,'f', 0) + lf +
+                                  i18n("from observation");
+                QBrush brush((distance > d->photoMaxDistanceSpB->value()) ? Qt::red : Qt::black);
                 item->setForeground(ItemLocation, brush);
             }
             else
             {
                 // show gps coordinates of photo, our observation coordinates
+
                 latLonValid = true;
-                latitude = info.latitude();
-                longitude = info.longitude();
-                gps = localizedLocation(latitude, longitude, COORD_PRECISION) +
-                      lf + i18n("observation location");
+                latitude    = info.latitude();
+                longitude   = info.longitude();
+                gps         = localizedLocation(latitude, longitude, COORD_PRECISION) +
+                              lf + i18n("observation location");
                 QBrush brush(Qt::black);
                 item->setForeground(ItemLocation, brush);
             }
@@ -1072,7 +1075,8 @@ void INatWindow::slotImageListChanged()
         else
         {
             // gps coordinates not available
-            gps = i18n("not available");
+
+            gps        = i18n("not available");
             QFont font = item->font(ItemLocation);
             font.setItalic(true);
             item->setFont(ItemLocation, font);
@@ -1081,8 +1085,8 @@ void INatWindow::slotImageListChanged()
         item->setText(ItemLocation, gps);
     }
 
-    if (d->latLonValid != latLonValid || d->latitude != latitude ||
-        d->longitude != longitude)
+    if ((d->latLonValid != latLonValid) || (d->latitude != latitude) ||
+        (d->longitude != longitude))
     {
         if (latLonValid)
         {
@@ -1094,26 +1098,27 @@ void INatWindow::slotImageListChanged()
         }
     }
 
-    d->latLonValid = latLonValid;
-    d->latitude = latitude;
-    d->longitude = longitude;
+    d->latLonValid         = latLonValid;
+    d->latitude            = latitude;
+    d->longitude           = longitude;
     d->observationDateTime = observationTime;
 
     startButton()->setEnabled(observationTime.isValid() && latLonValid &&
                               d->identification.isValid() && !d->inCancel &&
-                              d->imglst->imageUrls().count() <=
-                              MAX_OBSERVATION_PHOTOS);
+                              (d->imglst->imageUrls().count() <= MAX_OBSERVATION_PHOTOS));
 }
 
 void INatWindow::slotValueChanged(int)
 {
     // Called upon change to d->photoMaxDistanceSpB or d->photoMaxTimeDiffSpB.
+
     slotImageListChanged();
 }
 
 void INatWindow::slotClosestChanged(int)
 {
     // Called upon change to d->closestObservationMaxSpB
+
     if (d->latLonValid && d->identification.isValid())
     {
         d->talker->closestObservation(d->identification.id(),

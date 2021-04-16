@@ -28,9 +28,8 @@
 namespace DigikamGenericINatPlugin
 {
 
-const DItemsListView::ColumnType ItemDate = DItemsListView::ColumnType::User1;
-const DItemsListView::ColumnType ItemLocation =
-    DItemsListView::ColumnType::User2;
+const DItemsListView::ColumnType ItemDate     = DItemsListView::ColumnType::User1;
+const DItemsListView::ColumnType ItemLocation = DItemsListView::ColumnType::User2;
 
 INatWidget::INatWidget(QWidget* const parent,
                        DInfoInterface* const iface,
@@ -43,16 +42,18 @@ INatWidget::INatWidget(QWidget* const parent,
     // -- The account group. ----------------------------------------------
 
     // make room and insert a QLabel for an account icon
+
     QWidget* const userNameLbl = getAccountBoxLayout()->itemAt(0)->widget();
     getAccountBoxLayout()->removeWidget(userNameLbl);
     getAccountBoxLayout()->addWidget(userNameLbl, 0, 0, 1, 1);
-    d->accountIcon = new QLabel(getAccountBox());
+    d->accountIcon             = new QLabel(getAccountBox());
     getAccountBoxLayout()->addWidget(d->accountIcon, 0, 1, 1, 1);
 
     // change user and remove account buttons go the in the row
+
     getAccountBoxLayout()->removeWidget(getChangeUserBtn());
     QHBoxLayout* const changeRemoveUserLayout = new QHBoxLayout();
-    d->removeAccount = new QPushButton(getAccountBox());
+    d->removeAccount                          = new QPushButton(getAccountBox());
     d->removeAccount->setText(i18n("Remove Account"));
     changeRemoveUserLayout->addWidget(getChangeUserBtn());
     changeRemoveUserLayout->addWidget(d->removeAccount);
@@ -75,113 +76,101 @@ INatWidget::INatWidget(QWidget* const parent,
 
     // -- The observation group. ------------------------------------------
 
-    QGroupBox* const idBox = new QGroupBox(i18n("Observation"),
-                                           getSettingsBox());
-    QVBoxLayout* const idBoxLayout = new QVBoxLayout(idBox);
+    QGroupBox* const idBox                  = new QGroupBox(i18n("Observation"), getSettingsBox());
+    QVBoxLayout* const idBoxLayout          = new QVBoxLayout(idBox);
 
-    d->identificationImage = new QLabel(idBox);
-    d->identificationLabel = new QLabel(i18n("<i>no identification</i>"),
-                                        idBox);
+    d->identificationImage                  = new QLabel(idBox);
+    d->identificationLabel                  = new QLabel(i18n("<i>no identification</i>"), idBox);
     d->identificationLabel->setWordWrap(true);
     QHBoxLayout* const identificationLayout = new QHBoxLayout();
     identificationLayout->addWidget(d->identificationImage);
     identificationLayout->addWidget(d->identificationLabel, 1);
     idBoxLayout->addLayout(identificationLayout);
 
-    d->closestKnownObservation = new QLabel(idBox);
+    d->closestKnownObservation              = new QLabel(idBox);
     d->closestKnownObservation->setWordWrap(true);
     d->closestKnownObservation->setOpenExternalLinks(true);
     idBoxLayout->addWidget(d->closestKnownObservation);
 
-    d->observationDescription = new QPlainTextEdit(idBox);
+    d->observationDescription               = new QPlainTextEdit(idBox);
     d->observationDescription->setPlaceholderText(i18n("Optionally describe "
             "your observation or explain your identification here."));
-    QTextDocument* pdoc = d->observationDescription->document();
+    QTextDocument* const pdoc               = d->observationDescription->document();
     QFontMetrics fm(pdoc->defaultFont());
-    QMargins margins = d->observationDescription->contentsMargins();
-    int nRows = 3;
+    QMargins margins                        = d->observationDescription->contentsMargins();
+    const int nRows                         = 3;
     d->observationDescription->setFixedHeight(nRows * fm.lineSpacing() +
-            2 * (pdoc->documentMargin() +
-                 d->observationDescription->frameWidth()) +
-            margins.top() + margins.bottom());
+                                              2 * (pdoc->documentMargin() +
+                                              d->observationDescription->frameWidth()) +
+                                              margins.top() + margins.bottom());
     idBoxLayout->addWidget(d->observationDescription);
     d->observationDescription->hide();
 
-    d->identificationEdit = new TaxonEdit(idBox);
+    d->identificationEdit                   = new TaxonEdit(idBox);
     d->identificationEdit->setToolTip(i18n("Enter your identification here, "
                                            "popups will guide to a supported "
                                            "name."));
     d->identificationEdit->setPlaceholderText(i18n("Enter your identification "
-            "here; it is required."));
-    d->taxonPopup = new SuggestTaxonCompletion(d->identificationEdit);
+                                                   "here; it is required."));
+    d->taxonPopup                           = new SuggestTaxonCompletion(d->identificationEdit);
     idBoxLayout->addWidget(d->identificationEdit);
 
-    QLabel* const placeLabel = new QLabel(i18n("Place:"), idBox);
-    d->placesComboBox = new QComboBox(idBox);
+    QLabel* const placeLabel                = new QLabel(i18n("Place:"), idBox);
+    d->placesComboBox                       = new QComboBox(idBox);
     d->placesComboBox->setEditable(false);
-    d->moreOptionsButton = new QPushButton(i18n("More options"), idBox);
+    d->moreOptionsButton                    = new QPushButton(i18n("More options"), idBox);
     d->moreOptionsButton->setCheckable(true);
     d->moreOptionsButton->setChecked(false);
     idBoxLayout->addWidget(d->moreOptionsButton);
-    QHBoxLayout* const placesLayout = new QHBoxLayout();
+    QHBoxLayout* const placesLayout         = new QHBoxLayout();
     placesLayout->addWidget(placeLabel);
     placesLayout->addWidget(d->placesComboBox, 1);
     placesLayout->addWidget(d->moreOptionsButton);
     idBoxLayout->addLayout(placesLayout);
 
-    d->moreOptionsWidget = new QWidget(idBox);
-    QVBoxLayout* const moreOptionsLayout = new QVBoxLayout(d->
-            moreOptionsWidget);
+    d->moreOptionsWidget                    = new QWidget(idBox);
+    QVBoxLayout* const moreOptionsLayout    = new QVBoxLayout(d->moreOptionsWidget);
 
-    QLabel* warnTimeText1 = new QLabel(i18n("Photos should be taken within"),
-                                       idBox);
-    d->photoMaxTimeDiffSpB = new QSpinBox(idBox);
+    QLabel* const warnTimeText1             = new QLabel(i18n("Photos should be taken within"), idBox);
+    d->photoMaxTimeDiffSpB                  = new QSpinBox(idBox);
     d->photoMaxTimeDiffSpB->setMinimum(1);
     d->photoMaxTimeDiffSpB->setMaximum(9999);
     d->photoMaxTimeDiffSpB->setSingleStep(1);
     d->photoMaxTimeDiffSpB->setValue(5);
-    d->photoMaxTimeDiffSpB->setSizePolicy(QSizePolicy::Fixed,
-                                          QSizePolicy::Fixed);
+    d->photoMaxTimeDiffSpB->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
     d->photoMaxTimeDiffSpB->setEnabled(true);
-    QLabel* warnTimeText2 = new QLabel(i18n("minute(s) of observation."),
-                                       idBox);
-    QHBoxLayout* warnTimeLayout = new QHBoxLayout();
+    QLabel* const warnTimeText2             = new QLabel(i18n("minute(s) of observation."), idBox);
+    QHBoxLayout* const warnTimeLayout       = new QHBoxLayout();
     warnTimeLayout->addWidget(warnTimeText1);
     warnTimeLayout->addWidget(d->photoMaxTimeDiffSpB);
     warnTimeLayout->addWidget(warnTimeText2, 1);
     moreOptionsLayout->addLayout(warnTimeLayout);
 
-    QLabel* warnLocationText1 = new QLabel(i18n("Photos should be taken "
-                                           "within"), idBox);
-    d->photoMaxDistanceSpB = new QSpinBox(idBox);
+    QLabel* const warnLocationText1         = new QLabel(i18n("Photos should be taken within"), idBox);
+    d->photoMaxDistanceSpB                  = new QSpinBox(idBox);
     d->photoMaxDistanceSpB->setMinimum(1);
     d->photoMaxDistanceSpB->setMaximum(9999);
     d->photoMaxDistanceSpB->setSingleStep(1);
     d->photoMaxDistanceSpB->setValue(15);
-    d->photoMaxDistanceSpB->setSizePolicy(QSizePolicy::Fixed,
-                                          QSizePolicy::Fixed);
+    d->photoMaxDistanceSpB->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
     d->photoMaxDistanceSpB->setEnabled(true);
-    QLabel* warnLocationText2 = new QLabel(i18n("meter(s) of observation."),
-                                           idBox);
-    QHBoxLayout* warnLocationLayout = new QHBoxLayout();
+    QLabel* const warnLocationText2         = new QLabel(i18n("meter(s) of observation."), idBox);
+    QHBoxLayout* warnLocationLayout         = new QHBoxLayout();
     warnLocationLayout->addWidget(warnLocationText1);
     warnLocationLayout->addWidget(d->photoMaxDistanceSpB);
     warnLocationLayout->addWidget(warnLocationText2, 1);
     moreOptionsLayout->addLayout(warnLocationLayout);
 
-    QLabel* warnCloseObsText1 = new QLabel(i18n("Known observations should be "
-                                           "within"), idBox);
-    d->closestObservationMaxSpB = new QSpinBox(idBox);
+    QLabel* const warnCloseObsText1         = new QLabel(i18n("Known observations should be within"), idBox);
+    d->closestObservationMaxSpB             = new QSpinBox(idBox);
     d->closestObservationMaxSpB->setMinimum(10);
     d->closestObservationMaxSpB->setMaximum(99999);
     d->closestObservationMaxSpB->setSingleStep(10);
     d->closestObservationMaxSpB->setValue(500);
-    d->closestObservationMaxSpB->setSizePolicy(QSizePolicy::Fixed,
-            QSizePolicy::Fixed);
+    d->closestObservationMaxSpB->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
     d->closestObservationMaxSpB->setEnabled(true);
-    QLabel* warnCloseObsText2 = new QLabel(i18n("meter(s) of observation."),
-                                           idBox);
-    QHBoxLayout* warnCloseObsLayout = new QHBoxLayout();
+    QLabel* const warnCloseObsText2         = new QLabel(i18n("meter(s) of observation."), idBox);
+    QHBoxLayout* const warnCloseObsLayout   = new QHBoxLayout();
     warnCloseObsLayout->addWidget(warnCloseObsText1);
     warnCloseObsLayout->addWidget(d->closestObservationMaxSpB);
     warnCloseObsLayout->addWidget(warnCloseObsText2, 1);

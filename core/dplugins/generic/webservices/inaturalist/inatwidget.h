@@ -56,8 +56,6 @@ public:
     void updateLabels(const QString& name,
                       const QString& url = QString())   override;
 
-private Q_SLOTS:
-
 private:
 
     class Private;

@@ -56,8 +56,7 @@ public:
 
     explicit INatWindow(DInfoInterface* const iface,
                         QWidget* const parent,
-                        const QString& serviceName =
-                            QLatin1String("iNaturalist"));
+                        const QString& serviceName = QLatin1String("iNaturalist"));
     ~INatWindow()                                                   override;
 
     /**
