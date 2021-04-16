@@ -33,22 +33,18 @@
 
 #include <klocalizedstring.h>
 
-// Local includes
-
-
 namespace DigikamGenericINatPlugin
 {
 
 // Constants
 
 const QLocale locale      = QLocale();
-const bool    isEnglish   = locale.language() == QLocale::English ||
-                            locale.language() == QLocale::C ||
-                            locale.language() == QLocale::AnyLanguage;
+const bool    isEnglish   = (locale.language() == QLocale::English)     ||
+                            (locale.language() == QLocale::C)           ||
+                            (locale.language() == QLocale::AnyLanguage);
 
 const double meterInFeet  = 3.28084;
 const double meterInMiles = 0.00062137;
-
 
 // Functions
 
@@ -57,9 +53,9 @@ QHttpMultiPart* getMultiPart(const QList<Parameter>& parameters,
 {
     static const QString paramForm = QLatin1String("form-data; name=\"%1\"");
     static const QString imageForm = QLatin1String("form-data; name=\"%1\"; "
-                                     "filename=\"%2\"");
+                                                   "filename=\"%2\"");
 
-    QHttpMultiPart* result = new QHttpMultiPart(QHttpMultiPart::FormDataType);
+    QHttpMultiPart* const result = new QHttpMultiPart(QHttpMultiPart::FormDataType);
 
     for (auto param : parameters)
     {
@@ -90,13 +86,17 @@ QHttpMultiPart* getMultiPart(const QList<Parameter>& parameters,
     return result;
 }
 
-// converts degree to radian
+/**
+ * converts degree to radian
+ */
 static inline double deg2rad(double deg)
 {
     return deg * M_PI / 180;
 }
 
-// returns distance in meters between two coordinates, Haversine formula
+/**
+ * returns distance in meters between two coordinates, Haversine formula
+ */
 double distanceBetween(double latitude1, double longitude1,
                        double latitude2, double longitude2)
 {
@@ -106,15 +106,16 @@ double distanceBetween(double latitude1, double longitude1,
     double lon1r = deg2rad(longitude1);
     double lat2r = deg2rad(latitude2);
     double lon2r = deg2rad(longitude2);
-    double u = sin((lat2r - lat1r) / 2);
-    double v = sin((lon2r - lon1r) / 2);
-    return 2.0 * earthRadiusInMeters *
-           asin(sqrt(u * u + cos(lat1r) * cos(lat2r) * v * v));
+    double u     = sin((lat2r - lat1r) / 2);
+    double v     = sin((lon2r - lon1r) / 2);
+
+    return (2.0 * earthRadiusInMeters *
+            asin(sqrt(u * u + cos(lat1r) * cos(lat2r) * v * v)));
 }
 
 QString localizedTaxonomicRank(const QString& rank)
 {
-    if (rank == QLatin1String("kingdom"))
+    if      (rank == QLatin1String("kingdom"))
     {
         return i18nc("taxonomic ranks", "kingdom");
     }
@@ -242,8 +243,8 @@ QString localizedTaxonomicRank(const QString& rank)
 
 QString localizedLocation(double latitude, double longitude, int precision)
 {
-    return locale.toString(latitude, 'f', precision) +
-           QLatin1String(", ") + locale.toString(longitude, 'f', precision);
+    return (locale.toString(latitude, 'f', precision) +
+            QLatin1String(", ") + locale.toString(longitude, 'f', precision));
 }
 
 QString localizedDistance(double distMeters, char format, int precision)
@@ -252,11 +253,15 @@ QString localizedDistance(double distMeters, char format, int precision)
     {
         if (locale.toString(distMeters * meterInMiles, format, precision) ==
             locale.toString(0.0, format, precision))
-            return locale.toString(distMeters * meterInFeet, format, precision)
-                   + QLatin1String(" ft");
+        {
+            return locale.toString(distMeters * meterInFeet, format, precision) +
+                   QLatin1String(" ft");
+        }
         else
+        {
             return locale.toString(distMeters * meterInMiles, format,
                                    precision) + QLatin1String(" mi");
+        }
     }
     else
     {
@@ -269,8 +274,9 @@ QString localizedDistance(double distMeters, char format, int precision)
         {
             QString one    = locale.toString(1.0, format, precision);
             QString result = locale.toString(distMeters, format, precision);
-            return result + QLatin1Char(' ') + (result == one ? i18n("meter")
-                                                : i18n("meters"));
+
+            return (result + QLatin1Char(' ') + ((result == one) ? i18n("meter")
+                                                                 : i18n("meters")));
         }
     }
 }
@@ -284,8 +290,8 @@ QString localizedTimeDifference(quint64 diffSeconds)
     if (hours)
     {
         diffSeconds %= 3600;
-        result = QString::number(hours) + QLatin1Char(' ') +
-                 (hours == 1 ? i18n("hour") : i18n("hours"));
+        result       = QString::number(hours) + QLatin1Char(' ') +
+                       (hours == 1 ? i18n("hour") : i18n("hours"));
     }
 
     quint64 minutes = diffSeconds / 60;

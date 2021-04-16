@@ -36,31 +36,45 @@ namespace DigikamGenericINatPlugin
 extern const QLocale locale;
 extern const bool    isEnglish;
 
-// conversion factors for the US, one meter in feet and miles
+/**
+ * conversion factors for the US, one meter in feet and miles
+ */
 extern const double  meterInFeet;
 extern const double  meterInMiles;
 
-// multi-part message, used to upload pictures
+/**
+ * multi-part message, used to upload pictures
+ */
 typedef QPair<QString, QString> Parameter;
 extern QHttpMultiPart* getMultiPart(const QList<Parameter>& parameters,
                                     const QString& imageName = QString(),
                                     const QString& imagePath = QString());
 
-// distance in meters between two geolocations
+/**
+ * distance in meters between two geolocations
+ */
 extern double  distanceBetween(double latitude1, double longitude1,
                                double latitude2, double longitude2);
 
-// geolocation in local language
+/**
+ * geolocation in local language
+ */
 extern QString localizedLocation(double latitude, double longitude,
                                  int precision);
 
-// taxonomic rank (e.g. kingdom, order, genus, species) in local language
+/**
+ * taxonomic rank (e.g. kingdom, order, genus, species) in local language
+ */
 extern QString localizedTaxonomicRank(const QString& rank);
 
-// distance in local language; for US returns feet or miles instead of meters
+/**
+ * distance in local language; for US returns feet or miles instead of meters
+ */
 extern QString localizedDistance(double distMeters, char format, int precision);
 
-// time difference (e.g. "5 hours, 7 minutes") in local language
+/**
+ * time difference (e.g. "5 hours, 7 minutes") in local language
+ */
 extern QString localizedTimeDifference(quint64 diffSeconds);
 
 } // namespace DigikamGenericINatPlugin

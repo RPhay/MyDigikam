@@ -1,6 +1,3 @@
-#ifndef DIGIKAM_INAT_TAXON_EDIT_H
-#define DIGIKAM_INAT_TAXON_EDIT_H
-
 /* ============================================================
  *
  * This file is a part of digiKam project
@@ -23,10 +20,14 @@
  *
  * ============================================================ */
 
+#ifndef DIGIKAM_INAT_TAXON_EDIT_H
+#define DIGIKAM_INAT_TAXON_EDIT_H
+
+// Local includes
+
 #include <QWidget>
 #include <QLineEdit>
 #include <QFocusEvent>
-
 
 namespace DigikamGenericINatPlugin
 {
@@ -36,7 +37,8 @@ class TaxonEdit : public QLineEdit
     Q_OBJECT
 
 public:
-    TaxonEdit(QWidget* parent = nullptr);
+
+    TaxonEdit(QWidget* const parent = nullptr);
     ~TaxonEdit();
 
 Q_SIGNALS:

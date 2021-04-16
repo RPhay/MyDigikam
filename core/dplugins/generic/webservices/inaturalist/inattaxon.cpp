@@ -21,6 +21,9 @@
  * ============================================================ */
 
 #include "inattaxon.h"
+
+// Local includes
+
 #include "inatutils.h"
 
 namespace DigikamGenericINatPlugin
@@ -48,10 +51,15 @@ public:
     QList<Taxon> ancestors;
 };
 
-Taxon::Taxon(int id, int parentId, const QString& name, const QString& rank,
-             int rankLevel, const QString& commonName,
+Taxon::Taxon(int id,
+             int parentId,
+             const QString& name,
+             const QString& rank,
+             int rankLevel,
+             const QString& commonName,
              const QString& matchedTerm,
-             const QUrl& squareUrl, const QList<Taxon>& ancestors)
+             const QUrl& squareUrl,
+             const QList<Taxon>& ancestors)
     : d(new Private)
 {
     d->id          = id;
@@ -82,6 +90,7 @@ Taxon::~Taxon()
 Taxon& Taxon::operator=(const Taxon& other)
 {
     *d = *other.d;
+
     return *this;
 }
 
@@ -100,7 +109,9 @@ const QString& Taxon::name() const
     return d->name;
 }
 
-// return italicized scientific name
+/**
+ * return italicized scientific name
+ */
 QString Taxon::htmlName() const
 {
     static const QString species    = QLatin1String("species");
@@ -110,22 +121,23 @@ QString Taxon::htmlName() const
 
     QString result;
 
-    if (rank() != species && rank() != subspecies && rank() != variety)
+    if ((rank() != species) && (rank() != subspecies) && (rank() != variety))
     {
-        result = localizedTaxonomicRank(rank()) + QLatin1Char(' ');
+        result    = localizedTaxonomicRank(rank()) + QLatin1Char(' ');
         result[0] = result[0].toTitleCase();
     }
 
-    if (rank() == subspecies || rank() == variety || rank() == hybrid)
+    if ((rank() == subspecies) || (rank() == variety) || (rank() == hybrid))
     {
         // The scientific name is italisized but ssp, var, x aren't.
+
         QStringList split = name().split(QLatin1Char(' '));
 
         if (split.count() == 3)
         {
-            QString txt = rank() == subspecies ? QLatin1String(" ssp. ") :
-                          rank() == variety ? QLatin1String(" var. ")
-                          : QLatin1String(" x ");
+            QString txt = (rank() == subspecies) ? QLatin1String(" ssp. ")
+                                                 : (rank() == variety) ? QLatin1String(" var. ")
+                                                                       : QLatin1String(" x ");
             result += QLatin1String("<i>") + split[0] + QLatin1Char(' ') +
                       split[1] + QLatin1String("</i>") + txt +
                       QLatin1String("<i>") + split[2] + QLatin1String("</i>");
@@ -179,17 +191,17 @@ const QList<Taxon>& Taxon::ancestors() const
 
 bool Taxon::isValid() const
 {
-    return d->id != -1;
+    return (d->id != -1);
 }
 
 bool Taxon::operator==(const Taxon& other) const
 {
-    return d->id == other.d->id;
+    return (d->id == other.d->id);
 }
 
 bool Taxon::operator!=(const Taxon& other) const
 {
-    return d->id != other.d->id;
+    return (d->id != other.d->id);
 }
 
 } // namespace DigikamGenericINatPlugin

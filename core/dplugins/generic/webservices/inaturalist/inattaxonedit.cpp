@@ -22,12 +22,14 @@
 
 #include "inattaxonedit.h"
 
+// Qt includes
+
 #include <QDebug>
 
 namespace DigikamGenericINatPlugin
 {
 
-TaxonEdit::TaxonEdit(QWidget*)
+TaxonEdit::TaxonEdit(QWidget* const)
 {
 }
 
@@ -39,7 +41,7 @@ void TaxonEdit::focusInEvent(QFocusEvent* e)
 {
     QLineEdit::focusInEvent(e);
 
-    if (e->reason() == Qt::MouseFocusReason && text().isEmpty())
+    if ((e->reason() == Qt::MouseFocusReason) && text().isEmpty())
     {
         emit inFocus();
     }
