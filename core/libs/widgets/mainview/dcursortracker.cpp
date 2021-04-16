@@ -66,8 +66,8 @@ DCursorTracker::DCursorTracker(const QString& txt, QWidget* const parent, Qt::Al
     : QLabel(txt, parent, Qt::ToolTip | Qt::BypassGraphicsProxyWidget),
       d(new Private)
 {
-    setForegroundRole(QPalette::ToolTipText);
     setBackgroundRole(QPalette::ToolTipBase);
+    setPalette(QToolTip::palette());
     ensurePolished();
     const int fwidth = 1 + style()->pixelMetric(QStyle::PM_ToolTipLabelFrameWidth, nullptr, this);
     setContentsMargins(fwidth, fwidth, fwidth, fwidth);
