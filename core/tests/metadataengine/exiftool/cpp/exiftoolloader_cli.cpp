@@ -83,11 +83,11 @@ int main(int argc, char** argv)
         // Header
 
         stream << sep
-               << Qt::endl
+               << endl
                << QString::fromLatin1("%1").arg(QLatin1String("ExifTool::group0.group1.group2.name"), section1) << " | "
                << QString::fromLatin1("%1").arg(QLatin1String("Exiv2::family.group.name"),            section2) << " | "
                << QString::fromLatin1("%1").arg(QLatin1String("String Converted Value"),              section3)
-               << Qt::endl
+               << endl
                << sep
                << endl;
 
