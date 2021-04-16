@@ -69,39 +69,40 @@
 namespace DigikamGenericINatPlugin
 {
 
-static const char COOKIE_SEPARATOR = '\n';
+static const char COOKIE_SEPARATOR          = '\n';
 
-enum { INAT_API_TOKEN_EXPIRATION = 86000, // api tokens are valid for 24 hours
-       GEOLOCATION_PRECISION     =     8, // # digits after decimal point
-       RADIUS_PRECISION          =     6, // # digits after decimal point
-       EARTH_RADIUS_KM           =  6371  // Earth radius in kilometers
-     };
+enum
+{
+    INAT_API_TOKEN_EXPIRATION               = 86000, ///< api tokens are valid for 24 hours
+    GEOLOCATION_PRECISION                   =     8, ///< # digits after decimal point
+    RADIUS_PRECISION                        =     6, ///< # digits after decimal point
+    EARTH_RADIUS_KM                         =  6371  ///< Earth radius in kilometers
+};
 
-//
-// Fields in server responses received from iNaturalist.
-//
-static const QString API_TOKEN           = QLatin1String("api_token");
-static const QString TOTAL_RESULTS       = QLatin1String("total_results");
-static const QString PER_PAGE            = QLatin1String("per_page");
-static const QString RESULTS             = QLatin1String("results");
-static const QString NAME                = QLatin1String("name");
-static const QString TAXON               = QLatin1String("taxon");
-static const QString ID                  = QLatin1String("id");
-static const QString PARENT_ID           = QLatin1String("parent_id");
-static const QString RANK                = QLatin1String("rank");
-static const QString RANK_LEVEL          = QLatin1String("rank_level");
-static const QString PREFERRED_COMMON_NAME = QLatin1String("preferred_"
-        "common_name");
-static const QString ENGLISH_COMMON_NAME = QLatin1String("english_common_name");
-static const QString MATCHED_TERM        = QLatin1String("matched_term");
-static const QString DEFAULT_PHOTO       = QLatin1String("default_photo");
-static const QString SQUARE_URL          = QLatin1String("square_url");
-static const QString ANCESTORS           = QLatin1String("ancestors");
-static const QString OBSCURED            = QLatin1String("obscured");
-static const QString GEOJSON             = QLatin1String("geojson");
-static const QString COORDINATES         = QLatin1String("coordinates");
-static const QString LOGIN               = QLatin1String("login");
-static const QString ICON                = QLatin1String("icon");
+/**
+ * Fields in server responses received from iNaturalist.
+ */
+static const QString API_TOKEN              = QLatin1String("api_token");
+static const QString TOTAL_RESULTS          = QLatin1String("total_results");
+static const QString PER_PAGE               = QLatin1String("per_page");
+static const QString RESULTS                = QLatin1String("results");
+static const QString NAME                   = QLatin1String("name");
+static const QString TAXON                  = QLatin1String("taxon");
+static const QString ID                     = QLatin1String("id");
+static const QString PARENT_ID              = QLatin1String("parent_id");
+static const QString RANK                   = QLatin1String("rank");
+static const QString RANK_LEVEL             = QLatin1String("rank_level");
+static const QString PREFERRED_COMMON_NAME  = QLatin1String("preferred_common_name");
+static const QString ENGLISH_COMMON_NAME    = QLatin1String("english_common_name");
+static const QString MATCHED_TERM           = QLatin1String("matched_term");
+static const QString DEFAULT_PHOTO          = QLatin1String("default_photo");
+static const QString SQUARE_URL             = QLatin1String("square_url");
+static const QString ANCESTORS              = QLatin1String("ancestors");
+static const QString OBSCURED               = QLatin1String("obscured");
+static const QString GEOJSON                = QLatin1String("geojson");
+static const QString COORDINATES            = QLatin1String("coordinates");
+static const QString LOGIN                  = QLatin1String("login");
+static const QString ICON                   = QLatin1String("icon");
 
 static QJsonObject parseJsonResponse(const QByteArray& data)
 {
@@ -110,14 +111,16 @@ static QJsonObject parseJsonResponse(const QByteArray& data)
 
     if (err.error != QJsonParseError::NoError)
     {
-        qWarning() << "parseJsonResponse: Failed to parse json response:" <<
-                   err.errorString();
+        qWarning() << "parseJsonResponse: Failed to parse json response:"
+                   << err.errorString();
+
         return QJsonObject();
     }
 
     if (!doc.isObject())
     {
         qWarning() << "parseJsonResponse: Json response is not an object!";
+
         return QJsonObject();
     }
 
@@ -126,8 +129,13 @@ static QJsonObject parseJsonResponse(const QByteArray& data)
 
 static Taxon parseTaxon(const QJsonObject& taxon)
 {
-    int id = -1, parentId = -1, rankLevel = -1;
-    QString name, rank, commonName, matchedTerm;
+    int id        = -1;
+    int parentId  = -1;
+    int rankLevel = -1;
+    QString name;
+    QString rank;
+    QString commonName;
+    QString matchedTerm;
     QUrl squareUrl;
     QList<Taxon> ancestors;
 
@@ -156,7 +164,7 @@ static Taxon parseTaxon(const QJsonObject& taxon)
         rankLevel = taxon[RANK_LEVEL].toInt();
     }
 
-    if (taxon.contains(PREFERRED_COMMON_NAME))
+    if      (taxon.contains(PREFERRED_COMMON_NAME))
     {
         commonName = taxon[PREFERRED_COMMON_NAME].toString();
     }
@@ -189,9 +197,9 @@ static Taxon parseTaxon(const QJsonObject& taxon)
                  matchedTerm, squareUrl, ancestors);
 }
 
-//
-// A request consists in state and a function that is called with the response.
-//
+/**
+ * A request consists in state and a function that is called with the response.
+ */
 class Request
 {
 public:
@@ -214,6 +222,7 @@ public:
                                const QByteArray& data) const = 0;
 };
 
+// --------------------------------------------------------------------------------
 
 class Q_DECL_HIDDEN INatTalker::Private
 {
@@ -238,7 +247,7 @@ public:
     void clear()
     {
         apiTokenExpires = 0;
-        apiToken = QString();
+        apiToken        = QString();
     }
 
     ~Private()
@@ -256,19 +265,19 @@ public:
     QString                           serviceName;
     QString                           apiUrl;
 
-    // keys used in O0SettingsStore
+    /// keys used in O0SettingsStore
     QString                           keyToken;
     QString                           keyExpires;
     QString                           keyCookies;
 
-    // the api token and its expiration time in seconds since January 1st, 1970
+    /// the api token and its expiration time in seconds since January 1st, 1970
     QString                           apiToken;
     uint                              apiTokenExpires;
 
-    // this hash table allows us to serve multiple requests concurrently
+    /// this hash table allows us to serve multiple requests concurrently
     QHash<QNetworkReply*, Request*>   pendingRequests;
 
-    // cached api call results
+    /// cached api call results
     QHash<QString, AutoCompletions>   cachedAutoCompletions;
     QHash<QUrl, QByteArray>           cachedLoadUrls;
     QHash<QString, ImageScores>       cachedImageScores;
@@ -291,8 +300,8 @@ INatTalker::INatTalker(QWidget* const parent, const QString& serviceName,
             this, SLOT(slotFinished(QNetworkReply*)));
 
     d->settings = WSToolUtils::getOauthSettings(this);
-    d->store = new O0SettingsStore(d->settings,
-                                   QLatin1String(O2_ENCRYPTION_KEY), this);
+    d->store    = new O0SettingsStore(d->settings,
+                                      QLatin1String(O2_ENCRYPTION_KEY), this);
     d->store->setGroupKey(d->serviceName);
 }
 
@@ -300,10 +309,13 @@ INatTalker::~INatTalker()
 {
     d->clear();
     WSToolUtils::removeTemporaryDir(d->serviceName.toLatin1().constData());
+
     delete d;
 }
 
-// Try to restore a valid API token; they are good for 24 hours.
+/**
+ * Try to restore a valid API token; they are good for 24 hours.
+ */
 bool INatTalker::restoreApiToken(const QString& username,
                                  QList<QNetworkCookie>& cookies,
                                  bool emitSignal)
@@ -316,7 +328,7 @@ bool INatTalker::restoreApiToken(const QString& username,
     }
 
     d->store->setGroupKey(d->serviceName + username);
-    d->apiToken = d->store->value(d->keyToken);
+    d->apiToken        = d->store->value(d->keyToken);
     d->apiTokenExpires = d->store->value(d->keyExpires,
                                          QString::number(0)).toInt();
     QString cookiesStr = d->store->value(d->keyCookies);
@@ -327,9 +339,9 @@ bool INatTalker::restoreApiToken(const QString& username,
 
         for (auto str : cookiesStr.split(QLatin1Char(COOKIE_SEPARATOR)))
         {
-            QList<QNetworkCookie> lst(QNetworkCookie::parseCookies(str.
-                                      toUtf8()));
-            assert(lst.count() == 1);
+            QList<QNetworkCookie> lst(QNetworkCookie::parseCookies(str.toUtf8()));
+
+            Q_ASSERT(lst.count() == 1);
 
             for (auto cookie : lst)
             {
@@ -379,10 +391,13 @@ int INatTalker::apiTokenExpiresIn() const
     }
 
     uint time = (uint)(QDateTime::currentMSecsSinceEpoch() / 1000);
-    return d->apiTokenExpires <= time ? -1 : d->apiTokenExpires - time;
+
+    return ((d->apiTokenExpires <= time) ? -1 : (d->apiTokenExpires - time));
 }
 
-// We received an api token from a web brower login.
+/**
+ * We received an api token from a web brower login.
+ */
 void INatTalker::slotApiToken(const QString& apiToken,
                               const QList<QNetworkCookie>& cookies)
 {
@@ -396,22 +411,18 @@ void INatTalker::slotApiToken(const QString& apiToken,
     else
     {
         qCDebug(DIGIKAM_WEBSERVICES_LOG) << "API token received; "
-                                         "querying user info.";
+                                            "querying user info.";
         d->apiTokenExpires = (uint)(QDateTime::currentMSecsSinceEpoch() / 1000 +
                                     INAT_API_TOKEN_EXPIRATION);
         userInfo(cookies);
     }
 }
 
-
-//
-// Get login, name, and icon of authorized user.
-//
-
+/**
+ * Get login, name, and icon of authorized user.
+ */
 class UserRequest : public Request
 {
-    QList<QNetworkCookie> m_cookies;
-
 public:
 
     UserRequest(const QList<QNetworkCookie>& cookies)
@@ -424,7 +435,7 @@ public:
     {
         QJsonObject json = parseJsonResponse(data);
 
-        if (json.contains(RESULTS) && json[RESULTS].toArray().count() == 1)
+        if (json.contains(RESULTS) && (json[RESULTS].toArray().count() == 1))
         {
             QJsonObject result = json[RESULTS].toArray()[0].toObject();
             QString username(result[LOGIN].toString());
@@ -432,13 +443,16 @@ public:
                                                result[NAME].toString(),
                                                QUrl(result[ICON].toString()));
             talker.d->store->setGroupKey(talker.d->serviceName + username);
+
             // save api token
+
             talker.d->store->setValue(talker.d->keyToken, talker.d->apiToken);
+
             // save api token expiration
-            talker.d->store->setValue(talker.d->keyExpires,
-                                      QString::number(talker.d->
-                                              apiTokenExpires));
+
+            talker.d->store->setValue(talker.d->keyExpires, QString::number(talker.d->apiTokenExpires));
             // save cookies
+
             QDateTime now(QDateTime::currentDateTime());
             QByteArray saveCookies;
 
@@ -474,6 +488,10 @@ public:
 
         emit talker.signalBusy(false);
     }
+
+private:
+
+    QList<QNetworkCookie> m_cookies;
 };
 
 void INatTalker::userInfo(const QList<QNetworkCookie>& cookies)
@@ -504,18 +522,15 @@ void INatTalker::userInfo(const QList<QNetworkCookie>& cookies)
                               new UserRequest(cookies));
 }
 
-
-//
-// Load a URL and return result as QByteArry; used for images (icons).
-//
-
+/**
+ * Load a URL and return result as QByteArry; used for images (icons).
+ */
 class LoadUrlRequest : public Request
 {
-    QUrl m_url;
-
 public:
 
-    explicit LoadUrlRequest(const QUrl& url) : m_url(url)
+    explicit LoadUrlRequest(const QUrl& url)
+        : m_url(url)
     {
     }
 
@@ -533,6 +548,10 @@ public:
         talker.d->cachedLoadUrls.insert(m_url, data);
         emit talker.signalLoadUrlSucceeded(m_url, data);
     }
+
+private:
+
+    QUrl m_url;
 };
 
 void INatTalker::loadUrl(const QUrl& imgUrl)
@@ -550,6 +569,7 @@ void INatTalker::loadUrl(const QUrl& imgUrl)
     {
         qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Url" << imgUrl << "found in cache";
         emit signalLoadUrlSucceeded(imgUrl, d->cachedLoadUrls.value(imgUrl));
+
         return;
     }
 
@@ -558,18 +578,15 @@ void INatTalker::loadUrl(const QUrl& imgUrl)
                               new LoadUrlRequest(imgUrl));
 }
 
-
-//
-//  taxon auto-completion
-//
-
+/**
+ *  taxon auto-completion
+ */
 class AutoCompletionRequest : public Request
 {
-    QString m_partialName;
-
 public:
 
-    explicit AutoCompletionRequest(const QString& name) : m_partialName(name)
+    explicit AutoCompletionRequest(const QString& name)
+        : m_partialName(name)
     {
     }
 
@@ -590,9 +607,14 @@ public:
 
             QPair<QString, QList<Taxon> > result(m_partialName, taxa);
             talker.d->cachedAutoCompletions.insert(m_partialName, result);
+
             emit talker.signalTaxonAutoCompletions(result);
         }
     }
+
+private:
+
+    QString m_partialName;
 };
 
 void INatTalker::taxonAutoCompletions(const QString& partialName)
@@ -625,36 +647,11 @@ void INatTalker::taxonAutoCompletions(const QString& partialName)
                               new AutoCompletionRequest(partialName));
 }
 
-//
-// get nearby places
-//
-
+/**
+ * get nearby places
+ */
 class NearbyPlacesRequest : public Request
 {
-    double  m_latitude;
-    double  m_longitude;
-    QString m_query;
-
-    struct Place
-    {
-        QString m_name;
-        double  m_bboxArea;
-
-        Place() : m_bboxArea(0.0)
-        {
-        }
-
-        Place(const QString& n, double ba)
-            : m_name(n),
-              m_bboxArea(ba)
-        {
-        }
-
-        bool operator <(const Place& other) const
-        {
-            return m_bboxArea < other.m_bboxArea;
-        }
-    };
 
 public:
 
@@ -673,7 +670,7 @@ public:
         if (json.contains(RESULTS))
         {
             static const QString BBOX_AREA = QLatin1String("bbox_area");
-            QJsonObject results = json[RESULTS].toObject();
+            QJsonObject results            = json[RESULTS].toObject();
             QList<Place> places;
 
             for (auto key : results.keys())
@@ -698,6 +695,36 @@ public:
             emit talker.signalNearbyPlaces(placesStrList);
         }
     }
+
+private:
+
+    struct Place
+    {
+        QString m_name;
+        double  m_bboxArea;
+
+        Place()
+            : m_bboxArea(0.0)
+        {
+        }
+
+        Place(const QString& n, double ba)
+            : m_name(n),
+              m_bboxArea(ba)
+        {
+        }
+
+        bool operator <(const Place& other) const
+        {
+            return (m_bboxArea < other.m_bboxArea);
+        }
+    };
+
+private:
+
+    double  m_latitude;
+    double  m_longitude;
+    QString m_query;
 };
 
 void INatTalker::nearbyPlaces(double latitude, double longitude)
@@ -720,7 +747,9 @@ void INatTalker::nearbyPlaces(double latitude, double longitude)
     {
         qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Nearby places for lat" << lat
                                          << "lon" << lng << "found in cache.";
+
         emit signalNearbyPlaces(d->cachedNearbyPlaces.value(query.query()));
+
         return;
     }
 
@@ -729,33 +758,26 @@ void INatTalker::nearbyPlaces(double latitude, double longitude)
                          QLatin1String(O2_MIME_TYPE_JSON));
 
     d->pendingRequests.insert(d->netMngr->get(netRequest),
-                              new NearbyPlacesRequest(latitude, longitude,
-                                      query.query()));
+                              new NearbyPlacesRequest(latitude, longitude, query.query()));
 }
 
-//
-// Find the closest observation; used as a sanity check for identifications:
-// when the closest known observation is hundreds of kilometers away, we
-// have likely misidentified the organism in our photo.
-//
-
+/**
+ * Find the closest observation; used as a sanity check for identifications:
+ * when the closest known observation is hundreds of kilometers away, we
+ * have likely misidentified the organism in our photo.
+ */
 class NearbyObservationRequest : public Request
 {
-    uint    m_taxon;
-    double  m_latitude;
-    double  m_longitude;
-    double  m_radiusKm;
-    QString m_query;
 
 public:
 
     NearbyObservationRequest(uint taxon, double latitude, double longitude,
                              double km, const QString& query)
-        : m_taxon(taxon),
-          m_latitude(latitude),
+        : m_taxon    (taxon),
+          m_latitude (latitude),
           m_longitude(longitude),
-          m_radiusKm(km),
-          m_query(query)
+          m_radiusKm (km),
+          m_query    (query)
     {
     }
 
@@ -767,21 +789,24 @@ public:
         if (json.contains(TOTAL_RESULTS))
         {
             static const double MAX_DISTANGE_KM = EARTH_RADIUS_KM * M_PI;
-            int total_results = json[TOTAL_RESULTS].toInt();
+            int total_results                   = json[TOTAL_RESULTS].toInt();
 
             if (total_results == 0)
             {
                 if (m_radiusKm < MAX_DISTANGE_KM)
                 {
                     // Try again, double the radius.
+
                     talker.closestObservation(m_taxon, m_latitude, m_longitude,
                                               2 * m_radiusKm, m_query);
                 }
                 else
                 {
                     // The entire Earth searched, no observation found.
+
                     talker.d->cachedNearbyObservations.insert(m_query,
                             INatTalker::NearbyObservation());
+
                     emit talker.signalNearbyObservation(INatTalker::
                                                         NearbyObservation());
                 }
@@ -791,9 +816,11 @@ public:
                 INatTalker::NearbyObservation closestObscured(
                     -1, 0.0, 0.0, MAX_DISTANGE_KM * 1000.0,
                     true, m_taxon, m_latitude, m_longitude);
+
                 INatTalker::NearbyObservation closestOpen(
                     -1, 0.0, 0.0, MAX_DISTANGE_KM * 1000.0,
                     false, m_taxon, m_latitude, m_longitude);
+
                 QJsonArray results = json[RESULTS].toArray();
 
                 for (auto resultValue : results)
@@ -805,12 +832,12 @@ public:
                         continue;
                     }
 
-                    int observationId = result[ID].toInt();
+                    int observationId     = result[ID].toInt();
                     QJsonArray coordinates(result[GEOJSON].toObject()
                                            [COORDINATES].toArray());
-                    double latitude = coordinates[1].toDouble();
-                    double longitude = coordinates[0].toDouble();
-                    bool obscured = result[OBSCURED].toBool();
+                    double latitude       = coordinates[1].toDouble();
+                    double longitude      = coordinates[0].toDouble();
+                    bool obscured         = result[OBSCURED].toBool();
                     double distanceMeters = distanceBetween(m_latitude,
                                                             m_longitude,
                                                             latitude,
@@ -834,14 +861,14 @@ public:
                     }
                 }
 
-                double newDistanceMeters = closestOpen.isValid()
-                                           ? closestOpen.m_distanceMeters
-                                           : closestObscured.m_distanceMeters;
+                double newDistanceMeters = closestOpen.isValid() ? closestOpen.m_distanceMeters
+                                                                 : closestObscured.m_distanceMeters;
 
-                if (results.count() < total_results && newDistanceMeters > 10.0)
+                if ((results.count() < total_results) && (newDistanceMeters > 10.0))
                 {
                     // There are additional observations that we have not
                     // downloaded; request closer ones.
+
                     talker.closestObservation(m_taxon, m_latitude, m_longitude,
                                               newDistanceMeters / 999.0,
                                               m_query);
@@ -850,7 +877,8 @@ public:
                 {
                     talker.d->cachedNearbyObservations.insert(m_query,
                             closestOpen.isValid() ? closestOpen
-                            : closestObscured);
+                                                  : closestObscured);
+
                     emit talker.signalNearbyObservation(closestOpen.isValid()
                                                         ? closestOpen
                                                         : closestObscured);
@@ -858,6 +886,14 @@ public:
             }
         }
     }
+
+private:
+
+    uint    m_taxon;
+    double  m_latitude;
+    double  m_longitude;
+    double  m_radiusKm;
+    QString m_query;
 };
 
 void INatTalker::closestObservation(uint taxon, double latitude,
@@ -890,6 +926,7 @@ void INatTalker::closestObservation(uint taxon, double latitude,
                                          << taxon << "at" << latitude
                                          << longitude << "with radius"
                                          << radiusKm << "km found in cache.";
+
         emit signalNearbyObservation(d->cachedNearbyObservations.value(
                                          query.query()));
         return;
@@ -900,21 +937,17 @@ void INatTalker::closestObservation(uint taxon, double latitude,
                          QLatin1String(O2_MIME_TYPE_JSON));
 
     d->pendingRequests.insert(d->netMngr->get(netRequest),
-                              new NearbyObservationRequest(taxon, latitude,
-                                      longitude, radiusKm,
-                                      origQuery.isEmpty() ? query.query()
-                                      : origQuery));
+                              new NearbyObservationRequest(taxon, latitude, longitude, radiusKm,
+                                                           origQuery.isEmpty() ? query.query()
+                                                                               : origQuery));
 }
 
 
-//
-//  get taxon suggestions for an image
-//
-
+/**
+ *  get taxon suggestions for an image
+ */
 class ComputerVisionRequest : public Request
 {
-    QString m_imagePath;
-    QString m_tmpFilePath;
 
 public:
 
@@ -991,19 +1024,28 @@ public:
         talker.d->cachedImageScores.insert(m_imagePath, result);
         emit talker.signalComputerVisionResults(result);
     }
+
+private:
+
+    QString m_imagePath;
+    QString m_tmpFilePath;
 };
 
 void INatTalker::computerVision(const QUrl& localImage)
 {
-    if (localImage.isEmpty() || apiTokenExpiresIn() <= 0)
+    if (localImage.isEmpty() || (apiTokenExpiresIn() <= 0))
     {
         qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Computer-vision API not called:"
-                                         << (localImage.isEmpty()
-                                             ? "No image." : "Not logged in.");
+                                         << (localImage.isEmpty() ? "No image."
+                                                                  : "Not logged in.");
         return;
     }
 
-    enum { HEIGHT = 299, WIDTH = 299 };
+    enum
+    {
+        HEIGHT = 299,
+        WIDTH  = 299
+    };
 
     QString path = localImage.path();
 
@@ -1013,6 +1055,7 @@ void INatTalker::computerVision(const QUrl& localImage)
                                          << localImage.path()
                                          << "found in cache.";
         emit signalComputerVisionResults(d->cachedImageScores.value(path));
+
         return;
     }
 
@@ -1024,7 +1067,7 @@ void INatTalker::computerVision(const QUrl& localImage)
         image.load(path);
     }
 
-    path = tmpFileName(path);
+    path  = tmpFileName(path);
     image = image.scaled(WIDTH, HEIGHT);
     image.save(path, "JPEG");
 
@@ -1053,31 +1096,25 @@ void INatTalker::computerVision(const QUrl& localImage)
 
     parameters << Parameter(QLatin1String("locale"), locale.name());
 
-    QHttpMultiPart* multiPart = getMultiPart(parameters, QLatin1String("image"),
-                                path);
+    QHttpMultiPart* const multiPart = getMultiPart(parameters, QLatin1String("image"), path);
 
     QUrl url(d->apiUrl + QLatin1String("computervision/score_image"));
     QNetworkRequest netRequest(url);
     netRequest.setRawHeader("Authorization", d->apiToken.toLatin1());
 
-    QNetworkReply* reply = d->netMngr->post(netRequest, multiPart);
+    QNetworkReply* const reply = d->netMngr->post(netRequest, multiPart);
     multiPart->setParent(reply);
-    d->pendingRequests.insert(reply,
-                              new ComputerVisionRequest(localImage.path(),
-                                      path));
+    d->pendingRequests.insert(reply, new ComputerVisionRequest(localImage.path(), path));
 }
 
 QString INatTalker::tmpFileName(const QString& path)
 {
     QString suffix(QLatin1String(""));
 
-    for (;;)
+    for ( ; ; )
     {
-        QString tmpFn =
-            WSToolUtils::makeTemporaryDir(d->serviceName.toLatin1().
-                                          constData()).
-            filePath(QFileInfo(path).baseName().trimmed() + suffix +
-                     QLatin1String(".jpg"));
+        QString tmpFn = WSToolUtils::makeTemporaryDir(d->serviceName.toLatin1().constData()).
+            filePath(QFileInfo(path).baseName().trimmed() + suffix + QLatin1String(".jpg"));
 
         if (!QFile::exists(tmpFn))
         {
@@ -1090,8 +1127,6 @@ QString INatTalker::tmpFileName(const QString& path)
 
 class CreateObservationRequest : public Request
 {
-    INatTalker::PhotoUploadRequest m_uploadRequest;
-
 public:
 
     CreateObservationRequest(const INatTalker::PhotoUploadRequest& req)
@@ -1108,9 +1143,14 @@ public:
         {
             INatTalker::PhotoUploadRequest request(m_uploadRequest);
             request.m_observationId = json[ID].toInt();
+
             emit talker.signalObservationCreated(request);
         }
     }
+
+private:
+
+    INatTalker::PhotoUploadRequest m_uploadRequest;
 };
 
 void INatTalker::createObservation(const QByteArray& parameters,
@@ -1129,17 +1169,14 @@ void INatTalker::createObservation(const QByteArray& parameters,
                               new CreateObservationRequest(upload));
 }
 
-
 class UploadPhotoRequest : public Request
 {
-    INatTalker::PhotoUploadRequest m_request;
-    QString                        m_tmpImage;
-
 public:
 
     UploadPhotoRequest(const INatTalker::PhotoUploadRequest& req,
                        const QString& tmpImg)
-        : m_request(req), m_tmpImage(tmpImg)
+        : m_request (req),
+          m_tmpImage(tmpImg)
     {
     }
 
@@ -1155,7 +1192,7 @@ public:
                        const QByteArray& data) const override
     {
         static const QString PHOTO_ID = QLatin1String("photo_id");
-        QJsonObject json = parseJsonResponse(data);
+        QJsonObject json              = parseJsonResponse(data);
 
         if (json.contains(PHOTO_ID))
         {
@@ -1164,6 +1201,11 @@ public:
             emit talker.signalPhotoUploaded(result);
         }
     }
+
+private:
+
+    INatTalker::PhotoUploadRequest m_request;
+    QString                        m_tmpImage;
 };
 
 void INatTalker::uploadNextPhoto(const PhotoUploadRequest& request)
@@ -1188,8 +1230,8 @@ void INatTalker::uploadNextPhoto(const PhotoUploadRequest& request)
         {
             tmpImage = tmpFileName(path);
 
-            if (image.width() > request.m_maxDim ||
-                image.height() > request.m_maxDim)
+            if ((image.width()  > request.m_maxDim) ||
+                (image.height() > request.m_maxDim))
             {
                 image = image.scaled(request.m_maxDim, request.m_maxDim,
                                      Qt::KeepAspectRatio,
@@ -1206,7 +1248,7 @@ void INatTalker::uploadNextPhoto(const PhotoUploadRequest& request)
     QUrl url(d->apiUrl + QLatin1String("observation_photos"));
     QNetworkRequest netRequest(url);
     netRequest.setRawHeader("Authorization", request.m_apiKey.toLatin1());
-    QNetworkReply* reply = d->netMngr->post(netRequest, multiPart);
+    QNetworkReply* const reply = d->netMngr->post(netRequest, multiPart);
     multiPart->setParent(reply);
     d->pendingRequests.insert(reply, new UploadPhotoRequest(request, tmpImage));
 }
@@ -1214,8 +1256,6 @@ void INatTalker::uploadNextPhoto(const PhotoUploadRequest& request)
 
 class DeleteObservationRequest : public Request
 {
-    int m_observationId;
-
 public:
 
     DeleteObservationRequest(int id)
@@ -1227,9 +1267,15 @@ public:
     {
         emit talker.signalObservationDeleted(m_observationId);
     }
+
+private:
+
+    int m_observationId;
 };
 
-// Delete an observation; called when canceling uploads.
+/**
+ * Delete an observation; called when canceling uploads.
+ */
 void INatTalker::deleteObservation(int id, const QString& apiKey)
 {
     QUrl url(d->apiUrl + QLatin1String("observations/") + QString::number(id));
@@ -1240,7 +1286,6 @@ void INatTalker::deleteObservation(int id, const QString& apiKey)
     d->pendingRequests.insert(d->netMngr->deleteResource(netRequest),
                               new DeleteObservationRequest(id));
 }
-
 
 void INatTalker::cancel()
 {
@@ -1256,6 +1301,7 @@ void INatTalker::cancel()
 void INatTalker::slotFinished(QNetworkReply* reply)
 {
     // ignore unexpected response
+
     if (!d->pendingRequests.contains(reply))
     {
         qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Ignoring unexpected NetworkReply.";
@@ -1263,7 +1309,7 @@ void INatTalker::slotFinished(QNetworkReply* reply)
         return;
     }
 
-    Request* request = d->pendingRequests.take(reply);
+    Request* const request = d->pendingRequests.take(reply);
 
     if (reply->error() == QNetworkReply::NoError)
     {

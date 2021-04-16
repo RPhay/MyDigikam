@@ -43,7 +43,6 @@
 #include "inattaxon.h"
 #include "inatscore.h"
 
-
 class QProgressDialog;
 
 using namespace Digikam;
@@ -65,9 +64,34 @@ class INatTalker : public QObject
 
 public:
 
-    // This struct contains all the data needed for photo uploads.
+    /**
+     * This struct contains all the data needed for photo uploads.
+     */
     struct PhotoUploadRequest
     {
+        PhotoUploadRequest()
+            : m_observationId(-1),
+              m_updateIds    (false),
+              m_rescale      (false),
+              m_maxDim       (-1),
+              m_quality      (-1)
+        {
+        }
+
+        PhotoUploadRequest(const QList<QUrl>& imgs,
+                           bool updId,
+                           bool resize,
+                           int mxDim,
+                           int q)
+            : m_observationId(-1),
+              m_images       (imgs),
+              m_updateIds    (updId),
+              m_rescale      (resize),
+              m_maxDim       (mxDim),
+              m_quality      (q)
+        {
+        }
+
         int         m_observationId;
         QList<QUrl> m_images;
         QString     m_apiKey;
@@ -75,39 +99,81 @@ public:
         bool        m_rescale;
         int         m_maxDim;
         int         m_quality;
-
-        PhotoUploadRequest() : m_observationId(-1), m_updateIds(false),
-            m_rescale(false), m_maxDim(-1), m_quality(-1)
-        {
-        }
-
-        PhotoUploadRequest(const QList<QUrl>& imgs, bool updId, bool resize,
-                           int mxDim, int q)
-            : m_observationId(-1), m_images(imgs), m_updateIds(updId),
-              m_rescale(resize), m_maxDim(mxDim), m_quality(q)
-        {
-        }
     };
 
-    // This struct is sent after each photo has been uploaded.
+    /**
+     * This struct is sent after each photo has been uploaded.
+     */
     struct PhotoUploadResult
     {
-        PhotoUploadRequest m_request;
-        int                m_observationPhotoId;
-        int                m_photoId;
-
-        PhotoUploadResult() : m_observationPhotoId(-1), m_photoId(-1)
+        PhotoUploadResult()
+            : m_observationPhotoId(-1),
+              m_photoId           (-1)
         {
         }
 
         PhotoUploadResult(const PhotoUploadRequest& req, int obsPhId, int phId)
-            : m_request(req), m_observationPhotoId(obsPhId), m_photoId(phId)
+            : m_request           (req),
+              m_observationPhotoId(obsPhId),
+              m_photoId           (phId)
         {
         }
+
+        PhotoUploadRequest m_request;
+        int                m_observationPhotoId;
+        int                m_photoId;
     };
 
     struct NearbyObservation
     {
+
+        NearbyObservation()
+            : m_observationId     (-1),
+              m_latitude          (0.0),
+              m_longitude         (0.0),
+              m_distanceMeters    (-1.0),
+              m_obscured          (false),
+              m_referenceTaxon    (0),
+              m_referenceLatitude (0.0),
+              m_referenceLongitude(0.0)
+        {
+        }
+
+        NearbyObservation(int id,
+                          double latitude,
+                          double longitude,
+                          double distanceMeters,
+                          bool obscured,
+                          uint taxon,
+                          double referenceLatitude,
+                          double referenceLongitude)
+            : m_observationId       (id),
+              m_latitude            (latitude),
+              m_longitude           (longitude),
+              m_distanceMeters      (distanceMeters),
+              m_obscured            (obscured),
+              m_referenceTaxon      (taxon),
+              m_referenceLatitude   (referenceLatitude),
+              m_referenceLongitude  (referenceLongitude)
+        {
+        }
+
+        void updateObservation(int id,
+                               double latitude,
+                               double longitude,
+                               double distanceMeters)
+        {
+            m_observationId  = id;
+            m_latitude       = latitude;
+            m_longitude      = longitude;
+            m_distanceMeters = distanceMeters;
+        }
+
+        bool isValid() const
+        {
+            return (m_observationId != -1);
+        }
+
         int    m_observationId;
         double m_latitude;
         double m_longitude;
@@ -116,49 +182,10 @@ public:
         uint   m_referenceTaxon;
         double m_referenceLatitude;
         double m_referenceLongitude;
-
-        NearbyObservation()
-            : m_observationId(-1),
-              m_latitude(0.0),
-              m_longitude(0.0),
-              m_distanceMeters(-1.0),
-              m_obscured(false),
-              m_referenceTaxon(0),
-              m_referenceLatitude(0.0),
-              m_referenceLongitude(0.0)
-        {
-        }
-
-        NearbyObservation(int id, double latitude, double longitude,
-                          double distanceMeters, bool obscured, uint taxon,
-                          double referenceLatitude, double referenceLongitude)
-            : m_observationId(id),
-              m_latitude(latitude),
-              m_longitude(longitude),
-              m_distanceMeters(distanceMeters),
-              m_obscured(obscured),
-              m_referenceTaxon(taxon),
-              m_referenceLatitude(referenceLatitude),
-              m_referenceLongitude(referenceLongitude)
-        {
-        }
-
-        void updateObservation(int id, double latitude, double longitude,
-                               double distanceMeters)
-        {
-            m_observationId = id;
-            m_latitude = latitude;
-            m_longitude = longitude;
-            m_distanceMeters = distanceMeters;
-        }
-
-        bool isValid() const
-        {
-            return m_observationId != -1;
-        }
     };
 
-    INatTalker(QWidget* const parent, const QString& serviceName,
+    INatTalker(QWidget* const parent,
+               const QString& serviceName,
                DInfoInterface* const iface);
     ~INatTalker() override;
 
@@ -166,43 +193,68 @@ public:
     void    cancel();
     void    removeUserName(const QString& userName);
 
-    // Are we still uploading observations or photos?
+    /**
+     * Are we still uploading observations or photos?
+     */
     bool    stillUploading() const;
 
-    // Returns -1 if there is no valid token; number of seconds otherwise.
+    /**
+     * Returns -1 if there is no valid token; number of seconds otherwise.
+     */
     int     apiTokenExpiresIn() const;
 
-    // Try to restore a valid API token; they are good for 24 hours.
-    bool    restoreApiToken(const QString& username, QList<QNetworkCookie>&,
+    /**
+     * Try to restore a valid API token; they are good for 24 hours.
+     */
+    bool    restoreApiToken(const QString& username,
+                            QList<QNetworkCookie>&,
                             bool emitSignal);
 
-    // Download an image from iNaturalist servers.
+    /**
+     * Download an image from iNaturalist servers.
+     */
     void    loadUrl(const QUrl& url);
 
-    // Obtain auto completions for taxa from iNaturalist servers.
+    /**
+     * Obtain auto completions for taxa from iNaturalist servers.
+     */
     void    taxonAutoCompletions(const QString& partialName);
 
-    // Retrieve login, name, and icon of current user.
+    /**
+     * Retrieve login, name, and icon of current user.
+     */
     void    userInfo(const QList<QNetworkCookie>&);
 
-    // Get list of nearby places.
+    /**
+     * Get list of nearby places.
+     */
     void    nearbyPlaces(double latitude, double longitude);
 
-    // Get closest nearby observation.
+    /**
+     * Get closest nearby observation.
+     */
     void    closestObservation(uint taxon, double latitude, double longitude,
                                double radius_km = 10.0,
                                const QString& origQuery = QString());
 
-    // Identify taxa from a given photo.
+    /**
+     * Identify taxa from a given photo.
+     */
     void    computerVision(const QUrl& localImage);
 
-    // Create an iNaturalist observation; photo uploads follow.
+    /**
+     * Create an iNaturalist observation; photo uploads follow.
+     */
     void    createObservation(const QByteArray&, const PhotoUploadRequest&);
 
-    // Delete an observation; called when canceling uploads.
+    /**
+     * Delete an observation; called when canceling uploads.
+     */
     void    deleteObservation(int id, const QString& apiKey);
 
-    // Upload another photo to previously created observation.
+    /**
+     * Upload another photo to previously created observation.
+     */
     void    uploadNextPhoto(const PhotoUploadRequest&);
 
 public:
