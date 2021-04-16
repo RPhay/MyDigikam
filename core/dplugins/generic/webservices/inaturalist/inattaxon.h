@@ -1,6 +1,3 @@
-#ifndef DIGIKAM_INAT_TAXON_H
-#define DIGIKAM_INAT_TAXON_H
-
 /* ============================================================
  *
  * This file is a part of digiKam project
@@ -22,6 +19,9 @@
  * GNU General Public License for more details.
  *
  * ============================================================ */
+
+#ifndef DIGIKAM_INAT_TAXON_H
+#define DIGIKAM_INAT_TAXON_H
 
 #include <QString>
 #include <QUrl>
