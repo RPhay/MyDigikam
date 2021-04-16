@@ -23,6 +23,8 @@
 #ifndef DIGIKAM_INAT_SUGGEST_H
 #define DIGIKAM_INAT_SUGGEST_H
 
+// Qt includes
+
 #include <QObject>
 #include <QLineEdit>
 #include <QEvent>
@@ -33,12 +35,16 @@
 #include <QVector>
 #include <QHash>
 
+// Local includes
+
 #include "inattaxon.h"
 #include "inattaxonedit.h"
 #include "inatscore.h"
 
 namespace DigikamGenericINatPlugin
 {
+
+class INatTalker;
 
 typedef QPair<QString, QList<Taxon> > AutoCompletions;
 
@@ -48,9 +54,10 @@ class SuggestTaxonCompletion : public QObject
 
 public:
 
-    explicit SuggestTaxonCompletion(TaxonEdit* parent);
+    explicit SuggestTaxonCompletion(TaxonEdit* const parent);
     ~SuggestTaxonCompletion();
-    void setTalker(class INatTalker* talker);
+
+    void setTalker(INatTalker* const talker);
 
 Q_SIGNALS:
 
@@ -74,7 +81,9 @@ private:
     bool    eventFilter(QObject* obj, QEvent* ev) override;
     void    showCompletion(const struct Completions&);
     void    taxon2Item(const Taxon&, QTreeWidgetItem*, const QString&);
-    QString getText();
+    QString getText() const;
+
+private:
 
     class Private;
     Private* const d;

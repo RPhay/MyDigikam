@@ -22,6 +22,8 @@
 
 #include "inatsuggest.h"
 
+// Qt includes
+
 #include <QtWidgets>
 #include <QtCore>
 
@@ -37,45 +39,51 @@
 namespace DigikamGenericINatPlugin
 {
 
-enum { ITEM_PHOTO_IDX  = 0,
-       ITEM_NAME_IDX   = 1
-     };
+enum
+{
+    ITEM_PHOTO_IDX = 0,
+    ITEM_NAME_IDX  = 1
+};
 
 struct TaxonAndFlags
 {
-    Taxon m_taxon;
-    bool  m_seenNearby;
-    bool  m_visuallySimilar;
-
-    TaxonAndFlags(const Taxon& taxon, bool visuallySimilar = false,
-                  bool seenNearby = false)
+    explicit TaxonAndFlags(const Taxon& taxon,
+                           bool visuallySimilar = false,
+                           bool seenNearby = false)
         : m_taxon          (taxon),
           m_seenNearby     (seenNearby),
           m_visuallySimilar(visuallySimilar)
     {
     }
+
+    Taxon m_taxon;
+    bool  m_seenNearby;
+    bool  m_visuallySimilar;
 };
 
 struct Completions
 {
+    explicit Completions(bool fromVision)
+        : m_fromVision(fromVision)
+    {
+    }
+
     Taxon                m_commonAncestor;
     QList<TaxonAndFlags> m_taxa;
     bool                 m_fromVision;
-
-    explicit Completions(bool fromVision) : m_fromVision(fromVision)
-    {
-    }
 };
+
+// ----------------------------------------------------------------------------
 
 class Q_DECL_HIDDEN SuggestTaxonCompletion::Private
 {
 public:
 
     Private()
-        :  editor    (nullptr),
-           talker    (nullptr),
-           popup     (nullptr),
-           fromVision(false)
+        : editor    (nullptr),
+          talker    (nullptr),
+          popup     (nullptr),
+          fromVision(false)
     {
     }
 
@@ -88,11 +96,12 @@ public:
     QHash<QUrl, QTreeWidgetItem*> url2item;
 };
 
-SuggestTaxonCompletion::SuggestTaxonCompletion(TaxonEdit* parent)
-    : QObject(parent), d(new Private)
+SuggestTaxonCompletion::SuggestTaxonCompletion(TaxonEdit* const parent)
+    : QObject(parent),
+      d      (new Private)
 {
     d->editor = parent;
-    d->popup = new QTreeWidget;
+    d->popup  = new QTreeWidget;
     d->popup->setWindowFlags(Qt::Popup);
     d->popup->setFocusPolicy(Qt::NoFocus);
     d->popup->setFocusProxy(parent);
@@ -109,13 +118,14 @@ SuggestTaxonCompletion::SuggestTaxonCompletion(TaxonEdit* parent)
     d->popup->installEventFilter(this);
 
     connect(d->popup, SIGNAL(itemClicked(QTreeWidgetItem*,int)),
-            SLOT(slotDoneCompletion()));
+            this, SLOT(slotDoneCompletion()));
 
     d->timer.setSingleShot(true);
     d->timer.setInterval(500);
     connect(&d->timer, SIGNAL(timeout()), SLOT(slotAutoSuggest()));
+
     connect(d->editor, SIGNAL(textEdited(QString)),
-            SLOT(slotTextEdited(const QString&)));
+            this, SLOT(slotTextEdited(const QString&)));
 }
 
 SuggestTaxonCompletion::~SuggestTaxonCompletion()
@@ -130,18 +140,21 @@ void SuggestTaxonCompletion::slotTextEdited(const QString&)
     d->timer.start();
 }
 
-void SuggestTaxonCompletion::setTalker(INatTalker* inatTalker)
+void SuggestTaxonCompletion::setTalker(INatTalker* const inatTalker)
 {
     d->talker = inatTalker;
-    connect(d->talker,
-            SIGNAL(signalTaxonAutoCompletions(const AutoCompletions&)),
+
+    connect(d->talker, SIGNAL(signalTaxonAutoCompletions(const AutoCompletions&)),
             this, SLOT(slotTaxonAutoCompletions(const AutoCompletions&)));
+
     connect(d->talker, SIGNAL(signalComputerVisionResults(const ImageScores&)),
             this, SLOT(slotComputerVisionResults(const ImageScores&)));
-    connect(d->editor, SIGNAL(inFocus()), this, SLOT(slotInFocus()));
-    connect(d->talker, SIGNAL(signalLoadUrlSucceeded(const QUrl&,
-                              const QByteArray&)),
-            this, SLOT(slotImageLoaded(const QUrl&, const QByteArray&)));
+
+    connect(d->editor, SIGNAL(inFocus()),
+            this, SLOT(slotInFocus()));
+
+    connect(d->talker, SIGNAL(signalLoadUrlSucceeded(const QUrl&,const QByteArray&)),
+            this, SLOT(slotImageLoaded(const QUrl&,const QByteArray&)));
 }
 
 void SuggestTaxonCompletion::slotInFocus()
@@ -161,27 +174,32 @@ bool SuggestTaxonCompletion::eventFilter(QObject* obj, QEvent* ev)
     {
         d->popup->hide();
         d->editor->setFocus();
+
         return true;
     }
 
     if (ev->type() == QEvent::KeyPress)
     {
         bool consumed = false;
-        int key = static_cast<QKeyEvent*>(ev)->key();
+        int key       = static_cast<QKeyEvent*>(ev)->key();
 
         switch (key)
         {
             case Qt::Key_Enter:
             case Qt::Key_Return:
+            {
                 slotDoneCompletion();
                 consumed = true;
                 break;
+            }
 
             case Qt::Key_Escape:
+            {
                 d->editor->setFocus();
                 d->popup->hide();
                 consumed = true;
                 break;
+            }
 
             case Qt::Key_Up:
             case Qt::Key_Down:
@@ -189,13 +207,17 @@ bool SuggestTaxonCompletion::eventFilter(QObject* obj, QEvent* ev)
             case Qt::Key_End:
             case Qt::Key_PageUp:
             case Qt::Key_PageDown:
+            {
                 break;
+            }
 
             default:
+            {
                 d->editor->setFocus();
                 d->editor->event(ev);
                 d->popup->hide();
                 break;
+            }
         }
 
         return consumed;
@@ -215,6 +237,7 @@ void SuggestTaxonCompletion::taxon2Item(const Taxon& taxon,
     d->popup->setItemWidget(item, ITEM_NAME_IDX, new QLabel(htmlText));
 
     // photo
+
     const QUrl& photoUrl = taxon.squareUrl();
 
     if (!photoUrl.isEmpty())
@@ -238,7 +261,7 @@ void SuggestTaxonCompletion::showCompletion(const Completions& choices)
     {
         const Taxon& taxon = choices.m_commonAncestor;
         assert(choices.m_fromVision);
-        auto item = new QTreeWidgetItem(d->popup);
+        auto item          = new QTreeWidgetItem(d->popup);
         taxon2Item(taxon, item, i18n("We're pretty sure it's in this %1.",
                                      localizedTaxonomicRank(taxon.rank())));
     }
@@ -247,7 +270,7 @@ void SuggestTaxonCompletion::showCompletion(const Completions& choices)
     {
         QString info;
 
-        if (choice.m_visuallySimilar && choice.m_seenNearby)
+        if      (choice.m_visuallySimilar && choice.m_seenNearby)
         {
             info = i18n("Visually Similar") + QLatin1String(" / ") +
                    i18n("Seen Nearby");
@@ -277,7 +300,7 @@ void SuggestTaxonCompletion::showCompletion(const Completions& choices)
 
     d->popup->setCurrentItem(d->popup->topLevelItem(0));
 
-    for (int i = 0; i < columns; ++i)
+    for (int i = 0 ; i < columns ; ++i)
     {
         d->popup->resizeColumnToContents(i);
     }
@@ -318,6 +341,7 @@ void SuggestTaxonCompletion::slotDoneCompletion()
             else
             {
                 // combine scientific name and common name
+
                 d->editor->setText(taxon.name() + QLatin1String(" (") +
                                    taxon.commonName() + QLatin1String(")"));
             }
@@ -329,12 +353,13 @@ void SuggestTaxonCompletion::slotDoneCompletion()
     }
 }
 
-QString SuggestTaxonCompletion::getText()
+QString SuggestTaxonCompletion::getText() const
 {
     QString str = d->editor->text().simplified();
 
     // When we have "scientific name (common name)" we only
     // send the scientific name to auto-completion.
+
     int idx = str.indexOf(QLatin1String(" ("));
 
     if (idx >= 0)
@@ -364,8 +389,7 @@ void SuggestTaxonCompletion::slotPreventSuggest()
     d->timer.stop();
 }
 
-void SuggestTaxonCompletion::
-slotTaxonAutoCompletions(const AutoCompletions& taxa)
+void SuggestTaxonCompletion::slotTaxonAutoCompletions(const AutoCompletions& taxa)
 {
     if (getText() != taxa.first)
     {
@@ -385,8 +409,7 @@ slotTaxonAutoCompletions(const AutoCompletions& taxa)
     showCompletion(completions);
 }
 
-void SuggestTaxonCompletion::
-slotComputerVisionResults(const ImageScores& scores)
+void SuggestTaxonCompletion::slotComputerVisionResults(const ImageScores& scores)
 {
     if (!d->editor->text().simplified().isEmpty())
     {
@@ -417,12 +440,11 @@ slotComputerVisionResults(const ImageScores& scores)
     showCompletion(completions);
 }
 
-void SuggestTaxonCompletion::slotImageLoaded(const QUrl& url,
-        const QByteArray& data)
+void SuggestTaxonCompletion::slotImageLoaded(const QUrl& url, const QByteArray& data)
 {
     if (d->url2item.contains(url))
     {
-        QTreeWidgetItem* item = d->url2item[url];
+        QTreeWidgetItem* const item = d->url2item[url];
         QImage image;
         image.loadFromData(data);
         QIcon icon(QPixmap::fromImage(image));
