@@ -30,6 +30,7 @@
 #include <QHash>
 #include <QObject>
 #include <QString>
+#include <QEventLoop>
 #include <QByteArray>
 
 namespace Digikam
@@ -63,11 +64,9 @@ public:
 
     bool parse(const QString& path);
 
-Q_SIGNALS:
-
-    void signalExifToolMetadata(const QString& path,
-                                const TagsMap& parsed,
-                                const TagsMap& ignored);
+    QString currentParsedPath()  const;
+    TagsMap currentParsedTags()  const;
+    TagsMap currentIgnoredTags() const;
 
 private Q_SLOTS:
 
@@ -79,6 +78,10 @@ private Q_SLOTS:
 private:
 
     ExifToolProcess* m_proc;
+    QEventLoop*      m_loop;
+    QString          m_parsedPath;
+    TagsMap          m_parsedMap;
+    TagsMap          m_ignoredMap;
 };
 
 } // namespace Digikam

@@ -48,6 +48,7 @@ ExifToolParser::ExifToolParser(QObject* const parent)
 
     ExifToolTranslator::instance();
 
+
     // Create ExifTool parser instance.
 
     m_proc = new ExifToolProcess(parent);
@@ -62,15 +63,26 @@ ExifToolParser::ExifToolParser(QObject* const parent)
 
 #endif
 
-    // Connect at least cmdCompleted signal to slot
-
-    connect(m_proc, &ExifToolProcess::signalCmdCompleted,
-            this, &ExifToolParser::slotCmdCompleted);
 }
 
 ExifToolParser::~ExifToolParser()
 {
     delete m_proc;
+}
+
+QString ExifToolParser::currentParsedPath() const
+{
+    return m_parsedPath;
+}
+
+ExifToolParser::TagsMap ExifToolParser::currentParsedTags() const
+{
+    return m_parsedMap;
+}
+
+ExifToolParser::TagsMap ExifToolParser::currentIgnoredTags() const
+{
+    return m_ignoredMap;
 }
 
 bool ExifToolParser::parse(const QString& path)
@@ -105,6 +117,16 @@ bool ExifToolParser::parse(const QString& path)
 
     int ret = m_proc->command(cmdArgs); // See additional notes
 
+    m_loop = new QEventLoop;
+
+    // Connect at cmdCompleted signal to slot
+
+    auto connectionHandle = connect(m_proc, &ExifToolProcess::signalCmdCompleted,
+                                    this, &ExifToolParser::slotCmdCompleted);
+
+    m_loop->exec();
+    disconnect(connectionHandle);
+
     return (ret != 0);
 }
 
@@ -119,10 +141,6 @@ void ExifToolParser::slotCmdCompleted(int /*cmdId*/,
     QJsonArray    jsonArray   = jsonDoc.array();
     QJsonObject   jsonObject  = jsonArray.at(0).toObject();
     QVariantMap   metadataMap = jsonObject.toVariantMap();
-
-    QString path;
-    TagsMap parsedMap;
-    TagsMap ignoredMap;
 
     for (QVariantMap::const_iterator it = metadataMap.constBegin() ;
         it != metadataMap.constEnd() ; ++it)
@@ -150,7 +168,7 @@ void ExifToolParser::slotCmdCompleted(int /*cmdId*/,
         }
         else if (sections[0] == QLatin1String("SourceFile"))
         {
-            path = it.value().toString();
+            m_parsedPath = it.value().toString();
             continue;
         }
         else
@@ -164,7 +182,7 @@ void ExifToolParser::slotCmdCompleted(int /*cmdId*/,
         {
             if (!tagNameExifTool.startsWith(QLatin1String("...")))
             {
-                ignoredMap.insert(tagNameExifTool, QVariantList() << QString() << data << tagType);
+                m_ignoredMap.insert(tagNameExifTool, QVariantList() << QString() << data << tagType);
             }
 
             continue;
@@ -226,7 +244,7 @@ void ExifToolParser::slotCmdCompleted(int /*cmdId*/,
             }
             else
             {
-                ignoredMap.insert(tagNameExiv2, QVariantList() << tagNameExifTool << data << tagType);
+                m_ignoredMap.insert(tagNameExiv2, QVariantList() << tagNameExifTool << data << tagType);
             }
         }
         else if (tagNameExiv2.startsWith(QLatin1String("Iptc.")))
@@ -238,10 +256,10 @@ void ExifToolParser::slotCmdCompleted(int /*cmdId*/,
             var = data;
         }
 
-        parsedMap.insert(tagNameExiv2, QVariantList() << tagNameExifTool << var << tagType);
+        m_parsedMap.insert(tagNameExiv2, QVariantList() << tagNameExifTool << var << tagType);
     }
 
-    emit signalExifToolMetadata(path, parsedMap, ignoredMap);
+    m_loop->quit();
 }
 
 } // namespace Digikam

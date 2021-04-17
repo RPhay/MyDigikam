@@ -53,83 +53,6 @@ int main(int argc, char** argv)
 
     ExifToolParser* const parser = new ExifToolParser();
 
-    // Connect at main output signal to lambda function
-
-    QObject::connect(parser, &ExifToolParser::signalExifToolMetadata,
-                     [=](const QString& path, const ExifToolParser::TagsMap& parsed, const ExifToolParser::TagsMap& ignored)  // clazy:exclude=function-args-by-ref
-        {
-            qDebug().noquote() << "Source File:" << path;
-
-            // Print returned and sorted tags.
-
-            QString     output;
-            QTextStream stream(&output);
-            QStringList tagsLst;
-
-            const int section1 = -60;   // ExifTool Tag name
-            const int section2 = -45;   // Exiv2 tag name
-            const int section3 = -30;   // Tag value as string.
-            QString sep        = QString().fill(QLatin1Char('-'), qAbs(section1 + section2 + section3) + 6);
-
-            // Header
-
-            stream << sep
-                   << endl
-                   << QString::fromLatin1("%1").arg(QLatin1String("ExifTool::group0.group1.group2.name"), section1) << " | "
-                   << QString::fromLatin1("%1").arg(QLatin1String("Exiv2::family.group.name"),            section2) << " | "
-                   << QString::fromLatin1("%1").arg(QLatin1String("String Value"),                        section3)
-                   << endl
-                   << sep
-                   << endl;
-
-            for (ExifToolParser::TagsMap::const_iterator it = parsed.constBegin() ;
-                it != parsed.constEnd() ; ++it)
-            {
-                QString tagNameExifTool = it.value()[0].toString();
-                QString tagType         = it.value()[2].toString();
-                QString data            = it.value()[1].toString();
-
-                if (data.size() > -section3)
-                {
-                    data = data.left(-section3 - 3) + QLatin1String("...");
-                }
-
-                // Tags to translate To Exiv2 naming scheme
-
-                QString tagNameExiv2    = it.key();
-
-                tagsLst
-                        << QString::fromLatin1("%1 | %2 | %3")
-                        .arg(tagNameExifTool, section1)
-                        .arg(tagNameExiv2,    section2)
-                        .arg(data,            section3)
-                       ;
-            }
-
-            tagsLst.sort();
-
-            foreach (const QString& tag, tagsLst)
-            {
-                stream << tag << endl;
-            }
-
-            stream << sep << endl;
-            stream << "Ignored ExifTool Tags:" << endl;
-
-            QStringList itagsLst = ignored.keys();
-            itagsLst.sort();
-
-            foreach (const QString& tag, itagsLst)
-            {
-                stream << "   " << tag << endl;
-            }
-
-            qDebug().noquote() << output;
-
-            qApp->quit();
-        }
-    );
-
     // Read metadata from the file. Start ExifToolParser
 
     if (!parser->parse(QString::fromUtf8(argv[1])))
@@ -137,7 +60,78 @@ int main(int argc, char** argv)
         return -1;
     }
 
-    app.exec();
+    QString path                    = parser->currentParsedPath();
+    ExifToolParser::TagsMap parsed  = parser->currentParsedTags();
+    ExifToolParser::TagsMap ignored = parser->currentIgnoredTags();
+
+    qDebug().noquote() << "Source File:" << path;
+
+    // Print returned and sorted tags.
+
+    QString     output;
+    QTextStream stream(&output);
+    QStringList tagsLst;
+
+    const int section1 = -60;   // ExifTool Tag name
+    const int section2 = -45;   // Exiv2 tag name
+    const int section3 = -30;   // Tag value as string.
+    QString sep        = QString().fill(QLatin1Char('-'), qAbs(section1 + section2 + section3) + 6);
+
+    // Header
+
+    stream << sep
+           << endl
+           << QString::fromLatin1("%1").arg(QLatin1String("ExifTool::group0.group1.group2.name"), section1) << " | "
+           << QString::fromLatin1("%1").arg(QLatin1String("Exiv2::family.group.name"),            section2) << " | "
+           << QString::fromLatin1("%1").arg(QLatin1String("String Value"),                        section3)
+           << endl
+           << sep
+           << endl;
+
+    for (ExifToolParser::TagsMap::const_iterator it = parsed.constBegin() ;
+         it != parsed.constEnd() ; ++it)
+    {
+        QString tagNameExifTool = it.value()[0].toString();
+        QString tagType         = it.value()[2].toString();
+        QString data            = it.value()[1].toString();
+
+        if (data.size() > -section3)
+        {
+            data = data.left(-section3 - 3) + QLatin1String("...");
+        }
+
+        // Tags to translate To Exiv2 naming scheme
+
+        QString tagNameExiv2    = it.key();
+
+        tagsLst
+                << QString::fromLatin1("%1 | %2 | %3")
+                .arg(tagNameExifTool, section1)
+                .arg(tagNameExiv2,    section2)
+                .arg(data,            section3)
+               ;
+    }
+
+    tagsLst.sort();
+
+    foreach (const QString& tag, tagsLst)
+    {
+        stream << tag << endl;
+    }
+
+    stream << sep << endl;
+    stream << "Ignored ExifTool Tags:" << endl;
+
+    QStringList itagsLst = ignored.keys();
+    itagsLst.sort();
+
+    foreach (const QString& tag, itagsLst)
+    {
+        stream << "   " << tag << endl;
+    }
+
+    qDebug().noquote() << output;
+
 
     return 0;
 }
