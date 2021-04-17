@@ -470,7 +470,7 @@ bool MetaEngine::setIptcTagString(const char* iptcTagName, const QString& value)
 
     try
     {
-        d->iptcMetadata()[iptcTagName] = std::string(value.toUtf8().constData());
+        d->iptcMetadata()[iptcTagName] = value.toStdString();
 
         // Make sure we have set the charset to UTF-8
 
