@@ -306,9 +306,8 @@ bool MetaEngine::setExifComment(const QString& comment, bool writeDescription) c
                 {
                     // write as ASCII
 
-                    std::string exifComment("charset=\"Ascii\" ");
-                    exifComment                                += comment.toLatin1().constData();
-                    d->exifMetadata()["Exif.Photo.UserComment"] = exifComment;
+                    QString exifComment(QString::fromLatin1("charset=\"Ascii\" %1").arg(comment));
+                    d->exifMetadata()["Exif.Photo.UserComment"] = exifComment.toStdString();
 
                     return true;
                 }
@@ -316,9 +315,8 @@ bool MetaEngine::setExifComment(const QString& comment, bool writeDescription) c
 
             // write as Unicode (UCS-2)
 
-            std::string exifComment("charset=\"Unicode\" ");
-            exifComment                                += comment.toUtf8().constData();
-            d->exifMetadata()["Exif.Photo.UserComment"] = exifComment;
+            QString exifComment(QString::fromUtf8("charset=\"Unicode\" %1").arg(comment));
+            d->exifMetadata()["Exif.Photo.UserComment"] = exifComment.toStdString();
         }
 
         return true;
@@ -572,8 +570,7 @@ bool MetaEngine::setExifTagVariant(const char* exifTagName, const QVariant& val,
 
             try
             {
-                const std::string &exifdatetime(dateTime.toString(QString::fromLatin1("yyyy:MM:dd hh:mm:ss")).toLatin1().constData());
-                d->exifMetadata()[exifTagName] = exifdatetime;
+                d->exifMetadata()[exifTagName] = dateTime.toString(QLatin1String("yyyy:MM:dd hh:mm:ss")).toStdString();
             }
             catch (Exiv2::AnyError& e)
             {
@@ -677,8 +674,7 @@ QString MetaEngine::createExifUserStringFromValue(const char* exifTagName, const
                     break;
                 }
 
-                const std::string &exifdatetime(dateTime.toString(QString::fromLatin1("yyyy:MM:dd hh:mm:ss")).toLatin1().constData());
-                datum = exifdatetime;
+                datum = dateTime.toString(QLatin1String("yyyy:MM:dd hh:mm:ss")).toStdString();
                 break;
             }
 
@@ -686,7 +682,7 @@ QString MetaEngine::createExifUserStringFromValue(const char* exifTagName, const
             case QVariant::String:
             case QVariant::Char:
             {
-                datum = (std::string)val.toString().toLatin1().constData();
+                datum = val.toString().toStdString();
                 break;
             }
 
@@ -952,7 +948,7 @@ bool MetaEngine::setExifTagString(const char* exifTagName, const QString& value)
 
     try
     {
-        d->exifMetadata()[exifTagName] = std::string(value.toLatin1().constData());
+        d->exifMetadata()[exifTagName] = value.toStdString();
 
         return true;
     }
