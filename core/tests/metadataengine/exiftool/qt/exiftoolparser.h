@@ -30,7 +30,6 @@
 #include <QHash>
 #include <QObject>
 #include <QString>
-#include <QEventLoop>
 #include <QByteArray>
 #include <QProcess>
 
@@ -80,11 +79,8 @@ private Q_SLOTS:
 
 private:
 
-    ExifToolProcess* m_proc;
-    QEventLoop*      m_loop;
-    QString          m_parsedPath;
-    TagsMap          m_parsedMap;
-    TagsMap          m_ignoredMap;
+    class Private;
+    Private* const d;
 };
 
 } // namespace Digikam
