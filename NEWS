@@ -145,4 +145,5 @@ BUGFIXES:
 130 ==> 435701 - Exif date change.
 131 ==> 394544 - New tool to export to inaturalist.
 132 ==> 435808 - Themes not available and default theme corrupt.
-133 ==> 
+133 ==> 435843 - Metadata changes not saved when removing face region.
+134 ==> 
