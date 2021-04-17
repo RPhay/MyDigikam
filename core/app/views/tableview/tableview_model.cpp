@@ -403,19 +403,24 @@ void TableViewModel::addColumnAt(const TableViewColumnConfiguration& configurati
 
 void TableViewModel::slotColumnDataChanged(const qlonglong imageId)
 {
-    TableViewColumn* const senderColumn = qobject_cast<TableViewColumn*>(sender());
+    Item* const item = itemFromImageId(imageId);
 
-    /// @todo find a faster way to find the column number
-
-    const int iColumn                   = d->columnObjects.indexOf(senderColumn);
-
-    if (iColumn < 0)
+    if (!item)
     {
         return;
     }
 
-    const QModelIndex changedIndex      = indexFromImageId(imageId, iColumn);
-    emit dataChanged(changedIndex, changedIndex);
+    Item* const parentItem              = item->parent;
+
+    /// @todo This is a waste of time because itemFromImageId already did this search.
+    ///       We should modify it to also give the row index.
+
+    const int rowIndex                  = parentItem->children.indexOf(item);
+    const int columnIndex               = columnCount(QModelIndex())-1;
+    const QModelIndex changedIndexLeft  = index(rowIndex, 0, QModelIndex());
+    const QModelIndex changedIndexRight = index(rowIndex, columnIndex, QModelIndex());
+
+    emit dataChanged(changedIndexLeft, changedIndexRight);
 }
 
 void TableViewModel::slotColumnAllDataChanged()
