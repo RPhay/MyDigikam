@@ -48,7 +48,6 @@ ExifToolParser::ExifToolParser(QObject* const parent)
 
     ExifToolTranslator::instance();
 
-
     // Create ExifTool parser instance.
 
     m_proc = new ExifToolProcess(parent);
@@ -67,6 +66,12 @@ ExifToolParser::ExifToolParser(QObject* const parent)
 
 ExifToolParser::~ExifToolParser()
 {
+    if (m_loop)
+    {
+        m_loop->quit();
+        delete m_loop;
+    }
+
     delete m_proc;
 }
 
@@ -101,6 +106,7 @@ bool ExifToolParser::parse(const QString& path)
     if (!m_proc->waitForStarted(500))
     {
         m_proc->kill();
+        qCWarning(DIGIKAM_METAENGINE_LOG) << "ExifTool process cannot be started";
         return false;
     }
 
@@ -117,22 +123,32 @@ bool ExifToolParser::parse(const QString& path)
 
     int ret = m_proc->command(cmdArgs); // See additional notes
 
-    m_loop = new QEventLoop;
+    if (ret == 0)
+    {
+        qCWarning(DIGIKAM_METAENGINE_LOG) << "ExifTool parse command cannot be sent";
+        return false;
+    }
+
+    m_loop = new QEventLoop(this);
 
     // Connect at cmdCompleted signal to slot
 
-    auto hdl1 = connect(m_proc, &ExifToolProcess::signalCmdCompleted,
-                        this, &ExifToolParser::slotCmdCompleted);
+    QList<QMetaObject::Connection> hdls;
 
-    auto hdl2 = connect(m_proc, &ExifToolProcess::signalErrorOccurred,
-                        this, &ExifToolParser::slotErrorOccurred);
+    hdls << connect(m_proc, &ExifToolProcess::signalCmdCompleted,
+                    this, &ExifToolParser::slotCmdCompleted);
+
+    hdls << connect(m_proc, &ExifToolProcess::signalErrorOccurred,
+                    this, &ExifToolParser::slotErrorOccurred);
 
     m_loop->exec();
 
-    disconnect(hdl2);
-    disconnect(hdl1);
+    foreach (QMetaObject::Connection hdl, hdls)
+    {
+        disconnect(hdl);
+    }
 
-    return (ret != 0);
+    return true;
 }
 
 void ExifToolParser::slotCmdCompleted(int /*cmdId*/,
@@ -272,7 +288,7 @@ void ExifToolParser::slotCmdCompleted(int /*cmdId*/,
 
 void ExifToolParser::slotErrorOccurred(QProcess::ProcessError error)
 {
-    qCWarning(DIGIKAM_METAENGINE_LOG) << "Error occured during ExifTool process:" << error;
+    qCWarning(DIGIKAM_METAENGINE_LOG) << "ExifTool process exited with error:" << error;
 
     if (m_loop)
     {
