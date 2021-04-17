@@ -38,7 +38,7 @@ class TaxonEdit : public QLineEdit
 
 public:
 
-    TaxonEdit(QWidget* const parent = nullptr);
+    explicit TaxonEdit(QWidget* const parent = nullptr);
     ~TaxonEdit();
 
 Q_SIGNALS:

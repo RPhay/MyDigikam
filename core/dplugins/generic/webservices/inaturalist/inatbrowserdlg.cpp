@@ -238,8 +238,6 @@ INatBrowserDlg::~INatBrowserDlg()
 
 void INatBrowserDlg::closeEvent(QCloseEvent* e)
 {
-    emit signalCloseView(false);
-
     if (!d->apiKeyFound)
     {
         emit signalApiToken(QString(), QList<QNetworkCookie>());

@@ -67,7 +67,6 @@ Q_SIGNALS:
 
     void signalApiToken(const QString&, const QList<QNetworkCookie>&);
     void signalWebText(const QString&);
-    void signalCloseView(bool val);
 
 private Q_SLOTS:
 

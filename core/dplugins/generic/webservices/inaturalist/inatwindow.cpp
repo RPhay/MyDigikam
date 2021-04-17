@@ -212,7 +212,7 @@ INatWindow::INatWindow(DInfoInterface* const iface,
     d->dimensionSpinBox         = d->widget->getDimensionSpB();
     d->imageQualitySpinBox      = d->widget->getImgQualitySpB();
 
-    // Observation & indentification
+    // Observation & identification
 
     d->identificationImage      = d->widget->d->identificationImage;
     d->identificationLabel      = d->widget->d->identificationLabel;
