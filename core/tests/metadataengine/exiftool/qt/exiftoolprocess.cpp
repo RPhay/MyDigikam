@@ -9,7 +9,7 @@
  *               https://github.com/philvl/ZExifTool
  *
  * Copyright (C) 2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (c) 2021 by Philippe Vianney-Liaud <philvl dot dev at gmail dot com>
+ * Copyright (c) 2021 by Philippe Vianney Liaud <philvl dot dev at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -178,7 +178,7 @@ void ExifToolProcess::terminate()
         // If process is in running state, close ExifTool normally
 
         m_cmdQueue.clear();
-        m_process->write("-stay_open\nfalse\n");
+        m_process->write(QByteArray("-stay_open\nfalse\n"));
         m_process->closeWriteChannel();
         m_writeChannelIsClosed= true;
     }
@@ -277,19 +277,19 @@ int ExifToolProcess::command(const QByteArrayList& args)
 
     //-- Advanced options
 
-    cmdStr.append("-echo1\n{await" + cmdIdStr + "}\n");     // Echo text to stdout before processing is complete
-    cmdStr.append("-echo2\n{await" + cmdIdStr + "}\n");     // Echo text to stderr before processing is complete
+    cmdStr.append(QByteArray("-echo1\n{await") + cmdIdStr + QByteArray("}\n"));     // Echo text to stdout before processing is complete
+    cmdStr.append(QByteArray("-echo2\n{await") + cmdIdStr + QByteArray("}\n"));     // Echo text to stderr before processing is complete
 
-    if (cmdStr.contains("-q")               ||
-        cmdStr.toLower().contains("-quiet") ||
-        cmdStr.contains("-T")               ||
-        cmdStr.toLower().contains("-table"))
+    if (cmdStr.contains(QByteArray("-q"))               ||
+        cmdStr.toLower().contains(QByteArray("-quiet")) ||
+        cmdStr.contains(QByteArray("-T"))               ||
+        cmdStr.toLower().contains(QByteArray("-table")))
     {
-        cmdStr.append("-echo3\n{ready}\n");                 // Echo text to stdout after processing is complete
+        cmdStr.append(QByteArray("-echo3\n{ready}\n"));                 // Echo text to stdout after processing is complete
     }
 
-    cmdStr.append("-echo4\n{ready}\n");                     // Echo text to stderr after processing is complete
-    cmdStr.append("-execute\n");                            // Execute command and echo {ready} to stdout after processing is complete
+    cmdStr.append(QByteArray("-echo4\n{ready}\n"));                     // Echo text to stderr after processing is complete
+    cmdStr.append(QByteArray("-execute\n"));                            // Execute command and echo {ready} to stdout after processing is complete
 
     // TODO: if -binary user, {ready} can not be present in the new line
 
@@ -327,12 +327,12 @@ void ExifToolProcess::execNextCmd()
 
     // Clear internal buffers
 
-    m_outBuff[0]  = QByteArray();
-    m_outBuff[1]  = QByteArray();
-    m_outAwait[0] = false;
-    m_outAwait[1] = false;
-    m_outReady[0] = false;
-    m_outReady[1] = false;
+    m_outBuff[0]    = QByteArray();
+    m_outBuff[1]    = QByteArray();
+    m_outAwait[0]   = false;
+    m_outAwait[1]   = false;
+    m_outReady[0]   = false;
+    m_outReady[1]   = false;
 
     // Exec Command
 
@@ -387,16 +387,16 @@ void ExifToolProcess::readOutput(const QProcess::ProcessChannel channel)
     {
         QByteArray line = m_process->readLine();
 
-        if (line.endsWith("\r\n"))
+        if (line.endsWith(QByteArray("\r\n")))
         {
-            line.remove(line.size()-2, 1); // Remove '\r' character
+            line.remove(line.size() - 2, 1); // Remove '\r' character
         }
 /*
         qCDebug(DIGIKAM_METAENGINE_LOG) << channel << line;
 */
         if (!m_outAwait[channel])
         {
-            if (line.startsWith("{await") && line.endsWith("}\n"))
+            if (line.startsWith(QByteArray("{await")) && line.endsWith(QByteArray("}\n")))
             {
                 m_outAwait[channel] = line.mid(6, line.size() - 8).toInt();
             }
@@ -406,7 +406,7 @@ void ExifToolProcess::readOutput(const QProcess::ProcessChannel channel)
 
         m_outBuff[channel] += line;
 
-        if (line.endsWith("{ready}\n"))
+        if (line.endsWith(QByteArray("{ready}\n")))
         {
             m_outBuff[channel].chop(8);
             m_outReady[channel] = true;

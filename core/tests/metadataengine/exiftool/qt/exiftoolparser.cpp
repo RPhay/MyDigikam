@@ -57,7 +57,7 @@ ExifToolParser::ExifToolParser(QObject* const parent)
 
     m_proc->setProgram(QLatin1String("/usr/bin/exiftool"));
 
-#elif defined Q_OS_WINDOWS
+#elif defined Q_OS_WIN
 
     m_proc->setProgram(QLatin1String("exiftool.exe"));
 
@@ -107,10 +107,10 @@ bool ExifToolParser::parse(const QString& path)
     // Build command (get metadata as JSON array)
 
     QByteArrayList cmdArgs;
-    cmdArgs << "-json";
-    cmdArgs << "-binary";
-    cmdArgs << "-G:0:1:2:4:6";
-    cmdArgs << "-n";
+    cmdArgs << QByteArray("-json");
+    cmdArgs << QByteArray("-binary");
+    cmdArgs << QByteArray("-G:0:1:2:4:6");
+    cmdArgs << QByteArray("-n");
     cmdArgs << fileInfo.filePath().toUtf8();
 
     // Send command to ExifToolProcess
