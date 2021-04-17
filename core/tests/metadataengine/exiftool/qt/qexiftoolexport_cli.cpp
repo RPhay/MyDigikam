@@ -23,16 +23,12 @@
 
 // Qt includes
 
-#include <QFileInfo>
 #include <QString>
 #include <QStringList>
 #include <QTextStream>
 #include <QCoreApplication>
 #include <QDebug>
 #include <QVariant>
-#include <QJsonDocument>
-#include <QJsonArray>
-#include <QJsonObject>
 #include <QObject>
 
 // Local includes
@@ -40,7 +36,7 @@
 #include "dimg.h"
 #include "dpluginloader.h"
 #include "metaengine.h"
-#include "exiftoolprocess.h"
+#include "exiftoolparser.h"
 #include "exiftooltranslator.h"
 
 using namespace Digikam;
@@ -76,6 +72,8 @@ void s_printMetadataMap(const MetaEngine::MetaDataMap& map)
     qDebug().noquote() << output;
 }
 
+// -----------------------------------------------------------------------------------------
+
 int main(int argc, char** argv)
 {
     QCoreApplication app(argc, argv);
@@ -90,187 +88,63 @@ int main(int argc, char** argv)
     MetaEngine::initializeExiv2();
     DPluginLoader::instance()->init();
 
-    QFileInfo fileInfo(QString::fromUtf8(argv[1]));
-
-    if (!fileInfo.exists())
-    {
-        return false;
-    }
-
-    // Post creation of hash tables for tag translations
-
-    ExifToolTranslator::instance();
-
     // Create ExifTool parser instance.
 
-    ExifToolProcess* const parser  = new ExifToolProcess();
+    ExifToolParser* const parser = new ExifToolParser();
 
-#if defined Q_OS_LINUX || defined Q_OS_MACOS
+    // Connect at main output signal to lambda function
 
-    parser->setProgram(QLatin1String("/usr/bin/exiftool"));
-
-#elif defined Q_OS_WINDOWS
-
-    parser->setProgram(QLatin1String("exiftool.exe"));
-
-#endif
-
-    // Connect at least cmdCompleted signal to slot
-
-    QObject::connect(parser, &ExifToolProcess::signalCmdCompleted,
-                     [=](int /*cmdId*/, int /*execTime*/, const QByteArray& stdOut, const QByteArray& /*stdErr*/)  // clazy:exclude=function-args-by-ref
+    QObject::connect(parser, &ExifToolParser::signalExifToolMetadata,
+                     [=](const ExifToolParser::TagsMap& parsed, const ExifToolParser::TagsMap& ignored)  // clazy:exclude=function-args-by-ref
         {
-            // Convert JSON array as QVariantMap
-
-            QJsonDocument jsonDoc     = QJsonDocument::fromJson(stdOut);
-            QJsonArray    jsonArray   = jsonDoc.array();
-            QJsonObject   jsonObject  = jsonArray.at(0).toObject();
-            QVariantMap   metadataMap = jsonObject.toVariantMap();
-
-            QStringList ignoredETTags;
-            QStringList tagsLst;
             MetaEngine  meta;
 
-            for (QVariantMap::const_iterator it = metadataMap.constBegin() ;
-                it != metadataMap.constEnd() ; ++it)
+            for (ExifToolParser::TagsMap::const_iterator it = parsed.constBegin() ;
+                it != parsed.constEnd() ; ++it)
             {
-                QString tagNameExifTool;
-                QString tagType;
-                QStringList sections    = it.key().split(QLatin1Char(':'));
-
-                if      (sections.size() == 5)
-                {
-                    tagNameExifTool = QString::fromLatin1("%1.%2.%3.%4")
-                                          .arg(sections[0])
-                                          .arg(sections[1])
-                                          .arg(sections[2])
-                                          .arg(sections[4]);
-                    tagType         = sections[3];
-                }
-                else if (sections.size() == 4)
-                {
-                    tagNameExifTool = QString::fromLatin1("%1.%2.%3.%4")
-                                          .arg(sections[0])
-                                          .arg(sections[1])
-                                          .arg(sections[2])
-                                          .arg(sections[3]);
-                }
-                else
-                {
-                    continue;
-                }
-
-                if (ExifToolTranslator::instance()->isIgnoredGroup(tagNameExifTool))
-                {
-                    if (!tagNameExifTool.startsWith(QLatin1String("...")))
-                    {
-                        ignoredETTags.append(tagNameExifTool);
-                    }
-
-                    continue;
-                }
-
-                QString data = it.value().toString();
-
-                // Tags to translate To Exiv2 naming scheme
-
-                QString tagNameExiv2 = ExifToolTranslator::instance()->translateToExiv2(tagNameExifTool);
+                QString  tagNameExifTool = it.value()[0].toString();
+                QString  tagType         = it.value()[2].toString();
+                QVariant var             = it.value()[1];
+                QString  tagNameExiv2    = it.key();
 
                 if      (tagNameExiv2.startsWith(QLatin1String("Exif.")))
                 {
-                    QVariant var;
-
-                    if      (tagType == QLatin1String("string"))
+                    if (tagType == QLatin1String("undef"))
                     {
-                        var = data;
-                        meta.setExifTagVariant(tagNameExiv2.toLatin1().constData(), var);
-                    }
-                    else if (
-                             (tagType == QLatin1String("int8u"))  ||
-                             (tagType == QLatin1String("int16u")) ||
-                             (tagType == QLatin1String("int32u")) ||
-                             (tagType == QLatin1String("int8s"))  ||
-                             (tagType == QLatin1String("int16s")) ||
-                             (tagType == QLatin1String("int32s"))
-                            )
-                    {
-                        var = data.toLongLong();
-                        meta.setExifTagVariant(tagNameExiv2.toLatin1().constData(), var);
-                    }
-                    else if (tagType == QLatin1String("undef"))
-                    {
-                        if (
-                            (tagNameExiv2 == QLatin1String("Exif.Photo.ComponentsConfiguration")) ||
-                            (tagNameExiv2 == QLatin1String("Exif.Photo.SceneType"))               ||
-                            (tagNameExiv2 == QLatin1String("Exif.Photo.FileSource"))
-                            )
-                        {
-                            QByteArray conv;
-                            QStringList vals = data.split(QLatin1Char(' '));
+                        // Print ExiTool tags with undefined value type to hack.
 
-                            foreach (const QString& v, vals)
-                            {
-                                conv.append(QString::fromLatin1("0x%1").arg(v.toInt(), 2, 16).toLatin1());
-                            }
-
-                            var = QByteArray::fromHex(conv);
-                        }
-                        else
-                        {
-                            var = data.toLatin1();
-                        }
-
-                        qDebug().noquote()
-                                 << QString::fromLatin1("%1").arg(tagNameExiv2, -45)
-                                 << QString::fromLatin1("%1").arg(tagType,      -16)
-                                 << QString::fromLatin1("%1").arg(data,         -20)
-                                 << var;
-
-                        meta.setExifTagVariant(tagNameExiv2.toLatin1().constData(), var);
+                        qDebug().noquote() << QString::fromLatin1("%1 %2 %3")
+                                                .arg(tagNameExifTool, -60)
+                                                .arg(tagType)
+                                                .arg(tagNameExiv2, -45)
+                                           << var;
                     }
-                    else if (
-                             (tagType == QLatin1String("double"))      ||
-                             (tagType == QLatin1String("float"))       ||
-                             (tagType == QLatin1String("rational64s")) ||
-                             (tagType == QLatin1String("rational64u"))
-                            )
-                    {
-                        var = data.toDouble();
-                        meta.setExifTagVariant(tagNameExiv2.toLatin1().constData(), var);
-                    }
-                    else
-                    {
-                        ignoredETTags.append(
-                                 QString::fromLatin1("%1, %2, %3, %4")
-                                    .arg(tagNameExifTool)
-                                    .arg(tagNameExiv2)
-                                    .arg(tagType)
-                                    .arg(data));
-                    }
+
+                    meta.setExifTagVariant(tagNameExiv2.toLatin1().constData(), var);
                 }
                 else if (tagNameExiv2.startsWith(QLatin1String("Iptc.")))
                 {
-                    meta.setIptcTagString(tagNameExiv2.toLatin1().constData(), data);
+                    meta.setIptcTagString(tagNameExiv2.toLatin1().constData(), var.toString());
                 }
                 else if (tagNameExiv2.startsWith(QLatin1String("Xmp.")))
                 {
-                    meta.setXmpTagString(tagNameExiv2.toLatin1().constData(), data);
+                    meta.setXmpTagString(tagNameExiv2.toLatin1().constData(), var.toString());
                 }
             }
 
-            qDebug() << QString::fromUtf8("-- Exif metadata from %1 --").arg(meta.getFilePath());
+            qDebug().noquote() << QString::fromUtf8("-- Exif metadata from %1 --").arg(meta.getFilePath());
 
             MetaEngine::MetaDataMap map = meta.getExifTagsDataList();
             s_printMetadataMap(map);
 
-            qDebug() << QString::fromUtf8("-- Iptc metadata from %1 --").arg(meta.getFilePath());
+            qDebug().noquote() << QString::fromUtf8("-- Iptc metadata from %1 --").arg(meta.getFilePath());
 
             map = meta.getIptcTagsDataList();
             s_printMetadataMap(map);
 
             if (meta.supportXmp())
             {
-                qDebug() << QString::fromUtf8("-- Xmp metadata from %1 --").arg(meta.getFilePath());
+                qDebug().noquote() << QString::fromUtf8("-- Xmp metadata from %1 --").arg(meta.getFilePath());
                 map = meta.getXmpTagsDataList();
                 s_printMetadataMap(map);
             }
@@ -279,12 +153,17 @@ int main(int argc, char** argv)
                 qWarning() << "Exiv2 has no XMP support...";
             }
 
-            qDebug() << "-- Ignored ExifTool Tags --";
+            qDebug().noquote() << "-- Ignored ExifTool Tags --";
 
-            foreach (const QString& itag, ignoredETTags)
+            QStringList itagsLst = ignored.keys();
+            itagsLst.sort();
+
+            foreach (const QString& tag, itagsLst)
             {
-                qDebug() << "   " << itag;
+                qDebug().noquote() << "   " << tag;
             }
+
+            // Write all metadata to an empty JPG file.
 
             DImg file(1, 1, false);
             file.setMetadata(meta.data());
@@ -294,28 +173,12 @@ int main(int argc, char** argv)
         }
     );
 
-    // Read metadata from the file. Start ExifToolProcess
+    // Read metadata from the file. Start ExifToolParser
 
-    parser->start();
-
-    if (!parser->waitForStarted(500))
+    if (!parser->parse(QString::fromUtf8(argv[1])))
     {
-        parser->kill();
         return -1;
     }
-
-    // Build command (get metadata as JSON array)
-
-    QByteArrayList cmdArgs;
-    cmdArgs << "-json";
-    cmdArgs << "-binary";
-    cmdArgs << "-G:0:1:2:4:6";
-    cmdArgs << "-n";
-    cmdArgs << fileInfo.filePath().toUtf8();
-
-    // Send command to ExifToolProcess
-
-    parser->command(cmdArgs); // See additional notes
 
     app.exec();
 

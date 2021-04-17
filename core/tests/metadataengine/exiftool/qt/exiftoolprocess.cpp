@@ -9,7 +9,7 @@
  *               https://github.com/philvl/ZExifTool
  *
  * Copyright (C) 2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (c) 2021 by Philippe Vianney-Liaud <https://github.com/philvl>
+ * Copyright (c) 2021 by Philippe Vianney-Liaud <philvl dot dev at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -244,13 +244,13 @@ bool ExifToolProcess::waitForFinished(int msecs) const
 int ExifToolProcess::command(const QByteArrayList& args)
 {
     if ((m_process->state() != QProcess::Running) ||
-        m_writeChannelIsClosed                      ||
+        m_writeChannelIsClosed                    ||
         args.isEmpty())
     {
         return 0;
     }
 
-    // ThreadSafe incrementation of _nextCmdId
+    // ThreadSafe incrementation of m_nextCmdId
 
     m_cmdIdMutex.lock();
     const int cmdId = m_nextCmdId;

@@ -53,7 +53,7 @@ int main(int argc, char** argv)
 
     ExifToolParser* const parser = new ExifToolParser();
 
-    // Connect at least cmdCompleted signal to slot
+    // Connect at main output signal to lambda function
 
     QObject::connect(parser, &ExifToolParser::signalExifToolMetadata,
                      [=](const ExifToolParser::TagsMap& parsed, const ExifToolParser::TagsMap& ignored)  // clazy:exclude=function-args-by-ref
@@ -128,7 +128,7 @@ int main(int argc, char** argv)
         }
     );
 
-    // Read metadata from the file. Start ExifToolProcess
+    // Read metadata from the file. Start ExifToolParser
 
     if (!parser->parse(QString::fromUtf8(argv[1])))
     {
