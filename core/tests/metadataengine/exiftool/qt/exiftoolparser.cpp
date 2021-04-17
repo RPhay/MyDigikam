@@ -121,11 +121,16 @@ bool ExifToolParser::parse(const QString& path)
 
     // Connect at cmdCompleted signal to slot
 
-    auto connectionHandle = connect(m_proc, &ExifToolProcess::signalCmdCompleted,
-                                    this, &ExifToolParser::slotCmdCompleted);
+    auto hdl1 = connect(m_proc, &ExifToolProcess::signalCmdCompleted,
+                        this, &ExifToolParser::slotCmdCompleted);
+
+    auto hdl2 = connect(m_proc, &ExifToolProcess::signalErrorOccurred,
+                        this, &ExifToolParser::slotErrorOccurred);
 
     m_loop->exec();
-    disconnect(connectionHandle);
+
+    disconnect(hdl2);
+    disconnect(hdl1);
 
     return (ret != 0);
 }
@@ -259,7 +264,20 @@ void ExifToolParser::slotCmdCompleted(int /*cmdId*/,
         m_parsedMap.insert(tagNameExiv2, QVariantList() << tagNameExifTool << var << tagType);
     }
 
-    m_loop->quit();
+    if (m_loop)
+    {
+        m_loop->quit();
+    }
+}
+
+void ExifToolParser::slotErrorOccurred(QProcess::ProcessError error)
+{
+    qCWarning(DIGIKAM_METAENGINE_LOG) << "Error occured during ExifTool process:" << error;
+
+    if (m_loop)
+    {
+        m_loop->quit();
+    }
 }
 
 } // namespace Digikam

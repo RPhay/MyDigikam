@@ -32,6 +32,7 @@
 #include <QString>
 #include <QEventLoop>
 #include <QByteArray>
+#include <QProcess>
 
 namespace Digikam
 {
@@ -74,6 +75,8 @@ private Q_SLOTS:
                           int execTime,
                           const QByteArray& cmdOutputChannel,
                           const QByteArray& cmdErrorChannel);
+
+    void slotErrorOccurred(QProcess::ProcessError error);
 
 private:
 
