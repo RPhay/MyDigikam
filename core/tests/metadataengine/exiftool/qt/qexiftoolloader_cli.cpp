@@ -56,8 +56,10 @@ int main(int argc, char** argv)
     // Connect at main output signal to lambda function
 
     QObject::connect(parser, &ExifToolParser::signalExifToolMetadata,
-                     [=](const ExifToolParser::TagsMap& parsed, const ExifToolParser::TagsMap& ignored)  // clazy:exclude=function-args-by-ref
+                     [=](const QString& path, const ExifToolParser::TagsMap& parsed, const ExifToolParser::TagsMap& ignored)  // clazy:exclude=function-args-by-ref
         {
+            qDebug().noquote() << "Source File:" << path;
+
             // Print returned and sorted tags.
 
             QString     output;

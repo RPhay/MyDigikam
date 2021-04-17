@@ -95,9 +95,11 @@ int main(int argc, char** argv)
     // Connect at main output signal to lambda function
 
     QObject::connect(parser, &ExifToolParser::signalExifToolMetadata,
-                     [=](const ExifToolParser::TagsMap& parsed, const ExifToolParser::TagsMap& ignored)  // clazy:exclude=function-args-by-ref
+                     [=](const QString& path, const ExifToolParser::TagsMap& parsed, const ExifToolParser::TagsMap& ignored)  // clazy:exclude=function-args-by-ref
         {
-            MetaEngine  meta;
+            qDebug().noquote() << "Source File:" << path;
+
+            MetaEngine meta;
 
             for (ExifToolParser::TagsMap::const_iterator it = parsed.constBegin() ;
                 it != parsed.constEnd() ; ++it)

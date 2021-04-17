@@ -65,7 +65,9 @@ public:
 
 Q_SIGNALS:
 
-    void signalExifToolMetadata(const TagsMap& parsed, const TagsMap& ignored);
+    void signalExifToolMetadata(const QString& path,
+                                const TagsMap& parsed,
+                                const TagsMap& ignored);
 
 private Q_SLOTS:
 
