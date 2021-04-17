@@ -637,7 +637,7 @@ void MediaPlayerView::slotPositionChanged(qint64 position)
 {
 
     if ((d->sliderTime < position)       &&
-        ((d->sliderTime + 250) > position))
+        ((d->sliderTime + 100) > position))
     {
         return;
     }
@@ -651,9 +651,13 @@ void MediaPlayerView::slotPositionChanged(qint64 position)
         d->slider->blockSignals(false);
     }
 
-    d->tlabel->setText(QString::fromLatin1("%1 / %2")
-                       .arg(QTime(0, 0, 0).addMSecs(position).toString(QLatin1String("HH:mm:ss")))
-                       .arg(QTime(0, 0, 0).addMSecs(d->slider->maximum()).toString(QLatin1String("HH:mm:ss"))));
+    QChar c(QLatin1Char('0'));
+    QTime posTime(QTime(0, 0).addMSecs(position));
+    QTime maxTime(QTime(0, 0).addMSecs(d->slider->maximum()));
+
+    d->tlabel->setText(QString::fromLatin1("%1:%2:%3 / %4:%5:%6")
+                       .arg(posTime.hour(), 2, 10, c).arg(posTime.minute(), 2, 10, c).arg(posTime.second(), 2, 10, c)
+                       .arg(maxTime.hour(), 2, 10, c).arg(maxTime.minute(), 2, 10, c).arg(maxTime.second(), 2, 10, c));
 }
 
 void MediaPlayerView::slotVolumeChanged(int volume)
