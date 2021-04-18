@@ -339,6 +339,7 @@ public:
 Q_SIGNALS:
 
     void signalNoCurrentItem();
+    void signalSeparationModeChanged(int category);
     void signalSelectionChanged(int numberOfSelectedItems);
     void signalTrashSelectionChanged(const QString& text);
     void signalImageSelected(const ItemInfoList& selectedImage,

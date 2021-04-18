@@ -100,6 +100,7 @@ public Q_SLOTS:
 Q_SIGNALS:
 
     void previewRequested(const ItemInfo& info);
+    void signalSeparationModeChanged(int category);
     void signalShowContextMenu(QContextMenuEvent* event,
                                const QList<QAction*>& actions = QList<QAction*>());
 
