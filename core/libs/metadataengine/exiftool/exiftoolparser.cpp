@@ -123,6 +123,10 @@ ExifToolParser::TagsMap ExifToolParser::currentIgnoredTags() const
 
 bool ExifToolParser::load(const QString& path)
 {
+    d->parsedPath.clear();
+    d->parsedMap.clear();
+    d->ignoredMap.clear();
+
     QFileInfo fileInfo(path);
 
     if (!fileInfo.exists())

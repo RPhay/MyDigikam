@@ -113,6 +113,7 @@ set(libmetadatawidgets_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/metadata/colorlabelwidget.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/metadata/countryselector.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/metadata/subjectwidget.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/metadata/exiftoolwidget.cpp
 )
 
 set(libiccprofileswidgets_SRCS

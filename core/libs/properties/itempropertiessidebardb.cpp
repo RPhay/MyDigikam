@@ -274,7 +274,7 @@ void ItemPropertiesSideBarDB::slotChangedTab(QWidget* tab)
         else if (m_image)
         {
             QScopedPointer<DMetadata> data(new DMetadata(m_image->getMetadata()));
-            m_metadataTab->setCurrentData(data.data(), m_currentURL.fileName());
+            m_metadataTab->setCurrentData(data.data(), m_currentURL);
         }
         else
         {

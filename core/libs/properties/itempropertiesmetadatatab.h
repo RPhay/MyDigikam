@@ -49,7 +49,7 @@ public:
 
     void setCurrentURL(const QUrl& url = QUrl());
     void setCurrentData(DMetadata* const metadata = nullptr,
-                        const QString& filename = QString());
+                        const QUrl& url = QUrl());
 
     void loadFilters();
 
