@@ -33,12 +33,16 @@
 #include <QByteArray>
 #include <QProcess>
 
+// Local includes
+
+#include "digikam_export.h"
+
 namespace Digikam
 {
 
 class ExifToolProcess;
 
-class ExifToolParser : public QObject
+class DIGIKAM_EXPORT ExifToolParser : public QObject
 {
     Q_OBJECT
 
@@ -65,6 +69,12 @@ public:
     ~ExifToolParser();
 
     bool load(const QString& path);
+
+    /**
+     * Turn on/off translations of ExiTool tags to Exiv2.
+     * Default is on.
+     */
+    void setTranslations(bool);
 
     QString currentParsedPath()  const;
     TagsMap currentParsedTags()  const;

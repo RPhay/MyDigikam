@@ -36,8 +36,6 @@
 // Local includes
 
 #include "metaengine.h"
-#include "exiftoolparser.h"
-#include "exiftooltranslator.h"
 
 using namespace Digikam;
 

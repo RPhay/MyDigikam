@@ -33,6 +33,10 @@
 #include <QJsonObject>
 #include <QEventLoop>
 
+// KDE includes
+
+#include <klocalizedstring.h>
+
 // Local includes
 
 #include "exiftoolprocess.h"
@@ -47,11 +51,13 @@ class Q_DECL_HIDDEN ExifToolParser::Private
 public:
 
     explicit Private()
-      : proc(nullptr),
-        loop(nullptr)
+      : translate(true),
+        proc     (nullptr),
+        loop     (nullptr)
     {
     }
 
+    bool             translate;
     ExifToolProcess* proc;
     QEventLoop*      loop;
     QString          parsedPath;
@@ -93,6 +99,11 @@ ExifToolParser::~ExifToolParser()
 
     delete d->proc;
     delete d;
+}
+
+void ExifToolParser::setTranslations(bool b)
+{
+    d->translate = b;
 }
 
 QString ExifToolParser::currentParsedPath() const
@@ -221,85 +232,107 @@ void ExifToolParser::slotCmdCompleted(int /*cmdId*/,
 
         QString data = it.value().toString();
 
-        if (ExifToolTranslator::instance()->isIgnoredGroup(tagNameExifTool))
+        if (d->translate)
         {
-            if (!tagNameExifTool.startsWith(QLatin1String("...")))
-            {
-                d->ignoredMap.insert(tagNameExifTool, QVariantList() << QString() << data << tagType);
-            }
+            // Translate ExifTool tag names to Exiv2 scheme
 
-            continue;
-        }
-
-        // Tags to translate To Exiv2 naming scheme
-
-        QString tagNameExiv2 = ExifToolTranslator::instance()->translateToExiv2(tagNameExifTool);
-        QVariant var;
-
-        if      (tagNameExiv2.startsWith(QLatin1String("Exif.")))
-        {
-            if      (tagType == QLatin1String("string"))
+            if (ExifToolTranslator::instance()->isIgnoredGroup(tagNameExifTool))
             {
-                var = data;
-            }
-            else if (
-                     (tagType == QLatin1String("int8u"))  ||
-                     (tagType == QLatin1String("int16u")) ||
-                     (tagType == QLatin1String("int32u")) ||
-                     (tagType == QLatin1String("int8s"))  ||
-                     (tagType == QLatin1String("int16s")) ||
-                     (tagType == QLatin1String("int32s"))
-                    )
-            {
-                var = data.toLongLong();
-            }
-            else if (tagType == QLatin1String("undef"))
-            {
-                if (
-                    (tagNameExiv2 == QLatin1String("Exif.Photo.ComponentsConfiguration")) ||
-                    (tagNameExiv2 == QLatin1String("Exif.Photo.SceneType"))               ||
-                    (tagNameExiv2 == QLatin1String("Exif.Photo.FileSource"))
-                   )
+                if (!tagNameExifTool.startsWith(QLatin1String("...")))
                 {
-                    QByteArray conv;
-                    QStringList vals = data.split(QLatin1Char(' '));
+                    d->ignoredMap.insert(tagNameExifTool, QVariantList() << QString() << data << tagType);
+                }
 
-                    foreach (const QString& v, vals)
+                continue;
+            }
+
+            // Tags to translate To Exiv2 naming scheme.
+
+            QString tagNameExiv2 = ExifToolTranslator::instance()->translateToExiv2(tagNameExifTool);
+            QVariant var;
+
+            if      (tagNameExiv2.startsWith(QLatin1String("Exif.")))
+            {
+                if      (tagType == QLatin1String("string"))
+                {
+                    var = data;
+                }
+                else if (
+                         (tagType == QLatin1String("int8u"))  ||
+                         (tagType == QLatin1String("int16u")) ||
+                         (tagType == QLatin1String("int32u")) ||
+                         (tagType == QLatin1String("int8s"))  ||
+                         (tagType == QLatin1String("int16s")) ||
+                         (tagType == QLatin1String("int32s"))
+                        )
+                {
+                    var = data.toLongLong();
+                }
+                else if (tagType == QLatin1String("undef"))
+                {
+                    if (
+                        (tagNameExiv2 == QLatin1String("Exif.Photo.ComponentsConfiguration")) ||
+                        (tagNameExiv2 == QLatin1String("Exif.Photo.SceneType"))               ||
+                        (tagNameExiv2 == QLatin1String("Exif.Photo.FileSource"))
+                       )
                     {
-                        conv.append(QString::fromLatin1("0x%1").arg(v.toInt(), 2, 16).toLatin1());
-                    }
+                        QByteArray conv;
+                        QStringList vals = data.split(QLatin1Char(' '));
 
-                    var = QByteArray::fromHex(conv);
+                        foreach (const QString& v, vals)
+                        {
+                            conv.append(QString::fromLatin1("0x%1").arg(v.toInt(), 2, 16).toLatin1());
+                        }
+
+                        var = QByteArray::fromHex(conv);
+                    }
+                    else
+                    {
+                        var = data.toLatin1();
+                    }
+                }
+                else if (
+                         (tagType == QLatin1String("double"))      ||
+                         (tagType == QLatin1String("float"))       ||
+                         (tagType == QLatin1String("rational64s")) ||
+                         (tagType == QLatin1String("rational64u"))
+                        )
+                {
+                    var = data.toDouble();
                 }
                 else
                 {
-                    var = data.toLatin1();
+                    d->ignoredMap.insert(tagNameExiv2, QVariantList() << tagNameExifTool << data << tagType);
                 }
             }
-            else if (
-                     (tagType == QLatin1String("double"))      ||
-                     (tagType == QLatin1String("float"))       ||
-                     (tagType == QLatin1String("rational64s")) ||
-                     (tagType == QLatin1String("rational64u"))
-                    )
+            else if (tagNameExiv2.startsWith(QLatin1String("Iptc.")))
             {
-                var = data.toDouble();
+                var = data;
             }
-            else
+            else if (tagNameExiv2.startsWith(QLatin1String("Xmp.")))
             {
-                d->ignoredMap.insert(tagNameExiv2, QVariantList() << tagNameExifTool << data << tagType);
+                var = data;
             }
-        }
-        else if (tagNameExiv2.startsWith(QLatin1String("Iptc.")))
-        {
-            var = data;
-        }
-        else if (tagNameExiv2.startsWith(QLatin1String("Xmp.")))
-        {
-            var = data;
-        }
 
-        d->parsedMap.insert(tagNameExiv2, QVariantList() << tagNameExifTool << var << tagType);
+            d->parsedMap.insert(tagNameExiv2, QVariantList()
+                                                 << tagNameExifTool // ExifTool tag name.
+                                                 << var             // ExifTool data as variant.
+                                                 << tagType);       // ExifTool data type.
+        }
+        else
+        {
+            // Do not translate ExifTool tag names to Exiv2 scheme.
+
+            if (data.startsWith(QLatin1String("base64:")))
+            {
+                data = i18n("binary data...");
+            }
+
+            d->parsedMap.insert(tagNameExifTool, QVariantList()
+                                                     << QString()   // Empty Exiv2 tag name.
+                                                     << data        // ExifTool Raw data as string.
+                                                     << tagType);   // ExifTool data type.
+        }
     }
 
     if (d->loop)

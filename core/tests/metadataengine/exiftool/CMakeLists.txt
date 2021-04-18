@@ -9,22 +9,54 @@ APPLY_COMMON_POLICIES()
 
 include_directories(
     $<TARGET_PROPERTY:Qt5::Core,INTERFACE_INCLUDE_DIRECTORIES>
+    $<TARGET_PROPERTY:Qt5::Gui,INTERFACE_INCLUDE_DIRECTORIES>
     $<TARGET_PROPERTY:Qt5::Test,INTERFACE_INCLUDE_DIRECTORIES>
 )
 
 #------------------------------------------------------------------------
 
-set(exiftoolcommon_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/common/exiftooltranslator.cpp
-                        ${CMAKE_CURRENT_SOURCE_DIR}/common/exiftooltranslator_p.cpp
-                        ${CMAKE_CURRENT_SOURCE_DIR}/common/exiftooltranslator_exif.cpp
-                        ${CMAKE_CURRENT_SOURCE_DIR}/common/exiftooltranslator_iptc.cpp
-                        ${CMAKE_CURRENT_SOURCE_DIR}/common/exiftooltranslator_xmp.cpp
-                        ${CMAKE_CURRENT_SOURCE_DIR}/common/exiftooltranslator_ignoredgroups.cpp
-)
+set(qexiftoolexport_cli_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/qexiftoolexport_cli.cpp)
+add_executable(qexiftoolexport_cli ${qexiftoolexport_cli_SRCS})
+ecm_mark_nongui_executable(qexiftoolexport_cli)
 
-add_library(exiftoolcommon STATIC ${exiftoolcommon_SRCS})
+target_link_libraries(qexiftoolexport_cli
+                      digikamcore
+
+                      ${COMMON_TEST_LINK}
+)
 
 #------------------------------------------------------------------------
 
-add_subdirectory(cpp)
-add_subdirectory(qt)
+set(qexiftoolloader_cli_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/qexiftoolloader_cli.cpp)
+add_executable(qexiftoolloader_cli ${qexiftoolloader_cli_SRCS})
+ecm_mark_nongui_executable(qexiftoolloader_cli)
+
+target_link_libraries(qexiftoolloader_cli
+                      digikamcore
+
+                      ${COMMON_TEST_LINK}
+)
+
+#------------------------------------------------------------------------
+
+set(qexiftoolxmldb_cli_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/qexiftoolxmldb_cli.cpp)
+add_executable(qexiftoolxmldb_cli ${qexiftoolxmldb_cli_SRCS})
+ecm_mark_nongui_executable(qexiftoolxmldb_cli)
+
+target_link_libraries(qexiftoolxmldb_cli
+                      digikamcore
+
+                      ${COMMON_TEST_LINK}
+)
+
+#------------------------------------------------------------------------
+
+set(qexiftooloutput_cli_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/qexiftooloutput_cli.cpp)
+add_executable(qexiftooloutput_cli ${qexiftooloutput_cli_SRCS})
+ecm_mark_nongui_executable(qexiftooloutput_cli)
+
+target_link_libraries(qexiftooloutput_cli
+                      digikamcore
+
+                      ${COMMON_TEST_LINK}
+)
