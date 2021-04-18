@@ -130,7 +130,7 @@ public: // Faces helpers
     /**
      * Remove Images Face Map tags from Picassa/Metadatagroup format.
      */
-    void removeItemFacesMap();
+    bool removeItemFacesMap()                                                                                           const;
 
 public: // Tags helpers
 

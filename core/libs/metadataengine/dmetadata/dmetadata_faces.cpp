@@ -159,7 +159,7 @@ bool DMetadata::setItemFacesMap(QMultiMap<QString, QVariant>& facesPath, bool wr
 
     if (facesPath.isEmpty())
     {
-        return true;
+        return removeItemFacesMap();
     }
 
     setXmpTagString(qxmpTagName.toLatin1().constData(),
@@ -279,7 +279,7 @@ bool DMetadata::setItemFacesMap(QMultiMap<QString, QVariant>& facesPath, bool wr
     return ok;
 }
 
-void DMetadata::removeItemFacesMap()
+bool DMetadata::removeItemFacesMap() const
 {
     QString qxmpStructName    = QLatin1String("Xmp.mwg-rs.Regions");
     QString qxmpTagName       = QLatin1String("Xmp.mwg-rs.Regions/mwg-rs:RegionList");
@@ -306,6 +306,8 @@ void DMetadata::removeItemFacesMap()
     setXmpTagString(winQxmpStructName.toLatin1().constData(),
                     QString(),
                     MetaEngine::StructureTag);
+
+    return true;
 }
 
 } // namespace Digikam
