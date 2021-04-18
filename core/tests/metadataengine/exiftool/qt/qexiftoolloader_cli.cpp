@@ -132,6 +132,5 @@ int main(int argc, char** argv)
 
     qDebug().noquote() << output;
 
-
     return 0;
 }
