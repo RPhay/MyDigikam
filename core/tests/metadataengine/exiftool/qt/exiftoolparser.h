@@ -62,7 +62,7 @@ public:
     explicit ExifToolParser(QObject* const parent = nullptr);
     ~ExifToolParser();
 
-    bool parse(const QString& path);
+    bool load(const QString& path);
 
     QString currentParsedPath()  const;
     TagsMap currentParsedTags()  const;

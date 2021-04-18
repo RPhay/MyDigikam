@@ -39,11 +39,11 @@ namespace Digikam
 
 // Init static variables
 
-const int    ExifToolProcess::CMD_ID_MIN    = 1;
-const int    ExifToolProcess::CMD_ID_MAX    = 2000000000;
+const int    ExifToolProcess::S_CMD_ID_MIN  = 1;
+const int    ExifToolProcess::S_CMD_ID_MAX  = 2000000000;
 
-QMutex       ExifToolProcess::m_cmdIdMutex;
-int          ExifToolProcess::m_nextCmdId   = CMD_ID_MIN;
+QMutex       ExifToolProcess::s_cmdIdMutex;
+int          ExifToolProcess::s_nextCmdId   = S_CMD_ID_MIN;
 
 ExifToolProcess::ExifToolProcess(QObject* const parent)
     : QObject               (parent),
@@ -252,15 +252,15 @@ int ExifToolProcess::command(const QByteArrayList& args)
 
     // ThreadSafe incrementation of m_nextCmdId
 
-    m_cmdIdMutex.lock();
-    const int cmdId = m_nextCmdId;
+    s_cmdIdMutex.lock();
+    const int cmdId = s_nextCmdId;
 
-    if (m_nextCmdId++ >= CMD_ID_MAX)
+    if (s_nextCmdId++ >= S_CMD_ID_MAX)
     {
-        m_nextCmdId = CMD_ID_MIN;
+        s_nextCmdId = S_CMD_ID_MIN;
     }
 
-    m_cmdIdMutex.unlock();
+    s_cmdIdMutex.unlock();
 
     // String representation of m_cmdId with leading zero -> constant size: 10 char
 

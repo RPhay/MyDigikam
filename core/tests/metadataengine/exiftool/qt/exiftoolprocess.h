@@ -194,14 +194,6 @@ private:
 
 private:
 
-    static const int       CMD_ID_MIN;
-    static const int       CMD_ID_MAX;
-
-    static       QMutex    m_cmdIdMutex;
-    static       int       m_nextCmdId;     ///< Unique identifier, even in a multi-instances or multi-thread environment
-
-private:
-
     QString                m_etExePath;
     QString                m_perlExePath;
     QProcess*              m_process;
@@ -218,6 +210,14 @@ private:
 
     QProcess::ProcessError m_processError;
     QString                m_errorString;
+
+private:
+
+    static const int       S_CMD_ID_MIN;
+    static const int       S_CMD_ID_MAX;
+
+    static       QMutex    s_cmdIdMutex;
+    static       int       s_nextCmdId;     ///< Unique identifier, even in a multi-instances or multi-thread environment
 };
 
 } // namespace Digikam

@@ -110,7 +110,7 @@ ExifToolParser::TagsMap ExifToolParser::currentIgnoredTags() const
     return d->ignoredMap;
 }
 
-bool ExifToolParser::parse(const QString& path)
+bool ExifToolParser::load(const QString& path)
 {
     QFileInfo fileInfo(path);
 
