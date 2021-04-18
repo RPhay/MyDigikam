@@ -621,6 +621,15 @@ void DigikamApp::setupActions()
     connect(separateByFacesAction, &QAction::triggered,
             this, [this]() { d->view->slotSeparateImages((int)ItemSortSettings::CategoryByFaces); });
 
+    connect(d->view, &ItemIconView::signalSeparationModeChanged,
+            this, [this](int category)
+                {
+                    d->imageSeparationAction->blockSignals(true);
+                    d->imageSeparationAction->setCurrentItem(category-1);
+                    d->imageSeparationAction->blockSignals(false);
+                }
+            );
+
     // -----------------------------------------------------------------
 
     d->imageSeparationSortOrderAction        = new KSelectAction(i18nc("@action: setup", "Item Separation Order"), this);
