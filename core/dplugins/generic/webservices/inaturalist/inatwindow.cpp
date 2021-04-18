@@ -968,12 +968,21 @@ void INatWindow::slotNearbyObservation(const INatTalker::NearbyObservation&
 
     QString distance(red1 + localizedDistance(nearbyObservation.
                      m_distanceMeters, 'f', 1) + red2);
-    QString text(i18n("Closest %1research-grade <a href=\"https://www.inaturali"
-                      "st.org/observations/%2\">observation</a> reported in %3.",
-                      nearbyObservation.m_obscured ? i18n("<em>obscured</em> ")
-                      : QLatin1String(""),
-                      QString::number(nearbyObservation.m_observationId),
-                      distance));
+
+    QString observation(QString(QLatin1String("<a href=\"https://www.inatura"
+                                              "list.org/observations/%1\">")).
+                        arg(nearbyObservation.m_observationId) +
+                        i18n("observation") + QLatin1String("</a>"));
+
+    QString obscured(QLatin1String(""));
+    if (nearbyObservation.m_obscured)
+    {
+        obscured = QLatin1String("<em>") + i18n("obscured") +
+                   QLatin1String("</em> ");
+    }
+
+    QString text(i18n("Closest %1research-grade %2 reported in %3.",
+                      obscured, observation, distance));
     d->closestKnownObservation->setText(text);
     d->closestKnownObservation->show();
 }

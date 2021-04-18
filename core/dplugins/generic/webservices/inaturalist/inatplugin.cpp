@@ -53,7 +53,7 @@ void INatPlugin::cleanUp()
 
 QString INatPlugin::name() const
 {
-    return i18n("iNaturalist");
+    return i18nc("@title", "iNaturalist");
 }
 
 QString INatPlugin::iid() const
@@ -68,14 +68,17 @@ QIcon INatPlugin::icon() const
 
 QString INatPlugin::description() const
 {
-    return i18n("A tool to export photos as iNaturalist observations.");
+    return i18nc("@info",
+                 "A tool to export photos as iNaturalist observations.");
 }
 
 QString INatPlugin::details() const
 {
-    return i18n("<p>This tool exports photos as iNaturalist observations.</p>"
-                "<p>See iNaturalist website for details: <a href='https:"
-                "//www.inaturalist.org/'>https://www.inaturalist.org/</a></p>");
+    return i18nc("@info",
+                 "This tool exports photos as iNaturalist observations.\n\n"
+                 "See iNaturalist web site for details: %1.",
+                 QLatin1String("<a href='https://www.inaturalist.org/'>"
+                               "https://www.inaturalist.org/</a>"));
 }
 
 QList<DPluginAuthor> INatPlugin::authors() const

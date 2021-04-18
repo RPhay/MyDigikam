@@ -506,8 +506,9 @@ void INatTalker::userInfo(const QList<QNetworkCookie>& cookies)
     if (m_authProgressDlg)
     {
         m_authProgressDlg->
-        setLabelText(i18n("<font color=\"#74ac00\">iNaturalist"
-                          "</font> Login"));
+            setLabelText(QLatin1String("<font color=\"#74ac00\">") +
+                         i18n("iNaturalist") + QLatin1String("</font> ") +
+                         i18n("Login"));
         m_authProgressDlg->setMaximum(2);
         m_authProgressDlg->setValue(1);
         m_authProgressDlg->show();
