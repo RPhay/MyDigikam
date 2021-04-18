@@ -267,40 +267,38 @@ INatWindow::INatWindow(DInfoInterface* const iface,
 
     d->taxonPopup->setTalker(d->talker);
 
-    connect(d->talker, SIGNAL(signalBusy(bool)),
-            this, SLOT(slotBusy(bool)));
+    connect(d->talker, SIGNAL(signalBusy(bool)), SLOT(slotBusy(bool)));
 
-    connect(d->talker, SIGNAL(signalLinkingSucceeded(const QString&,const QString&,const QUrl&)),
-            this, SLOT(slotLinkingSucceeded(const QString&,const QString&,const QUrl&)));
+    connect(d->talker, SIGNAL(signalLinkingSucceeded(QString, QString, QUrl)),
+            SLOT(slotLinkingSucceeded(QString, QString, QUrl)));
 
-    connect(d->talker, SIGNAL(signalLinkingFailed(const QString&)),
-            this, SLOT(slotLinkingFailed(const QString&)));
+    connect(d->talker, SIGNAL(signalLinkingFailed(QString)),
+            SLOT(slotLinkingFailed(QString)));
 
-    connect(d->talker, SIGNAL(signalLoadUrlSucceeded(const QUrl&,const QByteArray&)),
-            this, SLOT(slotLoadUrlSucceeded(const QUrl&,const QByteArray&)));
+    connect(d->talker, SIGNAL(signalLoadUrlSucceeded(QUrl, QByteArray)),
+            SLOT(slotLoadUrlSucceeded(QUrl, QByteArray)));
 
-    connect(d->talker, SIGNAL(signalNearbyPlaces(const QStringList&)),
-            this, SLOT(slotNearbyPlaces(const QStringList&)));
+    connect(d->talker, SIGNAL(signalNearbyPlaces(QStringList)),
+            SLOT(slotNearbyPlaces(QStringList)));
 
-    connect(d->talker, SIGNAL(signalNearbyObservation(const INatTalker::NearbyObservation&)),
-            this, SLOT(slotNearbyObservation(const INatTalker::NearbyObservation&)));
+    connect(d->talker, SIGNAL(signalNearbyObservation(INatTalker::NearbyObservation)),
+            SLOT(slotNearbyObservation(INatTalker::NearbyObservation)));
 
-    connect(d->talker, SIGNAL(signalObservationCreated(const INatTalker::PhotoUploadRequest&)),
-            this, SLOT(slotObservationCreated(const INatTalker::PhotoUploadRequest&)));
+    connect(d->talker, SIGNAL(signalObservationCreated(INatTalker::PhotoUploadRequest)),
+            SLOT(slotObservationCreated(INatTalker::PhotoUploadRequest)));
 
-    connect(d->talker, SIGNAL(signalPhotoUploaded(const INatTalker::PhotoUploadResult&)),
-            this, SLOT(slotPhotoUploaded(const INatTalker::PhotoUploadResult&)));
+    connect(d->talker, SIGNAL(signalPhotoUploaded(INatTalker::PhotoUploadResult)),
+            SLOT(slotPhotoUploaded(INatTalker::PhotoUploadResult)));
 
     connect(d->talker, SIGNAL(signalObservationDeleted(int)),
-            this, SLOT(slotObservationDeleted(int)));
+            SLOT(slotObservationDeleted(int)));
 
     // -------------------------------------------------------------------------
 
     connect(d->changeUserButton, SIGNAL(clicked()),
-            this, SLOT(slotUserChangeRequest()));
+            SLOT(slotUserChangeRequest()));
 
-    connect(d->removeAccount, SIGNAL(clicked()),
-            this, SLOT(slotRemoveAccount()));
+    connect(d->removeAccount, SIGNAL(clicked()), SLOT(slotRemoveAccount()));
 
     // -------------------------------------------------------------------------
 
@@ -327,8 +325,8 @@ INatWindow::INatWindow(DInfoInterface* const iface,
     connect(startButton(), &QPushButton::clicked,
             this, &INatWindow::slotUser1);
 
-    connect(d->taxonPopup, SIGNAL(signalTaxonSelected(const Taxon&, bool)),
-            this, SLOT(slotTaxonSelected(const Taxon&, bool)));
+    connect(d->taxonPopup, SIGNAL(signalTaxonSelected(Taxon, bool)),
+            this, SLOT(slotTaxonSelected(Taxon, bool)));
 
     connect(d->taxonPopup, SIGNAL(signalTaxonDeselected()),
             this, SLOT(slotTaxonDeselected()));
@@ -386,8 +384,8 @@ void INatWindow::switchUser(bool restoreToken)
 
     QPointer<INatBrowserDlg> dlg = new INatBrowserDlg(userName, cookies, this);
 
-    connect(dlg, SIGNAL(signalApiToken(const QString&,const QList<QNetworkCookie>&)),
-            d->talker, SLOT(slotApiToken(const QString&,const QList<QNetworkCookie>&)));
+    connect(dlg, SIGNAL(signalApiToken(QString, QList<QNetworkCookie>)),
+            d->talker, SLOT(slotApiToken(QString, QList<QNetworkCookie>)));
 
     dlg->exec();
 }
