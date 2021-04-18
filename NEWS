@@ -146,4 +146,5 @@ BUGFIXES:
 131 ==> 394544 - New tool to export to inaturalist.
 132 ==> 435808 - Themes not available and default theme corrupt.
 133 ==> 435843 - Metadata changes not saved when removing face region.
-134 ==> 
+134 ==> 435877 - How to select language of showFoto.
+135 ==> 
