@@ -635,9 +635,8 @@ void MediaPlayerView::setCurrentItem(const QUrl& url, bool hasPrevious, bool has
 
 void MediaPlayerView::slotPositionChanged(qint64 position)
 {
-
     if ((d->sliderTime < position)       &&
-        ((d->sliderTime + 250) > position))
+        ((d->sliderTime + 100) > position))
     {
         return;
     }
