@@ -89,9 +89,9 @@ public:
     QList<Command>         cmdQueue;
     int                    cmdRunning;
 
-    int                    outAwait[2];   ///< [0] StandardOutput | [1] ErrorOutput
-    bool                   outReady[2];   ///< [0] StandardOutput | [1] ErrorOutput
-    QByteArray             outBuff[2];    ///< [0] StandardOutput | [1] ErrorOutput
+    int                    outAwait[2];             ///< [0] StandardOutput | [1] ErrorOutput
+    bool                   outReady[2];             ///< [0] StandardOutput | [1] ErrorOutput
+    QByteArray             outBuff[2];              ///< [0] StandardOutput | [1] ErrorOutput
 
     bool                   writeChannelIsClosed;
 
@@ -229,7 +229,7 @@ void ExifToolProcess::terminate()
         d->cmdQueue.clear();
         d->process->write(QByteArray("-stay_open\nfalse\n"));
         d->process->closeWriteChannel();
-        d->writeChannelIsClosed= true;
+        d->writeChannelIsClosed = true;
     }
     else
     {
@@ -376,12 +376,12 @@ void ExifToolProcess::execNextCmd()
 
     // Clear internal buffers
 
-    d->outBuff[0]    = QByteArray();
-    d->outBuff[1]    = QByteArray();
-    d->outAwait[0]   = false;
-    d->outAwait[1]   = false;
-    d->outReady[0]   = false;
-    d->outReady[1]   = false;
+    d->outBuff[0]            = QByteArray();
+    d->outBuff[1]            = QByteArray();
+    d->outAwait[0]           = false;
+    d->outAwait[1]           = false;
+    d->outReady[0]           = false;
+    d->outReady[1]           = false;
 
     // Exec Command
 
@@ -495,7 +495,7 @@ void ExifToolProcess::readOutput(const QProcess::ProcessChannel channel)
 
     d->cmdRunning = 0; // No command is running
 
-    execNextCmd();    // Exec next command
+    execNextCmd();     // Exec next command
 }
 
 void ExifToolProcess::setProcessErrorAndEmit(QProcess::ProcessError error, const QString& description)

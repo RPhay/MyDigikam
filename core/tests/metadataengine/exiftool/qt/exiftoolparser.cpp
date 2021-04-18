@@ -127,6 +127,7 @@ bool ExifToolParser::load(const QString& path)
     {
         d->proc->kill();
         qCWarning(DIGIKAM_METAENGINE_LOG) << "ExifTool process cannot be started";
+
         return false;
     }
 
@@ -146,6 +147,7 @@ bool ExifToolParser::load(const QString& path)
     if (ret == 0)
     {
         qCWarning(DIGIKAM_METAENGINE_LOG) << "ExifTool parse command cannot be sent";
+
         return false;
     }
 
@@ -188,7 +190,7 @@ void ExifToolParser::slotCmdCompleted(int /*cmdId*/,
     {
         QString     tagNameExifTool;
         QString     tagType;
-        QStringList sections    = it.key().split(QLatin1Char(':'));
+        QStringList sections  = it.key().split(QLatin1Char(':'));
 
         if      (sections.size() == 5)
         {
