@@ -30,12 +30,9 @@
 // Qt Core
 
 #include <QObject>
-#include <QElapsedTimer>
+#include <QString>
 #include <QProcess>
 #include <QMutex>
-#include <QList>
-#include <QString>
-#include <QByteArray>
 
 // Local includes
 
@@ -181,35 +178,8 @@ Q_SIGNALS:
 
 private:
 
-    struct Command
-    {
-        Command()
-            : id(0)
-        {
-        }
-
-        int        id;
-        QByteArray argsStr;
-    };
-
-private:
-
-    QString                m_etExePath;
-    QString                m_perlExePath;
-    QProcess*              m_process;
-
-    QElapsedTimer          m_execTimer;
-    QList<Command>         m_cmdQueue;
-    int                    m_cmdRunning;
-
-    int                    m_outAwait[2];   ///< [0] StandardOutput | [1] ErrorOutput
-    bool                   m_outReady[2];   ///< [0] StandardOutput | [1] ErrorOutput
-    QByteArray             m_outBuff[2];    ///< [0] StandardOutput | [1] ErrorOutput
-
-    bool                   m_writeChannelIsClosed;
-
-    QProcess::ProcessError m_processError;
-    QString                m_errorString;
+    class Private;
+    Private* const d;
 
 private:
 
