@@ -977,7 +977,7 @@ void INatWindow::slotNearbyObservation(const INatTalker::NearbyObservation&
     QString obscured(QLatin1String(""));
     if (nearbyObservation.m_obscured)
     {
-        obscured = QLatin1String("<em>") + i18n("obscured") +
+        obscured = QLatin1String("<em>") + i18nc("location", "obscured") +
                    QLatin1String("</em> ");
     }
 
