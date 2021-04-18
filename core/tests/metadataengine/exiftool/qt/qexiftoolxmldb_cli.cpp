@@ -35,6 +35,7 @@
 
 // Local includes
 
+#include "metaengine.h"
 #include "exiftoolparser.h"
 #include "exiftooltranslator.h"
 
@@ -43,6 +44,15 @@ using namespace Digikam;
 int main(int argc, char** argv)
 {
     QCoreApplication app(argc, argv);
+
+    qDebug() << "Extract Exiv2 tags list...";
+
+    MetaEngine meta;
+    MetaEngine::TagsMap exiv2Exif = meta.getStdExifTagsList();
+    QStringList tagsNotFound;
+    QStringList tagsFound;
+
+    qDebug() << "Extract ExifTool database as XML...";
 
     QProcess proc;
     QString program = QLatin1String("/usr/bin/exiftool");
@@ -57,6 +67,8 @@ int main(int argc, char** argv)
     }
 
     QByteArray xml = proc.readAllStandardOutput();
+
+    qDebug() << "Parse ExifTool tags database...";
 
     QDomDocument doc(QLatin1String("ExifToolDB"));
 
@@ -100,12 +112,83 @@ int main(int argc, char** argv)
 
                 if (e2.tagName() == QLatin1String("tag"))
                 {
-                    QString name = e2.attribute(QLatin1String("name"));
-                    qDebug().noquote() << QString::fromLatin1("%1.%2.%3.%4").arg(g0).arg(g1).arg(g2).arg(name);
+                    QString exiv2Tag;
+                    QString name  = e2.attribute(QLatin1String("name"));
+                    QString g11   = e2.attribute(QLatin1String("g1"));
+
+                    if (!g11.isEmpty())
+                    {
+                        g1 = g11;
+                    }
+
+                    QString g22   = e2.attribute(QLatin1String("g2"));
+
+                    if (!g22.isEmpty())
+                    {
+                        g2 = g22;
+                    }
+
+                    QString etTag = QString::fromLatin1("%1.%2.%3.%4").arg(g0).arg(g1).arg(g2).arg(name);
+
+                    if      (etTag.startsWith(QLatin1String("EXIF.InteropIFD")))
+                    {
+                        exiv2Tag = QString::fromLatin1("Exif.Iop.%1").arg(name);
+                    }
+                    else if (etTag.startsWith(QLatin1String("EXIF.IFD0")))
+                    {
+                        exiv2Tag = QString::fromLatin1("Exif.Image.%1").arg(name);
+                    }
+                    else if (etTag.startsWith(QLatin1String("EXIF.ExifIFD")))
+                    {
+                        exiv2Tag = QString::fromLatin1("Exif.Photo.%1").arg(name);
+                    }
+                    else if (etTag.startsWith(QLatin1String("EXIF.IFD1")))
+                    {
+                        exiv2Tag = QString::fromLatin1("Exif.Thumbnail.%1").arg(name);
+                    }
+                    else if (etTag.startsWith(QLatin1String("EXIF.GPS")))
+                    {
+                        exiv2Tag = QString::fromLatin1("Exif.GPSInfo.%1").arg(name);
+                    }
+
+                    if (!exiv2Tag.isEmpty() && etTag.startsWith(QLatin1String("EXIF.")))
+                    {
+                        if (exiv2Exif.contains(exiv2Tag))
+                        {
+                            tagsFound << QString::fromLatin1("%1 ==> %2").arg(etTag, -60).arg(exiv2Tag, -45);
+                        }
+                        else
+                        {
+                            tagsNotFound << QString::fromLatin1("%1 ==> Not Found!").arg(etTag, -60);
+                        }
+                    }
                 }
             }
         }
     }
+
+    tagsFound.sort();
+    tagsNotFound.sort();
+
+    qDebug() << endl << "----------------------------------------------------------------------------------";
+    qDebug() << "ExifTool tags found in Exiv2 (" << tagsFound.size() << "):" << endl;
+
+    foreach (const QString& s, tagsFound)
+    {
+        qDebug().noquote() << s;
+    }
+
+    qDebug() << endl << "----------------------------------------------------------------------------------";
+    qDebug() << "ExifTool tags not found in Exiv2 (" << tagsNotFound.size() << "):" << endl;
+
+    foreach (const QString& s, tagsNotFound)
+    {
+        qDebug().noquote() << s;
+    }
+
+    qDebug() << endl << "----------------------------------------------------------------------------------";
+    qDebug() << "Found:"     << tagsFound.size();
+    qDebug() << "Not Found:" << tagsNotFound.size();
 
     return 0;
 }

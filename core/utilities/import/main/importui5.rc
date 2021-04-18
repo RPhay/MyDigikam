@@ -1,5 +1,5 @@
 <!DOCTYPE kpartgui SYSTEM "kpartgui.dtd">
-<gui version="701" name="importui" translationDomain="digikam" >
+<gui version="702" name="importui" translationDomain="digikam" >
 
 <MenuBar>
 
@@ -60,7 +60,6 @@
         <Action name="color_managed_view" />
     </Menu>
 
-
     <Menu name="settings" noMerge="1"><Text>&amp;Settings</Text>
         <Merge name="StandardToolBarMenuHandler" />
         <Action name="options_show_menubar"/>
@@ -69,6 +68,7 @@
         <Action name="showthumbs" />
         <Separator/>
         <Action name="theme_menu" />
+        <Action name="switch_application_language" />
         <Action name="options_configure_keybinding"/>
         <Action name="options_configure_toolbars"/>
         <Action name="options_configure_notifications"/>

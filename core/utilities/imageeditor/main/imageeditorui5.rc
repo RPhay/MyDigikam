@@ -1,5 +1,5 @@
 <!DOCTYPE kpartgui SYSTEM "kpartgui.dtd">
-<gui version="701" name="imageeditor" translationDomain="digikam" >
+<gui version="702" name="imageeditor" translationDomain="digikam" >
 
 <MenuBar>
 
@@ -120,6 +120,7 @@
         <Action name="editorwindow_showthumbs" />
         <Separator/>
         <Action name="theme_menu" />
+        <Action name="switch_application_language" />
         <Action name="options_configure_keybinding" />
         <Action name="options_configure_toolbars" />
         <Action name="options_configure_notifications" />
