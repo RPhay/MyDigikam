@@ -33,12 +33,16 @@
 #include <QByteArray>
 #include <QProcess>
 
+// Local includes
+
+#include "digikam_export.h"
+
 namespace Digikam
 {
 
 class ExifToolProcess;
 
-class ExifToolParser : public QObject
+class DIGIKAM_EXPORT ExifToolParser : public QObject
 {
     Q_OBJECT
 

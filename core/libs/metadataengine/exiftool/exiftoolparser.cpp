@@ -33,6 +33,10 @@
 #include <QJsonObject>
 #include <QEventLoop>
 
+// KDE includes
+
+#include <klocalizedstring.h>
+
 // Local includes
 
 #include "exiftoolprocess.h"
@@ -318,6 +322,11 @@ void ExifToolParser::slotCmdCompleted(int /*cmdId*/,
         else
         {
             // Do not translate ExifTool tag names to Exiv2 scheme.
+
+            if (data.startsWith(QLatin1String("base64:")))
+            {
+                data = i18n("binary data...");
+            }
 
             d->parsedMap.insert(tagNameExifTool, QVariantList()
                                                      << QString()   // Empty Exiv2 tag name.
