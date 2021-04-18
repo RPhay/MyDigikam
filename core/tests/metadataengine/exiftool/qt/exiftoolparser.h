@@ -46,10 +46,12 @@ public:
 
     /**
      * A map used to store Tags Key and a list of Tags properties:
+     *
      * With Exiv2 tag name as key as parsed map of tags:
      *  -   ExifTool tag name   (QString).
      *  -   ExifTool Tag value  (QVariant).
      *  -   ExifTool Tag type   (QString).
+     *
      * With ExifTool tag name as key as ignored map of tags:
      *  -   Exiv2 tag name      (QString).
      *  -   ExifTool Tag value  (QString).
@@ -62,7 +64,7 @@ public:
     explicit ExifToolParser(QObject* const parent = nullptr);
     ~ExifToolParser();
 
-    bool parse(const QString& path);
+    bool load(const QString& path);
 
     QString currentParsedPath()  const;
     TagsMap currentParsedTags()  const;

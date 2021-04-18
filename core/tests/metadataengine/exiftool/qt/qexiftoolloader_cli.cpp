@@ -55,7 +55,7 @@ int main(int argc, char** argv)
 
     // Read metadata from the file. Start ExifToolParser
 
-    if (!parser->parse(QString::fromUtf8(argv[1])))
+    if (!parser->load(QString::fromUtf8(argv[1])))
     {
         return -1;
     }
@@ -131,7 +131,6 @@ int main(int argc, char** argv)
     }
 
     qDebug().noquote() << output;
-
 
     return 0;
 }

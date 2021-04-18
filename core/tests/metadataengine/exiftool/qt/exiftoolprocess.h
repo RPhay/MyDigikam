@@ -30,12 +30,9 @@
 // Qt Core
 
 #include <QObject>
-#include <QElapsedTimer>
+#include <QString>
 #include <QProcess>
 #include <QMutex>
-#include <QList>
-#include <QString>
-#include <QByteArray>
 
 // Local includes
 
@@ -181,43 +178,16 @@ Q_SIGNALS:
 
 private:
 
-    struct Command
-    {
-        Command()
-            : id(0)
-        {
-        }
-
-        int        id;
-        QByteArray argsStr;
-    };
+    class Private;
+    Private* const d;
 
 private:
 
-    static const int       CMD_ID_MIN;
-    static const int       CMD_ID_MAX;
+    static const int       S_CMD_ID_MIN;
+    static const int       S_CMD_ID_MAX;
 
-    static       QMutex    m_cmdIdMutex;
-    static       int       m_nextCmdId;     ///< Unique identifier, even in a multi-instances or multi-thread environment
-
-private:
-
-    QString                m_etExePath;
-    QString                m_perlExePath;
-    QProcess*              m_process;
-
-    QElapsedTimer          m_execTimer;
-    QList<Command>         m_cmdQueue;
-    int                    m_cmdRunning;
-
-    int                    m_outAwait[2];   ///< [0] StandardOutput | [1] ErrorOutput
-    bool                   m_outReady[2];   ///< [0] StandardOutput | [1] ErrorOutput
-    QByteArray             m_outBuff[2];    ///< [0] StandardOutput | [1] ErrorOutput
-
-    bool                   m_writeChannelIsClosed;
-
-    QProcess::ProcessError m_processError;
-    QString                m_errorString;
+    static       QMutex    s_cmdIdMutex;
+    static       int       s_nextCmdId;     ///< Unique identifier, even in a multi-instances or multi-thread environment
 };
 
 } // namespace Digikam

@@ -343,6 +343,8 @@ void DigikamItemView::setFaceMode(bool on)
         // by default, Face View is categorized by Faces.
 
         imageFilterModel()->setCategorizationMode(ItemSortSettings::CategoryByFaces);
+
+        emit signalSeparationModeChanged((int)ItemSortSettings::CategoryByFaces);
     }
     else
     {
@@ -350,10 +352,12 @@ void DigikamItemView::setFaceMode(bool on)
         setItemDelegate(d->normalDelegate);
 
         bool open = ApplicationSettings::instance()->getAllGroupsOpen();
-        int separationOrder = ApplicationSettings::instance()->getImageSeparationMode();
+        int separationMode = ApplicationSettings::instance()->getImageSeparationMode();
 
         imageFilterModel()->setAllGroupsOpen(open);
-        imageFilterModel()->setCategorizationMode((ItemSortSettings::CategorizationMode)separationOrder);
+        imageFilterModel()->setCategorizationMode((ItemSortSettings::CategorizationMode)separationMode);
+
+        emit signalSeparationModeChanged((int)separationMode);
     }
 }
 
