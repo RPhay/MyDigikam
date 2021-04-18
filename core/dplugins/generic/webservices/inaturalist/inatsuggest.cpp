@@ -24,8 +24,8 @@
 
 // Qt includes
 
-#include <QtWidgets>
-#include <QtCore>
+#include <QLabel>
+#include <QHeaderView>
 
 // KDE includes
 
@@ -125,7 +125,7 @@ SuggestTaxonCompletion::SuggestTaxonCompletion(TaxonEdit* const parent)
     connect(&d->timer, SIGNAL(timeout()), SLOT(slotAutoSuggest()));
 
     connect(d->editor, SIGNAL(textEdited(QString)),
-            this, SLOT(slotTextEdited(const QString&)));
+            SLOT(slotTextEdited(QString)));
 }
 
 SuggestTaxonCompletion::~SuggestTaxonCompletion()
@@ -144,17 +144,16 @@ void SuggestTaxonCompletion::setTalker(INatTalker* const inatTalker)
 {
     d->talker = inatTalker;
 
-    connect(d->talker, SIGNAL(signalTaxonAutoCompletions(const AutoCompletions&)),
-            this, SLOT(slotTaxonAutoCompletions(const AutoCompletions&)));
+    connect(d->talker, SIGNAL(signalTaxonAutoCompletions(AutoCompletions)),
+            SLOT(slotTaxonAutoCompletions(AutoCompletions)));
 
-    connect(d->talker, SIGNAL(signalComputerVisionResults(const ImageScores&)),
-            this, SLOT(slotComputerVisionResults(const ImageScores&)));
+    connect(d->talker, SIGNAL(signalComputerVisionResults(ImageScores)),
+            SLOT(slotComputerVisionResults(ImageScores)));
 
-    connect(d->editor, SIGNAL(inFocus()),
-            this, SLOT(slotInFocus()));
+    connect(d->editor, SIGNAL(inFocus()), SLOT(slotInFocus()));
 
-    connect(d->talker, SIGNAL(signalLoadUrlSucceeded(const QUrl&,const QByteArray&)),
-            this, SLOT(slotImageLoaded(const QUrl&,const QByteArray&)));
+    connect(d->talker, SIGNAL(signalLoadUrlSucceeded(QUrl, QByteArray)),
+            SLOT(slotImageLoaded(QUrl, QByteArray)));
 }
 
 void SuggestTaxonCompletion::slotInFocus()

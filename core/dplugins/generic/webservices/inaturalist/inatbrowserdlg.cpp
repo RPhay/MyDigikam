@@ -138,11 +138,11 @@ INatBrowserDlg::INatBrowserDlg(const QString& username,
     QWebEngineCookieStore* const cookieJar = d->browser->page()->profile()->cookieStore();
     cookieJar->deleteAllCookies();
 
-    connect(cookieJar, SIGNAL(cookieAdded(const QNetworkCookie&)),
-            this, SLOT(slotCookieAdded(const QNetworkCookie&)));
+    connect(cookieJar, SIGNAL(cookieAdded(QNetworkCookie)),
+            SLOT(slotCookieAdded(QNetworkCookie)));
 
-    connect(cookieJar, SIGNAL(cookieRemoved(const QNetworkCookie&)),
-            this, SLOT(slotCookieRemoved(const QNetworkCookie&)));
+    connect(cookieJar, SIGNAL(cookieRemoved(QNetworkCookie)),
+            SLOT(slotCookieRemoved(QNetworkCookie)));
 
 #else
 
@@ -221,8 +221,8 @@ INatBrowserDlg::INatBrowserDlg(const QString& username,
     connect(gohome, SIGNAL(triggered()),
             this, SLOT(slotGoHome()));
 
-    connect(this, SIGNAL(signalWebText(const QString&)),
-            this, SLOT(slotWebText(const QString&)));
+    connect(this, SIGNAL(signalWebText(QString)),
+            this, SLOT(slotWebText(QString)));
 
     // ----------------------
 
