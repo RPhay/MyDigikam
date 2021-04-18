@@ -194,7 +194,7 @@ void ImportItemPropertiesSideBarImport::slotChangedTab(QWidget* tab)
     }
     else if ((tab == d->metadataTab) && !d->dirtyMetadataTab)
     {
-        d->metadataTab->setCurrentData(d->metaData, d->itemInfo.name);
+        d->metadataTab->setCurrentData(d->metaData, d->itemInfo.url());
         d->dirtyMetadataTab = true;
     }
 
