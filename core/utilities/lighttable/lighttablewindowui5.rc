@@ -1,5 +1,5 @@
 <!DOCTYPE kpartgui SYSTEM "kpartgui.dtd">
-<gui version="701" name="lighttablewindow" translationDomain="digikam" >
+<gui version="702" name="lighttablewindow" translationDomain="digikam" >
 
 <MenuBar>
 
@@ -78,6 +78,7 @@
         <Action name="lighttable_showthumbbar" />
         <Separator/>
         <Action name="theme_menu" />
+        <Action name="switch_application_language" />
         <Action name="options_configure_keybinding" />
         <Action name="options_configure_toolbars" />
         <Action name="options_configure_notifications" />

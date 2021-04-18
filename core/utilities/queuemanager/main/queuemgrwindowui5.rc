@@ -1,5 +1,5 @@
 <!DOCTYPE kpartgui SYSTEM "kpartgui.dtd">
-<gui version="701" name="queuemgrwindow" translationDomain="digikam" >
+<gui version="702" name="queuemgrwindow" translationDomain="digikam" >
 
 <MenuBar>
 
@@ -30,7 +30,6 @@
         <Action name="queuemgr_fullscreen" />
     </Menu>
 
-
     <Menu name="settings" noMerge="1"><Text>&amp;Settings</Text>
         <Merge name="StandardToolBarMenuHandler" />
         <Action name="options_show_menubar"/>
@@ -38,6 +37,7 @@
         <Action name="options_show_toolbar"/>
         <Separator/>
         <Action name="theme_menu" />
+        <Action name="switch_application_language" />
         <Action name="options_configure_keybinding"/>
         <Action name="options_configure_toolbars"/>
         <Action name="options_configure_notifications"/>
