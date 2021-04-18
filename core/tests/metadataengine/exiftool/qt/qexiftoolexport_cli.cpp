@@ -37,7 +37,6 @@
 #include "dpluginloader.h"
 #include "metaengine.h"
 #include "exiftoolparser.h"
-#include "exiftooltranslator.h"
 
 using namespace Digikam;
 

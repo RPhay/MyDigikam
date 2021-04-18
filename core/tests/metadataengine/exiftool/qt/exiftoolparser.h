@@ -66,6 +66,12 @@ public:
 
     bool load(const QString& path);
 
+    /**
+     * Turn on/off translations of ExiTool tags to Exiv2.
+     * Default is on.
+     */
+    void setTranslations(bool);
+
     QString currentParsedPath()  const;
     TagsMap currentParsedTags()  const;
     TagsMap currentIgnoredTags() const;

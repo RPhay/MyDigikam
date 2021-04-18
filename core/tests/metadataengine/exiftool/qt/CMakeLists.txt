@@ -62,3 +62,17 @@ target_link_libraries(qexiftoolxmldb_cli
                       ${COMMON_TEST_LINK}
 )
 
+#------------------------------------------------------------------------
+
+set(qexiftooloutput_cli_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/qexiftooloutput_cli.cpp)
+add_executable(qexiftooloutput_cli ${qexiftooloutput_cli_SRCS})
+ecm_mark_nongui_executable(qexiftooloutput_cli)
+
+target_link_libraries(qexiftooloutput_cli
+                      exiftoolqt
+                      exiftoolcommon
+                      digikamcore
+
+                      ${COMMON_TEST_LINK}
+)
+
