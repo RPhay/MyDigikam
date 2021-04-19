@@ -117,7 +117,7 @@ SuggestTaxonCompletion::SuggestTaxonCompletion(TaxonEdit* const parent)
 
     d->popup->installEventFilter(this);
 
-    connect(d->popup, SIGNAL(itemClicked(QTreeWidgetItem*,int)),
+    connect(d->popup, SIGNAL(itemPressed(QTreeWidgetItem*, int)),
             this, SLOT(slotDoneCompletion()));
 
     d->timer.setSingleShot(true);
