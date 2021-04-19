@@ -396,6 +396,34 @@ bool Setup::execMetadataFilters(QWidget* const parent, int tab)
     return success;
 }
 
+bool Setup::execExifTool(QWidget* const parent)
+{
+    QPointer<Setup> setup        = new Setup(parent);
+    setup->showPage(MetadataPage);
+    setup->setFaceType(Plain);
+
+    DConfigDlgWdgItem* const cur = setup->currentPage();
+
+    if (!cur)
+    {
+        return false;
+    }
+
+    SetupMetadata* const widget  = dynamic_cast<SetupMetadata*>(cur->widget());
+
+    if (!widget)
+    {
+        return false;
+    }
+
+    widget->setActiveTab(SetupMetadata::ExifTool);
+
+    bool success                 = (setup->DConfigDlg::exec() == QDialog::Accepted);
+    delete setup;
+
+    return success;
+}
+
 void Setup::onlineVersionCheck()
 {
     Digikam::OnlineVersionDlg* const dlg = new Digikam::OnlineVersionDlg(qApp->activeWindow(),

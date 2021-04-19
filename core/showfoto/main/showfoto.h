@@ -135,6 +135,7 @@ private:
 private Q_SLOTS:
 
     void slotSetupMetadataFilters(int);
+    void slotSetupExifTool();
 
 // -- Internal setup methods implemented in showfoto_setup.cpp ----------------------------------------
 

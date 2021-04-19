@@ -48,6 +48,8 @@
 #include "metadatapanel.h"
 #include "metaenginesettings.h"
 #include "dactivelabel.h"
+#include "exiftoolbinary.h"
+#include "dbinarysearch.h"
 
 namespace ShowFoto
 {
@@ -57,10 +59,11 @@ class Q_DECL_HIDDEN SetupMetadata::Private
 public:
 
     explicit Private()
-      : exifRotateBox(nullptr),
+      : exifRotateBox        (nullptr),
         exifSetOrientationBox(nullptr),
-        tab(nullptr),
-        tagsCfgPanel(nullptr)
+        tab                  (nullptr),
+        tagsCfgPanel         (nullptr),
+        exifToolBinWidget    (nullptr)
     {
     }
 
@@ -70,11 +73,13 @@ public:
     QTabWidget*             tab;
 
     Digikam::MetadataPanel* tagsCfgPanel;
+    Digikam::DBinarySearch* exifToolBinWidget;
+    Digikam::ExifToolBinary exifToolBin;
 };
 
-SetupMetadata::SetupMetadata(QWidget* const parent )
+SetupMetadata::SetupMetadata(QWidget* const parent)
     : QScrollArea(parent),
-      d(new Private)
+      d          (new Private)
 {
     d->tab                        = new QTabWidget(viewport());
     setWidget(d->tab);
@@ -163,6 +168,33 @@ SetupMetadata::SetupMetadata(QWidget* const parent )
 
     // --------------------------------------------------------
 
+    QWidget* const exifToolPanel      = new QWidget(d->tab);
+    QVBoxLayout* const exifToolLayout = new QVBoxLayout;
+    QLabel* const exifToolBinLabel    = new QLabel(i18n("<p>Here you can configure location where ExifTool binary is located. "
+                                                        "Application will try to find this binary automatically if they are "
+                                                        "already installed on your computer.</p>"),
+                                                   exifToolPanel);
+    exifToolBinLabel->setWordWrap(true);
+
+    d->exifToolBinWidget              = new Digikam::DBinarySearch(exifToolPanel);
+    d->exifToolBinWidget->addBinary(d->exifToolBin);
+
+    foreach (const QString& path, MetaEngineSettings::instance()->settings().defaultExifToolSearchPaths())
+    {
+        d->exifToolBinWidget->addDirectory(path);
+    }
+
+    d->exifToolBinWidget->allBinariesFound();
+
+    exifToolLayout->addWidget(exifToolBinLabel);
+    exifToolLayout->addWidget(d->exifToolBinWidget);
+    exifToolLayout->addStretch();
+    exifToolPanel->setLayout(exifToolLayout);
+
+    d->tab->insertTab(ExifTool, exifToolPanel, i18nc("@title:tab", "ExifTool"));
+
+    // --------------------------------------------------------
+
     readSettings();
 }
 
@@ -184,6 +216,7 @@ void SetupMetadata::applySettings()
 
     set.exifRotate         = d->exifRotateBox->isChecked();
     set.exifSetOrientation = d->exifSetOrientationBox->isChecked();
+    set.exifToolPath       = d->exifToolBin.path();
     mSettings->setSettings(set);
 
     d->tagsCfgPanel->applySettings();
@@ -202,6 +235,7 @@ void SetupMetadata::readSettings()
 
     d->exifRotateBox->setChecked(set.exifRotate);
     d->exifSetOrientationBox->setChecked(set.exifSetOrientation);
+    d->exifToolBin.setup(set.exifToolPath);
 }
 
 void SetupMetadata::setActiveTab(MetadataTab tab)
