@@ -152,6 +152,11 @@ void ExifToolProcess::setProgram(const QString& etExePath, const QString& perlEx
     d->perlExePath = perlExePath;
 }
 
+QString ExifToolProcess::program() const
+{
+    return d->etExePath;
+}
+
 void ExifToolProcess::start()
 {
     // Check if ExifTool is starting or running

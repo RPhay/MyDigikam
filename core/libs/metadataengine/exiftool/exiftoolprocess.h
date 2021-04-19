@@ -66,6 +66,8 @@ public:
     void setProgram(const QString& etExePath,
                     const QString& perlExePath = QString());
 
+    QString program() const;
+
     /**
      * Starts exiftool in a new process.
      */

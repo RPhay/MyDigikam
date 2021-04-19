@@ -39,6 +39,7 @@
 
 // Local includes
 
+#include "metaenginesettings.h"
 #include "exiftoolprocess.h"
 #include "exiftooltranslator.h"
 #include "digikam_debug.h"
@@ -77,16 +78,10 @@ ExifToolParser::ExifToolParser(QObject* const parent)
 
     d->proc = new ExifToolProcess(parent);
 
-#if defined Q_OS_LINUX || defined Q_OS_MACOS
+    connect(MetaEngineSettings::instance(), SIGNAL(signalSettingsChanged()),
+            this, SLOT(slotMetaEngineSettingsChanged()));
 
-    d->proc->setProgram(QLatin1String("/usr/bin/exiftool"));
-
-#elif defined Q_OS_WIN
-
-    d->proc->setProgram(QLatin1String("exiftool.exe"));
-
-#endif
-
+    slotMetaEngineSettingsChanged();
 }
 
 ExifToolParser::~ExifToolParser()
@@ -141,7 +136,7 @@ bool ExifToolParser::load(const QString& path)
     if (!d->proc->waitForStarted(500))
     {
         d->proc->kill();
-        qCWarning(DIGIKAM_METAENGINE_LOG) << "ExifTool process cannot be started";
+        qCWarning(DIGIKAM_METAENGINE_LOG) << "ExifTool process cannot be started (" << d->proc->program() << ")";
 
         return false;
     }
@@ -162,7 +157,7 @@ bool ExifToolParser::load(const QString& path)
 
     if (ret == 0)
     {
-        qCWarning(DIGIKAM_METAENGINE_LOG) << "ExifTool parse command cannot be sent";
+        qCWarning(DIGIKAM_METAENGINE_LOG) << "ExifTool parsing command cannot be sent";
 
         return false;
     }
@@ -358,6 +353,25 @@ void ExifToolParser::slotErrorOccurred(QProcess::ProcessError error)
     {
         d->loop->quit();
     }
+}
+
+void ExifToolParser::slotMetaEngineSettingsChanged()
+{
+    d->proc->setProgram(
+        MetaEngineSettings::instance()->settings().defaultExifToolSearchPaths().first() +
+        QLatin1Char('/') +
+
+#if defined Q_OS_UNIX
+
+        QLatin1String("exiftool")
+
+#elif defined Q_OS_WIN
+
+        QLatin1String("exiftool.exe")
+
+#endif
+
+    );
 }
 
 } // namespace Digikam
