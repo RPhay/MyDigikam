@@ -33,6 +33,7 @@
 
 // Local includes
 
+#include "digikam_export.h"
 #include "exiftoolparser.h"
 
 namespace Digikam
@@ -72,7 +73,7 @@ private:
 
 // -------------------------------------------------------------------------
 
-class ExifToolListView : public QTreeWidget
+class DIGIKAM_EXPORT ExifToolListView : public QTreeWidget
 {
     Q_OBJECT
 
