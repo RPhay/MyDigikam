@@ -45,8 +45,8 @@ public:
         Rotation,
         Display,
         ExifTool,
-        AdvancedConfig,
-        Baloo
+        Baloo,
+        AdvancedConfig
     };
 
 public:
