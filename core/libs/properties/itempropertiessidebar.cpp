@@ -102,6 +102,9 @@ ItemPropertiesSideBar::ItemPropertiesSideBar(QWidget* const parent,
     connect(m_metadataTab, SIGNAL(signalSetupMetadataFilters(int)),
             this, SIGNAL(signalSetupMetadataFilters(int)));
 
+    connect(m_metadataTab, SIGNAL(signalSetupExifTool()),
+            this, SIGNAL(signalSetupExifTool()));
+
     // --- NOTE: use dynamic binding as slotChangedTab() is a virtual method which can be re-implemented in derived classes.
 
     connect(this, &ItemPropertiesSideBar::signalChangedTab,

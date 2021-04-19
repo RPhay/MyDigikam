@@ -28,6 +28,8 @@
 #include <QHeaderView>
 #include <QFont>
 #include <QLabel>
+#include <QGridLayout>
+#include <QPushButton>
 
 // KDE includes
 
@@ -197,7 +199,7 @@ public:
     }
 
     ExifToolListView* metadataView;
-    QLabel*           errorView;
+    QWidget*          errorView;
 };
 
 ExifToolWidget::ExifToolWidget(QWidget* const parent)
@@ -207,9 +209,26 @@ ExifToolWidget::ExifToolWidget(QWidget* const parent)
     setAttribute(Qt::WA_DeleteOnClose);
     setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
 
-    d->metadataView = new ExifToolListView(this);
-    d->errorView    = new QLabel(this);
-    d->errorView->setAlignment(Qt::AlignCenter);
+    d->metadataView         = new ExifToolListView(this);
+    d->errorView            = new QWidget(this);
+    QGridLayout* const grid = new QGridLayout(d->errorView);
+
+    QLabel* const errorLbl  = new QLabel(d->errorView);
+    errorLbl->setAlignment(Qt::AlignCenter);
+    errorLbl->setText(i18n("Cannot load data\nwith ExifTool.\nCheck your configuration."));
+
+    QPushButton* const btn  = new QPushButton(d->errorView);
+    btn->setText(i18n("Open Setup Dialog..."));
+
+    connect(btn, SIGNAL(clicked()),
+            this, SIGNAL(signalSetupExifTool()));
+
+    grid->addWidget(errorLbl, 1, 1, 1, 1);
+    grid->addWidget(btn,      2, 1, 1, 1);
+    grid->setColumnStretch(0, 10);
+    grid->setColumnStretch(2, 10);
+    grid->setRowStretch(0, 10);
+    grid->setRowStretch(3, 10);
 
     insertWidget(Private::MetadataView, d->metadataView);
     insertWidget(Private::ErrorView,    d->errorView);
@@ -232,7 +251,6 @@ void ExifToolWidget::loadFromUrl(const QUrl& url)
     }
     else
     {
-        d->errorView->setText(i18n("Cannot load data\nwith ExifTool.\nCheck your configuration."));
         setCurrentIndex(Private::ErrorView);
     }
 }

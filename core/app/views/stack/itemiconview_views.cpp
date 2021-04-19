@@ -197,6 +197,11 @@ void ItemIconView::slotSetupMetadataFilters(int tab)
     Setup::execMetadataFilters(this, tab);
 }
 
+void ItemIconView::slotSetupExifTool()
+{
+    Setup::execExifTool(this);
+}
+
 void ItemIconView::toggleFullScreen(bool set)
 {
     d->stackedview->imagePreviewView()->toggleFullScreen(set);

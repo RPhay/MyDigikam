@@ -377,18 +377,18 @@ bool Setup::execTemplateEditor(QWidget* const parent, const Template& t)
 
 bool Setup::execMetadataFilters(QWidget* const parent, int tab)
 {
-    QPointer<Setup> setup       = new Setup(parent);
+    QPointer<Setup> setup        = new Setup(parent);
     setup->showPage(MetadataPage);
     setup->setFaceType(Plain);
 
-    DConfigDlgWdgItem* const cur  = setup->currentPage();
+    DConfigDlgWdgItem* const cur = setup->currentPage();
 
     if (!cur)
     {
         return false;
     }
 
-    SetupMetadata* const widget = dynamic_cast<SetupMetadata*>(cur->widget());
+    SetupMetadata* const widget  = dynamic_cast<SetupMetadata*>(cur->widget());
 
     if (!widget)
     {
@@ -398,7 +398,35 @@ bool Setup::execMetadataFilters(QWidget* const parent, int tab)
     widget->setActiveMainTab(SetupMetadata::Display);
     widget->setActiveSubTab(tab);
 
-    bool success                = (setup->DConfigDlg::exec() == QDialog::Accepted);
+    bool success                 = (setup->DConfigDlg::exec() == QDialog::Accepted);
+    delete setup;
+
+    return success;
+}
+
+bool Setup::execExifTool(QWidget* const parent)
+{
+    QPointer<Setup> setup        = new Setup(parent);
+    setup->showPage(MetadataPage);
+    setup->setFaceType(Plain);
+
+    DConfigDlgWdgItem* const cur = setup->currentPage();
+
+    if (!cur)
+    {
+        return false;
+    }
+
+    SetupMetadata* const widget  = dynamic_cast<SetupMetadata*>(cur->widget());
+
+    if (!widget)
+    {
+        return false;
+    }
+
+    widget->setActiveMainTab(SetupMetadata::ExifTool);
+
+    bool success                 = (setup->DConfigDlg::exec() == QDialog::Accepted);
     delete setup;
 
     return success;
