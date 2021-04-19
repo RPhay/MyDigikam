@@ -43,7 +43,8 @@ public:
         ExifViewer,
         MakernotesViewer,
         IptcViewer,
-        XmpViewer
+        XmpViewer,
+        ExifTool
     };
 
 public:

@@ -882,6 +882,11 @@ void ShowFoto::slotSetupMetadataFilters(int tab)
     Setup::execMetadataFilters(this, tab+1);
 }
 
+void ShowFoto::slotSetupExifTool()
+{
+    Setup::execExifTool(this);
+}
+
 void ShowFoto::slotAddedDropedItems(QDropEvent* e)
 {
     QList<QUrl> list = e->mimeData()->urls();

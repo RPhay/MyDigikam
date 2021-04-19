@@ -507,8 +507,8 @@ SetupMetadata::SetupMetadata(QWidget* const parent)
 
     QWidget* const exifToolPanel      = new QWidget(d->tab);
     QVBoxLayout* const exifToolLayout = new QVBoxLayout;
-    QLabel* const exifToolBinLabel    = new QLabel(i18n("<p>Here you can configure locations where ExifTool binary is located. "
-                                                        "digiKam will try to find this binary automatically if they are "
+    QLabel* const exifToolBinLabel    = new QLabel(i18n("<p>Here you can configure location where ExifTool binary is located. "
+                                                        "Application will try to find this binary automatically if they are "
                                                         "already installed on your computer.</p>"),
                                                    exifToolPanel);
     exifToolBinLabel->setWordWrap(true);

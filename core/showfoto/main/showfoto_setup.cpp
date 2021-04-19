@@ -87,6 +87,9 @@ void ShowFoto::setupConnections()
     connect(d->rightSideBar, SIGNAL(signalSetupMetadataFilters(int)),
             this, SLOT(slotSetupMetadataFilters(int)));
 
+    connect(d->rightSideBar, SIGNAL(signalSetupExifTool()),
+            this, SLOT(slotSetupExifTool()));
+
     connect(d->dDHandler, SIGNAL(signalDroppedUrls(QList<QUrl>,bool)),
             this, SLOT(slotDroppedUrls(QList<QUrl>,bool)));
 }
