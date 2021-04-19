@@ -31,7 +31,8 @@
 namespace Digikam
 {
 
-ExifToolListViewGroup::ExifToolListViewGroup(ExifToolListView* const parent, const QString&  group)
+ExifToolListViewGroup::ExifToolListViewGroup(ExifToolListView* const parent,
+                                             const QString& group)
     : QTreeWidgetItem(parent)
 {
     setFlags(Qt::ItemIsEnabled);
@@ -50,13 +51,23 @@ ExifToolListViewGroup::~ExifToolListViewGroup()
 
 // ---------------------------------------------------------------------------
 
-ExifToolListViewItem::ExifToolListViewItem(ExifToolListViewGroup* const parent, const QStringList& data)
+ExifToolListViewItem::ExifToolListViewItem(ExifToolListViewGroup* const parent,
+                                           const QString& name, const QString& value)
     : QTreeWidgetItem(parent)
 {
     setDisabled(false);
     setSelected(false);
-    setText(0, data[0]);
-    setText(1, data[1]);
+    setText(0, name);
+
+    QString tagVal = value.simplified();
+
+    if (tagVal.length() > 512)
+    {
+        tagVal.truncate(512);
+        tagVal.append(QLatin1String("..."));
+    }
+
+    setText(1, tagVal);
 }
 
 ExifToolListViewItem::~ExifToolListViewItem()
@@ -109,7 +120,8 @@ void ExifToolListView::setMetadata(const ExifToolParser::TagsMap& map)
     for (ExifToolParser::TagsMap::const_iterator it = map.constBegin() ;
          it != map.constEnd() ; ++it)
     {
-        QString grp                   = it.key().section(QLatin1Char('.'), 0, 0);
+        QString grp                   = it.key().section(QLatin1Char('.'), 0, 0)
+                                                .replace(QLatin1Char('_'), QLatin1Char(' '));
 
         if (grp == QLatin1String("ExifTool"))
         {
@@ -117,7 +129,7 @@ void ExifToolListView::setMetadata(const ExifToolParser::TagsMap& map)
         }
 
         QString name                  = it.key().section(QLatin1Char('.'), -1);
-        QString data                  = it.value()[1].toString();
+        QString value                 = it.value()[1].toString();
         ExifToolListViewGroup* igroup = findGroup(grp);
 
         if (!igroup)
@@ -125,7 +137,7 @@ void ExifToolListView::setMetadata(const ExifToolParser::TagsMap& map)
             igroup = new ExifToolListViewGroup(this, grp);
         }
 
-        new ExifToolListViewItem(igroup, QStringList() << name << data);
+        new ExifToolListViewItem(igroup, name, value);
     }
 }
 

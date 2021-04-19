@@ -212,7 +212,7 @@ void MetadataWidget::setup()
 
 void MetadataWidget::slotFilterChanged(QAction* action)
 {
-    if (action == d->settingsAction)
+    if      (action == d->settingsAction)
     {
         emit signalSetupMetadataFilters();
     }

@@ -183,7 +183,7 @@ void MetadataListView::setIfdList(const DMetadata::MetaDataMap& ifds, const QStr
         {
             // We ignore all unknown tags if necessary.
 
-            if (filters.contains(QLatin1String("FULL")))
+            if      (filters.contains(QLatin1String("FULL")))
             {
                 // We don't filter the output (Photo Mode)
 
@@ -197,7 +197,7 @@ void MetadataListView::setIfdList(const DMetadata::MetaDataMap& ifds, const QStr
 
                 // Filter is not a list of complete tag keys
 
-                if (!filters.at(0).contains(QLatin1Char('.')) && filters.contains(it.key().section(QLatin1Char('.'), 2, 2)))
+                if      (!filters.at(0).contains(QLatin1Char('.')) && filters.contains(it.key().section(QLatin1Char('.'), 2, 2)))
                 {
                     QString tagTitle = m_parent->getTagTitle(it.key());
                     new MetadataListViewItem(parentifDItem, it.key(), tagTitle, it.value());
@@ -298,8 +298,8 @@ void MetadataListView::setIfdList(const DMetadata::MetaDataMap& ifds, const QStr
 
                         // Filter is not a list of complete tag keys
 
-                        if (!filters.at(0).contains(QLatin1Char('.')) &&
-                            filters.contains(it.key().section(QLatin1Char('.'), 2, 2)))
+                        if      (!filters.at(0).contains(QLatin1Char('.')) &&
+                                 filters.contains(it.key().section(QLatin1Char('.'), 2, 2)))
                         {
                             QString tagTitle = m_parent->getTagTitle(it.key());
                             new MetadataListViewItem(parentifDItem, it.key(), tagTitle, it.value());

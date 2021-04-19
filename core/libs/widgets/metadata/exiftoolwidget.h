@@ -60,7 +60,7 @@ class ExifToolListViewItem : public QTreeWidgetItem
 public:
 
     ExifToolListViewItem(ExifToolListViewGroup* const parent,
-                         const QStringList& data);
+                          const QString& name, const QString& value);
     ~ExifToolListViewItem() override;
 
 private:
