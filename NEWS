@@ -148,4 +148,5 @@ BUGFIXES:
 133 ==> 435843 - Metadata changes not saved when removing face region.
 134 ==> 435877 - How to select language of showFoto.
 135 ==> 435879 - Strange behaviour of right mouse-click on toolbar.
-136 ==> 
+136 ==> 435898 - Preview image display arbitrarily resized after crop.
+137 ==> 
