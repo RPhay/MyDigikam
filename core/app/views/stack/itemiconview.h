@@ -415,6 +415,7 @@ private Q_SLOTS:
     void slotRefreshImagePreview();
     void slotViewModeChanged();
     void slotSetupMetadataFilters(int);
+    void slotSetupExifTool();
 
     void slotShowContextMenu(QContextMenuEvent* event,
                              const QList<QAction*>& extraGroupingActions = QList<QAction*>());

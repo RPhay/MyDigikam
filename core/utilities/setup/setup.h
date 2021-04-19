@@ -84,6 +84,7 @@ public:
     void setTemplate(const Template& t);
 
     static bool execMetadataFilters(QWidget* const parent, int tab);
+    static bool execExifTool(QWidget* const parent);
 
     QSize sizeHint() const  override;
 

@@ -108,6 +108,10 @@ public:
 
     void loadFromUrl(const QUrl& url);
 
+Q_SIGNALS:
+
+    void signalSetupExifTool();
+
 private:
 
     class Private;

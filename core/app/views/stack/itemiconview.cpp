@@ -229,6 +229,9 @@ ItemIconView::ItemIconView(QWidget* const parent, DModelFactory* const modelColl
     connect(d->rightSideBar, SIGNAL(signalSetupMetadataFilters(int)),
             this, SLOT(slotSetupMetadataFilters(int)));
 
+    connect(d->rightSideBar, SIGNAL(signalSetupExifTool()),
+            this, SLOT(slotSetupExifTool()));
+
     connect(d->iconView, SIGNAL(signalSeparationModeChanged(int)),
             this, SIGNAL(signalSeparationModeChanged(int)));
 }

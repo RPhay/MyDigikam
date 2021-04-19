@@ -59,6 +59,7 @@ public:
 Q_SIGNALS:
 
     void signalSetupMetadataFilters(int);
+    void signalSetupExifTool();
 
 private Q_SLOTS:
 
