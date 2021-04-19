@@ -449,21 +449,19 @@ DownloadInfo::DownloadInfo(const QString& _path,
                            const QString& _name,
                            const QString& _hash,
                            const qint64&  _size)
-    : size(0)
+    : path(_path),
+      name(_name),
+      hash(_hash),
+      size(_size)
 {
-    path = _path;
-    name = _name;
-    hash = _hash;
-    size = _size;
 }
 
 DownloadInfo::DownloadInfo(const DownloadInfo& other)
-    : size(0)
+    : path(other.path),
+      name(other.name),
+      hash(other.hash),
+      size(other.size)
 {
-    path = other.path;
-    name = other.name;
-    hash = other.hash;
-    size = other.size;
 }
 
 DownloadInfo::~DownloadInfo()
