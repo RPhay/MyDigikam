@@ -28,6 +28,10 @@
 #include <QHeaderView>
 #include <QFont>
 
+// Local includes
+
+#include "ditemtooltip.h"
+
 namespace Digikam
 {
 
@@ -52,12 +56,15 @@ ExifToolListViewGroup::~ExifToolListViewGroup()
 // ---------------------------------------------------------------------------
 
 ExifToolListViewItem::ExifToolListViewItem(ExifToolListViewGroup* const parent,
-                                           const QString& name, const QString& value)
+                                           const QString& name,
+                                           const QString& value,
+                                           const QString& desc)
     : QTreeWidgetItem(parent)
 {
     setDisabled(false);
     setSelected(false);
     setText(0, name);
+    setToolTip(0, !desc.isEmpty() ? desc : name);
 
     QString tagVal = value.simplified();
 
@@ -68,6 +75,9 @@ ExifToolListViewItem::ExifToolListViewItem(ExifToolListViewGroup* const parent,
     }
 
     setText(1, tagVal);
+
+    DToolTipStyleSheet cnt;
+    setToolTip(1, QLatin1String("<qt><p>") + cnt.breakString(tagVal) + QLatin1String("</p></qt>"));
 }
 
 ExifToolListViewItem::~ExifToolListViewItem()
@@ -130,6 +140,7 @@ void ExifToolListView::setMetadata(const ExifToolParser::TagsMap& map)
 
         QString name                  = it.key().section(QLatin1Char('.'), -1);
         QString value                 = it.value()[1].toString();
+        QString desc                  = it.value()[3].toString();
         ExifToolListViewGroup* igroup = findGroup(grp);
 
         if (!igroup)
@@ -137,7 +148,7 @@ void ExifToolListView::setMetadata(const ExifToolParser::TagsMap& map)
             igroup = new ExifToolListViewGroup(this, grp);
         }
 
-        new ExifToolListViewItem(igroup, name, value);
+        new ExifToolListViewItem(igroup, name, value, desc);
     }
 }
 

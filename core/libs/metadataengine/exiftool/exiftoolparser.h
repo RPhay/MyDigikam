@@ -52,14 +52,16 @@ public:
      * A map used to store Tags Key and a list of Tags properties:
      *
      * With Exiv2 tag name as key as parsed map of tags:
-     *  -   ExifTool tag name   (QString).
-     *  -   ExifTool Tag value  (QVariant).
-     *  -   ExifTool Tag type   (QString).
+     *  -   ExifTool tag name           (QString).
+     *  -   ExifTool Tag value          (QVariant).
+     *  -   ExifTool Tag type           (QString).
+     *  -   ExifTool Tag description    (QString).
      *
      * With ExifTool tag name as key as ignored map of tags:
-     *  -   Exiv2 tag name      (QString).
-     *  -   ExifTool Tag value  (QString).
-     *  -   ExifTool Tag type   (QString).
+     *  -   Exiv2 tag name              (QString).
+     *  -   ExifTool Tag value          (QString).
+     *  -   ExifTool Tag type           (QString).
+     *  -   ExifTool Tag description    (QString).
      */
     typedef QHash<QString, QVariantList> TagsMap;
 

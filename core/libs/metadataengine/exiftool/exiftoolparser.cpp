@@ -153,6 +153,7 @@ bool ExifToolParser::load(const QString& path)
     cmdArgs << QByteArray("-binary");
     cmdArgs << QByteArray("-G:0:1:2:4:6");
     cmdArgs << QByteArray("-n");
+    cmdArgs << QByteArray("-l");
     cmdArgs << fileInfo.filePath().toUtf8();
 
     // Send command to ExifToolProcess
@@ -234,7 +235,9 @@ void ExifToolParser::slotCmdCompleted(int /*cmdId*/,
             continue;
         }
 
-        QString data = it.value().toString();
+        QVariantMap propsMap = it.value().toMap();
+        QString data         = propsMap.find(QLatin1String("val")).value().toString();
+        QString desc         = propsMap.find(QLatin1String("desc")).value().toString();
 
         if (d->translate)
         {
@@ -321,7 +324,8 @@ void ExifToolParser::slotCmdCompleted(int /*cmdId*/,
             d->parsedMap.insert(tagNameExiv2, QVariantList()
                                                  << tagNameExifTool // ExifTool tag name.
                                                  << var             // ExifTool data as variant.
-                                                 << tagType);       // ExifTool data type.
+                                                 << tagType         // ExifTool data type.
+                                                 << desc);          // ExifTool tag description.
         }
         else
         {
@@ -335,7 +339,8 @@ void ExifToolParser::slotCmdCompleted(int /*cmdId*/,
             d->parsedMap.insert(tagNameExifTool, QVariantList()
                                                      << QString()   // Empty Exiv2 tag name.
                                                      << data        // ExifTool Raw data as string.
-                                                     << tagType);   // ExifTool data type.
+                                                     << tagType     // ExifTool data type.
+                                                     << desc);      // ExifTool tag description.
         }
     }
 
