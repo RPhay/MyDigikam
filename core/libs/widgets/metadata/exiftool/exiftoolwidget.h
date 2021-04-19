@@ -28,6 +28,7 @@
 
 #include <QTreeWidget>
 #include <QWidget>
+#include <QStackedWidget>
 #include <QString>
 #include <QUrl>
 
@@ -73,7 +74,7 @@ private:
 
 // -------------------------------------------------------------------------
 
-class DIGIKAM_EXPORT ExifToolListView : public QTreeWidget
+class ExifToolListView : public QTreeWidget
 {
     Q_OBJECT
 
@@ -92,6 +93,25 @@ private:
 private:
 
     ExifToolParser* m_parser;
+};
+
+// -------------------------------------------------------------------------
+
+class DIGIKAM_EXPORT ExifToolWidget : public QStackedWidget
+{
+    Q_OBJECT
+
+public:
+
+    explicit ExifToolWidget(QWidget* const parent);
+    ~ExifToolWidget() override;
+
+    void loadFromUrl(const QUrl& url);
+
+private:
+
+    class Private;
+    Private* const d;
 };
 
 } // namespace Digikam

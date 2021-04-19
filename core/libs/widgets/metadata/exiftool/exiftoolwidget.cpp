@@ -27,6 +27,11 @@
 
 #include <QHeaderView>
 #include <QFont>
+#include <QLabel>
+
+// KDE includes
+
+#include <klocalizedstring.h>
 
 // Local includes
 
@@ -169,6 +174,67 @@ ExifToolListViewGroup* ExifToolListView::findGroup(const QString& group)
     }
 
     return nullptr;
+}
+
+// ---------------------------------------------------------------------------
+
+class Q_DECL_HIDDEN ExifToolWidget::Private
+{
+public:
+
+    enum ViewMode
+    {
+        MetadataView = 0,
+        ErrorView
+    };
+
+public:
+
+    explicit Private()
+        : metadataView(nullptr),
+          errorView   (nullptr)
+    {
+    }
+
+    ExifToolListView* metadataView;
+    QLabel*           errorView;
+};
+
+ExifToolWidget::ExifToolWidget(QWidget* const parent)
+    : QStackedWidget(parent),
+      d             (new Private)
+{
+    setAttribute(Qt::WA_DeleteOnClose);
+    setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+
+    d->metadataView = new ExifToolListView(this);
+    d->errorView    = new QLabel(this);
+    d->errorView->setAlignment(Qt::AlignCenter);
+
+    insertWidget(Private::MetadataView, d->metadataView);
+    insertWidget(Private::ErrorView,    d->errorView);
+
+    setCurrentIndex(Private::MetadataView);
+}
+
+ExifToolWidget::~ExifToolWidget()
+{
+    delete d;
+}
+
+void ExifToolWidget::loadFromUrl(const QUrl& url)
+{
+    bool ret = d->metadataView->loadFromUrl(url);
+
+    if (ret)
+    {
+        setCurrentIndex(Private::MetadataView);
+    }
+    else
+    {
+        d->errorView->setText(i18n("Cannot load data\nwith ExifTool.\nCheck your configuration."));
+        setCurrentIndex(Private::ErrorView);
+    }
 }
 
 } // namespace Digikam
