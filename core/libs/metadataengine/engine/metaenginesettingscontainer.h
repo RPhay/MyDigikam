@@ -80,7 +80,9 @@ public:
 public:
 
     void readFromConfig(KConfigGroup& group);
-    void writeToConfig(KConfigGroup& group) const;
+    void writeToConfig(KConfigGroup& group)  const;
+
+    QStringList defaultExifToolSearchPaths() const;
 
 public:
 
@@ -112,6 +114,8 @@ public:
     RotationBehaviorFlags           rotationBehavior;
 
     QStringList                     sidecarExtensions;
+
+    QString                         exifToolPath;
 };
 
 //! qDebug() stream operator. Writes property @a inf to the debug output in a nicely formatted way.

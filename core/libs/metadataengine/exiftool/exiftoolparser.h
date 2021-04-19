@@ -91,6 +91,8 @@ private Q_SLOTS:
 
     void slotErrorOccurred(QProcess::ProcessError error);
 
+    void slotMetaEngineSettingsChanged();
+
 private:
 
     class Private;

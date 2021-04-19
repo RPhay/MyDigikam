@@ -61,6 +61,8 @@
 #include "metadatapanel.h"
 #include "metaenginesettings.h"
 #include "setuputils.h"
+#include "exiftoolbinary.h"
+#include "dbinarysearch.h"
 
 namespace Digikam
 {
@@ -108,6 +110,7 @@ public:
         displaySubTab           (nullptr),
         tagsCfgPanel            (nullptr),
         advTab                  (nullptr),
+        exifToolBinWidget       (nullptr),
         extensionsEdit          (nullptr)
     {
     }
@@ -157,6 +160,9 @@ public:
 
     MetadataPanel*       tagsCfgPanel;
     AdvancedMetadataTab* advTab;
+
+    DBinarySearch*       exifToolBinWidget;
+    ExifToolBinary       exifToolBin;
 
     QLineEdit*           extensionsEdit;
 };
@@ -499,6 +505,33 @@ SetupMetadata::SetupMetadata(QWidget* const parent)
 
     // --------------------------------------------------------
 
+    QWidget* const exifToolPanel      = new QWidget(d->tab);
+    QVBoxLayout* const exifToolLayout = new QVBoxLayout;
+    QLabel* const exifToolBinLabel    = new QLabel(i18n("<p>Here you can configure locations where ExifTool binary is located. "
+                                                        "digiKam will try to find this binary automatically if they are "
+                                                        "already installed on your computer.</p>"),
+                                                   exifToolPanel);
+    exifToolBinLabel->setWordWrap(true);
+
+    d->exifToolBinWidget              = new DBinarySearch(exifToolPanel);
+    d->exifToolBinWidget->addBinary(d->exifToolBin);
+
+    foreach (const QString& path, MetaEngineSettings::instance()->settings().defaultExifToolSearchPaths())
+    {
+        d->exifToolBinWidget->addDirectory(path);
+    }
+
+    d->exifToolBinWidget->allBinariesFound();
+
+    exifToolLayout->addWidget(exifToolBinLabel);
+    exifToolLayout->addWidget(d->exifToolBinWidget);
+    exifToolLayout->addStretch();
+    exifToolPanel->setLayout(exifToolLayout);
+
+    d->tab->insertTab(ExifTool, exifToolPanel, i18nc("@title:tab", "ExifTool"));
+
+    // --------------------------------------------------------
+
 #ifdef HAVE_KFILEMETADATA
 
     QWidget* const balooPanel      = new QWidget(d->tab);
@@ -762,8 +795,9 @@ void SetupMetadata::applySettings()
     set.sidecarExtensions.removeAll(QLatin1String("xmp"));
     set.sidecarExtensions.removeDuplicates();
 
-    mSettings->setSettings(set);
+    set.exifToolPath          = d->exifToolBin.path();
 
+    mSettings->setSettings(set);
 
 #ifdef HAVE_KFILEMETADATA
 
@@ -843,6 +877,8 @@ void SetupMetadata::readSettings()
     }
 
     d->extensionsEdit->setText(set.sidecarExtensions.join(QLatin1Char(' ')));
+
+    d->exifToolBin.setup(set.exifToolPath);
 
 #ifdef HAVE_KFILEMETADATA
 

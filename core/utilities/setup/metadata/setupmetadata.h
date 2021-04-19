@@ -44,6 +44,7 @@ public:
         Sidecars,
         Rotation,
         Display,
+        ExifTool,
         AdvancedConfig,
         Baloo
     };
