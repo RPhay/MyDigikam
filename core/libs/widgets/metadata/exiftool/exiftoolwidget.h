@@ -53,6 +53,17 @@ Q_SIGNALS:
 
     void signalSetupExifTool();
 
+private Q_SLOTS:
+
+    void slotCopy2Clipboard();
+    void slotPrintMetadata();
+    void slotSaveMetadataToFile();
+
+private:
+
+    void setup();
+    QString metadataToText() const;
+
 private:
 
     class Private;

@@ -28,6 +28,20 @@
 #include <QLabel>
 #include <QGridLayout>
 #include <QPushButton>
+#include <QToolButton>
+#include <QMenu>
+#include <QAction>
+#include <QMimeData>
+#include <QApplication>
+#include <QPrinter>
+#include <QPrintDialog>
+#include <QTextDocument>
+#include <QClipboard>
+#include <QStyle>
+#include <QPointer>
+#include <QFile>
+#include <QStandardPaths>
+#include <QTextStream>
 
 // KDE includes
 
@@ -39,6 +53,7 @@
 #include "exiftoollistviewitem.h"
 #include "exiftoollistview.h"
 #include "searchtextbar.h"
+#include "dfiledialog.h"
 
 namespace Digikam
 {
@@ -56,10 +71,15 @@ public:
 public:
 
     explicit Private()
-        : metadataView(nullptr),
-          errorView   (nullptr),
-          view        (nullptr),
-          searchBar   (nullptr)
+        : metadataView    (nullptr),
+          errorView       (nullptr),
+          view            (nullptr),
+          searchBar       (nullptr),
+          toolBtn         (nullptr),
+          saveMetadata    (nullptr),
+          printMetadata   (nullptr),
+          copy2ClipBoard  (nullptr),
+          optionsMenu     (nullptr)
     {
     }
 
@@ -67,6 +87,14 @@ public:
     QWidget*          errorView;
     ExifToolListView* view;
     SearchTextBar*    searchBar;
+
+    QToolButton*      toolBtn;
+
+    QAction*          saveMetadata;
+    QAction*          printMetadata;
+    QAction*          copy2ClipBoard;
+
+    QMenu*            optionsMenu;
 };
 
 ExifToolWidget::ExifToolWidget(QWidget* const parent)
@@ -78,14 +106,32 @@ ExifToolWidget::ExifToolWidget(QWidget* const parent)
 
     // ---
 
+    const int spacing        = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
     d->metadataView          = new QWidget(this);
     QGridLayout* const grid2 = new QGridLayout(d->metadataView);
+
+    d->toolBtn               = new QToolButton(this);
+    d->toolBtn->setToolTip(i18nc("@info: metadata view", "Tools"));
+    d->toolBtn->setIcon(QIcon::fromTheme(QLatin1String("system-run")));
+    d->toolBtn->setPopupMode(QToolButton::InstantPopup);
+    d->toolBtn->setWhatsThis(i18nc("@info: metadata view", "Run tool over metadata tags."));
+
+    QMenu* const toolMenu = new QMenu(d->toolBtn);
+    d->saveMetadata       = toolMenu->addAction(i18nc("@action:inmenu", "Save in file"));
+    d->printMetadata      = toolMenu->addAction(i18nc("@action:inmenu", "Print"));
+    d->copy2ClipBoard     = toolMenu->addAction(i18nc("@action:inmenu", "Copy to Clipboard"));
+    d->toolBtn->setMenu(toolMenu);
 
     d->view                  = new ExifToolListView(d->metadataView);
     d->searchBar             = new SearchTextBar(d->metadataView, QLatin1String("ExifToolSearchBar"));
 
-    grid2->addWidget(d->searchBar, 0, 1, 1, 1);
-    grid2->addWidget(d->view,      1, 1, 1, 1);
+    grid2->addWidget(d->searchBar, 0, 0, 1, 1);
+    grid2->addWidget(d->toolBtn,   0, 1, 1, 1);
+    grid2->addWidget(d->view,      1, 0, 1, 2);
+    grid2->setColumnStretch(0, 10);
+    grid2->setRowStretch(1, 10);
+    grid2->setContentsMargins(spacing, spacing, spacing, spacing);
+    grid2->setSpacing(0);
 
     // ---
 
@@ -106,6 +152,7 @@ ExifToolWidget::ExifToolWidget(QWidget* const parent)
     grid->addWidget(btn,      2, 1, 1, 1);
     grid->setColumnStretch(0, 10);
     grid->setColumnStretch(2, 10);
+    grid->setContentsMargins(spacing, spacing, spacing, spacing);
     grid->setRowStretch(0, 10);
     grid->setRowStretch(3, 10);
 
@@ -114,11 +161,7 @@ ExifToolWidget::ExifToolWidget(QWidget* const parent)
 
     setCurrentIndex(Private::MetadataView);
 
-    connect(d->searchBar, SIGNAL(signalSearchTextSettings(SearchTextSettings)),
-            d->view, SLOT(slotSearchTextChanged(SearchTextSettings)));
-
-    connect(d->view, SIGNAL(signalTextFilterMatch(bool)),
-            d->searchBar, SLOT(slotSearchResult(bool)));
+    setup();
 }
 
 ExifToolWidget::~ExifToolWidget()
@@ -138,6 +181,183 @@ void ExifToolWidget::loadFromUrl(const QUrl& url)
     {
         setCurrentIndex(Private::ErrorView);
     }
+}
+
+void ExifToolWidget::setup()
+{
+    connect(d->copy2ClipBoard, SIGNAL(triggered(bool)),
+            this, SLOT(slotCopy2Clipboard()));
+
+    connect(d->printMetadata, SIGNAL(triggered(bool)),
+            this, SLOT(slotPrintMetadata()));
+
+    connect(d->saveMetadata, SIGNAL(triggered(bool)),
+            this, SLOT(slotSaveMetadataToFile()));
+
+    connect(d->searchBar, SIGNAL(signalSearchTextSettings(SearchTextSettings)),
+            d->view, SLOT(slotSearchTextChanged(SearchTextSettings)));
+
+    connect(d->view, SIGNAL(signalTextFilterMatch(bool)),
+            d->searchBar, SLOT(slotSearchResult(bool)));
+}
+
+QString ExifToolWidget::metadataToText() const
+{
+    QString textmetadata;
+    int i                 = 0;
+    QTreeWidgetItem* item = nullptr;
+
+    do
+    {
+        item                                = d->view->topLevelItem(i);
+        ExifToolListViewGroup* const lvItem = dynamic_cast<ExifToolListViewGroup*>(item);
+
+        if (lvItem)
+        {
+            textmetadata.append(QLatin1String("\n\n>>> "));
+            textmetadata.append(lvItem->text(0));
+            textmetadata.append(QLatin1String(" <<<\n\n"));
+
+            int j                  = 0;
+            QTreeWidgetItem* item2 = nullptr;
+
+            do
+            {
+                item2 = dynamic_cast<QTreeWidgetItem*>(lvItem)->child(j);
+
+                if (item2)
+                {
+                    ExifToolListViewItem* const lvItem2 = dynamic_cast<ExifToolListViewItem*>(item2);
+
+                    if (lvItem2)
+                    {
+                        textmetadata.append(lvItem2->text(0));
+                        textmetadata.append(QLatin1String(" : "));
+                        textmetadata.append(lvItem2->text(1));
+                        textmetadata.append(QLatin1Char('\n'));
+                    }
+                }
+
+                ++j;
+            }
+            while (item2);
+        }
+
+        ++i;
+    }
+    while (item);
+
+    return textmetadata;
+}
+
+void ExifToolWidget::slotCopy2Clipboard()
+{
+    QMimeData* const mimeData = new QMimeData();
+    mimeData->setText(metadataToText());
+    QApplication::clipboard()->setMimeData(mimeData, QClipboard::Clipboard);
+}
+
+void ExifToolWidget::slotPrintMetadata()
+{
+    QString textmetadata  = QLatin1String("<p>");
+    int i                 = 0;
+    QTreeWidgetItem* item = nullptr;
+
+    do
+    {
+        item                                = d->view->topLevelItem(i);
+        ExifToolListViewGroup* const lvItem = dynamic_cast<ExifToolListViewGroup*>(item);
+
+        if (lvItem)
+        {
+            textmetadata.append(QLatin1String("<br/><br/><b>"));
+            textmetadata.append(lvItem->text(0));
+            textmetadata.append(QLatin1String("</b><br/><br/>"));
+
+            int j                  = 0;
+            QTreeWidgetItem* item2 = nullptr;
+
+            do
+            {
+                item2 = dynamic_cast<QTreeWidgetItem*>(lvItem)->child(j);
+
+                if (item2)
+                {
+                    ExifToolListViewItem* const lvItem2 = dynamic_cast<ExifToolListViewItem*>(item2);
+
+                    if (lvItem2)
+                    {
+                        textmetadata.append(lvItem2->text(0));
+                        textmetadata.append(QLatin1String(" : <i>"));
+                        textmetadata.append(lvItem2->text(1));
+                        textmetadata.append(QLatin1String("</i><br/>"));
+                    }
+                }
+
+                ++j;
+            }
+            while (item2);
+        }
+
+        ++i;
+    }
+    while (item);
+
+    textmetadata.append(QLatin1String("</p>"));
+
+    QPrinter printer;
+    printer.setFullPage(true);
+
+    QPointer<QPrintDialog> dialog = new QPrintDialog(&printer, qApp->activeWindow());
+
+    if (dialog->exec())
+    {
+        QTextDocument doc;
+        doc.setHtml(textmetadata);
+        QFont font(QApplication::font());
+        font.setPointSize(10);                // we define 10pt to be a nice base size for printing.
+        doc.setDefaultFont(font);
+        doc.print(&printer);
+    }
+
+    delete dialog;
+}
+
+void ExifToolWidget::slotSaveMetadataToFile()
+{
+    QPointer<DFileDialog> fileSaveDialog = new DFileDialog(this, i18n("Save ExifTool Information"),
+                                                           QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation));
+    fileSaveDialog->setAcceptMode(QFileDialog::AcceptSave);
+    fileSaveDialog->setFileMode(QFileDialog::AnyFile);
+    fileSaveDialog->selectFile(QLatin1String("exiftool_metadata.txt"));
+    fileSaveDialog->setNameFilter(QLatin1String("*.txt"));
+
+    QList<QUrl> urls;
+
+    // Check for cancel.
+
+    if (fileSaveDialog->exec() == QDialog::Accepted)
+    {
+        urls = fileSaveDialog->selectedUrls();
+    }
+
+    delete fileSaveDialog;
+
+    if (urls.isEmpty())
+    {
+        return;
+    }
+
+    QFile file(urls[0].toLocalFile());
+
+    if (!file.open(QIODevice::WriteOnly))
+    {
+        return;
+    }
+
+    QTextStream stream(&file);
+    stream << metadataToText();
+    file.close();
 }
 
 } // namespace Digikam
