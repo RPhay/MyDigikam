@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2021-04-18
- * Description : ExifTool metadata list view.
+ * Description : ExifTool metadata widget.
  *
  * Copyright (C) 2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
@@ -25,8 +25,6 @@
 
 // Qt includes
 
-#include <QHeaderView>
-#include <QFont>
 #include <QLabel>
 #include <QGridLayout>
 #include <QPushButton>
@@ -37,129 +35,12 @@
 
 // Local includes
 
-#include "ditemtooltip.h"
 #include "exiftoollistviewgroup.h"
+#include "exiftoollistviewitem.h"
+#include "exiftoollistview.h"
 
 namespace Digikam
 {
-
-ExifToolListViewItem::ExifToolListViewItem(ExifToolListViewGroup* const parent,
-                                           const QString& name,
-                                           const QString& value,
-                                           const QString& desc)
-    : QTreeWidgetItem(parent)
-{
-    setDisabled(false);
-    setSelected(false);
-    setText(0, name);
-    setToolTip(0, !desc.isEmpty() ? desc : name);
-
-    QString tagVal = value.simplified();
-
-    if (tagVal.length() > 512)
-    {
-        tagVal.truncate(512);
-        tagVal.append(QLatin1String("..."));
-    }
-
-    setText(1, tagVal);
-
-    DToolTipStyleSheet cnt;
-    setToolTip(1, QLatin1String("<qt><p>") + cnt.breakString(tagVal) + QLatin1String("</p></qt>"));
-}
-
-ExifToolListViewItem::~ExifToolListViewItem()
-{
-}
-
-// ---------------------------------------------------------------------------
-
-ExifToolListView::ExifToolListView(QWidget* const parent)
-    : QTreeWidget(parent)
-{
-    setSortingEnabled(true);
-    sortByColumn(0, Qt::AscendingOrder);
-    setSelectionMode(QAbstractItemView::ExtendedSelection);
-    setAllColumnsShowFocus(true);
-    setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
-    setColumnCount(2);
-    setHeaderHidden(true);
-    header()->setSectionResizeMode(QHeaderView::Stretch);
-
-    m_parser = new ExifToolParser(this);
-    m_parser->setTranslations(false);
-}
-
-ExifToolListView::~ExifToolListView()
-{
-}
-
-bool ExifToolListView::loadFromUrl(const QUrl& url)
-{
-    clear();
-
-    if (!url.isValid())
-    {
-        return true;
-    }
-
-    if (!m_parser->load(url.toLocalFile()))
-    {
-        return false;
-    }
-
-    setMetadata(m_parser->currentParsedTags());
-
-    return true;
-}
-
-void ExifToolListView::setMetadata(const ExifToolParser::TagsMap& map)
-{
-    for (ExifToolParser::TagsMap::const_iterator it = map.constBegin() ;
-         it != map.constEnd() ; ++it)
-    {
-        QString grp                   = it.key().section(QLatin1Char('.'), 0, 0)
-                                                .replace(QLatin1Char('_'), QLatin1Char(' '));
-
-        if (grp == QLatin1String("ExifTool"))
-        {
-            continue;
-        }
-
-        QString name                  = it.key().section(QLatin1Char('.'), -1);
-        QString value                 = it.value()[1].toString();
-        QString desc                  = it.value()[3].toString();
-        ExifToolListViewGroup* igroup = findGroup(grp);
-
-        if (!igroup)
-        {
-            igroup = new ExifToolListViewGroup(this, grp);
-        }
-
-        new ExifToolListViewItem(igroup, name, value, desc);
-    }
-}
-
-ExifToolListViewGroup* ExifToolListView::findGroup(const QString& group)
-{
-    QTreeWidgetItemIterator it(this);
-
-    while (*it)
-    {
-        ExifToolListViewGroup* const item = dynamic_cast<ExifToolListViewGroup*>(*it);
-
-        if (item && (item->text(0) == group))
-        {
-            return item;
-        }
-
-        ++it;
-    }
-
-    return nullptr;
-}
-
-// ---------------------------------------------------------------------------
 
 class Q_DECL_HIDDEN ExifToolWidget::Private
 {

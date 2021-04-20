@@ -33,7 +33,7 @@
 
 // Local includes
 
-#include "exiftoolwidget.h"
+#include "exiftoollistview.h"
 
 namespace Digikam
 {
