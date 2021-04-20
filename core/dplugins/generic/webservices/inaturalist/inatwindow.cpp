@@ -269,14 +269,14 @@ INatWindow::INatWindow(DInfoInterface* const iface,
 
     connect(d->talker, SIGNAL(signalBusy(bool)), SLOT(slotBusy(bool)));
 
-    connect(d->talker, SIGNAL(signalLinkingSucceeded(QString, QString, QUrl)),
-            SLOT(slotLinkingSucceeded(QString, QString, QUrl)));
+    connect(d->talker, SIGNAL(signalLinkingSucceeded(QString,QString,QUrl)),
+            SLOT(slotLinkingSucceeded(QString,QString,QUrl)));
 
     connect(d->talker, SIGNAL(signalLinkingFailed(QString)),
             SLOT(slotLinkingFailed(QString)));
 
-    connect(d->talker, SIGNAL(signalLoadUrlSucceeded(QUrl, QByteArray)),
-            SLOT(slotLoadUrlSucceeded(QUrl, QByteArray)));
+    connect(d->talker, SIGNAL(signalLoadUrlSucceeded(QUrl,QByteArray)),
+            SLOT(slotLoadUrlSucceeded(QUrl,QByteArray)));
 
     connect(d->talker, SIGNAL(signalNearbyPlaces(QStringList)),
             SLOT(slotNearbyPlaces(QStringList)));
@@ -325,8 +325,8 @@ INatWindow::INatWindow(DInfoInterface* const iface,
     connect(startButton(), &QPushButton::clicked,
             this, &INatWindow::slotUser1);
 
-    connect(d->taxonPopup, SIGNAL(signalTaxonSelected(Taxon, bool)),
-            this, SLOT(slotTaxonSelected(Taxon, bool)));
+    connect(d->taxonPopup, SIGNAL(signalTaxonSelected(Taxon,bool)),
+            this, SLOT(slotTaxonSelected(Taxon,bool)));
 
     connect(d->taxonPopup, SIGNAL(signalTaxonDeselected()),
             this, SLOT(slotTaxonDeselected()));
@@ -380,12 +380,12 @@ void INatWindow::switchUser(bool restoreToken)
     }
 
     // Pass cookies to browser; if "remember me" is checked on iNaturalist
-    // website, the brower will re-login without user interaction for 14 days.
+    // website, the brower will re-login for 14 days without user interaction.
 
     QPointer<INatBrowserDlg> dlg = new INatBrowserDlg(userName, cookies, this);
 
-    connect(dlg, SIGNAL(signalApiToken(QString, QList<QNetworkCookie>)),
-            d->talker, SLOT(slotApiToken(QString, QList<QNetworkCookie>)));
+    connect(dlg, SIGNAL(signalApiToken(QString,QList<QNetworkCookie>)),
+            d->talker, SLOT(slotApiToken(QString,QList<QNetworkCookie>)));
 
     dlg->exec();
 }

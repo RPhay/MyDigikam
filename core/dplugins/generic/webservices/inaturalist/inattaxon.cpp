@@ -144,7 +144,7 @@ QString Taxon::htmlName() const
         }
         else
         {
-            assert(split.count() == 4);
+            Q_ASSERT(split.count() == 4);
             result += QLatin1String("<i>") + split[0] + QLatin1Char(' ') +
                       split[1] + QLatin1String("</i>") + QLatin1Char(' ') +
                       split[2] + QLatin1Char(' ') +

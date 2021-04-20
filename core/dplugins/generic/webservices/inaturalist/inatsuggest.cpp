@@ -117,7 +117,7 @@ SuggestTaxonCompletion::SuggestTaxonCompletion(TaxonEdit* const parent)
 
     d->popup->installEventFilter(this);
 
-    connect(d->popup, SIGNAL(itemPressed(QTreeWidgetItem*, int)),
+    connect(d->popup, SIGNAL(itemPressed(QTreeWidgetItem*,int)),
             this, SLOT(slotDoneCompletion()));
 
     d->timer.setSingleShot(true);
@@ -152,8 +152,8 @@ void SuggestTaxonCompletion::setTalker(INatTalker* const inatTalker)
 
     connect(d->editor, SIGNAL(inFocus()), SLOT(slotInFocus()));
 
-    connect(d->talker, SIGNAL(signalLoadUrlSucceeded(QUrl, QByteArray)),
-            SLOT(slotImageLoaded(QUrl, QByteArray)));
+    connect(d->talker, SIGNAL(signalLoadUrlSucceeded(QUrl,QByteArray)),
+            SLOT(slotImageLoaded(QUrl,QByteArray)));
 }
 
 void SuggestTaxonCompletion::slotInFocus()
@@ -259,7 +259,7 @@ void SuggestTaxonCompletion::showCompletion(const Completions& choices)
     if (choices.m_commonAncestor.isValid())
     {
         const Taxon& taxon = choices.m_commonAncestor;
-        assert(choices.m_fromVision);
+        Q_ASSERT(choices.m_fromVision);
         auto item          = new QTreeWidgetItem(d->popup);
         taxon2Item(taxon, item, i18n("We're pretty sure it's in this %1.",
                                      localizedTaxonomicRank(taxon.rank())));
@@ -423,7 +423,7 @@ void SuggestTaxonCompletion::slotComputerVisionResults(const ImageScores& scores
     {
         if (score.getTaxon().ancestors().isEmpty())
         {
-            assert(!completions.m_commonAncestor.isValid());
+            Q_ASSERT(!completions.m_commonAncestor.isValid());
             completions.m_commonAncestor = score.getTaxon();
         }
         else
