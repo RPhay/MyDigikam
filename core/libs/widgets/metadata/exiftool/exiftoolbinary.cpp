@@ -31,6 +31,9 @@ namespace Digikam
 
 ExifToolBinary::ExifToolBinary(QObject* const)
     : DBinaryIface(QLatin1String("exiftool"),
+                   QLatin1String("10.00"),
+                   QLatin1String(),
+                   0,
                    QLatin1String("ExifTool"),
                    QLatin1String("https://exiftool.org/"),
                    QString(),
