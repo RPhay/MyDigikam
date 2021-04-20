@@ -121,6 +121,7 @@ public:
         sortOrder          (Qt::AscendingOrder),
         sortRequired       (false),
         groupingMode       (GroupingShowSubItems),
+        cachedItemInfos    (),
         outdated           (true)
     {
     }
@@ -132,6 +133,7 @@ public:
     Qt::SortOrder               sortOrder;
     bool                        sortRequired;
     GroupingMode                groupingMode;
+    QHash<qlonglong, ItemInfo>  cachedItemInfos;
     bool                        outdated;
 };
 
@@ -549,6 +551,8 @@ void TableViewModel::slotSourceRowsAboutToBeRemoved(const QModelIndex& parent, i
     {
         const QModelIndex imageModelIndex = s->imageModel->index(i, 0, parent);
         const qlonglong imageId           = s->imageModel->imageId(imageModelIndex);
+        d->cachedItemInfos.remove(imageId);
+
         const QModelIndex tableViewIndex  = indexFromImageId(imageId, 0);
 
         if (!tableViewIndex.isValid())
@@ -565,6 +569,20 @@ void TableViewModel::slotSourceRowsAboutToBeRemoved(const QModelIndex& parent, i
 
         beginRemoveRows(tableViewIndex.parent(), tableViewIndex.row(), tableViewIndex.row());
         item->parent->takeChild(item);
+
+        // delete image info of children from cache
+
+        QList<Item*> itemsToRemoveFromCache = item->children;
+
+        while (!itemsToRemoveFromCache.isEmpty())
+        {
+            Item* const itemToRemove = itemsToRemoveFromCache.takeFirst();
+            itemsToRemoveFromCache << itemToRemove->children;
+
+            d->cachedItemInfos.remove(itemToRemove->imageId);
+
+            // child items will be deleted when item is deleted
+        }
 
         delete item;
         endRemoveRows();
@@ -699,6 +717,15 @@ void TableViewModel::slotDatabaseImageChanged(const ImageChangeset& imageChanges
             continue;
         }
 
+        // remove cached info and re-insert it
+
+        if (d->cachedItemInfos.contains(item->imageId))
+        {
+            const ItemInfo itemInfo(item->imageId);
+            d->cachedItemInfos.remove(item->imageId);
+            d->cachedItemInfos.insert(item->imageId, itemInfo);
+        }
+
         // Re-check filtering for this item.
 
         const QModelIndex changedIndexTopLeft = indexFromImageId(id, 0);
@@ -789,6 +816,7 @@ void TableViewModel::slotClearModel(const bool sendNotifications)
     }
 
     d->rootItem = new Item();
+    d->cachedItemInfos.clear();
 
     if (sendNotifications)
     {
@@ -815,6 +843,7 @@ void TableViewModel::slotPopulateModel(const bool sendNotifications)
     }
 
     d->rootItem     = new Item();
+    d->cachedItemInfos.clear();
     d->outdated     = false;
     d->sortRequired = false;
 
@@ -927,6 +956,8 @@ void TableViewModel::addSourceModelIndex(const QModelIndex& imageModelIndex, con
 
         foreach (const ItemInfo& groupedInfo, groupedImages)
         {
+            d->cachedItemInfos.insert(groupedInfo.id(), groupedInfo);
+
             /// @todo Grouped items are currently not filtered. Should they?
 
             Item* const groupedItem = new Item();
@@ -1002,7 +1033,20 @@ QModelIndex TableViewModel::fromItemModelIndex(const QModelIndex& imageModelInde
 
 ItemInfo TableViewModel::infoFromItem(TableViewModel::Item* const item) const
 {
-    return ItemInfo(item->imageId);
+    /// @todo Is there a way to do it without first looking up the index in the ItemModel?
+
+    const QModelIndex imageModelIndex = s->imageModel->indexForImageId(item->imageId);
+
+    if (!imageModelIndex.isValid())
+    {
+        const ItemInfo fromCache = d->cachedItemInfos.value(item->imageId);
+
+        return fromCache;
+    }
+
+    const ItemInfo info = s->imageModel->imageInfo(imageModelIndex);
+
+    return info;
 }
 
 ItemInfoList TableViewModel::infosFromItems(const QList<TableViewModel::Item*>& items) const
