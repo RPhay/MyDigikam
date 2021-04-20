@@ -36,6 +36,7 @@
 // Local includes
 
 #include "digikam_debug.h"
+#include "digikam_globals.h"
 
 namespace Digikam
 {
@@ -104,6 +105,7 @@ ExifToolProcess::ExifToolProcess(QObject* const parent)
       d      (new Private)
 {
     d->process = new QProcess(this);
+    d->process->setProcessEnvironment(adjustedEnvironmentForAppImage());
 
     connect(d->process, &QProcess::started,
             this, &ExifToolProcess::slotStarted);
