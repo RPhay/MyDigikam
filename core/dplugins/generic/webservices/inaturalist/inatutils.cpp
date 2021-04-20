@@ -117,123 +117,123 @@ QString localizedTaxonomicRank(const QString& rank)
 {
     if      (rank == QLatin1String("kingdom"))
     {
-        return i18nc("taxonomic ranks", "kingdom");
+        return i18nc("taxonomic rank", "kingdom");
     }
     else if (rank == QLatin1String("subkingdom"))
     {
-        return i18nc("taxonomic ranks", "subkingdom");
+        return i18nc("taxonomic rank", "subkingdom");
     }
     else if (rank == QLatin1String("phylum"))
     {
-        return i18nc("taxonomic ranks", "phylum");
+        return i18nc("taxonomic rank", "phylum");
     }
     else if (rank == QLatin1String("subphylum"))
     {
-        return i18nc("taxonomic ranks", "subphylum");
+        return i18nc("taxonomic rank", "subphylum");
     }
     else if (rank == QLatin1String("superorder"))
     {
-        return i18nc("taxonomic ranks", "superorder");
+        return i18nc("taxonomic rank", "superorder");
     }
     else if (rank == QLatin1String("order"))
     {
-        return i18nc("taxonomic ranks", "order");
+        return i18nc("taxonomic rank", "order");
     }
     else if (rank == QLatin1String("suborder"))
     {
-        return i18nc("taxonomic ranks", "suborder");
+        return i18nc("taxonomic rank", "suborder");
     }
     else if (rank == QLatin1String("infraorder"))
     {
-        return i18nc("taxonomic ranks", "infraorder");
+        return i18nc("taxonomic rank", "infraorder");
     }
     else if (rank == QLatin1String("parvorder"))
     {
-        return i18nc("taxonomic ranks", "parvorder");
+        return i18nc("taxonomic rank", "parvorder");
     }
     else if (rank == QLatin1String("zoosection"))
     {
-        return i18nc("taxonomic ranks", "zoosection");
+        return i18nc("taxonomic rank", "zoosection");
     }
     else if (rank == QLatin1String("zoosubsection"))
     {
-        return i18nc("taxonomic ranks", "zoosubsection");
+        return i18nc("taxonomic rank", "zoosubsection");
     }
     else if (rank == QLatin1String("superfamily"))
     {
-        return i18nc("taxonomic ranks", "superfamily");
+        return i18nc("taxonomic rank", "superfamily");
     }
     else if (rank == QLatin1String("epifamily"))
     {
-        return i18nc("taxonomic ranks", "epifamily");
+        return i18nc("taxonomic rank", "epifamily");
     }
     else if (rank == QLatin1String("family"))
     {
-        return i18nc("taxonomic ranks", "family");
+        return i18nc("taxonomic rank", "family");
     }
     else if (rank == QLatin1String("subfamily"))
     {
-        return i18nc("taxonomic ranks", "subfamily");
+        return i18nc("taxonomic rank", "subfamily");
     }
     else if (rank == QLatin1String("supertribe"))
     {
-        return i18nc("taxonomic ranks", "supertribe");
+        return i18nc("taxonomic rank", "supertribe");
     }
     else if (rank == QLatin1String("tribe"))
     {
-        return i18nc("taxonomic ranks", "tribe");
+        return i18nc("taxonomic rank", "tribe");
     }
     else if (rank == QLatin1String("subtribe"))
     {
-        return i18nc("taxonomic ranks", "subtribe");
+        return i18nc("taxonomic rank", "subtribe");
     }
     else if (rank == QLatin1String("genus"))
     {
-        return i18nc("taxonomic ranks", "genus");
+        return i18nc("taxonomic rank", "genus");
     }
     else if (rank == QLatin1String("genushybrid"))
     {
-        return i18nc("taxonomic ranks", "genushybrid");
+        return i18nc("taxonomic rank", "genushybrid");
     }
     else if (rank == QLatin1String("subgenus"))
     {
-        return i18nc("taxonomic ranks", "subgenus");
+        return i18nc("taxonomic rank", "subgenus");
     }
     else if (rank == QLatin1String("section"))
     {
-        return i18nc("taxonomic ranks", "section");
+        return i18nc("taxonomic rank", "section");
     }
     else if (rank == QLatin1String("subsection"))
     {
-        return i18nc("taxonomic ranks", "subsection");
+        return i18nc("taxonomic rank", "subsection");
     }
     else if (rank == QLatin1String("complex"))
     {
-        return i18nc("taxonomic ranks", "complex");
+        return i18nc("taxonomic rank", "complex");
     }
     else if (rank == QLatin1String("species"))
     {
-        return i18nc("taxonomic ranks", "species");
+        return i18nc("taxonomic rank", "species");
     }
     else if (rank == QLatin1String("hybrid"))
     {
-        return i18nc("taxonomic ranks", "hybrid");
+        return i18nc("taxonomic rank", "hybrid");
     }
     else if (rank == QLatin1String("subspecies"))
     {
-        return i18nc("taxonomic ranks", "subspecies");
+        return i18nc("taxonomic rank", "subspecies");
     }
     else if (rank == QLatin1String("variety"))
     {
-        return i18nc("taxonomic ranks", "variety");
+        return i18nc("taxonomic rank", "variety");
     }
     else if (rank == QLatin1String("form"))
     {
-        return i18nc("taxonomic ranks", "form");
+        return i18nc("taxonomic rank", "form");
     }
     else if (rank == QLatin1String("infrahybrid"))
     {
-        return i18nc("taxonomic ranks", "infrahybrid");
+        return i18nc("taxonomic rank", "infrahybrid");
     }
     else
     {
@@ -275,8 +275,9 @@ QString localizedDistance(double distMeters, char format, int precision)
             QString one    = locale.toString(1.0, format, precision);
             QString result = locale.toString(distMeters, format, precision);
 
-            return (result + QLatin1Char(' ') + ((result == one) ? i18n("meter")
-                                                                 : i18n("meters")));
+            return (result + QLatin1Char(' ') + ((result == one)
+                                                 ? i18nc("distance", "meter")
+                                                 : i18nc("distance", "meters")));
         }
     }
 }
@@ -291,7 +292,8 @@ QString localizedTimeDifference(quint64 diffSeconds)
     {
         diffSeconds %= 3600;
         result       = QString::number(hours) + QLatin1Char(' ') +
-                       (hours == 1 ? i18n("hour") : i18n("hours"));
+                       (hours == 1 ? i18nc("time", "hour")
+                                   : i18nc("time", "hours"));
     }
 
     quint64 minutes = diffSeconds / 60;
@@ -306,7 +308,8 @@ QString localizedTimeDifference(quint64 diffSeconds)
         }
 
         result += QString::number(minutes) + QLatin1Char(' ') +
-                  (minutes == 1 ? i18n("minute") : i18n("minutes"));
+                  (minutes == 1 ? i18nc("time", "minute")
+                                : i18nc("time", "minutes"));
     }
 
     if (diffSeconds || result.isEmpty())
@@ -317,7 +320,8 @@ QString localizedTimeDifference(quint64 diffSeconds)
         }
 
         result += QString::number(diffSeconds) + QLatin1Char(' ') +
-                  (diffSeconds == 1 ? i18n("second") : i18n("seconds"));
+                  (diffSeconds == 1 ? i18nc("time", "second")
+                                    : i18nc("time", "seconds"));
     }
 
     return result;

@@ -22,8 +22,8 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_INAT_WEB_BROWSER_DLG_H
-#define DIGIKAM_INAT_WEB_BROWSER_DLG_H
+#ifndef DIGIKAM_INAT_BROWSER_DLG_H
+#define DIGIKAM_INAT_BROWSER_DLG_H
 
 // Qt include
 
@@ -89,4 +89,4 @@ private:
 
 } // namespace DigikamGenericINatPlugin
 
-#endif // DIGIKAM_INAT_WEB_BROWSER_DLG_H
+#endif // DIGIKAM_INAT_BROWSER_DLG_H
