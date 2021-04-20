@@ -34,6 +34,7 @@
 // Local includes
 
 #include "metaenginesettings.h"
+#include "digikam_globals.h"
 
 namespace Digikam
 {
