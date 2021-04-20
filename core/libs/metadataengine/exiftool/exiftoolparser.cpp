@@ -361,13 +361,13 @@ void ExifToolParser::slotMetaEngineSettingsChanged()
         MetaEngineSettings::instance()->settings().defaultExifToolSearchPaths().first() +
         QLatin1Char('/') +
 
-#if defined Q_OS_UNIX
-
-        QLatin1String("exiftool")
-
-#elif defined Q_OS_WIN
+#ifdef Q_OS_WIN
 
         QLatin1String("exiftool.exe")
+
+#else
+
+        QLatin1String("exiftool")
 
 #endif
 

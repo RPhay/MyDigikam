@@ -42,6 +42,7 @@ ExifToolListViewItem::ExifToolListViewItem(ExifToolListViewGroup* const parent,
                                            const QString& desc)
     : QTreeWidgetItem(parent)
 {
+    setChildIndicatorPolicy(QTreeWidgetItem::DontShowIndicator);
     setDisabled(false);
     setSelected(false);
     setText(0, name);
