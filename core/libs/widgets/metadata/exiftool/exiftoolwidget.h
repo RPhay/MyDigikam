@@ -40,22 +40,7 @@
 namespace Digikam
 {
 
-class ExifToolListView;
-
-class ExifToolListViewGroup : public QTreeWidgetItem
-{
-public:
-
-    ExifToolListViewGroup(ExifToolListView* const parent,
-                          const QString& group);
-    ~ExifToolListViewGroup() override;
-
-private:
-
-    Q_DISABLE_COPY(ExifToolListViewGroup)
-};
-
-// -------------------------------------------------------------------------
+class ExifToolListViewGroup;
 
 class ExifToolListViewItem : public QTreeWidgetItem
 {
