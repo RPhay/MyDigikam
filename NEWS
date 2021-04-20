@@ -3,6 +3,7 @@ digiKam 7.3.0 - Release date: 2021-xx-xx
 *****************************************************************************************************
 NEW FEATURES:
 
+General : add new metadata viewer based on ExifTool.
 General : Better support of astro FITS image format inluding metadata extraction support to populate the database.
 General : Digital Scanner plugin is now available under Windows.
 General : Use last Exiv2 0.27.4 in all bundles with Base Media File metadata read and write support (HEIF, AVIF).
@@ -149,4 +150,6 @@ BUGFIXES:
 134 ==> 435877 - How to select language of showFoto.
 135 ==> 435879 - Strange behaviour of right mouse-click on toolbar.
 136 ==> 435898 - Preview image display arbitrarily resized after crop.
-137 ==> 
+137 ==> 386299 - Add ExifTool based metadata viewer as XnView.
+138 ==> 
+
