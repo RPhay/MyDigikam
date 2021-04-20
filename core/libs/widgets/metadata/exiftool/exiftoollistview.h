@@ -34,6 +34,7 @@
 // Local includes
 
 #include "exiftoolparser.h"
+#include "searchtextbar.h"
 
 namespace Digikam
 {
@@ -50,6 +51,14 @@ public:
     ~ExifToolListView() override;
 
     bool loadFromUrl(const QUrl& url);
+
+Q_SIGNALS:
+
+    void signalTextFilterMatch(bool);
+
+public Q_SLOTS:
+
+    void slotSearchTextChanged(const SearchTextSettings&);
 
 private:
 

@@ -120,4 +120,51 @@ ExifToolListViewGroup* ExifToolListView::findGroup(const QString& group)
     return nullptr;
 }
 
+void ExifToolListView::slotSearchTextChanged(const SearchTextSettings& settings)
+{
+    bool query     = false;
+    QString search = settings.text;
+
+    // Restore all MdKey items.
+
+    QTreeWidgetItemIterator it2(this);
+
+    while (*it2)
+    {
+        ExifToolListViewGroup* const item = dynamic_cast<ExifToolListViewGroup*>(*it2);
+
+        if (item)
+        {
+            item->setHidden(false);
+        }
+
+        ++it2;
+    }
+
+    QTreeWidgetItemIterator it(this);
+
+    while (*it)
+    {
+        ExifToolListViewItem* const item = dynamic_cast<ExifToolListViewItem*>(*it);
+
+        if (item)
+        {
+            if (item->text(0).contains(search, settings.caseSensitive) ||
+                item->text(1).contains(search, settings.caseSensitive))
+            {
+                query = true;
+                item->setHidden(false);
+            }
+            else
+            {
+                item->setHidden(true);
+            }
+        }
+
+        ++it;
+    }
+
+    emit signalTextFilterMatch(query);
+}
+
 } // namespace Digikam

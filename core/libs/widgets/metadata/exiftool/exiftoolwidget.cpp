@@ -38,6 +38,7 @@
 #include "exiftoollistviewgroup.h"
 #include "exiftoollistviewitem.h"
 #include "exiftoollistview.h"
+#include "searchtextbar.h"
 
 namespace Digikam
 {
@@ -56,12 +57,16 @@ public:
 
     explicit Private()
         : metadataView(nullptr),
-          errorView   (nullptr)
+          errorView   (nullptr),
+          view        (nullptr),
+          searchBar   (nullptr)
     {
     }
 
-    ExifToolListView* metadataView;
+    QWidget*          metadataView;
     QWidget*          errorView;
+    ExifToolListView* view;
+    SearchTextBar*    searchBar;
 };
 
 ExifToolWidget::ExifToolWidget(QWidget* const parent)
@@ -71,15 +76,27 @@ ExifToolWidget::ExifToolWidget(QWidget* const parent)
     setAttribute(Qt::WA_DeleteOnClose);
     setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
 
-    d->metadataView         = new ExifToolListView(this);
-    d->errorView            = new QWidget(this);
-    QGridLayout* const grid = new QGridLayout(d->errorView);
+    // ---
 
-    QLabel* const errorLbl  = new QLabel(d->errorView);
+    d->metadataView          = new QWidget(this);
+    QGridLayout* const grid2 = new QGridLayout(d->metadataView);
+
+    d->view                  = new ExifToolListView(d->metadataView);
+    d->searchBar             = new SearchTextBar(d->metadataView, QLatin1String("ExifToolSearchBar"));
+
+    grid2->addWidget(d->searchBar, 0, 1, 1, 1);
+    grid2->addWidget(d->view,      1, 1, 1, 1);
+
+    // ---
+
+    d->errorView             = new QWidget(this);
+    QGridLayout* const grid  = new QGridLayout(d->errorView);
+
+    QLabel* const errorLbl   = new QLabel(d->errorView);
     errorLbl->setAlignment(Qt::AlignCenter);
     errorLbl->setText(i18n("Cannot load data\nwith ExifTool.\nCheck your configuration."));
 
-    QPushButton* const btn  = new QPushButton(d->errorView);
+    QPushButton* const btn   = new QPushButton(d->errorView);
     btn->setText(i18n("Open Setup Dialog..."));
 
     connect(btn, SIGNAL(clicked()),
@@ -96,6 +113,12 @@ ExifToolWidget::ExifToolWidget(QWidget* const parent)
     insertWidget(Private::ErrorView,    d->errorView);
 
     setCurrentIndex(Private::MetadataView);
+
+    connect(d->searchBar, SIGNAL(signalSearchTextSettings(SearchTextSettings)),
+            d->view, SLOT(slotSearchTextChanged(SearchTextSettings)));
+
+    connect(d->view, SIGNAL(signalTextFilterMatch(bool)),
+            d->searchBar, SLOT(slotSearchResult(bool)));
 }
 
 ExifToolWidget::~ExifToolWidget()
@@ -105,7 +128,7 @@ ExifToolWidget::~ExifToolWidget()
 
 void ExifToolWidget::loadFromUrl(const QUrl& url)
 {
-    bool ret = d->metadataView->loadFromUrl(url);
+    bool ret = d->view->loadFromUrl(url);
 
     if (ret)
     {
