@@ -35,16 +35,12 @@
 #include <QNetworkCookie>
 #include <QDateTime>
 
-// Local includes
-
-#include "digikam_export.h"
-
 namespace DigikamGenericINatPlugin
 {
 
 class SearchTextSettings;
 
-class DIGIKAM_EXPORT INatBrowserDlg : public QDialog
+class INatBrowserDlg : public QDialog
 {
     Q_OBJECT
 
