@@ -174,7 +174,7 @@ QStringList MetaEngineSettingsContainer::defaultExifToolSearchPaths() const
 
 #ifdef Q_OS_WIN
 
-    defPaths << QLatin1String("C:/Program Files/ExifTool");
+    defPaths << QLatin1String("C:/Program Files/digiKam");
 
 #endif
 
