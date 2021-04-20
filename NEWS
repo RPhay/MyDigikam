@@ -151,5 +151,5 @@ BUGFIXES:
 135 ==> 435879 - Strange behaviour of right mouse-click on toolbar.
 136 ==> 435898 - Preview image display arbitrarily resized after crop.
 137 ==> 386299 - Add ExifTool based metadata viewer as XnView.
-138 ==> 
-
+138 ==> 435966 - digiKam 20.04.2021 rev unexpectedly shuts down in Table view.
+139 ==> 
