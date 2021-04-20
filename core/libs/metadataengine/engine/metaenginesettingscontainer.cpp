@@ -165,10 +165,13 @@ QStringList MetaEngineSettingsContainer::defaultExifToolSearchPaths() const
 
 #ifdef Q_OS_MACOS
 
-    // Std Macports install
+    // Std Macports install path
     defPaths << QLatin1String("/opt/local/bin");
 
-    // digiKam Bundle PKG install
+    // Install path for the official ExifTool DMG package
+    defPaths << QLatin1String("/usr/local/bin");
+
+    // digiKam Bundle PKG install path
     defPaths << macOSBundlePrefix() + QLatin1String("bin");
 
 #endif
