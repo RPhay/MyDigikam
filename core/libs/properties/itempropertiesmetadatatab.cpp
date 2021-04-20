@@ -200,17 +200,27 @@ void ItemPropertiesMetadataTab::writeSettings(KConfigGroup& group)
 
 void ItemPropertiesMetadataTab::setCurrentURL(const QUrl& url)
 {
+    d->exifToolWidget->loadFromUrl(url);
+    d->exifToolWidget->setEnabled(true);
+
     if (url.isEmpty())
     {
         d->exifWidget->loadFromURL(url);
         d->makernoteWidget->loadFromURL(url);
         d->iptcWidget->loadFromURL(url);
         d->xmpWidget->loadFromURL(url);
-        setEnabled(false);
+        d->exifToolWidget->loadFromUrl(url);
+        d->exifWidget->setEnabled(false);
+        d->makernoteWidget->setEnabled(false);
+        d->iptcWidget->setEnabled(false);
+        d->xmpWidget->setEnabled(false);
         return;
     }
 
-    setEnabled(true);
+    d->exifWidget->setEnabled(true);
+    d->makernoteWidget->setEnabled(true);
+    d->iptcWidget->setEnabled(true);
+    d->xmpWidget->setEnabled(true);
     QScopedPointer<DMetadata> metadata(new DMetadata(url.toLocalFile()));
 
     d->exifWidget->loadFromData(url.fileName(),      *metadata);
@@ -218,12 +228,12 @@ void ItemPropertiesMetadataTab::setCurrentURL(const QUrl& url)
     d->iptcWidget->loadFromData(url.fileName(),      *metadata);
     d->xmpWidget->loadFromData(url.fileName(),       *metadata);
 
-    d->exifToolWidget->loadFromUrl(url);
 }
 
 void ItemPropertiesMetadataTab::setCurrentData(DMetadata* const metaData, const QUrl& url)
 {
     d->exifToolWidget->loadFromUrl(url);
+    d->exifToolWidget->setEnabled(true);
 
     QScopedPointer<DMetadata> data(new DMetadata(metaData->data()));
 
