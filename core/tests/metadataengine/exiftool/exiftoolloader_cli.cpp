@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2013-11-28
- * Description : a command line tool to test ExifTool output without Exiv2 trnaslation.
+ * Description : a command line tool to test ExifTool image loader
  *
  * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
@@ -43,7 +43,7 @@ int main(int argc, char** argv)
 
     if (argc != 2)
     {
-        qDebug() << "qexiftooloutpu_cli - CLI tool to print ExifTool output without Exiv2 translation";
+        qDebug() << "exiftoolloader_cli - CLI tool to check ExifTool image loader";
         qDebug() << "Usage: <image>";
         return -1;
     }
@@ -51,7 +51,6 @@ int main(int argc, char** argv)
     // Create ExifTool parser instance.
 
     ExifToolParser* const parser = new ExifToolParser();
-    parser->setTranslations(false);
 
     // Read metadata from the file. Start ExifToolParser
 
@@ -62,6 +61,7 @@ int main(int argc, char** argv)
 
     QString path                    = parser->currentParsedPath();
     ExifToolParser::TagsMap parsed  = parser->currentParsedTags();
+    ExifToolParser::TagsMap ignored = parser->currentIgnoredTags();
 
     qDebug().noquote() << "Source File:" << path;
 
@@ -71,16 +71,18 @@ int main(int argc, char** argv)
     QTextStream stream(&output);
     QStringList tagsLst;
 
-    const int section1 = -40;   // ExifTool Tag name simplified
-    const int section2 = -30;   // Tag value as string.
-    QString sep        = QString().fill(QLatin1Char('-'), qAbs(section1 + section2) + 4);
+    const int section1 = -60;   // ExifTool Tag name
+    const int section2 = -45;   // Exiv2 tag name
+    const int section3 = -30;   // Tag value as string.
+    QString sep        = QString().fill(QLatin1Char('-'), qAbs(section1 + section2 + section3) + 6);
 
     // Header
 
     stream << sep
            << endl
-           << QString::fromLatin1("%1").arg(QLatin1String("ExifTool::group0.name"), section1) << " | "
-           << QString::fromLatin1("%1").arg(QLatin1String("String Value"),          section2)
+           << QString::fromLatin1("%1").arg(QLatin1String("ExifTool::group0.group1.group2.name"), section1) << " | "
+           << QString::fromLatin1("%1").arg(QLatin1String("Exiv2::family.group.name"),            section2) << " | "
+           << QString::fromLatin1("%1").arg(QLatin1String("String Value"),                        section3)
            << endl
            << sep
            << endl;
@@ -88,21 +90,24 @@ int main(int argc, char** argv)
     for (ExifToolParser::TagsMap::const_iterator it = parsed.constBegin() ;
          it != parsed.constEnd() ; ++it)
     {
-        QString tagNameExifTool = it.key().section(QLatin1Char('.'), 0, 0) +
-                                  QLatin1Char('.')                         +
-                                  it.key().section(QLatin1Char('.'), -1);
+        QString tagNameExifTool = it.value()[0].toString();
         QString tagType         = it.value()[2].toString();
         QString data            = it.value()[1].toString();
 
-        if (data.size() > -section2)
+        if (data.size() > -section3)
         {
-            data = data.left(-section2 - 3) + QLatin1String("...");
+            data = data.left(-section3 - 3) + QLatin1String("...");
         }
 
+        // Tags to translate To Exiv2 naming scheme
+
+        QString tagNameExiv2    = it.key();
+
         tagsLst
-                << QString::fromLatin1("%1 | %2")
+                << QString::fromLatin1("%1 | %2 | %3")
                 .arg(tagNameExifTool, section1)
-                .arg(data,            section2)
+                .arg(tagNameExiv2,    section2)
+                .arg(data,            section3)
                ;
     }
 
@@ -114,6 +119,15 @@ int main(int argc, char** argv)
     }
 
     stream << sep << endl;
+    stream << "Ignored ExifTool Tags:" << endl;
+
+    QStringList itagsLst = ignored.keys();
+    itagsLst.sort();
+
+    foreach (const QString& tag, itagsLst)
+    {
+        stream << "   " << tag << endl;
+    }
 
     qDebug().noquote() << output;
 

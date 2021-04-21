@@ -13,50 +13,29 @@ include_directories(
     $<TARGET_PROPERTY:Qt5::Test,INTERFACE_INCLUDE_DIRECTORIES>
 )
 
-#------------------------------------------------------------------------
+macro(EXIFTOOL_BUILD_CLITEST)
 
-set(qexiftoolexport_cli_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/qexiftoolexport_cli.cpp)
-add_executable(qexiftoolexport_cli ${qexiftoolexport_cli_SRCS})
-ecm_mark_nongui_executable(qexiftoolexport_cli)
+    set(_filename ${ARGV0})
+    string(REPLACE "." ";" _temp ${_filename})
+    list(GET _temp 0 _target)
 
-target_link_libraries(qexiftoolexport_cli
-                      digikamcore
+    set(${_target}_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/${_filename})
 
-                      ${COMMON_TEST_LINK}
-)
+    add_executable(${_target} ${${_target}_SRCS})
+    ecm_mark_nongui_executable(${_target})
 
-#------------------------------------------------------------------------
+    target_link_libraries(${_target}
 
-set(qexiftoolloader_cli_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/qexiftoolloader_cli.cpp)
-add_executable(qexiftoolloader_cli ${qexiftoolloader_cli_SRCS})
-ecm_mark_nongui_executable(qexiftoolloader_cli)
+                          digikamcore
 
-target_link_libraries(qexiftoolloader_cli
-                      digikamcore
+                          ${COMMON_TEST_LINK}
+    )
 
-                      ${COMMON_TEST_LINK}
-)
+endmacro()
 
 #------------------------------------------------------------------------
 
-set(qexiftoolxmldb_cli_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/qexiftoolxmldb_cli.cpp)
-add_executable(qexiftoolxmldb_cli ${qexiftoolxmldb_cli_SRCS})
-ecm_mark_nongui_executable(qexiftoolxmldb_cli)
-
-target_link_libraries(qexiftoolxmldb_cli
-                      digikamcore
-
-                      ${COMMON_TEST_LINK}
-)
-
-#------------------------------------------------------------------------
-
-set(qexiftooloutput_cli_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/qexiftooloutput_cli.cpp)
-add_executable(qexiftooloutput_cli ${qexiftooloutput_cli_SRCS})
-ecm_mark_nongui_executable(qexiftooloutput_cli)
-
-target_link_libraries(qexiftooloutput_cli
-                      digikamcore
-
-                      ${COMMON_TEST_LINK}
-)
+EXIFTOOL_BUILD_CLITEST(exiftoolexport_cli.cpp)
+EXIFTOOL_BUILD_CLITEST(exiftoolloader_cli.cpp)
+EXIFTOOL_BUILD_CLITEST(exiftoolxmldb_cli.cpp)
+EXIFTOOL_BUILD_CLITEST(exiftooloutput_cli.cpp)

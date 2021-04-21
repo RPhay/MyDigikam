@@ -79,7 +79,7 @@ int main(int argc, char** argv)
 
     if (argc != 2)
     {
-        qDebug() << "qexiftoolexport_cli - CLI tool to export ExifTool metadata from image";
+        qDebug() << "exiftoolexport_cli - CLI tool to export ExifTool metadata from image";
         qDebug() << "Usage: <image>";
         return -1;
     }
