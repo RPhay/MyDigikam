@@ -329,7 +329,7 @@ SetupMetadata::SetupMetadata(QWidget* const parent)
     DActiveLabel* const exiv2LogoLabel = new DActiveLabel(QUrl(QLatin1String("https://www.exiv2.org")),
                                                           QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("digikam/data/logo-exiv2.png")),
                                                           infoBox);
-    exiv2LogoLabel->setWhatsThis(i18nc("@info", "Visit Exiv2 project website"));
+    exiv2LogoLabel->setWhatsThis(i18nc("@info:whatsthis", "Visit Exiv2 project website"));
 
     QLabel* const explanation = new QLabel(infoBox);
     explanation->setOpenExternalLinks(true);
@@ -609,9 +609,9 @@ SetupMetadata::SetupMetadata(QWidget* const parent)
 
     QWidget* const exifToolPanel      = new QWidget(d->tab);
     QVBoxLayout* const exifToolLayout = new QVBoxLayout;
-    QLabel* const exifToolBinLabel    = new QLabel(i18n("<p>Here you can configure location where ExifTool binary is located. "
-                                                        "Application will try to find this binary automatically if they are "
-                                                        "already installed on your computer.</p>"),
+    QLabel* const exifToolBinLabel    = new QLabel(i18nc("@info", "Here you can configure location where ExifTool binary is located. "
+                                                                  "Application will try to find this binary automatically if they are "
+                                                                  "already installed on your computer."),
                                                    exifToolPanel);
     exifToolBinLabel->setWordWrap(true);
 
