@@ -47,7 +47,7 @@ int main(int argc, char** argv)
 
     MetaEngine meta;
     MetaEngine::TagsMap exiv2Exif = meta.getStdExifTagsList();
-    QStringList tagsNotFound;
+    MetaEngine::TagsMap exiv2Iptc = meta.getIptcTagsList();
     QStringList tagsFound;
 
     qDebug() << "Extract ExifTool database as XML...";
@@ -110,7 +110,7 @@ int main(int argc, char** argv)
 
                 if (e2.tagName() == QLatin1String("tag"))
                 {
-                    QString exiv2Tag;
+                    QString exiv2TagPre;
                     QString name  = e2.attribute(QLatin1String("name"));
                     QString g11   = e2.attribute(QLatin1String("g1"));
 
@@ -128,45 +128,81 @@ int main(int argc, char** argv)
 
                     QString etTag = QString::fromLatin1("%1.%2.%3.%4").arg(g0).arg(g1).arg(g2).arg(name);
 
+                    // Exif tags
+
                     if      (etTag.startsWith(QLatin1String("EXIF.InteropIFD")))
                     {
-                        exiv2Tag = QString::fromLatin1("Exif.Iop.%1").arg(name);
+                        exiv2TagPre = QString::fromLatin1("Exif.Iop.");
                     }
                     else if (etTag.startsWith(QLatin1String("EXIF.IFD0")))
                     {
-                        exiv2Tag = QString::fromLatin1("Exif.Image.%1").arg(name);
+                        exiv2TagPre = QString::fromLatin1("Exif.Image.");
                     }
                     else if (etTag.startsWith(QLatin1String("EXIF.ExifIFD")))
                     {
-                        exiv2Tag = QString::fromLatin1("Exif.Photo.%1").arg(name);
+                        exiv2TagPre = QString::fromLatin1("Exif.Photo.");
                     }
                     else if (etTag.startsWith(QLatin1String("EXIF.IFD1")))
                     {
-                        exiv2Tag = QString::fromLatin1("Exif.Thumbnail.%1").arg(name);
+                        exiv2TagPre = QString::fromLatin1("Exif.Thumbnail.");
                     }
                     else if (etTag.startsWith(QLatin1String("EXIF.GPS")))
                     {
-                        exiv2Tag = QString::fromLatin1("Exif.GPSInfo.%1").arg(name);
+                        exiv2TagPre = QString::fromLatin1("Exif.GPSInfo.");
                     }
 
-                    if (!exiv2Tag.isEmpty() && etTag.startsWith(QLatin1String("EXIF.")))
+                    QString left  = QString::fromLatin1("mapETtoExiv2.insert(QLatin1String(\"%1\"),").arg(etTag);
+
+                    if (!exiv2TagPre.isEmpty() && etTag.startsWith(QLatin1String("EXIF.")))
                     {
-                        if (exiv2Exif.contains(exiv2Tag))
+                        if (exiv2Exif.contains(exiv2TagPre + name))
                         {
-                            tagsFound << QString::fromLatin1("%1 ==> %2").arg(etTag, -60).arg(exiv2Tag, -45);
+                            tagsFound << QString::fromLatin1("%1%2").arg(left, -90)
+                                                                    .arg(QString::fromLatin1("QLatin1String(\"%1\"));").arg(exiv2TagPre + name));
                         }
                         else
                         {
-                            tagsNotFound << QString::fromLatin1("%1 ==> Not Found!").arg(etTag, -60);
+                            tagsFound << QString::fromLatin1("%1%2").arg(left, -90)
+                                                                    .arg(QString::fromLatin1("QLatin1String(\"%1\"));").arg(exiv2TagPre));
                         }
+
+                        continue;
                     }
+
+                    // Iptc tags
+
+                    else if (etTag.startsWith(QLatin1String("IPTC.")))
+                    {
+                        exiv2TagPre = QString::fromLatin1("Iptc.Envelope.");
+
+                        if (exiv2Iptc.contains(exiv2TagPre + name))
+                        {
+                            tagsFound << QString::fromLatin1("%1%2").arg(left, -90)
+                                                                    .arg(QString::fromLatin1("QLatin1String(\"%1\"));").arg(exiv2TagPre + name));
+                            continue;
+                        }
+
+                        exiv2TagPre = QString::fromLatin1("Iptc.Application2.");
+
+                        if (exiv2Iptc.contains(exiv2TagPre + name))
+                        {
+                            tagsFound << QString::fromLatin1("%1%2").arg(left, -90)
+                                                                    .arg(QString::fromLatin1("QLatin1String(\"%1\"));").arg(exiv2TagPre + name));
+                            continue;
+                        }
+
+                        tagsFound << QString::fromLatin1("%1%2").arg(left, -90)
+                                                                .arg(QString::fromLatin1("QLatin1String(\"%1\"));").arg(exiv2TagPre));
+                        continue;
+                    }
+
                 }
             }
         }
     }
 
     tagsFound.sort();
-    tagsNotFound.sort();
+    tagsFound.removeDuplicates();
 
     qDebug() << endl << "----------------------------------------------------------------------------------";
     qDebug() << "ExifTool tags found in Exiv2 (" << tagsFound.size() << "):" << endl;
@@ -177,16 +213,7 @@ int main(int argc, char** argv)
     }
 
     qDebug() << endl << "----------------------------------------------------------------------------------";
-    qDebug() << "ExifTool tags not found in Exiv2 (" << tagsNotFound.size() << "):" << endl;
-
-    foreach (const QString& s, tagsNotFound)
-    {
-        qDebug().noquote() << s;
-    }
-
-    qDebug() << endl << "----------------------------------------------------------------------------------";
     qDebug() << "Found:"     << tagsFound.size();
-    qDebug() << "Not Found:" << tagsNotFound.size();
 
     return 0;
 }
