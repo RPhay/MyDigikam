@@ -26,6 +26,8 @@
 // Qt includes
 
 #include <QHeaderView>
+#include <QApplication>
+#include <QStyle>
 
 // Local includes
 
@@ -44,6 +46,7 @@ ExifToolListView::ExifToolListView(QWidget* const parent)
     setAllColumnsShowFocus(true);
     setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     setColumnCount(2);
+    setIndentation(QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing));
     setHeaderHidden(true);
     header()->setSectionResizeMode(QHeaderView::Stretch);
 
