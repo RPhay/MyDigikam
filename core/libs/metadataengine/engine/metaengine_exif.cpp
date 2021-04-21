@@ -705,7 +705,7 @@ QString MetaEngine::createExifUserStringFromValue(const char* exifTagName, const
     }
     catch (Exiv2::AnyError& e)
     {
-        d->printExiv2ExceptionError(QLatin1String("Cannot set Iptc tag string into image using Exiv2 "), e);
+        d->printExiv2ExceptionError(QLatin1String("Cannot get Exif tag user string using Exiv2 "), e);
     }
     catch (...)
     {
