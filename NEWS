@@ -152,4 +152,5 @@ BUGFIXES:
 136 ==> 435898 - Preview image display arbitrarily resized after crop.
 137 ==> 386299 - Add ExifTool based metadata viewer as XnView.
 138 ==> 435966 - digiKam 20.04.2021 rev unexpectedly shuts down in Table view.
-139 ==> 
+139 ==> 435973 - Feathre Request: Make Tag (and perhaps other) filters operate to either Boolean AND or OR.
+140 ==> 
