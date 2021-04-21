@@ -73,6 +73,7 @@ public:
     explicit Private()
         : metadataView    (nullptr),
           errorView       (nullptr),
+          errorLbl        (nullptr),
           view            (nullptr),
           searchBar       (nullptr),
           toolBtn         (nullptr),
@@ -85,8 +86,11 @@ public:
 
     QWidget*          metadataView;
     QWidget*          errorView;
+    QLabel*           errorLbl;
     ExifToolListView* view;
     SearchTextBar*    searchBar;
+
+    QString           fileName;
 
     QToolButton*      toolBtn;
 
@@ -138,9 +142,8 @@ ExifToolWidget::ExifToolWidget(QWidget* const parent)
     d->errorView             = new QWidget(this);
     QGridLayout* const grid  = new QGridLayout(d->errorView);
 
-    QLabel* const errorLbl   = new QLabel(d->errorView);
-    errorLbl->setAlignment(Qt::AlignCenter);
-    errorLbl->setText(i18n("Cannot load data\nwith ExifTool.\nCheck your configuration."));
+    d->errorLbl              = new QLabel(d->errorView);
+    d->errorLbl->setAlignment(Qt::AlignCenter);
 
     QPushButton* const btn   = new QPushButton(d->errorView);
     btn->setText(i18n("Open Setup Dialog..."));
@@ -148,8 +151,8 @@ ExifToolWidget::ExifToolWidget(QWidget* const parent)
     connect(btn, SIGNAL(clicked()),
             this, SIGNAL(signalSetupExifTool()));
 
-    grid->addWidget(errorLbl, 1, 1, 1, 1);
-    grid->addWidget(btn,      2, 1, 1, 1);
+    grid->addWidget(d->errorLbl, 1, 1, 1, 1);
+    grid->addWidget(btn,         2, 1, 1, 1);
     grid->setColumnStretch(0, 10);
     grid->setColumnStretch(2, 10);
     grid->setContentsMargins(spacing, spacing, spacing, spacing);
@@ -171,15 +174,19 @@ ExifToolWidget::~ExifToolWidget()
 
 void ExifToolWidget::loadFromUrl(const QUrl& url)
 {
-    bool ret = d->view->loadFromUrl(url);
+    d->fileName = url.fileName();
+    bool ret    = d->view->loadFromUrl(url);
 
     if (ret)
     {
         setCurrentIndex(Private::MetadataView);
+        d->toolBtn->setEnabled(true);
     }
     else
     {
+        d->errorLbl->setText(i18n("Cannot load data\nfrom %1\nwith ExifTool.\nCheck your configuration.", d->fileName));
         setCurrentIndex(Private::ErrorView);
+        d->toolBtn->setEnabled(false);
     }
 }
 
@@ -203,7 +210,7 @@ void ExifToolWidget::setup()
 
 QString ExifToolWidget::metadataToText() const
 {
-    QString textmetadata;
+    QString textmetadata  = i18nc("@info: metadata to text", "File name: %1 (%2)", d->fileName, QLatin1String("ExifTool"));
     int i                 = 0;
     QTreeWidgetItem* item = nullptr;
 
@@ -260,6 +267,11 @@ void ExifToolWidget::slotCopy2Clipboard()
 void ExifToolWidget::slotPrintMetadata()
 {
     QString textmetadata  = QLatin1String("<p>");
+    textmetadata.append(QString::fromUtf8("<p><big><big><b>%1 %2 (%3)</b></big></big>")
+                        .arg(i18nc("@title: print metadata", "File name:"))
+                        .arg(d->fileName)
+                        .arg(QLatin1String("ExifTool")));
+
     int i                 = 0;
     QTreeWidgetItem* item = nullptr;
 
@@ -329,7 +341,7 @@ void ExifToolWidget::slotSaveMetadataToFile()
                                                            QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation));
     fileSaveDialog->setAcceptMode(QFileDialog::AcceptSave);
     fileSaveDialog->setFileMode(QFileDialog::AnyFile);
-    fileSaveDialog->selectFile(QLatin1String("exiftool_metadata.txt"));
+    fileSaveDialog->selectFile(QString::fromUtf8("%1.txt").arg(d->fileName));
     fileSaveDialog->setNameFilter(QLatin1String("*.txt"));
 
     QList<QUrl> urls;
