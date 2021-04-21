@@ -116,6 +116,11 @@ ExifToolParser::TagsMap ExifToolParser::currentIgnoredTags() const
     return d->ignoredMap;
 }
 
+QString ExifToolParser::currentErrorString() const
+{
+    return d->proc->errorString();
+}
+
 bool ExifToolParser::load(const QString& path)
 {
     d->parsedPath.clear();

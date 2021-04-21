@@ -51,6 +51,7 @@ public:
     ~ExifToolListView() override;
 
     bool loadFromUrl(const QUrl& url);
+    QString errorString() const;
 
 Q_SIGNALS:
 

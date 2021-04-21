@@ -74,6 +74,11 @@ bool ExifToolListView::loadFromUrl(const QUrl& url)
     return true;
 }
 
+QString ExifToolListView::errorString() const
+{
+    return m_parser->currentErrorString();
+}
+
 void ExifToolListView::setMetadata(const ExifToolParser::TagsMap& map)
 {
     for (ExifToolParser::TagsMap::const_iterator it = map.constBegin() ;

@@ -144,6 +144,7 @@ ExifToolWidget::ExifToolWidget(QWidget* const parent)
 
     d->errorLbl              = new QLabel(d->errorView);
     d->errorLbl->setAlignment(Qt::AlignCenter);
+    d->errorLbl->setWordWrap(true);
 
     QPushButton* const btn   = new QPushButton(d->errorView);
     btn->setText(i18n("Open Setup Dialog..."));
@@ -184,7 +185,12 @@ void ExifToolWidget::loadFromUrl(const QUrl& url)
     }
     else
     {
-        d->errorLbl->setText(i18n("Cannot load data\nfrom %1\nwith ExifTool.\nCheck your configuration.", d->fileName));
+        d->errorLbl->setText(i18n("Cannot load data\n"
+                                  "from %1\n"
+                                  "with ExifTool.\n\n"
+                                  "%2",
+                                  d->fileName,
+                                  d->view->errorString()));
         setCurrentIndex(Private::ErrorView);
         d->toolBtn->setEnabled(false);
     }

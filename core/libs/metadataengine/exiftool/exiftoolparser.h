@@ -81,6 +81,7 @@ public:
     QString currentParsedPath()  const;
     TagsMap currentParsedTags()  const;
     TagsMap currentIgnoredTags() const;
+    QString currentErrorString() const;
 
 private Q_SLOTS:
 
