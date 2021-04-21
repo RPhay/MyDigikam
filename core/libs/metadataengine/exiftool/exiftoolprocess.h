@@ -182,14 +182,6 @@ private:
 
     class Private;
     Private* const d;
-
-private:
-
-    static const int       S_CMD_ID_MIN;
-    static const int       S_CMD_ID_MAX;
-
-    static       QMutex    s_cmdIdMutex;
-    static       int       s_nextCmdId;     ///< Unique identifier, even in a multi-instances or multi-thread environment
 };
 
 } // namespace Digikam

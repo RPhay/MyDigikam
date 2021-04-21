@@ -41,16 +41,6 @@
 namespace Digikam
 {
 
-// Init static variables
-
-const int    ExifToolProcess::S_CMD_ID_MIN  = 1;
-const int    ExifToolProcess::S_CMD_ID_MAX  = 2000000000;
-
-QMutex       ExifToolProcess::s_cmdIdMutex;
-int          ExifToolProcess::s_nextCmdId   = S_CMD_ID_MIN;
-
-// ------------------------------------------------------------
-
 class Q_DECL_HIDDEN ExifToolProcess::Private
 {
 public:
@@ -98,7 +88,18 @@ public:
 
     QProcess::ProcessError processError;
     QString                errorString;
+
+public:
+
+    static const int       CMD_ID_MIN  = 1;
+    static const int       CMD_ID_MAX  = 2000000000;
+
+    static int             s_nextCmdId;               ///< Unique identifier, even in a multi-instances or multi-thread environment
+    static QMutex          s_cmdIdMutex;
 };
+
+QMutex ExifToolProcess::Private::s_cmdIdMutex;
+int    ExifToolProcess::Private::s_nextCmdId = ExifToolProcess::Private::CMD_ID_MIN;
 
 ExifToolProcess::ExifToolProcess(QObject* const parent)
     : QObject(parent),
@@ -308,15 +309,15 @@ int ExifToolProcess::command(const QByteArrayList& args)
 
     // ThreadSafe incrementation of d->nextCmdId
 
-    s_cmdIdMutex.lock();
-    const int cmdId = s_nextCmdId;
+    Private::s_cmdIdMutex.lock();
+    const int cmdId = Private::s_nextCmdId;
 
-    if (s_nextCmdId++ >= S_CMD_ID_MAX)
+    if (Private::s_nextCmdId++ >= Private::CMD_ID_MAX)
     {
-        s_nextCmdId = S_CMD_ID_MIN;
+        Private::s_nextCmdId = Private::CMD_ID_MIN;
     }
 
-    s_cmdIdMutex.unlock();
+    Private::s_cmdIdMutex.unlock();
 
     // String representation of d->cmdId with leading zero -> constant size: 10 char
 
