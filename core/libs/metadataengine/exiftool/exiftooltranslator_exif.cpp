@@ -32,8 +32,28 @@ void ExifToolTranslator::Private::populateExifHashTable()
 
     // Exif Iop Group
 
-    mapETtoExiv2.insert(QLatin1String("EXIF.InteropIFD.Image.InteropIndex"),           QLatin1String("Exif.Iop.InteroperabilityIndex"));
-    mapETtoExiv2.insert(QLatin1String("EXIF.InteropIFD.Image.InteropVersion"),         QLatin1String("Exif.Iop.InteroperabilityVersion"));
+//     mapETtoExiv2.insert(QLatin1String("EXIF.InteropIFD.Camera.Make"),                         QLatin1String("Exif.Iop."));
+//     mapETtoExiv2.insert(QLatin1String("EXIF.InteropIFD.Camera.Model"),                        QLatin1String("Exif.Iop."));
+//     mapETtoExiv2.insert(QLatin1String("EXIF.InteropIFD.Camera.Rating"),                       QLatin1String("Exif.Iop."));
+    mapETtoExiv2.insert(QLatin1String("EXIF.InteropIFD.Camera.RelatedImageFileFormat"),       QLatin1String("Exif.Iop.RelatedImageFileFormat"));
+    mapETtoExiv2.insert(QLatin1String("EXIF.InteropIFD.Camera.RelatedImageHeight"),           QLatin1String("Exif.Iop.RelatedImageLength"));
+    mapETtoExiv2.insert(QLatin1String("EXIF.InteropIFD.Camera.RelatedImageWidth"),            QLatin1String("Exif.Iop.RelatedImageWidth"));
+//     mapETtoExiv2.insert(QLatin1String("EXIF.InteropIFD.Image.BitsPerSample"),                 QLatin1String("Exif.Iop."));
+//     mapETtoExiv2.insert(QLatin1String("EXIF.InteropIFD.Image.CellLength"),                    QLatin1String("Exif.Iop."));
+//     mapETtoExiv2.insert(QLatin1String("EXIF.InteropIFD.Image.CellWidth"),                     QLatin1String("Exif.Iop."));
+//     mapETtoExiv2.insert(QLatin1String("EXIF.InteropIFD.Image.Compression"),                   QLatin1String("Exif.Iop."));
+//     mapETtoExiv2.insert(QLatin1String("EXIF.InteropIFD.Image.DocumentName"),                  QLatin1String("Exif.Iop."));
+//     mapETtoExiv2.insert(QLatin1String("EXIF.InteropIFD.Image.FillOrder"),                     QLatin1String("Exif.Iop."));
+//     mapETtoExiv2.insert(QLatin1String("EXIF.InteropIFD.Image.ImageDescription"),              QLatin1String("Exif.Iop."));
+//     mapETtoExiv2.insert(QLatin1String("EXIF.InteropIFD.Image.ImageHeight"),                   QLatin1String("Exif.Iop."));
+//     mapETtoExiv2.insert(QLatin1String("EXIF.InteropIFD.Image.ImageWidth"),                    QLatin1String("Exif.Iop."));
+    mapETtoExiv2.insert(QLatin1String("EXIF.InteropIFD.Image.InteropIndex"),                  QLatin1String("Exif.Iop.InteroperabilityIndex"));
+    mapETtoExiv2.insert(QLatin1String("EXIF.InteropIFD.Image.InteropVersion"),                QLatin1String("Exif.Iop.InteroperabilityVersion"));
+//     mapETtoExiv2.insert(QLatin1String("EXIF.InteropIFD.Image.OldSubfileType"),                QLatin1String("Exif.Iop."));
+//     mapETtoExiv2.insert(QLatin1String("EXIF.InteropIFD.Image.PhotometricInterpretation"),     QLatin1String("Exif.Iop."));
+//     mapETtoExiv2.insert(QLatin1String("EXIF.InteropIFD.Image.ProcessingSoftware"),            QLatin1String("Exif.Iop."));
+//     mapETtoExiv2.insert(QLatin1String("EXIF.InteropIFD.Image.SubfileType"),                   QLatin1String("Exif.Iop."));
+//     mapETtoExiv2.insert(QLatin1String("EXIF.InteropIFD.Image.Thresholding"),                  QLatin1String("Exif.Iop."));
 
     // Exif Image Group
 
@@ -138,28 +158,39 @@ void ExifToolTranslator::Private::populateExifHashTable()
     mapETtoExiv2.insert(QLatin1String("EXIF.IFD1.Time.ModifyDate"),                    QLatin1String("..."));        // TODO: do not exist yet in Exiv2
 
     // Exif GPSInfo Group
+    mapETtoExiv2.insert(QLatin1String("EXIF.GPS.Location.GPSAltitude"),                       QLatin1String("Exif.GPSInfo.GPSAltitude"));
+    mapETtoExiv2.insert(QLatin1String("EXIF.GPS.Location.GPSAltitudeRef"),                    QLatin1String("Exif.GPSInfo.GPSAltitudeRef"));
+    mapETtoExiv2.insert(QLatin1String("EXIF.GPS.Location.GPSLatitude"),                       QLatin1String("Exif.GPSInfo.GPSLatitude"));
+    mapETtoExiv2.insert(QLatin1String("EXIF.GPS.Location.GPSLatitudeRef"),                    QLatin1String("Exif.GPSInfo.GPSLatitudeRef"));
+    mapETtoExiv2.insert(QLatin1String("EXIF.GPS.Location.GPSLongitude"),                      QLatin1String("Exif.GPSInfo.GPSLongitude"));
+    mapETtoExiv2.insert(QLatin1String("EXIF.GPS.Location.GPSLongitudeRef"),                   QLatin1String("Exif.GPSInfo.GPSLongitudeRef"));
+    mapETtoExiv2.insert(QLatin1String("EXIF.GPS.Location.GPSVersionID"),                      QLatin1String("Exif.GPSInfo.GPSVersionID"));
+    mapETtoExiv2.insert(QLatin1String("EXIF.GPS.Time.GPSAreaInformation"),                    QLatin1String("Exif.GPSInfo.GPSAreaInformation"));
+    mapETtoExiv2.insert(QLatin1String("EXIF.GPS.Time.GPSDOP"),                                QLatin1String("Exif.GPSInfo.GPSDOP"));
+    mapETtoExiv2.insert(QLatin1String("EXIF.GPS.Time.GPSDateStamp"),                          QLatin1String("Exif.GPSInfo.GPSDateStamp"));
+    mapETtoExiv2.insert(QLatin1String("EXIF.GPS.Time.GPSDestBearing"),                        QLatin1String("Exif.GPSInfo.GPSDestBearing"));
+    mapETtoExiv2.insert(QLatin1String("EXIF.GPS.Time.GPSDestBearingRef"),                     QLatin1String("Exif.GPSInfo.GPSDestBearingRef"));
+    mapETtoExiv2.insert(QLatin1String("EXIF.GPS.Time.GPSDestDistance"),                       QLatin1String("Exif.GPSInfo.GPSDestDistance"));
+    mapETtoExiv2.insert(QLatin1String("EXIF.GPS.Time.GPSDestDistanceRef"),                    QLatin1String("Exif.GPSInfo.GPSDestDistanceRef"));
+    mapETtoExiv2.insert(QLatin1String("EXIF.GPS.Time.GPSDestLatitude"),                       QLatin1String("Exif.GPSInfo.GPSDestLatitude"));
+    mapETtoExiv2.insert(QLatin1String("EXIF.GPS.Time.GPSDestLatitudeRef"),                    QLatin1String("Exif.GPSInfo.GPSDestLatitudeRef"));
+    mapETtoExiv2.insert(QLatin1String("EXIF.GPS.Time.GPSDestLongitude"),                      QLatin1String("Exif.GPSInfo.GPSDestLongitude"));
+    mapETtoExiv2.insert(QLatin1String("EXIF.GPS.Time.GPSDestLongitudeRef"),                   QLatin1String("Exif.GPSInfo.GPSDestLongitudeRef"));
+    mapETtoExiv2.insert(QLatin1String("EXIF.GPS.Time.GPSDifferential"),                       QLatin1String("Exif.GPSInfo.GPSDifferential"));
+    mapETtoExiv2.insert(QLatin1String("EXIF.GPS.Time.GPSHPositioningError"),                  QLatin1String("Exif.GPSInfo.GPSHPositioningError"));
+    mapETtoExiv2.insert(QLatin1String("EXIF.GPS.Time.GPSImgDirection"),                       QLatin1String("Exif.GPSInfo.GPSImgDirection"));
+    mapETtoExiv2.insert(QLatin1String("EXIF.GPS.Time.GPSImgDirectionRef"),                    QLatin1String("Exif.GPSInfo.GPSImgDirectionRef"));
+    mapETtoExiv2.insert(QLatin1String("EXIF.GPS.Time.GPSMapDatum"),                           QLatin1String("Exif.GPSInfo.GPSMapDatum"));
+    mapETtoExiv2.insert(QLatin1String("EXIF.GPS.Time.GPSMeasureMode"),                        QLatin1String("Exif.GPSInfo.GPSMeasureMode"));
+    mapETtoExiv2.insert(QLatin1String("EXIF.GPS.Time.GPSProcessingMethod"),                   QLatin1String("Exif.GPSInfo.GPSProcessingMethod"));
+    mapETtoExiv2.insert(QLatin1String("EXIF.GPS.Time.GPSSatellites"),                         QLatin1String("Exif.GPSInfo.GPSSatellites"));
+    mapETtoExiv2.insert(QLatin1String("EXIF.GPS.Time.GPSSpeed"),                              QLatin1String("Exif.GPSInfo.GPSSpeed"));
+    mapETtoExiv2.insert(QLatin1String("EXIF.GPS.Time.GPSSpeedRef"),                           QLatin1String("Exif.GPSInfo.GPSSpeedRef"));
+    mapETtoExiv2.insert(QLatin1String("EXIF.GPS.Time.GPSStatus"),                             QLatin1String("Exif.GPSInfo.GPSStatus"));
+    mapETtoExiv2.insert(QLatin1String("EXIF.GPS.Time.GPSTimeStamp"),                          QLatin1String("Exif.GPSInfo.GPSTimeStamp"));
+    mapETtoExiv2.insert(QLatin1String("EXIF.GPS.Time.GPSTrack"),                              QLatin1String("Exif.GPSInfo.GPSTrack"));
+    mapETtoExiv2.insert(QLatin1String("EXIF.GPS.Time.GPSTrackRef"),                           QLatin1String("Exif.GPSInfo.GPSTrackRef"));
 
-    mapETtoExiv2.insert(QLatin1String("EXIF.GPS.Location.GPSDOP"),                     QLatin1String("Exif.GPSInfo.GPSDOP"));
-    mapETtoExiv2.insert(QLatin1String("EXIF.GPS.Location.GPSDifferential"),            QLatin1String("Exif.GPSInfo.GPSDifferential"));
-    mapETtoExiv2.insert(QLatin1String("EXIF.GPS.Location.GPSVersionID"),               QLatin1String("Exif.GPSInfo.GPSVersionID"));
-    mapETtoExiv2.insert(QLatin1String("EXIF.GPS.Location.GPSMapDatum"),                QLatin1String("Exif.GPSInfo.GPSMapDatum"));
-    mapETtoExiv2.insert(QLatin1String("EXIF.GPS.Location.GPSLatitudeRef"),             QLatin1String("Exif.GPSInfo.GPSLatitudeRef"));
-    mapETtoExiv2.insert(QLatin1String("EXIF.GPS.Location.GPSLatitude"),                QLatin1String("Exif.GPSInfo.GPSLatitude"));
-    mapETtoExiv2.insert(QLatin1String("EXIF.GPS.Location.GPSLongitudeRef"),            QLatin1String("Exif.GPSInfo.GPSLongitudeRef"));
-    mapETtoExiv2.insert(QLatin1String("EXIF.GPS.Location.GPSLongitude"),               QLatin1String("Exif.GPSInfo.GPSLongitude"));
-    mapETtoExiv2.insert(QLatin1String("EXIF.GPS.Location.GPSAltitudeRef"),             QLatin1String("Exif.GPSInfo.GPSAltitudeRef"));
-    mapETtoExiv2.insert(QLatin1String("EXIF.GPS.Location.GPSAltitude"),                QLatin1String("Exif.GPSInfo.GPSAltitude"));
-    mapETtoExiv2.insert(QLatin1String("EXIF.GPS.Location.GPSSpeed"),                   QLatin1String("Exif.GPSInfo.GPSSpeed"));
-    mapETtoExiv2.insert(QLatin1String("EXIF.GPS.Location.GPSMeasureMode"),             QLatin1String("Exif.GPSInfo.GPSMeasureMode"));
-    mapETtoExiv2.insert(QLatin1String("EXIF.GPS.Location.GPSSpeedRef"),                QLatin1String("Exif.GPSInfo.GPSSpeedRef"));
-    mapETtoExiv2.insert(QLatin1String("EXIF.GPS.Location.GPSSpeedRef"),                QLatin1String("Exif.GPSInfo.GPSSpeedRef"));
-    mapETtoExiv2.insert(QLatin1String("EXIF.GPS.Location.GPSStatus"),                  QLatin1String("Exif.GPSInfo.GPSStatus"));
-    mapETtoExiv2.insert(QLatin1String("EXIF.GPS.Location.GPSTrack"),                   QLatin1String("Exif.GPSInfo.GPSTrack"));
-    mapETtoExiv2.insert(QLatin1String("EXIF.GPS.Location.GPSTrackRef"),                QLatin1String("Exif.GPSInfo.GPSTrackRef"));
-    mapETtoExiv2.insert(QLatin1String("EXIF.GPS.Location.GPSImgDirection"),            QLatin1String("Exif.GPSInfo.Exif.GPSInfo.GPSImgDirection"));
-    mapETtoExiv2.insert(QLatin1String("EXIF.GPS.Location.GPSImgDirectionRef"),         QLatin1String("Exif.GPSInfo.Exif.GPSInfo.GPSImgDirectionRef"));
-    mapETtoExiv2.insert(QLatin1String("EXIF.GPS.Time.GPSDateStamp"),                   QLatin1String("Exif.GPSInfo.GPSDateStamp"));
-    mapETtoExiv2.insert(QLatin1String("EXIF.GPS.Time.GPSTimeStamp"),                   QLatin1String("Exif.GPSInfo.GPSTimeStamp"));
 }
 
 } // namespace Digikam
