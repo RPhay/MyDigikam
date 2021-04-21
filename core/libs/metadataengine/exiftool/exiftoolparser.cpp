@@ -25,6 +25,7 @@
 
 // Qt includes
 
+#include <QDir>
 #include <QFileInfo>
 #include <QStringList>
 #include <QVariant>
@@ -154,7 +155,7 @@ bool ExifToolParser::load(const QString& path)
     cmdArgs << QByteArray("-G:0:1:2:4:6");
     cmdArgs << QByteArray("-n");
     cmdArgs << QByteArray("-l");
-    cmdArgs << fileInfo.filePath().toUtf8();
+    cmdArgs << QDir::toNativeSeparators(fileInfo.filePath()).toUtf8();
 
     // Send command to ExifToolProcess
 
