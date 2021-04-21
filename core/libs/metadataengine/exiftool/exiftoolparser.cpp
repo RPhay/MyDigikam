@@ -93,6 +93,8 @@ ExifToolParser::~ExifToolParser()
         delete d->loop;
     }
 
+    d->proc->terminate();
+
     delete d->proc;
     delete d;
 }
