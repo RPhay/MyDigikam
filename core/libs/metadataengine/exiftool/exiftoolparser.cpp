@@ -193,6 +193,7 @@ bool ExifToolParser::load(const QString& path)
     }
 
     qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool complete load for" << path;
+    qCDebug(DIGIKAM_METAENGINE_LOG) << d->parsedMap.count() << "properties decoded";
 
     return true;
 }

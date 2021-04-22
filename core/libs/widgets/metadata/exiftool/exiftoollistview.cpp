@@ -76,8 +76,6 @@ bool ExifToolListView::loadFromUrl(const QUrl& url)
         return false;
     }
 
-    qCDebug(DIGIKAM_WIDGETS_LOG) << "Set ExifTool metadata with item numbers:" << m_parser->currentParsedTags().count();
-
     setMetadata(m_parser->currentParsedTags());
 
     return true;
