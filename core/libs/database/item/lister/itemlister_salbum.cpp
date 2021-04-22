@@ -295,7 +295,7 @@ void ItemLister::listHaarSearch(ItemListerReceiver* const receiver,
 }
 
 void ItemLister::listFromHaarSearch(ItemListerReceiver* const receiver,
-                                    const QMap<qlonglong,double>& imageSimilarityMap)
+                                    const QMap<qlonglong, double>& imageSimilarityMap)
 {
     QList<QVariant> values;
     QString         errMsg;

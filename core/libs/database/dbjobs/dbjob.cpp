@@ -333,7 +333,7 @@ void SearchesJob::runSearches()
 
     ItemListerJobPartsSendingReceiver receiver(this, 200);
 
-    foreach (const SearchInfo &info, infos)
+    foreach (const SearchInfo& info, infos)
     {
         if (info.type == DatabaseSearch::HaarSearch)
         {
@@ -380,13 +380,13 @@ void SearchesJob::runFindDuplicates()
     }
 
     auto restriction = static_cast<HaarIface::DuplicatesSearchRestrictions>(m_jobInfo.searchResultRestriction());
-    auto results = m_iface->findDuplicates(m_jobInfo.imageIds(),
-                                           m_begin,
-                                           m_end,
-                                           m_jobInfo.minThreshold(),
-                                           m_jobInfo.maxThreshold(),
-                                           restriction,
-                                           &observer);
+    auto results     = m_iface->findDuplicates(m_jobInfo.imageIds(),
+                                               m_begin,
+                                               m_end,
+                                               m_jobInfo.minThreshold(),
+                                               m_jobInfo.maxThreshold(),
+                                               restriction,
+                                               &observer);
 
     emit signalDuplicatesResults(results);
 }
