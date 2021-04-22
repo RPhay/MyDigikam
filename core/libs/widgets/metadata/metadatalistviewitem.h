@@ -50,9 +50,9 @@ public:
                          const QString& title);
     ~MetadataListViewItem() override;
 
-    QString getKey();
-    QString getTitle();
-    QString getValue();
+    QString getKey()   const;
+    QString getTitle() const;
+    QString getValue() const;
 
 private:
 

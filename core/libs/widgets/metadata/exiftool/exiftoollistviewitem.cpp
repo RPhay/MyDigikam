@@ -37,14 +37,17 @@ namespace Digikam
 {
 
 ExifToolListViewItem::ExifToolListViewItem(ExifToolListViewGroup* const parent,
-                                           const QString& name,
+                                           const QString& key,
                                            const QString& value,
                                            const QString& desc)
-    : QTreeWidgetItem(parent)
+    : QTreeWidgetItem(parent),
+      m_key          (key)
 {
     setChildIndicatorPolicy(QTreeWidgetItem::DontShowIndicator);
     setDisabled(false);
     setSelected(false);
+
+    QString name = key.section(QLatin1Char('.'), -1);
     setText(0, name);
     setToolTip(0, !desc.isEmpty() ? desc : name);
 
@@ -64,6 +67,11 @@ ExifToolListViewItem::ExifToolListViewItem(ExifToolListViewGroup* const parent,
 
 ExifToolListViewItem::~ExifToolListViewItem()
 {
+}
+
+QString ExifToolListViewItem::getKey() const
+{
+    return m_key;
 }
 
 } // namespace Digikam

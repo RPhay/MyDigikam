@@ -172,6 +172,7 @@ void ItemPropertiesMetadataTab::readSettings(const KConfigGroup& group)
     d->makernoteWidget->setCurrentItemByKey(group.readEntry("Current MAKERNOTE Item", QString()));
     d->iptcWidget->setCurrentItemByKey(group.readEntry("Current IPTC Item",           QString()));
     d->xmpWidget->setCurrentItemByKey(group.readEntry("Current XMP Item",             QString()));
+    d->exifToolWidget->setCurrentItemByKey(group.readEntry("Current ExifTool Item",   QString()));
 
     loadFilters();
 }
@@ -196,6 +197,7 @@ void ItemPropertiesMetadataTab::writeSettings(KConfigGroup& group)
     group.writeEntry("Current MAKERNOTE Item",      d->makernoteWidget->getCurrentItemKey());
     group.writeEntry("Current IPTC Item",           d->iptcWidget->getCurrentItemKey());
     group.writeEntry("Current XMP Item",            d->xmpWidget->getCurrentItemKey());
+    group.writeEntry("Current ExifTool Item",       d->exifToolWidget->getCurrentItemKey());
 }
 
 void ItemPropertiesMetadataTab::setCurrentURL(const QUrl& url)
@@ -227,7 +229,6 @@ void ItemPropertiesMetadataTab::setCurrentURL(const QUrl& url)
     d->makernoteWidget->loadFromData(url.fileName(), *metadata);
     d->iptcWidget->loadFromData(url.fileName(),      *metadata);
     d->xmpWidget->loadFromData(url.fileName(),       *metadata);
-
 }
 
 void ItemPropertiesMetadataTab::setCurrentData(DMetadata* const metaData, const QUrl& url)

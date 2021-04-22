@@ -53,6 +53,9 @@ public:
     bool loadFromUrl(const QUrl& url);
     QString errorString() const;
 
+    QString getCurrentItemKey() const;
+    void    setCurrentItemByKey(const QString& itemKey);
+
 Q_SIGNALS:
 
     void signalTextFilterMatch(bool);
@@ -61,12 +64,18 @@ public Q_SLOTS:
 
     void slotSearchTextChanged(const SearchTextSettings&);
 
+private Q_SLOTS:
+
+    void slotSelectionChanged(QTreeWidgetItem*, int);
+
 private:
 
     void setMetadata(const ExifToolParser::TagsMap& map);
     ExifToolListViewGroup* findGroup(const QString& group);
 
 private:
+
+    QString         m_selectedItemKey;
 
     ExifToolParser* m_parser;
 };

@@ -52,7 +52,7 @@ public:
     explicit MetadataListView(QWidget* const parent);
     ~MetadataListView() override;
 
-    QString getCurrentItemKey();
+    QString getCurrentItemKey() const;
     void    setCurrentItemByKey(const QString& itemKey);
 
     void    setIfdList(const DMetadata::MetaDataMap& ifds, const QStringList& tagsFilter);

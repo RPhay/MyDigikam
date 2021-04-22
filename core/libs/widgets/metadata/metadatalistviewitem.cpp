@@ -83,17 +83,17 @@ MetadataListViewItem::~MetadataListViewItem()
 {
 }
 
-QString MetadataListViewItem::getKey()
+QString MetadataListViewItem::getKey() const
 {
     return m_key;
 }
 
-QString MetadataListViewItem::getTitle()
+QString MetadataListViewItem::getTitle() const
 {
     return text(0);
 }
 
-QString MetadataListViewItem::getValue()
+QString MetadataListViewItem::getValue() const
 {
     return text(1);
 }

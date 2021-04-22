@@ -33,6 +33,7 @@
 
 #include "exiftoollistviewgroup.h"
 #include "exiftoollistviewitem.h"
+#include "digikam_debug.h"
 
 namespace Digikam
 {
@@ -42,7 +43,7 @@ ExifToolListView::ExifToolListView(QWidget* const parent)
 {
     setSortingEnabled(true);
     sortByColumn(0, Qt::AscendingOrder);
-    setSelectionMode(QAbstractItemView::ExtendedSelection);
+    setSelectionMode(QAbstractItemView::SingleSelection);
     setAllColumnsShowFocus(true);
     setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     setColumnCount(2);
@@ -52,6 +53,9 @@ ExifToolListView::ExifToolListView(QWidget* const parent)
 
     m_parser = new ExifToolParser(this);
     m_parser->setTranslations(false);
+
+    connect(this, SIGNAL(itemClicked(QTreeWidgetItem*,int)),
+            this, SLOT(slotSelectionChanged(QTreeWidgetItem*,int)));
 }
 
 ExifToolListView::~ExifToolListView()
@@ -71,6 +75,8 @@ bool ExifToolListView::loadFromUrl(const QUrl& url)
     {
         return false;
     }
+
+    qCDebug(DIGIKAM_WIDGETS_LOG) << "Set ExifTool metadata with item numbers:" << m_parser->currentParsedTags().count();
 
     setMetadata(m_parser->currentParsedTags());
 
@@ -95,7 +101,7 @@ void ExifToolListView::setMetadata(const ExifToolParser::TagsMap& map)
             continue;
         }
 
-        QString name                  = it.key().section(QLatin1Char('.'), -1);
+        QString key                   = it.key();
         QString value                 = it.value()[1].toString();
         QString desc                  = it.value()[3].toString();
         ExifToolListViewGroup* igroup = findGroup(grp);
@@ -105,8 +111,10 @@ void ExifToolListView::setMetadata(const ExifToolParser::TagsMap& map)
             igroup = new ExifToolListViewGroup(this, grp);
         }
 
-        new ExifToolListViewItem(igroup, name, value, desc);
+        new ExifToolListViewItem(igroup, key, value, desc);
     }
+
+    setCurrentItemByKey(m_selectedItemKey);
 }
 
 ExifToolListViewGroup* ExifToolListView::findGroup(const QString& group)
@@ -173,6 +181,59 @@ void ExifToolListView::slotSearchTextChanged(const SearchTextSettings& settings)
     }
 
     emit signalTextFilterMatch(query);
+}
+
+QString ExifToolListView::getCurrentItemKey() const
+{
+    if (currentItem() && (currentItem()->flags() & Qt::ItemIsSelectable))
+    {
+        ExifToolListViewItem* const item = static_cast<ExifToolListViewItem*>(currentItem());
+
+        return item->getKey();
+    }
+
+    return QString();
+}
+
+void ExifToolListView::setCurrentItemByKey(const QString& itemKey)
+{
+    if (itemKey.isNull())
+    {
+        return;
+    }
+
+    QTreeWidgetItemIterator it(this);
+
+    while (*it)
+    {
+        ExifToolListViewItem* const item = dynamic_cast<ExifToolListViewItem*>(*it);
+
+        if (item)
+        {
+            if (item->getKey() == itemKey)
+            {
+                setCurrentItem(item);
+                scrollToItem(item);
+                m_selectedItemKey = itemKey;
+
+                return;
+            }
+        }
+
+        ++it;
+    }
+}
+
+void ExifToolListView::slotSelectionChanged(QTreeWidgetItem* item, int)
+{
+    ExifToolListViewItem* const viewItem = dynamic_cast<ExifToolListViewItem*>(item);
+
+    if (!viewItem)
+    {
+        return;
+    }
+
+    m_selectedItemKey                    = viewItem->getKey();
 }
 
 } // namespace Digikam

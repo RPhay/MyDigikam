@@ -378,4 +378,14 @@ void ExifToolWidget::slotSaveMetadataToFile()
     file.close();
 }
 
+QString ExifToolWidget::getCurrentItemKey() const
+{
+    return d->view->getCurrentItemKey();
+}
+
+void ExifToolWidget::setCurrentItemByKey(const QString& itemKey)
+{
+    d->view->setCurrentItemByKey(itemKey);
+}
+
 } // namespace Digikam

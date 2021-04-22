@@ -49,6 +49,9 @@ public:
 
     void loadFromUrl(const QUrl& url);
 
+    QString getCurrentItemKey() const;
+    void    setCurrentItemByKey(const QString& itemKey);
+
 Q_SIGNALS:
 
     void signalSetupExifTool();

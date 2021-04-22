@@ -74,7 +74,7 @@ MetadataListView::~MetadataListView()
 {
 }
 
-QString MetadataListView::getCurrentItemKey()
+QString MetadataListView::getCurrentItemKey() const
 {
     if (currentItem() && (currentItem()->flags() & Qt::ItemIsSelectable))
     {
