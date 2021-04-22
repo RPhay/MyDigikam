@@ -92,6 +92,8 @@ private Q_SLOTS:
 
     void slotErrorOccurred(QProcess::ProcessError error);
 
+    void slotFinished(int exitCode, QProcess::ExitStatus exitStatus);
+
     void slotMetaEngineSettingsChanged();
 
 private:

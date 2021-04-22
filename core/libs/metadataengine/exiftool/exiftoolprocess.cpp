@@ -304,6 +304,7 @@ int ExifToolProcess::command(const QByteArrayList& args)
         d->writeChannelIsClosed                    ||
         args.isEmpty())
     {
+        qCWarning(DIGIKAM_METAENGINE_LOG) << "ExifToolProcess::command(): cannot process command with ExifTool" << args;
         return 0;
     }
 
@@ -369,6 +370,7 @@ void ExifToolProcess::execNextCmd()
     if ((d->process->state() != QProcess::Running) ||
         d->writeChannelIsClosed)
     {
+        qCWarning(DIGIKAM_METAENGINE_LOG) << "ExifToolProcess::execNextCmd(): ExifTool is not running";
         return;
     }
 
@@ -403,14 +405,13 @@ void ExifToolProcess::execNextCmd()
 
 void ExifToolProcess::slotStarted()
 {
+    qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool process started";
     emit signalStarted();
 }
 
 void ExifToolProcess::slotFinished(int exitCode, QProcess::ExitStatus exitStatus)
 {
-/*
     qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool process finished" << exitCode << exitStatus;
-*/
     d->cmdRunning = 0;
 
     emit signalFinished(exitCode, exitStatus);
@@ -477,6 +478,9 @@ void ExifToolProcess::readOutput(const QProcess::ProcessChannel channel)
     if (!(d->outReady[QProcess::StandardOutput] &&
         d->outReady[QProcess::StandardError]))
     {
+/*
+        qCWarning(DIGIKAM_METAENGINE_LOG) << "ExifToolProcess::readOutput(): ExifTool read channels are not ready";
+*/
         return;
     }
 
@@ -495,6 +499,8 @@ void ExifToolProcess::readOutput(const QProcess::ProcessChannel channel)
     }
     else
     {
+        qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifToolProcess::readOutput(): ExifTool command completed with elapsed time:"
+                                        << d->execTimer.elapsed();
         emit signalCmdCompleted(d->cmdRunning,
                                 d->execTimer.elapsed(),
                                 d->outBuff[QProcess::StandardOutput],

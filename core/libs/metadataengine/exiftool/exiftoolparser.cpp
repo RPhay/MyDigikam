@@ -182,6 +182,9 @@ bool ExifToolParser::load(const QString& path)
     hdls << connect(d->proc, &ExifToolProcess::signalErrorOccurred,
                     this, &ExifToolParser::slotErrorOccurred);
 
+    hdls << connect(d->proc, &ExifToolProcess::signalFinished,
+                    this, &ExifToolParser::slotFinished);
+
     d->loop->exec();
 
     foreach (QMetaObject::Connection hdl, hdls)
@@ -356,6 +359,17 @@ void ExifToolParser::slotCmdCompleted(int /*cmdId*/,
 void ExifToolParser::slotErrorOccurred(QProcess::ProcessError error)
 {
     qCWarning(DIGIKAM_METAENGINE_LOG) << "ExifTool process exited with error:" << error;
+
+    if (d->loop)
+    {
+        d->loop->quit();
+    }
+}
+
+void ExifToolParser::slotFinished(int exitCode, QProcess::ExitStatus exitStatus)
+{
+    qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool process finished with code:" << exitCode
+                                    << "and status" << exitStatus;
 
     if (d->loop)
     {
