@@ -40,19 +40,23 @@
 
 using namespace Digikam;
 
-bool exifToolParse(ExifToolParser* const parser, const QString& file)
+bool exifToolParse(const QString& file)
 {
+    ExifToolParser* const parser = new ExifToolParser;
+    parser->setTranslations(false);
+
     // Read metadata from the file. Start ExifToolParser
 
     if (!parser->load(file))
     {
+        qWarning() << "Cannot process" << file;
         return false;
     }
 
     QString path                    = parser->currentParsedPath();
     ExifToolParser::TagsMap parsed  = parser->currentParsedTags();
 
-    qDebug().noquote() << "Processing Source File:" << path;
+    qDebug().noquote() << "Processing source file:" << path;
 
     // Print returned and sorted tags.
 
@@ -114,6 +118,8 @@ bool exifToolParse(ExifToolParser* const parser, const QString& file)
 
     output.close();
 
+    qDebug().noquote() << "Processed source file:" << path;
+
     return true;
 }
 
@@ -128,24 +134,18 @@ int main(int argc, char** argv)
         return -1;
     }
 
-    // Create ExifTool parser instance.
-
-    ExifToolParser* const parser = new ExifToolParser(qApp);
-    parser->setTranslations(false);
-
     QDir imageDir(QString::fromUtf8(argv[1]));
     imageDir.setNameFilters(QStringList() << QLatin1String("*.jpg"));
     QStringList imageFiles = imageDir.entryList();
 
-    qDebug() << "ExifTool parsing images " << imageFiles;
+    qDebug() << "ExifTool parsing images:" << imageFiles;
 
     QList <QFuture<void> > tasks;
 
     foreach (const QString& imageFile, imageFiles)
     {
         tasks.append(QtConcurrent::run(&exifToolParse,
-                                       parser,
-                                       imageFile
+                                       imageDir.path() + QLatin1Char('/') + imageFile
                                       ));
     }
 
