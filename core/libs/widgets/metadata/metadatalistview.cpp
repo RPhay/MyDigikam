@@ -123,12 +123,14 @@ void MetadataListView::setCurrentItemByKey(const QString& itemKey)
 
 void MetadataListView::slotSelectionChanged(QTreeWidgetItem* item, int)
 {
-    if (!item)
+
+    MetadataListViewItem* const viewItem = dynamic_cast<MetadataListViewItem*>(item);
+
+    if (!viewItem)
     {
         return;
     }
 
-    MetadataListViewItem* const viewItem = static_cast<MetadataListViewItem*>(item);
     m_selectedItemKey                    = viewItem->getKey();
     QString tagValue                     = viewItem->getValue().simplified();
     QString tagTitle                     = m_parent->getTagTitle(m_selectedItemKey);
