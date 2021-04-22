@@ -29,6 +29,8 @@
 #include <QHeaderView>
 #include <QTimer>
 #include <QPalette>
+#include <QApplication>
+#include <QStyle>
 
 // KDE includes
 
@@ -50,6 +52,7 @@ MetadataListView::MetadataListView(QWidget* const parent)
     setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     setAllColumnsShowFocus(true);
     setColumnCount(2);
+    setIndentation(QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing));
     header()->setSectionResizeMode(QHeaderView::Stretch);
     header()->hide();
 
