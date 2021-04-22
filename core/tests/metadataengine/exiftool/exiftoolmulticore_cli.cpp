@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2013-11-28
- * Description : a command line tool to test ExifTool output without Exiv2 translation.
+ * Description : a command line tool to check ExifTool with multicore.
  *
  * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
@@ -23,6 +23,8 @@
 
 // Qt includes
 
+#include <QFile>
+#include <QFileInfo>
 #include <QString>
 #include <QStringList>
 #include <QTextStream>
@@ -30,6 +32,7 @@
 #include <QDebug>
 #include <QVariant>
 #include <QObject>
+#include <QtConcurrent>
 
 // Local includes
 
@@ -37,37 +40,31 @@
 
 using namespace Digikam;
 
-int main(int argc, char** argv)
+bool exifToolParse(ExifToolParser* const parser, const QString& file)
 {
-    QCoreApplication app(argc, argv);
-
-    if (argc != 2)
-    {
-        qDebug() << "exiftooloutpu_cli - CLI tool to print ExifTool output without Exiv2 translation";
-        qDebug() << "Usage: <image>";
-        return -1;
-    }
-
-    // Create ExifTool parser instance.
-
-    ExifToolParser* const parser = new ExifToolParser();
-    parser->setTranslations(false);
-
     // Read metadata from the file. Start ExifToolParser
 
-    if (!parser->load(QString::fromUtf8(argv[1])))
+    if (!parser->load(file))
     {
-        return -1;
+        return false;
     }
 
     QString path                    = parser->currentParsedPath();
     ExifToolParser::TagsMap parsed  = parser->currentParsedTags();
 
-    qDebug().noquote() << "Source File:" << path;
+    qDebug().noquote() << "Processing Source File:" << path;
 
     // Print returned and sorted tags.
 
-    QString     output;
+    QFileInfo fi(file);
+    QFile output(QString::fromLatin1("%1-exiftool.txt").arg(fi.fileName()));
+
+    if (!output.open(QIODevice::WriteOnly))
+    {
+        qDebug() << "Cannot open ExifTool ouput file to write...";
+        return false;
+    }
+
     QTextStream stream(&output);
     QStringList tagsLst;
 
@@ -115,7 +112,47 @@ int main(int argc, char** argv)
 
     stream << sep << endl;
 
-    qDebug().noquote() << output;
+    output.close();
+
+    return true;
+}
+
+int main(int argc, char** argv)
+{
+    QCoreApplication app(argc, argv);
+
+    if (argc != 2)
+    {
+        qDebug() << "exiftooloutpu_cli - CLI tool to check ExifTool with multicore";
+        qDebug() << "Usage: <dir>";
+        return -1;
+    }
+
+    // Create ExifTool parser instance.
+
+    ExifToolParser* const parser = new ExifToolParser(qApp);
+    parser->setTranslations(false);
+
+    QDir imageDir(QString::fromUtf8(argv[1]));
+    imageDir.setNameFilters(QStringList() << QLatin1String("*.jpg"));
+    QStringList imageFiles = imageDir.entryList();
+
+    qDebug() << "ExifTool parsing images " << imageFiles;
+
+    QList <QFuture<void> > tasks;
+
+    foreach (const QString& imageFile, imageFiles)
+    {
+        tasks.append(QtConcurrent::run(&exifToolParse,
+                                       parser,
+                                       imageFile
+                                      ));
+    }
+
+    foreach (QFuture<void> t, tasks)
+    {
+        t.waitForFinished();
+    }
 
     return 0;
 }
