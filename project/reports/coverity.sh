@@ -7,7 +7,7 @@
 #
 # Before to run this script you must:
 #
-# - Install Coverity Scan to /opt/
+# - Install Coverity Scan to /opt/ from https://scan.coverity.com/download?tab=cxx
 # - Export binary path /opt/_coverity_version_/bin to PATH variable
 # - Export $DKCoverityToken Shell variable with token of digiKam project given by Coverity SCAN web interface.
 #
@@ -30,7 +30,7 @@ trap 'echo "FAILED COMMAND: $PREVIOUS_COMMAND"' ERR
 if ! which cov-build ; then
 
     echo "Coverity SCAN Toolkit is not installed!"
-    echo "See https://scan.coverity.com/projects/digikam/builds/new for details."
+    echo "See https://scan.coverity.com/download?tab=cxx for details."
     exit -1
 
 fi
