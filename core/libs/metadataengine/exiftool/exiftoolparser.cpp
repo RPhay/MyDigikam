@@ -212,6 +212,8 @@ void ExifToolParser::slotCmdCompleted(int cmdId,
     QJsonObject   jsonObject  = jsonArray.at(0).toObject();
     QVariantMap   metadataMap = jsonObject.toVariantMap();
 
+    qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool json map:" << metadataMap;
+
     for (QVariantMap::const_iterator it = metadataMap.constBegin() ;
         it != metadataMap.constEnd() ; ++it)
     {
@@ -249,6 +251,8 @@ void ExifToolParser::slotCmdCompleted(int cmdId,
         QVariantMap propsMap = it.value().toMap();
         QString data         = propsMap.find(QLatin1String("val")).value().toString();
         QString desc         = propsMap.find(QLatin1String("desc")).value().toString();
+
+        qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool json property:" << tagNameExifTool << data;
 
         if (d->translate)
         {
