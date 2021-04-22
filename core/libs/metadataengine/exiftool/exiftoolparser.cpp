@@ -203,6 +203,7 @@ void ExifToolParser::slotCmdCompleted(int cmdId,
                                       const QByteArray& /*stdErr*/)
 {
     qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool complete command" << cmdId;
+    qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool output:" << stdOut;
 
     // Convert JSON array as QVariantMap
 
