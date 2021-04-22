@@ -732,6 +732,11 @@ QVariantList DMetadata::getMetadataFields(const MetadataFields& fields) const
 
 QString DMetadata::valueToString(const QVariant& value, MetadataInfo::Field field)
 {
+    if (value.isNull())
+    {
+        return QString();
+    }
+
     QScopedPointer<MetaEngine> exiv2Iface(new MetaEngine);
 
     switch (field)
