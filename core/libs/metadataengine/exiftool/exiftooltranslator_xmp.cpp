@@ -63,12 +63,34 @@ void ExifToolTranslator::Private::populateXmpHashTable()
 
     // Xmp xmp group
 
+    mapETtoExiv2.insert(QLatin1String("XMP.XMP-xmp.Author.BaseURL"),                            QLatin1String("Xmp.xmp.BaseURL"));
+    mapETtoExiv2.insert(QLatin1String("XMP.XMP-xmp.Image.Advisory"),                            QLatin1String("Xmp.xmp.Advisory"));
     mapETtoExiv2.insert(QLatin1String("XMP.XMP-xmp.Image.CreatorTool"),                         QLatin1String("Xmp.xmp.CreatorTool"));
     mapETtoExiv2.insert(QLatin1String("XMP.XMP-xmp.Image.Rating"),                              QLatin1String("Xmp.xmp.Rating"));
+    mapETtoExiv2.insert(QLatin1String("XMP.XMP-xmp.Preview.Thumbnails"),                        QLatin1String("Xmp.xmp.Thumbnails"));
+    mapETtoExiv2.insert(QLatin1String("XMP.XMP-xmp.Time.Identifier"),                           QLatin1String("Xmp.xmp.Identifier"));
+    mapETtoExiv2.insert(QLatin1String("XMP.XMP-xmp.Time.Label"),                                QLatin1String("Xmp.xmp.Label"));
+    mapETtoExiv2.insert(QLatin1String("XMP.XMP-xmp.Time.Nickname"),                             QLatin1String("Xmp.xmp.Nickname"));
     mapETtoExiv2.insert(QLatin1String("XMP.XMP-xmp.Time.CreateDate"),                           QLatin1String("Xmp.xmp.CreateDate"));
     mapETtoExiv2.insert(QLatin1String("XMP.XMP-xmp.Time.ModifyDate"),                           QLatin1String("Xmp.xmp.ModifyDate"));
     mapETtoExiv2.insert(QLatin1String("XMP.XMP-xmp.Time.MetadataDate"),                         QLatin1String("Xmp.xmp.MetadataDate"));
-
+/*
+    mapETtoExiv2.insert(QLatin1String("XMP.XMP-xmp.Author.Author"),                             QLatin1String("Xmp.xmp."));
+    mapETtoExiv2.insert(QLatin1String("XMP.XMP-xmp.Preview.PageImage"),                         QLatin1String("Xmp.xmp."));
+    mapETtoExiv2.insert(QLatin1String("XMP.XMP-xmp.Preview.PageImagePageNumber"),               QLatin1String("Xmp.xmp."));
+    mapETtoExiv2.insert(QLatin1String("XMP.XMP-xmp.Preview.PageImageWidth"),                    QLatin1String("Xmp.xmp."));
+    mapETtoExiv2.insert(QLatin1String("XMP.XMP-xmp.Preview.ThumbnailFormat"),                   QLatin1String("Xmp.xmp."));
+    mapETtoExiv2.insert(QLatin1String("XMP.XMP-xmp.Preview.ThumbnailHeight"),                   QLatin1String("Xmp.xmp."));
+    mapETtoExiv2.insert(QLatin1String("XMP.XMP-xmp.Preview.ThumbnailImage"),                    QLatin1String("Xmp.xmp."));
+    mapETtoExiv2.insert(QLatin1String("XMP.XMP-xmp.Preview.ThumbnailWidth"),                    QLatin1String("Xmp.xmp."));
+    mapETtoExiv2.insert(QLatin1String("XMP.XMP-xmp.Preview.Title"),                             QLatin1String("Xmp.xmp."));
+    mapETtoExiv2.insert(QLatin1String("XMP.XMP-xmp.Time.Description"),                          QLatin1String("Xmp.xmp."));
+    mapETtoExiv2.insert(QLatin1String("XMP.XMP-xmp.Time.Format"),                               QLatin1String("Xmp.xmp."));
+    mapETtoExiv2.insert(QLatin1String("XMP.XMP-xmp.Time.Keywords"),                             QLatin1String("Xmp.xmp."));
+    mapETtoExiv2.insert(QLatin1String("XMP.XMP-xmp.Time.PageImageFormat"),                      QLatin1String("Xmp.xmp."));
+    mapETtoExiv2.insert(QLatin1String("XMP.XMP-xmp.Time.PageImageHeight"),                      QLatin1String("Xmp.xmp."));
+    mapETtoExiv2.insert(QLatin1String("XMP.XMP-xmp.Time.PageInfo"),                             QLatin1String("Xmp.xmp."));
+*/
     // Xmp exif Group
 
     mapETtoExiv2.insert(QLatin1String("XMP.XMP-exif.Image.ExifVersion"),                        QLatin1String("Xmp.exif.ExifVersion"));
