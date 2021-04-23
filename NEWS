@@ -155,4 +155,5 @@ BUGFIXES:
 139 ==> 435973 - Feathre Request: Make Tag (and perhaps other) filters operate to either Boolean AND or OR.
 140 ==> 382631 - View HDR metadata.
 141 ==> 436043 - Icon view tool tip are unreadable.
-142 ==> 
+142 ==> 435920 - Unique Parameter not working correctly by large collections.
+143 ==> 
