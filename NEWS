@@ -154,5 +154,5 @@ BUGFIXES:
 138 ==> 435966 - digiKam 20.04.2021 rev unexpectedly shuts down in Table view.
 139 ==> 435973 - Feathre Request: Make Tag (and perhaps other) filters operate to either Boolean AND or OR.
 140 ==> 382631 - View HDR metadata.
-141 ==> 
-
+141 ==> 436043 - Icon view tool tip are unreadable.
+142 ==> 
