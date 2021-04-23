@@ -456,14 +456,14 @@ public:
      * Set the Exif and Iptc time stamp. If 'setDateTimeDigitized' parameter is true, the 'Digitalized'
      * time stamp is set, else only 'Created' time stamp is set.
      */
-    bool setImageDateTime(const QDateTime& dateTime, bool setDateTimeDigitized=false) const;
+    bool setImageDateTime(const QDateTime& dateTime, bool setDateTimeDigitized = false) const;
 
     /**
      * Return the digitization time stamp of the item. First Exif information is checked, then IPTC.
      * If no digitization time stamp is found, getItemDateTime() is called if fallbackToCreationTime
      * is true, or a null QDateTime is returned if fallbackToCreationTime is false.
      */
-    QDateTime getDigitizationDateTime(bool fallbackToCreationTime=false) const;
+    QDateTime getDigitizationDateTime(bool fallbackToCreationTime = false) const;
 
     /**
      * Return a QImage copy of Iptc preview image. Return a null item if preview cannot
@@ -567,7 +567,7 @@ public:
      * Set true 'addExifHeader' parameter to add an Exif header to Exif metadata.
      * Returns a null Qt byte array if there is no Exif metadata in memory.
      */
-    QByteArray getExifEncoded(bool addExifHeader=false) const;
+    QByteArray getExifEncoded(bool addExifHeader = false) const;
 
     /**
      * Set the Exif data using a Qt byte array. Return true if Exif metadata
@@ -620,7 +620,7 @@ public:
      * Get an Exif tags content like a string. If 'escapeCR' parameter is true, the CR characters
      * will be removed. If Exif tag cannot be found a null string is returned.
      */
-    QString getExifTagString(const char* exifTagName, bool escapeCR=true) const;
+    QString getExifTagString(const char* exifTagName, bool escapeCR = true) const;
 
     /**
      * Set an Exif tag content using a string. Return true if tag is set successfully.
@@ -647,7 +647,7 @@ public:
      * 'num' and 'den' are the numerator and the denominator of the rational value.
      * Return true if Exif tag be found.
      */
-    bool getExifTagRational(const char* exifTagName, long int& num, long int& den, int component=0) const;
+    bool getExifTagRational(const char* exifTagName, long int& num, long int& den, int component = 0) const;
 
     /**
      * Set an Exif tag content using a rational value.
@@ -676,7 +676,8 @@ public:
      * if rationalAsListOfInts is true, as double if rationalAsListOfInts is false.
      * An exif tag of numerical type may contain more than one value; set component to the desired index.
      */
-    QVariant getExifTagVariant(const char* exifTagName, bool rationalAsListOfInts=true, bool escapeCR=true, int component=0) const;
+    QVariant getExifTagVariant(const char* exifTagName, bool rationalAsListOfInts = true,
+                               bool escapeCR = true, int component = 0) const;
 
     /**
      * Set an Exif tag content using a QVariant. Returns true if tag is set successfully.
@@ -686,7 +687,7 @@ public:
      * Setting a value with multiple components is currently not supported.
      */
     bool setExifTagVariant(const char* exifTagName, const QVariant& data,
-                           bool rationalWantSmallDenominator=true) const;
+                           bool rationalWantSmallDenominator = true) const;
 
     /**
      * Remove the Exif tag 'exifTagName' from Exif metadata. Return true if tag is
@@ -710,7 +711,7 @@ public:
      * This is equivalent to calling getExifTagString directly.
      * If escapeCR is true CR characters will be removed from the result.
      */
-    QString createExifUserStringFromValue(const char* exifTagName, const QVariant& val, bool escapeCR=true);
+    QString createExifUserStringFromValue(const char* exifTagName, const QVariant& val, bool escapeCR = true);
 
     /**
      * Return a map of Exif tags name/value found in metadata sorted by
@@ -733,7 +734,8 @@ public:
      * - not include "Iop", or "Thumbnail", or "Image", or "Photo" in the Exif tag keys
      * if 'inverSelection' is true.
      */
-    MetaEngine::MetaDataMap getExifTagsDataList(const QStringList& exifKeysFilter=QStringList(), bool invertSelection=false) const;
+    MetaEngine::MetaDataMap getExifTagsDataList(const QStringList& exifKeysFilter = QStringList(),
+                                                bool invertSelection = false) const;
 
     //@}
 
@@ -766,7 +768,7 @@ public:
      * Set true 'addIrbHeader' parameter to add an Irb header to Iptc metadata.
      * Return a null Qt byte array if there is no Iptc metadata in memory.
      */
-    QByteArray  getIptc(bool addIrbHeader=false) const;
+    QByteArray  getIptc(bool addIrbHeader = false) const;
 
     /**
      * Set the Iptc data using a Qt byte array. Return true if Iptc metadata
@@ -778,7 +780,7 @@ public:
      * Get an Iptc tag content like a string. If 'escapeCR' parameter is true, the CR characters
      * will be removed. If Iptc tag cannot be found a null string is returned.
      */
-    QString getIptcTagString(const char* iptcTagName, bool escapeCR=true) const;
+    QString getIptcTagString(const char* iptcTagName, bool escapeCR = true) const;
 
     /**
      * Set an Iptc tag content using a string. Return true if tag is set successfully.
@@ -793,7 +795,7 @@ public:
      * will be removed.
      * If no tag can be found an empty list is returned.
      */
-    QStringList getIptcTagsStringList(const char* iptcTagName, bool escapeCR=true) const;
+    QStringList getIptcTagsStringList(const char* iptcTagName, bool escapeCR = true) const;
 
     /**
      * Set multiple Iptc tags contents using a strings list. 'maxSize' is the max characters size
@@ -848,7 +850,8 @@ public:
      * - not include "Envelope", or "Application2" in the Iptc tag keys
      *   if 'inverSelection' is true.
      */
-    MetaEngine::MetaDataMap getIptcTagsDataList(const QStringList& iptcKeysFilter=QStringList(), bool invertSelection=false) const;
+    MetaEngine::MetaDataMap getIptcTagsDataList(const QStringList& iptcKeysFilter = QStringList(),
+                                                bool invertSelection = false) const;
 
     /**
      * Return a strings list of Iptc keywords from item. Return an empty list if no keyword are set.
@@ -932,7 +935,7 @@ public:
      * Get a Xmp tag content like a string. If 'escapeCR' parameter is true, the CR characters
      * will be removed. If Xmp tag cannot be found a null string is returned.
      */
-    QString getXmpTagString(const char* xmpTagName, bool escapeCR=true) const;
+    QString getXmpTagString(const char* xmpTagName, bool escapeCR = true) const;
 
     /**
      * Set a Xmp tag content using a string. Return true if tag is set successfully.
@@ -976,8 +979,8 @@ public:
      * - not include "dc", or "xmp" in the Xmp tag keys
      *   if 'inverSelection' is true.
      */
-    MetaEngine::MetaDataMap getXmpTagsDataList(const QStringList& xmpKeysFilter=QStringList(),
-                                               bool invertSelection=false) const;
+    MetaEngine::MetaDataMap getXmpTagsDataList(const QStringList& xmpKeysFilter = QStringList(),
+                                               bool invertSelection = false) const;
 
     /**
      * Get all redondant Alternative Language Xmp tags content like a map.
@@ -986,7 +989,7 @@ public:
      * If Xmp tag cannot be found a null string list is returned.
      */
     MetaEngine::AltLangMap getXmpTagStringListLangAlt(const char* xmpTagName,
-                                                      bool escapeCR=true) const;
+                                                      bool escapeCR = true) const;
 
     /**
      * Set an Alternative Language Xmp tag content using a map. See AltLangMap class
@@ -1016,7 +1019,7 @@ public:
      * Get a Xmp tag content like a sequence of strings. If 'escapeCR' parameter is true, the CR characters
      * will be removed from strings. If Xmp tag cannot be found a null string list is returned.
      */
-    QStringList getXmpTagStringSeq(const char* xmpTagName, bool escapeCR=true) const;
+    QStringList getXmpTagStringSeq(const char* xmpTagName, bool escapeCR = true) const;
 
     /**
      * Set a Xmp tag content using the sequence of strings 'seq'.
@@ -1062,7 +1065,7 @@ public:
      * LangAlt values will have type Map (QMap<QString, QVariant>) with the language
      * code as key and the contents as value, of type String.
      */
-    QVariant getXmpTagVariant(const char* xmpTagName, bool rationalAsListOfInts=true, bool stringEscapeCR=true) const;
+    QVariant getXmpTagVariant(const char* xmpTagName, bool rationalAsListOfInts = true, bool stringEscapeCR = true) const;
 
     /**
      * Return a strings list of Xmp keywords from item. Return an empty list if no keyword are set.
