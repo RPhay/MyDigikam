@@ -38,8 +38,24 @@
 namespace Digikam
 {
 
+class Q_DECL_HIDDEN ExifToolListView::Private
+{
+
+public:
+
+    explicit Private()
+        : parser(nullptr)
+    {
+    }
+
+    QString         selectedItemKey;
+
+    ExifToolParser* parser;
+};
+
 ExifToolListView::ExifToolListView(QWidget* const parent)
-    : QTreeWidget(parent)
+    : QTreeWidget(parent),
+      d          (new Private)
 {
     setSortingEnabled(true);
     sortByColumn(0, Qt::AscendingOrder);
@@ -51,8 +67,8 @@ ExifToolListView::ExifToolListView(QWidget* const parent)
     setHeaderHidden(true);
     header()->setSectionResizeMode(QHeaderView::Stretch);
 
-    m_parser = new ExifToolParser(this);
-    m_parser->setTranslations(false);
+    d->parser = new ExifToolParser(this);
+    d->parser->setTranslations(false);
 
     connect(this, SIGNAL(itemClicked(QTreeWidgetItem*,int)),
             this, SLOT(slotSelectionChanged(QTreeWidgetItem*,int)));
@@ -60,6 +76,7 @@ ExifToolListView::ExifToolListView(QWidget* const parent)
 
 ExifToolListView::~ExifToolListView()
 {
+    delete d;
 }
 
 bool ExifToolListView::loadFromUrl(const QUrl& url)
@@ -71,19 +88,19 @@ bool ExifToolListView::loadFromUrl(const QUrl& url)
         return true;
     }
 
-    if (!m_parser->load(url.toLocalFile()))
+    if (!d->parser->load(url.toLocalFile()))
     {
         return false;
     }
 
-    setMetadata(m_parser->currentParsedTags());
+    setMetadata(d->parser->currentParsedTags());
 
     return true;
 }
 
 QString ExifToolListView::errorString() const
 {
-    return m_parser->currentErrorString();
+    return d->parser->currentErrorString();
 }
 
 void ExifToolListView::setMetadata(const ExifToolParser::TagsMap& map)
@@ -112,7 +129,7 @@ void ExifToolListView::setMetadata(const ExifToolParser::TagsMap& map)
         new ExifToolListViewItem(igroup, key, value, desc);
     }
 
-    setCurrentItemByKey(m_selectedItemKey);
+    setCurrentItemByKey(d->selectedItemKey);
 }
 
 ExifToolListViewGroup* ExifToolListView::findGroup(const QString& group)
@@ -212,7 +229,7 @@ void ExifToolListView::setCurrentItemByKey(const QString& itemKey)
             {
                 setCurrentItem(item);
                 scrollToItem(item);
-                m_selectedItemKey = itemKey;
+                d->selectedItemKey = itemKey;
 
                 return;
             }
@@ -231,7 +248,7 @@ void ExifToolListView::slotSelectionChanged(QTreeWidgetItem* item, int)
         return;
     }
 
-    m_selectedItemKey                    = viewItem->getKey();
+    d->selectedItemKey                    = viewItem->getKey();
 }
 
 } // namespace Digikam

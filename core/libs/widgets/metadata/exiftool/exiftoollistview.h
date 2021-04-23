@@ -75,9 +75,8 @@ private:
 
 private:
 
-    QString         m_selectedItemKey;
-
-    ExifToolParser* m_parser;
+    class Private;
+    Private* const d;
 };
 
 } // namespace Digikam
