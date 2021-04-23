@@ -48,6 +48,7 @@ int main(int argc, char** argv)
     MetaEngine meta;
     MetaEngine::TagsMap exiv2Exif = meta.getStdExifTagsList();
     MetaEngine::TagsMap exiv2Iptc = meta.getIptcTagsList();
+    MetaEngine::TagsMap exiv2Xmp  = meta.getXmpTagsList();
     QStringList tagsFound;
 
     qDebug() << "Extract ExifTool database as XML...";
@@ -185,6 +186,24 @@ int main(int argc, char** argv)
                         exiv2TagPre = QString::fromLatin1("Iptc.Application2.");
 
                         if (exiv2Iptc.contains(exiv2TagPre + name))
+                        {
+                            tagsFound << QString::fromLatin1("%1%2").arg(left, -90)
+                                                                    .arg(QString::fromLatin1("QLatin1String(\"%1\"));").arg(exiv2TagPre + name));
+                            continue;
+                        }
+
+                        tagsFound << QString::fromLatin1("%1%2").arg(left, -90)
+                                                                .arg(QString::fromLatin1("QLatin1String(\"%1\"));").arg(exiv2TagPre));
+                        continue;
+                    }
+
+                    // Xmp tags
+
+                    else if (etTag.startsWith(QLatin1String("XMP.XMP-dc")))
+                    {
+                        exiv2TagPre = QString::fromLatin1("Xmp.dc.");
+
+                        if (exiv2Xmp.contains(exiv2TagPre + name))
                         {
                             tagsFound << QString::fromLatin1("%1%2").arg(left, -90)
                                                                     .arg(QString::fromLatin1("QLatin1String(\"%1\"));").arg(exiv2TagPre + name));

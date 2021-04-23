@@ -149,12 +149,21 @@ void ExifToolTranslator::Private::populateXmpHashTable()
 
     // Xmp dc Group
 
+    mapETtoExiv2.insert(QLatin1String("XMP.XMP-dc.Author.Creator"),                             QLatin1String("Xmp.dc.creator"));
+    mapETtoExiv2.insert(QLatin1String("XMP.XMP-dc.Author.Rights"),                              QLatin1String("Xmp.dc.rights"));
+    mapETtoExiv2.insert(QLatin1String("XMP.XMP-dc.Author.Contributor"),                         QLatin1String("Xmp.dc.contributor"));
+    mapETtoExiv2.insert(QLatin1String("XMP.XMP-dc.Author.Coverage"),                            QLatin1String("Xmp.dc.coverage"));
+    mapETtoExiv2.insert(QLatin1String("XMP.XMP-dc.Author.Publisher"),                           QLatin1String("Xmp.dc.publisher"));
+    mapETtoExiv2.insert(QLatin1String("XMP.XMP-dc.Author.Relation"),                            QLatin1String("Xmp.dc.relation"));
+    mapETtoExiv2.insert(QLatin1String("XMP.XMP-dc.Author.Source"),                              QLatin1String("Xmp.dc.source"));
     mapETtoExiv2.insert(QLatin1String("XMP.XMP-dc.Image.Subject"),                              QLatin1String("Xmp.dc.subject"));
     mapETtoExiv2.insert(QLatin1String("XMP.XMP-dc.Image.Description"),                          QLatin1String("Xmp.dc.description"));
     mapETtoExiv2.insert(QLatin1String("XMP.XMP-dc.Image.Format"),                               QLatin1String("Xmp.dc.format"));
     mapETtoExiv2.insert(QLatin1String("XMP.XMP-dc.Image.Title"),                                QLatin1String("Xmp.dc.title"));
-    mapETtoExiv2.insert(QLatin1String("XMP.XMP-dc.Author.Creator"),                             QLatin1String("Xmp.dc.creator"));
-    mapETtoExiv2.insert(QLatin1String("XMP.XMP-dc.Author.Rights"),                              QLatin1String("Xmp.dc.rights"));
+    mapETtoExiv2.insert(QLatin1String("XMP.XMP-dc.Image.Identifier"),                           QLatin1String("Xmp.dc.identifier"));
+    mapETtoExiv2.insert(QLatin1String("XMP.XMP-dc.Image.Language"),                             QLatin1String("Xmp.dc.language"));
+    mapETtoExiv2.insert(QLatin1String("XMP.XMP-dc.Image.Type"),                                 QLatin1String("Xmp.dc.type"));
+    mapETtoExiv2.insert(QLatin1String("XMP.XMP-dc.Time.Date"),                                  QLatin1String("Xmp.dc.date"));
 
     // Xmp rdf Group
 
