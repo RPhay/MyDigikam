@@ -77,7 +77,7 @@ ExifToolParser::ExifToolParser(QObject* const parent)
 
     // Create ExifTool parser instance.
 
-    d->proc = new ExifToolProcess(parent);
+    d->proc = new ExifToolProcess(this);
 
     connect(MetaEngineSettings::instance(), SIGNAL(signalSettingsChanged()),
             this, SLOT(slotMetaEngineSettingsChanged()));
