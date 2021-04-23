@@ -210,6 +210,17 @@ void ExifToolParser::slotCmdCompleted(int cmdId,
 
     QJsonDocument jsonDoc     = QJsonDocument::fromJson(stdOut);
     QJsonArray    jsonArray   = jsonDoc.array();
+
+    if (jsonArray.size() == 0)
+    {
+        if (d->loop)
+        {
+            d->loop->quit();
+        }
+
+        return;
+    }
+
     QJsonObject   jsonObject  = jsonArray.at(0).toObject();
     QVariantMap   metadataMap = jsonObject.toVariantMap();
 
