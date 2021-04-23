@@ -377,6 +377,63 @@ void ExifToolTranslator::Private::populateXmpHashTable()
     mapETtoExiv2.insert(QLatin1String("XMP.XMP-xmpBJ.Other.JobRefName"),                            QLatin1String("Xmp.xmpBJ."));
     mapETtoExiv2.insert(QLatin1String("XMP.XMP-xmpBJ.Other.JobRefUrl"),                             QLatin1String("Xmp.xmpBJ."));
 */
+
+    // Xmp xmpTPg Group
+
+    mapETtoExiv2.insert(QLatin1String("XMP.XMP-xmpTPg.Image.Colorants"),                            QLatin1String("Xmp.xmpTPg.Colorants"));
+    mapETtoExiv2.insert(QLatin1String("XMP.XMP-xmpTPg.Image.Fonts"),                                QLatin1String("Xmp.xmpTPg.Fonts"));
+    mapETtoExiv2.insert(QLatin1String("XMP.XMP-xmpTPg.Image.MaxPageSize"),                          QLatin1String("Xmp.xmpTPg.MaxPageSize"));
+    mapETtoExiv2.insert(QLatin1String("XMP.XMP-xmpTPg.Image.NPages"),                               QLatin1String("Xmp.xmpTPg.NPages"));
+    mapETtoExiv2.insert(QLatin1String("XMP.XMP-xmpTPg.Image.PlateNames"),                           QLatin1String("Xmp.xmpTPg.PlateNames"));
+/*
+    mapETtoExiv2.insert(QLatin1String("XMP.XMP-xmpTPg.Image.ChildFontFiles"),                       QLatin1String("Xmp.xmpTPg."));
+    mapETtoExiv2.insert(QLatin1String("XMP.XMP-xmpTPg.Image.ColorantA"),                            QLatin1String("Xmp.xmpTPg."));
+    mapETtoExiv2.insert(QLatin1String("XMP.XMP-xmpTPg.Image.ColorantB"),                            QLatin1String("Xmp.xmpTPg."));
+    mapETtoExiv2.insert(QLatin1String("XMP.XMP-xmpTPg.Image.ColorantBlack"),                        QLatin1String("Xmp.xmpTPg."));
+    mapETtoExiv2.insert(QLatin1String("XMP.XMP-xmpTPg.Image.ColorantBlue"),                         QLatin1String("Xmp.xmpTPg."));
+    mapETtoExiv2.insert(QLatin1String("XMP.XMP-xmpTPg.Image.ColorantCyan"),                         QLatin1String("Xmp.xmpTPg."));
+    mapETtoExiv2.insert(QLatin1String("XMP.XMP-xmpTPg.Image.ColorantGray"),                         QLatin1String("Xmp.xmpTPg."));
+    mapETtoExiv2.insert(QLatin1String("XMP.XMP-xmpTPg.Image.ColorantGreen"),                        QLatin1String("Xmp.xmpTPg."));
+    mapETtoExiv2.insert(QLatin1String("XMP.XMP-xmpTPg.Image.ColorantL"),                            QLatin1String("Xmp.xmpTPg."));
+    mapETtoExiv2.insert(QLatin1String("XMP.XMP-xmpTPg.Image.ColorantMagenta"),                      QLatin1String("Xmp.xmpTPg."));
+    mapETtoExiv2.insert(QLatin1String("XMP.XMP-xmpTPg.Image.ColorantMode"),                         QLatin1String("Xmp.xmpTPg."));
+    mapETtoExiv2.insert(QLatin1String("XMP.XMP-xmpTPg.Image.ColorantRed"),                          QLatin1String("Xmp.xmpTPg."));
+    mapETtoExiv2.insert(QLatin1String("XMP.XMP-xmpTPg.Image.ColorantSwatchName"),                   QLatin1String("Xmp.xmpTPg."));
+    mapETtoExiv2.insert(QLatin1String("XMP.XMP-xmpTPg.Image.ColorantTint"),                         QLatin1String("Xmp.xmpTPg."));
+    mapETtoExiv2.insert(QLatin1String("XMP.XMP-xmpTPg.Image.ColorantType"),                         QLatin1String("Xmp.xmpTPg."));
+    mapETtoExiv2.insert(QLatin1String("XMP.XMP-xmpTPg.Image.ColorantYellow"),                       QLatin1String("Xmp.xmpTPg."));
+    mapETtoExiv2.insert(QLatin1String("XMP.XMP-xmpTPg.Image.FontComposite"),                        QLatin1String("Xmp.xmpTPg."));
+    mapETtoExiv2.insert(QLatin1String("XMP.XMP-xmpTPg.Image.FontFace"),                             QLatin1String("Xmp.xmpTPg."));
+    mapETtoExiv2.insert(QLatin1String("XMP.XMP-xmpTPg.Image.FontFamily"),                           QLatin1String("Xmp.xmpTPg."));
+    mapETtoExiv2.insert(QLatin1String("XMP.XMP-xmpTPg.Image.FontFileName"),                         QLatin1String("Xmp.xmpTPg."));
+    mapETtoExiv2.insert(QLatin1String("XMP.XMP-xmpTPg.Image.FontName"),                             QLatin1String("Xmp.xmpTPg."));
+    mapETtoExiv2.insert(QLatin1String("XMP.XMP-xmpTPg.Image.FontType"),                             QLatin1String("Xmp.xmpTPg."));
+    mapETtoExiv2.insert(QLatin1String("XMP.XMP-xmpTPg.Image.FontVersion"),                          QLatin1String("Xmp.xmpTPg."));
+    mapETtoExiv2.insert(QLatin1String("XMP.XMP-xmpTPg.Image.HasVisibleOverprint"),                  QLatin1String("Xmp.xmpTPg."));
+    mapETtoExiv2.insert(QLatin1String("XMP.XMP-xmpTPg.Image.HasVisibleTransparency"),               QLatin1String("Xmp.xmpTPg."));
+    mapETtoExiv2.insert(QLatin1String("XMP.XMP-xmpTPg.Image.MaxPageSizeH"),                         QLatin1String("Xmp.xmpTPg."));
+    mapETtoExiv2.insert(QLatin1String("XMP.XMP-xmpTPg.Image.MaxPageSizeUnit"),                      QLatin1String("Xmp.xmpTPg."));
+    mapETtoExiv2.insert(QLatin1String("XMP.XMP-xmpTPg.Image.MaxPageSizeW"),                         QLatin1String("Xmp.xmpTPg."));
+    mapETtoExiv2.insert(QLatin1String("XMP.XMP-xmpTPg.Image.SwatchColorantA"),                      QLatin1String("Xmp.xmpTPg."));
+    mapETtoExiv2.insert(QLatin1String("XMP.XMP-xmpTPg.Image.SwatchColorantB"),                      QLatin1String("Xmp.xmpTPg."));
+    mapETtoExiv2.insert(QLatin1String("XMP.XMP-xmpTPg.Image.SwatchColorantBlack"),                  QLatin1String("Xmp.xmpTPg."));
+    mapETtoExiv2.insert(QLatin1String("XMP.XMP-xmpTPg.Image.SwatchColorantBlue"),                   QLatin1String("Xmp.xmpTPg."));
+    mapETtoExiv2.insert(QLatin1String("XMP.XMP-xmpTPg.Image.SwatchColorantCyan"),                   QLatin1String("Xmp.xmpTPg."));
+    mapETtoExiv2.insert(QLatin1String("XMP.XMP-xmpTPg.Image.SwatchColorantGray"),                   QLatin1String("Xmp.xmpTPg."));
+    mapETtoExiv2.insert(QLatin1String("XMP.XMP-xmpTPg.Image.SwatchColorantGreen"),                  QLatin1String("Xmp.xmpTPg."));
+    mapETtoExiv2.insert(QLatin1String("XMP.XMP-xmpTPg.Image.SwatchColorantL"),                      QLatin1String("Xmp.xmpTPg."));
+    mapETtoExiv2.insert(QLatin1String("XMP.XMP-xmpTPg.Image.SwatchColorantMagenta"),                QLatin1String("Xmp.xmpTPg."));
+    mapETtoExiv2.insert(QLatin1String("XMP.XMP-xmpTPg.Image.SwatchColorantMode"),                   QLatin1String("Xmp.xmpTPg."));
+    mapETtoExiv2.insert(QLatin1String("XMP.XMP-xmpTPg.Image.SwatchColorantRed"),                    QLatin1String("Xmp.xmpTPg."));
+    mapETtoExiv2.insert(QLatin1String("XMP.XMP-xmpTPg.Image.SwatchColorantSwatchName"),             QLatin1String("Xmp.xmpTPg."));
+    mapETtoExiv2.insert(QLatin1String("XMP.XMP-xmpTPg.Image.SwatchColorantTint"),                   QLatin1String("Xmp.xmpTPg."));
+    mapETtoExiv2.insert(QLatin1String("XMP.XMP-xmpTPg.Image.SwatchColorantType"),                   QLatin1String("Xmp.xmpTPg."));
+    mapETtoExiv2.insert(QLatin1String("XMP.XMP-xmpTPg.Image.SwatchColorantYellow"),                 QLatin1String("Xmp.xmpTPg."));
+    mapETtoExiv2.insert(QLatin1String("XMP.XMP-xmpTPg.Image.SwatchGroupName"),                      QLatin1String("Xmp.xmpTPg."));
+    mapETtoExiv2.insert(QLatin1String("XMP.XMP-xmpTPg.Image.SwatchGroupType"),                      QLatin1String("Xmp.xmpTPg."));
+    mapETtoExiv2.insert(QLatin1String("XMP.XMP-xmpTPg.Image.SwatchGroups"),                         QLatin1String("Xmp.xmpTPg."));
+    mapETtoExiv2.insert(QLatin1String("XMP.XMP-xmpTPg.Image.SwatchGroupsColorants"),                QLatin1String("Xmp.xmpTPg."));
+*/
 }
 
 } // namespace Digikam
