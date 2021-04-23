@@ -207,6 +207,15 @@ void ExifToolTranslator::Private::populateXmpHashTable()
     // Xmp crs Group
 
     mapETtoExiv2.insert(QLatin1String("XMP.XMP-crs.Image.AlreadyApplied"),                      QLatin1String("Xmp.crs.AlreadyApplied"));
+
+    // Xmp Rights Group
+
+    mapETtoExiv2.insert(QLatin1String("XMP.XMP-xmpRights.Author.Certificate"),                  QLatin1String("Xmp.xmpRights.Certificate"));
+    mapETtoExiv2.insert(QLatin1String("XMP.XMP-xmpRights.Author.Marked"),                       QLatin1String("Xmp.xmpRights.Marked"));
+    mapETtoExiv2.insert(QLatin1String("XMP.XMP-xmpRights.Author.Owner"),                        QLatin1String("Xmp.xmpRights.Owner"));
+    mapETtoExiv2.insert(QLatin1String("XMP.XMP-xmpRights.Author.UsageTerms"),                   QLatin1String("Xmp.xmpRights.UsageTerms"));
+    mapETtoExiv2.insert(QLatin1String("XMP.XMP-xmpRights.Author.WebStatement"),                 QLatin1String("Xmp.xmpRights.WebStatement"));
+
 }
 
 } // namespace Digikam
