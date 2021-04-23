@@ -43,7 +43,7 @@ int main(int argc, char** argv)
 
     if (argc != 2)
     {
-        qDebug() << "exiftooloutpu_cli - CLI tool to print ExifTool output without Exiv2 translation";
+        qDebug() << "exiftooloutput_cli - CLI tool to print ExifTool output without Exiv2 translation";
         qDebug() << "Usage: <image>";
         return -1;
     }

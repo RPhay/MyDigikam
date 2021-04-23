@@ -83,12 +83,15 @@ public:
     TagsMap currentIgnoredTags() const;
     QString currentErrorString() const;
 
-private Q_SLOTS:
+public Q_SLOTS:
 
+    /// Public slot for unit test purpose about ExifTool stream decoding and translation.
     void slotCmdCompleted(int cmdId,
                           int execTime,
                           const QByteArray& cmdOutputChannel,
                           const QByteArray& cmdErrorChannel);
+
+private Q_SLOTS:
 
     void slotErrorOccurred(QProcess::ProcessError error);
 

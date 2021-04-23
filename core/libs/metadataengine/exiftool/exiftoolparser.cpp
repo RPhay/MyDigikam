@@ -193,7 +193,6 @@ bool ExifToolParser::load(const QString& path)
     }
 
     qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool complete load for" << path;
-    qCDebug(DIGIKAM_METAENGINE_LOG) << d->parsedMap.count() << "properties decoded";
 
     return true;
 }
@@ -204,7 +203,10 @@ void ExifToolParser::slotCmdCompleted(int cmdId,
                                       const QByteArray& /*stdErr*/)
 {
     qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool complete command" << cmdId;
-    qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool output:" << stdOut;
+    qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool output:";
+    qCDebug(DIGIKAM_METAENGINE_LOG) << "---";
+    qCDebug(DIGIKAM_METAENGINE_LOG).noquote() << stdOut;
+    qCDebug(DIGIKAM_METAENGINE_LOG) << "---";
 
     // Convert JSON array as QVariantMap
 
@@ -366,6 +368,7 @@ void ExifToolParser::slotCmdCompleted(int cmdId,
     }
 
     qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool parsed command" << cmdId;
+    qCDebug(DIGIKAM_METAENGINE_LOG) << d->parsedMap.count() << "properties decoded";
 }
 
 void ExifToolParser::slotErrorOccurred(QProcess::ProcessError error)
