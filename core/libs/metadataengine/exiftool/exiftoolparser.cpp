@@ -43,6 +43,7 @@
 #include "metaenginesettings.h"
 #include "exiftoolprocess.h"
 #include "exiftooltranslator.h"
+#include "digikam_config.h"
 #include "digikam_debug.h"
 
 namespace Digikam
@@ -154,7 +155,16 @@ bool ExifToolParser::load(const QString& path)
     cmdArgs << QByteArray("-G:0:1:2:4:6");
     cmdArgs << QByteArray("-n");
     cmdArgs << QByteArray("-l");
+
+#ifdef Q_OS_WIN
+
+    cmdArgs << (char*)QDir::toNativeSeparators(fileInfo.filePath()).utf16();
+
+#else
+
     cmdArgs << QDir::toNativeSeparators(fileInfo.filePath()).toUtf8();
+
+#endif
 
     // Send command to ExifToolProcess
 
