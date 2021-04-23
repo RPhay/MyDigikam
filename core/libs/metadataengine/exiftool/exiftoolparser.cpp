@@ -203,11 +203,12 @@ void ExifToolParser::slotCmdCompleted(int cmdId,
                                       const QByteArray& /*stdErr*/)
 {
     qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool complete command" << cmdId;
+/*
     qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool output:";
     qCDebug(DIGIKAM_METAENGINE_LOG) << "---";
     qCDebug(DIGIKAM_METAENGINE_LOG).noquote() << stdOut;
     qCDebug(DIGIKAM_METAENGINE_LOG) << "---";
-
+*/
     // Convert JSON array as QVariantMap
 
     QJsonDocument jsonDoc     = QJsonDocument::fromJson(stdOut);
@@ -215,7 +216,7 @@ void ExifToolParser::slotCmdCompleted(int cmdId,
     QJsonObject   jsonObject  = jsonArray.at(0).toObject();
     QVariantMap   metadataMap = jsonObject.toVariantMap();
 
-    qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool json map:" << metadataMap;
+//    qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool json map:" << metadataMap.size();
 
     for (QVariantMap::const_iterator it = metadataMap.constBegin() ;
         it != metadataMap.constEnd() ; ++it)
@@ -224,7 +225,16 @@ void ExifToolParser::slotCmdCompleted(int cmdId,
         QString     tagType;
         QStringList sections  = it.key().split(QLatin1Char(':'));
 
-        if      (sections.size() == 5)
+        if      (sections.size() == 6)      // With ExifTool > 12.00 (at least under Windows or MacOS), groups are return with 6 sections.
+        {
+            tagNameExifTool = QString::fromLatin1("%1.%2.%3.%4")
+                                  .arg(sections[0])
+                                  .arg(sections[1])
+                                  .arg(sections[2])
+                                  .arg(sections[5]);
+            tagType         = sections[4];
+        }
+        else if (sections.size() == 5)      // ExifTool 12.00 under Linux return 5 or 4 sections.
         {
             tagNameExifTool = QString::fromLatin1("%1.%2.%3.%4")
                                   .arg(sections[0])
@@ -255,7 +265,7 @@ void ExifToolParser::slotCmdCompleted(int cmdId,
         QString data         = propsMap.find(QLatin1String("val")).value().toString();
         QString desc         = propsMap.find(QLatin1String("desc")).value().toString();
 
-        qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool json property:" << tagNameExifTool << data;
+ //       qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool json property:" << tagNameExifTool << data;
 
         if (d->translate)
         {
