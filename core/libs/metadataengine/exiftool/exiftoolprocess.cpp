@@ -238,7 +238,7 @@ void ExifToolProcess::terminate()
     {
         // If process is in running state, close ExifTool normally
 
-        qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifToolProcess::terminate(): send ExifTool shutdown command..";
+        qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifToolProcess::terminate(): send ExifTool shutdown command...";
 
         d->cmdQueue.clear();
         d->process->write(QByteArray("-stay_open\nfalse\n"));
@@ -250,7 +250,7 @@ void ExifToolProcess::terminate()
         // Otherwise, close ExifTool using OS system call
         // (WM_CLOSE [Windows] or SIGTERM [Unix])
 
-        qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifToolProcess::terminate(): closing ExifTool instance..";
+        qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifToolProcess::terminate(): closing ExifTool instance...";
 
         d->process->terminate();
     }
@@ -258,7 +258,7 @@ void ExifToolProcess::terminate()
 
 void ExifToolProcess::kill()
 {
-    qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifToolProcess::kill(): shutdown ExifTool instance..";
+    qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifToolProcess::kill(): shutdown ExifTool instance...";
     d->process->kill();
 }
 

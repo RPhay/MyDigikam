@@ -142,7 +142,9 @@ bool ExifToolParser::load(const QString& path)
     if (!d->proc->waitForStarted(500))
     {
         d->proc->kill();
-        qCWarning(DIGIKAM_METAENGINE_LOG) << "ExifTool process cannot be started (" << d->proc->program() << ")";
+        qCWarning(DIGIKAM_METAENGINE_LOG) << "ExifTool process cannot be started ("
+                                          << d->proc->program()
+                                          << ")";
 
         return false;
     }
