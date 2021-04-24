@@ -297,7 +297,7 @@ ExifToolListViewGroup::ExifToolListViewGroup(ExifToolListView* const parent,
     }
     else if (group == QLatin1String("MakerNotes"))
     {
-        setToolTip(0, i18n("Maker Notes Informations"));
+        setToolTip(0, i18n("Maker Notes Information"));
     }
     else if (group == QLatin1String("Matroska"))
     {

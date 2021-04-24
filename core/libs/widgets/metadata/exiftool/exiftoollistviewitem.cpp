@@ -74,4 +74,15 @@ QString ExifToolListViewItem::getKey() const
     return m_key;
 }
 
+
+QString ExifToolListViewItem::getTitle() const
+{
+    return text(0);
+}
+
+QString ExifToolListViewItem::getValue() const
+{
+    return text(1);
+}
+
 } // namespace Digikam

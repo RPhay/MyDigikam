@@ -45,7 +45,9 @@ public:
                           const QString& desc);
     ~ExifToolListViewItem() override;
 
-    QString getKey() const;
+    QString getKey()   const;
+    QString getTitle() const;
+    QString getValue() const;
 
 private:
 
