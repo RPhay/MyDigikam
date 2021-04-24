@@ -158,7 +158,7 @@ bool ExifToolParser::load(const QString& path)
 
 #ifdef Q_OS_WIN
 
-    cmdArgs << (char*)QDir::toNativeSeparators(fileInfo.filePath()).utf16();
+    cmdArgs << QDir::toNativeSeparators(fileInfo.filePath()).toLocal8Bit();
 
 #else
 
