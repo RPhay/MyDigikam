@@ -427,15 +427,17 @@ void SlideToolBar::slotRemoveImage()
         d->playBtn->animateClick();
     }
 
-    QMessageBox msgBox;
+    QPointer<QMessageBox> msgBox = new QMessageBox(QMessageBox::Question,
+             i18n("Delete image"),
+             i18n("Do you want to move this image to the trash?"),
+             QMessageBox::Yes | QMessageBox::No, this);
 
-    msgBox.setText(i18n("Move this image to trash?"));
-    msgBox.setStandardButtons(QMessageBox::Ok | QMessageBox::Cancel);
-    msgBox.setDefaultButton(QMessageBox::Ok);
+    msgBox->setDefaultButton(QMessageBox::Yes);
 
-    int ret = msgBox.exec();
+    int ret = msgBox->exec();
+    delete msgBox;
 
-    if (ret == QMessageBox::Ok)
+    if (ret == QMessageBox::Yes)
     {
         emit signalRemoveImageFromList();
     }
