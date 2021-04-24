@@ -158,5 +158,5 @@ BUGFIXES:
 142 ==> 435920 - Unique Parameter not working correctly by large collections.
 143 ==> 425902 - Update digiKam information on the fly to XMP metadata from HEIF files.
 144 ==> 426923 - EOS R5 CR3 Missing exif data with current master branch code.
-145 ==> 
-
+145 ==> 393408 - Support for extra image formats as HEIC, FITS, WEBP [patch].
+146 ==> 
