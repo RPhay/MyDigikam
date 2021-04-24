@@ -184,7 +184,16 @@ QStringList MetaEngineSettingsContainer::defaultExifToolSearchPaths() const
 
 #ifdef Q_OS_UNIX
 
-    defPaths << QLatin1String("/usr/bin");
+    if (isRunningInAppImageBundle())
+    {
+        // AppImage bundle includes a recent version of official ExifTool tarball.
+
+        defPaths << QLatin1String("./exiftool");
+    }
+    else
+    {
+        defPaths << QLatin1String("/usr/bin");
+    }
 
 #endif
 

@@ -171,6 +171,11 @@ DIGIKAM_EXPORT QStringList supportedImageMimeTypes(QIODevice::OpenModeFlag mode,
 DIGIKAM_EXPORT void showRawCameraList();
 
 /**
+ * Return true if application run in AppImage bundle.
+ */
+DIGIKAM_EXPORT bool isRunningInAppImageBundle();
+
+/**
  * If digiKam run into AppImage, return a cleaned environment for QProcess to execute a
  * program outside the bundle without broken run-time dependencies.
  * Use case : system based Hugin CLI tools called by Panorama wizard.
