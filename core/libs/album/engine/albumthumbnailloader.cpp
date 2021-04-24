@@ -244,15 +244,17 @@ int AlbumThumbnailLoader::computeFaceSize(RelativeSize relativeSize) const
 
 QPixmap AlbumThumbnailLoader::loadIcon(const QString& name, int size) const
 {
-    QPixmap* pix = d->iconCache[qMakePair(name, size)];
+    QPixmap* cachePix = d->iconCache[qMakePair(name, size)];
 
-    if (!pix)
+    if (!cachePix)
     {
-        pix = new QPixmap(QIcon::fromTheme(name, d->fallBackIcon).pixmap(size));
-        d->iconCache.insert(qMakePair(name, size), pix);
+        QPixmap pix = QIcon::fromTheme(name, d->fallBackIcon).pixmap(size);
+        d->iconCache.insert(qMakePair(name, size), new QPixmap(pix));
+
+        return pix;
     }
 
-    return (*pix); // ownership of the pointer is kept by the icon cache.
+    return (*cachePix); // ownership of the pointer is kept by the icon cache.
 }
 
 bool AlbumThumbnailLoader::getTagThumbnail(TAlbum* const album, QPixmap& icon)
