@@ -156,4 +156,5 @@ BUGFIXES:
 140 ==> 382631 - View HDR metadata.
 141 ==> 436043 - Icon view tool tip are unreadable.
 142 ==> 435920 - Unique Parameter not working correctly by large collections.
-143 ==> 
+143 ==> 425902 - Update digiKam information on the fly to XMP metadata from HEIF files.
+144 ==> 
