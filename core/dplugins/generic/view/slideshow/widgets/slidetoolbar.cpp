@@ -428,18 +428,18 @@ void SlideToolBar::slotRemoveImage()
     }
 
     QMessageBox msgBox;
-    
-    msgBox.setText(QLatin1String("Move this image to trash"));
+
+    msgBox.setText(i18n("Move this image to trash?"));
     msgBox.setStandardButtons(QMessageBox::Ok | QMessageBox::Cancel);
     msgBox.setDefaultButton(QMessageBox::Ok);
-    
+
     int ret = msgBox.exec();
 
     if (ret == QMessageBox::Ok)
     {
-        emit signalRemoveImageFromListSlideShow();
+        emit signalRemoveImageFromList();
     }
-    
+
     if (running)
     {
         d->playBtn->animateClick();

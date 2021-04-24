@@ -149,7 +149,7 @@ public:
 public:
 
     /// Manipulate with item
-    virtual void deleteImage(const QUrl& url)                                   ;
+    virtual void deleteImage(const QUrl& url);
 };
 
 // -------------------------------------------------------------------------------------------------------------

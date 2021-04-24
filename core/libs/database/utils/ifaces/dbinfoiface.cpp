@@ -793,7 +793,7 @@ QMap<QString, QString> DBInfoIface::passShortcutActionsToWidget(QWidget* const w
 void DBInfoIface::deleteImage(const QUrl& url)
 {
     ItemInfo info = ItemInfo::fromUrl(url);
-    
+
     DIO::del(info, true);
 }
 

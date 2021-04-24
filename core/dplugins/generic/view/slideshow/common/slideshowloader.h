@@ -76,11 +76,11 @@ Q_SIGNALS:
 
 public Q_SLOTS:
 
+    void slotRemoveImageFromList();
     void slotLoadNextItem();
     void slotLoadPrevItem();
     void slotPause();
     void slotPlay();
-    void slotRemoveImageFromListSlideShow();
 
     void slotAssignRating(int);
     void slotAssignColorLabel(int);

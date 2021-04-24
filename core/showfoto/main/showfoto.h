@@ -95,7 +95,7 @@ private Q_SLOTS:
     void slotDroppedUrls(const QList<QUrl>& droppedUrls,
                          bool dropped);
     void slotRemoveImageFromAlbum(const QUrl& url);
-    
+
     void slotDeleteCurrentItem()                            override;
 
     void slotChanged()                                      override;

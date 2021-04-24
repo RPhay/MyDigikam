@@ -277,15 +277,17 @@ QUrl DMetaInfoIface::defaultUploadUrl() const
 
 void DMetaInfoIface::deleteImage(const QUrl& url)
 {
+
 #if (QT_VERSION >= QT_VERSION_CHECK(5, 15, 0))
 
     QFile::moveToTrash(url.toLocalFile());
+
 #else
 
     QFile::remove(url.toLocalFile());
 
 #endif
-    
+
     emit signalRemoveImageFromAlbum(url);
 }
 

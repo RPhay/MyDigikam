@@ -73,8 +73,8 @@ Q_SIGNALS:
     void signalPlay();
     void signalPause();
     void signalUpdateSettings();
-    void signalRemoveImageFromListSlideShow();
     void signalScreenSelected(int);
+    void signalRemoveImageFromList();
 
 private Q_SLOTS:
 
