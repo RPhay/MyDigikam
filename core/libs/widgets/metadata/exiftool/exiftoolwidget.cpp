@@ -147,7 +147,7 @@ ExifToolWidget::ExifToolWidget(QWidget* const parent)
     d->errorLbl->setWordWrap(true);
 
     QPushButton* const btn   = new QPushButton(d->errorView);
-    btn->setText(i18n("Open Setup Dialog..."));
+    btn->setText(i18nc("@action: button", "Open Setup Dialog..."));
 
     connect(btn, SIGNAL(clicked()),
             this, SIGNAL(signalSetupExifTool()));
@@ -185,12 +185,13 @@ void ExifToolWidget::loadFromUrl(const QUrl& url)
     }
     else
     {
-        d->errorLbl->setText(i18n("Cannot load data\n"
-                                  "from %1\n"
-                                  "with ExifTool.\n\n"
-                                  "%2",
-                                  d->fileName,
-                                  d->view->errorString()));
+        d->errorLbl->setText(i18nc("@info: error message",
+                                   "Cannot load data\n"
+                                   "from %1\n"
+                                   "with ExifTool.\n\n"
+                                   "%2",
+                                   d->fileName,
+                                   d->view->errorString()));
         setCurrentIndex(Private::ErrorView);
         d->toolBtn->setEnabled(false);
     }
@@ -343,7 +344,7 @@ void ExifToolWidget::slotPrintMetadata()
 
 void ExifToolWidget::slotSaveMetadataToFile()
 {
-    QPointer<DFileDialog> fileSaveDialog = new DFileDialog(this, i18n("Save ExifTool Information"),
+    QPointer<DFileDialog> fileSaveDialog = new DFileDialog(this, i18nc("@title", "Save ExifTool Information"),
                                                            QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation));
     fileSaveDialog->setAcceptMode(QFileDialog::AcceptSave);
     fileSaveDialog->setFileMode(QFileDialog::AnyFile);
