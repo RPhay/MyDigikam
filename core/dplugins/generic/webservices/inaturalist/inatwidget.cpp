@@ -37,16 +37,16 @@ INatWidget::INatWidget(QWidget* const parent,
     : WSSettingsWidget(parent, iface, serviceName),
       d               (new Private)
 {
-    d->serviceName         = serviceName;
+    d->serviceName = serviceName;
 
     // -- The account group. ----------------------------------------------
 
     // make room and insert a QLabel for an account icon
 
-    QWidget* const userNameLbl = getAccountBoxLayout()->itemAt(0)->widget();
+    QWidget* const userNameLbl                = getAccountBoxLayout()->itemAt(0)->widget();
     getAccountBoxLayout()->removeWidget(userNameLbl);
     getAccountBoxLayout()->addWidget(userNameLbl, 0, 0, 1, 1);
-    d->accountIcon             = new QLabel(getAccountBox());
+    d->accountIcon                            = new QLabel(getAccountBox());
     getAccountBoxLayout()->addWidget(d->accountIcon, 0, 1, 1, 1);
 
     // change user and remove account buttons go the in the row
@@ -94,7 +94,7 @@ INatWidget::INatWidget(QWidget* const parent,
 
     d->observationDescription               = new QPlainTextEdit(idBox);
     d->observationDescription->setPlaceholderText(i18n("Optionally describe "
-            "your observation or explain your identification here."));
+                                                  "your observation or explain your identification here."));
     QTextDocument* const pdoc               = d->observationDescription->document();
     QFontMetrics fm(pdoc->defaultFont());
     QMargins margins                        = d->observationDescription->contentsMargins();
@@ -205,7 +205,7 @@ INatWidget::~INatWidget()
 
 void INatWidget::updateLabels(const QString& name, const QString& /*url*/)
 {
-    QString url = QLatin1String("http://www.inaturalist.org/");
+    QString url = QLatin1String("https://www.inaturalist.org/");
 
     if (!name.isEmpty())
     {
