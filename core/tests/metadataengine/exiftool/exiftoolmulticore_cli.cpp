@@ -65,7 +65,7 @@ bool exifToolParse(const QString& file)
 
     if (!output.open(QIODevice::WriteOnly))
     {
-        qDebug() << "Cannot open ExifTool ouput file to write...";
+        qDebug() << "Cannot open ExifTool output file to write...";
         return false;
     }
 
@@ -131,6 +131,7 @@ int main(int argc, char** argv)
     {
         qDebug() << "exiftooloutpu_cli - CLI tool to check ExifTool with multicore";
         qDebug() << "Usage: <dir>";
+
         return -1;
     }
 
