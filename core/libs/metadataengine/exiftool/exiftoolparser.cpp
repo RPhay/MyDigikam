@@ -158,13 +158,11 @@ bool ExifToolParser::load(const QString& path)
 
 #ifdef Q_OS_WIN
 
-    cmdArgs << QDir::toNativeSeparators(fileInfo.filePath()).toLocal8Bit();
-
-#else
-
-    cmdArgs << QDir::toNativeSeparators(fileInfo.filePath()).toUtf8();
+    cmdArgs << QByteArray("-charset filename=utf8");
 
 #endif
+
+    cmdArgs << QDir::toNativeSeparators(fileInfo.filePath()).toUtf8();
 
     // Send command to ExifToolProcess
 
