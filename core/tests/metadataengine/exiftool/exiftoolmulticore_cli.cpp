@@ -32,7 +32,7 @@
 #include <QDebug>
 #include <QVariant>
 #include <QObject>
-#include <QtConcurrent>
+#include <QtConcurrent>   // krazy:exclude=includes
 
 // Local includes
 
