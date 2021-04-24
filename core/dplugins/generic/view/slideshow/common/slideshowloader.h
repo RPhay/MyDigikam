@@ -80,6 +80,7 @@ public Q_SLOTS:
     void slotLoadPrevItem();
     void slotPause();
     void slotPlay();
+    void slotRemoveImageFromListSlideShow();
 
     void slotAssignRating(int);
     void slotAssignColorLabel(int);

@@ -68,6 +68,9 @@ public:
     QUrl     uploadUrl()                                    const override;
 
     QUrl     defaultUploadUrl()                             const override;
+    void     deleteImage(const QUrl& url)                         override;
+
+    Q_SIGNAL void signalRemoveImageFromAlbum(const QUrl&);
 
 #ifdef HAVE_MARBLE
 

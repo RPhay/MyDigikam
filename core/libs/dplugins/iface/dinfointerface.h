@@ -145,6 +145,11 @@ public:
 
     /// Pass extra shortcut actions to widget and return prefixes of shortcuts
     virtual QMap<QString, QString> passShortcutActionsToWidget(QWidget* const)  const;
+
+public:
+
+    /// Manipulate with item
+    virtual void deleteImage(const QUrl& url)                                   ;
 };
 
 // -------------------------------------------------------------------------------------------------------------

@@ -192,6 +192,9 @@ SlideOSD::SlideOSD(SlideShowSettings* const settings, SlideShowLoader* const par
     connect(d->toolBar, SIGNAL(signalClose()),
             d->parent, SLOT(close()));
 
+    connect(d->toolBar, SIGNAL(signalRemoveImageFromListSlideShow()),
+            d->parent, SLOT(slotRemoveImageFromListSlideShow()));
+
     connect(d->toolBar, SIGNAL(signalUpdateSettings()),
             this, SLOT(slotUpdateSettings()));
 

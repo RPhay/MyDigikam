@@ -932,7 +932,29 @@ DInfoInterface* ShowFoto::infoIface(DPluginAction* const)
     connect(iface, SIGNAL(signalImportedImage(QUrl)),
             this, SLOT(slotImportedImagefromScanner(QUrl)));
 
+    connect(iface, SIGNAL(signalRemoveImageFromAlbum(QUrl)),
+            this, SLOT(slotRemoveImageFromAlbum(QUrl)));
+
     return iface;
+}
+
+void ShowFoto::slotRemoveImageFromAlbum(const QUrl& url)
+{
+    d->thumbBar->setCurrentUrl(url);
+
+    d->model->removeIndex(d->thumbBar->currentIndex());
+
+    // Disable menu actions and SideBar if no current image.
+
+    d->itemsNb = d->thumbBar->showfotoItemInfos().size();
+
+    if (d->itemsNb == 0)
+    {
+        slotUpdateItemInfo();
+        toggleActions(false);
+        m_canvas->load(QString(), m_IOFileSettings);
+        emit signalNoCurrentItem();
+    }
 }
 
 void ShowFoto::slotOnlineVersionCheck()

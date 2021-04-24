@@ -73,12 +73,14 @@ Q_SIGNALS:
     void signalPlay();
     void signalPause();
     void signalUpdateSettings();
+    void signalRemoveImageFromListSlideShow();
     void signalScreenSelected(int);
 
 private Q_SLOTS:
 
     void slotPlayBtnToggled();
     void slotNexPrevClicked();
+    void slotRemoveImage();
     void slotScreenSelected(QAction*);
     void slotMenuSlideShowConfiguration();
     void slotConfigurationAccepted();

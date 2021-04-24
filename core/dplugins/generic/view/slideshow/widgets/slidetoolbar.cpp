@@ -35,6 +35,7 @@
 #include <QScreen>
 #include <QMenu>
 #include <QInputDialog>
+#include <QMessageBox>
 
 // KDE includes
 
@@ -59,6 +60,7 @@ public:
         nextBtn         (nullptr),
         stopBtn         (nullptr),
         delayBtn        (nullptr),
+        deleteBtn       (nullptr),
         setupBtn        (nullptr),
         screenSelectBtn (nullptr),
         currentlyPause  (false),
@@ -72,6 +74,7 @@ public:
     QToolButton*          nextBtn;
     QToolButton*          stopBtn;
     QToolButton*          delayBtn;
+    QToolButton*          deleteBtn;
     QToolButton*          setupBtn;
     QToolButton*          screenSelectBtn;
 
@@ -95,6 +98,7 @@ SlideToolBar::SlideToolBar(SlideShowSettings* const settings, QWidget* const par
     d->nextBtn        = new QToolButton(this);
     d->stopBtn        = new QToolButton(this);
     d->delayBtn       = new QToolButton(this);
+    d->deleteBtn      = new QToolButton(this);
     d->setupBtn       = new QToolButton(this);
 
     d->configDialog   = new SetupSlideShowDialog(d->settings, this);
@@ -106,6 +110,7 @@ SlideToolBar::SlideToolBar(SlideShowSettings* const settings, QWidget* const par
     d->nextBtn->setFocusPolicy(Qt::NoFocus);
     d->stopBtn->setFocusPolicy(Qt::NoFocus);
     d->delayBtn->setFocusPolicy(Qt::NoFocus);
+    d->deleteBtn->setFocusPolicy(Qt::NoFocus);
     d->setupBtn->setFocusPolicy(Qt::NoFocus);
 
     QSize s(32, 32);
@@ -114,6 +119,7 @@ SlideToolBar::SlideToolBar(SlideShowSettings* const settings, QWidget* const par
     d->nextBtn->setIconSize(s);
     d->stopBtn->setIconSize(s);
     d->delayBtn->setIconSize(s);
+    d->deleteBtn->setIconSize(s);
     d->setupBtn->setIconSize(s);
 
     QString iconString = d->settings->autoPlayEnabled ? QLatin1String("media-playback-pause")
@@ -123,6 +129,7 @@ SlideToolBar::SlideToolBar(SlideShowSettings* const settings, QWidget* const par
     d->nextBtn->setIcon(QIcon::fromTheme(QLatin1String("media-skip-forward")));
     d->stopBtn->setIcon(QIcon::fromTheme(QLatin1String("media-playback-stop")));
     d->delayBtn->setIcon(QIcon::fromTheme(QLatin1String("appointment-new")));
+    d->deleteBtn->setIcon(QIcon::fromTheme(QLatin1String("user-trash")));
     d->setupBtn->setIcon(QIcon::fromTheme(QLatin1String("systemsettings")));
 
     int num = qApp->screens().count();
@@ -180,6 +187,9 @@ SlideToolBar::SlideToolBar(SlideShowSettings* const settings, QWidget* const par
 
     connect(d->delayBtn, SIGNAL(clicked()),
             this, SLOT(slotChangeDelayButtonPressed()));
+
+    connect(d->deleteBtn, SIGNAL(clicked()),
+            this, SLOT(slotRemoveImage()));
 
     connect(d->setupBtn, SIGNAL(clicked()),
             this, SLOT(slotMenuSlideShowConfiguration()));
@@ -406,6 +416,34 @@ void SlideToolBar::slotScreenSelected(QAction* act)
     }
 
     emit signalScreenSelected(act->data().toInt());
+}
+
+void SlideToolBar::slotRemoveImage()
+{
+    bool running = (!isPaused() && d->playBtn->isEnabled());
+
+    if (running)
+    {
+        d->playBtn->animateClick();
+    }
+
+    QMessageBox msgBox;
+    
+    msgBox.setText(QLatin1String("Move this image to trash"));
+    msgBox.setStandardButtons(QMessageBox::Ok | QMessageBox::Cancel);
+    msgBox.setDefaultButton(QMessageBox::Ok);
+    
+    int ret = msgBox.exec();
+
+    if (ret == QMessageBox::Ok)
+    {
+        emit signalRemoveImageFromListSlideShow();
+    }
+    
+    if (running)
+    {
+        d->playBtn->animateClick();
+    }
 }
 
 } // namespace DigikamGenericSlideShowPlugin

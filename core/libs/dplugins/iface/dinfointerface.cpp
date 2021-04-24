@@ -154,6 +154,11 @@ QMap<QString, QString> DInfoInterface::passShortcutActionsToWidget(QWidget* cons
     return QMap<QString, QString>();
 }
 
+void DInfoInterface::deleteImage(const QUrl&)
+{
+    return;
+}
+
 // -----------------------------------------------------------------
 
 DItemInfo::DItemInfo(const DInfoInterface::DInfoMap& info)

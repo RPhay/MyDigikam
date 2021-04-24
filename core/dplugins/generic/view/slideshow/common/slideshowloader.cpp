@@ -458,6 +458,19 @@ void SlideShowLoader::slotImageLoaded(bool loaded)
     d->osd->setLoadingReady(true);
 }
 
+void SlideShowLoader::slotRemoveImageFromListSlideShow()
+{
+    QUrl url = currentItem();
+
+    //delete or move to trash by url
+    d->settings->iface->deleteImage(url);
+    
+    //delete from list of slide show
+    d->settings->fileList.removeOne(currentItem());
+
+    slotLoadNextItem();
+}
+
 void SlideShowLoader::slotVideoLoaded(bool loaded)
 {
     if (loaded)

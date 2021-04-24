@@ -162,5 +162,5 @@ BUGFIXES:
 146 ==> 422240 - Description caption appears as "binary comment".
 147 ==> 429108 - FPX image crashes on selection.
 148 ==> 429124 - Exif 2.32 value names (labels) do not appear for timezone offset tags in EXIF Property panel.
-149 ==> 
-
+149 ==> 426859 - Idea: Move to trash from slideshow.
+150 ==> 

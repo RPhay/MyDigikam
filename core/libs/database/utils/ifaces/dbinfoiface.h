@@ -80,6 +80,8 @@ public:
 
     QAbstractItemModel* tagFilterModel()                                                  override;
 
+    void        deleteImage(const QUrl& url)                                              override;
+
 #ifdef HAVE_MARBLE
 
     QList<GPSItemContainer*> currentGPSItems()                                      const override;
