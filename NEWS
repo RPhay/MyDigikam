@@ -160,4 +160,5 @@ BUGFIXES:
 144 ==> 426923 - EOS R5 CR3 Missing exif data with current master branch code.
 145 ==> 393408 - Support for extra image formats as HEIC, FITS, WEBP [patch].
 146 ==> 422240 - Description caption appears as "binary comment".
-147 ==> 
+147 ==> 429108 - FPX image crashes on selection.
+148 ==> 
