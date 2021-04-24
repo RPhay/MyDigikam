@@ -62,10 +62,11 @@ protected:
 
         emit signalProgress(20);
 
-        QPointer<DRawDecoder> rawProcessor(new DRawDecoder);
+        DRawDecoder* const rawProcessor = new DRawDecoder;
 
         if (m_cancel)
         {
+            delete rawProcessor;
             return;
         }
 
@@ -77,6 +78,7 @@ protected:
 
         if (m_cancel)
         {
+            delete rawProcessor;
             return;
         }
 
@@ -85,11 +87,13 @@ protected:
         if (!rawProcessor->loadFullImage(image, fileUrl.toLocalFile(), settings))
         {
             errString = QString::fromLatin1("raw2png: Loading full RAW image failed. Aborted...");
+            delete rawProcessor;
             return;
         }
 
         if (m_cancel)
         {
+            delete rawProcessor;
             return;
         }
 
@@ -102,6 +106,7 @@ protected:
 
         if (m_cancel)
         {
+            delete rawProcessor;
             return;
         }
 
@@ -110,6 +115,8 @@ protected:
         image.save(fullFilePath, "PNG");
 
         emit signalDone();
+
+        delete rawProcessor;
     }
 };
 
