@@ -407,9 +407,10 @@ bool GPTalker::addPhoto(const QString& photoPath,
     return true;
 }
 
-bool GPTalker::updatePhoto(const QString& photoPath, GSPhoto& info, /*const QString& albumId,*/
-                           bool rescale, int maxDim, int imageQuality)
+bool GPTalker::updatePhoto(const QString& /*photoPath*/, GSPhoto& /*info*/,
+                           bool /*rescale*/, int /*maxDim*/, int /*imageQuality*/)
 {
+/*
     if (m_reply)
     {
         m_reply->abort();
@@ -443,7 +444,7 @@ bool GPTalker::updatePhoto(const QString& photoPath, GSPhoto& info, /*const QStr
 
         if (rescale && (image.width() > maxDim || image.height() > maxDim))
         {
-            image = image.scaled(maxDim,maxDim, Qt::KeepAspectRatio,Qt::SmoothTransformation);
+            image = image.scaled(maxDim,maxDim, Qt::KeepAspectRatio, Qt::SmoothTransformation);
         }
 
         image.save(path, "JPEG", imageQuality);
@@ -459,72 +460,6 @@ bool GPTalker::updatePhoto(const QString& photoPath, GSPhoto& info, /*const QStr
         }
     }
 
-    //Create the Body in atom-xml
-    QDomDocument docMeta;
-    QDomProcessingInstruction instr = docMeta.createProcessingInstruction(
-        QLatin1String("xml"),
-        QLatin1String("version='1.0' encoding='UTF-8'"));
-    docMeta.appendChild(instr);
-    QDomElement entryElem           = docMeta.createElement(QLatin1String("entry"));
-    docMeta.appendChild(entryElem);
-    entryElem.setAttribute(
-        QLatin1String("xmlns"),
-        QLatin1String("http://www.w3.org/2005/Atom"));                                      // krazy:exclude=insecurenet
-    QDomElement titleElem           = docMeta.createElement(QLatin1String("title"));
-    entryElem.appendChild(titleElem);
-    QDomText titleText              = docMeta.createTextNode(QFileInfo(path).fileName());
-    titleElem.appendChild(titleText);
-    QDomElement summaryElem         = docMeta.createElement(QLatin1String("summary"));
-    entryElem.appendChild(summaryElem);
-    QDomText summaryText            = docMeta.createTextNode(info.description);
-    summaryElem.appendChild(summaryText);
-    QDomElement categoryElem        = docMeta.createElement(QLatin1String("category"));
-    entryElem.appendChild(categoryElem);
-    categoryElem.setAttribute(
-        QLatin1String("scheme"),
-        QLatin1String("http://schemas.google.com/g/2005#kind"));
-    categoryElem.setAttribute(
-        QLatin1String("term"),
-        QLatin1String("http://schemas.google.com/photos/2007#photo"));
-    QDomElement mediaGroupElem      = docMeta.createElementNS(
-        QLatin1String("http://search.yahoo.com/mrss/"),
-        QLatin1String("media:group"));
-    entryElem.appendChild(mediaGroupElem);
-    QDomElement mediaKeywordsElem   = docMeta.createElementNS(
-        QLatin1String("http://search.yahoo.com/mrss/"),
-        QLatin1String("media:keywords"));
-    mediaGroupElem.appendChild(mediaKeywordsElem);
-    QDomText mediaKeywordsText      = docMeta.createTextNode(info.tags.join(QLatin1Char(',')));
-    mediaKeywordsElem.appendChild(mediaKeywordsText);
-
-    if (!info.gpsLat.isEmpty() && !info.gpsLon.isEmpty())
-    {
-        QDomElement whereElem = docMeta.createElementNS(
-            QLatin1String("http://www.georss.org/georss"),
-            QLatin1String("georss:where"));
-        entryElem.appendChild(whereElem);
-        QDomElement pointElem = docMeta.createElementNS(
-            QLatin1String("http://www.opengis.net/gml"),
-            QLatin1String("gml:Point"));
-        whereElem.appendChild(pointElem);
-        QDomElement gpsElem   = docMeta.createElementNS(
-            QLatin1String("http://www.opengis.net/gml"),
-            QLatin1String("gml:pos"));
-        pointElem.appendChild(gpsElem);
-        QDomText gpsVal       = docMeta.createTextNode(info.gpsLat + QLatin1Char(' ') + info.gpsLon);
-        gpsElem.appendChild(gpsVal);
-    }
-
-    form.addPair(QLatin1String("descr"), docMeta.toString(), QLatin1String("application/atom+xml"));
-
-    if (!form.addFile(QLatin1String("photo"), path))
-    {
-        emit signalBusy(false);
-        return false;
-    }
-
-    form.finish();
-
     QNetworkRequest netRequest(info.editUrl);
     netRequest.setHeader(QNetworkRequest::ContentTypeHeader, form.contentType());
     netRequest.setRawHeader("Authorization", m_bearerAccessToken.toLatin1() + "\nIf-Match: *");
@@ -532,6 +467,7 @@ bool GPTalker::updatePhoto(const QString& photoPath, GSPhoto& info, /*const QStr
     m_reply = d->netMngr->put(netRequest, form.formData());
 
     d->state = Private::GP_UPDATEPHOTO;
+*/
     return true;
 }
 

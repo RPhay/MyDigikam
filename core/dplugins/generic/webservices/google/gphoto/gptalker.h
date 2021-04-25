@@ -69,7 +69,6 @@ public:
                      int imageQuality);
     bool    updatePhoto(const QString& photoPath,
                         GSPhoto& info,
-                        //const QString& albumId,
                         bool rescale,
                         int maxDim,
                         int imageQuality);
