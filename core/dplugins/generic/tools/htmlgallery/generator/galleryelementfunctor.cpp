@@ -370,7 +370,7 @@ void GalleryElementFunctor::operator()(GalleryElement& element)
         // Try to use Raw decoder to identify image.
 
         QScopedPointer<DRawInfo> info(new DRawInfo);
-        QPointer<DRawDecoder> rawdecoder(new DRawDecoder);
+        DRawDecoder* const rawdecoder = new DRawDecoder;
         rawdecoder->rawFileIdentify(*info, path);
 
         if (info->isDecodable)
@@ -410,6 +410,8 @@ void GalleryElementFunctor::operator()(GalleryElement& element)
                 element.m_exifPhotoISOSpeedRatings = QString::number(info->sensitivity);
             }
         }
+
+        delete rawdecoder;
     }
 
     if (element.m_exifImageMake.isEmpty())
