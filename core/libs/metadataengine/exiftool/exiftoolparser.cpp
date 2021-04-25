@@ -294,25 +294,7 @@ void ExifToolParser::slotCmdCompleted(int cmdAction,
 
     if (jsonArray.size() == 0)
     {
-        switch (cmdAction)
-        {
-            case ExifToolProcess::LOAD_METADATA:
-            {
-                d->loopLoad->quit();
-                break;
-            }
-
-            case ExifToolProcess::APPLY_CHANGES:
-            {
-                d->loopApply->quit();
-                break;
-            }
-
-            default: // ExifToolProcess::NO_ACTION
-            {
-                break;
-            }
-        }
+        manageEventLoop(cmdAction);
 
         return;
     }
@@ -476,25 +458,7 @@ void ExifToolParser::slotCmdCompleted(int cmdAction,
         }
     }
 
-    switch (cmdAction)
-    {
-        case ExifToolProcess::LOAD_METADATA:
-        {
-            d->loopLoad->quit();
-            break;
-        }
-
-        case ExifToolProcess::APPLY_CHANGES:
-        {
-            d->loopApply->quit();
-            break;
-        }
-
-        default: // ExifToolProcess::NO_ACTION
-        {
-            break;
-        }
-    }
+    manageEventLoop(cmdAction);
 
     qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool parsed command type" << cmdAction;
     qCDebug(DIGIKAM_METAENGINE_LOG) << d->parsedMap.count() << "properties decoded";
@@ -504,25 +468,7 @@ void ExifToolParser::slotErrorOccurred(int cmdAction, QProcess::ProcessError err
 {
     qCWarning(DIGIKAM_METAENGINE_LOG) << "ExifTool process exited with error:" << error;
 
-    switch (cmdAction)
-    {
-        case ExifToolProcess::LOAD_METADATA:
-        {
-            d->loopLoad->quit();
-            break;
-        }
-
-        case ExifToolProcess::APPLY_CHANGES:
-        {
-            d->loopApply->quit();
-            break;
-        }
-
-        default: // ExifToolProcess::NO_ACTION
-        {
-            break;
-        }
-    }
+    manageEventLoop(cmdAction);
 }
 
 void ExifToolParser::slotFinished(int cmdAction, int exitCode, QProcess::ExitStatus exitStatus)
@@ -530,6 +476,11 @@ void ExifToolParser::slotFinished(int cmdAction, int exitCode, QProcess::ExitSta
     qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool process finished with code:" << exitCode
                                     << "and status" << exitStatus;
 
+    manageEventLoop(cmdAction);
+}
+
+void ExifToolParser::manageEventLoop(int cmdAction)
+{
     switch (cmdAction)
     {
         case ExifToolProcess::LOAD_METADATA:

@@ -120,7 +120,7 @@ private:
 
     bool       prepareProcess();
     QByteArray filePathEncoding(const QFileInfo& fi) const;
-
+    void       manageEventLoop(int cmdAction);
 
 private:
 
