@@ -177,7 +177,7 @@ void FTExportWidget::slotShowTargetDialogClicked(bool checked)
 
     if (d->targetDialog && !d->targetDialog->selectedUrls().isEmpty())
     {
-        d->targetUrl = d->targetDialog->selectedUrls().at(0);
+        d->targetUrl = d->targetDialog->selectedUrls().first();
         updateTargetLabel();
 
         emit signalTargetUrlChanged(d->targetUrl);
