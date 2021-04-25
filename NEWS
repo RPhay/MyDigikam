@@ -174,5 +174,7 @@ BUGFIXES:
 156 ==> 350931 - digiKam suddenly stops searching for new entries.
 157 ==> 140070 - Comment display field is only populated with JFIF comment, not EXIF comment.
 158 ==> 376930 - Cannot write metadata to TIFF files.
-159 ==> 
+159 ==> 214636 - updating tag to XMP/IPTC bug.
+160 ==> 
+
 
