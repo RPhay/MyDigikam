@@ -168,5 +168,6 @@ BUGFIXES:
 150 ==> 346081 - Exiv2 cannot open file on NTFS within non-english directory.
 151 ==> 309542 - Support metadata on 3D photos in MPO format (as to be able to mark faces).
 152 ==> 271757 - Can't write metadata to TIFF files.
-153 ==> 
+153 ==> 147501 - Display of EXIF Information.
+154 ==> 
 
