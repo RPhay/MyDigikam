@@ -157,7 +157,16 @@ bool ExifToolParser::load(const QString& path)
     cmdArgs << QByteArray("-G:0:1:2:4:6");
     cmdArgs << QByteArray("-n");
     cmdArgs << QByteArray("-l");
-    cmdArgs << QDir::toNativeSeparators(fileInfo.filePath()).toUtf8();
+
+#ifdef Q_OS_WIN
+
+        cmdArgs << QDir::toNativeSeparators(fileInfo.filePath()).toLocal8Bit();
+
+#else
+
+        cmdArgs << QDir::toNativeSeparators(fileInfo.filePath()).toUtf8();
+
+#endif
 
     // Send command to ExifToolProcess
 
