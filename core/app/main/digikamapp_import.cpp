@@ -125,7 +125,9 @@ void DigikamApp::slotImportAddFolders()
         t->setSelectionMode(QAbstractItemView::MultiSelection);
     }
 
-    if (dlg->exec() != QDialog::Accepted)
+    dlg->exec();
+
+    if (!dlg || dlg->selectedUrls().isEmpty())
     {
         delete dlg;
         return;
@@ -133,11 +135,6 @@ void DigikamApp::slotImportAddFolders()
 
     QList<QUrl> urls = dlg->selectedUrls();
     delete dlg;
-
-    if (urls.isEmpty())
-    {
-        return;
-    }
 
     QList<Album*> albumList = AlbumManager::instance()->currentAlbums();
     Album* album            = nullptr;
