@@ -25,9 +25,10 @@
 
 // Qt includes
 
-#include <QBoxLayout>
 #include <QApplication>
 #include <QPushButton>
+#include <QBoxLayout>
+#include <QPointer>
 
 // KDE includes
 
@@ -48,13 +49,11 @@ public:
     {
         imageList       = nullptr;
         uploadWidget    = nullptr;
-        importDlg       = nullptr;
         importSearchBtn = nullptr;
     }
 
     DItemsList*  imageList;
     QWidget*     uploadWidget;
-    DFileDialog* importDlg;
     QPushButton* importSearchBtn;
 };
 
@@ -102,18 +101,22 @@ void FTImportWidget::slotShowImportDialogClicked(bool checked)
 {
     Q_UNUSED(checked);
 
-    d->importDlg = new DFileDialog(this, i18n("Select items to import..."),
-                                   QString(),  // TODO : store and restore previous session url from rc file
-                                   i18n("All Files (*)"));
-    d->importDlg->setAcceptMode(QFileDialog::AcceptOpen);
-    d->importDlg->setFileMode(QFileDialog::ExistingFiles);
+    // TODO : store and restore previous session url from rc file
 
-    if (d->importDlg->exec() == QDialog::Accepted)
+    QPointer<DFileDialog> importDlg = new DFileDialog(this, i18n("Select items to import..."),
+                                                      QString(),
+                                                      i18n("All Files (*)"));
+    importDlg->setAcceptMode(QFileDialog::AcceptOpen);
+    importDlg->setFileMode(QFileDialog::ExistingFiles);
+
+    importDlg->exec();
+
+    if (importDlg && !importDlg->selectedUrls().isEmpty())
     {
-        d->imageList->slotAddImages(d->importDlg->selectedUrls());
+        d->imageList->slotAddImages(importDlg->selectedUrls());
     }
 
-    delete d->importDlg;
+    delete importDlg;
 }
 
 DItemsList* FTImportWidget::imagesList() const

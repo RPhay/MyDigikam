@@ -26,10 +26,11 @@
 
 // Qt includes
 
-#include <QVBoxLayout>
-#include <QLabel>
 #include <QApplication>
 #include <QPushButton>
+#include <QVBoxLayout>
+#include <QPointer>
+#include <QLabel>
 
 // KDE includes
 
@@ -54,14 +55,12 @@ public:
 
     explicit Private()
       : targetLabel        (nullptr),
-        targetDialog       (nullptr),
         targetSearchButton (nullptr),
         imageList          (nullptr)
     {
     }
 
     KUrlComboRequester* targetLabel;
-    DFileDialog*        targetDialog;
     QPushButton*        targetSearchButton;
     QUrl                targetUrl;
     DItemsList*         imageList;
@@ -167,21 +166,23 @@ void FTExportWidget::slotShowTargetDialogClicked(bool checked)
 {
     Q_UNUSED(checked);
 
-    d->targetDialog = new DFileDialog(this, i18n("Select target..."),
-                                      d->targetUrl.toString(), i18n("All Files (*)"));
-    d->targetDialog->setAcceptMode(QFileDialog::AcceptSave);
-    d->targetDialog->setFileMode(QFileDialog::Directory);
-    d->targetDialog->setOptions(QFileDialog::ShowDirsOnly);
+    QPointer<DFileDialog> targetDialog = new DFileDialog(this, i18n("Select target..."),
+                                                         d->targetUrl.toString(), i18n("All Files (*)"));
+    targetDialog->setAcceptMode(QFileDialog::AcceptSave);
+    targetDialog->setFileMode(QFileDialog::Directory);
+    targetDialog->setOptions(QFileDialog::ShowDirsOnly);
 
-    if (d->targetDialog->exec() == QDialog::Accepted)
+    targetDialog->exec();
+
+    if (targetDialog && !targetDialog->selectedUrls().isEmpty())
     {
-        d->targetUrl = d->targetDialog->selectedUrls().isEmpty() ? QUrl() : d->targetDialog->selectedUrls().at(0);
+        d->targetUrl = targetDialog->selectedUrls().first();
         updateTargetLabel();
 
         emit signalTargetUrlChanged(d->targetUrl);
     }
 
-    delete d->targetDialog;
+    delete targetDialog;
 }
 
 void FTExportWidget::updateTargetLabel()
