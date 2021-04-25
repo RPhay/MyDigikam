@@ -78,6 +78,10 @@ enum
     MAX_DIMENSION          = 2048
 };
 
+static const QString xmpNameSpaceURI    = QLatin1String("https://inaturalist.org/ns/1.0/");
+static const QString xmpNameSpacePrefix = QLatin1String("iNaturalist");
+
+
 class Q_DECL_HIDDEN INatWindow::Private
 {
 public:
@@ -111,6 +115,7 @@ public:
           latitude                (0.0),
           longitude               (0.0),
           inCancel                (false),
+          xmpNameSpace            (false),
           selectUser              (nullptr),
           iface                   (nullptr)
     {
@@ -169,6 +174,7 @@ public:
     QDateTime               observationDateTime;
 
     bool                    inCancel;
+    bool                    xmpNameSpace;
     WSSelectUserDlg*        selectUser;
     DInfoInterface*         iface;
 };
@@ -344,6 +350,10 @@ INatWindow::~INatWindow()
     delete d->authProgressDlg;
     delete d->talker;
     delete d->widget;
+    if (d->xmpNameSpace)
+    {
+        DMetadata::unregisterXmpNameSpace(xmpNameSpaceURI);
+    }
     delete d;
 }
 
@@ -440,7 +450,7 @@ void INatWindow::slotCancelClicked()
         d->inCancel = true;
         slotBusy(true);
         qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Cancel clicked; deleting "
-                                         "observations(s) being uploaded.";
+                                         "observation(s) being uploaded.";
         return;
     }
 
@@ -888,11 +898,16 @@ void INatWindow::slotPhotoUploaded(const INatTalker::PhotoUploadResult& result)
             meta.canWriteXmp(fileUrl.toLocalFile()) &&
             meta.load(fileUrl.toLocalFile()))
         {
-            meta.setXmpTagString("Xmp.digiKam.iNaturalistObservationId",
+            if (!d->xmpNameSpace)
+            {
+                meta.registerXmpNameSpace(xmpNameSpaceURI, xmpNameSpacePrefix);
+                d->xmpNameSpace = true;
+            }
+            meta.setXmpTagString("Xmp.iNaturalist.observation",
                                  QString::number(request.m_observationId));
-            meta.setXmpTagString("Xmp.digiKam.iNaturalistObservationPhotoId",
+            meta.setXmpTagString("Xmp.iNaturalist.observationPhoto",
                                  QString::number(result.m_observationPhotoId));
-            meta.setXmpTagString("Xmp.digiKam.iNaturalistPhotoId",
+            meta.setXmpTagString("Xmp.iNaturalist.photo",
                                  QString::number(result.m_photoId));
             meta.save(fileUrl.toLocalFile());
         }
