@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2017-05-06
- * Description : template interface to image information.
+ * Description : abstract interface to image information.
  *               This class do not depend of digiKam database library
  *               to permit to re-use plugins with Showfoto.
  *

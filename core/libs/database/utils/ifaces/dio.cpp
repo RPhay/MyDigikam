@@ -252,7 +252,7 @@ void DIO::processJob(IOJobData* const data)
 {
     const int operation = data->operation();
 
-    if ((operation == IOJobData::CopyImage) || (operation == IOJobData::MoveImage))
+    if      ((operation == IOJobData::CopyImage) || (operation == IOJobData::MoveImage))
     {
         // this is a fast db operation, do here
 
@@ -478,7 +478,7 @@ void DIO::slotOneProccessed(const QUrl& url)
     IOJobData* const data = jobThread->jobData();
     const int operation   = data->operation();
 
-    if (operation == IOJobData::MoveImage)
+    if      (operation == IOJobData::MoveImage)
     {
         ItemInfo info = data->findItemInfo(url);
 
@@ -671,38 +671,60 @@ QString DIO::getItemString(IOJobData* const data) const
     switch (data->operation())
     {
         case IOJobData::CopyAlbum:
+        {
             return i18n("Copy Album");
+        }
 
         case IOJobData::CopyImage:
+        {
             return i18n("Copy Images");
+        }
 
         case IOJobData::CopyFiles:
         case IOJobData::CopyToExt:
+        {
             return i18n("Copy Files");
+        }
 
         case IOJobData::MoveAlbum:
+        {
             return i18n("Move Album");
+        }
 
         case IOJobData::MoveImage:
+        {
             return i18n("Move Images");
+        }
 
         case IOJobData::MoveFiles:
+        {
             return i18n("Move Files");
+        }
 
         case IOJobData::Delete:
+        {
             return i18n("Delete");
+        }
 
         case IOJobData::Trash:
+        {
             return i18n("Trash");
+        }
 
         case IOJobData::Restore:
+        {
             return i18n("Restore Trash");
+        }
 
         case IOJobData::Empty:
+        {
             return i18n("Empty Trash");
+        }
 
         default:
+        {
             break;
+        }
     }
 
     return QString();

@@ -468,19 +468,19 @@ DBInfoIface::DInfoMap DBInfoIface::itemInfo(const QUrl& url) const
         // Get digiKam Tags Path list of picture from database.
         // Ex.: "City/Paris/Monuments/Notre Dame"
 
-        QList<int> tagIds    = info.tagIds();
-        QStringList tagspath = AlbumManager::instance()->tagPaths(tagIds, false);
+        QList<int> tagIds            = info.tagIds();
+        QStringList tagspath         = AlbumManager::instance()->tagPaths(tagIds, false);
         map.insert(QLatin1String("tagspath"),        tagspath);
 
         // Get digiKam Tags name (keywords) list of picture from database.
         // Ex.: "Notre Dame"
 
-        QStringList tags     = AlbumManager::instance()->tagNames(tagIds);
+        QStringList tags             = AlbumManager::instance()->tagNames(tagIds);
         map.insert(QLatin1String("keywords"),        tags);
 
         // Get GPS location of picture from database.
 
-        ItemPosition pos    = info.imagePosition();
+        ItemPosition pos             = info.imagePosition();
 
         if (!pos.isEmpty())
         {
@@ -491,7 +491,7 @@ DBInfoIface::DInfoMap DBInfoIface::itemInfo(const QUrl& url) const
 
         // Get Copyright information of picture from database.
 
-        ItemCopyright rights        = info.imageCopyright();
+        ItemCopyright rights         = info.imageCopyright();
         map.insert(QLatin1String("creators"),        rights.creator());
         map.insert(QLatin1String("credit"),          rights.credit());
         map.insert(QLatin1String("rights"),          rights.rights());

@@ -68,7 +68,6 @@ SyncJob::~SyncJob()
     delete d;
 }
 
-
 void SyncJob::enterWaitingLoop() const
 {
     d->waitingLoop->exec(QEventLoop::ExcludeUserInputEvents);
