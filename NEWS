@@ -4,7 +4,8 @@ digiKam 7.3.0 - Release date: 2021-xx-xx
 NEW FEATURES:
 
 General : Add new metadata viewer based on ExifTool.
-General : Better support of astro FITS image format inluding metadata extraction support to populate the database.
+General : Better support of astrophoto FITS image format (Flexible Image Transport System) including metadata extraction support to populate the database.
+General : Better support of MPO image format (Multiple Picture Object) inluding metadata extraction support to populate the database.
 General : Digital Scanner plugin is now available under Windows.
 General : Use last Exiv2 0.27.4 in all bundles with Base Media File metadata read and write support (HEIF, AVIF).
 General : Use last KF5 framework 5.80 in all bundles.
@@ -165,4 +166,5 @@ BUGFIXES:
 148 ==> 429124 - Exif 2.32 value names (labels) do not appear for timezone offset tags in EXIF Property panel.
 149 ==> 426859 - Idea: Move to trash from slideshow.
 150 ==> 346081 - Exiv2 cannot open file on NTFS within non-english directory.
-151 ==> 
+151 ==> 309542 - Support metadata on 3D photos in MPO format (as to be able to mark faces).
+152 ==> 
