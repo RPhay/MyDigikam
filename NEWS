@@ -171,4 +171,6 @@ BUGFIXES:
 153 ==> 430588 - Export from Image Editor not working on Mac.
 154 ==> 147501 - Display of EXIF Information.
 155 ==> 128462 - EXIF Info is empty, in picture properties dialog only the exif-tag names are show, no values shown.
-156 ==> 
+156 ==> 350931 - digiKam suddenly stops searching for new entries.
+157 ==> 
+
