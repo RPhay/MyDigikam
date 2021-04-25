@@ -171,10 +171,10 @@ void AuthenticationDialog::start()
     Q_ASSERT(!d->appId.isEmpty());
 
     const QString url = QString::fromUtf8(
-        "http://oauth.vk.com/authorize?"
+        "https://oauth.vk.com/authorize?"
         "client_id=%1&"
         "scope=%2&"
-        "redirect_uri=http://oauth.vk.com/blank.html&"
+        "redirect_uri=https://oauth.vk.com/blank.html&"
         "display=%3&"
         "response_type=token")
         .arg(d->appId)
