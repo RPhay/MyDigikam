@@ -311,7 +311,7 @@ QString SmugWidget::getDestinationPath() const
 void SmugWidget::setNickName(const QString& nick)
 {
     m_nickNameEdt->setText(nick);
-    m_headerLbl->setText(QString::fromLatin1("<b><h2><a href='http://%1.smugmug.com'>"
+    m_headerLbl->setText(QString::fromLatin1("<b><h2><a href='https://%1.smugmug.com'>"
                                              "<font color=\"#9ACD32\">SmugMug</font>"
                                              "</a></h2></b>").arg(nick));
 }
@@ -327,7 +327,7 @@ void SmugWidget::updateLabels(const QString& email, const QString& name, const Q
         web = nick;
     }
 
-    m_headerLbl->setText(QString::fromLatin1("<b><h2><a href='http://%1.smugmug.com'>"
+    m_headerLbl->setText(QString::fromLatin1("<b><h2><a href='https://%1.smugmug.com'>"
                                              "<font color=\"#9ACD32\">SmugMug</font>"
                                              "</a></h2></b>").arg(web));
 }
