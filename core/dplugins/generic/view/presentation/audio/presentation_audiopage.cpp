@@ -495,13 +495,16 @@ void PresentationAudioPage::slotSoundFilesButtonLoad()
     dlg->setAcceptMode(QFileDialog::AcceptOpen);
     dlg->setFileMode(QFileDialog::ExistingFile);
 
-    if (dlg->exec() != QDialog::Accepted)
+    dlg->exec();
+
+    if (!dlg || dlg->selectedFiles().isEmpty())
     {
         delete dlg;
+
         return;
     }
 
-    QString filename = dlg->selectedFiles().isEmpty() ? QString() : dlg->selectedFiles().at(0);
+    QString filename = dlg->selectedFiles().first();
 
     if (!filename.isEmpty())
     {
@@ -552,13 +555,16 @@ void PresentationAudioPage::slotSoundFilesButtonSave()
     dlg->setAcceptMode(QFileDialog::AcceptSave);
     dlg->setFileMode(QFileDialog::AnyFile);
 
-    if (dlg->exec() != QDialog::Accepted)
+    dlg->exec();
+
+    if (!dlg || dlg->selectedFiles().isEmpty())
     {
         delete dlg;
+
         return;
     }
 
-    QString filename = dlg->selectedFiles().isEmpty() ? QString() : dlg->selectedFiles().at(0);
+    QString filename = dlg->selectedFiles().first();
 
     if (!filename.isEmpty())
     {
