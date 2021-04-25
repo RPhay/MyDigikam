@@ -10,6 +10,7 @@ General : Use last Exiv2 0.27.4 in all bundles with Base Media File metadata rea
 General : Use last KF5 framework 5.80 in all bundles.
 Searches: Find duplicates items is now process in parallel using multi-cores.
 Plugins : New tool to export items to iNaturalist web service (https://www.inaturalist.org/).
+Plugins : SlideShow now allow to move to trash items.
 
 *****************************************************************************************************
 BUGFIXES:
@@ -163,4 +164,5 @@ BUGFIXES:
 147 ==> 429108 - FPX image crashes on selection.
 148 ==> 429124 - Exif 2.32 value names (labels) do not appear for timezone offset tags in EXIF Property panel.
 149 ==> 426859 - Idea: Move to trash from slideshow.
-150 ==> 
+150 ==> 346081 - Exiv2 cannot open file on NTFS within non-english directory.
+151 ==> 
