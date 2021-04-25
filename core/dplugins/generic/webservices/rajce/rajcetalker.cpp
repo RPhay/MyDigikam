@@ -51,7 +51,7 @@ using namespace Digikam;
 namespace DigikamGenericRajcePlugin
 {
 
-const QUrl RAJCE_URL(QLatin1String("http://www.rajce.idnes.cz/liveAPI/index.php"));
+const QUrl RAJCE_URL(QLatin1String("https://www.rajce.idnes.cz/liveAPI/index.php"));
 
 class Q_DECL_HIDDEN RajceTalker::Private
 {
