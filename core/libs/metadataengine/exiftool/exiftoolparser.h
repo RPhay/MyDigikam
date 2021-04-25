@@ -58,10 +58,16 @@ public:
      *  -   ExifTool Tag description    (QString).
      *
      * With ExifTool tag name as key as ignored map of tags:
-     *  -   Exiv2 tag name              (QString).
+     *  -   Exiv2 tag name              (QString - empty).
      *  -   ExifTool Tag value          (QString).
      *  -   ExifTool Tag type           (QString).
      *  -   ExifTool Tag description    (QString).
+     *
+     * With ExifTool tag name as key to apply changes on map of tags:
+     *  -   Exiv2 tag name              (QString - empty).
+     *  -   ExifTool Tag value          (QString).
+     *  -   ExifTool Tag type           (QString - empty).
+     *  -   ExifTool Tag description    (QString - empty).
      */
     typedef QHash<QString, QVariantList> TagsMap;
 
@@ -70,7 +76,16 @@ public:
     explicit ExifToolParser(QObject* const parent = nullptr);
     ~ExifToolParser();
 
+    /**
+     * Load metadata with ExifTool from a file.
+     */
     bool load(const QString& path);
+
+    /**
+     * Apply tag changes to a file with ExifTool.
+     * Tags can already exists in file or are new ones.
+     */
+    bool applyChanges(const QString& path, const TagsMap& newTags);
 
     /**
      * Turn on/off translations of ExiTool tags to Exiv2.
@@ -86,18 +101,22 @@ public:
 public Q_SLOTS:
 
     /// Public slot for unit test purpose about ExifTool stream decoding and translation.
-    void slotCmdCompleted(int cmdId,
+    void slotCmdCompleted(int cmdAction,
                           int execTime,
                           const QByteArray& cmdOutputChannel,
                           const QByteArray& cmdErrorChannel);
 
 private Q_SLOTS:
 
-    void slotErrorOccurred(QProcess::ProcessError error);
+    void slotErrorOccurred(int cmdAction, QProcess::ProcessError error);
 
-    void slotFinished(int exitCode, QProcess::ExitStatus exitStatus);
+    void slotFinished(int cmdAction, int exitCode, QProcess::ExitStatus exitStatus);
 
     void slotMetaEngineSettingsChanged();
+
+private:
+
+    bool prepareProcess();
 
 private:
 

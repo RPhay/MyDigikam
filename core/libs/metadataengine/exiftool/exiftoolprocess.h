@@ -47,6 +47,15 @@ class DIGIKAM_EXPORT ExifToolProcess : public QObject
 
 public:
 
+    enum Action
+    {
+        LOAD_METADATA = 0,
+        APPLY_CHANGES,
+        NO_ACTION
+    };
+
+public:
+
     /**
      * Constructs a ExifToolProcess object with the given parent.
      */
@@ -143,7 +152,7 @@ public:
      * Send a command to exiftool process
      * Return 0: ExitTool not running, write channel is closed or args is empty
      */
-    int command(const QByteArrayList& args);
+    int command(const QByteArrayList& args, Action ac);
 
 private:
 
@@ -167,13 +176,13 @@ private:
 
 Q_SIGNALS:
 
-    void signalStarted();
-    void signalStateChanged(QProcess::ProcessState newState);
-    void signalErrorOccurred(QProcess::ProcessError error);
-    void signalFinished(int exitCode,
+    void signalStarted(int cmdAction);
+    void signalStateChanged(int cmdAction, QProcess::ProcessState newState);
+    void signalErrorOccurred(int cmdAction, QProcess::ProcessError error);
+    void signalFinished(int cmdAction,int exitCode,
                         QProcess::ExitStatus exitStatus);
 
-    void signalCmdCompleted(int cmdId,
+    void signalCmdCompleted(int cmdAction,
                             int execTime,
                             const QByteArray& cmdOutputChannel,
                             const QByteArray& cmdErrorChannel);

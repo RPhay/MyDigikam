@@ -45,15 +45,19 @@ class Q_DECL_HIDDEN ExifToolProcess::Private
 {
 public:
 
-    struct Command
+    class Command
     {
+    public:
+
         Command()
-          : id(0)
+          : id (0),
+            ac (ExifToolProcess::NO_ACTION)
         {
         }
 
-        int        id;
-        QByteArray argsStr;
+        int                     id;
+        QByteArray              argsStr;
+        ExifToolProcess::Action ac;
     };
 
 public:
@@ -61,6 +65,7 @@ public:
     explicit Private()
       : process             (nullptr),
         cmdRunning          (0),
+        cmdAction           (ExifToolProcess::LOAD_METADATA),
         writeChannelIsClosed(true),
         processError        (QProcess::UnknownError)
     {
@@ -72,30 +77,31 @@ public:
 
 public:
 
-    QString                etExePath;
-    QString                perlExePath;
-    QProcess*              process;
+    QString                 etExePath;
+    QString                 perlExePath;
+    QProcess*               process;
 
-    QElapsedTimer          execTimer;
-    QList<Command>         cmdQueue;
-    int                    cmdRunning;
+    QElapsedTimer           execTimer;
+    QList<Command>          cmdQueue;
+    int                     cmdRunning;
+    ExifToolProcess::Action cmdAction;
 
-    int                    outAwait[2];             ///< [0] StandardOutput | [1] ErrorOutput
-    bool                   outReady[2];             ///< [0] StandardOutput | [1] ErrorOutput
-    QByteArray             outBuff[2];              ///< [0] StandardOutput | [1] ErrorOutput
+    int                     outAwait[2];             ///< [0] StandardOutput | [1] ErrorOutput
+    bool                    outReady[2];             ///< [0] StandardOutput | [1] ErrorOutput
+    QByteArray              outBuff[2];              ///< [0] StandardOutput | [1] ErrorOutput
 
-    bool                   writeChannelIsClosed;
+    bool                    writeChannelIsClosed;
 
-    QProcess::ProcessError processError;
-    QString                errorString;
+    QProcess::ProcessError  processError;
+    QString                 errorString;
 
 public:
 
-    static const int       CMD_ID_MIN  = 1;
-    static const int       CMD_ID_MAX  = 2000000000;
+    static const int        CMD_ID_MIN  = 1;
+    static const int        CMD_ID_MAX  = 2000000000;
 
-    static int             s_nextCmdId;               ///< Unique identifier, even in a multi-instances or multi-thread environment
-    static QMutex          s_cmdIdMutex;
+    static int              s_nextCmdId;               ///< Unique identifier, even in a multi-instances or multi-thread environment
+    static QMutex           s_cmdIdMutex;
 };
 
 QMutex ExifToolProcess::Private::s_cmdIdMutex;
@@ -217,6 +223,7 @@ void ExifToolProcess::start()
 
     d->cmdQueue.clear();
     d->cmdRunning           = 0;
+    d->cmdAction            = NO_ACTION;
 
     // Clear errors
 
@@ -307,7 +314,7 @@ bool ExifToolProcess::waitForFinished(int msecs) const
     return d->process->waitForFinished(msecs);
 }
 
-int ExifToolProcess::command(const QByteArrayList& args)
+int ExifToolProcess::command(const QByteArrayList& args, Action ac)
 {
     if ((d->process->state() != QProcess::Running) ||
         d->writeChannelIsClosed                    ||
@@ -365,6 +372,7 @@ int ExifToolProcess::command(const QByteArrayList& args)
     Private::Command command;
     command.id      = cmdId;
     command.argsStr = cmdStr;
+    command.ac      = ac;
     d->cmdQueue.append(command);
 
     // Exec cmd queue
@@ -408,6 +416,7 @@ void ExifToolProcess::execNextCmd()
 
     Private::Command command = d->cmdQueue.takeFirst();
     d->cmdRunning            = command.id;
+    d->cmdAction             = command.ac;
 
     d->process->write(command.argsStr);
 }
@@ -415,20 +424,22 @@ void ExifToolProcess::execNextCmd()
 void ExifToolProcess::slotStarted()
 {
     qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool process started";
-    emit signalStarted();
+    emit signalStarted(d->cmdAction);
 }
 
 void ExifToolProcess::slotFinished(int exitCode, QProcess::ExitStatus exitStatus)
 {
     qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool process finished" << exitCode << exitStatus;
-    d->cmdRunning = 0;
 
-    emit signalFinished(exitCode, exitStatus);
+    emit signalFinished(d->cmdAction, exitCode, exitStatus);
+
+    d->cmdRunning = 0;
+    d->cmdAction  = NO_ACTION;
 }
 
 void ExifToolProcess::slotStateChanged(QProcess::ProcessState newState)
 {
-    emit signalStateChanged(newState);
+    emit signalStateChanged(d->cmdAction, newState);
 }
 
 void ExifToolProcess::slotErrorOccurred(QProcess::ProcessError error)
@@ -510,7 +521,8 @@ void ExifToolProcess::readOutput(const QProcess::ProcessChannel channel)
     {
         qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifToolProcess::readOutput(): ExifTool command completed with elapsed time:"
                                         << d->execTimer.elapsed();
-        emit signalCmdCompleted(d->cmdRunning,
+
+        emit signalCmdCompleted(d->cmdAction,
                                 d->execTimer.elapsed(),
                                 d->outBuff[QProcess::StandardOutput],
                                 d->outBuff[QProcess::StandardError]);
@@ -526,7 +538,7 @@ void ExifToolProcess::setProcessErrorAndEmit(QProcess::ProcessError error, const
     d->processError = error;
     d->errorString  = description;
 
-    emit signalErrorOccurred(error);
+    emit signalErrorOccurred(d->cmdAction, error);
 }
 
 } // namespace Digikam
