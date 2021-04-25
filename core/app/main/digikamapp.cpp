@@ -659,7 +659,10 @@ void DigikamApp::slotImageSelected(const ItemInfoList& selection, const ItemInfo
 
         case 1:
         {
-            slotSetCheckedExifOrientationAction(selectionWithoutGrouped.first());
+            if (selectionWithoutGrouped.count() > 0)
+            {
+                slotSetCheckedExifOrientationAction(selectionWithoutGrouped.first());
+            }
 
             int index = listAll.indexOf(selection.first()) + 1;
 
@@ -671,8 +674,13 @@ void DigikamApp::slotImageSelected(const ItemInfoList& selection, const ItemInfo
             }
             else
             {
-                int indexWithoutGrouped
-                        = d->view->allInfo(false).indexOf(selectionWithoutGrouped.first()) + 1;
+                int indexWithoutGrouped = 0;
+
+                if (selectionWithoutGrouped.count() > 0)
+                {
+                    indexWithoutGrouped = d->view->allInfo(false).indexOf(selectionWithoutGrouped.first()) + 1;
+                }
+
                 statusBarSelectionText
                         = selection.first().fileUrl().fileName()
                           + i18n(" (%1 of %2 [%3] )", indexWithoutGrouped,
