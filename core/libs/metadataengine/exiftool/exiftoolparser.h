@@ -26,6 +26,7 @@
 
 // Qt Core
 
+#include <QFileInfo>
 #include <QVariant>
 #include <QHash>
 #include <QObject>
@@ -84,6 +85,7 @@ public:
     /**
      * Apply tag changes to a file with ExifTool.
      * Tags can already exists in file or are new ones.
+     * To remove a tag, pass an empty string as value.
      */
     bool applyChanges(const QString& path, const TagsMap& newTags);
 
@@ -116,7 +118,9 @@ private Q_SLOTS:
 
 private:
 
-    bool prepareProcess();
+    bool       prepareProcess();
+    QByteArray filePathEncoding(const QFileInfo& fi) const;
+
 
 private:
 

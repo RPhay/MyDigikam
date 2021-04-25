@@ -26,7 +26,6 @@
 // Qt includes
 
 #include <QDir>
-#include <QFileInfo>
 #include <QStringList>
 #include <QVariant>
 #include <QJsonDocument>
@@ -165,6 +164,21 @@ bool ExifToolParser::prepareProcess()
     return true;
 }
 
+QByteArray ExifToolParser::filePathEncoding(const QFileInfo& fi) const
+{
+
+#ifdef Q_OS_WIN
+
+    return (QDir::toNativeSeparators(fi.filePath()).toLocal8Bit());
+
+#else
+
+    return (QDir::toNativeSeparators(fi.filePath()).toUtf8());
+
+#endif
+
+}
+
 bool ExifToolParser::load(const QString& path)
 {
     QFileInfo fileInfo(path);
@@ -187,16 +201,7 @@ bool ExifToolParser::load(const QString& path)
     cmdArgs << QByteArray("-G:0:1:2:4:6");
     cmdArgs << QByteArray("-n");
     cmdArgs << QByteArray("-l");
-
-#ifdef Q_OS_WIN
-
-        cmdArgs << QDir::toNativeSeparators(fileInfo.filePath()).toLocal8Bit();
-
-#else
-
-        cmdArgs << QDir::toNativeSeparators(fileInfo.filePath()).toUtf8();
-
-#endif
+    cmdArgs << filePathEncoding(fileInfo);
 
     // Send command to ExifToolProcess
 
@@ -250,15 +255,7 @@ bool ExifToolParser::applyChanges(const QString& path, const TagsMap& newTags)
         cmdArgs << QString::fromUtf8("-%1=%2").arg(tagNameExifTool).arg(tagValue).toUtf8();
     }
 
-#ifdef Q_OS_WIN
-
-        cmdArgs << QDir::toNativeSeparators(fileInfo.filePath()).toLocal8Bit();
-
-#else
-
-        cmdArgs << QDir::toNativeSeparators(fileInfo.filePath()).toUtf8();
-
-#endif
+    cmdArgs << filePathEncoding(fileInfo);
 
     // Send command to ExifToolProcess
 
@@ -302,15 +299,18 @@ void ExifToolParser::slotCmdCompleted(int cmdAction,
             case ExifToolProcess::LOAD_METADATA:
             {
                 d->loopLoad->quit();
+                break;
             }
 
             case ExifToolProcess::APPLY_CHANGES:
             {
                 d->loopApply->quit();
+                break;
             }
 
             default: // ExifToolProcess::NO_ACTION
             {
+                break;
             }
         }
 
@@ -481,15 +481,18 @@ void ExifToolParser::slotCmdCompleted(int cmdAction,
         case ExifToolProcess::LOAD_METADATA:
         {
             d->loopLoad->quit();
+            break;
         }
 
         case ExifToolProcess::APPLY_CHANGES:
         {
             d->loopApply->quit();
+            break;
         }
 
         default: // ExifToolProcess::NO_ACTION
         {
+            break;
         }
     }
 
@@ -506,15 +509,18 @@ void ExifToolParser::slotErrorOccurred(int cmdAction, QProcess::ProcessError err
         case ExifToolProcess::LOAD_METADATA:
         {
             d->loopLoad->quit();
+            break;
         }
 
         case ExifToolProcess::APPLY_CHANGES:
         {
             d->loopApply->quit();
+            break;
         }
 
         default: // ExifToolProcess::NO_ACTION
         {
+            break;
         }
     }
 }
@@ -529,15 +535,18 @@ void ExifToolParser::slotFinished(int cmdAction, int exitCode, QProcess::ExitSta
         case ExifToolProcess::LOAD_METADATA:
         {
             d->loopLoad->quit();
+            break;
         }
 
         case ExifToolProcess::APPLY_CHANGES:
         {
             d->loopApply->quit();
+            break;
         }
 
         default: // ExifToolProcess::NO_ACTION
         {
+            break;
         }
     }
 }
