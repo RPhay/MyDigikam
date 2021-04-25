@@ -351,23 +351,20 @@ void ExifToolWidget::slotSaveMetadataToFile()
     fileSaveDialog->selectFile(QString::fromUtf8("%1.txt").arg(d->fileName));
     fileSaveDialog->setNameFilter(QLatin1String("*.txt"));
 
-    QList<QUrl> urls;
+    fileSaveDialog->exec();
 
     // Check for cancel.
 
-    if (fileSaveDialog->exec() == QDialog::Accepted)
+    if (!fileSaveDialog || fileSaveDialog->selectedUrls().isEmpty())
     {
-        urls = fileSaveDialog->selectedUrls();
-    }
-
-    delete fileSaveDialog;
-
-    if (urls.isEmpty())
-    {
+        delete fileSaveDialog;
         return;
     }
 
-    QFile file(urls[0].toLocalFile());
+    QUrl url = fileSaveDialog->selectedUrls().first();
+    delete fileSaveDialog;
+
+    QFile file(url.toLocalFile());
 
     if (!file.open(QIODevice::WriteOnly))
     {

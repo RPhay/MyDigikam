@@ -419,7 +419,7 @@ ImageDialog::ImageDialog(QWidget* const parent, const QUrl& url, bool singleSele
     qCDebug(DIGIKAM_GENERAL_LOG) << "file formats=" << d->fileFormats;
 
     DFileIconProvider* const provider = new DFileIconProvider();
-    DFileDialog* const dlg            = new DFileDialog(parent);
+    QPointer<DFileDialog> dlg         = new DFileDialog(parent);
     dlg->setWindowTitle(caption);
     dlg->setDirectoryUrl(url);
     dlg->setIconProvider(provider);
@@ -429,7 +429,11 @@ ImageDialog::ImageDialog(QWidget* const parent, const QUrl& url, bool singleSele
     dlg->setFileMode(singleSelect ? QFileDialog::ExistingFile : QFileDialog::ExistingFiles);
 
     dlg->exec();
-    d->urls = dlg->selectedUrls();
+
+    if (dlg)
+    {
+        d->urls = dlg->selectedUrls();
+    }
 
     delete dlg;
     delete provider;

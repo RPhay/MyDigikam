@@ -375,13 +375,12 @@ void PresentationAudioPage::slotSoundFilesButtonAdd()
     dlg->setMimeTypeFilters(atm);
     dlg->setAcceptMode(QFileDialog::AcceptOpen);
     dlg->setFileMode(QFileDialog::ExistingFiles);
+
     dlg->exec();
 
-    QList<QUrl> urls = dlg->selectedUrls();
-
-    if (!urls.isEmpty())
+    if (dlg && !dlg->selectedUrls().isEmpty())
     {
-        addItems(urls);
+        addItems(dlg->selectedUrls());
         updateFileList();
     }
 

@@ -157,13 +157,16 @@ void ScanDialog::slotSaveImage(QByteArray& ksane_data, int width, int height, in
 
     // Start dialog and check if canceled.
 
-    if (imageFileSaveDialog->exec() != QDialog::Accepted)
+    imageFileSaveDialog->exec();
+
+    if (!imageFileSaveDialog || imageFileSaveDialog->selectedUrls().isEmpty())
     {
         delete imageFileSaveDialog;
+
         return;
     }
 
-    QUrl newURL                  = imageFileSaveDialog->selectedUrls().at(0);
+    QUrl newURL                  = imageFileSaveDialog->selectedUrls().first();
     QFileInfo fi(newURL.toLocalFile());
 
     // Parse name filter and extract file extension
