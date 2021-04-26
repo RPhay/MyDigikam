@@ -89,12 +89,11 @@ int main(int argc, char** argv)
         qDebug() << "EXV chunk size" << exv.size();
         meta.loadFromData(exv);
     }
-/*
-    QFile ef(QLatin1String("data.exv"));
+
+    QFile ef(QLatin1String("output.exv"));
     ef.open(QIODevice::WriteOnly);
     ef.write(exv);
     ef.close();
-*/
 
     DImg file(1, 1, false);
     file.setMetadata(meta.data());
