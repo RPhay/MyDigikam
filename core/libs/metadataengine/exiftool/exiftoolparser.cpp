@@ -244,13 +244,11 @@ bool ExifToolParser::loadChunk(const QString& path)
     // Build command (get metadata as JSON array)
 
     QByteArrayList cmdArgs;
-    cmdArgs << QByteArray("-json");
-    cmdArgs << QByteArray("-b");
-    cmdArgs << QByteArray("-EXIF");
-    cmdArgs << QByteArray("-IPTC");
-    cmdArgs << QByteArray("-XMP");
-    cmdArgs << QByteArray("-Comment");
+    cmdArgs << QByteArray("-TagsFromFile");
     cmdArgs << filePathEncoding(fileInfo);
+    cmdArgs << QByteArray("-all:all");
+    cmdArgs << QByteArray("-o");
+    cmdArgs << QByteArray("-.exv");
 
     // Send command to ExifToolProcess
 
@@ -329,13 +327,6 @@ void ExifToolParser::slotCmdCompleted(int cmdAction,
                                       const QByteArray& stdOut,
                                       const QByteArray& /*stdErr*/)
 {
-    qCDebug(DIGIKAM_METAENGINE_LOG) << "cmdAction" << cmdAction;
-
-    if (cmdAction == ExifToolProcess::NO_ACTION)
-    {
-        return;
-    }
-
     qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool complete command for action" << actionString(cmdAction)
                                     << "with elasped time (ms):" << execTime;
 /*
@@ -344,29 +335,30 @@ void ExifToolParser::slotCmdCompleted(int cmdAction,
     qCDebug(DIGIKAM_METAENGINE_LOG).noquote() << stdOut;
     qCDebug(DIGIKAM_METAENGINE_LOG) << "---";
 */
-    // Convert JSON array as QVariantMap
-
-    QJsonDocument jsonDoc     = QJsonDocument::fromJson(stdOut);
-    QJsonArray    jsonArray   = jsonDoc.array();
-
-    qCDebug(DIGIKAM_METAENGINE_LOG) << "Json Array size:" << jsonArray.size();
-
-    if (jsonArray.size() == 0)
-    {
-        manageEventLoop(cmdAction);
-
-        return;
-    }
-
-    QJsonObject   jsonObject  = jsonArray.at(0).toObject();
-    QVariantMap   metadataMap = jsonObject.toVariantMap();
-
-    qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool Json map size:" << metadataMap.size();
 
     switch (cmdAction)
     {
         case ExifToolProcess::LOAD_METADATA:
         {
+            // Convert JSON array as QVariantMap
+
+            QJsonDocument jsonDoc     = QJsonDocument::fromJson(stdOut);
+            QJsonArray    jsonArray   = jsonDoc.array();
+
+            qCDebug(DIGIKAM_METAENGINE_LOG) << "Json Array size:" << jsonArray.size();
+
+            if (jsonArray.size() == 0)
+            {
+                manageEventLoop(cmdAction);
+
+                return;
+            }
+
+            QJsonObject   jsonObject  = jsonArray.at(0).toObject();
+            QVariantMap   metadataMap = jsonObject.toVariantMap();
+
+            qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool Json map size:" << metadataMap.size();
+
             for (QVariantMap::const_iterator it = metadataMap.constBegin() ;
                 it != metadataMap.constEnd() ; ++it)
             {
@@ -526,54 +518,9 @@ void ExifToolParser::slotCmdCompleted(int cmdAction,
 
         case ExifToolProcess::LOAD_CHUNKS:
         {
-            QString fileName;
-            QString exif;
-            QString iptc;
-            QString xmp;
-            QString comment;
+            qCDebug(DIGIKAM_METAENGINE_LOG) << "EXV" << stdOut.size();
 
-            QVariantMap::iterator it = metadataMap.find(QLatin1String("SourceFile"));
-
-            if (it != metadataMap.end())
-            {
-                fileName = it.value().toString();
-            }
-
-            it = metadataMap.find(QLatin1String("EXIF"));
-
-            if (it != metadataMap.end())
-            {
-                exif = it.value().toString().remove(QLatin1String("base64:"));
-            }
-
-            it = metadataMap.find(QLatin1String("IPTC"));
-
-            if (it != metadataMap.end())
-            {
-                iptc = it.value().toString().remove(QLatin1String("base64:"));
-            }
-
-            it = metadataMap.find(QLatin1String("XMP"));
-
-            if (it != metadataMap.end())
-            {
-                xmp = it.value().toString();
-            }
-
-            it = metadataMap.find(QLatin1String("Comment"));
-
-            if (it != metadataMap.end())
-            {
-                comment = it.value().toString();
-            }
-
-            qCDebug(DIGIKAM_METAENGINE_LOG) << fileName << exif.size() << iptc.size() << xmp.size() << comment.size();
-
-            d->parsedMap.insert(fileName, QVariantList()
-                                              << exif       // Exif chunk as base64.
-                                              << iptc       // Iptc chunk as base64.
-                                              << xmp        // Xmp as string.
-                                              << comment);  // Comment as string.
+            d->parsedMap.insert(QLatin1String("EXV"), QVariantList() << stdOut);     // Exv chunk as bytearray.
             break;
         }
 

@@ -67,11 +67,8 @@ public:
      * With ExifTool tag name as key to apply changes on map of tags:
      *  -   ExifTool Tag value          (QString).
      *
-     * With File name as key to load chunks:
-     *  -   Exif as base64              (QString).
-     *  -   Iptc as base64              (QString).
-     *  -   Xmp as string               (QString).
-     *  -   Comment as string           (QString).
+     * With EXV as key to load chunk:
+     *  -   The Exiv2 metadat container (QByteArray).
      */
     typedef QHash<QString, QVariantList> TagsMap;
 

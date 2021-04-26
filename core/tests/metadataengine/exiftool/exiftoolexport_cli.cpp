@@ -56,26 +56,25 @@ int main(int argc, char** argv)
 
     // Create ExifTool parser instance.
 
-    ExifToolParser* const parser = new ExifToolParser();
+    ExifToolParser* const parser  = new ExifToolParser();
 
     // Read metadata from the file. Start ExifToolParser
 
     if (!parser->loadChunk(QString::fromUtf8(argv[1])))
     {
-        qWarning() << "Metadata chunks cannot be loaded";
+        qWarning() << "Metadata chunk cannot be loaded";
         return -1;
     }
 
+    ExifToolParser::TagsMap chunk = parser->currentParsedTags();
 
-    ExifToolParser::TagsMap chunks       = parser->currentParsedTags();
+    qDebug() << "Metadata chunk loaded";
 
-    qDebug() << "Metadata chunks loaded" ;
+    ExifToolParser::TagsMap::iterator it = chunk.find(QLatin1String("EXV"));
 
-    ExifToolParser::TagsMap::iterator it = chunks.find(QString::fromUtf8(argv[1]));
-
-    if (it == chunks.end())
+    if (it == chunk.end())
     {
-        qWarning() << "Metadata chunks is empty";
+        qWarning() << "Metadata chunk is empty";
         return -1;
     }
 
@@ -83,43 +82,19 @@ int main(int argc, char** argv)
 
     MetaEngine meta;
 
-    QByteArray exif = QByteArray::fromBase64(varLst[0].toString().toLatin1());
+    QByteArray exv = varLst[0].toByteArray();
 
-    if (!exif.isEmpty())
+    if (!exv.isEmpty())
     {
-        qDebug() << "Exif chunks size" << exif.size();
-        meta.loadFromData(exif);
+        qDebug() << "EXV chunk size" << exv.size();
+        meta.loadFromData(exv);
     }
 /*
-    QFile ef(QLatin1String("exif.dat"));
+    QFile ef(QLatin1String("data.exv"));
     ef.open(QIODevice::WriteOnly);
-    ef.write(exif);
+    ef.write(exv);
     ef.close();
 */
-    QByteArray iptc = QByteArray::fromBase64(varLst[1].toString().toLatin1());
-
-    if (!iptc.isEmpty())
-    {
-        qDebug() << "Iptc chunks size" << iptc.size();
-        meta.setIptc(iptc);
-    }
-
-    QByteArray xmp = varLst[2].toString().toLatin1();
-
-    if (!xmp.isEmpty())
-    {
-        qDebug() << "Xmp chunks size" << xmp.size();
-        meta.setXmp(xmp);
-    }
-
-    QByteArray comment = varLst[3].toString().toLatin1();
-
-    if (!comment.isEmpty())
-    {
-        qDebug() << "Comment chunks size" << comment.size();
-
-        meta.setComments(comment);
-    }
 
     DImg file(1, 1, false);
     file.setMetadata(meta.data());
