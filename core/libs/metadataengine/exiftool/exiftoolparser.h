@@ -50,19 +50,25 @@ class DIGIKAM_EXPORT ExifToolParser : public QObject
 public:
 
     /**
-     * A map used to store Tags Key and a list of Tags properties:
+     * A map used to store ExifTool data shared with ExifToolProcess class:
      *
-     * With ExifTool tag name as key as ignored map of tags:
-     *  -   Exiv2 tag name              (QString - empty).
-     *  -   ExifTool Tag value          (QString).
-     *  -   ExifTool Tag type           (QString).
-     *  -   ExifTool Tag description    (QString).
+     * With load() method, the container is used to get a map of
+     * ExifTool tag name as key and tags properties as values:
+     * key    = ExifTool Tag name           (QString)
+     * values = ExifTool Tag value          (QString).
+     *          ExifTool Tag type           (QString).
+     *          ExifTool Tag description    (QString).
      *
-     * With ExifTool tag name as key to apply changes on map of tags:
-     *  -   ExifTool Tag value          (QString).
+     * With loadChunk() method, the container is used to get
+     * a EXV chunk as value:
+     * key   = "EXV"                        (QString).
+     * value = the Exiv2 metadata container (QByteArray).
      *
-     * With EXV as key to load chunk:
-     *  -   The Exiv2 metadat container (QByteArray).
+     * With applyChanges() method, the container is used as argument to
+     * store tupple of ExifTool tag name as key and Tag value:
+     * key   = ExifTool tag name            (QString).
+     * value = ExifTool Tag value           (QString).
+     *
      */
     typedef QHash<QString, QVariantList> ExifToolData;
 

@@ -316,7 +316,6 @@ void ExifToolParser::slotCmdCompleted(int cmdAction,
                 }
 
                 d->parsedData.insert(tagNameExifTool, QVariantList()
-                                                         << QString()   // Empty Exiv2 tag name.
                                                          << data        // ExifTool Raw data as string.
                                                          << tagType     // ExifTool data type.
                                                          << desc);      // ExifTool tag description.

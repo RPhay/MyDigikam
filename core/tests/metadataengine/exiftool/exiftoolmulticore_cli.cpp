@@ -91,8 +91,8 @@ bool exifToolParse(const QString& file)
         QString tagNameExifTool = it.key().section(QLatin1Char('.'), 0, 0) +
                                   QLatin1Char('.')                         +
                                   it.key().section(QLatin1Char('.'), -1);
-        QString tagType         = it.value()[2].toString();
-        QString data            = it.value()[1].toString();
+        QString tagType         = it.value()[1].toString();
+        QString data            = it.value()[0].toString();
 
         if (data.size() > -section2)
         {

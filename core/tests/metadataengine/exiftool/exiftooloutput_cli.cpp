@@ -59,8 +59,8 @@ int main(int argc, char** argv)
         return -1;
     }
 
-    QString path                    = parser->currentPath();
-    ExifToolParser::ExifToolData parsed  = parser->currentData();
+    QString path                        = parser->currentPath();
+    ExifToolParser::ExifToolData parsed = parser->currentData();
 
     qDebug().noquote() << "Source File:" << path;
 
@@ -90,8 +90,8 @@ int main(int argc, char** argv)
         QString tagNameExifTool = it.key().section(QLatin1Char('.'), 0, 0) +
                                   QLatin1Char('.')                         +
                                   it.key().section(QLatin1Char('.'), -1);
-        QString tagType         = it.value()[2].toString();
-        QString data            = it.value()[1].toString();
+        QString tagType         = it.value()[1].toString();
+        QString data            = it.value()[0].toString();
 
         if (data.size() > -section2)
         {

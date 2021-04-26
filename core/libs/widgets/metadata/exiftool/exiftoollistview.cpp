@@ -116,8 +116,8 @@ void ExifToolListView::setMetadata(const ExifToolParser::ExifToolData& map)
         }
 
         QString key                   = it.key();
-        QString value                 = it.value()[1].toString();
-        QString desc                  = it.value()[3].toString();
+        QString value                 = it.value()[0].toString();
+        QString desc                  = it.value()[2].toString();
         ExifToolListViewGroup* igroup = findGroup(grp);
 
         if (!igroup)
