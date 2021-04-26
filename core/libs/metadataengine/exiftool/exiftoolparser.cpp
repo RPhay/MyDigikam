@@ -71,19 +71,14 @@ ExifToolParser::~ExifToolParser()
     delete d;
 }
 
-QString ExifToolParser::currentParsedPath() const
+QString ExifToolParser::currentPath() const
 {
     return d->parsedPath;
 }
 
-ExifToolParser::TagsMap ExifToolParser::currentParsedTags() const
+ExifToolParser::ExifToolData ExifToolParser::currentData() const
 {
-    return d->parsedMap;
-}
-
-ExifToolParser::TagsMap ExifToolParser::currentIgnoredTags() const
-{
-    return d->ignoredMap;
+    return d->parsedData;
 }
 
 QString ExifToolParser::currentErrorString() const
@@ -147,7 +142,7 @@ bool ExifToolParser::loadChunk(const QString& path)
         return false;
     }
 
-    // Build command (get metadata as JSON array)
+    // Build command (get metadata as EXV conatiner for Exiv2)
 
     QByteArrayList cmdArgs;
     cmdArgs << QByteArray("-TagsFromFile");
@@ -174,7 +169,7 @@ bool ExifToolParser::loadChunk(const QString& path)
     return true;
 }
 
-bool ExifToolParser::applyChanges(const QString& path, const TagsMap& newTags)
+bool ExifToolParser::applyChanges(const QString& path, const ExifToolData& newTags)
 {
     if (newTags.isEmpty())
     {
@@ -200,7 +195,7 @@ bool ExifToolParser::applyChanges(const QString& path, const TagsMap& newTags)
     QByteArrayList cmdArgs;
     cmdArgs << QByteArray("-json");
 
-    for (ExifToolParser::TagsMap::const_iterator it = newTags.constBegin() ;
+    for (ExifToolParser::ExifToolData::const_iterator it = newTags.constBegin() ;
          it != newTags.constEnd() ; ++it)
     {
         QString  tagNameExifTool = it.key();
@@ -320,7 +315,7 @@ void ExifToolParser::slotCmdCompleted(int cmdAction,
                     data = i18n("binary data...");
                 }
 
-                d->parsedMap.insert(tagNameExifTool, QVariantList()
+                d->parsedData.insert(tagNameExifTool, QVariantList()
                                                          << QString()   // Empty Exiv2 tag name.
                                                          << data        // ExifTool Raw data as string.
                                                          << tagType     // ExifTool data type.
@@ -334,7 +329,7 @@ void ExifToolParser::slotCmdCompleted(int cmdAction,
         {
             qCDebug(DIGIKAM_METAENGINE_LOG) << "EXV" << stdOut.size();
 
-            d->parsedMap.insert(QLatin1String("EXV"), QVariantList() << stdOut);     // Exv chunk as bytearray.
+            d->parsedData.insert(QLatin1String("EXV"), QVariantList() << stdOut);     // Exv chunk as bytearray.
             break;
         }
 
@@ -352,7 +347,7 @@ void ExifToolParser::slotCmdCompleted(int cmdAction,
     d->manageEventLoop(cmdAction);
 
     qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool parsed command for action" << d->actionString(cmdAction);
-    qCDebug(DIGIKAM_METAENGINE_LOG) << d->parsedMap.count() << "properties decoded";
+    qCDebug(DIGIKAM_METAENGINE_LOG) << d->parsedData.count() << "properties decoded";
 }
 
 void ExifToolParser::slotErrorOccurred(int cmdAction, QProcess::ProcessError error)

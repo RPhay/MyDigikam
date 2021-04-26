@@ -60,7 +60,7 @@ int main(int argc, char** argv)
 
     ExifToolParser* const parser = new ExifToolParser();
 
-    ExifToolParser::TagsMap newTags;
+    ExifToolParser::ExifToolData newTags;
     newTags.insert(QLatin1String("EXIF:ImageDescription"),
                    QVariantList() << QString()      // not used
                                   << QString::fromUtf8("J'ai reçu cette photo par la poste en Février"));

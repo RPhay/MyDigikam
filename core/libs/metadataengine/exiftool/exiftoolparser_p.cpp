@@ -37,8 +37,7 @@ ExifToolParser::Private::Private()
 bool ExifToolParser::Private::prepareProcess()
 {
     parsedPath.clear();
-    parsedMap.clear();
-    ignoredMap.clear();
+    parsedData.clear();
 
     // Start ExifToolProcess if necessary
 

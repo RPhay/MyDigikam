@@ -36,7 +36,6 @@ endmacro()
 #------------------------------------------------------------------------
 
 EXIFTOOL_BUILD_CLITEST(exiftoolexport_cli.cpp)
-EXIFTOOL_BUILD_CLITEST(exiftoolloader_cli.cpp)
 EXIFTOOL_BUILD_CLITEST(exiftooloutput_cli.cpp)
 EXIFTOOL_BUILD_CLITEST(exiftoolmulticore_cli.cpp)
 EXIFTOOL_BUILD_CLITEST(exiftoolparserout_cli.cpp)

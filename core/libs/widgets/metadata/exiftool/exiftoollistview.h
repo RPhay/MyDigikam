@@ -70,7 +70,7 @@ private Q_SLOTS:
 
 private:
 
-    void setMetadata(const ExifToolParser::TagsMap& map);
+    void setMetadata(const ExifToolParser::ExifToolData& map);
     ExifToolListViewGroup* findGroup(const QString& group);
 
 private:

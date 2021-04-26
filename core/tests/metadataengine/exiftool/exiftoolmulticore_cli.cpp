@@ -52,8 +52,8 @@ bool exifToolParse(const QString& file)
         return false;
     }
 
-    QString path                    = parser->currentParsedPath();
-    ExifToolParser::TagsMap parsed  = parser->currentParsedTags();
+    QString path                    = parser->currentPath();
+    ExifToolParser::ExifToolData parsed  = parser->currentData();
 
     qDebug().noquote() << "Processing source file:" << path;
 
@@ -85,7 +85,7 @@ bool exifToolParse(const QString& file)
            << sep
            << endl;
 
-    for (ExifToolParser::TagsMap::const_iterator it = parsed.constBegin() ;
+    for (ExifToolParser::ExifToolData::const_iterator it = parsed.constBegin() ;
          it != parsed.constEnd() ; ++it)
     {
         QString tagNameExifTool = it.key().section(QLatin1Char('.'), 0, 0) +
