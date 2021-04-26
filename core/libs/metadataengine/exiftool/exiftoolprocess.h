@@ -155,26 +155,6 @@ public:
      */
     int command(const QByteArrayList& args, Action ac);
 
-private:
-
-    void execNextCmd();
-
-private Q_SLOTS:
-
-    void slotStarted();
-    void slotStateChanged(QProcess::ProcessState newState);
-    void slotErrorOccurred(QProcess::ProcessError error);
-    void slotReadyReadStandardOutput();
-    void slotReadyReadStandardError();
-    void slotFinished(int exitCode,
-                      QProcess::ExitStatus exitStatus);
-
-private:
-
-    void readOutput(const QProcess::ProcessChannel channel);
-    void setProcessErrorAndEmit(QProcess::ProcessError error,
-                                const QString& description);
-
 Q_SIGNALS:
 
     void signalStarted(int cmdAction);
@@ -187,6 +167,16 @@ Q_SIGNALS:
                             int execTime,
                             const QByteArray& cmdOutputChannel,
                             const QByteArray& cmdErrorChannel);
+
+private Q_SLOTS:
+
+    void slotStarted();
+    void slotStateChanged(QProcess::ProcessState newState);
+    void slotErrorOccurred(QProcess::ProcessError error);
+    void slotReadyReadStandardOutput();
+    void slotReadyReadStandardError();
+    void slotFinished(int exitCode,
+                      QProcess::ExitStatus exitStatus);
 
 private:
 

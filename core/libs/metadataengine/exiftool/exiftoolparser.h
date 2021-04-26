@@ -123,17 +123,6 @@ private Q_SLOTS:
 
 private:
 
-    bool       prepareProcess();
-    QByteArray filePathEncoding(const QFileInfo& fi) const;
-    void       manageEventLoop(int cmdAction);
-
-    /**
-     * Returns a string for an action.
-     */
-    QString actionString(int cmdAction) const;
-
-private:
-
     class Private;
     Private* const d;
 };

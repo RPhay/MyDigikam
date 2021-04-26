@@ -58,7 +58,7 @@ int main(int argc, char** argv)
     QByteArray stdout = input.readAll();
 
     ExifToolParser* const parser = new ExifToolParser();
-    parser->setTranslations(false);
+
     parser->slotCmdCompleted(0,                 // Command ID
                              0,                 // Elapsed time
                              stdout,            // Output channel

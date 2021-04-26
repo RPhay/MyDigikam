@@ -43,7 +43,6 @@ using namespace Digikam;
 bool exifToolParse(const QString& file)
 {
     ExifToolParser* const parser = new ExifToolParser;
-    parser->setTranslations(false);
 
     // Read metadata from the file. Start ExifToolParser
 
