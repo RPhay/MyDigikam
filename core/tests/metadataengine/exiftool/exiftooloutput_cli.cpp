@@ -59,8 +59,8 @@ int main(int argc, char** argv)
         return -1;
     }
 
-    QString path                    = parser->currentParsedPath();
-    ExifToolParser::TagsMap parsed  = parser->currentParsedTags();
+    QString path                    = parser->currentPath();
+    ExifToolParser::ExifToolData parsed  = parser->currentData();
 
     qDebug().noquote() << "Source File:" << path;
 
@@ -70,7 +70,7 @@ int main(int argc, char** argv)
     QTextStream stream(&output);
     QStringList tagsLst;
 
-    const int section1 = -40;   // ExifTool Tag name simplified
+    const int section1 = -45;   // ExifTool Tag name simplified
     const int section2 = -30;   // Tag value as string.
     QString sep        = QString().fill(QLatin1Char('-'), qAbs(section1 + section2) + 4);
 
@@ -84,7 +84,7 @@ int main(int argc, char** argv)
            << sep
            << endl;
 
-    for (ExifToolParser::TagsMap::const_iterator it = parsed.constBegin() ;
+    for (ExifToolParser::ExifToolData::const_iterator it = parsed.constBegin() ;
          it != parsed.constEnd() ; ++it)
     {
         QString tagNameExifTool = it.key().section(QLatin1Char('.'), 0, 0) +

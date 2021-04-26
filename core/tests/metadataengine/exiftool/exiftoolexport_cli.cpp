@@ -66,11 +66,11 @@ int main(int argc, char** argv)
         return -1;
     }
 
-    ExifToolParser::TagsMap chunk = parser->currentParsedTags();
+    ExifToolParser::ExifToolData chunk = parser->currentData();
 
     qDebug() << "Metadata chunk loaded";
 
-    ExifToolParser::TagsMap::iterator it = chunk.find(QLatin1String("EXV"));
+    ExifToolParser::ExifToolData::iterator it = chunk.find(QLatin1String("EXV"));
 
     if (it == chunk.end())
     {

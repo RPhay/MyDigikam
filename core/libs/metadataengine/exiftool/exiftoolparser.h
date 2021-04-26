@@ -52,12 +52,6 @@ public:
     /**
      * A map used to store Tags Key and a list of Tags properties:
      *
-     * With Exiv2 tag name as key as parsed map of tags:
-     *  -   ExifTool tag name           (QString).
-     *  -   ExifTool Tag value          (QVariant).
-     *  -   ExifTool Tag type           (QString).
-     *  -   ExifTool Tag description    (QString).
-     *
      * With ExifTool tag name as key as ignored map of tags:
      *  -   Exiv2 tag name              (QString - empty).
      *  -   ExifTool Tag value          (QString).
@@ -70,7 +64,7 @@ public:
      * With EXV as key to load chunk:
      *  -   The Exiv2 metadat container (QByteArray).
      */
-    typedef QHash<QString, QVariantList> TagsMap;
+    typedef QHash<QString, QVariantList> ExifToolData;
 
 public:
 
@@ -92,7 +86,7 @@ public:
      * Tags can already exists in file or are new ones.
      * To remove a tag, pass an empty string as value.
      */
-    bool applyChanges(const QString& path, const TagsMap& newTags);
+    bool applyChanges(const QString& path, const ExifToolData& newTags);
 
     /**
      * Turn on/off translations of ExiTool tags to Exiv2.
@@ -100,10 +94,9 @@ public:
      */
     void setTranslations(bool);
 
-    QString currentParsedPath()  const;
-    TagsMap currentParsedTags()  const;
-    TagsMap currentIgnoredTags() const;
-    QString currentErrorString() const;
+    QString      currentPath()        const;
+    ExifToolData currentData()        const;
+    QString      currentErrorString() const;
 
 public Q_SLOTS:
 

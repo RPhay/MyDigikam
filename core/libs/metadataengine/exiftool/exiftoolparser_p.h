@@ -72,8 +72,7 @@ public:
     QEventLoop*                    loopChunk;
     QEventLoop*                    loopApply;
     QString                        parsedPath;
-    TagsMap                        parsedMap;
-    TagsMap                        ignoredMap;
+    ExifToolData                   parsedData;
 
     QList<QMetaObject::Connection> hdls;
 };

@@ -92,7 +92,7 @@ bool ExifToolListView::loadFromUrl(const QUrl& url)
         return false;
     }
 
-    setMetadata(d->parser->currentParsedTags());
+    setMetadata(d->parser->currentData());
 
     return true;
 }
@@ -102,9 +102,9 @@ QString ExifToolListView::errorString() const
     return d->parser->currentErrorString();
 }
 
-void ExifToolListView::setMetadata(const ExifToolParser::TagsMap& map)
+void ExifToolListView::setMetadata(const ExifToolParser::ExifToolData& map)
 {
-    for (ExifToolParser::TagsMap::const_iterator it = map.constBegin() ;
+    for (ExifToolParser::ExifToolData::const_iterator it = map.constBegin() ;
          it != map.constEnd() ; ++it)
     {
         QString grp                   = it.key().section(QLatin1Char('.'), 0, 0)

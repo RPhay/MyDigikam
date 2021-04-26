@@ -60,8 +60,8 @@ int main(int argc, char** argv)
     }
 
     QString path                    = parser->currentParsedPath();
-    ExifToolParser::TagsMap parsed  = parser->currentParsedTags();
-    ExifToolParser::TagsMap ignored = parser->currentIgnoredTags();
+    ExifToolParser::ExifToolData parsed  = parser->currentParsedTags();
+    ExifToolParser::ExifToolData ignored = parser->currentIgnoredTags();
 
     qDebug().noquote() << "Source File:" << path;
 
@@ -87,7 +87,7 @@ int main(int argc, char** argv)
            << sep
            << endl;
 
-    for (ExifToolParser::TagsMap::const_iterator it = parsed.constBegin() ;
+    for (ExifToolParser::ExifToolData::const_iterator it = parsed.constBegin() ;
          it != parsed.constEnd() ; ++it)
     {
         QString tagNameExifTool = it.value()[0].toString();
