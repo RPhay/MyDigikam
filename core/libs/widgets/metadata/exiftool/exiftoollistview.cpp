@@ -68,7 +68,6 @@ ExifToolListView::ExifToolListView(QWidget* const parent)
     header()->setSectionResizeMode(QHeaderView::Stretch);
 
     d->parser = new ExifToolParser(this);
-    d->parser->setTranslations(false);
 
     connect(this, SIGNAL(itemClicked(QTreeWidgetItem*,int)),
             this, SLOT(slotSelectionChanged(QTreeWidgetItem*,int)));

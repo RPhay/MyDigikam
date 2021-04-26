@@ -41,7 +41,6 @@
 
 #include "metaenginesettings.h"
 #include "exiftoolprocess.h"
-#include "exiftooltranslator.h"
 #include "digikam_config.h"
 #include "digikam_debug.h"
 
@@ -53,15 +52,13 @@ class Q_DECL_HIDDEN ExifToolParser::Private
 public:
 
     explicit Private()
-      : translate(true),
-        proc     (nullptr),
+      : proc     (nullptr),
         loopLoad (nullptr),
         loopChunk(nullptr),
         loopApply(nullptr)
     {
     }
 
-    bool                           translate;
     ExifToolProcess*               proc;
     QEventLoop*                    loopLoad;
     QEventLoop*                    loopChunk;
@@ -77,10 +74,6 @@ ExifToolParser::ExifToolParser(QObject* const parent)
     : QObject(parent),
       d      (new Private)
 {
-    // Post creation of hash tables for tag translations
-
-    ExifToolTranslator::instance();
-
     // Create ExifTool parser instance.
 
     d->proc      = new ExifToolProcess(this);
@@ -120,11 +113,6 @@ ExifToolParser::~ExifToolParser()
     }
 
     delete d;
-}
-
-void ExifToolParser::setTranslations(bool b)
-{
-    d->translate = b;
 }
 
 QString ExifToolParser::currentParsedPath() const
@@ -408,109 +396,17 @@ void ExifToolParser::slotCmdCompleted(int cmdAction,
 /*
                 qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool json property:" << tagNameExifTool << data;
 */
-                if (d->translate)
+
+                if (data.startsWith(QLatin1String("base64:")))
                 {
-                    // Translate ExifTool tag names to Exiv2 scheme
-
-                    if (ExifToolTranslator::instance()->isIgnoredGroup(tagNameExifTool))
-                    {
-                        if (!tagNameExifTool.startsWith(QLatin1String("...")))
-                        {
-                            d->ignoredMap.insert(tagNameExifTool, QVariantList() << QString() << data << tagType);
-                        }
-
-                        continue;
-                    }
-
-                    // Tags to translate To Exiv2 naming scheme.
-
-                    QString tagNameExiv2 = ExifToolTranslator::instance()->translateToExiv2(tagNameExifTool);
-                    QVariant var;
-
-                    if      (tagNameExiv2.startsWith(QLatin1String("Exif.")))
-                    {
-                        if      (tagType == QLatin1String("string"))
-                        {
-                            var = data;
-                        }
-                        else if (
-                                 (tagType == QLatin1String("int8u"))  ||
-                                 (tagType == QLatin1String("int16u")) ||
-                                 (tagType == QLatin1String("int32u")) ||
-                                 (tagType == QLatin1String("int8s"))  ||
-                                 (tagType == QLatin1String("int16s")) ||
-                                 (tagType == QLatin1String("int32s"))
-                                )
-                        {
-                            var = data.toLongLong();
-                        }
-                        else if (tagType == QLatin1String("undef"))
-                        {
-                            if (
-                                (tagNameExiv2 == QLatin1String("Exif.Photo.ComponentsConfiguration")) ||
-                                (tagNameExiv2 == QLatin1String("Exif.Photo.SceneType"))               ||
-                                (tagNameExiv2 == QLatin1String("Exif.Photo.FileSource"))
-                               )
-                            {
-                                QByteArray conv;
-                                QStringList vals = data.split(QLatin1Char(' '));
-
-                                foreach (const QString& v, vals)
-                                {
-                                    conv.append(QString::fromLatin1("0x%1").arg(v.toInt(), 2, 16).toLatin1());
-                                }
-
-                                var = QByteArray::fromHex(conv);
-                            }
-                            else
-                            {
-                                var = data.toLatin1();
-                            }
-                        }
-                        else if (
-                                 (tagType == QLatin1String("double"))      ||
-                                 (tagType == QLatin1String("float"))       ||
-                                 (tagType == QLatin1String("rational64s")) ||
-                                 (tagType == QLatin1String("rational64u"))
-                                )
-                        {
-                            var = data.toDouble();
-                        }
-                        else
-                        {
-                            d->ignoredMap.insert(tagNameExiv2, QVariantList() << tagNameExifTool << data << tagType);
-                        }
-                    }
-                    else if (tagNameExiv2.startsWith(QLatin1String("Iptc.")))
-                    {
-                        var = data;
-                    }
-                    else if (tagNameExiv2.startsWith(QLatin1String("Xmp.")))
-                    {
-                        var = data;
-                    }
-
-                    d->parsedMap.insert(tagNameExiv2, QVariantList()
-                                                         << tagNameExifTool // ExifTool tag name.
-                                                         << var             // ExifTool data as variant.
-                                                         << tagType         // ExifTool data type.
-                                                         << desc);          // ExifTool tag description.
+                    data = i18n("binary data...");
                 }
-                else
-                {
-                    // Do not translate ExifTool tag names to Exiv2 scheme.
 
-                    if (data.startsWith(QLatin1String("base64:")))
-                    {
-                        data = i18n("binary data...");
-                    }
-
-                    d->parsedMap.insert(tagNameExifTool, QVariantList()
-                                                             << QString()   // Empty Exiv2 tag name.
-                                                             << data        // ExifTool Raw data as string.
-                                                             << tagType     // ExifTool data type.
-                                                             << desc);      // ExifTool tag description.
-                }
+                d->parsedMap.insert(tagNameExifTool, QVariantList()
+                                                         << QString()   // Empty Exiv2 tag name.
+                                                         << data        // ExifTool Raw data as string.
+                                                         << tagType     // ExifTool data type.
+                                                         << desc);      // ExifTool tag description.
             }
 
             break;

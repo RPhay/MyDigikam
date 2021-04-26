@@ -74,12 +74,6 @@ set(libdmetadata_SRCS
 
     ${CMAKE_CURRENT_SOURCE_DIR}/exiftool/exiftoolparser.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/exiftool/exiftoolprocess.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/exiftool/exiftooltranslator.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/exiftool/exiftooltranslator_p.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/exiftool/exiftooltranslator_exif.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/exiftool/exiftooltranslator_iptc.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/exiftool/exiftooltranslator_xmp.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/exiftool/exiftooltranslator_ignoredgroups.cpp
 )
 
 include_directories(
