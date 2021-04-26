@@ -147,7 +147,7 @@ bool ExifToolParser::loadChunk(const QString& path)
         return false;
     }
 
-    // Build command (get metadata as JSON array)
+    // Build command (get metadata as EXV conatiner for Exiv2)
 
     QByteArrayList cmdArgs;
     cmdArgs << QByteArray("-TagsFromFile");
