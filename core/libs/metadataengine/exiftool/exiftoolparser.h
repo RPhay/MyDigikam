@@ -65,10 +65,13 @@ public:
      *  -   ExifTool Tag description    (QString).
      *
      * With ExifTool tag name as key to apply changes on map of tags:
-     *  -   Exiv2 tag name              (QString - empty).
      *  -   ExifTool Tag value          (QString).
-     *  -   ExifTool Tag type           (QString - empty).
-     *  -   ExifTool Tag description    (QString - empty).
+     *
+     * With File name as key to load chunks:
+     *  -   Exif as base64              (QString).
+     *  -   Iptc as base64              (QString).
+     *  -   Xmp as string               (QString).
+     *  -   Comment as string           (QString).
      */
     typedef QHash<QString, QVariantList> TagsMap;
 
@@ -78,9 +81,14 @@ public:
     ~ExifToolParser();
 
     /**
-     * Load metadata with ExifTool from a file.
+     * Load All metadata with ExifTool from a file.
      */
     bool load(const QString& path);
+
+    /**
+     * Load Exif, Iptc, and Xmp chunk as bytearray from a file.
+     */
+    bool loadChunk(const QString& path);
 
     /**
      * Apply tag changes to a file with ExifTool.
@@ -121,6 +129,11 @@ private:
     bool       prepareProcess();
     QByteArray filePathEncoding(const QFileInfo& fi) const;
     void       manageEventLoop(int cmdAction);
+
+    /**
+     * Returns a string for an action.
+     */
+    QString actionString(int cmdAction) const;
 
 private:
 

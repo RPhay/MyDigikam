@@ -49,8 +49,9 @@ public:
 
     enum Action
     {
-        LOAD_METADATA = 0,
-        APPLY_CHANGES,
+        LOAD_METADATA = 0,          ///< Load all metadata with ExifTool.
+        LOAD_CHUNKS,                ///< Load Exif, Iptc, and Xmp chunks as bytearray for MetaEngine.
+        APPLY_CHANGES,              ///< Apply tag changes with ExifTool.
         NO_ACTION
     };
 
@@ -101,52 +102,52 @@ public:
     /**
      * Return true if ExifToolProcess is running (process state == Running)
      */
-    bool                   isRunning()      const;
+    bool                   isRunning()                  const;
 
     /**
      * Return true if a command is running
      */
-    bool                   isBusy()         const;
+    bool                   isBusy()                     const;
 
     /**
      * Returns the native process identifier for the running process, if available.
      * If no process is currently running, 0 is returned.
      */
-    qint64                 processId()      const;
+    qint64                 processId()                  const;
 
     /**
      * Returns the current state of the process.
      */
-    QProcess::ProcessState state()          const;
+    QProcess::ProcessState state()                      const;
 
     /**
      * Returns the type of error that occurred last.
      */
-    QProcess::ProcessError error()          const;
+    QProcess::ProcessError error()                      const;
 
     /**
-     * Returns an error message
+     * Returns an error message.
      */
-    QString                errorString()    const;
+    QString                errorString()                const;
 
     /**
      * Returns the exit status of the last process that finished.
      */
-    QProcess::ExitStatus   exitStatus()     const;
+    QProcess::ExitStatus   exitStatus()                 const;
 
-    int                    exitCode()       const;
+    int                    exitCode()                   const;
 
     /**
      * Blocks until the process has started and the started() signal has been emitted,
      * or until msecs milliseconds have passed.
      */
-    bool waitForStarted(int msecs = 30000)  const;
+    bool waitForStarted(int msecs = 30000)              const;
 
     /**
      * Blocks until the process has finished and the finished() signal has been emitted,
      * or until msecs milliseconds have passed.
      */
-    bool waitForFinished(int msecs = 30000) const;
+    bool waitForFinished(int msecs = 30000)             const;
 
     /**
      * Send a command to exiftool process

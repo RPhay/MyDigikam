@@ -40,39 +40,6 @@
 
 using namespace Digikam;
 
-void s_printMetadataMap(const MetaEngine::MetaDataMap& map)
-{
-    QString output;
-    QTextStream stream(&output);
-    stream << endl;
-
-    qDebug() << "Found" << map.size() << "tags:" << endl;
-
-    for (MetaEngine::MetaDataMap::const_iterator it = map.constBegin() ;
-         it != map.constEnd() ; ++it)
-    {
-        QString key     = it.key();
-        QString value   = it.value();
-
-        QString tagName = key.simplified();
-        tagName.append(QString().fill(QLatin1Char(' '), 48 - tagName.length()));
-
-        QString tagVal  = value.simplified();
-
-        if (tagVal.length() > 48)
-        {
-            tagVal.truncate(48);
-            tagVal.append(QString::fromLatin1("... (%1 bytes)").arg(value.length()));
-        }
-
-        stream << tagName << " : " << tagVal << endl;
-    }
-
-    qDebug().noquote() << output;
-}
-
-// -----------------------------------------------------------------------------------------
-
 int main(int argc, char** argv)
 {
     QCoreApplication app(argc, argv);
@@ -93,84 +60,66 @@ int main(int argc, char** argv)
 
     // Read metadata from the file. Start ExifToolParser
 
-    if (!parser->load(QString::fromUtf8(argv[1])))
+    if (!parser->loadChunk(QString::fromUtf8(argv[1])))
     {
+        qWarning() << "Metadata chunks cannot be loaded";
         return -1;
     }
 
-    QString path                    = parser->currentParsedPath();
-    ExifToolParser::TagsMap parsed  = parser->currentParsedTags();
-    ExifToolParser::TagsMap ignored = parser->currentIgnoredTags();
 
-    qDebug().noquote() << "Source File:" << path;
+    ExifToolParser::TagsMap chunks       = parser->currentParsedTags();
+
+    qDebug() << "Metadata chunks loaded" ;
+
+    ExifToolParser::TagsMap::iterator it = chunks.find(QString::fromUtf8(argv[1]));
+
+    if (it == chunks.end())
+    {
+        qWarning() << "Metadata chunks is empty";
+        return -1;
+    }
+
+    QVariantList varLst = it.value();
 
     MetaEngine meta;
 
-    for (ExifToolParser::TagsMap::const_iterator it = parsed.constBegin() ;
-         it != parsed.constEnd() ; ++it)
+    QByteArray exif = QByteArray::fromBase64(varLst[0].toString().toLatin1());
+
+    if (!exif.isEmpty())
     {
-        QString  tagNameExifTool = it.value()[0].toString();
-        QString  tagType         = it.value()[2].toString();
-        QVariant var             = it.value()[1];
-        QString  tagNameExiv2    = it.key();
+        qDebug() << "Exif chunks size" << exif.size();
+        meta.loadFromData(exif);
+    }
+/*
+    QFile ef(QLatin1String("exif.dat"));
+    ef.open(QIODevice::WriteOnly);
+    ef.write(exif);
+    ef.close();
+*/
+    QByteArray iptc = QByteArray::fromBase64(varLst[1].toString().toLatin1());
 
-        if      (tagNameExiv2.startsWith(QLatin1String("Exif.")))
-        {
-            if (tagType == QLatin1String("undef"))
-            {
-                // Print ExiTool tags with undefined value type to hack.
-
-                qDebug().noquote() << QString::fromLatin1("%1 %2 %3")
-                                        .arg(tagNameExifTool, -60)
-                                        .arg(tagType)
-                                        .arg(tagNameExiv2, -45)
-                                   << var;
-            }
-
-            meta.setExifTagVariant(tagNameExiv2.toLatin1().constData(), var);
-        }
-        else if (tagNameExiv2.startsWith(QLatin1String("Iptc.")))
-        {
-            meta.setIptcTagString(tagNameExiv2.toLatin1().constData(), var.toString());
-        }
-        else if (tagNameExiv2.startsWith(QLatin1String("Xmp.")))
-        {
-            meta.setXmpTagString(tagNameExiv2.toLatin1().constData(), var.toString());
-        }
+    if (!iptc.isEmpty())
+    {
+        qDebug() << "Iptc chunks size" << iptc.size();
+        meta.setIptc(iptc);
     }
 
-    qDebug().noquote() << QString::fromUtf8("-- Exif metadata from %1 --").arg(meta.getFilePath());
+    QByteArray xmp = varLst[2].toString().toLatin1();
 
-    MetaEngine::MetaDataMap map = meta.getExifTagsDataList();
-    s_printMetadataMap(map);
-
-    qDebug().noquote() << QString::fromUtf8("-- Iptc metadata from %1 --").arg(meta.getFilePath());
-
-    map = meta.getIptcTagsDataList();
-    s_printMetadataMap(map);
-
-    if (meta.supportXmp())
+    if (!xmp.isEmpty())
     {
-        qDebug().noquote() << QString::fromUtf8("-- Xmp metadata from %1 --").arg(meta.getFilePath());
-        map = meta.getXmpTagsDataList();
-        s_printMetadataMap(map);
-    }
-    else
-    {
-        qWarning() << "Exiv2 has no XMP support...";
+        qDebug() << "Xmp chunks size" << xmp.size();
+        meta.setXmp(xmp);
     }
 
-    qDebug().noquote() << "-- Ignored ExifTool Tags --";
+    QByteArray comment = varLst[3].toString().toLatin1();
 
-    QStringList itagsLst = ignored.keys();
-    itagsLst.sort();
-
-    foreach (const QString& tag, itagsLst)
+    if (!comment.isEmpty())
     {
-        qDebug().noquote() << "   " << tag;
-    }
+        qDebug() << "Comment chunks size" << comment.size();
 
-    // Write all metadata to an empty JPG file.
+        meta.setComments(comment);
+    }
 
     DImg file(1, 1, false);
     file.setMetadata(meta.data());

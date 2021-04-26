@@ -519,8 +519,7 @@ void ExifToolProcess::readOutput(const QProcess::ProcessChannel channel)
     }
     else
     {
-        qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifToolProcess::readOutput(): ExifTool command completed with elapsed time:"
-                                        << d->execTimer.elapsed();
+        qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifToolProcess::readOutput(): ExifTool command completed";
 
         emit signalCmdCompleted(d->cmdAction,
                                 d->execTimer.elapsed(),
