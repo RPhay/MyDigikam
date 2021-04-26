@@ -659,7 +659,7 @@ void DigikamApp::slotImageSelected(const ItemInfoList& selection, const ItemInfo
 
         case 1:
         {
-            if (selectionWithoutGrouped.count() > 0)
+            if (!selectionWithoutGrouped.isEmpty())
             {
                 slotSetCheckedExifOrientationAction(selectionWithoutGrouped.first());
             }
@@ -676,7 +676,7 @@ void DigikamApp::slotImageSelected(const ItemInfoList& selection, const ItemInfo
             {
                 int indexWithoutGrouped = 0;
 
-                if (selectionWithoutGrouped.count() > 0)
+                if (!selectionWithoutGrouped.isEmpty())
                 {
                     indexWithoutGrouped = d->view->allInfo(false).indexOf(selectionWithoutGrouped.first()) + 1;
                 }
