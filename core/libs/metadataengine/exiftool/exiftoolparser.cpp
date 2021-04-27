@@ -372,21 +372,9 @@ void ExifToolParser::slotFinished(int cmdAction, int exitCode, QProcess::ExitSta
 
 void ExifToolParser::slotMetaEngineSettingsChanged()
 {
-    d->proc->setProgram(
-        MetaEngineSettings::instance()->settings().defaultExifToolSearchPaths().first() +
-        QLatin1Char('/') +
+    d->proc->setProgram(MetaEngineSettings::instance()->settings().exifToolPath);
 
-#ifdef Q_OS_WIN
-
-        QLatin1String("exiftool.exe")
-
-#else
-
-        QLatin1String("exiftool")
-
-#endif
-
-    );
+    qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool path:" << d->proc->program();
 }
 
 } // namespace Digikam
