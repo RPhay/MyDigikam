@@ -3,10 +3,10 @@
  * This file is a part of digiKam project
  * https://www.digikam.org
  *
- * Date        : 2013-11-28
- * Description : ExifTool JSON parser
+ * Date        : 2020-11-28
+ * Description : ExifTool process stream parser - private container.
  *
- * Copyright (C) 2013-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2020-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -67,14 +67,14 @@ public:
 
 public:
 
-    ExifToolProcess*               proc;
-    QEventLoop*                    loopLoad;
-    QEventLoop*                    loopChunk;
-    QEventLoop*                    loopApply;
-    QString                        parsedPath;
-    ExifToolData                   parsedData;
+    ExifToolProcess*               proc;            ///< ExifTool process instance.
+    QEventLoop*                    loopLoad;        ///< Event loop for the load() method.
+    QEventLoop*                    loopChunk;       ///< Event loop for the loadChunk() method.
+    QEventLoop*                    loopApply;       ///< Event loop for the applyChanges() method.
+    QString                        currentPath;     ///< Current file path processed by ExifTool.
+    ExifToolData                   exifToolData;    ///< Current ExifTool data (input or output depending of the called method.
 
-    QList<QMetaObject::Connection> hdls;
+    QList<QMetaObject::Connection> hdls;            ///< Handles of signals/slots connections used to control streams with ExifTool process.
 };
 
 } // namespace Digikam

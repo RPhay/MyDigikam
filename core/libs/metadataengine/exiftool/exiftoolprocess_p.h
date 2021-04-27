@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2021-02-18
- * Description : Qt5 and Qt6 interface for exiftool.
+ * Description : Qt5 and Qt6 interface for exiftool - private container.
  *               Based on ZExifTool Qt interface published at 18 Feb 2021
  *               https://github.com/philvl/ZExifTool
  *

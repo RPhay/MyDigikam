@@ -3,10 +3,10 @@
  * This file is a part of digiKam project
  * https://www.digikam.org
  *
- * Date        : 2013-11-28
- * Description : ExifTool JSON parser
+ * Date        : 2020-11-28
+ * Description : ExifTool process stream parser.
  *
- * Copyright (C) 2013-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2020-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -73,12 +73,12 @@ ExifToolParser::~ExifToolParser()
 
 QString ExifToolParser::currentPath() const
 {
-    return d->parsedPath;
+    return d->currentPath;
 }
 
 ExifToolParser::ExifToolData ExifToolParser::currentData() const
 {
-    return d->parsedData;
+    return d->exifToolData;
 }
 
 QString ExifToolParser::currentErrorString() const
@@ -109,6 +109,7 @@ bool ExifToolParser::load(const QString& path)
     cmdArgs << QByteArray("-n");
     cmdArgs << QByteArray("-l");
     cmdArgs << d->filePathEncoding(fileInfo);
+    d->currentPath = fileInfo.path();
 
     // Send command to ExifToolProcess
 
@@ -142,7 +143,7 @@ bool ExifToolParser::loadChunk(const QString& path)
         return false;
     }
 
-    // Build command (get metadata as EXV conatiner for Exiv2)
+    // Build command (get metadata as EXV container for Exiv2)
 
     QByteArrayList cmdArgs;
     cmdArgs << QByteArray("-TagsFromFile");
@@ -150,6 +151,7 @@ bool ExifToolParser::loadChunk(const QString& path)
     cmdArgs << QByteArray("-all:all");
     cmdArgs << QByteArray("-o");
     cmdArgs << QByteArray("-.exv");
+    d->currentPath = fileInfo.path();
 
     // Send command to ExifToolProcess
 
@@ -204,6 +206,7 @@ bool ExifToolParser::applyChanges(const QString& path, const ExifToolData& newTa
     }
 
     cmdArgs << d->filePathEncoding(fileInfo);
+    d->currentPath = fileInfo.path();
 
     // Send command to ExifToolProcess
 
@@ -295,7 +298,7 @@ void ExifToolParser::slotCmdCompleted(int cmdAction,
                 }
                 else if (sections[0] == QLatin1String("SourceFile"))
                 {
-                    d->parsedPath = it.value().toString();
+                    d->currentPath = it.value().toString();
                     continue;
                 }
                 else
@@ -315,7 +318,7 @@ void ExifToolParser::slotCmdCompleted(int cmdAction,
                     data = i18n("binary data...");
                 }
 
-                d->parsedData.insert(tagNameExifTool, QVariantList()
+                d->exifToolData.insert(tagNameExifTool, QVariantList()
                                                          << data        // ExifTool Raw data as string.
                                                          << tagType     // ExifTool data type.
                                                          << desc);      // ExifTool tag description.
@@ -328,12 +331,13 @@ void ExifToolParser::slotCmdCompleted(int cmdAction,
         {
             qCDebug(DIGIKAM_METAENGINE_LOG) << "EXV" << stdOut.size();
 
-            d->parsedData.insert(QLatin1String("EXV"), QVariantList() << stdOut);     // Exv chunk as bytearray.
+            d->exifToolData.insert(QLatin1String("EXV"), QVariantList() << stdOut);     // Exv chunk as bytearray.
             break;
         }
 
         case ExifToolProcess::APPLY_CHANGES:
         {
+            // TODO: check ExifTool feedback.
             break;
         }
 
@@ -346,7 +350,7 @@ void ExifToolParser::slotCmdCompleted(int cmdAction,
     d->manageEventLoop(cmdAction);
 
     qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool parsed command for action" << d->actionString(cmdAction);
-    qCDebug(DIGIKAM_METAENGINE_LOG) << d->parsedData.count() << "properties decoded";
+    qCDebug(DIGIKAM_METAENGINE_LOG) << d->exifToolData.count() << "properties decoded";
 }
 
 void ExifToolParser::slotErrorOccurred(int cmdAction, QProcess::ProcessError error)
