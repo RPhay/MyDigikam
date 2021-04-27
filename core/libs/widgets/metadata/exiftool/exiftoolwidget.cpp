@@ -180,6 +180,13 @@ void ExifToolWidget::loadFromUrl(const QUrl& url)
 
     if (ret)
     {
+        SearchTextSettings settings = d->searchBar->searchTextSettings();
+
+        if (!settings.text.isEmpty())
+        {
+            d->view->slotSearchTextChanged(settings);
+        }
+
         setCurrentIndex(Private::MetadataView);
         d->toolBtn->setEnabled(true);
     }
