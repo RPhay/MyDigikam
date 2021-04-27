@@ -270,14 +270,6 @@ echo -e "---------- Copy Solid binary\n"
 cp /usr/bin/qdbus                   ./usr/share/digikam/utils
 sed -i "/Exec=/c\Exec=digikam-camera downloadFromUdi %i" ./usr/share/solid/actions/digikam-opencamera.desktop
 
-echo -e "---------- Copy ExifTool binary\n"
-
-EXIFTOOL_VERSION="12.25"
-wget https://exiftool.org/Image-ExifTool-$EXIFTOOL_VERSION.tar.gz -P ./usr/bin
-tar -xf ./usr/bin/Image-ExifTool-$EXIFTOOL_VERSION.tar.gz -C ./usr/bin
-mv ./usr/bin/Image-ExifTool-$EXIFTOOL_VERSION ./usr/bin/exiftool
-rm -f ./usr/bin/exiftool-$EXIFTOOL_VERSION.tar.gz
-
 #################################################################################################
 
 echo -e "---------- Scan dependencies recurssively\n"
