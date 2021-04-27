@@ -78,12 +78,14 @@ public:
     ~ExifToolParser();
 
     /**
-     * Load All metadata with ExifTool from a file.
+     * Load all metadata with ExifTool from a file.
+     * Use currentData() to get the ExifTool map.
      */
     bool load(const QString& path);
 
     /**
-     * Load Exif, Iptc, and Xmp chunk as bytearray from a file.
+     * Load Exif, Iptc, and Xmp chunk as Exiv2 EXV bytearray from a file.
+     * Use currentData() to get the container.
      */
     bool loadChunk(const QString& path);
 
