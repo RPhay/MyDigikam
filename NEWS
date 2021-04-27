@@ -176,4 +176,5 @@ BUGFIXES:
 158 ==> 376930 - Cannot write metadata to TIFF files.
 159 ==> 214636 - updating tag to XMP/IPTC bug.
 160 ==> 435803 - digiKam Not Responding when moving from Albums between Similarity and Search options.
-161 ==> 
+161 ==> 434072 - Crash at start of digiKam.
+162 ==> 
