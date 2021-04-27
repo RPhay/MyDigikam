@@ -377,4 +377,11 @@ void ExifToolParser::slotMetaEngineSettingsChanged()
     qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool path:" << d->proc->program();
 }
 
+void ExifToolParser::setOutputStream(int cmdAction,
+                                     const QByteArray& cmdOutputChannel,
+                                     const QByteArray& cmdErrorChannel)
+{
+    slotCmdCompleted(cmdAction, 0, cmdOutputChannel, cmdErrorChannel);
+}
+
 } // namespace Digikam

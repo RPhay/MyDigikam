@@ -98,15 +98,17 @@ public:
     ExifToolData currentData()        const;
     QString      currentErrorString() const;
 
-public Q_SLOTS:
+    /// Public method for unit test purpose about ExifTool stream parsing.
+    void setOutputStream(int cmdAction,
+                         const QByteArray& cmdOutputChannel,
+                         const QByteArray& cmdErrorChannel);
 
-    /// Public slot for unit test purpose about ExifTool stream decoding and translation.
+private Q_SLOTS:
+
     void slotCmdCompleted(int cmdAction,
                           int execTime,
                           const QByteArray& cmdOutputChannel,
                           const QByteArray& cmdErrorChannel);
-
-private Q_SLOTS:
 
     void slotErrorOccurred(int cmdAction, QProcess::ProcessError error);
 

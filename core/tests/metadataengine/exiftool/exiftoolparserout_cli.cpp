@@ -33,6 +33,7 @@
 // Local includes
 
 #include "exiftoolparser.h"
+#include "exiftoolprocess.h"
 
 using namespace Digikam;
 
@@ -59,10 +60,9 @@ int main(int argc, char** argv)
 
     ExifToolParser* const parser = new ExifToolParser();
 
-    parser->slotCmdCompleted(0,                 // Command ID
-                             0,                 // Elapsed time
-                             stdout,            // Output channel
-                             QByteArray());     // Error channel
+    parser->setOutputStream(ExifToolProcess::LOAD_METADATA,     // Command action ID
+                            stdout,                             // Output channel
+                            QByteArray());                      // Error channel
 
     return 0;
 }
