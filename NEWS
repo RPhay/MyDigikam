@@ -177,4 +177,5 @@ BUGFIXES:
 159 ==> 214636 - updating tag to XMP/IPTC bug.
 160 ==> 435803 - digiKam Not Responding when moving from Albums between Similarity and Search options.
 161 ==> 434072 - Crash at start of digiKam.
-162 ==> 
+162 ==> 436187 - Option to automatically delete images from card after import.
+163 ==> 
