@@ -70,7 +70,7 @@ int main(int argc, char** argv)
     QTextStream stream(&output);
     QStringList tagsLst;
 
-    const int section1 = -45;   // ExifTool Tag name simplified
+    const int section1 = -60;   // ExifTool Tag name simplified
     const int section2 = -30;   // Tag value as string.
     QString sep        = QString().fill(QLatin1Char('-'), qAbs(section1 + section2) + 4);
 
@@ -87,9 +87,7 @@ int main(int argc, char** argv)
     for (ExifToolParser::ExifToolData::const_iterator it = parsed.constBegin() ;
          it != parsed.constEnd() ; ++it)
     {
-        QString tagNameExifTool = it.key().section(QLatin1Char('.'), 0, 0) +
-                                  QLatin1Char('.')                         +
-                                  it.key().section(QLatin1Char('.'), -1);
+        QString tagNameExifTool = it.key();
         QString tagType         = it.value()[1].toString();
         QString data            = it.value()[0].toString();
 
