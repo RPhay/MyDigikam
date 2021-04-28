@@ -32,6 +32,7 @@
 // Qt includes
 
 #include <QFile>
+#include <QFileInfo>
 #include <QElapsedTimer>
 #include <QList>
 #include <QByteArray>
