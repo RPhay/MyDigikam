@@ -170,9 +170,17 @@ SetupMetadata::SetupMetadata(QWidget* const parent)
 
     QWidget* const exifToolPanel      = new QWidget(d->tab);
     QVBoxLayout* const exifToolLayout = new QVBoxLayout;
-    QLabel* const exifToolBinLabel    = new QLabel(i18nc("@info", "Here you can configure location where ExifTool binary is located. "
-                                                                  "Application will try to find this binary automatically if they are "
-                                                                  "already installed on your computer."),
+    QLabel* const exifToolBinLabel    = new QLabel(i18nc("@info",
+                                                   "ExifTool is an open-source software program for reading, writing, "
+                                                   "and manipulating multimedia files. It is platform independent "
+                                                   "available as a command-line application. ExifTool is commonly "
+                                                   "incorporated into different types of digital workflows and supports "
+                                                   "many types of metadata including Exif, IPTC, XMP, JFIF, GeoTIFF, ICC Profile, "
+                                                   "Photoshop IRB, as well as the manufacturer-specific metadata formats of "
+                                                   "many digital cameras.\n\n"
+                                                   "Here you can configure location where ExifTool binary is located. "
+                                                   "Application will try to find this binary automatically if they are "
+                                                   "already installed on your computer."),
                                                    exifToolPanel);
     exifToolBinLabel->setWordWrap(true);
 
