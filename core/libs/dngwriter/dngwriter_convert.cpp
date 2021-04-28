@@ -897,7 +897,13 @@ int DNGWriter::convert()
                 exif->fLensID.Set_ASCII(QString::fromUtf8("%1").arg(val).toLatin1().constData());
             }
 
-            str = meta->getExifTagString("Exif.Sony2.LensID");
+            str = meta->getExifTagString("Exif.Photo.LensModel");
+
+            if (str.isEmpty())
+            {
+                str = meta->getExifTagString("Exif.Sony2.LensID");
+            }
+
             if (!str.isEmpty()) exif->fLensName.Set_ASCII(str.trimmed().toLatin1().constData());
 
             // -------------------------------------------
