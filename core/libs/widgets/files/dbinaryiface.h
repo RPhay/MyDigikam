@@ -84,6 +84,7 @@ public:
 
     virtual QString     path(const QString& dir)    const;
     virtual QString     path()                      const { return path(m_pathDir);                 }
+    virtual QString     directory()                 const { return m_pathDir;                       }
     virtual QString     baseName()                  const { return m_binaryBaseName;                }
     virtual QString     minimalVersion()            const { return m_minimalVersion;                }
 

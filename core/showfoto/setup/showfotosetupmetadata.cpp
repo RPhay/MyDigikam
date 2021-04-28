@@ -224,7 +224,7 @@ void SetupMetadata::applySettings()
 
     set.exifRotate         = d->exifRotateBox->isChecked();
     set.exifSetOrientation = d->exifSetOrientationBox->isChecked();
-    set.exifToolPath       = d->exifToolBin.path();
+    set.exifToolPath       = d->exifToolBin.directory();
     mSettings->setSettings(set);
 
     d->tagsCfgPanel->applySettings();

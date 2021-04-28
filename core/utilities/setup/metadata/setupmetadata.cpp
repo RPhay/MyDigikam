@@ -803,7 +803,7 @@ void SetupMetadata::applySettings()
     set.sidecarExtensions.removeAll(QLatin1String("xmp"));
     set.sidecarExtensions.removeDuplicates();
 
-    set.exifToolPath          = d->exifToolBin.path();
+    set.exifToolPath          = d->exifToolBin.directory();
 
     mSettings->setSettings(set);
 
