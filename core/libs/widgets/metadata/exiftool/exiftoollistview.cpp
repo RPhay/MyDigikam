@@ -27,6 +27,7 @@
 
 #include <QHeaderView>
 #include <QApplication>
+#include <QStringList>
 #include <QStyle>
 
 // Local includes
@@ -49,6 +50,7 @@ public:
     }
 
     QString         selectedItemKey;
+    QStringList     simplifiedTagsList;
 
     ExifToolParser* parser;
 };
@@ -104,6 +106,9 @@ QString ExifToolListView::errorString() const
 
 void ExifToolListView::setMetadata(const ExifToolParser::ExifToolData& map)
 {
+    d->simplifiedTagsList.clear();
+    QString simplifiedTag;
+
     for (ExifToolParser::ExifToolData::const_iterator it = map.constBegin() ;
          it != map.constEnd() ; ++it)
     {
@@ -125,7 +130,13 @@ void ExifToolListView::setMetadata(const ExifToolParser::ExifToolData& map)
             igroup = new ExifToolListViewGroup(this, grp);
         }
 
-        new ExifToolListViewItem(igroup, key, value, desc);
+        simplifiedTag = grp + QLatin1Char('.') + it.key().section(QLatin1Char('.'), -1);
+
+        if (!d->simplifiedTagsList.contains(simplifiedTag))
+        {
+            d->simplifiedTagsList.append(simplifiedTag);
+            new ExifToolListViewItem(igroup, key, value, desc);
+        }
     }
 
     setCurrentItemByKey(d->selectedItemKey);
