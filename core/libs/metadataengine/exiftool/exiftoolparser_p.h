@@ -71,6 +71,8 @@ public:
     QEventLoop*                    loopLoad;        ///< Event loop for the load() method.
     QEventLoop*                    loopChunk;       ///< Event loop for the loadChunk() method.
     QEventLoop*                    loopApply;       ///< Event loop for the applyChanges() method.
+    QEventLoop*                    loopReadF;       ///< Event loop for the readableFormats() method.
+    QEventLoop*                    loopWriteF;      ///< Event loop for the writableFormats() method.
     QString                        currentPath;     ///< Current file path processed by ExifTool.
     ExifToolData                   exifToolData;    ///< Current ExifTool data (input or output depending of the called method.
 

@@ -78,6 +78,7 @@ void ExifToolProcess::setProgram(const QString& etExePath, const QString& perlEx
     if (d->process->state() != QProcess::NotRunning)
     {
         qCWarning(DIGIKAM_METAENGINE_LOG) << "ExifToolProcess::setProgram(): ExifTool is already running";
+
         return;
     }
 
@@ -114,6 +115,7 @@ void ExifToolProcess::start()
     if (d->process->state() != QProcess::NotRunning)
     {
         qCWarning(DIGIKAM_METAENGINE_LOG) << "ExifToolProcess::start(): ExifTool is already running";
+
         return;
     }
 
@@ -260,6 +262,7 @@ int ExifToolProcess::command(const QByteArrayList& args, Action ac)
         args.isEmpty())
     {
         qCWarning(DIGIKAM_METAENGINE_LOG) << "ExifToolProcess::command(): cannot process command with ExifTool" << args;
+
         return 0;
     }
 

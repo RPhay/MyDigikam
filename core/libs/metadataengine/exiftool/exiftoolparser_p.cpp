@@ -27,10 +27,12 @@ namespace Digikam
 {
 
 ExifToolParser::Private::Private()
-    : proc     (nullptr),
-      loopLoad (nullptr),
-      loopChunk(nullptr),
-      loopApply(nullptr)
+    : proc      (nullptr),
+      loopLoad  (nullptr),
+      loopChunk (nullptr),
+      loopApply (nullptr),
+      loopReadF (nullptr),
+      loopWriteF(nullptr)
 {
 }
 
@@ -90,6 +92,16 @@ QString ExifToolParser::Private::actionString(int cmdAction) const
             return QLatin1String("Apply Changes");
         }
 
+        case ExifToolProcess::READ_FORMATS:
+        {
+            return QLatin1String("Readable Formats");
+        }
+
+        case ExifToolProcess::WRITE_FORMATS:
+        {
+            return QLatin1String("Writable Formats");
+        }
+
         default: // ExifToolProcess::NO_ACTION
         {
             break;
@@ -118,6 +130,18 @@ void ExifToolParser::Private::manageEventLoop(int cmdAction)
         case ExifToolProcess::APPLY_CHANGES:
         {
             loopApply->quit();
+            break;
+        }
+
+        case ExifToolProcess::READ_FORMATS:
+        {
+            loopReadF->quit();
+            break;
+        }
+
+        case ExifToolProcess::WRITE_FORMATS:
+        {
+            loopWriteF->quit();
             break;
         }
 

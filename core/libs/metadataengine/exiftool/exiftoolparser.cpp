@@ -227,6 +227,70 @@ bool ExifToolParser::applyChanges(const QString& path, const ExifToolData& newTa
     return true;
 }
 
+bool ExifToolParser::readableFormats()
+{
+    if (!d->prepareProcess())
+    {
+        return false;
+    }
+
+    // Build command (set metadata)
+
+    QByteArrayList cmdArgs;
+    cmdArgs << QByteArray("-listr");
+
+    d->currentPath.clear();
+
+    // Send command to ExifToolProcess
+
+    int ret = d->proc->command(cmdArgs, ExifToolProcess::READ_FORMATS);
+
+    if (ret == 0)
+    {
+        qCWarning(DIGIKAM_METAENGINE_LOG) << "ExifTool read formats command cannot be sent";
+
+        return false;
+    }
+
+    d->loopReadF->exec();
+
+    qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool complete read formats";
+
+    return true;
+}
+
+bool ExifToolParser::writableFormats()
+{
+    if (!d->prepareProcess())
+    {
+        return false;
+    }
+
+    // Build command (set metadata)
+
+    QByteArrayList cmdArgs;
+    cmdArgs << QByteArray("-listwf");
+
+    d->currentPath.clear();
+
+    // Send command to ExifToolProcess
+
+    int ret = d->proc->command(cmdArgs, ExifToolProcess::WRITE_FORMATS);
+
+    if (ret == 0)
+    {
+        qCWarning(DIGIKAM_METAENGINE_LOG) << "ExifTool write formats command cannot be sent";
+
+        return false;
+    }
+
+    d->loopReadF->exec();
+
+    qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool complete write formats";
+
+    return true;
+}
+
 void ExifToolParser::slotCmdCompleted(int cmdAction,
                                       int execTime,
                                       const QByteArray& stdOut,
@@ -350,6 +414,18 @@ void ExifToolParser::slotCmdCompleted(int cmdAction,
         case ExifToolProcess::APPLY_CHANGES:
         {
             // TODO: check ExifTool feedback.
+            break;
+        }
+
+        case ExifToolProcess::READ_FORMATS:
+        {
+            d->exifToolData.insert(QLatin1String("READ_FORMATS"), QVariantList() << QString::fromUtf8(stdOut).split(QLatin1Char(' ')));     // Exv chunk as bytearray.
+            break;
+        }
+
+        case ExifToolProcess::WRITE_FORMATS:
+        {
+            d->exifToolData.insert(QLatin1String("WRITE_FORMATS"), QVariantList() << QString::fromUtf8(stdOut).split(QLatin1Char(' ')));     // Exv chunk as bytearray.
             break;
         }
 

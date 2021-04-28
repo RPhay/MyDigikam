@@ -49,9 +49,11 @@ public:
 
     enum Action
     {
-        LOAD_METADATA = 0,          ///< Load all metadata with ExifTool.
-        LOAD_CHUNKS,                ///< Load Exif, Iptc, and Xmp chunks as bytearray for MetaEngine.
-        APPLY_CHANGES,              ///< Apply tag changes with ExifTool.
+        LOAD_METADATA = 0,          ///< Load all metadata from a file with ExifTool.
+        LOAD_CHUNKS,                ///< Load Exif, Iptc, and Xmp chunks from a file as bytearray for MetaEngine.
+        APPLY_CHANGES,              ///< Apply tag changes in a file with ExifTool.
+        READ_FORMATS,               ///< Return the list of readable ExifTool file formats.
+        WRITE_FORMATS,              ///< Return the list of writable ExifTool file formats.
         NO_ACTION
     };
 

@@ -69,6 +69,15 @@ public:
      * key   = ExifTool tag name            (QString).
      * value = ExifTool Tag value           (QString).
      *
+     * With readableFormats() method, the cointainer is used to get
+     * a list of upper-case file format extensions supported by ExifTool for reading.
+     * key   = "READ_FORMAT"                (QString).
+     * value = list                         (QStringList)
+     *
+     * With writableFormats() method, the cointainer is used to get
+     * a list of upper-case file format extensions supported by ExifTool for writing.
+     * key   = "WRITE_FORMAT"               (QString).
+     * value = list                         (QStringList).
      */
     typedef QHash<QString, QVariantList> ExifToolData;
 
@@ -95,6 +104,9 @@ public:
      * To remove a tag, pass an empty string as value.
      */
     bool applyChanges(const QString& path, const ExifToolData& newTags);
+
+    bool readableFormats();
+    bool writableFormats();
 
     QString      currentPath()        const;
     ExifToolData currentData()        const;
