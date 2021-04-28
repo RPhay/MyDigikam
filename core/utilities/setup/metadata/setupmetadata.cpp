@@ -61,8 +61,7 @@
 #include "metadatapanel.h"
 #include "metaenginesettings.h"
 #include "setuputils.h"
-#include "exiftoolbinary.h"
-#include "dbinarysearch.h"
+#include "exiftoolconfpanel.h"
 
 namespace Digikam
 {
@@ -110,7 +109,7 @@ public:
         displaySubTab           (nullptr),
         tagsCfgPanel            (nullptr),
         advTab                  (nullptr),
-        exifToolBinWidget       (nullptr),
+        exifToolView            (nullptr),
         extensionsEdit          (nullptr)
     {
     }
@@ -161,8 +160,7 @@ public:
     MetadataPanel*       tagsCfgPanel;
     AdvancedMetadataTab* advTab;
 
-    DBinarySearch*       exifToolBinWidget;
-    ExifToolBinary       exifToolBin;
+    ExifToolConfPanel*   exifToolView;
 
     QLineEdit*           extensionsEdit;
 };
@@ -607,38 +605,8 @@ SetupMetadata::SetupMetadata(QWidget* const parent)
 
     // --------------------------------------------------------
 
-    QWidget* const exifToolPanel      = new QWidget(d->tab);
-    QVBoxLayout* const exifToolLayout = new QVBoxLayout;
-    QLabel* const exifToolBinLabel    = new QLabel(i18nc("@info",
-                                                   "ExifTool is an open-source software program for reading, writing, "
-                                                   "and manipulating multimedia files. It is platform independent "
-                                                   "available as a command-line application. ExifTool is commonly "
-                                                   "incorporated into different types of digital workflows and supports "
-                                                   "many types of metadata including Exif, IPTC, XMP, JFIF, GeoTIFF, ICC Profile, "
-                                                   "Photoshop IRB, as well as the manufacturer-specific metadata formats of "
-                                                   "many digital cameras.\n\n"
-                                                   "Here you can configure location where ExifTool binary is located. "
-                                                   "Application will try to find this binary automatically if they are "
-                                                   "already installed on your computer."),
-                                                   exifToolPanel);
-    exifToolBinLabel->setWordWrap(true);
-
-    d->exifToolBinWidget              = new DBinarySearch(exifToolPanel);
-    d->exifToolBinWidget->addBinary(d->exifToolBin);
-
-    foreach (const QString& path, MetaEngineSettings::instance()->settings().defaultExifToolSearchPaths())
-    {
-        d->exifToolBinWidget->addDirectory(path);
-    }
-
-    d->exifToolBinWidget->allBinariesFound();
-
-    exifToolLayout->addWidget(exifToolBinLabel);
-    exifToolLayout->addWidget(d->exifToolBinWidget);
-    exifToolLayout->addStretch();
-    exifToolPanel->setLayout(exifToolLayout);
-
-    d->tab->insertTab(ExifTool, exifToolPanel, i18nc("@title:tab", "ExifTool"));
+    d->exifToolView = new ExifToolConfPanel(d->tab);
+    d->tab->insertTab(ExifTool, d->exifToolView, i18nc("@title:tab", "ExifTool"));
 
     // --------------------------------------------------------
 
@@ -803,7 +771,7 @@ void SetupMetadata::applySettings()
     set.sidecarExtensions.removeAll(QLatin1String("xmp"));
     set.sidecarExtensions.removeDuplicates();
 
-    set.exifToolPath          = d->exifToolBin.directory();
+    set.exifToolPath          = d->exifToolView->exifToolDirectory();
 
     mSettings->setSettings(set);
 
@@ -886,7 +854,7 @@ void SetupMetadata::readSettings()
 
     d->extensionsEdit->setText(set.sidecarExtensions.join(QLatin1Char(' ')));
 
-    d->exifToolBin.setup(set.exifToolPath);
+    d->exifToolView->setExifToolDirectory(set.exifToolPath);
 
 #ifdef HAVE_KFILEMETADATA
 

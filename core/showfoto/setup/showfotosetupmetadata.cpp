@@ -48,8 +48,7 @@
 #include "metadatapanel.h"
 #include "metaenginesettings.h"
 #include "dactivelabel.h"
-#include "exiftoolbinary.h"
-#include "dbinarysearch.h"
+#include "exiftoolconfpanel.h"
 
 namespace ShowFoto
 {
@@ -63,18 +62,17 @@ public:
         exifSetOrientationBox(nullptr),
         tab                  (nullptr),
         tagsCfgPanel         (nullptr),
-        exifToolBinWidget    (nullptr)
+        exifToolView         (nullptr)
     {
     }
 
-    QCheckBox*              exifRotateBox;
-    QCheckBox*              exifSetOrientationBox;
+    QCheckBox*                  exifRotateBox;
+    QCheckBox*                  exifSetOrientationBox;
 
-    QTabWidget*             tab;
+    QTabWidget*                 tab;
 
-    Digikam::MetadataPanel* tagsCfgPanel;
-    Digikam::DBinarySearch* exifToolBinWidget;
-    Digikam::ExifToolBinary exifToolBin;
+    Digikam::MetadataPanel*     tagsCfgPanel;
+    Digikam::ExifToolConfPanel* exifToolView;
 };
 
 SetupMetadata::SetupMetadata(QWidget* const parent)
@@ -136,7 +134,7 @@ SetupMetadata::SetupMetadata(QWidget* const parent)
                .arg(i18nc("@info", "an older standard used in digital photography to store "
                           "photographer information in images.")));
 
-    if (MetaEngine::supportXmp())
+    if (Digikam::MetaEngine::supportXmp())
     {
         txt.append(QString::fromUtf8("<p><a href='https://en.wikipedia.org/wiki/Extensible_Metadata_Platform'>XMP</a> - %1</p>")
                    .arg(i18nc("@info", "a new standard used in digital photography, designed to replace IPTC.")));
@@ -168,38 +166,8 @@ SetupMetadata::SetupMetadata(QWidget* const parent)
 
     // --------------------------------------------------------
 
-    QWidget* const exifToolPanel      = new QWidget(d->tab);
-    QVBoxLayout* const exifToolLayout = new QVBoxLayout;
-    QLabel* const exifToolBinLabel    = new QLabel(i18nc("@info",
-                                                   "ExifTool is an open-source software program for reading, writing, "
-                                                   "and manipulating multimedia files. It is platform independent "
-                                                   "available as a command-line application. ExifTool is commonly "
-                                                   "incorporated into different types of digital workflows and supports "
-                                                   "many types of metadata including Exif, IPTC, XMP, JFIF, GeoTIFF, ICC Profile, "
-                                                   "Photoshop IRB, as well as the manufacturer-specific metadata formats of "
-                                                   "many digital cameras.\n\n"
-                                                   "Here you can configure location where ExifTool binary is located. "
-                                                   "Application will try to find this binary automatically if they are "
-                                                   "already installed on your computer."),
-                                                   exifToolPanel);
-    exifToolBinLabel->setWordWrap(true);
-
-    d->exifToolBinWidget              = new Digikam::DBinarySearch(exifToolPanel);
-    d->exifToolBinWidget->addBinary(d->exifToolBin);
-
-    foreach (const QString& path, MetaEngineSettings::instance()->settings().defaultExifToolSearchPaths())
-    {
-        d->exifToolBinWidget->addDirectory(path);
-    }
-
-    d->exifToolBinWidget->allBinariesFound();
-
-    exifToolLayout->addWidget(exifToolBinLabel);
-    exifToolLayout->addWidget(d->exifToolBinWidget);
-    exifToolLayout->addStretch();
-    exifToolPanel->setLayout(exifToolLayout);
-
-    d->tab->insertTab(ExifTool, exifToolPanel, i18nc("@title:tab", "ExifTool"));
+    d->exifToolView = new Digikam::ExifToolConfPanel(d->tab);
+    d->tab->insertTab(ExifTool, d->exifToolView, i18nc("@title:tab", "ExifTool"));
 
     // --------------------------------------------------------
 
@@ -224,7 +192,7 @@ void SetupMetadata::applySettings()
 
     set.exifRotate         = d->exifRotateBox->isChecked();
     set.exifSetOrientation = d->exifSetOrientationBox->isChecked();
-    set.exifToolPath       = d->exifToolBin.directory();
+    set.exifToolPath       = d->exifToolView->exifToolDirectory();
     mSettings->setSettings(set);
 
     d->tagsCfgPanel->applySettings();
@@ -243,7 +211,7 @@ void SetupMetadata::readSettings()
 
     d->exifRotateBox->setChecked(set.exifRotate);
     d->exifSetOrientationBox->setChecked(set.exifSetOrientation);
-    d->exifToolBin.setup(set.exifToolPath);
+    d->exifToolView->setExifToolDirectory(set.exifToolPath);
 }
 
 void SetupMetadata::setActiveTab(MetadataTab tab)
