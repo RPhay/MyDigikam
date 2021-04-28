@@ -38,7 +38,7 @@ ExifToolBinary::ExifToolBinary(QObject* const)
                    QLatin1String("https://exiftool.org/"),
                    QString(),
                    QStringList(QLatin1String("-ver")),
-                   i18n("ExifTool is a platform-independent a command-line application for reading, "
+                   i18n("ExifTool is a platform-independent command-line application for reading, "
                         "writing and editing meta information in a wide variety of files.")
                   )
 {
