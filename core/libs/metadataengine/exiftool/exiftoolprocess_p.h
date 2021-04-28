@@ -36,6 +36,7 @@
 #include <QElapsedTimer>
 #include <QList>
 #include <QByteArray>
+#include <QStandardPaths>
 
 // Local includes
 
