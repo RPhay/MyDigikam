@@ -156,7 +156,7 @@ void ExifToolProcess::start()
 
     d->writeChannelIsClosed = false;
 
-    qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifToolProcess::start(): create new ExifTool instance...";
+    qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifToolProcess::start(): create new ExifTool instance:" << program << args;
 
     d->process->start(program, args, QProcess::ReadWrite);
 }
