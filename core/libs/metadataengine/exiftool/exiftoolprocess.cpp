@@ -81,9 +81,7 @@ void ExifToolProcess::setProgram(const QString& etExePath, const QString& perlEx
         return;
     }
 
-    QFileInfo fi(etExePath);
-
-    if (etExePath.isEmpty() || fi.isDir())
+    if (etExePath.isEmpty() || QFileInfo(etExePath).isDir())
     {
         QString etBuildPath = etExePath;
 
@@ -93,12 +91,6 @@ void ExifToolProcess::setProgram(const QString& etExePath, const QString& perlEx
         }
 
         etBuildPath.append(QLatin1String("exiftool"));
-
-#ifdef Q_OS_WIN
-
-        etBuildPath.append(QLatin1String(".exe"));
-
-#endif
 
         d->etExePath = QStandardPaths::findExecutable(etBuildPath);
     }
