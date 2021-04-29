@@ -55,7 +55,7 @@ int main(int argc, char** argv)
         ExifToolParser::ExifToolData parsed = parser->currentData();
 
         QStringList lst = parsed.find(QLatin1String("WRITE_FORMATS")).value()[0].toStringList();
-        qDebug() << "writable file formats:" << lst;
+        qDebug() << "Writable file formats:" << lst;
     }
 
     return 0;
