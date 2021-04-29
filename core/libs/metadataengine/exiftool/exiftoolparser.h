@@ -86,6 +86,8 @@ public:
     explicit ExifToolParser(QObject* const parent = nullptr);
     ~ExifToolParser();
 
+public:
+
     /**
      * Load all metadata with ExifTool from a file.
      * Use currentData() to get the ExifTool map.
@@ -105,8 +107,19 @@ public:
      */
     bool applyChanges(const QString& path, const ExifToolData& newTags);
 
+    /**
+     * Return a list of readable file format extensions.
+     * Use currentData() to get the container as QStringList.
+     */
     bool readableFormats();
+
+    /**
+     * Return a list of writable file format extensions.
+     * Use currentData() to get the container as QStringList.
+     */
     bool writableFormats();
+
+public:
 
     QString      currentPath()        const;
     ExifToolData currentData()        const;

@@ -346,13 +346,17 @@ void ExifToolParser::slotCmdCompleted(int cmdAction,
 
         case ExifToolProcess::READ_FORMATS:
         {
-            d->exifToolData.insert(QLatin1String("READ_FORMATS"), QVariantList() << QString::fromUtf8(stdOut).split(QLatin1Char(' ')));     // Exv chunk as bytearray.
+            d->exifToolData.insert(QLatin1String("READ_FORMATS"), QVariantList() << QString::fromUtf8(stdOut)
+                                                                                    .remove(QLatin1Char('\n'))
+                                                                                    .split(QLatin1Char(' ')));
             break;
         }
 
         case ExifToolProcess::WRITE_FORMATS:
         {
-            d->exifToolData.insert(QLatin1String("WRITE_FORMATS"), QVariantList() << QString::fromUtf8(stdOut).split(QLatin1Char(' ')));     // Exv chunk as bytearray.
+            d->exifToolData.insert(QLatin1String("WRITE_FORMATS"), QVariantList() << QString::fromUtf8(stdOut)
+                                                                                     .remove(QLatin1Char('\n'))
+                                                                                     .split(QLatin1Char(' ')));
             break;
         }
 
