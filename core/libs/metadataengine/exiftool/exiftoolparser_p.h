@@ -57,6 +57,7 @@ public:
     explicit Private();
 
     bool       prepareProcess();
+    bool       startProcess(const QByteArrayList& cmdArgs, ExifToolProcess::Action cmdAction);
     QByteArray filePathEncoding(const QFileInfo& fi) const;
     void       manageEventLoop(int cmdAction);
 
@@ -68,11 +69,7 @@ public:
 public:
 
     ExifToolProcess*               proc;            ///< ExifTool process instance.
-    QEventLoop*                    loopLoad;        ///< Event loop for the load() method.
-    QEventLoop*                    loopChunk;       ///< Event loop for the loadChunk() method.
-    QEventLoop*                    loopApply;       ///< Event loop for the applyChanges() method.
-    QEventLoop*                    loopReadF;       ///< Event loop for the readableFormats() method.
-    QEventLoop*                    loopWriteF;      ///< Event loop for the writableFormats() method.
+    QList<QEventLoop*>             evLoops;         ///< Event loops for the ExifTool process actions.
     QString                        currentPath;     ///< Current file path processed by ExifTool.
     ExifToolData                   exifToolData;    ///< Current ExifTool data (input or output depending of the called method.
 

@@ -27,12 +27,7 @@ namespace Digikam
 {
 
 ExifToolParser::Private::Private()
-    : proc      (nullptr),
-      loopLoad  (nullptr),
-      loopChunk (nullptr),
-      loopApply (nullptr),
-      loopReadF (nullptr),
-      loopWriteF(nullptr)
+    : proc(nullptr)
 {
 }
 
@@ -53,6 +48,33 @@ bool ExifToolParser::Private::prepareProcess()
                                           << ")";
 
         return false;
+    }
+
+    return true;
+}
+
+bool ExifToolParser::Private::startProcess(const QByteArrayList& cmdArgs, ExifToolProcess::Action cmdAction)
+{
+    // Send command to ExifToolProcess
+
+    int ret = proc->command(cmdArgs, cmdAction);
+
+    if (ret == 0)
+    {
+        qCWarning(DIGIKAM_METAENGINE_LOG) << "ExifTool cannot be sent:" << actionString(cmdAction);
+
+        return false;
+    }
+
+    evLoops[cmdAction]->exec();
+
+    if (currentPath.isEmpty())
+    {
+        qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool complete" << actionString(cmdAction);
+    }
+    else
+    {
+        qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool complete" << actionString(cmdAction) << "for" << currentPath;
     }
 
     return true;
@@ -113,41 +135,11 @@ QString ExifToolParser::Private::actionString(int cmdAction) const
 
 void ExifToolParser::Private::manageEventLoop(int cmdAction)
 {
-    switch (cmdAction)
+    if ((cmdAction >= ExifToolProcess::LOAD_METADATA) && (cmdAction < ExifToolProcess::NO_ACTION))
     {
-        case ExifToolProcess::LOAD_METADATA:
+        if (evLoops[cmdAction])
         {
-            loopLoad->quit();
-            break;
-        }
-
-        case ExifToolProcess::LOAD_CHUNKS:
-        {
-            loopChunk->quit();
-            break;
-        }
-
-        case ExifToolProcess::APPLY_CHANGES:
-        {
-            loopApply->quit();
-            break;
-        }
-
-        case ExifToolProcess::READ_FORMATS:
-        {
-            loopReadF->quit();
-            break;
-        }
-
-        case ExifToolProcess::WRITE_FORMATS:
-        {
-            loopWriteF->quit();
-            break;
-        }
-
-        default: // ExifToolProcess::NO_ACTION
-        {
-            break;
+            evLoops[cmdAction]->quit();
         }
     }
 }

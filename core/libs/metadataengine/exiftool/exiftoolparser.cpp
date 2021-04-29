@@ -33,9 +33,11 @@ ExifToolParser::ExifToolParser(QObject* const parent)
     // Create ExifTool parser instance.
 
     d->proc      = new ExifToolProcess(this);
-    d->loopLoad  = new QEventLoop(this);
-    d->loopChunk = new QEventLoop(this);
-    d->loopApply = new QEventLoop(this);
+
+    for (int i = ExifToolProcess::LOAD_METADATA ; i < ExifToolProcess::NO_ACTION ; ++i)
+    {
+        d->evLoops << new QEventLoop(this);
+    }
 
     connect(MetaEngineSettings::instance(), SIGNAL(signalSettingsChanged()),
             this, SLOT(slotMetaEngineSettingsChanged()));
@@ -54,14 +56,14 @@ ExifToolParser::ExifToolParser(QObject* const parent)
 
 ExifToolParser::~ExifToolParser()
 {
-    d->loopLoad->exit();
-    delete d->loopLoad;
-
-    d->loopChunk->exit();
-    delete d->loopChunk;
-
-    d->loopApply->exit();
-    delete d->loopApply;
+    for (int i = ExifToolProcess::LOAD_METADATA ; i < ExifToolProcess::NO_ACTION ; ++i)
+    {
+        if (d->evLoops[i])
+        {
+            d->evLoops[i]->exit();
+            delete d->evLoops[i];
+        }
+    }
 
     foreach (QMetaObject::Connection hdl, d->hdls)
     {
@@ -111,22 +113,7 @@ bool ExifToolParser::load(const QString& path)
     cmdArgs << d->filePathEncoding(fileInfo);
     d->currentPath = fileInfo.path();
 
-    // Send command to ExifToolProcess
-
-    int ret = d->proc->command(cmdArgs, ExifToolProcess::LOAD_METADATA);
-
-    if (ret == 0)
-    {
-        qCWarning(DIGIKAM_METAENGINE_LOG) << "ExifTool load command cannot be sent";
-
-        return false;
-    }
-
-    d->loopLoad->exec();
-
-    qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool complete load for" << path;
-
-    return true;
+    return (d->startProcess(cmdArgs, ExifToolProcess::LOAD_METADATA));
 }
 
 bool ExifToolParser::loadChunk(const QString& path)
@@ -154,22 +141,7 @@ bool ExifToolParser::loadChunk(const QString& path)
     cmdArgs << QByteArray("-.exv");
     d->currentPath = fileInfo.path();
 
-    // Send command to ExifToolProcess
-
-    int ret = d->proc->command(cmdArgs, ExifToolProcess::LOAD_CHUNKS);
-
-    if (ret == 0)
-    {
-        qCWarning(DIGIKAM_METAENGINE_LOG) << "ExifTool load chunk command cannot be sent";
-
-        return false;
-    }
-
-    d->loopChunk->exec();
-
-    qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool complete load chunk for" << path;
-
-    return true;
+    return (d->startProcess(cmdArgs, ExifToolProcess::LOAD_CHUNKS));
 }
 
 bool ExifToolParser::applyChanges(const QString& path, const ExifToolData& newTags)
@@ -209,22 +181,7 @@ bool ExifToolParser::applyChanges(const QString& path, const ExifToolData& newTa
     cmdArgs << d->filePathEncoding(fileInfo);
     d->currentPath = fileInfo.path();
 
-    // Send command to ExifToolProcess
-
-    int ret = d->proc->command(cmdArgs, ExifToolProcess::APPLY_CHANGES);
-
-    if (ret == 0)
-    {
-        qCWarning(DIGIKAM_METAENGINE_LOG) << "ExifTool apply changes command cannot be sent";
-
-        return false;
-    }
-
-    d->loopApply->exec();
-
-    qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool complete apply changes for" << path;
-
-    return true;
+    return (d->startProcess(cmdArgs, ExifToolProcess::APPLY_CHANGES));
 }
 
 bool ExifToolParser::readableFormats()
@@ -241,22 +198,7 @@ bool ExifToolParser::readableFormats()
 
     d->currentPath.clear();
 
-    // Send command to ExifToolProcess
-
-    int ret = d->proc->command(cmdArgs, ExifToolProcess::READ_FORMATS);
-
-    if (ret == 0)
-    {
-        qCWarning(DIGIKAM_METAENGINE_LOG) << "ExifTool read formats command cannot be sent";
-
-        return false;
-    }
-
-    d->loopReadF->exec();
-
-    qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool complete read formats";
-
-    return true;
+    return (d->startProcess(cmdArgs, ExifToolProcess::READ_FORMATS));
 }
 
 bool ExifToolParser::writableFormats()
@@ -273,22 +215,7 @@ bool ExifToolParser::writableFormats()
 
     d->currentPath.clear();
 
-    // Send command to ExifToolProcess
-
-    int ret = d->proc->command(cmdArgs, ExifToolProcess::WRITE_FORMATS);
-
-    if (ret == 0)
-    {
-        qCWarning(DIGIKAM_METAENGINE_LOG) << "ExifTool write formats command cannot be sent";
-
-        return false;
-    }
-
-    d->loopReadF->exec();
-
-    qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool complete write formats";
-
-    return true;
+    return (d->startProcess(cmdArgs, ExifToolProcess::WRITE_FORMATS));
 }
 
 void ExifToolParser::slotCmdCompleted(int cmdAction,
