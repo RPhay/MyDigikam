@@ -48,6 +48,9 @@ public:
     QString exifToolDirectory() const;
     void setExifToolDirectory(const QString& dir);
 
+private Q_SLOTS:
+
+    void slotExifToolBinaryFound(bool);
 
 private:
 

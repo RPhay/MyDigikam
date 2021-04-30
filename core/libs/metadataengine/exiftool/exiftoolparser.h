@@ -86,6 +86,8 @@ public:
     explicit ExifToolParser(QObject* const parent = nullptr);
     ~ExifToolParser();
 
+    void setExifToolProgram(const QString& path);
+
 public:
 
     /**

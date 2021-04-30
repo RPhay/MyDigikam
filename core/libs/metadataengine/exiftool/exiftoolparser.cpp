@@ -73,6 +73,11 @@ ExifToolParser::~ExifToolParser()
     delete d;
 }
 
+void ExifToolParser::setExifToolProgram(const QString& path)
+{
+    d->proc->setProgram(path);
+}
+
 QString ExifToolParser::currentPath() const
 {
     return d->currentPath;
@@ -346,17 +351,17 @@ void ExifToolParser::slotCmdCompleted(int cmdAction,
 
         case ExifToolProcess::READ_FORMATS:
         {
-            d->exifToolData.insert(QLatin1String("READ_FORMATS"), QVariantList() << QString::fromUtf8(stdOut)
-                                                                                    .remove(QLatin1Char('\n'))
-                                                                                    .split(QLatin1Char(' ')));
+            QString out     = QString::fromUtf8(stdOut).section(QLatin1Char('\n'), 1, -1);
+            QStringList lst = out.remove(QLatin1Char('\n')).split(QLatin1Char(' '), Qt::SkipEmptyParts);
+            d->exifToolData.insert(QLatin1String("READ_FORMATS"), QVariantList() << lst);
             break;
         }
 
         case ExifToolProcess::WRITE_FORMATS:
         {
-            d->exifToolData.insert(QLatin1String("WRITE_FORMATS"), QVariantList() << QString::fromUtf8(stdOut)
-                                                                                     .remove(QLatin1Char('\n'))
-                                                                                     .split(QLatin1Char(' ')));
+            QString out     = QString::fromUtf8(stdOut).section(QLatin1Char('\n'), 1, -1);
+            QStringList lst = out.remove(QLatin1Char('\n')).split(QLatin1Char(' '), Qt::SkipEmptyParts);
+            d->exifToolData.insert(QLatin1String("WRITE_FORMATS"), QVariantList() << lst);
             break;
         }
 
