@@ -312,7 +312,9 @@ QString ExifToolConfPanel::formatDescription(const QString& frm)
         (frm == QLatin1String("EPS2")) ||
         (frm == QLatin1String("EPS3")) ||
         (frm == QLatin1String("EPSF")) ||
-        (frm == QLatin1String("PS")))        return i18n("[Encapsulated] PostScript Format");
+        (frm == QLatin1String("PS"))   ||
+        (frm == QLatin1String("PS2"))  ||
+        (frm == QLatin1String("PS3")))       return i18n("Encapsulated PostScript Format");
 
     if (frm == QLatin1String("EPUB"))        return i18n("Electronic Publication");
 
@@ -550,10 +552,11 @@ QString ExifToolConfPanel::formatDescription(const QString& frm)
     if ((frm == QLatin1String("PICT")) ||
         (frm == QLatin1String("PCT")))       return i18n("Apple Picture file");
 
-    if ((frm == QLatin1String("PHP"))  ||
-        (frm == QLatin1String("PHP3")) ||
-        (frm == QLatin1String("PHP4")) ||
-        (frm == QLatin1String("PHP5")) ||
+    if ((frm == QLatin1String("PHP"))   ||
+        (frm == QLatin1String("PHP3"))  ||
+        (frm == QLatin1String("PHP4"))  ||
+        (frm == QLatin1String("PHP5"))  ||
+        (frm == QLatin1String("PHTML")) ||
         (frm == QLatin1String("PHPS")))      return i18n("PHP Hypertext Preprocessor");
 
     if (frm == QLatin1String("PLIST"))       return i18n("Apple Property List");
@@ -588,7 +591,11 @@ QString ExifToolConfPanel::formatDescription(const QString& frm)
         (frm == QLatin1String("PSB")) ||
         (frm == QLatin1String("PSDT")))      return i18n("PhotoShop Document / Large Document / Template");
 
-    if ((frm == QLatin1String("PSP")) ||
+    if ((frm == QLatin1String("PSP"))      ||
+        (frm == QLatin1String("TUB"))      ||
+        (frm == QLatin1String("PSPFRAME")) ||
+        (frm == QLatin1String("PSPSHAPE")) ||
+        (frm == QLatin1String("PSPTUBE"))  ||
         (frm == QLatin1String("PSPIMAGE")))  return i18n("Paint Shop Pro");
 
     if ((frm == QLatin1String("QTIF")) ||
@@ -643,6 +650,8 @@ QString ExifToolConfPanel::formatDescription(const QString& frm)
 
     if (frm == QLatin1String("SWF"))         return i18n("Shockwave Flash");
 
+    if (frm == QLatin1String("TAR"))         return i18n("TAR archive");
+
     if (frm == QLatin1String("THM"))         return i18n("Thumbnail image");
 
     if (frm == QLatin1String("THMX"))        return i18n("Office Open XML Theme");
@@ -675,6 +684,11 @@ QString ExifToolConfPanel::formatDescription(const QString& frm)
     if ((frm == QLatin1String("WMA")) ||
         (frm == QLatin1String("WMV")))       return i18n("Windows Media Audio / Video");
 
+    if (frm == QLatin1String("WMF"))         return i18n("Windows Metafile Format");
+
+    if ((frm == QLatin1String("WOF")) ||
+        (frm == QLatin1String("WOF2")))      return i18n("Web Open Font Format");
+
     if (frm == QLatin1String("WTV"))         return i18n("Windows recorded TV show");
 
     if (frm == QLatin1String("WV"))          return i18n("WavePack lossless audio");
@@ -682,6 +696,10 @@ QString ExifToolConfPanel::formatDescription(const QString& frm)
     if (frm == QLatin1String("X3F"))         return i18n("Sigma / Foveon RAW");
 
     if (frm == QLatin1String("XCF"))         return i18n("GIMP native image format");
+
+    if (frm == QLatin1String("XLA"))         return i18n("Microsoft Excel Add-in");
+
+    if (frm == QLatin1String("XLAM"))        return i18n("Office Open XML Spreadsheet Add-in Macro-enabled");
 
     if ((frm == QLatin1String("XLS")) ||
         (frm == QLatin1String("XLT")))       return i18n("Microsoft Excel Spreadsheet / Template");
