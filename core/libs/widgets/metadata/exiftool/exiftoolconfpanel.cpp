@@ -197,10 +197,10 @@ QString ExifToolConfPanel::formatDescription(const QString& frm)
 
     if ((frm == QLatin1String("AFM"))  ||
         (frm == QLatin1String("ACFM")) ||
-        (frm == QLatin1String("AMFM")))                     return i18n("Adobe [Composite/Multiple Master] Font Metrics");
+        (frm == QLatin1String("AMFM")))                     return i18n("Adobe Composite / Multiple Master Font Metrics");
 
     if ((frm == QLatin1String("AI")) ||
-        (frm == QLatin1String("AIT")))                      return i18n("Adobe Illustrator [Template]");
+        (frm == QLatin1String("AIT")))                      return i18n("Adobe Illustrator");
 
     if ((frm == QLatin1String("AIFF")) ||
         (frm == QLatin1String("AIF"))  ||
@@ -235,9 +235,10 @@ QString ExifToolConfPanel::formatDescription(const QString& frm)
     if (frm == QLatin1String("CR3"))                        return i18n("Canon RAW 3");
 
     if (frm == QLatin1String("CRM"))                        return i18n("Canon RAW Movie");
-/*
-    if (frm == QLatin1String("CRW, CIFF               return i18n("Canon RAW Camera Image File Format");
 
+    if ((frm == QLatin1String("CRW")) ||
+        (frm == QLatin1String("CIFF")))                     return i18n("Canon RAW Camera Image File Format");
+/*
     if (frm == QLatin1String("CS1                     return i18n("Sinar CaptureShop 1-shot RAW");
 
     if (frm == QLatin1String("CSV                     return i18n("Comma-Separated Values");
@@ -258,7 +259,7 @@ QString ExifToolConfPanel::formatDescription(const QString& frm)
 
     if (frm == QLatin1String("DNG                     return i18n("Digital Negative");
 
-    if (frm == QLatin1String("DOC, DOT                return i18n("Microsoft Word Document/Template");
+    if (frm == QLatin1String("DOC, DOT                return i18n("Microsoft Word Document / Template");
 
     if (frm == QLatin1String("DOCX, DOCM              return i18n("Office Open XML Document");
 
@@ -294,7 +295,7 @@ QString ExifToolConfPanel::formatDescription(const QString& frm)
 
     if (frm == QLatin1String("EXV                     return i18n("Exiv2 metadata file");
 
-    if (frm == QLatin1String("F4A, F4B, F4P, F4V      return i18n("Adobe Flash Player 9+ Audio/Video");
+    if (frm == QLatin1String("F4A, F4B, F4P, F4V      return i18n("Adobe Flash Player 9+ Audio / Video");
 
     if (frm == QLatin1String("FFF                     return i18n("Hasselblad Flexible File Format");
 
@@ -302,7 +303,7 @@ QString ExifToolConfPanel::formatDescription(const QString& frm)
 
     if (frm == QLatin1String("FITS                    return i18n("Flexible Image Transport System");
 
-    if (frm == QLatin1String("FLA                     return i18n("Macromedia/Adobe Flash project");
+    if (frm == QLatin1String("FLA                     return i18n("Macromedia / Adobe Flash project");
 
     if (frm == QLatin1String("FLAC                    return i18n("Free Lossless Audio Codec");
 
@@ -334,249 +335,249 @@ QString ExifToolConfPanel::formatDescription(const QString& frm)
 
     if (frm == QLatin1String("IDML                    return i18n("Adobe InDesign Markup Language");
 
-    if (frm == QLatin1String("IIQ                     return i18n("Phase One Intelligent Image Quality RAW (TIFF-based)
+    if (frm == QLatin1String("IIQ                     return i18n("Phase One Intelligent Image Quality");
 
-    if (frm == QLatin1String("IND, INDD, INDT         return i18n("Adobe InDesign Document/Template
+    if (frm == QLatin1String("IND, INDD, INDT         return i18n("Adobe InDesign Document / Template");
 
-    if (frm == QLatin1String("INSP                    return i18n("Insta360 Picture (JPEG-based)
+    if (frm == QLatin1String("INSP                    return i18n("Insta360 Picture");
 
-    if (frm == QLatin1String("INSV                    return i18n("Insta360 Video (QuickTime-based)
+    if (frm == QLatin1String("INSV                    return i18n("Insta360 Video");
 
-    if (frm == QLatin1String("INX                     return i18n("Adobe InDesign Interchange (XML-based)
+    if (frm == QLatin1String("INX                     return i18n("Adobe InDesign Interchange");
 
-    if (frm == QLatin1String("ISO                     return i18n("ISO 9660 disk image
+    if (frm == QLatin1String("ISO                     return i18n("ISO 9660 disk image");
 
-    if (frm == QLatin1String("ITC                     return i18n("iTunes Cover Flow artwork
+    if (frm == QLatin1String("ITC                     return i18n("iTunes Cover Flow artwork");
 
-    if (frm == QLatin1String("J2C, J2K, JPC           return i18n("JPEG 2000 codestream
+    if (frm == QLatin1String("J2C, J2K, JPC           return i18n("JPEG 2000 codestream");
 
-    if (frm == QLatin1String("JP2, JPF, JPM, JPX      return i18n("JPEG 2000 image [Compound/Extended]
+    if (frm == QLatin1String("JP2, JPF, JPM, JPX      return i18n("JPEG 2000 image");
 
-    if (frm == QLatin1String("JPEG, JPG, JPE          return i18n("Joint Photographic Experts Group image
+    if (frm == QLatin1String("JPEG, JPG, JPE          return i18n("Joint Photographic Experts Group image");
 
-    if (frm == QLatin1String("JSON                    return i18n("JavaScript Object Notation
+    if (frm == QLatin1String("JSON                    return i18n("JavaScript Object Notation");
 
-    if (frm == QLatin1String("JXL                     return i18n("JPEG XL (codestream and ISO BMFF)
+    if (frm == QLatin1String("JXL                     return i18n("JPEG XL");
 
-    if (frm == QLatin1String("K25                     return i18n("Kodak DC25 RAW (TIFF-based)
+    if (frm == QLatin1String("K25                     return i18n("Kodak DC25 RAW");
 
-    if (frm == QLatin1String("KDC                     return i18n("Kodak Digital Camera RAW (TIFF-based)
+    if (frm == QLatin1String("KDC                     return i18n("Kodak Digital Camera RAW");
 
-    if (frm == QLatin1String("KEY, KTH                return i18n("Apple iWork '09 Keynote presentation/Theme
+    if (frm == QLatin1String("KEY, KTH                return i18n("Apple iWork '09 Keynote presentation / Theme");
 
-    if (frm == QLatin1String("LA                      return i18n("Lossless Audio (RIFF-based)
+    if (frm == QLatin1String("LA                      return i18n("Lossless Audio");
 
-    if (frm == QLatin1String("LFP, LFR                return i18n("Lytro Light Field Picture
+    if (frm == QLatin1String("LFP, LFR                return i18n("Lytro Light Field Picture");
 
-    if (frm == QLatin1String("LNK                     return i18n("Microsoft Shell Link (Windows shortcut)
+    if (frm == QLatin1String("LNK                     return i18n("Microsoft Shell Link");
 
-    if (frm == QLatin1String("LRV                     return i18n("Low-Resolution Video (QuickTime-based)
+    if (frm == QLatin1String("LRV                     return i18n("Low-Resolution Video");
 
-    if (frm == QLatin1String("M2TS, MTS, M2T, TS      return i18n("MPEG-2 Transport Stream (used for AVCHD video)
+    if (frm == QLatin1String("M2TS, MTS, M2T, TS      return i18n("MPEG-2 Transport Stream");
 
-    if (frm == QLatin1String("M4A, M4B, M4P, M4V      return i18n("MPEG-4 Audio/Video (QuickTime-based)
+    if (frm == QLatin1String("M4A, M4B, M4P, M4V      return i18n("MPEG-4 Audio/Video");
 
-    if (frm == QLatin1String("MACOS                   return i18n("MacOS "._" sidecar file (may have any extension)
+    if (frm == QLatin1String("MACOS                   return i18n("MacOS sidecar file");
 
-    if (frm == QLatin1String("MAX                     return i18n("3D Studio MAX (FPX-like)
+    if (frm == QLatin1String("MAX                     return i18n("3D Studio MAX");
 
-    if (frm == QLatin1String("MEF                     return i18n("Mamiya (RAW) Electronic Format (TIFF-based)
+    if (frm == QLatin1String("MEF                     return i18n("Mamiya RAW Electronic Format");
 
-    if (frm == QLatin1String("MIE                     return i18n("Meta Information Encapsulation (MIE specification)
+    if (frm == QLatin1String("MIE                     return i18n("Meta Information Encapsulation");
 
-    if (frm == QLatin1String("MIFF, MIF               return i18n("Magick Image File Format
+    if (frm == QLatin1String("MIFF, MIF               return i18n("Magick Image File Format");
 
-    if (frm == QLatin1String("MKA, MKV, MKS           return i18n("Matroska Audio/Video/Subtitle
+    if (frm == QLatin1String("MKA, MKV, MKS           return i18n("Matroska Audio/Video/Subtitle");
 
-    if (frm == QLatin1String("MOBI, AZW, AZW3         return i18n("Mobipocket electronic book (Palm-based)
+    if (frm == QLatin1String("MOBI, AZW, AZW3         return i18n("Mobipocket electronic book");
 
-    if (frm == QLatin1String("MODD                    return i18n("Sony Picture Motion metadata (XML PLIST-based)
+    if (frm == QLatin1String("MODD                    return i18n("Sony Picture Motion metadata");
 
-    if (frm == QLatin1String("MOI                     return i18n("MOD Information file
+    if (frm == QLatin1String("MOI                     return i18n("MOD Information file");
 
-    if (frm == QLatin1String("MOS                     return i18n("Creo Leaf Mosaic (TIFF-based)
+    if (frm == QLatin1String("MOS                     return i18n("Creo Leaf Mosaic");
 
-    if (frm == QLatin1String("MOV, QT                 return i18n("Apple QuickTime Movie
+    if (frm == QLatin1String("MOV, QT                 return i18n("Apple QuickTime Movie");
 
-    if (frm == QLatin1String("MP3                     return i18n("MPEG-1 layer 3 audio
+    if (frm == QLatin1String("MP3                     return i18n("MPEG-1 layer 3 audio");
 
-    if (frm == QLatin1String("MP4                     return i18n("Motion Picture Experts Group version 4 (QuickTime-based)
+    if (frm == QLatin1String("MP4                     return i18n("Motion Picture Experts Group version 4");
 
-    if (frm == QLatin1String("MPC                     return i18n("Musepack Audio
+    if (frm == QLatin1String("MPC                     return i18n("Musepack Audio");
 
-    if (frm == QLatin1String("MPEG, MPG, M2V          return i18n("Motion Picture Experts Group version 1 or 2
+    if (frm == QLatin1String("MPEG, MPG, M2V          return i18n("Motion Picture Experts Group version 1 or 2");
 
-    if (frm == QLatin1String("MPO                     return i18n("Extended Multi-Picture format (JPEG with MPF extensions)
+    if (frm == QLatin1String("MPO                     return i18n("Extended Multi-Picture format");
 
-    if (frm == QLatin1String("MQV                     return i18n("Sony Mobile QuickTime Video
+    if (frm == QLatin1String("MQV                     return i18n("Sony Mobile QuickTime Video");
 
-    if (frm == QLatin1String("MRW                     return i18n("Minolta RAW
+    if (frm == QLatin1String("MRW                     return i18n("Minolta RAW");
 
-    if (frm == QLatin1String("MRC                     return i18n("Medical Research Council
+    if (frm == QLatin1String("MRC                     return i18n("Medical Research Council");
 
-    if (frm == QLatin1String("MXF                     return i18n("Material Exchange Format
+    if (frm == QLatin1String("MXF                     return i18n("Material Exchange Format");
 
-    if (frm == QLatin1String("NEF                     return i18n("Nikon (RAW) Electronic Format (TIFF-based)
+    if (frm == QLatin1String("NEF                     return i18n("Nikon (RAW) Electronic Format");
 
-    if (frm == QLatin1String("NMBTEMPLATE             return i18n("Apple iWork '09 Numbers Template
+    if (frm == QLatin1String("NMBTEMPLATE             return i18n("Apple iWork '09 Numbers Template");
 
-    if (frm == QLatin1String("NRW                     return i18n("Nikon RAW (2) (TIFF-based)
+    if (frm == QLatin1String("NRW                     return i18n("Nikon RAW");
 
-    if (frm == QLatin1String("NUMBERS                 return i18n("Apple iWork '09 Numbers spreadsheet
+    if (frm == QLatin1String("NUMBERS                 return i18n("Apple iWork '09 Numbers spreadsheet");
 
-    if (frm == QLatin1String("O                       return i18n("Unix compiled code Object
+    if (frm == QLatin1String("O                       return i18n("Unix compiled code Object");
 
-    if (frm == QLatin1String("ODB, ODC, ODF, ODG,     return i18n("Open Document Database/Chart/Formula/Graphics/
+    if (frm == QLatin1String("ODB, ODC, ODF, ODG,     return i18n("Open Document");
 
-    if (frm == QLatin1String("ODI, ODP, ODS, ODT      return i18n("Image/Presentation/Spreadsheet/Text (ZIP/XML-based)
+    if (frm == QLatin1String("ODI, ODP, ODS, ODT      return i18n("Open Document Ressources");
 
-    if (frm == QLatin1String("OFR                     return i18n("OptimFROG audio (RIFF-based)
+    if (frm == QLatin1String("OFR                     return i18n("OptimFROG audio");
 
-    if (frm == QLatin1String("OGG, OGV                return i18n("Ogg bitstream container
+    if (frm == QLatin1String("OGG, OGV                return i18n("Ogg bitstream container");
 
-    if (frm == QLatin1String("ONP                     return i18n("ON1 Presets
+    if (frm == QLatin1String("ONP                     return i18n("ON1 Presets");
 
-    if (frm == QLatin1String("OPUS                    return i18n("Ogg Opus audio
+    if (frm == QLatin1String("OPUS                    return i18n("Ogg Opus audio");
 
-    if (frm == QLatin1String("ORF, ORI                return i18n("Olympus RAW Format (TIFF-based)
+    if (frm == QLatin1String("ORF, ORI                return i18n("Olympus RAW Format");
 
-    if (frm == QLatin1String("OTF                     return i18n("Open Type Font
+    if (frm == QLatin1String("OTF                     return i18n("Open Type Font");
 
-    if (frm == QLatin1String("PAC                     return i18n("Lossless Predictive Audio Compression (RIFF-based)
+    if (frm == QLatin1String("PAC                     return i18n("Lossless Predictive Audio Compression");
 
-    if (frm == QLatin1String("PAGES                   return i18n("Apple iWork '09 Pages document
+    if (frm == QLatin1String("PAGES                   return i18n("Apple iWork '09 Pages document");
 
-    if (frm == QLatin1String("PCD                     return i18n("Kodak Photo CD Image Pac
+    if (frm == QLatin1String("PCD                     return i18n("Kodak Photo CD Image Pac");
 
-    if (frm == QLatin1String("PCX                     return i18n("PC Paintbrush
+    if (frm == QLatin1String("PCX                     return i18n("PC Paintbrush");
 
-    if (frm == QLatin1String("PDB, PRC                return i18n("Palm Database
+    if (frm == QLatin1String("PDB, PRC                return i18n("Palm Database");
 
-    if (frm == QLatin1String("PDF                     return i18n("Adobe Portable Document Format
+    if (frm == QLatin1String("PDF                     return i18n("Adobe Portable Document Format");
 
-    if (frm == QLatin1String("PEF                     return i18n("Pentax (RAW) Electronic Format (TIFF-based)
+    if (frm == QLatin1String("PEF                     return i18n("Pentax (RAW) Electronic Format");
 
-    if (frm == QLatin1String("PFA, PFB                return i18n("PostScript Font ASCII/Binary
+    if (frm == QLatin1String("PFA, PFB                return i18n("PostScript Font ASCII/Binary");
 
-    if (frm == QLatin1String("PFM                     return i18n("Printer Font Metrics
+    if (frm == QLatin1String("PFM                     return i18n("Printer Font Metrics");
 
-    if (frm == QLatin1String("PGF                     return i18n("Progressive Graphics File
+    if (frm == QLatin1String("PGF                     return i18n("Progressive Graphics File");
 
-    if (frm == QLatin1String("PICT, PCT               return i18n("Apple Picture file
+    if (frm == QLatin1String("PICT, PCT               return i18n("Apple Picture file");
 
-    if (frm == QLatin1String("PLIST                   return i18n("Apple Property List (binary and XML formats)
+    if (frm == QLatin1String("PLIST                   return i18n("Apple Property List");
 
-    if (frm == QLatin1String("PMP                     return i18n("Sony DSC-F1 Cyber-Shot image
+    if (frm == QLatin1String("PMP                     return i18n("Sony DSC-F1 Cyber-Shot image");
 
-    if (frm == QLatin1String("PNG, JNG, MNG           return i18n("Portable/JPEG/Multiple-image Network Graphics
+    if (frm == QLatin1String("PNG, JNG, MNG           return i18n("Portable JPEG Multiple-image Network Graphics");
 
-    if (frm == QLatin1String("PPM, PBM, PGM           return i18n("Portable Pixel/Bit/Gray Map
+    if (frm == QLatin1String("PPM, PBM, PGM           return i18n("Portable Pixel Bit Gray Map");
 
-    if (frm == QLatin1String("PPT, PPS, POT           return i18n("PowerPoint Presentation/Slideshow/Template (FPX-like)
+    if (frm == QLatin1String("PPT, PPS, POT           return i18n("PowerPoint Presentation / Slideshow / Template");
 
-    if (frm == QLatin1String("POTX, POTM              return i18n("Office Open XML Presentation Template [Macro-enabled]
+    if (frm == QLatin1String("POTX, POTM              return i18n("Office Open XML Presentation Template");
 
-    if (frm == QLatin1String("PPAX, PPAM              return i18n("Office Open XML Presentation Addin [Macro-enabled]
+    if (frm == QLatin1String("PPAX, PPAM              return i18n("Office Open XML Presentation Addin");
 
-    if (frm == QLatin1String("PPSX, PPSM              return i18n("Office Open XML Presentation Slideshow [Macro-enabled]
+    if (frm == QLatin1String("PPSX, PPSM              return i18n("Office Open XML Presentation Slideshow");
 
-    if (frm == QLatin1String("PPTX, PPTM              return i18n("Office Open XML Presentation [Macro-enabled]
+    if (frm == QLatin1String("PPTX, PPTM              return i18n("Office Open XML Presentation");
 
-    if (frm == QLatin1String("PSD, PSB, PSDT          return i18n("PhotoShop Document / Large Document / Template
+    if (frm == QLatin1String("PSD, PSB, PSDT          return i18n("PhotoShop Document / Large Document / Template");
 
-    if (frm == QLatin1String("PSP, PSPIMAGE           return i18n("Paint Shop Pro
+    if (frm == QLatin1String("PSP, PSPIMAGE           return i18n("Paint Shop Pro");
 
-    if (frm == QLatin1String("QTIF, QTI, QIF          return i18n("QuickTime Image File
+    if (frm == QLatin1String("QTIF, QTI, QIF          return i18n("QuickTime Image File");
 
-    if (frm == QLatin1String("R3D                     return i18n("Redcode RAW video
+    if (frm == QLatin1String("R3D                     return i18n("Redcode RAW video");
 
-    if (frm == QLatin1String("RA                      return i18n("Real Audio
+    if (frm == QLatin1String("RA                      return i18n("Real Audio");
 
-    if (frm == QLatin1String("RAF                     return i18n("FujiFilm RAW Format
+    if (frm == QLatin1String("RAF                     return i18n("FujiFilm RAW Format");
 
-    if (frm == QLatin1String("RAM, RPM                return i18n("Real Audio/Plug-in Metafile
+    if (frm == QLatin1String("RAM, RPM                return i18n("Real Audio/Plug-in Metafile");
 
-    if (frm == QLatin1String("RAR                     return i18n("RAR Archive
+    if (frm == QLatin1String("RAR                     return i18n("RAR Archive");
 
-    if (frm == QLatin1String("RAW                     return i18n("Kyocera Contax N Digital RAW
+    if (frm == QLatin1String("RAW                     return i18n("Kyocera Contax N Digital RAW");
 
-    if (frm == QLatin1String("RAW                     return i18n("Panasonic RAW (TIFF-based)
+    if (frm == QLatin1String("RAW                     return i18n("Panasonic RAW");
 
-    if (frm == QLatin1String("RIFF, RIF               return i18n("Resource Interchange File Format
+    if (frm == QLatin1String("RIFF, RIF               return i18n("Resource Interchange File Format");
 
-    if (frm == QLatin1String("RM, RV, RMVB            return i18n("Real Media/Video [Variable Bitrate]
+    if (frm == QLatin1String("RM, RV, RMVB            return i18n("Real Media/Video");
 
-    if (frm == QLatin1String("RSRC                    return i18n("Mac OS Resource
+    if (frm == QLatin1String("RSRC                    return i18n("Mac OS Resource");
 
-    if (frm == QLatin1String("RTF                     return i18n("Rich Text Format
+    if (frm == QLatin1String("RTF                     return i18n("Rich Text Format");
 
-    if (frm == QLatin1String("RW2                     return i18n("Panasonic RAW 2 (TIFF-based)
+    if (frm == QLatin1String("RW2                     return i18n("Panasonic RAW 2");
 
-    if (frm == QLatin1String("RWL                     return i18n("Leica RAW (TIFF-based)
+    if (frm == QLatin1String("RWL                     return i18n("Leica RAW");
 
-    if (frm == QLatin1String("RWZ                     return i18n("Rawzor compressed image
+    if (frm == QLatin1String("RWZ                     return i18n("Rawzor compressed image");
 
-    if (frm == QLatin1String("SEQ                     return i18n("FLIR Systems image Sequence
+    if (frm == QLatin1String("SEQ                     return i18n("FLIR Systems image Sequence");
 
-    if (frm == QLatin1String("SKETCH                  return i18n("Sketch design file
+    if (frm == QLatin1String("SKETCH                  return i18n("Sketch design file");
 
-    if (frm == QLatin1String("SO                      return i18n("Unix ELF executable and Shared Object files
+    if (frm == QLatin1String("SO                      return i18n("Unix ELF executable and Shared Object files");
 
-    if (frm == QLatin1String("SR2                     return i18n("Sony RAW 2 (TIFF-based)
+    if (frm == QLatin1String("SR2                     return i18n("Sony RAW 2");
 
-    if (frm == QLatin1String("SRF                     return i18n("Sony RAW Format (TIFF-based)
+    if (frm == QLatin1String("SRF                     return i18n("Sony RAW Format");
 
-    if (frm == QLatin1String("SRW                     return i18n("Samsung RAW format (TIFF-based)
+    if (frm == QLatin1String("SRW                     return i18n("Samsung RAW format");
 
-    if (frm == QLatin1String("SVG                     return i18n("Scalable Vector Graphics (XML-based)
+    if (frm == QLatin1String("SVG                     return i18n("Scalable Vector Graphics");
 
-    if (frm == QLatin1String("SWF                     return i18n("Shockwave Flash
+    if (frm == QLatin1String("SWF                     return i18n("Shockwave Flash");
 
-    if (frm == QLatin1String("THM                     return i18n("Thumbnail image (JPEG)
+    if (frm == QLatin1String("THM                     return i18n("Thumbnail image");
 
-    if (frm == QLatin1String("THMX                    return i18n("Office Open XML Theme
+    if (frm == QLatin1String("THMX                    return i18n("Office Open XML Theme");
 
-    if (frm == QLatin1String("TIFF, TIF               return i18n("Tagged Image File Format
+    if (frm == QLatin1String("TIFF, TIF               return i18n("Tagged Image File Format");
 
-    if (frm == QLatin1String("TTF, TTC                return i18n("True Type Font/Collection
+    if (frm == QLatin1String("TTF, TTC                return i18n("True Type Font/Collection");
 
-    if (frm == QLatin1String("TORRENT                 return i18n("BitTorrent description file
+    if (frm == QLatin1String("TORRENT                 return i18n("BitTorrent description file");
 
-    if (frm == QLatin1String("TXT                     return i18n("Text files
+    if (frm == QLatin1String("TXT                     return i18n("Text files");
 
-    if (frm == QLatin1String("VCF, VCARD              return i18n("Virtual Card
+    if (frm == QLatin1String("VCF, VCARD              return i18n("Virtual Card");
 
-    if (frm == QLatin1String("VOB                     return i18n("Video Object (MPEG-based)
+    if (frm == QLatin1String("VOB                     return i18n("Video Object");
 
-    if (frm == QLatin1String("VRD                     return i18n("Canon DPP Recipe Data
+    if (frm == QLatin1String("VRD                     return i18n("Canon DPP Recipe Data");
 
-    if (frm == QLatin1String("VSD                     return i18n("Microsoft Visio Drawing (FPX-like)
+    if (frm == QLatin1String("VSD                     return i18n("Microsoft Visio Drawing");
 
-    if (frm == QLatin1String("WAV                     return i18n("Windows digital audio WAVeform (RIFF-based)
+    if (frm == QLatin1String("WAV                     return i18n("Windows digital audio WAVeform");
 
-    if (frm == QLatin1String("WEBM                    return i18n("Google Web Movie (Matroska-based)
+    if (frm == QLatin1String("WEBM                    return i18n("Google Web Movie");
 
-    if (frm == QLatin1String("WEBP                    return i18n("Google Web Picture (RIFF-based)
+    if (frm == QLatin1String("WEBP                    return i18n("Google Web Picture");
 
-    if (frm == QLatin1String("WMA, WMV                return i18n("Windows Media Audio/Video (ASF-based)
+    if (frm == QLatin1String("WMA, WMV                return i18n("Windows Media Audio/Video");
 
-    if (frm == QLatin1String("WTV                     return i18n("Windows recorded TV show
+    if (frm == QLatin1String("WTV                     return i18n("Windows recorded TV show");
 
-    if (frm == QLatin1String("WV                      return i18n("WavePack lossless audio (RIFF-based)
+    if (frm == QLatin1String("WV                      return i18n("WavePack lossless audio");
 
-    if (frm == QLatin1String("X3F                     return i18n("Sigma/Foveon RAW
+    if (frm == QLatin1String("X3F                     return i18n("Sigma/Foveon RAW");
 
-    if (frm == QLatin1String("XCF                     return i18n("GIMP native image format
+    if (frm == QLatin1String("XCF                     return i18n("GIMP native image format");
 
-    if (frm == QLatin1String("XLS, XLT                return i18n("Microsoft Excel Spreadsheet/Template (FPX-like)
+    if (frm == QLatin1String("XLS, XLT                return i18n("Microsoft Excel Spreadsheet/Template");
 
-    if (frm == QLatin1String("XLSX, XLSM, XLSB        return i18n("Office Open XML Spreadsheet [Macro-enabled/Binary]
+    if (frm == QLatin1String("XLSX, XLSM, XLSB        return i18n("Office Open XML Spreadsheet");
 
-    if (frm == QLatin1String("XLTX, XLTM              return i18n("Office Open XML Spreadsheet Template [Macro-enabled]
+    if (frm == QLatin1String("XLTX, XLTM              return i18n("Office Open XML Spreadsheet Template");
 
-    if (frm == QLatin1String("XMP                     return i18n("Extensible Metadata Platform sidecar file
+    if (frm == QLatin1String("XMP                     return i18n("Extensible Metadata Platform sidecar file");
 
-    if (frm == QLatin1String("ZIP                     return i18n("ZIP archive
+    if (frm == QLatin1String("ZIP                     return i18n("ZIP archive");
 */
     return QString();
 }
