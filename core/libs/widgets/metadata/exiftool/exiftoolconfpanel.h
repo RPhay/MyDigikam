@@ -54,6 +54,10 @@ private Q_SLOTS:
 
 private:
 
+    QString formatDescription(const QString& frm);
+
+private:
+
     class Private;
     Private* const d;
 };
