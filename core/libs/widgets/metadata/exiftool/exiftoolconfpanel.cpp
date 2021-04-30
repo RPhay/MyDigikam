@@ -96,6 +96,7 @@ ExifToolConfPanel::ExifToolConfPanel(QWidget* const parent)
 
     QGroupBox* const exifToolBox = new QGroupBox(i18n("Supported File Formats"), this);
     d->exifToolFormats           = new QTreeWidget(exifToolBox);
+    d->exifToolFormats->setRootIsDecorated(false);
     d->exifToolFormats->setSortingEnabled(true);
     d->exifToolFormats->sortByColumn(0, Qt::AscendingOrder);
     d->exifToolFormats->setSelectionMode(QAbstractItemView::SingleSelection);
@@ -103,7 +104,10 @@ ExifToolConfPanel::ExifToolConfPanel(QWidget* const parent)
     d->exifToolFormats->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     d->exifToolFormats->setColumnCount(4);
     d->exifToolFormats->setHeaderHidden(false);
-    d->exifToolFormats->setHeaderLabels(QStringList() << i18n("Extension") << i18n("Read") << i18n("Write") << i18n("Description"));
+    d->exifToolFormats->setHeaderLabels(QStringList() << i18n("Extension")
+                                                      << i18n("Read")
+                                                      << i18n("Write")
+                                                      << i18n("Description"));
 
     d->searchBar                 = new SearchTextBar(this, QLatin1String("ExifToolFormatsSearchBar"));
 
