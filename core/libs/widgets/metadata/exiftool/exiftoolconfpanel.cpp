@@ -56,6 +56,7 @@ public:
 
     explicit Private()
       : exifToolBinWidget(nullptr),
+        searchBar        (nullptr),
         exifToolFormats  (nullptr)
     {
     }
@@ -64,6 +65,7 @@ public:
 
     DBinarySearch* exifToolBinWidget;
     ExifToolBinary exifToolBin;
+    SearchTextBar* searchBar;
 
     QTreeWidget*   exifToolFormats;
 };
@@ -103,8 +105,11 @@ ExifToolConfPanel::ExifToolConfPanel(QWidget* const parent)
     d->exifToolFormats->setHeaderHidden(false);
     d->exifToolFormats->setHeaderLabels(QStringList() << i18n("Extension") << i18n("Read") << i18n("Write") << i18n("Description"));
 
+    d->searchBar                 = new SearchTextBar(this, QLatin1String("ExifToolFormatsSearchBar"));
+
     QVBoxLayout* const vlay      = new QVBoxLayout(exifToolBox);
     vlay->addWidget(d->exifToolFormats);
+    vlay->addWidget(d->searchBar);
 
     grid->addWidget(exifToolBinLabel,     0, 0, 1, 2);
     grid->addWidget(d->exifToolBinWidget, 1, 0, 1, 2);
@@ -113,6 +118,9 @@ ExifToolConfPanel::ExifToolConfPanel(QWidget* const parent)
     setLayout(grid);
 
     // ---
+
+    connect(d->searchBar, SIGNAL(signalSearchTextSettings(SearchTextSettings)),
+            this, SLOT(slotSearchTextChanged(SearchTextSettings)));
 
     connect(d->exifToolBinWidget, SIGNAL(signalBinariesFound(bool)),
             this, SLOT(slotExifToolBinaryFound(bool)));
@@ -173,6 +181,36 @@ void ExifToolConfPanel::slotExifToolBinaryFound(bool found)
                                                               << (write.contains(frm) ? i18n("yes") : i18n("no"))
                                                               << formatDescription(frm));
     }
+}
+
+void ExifToolConfPanel::slotSearchTextChanged(const SearchTextSettings& settings)
+{
+    bool query     = false;
+    int  results   = 0;
+    QString search = settings.text.toLower();
+
+    QTreeWidgetItemIterator it(d->exifToolFormats);
+
+    while (*it)
+    {
+        QTreeWidgetItem* const item  = *it;
+
+        if (item->text(0).toLower().contains(search, settings.caseSensitive) ||
+            item->text(3).toLower().contains(search, settings.caseSensitive))
+        {
+            ++results;
+            query = true;
+            item->setHidden(false);
+        }
+        else
+        {
+            item->setHidden(true);
+        }
+
+        ++it;
+    }
+
+    d->searchBar->slotSearchResult(query);
 }
 
 QString ExifToolConfPanel::formatDescription(const QString& frm)

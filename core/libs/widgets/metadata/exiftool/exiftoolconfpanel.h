@@ -32,6 +32,7 @@
 // Local includes
 
 #include "digikam_export.h"
+#include "searchtextbar.h"
 
 namespace Digikam
 {
@@ -50,6 +51,7 @@ public:
 
 private Q_SLOTS:
 
+    void slotSearchTextChanged(const SearchTextSettings&);
     void slotExifToolBinaryFound(bool);
 
 private:
