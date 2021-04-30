@@ -686,8 +686,8 @@ QString ExifToolConfPanel::formatDescription(const QString& frm)
 
     if (frm == QLatin1String("WMF"))         return i18n("Windows Metafile Format");
 
-    if ((frm == QLatin1String("WOF")) ||
-        (frm == QLatin1String("WOF2")))      return i18n("Web Open Font Format");
+    if ((frm == QLatin1String("WOFF")) ||
+        (frm == QLatin1String("WOFF2")))     return i18n("Web Open Font Format");
 
     if (frm == QLatin1String("WTV"))         return i18n("Windows recorded TV show");
 
