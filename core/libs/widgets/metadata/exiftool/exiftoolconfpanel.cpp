@@ -177,6 +177,8 @@ void ExifToolConfPanel::slotExifToolBinaryFound(bool found)
 
 QString ExifToolConfPanel::formatDescription(const QString& frm)
 {
+    // See description database here: https://github.com/exiftool/exiftool/blob/master/lib/Image/ExifTool.pm#L212
+
     if (frm == QLatin1String("3FR"))         return i18n("Hasselblad RAW");
 
     if ((frm == QLatin1String("3G2")) ||
@@ -206,7 +208,11 @@ QString ExifToolConfPanel::formatDescription(const QString& frm)
         (frm == QLatin1String("AIF"))  ||
         (frm == QLatin1String("AIFC")))      return i18n("Audio Interchange File Format");
 
+    if (frm == QLatin1String("ALIAS"))       return i18n("MacOS file alias");
+
     if (frm == QLatin1String("APE"))         return i18n("Monkey's Audio");
+
+    if (frm == QLatin1String("APNG"))        return i18n("Animated Portable Network Graphics");
 
     if (frm == QLatin1String("ARQ"))         return i18n("Sony Alpha Pixel-Shift RAW");
 
@@ -214,21 +220,24 @@ QString ExifToolConfPanel::formatDescription(const QString& frm)
 
     if (frm == QLatin1String("ASF"))         return i18n("Microsoft Advanced Systems Format");
 
+    if (frm == QLatin1String("AVC"))         return i18n("Advanced Video Connection");
+
     if (frm == QLatin1String("AVI"))         return i18n("Audio Video Interleaved");
 
     if (frm == QLatin1String("AVIF"))        return i18n("AV1 Image File Format");
 
     if (frm == QLatin1String("BMP"))         return i18n("Windows BitMaP");
 
-    if (frm == QLatin1String("DIB"))         return i18n("Device Independent Bitmap");
-
     if (frm == QLatin1String("BPG"))         return i18n("Better Portable Graphics");
 
     if (frm == QLatin1String("BTF"))         return i18n("BigTIFF");
 
+    if (frm == QLatin1String("BZ2"))         return i18n("BZIP2 archive");
+
     if (frm == QLatin1String("CHM"))         return i18n("Microsoft Compiled HTML format");
 
-    if (frm == QLatin1String("COS"))         return i18n("Capture One Settings");
+    if ((frm == QLatin1String("COS")) ||
+        (frm == QLatin1String("NEWER")))     return i18n("Capture One Settings");
 
     if (frm == QLatin1String("CR2"))         return i18n("Canon RAW 2");
 
@@ -250,9 +259,15 @@ QString ExifToolConfPanel::formatDescription(const QString& frm)
         (frm == QLatin1String("DIC")) ||
         (frm == QLatin1String("DICM")))      return i18n("DICOM - Digital Imaging and Communications in Medicine");
 
+    if (frm == QLatin1String("DIB"))         return i18n("Device Independent Bitmap");
+
+    if (frm == QLatin1String("DCX"))         return i18n("Multi-page PC Paintbrush");
+
     if (frm == QLatin1String("DCP"))         return i18n("DNG Camera Profile");
 
     if (frm == QLatin1String("DCR"))         return i18n("Kodak Digital Camera RAW");
+
+    if (frm == QLatin1String("DEX"))         return i18n("Dalvik Executable format");
 
     if (frm == QLatin1String("DFONT"))       return i18n("Macintosh Data Fork Font");
 
@@ -287,9 +302,15 @@ QString ExifToolConfPanel::formatDescription(const QString& frm)
 
     if (frm == QLatin1String("DVR-MS"))      return i18n("Microsoft Digital Video Recording");
 
+    if (frm == QLatin1String("DWF"))         return i18n("Autodesk drawing (Design Web Format)");
+
+    if (frm == QLatin1String("DWG"))         return i18n("AutoCAD Drawing");
+
     if (frm == QLatin1String("EIP"))         return i18n("Capture One Enhanced Image Package");
 
     if ((frm == QLatin1String("EPS"))  ||
+        (frm == QLatin1String("EPS2")) ||
+        (frm == QLatin1String("EPS3")) ||
         (frm == QLatin1String("EPSF")) ||
         (frm == QLatin1String("PS")))        return i18n("[Encapsulated] PostScript Format");
 
@@ -315,13 +336,16 @@ QString ExifToolConfPanel::formatDescription(const QString& frm)
 
     if (frm == QLatin1String("FFF"))         return i18n("FLIR Systems thermal image File Format");
 
-    if (frm == QLatin1String("FITS"))        return i18n("Flexible Image Transport System");
+    if ((frm == QLatin1String("FIT")) ||
+        (frm == QLatin1String("FITS")))      return i18n("Flexible Image Transport System");
 
     if (frm == QLatin1String("FLA"))         return i18n("Macromedia / Adobe Flash project");
 
     if (frm == QLatin1String("FLAC"))        return i18n("Free Lossless Audio Codec");
 
     if (frm == QLatin1String("FLIF"))        return i18n("Free Lossless Image Format");
+
+    if (frm == QLatin1String("FLIR"))        return i18n("FLIR File Format");
 
     if (frm == QLatin1String("FLV"))         return i18n("Flash Video");
 
@@ -406,6 +430,8 @@ QString ExifToolConfPanel::formatDescription(const QString& frm)
     if (frm == QLatin1String("LNK"))         return i18n("Microsoft Shell Link");
 
     if (frm == QLatin1String("LRV"))         return i18n("Low-Resolution Video");
+
+    if (frm == QLatin1String("LRI"))         return i18n("Light RAW");
 
     if ((frm == QLatin1String("M2TS")) ||
         (frm == QLatin1String("MTS"))  ||
@@ -523,6 +549,12 @@ QString ExifToolConfPanel::formatDescription(const QString& frm)
 
     if ((frm == QLatin1String("PICT")) ||
         (frm == QLatin1String("PCT")))       return i18n("Apple Picture file");
+
+    if ((frm == QLatin1String("PHP"))  ||
+        (frm == QLatin1String("PHP3")) ||
+        (frm == QLatin1String("PHP4")) ||
+        (frm == QLatin1String("PHP5")) ||
+        (frm == QLatin1String("PHPS")))      return i18n("PHP Hypertext Preprocessor");
 
     if (frm == QLatin1String("PLIST"))       return i18n("Apple Property List");
 
