@@ -24,146 +24,10 @@
  *
  * ============================================================ */
 
-#include "setupmetadata.h"
-
-// Qt includes
-
-#include <QApplication>
-#include <QButtonGroup>
-#include <QCheckBox>
-#include <QComboBox>
-#include <QFrame>
-#include <QGridLayout>
-#include <QGroupBox>
-#include <QIcon>
-#include <QLabel>
-#include <QLineEdit>
-#include <QMessageBox>
-#include <QPointer>
-#include <QRadioButton>
-#include <QStandardPaths>
-#include <QStyle>
-#include <QToolButton>
-#include <QVBoxLayout>
-
-// KDE includes
-
-#include <klocalizedstring.h>
-
-// Local includes
-
-#include "advancedmetadatatab.h"
-#include "applicationsettings.h"
-#include "dactivelabel.h"
-#include "digikam_config.h"
-#include "digikam_debug.h"
-#include "metaengine.h"
-#include "metadatapanel.h"
-#include "metaenginesettings.h"
-#include "setuputils.h"
-#include "exiftoolconfpanel.h"
+#include "setupmetadata_p.h"
 
 namespace Digikam
 {
-
-class Q_DECL_HIDDEN SetupMetadata::Private
-{
-public:
-
-    explicit Private()
-      : exifAutoRotateOriginal  (false),
-        exifAutoRotateShowedInfo(false),
-        clearMetadataShowedInfo (false),
-        fieldsGroup             (nullptr),
-        readWriteGroup          (nullptr),
-        rotationGroup           (nullptr),
-        rotationAdvGroup        (nullptr),
-        saveTagsBox             (nullptr),
-        saveCommentsBox         (nullptr),
-        saveRatingBox           (nullptr),
-        savePickLabelBox        (nullptr),
-        saveColorLabelBox       (nullptr),
-        saveDateTimeBox         (nullptr),
-        saveTemplateBox         (nullptr),
-        saveFaceTags            (nullptr),
-        savePosition            (nullptr),
-        useLazySync             (nullptr),
-        writeDngFilesBox        (nullptr),
-        writeRawFilesBox        (nullptr),
-        writeXMPSidecarBox      (nullptr),
-        readXMPSidecarBox       (nullptr),
-        sidecarFileNameBox      (nullptr),
-        updateFileTimeStampBox  (nullptr),
-        rescanImageIfModifiedBox(nullptr),
-        clearMetadataIfRescanBox(nullptr),
-        writingModeCombo        (nullptr),
-        rotateByFlag            (nullptr),
-        rotateByContents        (nullptr),
-        allowRotateByMetadata   (nullptr),
-        allowLossyRotate        (nullptr),
-        exifRotateBox           (nullptr),
-        exifSetOrientationBox   (nullptr),
-        saveToBalooBox          (nullptr),
-        readFromBalooBox        (nullptr),
-        tab                     (nullptr),
-        displaySubTab           (nullptr),
-        tagsCfgPanel            (nullptr),
-        advTab                  (nullptr),
-        exifToolView            (nullptr),
-        extensionsEdit          (nullptr)
-    {
-    }
-
-    bool                 exifAutoRotateOriginal;
-    bool                 exifAutoRotateShowedInfo;
-    bool                 clearMetadataShowedInfo;
-
-    QGroupBox*           fieldsGroup;
-    QGroupBox*           readWriteGroup;
-    QGroupBox*           rotationGroup;
-    QGroupBox*           rotationAdvGroup;
-
-    QCheckBox*           saveTagsBox;
-    QCheckBox*           saveCommentsBox;
-    QCheckBox*           saveRatingBox;
-    QCheckBox*           savePickLabelBox;
-    QCheckBox*           saveColorLabelBox;
-    QCheckBox*           saveDateTimeBox;
-    QCheckBox*           saveTemplateBox;
-    QCheckBox*           saveFaceTags;
-    QCheckBox*           savePosition;
-
-    QCheckBox*           useLazySync;
-    QCheckBox*           writeDngFilesBox;
-    QCheckBox*           writeRawFilesBox;
-    QCheckBox*           writeXMPSidecarBox;
-    QCheckBox*           readXMPSidecarBox;
-    QCheckBox*           sidecarFileNameBox;
-    QCheckBox*           updateFileTimeStampBox;
-    QCheckBox*           rescanImageIfModifiedBox;
-    QCheckBox*           clearMetadataIfRescanBox;
-    QComboBox*           writingModeCombo;
-
-    QRadioButton*        rotateByFlag;
-    QRadioButton*        rotateByContents;
-    QCheckBox*           allowRotateByMetadata;
-    QCheckBox*           allowLossyRotate;
-    QCheckBox*           exifRotateBox;
-    QCheckBox*           exifSetOrientationBox;
-
-    QCheckBox*           saveToBalooBox;
-    QCheckBox*           readFromBalooBox;
-
-    QTabWidget*          tab;
-    QTabWidget*          displaySubTab;
-
-    MetadataPanel*       tagsCfgPanel;
-    AdvancedMetadataTab* advTab;
-
-    ExifToolConfPanel*   exifToolView;
-
-    QLineEdit*           extensionsEdit;
-};
 
 SetupMetadata::SetupMetadata(QWidget* const parent)
     : QScrollArea(parent),
@@ -679,7 +543,7 @@ SetupMetadata::SetupMetadata(QWidget* const parent)
 
     // --------------------------------------------------------
 
-    readSettings();
+    d->readSettings();
 
     connect(d->exifRotateBox, SIGNAL(toggled(bool)),
             this, SLOT(slotExifAutoRotateToggled(bool)));
@@ -794,82 +658,6 @@ void SetupMetadata::applySettings()
     d->tagsCfgPanel->applySettings();
 
     d->advTab->applySettings();
-}
-
-void SetupMetadata::readSettings()
-{
-    MetaEngineSettings* const mSettings = MetaEngineSettings::instance();
-
-    if (!mSettings)
-    {
-        return;
-    }
-
-    MetaEngineSettingsContainer set = mSettings->settings();
-
-    if (set.rotationBehavior & MetaEngineSettingsContainer::RotatingPixels)
-    {
-        d->rotateByContents->setChecked(true);
-    }
-    else
-    {
-        d->rotateByFlag->setChecked(true);
-    }
-
-    d->allowRotateByMetadata->setChecked(set.rotationBehavior & MetaEngineSettingsContainer::RotateByMetadataFlag);
-    d->allowLossyRotate->setChecked(set.rotationBehavior & MetaEngineSettingsContainer::RotateByLossyRotation);
-
-    d->exifAutoRotateOriginal       = set.exifRotate;
-    d->exifRotateBox->setChecked(d->exifAutoRotateOriginal);
-    d->exifSetOrientationBox->setChecked(set.exifSetOrientation);
-
-    d->saveTagsBox->setChecked(set.saveTags);
-    d->saveCommentsBox->setChecked(set.saveComments);
-    d->saveRatingBox->setChecked(set.saveRating);
-    d->savePickLabelBox->setChecked(set.savePickLabel);
-    d->saveColorLabelBox->setChecked(set.saveColorLabel);
-    d->saveDateTimeBox->setChecked(set.saveDateTime);
-    d->saveTemplateBox->setChecked(set.saveTemplate);
-    d->saveFaceTags->setChecked(set.saveFaceTags);
-    d->savePosition->setChecked(set.savePosition);
-
-    d->useLazySync->setChecked(set.useLazySync);
-    d->writeDngFilesBox->setChecked(set.writeDngFiles);
-    d->writeRawFilesBox->setChecked(set.writeRawFiles);
-    d->readXMPSidecarBox->setChecked(set.useXMPSidecar4Reading);
-    d->sidecarFileNameBox->setChecked(set.useCompatibleFileName);
-    d->updateFileTimeStampBox->setChecked(set.updateFileTimeStamp);
-    d->rescanImageIfModifiedBox->setChecked(set.rescanImageIfModified);
-    d->clearMetadataIfRescanBox->setChecked(set.clearMetadataIfRescan);
-
-    if (set.metadataWritingMode == MetaEngine::WRITE_TO_FILE_ONLY)
-    {
-        d->writeXMPSidecarBox->setChecked(false);
-    }
-    else
-    {
-        d->writeXMPSidecarBox->setChecked(true);
-        d->writingModeCombo->setCurrentIndex(d->writingModeCombo->findData(set.metadataWritingMode));
-    }
-
-    d->extensionsEdit->setText(set.sidecarExtensions.join(QLatin1Char(' ')));
-
-    d->exifToolView->setExifToolDirectory(set.exifToolPath);
-
-#ifdef HAVE_KFILEMETADATA
-
-    ApplicationSettings* const aSettings = ApplicationSettings::instance();
-
-    if (!aSettings)
-    {
-        return;
-    }
-
-    d->saveToBalooBox->setChecked(aSettings->getSyncDigikamToBaloo());
-    d->readFromBalooBox->setChecked(aSettings->getSyncBalooToDigikam());
-
-#endif // HAVE_KFILEMETADATA
-
 }
 
 bool SetupMetadata::exifAutoRotateHasChanged() const

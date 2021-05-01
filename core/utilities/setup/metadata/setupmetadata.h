@@ -61,10 +61,6 @@ public:
     void setActiveMainTab(MetadataTab tab);
     void setActiveSubTab(int tab);
 
-private:
-
-    void readSettings();
-
 private Q_SLOTS:
 
     void slotExifAutoRotateToggled(bool);

@@ -59,6 +59,7 @@ set(libsetup_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/album/setupmime.cpp
 
     ${CMAKE_CURRENT_SOURCE_DIR}/metadata/setupmetadata.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/metadata/setupmetadata_p.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/metadata/advancedmetadatatab.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/metadata/namespacelistview.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/metadata/namespaceeditdlg.cpp
