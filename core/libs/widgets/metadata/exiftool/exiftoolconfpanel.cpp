@@ -78,7 +78,7 @@ ExifToolConfPanel::ExifToolConfPanel(QWidget* const parent)
 {
     QGridLayout* const grid        = new QGridLayout;
     QLabel* const exifToolBinLabel = new QLabel(i18nc("@info",
-                                                "ExifTool is an open-source software program for reading, writing, "
+                                                "%1 is an open-source software program for reading, writing, "
                                                 "and manipulating multimedia files. It is platform independent "
                                                 "available as a command-line application. ExifTool is commonly "
                                                 "incorporated into different types of digital workflows and supports "
@@ -87,9 +87,11 @@ ExifToolConfPanel::ExifToolConfPanel(QWidget* const parent)
                                                 "many digital cameras.\n\n"
                                                 "Here you can configure location where ExifTool binary is located. "
                                                 "Application will try to find this binary automatically if they are "
-                                                "already installed on your computer."),
+                                                "already installed on your computer.",
+                                                QString::fromUtf8("<a href='https://www.exiftool.org'>ExifTool</a>")),
                                                 this);
     exifToolBinLabel->setWordWrap(true);
+    exifToolBinLabel->setOpenExternalLinks(true);
 
     d->exifToolBinWidget         = new DBinarySearch(this);
     d->exifToolBinWidget->addBinary(d->exifToolBin);
