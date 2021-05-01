@@ -61,6 +61,14 @@ public:
     void setActiveMainTab(MetadataTab tab);
     void setActiveSubTab(int tab);
 
+private:
+
+    void appendBehaviorTab();
+    void appendSidecarsTab();
+    void appendDisplayTab();
+    void appendRotationTab();
+    void appendBalooTab();
+
 private Q_SLOTS:
 
     void slotExifAutoRotateToggled(bool);
