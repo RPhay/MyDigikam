@@ -72,12 +72,12 @@ public:
      * With readableFormats() method, the cointainer is used to get
      * a list of upper-case file format extensions supported by ExifTool for reading.
      * key   = "READ_FORMAT"                (QString).
-     * value = list                         (QStringList)
+     * value = list of pairs (ext,desc)      (QStringList)
      *
      * With writableFormats() method, the cointainer is used to get
      * a list of upper-case file format extensions supported by ExifTool for writing.
      * key   = "WRITE_FORMAT"               (QString).
-     * value = list                         (QStringList).
+     * value = list of pairs (ext,desc)     (QStringList).
      */
     typedef QHash<QString, QVariantList> ExifToolData;
 

@@ -199,6 +199,7 @@ bool ExifToolParser::readableFormats()
     // Build command (set metadata)
 
     QByteArrayList cmdArgs;
+    cmdArgs << QByteArray("-l");
     cmdArgs << QByteArray("-listr");
 
     d->currentPath.clear();
@@ -216,6 +217,7 @@ bool ExifToolParser::writableFormats()
     // Build command (set metadata)
 
     QByteArrayList cmdArgs;
+    cmdArgs << QByteArray("-l");
     cmdArgs << QByteArray("-listwf");
 
     d->currentPath.clear();
@@ -351,16 +353,49 @@ void ExifToolParser::slotCmdCompleted(int cmdAction,
 
         case ExifToolProcess::READ_FORMATS:
         {
-            QString out     = QString::fromUtf8(stdOut).section(QLatin1Char('\n'), 1, -1);
-            QStringList lst = out.remove(QLatin1Char('\n')).split(QLatin1Char(' '), Qt::SkipEmptyParts);
+            // Remove first line
+
+            QString out       = QString::fromUtf8(stdOut).section(QLatin1Char('\n'), 1, -1);
+
+            // Get extensions and descriptions as pair of strings
+
+            QStringList lines = out.split(QLatin1Char('\n'), Qt::SkipEmptyParts);
+            QStringList lst;
+            QString s;
+
+            foreach (const QString& ln, lines)
+            {
+                s = ln.simplified();
+                QString ext  = s.section(QLatin1Char(' '), 0, 0);
+                QString desc = s.section(QLatin1Char(' '), 1, -1);
+                lst << ext << desc;
+            }
+
+
             d->exifToolData.insert(QLatin1String("READ_FORMATS"), QVariantList() << lst);
             break;
         }
 
         case ExifToolProcess::WRITE_FORMATS:
         {
-            QString out     = QString::fromUtf8(stdOut).section(QLatin1Char('\n'), 1, -1);
-            QStringList lst = out.remove(QLatin1Char('\n')).split(QLatin1Char(' '), Qt::SkipEmptyParts);
+            // Remove first line
+
+            QString out       = QString::fromUtf8(stdOut).section(QLatin1Char('\n'), 1, -1);
+
+            // Get extensions and descriptions as pair of strings
+
+            QStringList lines = out.split(QLatin1Char('\n'), Qt::SkipEmptyParts);
+            QStringList lst;
+            QString s;
+
+            foreach (const QString& ln, lines)
+            {
+                s = ln.simplified();
+                QString ext  = s.section(QLatin1Char(' '), 0, 0);
+                QString desc = s.section(QLatin1Char(' '), 1, -1);
+                lst << ext << desc;
+            }
+
             d->exifToolData.insert(QLatin1String("WRITE_FORMATS"), QVariantList() << lst);
             break;
         }
