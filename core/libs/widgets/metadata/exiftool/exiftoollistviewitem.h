@@ -40,18 +40,20 @@ class ExifToolListViewItem : public QTreeWidgetItem
 public:
 
     ExifToolListViewItem(ExifToolListViewGroup* const parent,
-                          const QString& key,
-                          const QString& value,
-                          const QString& desc);
+                         const QString& key,
+                         const QString& value,
+                         const QString& desc);
     ~ExifToolListViewItem() override;
 
-    QString getKey()   const;
-    QString getTitle() const;
-    QString getValue() const;
+    QString getKey()         const;
+    QString getTitle()       const;
+    QString getValue()       const;
+    QString getDescription() const;
 
 private:
 
     QString m_key;
+    QString m_desc;
 
 private:
 

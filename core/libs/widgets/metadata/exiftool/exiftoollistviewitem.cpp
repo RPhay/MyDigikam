@@ -41,7 +41,8 @@ ExifToolListViewItem::ExifToolListViewItem(ExifToolListViewGroup* const parent,
                                            const QString& value,
                                            const QString& desc)
     : QTreeWidgetItem(parent),
-      m_key          (key)
+      m_key          (key),
+      m_desc         (desc)
 {
     setChildIndicatorPolicy(QTreeWidgetItem::DontShowIndicator);
     setDisabled(false);
@@ -49,7 +50,7 @@ ExifToolListViewItem::ExifToolListViewItem(ExifToolListViewGroup* const parent,
 
     QString name = key.section(QLatin1Char('.'), -1);
     setText(0, name);
-    setToolTip(0, !desc.isEmpty() ? desc : name);
+    setToolTip(0, name);
 
     QString tagVal = value.simplified();
 
@@ -83,6 +84,11 @@ QString ExifToolListViewItem::getTitle() const
 QString ExifToolListViewItem::getValue() const
 {
     return text(1);
+}
+
+QString ExifToolListViewItem::getDescription() const
+{
+    return m_desc;
 }
 
 } // namespace Digikam

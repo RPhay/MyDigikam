@@ -30,6 +30,10 @@
 #include <QStringList>
 #include <QStyle>
 
+// KDE includes
+
+#include <klocalizedstring.h>
+
 // Local includes
 
 #include "exiftoollistviewgroup.h"
@@ -258,7 +262,21 @@ void ExifToolListView::slotSelectionChanged(QTreeWidgetItem* item, int)
         return;
     }
 
-    d->selectedItemKey                    = viewItem->getKey();
+    d->selectedItemKey                   = viewItem->getKey();
+    QString tagValue                     = viewItem->getValue();
+    QString tagTitle                     = viewItem->getTitle();
+    QString tagDesc                      = viewItem->getDescription();
+
+    if (tagValue.length() > 128)
+    {
+        tagValue.truncate(128);
+        tagValue.append(QLatin1String("..."));
+    }
+
+    this->setWhatsThis(i18n("<b>Title: </b><p>%1</p>"
+                            "<b>Value: </b><p>%2</p>"
+                            "<b>Description: </b><p>%3</p>",
+                            tagTitle, tagValue, tagDesc));
 }
 
 } // namespace Digikam
