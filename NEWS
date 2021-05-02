@@ -179,4 +179,5 @@ BUGFIXES:
 161 ==> 434072 - Crash at start of digiKam.
 162 ==> 436187 - Option to automatically delete images from card after import.
 163 ==> 436343 - Send selected images to external application as a list of positional arguments.
-164 ==> 
+164 ==> 436487 - IPTC:ObjectAttributeReference and XMP:IntellectualGenre.
+165 ==> 

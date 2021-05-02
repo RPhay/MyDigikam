@@ -213,9 +213,11 @@ XMPProperties::XMPProperties(QWidget* const parent)
 
     // --------------------------------------------------------
 
+    DHBox* const objectBox  = new DHBox(this);
     d->objectAttributeCheck = new MetadataCheckBox(i18nc("@option", "Attribute:"), this);
-    d->objectAttributeCB    = new SqueezedComboBox(this);
-    d->objectAttributeEdit  = new QLineEdit(this);
+    d->objectAttributeCB    = new SqueezedComboBox(objectBox);
+    d->objectAttributeCB->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+    d->objectAttributeEdit  = new QLineEdit(objectBox);
     d->objectAttributeEdit->setClearButtonEnabled(true);
     d->objectAttributeEdit->setWhatsThis(i18nc("@info", "Set here the editorial attribute description of the content."));
 
@@ -259,8 +261,7 @@ XMPProperties::XMPProperties(QWidget* const parent)
     grid->addWidget(d->objectTypeEdit,                      3, 0, 1, 5);
     grid->addWidget(new DLineWidget(Qt::Horizontal, this),  4, 0, 1, 5);
     grid->addWidget(d->objectAttributeCheck,                5, 0, 1, 1);
-    grid->addWidget(d->objectAttributeCB,                   5, 1, 1, 2);
-    grid->addWidget(d->objectAttributeEdit,                 5, 3, 1, 2);
+    grid->addWidget(objectBox,                              5, 1, 1, 4);
     grid->addWidget(new DLineWidget(Qt::Horizontal, this),  6, 0, 1, 5);
     grid->addWidget(d->originalTransCheck,                  7, 0, 1, 1);
     grid->addWidget(d->originalTransEdit,                   7, 1, 1, 4);

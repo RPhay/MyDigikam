@@ -91,7 +91,7 @@ MultiStringsEdit::MultiStringsEdit(QWidget* const parent,
     d->repValueButton->setEnabled(false);
 
     d->valueBox       = new QListWidget(this);
-    d->valueBox->setSizePolicy(QSizePolicy::Maximum, QSizePolicy::Ignored);
+    d->valueBox->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Ignored);
     d->valueBox->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 
     d->valueEdit      = new QLineEdit(this);
@@ -118,7 +118,7 @@ MultiStringsEdit::MultiStringsEdit(QWidget* const parent,
     grid->addWidget(d->valueEdit,      2, 0, 1, 4);
     grid->setRowStretch(1, 10);
     grid->setColumnStretch(0, 10);
-    grid->setColumnStretch(4, 100);
+    grid->setColumnStretch(4, 10);
     grid->setContentsMargins(QMargins());
     grid->setSpacing(QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing));
 
