@@ -52,12 +52,13 @@ public:
 
 private:
 
-    QString m_key;
-    QString m_desc;
+    Q_DISABLE_COPY(ExifToolListViewItem)
 
 private:
 
-    Q_DISABLE_COPY(ExifToolListViewItem)
+    class Private;
+    Private* const d;
+
 };
 
 } // namespace Digikam
