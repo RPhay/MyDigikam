@@ -271,8 +271,19 @@ void ObjectAttributesEdit::slotSelectionChanged()
 void ObjectAttributesEdit::slotAddValue()
 {
     QString newValue = d->dataList->itemHighlighted().left(3);
-    newValue.append(QString::fromUtf8(":%1").arg(d->valueEdit->text()));
-    bool found       = false;
+    newValue.append(QLatin1Char(':'));
+
+    if (!d->valueEdit->text().isEmpty())
+    {
+        newValue.append(d->valueEdit->text());
+    }
+    else
+    {
+        newValue.append(d->dataList->itemHighlighted()
+                        .section(QLatin1String(" - "), -1));
+    }
+
+    bool found = false;
 
     for (int i = 0 ; i < d->valueBox->count() ; ++i)
     {
