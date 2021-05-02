@@ -44,7 +44,8 @@ namespace DigikamGenericPresentationPlugin
 
 class PresentationContainer;
 
-class PresentationAudioWidget : public QWidget, public Ui::PresentationAudioWidget
+class PresentationAudioWidget : public QWidget,
+                                public Ui::PresentationAudioWidget
 {
     Q_OBJECT
 

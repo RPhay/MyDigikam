@@ -89,7 +89,7 @@ private:
     void          advanceFrame();
     void          previousFrame();
     void          loadImage();
-     void          montage(QImage& top, QImage& bot);
+    void          montage(QImage& top, QImage& bot);
     EffectMethod  getRandomEffect();
     void          showEndOfShow();
     void          showOverlays();

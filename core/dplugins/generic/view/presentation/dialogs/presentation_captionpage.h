@@ -33,7 +33,8 @@ namespace DigikamGenericPresentationPlugin
 
 class PresentationContainer;
 
-class PresentationCaptionPage : public QWidget, Ui::PresentationCaptionPage
+class PresentationCaptionPage : public QWidget,
+                                public Ui::PresentationCaptionPage
 {
     Q_OBJECT
 

@@ -64,6 +64,7 @@ Q_SIGNALS:
     void signalClose();
     void signalPlay();
     void signalPause();
+    void signalRemoveImageFromList();
 
 protected:
 
@@ -74,6 +75,7 @@ private Q_SLOTS:
     void slotPlayButtonToggled();
     void slotNexPrevClicked();
     void slotChangeDelayButtonPressed();
+    void slotMoveToTrash();
 
 private:
 

@@ -1020,7 +1020,9 @@ void PresentationGL::slotTimeOut()
     d->timer->start(d->timeout);
 
     if (d->sharedData->offAutoDelay)
+    {
         d->timer->stop();
+    }
 }
 
 void PresentationGL::slotMouseMoveTimeOut()
@@ -1077,7 +1079,6 @@ void PresentationGL::effectNone()
     paintTexture();
     d->effectRunning = false;
     d->timeout       = 0;
-    return;
 }
 
 void PresentationGL::effectBlend()
@@ -1090,8 +1091,8 @@ void PresentationGL::effectBlend()
         return;
     }
 
-    int a = (d->curr == 0) ? 1 : 0;
-    int b =  d->curr;
+    int a     = (d->curr == 0) ? 1 : 0;
+    int b     =  d->curr;
 
     GLuint ta = d->texture[a]->textureId();
     GLuint tb = d->texture[b]->textureId();
@@ -1182,7 +1183,6 @@ void PresentationGL::effectFade()
     }
 
     glEnd();
-
 
     d->i++;
 }
@@ -1413,7 +1413,6 @@ void PresentationGL::effectSlide()
     glBindTexture(GL_TEXTURE_2D, tb);
 
     glBegin(GL_QUADS);
-
     {
         glColor4f(1.0, 1.0, 1.0, 1.0);
         glTexCoord2f(0, 0);

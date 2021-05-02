@@ -25,7 +25,6 @@
  *
  * ============================================================ */
 
-#include "presentationkb.h"
 #include "presentationkb_p.h"
 
 // C++ includes

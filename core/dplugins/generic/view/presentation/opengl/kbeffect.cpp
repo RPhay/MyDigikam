@@ -104,6 +104,7 @@ bool FadeKBEffect::done()
     if (m_img[0]->m_pos >= 1.0)
     {
         setupNewImage(0);
+
         return true;
     }
 
@@ -119,7 +120,7 @@ void FadeKBEffect::advanceTime(float step)
         m_img[0]->m_pos = 1.0;
     }
 
-    if (m_needFadeIn && m_img[0]->m_pos < 0.1)
+    if      (m_needFadeIn && (m_img[0]->m_pos < 0.1))
     {
         m_img[0]->m_opacity = m_img[0]->m_pos * 10;
     }
@@ -152,6 +153,7 @@ bool BlendKBEffect::done()
     {
         m_img[0]->m_paint = false;
         swapImages();
+
         return true;
     }
 
@@ -163,14 +165,19 @@ void BlendKBEffect::advanceTime(float step)
     m_img[0]->m_pos += step;
 
     if (m_img[0]->m_pos >= 1.0)
+    {
         m_img[0]->m_pos = 1.0;
+    }
 
     if (m_img[1])
+    {
         m_img[1]->m_pos += step;
+    }
 
-    if (m_needFadeIn && m_img[0]->m_pos < 0.1)
+    if      (m_needFadeIn && (m_img[0]->m_pos < 0.1))
+    {
         m_img[0]->m_opacity = m_img[0]->m_pos * 10;
-
+    }
     else if (m_img[0]->m_pos > 0.9)
     {
         m_img[0]->m_opacity = (1.0 - m_img[0]->m_pos) * 10;

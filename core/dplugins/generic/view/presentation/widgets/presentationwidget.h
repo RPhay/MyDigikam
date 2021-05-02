@@ -113,6 +113,7 @@ private Q_SLOTS:
     void    slotPrev();
     void    slotNext();
     void    slotClose();
+    void    slotRemoveImageFromList();
 
     void    slotVideoLoaded(bool);
     void    slotVideoFinished();

@@ -60,6 +60,7 @@
 #include "presentationcontainer.h"
 #include "presentationctrlwidget.h"
 #include "presentationloader.h"
+#include "presentation_mainpage.h"
 
 #ifdef HAVE_MEDIAPLAYER
 #   include "presentationaudiowidget.h"
@@ -249,6 +250,9 @@ PresentationWidget::PresentationWidget(PresentationContainer* const sharedData)
     connect(d->slideCtrlWidget, SIGNAL(signalClose()),
             this, SLOT(slotClose()));
 
+    connect(d->slideCtrlWidget, SIGNAL(signalRemoveImageFromList()),
+            this, SLOT(slotRemoveImageFromList()));
+
 #ifdef HAVE_MEDIAPLAYER
 
     // -- playback widget -------------------------------
@@ -261,7 +265,7 @@ PresentationWidget::PresentationWidget(PresentationContainer* const sharedData)
 
     d->videoView = new SlideVideo(this);
 
-    //TODO: pass mouse events from d->videoView to this ?
+    // TODO: pass mouse events from d->videoView to this ?
     //d->videoView->installEventFilter(this);
 
     connect(d->videoView, SIGNAL(signalVideoLoaded(bool)),
@@ -940,6 +944,23 @@ void PresentationWidget::slotClose()
     close();
 }
 
+void PresentationWidget::slotRemoveImageFromList()
+{
+    QUrl url = d->imageLoader->currPath();
+
+    // Delete or move to trash by url
+
+    d->sharedData->iface->deleteImage(url);
+
+    // Delete from list of presentation
+
+    d->sharedData->urlList.removeOne(url);
+
+    // Delete from list of mainpage
+
+    d->sharedData->mainPage->removeImageFromList(url);
+}
+
 void PresentationWidget::slotVideoLoaded(bool loaded)
 {
     if (loaded)
@@ -1118,6 +1139,7 @@ PresentationWidget::EffectMethod PresentationWidget::getRandomEffect()
 int PresentationWidget::effectNone(bool /* aInit */)
 {
     showCurrentImage();
+
     return -1;
 }
 
@@ -1219,6 +1241,7 @@ int PresentationWidget::effectMeltdown(bool aInit)
         delete [] d->intArray;
         d->intArray = nullptr;
         showCurrentImage();
+
         return -1;
     }
 
@@ -1437,6 +1460,7 @@ int PresentationWidget::effectGrowing(bool aInit)
     if ((d->x < 0) || (d->y < 0))
     {
         showCurrentImage();
+
         return -1;
     }
 
@@ -1562,6 +1586,7 @@ int PresentationWidget::effectMultiCircleOut(bool aInit)
     if (d->alpha < 0)
     {
         showCurrentImage();
+
         return -1;
     }
 
@@ -1614,6 +1639,7 @@ int PresentationWidget::effectSpiralIn(bool aInit)
     if ((d->i == 0) && (d->x0 >= d->x1))
     {
         showCurrentImage();
+
         return -1;
     }
 
@@ -1684,6 +1710,7 @@ int PresentationWidget::effectCircleOut(bool aInit)
     if (d->alpha < 0)
     {
         showCurrentImage();
+
         return -1;
     }
 
@@ -1721,6 +1748,7 @@ int PresentationWidget::effectBlobs(bool aInit)
     if (d->i <= 0)
     {
         showCurrentImage();
+
         return -1;
     }
 

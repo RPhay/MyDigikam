@@ -62,11 +62,11 @@ namespace DigikamGenericPresentationPlugin
 {
 
 PresentationMngr::PresentationMngr(QObject* const parent, DInfoInterface* const iface)
-    : QObject(parent),
+    : QObject (parent),
       m_plugin(nullptr),
       m_dialog(nullptr)
 {
-      m_sharedData = new PresentationContainer();
+      m_sharedData        = new PresentationContainer();
       m_sharedData->iface = iface;
 }
 
@@ -136,7 +136,9 @@ void PresentationMngr::slotSlideShow()
     }
     else
     {
+
 #ifdef HAVE_OPENGL
+
         bool supportsOpenGL = true;
 
         if (wantKB)
@@ -168,9 +170,13 @@ void PresentationMngr::slotSlideShow()
             QMessageBox::critical(QApplication::activeWindow(), QString(),
                                   i18n("OpenGL support is not available on your system."));
         }
+
 #else
+
         Q_UNUSED(wantKB);
+
 #endif
+
     }
 }
 

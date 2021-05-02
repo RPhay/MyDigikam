@@ -23,8 +23,6 @@
  *
  * ============================================================ */
 
-#define ICONSIZE 256
-
 #include "presentation_mainpage.h"
 
 // Qt includes
@@ -71,13 +69,16 @@ public:
 
     explicit Private()
       : sharedData        (nullptr),
-        imagesFilesListBox(nullptr)
+        imagesFilesListBox(nullptr),
+        ICON_SIZE         (256)
     {
     }
 
     PresentationContainer* sharedData;
     QTime                  totalTime;
     DItemsList*            imagesFilesListBox;
+
+    const int              ICON_SIZE;
 };
 
 PresentationMainPage::PresentationMainPage(QWidget* const parent,
@@ -105,8 +106,8 @@ PresentationMainPage::PresentationMainPage(QWidget* const parent,
 
     // --------------------------------------------------------
 
-    m_previewLabel->setMinimumWidth(ICONSIZE);
-    m_previewLabel->setMinimumHeight(ICONSIZE);
+    m_previewLabel->setMinimumWidth(d->ICON_SIZE);
+    m_previewLabel->setMinimumHeight(d->ICON_SIZE);
 
 #ifdef HAVE_OPENGL
 
@@ -275,7 +276,6 @@ void PresentationMainPage::showNumberImages()
 
     emit signalTotalTimeChanged(d->totalTime);
 
-    //m_label6->setText(i18np("%1 image [%2]", "%1 images [%2]", numberOfImages, totalDuration.toString()));
     if (m_offAutoDelayCheckBox->isChecked() == false)
     {
         m_label6->setText(i18np("%1 image [%2]", "%1 images [%2]", numberOfImages, totalDuration.toString()));
@@ -507,11 +507,11 @@ void PresentationMainPage::slotThumbnail(const LoadingDescription& /*desc*/, con
 {
     if (pix.isNull())
     {
-        m_previewLabel->setPixmap(QIcon::fromTheme(QLatin1String("view-preview")).pixmap(ICONSIZE, QIcon::Disabled));
+        m_previewLabel->setPixmap(QIcon::fromTheme(QLatin1String("view-preview")).pixmap(d->ICON_SIZE, QIcon::Disabled));
     }
     else
     {
-        m_previewLabel->setPixmap(pix.scaled(ICONSIZE, ICONSIZE, Qt::KeepAspectRatio));
+        m_previewLabel->setPixmap(pix.scaled(d->ICON_SIZE, d->ICON_SIZE, Qt::KeepAspectRatio));
     }
 
     disconnect(ThumbnailLoadThread::defaultThread(), nullptr,
@@ -520,7 +520,7 @@ void PresentationMainPage::slotThumbnail(const LoadingDescription& /*desc*/, con
 
 void PresentationMainPage::slotPrintCommentsToggled()
 {
-    d->sharedData->printFileComments =  m_printCommentsCheckBox->isChecked();
+    d->sharedData->printFileComments = m_printCommentsCheckBox->isChecked();
     d->sharedData->captionPage->setEnabled(m_printCommentsCheckBox->isChecked());
 }
 
@@ -528,6 +528,11 @@ void PresentationMainPage::slotImageListChanged()
 {
     showNumberImages();
     slotImagesFilesSelected(d->imagesFilesListBox->listView()->currentItem());
+}
+
+void PresentationMainPage::removeImageFromList(const QUrl& url)
+{
+    d->imagesFilesListBox->removeItemByUrl(url);
 }
 
 void PresentationMainPage::setupConnections()

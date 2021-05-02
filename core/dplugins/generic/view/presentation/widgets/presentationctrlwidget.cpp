@@ -33,6 +33,8 @@
 #include <QApplication>
 #include <QIcon>
 #include <QInputDialog>
+#include <QMessageBox>
+#include <QPointer>
 
 // KDE includes
 
@@ -59,12 +61,14 @@ PresentationCtrlWidget::PresentationCtrlWidget(QWidget* const parent,
     m_nextButton->setText(QString());
     m_playButton->setText(QString());
     m_stopButton->setText(QString());
+    m_moveToTrash->setText(QString());
 
     m_prevButton->setIcon(QIcon::fromTheme(QLatin1String("media-skip-backward")));
     m_nextButton->setIcon(QIcon::fromTheme(QLatin1String("media-skip-forward")));
     m_playButton->setIcon(QIcon::fromTheme(QLatin1String("media-playback-start")));
     m_stopButton->setIcon(QIcon::fromTheme(QLatin1String("media-playback-stop")));
     m_delayButton->setIcon(QIcon::fromTheme(QLatin1String("appointment-new")));
+    m_moveToTrash->setIcon(QIcon::fromTheme(QLatin1String("user-trash")));
 
     connect(m_playButton, SIGNAL(toggled(bool)),
             this, SLOT(slotPlayButtonToggled()));
@@ -86,6 +90,9 @@ PresentationCtrlWidget::PresentationCtrlWidget(QWidget* const parent,
 
     connect(m_delayButton, SIGNAL(clicked()),
             this, SLOT(slotChangeDelayButtonPressed()));
+
+    connect(m_moveToTrash, SIGNAL(clicked()),
+            this, SLOT(slotMoveToTrash()));
 
     slotPlayButtonToggled();
 }
@@ -215,7 +222,7 @@ void PresentationCtrlWidget::slotChangeDelayButtonPressed()
 {
     bool ok;
     bool running = (!isPaused() && m_playButton->isEnabled());
-    int min      = m_sharedData->useMilliseconds ? 100 : 1;
+    int min      = m_sharedData->useMilliseconds ? 100    : 1;
     int max      = m_sharedData->useMilliseconds ? 120000 : 120;
     int delay    = m_sharedData->useMilliseconds ? m_sharedData->delay
                                                  : m_sharedData->delay / 1000;
@@ -233,6 +240,36 @@ void PresentationCtrlWidget::slotChangeDelayButtonPressed()
     if (ok)
     {
         m_sharedData->delay = delay;
+    }
+
+    if (running)
+    {
+        m_playButton->animateClick();
+    }
+}
+
+void PresentationCtrlWidget::slotMoveToTrash()
+{
+    bool running = (!isPaused() && m_playButton->isEnabled());
+
+    if (running)
+    {
+        m_playButton->animateClick();
+    }
+
+    QPointer<QMessageBox> msgBox = new QMessageBox(QMessageBox::Question,
+             i18n("Delete image"),
+             i18n("Do you want to move this image to the trash?"),
+             QMessageBox::Yes | QMessageBox::No, this);
+
+    msgBox->setDefaultButton(QMessageBox::Yes);
+
+    int ret = msgBox->exec();
+    delete msgBox;
+
+    if (ret == QMessageBox::Yes)
+    {
+        emit signalRemoveImageFromList();
     }
 
     if (running)

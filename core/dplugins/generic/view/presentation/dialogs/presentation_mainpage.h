@@ -42,7 +42,8 @@ namespace DigikamGenericPresentationPlugin
 class PresentationContainer;
 class LoadingDescription;
 
-class PresentationMainPage : public QWidget, Ui::PresentationMainPage
+class PresentationMainPage : public QWidget,
+                             public Ui::PresentationMainPage
 {
     Q_OBJECT
 
@@ -56,10 +57,11 @@ public:
     void saveSettings();
     bool updateUrlList();
 
+    void removeImageFromList(const QUrl& url);
+
 Q_SIGNALS :
 
     void signalTotalTimeChanged(const QTime&);
-
 
 private Q_SLOTS:
 
