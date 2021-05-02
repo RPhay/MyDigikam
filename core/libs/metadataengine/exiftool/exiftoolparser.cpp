@@ -139,7 +139,7 @@ bool ExifToolParser::load(const QString& path)
         cmdArgs << QByteArray("-lang") << lg;
     }
 
-/*
+*/
 
     cmdArgs << d->filePathEncoding(fileInfo);
     d->currentPath = fileInfo.path();
