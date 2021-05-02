@@ -115,6 +115,32 @@ bool ExifToolParser::load(const QString& path)
     cmdArgs << QByteArray("-G:0:1:2:4:6");
     cmdArgs << QByteArray("-n");
     cmdArgs << QByteArray("-l");
+
+/*
+    TODO: better i18n support from ExifTool.
+    ExifTool Translations are limited to few languages, and passing a non supported code to ExifTool
+    returns an error. So we needs a mechanism to get the complete list of cuurent i18n code supported, 
+    typically "exiftool -lang".
+
+    // Forward GUI language code to get translated string from ExifTool (typically tags descriptions)
+
+    QStringList langs = QLocale().uiLanguages();
+    QByteArray lg;
+
+    if (!langs.isEmpty())
+    {
+        lg = langs.first().section(QLatin1Char('-'), 0, 0).toLatin1();
+    }
+
+    qCDebug(DIGIKAM_METAENGINE_LOG) << "UI language code:" << lg;
+
+    if (!lg.isEmpty())
+    {
+        cmdArgs << QByteArray("-lang") << lg;
+    }
+
+/*
+
     cmdArgs << d->filePathEncoding(fileInfo);
     d->currentPath = fileInfo.path();
 

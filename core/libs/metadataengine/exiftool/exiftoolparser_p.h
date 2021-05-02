@@ -29,6 +29,7 @@
 // Qt includes
 
 #include <QDir>
+#include <QLocale>
 #include <QStringList>
 #include <QVariant>
 #include <QJsonDocument>
