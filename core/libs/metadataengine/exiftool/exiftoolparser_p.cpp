@@ -126,7 +126,7 @@ QString ExifToolParser::Private::actionString(int cmdAction) const
 
         case ExifToolProcess::TRANSLATIONS_LIST:
         {
-            return QLatin1String("Trnaslations List");
+            return QLatin1String("Translations List");
         }
 
         default: // ExifToolProcess::NO_ACTION
