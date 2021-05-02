@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2013-11-28
- * Description : a command line tool to get list of files format supported by ExifTool
+ * Description : a command line tool to get list of languages available for translations
  *
  * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
@@ -46,31 +46,15 @@ int main(int argc, char** argv)
     ExifToolParser::ExifToolData parsed;
     QStringList lst;
 
-    if (parser->readableFormats())
+    if (parser->translationsList())
     {
         parsed = parser->currentData();
-        lst    = parsed.find(QLatin1String("READ_FORMATS")).value()[0].toStringList();
-        qDebug() << "Readable file formats:";
+        lst    = parsed.find(QLatin1String("TRANSLATIONS_LIST")).value()[0].toStringList();
+        qDebug() << "Available translations:";
 
-        for (int i = 0 ; i < lst.size()  ; i += 2)
+        for (int i = 0 ; i < lst.size()  ; ++i)
         {
-            ext  = lst[i];
-            desc = lst[i + 1];
-            qDebug() << ext << desc;
-        }
-    }
-
-    if (parser->writableFormats())
-    {
-        parsed = parser->currentData();
-        lst    = parsed.find(QLatin1String("WRITE_FORMATS")).value()[0].toStringList();
-        qDebug() << "Writable file formats:";
-
-        for (int i = 0 ; i < lst.size()  ; i += 2)
-        {
-            ext  = lst[i];
-            desc = lst[i + 1];
-            qDebug() << ext << desc;
+            qDebug() << lst[i];
         }
     }
 

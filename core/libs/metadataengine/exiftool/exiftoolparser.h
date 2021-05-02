@@ -69,15 +69,21 @@ public:
      * key   = ExifTool tag name            (QString).
      * value = ExifTool Tag value           (QString).
      *
-     * With readableFormats() method, the cointainer is used to get
+     * With readableFormats() method, the container is used to get
      * a list of upper-case file format extensions supported by ExifTool for reading.
      * key   = "READ_FORMAT"                (QString).
      * value = list of pairs (ext,desc)      (QStringList)
      *
-     * With writableFormats() method, the cointainer is used to get
+     * With writableFormats() method, the container is used to get
      * a list of upper-case file format extensions supported by ExifTool for writing.
      * key   = "WRITE_FORMAT"               (QString).
      * value = list of pairs (ext,desc)     (QStringList).
+     *
+     * With translationsList() method, the container is used to get
+     * a list of ExifTool languages available for translations.
+     * key   = "TRANSLATIONS_LIST"          (QString).
+     * value = list of languages as strings
+     *         (aka fr, en, de, es, etc.)   (QStringList).
      */
     typedef QHash<QString, QVariantList> ExifToolData;
 
@@ -120,6 +126,12 @@ public:
      * Use currentData() to get the container as QStringList.
      */
     bool writableFormats();
+
+    /**
+     * Return a list of avaialble translations.
+     * Use currentData() to get the container as QStringList.
+     */
+    bool translationsList();
 
 public:
 

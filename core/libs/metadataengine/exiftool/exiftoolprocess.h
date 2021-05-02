@@ -54,6 +54,7 @@ public:
         APPLY_CHANGES,              ///< Apply tag changes in a file with ExifTool.
         READ_FORMATS,               ///< Return the list of readable ExifTool file formats.
         WRITE_FORMATS,              ///< Return the list of writable ExifTool file formats.
+        TRANSLATIONS_LIST,          ///< List of ExifTool languages avaialble for translations.
         NO_ACTION                   ///< Last value from this list.
     };
 

@@ -124,6 +124,11 @@ QString ExifToolParser::Private::actionString(int cmdAction) const
             return QLatin1String("Writable Formats");
         }
 
+        case ExifToolProcess::TRANSLATIONS_LIST:
+        {
+            return QLatin1String("Trnaslations List");
+        }
+
         default: // ExifToolProcess::NO_ACTION
         {
             break;

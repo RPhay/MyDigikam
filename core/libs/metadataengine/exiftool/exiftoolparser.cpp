@@ -251,6 +251,23 @@ bool ExifToolParser::writableFormats()
     return (d->startProcess(cmdArgs, ExifToolProcess::WRITE_FORMATS));
 }
 
+bool ExifToolParser::translationsList()
+{
+    if (!d->prepareProcess())
+    {
+        return false;
+    }
+
+    // Build command (set metadata)
+
+    QByteArrayList cmdArgs;
+    cmdArgs << QByteArray("-lang");
+
+    d->currentPath.clear();
+
+    return (d->startProcess(cmdArgs, ExifToolProcess::TRANSLATIONS_LIST));
+}
+
 void ExifToolParser::slotCmdCompleted(int cmdAction,
                                       int execTime,
                                       const QByteArray& stdOut,
@@ -423,6 +440,26 @@ void ExifToolParser::slotCmdCompleted(int cmdAction,
             }
 
             d->exifToolData.insert(QLatin1String("WRITE_FORMATS"), QVariantList() << lst);
+            break;
+        }
+
+        case ExifToolProcess::TRANSLATIONS_LIST:
+        {
+            // Remove first line
+
+            QString out       = QString::fromUtf8(stdOut).section(QLatin1Char('\n'), 1, -1);
+
+            // Get i18n list
+
+            QStringList lines = out.split(QLatin1Char('\n'), Qt::SkipEmptyParts);
+            QStringList lst;
+
+            foreach (const QString& ln, lines)
+            {
+                lst << ln.simplified().section(QLatin1String(" - "), 0, 0);
+            }
+
+            d->exifToolData.insert(QLatin1String("TRANSLATIONS_LIST"), QVariantList() << lst);
             break;
         }
 
