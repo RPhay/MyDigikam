@@ -257,7 +257,7 @@ void CalPainter::paint(int month)
         sx     = cellSizeX * i + rCal.left();
         r.moveTopLeft(QPoint(sx, sy));
         rsmall = r;
-        rsmall.setWidth(r.width() - 2);
+        rsmall.setWidth(r.width() - (r.width() / 10));
         rsmall.setHeight(r.height() - 2);
         drawText(rsmall, Qt::AlignRight | Qt::AlignBottom,
                  QLocale().standaloneDayName(dayname, QLocale::ShortFormat));
@@ -274,7 +274,7 @@ void CalPainter::paint(int month)
             sx     = cellSizeX * i + rCal.left();
             r.moveTopLeft(QPoint(sx, sy));
             rsmall = r;
-            rsmall.setWidth(r.width() - 2);
+            rsmall.setWidth(r.width() - (r.width() / 10));
             rsmall.setHeight(r.height() - 2);
 
             if (days[index] != -1)
