@@ -67,12 +67,12 @@ void ExifToolProcess::Private::execNextCmd()
 
     // Clear internal buffers
 
-    outBuff[0]            = QByteArray();
-    outBuff[1]            = QByteArray();
-    outAwait[0]           = false;
-    outAwait[1]           = false;
-    outReady[0]           = false;
-    outReady[1]           = false;
+    outBuff[0]      = QByteArray();
+    outBuff[1]      = QByteArray();
+    outAwait[0]     = false;
+    outAwait[1]     = false;
+    outReady[0]     = false;
+    outReady[1]     = false;
 
     // Exec Command
 
