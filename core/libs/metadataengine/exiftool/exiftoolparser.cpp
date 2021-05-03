@@ -402,7 +402,7 @@ void ExifToolParser::slotCmdCompleted(int cmdAction,
 
             // Get extensions and descriptions as pair of strings
 
-            QStringList lines = out.split(QLatin1Char('\n'), Qt::SkipEmptyParts);
+            QStringList lines = out.split(QLatin1Char('\n'), QString::SkipEmptyParts);
             QStringList lst;
             QString s;
 
@@ -427,7 +427,7 @@ void ExifToolParser::slotCmdCompleted(int cmdAction,
 
             // Get extensions and descriptions as pair of strings
 
-            QStringList lines = out.split(QLatin1Char('\n'), Qt::SkipEmptyParts);
+            QStringList lines = out.split(QLatin1Char('\n'), QString::SkipEmptyParts);
             QStringList lst;
             QString s;
 
@@ -451,7 +451,7 @@ void ExifToolParser::slotCmdCompleted(int cmdAction,
 
             // Get i18n list
 
-            QStringList lines = out.split(QLatin1Char('\n'), Qt::SkipEmptyParts);
+            QStringList lines = out.split(QLatin1Char('\n'), QString::SkipEmptyParts);
             QStringList lst;
 
             foreach (const QString& ln, lines)
