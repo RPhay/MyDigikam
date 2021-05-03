@@ -37,6 +37,7 @@
 #include <QCommandLineOption>
 #include <QMessageBox>
 #include <QStandardPaths>
+#include <QTranslator>
 
 // KDE includes
 
@@ -184,6 +185,35 @@ int main(int argc, char* argv[])
 
     parser.process(app);
     aboutData.processCommandLine(&parser);
+
+#ifdef Q_OS_WIN
+
+    QString transPath = QStandardPaths::locate(QStandardPaths::DataLocation,
+                                               QLatin1String("translations"),
+                                               QStandardPaths::LocateDirectory);
+
+    qCDebug(DIGIKAM_GENERAL_LOG) << "Translation path:" << transPath;
+
+    QTranslator translator;
+
+    if (!transPath.isEmpty())
+    {
+        QLocale locale(QLocale::system());
+
+        qCDebug(DIGIKAM_GENERAL_LOG) << "Locale from system:" << locale.name();
+
+        bool ret = translator.load(transPath + QString::fromLatin1("/qtbase_%1.qm")
+                                   .arg(locale.name().left(2)));
+
+        qCDebug(DIGIKAM_GENERAL_LOG) << "Loading translation:" << ret;
+
+        if (ret)
+        {
+            app.installTranslator(&translator);
+        }
+    }
+
+#endif
 
     MetaEngine::initializeExiv2();
 
