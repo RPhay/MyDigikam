@@ -96,7 +96,7 @@ ExifToolConfPanel::ExifToolConfPanel(QWidget* const parent)
     d->exifToolBinWidget         = new DBinarySearch(this);
     d->exifToolBinWidget->addBinary(d->exifToolBin);
 
-    QGroupBox* const exifToolBox = new QGroupBox(i18n("Supported File Formats"), this);
+    QGroupBox* const exifToolBox = new QGroupBox(i18nc("@title:group", "Supported File Formats"), this);
     d->exifToolFormats           = new QTreeWidget(exifToolBox);
     d->exifToolFormats->setRootIsDecorated(false);
     d->exifToolFormats->setSortingEnabled(true);
@@ -106,10 +106,10 @@ ExifToolConfPanel::ExifToolConfPanel(QWidget* const parent)
     d->exifToolFormats->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     d->exifToolFormats->setColumnCount(4);
     d->exifToolFormats->setHeaderHidden(false);
-    d->exifToolFormats->setHeaderLabels(QStringList() << i18n("Extension")
-                                                      << i18n("Read")
-                                                      << i18n("Write")
-                                                      << i18n("Description"));
+    d->exifToolFormats->setHeaderLabels(QStringList() << i18nc("@title:column", "Extension")
+                                                      << i18nc("@title:column", "Read")
+                                                      << i18nc("@title:column", "Write")
+                                                      << i18nc("@title:column", "Description"));
 
     d->searchBar                 = new SearchTextBar(this, QLatin1String("ExifToolFormatsSearchBar"));
 
@@ -188,8 +188,8 @@ void ExifToolConfPanel::slotExifToolBinaryFound(bool found)
         ext  = read[i];
         desc = read[i + 1];
         new QTreeWidgetItem(d->exifToolFormats, QStringList() << ext
-                                                              << i18n("yes")
-                                                              << (write.contains(ext) ? i18n("yes") : i18n("no"))
+                                                              << i18nc("@info:status", "yes")
+                                                              << (write.contains(ext) ? i18nc("@info:status", "yes") : i18nc("@info:status", "no"))
                                                               << desc);
     }
 }

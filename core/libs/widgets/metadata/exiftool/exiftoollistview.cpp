@@ -128,17 +128,17 @@ void ExifToolListView::setMetadata(const ExifToolParser::ExifToolData& map)
         QString value                 = it.value()[0].toString();
         QString desc                  = it.value()[2].toString();
         ExifToolListViewGroup* igroup = findGroup(grp);
-
-        if (!igroup)
-        {
-            igroup = new ExifToolListViewGroup(this, grp);
-        }
-
-        simplifiedTag = grp + QLatin1Char('.') + it.key().section(QLatin1Char('.'), -1);
+        simplifiedTag                 = grp + QLatin1Char('.') + it.key().section(QLatin1Char('.'), -1);
 
         if (!d->simplifiedTagsList.contains(simplifiedTag))
         {
             d->simplifiedTagsList.append(simplifiedTag);
+
+            if (!igroup)
+            {
+                igroup = new ExifToolListViewGroup(this, grp);
+            }
+
             new ExifToolListViewItem(igroup, key, value, desc);
         }
     }
