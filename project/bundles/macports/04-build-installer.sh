@@ -136,6 +136,7 @@ binaries="$OTHER_APPS"
 # Additional Files/Directories - to be copied recursively but not checked for dependencies
 # Note: dSYM directories aee copied as well and cleaned later if debug symbols must be removed in final bundle.
 OTHER_DIRS="\
+libexec/qt5/translations \
 lib/libdigikam*.dSYM \
 lib/plugins \
 lib/libgphoto2 \
