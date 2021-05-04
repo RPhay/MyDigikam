@@ -214,9 +214,17 @@ BUGFIXES:
 195 ==> 150803 - digiKam crash signal 11.
 196 ==> 141980 - digiKam crash when rescan certain files exiv2.
 197 ==> 167913 - Segmentation fault upon start.
-198 ==> 
-199 ==> 
-200 ==> 
-201 ==> 
-
-
+198 ==> 144439 - digiKam fails to load.
+199 ==> 344704 - My application crashs when I include this library.
+200 ==> 128104 - digiKam Crash when browsing photos in Image Editor.
+201 ==> 144098 - Aborted execution on startup.
+202 ==> 146728 - Crash in loading and start digiKam.
+203 ==> 220315 - Crash when starting with a usb album.
+204 ==> 146948 - Crash when loading certain image.
+205 ==> 
+206 ==> 
+207 ==> 
+208 ==> 
+209 ==> 
+210 ==> 
+211 ==> 
