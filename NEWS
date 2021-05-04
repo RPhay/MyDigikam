@@ -197,6 +197,15 @@ BUGFIXES:
 178 ==> 353865 - Sluggish write of metadata.
 179 ==> 350423 - digiKam crashes while uploading from a corrupt EyeFi SD card.
 180 ==> 350367 - digiKam crash when saving edited picture.
-181 ==> 
-
+181 ==> 275539 - digiKam crashes when opening an imported image.
+182 ==> 334155 - digiKam crash on folder scan.
+183 ==> 288380 - digiKam crashes, when removing and adding tags.
+184 ==> 275157 - digiKam crashes while removing tags from images.
+185 ==> 340696 - digiKam crash.
+186 ==> 311904 - ShowFoto crash when creating thumbs.
+187 ==> 335164 - Crash while updating image metadata to database in tools->maint. all cores.
+188 ==> 
+189 ==> 
+190 ==> 
+191 ==> 
 
