@@ -221,9 +221,9 @@ BUGFIXES:
 202 ==> 146728 - Crash in loading and start digiKam.
 203 ==> 220315 - Crash when starting with a usb album.
 204 ==> 146948 - Crash when loading certain image.
-205 ==> 
-206 ==> 
-207 ==> 
+205 ==> 376429 - Crash on rotate.
+206 ==> 156418 - Crash when rotating or geolocalizing image.
+207 ==> 366528 - Rating=4 automatically added to XMP sidecar when saving metadata.
 208 ==> 
 209 ==> 
 210 ==> 
