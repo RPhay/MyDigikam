@@ -37,6 +37,12 @@
    under Windows).
    Cinema DNG files are not affected by this.
 
+ = Compile/build changes =
+ * Old (0.19-compatibility) files (internal/dcraw_*.cpp  
+   internal/demosaic_packs.cpp src/libraw_cxx.cpp) are removed from LibRaw 
+   repository.
+   Please switch to 'modern' multiple source files build.
+
  = API/ABI changes =
 
   * Decoding parameters

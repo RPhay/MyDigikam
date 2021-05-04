@@ -9,6 +9,7 @@ General : Better support of MPO image format (Multiple Picture Object) inluding 
 General : Digital Scanner plugin is now available under Windows.
 General : Use last Exiv2 0.27.4 in all bundles with Base Media File metadata read and write support (HEIF, AVIF).
 General : Use last KF5 framework 5.80 in all bundles.
+General : Update internal Libraw from git/master 20210504
 Searches: Find duplicates items is now process in parallel using multi-cores.
 Plugins : New tool to export items to iNaturalist web service (https://www.inaturalist.org/).
 Plugins : SlideShow and Presentation tools now allow to move items to the trash.

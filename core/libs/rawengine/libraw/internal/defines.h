@@ -14,7 +14,7 @@ it under the terms of the one of two licenses as you choose:
    dcraw.c -- Dave Coffin's raw photo decoder
    Copyright 1997-2010 by Dave Coffin, dcoffin a cybercom o net
 
-   Look into dcraw homepage (probably cybercom.net/~dcoffin/dcraw/)
+   Look into dcraw homepage (probably http://cybercom.net/~dcoffin/dcraw/)
    for more information
 */
 

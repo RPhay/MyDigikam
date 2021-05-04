@@ -773,7 +773,29 @@ void LibRaw::identify()
 		//Assume that this isn't a raw unless the header can be found
 		is_raw = 0;
 
-		if (!strncasecmp(model, "RP_imx", 6)) {
+		if (!strncasecmp(model, "RP_testc",8) ||
+		    !strncasecmp(model, "RP_imx477",9)) {
+			const long offsets[] = {
+				//IMX477 offsets
+				3375104,  //2028x1080 12bit
+				4751360,  //2028x1520 12bit
+				18711040, //4056x3040 12bit
+				1015808,  //1012x760 10bit
+				-1        //Marker for end of table
+			};
+			int offset_idx;
+			for (offset_idx=0; offsets[offset_idx]!=-1; offset_idx++) {
+				if(!fseek (ifp, -offsets[offset_idx], SEEK_END) &&
+				   fread (head, 1, 32, ifp) && !strncmp(head,"BRCM", 4)) {
+					fseek(ifp, -32, SEEK_CUR);
+					strcpy (make, "SonyRPF");
+					black = (offset_idx == 3) ? 64 : 256;
+					parse_raspberrypi();
+					break;
+				}
+			}
+		}
+		else if (!strncasecmp(model, "RP_imx", 6)) {
 			const long offsets[] = {
 				//IMX219 offsets
 				10270208, //8MPix 3280x2464
@@ -1604,6 +1626,16 @@ void LibRaw::identify_process_dng_fields()
 
 void LibRaw::identify_finetune_pentax()
 {
+    if (dng_version && data_offset)
+    {
+        for(int i = 0; i < tiff_nifds; i++)
+            if (tiff_ifd[i].offset == data_offset)
+            {
+                if (tiff_ifd[i].phint == 34892) return; // Linear DNG made from Pentax source
+                break;
+            }
+    }
+
 	if (makeIs(LIBRAW_CAMERAMAKER_Pentax) ||
 		makeIs(LIBRAW_CAMERAMAKER_Samsung)) {
 		if (height == 2624 &&
@@ -1750,7 +1782,9 @@ void LibRaw::identify_finetune_dcr(char head[64], int fsize, int flen)
 	int i,c;
 	struct jhead jh;
 
-	if (makeIs(LIBRAW_CAMERAMAKER_Canon) && !tiff_flip && imCanon.MakernotesFlip)
+	if (makeIs(LIBRAW_CAMERAMAKER_Canon) 
+        && ( !tiff_flip || unique_id == CanonID_EOS_40D)
+        && imCanon.MakernotesFlip)
 	{
 		tiff_flip = imCanon.MakernotesFlip;
 	}
@@ -1805,8 +1839,7 @@ void LibRaw::identify_finetune_dcr(char head[64], int fsize, int flen)
 		}
 		else if (unique_id == PentaxID_staristD) {
 			load_raw = &LibRaw::unpacked_load_raw;
-			data_error = -1;
-
+			/* data_error = -1; */ /* No way to know why data_error was raised in dcraw.c, looks not needed esp. for unpacked_load_raw */
 		}
 		else if (unique_id == PentaxID_staristDS) {
 			height -= 2;
