@@ -26,25 +26,25 @@
 
 // Qt includes
 
-#include <QFile>
 #include <QDir>
-#include <QFileInfo>
-#include <QSqlDatabase>
+#include <QFile>
 #include <QString>
+#include <QFileInfo>
 #include <QStringList>
+#include <QTranslator>
+#include <QMessageBox>
+#include <QSqlDatabase>
 #include <QApplication>
+#include <QStandardPaths>
 #include <QCommandLineParser>
 #include <QCommandLineOption>
-#include <QMessageBox>
-#include <QStandardPaths>
-#include <QTranslator>
 
 // KDE includes
 
 #include <klocalizedstring.h>
-#include <kaboutdata.h>
 #include <ksharedconfig.h>
 #include <kconfiggroup.h>
+#include <kaboutdata.h>
 
 // ImageMagick includes
 

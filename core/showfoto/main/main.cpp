@@ -29,6 +29,7 @@
 
 #include <QDir>
 #include <QFile>
+#include <QTranslator>
 #include <QMessageBox>
 #include <QApplication>
 #include <QStandardPaths>
@@ -143,6 +144,38 @@ int main(int argc, char* argv[])
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
     KConfigGroup group        = config->group(QLatin1String("ImageViewer Settings"));
     QString iconTheme         = group.readEntry(QLatin1String("Icon Theme"), QString());
+    bool loadTranslation      = isRunningInAppImageBundle();
+
+#if defined Q_OS_WIN || defined Q_OS_MACOS
+
+    loadTranslation      = true;
+
+#endif
+
+    QString transPath = QStandardPaths::locate(QStandardPaths::DataLocation,
+                                               QLatin1String("translations"),
+                                               QStandardPaths::LocateDirectory);
+
+    qCDebug(DIGIKAM_GENERAL_LOG) << "Qt translations path:" << transPath;
+
+    QTranslator translator;
+
+    if (loadTranslation && !transPath.isEmpty())
+    {
+        QLocale locale;
+
+        qCDebug(DIGIKAM_GENERAL_LOG) << "Application locale:" << locale.name();
+
+        bool ret = translator.load(locale, QLatin1String("qtbase"),
+                                   QLatin1String("_"), transPath);
+
+        qCDebug(DIGIKAM_GENERAL_LOG) << "Loading translation:" << ret;
+
+        if (ret)
+        {
+            app.installTranslator(&translator);
+        }
+    }
 
     MetaEngine::initializeExiv2();
 
