@@ -204,8 +204,19 @@ BUGFIXES:
 185 ==> 340696 - digiKam crash.
 186 ==> 311904 - ShowFoto crash when creating thumbs.
 187 ==> 335164 - Crash while updating image metadata to database in tools->maint. all cores.
-188 ==> 
-189 ==> 
-190 ==> 
-191 ==> 
+188 ==> 151997 - Crash in exiv2 library.
+189 ==> 142819 - Crash when opening any image.
+190 ==> 135934 - Crash during camera access.
+191 ==> 137697 - digiKam crash at startup while scanning files.
+192 ==> 160528 - Crash after try to add gps coordinates.
+193 ==> 112845 - digiKam crash on startup.
+194 ==> 259057 - Crash when reading one particular image (possibly libexiv2 related).
+195 ==> 150803 - digiKam crash signal 11.
+196 ==> 141980 - digiKam crash when rescan certain files exiv2.
+197 ==> 167913 - Segmentation fault upon start.
+198 ==> 
+199 ==> 
+200 ==> 
+201 ==> 
+
 
