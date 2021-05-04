@@ -90,12 +90,19 @@ RGTagModel::RGTagModel(QAbstractItemModel* const externalTagModel, QObject* cons
 
     i18n("{Country}");
     i18nc("Part of a country", "{State}");
+    i18n("{State district}");
     i18n("{County}");
     i18n("{City}");
+    i18n("{City district}");
+    i18n("{Suburb}");
     i18n("{Town}");
     i18n("{Village}");
     i18n("{Hamlet}");
     i18n("{Street}");
+    i18n("{House number}");
+    i18n("{Place}");
+    i18nc("Local administrative area 2", "{LAU2}");
+    i18nc("Local administrative area 1", "{LAU1}");
 
     connect(d->tagModel, SIGNAL(dataChanged(QModelIndex,QModelIndex)),
             this, SLOT(slotSourceDataChanged(QModelIndex,QModelIndex)));

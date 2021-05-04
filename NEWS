@@ -232,4 +232,5 @@ BUGFIXES:
 213 ==> 178839 - digiKam crashes on exiv2 error.
 214 ==> 166424 - Crash when editing Caption with digiKam.
 215 ==> 436571 - Tooltips for images don't show tags containing "<" correctly.
-216 ==> 
+216 ==> 436587 - Not translatable strings in Settings --> Edit Geolocation.
+217 ==> 
