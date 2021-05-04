@@ -20,6 +20,7 @@
   <name xml:lang="hu">Showfoto</name>
   <name xml:lang="id">Showfoto</name>
   <name xml:lang="it">Showfoto</name>
+  <name xml:lang="ja">Showfoto</name>
   <name xml:lang="ko">Showfoto</name>
   <name xml:lang="nl">Showfoto</name>
   <name xml:lang="nn">Showfoto</name>
@@ -50,6 +51,7 @@
   <summary xml:lang="hu">Képszerkesztő</summary>
   <summary xml:lang="id">Editor Citra</summary>
   <summary xml:lang="it">Editor di immagini</summary>
+  <summary xml:lang="ja">画像エディタ</summary>
   <summary xml:lang="ko">사진 편집기</summary>
   <summary xml:lang="nl">Afbeeldingsbewerker</summary>
   <summary xml:lang="nn">Biletredigering</summary>
@@ -85,6 +87,7 @@
     <p xml:lang="hu">A Showfoto egy gyors képszerkesztő hatékony szerkesztőeszközökkel. A használatával megnézheti és javíthatja a fényképeit. A Showfoto a digiKam projekt önálló képszerkesztője.</p>
     <p xml:lang="id">Showfoto adalah sebuah Editor Citra yang cepat dengan peralatan pengeditan citra yang unggul. Kamu bisa menggunakannya untuk menampilkan fotografikmu dan memperbaikinya. Showfoto adalah sebuah editor citra yang mandiri dari projek digiKam.</p>
     <p xml:lang="it">Showfoto è un editor di immagini veloce, con strumenti di modifica potenti. Puoi usarlo per visualizzare le tue fotografie e migliorarle. Showfoto è un editor di immagini autonomo all'interno del progetto digiKam.</p>
+    <p xml:lang="ja">Showfoto は高速でパワフルな画像編集ツールです。画像を表示したり、それらを改善したりできます。Showfoto は digiKam プロジェクトから切り離された画像エディタです。</p>
     <p xml:lang="ko">Showfoto는 강력한 사진 편집 도구가 있는 빠른 사진 편집기입니다. 디지털 사진을 보고 보정할 수 있습니다. Showfoto는 digiKam 프로젝트의 단독 사진 편집기입니다.</p>
     <p xml:lang="nl">Showfoto; is een snelle afbeeldingsbewerker met krachtige hulpmiddelen voor bewerken van afbeeldingen. U kunt het gebruiken om uw foto's te bekijken en te verbeteren. Showfoto is de alleenstaande bewerker van afbeeldingen van het digiKam project.</p>
     <p xml:lang="nn">Showfoto er eit program for rask redigering av foto, med fleire kraftige redigerings­verktøy. Du kan bruka det både til å sjå og forbetra bileta dine. Showfoto er det frittståande redigerings­programmet som vert brukt i digiKam.</p>
@@ -121,6 +124,7 @@
       <caption xml:lang="hu">Fénykép szerkesztése Showfotoval</caption>
       <caption xml:lang="id">Pengeditan foto di Showfoto</caption>
       <caption xml:lang="it">Modifica di fotografie in Showfoto</caption>
+      <caption xml:lang="ja">Showfoto で画像を編集</caption>
       <caption xml:lang="ko">Showfoto로 사진 편집하기</caption>
       <caption xml:lang="nl">Fotobewerking in Showfoto</caption>
       <caption xml:lang="nn">Redigering av bilete i Showfoto</caption>
@@ -232,6 +236,7 @@
   <developer_name xml:lang="hu">digiKam projekt</developer_name>
   <developer_name xml:lang="id">Projek digiKam</developer_name>
   <developer_name xml:lang="it">Progetto digiKam</developer_name>
+  <developer_name xml:lang="ja">digiKam プロジェクト</developer_name>
   <developer_name xml:lang="ko">digiKam 프로젝트</developer_name>
   <developer_name xml:lang="nl">digiKam-project</developer_name>
   <developer_name xml:lang="nn">digiKam-prosjektet</developer_name>
