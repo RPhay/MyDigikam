@@ -216,7 +216,7 @@ BUGFIXES:
 197 ==> 167913 - Segmentation fault upon start.
 198 ==> 144439 - digiKam fails to load.
 199 ==> 344704 - My application crashs when I include this library.
-200 ==> 128104 - digiKam Crash when browsing photos in Image Editor.
+200 ==> 128104 - digiKam crash when browsing photos in Image Editor.
 201 ==> 144098 - Aborted execution on startup.
 202 ==> 146728 - Crash in loading and start digiKam.
 203 ==> 220315 - Crash when starting with a usb album.
@@ -224,7 +224,13 @@ BUGFIXES:
 205 ==> 376429 - Crash on rotate.
 206 ==> 156418 - Crash when rotating or geolocalizing image.
 207 ==> 366528 - Rating=4 automatically added to XMP sidecar when saving metadata.
-208 ==> 
-209 ==> 
-210 ==> 
-211 ==> 
+208 ==> 174620 - After updating to current digiKam crashes.
+209 ==> 110214 - digiKam hangs scanning items right after start.
+210 ==> 177457 - digiKam crash when tagging files.
+211 ==> 186837 - Libexiv2 crashes on certain JPGs.
+212 ==> 144574 - digiKam crashes every time it scans collection.
+213 ==> 178839 - digiKam crashes on exiv2 error.
+214 ==> 166424 - Crash when editing Caption with digiKam.
+215 ==> 
+216 ==> 
+
