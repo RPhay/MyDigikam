@@ -186,24 +186,30 @@ int main(int argc, char* argv[])
     parser.process(app);
     aboutData.processCommandLine(&parser);
 
-#ifdef Q_OS_WIN
+    bool loadTranslation = isRunningInAppImageBundle();
+
+#if defined Q_OS_WIN || defined Q_OS_MACOS
+
+    loadTranslation      = true;
+
+#endif
 
     QString transPath = QStandardPaths::locate(QStandardPaths::DataLocation,
                                                QLatin1String("translations"),
                                                QStandardPaths::LocateDirectory);
 
-    qCDebug(DIGIKAM_GENERAL_LOG) << "Translation path:" << transPath;
+    qCDebug(DIGIKAM_GENERAL_LOG) << "Qt translations path:" << transPath;
 
     QTranslator translator;
 
-    if (!transPath.isEmpty())
+    if (loadTranslation && !transPath.isEmpty())
     {
-        QLocale locale(QLocale::system());
+        QLocale locale;
 
-        qCDebug(DIGIKAM_GENERAL_LOG) << "Locale from system:" << locale.name();
+        qCDebug(DIGIKAM_GENERAL_LOG) << "Application locale:" << locale.name();
 
-        bool ret = translator.load(transPath + QString::fromLatin1("/qtbase_%1.qm")
-                                   .arg(locale.name().left(2)));
+        bool ret = translator.load(locale, QLatin1String("qtbase"),
+                                   QLatin1String("_"), transPath);
 
         qCDebug(DIGIKAM_GENERAL_LOG) << "Loading translation:" << ret;
 
@@ -212,8 +218,6 @@ int main(int argc, char* argv[])
             app.installTranslator(&translator);
         }
     }
-
-#endif
 
     MetaEngine::initializeExiv2();
 
