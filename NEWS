@@ -231,6 +231,5 @@ BUGFIXES:
 212 ==> 144574 - digiKam crashes every time it scans collection.
 213 ==> 178839 - digiKam crashes on exiv2 error.
 214 ==> 166424 - Crash when editing Caption with digiKam.
-215 ==> 
+215 ==> 436571 - Tooltips for images don't show tags containing "<" correctly.
 216 ==> 
-

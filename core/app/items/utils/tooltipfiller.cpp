@@ -520,7 +520,7 @@ QString ToolTipFiller::imageInfoTipContents(const ItemInfo& info)
                         tagText = cnt.elidedText(tagPaths.at(i), Qt::ElideLeft);
                     }
 
-                    tip += cnt.cellSpecBeg + title + cnt.cellSpecMid + tagText + cnt.cellSpecEnd;
+                    tip += cnt.cellSpecBeg + title + cnt.cellSpecMid + tagText.toHtmlEscaped() + cnt.cellSpecEnd;
                     title.clear();
                 }
             }
