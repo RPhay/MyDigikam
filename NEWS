@@ -181,4 +181,21 @@ BUGFIXES:
 163 ==> 436343 - Send selected images to external application as a list of positional arguments.
 164 ==> 436487 - IPTC:ObjectAttributeReference and XMP:IntellectualGenre.
 165 ==> 436444 - Question to translation of album categories.
-166 ==> 
+166 ==> 407022 - digiKam crash at start.
+167 ==> 377434 - Crash on deleting items from Trash.
+168 ==> 377418 - Crash on saving metadata. Latest AppImage 5.5
+169 ==> 376951 - Unexpected crash on rescan - Latest 5.5. AppImage.
+170 ==> 376256 - Crach when trying to go to "Metadata" tab in the image editor.
+171 ==> 375815 - digiKam crash.
+172 ==> 371906 - crash when opening download window, download of previews.
+173 ==> 368246 - digiKam crashes by modifying picture.
+174 ==> 366034 - Crash at edit metadata for jpgs made by a Casio EX-Z500.
+175 ==> 365691 - digiKam freezes when using «tool» «slideshow»«presentation» and trying to add an image.
+176 ==> 359412 - digiKam Crash when trying to set an Label (write to file).
+177 =+> 355126 - Crashed when tumbnails or pictures turned right.
+178 ==> 353865 - Sluggish write of metadata.
+179 ==> 350423 - digiKam crashes while uploading from a corrupt EyeFi SD card.
+180 ==> 350367 - digiKam crash when saving edited picture.
+181 ==> 
+
+
