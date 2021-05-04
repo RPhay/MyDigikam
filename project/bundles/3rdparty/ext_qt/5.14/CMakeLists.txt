@@ -80,7 +80,6 @@ ExternalProject_Add(ext_qt
                   -skip qtserialbus                 # No need serial bus support
                   -skip qtserialport                # No need serial port support
                   -skip qtspeech                    # No need speech synthesis support
-                  -skip qttranslations              # No need translation tools.
                   -skip qtvirtualkeyboard           # No need virtual keyboard support
                   -skip qtwebglplugin               # No need browser OpenGL extention support
                   -skip qtwebsockets                # No need websocket support
