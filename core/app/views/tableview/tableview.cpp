@@ -6,8 +6,9 @@
  * Date        : 2013-02-11
  * Description : Table view
  *
- * Copyright (C) 2013 by Michael G. Hansen <mike at mghansen dot de>
- * Copyright (C) 2017 by Simon Frei <freisim93 at gmail dot com>
+ * Copyright (C) 2013      by Michael G. Hansen <mike at mghansen dot de>
+ * Copyright (C) 2017      by Simon Frei <freisim93 at gmail dot com>
+ * Copyright (C) 2017-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -67,15 +68,15 @@ class Q_DECL_HIDDEN TableView::Private
 public:
 
     explicit Private()
-      : columnProfiles(),
-        thumbnailSize(),
+      : columnProfiles    (),
+        thumbnailSize     (),
         imageViewUtilities(nullptr)
     {
     }
 
     QList<TableViewColumnProfile> columnProfiles;
     ThumbnailSize                 thumbnailSize;
-    ItemViewUtilities*           imageViewUtilities;
+    ItemViewUtilities*            imageViewUtilities;
 };
 
 TableView::TableView(QItemSelectionModel* const selectionModel,
@@ -83,8 +84,8 @@ TableView::TableView(QItemSelectionModel* const selectionModel,
                      QWidget* const parent)
     : QWidget(parent),
       StateSavingObject(this),
-      d(new Private()),
-      s(new TableViewShared())
+      d                (new Private()),
+      s                (new TableViewShared())
 {
     s->isActive                      = false;
     s->tableView                     = this;
@@ -182,15 +183,21 @@ void TableView::slotItemActivated(const QModelIndex& tableViewIndex)
         return;
     }
 
-    if (qApp->queryKeyboardModifiers() != Qt::MetaModifier)
+    if (qApp->queryKeyboardModifiers() != Qt::AltModifier)
     {
-        if (ApplicationSettings::instance()->getItemLeftClickAction() == ApplicationSettings::ShowPreview)
+        int leftClickAction = ApplicationSettings::instance()->getItemLeftClickAction();
+
+        if      (leftClickAction == ApplicationSettings::ShowPreview)
         {
             emit signalPreviewRequested(info);
         }
-        else
+        else if (leftClickAction == ApplicationSettings::StartEditor)
         {
             d->imageViewUtilities->openInfos(info, allItemInfos(), currentAlbum());
+        }
+        else
+        {
+            d->imageViewUtilities->openInfosWithDefaultApplication(QList<ItemInfo>() << info);
         }
     }
     else
@@ -202,6 +209,7 @@ void TableView::slotItemActivated(const QModelIndex& tableViewIndex)
 bool TableView::eventFilter(QObject* watched, QEvent* event)
 {
     // we are looking for context menu events for the table view
+
     if ((watched == s->treeView) && (event->type() == QEvent::ContextMenu))
     {
         QContextMenuEvent* const e = static_cast<QContextMenuEvent*>(event);
@@ -211,9 +219,9 @@ bool TableView::eventFilter(QObject* watched, QEvent* event)
 
         if (contextMenuIndex.isValid())
         {
-            emit signalShowContextMenuOnInfo(
-                        e, s->tableViewModel->imageInfo(contextMenuIndex),
-                        getExtraGroupingActions());
+            emit signalShowContextMenuOnInfo(e,
+                                             s->tableViewModel->imageInfo(contextMenuIndex),
+                                             getExtraGroupingActions());
         }
         else
         {
@@ -221,6 +229,7 @@ bool TableView::eventFilter(QObject* watched, QEvent* event)
         }
 
         // event has been filtered by us
+
         return true;
     }
 
@@ -257,7 +266,7 @@ Album* TableView::currentAlbum() const
         return nullptr;
     }
 
-    return albumModel->currentAlbums().first();
+    return albumModel->currentAlbums().constFirst();
 }
 
 void TableView::slotPaste()
@@ -296,6 +305,7 @@ void TableView::slotDeleteSelected(const ItemViewUtilities::DeleteMode deleteMod
     const ItemInfoList infoList = selectedItemInfos(true);
 
     /// @todo Update parameter naming for deleteImages
+
     if (d->imageViewUtilities->deleteImages(infoList, deleteMode))
     {
         slotAwayFromSelection();
@@ -401,11 +411,12 @@ ItemInfo TableView::deepRowItemInfo(const int rowNumber, const bool relative) co
             return ItemInfo();
         }
 
-        const int currentDeepRowNumber = s->tableViewModel->indexToDeepRowNumber(currentTableViewIndex);
-        targetRowNumber               += currentDeepRowNumber;
+        const int currentDeepRowNumber           = s->tableViewModel->indexToDeepRowNumber(currentTableViewIndex);
+        targetRowNumber                         += currentDeepRowNumber;
     }
 
     const QModelIndex targetIndex = s->tableViewModel->deepRowIndex(targetRowNumber);
+
     return s->tableViewModel->imageInfo(targetIndex);
 }
 
@@ -421,6 +432,7 @@ ItemInfo TableView::nextInfo() const
     }
 
     const QModelIndex nextDeepRowIndex = s->tableViewModel->deepRowIndex(nextDeepRowNumber);
+
     return s->tableViewModel->imageInfo(nextDeepRowIndex);
 }
 
@@ -436,7 +448,20 @@ ItemInfo TableView::previousInfo() const
     }
 
     const QModelIndex previousDeepRowIndex = s->tableViewModel->deepRowIndex(previousDeepRowNumber);
+
     return s->tableViewModel->imageInfo(previousDeepRowIndex);
+}
+
+void TableView::slotSetCurrentUrlWhenAvailable(const QUrl& url)
+{
+    foreach (const ItemInfo& info, allItemInfos())
+    {
+        if (info.fileUrl() == url)
+        {
+            slotSetCurrentWhenAvailable(info.id());
+            break;
+        }
+    }
 }
 
 void TableView::slotSetCurrentWhenAvailable(const qlonglong id)
@@ -446,6 +471,7 @@ void TableView::slotSetCurrentWhenAvailable(const qlonglong id)
     if (!idx.isValid())
     {
         /// @todo Actually buffer this request until the model is fully populated
+
         return;
     }
 
@@ -469,10 +495,11 @@ void TableView::slotAwayFromSelection()
     const QModelIndex firstIndex = s->tableViewModel->deepRowIndex(0);
     const QModelIndex lastIndex  = s->tableViewModel->deepRowIndex(-1);
 
-    if (selection.contains(firstIndex) && selection.contains(lastIndex))
+    if      (selection.contains(firstIndex) && selection.contains(lastIndex))
     {
         // both the first and the last index are selected, we have to
         // select an index inbetween
+
         const int nextFreeDeepRow = s->tableViewModel->firstDeepRowNotInList(selection);
 
         if (nextFreeDeepRow < 0)
@@ -519,15 +546,15 @@ void TableView::invertSelection()
 
     /// @todo Create a DeepRowIterator because there is a lot of overhead here
 
-    for (int i = 0; i < deepRowCount; ++i)
+    for (int i = 0 ; i < deepRowCount ; ++i)
     {
         const QModelIndex iIndex = s->tableViewModel->deepRowIndex(i);
 
         if (s->tableViewSelectionModel->isSelected(iIndex))
         {
-            if (i - 1 > lastSelectedRow)
+            if ((i - 1) > lastSelectedRow)
             {
-                for (int j = lastSelectedRow + 1; j < i; ++j)
+                for (int j = lastSelectedRow + 1 ; j < i ; ++j)
                 {
                     rowsToSelect << j;
                 }
@@ -539,7 +566,7 @@ void TableView::invertSelection()
 
     if (lastSelectedRow + 1 < deepRowCount)
     {
-        for (int j = lastSelectedRow + 1; j < deepRowCount; ++j)
+        for (int j = lastSelectedRow + 1 ; j < deepRowCount ; ++j)
         {
             rowsToSelect << j;
         }
@@ -558,6 +585,7 @@ void TableView::invertSelection()
 void TableView::selectAll()
 {
     /// @todo This only selects expanded items.
+
     s->treeView->selectAll();
 }
 

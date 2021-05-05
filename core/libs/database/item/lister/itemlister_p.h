@@ -7,7 +7,7 @@
  * Description : Listing information from database - private containers.
  *
  * Copyright (C) 2007-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2007-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2007-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2015      by Mohamed_Anwer  <m_dot_anwer at gmx dot com>
  * Copyright (C) 2018      by Mario Frank    <mario dot frank at uni minus potsdam dot de>
  *
@@ -81,34 +81,15 @@ class Q_DECL_HIDDEN ItemLister::Private
 public:
 
     explicit Private()
-      : recursive(true),
-        listOnlyAvailableImages(true),
-        allowExtraValues(false)
+      : recursive              (true),
+        listOnlyAvailableImages(true)
     {
-    }
-
-    /*
-     * The binary field for file size is only 32 bit.
-     * If the value fits, we pass it. If it does not, we pass -1,
-     * and the receiver shall get the full number itself
-     */
-    int toInt32BitSafe(const QList<QVariant>::const_iterator& it)
-    {
-        qlonglong v = (*it).toLongLong();
-
-        if ((v > std::numeric_limits<int>::max()) || (v < 0))
-        {
-            return -1;
-        }
-
-        return (int)v;
     }
 
 public:
 
     bool recursive;
     bool listOnlyAvailableImages;
-    bool allowExtraValues;
 };
 
 } // namespace Digikam

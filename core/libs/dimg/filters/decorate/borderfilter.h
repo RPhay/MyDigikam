@@ -6,7 +6,7 @@
  * Date        : 2005-05-25
  * Description : border threaded image filter.
  *
- * Copyright 2005-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright 2005-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright 2006-2010 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  * Copyright 2009-2010 by Andi Clemens <andi dot clemens at gmail dot com>
  * Copyright 2010      by Martin Klapetek <martin dot klapetek at gmail dot com>
@@ -29,102 +29,20 @@
 
 // Qt includes
 
-#include <QColor>
 #include <QImage>
-#include <QString>
 
 // Local includes
 
-#include "digikam_export.h"
 #include "dimgthreadedfilter.h"
 #include "digikam_globals.h"
+#include "bordercontainer.h"
 
 namespace Digikam
 {
 
-class DIGIKAM_EXPORT BorderContainer
-{
-
-public:
-
-    enum BorderTypes
-    {
-        SolidBorder = 0,
-        NiepceBorder,
-        BeveledBorder,
-        PineBorder,
-        WoodBorder,
-        PaperBorder,
-        ParqueBorder,
-        IceBorder,
-        LeafBorder,
-        MarbleBorder,
-        RainBorder,
-        CratersBorder,
-        DriedBorder,
-        PinkBorder,
-        StoneBorder,
-        ChalkBorder,
-        GraniteBorder,
-        RockBorder,
-        WallBorder
-    };
-
-public:
-
-    explicit BorderContainer()
-      : preserveAspectRatio(true),
-        orgWidth(0),
-        orgHeight(0),
-        borderType(0),
-        borderWidth1(0),
-        borderWidth2(0),
-        borderWidth3(0),
-        borderWidth4(0),
-        borderPercent(0.1),
-        solidColor(QColor(0, 0, 0)),
-        niepceBorderColor(QColor(255, 255, 255)),
-        niepceLineColor(QColor(0, 0, 0)),
-        bevelUpperLeftColor(QColor(192, 192, 192)),
-        bevelLowerRightColor(QColor(128, 128, 128)),
-        decorativeFirstColor(QColor(0, 0, 0)),
-        decorativeSecondColor(QColor(0, 0, 0))
-    {
-    };
-
-    ~BorderContainer()
-    {
-    };
-
-public:
-
-    bool    preserveAspectRatio;
-
-    int     orgWidth;
-    int     orgHeight;
-
-    int     borderType;
-
-    int     borderWidth1;
-    int     borderWidth2;
-    int     borderWidth3;
-    int     borderWidth4;
-
-    double  borderPercent;
-
-    QString borderPath;
-
-    QColor  solidColor;
-    QColor  niepceBorderColor;
-    QColor  niepceLineColor;
-    QColor  bevelUpperLeftColor;
-    QColor  bevelLowerRightColor;
-    QColor  decorativeFirstColor;
-    QColor  decorativeSecondColor;
-};
-
 class DIGIKAM_EXPORT BorderFilter : public DImgThreadedFilter
 {
+    Q_OBJECT
 
 public:
 
@@ -132,37 +50,37 @@ public:
      * Constructor using settings to preserve aspect ratio of image.
      */
     explicit BorderFilter(QObject* const parent = nullptr);
-    explicit BorderFilter(DImg* orgImage, QObject* const parent=nullptr, const BorderContainer& settings = BorderContainer());
-    virtual ~BorderFilter();
+    explicit BorderFilter(DImg* orgImage, QObject* const parent = nullptr, const BorderContainer& settings = BorderContainer());
+    ~BorderFilter()                                           override;
 
-    static QString          FilterIdentifier()
+    static QString FilterIdentifier()
     {
         return QLatin1String("digikam:BorderFilter");
     }
 
-    static QString          DisplayableName();
+    static QString DisplayableName();
 
-    static QList<int>       SupportedVersions()
+    static QList<int> SupportedVersions()
     {
         return QList<int>() << 1;
     }
 
-    static int              CurrentVersion()
+    static int CurrentVersion()
     {
         return 1;
     }
 
-    virtual QString         filterIdentifier()                          const override
+    QString filterIdentifier()                          const override
     {
         return FilterIdentifier();
     }
 
-    virtual FilterAction    filterAction()                                    override;
-    void                    readParameters(const FilterAction& action)        override;
+    FilterAction filterAction()                               override;
+    void readParameters(const FilterAction& action)           override;
 
 private:
 
-    void filterImage()                                                        override;
+    void filterImage()                                        override;
 
     /**
      * Methods to preserve aspect ratio of image.

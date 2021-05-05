@@ -7,7 +7,7 @@
  * Description : simple text labels to display item
  *               properties meta infos
  *
- * Copyright (C) 2008-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2008-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -35,50 +35,57 @@
 // Local includes
 
 #include "dexpanderbox.h"
+#include "digikam_export.h"
 
 namespace Digikam
 {
 
-class DTextLabelName : public DAdjustableLabel
+class DIGIKAM_EXPORT DTextLabelName : public DAdjustableLabel
 {
+    Q_OBJECT
 
 public:
 
-    explicit DTextLabelName(const QString& name, QWidget* const parent=nullptr);
-    ~DTextLabelName();
+    explicit DTextLabelName(const QString& name, QWidget* const parent = nullptr);
+    ~DTextLabelName() override;
 };
 
 // -------------------------------------------------------------------
 
-class DTextLabelValue : public DAdjustableLabel
+class DIGIKAM_EXPORT DTextLabelValue : public DAdjustableLabel
 {
+    Q_OBJECT
 
 public:
 
-    explicit DTextLabelValue(const QString& value, QWidget* const parent=nullptr);
-    ~DTextLabelValue();
+    explicit DTextLabelValue(const QString& value, QWidget* const parent = nullptr);
+    ~DTextLabelValue() override;
 };
 
 // -------------------------------------------------------------------
 
-class DTextBrowser : public QTextBrowser
+class DIGIKAM_EXPORT DTextBrowser : public QTextBrowser
 {
+    Q_OBJECT
+
 public:
 
-    explicit DTextBrowser(const QString& text, QWidget* const parent=nullptr);
-    ~DTextBrowser();
+    explicit DTextBrowser(const QString& text, QWidget* const parent = nullptr);
+    ~DTextBrowser() override;
 
     void setLinesNumber(int l);
 };
 
 // -------------------------------------------------------------------
 
-class DTextList : public QListWidget
+class DIGIKAM_EXPORT DTextList : public QListWidget
 {
+    Q_OBJECT
+
 public:
 
-    explicit DTextList(const QStringList& list, QWidget* const parent=nullptr);
-    ~DTextList();
+    explicit DTextList(const QStringList& list, QWidget* const parent = nullptr);
+    ~DTextList() override;
 
     void setLinesNumber(int l);
 };

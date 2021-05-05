@@ -7,7 +7,7 @@
  * Description : digiKam image editor GUI
  *
  * Copyright (C) 2004-2005 by Renchi Raju <renchi dot raju at gmail dot com>
- * Copyright (C) 2004-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2004-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -54,6 +54,7 @@
 #include <QMenuBar>
 #include <QMessageBox>
 #include <QApplication>
+#include <QScopedPointer>
 
 // KDE includes
 
@@ -116,7 +117,6 @@
 #include "savingcontext.h"
 #include "scancontroller.h"
 #include "setup.h"
-#include "slideshow.h"
 #include "statusprogressbar.h"
 #include "syncjob.h"
 #include "tagsactionmngr.h"
@@ -138,7 +138,7 @@ class Q_DECL_HIDDEN DatabaseVersionManager : public VersionManager
 {
 public:
 
-    virtual QString toplevelDirectory(const QString& path)
+    QString toplevelDirectory(const QString& path) override
     {
         CollectionLocation loc = CollectionManager::instance()->locationForPath(path);
 
@@ -159,19 +159,19 @@ class Q_DECL_HIDDEN ImageWindow::Private
 public:
 
     Private()
-      : configShowThumbbarEntry(QLatin1String("Show Thumbbar")),
-        configHorizontalThumbbarEntry(QLatin1String("HorizontalThumbbar")),
-        viewContainer(nullptr),
-        toMainWindowAction(nullptr),
-        fileDeletePermanentlyAction(nullptr),
-        fileDeletePermanentlyDirectlyAction(nullptr),
-        fileTrashDirectlyAction(nullptr),
-        imageInfoModel(nullptr),
-        imageFilterModel(nullptr),
-        dragDropHandler(nullptr),
-        thumbBar(nullptr),
-        thumbBarDock(nullptr),
-        rightSideBar(nullptr)
+      : configShowThumbbarEntry             (QLatin1String("Show Thumbbar")),
+        configHorizontalThumbbarEntry       (QLatin1String("HorizontalThumbbar")),
+        viewContainer                       (nullptr),
+        toMainWindowAction                  (nullptr),
+        fileDeletePermanentlyAction         (nullptr),
+        fileDeletePermanentlyDirectlyAction (nullptr),
+        fileTrashDirectlyAction             (nullptr),
+        imageInfoModel                      (nullptr),
+        imageFilterModel                    (nullptr),
+        dragDropHandler                     (nullptr),
+        thumbBar                            (nullptr),
+        thumbBarDock                        (nullptr),
+        rightSideBar                        (nullptr)
     {
     }
 

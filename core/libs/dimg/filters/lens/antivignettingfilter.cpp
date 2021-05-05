@@ -6,7 +6,7 @@
  * Date        : 2005-05-25
  * Description : Antivignetting threaded image filter.
  *
- * Copyright (C) 2005-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2005-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2010      by Julien Narboux <julien at narboux dot fr>
  * Copyright (C) 2010      by Martin Klapetek <martin dot klapetek at gmail dot com>
  *
@@ -55,7 +55,7 @@ AntiVignettingFilter::AntiVignettingFilter(QObject* const parent)
 AntiVignettingFilter::AntiVignettingFilter(DImg* const orgImage, QObject* const parent,
                                            const AntiVignettingContainer& settings)
     : DImgThreadedFilter(orgImage, parent, QLatin1String("AntiVignettingFilter")),
-      m_settings(settings)
+      m_settings        (settings)
 {
     initFilter();
 }

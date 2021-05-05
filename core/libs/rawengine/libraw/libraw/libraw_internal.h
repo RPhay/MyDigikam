@@ -1,6 +1,6 @@
 /* -*- C++ -*-
  * File: libraw_internal.h
- * Copyright 2008-2019 LibRaw LLC (info@libraw.org)
+ * Copyright 2008-2021 LibRaw LLC (info@libraw.org)
  * Created: Sat Mar  8 , 2008
  *
  * LibRaw internal data structures (not visible outside)
@@ -76,6 +76,8 @@ public:
   static const double wide_rgb[3][3];
   static const double prophoto_rgb[3][3];
   static const double aces_rgb[3][3];
+  static const double dcip3d65_rgb[3][3];
+  static const double rec2020_rgb[3][3];
 };
 #endif /* __cplusplus */
 
@@ -155,20 +157,22 @@ typedef struct
   long long posRAFData;
   unsigned lenRAFData;
   int fuji_total_lines, fuji_total_blocks, fuji_block_width, fuji_bits,
-      fuji_raw_type;
+      fuji_raw_type, fuji_lossless;
   int pana_encoding, pana_bpp;
   crx_data_header_t crx_header[LIBRAW_CRXTRACKS_MAXCOUNT];
   int crx_track_selected;
   short CR3_CTMDtag;
+  short CR3_Version;
   int CM_found;
   unsigned is_NikonTransfer;
+  unsigned is_Olympus;
+  int OlympusDNG_SubDirOffsetValid;
   unsigned is_Sony;
   unsigned is_pana_raw;
-  unsigned
-      is_4K_RAFdata; /* =1 for Fuji X-A3, X-A5, X-A7, X-A10, X-A20, X-T100, XF10 */
   unsigned is_PentaxRicohMakernotes; /* =1 for Ricoh software by Pentax, Camera DNG */
 
   unsigned dng_frames[LIBRAW_IFD_MAXCOUNT*2]; /* bits: 0-7: shot_select, 8-15: IFD#, 16-31: low 16 bit of newsubfile type */
+  unsigned short raw_stride;
 } unpacker_data_t;
 
 typedef struct
@@ -188,7 +192,7 @@ struct decode
 
 struct tiff_ifd_t
 {
-  int t_width, t_height, bps, comp, phint, offset, t_flip, samples, bytes;
+  int t_width, t_height, bps, comp, phint, offset, t_flip, samples, bytes, extrasamples;
   int t_tile_width, t_tile_length, sample_format, predictor;
   int rows_per_strip;
   int *strip_offsets, strip_offsets_count;

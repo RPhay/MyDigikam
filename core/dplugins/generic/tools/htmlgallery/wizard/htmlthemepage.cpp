@@ -6,7 +6,7 @@
  * Date        : 2006-04-04
  * Description : a tool to generate HTML image galleries
  *
- * Copyright (C) 2012-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -58,17 +58,17 @@ public:
 
 HTMLThemePage::HTMLThemePage(QWizard* const dialog, const QString& title)
     : DWizardPage(dialog, title),
-      d(new Private)
+      d          (new Private)
 {
     setObjectName(QLatin1String("ThemePage"));
 
     DHBox* const hbox = new DHBox(this);
 
     d->themeList      = new QListWidget(hbox);
-    d->themeList->setObjectName(QLatin1String("d->themeList"));
+    d->themeList->setObjectName(QLatin1String("ThemeList"));
 
     d->themeInfo      = new QTextBrowser(hbox);
-    d->themeInfo->setObjectName(QLatin1String("d->themeInfo"));
+    d->themeInfo->setObjectName(QLatin1String("ThemeInfo"));
 
     hbox->setContentsMargins(QMargins());
     hbox->setSpacing(QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing));
@@ -90,7 +90,9 @@ void HTMLThemePage::initializePage()
     HTMLWizard* const wizard              = dynamic_cast<HTMLWizard*>(assistant());
 
     if (!wizard)
+    {
         return;
+    }
 
     GalleryInfo* const info               = wizard->galleryInfo();
     GalleryTheme::List list               = GalleryTheme::getList();
@@ -112,6 +114,7 @@ void HTMLThemePage::initializePage()
     }
 
     // Set page states, whoch can only be disabled after they have *all* been added.
+
     slotThemeSelectionChanged();
 }
 

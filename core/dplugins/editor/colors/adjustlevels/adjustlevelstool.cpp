@@ -6,7 +6,7 @@
  * Date        : 2004-07-20
  * Description : image histogram adjust levels.
  *
- * Copyright (C) 2004-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2004-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -47,7 +47,7 @@
 
 #include <klocalizedstring.h>
 #include <ksharedconfig.h>
-#include "kconfiggroup.h"
+#include <kconfiggroup.h>
 
 // Local includes
 
@@ -83,27 +83,28 @@ public:
 public:
 
     explicit Private()
-      : histoSegments(0),
-        pickerBox(nullptr),
-        resetButton(nullptr),
-        autoButton(nullptr),
-        pickBlack(nullptr),
-        pickGray(nullptr),
-        pickWhite(nullptr),
-        pickerType(nullptr),
-        minInput(nullptr),
-        maxInput(nullptr),
-        minOutput(nullptr),
-        maxOutput(nullptr),
-        gammaInput(nullptr),
+      : histoSegments        (0),
+        pickerBox            (nullptr),
+        resetButton          (nullptr),
+        autoButton           (nullptr),
+        pickBlack            (nullptr),
+        pickGray             (nullptr),
+        pickWhite            (nullptr),
+        pickerType           (nullptr),
+        minInput             (nullptr),
+        maxInput             (nullptr),
+        minOutput            (nullptr),
+        maxOutput            (nullptr),
+        gammaInput           (nullptr),
         levelsHistogramWidget(nullptr),
-        inputLevels(nullptr),
-        outputLevels(nullptr),
-        previewWidget(nullptr),
-        levels(nullptr),
-        originalImage(nullptr),
-        gboxSettings(nullptr)
-    {}
+        inputLevels          (nullptr),
+        outputLevels         (nullptr),
+        previewWidget        (nullptr),
+        levels               (nullptr),
+        originalImage        (nullptr),
+        gboxSettings         (nullptr)
+    {
+    }
 
     static const QString configGroupName;
     static const QString configGammaChannelEntry;
@@ -160,7 +161,7 @@ const QString AdjustLevelsTool::Private::configHistogramScaleEntry(QLatin1String
 
 AdjustLevelsTool::AdjustLevelsTool(QObject* const parent)
     : EditorToolThreaded(parent),
-      d(new Private)
+      d                 (new Private)
 {
     setObjectName(QLatin1String("adjustlevels"));
     setInitPreview(true);
@@ -190,6 +191,7 @@ AdjustLevelsTool::AdjustLevelsTool(QObject* const parent)
     d->gboxSettings->setHistogramType(Digikam::LRGBAC);
 
     // we don't need to use the Gradient widget in this tool
+
     d->gboxSettings->histogramBox()->setGradientVisible(false);
 
     // -------------------------------------------------------------
@@ -667,6 +669,7 @@ void AdjustLevelsTool::slotResetCurrentChannel()
     d->levels->levelsChannelReset(channel);
 
     // Refresh the current levels config.
+
     slotChannelChanged();
     d->levelsHistogramWidget->reset();
 
@@ -676,9 +679,11 @@ void AdjustLevelsTool::slotResetCurrentChannel()
 void AdjustLevelsTool::slotAutoLevels()
 {
     // Calculate Auto levels.
+
     d->levels->levelsAuto(d->levelsHistogramWidget->currentHistogram());
 
     // Refresh the current levels config.
+
     slotChannelChanged();
 
     slotPreview();
@@ -764,17 +769,20 @@ void AdjustLevelsTool::readSettings()
             (int)LuminosityChannel);
 
     // restore the previous channel
+
     d->gboxSettings->histogramBox()->setChannel(ch);
 
     d->gboxSettings->histogramBox()->setScale((HistogramScale)group.readEntry(d->configHistogramScaleEntry,
             (int)LogScaleHistogram));
 
     // if ColorChannels was set, make sure to take values from LuminosityChannel
+
     if (ch == ColorChannels)
         ch = LuminosityChannel;
 
     // This is mandatory here to set spinbox values because slot connections
     // can be not set completely at tool startup.
+
     d->minInput->setValue(d->levels->getLevelLowInputValue(ch));
     d->minOutput->setValue(d->levels->getLevelLowOutputValue(ch));
     d->maxInput->setValue(d->levels->getLevelHighInputValue(ch));
@@ -825,6 +833,7 @@ void AdjustLevelsTool::slotResetSettings()
     }
 
     // Refresh the current levels config.
+
     slotChannelChanged();
     d->levelsHistogramWidget->reset();
 
@@ -904,6 +913,7 @@ void AdjustLevelsTool::slotLoadSettings()
     }
 
     // Refresh the current levels config.
+
     slotChannelChanged();
 
     slotPreview();
@@ -930,6 +940,7 @@ void AdjustLevelsTool::slotSaveAsSettings()
     }
 
     // Refresh the current levels config.
+
     slotChannelChanged();
 }
 

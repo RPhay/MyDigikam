@@ -7,7 +7,7 @@
  * Description : a tool to export images to Imgur web service
  *
  * Copyright (C) 2010-2012 by Marius Orcsik <marius at habarnam dot ro>
- * Copyright (C) 2013-2018 by Caulier Gilles <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2013-2020 by Caulier Gilles <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -36,7 +36,6 @@
 #include "imgurimageslist.h"
 #include "wstooldialog.h"
 #include "imgurtalker.h"
-#include "digikam_export.h"
 #include "dinfointerface.h"
 
 using namespace Digikam;
@@ -44,14 +43,14 @@ using namespace Digikam;
 namespace DigikamGenericImgUrPlugin
 {
 
-class DIGIKAM_EXPORT ImgurWindow : public WSToolDialog
+class ImgurWindow : public WSToolDialog
 {
     Q_OBJECT
 
 public:
 
     explicit ImgurWindow(DInfoInterface* const iface, QWidget* const parent = nullptr);
-    ~ImgurWindow();
+    ~ImgurWindow()                      override;
 
 public:
 
@@ -62,6 +61,7 @@ public:
 public Q_SLOTS:
 
     // UI callbacks
+
     void slotForgetButtonClicked();
     void slotUpload();
     void slotAnonUpload();
@@ -69,17 +69,18 @@ public Q_SLOTS:
     void slotCancel();
 
     // ImgurTalker callbacks
+
     void slotApiAuthorized(bool success, const QString& username);
     void slotApiAuthError(const QString& msg);
     void slotApiProgress(unsigned int percent, const ImgurTalkerAction& action);
     void slotApiRequestPin(const QUrl& url);
     void slotApiSuccess(const ImgurTalkerResult& result);
-    void slotApiError(const QString &msg, const ImgurTalkerAction& action);
+    void slotApiError(const QString& msg, const ImgurTalkerAction& action);
     void slotApiBusy(bool busy);
 
 private:
 
-    void closeEvent(QCloseEvent* e) override;
+    void closeEvent(QCloseEvent* e)     override;
     void setContinueUpload(bool state);
     void readSettings();
     void saveSettings();

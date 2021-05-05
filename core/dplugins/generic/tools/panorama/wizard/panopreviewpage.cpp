@@ -7,7 +7,7 @@
  * Description : a tool to create panorama by fusion of several images.
  *
  * Copyright (C) 2011-2016 by Benjamin Girault <benjamin dot girault at gmail dot com>
- * Copyright (C) 2011-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2011-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -59,19 +59,19 @@ class Q_DECL_HIDDEN PanoPreviewPage::Private
 public:
 
     explicit Private(PanoManager* const m)
-      : title(nullptr),
-        previewWidget(nullptr),
-        previewBusy(false),
-        previewDone(false),
-        stitchingBusy(false),
-        stitchingDone(false),
-        postProcessing(nullptr),
-        progressBar(nullptr),
-        curProgress(0),
-        totalProgress(0),
-        canceled(false),
-        mngr(m),
-        dlg(nullptr)
+      : title           (nullptr),
+        previewWidget   (nullptr),
+        previewBusy     (false),
+        previewDone     (false),
+        stitchingBusy   (false),
+        stitchingDone   (false),
+        postProcessing  (nullptr),
+        progressBar     (nullptr),
+        curProgress     (0),
+        totalProgress   (0),
+        canceled        (false),
+        mngr            (m),
+        dlg             (nullptr)
     {
     }
 
@@ -84,8 +84,9 @@ public:
     bool                   stitchingDone;
     DHistoryView*          postProcessing;
     DProgressWdg*          progressBar;
-    int                    curProgress, totalProgress;
-    QMutex                 previewBusyMutex;      // This is a precaution in case the user does a back / next action at the wrong moment
+    int                    curProgress;
+    int                    totalProgress;
+    QMutex                 previewBusyMutex;      ///< This is a precaution in case the user does a back / next action at the wrong moment
     bool                   canceled;
 
     QString                output;
@@ -130,6 +131,7 @@ PanoPreviewPage::~PanoPreviewPage()
 void PanoPreviewPage::computePreview()
 {
     // Cancel any stitching being processed
+
     if (d->stitchingBusy)
     {
         cleanupPage();
@@ -172,8 +174,10 @@ void PanoPreviewPage::startStitching()
     if (d->previewBusy)
     {
         // The real beginning of the stitching starts after preview has finished / failed
+
         connect(this, SIGNAL(signalPreviewFinished()), this, SLOT(slotStartStitching()));
         cleanupPage(lock);
+
         return;
     }
 
@@ -215,10 +219,11 @@ void PanoPreviewPage::startStitching()
 
         // At this point, if no selection area was created, proportionSelection is null,
         // hence panoSelection becomes a null rectangle
-        panoSelection = QRect(proportionSelection.x()      * panoSize.width(),
-                              proportionSelection.y()      * panoSize.height(),
-                              proportionSelection.width()  * panoSize.width(),
-                              proportionSelection.height() * panoSize.height());
+
+        panoSelection     = QRect(proportionSelection.x()      * panoSize.width(),
+                                  proportionSelection.y()      * panoSize.height(),
+                                  proportionSelection.width()  * panoSize.width(),
+                                  proportionSelection.height() * panoSize.height());
     }
 
     d->title->setText(i18n("<qt>"
@@ -259,6 +264,7 @@ void PanoPreviewPage::preInitializePage()
     d->postProcessing->hide();
 
     setComplete(true);
+
     emit completeChanged();
 }
 
@@ -272,7 +278,9 @@ void PanoPreviewPage::initializePage()
 bool PanoPreviewPage::validatePage()
 {
     if (d->stitchingDone)
+    {
         return true;
+    }
 
     setComplete(false);
     startStitching();
@@ -293,7 +301,7 @@ void PanoPreviewPage::cleanupPage(QMutexLocker& /*lock*/)
     d->mngr->thread()->cancel();
     d->progressBar->progressCompleted();
 
-    if (d->previewBusy)
+    if      (d->previewBusy)
     {
         d->previewBusy = false;
         d->previewWidget->setBusy(false);
@@ -372,6 +380,7 @@ void PanoPreviewPage::slotPanoAction(const DigikamGenericPanoramaPlugin::PanoAct
 
                     break;
                 }
+
                 case PANO_CREATEMK:
                 {
                     if (!d->stitchingBusy)
@@ -400,6 +409,7 @@ void PanoPreviewPage::slotPanoAction(const DigikamGenericPanoramaPlugin::PanoAct
 
                     break;
                 }
+
                 case PANO_CREATEFINALPTO:
                 {
                     if (!d->stitchingBusy)
@@ -428,6 +438,7 @@ void PanoPreviewPage::slotPanoAction(const DigikamGenericPanoramaPlugin::PanoAct
 
                     break;
                 }
+
                 case PANO_NONAFILE:
                 {
                     if (!d->stitchingBusy)
@@ -458,6 +469,7 @@ void PanoPreviewPage::slotPanoAction(const DigikamGenericPanoramaPlugin::PanoAct
 
                     break;
                 }
+
                 case PANO_STITCH:
                 case PANO_HUGINEXECUTOR:
                 {
@@ -486,6 +498,7 @@ void PanoPreviewPage::slotPanoAction(const DigikamGenericPanoramaPlugin::PanoAct
 
                     break;
                 }
+
                 default:
                 {
                     qCWarning(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Unknown action (preview) " << ad.action;
@@ -506,6 +519,7 @@ void PanoPreviewPage::slotPanoAction(const DigikamGenericPanoramaPlugin::PanoAct
                     // Nothing to do yet, a step is finished, that's all
                     break;
                 }
+
                 case PANO_STITCHPREVIEW:
                 case PANO_HUGINEXECUTORPREVIEW:
                 {
@@ -531,7 +545,9 @@ void PanoPreviewPage::slotPanoAction(const DigikamGenericPanoramaPlugin::PanoAct
                                            "stitching process.</p>"
                                            "</qt>"));
                     d->previewWidget->setSelectionAreaPossible(true);
-//                     d->previewWidget->load(QUrl::fromLocalFile(d->mngr->previewUrl().toLocalFile()), true);
+/*
+                    d->previewWidget->load(QUrl::fromLocalFile(d->mngr->previewUrl().toLocalFile()), true);
+*/
                     d->previewWidget->load(d->mngr->previewUrl(), true);
                     QSize panoSize    = d->mngr->viewAndCropOptimisePtoData()->project.size;
                     QRect panoCrop    = d->mngr->viewAndCropOptimisePtoData()->project.crop;
@@ -545,6 +561,7 @@ void PanoPreviewPage::slotPanoAction(const DigikamGenericPanoramaPlugin::PanoAct
 
                     break;
                 }
+
                 case PANO_NONAFILE:
                 {
                     QString message = i18nc("Success for image file number %1 out of %2",
@@ -558,6 +575,7 @@ void PanoPreviewPage::slotPanoAction(const DigikamGenericPanoramaPlugin::PanoAct
 
                     break;
                 }
+
                 case PANO_STITCH:
                 case PANO_HUGINEXECUTOR:
                 {
@@ -590,9 +608,11 @@ void PanoPreviewPage::slotPanoAction(const DigikamGenericPanoramaPlugin::PanoAct
 
                     break;
                 }
+
                 default:
                 {
                     qCWarning(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Unknown action (preview) " << ad.action;
+
                     break;
                 }
             }
@@ -611,8 +631,10 @@ void PanoPreviewPage::slotPanoAction(const DigikamGenericPanoramaPlugin::PanoAct
             case PANO_HUGINEXECUTORPREVIEW:
             {
                 // Nothing to do...
+
                 break;
             }
+
             case PANO_NONAFILE:
             {
                 QString message = i18nc("Compilation started for image file number %1 out of %2",
@@ -620,18 +642,23 @@ void PanoPreviewPage::slotPanoAction(const DigikamGenericPanoramaPlugin::PanoAct
                                         ad.id + 1,
                                         d->totalProgress - 1);
                 d->postProcessing->addEntry(message, DHistoryView::StartingEntry);
+
                 break;
             }
+
             case PANO_STITCH:
             case PANO_HUGINEXECUTOR:
             {
                 lock.unlock();
                 d->postProcessing->addEntry(i18nc("Panorama compilation started", "Panorama compilation"), DHistoryView::StartingEntry);
+
                 break;
             }
+
             default:
             {
                 qCWarning(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Unknown starting action (preview) " << ad.action;
+
                 break;
             }
         }

@@ -7,7 +7,7 @@
  * Description : a tool to export images to Smugmug web service
  *
  * Copyright (C) 2008-2009 by Luka Renko <lure at kubuntu dot org>
- * Copyright (C) 2008-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2008-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -50,11 +50,11 @@ namespace DigikamGenericSmugPlugin
 {
 
 SmugWidget::SmugWidget(QWidget* const parent, DInfoInterface* const iface, bool import)
-    : QWidget(parent)
+    : QWidget(parent),
+      m_iface(iface)
 {
     setObjectName(QLatin1String("SmugWidget"));
 
-    m_iface                       = iface;
     const int spacing             = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
     QHBoxLayout* const mainLayout = new QHBoxLayout(this);
 
@@ -236,6 +236,7 @@ SmugWidget::SmugWidget(QWidget* const parent, DInfoInterface* const iface, bool 
         /**
          * Deactivate anonymous login functionality
          */
+
         m_anonymousRBtn->hide();
         m_accountRBtn->hide();
         m_nickNameLbl->hide();
@@ -310,7 +311,7 @@ QString SmugWidget::getDestinationPath() const
 void SmugWidget::setNickName(const QString& nick)
 {
     m_nickNameEdt->setText(nick);
-    m_headerLbl->setText(QString::fromLatin1("<b><h2><a href='http://%1.smugmug.com'>"
+    m_headerLbl->setText(QString::fromLatin1("<b><h2><a href='https://%1.smugmug.com'>"
                                              "<font color=\"#9ACD32\">SmugMug</font>"
                                              "</a></h2></b>").arg(nick));
 }
@@ -322,9 +323,11 @@ void SmugWidget::updateLabels(const QString& email, const QString& name, const Q
     QString web(QLatin1String("www"));
 
     if (!nick.isEmpty())
+    {
         web = nick;
+    }
 
-    m_headerLbl->setText(QString::fromLatin1("<b><h2><a href='http://%1.smugmug.com'>"
+    m_headerLbl->setText(QString::fromLatin1("<b><h2><a href='https://%1.smugmug.com'>"
                                              "<font color=\"#9ACD32\">SmugMug</font>"
                                              "</a></h2></b>").arg(web));
 }

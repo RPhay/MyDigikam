@@ -47,7 +47,7 @@ class DIGIKAM_EXPORT RubberItem : public RegionFrameItem
 public:
 
     explicit RubberItem(ImagePreviewItem* const item);
-    virtual ~RubberItem();
+    ~RubberItem() override;
 
     void setCanvas(Canvas* const canvas);
 

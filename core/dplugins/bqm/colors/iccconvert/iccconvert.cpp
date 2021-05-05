@@ -6,7 +6,7 @@
  * Date        : 2010-02-17
  * Description : Color profile conversion tool.
  *
- * Copyright (C) 2010-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2010-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -26,6 +26,7 @@
 // Qt includes
 
 #include <QLabel>
+#include <QScopedPointer>
 
 // KDE includes
 
@@ -52,6 +53,11 @@ IccConvert::IccConvert(QObject* const parent)
 
 IccConvert::~IccConvert()
 {
+}
+
+BatchTool* IccConvert::clone(QObject* const parent) const
+{
+    return new IccConvert(parent);
 }
 
 void IccConvert::registerSettingsWidget()
@@ -117,9 +123,9 @@ bool IccConvert::toolOperations()
 
     image().setIccProfile(icc.getTargetImage().getIccProfile());
 
-    DMetadata meta(image().getMetadata());
-    meta.removeExifColorSpace();
-    image().setMetadata(meta.data());
+    QScopedPointer<DMetadata> meta(new DMetadata(image().getMetadata()));
+    meta->removeExifColorSpace();
+    image().setMetadata(meta->data());
 
     return (savefromDImg());
 }

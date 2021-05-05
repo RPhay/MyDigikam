@@ -6,7 +6,7 @@
  * Date        : 2012-01-20
  * Description : Duplicates items finder.
  *
- * Copyright (C) 2012-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2015      by Mohamed_Anwer <m_dot_anwer at gmx dot com>
  *
  * This program is free software; you can redistribute it
@@ -44,14 +44,6 @@ class DuplicatesFinder : public MaintenanceTool
 
 public:
 
-    /** Version to find all duplicates in the set of images
-     */
-    explicit DuplicatesFinder(const QList<qlonglong>& imageIds,
-                              int minSimilarity = 90,
-                              int maxSimilarity = 100,
-                              int searchResultRestriction = 0,
-                              ProgressItem* const parent = nullptr);
-
     /** Version to find all duplicates over a specific list to PAlbums and TAlbums
      */
     DuplicatesFinder(const AlbumList& albums,
@@ -62,21 +54,14 @@ public:
                      int searchResultRestriction = 0,
                      ProgressItem* const parent = nullptr);
 
-    /** Version to find all duplicates over whole collections
-     */
-    explicit DuplicatesFinder(const int minSimilarity = 90,
-                              int maxSimilarity = 100,
-                              int searchResultRestriction = 0,
-                              ProgressItem* const parent = nullptr);
-    ~DuplicatesFinder();
+    ~DuplicatesFinder() override;
 
 private Q_SLOTS:
 
     void slotStart() override;
     void slotDone() override;
     void slotCancel() override;
-    void slotDuplicatesSearchTotalAmount(int);
-    void slotDuplicatesSearchProcessedAmount(int);
+    void slotDuplicatesProgress(int percentage);
 
 private:
 

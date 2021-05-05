@@ -44,7 +44,7 @@ public:
     explicit Private()
       : view(nullptr),
         item(nullptr),
-        isFitToWindow(false),
+        isFitToWindow(true),
         previousZoom(1),
         zoomMultiplier(1.2),
         maxZoom(12.0),
@@ -86,12 +86,12 @@ SinglePhotoPreviewLayout::~SinglePhotoPreviewLayout()
     delete d;
 }
 
-void SinglePhotoPreviewLayout::setGraphicsView(GraphicsDImgView* view)
+void SinglePhotoPreviewLayout::setGraphicsView(GraphicsDImgView* const view)
 {
     d->view = view;
 }
 
-void SinglePhotoPreviewLayout::addItem(GraphicsDImgItem* item)
+void SinglePhotoPreviewLayout::addItem(GraphicsDImgItem* const item)
 {
     if (d->item)
     {
@@ -183,9 +183,9 @@ void SinglePhotoPreviewLayout::decreaseZoom(const QPoint& viewportAnchor)
         return;
     }
 
-    double zoom    = d->zoomSettings()->zoomFactor() / d->zoomMultiplier;
-    zoom           = qMax(zoom, d->minZoom);
-    zoom           = d->zoomSettings()->snappedZoomStep(zoom, d->frameSize());
+    double zoom = d->zoomSettings()->zoomFactor() / d->zoomMultiplier;
+    zoom        = qMax(zoom, d->minZoom);
+    zoom        = d->zoomSettings()->snappedZoomStep(zoom, d->frameSize());
     setZoomFactor(zoom, viewportAnchor);
 }
 
@@ -326,7 +326,7 @@ void SinglePhotoPreviewLayout::updateZoomAndSize()
 
     // Is currently the zoom factor set to fit to window? Then set it again to fit the new size.
 
-    if (!d->zoomSettings()->imageSize().isNull() && ((zoomFactor() <= fitZoom) || d->isFitToWindow))
+    if (!d->zoomSettings()->imageSize().isNull() && d->isFitToWindow)
     {
         fitToWindow();
     }

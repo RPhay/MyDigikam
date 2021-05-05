@@ -6,8 +6,9 @@
  * Date        : 2009-11-21
  * Description : Qt Model for Tag - drag and drop handling
  *
- * Copyright (C) 2009 by Johannes Wienke <languitar at semipol dot de>
- * Copyright (C) 2013 by Veaceslav Munteanu <veaceslav dot munteanu90 at gmail dot com>
+ * Copyright (C) 2009      by Johannes Wienke <languitar at semipol dot de>
+ * Copyright (C) 2013      by Veaceslav Munteanu <veaceslav dot munteanu90 at gmail dot com>
+ * Copyright (C) 2013-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -99,7 +100,7 @@ bool TagDragDropHandler::dropEvent(QAbstractItemView* view,
                 return false;
             }
 
-            if (destAlbum && talbum == destAlbum)
+            if (destAlbum && (talbum == destAlbum))
             {
                 return false;
             }
@@ -111,11 +112,13 @@ bool TagDragDropHandler::dropEvent(QAbstractItemView* view,
                 if (!destAlbum)
                 {
                     // move dragItem to the root
+
                     newParentTag = AlbumManager::instance()->findTAlbum(0);
                 }
                 else
                 {
                     // move dragItem as child of dropItem
+
                     newParentTag = destAlbum;
                 }
 
@@ -175,6 +178,7 @@ bool TagDragDropHandler::dropEvent(QAbstractItemView* view,
             // Setting the dropped image as the album thumbnail
             // If the ctrl key is pressed, when dropping the image, the
             // thumbnail is set without a popup menu
+
             bool set = false;
 
             if (e->keyboardModifiers() == Qt::ControlModifier)
@@ -184,7 +188,7 @@ bool TagDragDropHandler::dropEvent(QAbstractItemView* view,
             else
             {
                 QMenu popMenu(view);
-                QAction* setAction = nullptr;
+                QAction* setAction    = nullptr;
 
                 if (imageIDs.count() == 1)
                 {
@@ -211,13 +215,22 @@ bool TagDragDropHandler::dropEvent(QAbstractItemView* view,
         // If a ctrl key is pressed while dropping the drag object,
         // the tag is assigned to the images without showing a
         // popup menu.
+
         bool assign = false;
 
         // Use selected tags instead of dropped on.
+
         QList<int> tagIdList;
         QStringList tagNames;
 
-        QList<Album*> selTags = ((AbstractAlbumTreeView*)view)->selectedItems();
+        AbstractAlbumTreeView* const tview = dynamic_cast<AbstractAlbumTreeView*>(view);
+
+        if (!tview)
+        {
+            return false;
+        }
+
+        QList<Album*> selTags = tview->selectedItems();
 
         for (int it = 0 ; it < selTags.count() ; ++it)
         {
@@ -251,8 +264,8 @@ bool TagDragDropHandler::dropEvent(QAbstractItemView* view,
             popMenu.addAction( QIcon::fromTheme(QLatin1String("dialog-cancel")), i18n("C&ancel") );
 
             popMenu.setMouseTracking(true);
-            QAction* const choice = popMenu.exec(QCursor::pos());
-            assign                = (choice == assignAction);
+            QAction* const choice       = popMenu.exec(QCursor::pos());
+            assign                      = (choice == assignAction);
         }
 
         if (assign)
@@ -272,7 +285,9 @@ Qt::DropAction TagDragDropHandler::accepts(const QDropEvent* e, const QModelInde
 
     if (DTagListDrag::canDecode(e->mimeData()))
     {
-        //int droppedId = 0;
+/*
+        int droppedId = 0;
+*/
         QList<int> droppedId;
 
         if (!DTagListDrag::decode(e->mimeData(), droppedId))
@@ -289,7 +304,7 @@ Qt::DropAction TagDragDropHandler::accepts(const QDropEvent* e, const QModelInde
         }
 
         // Allow dragging on empty space to move the dragged album under the root albumForIndex
-        // - unless the itemDrag is already at root level
+        // unless the itemDrag is already at root level
 
         if (!destAlbum)
         {
@@ -331,6 +346,7 @@ Qt::DropAction TagDragDropHandler::accepts(const QDropEvent* e, const QModelInde
         // Only other possibility is image items being dropped
         // And allow this only if there is a Tag to be dropped
         // on and also the Tag is not root.
+
         return Qt::CopyAction;
     }
 

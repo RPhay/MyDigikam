@@ -57,18 +57,18 @@ public:
 public:
 
     explicit SinglePhotoPreviewLayout(QObject* const parent);
-    ~SinglePhotoPreviewLayout();
+    ~SinglePhotoPreviewLayout() override;
 
     /**
      * Set the graphics view, and associated scene, to operate on.
      */
-    void setGraphicsView(GraphicsDImgView* view);
+    void setGraphicsView(GraphicsDImgView* const view);
 
     /**
      * Set the item to layout. For a SinglePhoto layout, typically,
      * you can add only one item.
      */
-    void addItem(GraphicsDImgItem* item);
+    void addItem(GraphicsDImgItem* const item);
 
     bool   isFitToWindow()  const;
     double zoomFactor() const;

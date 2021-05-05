@@ -80,7 +80,7 @@ public:
 
     AlbumRootLocation()
       : available(false),
-        hidden(false)
+        hidden   (false)
     {
     }
 
@@ -186,9 +186,9 @@ class Q_DECL_HIDDEN SolidVolumeInfo
 public:
 
     SolidVolumeInfo()
-        : isRemovable(false),
+        : isRemovable  (false),
           isOpticalDisc(false),
-          isMounted(false)
+          isMounted    (false)
     {
     }
 
@@ -230,13 +230,13 @@ public:
      *  Find from a given list (usually the result of listVolumes) the volume
      *  corresponding to the location
      */
-    SolidVolumeInfo findVolumeForLocation(const AlbumRootLocation* location, const QList<SolidVolumeInfo> volumes);
+    SolidVolumeInfo findVolumeForLocation(const AlbumRootLocation* location, const QList<SolidVolumeInfo>& volumes);
 
     /**
      *  Find from a given list (usually the result of listVolumes) the volume
      *  on which the file path specified by the url is located.
      */
-    SolidVolumeInfo findVolumeForUrl(const QUrl& fileUrl, const QList<SolidVolumeInfo> volumes);
+    SolidVolumeInfo findVolumeForUrl(const QUrl& fileUrl, const QList<SolidVolumeInfo>& volumes);
 
     /// Create the volume identifier for the given volume info
     static QString volumeIdentifier(const SolidVolumeInfo& info);
@@ -279,8 +279,8 @@ class Q_DECL_HIDDEN ChangingDB
 
 public:
 
-    explicit ChangingDB(CollectionManager::Private* const d)
-        : d(d)
+    explicit ChangingDB(CollectionManager::Private* const dd)
+        : d(dd)
     {
         d->changingDB = true;
     }

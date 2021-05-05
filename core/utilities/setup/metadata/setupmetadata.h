@@ -7,7 +7,7 @@
  * Description : setup Metadata tab.
  *
  * Copyright (C) 2003-2004 by Ralf Holzer <ralf at well.com>
- * Copyright (C) 2003-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2003-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -44,14 +44,15 @@ public:
         Sidecars,
         Rotation,
         Display,
-        AdvancedConfig,
-        Baloo
+        ExifTool,
+        Baloo,
+        AdvancedConfig
     };
 
 public:
 
     explicit SetupMetadata(QWidget* const parent = nullptr);
-    ~SetupMetadata();
+    ~SetupMetadata() override;
 
     void applySettings();
 
@@ -62,7 +63,11 @@ public:
 
 private:
 
-    void readSettings();
+    void appendBehaviorTab();
+    void appendSidecarsTab();
+    void appendDisplayTab();
+    void appendRotationTab();
+    void appendBalooTab();
 
 private Q_SLOTS:
 

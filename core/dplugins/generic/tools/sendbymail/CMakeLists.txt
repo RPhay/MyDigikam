@@ -1,8 +1,10 @@
 #
-# Copyright (c) 2010-2019, Gilles Caulier, <caulier dot gilles at gmail dot com>
+# Copyright (c) 2010-2020, Gilles Caulier, <caulier dot gilles at gmail dot com>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
+
+APPLY_COMMON_POLICIES()
 
 include(MacroDPlugins)
 
@@ -27,9 +29,17 @@ set(sendbymailplugin_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/wizard/mailimagespage.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/wizard/mailsettingspage.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/wizard/mailfinalpage.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/tools/outlookbinary.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/tools/thunderbirdbinary.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/tools/evolutionbinary.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/tools/kmailbinary.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/tools/sylpheedbinary.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/tools/netscapebinary.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/tools/clawsmailbinary.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/tools/balsabinary.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/sendbymailplugin.cpp
 )
 
 DIGIKAM_ADD_GENERIC_PLUGIN(NAME    SendByMail
-                                    SOURCES ${sendbymailplugin_SRCS}
+                           SOURCES ${sendbymailplugin_SRCS}
 )

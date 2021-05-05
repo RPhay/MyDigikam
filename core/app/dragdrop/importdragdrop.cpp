@@ -7,7 +7,7 @@
  * Description : Qt Model for ImportUI - drag and drop handling
  *
  * Copyright (C) 2012      by Islam Wazery <wazery at ubuntu dot com>
- * Copyright (C) 2013-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2013-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -69,7 +69,7 @@ ImportDragDropHandler::DropAction ImportDragDropHandler::copyOrMove(const QDropE
                                                                     bool allowMove,
                                                                     bool askForGrouping)
 {
-    if (e->keyboardModifiers() & Qt::ControlModifier)
+    if      (e->keyboardModifiers() & Qt::ControlModifier)
     {
         return CopyAction;
     }
@@ -83,17 +83,25 @@ ImportDragDropHandler::DropAction ImportDragDropHandler::copyOrMove(const QDropE
         switch (e->proposedAction())
         {
             case Qt::CopyAction:
+            {
                 return CopyAction;
+            }
+
             case Qt::MoveAction:
+            {
                 return MoveAction;
+            }
+
             default:
+            {
                 return NoAction;
+            }
         }
     }
 
     QMenu popMenu(view);
 
-    QAction* moveAction = nullptr;
+    QAction* moveAction       = nullptr;
 
     if (allowMove)
     {
@@ -103,7 +111,7 @@ ImportDragDropHandler::DropAction ImportDragDropHandler::copyOrMove(const QDropE
     QAction* const copyAction = popMenu.addAction(QIcon::fromTheme(QLatin1String("edit-copy")), i18n("&Copy Here"));
     popMenu.addSeparator();
 
-    QAction* groupAction = nullptr;
+    QAction* groupAction      = nullptr;
 
     if (askForGrouping)
     {
@@ -116,7 +124,7 @@ ImportDragDropHandler::DropAction ImportDragDropHandler::copyOrMove(const QDropE
     popMenu.setMouseTracking(true);
     QAction* const choice = popMenu.exec(QCursor::pos());
 
-    if (moveAction && choice == moveAction)
+    if      (moveAction && (choice == moveAction))
     {
         return MoveAction;
     }
@@ -124,7 +132,7 @@ ImportDragDropHandler::DropAction ImportDragDropHandler::copyOrMove(const QDropE
     {
         return CopyAction;
     }
-    else if (groupAction && choice == groupAction)
+    else if (groupAction && (choice == groupAction))
     {
         return GroupAction;
     }
@@ -142,7 +150,9 @@ static DropAction groupAction(const QDropEvent*, QWidget* view)
 }
 */
 
-bool ImportDragDropHandler::dropEvent(QAbstractItemView* abstractview, const QDropEvent* e, const QModelIndex& droppedOn)
+bool ImportDragDropHandler::dropEvent(QAbstractItemView* abstractview,
+                                      const QDropEvent* e,
+                                      const QModelIndex& droppedOn)
 {
     ImportCategorizedView* const view = static_cast<ImportCategorizedView*>(abstractview);
 
@@ -153,7 +163,7 @@ bool ImportDragDropHandler::dropEvent(QAbstractItemView* abstractview, const QDr
 
     if (DItemDrag::canDecode(e->mimeData()))
     {
-        QList<QUrl> lst = DigikamApp::instance()->view()->selectedUrls();
+        QList<QUrl> lst         = DigikamApp::instance()->view()->selectedUrls();
 
         QMenu popMenu(view);
         popMenu.addSection(QIcon::fromTheme(QLatin1String("digikam")), i18n("Exporting"));
@@ -162,7 +172,7 @@ bool ImportDragDropHandler::dropEvent(QAbstractItemView* abstractview, const QDr
         popMenu.addSeparator();
         popMenu.addAction(QIcon::fromTheme(QLatin1String("dialog-cancel")), i18n("C&ancel"));
         popMenu.setMouseTracking(true);
-        QAction* const choice = popMenu.exec(view->mapToGlobal(e->pos()));
+        QAction* const choice   = popMenu.exec(view->mapToGlobal(e->pos()));
 
         if (choice)
         {
@@ -187,7 +197,7 @@ Qt::DropAction ImportDragDropHandler::accepts(const QDropEvent* e, const QModelI
 {
     if (DItemDrag::canDecode(e->mimeData()) || e->mimeData()->hasUrls())
     {
-        if (e->keyboardModifiers() & Qt::ControlModifier)
+        if      (e->keyboardModifiers() & Qt::ControlModifier)
         {
             return Qt::CopyAction;
         }

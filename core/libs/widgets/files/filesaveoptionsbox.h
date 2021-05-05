@@ -7,7 +7,7 @@
  * Description : a stack of widgets to set image file save
  *               options into image editor.
  *
- * Copyright (C) 2007-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2007-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -40,20 +40,21 @@ namespace Digikam
 
 class DIGIKAM_EXPORT FileSaveOptionsBox : public QStackedWidget
 {
+    Q_OBJECT
 
 public:
 
     /**
      * Constructor. Don't forget to call setDialog after creation of the dialog.
      *
-     * @param parent parent for Qt's parent child mechanism
+     * @param parent the parent for Qt's parent child mechanism
      */
-    explicit FileSaveOptionsBox(QWidget* const parent=nullptr);
+    explicit FileSaveOptionsBox(QWidget* const parent = nullptr);
 
     /**
      * Destructor.
      */
-    ~FileSaveOptionsBox();
+    ~FileSaveOptionsBox() override;
 
     void applySettings();
 
@@ -62,7 +63,7 @@ public:
      * filename.
      *
      * @param filename file name to discover the desired format from
-     * @param fallback fallback format to return if no format could be
+     * @param fallback the fallback format to return if no format could be
      *                 discovered based on the filename
      * @return file format guessed from the file name or the given fallback
      *         format if no format could be guessed based on the file name

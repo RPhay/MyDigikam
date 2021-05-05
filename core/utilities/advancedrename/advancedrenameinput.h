@@ -50,10 +50,10 @@ class AdvancedRenameLineEdit : public QPlainTextEdit
 public:
 
     explicit AdvancedRenameLineEdit(QWidget* const parent = nullptr);
-    ~AdvancedRenameLineEdit();
+    ~AdvancedRenameLineEdit()                     override;
 
     void    setParser(Parser* parser);
-    Parser* parser() const;
+    Parser* parser()                        const;
 
     void setParseTimerDuration(int milliseconds);
 
@@ -70,9 +70,9 @@ Q_SIGNALS:
 
 protected:
 
-    virtual void keyPressEvent(QKeyEvent* e) override;
-    virtual void wheelEvent(QWheelEvent* e) override;
-    virtual void scrollContentsBy(int dx, int dy) override;
+    void keyPressEvent(QKeyEvent* e)              override;
+    void wheelEvent(QWheelEvent* e)               override;
+    void scrollContentsBy(int dx, int dy)         override;
 
 private Q_SLOTS:
 
@@ -81,11 +81,13 @@ private Q_SLOTS:
 
 private:
 
-    AdvancedRenameLineEdit(const AdvancedRenameLineEdit&);
-    AdvancedRenameLineEdit& operator=(const AdvancedRenameLineEdit&);
-
     void setupWidgets();
     void setupConnections();
+
+private:
+
+    AdvancedRenameLineEdit(const AdvancedRenameLineEdit&)            = delete;
+    AdvancedRenameLineEdit& operator=(const AdvancedRenameLineEdit&) = delete;
 
 private:
 
@@ -102,12 +104,12 @@ class AdvancedRenameInput : public QComboBox
 public:
 
     explicit AdvancedRenameInput(QWidget* const parent = nullptr);
-    ~AdvancedRenameInput();
+    ~AdvancedRenameInput()                            override;
 
     void setParser(Parser* parser);
     void setParseTimerDuration(int milliseconds);
 
-    QString text() const;
+    QString text()                              const;
     void    setText(const QString& text);
 
 Q_SIGNALS:
@@ -128,7 +130,7 @@ public Q_SLOTS:
 
 protected:
 
-    virtual void changeEvent(QEvent* e) override;
+    void changeEvent(QEvent* e)                       override;
 
 private Q_SLOTS:
 
@@ -137,15 +139,18 @@ private Q_SLOTS:
 
 private:
 
-    AdvancedRenameInput(const AdvancedRenameInput&);
-    AdvancedRenameInput& operator=(const AdvancedRenameInput&);
-
     void readSettings();
     void writeSettings();
     void enableHighlighter(bool enable);
 
     void setupWidgets();
     void setupConnections();
+
+private:
+
+    // Disable
+    AdvancedRenameInput(const AdvancedRenameInput&)            = delete;
+    AdvancedRenameInput& operator=(const AdvancedRenameInput&) = delete;
 
 private:
 

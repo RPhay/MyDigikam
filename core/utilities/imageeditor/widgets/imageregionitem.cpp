@@ -7,7 +7,7 @@
  * Description : image region widget item for image editor.
  *
  * Copyright (C) 2013-2014 by Yiou Wang <geow812 at gmail dot com>
- * Copyright (C) 2013-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2013-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -53,11 +53,11 @@ class Q_DECL_HIDDEN ImageRegionItem::Private
 public:
 
     explicit Private()
-      : paintExtras(true),
+      : paintExtras              (true),
         onMouseMovePreviewToggled(true),
-        renderingPreviewMode(PreviewToolBar::PreviewBothImagesVertCont),
-        view(nullptr),
-        iface(nullptr)
+        renderingPreviewMode     (PreviewToolBar::PreviewBothImagesVertCont),
+        view                     (nullptr),
+        iface                    (nullptr)
     {
     }
 
@@ -74,48 +74,48 @@ public:
 };
 
 ImageRegionItem::ImageRegionItem(ImageRegionWidget* const widget, bool paintExtras)
-    : d_ptr(new Private)
+    : dd(new Private)
 {
-    d_ptr->view        = widget;
-    d_ptr->iface       = new ImageIface;
-    d_ptr->paintExtras = paintExtras;
+    dd->view        = widget;
+    dd->iface       = new ImageIface;
+    dd->paintExtras = paintExtras;
     setAcceptHoverEvents(true);
-    setImage(d_ptr->iface->original() ? d_ptr->iface->original()->copy() : DImg());
+    setImage(dd->iface->original() ? dd->iface->original()->copy() : DImg());
 }
 
 ImageRegionItem::~ImageRegionItem()
 {
-    delete d_ptr->iface;
-    delete d_ptr;
+    delete dd->iface;
+    delete dd;
 }
 
 QRect ImageRegionItem::getImageRegion() const
 {
-    return d_ptr->drawRect;
+    return dd->drawRect;
 }
 
 void ImageRegionItem::setTargetImage(DImg& img)
 {
-    d_ptr->targetPix = d_ptr->iface->convertToPixmap(img);
+    dd->targetPix = dd->iface->convertToPixmap(img);
     update();
 }
 
 void ImageRegionItem::setRenderingPreviewMode(int mode)
 {
-    d_ptr->renderingPreviewMode = mode;
+    dd->renderingPreviewMode = mode;
     update();
 }
 
 void ImageRegionItem::setHighLightPoints(const QPolygon& pointsList)
 {
-    d_ptr->hightlightPoints = pointsList;
+    dd->hightlightPoints = pointsList;
 }
 
 void ImageRegionItem::paint(QPainter* painter, const QStyleOptionGraphicsItem* option, QWidget* widget)
 {
     Q_D(GraphicsDImgItem);
 
-    d_ptr->drawRect      = option->exposedRect.intersected(boundingRect()).toAlignedRect();
+    dd->drawRect      = option->exposedRect.intersected(boundingRect()).toAlignedRect();
     QRect   pixSourceRect;
     QPixmap pix;
     QSize   completeSize = boundingRect().size().toSize();
@@ -124,20 +124,20 @@ void ImageRegionItem::paint(QPainter* painter, const QStyleOptionGraphicsItem* o
 
     DImg scaledImage     = d->image.smoothScaleClipped(completeSize.width(),
                                                        completeSize.height(),
-                                                       d_ptr->drawRect.x(),
-                                                       d_ptr->drawRect.y(),
-                                                       d_ptr->drawRect.width(),
-                                                       d_ptr->drawRect.height());
+                                                       dd->drawRect.x(),
+                                                       dd->drawRect.y(),
+                                                       dd->drawRect.width(),
+                                                       dd->drawRect.height());
 
-    if (d->cachedPixmaps.find(d_ptr->drawRect, &pix, &pixSourceRect))
+    if (d->cachedPixmaps.find(dd->drawRect, &pix, &pixSourceRect))
     {
         if (pixSourceRect.isNull())
         {
-            painter->drawPixmap(d_ptr->drawRect.topLeft(), pix);
+            painter->drawPixmap(dd->drawRect.topLeft(), pix);
         }
         else
         {
-            painter->drawPixmap(d_ptr->drawRect.topLeft(), pix, pixSourceRect);
+            painter->drawPixmap(dd->drawRect.topLeft(), pix, pixSourceRect);
         }
     }
     else
@@ -170,12 +170,12 @@ void ImageRegionItem::paint(QPainter* painter, const QStyleOptionGraphicsItem* o
             pix = scaledImage.convertToPixmap();
         }
 
-        d->cachedPixmaps.insert(d_ptr->drawRect, pix);
+        d->cachedPixmaps.insert(dd->drawRect, pix);
 
-        painter->drawPixmap(d_ptr->drawRect.topLeft(), pix);
+        painter->drawPixmap(dd->drawRect.topLeft(), pix);
     }
 
-    if (d_ptr->paintExtras)
+    if (dd->paintExtras)
     {
         paintExtraData(painter);
     }
@@ -190,7 +190,7 @@ void ImageRegionItem::paint(QPainter* painter, const QStyleOptionGraphicsItem* o
         {
             QImage pureColorMask = scaledImage.pureColorMask(expoSettings);
             QPixmap pixMask      = QPixmap::fromImage(pureColorMask);
-            painter->drawPixmap(d_ptr->drawRect.topLeft(), pixMask);
+            painter->drawPixmap(dd->drawRect.topLeft(), pixMask);
         }
     }
 }
@@ -204,107 +204,107 @@ void ImageRegionItem::paintExtraData(QPainter* const p)
     p->setRenderHint(QPainter::Antialiasing, true);
     p->setBackgroundMode(Qt::TransparentMode);
 
-    if      ((d_ptr->renderingPreviewMode == PreviewToolBar::PreviewOriginalImage) ||
-             ((d_ptr->renderingPreviewMode == PreviewToolBar::PreviewToggleOnMouseOver) && !d_ptr->onMouseMovePreviewToggled))
+    if      ((dd->renderingPreviewMode == PreviewToolBar::PreviewOriginalImage) ||
+             ((dd->renderingPreviewMode == PreviewToolBar::PreviewToggleOnMouseOver) && !dd->onMouseMovePreviewToggled))
     {
-        d_ptr->view->drawText(p, QRectF(QPointF(d_ptr->drawRect.topLeft().x() + 20,
-                                                d_ptr->drawRect.topLeft().y() + 20),
-                                        fontRectBefore.size()), i18n("Before"));
+        dd->view->drawText(p, QRectF(QPointF(dd->drawRect.topLeft().x() + 20,
+                                             dd->drawRect.topLeft().y() + 20),
+                                             fontRectBefore.size()), i18n("Before"));
     }
 
-    else if ((d_ptr->renderingPreviewMode == PreviewToolBar::PreviewTargetImage) ||
-             (d_ptr->renderingPreviewMode == PreviewToolBar::NoPreviewMode)      ||
-             ((d_ptr->renderingPreviewMode == PreviewToolBar::PreviewToggleOnMouseOver) && d_ptr->onMouseMovePreviewToggled))
+    else if ((dd->renderingPreviewMode == PreviewToolBar::PreviewTargetImage) ||
+             (dd->renderingPreviewMode == PreviewToolBar::NoPreviewMode)      ||
+             ((dd->renderingPreviewMode == PreviewToolBar::PreviewToggleOnMouseOver) && dd->onMouseMovePreviewToggled))
     {
-        p->drawPixmap(d_ptr->drawRect.x(), d_ptr->drawRect.y(), d_ptr->targetPix,
-                      0, 0, d_ptr->drawRect.width(), d_ptr->drawRect.height());
+        p->drawPixmap(dd->drawRect.x(), dd->drawRect.y(), dd->targetPix,
+                      0, 0, dd->drawRect.width(), dd->drawRect.height());
 
-        if ((d_ptr->renderingPreviewMode == PreviewToolBar::PreviewTargetImage) ||
-            (d_ptr->renderingPreviewMode == PreviewToolBar::PreviewToggleOnMouseOver))
+        if ((dd->renderingPreviewMode == PreviewToolBar::PreviewTargetImage) ||
+            (dd->renderingPreviewMode == PreviewToolBar::PreviewToggleOnMouseOver))
         {
-            d_ptr->view->drawText(p, QRectF(QPointF(d_ptr->drawRect.topLeft().x() + 20,
-                                                    d_ptr->drawRect.topLeft().y() + 20),
-                                            fontRectAfter.size()), i18n("After"));
+            dd->view->drawText(p, QRectF(QPointF(dd->drawRect.topLeft().x() + 20,
+                                                 dd->drawRect.topLeft().y() + 20),
+                                                 fontRectAfter.size()), i18n("After"));
         }
     }
 
-    else if ((d_ptr->renderingPreviewMode == PreviewToolBar::PreviewBothImagesVert) ||
-             (d_ptr->renderingPreviewMode == PreviewToolBar::PreviewBothImagesVertCont))
+    else if ((dd->renderingPreviewMode == PreviewToolBar::PreviewBothImagesVert) ||
+             (dd->renderingPreviewMode == PreviewToolBar::PreviewBothImagesVertCont))
     {
-        if (d_ptr->renderingPreviewMode == PreviewToolBar::PreviewBothImagesVert)
+        if (dd->renderingPreviewMode == PreviewToolBar::PreviewBothImagesVert)
         {
-            p->drawPixmap(d_ptr->drawRect.x() + d_ptr->drawRect.width() / 2, d_ptr->drawRect.y(),
-                          d_ptr->targetPix, 0, 0, d_ptr->drawRect.width()/2, d_ptr->drawRect.height());
+            p->drawPixmap(dd->drawRect.x() + dd->drawRect.width() / 2, dd->drawRect.y(),
+                          dd->targetPix, 0, 0, dd->drawRect.width()/2, dd->drawRect.height());
         }
 
-        if (d_ptr->renderingPreviewMode == PreviewToolBar::PreviewBothImagesVertCont)
+        if (dd->renderingPreviewMode == PreviewToolBar::PreviewBothImagesVertCont)
         {
-            p->drawPixmap(d_ptr->drawRect.x() + d_ptr->drawRect.width() / 2, d_ptr->drawRect.y(),
-                          d_ptr->targetPix, d_ptr->drawRect.width()/2, 0, d_ptr->drawRect.width(), d_ptr->drawRect.height());
+            p->drawPixmap(dd->drawRect.x() + dd->drawRect.width() / 2, dd->drawRect.y(),
+                          dd->targetPix, dd->drawRect.width()/2, 0, dd->drawRect.width(), dd->drawRect.height());
         }
 
         p->setPen(QPen(Qt::white, 2, Qt::SolidLine));
-        p->drawLine(d_ptr->drawRect.topLeft().x() + d_ptr->drawRect.width()/2, d_ptr->drawRect.topLeft().y(),
-                    d_ptr->drawRect.topLeft().x() + d_ptr->drawRect.width()/2, d_ptr->drawRect.bottomLeft().y());
+        p->drawLine(dd->drawRect.topLeft().x() + dd->drawRect.width()/2, dd->drawRect.topLeft().y(),
+                    dd->drawRect.topLeft().x() + dd->drawRect.width()/2, dd->drawRect.bottomLeft().y());
         p->setPen(QPen(Qt::red, 2, Qt::DotLine));
-        p->drawLine(d_ptr->drawRect.topLeft().x() + d_ptr->drawRect.width()/2, d_ptr->drawRect.topLeft().y(),
-                    d_ptr->drawRect.topLeft().x() + d_ptr->drawRect.width()/2, d_ptr->drawRect.bottomLeft().y());
-        d_ptr->view->drawText(p, QRectF(QPointF(d_ptr->drawRect.topLeft().x() + 20,
-                                                d_ptr->drawRect.topLeft().y() + 20),
-                                        fontRectBefore.size()), i18n("Before"));
-        d_ptr->view->drawText(p, QRectF(QPointF(d_ptr->drawRect.topLeft().x() + d_ptr->drawRect.width()/2 + 20,
-                                                d_ptr->drawRect.topLeft().y() + 20),
-                                        fontRectAfter.size()),  i18n("After"));
+        p->drawLine(dd->drawRect.topLeft().x() + dd->drawRect.width()/2, dd->drawRect.topLeft().y(),
+                    dd->drawRect.topLeft().x() + dd->drawRect.width()/2, dd->drawRect.bottomLeft().y());
+        dd->view->drawText(p, QRectF(QPointF(dd->drawRect.topLeft().x() + 20,
+                                             dd->drawRect.topLeft().y() + 20),
+                                             fontRectBefore.size()), i18n("Before"));
+        dd->view->drawText(p, QRectF(QPointF(dd->drawRect.topLeft().x() + dd->drawRect.width()/2 + 20,
+                                             dd->drawRect.topLeft().y() + 20),
+                                             fontRectAfter.size()),  i18n("After"));
     }
 
-    else if ((d_ptr->renderingPreviewMode == PreviewToolBar::PreviewBothImagesHorz) ||
-             (d_ptr->renderingPreviewMode == PreviewToolBar::PreviewBothImagesHorzCont))
+    else if ((dd->renderingPreviewMode == PreviewToolBar::PreviewBothImagesHorz) ||
+             (dd->renderingPreviewMode == PreviewToolBar::PreviewBothImagesHorzCont))
     {
-        if (d_ptr->renderingPreviewMode == PreviewToolBar::PreviewBothImagesHorz)
+        if (dd->renderingPreviewMode == PreviewToolBar::PreviewBothImagesHorz)
         {
-            p->drawPixmap(d_ptr->drawRect.x(), d_ptr->drawRect.y() + d_ptr->drawRect.height() / 2,
-                          d_ptr->targetPix, 0, 0, d_ptr->drawRect.width(), d_ptr->drawRect.height()/2);
+            p->drawPixmap(dd->drawRect.x(), dd->drawRect.y() + dd->drawRect.height() / 2,
+                          dd->targetPix, 0, 0, dd->drawRect.width(), dd->drawRect.height()/2);
         }
 
-        if (d_ptr->renderingPreviewMode == PreviewToolBar::PreviewBothImagesHorzCont)
+        if (dd->renderingPreviewMode == PreviewToolBar::PreviewBothImagesHorzCont)
         {
-            p->drawPixmap(d_ptr->drawRect.x(), d_ptr->drawRect.y() + d_ptr->drawRect.height() / 2,
-                          d_ptr->targetPix, 0, d_ptr->drawRect.height()/2, d_ptr->drawRect.width(), d_ptr->drawRect.height());
+            p->drawPixmap(dd->drawRect.x(), dd->drawRect.y() + dd->drawRect.height() / 2,
+                          dd->targetPix, 0, dd->drawRect.height()/2, dd->drawRect.width(), dd->drawRect.height());
         }
 
         p->setPen(QPen(Qt::white, 2, Qt::SolidLine));
-        p->drawLine(d_ptr->drawRect.topLeft().x()  + 1, d_ptr->drawRect.topLeft().y() + d_ptr->drawRect.height()/2,
-                    d_ptr->drawRect.topRight().x() - 1, d_ptr->drawRect.topLeft().y() + d_ptr->drawRect.height()/2);
+        p->drawLine(dd->drawRect.topLeft().x()  + 1, dd->drawRect.topLeft().y() + dd->drawRect.height()/2,
+                    dd->drawRect.topRight().x() - 1, dd->drawRect.topLeft().y() + dd->drawRect.height()/2);
         p->setPen(QPen(Qt::red, 2, Qt::DotLine));
-        p->drawLine(d_ptr->drawRect.topLeft().x()  + 1, d_ptr->drawRect.topLeft().y() + d_ptr->drawRect.height()/2,
-                    d_ptr->drawRect.topRight().x() - 1, d_ptr->drawRect.topLeft().y() + d_ptr->drawRect.height()/2);
+        p->drawLine(dd->drawRect.topLeft().x()  + 1, dd->drawRect.topLeft().y() + dd->drawRect.height()/2,
+                    dd->drawRect.topRight().x() - 1, dd->drawRect.topLeft().y() + dd->drawRect.height()/2);
 
-        d_ptr->view->drawText(p, QRectF(QPointF(d_ptr->drawRect.topLeft().x() + 20,
-                                                d_ptr->drawRect.topLeft().y() + 20),
-                                        fontRectBefore.size()), i18n("Before"));
-        d_ptr->view->drawText(p, QRectF(QPointF(d_ptr->drawRect.topLeft().x() + 20,
-                                                d_ptr->drawRect.topLeft().y() + d_ptr->drawRect.height()/2 + 20),
-                                        fontRectAfter.size()),  i18n("After"));
+        dd->view->drawText(p, QRectF(QPointF(dd->drawRect.topLeft().x() + 20,
+                                             dd->drawRect.topLeft().y() + 20),
+                                             fontRectBefore.size()), i18n("Before"));
+        dd->view->drawText(p, QRectF(QPointF(dd->drawRect.topLeft().x() + 20,
+                                             dd->drawRect.topLeft().y() + dd->drawRect.height()/2 + 20),
+                                             fontRectAfter.size()),  i18n("After"));
     }
 
     // Drawing highlighted points.
 
-    if (!d_ptr->hightlightPoints.isEmpty())
+    if (!dd->hightlightPoints.isEmpty())
     {
         QPoint pt;
         QRectF hpArea;
 
 
-        for (int i = 0 ; i < d_ptr->hightlightPoints.count() ; ++i)
+        for (int i = 0 ; i < dd->hightlightPoints.count() ; ++i)
         {
-            pt                = d_ptr->hightlightPoints.point(i);
+            pt                = dd->hightlightPoints.point(i);
             double zoomFactor = zoomSettings()->realZoomFactor();
             int x = (int)((double)pt.x() * zoomFactor);
             int y = (int)((double)pt.y() * zoomFactor);
 
             // Check if zoomed point is inside, not actual point
 
-            if (d_ptr->drawRect.contains(QPoint(x,y)))
+            if (dd->drawRect.contains(QPoint(x,y)))
             {
 /*
                 QPoint hp(contentsToViewport(QPointF(x, y)));
@@ -332,13 +332,13 @@ void ImageRegionItem::paintExtraData(QPainter* const p)
 
 void ImageRegionItem::hoverEnterEvent(QGraphicsSceneHoverEvent*)
 {
-    d_ptr->onMouseMovePreviewToggled = false;
+    dd->onMouseMovePreviewToggled = false;
     update();
 }
 
 void ImageRegionItem::hoverLeaveEvent(QGraphicsSceneHoverEvent*)
 {
-    d_ptr->onMouseMovePreviewToggled = true;
+    dd->onMouseMovePreviewToggled = true;
     update();
 }
 

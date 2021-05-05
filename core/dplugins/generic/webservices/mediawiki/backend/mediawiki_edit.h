@@ -6,7 +6,7 @@
  * Date        : 2011-03-22
  * Description : a Iface C++ interface
  *
- * Copyright (C) 2011-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2011-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2011      by Alexandre Mendes <alex dot mendes1988 at gmail dot com>
  * Copyright (C) 2011      by Hormiere Guillaume <hormiere dot guillaume at gmail dot com>
  * Copyright (C) 2011      by Manuel Campomanes <campomanes dot manuel at gmail dot com>
@@ -38,7 +38,6 @@
 
 #include "mediawiki_job.h"
 #include "mediawiki_queryinfo.h"
-#include "digikam_export.h"
 
 namespace MediaWiki
 {
@@ -51,7 +50,7 @@ class EditPrivate;
  *
  * Uses for create or edit a wiki.
  */
-class DIGIKAM_EXPORT Edit : public Job
+class Edit : public Job
 {
     Q_OBJECT
     Q_DECLARE_PRIVATE(Edit)
@@ -192,15 +191,16 @@ public:
      * @param parent the QObject parent
      */
     explicit Edit(Iface& media, QObject* const parent = nullptr);
+
     /**
      * @brief Destroys the Edit job.
      */
-    virtual ~Edit();
+    ~Edit() override;
 
     /**
      * @brief Starts the job asynchronously.
      */
-    void start() Q_DECL_OVERRIDE;
+    void start() override;
 
     /**
      * @brief Specify how the watchlist is affected by this edit.
@@ -308,7 +308,7 @@ Q_SIGNALS:
 
 private Q_SLOTS:
 
-    void doWorkSendRequest(Page page);
+    void doWorkSendRequest(const Page& page);
     void finishedEdit();
 
 public Q_SLOTS:

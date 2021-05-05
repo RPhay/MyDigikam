@@ -6,7 +6,7 @@
  * Date        : 2010-04-19
  * Description : A class to hold the GPS related data
  *
- * Copyright (C) 2010-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2010-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2010-2014 by Michael G. Hansen <mike at mghansen dot de>
  *
  * This program is free software; you can redistribute it
@@ -51,12 +51,12 @@ public:
 public:
 
     GPSDataContainer()
-      : m_hasFlags(nullptr),
+      : m_hasFlags   (HasFlags()),
         m_coordinates(),
         m_nSatellites(-1),
-        m_dop(-1),
-        m_fixType(-1),
-        m_speed(0)
+        m_dop        (-1),
+        m_fixType    (-1),
+        m_speed      (0)
     {
     }
 
@@ -130,7 +130,7 @@ public:
 
     inline void clear()
     {
-        m_hasFlags = nullptr;
+        m_hasFlags = HasFlags();
         m_coordinates.clear();
     }
 
@@ -158,6 +158,7 @@ public:
         {
             m_hasFlags &= ~HasCoordinates;
         }
+
         if (coordinates.hasAltitude())
         {
             m_hasFlags |= HasAltitude;

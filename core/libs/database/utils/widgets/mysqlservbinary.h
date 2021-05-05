@@ -6,7 +6,7 @@
  * Date        : 2016-06-20
  * Description : Autodetects Mysql server binary program and version
  *
- * Copyright (C) 2016-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2016-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -25,18 +25,25 @@
 
 // Local includes
 
+#include "digikam_export.h"
 #include "dbinaryiface.h"
 
 namespace Digikam
 {
 
-class MysqlServBinary : public DBinaryIface
+class DIGIKAM_GUI_EXPORT MysqlServBinary : public DBinaryIface
 {
+    Q_OBJECT
 
 public:
 
-    explicit MysqlServBinary();
-    ~MysqlServBinary();
+    MysqlServBinary();
+    ~MysqlServBinary() override;
+
+private:
+
+    // Disabled
+    explicit MysqlServBinary(QObject*) = delete;
 };
 
 } // namespace Digikam

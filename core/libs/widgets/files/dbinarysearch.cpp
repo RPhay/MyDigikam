@@ -6,7 +6,8 @@
  * Date        : 2012-01-05
  * Description : a widget to find missing binaries.
  *
- * Copyright (C) 2012-2012 by Benjamin Girault <benjamin dot girault at gmail dot com>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2012-2016 by Benjamin Girault <benjamin dot girault at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -55,7 +56,7 @@ public:
 
 DBinarySearch::DBinarySearch(QWidget* const parent)
     : QTreeWidget(parent),
-      d(new Private)
+      d          (new Private)
 {
     setIconSize(QSize(16, 16));
     setAlternatingRowColors(true);
@@ -66,16 +67,16 @@ DBinarySearch::DBinarySearch(QWidget* const parent)
     setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     setColumnCount(5);
     setHeaderLabels(QStringList() << QLatin1String("")
-                                  << i18n("Binary")
-                                  << i18n("Version")
+                                  << i18nc("@title: binary properties", "Binary")
+                                  << i18nc("@title: binary properties", "Version")
                                   << QLatin1String("")
                                   << QLatin1String(""));
 
-    header()->setSectionResizeMode(Status,  QHeaderView::ResizeToContents);
-    header()->setSectionResizeMode(Binary,  QHeaderView::Stretch);
-    header()->setSectionResizeMode(Version, QHeaderView::Stretch);
-    header()->setSectionResizeMode(Button,  QHeaderView::Stretch);
-    header()->setSectionResizeMode(Link,    QHeaderView::Stretch);
+    header()->setSectionResizeMode(Status,    QHeaderView::ResizeToContents);
+    header()->setSectionResizeMode(Binary,    QHeaderView::Stretch);
+    header()->setSectionResizeMode(Version,   QHeaderView::Stretch);
+    header()->setSectionResizeMode(Button,    QHeaderView::Stretch);
+    header()->setSectionResizeMode(Link,      QHeaderView::Stretch);
 
     d->downloadLabel = new QLabel(parentWidget());
 
@@ -101,12 +102,12 @@ void DBinarySearch::addBinary(DBinaryIface& binary)
     d->binaryIfaces.append(&binary);
     d->items.append(new QTreeWidgetItem());
     QTreeWidgetItem* const item   = d->items[d->items.size() - 1];
-    item->setIcon(Status, QIcon::fromTheme(QLatin1String("dialog-cancel")).pixmap(16, 16));
-    item->setText(Binary, binary.baseName());
-    item->setText(Version, binary.version());
-    item->setToolTip(Binary,  binary.description());
-    item->setToolTip(Status,  i18n("Binary not found."));
-    item->setToolTip(Version, i18n("Minimal version number required for this binary is %1", binary.minimalVersion()));
+    item->setIcon(Status,       QIcon::fromTheme(QLatin1String("dialog-cancel")).pixmap(16, 16));
+    item->setText(Binary,       binary.baseName());
+    item->setText(Version,      binary.version());
+    item->setToolTip(Binary,    binary.description());
+    item->setToolTip(Status,    i18n("Binary not found."));
+    item->setToolTip(Version,   i18n("Minimal version number required for this binary is %1", binary.minimalVersion()));
     insertTopLevelItem(d->binaryIfaces.size() - 1, item);
     QPushButton* const findButton = new QPushButton(i18n("Find"));
     setItemWidget(item, Button, findButton);

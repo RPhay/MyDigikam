@@ -9,7 +9,7 @@
  * Copyright (C) 2003-2005 by Renchi Raju <renchi dot raju at gmail dot com>
  * Copyright (C) 2007-2008 by Orgad Shaneh <orgads at gmail dot com>
  * Copyright (C) 2012      by Angelo Naselli <anaselli at linux dot it>
- * Copyright (C) 2012-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -36,14 +36,15 @@ class QPaintDevice;
 namespace DigikamGenericCalendarPlugin
 {
 
-class CalPainter : public QObject, public QPainter
+class CalPainter : public QObject,      // clazy:exclude=ctor-missing-parent-argument
+                   public QPainter
 {
     Q_OBJECT
 
 public:
 
     explicit CalPainter(QPaintDevice* const pDevice);
-    virtual ~CalPainter();
+    ~CalPainter() override;
 
     void setImage(const QUrl& imagePath);
     void paint(int month);
@@ -64,6 +65,6 @@ private:
     Private* const d;
 };
 
-}  // Namespace Digikam
+} // namespace Digikam
 
 #endif // DIGIKAM_CAL_PAINTER_H

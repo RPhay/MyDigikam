@@ -47,19 +47,20 @@ class ItemFiltersHistoryModel : public QAbstractItemModel
 public:
 
     explicit ItemFiltersHistoryModel(QObject* const parent = nullptr, const QUrl& url = QUrl());
-    ~ItemFiltersHistoryModel();
+    ~ItemFiltersHistoryModel()                                                                      override;
 
     void setUrl(const QUrl& url);
-    bool removeRows(int row, int count, const QModelIndex& parent);
-    void setupModelData(const QList<DImageHistory::Entry>& entries, ItemFiltersHistoryTreeItem* parent = nullptr);
+    bool removeRows(int row, int count, const QModelIndex& parent)                                  override;
+    void setupModelData(const QList<DImageHistory::Entry>& entries,
+                        ItemFiltersHistoryTreeItem* parent = nullptr);
 
-    Qt::ItemFlags flags(const QModelIndex& index)                                             const;
-    QVariant headerData(int section, Qt::Orientation orientation, int role = Qt::DisplayRole) const;
-    QVariant data(const QModelIndex& index, int role = Qt::DisplayRole)                       const;
-    int columnCount(const QModelIndex& parent = QModelIndex())                                const;
-    int rowCount(const QModelIndex& parent = QModelIndex())                                   const;
-    QModelIndex parent(const QModelIndex& index)                                              const;
-    QModelIndex index(int row, int column, const QModelIndex& parent = QModelIndex())         const;
+    Qt::ItemFlags flags(const QModelIndex& index)                                             const override;
+    QVariant headerData(int section, Qt::Orientation orientation, int role = Qt::DisplayRole) const override;
+    QVariant data(const QModelIndex& index, int role = Qt::DisplayRole)                       const override;
+    int columnCount(const QModelIndex& parent = QModelIndex())                                const override;
+    int rowCount(const QModelIndex& parent = QModelIndex())                                   const override;
+    QModelIndex parent(const QModelIndex& index)                                              const override;
+    QModelIndex index(int row, int column, const QModelIndex& parent = QModelIndex())         const override;
 
 public Q_SLOTS:
 

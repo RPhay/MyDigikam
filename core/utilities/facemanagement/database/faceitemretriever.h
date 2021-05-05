@@ -36,12 +36,13 @@ class Q_DECL_HIDDEN FaceItemRetriever
 public:
 
     explicit FaceItemRetriever(FacePipeline::Private* const d);
+    ~FaceItemRetriever();
+
     void cancel();
 
-    ThumbnailImageCatcher* thumbnailCatcher()                                               const;
-    QList<QImage> getDetails(const DImg& src, const QList<QRectF>& rects)                   const;
-    QList<QImage> getDetails(const DImg& src, const QList<FaceTagsIface>& faces)            const;
-    QList<QImage> getThumbnails(const QString& filePath, const QList<FaceTagsIface>& faces) const;
+    QList<QImage*> getDetails(const DImg& src, const QList<QRectF>& rects)                   const;
+    QList<QImage*> getDetails(const DImg& src, const QList<FaceTagsIface>& faces)            const;
+    QList<QImage*> getThumbnails(const QString& filePath, const QList<FaceTagsIface>& faces) const;
 
 protected:
 
@@ -49,9 +50,9 @@ protected:
 
 private:
 
-    // Hidden copy constructor and assignment operator.
-    FaceItemRetriever(const FaceItemRetriever&);
-    FaceItemRetriever& operator=(const FaceItemRetriever&);
+    // Disable
+    FaceItemRetriever(const FaceItemRetriever&)            = delete;
+    FaceItemRetriever& operator=(const FaceItemRetriever&) = delete;
 };
 
 } // namespace Digikam

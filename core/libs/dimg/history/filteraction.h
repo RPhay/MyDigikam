@@ -154,7 +154,10 @@ public:
     T parameter(const QString& key, const T& defaultValue)          const
     {
         QVariant var = parameter(key);
-        return (var.isValid()) ? var.value<T>() : defaultValue;
+        return (
+                (var.isValid()) ? var.value<T>()
+                                : defaultValue
+               );
     }
 
     /// Sets parameter, removing all other values for the same key
@@ -177,7 +180,7 @@ public:
 
 protected:
 
-    // Note: Value class, do not create a d-pointer
+    /// NOTE: Value class, do not create a d-pointer
     Category                 m_category;
     Flags                    m_flags;
     QString                  m_identifier;

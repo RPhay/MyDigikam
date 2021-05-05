@@ -6,7 +6,7 @@
  * Date        : 2018-07-30
  * Description : image editor plugin to restore an image
  *
- * Copyright (C) 2018-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2018-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -49,7 +49,7 @@ LocalContrastToolPlugin::~LocalContrastToolPlugin()
 
 QString LocalContrastToolPlugin::name() const
 {
-    return i18n("Local Contrast");
+    return i18nc("@title", "Local Contrast");
 }
 
 QString LocalContrastToolPlugin::iid() const
@@ -64,12 +64,12 @@ QIcon LocalContrastToolPlugin::icon() const
 
 QString LocalContrastToolPlugin::description() const
 {
-    return i18n("A tool to emulate tone mapping");
+    return i18nc("@info", "A tool to emulate tone mapping");
 }
 
 QString LocalContrastToolPlugin::details() const
 {
-    return i18n("<p>This Image Editor tool can emulate tone mapping over an image.</p>");
+    return i18nc("@info", "This Image Editor tool can emulate tone mapping over an image.");
 }
 
 QList<DPluginAuthor> LocalContrastToolPlugin::authors() const
@@ -80,7 +80,7 @@ QList<DPluginAuthor> LocalContrastToolPlugin::authors() const
                              QString::fromUtf8("(C) 2009"))
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2009-2020"))
+                             QString::fromUtf8("(C) 2009-2021"))
             ;
 }
 

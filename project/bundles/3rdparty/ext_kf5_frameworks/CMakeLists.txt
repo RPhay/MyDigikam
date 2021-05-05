@@ -1,6 +1,6 @@
 # Script to build KF5 Frameworks for digiKam bundle.
 #
-# Copyright (c) 2015-2020 by Gilles Caulier  <caulier dot gilles at gmail dot com>
+# Copyright (c) 2015-2021 by Gilles Caulier  <caulier dot gilles at gmail dot com>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
@@ -29,10 +29,6 @@ function(InstallKF5Component
                         md5sm
                         OUTPUT_STRIP_TRAILING_WHITESPACE
         )
-
-        if(NOT ${wgetresult} MATCHES 0)
-            message(FATAL_ERROR "Cannot download MD5 sum for ${name}!")
-        endif()
 
         message(STATUS "--------------------------------")
         message(STATUS "KF5 component    : ${name}")
@@ -105,10 +101,6 @@ function(InstallKF5Component
                         OUTPUT_STRIP_TRAILING_WHITESPACE
         )
 
-        if(NOT ${wgetresult} MATCHES 0)
-            message(FATAL_ERROR "Cannot download MD5 sum for ${name}!")
-        endif()
-
         message(STATUS "--------------------------------")
         message(STATUS "KF5 component    : ${name}")
         message(STATUS "Component version: ${version}")
@@ -159,10 +151,6 @@ function(InstallKF5Component
                         OUTPUT_STRIP_TRAILING_WHITESPACE
         )
 
-        if(NOT ${wgetresult} MATCHES 0)
-            message(FATAL_ERROR "Cannot download MD5 sum for ${name}!")
-        endif()
-
         message(STATUS "--------------------------------")
         message(STATUS "KF5 component    : ${name}")
         message(STATUS "Component version: ${version}")
@@ -198,21 +186,23 @@ function(InstallKF5Component
 endfunction()
 
 if(MINGW)
-    set(KF5_VERSION 5.65) # we have Qt 5.12.1 available.
+    set(KF5_VERSION 5.80) # we have Qt 5.14.2 available.
 elseif(APPLE)
-    set(KF5_VERSION 5.65) # we have Qt 5.14.0 available.
+    set(KF5_VERSION 5.80) # we have Qt 5.14.1 available.
 else()
-    set(KF5_VERSION 5.65) # we have Qt 5.11.3 available.
+    set(KF5_VERSION 5.80) # we have Qt 5.14.2 available.
 endif()
 
 if(APPLE)
     set(MacosThreadWeaverPatch threadweaver-macports.patch)
     set(MacosKauthBackend -DKAUTH_BACKEND_NAME=Apple)
+else()
+    set(KCalendarCorePatch kcalendarcore-libical.patch)
 endif()
 
 InstallKF5Component(extra-cmake-modules ${KF5_VERSION} ""                                                                   "")
 InstallKF5Component(kconfig             ${KF5_VERSION} ""                                                                   "")
-InstallKF5Component(breeze-icons        ${KF5_VERSION} "-DBINARY_ICONS_RESOURCE=OFF"                                        "${MacosBreezePatch}")
+InstallKF5Component(breeze-icons        ${KF5_VERSION} "-DBINARY_ICONS_RESOURCE=OFF"                                        "breeze-icons-drop-svg.patch")
 InstallKF5Component(solid               ${KF5_VERSION} ""                                                                   "")
 InstallKF5Component(kcoreaddons         ${KF5_VERSION} ""                                                                   "")
 InstallKF5Component(threadweaver        ${KF5_VERSION} ""                                                                   "${MacosThreadWeaverPatch}")
@@ -231,10 +221,11 @@ InstallKF5Component(kconfigwidgets      ${KF5_VERSION} ""                       
 InstallKF5Component(kiconthemes         ${KF5_VERSION} ""                                                                   "")
 InstallKF5Component(kservice            ${KF5_VERSION} ""                                                                   "")
 InstallKF5Component(kglobalaccel        ${KF5_VERSION} ""                                                                   "")
+InstallKF5Component(kcalendarcore       ${KF5_VERSION} ""                                                                   "${KCalendarCorePatch}")
 InstallKF5Component(kxmlgui             ${KF5_VERSION} ""                                                                   "")
 InstallKF5Component(kbookmarks          ${KF5_VERSION} ""                                                                   "")
 InstallKF5Component(kimageformats       ${KF5_VERSION} ""                                                                   "")
-InstallKF5Component(knotifyconfig       ${KF5_VERSION} ""                                                                   "")
+InstallKF5Component(knotifyconfig       ${KF5_VERSION} ""                                                                   "knotifyconfig-drop-phonon.patch")
 InstallKF5Component(knotifications      ${KF5_VERSION} ""                                                                   "knotifications-drop-phonon.patch")
 InstallKF5Component(kjobwidgets         ${KF5_VERSION} ""                                                                   "")
 InstallKF5Component(sonnet              ${KF5_VERSION} ""                                                                   "")

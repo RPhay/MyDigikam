@@ -8,7 +8,7 @@
  *               location
  *
  * Copyright (C) 2006-2009 by Johannes Wienke <languitar at semipol dot de>
- * Copyright (C) 2011-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2011-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -26,16 +26,14 @@
 
 // Qt includes
 
-#include <QWindow>
 #include <QCloseEvent>
-#include <QMenu>
 #include <QMessageBox>
 
 // KDE includes
 
-#include <kconfig.h>
 #include <klocalizedstring.h>
-#include <kwindowconfig.h>
+#include <ksharedconfig.h>
+#include <kconfiggroup.h>
 #include <kio/job.h>
 #include <kio/copyjob.h>
 
@@ -71,7 +69,7 @@ const QString FTExportWindow::Private::CONFIG_GROUP         = QLatin1String("Kio
 
 FTExportWindow::FTExportWindow(DInfoInterface* const iface, QWidget* const /*parent*/)
     : WSToolDialog(nullptr, QLatin1String("Kio Export Dialog")),
-      d(new Private)
+      d           (new Private)
 {
     d->exportWidget = new FTExportWidget(iface, this);
     setMainWidget(d->exportWidget);
@@ -132,27 +130,18 @@ void FTExportWindow::reactivate()
 
 void FTExportWindow::restoreSettings()
 {
-    KConfig config;
-    KConfigGroup group  = config.group(d->CONFIG_GROUP);
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup group      = config->group(d->CONFIG_GROUP);
     d->exportWidget->setHistory(group.readEntry(d->HISTORY_URL_PROPERTY, QList<QUrl>()));
     d->exportWidget->setTargetUrl(group.readEntry(d->TARGET_URL_PROPERTY, QUrl()));
-
-    winId();
-    KConfigGroup group2 = config.group(QLatin1String("Kio Export Dialog"));
-    KWindowConfig::restoreWindowSize(windowHandle(), group2);
-    resize(windowHandle()->size());
 }
 
 void FTExportWindow::saveSettings()
 {
-    KConfig config;
-    KConfigGroup group = config.group(d->CONFIG_GROUP);
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup group      = config->group(d->CONFIG_GROUP);
     group.writeEntry(d->HISTORY_URL_PROPERTY, d->exportWidget->history());
     group.writeEntry(d->TARGET_URL_PROPERTY,  d->exportWidget->targetUrl().url());
-
-    KConfigGroup group2 = config.group(QLatin1String("Kio Export Dialog"));
-    KWindowConfig::saveWindowSize(windowHandle(), group2);
-    config.sync();
 }
 
 void FTExportWindow::slotImageListChanged()
@@ -160,7 +149,7 @@ void FTExportWindow::slotImageListChanged()
     updateUploadButton();
 }
 
-void FTExportWindow::slotTargetUrlChanged(const QUrl & target)
+void FTExportWindow::slotTargetUrlChanged(const QUrl& target)
 {
     Q_UNUSED(target);
     updateUploadButton();
@@ -172,8 +161,8 @@ void FTExportWindow::updateUploadButton()
     startButton()->setEnabled(listNotEmpty && d->exportWidget->targetUrl().isValid());
 
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Updated upload button with listNotEmpty = "
-                                 << listNotEmpty << ", targetUrl().isValid() = "
-                                 << d->exportWidget->targetUrl().isValid();
+                                     << listNotEmpty << ", targetUrl().isValid() = "
+                                     << d->exportWidget->targetUrl().isValid();
 }
 
 void FTExportWindow::slotCopyingDone(KIO::Job* job,
@@ -214,6 +203,7 @@ void FTExportWindow::slotUpload()
     saveSettings();
 
     // start copying and react on signals
+
     setEnabled(false);
     KIO::CopyJob* const copyJob = KIO::copy(d->exportWidget->imagesList()->imageUrls(),
                                             d->exportWidget->targetUrl());

@@ -7,7 +7,7 @@
  * Description : Find Duplicates View.
  *
  * Copyright (C) 2016-2017 by Mario Frank <mario dot frank at uni minus potsdam dot de>
- * Copyright (C) 2008-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2008-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2008-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  * Copyright (C) 2009      by Andi Clemens <andi dot clemens at gmail dot com>
  *
@@ -47,7 +47,7 @@ class FindDuplicatesView : public QWidget
 public:
 
     explicit FindDuplicatesView(QWidget* const parent = nullptr);
-    virtual ~FindDuplicatesView();
+    ~FindDuplicatesView() override;
 
     QList<SAlbum*> currentFindDuplicatesAlbums() const;
     void setActive(bool val);
@@ -56,9 +56,9 @@ public:
 public Q_SLOTS:
 
     void slotSelectFirstItem();
-    void slotSetSelectedAlbum(PAlbum* album);
     void slotSetSelectedAlbums(const QList<PAlbum*>& albums);
     void slotSetSelectedAlbums(const QList<TAlbum*>& albums);
+    void slotRemoveDuplicates();
 
 private Q_SLOTS:
 
@@ -80,8 +80,7 @@ private:
 
     void enableControlWidgets(bool);
 
-    void updateAlbumsBox();
-    void updateTagsBox();
+    void updateSimilarityRangeInterval();
 
     void resetAlbumsAndTags();
 

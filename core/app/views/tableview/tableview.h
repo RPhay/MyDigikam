@@ -6,8 +6,9 @@
  * Date        : 2013-02-11
  * Description : Table view
  *
- * Copyright (C) 2013 by Michael G. Hansen <mike at mghansen dot de>
- * Copyright (C) 2017 by Simon Frei <freisim93 at gmail dot com>
+ * Copyright (C) 2013      by Michael G. Hansen <mike at mghansen dot de>
+ * Copyright (C) 2017      by Simon Frei <freisim93 at gmail dot com>
+ * Copyright (C) 2017-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -61,38 +62,39 @@ public:
                        DCategorizedSortFilterProxyModel* const imageFilterModel,
                        QWidget* const parent);
 
-    virtual ~TableView();
+    ~TableView()                                                                                  override;
 
     void setThumbnailSize(const ThumbnailSize& size);
-    ThumbnailSize getThumbnailSize()                                   const;
-    ItemInfo currentInfo()                                             const;
-    Album* currentAlbum()                                              const;
-    int numberOfSelectedItems()                                        const;
-    ItemInfo nextInfo()                                                const;
-    ItemInfo previousInfo()                                            const;
-    ItemInfo deepRowItemInfo(const int rowNumber, const bool relative) const;
+    ThumbnailSize getThumbnailSize()                                                        const;
+    ItemInfo currentInfo()                                                                  const;
+    Album* currentAlbum()                                                                   const;
+    int numberOfSelectedItems()                                                             const;
+    ItemInfo nextInfo()                                                                     const;
+    ItemInfo previousInfo()                                                                 const;
+    ItemInfo deepRowItemInfo(const int rowNumber, const bool relative)                      const;
 
     void selectAll();
     void clearSelection();
     void invertSelection();
 
-    ItemInfoList allItemInfos(bool grouping = false)                  const;
-    ItemInfoList selectedItemInfos(bool grouping = false)             const;
-    ItemInfoList selectedItemInfosCurrentFirst(bool grouping = false) const;
+    ItemInfoList allItemInfos(bool grouping = false)                                        const;
+    ItemInfoList selectedItemInfos(bool grouping = false)                                   const;
+    ItemInfoList selectedItemInfosCurrentFirst(bool grouping = false)                       const;
     bool          allNeedGroupResolving(const ApplicationSettings::OperationType type)      const;
     bool          selectedNeedGroupResolving(const ApplicationSettings::OperationType type) const;
 
 protected:
 
-    void doLoadState();
-    void doSaveState();
+    void doLoadState() override;
+    void doSaveState() override;
 
-    virtual bool eventFilter(QObject* watched, QEvent* event);
+    bool eventFilter(QObject* watched, QEvent* event) override;
     QList<QAction*> getExtraGroupingActions();
 
 public Q_SLOTS:
 
     void slotGoToRow(const int rowNumber, const bool relativeMove);
+    void slotSetCurrentUrlWhenAvailable(const QUrl& url);
     void slotSetCurrentWhenAvailable(const qlonglong id);
     void slotAwayFromSelection();
     void slotDeleteSelected(const ItemViewUtilities::DeleteMode deleteMode = ItemViewUtilities::DeleteUseTrash);
@@ -123,7 +125,8 @@ Q_SIGNALS:
 private:
 
     class Private;
-    const QScopedPointer<Private> d;
+
+    const QScopedPointer<Private>         d;
     const QScopedPointer<TableViewShared> s;
 };
 

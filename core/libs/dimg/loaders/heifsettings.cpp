@@ -50,10 +50,10 @@ class Q_DECL_HIDDEN HEIFSettings::Private
 public:
 
     explicit Private()
-      : HEIFGrid(nullptr),
+      : HEIFGrid            (nullptr),
         labelHEIFcompression(nullptr),
-        HEIFLossLess(nullptr),
-        HEIFcompression(nullptr)
+        HEIFLossLess        (nullptr),
+        HEIFcompression     (nullptr)
     {
     }
 
@@ -68,7 +68,7 @@ public:
 
 HEIFSettings::HEIFSettings(QWidget* const parent)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     setAttribute(Qt::WA_DeleteOnClose);
 
@@ -82,19 +82,19 @@ HEIFSettings::HEIFSettings(QWidget* const parent)
                                       "to compress HEIF pictures.</p>"));
 
     d->HEIFcompression = new DIntNumInput(this);
-    d->HEIFcompression->setDefaultValue(3);
-    d->HEIFcompression->setRange(1, 9, 1);
+    d->HEIFcompression->setDefaultValue(75);
+    d->HEIFcompression->setRange(1, 100, 1);
     d->labelHEIFcompression = new QLabel(i18n("HEIF quality:"), this);
 
     d->HEIFcompression->setWhatsThis(i18n("<p>The quality value for HEIF images:</p>"
-                                         "<p><b>1</b>: high quality (no compression and "
-                                         "large file size)<br/>"
-                                         "<b>3</b>: good quality (default)<br/>"
-                                         "<b>6</b>: medium quality<br/>"
-                                         "<b>9</b>: low quality (high compression and small "
-                                         "file size)</p>"
-                                         "<p><b>Note: HEIF is not a lossless image "
-                                         "compression format when you use this setting.</b></p>"));
+                                          "<p><b>1</b>: low quality (high compression and small "
+                                          "file size)<br/>"
+                                          "<b>50</b>: medium quality<br/>"
+                                          "<b>75</b>: good quality (default)<br/>"
+                                          "<b>100</b>: high quality (no compression and "
+                                          "large file size)</p>"
+                                          "<p><b>Note: HEIF is not a lossless image "
+                                          "compression format when you use this setting.</b></p>"));
 
     d->HEIFGrid->addWidget(d->HEIFLossLess,         0, 0, 1, 2);
     d->HEIFGrid->addWidget(d->labelHEIFcompression, 1, 0, 1, 2);

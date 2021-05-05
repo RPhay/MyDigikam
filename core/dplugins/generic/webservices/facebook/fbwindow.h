@@ -7,7 +7,7 @@
  * Description : a tool to export items to Facebook web service
  *
  * Copyright (C) 2005-2008 by Vardhman Jain <vardhman at gmail dot com>
- * Copyright (C) 2008-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2008-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2008-2009 by Luka Renko <lure at kubuntu dot org>
  *
  * This program is free software; you can redistribute it
@@ -31,7 +31,6 @@
 
 // Local includes
 
-#include "digikam_export.h"
 #include "dinfointerface.h"
 #include "wstooldialog.h"
 
@@ -45,14 +44,14 @@ namespace DigikamGenericFaceBookPlugin
 
 class FbAlbum;
 
-class DIGIKAM_EXPORT FbWindow : public WSToolDialog
+class FbWindow : public WSToolDialog
 {
     Q_OBJECT
 
 public:
 
     explicit FbWindow(DInfoInterface* const iface, QWidget* const parent);
-    ~FbWindow();
+    ~FbWindow()                         override;
 
 private Q_SLOTS:
 
@@ -61,7 +60,7 @@ private Q_SLOTS:
     void slotLoginDone(int errCode, const QString& errMsg);
     void slotAddPhotoDone(int errCode, const QString& errMsg);
     void slotCreateAlbumDone(int errCode, const QString& errMsg,
-                             const QString &newAlbumID);
+                             const QString& newAlbumID);
     void slotListAlbumsDone(int errCode, const QString& errMsg,
                             const QList<FbAlbum>& albumsList);
 
@@ -90,7 +89,7 @@ private:
 
     void    buttonStateChange(bool state);
 
-    void    closeEvent(QCloseEvent*) override;
+    void    closeEvent(QCloseEvent*)    override;
 
 private:
 

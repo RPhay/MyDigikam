@@ -6,7 +6,8 @@
  * Date        : 2018-07-30
  * Description : a plugin to render slideshow.
  *
- * Copyright (C) 2018-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2018-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2020      by Minh Nghia Duong <minhnghiaduong997 at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -26,13 +27,16 @@
 // Local includes
 
 #include "dplugingeneric.h"
+#include "iteminfolist.h"
 
-#define DPLUGIN_IID "org.kde.digikam.SlideShow"
+#define DPLUGIN_IID "org.kde.digikam.plugin.generic.SlideShow"
 
 using namespace Digikam;
 
 namespace DigikamGenericSlideShowPlugin
 {
+
+class SlideShowSettings;
 
 class SlideShowPlugin : public DPluginGeneric
 {
@@ -42,8 +46,8 @@ class SlideShowPlugin : public DPluginGeneric
 
 public:
 
-    explicit SlideShowPlugin(QObject* const parent = 0);
-    ~SlideShowPlugin();
+    explicit SlideShowPlugin(QObject* const parent = nullptr);
+    ~SlideShowPlugin()                   override;
 
     QString name()                 const override;
     QString iid()                  const override;
@@ -52,14 +56,24 @@ public:
     QString description()          const override;
     QList<DPluginAuthor> authors() const override;
 
-    void setup(QObject* const) override;
+    void setup(QObject* const)           override;
+
+    void addConnectionSlideEnd(QObject* const obj);
 
 private Q_SLOTS:
 
-    void slotSlideShow();
+    void slotMenuSlideShow();
     void slotMenuSlideShowAll();
     void slotMenuSlideShowSelection();
     void slotMenuSlideShowRecursive();
+    void slotShowRecursive(const QList<QUrl>& imageList);
+    void slotShowManual();
+
+private:
+
+    void slideshow(SlideShowSettings* const settings,
+                   bool autoPlayEnabled = true,
+                   const QUrl& startFrom = QUrl());
 };
 
 } // namespace DigikamGenericSlideShowPlugin

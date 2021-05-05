@@ -6,7 +6,7 @@
  * Date        : 2009-11-13
  * Description : a tool to blend bracketed images.
  *
- * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2012-2015 by Benjamin Girault <benjamin dot girault at gmail dot com>
  *
  * This program is free software; you can redistribute it
@@ -25,6 +25,7 @@
 
 // Qt includes
 
+#include <QTimer>
 #include <QLabel>
 #include <QPixmap>
 #include <QGroupBox>
@@ -37,6 +38,7 @@
 
 // local includes
 
+#include "digikam_globals.h"
 #include "dbinarysearch.h"
 #include "alignbinary.h"
 #include "enfusebinary.h"
@@ -50,7 +52,7 @@ class Q_DECL_HIDDEN ExpoBlendingIntroPage::Private
 public:
 
     explicit Private(ExpoBlendingManager* const m)
-      : mngr(m),
+      : mngr          (m),
         binariesWidget(nullptr)
     {
     }
@@ -61,63 +63,72 @@ public:
 
 ExpoBlendingIntroPage::ExpoBlendingIntroPage(ExpoBlendingManager* const mngr, QWizard* const dlg)
     : DWizardPage(dlg, i18nc("@title:window", "Welcome to Stacked Images Tool")),
-      d(new Private(mngr))
+      d          (new Private(mngr))
 {
     DVBox* const vbox   = new DVBox(this);
     QLabel* const title = new QLabel(vbox);
     title->setWordWrap(true);
     title->setOpenExternalLinks(true);
-    title->setText(i18n("<qt>"
-                        "<p><h1><b>Welcome to Stacked Images Tool</b></h1></p>"
-                        "<p>This tool fuses bracketed images with different exposure to make pseudo "
-                        "<a href='https://en.wikipedia.org/wiki/High_dynamic_range_imaging'>HDR image</a>.</p>"
-                        "<p>It can also be used to <a href='https://en.wikipedia.org/wiki/Focus_stacking'>merge focus bracketed stack</a> "
-                        "to get a single image with increased depth of field.</p>"
-                        "<p>This assistant will help you to configure how to import images before "
-                        "merging them to a single one.</p>"
-                        "<p>Bracketed images must be taken with the same camera, "
-                        "in the same conditions, and if possible using a tripod.</p>"
-                        "<p>For more information, please take a look at "
-                        "<a href='https://en.wikipedia.org/wiki/Bracketing'>this page</a></p>"
-                        "</qt>"));
+    title->setText(QString::fromUtf8("<qt>"
+                                     "<p><h1><b>%1</b></h1></p>"
+                                     "<p>%2</p>"
+                                     "<p>%3</p>"
+                                     "<p>%4</p>"
+                                     "<p>%5</p>"
+                                     "<p>%6 <a href='https://en.wikipedia.org/wiki/Bracketing'>%7</a></p>"
+                                     "</qt>")
+                   .arg(i18nc("@info", "Welcome to Stacked Images Tool"))
+                   .arg(i18nc("@info", "This tool fuses bracketed images with different exposure to make pseudo HDR Image"))
+                   .arg(i18nc("@info", "It can also be used to merge focus bracketed stack to get a single image with increased depth of field."))
+                   .arg(i18nc("@info", "This assistant will help you to configure how to import images before merging them to a single one."))
+                   .arg(i18nc("@info", "Bracketed images must be taken with the same camera, in the same conditions, and if possible using a tripod."))
+                   .arg(i18nc("@info", "For more information, please take a look at"))
+                   .arg(i18nc("@info", "this page")));
 
     QGroupBox* const binaryBox      = new QGroupBox(vbox);
     QGridLayout* const binaryLayout = new QGridLayout;
     binaryBox->setLayout(binaryLayout);
-    binaryBox->setTitle(i18nc("@title:group", "Exposure Blending Binaries"));
+    binaryBox->setTitle(i18nc("@title: group", "Exposure Blending Binaries"));
     d->binariesWidget = new DBinarySearch(binaryBox);
     d->binariesWidget->addBinary(d->mngr->alignBinary());
     d->binariesWidget->addBinary(d->mngr->enfuseBinary());
 
-#ifdef Q_OS_OSX
+#ifdef Q_OS_MACOS
+
     // Hugin bundle PKG install
+
     d->binariesWidget->addDirectory(QLatin1String("/Applications/Hugin/HuginTools"));
     d->binariesWidget->addDirectory(QLatin1String("/Applications/Hugin/Hugin.app/Contents/MacOS"));
     d->binariesWidget->addDirectory(QLatin1String("/Applications/Hugin/tools_mac"));
 
     // Std Macports install
+
     d->binariesWidget->addDirectory(QLatin1String("/opt/local/bin"));
 
     // digiKam Bundle PKG install
-    d->binariesWidget->addDirectory(QLatin1String("/opt/digikam/bin"));
+
+    d->binariesWidget->addDirectory(macOSBundlePrefix() + QLatin1String("bin"));
+
 #endif
 
 #ifdef Q_OS_WIN
+
     d->binariesWidget->addDirectory(QLatin1String("C:/Program Files/Hugin/bin"));
     d->binariesWidget->addDirectory(QLatin1String("C:/Program Files (x86)/Hugin/bin"));
     d->binariesWidget->addDirectory(QLatin1String("C:/Program Files/GnuWin32/bin"));
     d->binariesWidget->addDirectory(QLatin1String("C:/Program Files (x86)/GnuWin32/bin"));
+
 #endif
-
-    connect(d->binariesWidget, SIGNAL(signalBinariesFound(bool)),
-            this, SIGNAL(signalExpoBlendingIntroPageIsValid(bool)));
-
-    emit signalExpoBlendingIntroPageIsValid(d->binariesWidget->allBinariesFound());
 
     setPageWidget(vbox);
 
     QPixmap leftPix(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("digikam/data/assistant-stack.png")));
     setLeftBottomPix(leftPix.scaledToWidth(128, Qt::SmoothTransformation));
+
+    connect(d->binariesWidget, SIGNAL(signalBinariesFound(bool)),
+            this, SIGNAL(signalExpoBlendingIntroPageIsValid(bool)));
+
+    QTimer::singleShot(1000, this, SLOT(slotExpoBlendingIntroPageIsValid()));
 }
 
 ExpoBlendingIntroPage::~ExpoBlendingIntroPage()
@@ -128,6 +139,11 @@ ExpoBlendingIntroPage::~ExpoBlendingIntroPage()
 bool ExpoBlendingIntroPage::binariesFound()
 {
     return d->binariesWidget->allBinariesFound();
+}
+
+void ExpoBlendingIntroPage::slotExpoBlendingIntroPageIsValid()
+{
+    emit signalExpoBlendingIntroPageIsValid(binariesFound());
 }
 
 } // namespace DigikamGenericExpoBlendingPlugin

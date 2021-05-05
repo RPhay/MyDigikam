@@ -6,7 +6,7 @@
  * Date        : 2017-05-25
  * Description : a tool to print images
  *
- * Copyright (C) 2012-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -51,11 +51,11 @@ class AdvPrintFinalPage : public DWizardPage
 public:
 
     explicit AdvPrintFinalPage(QWizard* const dialog, const QString& title);
-    ~AdvPrintFinalPage();
+    ~AdvPrintFinalPage() override;
 
-    void initializePage();
-    bool isComplete() const;
-    void cleanupPage();
+    void initializePage() override;
+    bool isComplete() const override;
+    void cleanupPage() override;
 
     bool checkTempPath(const QString& tempPath) const;
     void removeGimpFiles();

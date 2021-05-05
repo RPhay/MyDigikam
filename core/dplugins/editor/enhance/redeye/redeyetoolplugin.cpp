@@ -6,7 +6,7 @@
  * Date        : 2018-07-30
  * Description : image editor plugin to restore an image
  *
- * Copyright (C) 2018-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2018-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -49,7 +49,7 @@ RedEyeToolPlugin::~RedEyeToolPlugin()
 
 QString RedEyeToolPlugin::name() const
 {
-    return i18n("Red Eye");
+    return i18nc("@title", "Red Eye");
 }
 
 QString RedEyeToolPlugin::iid() const
@@ -64,12 +64,12 @@ QIcon RedEyeToolPlugin::icon() const
 
 QString RedEyeToolPlugin::description() const
 {
-    return i18n("A tool to automatically detect and correct red eye effect");
+    return i18nc("@info", "A tool to automatically detect and correct red eye effect");
 }
 
 QString RedEyeToolPlugin::details() const
 {
-    return i18n("<p>This Image Editor tool can reduce red eye effect on image.</p>");
+    return i18nc("@info", "This Image Editor tool can reduce red eye effect on image.");
 }
 
 QList<DPluginAuthor> RedEyeToolPlugin::authors() const
@@ -85,7 +85,7 @@ QList<DPluginAuthor> RedEyeToolPlugin::authors() const
 
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2005-2020"))
+                             QString::fromUtf8("(C) 2005-2021"))
             ;
 }
 
@@ -94,8 +94,8 @@ void RedEyeToolPlugin::setup(QObject* const parent)
     DPluginAction* const ac = new DPluginAction(parent);
     ac->setIcon(icon());
     ac->setText(i18nc("@action", "Red Eye..."));
-    ac->setWhatsThis(i18n("This filter can be used to correct red eyes in a photo. "
-                          "Select a region including the eyes to use this option."));
+    ac->setWhatsThis(i18nc("@info", "This filter can be used to correct red eyes in a photo. "
+                           "Select a region including the eyes to use this option."));
     ac->setObjectName(QLatin1String("editorwindow_enhance_redeye"));
     ac->setActionCategory(DPluginAction::EditorEnhance);
 

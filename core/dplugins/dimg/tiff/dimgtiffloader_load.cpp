@@ -7,7 +7,7 @@
  * Description : A TIFF IO file for DImg framework - load operations
  *
  * Copyright (C) 2005      by Renchi Raju <renchi dot raju at gmail dot com>
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -40,8 +40,8 @@ extern "C"
 
 // Local includes
 
-#include "digikam_config.h"
 #include "digikam_debug.h"
+#include "digikam_config.h"
 #include "dimgloaderobserver.h"
 #include "dimgtiffloader.h"     //krazy:exclude=includes
 
@@ -71,7 +71,11 @@ bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
     // -------------------------------------------------------------------
     // Open the file
 
-    TIFF* const tif = TIFFOpen(QFile::encodeName(filePath).constData(), "r");
+#ifdef Q_OS_WIN
+    TIFF* const tif = TIFFOpenW((const wchar_t*)filePath.utf16(), "r");
+#else
+    TIFF* const tif = TIFFOpen(filePath.toUtf8().constData(), "r");
+#endif
 
     if (!tif)
     {
@@ -141,8 +145,8 @@ bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
 
     // TODO: check others TIFF color-spaces here. Actually, only RGB, PALETTE and MINISBLACK
     // have been tested.
-    // Complete description of TIFFTAG_PHOTOMETRIC tag can be found at this url:
-    // http://www.awaresystems.be/imaging/tiff/tifftags/photometricinterpretation.html
+    // Complete description of TIFFTAG_PHOTOMETRIC tag can be found at this Url:
+    // www.awaresystems.be/imaging/tiff/tifftags/photometricinterpretation.html
 
     TIFFGetFieldDefaulted(tif, TIFFTAG_PHOTOMETRIC, &photometric);
 
@@ -293,7 +297,7 @@ bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
                         return false;
                     }
 
-                    observer->progressInfo(0.1 + (0.8 * (((float)st) / ((float)num_of_strips))));
+                    observer->progressInfo(0.1F + (0.8F * (((float)st) / ((float)num_of_strips))));
                 }
 
                 bytesRead = TIFFReadEncodedStrip(tif, st, strip.data(), strip_size);
@@ -534,7 +538,7 @@ bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
                         return false;
                     }
 
-                    observer->progressInfo(0.1 + (0.8 * (((float)st) / ((float)num_of_strips))));
+                    observer->progressInfo(0.1F + (0.8F * (((float)st) / ((float)num_of_strips))));
                 }
 
                 bytesRead = TIFFReadEncodedStrip(tif, st, strip.data(), strip_size);
@@ -741,7 +745,7 @@ bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
                         return false;
                     }
 
-                    observer->progressInfo(0.1 + (0.8 * (((float)row) / ((float)h))));
+                    observer->progressInfo(0.1F + (0.8F * (((float)row) / ((float)h))));
                 }
 
                 img.row_offset  = row;
@@ -800,7 +804,7 @@ bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
 
     if (observer)
     {
-        observer->progressInfo(1.0);
+        observer->progressInfo(1.0F);
     }
 
     imageWidth()  = w;

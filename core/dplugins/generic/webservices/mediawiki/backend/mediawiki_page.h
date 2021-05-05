@@ -6,7 +6,7 @@
  * Date        : 2011-03-22
  * Description : a Iface C++ interface
  *
- * Copyright (C) 2011-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2011-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2011      by Joris Munoz <munozjoris at gmail dot com>
  *
  * This program is free software; you can redistribute it
@@ -29,17 +29,13 @@
 #include <QDateTime>
 #include <QUrl>
 
-// Local includes
-
-#include "digikam_export.h"
-
 namespace MediaWiki
 {
 
 /**
  * @brief An image info.
  */
-class DIGIKAM_EXPORT Page
+class Page
 {
 
 public:
@@ -64,14 +60,14 @@ public:
      * @brief Assigning a page from an other page.
      * @param other an other page
      */
-    Page& operator=(Page other);
+    Page& operator=(const Page& other);
 
     /**
      * @brief Returns true if this instance and other are equal, else false.
      * @param other instance to compare
      * @return true if there are equal, else false
      */
-    bool operator==(const Page& other) const;
+    bool operator==(const Page& other)          const;
 
     /**
      * @brief Set the pageId of the page.
@@ -83,7 +79,7 @@ public:
      * @brief Return the page id of the page.
      * @return the page id of the page
      */
-    unsigned int pageId() const;
+    unsigned int pageId()                       const;
 
     /**
      * @brief Set the title of the page.
@@ -95,55 +91,55 @@ public:
      * @brief Return the title of the page.
      * @return the title of the page
      */
-    QString pageTitle() const;
+    QString pageTitle()                         const;
 
     /**
      * @brief Set the namespace of the page.
      * @param ns the namespace of the page
      */
-    void setNs(unsigned int ns) const;
+    void setNs(unsigned int ns)                 const;
 
     /**
      * @brief Return the namespace of the page.
      * @return the namespace of the page
      */
-    unsigned int pageNs() const;
+    unsigned int pageNs()                       const;
 
     /**
      * @brief Set the last revision id of the page.
      * @param lastRevId the last revision id of the page
      */
-    void setLastRevId(unsigned int lastRevId) const;
+    void setLastRevId(unsigned int lastRevId)   const;
 
     /**
      * @brief Return the last revision id of the page.
      * @return the last revision id of the page
      */
-    unsigned int pageLastRevId() const;
+    unsigned int pageLastRevId()                const;
 
     /**
      * @brief Set the number of views of the page.
      * @param counter the number of views of the page
      */
-    void setCounter(unsigned int counter) const;
+    void setCounter(unsigned int counter)       const;
 
     /**
      * @brief Return the number of views of the page.
      * @return the number of views of the page
      */
-    unsigned int pageCounter() const;
+    unsigned int pageCounter()                  const;
 
     /**
      * @brief Set the page size.
      * @param length the page size
      */
-    void setLength(unsigned int length) const;
+    void setLength(unsigned int length)         const;
 
     /**
      * @brief Return the page size.
      * @return the page size
      */
-    unsigned int pageLength() const;
+    unsigned int pageLength()                   const;
 
     /**
      * @brief Set the page token.
@@ -161,13 +157,13 @@ public:
      * @brief Set the page ID of the talk page for each non-talk page.
      * @param talkid the page ID of the talk page for each non-talk page
      */
-    void setTalkid(unsigned int talkid) const;
+    void setTalkid(unsigned int talkid)         const;
 
     /**
      * @brief Return the page ID of the talk page for each non-talk page.
      * @return the page ID of the talk page for each non-talk page
      */
-    unsigned int pageTalkid() const;
+    unsigned int pageTalkid()                   const;
 
     /**
      * @brief Set the full url of the page.
@@ -179,7 +175,7 @@ public:
      * @brief Return the full url of the page.
      * @return the full url of the page
      */
-    QUrl pageFullurl() const;
+    QUrl pageFullurl()                          const;
 
     /**
      * @brief Set the edit url of the page.
@@ -191,7 +187,7 @@ public:
      * @brief Return the edit url of the page.
      * @return the edit url of the page
      */
-    QUrl pageEditurl() const;
+    QUrl pageEditurl()                          const;
 
     /**
      * @brief Set the readability of the page.
@@ -203,7 +199,7 @@ public:
      * @brief Return the readability of the page.
      * @return the readability of the page
      */
-    QString pageReadable() const;
+    QString pageReadable()                      const;
 
     /**
      * @brief Set the text returned by EditFormPreloadText.
@@ -215,7 +211,7 @@ public:
      * @brief Return the text returned by EditFormPreloadText.
      * @return the text returned by EditFormPreloadText
      */
-    QString pagePreload() const;
+    QString pagePreload()                       const;
 
     /**
      * @brief Set the last touched timestamp.
@@ -227,7 +223,7 @@ public:
      * @brief Return the last touched timestamp.
      * @return the last touched timestamp
      */
-    QDateTime pageTouched() const;
+    QDateTime pageTouched()                     const;
 
     /**
      * @brief Set the timestamp when you obtained the edit token.
@@ -239,12 +235,12 @@ public:
      * @brief Return the timestamp when you obtained the edit token.
      * @return the timestamp when you obtained the edit token
      */
-    QDateTime pageStarttimestamp() const;
+    QDateTime pageStarttimestamp()              const;
 
 private:
 
-    class PagePrivate;
-    PagePrivate* const d;
+    class Private;
+    Private* const d;
 };
 
 } // namespace MediaWiki

@@ -101,7 +101,7 @@ public:
     QRectF handleRect(CropHandle handle) const;
     CropHandle handleAt(const QPointF& pos) const;
     void updateCursor(CropHandle handle, bool buttonDown);
-    QRectF keepRectInsideImage(const QRectF& rect, bool moving=true) const;
+    QRectF keepRectInsideImage(const QRectF& rect, bool moving = true) const;
     OptimalPosition computeOptimalHudWidgetPosition() const;
     void updateHudWidgetPosition();
 
@@ -129,21 +129,21 @@ public:
 };
 
 RegionFrameItem::Private::Private(RegionFrameItem* const qq)
-    : q(qq),
-      hudSide(HS_None),
-      movingHandle(CH_None),
-      fixedRatio(0),
-      hudWidget(nullptr),
-      flags(NoFlags),
-      resizeHandleVisibility(nullptr),
-      hoverAnimationOpacity(1.0),
-      hudTimer(nullptr),
-      HUD_TIMER_MAX_PIXELS_PER_UPDATE(20),
-      HUD_TIMER_ANIMATION_INTERVAL(20)
+    : q                                 (qq),
+      hudSide                           (HS_None),
+      movingHandle                      (CH_None),
+      fixedRatio                        (0),
+      hudWidget                         (nullptr),
+      flags                             (NoFlags),
+      resizeHandleVisibility            (nullptr),
+      hoverAnimationOpacity             (1.0),
+      hudTimer                          (nullptr),
+      HUD_TIMER_MAX_PIXELS_PER_UPDATE   (20),
+      HUD_TIMER_ANIMATION_INTERVAL      (20)
 {
 
-    cropHandleList << CH_Left << CH_Right << CH_Top << CH_Bottom
-                   << CH_TopLeft << CH_TopRight
+    cropHandleList << CH_Left       << CH_Right << CH_Top << CH_Bottom
+                   << CH_TopLeft    << CH_TopRight
                    << CH_BottomLeft << CH_BottomRight;
 }
 
@@ -384,7 +384,7 @@ void RegionFrameItem::Private::updateHudWidgetPosition()
 
 RegionFrameItem::RegionFrameItem(QGraphicsItem* const item)
     : DImgChildItem(item),
-      d(new Private(this))
+      d            (new Private(this))
 {
     d->resizeHandleVisibility = new AnimatedVisibility(this);
     d->resizeHandleVisibility->controller()->setShallBeShown(false);
@@ -636,11 +636,13 @@ void RegionFrameItem::hoverMoveEvent(QGraphicsSceneHoverEvent* e)
 void RegionFrameItem::mousePressEvent(QGraphicsSceneMouseEvent* event)
 {
     // FIXME: Fade out?
-    //d->hudWidget->hide();
-
+/*
+    d->hudWidget->hide();
+*/
     if (!(d->flags & GeometryEditable))
     {
-        return DImgChildItem::mousePressEvent(event);
+        DImgChildItem::mousePressEvent(event);
+        return;
     }
 
     d->movingHandle = d->handleAt(event->pos());
@@ -748,8 +750,9 @@ void RegionFrameItem::mouseMoveEvent(QGraphicsSceneMouseEvent* event)
 void RegionFrameItem::mouseReleaseEvent(QGraphicsSceneMouseEvent* event)
 {
     // FIXME: Fade in?
-    //d->hudWidget->show();
-
+/*
+    d->hudWidget->show();
+*/
     d->movingHandle = CH_None;
     d->updateCursor(d->handleAt(event->pos()), false);
 

@@ -7,7 +7,7 @@
  * Description : Face database access wrapper.
  *
  * Copyright (C) 2007-2008 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2010-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2010-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -41,6 +41,7 @@
 #include "facedbschemaupdater.h"
 #include "dbengineparameters.h"
 #include "dbengineaccess.h"
+#include "dbengineerrorhandler.h"
 
 namespace Digikam
 {
@@ -50,8 +51,8 @@ class Q_DECL_HIDDEN FaceDbAccessStaticPriv
 public:
 
     explicit FaceDbAccessStaticPriv()
-        : backend(nullptr),
-          db(nullptr),
+        : backend     (nullptr),
+          db          (nullptr),
           initializing(false)
     {
     }
@@ -72,15 +73,15 @@ public:
 
 FaceDbAccessStaticPriv* FaceDbAccess::d = nullptr;
 
-// ----------------------------------------------------------------
+// -----------------------------------------------------------------------------
 
 class Q_DECL_HIDDEN FaceDbAccessMutexLocker : public QMutexLocker
 {
 public:
 
-    explicit FaceDbAccessMutexLocker(FaceDbAccessStaticPriv* const d)
-        : QMutexLocker(&d->lock.mutex),
-          d(d)
+    explicit FaceDbAccessMutexLocker(FaceDbAccessStaticPriv* const dd)
+        : QMutexLocker(&dd->lock.mutex),
+          d           (dd)
     {
         d->lock.lockCount++;
     }
@@ -90,10 +91,12 @@ public:
         d->lock.lockCount--;
     }
 
+public:
+
     FaceDbAccessStaticPriv* const d;
 };
 
-// ----------------------------------------------------------------
+// -----------------------------------------------------------------------------
 
 FaceDbAccess::FaceDbAccess()
 {
@@ -206,7 +209,9 @@ void FaceDbAccess::setParameters(const DbEngineParameters& parameters)
 bool FaceDbAccess::checkReadyForUse(InitializationObserver* const observer)
 {
     if (!DbEngineAccess::checkReadyForUse(d->lastError))
+    {
         return false;
+    }
 
     // Create an object with private shortcut constructor
 

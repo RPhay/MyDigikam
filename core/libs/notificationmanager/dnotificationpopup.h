@@ -6,7 +6,7 @@
  * Date        : 2004-07-03
  * Description : dialog-like popup that displays messages without interrupting the user
  *
- * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2001-2006 by Richard Moore <rich at kde dot org>
  * Copyright (C) 2004-2005 by Sascha Cunz <sascha.cunz at tiscali dot de>
  *
@@ -68,7 +68,7 @@ public:
     /**
      * Creates a popup for the specified widget.
      */
-    explicit DNotificationPopup(QWidget* const parent = nullptr, Qt::WindowFlags f = nullptr);
+    explicit DNotificationPopup(QWidget* const parent = nullptr, Qt::WindowFlags f = Qt::WindowFlags());
 
     /**
      * Creates a popup for the specified window.
@@ -78,7 +78,7 @@ public:
     /**
      * Cleans up.
      */
-    virtual ~DNotificationPopup();
+    ~DNotificationPopup() override;
 
     /**
      * Sets the main view to be the specified widget (which must be a child of the popup).

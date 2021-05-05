@@ -6,7 +6,7 @@
  * Date        : 2006-10-13
  * Description : IPTC origin settings page.
  *
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -29,13 +29,13 @@
 #include <QMap>
 #include <QPushButton>
 #include <QTimeEdit>
-#include <QValidator>
 #include <QGridLayout>
 #include <QApplication>
 #include <QStyle>
 #include <QComboBox>
 #include <QDateEdit>
 #include <QLineEdit>
+#include <QToolTip>
 
 // KDE includes
 
@@ -62,29 +62,29 @@ class Q_DECL_HIDDEN IPTCOrigin::Private
 public:
 
     explicit Private()
+      : dateCreatedCheck(nullptr),
+        dateDigitalizedCheck(nullptr),
+        timeCreatedCheck(nullptr),
+        timeDigitalizedCheck(nullptr),
+        syncEXIFDateCheck(nullptr),
+        cityCheck(nullptr),
+        sublocationCheck(nullptr),
+        provinceCheck(nullptr),
+        timeCreatedSel(nullptr),
+        timeDigitalizedSel(nullptr),
+        zoneCreatedSel(nullptr),
+        zoneDigitalizedSel(nullptr),
+        setTodayCreatedBtn(nullptr),
+        setTodayDigitalizedBtn(nullptr),
+        dateCreatedSel(nullptr),
+        dateDigitalizedSel(nullptr),
+        cityEdit(nullptr),
+        sublocationEdit(nullptr),
+        provinceEdit(nullptr),
+        locationEdit(nullptr),
+        countryCheck(nullptr),
+        countryCB(nullptr)
     {
-        cityEdit               = nullptr;
-        sublocationEdit        = nullptr;
-        provinceEdit           = nullptr;
-        locationEdit           = nullptr;
-        cityCheck              = nullptr;
-        sublocationCheck       = nullptr;
-        provinceCheck          = nullptr;
-        countryCheck           = nullptr;
-        dateCreatedSel         = nullptr;
-        dateDigitalizedSel     = nullptr;
-        timeCreatedSel         = nullptr;
-        timeDigitalizedSel     = nullptr;
-        zoneCreatedSel         = nullptr;
-        zoneDigitalizedSel     = nullptr;
-        dateCreatedCheck       = nullptr;
-        dateDigitalizedCheck   = nullptr;
-        timeCreatedCheck       = nullptr;
-        timeDigitalizedCheck   = nullptr;
-        syncEXIFDateCheck      = nullptr;
-        setTodayCreatedBtn     = nullptr;
-        setTodayDigitalizedBtn = nullptr;
-        countryCB              = nullptr;
     }
 
     QCheckBox*                     dateCreatedCheck;
@@ -124,12 +124,7 @@ IPTCOrigin::IPTCOrigin(QWidget* const parent)
       d(new Private)
 {
     QGridLayout* const grid = new QGridLayout(this);
-
-    // IPTC only accept printable Ascii char.
-    QRegExp asciiRx(QLatin1String("[\x20-\x7F]+$"));
-    QValidator* const asciiValidator = new QRegExpValidator(asciiRx, this);
-
-    QString dateFormat  = QLocale().dateFormat(QLocale::ShortFormat);
+    QString dateFormat      = QLocale().dateFormat(QLocale::ShortFormat);
 
     if (!dateFormat.contains(QLatin1String("yyyy")))
     {
@@ -152,7 +147,7 @@ IPTCOrigin::IPTCOrigin(QWidget* const parent)
     d->timeDigitalizedSel->setDisplayFormat(timeFormat);
 
     d->setTodayDigitalizedBtn = new QPushButton();
-    d->setTodayDigitalizedBtn->setIcon(QIcon::fromTheme(QLatin1String("go-jump-today")));
+    d->setTodayDigitalizedBtn->setIcon(QIcon::fromTheme(QLatin1String("view-calendar")));
     d->setTodayDigitalizedBtn->setWhatsThis(i18n("Set digitization date to today"));
 
     d->dateDigitalizedSel->setWhatsThis(i18n("Set here the creation date of "
@@ -176,10 +171,10 @@ IPTCOrigin::IPTCOrigin(QWidget* const parent)
     d->timeCreatedSel     = new QTimeEdit(this);
     d->timeCreatedSel->setDisplayFormat(timeFormat);
 
-    d->syncEXIFDateCheck  = new QCheckBox(i18n("Sync EXIF creation date"), this);
+    d->syncEXIFDateCheck  = new QCheckBox(i18n("Sync Exif creation date"), this);
 
     d->setTodayCreatedBtn = new QPushButton();
-    d->setTodayCreatedBtn->setIcon(QIcon::fromTheme(QLatin1String("go-jump-today")));
+    d->setTodayCreatedBtn->setIcon(QIcon::fromTheme(QLatin1String("view-calendar")));
     d->setTodayCreatedBtn->setWhatsThis(i18n("Set creation date to today"));
 
     d->dateCreatedSel->setWhatsThis(i18n("Set here the creation date of "
@@ -201,55 +196,55 @@ IPTCOrigin::IPTCOrigin(QWidget* const parent)
     d->cityCheck = new QCheckBox(i18n("City:"), this);
     d->cityEdit  = new QLineEdit(this);
     d->cityEdit->setClearButtonEnabled(true);
-    d->cityEdit->setValidator(asciiValidator);
     d->cityEdit->setMaxLength(32);
     d->cityEdit->setWhatsThis(i18n("Set here the city of content origin. "
-                                   "This field is limited to 32 ASCII characters."));
+                                   "This field is limited to 32 characters."));
 
     // --------------------------------------------------------
 
     d->sublocationCheck = new QCheckBox(i18n("Sublocation:"), this);
     d->sublocationEdit  = new QLineEdit(this);
     d->sublocationEdit->setClearButtonEnabled(true);
-    d->sublocationEdit->setValidator(asciiValidator);
     d->sublocationEdit->setMaxLength(32);
     d->sublocationEdit->setWhatsThis(i18n("Set here the content location within city. "
-                                          "This field is limited to 32 ASCII characters."));
+                                          "This field is limited to 32 characters."));
 
     // --------------------------------------------------------
 
     d->provinceCheck = new QCheckBox(i18n("State/Province:"), this);
     d->provinceEdit  = new QLineEdit(this);
     d->provinceEdit->setClearButtonEnabled(true);
-    d->provinceEdit->setValidator(asciiValidator);
     d->provinceEdit->setMaxLength(32);
     d->provinceEdit->setWhatsThis(i18n("Set here the Province or State of content origin. "
-                                       "This field is limited to 32 ASCII characters."));
+                                       "This field is limited to 32 characters."));
 
     // --------------------------------------------------------
 
     d->countryCheck = new MetadataCheckBox(i18n("Country:"), this);
     d->countryCB    = new CountrySelector(this);
     d->countryCB->setWhatsThis(i18n("Select here country name of content origin."));
+
     // Remove 2 last items for the list (separator + Unknown item)
+
     d->countryCB->removeItem(d->countryCB->count()-1);
     d->countryCB->removeItem(d->countryCB->count()-1);
 
     QStringList list;
 
     for (int i = 0 ; i < d->countryCB->count() ; ++i)
+    {
         list.append(d->countryCB->itemText(i));
+    }
 
     d->locationEdit->setData(list);
 
     // --------------------------------------------------------
 
     QLabel* const note = new QLabel(i18n("<b>Note: "
-                 "<b><a href='https://en.wikipedia.org/wiki/IPTC_Information_Interchange_Model'>IPTC</a></b> "
-                 "text tags only support the printable "
-                 "<b><a href='https://en.wikipedia.org/wiki/Ascii'>ASCII</a></b> "
-                 "characters and limit string sizes. "
-                 "Use contextual help for details.</b>"), this);
+                 "<a href='https://en.wikipedia.org/wiki/IPTC_Information_Interchange_Model'>IPTC</a> "
+                 "text tags are limited string sizes. Use contextual help for details. "
+                 "Consider to use <a href='https://en.wikipedia.org/wiki/Extensible_Metadata_Platform'>XMP</a> instead.</b>"),
+                 this);
     note->setOpenExternalLinks(true);
     note->setWordWrap(true);
     note->setFrameStyle(QFrame::StyledPanel | QFrame::Raised);
@@ -270,7 +265,7 @@ IPTCOrigin::IPTCOrigin(QWidget* const parent)
     grid->addWidget(d->setTodayCreatedBtn,                  3, 5, 1, 1);
     grid->addWidget(d->syncEXIFDateCheck,                   5, 0, 1, 6);
     grid->addWidget(d->locationEdit,                        6, 0, 1, 6);
-    grid->addWidget(new DLineWidget(Qt::Horizontal, this),   7, 0, 1, 6);
+    grid->addWidget(new DLineWidget(Qt::Horizontal, this),  7, 0, 1, 6);
     grid->addWidget(d->cityCheck,                           8, 0, 1, 1);
     grid->addWidget(d->cityEdit,                            8, 1, 1, 5);
     grid->addWidget(d->sublocationCheck,                    9, 0, 1, 1);
@@ -385,11 +380,20 @@ IPTCOrigin::IPTCOrigin(QWidget* const parent)
     connect(d->cityEdit, SIGNAL(textChanged(QString)),
             this, SIGNAL(signalModified()));
 
+    connect(d->cityEdit, SIGNAL(textChanged(QString)),
+            this, SLOT(slotLineEditModified()));
+
     connect(d->sublocationEdit, SIGNAL(textChanged(QString)),
             this, SIGNAL(signalModified()));
 
+    connect(d->sublocationEdit, SIGNAL(textChanged(QString)),
+            this, SLOT(slotLineEditModified()));
+
     connect(d->provinceEdit, SIGNAL(textChanged(QString)),
             this, SIGNAL(signalModified()));
+
+    connect(d->provinceEdit, SIGNAL(textChanged(QString)),
+            this, SLOT(slotLineEditModified()));
 }
 
 IPTCOrigin::~IPTCOrigin()
@@ -426,11 +430,25 @@ QDateTime IPTCOrigin::getIPTCCreationDate() const
     return QDateTime(d->dateCreatedSel->date(), d->timeCreatedSel->time());
 }
 
+void IPTCOrigin::slotLineEditModified()
+{
+    QLineEdit* const ledit = dynamic_cast<QLineEdit*>(sender());
+
+    if (!ledit)
+    {
+        return;
+    }
+
+    QToolTip::showText(ledit->mapToGlobal(QPoint(0, (-1)*(ledit->height() + 16))),
+                       i18np("%1 character left", "%1 characters left", ledit->maxLength() - ledit->text().size()),
+                       ledit);
+}
+
 void IPTCOrigin::readMetadata(QByteArray& iptcData)
 {
     blockSignals(true);
-    DMetadata meta;
-    meta.setIptc(iptcData);
+    QScopedPointer<DMetadata> meta(new DMetadata);
+    meta->setIptc(iptcData);
 
     QString     data;
     QStringList code, list;
@@ -438,8 +456,8 @@ void IPTCOrigin::readMetadata(QByteArray& iptcData)
     QTime       time;
     QString     dateStr, timeStr;
 
-    dateStr = meta.getIptcTagString("Iptc.Application2.DateCreated", false);
-    timeStr = meta.getIptcTagString("Iptc.Application2.TimeCreated", false);
+    dateStr = meta->getIptcTagString("Iptc.Application2.DateCreated", false);
+    timeStr = meta->getIptcTagString("Iptc.Application2.TimeCreated", false);
 
     d->dateCreatedSel->setDate(QDate::currentDate());
     d->dateCreatedCheck->setChecked(false);
@@ -477,8 +495,8 @@ void IPTCOrigin::readMetadata(QByteArray& iptcData)
     d->timeCreatedSel->setEnabled(d->timeCreatedCheck->isChecked());
     d->zoneCreatedSel->setEnabled(d->timeCreatedCheck->isChecked());
 
-    dateStr = meta.getIptcTagString("Iptc.Application2.DigitizationDate", false);
-    timeStr = meta.getIptcTagString("Iptc.Application2.DigitizationTime", false);
+    dateStr = meta->getIptcTagString("Iptc.Application2.DigitizationDate", false);
+    timeStr = meta->getIptcTagString("Iptc.Application2.DigitizationTime", false);
 
     d->dateDigitalizedSel->setDate(QDate::currentDate());
     d->dateDigitalizedCheck->setChecked(false);
@@ -515,14 +533,14 @@ void IPTCOrigin::readMetadata(QByteArray& iptcData)
     d->timeDigitalizedSel->setEnabled(d->timeDigitalizedCheck->isChecked());
     d->zoneDigitalizedSel->setEnabled(d->timeDigitalizedCheck->isChecked());
 
-    code = meta.getIptcTagsStringList("Iptc.Application2.LocationCode", false);
+    code = meta->getIptcTagsStringList("Iptc.Application2.LocationCode", false);
 
     for (QStringList::Iterator it = code.begin(); it != code.end(); ++it)
     {
-        QStringList data = d->locationEdit->getData();
+        QStringList lst = d->locationEdit->getData();
         QStringList::Iterator it2;
 
-        for (it2 = data.begin(); it2 != data.end(); ++it2)
+        for (it2 = lst.begin() ; it2 != lst.end() ; ++it2)
         {
             if ((*it2).left(3) == (*it))
             {
@@ -531,15 +549,17 @@ void IPTCOrigin::readMetadata(QByteArray& iptcData)
             }
         }
 
-        if (it2 == data.end())
+        if (it2 == lst.end())
+        {
             d->locationEdit->setValid(false);
+        }
     }
 
     d->locationEdit->setValues(list);
 
     d->cityEdit->clear();
     d->cityCheck->setChecked(false);
-    data = meta.getIptcTagString("Iptc.Application2.City", false);
+    data = meta->getIptcTagString("Iptc.Application2.City", false);
 
     if (!data.isNull())
     {
@@ -551,7 +571,7 @@ void IPTCOrigin::readMetadata(QByteArray& iptcData)
 
     d->sublocationEdit->clear();
     d->sublocationCheck->setChecked(false);
-    data = meta.getIptcTagString("Iptc.Application2.SubLocation", false);
+    data = meta->getIptcTagString("Iptc.Application2.SubLocation", false);
 
     if (!data.isNull())
     {
@@ -563,7 +583,7 @@ void IPTCOrigin::readMetadata(QByteArray& iptcData)
 
     d->provinceEdit->clear();
     d->provinceCheck->setChecked(false);
-    data = meta.getIptcTagString("Iptc.Application2.ProvinceState", false);
+    data = meta->getIptcTagString("Iptc.Application2.ProvinceState", false);
 
     if (!data.isNull())
     {
@@ -575,7 +595,7 @@ void IPTCOrigin::readMetadata(QByteArray& iptcData)
 
     d->countryCB->setCurrentIndex(0);
     d->countryCheck->setChecked(false);
-    data = meta.getIptcTagString("Iptc.Application2.CountryCode", false);
+    data = meta->getIptcTagString("Iptc.Application2.CountryCode", false);
 
     if (!data.isNull())
     {
@@ -584,7 +604,9 @@ void IPTCOrigin::readMetadata(QByteArray& iptcData)
         for (int i = 0 ; i < d->countryCB->count() ; ++i)
         {
             if (d->countryCB->itemText(i).left(3) == data)
+            {
                 item = i;
+            }
         }
 
         if (item != -1)
@@ -605,52 +627,52 @@ void IPTCOrigin::readMetadata(QByteArray& iptcData)
 
 void IPTCOrigin::applyMetadata(QByteArray& exifData, QByteArray& iptcData)
 {
-    DMetadata meta;
-    meta.setExif(exifData);
-    meta.setIptc(iptcData);
+    QScopedPointer<DMetadata> meta(new DMetadata);
+    meta->setExif(exifData);
+    meta->setIptc(iptcData);
 
     if (d->dateCreatedCheck->isChecked())
     {
-        meta.setIptcTagString("Iptc.Application2.DateCreated", getIPTCCreationDate().toString(Qt::ISODate));
+        meta->setIptcTagString("Iptc.Application2.DateCreated", getIPTCCreationDate().toString(Qt::ISODate));
 
         if (syncEXIFDateIsChecked())
         {
-            meta.setExifTagString("Exif.Image.DateTime",
+            meta->setExifTagString("Exif.Image.DateTime",
                                   getIPTCCreationDate().toString(QLatin1String("yyyy:MM:dd hh:mm:ss")));
         }
     }
     else
     {
-        meta.removeIptcTag("Iptc.Application2.DateCreated");
+        meta->removeIptcTag("Iptc.Application2.DateCreated");
     }
 
     if (d->dateDigitalizedCheck->isChecked())
     {
-        meta.setIptcTagString("Iptc.Application2.DigitizationDate", d->dateDigitalizedSel->date().toString(Qt::ISODate));
+        meta->setIptcTagString("Iptc.Application2.DigitizationDate", d->dateDigitalizedSel->date().toString(Qt::ISODate));
     }
     else
     {
-        meta.removeIptcTag("Iptc.Application2.DigitizationDate");
+        meta->removeIptcTag("Iptc.Application2.DigitizationDate");
     }
 
     if (d->timeCreatedCheck->isChecked())
     {
-        meta.setIptcTagString("Iptc.Application2.TimeCreated", d->timeCreatedSel->time().toString(Qt::ISODate) +
+        meta->setIptcTagString("Iptc.Application2.TimeCreated", d->timeCreatedSel->time().toString(Qt::ISODate) +
                                                                d->zoneCreatedSel->getTimeZone());
     }
     else
     {
-        meta.removeIptcTag("Iptc.Application2.TimeCreated");
+        meta->removeIptcTag("Iptc.Application2.TimeCreated");
     }
 
     if (d->timeDigitalizedCheck->isChecked())
     {
-        meta.setIptcTagString("Iptc.Application2.DigitizationTime", d->timeDigitalizedSel->time().toString(Qt::ISODate) +
+        meta->setIptcTagString("Iptc.Application2.DigitizationTime", d->timeDigitalizedSel->time().toString(Qt::ISODate) +
                                                                     d->zoneDigitalizedSel->getTimeZone());
     }
     else
     {
-        meta.removeIptcTag("Iptc.Application2.DigitizationTime");
+        meta->removeIptcTag("Iptc.Application2.DigitizationTime");
     }
 
     QStringList oldList, newList;
@@ -659,57 +681,69 @@ void IPTCOrigin::applyMetadata(QByteArray& exifData, QByteArray& iptcData)
     {
         QStringList oldCode, newCode, oldName, newName;
 
-        for (QStringList::Iterator it = oldList.begin(); it != oldList.end(); ++it)
+        for (QStringList::Iterator it = oldList.begin() ; it != oldList.end() ; ++it)
         {
             oldCode.append((*it).left(3));
             oldName.append((*it).mid(6));
         }
 
-        for (QStringList::Iterator it2 = newList.begin(); it2 != newList.end(); ++it2)
+        for (QStringList::Iterator it2 = newList.begin() ; it2 != newList.end() ; ++it2)
         {
             newCode.append((*it2).left(3));
             newName.append((*it2).mid(6));
         }
 
-        meta.setIptcTagsStringList("Iptc.Application2.LocationCode", 3, oldCode, newCode);
-        meta.setIptcTagsStringList("Iptc.Application2.LocationName", 64, oldName, newName);
+        meta->setIptcTagsStringList("Iptc.Application2.LocationCode", 3, oldCode, newCode);
+        meta->setIptcTagsStringList("Iptc.Application2.LocationName", 64, oldName, newName);
     }
     else
     {
-        meta.removeIptcTag("Iptc.Application2.LocationCode");
-        meta.removeIptcTag("Iptc.Application2.LocationName");
+        meta->removeIptcTag("Iptc.Application2.LocationCode");
+        meta->removeIptcTag("Iptc.Application2.LocationName");
     }
 
     if (d->cityCheck->isChecked())
-        meta.setIptcTagString("Iptc.Application2.City", d->cityEdit->text());
+    {
+        meta->setIptcTagString("Iptc.Application2.City", d->cityEdit->text());
+    }
     else
-        meta.removeIptcTag("Iptc.Application2.City");
+    {
+        meta->removeIptcTag("Iptc.Application2.City");
+    }
 
     if (d->sublocationCheck->isChecked())
-        meta.setIptcTagString("Iptc.Application2.SubLocation", d->sublocationEdit->text());
+    {
+        meta->setIptcTagString("Iptc.Application2.SubLocation", d->sublocationEdit->text());
+    }
     else
-        meta.removeIptcTag("Iptc.Application2.SubLocation");
+    {
+        meta->removeIptcTag("Iptc.Application2.SubLocation");
+    }
 
     if (d->provinceCheck->isChecked())
-        meta.setIptcTagString("Iptc.Application2.ProvinceState", d->provinceEdit->text());
+    {
+        meta->setIptcTagString("Iptc.Application2.ProvinceState", d->provinceEdit->text());
+    }
     else
-        meta.removeIptcTag("Iptc.Application2.ProvinceState");
+    {
+        meta->removeIptcTag("Iptc.Application2.ProvinceState");
+    }
 
-    if (d->countryCheck->isChecked())
+    if      (d->countryCheck->isChecked())
     {
         QString countryName = d->countryCB->currentText().mid(6);
         QString countryCode = d->countryCB->currentText().left(3);
-        meta.setIptcTagString("Iptc.Application2.CountryCode", countryCode);
-        meta.setIptcTagString("Iptc.Application2.CountryName", countryName);
+        meta->setIptcTagString("Iptc.Application2.CountryCode", countryCode);
+        meta->setIptcTagString("Iptc.Application2.CountryName", countryName);
     }
     else if (d->countryCheck->isValid())
     {
-        meta.removeIptcTag("Iptc.Application2.CountryCode");
-        meta.removeIptcTag("Iptc.Application2.CountryName");
+        meta->removeIptcTag("Iptc.Application2.CountryCode");
+        meta->removeIptcTag("Iptc.Application2.CountryName");
     }
 
-    exifData = meta.getExifEncoded();
-    iptcData = meta.getIptc();
+    exifData = meta->getExifEncoded();
+    iptcData = meta->getIptc();
 }
 
 } // namespace DigikamGenericMetadataEditPlugin

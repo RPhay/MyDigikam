@@ -6,7 +6,7 @@
  * Date        : 2012-05-28
  * Description : Media Server configuration dialog to share a single list of files
  *
- * Copyright (C) 2012-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2017      by Ahmed Fathy <ahmed dot fathi dot abdelmageed at gmail dot com>
  *
  * This program is free software; you can redistribute it
@@ -46,9 +46,9 @@
 
 #include "dinfointerface.h"
 #include "ditemslist.h"
-#include "dmediaservermngr.h"
 #include "dxmlguiwindow.h"
 #include "workingwidget.h"
+#include "dmediaservermngr.h"
 
 namespace DigikamGenericMediaServerPlugin
 {
@@ -59,20 +59,20 @@ public:
 
     explicit Private()
       : dirty(false),
-        mngr(DMediaServerMngr::instance()),
-        srvButton(nullptr),
-        srvStatus(nullptr),
-        progress(nullptr),
-        aStats(nullptr),
-        separator(nullptr),
-        iStats(nullptr),
-        startOnStartup(nullptr),
-        albumSupport(false),
-        albumSelector(nullptr),
-        listView(nullptr),
-        iface(nullptr),
-        page(nullptr),
-        buttons(nullptr)
+        mngr            (DMediaServerMngr::instance()),
+        srvButton       (nullptr),
+        srvStatus       (nullptr),
+        progress        (nullptr),
+        aStats          (nullptr),
+        separator       (nullptr),
+        iStats          (nullptr),
+        startOnStartup  (nullptr),
+        albumSupport    (false),
+        albumSelector   (nullptr),
+        listView        (nullptr),
+        iface           (nullptr),
+        page            (nullptr),
+        buttons         (nullptr)
     {
     }
 
@@ -101,8 +101,10 @@ DMediaServerDlg::DMediaServerDlg(QObject* const /*parent*/,
     setWindowTitle(i18nc("@title:window", "Share Files with DLNA Media Server"));
 
     d->iface                 = iface;
+
     // NOTE: We overwrite the default albums chooser object name for load save check items state between sessions.
     // The goal is not mix these settings with other export tools.
+
     d->iface->setObjectName(QLatin1String("SetupMediaServerIface"));
 
     m_buttons->addButton(QDialogButtonBox::Cancel);
@@ -136,9 +138,11 @@ DMediaServerDlg::DMediaServerDlg(QObject* const /*parent*/,
         d->listView->setIface(d->iface);
 
         // Add all items currently loaded in application.
+
         d->listView->loadImagesFromCurrentSelection();
 
         // Replug the previous shared items list.
+
         d->listView->slotAddImages(d->mngr->itemsList());
         grid->addWidget(d->listView, 0, 0, 1, 6);
 
@@ -148,18 +152,18 @@ DMediaServerDlg::DMediaServerDlg(QObject* const /*parent*/,
 
     // -------------------
 
-    const int spacing       = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
+    const int spacing         = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
 
-    d->startOnStartup       = new QCheckBox(i18n("Start Server at Startup"));
-    d->startOnStartup->setWhatsThis(i18n("Set this option to turn-on the DLNA server at application start-up automatically"));
+    d->startOnStartup         = new QCheckBox(i18nc("@option", "Start Server at Startup"));
+    d->startOnStartup->setWhatsThis(i18nc("@info", "Set this option to turn-on the DLNA server at application start-up automatically"));
     d->startOnStartup->setChecked(true);
 
-    d->srvButton            = new QPushButton(this);
-    d->srvStatus            = new QLabel(this);
-    d->progress             = new WorkingWidget(this);
-    d->aStats               = new QLabel(this);
-    d->separator            = new QLabel(QLatin1String(" / "), this);
-    d->iStats               = new QLabel(this);
+    d->srvButton              = new QPushButton(this);
+    d->srvStatus              = new QLabel(this);
+    d->progress               = new WorkingWidget(this);
+    d->aStats                 = new QLabel(this);
+    d->separator              = new QLabel(QLatin1String(" / "), this);
+    d->iStats                 = new QLabel(this);
 
     QLabel* const explanation = new QLabel(this);
     explanation->setOpenExternalLinks(true);
@@ -167,12 +171,14 @@ DMediaServerDlg::DMediaServerDlg(QObject* const /*parent*/,
     explanation->setFrameStyle(QFrame::Box | QFrame::Plain);
     QString txt;
 
-    explanation->setText(i18n("The media server permit to share items through the local network "
-                              "using <a href='https://en.wikipedia.org/wiki/Digital_Living_Network_Alliance'>DLNA</a> "
-                              "standard and <a href='https://en.wikipedia.org/wiki/Universal_Plug_and_Play'>UPNP</a> "
-                              "protocol. Many kind of electronic devices can support DLNA, as tablets, cellulars, TV, etc."
-                              "<br/>Note: depending of the network features and the configuration, "
-                              "the delay to discover the server on client devices can take a while."));
+    explanation->setText(i18nc("@info",
+                               "The media server permit to share items through the local network "
+                               "using %1 standard and %2 protocol. "
+                               "Many kind of electronic devices can support DLNA, as tablets, cellulars, TV, etc.\n\n"
+                               "Note: depending of the network features and the configuration, "
+                               "the delay to discover the server on client devices can take a while.",
+                               QLatin1String("<a href='https://en.wikipedia.org/wiki/Digital_Living_Network_Alliance'>DLNA</a>"),
+                               QLatin1String("<a href='https://en.wikipedia.org/wiki/Universal_Plug_and_Play'>UPNP</a>")));
 
     grid->addWidget(d->startOnStartup, 1, 0, 1, 6);
     grid->addWidget(d->srvButton,      2, 0, 1, 1);
@@ -224,8 +230,8 @@ void DMediaServerDlg::accept()
 
         if (!empty)
         {
-            int rc = QMessageBox::question(this, i18n("Media Server Contents"),
-                                           i18n("The items list to share has changed. "
+            int rc = QMessageBox::question(this, i18nc("@title", "Media Server Contents"),
+                                           i18nc("@info", "The items list to share has changed. "
                                                 "Do you want to start now the media server with this contents?"));
             if (rc == QMessageBox::Yes)
             {
@@ -262,22 +268,22 @@ void DMediaServerDlg::updateServerStatus()
 {
     if (d->mngr->isRunning())
     {
-        d->srvStatus->setText(i18n("Server is running"));
-        d->aStats->setText(i18np("1 album shared", "%1 albums shared", d->mngr->albumsShared()));
+        d->srvStatus->setText(i18nc("@label", "Server is running"));
+        d->aStats->setText(i18ncp("@info", "1 album shared", "%1 albums shared", d->mngr->albumsShared()));
         d->separator->setVisible(true);
-        d->iStats->setText(i18np("1 item shared",  "%1 items shared",  d->mngr->itemsShared()));
-        d->srvButton->setText(i18n("Stop"));
+        d->iStats->setText(i18ncp("@info", "1 item shared",  "%1 items shared",  d->mngr->itemsShared()));
+        d->srvButton->setText(i18nc("@action: button", "Stop"));
         d->srvButton->setIcon(QIcon::fromTheme(QLatin1String("media-playback-stop")));
         d->progress->toggleTimer(true);
         d->progress->setVisible(true);
     }
     else
     {
-        d->srvStatus->setText(i18n("Server is not running"));
+        d->srvStatus->setText(i18nc("@label", "Server is not running"));
         d->aStats->clear();
         d->separator->setVisible(false);
         d->iStats->clear();
-        d->srvButton->setText(i18n("Start"));
+        d->srvButton->setText(i18nc("@action: button", "Start"));
         d->srvButton->setIcon(QIcon::fromTheme(QLatin1String("media-playback-start")));
         d->progress->toggleTimer(false);
         d->progress->setVisible(false);
@@ -299,8 +305,8 @@ bool DMediaServerDlg::setMediaServerContents()
 
         if (map.isEmpty())
         {
-            QMessageBox::information(this, i18n("Media Server Contents"),
-                                     i18n("There is no collection to share with the current selection..."));
+            QMessageBox::information(this, i18nc("@title", "Media Server Contents"),
+                                     i18nc("@info", "There is no collection to share with the current selection..."));
             return false;
         }
 
@@ -312,13 +318,13 @@ bool DMediaServerDlg::setMediaServerContents()
 
         if (urls.isEmpty())
         {
-            QMessageBox::information(this, i18n("Media Server Contents"),
-                                     i18n("There is no item to share with the current selection..."));
+            QMessageBox::information(this, i18nc("@title", "Media Server Contents"),
+                                     i18nc("@info", "There is no item to share with the current selection..."));
 
             return false;
         }
 
-        d->mngr->setItemsList(i18n("Shared Items"), urls);
+        d->mngr->setItemsList(i18nc("@info", "Shared Items"), urls);
     }
 
     return true;
@@ -327,15 +333,19 @@ bool DMediaServerDlg::setMediaServerContents()
 void DMediaServerDlg::startMediaServer()
 {
     if (d->dirty)
+    {
         d->dirty = false;
+    }
 
     if (!setMediaServerContents())
+    {
         return;
+    }
 
     if (!d->mngr->startMediaServer())
     {
-        QMessageBox::warning(this, i18n("Starting Media Server"),
-                             i18n("An error occurs while to start Media Server..."));
+        QMessageBox::warning(this, i18nc("@title", "Starting Media Server"),
+                             i18nc("@info", "An error occurs while to start Media Server..."));
     }
     else
     {

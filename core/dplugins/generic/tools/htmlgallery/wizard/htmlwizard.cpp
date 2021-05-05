@@ -7,7 +7,7 @@
  * Description : a tool to generate HTML image galleries
  *
  * Copyright (C) 2006-2010 by Aurelien Gateau <aurelien dot gateau at free dot fr>
- * Copyright (C) 2012-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -35,12 +35,12 @@
 
 // KDE includes
 
-#include <kconfigdialogmanager.h>
 #include <klocalizedstring.h>
 
 // Local includes
 
 #include "dwizardpage.h"
+#include "dconfigdlgmngr.h"
 #include "digikam_debug.h"
 #include "abstractthemeparameter.h"
 #include "galleryinfo.h"
@@ -61,20 +61,20 @@ class Q_DECL_HIDDEN HTMLWizard::Private
 public:
 
     explicit Private()
-      : info(nullptr),
-        configManager(nullptr),
-        introPage(nullptr),
-        selectionPage(nullptr),
-        themePage(nullptr),
-        parametersPage(nullptr),
-        imageSettingsPage(nullptr),
-        outputPage(nullptr),
-        finalPage(nullptr)
+      : info                (nullptr),
+        configManager       (nullptr),
+        introPage           (nullptr),
+        selectionPage       (nullptr),
+        themePage           (nullptr),
+        parametersPage      (nullptr),
+        imageSettingsPage   (nullptr),
+        outputPage          (nullptr),
+        finalPage           (nullptr)
     {
     }
 
     GalleryInfo*           info;
-    KConfigDialogManager*  configManager;
+    DConfigDlgMngr*        configManager;
 
     HTMLIntroPage*         introPage;
     HTMLSelectionPage*     selectionPage;
@@ -87,7 +87,7 @@ public:
 
 HTMLWizard::HTMLWizard(QWidget* const parent, DInfoInterface* const iface)
     : DWizardDlg(parent, QLatin1String("HTML Gallery Dialog")),
-      d(new Private)
+      d         (new Private)
 {
     setOption(QWizard::NoCancelButtonOnLastPage);
     setWindowTitle(i18n("Create HTML Gallery"));
@@ -102,7 +102,7 @@ HTMLWizard::HTMLWizard(QWidget* const parent, DInfoInterface* const iface)
     d->imageSettingsPage = new HTMLImageSettingsPage(this, i18n("Image Settings"));
     d->outputPage        = new HTMLOutputPage(this,        i18n("Output Settings"));
     d->finalPage         = new HTMLFinalPage(this,         i18n("Generating Gallery"));
-    d->configManager     = new KConfigDialogManager(this, d->info);
+    d->configManager     = new DConfigDlgMngr(this, d->info);
     d->configManager->updateWidgets();
 }
 
@@ -119,7 +119,9 @@ void HTMLWizard::setItemsList(const QList<QUrl>& urls)
 bool HTMLWizard::validateCurrentPage()
 {
     if (!DWizardDlg::validateCurrentPage())
+    {
         return false;
+    }
 
     if (currentPage() == d->outputPage)
     {
@@ -159,6 +161,7 @@ int HTMLWizard::nextId() const
         if (theme && theme->parameterList().size() > 0)
         {
             // Enable theme parameters page as next page if there is any parameter.
+
             return d->parametersPage->id();
         }
 

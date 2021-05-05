@@ -75,12 +75,12 @@ public:
 public:
 
     explicit Private()
-      : state(OD_USERNAME),
-        parent(nullptr),
-        netMngr(nullptr),
-        reply(nullptr),
+      : state   (OD_USERNAME),
+        parent  (nullptr),
+        netMngr (nullptr),
+        reply   (nullptr),
         settings(nullptr),
-        browser(nullptr)
+        browser (nullptr)
     {
         clientId     = QLatin1String("4c20a541-2ca8-4b98-8847-a375e4d33f34");
         clientSecret = QLatin1String("wtdcaXADCZ0|tcDA7633|@*");
@@ -125,7 +125,7 @@ public:
 };
 
 ODTalker::ODTalker(QWidget* const parent)
-    : d(new Private)
+    : d           (new Private)
 {
     d->parent   = parent;
     d->netMngr  = new QNetworkAccessManager(this);
@@ -256,7 +256,8 @@ void ODTalker::cancel()
 
 void ODTalker::createFolder(QString& path)
 {
-    //path also has name of new folder so send path parameter accordingly
+    // path also has name of new folder so send path parameter accordingly
+
     QString name       = QUrl(path).fileName();
     QString folderPath = QUrl(path).adjusted(QUrl::RemoveFilename |
                                              QUrl::StripTrailingSlash).path();
@@ -296,7 +297,8 @@ void ODTalker::getUserName()
     emit signalBusy(true);
 }
 
-/** Get list of folders by parsing json sent by onedrive
+/**
+ * Get list of folders by parsing json sent by onedrive
  */
 void ODTalker::listFolders(const QString& folder)
 {
@@ -353,21 +355,21 @@ bool ODTalker::addPhoto(const QString& imgPath, const QString& uploadFolder, boo
         path = WSToolUtils::makeTemporaryDir("onedrive").filePath(QFileInfo(imgPath)
                                              .baseName().trimmed() + QLatin1String(".jpg"));
 
-        if (rescale && (image.width() > maxDim || image.height() > maxDim))
+        if (rescale && ((image.width() > maxDim) || (image.height() > maxDim)))
         {
             image = image.scaled(maxDim, maxDim, Qt::KeepAspectRatio, Qt::SmoothTransformation);
         }
 
         image.save(path, "JPEG", imageQuality);
 
-        DMetadata meta;
+        QScopedPointer<DMetadata> meta(new DMetadata);
 
-        if (meta.load(imgPath))
+        if (meta->load(imgPath))
         {
-            meta.setItemDimensions(image.size());
-            meta.setItemOrientation(DMetadata::ORIENTATION_NORMAL);
-            meta.setMetadataWritingMode((int)DMetadata::WRITE_TO_FILE_ONLY);
-            meta.save(path, true);
+            meta->setItemDimensions(image.size());
+            meta->setItemOrientation(DMetadata::ORIENTATION_NORMAL);
+            meta->setMetadataWritingMode((int)DMetadata::WRITE_TO_FILE_ONLY);
+            meta->save(path, true);
         }
     }
 
@@ -421,18 +423,22 @@ void ODTalker::slotFinished(QNetworkReply* reply)
             qCDebug(DIGIKAM_WEBSERVICES_LOG) << "In OD_LISTFOLDERS";
             parseResponseListFolders(buffer);
             break;
+
         case Private::OD_CREATEFOLDER:
             qCDebug(DIGIKAM_WEBSERVICES_LOG) << "In OD_CREATEFOLDER";
             parseResponseCreateFolder(buffer);
             break;
+
         case Private::OD_ADDPHOTO:
             qCDebug(DIGIKAM_WEBSERVICES_LOG) << "In OD_ADDPHOTO";
             parseResponseAddPhoto(buffer);
             break;
+
         case Private::OD_USERNAME:
             qCDebug(DIGIKAM_WEBSERVICES_LOG) << "In OD_USERNAME";
             parseResponseUserName(buffer);
             break;
+
         default:
             break;
     }
@@ -478,7 +484,9 @@ void ODTalker::parseResponseListFolders(const QByteArray& data)
     }
 
     QJsonObject jsonObject = doc.object();
-    //qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Json: " << doc;
+/*
+    qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Json: " << doc;
+*/
     QJsonArray jsonArray   = jsonObject[QLatin1String("value")].toArray();
 
     if (d->folderList.isEmpty())
@@ -533,8 +541,8 @@ void ODTalker::parseResponseListFolders(const QByteArray& data)
 
 void ODTalker::parseResponseCreateFolder(const QByteArray& data)
 {
-    QJsonDocument doc      = QJsonDocument::fromJson(data);
-    QJsonObject jsonObject = doc.object();
+    QJsonDocument doc1     = QJsonDocument::fromJson(data);
+    QJsonObject jsonObject = doc1.object();
     bool fail              = jsonObject.contains(QLatin1String("error"));
 
     emit signalBusy(false);
@@ -542,7 +550,7 @@ void ODTalker::parseResponseCreateFolder(const QByteArray& data)
     if (fail)
     {
         QJsonParseError err;
-        QJsonDocument doc = QJsonDocument::fromJson(data, &err);
+        QJsonDocument doc2 = QJsonDocument::fromJson(data, &err);
         emit signalCreateFolderFailed(jsonObject[QLatin1String("error_summary")].toString());
     }
     else
@@ -566,7 +574,7 @@ void ODTalker::readSettings()
     d->accessToken = d->settings->value(d->serviceKey).toString();
     d->settings->endGroup();
 
-    if (d->accessToken.isEmpty())
+    if      (d->accessToken.isEmpty())
     {
         qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Linking...";
         link();

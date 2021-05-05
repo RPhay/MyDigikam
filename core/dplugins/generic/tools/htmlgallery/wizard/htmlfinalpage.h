@@ -6,7 +6,7 @@
  * Date        : 2006-04-04
  * Description : a tool to generate HTML image galleries
  *
- * Copyright (C) 2012-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -43,10 +43,10 @@ class HTMLFinalPage : public DWizardPage
 public:
 
     explicit HTMLFinalPage(QWizard* const dialog, const QString& title);
-    ~HTMLFinalPage();
+    ~HTMLFinalPage()        override;
 
-    void initializePage();
-    bool isComplete() const;
+    void initializePage()   override;
+    bool isComplete() const override;
 
 private Q_SLOTS:
 

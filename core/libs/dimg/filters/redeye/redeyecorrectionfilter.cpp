@@ -6,7 +6,7 @@
  * Date        : 17-8-2016
  * Description : A Red-Eye automatic detection and correction filter.
  *
- * Copyright (C) 2005-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2005-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2016      by Omar Amin <Omar dot moh dot amin at gmail dot com>
  *
  * This program is free software; you can redistribute it
@@ -54,6 +54,10 @@ public:
 
     explicit Private()
     {
+        QVariantMap params;
+        params[QLatin1String("accuracy")]  = 0.8;
+        params[QLatin1String("useyolov3")] = true;
+        facedetector.setParameters(params);
     }
 
     FaceDetector                   facedetector;
@@ -66,7 +70,7 @@ RedEye::ShapePredictor* RedEyeCorrectionFilter::Private::sp = nullptr;
 
 RedEyeCorrectionFilter::RedEyeCorrectionFilter(QObject* const parent)
     : DImgThreadedFilter(parent),
-      d(new Private)
+      d                 (new Private)
 {
     initFilter();
 }
@@ -74,9 +78,8 @@ RedEyeCorrectionFilter::RedEyeCorrectionFilter(QObject* const parent)
 RedEyeCorrectionFilter::RedEyeCorrectionFilter(DImg* const orgImage,
                                                QObject* const parent,
                                                const RedEyeCorrectionContainer& settings)
-    : DImgThreadedFilter(orgImage, parent,
-                         QLatin1String("RedEyeCorrection")),
-      d(new Private)
+    : DImgThreadedFilter(orgImage, parent, QLatin1String("RedEyeCorrection")),
+      d                 (new Private)
 {
     d->settings = settings;
     initFilter();
@@ -91,7 +94,7 @@ RedEyeCorrectionFilter::RedEyeCorrectionFilter(const RedEyeCorrectionContainer& 
     : DImgThreadedFilter(parentFilter, orgImage, destImage,
                          progressBegin, progressEnd,
                          parentFilter->filterName() + QLatin1String(": RedEyeCorrection")),
-      d(new Private)
+      d                 (new Private)
 {
     d->settings = settings;
     filterImage();
@@ -114,8 +117,8 @@ void RedEyeCorrectionFilter::filterImage()
     {
         // Loading the shape predictor model
 
-        QString path = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
-                                              QLatin1String("digikam/facesengine/shapepredictor.dat"));
+        QString path = QStandardPaths::locate(QStandardPaths::AppDataLocation,
+                                              QLatin1String("facesengine/shapepredictor.dat"));
 
         QFile model(path);
 
@@ -136,30 +139,29 @@ void RedEyeCorrectionFilter::filterImage()
     }
 
     cv::Mat intermediateImage;
-    int type          = m_orgImage.sixteenBit() ? CV_16UC3 : CV_8UC3;
-    type              = m_orgImage.hasAlpha()   ? type     : type + 8;
+    int type          = m_orgImage.sixteenBit() ? CV_16UC4 : CV_8UC4;
 
     intermediateImage = cv::Mat(m_orgImage.height(), m_orgImage.width(),
                                 type, m_orgImage.bits());
 
     cv::Mat gray;
 
-    if ((type == CV_8UC3) || (type == CV_16UC3))
-    {
-        cv::cvtColor(intermediateImage, gray, CV_RGB2GRAY);  // 3 channels
-    }
-    else
+    if (m_orgImage.hasAlpha())
     {
         cv::cvtColor(intermediateImage, gray, CV_RGBA2GRAY); // 4 channels
     }
-
-    if ((type == CV_16UC3) || (type == CV_16UC4))
+    else
     {
-        gray.convertTo(gray, CV_8UC1, 1 / 255.0);
+        cv::cvtColor(intermediateImage, gray, CV_RGB2GRAY);  // 3 channels
     }
 
-    QList<QRectF> qrectfdets   = d->facedetector.detectFaces(m_orgImage);
-    RedEye::ShapePredictor& sp = *(d->sp);
+    if (type == CV_16UC4)
+    {
+        gray.convertTo(gray, CV_8UC1, 1 / 256.0);
+    }
+
+    QList<QRectF> qrectfdets         = d->facedetector.detectFaces(m_orgImage);
+    const RedEye::ShapePredictor& sp = *(d->sp);
 
     if (runningFlag() && (qrectfdets.size() != 0))
     {
@@ -193,17 +195,13 @@ void RedEyeCorrectionFilter::filterImage()
 }
 
 void RedEyeCorrectionFilter::correctRedEye(uchar* data, int type,
-                                           cv::Rect eyerect, cv::Rect imgRect)
+                                           const cv::Rect& eyerect, const cv::Rect& imgRect)
 {
     uchar*  onebytedata = data;
     ushort* twobytedata = reinterpret_cast<ushort*>(data);
     int     pixeldepth  = 0;
 
-    if      ((type == CV_8UC3) || (type == CV_16UC3))
-    {
-        pixeldepth = 3;
-    }
-    else if ((type == CV_8UC4) || (type == CV_16UC4))
+    if ((type == CV_8UC4) || (type == CV_16UC4))
     {
         pixeldepth = 4;
     }
@@ -212,7 +210,7 @@ void RedEyeCorrectionFilter::correctRedEye(uchar* data, int type,
         qCDebug(DIGIKAM_DIMG_LOG) << "Unsupported Type in redeye correction filter";
     }
 
-    bool sixteendepth = ((type == CV_8UC3) || (type == CV_8UC4)) ? false : true;
+    bool sixteendepth = (type == CV_16UC4) ? true : false;
     double redratio   = d->settings.m_redToAvgRatio;
 
     for (int i = eyerect.y ; i < eyerect.y + eyerect.height ; ++i)

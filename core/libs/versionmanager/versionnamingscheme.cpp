@@ -38,6 +38,7 @@ namespace Digikam
 QVariant DefaultVersionNamingScheme::initialCounter()
 {
     // start with _v1
+
     return 1;
 }
 

@@ -6,7 +6,8 @@
  * Date        : 2013-02-18
  * Description : Sync QItemSelectionModel of ItemFilterModel and TableViewModel
  *
- * Copyright (C) 2013 by Michael G. Hansen <mike at mghansen dot de>
+ * Copyright (C) 2017-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2013      by Michael G. Hansen <mike at mghansen dot de>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -50,8 +51,8 @@ public:
 
 TableViewSelectionModelSyncer::TableViewSelectionModelSyncer(TableViewShared* const sharedObject, QObject* const parent)
     : QObject(parent),
-      d(new Private()),
-      s(sharedObject)
+      d      (new Private()),
+      s      (sharedObject)
 {
     connect(s->imageFilterSelectionModel, SIGNAL(currentChanged(QModelIndex,QModelIndex)),
             this, SLOT(slotSourceCurrentChanged(QModelIndex,QModelIndex)));
@@ -76,6 +77,7 @@ TableViewSelectionModelSyncer::TableViewSelectionModelSyncer(TableViewShared* co
 
     /// @todo This is necessary to re-sync the selection when tags are added to images.
     ///       Check whether both are necessary or whether we need more.
+
     connect(s->imageFilterModel, SIGNAL(layoutChanged()),
             this, SLOT(slotSourceModelReset()));
 
@@ -121,7 +123,7 @@ void TableViewSelectionModelSyncer::slotDoInitialSync()
         return;
     }
 
-    d->syncing = true;
+    d->syncing                           = true;
 
     s->tableViewSelectionModel->clearSelection();
 
@@ -132,7 +134,7 @@ void TableViewSelectionModelSyncer::slotDoInitialSync()
     const QModelIndex targetIndexCurrent = toTarget(s->imageFilterSelectionModel->currentIndex());
     s->tableViewSelectionModel->setCurrentIndex(targetIndexCurrent, QItemSelectionModel::NoUpdate);
 
-    d->syncing = false;
+    d->syncing                           = false;
 }
 
 void TableViewSelectionModelSyncer::slotSourceCurrentChanged(const QModelIndex& current, const QModelIndex& previous)
@@ -149,14 +151,15 @@ void TableViewSelectionModelSyncer::slotSourceCurrentChanged(const QModelIndex& 
         return;
     }
 
-    d->syncing = true;
+    d->syncing                           = true;
 
     // we have to select the whole row of the target index
+
     const QModelIndex targetIndexCurrent = toTarget(current);
 
     s->tableViewSelectionModel->setCurrentIndex(targetIndexCurrent, QItemSelectionModel::Select);
 
-    d->syncing = false;
+    d->syncing                           = false;
 }
 
 QItemSelection TableViewSelectionModelSyncer::itemSelectionToSource(const QItemSelection& selection) const
@@ -168,7 +171,7 @@ QItemSelection TableViewSelectionModelSyncer::itemSelectionToSource(const QItemS
         const int firstRow = range.top();
         const int lastRow  = range.bottom();
 
-        for (int row = firstRow; row<=lastRow; ++row)
+        for (int row = firstRow ; row <= lastRow ; ++row)
         {
             const QModelIndex tableViewIndex = s->tableViewModel->index(row, 0, range.parent());
             const QModelIndex sourceIndex    = s->tableViewModel->toItemFilterModelIndex(tableViewIndex);
@@ -193,15 +196,13 @@ QItemSelection TableViewSelectionModelSyncer::itemSelectionToTarget(const QItemS
         const int firstRow = range.top();
         const int lastRow  = range.bottom();
 
-        for (int row = firstRow; row<=lastRow; ++row)
+        for (int row = firstRow ; row <= lastRow ; ++row)
         {
             const QModelIndex sourceIndex               = s->imageFilterModel->index(row, 0, range.parent());
             const QModelIndex tableViewIndexTopLeft     = s->tableViewModel->fromItemFilterModelIndex(sourceIndex);
-            const QModelIndex tableViewIndexBottomRight = s->tableViewModel->index(
-                    tableViewIndexTopLeft.row(),
-                    targetColumnCount-1,
-                    tableViewIndexTopLeft.parent()
-                );
+            const QModelIndex tableViewIndexBottomRight = s->tableViewModel->index(tableViewIndexTopLeft.row(),
+                                                                                   targetColumnCount-1,
+                                                                                   tableViewIndexTopLeft.parent());
 
             targetSelection.select(tableViewIndexTopLeft, tableViewIndexBottomRight);
         }
@@ -222,15 +223,15 @@ void TableViewSelectionModelSyncer::slotSourceSelectionChanged(const QItemSelect
         return;
     }
 
-    d->syncing = true;
+    d->syncing                             = true;
 
-    const QItemSelection targetSelection = itemSelectionToTarget(selected);
+    const QItemSelection targetSelection   = itemSelectionToTarget(selected);
     s->tableViewSelectionModel->select(targetSelection, QItemSelectionModel::Select);
 
     const QItemSelection targetDeselection = itemSelectionToTarget(deselected);
     s->tableViewSelectionModel->select(targetDeselection, QItemSelectionModel::Deselect);
 
-    d->syncing = false;
+    d->syncing                             = false;
 }
 
 void TableViewSelectionModelSyncer::slotTargetCurrentChanged(const QModelIndex& current, const QModelIndex& previous)
@@ -247,12 +248,12 @@ void TableViewSelectionModelSyncer::slotTargetCurrentChanged(const QModelIndex& 
         return;
     }
 
-    d->syncing = true;
+    d->syncing                           = true;
 
     const QModelIndex sourceIndexCurrent = toSource(current);
     s->imageFilterSelectionModel->setCurrentIndex(sourceIndexCurrent, QItemSelectionModel::Select);
 
-    d->syncing = false;
+    d->syncing                           = false;
 }
 
 void TableViewSelectionModelSyncer::slotTargetSelectionChanged(const QItemSelection& selected, const QItemSelection& deselected)
@@ -267,21 +268,22 @@ void TableViewSelectionModelSyncer::slotTargetSelectionChanged(const QItemSelect
         return;
     }
 
-    d->syncing = true;
+    d->syncing                             = true;
 
-    const QItemSelection sourceSelection = itemSelectionToSource(selected);
+    const QItemSelection sourceSelection   = itemSelectionToSource(selected);
     s->imageFilterSelectionModel->select(sourceSelection, QItemSelectionModel::Select);
 
     const QItemSelection sourceDeselection = itemSelectionToSource(deselected);
     s->imageFilterSelectionModel->select(sourceDeselection, QItemSelectionModel::Deselect);
 
-    d->syncing = false;
+    d->syncing                             = false;
 }
 
 void TableViewSelectionModelSyncer::slotSourceModelReset()
 {
     // QAbstractItemModel will also react to the modelReset signal
     // make sure we transfer the update after that.
+
     QTimer::singleShot(0, this, SLOT(slotDoInitialSync()));
 }
 
@@ -304,6 +306,7 @@ void TableViewSelectionModelSyncer::slotTargetColumnsInserted(const QModelIndex&
     // New columns were inserted. We have to make sure that all selected rows include the new columns.
     // We just re-perform the initial synchronization.
     /// @todo There may be more efficient ways.
+
     slotDoInitialSync();
 }
 
@@ -328,7 +331,8 @@ void Digikam::TableViewSelectionModelSyncer::slotTargetModelRowsInserted(const Q
     }
 
     // look up the state of the source indexes and transfer them here
-    for (int i = start; i <= end; ++i)
+
+    for (int i = start ; i <= end ; ++i)
     {
         const QModelIndex iTarget = s->tableViewModel->index(i, 0, parent);
 
@@ -352,6 +356,7 @@ void Digikam::TableViewSelectionModelSyncer::slotTargetModelRowsInserted(const Q
     }
 
     // also transfer the current index if necessary
+
     const QModelIndex sourceCurrentIndex = s->imageFilterSelectionModel->currentIndex();
     const QModelIndex targetIndexCurrent = toTarget(sourceCurrentIndex);
     s->tableViewSelectionModel->setCurrentIndex(targetIndexCurrent, QItemSelectionModel::NoUpdate);

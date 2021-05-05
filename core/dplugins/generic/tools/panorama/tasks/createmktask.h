@@ -41,11 +41,11 @@ public:
                           PanoramaFileType fileType,
                           const QString& pto2mkPath,
                           bool preview);
-    ~CreateMKTask();
+    ~CreateMKTask() override;
 
 protected:
 
-    void run(ThreadWeaver::JobPointer self, ThreadWeaver::Thread *thread) override;
+    void run(ThreadWeaver::JobPointer self, ThreadWeaver::Thread* thread) override;
 
 private:
 
@@ -53,6 +53,13 @@ private:
     QUrl&                  mkUrl;
     QUrl&                  panoUrl;
     const PanoramaFileType fileType;
+
+private:
+
+    // Disable
+    CreateMKTask() = delete;
+
+    Q_DISABLE_COPY(CreateMKTask)
 };
 
 } // namespace DigikamGenericPanoramaPlugin

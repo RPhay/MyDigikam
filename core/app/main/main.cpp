@@ -7,7 +7,7 @@
  * Description : main program from digiKam
  *
  * Copyright (C) 2002-2006 by Renchi Raju <renchi dot raju at gmail dot com>
- * Copyright (C) 2002-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2002-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -26,24 +26,25 @@
 
 // Qt includes
 
-#include <QFile>
 #include <QDir>
-#include <QFileInfo>
-#include <QSqlDatabase>
+#include <QFile>
 #include <QString>
+#include <QFileInfo>
 #include <QStringList>
+#include <QTranslator>
+#include <QMessageBox>
+#include <QSqlDatabase>
 #include <QApplication>
+#include <QStandardPaths>
 #include <QCommandLineParser>
 #include <QCommandLineOption>
-#include <QMessageBox>
-#include <QStandardPaths>
 
 // KDE includes
 
 #include <klocalizedstring.h>
-#include <kaboutdata.h>
 #include <ksharedconfig.h>
 #include <kconfiggroup.h>
+#include <kaboutdata.h>
 
 // ImageMagick includes
 
@@ -66,6 +67,7 @@ using namespace Magick;
 #include "digikam_debug.h"
 #include "digikam_version.h"
 #include "digikam_globals.h"
+#include "systemsettings.h"
 #include "metaengine.h"
 #include "dmessagebox.h"
 #include "albummanager.h"
@@ -83,6 +85,7 @@ using namespace Magick;
 #include "applicationsettings.h"
 #include "similaritydbaccess.h"
 #include "databaseserverstarter.h"
+#include "filesdownloader.h"
 
 #ifdef Q_OS_WIN
 #   include <windows.h>
@@ -94,6 +97,41 @@ using namespace Digikam;
 
 int main(int argc, char* argv[])
 {
+    SystemSettings system(QLatin1String("digikam"));
+    system.readSettings();
+
+    QCoreApplication::setAttribute(Qt::AA_UseHighDpiPixmaps,
+                                   system.useHighDpiPixmaps);
+
+    if (system.useHighDpiScaling)
+    {
+        QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
+    }
+    else
+    {
+        QCoreApplication::setAttribute(Qt::AA_DisableHighDpiScaling);
+    }
+
+    // OpenCV crash with face engine with OpenCL support
+    // https://bugs.kde.org/show_bug.cgi?id=423632
+    // https://bugs.kde.org/show_bug.cgi?id=426175
+
+    // When analyzing with Heaptrack it was found
+    // that a big memory leak is created in
+    // libpocl when OpenCL is active.
+
+    if (system.disableOpenCL)
+    {
+        qputenv("OPENCV_OPENCL_RUNTIME", "disabled");
+        qputenv("OPENCV_OPENCL_DEVICE",  "disabled");
+    }
+
+#ifdef HAVE_QWEBENGINE
+
+    QCoreApplication::setAttribute(Qt::AA_ShareOpenGLContexts);
+
+#endif
+
     QApplication app(argc, argv);
 
     digikamSetDebugFilterRules();
@@ -103,18 +141,6 @@ int main(int argc, char* argv[])
 #ifdef HAVE_IMAGE_MAGICK
 
     InitializeMagick(nullptr);
-
-#endif
-
-#ifdef Q_OS_LINUX
-
-    app.setAttribute(Qt::AA_UseHighDpiPixmaps, true);
-
-#endif
-
-#ifdef HAVE_QWEBENGINE
-
-    app.setAttribute(Qt::AA_ShareOpenGLContexts, true);
 
 #endif
 
@@ -128,7 +154,8 @@ int main(int argc, char* argv[])
                          i18n("digiKam"),          // display name
                          digiKamVersion());
 
-    aboutData.setShortDescription(QString::fromUtf8("%1 - %2").arg(DAboutData::digiKamSlogan()).arg(DAboutData::digiKamFamily()));
+    aboutData.setShortDescription(QString::fromUtf8("%1 - %2").arg(DAboutData::digiKamSlogan())
+                                                              .arg(DAboutData::digiKamFamily()));
     aboutData.setLicense(KAboutLicense::GPL);
     aboutData.setCopyrightStatement(DAboutData::copyright());
     aboutData.setOtherText(additionalInformation());
@@ -142,28 +169,75 @@ int main(int argc, char* argv[])
     parser.addHelpOption();
     aboutData.setupCommandLine(&parser);
     parser.addOption(QCommandLineOption(QStringList() << QLatin1String("download-from"),
-                                        i18n("Open camera dialog at <path>"),
+                                        i18n("Open camera dialog at \"path\""),
                                         QLatin1String("path")));
     parser.addOption(QCommandLineOption(QStringList() << QLatin1String("download-from-udi"),
-                                        i18n("Open camera dialog for the device with Solid UDI <udi>"),
+                                        i18n("Open camera dialog for the device with Solid UDI \"udi\""),
                                         QLatin1String("udi")));
     parser.addOption(QCommandLineOption(QStringList() << QLatin1String("detect-camera"),
                                         i18n("Automatically detect and open a connected gphoto2 camera")));
     parser.addOption(QCommandLineOption(QStringList() << QLatin1String("database-directory"),
-                                        i18n("Start digikam with the SQLite database file found in the directory <dir>"),
+                                        i18n("Start digikam with the SQLite database file found in the directory \"dir\""),
                                         QLatin1String("dir")));
     parser.addOption(QCommandLineOption(QStringList() << QLatin1String("config"),
-                                        i18n("Start digikam with the configuration file <config>"),
+                                        i18n("Start digikam with the configuration file \"config\""),
                                         QLatin1String("config")));
 
     parser.process(app);
     aboutData.processCommandLine(&parser);
+
+    bool loadTranslation = isRunningInAppImageBundle();
+
+#if defined Q_OS_WIN || defined Q_OS_MACOS
+
+    loadTranslation      = true;
+
+#endif
+
+    QString transPath = QStandardPaths::locate(QStandardPaths::DataLocation,
+                                               QLatin1String("translations"),
+                                               QStandardPaths::LocateDirectory);
+
+    qCDebug(DIGIKAM_GENERAL_LOG) << "Qt translations path:" << transPath;
+
+    QTranslator translator;
+
+    if (loadTranslation && !transPath.isEmpty())
+    {
+        QLocale locale;
+
+        qCDebug(DIGIKAM_GENERAL_LOG) << "Application locale:" << locale.name();
+
+        bool ret = translator.load(locale, QLatin1String("qtbase"),
+                                   QLatin1String("_"), transPath);
+
+        qCDebug(DIGIKAM_GENERAL_LOG) << "Loading translation:" << ret;
+
+        if (ret)
+        {
+            app.installTranslator(&translator);
+        }
+    }
 
     MetaEngine::initializeExiv2();
 
     // Force to use application icon for non plasma desktop as Unity for ex.
 
     QApplication::setWindowIcon(QIcon::fromTheme(QLatin1String("digikam"), app.windowIcon()));
+
+#ifdef Q_OS_WIN
+
+    if (QSysInfo::currentCpuArchitecture().contains(QLatin1String("64")) &&
+        !QSysInfo::buildCpuArchitecture().contains(QLatin1String("64")))
+    {
+        QMessageBox::critical(qApp->activeWindow(),
+                              qApp->applicationName(),
+                              i18n("<p>You are running digiKam as a 32-bit version on a 64-bit Windows.</p>"
+                                   "<p>Please install the 64-bit version of digiKam to get "
+                                   "a better experience with digiKam.</p>"));
+    }
+
+#endif
 
     // Check if Qt database plugins are available.
 
@@ -202,11 +276,12 @@ int main(int argc, char* argv[])
 
         if (!commandLineDBDir.exists())
         {
-            qCDebug(DIGIKAM_GENERAL_LOG) << "The given database-directory does not exist or is not readable. Ignoring." << commandLineDBDir.path();
+            qCDebug(DIGIKAM_GENERAL_LOG) << "The given database-directory does not exist or is not readable. Ignoring."
+                                         << commandLineDBDir.absolutePath();
         }
         else
         {
-            commandLineDBPath = commandLineDBDir.path();
+            commandLineDBPath = commandLineDBDir.absolutePath();
         }
     }
 
@@ -220,12 +295,13 @@ int main(int argc, char* argv[])
         {
             QMessageBox::critical(qApp->activeWindow(),
                                   qApp->applicationName(),
-                                  QLatin1String("--config ") + configFilename
-                                  + i18n("<p>The given path for the config file "
-                                         "is not valid. Either its parent "
-                                         "directory does not exist, it is a "
-                                         "directory itself or it cannot be read/"
-                                         "written to.</p>"));
+                                  QLatin1String("--config ") +
+                                  configFilename             +
+                                  i18n("<p>The given path for the config file "
+                                       "is not valid. Either its parent "
+                                       "directory does not exist, it is a "
+                                       "directory itself or it cannot be read/"
+                                       "written to.</p>"));
             qCDebug(DIGIKAM_GENERAL_LOG) << "Invalid path: --config"
                                          << configFilename;
             return 1;
@@ -293,7 +369,7 @@ int main(int argc, char* argv[])
         ThumbsDbAccess::cleanUpDatabase();
         FaceDbAccess::cleanUpDatabase();
         SimilarityDbAccess::cleanUpDatabase();
-        MetaEngine::cleanupExiv2();
+
         return 0;
     }
 
@@ -302,9 +378,22 @@ int main(int argc, char* argv[])
         QIcon::setThemeName(iconTheme);
     }
 
+    // Workaround for the automatic icon theme color
+    // in KF-5.80, depending on the color scheme.
+
+    if      (QIcon::themeName() == QLatin1String("breeze-dark"))
+    {
+        qApp->setPalette(QPalette(Qt::darkGray));
+    }
+    else if (QIcon::themeName() == QLatin1String("breeze"))
+    {
+        qApp->setPalette(QPalette(Qt::white));
+    }
+
 #ifdef Q_OS_WIN
 
     // Necessary to open native open with dialog on windows
+
     CoInitializeEx(NULL, COINIT_APARTMENTTHREADED | COINIT_DISABLE_OLE1DDE);
 
 #endif
@@ -316,9 +405,9 @@ int main(int argc, char* argv[])
     // If application storage place in home directory to save customized XML settings files do not exist, create it,
     // else QFile will not able to create new files as well.
 
-    if (!QFile::exists(QStandardPaths::writableLocation(QStandardPaths::DataLocation)))
+    if (!QFile::exists(QStandardPaths::writableLocation(QStandardPaths::AppDataLocation)))
     {
-        QDir().mkpath(QStandardPaths::writableLocation(QStandardPaths::DataLocation));
+        QDir().mkpath(QStandardPaths::writableLocation(QStandardPaths::AppDataLocation));
     }
 
     // If application cache place in home directory to save cached files do not exist, create it.
@@ -340,6 +429,15 @@ int main(int argc, char* argv[])
     digikam->restoreSession();
     digikam->show();
 
+    QPointer<FilesDownloader> floader = new FilesDownloader(digikam);
+
+    if (!floader->checkDownloadFiles())
+    {
+        floader->startDownload();
+    }
+
+    delete floader;
+
     if      (parser.isSet(QLatin1String("download-from")))
     {
         digikam->downloadFrom(parser.value(QLatin1String("download-from")));
@@ -359,7 +457,6 @@ int main(int argc, char* argv[])
     ThumbsDbAccess::cleanUpDatabase();
     FaceDbAccess::cleanUpDatabase();
     SimilarityDbAccess::cleanUpDatabase();
-    MetaEngine::cleanupExiv2();
 
 #ifdef Q_OS_WIN
 

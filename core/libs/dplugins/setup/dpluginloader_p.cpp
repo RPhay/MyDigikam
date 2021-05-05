@@ -6,7 +6,7 @@
  * Date        : 2018-07-30
  * Description : manager to load external plugins at run-time: private container
  *
- * Copyright (C) 2018-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2018-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -50,6 +50,10 @@ namespace Digikam
 DPluginLoader::Private::Private()
     : pluginsLoaded(false)
 {
+    // Do not load these plugins as they are not currently working.
+
+    blacklist << QLatin1String("Generic_FaceBook_Plugin");
+    blacklist << QLatin1String("Generic_IpFs_Plugin");
 }
 
 DPluginLoader::Private::~Private()
@@ -58,49 +62,63 @@ DPluginLoader::Private::~Private()
 
 QFileInfoList DPluginLoader::Private::pluginEntriesList() const
 {
-    QString     path;
+    QStringList pathList;
 
     // First we try to load in first the local plugin if DK_PLUG_PATH variable is declared.
     // Else, we will load plusing from the system using the standard Qt plugin path.
 
-    QByteArray dkenv = qgetenv("DK_PLUGIN_PATH");
+    QByteArray  dkenv = qgetenv("DK_PLUGIN_PATH");
 
-    if (!dkenv.isEmpty())
+    if (dkenv.isEmpty())
     {
-        qCWarning(DIGIKAM_GENERAL_LOG) << "DK_PLUGIN_PATH env.variable detected. We will use it to load plugin...";
-        path = QString::fromUtf8(dkenv);
+        pathList << QLibraryInfo::location(QLibraryInfo::PluginsPath) +
+                    QLatin1String("/digikam/");
     }
     else
     {
-        path = QLibraryInfo::location(QLibraryInfo::PluginsPath);
-        path.append(QLatin1String("/digikam/"));
+        qCWarning(DIGIKAM_GENERAL_LOG) << "DK_PLUGIN_PATH env.variable detected. "
+                                          "We will use it to load plugin...";
+
+        pathList << QString::fromUtf8(dkenv).split(QLatin1Char(';'),
+                                                   QString::SkipEmptyParts);
     }
 
-    qCDebug(DIGIKAM_GENERAL_LOG) << "Parsing plugins from" << path;
+    qCDebug(DIGIKAM_GENERAL_LOG) << "Parsing plugins from" << pathList;
 
-#ifdef Q_OS_OSX
+#ifdef Q_OS_MACOS
+
     QString filter(QLatin1String("*.dylib *.so"));
+
 #elif defined Q_OS_WIN
+
     QString filter(QLatin1String("*.dll"));
+
 #else
+
     QString filter(QLatin1String("*.so"));
+
 #endif
 
-    QDir dir(path, filter, QDir::Unsorted,
-             QDir::Files | QDir::NoDotAndDotDot);
-
-    QDirIterator  it(dir, QDirIterator::Subdirectories);
     QFileInfoList allFiles;
     QStringList   dupFiles;
 
-    while (it.hasNext())
+    foreach (const QString& path, pathList)
     {
-        it.next();
+        QDir dir(path, filter, QDir::Unsorted,
+                 QDir::Files | QDir::NoDotAndDotDot);
 
-        if (!dupFiles.contains(it.fileInfo().baseName()))
+        QDirIterator it(dir, QDirIterator::Subdirectories);
+
+        while (it.hasNext())
         {
-            dupFiles << it.fileInfo().baseName();
-            allFiles << it.fileInfo();
+            it.next();
+
+            if (!it.filePath().contains(QLatin1String("dSYM")) &&  // Ignore debug binary extensions under MacOS
+                !dupFiles.contains(it.fileInfo().baseName()))
+            {
+                dupFiles << it.fileInfo().baseName();
+                allFiles << it.fileInfo();
+            }
         }
     }
 
@@ -151,7 +169,7 @@ void DPluginLoader::Private::loadPlugins()
 
     Q_ASSERT(allPlugins.isEmpty());
 
-    for (const QFileInfo& info : pluginEntriesList())
+    foreach (const QFileInfo& info, pluginEntriesList())
     {
         if (!whitelist.isEmpty() && !whitelist.contains(info.baseName()))
         {
@@ -164,8 +182,9 @@ void DPluginLoader::Private::loadPlugins()
             qCDebug(DIGIKAM_GENERAL_LOG) << "Ignoring blacklisted plugin" << info.filePath();
             continue;
         }
-
-        // qCDebug(DIGIKAM_GENERAL_LOG) << info.baseName() << "-" << info.canonicalPath();
+/*
+        qCDebug(DIGIKAM_GENERAL_LOG) << info.baseName() << "-" << info.canonicalPath();
+*/
         const QString path          = info.canonicalFilePath();
         QPluginLoader* const loader = new QPluginLoader(path, DPluginLoader::instance());
         QObject* const obj          = loader->instance();

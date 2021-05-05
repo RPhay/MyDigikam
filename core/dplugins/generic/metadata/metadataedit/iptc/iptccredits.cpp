@@ -6,7 +6,7 @@
  * Date        : 2006-10-12
  * Description : IPTC credits settings page.
  *
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -27,11 +27,11 @@
 #include <QCheckBox>
 #include <QLabel>
 #include <QPushButton>
-#include <QValidator>
 #include <QGridLayout>
 #include <QApplication>
 #include <QStyle>
 #include <QLineEdit>
+#include <QToolTip>
 
 // KDE includes
 
@@ -83,66 +83,58 @@ IPTCCredits::IPTCCredits(QWidget* const parent)
 {
     QGridLayout* const grid = new QGridLayout(this);
 
-    // IPTC only accept printable Ascii char.
-    QRegExp asciiRx(QLatin1String("[\x20-\x7F]+$"));
-    QValidator* const asciiValidator = new QRegExpValidator(asciiRx, this);
-
     // --------------------------------------------------------
 
     d->copyrightCheck = new QCheckBox(i18n("Copyright:"), this);
     d->copyrightEdit  = new QLineEdit(this);
     d->copyrightEdit->setClearButtonEnabled(true);
-    d->copyrightEdit->setValidator(asciiValidator);
     d->copyrightEdit->setMaxLength(128);
     d->copyrightEdit->setWhatsThis(i18n("Set here the necessary copyright notice. This field is limited "
-                                        "to 128 ASCII characters."));
+                                        "to 128 characters."));
 
     // --------------------------------------------------------
 
     d->bylineEdit  = new MultiStringsEdit(this, i18n("Byline:"),
                                           i18n("Set here the name of content creator."),
-                                          true, 32);
+                                          32);
 
     // --------------------------------------------------------
 
     d->bylineTitleEdit  = new MultiStringsEdit(this, i18n("Byline Title:"),
                                                i18n("Set here the title of content creator."),
-                                               true, 32);
+                                               32);
 
     // --------------------------------------------------------
 
     d->creditCheck = new QCheckBox(i18n("Credit:"), this);
     d->creditEdit  = new QLineEdit(this);
     d->creditEdit->setClearButtonEnabled(true);
-    d->creditEdit->setValidator(asciiValidator);
     d->creditEdit->setMaxLength(32);
     d->creditEdit->setWhatsThis(i18n("Set here the content provider. "
-                                     "This field is limited to 32 ASCII characters."));
+                                     "This field is limited to 32 characters."));
 
     // --------------------------------------------------------
 
     d->sourceCheck = new QCheckBox(i18nc("original owner of content", "Source:"), this);
     d->sourceEdit  = new QLineEdit(this);
     d->sourceEdit->setClearButtonEnabled(true);
-    d->sourceEdit->setValidator(asciiValidator);
     d->sourceEdit->setMaxLength(32);
     d->sourceEdit->setWhatsThis(i18n("Set here the original owner of content. "
-                                     "This field is limited to 32 ASCII characters."));
+                                     "This field is limited to 32 characters."));
 
     // --------------------------------------------------------
 
     d->contactEdit  = new MultiStringsEdit(this, i18n("Contact:"),
                                            i18n("Set here the person or organization to contact."),
-                                           true, 128);
+                                           128);
 
     // --------------------------------------------------------
 
     QLabel* const note = new QLabel(i18n("<b>Note: "
-                 "<b><a href='https://en.wikipedia.org/wiki/IPTC_Information_Interchange_Model'>IPTC</a></b> "
-                 "text tags only support the printable "
-                 "<b><a href='https://en.wikipedia.org/wiki/Ascii'>ASCII</a></b> "
-                 "characters and limit string sizes. "
-                 "Use contextual help for details.</b>"), this);
+                 "<a href='https://en.wikipedia.org/wiki/IPTC_Information_Interchange_Model'>IPTC</a> "
+                 "text tags are limited string sizes. Use contextual help for details. "
+                 "Consider to use <a href='https://en.wikipedia.org/wiki/Extensible_Metadata_Platform'>XMP</a> instead.</b>"),
+                 this);
     note->setOpenExternalLinks(true);
     note->setWordWrap(true);
     note->setFrameStyle(QFrame::StyledPanel | QFrame::Raised);
@@ -169,7 +161,6 @@ IPTCCredits::IPTCCredits(QWidget* const parent)
     connect(d->copyrightCheck, SIGNAL(toggled(bool)),
             d->copyrightEdit, SLOT(setEnabled(bool)));
 
-
     connect(d->creditCheck, SIGNAL(toggled(bool)),
             d->creditEdit, SLOT(setEnabled(bool)));
 
@@ -184,8 +175,14 @@ IPTCCredits::IPTCCredits(QWidget* const parent)
     connect(d->bylineEdit, SIGNAL(signalModified()),
             this, SIGNAL(signalModified()));
 
+    connect(d->bylineEdit->valueEdit(), SIGNAL(textChanged(QString)),
+            this, SLOT(slotLineEditModified()));
+
     connect(d->bylineTitleEdit, SIGNAL(signalModified()),
             this, SIGNAL(signalModified()));
+
+    connect(d->bylineTitleEdit->valueEdit(), SIGNAL(textChanged(QString)),
+            this, SLOT(slotLineEditModified()));
 
     connect(d->creditCheck, SIGNAL(toggled(bool)),
             this, SIGNAL(signalModified()));
@@ -196,16 +193,28 @@ IPTCCredits::IPTCCredits(QWidget* const parent)
     connect(d->contactEdit, SIGNAL(signalModified()),
             this, SIGNAL(signalModified()));
 
+    connect(d->contactEdit->valueEdit(), SIGNAL(textChanged(QString)),
+            this, SLOT(slotLineEditModified()));
+
     // --------------------------------------------------------
 
     connect(d->copyrightEdit, SIGNAL(textChanged(QString)),
             this, SIGNAL(signalModified()));
 
+    connect(d->copyrightEdit, SIGNAL(textChanged(QString)),
+            this, SLOT(slotLineEditModified()));
+
     connect(d->creditEdit, SIGNAL(textChanged(QString)),
             this, SIGNAL(signalModified()));
 
+    connect(d->creditEdit, SIGNAL(textChanged(QString)),
+            this, SLOT(slotLineEditModified()));
+
     connect(d->sourceEdit, SIGNAL(textChanged(QString)),
             this, SIGNAL(signalModified()));
+
+    connect(d->sourceEdit, SIGNAL(textChanged(QString)),
+            this, SLOT(slotLineEditModified()));
 }
 
 IPTCCredits::~IPTCCredits()
@@ -213,17 +222,31 @@ IPTCCredits::~IPTCCredits()
     delete d;
 }
 
+void IPTCCredits::slotLineEditModified()
+{
+    QLineEdit* const ledit = dynamic_cast<QLineEdit*>(sender());
+
+    if (!ledit)
+    {
+        return;
+    }
+
+    QToolTip::showText(ledit->mapToGlobal(QPoint(0, (-1)*(ledit->height() + 16))),
+                       i18np("%1 character left", "%1 characters left", ledit->maxLength() - ledit->text().size()),
+                       ledit);
+}
+
 void IPTCCredits::readMetadata(QByteArray& iptcData)
 {
     blockSignals(true);
-    DMetadata meta;
-    meta.setIptc(iptcData);
+    QScopedPointer<DMetadata> meta(new DMetadata);
+    meta->setIptc(iptcData);
     QString     data;
     QStringList list;
 
     d->copyrightEdit->clear();
     d->copyrightCheck->setChecked(false);
-    data = meta.getIptcTagString("Iptc.Application2.Copyright", false);
+    data = meta->getIptcTagString("Iptc.Application2.Copyright", false);
 
     if (!data.isNull())
     {
@@ -233,15 +256,15 @@ void IPTCCredits::readMetadata(QByteArray& iptcData)
 
     d->copyrightEdit->setEnabled(d->copyrightCheck->isChecked());
 
-    list = meta.getIptcTagsStringList("Iptc.Application2.Byline", false);
+    list = meta->getIptcTagsStringList("Iptc.Application2.Byline", false);
     d->bylineEdit->setValues(list);
 
-    list = meta.getIptcTagsStringList("Iptc.Application2.BylineTitle", false);
+    list = meta->getIptcTagsStringList("Iptc.Application2.BylineTitle", false);
     d->bylineTitleEdit->setValues(list);
 
     d->creditEdit->clear();
     d->creditCheck->setChecked(false);
-    data = meta.getIptcTagString("Iptc.Application2.Credit", false);
+    data = meta->getIptcTagString("Iptc.Application2.Credit", false);
 
     if (!data.isNull())
     {
@@ -253,7 +276,7 @@ void IPTCCredits::readMetadata(QByteArray& iptcData)
 
     d->sourceEdit->clear();
     d->sourceCheck->setChecked(false);
-    data = meta.getIptcTagString("Iptc.Application2.Source", false);
+    data = meta->getIptcTagString("Iptc.Application2.Source", false);
 
     if (!data.isNull())
     {
@@ -263,7 +286,7 @@ void IPTCCredits::readMetadata(QByteArray& iptcData)
 
     d->sourceEdit->setEnabled(d->sourceCheck->isChecked());
 
-    list = meta.getIptcTagsStringList("Iptc.Application2.Contact", false);
+    list = meta->getIptcTagsStringList("Iptc.Application2.Contact", false);
     d->contactEdit->setValues(list);
 
     blockSignals(false);
@@ -272,40 +295,40 @@ void IPTCCredits::readMetadata(QByteArray& iptcData)
 void IPTCCredits::applyMetadata(QByteArray& iptcData)
 {
     QStringList oldList, newList;
-    DMetadata meta;
-    meta.setIptc(iptcData);
+    QScopedPointer<DMetadata> meta(new DMetadata);
+    meta->setIptc(iptcData);
 
     if (d->copyrightCheck->isChecked())
-        meta.setIptcTagString("Iptc.Application2.Copyright", d->copyrightEdit->text());
+        meta->setIptcTagString("Iptc.Application2.Copyright", d->copyrightEdit->text());
     else
-        meta.removeIptcTag("Iptc.Application2.Copyright");
+        meta->removeIptcTag("Iptc.Application2.Copyright");
 
     if (d->bylineEdit->getValues(oldList, newList))
-        meta.setIptcTagsStringList("Iptc.Application2.Byline", 32, oldList, newList);
+        meta->setIptcTagsStringList("Iptc.Application2.Byline", 32, oldList, newList);
     else
-        meta.removeIptcTag("Iptc.Application2.Byline");
+        meta->removeIptcTag("Iptc.Application2.Byline");
 
     if (d->bylineTitleEdit->getValues(oldList, newList))
-        meta.setIptcTagsStringList("Iptc.Application2.BylineTitle", 32, oldList, newList);
+        meta->setIptcTagsStringList("Iptc.Application2.BylineTitle", 32, oldList, newList);
     else
-        meta.removeIptcTag("Iptc.Application2.BylineTitle");
+        meta->removeIptcTag("Iptc.Application2.BylineTitle");
 
     if (d->creditCheck->isChecked())
-        meta.setIptcTagString("Iptc.Application2.Credit", d->creditEdit->text());
+        meta->setIptcTagString("Iptc.Application2.Credit", d->creditEdit->text());
     else
-        meta.removeIptcTag("Iptc.Application2.Credit");
+        meta->removeIptcTag("Iptc.Application2.Credit");
 
     if (d->sourceCheck->isChecked())
-        meta.setIptcTagString("Iptc.Application2.Source", d->sourceEdit->text());
+        meta->setIptcTagString("Iptc.Application2.Source", d->sourceEdit->text());
     else
-        meta.removeIptcTag("Iptc.Application2.Source");
+        meta->removeIptcTag("Iptc.Application2.Source");
 
     if (d->contactEdit->getValues(oldList, newList))
-        meta.setIptcTagsStringList("Iptc.Application2.Contact", 128, oldList, newList);
+        meta->setIptcTagsStringList("Iptc.Application2.Contact", 128, oldList, newList);
     else
-        meta.removeIptcTag("Iptc.Application2.Contact");
+        meta->removeIptcTag("Iptc.Application2.Contact");
 
-    iptcData = meta.getIptc();
+    iptcData = meta->getIptc();
 }
 
 } // namespace DigikamGenericMetadataEditPlugin

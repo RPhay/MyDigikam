@@ -6,7 +6,7 @@
  * Date        : 2004-07-21
  * Description : a widget to display an image histogram.
  *
- * Copyright (C) 2004-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2004-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -74,27 +74,27 @@ public:
 public:
 
     explicit Private()
-        : sixteenBits(false),
-          guideVisible(false),
-          statisticsVisible(false),
-          inSelected(false),
-          selectMode(false),
-          showProgress(false),
-          renderingType(FullImageHistogram),
-          range(255),
-          state(HistogramNone),
-          channelType(LuminosityChannel),
-          scaleType(LogScaleHistogram),
-          imageHistogram(nullptr),
+        : sixteenBits       (false),
+          guideVisible      (false),
+          statisticsVisible (false),
+          inSelected        (false),
+          selectMode        (false),
+          showProgress      (false),
+          renderingType     (FullImageHistogram),
+          range             (255),
+          state             (HistogramNone),
+          channelType       (LuminosityChannel),
+          scaleType         (LogScaleHistogram),
+          imageHistogram    (nullptr),
           selectionHistogram(nullptr),
-          xmin(0),
-          xminOrg(0),
-          xmax(0),
-          animationState(0),
-          animation(nullptr),
-          histogramPainter(nullptr)
+          xmin              (0),
+          xminOrg           (0),
+          xmax              (0),
+          animationState    (0),
+          animation         (nullptr),
+          progressPix       (nullptr),
+          histogramPainter  (nullptr)
     {
-        progressPix = DWorkingPixmap();
     }
 
 public:
@@ -123,7 +123,7 @@ public:
 
     int                              animationState;
     QPropertyAnimation*              animation;
-    DWorkingPixmap                   progressPix;
+    DWorkingPixmap*                  progressPix;
 
     DColor                           colorGuide;
 
@@ -134,8 +134,9 @@ HistogramWidget::HistogramWidget(int w, int h,
                                  QWidget* const parent, bool selectMode,
                                  bool showProgress, bool statisticsVisible)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
+    d->progressPix  = new DWorkingPixmap(this);
     setup(w, h, selectMode, statisticsVisible);
     d->showProgress = showProgress;
 }
@@ -156,8 +157,8 @@ void HistogramWidget::setup(int w, int h, bool selectMode, bool statisticsVisibl
     d->histogramPainter  = new HistogramPainter(this);
     d->animation         = new QPropertyAnimation(this, "animationState", this);
     d->animation->setStartValue(0);
-    d->animation->setEndValue(d->progressPix.frameCount() - 1);
-    d->animation->setDuration(200 * d->progressPix.frameCount());
+    d->animation->setEndValue(d->progressPix->frameCount() - 1);
+    d->animation->setDuration(200 * d->progressPix->frameCount());
     d->animation->setLoopCount(-1);
 
     setMouseTracking(true);
@@ -489,7 +490,7 @@ void HistogramWidget::paintEvent(QPaintEvent*)
 
         // In first, we draw an animation.
 
-        QPixmap anim = d->progressPix.frameAt(d->animationState);
+        QPixmap anim = d->progressPix->frameAt(d->animationState);
 
         // ... and we render busy text.
 
@@ -503,12 +504,12 @@ void HistogramWidget::paintEvent(QPaintEvent*)
         if (d->state == HistogramWidget::Private::HistogramDataLoading)
         {
             p1.drawText(0, 0, width(), height(), Qt::AlignCenter,
-                        i18n("Loading image..."));
+                        i18nc("@info: histogram", "Loading image..."));
         }
         else
         {
             p1.drawText(0, 0, width(), height(), Qt::AlignCenter,
-                        i18n("Histogram calculation..."));
+                        i18nc("@info: histogram", "Histogram calculation..."));
         }
 
         p1.end();
@@ -525,7 +526,7 @@ void HistogramWidget::paintEvent(QPaintEvent*)
         p1.drawRect(0, 0, width() - 1, height() - 1);
         p1.setPen(palette().color(QPalette::Active, QPalette::Text));
         p1.drawText(0, 0, width(), height(), Qt::AlignCenter,
-                    i18n("Histogram\ncalculation\nfailed."));
+                    i18nc("@info: histogram", "Histogram\ncalculation\nfailed."));
         p1.end();
 
         return;
@@ -585,27 +586,27 @@ void HistogramWidget::paintEvent(QPaintEvent*)
         QString            tipText, value;
         tipText = QLatin1String("<qt><table cellspacing=0 cellpadding=0>");
 
-        tipText += cnt.cellBeg + i18n("Mean:") + cnt.cellMid;
+        tipText += cnt.cellBeg + i18nc("@info: histogram properties", "Mean:") + cnt.cellMid;
         double mean = histogram->getMean(d->channelType, 0, histogram->getHistogramSegments() - 1);
         tipText += value.setNum(mean, 'f', 1) + cnt.cellEnd;
 
-        tipText += cnt.cellBeg + i18n("Pixels:") + cnt.cellMid;
+        tipText += cnt.cellBeg + i18nc("@info: histogram properties", "Pixels:") + cnt.cellMid;
         double pixels = histogram->getPixels();
         tipText += value.setNum((float)pixels, 'f', 0) + cnt.cellEnd;
 
-        tipText += cnt.cellBeg + i18n("Std dev.:") + cnt.cellMid;
+        tipText += cnt.cellBeg + i18nc("@info: histogram properties", "Std dev.:") + cnt.cellMid;
         double stddev = histogram->getStdDev(d->channelType, 0, histogram->getHistogramSegments() - 1);
         tipText += value.setNum(stddev, 'f', 1) + cnt.cellEnd;
 
-        tipText += cnt.cellBeg + i18n("Count:") + cnt.cellMid;
+        tipText += cnt.cellBeg + i18nc("@info: histogram properties", "Count:") + cnt.cellMid;
         double counts = histogram->getCount(d->channelType, 0, histogram->getHistogramSegments() - 1);
         tipText += value.setNum((float)counts, 'f', 0) + cnt.cellEnd;
 
-        tipText += cnt.cellBeg + i18n("Median:") + cnt.cellMid;
+        tipText += cnt.cellBeg + i18nc("@info: histogram properties", "Median:") + cnt.cellMid;
         double median = histogram->getMedian(d->channelType, 0, histogram->getHistogramSegments() - 1);
         tipText += value.setNum(median, 'f', 1) + cnt.cellEnd;
 
-        tipText += cnt.cellBeg + i18n("Percent:") + cnt.cellMid;
+        tipText += cnt.cellBeg + i18nc("@info: histogram properties", "Percent:") + cnt.cellMid;
         double percentile = (pixels > 0 ? (100.0 * counts / pixels) : 0.0);
         tipText += value.setNum(percentile, 'f', 1) + cnt.cellEnd;
 
@@ -688,6 +689,7 @@ void HistogramWidget::slotMinValueChanged(int min)
         if ((min == 0) && (d->xmax == 1.0))
         {
             // everything is selected means no selection
+
             d->xmin = 0.0;
             d->xmax = 0.0;
         }
@@ -708,6 +710,7 @@ void HistogramWidget::slotMaxValueChanged(int max)
         if      ((d->xmin == 0.0) && (max == d->range))
         {
             // everything is selected means no selection
+
             d->xmin = 0.0;
             d->xmax = 0.0;
         }

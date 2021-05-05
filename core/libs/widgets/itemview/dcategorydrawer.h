@@ -8,7 +8,7 @@
  *
  * Copyright (C) 2007      by Rafael Fernández López <ereslibre at kde dot org>
  * Copyright (C) 2009-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2011-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2011-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -48,7 +48,7 @@ class DCategorizedView;
  * The category drawing is performed by this class. It also gives information about the category
  * height and margins.
  */
-class DIGIKAM_EXPORT DCategoryDrawer : public QObject
+class DIGIKAM_EXPORT DCategoryDrawer : public QObject       // clazy:exclude=ctor-missing-parent-argument
 {
     Q_OBJECT
 
@@ -61,12 +61,12 @@ public:
      * @since 5.0
      */
     explicit DCategoryDrawer(DCategorizedView* const view);
-    virtual ~DCategoryDrawer();
+    ~DCategoryDrawer()                                            override;
 
     /**
      * @return The view this category drawer is associated with.
      */
-    DCategorizedView* view() const;
+    DCategorizedView* view()                                const;
 
     /**
      * This method purpose is to draw a category represented by the given
@@ -78,23 +78,24 @@ public:
     virtual void drawCategory(const QModelIndex& index,
                               int sortRole,
                               const QStyleOption& option,
-                              QPainter* painter) const;
+                              QPainter* painter)            const;
 
     /**
      * @return The category height for the category represented by index @p index with
      *         style options @p option.
      */
-    virtual int categoryHeight(const QModelIndex& index, const QStyleOption& option) const;
+    virtual int categoryHeight(const QModelIndex& index,
+                               const QStyleOption& option)  const;
 
     /**
      * @note 0 by default
      */
-    virtual int leftMargin() const;
+    virtual int leftMargin()                                const;
 
     /**
      * @note 0 by default
      */
-    virtual int rightMargin() const;
+    virtual int rightMargin()                               const;
 
 Q_SIGNALS:
 
@@ -173,7 +174,7 @@ protected:
 private:
 
     class Private;
-    Private *const d;
+    Private* const d;
 };
 
 } // namespace Digikam

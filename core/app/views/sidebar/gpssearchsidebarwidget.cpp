@@ -7,7 +7,7 @@
  * Description : Side Bar Widget for the gps search.
  *
  * Copyright (C) 2009-2010 by Johannes Wienke <languitar at semipol dot de>
- * Copyright (C) 2010-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2010-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2012      by Andi Clemens <andi dot clemens at gmail dot com>
  * Copyright (C) 2014      by Mohamed_Anwer <m_dot_anwer at gmx dot com>
  * Copyright (C) 2010      by Aditya Bhatt <adityabhatt1991 at gmail dot com>
@@ -53,8 +53,6 @@
 namespace Digikam
 {
 
-#ifdef HAVE_MARBLE
-
 class Q_DECL_HIDDEN GPSSearchSideBarWidget::Private
 {
 public:
@@ -73,7 +71,7 @@ GPSSearchSideBarWidget::GPSSearchSideBarWidget(QWidget* const parent,
                                                ItemFilterModel* const imageFilterModel,
                                                QItemSelectionModel* const itemSelectionModel)
     : SidebarWidget(parent),
-      d(new Private)
+      d            (new Private)
 {
     setObjectName(QLatin1String("GPS Search Sidebar"));
     setProperty("Shortcut", Qt::CTRL + Qt::SHIFT + Qt::Key_F8);
@@ -133,7 +131,5 @@ const QString GPSSearchSideBarWidget::getCaption()
 {
     return i18nc("Search images on a map", "Map");
 }
-
-#endif // HAVE_MARBLE
 
 } // namespace Digikam

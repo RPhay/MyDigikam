@@ -7,7 +7,7 @@
  * Description : a class to hold GPS information about an item.
  *
  * Copyright (C) 2010-2014 by Michael G. Hansen <mike at mghansen dot de>
- * Copyright (C) 2015-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2015-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -44,14 +44,18 @@ class DIGIKAM_DATABASE_EXPORT ItemGPS : public GPSItemContainer
 public:
 
     explicit ItemGPS(const ItemInfo& info);
-    virtual ~ItemGPS();
+    ~ItemGPS()            override;
 
     QString saveChanges() override;
-    bool loadImageData() override;
+    bool loadImageData()  override;
 
 private:
 
     ItemInfo m_info;
+
+private:
+
+    Q_DISABLE_COPY(ItemGPS)
 };
 
 } // namespace Digikam

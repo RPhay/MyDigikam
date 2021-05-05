@@ -6,7 +6,7 @@
  * Date        : 2007-11-10
  * Description : IPTC envelope settings page.
  *
- * Copyright (C) 2007-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2007-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -38,7 +38,7 @@ class IPTCEnvelope : public QWidget
 public:
 
     explicit IPTCEnvelope(QWidget* const parent);
-    ~IPTCEnvelope();
+    ~IPTCEnvelope() override;
 
     void applyMetadata(QByteArray& iptcData);
     void readMetadata(QByteArray& iptcData);
@@ -49,7 +49,9 @@ Q_SIGNALS:
 
 private Q_SLOTS:
 
+    void slotDestinationLeftCharacters();
     void slotSetTodaySent();
+    void slotLineEditModified();
 
 private:
 

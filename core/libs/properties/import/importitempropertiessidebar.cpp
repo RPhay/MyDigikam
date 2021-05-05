@@ -6,7 +6,7 @@
  * Date        : 2006-02-08
  * Description : item properties side bar used by import tool.
  *
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2013      by Michael G. Hansen <mike at mghansen dot de>
  *
  * This program is free software; you can redistribute it
@@ -54,16 +54,19 @@ class Q_DECL_HIDDEN ImportItemPropertiesSideBarImport::Private
 public:
 
     explicit Private()
-      : dirtyMetadataTab(false),
-        dirtyCameraItemTab(false),
-        dirtyGpsTab(false),
+      : dirtyMetadataTab    (false),
+        dirtyCameraItemTab  (false),
+        dirtyGpsTab         (false),
+        metaData            (nullptr),
 
 #ifdef HAVE_MARBLE
-        gpsTab(nullptr),
+
+        gpsTab              (nullptr),
+
 #endif // HAVE_MARBLE
 
-        metadataTab(nullptr),
-        cameraItemTab(nullptr)
+        metadataTab         (nullptr),
+        cameraItemTab       (nullptr)
     {
     }
 
@@ -71,12 +74,14 @@ public:
     bool                       dirtyCameraItemTab;
     bool                       dirtyGpsTab;
 
-    DMetadata                  metaData;
+    DMetadata*                 metaData;
 
     CamItemInfo                itemInfo;
 
 #ifdef HAVE_MARBLE
+
     ItemPropertiesGPSTab*      gpsTab;
+
 #endif // HAVE_MARBLE
 
     ItemPropertiesMetadataTab* metadataTab;
@@ -88,7 +93,7 @@ ImportItemPropertiesSideBarImport::ImportItemPropertiesSideBarImport(QWidget* co
                                                          Qt::Edge side,
                                                          bool mimimizedDefault)
     : Sidebar(parent, splitter, side, mimimizedDefault),
-      d(new Private)
+      d      (new Private)
 {
     d->cameraItemTab = new ImportItemPropertiesTab(parent);
     d->metadataTab   = new ItemPropertiesMetadataTab(parent);
@@ -97,8 +102,10 @@ ImportItemPropertiesSideBarImport::ImportItemPropertiesSideBarImport(QWidget* co
     appendTab(d->metadataTab,   QIcon::fromTheme(QLatin1String("format-text-code")),              i18n("Metadata")); // krazy:exclude=iconnames
 
 #ifdef HAVE_MARBLE
+
     d->gpsTab        = new ItemPropertiesGPSTab(parent);
     appendTab(d->gpsTab,        QIcon::fromTheme(QLatin1String("globe")), i18n("Geolocation"));
+
 #endif // HAVE_MARBLE
 
     // --- NOTE: use dynamic binding as slotChangedTab() is a virtual method which can be re-implemented in derived classes.
@@ -131,7 +138,12 @@ void ImportItemPropertiesSideBarImport::itemChanged(const CamItemInfo& itemInfo,
         return;
     }
 
-    d->metaData           = meta;
+    if (d->metaData)
+    {
+        delete d->metaData;
+    }
+
+    d->metaData           = new DMetadata(meta.data());
     d->itemInfo           = itemInfo;
     d->dirtyMetadataTab   = false;
     d->dirtyCameraItemTab = false;
@@ -143,7 +155,13 @@ void ImportItemPropertiesSideBarImport::itemChanged(const CamItemInfo& itemInfo,
 void ImportItemPropertiesSideBarImport::slotNoCurrentItem()
 {
     d->itemInfo           = CamItemInfo();
-    d->metaData           = DMetadata();
+
+    if (d->metaData)
+    {
+        delete d->metaData;
+        d->metaData = nullptr;
+    }
+
     d->dirtyMetadataTab   = false;
     d->dirtyCameraItemTab = false;
     d->dirtyGpsTab        = false;
@@ -152,8 +170,11 @@ void ImportItemPropertiesSideBarImport::slotNoCurrentItem()
     d->metadataTab->setCurrentURL();
 
 #ifdef HAVE_MARBLE
+
     d->gpsTab->setCurrentURL();
+
 #endif // HAVE_MARBLE
+
 }
 
 void ImportItemPropertiesSideBarImport::slotChangedTab(QWidget* tab)
@@ -173,10 +194,12 @@ void ImportItemPropertiesSideBarImport::slotChangedTab(QWidget* tab)
     }
     else if ((tab == d->metadataTab) && !d->dirtyMetadataTab)
     {
-        d->metadataTab->setCurrentData(d->metaData, d->itemInfo.name);
+        d->metadataTab->setCurrentData(d->metaData, d->itemInfo.url());
         d->dirtyMetadataTab = true;
     }
+
 #ifdef HAVE_MARBLE
+
     else if ((tab == d->gpsTab) && !d->dirtyGpsTab)
     {
         d->gpsTab->setMetadata(d->metaData, d->itemInfo.url());
@@ -184,6 +207,7 @@ void ImportItemPropertiesSideBarImport::slotChangedTab(QWidget* tab)
     }
 
     d->gpsTab->setActive(tab == d->gpsTab);
+
 #endif // HAVE_MARBLE
 
     unsetCursor();
@@ -194,16 +218,19 @@ void ImportItemPropertiesSideBarImport::doLoadState()
     /// @todo This code is taken from ItemPropertiesSideBar::doLoadState()
     ///       Ideally ImportItemPropertiesSideBarImport should be a subclass of
     ///       ItemPropertiesSideBar
+
     Sidebar::doLoadState();
 
-    KConfigGroup group = getConfigGroup();
+    KConfigGroup group                  = getConfigGroup();
 
-    KConfigGroup groupCameraItemTab    = KConfigGroup(&group, entryName(QLatin1String("Camera Item Properties Tab")));
+    KConfigGroup groupCameraItemTab     = KConfigGroup(&group, entryName(QLatin1String("Camera Item Properties Tab")));
     d->cameraItemTab->readSettings(groupCameraItemTab);
 
 #ifdef HAVE_MARBLE
+
     KConfigGroup groupGPSTab            = KConfigGroup(&group, entryName(QLatin1String("GPS Properties Tab")));
     d->gpsTab->readSettings(groupGPSTab);
+
 #endif // HAVE_MARBLE
 
     const KConfigGroup groupMetadataTab = KConfigGroup(&group, entryName(QLatin1String("Metadata Properties Tab")));
@@ -218,14 +245,16 @@ void ImportItemPropertiesSideBarImport::doSaveState()
 
     Sidebar::doSaveState();
 
-    KConfigGroup group = getConfigGroup();
+    KConfigGroup group              = getConfigGroup();
 
     KConfigGroup groupCameraItemTab = KConfigGroup(&group, entryName(QLatin1String("Camera Item Properties Tab")));
     d->cameraItemTab->writeSettings(groupCameraItemTab);
 
 #ifdef HAVE_MARBLE
+
     KConfigGroup groupGPSTab        = KConfigGroup(&group, entryName(QLatin1String("GPS Properties Tab")));
     d->gpsTab->writeSettings(groupGPSTab);
+
 #endif // HAVE_MARBLE
 
     KConfigGroup groupMetadataTab   = KConfigGroup(&group, entryName(QLatin1String("Metadata Properties Tab")));

@@ -44,7 +44,7 @@ class PanoPreviewPage : public DWizardPage
 public:
 
     explicit PanoPreviewPage(PanoManager* const mngr, QWizard* const dlg);
-    ~PanoPreviewPage();
+    ~PanoPreviewPage() override;
 
 private:
 
@@ -52,9 +52,9 @@ private:
     void startStitching();
 
     void preInitializePage();
-    void initializePage();
-    bool validatePage();
-    void cleanupPage();
+    void initializePage()   override;
+    bool validatePage()     override;
+    void cleanupPage()      override;
     void cleanupPage(QMutexLocker& lock);
 
 Q_SIGNALS:

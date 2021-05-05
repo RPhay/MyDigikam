@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Copyright (c) 2013-2020 by Gilles Caulier  <caulier dot gilles at gmail dot com>
+# Copyright (c) 2013-2021 by Gilles Caulier  <caulier dot gilles at gmail dot com>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
@@ -60,8 +60,8 @@ RegisterRemoteServers()
 {
 
 SERVER_LIST="\
-git.kde.org \
-milonia.kde.org \
+invent.kde.org \
+deino.kde.org \
 "
 
 if [[ ! -f ~/.ssh/known_hosts ]] ; then

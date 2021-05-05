@@ -8,7 +8,7 @@
  *
  * Copyright (C) 2009-2010 by Johannes Wienke <languitar at semipol dot de>
  * Copyright (C) 2010-2011 by Andi Clemens <andi dot clemens at gmail dot com>
- * Copyright (C) 2011-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2011-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -49,14 +49,14 @@ class Q_DECL_HIDDEN TagFilterView::Private
 public:
 
     explicit Private()
-      : onRestoreTagFiltersAction(nullptr),
+      : onRestoreTagFiltersAction (nullptr),
         offRestoreTagFiltersAction(nullptr),
-        ignoreTagAction(nullptr),
-        includeTagAction(nullptr),
-        excludeTagAction(nullptr),
-        restoreTagFiltersAction(nullptr),
-        tagFilterModeAction(nullptr),
-        tagFilterModel(nullptr)
+        ignoreTagAction           (nullptr),
+        includeTagAction          (nullptr),
+        excludeTagAction          (nullptr),
+        restoreTagFiltersAction   (nullptr),
+        tagFilterModeAction       (nullptr),
+        tagFilterModel            (nullptr)
     {
     }
 
@@ -73,18 +73,19 @@ public:
 };
 
 TagFilterView::TagFilterView(QWidget* const parent, TagModel* const tagFilterModel)
-    : TagCheckView(parent, tagFilterModel), d(new Private)
+    : TagCheckView(parent, tagFilterModel),
+      d           (new Private)
 {
     d->tagFilterModel             = tagFilterModel;
 
-    d->restoreTagFiltersAction    = new KSelectAction(i18n("Restore Tag Filters"), this);
-    d->onRestoreTagFiltersAction  = d->restoreTagFiltersAction->addAction(i18n("On"));
-    d->offRestoreTagFiltersAction = d->restoreTagFiltersAction->addAction(i18n("Off"));
+    d->restoreTagFiltersAction    = new KSelectAction(i18nc("@action: tag filter", "Restore Tag Filters"), this);
+    d->onRestoreTagFiltersAction  = d->restoreTagFiltersAction->addAction(i18nc("@action: tag filter", "On"));
+    d->offRestoreTagFiltersAction = d->restoreTagFiltersAction->addAction(i18nc("@action: tag filter", "Off"));
 
-    d->tagFilterModeAction        = new KSelectAction(i18n("Tag Filter Mode"), this);
-    d->ignoreTagAction            = d->tagFilterModeAction->addAction(i18n("Ignore This Tag"));
-    d->includeTagAction           = d->tagFilterModeAction->addAction(QIcon::fromTheme(QLatin1String("list-add")),    i18n("Must Have This Tag"));
-    d->excludeTagAction           = d->tagFilterModeAction->addAction(QIcon::fromTheme(QLatin1String("list-remove")), i18n("Must Not Have This Tag"));
+    d->tagFilterModeAction        = new KSelectAction(i18nc("@action: tag filter", "Tag Filter Mode"), this);
+    d->ignoreTagAction            = d->tagFilterModeAction->addAction(i18nc("@action: tag filter", "Ignore This Tag"));
+    d->includeTagAction           = d->tagFilterModeAction->addAction(QIcon::fromTheme(QLatin1String("list-add")),    i18nc("@action: tag filter", "Must Have This Tag"));
+    d->excludeTagAction           = d->tagFilterModeAction->addAction(QIcon::fromTheme(QLatin1String("list-remove")), i18nc("@action: tag filter", "Must Not Have This Tag"));
 
     connect(tagModificationHelper(), SIGNAL(aboutToDeleteTag(TAlbum*)),
             this, SLOT(slotDeleteTagByContextMenu(TAlbum*)));
@@ -101,6 +102,7 @@ void TagFilterView::addCustomContextMenuActions(ContextMenuHelper& cmh, Album* a
     TagCheckView::addCustomContextMenuActions(cmh, album);
 
     // restoring
+
     cmh.addAction(d->restoreTagFiltersAction);
 
     Qt::CheckState state = d->tagFilterModel->checkState(album);
@@ -110,9 +112,11 @@ void TagFilterView::addCustomContextMenuActions(ContextMenuHelper& cmh, Album* a
         case Qt::Unchecked:
             d->tagFilterModeAction->setCurrentAction(d->ignoreTagAction);
             break;
+
         case Qt::PartiallyChecked:
             d->tagFilterModeAction->setCurrentAction(d->excludeTagAction);
             break;
+
         case Qt::Checked:
             d->tagFilterModeAction->setCurrentAction(d->includeTagAction);
             break;
@@ -124,7 +128,7 @@ void TagFilterView::addCustomContextMenuActions(ContextMenuHelper& cmh, Album* a
     d->offRestoreTagFiltersAction->setChecked(!isRestoreCheckState());
 }
 
-void TagFilterView::handleCustomContextMenuAction(QAction* action, AlbumPointer<Album> album)
+void TagFilterView::handleCustomContextMenuAction(QAction* action, const AlbumPointer<Album>& album)
 {
     TagCheckView::handleCustomContextMenuAction(action, album);
 
@@ -133,11 +137,11 @@ void TagFilterView::handleCustomContextMenuAction(QAction* action, AlbumPointer<
         return;
     }
 
-    if (action == d->onRestoreTagFiltersAction)        // Restore TagFilters ON.
+    if      (action == d->onRestoreTagFiltersAction)        // Restore TagFilters ON.
     {
         setRestoreCheckState(true);
     }
-    else if (action == d->offRestoreTagFiltersAction)  // Restore TagFilters OFF.
+    else if (action == d->offRestoreTagFiltersAction)       // Restore TagFilters OFF.
     {
         setRestoreCheckState(false);
     }

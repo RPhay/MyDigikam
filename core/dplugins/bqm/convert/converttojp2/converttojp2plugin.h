@@ -6,7 +6,7 @@
  * Date        : 2018-07-30
  * Description : a BQM plugin to convert to JPEG2000.
  *
- * Copyright (C) 2018-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2018-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -43,7 +43,7 @@ class ConvertToJp2Plugin : public DPluginBqm
 public:
 
     explicit ConvertToJp2Plugin(QObject* const parent = nullptr);
-    ~ConvertToJp2Plugin();
+    ~ConvertToJp2Plugin()                override;
 
     QString name()                 const override;
     QString iid()                  const override;
@@ -52,7 +52,7 @@ public:
     QString description()          const override;
     QList<DPluginAuthor> authors() const override;
 
-    void setup(QObject* const) override;
+    void setup(QObject* const)           override;
 };
 
 } // namespace DigikamBqmConvertToJp2Plugin

@@ -70,6 +70,7 @@ ListItem::~ListItem()
 {
     qDeleteAll(d->childItems);
     qDeleteAll(d->toDelItems);
+
     delete d;
 }
 
@@ -136,7 +137,7 @@ int ListItem::columnCount() const
 
 QVariant ListItem::data(int role) const
 {
-    switch(role)
+    switch (role)
     {
         case Qt::DisplayRole:
         case Qt::ToolTipRole:
@@ -160,7 +161,7 @@ QVariant ListItem::data(int role) const
 
             if (display.isEmpty())
             {
-                display.append(i18n("All Tags"));
+                display.append(i18nc("@info", "All Tags"));
             }
             else
             {

@@ -8,7 +8,7 @@
  *
  * Copyright (C) 2008-2010 by Luka Renko <lure at kubuntu dot org>
  * Copyright (c) 2011      by Dirk Tilger <dirk dot kde at miriup dot de>
- * Copyright (C) 2008-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2008-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2018      by Thanh Trung Dinh <dinhthanhtrung1996 at gmail dot com>
  *
  * This program is free software; you can redistribute it
@@ -496,7 +496,7 @@ void FbTalker::addPhoto(const QString& imgPath, const QString& albumID, const QS
 
 //----------------------------------------------------------------------------------------------------
 
-QString FbTalker::errorToText(int errCode, const QString &errMsg)
+QString FbTalker::errorToText(int errCode, const QString& errMsg)
 {
     QString transError;
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "errorToText:" << errCode << ":" << errMsg;
@@ -564,7 +564,7 @@ void FbTalker::slotFinished(QNetworkReply* reply)
 
     QByteArray buffer = reply->readAll();
 
-    switch(d->state)
+    switch (d->state)
     {
         case (Private::FB_GETLOGGEDINUSER):
             parseResponseGetLoggedInUser(buffer);

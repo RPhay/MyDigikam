@@ -6,7 +6,7 @@
  * Date        : 2011-02-14
  * Description : pick label widget
  *
- * Copyright (C) 2011-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2011-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -56,14 +56,14 @@ class Q_DECL_HIDDEN PickLabelWidget::Private
 public:
 
     explicit Private()
-      : pickBtns(nullptr),
-        desc(nullptr),
-        btnNone(nullptr),
-        btnRej(nullptr),
-        btnPndg(nullptr),
-        btnAccpt(nullptr),
-        descBox(nullptr),
-        shortcut(nullptr)
+      : pickBtns    (nullptr),
+        desc        (nullptr),
+        btnNone     (nullptr),
+        btnRej      (nullptr),
+        btnPndg     (nullptr),
+        btnAccpt    (nullptr),
+        descBox     (nullptr),
+        shortcut    (nullptr)
     {
     }
 
@@ -83,7 +83,7 @@ public:
 
 PickLabelWidget::PickLabelWidget(QWidget* const parent)
     : DVBox(parent),
-      d(new Private)
+      d    (new Private)
 {
     setAttribute(Qt::WA_DeleteOnClose);
     setFocusPolicy(Qt::NoFocus);
@@ -226,7 +226,7 @@ bool PickLabelWidget::eventFilter(QObject* obj, QEvent* ev)
 
     // pass the event on to the parent class
 
-    return QWidget::eventFilter(obj, ev);
+    return DVBox::eventFilter(obj, ev);
 }
 
 void PickLabelWidget::setPickLabels(const QList<PickLabel>& list)
@@ -254,7 +254,7 @@ QList<PickLabel> PickLabelWidget::colorLabels() const
 
 QIcon PickLabelWidget::buildIcon(PickLabel label)
 {
-    switch(label)
+    switch (label)
     {
         case RejectedLabel:
             return QIcon::fromTheme(QLatin1String("flag-red"));
@@ -281,22 +281,22 @@ QString PickLabelWidget::labelPickName(PickLabel label)
 {
     QString name;
 
-    switch(label)
+    switch (label)
     {
         case RejectedLabel:
-            name = i18n("Rejected");
+            name = i18nc("@info: pick label name", "Rejected");
             break;
 
         case PendingLabel:
-            name = i18n("Pending");
+            name = i18nc("@info: pick label name", "Pending");
             break;
 
         case AcceptedLabel:
-            name = i18n("Accepted");
+            name = i18nc("@info: pick label name", "Accepted");
             break;
 
         default:   // NoPickLabel
-            name = i18n("None");
+            name = i18nc("@info: pick label name", "None");
             break;
     }
 
@@ -320,7 +320,7 @@ public:
 
 PickLabelSelector::PickLabelSelector(QWidget* const parent)
     : QPushButton(parent),
-      d(new Private)
+      d          (new Private)
 {
     QMenu* const popup          = new QMenu(this);
     setMenu(popup);
@@ -367,7 +367,7 @@ void PickLabelSelector::slotPickLabelChanged(int id)
 {
     setText(QString());
     setIcon(d->plw->buildIcon((PickLabel)id));
-    setToolTip(i18n("Pick Label: %1", d->plw->labelPickName((PickLabel)id)));
+    setToolTip(i18nc("@info: pick lablel selector", "Pick Label: %1", d->plw->labelPickName((PickLabel)id)));
     menu()->close();
 
     emit signalPickLabelChanged(id);
@@ -378,7 +378,7 @@ void PickLabelSelector::slotPickLabelChanged(int id)
 PickLabelMenuAction::PickLabelMenuAction(QMenu* const parent)
     : QMenu(parent)
 {
-    setTitle(i18n("Pick"));
+    setTitle(i18nc("@title: pick label menu", "Pick"));
     QWidgetAction* const wa    = new QWidgetAction(this);
     PickLabelWidget* const plw = new PickLabelWidget(parent);
     wa->setDefaultWidget(plw);

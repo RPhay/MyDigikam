@@ -6,7 +6,7 @@
  * Date        : 2009-11-03
  * Description : A dialog base class which can handle multiple pages.
  *
- * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2007      by Matthias Kretz <kretz at kde dot org>
  *
  * This program is free software; you can redistribute it
@@ -22,7 +22,6 @@
  *
  * ============================================================ */
 
-#include "dconfigdlgmodels.h"
 #include "dconfigdlgmodels_p.h"
 
 // Qt includes
@@ -37,19 +36,15 @@
 namespace Digikam
 {
 
-DConfigDlgModelPrivate::~DConfigDlgModelPrivate()
-{
-}
-
 DConfigDlgModel::DConfigDlgModel(QObject* const parent)
     : QAbstractItemModel(parent),
-      d_ptr(nullptr)
+      d_ptr             (nullptr)
 {
 }
 
 DConfigDlgModel::DConfigDlgModel(DConfigDlgModelPrivate& dd, QObject* const parent)
     : QAbstractItemModel(parent),
-      d_ptr(&dd)
+      d_ptr             (&dd)
 {
     d_ptr->q_ptr = this;
 }
@@ -67,8 +62,8 @@ public:
 
     explicit Private()
         : checkable(false),
-          checked(false),
-          enabled(true)
+          checked  (false),
+          enabled  (true)
     {
     }
 
@@ -89,7 +84,7 @@ public:
 
 DConfigDlgWdgItem::DConfigDlgWdgItem(QWidget* widget)
     : QObject(nullptr),
-      d(new Private)
+      d      (new Private)
 {
     d->widget = widget;
 
@@ -106,7 +101,7 @@ DConfigDlgWdgItem::DConfigDlgWdgItem(QWidget* widget)
 
 DConfigDlgWdgItem::DConfigDlgWdgItem(QWidget* widget, const QString& name)
     : QObject(nullptr),
-      d(new Private)
+      d      (new Private)
 {
     d->widget = widget;
     d->name   = name;
@@ -214,7 +209,7 @@ bool DConfigDlgWdgItem::isChecked() const
 
 PageItem::PageItem(DConfigDlgWdgItem* pageWidgetItem, PageItem* parent)
     : mPageWidgetItem(pageWidgetItem),
-      mParentItem(parent)
+      mParentItem    (parent)
 {
 }
 
@@ -308,7 +303,7 @@ void PageItem::dump(int indent)
     const QString name = (mPageWidgetItem ? mPageWidgetItem->name() : QLatin1String("root"));
     qDebug("%s (%p)", qPrintable(QString(QString::fromLatin1("%1%2")).arg(prefix, name)), (void *)this);
 
-    for (int i = 0; i < mChildItems.count(); ++i)
+    for (int i = 0 ; i < mChildItems.count() ; ++i)
     {
         mChildItems[ i ]->dump(indent + 2);
     }
@@ -412,7 +407,7 @@ Qt::ItemFlags DConfigDlgWdgModel::flags(const QModelIndex& index) const
 {
     if (!index.isValid())
     {
-        return nullptr;
+        return Qt::NoItemFlags;
     }
 
     Qt::ItemFlags flags = Qt::ItemIsSelectable;

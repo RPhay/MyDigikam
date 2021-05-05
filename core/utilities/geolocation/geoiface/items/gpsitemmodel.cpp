@@ -6,7 +6,7 @@
  * Date        : 2010-03-21
  * Description : A model to hold GPS information about items.
  *
- * Copyright (C) 2010-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2010-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2010      by Michael G. Hansen <mike at mghansen dot de>
  *
  * This program is free software; you can redistribute it
@@ -36,8 +36,8 @@ class Q_DECL_HIDDEN GPSItemModel::Private
 public:
 
     explicit Private()
-      : items(),
-        columnCount(0),
+      : items              (),
+        columnCount        (0),
         thumbnailLoadThread(nullptr)
     {
     }
@@ -50,7 +50,7 @@ public:
 
 GPSItemModel::GPSItemModel(QObject* const parent)
     : QAbstractItemModel(parent),
-      d(new Private)
+      d                 (new Private)
 {
     d->thumbnailLoadThread = new ThumbnailLoadThread(this);
 
@@ -233,7 +233,7 @@ Qt::ItemFlags GPSItemModel::flags(const QModelIndex& index) const
 
     if (!index.isValid())
     {
-        return nullptr;
+        return Qt::NoItemFlags;
     }
 
     return (QAbstractItemModel::flags(index) | Qt::ItemIsDragEnabled);

@@ -7,7 +7,7 @@
  * Description : a class that manages painting histograms
  *
  * Copyright (C) 2009      by Johannes Wienke <languitar at semipol dot de>
- * Copyright (C) 2011-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2011-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -30,6 +30,7 @@
 // Qt includes
 
 #include <QPainter>
+#include <QPainterPath>
 
 // KDE includes
 
@@ -52,15 +53,15 @@ class Q_DECL_HIDDEN HistogramPainter::Private
 public:
 
     explicit Private()
-      : histogram(nullptr),
-        widgetToInitFrom(nullptr),
-        scale(LogScaleHistogram),
-        channelType(LuminosityChannel),
-        highlightSelection(false),
-        selectionMin(0.0),
-        selectionMax(0.0),
-        showColorGuide(false),
-        showXGrid(true)
+      : histogram           (nullptr),
+        widgetToInitFrom    (nullptr),
+        scale               (LogScaleHistogram),
+        channelType         (LuminosityChannel),
+        highlightSelection  (false),
+        selectionMin        (0.0),
+        selectionMax        (0.0),
+        showColorGuide      (false),
+        showXGrid           (true)
     {
     }
 
@@ -472,7 +473,7 @@ public:
 
             p1.drawLine(xGuide, 0, xGuide, bufferPixmap.height());
 
-            QString string = i18n("x:%1", guidePos);
+            QString string = i18nc("@info: guide position on histogram", "x:%1", guidePos);
             QFontMetrics fontMt(string);
             QRect rect     = fontMt.boundingRect(0, 0, bufferPixmap.width(), bufferPixmap.height(), 0, string);
             p1.setPen(QPen(Qt::red, 1, Qt::SolidLine));
@@ -531,7 +532,7 @@ public:
 
 HistogramPainter::HistogramPainter(QObject* const parent)
     : QObject(parent),
-      d(new Private())
+      d      (new Private())
 {
 }
 

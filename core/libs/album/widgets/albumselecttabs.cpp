@@ -6,7 +6,7 @@
  * Date        : 2008-26-02
  * Description : a widget to select albums using a tab of folder views.
  *
- * Copyright (C) 2008-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2008-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2014      by Mohamed_Anwer <m_dot_anwer at gmx dot com>
  *
  * This program is free software; you can redistribute it
@@ -61,17 +61,17 @@ class Q_DECL_HIDDEN AlbumSelectTabs::Private
 public:
 
     explicit Private()
-      : albumModel(nullptr),
-        albumTreeView(nullptr),
-        tagModel(nullptr),
-        tagTreeView(nullptr),
-        searchModel(nullptr),
-        searchTreeView(nullptr),
-        albumSearchBar(nullptr),
-        tagSearchBar(nullptr),
-        searchSearchBar(nullptr),
-        labelsTree(nullptr),
-        labelsSearchHandler(nullptr)
+      : albumModel          (nullptr),
+        albumTreeView       (nullptr),
+        tagModel            (nullptr),
+        tagTreeView         (nullptr),
+        searchModel         (nullptr),
+        searchTreeView      (nullptr),
+        albumSearchBar      (nullptr),
+        tagSearchBar        (nullptr),
+        searchSearchBar     (nullptr),
+        labelsTree          (nullptr),
+        labelsSearchHandler (nullptr)
     {
     }
 
@@ -109,7 +109,7 @@ public:
 
 AlbumSelectTabs::AlbumSelectTabs(const QString& name, QWidget* const parent)
     : QTabWidget(parent),
-      d(new Private)
+      d         (new Private)
 {
     KSharedConfigPtr config  = KSharedConfig::openConfig();
     KConfigGroup configGroup = config->group(QLatin1String("AlbumSelectTabs") +
@@ -246,7 +246,7 @@ AlbumList AlbumSelectTabs::selectedAlbums() const
     list << d->labelsSearchHandler->albumForSelectedItems();
 
     // Remove all null albums.
-    list.removeAll(0);
+    list.removeAll(nullptr);
 
     qCDebug(DIGIKAM_GENERAL_LOG) << list.count() << " albums selected";
 

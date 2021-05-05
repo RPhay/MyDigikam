@@ -6,7 +6,7 @@
  * Date        : 2004-11-17
  * Description : a tab to display item metadata information
  *
- * Copyright (C) 2004-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2004-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -45,11 +45,11 @@ class DIGIKAM_EXPORT ItemPropertiesMetadataTab : public QTabWidget
 public:
 
     explicit ItemPropertiesMetadataTab(QWidget* const parent);
-    ~ItemPropertiesMetadataTab();
+    ~ItemPropertiesMetadataTab() override;
 
-    void setCurrentURL(const QUrl& url=QUrl());
-    void setCurrentData(const DMetadata& metadata=DMetadata(),
-                        const QString& filename=QString());
+    void setCurrentURL(const QUrl& url = QUrl());
+    void setCurrentData(DMetadata* const metadata = nullptr,
+                        const QUrl& url = QUrl());
 
     void loadFilters();
 
@@ -59,6 +59,7 @@ public:
 Q_SIGNALS:
 
     void signalSetupMetadataFilters(int);
+    void signalSetupExifTool();
 
 private Q_SLOTS:
 

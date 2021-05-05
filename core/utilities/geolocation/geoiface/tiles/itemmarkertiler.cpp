@@ -6,7 +6,7 @@
  * Date        : 2010-07-17
  * Description : A marker tiler operating on item models
  *
- * Copyright (C) 2010-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2010-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2010-2011 by Michael G. Hansen <mike at mghansen dot de>
  *
  * This program is free software; you can redistribute it
@@ -38,7 +38,7 @@ class Q_DECL_HIDDEN ItemMarkerTiler::MyTile : public Tile
 public:
 
     MyTile()
-        : Tile(),
+        : Tile         (),
           markerIndices(),
           selectedCount(0)
     {
@@ -101,10 +101,10 @@ class Q_DECL_HIDDEN ItemMarkerTiler::Private
 public:
 
     explicit Private()
-      : modelHelper(nullptr),
+      : modelHelper   (nullptr),
         selectionModel(nullptr),
-        markerModel(nullptr),
-        activeState(false)
+        markerModel   (nullptr),
+        activeState   (false)
     {
     }
 
@@ -116,7 +116,7 @@ public:
 
 ItemMarkerTiler::ItemMarkerTiler(GeoModelHelper* const modelHelper, QObject* const parent)
     : AbstractMarkerTiler(parent),
-      d(new Private())
+      d                  (new Private())
 {
     resetRootTile();
     setMarkerGeoModelHelper(modelHelper);
@@ -245,9 +245,9 @@ void ItemMarkerTiler::slotSelectionChanged(const QItemSelection& selected, const
                 }
 
                 myTile->selectedCount++;
-
-//              qCDebug(DIGIKAM_GEOIFACE_LOG) << l << tileIndex << myTile->selectedCount;
-
+/*
+                qCDebug(DIGIKAM_GEOIFACE_LOG) << l << tileIndex << myTile->selectedCount;
+*/
                 GEOIFACE_ASSERT(myTile->selectedCount <= myTile->markerIndices.count());
 
                 if (myTile->childrenEmpty())
@@ -333,17 +333,6 @@ void ItemMarkerTiler::slotSourceModelRowsAboutToBeRemoved(const QModelIndex& par
 {
     // TODO: emit signalTilesOrSelectionChanged(); in rowsWereRemoved
 
-#if QT_VERSION < 0x040600
-
-    // removeMarkerIndexFromGrid does not work in Qt 4.5 because the model has already deleted all
-    // the data of the item, but we need the items coordinates to work efficiently
-
-    setDirty();
-
-    return;
-
-#else
-
     if (isDirty())
     {
         return;
@@ -360,8 +349,6 @@ void ItemMarkerTiler::slotSourceModelRowsAboutToBeRemoved(const QModelIndex& par
 
         removeMarkerIndexFromGrid(itemIndex, true);
     }
-
-#endif
 }
 
 void ItemMarkerTiler::slotThumbnailAvailableForIndex(const QPersistentModelIndex& index, const QPixmap& pixmap)
@@ -507,7 +494,7 @@ GeoGroupState ItemMarkerTiler::getTileGroupState(const TileIndex& tileIndex)
 
     const int selectedCount = myTile->selectedCount;
 
-    if (selectedCount == 0)
+    if      (selectedCount == 0)
     {
         return SelectedNone;
     }
@@ -557,7 +544,7 @@ AbstractMarkerTiler::Tile* ItemMarkerTiler::getTile(const TileIndex& tileIndex, 
                     }
 
                     const TileIndex markerTileIndex = TileIndex::fromCoordinates(currentMarkerCoordinates, level);
-                    const int newTileIndex          = markerTileIndex.toIntList().last();
+                    const int newTileIndex          = markerTileIndex.toIntList().constLast();
 
                     MyTile* newTile = static_cast<MyTile*>(tile->getChild(newTileIndex));
 

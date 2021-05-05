@@ -6,7 +6,7 @@
  * Date        : 2017-05-25
  * Description : a tool to generate video slideshow from images.
  *
- * Copyright (C) 2017-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2017-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -40,14 +40,16 @@ namespace DigikamGenericVideoSlideShowPlugin
 
 class VidSlideImagesPage : public DWizardPage
 {
+    Q_OBJECT
+
 public:
 
     explicit VidSlideImagesPage(QWizard* const dialog, const QString& title);
-    ~VidSlideImagesPage();
+    ~VidSlideImagesPage()   override;
 
-    void initializePage();
-    bool validatePage();
-    bool isComplete() const;
+    void initializePage()   override;
+    bool validatePage()     override;
+    bool isComplete() const override;
 
     void setItemsList(const QList<QUrl>& urls);
 

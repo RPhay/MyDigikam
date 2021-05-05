@@ -6,7 +6,7 @@
 # which try to find OpenCV version 3.3.0
 # with internal components "core", "highgui", "objdetect", and "contrib".
 #
-# Copyright (c) 2010-2020 by Gilles Caulier, <caulier dot gilles at gmail dot com>
+# Copyright (c) 2010-2021 by Gilles Caulier, <caulier dot gilles at gmail dot com>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
@@ -45,26 +45,8 @@ macro(DETECT_OPENCV OPENCV_MIN_VERSION)
 
         endif()
 
-        # There are two versions of FindOpenCV.cmake in the wild, one defining
-        # OpenCV_LIBRARIES, the other defining OpenCV_LIBS. Make sure we handle
-        # both cases.
-
-        if(NOT OpenCV_LIBRARIES)
-
-            set(OpenCV_LIBRARIES ${OpenCV_LIBS})
-
-        endif()
-
-        # Same story with OpenCV_INCLUDE_DIRS and OpenCV_INCLUDE_DIR:
-
-        if(NOT OpenCV_INCLUDE_DIRS)
-
-            set(OpenCV_INCLUDE_DIRS ${OpenCV_INCLUDE_DIR})
-
-        endif()
-
         message(STATUS "OpenCV headers: ${OpenCV_INCLUDE_DIRS}")
-        message(STATUS "OpenCV libs   : ${OpenCV_LIBRARIES}")
+        message(STATUS "OpenCV libs   : ${OpenCV_LIBS}")
 
     endif()
 

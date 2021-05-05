@@ -6,7 +6,7 @@
  * Date        : 2005-05-25
  * Description : Charcoal threaded image filter.
  *
- * Copyright (C) 2005-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2005-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2010      by Martin Klapetek <martin dot klapetek at gmail dot com>
  *
  * This program is free software; you can redistribute it
@@ -57,8 +57,8 @@ class Q_DECL_HIDDEN CharcoalFilter::Private
 public:
 
     explicit Private()
-      : pencil(5.0),
-        smooth(10.0),
+      : pencil        (5.0),
+        smooth        (10.0),
         globalProgress(0)
     {
     }
@@ -72,7 +72,7 @@ public:
 
 CharcoalFilter::CharcoalFilter(QObject* const parent)
     : DImgThreadedFilter(parent),
-      d(new Private)
+      d                 (new Private)
 {
     initFilter();
 }
@@ -82,7 +82,7 @@ CharcoalFilter::CharcoalFilter(DImg* const orgImage,
                                double pencil,
                                double smooth)
     : DImgThreadedFilter(orgImage, parent, QLatin1String("Charcoal")),
-      d(new Private)
+      d                 (new Private)
 {
     d->pencil = pencil;
     d->smooth = smooth;
@@ -222,12 +222,16 @@ void CharcoalFilter::convolveImageMultithreaded(uint start, uint stop, double* n
 
             for (mcy = 0 ; runningFlag() && (mcy < kernelWidth) ; ++mcy, ++sy)
             {
-                my = sy < 0 ? 0 : sy > (int) height - 1 ? height - 1 : sy;
+                my = (sy < 0) ? 0 
+                              : (sy > ((int) height - 1)) ? height - 1 
+                                                          : sy;
                 sx = x + (-kernelWidth / 2);
 
                 for (mcx = 0 ; runningFlag() && (mcx < kernelWidth) ; ++mcx, ++sx)
                 {
-                    mx     = sx < 0 ? 0 : sx > (int) width - 1 ? width - 1 : sx;
+                    mx     = (sx < 0) ? 0 
+                                      : (sx > ((int) width - 1)) ? width - 1 
+                                                                 : sx;
                     DColor color(sdata + mx * sdepth + (width * my * sdepth), sixteenBit);
                     red   += (*k) * (color.red()   * 257.0);
                     green += (*k) * (color.green() * 257.0);
@@ -237,10 +241,21 @@ void CharcoalFilter::convolveImageMultithreaded(uint start, uint stop, double* n
                 }
             }
 
-            red   =   red < 0.0 ? 0.0 :   red > maxClamp ? maxClamp :   red + 0.5;
-            green = green < 0.0 ? 0.0 : green > maxClamp ? maxClamp : green + 0.5;
-            blue  =  blue < 0.0 ? 0.0 :  blue > maxClamp ? maxClamp :  blue + 0.5;
-            alpha = alpha < 0.0 ? 0.0 : alpha > maxClamp ? maxClamp : alpha + 0.5;
+            red   = (red < 0.0)   ? 0.0 
+                                  : (red > maxClamp)   ? maxClamp 
+                                                       : red + 0.5;
+
+            green = (green < 0.0) ? 0.0 
+                                  : (green > maxClamp) ? maxClamp 
+                                                       : green + 0.5;
+
+            blue  = (blue < 0.0)  ? 0.0 
+                                  : (blue > maxClamp)  ? maxClamp 
+                                                       : blue + 0.5;
+
+            alpha = (alpha < 0.0) ? 0.0 
+                                  : (alpha > maxClamp) ? maxClamp 
+                                                       : alpha + 0.5;
 
             DColor color((int)(red  / 257UL), (int)(green / 257UL),
                          (int)(blue / 257UL), (int)(alpha / 257UL), sixteenBit);
@@ -252,7 +267,7 @@ void CharcoalFilter::convolveImageMultithreaded(uint start, uint stop, double* n
         if ((progress % 5 == 0) && (progress > oldProgress))
         {
             d->lock.lock();
-            oldProgress       = progress;
+            oldProgress        = progress;
             d->globalProgress += 5;
             postProgress(d->globalProgress);
             d->lock.unlock();
@@ -316,7 +331,9 @@ bool CharcoalFilter::convolveImage(const unsigned int order, const double* kerne
     }
 
     foreach (QFuture<void> t, tasks)
+    {
         t.waitForFinished();
+    }
 
     return true;
 }

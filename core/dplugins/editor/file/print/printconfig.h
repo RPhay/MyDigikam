@@ -6,7 +6,8 @@
  * Date        : 2009-02-06
  * Description : image editor printing interface.
  *
- * Copyright (C) 2009 by Angelo Naselli <anaselli at linux dot it>
+ * Copyright (C) 2009      by Angelo Naselli <anaselli at linux dot it>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -35,25 +36,28 @@
 
 // Local includes
 
-#include "digikam_export.h"
 #include "printoptionspage.h"
 
 namespace DigikamEditorPrintToolPlugin
 {
 
-class DIGIKAM_EXPORT PrintConfig : public KConfigSkeleton
+class PrintConfig : public KConfigSkeleton
 {
+    Q_OBJECT
+
 public:
 
     static PrintConfig* self();
-    ~PrintConfig();
+    ~PrintConfig() override;
 
 public:
 
-    static void setPrintPosition( int v )
+    static void setPrintPosition(int v)
     {
-        if (!self()->isImmutable( QLatin1String( "PrintPosition" ) ))
+        if (!self()->isImmutable(QLatin1String("PrintPosition")))
+        {
             self()->mPrintPosition = v;
+        }
     }
 
     static int printPosition()
@@ -63,8 +67,10 @@ public:
 
     static void setPrintScaleMode(PrintOptionsPage::ScaleMode v)
     {
-        if (!self()->isImmutable( QLatin1String( "PrintScaleMode" ) ))
+        if (!self()->isImmutable(QLatin1String("PrintScaleMode")))
+        {
             self()->mPrintScaleMode = v;
+        }
     }
 
     static PrintOptionsPage::ScaleMode printScaleMode()
@@ -74,8 +80,10 @@ public:
 
     static void setPrintEnlargeSmallerImages(bool v)
     {
-        if (!self()->isImmutable( QLatin1String( "PrintEnlargeSmallerImages" ) ))
+        if (!self()->isImmutable(QLatin1String("PrintEnlargeSmallerImages")))
+        {
             self()->mPrintEnlargeSmallerImages = v;
+        }
     }
 
     static bool printEnlargeSmallerImages()
@@ -85,8 +93,10 @@ public:
 
     static void setPrintWidth(double v)
     {
-        if (!self()->isImmutable( QLatin1String( "PrintWidth" ) ))
+        if (!self()->isImmutable(QLatin1String("PrintWidth")))
+        {
             self()->mPrintWidth = v;
+        }
     }
 
     static double printWidth()
@@ -94,10 +104,12 @@ public:
         return self()->mPrintWidth;
     }
 
-    static void setPrintHeight( double v )
+    static void setPrintHeight(double v)
     {
-        if (!self()->isImmutable( QLatin1String( "PrintHeight" ) ))
+        if (!self()->isImmutable(QLatin1String("PrintHeight")))
+        {
             self()->mPrintHeight = v;
+        }
     }
 
     static double printHeight()
@@ -105,10 +117,12 @@ public:
         return self()->mPrintHeight;
     }
 
-    static void setPrintUnit( PrintOptionsPage::Unit v )
+    static void setPrintUnit(PrintOptionsPage::Unit v)
     {
-        if (!self()->isImmutable( QLatin1String( "PrintUnit" ) ))
+        if (!self()->isImmutable(QLatin1String("PrintUnit")))
+        {
             self()->mPrintUnit = v;
+        }
     }
 
     static PrintOptionsPage::Unit printUnit()
@@ -116,10 +130,12 @@ public:
         return static_cast<PrintOptionsPage::Unit>(self()->mPrintUnit);
     }
 
-    static void setPrintKeepRatio( bool v )
+    static void setPrintKeepRatio(bool v)
     {
-        if (!self()->isImmutable( QLatin1String( "PrintKeepRatio" ) ))
+        if (!self()->isImmutable(QLatin1String("PrintKeepRatio")))
+        {
             self()->mPrintKeepRatio = v;
+        }
     }
 
     static bool printKeepRatio()
@@ -129,8 +145,10 @@ public:
 
     static void setPrintColorManaged( bool v )
     {
-        if (!self()->isImmutable( QLatin1String( "PrintColorManaged" ) ))
+        if (!self()->isImmutable(QLatin1String("PrintColorManaged")))
+        {
             self()->mPrintColorManaged = v;
+        }
     }
 
     static bool printColorManaged()
@@ -138,10 +156,12 @@ public:
         return self()->mPrintColorManaged;
     }
 
-    static void setPrintAutoRotate( bool v )
+    static void setPrintAutoRotate(bool v)
     {
-        if (!self()->isImmutable( QLatin1String( "PrintAutoRotate" ) ))
+        if (!self()->isImmutable(QLatin1String("PrintAutoRotate")))
+        {
             self()->mPrintAutoRotate = v;
+        }
     }
 
     static bool printAutoRotate()
@@ -149,12 +169,13 @@ public:
         return self()->mPrintAutoRotate;
     }
 
-protected:
+private:
 
+    // Disable
     PrintConfig();
-    friend class PrintConfigHelper;
+    explicit PrintConfig(QObject*) = delete;
 
-protected:
+private:
 
     int    mPrintPosition;
     int    mPrintScaleMode;
@@ -165,6 +186,8 @@ protected:
     bool   mPrintKeepRatio;
     bool   mPrintColorManaged;
     bool   mPrintAutoRotate;
+
+    friend class PrintConfigHelper;
 };
 
 } // namespace DigikamEditorPrintToolPlugin

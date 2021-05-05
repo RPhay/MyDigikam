@@ -6,7 +6,7 @@
  * Date        : 2009-11-03
  * Description : A dialog base class which can handle multiple pages.
  *
- * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2007      by Matthias Kretz <kretz at kde dot org>
  *
  * This program is free software; you can redistribute it
@@ -36,11 +36,16 @@ class Q_DECL_HIDDEN DConfigDlgModelPrivate
 
 public:
 
-    virtual ~DConfigDlgModelPrivate();
+    DConfigDlgModelPrivate()          = default;
+    virtual ~DConfigDlgModelPrivate() = default;
 
 protected:
 
     DConfigDlgModel* q_ptr;
+
+private:
+
+    Q_DISABLE_COPY(DConfigDlgModelPrivate)
 };
 
 // ----------------------------------------------------------------------------
@@ -133,8 +138,9 @@ protected:
 
 private:
 
-    DConfigDlgWdgModelPrivate(const DConfigDlgWdgModelPrivate&);            // Disable
-    DConfigDlgWdgModelPrivate& operator=(const DConfigDlgWdgModelPrivate&); // Disable
+    // Disable
+    DConfigDlgWdgModelPrivate(const DConfigDlgWdgModelPrivate&)            = delete;
+    DConfigDlgWdgModelPrivate& operator=(const DConfigDlgWdgModelPrivate&) = delete;
 };
 
 } // namespace Digikam

@@ -6,7 +6,7 @@
  * Date        : 2010-05-03
  * Description : blur image batch tool.
  *
- * Copyright (C) 2010-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2010-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -45,13 +45,18 @@ namespace DigikamBqmBlurPlugin
 
 Blur::Blur(QObject* const parent)
     : BatchTool(QLatin1String("Blur"), EnhanceTool, parent),
-      m_radiusInput(nullptr)
+      m_radiusInput   (nullptr),
+      m_changeSettings(true)
 {
-    m_changeSettings = true;
 }
 
 Blur::~Blur()
 {
+}
+
+BatchTool* Blur::clone(QObject* const parent) const
+{
+    return new Blur(parent);
 }
 
 void Blur::registerSettingsWidget()

@@ -7,7 +7,7 @@
  * Description : Qt item model for database entries with support for thumbnail loading
  *
  * Copyright (C) 2009-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2011-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2011-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -32,7 +32,6 @@
 // Local includes
 
 #include "digikam_debug.h"
-#include "digikam_export.h"
 #include "digikam_globals.h"
 #include "thumbnailloadthread.h"
 
@@ -44,12 +43,12 @@ class Q_DECL_HIDDEN ItemThumbnailModel::Private
 public:
 
     explicit Private()
-      : thread(nullptr),
-        preloadThread(nullptr),
-        thumbSize(0),
+      : thread             (nullptr),
+        preloadThread      (nullptr),
+        thumbSize          (0),
         lastGlobalThumbSize(0),
-        preloadThumbSize(0),
-        emitDataChanged(true)
+        preloadThumbSize   (0),
+        emitDataChanged    (true)
     {
         staticListContainingThumbnailRole << ItemModel::ThumbnailRole;
     }
@@ -79,7 +78,7 @@ public:
 
 ItemThumbnailModel::ItemThumbnailModel(QObject* const parent)
     : ItemModel(parent),
-      d(new Private)
+      d        (new Private)
 {
     setKeepsFilePathCache(true);
 }
@@ -184,6 +183,7 @@ void ItemThumbnailModel::preloadThumbnails(const QList<ItemInfo>& infos)
         ids << info.thumbnailIdentifier();
     }
 
+    d->preloadThread->stopAllTasks();
     d->preloadThread->pregenerateGroup(ids, d->preloadThumbnailSize());
 }
 
@@ -308,6 +308,7 @@ void ItemThumbnailModel::slotThumbnailLoaded(const LoadingDescription& loadingDe
     }
 
     // In case of multiple occurrence, we currently do not know which thumbnail is this. Signal change on all.
+
     QModelIndexList indexes;
     ThumbnailIdentifier thumbId = loadingDescription.thumbnailIdentifier();
 

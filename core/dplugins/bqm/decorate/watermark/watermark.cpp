@@ -6,7 +6,7 @@
  * Date        : 2009-02-28
  * Description : batch tool to add visible watermark.
  *
- * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2010      by Mikkel Baekhoej Christensen <mbc at baekhoej dot dk>
  * Copyright (C) 2017      by Ahmed Fathi <ahmed dot fathi dot abdelmageed at gmail dot com>
  *
@@ -88,31 +88,31 @@ public:
 public:
 
     explicit Private()
-      : textSettingsGroupBox(nullptr),
-        imageSettingsGroupBox(nullptr),
-        useAbsoluteImageSizeGroupBox(nullptr),
-        useImageRadioButton(nullptr),
-        ignoreWatermarkAspectCheckBox(nullptr),
-        useAbsoluteSizeCheckBox(nullptr),
-        useBackgroundCheckBox(nullptr),
-        denseRepetitionCheckBox(nullptr),
-        randomizeRotationCheckBox(nullptr),
-        useTextRadioButton(nullptr),
-        imageFileUrlRequester(nullptr),
-        textEdit(nullptr),
-        placementPositionComboBox(nullptr),
-        placementTypeComboBox(nullptr),
-        rotationComboBox(nullptr),
-        sparsityFactorSpinBox(nullptr),
-        extendedFontChooserWidget(nullptr),
-        fontColorButton(nullptr),
-        backgroundColorButton(nullptr),
-        textOpacity(nullptr),
-        backgroundOpacity(nullptr),
-        xMarginInput(nullptr),
-        yMarginInput(nullptr),
-        waterMarkSizePercent(nullptr),
-        changeSettings(true)
+      : textSettingsGroupBox            (nullptr),
+        imageSettingsGroupBox           (nullptr),
+        useAbsoluteImageSizeGroupBox    (nullptr),
+        useImageRadioButton             (nullptr),
+        ignoreWatermarkAspectCheckBox   (nullptr),
+        useAbsoluteSizeCheckBox         (nullptr),
+        useBackgroundCheckBox           (nullptr),
+        denseRepetitionCheckBox         (nullptr),
+        randomizeRotationCheckBox       (nullptr),
+        useTextRadioButton              (nullptr),
+        imageFileUrlRequester           (nullptr),
+        textEdit                        (nullptr),
+        placementPositionComboBox       (nullptr),
+        placementTypeComboBox           (nullptr),
+        rotationComboBox                (nullptr),
+        sparsityFactorSpinBox           (nullptr),
+        extendedFontChooserWidget       (nullptr),
+        fontColorButton                 (nullptr),
+        backgroundColorButton           (nullptr),
+        textOpacity                     (nullptr),
+        backgroundOpacity               (nullptr),
+        xMarginInput                    (nullptr),
+        yMarginInput                    (nullptr),
+        waterMarkSizePercent            (nullptr),
+        changeSettings                  (true)
     {
     }
 
@@ -150,13 +150,18 @@ public:
 
 WaterMark::WaterMark(QObject* const parent)
     : BatchTool(QLatin1String("WaterMark"), DecorateTool, parent),
-      d(new Private)
+      d        (new Private)
 {
 }
 
 WaterMark::~WaterMark()
 {
     delete d;
+}
+
+BatchTool* WaterMark::clone(QObject* const parent) const
+{
+    return new WaterMark(parent);
 }
 
 void WaterMark::registerSettingsWidget()
@@ -357,11 +362,11 @@ void WaterMark::registerSettingsWidget()
 
     QLabel* const label4         = new QLabel(vbox);
     d->placementPositionComboBox = new QComboBox(vbox);
-    d->placementPositionComboBox->insertItem(Private::TopLeft,     i18n("Top left"));
-    d->placementPositionComboBox->insertItem(Private::TopRight,    i18n("Top right"));
-    d->placementPositionComboBox->insertItem(Private::BottomLeft,  i18n("Bottom left"));
-    d->placementPositionComboBox->insertItem(Private::BottomRight, i18n("Bottom right"));
-    d->placementPositionComboBox->insertItem(Private::Center,      i18n("Center"));
+    d->placementPositionComboBox->insertItem(Private::TopLeft,     i18nc("@item: placement position", "Top left"));
+    d->placementPositionComboBox->insertItem(Private::TopRight,    i18nc("@item: placement position", "Top right"));
+    d->placementPositionComboBox->insertItem(Private::BottomLeft,  i18nc("@item: placement position", "Bottom left"));
+    d->placementPositionComboBox->insertItem(Private::BottomRight, i18nc("@item: placement position", "Bottom right"));
+    d->placementPositionComboBox->insertItem(Private::Center,      i18nc("@item: placement position", "Center"));
     label4->setText(i18n("Placement Position:"));
 
     QLabel* const labelRotation  = new QLabel(vbox);
@@ -499,6 +504,7 @@ void WaterMark::slotAssignSettings2Widget()
     d->useTextRadioButton->setChecked(!settings()[QLatin1String("Use image")].toBool());
     d->imageFileUrlRequester->setFileDlgPath(settings()[QLatin1String("Watermark image")].toString());
     d->textEdit->setText(settings()[QLatin1String("Text")].toString());
+    d->extendedFontChooserWidget->setFont(qvariant_cast<QFont>(settings()[QLatin1String("Font")]));
     d->fontColorButton->setColor(settings()[QLatin1String("Color")].toString());
     d->textOpacity->setValue(settings()[QLatin1String("Text opacity")].toInt());
     d->useBackgroundCheckBox->setChecked(settings()[QLatin1String("Use background")].toBool());
@@ -518,7 +524,7 @@ void WaterMark::slotAssignSettings2Widget()
 
 void WaterMark::slotSettingsChanged()
 {
-    if (d->useImageRadioButton->isChecked())
+    if      (d->useImageRadioButton->isChecked())
     {
         d->textSettingsGroupBox->setVisible(false);
         d->imageSettingsGroupBox->setVisible(true);
@@ -582,7 +588,7 @@ bool WaterMark::toolOperations()
     int yMargin                                  = settings()[QLatin1String("Y margin")].toInt();
     bool useImage                                = settings()[QLatin1String("Use image")].toBool();
     QString text                                 = settings()[QLatin1String("Text")].toString();
-    QFont font                                   = qvariant_cast<QFont>(settings()[QLatin1String("Font")]);;
+    QFont font                                   = qvariant_cast<QFont>(settings()[QLatin1String("Font")]);
 
     QColor fontColor                             = settings()[QLatin1String("Color")].toString();
     int textOpacity                              = settings()[QLatin1String("Text opacity")].toInt();
@@ -605,12 +611,13 @@ bool WaterMark::toolOperations()
                                                        DImg::ANGLE::ROTNONE;
 
     // rotate and/or flip the image depending on the exif information to allow for the expected watermark placement.
-    //note that this operation is reversed after proper watermark generation to leave everything as it was.
+    // note that this operation is reversed after proper watermark generation to leave everything as it was.
+
     image().exifRotate(inputUrl().toLocalFile());
 
-    float ratio = (float)image().height()/image().width();
+    float ratio = (float)image().height() / image().width();
 
-    if (rotationAngle == DImg::ANGLE::ROT90 || rotationAngle == DImg::ANGLE::ROT270)
+    if ((rotationAngle == DImg::ANGLE::ROT90) || (rotationAngle == DImg::ANGLE::ROT270))
     {
         size = size * ratio;
     }
@@ -618,12 +625,15 @@ bool WaterMark::toolOperations()
     {
         // For Images whose height are much larger than their width, this helps keep
         // the watermark size reasonable
+
         if (ratio > 1.5)
         {
             int tempSize  = size * ratio;
 
             if (tempSize < 35)
-                tempSize *= 1.5 ;
+            {
+                tempSize *= 1.5;
+            }
 
             size          = (tempSize < 100) ? tempSize : 100;
         }
@@ -666,24 +676,34 @@ bool WaterMark::toolOperations()
         switch (placementPosition)
         {
             case Private::TopLeft:
+            {
                 alignMode = Qt::AlignLeft;
                 break;
+            }
 
             case Private::TopRight:
+            {
                 alignMode = Qt::AlignRight;
                 break;
+            }
 
             case Private::BottomLeft:
+            {
                 alignMode = Qt::AlignLeft;
                 break;
+            }
 
             case Private::Center:
+            {
                 alignMode = Qt::AlignCenter;
                 break;
+            }
 
-            default :    // BottomRight
+            default:    // BottomRight
+            {
                 alignMode = Qt::AlignRight;
                 break;
+            }
         }
 
         if (!useAbsoluteSize)
@@ -695,6 +715,7 @@ bool WaterMark::toolOperations()
         QRect fontRect = fontMt.boundingRect(radius, radius, image().width(), image().height(), 0, text);
 
         // Add a transparent layer.
+
         QRect backgroundRect(fontRect.x() - radius, fontRect.y() - radius,
                              fontRect.width() + 2 * radius, fontRect.height() + 2 * radius);
         DImg backgroundLayer(backgroundRect.width(), backgroundRect.height(), image().sixteenBit(), true);
@@ -731,6 +752,7 @@ bool WaterMark::toolOperations()
         backgroundLayer.putImageData(blur.getTargetImage().bits());
 
         // Draw text
+
         QImage img = backgroundLayer.copyQImage(fontRect);
         QPainter p(&img);
         fontColor.setAlpha(textOpacity * 255 / 100);
@@ -758,33 +780,36 @@ bool WaterMark::toolOperations()
         switch (placementPosition)
         {
             case Private::TopLeft:
-
+            {
                 watermarkRect.moveTopLeft(QPoint(marginW, marginH));
                 break;
+            }
 
             case Private::TopRight:
-
-                if (rotationAngle == DImg::ANGLE::ROT270 || rotationAngle == DImg::ANGLE::ROT90)
+            {
+                if ((rotationAngle == DImg::ANGLE::ROT270) || (rotationAngle == DImg::ANGLE::ROT90))
                 {
                     xAdditionalValue += watermarkRect.width() - watermarkRect.height();
                 }
 
                 watermarkRect.moveTopRight(QPoint(image().width() + xAdditionalValue - 1 - marginW, marginH));
                 break;
+            }
 
             case Private::BottomLeft:
-
-                if (rotationAngle == DImg::ANGLE::ROT90 || rotationAngle == DImg::ANGLE::ROT270)
+            {
+                if ((rotationAngle == DImg::ANGLE::ROT90) || (rotationAngle == DImg::ANGLE::ROT270))
                 {
                     yAdditionalValue += watermarkRect.height() - watermarkRect.width();
                 }
 
                 watermarkRect.moveBottomLeft(QPoint(marginW, image().height() + yAdditionalValue - 1 - marginH));
                 break;
+            }
 
             case Private::Center:
-
-                if (rotationAngle == DImg::ANGLE::ROT90 || rotationAngle == DImg::ANGLE::ROT270)
+            {
+                if ((rotationAngle == DImg::ANGLE::ROT90) || (rotationAngle == DImg::ANGLE::ROT270))
                 {
                     xAdditionalValue += (watermarkRect.width()  - watermarkRect.height()) / 2;
                     yAdditionalValue += (watermarkRect.height() - watermarkRect.width())  / 2;
@@ -793,10 +818,11 @@ bool WaterMark::toolOperations()
                 watermarkRect.moveCenter(QPoint((int)(image().width()  / 2 + xAdditionalValue),
                                                 (int)(image().height() / 2 + yAdditionalValue)));
                 break;
+            }
 
-            default :    // BottomRight
-
-                if (rotationAngle == DImg::ANGLE::ROT90 || rotationAngle == DImg::ANGLE::ROT270)
+            default:    // BottomRight
+            {
+                if ((rotationAngle == DImg::ANGLE::ROT90) || (rotationAngle == DImg::ANGLE::ROT270))
                 {
                     xAdditionalValue += watermarkRect.width() - watermarkRect.height();
                     yAdditionalValue += watermarkRect.height() - watermarkRect.width();
@@ -805,6 +831,7 @@ bool WaterMark::toolOperations()
                 watermarkRect.moveBottomRight(QPoint(image().width()  + xAdditionalValue - 1 - marginW,
                                                      image().height() + yAdditionalValue - 1 - marginH));
                 break;
+            }
         }
 
         image().bitBlendImage(composer,
@@ -813,19 +840,19 @@ bool WaterMark::toolOperations()
     }
     else
     {
-        const float DENSE_SPACING_FACTOR  = 1.2;
-        const float SPARSE_SPACING_FACTOR = 1.8;
+        const float DENSE_SPACING_FACTOR  = 1.2F;
+        const float SPARSE_SPACING_FACTOR = 1.8F;
         float widthRatio                  = (float)watermarkRect.width()  / image().width();
         float heightRatio                 = (float)watermarkRect.height() / image().height();
         float spacingFactor               = (denseRepetition) ? DENSE_SPACING_FACTOR : SPARSE_SPACING_FACTOR;
         spacingFactor                    *= userSparsityFactor;
 
-        if (placementType == Private::SystematicRepetition)
+        if      (placementType == Private::SystematicRepetition)
         {
-            if (rotationAngle == DImg::ANGLE::ROT270 || rotationAngle == DImg::ANGLE::ROT90)
+            if ((rotationAngle == DImg::ANGLE::ROT270) || (rotationAngle == DImg::ANGLE::ROT90))
             {
-                widthRatio = (float)watermarkRect.height()/image().width();
-                heightRatio = (float)watermarkRect.width()/image().height();
+                widthRatio  = (float)watermarkRect.height() / image().width();
+                heightRatio = (float)watermarkRect.width()  / image().height();
             }
 
             for (uint i = 0 ; i < image().width() ; i += spacingFactor * widthRatio * image().width())
@@ -868,12 +895,14 @@ bool WaterMark::toolOperations()
 
     delete composer;
     image().reverseExifRotate(inputUrl().toLocalFile());
+
     return (savefromDImg());
 }
 
 int WaterMark::queryFontSize(const QString& text, const QFont& font, int length) const
 {
     // Find font size using relative length compared to image width.
+
     QFont fnt = font;
     QRect fontRect;
 

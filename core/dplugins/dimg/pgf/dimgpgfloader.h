@@ -6,9 +6,9 @@
  * Date        : 2009-06-03
  * Description : A PGF IO file for DImg framework
  *
- * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
- * This implementation use LibPGF API <http://www.libpgf.org>
+ * This implementation use LibPGF API <https://www.libpgf.org>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -30,27 +30,26 @@
 
 #include "dimg.h"
 #include "dimgloader.h"
-#include "digikam_export.h"
 
 using namespace Digikam;
 
 namespace Digikam
 {
 
-class DIGIKAM_EXPORT DImgPGFLoader : public DImgLoader
+class DImgPGFLoader : public DImgLoader
 {
 
 public:
 
     explicit DImgPGFLoader(DImg* const image);
-    ~DImgPGFLoader();
+    ~DImgPGFLoader()                                                       override;
 
     bool load(const QString& filePath, DImgLoaderObserver* const observer) override;
     bool save(const QString& filePath, DImgLoaderObserver* const observer) override;
 
-    bool hasAlpha()   const override;
-    bool sixteenBit() const override;
-    bool isReadOnly() const override;
+    bool hasAlpha()                                                  const override;
+    bool sixteenBit()                                                const override;
+    bool isReadOnly()                                                const override;
 
 private:
 

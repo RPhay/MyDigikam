@@ -7,7 +7,7 @@
  * Description : Modified context menu helper for import tool
  *
  * Copyright (C) 2012      by Islam Wazery <wazery at ubuntu dot com>
- * Copyright (C) 2012-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -50,7 +50,7 @@
 #include "tagmodificationhelper.h"
 #include "tagspopupmenu.h"
 #include "fileactionmngr.h"
-#include "dfileoperations.h"
+#include "dservicemenu.h"
 
 namespace Digikam
 {
@@ -60,11 +60,11 @@ class Q_DECL_HIDDEN ImportContextMenuHelper::Private
 public:
 
     explicit Private(ImportContextMenuHelper* const q)
-      : importFilterModel(nullptr),
-        parent(nullptr),
-        ABCmenu(nullptr),
+      : importFilterModel  (nullptr),
+        parent             (nullptr),
+        ABCmenu            (nullptr),
         stdActionCollection(nullptr),
-        q(q)
+        q                  (q)
     {
     }
 
@@ -103,7 +103,7 @@ public:
 
 ImportContextMenuHelper::ImportContextMenuHelper(QMenu* const parent, KActionCollection* const actionCollection)
     : QObject(parent),
-      d(new Private(this))
+      d      (new Private(this))
 {
     d->parent = parent;
 
@@ -226,7 +226,7 @@ void ImportContextMenuHelper::addServicesMenu(const QList<QUrl>& selectedItems)
         qDeleteAll(servicesMenu->actions());
 
         QAction* const serviceAction = servicesMenu->menuAction();
-        serviceAction->setText(i18nc("@title:menu", "Open With"));
+        serviceAction->setText(i18nc("@title:menu open with desktop application", "Open With"));
 
         foreach (KService::Ptr service, offers)
         {
@@ -240,7 +240,7 @@ void ImportContextMenuHelper::addServicesMenu(const QList<QUrl>& selectedItems)
 #ifdef HAVE_KIO
 
         servicesMenu->addSeparator();
-        servicesMenu->addAction(i18nc("@item:inmenu", "Other..."));
+        servicesMenu->addAction(i18nc("@item:inmenu open with other application", "Other..."));
 
         addAction(serviceAction);
 
@@ -294,7 +294,7 @@ void ImportContextMenuHelper::slotOpenWith(QAction* action)
 
             if (!dlg->text().isEmpty())
             {
-                DFileOperations::runFiles(dlg->text(), list);
+                DServiceMenu::runFiles(dlg->text(), list);
             }
 
             delete dlg;
@@ -311,7 +311,7 @@ void ImportContextMenuHelper::slotOpenWith(QAction* action)
         service = d->servicesMap[name];
     }
 
-    DFileOperations::runFiles(service.data(), list);
+    DServiceMenu::runFiles(service.data(), list);
 }
 
 void ImportContextMenuHelper::addRotateMenu(itemIds& /*ids*/)
@@ -391,7 +391,7 @@ void ImportContextMenuHelper::addRemoveTagsMenu(itemIds& /*ids*/)
 
 void ImportContextMenuHelper::addLabelsAction()
 {
-    QMenu* const menuLabels           = new QMenu(i18n("Assign Labels"), d->parent);
+    QMenu* const menuLabels           = new QMenu(i18nc("@title:menu", "Assign Labels"), d->parent);
     PickLabelMenuAction* const pmenu  = new PickLabelMenuAction(d->parent);
     ColorLabelMenuAction* const cmenu = new ColorLabelMenuAction(d->parent);
     RatingMenuAction* const rmenu     = new RatingMenuAction(d->parent);

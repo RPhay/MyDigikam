@@ -6,7 +6,7 @@
  * Date        : 2018-07-30
  * Description : a plugin to create panorama.
  *
- * Copyright (C) 2018-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2018-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -43,7 +43,7 @@ class PanoramaPlugin : public DPluginGeneric
 public:
 
     explicit PanoramaPlugin(QObject* const parent = nullptr);
-    ~PanoramaPlugin();
+    ~PanoramaPlugin()                    override;
 
     QString name()                 const override;
     QString iid()                  const override;
@@ -52,8 +52,8 @@ public:
     QString description()          const override;
     QList<DPluginAuthor> authors() const override;
 
-    void setup(QObject* const) override;
-    void cleanUp()             override;
+    void setup(QObject* const)           override;
+    void cleanUp()                       override;
 
 private Q_SLOTS:
 

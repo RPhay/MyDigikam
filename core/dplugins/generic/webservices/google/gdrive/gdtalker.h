@@ -6,8 +6,8 @@
  * Date        : 2013-11-18
  * Description : a tool to export items to Google web services
  *
- * Copyright (C) 2013 by Pankaj Kumar <me at panks dot me>
- * Copyright (C) 2013-2018 by Caulier Gilles <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2013      by Pankaj Kumar <me at panks dot me>
+ * Copyright (C) 2013-2020 by Caulier Gilles <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -46,7 +46,7 @@ class GDTalker : public GSTalkerBase
 public:
 
     explicit GDTalker(QWidget* const parent);
-    ~GDTalker();
+    ~GDTalker() override;
 
 public:
 
@@ -75,7 +75,7 @@ private Q_SLOTS:
 
     void slotFinished(QNetworkReply* reply);
     void slotUploadPhoto();
-    
+
 private:
 
     void parseResponseListFolders(const QByteArray& data);

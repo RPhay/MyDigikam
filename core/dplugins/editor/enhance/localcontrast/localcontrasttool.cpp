@@ -7,7 +7,7 @@
  * Description : a tool to enhance image with local contrasts (as human eye does).
  *
  * Copyright (C) 2009      by Julien Pontabry <julien dot pontabry at gmail dot com>
- * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -39,7 +39,7 @@
 
 #include <klocalizedstring.h>
 #include <ksharedconfig.h>
-#include "kconfiggroup.h"
+#include <kconfiggroup.h>
 
 // Local includes
 
@@ -60,9 +60,9 @@ class Q_DECL_HIDDEN LocalContrastTool::Private
 public:
 
     explicit Private()
-      : settingsView(nullptr),
+      : settingsView (nullptr),
         previewWidget(nullptr),
-        gboxSettings(nullptr)
+        gboxSettings (nullptr)
     {
     }
 
@@ -83,7 +83,7 @@ const QString LocalContrastTool::Private::configHistogramScaleEntry(QLatin1Strin
 
 LocalContrastTool::LocalContrastTool(QObject* const parent)
     : EditorToolThreaded(parent),
-      d(new Private)
+      d                 (new Private)
 {
     setObjectName(QLatin1String("localcontrast"));
 

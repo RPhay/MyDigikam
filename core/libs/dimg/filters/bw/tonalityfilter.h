@@ -6,7 +6,7 @@
  * Date        : 2005-24-01
  * Description : Change tonality image filter
  *
- * Copyright (C) 2005-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2005-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2010 by Martin Klapetek <martin dot klapetek at gmail dot com>
  *
  * This program is free software; you can redistribute it
@@ -42,9 +42,9 @@ class DIGIKAM_EXPORT TonalityContainer
 public:
 
     explicit TonalityContainer()
-      : redMask(0),
+      : redMask  (0),
         greenMask(0),
-        blueMask(0)
+        blueMask (0)
     {
     };
 
@@ -63,43 +63,44 @@ public:
 
 class DIGIKAM_EXPORT TonalityFilter : public DImgThreadedFilter
 {
+    Q_OBJECT
 
 public:
 
     explicit TonalityFilter(QObject* const parent = nullptr);
     explicit TonalityFilter(DImg* const orgImage,
-                            QObject* const parent=nullptr,
-                            const TonalityContainer& settings=TonalityContainer());
-    virtual ~TonalityFilter();
+                            QObject* const parent = nullptr,
+                            const TonalityContainer& settings = TonalityContainer());
+    ~TonalityFilter()                                       override;
 
-    static QString          FilterIdentifier()
+    static QString FilterIdentifier()
     {
         return QLatin1String("digikam:TonalityFilter");
     }
 
-    static QString          DisplayableName();
+    static QString DisplayableName();
 
-    static QList<int>       SupportedVersions()
+    static QList<int> SupportedVersions()
     {
         return QList<int>() << 1;
     }
 
-    static int              CurrentVersion()
+    static int CurrentVersion()
     {
         return 1;
     }
 
-    virtual QString         filterIdentifier()                          const override
+    QString filterIdentifier()                        const override
     {
         return FilterIdentifier();
     }
 
-    virtual FilterAction    filterAction()                                    override;
-    void                    readParameters(const FilterAction& action)        override;
+    FilterAction filterAction()                             override;
+    void readParameters(const FilterAction& action)         override;
 
 private:
 
-    void filterImage()                                                        override;
+    void filterImage()                                      override;
 
 private:
 

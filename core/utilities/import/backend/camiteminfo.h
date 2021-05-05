@@ -7,7 +7,7 @@
  * Description : camera item info container
  *
  * Copyright (C) 2004-2005 by Renchi Raju <renchi dot raju at gmail dot com>
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -44,7 +44,7 @@ class QDataStream;
 namespace Digikam
 {
 
-class DIGIKAM_EXPORT CamItemInfo
+class DIGIKAM_GUI_EXPORT CamItemInfo
 {
 
 public:
@@ -67,12 +67,12 @@ public:
     /**
      * Return true if all member in this container are null.
      */
-    bool isNull() const;
+    bool isNull()                            const;
 
     /**
      * Return the local file system (mounted on computer) url to the camera file.
      */
-    QUrl url()    const;
+    QUrl url()                               const;
 
     /**
      * Compare for camera information equality, not including variable values.

@@ -6,7 +6,7 @@
  * Date        : 2017-05-24
  * Description : video frame effects manager.
  *
- * Copyright (C) 2017-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2017-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -71,9 +71,11 @@ public:
 
 private:
 
-    // Hidden copy constructor and assignment operator.
-    EffectMngr(const EffectMngr&);
-    EffectMngr& operator=(const EffectMngr&);
+    // Disable
+    EffectMngr(const EffectMngr&)            = delete;
+    EffectMngr& operator=(const EffectMngr&) = delete;
+
+private:
 
     class Private;
     Private* const d;

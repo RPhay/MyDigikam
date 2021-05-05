@@ -7,7 +7,7 @@
  * Description : Qt model view for Showfoto item - the delegate
  *
  * Copyright (C) 2013      by Mohamed_Anwer <m_dot_anwer at gmx dot com>
- * Copyright (C) 2013-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2013-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -514,7 +514,7 @@ bool ShowfotoThumbnailDelegate::acceptsActivation(const QPoint& pos, const QRect
 {
     // reuse implementation from grandparent
 
-    return ItemViewShowfotoDelegate::acceptsActivation(pos, visualRect, index, activationRect);
+    return ItemViewShowfotoDelegate::acceptsActivation(pos, visualRect, index, activationRect); // clazy:exclude=skipped-base-method
 }
 
 void ShowfotoThumbnailDelegate::updateContentWidth()
@@ -577,19 +577,22 @@ void ShowfotoNormalDelegatePrivate::init(ShowfotoNormalDelegate* const q, Showfo
 
 // ------------------------------------------------------------------------------------------------
 
-ShowfotoNormalDelegate::ShowfotoNormalDelegate(ShowfotoThumbnailBar* const parent)
-    : ShowfotoDelegate(*new ShowfotoNormalDelegatePrivate, parent)
+ShowfotoNormalDelegate::ShowfotoNormalDelegate(ShowfotoThumbnailBar* const bar,
+                                               QObject* const)
+    : ShowfotoDelegate(*new ShowfotoNormalDelegatePrivate, bar)
 {
     Q_D(ShowfotoNormalDelegate);
-    d->init(this, parent);
+    d->init(this, bar);
 }
 
-ShowfotoNormalDelegate::ShowfotoNormalDelegate(ShowfotoNormalDelegatePrivate& dd, ShowfotoThumbnailBar* const parent)
-    : ShowfotoDelegate(dd, parent)
+ShowfotoNormalDelegate::ShowfotoNormalDelegate(ShowfotoNormalDelegatePrivate& dd,
+                                               ShowfotoThumbnailBar* const bar,
+                                               QObject* const)
+    : ShowfotoDelegate(dd, bar)
 {
 
     Q_D(ShowfotoNormalDelegate);
-    d->init(this, parent);
+    d->init(this, bar);
 }
 
 ShowfotoNormalDelegate::~ShowfotoNormalDelegate()

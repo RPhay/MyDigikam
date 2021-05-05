@@ -6,7 +6,7 @@
  * Date        : 2011-08-12
  * Description : advanced settings for camera interface.
  *
- * Copyright (C) 2011-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2011-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -54,14 +54,14 @@ class Q_DECL_HIDDEN AdvancedSettings::Private
 public:
 
     explicit Private()
-        : formatLabel(nullptr),
-          autoRotateCheck(nullptr),
-          convertJpegCheck(nullptr),
-          fixDateTimeCheck(nullptr),
-          documentNameCheck(nullptr),
-          losslessFormat(nullptr),
-          dateTimeEdit(nullptr),
-          templateSelector(nullptr)
+        : formatLabel       (nullptr),
+          autoRotateCheck   (nullptr),
+          convertJpegCheck  (nullptr),
+          fixDateTimeCheck  (nullptr),
+          documentNameCheck (nullptr),
+          losslessFormat    (nullptr),
+          dateTimeEdit      (nullptr),
+          templateSelector  (nullptr)
     {
     }
 
@@ -81,7 +81,7 @@ public:
 
 AdvancedSettings::AdvancedSettings(QWidget* const parent)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     const int spacing = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
 
@@ -93,7 +93,7 @@ AdvancedSettings::AdvancedSettings(QWidget* const parent)
     d->autoRotateCheck           = new QCheckBox(i18nc("@option:check", "Auto-rotate/flip image"), this);
     d->convertJpegCheck          = new QCheckBox(i18nc("@option:check", "Convert to lossless file format"), this);
     DHBox* const hbox2           = new DHBox(this);
-    d->formatLabel               = new QLabel(i18n("New image format:"), hbox2);
+    d->formatLabel               = new QLabel(i18nc("@label", "New image format:"), hbox2);
     d->losslessFormat            = new QComboBox(hbox2);
     d->losslessFormat->insertItem(0, QLatin1String("PNG"));
     d->losslessFormat->insertItem(1, QLatin1String("TIF"));
@@ -122,23 +122,23 @@ AdvancedSettings::AdvancedSettings(QWidget* const parent)
     onFlyVlay->setContentsMargins(spacing, spacing, spacing, spacing);
     onFlyVlay->setSpacing(spacing);
 
-    setWhatsThis(i18n("Set here all options to fix/transform JPEG files automatically "
-                      "as they are downloaded."));
-    d->autoRotateCheck->setWhatsThis(i18n("Enable this option if you want images automatically "
-                                          "rotated or flipped using EXIF information provided by the camera."));
-    d->templateSelector->setWhatsThis(i18n("Select here which metadata template you want to apply "
+    setWhatsThis(i18nc("@info", "Set here all options to fix/transform JPEG files automatically "
+                                "as they are downloaded."));
+    d->autoRotateCheck->setWhatsThis(i18nc("@info", "Enable this option if you want images automatically "
+                                          "rotated or flipped using Exif information provided by the camera."));
+    d->templateSelector->setWhatsThis(i18nc("@info", "Select here which metadata template you want to apply "
                                            "to images."));
-    d->documentNameCheck->setWhatsThis(i18n("Enable this option to write the document name to the EXIF metadata. "
+    d->documentNameCheck->setWhatsThis(i18nc("@info", "Enable this option to write the document name to the Exif metadata. "
                                             "The document name is the original file name of the imported file."));
-    d->fixDateTimeCheck->setWhatsThis(i18n("Enable this option to set date and time metadata "
+    d->fixDateTimeCheck->setWhatsThis(i18nc("@info", "Enable this option to set date and time metadata "
                                            "tags to the right values if your camera does not set "
                                            "these tags correctly when pictures are taken. The values will "
                                            "be saved in the DateTimeDigitized and DateTimeCreated EXIF, XMP, and IPTC tags."));
-    d->convertJpegCheck->setWhatsThis(i18n("Enable this option to automatically convert "
-                                           "all JPEG files to a lossless image format. <b>Note:</b> Image conversion can take a "
+    d->convertJpegCheck->setWhatsThis(i18nc("@info", "Enable this option to automatically convert "
+                                           "all JPEG files to a lossless image format. Note: Image conversion can take a "
                                            "while on a slow computer."));
-    d->losslessFormat->setWhatsThis(i18n("Select your preferred lossless image file format to "
-                                         "convert to. <b>Note:</b> All metadata will be preserved during the conversion."));
+    d->losslessFormat->setWhatsThis(i18nc("@info", "Select your preferred lossless image file format to "
+                                         "convert to. Note: All metadata will be preserved during the conversion."));
 
     // ---------------------------------------------------------------------------------------
 

@@ -6,7 +6,7 @@
  * Date        : 2012-01-26
  * Description : a progress bar with information dispatched to progress manager
  *
- * Copyright (C) 2012-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -116,7 +116,7 @@ void DProgressWdg::progressScheduled(const QString& title, bool canBeCanceled, b
 
     if (canBeCanceled)
     {
-        connect(item, SIGNAL(progressItemCanceled(QString)),
+        connect(item, SIGNAL(progressItemCanceledById(QString)),
                 this, SLOT(slotProgressCanceled(QString)));
     }
 

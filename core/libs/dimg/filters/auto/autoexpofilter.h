@@ -6,7 +6,7 @@
  * Date        : 2010-15-02
  * Description : auto exposure image filter.
  *
- * Copyright (C) 2010-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2010-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -38,12 +38,13 @@ class DImg;
 
 class DIGIKAM_EXPORT AutoExpoFilter : public WBFilter
 {
+    Q_OBJECT
 
 public:
 
     explicit AutoExpoFilter(QObject* const parent = nullptr);
-    AutoExpoFilter(DImg* const orgImage, const DImg* const refImage, QObject* const parent=nullptr);
-    virtual ~AutoExpoFilter();
+    AutoExpoFilter(DImg* const orgImage, const DImg* const refImage, QObject* const parent = nullptr);
+    ~AutoExpoFilter()                                                         override;
 
     static QString          FilterIdentifier()
     {
@@ -62,12 +63,12 @@ public:
 
     static QString DisplayableName();
 
-    virtual QString         filterIdentifier()                          const override
+    QString         filterIdentifier()                                  const override
     {
         return FilterIdentifier();
     }
 
-    virtual FilterAction    filterAction()                                    override;
+    FilterAction    filterAction()                                            override;
 
     void                    readParameters(const FilterAction& action)        override;
 

@@ -59,7 +59,6 @@ public:
     virtual NPT_Result OnSeek(PLT_ActionReference& action) = 0;
     virtual NPT_Result OnStop(PLT_ActionReference& action) = 0;
     virtual NPT_Result OnSetAVTransportURI(PLT_ActionReference& action) = 0;
-    virtual NPT_Result OnSetNextAVTransportURI(PLT_ActionReference& action) = 0;
     virtual NPT_Result OnSetPlayMode(PLT_ActionReference& action) = 0;
 
     // RenderingControl
@@ -84,12 +83,12 @@ public:
     virtual void SetDelegate(PLT_MediaRendererDelegate* delegate) { m_Delegate = delegate; }
 
     // PLT_DeviceHost methods
-    NPT_Result SetupServices() override;
-    NPT_Result OnAction(PLT_ActionReference&          action, 
-                                const PLT_HttpRequestContext& context) override;
+    virtual NPT_Result SetupServices();
+    virtual NPT_Result OnAction(PLT_ActionReference&          action, 
+                                const PLT_HttpRequestContext& context);
 
 protected:
-    ~PLT_MediaRenderer() override;
+    virtual ~PLT_MediaRenderer();
 
     // PLT_MediaRendererInterface methods
     // ConnectionManager
@@ -103,7 +102,6 @@ protected:
     virtual NPT_Result OnSeek(PLT_ActionReference& action);
     virtual NPT_Result OnStop(PLT_ActionReference& action);
     virtual NPT_Result OnSetAVTransportURI(PLT_ActionReference& action);
-    virtual NPT_Result OnSetNextAVTransportURI(PLT_ActionReference& action);
     virtual NPT_Result OnSetPlayMode(PLT_ActionReference& action);
 
     // RenderingControl

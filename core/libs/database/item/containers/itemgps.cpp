@@ -7,7 +7,7 @@
  * Description : a class to hold GPS information about an item.
  *
  * Copyright (C) 2010-2014 by Michael G. Hansen <mike at mghansen dot de>
- * Copyright (C) 2010-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2010-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -25,6 +25,7 @@
 
 // Local includes
 
+#include "metaenginesettings.h"
 #include "itemposition.h"
 #include "coredb.h"
 #include "tagscache.h"
@@ -34,7 +35,7 @@ namespace Digikam
 
 ItemGPS::ItemGPS(const ItemInfo& info)
     : GPSItemContainer(info.fileUrl()),
-      m_info(info)
+      m_info          (info)
 {
 }
 
@@ -45,6 +46,7 @@ ItemGPS::~ItemGPS()
 bool ItemGPS::loadImageData()
 {
     // In first, we try to get GPS info from database.
+
     ItemPosition pos = m_info.imagePosition();
     m_dateTime       = m_info.dateTime();
 
@@ -58,6 +60,7 @@ bool ItemGPS::loadImageData()
         }
 
         // mark us as not-dirty, because the data was just loaded:
+
         m_dirty      = false;
         m_savedState = m_gpsData;
 
@@ -131,6 +134,11 @@ QString ItemGPS::saveChanges()
     }
 
     // Save info to file.
+
+    MetaEngineSettings* const settings = MetaEngineSettings::instance();
+
+    m_saveTags                         = settings->settings().saveTags;
+    m_saveGPS                          = settings->settings().savePosition;
 
     return GPSItemContainer::saveChanges();
 }

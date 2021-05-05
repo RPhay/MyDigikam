@@ -6,7 +6,7 @@
  * Date        : 2017-05-15
  * Description : menu to manage GPS bookmarks
  *
- * Copyright (C) 2017-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2017-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -49,7 +49,7 @@ class ModelMenu : public QMenu
 public:
 
     explicit ModelMenu(QWidget* const parent = nullptr);
-    ~ModelMenu();
+    ~ModelMenu() override;
 
     void setModel(QAbstractItemModel* model);
     QAbstractItemModel* model() const;
@@ -90,8 +90,8 @@ protected:
 private Q_SLOTS:
 
     void slotAboutToShow();
-    void triggered(QAction* action);
-    void hovered(QAction* action);
+    void slotTriggered(QAction* action);
+    void slotHovered(QAction* action);
 
 private:
 
@@ -115,7 +115,7 @@ class BookmarksMenu : public ModelMenu
 public:
 
     explicit BookmarksMenu(BookmarksManager* const mngr, QWidget* const parent = nullptr);
-    ~BookmarksMenu();
+    ~BookmarksMenu() override;
 
     void setInitialActions(const QList<QAction*>& actions);
 
@@ -129,7 +129,7 @@ protected:
 
 private Q_SLOTS:
 
-    void activated(const QModelIndex& index);
+    void slotActivated(const QModelIndex& index);
 
 private:
 

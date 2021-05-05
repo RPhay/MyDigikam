@@ -42,8 +42,9 @@ class DIGIKAM_DATABASE_EXPORT SimilarityDbBackend : public BdEngineBackend
 
 public:
 
-    explicit SimilarityDbBackend(DbEngineLocking* const locking, const QString& backendName = QLatin1String("similarityDatabase-"));
-    ~SimilarityDbBackend();
+    explicit SimilarityDbBackend(DbEngineLocking* const locking,
+                                 const QString& backendName = QLatin1String("similarityDatabase-"));
+    ~SimilarityDbBackend() override;
 
     /**
      * Initialize the database schema to the current version,
@@ -53,6 +54,9 @@ public:
     bool initSchema(SimilarityDbSchemaUpdater* const updater);
 
 private:
+
+    // Disable
+    explicit SimilarityDbBackend(QObject*) = delete;
 
     Q_DECLARE_PRIVATE(BdEngineBackend)
 };

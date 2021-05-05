@@ -35,17 +35,17 @@
 namespace Digikam
 {
 
-class DIGIKAM_EXPORT ClickDragReleaseItem : public QGraphicsObject
+class DIGIKAM_EXPORT ClickDragReleaseItem : public QGraphicsObject      // clazy:exclude=ctor-missing-parent-argument
 {
     Q_OBJECT
 
 public:
 
     explicit ClickDragReleaseItem(QGraphicsItem* const parent);
-    ~ClickDragReleaseItem();
+    ~ClickDragReleaseItem()                                          override;
 
-    virtual QRectF boundingRect() const                                      override;
-    virtual void paint(QPainter*, const QStyleOptionGraphicsItem*, QWidget*) override;
+    QRectF boundingRect() const                                      override;
+    void paint(QPainter*, const QStyleOptionGraphicsItem*, QWidget*) override;
 
 Q_SIGNALS:
 
@@ -63,12 +63,12 @@ Q_SIGNALS:
 
 protected:
 
-    virtual void mousePressEvent(QGraphicsSceneMouseEvent*)                  override;
-    virtual void mouseMoveEvent(QGraphicsSceneMouseEvent*)                   override;
-    virtual void mouseReleaseEvent(QGraphicsSceneMouseEvent*)                override;
-    virtual void mouseDoubleClickEvent(QGraphicsSceneMouseEvent*)            override;
-    virtual void hoverMoveEvent(QGraphicsSceneHoverEvent*)                   override;
-    virtual void keyPressEvent(QKeyEvent*)                                   override;
+    void mousePressEvent(QGraphicsSceneMouseEvent*)                  override;
+    void mouseMoveEvent(QGraphicsSceneMouseEvent*)                   override;
+    void mouseReleaseEvent(QGraphicsSceneMouseEvent*)                override;
+    void mouseDoubleClickEvent(QGraphicsSceneMouseEvent*)            override;
+    void hoverMoveEvent(QGraphicsSceneHoverEvent*)                   override;
+    void keyPressEvent(QKeyEvent*)                                   override;
 
 private:
 

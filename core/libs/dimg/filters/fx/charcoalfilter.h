@@ -6,7 +6,7 @@
  * Date        : 2005-05-25
  * Description : Charcoal threaded image filter.
  *
- * Copyright (C) 2005-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2005-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2010      by Martin Klapetek <martin dot klapetek at gmail dot com>
  *
  * This program is free software; you can redistribute it
@@ -36,15 +36,16 @@ namespace Digikam
 
 class DIGIKAM_EXPORT CharcoalFilter : public DImgThreadedFilter
 {
+    Q_OBJECT
 
 public:
 
     explicit CharcoalFilter(QObject* const parent = nullptr);
     explicit CharcoalFilter(DImg* const orgImage,
-                            QObject* const parent=nullptr,
-                            double pencil=5.0,
-                            double smooth=10.0);
-    ~CharcoalFilter();
+                            QObject* const parent = nullptr,
+                            double pencil = 5.0,
+                            double smooth = 10.0);
+    ~CharcoalFilter()                                                         override;
 
     static QString          FilterIdentifier()
     {
@@ -63,20 +64,23 @@ public:
         return 1;
     }
 
-    virtual QString         filterIdentifier()                          const override
+    QString         filterIdentifier()                                  const override
     {
         return FilterIdentifier();
     }
 
-    virtual FilterAction    filterAction()                                    override;
-    void                    readParameters(const FilterAction& action)        override;
+    FilterAction    filterAction()                                            override;
+    void            readParameters(const FilterAction& action)                override;
 
 private:
 
     void filterImage()                                                        override;
     bool convolveImage(const unsigned int order, const double* kernel);
     int  getOptimalKernelWidth(double radius, double sigma);
-    void convolveImageMultithreaded(uint start, uint stop, double* normal_kernel, double kernelWidth);
+    void convolveImageMultithreaded(uint start,
+                                    uint stop,
+                                    double* normal_kernel,
+                                    double kernelWidth);
 
 private:
 

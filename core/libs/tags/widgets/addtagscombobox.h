@@ -52,13 +52,15 @@ class AddTagsComboBox : public TagTreeViewSelectComboBox
 public:
 
     explicit AddTagsComboBox(QWidget* const parent = nullptr);
-    ~AddTagsComboBox();
+    ~AddTagsComboBox() override;
 
     /**
      * You must call this after construction.
      * If filtered/filterModel is 0, a default one is constructed
      */
-    void setModel(TagModel* const model, TagPropertiesFilterModel* const filteredModel = nullptr, CheckableAlbumFilterModel* const filterModel = nullptr);
+    void setModel(TagModel* const model,
+                  TagPropertiesFilterModel* const filteredModel = nullptr,
+                  CheckableAlbumFilterModel* const filterModel = nullptr);
 
     /**
      * Returns the currently set tagging action.
@@ -107,11 +109,11 @@ protected Q_SLOTS:
 
 protected:
 
-    bool eventFilter(QObject* object, QEvent* event);
+    bool eventFilter(QObject* object, QEvent* event) override;
 
 private:
 
-    // make private
+    // Disable
     void setEditable(bool editable);
 
 private:

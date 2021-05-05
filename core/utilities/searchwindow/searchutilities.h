@@ -88,8 +88,8 @@ Q_SIGNALS:
 
 protected:
 
-    virtual void paintEvent(QPaintEvent* event)        override;
-    virtual void mouseReleaseEvent(QMouseEvent* event) override;
+    void paintEvent(QPaintEvent* event)        override;
+    void mouseReleaseEvent(QMouseEvent* event) override;
 
 protected Q_SLOTS:
 
@@ -116,7 +116,7 @@ public:
      * linear steps are not applicable
      */
     explicit CustomStepsDoubleSpinBox(QWidget* const parent = nullptr);
-    ~CustomStepsDoubleSpinBox();
+    ~CustomStepsDoubleSpinBox() override;
 
     /**
      * Set a list of values that are usually applicable for the
@@ -146,7 +146,7 @@ public:
      */
     void reset();
 
-    virtual void stepBy(int steps);
+    void stepBy(int steps) override;
 
 private Q_SLOTS:
 
@@ -172,7 +172,7 @@ public:
      * linear steps are not applicable
      */
     explicit CustomStepsIntSpinBox(QWidget* const parent = nullptr);
-    ~CustomStepsIntSpinBox();
+    ~CustomStepsIntSpinBox() override;
 
     /**
      * Set a list of values that are usually applicable for the
@@ -214,13 +214,13 @@ public:
     double fractionMagicValue() const;
     void   setFractionMagicValue(double value);
 
-    virtual void stepBy(int steps);
+    void stepBy(int steps) override;
 
 protected:
 
-    virtual QString textFromValue(int value) const;
-    virtual int valueFromText(const QString& text) const;
-    virtual StepEnabled stepEnabled() const;
+    QString textFromValue(int value) const override;
+    int valueFromText(const QString& text) const override;
+    StepEnabled stepEnabled() const override;
 
 private Q_SLOTS:
 

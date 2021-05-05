@@ -7,7 +7,7 @@
  * Description : a widget to draw stars rating
  *
  * Copyright (C) 2005      by Owen Hirst <n8rider@sbcglobal.net>
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -60,14 +60,14 @@ class Q_DECL_HIDDEN RatingWidget::Private
 public:
 
     explicit Private()
-      : tracking(true),
-        isHovered(false),
-        fading(false),
-        rating(0),
-        fadingValue(0),
-        duration(600),
-        offset(0),
-        fadingTimeLine(nullptr)
+      : tracking        (true),
+        isHovered       (false),
+        fading          (false),
+        rating          (0),
+        fadingValue     (0),
+        duration        (600),
+        offset          (0),
+        fadingTimeLine  (nullptr)
     {
     }
 
@@ -89,7 +89,7 @@ public:
 
 RatingWidget::RatingWidget(QWidget* const parent)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     slotThemeChanged();
 
@@ -481,7 +481,7 @@ class Q_DECL_HIDDEN RatingBox::Private
 public:
 
     explicit Private()
-      : shortcut(nullptr),
+      : shortcut    (nullptr),
         ratingWidget(nullptr)
     {
     }
@@ -493,7 +493,7 @@ public:
 
 RatingBox::RatingBox(QWidget* const parent)
     : DVBox(parent),
-      d(new Private)
+      d    (new Private)
 {
     setAttribute(Qt::WA_DeleteOnClose);
     setFocusPolicy(Qt::NoFocus);
@@ -501,8 +501,8 @@ RatingBox::RatingBox(QWidget* const parent)
     d->ratingWidget = new RatingWidget(this);
     d->ratingWidget->setTracking(false);
 
-    d->shortcut = new DAdjustableLabel(this);
-    QFont fnt   = d->shortcut->font();
+    d->shortcut     = new DAdjustableLabel(this);
+    QFont fnt       = d->shortcut->font();
     fnt.setItalic(true);
     d->shortcut->setFont(fnt);
     d->shortcut->setAlignment(Qt::AlignRight | Qt::AlignVCenter);

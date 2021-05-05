@@ -47,19 +47,16 @@ NPT_SET_LOCAL_LOGGER("platinum.media.server.didl")
 const char* didl_header         = "<DIDL-Lite xmlns=\"urn:schemas-upnp-org:metadata-1-0/DIDL-Lite/\""
                                             " xmlns:dc=\"http://purl.org/dc/elements/1.1/\""
                                             " xmlns:upnp=\"urn:schemas-upnp-org:metadata-1-0/upnp/\""
-                                            " xmlns:dlna=\"urn:schemas-dlna-org:metadata-1-0/\""
-                                            " xmlns:sec=\"http://www.sec.co.kr/\""
-                                            " xmlns:xbmc=\"urn:schemas-xbmc-org:metadata-1-0/\">";
+                                            " xmlns:dlna=\"urn:schemas-dlna-org:metadata-1-0/\">";
 const char* didl_footer         = "</DIDL-Lite>";
 const char* didl_namespace_dc   = "http://purl.org/dc/elements/1.1/";
 const char* didl_namespace_upnp = "urn:schemas-upnp-org:metadata-1-0/upnp/";
 const char* didl_namespace_dlna = "urn:schemas-dlna-org:metadata-1-0/";
-const char* didl_namespace_xbmc = "urn:schemas-xbmc-org:metadata-1-0/";
 
 /*----------------------------------------------------------------------
 |   PLT_Didl::ConvertFilterToMask
 +---------------------------------------------------------------------*/
-NPT_UInt64
+NPT_UInt32 
 PLT_Didl::ConvertFilterToMask(const NPT_String& filter)
 {
     // easy out
@@ -69,7 +66,7 @@ PLT_Didl::ConvertFilterToMask(const NPT_String& filter)
     // a given DIDL property (or set of properties).  
     // These fields are or start with: upnp:, @, res@, res, dc:, container@
 
-    NPT_UInt64  mask = 0;
+    NPT_UInt32  mask = 0;
     const char* s = filter;
     int         i = 0;
 
@@ -95,8 +92,6 @@ PLT_Didl::ConvertFilterToMask(const NPT_String& filter)
             mask |= PLT_FILTER_MASK_ARTIST;
         } else if (NPT_String::CompareN(s+i, PLT_FILTER_FIELD_ACTOR, len, true) == 0) {
             mask |= PLT_FILTER_MASK_ACTOR;
-        } else if (NPT_String::CompareN(s+i, PLT_FILTER_FIELD_DIRECTOR, len, true) == 0) {
-            mask |= PLT_FILTER_MASK_DIRECTOR;
         } else if (NPT_String::CompareN(s+i, PLT_FILTER_FIELD_AUTHOR, len, true) == 0) {
             mask |= PLT_FILTER_MASK_AUTHOR;       
         } else if (NPT_String::CompareN(s+i, PLT_FILTER_FIELD_DATE, len, true) == 0) {
@@ -110,16 +105,8 @@ PLT_Didl::ConvertFilterToMask(const NPT_String& filter)
             mask |= PLT_FILTER_MASK_ALBUMARTURI;
         } else if (NPT_String::CompareN(s+i, PLT_FILTER_FIELD_DESCRIPTION, len, true) == 0) {
             mask |= PLT_FILTER_MASK_DESCRIPTION;
-        } else if (NPT_String::CompareN(s+i, PLT_FILTER_FIELD_LONGDESCRIPTION, len, true) == 0) {
-            mask |= PLT_FILTER_MASK_LONGDESCRIPTION;
         } else if (NPT_String::CompareN(s+i, PLT_FILTER_FIELD_ORIGINALTRACK, len, true) == 0) {
             mask |= PLT_FILTER_MASK_ORIGINALTRACK;
-        } else if (NPT_String::CompareN(s+i, PLT_FILTER_FIELD_LASTPOSITION, len, true) == 0) {
-            mask |= PLT_FILTER_MASK_LASTPOSITION;
-        } else if (NPT_String::CompareN(s+i, PLT_FILTER_FIELD_LASTPLAYBACK, len, true) == 0) {
-            mask |= PLT_FILTER_MASK_LASTPLAYBACK;
-        } else if (NPT_String::CompareN(s+i, PLT_FILTER_FIELD_PLAYCOUNT, len, true) == 0) {
-            mask |= PLT_FILTER_MASK_PLAYCOUNT;
         } else if (NPT_String::CompareN(s+i, PLT_FILTER_FIELD_SEARCHABLE, len, true) == 0) {
             mask |= PLT_FILTER_MASK_SEARCHABLE;
         } else if (NPT_String::CompareN(s+i, PLT_FILTER_FIELD_SEARCHCLASS, len, true) == 0) {
@@ -136,14 +123,10 @@ PLT_Didl::ConvertFilterToMask(const NPT_String& filter)
             mask |= PLT_FILTER_MASK_SERIESTITLE;
         } else if (NPT_String::CompareN(s+i, PLT_FILTER_FIELD_EPISODE, len, true) == 0) {
             mask |= PLT_FILTER_MASK_EPISODE;
-        } else if (NPT_String::CompareN(s+i, PLT_FILTER_FIELD_RATING, len, true) == 0) {
-            mask |= PLT_FILTER_MASK_RATING;
-        } else if (NPT_String::CompareN(s+i, PLT_FILTER_FIELD_PUBLISHER, len, true) == 0) {
-            mask |= PLT_FILTER_MASK_PUBLISHER;
         } else if (NPT_String::CompareN(s+i, PLT_FILTER_FIELD_RES, len, true) == 0) {
             mask |= PLT_FILTER_MASK_RES;
         } else if (NPT_String::CompareN(s+i, PLT_FILTER_FIELD_RES_DURATION, len, true) == 0 ||
-				   NPT_String::CompareN(s+i, PLT_FILTER_FIELD_RES_DURATION_SHORT, len, true) == 0) {
+                   NPT_String::CompareN(s+i, PLT_FILTER_FIELD_RES_DURATION_SHORT, len, true) == 0) {
             mask |= PLT_FILTER_MASK_RES | PLT_FILTER_MASK_RES_DURATION;
         } else if (NPT_String::CompareN(s+i, PLT_FILTER_FIELD_RES_SIZE, len, true) == 0) {
             mask |= PLT_FILTER_MASK_RES | PLT_FILTER_MASK_RES_SIZE;
@@ -155,30 +138,10 @@ PLT_Didl::ConvertFilterToMask(const NPT_String& filter)
             mask |= PLT_FILTER_MASK_RES | PLT_FILTER_MASK_RES_BITRATE;
         } else if (NPT_String::CompareN(s+i, PLT_FILTER_FIELD_RES_BITSPERSAMPLE, len, true) == 0) {
             mask |= PLT_FILTER_MASK_RES | PLT_FILTER_MASK_RES_BITSPERSAMPLE;
-		} else if (NPT_String::CompareN(s+i, PLT_FILTER_FIELD_RES_NRAUDIOCHANNELS, len, true) == 0) {
+        } else if (NPT_String::CompareN(s+i, PLT_FILTER_FIELD_RES_NRAUDIOCHANNELS, len, true) == 0) {
             mask |= PLT_FILTER_MASK_RES | PLT_FILTER_MASK_RES_NRAUDIOCHANNELS;
-		} else if (NPT_String::CompareN(s+i, PLT_FILTER_FIELD_RES_SAMPLEFREQUENCY, len, true) == 0) {
+        } else if (NPT_String::CompareN(s+i, PLT_FILTER_FIELD_RES_SAMPLEFREQUENCY, len, true) == 0) {
             mask |= PLT_FILTER_MASK_RES | PLT_FILTER_MASK_RES_SAMPLEFREQUENCY;
-		} else if (NPT_String::CompareN(s+i, PLT_FILTER_FIELD_EPISODE_COUNT, len, true) == 0) {
-            mask |= PLT_FILTER_MASK_EPISODE_COUNT;
-        } else if (NPT_String::CompareN(s+i, PLT_FILTER_FIELD_EPISODE_SEASON, len, true) == 0) {
-            mask |= PLT_FILTER_MASK_EPISODE_SEASON;
-        } else if (NPT_String::CompareN(s+i, PLT_FILTER_FIELD_XBMC_LASTPLAYERSTATE, len, true) == 0) {
-            mask |= PLT_FILTER_MASK_XBMC_LASTPLAYERSTATE;
-        } else if (NPT_String::CompareN(s+i, PLT_FILTER_FIELD_XBMC_DATEADDED, len, true) == 0) {
-            mask |= PLT_FILTER_MASK_XBMC_DATEADDED;
-        } else if (NPT_String::CompareN(s+i, PLT_FILTER_FIELD_XBMC_RATING, len, true) == 0) {
-            mask |= PLT_FILTER_MASK_XBMC_RATING;
-        } else if (NPT_String::CompareN(s+i, PLT_FILTER_FIELD_XBMC_VOTES, len, true) == 0) {
-            mask |= PLT_FILTER_MASK_XBMC_VOTES;
-        } else if (NPT_String::CompareN(s+i, PLT_FILTER_FIELD_XBMC_ARTWORK, len, true) == 0) {
-            mask |= PLT_FILTER_MASK_XBMC_ARTWORK;
-        } else if (NPT_String::CompareN(s+i, PLT_FILTER_FIELD_XBMC_UNIQUE_IDENTIFIER, len, true) == 0) {
-            mask |= PLT_FILTER_MASK_XBMC_UNIQUE_IDENTIFIER;
-        } else if (NPT_String::CompareN(s + i, PLT_FILTER_FIELD_XBMC_COUNTRY, len, true) == 0) {
-          mask |= PLT_FILTER_MASK_XBMC_COUNTRY;
-        } else if (NPT_String::CompareN(s + i, PLT_FILTER_FIELD_XBMC_USERRATING, len, true) == 0) {
-          mask |= PLT_FILTER_MASK_XBMC_USERRATING;
         }
 
         if (next_comma < 0) {
@@ -280,7 +243,7 @@ PLT_Didl::FormatTimeStamp(NPT_UInt32 seconds)
         result += NPT_String::FromInteger(secs);
     }
 
-	result += ".000"; // needed for XBOX360 otherwise it won't play the track
+    result += ".000"; // needed for XBOX360 otherwise it won't play the track
     return result;
 }
 
@@ -332,7 +295,7 @@ PLT_Didl::ParseTimeStamp(const NPT_String& timestamp, NPT_UInt32& seconds)
 NPT_Result
 PLT_Didl::ToDidl(PLT_MediaObject& object, const NPT_String& filter, NPT_String& didl)
 {
-    NPT_UInt64 mask = ConvertFilterToMask(filter);
+    NPT_UInt32 mask = ConvertFilterToMask(filter);
 
     // Allocate enough space for the didl
     didl.Reserve(2048);
@@ -350,20 +313,20 @@ PLT_Didl::FromDidl(const char* xml, PLT_MediaObjectListReference& objects)
     PLT_MediaObject*    object = NULL;
     NPT_XmlNode*        node = NULL;
     NPT_XmlElementNode* didl = NULL;
-	NPT_XmlParser		parser;
+    NPT_XmlParser       parser;
 
     NPT_LOG_FINE("Parsing Didl...");
 
-	NPT_CHECK_LABEL_SEVERE(parser.Parse(xml, node), cleanup);
+    NPT_CHECK_LABEL_SEVERE(parser.Parse(xml, node), cleanup);
     if (!node || !node->AsElementNode()) {
-		NPT_LOG_SEVERE("Invalid node type");
+        NPT_LOG_SEVERE("Invalid node type");
         goto cleanup;
     }
 
     didl = node->AsElementNode();
 
-	if (didl->GetTag().Compare("DIDL-Lite", true)) {
-		NPT_LOG_SEVERE("Invalid node tag");
+    if (didl->GetTag().Compare("DIDL-Lite", true)) {
+        NPT_LOG_SEVERE("Invalid node tag");
         goto cleanup;
     }
 
@@ -380,15 +343,15 @@ PLT_Didl::FromDidl(const char* xml, PLT_MediaObjectListReference& objects)
             object = new PLT_MediaContainer();
         } else if (child->GetTag().Compare("item", true) == 0) {
             object = new PLT_MediaItem();
-		} else {
-			NPT_LOG_WARNING("Invalid node tag");
+        } else {
+            NPT_LOG_WARNING("Invalid node tag");
             continue;
         }
 
         if (NPT_FAILED(object->FromDidl(child))) {
             NPT_LOG_WARNING_1("Invalid didl for object: %s", 
                 (const char*) PLT_XmlHelper::Serialize(*child, false));
-          	continue;
+            continue;
         }
 
         objects->Add(object);

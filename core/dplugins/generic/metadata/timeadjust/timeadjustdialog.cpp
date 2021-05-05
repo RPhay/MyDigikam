@@ -8,7 +8,7 @@
  *
  * Copyright (C) 2012      by Smit Mehta <smit dot meh at gmail dot com>
  * Copyright (C) 2003-2005 by Jesper Pedersen <blackie at kde dot org>
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (c) 2018      by Maik Qualmann <metzpinguin at gmail dot com>
  *
  * This program is free software; you can redistribute it
@@ -50,7 +50,7 @@
 #include <QApplication>
 #include <QMessageBox>
 #include <QWindow>
-
+#include <QScopedPointer>
 
 // KDE includes
 
@@ -79,11 +79,11 @@ public:
 
     explicit Private()
       : settingsView(nullptr),
-        updateTimer(nullptr),
-        progressBar(nullptr),
-        listView(nullptr),
-        thread(nullptr),
-        iface(nullptr)
+        updateTimer (nullptr),
+        progressBar (nullptr),
+        listView    (nullptr),
+        thread      (nullptr),
+        iface       (nullptr)
     {
     }
 
@@ -92,6 +92,7 @@ public:
     QMap<QUrl, QDateTime> itemsUsedMap;           // Map of item urls and Used Timestamps.
     QMap<QUrl, QDateTime> itemsUpdatedMap;        // Map of item urls and Updated Timestamps.
     QMap<QUrl, int>       itemsStatusMap;         // Map of item urls and status flag.
+    QList<QUrl>           itemsSortedList;        // List of item urls sorted in original order.
 
     QTimer*               updateTimer;
 
@@ -105,9 +106,9 @@ public:
 
 TimeAdjustDialog::TimeAdjustDialog(QWidget* const parent, DInfoInterface* const iface)
     : DPluginDialog(parent, QLatin1String("Time Adjust Dialog")),
-      d(new Private)
+      d            (new Private)
 {
-    setWindowTitle(i18n("Adjust Time & Date"));
+    setWindowTitle(i18nc("@title", "Adjust Time & Date"));
     setMinimumSize(900, 500);
     setModal(true);
 
@@ -127,7 +128,7 @@ TimeAdjustDialog::TimeAdjustDialog(QWidget* const parent, DInfoInterface* const 
 
     QGridLayout* const mainLayout = new QGridLayout(mainWidget);
     d->listView                   = new TimeAdjustList(mainWidget);
-    d->settingsView               = new TimeAdjustSettings(mainWidget);
+    d->settingsView               = new TimeAdjustSettings(mainWidget, true);
     d->progressBar                = new DProgressWdg(mainWidget);
     d->progressBar->reset();
     d->progressBar->hide();
@@ -191,13 +192,14 @@ TimeAdjustDialog::TimeAdjustDialog(QWidget* const parent, DInfoInterface* const 
     setBusy(false);
     readSettings();
 
-    foreach (const QUrl& url, d->iface->currentSelectedItems())
-    {
-        d->itemsUsedMap.insert(url, QDateTime());
-    }
-
     d->listView->setIface(d->iface);
     d->listView->loadImagesFromCurrentSelection();
+
+    foreach (const QUrl& url, d->listView->imageUrls())
+    {
+        d->itemsSortedList << url;
+        d->itemsUsedMap.insert(url, QDateTime());
+    }
 
     slotReadTimestamps();
 }
@@ -285,7 +287,7 @@ void TimeAdjustDialog::saveSettings()
 
 void TimeAdjustDialog::slotReadTimestamps()
 {
-    foreach (const QUrl& url, d->itemsUsedMap.keys())
+    foreach (const QUrl& url, d->itemsSortedList)
     {
         d->itemsUsedMap.insert(url, QDateTime());
     }
@@ -323,7 +325,7 @@ void TimeAdjustDialog::slotReadTimestamps()
             QDateTime dateTime(d->settingsView->settings().customDate.date(),
                                d->settingsView->settings().customTime.time());
 
-            foreach (const QUrl& url, d->itemsUsedMap.keys())
+            foreach (const QUrl& url, d->itemsSortedList)
             {
                 d->itemsUsedMap.insert(url, dateTime);
             }
@@ -339,7 +341,7 @@ void TimeAdjustDialog::readApplicationTimestamps()
 {
     QList<QUrl> floatingDateItems;
 
-    foreach (const QUrl& url, d->itemsUsedMap.keys())
+    foreach (const QUrl& url, d->itemsSortedList)
     {
         DItemInfo info(d->iface->itemInfo(url));
 
@@ -359,7 +361,7 @@ void TimeAdjustDialog::readFileNameTimestamps()
 {
     TimeAdjustContainer prm = d->settingsView->settings();
 
-    foreach (const QUrl& url, d->itemsUsedMap.keys())
+    foreach (const QUrl& url, d->itemsSortedList)
     {
         d->itemsUsedMap.insert(url, prm.getDateTimeFromUrl(url));
     }
@@ -367,7 +369,7 @@ void TimeAdjustDialog::readFileNameTimestamps()
 
 void TimeAdjustDialog::readFileTimestamps()
 {
-    foreach (const QUrl& url, d->itemsUsedMap.keys())
+    foreach (const QUrl& url, d->itemsSortedList)
     {
         QFileInfo fileInfo(url.toLocalFile());
         d->itemsUsedMap.insert(url, fileInfo.lastModified());
@@ -376,11 +378,11 @@ void TimeAdjustDialog::readFileTimestamps()
 
 void TimeAdjustDialog::readMetadataTimestamps()
 {
-    foreach (const QUrl& url, d->itemsUsedMap.keys())
+    foreach (const QUrl& url, d->itemsSortedList)
     {
-        DMetadata meta;
+        QScopedPointer<DMetadata> meta(new DMetadata);
 
-        if (!meta.load(url.toLocalFile()))
+        if (!meta->load(url.toLocalFile()))
         {
             d->itemsUsedMap.insert(url, QDateTime());
             continue;
@@ -394,34 +396,34 @@ void TimeAdjustDialog::readMetadataTimestamps()
         switch (prm.metadataSource)
         {
             case TimeAdjustContainer::EXIFIPTCXMP:
-                curImageDateTime = meta.getItemDateTime();
+                curImageDateTime = meta->getItemDateTime();
                 break;
 
             case TimeAdjustContainer::EXIFCREATED:
-                curImageDateTime = QDateTime::fromString(meta.getExifTagString("Exif.Image.DateTime"),
+                curImageDateTime = QDateTime::fromString(meta->getExifTagString("Exif.Image.DateTime"),
                                                          exifDateTimeFormat);
                 break;
 
             case TimeAdjustContainer::EXIFORIGINAL:
-                curImageDateTime = QDateTime::fromString(meta.getExifTagString("Exif.Photo.DateTimeOriginal"),
+                curImageDateTime = QDateTime::fromString(meta->getExifTagString("Exif.Photo.DateTimeOriginal"),
                                                          exifDateTimeFormat);
                 break;
 
             case TimeAdjustContainer::EXIFDIGITIZED:
-                curImageDateTime = QDateTime::fromString(meta.getExifTagString("Exif.Photo.DateTimeDigitized"),
+                curImageDateTime = QDateTime::fromString(meta->getExifTagString("Exif.Photo.DateTimeDigitized"),
                                                          exifDateTimeFormat);
                 break;
 
             case TimeAdjustContainer::IPTCCREATED:
                 // we have to truncate the timezone from the time, otherwise it cannot be converted to a QTime
-                curImageDateTime = QDateTime(QDate::fromString(meta.getIptcTagString("Iptc.Application2.DateCreated"),
+                curImageDateTime = QDateTime(QDate::fromString(meta->getIptcTagString("Iptc.Application2.DateCreated"),
                                                                Qt::ISODate),
-                                             QTime::fromString(meta.getIptcTagString("Iptc.Application2.TimeCreated").left(8),
+                                             QTime::fromString(meta->getIptcTagString("Iptc.Application2.TimeCreated").left(8),
                                                                Qt::ISODate));
                 break;
 
             case TimeAdjustContainer::XMPCREATED:
-                curImageDateTime = QDateTime::fromString(meta.getXmpTagString("Xmp.xmp.CreateDate"),
+                curImageDateTime = QDateTime::fromString(meta->getXmpTagString("Xmp.xmp.CreateDate"),
                                                          xmpDateTimeFormat);
                 break;
 
@@ -441,7 +443,7 @@ void TimeAdjustDialog::slotApplyClicked()
     TimeAdjustContainer prm = d->settingsView->settings();
 
     d->progressBar->show();
-    d->progressBar->progressScheduled(i18n("Adjust Time and Date"), true, true);
+    d->progressBar->progressScheduled(i18nc("@info", "Adjust Time and Date"), true, true);
     d->progressBar->progressThumbnailChanged(QIcon::fromTheme(QLatin1String("appointment-new")).pixmap(22, 22));
     d->progressBar->setMaximum(d->itemsUsedMap.keys().size());
     d->thread->setSettings(prm);
@@ -472,15 +474,15 @@ void TimeAdjustDialog::setBusy(bool busy)
 {
     if (busy)
     {
-        m_buttons->button(QDialogButtonBox::Close)->setText(i18n("Cancel"));
+        m_buttons->button(QDialogButtonBox::Close)->setText(i18nc("@action", "Cancel"));
         m_buttons->button(QDialogButtonBox::Close)->setIcon(QIcon::fromTheme(QLatin1String("dialog-cancel")));
-        m_buttons->button(QDialogButtonBox::Close)->setToolTip(i18n("Cancel current operation"));
+        m_buttons->button(QDialogButtonBox::Close)->setToolTip(i18nc("@info", "Cancel current operation"));
     }
     else
     {
-        m_buttons->button(QDialogButtonBox::Close)->setText(i18n("Close"));
+        m_buttons->button(QDialogButtonBox::Close)->setText(i18nc("@action", "Close"));
         m_buttons->button(QDialogButtonBox::Close)->setIcon(QIcon::fromTheme(QLatin1String("window-close")));
-        m_buttons->button(QDialogButtonBox::Close)->setToolTip(i18n("Close window"));
+        m_buttons->button(QDialogButtonBox::Close)->setToolTip(i18nc("@info", "Close window"));
     }
 
     m_buttons->button(QDialogButtonBox::Ok)->setEnabled(!busy);
@@ -518,7 +520,7 @@ void TimeAdjustDialog::updateListView()
     // TODO : this loop can take a while, especially when items mist is huge.
     //        Moving this loop code to ActionThread is the right way for the future.
 
-    foreach (const QUrl& url, d->itemsUsedMap.keys())
+    foreach (const QUrl& url, d->itemsSortedList)
     {
         d->itemsUpdatedMap.insert(url, prm.calculateAdjustedDate(d->itemsUsedMap.value(url)));
     }
@@ -533,4 +535,4 @@ void TimeAdjustDialog::slotUpdateTimestamps()
     d->updateTimer->start();
 }
 
-}  // namespace DigikamGenericTimeAdjustPlugin
+} // namespace DigikamGenericTimeAdjustPlugin

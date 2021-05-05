@@ -6,8 +6,8 @@
  * Date        : 2009-12-13
  * Description : a tool to blend bracketed images.
  *
- * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (C) 2015      by Benjamin Girault, <benjamin dot girault at gmail dot com>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2015      by Benjamin Girault <benjamin dot girault at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -46,27 +46,32 @@ class EnfuseStackItem : public QTreeWidgetItem
 public:
 
     explicit EnfuseStackItem(QTreeWidget* const parent);
-    ~EnfuseStackItem();
+    ~EnfuseStackItem()                    override;
 
-    /** Return the preview image url assigned to item.
+    /**
+     * Return the preview image url assigned to item.
      */
-    const QUrl& url() const;
+    const QUrl& url()               const;
 
     void setEnfuseSettings(const EnfuseSettings& settings);
     EnfuseSettings enfuseSettings() const;
 
     void setOn(bool b);
-    bool isOn() const;
+    bool isOn()                     const;
 
     void setProgressAnimation(const QPixmap& pix);
     void setThumbnail(const QPixmap& pix);
     void setProcessedIcon(const QIcon& icon);
-    bool asValidThumb() const;
+    bool asValidThumb()             const;
 
 private:
 
     class Private;
     Private* const d;
+
+private:
+
+    Q_DISABLE_COPY(EnfuseStackItem)
 };
 
 // ---------------------------------------------------------------------
@@ -78,7 +83,7 @@ class EnfuseStackList : public QTreeWidget
 public:
 
     explicit EnfuseStackList(QWidget* const parent);
-    ~EnfuseStackList();
+    ~EnfuseStackList() override;
 
     void setTemplateFileName(DSaveSettingsWidget::OutputFormat, const QString&);
 

@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef OUTLOOK_BINARY_H
-#define OUTLOOK_BINARY_H
+#ifndef DIGIKAM_OUTLOOK_BINARY_H
+#define DIGIKAM_OUTLOOK_BINARY_H
 
 // Local includes
 
@@ -33,26 +33,14 @@ namespace Digikam
 
 class OutlookBinary : public DBinaryIface
 {
+    Q_OBJECT
+
 public:
 
-    OutlookBinary()
-        : DBinaryIface(
-                       QLatin1String("outlook"),
-                       QLatin1String("Outlook"),
-                       QLatin1String("https://www.microsoft.com/"),
-                       QLatin1String("SendByMail"),
-                       QStringList(),
-                       i18n("Outlook Mail Client.")
-                      )
-        {
-            setup();
-        }
-
-    ~OutlookBinary()
-    {
-    }
+    explicit OutlookBinary(QObject* const parent = nullptr);
+    ~OutlookBinary() override;
 };
 
 } // namespace Digikam
 
-#endif // OUTLOOK_BINARY_H
+#endif // DIGIKAM_OUTLOOK_BINARY_H

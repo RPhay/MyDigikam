@@ -6,7 +6,7 @@
  * Date        : 2006-02-23
  * Description : item metadata interface - history helpers.
  *
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2006-2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  * Copyright (C) 2011      by Leif Huhn <leif at dkstat dot com>
  *
@@ -35,7 +35,7 @@
 namespace Digikam
 {
 
-bool DMetadata::setItemHistory(QString& imageHistoryXml) const
+bool DMetadata::setItemHistory(const QString& imageHistoryXml) const
 {
     if (supportXmp())
     {
@@ -57,8 +57,9 @@ QString DMetadata::getItemHistory() const
     if (hasXmp())
     {
         QString value = getXmpTagString("Xmp.digiKam.ImageHistory", false);
-        //qCDebug(DIGIKAM_METAENGINE_LOG) << "Loading image history " << value;
-
+/*
+        qCDebug(DIGIKAM_METAENGINE_LOG) << "Loading image history " << value;
+*/
         return value;
     }
 
@@ -109,7 +110,8 @@ QString DMetadata::getItemUniqueId() const
     // If the first 20 are zero, it's probably a counter,
     // the left 12 are sufficient for more then 10^14 clicks.
 
-    if (!exifUid.isEmpty() && !exifUid.startsWith(QLatin1String("00000000000000000000")) &&
+    if (!exifUid.isEmpty()                                         &&
+        !exifUid.startsWith(QLatin1String("00000000000000000000")) &&
         !getExifTagString("Exif.Image.Make").contains(QLatin1String("SAMSUNG"), Qt::CaseInsensitive))
     {
         return exifUid;

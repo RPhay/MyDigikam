@@ -7,7 +7,7 @@
  * Description : User interface for searches
  *
  * Copyright (C) 2008-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2011-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2011-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -180,9 +180,17 @@ SearchField* SearchField::createField(const QString& name, SearchFieldGroup* con
         field->setFieldName(name);
         field->setText(i18n("File Size"), i18n("Size of the file"));
         field->setBetweenText(i18nc("Size of the file ...-...", "-"));
-        field->setNumberPrefixAndSuffix(QString(), QLatin1String("MB"));
+        field->setNumberPrefixAndSuffix(QString(), QLatin1String("MiB"));
         field->setBoundary(0, 1000000, 1, 0.5);
         field->setFactor(1024 * 1024);
+
+        return field;
+    }
+    else if (name == QLatin1String("monthday"))
+    {
+        SearchFieldMonthDay* const field = new SearchFieldMonthDay(parent);
+        field->setFieldName(name);
+        field->setText(i18n("Month/Day"), i18n("Return items from a month or a day of the month"));
 
         return field;
     }
@@ -291,17 +299,17 @@ SearchField* SearchField::createField(const QString& name, SearchFieldGroup* con
 
         foreach (const QString& fmt, CoreDbAccess().db()->getFormatStatistics(DatabaseItem::Image).keys())
         {
-            formats << fmt << i18n("%1 [Image]", fmt);
+            formats << fmt << i18nc("@label: file format", "%1 [Image]", fmt);
         }
 
         foreach (const QString& fmt, CoreDbAccess().db()->getFormatStatistics(DatabaseItem::Video).keys())
         {
-            formats << fmt << i18n("%1 [Video]", fmt);
+            formats << fmt << i18nc("@label: file format", "%1 [Video]", fmt);
         }
 
         foreach (const QString& fmt, CoreDbAccess().db()->getFormatStatistics(DatabaseItem::Audio).keys())
         {
-            formats << fmt << i18n("%1 [Audio]", fmt);
+            formats << fmt << i18nc("@label: file format", "%1 [Audio]", fmt);
         }
 
 /*
@@ -341,22 +349,22 @@ SearchField* SearchField::createField(const QString& name, SearchFieldGroup* con
 
         // Images
 
-        map.insert(DImg::COLORMODELUNKNOWN,          i18n("%1 [Image]", DImg::colorModelToString(DImg::COLORMODELUNKNOWN)));
-        map.insert(DImg::RGB,                        i18n("%1 [Image]", DImg::colorModelToString(DImg::RGB)));
-        map.insert(DImg::GRAYSCALE,                  i18n("%1 [Image]", DImg::colorModelToString(DImg::GRAYSCALE)));
-        map.insert(DImg::MONOCHROME,                 i18n("%1 [Image]", DImg::colorModelToString(DImg::MONOCHROME)));
-        map.insert(DImg::INDEXED,                    i18n("%1 [Image]", DImg::colorModelToString(DImg::INDEXED)));
-        map.insert(DImg::YCBCR,                      i18n("%1 [Image]", DImg::colorModelToString(DImg::YCBCR)));
-        map.insert(DImg::CMYK,                       i18n("%1 [Image]", DImg::colorModelToString(DImg::CMYK)));
-        map.insert(DImg::CIELAB,                     i18n("%1 [Image]", DImg::colorModelToString(DImg::CIELAB)));
-        map.insert(DImg::COLORMODELRAW,              i18n("%1 [Image]", DImg::colorModelToString(DImg::COLORMODELRAW)));
+        map.insert(DImg::COLORMODELUNKNOWN,          i18nc("@label: color model", "%1 [Image]", DImg::colorModelToString(DImg::COLORMODELUNKNOWN)));
+        map.insert(DImg::RGB,                        i18nc("@label: color model", "%1 [Image]", DImg::colorModelToString(DImg::RGB)));
+        map.insert(DImg::GRAYSCALE,                  i18nc("@label: color model", "%1 [Image]", DImg::colorModelToString(DImg::GRAYSCALE)));
+        map.insert(DImg::MONOCHROME,                 i18nc("@label: color model", "%1 [Image]", DImg::colorModelToString(DImg::MONOCHROME)));
+        map.insert(DImg::INDEXED,                    i18nc("@label: color model", "%1 [Image]", DImg::colorModelToString(DImg::INDEXED)));
+        map.insert(DImg::YCBCR,                      i18nc("@label: color model", "%1 [Image]", DImg::colorModelToString(DImg::YCBCR)));
+        map.insert(DImg::CMYK,                       i18nc("@label: color model", "%1 [Image]", DImg::colorModelToString(DImg::CMYK)));
+        map.insert(DImg::CIELAB,                     i18nc("@label: color model", "%1 [Image]", DImg::colorModelToString(DImg::CIELAB)));
+        map.insert(DImg::COLORMODELRAW,              i18nc("@label: color model", "%1 [Image]", DImg::colorModelToString(DImg::COLORMODELRAW)));
 
         // Video
 
-        map.insert(DMetadata::VIDEOCOLORMODEL_SRGB,  i18n("%1 [Video]", DMetadata::videoColorModelToString(DMetadata::VIDEOCOLORMODEL_SRGB)));
-        map.insert(DMetadata::VIDEOCOLORMODEL_BT709, i18n("%1 [Video]", DMetadata::videoColorModelToString(DMetadata::VIDEOCOLORMODEL_BT709)));
-        map.insert(DMetadata::VIDEOCOLORMODEL_BT601, i18n("%1 [Video]", DMetadata::videoColorModelToString(DMetadata::VIDEOCOLORMODEL_BT601)));
-        map.insert(DMetadata::VIDEOCOLORMODEL_OTHER, i18n("%1 [Video]", DMetadata::videoColorModelToString(DMetadata::VIDEOCOLORMODEL_OTHER)));
+        map.insert(DMetadata::VIDEOCOLORMODEL_SRGB,  i18nc("@label: color model", "%1 [Video]", DMetadata::videoColorModelToString(DMetadata::VIDEOCOLORMODEL_SRGB)));
+        map.insert(DMetadata::VIDEOCOLORMODEL_BT709, i18nc("@label: color model", "%1 [Video]", DMetadata::videoColorModelToString(DMetadata::VIDEOCOLORMODEL_BT709)));
+        map.insert(DMetadata::VIDEOCOLORMODEL_BT601, i18nc("@label: color model", "%1 [Video]", DMetadata::videoColorModelToString(DMetadata::VIDEOCOLORMODEL_BT601)));
+        map.insert(DMetadata::VIDEOCOLORMODEL_OTHER, i18nc("@label: color model", "%1 [Video]", DMetadata::videoColorModelToString(DMetadata::VIDEOCOLORMODEL_OTHER)));
         field->setChoice(map);
 
         return field;
@@ -368,21 +376,24 @@ SearchField* SearchField::createField(const QString& name, SearchFieldGroup* con
         SearchFieldChoice* const field = new SearchFieldChoice(parent);
         field->setFieldName(name);
         field->setText(i18n("Camera"), i18n("The make of the camera"));
+
         QStringList make = CoreDbAccess().db()->getListFromImageMetadata(DatabaseFields::Make);
+        QMap<QString, QString> makeMap;
 
         for (int i = 0 ; i < make.count() ; ++i)
         {
-            ItemPropertiesTab::shortenedMakeInfo(make[i]);
-            make[i] = make[i].trimmed();
+            QString shortName = make[i];
+            ItemPropertiesTab::shortenedMakeInfo(shortName);
+            shortName         = shortName.trimmed();
+            makeMap.insert(shortName, make[i]);
         }
 
-        make.removeDuplicates();
-        make += make;
-        make.sort();
+        make.clear();
+        QMap<QString, QString>::const_iterator it;
 
-        for (int i = 0 ; i < make.count() ; i += 2)
+        for (it = makeMap.constBegin() ; it != makeMap.constEnd() ; ++it)
         {
-            make[i] = QLatin1Char('*') + make[i] + QLatin1Char('*');
+            make << it.value() << it.key();
         }
 
         field->setChoice(make);
@@ -396,21 +407,24 @@ SearchField* SearchField::createField(const QString& name, SearchFieldGroup* con
         SearchFieldChoice* const field = new SearchFieldChoice(parent);
         field->setFieldName(name);
         field->setText(i18n("Camera"), i18n("The model of the camera"));
+
         QStringList model = CoreDbAccess().db()->getListFromImageMetadata(DatabaseFields::Model);
+        QMap<QString, QString> modelMap;
 
         for (int i = 0 ; i < model.count() ; ++i)
         {
-            ItemPropertiesTab::shortenedModelInfo(model[i]);
-            model[i] = model[i].trimmed();
+            QString shortName = model[i];
+            ItemPropertiesTab::shortenedModelInfo(shortName);
+            shortName         = shortName.trimmed();
+            modelMap.insert(shortName, model[i]);
         }
 
-        model.removeDuplicates();
-        model += model;
-        model.sort();
+        model.clear();
+        QMap<QString, QString>::const_iterator it;
 
-        for (int i = 0 ; i < model.count() ; i += 2)
+        for (it = modelMap.constBegin() ; it != modelMap.constEnd() ; ++it)
         {
-            model[i] = QLatin1Char('*') + model[i] + QLatin1Char('*');
+            model << it.value() << it.key();
         }
 
         field->setChoice(model);
@@ -563,7 +577,7 @@ SearchField* SearchField::createField(const QString& name, SearchFieldGroup* con
 
         SearchFieldChoice* const field = new SearchFieldChoice(parent);
         field->setFieldName(name);
-        field->setText(i18n("Flash"), i18n("Flash mode"));
+        field->setText(i18nc("@label: flash is on or off", "Flash"), i18nc("@label: flash mode used", "Flash mode"));
         QMap<int, QString> map = DMetadata::possibleValuesForEnumField(MetadataInfo::FlashMode);
         field->setChoice(map);
 
@@ -673,7 +687,7 @@ SearchField* SearchField::createField(const QString& name, SearchFieldGroup* con
     {
         SearchFieldText* const field = new SearchFieldText(parent);
         field->setFieldName(name);
-        field->setText(i18n("Creator"), i18n("Return items created by"));
+        field->setText(i18nc("@label: item creator", "Creator"), i18n("Return items created by"));
 
         return field;
     }
@@ -681,7 +695,7 @@ SearchField* SearchField::createField(const QString& name, SearchFieldGroup* con
     {
         SearchFieldText* const field = new SearchFieldText(parent);
         field->setFieldName(name);
-        field->setText(i18n("Caption"), i18n("Return items whose comment contains"));
+        field->setText(i18nc("@label: item comment", "Caption"), i18n("Return items whose comment contains"));
 
         return field;
     }
@@ -705,7 +719,7 @@ SearchField* SearchField::createField(const QString& name, SearchFieldGroup* con
     {
         SearchFieldText* const field = new SearchFieldText(parent);
         field->setFieldName(name);
-        field->setText(i18n("Title"), i18n("Return items with the IPTC title"));
+        field->setText(i18nc("@label: item title", "Title"), i18n("Return items with the IPTC title"));
 
         return field;
     }
@@ -714,6 +728,22 @@ SearchField* SearchField::createField(const QString& name, SearchFieldGroup* con
         SearchFieldText* const field = new SearchFieldKeyword(parent);
         field->setFieldName(name);
         field->setText(QString(), i18n("Find items that have associated all these words:"));
+
+        return field;
+    }
+    else if (name == QLatin1String("emptytext"))
+    {
+        SearchFieldChoice* const field = new SearchFieldChoice(parent);
+        field->setFieldName(name);
+        field->setText(i18n("Empty Text"), i18n("Return items without text in:"));
+        QStringList comments;
+        comments << QLatin1String("creator")  << i18nc("@label: search items without creator property",  "Creator");
+        comments << QLatin1String("comment")  << i18nc("@label: search items without caption property",  "Caption");
+        comments << QLatin1String("author")   << i18nc("@label: search items without author property",   "Author");
+        comments << QLatin1String("headline") << i18nc("@label: search items without headline property", "Headline");
+        comments << QLatin1String("title")    << i18nc("@label: search items without title property",    "Title");
+
+        field->setChoice(comments);
 
         return field;
     }
@@ -880,12 +910,12 @@ SearchField* SearchField::createField(const QString& name, SearchFieldGroup* con
         field->setFieldName(name);
         field->setText(i18n("Audio Channel Type"), i18n("Return Audio Channel Type"));
         QStringList type;
-        type << QLatin1String("Mono")       << i18n("Mono");
-        type << QLatin1String("Stereo")     << i18n("Stereo");
-        type << QLatin1String("5.1")        << i18n("5.1 Surround Sound");
-        type << QLatin1String("7.1")        << i18n("7.1 Surround Sound");
-        type << QLatin1String("16 Channel") << i18n("16 Channels Sequence");
-        type << QLatin1String("Other")      << i18n("Other Channel Type");
+        type << QLatin1String("Mono")       << i18nc("@label: audio channel type", "Mono");
+        type << QLatin1String("Stereo")     << i18nc("@label: audio channel type", "Stereo");
+        type << QLatin1String("5.1")        << i18nc("@label: audio channel type", "5.1 Surround Sound");
+        type << QLatin1String("7.1")        << i18nc("@label: audio channel type", "7.1 Surround Sound");
+        type << QLatin1String("16 Channel") << i18nc("@label: audio channel type", "16 Channels Sequence");
+        type << QLatin1String("Other")      << i18nc("@label: audio channel type", "Other Channel Type");
 
         // TODO: add more possible audio channel type
 
@@ -1535,12 +1565,12 @@ void SearchFieldRangeDate::valueChanged()
 // -------------------------------------------------------------------------
 
 SearchFieldRangeInt::SearchFieldRangeInt(QObject* const parent)
-    : SearchField(parent),
-      m_min(0),
-      m_max(100),
-      m_reciprocal(false),
-      m_firstBox(nullptr),
-      m_secondBox(nullptr)
+    : SearchField   (parent),
+      m_min         (0),
+      m_max         (100),
+      m_reciprocal  (false),
+      m_firstBox    (nullptr),
+      m_secondBox   (nullptr)
 {
     m_betweenLabel = new QLabel;
     m_firstBox     = new CustomStepsIntSpinBox;
@@ -1662,7 +1692,7 @@ void SearchFieldRangeInt::read(SearchXmlCachingReader& reader)
 
 void SearchFieldRangeInt::write(SearchXmlWriter& writer)
 {
-    if ((m_firstBox->value() != m_firstBox->minimum()) &&
+    if ((m_firstBox->value()  != m_firstBox->minimum()) &&
         (m_secondBox->value() != m_secondBox->minimum()))
     {
         if (m_firstBox->value() != m_secondBox->value())
@@ -1904,10 +1934,10 @@ QList<QRect> SearchFieldRangeInt::valueWidgetRects() const
 
 SearchFieldRangeDouble::SearchFieldRangeDouble(QObject* const parent)
     : SearchField(parent),
-      m_min(0),
-      m_max(100),
-      m_factor(1),
-      m_firstBox(nullptr),
+      m_min      (0),
+      m_max      (100),
+      m_factor   (1),
+      m_firstBox (nullptr),
       m_secondBox(nullptr)
 {
     m_betweenLabel = new QLabel;
@@ -2130,11 +2160,11 @@ QList<QRect> SearchFieldRangeDouble::valueWidgetRects() const
 
 SearchFieldChoice::SearchFieldChoice(QObject* const parent)
     : SearchField(parent),
-      m_comboBox(nullptr),
-      m_type(QVariant::Invalid)
+      m_comboBox (nullptr),
+      m_type     (QVariant::Invalid)
 {
     m_model   = new ChoiceSearchModel(this);
-    m_anyText = i18n("Any");
+    m_anyText = i18nc("@option: default kind of search options combined", "Any");
 }
 
 void SearchFieldChoice::setupValueWidgets(QGridLayout* layout, int row, int column)
@@ -2329,7 +2359,7 @@ public:
     virtual void write(SearchXmlWriter &writer);
     virtual void reset();
 
-    void setChoice(const QMap<int, QString> &map);
+    void setChoice(const QMap<int, QString>& map);
     void setAnyText(const QString& string);
 
     virtual void setupValueWidgets(QGridLayout *layout, int row, int column);
@@ -2342,7 +2372,7 @@ protected Q_SLOTS:
 
 protected:
 
-    void setValues(const QList<int> &values);
+    void setValues(const QList<int>& values);
     void setValues(int value, SearchXml::Relation relation);
 
     QList<int> values() const;
@@ -2527,13 +2557,13 @@ QList<int> SearchFieldChoice::values() const
 // -------------------------------------------------------------------------
 
 SearchFieldAlbum::SearchFieldAlbum(QObject* const parent, Type type)
-    : SearchField(parent),
-      m_wrapperBox(nullptr),
-      m_albumComboBox(nullptr),
-      m_tagComboBox(nullptr),
-      m_operation(nullptr),
-      m_type(type),
-      m_model(nullptr)
+    : SearchField       (parent),
+      m_wrapperBox      (nullptr),
+      m_albumComboBox   (nullptr),
+      m_tagComboBox     (nullptr),
+      m_operation       (nullptr),
+      m_type            (type),
+      m_model           (nullptr)
 {
 }
 
@@ -2542,7 +2572,7 @@ void SearchFieldAlbum::setupValueWidgets(QGridLayout* layout, int row, int colum
     if      (m_type == TypeAlbum)
     {
         m_albumComboBox = new AlbumTreeViewSelectComboBox;
-        m_wrapperBox = m_albumComboBox;
+        m_wrapperBox    = m_albumComboBox;
 
         m_albumComboBox->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Minimum);
         m_albumComboBox->setDefaultModel();
@@ -2560,6 +2590,7 @@ void SearchFieldAlbum::setupValueWidgets(QGridLayout* layout, int row, int colum
         m_operation   = new SqueezedComboBox(m_wrapperBox);
         m_operation->addSqueezedItem(i18nc("@label:listbox", "In All"),    Operation::All);
         m_operation->addSqueezedItem(i18nc("@label:listbox", "In One of"), Operation::OneOf);
+        m_operation->addSqueezedItem(i18nc("@label:listbox", "In Tree"),   Operation::InTree);
 
         m_tagComboBox->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Minimum);
         m_tagComboBox->setDefaultModel();
@@ -2603,13 +2634,17 @@ void SearchFieldAlbum::read(SearchXmlCachingReader& reader)
     }
     else if (m_type == TypeTag)
     {
-        if (reader.fieldRelation() == SearchXml::AllOf)
+        if      (reader.fieldRelation() == SearchXml::AllOf)
         {
             m_operation->setCurrentIndex(Operation::All);
         }
-        else
+        else if (reader.fieldRelation() == SearchXml::OneOf)
         {
             m_operation->setCurrentIndex(Operation::OneOf);
+        }
+        else if (reader.fieldRelation() == SearchXml::InTree)
+        {
+            m_operation->setCurrentIndex(Operation::InTree);
         }
 
         foreach (int id, ids)
@@ -2654,9 +2689,15 @@ void SearchFieldAlbum::write(SearchXmlWriter& writer)
 
     if (m_operation)
     {
-        if (m_operation->itemData(m_operation->currentIndex()).toInt() == Operation::All)
+        int operation = m_operation->currentData().toInt();
+
+        if      (operation == Operation::All)
         {
             relation = SearchXml::AllOf;
+        }
+        else if (operation == Operation::InTree)
+        {
+            relation = SearchXml::InTree;
         }
     }
 
@@ -2667,7 +2708,12 @@ void SearchFieldAlbum::write(SearchXmlWriter& writer)
     }
     else
     {
-        writer.writeField(m_name, SearchXml::Equal);
+        if (relation != SearchXml::InTree)
+        {
+            relation = SearchXml::Equal;
+        }
+
+        writer.writeField(m_name, relation);
         writer.writeValue(albumIds.first());
     }
 
@@ -2677,6 +2723,11 @@ void SearchFieldAlbum::write(SearchXmlWriter& writer)
 void SearchFieldAlbum::reset()
 {
     m_model->resetCheckedAlbums();
+
+    if (m_operation)
+    {
+        m_operation->setCurrentIndex(Operation::All);
+    }
 }
 
 void SearchFieldAlbum::setValueWidgetsVisible(bool visible)
@@ -2877,7 +2928,7 @@ QList<QRect> SearchFieldRating::valueWidgetRects() const
 
 SearchFieldComboBox::SearchFieldComboBox(QObject* const parent)
     : SearchField(parent),
-      m_comboBox(nullptr)
+      m_comboBox (nullptr)
 {
 }
 
@@ -2935,7 +2986,7 @@ void SearchFieldComboBox::indexChanged(int index)
 
 SearchFieldCheckBox::SearchFieldCheckBox(QObject* const parent)
     : SearchField(parent),
-      m_checkBox(nullptr)
+      m_checkBox (nullptr)
 {
 }
 
@@ -3076,8 +3127,8 @@ void SearchFieldPageOrientation::read(SearchXmlCachingReader& reader)
 // -------------------------------------------------------------------------
 
 SearchFieldLabels::SearchFieldLabels(QObject* const parent)
-    : SearchField(parent),
-      m_pickLabelFilter(nullptr),
+    : SearchField       (parent),
+      m_pickLabelFilter (nullptr),
       m_colorLabelFilter(nullptr)
 {
 }
@@ -3210,6 +3261,114 @@ QList<QRect> SearchFieldLabels::valueWidgetRects() const
     rects << m_colorLabelFilter->geometry();
 
     return rects;
+}
+
+// -------------------------------------------------------------------------
+
+SearchFieldMonthDay::SearchFieldMonthDay(QObject* const parent)
+    : SearchField(parent),
+      m_dayLabel (nullptr),
+      m_monthBox (nullptr),
+      m_dayBox   (nullptr)
+{
+}
+
+void SearchFieldMonthDay::setupValueWidgets(QGridLayout* layout, int row, int column)
+{
+    QHBoxLayout* const hbox = new QHBoxLayout;
+    m_monthBox              = new QComboBox;
+    m_monthBox->setEditable(false);
+    m_dayLabel              = new QLabel(i18n("Day:"));
+    m_dayBox                = new QComboBox;
+    m_dayBox->setEditable(false);
+    m_dayBox->setEnabled(false);
+
+    m_monthBox->addItem(i18n("Every Month"), 0);
+
+    for (int i = 1 ; i <= 12 ; ++i)
+    {
+        m_monthBox->addItem(QLocale().standaloneMonthName(i, QLocale::LongFormat), i);
+    }
+
+    m_dayBox->addItem(i18n("Every Day"), 0);
+
+    for (int i = 1 ; i <= 31 ; ++i)
+    {
+        m_dayBox->addItem(QString::number(i), i);
+    }
+
+    hbox->addWidget(m_monthBox);
+    hbox->addStretch(10);
+    hbox->addWidget(m_dayLabel);
+    hbox->addWidget(m_dayBox);
+
+    connect(m_monthBox, SIGNAL(currentIndexChanged(int)),
+            this, SLOT(slotIndexChanged(int)));
+
+    layout->addLayout(hbox, row, column, 1, 3);
+}
+
+void SearchFieldMonthDay::read(SearchXmlCachingReader& reader)
+{
+    SearchXml::Relation relation = reader.fieldRelation();
+
+    if (relation == SearchXml::Equal)
+    {
+        QList<int> list = reader.valueToIntList();
+
+        if (list.size() == 2)
+        {
+            m_monthBox->setCurrentIndex(m_monthBox->findData(list.at(0)));
+            m_dayBox->setCurrentIndex(m_dayBox->findData(list.at(1)));
+        }
+    }
+}
+
+void SearchFieldMonthDay::write(SearchXmlWriter& writer)
+{
+    int month = m_monthBox->currentData().toInt();
+    int day   = m_dayBox->currentData().toInt();
+
+    if (month > 0)
+    {
+        writer.writeField(m_name, SearchXml::Equal);
+        writer.writeValue(QList<int>() << month << day);
+        writer.finishField();
+    }
+}
+
+void SearchFieldMonthDay::reset()
+{
+    m_monthBox->setCurrentIndex(0);
+    m_dayBox->setCurrentIndex(0);
+}
+
+void SearchFieldMonthDay::setValueWidgetsVisible(bool visible)
+{
+    m_monthBox->setVisible(visible);
+    m_dayLabel->setVisible(visible);
+    m_dayBox->setVisible(visible);
+}
+
+QList<QRect> SearchFieldMonthDay::valueWidgetRects() const
+{
+    QList<QRect> rects;
+    rects << m_monthBox->geometry();
+    rects << m_dayBox->geometry();
+
+    return rects;
+}
+
+void SearchFieldMonthDay::slotIndexChanged(int index)
+{
+    bool valid = (index > 0);
+    setValidValueState(valid);
+    m_dayBox->setEnabled(valid);
+
+    if (!valid)
+    {
+        m_dayBox->setCurrentIndex(0);
+    }
 }
 
 } // namespace Digikam

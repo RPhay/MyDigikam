@@ -6,7 +6,7 @@
  * Date        : 2007-10-09
  * Description : a widget to filter album contents by rating
  *
- * Copyright (C) 2007-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2007-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2007      by Arnd Baecker <arnd dot baecker at web dot de>
  * Copyright (C) 2014      by Mohamed_Anwer <m_dot_anwer at gmx dot com>
  *
@@ -44,7 +44,7 @@ class RatingFilterWidget : public RatingWidget
 public:
 
     explicit RatingFilterWidget(QWidget* const parent);
-    ~RatingFilterWidget();
+    ~RatingFilterWidget() override;
 
     void setRatingFilterCondition(ItemFilterSettings::RatingCondition cond);
     ItemFilterSettings::RatingCondition ratingFilterCondition();
@@ -85,7 +85,7 @@ class RatingFilter : public DHBox
 public:
 
     explicit RatingFilter(QWidget* const parent);
-    ~RatingFilter();
+    ~RatingFilter() override;
 
     void setRating(int val);
     int  rating() const;

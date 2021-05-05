@@ -47,10 +47,10 @@ class VersionsDelegate : public QStyledItemDelegate,
 public:
 
     explicit VersionsDelegate(QObject* const parent);
-    ~VersionsDelegate();
+    ~VersionsDelegate()                                                                               override;
 
-    QSize sizeHint(const QStyleOptionViewItem& option, const QModelIndex& index)                const;
-    void paint(QPainter* painter, const QStyleOptionViewItem& option, const QModelIndex& index) const;
+    QSize sizeHint(const QStyleOptionViewItem& option, const QModelIndex& index)                const override;
+    void paint(QPainter* painter, const QStyleOptionViewItem& option, const QModelIndex& index) const override;
 
     void beginPainting();
     void finishPainting();
@@ -66,23 +66,23 @@ Q_SIGNALS:
     void animationStateChanged();
     void visualChange(); // for ItemDelegateOverlayContainer
 
-    // for ItemDelegateOverlayContainer, unimplemented:
+    /// NOTE: for ItemDelegateOverlayContainer, unimplemented:
     void requestNotification(const QModelIndex& index, const QString& message);
     void hideNotification();
 
 protected Q_SLOTS:
 
-    virtual void overlayDestroyed(QObject* o)
+    void overlayDestroyed(QObject* o)                                                                 override
     {
         ItemDelegateOverlayContainer::overlayDestroyed(o);
     }
 
 protected:
 
-    void initStyleOption(QStyleOptionViewItem* option, const QModelIndex& index)                const;
+    void initStyleOption(QStyleOptionViewItem* option, const QModelIndex& index)                const override;
 
     /// Returns the delegate, typically, the derived class
-    virtual QAbstractItemDelegate* asDelegate()
+    QAbstractItemDelegate* asDelegate() override
     {
         return this;
     }
@@ -90,6 +90,8 @@ protected:
 private:
 
     VersionsDelegate(); // Disable default constructor.
+
+private:
 
     class Private;
     Private* const d;

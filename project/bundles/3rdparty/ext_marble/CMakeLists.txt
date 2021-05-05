@@ -1,13 +1,13 @@
 # Script to build Marble for digiKam bundle.
 #
-# Copyright (c) 2015-2020 by Gilles Caulier  <caulier dot gilles at gmail dot com>
+# Copyright (c) 2015-2021 by Gilles Caulier  <caulier dot gilles at gmail dot com>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
 #
 
 set(EXTPREFIX_marble "${EXTPREFIX}" )
-set(KA_VERSION 19.08.3)
+set(KA_VERSION 20.12.3)
 
 GetKF5ApplicationMd5Sums(marble ${KA_VERSION})
 
@@ -15,7 +15,7 @@ if(MINGW)
 
     ExternalProject_Add(ext_marble
                         DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
-                        URL http://download.kde.org/stable/applications/${KA_VERSION}/src/marble-${KA_VERSION}.tar.xz
+                        URL http://download.kde.org/stable/release-service/${KA_VERSION}/src/marble-${KA_VERSION}.tar.xz
                         URL_MD5 ${KF5_APPLICATION_MD5SUM}
 
                         INSTALL_DIR ${EXTPREFIX_marble}
@@ -53,7 +53,7 @@ elseif(APPLE)
 
     ExternalProject_Add(ext_marble
                         DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
-                        URL http://download.kde.org/stable/applications/${KA_VERSION}/src/marble-${KA_VERSION}.tar.xz
+                        URL http://download.kde.org/stable/release-service/${KA_VERSION}/src/marble-${KA_VERSION}.tar.xz
                         URL_MD5 ${KF5_APPLICATION_MD5SUM}
 
                         PATCH_COMMAND ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/marble-libs-install-macports.patch &&
@@ -77,7 +77,7 @@ else() # Linux
 
     ExternalProject_Add(ext_marble
                         DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
-                        URL http://download.kde.org/stable/applications/${KA_VERSION}/src/marble-${KA_VERSION}.tar.xz
+                        URL http://download.kde.org/stable/release-service/${KA_VERSION}/src/marble-${KA_VERSION}.tar.xz
                         URL_MD5 ${KF5_APPLICATION_MD5SUM}
 
                         INSTALL_DIR ${EXTPREFIX_marble}

@@ -1,8 +1,10 @@
 #
-# Copyright (c) 2015-2020 by Gilles Caulier, <caulier dot gilles at gmail dot com>
+# Copyright (c) 2015-2021 by Gilles Caulier, <caulier dot gilles at gmail dot com>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
+
+APPLY_COMMON_POLICIES()
 
 include(MacroDPlugins)
 
@@ -20,6 +22,6 @@ set(flipplugin_SRCS
 )
 
 DIGIKAM_ADD_BQM_PLUGIN(NAME    Flip
-                                SOURCES ${flipplugin_SRCS}
+                       SOURCES ${flipplugin_SRCS}
 )
 

@@ -6,7 +6,7 @@
  * Date        : 2007-02-06
  * Description : Config panel for generic dplugins.
  *
- * Copyright (C) 2018-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2018-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -48,7 +48,7 @@ class DIGIKAM_EXPORT DPluginSetup : public QWidget
 public:
 
     explicit DPluginSetup(QWidget* const parent = nullptr);
-    ~DPluginSetup();
+    ~DPluginSetup() override;
 
     void setPluginConfView(DPluginConfView* const view);
     void applySettings();
@@ -73,6 +73,6 @@ private:
     Private* const d;
 };
 
-}  // namespace Digikam
+} // namespace Digikam
 
 #endif // DIGIKAM_DPLUGIN_SETUP_H

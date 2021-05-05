@@ -6,7 +6,8 @@
  * Date        : 2019-07-09
  * Description : Abstract class for preprocessor of facesengine
  *
- * Copyright (C) 2019 by Thanh Trung Dinh <dinhthanhtrung1996 at gmail dot com>
+ * Copyright (C) 2019      by Thanh Trung Dinh <dinhthanhtrung1996 at gmail dot com>
+ * Copyright (C) 2019-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -27,24 +28,26 @@
 // Local includes
 
 #include "digikam_opencv.h"
+#include "digikam_export.h"
 
 namespace Digikam
 {
 
-class Preprocessor
+class DIGIKAM_EXPORT FacePreprocessor
 {
 
 public:
 
-    explicit Preprocessor()
-    {
-    }
+    explicit FacePreprocessor();
+    virtual ~FacePreprocessor();
 
-    virtual ~Preprocessor()
-    {
-    }
+    virtual cv::Mat preprocess(const cv::Mat& image) const = 0;
 
-    virtual cv::Mat preprocess(const cv::Mat& image) = 0;
+private:
+
+    // Disable
+    FacePreprocessor(const FacePreprocessor&)            = delete;
+    FacePreprocessor& operator=(const FacePreprocessor&) = delete;
 };
 
 } // namespace Digikam

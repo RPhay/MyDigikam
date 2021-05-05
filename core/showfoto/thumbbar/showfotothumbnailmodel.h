@@ -51,14 +51,14 @@ public:
      * Note that setKeepsFilePatindexesForPathhCache is enabled per default.
      */
     explicit ShowfotoThumbnailModel(QObject* const parent);
-    ~ShowfotoThumbnailModel();
+    ~ShowfotoThumbnailModel()                                                                     override;
 
     /**
      * Enable thumbnail loading and set the thread that shall be used.
      * The thumbnail size of this thread will be adjusted.
      */
     void setThumbnailLoadThread(ThumbnailLoadThread* thread);
-    ThumbnailLoadThread* thumbnailLoadThread() const;
+    ThumbnailLoadThread* thumbnailLoadThread()                                              const;
 
     /// Set the thumbnail size to use
     void setThumbnailSize(const ThumbnailSize& thumbSize);
@@ -82,7 +82,7 @@ public:
      */
     void setPreloadThumbnails(bool preload);
 
-    ThumbnailSize thumbnailSize() const;
+    ThumbnailSize thumbnailSize()                                                           const;
 
     /**
      * Handles the ThumbnailRole.
@@ -90,17 +90,17 @@ public:
      * If it still needs to be loaded, returns a null QVariant and emits
      * thumbnailAvailable() as soon as it is available.
      */
-    virtual QVariant data(const QModelIndex& index, int role = Qt::DisplayRole) const override;
+    QVariant data(const QModelIndex& index, int role = Qt::DisplayRole)                     const override;
 
     /**
      * You can override the current thumbnail size by giving an integer value for ThumbnailRole.
      * Set a null QVariant to use the thumbnail size set by setThumbnailSize() again.
      * The index given here is ignored for this purpose.
      */
-    virtual bool setData(const QModelIndex& index, const QVariant& value, int role = Qt::DisplayRole) override;
+    bool setData(const QModelIndex& index, const QVariant& value, int role = Qt::DisplayRole)     override;
 
-    bool pixmapForItem(QString url, QPixmap& pix) const;
-    bool getThumbnail(const ShowfotoItemInfo& itemInfo, QImage& thumbnail) const;
+    bool pixmapForItem(const QString& url, QPixmap& pix)                                    const;
+    bool getThumbnail(const ShowfotoItemInfo& itemInfo, QImage& thumbnail)                  const;
 
 public Q_SLOTS:
 
@@ -111,15 +111,22 @@ Q_SIGNALS:
     void thumbnailAvailable(const QModelIndex& index, int requestedSize);
     void thumbnailFailed(const QModelIndex& index, int requestedSize);
 
-    void signalThumbInfo(const ShowfotoItemInfo& info,const QImage& thumbnailImage) const;
+    void signalThumbInfo(const ShowfotoItemInfo& info, const QImage& thumbnailImage)        const;   // clazy:exclude=const-signal-or-slot
 
 protected:
 
-    void showfotoItemInfosCleared() override;
+    void showfotoItemInfosCleared()                                                             override;
 
 protected Q_SLOTS:
 
-    void slotThumbnailLoaded(const LoadingDescription& loadingDescription, const QPixmap& thumb);
+    void slotThumbnailLoaded(const LoadingDescription& loadingDescription,
+                             const QPixmap& thumb);
+
+private:
+
+    // Disable
+    ShowfotoThumbnailModel(const ShowfotoThumbnailModel&)            = delete;
+    ShowfotoThumbnailModel& operator=(const ShowfotoThumbnailModel&) = delete;
 
 private:
 

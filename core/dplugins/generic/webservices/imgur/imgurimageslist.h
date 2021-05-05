@@ -7,7 +7,7 @@
  * Description : a tool to export images to Imgur web service
  *
  * Copyright (C) 2010-2012 by Marius Orcsik <marius at habarnam dot ro>
- * Copyright (C) 2013-2018 by Caulier Gilles <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2013-2020 by Caulier Gilles <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -46,7 +46,7 @@ class ImgurImagesList : public DItemsList
 
 public:
 
-    // The different columns in a list.
+    /// The different columns in a list.
     enum FieldType
     {
         Title           = DItemsListView::User1,
@@ -58,7 +58,7 @@ public:
 public:
 
     explicit ImgurImagesList(QWidget* const parent = nullptr);
-    ~ImgurImagesList() override {}
+    ~ImgurImagesList() override = default;
 
     QList<const ImgurImageListViewItem*> getPendingItems();
 
@@ -76,16 +76,16 @@ class ImgurImageListViewItem : public DItemsListViewItem
 public:
 
     explicit ImgurImageListViewItem(DItemsListView* const view, const QUrl& url);
-    ~ImgurImageListViewItem() override {}
+    ~ImgurImageListViewItem() override = default;
 
     void setTitle(const QString& str);
-    QString Title() const;
+    QString Title()          const;
 
     void setDescription(const QString& str);
-    QString Description() const;
+    QString Description()    const;
 
     void setImgurUrl(const QString& str);
-    QString ImgurUrl() const;
+    QString ImgurUrl()       const;
 
     void setImgurDeleteUrl(const QString& str);
     QString ImgurDeleteUrl() const;

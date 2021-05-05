@@ -6,7 +6,7 @@
  * Date        : 2006-20-12
  * Description : a view to embed QtAv media player.
  *
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -27,8 +27,8 @@
 // Qt includes
 
 #include <QStackedWidget>
-#include <QUrl>
 #include <QEvent>
+#include <QUrl>
 
 // QtAV includes
 
@@ -50,7 +50,7 @@ class DIGIKAM_EXPORT MediaPlayerView : public QStackedWidget
 public:
 
     explicit MediaPlayerView(QWidget* const parent);
-    ~MediaPlayerView();
+    ~MediaPlayerView() override;
 
     void setCurrentItem(const QUrl& url   = QUrl(),
                         bool  hasPrevious = false,
@@ -77,14 +77,16 @@ private Q_SLOTS:
     void slotPlayerStateChanged(QtAV::AVPlayer::State state);
     void slotMediaStatusChanged(QtAV::MediaStatus status);
     void slotHandlePlayerError(const QtAV::AVError& err);
+    void slotImageCaptured(const QImage& image);
 
-    // Slidebar slots
+    /// Slidebar slots
     void slotPositionChanged(qint64 position);
     void slotDurationChanged(qint64 duration);
     void slotVolumeChanged(int volume);
     void slotLoopToggled(bool loop);
     void slotPosition(int position);
     void slotPausePlay();
+    void slotCapture();
 
 private:
 

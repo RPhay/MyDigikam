@@ -6,7 +6,7 @@
  * Date        : 2018-07-30
  * Description : image editor plugin to restore an image
  *
- * Copyright (C) 2018-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2018-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -43,7 +43,7 @@ class RedEyeToolPlugin : public DPluginEditor
 public:
 
     explicit RedEyeToolPlugin(QObject* const parent = nullptr);
-    ~RedEyeToolPlugin();
+    ~RedEyeToolPlugin()                  override;
 
     QString name()                 const override;
     QString iid()                  const override;

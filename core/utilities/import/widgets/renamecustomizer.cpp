@@ -8,7 +8,7 @@
  *               operations during camera downloading
  *
  * Copyright (C) 2004-2005 by Renchi Raju <renchi dot raju at gmail dot com>
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2011      by Andi Clemens <andi dot clemens at gmail dot com>
  *
  * This program is free software; you can redistribute it
@@ -62,16 +62,16 @@ class Q_DECL_HIDDEN RenameCustomizer::Private
 public:
 
     explicit Private()
-      : startIndex(1),
-        buttonGroup(nullptr),
-        renameDefaultCase(nullptr),
-        renameDefault(nullptr),
-        renameCustom(nullptr),
-        changedTimer(nullptr),
-        renameDefaultBox(nullptr),
+      : startIndex           (1),
+        buttonGroup          (nullptr),
+        renameDefaultCase    (nullptr),
+        renameDefault        (nullptr),
+        renameCustom         (nullptr),
+        changedTimer         (nullptr),
+        renameDefaultBox     (nullptr),
         renameDefaultCaseType(nullptr),
-        fileMetadataLabel(nullptr),
-        advancedRenameWidget(nullptr),
+        fileMetadataLabel    (nullptr),
+        advancedRenameWidget (nullptr),
         advancedRenameManager(nullptr)
     {
     }
@@ -101,7 +101,7 @@ public:
 
 RenameCustomizer::RenameCustomizer(QWidget* const parent, const QString& cameraTitle)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     d->changedTimer = new QTimer(this);
     d->cameraTitle  = cameraTitle;

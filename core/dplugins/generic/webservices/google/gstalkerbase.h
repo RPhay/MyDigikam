@@ -7,7 +7,7 @@
  * Description : a tool to export items to Google web services
  *
  * Copyright (C) 2015      by Shourya Singh Gupta <shouryasgupta at gmail dot com>
- * Copyright (C) 2015-2018 by Caulier Gilles <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2015-2020 by Caulier Gilles <caulier dot gilles at gmail dot com>
  * Copyright (C) 2018      by Thanh Trung Dinh <dinhthanhtrung1996 at gmail dot com>
  *
  * This program is free software; you can redistribute it
@@ -27,11 +27,10 @@
 
 // Qt includes
 
-#include <QList>
+#include <QUrl>
 #include <QString>
 #include <QObject>
 #include <QStringList>
-#include <QDialog>
 #include <QNetworkReply>
 #include <QNetworkAccessManager>
 
@@ -49,7 +48,7 @@ class GSTalkerBase : public QObject
 public:
 
     explicit GSTalkerBase(QWidget* const parent, const QStringList& scope, const QString& serviceName);
-    ~GSTalkerBase();
+    ~GSTalkerBase() override;
 
 public:
 
@@ -69,7 +68,6 @@ private Q_SLOTS:
 
     void slotLinkingFailed();
     void slotLinkingSucceeded();
-    void slotCatchUrl(const QUrl& url);
     void slotOpenBrowser(const QUrl& url);
 
 private:

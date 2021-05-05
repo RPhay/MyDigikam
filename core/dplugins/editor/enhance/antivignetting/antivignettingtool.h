@@ -7,7 +7,7 @@
  * Description : a digiKam image tool to reduce
  *               vignetting on an image.
  *
- * Copyright (C) 2005-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2005-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -41,20 +41,20 @@ class AntiVignettingTool : public EditorToolThreaded
 public:
 
     explicit AntiVignettingTool(QObject* const parent);
-    ~AntiVignettingTool();
+    ~AntiVignettingTool()       override;
 
 private Q_SLOTS:
 
-    void slotResetSettings();
+    void slotResetSettings()    override;
 
 private:
 
-    void writeSettings();
-    void readSettings();
-    void preparePreview();
-    void prepareFinal();
-    void setPreviewImage();
-    void setFinalImage();
+    void writeSettings()        override;
+    void readSettings()         override;
+    void preparePreview()       override;
+    void prepareFinal()         override;
+    void setPreviewImage()      override;
+    void setFinalImage()        override;
 
 private:
 

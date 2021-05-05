@@ -7,7 +7,7 @@
  * Description : a digiKam image tool for fixing dots produced by
  *               hot/stuck/dead pixels from a CCD.
  *
- * Copyright (C) 2005-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2005-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2005-2006 by Unai Garro <ugarro at users dot sourceforge dot net>
  *
  * This program is free software; you can redistribute it
@@ -26,16 +26,15 @@
 #ifndef DIGIKAM_EDITOR_HOT_PIXELS_TOOL_H
 #define DIGIKAM_EDITOR_HOT_PIXELS_TOOL_H
 
-#define MAX_PIXEL_DEPTH 4
-
 // Qt includes
 
 #include <QList>
+#include <QPolygon>
 
 // Local includes
 
 #include "editortool.h"
-#include "hotpixel.h"
+#include "hotpixelprops.h"
 
 class QUrl;
 
@@ -51,26 +50,23 @@ class HotPixelsTool : public Digikam::EditorToolThreaded
 public:
 
     explicit HotPixelsTool(QObject* const parent);
-    ~HotPixelsTool();
+    ~HotPixelsTool()            override;
 
     static void registerFilter();
 
 private Q_SLOTS:
 
-    void slotLoadingProgress(float v);
-    void slotLoadingComplete();
-    void slotBlackFrame(const QList<HotPixel>& hpList, const QUrl& blackFrameURL);
-    void slotAddBlackFrame();
-    void slotResetSettings();
+    void slotHotPixels(const QPolygon&);
+    void slotResetSettings()    override;
 
 private:
 
-    void readSettings();
-    void writeSettings();
-    void preparePreview();
-    void prepareFinal();
-    void setPreviewImage();
-    void setFinalImage();
+    void readSettings()         override;
+    void writeSettings()        override;
+    void preparePreview()       override;
+    void prepareFinal()         override;
+    void setPreviewImage()      override;
+    void setFinalImage()        override;
 
 private:
 

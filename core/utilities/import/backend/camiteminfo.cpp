@@ -7,7 +7,7 @@
  * Description : camera item info container
  *
  * Copyright (C) 2004-2005 by Renchi Raju <renchi dot raju at gmail dot com>
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -32,17 +32,17 @@ namespace Digikam
 {
 
 CamItemInfo::CamItemInfo()
-    : size(-1),
-      width(-1),
-      height(-1),
-      readPermissions(-1),
-      writePermissions(-1),
-      downloaded(DownloadUnknown),
-      id(-1),
-      rating(0),
-      pickLabel(0),
-      colorLabel(0),
-      previewPossible(false)
+    : size              (-1),
+      width             (-1),
+      height            (-1),
+      readPermissions   (-1),
+      writePermissions  (-1),
+      downloaded        (DownloadUnknown),
+      id                (-1),
+      rating            (0),
+      pickLabel         (0),
+      colorLabel        (0),
+      previewPossible   (false)
 {
 }
 

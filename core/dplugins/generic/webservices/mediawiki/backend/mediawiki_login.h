@@ -6,7 +6,7 @@
  * Date        : 2011-03-22
  * Description : a Iface C++ interface
  *
- * Copyright (C) 2011-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2011-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2011      by Alexandre Mendes <alex dot mendes1988 at gmail dot com>
  * Copyright (C) 2011      by Peter Potrowl <peter dot potrowl at gmail dot com>
  * Copyright (C) 2011      by Manuel Campomanes <campomanes dot manuel at gmail dot com>
@@ -34,7 +34,7 @@
 // Local includes
 
 #include "mediawiki_job.h"
-#include "digikam_export.h"
+
 
 namespace MediaWiki
 {
@@ -46,7 +46,7 @@ class LoginPrivate;
  *
  * Uses for log in a user.
  */
-class DIGIKAM_EXPORT Login : public Job
+class Login : public Job
 {
     Q_OBJECT
     Q_DECLARE_PRIVATE(Login)
@@ -115,17 +115,20 @@ public:
      * @param password the QObject parent
      * @param parent the QObject parent
      */
-    explicit Login(Iface& MediaWiki, const QString& login, const QString& password, QObject* const parent = nullptr);
+    explicit Login(Iface& MediaWiki,
+                   const QString& login,
+                   const QString& password,
+                   QObject* const parent = nullptr);
 
     /**
      * @brief Destroys the Login job.
      */
-    virtual ~Login();
+    ~Login()     override;
 
     /**
      * @brief Starts the job asynchronously.
      */
-    void start() Q_DECL_OVERRIDE;
+    void start() override;
 
 private Q_SLOTS:
 

@@ -7,7 +7,7 @@
  * Description : A widget to display a camera folder.
  *
  * Copyright (C) 2003-2005 by Renchi Raju <renchi dot raju at gmail dot com>
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -33,7 +33,7 @@ public:
 
     explicit Private()
       : virtualFolder(true),
-        count(0)
+        count        (0)
     {
     }
 
@@ -47,7 +47,7 @@ public:
 
 CameraFolderItem::CameraFolderItem(QTreeWidget* const parent, const QString& name, const QIcon& icon)
     : QTreeWidgetItem(parent),
-      d(new Private)
+      d              (new Private)
 {
     d->name = name;
     setIcon(0, icon);
@@ -57,7 +57,7 @@ CameraFolderItem::CameraFolderItem(QTreeWidget* const parent, const QString& nam
 CameraFolderItem::CameraFolderItem(QTreeWidgetItem* const parent, const QString& folderName,
                                    const QString& folderPath, const QIcon &icon)
     : QTreeWidgetItem(parent),
-      d(new Private)
+      d              (new Private)
 {
     d->folderName    = folderName;
     d->folderPath    = folderPath;

@@ -23,6 +23,10 @@
 
 #include "fileworkeriface.h"
 
+// Qt includes
+
+#include <QScopedPointer>
+
 // KDE includes
 
 #include <klocalizedstring.h>
@@ -35,17 +39,17 @@
 #include "metaenginesettings.h"
 #include "itemattributeswatch.h"
 #include "iteminfotasksplitter.h"
-#include "loadingcacheinterface.h"
 #include "collectionscanner.h"
-#include "facetagseditor.h"
+#include "filereadwritelock.h"
 #include "scancontroller.h"
+#include "faceutils.h"
 #include "jpegutils.h"
 #include "dimg.h"
 
 namespace Digikam
 {
 
-void FileActionMngrFileWorker::writeOrientationToFiles(FileActionItemInfoList infos, int orientation)
+void FileActionMngrFileWorker::writeOrientationToFiles(const FileActionItemInfoList& infos, int orientation)
 {
     QStringList failedItems;
 
@@ -57,13 +61,11 @@ void FileActionMngrFileWorker::writeOrientationToFiles(FileActionItemInfoList in
         }
 
         QString path                  = info.filePath();
-        DMetadata metadata(path);
+        QScopedPointer<DMetadata> metadata(new DMetadata(path));
         DMetadata::ImageOrientation o = (DMetadata::ImageOrientation)orientation;
-        metadata.setItemOrientation(o);
+        metadata->setItemOrientation(o);
 
-        LoadingCacheInterface::removeFromFileWatch(path);
-
-        if (!metadata.applyChanges())
+        if (!metadata->applyChanges())
         {
             failedItems.append(info.name());
         }
@@ -85,7 +87,7 @@ void FileActionMngrFileWorker::writeOrientationToFiles(FileActionItemInfoList in
     infos.finishedWriting();
 }
 
-void FileActionMngrFileWorker::writeMetadataToFiles(FileActionItemInfoList infos)
+void FileActionMngrFileWorker::writeMetadataToFiles(const FileActionItemInfoList& infos)
 {
     d->startingToWrite(infos);
 
@@ -123,7 +125,7 @@ void FileActionMngrFileWorker::writeMetadataToFiles(FileActionItemInfoList infos
     infos.finishedWriting();
 }
 
-void FileActionMngrFileWorker::writeMetadata(FileActionItemInfoList infos, int flags)
+void FileActionMngrFileWorker::writeMetadata(const FileActionItemInfoList& infos, int flags)
 {
     d->startingToWrite(infos);
 
@@ -162,7 +164,7 @@ void FileActionMngrFileWorker::writeMetadata(FileActionItemInfoList infos, int f
     infos.finishedWriting();
 }
 
-void FileActionMngrFileWorker::transform(FileActionItemInfoList infos, int action)
+void FileActionMngrFileWorker::transform(const FileActionItemInfoList& infos, int action)
 {
     d->startingToWrite(infos);
 
@@ -175,6 +177,8 @@ void FileActionMngrFileWorker::transform(FileActionItemInfoList infos, int actio
         {
             break;
         }
+
+        FileWriteLocker lock(info.filePath());
 
         QString path                                    = info.filePath();
         QString format                                  = info.format();
@@ -223,9 +227,7 @@ void FileActionMngrFileWorker::transform(FileActionItemInfoList infos, int actio
         MetaEngine::ImageOrientation finalOrientation  = matrix.exifOrientation();
         bool rotatedPixels                             = false;
 
-        LoadingCacheInterface::removeFromFileWatch(path);
-
-        if (rotateAsJpeg)
+        if      (rotateAsJpeg)
         {
             JPEGUtils::JpegRotator rotator(path);
             rotator.setCurrentOrientation(currentOrientation);
@@ -281,18 +283,32 @@ void FileActionMngrFileWorker::transform(FileActionItemInfoList infos, int actio
             }
         }
 
-        adjustFaceRectangles(info, rotatedPixels,
-                                   finalOrientation,
-                                   currentOrientation);
+        int newOrientation = finalOrientation;
 
         if (rotatedPixels)
         {
-            CollectionScanner scanner;
-            scanner.scanFile(info, CollectionScanner::NormalScan);
-
-            // reset for DB. Metadata is already edited.
-
             finalOrientation = MetaEngine::ORIENTATION_NORMAL;
+        }
+
+        // DB rotation
+
+        ItemInfo(info).setOrientation(finalOrientation);
+
+        // Adjust Faces
+
+        QSize newSize = FaceUtils().rotateFaces(info, newOrientation,
+                                                      currentOrientation);
+        if (newSize.isValid())
+        {
+            MetadataHub hub;
+            hub.load(info);
+
+            // Adjusted newSize
+
+            newSize = rotatedPixels ? newSize : info.dimensions();
+
+            hub.loadFaceTags(info, newSize);
+            hub.write(info.filePath(), MetadataHub::WRITE_TAGS, true);
         }
 
         if (rotateByMetadata)
@@ -302,21 +318,20 @@ void FileActionMngrFileWorker::transform(FileActionItemInfoList infos, int actio
 
             if (!isRaw)
             {
-                DMetadata metadata(path);
-                metadata.setItemOrientation(finalOrientation);
-                metadata.applyChanges();
+                QScopedPointer<DMetadata> metadata(new DMetadata(path));
+                metadata->setItemOrientation(finalOrientation);
+                metadata->applyChanges();
             }
         }
+
+        CollectionScanner scanner;
+        scanner.scanFile(info, CollectionScanner::NormalScan);
 
         if (!failedItems.contains(info.name()))
         {
             emit imageDataChanged(path, true, true);
             ItemAttributesWatch::instance()->fileMetadataChanged(info.fileUrl());
         }
-
-        // DB rotation
-
-        ItemInfo(info).setOrientation(finalOrientation);
 
         infos.writtenToOne();
     }
@@ -329,92 +344,6 @@ void FileActionMngrFileWorker::transform(FileActionItemInfoList infos, int actio
     infos.finishedWriting();
 
     ScanController::instance()->resumeCollectionScan();
-}
-
-void FileActionMngrFileWorker::adjustFaceRectangles(const ItemInfo& info, bool rotatedPixels,
-                                                                          int newOrientation,
-                                                                          int oldOrientation)
-{
-    /**
-     *  Get all faces from database and rotate them
-     */
-    QList<FaceTagsIface> facesList = FaceTagsEditor().databaseFaces(info.id());
-
-    if (facesList.isEmpty())
-    {
-        return;
-    }
-
-    QSize newSize = info.dimensions();
-    QMultiMap<QString, QRect> adjustedFaces;
-
-    foreach (const FaceTagsIface& dface, facesList)
-    {
-        QRect faceRect = dface.region().toRect();
-        QString name   = FaceTags::faceNameForTag(dface.tagId());
-
-        TagRegion::reverseToOrientation(faceRect,
-                                        oldOrientation,
-                                        info.dimensions());
-
-        newSize = TagRegion::adjustToOrientation(faceRect,
-                                                 newOrientation,
-                                                 info.dimensions());
-
-        if (dface.tagId() == FaceTags::unknownPersonTagId())
-        {
-            name.clear();
-        }
-
-        adjustedFaces.insertMulti(name, faceRect);
-    }
-
-    /**
-     *  Delete all old faces and add rotated ones
-     */
-    FaceTagsEditor().removeAllFaces(info.id());
-
-    QMultiMap<QString, QRect>::ConstIterator it = adjustedFaces.constBegin();
-
-    for ( ; it != adjustedFaces.constEnd() ; ++it)
-    {
-        TagRegion region(it.value());
-
-        if (it.key().isEmpty())
-        {
-            int tagId = FaceTags::unknownPersonTagId();
-            FaceTagsIface face(FaceTagsIface::UnknownName, info.id(), tagId, region);
-
-            FaceTagsEditor().addManually(face);
-        }
-        else
-        {
-            int tagId = FaceTags::getOrCreateTagForPerson(it.key());
-
-            if (!tagId)
-            {
-                qCDebug(DIGIKAM_GENERAL_LOG) << "Failed to create a person tag for name" << it.key();
-            }
-
-            FaceTagsEditor().add(info.id(), tagId, region, false);
-        }
-    }
-
-    if (!rotatedPixels)
-    {
-        newSize = info.dimensions();
-    }
-
-    /**
-     * Write medatada
-     */
-    MetadataHub hub;
-    hub.load(info);
-
-    // Adjusted newSize
-
-    hub.loadFaceTags(info, newSize);
-    hub.write(info.filePath(), MetadataHub::WRITE_ALL);
 }
 
 } // namespace Digikam

@@ -6,7 +6,7 @@
  * Date        : 2017-07-04
  * Description : Autodetect gimp binary program
  *
- * Copyright (C) 2017-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2017-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -20,8 +20,8 @@
  *
  * ============================================================ */
 
-#ifndef GIMP_BINARY_H
-#define GIMP_BINARY_H
+#ifndef DIGIKAM_GIMP_BINARY_H
+#define DIGIKAM_GIMP_BINARY_H
 
 // Local includes
 
@@ -34,32 +34,14 @@ namespace DigikamGenericPrintCreatorPlugin
 
 class GimpBinary : public DBinaryIface
 {
+    Q_OBJECT
+
 public:
 
-    GimpBinary()
-        : DBinaryIface(
-#ifdef Q_OS_OSX
-                       QLatin1String("GIMP-bin"),
-#elif defined Q_OS_WIN
-                       QLatin1String("gimp-2.10"),
-#else
-                       QLatin1String("gimp"),
-#endif
-                       QLatin1String("The Gimp"),
-                       QLatin1String("https://www.gimp.org/downloads/"),
-                       QLatin1String("PrintCreator"),
-                       QStringList(QLatin1String("-v")),
-                       i18n("The GNU Image Manipulation Program.")
-                      )
-        {
-            setup();
-        }
-
-    ~GimpBinary()
-    {
-    }
+    explicit GimpBinary(QObject* const parent = nullptr);
+    ~GimpBinary() override;
 };
 
 } // namespace DigikamGenericPrintCreatorPlugin
 
-#endif // GIMP_BINARY_H
+#endif // DIGIKAM_GIMP_BINARY_H

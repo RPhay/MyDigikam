@@ -6,7 +6,7 @@
  * Date        : 2017-06-27
  * Description : a tool to create calendar.
  *
- * Copyright (C) 2017-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2017-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -52,9 +52,9 @@ public:
 
     explicit Private(QWizard* const dialog)
       : imageGetOption(nullptr),
-        hbox(nullptr),
-        binSearch(nullptr),
-        iface(nullptr)
+        hbox          (nullptr),
+        binSearch     (nullptr),
+        iface         (nullptr)
     {
         wizard = dynamic_cast<AdvPrintWizard*>(dialog);
 
@@ -74,7 +74,7 @@ public:
 
 AdvPrintIntroPage::AdvPrintIntroPage(QWizard* const dialog, const QString& title)
     : DWizardPage(dialog, title),
-      d(new Private(dialog))
+      d          (new Private(dialog))
 {
     DVBox* const vbox  = new DVBox(this);
     QLabel* const desc = new QLabel(vbox);
@@ -108,21 +108,25 @@ AdvPrintIntroPage::AdvPrintIntroPage(QWizard* const dialog, const QString& title
     d->binSearch = new DBinarySearch(binaryBox);
     d->binSearch->addBinary(d->gimpBin);
 
-#ifdef Q_OS_OSX
+#ifdef Q_OS_MACOS
+
     // Gimp bundle PKG install
+
     d->binSearch->addDirectory(QLatin1String("/Applications/Gimp.app/Contents/MacOS"));
+    d->binSearch->addDirectory(QLatin1String("/Applications/GIMP-2.10.app/Contents/MacOS"));
 
     // Std Macports install
+
     d->binSearch->addDirectory(QLatin1String("/opt/local/bin"));
 
-    // digiKam Bundle PKG install
-    d->binSearch->addDirectory(QLatin1String("/opt/digikam/bin"));
 #endif
 
 #ifdef Q_OS_WIN
+
     d->binSearch->addDirectory(QLatin1String("C:/Program Files/GIMP 2/bin"));
 
     d->binSearch->addDirectory(QLatin1String("C:/Program Files (x86)/GIMP 2/bin"));
+
 #endif
 
     vbox->setStretchFactor(desc,      2);

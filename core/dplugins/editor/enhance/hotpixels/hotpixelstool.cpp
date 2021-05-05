@@ -7,7 +7,7 @@
  * Description : a digiKam image tool for fixing dots produced by
  *               hot/stuck/dead pixels from a CCD.
  *
- * Copyright (C) 2005-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2005-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2005-2006 by Unai Garro <ugarro at users dot sourceforge dot net>
  *
  * This program is free software; you can redistribute it
@@ -28,22 +28,18 @@
 // Qt includes
 
 #include <QGridLayout>
-#include <QLabel>
-#include <QPolygon>
-#include <QProgressBar>
-#include <QPushButton>
 #include <QIcon>
 #include <QApplication>
+#include <QPointer>
 
 // KDE includes
 
 #include <klocalizedstring.h>
 #include <ksharedconfig.h>
-#include "kconfiggroup.h"
+#include <kconfiggroup.h>
 
 // Local includes
 
-#include "blackframelistview.h"
 #include "dcombobox.h"
 #include "daboutdata.h"
 #include "dimg.h"
@@ -51,7 +47,7 @@
 #include "editortooliface.h"
 #include "editortoolsettings.h"
 #include "hotpixelfixer.h"
-#include "imagedialog.h"
+#include "hotpixelsettings.h"
 #include "imageiface.h"
 #include "imageregionwidget.h"
 
@@ -63,41 +59,22 @@ class Q_DECL_HIDDEN HotPixelsTool::Private
 public:
 
     explicit Private()
-      : blackFrameButton(nullptr),
-        progressBar(nullptr),
-        filterMethodCombo(nullptr),
-        blackFrameListView(nullptr),
-        previewWidget(nullptr),
-        gboxSettings(nullptr)
+      : previewWidget(nullptr),
+        gboxSettings (nullptr),
+        hpSettings   (nullptr)
     {
     }
 
-    static const QString configGroupName;
-    static const QString configLastBlackFrameFileEntry;
-    static const QString configFilterMethodEntry;
-
-    QPushButton*         blackFrameButton;
-    QProgressBar*        progressBar;
-    QList<HotPixel>      hotPixelsList;
-
-    QUrl                 blackFrameURL;
-
-    DComboBox*           filterMethodCombo;
-
-    BlackFrameListView*  blackFrameListView;
     ImageRegionWidget*   previewWidget;
     EditorToolSettings*  gboxSettings;
+    HotPixelSettings*    hpSettings;
 };
-
-const QString HotPixelsTool::Private::configGroupName(QLatin1String("hotpixels Tool"));
-const QString HotPixelsTool::Private::configLastBlackFrameFileEntry(QLatin1String("Last Black Frame File"));
-const QString HotPixelsTool::Private::configFilterMethodEntry(QLatin1String("Filter Method"));
 
 // --------------------------------------------------------
 
 HotPixelsTool::HotPixelsTool(QObject* const parent)
     : EditorToolThreaded(parent),
-      d(new Private)
+      d                 (new Private)
 {
     setObjectName(QLatin1String("hotpixels"));
     setToolName(i18n("Hot Pixels"));
@@ -105,40 +82,13 @@ HotPixelsTool::HotPixelsTool(QObject* const parent)
 
     // -------------------------------------------------------------
 
-    d->gboxSettings         = new EditorToolSettings(nullptr);
+    d->gboxSettings  = new EditorToolSettings(nullptr);
     d->gboxSettings->setButtons(EditorToolSettings::Default|
                                 EditorToolSettings::Ok|
                                 EditorToolSettings::Cancel|
                                 EditorToolSettings::Try);
 
-    QGridLayout* const grid = new QGridLayout(d->gboxSettings->plainPage());
-
-    QLabel* const filterMethodLabel = new QLabel(i18n("Filter:"), d->gboxSettings->plainPage());
-    d->filterMethodCombo            = new DComboBox(d->gboxSettings->plainPage());
-    d->filterMethodCombo->addItem(i18nc("average filter mode", "Average"));
-    d->filterMethodCombo->addItem(i18nc("linear filter mode", "Linear"));
-    d->filterMethodCombo->addItem(i18nc("quadratic filter mode", "Quadratic"));
-    d->filterMethodCombo->addItem(i18nc("cubic filter mode", "Cubic"));
-    d->filterMethodCombo->setDefaultIndex(HotPixelFixer::QUADRATIC_INTERPOLATION);
-
-    d->blackFrameButton = new QPushButton(i18n("Black Frame..."), d->gboxSettings->plainPage());
-    d->blackFrameButton->setIcon(QIcon::fromTheme(QLatin1String("document-open")));
-    d->blackFrameButton->setWhatsThis(i18n("Use this button to add a new black frame file which will "
-                                           "be used by the hot pixels removal filter.") );
-
-    d->blackFrameListView = new BlackFrameListView(d->gboxSettings->plainPage());
-
-    // -------------------------------------------------------------
-
-    const int spacing = d->gboxSettings->spacingHint();
-
-    grid->addWidget(filterMethodLabel,     0, 0, 1, 1);
-    grid->addWidget(d->filterMethodCombo,  0, 1, 1, 1);
-    grid->addWidget(d->blackFrameButton,   0, 2, 1, 1);
-    grid->addWidget(d->blackFrameListView, 1, 0, 2, 3);
-    grid->setRowStretch(3, 10);
-    grid->setContentsMargins(spacing, spacing, spacing, spacing);
-    grid->setSpacing(spacing);
+    d->hpSettings    = new HotPixelSettings(d->gboxSettings->plainPage());
 
     // -------------------------------------------------------------
 
@@ -150,14 +100,11 @@ HotPixelsTool::HotPixelsTool(QObject* const parent)
 
     // -------------------------------------------------------------
 
-    connect(d->filterMethodCombo, SIGNAL(activated(int)),
+    connect(d->hpSettings, SIGNAL(signalSettingsChanged()),
             this, SLOT(slotPreview()));
 
-    connect(d->blackFrameButton, SIGNAL(clicked()),
-            this, SLOT(slotAddBlackFrame()));
-
-    connect(d->blackFrameListView, SIGNAL(signalBlackFrameSelected(QList<HotPixel>,QUrl)),
-            this, SLOT(slotBlackFrame(QList<HotPixel>,QUrl)));
+    connect(d->hpSettings, SIGNAL(signalHotPixels(QPolygon)),
+            this, SLOT(slotHotPixels(QPolygon)));
 }
 
 HotPixelsTool::~HotPixelsTool()
@@ -170,84 +117,35 @@ void HotPixelsTool::registerFilter()
     DImgFilterManager::instance()->addGenerator(new BasicDImgFilterGenerator<HotPixelFixer>());
 }
 
+void HotPixelsTool::slotResetSettings()
+{
+    d->hpSettings->resetToDefault();
+}
+
 void HotPixelsTool::readSettings()
 {
-    KSharedConfig::Ptr config = KSharedConfig::openConfig();
-    KConfigGroup group        = config->group(d->configGroupName);
-    d->blackFrameURL          = QUrl::fromLocalFile(group.readEntry(d->configLastBlackFrameFileEntry, QString()));
-    d->filterMethodCombo->setCurrentIndex(group.readEntry(d->configFilterMethodEntry,  d->filterMethodCombo->defaultIndex()));
-
-    if (d->blackFrameURL.isValid())
-    {
-        EditorToolIface::editorToolIface()->setToolStartProgress(i18n("Loading: "));
-        BlackFrameListViewItem* const item = new BlackFrameListViewItem(d->blackFrameListView, d->blackFrameURL);
-
-        connect(item, SIGNAL(signalLoadingProgress(float)),
-                this, SLOT(slotLoadingProgress(float)));
-
-        connect(item, SIGNAL(signalLoadingComplete()),
-                this, SLOT(slotLoadingComplete()));
-    }
+    KConfigGroup group = KSharedConfig::openConfig()->group(d->hpSettings->configGroupName());
+    d->hpSettings->readSettings(group);
 }
 
 void HotPixelsTool::writeSettings()
 {
-    KSharedConfig::Ptr config = KSharedConfig::openConfig();
-    KConfigGroup group        = config->group(d->configGroupName);
-    group.writeEntry(d->configLastBlackFrameFileEntry, d->blackFrameURL.url());
-    group.writeEntry(d->configFilterMethodEntry,       d->filterMethodCombo->currentIndex());
-    group.sync();
-}
-
-void HotPixelsTool::slotLoadingProgress(float v)
-{
-    EditorToolIface::editorToolIface()->setToolProgress((int)(v*100));
-}
-
-void HotPixelsTool::slotLoadingComplete()
-{
-    EditorToolIface::editorToolIface()->setToolStopProgress();
-}
-
-void HotPixelsTool::slotResetSettings()
-{
-    d->filterMethodCombo->blockSignals(true);
-    d->filterMethodCombo->slotReset();
-    d->filterMethodCombo->blockSignals(false);
-}
-
-void HotPixelsTool::slotAddBlackFrame()
-{
-    QUrl url = ImageDialog::getImageURL(qApp->activeWindow(), d->blackFrameURL, i18n("Select Black Frame Image"));
-
-    if (!url.isEmpty())
-    {
-        // Load the selected file and insert into the list.
-
-        d->blackFrameURL = url;
-        d->blackFrameListView->clear();
-        BlackFrameListViewItem* const item = new BlackFrameListViewItem(d->blackFrameListView, d->blackFrameURL);
-
-        connect(item, SIGNAL(signalLoadingProgress(float)),
-                this, SLOT(slotLoadingProgress(float)));
-
-        connect(item, SIGNAL(signalLoadingComplete()),
-                this, SLOT(slotLoadingComplete()));
-    }
+    KConfigGroup group = KSharedConfig::openConfig()->group(d->hpSettings->configGroupName());
+    d->hpSettings->writeSettings(group);
 }
 
 void HotPixelsTool::preparePreview()
 {
-    DImg image              = d->previewWidget->getOriginalRegionImage();
-    int interpolationMethod = d->filterMethodCombo->currentIndex();
+    DImg image            = d->previewWidget->getOriginalRegionImage();
+    HotPixelContainer prm = d->hpSettings->settings();
 
-    QList<HotPixel> hotPixelsRegion;
-    QRect area = d->previewWidget->getOriginalImageRegionToRender();
+    QList<HotPixelProps> hotPixelsRegion;
+    QRect area            = d->previewWidget->getOriginalImageRegionToRender();
 
-    for (QList<HotPixel>::const_iterator it = d->hotPixelsList.constBegin() ;
-         it != d->hotPixelsList.constEnd() ; ++it)
+    for (QList<HotPixelProps>::const_iterator it = prm.hotPixelsList.constBegin() ;
+         it != prm.hotPixelsList.constEnd() ; ++it)
     {
-        HotPixel hp = (*it);
+        HotPixelProps hp = (*it);
 
         if (area.contains( hp.rect ))
         {
@@ -256,15 +154,17 @@ void HotPixelsTool::preparePreview()
         }
     }
 
-    setFilter(dynamic_cast<DImgThreadedFilter*>(new HotPixelFixer(&image, this, hotPixelsRegion, interpolationMethod)));
+    prm.hotPixelsList = hotPixelsRegion;
+
+    setFilter(dynamic_cast<DImgThreadedFilter*>(new HotPixelFixer(&image, this, prm)));
 }
 
 void HotPixelsTool::prepareFinal()
 {
-    int interpolationMethod = d->filterMethodCombo->currentIndex();
+    HotPixelContainer prm = d->hpSettings->settings();
 
     ImageIface iface;
-    setFilter(dynamic_cast<DImgThreadedFilter*>(new HotPixelFixer(iface.original(), this, d->hotPixelsList, interpolationMethod)));
+    setFilter(dynamic_cast<DImgThreadedFilter*>(new HotPixelFixer(iface.original(), this, prm)));
 }
 
 void HotPixelsTool::setPreviewImage()
@@ -278,22 +178,9 @@ void HotPixelsTool::setFinalImage()
     iface.setOriginal(i18n("Hot Pixels Correction"), filter()->filterAction(), filter()->getTargetImage());
 }
 
-void HotPixelsTool::slotBlackFrame(const QList<HotPixel>& hpList, const QUrl& blackFrameURL)
+void HotPixelsTool::slotHotPixels(const QPolygon& pointList)
 {
-    d->blackFrameURL = blackFrameURL;
-    d->hotPixelsList = hpList;
-
-    QPolygon pointList(d->hotPixelsList.size());
-    QList <HotPixel>::const_iterator it;
-    int i = 0;
-
-    for (it = d->hotPixelsList.constBegin() ; it != d->hotPixelsList.constEnd() ; ++it, ++i)
-    {
-        pointList.setPoint(i, (*it).rect.center());
-    }
-
     d->previewWidget->setHighLightPoints(pointList);
-
     slotPreview();
 }
 

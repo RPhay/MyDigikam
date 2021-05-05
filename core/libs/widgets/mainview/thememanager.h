@@ -6,7 +6,7 @@
  * Date        : 2004-08-02
  * Description : colors theme manager
  *
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -48,7 +48,7 @@ class DIGIKAM_EXPORT ThemeManager : public QObject
 
 public:
 
-    ~ThemeManager();
+    ~ThemeManager()                   override;
     static ThemeManager* instance();
 
     QString currentThemeName() const;
@@ -59,6 +59,8 @@ public:
     void    setThemeMenuAction(QMenu* const action);
     void    registerThemeActions(DXmlGuiWindow* const win);
 
+    void    updateThemeMenu();
+
 Q_SIGNALS:
 
     void signalThemeChanged();
@@ -66,11 +68,12 @@ Q_SIGNALS:
 private Q_SLOTS:
 
     void slotChangePalette();
-    void slotSettingsChanged();
 
 private:
 
+    // Disable
     ThemeManager();
+    explicit ThemeManager(QObject*);
 
     void    populateThemeMenu();
     QString currentDesktopdefaultTheme() const;

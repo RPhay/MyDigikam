@@ -6,7 +6,7 @@
  * Date        : 2009-11-03
  * Description : A dialog base class which can handle multiple pages.
  *
- * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 1999-2001 by Mirko Boehm <mirko at kde dot org>
  * Copyright (C) 1999-2001 by Espen Sand <espen at kde dot org>
  * Copyright (C) 1999-2001 by Holger Freyther <freyther at kde dot org>
@@ -91,12 +91,12 @@ public:
     /**
      * Creates a new page dialog.
      */
-    explicit DConfigDlg(QWidget* const parent = nullptr, Qt::WindowFlags flags = nullptr);
+    explicit DConfigDlg(QWidget* const parent = nullptr, Qt::WindowFlags flags = Qt::WindowFlags());
 
     /**
      * Destroys the page dialog.
      */
-    ~DConfigDlg();
+    ~DConfigDlg()                                                     override;
 
     /**
      * Sets the face type of the dialog.
@@ -177,7 +177,7 @@ public:
      * Returns the @see DConfigDlgWdgItem for the current page or 0 if there is no
      * current page.
      */
-    DConfigDlgWdgItem* currentPage() const;
+    DConfigDlgWdgItem* currentPage()                            const;
 
     /**
      * Sets the collection of standard buttons displayed by this dialog.
@@ -219,8 +219,8 @@ protected:
      * \param widget The DConfigDlgWdg object will be reparented to this object, so you can create
      * it without parent and you are not allowed to delete it.
      */
-    DConfigDlg(DConfigDlgWdg* const widget, QWidget* const parent, Qt::WindowFlags flags = nullptr);
-    DConfigDlg(DConfigDlgPrivate& dd, DConfigDlgWdg* const widget, QWidget* const parent, Qt::WindowFlags flags = nullptr);
+    DConfigDlg(DConfigDlgWdg* const widget, QWidget* const parent, Qt::WindowFlags flags = Qt::WindowFlags());
+    DConfigDlg(DConfigDlgPrivate& dd, DConfigDlgWdg* const widget, QWidget* const parent, Qt::WindowFlags flags = Qt::WindowFlags());
 
     /**
      * Returns the page widget of the dialog or 0 if no page widget is set.
@@ -230,7 +230,7 @@ protected:
     /**
      * Returns the page widget of the dialog or 0 if no page widget is set.
      */
-    const DConfigDlgWdg* pageWidget() const;
+    const DConfigDlgWdg* pageWidget()                           const;
 
     /**
      * Set the page widget of the dialog.
@@ -250,7 +250,7 @@ protected:
     /**
      * Returns the button box of the dialog or 0 if no button box is set.
      */
-    const QDialogButtonBox* buttonBox() const;
+    const QDialogButtonBox* buttonBox()                         const;
 
     /**
      * Set the button box of the dialog

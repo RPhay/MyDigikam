@@ -6,7 +6,7 @@
  * Description : Wrapper class for face recognition
  *
  * Copyright (C)      2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2014-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2014-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -37,7 +37,7 @@
 namespace Digikam
 {
 
-class DIGIKAM_DATABASE_EXPORT Identity
+class DIGIKAM_EXPORT Identity
 {
 
 public:
@@ -66,18 +66,21 @@ public:
     bool isNull()                          const;
     bool operator==(const Identity& other) const;
 
-    /** Id value accessor.
+    /**
+     * Id value accessor.
      */
     int  id()                              const;
     void setId(int id);
 
-    /** Attribute value accessor.
+    /**
+     * Attribute value accessor.
      */
     QString attribute(const QString& att)  const;
     void    setAttribute(const QString& att,
                          const QString& val);
 
-    /** Attributes map accessor.
+    /**
+     * Attributes map accessor.
      */
     QMap<QString, QString> attributesMap() const;
     void setAttributesMap(const QMap<QString, QString>& attributes);

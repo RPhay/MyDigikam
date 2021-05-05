@@ -8,7 +8,7 @@
  *
  * Copyright (C) 2005      by Renchi Raju <renchi dot raju at gmail dot com>
  * Copyright (C) 2007-2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2013      by Michael G. Hansen <mike at mghansen dot de>
  *
  * This program is free software; you can redistribute it
@@ -61,10 +61,7 @@ ItemInfo::ItemInfo(const ItemListerRecord& record)
     m_data->formatCached           = true;
     m_data->creationDateCached     = true;
     m_data->modificationDateCached = true;
-
-    // field is only signed 32 bit in the protocol. -1 indicates value is larger, reread
-
-    m_data->fileSizeCached         = (m_data->fileSize != -1);
+    m_data->fileSizeCached         = true;
     m_data->imageSizeCached        = true;
     m_data->videoMetadataCached    = DatabaseFields::VideoMetadataNone;
     m_data->imageMetadataCached    = DatabaseFields::ImageMetadataNone;

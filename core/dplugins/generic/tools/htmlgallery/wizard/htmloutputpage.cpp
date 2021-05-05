@@ -6,7 +6,7 @@
  * Date        : 2006-04-04
  * Description : a tool to generate HTML image galleries
  *
- * Copyright (C) 2012-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -52,10 +52,10 @@ class Q_DECL_HIDDEN HTMLOutputPage::Private
 public:
 
     explicit Private()
-      : destUrl(nullptr),
-        openInBrowser(nullptr),
-        titleLabel(nullptr),
-        imageSelectionTitle(nullptr)
+      : destUrl             (nullptr),
+        openInBrowser       (nullptr),
+        titleLabel          (nullptr),
+        imageSelectionTitle (nullptr)
     {
     }
 
@@ -67,7 +67,7 @@ public:
 
 HTMLOutputPage::HTMLOutputPage(QWizard* const dialog, const QString& title)
     : DWizardPage(dialog, title),
-      d(new Private)
+      d          (new Private)
 {
     setObjectName(QLatin1String("OutputPage"));
 
@@ -77,7 +77,7 @@ HTMLOutputPage::HTMLOutputPage(QWizard* const dialog, const QString& title)
 
     d->titleLabel = new QLabel(main);
     d->titleLabel->setWordWrap(false);
-    d->titleLabel->setText(i18n("Gallery Title:"));
+    d->titleLabel->setText(i18nc("@label", "Gallery Title:"));
 
     d->imageSelectionTitle   = new QLineEdit(main);
     d->titleLabel->setBuddy(d->imageSelectionTitle);
@@ -86,22 +86,23 @@ HTMLOutputPage::HTMLOutputPage(QWizard* const dialog, const QString& title)
 
     QLabel* const textLabel1 = new QLabel(main);
     textLabel1->setWordWrap(false);
-    textLabel1->setText(i18n("Destination Folder:"));
+    textLabel1->setText(i18nc("@label", "Destination Folder:"));
 
     d->destUrl = new DFileSelector(main);
-    d->destUrl->setFileDlgTitle(i18n("Destination Folder"));
+    d->destUrl->setFileDlgTitle(i18nc("@title", "Destination Folder"));
     d->destUrl->setFileDlgMode(QFileDialog::Directory);
+    d->destUrl->setFileDlgOptions(QFileDialog::ShowDirsOnly);
     textLabel1->setBuddy(d->destUrl);
 
     // --------------------
 
     QLabel* const browserLabel = new QLabel(main);
     browserLabel->setWordWrap(false);
-    browserLabel->setText(i18n("Open in Browser:"));
+    browserLabel->setText(i18nc("@label", "Open in Browser:"));
     d->openInBrowser           = new QComboBox(main);
-    d->openInBrowser->addItem(i18n("None"),                 GalleryConfig::NOBROWSER);
-    d->openInBrowser->addItem(i18n("Internal"),             GalleryConfig::INTERNAL);
-    d->openInBrowser->addItem(i18n("Default from Desktop"), GalleryConfig::DESKTOP);
+    d->openInBrowser->addItem(i18nc("@item: open in browser", "None"),                 GalleryConfig::NOBROWSER);
+    d->openInBrowser->addItem(i18nc("@item: open in browser", "Internal"),             GalleryConfig::INTERNAL);
+    d->openInBrowser->addItem(i18nc("@item: open in browser", "Default from Desktop"), GalleryConfig::DESKTOP);
     d->openInBrowser->setEditable(false);
     browserLabel->setBuddy(d->openInBrowser);
 
@@ -142,7 +143,9 @@ void HTMLOutputPage::initializePage()
     HTMLWizard* const wizard = dynamic_cast<HTMLWizard*>(assistant());
 
     if (!wizard)
+    {
         return;
+    }
 
     GalleryInfo* const info  = wizard->galleryInfo();
 
@@ -157,17 +160,23 @@ void HTMLOutputPage::initializePage()
 bool HTMLOutputPage::validatePage()
 {
     if (d->destUrl->fileDlgPath().isEmpty())
+    {
         return false;
+    }
 
     HTMLWizard* const wizard = dynamic_cast<HTMLWizard*>(assistant());
 
     if (!wizard)
+    {
         return false;
+    }
 
     GalleryInfo* const info  = wizard->galleryInfo();
 
     if (info->m_getOption == GalleryInfo::IMAGES && d->imageSelectionTitle->text().isEmpty())
+    {
         return false;
+    }
 
     info->setDestUrl(QUrl::fromLocalFile(d->destUrl->fileDlgPath()));
     info->setOpenInBrowser(d->openInBrowser->currentIndex());

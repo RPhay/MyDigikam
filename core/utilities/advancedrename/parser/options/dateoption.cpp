@@ -44,8 +44,8 @@ namespace Digikam
 
 static QString getDateFormatLinkText()
 {
-    const QString dateFormatLink      = QString::fromUtf8("<a href='http://qt-project.org/doc/qt-5.0/qtcore/qdatetime.html#toString'>%1</a>");
-    const QString dateFormatLinkDescr = i18nc("date format settings", "format settings");
+    const QString dateFormatLink      = QString::fromUtf8("<a href='https://qt-project.org/doc/qt-5.0/qtcore/qdatetime.html#toString'>%1</a>");
+    const QString dateFormatLinkDescr = i18nc("@info: date format settings", "format settings");
 
     return dateFormatLink.arg(dateFormatLinkDescr);
 }
@@ -119,13 +119,13 @@ DateOptionDialog::DateOptionDialog(Rule* parent)
 
     // fill the date source combobox
 
-    ui->dateSourcePicker->addItem(i18nc("Get date information from the image", "Image"),
+    ui->dateSourcePicker->addItem(i18nc("@item: Get date information from the image", "Image"),
                                   QVariant(FromImage));
 /*
     ui->dateSourcePicker->addItem(i18nc("Get date information from the current date", "Current Date"),
                                   QVariant(CurrentDateTime));
 */
-    ui->dateSourcePicker->addItem(i18nc("Set a fixed date", "Fixed Date"),
+    ui->dateSourcePicker->addItem(i18nc("@item: Set a fixed date", "Fixed Date"),
                                   QVariant(FixedDateTime));
 
     // fill the date format combobox
@@ -150,7 +150,7 @@ DateOptionDialog::DateOptionDialog(Rule* parent)
     QRegExp validRegExp(QLatin1String("[^/]+"));
     QValidator* const validator = new QRegExpValidator(validRegExp, this);
     ui->customFormatInput->setValidator(validator);
-    ui->customFormatInput->setPlaceholderText(i18n("Enter custom format"));
+    ui->customFormatInput->setPlaceholderText(i18nc("@info", "Enter custom format"));
 
     // --------------------------------------------------------
 
@@ -244,20 +244,20 @@ void DateOptionDialog::slotCustomFormatChanged(const QString&)
 
 void DateOptionDialog::updateExampleLabel()
 {
-    QString result = i18n("example: ") + formattedDateTime(QDateTime::currentDateTime());
+    QString result = i18nc("@info", "example: ") + formattedDateTime(QDateTime::currentDateTime());
     ui->exampleLabel->setText(result);
 }
 
 // --------------------------------------------------------
 
 DateOption::DateOption()
-    : Option(i18n("Date && Time..."),
-             i18n("Add date and time information"),
+    : Option(i18nc("@info", "Date && Time..."),
+             i18nc("@info", "Add date and time information"),
              QLatin1String("view-calendar"))
 {
-    addToken(QLatin1String("[date]"),            i18n("Date and time (standard format)"));
-    addToken(QLatin1String("[date:||key||]"),    i18n("Date and time") + QLatin1String(" (||key|| = Standard|ISO|UnixTimeStamp|Text)"));
-    addToken(QLatin1String("[date:||format||]"), i18n("Date and time") + QLatin1String(" (") + getDateFormatLinkText() + QLatin1Char(')'));
+    addToken(QLatin1String("[date]"),            i18nc("@item", "Date and time (standard format)"));
+    addToken(QLatin1String("[date:||key||]"),    i18nc("@item", "Date and time") + QLatin1String(" (||key|| = Standard|ISO|UnixTimeStamp|Text)"));
+    addToken(QLatin1String("[date:||format||]"), i18nc("@item", "Date and time") + QLatin1String(" (") + getDateFormatLinkText() + QLatin1Char(')'));
 
     QRegExp reg(QLatin1String("\\[date(:(.*))?\\]"));
     reg.setMinimal(true);
@@ -307,9 +307,13 @@ QString DateOption::parseOperation(ParseSettings& settings)
             QFileInfo fileInfo(settings.fileUrl.toLocalFile());
 
 #if (QT_VERSION >= QT_VERSION_CHECK(5, 10, 0))
+
             dateTime = fileInfo.birthTime();
+
 #else
+
             dateTime = fileInfo.created();
+
 #endif
         }
     }

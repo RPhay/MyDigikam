@@ -6,7 +6,7 @@
  * Date        : 2004-07-29
  * Description : image levels manipulation methods.
  *
- * Copyright (C) 2004-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2004-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -88,9 +88,11 @@ public:
 
 private:
 
-    // Hidden copy constructor and assignment operator.
-    ImageLevels(const ImageLevels&);
-    ImageLevels& operator=(const ImageLevels&);
+    // Disable
+    ImageLevels(const ImageLevels&)            = delete;
+    ImageLevels& operator=(const ImageLevels&) = delete;
+
+private:
 
     class Private;
     Private* const d;

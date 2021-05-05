@@ -7,7 +7,7 @@
  * Description : Core database Schema updater
  *
  * Copyright (C) 2007-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -57,12 +57,12 @@ namespace Digikam
 
 int CoreDbSchemaUpdater::schemaVersion()
 {
-    return 10;
+    return 12;
 }
 
 int CoreDbSchemaUpdater::filterSettingsVersion()
 {
-    return 10;
+    return 13;
 }
 
 int CoreDbSchemaUpdater::uniqueHashVersion()
@@ -72,7 +72,7 @@ int CoreDbSchemaUpdater::uniqueHashVersion()
 
 bool CoreDbSchemaUpdater::isUniqueHashUpToDate()
 {
-    return CoreDbAccess().db()->getUniqueHashVersion() >= uniqueHashVersion();
+    return (CoreDbAccess().db()->getUniqueHashVersion() >= uniqueHashVersion());
 }
 
 // --------------------------------------------------------------------------------------
@@ -84,8 +84,8 @@ public:
 
     explicit Private()
       : setError(false),
-        backend(nullptr),
-        albumDB(nullptr),
+        backend (nullptr),
+        albumDB (nullptr),
         dbAccess(nullptr),
         observer(nullptr)
     {
@@ -109,7 +109,7 @@ public:
 
 CoreDbSchemaUpdater::CoreDbSchemaUpdater(CoreDB* const albumDB,
                                          CoreDbBackend* const backend,
-                                         DbEngineParameters parameters)
+                                         const DbEngineParameters& parameters)
     : d(new Private)
 {
     d->backend    = backend;
@@ -138,12 +138,14 @@ bool CoreDbSchemaUpdater::update()
     bool success = startUpdates();
 
     // cancelled?
+
     if (d->observer && !d->observer->continueQuery())
     {
         return false;
     }
 
     // even on failure, try to set current version - it may have incremented
+
     setVersionSettings();
 
     if (!success)
@@ -201,45 +203,47 @@ void CoreDbSchemaUpdater::setObserver(InitializationObserver* const observer)
 
 bool CoreDbSchemaUpdater::startUpdates()
 {
-    if (!d->parameters.isSQLite())
+    // Do we have sufficient privileges
+
+    QStringList insufficientRights;
+    CoreDbPrivilegesChecker checker(d->parameters);
+
+    if (!checker.checkPrivileges(insufficientRights))
     {
-        // Do we have sufficient privileges
-        QStringList insufficientRights;
-        CoreDbPrivilegesChecker checker(d->parameters);
+        qCDebug(DIGIKAM_COREDB_LOG) << "Core database: insufficient rights on database.";
 
-        if (!checker.checkPrivileges(insufficientRights))
+        QString errorMsg = i18n("You have insufficient privileges on the database.\n"
+                                "Following privileges are not assigned to you:\n %1\n"
+                                "Check your privileges on the database and restart digiKam.",
+                                insufficientRights.join(QLatin1String(",\n")));
+        d->lastErrorMessage = errorMsg;
+
+        if (d->observer)
         {
-            qCDebug(DIGIKAM_COREDB_LOG) << "Core database: insufficient rights on database.";
-
-            QString errorMsg = i18n("You have insufficient privileges on the database.\n"
-                                    "Following privileges are not assigned to you:\n %1\n"
-                                    "Check your privileges on the database and restart digiKam.",
-                                    insufficientRights.join(QLatin1String(",\n")));
-            d->lastErrorMessage = errorMsg;
-
-            if (d->observer)
-            {
-                d->observer->error(errorMsg);
-                d->observer->finishedSchemaUpdate(InitializationObserver::UpdateErrorMustAbort);
-            }
-
-            return false;
+            d->observer->error(errorMsg);
+            d->observer->finishedSchemaUpdate(InitializationObserver::UpdateErrorMustAbort);
         }
+
+         return false;
     }
 
     // First step: do we have an empty database?
+
     QStringList tables = d->backend->tables();
 
     if (tables.contains(QLatin1String("Albums"), Qt::CaseInsensitive))
     {
         // Find out schema version of db file
+
         readVersionSettings();
         qCDebug(DIGIKAM_COREDB_LOG) << "Core database: have a structure version " << d->currentVersion.toInt();
 
         // We absolutely require the DBVersion setting
+
         if (!d->currentVersion.isValid())
         {
             // Something is damaged. Give up.
+
             qCDebug(DIGIKAM_COREDB_LOG) << "Core database: version not available! Giving up schema upgrading.";
 
             QString errorMsg = i18n("The database is not valid: "
@@ -259,12 +263,15 @@ bool CoreDbSchemaUpdater::startUpdates()
 
         // current version describes the current state of the schema in the db,
         // schemaVersion is the version required by the program.
+
         if (d->currentVersion.toInt() > schemaVersion())
         {
             // trying to open a database with a more advanced than this CoreDbSchemaUpdater supports
+
             if (d->currentRequiredVersion.isValid() && d->currentRequiredVersion.toInt() <= schemaVersion())
             {
                 // version required may be less than current version
+
                 return true;
             }
             else
@@ -303,8 +310,7 @@ bool CoreDbSchemaUpdater::startUpdates()
         // Version 1 is 0.6 (no db), Version 2 is 0.7 (SQLite 2),
         // Version 3 is 0.8-0.9,
         // Version 3 wrote the setting "DBVersion", "1",
-        // Version 4 is 0.10, the digikam3.db file copied to digikam4.db,
-        //  no schema changes.
+        // Version 4 is 0.10, the digikam3.db file copied to digikam4.db, no schema changes.
         // Version 4 writes "4", and from now on version x writes "x".
         // Version 5 includes the schema changes from 0.9 to 0.10
         // Version 6 brought new tables for history and ImageTagProperties, with version 2.0
@@ -323,11 +329,13 @@ bool CoreDbSchemaUpdater::startUpdates()
                 }
 
                 // d->currentVersion is now 4;
+
                 return makeUpdates();
             }
         }
 
         // No legacy handling: start with a fresh db
+
         if (!createDatabase() || !createFilterSettings())
         {
             QString errorMsg    = i18n("Failed to create tables in database.\n ") + d->backend->lastError();
@@ -359,6 +367,7 @@ bool CoreDbSchemaUpdater::beginWrapSchemaUpdateStep()
                                 QDir::toNativeSeparators(currentDBFile.filePath()));
         d->observer->error(errorMsg);
         d->observer->finishedSchemaUpdate(InitializationObserver::UpdateErrorMustAbort);
+
         return false;
     }
 
@@ -374,7 +383,8 @@ bool CoreDbSchemaUpdater::endWrapSchemaUpdateStep(bool stepOperationSuccess, con
         if (d->observer)
         {
             // error or cancelled?
-            if (!d->observer->continueQuery())
+
+            if      (!d->observer->continueQuery())
             {
                 qCDebug(DIGIKAM_COREDB_LOG) << "Core database: schema update cancelled by user";
             }
@@ -390,6 +400,7 @@ bool CoreDbSchemaUpdater::endWrapSchemaUpdateStep(bool stepOperationSuccess, con
 
     qCDebug(DIGIKAM_COREDB_LOG) << "Core database: success updating to version " << d->currentVersion.toInt();
     d->backend->commitTransaction();
+
     return true;
 }
 
@@ -407,6 +418,7 @@ bool CoreDbSchemaUpdater::makeUpdates()
             }
 
             // v4 was always SQLite
+
             QFileInfo currentDBFile(d->parameters.databaseNameCore);
             QString errorMsg = i18n("The schema updating process from version 4 to 6 failed, "
                                     "caused by an error that we did not expect. "
@@ -427,10 +439,12 @@ bool CoreDbSchemaUpdater::makeUpdates()
             qCDebug(DIGIKAM_COREDB_LOG) << "Core database: success updating v4 to v6";
 
             // Still set these even in >= 1.4 because 0.10 - 1.3 may want to apply the updates if not set
+
             setLegacySettingEntries();
         }
 
         // Incremental updates, starting from version 5
+
         for (int v = d->currentVersion.toInt() ; v < schemaVersion() ; ++v)
         {
             int targetVersion = v + 1;
@@ -463,16 +477,18 @@ bool CoreDbSchemaUpdater::makeUpdates()
 void CoreDbSchemaUpdater::defaultFilterSettings(QStringList& defaultItemFilter, QStringList& defaultVideoFilter,
                                                 QStringList& defaultAudioFilter)
 {
-    //NOTE for updating:
-    //When changing anything here, just increment filterSettingsVersion() so that the changes take effect
+    // NOTE for updating:
+    // When changing anything here, just increment filterSettingsVersion() so that the changes take effect
 
     // https://en.wikipedia.org/wiki/Image_file_formats
 
     defaultItemFilter << QLatin1String("jpg") << QLatin1String("jpeg") << QLatin1String("jpe")   // JPEG
+                      << QLatin1String("mpo")
                       << QLatin1String("jp2") << QLatin1String("j2k")  << QLatin1String("jpx")   // JPEG-2000
                       << QLatin1String("jpc") << QLatin1String("pgx")
                       << QLatin1String("tif") << QLatin1String("tiff")                           // TIFF
                       << QLatin1String("png")                                                    // PNG
+                      << QLatin1String("fit") << QLatin1String("fts")  << QLatin1String("fits")  // Flexible Image Transport System (https://fr.wikipedia.org/wiki/Flexible_Image_Transport_System)
                       << QLatin1String("gif") << QLatin1String("xpm")  << QLatin1String("ppm")
                       << QLatin1String("pnm") << QLatin1String("pgf")  << QLatin1String("bmp")
                       << QLatin1String("pcx") << QLatin1String("heic") << QLatin1String("heif")
@@ -481,7 +497,7 @@ void CoreDbSchemaUpdater::defaultFilterSettings(QStringList& defaultItemFilter, 
     // Raster graphics editor containers: https://en.wikipedia.org/wiki/Raster_graphics_editor
 
     defaultItemFilter << QLatin1String("xcf") << QLatin1String("psd") << QLatin1String("psb")
-                      << QLatin1String("kra") << QLatin1String("ora");
+                      << QLatin1String("kra") << QLatin1String("ora") << QLatin1String("wmf");
 
     // Raw images: https://en.wikipedia.org/wiki/Raw_image_format
 
@@ -489,10 +505,10 @@ void CoreDbSchemaUpdater::defaultFilterSettings(QStringList& defaultItemFilter, 
 
     // Video files: https://en.wikipedia.org/wiki/Video_file_format
 
-    defaultVideoFilter << QLatin1String("mpeg") << QLatin1String("mpg") << QLatin1String("mpo")
-                       << QLatin1String("mpe")  << QLatin1String("mts") << QLatin1String("vob")  // MPEG
+    defaultVideoFilter << QLatin1String("mpeg") << QLatin1String("mpg") << QLatin1String("mpe")  // MPEG
+                       << QLatin1String("mts")  << QLatin1String("vob")
                        << QLatin1String("avi")  << QLatin1String("divx")                         // RIFF
-                       << QLatin1String("wmv")  << QLatin1String("wmf") << QLatin1String("asf")  // ASF
+                       << QLatin1String("wmv")  << QLatin1String("asf")                          // ASF
                        << QLatin1String("mp4")  << QLatin1String("3gp") << QLatin1String("mov")  // QuickTime
                        << QLatin1String("3g2")  << QLatin1String("m4v") << QLatin1String("m2v")
                        << QLatin1String("mkv")  << QLatin1String("webm")                         // Matroska
@@ -559,7 +575,7 @@ bool CoreDbSchemaUpdater::createDatabase()
         d->albumDB->setUniqueHashVersion(uniqueHashVersion());
         d->currentRequiredVersion = schemaVersion();
 /*
-        // Digikam for database version 5 can work with version 6, though not using the new features
+        // digiKam for database version 5 can work with version 6, though not using the new features
         d->currentRequiredVersion = 5;
 */
         return true;
@@ -579,6 +595,7 @@ bool CoreDbSchemaUpdater::createIndices()
 {
     // TODO: see which more indices are needed
     // create indices
+
     return d->backend->execDBAction(d->backend->getDBAction(QLatin1String("CreateIndices")));
 }
 
@@ -613,7 +630,8 @@ bool CoreDbSchemaUpdater::updateUniqueHash()
 
         scanner.completeScan();
 
-        // earlier digikam does not know about the hash
+        // earlier digiKam does not know about the hash
+
         if (d->currentRequiredVersion.toInt() < 6)
         {
             d->currentRequiredVersion = 6;
@@ -647,7 +665,9 @@ bool CoreDbSchemaUpdater::performUpdateToVersion(const QString& actionName, int 
     if (!d->backend->execDBAction(updateAction))
     {
         qCDebug(DIGIKAM_COREDB_LOG) << "Core database: schema update to V" << newVersion << "failed!";
+
         // resort to default error message, set above
+
         return false;
     }
 
@@ -662,9 +682,12 @@ bool CoreDbSchemaUpdater::performUpdateToVersion(const QString& actionName, int 
     }
 
     d->currentVersion = newVersion;
-    // Digikam for database version 5 can work with version 6, though not using the new features
+
+    // digiKam for database version 5 can work with version 6, though not using the new features
     // Note: We do not upgrade the uniqueHash
+
     d->currentRequiredVersion = newRequiredVersion;
+
     return true;
 }
 
@@ -680,26 +703,63 @@ bool CoreDbSchemaUpdater::updateToVersion(int targetVersion)
     switch (targetVersion)
     {
         case 6:
-            // Digikam for database version 5 can work with version 6, though not using the new features
+        {
+            // digiKam for database version 5 can work with version 6, though not using the new features
             // Note: We do not upgrade the uniqueHash
+
             return performUpdateToVersion(QLatin1String("UpdateSchemaFromV5ToV6"), 6, 5);
+        }
+
         case 7:
-            // Digikam for database version 5 and 6 can work with version 7, though not using the support for video files.
+        {
+            // digiKam for database version 5 and 6 can work with version 7, though not using the support for video files.
+
             return performUpdateToVersion(QLatin1String("UpdateSchemaFromV6ToV7"), 7, 5);
+
             // NOTE: If you add a new update step, please check the d->currentVersion at the bottom of updateV4toV7
             // If the update already comes with createTables, createTriggers, we don't need the extra update here
+        }
+
         case 8:
-            // Digikam for database version 7 can work with version 8, now using COLLATE utf8_general_ci for MySQL.
+        {
+            // digiKam for database version 7 can work with version 8, now using COLLATE utf8_general_ci for MySQL.
+
             return performUpdateToVersion(QLatin1String("UpdateSchemaFromV7ToV9"), 8, 5);
+        }
+
         case 9:
-            // Digikam for database version 8 can work with version 9, now using COLLATE utf8_general_ci for MySQL.
+        {
+            // digiKam for database version 8 can work with version 9, now using COLLATE utf8_general_ci for MySQL.
+
             return performUpdateToVersion(QLatin1String("UpdateSchemaFromV7ToV9"), 9, 5);
+        }
+
         case 10:
-            // Digikam for database version 9 can work with version 10, remove ImageHaarMatrix table and add manualOrder column.
+        {
+            // digiKam for database version 9 can work with version 10, remove ImageHaarMatrix table and add manualOrder column.
+
             return performUpdateToVersion(QLatin1String("UpdateSchemaFromV9ToV10"), 10, 5);
+        }
+
+        case 11:
+        {
+            // digiKam for database version 10 can work with version 11, add TagsTree table for MySQL.
+
+            return performUpdateToVersion(QLatin1String("UpdateSchemaFromV10ToV11"), 11, 5);
+        }
+
+        case 12:
+        {
+            // digiKam for database version 11 can work with version 12, fix TagsTree triggers for MySQL.
+
+            return performUpdateToVersion(QLatin1String("UpdateSchemaFromV11ToV12"), 12, 5);
+        }
+
         default:
+        {
             qCDebug(DIGIKAM_COREDB_LOG) << "Core database: unsupported update to version" << targetVersion;
             return false;
+        }
     }
 }
 
@@ -713,9 +773,12 @@ bool CoreDbSchemaUpdater::copyV3toV4(const QString& digikam3DBPath, const QStrin
     d->backend->close();
 
     // We cannot use KIO here because KIO only works from the main thread
+
     QFile oldFile(digikam3DBPath);
     QFile newFile(currentDBPath);
+
     // QFile won't override. Remove the empty db file created when a non-existent file is opened
+
     newFile.remove();
 
     if (!oldFile.copy(currentDBPath))
@@ -772,12 +835,14 @@ bool CoreDbSchemaUpdater::copyV3toV4(const QString& digikam3DBPath, const QStrin
     }
 
     d->currentVersion = 4;
+
     return true;
 }
 
 static QStringList cleanUserFilterString(const QString& filterString)
 {
     // splits by either ; or space, removes "*.", trims
+
     QStringList filterList;
 
     QString wildcard(QLatin1String("*."));
@@ -827,6 +892,7 @@ bool CoreDbSchemaUpdater::updateV4toV7()
     // We operator on an SQLite3 database under a transaction (which will be rolled back on error)
 
     // --- Make space for new tables ---
+
     if (!d->backend->execSql(QString::fromUtf8("ALTER TABLE Albums RENAME TO AlbumsV3;")))
     {
         return false;
@@ -847,6 +913,7 @@ bool CoreDbSchemaUpdater::updateV4toV7()
     // --- Drop some triggers and indices ---
 
     // Don't check for errors here. The "IF EXISTS" clauses seem not supported in SQLite
+
     d->backend->execSql(QString::fromUtf8("DROP TRIGGER delete_album;"));
     d->backend->execSql(QString::fromUtf8("DROP TRIGGER delete_image;"));
     d->backend->execSql(QString::fromUtf8("DROP TRIGGER delete_tag;"));
@@ -997,6 +1064,7 @@ bool CoreDbSchemaUpdater::updateV4toV7()
     }
 
     // remove orphan images that would not be removed by CollectionScanner
+
     d->backend->execSql(QString::fromUtf8("DELETE FROM Images WHERE album NOT IN (SELECT id FROM Albums);"));
 
     if (d->observer)
@@ -1039,7 +1107,7 @@ bool CoreDbSchemaUpdater::updateV4toV7()
             name = i18n("Last Search (0.9)");
         }
 
-        if (QUrlQuery(url).queryItemValue(QLatin1String("type")) == QLatin1String("datesearch"))
+        if      (QUrlQuery(url).queryItemValue(QLatin1String("type")) == QLatin1String("datesearch"))
         {
             d->albumDB->updateSearch((*it).id, DatabaseSearch::TimeLineSearch, name, query);
         }
@@ -1075,15 +1143,16 @@ bool CoreDbSchemaUpdater::updateV4toV7()
 
     configItemFilter   = cleanUserFilterString(group.readEntry(QLatin1String("File Filter"),       QString())).toSet();
     configItemFilter  += cleanUserFilterString(group.readEntry(QLatin1String("Raw File Filter"),   QString())).toSet();
-    configVideoFilter   = cleanUserFilterString(group.readEntry(QLatin1String("Movie File Filter"), QString())).toSet();
-    configAudioFilter   = cleanUserFilterString(group.readEntry(QLatin1String("Audio File Filter"), QString())).toSet();
+    configVideoFilter  = cleanUserFilterString(group.readEntry(QLatin1String("Movie File Filter"), QString())).toSet();
+    configAudioFilter  = cleanUserFilterString(group.readEntry(QLatin1String("Audio File Filter"), QString())).toSet();
 
     // remove those that are included in the default filter
+
     configItemFilter.subtract(defaultItemFilter.toSet());
     configVideoFilter.subtract(defaultVideoFilter.toSet());
     configAudioFilter.subtract(defaultAudioFilter.toSet());
 
-    d->albumDB->setUserFilterSettings(configItemFilter.toList(), configVideoFilter.toList(), configAudioFilter.toList());
+    d->albumDB->setUserFilterSettings(configItemFilter.values(), configVideoFilter.values(), configAudioFilter.values());
     qCDebug(DIGIKAM_COREDB_LOG) << "Core database: set initial filter settings with user settings" << configItemFilter;
 
     if (d->observer)
@@ -1121,11 +1190,12 @@ bool CoreDbSchemaUpdater::updateV4toV7()
     // --- Port date, comment and rating (_after_ the scan) ---
 
     // Port ImagesV3.date -> ImageInformation.creationDate
+
     if (!d->backend->execSql(QString::fromUtf8(
                                 "UPDATE ImageInformation SET "
                                 " creationDate=(SELECT datetime FROM ImagesV3 WHERE ImagesV3.id=ImageInformation.imageid) "
                                 "WHERE imageid IN (SELECT id FROM ImagesV3);")
-                           )
+                            )
        )
     {
         return false;
@@ -1144,6 +1214,7 @@ bool CoreDbSchemaUpdater::updateV4toV7()
     // Port ImagesV3.comment to ItemComments
 
     // An author of NULL will inhibt the UNIQUE restriction to take effect (but #189080). Work around.
+
     d->backend->execSql(QString::fromUtf8(
                            "DELETE FROM ImageComments WHERE "
                            "type=? AND language=? AND author IS NULL "
@@ -1172,6 +1243,7 @@ bool CoreDbSchemaUpdater::updateV4toV7()
     }
 
     // Port rating storage in ImageProperties to ItemInformation
+
     if (!d->backend->execSql(QString::fromUtf8(
                                 "UPDATE ImageInformation SET "
                                 " rating=(SELECT value FROM ImageProperties "
@@ -1211,6 +1283,7 @@ bool CoreDbSchemaUpdater::updateV4toV7()
     d->currentRequiredVersion = 5;
     d->currentVersion         = 7;
     qCDebug(DIGIKAM_COREDB_LOG) << "Core database: returning true from updating to 5";
+
     return true;
 }
 
@@ -1268,7 +1341,7 @@ void CoreDbSchemaUpdater::preAlpha010Update1()
         ItemQueryBuilder builder;
         QString query = builder.convertFromUrlToXml(url);
 
-        if (QUrlQuery(url).queryItemValue(QLatin1String("type")) == QLatin1String("datesearch"))
+        if      (QUrlQuery(url).queryItemValue(QLatin1String("type")) == QLatin1String("datesearch"))
         {
             d->albumDB->updateSearch((*it).id, DatabaseSearch::TimeLineSearch, (*it).name, query);
         }
@@ -1393,6 +1466,7 @@ void CoreDbSchemaUpdater::beta010Update1()
     }
 
     // if Image has been deleted
+
     d->backend->execSql(QString::fromUtf8("DROP TRIGGER delete_image;"));
     d->backend->execSql(QString::fromUtf8("CREATE TRIGGER delete_image DELETE ON Images\n"
                                           "BEGIN\n"
@@ -1431,6 +1505,7 @@ void CoreDbSchemaUpdater::beta010Update2()
     }
 
     // force rescan and creation of ImageInformation entry for videos and audio
+
     d->backend->execSql(QString::fromUtf8("DELETE FROM Images WHERE category=2 OR category=3;"));
 
     d->albumDB->setSetting(QLatin1String("beta010Update2"), QLatin1String("true"));
@@ -1514,6 +1589,7 @@ bool CoreDbSchemaUpdater::createTablesV3()
 
     // TODO: see which more indices are needed
     // create indices
+
     d->backend->execSql(QString::fromUtf8("CREATE INDEX dir_index ON Images    (dirid);"));
     d->backend->execSql(QString::fromUtf8("CREATE INDEX tag_index ON ImageTags (tagid);"));
 
@@ -1521,6 +1597,7 @@ bool CoreDbSchemaUpdater::createTablesV3()
 
     // trigger: delete from Images/ImageTags/ImageProperties
     // if Album has been deleted
+
     d->backend->execSql(QString::fromUtf8("CREATE TRIGGER delete_album DELETE ON Albums\n"
                                           "BEGIN\n"
                                           " DELETE FROM ImageTags\n"
@@ -1533,6 +1610,7 @@ bool CoreDbSchemaUpdater::createTablesV3()
 
     // trigger: delete from ImageTags/ImageProperties
     // if Image has been deleted
+
     d->backend->execSql(QString::fromUtf8("CREATE TRIGGER delete_image DELETE ON Images\n"
                                           "BEGIN\n"
                                           "  DELETE FROM ImageTags\n"
@@ -1546,12 +1624,14 @@ bool CoreDbSchemaUpdater::createTablesV3()
                                           "END;"));
 
     // trigger: delete from ImageTags if Tag has been deleted
+
     d->backend->execSql(QString::fromUtf8("CREATE TRIGGER delete_tag DELETE ON Tags\n"
                                           "BEGIN\n"
                                           "  DELETE FROM ImageTags WHERE tagid=OLD.id;\n"
                                           "END;"));
 
     // trigger: insert into TagsTree if Tag has been added
+
     d->backend->execSql(QString::fromUtf8("CREATE TRIGGER insert_tagstree AFTER INSERT ON Tags\n"
                                           "BEGIN\n"
                                           "  INSERT INTO TagsTree\n"
@@ -1561,6 +1641,7 @@ bool CoreDbSchemaUpdater::createTablesV3()
                                           "END;"));
 
     // trigger: delete from TagsTree if Tag has been deleted
+
     d->backend->execSql(QString::fromUtf8("CREATE TRIGGER delete_tagstree DELETE ON Tags\n"
                                           "BEGIN\n"
                                           " DELETE FROM Tags\n"
@@ -1572,6 +1653,7 @@ bool CoreDbSchemaUpdater::createTablesV3()
                                           "END;"));
 
     // trigger: delete from TagsTree if Tag has been deleted
+
     d->backend->execSql(QString::fromUtf8("CREATE TRIGGER move_tagstree UPDATE OF pid ON Tags\n"
                                           "BEGIN\n"
                                           "  DELETE FROM TagsTree\n"

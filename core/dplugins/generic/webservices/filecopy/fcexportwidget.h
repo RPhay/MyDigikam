@@ -7,8 +7,8 @@
  * Description : a tool to export items to a local storage
  *
  * Copyright (C) 2006-2009 by Johannes Wienke <languitar at semipol dot de>
- * Copyright (C) 2011-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (C) 2019      by Maik Qualmann <metzpinguin at gmail dot com>
+ * Copyright (C) 2011-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2019-2020 by Maik Qualmann <metzpinguin at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -27,14 +27,13 @@
 
 // Qt includes
 
-#include <QCheckBox>
 #include <QWidget>
-#include <QList>
 #include <QUrl>
 
 // Local includes
 
 #include "dinfointerface.h"
+#include "fccontainer.h"
 #include "ditemslist.h"
 
 using namespace Digikam;
@@ -58,7 +57,7 @@ public:
     /**
      * Destructor.
      */
-    ~FCExportWidget();
+    ~FCExportWidget() override;
 
     /**
      * Returns a pointer to the imagelist that is displayed.
@@ -66,28 +65,25 @@ public:
     DItemsList* imagesList() const;
 
     /**
-     * Returns a pointer to the overwrite QCheckBox.
-     */
-    QCheckBox* overwriteBox() const;
-
-    /**
-     * Returns a pointer to the symLinks QCheckBox.
-     */
-    QCheckBox* symLinksBox() const;
-
-    /**
      * Returns the currently selected target url. Maybe invalid.
      */
     QUrl targetUrl() const;
 
     /**
-     * Sets the target url this widget should point at.
+     * Returns settings container.
      */
-    void setTargetUrl(const QUrl& url);
+    FCContainer getSettings() const;
+
+    /**
+     * Set widget from settings container.
+     */
+    void setSettings(const FCContainer& settings);
 
 private Q_SLOTS:
 
     void slotLabelUrlChanged();
+
+    void slotFileCopyButtonChanged(bool enabled);
 
 Q_SIGNALS:
 

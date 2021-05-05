@@ -7,7 +7,7 @@
  * Description : A widget to select Physical or virtual albums with combo-box
  *
  * Copyright (C) 2010-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2012-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -54,8 +54,10 @@
 namespace Digikam
 {
 
-class Q_DECL_HIDDEN ModelClearButton : public AnimatedClearButton
+class Q_DECL_HIDDEN ModelClearButton : public AnimatedClearButton       // clazy:exclude=ctor-missing-parent-argument
 {
+    Q_OBJECT
+
 public:
 
     explicit ModelClearButton(AbstractCheckableAlbumModel* const model)
@@ -76,16 +78,16 @@ class Q_DECL_HIDDEN AlbumSelectors::Private
 public:
 
     explicit Private()
-      : albumSelectCB(nullptr),
-        tagSelectCB(nullptr),
+      : albumSelectCB   (nullptr),
+        tagSelectCB     (nullptr),
         albumClearButton(nullptr),
-        tagClearButton(nullptr),
-        wholeAlbums(nullptr),
-        wholeTags(nullptr),
-        tabWidget(nullptr),
-        albumWidget(nullptr),
-        tagWidget(nullptr),
-        selectionMode(All)
+        tagClearButton  (nullptr),
+        wholeAlbums     (nullptr),
+        wholeTags       (nullptr),
+        tabWidget       (nullptr),
+        albumWidget     (nullptr),
+        tagWidget       (nullptr),
+        selectionMode   (All)
     {
     }
 
@@ -119,7 +121,7 @@ AlbumSelectors::AlbumSelectors(const QString& label,
                                QWidget* const parent,
                                AlbumType albumType)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     d->configName                 = configName;
     setObjectName(d->configName);
@@ -140,10 +142,10 @@ AlbumSelectors::AlbumSelectors(const QString& label,
             d->tabWidget = new QTabWidget(this);
 
             initAlbumWidget();
-            d->tabWidget->insertTab(PhysAlbum, d->albumWidget, i18n("Albums"));
+            d->tabWidget->insertTab(PhysAlbum, d->albumWidget, i18nc("@title", "Albums (All)"));
 
             initTagWidget();
-            d->tabWidget->insertTab(TagsAlbum, d->tagWidget, i18n("Tags"));
+            d->tabWidget->insertTab(TagsAlbum, d->tagWidget,   i18nc("@title", "Tags (0)"));
 
             mainLayout->addWidget(d->tabWidget);
             break;
@@ -175,11 +177,11 @@ AlbumSelectors::~AlbumSelectors()
 void AlbumSelectors::initAlbumWidget()
 {
     d->albumWidget   = new QWidget(this);
-    d->wholeAlbums   = new QCheckBox(i18n("Whole albums collection"), d->albumWidget);
+    d->wholeAlbums   = new QCheckBox(i18nc("@option", "Whole albums collection"), d->albumWidget);
     d->albumSelectCB = new AlbumTreeViewSelectComboBox(d->albumWidget);
     d->albumSelectCB->setToolTip(i18nc("@info:tooltip", "Select all albums that should be processed."));
     d->albumSelectCB->setDefaultModel();
-    d->albumSelectCB->setNoSelectionText(i18n("No Album Selected"));
+    d->albumSelectCB->setNoSelectionText(i18nc("@info", "No Album Selected"));
     d->albumSelectCB->addCheckUncheckContextMenuActions();
 
     d->albumClearButton = new ModelClearButton(d->albumSelectCB->view()->albumModel());
@@ -208,11 +210,11 @@ void AlbumSelectors::initAlbumWidget()
 void AlbumSelectors::initTagWidget()
 {
     d->tagWidget   = new QWidget(this);
-    d->wholeTags   = new QCheckBox(i18n("Whole tags collection"), d->tagWidget);
+    d->wholeTags   = new QCheckBox(i18nc("@option", "Whole tags collection"), d->tagWidget);
     d->tagSelectCB = new TagTreeViewSelectComboBox(d->tagWidget);
     d->tagSelectCB->setToolTip(i18nc("@info:tooltip", "Select all tags that should be processed."));
     d->tagSelectCB->setDefaultModel();
-    d->tagSelectCB->setNoSelectionText(i18n("No Tag Selected"));
+    d->tagSelectCB->setNoSelectionText(i18nc("@info", "No Tag Selected"));
     d->tagSelectCB->addCheckUncheckContextMenuActions();
 
     d->tagClearButton = new ModelClearButton(d->tagSelectCB->view()->albumModel());
@@ -246,6 +248,8 @@ void AlbumSelectors::slotWholeAlbums(bool b)
         d->albumSelectCB->setEnabled(!b);
         d->albumClearButton->setEnabled(!b);
     }
+
+    updateTabText();
 }
 
 void AlbumSelectors::slotWholeTags(bool b)
@@ -255,6 +259,8 @@ void AlbumSelectors::slotWholeTags(bool b)
         d->tagSelectCB->setEnabled(!b);
         d->tagClearButton->setEnabled(!b);
     }
+
+    updateTabText();
 }
 
 void AlbumSelectors::slotUpdateClearButtons()
@@ -277,6 +283,8 @@ void AlbumSelectors::slotUpdateClearButtons()
     {
         emit signalSelectionChanged();
     }
+
+    updateTabText();
 }
 
 bool AlbumSelectors::wholeAlbumsChecked() const
@@ -288,7 +296,7 @@ AlbumList AlbumSelectors::selectedAlbums() const
 {
     AlbumList albums;
 
-    if (wholeAlbumsChecked())
+    if      (wholeAlbumsChecked())
     {
         albums << AlbumManager::instance()->allPAlbums();
     }
@@ -322,7 +330,7 @@ AlbumList AlbumSelectors::selectedTags() const
 {
     AlbumList albums;
 
-    if (wholeTagsChecked())
+    if      (wholeTagsChecked())
     {
         albums << AlbumManager::instance()->allTAlbums();
     }
@@ -356,11 +364,11 @@ AlbumList AlbumSelectors::selectedAlbumsAndTags() const
     return albums;
 }
 
-void AlbumSelectors::setAlbumSelected(Album* const album, bool singleSelection)
+void AlbumSelectors::setAlbumSelected(Album* const album, SelectionType type)
 {
     if (d->albumWidget && album)
     {
-        if (singleSelection)
+        if (type == SingleSelection)
         {
             d->albumSelectCB->model()->resetCheckedAlbums();
         }
@@ -370,11 +378,11 @@ void AlbumSelectors::setAlbumSelected(Album* const album, bool singleSelection)
     }
 }
 
-void AlbumSelectors::setTagSelected(Album* const album, bool singleSelection)
+void AlbumSelectors::setTagSelected(Album* const album, SelectionType type)
 {
     if (d->tagWidget && album)
     {
-        if (singleSelection)
+        if (type == SingleSelection)
         {
             d->tagSelectCB->model()->resetCheckedAlbums();
         }
@@ -485,4 +493,21 @@ void AlbumSelectors::saveState()
     }
 }
 
+void AlbumSelectors::updateTabText()
+{
+    if (d->selectionMode == All)
+    {
+        d->tabWidget->tabBar()->setTabText(PhysAlbum,
+                                           wholeAlbumsChecked() ? i18nc("@title", "Albums (All)")
+                                                                : i18nc("@title", "Albums (%1)",
+                                                 selectedAlbums().count()));
+        d->tabWidget->tabBar()->setTabText(TagsAlbum,
+                                           wholeTagsChecked() ? i18nc("@title", "Tags (All)")
+                                                              : i18nc("@title", "Tags (%1)",
+                                                 selectedTags().count()));
+    }
+}
+
 } // namespace Digikam
+
+#include "albumselectors.moc"

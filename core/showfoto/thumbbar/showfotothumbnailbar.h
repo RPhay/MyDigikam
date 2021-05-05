@@ -7,7 +7,7 @@
  * Description : Thumbnail bar for Showfoto
  *
  * Copyright (C) 2013      by Mohamed_Anwer <m_dot_anwer at gmx dot com>
- * Copyright (C) 2013-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2013-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -41,7 +41,7 @@ class ShowfotoThumbnailBar : public ShowfotoCategorizedView
 public:
 
     explicit ShowfotoThumbnailBar(QWidget* const parent = nullptr);
-    ~ShowfotoThumbnailBar();
+    ~ShowfotoThumbnailBar() override;
 
     /**
      * This installs a duplicate filter model, if the ShwofotoItemModel may contain duplicates.
@@ -68,8 +68,14 @@ public Q_SLOTS:
 
 protected:
 
-    virtual void slotSetupChanged() override;
-    virtual bool event(QEvent*)     override;
+    void slotSetupChanged() override;
+    bool event(QEvent*)     override;
+
+private:
+
+    // Disable
+    ShowfotoThumbnailBar(const ShowfotoThumbnailBar&)            = delete;
+    ShowfotoThumbnailBar& operator=(const ShowfotoThumbnailBar&) = delete;
 
 private:
 

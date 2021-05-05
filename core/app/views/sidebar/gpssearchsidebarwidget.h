@@ -7,7 +7,7 @@
  * Description : Side Bar Widget for the gps search.
  *
  * Copyright (C) 2009-2010 by Johannes Wienke <languitar at semipol dot de>
- * Copyright (C) 2010-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2010-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2014      by Mohamed_Anwer <m_dot_anwer at gmx dot com>
  * Copyright (C) 2010      by Aditya Bhatt <adityabhatt1991 at gmail dot com>
  *
@@ -34,15 +34,10 @@
 #include "searchmodificationhelper.h"
 #include "sidebarwidget.h"
 #include "itemfiltermodel.h"
-
-#ifdef HAVE_MARBLE
-#   include "gpssearchview.h"
-#endif // HAVE_MARBLE
+#include "gpssearchview.h"
 
 namespace Digikam
 {
-
-#ifdef HAVE_MARBLE
 
 class GPSSearchSideBarWidget : public SidebarWidget
 {
@@ -55,7 +50,7 @@ public:
                                     SearchModificationHelper* const searchModificationHelper,
                                     ItemFilterModel* const imageFilterModel,
                                     QItemSelectionModel* const itemSelectionModel);
-    virtual ~GPSSearchSideBarWidget();
+    ~GPSSearchSideBarWidget() override;
 
     void          setActive(bool active)                             override;
     void          doLoadState()                                      override;
@@ -74,8 +69,6 @@ private:
     class Private;
     Private* const d;
 };
-
-#endif // HAVE_MARBLE
 
 } // namespace Digikam
 

@@ -6,7 +6,7 @@
  * Date        : 2011-10-11
  * Description : a DConfigDlgWdg to edit XMP metadata
  *
- * Copyright (C) 2007-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2007-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2011      by Victor Dodon <dodon dot victor at gmail dot com>
  *
  * This program is free software; you can redistribute it
@@ -116,21 +116,21 @@ public:
 
 XMPEditWidget::XMPEditWidget(MetadataEditDialog* const parent)
     : DConfigDlgWdg(parent),
-      d(new Private)
+      d            (new Private)
 {
     d->dlg           = parent;
 
     d->contentPage   = new XMPContent(this);
-    d->page_content  = addPage(d->contentPage, i18n("Content"));
+    d->page_content  = addPage(d->contentPage, i18nc("@item: xmp content", "Content"));
     d->page_content->setIcon(QIcon::fromTheme(QLatin1String("draw-text")));
 
     d->originPage  = new XMPOrigin(this);
     d->page_origin = addPage(d->originPage, i18n("Origin"));
-    d->page_origin->setIcon(QIcon::fromTheme(QLatin1String("configure")));
+    d->page_origin->setIcon(QIcon::fromTheme(QLatin1String("globe")));
 
     d->creditsPage  = new XMPCredits(this);
     d->page_credits = addPage(d->creditsPage, i18n("Credits"));
-    d->page_credits->setIcon(QIcon::fromTheme(QLatin1String("view-pim-contacts")));
+    d->page_credits->setIcon(QIcon::fromTheme(QLatin1String("address-book-new")));
 
     d->subjectsPage  = new XMPSubjects(this);
     d->page_subjects = addPage(d->subjectsPage, i18n("Subjects"));
@@ -142,11 +142,11 @@ XMPEditWidget::XMPEditWidget(MetadataEditDialog* const parent)
 
     d->categoriesPage  = new XMPCategories(this);
     d->page_categories = addPage(d->categoriesPage, i18n("Categories"));
-    d->page_categories->setIcon(QIcon::fromTheme(QLatin1String("folder")));
+    d->page_categories->setIcon(QIcon::fromTheme(QLatin1String("folder-pictures")));
 
     d->statusPage  = new XMPStatus(this);
     d->page_status = addPage(d->statusPage, i18n("Status"));
-    d->page_status->setIcon(QIcon::fromTheme(QLatin1String("view-pim-tasks")));
+    d->page_status->setIcon(QIcon::fromTheme(QLatin1String("view-task")));
 
     d->propertiesPage  = new XMPProperties(this);
     d->page_properties = addPage(d->propertiesPage, i18n("Properties"));
@@ -195,9 +195,11 @@ void XMPEditWidget::readSettings()
     KConfigGroup group        = config->group(QLatin1String("All Metadata Edit Settings"));
 
     showPage(group.readEntry(QLatin1String("All XMP Edit Page"), 0));
-    d->contentPage->setCheckedSyncJFIFComment(group.readEntry(QLatin1String("All Sync JFIF Comment"), true));
-    d->contentPage->setCheckedSyncEXIFComment(group.readEntry(QLatin1String("All Sync EXIF Comment"), true));
-    d->originPage->setCheckedSyncEXIFDate(group.readEntry(QLatin1String("All Sync EXIF Date"), true));
+    d->contentPage->setCheckedSyncJFIFComment(group.readEntry(QLatin1String("All Sync JFIF Comment"),     true));
+    d->contentPage->setCheckedSyncEXIFComment(group.readEntry(QLatin1String("All Sync EXIF Comment"),     true));
+    d->contentPage->setCheckedSyncEXIFCopyright(group.readEntry(QLatin1String("All Sync EXIF Copyright"), true));
+    d->creditsPage->setCheckedSyncEXIFArtist(group.readEntry(QLatin1String("All Sync EXIF Artist"),       true));
+    d->originPage->setCheckedSyncEXIFDate(group.readEntry(QLatin1String("All Sync EXIF Date"),            true));
 }
 
 void XMPEditWidget::saveSettings()
@@ -205,10 +207,12 @@ void XMPEditWidget::saveSettings()
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
     KConfigGroup group        = config->group(QLatin1String("All Metadata Edit Settings"));
 
-    group.writeEntry(QLatin1String("All XMP Edit Page"),     activePageIndex());
-    group.writeEntry(QLatin1String("All Sync JFIF Comment"), d->contentPage->syncJFIFCommentIsChecked());
-    group.writeEntry(QLatin1String("All Sync EXIF Comment"), d->contentPage->syncEXIFCommentIsChecked());
-    group.writeEntry(QLatin1String("All Sync EXIF Date"),    d->originPage->syncEXIFDateIsChecked());
+    group.writeEntry(QLatin1String("All XMP Edit Page"),       activePageIndex());
+    group.writeEntry(QLatin1String("All Sync JFIF Comment"),   d->contentPage->syncJFIFCommentIsChecked());
+    group.writeEntry(QLatin1String("All Sync EXIF Comment"),   d->contentPage->syncEXIFCommentIsChecked());
+    group.writeEntry(QLatin1String("All Sync EXIF Copyright"), d->contentPage->syncEXIFCopyrightIsChecked());
+    group.writeEntry(QLatin1String("All Sync EXIF Artists"),   d->creditsPage->syncEXIFArtistIsChecked());
+    group.writeEntry(QLatin1String("All Sync EXIF Date"),      d->originPage->syncEXIFDateIsChecked());
     config->sync();
 }
 
@@ -217,25 +221,25 @@ void XMPEditWidget::slotItemChanged()
     d->page_content->setHeader(d->dlg->currentItemTitleHeader(i18n("<qt>Content Information<br/>"
                      "<i>Use this panel to describe the visual content of the image</i></qt>")));
     d->page_origin->setHeader(d->dlg->currentItemTitleHeader(i18n("<qt>Origin Information<br/>"
-                    "<i>Use this panel for formal descriptive information about the image</i></qt>")));
+                     "<i>Use this panel for formal descriptive information about the image</i></qt>")));
     d->page_credits->setHeader(d->dlg->currentItemTitleHeader(i18n("<qt>Credit Information<br/>"
                      "<i>Use this panel to record copyright information about the image</i></qt>")));
     d->page_subjects->setHeader(d->dlg->currentItemTitleHeader(i18n("<qt>Subject Information<br/>"
-                      "<i>Use this panel to record subject information about the image</i></qt>")));
+                     "<i>Use this panel to record subject information about the image</i></qt>")));
     d->page_keywords->setHeader(d->dlg->currentItemTitleHeader(i18n("<qt>Keyword Information<br/>"
-                      "<i>Use this panel to record keywords relevant to the image</i></qt>")));
+                     "<i>Use this panel to record keywords relevant to the image</i></qt>")));
     d->page_categories->setHeader(d->dlg->currentItemTitleHeader(i18n("<qt>Category Information<br/>"
-                        "<i>Use this panel to record categories relevant to the image</i></qt>")));
+                     "<i>Use this panel to record categories relevant to the image</i></qt>")));
     d->page_status->setHeader(d->dlg->currentItemTitleHeader(i18n("<qt>Status Information<br/>"
-                    "<i>Use this panel to record workflow information</i></qt>")));
+                     "<i>Use this panel to record workflow information</i></qt>")));
     d->page_properties->setHeader(d->dlg->currentItemTitleHeader(i18n("<qt>Status Properties<br/>"
-                      "<i>Use this panel to record workflow properties</i></qt>")));
+                     "<i>Use this panel to record workflow properties</i></qt>")));
 
-    DMetadata meta;
-    meta.load((*d->dlg->currentItem()).toLocalFile());
+    QScopedPointer<DMetadata> meta(new DMetadata);
+    meta->load((*d->dlg->currentItem()).toLocalFile());
 
-    d->exifData = meta.getExifEncoded();
-    d->xmpData  = meta.getXmp();
+    d->exifData = meta->getExifEncoded();
+    d->xmpData  = meta->getXmp();
 
     d->contentPage->readMetadata(d->xmpData);
     d->originPage->readMetadata(d->xmpData);
@@ -266,24 +270,24 @@ void XMPEditWidget::apply()
 {
     if (d->modified && !d->isReadOnly)
     {
-        DMetadata meta;
-        meta.load((*d->dlg->currentItem()).toLocalFile());
+        QScopedPointer<DMetadata> meta(new DMetadata);
+        meta->load((*d->dlg->currentItem()).toLocalFile());
 
-        d->exifData = meta.getExifEncoded();
-        d->xmpData  = meta.getXmp();
+        d->exifData = meta->getExifEncoded();
+        d->xmpData  = meta->getXmp();
 
         d->contentPage->applyMetadata(d->exifData, d->xmpData);
         d->originPage->applyMetadata(d->exifData, d->xmpData);
         d->subjectsPage->applyMetadata(d->xmpData);
         d->keywordsPage->applyMetadata(d->xmpData);
         d->categoriesPage->applyMetadata(d->xmpData);
-        d->creditsPage->applyMetadata(d->xmpData);
+        d->creditsPage->applyMetadata(d->exifData, d->xmpData);
         d->statusPage->applyMetadata(d->xmpData);
         d->propertiesPage->applyMetadata(d->xmpData);
 
-        meta.setExif(d->exifData);
-        meta.setXmp(d->xmpData);
-        meta.save((*d->dlg->currentItem()).toLocalFile());
+        meta->setExif(d->exifData);
+        meta->setXmp(d->xmpData);
+        meta->save((*d->dlg->currentItem()).toLocalFile());
 
         d->modified = false;
     }

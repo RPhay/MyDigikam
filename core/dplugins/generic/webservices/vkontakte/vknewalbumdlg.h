@@ -8,7 +8,7 @@
  *
  * Copyright (C) 2011      by Roman Tsisyk <roman at tsisyk dot com>
  * Copyright (C) 2011-2015 by Alexander Potashev <aspotashev at gmail dot com>
- * Copyright (C) 2011-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2011-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -53,19 +53,19 @@ public:
     /**
      * @brief Album creation dialog
      *
-     * @param parent Parent widget
+     * @param parent the parent widget
      */
     explicit VKNewAlbumDlg(QWidget* const parent);
 
     /**
      * @brief Album editing dialog
      *
-     * @param parent Parent widget
+     * @param parent the parent widget
      * @param album Initial album properties
      */
     VKNewAlbumDlg(QWidget* const parent, const AlbumProperties& album);
 
-    ~VKNewAlbumDlg();
+    ~VKNewAlbumDlg() override;
 
     const AlbumProperties& album() const;
 

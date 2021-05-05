@@ -6,7 +6,7 @@
  * Date        : 2012-04-19
  * Description : time adjust settings container.
  *
- * Copyright (C) 2012-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -26,19 +26,20 @@ namespace Digikam
 {
 
 TimeAdjustContainer::TimeAdjustContainer()
-    : customDate(QDateTime::currentDateTime()),
-      customTime(QDateTime::currentDateTime()),
+    : customDate    (QDateTime::currentDateTime()),
+      customTime    (QDateTime::currentDateTime()),
+      intervalTime  (QDateTime()),
       adjustmentTime(QDateTime()),
       updIfAvailable(true),
       updEXIFModDate(false),
       updEXIFOriDate(false),
       updEXIFDigDate(false),
       updEXIFThmDate(false),
-      updIPTCDate(false),
-      updXMPVideo(false),
-      updXMPDate(false),
+      updIPTCDate   (false),
+      updXMPVideo   (false),
+      updXMPDate    (false),
       updFileModDate(false),
-      dateSource(APPDATE),
+      dateSource    (APPDATE),
       metadataSource(EXIFIPTCXMP),
       fileDateSource(FILELASTMOD),
       adjustmentType(COPYVALUE),
@@ -64,9 +65,10 @@ bool TimeAdjustContainer::atLeastOneUpdateToProcess() const
            );
 }
 
-QDateTime TimeAdjustContainer::calculateAdjustedDate(const QDateTime& originalTime) const
+QDateTime TimeAdjustContainer::calculateAdjustedDate(const QDateTime& originalTime)
 {
-    int sign = 0;
+    int sign          = 0;
+    QDateTime newTime = originalTime;
 
     switch (adjustmentType)
     {
@@ -78,6 +80,20 @@ QDateTime TimeAdjustContainer::calculateAdjustedDate(const QDateTime& originalTi
             sign = -1;
             break;
 
+        case INTERVAL:
+        {
+            if (intervalTime.isNull())
+            {
+                intervalTime = newTime;
+            }
+            else
+            {
+                newTime = intervalTime;
+            }
+
+            sign = 1;
+            break;
+        }
         default: // COPYVALUE
             return originalTime;
     }
@@ -87,7 +103,14 @@ QDateTime TimeAdjustContainer::calculateAdjustedDate(const QDateTime& originalTi
     seconds     += 60*60*adjustmentTime.time().hour();
     seconds     += 24*60*60*adjustmentDays;
 
-    return originalTime.addSecs(sign * seconds);
+    newTime      = newTime.addSecs(sign * seconds);
+
+    if (adjustmentType == INTERVAL)
+    {
+        intervalTime = newTime;
+    }
+
+    return newTime;
 }
 
 QDateTime TimeAdjustContainer::getDateTimeFromUrl(const QUrl& url) const
@@ -175,10 +198,10 @@ QDateTime TimeAdjustContainer::getDateTimeFromUrl(const QUrl& url) const
 
 DeltaTime::DeltaTime()
     : deltaNegative(false),
-      deltaDays(0),
-      deltaHours(0),
-      deltaMinutes(0),
-      deltaSeconds(0)
+      deltaDays    (0),
+      deltaHours   (0),
+      deltaMinutes (0),
+      deltaSeconds (0)
 {
 }
 

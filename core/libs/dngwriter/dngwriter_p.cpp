@@ -6,7 +6,7 @@
  * Date        : 2008-09-25
  * Description : a tool to convert RAW file to DNG
  *
- * Copyright (C) 2008-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2008-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -88,9 +88,9 @@ bool DNGWriter::Private::fujiRotate(QByteArray& rawData, DRawInfo& identify) con
     unsigned short* tmp    = reinterpret_cast<unsigned short*>(tmpData.data());
     unsigned short* output = reinterpret_cast<unsigned short*>(rawData.data());
 
-    for (int row=0 ; row < height ; ++row)
+    for (int row = 0 ; row < height ; ++row)
     {
-        for (int col=0 ; col < width ; ++col)
+        for (int col = 0 ; col < width ; ++col)
         {
             output[col * height + row] = tmp[row * width + col];
         }

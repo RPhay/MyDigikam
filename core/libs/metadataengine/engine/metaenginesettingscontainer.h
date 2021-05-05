@@ -6,7 +6,7 @@
  * Date        : 2010-08-20
  * Description : MetaEngine Settings Container.
  *
- * Copyright (C) 2010-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2010-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -80,7 +80,9 @@ public:
 public:
 
     void readFromConfig(KConfigGroup& group);
-    void writeToConfig(KConfigGroup& group) const;
+    void writeToConfig(KConfigGroup& group)  const;
+
+    QStringList defaultExifToolSearchPaths() const;
 
 public:
 
@@ -96,8 +98,10 @@ public:
     bool                            saveTemplate;
     bool                            saveTags;
     bool                            saveFaceTags;
+    bool                            savePosition;
 
     bool                            writeRawFiles;
+    bool                            writeDngFiles;
     bool                            updateFileTimeStamp;
     bool                            rescanImageIfModified;
     bool                            clearMetadataIfRescan;
@@ -110,6 +114,8 @@ public:
     RotationBehaviorFlags           rotationBehavior;
 
     QStringList                     sidecarExtensions;
+
+    QString                         exifToolPath;
 };
 
 //! qDebug() stream operator. Writes property @a inf to the debug output in a nicely formatted way.

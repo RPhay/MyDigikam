@@ -90,7 +90,7 @@ public:
                    bool         show_ip = false,
                    NPT_UInt16   port = 0,
                    bool         port_rebind = false);
-    ~PLT_DeviceHost() override;
+    virtual ~PLT_DeviceHost();
     
     virtual void SetExtraBroadcast(bool broadcast) { m_ExtraBroascast = broadcast; }
      
@@ -123,9 +123,9 @@ protected:
      @param context the context of the request
      @param response the response to set up
      */
-    NPT_Result SetupResponse(NPT_HttpRequest&              request,
+    virtual NPT_Result SetupResponse(NPT_HttpRequest&              request,
                                      const NPT_HttpRequestContext& context,
-                                     NPT_HttpResponse&             response) override;
+                                     NPT_HttpResponse&             response);
 
     /**
      Static method similar to Announce.
@@ -156,8 +156,8 @@ protected:
      @param request SSDP packet
      @param context the context of the request
      */
-    NPT_Result OnSsdpPacket(const NPT_HttpRequest&        request, 
-                                    const NPT_HttpRequestContext& context) override;
+    virtual NPT_Result OnSsdpPacket(const NPT_HttpRequest&        request, 
+                                    const NPT_HttpRequestContext& context);
 
     /**
      Static method similar to SendSsdpSearchResponse.
@@ -195,7 +195,7 @@ public:
      @param icon the icon information including url path
      @param fileroot the file system root path 
      @param urlroot the url root path of the icon url to match to fileroot
-     Note: As an example, if the icon url path is "/images/icon1.jpg", the fileroot
+     Note: As an exemple, if the icon url path is "/images/icon1.jpg", the fileroot
      is "/Users/joe/www" and the urlroot is "/", when a request is made for
      "/images/icon1.jpg", the file is expected to be found at 
      "/Users/joe/www/images/icon1.jpg". If the urlroot were "/images", the file 
@@ -308,7 +308,7 @@ protected:
     
     /**
      This method is called when a request from a subscriber has been received. This is
-     for any new subscriptions, existing subscription renewal or cancellation.
+     for any new subscritions, existing subscrition renewal or cancellation.
      @param request the HTTP request
      @param context the context information including local and remote socket information.
      @param response the response to setup.

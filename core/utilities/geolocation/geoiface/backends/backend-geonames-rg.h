@@ -48,14 +48,14 @@ class DIGIKAM_EXPORT BackendGeonamesRG : public RGBackend
 public:
 
     explicit BackendGeonamesRG(QObject* const parent);
-    virtual ~BackendGeonamesRG();
+    ~BackendGeonamesRG()                                                     override;
 
     QMap<QString, QString> makeQMapFromXML(const QString& xmlData);
 
-    virtual void callRGBackend(const QList<RGInfo>& rgList, const QString& language) override;
-    virtual QString getErrorMessage()                                                override;
-    virtual QString backendName()                                                    override;
-    virtual void cancelRequests()                                                    override;
+    void callRGBackend(const QList<RGInfo>& rgList, const QString& language) override;
+    QString getErrorMessage()                                                override;
+    QString backendName()                                                    override;
+    void cancelRequests()                                                    override;
 
 private Q_SLOTS:
 

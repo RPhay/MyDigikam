@@ -119,6 +119,7 @@ QString TagRegion::toXml() const
     }
 
     // cut off the <?xml> tag at start of document
+
     return output.mid(lengthOfHeader);
 }
 
@@ -221,12 +222,12 @@ QRect TagRegion::mapFromOriginalSize(const QSize& fullImageSize, const QSize& re
 
 QRect TagRegion::mapToOriginalSize(const DImg& reducedSizeImage, const QRect& reducedSizeDetail)
 {
-    return mapToOriginalSize(reducedSizeImage.originalSize(), reducedSizeImage.size(), reducedSizeDetail);
+    return mapToOriginalSize(reducedSizeImage.originalRatioSize(), reducedSizeImage.size(), reducedSizeDetail);
 }
 
 QRect TagRegion::mapFromOriginalSize(const DImg& reducedSizeImage, const QRect& fullSizeDetail)
 {
-    return mapFromOriginalSize(reducedSizeImage.originalSize(), reducedSizeImage.size(), fullSizeDetail);
+    return mapFromOriginalSize(reducedSizeImage.originalRatioSize(), reducedSizeImage.size(), fullSizeDetail);
 }
 
 QRect TagRegion::relativeToAbsolute(const QRectF& region, const QSize& fullSize)
@@ -239,7 +240,7 @@ QRect TagRegion::relativeToAbsolute(const QRectF& region, const QSize& fullSize)
 
 QRect TagRegion::relativeToAbsolute(const QRectF& region, const DImg& reducedSizeImage)
 {
-    return relativeToAbsolute(region, reducedSizeImage.originalSize());
+    return relativeToAbsolute(region, reducedSizeImage.originalRatioSize());
 }
 
 QRectF TagRegion::absoluteToRelative(const QRect& region, const QSize& fullSize)

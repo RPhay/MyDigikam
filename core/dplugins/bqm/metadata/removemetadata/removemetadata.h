@@ -6,7 +6,7 @@
  * Date        : 2010-09-14
  * Description : remove metadata batch tool.
  *
- * Copyright (C) 2010-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2010-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -28,8 +28,6 @@
 
 #include "batchtool.h"
 
-class QCheckBox;
-
 using namespace Digikam;
 
 namespace DigikamBqmRemoveMetadataPlugin
@@ -42,42 +40,27 @@ class RemoveMetadata : public BatchTool
 public:
 
     explicit RemoveMetadata(QObject* const parent = nullptr);
-    virtual ~RemoveMetadata();
+    ~RemoveMetadata()                                       override;
 
-    BatchToolSettings defaultSettings();
+    BatchToolSettings defaultSettings()                     override;
 
-    BatchTool* clone(QObject* const parent=nullptr) const
-    {
-        return new RemoveMetadata(parent);
-    };
+    BatchTool* clone(QObject* const parent = nullptr) const override;
 
-    void registerSettingsWidget();
+    void registerSettingsWidget()                           override;
 
 private Q_SLOTS:
 
-    void slotAssignSettings2Widget();
-    void slotSettingsChanged();
+    void slotAssignSettings2Widget()                        override;
+    void slotSettingsChanged()                              override;
 
 private:
 
-    enum RemoveAction
-    {
-        Tiny = 0,
-        Small,
-        Medium,
-        Big,
-        Large,
-        Huge
-    };
-
-    QCheckBox* m_removeExif;
-    QCheckBox* m_removeIptc;
-    QCheckBox* m_removeXmp;
-    QCheckBox* m_removeXmpVideo;
+    bool toolOperations()                                   override;
 
 private:
 
-    bool toolOperations();
+    class Private;
+    Private* const d;
 };
 
 } // namespace DigikamBqmRemoveMetadataPlugin

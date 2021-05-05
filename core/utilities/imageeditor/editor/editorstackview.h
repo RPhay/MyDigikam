@@ -6,7 +6,7 @@
  * Date        : 2008-08-20
  * Description : A widget stack to embed editor view.
  *
- * Copyright (C) 2008-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2008-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -53,16 +53,16 @@ public:
 public:
 
     explicit EditorStackView(QWidget* const parent = nullptr);
-    ~EditorStackView();
+    ~EditorStackView()                                    override;
 
     void     setCanvas(Canvas* const canvas);
-    Canvas*  canvas()            const;
+    Canvas*  canvas()                               const;
 
     void     setToolView(QWidget* const view);
-    QWidget* toolView()          const;
+    QWidget* toolView()                             const;
 
     void     setViewMode(int mode);
-    int      viewMode()          const;
+    int      viewMode()                             const;
 
     void     increaseZoom();
     void     decreaseZoom();
@@ -70,9 +70,9 @@ public:
     void     fitToSelect();
     void     zoomTo100Percent();
 
-    double   zoomMax()           const;
-    double   zoomMin()           const;
-    bool     isZoomablePreview() const;
+    double   zoomMax()                              const;
+    double   zoomMin()                              const;
+    bool     isZoomablePreview()                    const;
 
 Q_SIGNALS:
 
@@ -91,7 +91,7 @@ private Q_SLOTS:
 
 private:
 
-    GraphicsDImgView* previewWidget() const;
+    GraphicsDImgView* previewWidget()               const;
 
 private:
 

@@ -6,7 +6,7 @@
  * Date        : 1997-04-21
  * Description : A date selection widget.
  *
- * Copyright (C) 2011-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2011-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 1997      by Tim D. Gilman <tdgilman at best dot org>
  * Copyright (C) 1998-2001 by Mirko Boehm <mirko at kde dot org>
  * Copyright (C) 2007      by John Layt <john at layt dot net>
@@ -46,7 +46,7 @@ class DDateTable;
 /**
  * Provides a widget for calendar date input.
  */
-class DIGIKAM_EXPORT DDatePicker : public QFrame
+class DIGIKAM_GUI_EXPORT DDatePicker : public QFrame
 {
     Q_OBJECT
     Q_PROPERTY(QDate date READ date WRITE setDate NOTIFY dateChanged USER true)
@@ -68,7 +68,7 @@ public:
     /**
      * The destructor.
      */
-    virtual ~DDatePicker();
+    ~DDatePicker()                                                            override;
 
     /**
      * The size hint for date pickers. The size hint recommends the
@@ -77,7 +77,7 @@ public:
      * size hint, try adding 28 to each of the reported numbers of
      * pixels.
      */
-    QSize sizeHint() const override;
+    QSize sizeHint()                                                    const override;
 
     /**
      * Sets the date.
@@ -89,13 +89,13 @@ public:
     /**
      * @returns the selected date.
      */
-    const QDate& date() const;
+    const QDate& date()                                                 const;
 
     /**
      * @returns the DDateTable widget child of this DDatePicker
      * widget.
      */
-    DDateTable* dateTable() const;
+    DDateTable* dateTable()                                             const;
 
     /**
      * Sets the font size of the widgets elements.
@@ -105,7 +105,7 @@ public:
     /**
      * Returns the font size of the widget elements.
      */
-    int fontSize() const;
+    int fontSize()                                                      const;
 
     /**
      * By calling this method with @p enable = true, DDatePicker will show
@@ -121,16 +121,16 @@ public:
      * @returns true if a DDatePicker shows a close-button.
      * @see setCloseButton
      */
-    bool hasCloseButton() const;
+    bool hasCloseButton()                                               const;
 
 protected:
 
     /// to catch move keyEvents when QLineEdit has keyFocus
-    bool eventFilter(QObject*, QEvent*) override;
+    bool eventFilter(QObject*, QEvent*)                                       override;
 
     /// the resize event
-    void resizeEvent(QResizeEvent*) override;
-    void changeEvent(QEvent*) override;
+    void resizeEvent(QResizeEvent*)                                           override;
+    void changeEvent(QEvent*)                                                 override;
 
 protected Q_SLOTS:
 
@@ -187,7 +187,7 @@ private:
 private:
 
     class Private;
-    Private *const d;
+    Private* const d;
 
     friend class Private;
 };

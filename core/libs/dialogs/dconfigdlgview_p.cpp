@@ -6,7 +6,7 @@
  * Date        : 2009-11-03
  * Description : A dialog base class which can handle multiple pages.
  *
- * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2007      by Rafael Fernández López <ereslibre at kde dot org>
  * Copyright (C) 2006      by Tobias Koenig <tokoe at kde dot org>
  *
@@ -446,24 +446,24 @@ void DConfigDlgListViewDelegate::paint(QPainter* painter, const QStyleOptionView
     opt.showDecorationSelected = true;
     QStyle* const style        = opt.widget ? opt.widget->style() : QApplication::style();
 
-    int iconSize         = style->pixelMetric(QStyle::PM_IconViewIconSize);
-    const QString text   = index.model()->data(index, Qt::DisplayRole).toString();
-    const QIcon icon     = index.model()->data(index, Qt::DecorationRole).value<QIcon>();
-    const QPixmap pixmap = icon.pixmap(iconSize, iconSize);
+    int iconSize               = style->pixelMetric(QStyle::PM_IconViewIconSize);
+    const QString text         = index.model()->data(index, Qt::DisplayRole).toString();
+    const QIcon icon           = index.model()->data(index, Qt::DecorationRole).value<QIcon>();
+    const QPixmap pixmap       = icon.pixmap(iconSize, iconSize);
 
-    QFontMetrics fm = painter->fontMetrics();
-    int wp          = pixmap.width()  / pixmap.devicePixelRatio();
-    int hp          = pixmap.height() / pixmap.devicePixelRatio();
+    QFontMetrics fm            = painter->fontMetrics();
+    int wp                     = pixmap.width()  / pixmap.devicePixelRatio();
+    int hp                     = pixmap.height() / pixmap.devicePixelRatio();
 
     QTextLayout iconTextLayout(text, option.font);
     QTextOption textOption(Qt::AlignHCenter);
     iconTextLayout.setTextOption(textOption);
-    int maxWidth    = qMax(3 * wp, 8 * fm.height());
+    int maxWidth               = qMax(3 * wp, 8 * fm.height());
     layoutText(&iconTextLayout, maxWidth);
 
-    QPen pen                = painter->pen();
-    QPalette::ColorGroup cg = (option.state & QStyle::State_Enabled) ? QPalette::Normal
-                                                                     : QPalette::Disabled;
+    QPen pen                   = painter->pen();
+    QPalette::ColorGroup cg    = (option.state & QStyle::State_Enabled) ? QPalette::Normal
+                                                                        : QPalette::Disabled;
 
     if ((cg == QPalette::Normal) && !(option.state & QStyle::State_Active))
     {
@@ -504,15 +504,15 @@ QSize DConfigDlgListViewDelegate::sizeHint(const QStyleOptionViewItem& option, c
     opt.showDecorationSelected = true;
     QStyle* const style        = opt.widget ? opt.widget->style() : QApplication::style();
 
-    int iconSize         = style->pixelMetric(QStyle::PM_IconViewIconSize);
-    const QString text   = index.model()->data(index, Qt::DisplayRole).toString();
-    const QIcon icon     = index.model()->data(index, Qt::DecorationRole).value<QIcon>();
-    const QPixmap pixmap = icon.pixmap(iconSize, iconSize);
+    int iconSize               = style->pixelMetric(QStyle::PM_IconViewIconSize);
+    const QString text         = index.model()->data(index, Qt::DisplayRole).toString();
+    const QIcon icon           = index.model()->data(index, Qt::DecorationRole).value<QIcon>();
+    const QPixmap pixmap       = icon.pixmap(iconSize, iconSize);
 
-    QFontMetrics fm = option.fontMetrics;
-    int gap         = fm.height();
-    int wp          = pixmap.width() / pixmap.devicePixelRatio();
-    int hp          = pixmap.height() / pixmap.devicePixelRatio();
+    QFontMetrics fm            = option.fontMetrics;
+    int gap                    = fm.height();
+    int wp                     = pixmap.width() / pixmap.devicePixelRatio();
+    int hp                     = pixmap.height() / pixmap.devicePixelRatio();
 
     if (hp == 0)
     {

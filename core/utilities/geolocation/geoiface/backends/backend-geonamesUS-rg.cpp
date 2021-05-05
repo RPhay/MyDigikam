@@ -75,9 +75,9 @@ class Q_DECL_HIDDEN BackendGeonamesUSRG::Private
 public:
 
     explicit Private()
-      : itemCounter(0),
-        itemCount(0),
-        mngr(nullptr)
+      : itemCounter (0),
+        itemCount   (0),
+        mngr        (nullptr)
     {
     }
 
@@ -95,7 +95,7 @@ public:
  */
 BackendGeonamesUSRG::BackendGeonamesUSRG(QObject* const parent)
     : RGBackend(parent),
-      d(new Private())
+      d        (new Private())
 {
     d->mngr = new QNetworkAccessManager(this);
 
@@ -121,7 +121,7 @@ void BackendGeonamesUSRG::nextPhoto()
         return;
     }
 
-    QUrl netUrl(QLatin1String("http://api.geonames.org/findNearestAddress"));
+    QUrl netUrl(QLatin1String("http://api.geonames.org/findNearestAddress"));       // krazy:exclude=insecurenet
 
     QUrlQuery q(netUrl);
     q.addQueryItem(QLatin1String("lat"),      d->jobs.first().request.first().coordinates.latString());

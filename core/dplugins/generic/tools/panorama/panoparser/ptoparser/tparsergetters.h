@@ -28,12 +28,17 @@
 
 #include "tparser.h"
 
-/* NOTE: any function name ending with "Ref" returns -1 if there are no such reference */
+/**
+ * NOTE: any function name ending with "Ref" returns -1 if there are no such reference
+ */
 
 int     panoScriptGetImagesCount(pt_script* script);
 int     panoScriptGetImagePrevCommentsCount(pt_script* script, int i);
 char*   panoScriptGetImageComment(pt_script* script, int i, int c);
-/* 0: Rectilinear, 1: Panoramic, 2: Circular fisheye, 3: FF fisheye, 4: equirectangular */
+
+/**
+ * 0: Rectilinear, 1: Panoramic, 2: Circular fisheye, 3: FF fisheye, 4: equirectangular
+ */
 int     panoScriptGetImageProjection(pt_script* script, int i);
 int     panoScriptGetImageWidth(pt_script* script, int i);
 int     panoScriptGetImageHeight(pt_script* script, int i);
@@ -72,7 +77,10 @@ double  panoScriptGetImagePhotometricCoeffD(pt_script* script, int i);
 int     panoScriptGetImagePhotometricCoeffDRef(pt_script* script, int i);
 double  panoScriptGetImagePhotometricCoeffE(pt_script* script, int i);
 int     panoScriptGetImagePhotometricCoeffERef(pt_script* script, int i);
-/* Bit0: radial, Bit1: flatfield, Bit2: proportional */
+
+/**
+ * Bit0: radial, Bit1: flatfield, Bit2: proportional
+ */
 int     panoScriptGetImageVignettingMode(pt_script* script, int i);
 int     panoScriptGetImageVignettingModeRef(pt_script* script, int i);
 double  panoScriptGetImageVignettingCoeffA(pt_script* script, int i);
@@ -113,22 +121,25 @@ int     panoScriptGetPanoProjection(pt_script* script);
 double  panoScriptGetPanoProjectionParmsCount(pt_script* script);
 double  panoScriptGetPanoProjectionParm(pt_script* script, int index);
 double  panoScriptGetPanoHFOV(pt_script* script);
-int     panoScriptGetPanoOutputFormat(pt_script* script);   /* 0: PNG, 1: TIFF, 2: TIFF_m, 3: TIFF_multilayer, 4: JPEG */
-int     panoScriptGetPanoOutputCompression(pt_script* script); /* 0: PANO_NONE, 1: LZW, 2: DEFLATE */
+int     panoScriptGetPanoOutputFormat(pt_script* script);           /* 0: PNG, 1: TIFF, 2: TIFF_m, 3: TIFF_multilayer, 4: JPEG */
+int     panoScriptGetPanoOutputCompression(pt_script* script);      /* 0: PANO_NONE, 1: LZW, 2: DEFLATE */
 int     panoScriptGetPanoOutputCropped(pt_script* script);
 int     panoScriptGetPanoOutputSaveCoordinates(pt_script* script);
 int     panoScriptGetPanoOutputQuality(pt_script* script);
 int     panoScriptGetPanoIsHDR(pt_script* script);
-int     panoScriptGetPanoBitDepth(pt_script* script);   /* 0: 8bit, 1: 16bits,2: float */
+int     panoScriptGetPanoBitDepth(pt_script* script);               /* 0: 8bit, 1: 16bits,2: float */
 double  panoScriptGetPanoExposure(pt_script* script);
 int     panoScriptGetPanoImageReference(pt_script* script);
 
 int     panoScriptGetOptimizePrevCommentsCount(pt_script* script);
 char*   panoScriptGetOptimizeComment(pt_script* script, int c);
 double  panoScriptGetOptimizeGamma(pt_script* script);
-/* 0: poly3, 1: spline16, 2: spline36, 3: sinc256, 4: spline64, 5: bilinear, 6: nearest neighbor, 7: sinc1024 */
+
+/**
+ * 0: poly3, 1: spline16, 2: spline36, 3: sinc256, 4: spline64, 5: bilinear, 6: nearest neighbor, 7: sinc1024
+ */
 int     panoScriptGetOptimizeInterpolator(pt_script* script);
-int     panoScriptGetOptimizeSpeedUp(pt_script* script); /* 0: no speedup, 1: medium speedup, 2: maximum speedup */
+int     panoScriptGetOptimizeSpeedUp(pt_script* script);            /* 0: no speedup, 1: medium speedup, 2: maximum speedup */
 double  panoScriptGetOptimizeHuberSigma(pt_script* script);
 double  panoScriptGetOptimizePhotometricHuberSigma(pt_script* script);
 
@@ -136,8 +147,11 @@ int     panoScriptGetVarsToOptimizeCount(pt_script* script);
 int     panoScriptGetVarsToOptimizePrevCommentCount(pt_script* script, int v);
 char*   panoScriptGetVarsToOptimizeComment(pt_script* script, int v, int c);
 int     panoScriptGetVarsToOptimizeImageId(pt_script* script, int v);
-/* 0-4: Lens A-E, 5: hfov, 6-8: yaw / pitch / roll, 9: exposure, 10-11: WB (red / blue)
- * 12-15: Vignetting A-D, 16-17: Vignetting X-Y, 18-22: photometric A-E, 23: unknown */
+
+/**
+ * 0-4: Lens A-E, 5: hfov, 6-8: yaw / pitch / roll, 9: exposure, 10-11: WB (red / blue)
+ * 12-15: Vignetting A-D, 16-17: Vignetting X-Y, 18-22: photometric A-E, 23: unknown
+ */
 int     panoScriptGetVarsToOptimizeName(pt_script* script, int v);
 
 int     panoScriptGetCtrlPointCount(pt_script* script);
@@ -155,7 +169,7 @@ int     panoScriptGetMaskCount(pt_script* script);
 int     panoScriptGetMaskPrevCommentCount(pt_script* script, int m);
 char*   panoScriptGetMaskComment(pt_script* script, int m, int c);
 int     panoScriptGetMaskImage(pt_script* script, int m);
-int     panoScriptGetMaskType(pt_script* script, int m); /* bit0: positive, bit1: stackaware, bit2(only): negativelens */
+int     panoScriptGetMaskType(pt_script* script, int m);            /* bit0: positive, bit1: stackaware, bit2(only): negativelens */
 int     panoScriptGetMaskPointCount(pt_script* script, int m);
 int     panoScriptGetMaskPointX(pt_script* script, int m, int p);
 int     panoScriptGetMaskPointY(pt_script* script, int m, int p);
@@ -163,4 +177,4 @@ int     panoScriptGetMaskPointY(pt_script* script, int m, int p);
 int     panoScriptGetEndingCommentCount(pt_script* script);
 char*   panoScriptGetEndingComment(pt_script* script, int c);
 
-#endif // DIGIKAM_T_PARSER_GETTERS_H
+#endif /* DIGIKAM_T_PARSER_GETTERS_H */

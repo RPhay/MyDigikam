@@ -4,9 +4,9 @@
  * https://www.digikam.org
  *
  * Date        : 2018-07-30
- * Description : a BQM plugin to to reduce noise
+ * Description : a BQM plugin to reduce noise
  *
- * Copyright (C) 2018-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2018-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -79,7 +79,7 @@ QList<DPluginAuthor> NoiseReductionPlugin::authors() const
     return QList<DPluginAuthor>()
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2009-2020"))
+                             QString::fromUtf8("(C) 2009-2021"))
             ;
 }
 

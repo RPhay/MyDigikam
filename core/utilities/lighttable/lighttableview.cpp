@@ -7,7 +7,7 @@
  * Description : a widget to display 2 preview image on
  *               lightable to compare pictures.
  *
- * Copyright (C) 2007-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2007-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -48,11 +48,11 @@ class Q_DECL_HIDDEN LightTableView::Private
 public:
 
     explicit Private()
-      : syncPreview(false),
-        grid(nullptr),
-        leftFrame(nullptr),
-        rightFrame(nullptr),
-        leftPreview(nullptr),
+      : syncPreview (false),
+        grid        (nullptr),
+        leftFrame   (nullptr),
+        rightFrame  (nullptr),
+        leftPreview (nullptr),
         rightPreview(nullptr)
     {
     }
@@ -71,7 +71,7 @@ public:
 
 LightTableView::LightTableView(QWidget* const parent)
     : QFrame(parent),
-      d(new Private)
+      d     (new Private)
 {
     setAttribute(Qt::WA_DeleteOnClose);
     setFrameStyle(QFrame::NoFrame);

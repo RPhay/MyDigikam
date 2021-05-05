@@ -6,7 +6,7 @@
  * Date        : 2009-11-13
  * Description : a tool to blend bracketed images.
  *
- * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2012-2015 by Benjamin Girault <benjamin dot girault at gmail dot com>
  *
  * This program is free software; you can redistribute it
@@ -43,12 +43,12 @@ class Q_DECL_HIDDEN ExpoBlendingWizard::Private
 public:
 
     explicit Private()
-      : mngr(nullptr),
-        introPage(nullptr),
-        itemsPage(nullptr),
+      : mngr             (nullptr),
+        introPage        (nullptr),
+        itemsPage        (nullptr),
         preProcessingPage(nullptr),
-        lastPage(nullptr),
-        preProcessed(false)
+        lastPage         (nullptr),
+        preProcessed     (false)
     {
     }
 
@@ -64,10 +64,10 @@ public:
 
 ExpoBlendingWizard::ExpoBlendingWizard(ExpoBlendingManager* const mngr, QWidget* const parent)
     : DWizardDlg(parent, QLatin1String("ExpoBlending Wizard")),
-      d(new Private)
+      d         (new Private)
 {
     setModal(false);
-    setWindowTitle(i18nc("@title:window", "Stacked Images Tool"));
+    setWindowTitle(i18nc("@title: window", "Stacked Images Tool"));
 
     d->mngr              = mngr;
     d->introPage         = new ExpoBlendingIntroPage(d->mngr, this);
@@ -109,17 +109,20 @@ QList<QUrl> ExpoBlendingWizard::itemUrls() const
 
 bool ExpoBlendingWizard::validateCurrentPage()
 {
-    if (currentPage() == d->itemsPage)
+    if      (currentPage() == d->itemsPage)
     {
         d->mngr->setItemsList(d->itemsPage->itemUrls());
     }
     else if (currentPage() == d->preProcessingPage && !d->preProcessed)
     {
         // Do not give access to Next button during alignment process.
+
         d->preProcessingPage->setComplete(false);
         d->preProcessingPage->process();
         d->preProcessed = true;
+
         // Next is handled with signals/slots
+
         return false;
     }
 
@@ -128,7 +131,7 @@ bool ExpoBlendingWizard::validateCurrentPage()
 
 void ExpoBlendingWizard::slotCurrentIdChanged(int id)
 {
-    if (page(id) != d->lastPage && d->preProcessed)
+    if ((page(id) != d->lastPage) && d->preProcessed)
     {
         d->preProcessed = false;
         d->preProcessingPage->cancel();
@@ -146,12 +149,14 @@ void ExpoBlendingWizard::slotPreProcessed(const ExpoBlendingItemUrlsMap& map)
     if (map.isEmpty())
     {
         // pre-processing failed.
+
         d->preProcessingPage->setComplete(false);
         d->preProcessed = false;
     }
     else
     {
         // pre-processing Done.
+
         d->mngr->setPreProcessedMap(map);
         next();
     }

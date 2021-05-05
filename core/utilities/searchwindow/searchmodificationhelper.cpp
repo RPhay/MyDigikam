@@ -7,7 +7,7 @@
  * Description : helper class used to modify search albums in views
  *
  * Copyright (C) 2009-2010 by Johannes Wienke <languitar at semipol dot de>
- * Copyright (C) 2011-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2011-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -84,7 +84,7 @@ void SearchModificationHelper::slotSearchDelete(SAlbum* searchAlbum)
     int result = QMessageBox::warning(d->dialogParent, i18n("Delete Search?"),
                                       i18n("Are you sure you want to "
                                            "delete the selected search "
-                                           "\"%1\"?", searchAlbum->title()),
+                                           "\"%1\"?", searchAlbum->displayTitle()),
                                       QMessageBox::Yes | QMessageBox::Cancel);
 
 

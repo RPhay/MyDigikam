@@ -7,7 +7,7 @@
  * Description : a widget to edit Application2 ObjectAttribute
  *               Iptc tag.
  *
- * Copyright (C) 2007-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2007-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -27,6 +27,7 @@
 // Qt includes
 
 #include <QWidget>
+#include <QLineEdit>
 
 namespace DigikamGenericMetadataEditPlugin
 {
@@ -37,14 +38,16 @@ class ObjectAttributesEdit : public QWidget
 
 public:
 
-    explicit ObjectAttributesEdit(QWidget* const parent, bool ascii=true, int size=-1);
-    ~ObjectAttributesEdit();
+    explicit ObjectAttributesEdit(QWidget* const parent, int size=-1);
+    ~ObjectAttributesEdit() override;
 
     void setValid(bool v);
     bool isValid() const;
 
     void setValues(const QStringList& values);
     bool getValues(QStringList& oldValues, QStringList& newValues);
+
+    QLineEdit* valueEdit() const;
 
 Q_SIGNALS:
 

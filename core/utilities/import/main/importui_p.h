@@ -7,7 +7,7 @@
  * Description : Camera interface
  *
  * Copyright (C) 2004-2005 by Renchi Raju <renchi dot raju at gmail dot com>
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2006-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  *
  * This program is free software; you can redistribute it
@@ -66,77 +66,83 @@ class Q_DECL_HIDDEN ImportUI::Private
 public:
 
     Private()
-      : deleteAfter(false),
-        busy(false),
-        closed(false),
-        downloadMenu(nullptr),
-        deleteMenu(nullptr),
-        imageMenu(nullptr),
-        cameraCancelAction(nullptr),
-        cameraCaptureAction(nullptr),
-        cameraInfoAction(nullptr),
-        increaseThumbsAction(nullptr),
-        decreaseThumbsAction(nullptr),
-        zoomFitToWindowAction(nullptr),
-        zoomTo100percents(nullptr),
-        deleteAction(nullptr),
-        deleteNewAction(nullptr),
-        deleteAllAction(nullptr),
-        deleteSelectedAction(nullptr),
-        downloadAction(nullptr),
-        downloadNewAction(nullptr),
-        downloadAllAction(nullptr),
-        downloadSelectedAction(nullptr),
-        downloadDelNewAction(nullptr),
-        downloadDelAllAction(nullptr),
-        downloadDelSelectedAction(nullptr),
-        lockAction(nullptr),
-        selectAllAction(nullptr),
-        selectInvertAction(nullptr),
-        selectLockedItemsAction(nullptr),
-        selectNewItemsAction(nullptr),
-        selectNoneAction(nullptr),
-        uploadAction(nullptr),
-        markAsDownloadedAction(nullptr),
-        resumeAction(nullptr),
-        pauseAction(nullptr),
-        connectAction(nullptr),
-        itemSortAction(nullptr),
-        itemSortOrderAction(nullptr),
-        itemsGroupAction(nullptr),
-        showPreferencesAction(nullptr),
-        showLogAction(nullptr),
-        showBarAction(nullptr),
-        imageViewSelectionAction(nullptr),
-        iconViewAction(nullptr),
-        camItemPreviewAction(nullptr),
+      : deleteAfter                     (false),
+        busy                            (false),
+        closed                          (false),
+        downloadMenu                    (nullptr),
+        deleteMenu                      (nullptr),
+        imageMenu                       (nullptr),
+        cameraCancelAction              (nullptr),
+        cameraCaptureAction             (nullptr),
+        cameraInfoAction                (nullptr),
+        increaseThumbsAction            (nullptr),
+        decreaseThumbsAction            (nullptr),
+        zoomFitToWindowAction           (nullptr),
+        zoomTo100percents               (nullptr),
+        deleteAction                    (nullptr),
+        deleteNewAction                 (nullptr),
+        deleteAllAction                 (nullptr),
+        deleteSelectedAction            (nullptr),
+        downloadAction                  (nullptr),
+        downloadNewAction               (nullptr),
+        downloadAllAction               (nullptr),
+        downloadSelectedAction          (nullptr),
+        downloadDelNewAction            (nullptr),
+        downloadDelAllAction            (nullptr),
+        downloadDelSelectedAction       (nullptr),
+        lockAction                      (nullptr),
+        selectAllAction                 (nullptr),
+        selectInvertAction              (nullptr),
+        selectLockedItemsAction         (nullptr),
+        selectNewItemsAction            (nullptr),
+        selectNoneAction                (nullptr),
+        uploadAction                    (nullptr),
+        markAsDownloadedAction          (nullptr),
+        resumeAction                    (nullptr),
+        pauseAction                     (nullptr),
+        connectAction                   (nullptr),
+        itemSortAction                  (nullptr),
+        itemSortOrderAction             (nullptr),
+        itemsGroupAction                (nullptr),
+        showPreferencesAction           (nullptr),
+        showLogAction                   (nullptr),
+        showBarAction                   (nullptr),
+        imageViewSelectionAction        (nullptr),
+        iconViewAction                  (nullptr),
+        camItemPreviewAction            (nullptr),
+
 #ifdef HAVE_MARBLE
-        mapViewAction(nullptr),
+
+        mapViewAction                   (nullptr),
+
 #endif // HAVE_MARBLE
-        viewCMViewAction(nullptr),
-        cameraActions(nullptr),
-        advBox(nullptr),
-        splitter(nullptr),
-        camThumbsCtrl(nullptr),
-        controller(nullptr),
-        //historyUpdater(0),
-        view(nullptr),
-        renameCustomizer(nullptr),
-        albumCustomizer(nullptr),
-        advancedSettings(nullptr),
-        dngConvertSettings(nullptr),
-        scriptingSettings(nullptr),
-        filterStatusBar(nullptr),
-        rightSideBar(nullptr),
-        zoomBar(nullptr),
-        statusProgressBar(nullptr),
-        albumLibraryFreeSpace(nullptr),
-        cameraFreeSpace(nullptr),
-        progressTimer(nullptr),
-        progressValue(0),
-        historyView(nullptr),
-        filterComboBox(nullptr),
-        errorWidget(nullptr)
+
+        viewCMViewAction                (nullptr),
+        cameraActions                   (nullptr),
+        advBox                          (nullptr),
+        splitter                        (nullptr),
+        camThumbsCtrl                   (nullptr),
+        controller                      (nullptr),
+/*
+        //historyUpdater                (0),
+*/
+        view                            (nullptr),
+        renameCustomizer                (nullptr),
+        albumCustomizer                 (nullptr),
+        advancedSettings                (nullptr),
+        dngConvertSettings              (nullptr),
+        scriptingSettings               (nullptr),
+        filterStatusBar                 (nullptr),
+        rightSideBar                    (nullptr),
+        zoomBar                         (nullptr),
+        statusProgressBar               (nullptr),
+        albumLibraryFreeSpace           (nullptr),
+        cameraFreeSpace                 (nullptr),
+        progressTimer                   (nullptr),
+        progressValue                   (0),
+        historyView                     (nullptr),
+        filterComboBox                  (nullptr),
+        errorWidget                     (nullptr)
     {
     }
 
@@ -147,21 +153,20 @@ public:
     static const QString               configDefaultTargetAlbumId;
     static const QString               configFileSaveConflictRule;
     static const QString               importFiltersConfigGroupName;
-                                 
+
     bool                               deleteAfter;
     bool                               busy;
     bool                               closed;
-                                 
+
     QString                            cameraTitle;
-                                 
+
     QStringList                        autoRotateItemsList;
     QStringList                        currentlyDeleting;
-    QSet<QString>                      foldersToScan;
-                                 
+
     QMenu*                             downloadMenu;
     QMenu*                             deleteMenu;
     QMenu*                             imageMenu;
-                                 
+
     QAction*                           cameraCancelAction;
     QAction*                           cameraCaptureAction;
     QAction*                           cameraInfoAction;
@@ -202,7 +207,9 @@ public:
     QAction*                           camItemPreviewAction;
 
 #ifdef HAVE_MARBLE
+
     QAction*                           mapViewAction;
+
 #endif // HAVE_MARBLE
 
     QAction*                           viewCMViewAction;

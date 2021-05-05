@@ -7,7 +7,7 @@
  * Description : Integrated, multithread face detection / recognition
  *
  * Copyright (C) 2010-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2012-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -24,11 +24,6 @@
 
 #include "detectionworker.h"
 
-// KDE includes
-
-#include <ksharedconfig.h>
-#include <kconfiggroup.h>
-
 // Local includes
 
 #include "digikam_debug.h"
@@ -36,8 +31,8 @@
 namespace Digikam
 {
 
-DetectionWorker::DetectionWorker(FacePipeline::Private* const d)
-    : d(d)
+DetectionWorker::DetectionWorker(FacePipeline::Private* const dd)
+    : d(dd)
 {
 }
 
@@ -48,15 +43,18 @@ DetectionWorker::~DetectionWorker()
 
 void DetectionWorker::process(FacePipelineExtendedPackage::Ptr package)
 {
+    if (!package->image.isNull())
+    {
 /*
-    QImage detectionImage  = scaleForDetection(package->image);
-    package->detectedFaces = detector.detectFaces(detectionImage, package->image.originalSize());
+        QImage detectionImage  = scaleForDetection(package->image);
+        package->detectedFaces = detector.detectFaces(detectionImage, package->image.originalSize());
 */
-    package->detectedFaces = detector.detectFaces(package->image);
+        package->detectedFaces = detector.detectFaces(package->image);
 
-    qCDebug(DIGIKAM_GENERAL_LOG) << "Found" << package->detectedFaces.size() << "faces in"
-                                 << package->info.name() << package->image.size()
-                                 << package->image.originalSize();
+        qCDebug(DIGIKAM_GENERAL_LOG) << "Found" << package->detectedFaces.size() << "faces in"
+                                     << package->info.name() << package->image.size()
+                                     << package->image.originalSize();
+    }
 
     package->processFlags |= FacePipelinePackage::ProcessedByDetector;
 
@@ -75,10 +73,11 @@ QImage DetectionWorker::scaleForDetection(const DImg& image) const
     return image.copyQImage();
 }
 
-void DetectionWorker::setAccuracy(double accuracy)
+void DetectionWorker::setAccuracyAndModel(double accuracy, bool yolo)
 {
     QVariantMap params;
     params[QLatin1String("accuracy")]    = accuracy;
+    params[QLatin1String("useyolov3")]   = yolo;
     params[QLatin1String("specificity")] = 0.8;     // TODO: add UI for sensitivity - specificity
     detector.setParameters(params);
 }

@@ -6,7 +6,7 @@
  * Date        : 2007-02-06
  * Description : Editor RAW decoding settings.
  *
- * Copyright (C) 2007-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2007-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -28,19 +28,23 @@
 
 #include <QObject>
 
+// Local includes
+
+#include "digikam_export.h"
+
 class QTabWidget;
 
 namespace Digikam
 {
 
-class SetupRaw : public QObject
+class DIGIKAM_EXPORT SetupRaw : public QObject
 {
     Q_OBJECT
 
 public:
 
     explicit SetupRaw(QTabWidget* const tab);
-    ~SetupRaw();
+    ~SetupRaw() override;
 
     void applySettings();
     void readSettings();

@@ -35,16 +35,16 @@ class Q_DECL_HIDDEN FilmProfile
 {
 public:
 
-    explicit FilmProfile(double rdm=0.0, double gdm=0.0, double bdm=0.0)
-        : redDmax(rdm),
+    explicit FilmProfile(double rdm = 0.0, double gdm = 0.0, double bdm = 0.0)
+        : redDmax  (rdm),
           greenDmax(gdm),
-          blueDmax(bdm),
-          rBalance(1.0),
-          gBalance(1.0),
-          bBalance(1.0),
-          wpRed(1.0),
-          wpGreen(1.0),
-          wpBlue(1.0)
+          blueDmax (bdm),
+          rBalance (1.0),
+          gBalance (1.0),
+          bBalance (1.0),
+          wpRed    (1.0),
+          wpGreen  (1.0),
+          wpBlue   (1.0)
     {
     }
 
@@ -142,12 +142,12 @@ class Q_DECL_HIDDEN FilmContainer::Private
 public:
 
     explicit Private()
-        : gamma(1.0),
-          exposure(1.0),
-          sixteenBit(false),
-          profile(FilmProfile(1.0, 1.0, 1.0)),
-          cnType(CNNeutral),
-          whitePoint(DColor(QColor("white"), false)),
+        : gamma       (1.0),
+          exposure    (1.0),
+          sixteenBit  (false),
+          profile     (FilmProfile(1.0, 1.0, 1.0)),
+          cnType      (CNNeutral),
+          whitePoint  (DColor(QColor("white"), false)),
           applyBalance(true)
     {
     }

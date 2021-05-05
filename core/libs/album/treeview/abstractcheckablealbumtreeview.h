@@ -8,7 +8,7 @@
  *
  * Copyright (C) 2009-2010 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  * Copyright (C) 2010-2011 by Andi Clemens <andi dot clemens at gmail dot com>
- * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -43,7 +43,7 @@ public:
 
     explicit AbstractCheckableAlbumTreeView(QWidget* const parent, Flags flags);
 
-    virtual ~AbstractCheckableAlbumTreeView();
+    ~AbstractCheckableAlbumTreeView() override;
 
     /// Manage check state through the model directly
     AbstractCheckableAlbumModel* albumModel()     const;
@@ -76,13 +76,13 @@ public:
      */
     void setRestoreCheckState(bool restore);
 
-    virtual void doLoadState() override;
-    virtual void doSaveState() override;
+    void doLoadState() override;
+    void doSaveState() override;
 
 protected:
 
-    virtual void middleButtonPressed(Album* a) override;
-    virtual void rowsInserted(const QModelIndex& parent, int start, int end) override;
+    void middleButtonPressed(Album* a) override;
+    void rowsInserted(const QModelIndex& parent, int start, int end) override;
 
 private:
 

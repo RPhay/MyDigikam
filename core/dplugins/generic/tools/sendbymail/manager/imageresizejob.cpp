@@ -6,7 +6,7 @@
  * Date        : 2007-11-09
  * Description : resize image job.
  *
- * Copyright (C) 2007-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2007-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2010      by Andi Clemens <andi dot clemens at googlemail dot com>
  *
  * This program is free software; you can redistribute it
@@ -27,6 +27,7 @@
 
 #include <QDir>
 #include <QFileInfo>
+#include <QScopedPointer>
 
 // KDE includes
 
@@ -43,9 +44,9 @@ namespace DigikamGenericSendByMailPlugin
 {
 
 ImageResizeJob::ImageResizeJob(int* count)
-    : ActionJob(),
+    : ActionJob (),
       m_settings(nullptr),
-      m_count(count)
+      m_count   (count)
 {
 }
 
@@ -118,37 +119,17 @@ bool ImageResizeJob::imageResize(MailSettings* const settings,
         img.load(orgUrl.toLocalFile());
     }
 
-    uint sizeFactor = settings->imageSize;
-
     if (!img.isNull())
     {
-        uint w = img.width();
-        uint h = img.height();
+        uint sizeFactor = settings->imageSize;
 
-        if (w > sizeFactor || h > sizeFactor)
+        if ((img.width() > sizeFactor) || (img.height() > sizeFactor))
         {
-            if (w > h)
-            {
-                h = (uint)((double)(h * sizeFactor) / w);
+            DImg scaledImg = img.smoothScale(sizeFactor,
+                                             sizeFactor,
+                                             Qt::KeepAspectRatio);
 
-                if (h == 0) h = 1;
-
-                w = sizeFactor;
-                Q_ASSERT(h <= sizeFactor);
-            }
-            else
-            {
-                w = (uint)((double)(w * sizeFactor) / h);
-
-                if (w == 0) w = 1;
-
-                h = sizeFactor;
-                Q_ASSERT(w <= sizeFactor);
-            }
-
-            DImg scaledImg = img.smoothScale(w, h, Qt::IgnoreAspectRatio);
-
-            if (scaledImg.width() != w || scaledImg.height() != h)
+            if ((scaledImg.width() > sizeFactor) || (scaledImg.height() > sizeFactor))
             {
                 err = i18n("Cannot resize image. Aborting.");
                 return false;
@@ -157,7 +138,7 @@ bool ImageResizeJob::imageResize(MailSettings* const settings,
             img = scaledImg;
         }
 
-        if (settings->format() == QLatin1String("JPEG"))
+        if      (settings->format() == QLatin1String("JPEG"))
         {
             img.setAttribute(QLatin1String("quality"), settings->imageCompression);
 
@@ -176,27 +157,27 @@ bool ImageResizeJob::imageResize(MailSettings* const settings,
             }
         }
 
-        DMetadata meta;
+        QScopedPointer<DMetadata> meta(new DMetadata);
 
-        if (!meta.load(destName))
+        if (!meta->load(destName))
         {
             return false;
         }
 
         if (settings->removeMetadata)
         {
-            meta.clearExif();
-            meta.clearIptc();
-            meta.clearXmp();
+            meta->clearExif();
+            meta->clearIptc();
+            meta->clearXmp();
         }
         else
         {
-            meta.setItemOrientation(MetaEngine::ORIENTATION_NORMAL);
+            meta->setItemOrientation(MetaEngine::ORIENTATION_NORMAL);
         }
 
-        meta.setMetadataWritingMode((int)DMetadata::WRITE_TO_FILE_ONLY);
+        meta->setMetadataWritingMode((int)DMetadata::WRITE_TO_FILE_ONLY);
 
-        if (!meta.save(destName))
+        if (!meta->save(destName))
         {
             return false;
         }

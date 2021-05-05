@@ -7,7 +7,7 @@
  * Description : Integrated, multithread face detection / recognition
  *
  * Copyright (C) 2010-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2012-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -57,14 +57,16 @@ public:
     void processBatch(const QList<ItemInfo>& infos);
     void sendFromFilter(const QList<FacePipelineExtendedPackage::Ptr>& packages);
     void skipFromFilter(const QList<ItemInfo>& infosForSkipping);
-    void send(FacePipelineExtendedPackage::Ptr package);
-    bool senderFlowControl(FacePipelineExtendedPackage::Ptr package);
+    void send(const FacePipelineExtendedPackage::Ptr& package);
+    bool senderFlowControl(const FacePipelineExtendedPackage::Ptr& package);
     void receiverFlowControl();
     FacePipelineExtendedPackage::Ptr buildPackage(const ItemInfo& info);
     FacePipelineExtendedPackage::Ptr buildPackage(const ItemInfo& info,
-                                                  const FacePipelineFaceTagsIface&, const DImg& image);
+                                                  const FacePipelineFaceTagsIface&,
+                                                  const DImg& image);
     FacePipelineExtendedPackage::Ptr buildPackage(const ItemInfo& info,
-                                                  const FacePipelineFaceTagsIfaceList& faces, const DImg& image);
+                                                  const FacePipelineFaceTagsIfaceList& faces,
+                                                  const DImg& image);
     FacePipelineExtendedPackage::Ptr filterOrBuildPackage(const ItemInfo& info);
 
     bool hasFinished();
@@ -93,6 +95,7 @@ public:
 
     QList<ThumbnailLoadThread*>             thumbnailLoadThreads;
     bool                                    started;
+    bool                                    waiting;
     int                                     infosForFiltering;
     int                                     packagesOnTheRoad;
     int                                     maxPackagesOnTheRoad;
@@ -109,7 +112,7 @@ Q_SIGNALS:
     friend class FacePipeline;
     void startProcess(FacePipelineExtendedPackage::Ptr package);
 
-    void accuracyChanged(double accuracy);
+    void accuracyAndModel(double accuracy, bool yolo);
     void thresholdChanged(double threshold);
 
 private:

@@ -7,8 +7,8 @@
  * Description : A function to parse time strings to QDateTime.
  *               Put into an extra file for easier testing.
  *
- * Copyright (C) 2010 by Michael G. Hansen <mike at mghansen dot de>
- * Copyright (C) 2017-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2010      by Michael G. Hansen <mike at mghansen dot de>
+ * Copyright (C) 2017-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -48,29 +48,32 @@ QDateTime GeoDataParserParseTime(QString timeString)
     const int timeZoneSignPosition  = timeStringLength-6;
 
     // does the string contain a timezone offset?
+
     int timeZoneOffsetSeconds       = 0;
     const int timeZonePlusPosition  = timeString.lastIndexOf(QLatin1Char('+'));
     const int timeZoneMinusPosition = timeString.lastIndexOf(QLatin1Char('-'));
 
-    if ( (timeZonePlusPosition  == timeZoneSignPosition)   ||
-         (timeZoneMinusPosition == timeZoneSignPosition) )
+    if ((timeZonePlusPosition  == timeZoneSignPosition) ||
+        (timeZoneMinusPosition == timeZoneSignPosition))
     {
         const int timeZoneSign       = (timeZonePlusPosition == timeZoneSignPosition) ? +1 : -1;
 
         // cut off the last digits:
+
         const QString timeZoneString = timeString.right(6);
         timeString.chop(6);
-        timeString += QLatin1Char('Z');
+        timeString                  += QLatin1Char('Z');
 
         // determine the time zone offset:
-        bool okayHour          = false;
-        bool okayMinute        = false;
-        const int hourOffset   = timeZoneString.mid(1, 2).toInt(&okayHour);
-        const int minuteOffset = timeZoneString.mid(4, 2).toInt(&okayMinute);
+
+        bool okayHour                = false;
+        bool okayMinute              = false;
+        const int hourOffset         = timeZoneString.mid(1, 2).toInt(&okayHour);
+        const int minuteOffset       = timeZoneString.mid(4, 2).toInt(&okayMinute);
 
         if (okayHour && okayMinute)
         {
-            timeZoneOffsetSeconds =  hourOffset*3600 + minuteOffset*60;
+            timeZoneOffsetSeconds  = hourOffset*3600 + minuteOffset*60;
             timeZoneOffsetSeconds *= timeZoneSign;
         }
     }

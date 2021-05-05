@@ -6,7 +6,7 @@
  * Date        : 2017-05-25
  * Description : a tool to generate video slideshow from images.
  *
- * Copyright (C) 2017-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2017-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -28,9 +28,8 @@
 
 // KDE includes
 
-#include <kconfig.h>
-#include <kconfiggroup.h>
 #include <klocalizedstring.h>
+#include <kconfiggroup.h>
 
 namespace Digikam
 {
@@ -107,7 +106,7 @@ QSize VidSlideSettings::videoSize() const
 {
     QSize s;
 
-    switch(vType)
+    switch (vType)
     {
         case QVGA:
             s = QSize(320, 180);
@@ -388,14 +387,15 @@ QMap<VidSlideSettings::VidCodec, QString> VidSlideSettings::videoCodecNames()
     codecs[X264]    = i18nc("Video Codec X264",    "High Quality H.264 AVC/MPEG-4 AVC");
     codecs[MPEG4]   = i18nc("Video Codec MPEG4",   "DivX/XVid/MPEG-4");
     codecs[MPEG2]   = i18nc("Video Codec MPEG2",   "MPEG-2 Video");
-//    codecs[MJPEG]   = i18nc("Video Codec MJPEG",   "Motion JPEG");
-//    codecs[WEBMVP8] = i18nc("Video Codec WEBMVP8", "WebM-VP8");
-//    codecs[THEORA]  = i18nc("Video Codec THEORA",  "Theora-VP3");
-//    codecs[FLASH]   = i18nc("Video Codec FLASH",   "Flash Video/Sorenson H.263");
-//    codecs[WMV7]    = i18nc("Video Codec WMV7",    "Window Media Video 7");
-//    codecs[WMV8]    = i18nc("Video Codec WMV8",    "Window Media Video 8");
-//    codecs[WMV9]    = i18nc("Video Codec WMV9",    "Window Media Video 9");
-
+/*
+    codecs[MJPEG]   = i18nc("Video Codec MJPEG",   "Motion JPEG");
+    codecs[WEBMVP8] = i18nc("Video Codec WEBMVP8", "WebM-VP8");
+    codecs[THEORA]  = i18nc("Video Codec THEORA",  "Theora-VP3");
+    codecs[FLASH]   = i18nc("Video Codec FLASH",   "Flash Video/Sorenson H.263");
+    codecs[WMV7]    = i18nc("Video Codec WMV7",    "Window Media Video 7");
+    codecs[WMV8]    = i18nc("Video Codec WMV8",    "Window Media Video 8");
+    codecs[WMV9]    = i18nc("Video Codec WMV9",    "Window Media Video 9");
+*/
     return codecs;
 }
 

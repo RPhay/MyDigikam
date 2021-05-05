@@ -1,5 +1,5 @@
 /* ============================================================
- * 
+ *
  * This file is a part of digiKam project
  * https://www.digikam.org
  *
@@ -18,7 +18,7 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
  *
- * ============================================================ */ 
+ * ============================================================ */
 
 #ifndef DIGIKAM_WS_AUTHENTICATION_H
 #define DIGIKAM_WS_AUTHENTICATION_H
@@ -83,7 +83,7 @@ public:
     bool    authenticated() const;
 
     /*
-     * Get image title, comment -> concat all and return a string. 
+     * Get image title, comment -> concat all and return a string.
      */
     QString getImageCaption(const QString& fileName);
     /*

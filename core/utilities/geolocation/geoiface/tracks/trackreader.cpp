@@ -6,7 +6,7 @@
  * Date        : 2006-09-19
  * Description : Track file reader
  *
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2010-2014 by Michael G. Hansen <mike at mghansen dot de>
  *
  * This program is free software; you can redistribute it
@@ -36,8 +36,8 @@
 namespace Digikam
 {
 
-static QString GPX10(QLatin1String("http://www.topografix.com/GPX/1/0"));
-static QString GPX11(QLatin1String("http://www.topografix.com/GPX/1/1"));
+static QString GPX10(QLatin1String("http://www.topografix.com/GPX/1/0"));       // krazy:exclude=insecurenet
+static QString GPX11(QLatin1String("http://www.topografix.com/GPX/1/1"));       // krazy:exclude=insecurenet
 
 class Q_DECL_HIDDEN TrackReader::Private
 {
@@ -339,7 +339,8 @@ TrackReader::TrackReadResult TrackReader::loadTrackFile(const QUrl& url)
         }
         else
         {
-            parsedData.loadError = i18n("File is a GPX file, but no datapoints were found.");
+            parsedData.loadError = i18n("File is a GPX file, but no track points "
+                                        "with valid timestamps were found.");
         }
 
         return parsedData;

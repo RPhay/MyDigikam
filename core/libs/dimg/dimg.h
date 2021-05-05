@@ -7,7 +7,7 @@
  * Description : digiKam 8/16 bits image management API
  *
  * Copyright (C) 2005      by Renchi Raju <renchi dot raju at gmail dot com>
- * Copyright (C) 2005-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2005-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2006-2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  *
  * This program is free software; you can redistribute it
@@ -257,8 +257,8 @@ public:
     uchar*      scanLine(uint i) const;
     bool        hasAlpha()       const;
     bool        sixteenBit()     const;
-    uint        numBytes()       const;
-    uint        numPixels()      const;
+    quint64     numBytes()       const;
+    quint64     numPixels()      const;
 
     /**
      * Return the number of bytes depth of one pixel : 4 (non sixteenBit) or 8 (sixteen)
@@ -298,6 +298,12 @@ public:
      * Returns the size of the original file.
      */
     QSize       originalSize() const;
+
+    /**
+     * Returns the size of the original file
+     * in the same aspect ratio as size().
+     */
+    QSize       originalRatioSize() const;
 
     /**
      * Returns the file format in form of the FORMAT enum that was detected in the load()
@@ -399,7 +405,7 @@ public:
     /**
      * When saving, several changes to the image metadata are necessary
      * before it can safely be written to the new file.
-     * This method updates the stored DMetadata object in preparation to a subsequent
+     * This method updates the stored meta engine object in preparation to a subsequent
      * call to save() with the same target file.
      * 'intendedDestPath' is the finally intended file name. Do not give the temporary
      *   file name if you are going to save() to a temp file.
@@ -485,7 +491,7 @@ public:
      */
     int exifOrientation(const QString& filePath);
 
-    /** 
+    /**
      * When loaded from a file, some attributes like format and isReadOnly still depend on this
      * originating file. When saving in a different format to a different file,
      * you may wish to switch these attributes to the new file.
@@ -754,7 +760,7 @@ public:
 
 private:
 
-    DImg(const DImg& image, int w, int h);
+    DImg(const DImg& image, uint w, uint h);
 
     void copyMetaData(const QExplicitlySharedDataPointer<Private>& src);
     void copyImageData(const QExplicitlySharedDataPointer<Private>& src);

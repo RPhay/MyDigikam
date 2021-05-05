@@ -6,7 +6,7 @@
  * Date        : 2011-03-22
  * Description : a Iface C++ interface
  *
- * Copyright (C) 2011-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2011-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2011      by Alexandre Mendes <alex dot mendes1988 at gmail dot com>
  * Copyright (C) 2011      by Hormiere Guillaume <hormiere dot guillaume at gmail dot com>
  * Copyright (C) 2011      by Manuel Campomanes <campomanes dot manuel at gmail dot com>
@@ -53,8 +53,8 @@ class Q_DECL_HIDDEN Result
 public:
 
     explicit Result()
+      : m_captchaId(-1)
     {
-        m_captchaId = -1;
     }
 
     unsigned int m_captchaId;
@@ -211,9 +211,13 @@ void Edit::setMinor(bool minor)
     Q_D(Edit);
 
     if (minor)
+    {
         d->requestParameter[QStringLiteral("minor")]    = QStringLiteral("on");
+    }
     else
+    {
         d->requestParameter[QStringLiteral("notminor")] = QStringLiteral("on");
+    }
 }
 
 void Edit::setSection(const QString& section)
@@ -237,12 +241,15 @@ void Edit::setWatchList(Edit::Watchlist watchlist)
         case Edit::watch:
             d->requestParameter[QStringLiteral("watchlist")] = QString(QStringLiteral("watch"));
             break;
+
         case Edit::unwatch:
             d->requestParameter[QStringLiteral("watchlist")] = QString(QStringLiteral("unwatch"));
             break;
+
         case Edit::nochange:
             d->requestParameter[QStringLiteral("watchlist")] = QString(QStringLiteral("nochange"));
             break;
+
         case Edit::preferences:
             d->requestParameter[QStringLiteral("watchlist")] = QString(QStringLiteral("preferences"));
             break;
@@ -266,42 +273,53 @@ void Edit::start()
     info->start();
 }
 
-void Edit::doWorkSendRequest(Page page)
+void Edit::doWorkSendRequest(const Page& page)
 {
     Q_D(Edit);
     d->requestParameter[QStringLiteral("token")] = page.pageEditToken();
+
     // Set the url
+
     QUrl    url                                  = d->MediaWiki.url();
     QUrlQuery query;
     query.addQueryItem(QStringLiteral("format"), QStringLiteral("xml"));
     query.addQueryItem(QStringLiteral("action"), QStringLiteral("edit"));
 
     // Add params
+
     if (d->requestParameter.contains(QStringLiteral("md5")))
     {
         QString text;
 
         if (d->requestParameter.contains(QStringLiteral("prependtext")))
+        {
             text += d->requestParameter[QStringLiteral("prependtext")];
+        }
 
         if (d->requestParameter.contains(QStringLiteral("appendtext")))
+        {
             text += d->requestParameter[QStringLiteral("appendtext")];
+        }
 
         if (d->requestParameter.contains(QStringLiteral("text")))
+        {
             text = d->requestParameter[QStringLiteral("text")];
+        }
 
         QByteArray hash                            = QCryptographicHash::hash(text.toUtf8(),QCryptographicHash::Md5);
         d->requestParameter[QStringLiteral("md5")] = QString::fromLatin1(hash.toHex());
     }
 
-    QMapIterator<QString, QString> i(d->requestParameter);
+    QMapIterator<QString, QString> it(d->requestParameter);
 
-    while (i.hasNext())
+    while (it.hasNext())
     {
-        i.next();
+        it.next();
 
-        if (i.key() != QStringLiteral("token"))
-            query.addQueryItem(i.key(),i.value());
+        if (it.key() != QStringLiteral("token"))
+        {
+            query.addQueryItem(it.key(), it.value());
+        }
     }
 
     QByteArray cookie;
@@ -314,11 +332,13 @@ void Edit::doWorkSendRequest(Page page)
     }
 
     // Add the token
+
     query.addQueryItem(QStringLiteral("token"), d->requestParameter[QStringLiteral("token")]);
     url.setQuery(query);
     d->baseUrl = url;
 
     // Set the request
+
     QNetworkRequest request( url );
     request.setRawHeader("User-Agent", d->MediaWiki.userAgent().toUtf8());
     request.setHeader(QNetworkRequest::ContentTypeHeader, QStringLiteral("application/x-www-form-urlencoded"));
@@ -327,6 +347,7 @@ void Edit::doWorkSendRequest(Page page)
     setPercent(25); // Request ready.
 
     // Send the request
+
     d->reply = d->manager->post( request, url.toString().toUtf8() );
     connectReply();
 
@@ -350,7 +371,9 @@ void Edit::finishedEdit()
         this->setError(this->NetworkError);
         d->reply->close();
         d->reply->deleteLater();
+
         emitResult();
+
         return;
     }
 
@@ -366,26 +389,32 @@ void Edit::finishedEdit()
 
             if (reader.name() == QStringLiteral("edit"))
             {
-                if (attrs.value( QStringLiteral("result") ).toString() == QLatin1String("Success"))
+                if      (attrs.value( QStringLiteral("result") ).toString() == QLatin1String("Success"))
                 {
                     setPercent(100); // Response parsed successfully.
                     this->setError(KJob::NoError);
                     d->reply->close();
                     d->reply->deleteLater();
+
                     emitResult();
+
                     return;
                 }
-                else if (attrs.value( QStringLiteral("result") ).toString() == QLatin1String("Failure"))
+                else if (attrs.value(QStringLiteral("result")).toString() == QLatin1String("Failure"))
                 {
                     this->setError(KJob::NoError);
                     reader.readNext();
                     attrs = reader.attributes();
                     d->result.m_captchaId = attrs.value( QStringLiteral("id") ).toString().toUInt();
 
-                    if (!attrs.value( QStringLiteral("question") ).isEmpty())
-                        d->result.m_captchaQuestion = QVariant(attrs.value( QStringLiteral("question") ).toString()) ;
+                    if      (!attrs.value( QStringLiteral("question") ).isEmpty())
+                    {
+                        d->result.m_captchaQuestion = QVariant(attrs.value( QStringLiteral("question") ).toString());
+                    }
                     else if (!attrs.value( QStringLiteral("url") ).isEmpty())
-                        d->result.m_captchaQuestion = QVariant(attrs.value( QStringLiteral("url") ).toString()) ;
+                    {
+                        d->result.m_captchaQuestion = QVariant(attrs.value( QStringLiteral("url") ).toString());
+                    }
                 }
             }
             else if (reader.name() == QStringLiteral("error"))
@@ -393,16 +422,20 @@ void Edit::finishedEdit()
                 this->setError(EditPrivate::error(attrs.value( QStringLiteral("code") ).toString()));
                 d->reply->close();
                 d->reply->deleteLater();
+
                 emitResult();
+
                 return;
             }
         }
-        else if (token == QXmlStreamReader::Invalid && reader.error() != QXmlStreamReader::PrematureEndOfDocumentError)
+        else if ((token == QXmlStreamReader::Invalid) && (reader.error() != QXmlStreamReader::PrematureEndOfDocumentError))
         {
             this->setError(this->XmlError);
             d->reply->close();
             d->reply->deleteLater();
+
             emitResult();
+
             return;
         }
     }
@@ -432,11 +465,14 @@ void Edit::finishedCaptcha(const QString& captcha)
     }
 
     // Set the request
+
     QNetworkRequest request(url);
     request.setRawHeader("User-Agent", d->MediaWiki.userAgent().toUtf8());
     request.setRawHeader("Cookie", cookie);
     request.setHeader(QNetworkRequest::ContentTypeHeader, QStringLiteral("application/x-www-form-urlencoded"));
+
     // Send the request
+
     d->reply = d->manager->post(request, data.toUtf8());
 
     connect( d->reply, SIGNAL(finished()),

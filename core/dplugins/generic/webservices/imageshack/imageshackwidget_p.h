@@ -79,7 +79,7 @@ public:
         progressBar        = nullptr;
     }
 
-    DItemsList*       imgList;
+    DItemsList*        imgList;
     DInfoInterface*    iface;
     ImageShackSession* session;
 

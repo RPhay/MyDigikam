@@ -6,7 +6,7 @@
  * Date        : 2009-11-13
  * Description : a template to create wizard dialog.
  *
- * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -31,9 +31,9 @@
 
 // KDE includes
 
-#include <kconfiggroup.h>
-#include <kconfig.h>
 #include <klocalizedstring.h>
+#include <ksharedconfig.h>
+#include <kconfiggroup.h>
 
 // Local includes
 
@@ -45,7 +45,7 @@ namespace Digikam
 
 DWizardDlg::DWizardDlg(QWidget* const parent, const QString& objName)
     : QWizard(parent),
-      m_tool(nullptr)
+      m_tool (nullptr)
 {
     setWizardStyle(QWizard::ClassicStyle);
     setObjectName(objName);
@@ -64,7 +64,7 @@ void DWizardDlg::setPlugin(DPlugin* const tool)
     if (m_tool)
     {
         setOption(QWizard::HaveHelpButton);
-        setButtonText(QWizard::HelpButton, i18n("About..."));
+        setButtonText(QWizard::HelpButton, i18nc("@action: button", "About..."));
 
         connect(button(QWizard::HelpButton), SIGNAL(clicked()),
                 this, SLOT(slotAboutPlugin()));
@@ -80,8 +80,8 @@ void DWizardDlg::slotAboutPlugin()
 
 void DWizardDlg::restoreDialogSize()
 {
-    KConfig config;
-    KConfigGroup group = config.group(objectName());
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup group      = config->group(objectName());
 
     if (group.exists())
     {
@@ -109,10 +109,10 @@ void DWizardDlg::restoreDialogSize()
 
 void DWizardDlg::saveDialogSize()
 {
-    KConfig config;
-    KConfigGroup group = config.group(objectName());
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup group      = config->group(objectName());
     DXmlGuiWindow::saveWindowSize(windowHandle(), group);
-    config.sync();
+    config->sync();
 }
 
 } // namespace Digikam

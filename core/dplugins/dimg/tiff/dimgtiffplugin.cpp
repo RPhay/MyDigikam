@@ -37,6 +37,7 @@
 // Local includes
 
 #include "digikam_debug.h"
+#include "digikam_config.h"
 #include "digikam_globals.h"
 #include "dimgtiffloader.h"
 
@@ -93,7 +94,7 @@ QList<DPluginAuthor> DImgTIFFPlugin::authors() const
                              QString::fromUtf8("(C) 2005"))
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2006-2020"))
+                             QString::fromUtf8("(C) 2006-2021"))
             ;
 }
 
@@ -121,15 +122,20 @@ int DImgTIFFPlugin::canRead(const QFileInfo& fileInfo, bool magic) const
 
     if (!magic)
     {
-        return (
-                format == QLatin1String("TIFF") ||
-                format == QLatin1String("TIF")
-               ) ? 10 : 0;
+        return typeMimes().contains(format) ? 10 : 0;
     }
 
     // In second, we trying to parse file header.
 
-    FILE* const f = fopen(QFile::encodeName(filePath).constData(), "rb");
+#ifdef Q_OS_WIN
+
+    FILE* const f = _wfopen((const wchar_t*)filePath.utf16(), L"rb");
+
+#else
+
+    FILE* const f = fopen(filePath.toUtf8().constData(), "rb");
+
+#endif
 
     if (!f)
     {
@@ -164,13 +170,7 @@ int DImgTIFFPlugin::canRead(const QFileInfo& fileInfo, bool magic) const
 
 int DImgTIFFPlugin::canWrite(const QString& format) const
 {
-    if (format == QLatin1String("TIFF") ||
-        format == QLatin1String("TIF"))
-    {
-        return 10;
-    }
-
-    return 0;
+    return typeMimes().contains(format.toUpper()) ? 10 : 0;
 }
 
 DImgLoader* DImgTIFFPlugin::loader(DImg* const image, const DRawDecoding&) const

@@ -7,7 +7,7 @@
  * Description : rating icon view item at mouse hover
  *
  * Copyright (C) 2009      by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -66,13 +66,13 @@ protected:
 
 protected:
 
-    virtual QWidget* createWidget()                    override;
-    virtual void setActive(bool)                       override;
-    virtual void visualChange()                        override;
-    virtual void hide()                                override;
-    virtual void slotEntered(const QModelIndex& index) override;
-    virtual void widgetEnterEvent()                    override;
-    virtual void widgetLeaveEvent()                    override;
+    QWidget* createWidget()                    override;
+    void setActive(bool)                       override;
+    void visualChange()                        override;
+    void hide()                                override;
+    void slotEntered(const QModelIndex& index) override;
+    void widgetEnterEvent()                    override;
+    void widgetLeaveEvent()                    override;
 
 protected:
 

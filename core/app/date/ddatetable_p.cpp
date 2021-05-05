@@ -6,7 +6,7 @@
  * Date        : 1997-04-21
  * Description : Date selection table.
  *
- * Copyright (C) 2011-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2011-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 1997      by Tim D. Gilman <tdgilman at best dot org>
  * Copyright (C) 1998-2001 by Mirko Boehm <mirko at kde dot org>
  * Copyright (C) 2007      by John Layt <john at layt dot net>
@@ -45,17 +45,17 @@ namespace Digikam
 {
 
 DDateTable::Private::Private(DDateTable* const qq)
-    : QObject(qq),
-      q(qq)
+    : QObject               (qq),
+      q                     (qq),
+      weekDayFirstOfMonth   (0),
+      numDaysThisMonth      (0),
+      numWeekRows           (0),
+      numDayColumns         (0),
+      fontsize              (0),
+      popupMenuEnabled      (false),
+      useCustomColors       (false),
+      hoveredPos            (-1)
 {
-    weekDayFirstOfMonth = 0;
-    numDaysThisMonth    = 0;
-    numWeekRows         = 0;
-    numDayColumns       = 0;
-    fontsize            = 0;
-    popupMenuEnabled    = false;
-    useCustomColors     = false;
-    hoveredPos          = -1;
     setDate(QDate::currentDate());
 }
 
@@ -66,24 +66,28 @@ DDateTable::Private::~Private()
 void DDateTable::Private::nextMonth()
 {
     // setDate does validity checking for us
+
     q->setDate(date.addMonths(1));
 }
 
 void DDateTable::Private::previousMonth()
 {
     // setDate does validity checking for us
+
     q->setDate(date.addMonths(-1));
 }
 
 void DDateTable::Private::beginningOfMonth()
 {
     // setDate does validity checking for us
+
     q->setDate(QDate(date.year(), date.month(), 1));
 }
 
 void DDateTable::Private::endOfMonth()
 {
     // setDate does validity checking for us
+
     q->setDate(QDate(date.year(), date.month() + 1, 0));
 }
 
@@ -91,12 +95,14 @@ void DDateTable::Private::endOfMonth()
 void DDateTable::Private::beginningOfWeek()
 {
     // setDate does validity checking for us
+
     q->setDate(date.addDays(1 - date.dayOfWeek()));
 }
 
 void DDateTable::Private::endOfWeek()
 {
     // setDate does validity checking for us
+
     q->setDate(date.addDays(7 - date.dayOfWeek()));
 }
 

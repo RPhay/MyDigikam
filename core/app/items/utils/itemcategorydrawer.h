@@ -42,14 +42,16 @@ class DAlbum;
 
 class ItemCategoryDrawer : public DCategoryDrawer
 {
+    Q_OBJECT
+
 public:
 
     explicit ItemCategoryDrawer(ItemCategorizedView* const parent);
-    ~ItemCategoryDrawer();
+    ~ItemCategoryDrawer()                                                                                                  override;
 
-    virtual int categoryHeight(const QModelIndex& index, const QStyleOption& option) const;
-    virtual void drawCategory(const QModelIndex& index, int sortRole, const QStyleOption& option, QPainter* painter) const;
-    virtual int maximumHeight() const;
+    int categoryHeight(const QModelIndex& index, const QStyleOption& option)                                         const override;
+    void drawCategory(const QModelIndex& index, int sortRole, const QStyleOption& option, QPainter* painter)         const override;
+    virtual int maximumHeight()                                                                                      const;
 
     void setLowerSpacing(int spacing);
     void setDefaultViewOptions(const QStyleOptionViewItem& option);
@@ -58,14 +60,15 @@ public:
 private:
 
     void updateRectsAndPixmaps(int width);
-    void viewHeaderText(const QModelIndex& index, QString* header, QString* subLine) const;
-    void textForAlbum(const QModelIndex& index, QString* header, QString* subLine) const;
-    void textForPAlbum(PAlbum* a, bool recursive, int count, QString* header, QString* subLine) const;
-    void textForTAlbum(TAlbum* a, bool recursive, int count, QString* header, QString* subLine) const;
-    void textForSAlbum(SAlbum* a, int count, QString* header, QString* subLine) const;
-    void textForDAlbum(DAlbum* a, int count, QString* header, QString* subLine) const;
-    void textForFormat(const QModelIndex& index, QString* header, QString* subLine) const;
-    void textForMonth(const QModelIndex& index, QString* header, QString* subLine) const;
+    void viewHeaderText(const QModelIndex& index, QString* header, QString* subLine)                                 const;
+    void textForAlbum(const QModelIndex& index, QString* header, QString* subLine)                                   const;
+    void textForPAlbum(PAlbum* a, bool recursive, int count, QString* header, QString* subLine)                      const;
+    void textForTAlbum(TAlbum* a, bool recursive, int count, QString* header, QString* subLine)                      const;
+    void textForSAlbum(SAlbum* a, int count, QString* header, QString* subLine)                                      const;
+    void textForDAlbum(DAlbum* a, int count, QString* header, QString* subLine)                                      const;
+    void textForFormat(const QModelIndex& index, QString* header, QString* subLine)                                  const;
+    void textForMonth(const QModelIndex& index, QString* header, QString* subLine)                                   const;
+    void textForFace(const QModelIndex& index, QString* header, QString* subLine)                                    const;
 
 private:
 

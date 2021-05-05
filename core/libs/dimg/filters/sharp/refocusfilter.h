@@ -6,7 +6,7 @@
  * Date        : 2005-05-25
  * Description : Refocus threaded image filter.
  *
- * Copyright (C) 2005-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2005-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2009      by Matthias Welwarsky <matze at welwarsky dot de>
  * Copyright (C) 2010      by Martin Klapetek <martin dot klapetek at gmail dot com>
  *
@@ -37,10 +37,11 @@ namespace Digikam
 
 class DIGIKAM_EXPORT RefocusFilter : public DImgThreadedFilter
 {
+    Q_OBJECT
 
 private:
 
-    struct Args
+    struct Q_DECL_HIDDEN Args
     {
         explicit Args()
           : orgData(nullptr),
@@ -65,10 +66,10 @@ private:
 public:
 
     explicit RefocusFilter(QObject* const parent = nullptr);
-    explicit RefocusFilter(DImg* const orgImage, QObject* const parent=nullptr, int matrixSize=5, double radius=0.9,
+    explicit RefocusFilter(DImg* const orgImage, QObject* const parent = nullptr, int matrixSize=5, double radius=0.9,
                            double gauss=0.0, double correlation=0.5, double noise=0.01);
 
-    ~RefocusFilter();
+    ~RefocusFilter() override;
 
     static int maxMatrixSize();
 
@@ -89,12 +90,12 @@ public:
         return 1;
     }
 
-    virtual QString         filterIdentifier()                          const override
+    QString         filterIdentifier()                          const override
     {
         return FilterIdentifier();
     }
 
-    virtual FilterAction    filterAction()                                    override;
+    FilterAction    filterAction()                                    override;
     void                    readParameters(const FilterAction& action)        override;
 
 

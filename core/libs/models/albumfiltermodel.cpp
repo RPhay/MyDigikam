@@ -28,7 +28,6 @@
 // Qt includes
 
 #include <QSortFilterProxyModel>
-#include <QCollator>
 #include <QHeaderView>
 
 // Local includes
@@ -37,6 +36,7 @@
 #include "albummanager.h"
 #include "albummodel.h"
 #include "applicationsettings.h"
+#include "itemsortcollator.h"
 #include "facetags.h"
 
 namespace Digikam
@@ -44,9 +44,9 @@ namespace Digikam
 
 AlbumFilterModel::AlbumFilterModel(QObject* const parent)
     : QSortFilterProxyModel(parent),
-      m_filterBehavior(FullFiltering),
-      m_chainedModel(nullptr),
-      m_parent(parent)
+      m_filterBehavior     (FullFiltering),
+      m_chainedModel       (nullptr),
+      m_parent             (parent)
 {
     setSortRole(AbstractAlbumModel::AlbumSortRole);
     setSortCaseSensitivity(Qt::CaseInsensitive);
@@ -96,7 +96,7 @@ void AlbumFilterModel::setSearchTextSettings(const SearchTextSettings& settings)
 
     m_settings = settings;
     invalidateFilter();
-    emit filterChanged();
+    emit signalFilterChanged();
 
     emit searchTextSettingsChanged(wasSearching, willSearch);
 
@@ -138,6 +138,14 @@ bool AlbumFilterModel::settingsFilter(const SearchTextSettings& settings) const
 bool AlbumFilterModel::isFiltering() const
 {
     return settingsFilter(m_settings);
+}
+
+void AlbumFilterModel::updateFilter()
+{
+    if (isFiltering())
+    {
+        invalidateFilter();
+    }
 }
 
 SearchTextSettings AlbumFilterModel::searchTextSettings() const
@@ -425,6 +433,32 @@ bool AlbumFilterModel::lessThan(const QModelIndex& left, const QModelIndex& righ
             return (sortOrder() == Qt::AscendingOrder) ? (leftAlbum->id() == FaceTags::unknownPersonTagId())
                                                        : (leftAlbum->id() != FaceTags::unknownPersonTagId());
         }
+
+        // Verify this, to prevent auto-creation of Ignored Tag.
+
+        if (FaceTags::existsIgnoredPerson())
+        {
+            if ((leftAlbum->id() == FaceTags::ignoredPersonTagId()) != (rightAlbum->id() == FaceTags::ignoredPersonTagId()))
+            {
+                // ignored tag albums go to the top, regardless of sort role
+
+                return (sortOrder() == Qt::AscendingOrder) ? (leftAlbum->id() == FaceTags::ignoredPersonTagId())
+                                                           : (leftAlbum->id() != FaceTags::ignoredPersonTagId());
+            }
+        }
+
+        /**
+         * Implementation to sort Tags that contain
+         * Unconfirmed Faces, according to the Unconfirmed
+         * Face Count.
+         */
+        QMap<int, int> unconfirmedFaceCount = AlbumManager::instance()->getUnconfirmedFaceCount();
+
+        if (unconfirmedFaceCount.contains(leftAlbum->id()) || unconfirmedFaceCount.contains(rightAlbum->id()))
+        {
+             return (sortOrder() == Qt::AscendingOrder) ? (unconfirmedFaceCount.value(leftAlbum->id()) > unconfirmedFaceCount.value(rightAlbum->id()))
+                                                        : (unconfirmedFaceCount.value(leftAlbum->id()) < unconfirmedFaceCount.value(rightAlbum->id()));
+        }
     }
 
     if (leftAlbum->isTrashAlbum() != rightAlbum->isTrashAlbum())
@@ -446,16 +480,12 @@ bool AlbumFilterModel::lessThan(const QModelIndex& left, const QModelIndex& righ
         return QSortFilterProxyModel::lessThan(left, right);
     }
 
-    bool natural = ApplicationSettings::instance()->isStringTypeNatural();
-
     if ((valLeft.type() == QVariant::String) && (valRight.type() == QVariant::String))
     {
-        QCollator collator;
-        collator.setNumericMode(natural);
-        collator.setIgnorePunctuation(false);
-        collator.setCaseSensitivity(sortCaseSensitivity());
+        ItemSortCollator* const sorter = ItemSortCollator::instance();
+        bool natural                   = ApplicationSettings::instance()->isStringTypeNatural();
 
-        return (collator.compare(valLeft.toString(), valRight.toString()) < 0);
+        return (sorter->albumCompare(valLeft.toString(), valRight.toString(), sortCaseSensitivity(), natural) < 0);
     }
     else if ((valLeft.type() == QVariant::Date) && (valRight.type() == QVariant::Date))
     {
@@ -509,14 +539,14 @@ void CheckableAlbumFilterModel::setFilterChecked(bool filter)
 {
     m_filterChecked = filter;
     invalidateFilter();
-    emit filterChanged();
+    emit signalFilterChanged();
 }
 
 void CheckableAlbumFilterModel::setFilterPartiallyChecked(bool filter)
 {
     m_filterPartiallyChecked = filter;
     invalidateFilter();
-    emit filterChanged();
+    emit signalFilterChanged();
 }
 
 bool CheckableAlbumFilterModel::isFiltering() const
@@ -547,15 +577,15 @@ bool CheckableAlbumFilterModel::matches(Album* album) const
         stateAccepted |= state == Qt::Checked;
     }
 
-    return accepted && stateAccepted;
+    return (accepted && stateAccepted);
 }
 
 // -----------------------------------------------------------------------------
 
 SearchFilterModel::SearchFilterModel(QObject* const parent)
     : CheckableAlbumFilterModel(parent),
-      m_searchType(-1),
-      m_listTemporary(false)
+      m_searchType             (-1),
+      m_listTemporary          (false)
 {
 }
 
@@ -608,14 +638,14 @@ void SearchFilterModel::setTypeFilter(int type)
 {
     m_searchType = type;
     invalidateFilter();
-    emit filterChanged();
+    emit signalFilterChanged();
 }
 
 void SearchFilterModel::setListTemporarySearches(bool list)
 {
     m_listTemporary = list;
     invalidateFilter();
-    emit filterChanged();
+    emit signalFilterChanged();
 }
 
 bool SearchFilterModel::isFiltering() const
@@ -625,7 +655,7 @@ bool SearchFilterModel::isFiltering() const
 
 bool SearchFilterModel::matches(Album* album) const
 {
-    if (!AlbumFilterModel::matches(album))
+    if (!CheckableAlbumFilterModel::matches(album))
     {
         return false;
     }
@@ -691,7 +721,7 @@ void TagPropertiesFilterModel::listOnlyTagsWithProperty(const QString& property)
 
     m_propertiesWhiteList << property;
     invalidateFilter();
-    emit filterChanged();
+    emit signalFilterChanged();
 }
 
 void TagPropertiesFilterModel::removeListOnlyProperty(const QString& property)
@@ -703,7 +733,7 @@ void TagPropertiesFilterModel::removeListOnlyProperty(const QString& property)
 
     m_propertiesWhiteList.remove(property);
     invalidateFilter();
-    emit filterChanged();
+    emit signalFilterChanged();
 }
 
 void TagPropertiesFilterModel::doNotListTagsWithProperty(const QString& property)
@@ -715,7 +745,7 @@ void TagPropertiesFilterModel::doNotListTagsWithProperty(const QString& property
 
     m_propertiesBlackList << property;
     invalidateFilter();
-    emit filterChanged();
+    emit signalFilterChanged();
 }
 
 void TagPropertiesFilterModel::removeDoNotListProperty(const QString& property)
@@ -727,7 +757,7 @@ void TagPropertiesFilterModel::removeDoNotListProperty(const QString& property)
 
     m_propertiesBlackList.remove(property);
     invalidateFilter();
-    emit filterChanged();
+    emit signalFilterChanged();
 }
 
 bool TagPropertiesFilterModel::isFiltering() const
@@ -751,7 +781,7 @@ void TagPropertiesFilterModel::tagPropertiesChanged(TAlbum*)
 
 bool TagPropertiesFilterModel::matches(Album* album) const
 {
-    if (!AlbumFilterModel::matches(album))
+    if (!CheckableAlbumFilterModel::matches(album))
     {
         return false;
     }
@@ -794,7 +824,7 @@ void TagsManagerFilterModel::setQuickListTags(const QList<int>& tags)
     }
 
     invalidateFilter();
-    emit filterChanged();
+    emit signalFilterChanged();
 }
 
 bool TagsManagerFilterModel::matches(Album* album) const

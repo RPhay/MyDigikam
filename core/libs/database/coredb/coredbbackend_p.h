@@ -7,7 +7,7 @@
  * Description : Core database abstract backend.
  *
  * Copyright (C) 2007-2009 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2010-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2010-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -40,16 +40,16 @@ class Q_DECL_HIDDEN CoreDbBackendPrivate : public BdEngineBackendPrivate
 public:
 
     explicit CoreDbBackendPrivate(CoreDbBackend* const backend)
-        : BdEngineBackendPrivate(backend),
-          imageChangesetContainer(this),
-          imageTagChangesetContainer(this),
-          collectionImageChangesetContainer(this),
-          albumChangesetContainer(this),
-          tagChangesetContainer(this),
-          albumRootChangesetContainer(this),
-          searchChangesetContainer(this)
+        : BdEngineBackendPrivate            (backend),
+          watch                             (nullptr),
+          imageChangesetContainer           (this),
+          imageTagChangesetContainer        (this),
+          collectionImageChangesetContainer (this),
+          albumChangesetContainer           (this),
+          tagChangesetContainer             (this),
+          albumRootChangesetContainer       (this),
+          searchChangesetContainer          (this)
     {
-        watch = nullptr;
     }
 
 public:
@@ -58,31 +58,37 @@ public:
 
 public:
 
-    void sendToWatch(const ImageChangeset changeset)
+    void sendToWatch(const ImageChangeset& changeset)
     {
         watch->sendImageChange(changeset);
     }
-    void sendToWatch(const ImageTagChangeset changeset)
+
+    void sendToWatch(const ImageTagChangeset& changeset)
     {
         watch->sendImageTagChange(changeset);
     }
-    void sendToWatch(const CollectionImageChangeset changeset)
+
+    void sendToWatch(const CollectionImageChangeset& changeset)
     {
         watch->sendCollectionImageChange(changeset);
     }
-    void sendToWatch(const AlbumChangeset changeset)
+
+    void sendToWatch(const AlbumChangeset& changeset)
     {
         watch->sendAlbumChange(changeset);
     }
-    void sendToWatch(const TagChangeset changeset)
+
+    void sendToWatch(const TagChangeset& changeset)
     {
         watch->sendTagChange(changeset);
     }
-    void sendToWatch(const AlbumRootChangeset changeset)
+
+    void sendToWatch(const AlbumRootChangeset& changeset)
     {
         watch->sendAlbumRootChange(changeset);
     }
-    void sendToWatch(const SearchChangeset changeset)
+
+    void sendToWatch(const SearchChangeset& changeset)
     {
         watch->sendSearchChange(changeset);
     }
@@ -92,8 +98,8 @@ public:
     {
     public:
 
-        explicit ChangesetContainer(CoreDbBackendPrivate* const d)
-            : d(d)
+        explicit ChangesetContainer(CoreDbBackendPrivate* const dd)
+            : d(dd)
         {
         }
 
@@ -115,6 +121,7 @@ public:
             {
                 d->sendToWatch(changeset);
             }
+
             changesets.clear();
         }
 

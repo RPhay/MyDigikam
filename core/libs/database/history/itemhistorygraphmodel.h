@@ -72,40 +72,41 @@ public:
 public:
 
     explicit ItemHistoryGraphModel(QObject* const parent = nullptr);
-    ~ItemHistoryGraphModel();
+    ~ItemHistoryGraphModel()                                                                        override;
 
     void setMode(Mode mode);
-    Mode mode()                                                                                       const;
+    Mode mode()                                                                               const;
 
     /**
      * Set the history subject and the history graph.
      * Per default, the subject's history graph is read.
      */
-    void setHistory(const ItemInfo& subject, const ItemHistoryGraph& graph = ItemHistoryGraph());
+    void setHistory(const ItemInfo& subject,
+                    const ItemHistoryGraph& graph = ItemHistoryGraph());
 
-    ItemInfo subject()                                                                                const;
+    ItemInfo subject()                                                                        const;
 
-    bool isImage(const QModelIndex& index)                                                            const;
+    bool isImage(const QModelIndex& index)                                                    const;
     bool hasImage(const ItemInfo& info);
-    ItemInfo imageInfo(const QModelIndex& index)                                                      const;
+    ItemInfo imageInfo(const QModelIndex& index)                                              const;
 
     /// Note: There may be multiple indexes for an info. The index found first is returned.
-    QModelIndex indexForInfo(const ItemInfo& info)                                                    const;
+    QModelIndex indexForInfo(const ItemInfo& info)                                            const;
 
-    bool isFilterAction(const QModelIndex& index)                                                     const;
-    FilterAction filterAction(const QModelIndex& index)                                               const;
+    bool isFilterAction(const QModelIndex& index)                                             const;
+    FilterAction filterAction(const QModelIndex& index)                                       const;
 
     ///@{
     /// QAbstractItemModel implementation
-    virtual QVariant headerData(int section, Qt::Orientation orientation, int role = Qt::DisplayRole) const override;
-    virtual int rowCount(const QModelIndex& parent = QModelIndex())                                   const override;
-    virtual int columnCount(const QModelIndex& parent = QModelIndex())                                const override;
-    virtual Qt::ItemFlags flags(const QModelIndex& index)                                             const override;
-    virtual bool hasChildren(const QModelIndex& parent = QModelIndex())                               const override;
-    virtual QModelIndex index(int row, int column, const QModelIndex& parent = QModelIndex())         const override;
-    virtual QModelIndex parent(const QModelIndex& index)                                              const override;
-    virtual QVariant data(const QModelIndex& index, int role = Qt::DisplayRole)                       const override;
-    virtual bool setData(const QModelIndex& index, const QVariant& value, int role)                         override;
+    QVariant headerData(int section, Qt::Orientation orientation, int role = Qt::DisplayRole) const override;
+    int rowCount(const QModelIndex& parent = QModelIndex())                                   const override;
+    int columnCount(const QModelIndex& parent = QModelIndex())                                const override;
+    Qt::ItemFlags flags(const QModelIndex& index)                                             const override;
+    bool hasChildren(const QModelIndex& parent = QModelIndex())                               const override;
+    QModelIndex index(int row, int column, const QModelIndex& parent = QModelIndex())         const override;
+    QModelIndex parent(const QModelIndex& index)                                              const override;
+    QVariant data(const QModelIndex& index, int role = Qt::DisplayRole)                       const override;
+    bool setData(const QModelIndex& index, const QVariant& value, int role)                         override;
     ///@}
 
     DECLARE_MODEL_DRAG_DROP_METHODS
@@ -114,16 +115,20 @@ public:
      * Returns an internal image model used for entries representing images.
      * Note: Set a thumbnail thread on this model if you need thumbnails.
      */
-    ItemListModel* imageModel()                                                                       const;
+    ItemListModel* imageModel()                                                               const;
 
     /**
      * If the given index is represented by the internal image model,
      * return the image model's index.
      * Otherwise an invalid index is returned.
      */
-    QModelIndex imageModelIndex(const QModelIndex& index)                                             const;
+    QModelIndex imageModelIndex(const QModelIndex& index)                                     const;
 
 private:
+
+    // Disable
+    ItemHistoryGraphModel(const ItemHistoryGraphModel&)            = delete;
+    ItemHistoryGraphModel& operator=(const ItemHistoryGraphModel&) = delete;
 
     class Private;
     Private* const d;

@@ -36,16 +36,16 @@ namespace Digikam
 
 class MetadataHub;
 
-class FileWorkerInterface : public WorkerObject
+class FileWorkerInterface : public WorkerObject         // clazy:exclude=ctor-missing-parent-argument
 {
     Q_OBJECT
 
 public Q_SLOTS:
 
-    virtual void writeOrientationToFiles(FileActionItemInfoList, int) {};
-    virtual void writeMetadataToFiles(FileActionItemInfoList)         {};
-    virtual void writeMetadata(FileActionItemInfoList, int)           {};
-    virtual void transform(FileActionItemInfoList, int)               {};
+    virtual void writeOrientationToFiles(const FileActionItemInfoList&, int) {};
+    virtual void writeMetadataToFiles(const FileActionItemInfoList&)         {};
+    virtual void writeMetadata(const FileActionItemInfoList&, int)           {};
+    virtual void transform(const FileActionItemInfoList&, int)               {};
 
 Q_SIGNALS:
 
@@ -57,23 +57,21 @@ Q_SIGNALS:
 
 class FileActionMngrFileWorker : public FileWorkerInterface
 {
+    Q_OBJECT
 
 public:
 
-    explicit FileActionMngrFileWorker(FileActionMngr::Private* const d)
-        : d(d)
+    explicit FileActionMngrFileWorker(FileActionMngr::Private* const dd)
+        : d(dd)
     {
     }
 
 public:
 
-    void writeOrientationToFiles(FileActionItemInfoList infos, int orientation) override;
-    void writeMetadataToFiles(FileActionItemInfoList infos)                     override;
-    void writeMetadata(FileActionItemInfoList infos, int flags)                 override;
-    void transform(FileActionItemInfoList infos, int orientation)               override;
-    void adjustFaceRectangles(const ItemInfo& info, bool rotatedPixels,
-                                                    int newOrientation,
-                                                    int oldOrientation);
+    void writeOrientationToFiles(const FileActionItemInfoList& infos, int orientation) override;
+    void writeMetadataToFiles(const FileActionItemInfoList& infos)                     override;
+    void writeMetadata(const FileActionItemInfoList& infos, int flags)                 override;
+    void transform(const FileActionItemInfoList& infos, int orientation)               override;
 
 private:
 

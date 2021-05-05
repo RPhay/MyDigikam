@@ -6,7 +6,7 @@
  * Date        : 2011-01-24
  * Description : Tags Action Manager
  *
- * Copyright (C) 2011-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2011-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -57,7 +57,6 @@
 #include "tagscache.h"
 #include "tagproperties.h"
 #include "ratingwidget.h"
-#include "slideshow.h"
 #include "syncjob.h"
 
 namespace Digikam
@@ -76,9 +75,9 @@ public:
 
     explicit Private()
         : ratingShortcutPrefix(QLatin1String("rateshortcut")),
-          tagShortcutPrefix(QLatin1String("tagshortcut")),
-          pickShortcutPrefix(QLatin1String("pickshortcut")),
-          colorShortcutPrefix(QLatin1String("colorshortcut"))
+          tagShortcutPrefix   (QLatin1String("tagshortcut")),
+          pickShortcutPrefix  (QLatin1String("pickshortcut")),
+          colorShortcutPrefix (QLatin1String("colorshortcut"))
     {
     }
 
@@ -95,7 +94,7 @@ public:
 
 TagsActionMngr::TagsActionMngr(QWidget* const parent)
     : QObject(parent),
-      d(new Private)
+      d      (new Private)
 {
     if (!m_defaultManager)
     {
@@ -104,9 +103,6 @@ TagsActionMngr::TagsActionMngr(QWidget* const parent)
 
     connect(AlbumManager::instance(), SIGNAL(signalAlbumDeleted(Album*)),
             this, SLOT(slotAlbumDeleted(Album*)));
-
-    connect(CoreDbAccess::databaseWatch(), SIGNAL(imageTagChange(ImageTagChangeset)),
-            this, SLOT(slotImageTagChanged(ImageTagChangeset)));
 }
 
 TagsActionMngr::~TagsActionMngr()
@@ -331,10 +327,10 @@ void TagsActionMngr::slotTagActionChanged()
         ks = QKeySequence(lst.first());
     }
 
-    updateTagShortcut(tagId, ks);
+    updateTagShortcut(tagId, ks, false);
 }
 
-void TagsActionMngr::updateTagShortcut(int tagId, const QKeySequence& ks)
+void TagsActionMngr::updateTagShortcut(int tagId, const QKeySequence& ks, bool delAction)
 {
     if (!tagId)
     {
@@ -354,12 +350,12 @@ void TagsActionMngr::updateTagShortcut(int tagId, const QKeySequence& ks)
 
     if (ks.isEmpty())
     {
-        removeTagActionShortcut(tagId);
+        removeTagActionShortcut(tagId, delAction);
         tprop.removeProperties(TagPropertyName::tagKeyboardShortcut());
     }
     else
     {
-        removeTagActionShortcut(tagId);
+        removeTagActionShortcut(tagId, delAction);
         tprop.setProperty(TagPropertyName::tagKeyboardShortcut(), ks.toString());
         createTagActionShortcut(tagId);
     }
@@ -378,7 +374,7 @@ void TagsActionMngr::slotAlbumDeleted(Album* album)
     qCDebug(DIGIKAM_GENERAL_LOG) << "Delete Shortcut assigned to tag " << album->id();
 }
 
-bool TagsActionMngr::removeTagActionShortcut(int tagId)
+bool TagsActionMngr::removeTagActionShortcut(int tagId, bool delAction)
 {
     if (!d->tagsActionMap.contains(tagId))
     {
@@ -396,7 +392,10 @@ bool TagsActionMngr::removeTagActionShortcut(int tagId)
                 ac->takeAction(act);
             }
 
-            delete act;
+            if (delAction)
+            {
+                delete act;
+            }
         }
     }
 
@@ -496,46 +495,8 @@ void TagsActionMngr::slotAssignFromShortcut()
         return;
     }
 
-    SlideShow* const sld = dynamic_cast<SlideShow*>(w);
-
-    if (sld)
-    {
-        //qCDebug(DIGIKAM_GENERAL_LOG) << "Handling by SlideShow";
-
-        if      (action->objectName().startsWith(d->ratingShortcutPrefix))
-        {
-            sld->slotAssignRating(val);
-        }
-        else if (action->objectName().startsWith(d->pickShortcutPrefix))
-        {
-            sld->slotAssignPickLabel(val);
-        }
-        else if (action->objectName().startsWith(d->colorShortcutPrefix))
-        {
-            sld->slotAssignColorLabel(val);
-        }
-        else if (action->objectName().startsWith(d->tagShortcutPrefix))
-        {
-            sld->toggleTag(val);
-        }
-
-        return;
-    }
-}
-
-// Special case with Slideshow which do not depend on database.
-
-void TagsActionMngr::slotImageTagChanged(const ImageTagChangeset&)
-{
-    QWidget* const w     = qApp->activeWindow();
-    SlideShow* const sld = dynamic_cast<SlideShow*>(w);
-
-    if (sld)
-    {
-        QUrl url      = sld->currentItem();
-        ItemInfo info = ItemInfo::fromUrl(url);
-        sld->updateTags(url, AlbumManager::instance()->tagNames(info.tagIds()));
-    }
+    //emit signal to DInfoInterface to broadcast to another component:
+    emit signalShortcutPressed(action->objectName(), val);
 }
 
 } // namespace Digikam

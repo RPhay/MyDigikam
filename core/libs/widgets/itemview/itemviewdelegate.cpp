@@ -9,7 +9,7 @@
  * Copyright (C) 2002-2005 by Renchi Raju <renchi dot raju at gmail dot com>
  * Copyright (C) 2009      by Andi Clemens <andi dot clemens at gmail dot com>
  * Copyright (C) 2006-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2002-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2002-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -24,7 +24,6 @@
  *
  * ============================================================ */
 
-#include "itemviewdelegate.h"
 #include "itemviewdelegate_p.h"
 
 // C++ includes
@@ -55,12 +54,12 @@ namespace Digikam
 {
 
 ItemViewDelegatePrivate::ItemViewDelegatePrivate()
-    : spacing(0),
+    : spacing      (0),
       ratingPixmaps(QVector<QPixmap>(10)),
-      thumbSize(ThumbnailSize(0)),
-      q(nullptr),
-      radius(3), // painting constants
-      margin(5)
+      thumbSize    (ThumbnailSize(0)),
+      q            (nullptr),
+      radius       (3), // painting constants
+      margin       (5)
 {
     makeStarPolygon();
 }
@@ -90,14 +89,14 @@ void ItemViewDelegatePrivate::makeStarPolygon()
 
 ItemViewDelegate::ItemViewDelegate(QObject* const parent)
     : DItemDelegate(parent),
-      d_ptr(new ItemViewDelegatePrivate)
+      d_ptr        (new ItemViewDelegatePrivate)
 {
     d_ptr->init(this);
 }
 
 ItemViewDelegate::ItemViewDelegate(ItemViewDelegatePrivate& dd, QObject* const parent)
     : DItemDelegate(parent),
-      d_ptr(&dd)
+      d_ptr        (&dd)
 {
     d_ptr->init(this);
 }
@@ -421,7 +420,7 @@ void ItemViewDelegate::drawImageSize(QPainter* p, const QRect& dimsRect, const Q
     {
         p->setFont(d->fontXtra);
         QString mpixels, resolution;
-        mpixels.setNum(dims.width()*dims.height()/1000000.0, 'f', 2);
+        mpixels = QLocale().toString(dims.width()*dims.height()/1000000.0, 'f', 1);
 
         if (dims.isValid())
         {

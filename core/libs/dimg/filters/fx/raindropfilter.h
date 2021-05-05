@@ -6,7 +6,7 @@
  * Date        : 2005-05-25
  * Description : Raindrop threaded image filter.
  *
- * Copyright (C) 2005-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2005-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2006-2010 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  * Copyright (C) 2010      by Martin Klapetek <martin dot klapetek at gmail dot com>
  *
@@ -40,10 +40,11 @@ namespace Digikam
 
 class DIGIKAM_EXPORT RainDropFilter : public DImgThreadedFilter
 {
+    Q_OBJECT
 
 private:
 
-    struct Args
+    struct Q_DECL_HIDDEN Args
     {
         explicit Args()
             : start(0),
@@ -73,12 +74,12 @@ public:
 
     explicit RainDropFilter(QObject* const parent = nullptr);
     explicit RainDropFilter(DImg* const orgImage,
-                            QObject* const parent=nullptr,
+                            QObject* const parent = nullptr,
                             int drop=80,
                             int amount=150,
                             int coeff=30,
                             const QRect& selection=QRect(0, 0, 0, 0));
-    ~RainDropFilter();
+    ~RainDropFilter() override;
 
     static QString          FilterIdentifier()
     {
@@ -97,12 +98,12 @@ public:
         return 1;
     }
 
-    virtual QString         filterIdentifier()                          const override
+    QString         filterIdentifier()                          const override
     {
         return FilterIdentifier();
     }
 
-    virtual FilterAction    filterAction()                                    override;
+    FilterAction    filterAction()                                    override;
 
     void                    readParameters(const FilterAction& action)        override;
 
@@ -123,9 +124,11 @@ private:
 
     bool SetDropStatusBits(int Width, int Height, uchar* const pStatusBits, int X, int Y, int DropSize);
 
-    // A color is represented in RGB value (e.g. 0xFFFFFF is white color).
-    // But R, G and B values has 256 values to be used so, this function analyzes
-    // the value and limits to this range.
+    /**
+     * A color is represented in RGB value (e.g. 0xFFFFFF is white color).
+     * But R, G and B values has 256 values to be used so, this function analyzes
+     * the value and limits to this range.
+     */
     inline int  limitValues8(int ColorValue);
 
     inline int  limitValues16(int ColorValue);

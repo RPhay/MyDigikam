@@ -6,7 +6,7 @@
  * Date        : 2009-12-01
  * Description : An abstract base class for tiling of markers
  *
- * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2009-2011 by Michael G. Hansen <mike at mghansen dot de>
  *
  * This program is free software; you can redistribute it
@@ -139,9 +139,11 @@ public:
 
     private:
 
-        // Hidden copy constructor and assignment operator.
-        NonEmptyIterator(const NonEmptyIterator&);
-        NonEmptyIterator& operator=(const NonEmptyIterator&);
+        // Disable
+        NonEmptyIterator(const NonEmptyIterator&)            = delete;
+        NonEmptyIterator& operator=(const NonEmptyIterator&) = delete;
+
+    private:
 
         class Private;
         Private* const d;
@@ -150,7 +152,7 @@ public:
 public:
 
     explicit AbstractMarkerTiler(QObject* const parent = nullptr);
-    virtual ~AbstractMarkerTiler();
+    ~AbstractMarkerTiler() override;
 
     void tileDeleteChildren(Tile* const tile);
     void tileDelete(Tile* const tile);

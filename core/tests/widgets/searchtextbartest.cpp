@@ -38,7 +38,8 @@ using namespace QTest;
 
 QTEST_MAIN(SearchTextBarTest)
 
-SearchTextBarTest::SearchTextBarTest()
+SearchTextBarTest::SearchTextBarTest(QObject* const parent)
+    : QObject(parent)
 {
     callCount = 0;
 }
@@ -93,10 +94,12 @@ void SearchTextBarTest::testSearchTextSettings()
     const QString textEntered = QLatin1String("hello world");
     keyClicks(&textBar, textEntered);
 
+    QTest::qWait(2000);
+
     QCOMPARE(textBar.searchTextSettings().caseSensitive, defaultSettings.caseSensitive);
     QCOMPARE(textBar.searchTextSettings().text, textEntered);
 
-    QCOMPARE(callCount, textEntered.size());
+    QVERIFY(callCount >= 1);
     QCOMPARE(lastSearchTextSettings.caseSensitive, defaultSettings.caseSensitive);
     QCOMPARE(lastSearchTextSettings.text, textEntered);
 

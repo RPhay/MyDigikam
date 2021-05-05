@@ -7,7 +7,7 @@
  * Description : Building complex database SQL queries from search descriptions
  *
  * Copyright (C) 2007-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2012-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -105,6 +105,37 @@ void FieldQueryBuilder::addIntField(const QString& name)
     }
 }
 
+void FieldQueryBuilder::addLongField(const QString& name)
+{
+    if ((relation == SearchXml::Interval) || (relation == SearchXml::IntervalOpen))
+    {
+        QList<qlonglong> values = reader.valueToLongLongList();
+
+        if (values.size() != 2)
+        {
+            qCWarning(DIGIKAM_DATABASE_LOG) << "Relation Interval requires a list of two values";
+            return;
+        }
+
+        sql += QLatin1String(" (") + name + QLatin1Char(' ');
+        ItemQueryBuilder::addSqlRelation(sql,
+                                          relation == SearchXml::Interval ? SearchXml::GreaterThanOrEqual : SearchXml::GreaterThan);
+        sql += QLatin1String(" ? AND ") + name + QLatin1Char(' ');
+        ItemQueryBuilder::addSqlRelation(sql,
+                                          relation == SearchXml::Interval ? SearchXml::LessThanOrEqual : SearchXml::LessThan);
+        sql += QLatin1String(" ?) ");
+
+        *boundValues << values.first() << values.last();
+    }
+    else
+    {
+        sql += QLatin1String(" (") + name + QLatin1Char(' ');
+        ItemQueryBuilder::addSqlRelation(sql, relation);
+        sql += QLatin1String(" ?) ");
+        *boundValues << reader.valueToLongLong();
+    }
+}
+
 void FieldQueryBuilder::addDoubleField(const QString& name)
 {
     if ((relation == SearchXml::Interval) || (relation == SearchXml::IntervalOpen))
@@ -140,7 +171,18 @@ void FieldQueryBuilder::addStringField(const QString& name)
 {
     sql += QLatin1String(" (") + name + QLatin1Char(' ');
     ItemQueryBuilder::addSqlRelation(sql, relation);
-    sql += QLatin1String(" ?) ");
+
+    if (CoreDbAccess::parameters().isSQLite() &&
+        ((relation == SearchXml::Like)        ||
+         (relation == SearchXml::NotLike)))
+    {
+        sql += QLatin1String(" ? ESCAPE '\\') ");
+    }
+    else
+    {
+        sql += QLatin1String(" ?) ");
+    }
+
     *boundValues << prepareForLike(reader.value());
 }
 
@@ -280,7 +322,7 @@ void FieldQueryBuilder::addLongListField(const QString& name)
     }
     else
     {
-        addIntField(name);
+        addLongField(name);
     }
 }
 
@@ -498,7 +540,7 @@ void FieldQueryBuilder::addPosition()
             // We refrain from putting this into SQL, but use a post hook.
 
             /*
-            Reference: http://www.usenet-replayer.com/faq/comp.infosystems.gis.html
+            Reference: www.usenet-replayer.com/faq/comp.infosystems.gis.html
             Pseudo code of the formula:
                 Position 1 (lon1, lat1), position 2 (lon2, lat2), in Radians
                 d: distance; R: radius of earth. Same unit (assume: meters)
@@ -522,7 +564,7 @@ void FieldQueryBuilder::addPosition()
                     cosLat1           = cos(lat1);
                 }
 
-                virtual bool checkPosition(double lat2Deg, double lon2Deg) override
+                bool checkPosition(double lat2Deg, double lon2Deg) override
                 {
                     double lat2 = Coordinates::toRadians(lat2Deg);
                     double lon2 = Coordinates::toRadians(lon2Deg);

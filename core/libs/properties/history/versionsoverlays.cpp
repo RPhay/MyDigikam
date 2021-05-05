@@ -43,15 +43,17 @@ namespace Digikam
 
 class Q_DECL_HIDDEN ShowHideVersionsOverlay::Button : public ItemViewHoverButton
 {
+    Q_OBJECT
+
 public:
 
     explicit Button(QAbstractItemView* const parentView);
-    virtual QSize sizeHint() const;
+    QSize sizeHint() const override;
 
 protected:
 
-    virtual QIcon icon();
-    virtual void updateToolTip();
+    QIcon icon() override;
+    void updateToolTip() override;
 };
 
 ShowHideVersionsOverlay::Button::Button(QAbstractItemView* const parentView)
@@ -160,15 +162,17 @@ bool ShowHideVersionsOverlay::checkIndex(const QModelIndex& index) const
 
 class Q_DECL_HIDDEN ActionVersionsOverlay::Button : public ItemViewHoverButton
 {
+    Q_OBJECT
+
 public:
 
     Button(QAbstractItemView* const parentView, const QIcon& icon, const QString& text, const QString& tip);
-    virtual QSize sizeHint() const;
+    QSize sizeHint() const override;
 
 protected:
 
-    virtual QIcon icon();
-    virtual void updateToolTip();
+    QIcon icon() override;
+    void updateToolTip() override;
 
 protected:
 
@@ -179,9 +183,9 @@ protected:
 
 ActionVersionsOverlay::Button::Button(QAbstractItemView* const parentView, const QIcon& icon, const QString& text, const QString& tip)
     : ItemViewHoverButton(parentView),
-      m_icon(icon),
-      m_text(text),
-      m_tip(tip)
+      m_icon             (icon),
+      m_text             (text),
+      m_tip              (tip)
 {
     setup();
 }
@@ -205,10 +209,10 @@ void ActionVersionsOverlay::Button::updateToolTip()
 
 ActionVersionsOverlay::ActionVersionsOverlay(QObject* const parent, const QIcon& icon, const QString& text, const QString& tip)
     : HoverButtonDelegateOverlay(parent),
-      m_icon(icon),
-      m_text(text),
-      m_tip(tip),
-      m_referenceModel(nullptr)
+      m_icon                    (icon),
+      m_text                    (text),
+      m_tip                     (tip),
+      m_referenceModel          (nullptr)
 {
 }
 
@@ -271,8 +275,10 @@ bool ActionVersionsOverlay::checkIndex(const QModelIndex& index) const
         if (m_referenceModel)
         {
             ItemInfo info = ItemModel::retrieveItemInfo(index);
+
             // show overlay if image is not contained in reference model
-            return !m_referenceModel->hasImage(info);
+
+            return (!m_referenceModel->hasImage(info));
         }
 
         return true;
@@ -282,3 +288,5 @@ bool ActionVersionsOverlay::checkIndex(const QModelIndex& index) const
 }
 
 } // namespace Digikam
+
+#include "versionsoverlays.moc"

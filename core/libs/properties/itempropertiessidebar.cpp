@@ -6,7 +6,7 @@
  * Date        : 2004-11-17
  * Description : item properties side bar (without support of digiKam database).
  *
- * Copyright (C) 2004-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2004-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -47,6 +47,7 @@
 #include "dimg.h"
 #include "dmetadata.h"
 #include "itempropertiestab.h"
+#include "itemselectionpropertiestab.h"
 #include "itempropertiesmetadatatab.h"
 #include "itempropertiescolorstab.h"
 #include "itempropertiesversionstab.h"
@@ -57,37 +58,28 @@
 
 namespace Digikam
 {
-    bool                       m_dirtyPropertiesTab;
-    bool                       m_dirtyMetadataTab;
-    bool                       m_dirtyColorTab;
-    bool                       m_dirtyGpsTab;
-    bool                       m_dirtyHistoryTab;
-    QRect                      m_currentRect;
-    QUrl                       m_currentURL;
-    DImg*                      m_image;
-    ItemPropertiesTab*         m_propertiesTab;
-    ItemPropertiesMetadataTab* m_metadataTab;
-    ItemPropertiesColorsTab*   m_colorTab;
-#ifdef HAVE_MARBLE
-    ItemPropertiesGPSTab*      m_gpsTab;
-#endif // HAVE_MARBLE
 
 ItemPropertiesSideBar::ItemPropertiesSideBar(QWidget* const parent,
                                              SidebarSplitter* const splitter,
                                              Qt::Edge side,
                                              bool mimimizedDefault)
-    : Sidebar(parent, splitter, side, mimimizedDefault),
+    : Sidebar             (parent, splitter, side, mimimizedDefault),
       m_dirtyPropertiesTab(false),
-      m_dirtyMetadataTab(false),
-      m_dirtyColorTab(false),
-      m_dirtyGpsTab(false),
-      m_dirtyHistoryTab(false),
-      m_currentRect(QRect()),
-      m_image(nullptr)
+      m_dirtyMetadataTab  (false),
+      m_dirtyColorTab     (false),
+      m_dirtyGpsTab       (false),
+      m_dirtyHistoryTab   (false),
+      m_currentRect       (QRect()),
+      m_image             (nullptr)
 {
-    m_propertiesTab = new ItemPropertiesTab(parent);
-    m_metadataTab   = new ItemPropertiesMetadataTab(parent);
-    m_colorTab      = new ItemPropertiesColorsTab(parent);
+    m_propertiesStackedView  = new QStackedWidget(parent);
+    m_propertiesTab          = new ItemPropertiesTab(parent);
+    m_selectionPropertiesTab = new ItemSelectionPropertiesTab(parent);
+    m_metadataTab            = new ItemPropertiesMetadataTab(parent);
+    m_colorTab               = new ItemPropertiesColorsTab(parent);
+
+    m_propertiesStackedView->addWidget(m_propertiesTab);
+    m_propertiesStackedView->addWidget(m_selectionPropertiesTab);
 
     // NOTE: Special case with Showfoto which will only be able to load image, not video.
 
@@ -96,17 +88,22 @@ ItemPropertiesSideBar::ItemPropertiesSideBar(QWidget* const parent,
         m_propertiesTab->setVideoInfoDisable(true);
     }
 
-    appendTab(m_propertiesTab, QIcon::fromTheme(QLatin1String("configure")),        i18n("Properties"));
-    appendTab(m_metadataTab,   QIcon::fromTheme(QLatin1String("format-text-code")), i18n("Metadata")); // krazy:exclude=iconnames
-    appendTab(m_colorTab,      QIcon::fromTheme(QLatin1String("fill-color")),       i18n("Colors"));
+    appendTab(m_propertiesStackedView, QIcon::fromTheme(QLatin1String("configure")),        i18nc("@title: item properties", "Properties"));
+    appendTab(m_metadataTab,           QIcon::fromTheme(QLatin1String("format-text-code")), i18nc("@title: item properties", "Metadata")); // krazy:exclude=iconnames
+    appendTab(m_colorTab,              QIcon::fromTheme(QLatin1String("fill-color")),       i18nc("@title: item properties", "Colors"));
 
 #ifdef HAVE_MARBLE
+
     m_gpsTab = new ItemPropertiesGPSTab(parent);
-    appendTab(m_gpsTab,        QIcon::fromTheme(QLatin1String("globe")),            i18n("Map"));
+    appendTab(m_gpsTab,                QIcon::fromTheme(QLatin1String("globe")),            i18nc("@title: item properties", "Map"));
+
 #endif // HAVE_MARBLE
 
     connect(m_metadataTab, SIGNAL(signalSetupMetadataFilters(int)),
             this, SIGNAL(signalSetupMetadataFilters(int)));
+
+    connect(m_metadataTab, SIGNAL(signalSetupExifTool()),
+            this, SIGNAL(signalSetupExifTool()));
 
     // --- NOTE: use dynamic binding as slotChangedTab() is a virtual method which can be re-implemented in derived classes.
 
@@ -141,12 +138,15 @@ void ItemPropertiesSideBar::slotNoCurrentItem()
 {
     m_currentURL = QUrl();
 
+    m_selectionPropertiesTab->setCurrentURL();
     m_propertiesTab->setCurrentURL();
     m_metadataTab->setCurrentURL();
     m_colorTab->setData();
 
 #ifdef HAVE_MARBLE
+
     m_gpsTab->setCurrentURL();
+
 #endif // HAVE_MARBLE
 
     m_dirtyPropertiesTab = false;
@@ -174,8 +174,11 @@ void ItemPropertiesSideBar::slotChangedTab(QWidget* tab)
 {
     if (!m_currentURL.isValid())
     {
+
 #ifdef HAVE_MARBLE
+
         m_gpsTab->setActive(tab == m_gpsTab);
+
 #endif // HAVE_MARBLE
 
         return;
@@ -183,7 +186,7 @@ void ItemPropertiesSideBar::slotChangedTab(QWidget* tab)
 
     setCursor(Qt::WaitCursor);
 
-    if      ((tab == m_propertiesTab) && !m_dirtyPropertiesTab)
+    if      ((tab == m_propertiesStackedView) && !m_dirtyPropertiesTab)
     {
         m_propertiesTab->setCurrentURL(m_currentURL);
         setImagePropertiesInformation(m_currentURL);
@@ -199,7 +202,9 @@ void ItemPropertiesSideBar::slotChangedTab(QWidget* tab)
         m_colorTab->setData(m_currentURL, m_currentRect, m_image);
         m_dirtyColorTab = true;
     }
+
 #ifdef HAVE_MARBLE
+
     else if ((tab == m_gpsTab) && !m_dirtyGpsTab)
     {
         m_gpsTab->setCurrentURL(m_currentURL);
@@ -207,6 +212,7 @@ void ItemPropertiesSideBar::slotChangedTab(QWidget* tab)
     }
 
     m_gpsTab->setActive(tab == m_gpsTab);
+
 #endif // HAVE_MARBLE
 
     unsetCursor();
@@ -220,9 +226,9 @@ void ItemPropertiesSideBar::setImagePropertiesInformation(const QUrl& url)
     }
 
     QString str;
-    QString unavailable(i18n("<i>unavailable</i>"));
+    QString unavailable(QString::fromUtf8("<i>%1</i>").arg(i18nc("@info: item properties", "unavailable")));
     QFileInfo fileInfo(url.toLocalFile());
-    DMetadata metaData(url.toLocalFile());
+    QScopedPointer<DMetadata> metaData(new DMetadata(url.toLocalFile()));
 
     // -- File system information -----------------------------------------
 
@@ -245,16 +251,16 @@ void ItemPropertiesSideBar::setImagePropertiesInformation(const QUrl& url)
 
     if (!ext.isEmpty() && rawFilesExt.toUpper().contains(ext))
     {
-        m_propertiesTab->setImageMime(i18n("RAW Image"));
+        m_propertiesTab->setImageMime(i18nc("@info: item properties", "RAW Image"));
         bitDepth    = QLatin1String("48");
-        dims        = metaData.getItemDimensions();
-        colorMode   = i18n("Uncalibrated");
+        dims        = metaData->getItemDimensions();
+        colorMode   = i18nc("@info: item properties", "Uncalibrated");
     }
     else
     {
         m_propertiesTab->setImageMime(QMimeDatabase().mimeTypeForFile(fileInfo).comment());
 
-        dims      = metaData.getPixelSize();
+        dims      = metaData->getPixelSize();
 
         DImg img;
         img.loadItemInfo(url.toLocalFile(), false, false, false, false);
@@ -262,15 +268,15 @@ void ItemPropertiesSideBar::setImagePropertiesInformation(const QUrl& url)
         colorMode = DImg::colorModelToString(img.originalColorModel());
     }
 
-    QString mpixels;
-    mpixels.setNum(dims.width()*dims.height()/1000000.0, 'f', 2);
-    str = (!dims.isValid()) ? i18n("Unknown") : i18n("%1x%2 (%3Mpx)",
+    QString mpixels = QLocale().toString(dims.width()*dims.height()/1000000.0, 'f', 1);
+    str = (!dims.isValid()) ? i18nc("@info: item properties", "Unknown")
+                            : i18nc("@info: item properties", "%1x%2 (%3Mpx)",
             dims.width(), dims.height(), mpixels);
     m_propertiesTab->setItemDimensions(str);
 
     if (!dims.isValid())
     {
-        str = i18n("Unknown");
+        str = i18nc("@info: item properties", "Unknown");
     }
     else
     {
@@ -279,12 +285,13 @@ void ItemPropertiesSideBar::setImagePropertiesInformation(const QUrl& url)
 
     m_propertiesTab->setImageRatio(str);
     m_propertiesTab->setImageColorMode(colorMode.isEmpty() ? unavailable : colorMode);
-    m_propertiesTab->setImageBitDepth(bitDepth.isEmpty()   ? unavailable : i18n("%1 bpp", bitDepth));
-    m_propertiesTab->setHasSidecar(DMetadata::hasSidecar(url.toLocalFile()) ? i18n("Yes") : i18n("No"));
+    m_propertiesTab->setImageBitDepth(bitDepth.isEmpty()   ? unavailable : i18nc("@info: item properties", "%1 bpp", bitDepth));
+    m_propertiesTab->setHasSidecar(DMetadata::hasSidecar(url.toLocalFile()) ? i18nc("@info: item properties", "Yes")
+                                                                            : i18nc("@info: item properties", "No"));
 
     // -- Photograph information ------------------------------------------
 
-    PhotoInfoContainer photoInfo = metaData.getPhotographInformation();
+    PhotoInfoContainer photoInfo = metaData->getPhotographInformation();
 
     m_propertiesTab->setPhotoInfoDisable(photoInfo.isEmpty());
     ItemPropertiesTab::shortenedMakeInfo(photoInfo.make);
@@ -311,12 +318,12 @@ void ItemPropertiesSideBar::setImagePropertiesInformation(const QUrl& url)
     }
     else
     {
-        str = i18n("%1 (%2)", photoInfo.focalLength, photoInfo.focalLength35mm);
+        str = i18nc("@info: item properties", "%1 (%2)", photoInfo.focalLength, photoInfo.focalLength35mm);
         m_propertiesTab->setPhotoFocalLength(str);
     }
 
     m_propertiesTab->setPhotoExposureTime(photoInfo.exposureTime.isEmpty() ? unavailable : photoInfo.exposureTime);
-    m_propertiesTab->setPhotoSensitivity(photoInfo.sensitivity.isEmpty()   ? unavailable : i18n("%1 ISO", photoInfo.sensitivity));
+    m_propertiesTab->setPhotoSensitivity(photoInfo.sensitivity.isEmpty()   ? unavailable : i18nc("@info: item properties", "%1 ISO", photoInfo.sensitivity));
 
     if      (photoInfo.exposureMode.isEmpty() && photoInfo.exposureProgram.isEmpty())
     {
@@ -341,7 +348,7 @@ void ItemPropertiesSideBar::setImagePropertiesInformation(const QUrl& url)
 
     // -- Audio/Video information ------------------------------------------
 
-    VideoInfoContainer videoInfo = metaData.getVideoInformation();
+    VideoInfoContainer videoInfo = metaData->getVideoInformation();
 
     m_propertiesTab->setVideoInfoDisable(videoInfo.isEmpty());
 
@@ -355,7 +362,7 @@ void ItemPropertiesSideBar::setImagePropertiesInformation(const QUrl& url)
 
     // -- Caption, ratings, tag information ---------------------
 
-    CaptionsMap captions = metaData.getItemComments();
+    CaptionsMap captions = metaData->getItemComments();
     QString caption;
 
     if      (captions.contains(QLatin1String("x-default")))
@@ -369,10 +376,10 @@ void ItemPropertiesSideBar::setImagePropertiesInformation(const QUrl& url)
 
     m_propertiesTab->setCaption(caption);
 
-    m_propertiesTab->setRating(metaData.getItemRating());
+    m_propertiesTab->setRating(metaData->getItemRating());
 
     QStringList tagPaths;
-    metaData.getItemTagsPath(tagPaths);
+    metaData->getItemTagsPath(tagPaths);
     m_propertiesTab->setTags(tagPaths);
     m_propertiesTab->showOrHideCaptionAndTags();
 }
@@ -382,6 +389,7 @@ void ItemPropertiesSideBar::doLoadState()
     Sidebar::doLoadState();
 
     /// @todo m_propertiesTab should load its settings from our group
+
     m_propertiesTab->setObjectName(QLatin1String("Image Properties SideBar Expander"));
 
     KConfigGroup group = getConfigGroup();
@@ -389,8 +397,10 @@ void ItemPropertiesSideBar::doLoadState()
     m_propertiesTab->readSettings(group);
 
 #ifdef HAVE_MARBLE
+
     const KConfigGroup groupGPSTab      = KConfigGroup(&group, entryName(QLatin1String("GPS Properties Tab")));
     m_gpsTab->readSettings(groupGPSTab);
+
 #endif // HAVE_MARBLE
 
     const KConfigGroup groupColorTab    = KConfigGroup(&group, entryName(QLatin1String("Color Properties Tab")));
@@ -409,8 +419,10 @@ void ItemPropertiesSideBar::doSaveState()
     m_propertiesTab->writeSettings(group);
 
 #ifdef HAVE_MARBLE
+
     KConfigGroup groupGPSTab      = KConfigGroup(&group, entryName(QLatin1String("GPS Properties Tab")));
     m_gpsTab->writeSettings(groupGPSTab);
+
 #endif // HAVE_MARBLE
 
     KConfigGroup groupColorTab    = KConfigGroup(&group, entryName(QLatin1String("Color Properties Tab")));

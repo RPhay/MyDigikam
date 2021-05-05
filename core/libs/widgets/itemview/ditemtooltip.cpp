@@ -6,7 +6,7 @@
  * Date        : 2008-12-10
  * Description : tool tip widget for iconview, thumbbar, and folderview items
  *
- * Copyright (C) 2008-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2008-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -51,7 +51,7 @@ namespace Digikam
 
 DToolTipStyleSheet::DToolTipStyleSheet(const QFont& font)
     : maxStringLength(30),
-      unavailable(i18n("unavailable"))
+      unavailable    (i18n("unavailable"))
 {
     QString fontSize = (font.pointSize() == -1) ? QString::fromUtf8("font-size: %1px;").arg(font.pixelSize())
                                                 : QString::fromUtf8("font-size: %1pt;").arg(font.pointSize());
@@ -110,7 +110,7 @@ QString DToolTipStyleSheet::breakString(const QString& input) const
 
     while (i < str.length())
     {
-        if (count >= maxStringLength && str.at(i).isSpace())
+        if ((count >= maxStringLength) && str.at(i).isSpace())
         {
             count = 0;
             br.append(QLatin1String("<br/>"));
@@ -170,9 +170,9 @@ class Q_DECL_HIDDEN DItemToolTip::Private
 public:
 
     explicit Private()
-      : tipBorder(5)
+      : tipBorder(5),
+        corner   (0)
     {
-        corner = 0;
     }
 
     const int   tipBorder;
@@ -182,7 +182,7 @@ public:
 
 DItemToolTip::DItemToolTip(QWidget* const parent)
     : QLabel(parent, Qt::ToolTip),
-      d(new Private)
+      d     (new Private)
 {
     hide();
 
@@ -288,7 +288,7 @@ void DItemToolTip::reposition()
 
             // recalculate x
 
-            if (d->corner == 0)
+            if      (d->corner == 0)
             {
                 pos.setX(rect.right() + 5);
             }
@@ -395,7 +395,7 @@ bool DItemToolTip::event(QEvent* e)
             break;
     }
 
-    return QFrame::event(e);
+    return QLabel::event(e);
 }
 
 void DItemToolTip::resizeEvent(QResizeEvent* e)

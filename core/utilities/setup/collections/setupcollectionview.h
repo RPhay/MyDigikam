@@ -7,7 +7,7 @@
  * Description : collections setup tab model/view
  *
  * Copyright (C) 2008-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2005-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2005-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -44,7 +44,7 @@
 namespace Digikam
 {
 
-class DIGIKAM_EXPORT SetupCollectionModel : public QAbstractItemModel
+class DIGIKAM_GUI_EXPORT SetupCollectionModel : public QAbstractItemModel
 {
     Q_OBJECT
 
@@ -102,7 +102,7 @@ public:
 public:
 
     explicit SetupCollectionModel(QObject* const parent = nullptr);
-    ~SetupCollectionModel();
+    ~SetupCollectionModel() override;
 
     /// Read collections from CollectionManager
     void loadCollections();
@@ -113,18 +113,18 @@ public:
     /// Apply the changed settings to CollectionManager
     void apply();
 
-    QModelIndex indexForCategory(Category category) const;
-    QList<QModelIndex> categoryIndexes()            const;
+    QModelIndex indexForCategory(Category category)                                           const;
+    QList<QModelIndex> categoryIndexes()                                                      const;
 
     /// QAbstractItemModel implementation
-    virtual QVariant data(const QModelIndex& index, int role = Qt::DisplayRole)                       const;
-    virtual QVariant headerData(int section, Qt::Orientation orientation, int role = Qt::DisplayRole) const;
-    virtual int rowCount(const QModelIndex& parent = QModelIndex())                                   const;
-    virtual int columnCount(const QModelIndex& parent = QModelIndex())                                const;
-    virtual Qt::ItemFlags flags(const QModelIndex& index)                                             const;
-    virtual bool setData(const QModelIndex& index, const QVariant& value, int role = Qt::EditRole);
-    virtual QModelIndex index(int row, int column, const QModelIndex& parent = QModelIndex())         const;
-    virtual QModelIndex parent(const QModelIndex& index)                                              const;
+    QVariant data(const QModelIndex& index, int role = Qt::DisplayRole)                       const override;
+    QVariant headerData(int section, Qt::Orientation orientation, int role = Qt::DisplayRole) const override;
+    int rowCount(const QModelIndex& parent = QModelIndex())                                   const override;
+    int columnCount(const QModelIndex& parent = QModelIndex())                                const override;
+    Qt::ItemFlags flags(const QModelIndex& index)                                             const override;
+    bool setData(const QModelIndex& index, const QVariant& value, int role = Qt::EditRole)          override;
+    QModelIndex index(int row, int column, const QModelIndex& parent = QModelIndex())         const override;
+    QModelIndex parent(const QModelIndex& index)                                              const override;
 
 /*
     virtual Qt::DropActions supportedDropActions() const;
@@ -163,13 +163,13 @@ protected Q_SLOTS:
 
 protected:
 
-    QModelIndex indexForId(int id, int column) const;
+    QModelIndex indexForId(int id, int column)          const;
 
     bool askForNewCollectionPath(int category, QString* const newPath, QString* const newLabel);
     bool askForNewCollectionCategory(int* const category);
 
-    int categoryButtonMapId(const QModelIndex& index) const;
-    int buttonMapId(const QModelIndex& index) const;
+    int categoryButtonMapId(const QModelIndex& index)   const;
+    int buttonMapId(const QModelIndex& index)           const;
 
     static Category typeToCategory(CollectionLocation::Type type);
 
@@ -217,7 +217,7 @@ protected Q_SLOTS:
 
 private:
 
-    void setModel(QAbstractItemModel* model)
+    void setModel(QAbstractItemModel* model) override
     {
         setModel(static_cast<SetupCollectionModel*>(model));
     }
@@ -231,46 +231,47 @@ class SetupCollectionDelegate : public DWItemDelegate
 
 public:
 
-    explicit SetupCollectionDelegate(QAbstractItemView* const view, QObject* const parent = nullptr);
-    ~SetupCollectionDelegate();
+    explicit SetupCollectionDelegate(QAbstractItemView* const view,
+                                     QObject* const parent = nullptr);
+    ~SetupCollectionDelegate()                                                    override;
 
-    virtual QWidget* createEditor(QWidget* parent,
+    QWidget* createEditor(QWidget* parent,
+                          const QStyleOptionViewItem& option,
+                          const QModelIndex& index)                         const override;
+
+    bool     editorEvent(QEvent* event,
+                         QAbstractItemModel* model,
+                         const QStyleOptionViewItem& option,
+                         const QModelIndex& index)                                override;
+
+    void     paint(QPainter* painter,
+                   const QStyleOptionViewItem& option,
+                   const QModelIndex& index)                                const override;
+
+    void     setEditorData(QWidget* editor,
+                           const QModelIndex& index)                        const override;
+
+    void     setModelData(QWidget* editor,
+                          QAbstractItemModel* model,
+                          const QModelIndex& index)                         const override;
+
+    QSize    sizeHint(const QStyleOptionViewItem& option,
+                      const QModelIndex& index)                             const override;
+
+    void     updateEditorGeometry(QWidget* editor,
                                   const QStyleOptionViewItem& option,
-                                  const QModelIndex& index) const                       override;
+                                  const QModelIndex& index)                 const override;
 
-    virtual bool     editorEvent(QEvent* event,
-                                 QAbstractItemModel* model,
-                                 const QStyleOptionViewItem& option,
-                                 const QModelIndex& index)                              override;
-
-    virtual void     paint(QPainter* painter,
-                           const QStyleOptionViewItem& option,
-                           const QModelIndex& index) const                              override;
-
-    virtual void     setEditorData(QWidget* editor,
-                                   const QModelIndex& index) const                      override;
-
-    virtual void     setModelData(QWidget* editor,
-                                  QAbstractItemModel* model,
-                                  const QModelIndex& index) const                       override;
-
-    virtual QSize    sizeHint(const QStyleOptionViewItem& option,
-                              const QModelIndex& index) const                           override;
-
-    virtual void     updateEditorGeometry(QWidget* editor,
-                                          const QStyleOptionViewItem& option,
-                                          const QModelIndex& index) const               override;
-
-    virtual QList<QWidget*> createItemWidgets(const QModelIndex& index) const           override;
-    virtual void            updateItemWidgets(const QList<QWidget*> widgets,
-                                              const QStyleOptionViewItem& option,
-                                              const QPersistentModelIndex& index) const override;
+    QList<QWidget*> createItemWidgets(const QModelIndex& index)             const override;
+    void            updateItemWidgets(const QList<QWidget*>& widgets,
+                                      const QStyleOptionViewItem& option,
+                                      const QPersistentModelIndex& index)   const override;
 
 Q_SIGNALS:
 
-    void categoryButtonPressed(int mappedId) const;
-    void updatePressed(int mappedId)         const;
-    void deletePressed(int mappedId)         const;
+    void categoryButtonPressed(int mappedId)                                const;     // clazy:exclude=const-signal-or-slot
+    void updatePressed(int mappedId)                                        const;     // clazy:exclude=const-signal-or-slot
+    void deletePressed(int mappedId)                                        const;     // clazy:exclude=const-signal-or-slot
 
 protected:
 

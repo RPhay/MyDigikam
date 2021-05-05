@@ -44,20 +44,19 @@ class UniqueModifier : public Modifier
 public:
 
     explicit UniqueModifier();
-    virtual QString parseOperation(ParseSettings& settings);
-    virtual void    reset();
+    QString  parseOperation(ParseSettings& settings) override;
+    void     reset()                                 override;
 
 private:
 
-    UniqueModifier(const UniqueModifier&);
-    UniqueModifier& operator=(const UniqueModifier&);
-
-private:
-
-/*
-    QStringList cache;
-*/
     QMap<ParseResults::ResultsKey, QStringList> cache;
+
+private:
+
+    // Disable
+    explicit UniqueModifier(QObject*)                = delete;
+    UniqueModifier(const UniqueModifier&)            = delete;
+    UniqueModifier& operator=(const UniqueModifier&) = delete;
 };
 
 } // namespace Digikam

@@ -54,7 +54,7 @@ public:
 
     explicit Rule(const QString& name);
     Rule(const QString& name, const QString& icon);
-    virtual ~Rule();
+    ~Rule() override;
 
     /**
      * returns the currently assigned regExp object. Note that it is returned as a const ref, meaning
@@ -122,7 +122,7 @@ public:
     /**
      * Escape the token characters to make them work in regular expressions
      *
-     * @param token token to be escaped
+     * @param token the token to be escaped
      * @return A token with escaped characters. This token can then be used in a regular expression
      */
     static QString escapeToken(const QString& token);
@@ -169,10 +169,14 @@ protected Q_SLOTS:
 
 private:
 
-    Rule(const Rule&);
-    Rule& operator=(const Rule&);
-
     QPushButton* createButton(const QString& name, const QIcon& icon);
+
+private:
+
+    // Disable
+    Rule(QObject*)               = delete;
+    Rule(const Rule&)            = delete;
+    Rule& operator=(const Rule&) = delete;
 
 private:
 

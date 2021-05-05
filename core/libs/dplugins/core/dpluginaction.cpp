@@ -6,7 +6,7 @@
  * Date        : 2018-07-30
  * Description : action container for external plugin
  *
- * Copyright (C) 2018-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2018-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -84,7 +84,10 @@ DPluginAction::ActionCategory DPluginAction::actionCategory() const
     bool b = false;
     int v  = property("DPluginActionCategory").toInt(&b);
 
-    if (b) return (ActionCategory)v;
+    if (b)
+    {
+        return (ActionCategory)v;
+    }
 
     return InvalidCat;
 }
@@ -94,34 +97,34 @@ QString DPluginAction::actionCategoryToString() const
     switch (actionCategory())
     {
         case GenericExport:
-            return i18n("Export");
+            return i18nc("@action: dplugin", "Export");
         case GenericImport:
-            return i18n("Import");
+            return i18nc("@action: dplugin", "Import");
         case GenericTool:
-            return i18n("Tool");
+            return i18nc("@action: dplugin", "Tool");
         case GenericMetadata:
-            return i18n("Metadata");
+            return i18nc("@action: dplugin", "Metadata");
         case GenericView:
-            return i18n("View");
+            return i18nc("@action: dplugin", "View");
 
         case EditorFile:
-            return i18n("File");
+            return i18nc("@action: dplugin", "File");
         case EditorColors:
-            return i18n("Color");
+            return i18nc("@action: dplugin", "Color");
         case EditorEnhance:
-            return i18n("Enhance");
+            return i18nc("@action: dplugin", "Enhance");
         case EditorTransform:
-            return i18n("Transform");
+            return i18nc("@action: dplugin", "Transform");
         case EditorDecorate:
-            return i18n("Decorate");
+            return i18nc("@action: dplugin", "Decorate");
         case EditorFilters:
-            return i18n("Effects");
+            return i18nc("@action: dplugin", "Effects");
 
         default:
             break;
     }
 
-    return i18n("Invalid");
+    return i18nc("@action: dplugin", "Invalid");
 }
 
 QString DPluginAction::xmlSection() const
@@ -145,7 +148,7 @@ bool DPluginAction::pluginActionLessThan(DPluginAction* const a, DPluginAction* 
 {
     QCollator collator;
     collator.setNumericMode(true);
-    collator.setIgnorePunctuation(true);
+    collator.setIgnorePunctuation(false);
     collator.setCaseSensitivity(Qt::CaseSensitive);
 
     return (collator.compare(a->text(), b->text()) < 0);

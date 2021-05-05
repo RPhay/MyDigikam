@@ -7,7 +7,7 @@
  * Description : Exiv2 library interface.
  *               GPS manipulation methods
  *
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2006-2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  * Copyright (C) 2010-2012 by Michael G. Hansen <mike at mghansen dot de>
  *
@@ -140,11 +140,11 @@ bool MetaEngine::getGPSLatitudeNumber(double* const latitude) const
             return true;
         }
     }
-    catch(Exiv2::AnyError& e)
+    catch (Exiv2::AnyError& e)
     {
         d->printExiv2ExceptionError(QLatin1String("Cannot get GPS tag using Exiv2 "), e);
     }
-    catch(...)
+    catch (...)
     {
         qCCritical(DIGIKAM_METAENGINE_LOG) << "Default exception from Exiv2";
     }
@@ -231,11 +231,11 @@ bool MetaEngine::getGPSLongitudeNumber(double* const longitude) const
             return true;
         }
     }
-    catch(Exiv2::AnyError& e)
+    catch (Exiv2::AnyError& e)
     {
         d->printExiv2ExceptionError(QLatin1String("Cannot get GPS tag using Exiv2 "), e);
     }
-    catch(...)
+    catch (...)
     {
         qCCritical(DIGIKAM_METAENGINE_LOG) << "Default exception from Exiv2";
     }
@@ -250,7 +250,7 @@ bool MetaEngine::getGPSAltitude(double* const altitude) const
     try
     {
         double num, den;
-        *altitude=0.0;
+        *altitude = 0.0;
 
         // Try XMP first. Reason: XMP in sidecar may be more up-to-date than EXIF in original image.
 
@@ -303,7 +303,7 @@ bool MetaEngine::getGPSAltitude(double* const altitude) const
                     return false;
                 }
 
-                *altitude = num/den;
+                *altitude = num / den;
             }
             else
             {
@@ -318,11 +318,11 @@ bool MetaEngine::getGPSAltitude(double* const altitude) const
             return true;
         }
     }
-    catch(Exiv2::AnyError& e)
+    catch (Exiv2::AnyError& e)
     {
         d->printExiv2ExceptionError(QLatin1String("Cannot get GPS tag using Exiv2 "), e);
     }
-    catch(...)
+    catch (...)
     {
         qCCritical(DIGIKAM_METAENGINE_LOG) << "Default exception from Exiv2";
     }
@@ -383,11 +383,11 @@ bool MetaEngine::initializeGPSInfo()
 
         return true;
     }
-    catch(Exiv2::AnyError& e)
+    catch (Exiv2::AnyError& e)
     {
         d->printExiv2ExceptionError(QLatin1String("Cannot initialize GPS data using Exiv2 "), e);
     }
-    catch(...)
+    catch (...)
     {
         qCCritical(DIGIKAM_METAENGINE_LOG) << "Default exception from Exiv2";
     }
@@ -535,11 +535,11 @@ bool MetaEngine::setGPSInfo(const double* const altitude, const double latitude,
 
         return true;
     }
-    catch(Exiv2::AnyError& e)
+    catch (Exiv2::AnyError& e)
     {
         d->printExiv2ExceptionError(QLatin1String("Cannot set Exif GPS tag using Exiv2 "), e);
     }
-    catch(...)
+    catch (...)
     {
         qCCritical(DIGIKAM_METAENGINE_LOG) << "Default exception from Exiv2";
     }
@@ -575,7 +575,7 @@ bool MetaEngine::removeGPSInfo()
         for (Exiv2::ExifData::const_iterator it = d->exifMetadata().begin() ;
              it != d->exifMetadata().end() ; ++it)
         {
-            QString key = QString::fromLocal8Bit(it->key().c_str());
+            QString key = QString::fromStdString(it->key());
 
             if (key.section(QLatin1Char('.'), 1, 1) == QLatin1String("GPSInfo"))
             {
@@ -635,11 +635,11 @@ bool MetaEngine::removeGPSInfo()
 
         return true;
     }
-    catch(Exiv2::AnyError& e)
+    catch (Exiv2::AnyError& e)
     {
         d->printExiv2ExceptionError(QLatin1String("Cannot remove Exif GPS tag using Exiv2 "), e);
     }
-    catch(...)
+    catch (...)
     {
         qCCritical(DIGIKAM_METAENGINE_LOG) << "Default exception from Exiv2";
     }
@@ -745,7 +745,7 @@ void MetaEngine::convertToRationalSmallDenominator(const double number, long int
      */
 
     int      lastnum = 500; // this is _not_ the largest possible denominator
-    long int num, approx, bestnum=0, bestdenom=1;
+    long int num, approx, bestnum = 0, bestdenom = 1;
     double   value, error, leasterr, criterion;
 
     value = fractional;
@@ -770,7 +770,10 @@ void MetaEngine::convertToRationalSmallDenominator(const double number, long int
             bestdenom = approx;
             leasterr  = error;
 
-            if (leasterr <= criterion) break;
+            if (leasterr <= criterion)
+            {
+                break;
+            }
         }
     }
 
@@ -785,15 +788,25 @@ void MetaEngine::convertToRationalSmallDenominator(const double number, long int
     }
     else
     {
-        bestnum      += bestdenom * (long int)whole;
-        *numerator   =  bestnum;
-        *denominator =  bestdenom;
+        bestnum     += bestdenom * (long int)whole;
+        *numerator   = bestnum;
+        *denominator = bestdenom;
     }
+}
+
+double MetaEngine::convertDegreeAngleToDouble(double degrees, double minutes, double seconds)
+{
+    if (degrees > 0.0)
+    {
+        return (degrees + (minutes / 60.0) + (seconds / 3600.0));
+    }
+
+    return (degrees - (minutes / 60.0) - (seconds / 3600.0));
 }
 
 QString MetaEngine::convertToGPSCoordinateString(const long int numeratorDegrees, const long int denominatorDegrees,
                                                  const long int numeratorMinutes, const long int denominatorMinutes,
-                                                 const long int numeratorSeconds, long int denominatorSeconds,
+                                                 const long int numeratorSeconds, const long int denominatorSeconds,
                                                  const char directionReference)
 {
     /**
@@ -805,18 +818,19 @@ QString MetaEngine::convertToGPSCoordinateString(const long int numeratorDegrees
      */
 
     QString coordinate;
+    long int denSecs = denominatorSeconds;
 
     // be relaxed with seconds of 0/0
 
-    if ((denominatorSeconds == 0) &&
-        (numeratorSeconds   == 0))
+    if ((denSecs          == 0) &&
+        (numeratorSeconds == 0))
     {
-        denominatorSeconds = 1;
+        denSecs = 1;
     }
 
-    if ((denominatorDegrees == 1) &&
-        (denominatorMinutes == 1) &&
-        (denominatorSeconds == 1))
+    if      ((denominatorDegrees == 1) &&
+             (denominatorMinutes == 1) &&
+             (denSecs            == 1))
     {
         // use form DDD,MM,SSk
 
@@ -825,14 +839,14 @@ QString MetaEngine::convertToGPSCoordinateString(const long int numeratorDegrees
     }
     else if ((denominatorDegrees == 1)   &&
              (denominatorMinutes == 100) &&
-             (denominatorSeconds == 1))
+             (denSecs            == 1))
     {
         // use form DDD,MM.mmk
 
         coordinate             = QLatin1String("%1,%2%3");
         double minutes         = (double)numeratorMinutes / (double)denominatorMinutes;
         minutes               += (double)numeratorSeconds / 60.0;
-        QString minutesString =  QString::number(minutes, 'f', 8);
+        QString minutesString  = QString::number(minutes, 'f', 8);
 
         while (minutesString.endsWith(QLatin1String("0")) && !minutesString.endsWith(QLatin1String(".0")))
         {
@@ -843,7 +857,7 @@ QString MetaEngine::convertToGPSCoordinateString(const long int numeratorDegrees
     }
     else if ((denominatorDegrees == 0) ||
              (denominatorMinutes == 0) ||
-             (denominatorSeconds == 0))
+             (denSecs            == 0))
     {
         // Invalid. 1/0 is everything but 0. As is 0/0.
 
@@ -854,11 +868,11 @@ QString MetaEngine::convertToGPSCoordinateString(const long int numeratorDegrees
         // use form DDD,MM.mmk
 
         coordinate             = QLatin1String("%1,%2%3");
-        double degrees         = (double)numeratorDegrees / (double)denominatorDegrees;
+        double degrees         = (double)numeratorDegrees  / (double)denominatorDegrees;
         double wholeDegrees    = trunc(degrees);
-        double minutes         = (double)numeratorMinutes / (double)denominatorMinutes;
+        double minutes         = (double)numeratorMinutes  / (double)denominatorMinutes;
         minutes               += (degrees - wholeDegrees) * 60.0;
-        minutes               += ((double)numeratorSeconds / (double)denominatorSeconds) / 60.0;
+        minutes               += ((double)numeratorSeconds / (double)denSecs) / 60.0;
         QString minutesString  = QString::number(minutes, 'f', 8);
 
         while (minutesString.endsWith(QLatin1String("0")) && !minutesString.endsWith(QLatin1String(".0")))
@@ -997,7 +1011,7 @@ bool MetaEngine::convertFromGPSCoordinateString(const QString& gpsString, double
     {
         // form DDD,MM.mmk
 
-        *degrees =  parts[0].toLong();
+        *degrees  = parts[0].toLong();
         *degrees += parts[1].toDouble() / 60.0;
 
         if ((directionReference == 'W') || (directionReference == 'S'))
@@ -1011,7 +1025,7 @@ bool MetaEngine::convertFromGPSCoordinateString(const QString& gpsString, double
     {
         // use form DDD,MM,SSk
 
-        *degrees =  parts[0].toLong();
+        *degrees  = parts[0].toLong();
         *degrees += parts[1].toLong() / 60.0;
         *degrees += parts[2].toLong() / 3600.0;
 

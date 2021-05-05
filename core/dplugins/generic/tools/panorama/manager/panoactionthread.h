@@ -7,7 +7,7 @@
  * Description : a tool to create panorama by fusion of several images.
  *
  * Copyright (C) 2011-2016 by Benjamin Girault <benjamin dot girault at gmail dot com>
- * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2009-2011 by Johannes Wienke <languitar at semipol dot de>
  *
  * This program is free software; you can redistribute it
@@ -53,7 +53,7 @@ class PanoActionThread : public QObject
 public:
 
     explicit PanoActionThread(QObject* const parent);
-    ~PanoActionThread();
+    ~PanoActionThread() override;
 
 public:
 
@@ -133,7 +133,7 @@ private Q_SLOTS:
 
 private:
 
-    void appendStitchingJobs(QSharedPointer<ThreadWeaver::Sequence>& js,
+    void appendStitchingJobs(const QSharedPointer<ThreadWeaver::Sequence>& js,
                              const QUrl& ptoUrl,
                              QUrl& mkUrl,
                              QUrl& outputUrl,

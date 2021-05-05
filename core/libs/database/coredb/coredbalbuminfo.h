@@ -8,7 +8,7 @@
  *
  * Copyright (C) 2007-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  * Copyright (C) 2005      by Renchi Raju <renchi dot raju at gmail dot com>
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -49,8 +49,8 @@ class AlbumRootInfo
 public:
 
     explicit AlbumRootInfo()
-      : id(0),
-        type(AlbumRoot::UndefinedType),
+      : id    (0),
+        type  (AlbumRoot::UndefinedType),
         status(0)
     {
     };
@@ -81,15 +81,15 @@ public:
 public:
 
     explicit AlbumInfo()
-      : id(0),
+      : id         (0),
         albumRootId(0),
-        iconId(0)
+        iconId     (0)
     {
     };
 
     bool isNull() const
     {
-        return id == 0;
+        return (id == 0);
     }
 
     /**
@@ -98,7 +98,8 @@ public:
     bool operator<(const AlbumInfo& info) const
     {
         // include album root id?
-        return relativePath < info.relativePath;
+
+        return (relativePath < info.relativePath);
     }
 
 public:
@@ -122,26 +123,26 @@ public:
 class TagInfo
 {
 public:
-    
+
     typedef QList<TagInfo> List;
 
 public:
 
     explicit TagInfo()
-      : id(0),
-        pid(0),
+      : id    (0),
+        pid   (0),
         iconId(0)
     {
     };
 
     bool isNull() const
     {
-        return id == 0;
+        return (id == 0);
     }
 
     bool operator<(const TagInfo& info) const
     {
-        return name < info.name;
+        return (name < info.name);
     }
 
 public:
@@ -163,20 +164,20 @@ public:
 class SearchInfo
 {
 public:
-    
+
     typedef QList<SearchInfo> List;
 
 public:
 
     explicit SearchInfo()
-      : id(0),
+      : id  (0),
         type(DatabaseSearch::UndefinedType)
     {
     };
 
     bool isNull() const
     {
-        return id == 0;
+        return (id == 0);
     }
 
     /**
@@ -184,7 +185,7 @@ public:
      */
     bool operator<(const SearchInfo& info) const
     {
-        return id < info.id;
+        return (id < info.id);
     }
 
 public:
@@ -202,14 +203,14 @@ class AlbumShortInfo
 public:
 
     explicit AlbumShortInfo()
-      : id(0),
+      : id         (0),
         albumRootId(0)
     {
     };
 
     bool isNull() const
     {
-        return id == 0;
+        return (id == 0);
     }
 
 public:
@@ -226,14 +227,14 @@ class TagShortInfo
 public:
 
     explicit TagShortInfo()
-      : id(0),
+      : id (0),
         pid(0)
     {
     };
 
     bool isNull() const
     {
-        return id == 0;
+        return (id == 0);
     }
 
 public:
@@ -250,15 +251,15 @@ class ItemShortInfo
 public:
 
     explicit ItemShortInfo()
-      : id(0),
-        albumID(0),
+      : id         (0),
+        albumID    (0),
         albumRootID(0)
     {
     };
 
     bool isNull() const
     {
-        return id == 0;
+        return (id == 0);
     }
 
 public:
@@ -277,9 +278,9 @@ class ItemScanInfo
 public:
 
     explicit ItemScanInfo()
-      : id(0),
-        albumID(0),
-        status(DatabaseItem::UndefinedStatus),
+      : id      (0),
+        albumID (0),
+        status  (DatabaseItem::UndefinedStatus),
         category(DatabaseItem::UndefinedCategory),
         fileSize(0)
     {
@@ -287,7 +288,7 @@ public:
 
     bool isNull() const
     {
-        return id == 0;
+        return (id == 0);
     }
 
 public:
@@ -309,15 +310,15 @@ class CommentInfo
 public:
 
     explicit CommentInfo()
-      : id(-1),
+      : id     (-1),
         imageId(-1),
-        type(DatabaseComment::UndefinedType)
+        type   (DatabaseComment::UndefinedType)
     {
     };
 
     bool isNull() const
     {
-        return id == -1;
+        return (id == -1);
     }
 
 public:
@@ -344,7 +345,7 @@ public:
 
     bool isNull() const
     {
-        return id == -1;
+        return (id == -1);
     }
 
 public:
@@ -368,7 +369,7 @@ public:
 
     bool isNull() const
     {
-        return imageId == 0;
+        return (imageId == 0);
     }
 
 public:
@@ -386,8 +387,8 @@ public:
 
     explicit ImageRelation()
       : subjectId(0),
-        objectId(0),
-        type(DatabaseRelation::UndefinedType)
+        objectId (0),
+        type     (DatabaseRelation::UndefinedType)
     {
     }
 
@@ -411,7 +412,7 @@ public:
 
     bool isNull() const
     {
-        return tagId == -1;
+        return (tagId == -1);
     }
 
 public:
@@ -429,13 +430,13 @@ public:
 
     explicit ImageTagProperty()
       : imageId(-1),
-        tagId(-1)
+        tagId  (-1)
     {
     };
 
     bool isNull() const
     {
-        return imageId == -1;
+        return (imageId == -1);
     }
 
 public:

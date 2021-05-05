@@ -7,7 +7,8 @@
  * Description : Face database schema updater
  *
  * Copyright (C) 2007-2009 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2010-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2010-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C)      2020 by Nghia Duong <minhnghiaduong997 at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -40,7 +41,7 @@ namespace Digikam
 
 int FaceDbSchemaUpdater::schemaVersion()
 {
-    return 3;
+    return 4;
 }
 
 // -------------------------------------------------------------------------------------
@@ -50,11 +51,11 @@ class Q_DECL_HIDDEN FaceDbSchemaUpdater::Private
 public:
 
     explicit Private()
-        : setError(false),
-          currentVersion(0),
+        : setError              (false),
+          currentVersion        (0),
           currentRequiredVersion(0),
-          dbAccess(nullptr),
-          observer(nullptr)
+          dbAccess              (nullptr),
+          observer              (nullptr)
     {
     }
 
@@ -157,7 +158,7 @@ bool FaceDbSchemaUpdater::startUpdates()
         {
             // trying to open a database with a more advanced than this FaceDbSchemaUpdater supports
 
-            if (!versionRequired.isEmpty() && versionRequired.toInt() <= schemaVersion())
+            if (!versionRequired.isEmpty() && (versionRequired.toInt() <= schemaVersion()))
             {
                 // version required may be less than current version
 
@@ -225,6 +226,10 @@ bool FaceDbSchemaUpdater::makeUpdates()
         {
             updateV2ToV3();
         }
+        else if (d->currentVersion == 3)
+        {
+            updateV3ToV4();
+        }
     }
 
     return true;
@@ -236,7 +241,7 @@ bool FaceDbSchemaUpdater::createDatabase()
     if (createTables() && createIndices() && createTriggers())
     {
         d->currentVersion         = schemaVersion();
-        d->currentRequiredVersion = 3;
+        d->currentRequiredVersion = 4;
         return true;
     }
     else
@@ -247,20 +252,12 @@ bool FaceDbSchemaUpdater::createDatabase()
 
 bool FaceDbSchemaUpdater::createTables()
 {
+    // the creation order is important because of the foreign keys in MySQL
+
     return (
-
-#ifdef USE_DNN_RECOGNITION_BACKEND
-
+            d->dbAccess->backend()->execDBAction(d->dbAccess->backend()->getDBAction(QLatin1String("CreateFaceDB")))             &&
             d->dbAccess->backend()->execDBAction(d->dbAccess->backend()->getDBAction(QLatin1String("CreateFaceDBFaceMatrices"))) &&
-
-#else
-
-            d->dbAccess->backend()->execDBAction(d->dbAccess->backend()->getDBAction(QLatin1String("CreateFaceDBOpenCVLBPH")))   &&
-
-#endif
-
-            d->dbAccess->backend()->execDBAction(d->dbAccess->backend()->getDBAction(QLatin1String("CreateFaceDB")))
-
+            d->dbAccess->backend()->execDBAction(d->dbAccess->backend()->getDBAction(QLatin1String("CreateFaceDBKDTree")))
            );
 }
 
@@ -286,6 +283,7 @@ bool FaceDbSchemaUpdater::updateV1ToV2()
 
     d->currentVersion         = 2;
     d->currentRequiredVersion = 1;
+
     return true;
 }
 
@@ -294,6 +292,30 @@ bool FaceDbSchemaUpdater::updateV2ToV3()
     d->currentVersion         = 3;
     d->currentRequiredVersion = 3;
     d->dbAccess->backend()->execDBAction(d->dbAccess->backend()->getDBAction(QLatin1String("CreateFaceDBFaceMatrices")));
+
+    return true;
+}
+
+bool FaceDbSchemaUpdater::updateV3ToV4()
+{
+    if (!(d->dbAccess->backend()->execDBAction(d->dbAccess->backend()->getDBAction(QLatin1String("CreateFaceDBFaceMatrices")))))
+    {
+        qCDebug(DIGIKAM_FACEDB_LOG) << "fail to recreate FaceMatrices table";
+
+        return false;
+    }
+
+    if (!(d->dbAccess->backend()->execDBAction(d->dbAccess->backend()->getDBAction(QLatin1String("CreateFaceDBKDTree")))))
+    {
+        qCDebug(DIGIKAM_FACEDB_LOG) << "fail to create KDTree table";
+
+        return false;
+    }
+
+    d->currentVersion         = 4;
+    d->currentRequiredVersion = 4;
+
+    // TODO: retrain recognized identities
 
     return true;
 }

@@ -7,7 +7,7 @@
  * Description : Icon view for import tool items
  *
  * Copyright (C) 2012      by Islam Wazery <wazery at ubuntu dot com>
- * Copyright (C) 2012-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -26,6 +26,7 @@
 
 // Qt includes
 
+#include <QDesktopServices>
 #include <QPointer>
 #include <QAction>
 #include <QMenu>
@@ -66,7 +67,8 @@ ImportIconView::ImportIconView(QWidget* const parent)
 
     ImportSettings* const settings = ImportSettings::instance();
 
-    setThumbnailSize(ThumbnailSize(settings->getDefaultIconSize()));
+    // Virtual method: use Dynamic binding.
+    this->setThumbnailSize(ThumbnailSize(settings->getDefaultIconSize()));
 
     importItemModel()->setDragDropHandler(new ImportDragDropHandler(importItemModel()));
     setDragEnabled(true);
@@ -315,15 +317,21 @@ void ImportIconView::activated(const CamItemInfo& info, Qt::KeyboardModifiers)
         return;
     }
 
-    if (ImportSettings::instance()->getItemLeftClickAction() == ImportSettings::ShowPreview)
+    int leftClickAction = ImportSettings::instance()->getItemLeftClickAction();
+
+    if      (leftClickAction == ImportSettings::ShowPreview)
     {
         emit previewRequested(info, false);
     }
-    else
+    else if (leftClickAction == ImportSettings::StartEditor)
     {
 /*      TODO
         openFile(info);
 */
+    }
+    else
+    {
+        QDesktopServices::openUrl(info.url());
     }
 }
 

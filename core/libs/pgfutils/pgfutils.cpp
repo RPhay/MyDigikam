@@ -6,7 +6,7 @@
  * Date        : 2009-05-29
  * Description : static helper methods for PGF image format.
  *
- * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -45,7 +45,7 @@ extern "C"
 
 // Windows includes
 
-#ifdef Q_OS_WIN32
+#ifdef Q_OS_WIN
 #   include <windows.h>
 #endif
 
@@ -165,17 +165,9 @@ bool writePGFImageFile(const QImage& image,
                        int quality,
                        bool verbose)
 {
-#ifdef Q_OS_WIN32
+#ifdef Q_OS_WIN
 
-#   ifdef UNICODE
-
-    HANDLE fd = CreateFile((LPCWSTR)(QFile::encodeName(filePath).constData()), GENERIC_READ, 0, 0, OPEN_EXISTING, 0, 0);
-
-#   else
-
-    HANDLE fd = CreateFile(QFile::encodeName(filePath).constData(), GENERIC_READ, 0, 0, OPEN_EXISTING, 0, 0);
-
-#   endif
+    HANDLE fd = CreateFile((LPCWSTR)filePath.utf16(), GENERIC_READ, 0, 0, OPEN_EXISTING, 0, 0);
 
     if (fd == INVALID_HANDLE_VALUE)
     {
@@ -184,9 +176,9 @@ bool writePGFImageFile(const QImage& image,
         return false;
     }
 
-#elif defined(__POSIX__)
+#else
 
-    int fd = QT_OPEN(QFile::encodeName(filePath).constData(),
+    int fd = QT_OPEN(filePath.toUtf8().constData(),
                      O_RDWR | O_CREAT | O_TRUNC, S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH);
 
     if (fd == -1)
@@ -215,7 +207,7 @@ bool writePGFImageFile(const QImage& image,
         }
     }
 
-#ifdef Q_OS_WIN32
+#ifdef Q_OS_WIN
 
     CloseHandle(fd);
 
@@ -430,7 +422,15 @@ bool writePGFImageDataToStream(const QImage& image,
 
 bool loadPGFScaled(QImage& img, const QString& path, int maximumSize)
 {
-    FILE* const file = fopen(QFile::encodeName(path).constData(), "rb");
+#ifdef Q_OS_WIN
+
+    FILE* const file = _wfopen((const wchar_t*)path.utf16(), L"rb");
+
+#else
+
+    FILE* const file = fopen(path.toUtf8().constData(), "rb");
+
+#endif
 
     if (!file)
     {
@@ -443,6 +443,7 @@ bool loadPGFScaled(QImage& img, const QString& path, int maximumSize)
     if (fread(&header, 3, 1, file) != 1)
     {
         fclose(file);
+
         return false;
     }
 
@@ -453,6 +454,7 @@ bool loadPGFScaled(QImage& img, const QString& path, int maximumSize)
         // not a PGF file
 
         fclose(file);
+
         return false;
     }
 
@@ -461,17 +463,9 @@ bool loadPGFScaled(QImage& img, const QString& path, int maximumSize)
     // -------------------------------------------------------------------
     // Initialize PGF API.
 
-#ifdef Q_OS_WIN32
+#ifdef Q_OS_WIN
 
-#   ifdef UNICODE
-
-    HANDLE fd = CreateFile((LPCWSTR)(QFile::encodeName(path).constData()), GENERIC_READ, 0, 0, OPEN_EXISTING, 0, 0);
-
-#   else
-
-    HANDLE fd = CreateFile(QFile::encodeName(path).constData(), GENERIC_READ, 0, 0, OPEN_EXISTING, 0, 0);
-
-#   endif
+    HANDLE fd = CreateFile((LPCWSTR)path.utf16(), GENERIC_READ, 0, 0, OPEN_EXISTING, 0, 0);
 
     if (fd == INVALID_HANDLE_VALUE)
     {
@@ -480,7 +474,7 @@ bool loadPGFScaled(QImage& img, const QString& path, int maximumSize)
 
 #else
 
-    int fd = QT_OPEN(QFile::encodeName(path).constData(), O_RDONLY);
+    int fd = QT_OPEN(path.toUtf8().constData(), O_RDONLY);
 
     if (fd == -1)
     {

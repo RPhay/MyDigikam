@@ -7,7 +7,7 @@
  * Description : Exiv2 library interface.
  *               Embedded preview loading.
  *
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2006-2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  *
  * This program is free software; you can redistribute it
@@ -28,6 +28,7 @@
 #include "metaengine_previews.h"
 #include "metaengine_p.h"
 #include "digikam_debug.h"
+#include "digikam_config.h"
 
 #if defined(Q_CC_CLANG)
 #   pragma clang diagnostic push
@@ -42,8 +43,8 @@ class Q_DECL_HIDDEN MetaEnginePreviews::Private
 public:
 
     explicit Private()
+        : manager(nullptr)
     {
-        manager = nullptr;
     }
 
     ~Private()
@@ -51,7 +52,7 @@ public:
         delete manager;
     }
 
-    void load(Exiv2::Image::AutoPtr image_)
+    void load(Exiv2::Image::AutoPtr image_)     // clazy:exclude=function-args-by-ref
     {
         QMutexLocker lock(&s_metaEngineMutex);
 
@@ -81,11 +82,11 @@ public:
                 properties << *it;
             }
         }
-        catch(Exiv2::AnyError& e)
+        catch (Exiv2::AnyError& e)
         {
             MetaEngine::Private::printExiv2ExceptionError(QLatin1String("Cannot load preview data using Exiv2 "), e);
         }
-        catch(...)
+        catch (...)
         {
             qCCritical(DIGIKAM_METAENGINE_LOG) << "Default exception from Exiv2";
         }
@@ -105,7 +106,20 @@ MetaEnginePreviews::MetaEnginePreviews(const QString& filePath)
 
     try
     {
-        Exiv2::Image::AutoPtr image = Exiv2::ImageFactory::open((const char*)(QFile::encodeName(filePath).constData()));
+
+#if defined Q_OS_WIN && defined EXV_UNICODE_PATH
+
+        Exiv2::Image::AutoPtr image = Exiv2::ImageFactory::open((const wchar_t*)filePath.utf16());
+
+#elif defined Q_OS_WIN
+
+        Exiv2::Image::AutoPtr image = Exiv2::ImageFactory::open(QFile::encodeName(filePath).constData());
+
+#else
+
+        Exiv2::Image::AutoPtr image = Exiv2::ImageFactory::open(filePath.toUtf8().constData());
+
+#endif
 
 #if EXIV2_TEST_VERSION(0,27,99)
 
@@ -118,11 +132,11 @@ MetaEnginePreviews::MetaEnginePreviews(const QString& filePath)
 #endif
 
     }
-    catch(Exiv2::AnyError& e)
+    catch (Exiv2::AnyError& e)
     {
         MetaEngine::Private::printExiv2ExceptionError(QLatin1String("Cannot load metadata using Exiv2 "), e);
     }
-    catch(...)
+    catch (...)
     {
         qCCritical(DIGIKAM_METAENGINE_LOG) << "Default exception from Exiv2";
     }
@@ -148,11 +162,11 @@ MetaEnginePreviews::MetaEnginePreviews(const QByteArray& imgData)
 #endif
 
     }
-    catch(Exiv2::AnyError& e)
+    catch (Exiv2::AnyError& e)
     {
         MetaEngine::Private::printExiv2ExceptionError(QLatin1String("Cannot load metadata using Exiv2 "), e);
     }
-    catch(...)
+    catch (...)
     {
         qCCritical(DIGIKAM_METAENGINE_LOG) << "Default exception from Exiv2";
     }
@@ -182,15 +196,20 @@ QString MetaEnginePreviews::originalMimeType() const
 {
     if (d->image.get())
     {
-       return QLatin1String(d->image->mimeType().c_str());
+       return QString::fromStdString(d->image->mimeType());
     }
 
     return QString();
 }
 
-int MetaEnginePreviews::count()
+int MetaEnginePreviews::count() const
 {
     return d->properties.size();
+}
+
+int MetaEnginePreviews::size() const
+{
+    return count();
 }
 
 int MetaEnginePreviews::dataSize(int index)
@@ -230,7 +249,7 @@ QString MetaEnginePreviews::mimeType(int index)
         return QString();
     }
 
-    return QLatin1String(d->properties[index].mimeType_.c_str());
+    return QString::fromStdString(d->properties[index].mimeType_);
 }
 
 QString MetaEnginePreviews::fileExtension(int index)
@@ -240,7 +259,7 @@ QString MetaEnginePreviews::fileExtension(int index)
         return QString();
     }
 
-    return QLatin1String(d->properties[index].extension_.c_str());
+    return QString::fromStdString(d->properties[index].extension_);
 }
 
 QByteArray MetaEnginePreviews::data(int index)
@@ -261,13 +280,13 @@ QByteArray MetaEnginePreviews::data(int index)
 
         return QByteArray((const char*)image.pData(), image.size());
     }
-    catch(Exiv2::AnyError& e)
+    catch (Exiv2::AnyError& e)
     {
         MetaEngine::Private::printExiv2ExceptionError(QLatin1String("Cannot load metadata using Exiv2 "), e);
 
         return QByteArray();
     }
-    catch(...)
+    catch (...)
     {
         qCCritical(DIGIKAM_METAENGINE_LOG) << "Default exception from Exiv2";
 

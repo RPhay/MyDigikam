@@ -6,7 +6,7 @@
  * Date        : 2010-06-01
  * Description : A widget to search for places.
  *
- * Copyright (C) 2010-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2010-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2010-2011 by Michael G. Hansen <mike at mghansen dot de>
  *
  * This program is free software; you can redistribute it
@@ -58,9 +58,9 @@ public:
                           GPSItemModel* const gpsItemModel,
                           QItemSelectionModel* const gpsImageSelectionModel,
                           QWidget* const parent);
-    ~SearchWidget();
+    ~SearchWidget()                                                               override;
 
-    GeoModelHelper* getModelHelper() const;
+    GeoModelHelper* getModelHelper()                                        const;
 
     void saveSettingsToGroup(KConfigGroup* const group);
     void readSettingsFromGroup(const KConfigGroup* const group);
@@ -81,7 +81,7 @@ private Q_SLOTS:
 
 protected:
 
-    virtual bool eventFilter(QObject* watched, QEvent* event);
+    bool eventFilter(QObject* watched, QEvent* event)                             override;
 
 Q_SIGNALS:
 

@@ -6,7 +6,7 @@
  * Date        : 2003-16-10
  * Description : application settings interface
  *
- * Copyright (C) 2003-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2003-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C  2015      by Mohamed_Anwer <m_dot_anwer at gmx dot com>
  * Copyright (C) 2017      by Simon Frei <freisim93 at gmail dot com>
  *
@@ -103,11 +103,15 @@ public:
     static const QString configItemLeftClickActionEntry;
     static const QString configDefaultIconSizeEntry;
     static const QString configDefaultTreeIconSizeEntry;
+    static const QString configDefaultTreeFaceSizeEntry;
     static const QString configTreeViewFontEntry;
     static const QString configThemeEntry;
+    static const QString configUpdateType;
+    static const QString configUpdateWithDebug;
     static const QString configSidebarTitleStyleEntry;
     static const QString configUseNativeFileDialogEntry;
     static const QString configDrawFramesToGroupedEntry;
+    static const QString configExpandNewCurrentItemEntry;
     static const QString configScrollItemToCenterEntry;
     static const QString configShowOnlyPersonTagsInPeopleSidebarEntry;
     static const QString configRatingFilterConditionEntry;
@@ -182,6 +186,7 @@ public:
     static const QString configSyncDigikamtoBalooEntry;
     static const QString configStringComparisonTypeEntry;
     static const QString configFaceDetectionAccuracyEntry;
+    static const QString configFaceDetectionYoloV3Entry;
     static const QString configApplicationStyleEntry;
     static const QString configIconThemeEntry;
     static const QString configApplicationFontEntry;
@@ -204,6 +209,8 @@ public:
     bool                                         useNativeFileDialog;
     /// grouped item draw setting
     bool                                         drawFramesToGrouped;
+    /// expand item setting
+    bool                                         expandNewCurrentItem;
     /// item center setting
     bool                                         scrollItemToCenter;
     /// tag filter setting
@@ -275,6 +282,7 @@ public:
 
     /// tree-view settings
     int                                          treeThumbnailSize;
+    int                                          treeThumbFaceSize;
     QFont                                        treeviewFont;
 
     /// icon view settings
@@ -300,6 +308,8 @@ public:
 
     KSharedConfigPtr                             config;
 
+    int                                          updateType;
+    bool                                         updateWithDebug;
     DMultiTabBar::TextStyle                      sidebarTitleStyle;
 
     /// album view settings
@@ -311,7 +321,7 @@ public:
     int                                          imageSorting;
     int                                          imageSeparationMode;
     int                                          imageSeparationSortOrder;
-    ApplicationSettings::ItemLeftClickAction     itemLeftClickAction;
+    int                                          itemLeftClickAction;
 
     /// Baloo settings
     bool                                         syncToDigikam;
@@ -323,6 +333,7 @@ public:
 
     /// face detection settings
     double                                       faceDetectionAccuracy;
+    bool                                         faceDetectionYoloV3;
 
     /// misc
     ApplicationSettings::StringComparisonType    stringComparisonType;

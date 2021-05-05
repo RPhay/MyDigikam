@@ -2,11 +2,12 @@
  *
  * This file is a part of digiKam
  *
- * Date        : 2017-07-13
- * Description : Face recognition using deep learning
+ * Date        : 2020-05-22
+ * Description : Wrapper of face recognition using OpenFace
  *
- * Copyright (C) 2017      by Yingjie Liu <yingjiewudi at gmail dot com>
- * Copyright (C) 2017-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2019      by Thanh Trung Dinh <dinhthanhtrung1996 at gmail dot com>
+ * Copyright (C) 2020-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2020      by Nghia Duong <minhnghiaduong997 at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -21,73 +22,109 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_OPENCV_DNN_FACE_RECOGNIZER_H
-#define DIGIKAM_OPENCV_DNN_FACE_RECOGNIZER_H
+#ifndef OPENCV_DNN_FACERECOGNIZER_H
+#define OPENCV_DNN_FACERECOGNIZER_H
 
-// Qt include
+// Qt includes
 
 #include <QImage>
 
-// Local library
+// Local includes
 
 #include "digikam_opencv.h"
+#include "digikam_export.h"
+#include "identity.h"
 
 namespace Digikam
 {
 
-class OpenCVDNNFaceRecognizer
+class DIGIKAM_GUI_EXPORT OpenCVDNNFaceRecognizer
 {
-
 public:
 
+    enum Classifier
+    {
+        SVM = 0,
+        OpenCV_KNN,
+        Tree,
+        DB,
+    };
+
     /**
-     *  @brief FaceRecognizer:Master class to control entire recognition using Eigenfaces algorithm
+     *  @brief OpenCVDNNFaceRecognizer:Master class to control entire recognition using OpenFace algorithm
      */
-    explicit OpenCVDNNFaceRecognizer(bool debug=false);
+    explicit OpenCVDNNFaceRecognizer(Classifier method = Tree);
     ~OpenCVDNNFaceRecognizer();
+
+public:
 
     /**
      *  Returns a cvMat created from the inputImage, optimized for recognition
      */
-    cv::Mat prepareForRecognition(const QImage& inputImage);
+    static cv::Mat prepareForRecognition(QImage& inputImage);
 
     /**
-     *  Try to recognize the given image.
-     *  Returns the identity id.
-     *  If the identity cannot be recognized, returns -1.
+     *  Returns a cvMat created from the cvinputImage, optimized for recognition
      */
-    int recognize(const cv::Mat& inputImage);
+    static cv::Mat prepareForRecognition(const cv::Mat& cvinputImage);
 
     /**
-     *  Low-level codes to cluster images.
+     * Register faces corresponding to an identity
      */
-    void cluster(const std::vector<cv::Mat>& images,
-                 std::vector<int>& clusteredIndices,
-                 QStringList dataset,
-                 int nbOfClusters);
+    void train(const QList<QImage*>& images, const int label, const QString& context);
 
     /**
-     *  Trains the given images, representing faces of the given matched identities.
+     * Try to recognize the given image.
+     * Returns the identity id.
+     * If the identity cannot be recognized, returns -1.
+     * TODO: verify workflow to economize this routine
      */
-    void train(const std::vector<cv::Mat>& images,
-               const std::vector<int>& labels,
-               const QString& context,
-               const std::vector<cv::Mat>& images_rgb);
+    int recognize(QImage* inputImage);
 
-public:
+    /**
+     * Try to recognize a list of given images.
+     * Returns a list of identity ids.
+     * If an identity cannot be recognized, returns -1.
+     */
+    QVector<int> recognize(const QList<QImage*>& inputImages);
 
-    static float m_threshold;
+    /**
+     * clear specified trained data
+     */
+    void clearTraining(const QList<int>& idsToClear, const QString& trainingContext);
+
+    /**
+     * set K parameter of K-Nearest neighbors algorithm
+     */
+    void setNbNeighBors(int k);
+
+    /**
+     * set maximum square distance of 2 vector
+     */
+    void setThreshold(float threshold);
+
+    /**
+     * @brief register training data for unit test
+     */
+    bool registerTrainingData(const cv::Mat& preprocessedImage, int label);
+
+    /**
+     * @brief predict label of test data for unit test
+     */
+    int verifyTestData(const cv::Mat& preprocessedImage);
 
 private:
 
-    /// Hidden copy constructor and assignment operator.
-    OpenCVDNNFaceRecognizer(const OpenCVDNNFaceRecognizer&);
-    OpenCVDNNFaceRecognizer& operator=(const OpenCVDNNFaceRecognizer&);
+    // Disable
+    OpenCVDNNFaceRecognizer(const OpenCVDNNFaceRecognizer&)            = delete;
+    OpenCVDNNFaceRecognizer& operator=(const OpenCVDNNFaceRecognizer&) = delete;
+
+private:
 
     class Private;
-    Private* const d;
+    Private* d;
 };
 
 } // namespace Digikam
 
-#endif // DIGIKAM_OPENCV_DNN_FACE_RECOGNIZER_H
+#endif // OPENCV_DNN_FACERECOGNIZER_H

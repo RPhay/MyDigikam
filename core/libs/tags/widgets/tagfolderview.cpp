@@ -7,7 +7,7 @@
  * Description : tags folder view.
  *
  * Copyright (C) 2005-2006 by Joern Ahrens <joern dot ahrens at kdemail dot net>
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2009-2011 by Andi Clemens <andi dot clemens at gmail dot com>
  * Copyright (C) 2009-2011 by Johannes Wienke <languitar at semipol dot de>
  *
@@ -56,10 +56,10 @@ class Q_DECL_HIDDEN TagFolderView::Private
 public:
 
     explicit Private()
-      : showFindDuplicateAction(true),
+      : showFindDuplicateAction (true),
         showDeleteFaceTagsAction(false),
-        resetIconAction(nullptr),
-        findDuplAction(nullptr)
+        resetIconAction         (nullptr),
+        findDuplAction          (nullptr)
     {
     }
 
@@ -72,7 +72,7 @@ public:
 
 TagFolderView::TagFolderView(QWidget* const parent, TagModel* const model)
     : TagTreeView(parent),
-      d(new Private)
+      d          (new Private)
 {
     setAlbumModel(model);
 
@@ -82,6 +82,15 @@ TagFolderView::TagFolderView(QWidget* const parent, TagModel* const model)
     setSortingEnabled(true);
     setSelectAlbumOnClick(true);
     setEnableContextMenu(true);
+
+    /// This ensures that the View appears sorted
+
+    connect(AlbumManager::instance(), &AlbumManager::signalFaceCountsDirty,
+            this, [=]()
+        {
+            filteredModel()->sort(0, filteredModel()->sortOrder());
+        }
+    );
 }
 
 TagFolderView::~TagFolderView()
@@ -113,8 +122,12 @@ void TagFolderView::addCustomContextMenuActions(ContextMenuHelper& cmh, Album* a
         return;
     }
 
-    if ((tag->id() != FaceTags::unconfirmedPersonTagId()) &&
-        (tag->id() != FaceTags::unknownPersonTagId()))
+    if (
+        (tag->id() != FaceTags::unconfirmedPersonTagId()) &&
+        (tag->id() != FaceTags::unknownPersonTagId())     &&
+        (tag->id() != FaceTags::existsIgnoredPerson())    &&
+        (tag->id() != FaceTags::ignoredPersonTagId())
+       )
     {
         cmh.addActionNewTag(tagModificationHelper(), tag);
 
@@ -261,7 +274,7 @@ void TagFolderView::slotCollapseNode()
     }
 }
 
-void TagFolderView::handleCustomContextMenuAction(QAction* action, AlbumPointer<Album> album)
+void TagFolderView::handleCustomContextMenuAction(QAction* action, const AlbumPointer<Album>& album)
 {
     Album* const a    = album;
     TAlbum* const tag = dynamic_cast<TAlbum*>(a);
@@ -274,7 +287,7 @@ void TagFolderView::handleCustomContextMenuAction(QAction* action, AlbumPointer<
     if      (action == d->resetIconAction)
     {
         QString errMsg;
-        AlbumManager::instance()->updateTAlbumIcon(tag, QLatin1String("tag"), 0, errMsg);
+        AlbumManager::instance()->updateTAlbumIcon(tag, tag->standardIconName(), 0, errMsg);
     }
     else if (action == d->findDuplAction)
     {
@@ -400,7 +413,7 @@ void TagFolderView::contextMenuEvent(QContextMenuEvent* event)
 
 void TagFolderView::keyPressEvent(QKeyEvent* event)
 {
-    if ((event->key() == Qt::Key_Return) &&
+    if ((event->key()       == Qt::Key_Return) &&
         (event->modifiers() == Qt::AltModifier))
     {
         QList<TAlbum*> selected = selectedTagAlbums();

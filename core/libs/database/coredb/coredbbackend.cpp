@@ -7,7 +7,7 @@
  * Description : Core database abstract backend.
  *
  * Copyright (C) 2007-2009 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2010-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2010-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -73,7 +73,9 @@ bool CoreDbBackend::initSchema(CoreDbSchemaUpdater* updater)
 void CoreDbBackend::recordChangeset(const ImageChangeset& changeset)
 {
     Q_D(CoreDbBackend);
+
     // if we want to do compression of changesets, think about doing this here
+
     d->imageChangesetContainer.recordChangeset(changeset);
 }
 

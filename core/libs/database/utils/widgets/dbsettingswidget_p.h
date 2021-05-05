@@ -7,7 +7,7 @@
  * Description : database settings widget - private container
  *
  * Copyright (C) 2009-2010 by Holger Foerster <Hamsi2k at freenet dot de>
- * Copyright (C) 2010-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2010-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -58,13 +58,14 @@
 
 // Local includes
 
+#include "digikam_config.h"
+#include "digikam_debug.h"
+#include "digikam_globals.h"
 #include "applicationsettings.h"
 #include "dfileselector.h"
 #include "dbengineparameters.h"
 #include "dbinarysearch.h"
 #include "dexpanderbox.h"
-#include "digikam_config.h"
-#include "digikam_debug.h"
 #include "dlayoutbox.h"
 #include "mysqlinitbinary.h"
 #include "mysqlservbinary.h"
@@ -79,28 +80,28 @@ class Q_DECL_HIDDEN DatabaseSettingsWidget::Private
 public:
 
     explicit Private()
-      : mysqlCmdBox(nullptr),
-        dbNameCore(nullptr),
-        dbNameThumbs(nullptr),
-        dbNameFace(nullptr),
-        dbNameSimilarity(nullptr),
-        hostName(nullptr),
-        connectOpts(nullptr),
-        userName(nullptr),
-        password(nullptr),
-        hostPort(nullptr),
-        dbType(nullptr),
-        dbPathLabel(nullptr),
-        sqlInit(nullptr),
-        expertSettings(nullptr),
-        dbNoticeBox(nullptr),
-        dbDetailsBox(nullptr),
-        tab(nullptr),
-        dbPathEdit(nullptr),
-        dbBinariesWidget(nullptr),
-        ignoreDirectoriesBox(nullptr),
-        ignoreDirectoriesEdit(nullptr),
-        ignoreDirectoriesLabel(nullptr)
+      : mysqlCmdBox             (nullptr),
+        dbNameCore              (nullptr),
+        dbNameThumbs            (nullptr),
+        dbNameFace              (nullptr),
+        dbNameSimilarity        (nullptr),
+        hostName                (nullptr),
+        connectOpts             (nullptr),
+        userName                (nullptr),
+        password                (nullptr),
+        hostPort                (nullptr),
+        dbType                  (nullptr),
+        dbPathLabel             (nullptr),
+        sqlInit                 (nullptr),
+        expertSettings          (nullptr),
+        dbNoticeBox             (nullptr),
+        dbDetailsBox            (nullptr),
+        tab                     (nullptr),
+        dbPathEdit              (nullptr),
+        dbBinariesWidget        (nullptr),
+        ignoreDirectoriesBox    (nullptr),
+        ignoreDirectoriesEdit   (nullptr),
+        ignoreDirectoriesLabel  (nullptr)
     {
     }
 

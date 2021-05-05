@@ -55,14 +55,14 @@ public:
                        bool cleanSimilarityDb = false,
                        bool shrinkDatabases = false,
                        ProgressItem* const parent = nullptr);
-    virtual ~DbCleaner();
+    ~DbCleaner()                    override;
 
     void setUseMultiCoreCPU(bool b) override;
 
 private Q_SLOTS:
 
-    void slotStart() override;
-    void slotCancel() override;
+    void slotStart()                override;
+    void slotCancel()               override;
     void slotAdvance();
     void slotShrinkNextDBInfo(bool done, bool passed);
 
@@ -80,7 +80,7 @@ private Q_SLOTS:
     void slotCleanedSimilarity();
     void slotShrinkDatabases();
 
-    void slotDone() override;
+    void slotDone()                 override;
 
 private:
 
@@ -97,14 +97,14 @@ class DbShrinkDialog : public QDialog
 public:
 
     explicit DbShrinkDialog(QWidget* const parent);
-    virtual ~DbShrinkDialog();
+    ~DbShrinkDialog() override;
 
     void setActive(const int pos);
     void setIcon(const int pos, const QIcon& icon);
 
 public Q_SLOTS:
 
-    virtual int exec();
+    int exec()        override;
 
 private Q_SLOTS:
 

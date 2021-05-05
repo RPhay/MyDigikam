@@ -6,7 +6,7 @@
  * Date        : 2009-02-21
  * Description : a view to show Queue Settings.
  *
- * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -44,7 +44,7 @@ class QueueSettingsView : public QTabWidget
 public:
 
     explicit QueueSettingsView(QWidget* const parent = nullptr);
-    ~QueueSettingsView();
+    ~QueueSettingsView() override;
 
     void setBusy(bool b);
 

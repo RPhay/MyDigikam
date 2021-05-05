@@ -1,5 +1,5 @@
 /** \mainpage digiKam API reference page.
-    \author (c) 2001-2020 digiKam team.
+    \author (c) 2001-2021 digiKam team.
     \brief digiKam is an advanced open-source digital photo management application that runs on Linux, Windows, and MacOS.
     \image html logo-digikam.png
 
@@ -54,7 +54,8 @@
 |│   │       └── utils                                        | View utility classes                                                    |
 |│   ├── cmake                                                | Extra Cmake scripts will be hosted here                                 |
 |│   │   ├── modules                                          | Cmake scripts to find extra dependencies                                |
-|│   │   ├── templates                                        | Cmake template files used at configuration time                         |
+|│   │   └── templates                                        | Cmake template files used at configuration time                         |
+|│   ├── data                                                 | Application data files will be hosted here                              |
 |│   │   ├── about                                            | Welcome page files (HTML + CSS)                                         |
 |│   │   ├── colorschemes                                     | GUI Color scheme files                                                  |
 |│   │   ├── database                                         | Database XML configuration files                                        |
@@ -248,12 +249,14 @@
 |└── project                                                  | Extra project parts                                                     |
 |    ├── bundles                                              | Bundles build scripts                                                   |
 |    │   ├── 3rdparty                                         | External components required to build bundles                           |
+|    │   ├── CD                                               | Continuous Deployement configurations                                   |
 |    │   ├── appimage                                         | Linux AppImage                                                          |
+|    │   ├── flatpak                                          | Linux Flatpak                                                           |
 |    │   ├── macports                                         | MacOs package                                                           |
 |    │   └── mxe                                              | Windows installer                                                       |
 |    ├── documents                                            | Project documentations                                                  |
 |    ├── release                                              | Release scripts                                                         |
-|    ├── reports                                              | Static analyzers report scripts                                         |
+|    ├── reports                                              | Static analyzers report scripts for Continuous Integration              |
 |    └── scripts                                              | 3rdparty source code management scripts                                 |
 
 \section externaldeps External Dependencies
@@ -274,86 +277,84 @@
 
 The full list of mandatory (X) and optional (opt) external dependencies required to compile and link digiKam source code is listed below.
 
-| Dependency           | Status   | Version     | Project URL                                       | Remarks                                                | TODO                                                                                  |
-|----------------------|----------|-------------|---------------------------------------------------|--------------------------------------------------------|---------------------------------------------------------------------------------------|
-| CMake                |   X      | >= 3.0.0    | http://www.cmake.org                              | > 3.1.0 hightly recommended                            |                                                                                       |
-| ECM                  |   X      | >= 1.7.0    | https://cgit.kde.org/extra-cmake-modules.git/     |                                                        |                                                                                       |
-| Qt5::Core            |   X      | >= 5.9      | http://code.qt.io/cgit/qt/qtbase.git/             |                                                        |                                                                                       |
-| Qt5::Gui             |   X      | >= 5.9      | http://code.qt.io/cgit/qt/qtbase.git/             |                                                        |                                                                                       |
-| Qt5::Widgets         |   X      | >= 5.9      | http://code.qt.io/cgit/qt/qtbase.git/             |                                                        |                                                                                       |
-| Qt5::Network         |   X      | >= 5.9      | http://code.qt.io/cgit/qt/qtbase.git/             |                                                        |                                                                                       |
-| Qt5::Sql             |   X      | >= 5.9      | http://code.qt.io/cgit/qt/qtbase.git/             | Including Qt5::Sqlite and Qt5::Mysql plugins           |                                                                                       |
-| Qt5::Xml             |   X      | >= 5.9      | http://code.qt.io/cgit/qt/qtbase.git/             |                                                        |                                                                                       |
-| Qt5::Concurrent      |   X      | >= 5.9      | http://code.qt.io/cgit/qt/qtbase.git/             |                                                        |                                                                                       |
-| Qt5::PrintSupport    |   X      | >= 5.9      | http://code.qt.io/cgit/qt/qtbase.git/             |                                                        |                                                                                       |
-| Qt5::Svg             |   X      | >= 5.9      | http://code.qt.io/cgit/qt/qtsvg.git/              |                                                        |                                                                                       |
-| Qt5::XmlPatterns     |   X      | >= 5.9      | http://code.qt.io/cgit/qt/qtxmlpatterns.git/      |                                                        |                                                                                       |
-| Qt5::WebKitWidgets   |   X      | >= 5.9      | http://code.qt.io/cgit/qt/qtwebkit.git/           | To render web contents                                 | Still the default while transitional stage (WebEngine do not compile with Mingw)      |
-| Qt5::WebEngine       |  opt     | >= 5.9      | http://code.qt.io/cgit/qt/qtwebengine.git/        | To render web contents (ENABLE_QWEBENGINE=on)          | To replace QWebKitWidgets. Must be the default in the future when Mingw supported     |
-| Qt5::X11Extras       |  opt     | >= 5.9      | http://code.qt.io/cgit/qt/qtx11extras.git/        | For color management support under Linux               |                                                                                       |
-| Qt5::DBus            |  opt     | >= 5.9      | http://code.qt.io/cgit/qt/qtbase.git/             | Optional: only for Linux Desktop                       |                                                                                       |
-| Qt5::OpenGL          |  opt     | >= 5.9      | http://code.qt.io/cgit/qt/qtbase.git/             | For Presentation tool                                  |                                                                                       |
-| Qt5::Test            |  opt     | >= 5.9      | http://code.qt.io/cgit/qt/qtbase.git/             | To compile test codes (BUILD_TESTING=on)               |                                                                                       |
-| Qt5::Qml             |  opt     | >= 5.9      | http://code.qt.io/cgit/qt/qtbase.git/             | To compile test codes (BUILD_TESTING=on) O2 unit tests |                                                                                       |
-| Qt5::WebView         |  opt     | >= 5.9      | http://code.qt.io/cgit/qt/qtbase.git/             | To compile test codes (BUILD_TESTING=on) O2 unit tests |                                                                                       |
-| KF5::Config          |   X      | >= 5.5.0    | https://cgit.kde.org/kconfig.git/about/           |                                                        |                                                                                       |
-| KF5::XmlGui          |   X      | >= 5.5.0    | https://cgit.kde.org/kxmlgui.git/about/           |                                                        |                                                                                       |
-| KF5::I18n            |   X      | >= 5.5.0    | https://cgit.kde.org/ki18n.git/about/             |                                                        |                                                                                       |
-| KF5::WindowSystem    |   X      | >= 5.5.0    | https://cgit.kde.org/kwindowsystem.git/about/     |                                                        |                                                                                       |
-| KF5::Service         |   X      | >= 5.5.0    | https://cgit.kde.org/kservice.git/about/          | TODO: make optional for Linux desktop (DFileOperations)|                                                                                       |
-| KF5::Solid           |   X      | >= 5.5.0    | https://cgit.kde.org/solid.git/about/             |                                                        |                                                                                       |
-| KF5::CoreAddons      |   X      | >= 5.5.0    | https://cgit.kde.org/kcoreaddons.git/about/       | Needs for KAboutData                                   |                                                                                       |
-| KF5::NotifyConfig    |  opt     | >= 5.5.0    | https://cgit.kde.org/knotifyconfig.git/about/     | For Linux desktop application notify configuration     |                                                                                       |
-| KF5::Notifications   |  opt     | >= 5.5.0    | https://cgit.kde.org/knotifications.git/about/    | For Linux desktop notifications integrations           |                                                                                       |
-| KF5::ThreadWeaver    |  opt     | >= 5.5.0    | https://cgit.kde.org/threadweaver.git/about/      | For panorama tool                                      |                                                                                       |
-| KF5::IconThemes      |  opt     | >= 5.5.0    | https://cgit.kde.org/kiconthemes.git/about/       | Optional: only for Linux Desktop (KIconDialog)         |                                                                                       |
-| KF5::FileMetaData    |  opt     | >= 5.5.0    | https://cgit.kde.org/kfilemetadata.git/about/     | KDE files indexer (ENABLE_KFILEMETADATASUPPORT=on)     | Still experimental, disabled by default. Implementation from KDE side very unstable   |
-| KF5::CalendarCore    |  opt     | >= 5.5.0    | https://cgit.kde.org/kcalendarcore.git/about/     | For calendar tool to setup ical special events         |                                                                                       |
-| KF5::KIO             |  opt     | >= 5.5.0    | https://cgit.kde.org/kio.git/about/               | Optional: only for Linux Desktop                       |                                                                                       |
-| KF5::AkonadiContact  |  opt     | >= 4.89.0   | https://cgit.kde.org/akonadi-contacts.git/about/  | KDE Mail contacts (ENABLE_AKONADICONTACTSUPPORT=on)    | Still experimental, disabled by default. Need testing                                 |
-| libopencv            |   X      | >= 3.3      | http://opencv.willowgarage.com                    | OpenCV 4 supported with digiKam 6.1.0                  | DNN module required for face management                                               |
-| libpthread           |   X      | >= 2.0.0    | http://www.gnu.org/software/hurd/libpthread.html  | For DNG converter                                      |                                                                                       |
-| libtiff              |   X      | >= 4.0      | http://www.remotesensing.org/libtiff              | For DImg image loader                                  |                                                                                       |
-| libpng               |   X      | >= 1.6      | http://www.libpng.org/pub/png/libpng.html         | For DImg image loader                                  |                                                                                       |
-| libjpeg              |   X      | >= 6b       | http://www.ijg.org                                | jpeglib >= 8.0 hightly recommended for RawEngine       |                                                                                       |
-| libboost             |   X      | >= 1.55.0   | http://www.boost.org/doc/libs                     | For Versionning support                                |                                                                                       |
-| liblcms              |   X      | >= 2.x      | http://www.littlecms.com                          | For Color Management support                           |                                                                                       |
-| libexpat             |   X      | >= 2.1.0    | http://expat.sourceforge.net                      | For DNG converter                                      |                                                                                       |
-| libexiv2             |   X      | >= 0.27.0   | http://www.exiv2.org                              | Metadata low level management.                         |                                                                                       |
-| libxml2              |  opt     | >= 2.7.0    | http://xmlsoft.org                                | For HtmlGallery tool                                   |                                                                                       |
-| libxslt              |  opt     | >= 1.1.0    | http://xmlsoft.org/XSLT                           | For HtmlGallery tool                                   |                                                                                       |
-| libqtav              |  opt     | >= 1.12.0   | http://www.qtav.org                               | To play video and audio (ENABLE_MEDIAPLAYER=on)        |                                                                                       |
-| libffmpeg            |  opt     | >= 3.3.x    | http://www.ffmpeg.org                             | To play video and audio (ENABLE_MEDIAPLAYER=on)        | libavformat, libavutil, libavcodec used to extract video metadata                     |
-| Flex                 |  opt     | >= 2.5.0    | http://flex.sourceforge.net                       | For Panorama tool                                      |                                                                                       |
-| Bison                |  opt     | >= 2.5.0    | http://www.gnu.org/software/bison/bison.html      | For Panorama tool                                      |                                                                                       |
-| libmesa              |  opt     | >= 11.0     | http://www.mesa3d.org                             | For Presentation tools (Linux only)                    |                                                                                       |
-| libkvkontakte        |  opt     | >= 5.0.0    | https://cgit.kde.org/libkvkontatke.git/about/     | For Vkontakte tool support                             |                                                                                       |
-| libksane             |  opt     | >= 5.0.0    | https://cgit.kde.org/libksane.git/about/          | Digital scanner support                                |                                                                                       |
-| libjpasper           |  opt     | >= 1.900.1  | http://www.ece.uvic.ca/~mdadams/jasper            | For JPEG-2000 support                                  |                                                                                       |
-| libmarble            |  opt     | >= 0.22     | https://cgit.kde.org/marble.git/about/            | For geolocation support                                |                                                                                       |
-| libeigen3            |  opt     | >= 3.2      | http://eigen.tuxfamily.org                        | For Refocus tool                                       | See if Clapack from OpenCV can be used instead                                        |
-| liblensfun           |  opt     | >= 0.2.8    | https://github.com/lensfun/lensfun                | For LensCorrection tool                                |                                                                                       |
-| liblqr-1             |  opt     | >= 0.4.2    | http://liblqr.wikidot.com                         | For Liquid rescale tool                                |                                                                                       |
-| libgphoto2           |  opt     | >= 2.5      | http://www.gphoto.org                             | Digital camera drivers support. Need libusb-1          |                                                                                       |
-| libgomp              |  opt     | >= 5.0      | https://gcc.gnu.org/onlinedocs/libgomp            | OpenMP support for RawEngine                           |                                                                                       |
-| libmagick++          |  opt     | >= 6.7.0    | https://www.imagemagick.org                       | ImageMagick codecs support for DImg image loader       | Version >= 7.0 recommended                                                            |
-| DrMingw              |  opt     | >= 0.8.2    | https://github.com/jrfonseca/drmingw              | Mingw crash handler (run-time deps only for windows)   |                                                                                       |
-| libx265              |  opt     | >= 2.2      | http://x265.org/                                  | For HEIC encoding support                              |                                                                                       |
+| Dependency           | Status   | Version     | Project URL                                           | Remarks                                                | TODO                                                                                  |
+|----------------------|----------|-------------|-------------------------------------------------------|--------------------------------------------------------|---------------------------------------------------------------------------------------|
+| CMake                |   X      | >= 3.3.2    | http://www.cmake.org                                  |                                                        |                                                                                       |
+| ECM                  |   X      | >= 5.5.0    | https://invent.kde.org/frameworks/extra-cmake-modules |                                                        |                                                                                       |
+| Qt5::Core            |   X      | >= 5.9      | http://code.qt.io/cgit/qt/qtbase.git/                 |                                                        |                                                                                       |
+| Qt5::Gui             |   X      | >= 5.9      | http://code.qt.io/cgit/qt/qtbase.git/                 |                                                        |                                                                                       |
+| Qt5::Widgets         |   X      | >= 5.9      | http://code.qt.io/cgit/qt/qtbase.git/                 |                                                        |                                                                                       |
+| Qt5::Network         |   X      | >= 5.9      | http://code.qt.io/cgit/qt/qtbase.git/                 |                                                        |                                                                                       |
+| Qt5::Sql             |   X      | >= 5.9      | http://code.qt.io/cgit/qt/qtbase.git/                 | Including Qt5::Sqlite and Qt5::Mysql plugins           |                                                                                       |
+| Qt5::Xml             |   X      | >= 5.9      | http://code.qt.io/cgit/qt/qtbase.git/                 |                                                        |                                                                                       |
+| Qt5::Concurrent      |   X      | >= 5.9      | http://code.qt.io/cgit/qt/qtbase.git/                 |                                                        |                                                                                       |
+| Qt5::PrintSupport    |   X      | >= 5.9      | http://code.qt.io/cgit/qt/qtbase.git/                 |                                                        |                                                                                       |
+| Qt5::Svg             |   X      | >= 5.9      | http://code.qt.io/cgit/qt/qtsvg.git/                  |                                                        |                                                                                       |
+| Qt5::WebEngine       |   X      | >= 5.9      | http://code.qt.io/cgit/qt/qtwebengine.git/            | To render web contents (ENABLE_QWEBENGINE=on)          | To replace Qt5::WebKitWidgets everywhere, excepted for MXE                            |
+| Qt5::WebKitWidgets   |  opt     | >= 5.9      | http://code.qt.io/cgit/qt/qtwebkit.git/               | To render web contents                                 | Used with MXE only as WebEngine do not compile with Mingw                             |
+| Qt5::XmlPatterns     |  opt     | >= 5.9      | http://code.qt.io/cgit/qt/qtxmlpatterns.git/          | To parse and validate Xml                              | Used by Rajce plugin                                                                  |
+| Qt5::X11Extras       |  opt     | >= 5.9      | http://code.qt.io/cgit/qt/qtx11extras.git/            | For color management support under Linux               |                                                                                       |
+| Qt5::DBus            |  opt     | >= 5.9      | http://code.qt.io/cgit/qt/qtbase.git/                 | Optional: only for Linux Desktop                       |                                                                                       |
+| Qt5::OpenGL          |  opt     | >= 5.9      | http://code.qt.io/cgit/qt/qtbase.git/                 | For Presentation tool                                  |                                                                                       |
+| Qt5::Test            |  opt     | >= 5.9      | http://code.qt.io/cgit/qt/qtbase.git/                 | To compile test codes (BUILD_TESTING=on)               |                                                                                       |
+| Qt5::Qml             |  opt     | >= 5.9      | http://code.qt.io/cgit/qt/qtbase.git/                 | To compile test codes (BUILD_TESTING=on) O2 unit tests |                                                                                       |
+| Qt5::WebView         |  opt     | >= 5.9      | http://code.qt.io/cgit/qt/qtbase.git/                 | To compile test codes (BUILD_TESTING=on) O2 unit tests |                                                                                       |
+| KF5::Config          |   X      | >= 5.5.0    | https://invent.kde.org/frameworks/kconfig             |                                                        |                                                                                       |
+| KF5::XmlGui          |   X      | >= 5.5.0    | https://invent.kde.org/frameworks/kxmlgui             |                                                        |                                                                                       |
+| KF5::I18n            |   X      | >= 5.5.0    | https://invent.kde.org/frameworks/ki18n               |                                                        |                                                                                       |
+| KF5::WindowSystem    |   X      | >= 5.5.0    | https://invent.kde.org/frameworks/kwindowsystem       |                                                        |                                                                                       |
+| KF5::Service         |   X      | >= 5.5.0    | https://invent.kde.org/frameworks/kservice            | TODO: make optional for Linux desktop (DFileOperations)|                                                                                       |
+| KF5::Solid           |   X      | >= 5.5.0    | https://invent.kde.org/frameworks/solid               |                                                        |                                                                                       |
+| KF5::CoreAddons      |   X      | >= 5.5.0    | https://invent.kde.org/frameworks/kcoreaddons         | Needs for KAboutData                                   |                                                                                       |
+| KF5::NotifyConfig    |  opt     | >= 5.5.0    | https://invent.kde.org/frameworks/knotifyconfig       | For Linux desktop application notify configuration     |                                                                                       |
+| KF5::Notifications   |  opt     | >= 5.5.0    | https://invent.kde.org/frameworks/knotifications      | For Linux desktop notifications integrations           |                                                                                       |
+| KF5::ThreadWeaver    |  opt     | >= 5.5.0    | https://invent.kde.org/frameworks/threadweaver        | For panorama tool                                      |                                                                                       |
+| KF5::IconThemes      |  opt     | >= 5.5.0    | https://invent.kde.org/frameworks/kiconthemes         | Optional: only for Linux Desktop (KIconDialog)         |                                                                                       |
+| KF5::FileMetaData    |  opt     | >= 5.5.0    | https://invent.kde.org/frameworks/kfilemetadata       | KDE files indexer (ENABLE_KFILEMETADATASUPPORT=on)     | Still experimental, disabled by default. Implementation from KDE side very unstable   |
+| KF5::CalendarCore    |  opt     | >= 5.5.0    | https://invent.kde.org/frameworks/kcalendarcore       | For calendar tool to setup ical special events         |                                                                                       |
+| KF5::KIO             |  opt     | >= 5.5.0    | https://invent.kde.org/frameworks/kio                 | Optional: only for Linux Desktop                       |                                                                                       |
+| KF5::AkonadiContact  |  opt     | >= 4.89.0   | https://invent.kde.org/pim/akonadi-contacts           | KDE Mail contacts (ENABLE_AKONADICONTACTSUPPORT=on)    | Still experimental, disabled by default. Need testing                                 |
+| libopencv            |   X      | >= 3.3      | https://opencv.org/                                   | OpenCV 4 supported with digiKam 6.1.0                  | DNN module required for face management                                               |
+| libpthread           |   X      | >= 2.0.0    | http://www.gnu.org/software/hurd/libpthread.html      | For DNG converter                                      |                                                                                       |
+| libtiff              |   X      | >= 4.0      | http://www.remotesensing.org/libtiff                  | For DImg image loader                                  |                                                                                       |
+| libpng               |   X      | >= 1.6      | http://www.libpng.org/pub/png/libpng.html             | For DImg image loader                                  |                                                                                       |
+| libjpeg              |   X      | >= 6b       | http://www.ijg.org                                    | jpeglib >= 8.0 hightly recommended for RawEngine       |                                                                                       |
+| libboost             |   X      | >= 1.55.0   | http://www.boost.org/doc/libs                         | For Versionning support                                |                                                                                       |
+| liblcms              |   X      | >= 2.x      | http://www.littlecms.com                              | For Color Management support                           |                                                                                       |
+| libexpat             |   X      | >= 2.1.0    | http://expat.sourceforge.net                          | For DNG converter                                      |                                                                                       |
+| libexiv2             |   X      | >= 0.27.0   | http://www.exiv2.org                                  | Metadata low level management.                         |                                                                                       |
+| libxml2              |  opt     | >= 2.7.0    | http://xmlsoft.org                                    | For HtmlGallery tool                                   |                                                                                       |
+| libxslt              |  opt     | >= 1.1.0    | http://xmlsoft.org/XSLT                               | For HtmlGallery tool                                   |                                                                                       |
+| libqtav              |  opt     | >= 1.12.0   | http://www.qtav.org                                   | To play video and audio (ENABLE_MEDIAPLAYER=on)        |                                                                                       |
+| libffmpeg            |  opt     | >= 3.3.x    | http://www.ffmpeg.org                                 | To play video and audio (ENABLE_MEDIAPLAYER=on)        | libavformat, libavutil, libavcodec used to extract video metadata                     |
+| Flex                 |  opt     | >= 2.5.0    | http://flex.sourceforge.net                           | For Panorama tool                                      |                                                                                       |
+| Bison                |  opt     | >= 2.5.0    | http://www.gnu.org/software/bison/bison.html          | For Panorama tool                                      |                                                                                       |
+| libmesa              |  opt     | >= 11.0     | http://www.mesa3d.org                                 | For Presentation tools (Linux only)                    |                                                                                       |
+| libksane             |  opt     | >= 5.0.0    | https://invent.kde.org/graphics/libksane              | Digital scanner support                                |                                                                                       |
+| libjpasper           |  opt     | >= 1.900.1  | http://www.ece.uvic.ca/~mdadams/jasper                | For JPEG-2000 support                                  |                                                                                       |
+| libmarble            |  opt     | >= 0.22     | https://invent.kde.org/education/marble               | For geolocation support                                |                                                                                       |
+| libeigen3            |  opt     | >= 3.2      | http://eigen.tuxfamily.org                            | For Refocus tool                                       | See if Clapack from OpenCV can be used instead                                        |
+| liblensfun           |  opt     | >= 0.2.8    | https://github.com/lensfun/lensfun                    | For LensCorrection tool                                |                                                                                       |
+| liblqr-1             |  opt     | >= 0.4.2    | http://liblqr.wikidot.com                             | For Liquid rescale tool                                |                                                                                       |
+| libgphoto2           |  opt     | >= 2.5      | http://www.gphoto.org                                 | Digital camera drivers support. Need libusb-1          |                                                                                       |
+| libgomp              |  opt     | >= 5.0      | https://gcc.gnu.org/onlinedocs/libgomp                | OpenMP support for RawEngine                           |                                                                                       |
+| libmagick++          |  opt     | >= 6.7.0    | https://www.imagemagick.org                           | ImageMagick codecs support for DImg image loader       | Version >= 7.0 recommended                                                            |
+| DrMingw              |  opt     | >= 0.8.2    | https://github.com/jrfonseca/drmingw                  | Mingw crash handler (run-time deps only for windows)   |                                                                                       |
+| libx265              |  opt     | >= 2.2      | http://x265.org/                                      | For HEIC encoding support                              |                                                                                       |
 
 \section getsourcecode Get Source Code
 
 \subsection softcomponents Software Components
 
-digiKam project use a single git repository to host whole source code base. The project page is given below:
+digiKam project use a single git repository from GitLab to host whole source code base. The project page is given below:
 
-https://phabricator.kde.org/source/digikam/
+https://invent.kde.org/graphics/digikam
 
-Even if code base can be compiled as well, more features can be enabled if extra components are downloaded and compiled at the same time.
-The project pages of these extra components are given below:
+The digikam handbook source code is hosted in a separate GitLab repository:
 
- - \b digiKam \b handbook : https://phabricator.kde.org/source/digikam-doc/
+https://invent.kde.org/documentation/digikam-doc
 
-\section develenv Development Envirronnement
+\section develenv Development Environment
 
 If you are a developer with push access to the git repositories, it is strongly recommended
 to use the "kde:" prefix and let git use the read-only mirrors for pulling.
@@ -450,7 +451,7 @@ There are two configuration sections : the top level and the core.
   - \b ENABLE_MEDIAPLAYER                    : Build digiKam with Media Player support (default=OFF).
   - \b ENABLE_DBUS                           : Build digiKam with DBUS support (default=ON).
   - \b ENABLE_APPSTYLES                      : Build digiKam with support for changing the widget application style (default=OFF).
-  - \b ENABLE_QWEBENGINE                     : Build digiKam with QWebEngine instead of QWebKit (default=OFF).
+  - \b ENABLE_QWEBENGINE                     : Build digiKam with QWebEngine instead of QWebKit (default=ON).
 
  - Experimental support options
 
@@ -460,6 +461,8 @@ There are two configuration sections : the top level and the core.
  - Developers only options:
 
   - \b ENABLE_DIGIKAM_MODELTEST              : Enable ModelTest on some models for debugging (default=OFF).
+  - \b ENABLE_SANITIZERS                     : Enable ASAN and UBSAN sanitizers when available (default=OFF).
+  - \b BUILD_WITH_CCACHE                     : Use ccache to speed up compilations (default=OFF)
 
  - Packaging options
 
@@ -520,7 +523,7 @@ http://technet.microsoft.com/en-us/sysinternals/bb896647.aspx
 
 You can set the environment variable \b QT_LOGGING_RULES. Rules are divided by semicolons.
 
-E.g. you can start digiKam like this on the commandline with thumbnails and core database messages disabled:
+E.g. you can start digiKam like this on the command line with thumbnails and core database messages disabled:
 
 \code
     export QT_LOGGING_RULES='digikam.thumbsdb=false:digikam.coredb=false'
@@ -533,7 +536,7 @@ All loggin categories are listed in \ref digikam_debug.cpp source code.
 
 \subsection moreaboutloggincat Further Reading
 
- For more details see the Qt framework documentation about loggin categories available at this url:
+ For more details see the Qt framework documentation about logging categories available at this url:
  https://doc.qt.io/qt-5/qloggingcategory.html#details
 
 \section cmakecompilrules Cmake compilation rules
@@ -547,15 +550,18 @@ Independent Cmake configuration is presents in following folders:
 
  - root source dir
  - core
- - extra
  - doc
 
-The Cmake rules for the core component will link the following executable:
+The Cmake rules will build the following targets:
 
- - digikam
- - showfoto
- - digikam database server - if compilation is enabled in cmake files
+ - digikamcore shared lib
+ - digikamdatabase shared lib
+ - digikamgui shared lib
+ - digikam executable
+ - showfoto executable
+ - plugin shared libraries (dplugins)
  - various test executables - if testing is enabled
+ - various unit-tests - if testing is enabled
 
 Each of them depend on various sources which must be compiled before.
 A complete description of source code direction is given to the sourcedirs section.
@@ -574,7 +580,7 @@ Local include directories are all managed by this snippet of code:
 The libjpeg- folders are all included, so we need to delete them all and include the correct one only:
 
 \code
-    # This macro will set all paths which do not containt libjpeg-
+    # This macro will set all paths which do not contain libjpeg-
     # We will add later the directory we need
 
     FOREACH(var ${DK_LOCAL_INCLUDES_RAW})
@@ -691,7 +697,7 @@ working on existing code.
 
 Indent with 4 spaces exactly.
 
-for eg:
+For example:
 
 \code
 void function()
@@ -709,7 +715,7 @@ vim users add this to you .vimrc
 \subsubsection tabsspaces Tabs vs Spaces
 
 Absolutely no tabs. Use a sensible editor which will convert tabs to spaces.
-This will reduce unnecessary changes in your cvs commits.
+This will reduce unnecessary changes in your git commits.
 
 Emacs by default will convert tab to spaces.
 For vim users, add this to your .vimrc
@@ -723,7 +729,7 @@ cases are rare). Having long lines greatly reduces readability of code
 \subsubsection bracketing Bracketing
 
 In all cases, {} brackets should start on a newline and should be
-aligned with previous line (follow the indentation spaces). for eg.
+aligned with previous line (follow the indentation spaces). For example.
 
 \code
 class A
@@ -775,7 +781,7 @@ signals, public slots, protected slots, private slots, private (variables)
   the first letter after _ (Use m_varName not m_VarName)
 - variable names should be indicative of their functionality and also of
   the type they belong too if they are instances of qt widgets.
-  for eg, QCheckBox* m_autoRotateCheckBox;
+  For example, QCheckBox* m_autoRotateCheckBox;
 
 \subsubsection nomembvars Non-Member variables
 
@@ -788,7 +794,7 @@ signals, public slots, protected slots, private slots, private (variables)
   compilation time and improve binary compatibility between digiKam components.
   See more information how to use a 'd' private class at this url:
 
-  http://developer.kde.org/policies/librarypolicy.html
+  https://community.kde.org/Policies/Library_Code_Policy
 
 \subsection commentsspaces Comments and Whitespace
 
@@ -811,7 +817,7 @@ a = (b == foobar) ? 1 : -1; // you are asking for trouble by putting comments he
 - Add copyright to top of every file. Use the same header than others digiKam
   source code.
 - Double inclusion protection defines are all upper case letters and are
-  composed of the classname and a H suffix separated by underscore
+  composed of the class name and a H suffix separated by underscore
 
 \code
 #ifndef DIGIKAM_ANOTHER_NICE_CLASS_H
@@ -931,7 +937,7 @@ $ gdb digikam
 > quit
 \endcode
 
-Post this backtrace at the right place (Bugzilla or developement mailing list) for investigations by developers.
+Post this backtrace at the right place (Bugzilla or development mailing list) for investigation by developers.
 
 For Windows users, take a look on this tutorial :
 
@@ -1030,7 +1036,7 @@ www.englishbreakfastnetwork.org/krazy/
 
 It can be very useful, in particular before major releases.
 Don't trust it blindly! Sometimes they propose too advanced modifications that
-are no compatible with the prevailant include files.
+are no compatible with the prevailing include files.
 
 \subsection appusability Usability Issues
 
@@ -1099,9 +1105,9 @@ Example to delete the remote 'dplugins' development branch:
 git push origin :development/dplugins
 \endcode
 
-\subsection gitbranches Sync a Branch With Master From Git Repository
+\subsection syncgitbranches Sync a Branch With Master From Git Repository
 
-It typical to use a dedicated developement branch in Git to keep the
+It typical to use a dedicated development branch in Git to keep the
 master code stable for production. To synchronize branches with master, use these commands in your
 local branch checkout:
 

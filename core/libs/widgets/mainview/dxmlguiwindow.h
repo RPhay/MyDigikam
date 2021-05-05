@@ -6,7 +6,7 @@
  * Date        : 2013-04-29
  * Description : digiKam XML GUI window
  *
- * Copyright (C) 2013-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2013-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -100,8 +100,8 @@ class DIGIKAM_EXPORT DXmlGuiWindow : public KXmlGuiWindow
 
 public:
 
-    explicit DXmlGuiWindow(QWidget* const parent=nullptr, Qt::WindowFlags f=KDE_DEFAULT_WINDOWFLAGS);
-    ~DXmlGuiWindow();
+    explicit DXmlGuiWindow(QWidget* const parent = nullptr, Qt::WindowFlags f = Qt::WindowFlags());
+    ~DXmlGuiWindow() override;
 
     /**
      * Manage config group name used by window instance to get/set settings from config file
@@ -117,7 +117,7 @@ public:
     /**
      * Create common actions from Help menu for all digiKam main windows.
      */
-    void createHelpActions(bool coreOptions=true);
+    void createHelpActions(bool coreOptions = true);
 
     /**
      * Cleanup unwanted actions from action collection.
@@ -195,10 +195,10 @@ protected:
      * with an extra action collection to configure. This method is called by slotEditKeys()
      * which can be re-implement in child class for cutomization.
      */
-    void editKeyboardShortcuts(KActionCollection* const extraac=nullptr, const QString& actitle=QString());
+    void editKeyboardShortcuts(KActionCollection* const extraac = nullptr, const QString& actitle = QString());
 
-    void closeEvent(QCloseEvent* e) override;
-    void keyPressEvent(QKeyEvent* e) override;
+    void closeEvent(QCloseEvent* e)            override;
+    void keyPressEvent(QKeyEvent* e)           override;
     bool eventFilter(QObject* obj, QEvent* ev) override;
 
     /**
@@ -234,16 +234,22 @@ private Q_SLOTS:
     void slotNewToolbarConfig();
 
     void slotRawCameraList();
+    void slotSolidHardwareList();
     void slotDonateMoney();
     void slotRecipesBook();
     void slotContribute();
     void slotHelpContents();
 
-    /// Slots for common Help Actions
+    /**
+     * Slots for common Help Actions
+     */
+    virtual void slotOnlineVersionCheck()      {};
     virtual void slotComponentsInfo()          {};
     virtual void slotDBStat()                  {};
 
-    /// Slots for common Sidebar Actions
+    /**
+     * Slots for common Sidebar Actions
+     */
     virtual void slotToggleLeftSideBar()       {};
     virtual void slotToggleRightSideBar()      {};
     virtual void slotPreviousLeftSideBarTab()  {};
@@ -251,7 +257,9 @@ private Q_SLOTS:
     virtual void slotPreviousRightSideBarTab() {};
     virtual void slotNextRightSideBarTab()     {};
 
-    /// Slots for common Settings actions
+    /**
+     * Slots for common Settings actions
+     */
     virtual void slotEditKeys()                { editKeyboardShortcuts(); };
     virtual void slotSetup() = 0;
 

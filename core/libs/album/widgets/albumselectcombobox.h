@@ -8,7 +8,7 @@
  *
  * Copyright (C) 2008-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  * Copyright (C) 2010-2011 by Andi Clemens <andi dot clemens at gmail dot com>
- * Copyright (C) 2012-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -45,7 +45,7 @@ class AlbumSelectComboBox : public TreeViewLineEditComboBox
 public:
 
     explicit AlbumSelectComboBox(QWidget* const parent = nullptr);
-    ~AlbumSelectComboBox();
+    ~AlbumSelectComboBox()                              override;
 
     /**
      * Once after creation, call one of these three methods.
@@ -95,7 +95,7 @@ public:
 
 public Q_SLOTS:
 
-    virtual void hidePopup();
+    void hidePopup()                                    override;
 
     /**
      * Updates the text describing the selection ("3 Albums selected").
@@ -105,7 +105,7 @@ public Q_SLOTS:
 
 protected:
 
-    virtual void installView(QAbstractItemView* view = nullptr);
+    void installView(QAbstractItemView* view = nullptr) override;
 
 private:
 
@@ -153,8 +153,8 @@ public:
 
 protected:
 
-    virtual void installView(QAbstractItemView* view = nullptr) override;
-    virtual void sendViewportEventToView(QEvent* e) override;
+    void installView(QAbstractItemView* view = nullptr) override;
+    void sendViewportEventToView(QEvent* e)             override;
 
 protected:
 

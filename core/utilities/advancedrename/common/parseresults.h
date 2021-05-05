@@ -26,9 +26,9 @@
 
 // Qt includes
 
-#include <QMap>
 #include <QPair>
 #include <QString>
+#include <QMultiMap>
 
 namespace Digikam
 {
@@ -37,9 +37,9 @@ class ParseResults
 {
 public:
 
-    typedef QPair<int, int>                ResultsKey;
-    typedef QPair<QString, QString>        ResultsValue;
-    typedef QMap<ResultsKey, ResultsValue> ResultsMap;
+    typedef QPair<int, int>                     ResultsKey;
+    typedef QPair<QString, QString>             ResultsValue;
+    typedef QMultiMap<ResultsKey, ResultsValue> ResultsMap;
 
 public:
 

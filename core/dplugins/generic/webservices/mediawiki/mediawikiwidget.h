@@ -7,7 +7,7 @@
  * Description : a tool to export images to WikiMedia web service
  *
  * Copyright (C) 2011      by Alexandre Mendes <alex dot mendes1988 at gmail dot com>
- * Copyright (C) 2011-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2011-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2012      by Parthasarathy Gopavarapu <gparthasarathy93 at gmail dot com>
  * Copyright (C) 2013      by Peter Potrowl <peter dot potrowl at gmail dot com>
  *
@@ -61,7 +61,7 @@ class MediaWikiWidget : public QWidget
 public:
 
     explicit MediaWikiWidget(DInfoInterface* const iface, QWidget* const parent);
-    ~MediaWikiWidget();
+    ~MediaWikiWidget() override;
 
 public:
 

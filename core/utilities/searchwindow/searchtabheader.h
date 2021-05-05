@@ -46,7 +46,7 @@ class SearchTabHeader : public QWidget
 public:
 
     explicit SearchTabHeader(QWidget* const parent);
-    ~SearchTabHeader();
+    ~SearchTabHeader() override;
 
 public Q_SLOTS:
 

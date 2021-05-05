@@ -7,7 +7,7 @@
  * Description : overlay for extra functionality of the group indicator
  *
  * Copyright (C) 2011      by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -45,11 +45,11 @@ class GroupIndicatorOverlayWidget : public QAbstractButton
 public:
 
     explicit GroupIndicatorOverlayWidget(QWidget* const parent = nullptr);
-    virtual void contextMenuEvent(QContextMenuEvent* event) override;
+    void contextMenuEvent(QContextMenuEvent* event) override;
 
 protected:
 
-    virtual void paintEvent(QPaintEvent*)                   override;
+    void paintEvent(QPaintEvent*)                   override;
 
 Q_SIGNALS:
 
@@ -84,11 +84,11 @@ protected:
     void updatePosition();
     void updateRating();
 
-    virtual QWidget* createWidget() override;
-    virtual void setActive(bool) override;
-    virtual void visualChange() override;
-    virtual void slotEntered(const QModelIndex& index) override;
-    virtual bool checkIndex(const QModelIndex& index) const override;
+    QWidget* createWidget() override;
+    void setActive(bool) override;
+    void visualChange() override;
+    void slotEntered(const QModelIndex& index) override;
+    bool checkIndex(const QModelIndex& index) const override;
 
 protected:
 

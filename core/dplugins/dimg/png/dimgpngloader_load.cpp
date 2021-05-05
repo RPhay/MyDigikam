@@ -6,7 +6,7 @@
  * Date        : 2005-11-01
  * Description : a PNG image loader for DImg framework - load operations.
  *
- * Copyright (C) 2005-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2005-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -61,11 +61,13 @@ extern "C"
 }
 
 #ifdef Q_OS_WIN
+
 void _ReadProc(struct png_struct_def* png_ptr, png_bytep data, png_size_t size)
 {
     FILE* const file_handle = (FILE*)png_get_io_ptr(png_ptr);
     fread(data, size, 1, file_handle);
 }
+
 #endif
 
 using namespace Digikam;
@@ -74,9 +76,13 @@ namespace DigikamPNGDImgPlugin
 {
 
 #if PNG_LIBPNG_VER_MAJOR >= 1 && PNG_LIBPNG_VER_MINOR >= 5
+
 typedef png_bytep iCCP_data;
+
 #else
+
 typedef png_charp iCCP_data;
+
 #endif
 
 bool DImgPNGLoader::load(const QString& filePath, DImgLoaderObserver* const observer)
@@ -100,7 +106,15 @@ bool DImgPNGLoader::load(const QString& filePath, DImgLoaderObserver* const obse
 
     qCDebug(DIGIKAM_DIMG_LOG_PNG) << "Opening file" << filePath;
 
-    f = fopen(QFile::encodeName(filePath).constData(), "rb");
+#ifdef Q_OS_WIN
+
+    f = _wfopen((const wchar_t*)filePath.utf16(), L"rb");
+
+#else
+
+    f = fopen(filePath.toUtf8().constData(), "rb");
+
+#endif
 
     if (!f)
     {
@@ -114,9 +128,13 @@ bool DImgPNGLoader::load(const QString& filePath, DImgLoaderObserver* const obse
     size_t membersRead = fread(buf, 1, PNG_BYTES_TO_CHECK, f);
 
 #if PNG_LIBPNG_VER >= 10400
+
     if ((membersRead != PNG_BYTES_TO_CHECK) || png_sig_cmp(buf, 0, PNG_BYTES_TO_CHECK))
+
 #else
+
     if ((membersRead != PNG_BYTES_TO_CHECK) || !png_check_sig(buf, PNG_BYTES_TO_CHECK))
+
 #endif
     {
         qCWarning(DIGIKAM_DIMG_LOG_PNG) << "Not a PNG image file.";
@@ -161,10 +179,10 @@ bool DImgPNGLoader::load(const QString& filePath, DImgLoaderObserver* const obse
     public:
 
         CleanupData()
-          : data(nullptr),
+          : data (nullptr),
             lines(nullptr),
-            file(nullptr),
-            cmod(0)
+            file (nullptr),
+            cmod (0)
         {
         }
 
@@ -231,9 +249,13 @@ bool DImgPNGLoader::load(const QString& filePath, DImgLoaderObserver* const obse
     cleanupData->setFile(f);
 
 #if PNG_LIBPNG_VER >= 10400
+
     if (setjmp(png_jmpbuf(png_ptr)))
+
 #else
+
     if (setjmp(png_ptr->jmpbuf))
+
 #endif
     {
         png_destroy_read_struct(&png_ptr, &info_ptr, (png_infopp) nullptr);
@@ -256,7 +278,7 @@ bool DImgPNGLoader::load(const QString& filePath, DImgLoaderObserver* const obse
 
         if (observer)
         {
-            observer->progressInfo(1.0);
+            observer->progressInfo(1.0F);
         }
 
         imageWidth()  = cleanupData->size.width();
@@ -273,9 +295,13 @@ bool DImgPNGLoader::load(const QString& filePath, DImgLoaderObserver* const obse
     }
 
 #ifdef Q_OS_WIN
+
     png_set_read_fn(png_ptr, f, _ReadProc);
+
 #else
+
     png_init_io(png_ptr, f);
+
 #endif
 
     // -------------------------------------------------------------------
@@ -410,10 +436,15 @@ bool DImgPNGLoader::load(const QString& filePath, DImgLoaderObserver* const obse
                     qCDebug(DIGIKAM_DIMG_LOG_PNG) << "PNG in PNG_COLOR_TYPE_GRAY";
 
 #if PNG_LIBPNG_VER >= 10400
+
                     png_set_expand_gray_1_2_4_to_8(png_ptr);
+
 #else
+
                     png_set_gray_1_2_4_to_8(png_ptr);
+
 #endif
+
                     png_set_gray_to_rgb(png_ptr);
                     png_set_add_alpha(png_ptr, 0xFF, PNG_FILLER_AFTER);
 
@@ -496,11 +527,11 @@ bool DImgPNGLoader::load(const QString& filePath, DImgLoaderObserver* const obse
         {
             if (m_sixteenBit)
             {
-                lines[i] = data + (i * width * 8);
+                lines[i] = data + ((quintptr)i * (quintptr)width * 8);
             }
             else
             {
-                lines[i] = data + (i * width * 4);
+                lines[i] = data + ((quintptr)i * (quintptr)width * 4);
             }
         }
 
@@ -528,7 +559,7 @@ bool DImgPNGLoader::load(const QString& filePath, DImgLoaderObserver* const obse
                     }
 
                     // use 10% - 80% for progress while reading rows
-                    observer->progressInfo(0.1 + (0.7 * (((float)y) / ((float)height))));
+                    observer->progressInfo(0.1F + (0.7F * (((float)y) / ((float)height))));
                 }
 
                 png_read_rows(png_ptr, lines + y, nullptr, 1);
@@ -613,8 +644,8 @@ bool DImgPNGLoader::load(const QString& filePath, DImgLoaderObserver* const obse
     Source           Device used to create the image
     Comment          Miscellaneous comment; conversion from GIF comment
 
-    Extra Raw profiles tag are used by ImageMagick and defines at this URL :
-    http://search.cpan.org/src/EXIFTOOL/Image-ExifTool-5.87/html/TagNames/PNG.html#TextualData
+    Extra Raw profiles tag are used by ImageMagick and defines at this Url:
+    search.cpan.org/src/EXIFTOOL/Image-ExifTool-5.87/html/TagNames/PNG.html#TextualData
     */
 
     if (m_loadFlags & LoadICCData)
@@ -648,7 +679,7 @@ bool DImgPNGLoader::load(const QString& filePath, DImgLoaderObserver* const obse
 
     if (observer)
     {
-        observer->progressInfo(1.0);
+        observer->progressInfo(1.0F);
     }
 
     imageWidth()  = width;

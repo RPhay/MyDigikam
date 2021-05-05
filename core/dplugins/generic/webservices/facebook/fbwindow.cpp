@@ -7,7 +7,7 @@
  * Description : a tool to export items to Facebook web service
  *
  * Copyright (C) 2005-2008 by Vardhman Jain <vardhman at gmail dot com>
- * Copyright (C) 2008-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2008-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2008-2009 by Luka Renko <lure at kubuntu dot org>
  * Copyright (C) 2018      by Thanh Trung Dinh <dinhthanhtrung1996 at gmail dot com>
  *
@@ -39,9 +39,9 @@
 
 // KDE includes
 
-#include <kconfig.h>
 #include <klocalizedstring.h>
-#include <kwindowconfig.h>
+#include <ksharedconfig.h>
+#include <kconfiggroup.h>
 
 // Local includes
 
@@ -112,7 +112,7 @@ public:
 
 FbWindow::FbWindow(DInfoInterface* const iface, QWidget* const /*parent*/)
     : WSToolDialog(nullptr, QLatin1String("Facebook Export Dialog")),
-      d(new Private(this, iface))
+      d           (new Private(this, iface))
 {
     d->tmpPath.clear();
     d->tmpDir = WSToolUtils::makeTemporaryDir("facebook").absolutePath() + QLatin1Char('/');
@@ -241,8 +241,8 @@ void FbWindow::closeEvent(QCloseEvent* e)
 
 void FbWindow::readSettings()
 {
-    KConfig config;
-    KConfigGroup grp  = config.group("Facebook Settings");
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup grp        = config->group("Facebook Settings");
 
     if (grp.readEntry("Resize", false))
     {
@@ -258,27 +258,17 @@ void FbWindow::readSettings()
     d->currentAlbumID = grp.readEntry("Current Album", QString());
     d->dimensionSpB->setValue(grp.readEntry("Maximum Width", 1600));
     d->imageQualitySpB->setValue(grp.readEntry("Image Quality", 85));
-
-    winId();
-    KConfigGroup dialogGroup = config.group("Facebook Export Dialog");
-    KWindowConfig::restoreWindowSize(windowHandle(), dialogGroup);
-    resize(windowHandle()->size());
 }
 
 void FbWindow::writeSettings()
 {
-    KConfig config;
-    KConfigGroup grp = config.group("Facebook Settings");
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup grp        = config->group("Facebook Settings");
 
     grp.writeEntry("Current Album", d->currentAlbumID);
     grp.writeEntry("Resize",        d->resizeChB->isChecked());
     grp.writeEntry("Maximum Width", d->dimensionSpB->value());
     grp.writeEntry("Image Quality", d->imageQualitySpB->value());
-
-    KConfigGroup dialogGroup = config.group("Facebook Export Dialog");
-    KWindowConfig::saveWindowSize(windowHandle(), dialogGroup);
-
-    config.sync();
 }
 
 void FbWindow::authenticate(bool forceLogin)
@@ -340,7 +330,7 @@ void FbWindow::slotLoginDone(int errCode, const QString& errMsg)
 
     if (errCode == 0 && d->talker->linked())
     {
-        d->albumsCoB->addItem(i18n("<auto create>"), QString());
+        d->albumsCoB->addItem(i18n("<i>auto create</i>"), QString());
         d->talker->listAlbums();    // get albums to fill combo box
     }
     else if (errCode > 0)
@@ -370,7 +360,7 @@ void FbWindow::slotListAlbumsDone(int errCode,
     }
 
     d->albumsCoB->clear();
-    d->albumsCoB->addItem(i18n("<auto create>"), QString());
+    d->albumsCoB->addItem(i18n("<i>auto create</i>"), QString());
 
     for (int i = 0 ; i < albumsList.size() ; ++i)
     {
@@ -509,7 +499,8 @@ void FbWindow::slotStartTransfer()
 void FbWindow::setProfileAID(long long userID)
 {
     // store AID of Profile Photos album
-    // http://wiki.developers.facebook.com/index.php/Profile_archive_album
+    // wiki.developers.facebook.com/index.php/Profile_archive_album
+
     d->profileAID = QString::number((userID << 32) + (-3 & 0xFFFFFFFF));
 }
 
@@ -518,8 +509,10 @@ QString FbWindow::getImageCaption(const QString& fileName)
     DItemInfo info(d->iface->itemInfo(QUrl::fromLocalFile(fileName)));
 
     // Facebook doesn't support image titles. Include it in descriptions if needed.
+
     QStringList descriptions = QStringList() << info.title() << info.comment();
     descriptions.removeAll(QLatin1String(""));
+
     return descriptions.join(QLatin1String("\n\n"));
 }
 
@@ -538,9 +531,11 @@ bool FbWindow::prepareImageForUpload(const QString& imgPath, QString& caption)
     }
 
     // get temporary file name
+
     d->tmpPath = d->tmpDir + QFileInfo(imgPath).baseName().trimmed() + QLatin1String(".jpg");
 
     // rescale image if requested
+
     int maxDim = d->dimensionSpB->value();
 
     if (d->resizeChB->isChecked() &&
@@ -556,15 +551,15 @@ bool FbWindow::prepareImageForUpload(const QString& imgPath, QString& caption)
 
     // copy meta data to temporary image
 
-    DMetadata meta;
+    QScopedPointer<DMetadata> meta(new DMetadata);
 
-    if (meta.load(imgPath))
+    if (meta->load(imgPath))
     {
         caption = getImageCaption(imgPath);
-        meta.setItemDimensions(image.size());
-        meta.setItemOrientation(MetaEngine::ORIENTATION_NORMAL);
-        meta.setMetadataWritingMode((int)DMetadata::WRITE_TO_FILE_ONLY);
-        meta.save(d->tmpPath, true);
+        meta->setItemDimensions(image.size());
+        meta->setItemOrientation(MetaEngine::ORIENTATION_NORMAL);
+        meta->setMetadataWritingMode((int)DMetadata::WRITE_TO_FILE_ONLY);
+        meta->save(d->tmpPath, true);
     }
     else
     {
@@ -613,6 +608,7 @@ void FbWindow::uploadNextPhoto()
 void FbWindow::slotAddPhotoDone(int errCode, const QString& errMsg)
 {
     // Remove temporary file if it was used
+
     if (!d->tmpPath.isEmpty())
     {
         QFile::remove(d->tmpPath);
@@ -653,6 +649,7 @@ void FbWindow::slotCreateAlbumDone(int errCode, const QString& errMsg, const QSt
     }
 
     // reload album list and automatically select new album
+
     d->currentAlbumID = newAlbumID;
     d->talker->listAlbums();
 }

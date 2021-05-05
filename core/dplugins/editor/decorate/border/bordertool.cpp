@@ -7,7 +7,7 @@
  * Description : a digiKam image tool to add a border
  *               around an image.
  *
- * Copyright 2005-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright 2005-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright 2006-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  *
  * This program is free software; you can redistribute it
@@ -35,7 +35,7 @@
 
 #include <klocalizedstring.h>
 #include <ksharedconfig.h>
-#include "kconfiggroup.h"
+#include <kconfiggroup.h>
 
 // Local includes
 
@@ -54,10 +54,9 @@ public:
 
     explicit Private()
       : configGroupName(QLatin1String("border Tool")),
-
-        gboxSettings(nullptr),
-        previewWidget(nullptr),
-        settingsView(nullptr)
+        gboxSettings   (nullptr),
+        previewWidget  (nullptr),
+        settingsView   (nullptr)
     {
     }
 
@@ -70,7 +69,7 @@ public:
 
 BorderTool::BorderTool(QObject* const parent)
     : EditorToolThreaded(parent),
-      d(new Private)
+      d                 (new Private)
 {
     setObjectName(QLatin1String("border"));
     setToolName(i18n("Add Border"));

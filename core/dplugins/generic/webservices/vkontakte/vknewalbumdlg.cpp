@@ -8,7 +8,7 @@
  *
  * Copyright (C) 2011      by Roman Tsisyk <roman at tsisyk dot com>
  * Copyright (C) 2011-2015 by Alexander Potashev <aspotashev at gmail dot com>
- * Copyright (C) 2011-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2011-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -45,7 +45,7 @@
 
 // libvkontakte includes
 
-#include <Vkontakte/albuminfo.h>
+#include "vkontakte_albuminfo.h"
 
 namespace DigikamGenericVKontaktePlugin
 {
@@ -72,7 +72,7 @@ public:
 
 VKNewAlbumDlg::VKNewAlbumDlg(QWidget* const parent)
     : QDialog(parent),
-      d(new Private)
+      d      (new Private)
 {
     initDialog(false);
 }
@@ -123,7 +123,7 @@ void VKNewAlbumDlg::initDialog(bool editing)
 
 
     QFormLayout* const albumBoxLayout   = new QFormLayout;
-    albumBoxLayout->addRow(i18n("Title:"),   d->titleEdit);
+    albumBoxLayout->addRow(i18nc("@option: album properties", "Title:"),   d->titleEdit);
     albumBoxLayout->addRow(i18n("Summary:"), d->summaryEdit);
     albumBox->setLayout(albumBoxLayout);
 

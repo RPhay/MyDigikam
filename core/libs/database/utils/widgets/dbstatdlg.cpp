@@ -6,7 +6,7 @@
  * Date        : 2009-05-28
  * Description : database statistics dialog
  *
- * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -92,7 +92,7 @@ DBStatDlg::DBStatDlg(QWidget* const parent)
     {
         if (prm.internalServer)
         {
-            new QTreeWidgetItem(listView(), QStringList() << i18n("Database internal server")      << i18n("Yes"));
+            new QTreeWidgetItem(listView(), QStringList() << i18n("Database internal server")      << i18nc("@info: database server", "Yes"));
             new QTreeWidgetItem(listView(), QStringList() << i18n("Database internal server Path") << prm.internalServerDBPath);
         }
         else
@@ -106,6 +106,9 @@ DBStatDlg::DBStatDlg(QWidget* const parent)
             new QTreeWidgetItem(listView(), QStringList() << i18n("Face Db name")    << prm.databaseNameFace);
         }
     }
+
+    QString dbLocale = CoreDbAccess().db()->getSetting(QLatin1String("Locale"));
+    new QTreeWidgetItem(listView(), QStringList() << i18n("Database locale") << dbLocale);
 
     qApp->restoreOverrideCursor();
 }
@@ -146,11 +149,12 @@ int DBStatDlg::generateItemsList(DatabaseItem::Category category, const QString&
 
     setInfoMap(map);
 
-    ti = new QTreeWidgetItem(listView(), QStringList() << i18n("total") << QString::number(total));
+    ti = new QTreeWidgetItem(listView(), QStringList() << i18nc("@info: total number of items", "total") << QString::number(total));
     ti->setFont(0, ft);
     ti->setFont(1, ft);
 
     // Add space.
+
     new QTreeWidgetItem(listView(), QStringList());
 
     return total;

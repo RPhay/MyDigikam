@@ -7,7 +7,7 @@
  * Description : central place for ICC settings
  *
  * Copyright (C) 2005-2006 by F.J. Cruz <fj dot cruz at supercable dot es>
- * Copyright (C) 2005-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2005-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2009-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  *
  * This program is free software; you can redistribute it
@@ -50,6 +50,11 @@
 
 // X11 includes
 
+#if defined(Q_CC_CLANG)
+#    pragma clang diagnostic push
+#    pragma clang diagnostic ignored "-Wvariadic-macros"
+#endif
+
 // Note must be after all other to prevent broken compilation
 #ifdef HAVE_X11
 #   include <climits>
@@ -57,6 +62,10 @@
 #   include <X11/Xatom.h>
 #   include <QX11Info>
 #endif // HAVE_X11
+
+#if defined(Q_CC_CLANG)
+#    pragma clang diagnostic pop
+#endif
 
 namespace Digikam
 {
@@ -66,7 +75,7 @@ class Q_DECL_HIDDEN IccSettings::Private
 public:
 
     explicit Private()
-        : settings(ICCSettingsContainer()),
+        : settings   (ICCSettingsContainer()),
           configGroup(QLatin1String("Color Management"))
     {
     }
@@ -196,6 +205,7 @@ bool IccSettings::monitorProfileFromSystem() const
 */
 IccProfile IccSettings::Private::profileFromWindowSystem(QWidget* const widget)
 {
+
 #ifdef HAVE_X11
 
     if (!QX11Info::isPlatformX11())
@@ -288,21 +298,27 @@ IccProfile IccSettings::Private::profileFromWindowSystem(QWidget* const widget)
         qCDebug(DIGIKAM_DIMG_LOG) << "No X.org XICC profile installed for screen " << screenNumber;
     }
 
-    // insert to cache even if null
+    // Insert to cache even if null
     {
         QMutexLocker lock(&mutex);
         screenProfiles.insert(screenNumber, profile);
     }
 
 #elif defined Q_OS_WIN
+
     //TODO
     Q_UNUSED(widget);
-#elif defined Q_OS_OSX
+
+#elif defined Q_OS_MACOS
+
     //TODO
     Q_UNUSED(widget);
+
 #else
+
     // Unsupported platform
     Q_UNUSED(widget);
+
 #endif
 
     return IccProfile();
@@ -359,8 +375,8 @@ void IccSettings::readFromConfig()
         d->settings = s;
     }
 
-    emit settingsChanged();
-    emit settingsChanged(s, old);
+    emit signalSettingsChanged();
+    emit signalICCSettingsChanged(s, old);
 }
 
 void IccSettings::setSettings(const ICCSettingsContainer& settings)
@@ -380,8 +396,8 @@ void IccSettings::setSettings(const ICCSettingsContainer& settings)
     }
 
     d->writeToConfig();
-    emit settingsChanged();
-    emit settingsChanged(settings, old);
+    emit signalSettingsChanged();
+    emit signalICCSettingsChanged(settings, old);
 }
 
 void IccSettings::setUseManagedView(bool useManagedView)
@@ -397,8 +413,8 @@ void IccSettings::setUseManagedView(bool useManagedView)
 
     d->writeManagedViewToConfig();
 
-    emit settingsChanged();
-    emit settingsChanged(current, old);
+    emit signalSettingsChanged();
+    emit signalICCSettingsChanged(current, old);
 }
 
 void IccSettings::setUseManagedPreviews(bool useManagedPreviews)
@@ -414,8 +430,8 @@ void IccSettings::setUseManagedPreviews(bool useManagedPreviews)
 
     d->writeManagedPreviewsToConfig();
 
-    emit settingsChanged();
-    emit settingsChanged(current, old);
+    emit signalSettingsChanged();
+    emit signalICCSettingsChanged(current, old);
 }
 
 void IccSettings::setIccPath(const QString& path)
@@ -438,8 +454,8 @@ void IccSettings::setIccPath(const QString& path)
 
     d->writeManagedViewToConfig();
 
-    emit settingsChanged();
-    emit settingsChanged(current, old);
+    emit signalSettingsChanged();
+    emit signalICCSettingsChanged(current, old);
 }
 
 QList<IccProfile> IccSettings::Private::scanDirectories(const QStringList& dirs)
@@ -473,9 +489,11 @@ void IccSettings::Private::scanDirectory(const QString& path, const QStringList&
 
     foreach (const QFileInfo& info, infos)
     {
-        if (info.isFile())
+        if      (info.isFile())
         {
-            //qCDebug(DIGIKAM_DIMG_LOG) << info.filePath() << (info.exists() && info.isReadable());
+/*
+            qCDebug(DIGIKAM_DIMG_LOG) << info.filePath() << (info.exists() && info.isReadable());
+*/
             IccProfile profile(info.filePath());
 
             if (profile.open())
@@ -512,18 +530,22 @@ QList<IccProfile> IccSettings::allProfiles()
     QList<IccProfile> profiles;
 
     // get system paths, e.g. /usr/share/color/icc
+
     QStringList paths = IccProfile::defaultSearchPaths();
 
     // add user-specified path
+
     if (!extraPath.isEmpty() && !paths.contains(extraPath))
     {
         paths << extraPath;
     }
 
     // check search directories
+
     profiles << d->scanDirectories(paths);
 
     // load profiles that come with RawEngine
+
     profiles << IccProfile::defaultProfiles();
 
     QMutexLocker lock(&d->mutex);

@@ -6,7 +6,7 @@
  * Date        : 2009-10-11
  * Description : save image thread for scanned data
  *
- * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -26,6 +26,7 @@
 
 #include <QImage>
 #include <QDateTime>
+#include <QScopedPointer>
 
 // LibKSane includes
 
@@ -48,11 +49,11 @@ class Q_DECL_HIDDEN SaveImgThread::Private
 public:
 
     explicit Private()
+      : width       (0),
+        height      (0),
+        bytesPerLine(0),
+        frmt        (0)
     {
-        width        = 0;
-        height       = 0;
-        bytesPerLine = 0;
-        frmt         = 0;
     }
 
     int        width;
@@ -71,13 +72,14 @@ public:
 
 SaveImgThread::SaveImgThread(QObject* const parent)
     : QThread(parent),
-      d(new Private)
+      d      (new Private)
 {
 }
 
 SaveImgThread::~SaveImgThread()
 {
     // wait for the thread to finish
+
     wait();
 
     delete d;
@@ -109,8 +111,8 @@ void SaveImgThread::run()
 {
     emit signalProgress(d->newUrl, 10);
 
-    bool sixteenBit   = (d->frmt == KSaneWidget::FormatRGB_16_C ||
-                         d->frmt == KSaneWidget::FormatGrayScale16);
+    bool sixteenBit   = ((d->frmt == KSaneWidget::FormatRGB_16_C) ||
+                         (d->frmt == KSaneWidget::FormatGrayScale16));
     DImg img((uint)d->width, (uint)d->height, sixteenBit, false);
     int progress;
 
@@ -119,11 +121,11 @@ void SaveImgThread::run()
         uchar* src = (uchar*)d->ksaneData.data();
         uchar* dst = img.bits();
 
-        for (int h = 0; h < d->height; ++h)
+        for (int h = 0 ; h < d->height ; ++h)
         {
-            for (int w = 0; w < d->width; ++w)
+            for (int w = 0 ; w < d->width ; ++w)
             {
-                if (d->frmt == KSaneWidget::FormatRGB_8_C) // Color
+                if      (d->frmt == KSaneWidget::FormatRGB_8_C)     // Color 8 bits
                 {
                     dst[0]  = src[2];    // Blue
                     dst[1]  = src[1];    // Green
@@ -133,7 +135,7 @@ void SaveImgThread::run()
                     dst    += 4;
                     src    += 3;
                 }
-                else if (d->frmt == KSaneWidget::FormatGrayScale8) // Gray
+                else if (d->frmt == KSaneWidget::FormatGrayScale8)  // Gray
                 {
                     dst[0]  = src[0];    // Blue
                     dst[1]  = src[0];    // Green
@@ -143,9 +145,9 @@ void SaveImgThread::run()
                     dst    += 4;
                     src    += 1;
                 }
-                else if (d->frmt == KSaneWidget::FormatBlackWhite) // Lineart
+                else if (d->frmt == KSaneWidget::FormatBlackWhite)  // Lineart
                 {
-                    for (int i = 0; i < 8; ++i)
+                    for (int i = 0 ; i < 8 ; ++i)
                     {
                         if (*src & (1 << (7 - i)))
                         {
@@ -183,11 +185,11 @@ void SaveImgThread::run()
         unsigned short* src = reinterpret_cast<unsigned short*>(d->ksaneData.data());
         unsigned short* dst = reinterpret_cast<unsigned short*>(img.bits());
 
-        for (int h = 0; h < d->height; ++h)
+        for (int h = 0 ; h < d->height ; ++h)
         {
-            for (int w = 0; w < d->width; ++w)
+            for (int w = 0 ; w < d->width ; ++w)
             {
-                if (d->frmt == KSaneWidget::FormatRGB_16_C) // Color16
+                if      (d->frmt == KSaneWidget::FormatRGB_16_C)    // Color 16 bits
                 {
                     dst[0]  = src[2];    // Blue
                     dst[1]  = src[1];    // Green
@@ -211,7 +213,7 @@ void SaveImgThread::run()
 
             progress = 10 + (int)(((double)h * 50.0) / d->height);
 
-            if (progress % 5 == 0)
+            if ((progress % 5) == 0)
             {
                 emit signalProgress(d->newUrl, progress);
             }
@@ -230,18 +232,18 @@ void SaveImgThread::run()
         return;
     }
 
-    DMetadata meta(d->newUrl.toLocalFile());
-    meta.setExifTagString("Exif.Image.DocumentName", QLatin1String("Scanned Image")); // not i18n
-    meta.setExifTagString("Exif.Image.Make",         d->make);
-    meta.setXmpTagString("Xmp.tiff.Make",            d->make);
-    meta.setExifTagString("Exif.Image.Model",        d->model);
-    meta.setXmpTagString("Xmp.tiff.Model",           d->model);
-    meta.setItemOrientation(DMetadata::ORIENTATION_NORMAL);
-    meta.setItemColorWorkSpace(DMetadata::WORKSPACE_SRGB);
+    QScopedPointer<DMetadata> meta(new DMetadata(d->newUrl.toLocalFile()));
+    meta->setExifTagString("Exif.Image.DocumentName", QLatin1String("Scanned Image")); // not i18n
+    meta->setExifTagString("Exif.Image.Make",         d->make);
+    meta->setXmpTagString("Xmp.tiff.Make",            d->make);
+    meta->setExifTagString("Exif.Image.Model",        d->model);
+    meta->setXmpTagString("Xmp.tiff.Model",           d->model);
+    meta->setItemOrientation(DMetadata::ORIENTATION_NORMAL);
+    meta->setItemColorWorkSpace(DMetadata::WORKSPACE_SRGB);
 
     emit signalProgress(d->newUrl, 90);
 
-    meta.applyChanges(true);
+    meta->applyChanges(true);
 
     emit signalProgress(d->newUrl, 100);
     emit signalComplete(d->newUrl, success);

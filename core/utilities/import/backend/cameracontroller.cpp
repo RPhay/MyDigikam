@@ -7,8 +7,9 @@
  * Description : digital camera controller
  *
  * Copyright (C) 2004-2005 by Renchi Raju <renchi dot raju at gmail dot com>
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2006-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
+ * Copyright (C) 2006      by Stephan Kulow <coolo at kde dot org>
  * Copyright (C) 2015      by Mohamed_Anwer <m_dot_anwer at gmx dot com>
  *
  * This program is free software; you can redistribute it
@@ -28,6 +29,7 @@
 
 // Qt includes
 
+#include <QApplication>
 #include <QMutex>
 #include <QWaitCondition>
 #include <QVariant>
@@ -39,6 +41,7 @@
 #include <QDir>
 #include <QMessageBox>
 #include <QProcess>
+#include <QScopedPointer>
 
 // KDE includes
 
@@ -92,13 +95,13 @@ class Q_DECL_HIDDEN CameraController::Private
 public:
 
     explicit Private()
-      : close(false),
-        canceled(false),
-        running(false),
+      : close       (false),
+        canceled    (false),
+        running     (false),
         conflictRule(SetupCamera::DIFFNAME),
-        parent(nullptr),
-        timer(nullptr),
-        camera(nullptr)
+        parent      (nullptr),
+        timer       (nullptr),
+        camera      (nullptr)
     {
     }
 
@@ -124,14 +127,17 @@ public:
 };
 
 CameraController::CameraController(QWidget* const parent,
-                                   const QString& title, const QString& model,
-                                   const QString& port, const QString& path)
+                                   const QString& title,
+                                   const QString& model,
+                                   const QString& port,
+                                   const QString& path)
     : QThread(parent),
-      d(new Private)
+      d      (new Private)
 {
     d->parent = parent;
 
-    // URL parsing (c) Stephan Kulow
+    // URL parsing
+
     if (path.startsWith(QLatin1String("camera:/")))
     {
         QUrl url(path);
@@ -203,6 +209,7 @@ CameraController::CameraController(QWidget* const parent,
 CameraController::~CameraController()
 {
     // clear commands, stop camera
+
     slotCancel();
 
     // stop thread
@@ -337,7 +344,7 @@ QIcon CameraController::mimeTypeThumbnail(const QString& itemName) const
     QFileInfo fi(itemName);
     QString mime = d->camera->mimeType(fi.suffix().toLower());
 
-    if (mime.startsWith(QLatin1String("image/x-raw")))
+    if      (mime.startsWith(QLatin1String("image/x-raw")))
     {
         return QIcon::fromTheme(QLatin1String("image-x-adobe-dng"));
     }
@@ -361,7 +368,11 @@ void CameraController::slotCancel()
 {
     d->canceled = true;
     d->camera->cancel();
+
     QMutexLocker lock(&d->mutex);
+
+    qDeleteAll(d->cmdThumbs);
+    qDeleteAll(d->commands);
     d->cmdThumbs.clear();
     d->commands.clear();
 }
@@ -375,14 +386,14 @@ void CameraController::run()
         {
             QMutexLocker lock(&d->mutex);
 
-            if (!d->commands.isEmpty())
+            if      (!d->commands.isEmpty())
             {
                 command = d->commands.takeFirst();
                 emit signalBusy(true);
             }
             else if (!d->cmdThumbs.isEmpty())
             {
-                command = d->cmdThumbs.takeLast();
+                command = d->cmdThumbs.takeFirst();
                 emit signalBusy(false);
             }
             else
@@ -515,6 +526,7 @@ void CameraController::executeCommand(CameraCommand* const cmd)
             }
 
             // TODO would it be okay to pass this to the ImportItemModel and let it filter it for us?
+
             for (CamItemInfoList::iterator it = itemsList.begin() ; it != itemsList.end() ; )
             {
                 CamItemInfo &info = (*it);
@@ -575,13 +587,13 @@ void CameraController::executeCommand(CameraCommand* const cmd)
             QString folder = cmd->map[QLatin1String("folder")].toString();
             QString file   = cmd->map[QLatin1String("file")].toString();
 
-            DMetadata meta;
+            QScopedPointer<DMetadata> meta(new DMetadata);
 
-            if (!d->camera->getMetadata(folder, file, meta))
+            if (!d->camera->getMetadata(folder, file, *meta))
                 sendLogMsg(xi18n("Failed to get Metadata for <filename>%1</filename>", file),
                            DHistoryView::ErrorEntry, folder, file);
 
-            emit signalMetadata(folder, file, meta);
+            emit signalMetadata(folder, file, *meta);
 
             break;
         }
@@ -622,7 +634,7 @@ void CameraController::executeCommand(CameraCommand* const cmd)
 
             bool result  = d->camera->downloadItem(folder, file, temp);
 
-            if (!result)
+            if      (!result)
             {
                 QFile::remove(temp);
                 sendLogMsg(xi18n("Failed to download <filename>%1</filename>", file),
@@ -633,20 +645,21 @@ void CameraController::executeCommand(CameraCommand* const cmd)
             else if (mime == QLatin1String("image/jpeg"))
             {
                 // Possible modification operations. Only apply it to JPEG for the moment.
+
                 qCDebug(DIGIKAM_IMPORTUI_LOG) << "Set metadata from: " << file << " using " << temp;
 
-                DMetadata metadata(temp);
+                QScopedPointer<DMetadata> metadata(new DMetadata(temp));
                 bool applyChanges = false;
 
                 if (documentName)
                 {
-                    metadata.setExifTagString("Exif.Image.DocumentName", file);
+                    metadata->setExifTagString("Exif.Image.DocumentName", file);
                     applyChanges = true;
                 }
 
                 if (fixDateTime)
                 {
-                    metadata.setImageDateTime(newDateTime, true);
+                    metadata->setImageDateTime(newDateTime, true);
                     applyChanges = true;
                 }
 
@@ -654,19 +667,19 @@ void CameraController::executeCommand(CameraCommand* const cmd)
 
                 if (colorLabel > NoColorLabel)
                 {
-                    metadata.setItemColorLabel(colorLabel);
+                    metadata->setItemColorLabel(colorLabel);
                     applyChanges = true;
                 }
 
                 if (pickLabel > NoPickLabel)
                 {
-                    metadata.setItemPickLabel(pickLabel);
+                    metadata->setItemPickLabel(pickLabel);
                     applyChanges = true;
                 }
 
                 if (rating > RatingMin)
                 {
-                    metadata.setItemRating(rating);
+                    metadata->setItemRating(rating);
                     applyChanges = true;
                 }
 
@@ -677,20 +690,20 @@ void CameraController::executeCommand(CameraCommand* const cmd)
 
                     if (tm && templateTitle == Template::removeTemplateTitle())
                     {
-                        metadata.removeMetadataTemplate();
+                        metadata->removeMetadataTemplate();
                         applyChanges = true;
                     }
                     else if (tm)
                     {
-                        metadata.removeMetadataTemplate();
-                        metadata.setMetadataTemplate(tm->findByTitle(templateTitle));
+                        metadata->removeMetadataTemplate();
+                        metadata->setMetadataTemplate(tm->findByTitle(templateTitle));
                         applyChanges = true;
                     }
                 }
 
                 if (applyChanges)
                 {
-                    metadata.applyChanges();
+                    metadata->applyChanges();
                 }
 
                 // Convert JPEG file to lossless format if wanted,
@@ -708,7 +721,9 @@ void CameraController::executeCommand(CameraCommand* const cmd)
                     if (!JPEGUtils::jpegConvert(temp, temp2, file, losslessFormat))
                     {
                         qCDebug(DIGIKAM_IMPORTUI_LOG) << "Convert failed to JPEG!";
+
                         // convert failed. delete the temp file
+
                         QFile::remove(temp);
                         QFile::remove(temp2);
                         sendLogMsg(xi18n("Failed to convert file <filename>%1</filename> to JPEG", file),
@@ -717,13 +732,15 @@ void CameraController::executeCommand(CameraCommand* const cmd)
                     else
                     {
                         qCDebug(DIGIKAM_IMPORTUI_LOG) << "Done, removing the temp file: " << temp;
+
                         // Else remove only the first temp file.
+
                         QFile::remove(temp);
                         temp = temp2;
                     }
                 }
             }
-            else if (convertDng && mime == QLatin1String("image/x-raw"))
+            else if (convertDng && (mime == QLatin1String("image/x-raw")))
             {
                 qCDebug(DIGIKAM_IMPORTUI_LOG) << "Convert to DNG: " << file;
 
@@ -742,7 +759,9 @@ void CameraController::executeCommand(CameraCommand* const cmd)
                     if (dngWriter.convert() != DNGWriter::PROCESSCOMPLETE)
                     {
                         qCDebug(DIGIKAM_IMPORTUI_LOG) << "Convert failed to DNG!";
+
                         // convert failed. delete the temp file
+
                         QFile::remove(temp);
                         QFile::remove(temp2);
                         sendLogMsg(xi18n("Failed to convert file <filename>%1</filename> to DNG", file),
@@ -751,7 +770,9 @@ void CameraController::executeCommand(CameraCommand* const cmd)
                     else
                     {
                         qCDebug(DIGIKAM_IMPORTUI_LOG) << "Done, removing the temp file: " << temp;
+
                         // Else remove only the first temp file.
+
                         QFile::remove(temp);
                         temp = temp2;
                     }
@@ -766,6 +787,7 @@ void CameraController::executeCommand(CameraCommand* const cmd)
 
             // Now we need to move from temp file to destination file.
             // This possibly involves UI operation, do it from main thread
+
             emit signalInternalCheckRename(folder, file, dest, temp, script);
             break;
         }
@@ -776,14 +798,16 @@ void CameraController::executeCommand(CameraCommand* const cmd)
 
             // We will using the same source file name to create the dest file
             // name in camera.
+
             QString file   = cmd->map[QLatin1String("destFile")].toString();
 
             // The source file path to download in camera.
+
             QString src    = cmd->map[QLatin1String("srcFilePath")].toString();
 
             CamItemInfo itemsInfo;
 
-            bool result = d->camera->uploadItem(folder, file, src, itemsInfo);
+            bool result    = d->camera->uploadItem(folder, file, src, itemsInfo);
 
             if (result)
             {
@@ -858,10 +882,11 @@ void CameraController::slotCheckRename(const QString& folder, const QString& fil
                                        const QString& script)
 {
     // this is the direct continuation of executeCommand, case CameraCommand::cam_download
+
     QString dest = destination;
     QFileInfo info(dest);
 
-    if (info.exists() && d->conflictRule == SetupCamera::SKIPFILE)
+    if      (info.exists() && (d->conflictRule == SetupCamera::SKIPFILE))
     {
         QFile::remove(temp);
         sendLogMsg(xi18n("Skipped file <filename>%1</filename>", file),
@@ -883,6 +908,7 @@ void CameraController::slotCheckRename(const QString& folder, const QString& fil
     }
 
     // move the file to the destination file
+
     if (DMetadata::hasSidecar(temp))
     {
         QString sctemp = DMetadata::sidecarPath(temp);
@@ -891,7 +917,8 @@ void CameraController::slotCheckRename(const QString& folder, const QString& fil
         qCDebug(DIGIKAM_IMPORTUI_LOG) << "File" << temp << " has a sidecar, renaming it to " << scdest;
 
         // remove scdest file if it exist
-        if (sctemp != scdest && QFile::exists(sctemp) && QFile::exists(scdest))
+
+        if ((sctemp != scdest) && QFile::exists(sctemp) && QFile::exists(scdest))
         {
             QFile::remove(scdest);
         }
@@ -904,7 +931,8 @@ void CameraController::slotCheckRename(const QString& folder, const QString& fil
     }
 
     // remove dest file if it exist
-    if (temp != dest && QFile::exists(temp) && QFile::exists(dest))
+
+    if ((temp != dest) && QFile::exists(temp) && QFile::exists(dest))
     {
         QFile::remove(dest);
     }
@@ -912,7 +940,9 @@ void CameraController::slotCheckRename(const QString& folder, const QString& fil
     if (!DFileOperations::renameFile(temp, dest))
     {
         qCDebug(DIGIKAM_IMPORTUI_LOG) << "Renaming " << temp << " to " << dest << " failed";
+
         // rename failed. delete the temp file
+
         QFile::remove(temp);
         emit signalDownloaded(folder, file, CamItemInfo::DownloadFailed);
         sendLogMsg(xi18n("Failed to download <filename>%1</filename>", file),
@@ -923,10 +953,12 @@ void CameraController::slotCheckRename(const QString& folder, const QString& fil
         qCDebug(DIGIKAM_IMPORTUI_LOG) << "Rename done, emitting downloaded signals:"
                                       << file << " info.filename: " << info.fileName();
         // TODO why two signals??
+
         emit signalDownloaded(folder, file, CamItemInfo::DownloadedYes);
         emit signalDownloadComplete(folder, file, info.path(), info.fileName());
 
         // Run script
+
         if (!script.isEmpty())
         {
             qCDebug(DIGIKAM_IMPORTUI_LOG) << "Got a script, processing: " << script;
@@ -936,6 +968,7 @@ void CameraController::slotCheckRename(const QString& folder, const QString& fil
             if (s.indexOf(QLatin1Char('%')) > -1)
             {
                 // %filename must be replaced before %file
+
                 s.replace(QLatin1String("%orgfilename"), file,            Qt::CaseSensitive);
                 s.replace(QLatin1String("%filename"),    info.fileName(), Qt::CaseSensitive);
                 s.replace(QLatin1String("%orgpath"),     folder,          Qt::CaseSensitive);
@@ -1099,9 +1132,22 @@ void CameraController::addCommand(CameraCommand* const cmd)
     d->condVar.wakeAll();
 }
 
+void CameraController::moveThumbsInfo(CameraCommand* const cmd)
+{
+    QMutexLocker lock(&d->mutex);
+
+    int index = d->cmdThumbs.indexOf(cmd);
+
+    if (index > 0)
+    {
+        d->cmdThumbs.move(index, 0);
+    }
+}
+
 bool CameraController::queueIsEmpty() const
 {
     QMutexLocker lock(&d->mutex);
+
     return (d->commands.isEmpty() && d->cmdThumbs.isEmpty());
 }
 
@@ -1139,7 +1185,7 @@ void CameraController::listFiles(const QString& folder, bool useMetadata)
     addCommand(cmd);
 }
 
-void CameraController::getThumbsInfo(const CamItemInfoList& list, int thumbSize)
+CameraCommand* CameraController::getThumbsInfo(const CamItemInfoList& list, int thumbSize)
 {
     d->canceled              = false;
     CameraCommand* const cmd = new CameraCommand;
@@ -1155,6 +1201,8 @@ void CameraController::getThumbsInfo(const CamItemInfoList& list, int thumbSize)
     cmd->map.insert(QLatin1String("list"),      QVariant(itemsList));
     cmd->map.insert(QLatin1String("thumbSize"), QVariant(thumbSize));
     addCommand(cmd);
+
+    return cmd;
 }
 
 void CameraController::getMetadata(const QString& folder, const QString& file)
@@ -1249,7 +1297,9 @@ void CameraController::download(const DownloadSettings& downloadSettings)
     cmd->map.insert(QLatin1String("pickLabel"),         QVariant(downloadSettings.pickLabel));
     cmd->map.insert(QLatin1String("colorLabel"),        QVariant(downloadSettings.colorLabel));
     cmd->map.insert(QLatin1String("rating"),            QVariant(downloadSettings.rating));
-    //cmd->map.insert(QLatin1String("tagIds"),            QVariant(downloadSettings.tagIds));
+/*
+    cmd->map.insert(QLatin1String("tagIds"),            QVariant(downloadSettings.tagIds));
+*/
     addCommand(cmd);
 }
 

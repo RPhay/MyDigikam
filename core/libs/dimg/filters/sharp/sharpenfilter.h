@@ -6,7 +6,7 @@
  * Date        : 2005-17-07
  * Description : A Sharpen threaded image filter.
  *
- * Copyright (C) 2005-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2005-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2010      by Martin Klapetek <martin dot klapetek at gmail dot com>
  *
  * This program is free software; you can redistribute it
@@ -36,10 +36,11 @@ namespace Digikam
 
 class DIGIKAM_EXPORT SharpenFilter : public DImgThreadedFilter
 {
+    Q_OBJECT
 
 private:
 
-    struct Args
+    struct Q_DECL_HIDDEN Args
     {
         explicit Args()
           : start(0),
@@ -62,7 +63,7 @@ private:
 public:
 
     explicit SharpenFilter(QObject* const parent = nullptr);
-    explicit SharpenFilter(DImg* const orgImage, QObject* const parent=nullptr, double radius=0.0, double sigma=1.0);
+    explicit SharpenFilter(DImg* const orgImage, QObject* const parent = nullptr, double radius=0.0, double sigma=1.0);
 
     /**
      * Constructor for slave mode: execute immediately in current thread with specified master filter
@@ -70,7 +71,7 @@ public:
     SharpenFilter(DImgThreadedFilter* const parentFilter, const DImg& orgImage, const DImg& destImage,
                   int progressBegin=0, int progressEnd=100, double radius=0.0, double sigma=1.0);
 
-    ~SharpenFilter();
+    ~SharpenFilter() override;
 
     static QString          FilterIdentifier()
     {
@@ -89,12 +90,12 @@ public:
         return 1;
     }
 
-    virtual QString         filterIdentifier()                          const override
+    QString         filterIdentifier()                          const override
     {
         return FilterIdentifier();
     }
 
-    virtual FilterAction    filterAction()                                    override;
+    FilterAction    filterAction()                                    override;
     void                    readParameters(const FilterAction& action)        override;
 
 

@@ -8,7 +8,7 @@
  * Acknowledge : based on the expoblending tool
  *
  * Copyright (C) 2011-2016 by Benjamin Girault <benjamin dot girault at gmail dot com>
- * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -39,14 +39,13 @@
 #include <QVBoxLayout>
 #include <QHBoxLayout>
 #include <QTextBrowser>
-
-// #include <QList>
+#include <QList>
 
 // KDE includes
 
-#include <kconfig.h>
-#include <kconfiggroup.h>
 #include <klocalizedstring.h>
+#include <ksharedconfig.h>
+#include <kconfiggroup.h>
 
 // Local includes
 
@@ -66,24 +65,24 @@ class Q_DECL_HIDDEN PanoPreProcessPage::Private
 public:
 
     explicit Private()
-      : progressCount(0),
-        progressLabel(nullptr),
-        progressTimer(nullptr),
-        preprocessingDone(false),
-        canceled(false),
-        nbFilesProcessed(0),
-        title(nullptr),
-        celesteCheckBox(nullptr),
-        detailsText(nullptr),
-        progressPix(DWorkingPixmap()),
-        mngr(nullptr)
+      : progressCount       (0),
+        progressLabel       (nullptr),
+        progressTimer       (nullptr),
+        preprocessingDone   (false),
+        canceled            (false),
+        nbFilesProcessed    (0),
+        title               (nullptr),
+        celesteCheckBox     (nullptr),
+        detailsText         (nullptr),
+        progressPix         (nullptr),
+        mngr                (nullptr)
     {
     }
 
     int                        progressCount;
     QLabel*                    progressLabel;
     QTimer*                    progressTimer;
-    QMutex                     progressMutex;      // This is a precaution in case the user does a back / next action at the wrong moment
+    QMutex                     progressMutex;      ///< This is a precaution in case the user does a back / next action at the wrong moment
     bool                       preprocessingDone;
     bool                       canceled;
 
@@ -96,41 +95,42 @@ public:
 
     QTextBrowser*              detailsText;
 
-    DWorkingPixmap             progressPix;
+    DWorkingPixmap*            progressPix;
 
     PanoManager*               mngr;
 };
 
 PanoPreProcessPage::PanoPreProcessPage(PanoManager* const mngr, QWizard* const dlg)
-    : DWizardPage(dlg, i18nc("@title:window", "<b>Pre-Processing Images</b>")),
-      d(new Private)
+    : DWizardPage(dlg, QString::fromLatin1("<b>%1</b>").arg(i18nc("@title: window", "Pre-Processing Images"))),
+      d          (new Private)
 {
     d->mngr                 = mngr;
     d->progressTimer        = new QTimer(this);
+    d->progressPix          = new DWorkingPixmap(this);
     DVBox* const vbox       = new DVBox(this);
     d->title                = new QLabel(vbox);
     d->title->setWordWrap(true);
     d->title->setOpenExternalLinks(true);
 
-    KConfig config;
-    KConfigGroup group  = config.group("Panorama Settings");
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup group      = config->group("Panorama Settings");
 
-    d->celesteCheckBox  = new QCheckBox(i18nc("@option:check", "Detect moving skies"), vbox);
+    d->celesteCheckBox      = new QCheckBox(i18nc("@option: check", "Detect moving skies"), vbox);
     d->celesteCheckBox->setChecked(group.readEntry("Celeste", false));
-    d->celesteCheckBox->setToolTip(i18nc("@info:tooltip", "Automatic detection of clouds to prevent wrong keypoints matching "
+    d->celesteCheckBox->setToolTip(i18nc("@info: tooltip", "Automatic detection of clouds to prevent wrong keypoints matching "
                                          "between images due to moving clouds."));
-    d->celesteCheckBox->setWhatsThis(i18nc("@info:whatsthis", "<b>Detect moving skies</b>: During the control points selection and matching, "
+    d->celesteCheckBox->setWhatsThis(i18nc("@info: whatsthis", "\"Detect moving skies\": During the control points selection and matching, "
                                            "this option discards any points that are associated to a possible cloud. This "
                                            "is useful to prevent moving clouds from altering the control points matching "
                                            "process."));
     vbox->setStretchFactor(new QWidget(vbox), 2);
 
-    d->detailsText    = new QTextBrowser(vbox);
+    d->detailsText          = new QTextBrowser(vbox);
     d->detailsText->hide();
 
     vbox->setStretchFactor(new QWidget(vbox), 2);
 
-    d->progressLabel = new QLabel(vbox);
+    d->progressLabel        = new QLabel(vbox);
     d->progressLabel->setAlignment(Qt::AlignCenter);
 
     vbox->setStretchFactor(new QWidget(vbox), 10);
@@ -146,10 +146,10 @@ PanoPreProcessPage::PanoPreProcessPage(PanoManager* const mngr, QWizard* const d
 
 PanoPreProcessPage::~PanoPreProcessPage()
 {
-    KConfig config;
-    KConfigGroup group = config.group("Panorama Settings");
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup group      = config->group("Panorama Settings");
     group.writeEntry("Celeste", d->celesteCheckBox->isChecked());
-    config.sync();
+    config->sync();
 
     delete d;
 }
@@ -158,10 +158,12 @@ void PanoPreProcessPage::process()
 {
     QMutexLocker lock(&d->progressMutex);
 
-    d->title->setText(i18n("<qt>"
-                           "<p>Pre-processing is in progress, please wait.</p>"
-                           "<p>This can take a while...</p>"
-                           "</qt>"));
+    d->title->setText(QString::fromUtf8("<qt>"
+                                        "<p>%1</p>"
+                                        "<p>%2</p>"
+                                        "</qt>")
+                                        .arg(i18nc("@info", "Pre-processing is in progress, please wait."))
+                                        .arg(i18nc("@info", "This can take a while...")));
 
     d->celesteCheckBox->hide();
     d->progressTimer->start(300);
@@ -171,9 +173,9 @@ void PanoPreProcessPage::process()
 
     connect(d->mngr->thread(), SIGNAL(jobCollectionFinished(DigikamGenericPanoramaPlugin::PanoActionData)),
             this, SLOT(slotPanoAction(DigikamGenericPanoramaPlugin::PanoActionData)));
-
-//  d->nbFilesProcessed = 0;
-
+/*
+    d->nbFilesProcessed = 0;
+*/
     d->mngr->resetBasePto();
     d->mngr->resetCpFindPto();
     d->mngr->resetCpCleanPto();
@@ -184,7 +186,9 @@ void PanoPreProcessPage::process()
                                        d->mngr->cpFindPtoUrl(),
                                        d->mngr->cpCleanPtoUrl(),
                                        d->celesteCheckBox->isChecked(),
-//                                     d->mngr->hdr(),
+/*
+                                       d->mngr->hdr(),
+*/
                                        d->mngr->format(),
                                        d->mngr->gPano(),
                                        d->mngr->cpFindBinary().version(),
@@ -194,18 +198,19 @@ void PanoPreProcessPage::process()
 
 void PanoPreProcessPage::initializePage()
 {
-    d->title->setText(i18n("<qt>"
-                           "<p>Now, we will pre-process images before stitching them.</p>"
-                           "<p>Pre-processing operations include Raw demosaicing. Raw images will be converted "
-                           "to 16-bit sRGB images with auto-gamma.</p>"
-                           "<p>Pre-processing also include a calculation of some control points to match "
-                           "overlaps between images. For that purpose, the <b>%1</b> program from the "
-                           "<a href='%2'>%3</a> project will be used.</p>"
-                           "<p>Press \"Next\" to start pre-processing.</p>"
-                           "</qt>",
-                           QDir::toNativeSeparators(d->mngr->cpFindBinary().path()),
-                           d->mngr->cpFindBinary().url().url(),
-                           d->mngr->cpFindBinary().projectName()));
+    d->title->setText(QString::fromUtf8("<qt>"
+                                        "<p>%1</p>"
+                                        "<p>%2</p>"
+                                        "<p>%3</p>"
+                                        "<p>%4</p>"
+                                        "</qt>")
+                      .arg(i18nc("@info", "Now, we will pre-process images before stitching them."))
+                      .arg(i18nc("@info", "Pre-processing operations include Raw demosaicing. Raw images will be converted "
+                                          "to 16-bit sRGB images with auto-gamma."))
+                      .arg(i18nc("@info", "Pre-processing also include a calculation of some control points to match "
+                                          "overlaps between images. For that purpose, the \"%1\" program will be used.",
+                                          QDir::toNativeSeparators(d->mngr->cpFindBinary().path())))
+                      .arg(i18nc("@info", "Press the \"Next\" button to start pre-processing.")));
 
     d->detailsText->hide();
     d->celesteCheckBox->show();
@@ -220,7 +225,9 @@ void PanoPreProcessPage::initializePage()
 bool PanoPreProcessPage::validatePage()
 {
     if (d->preprocessingDone)
+    {
         return true;
+    }
 
     setComplete(false);
     process();
@@ -251,11 +258,11 @@ void PanoPreProcessPage::cleanupPage()
 
 void PanoPreProcessPage::slotProgressTimerDone()
 {
-    d->progressLabel->setPixmap(d->progressPix.frameAt(d->progressCount));
+    d->progressLabel->setPixmap(d->progressPix->frameAt(d->progressCount));
 
-    if (d->progressPix.frameCount())
+    if (d->progressPix->frameCount())
     {
-        d->progressCount = (d->progressCount + 1) % d->progressPix.frameCount();
+        d->progressCount = (d->progressCount + 1) % d->progressPix->frameCount();
     }
 
     d->progressTimer->start(300);
@@ -295,10 +302,13 @@ void PanoPreProcessPage::slotPanoAction(const DigikamGenericPanoramaPlugin::Pano
 
                     if (d->detailsText->isHidden())  // Ensures only the first failed task is shown
                     {
-                        d->title->setText(i18n("<qt>"
-                                                "<h1>Pre-processing has failed.</h1>"
-                                                "<p>See processing messages below.</p>"
-                                                "</qt>"));
+                        d->title->setText(QString::fromUtf8("<qt>"
+                                                            "<p>%1</p>"
+                                                            "<p>%2</p>"
+                                                            "</qt>")
+                                                            .arg(i18nc("@info", "Pre-processing has failed."))
+                                                            .arg(i18nc("@info", "See processing messages below.")));
+
                         d->progressTimer->stop();
                         d->celesteCheckBox->hide();
                         d->detailsText->show();
@@ -311,6 +321,7 @@ void PanoPreProcessPage::slotPanoAction(const DigikamGenericPanoramaPlugin::Pano
                     }
                     break;
                 }
+
                 default:
                 {
                     qCWarning(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Unknown action (preprocessing) " << ad.action;
@@ -324,18 +335,20 @@ void PanoPreProcessPage::slotPanoAction(const DigikamGenericPanoramaPlugin::Pano
             {
                 case PANO_PREPROCESS_INPUT:
                 {
-//                     QMutexLocker nbProcessed(&d->nbFilesProcessed_mutex);
-
-//                     d->nbFilesProcessed++;
-
+/*
+                    QMutexLocker nbProcessed(&d->nbFilesProcessed_mutex);
+                    d->nbFilesProcessed++;
+*/
                     break;
                 }
+
                 case PANO_CREATEPTO:
                 case PANO_CPFIND:
                 {
                     // Nothing to do, that just another step towards the end
                     break;
                 }
+
                 case PANO_CPCLEAN:
                 {
                     disconnect(d->mngr->thread(), SIGNAL(stepFinished(DigikamGenericPanoramaPlugin::PanoActionData)),
@@ -353,9 +366,11 @@ void PanoPreProcessPage::slotPanoAction(const DigikamGenericPanoramaPlugin::Pano
 
                     break;
                 }
+
                 default:
                 {
                     qCWarning(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Unknown action (preprocessing) " << ad.action;
+
                     break;
                 }
             }

@@ -8,7 +8,7 @@
  *               re-implemented with a reset button to switch to
  *               a default value
  *
- * Copyright (C) 2008-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2008-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -43,8 +43,8 @@ class DIGIKAM_EXPORT DIntNumInput : public QWidget
 
 public:
 
-    explicit DIntNumInput(QWidget* const parent=nullptr);
-    ~DIntNumInput();
+    explicit DIntNumInput(QWidget* const parent = nullptr);
+    ~DIntNumInput() override;
 
     void setRange(int min, int max, int step);
 
@@ -82,8 +82,8 @@ class DIGIKAM_EXPORT DDoubleNumInput : public QWidget
 
 public:
 
-    explicit DDoubleNumInput(QWidget* const parent=nullptr);
-    ~DDoubleNumInput();
+    explicit DDoubleNumInput(QWidget* const parent = nullptr);
+    ~DDoubleNumInput() override;
 
     void   setDecimals(int p);
     void   setRange(double min, double max, double step);

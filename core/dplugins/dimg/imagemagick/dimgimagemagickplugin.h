@@ -49,7 +49,7 @@ class DImgImageMagickPlugin : public DPluginDImg
 public:
 
     explicit DImgImageMagickPlugin(QObject* const parent = nullptr);
-    ~DImgImageMagickPlugin();
+    ~DImgImageMagickPlugin()                                                                      override;
 
     QString name()                                                                          const override;
     QString iid()                                                                           const override;
@@ -71,6 +71,13 @@ public:
 private:
 
     QStringList decoderFormats() const;
+    QStringList encoderFormats() const;
+
+private:
+
+    QStringList m_readFormats;
+    QStringList m_writeFormats;
+
 };
 
 } // namespace DigikamImageMagickDImgPlugin

@@ -6,7 +6,7 @@
  * Date        : 2010-06-21
  * Description : A simple model to hold a tree structure.
  *
- * Copyright (C) 2010-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2010-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2010-2014 by Michael G. Hansen <mike at mghansen dot de>
  *
  * This program is free software; you can redistribute it
@@ -48,8 +48,8 @@ public:
 
         explicit Item()
           : dataColumns(),
-            parent(nullptr),
-            children()
+            parent     (nullptr),
+            children   ()
         {
         }
 
@@ -58,7 +58,9 @@ public:
             qDeleteAll(children);
         }
 
-        QString data;
+    public:
+
+        QString                     data;
 
     private:
 
@@ -70,23 +72,23 @@ public:
     };
 
     explicit SimpleTreeModel(const int columnCount, QObject* const parent = nullptr);
-    ~SimpleTreeModel();
+    ~SimpleTreeModel()                                                                                    override;
 
     /// QAbstractItemModel:
-    virtual int columnCount(const QModelIndex& parent = QModelIndex())                                      const override;
-    virtual bool setData(const QModelIndex& index, const QVariant& value, int role)                               override;
-    virtual QVariant data(const QModelIndex& index, int role = Qt::DisplayRole)                             const override;
-    virtual QModelIndex index(int row, int column, const QModelIndex& parent = QModelIndex())               const override;
-    virtual QModelIndex parent(const QModelIndex& index)                                                    const override;
-    virtual int rowCount(const QModelIndex& parent = QModelIndex())                                         const override;
-    virtual bool setHeaderData(int section, Qt::Orientation orientation, const QVariant& value, int role)         override;
-    virtual QVariant headerData(int section, Qt::Orientation orientation, int role)                         const override;
-    virtual Qt::ItemFlags flags(const QModelIndex& index)                                                   const override;
+    int columnCount(const QModelIndex& parent = QModelIndex())                                      const override;
+    bool setData(const QModelIndex& index, const QVariant& value, int role)                               override;
+    QVariant data(const QModelIndex& index, int role = Qt::DisplayRole)                             const override;
+    QModelIndex index(int row, int column, const QModelIndex& parent = QModelIndex())               const override;
+    QModelIndex parent(const QModelIndex& index)                                                    const override;
+    int rowCount(const QModelIndex& parent = QModelIndex())                                         const override;
+    bool setHeaderData(int section, Qt::Orientation orientation, const QVariant& value, int role)         override;
+    QVariant headerData(int section, Qt::Orientation orientation, int role)                         const override;
+    Qt::ItemFlags flags(const QModelIndex& index)                                                   const override;
 
     Item* addItem(Item* const parentItem = nullptr, const int rowNumber = -1);
-    Item* indexToItem(const QModelIndex& itemIndex)                                                         const;
-    Item* rootItem()                                                                                        const;
-    QModelIndex itemToIndex(const Item* const item)                                                         const;
+    Item* indexToItem(const QModelIndex& itemIndex)                                                 const;
+    Item* rootItem()                                                                                const;
+    QModelIndex itemToIndex(const Item* const item)                                                 const;
 
 private:
 

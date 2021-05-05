@@ -11,7 +11,7 @@
  *               https://www.cs.washington.edu/homes/salesin/abstracts.html
  *
  * Copyright (C) 2003      by Ricardo Niederberger Cabral <nieder at mail dot ru>
- * Copyright (C) 2008-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2008-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2008-2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  *
  * This program is free software; you can redistribute it
@@ -52,15 +52,16 @@ namespace Digikam
 namespace Haar
 {
 
-/** Signature structure
+/**
+ * Signature structure
  */
 class Q_DECL_HIDDEN valStruct
 {
 
 public:
 
-    Unit d;   // [f]abs(a[i])
-    int  i;   // index i of a[i]
+    Unit d;   ///< [f]abs(a[i])
+    int  i;   ///< index i of a[i]
 
     bool operator< (const valStruct& right) const
     {
@@ -72,7 +73,8 @@ typedef std::priority_queue<valStruct> valqueue;
 
 // --------------------------------------------------------------------
 
-/** Write pixels of a QImage in three arrays (one per color channel, pixels linearly)
+/**
+ * Write pixels of a QImage in three arrays (one per color channel, pixels linearly)
  */
 void ImageData::fillPixelData(const QImage& im)
 {
@@ -82,6 +84,7 @@ void ImageData::fillPixelData(const QImage& im)
     for (int h = 0 ; h < Haar::NumberOfPixels ; ++h)
     {
         // Get a scanline:
+
         QRgb* const line = reinterpret_cast<QRgb*>(image.scanLine(h));
 
         for (int w = 0 ; w < Haar::NumberOfPixels ; ++w)
@@ -97,7 +100,8 @@ void ImageData::fillPixelData(const QImage& im)
 
 // --------------------------------------------------------------------
 
-/** Write pixels of a DImg in three arrays (one per color channel, pixels linearly)
+/**
+ * Write pixels of a DImg in three arrays (one per color channel, pixels linearly)
  */
 void ImageData::fillPixelData(const DImg& im)
 {
@@ -122,7 +126,8 @@ void ImageData::fillPixelData(const DImg& im)
 
 // --------------------------------------------------------------------
 
-/** Setup initial fixed Haar weights that each coefficient represents
+/**
+ * Setup initial fixed Haar weights that each coefficient represents
  */
 WeightBin::WeightBin()
 {
@@ -141,14 +146,17 @@ WeightBin::WeightBin()
     */
 
     // Every position has value 5
+
     memset(m_bin, 5, NumberOfPixelsSquared);
 
     // Except for the 5 by 5 upper-left quadrant
+
     for (i = 0 ; i < 5 ; ++i)
     {
         for (j = 0 ; j < 5 ; ++j)
         {
             m_bin[i*128+j] = qMax(i, j);
+
             // NOTE: imgBin[0] == 0
         }
     }
@@ -164,10 +172,11 @@ Calculator::~Calculator()
 {
 }
 
-/** Do the Haar tensorial 2d transform itself.
-    Here input is RGB data [0..255] in Unit arrays
-    Computation is (almost) in-situ.
-*/
+/**
+ * Do the Haar tensorial 2d transform itself.
+ * Here input is RGB data [0..255] in Unit arrays
+ * Computation is (almost) in-situ.
+ */
 void Calculator::haar2D(Unit a[])
 {
     int  i;
@@ -203,20 +212,23 @@ void Calculator::haar2D(Unit a[])
             }
 
             // Write back subtraction results:
+
             memcpy(a+i+h1, t, h1*sizeof(a[0]));
         }
 
         // Fix first element of each row:
+
         a[i] *= C;  // C = 1/sqrt(NUM_PIXELS)
     }
 
     // scale by 1/sqrt(128) = 0.08838834764831843:
-    /*
+/*
     for (i = 0; i < NUM_PIXELS_SQUARED; ++i)
         a[i] *= 0.08838834764831843;
-    */
+*/
 
     // Decompose columns:
+
     for (i = 0 ; i < NumberOfPixels ; ++i)
     {
         Unit C = 1;
@@ -237,6 +249,7 @@ void Calculator::haar2D(Unit a[])
             }
 
             // Write back subtraction results:
+
             for (k = 0, j1 = i+h1*NumberOfPixels ; k < h1 ; ++k, j1 += NumberOfPixels)
             {
                 a[j1] = t[k];
@@ -244,20 +257,23 @@ void Calculator::haar2D(Unit a[])
         }
 
         // Fix first element of each column:
+
         a[i] *= C;
     }
 }
 
-/** Do the Haar tensorial 2d transform itself.
-    Here input is RGB data [0..255] in Unit arrays.
-    Results are available in a, b, and c.
-    Fully inplace calculation; order of result is interleaved though,
-    but we don't care about that.
-*/
+/**
+ * Do the Haar tensorial 2d transform itself.
+ * Here input is RGB data [0..255] in Unit arrays.
+ * Results are available in a, b, and c.
+ * Fully inplace calculation; order of result is interleaved though,
+ * but we don't care about that.
+ */
 void Calculator::transform(ImageData* const data)
 {
     // RGB -> YIQ colorspace conversion; Y luminance, I,Q chrominance.
     // If RGB in [0..255] then Y in [0..255] and I,Q in [-127..127].
+
     Unit* a = data->data1;
     Unit* b = data->data2;
     Unit* c = data->data3;
@@ -279,15 +295,17 @@ void Calculator::transform(ImageData* const data)
     haar2D(c);
 
     // Reintroduce the skipped scaling factors
+
     a[0] /= 256 * 128;
     b[0] /= 256 * 128;
     c[0] /= 256 * 128;
 }
 
-/** Find the m=NUM_COEFS largest numbers in cdata[] (in magnitude that is)
-    and store their indices in sig[].
-    Skips entry 0.
-*/
+/**
+ * Find the m=NUM_COEFS largest numbers in cdata[] (in magnitude that is)
+ * and store their indices in sig[].
+ * Skips entry 0.
+ */
 void Calculator::getmLargests(Unit* const cdata, Idx* const sig)
 {
     int       cnt, i;
@@ -297,6 +315,7 @@ void Calculator::getmLargests(Unit* const cdata, Idx* const sig)
     // Could skip i=0: goes into separate avgl
 
     // Fill up the bounded queue. (Assuming NUM_PIXELS_SQUARED > NUM_COEFS)
+
     for (i = 1 ; i < NumberOfCoefficients+1 ; ++i)
     {
         val.i = i;
@@ -313,8 +332,11 @@ void Calculator::getmLargests(Unit* const cdata, Idx* const sig)
         if (val.d > vq.top().d)
         {
             // Make room by dropping smallest entry:
+
             vq.pop();
+
             // Insert val as new entry:
+
             val.i = i;
             vq.push(val);
         }
@@ -323,6 +345,7 @@ void Calculator::getmLargests(Unit* const cdata, Idx* const sig)
     }
 
     // Empty the (non-empty) queue and fill-in sig:
+
     cnt = 0;
 
     do
@@ -342,12 +365,13 @@ void Calculator::getmLargests(Unit* const cdata, Idx* const sig)
     // Must have cnt==NUM_COEFS here.
 }
 
-/** Determines a total of NUM_COEFS positions in the image that have the
-    largest magnitude (absolute value) in color value. Returns linearized
-    coordinates in sig1, sig2, and sig3. avgl are the [0,0] values.
-    The order of occurrence of the coordinates in sig doesn't matter.
-    Complexity is 3 x NUM_PIXELS^2 x 2log(NUM_COEFS).
-*/
+/**
+ * Determines a total of NUM_COEFS positions in the image that have the
+ * largest magnitude (absolute value) in color value. Returns linearized
+ * coordinates in sig1, sig2, and sig3. avgl are the [0,0] values.
+ * The order of occurrence of the coordinates in sig doesn't matter.
+ * Complexity is 3 x NUM_PIXELS^2 x 2log(NUM_COEFS).
+ */
 int Calculator::calcHaar(ImageData* const data, SignatureData* const sigData)
 {
     sigData->avg[0]=data->data1[0];
@@ -355,12 +379,15 @@ int Calculator::calcHaar(ImageData* const data, SignatureData* const sigData)
     sigData->avg[2]=data->data3[0];
 
     // Color channel 1:
+
     getmLargests(data->data1, sigData->sig[0]);
 
     // Color channel 2:
+
     getmLargests(data->data2, sigData->sig[1]);
 
     // Color channel 3:
+
     getmLargests(data->data3, sigData->sig[2]);
 
     return 1;

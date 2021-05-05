@@ -8,7 +8,7 @@
  *
  * Copyright (C) 2002-2005 by Renchi Raju <renchi dot raju at gmail dot com>
  * Copyright (C) 2009      by Andi Clemens <andi dot clemens at gmail dot com>
- * Copyright (C) 2002-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2002-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2006-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  *
  * This program is free software; you can redistribute it
@@ -26,6 +26,8 @@
 
 #ifndef DIGIKAM_ITEM_VIEW_DELEGATE_P_H
 #define DIGIKAM_ITEM_VIEW_DELEGATE_P_H
+
+#include "itemviewdelegate.h"
 
 // Qt includes
 
@@ -49,9 +51,7 @@ class DIGIKAM_EXPORT ItemViewDelegatePrivate
 public:
 
     explicit ItemViewDelegatePrivate();
-    virtual ~ItemViewDelegatePrivate()
-    {
-    }
+    virtual ~ItemViewDelegatePrivate() = default;
 
     void init(ItemViewDelegate* const _q);
 
@@ -95,6 +95,10 @@ public:
     /// constant values for drawing
     int                       radius;
     int                       margin;
+
+private:
+
+    Q_DISABLE_COPY(ItemViewDelegatePrivate)
 };
 
 } // namespace Digikam

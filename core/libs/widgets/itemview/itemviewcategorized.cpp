@@ -7,7 +7,7 @@
  * Description : Qt item view for images
  *
  * Copyright (C) 2009-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2011-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2011-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -49,19 +49,19 @@ class Q_DECL_HIDDEN ItemViewCategorized::Private
 public:
 
     explicit Private(ItemViewCategorized* const q)
-      : delegate(nullptr),
-        toolTip(nullptr),
-        notificationToolTip(nullptr),
-        showToolTip(false),
-        usePointingHand(true),
-        scrollStepFactor(10),
-        currentMouseEvent(nullptr),
-        ensureOneSelectedItem(false),
-        ensureInitialSelectedItem(false),
-        scrollCurrentToCenter(false),
-        mouseButtonPressed(Qt::NoButton),
-        hintAtSelectionRow(-1),
-        q(q)
+      : delegate                    (nullptr),
+        toolTip                     (nullptr),
+        notificationToolTip         (nullptr),
+        showToolTip                 (false),
+        usePointingHand             (true),
+        scrollStepFactor            (10),
+        currentMouseEvent           (nullptr),
+        ensureOneSelectedItem       (false),
+        ensureInitialSelectedItem   (false),
+        scrollCurrentToCenter       (false),
+        mouseButtonPressed          (Qt::NoButton),
+        hintAtSelectionRow          (-1),
+        q                           (q)
     {
     }
 
@@ -116,7 +116,7 @@ QModelIndex ItemViewCategorized::Private::scrollPositionHint() const
 
 ItemViewCategorized::ItemViewCategorized(QWidget* const parent)
     : DCategorizedView(parent),
-      d(new Private(this))
+      d               (new Private(this))
 {
     setViewMode(QListView::IconMode);
     setLayoutDirection(Qt::LeftToRight);
@@ -153,8 +153,6 @@ ItemViewCategorized::ItemViewCategorized(QWidget* const parent)
 
     connect(ThemeManager::instance(), &ThemeManager::signalThemeChanged,
             this, &ItemViewCategorized::slotThemeChanged);
-
-    // ---
 }
 
 ItemViewCategorized::~ItemViewCategorized()
@@ -750,7 +748,9 @@ QModelIndex ItemViewCategorized::moveCursor(CursorAction cursorAction, Qt::Keybo
         }
 
         default:
+        {
             break;
+        }
     }
 
     return DCategorizedView::moveCursor(cursorAction, modifiers);
@@ -785,7 +785,7 @@ bool ItemViewCategorized::showToolTip(const QModelIndex& index, QStyleOptionView
         pos = option.rect.center();
     }
 
-    if (d->delegate->acceptsToolTip(he->pos(), option.rect, index, &innerRect))
+    if (d->delegate->acceptsToolTip(pos, option.rect, index, &innerRect))
     {
         if (!innerRect.isNull())
         {
@@ -922,7 +922,7 @@ void ItemViewCategorized::wheelEvent(QWheelEvent* event)
 
     if (event->modifiers() & Qt::ControlModifier)
     {
-        const int delta = event->delta();
+        const int delta = event->angleDelta().y();
 
         if      (delta > 0)
         {
@@ -939,7 +939,7 @@ void ItemViewCategorized::wheelEvent(QWheelEvent* event)
 
     if (verticalScrollBarPolicy() == Qt::ScrollBarAlwaysOff && event->orientation() == Qt::Vertical)
     {
-        QWheelEvent n(event->pos(), event->globalPos(), event->delta(),
+        QWheelEvent n(event->pos(), event->globalPos(), event->angleDelta().y(),
                       event->buttons(), event->modifiers(), Qt::Horizontal);
         QApplication::sendEvent(horizontalScrollBar(), &n);
         event->setAccepted(n.isAccepted());
@@ -1023,13 +1023,15 @@ bool ItemViewCategorized::viewportEvent(QEvent* event)
 
             QStyleOptionViewItem option =  viewOptions();
             option.rect                 =  visualRect(index);
-            option.state               |= (index == currentIndex() ? QStyle::State_HasFocus : QStyle::State_None);
+            option.state               |= ((index == currentIndex()) ? QStyle::State_HasFocus : QStyle::State_None);
             showToolTip(index, option, he);
             return true;
         }
 
         default:
+        {
             break;
+        }
     }
 
     return DCategorizedView::viewportEvent(event);
@@ -1053,7 +1055,7 @@ void ItemViewCategorized::showIndexNotification(const QModelIndex& index, const 
 
     QStyleOptionViewItem option = viewOptions();
     option.rect                 = visualRect(index);
-    option.state               |= (index == currentIndex() ? QStyle::State_HasFocus : QStyle::State_None);
+    option.state               |= ((index == currentIndex()) ? QStyle::State_HasFocus : QStyle::State_None);
     d->notificationToolTip->show(option, index);
 }
 

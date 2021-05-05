@@ -1,9 +1,11 @@
 #
-# Copyright (c) 2010-2020 by Gilles Caulier, <caulier dot gilles at gmail dot com>
+# Copyright (c) 2010-2021 by Gilles Caulier, <caulier dot gilles at gmail dot com>
 # Copyright (c) 2015      by Veaceslav Munteanu, <veaceslav dot munteanu90 at gmail dot com>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
+
+APPLY_COMMON_POLICIES()
 
 include_directories($<TARGET_PROPERTY:Qt5::PrintSupport,INTERFACE_INCLUDE_DIRECTORIES>
                     $<TARGET_PROPERTY:Qt5::Sql,INTERFACE_INCLUDE_DIRECTORIES>
@@ -27,55 +29,69 @@ if(Gphoto2_FOUND)
     include_directories(${GPHOTO2_INCLUDE_DIRS})
 endif()
 
+# ------------------------------------------------------------------------------------
+
 set(libeditorwidgets_SRCS
-    widgets/imageguidewidget.cpp
-    widgets/imagepreviewitem.cpp
-    widgets/previewtoolbar.cpp
-    widgets/previewlist.cpp
-    widgets/imageregionwidget.cpp
-    widgets/imageregionitem.cpp
-    widgets/rubberitem.cpp
-    widgets/canvas.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/imageguidewidget.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/imagepreviewitem.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/previewtoolbar.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/previewlist.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/imageregionwidget.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/imageregionitem.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/rubberitem.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/canvas.cpp
 )
 
 set(libeditordlg_SRCS
-    dialogs/colorcorrectiondlg.cpp
-    dialogs/softproofdialog.cpp
-    dialogs/versioningpromptusersavedlg.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/dialogs/colorcorrectiondlg.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/dialogs/softproofdialog.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/dialogs/versioningpromptusersavedlg.cpp
 )
-
-set(libeditorgui_SRCS
-    main/imagewindow.cpp
-    main/imagewindow_setup.cpp
-    main/imagewindow_config.cpp
-    main/imagewindow_tools.cpp
-    main/imagewindow_import.cpp
-)
-
-install(FILES main/imageeditorui5.rc DESTINATION ${KXMLGUI_INSTALL_DIR}/digikam)
 
 set(libeditorcore_SRCS
-    core/undocache.cpp
-    core/undoaction.cpp
-    core/undomanager.cpp
-    core/editorcore.cpp
-    core/iccpostloadingmanager.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/core/undocache.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/core/undoaction.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/core/undomanager.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/core/editorcore.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/core/iccpostloadingmanager.cpp
 )
 
 set(libeditoriface_SRCS
-    editor/editortool.cpp
-    editor/editortooliface.cpp
-    editor/editorstackview.cpp
-    editor/editortoolsettings.cpp
-    editor/editorwindow.cpp
-    editor/imageiface.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/editor/editortool.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/editor/editortooliface.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/editor/editorstackview.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/editor/editortoolsettings.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/editor/editorwindow.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/editor/imageiface.cpp
 )
 
-# this lib is used to build digikam core
-add_library(imageeditor_src OBJECT ${libeditorcore_SRCS}
-                                   ${libeditordlg_SRCS}
-                                   ${libeditoriface_SRCS}
-                                   ${libeditorwidgets_SRCS}
+# Used by digikamcore
+add_library(core_imageeditor_obj OBJECT ${libeditorcore_SRCS}
+                                        ${libeditordlg_SRCS}
+                                        ${libeditoriface_SRCS}
+                                        ${libeditorwidgets_SRCS}
 )
 
-add_library(imageeditorgui_src OBJECT ${libeditorgui_SRCS})
+target_compile_definitions(core_imageeditor_obj
+                           PRIVATE
+                           digikamcore_EXPORTS
+)
+
+# ------------------------------------------------------------------------------------
+
+set(libeditorgui_SRCS
+    ${CMAKE_CURRENT_SOURCE_DIR}/main/imagewindow.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/main/imagewindow_setup.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/main/imagewindow_config.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/main/imagewindow_import.cpp
+)
+
+# Used by digikamgui
+add_library(gui_imageeditorgui_obj OBJECT ${libeditorgui_SRCS})
+
+target_compile_definitions(gui_imageeditorgui_obj
+                           PRIVATE
+                           digikamgui_EXPORTS
+)
+
+install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/main/imageeditorui5.rc DESTINATION ${KXMLGUI_INSTALL_DIR}/digikam)

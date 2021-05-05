@@ -6,7 +6,7 @@
  * Date        : 2005-05-25
  * Description : Oil Painting threaded image filter.
  *
- * Copyright (C) 2005-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2005-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2006-2010 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  * Copyright (C) 2010      by Martin Klapetek <martin dot klapetek at gmail dot com>
  *
@@ -37,12 +37,13 @@ namespace Digikam
 
 class DIGIKAM_EXPORT OilPaintFilter : public DImgThreadedFilter
 {
+    Q_OBJECT
 
 public:
 
     explicit OilPaintFilter(QObject* const parent = nullptr);
-    explicit OilPaintFilter(DImg* const orgImage, QObject* const parent=nullptr, int brushSize=1, int smoothness=30);
-    ~OilPaintFilter();
+    explicit OilPaintFilter(DImg* const orgImage, QObject* const parent = nullptr, int brushSize=1, int smoothness=30);
+    ~OilPaintFilter() override;
 
     static QString          FilterIdentifier()
     {
@@ -61,12 +62,12 @@ public:
         return 1;
     }
 
-    virtual QString         filterIdentifier()                          const override
+    QString         filterIdentifier()                          const override
     {
         return FilterIdentifier();
     }
 
-    virtual FilterAction    filterAction()                                    override;
+    FilterAction    filterAction()                                    override;
     void                    readParameters(const FilterAction& action)        override;
 
 private:

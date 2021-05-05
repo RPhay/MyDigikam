@@ -40,7 +40,7 @@ class MetadataHubMngr : public QObject
 public:
 
     static MetadataHubMngr* instance();
-    ~MetadataHubMngr();
+    ~MetadataHubMngr() override;
 
     static QPointer<MetadataHubMngr> internalPtr;
     static bool                      isCreated();
@@ -58,7 +58,9 @@ public Q_SLOTS:
 
 private:
 
+    // Disable
     MetadataHubMngr();
+    explicit MetadataHubMngr(QObject*);
 
     class Private;
     Private* const d;

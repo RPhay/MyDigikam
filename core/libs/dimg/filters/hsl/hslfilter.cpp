@@ -6,7 +6,7 @@
  * Date        : 2005-03-06
  * Description : Hue/Saturation/Lightness image filter.
  *
- * Copyright (C) 2005-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2005-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2010      by Julien Narboux <julien at narboux dot fr>
  * Copyright (C) 2010      by Martin Klapetek <martin dot klapetek at gmail dot com>
  *
@@ -68,7 +68,7 @@ public:
 
 HSLFilter::HSLFilter(QObject* const parent)
     : DImgThreadedFilter(parent),
-      d(new Private)
+      d                 (new Private)
 {
     reset();
     initFilter();
@@ -76,7 +76,7 @@ HSLFilter::HSLFilter(QObject* const parent)
 
 HSLFilter::HSLFilter(DImg* const orgImage, QObject* const parent, const HSLContainer& settings)
     : DImgThreadedFilter(orgImage, parent, QLatin1String("HSLFilter")),
-      d(new Private)
+      d                 (new Private)
 {
     d->settings = settings;
     reset();

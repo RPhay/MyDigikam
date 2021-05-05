@@ -7,7 +7,7 @@
  * Description : helper methods for JPEG image format.
  *
  * Copyright (C) 2004-2005 by Renchi Raju <renchi dot raju at gmail dot com>
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2006-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  *
  * Parts of the loading code is taken from qjpeghandler.cpp
@@ -41,15 +41,7 @@
 
 extern "C"
 {
-#ifndef Q_CC_MSVC
-#   include <unistd.h>
-#   include <utime.h>
-#else
-#   include <sys/utime.h>
-#endif
-
 #include <sys/types.h>
-#include <sys/stat.h>
 #include <setjmp.h>
 #include <jpeglib.h>
 }
@@ -83,14 +75,18 @@ extern "C"
 
 #include <QImageReader>
 #include <QByteArray>
+#include <QUuid>
 #include <QFile>
 #include <QFileInfo>
+#include <QScopedPointer>
 #include <qplatformdefs.h>
 
 // Local includes
 
-#include "digikam_debug.h"
 #include "dimg.h"
+#include "digikam_debug.h"
+#include "digikam_config.h"
+#include "dfileoperations.h"
 #include "metaenginesettings.h"
 #include "filereadwritelock.h"
 
@@ -112,10 +108,6 @@ struct jpegutils_jpeg_error_mgr : public jpeg_error_mgr
     jmp_buf setjmp_buffer;
 };
 
-static void jpegutils_jpeg_error_exit(j_common_ptr cinfo);
-static void jpegutils_jpeg_emit_message(j_common_ptr cinfo, int msg_level);
-static void jpegutils_jpeg_output_message(j_common_ptr cinfo);
-
 static void jpegutils_jpeg_error_exit(j_common_ptr cinfo)
 {
     jpegutils_jpeg_error_mgr* myerr = static_cast<jpegutils_jpeg_error_mgr*>(cinfo->err);
@@ -125,7 +117,16 @@ static void jpegutils_jpeg_error_exit(j_common_ptr cinfo)
 
     qCDebug(DIGIKAM_GENERAL_LOG) << "Jpegutils error, aborting operation:" << buffer;
 
+#ifdef __MINGW32__  // krazy:exclude=cpp
+
+    __builtin_longjmp(myerr->setjmp_buffer, 1);
+
+#else
+
     longjmp(myerr->setjmp_buffer, 1);
+
+#endif
+
 }
 
 static void jpegutils_jpeg_emit_message(j_common_ptr cinfo, int msg_level)
@@ -158,9 +159,17 @@ bool loadJPEGScaled(QImage& image, const QString& path, int maximumSize)
         return false;
     }
 
-    FILE* const inputFile = fopen(QFile::encodeName(path).constData(), "rb");
+#ifdef Q_OS_WIN
 
-    if (!inputFile)
+    FILE* const inFile = _wfopen((const wchar_t*)path.utf16(), L"rb");
+
+#else
+
+    FILE* const inFile = fopen(path.toUtf8().constData(), "rb");
+
+#endif
+
+    if (!inFile)
     {
         return false;
     }
@@ -176,41 +185,30 @@ bool loadJPEGScaled(QImage& image, const QString& path, int maximumSize)
     cinfo.err->emit_message   = jpegutils_jpeg_emit_message;
     cinfo.err->output_message = jpegutils_jpeg_output_message;
 
+#ifdef __MINGW32__  // krazy:exclude=cpp
+
+    if (__builtin_setjmp(jerr.setjmp_buffer))
+
+#else
+
     if (setjmp(jerr.setjmp_buffer))
+
+#endif
+
     {
         jpeg_destroy_decompress(&cinfo);
-        fclose(inputFile);
+        fclose(inFile);
         return false;
     }
 
     jpeg_create_decompress(&cinfo);
-
-#ifdef Q_OS_WIN
-
-    QFile inFile(path);
-    QByteArray buffer;
-
-    if (inFile.open(QIODevice::ReadOnly))
-    {
-        buffer = inFile.readAll();
-        inFile.close();
-    }
-
-    jpeg_memory_src(&cinfo, (JOCTET*)buffer.data(), buffer.size());
-
-#else  // Q_OS_WIN
-
-    jpeg_stdio_src(&cinfo, inputFile);
-
-#endif // Q_OS_WIN
-
+    jpeg_stdio_src(&cinfo, inFile);
     jpeg_read_header(&cinfo, true);
 
     int imgSize = qMax(cinfo.image_width, cinfo.image_height);
+    int scale   = 1;
 
     // libjpeg supports 1/1, 1/2, 1/4, 1/8
-
-    int scale=1;
 
     while (maximumSize*scale*2 <= imgSize)
     {
@@ -265,7 +263,7 @@ bool loadJPEGScaled(QImage& image, const QString& path, int maximumSize)
        ))
     {
         jpeg_destroy_decompress(&cinfo);
-        fclose(inputFile);
+        fclose(inFile);
         return false;
     }
 
@@ -347,7 +345,7 @@ bool loadJPEGScaled(QImage& image, const QString& path, int maximumSize)
     int newy   = maximumSize*cinfo.output_height / newMax;
 */
     jpeg_destroy_decompress(&cinfo);
-    fclose(inputFile);
+    fclose(inFile);
 
     image = img;
 
@@ -358,10 +356,16 @@ JpegRotator::JpegRotator(const QString& file)
     : m_file(file),
       m_destFile(file)
 {
-    m_metadata.load(file);
-    m_orientation  = m_metadata.getItemOrientation();
+    m_metadata     = new DMetadata;
+    m_metadata->load(file);
+    m_orientation  = m_metadata->getItemOrientation();
     QFileInfo info(file);
     m_documentName = info.fileName();
+}
+
+JpegRotator::~JpegRotator()
+{
+    delete m_metadata;
 }
 
 // -----------------------------------------------------------------------------
@@ -430,15 +434,17 @@ bool JpegRotator::exifTransform(const MetaEngineRotation& matrix)
 
     QString     dest = m_destFile;
     QString     src  = m_file;
-    QString     dir  = fi.absolutePath();
+    QString     dir  = fi.path();
     QStringList removeLater;
 
     for (int i = 0 ; i < actions.size() ; ++i)
     {
-        SafeTemporaryFile* const temp = new SafeTemporaryFile(dir + QLatin1String("/JpegRotator-XXXXXX.digikamtempfile.jpg"));
+        QString random                = QUuid::createUuid().toString().mid(1, 8);
+        SafeTemporaryFile* const temp = new SafeTemporaryFile(dir + QLatin1String("/JpegRotator-XXXXXX-") +
+                                                              random + QLatin1String(".digikamtempfile.jpg"));
         temp->setAutoRemove(false);
         temp->open();
-        QString tempFile = temp->fileName();
+        QString tempFile = temp->safeFilePath();
 
         // Crash fix: a QTemporaryFile is not properly closed until its destructor is called.
 
@@ -546,77 +552,50 @@ void JpegRotator::updateMetadata(const QString& fileName, const MetaEngineRotati
     // has a sense because the Exif dimension information can be missing from original image.
     // Get new dimensions with QImage will always work...
 
-    m_metadata.setItemDimensions(newSize);
+    m_metadata->setItemDimensions(newSize);
 
     // Update the image thumbnail.
 
-    QImage exifThumb = m_metadata.getExifThumbnail(true);
+    QImage exifThumb = m_metadata->getExifThumbnail(true);
 
     if (!exifThumb.isNull())
     {
-        m_metadata.setExifThumbnail(exifThumb.transformed(qmatrix));
+        m_metadata->setExifThumbnail(exifThumb.transformed(qmatrix));
     }
 
     QImage imagePreview;
 
-    if (m_metadata.getItemPreview(imagePreview))
+    if (m_metadata->getItemPreview(imagePreview))
     {
-        m_metadata.setItemPreview(imagePreview.transformed(qmatrix));
+        m_metadata->setItemPreview(imagePreview.transformed(qmatrix));
     }
 
     // Reset the Exif orientation tag of the temp image to normal
 
-    m_metadata.setItemOrientation(DMetadata::ORIENTATION_NORMAL);
+    m_metadata->setItemOrientation(DMetadata::ORIENTATION_NORMAL);
 
     // We update all new metadata now...
 
-    m_metadata.save(fileName, true);
+    m_metadata->save(fileName, true);
 
     // File properties restoration.
 
-    QT_STATBUF st;
+    // See bug #329608: Restore file modification time from original file
+    // only if updateFileTimeStamp for Setup/Metadata is turned off.
 
-    if (QT_STAT(QFile::encodeName(m_file).constData(), &st) == 0)
+    if (!MetaEngineSettings::instance()->settings().updateFileTimeStamp)
     {
-        // See bug #329608: Restore file modification time from original file
-        // only if updateFileTimeStamp for Setup/Metadata is turned off.
-
-        if (!MetaEngineSettings::instance()->settings().updateFileTimeStamp)
-        {
-            struct utimbuf ut;
-            ut.modtime = st.st_mtime;
-            ut.actime  = st.st_atime;
-
-            if (::utime(QFile::encodeName(fileName).constData(), &ut) != 0)
-            {
-                qCWarning(DIGIKAM_GENERAL_LOG) << "Failed to restore modification time for file " << fileName;
-            }
-        }
+        DFileOperations::copyModificationTime(m_file, fileName);
 
         // Restore permissions in all cases
 
-#ifndef Q_OS_WIN
-
-        if (::chmod(QFile::encodeName(fileName).constData(), st.st_mode) != 0)
-        {
-            qCWarning(DIGIKAM_GENERAL_LOG) << "Failed to restore file permissions for file " << fileName;
-        }
-
-#else  // Q_OS_WIN
-
         QFile::Permissions permissions = QFile::permissions(m_file);
         QFile::setPermissions(fileName, permissions);
-
-#endif //Q_OS_WIN
-
     }
 }
 
 bool JpegRotator::performJpegTransform(TransformAction action, const QString& src, const QString& dest)
 {
-    QByteArray in                   = QFile::encodeName(src).constData();
-    QByteArray out                  = QFile::encodeName(dest).constData();
-
     JCOPY_OPTION copyoption         = JCOPYOPT_ALL;
     jpeg_transform_info transformoption;
 
@@ -663,27 +642,36 @@ bool JpegRotator::performJpegTransform(TransformAction action, const QString& sr
     dstinfo.err->emit_message         = jpegutils_jpeg_emit_message;
     dstinfo.err->output_message       = jpegutils_jpeg_output_message;
 
-    FILE* input_file                  = nullptr;
-    FILE* output_file                 = nullptr;
+#ifdef Q_OS_WIN
 
-    // To prevent cppcheck warnings.
-    (void)input_file;
-    (void)output_file;
+    FILE* const input_file = _wfopen((const wchar_t*)src.utf16(), L"rb");
 
-    input_file = fopen(in.constData(), "rb");
+#else
+
+    FILE* const input_file = fopen(src.toUtf8().constData(), "rb");
+
+#endif
 
     if (!input_file)
     {
-        qCWarning(DIGIKAM_GENERAL_LOG) << "ExifRotate: Error in opening input file: " << input_file;
+        qCWarning(DIGIKAM_GENERAL_LOG) << "ExifRotate: Error in opening input file: " << src;
         return false;
     }
 
-    output_file = fopen(out.constData(), "wb");
+#ifdef Q_OS_WIN
+
+    FILE* const output_file = _wfopen((const wchar_t*)dest.utf16(), L"wb");
+
+#else
+
+    FILE* const output_file = fopen(dest.toUtf8().constData(), "wb");
+
+#endif
 
     if (!output_file)
     {
         fclose(input_file);
-        qCWarning(DIGIKAM_GENERAL_LOG) << "ExifRotate: Error in opening output file: " << output_file;
+        qCWarning(DIGIKAM_GENERAL_LOG) << "ExifRotate: Error in opening output file: " << dest;
         return false;
     }
 
@@ -711,7 +699,24 @@ bool JpegRotator::performJpegTransform(TransformAction action, const QString& sr
         m_originalSize = QSize(srcinfo.image_width, srcinfo.image_height);
     }
 
+#if (JPEG_LIB_VERSION >= 80)
+
+    if (!jtransform_request_workspace(&srcinfo, &transformoption))
+    {
+        qCDebug(DIGIKAM_GENERAL_LOG) << "ExifRotate: Transformation is not perfect";
+        jpeg_destroy_decompress(&srcinfo);
+        jpeg_destroy_compress(&dstinfo);
+        fclose(input_file);
+        fclose(output_file);
+
+        return false;
+    }
+
+#else
+
     jtransform_request_workspace(&srcinfo, &transformoption);
+
+#endif
 
     // Read source file as DCT coefficients
 
@@ -769,7 +774,7 @@ bool jpegConvert(const QString& src, const QString& dest, const QString& documen
 
         // Get image Exif/IPTC data.
 
-        DMetadata meta(image.getMetadata());
+        QScopedPointer<DMetadata> meta(new DMetadata(image.getMetadata()));
 
         // Update IPTC preview.
 
@@ -786,21 +791,21 @@ bool jpegConvert(const QString& src, const QString& dest, const QString& documen
             (format.toUpper() != QLatin1String("JPEG")) &&
             (format.toUpper() != QLatin1String("JPE")))
         {
-            meta.setItemPreview(preview);
+            meta->setItemPreview(preview);
         }
 
         // Update Exif thumbnail.
 
         QImage thumb = preview.scaled(160, 120, Qt::KeepAspectRatio, Qt::SmoothTransformation);
-        meta.setExifThumbnail(thumb);
+        meta->setExifThumbnail(thumb);
 
         // Update Exif Document Name tag (the original file name from camera for example).
 
-        meta.setExifTagString("Exif.Image.DocumentName", documentName);
+        meta->setExifTagString("Exif.Image.DocumentName", documentName);
 
         // Store new Exif/IPTC data into image.
 
-        image.setMetadata(meta.data());
+        image.setMetadata(meta->data());
 
         // And now save the image to a new file format.
 
@@ -870,7 +875,15 @@ int getJpegQuality(const QString& file)
         return quality;
     }
 
-    FILE* const inFile = fopen(QFile::encodeName(file).constData(), "rb");
+#ifdef Q_OS_WIN
+
+    FILE* const inFile = _wfopen((const wchar_t*)file.utf16(), L"rb");
+
+#else
+
+    FILE* const inFile = fopen(file.toUtf8().constData(), "rb");
+
+#endif
 
     if (!inFile)
     {

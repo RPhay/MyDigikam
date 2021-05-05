@@ -9,7 +9,7 @@
  * Copyright (C) 2007      by Rafael Fernández López <ereslibre at kde dot org>
  * Copyright (C) 2007      by John Tapsell <tapsell at kde dot org>
  * Copyright (C) 2009-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2011-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2011-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -51,6 +51,7 @@ namespace Digikam
  */
 class DIGIKAM_EXPORT DCategorizedSortFilterProxyModel : public QSortFilterProxyModel
 {
+    Q_OBJECT
 
 public:
 
@@ -78,13 +79,13 @@ public:
     };
 
     explicit DCategorizedSortFilterProxyModel(QObject* const parent = nullptr);
-    virtual ~DCategorizedSortFilterProxyModel();
+    ~DCategorizedSortFilterProxyModel() override;
 
     /**
      * Overridden from QSortFilterProxyModel. Sorts the source model using
      * @p column for the given @p order.
      */
-    virtual void sort(int column, Qt::SortOrder order = Qt::AscendingOrder) override;
+    void sort(int column, Qt::SortOrder order = Qt::AscendingOrder) override;
 
     /**
      * @return whether the model is categorized or not. Disabled by default.
@@ -136,7 +137,7 @@ protected:
      * @warning You usually won't need to reimplement this method when subclassing
      *          from DCategorizedSortFilterProxyModel.
      */
-    virtual bool lessThan(const QModelIndex &left, const QModelIndex &right) const override;
+    bool lessThan(const QModelIndex& left, const QModelIndex& right) const override;
 
     /**
      * This method has a similar purpose as lessThan() has on QSortFilterProxyModel.
@@ -144,7 +145,7 @@ protected:
      *
      * @return Returns true if the item @p left is less than the item @p right when sorting.
      */
-    virtual bool subSortLessThan(const QModelIndex &left, const QModelIndex &right) const;
+    virtual bool subSortLessThan(const QModelIndex& left, const QModelIndex& right) const;
 
     /**
      * This method compares the category of the @p left index with the category
@@ -181,12 +182,12 @@ protected:
      *         a positive value if the category of @p left should be placed after the
      *         category of @p right.
      */
-    virtual int compareCategories(const QModelIndex &left, const QModelIndex &right) const;
+    virtual int compareCategories(const QModelIndex& left, const QModelIndex& right) const;
 
 private:
 
     class Private;
-    Private *const d;
+    Private* const d;
 };
 
 // -----------------------------------------------------------------------------------------------------------------------
@@ -201,7 +202,7 @@ public:
 
 protected:
 
-    virtual bool filterAcceptsRow(int source_row, const QModelIndex& source_parent) const override;
+    bool filterAcceptsRow(int source_row, const QModelIndex& source_parent) const override;
 };
 
 } // namespace Digikam

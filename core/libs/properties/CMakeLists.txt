@@ -1,41 +1,11 @@
 #
-# Copyright (c) 2010-2020 by Gilles Caulier, <caulier dot gilles at gmail dot com>
+# Copyright (c) 2010-2021 by Gilles Caulier, <caulier dot gilles at gmail dot com>
 # Copyright (c) 2015      by Veaceslav Munteanu, <veaceslav dot munteanu90 at gmail dot com>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
 
-set(libitemproperties_SRCS
-    itempropertiessidebar.cpp
-    itempropertiestab.cpp
-    itempropertiesmetadatatab.cpp
-    itempropertiescolorstab.cpp
-    itempropertiestxtlabel.cpp
-)
-
-set(libitemversionssidebar_SRCS
-    history/itempropertiesversionstab.cpp
-    history/versionstreeview.cpp
-    history/versionsoverlays.cpp
-    history/versionsdelegate.cpp
-)
-
-if(${Marble_FOUND})
-    set(libitemproperties_SRCS
-        ${libitemproperties_SRCS}
-        geolocation/itempropertiesgpstab.cpp
-        geolocation/itemgpsmodelhelper.cpp
-   )
-endif()
-
-set(libitempropertiesdigikam_SRCS
-    itempropertiessidebardb.cpp
-    import/importitempropertiessidebar.cpp
-    import/importitempropertiestab.cpp
-    captions/itemdescedittab.cpp
-    captions/disjointmetadata.cpp
-    captions/captionedit.cpp
-)
+APPLY_COMMON_POLICIES()
 
 include_directories(
     $<TARGET_PROPERTY:Qt5::Sql,INTERFACE_INCLUDE_DIRECTORIES>
@@ -52,10 +22,52 @@ if(ENABLE_DBUS)
     include_directories($<TARGET_PROPERTY:Qt5::DBus,INTERFACE_INCLUDE_DIRECTORIES>)
 endif()
 
-# used to build digikamcore
-add_library(itemproperties_src OBJECT ${libitemproperties_SRCS})
+set(libitemproperties_SRCS
+    ${CMAKE_CURRENT_SOURCE_DIR}/itempropertiessidebar.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/itempropertiestab.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/itemselectionpropertiestab.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/itempropertiesmetadatatab.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/itempropertiescolorstab.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/itempropertiestxtlabel.cpp
+)
 
-add_library(itempropertiesdigikam_src OBJECT
-                                      ${libitemversionssidebar_SRCS}
-                                      ${libitempropertiesdigikam_SRCS}
+if(${Marble_FOUND})
+    set(libitemproperties_SRCS
+        ${libitemproperties_SRCS}
+        ${CMAKE_CURRENT_SOURCE_DIR}/geolocation/itempropertiesgpstab.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/geolocation/itemgpsmodelhelper.cpp
+   )
+endif()
+
+# Used by digikamcore
+add_library(core_itemproperties_obj OBJECT ${libitemproperties_SRCS})
+
+target_compile_definitions(core_itemproperties_obj
+                           PRIVATE
+                           digikamcore_EXPORTS
+)
+
+set(libitemversionssidebar_SRCS
+    ${CMAKE_CURRENT_SOURCE_DIR}/history/itempropertiesversionstab.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/history/versionstreeview.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/history/versionsoverlays.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/history/versionsdelegate.cpp
+)
+
+set(libitempropertiesdigikam_SRCS
+    ${CMAKE_CURRENT_SOURCE_DIR}/itempropertiessidebardb.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/import/importitempropertiessidebar.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/import/importitempropertiestab.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/captions/itemdescedittab.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/captions/disjointmetadata.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/captions/captionedit.cpp
+)
+
+
+# Used by digikamgui
+add_library(gui_itempropertiesdigikam_obj OBJECT ${libitemversionssidebar_SRCS} ${libitempropertiesdigikam_SRCS})
+
+target_compile_definitions(gui_itempropertiesdigikam_obj
+                           PRIVATE
+                           digikamgui_EXPORTS
 )

@@ -7,7 +7,7 @@
  * Description : database migration dialog
  *
  * Copyright (C) 2009-2010 by Holger Foerster <Hamsi2k at freenet dot de>
- * Copyright (C) 2010-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2010-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -48,7 +48,7 @@ class DatabaseCopyThread : public QThread
 public:
 
     explicit DatabaseCopyThread(QWidget* const parent);
-    ~DatabaseCopyThread();
+    ~DatabaseCopyThread() override;
 
     void init(const DbEngineParameters& fromDatabaseSettingsWidget,
               const DbEngineParameters& toDatabaseSettingsWidget);
@@ -66,14 +66,14 @@ private:
 
 // --------------------------------------------------------------------
 
-class DIGIKAM_EXPORT DatabaseMigrationDialog : public QDialog
+class DIGIKAM_GUI_EXPORT DatabaseMigrationDialog : public QDialog
 {
     Q_OBJECT
 
 public:
 
     explicit DatabaseMigrationDialog(QWidget* const parent);
-    ~DatabaseMigrationDialog();
+    ~DatabaseMigrationDialog() override;
 
 private Q_SLOTS:
 

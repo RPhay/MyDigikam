@@ -45,6 +45,7 @@
 #include "itemmodel.h"
 #include "itemscanner.h"
 #include "searchfolderview.h"
+#include "facetagsiface.h"
 
 namespace Digikam
 {
@@ -54,21 +55,21 @@ class Q_DECL_HIDDEN ItemCategoryDrawer::Private
 public:
 
     explicit Private()
+      : lowerSpacing(0),
+        view        (nullptr)
     {
-        lowerSpacing = 0;
-        view         = nullptr;
     }
 
-    QFont                 font;
-    QRect                 rect;
-    QPixmap               pixmap;
-    int                   lowerSpacing;
+    QFont                font;
+    QRect                rect;
+    QPixmap              pixmap;
+    int                  lowerSpacing;
     ItemCategorizedView* view;
 };
 
 ItemCategoryDrawer::ItemCategoryDrawer(ItemCategorizedView* const parent)
     : DCategoryDrawer(nullptr),
-      d(new Private)
+      d              (new Private)
 {
     d->view = parent;
 }
@@ -80,12 +81,12 @@ ItemCategoryDrawer::~ItemCategoryDrawer()
 
 int ItemCategoryDrawer::categoryHeight(const QModelIndex& /*index*/, const QStyleOption& /*option*/) const
 {
-    return d->rect.height() + d->lowerSpacing;
+    return (d->rect.height() + d->lowerSpacing);
 }
 
 int ItemCategoryDrawer::maximumHeight() const
 {
-    return d->rect.height() + d->lowerSpacing;
+    return (d->rect.height() + d->lowerSpacing);
 }
 
 void ItemCategoryDrawer::setLowerSpacing(int spacing)
@@ -114,7 +115,7 @@ void ItemCategoryDrawer::invalidatePaintingCache()
 }
 
 void ItemCategoryDrawer::drawCategory(const QModelIndex& index, int /*sortRole*/,
-                                       const QStyleOption& option, QPainter* p) const
+                                      const QStyleOption& option, QPainter* p) const
 {
     if (option.rect.width() != d->rect.width())
     {
@@ -151,17 +152,25 @@ void ItemCategoryDrawer::drawCategory(const QModelIndex& index, int /*sortRole*/
     {
         case ItemSortSettings::NoCategories:
             break;
+
         case ItemSortSettings::OneCategory:
             viewHeaderText(index, &header, &subLine);
             break;
+
         case ItemSortSettings::CategoryByAlbum:
             textForAlbum(index, &header, &subLine);
             break;
+
         case ItemSortSettings::CategoryByFormat:
             textForFormat(index, &header, &subLine);
             break;
+
         case ItemSortSettings::CategoryByMonth:
             textForMonth(index, &header, &subLine);
+            break;
+
+        case ItemSortSettings::CategoryByFaces:
+            textForFace(index, &header, &subLine);
             break;
     }
 
@@ -197,6 +206,7 @@ void ItemCategoryDrawer::viewHeaderText(const QModelIndex& index, QString* heade
 
     // Add here further model subclasses in use with ItemCategoryDrawer.
     // Note you need a Q_OBJECT in the class's header for this to work.
+
     ItemAlbumModel* const albumModel = qobject_cast<ItemAlbumModel*>(sourceModel);
 
     if (albumModel)
@@ -221,15 +231,19 @@ void ItemCategoryDrawer::viewHeaderText(const QModelIndex& index, QString* heade
             case Album::PHYSICAL:
                 textForPAlbum(static_cast<PAlbum*>(album), albumModel->isRecursingAlbums(), count, header, subLine);
                 break;
+
             case Album::TAG:
                 textForTAlbum(static_cast<TAlbum*>(album), albumModel->isRecursingTags(), count, header, subLine);
                 break;
+
             case Album::DATE:
                 textForDAlbum(static_cast<DAlbum*>(album), count, header, subLine);
                 break;
+
             case Album::SEARCH:
                 textForSAlbum(static_cast<SAlbum*>(album), count, header, subLine);
                 break;
+
             case Album::FACE:
             default:
                 break;
@@ -262,6 +276,13 @@ void ItemCategoryDrawer::textForMonth(const QModelIndex& index, QString* header,
     *subLine   = i18np("1 Item", "%1 Items", count);
 }
 
+void ItemCategoryDrawer::textForFace(const QModelIndex& index, QString* header, QString* subLine) const
+{
+    *header    = index.data(ItemFilterModel::CategoryFaceRole).toString();
+    int count  = d->view->categoryRange(index).height();
+    *subLine   = i18np("1 Item", "%1 Items", count);
+}
+
 void ItemCategoryDrawer::textForPAlbum(PAlbum* album, bool recursive, int count, QString* header, QString* subLine) const
 {
     Q_UNUSED(recursive);
@@ -276,12 +297,15 @@ void ItemCategoryDrawer::textForPAlbum(PAlbum* album, bool recursive, int count,
     QLocale tmpLocale;
 
     // day of month with two digits
+
     QString day   = tmpLocale.toString(date, QLatin1String("dd"));
 
     // short form of the month
+
     QString month = tmpLocale.toString(date, QLatin1String("MMM"));
 
     // long form of the year
+
     QString year  = tmpLocale.toString(date, QLatin1String("yyyy"));
 
     *subLine      = i18ncp("%1: day of month with two digits, %2: short month name, %3: year",
@@ -298,7 +322,7 @@ void ItemCategoryDrawer::textForPAlbum(PAlbum* album, bool recursive, int count,
 }
 
 void ItemCategoryDrawer::textForTAlbum(TAlbum* talbum, bool recursive, int count, QString* header,
-                                        QString* subLine) const
+                                       QString* subLine) const
 {
     *header = talbum->title();
 
@@ -306,7 +330,7 @@ void ItemCategoryDrawer::textForTAlbum(TAlbum* talbum, bool recursive, int count
     {
         int n=0;
 
-        for (AlbumIterator it(talbum); it.current(); ++it)
+        for (AlbumIterator it(talbum) ; it.current() ; ++it)
         {
             n++;
         }
@@ -331,7 +355,7 @@ void ItemCategoryDrawer::textForSAlbum(SAlbum* salbum, int count, QString* heade
 
     *header = title;
 
-    if (salbum->isNormalSearch())
+    if      (salbum->isNormalSearch())
     {
         *subLine = i18np("Keyword Search - 1 Item", "Keyword Search - %1 Items", count);
     }
@@ -347,15 +371,16 @@ void ItemCategoryDrawer::textForSAlbum(SAlbum* salbum, int count, QString* heade
 
 void ItemCategoryDrawer::textForDAlbum(DAlbum* album, int count, QString* header, QString* subLine) const
 {
+    QString year = QLocale().toString(album->date(), QLatin1String("yyyy"));
+
     if (album->range() == DAlbum::Month)
     {
         *header = i18nc("Month String - Year String", "%1 %2",
-                        QLocale().standaloneMonthName(album->date().month(), QLocale::LongFormat),
-                        album->date().year());
+                        QLocale().standaloneMonthName(album->date().month(), QLocale::LongFormat), year);
     }
     else
     {
-        *header = QString::fromUtf8("%1").arg(album->date().year());
+        *header = year;
     }
 
     *subLine = i18np("1 Item", "%1 Items", count);
@@ -378,7 +403,7 @@ void ItemCategoryDrawer::updateRectsAndPixmaps(int width)
     }
     else
     {
-        fnSize = fn.pixelSize();
+        fnSize       = fn.pixelSize();
         fn.setPixelSize(fnSize+2);
         usePointSize = false;
     }

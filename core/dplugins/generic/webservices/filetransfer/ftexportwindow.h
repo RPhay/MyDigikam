@@ -8,7 +8,7 @@
  *               location
  *
  * Copyright (C) 2006-2009 by Johannes Wienke <languitar at semipol dot de>
- * Copyright (C) 2011-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2011-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -33,7 +33,6 @@
 
 #include "wstooldialog.h"
 #include "dinfointerface.h"
-#include "digikam_export.h"
 
 class KJob;
 
@@ -53,7 +52,7 @@ class FTExportWidget;
  * Main window of the KIOExport tool.
  */
 
-class DIGIKAM_EXPORT FTExportWindow: public WSToolDialog
+class FTExportWindow: public WSToolDialog
 {
     Q_OBJECT
 
@@ -62,14 +61,14 @@ public:
     /**
      * Constructor.
      *
-     * @param parent parent QWidget
+     * @param parent the parent QWidget
      */
     explicit FTExportWindow(DInfoInterface* const iface, QWidget* const parent);
 
     /**
      * Destructor.
      */
-    ~FTExportWindow();
+    ~FTExportWindow() override;
 
     /**
      * Use this method to (re-)activate the dialog after it has been created

@@ -7,7 +7,7 @@
  * Description : Item icon view interface - Sidebar methods.
  *
  * Copyright (C) 2002-2005 by Renchi Raju <renchi dot raju at gmail dot com>
- * Copyright (C) 2002-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2002-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2009-2011 by Johannes Wienke <languitar at semipol dot de>
  * Copyright (C) 2010-2011 by Andi Clemens <andi dot clemens at gmail dot com>
  * Copyright (C) 2011-2013 by Michael G. Hansen <mike at mghansen dot de>
@@ -81,7 +81,7 @@ void ItemIconView::nextRightSideBarTab()
     d->rightSideBar->activeNextTab();
 }
 
-void ItemIconView::slotNofificationError(const QString& message, int type)
+void ItemIconView::slotNotificationError(const QString& message, int type)
 {
     d->errorWidget->setMessageType((DNotificationWidget::MessageType)type);
     d->errorWidget->setText(message);
@@ -129,6 +129,7 @@ void ItemIconView::slotRightSideBarActivateAssignedTags()
 void ItemIconView::slotLeftSidebarChangedTab(QWidget* w)
 {
     // TODO update, temporary cast
+
     SidebarWidget* const widget = dynamic_cast<SidebarWidget*>(w);
 
     foreach (SidebarWidget* const sideBarWidget, d->leftSideBarWidgets)
@@ -144,7 +145,7 @@ void ItemIconView::slotSidebarTabTitleStyleChanged()
     d->rightSideBar->setStyle(ApplicationSettings::instance()->getSidebarTitleStyle());
 
     /// @todo Which settings actually have to be reloaded?
-    //     d->rightSideBar->applySettings();
+    //d->rightSideBar->applySettings();
 }
 
 void ItemIconView::slotPopupFiltersView()

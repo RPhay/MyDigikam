@@ -4,10 +4,12 @@
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
 
+APPLY_COMMON_POLICIES()
+
 set(libdtrash_SRCS
-    dtrash.cpp
-    dtrashiteminfo.cpp
-    dtrashitemmodel.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/dtrash.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/dtrashiteminfo.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/dtrashitemmodel.cpp
 )
 
 include_directories(
@@ -19,4 +21,10 @@ include_directories(
     $<TARGET_PROPERTY:KF5::ConfigCore,INTERFACE_INCLUDE_DIRECTORIES>
 )
 
-add_library(dtrash_src OBJECT ${libdtrash_SRCS})
+# Used by digikamgui
+add_library(gui_dtrash_obj OBJECT ${libdtrash_SRCS})
+
+target_compile_definitions(gui_dtrash_obj
+                           PRIVATE
+                           digikamgui_EXPORTS
+)

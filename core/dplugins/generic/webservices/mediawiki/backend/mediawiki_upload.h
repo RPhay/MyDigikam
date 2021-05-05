@@ -6,7 +6,7 @@
  * Date        : 2011-03-22
  * Description : a Iface C++ interface
  *
- * Copyright (C) 2011-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2011-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2011      by Alexandre Mendes <alex dot mendes1988 at gmail dot com>
  *
  * This program is free software; you can redistribute it
@@ -34,7 +34,7 @@
 
 // Local includes
 
-#include "digikam_export.h"
+
 #include "mediawiki_job.h"
 #include "mediawiki_queryinfo.h"
 
@@ -49,7 +49,7 @@ class UploadPrivate;
  *
  * Uses for upload files.
  */
-class DIGIKAM_EXPORT Upload : public Job
+class Upload : public Job
 {
     Q_OBJECT
     Q_DECLARE_PRIVATE(Upload)
@@ -129,17 +129,17 @@ public:
      * @brief Constructs an Upload job.
      * @param parent the QObject parent
      */
-    Upload(Iface& MediaWiki, QObject* const parent = nullptr);
+    explicit Upload(Iface& MediaWiki, QObject* const parent = nullptr);
 
     /**
      * @brief Destroys the Upload job.
      */
-    virtual ~Upload();
+    ~Upload() override;
 
     /**
      * @brief Starts the job asynchronously.
      */
-    void start() Q_DECL_OVERRIDE;
+    void start() override;
 
     /**
      * @brief Set the target filename.
@@ -167,7 +167,7 @@ public:
 
 private Q_SLOTS:
 
-    void doWorkSendRequest(Page page);
+    void doWorkSendRequest(const Page& page);
     void doWorkProcessReply();
 };
 

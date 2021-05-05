@@ -7,7 +7,7 @@
  * Description : a generic list view item widget to
  *               display metadata key like a title
  *
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -43,10 +43,10 @@ namespace Digikam
 {
 
 MdKeyListViewItem::MdKeyListViewItem(QTreeWidget* const parent, const QString& key)
-    : QObject(parent),
+    : QObject        (parent),
       QTreeWidgetItem(parent),
-      m_key(key),
-      m_decryptedKey(key)
+      m_key          (key),
+      m_decryptedKey (key)
 {
 
     // Standard Exif key descriptions.
@@ -167,6 +167,38 @@ MdKeyListViewItem::MdKeyListViewItem(QTreeWidget* const parent, const QString& k
     else if (key == QLatin1String("dwc"))
     {
         m_decryptedKey = i18n("Darwin Core");
+    }
+    else if (key == QLatin1String("lr"))
+    {
+        m_decryptedKey = i18n("Adobe Lightroom Schema");
+    }
+    else if (key == QLatin1String("acdsee"))
+    {
+        m_decryptedKey = i18n("ACDSee XMP Schema");
+    }
+    else if (key == QLatin1String("MP"))
+    {
+        m_decryptedKey = i18n("Microsoft Photo 1.2 Schema");
+    }
+    else if (key == QLatin1String("kipi"))
+    {
+        m_decryptedKey = i18n("KDE Image Program Interface schema");
+    }
+    else if (key == QLatin1String("video"))
+    {
+        m_decryptedKey = i18n("XMP Extended Video schema");
+    }
+    else if (key == QLatin1String("exifEX"))
+    {
+        m_decryptedKey = i18n("Exif 2.3 metadata for XMP");
+    }
+    else if (key == QLatin1String("MIFF"))
+    {
+        m_decryptedKey = i18n("Image Magick Attributes");
+    }
+    else if (key == QLatin1String("MIFP"))
+    {
+        m_decryptedKey = i18n("Image Magick Properties");
     }
 
     // Reset all item flags: item is not selectable.

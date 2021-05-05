@@ -7,7 +7,7 @@
  * Description : scan item controller.
  *
  * Copyright (C) 2005-2006 by Tom Albers <tomalbers at kde dot nl>
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2007-2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  *
  * This program is free software; you can redistribute it
@@ -29,7 +29,7 @@ namespace Digikam
 {
 
 ScanController::FileMetadataWrite::FileMetadataWrite(const ItemInfo& info)
-    : m_info(info),
+    : m_info   (info),
       m_changed(false)
 {
     ScanController::instance()->beginFileMetadataWrite(info);
@@ -60,6 +60,7 @@ ScanController::ScanController()
     : d(new Private)
 {
     // create event loop
+
     d->eventLoop = new QEventLoop(this);
 
     connect(this, SIGNAL(databaseInitialized(bool)),
@@ -86,7 +87,7 @@ ScanController::ScanController()
 
     d->relaxedTimer = new QTimer(this);
     d->relaxedTimer->setSingleShot(true);
-    d->relaxedTimer->setInterval(500);
+    d->relaxedTimer->setInterval(250);
 
     connect(d->relaxedTimer, &QTimer::timeout,
             this, &ScanController::slotRelaxedScanning);
@@ -125,7 +126,7 @@ ScanController::~ScanController()
 
 void ScanController::setInitializationMessage()
 {
-    QString message = i18n("Initializing database...");
+    QString message = i18nc("@info", "Initializing database...");
 
     if (d->progressDialog)
     {
@@ -137,6 +138,7 @@ void ScanController::setInitializationMessage()
 bool ScanController::continueQuery()
 {
     // not from main thread
+
     return d->continueInitialization;
 }
 
@@ -148,10 +150,11 @@ void ScanController::createProgressDialog()
     }
 
     d->progressDialog = new DProgressDlg(nullptr);
-    d->progressDialog->setLabel(i18n("<b>Scanning collections, please wait...</b>"));
-    d->progressDialog->setWhatsThis(i18n("This shows the progress of the scan. "
-                                         "During the scan, all files on disk "
-                                         "are registered in a database."));
+    d->progressDialog->setLabel(i18nc("@label", "Scanning collections, please wait..."));
+    d->progressDialog->setWhatsThis(i18nc("@info",
+                                          "This shows the progress of the scan. "
+                                          "During the scan, all files on disk "
+                                          "are registered in a database."));
 
     d->progressDialog->setMaximum(1);
     d->progressDialog->setValue(0);
@@ -262,7 +265,9 @@ void ScanController::run()
             connectCollectionScanner(&scanner);
 
             emit collectionScanStarted(i18nc("@info:status", "Scanning collection"));
+
             //TODO: reconsider performance
+
             scanner.setNeedFileCount(true);//d->needTotalFiles);
 
             scanner.setHintContainer(d->hints);
@@ -280,9 +285,9 @@ void ScanController::run()
         {
             CollectionScanner scanner;
             scanner.setHintContainer(d->hints);
-
-            //connectCollectionScanner(&scanner);
-
+/*
+            connectCollectionScanner(&scanner);
+*/
             SimpleCollectionScannerObserver observer(&d->continuePartialScan);
             scanner.setObserver(&observer);
             scanner.partialScan(task);
@@ -339,7 +344,7 @@ void ScanController::updateUniqueHash()
     createProgressDialog();
 
     // we only need to count the files in advance
-    //if we show a progress percentage in progress dialog
+    // if we show a progress percentage in progress dialog
 
     d->needTotalFiles = true;
 
@@ -368,11 +373,13 @@ ItemInfo ScanController::scannedInfo(const QString& filePath)
     if (info.isNull())
     {
         qlonglong id = scanner.scanFile(filePath, CollectionScanner::NormalScan);
+
         return ItemInfo(id);
     }
     else
     {
         scanner.scanFile(info, CollectionScanner::NormalScan);
+
         return info;
     }
 }

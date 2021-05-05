@@ -6,7 +6,7 @@
  * Date        : 2009-11-21
  * Description : Wavelets Noise Reduction batch tool.
  *
- * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -41,13 +41,18 @@ namespace DigikamBqmNoiseReductionPlugin
 {
 
 NoiseReduction::NoiseReduction(QObject* const parent)
-    : BatchTool(QLatin1String("NoiseReduction"), EnhanceTool, parent),
+    : BatchTool     (QLatin1String("NoiseReduction"), EnhanceTool, parent),
       m_settingsView(nullptr)
 {
 }
 
 NoiseReduction::~NoiseReduction()
 {
+}
+
+BatchTool* NoiseReduction::clone(QObject* const parent) const
+{
+    return new NoiseReduction(parent);
 }
 
 void NoiseReduction::registerSettingsWidget()

@@ -7,7 +7,7 @@
  * Description : Qt model-view for items - the delegate
  *
  * Copyright (C) 2002-2005 by Renchi Raju <renchi dot raju at gmail dot com>
- * Copyright (C) 2002-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2002-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2009-2011 by Andi Clemens <andi dot clemens at gmail dot com>
  * Copyright (C) 2006-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  *
@@ -87,14 +87,14 @@ public:
     bool                  ratingOverThumbnail;
 
     QCache<int, QRect>    actualPixmapRectCache;
-    ItemCategoryDrawer*  categoryDrawer;
+    ItemCategoryDrawer*   categoryDrawer;
 
-    ItemCategorizedView* currentView;
+    ItemCategorizedView*  currentView;
     QAbstractItemModel*   currentModel;
 
 public:
 
-    virtual void clearRects();
+    void clearRects() override;
 };
 
 } // namespace Digikam

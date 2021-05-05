@@ -6,7 +6,7 @@
  * Date        : 2017-09-24
  * Description : a media server to export collections through DLNA.
  *
- * Copyright (C) 2017-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2017-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -34,17 +34,17 @@
 
 #include <klocalizedstring.h>
 
+// Local includes
+
+#include "digikam_debug.h"
+#include "digikam_version.h"
+#include "daboutdata.h"
+#include "dlnaserver.h"
+
 // Platinum includes
 
 #include "PltDeviceHost.h"
 #include "Platinum.h"
-
-// Local includes
-
-#include "dlnaserver.h"
-#include "digikam_debug.h"
-#include "digikam_version.h"
-#include "daboutdata.h"
 
 void NPT_Console::Output(const char* msg)
 {
@@ -63,18 +63,23 @@ void UPnPLogger(const NPT_LogRecord* record)
         case NPT_LOG_LEVEL_FATAL:
             qCDebug(DIGIKAM_MEDIASRV_LOG_FATAL) << msg;
             break;
+
         case NPT_LOG_LEVEL_SEVERE:
             qCDebug(DIGIKAM_MEDIASRV_LOG_SEVERE) << msg;
             break;
+
         case NPT_LOG_LEVEL_WARNING:
             qCDebug(DIGIKAM_MEDIASRV_LOG_WARN) << msg;
             break;
+
         case NPT_LOG_LEVEL_INFO:
             qCDebug(DIGIKAM_MEDIASRV_LOG_INFO) << msg;
             break;
+
         case NPT_LOG_LEVEL_FINE:
             qCDebug(DIGIKAM_MEDIASRV_LOG) << msg;
             break;
+
         default: // NPT_LOG_LEVEL_DEBUG:
             qCDebug(DIGIKAM_MEDIASRV_LOG_DEBUG) << msg;
             break;
@@ -96,8 +101,8 @@ class Q_DECL_HIDDEN DMediaServer::Private
 public:
 
     explicit Private()
-      : upnp(nullptr),
-        logHandler(nullptr),
+      : upnp        (nullptr),
+        logHandler  (nullptr),
         serverHolder(nullptr)
     {
         NPT_LogManager::GetDefault().Configure("plist:.level=INFO;.handlers=CustomHandler;");

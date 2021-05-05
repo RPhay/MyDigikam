@@ -7,7 +7,7 @@
  * Description : A widget to select Physical or virtual albums with combo-box
  *
  * Copyright (C) 2010-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2012-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -43,9 +43,15 @@ public:
 
     enum AlbumType
     {
-        PhysAlbum=0,
+        PhysAlbum = 0,
         TagsAlbum,
         All
+    };
+
+    enum SelectionType
+    {
+        SingleSelection = 0,
+        MultipleSelection
     };
 
 public:
@@ -58,7 +64,7 @@ public:
                             const QString& configName,
                             QWidget* const parent = nullptr,
                             AlbumType albumType = All);
-    ~AlbumSelectors();
+    ~AlbumSelectors()                         override;
 
     /**
      * Return list of selected physical albums
@@ -103,12 +109,12 @@ public:
     /** Select Physical Album from list. If singleSelection is true, only this one is
      *  selected from tree-view and all others are deselected.
      */
-    void setAlbumSelected(Album* const album, bool singleSelection=true);
+    void setAlbumSelected(Album* const album, SelectionType type);
 
     /** Select Tag Album from list. If singleSelection is true, only this one is
      *  selected from tree-view and all others are deselected.
      */
-    void setTagSelected(Album* const album, bool singleSelection=true);
+    void setTagSelected(Album* const album, SelectionType type);
 
     /**
      * Sets the search type selection with the AlbumType.
@@ -118,17 +124,17 @@ public:
     /**
      * Returns the selected album type.
      */
-    int typeSelection() const;
+    int typeSelection()                 const;
 
     /**
      * Return true if whole Albums collection option is checked.
      */
-    bool wholeAlbumsChecked() const;
+    bool wholeAlbumsChecked()           const;
 
     /**
      * Return true if whole Tags collection option is checked.
      */
-    bool wholeTagsChecked() const;
+    bool wholeTagsChecked()             const;
 
 public Q_SLOTS:
 
@@ -156,6 +162,7 @@ private:
 
     void initAlbumWidget();
     void initTagWidget();
+    void updateTabText();
 
 private:
 

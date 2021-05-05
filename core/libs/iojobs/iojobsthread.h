@@ -37,14 +37,14 @@ namespace Digikam
 class IOJob;
 class IOJobData;
 
-class DIGIKAM_EXPORT IOJobsThread : public ActionThreadBase
+class DIGIKAM_GUI_EXPORT IOJobsThread : public ActionThreadBase
 {
     Q_OBJECT
 
 public:
 
     explicit IOJobsThread(QObject* const parent);
-    ~IOJobsThread();
+    ~IOJobsThread() override;
 
     /**
      * @brief Starts a number of jobs to copy or move source files to destination
@@ -72,15 +72,15 @@ public:
 
     /**
      * @brief creates a job for every item to restore back to album
-     * @param items to restore
+     * @param data: IOJobsData container
      */
-    void restoreDTrashItems(const DTrashItemInfoList& items);
+    void restoreDTrashItems(IOJobData* const data);
 
     /**
      * @brief creates a job for every item to delete from collection trash
-     * @param items to delete
+     * @param data: IOJobsData container
      */
-    void deleteDTrashItems(const DTrashItemInfoList& items);
+    void emptyDTrashItems(IOJobData* const data);
 
     /**
      * @brief isCanceled
@@ -115,7 +115,7 @@ public Q_SLOTS:
 
 Q_SIGNALS:
 
-    void finished();
+    void signalFinished();
 
     void signalOneProccessed(const QUrl& url);
     void signalRenameFailed(const QUrl& url);

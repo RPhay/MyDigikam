@@ -6,7 +6,7 @@
  * Date        : 2014-11-30
  * Description : Save space slider widget
  *
- * Copyright (C) 2014-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2014-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C)      2010 by Justin Noel <justin at ics dot com>
  *
  * This program is free software; you can redistribute it
@@ -50,7 +50,7 @@ protected:
 
 public:
 
-    virtual ~DAbstractSliderSpinBox();
+    ~DAbstractSliderSpinBox() override;
 
     void showEdit();
     void hideEdit();
@@ -67,22 +67,22 @@ public:
      */
     void setBlockUpdateSignalOnDrag(bool block);
 
-    virtual QSize sizeHint() const override;
-    virtual QSize minimumSizeHint() const override;
+    QSize sizeHint() const override;
+    QSize minimumSizeHint() const override;
     virtual QSize minimumSize() const;
 
     bool isDragging() const;
 
 protected:
 
-    virtual void paintEvent(QPaintEvent* e) override;
-    virtual void mousePressEvent(QMouseEvent* e) override;
-    virtual void mouseReleaseEvent(QMouseEvent* e) override;
-    virtual void mouseMoveEvent(QMouseEvent* e) override;
-    virtual void keyPressEvent(QKeyEvent* e) override;
-    virtual void wheelEvent(QWheelEvent* e) override;
-    virtual void focusInEvent(QFocusEvent* e) override;
-    virtual bool eventFilter(QObject* recv, QEvent* e) override;
+    void paintEvent(QPaintEvent* e) override;
+    void mousePressEvent(QMouseEvent* e) override;
+    void mouseReleaseEvent(QMouseEvent* e) override;
+    void mouseMoveEvent(QMouseEvent* e) override;
+    void keyPressEvent(QKeyEvent* e) override;
+    void wheelEvent(QWheelEvent* e) override;
+    void focusInEvent(QFocusEvent* e) override;
+    bool eventFilter(QObject* recv, QEvent* e) override;
 
     QStyleOptionSpinBox spinBoxOptions() const;
     QStyleOptionProgressBar progressBarOptions() const;
@@ -114,7 +114,7 @@ protected:
 
 protected:
 
-    virtual void changeEvent(QEvent* e) override;
+    void changeEvent(QEvent* e) override;
     void paint(QPainter& painter);
     void paintFusion(QPainter& painter);
     void paintPlastique(QPainter& painter);
@@ -137,7 +137,7 @@ class DSliderSpinBox : public DAbstractSliderSpinBox
 public:
 
     explicit DSliderSpinBox(QWidget* const parent = nullptr);
-    ~DSliderSpinBox();
+    ~DSliderSpinBox() override;
 
     void setRange(int minimum, int maximum);
 
@@ -161,8 +161,8 @@ public Q_SLOTS:
 
 protected:
 
-    virtual QString valueString() const override;
-    virtual void setInternalValue(int value, bool blockUpdateSignal) override;
+    QString valueString() const override;
+    void setInternalValue(int value, bool blockUpdateSignal) override;
 
 Q_SIGNALS:
 
@@ -179,7 +179,7 @@ class DDoubleSliderSpinBox : public DAbstractSliderSpinBox
 public:
 
     explicit DDoubleSliderSpinBox(QWidget* const parent = nullptr);
-    ~DDoubleSliderSpinBox();
+    ~DDoubleSliderSpinBox() override;
 
     void   setRange(double minimum, double maximum, int decimals = 0);
 
@@ -199,8 +199,8 @@ public Q_SLOTS:
 
 protected:
 
-    virtual QString valueString() const override;
-    virtual void setInternalValue(int value, bool blockUpdateSignal) override;
+    QString valueString() const override;
+    void setInternalValue(int value, bool blockUpdateSignal) override;
 
 Q_SIGNALS:
 

@@ -7,7 +7,7 @@
  * Description : Exiv2 library interface.
  *               Internal private data container.
  *
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2006-2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  *
  * This program is free software; you can redistribute it
@@ -47,13 +47,13 @@ void MetaEngineData::Private::clear()
 #endif
 
     }
-    catch(Exiv2::AnyError& e)
+    catch (Exiv2::AnyError& e)
     {
         qCCritical(DIGIKAM_METAENGINE_LOG) << "Cannot clear data container using Exiv2"
                                            << " (Error #" << e.code() << ": "
-                                           << std::string(e.what()).c_str();
+                                           << QString::fromStdString(e.what());
     }
-    catch(...)
+    catch (...)
     {
         qCCritical(DIGIKAM_METAENGINE_LOG) << "Default exception from Exiv2";
     }

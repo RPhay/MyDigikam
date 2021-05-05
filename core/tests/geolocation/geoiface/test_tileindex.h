@@ -26,11 +26,18 @@
 
 // Qt includes
 
-#include <QtTest>
+#include <QTest>
 
 class TestTileIndex : public QObject
 {
     Q_OBJECT
+
+public:
+
+    explicit TestTileIndex(QObject* const parent = nullptr)
+        : QObject(parent)
+    {
+    }
 
 private Q_SLOTS:
 
@@ -41,4 +48,4 @@ private Q_SLOTS:
     void testMovable();
 };
 
-#endif /* DIGIKAM_TEST_TILEINDEX_H */
+#endif // DIGIKAM_TEST_TILEINDEX_H

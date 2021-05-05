@@ -6,7 +6,7 @@
  * Date        : 2010-03-21
  * Description : A model to hold GPS information about items.
  *
- * Copyright (C) 2010-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2010-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2010      by Michael G. Hansen <mike at mghansen dot de>
  *
  * This program is free software; you can redistribute it
@@ -40,8 +40,8 @@ class Q_DECL_HIDDEN GPSItemSortProxyModel::Private
 public:
 
     explicit Private()
-      : imageModel(nullptr),
-        sourceSelectionModel(nullptr),
+      : imageModel            (nullptr),
+        sourceSelectionModel  (nullptr),
         linkItemSelectionModel(nullptr)
     {
     }
@@ -54,7 +54,7 @@ public:
 GPSItemSortProxyModel::GPSItemSortProxyModel(GPSItemModel* const imageModel,
                                              QItemSelectionModel* const sourceSelectionModel)
     : QSortFilterProxyModel(imageModel),
-      d(new Private())
+      d                    (new Private())
 {
     d->imageModel             = imageModel;
     d->sourceSelectionModel   = sourceSelectionModel;

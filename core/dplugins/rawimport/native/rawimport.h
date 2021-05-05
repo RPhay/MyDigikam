@@ -6,7 +6,7 @@
  * Date        : 2008-08-20
  * Description : Raw import tool
  *
- * Copyright (C) 2008-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2008-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -46,7 +46,7 @@ class RawImport : public EditorToolThreaded
 public:
 
     explicit RawImport(const QUrl& url, QObject* const parent);
-    ~RawImport();
+    ~RawImport()                                    override;
 
     DRawDecoding rawDecodingSettings()      const;
     DImg         postProcessedImage()       const;
@@ -55,12 +55,12 @@ public:
 
 private:
 
-    void setBusy(bool busy) override;
-    void preparePreview() override;
-    void setPreviewImage() override;
-    void setBackgroundColor(const QColor& bg) override;
-    void ICCSettingsChanged() override;
-    void exposureSettingsChanged() override;
+    void setBusy(bool busy)                         override;
+    void preparePreview()                           override;
+    void setPreviewImage()                          override;
+    void setBackgroundColor(const QColor& bg)       override;
+    void ICCSettingsChanged()                       override;
+    void exposureSettingsChanged()                  override;
 
 private Q_SLOTS:
 
@@ -70,13 +70,13 @@ private Q_SLOTS:
     void slotDemosaicedImage();
     void slotLoadingFailed();
     void slotLoadingProgress(float);
-    void slotScaleChanged() override;
+    void slotScaleChanged()                         override;
 
     void slotUpdatePreview();
-    void slotAbort() override;
+    void slotAbort()                                override;
 
-    void slotOk() override;
-    void slotCancel() override;
+    void slotOk()                                   override;
+    void slotCancel()                               override;
 
 private:
 

@@ -68,7 +68,7 @@ public:
     ~WSTalker();
 
     /*
-     * Get ID of an existent user account saved when he logged in before, 
+     * Get ID of an existent user account saved when he logged in before,
      * knowing user name.
      */
     QString getUserID(const QString& userName);
@@ -203,11 +203,12 @@ protected Q_SLOTS:
 
     /*
      * This is a particular slot, only used in case that digiKam will intercept O2 authentication flow,
-     * catch all navigation from web service, and the final url whose fragment contains accessToken 
-     * and other necessary information. digiKam then parses the response to get accessToken and join back to 
+     * catch all navigation from web service, and the final url whose fragment contains accessToken
+     * and other necessary information. digiKam then parses the response to get accessToken and join back to
      * O2's authentication flow by calling this method.
      *
-     * Facebook is a web service where this approach is used, because the callback url is not http://127.0.0.1/
+     * Facebook is a web service where this approach is used,
+     * because the callback url is not http://127.0.0.1/            // krazy:exclude=insecurenet
      */
     virtual void slotResponseTokenReceived(const QMap<QString, QString>& rep);
 

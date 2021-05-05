@@ -46,11 +46,11 @@ public:
                                QSharedPointer<const PTOType> inputPTO,
                                QUrl& previewPtoUrl,
                                const PanoramaItemUrlsMap& preProcessedUrlsMap);
-    ~CreatePreviewTask();
+    ~CreatePreviewTask() override;
 
 protected:
 
-    void run(ThreadWeaver::JobPointer self, ThreadWeaver::Thread *thread) override;
+    void run(ThreadWeaver::JobPointer self, ThreadWeaver::Thread* thread) override;
 
 private:
 
@@ -58,6 +58,13 @@ private:
     QSharedPointer<const PTOType> ptoData;
     const PanoramaItemUrlsMap     preProcessedUrlsMap;
     MetaEngine                    m_meta;
+
+private:
+
+    // Disable
+    CreatePreviewTask() = delete;
+
+    Q_DISABLE_COPY(CreatePreviewTask)
 };
 
 } // namespace DigikamGenericPanoramaPlugin

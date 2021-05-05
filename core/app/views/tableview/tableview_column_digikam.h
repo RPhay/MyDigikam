@@ -6,7 +6,8 @@
  * Date        : 2013-02-28
  * Description : Table view column helpers: Digikam properties
  *
- * Copyright (C) 2013 by Michael G. Hansen <mike at mghansen dot de>
+ * Copyright (C) 2017-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2013      by Michael G. Hansen <mike at mghansen dot de>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -45,11 +46,12 @@ public:
 
     enum SubColumn
     {
-        SubColumnRating = 0,
-        SubColumnPickLabel = 1,
+        SubColumnRating     = 0,
+        SubColumnPickLabel  = 1,
         SubColumnColorLabel = 2,
-        SubColumnTitle = 3,
-        SubColumnCaption = 4
+        SubColumnTitle      = 3,
+        SubColumnCaption    = 4,
+        SubColumnTags       = 5
     };
 
 public:
@@ -58,15 +60,14 @@ public:
             TableViewShared* const tableViewShared,
             const TableViewColumnConfiguration& pConfiguration,
             const SubColumn pSubColumn,
-            QObject* const parent = nullptr
-        );
-    virtual ~ColumnDigikamProperties();
+            QObject* const parent = nullptr);
+    ~ColumnDigikamProperties() override;
 
-    virtual QString getTitle() const;
-    virtual ColumnFlags getColumnFlags() const;
-    virtual QVariant data(TableViewModel::Item* const item, const int role) const;
-    virtual ColumnCompareResult compare(TableViewModel::Item* const itemA, TableViewModel::Item* const itemB) const;
-    virtual bool columnAffectedByChangeset(const ImageChangeset& imageChangeset) const;
+    QString getTitle()                                                                                const override;
+    ColumnFlags getColumnFlags()                                                                      const override;
+    QVariant data(TableViewModel::Item* const item, const int role)                                   const override;
+    ColumnCompareResult compare(TableViewModel::Item* const itemA, TableViewModel::Item* const itemB) const override;
+    bool columnAffectedByChangeset(const ImageChangeset& imageChangeset)                              const override;
 
     static TableViewColumnDescription getDescription();
     static QStringList getSubColumns();
@@ -74,7 +75,6 @@ public:
 private:
 
     SubColumn subColumn;
-
 };
 
 } // namespace TableViewColumns

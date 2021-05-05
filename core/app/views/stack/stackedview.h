@@ -7,7 +7,7 @@
  * Description : A widget stack to embedded album content view
  *               or the current image preview.
  *
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2013      by Michael G. Hansen <mike at mghansen dot de>
  *
  * This program is free software; you can redistribute it
@@ -49,11 +49,15 @@ class TableView;
 class TrashView;
 
 #ifdef HAVE_MEDIAPLAYER
+
 class MediaPlayerView;
+
 #endif //HAVE_MEDIAPLAYER
 
 #ifdef HAVE_MARBLE
+
 class MapWidgetView;
+
 #endif // HAVE_MARBLE
 
 class StackedView : public QStackedWidget
@@ -77,8 +81,8 @@ public:
 
 public:
 
-    explicit StackedView(QWidget* const parent=nullptr);
-    ~StackedView();
+    explicit StackedView(QWidget* const parent = nullptr);
+    ~StackedView() override;
 
     /* Attach the thumbnail dock widget to the specified QMainWindow. */
     void setDockArea(QMainWindow*);
@@ -91,11 +95,15 @@ public:
     TrashView*        trashView()        const;
 
 #ifdef HAVE_MEDIAPLAYER
+
     MediaPlayerView*  mediaPlayerView()  const;
+
 #endif //HAVE_MEDIAPLAYER
 
 #ifdef HAVE_MARBLE
+
     MapWidgetView*    mapWidgetView()    const;
+
 #endif // HAVE_MARBLE
 
     /**
@@ -134,7 +142,6 @@ Q_SIGNALS:
     void signalDeleteItem();
     void signalViewModeChanged();
     void signalEscapePreview();
-    void signalSlideShowCurrent();
     void signalZoomFactorChanged(double);
     void signalPopupTagsView();
     void signalAddToExistingQueue(int);
@@ -157,7 +164,7 @@ private Q_SLOTS:
 private:
 
     void readSettings();
-    void syncSelection(ItemCategorizedView* from, ItemCategorizedView* to);
+    void syncSelection(ItemCategorizedView* const from, ItemCategorizedView* const to);
 
 private:
 

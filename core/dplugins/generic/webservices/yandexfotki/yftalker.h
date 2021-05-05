@@ -7,7 +7,7 @@
  * Description : a tool to export items to YandexFotki web service
  *
  * Copyright (C) 2010      by Roman Tsisyk <roman at tsisyk dot com>
- * Copyright (C) 2010-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2010-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -71,7 +71,7 @@ public:
         STATE_GETTOKEN               = STATE_UNAUTHENTICATED | 0xa,
         STATE_INVALID_CREDENTIALS    = STATE_UNAUTHENTICATED | STATE_ERROR | 0xb,
         STATE_GETTOKEN_ERROR         = STATE_UNAUTHENTICATED | STATE_ERROR | 0xc,
-        STATE_GETTOKEN_DONE          = STATE_AUTHENTICATED, // simple alias
+        STATE_GETTOKEN_DONE          = STATE_AUTHENTICATED,                         ///< simple alias
 
         STATE_LISTALBUMS             = STATE_AUTHENTICATED   | 0x1,
         STATE_LISTALBUMS_ERROR       = STATE_AUTHENTICATED   | STATE_ERROR | 0x2,
@@ -95,7 +95,7 @@ public:
 public:
 
     explicit YFTalker(QObject* const parent = nullptr);
-    ~YFTalker();
+    ~YFTalker() override;
 
 public:
 
@@ -121,7 +121,9 @@ public:
 
     // Actions
     void getService();
-    //void checkToken();
+/*
+    void checkToken();
+*/
     void getSession();
     void getToken();
 
@@ -135,13 +137,13 @@ public:
 
 public:
 
-    // API-related public constants
+    /// API-related public constants
     static const QString USERPAGE_URL;
     static const QString USERPAGE_DEFAULT_URL;
 
 Q_SIGNALS:
 
-    // emits than  than we are in a bad state
+    /// emits when we are in a bad state
     void signalError();
     void signalGetSessionDone();
     void signalGetTokenDone();
@@ -157,7 +159,9 @@ private Q_SLOTS:
     void slotFinished(QNetworkReply* reply);
 
     void slotParseResponseGetSession();
-    //void slotParseResponseCheckToken();
+/*
+    void slotParseResponseCheckToken();
+*/
     void slotParseResponseGetToken();
     void slotParseResponseGetService();
     void slotParseResponseListAlbums();
@@ -172,20 +176,20 @@ private Q_SLOTS:
 
 private:
 
-    // for updatePhoto
+    /// for updatePhoto
     void updatePhotoFile(YFPhoto& photo);
     void updatePhotoInfo(YFPhoto& photo);
 
-    // for updateAlbum
+    /// for updateAlbum
     void updateAlbumCreate(YandexFotkiAlbum& album);
 
-    // return result from any place
+    /// return result from any place
     void setErrorState(State state);
 
-    void listAlbumsNext(); // see listPhotos();
+    void listAlbumsNext();                  ///< see listPhotos();
 
-    // for photos pagination in listPhotos()
-    void listPhotosNext(); // see listPhotos();
+    /// for photos pagination in listPhotos()
+    void listPhotosNext();                  ///< see listPhotos();
 
 private:
 

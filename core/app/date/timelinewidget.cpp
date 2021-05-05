@@ -6,7 +6,7 @@
  * Date        : 2007-12-08
  * Description : a widget to display date and time statistics of pictures
  *
- * Copyright (C) 2007-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2007-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2011-2012 by Andi Clemens <andi dot clemens at gmail dot com>
  *
  * This program is free software; you can redistribute it
@@ -61,26 +61,26 @@ public :
 public:
 
     explicit Private()
-      : validMouseEvent(false),
-        selMouseEvent(false),
-        maxCountByDay(1),
-        maxCountByWeek(1),
-        maxCountByMonth(1),
-        maxCountByYear(1),
-        topMargin(3),
-        bottomMargin(20),
-        barWidth(20),
-        nbItems(10),
-        startPos(96),
-        slotNextTimer(nullptr),
-        slotPreviousTimer(nullptr),
-        timeUnit(TimeLineWidget::Month),
-        scaleMode(TimeLineWidget::LinScale)
+      : validMouseEvent     (false),
+        selMouseEvent       (false),
+        maxCountByDay       (1),
+        maxCountByWeek      (1),
+        maxCountByMonth     (1),
+        maxCountByYear      (1),
+        topMargin           (3),
+        bottomMargin        (20),
+        barWidth            (20),
+        nbItems             (10),
+        startPos            (96),
+        slotNextTimer       (nullptr),
+        slotPreviousTimer   (nullptr),
+        timeUnit            (TimeLineWidget::Month),
+        scaleMode           (TimeLineWidget::LinScale)
     {
     }
 
-    bool                         validMouseEvent;   // Current mouse enter event is valid to set cursor position or selection.
-    bool                         selMouseEvent;     // Current mouse enter event is about to make a selection.
+    bool                         validMouseEvent;   ///< Current mouse enter event is valid to set cursor position or selection.
+    bool                         selMouseEvent;     ///< Current mouse enter event is about to make a selection.
 
     int                          maxCountByDay;
     int                          maxCountByWeek;
@@ -92,25 +92,25 @@ public:
     int                          nbItems;
     int                          startPos;
 
-    QDateTime                    refDateTime;       // Reference date-time used to draw histogram from middle of widget.
-    QDateTime                    cursorDateTime;    // Current date-time used to draw focus cursor.
-    QDateTime                    minDateTime;       // Higher date on histogram.
-    QDateTime                    maxDateTime;       // Lower date on histogram.
+    QDateTime                    refDateTime;       ///< Reference date-time used to draw histogram from middle of widget.
+    QDateTime                    cursorDateTime;    ///< Current date-time used to draw focus cursor.
+    QDateTime                    minDateTime;       ///< Higher date on histogram.
+    QDateTime                    maxDateTime;       ///< Lower date on histogram.
     QDateTime                    selStartDateTime;
-    QDateTime                    selMinDateTime;    // Lower date available on histogram.
-    QDateTime                    selMaxDateTime;    // Higher date available on histogram.
+    QDateTime                    selMinDateTime;    ///< Lower date available on histogram.
+    QDateTime                    selMaxDateTime;    ///< Higher date available on histogram.
 
     QTimer*                      slotNextTimer;
     QTimer*                      slotPreviousTimer;
 
-    QPixmap                      pixmap;            // Used for widget double buffering.
+    QPixmap                      pixmap;            ///< Used for widget double buffering.
 
     QRect                        focusRect;
 
-    QMap<YearRefPair, StatPair>  dayStatMap;        // Store Days  count statistics.
-    QMap<YearRefPair, StatPair>  weekStatMap;       // Store Weeks count statistics.
-    QMap<YearRefPair, StatPair>  monthStatMap;      // Store Month count statistics.
-    QMap<int,         StatPair>  yearStatMap;       // Store Years count statistics.
+    QMap<YearRefPair, StatPair>  dayStatMap;        ///< Store Days  count statistics.
+    QMap<YearRefPair, StatPair>  weekStatMap;       ///< Store Weeks count statistics.
+    QMap<YearRefPair, StatPair>  monthStatMap;      ///< Store Month count statistics.
+    QMap<int,         StatPair>  yearStatMap;       ///< Store Years count statistics.
 
     TimeLineWidget::TimeUnit     timeUnit;
     TimeLineWidget::ScaleMode    scaleMode;
@@ -118,7 +118,7 @@ public:
 
 TimeLineWidget::TimeLineWidget(QWidget* const parent)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     setAttribute(Qt::WA_DeleteOnClose);
     setMouseTracking(true);
@@ -254,6 +254,7 @@ void TimeLineWidget::setCursorDateTime(const QDateTime& dateTime)
         case Week:
         {
             // Go to the first day of week.
+
             int weekYear = date.year(); // Changed for week shared between 2 years (Dec/Jan).
 
             int weekNb   = date.weekNumber(&weekYear);
@@ -265,6 +266,7 @@ void TimeLineWidget::setCursorDateTime(const QDateTime& dateTime)
         case Month:
         {
             // Go to the first day of month.
+
             dt.setDate(QDate(date.year(), date.month(), 1));
             break;
         }
@@ -272,12 +274,15 @@ void TimeLineWidget::setCursorDateTime(const QDateTime& dateTime)
         case Year:
         {
             // Go to the first day of year.
+
             dt.setDate(QDate(date.year(), 1, 1));
             break;
         }
 
         default:
+        {
             break;
+        }
     }
 
     if (d->cursorDateTime == dt)
@@ -313,19 +318,19 @@ int TimeLineWidget::cursorInfo(QString& infoDate) const
         {
             int weekNb    = date.weekNumber();
             QDate endDate = date.addDays(7);
-            infoDate      = i18nc("Week #weeknumber - month name - year string\nStart:\tEnd: ",
+            infoDate      = i18nc("@info: week #weeknumber - month name - year string\nStart:\tEnd: ",
                                   "Week #%1 - %2 %3\n%4\t%5",
                                   weekNb,
                                   QLocale().standaloneMonthName(date.month(), QLocale::LongFormat),
                                   QLocale().toString(date, QLatin1String("yyyy")),
-                                  i18n("Start: ") + QLocale().toString(date, QLatin1String("dd")),
-                                  i18n("End: ")   + QLocale().toString(endDate, QLatin1String("dd")));
+                                  i18nc("@info: week properties", "Start: ") + QLocale().toString(date, QLatin1String("dd")),
+                                  i18nc("@info: week properties", "End: ")   + QLocale().toString(endDate, QLatin1String("dd")));
             break;
         }
 
         case Month:
         {
-            infoDate = i18nc("month-name year-string",
+            infoDate = i18nc("@info: month-name year-string",
                              "%1 %2",
                              QLocale().standaloneMonthName(date.month(), QLocale::LongFormat),
                              QLocale().toString(date, QLatin1String("yyyy")));
@@ -353,6 +358,7 @@ void TimeLineWidget::setRefDateTime(const QDateTime& dateTime)
         case Week:
         {
             // Go to the first day of week.
+
             int dayWeekOffset = (-1) * (date.dayOfWeek() - 1);
             dt = dt.addDays(dayWeekOffset);
             break;
@@ -361,6 +367,7 @@ void TimeLineWidget::setRefDateTime(const QDateTime& dateTime)
         case Month:
         {
             // Go to the first day of month.
+
             dt.setDate(QDate(date.year(), date.month(), 1));
             break;
         }
@@ -368,16 +375,20 @@ void TimeLineWidget::setRefDateTime(const QDateTime& dateTime)
         case Year:
         {
             // Go to the first day of year.
+
             dt.setDate(QDate(date.year(), 1, 1));
             break;
         }
 
         default:
+        {
             break;
+        }
     }
 
     d->refDateTime = dt;
     update();
+
     emit signalRefDateTimeChanged();
 }
 
@@ -391,24 +402,24 @@ void TimeLineWidget::resetSelection()
 {
     QMap<Private::YearRefPair, Private::StatPair>::iterator it;
 
-    for (it = d->dayStatMap.begin() ; it != d->dayStatMap.end(); ++it)
+    for (it = d->dayStatMap.begin() ; it != d->dayStatMap.end() ; ++it)
     {
         it.value().second = Unselected;
     }
 
-    for (it = d->weekStatMap.begin() ; it != d->weekStatMap.end(); ++it)
+    for (it = d->weekStatMap.begin() ; it != d->weekStatMap.end() ; ++it)
     {
         it.value().second = Unselected;
     }
 
-    for (it = d->monthStatMap.begin() ; it != d->monthStatMap.end(); ++it)
+    for (it = d->monthStatMap.begin() ; it != d->monthStatMap.end() ; ++it)
     {
         it.value().second = Unselected;
     }
 
     QMap<int, Private::StatPair>::iterator it2;
 
-    for (it2 = d->yearStatMap.begin() ; it2 != d->yearStatMap.end(); ++it2)
+    for (it2 = d->yearStatMap.begin() ; it2 != d->yearStatMap.end() ; ++it2)
     {
         it2.value().second = Unselected;
     }
@@ -426,7 +437,7 @@ void TimeLineWidget::setSelectedDateRange(const DateRangeList& list)
     QDateTime start, end, dt;
     DateRangeList::const_iterator it;
 
-    for (it = list.begin() ; it != list.end(); ++it)
+    for (it = list.begin() ; it != list.end() ; ++it)
     {
         start = (*it).first;
         end   = (*it).second;
@@ -459,7 +470,7 @@ DateRangeList TimeLineWidget::selectedDateRange(int& totalCount) const
 
     if (d->selMinDateTime.isValid() &&
         d->selMaxDateTime.isValid() &&
-        d->selMinDateTime != d->selMaxDateTime)
+        (d->selMinDateTime != d->selMaxDateTime))
     {
         for (it3 = d->dayStatMap.begin() ; it3 != d->dayStatMap.end() ; ++it3)
         {
@@ -493,8 +504,10 @@ DateRangeList TimeLineWidget::selectedDateRange(int& totalCount) const
 
 /*
         for (it = list.begin() ; it != list.end(); ++it)
+        {
             qCDebug(DIGIKAM_GENERAL_LOG) << (*it).first.date().toString(Qt::ISODate) << " :: "
-                     << (*it).second.date().toString(Qt::ISODate);
+                                         << (*it).second.date().toString(Qt::ISODate);
+        }
 
         qCDebug(DIGIKAM_GENERAL_LOG) << "Total Count of Items = " << totalCount;
 */
@@ -504,11 +517,11 @@ DateRangeList TimeLineWidget::selectedDateRange(int& totalCount) const
     DateRangeList list2;
     QDateTime     first, second, first2, second2;
 
-    for (it = list.constBegin() ; it != list.constEnd(); ++it)
+    for (it = list.constBegin() ; it != list.constEnd() ; ++it)
     {
         first  = (*it).first;
         second = (*it).second;
-        it2 = it;
+        it2    = it;
 
         do
         {
@@ -537,37 +550,39 @@ DateRangeList TimeLineWidget::selectedDateRange(int& totalCount) const
 
 /*
         for (it = list2.begin() ; it != list2.end(); ++it)
+        {
             qCDebug(DIGIKAM_GENERAL_LOG) << (*it).first.date().toString(Qt::ISODate) << " :: "
-                     << (*it).second.date().toString(Qt::ISODate);
+                                         << (*it).second.date().toString(Qt::ISODate);
+        }
 */
 
     return list2;
 }
 
-void TimeLineWidget::slotDatesMap(const QMap<QDateTime, int>& datesStatMap)
+void TimeLineWidget::slotDatesHash(const QHash<QDateTime, int>& datesStatHash)
 {
     // Clear all counts in all stats maps before to update it. Do not clear selections.
 
     QMap<int, Private::StatPair>::iterator it_iP;
 
-    for (it_iP = d->yearStatMap.begin() ; it_iP != d->yearStatMap.end(); ++it_iP)
+    for (it_iP = d->yearStatMap.begin() ; it_iP != d->yearStatMap.end() ; ++it_iP)
     {
         it_iP.value().first = 0;
     }
 
     QMap<Private::YearRefPair, Private::StatPair>::iterator it_YP;
 
-    for (it_YP = d->monthStatMap.begin() ; it_YP != d->monthStatMap.end(); ++it_YP)
+    for (it_YP = d->monthStatMap.begin() ; it_YP != d->monthStatMap.end() ; ++it_YP)
     {
         it_YP.value().first = 0;
     }
 
-    for (it_YP = d->weekStatMap.begin() ; it_YP != d->weekStatMap.end(); ++it_YP)
+    for (it_YP = d->weekStatMap.begin() ; it_YP != d->weekStatMap.end() ; ++it_YP)
     {
         it_YP.value().first = 0;
     }
 
-    for (it_YP = d->dayStatMap.begin() ; it_YP != d->dayStatMap.end(); ++it_YP)
+    for (it_YP = d->dayStatMap.begin() ; it_YP != d->dayStatMap.end() ; ++it_YP)
     {
         it_YP.value().first = 0;
     }
@@ -575,20 +590,20 @@ void TimeLineWidget::slotDatesMap(const QMap<QDateTime, int>& datesStatMap)
     // Parse all new Date stamp and store histogram stats relevant in maps.
 
     int count;
-    QMap<QDateTime, int>::const_iterator it;
+    QHash<QDateTime, int>::const_iterator it;
 
-    if (datesStatMap.isEmpty())
+    if (datesStatHash.isEmpty())
     {
         d->minDateTime = QDateTime();
         d->maxDateTime = QDateTime();
     }
     else
     {
-        d->minDateTime = datesStatMap.begin().key();
-        d->maxDateTime = datesStatMap.begin().key();
+        d->minDateTime = datesStatHash.begin().key();
+        d->maxDateTime = datesStatHash.begin().key();
     }
 
-    for (it = datesStatMap.begin(); it != datesStatMap.end(); ++it)
+    for (it = datesStatHash.begin(); it != datesStatHash.end() ; ++it)
     {
         if (it.key() > d->maxDateTime)
         {
@@ -600,9 +615,9 @@ void TimeLineWidget::slotDatesMap(const QMap<QDateTime, int>& datesStatMap)
             d->minDateTime = it.key();
         }
 
-        int year  = it.key().date().year();
-        int month = it.key().date().month();
-        int day   = it.key().date().dayOfYear();
+        int year        = it.key().date().year();
+        int month       = it.key().date().month();
+        int day         = it.key().date().dayOfYear();
         int yearForWeek = year;  // Used with week shared between 2 years decade (Dec/Jan).
 
         int week  = it.key().date().weekNumber(&yearForWeek);
@@ -619,7 +634,7 @@ void TimeLineWidget::slotDatesMap(const QMap<QDateTime, int>& datesStatMap)
         else
         {
             it_iP.value().first += it.value();
-            count = it_iP.value().first;
+            count                = it_iP.value().first;
         }
 
         if (d->maxCountByYear < count)
@@ -640,7 +655,7 @@ void TimeLineWidget::slotDatesMap(const QMap<QDateTime, int>& datesStatMap)
         else
         {
             it_YP.value().first += it.value();
-            count = it_YP.value().first;
+            count                = it_YP.value().first;
         }
 
         if (d->maxCountByMonth < count)
@@ -661,7 +676,7 @@ void TimeLineWidget::slotDatesMap(const QMap<QDateTime, int>& datesStatMap)
         else
         {
             it_YP.value().first += it.value();
-            count = it_YP.value().first;
+            count                = it_YP.value().first;
         }
 
         if (d->maxCountByWeek < count)
@@ -682,7 +697,7 @@ void TimeLineWidget::slotDatesMap(const QMap<QDateTime, int>& datesStatMap)
         else
         {
             it_YP.value().first += it.value();
-            count = it_YP.value().first;
+            count                = it_YP.value().first;
         }
 
         if (d->maxCountByDay < count)
@@ -691,7 +706,7 @@ void TimeLineWidget::slotDatesMap(const QMap<QDateTime, int>& datesStatMap)
         }
     }
 
-    if (!datesStatMap.isEmpty())
+    if (!datesStatHash.isEmpty())
     {
         d->maxDateTime.setTime(QTime(0, 0, 0, 0));
         d->minDateTime.setTime(QTime(0, 0, 0, 0));
@@ -709,9 +724,8 @@ void TimeLineWidget::slotDatesMap(const QMap<QDateTime, int>& datesStatMap)
 int TimeLineWidget::calculateTop(int& val) const
 {
     const int minimum_valid_height = 1;
-
-    double max = (double)maxCount();
-    int dim    = height() - d->bottomMargin - d->topMargin;
+    double max                     = (double)maxCount();
+    int dim                        = height() - d->bottomMargin - d->topMargin;
 
     if (d->scaleMode == TimeLineWidget::LogScale)
     {
@@ -819,7 +833,7 @@ void TimeLineWidget::paintItem(QPainter& p, const QRect& barRect,
 
             p.setPen(dateColor);
 
-            if (week == 1 || week == 10 || week == 20 || week == 30 || week == 40 || week == 50)
+            if      ((week == 1) || (week == 10) || (week == 20) || (week == 30) || (week == 40) || (week == 50))
             {
                 p.drawLine(barRect.left(), barRect.bottom(),
                            barRect.left(), barRect.bottom() + d->bottomMargin / 2);
@@ -831,7 +845,7 @@ void TimeLineWidget::paintItem(QPainter& p, const QRect& barRect,
                     p.drawText(barRect.left() - br.width() / 2, barRect.bottom() + d->bottomMargin, txt);
                 }
             }
-            else if (week == 6 || week == 16 || week == 26 || week == 36 || week == 46)
+            else if ((week == 6) || (week == 16) || (week == 26) || (week == 36) || (week == 46))
             {
                 p.drawLine(barRect.left(), barRect.bottom(),
                            barRect.left(), barRect.bottom() + d->bottomMargin / 4);
@@ -857,7 +871,7 @@ void TimeLineWidget::paintItem(QPainter& p, const QRect& barRect,
 
             p.setPen(dateColor);
 
-            if (ref.date().month() == 1)
+            if      (ref.date().month() == 1)
             {
                 p.drawLine(barRect.left(), barRect.bottom(),
                            barRect.left(), barRect.bottom() + d->bottomMargin / 2);
@@ -878,7 +892,7 @@ void TimeLineWidget::paintItem(QPainter& p, const QRect& barRect,
         {
             p.setPen(dateColor);
 
-            if (ref.date().year() % 10 == 0)
+            if      (ref.date().year() % 10 == 0)
             {
                 p.drawLine(barRect.left(), barRect.bottom(),
                            barRect.left(), barRect.bottom() + d->bottomMargin / 2);
@@ -930,7 +944,9 @@ void TimeLineWidget::keyPressEvent(QKeyEvent *e)
             ref = nextDateTime(ref);
 
             if (!dt.isNull())
+            {
                 setCursorDateTime(dt);
+            }
 
             break;
         }
@@ -947,7 +963,9 @@ void TimeLineWidget::keyPressEvent(QKeyEvent *e)
             ref = prevDateTime(ref);
 
             if (!dt.isNull())
+            {
                 setCursorDateTime(dt);
+            }
 
             break;
         }
@@ -974,7 +992,9 @@ void TimeLineWidget::keyScroll(bool isScrollNext)
     if (QWidget* const widget = nativeParentWidget())
     {
         if (QWindow* const window = widget->windowHandle())
+        {
             screen = window->screen();
+        }
     }
 
     QRect barRect;
@@ -988,7 +1008,8 @@ void TimeLineWidget::keyScroll(bool isScrollNext)
     {
         barRect.setTop(0);
         barRect.setBottom(height() - d->bottomMargin + 1);
-        for (int i = 0; i < items; ++i)
+
+        for (int i = 0 ; i < items ; ++i)
         {
             barRect.setLeft(d->startPos + i * d->barWidth);
             barRect.setRight(d->startPos + (i + 1)*d->barWidth);
@@ -996,6 +1017,7 @@ void TimeLineWidget::keyScroll(bool isScrollNext)
             if (barRect.intersects(d->focusRect) && i >= d->nbItems)
             {
                 // Scroll to the next item. Because the focus rect is outside the visible area.
+
                 slotNext();
                 break;
             }
@@ -1006,14 +1028,15 @@ void TimeLineWidget::keyScroll(bool isScrollNext)
         barRect.setTop(0);
         barRect.setBottom(height() - d->bottomMargin + 1);
 
-        for (int i = 0; i < items; ++i)
+        for (int i = 0 ; i < items ; ++i)
         {
             barRect.setRight(d->startPos - i * d->barWidth);
             barRect.setLeft(d->startPos - (i + 1)*d->barWidth);
 
-            if (barRect.intersects(d->focusRect) && i >= d->nbItems - 1)
+            if (barRect.intersects(d->focusRect) && (i >= (d->nbItems - 1)))
             {
                 // Scroll to the previous item. Because the focus rect is outside the visible area.
+
                 slotPrevious();
                 break;
             }
@@ -1028,9 +1051,13 @@ void TimeLineWidget::paintEvent(QPaintEvent*)
     d->bottomMargin = (int)(p.fontMetrics().height() * 1.5);
 
 #if (QT_VERSION >= QT_VERSION_CHECK(5, 11, 0))
+
     d->barWidth     = p.fontMetrics().horizontalAdvance(QLatin1String("00"));
+
 #else
+
     d->barWidth     = p.fontMetrics().width(QLatin1String("00"));
+
 #endif
 
     d->nbItems      = (int)((width() / 2.0) / (float)d->barWidth);
@@ -1100,7 +1127,7 @@ void TimeLineWidget::paintEvent(QPaintEvent*)
             subDateColor = palette().color(QPalette::Active, QPalette::Mid);
         }
 
-        if (sel == Selected || sel == FuzzySelection)
+        if ((sel == Selected) || (sel == FuzzySelection))
         {
             selBrush.setColor(qApp->palette().color(QPalette::Highlight));
             selBrush.setStyle(Qt::SolidPattern);
@@ -1185,7 +1212,7 @@ void TimeLineWidget::paintEvent(QPaintEvent*)
             subDateColor = palette().color(QPalette::Active, QPalette::Mid);
         }
 
-        if (sel == Selected || sel == FuzzySelection)
+        if ((sel == Selected) || (sel == FuzzySelection))
         {
             selBrush.setColor(qApp->palette().color(QPalette::Highlight));
             selBrush.setStyle(Qt::SolidPattern);
@@ -1216,6 +1243,7 @@ void TimeLineWidget::paintEvent(QPaintEvent*)
     }
 
     // Draw focus rectangle over current date-time.
+
     if (focusRect.isValid())
     {
         focusRect.setTop(d->topMargin);
@@ -1512,7 +1540,7 @@ void TimeLineWidget::updateMonthSelection(const QDateTime& dts, const QDateTime&
 {
     QMap<Private::YearRefPair, Private::StatPair>::iterator it;
     QDateTime dtsMonth, dteMonth, dt;
-    int                 year, month;
+    int year, month;
     dt = dts;
 
     do
@@ -1537,7 +1565,7 @@ void TimeLineWidget::updateYearSelection(const QDateTime& dts, const QDateTime& 
 {
     QMap<int, Private::StatPair>::iterator it;
     QDateTime dtsYear, dteYear, dt;
-    int       year;
+    int year;
     dt = dts;
 
     do
@@ -1563,7 +1591,7 @@ void TimeLineWidget::updateAllSelection()
     QDateTime dts, dte;
     QDate     date;
 
-    for (it = d->dayStatMap.constBegin() ; it != d->dayStatMap.constEnd(); ++it)
+    for (it = d->dayStatMap.constBegin() ; it != d->dayStatMap.constEnd() ; ++it)
     {
         if (it.value().second == Selected)
         {
@@ -1641,7 +1669,7 @@ TimeLineWidget::SelectionMode TimeLineWidget::checkSelectionForDaysRange(const Q
         return Unselected;
     }
 
-    if (itemsFuz == 0 && itemsSel == 0)
+    if ((itemsFuz == 0) && (itemsSel == 0))
     {
         return Unselected;
     }
@@ -1667,7 +1695,7 @@ void TimeLineWidget::slotBackward()
     {
         case Day:
         {
-            for (int i = 0; i < 7; ++i)
+            for (int i = 0 ; i < 7 ; ++i)
             {
                 ref = prevDateTime(ref);
             }
@@ -1677,7 +1705,7 @@ void TimeLineWidget::slotBackward()
 
         case Week:
         {
-            for (int i = 0; i < 4; ++i)
+            for (int i = 0 ; i < 4 ; ++i)
             {
                 ref = prevDateTime(ref);
             }
@@ -1687,7 +1715,7 @@ void TimeLineWidget::slotBackward()
 
         case Month:
         {
-            for (int i = 0; i < 12; ++i)
+            for (int i = 0 ; i < 12 ; ++i)
             {
                 ref = prevDateTime(ref);
             }
@@ -1697,7 +1725,7 @@ void TimeLineWidget::slotBackward()
 
         case Year:
         {
-            for (int i = 0; i < 5; ++i)
+            for (int i = 0 ; i < 5 ; ++i)
             {
                 ref = prevDateTime(ref);
             }
@@ -1744,7 +1772,7 @@ void TimeLineWidget::slotForward()
     {
         case Day:
         {
-            for (int i = 0; i < 7; ++i)
+            for (int i = 0 ; i < 7 ; ++i)
             {
                 ref = nextDateTime(ref);
             }
@@ -1754,7 +1782,7 @@ void TimeLineWidget::slotForward()
 
         case Week:
         {
-            for (int i = 0; i < 4; ++i)
+            for (int i = 0 ; i < 4 ; ++i)
             {
                 ref = nextDateTime(ref);
             }
@@ -1774,7 +1802,7 @@ void TimeLineWidget::slotForward()
 
         case Year:
         {
-            for (int i = 0; i < 5; ++i)
+            for (int i = 0 ; i < 5 ; ++i)
             {
                 ref = nextDateTime(ref);
             }
@@ -1793,7 +1821,7 @@ void TimeLineWidget::slotForward()
 
 void TimeLineWidget::wheelEvent(QWheelEvent* e)
 {
-    if (e->delta() < 0)
+    if (e->angleDelta().y() < 0)
     {
         if (e->modifiers() & Qt::ShiftModifier)
         {
@@ -1805,7 +1833,7 @@ void TimeLineWidget::wheelEvent(QWheelEvent* e)
         }
     }
 
-    if (e->delta() > 0)
+    if (e->angleDelta().y() > 0)
     {
         if (e->modifiers() & Qt::ShiftModifier)
         {
@@ -1866,6 +1894,7 @@ void TimeLineWidget::mousePressEvent(QMouseEvent* e)
 void TimeLineWidget::mouseMoveEvent(QMouseEvent* e)
 {
     // set cursor shape to indicate selection area
+
     QRect selectionArea;
     selectionArea.setTop(d->topMargin);
     selectionArea.setLeft(0);
@@ -1896,6 +1925,7 @@ void TimeLineWidget::mouseMoveEvent(QMouseEvent* e)
     }
 
     // handle move event
+
     if (d->validMouseEvent == true)
     {
         QPoint pt(e->x(), e->y());
@@ -1920,6 +1950,7 @@ void TimeLineWidget::mouseReleaseEvent(QMouseEvent*)
 
     // Only dispatch changes about selection when user release mouse selection
     // to prevent multiple queries on database.
+
     if (d->selMouseEvent)
     {
         updateAllSelection();
@@ -1944,7 +1975,9 @@ QDateTime TimeLineWidget::dateTimeForPoint(const QPoint& pt, bool& isOnSelection
     if (QWidget* const widget = nativeParentWidget())
     {
         if (QWindow* const window = widget->windowHandle())
+        {
             screen = window->screen();
+        }
     }
 
     QRect deskRect = screen->geometry();
@@ -1964,6 +1997,7 @@ QDateTime TimeLineWidget::dateTimeForPoint(const QPoint& pt, bool& isOnSelection
             if (i >= d->nbItems)
             {
                 // Point is outside visible widget area. We scrolling widget contents.
+
                 if (d->validMouseEvent)
                 {
                     d->slotNextTimer->start();
@@ -1997,9 +2031,10 @@ QDateTime TimeLineWidget::dateTimeForPoint(const QPoint& pt, bool& isOnSelection
         {
             isOnSelectionArea = true;
 
-            if (i >= d->nbItems - 1)
+            if (i >= (d->nbItems - 1))
             {
                 // Point is outside visible widget area. We scrolling widget contents.
+
                 if (d->validMouseEvent)
                 {
                     d->slotPreviousTimer->start();
@@ -2025,6 +2060,7 @@ QDateTime TimeLineWidget::firstDayOfWeek(int year, int weekNumber) const
     // We start to scan from 1st December of year-1 because
     // first week of year OR last week of year-1 can be shared
     // between year-1 and year.
+
     QDateTime d1(QDate(year - 1, 12, 1));
     QDateTime dt = d1;
     int weekYear = dt.date().year();
@@ -2033,16 +2069,15 @@ QDateTime TimeLineWidget::firstDayOfWeek(int year, int weekNumber) const
     do
     {
         dt      = dt.addDays(1);
-
         weekNum = dt.date().weekNumber(&weekYear);
     }
-    while (weekNum != 1 && weekYear != year);
+    while ((weekNum != 1) && (weekYear != year));
 
     dt = dt.addDays((weekNumber - 1) * 7);
 
     /*
         qCDebug(DIGIKAM_GENERAL_LOG) << "Year= " << year << " Week= " << weekNumber
-                 << " 1st day= " << dt;
+                                     << " 1st day= " << dt;
     */
 
     return dt;
@@ -2060,13 +2095,13 @@ void TimeLineWidget::handleSelectionRange(QDateTime& selEndDateTime)
 
     if (!selEndDateTime.isNull() && !d->selStartDateTime.isNull())
     {
-        if (selEndDateTime > d->selStartDateTime &&
-            selEndDateTime > d->selMaxDateTime)
+        if      ((selEndDateTime > d->selStartDateTime) &&
+                 (selEndDateTime > d->selMaxDateTime))
         {
             d->selMaxDateTime = selEndDateTime;
         }
-        else if (selEndDateTime < d->selStartDateTime &&
-                 selEndDateTime < d->selMinDateTime)
+        else if ((selEndDateTime < d->selStartDateTime) &&
+                 (selEndDateTime < d->selMinDateTime))
         {
             d->selMinDateTime = selEndDateTime;
         }

@@ -33,6 +33,7 @@
 #include "digikam_debug.h"
 #include "coredbconstants.h"
 #include "tagscache.h"
+#include "facetags.h"
 
 namespace Digikam
 {
@@ -142,12 +143,40 @@ QString FaceTagsIface::attributeForType(Type type)
         return ImageTagPropertyName::tagRegion();
     }
 
+    if (type == FaceTagsIface::IgnoredName)
+    {
+        return ImageTagPropertyName::ignoredFace();
+    }
+
     if (type == FaceTagsIface::FaceForTraining)
     {
         return ImageTagPropertyName::faceToTrain();
     }
 
     return QString();
+}
+
+FaceTagsIface::Type FaceTagsIface::typeForId(int tagId)
+{
+        if (!FaceTags::isPerson(tagId))
+        {
+            return InvalidFace;
+        }
+
+        if      (FaceTags::isTheUnknownPerson(tagId))
+        {
+            return UnknownName;
+        }
+        else if (FaceTags::isTheUnconfirmedPerson(tagId))
+        {
+            return UnconfirmedName;
+        }
+        else if (FaceTags::isTheIgnoredPerson(tagId))
+        {
+            return IgnoredName;
+        }
+
+        return ConfirmedName;
 }
 
 FaceTagsIface::Type FaceTagsIface::typeForAttribute(const QString& attribute, int tagId)
@@ -162,6 +191,10 @@ FaceTagsIface::Type FaceTagsIface::typeForAttribute(const QString& attribute, in
         {
             return FaceTagsIface::UnconfirmedName;
         }
+    }
+    else if (attribute == ImageTagPropertyName::ignoredFace())
+    {
+        return FaceTagsIface::IgnoredName;
     }
     else if (attribute == ImageTagPropertyName::tagRegion())
     {
@@ -179,9 +212,9 @@ FaceTagsIface FaceTagsIface::fromVariant(const QVariant& var)
 {
     if (var.type() == QVariant::List)
     {
-        QList<QVariant> list = var.toList();
+        QList<QVariant> list(var.toList());
 
-        if (list.size() == 4)
+        if ((list.size() == 4) || (list.size() == 5))
         {
             return FaceTagsIface((Type)list.at(0).toInt(),
                                  list.at(1).toLongLong(),
@@ -197,6 +230,7 @@ QVariant FaceTagsIface::toVariant() const
 {
     // this is still not perfect, with QList<QVariant> being inefficient
     // we must keep to native types, to make operator== work.
+
     QList<QVariant> list;
     list << (int)m_type;
     list << m_imageId;
@@ -214,12 +248,13 @@ FaceTagsIface FaceTagsIface::fromListing(qlonglong imageId, const QList<QVariant
     }
 
     // See imagelister.cpp: value - property - tagId
+
     int tagId         = extraValues.at(2).toInt();
     QString attribute = extraValues.at(1).toString();
     QString value     = extraValues.at(0).toString();
-
-    //qCDebug(DIGIKAM_DATABASE_LOG) << tagId << attribute << value;
-
+/*
+    qCDebug(DIGIKAM_DATABASE_LOG) << tagId << attribute << value;
+*/
     return FaceTagsIface(attribute,
                         imageId, tagId,
                         TagRegion(value));
@@ -229,7 +264,11 @@ QString FaceTagsIface::getAutodetectedPersonString() const
 {
     if (isUnconfirmedType())
     {
-        return (QString::number(tagId()) + QLatin1Char(',') + ImageTagPropertyName::autodetectedFace() + QLatin1Char(',') + (TagRegion(region().toRect())).toXml());
+        return (QString::number(tagId())                 +
+                QLatin1Char(',')                         +
+                ImageTagPropertyName::autodetectedFace() +
+                QLatin1Char(',')                         +
+                (TagRegion(region().toRect())).toXml());
     }
     else
     {
@@ -246,4 +285,4 @@ QDebug operator<<(QDebug dbg, const FaceTagsIface& f)
     return dbg;
 }
 
-}  // Namespace Digikam
+} // namespace Digikam

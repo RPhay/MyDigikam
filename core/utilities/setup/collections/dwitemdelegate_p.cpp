@@ -6,7 +6,7 @@
  * Date        : 2007-11-15
  * Description : widget item delegate for setup collection view
  *
- * Copyright (C) 2015-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2015-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2007-2008 by Rafael Fernández López <ereslibre at kde dot org>
  * Copyright (C) 2008      by Kevin Ottens <ervin at kde dot org>
  *
@@ -56,13 +56,13 @@ namespace Digikam
 {
 
 DWItemDelegatePrivate::DWItemDelegatePrivate(DWItemDelegate* const q, QObject* const parent)
-    : QObject(parent),
-      itemView(nullptr),
-      widgetPool(new DWItemDelegatePool(q)),
-      model(nullptr),
+    : QObject       (parent),
+      itemView      (nullptr),
+      widgetPool    (new DWItemDelegatePool(q)),
+      model         (nullptr),
       selectionModel(nullptr),
-      viewDestroyed(false),
-      q(q)
+      viewDestroyed (false),
+      q             (q)
 {
 }
 
@@ -297,17 +297,18 @@ bool DWItemDelegatePrivate::eventFilter(QObject* watched, QEvent* event)
     {
         case QEvent::Polish:
         case QEvent::Resize:
-
+        {
             if (!qobject_cast<QAbstractItemView*>(watched))
             {
                 QTimer::singleShot(0, this, SLOT(initializeModel()));
             }
 
             break;
+        }
 
         case QEvent::FocusIn:
         case QEvent::FocusOut:
-
+        {
             if (qobject_cast<QAbstractItemView*>(watched))
             {
                 foreach (const QModelIndex& index, selectionModel->selectedIndexes())
@@ -319,8 +320,13 @@ bool DWItemDelegatePrivate::eventFilter(QObject* watched, QEvent* event)
                 }
             }
 
-        default:
             break;
+        }
+
+        default:
+        {
+            break;
+        }
     }
 
     return QObject::eventFilter(watched, event);

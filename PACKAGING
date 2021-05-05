@@ -6,7 +6,7 @@ Notice to make release tarballs from GIT
 
 2/  Commit last changes from source code to GIT. The code MUST compile in all cases.
 
-3/  Update the release info in top of core/CMakeLists.txt and commit it to GIT.
+3/  Update the release info in top level CMakeLists.txt and commit to GIT.
 
 4/  Update NEWS file. If ChangeLog is a dry historical record of development,
     NEWS should focus on the improvements and changes, summarize everything since
@@ -16,9 +16,10 @@ Notice to make release tarballs from GIT
     Note: after a stable release, the NEWS file is moved from the root directory to the project sub-directory
     with the release IDs as file-name suffix. The NEWS file from the root directory is cleaned for the next release.
 
-5/  Update ChangeLog file using git2cl script from root directory.
-    Extract all contents and append only new lines to ChangeLog file since the last release done previously.
-    Register the new release info on top of file including release date.
+5/  Update ChangeLog file using git2cl script from root source code directory.
+
+    ./git2cl > ChangeLog
+
     Commit to GIT.
 
 6/  Tag Git vith the release version in this format: vX.Y.Z-suffix.
@@ -41,6 +42,13 @@ Notice to make release tarballs from GIT
        Source code tarball compressed as tar.xz.
        The archive signature is done with gpg.
        The checksums of files.
+
+    Note: if .sig files are not generated with GPG, you can process signature computation with the command line
+    below. In this example, the GPG key is installed to ~/.gnupg/dkorg-gpg-pwd.txt.
+
+    cat ~/.gnupg/dkorg-gpg-pwd.txt | gpg --batch --yes --passphrase-fd 0 -stabv "tarball_file_to_sign" && mv "tarball_file_to_sign.asc" "tarball_file_to_sign.sig"
+
+    NOTE: project/scripts/signbundles.sh can batch sign all files in current directory.
 
 8/  Optional: upload tarball and signature to the "pre-release files repository".
 
@@ -66,6 +74,8 @@ Notice to make release tarballs from GIT
         ...
         List of sha256 + file names
         ...
+
+    Note: for beta release, destination is "unstable/digikam/"
 
 10/ Create bundles files with signatures for Linux, MacOS, and Windows. See README.BUNDLES for details.
     Use same worflow than source tarball.

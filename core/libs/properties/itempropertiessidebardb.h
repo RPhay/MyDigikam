@@ -6,7 +6,7 @@
  * Date        : 2004-11-17
  * Description : item properties side bar using data from digiKam database.
  *
- * Copyright (C) 2004-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2004-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2007-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  *
  * This program is free software; you can redistribute it
@@ -61,21 +61,21 @@ public:
                                       SidebarSplitter* const splitter,
                                       Qt::Edge side=Qt::LeftEdge,
                                       bool mimimizedDefault=false);
-    ~ItemPropertiesSideBarDB();
+    ~ItemPropertiesSideBarDB() override;
 
     void populateTags();
     void refreshTagsView();
 
-    ///This is for image editor to be able to update the filter list in sidebar
+    /// This is for image editor to be able to update the filter list in sidebar
     ItemPropertiesVersionsTab* getFiltersHistoryTab() const;
     ItemDescEditTab*           imageDescEditTab()     const;
 
-    virtual void itemChanged(const QUrl& url, const QRect& rect = QRect(), DImg* const img = nullptr) override;
+    void itemChanged(const QUrl& url, const QRect& rect = QRect(), DImg* const img = nullptr) override;
 
     virtual void itemChanged(const ItemInfo& info, const QRect& rect = QRect(),
                              DImg* const img = nullptr, const DImageHistory& history = DImageHistory());
 
-    virtual void itemChanged(const ItemInfoList& infos);
+    virtual void itemChanged(const ItemInfoList& infos, const ItemInfoList& allInfos);
 
 
 #ifdef HAVE_MARBLE
@@ -103,7 +103,7 @@ public Q_SLOTS:
 
     void slotPopupTagsView();
 
-    virtual void slotNoCurrentItem() override;
+    void slotNoCurrentItem() override;
 
 private Q_SLOTS:
 
@@ -114,9 +114,12 @@ private Q_SLOTS:
 
 private:
 
-    void itemChanged(const QUrl& url, const ItemInfo& info, const QRect& rect, DImg* const img, const DImageHistory& history);
-    void itemChanged(const ItemInfoList& infos, const QRect& rect, DImg* const img, const DImageHistory& history);
+    void itemChanged(const QUrl& url, const ItemInfo& info,
+                     const QRect& rect, DImg* const img, const DImageHistory& history);
+    void itemChanged(const ItemInfoList& infos, const ItemInfoList& allInfos,
+                     const QRect& rect, DImg* const img, const DImageHistory& history);
     void setImagePropertiesInformation(const QUrl& url) override;
+    void setImageSelectionPropertiesInformation();
 
 protected:
 

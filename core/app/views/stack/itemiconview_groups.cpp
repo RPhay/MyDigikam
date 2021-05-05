@@ -7,7 +7,7 @@
  * Description : Item icon view interface - Group methods.
  *
  * Copyright (C) 2002-2005 by Renchi Raju <renchi dot raju at gmail dot com>
- * Copyright (C) 2002-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2002-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2009-2011 by Johannes Wienke <languitar at semipol dot de>
  * Copyright (C) 2010-2011 by Andi Clemens <andi dot clemens at gmail dot com>
  * Copyright (C) 2011-2013 by Michael G. Hansen <mike at mghansen dot de>
@@ -38,12 +38,15 @@ bool ItemIconView::allNeedGroupResolving(const ApplicationSettings::OperationTyp
     {
         case StackedView::TableViewMode:
             return d->tableView->allNeedGroupResolving(type);
+
         case StackedView::MapWidgetMode:
         case StackedView::PreviewImageMode:
         case StackedView::MediaPlayerMode:
         case StackedView::IconViewMode:
             // all of these modes use the same selection model and data as the IconViewMode
+
             return d->iconView->allNeedGroupResolving(type);
+
         default:
             return false;
     }
@@ -55,12 +58,15 @@ bool ItemIconView::selectedNeedGroupResolving(const ApplicationSettings::Operati
     {
         case StackedView::TableViewMode:
             return d->tableView->selectedNeedGroupResolving(type);
+
         case StackedView::MapWidgetMode:
         case StackedView::PreviewImageMode:
         case StackedView::MediaPlayerMode:
         case StackedView::IconViewMode:
             // all of these modes use the same selection model and data as the IconViewMode
+
             return d->iconView->selectedNeedGroupResolving(type);
+
         default:
             return false;
     }

@@ -6,7 +6,7 @@
  * Date        : 2011-03-22
  * Description : a Iface C++ interface
  *
- * Copyright (C) 2011-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2011-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2011      by Hormiere Guillaume <hormiere dot guillaume at gmail dot com>
  * Copyright (C) 2011      by Manuel Campomanes <campomanes dot manuel at gmail dot com>
  *
@@ -35,7 +35,6 @@
 
 #include "mediawiki_job.h"
 #include "mediawiki_revision.h"
-#include "digikam_export.h"
 
 namespace MediaWiki
 {
@@ -48,7 +47,7 @@ class QueryRevisionPrivate;
  *
  * Uses for fetch a revision information about one pages of the wiki.
  */
-class DIGIKAM_EXPORT QueryRevision : public Job
+class QueryRevision : public Job
 {
     Q_OBJECT
     Q_DECLARE_PRIVATE(QueryRevision)
@@ -108,7 +107,7 @@ public:
         TooManyParams,
 
         /**
-         * @brief There is no section section in rrevid
+         * @brief There is no section in rrevid
          */
         SectionNotFound
     };
@@ -140,12 +139,12 @@ public:
     /**
      * @brief Destroys the QueryRevision job.
      */
-    virtual ~QueryRevision();
+    ~QueryRevision() override;
 
     /**
      * @brief Starts the job asynchronously.
      */
-    void start() Q_DECL_OVERRIDE;
+    void start() override;
 
     /**
      * @brief Set the page id.
@@ -167,7 +166,7 @@ public:
 
     /**
      * @brief Which properties to get for each revision.
-     * @param properties properties to get for each revision
+     * @param properties the properties to get for each revision
      */
     void setProperties(Properties properties);
 

@@ -6,7 +6,7 @@
  * Date        : 2008-01-14
  * Description : Basic search tree view with editing functionality
  *
- * Copyright (C) 2008-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2008-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2009-2010 by Johannes Wienke <languitar at semipol dot de>
  * Copyright (C) 2009      by Andi Clemens <andi dot clemens at gmail dot com>
  *
@@ -48,8 +48,8 @@ public:
 
     explicit Private()
       : searchModificationHelper(nullptr),
-        renameSearchAction(nullptr),
-        deleteSearchAction(nullptr)
+        renameSearchAction      (nullptr),
+        deleteSearchAction      (nullptr)
     {
     }
 
@@ -63,7 +63,7 @@ EditableSearchTreeView::EditableSearchTreeView(QWidget* const parent,
                                                SearchModel* const searchModel,
                                                SearchModificationHelper* const searchModificationHelper)
     : SearchTreeView(parent),
-      d(new Private)
+      d             (new Private)
 {
     setAlbumModel(searchModel);
     d->searchModificationHelper = searchModificationHelper;
@@ -97,16 +97,16 @@ void EditableSearchTreeView::addCustomContextMenuActions(ContextMenuHelper& cmh,
     if (searchAlbum)
     {
         activate = !searchAlbum->isTemporarySearch();
+        d->deleteSearchAction->setEnabled(true);
     }
 
     d->renameSearchAction->setEnabled(activate);
-    d->deleteSearchAction->setEnabled(activate);
 
     cmh.addAction(d->renameSearchAction);
     cmh.addAction(d->deleteSearchAction);
 }
 
-void EditableSearchTreeView::handleCustomContextMenuAction(QAction* action, AlbumPointer<Album> album)
+void EditableSearchTreeView::handleCustomContextMenuAction(QAction* action, const AlbumPointer<Album>& album)
 {
     Album* const a            = album;
     SAlbum* const searchAlbum = dynamic_cast<SAlbum*>(a);

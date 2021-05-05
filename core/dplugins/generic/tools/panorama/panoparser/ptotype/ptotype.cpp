@@ -6,7 +6,7 @@
  * Date        : 2012-02-04
  * Description : a tool to create panorama by fusion of several images.
  *               This type is based on pto file format described here:
- *               http://hugin.sourceforge.net/docs/nona/nona.txt, and
+ *               hugin.sourceforge.net/docs/nona/nona.txt, and
  *               on pto files produced by Hugin's tools.
  *
  * Copyright (C) 2012-2015 by Benjamin Girault <benjamin dot girault at gmail dot com>
@@ -54,20 +54,29 @@ bool PTOType::createFile(const QString& filepath)
     out.setRealNumberPrecision(15);
 
     // First, the pano line
+
     if (project.previousComments.size() > 0)
+    {
         out << project.previousComments.join(QLatin1Char('\n')) << endl;
+    }
 
     out << "p";
     out << " f" << project.projection;
 
     if (project.size.width() > 0)
+    {
         out << " w" << project.size.width();
+    }
 
     if (project.size.height() > 0)
+    {
         out << " h" << project.size.height();
+    }
 
     if (project.fieldOfView > 0)
+    {
         out << " v" << project.fieldOfView;
+    }
 
     out << " k" << project.photometricReferenceId;
     out << " E" << project.exposure;
@@ -78,9 +87,11 @@ bool PTOType::createFile(const QString& filepath)
         case Project::UINT16:
             out << " T\"UINT16\"";
             break;
+
         case Project::FLOAT:
             out << " T\"FLOAT\"";
             break;
+
         default:
             break;
     }
@@ -99,21 +110,27 @@ bool PTOType::createFile(const QString& filepath)
     switch (project.fileFormat.fileType)
     {
         case Project::FileFormat::PNG:
+        {
             out << "PNG";
             break;
+        }
 
         case Project::FileFormat::JPEG:
+        {
             out <<  "JPEG";
             out << " q" << project.fileFormat.quality;
             break;
+        }
 
         case Project::FileFormat::TIFF:
+        {
             out << "TIFF c:" << project.fileFormat.compressionMethod;
             break;
+        }
 
         case Project::FileFormat::TIFF_m:
         case Project::FileFormat::TIFF_multilayer:
-
+        {
             if (project.fileFormat.fileType == Project::FileFormat::TIFF_multilayer)
             {
                 out << "TIFF_multilayer";
@@ -130,33 +147,47 @@ bool PTOType::createFile(const QString& filepath)
                 case Project::FileFormat::PANO_NONE:
                     out << "PANO_NONE";
                     break;
+
                 case Project::FileFormat::LZW:
                     out << "LZW";
                     break;
+
                 case Project::FileFormat::DEFLATE:
                     out << "DEFLATE";
                     break;
             }
 
             if (project.fileFormat.savePositions)
+            {
                 out << " p1";
+            }
 
             if (project.fileFormat.cropped)
+            {
                 out << " r:CROP";
+            }
+
             break;
+        }
 
         default:
+        {
             qCCritical(DIGIKAM_GENERAL_LOG) << "Unknown file format for pto file generation!";
             file.close();
+
             return false;
+        }
     }
 
     out << "\"";
     out << project.unmatchedParameters.join(QLatin1Char(' ')) << endl;
 
     // Second, the stitcher line
+
     if (stitcher.previousComments.size() > 0)
+    {
         out << stitcher.previousComments.join(QLatin1Char('\n')) << endl;
+    }
 
     out << "m";
     out << " g" << stitcher.gamma;
@@ -173,12 +204,15 @@ bool PTOType::createFile(const QString& filepath)
 
     // Third, the images
     // Note: the order is very important here
+
     for (int id = 0 ; id < images.size() ; ++id)
     {
         const Image &image = images[id];
 
         if (image.previousComments.size() > 0)
+        {
             out << image.previousComments.join(QLatin1Char('\n')) << endl;
+        }
 
         out << "i";
         out << " w" << image.size.width();
@@ -186,7 +220,9 @@ bool PTOType::createFile(const QString& filepath)
         out << " f" << (int) image.lensProjection;
 
         if (image.fieldOfView.referenceId >= 0 || image.fieldOfView.value > 0)
+        {
             out << " v" << image.fieldOfView;
+        }
 
         out << " Ra" << image.photometricEMoRA;
         out << " Rb" << image.photometricEMoRB;
@@ -221,9 +257,11 @@ bool PTOType::createFile(const QString& filepath)
         const Image* imageVM = &image;
 
         if (image.vignettingMode.referenceId >= 0)
+        {
             imageVM = &images[image.vignettingMode.referenceId];
+        }
 
-        if (((int) imageVM->vignettingMode.value) & ((int) Image::RADIAL))
+        if (((int)imageVM->vignettingMode.value) & ((int)Image::RADIAL))
         {
             out << " Va" << image.vignettingCorrectionI;
             out << " Vb" << image.vignettingCorrectionJ;
@@ -244,6 +282,7 @@ bool PTOType::createFile(const QString& filepath)
     }
 
     // Fourth, the variable to optimize
+
     for (int id = 0 ; id < images.size() ; ++id)
     {
         const Image& image = images[id];
@@ -251,7 +290,9 @@ bool PTOType::createFile(const QString& filepath)
         foreach (Optimization optim, image.optimizationParameters)
         {
             if (optim.previousComments.size() > 0)
+            {
                 out << optim.previousComments.join(QLatin1Char('\n')) << endl;
+            }
 
             out << "v ";
 
@@ -260,72 +301,95 @@ bool PTOType::createFile(const QString& filepath)
                 case Optimization::LENSA:
                     out << 'a';
                     break;
+
                 case Optimization::LENSB:
                     out << 'b';
                     break;
+
                 case Optimization::LENSC:
                     out << 'c';
                     break;
+
                 case Optimization::LENSD:
                     out << 'd';
                     break;
+
                 case Optimization::LENSE:
                     out << 'e';
                     break;
+
                 case Optimization::LENSHFOV:
                     out << 'v';
                     break;
+
                 case Optimization::LENSYAW:
                     out << 'y';
                     break;
+
                 case Optimization::LENSPITCH:
                     out << 'p';
                     break;
+
                 case Optimization::LENSROLL:
                     out << 'r';
                     break;
+
                 case Optimization::EXPOSURE:
                     out << "Eev";
                     break;
+
                 case Optimization::WBR:
                     out << "Er";
                     break;
+
                 case Optimization::WBB:
                     out << "Eb";
                     break;
+
                 case Optimization::VA:
                     out << "Va";
                     break;
+
                 case Optimization::VB:
                     out << "Vb";
                     break;
+
                 case Optimization::VC:
                     out << "Vc";
                     break;
+
                 case Optimization::VD:
                     out << "Vd";
                     break;
+
                 case Optimization::VX:
                     out << "Vx";
                     break;
+
                 case Optimization::VY:
                     out << "Vy";
                     break;
+
                 case Optimization::RA:
                     out << "Ra";
                     break;
+
                 case Optimization::RB:
                     out << "Rb";
                     break;
+
                 case Optimization::RC:
                     out << "Rc";
                     break;
+
                 case Optimization::RD:
                     out << "Rd";
                     break;
+
                 case Optimization::RE:
                     out << "Re";
                     break;
+
                 case Optimization::UNKNOWN:
                     qCCritical(DIGIKAM_GENERAL_LOG) << "Unknown optimization parameter!";
                     file.close();
@@ -339,6 +403,7 @@ bool PTOType::createFile(const QString& filepath)
     out << "v" << endl;
 
     // Fifth, the masks
+
     for (int id = 0 ; id < images.size() ; ++id)
     {
         const Image& image = images[id];
@@ -346,7 +411,9 @@ bool PTOType::createFile(const QString& filepath)
         foreach (Mask mask, image.masks)
         {
             if (mask.previousComments.size() > 0)
+            {
                 out << mask.previousComments.join(QLatin1Char('\n')) << endl;
+            }
 
             out << "k i" << id;
             out << " t" << (int) mask.type;
@@ -363,10 +430,13 @@ bool PTOType::createFile(const QString& filepath)
     }
 
     // Sixth, the control points
+
     foreach (ControlPoint cp, controlPoints)
     {
         if (cp.previousComments.size() > 0)
+        {
             out << cp.previousComments.join(QLatin1Char('\n')) << endl;
+        }
 
         out << "c n" << cp.image1Id;
         out << " N" << cp.image2Id;
@@ -379,9 +449,11 @@ bool PTOType::createFile(const QString& filepath)
     }
 
     // Finally the ending comments
+
     out << lastComments.join(QLatin1Char('\n')) << endl;
 
     file.close();
+
     return true;
 }
 

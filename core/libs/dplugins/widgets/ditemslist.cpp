@@ -6,7 +6,7 @@
  * Date        : 2008-05-21
  * Description : widget to display a list of items
  *
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2008-2010 by Andi Clemens <andi dot clemens at googlemail dot com>
  * Copyright (C) 2009-2010 by Luka Renko <lure at kubuntu dot org>
  *
@@ -49,9 +49,9 @@
 
 // KDE includes
 
-#include <kconfig.h>
-#include <kconfiggroup.h>
 #include <klocalizedstring.h>
+#include <ksharedconfig.h>
+#include <kconfiggroup.h>
 
 // Local includes
 
@@ -74,9 +74,9 @@ public:
 
     explicit Private()
       : hasThumb(false),
-        rating(-1),
-        view(nullptr),
-        state(Waiting)
+        rating  (-1),
+        view    (nullptr),
+        state   (Waiting)
     {
     }
 
@@ -93,7 +93,7 @@ public:
 
 DItemsListViewItem::DItemsListViewItem(DItemsListView* const view, const QUrl& url)
     : QTreeWidgetItem(view),
-      d(new Private)
+      d              (new Private)
 {
     setUrl(url);
     setRating(-1);
@@ -250,13 +250,15 @@ DItemsListView* DItemsListViewItem::view() const
 // ---------------------------------------------------------------------------
 
 DItemsListView::DItemsListView(DItemsList* const parent)
-    : QTreeWidget(parent)
+    : QTreeWidget (parent),
+      m_itemDraged(nullptr)
 {
     setup(DEFAULTSIZE);
 }
 
 DItemsListView::DItemsListView(int iconSize, DItemsList* const parent)
-    : QTreeWidget(parent)
+    : QTreeWidget (parent),
+      m_itemDraged(nullptr)
 {
     setup(iconSize);
 }
@@ -292,14 +294,14 @@ void DItemsListView::setup(int iconSize)
     setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
 
     setColumnCount(8);
-    setHeaderLabels(QStringList() << i18n("Thumbnail")
-                                  << i18n("File Name")
-                                  << i18n("User1")
-                                  << i18n("User2")
-                                  << i18n("User3")
-                                  << i18n("User4")
-                                  << i18n("User5")
-                                  << i18n("User6"));
+    setHeaderLabels(QStringList() << i18nc("@title", "Thumbnail")
+                                  << i18nc("@title", "File Name")
+                                  << i18nc("@title", "User1")
+                                  << i18nc("@title", "User2")
+                                  << i18nc("@title", "User3")
+                                  << i18nc("@title", "User4")
+                                  << i18nc("@title", "User5")
+                                  << i18nc("@title", "User6"));
     hideColumn(User1);
     hideColumn(User2);
     hideColumn(User3);
@@ -400,17 +402,20 @@ DItemsListViewItem* DItemsListView::findItem(const QUrl& url)
 
 QModelIndex DItemsListView::indexFromItem(DItemsListViewItem* item, int column) const
 {
-  return QTreeWidget::indexFromItem(item, column);
+    return QTreeWidget::indexFromItem(item, column);
 }
 
 void DItemsListView::contextMenuEvent(QContextMenuEvent* e)
 {
     QTreeWidget::contextMenuEvent(e);
+
     emit signalContextMenuRequested();
 }
 
 void DItemsListView::dragEnterEvent(QDragEnterEvent* e)
 {
+    m_itemDraged = QTreeWidget::currentItem();
+
     QTreeWidget::dragEnterEvent(e);
 
     if (e->mimeData()->hasUrls())
@@ -449,6 +454,8 @@ void DItemsListView::dropEvent(QDropEvent* e)
     {
         emit signalAddedDropedItems(urls);
     }
+
+    scrollToItem(m_itemDraged);
 }
 
 // ---------------------------------------------------------------------------
@@ -474,23 +481,23 @@ class Q_DECL_HIDDEN DItemsList::Private
 public:
 
     explicit Private()
-      : allowRAW(true),
-        allowDuplicate(false),
+      : allowRAW             (true),
+        allowDuplicate       (false),
         controlButtonsEnabled(true),
-        iconSize(DEFAULTSIZE),
-        addButton(nullptr),
-        removeButton(nullptr),
-        moveUpButton(nullptr),
-        moveDownButton(nullptr),
-        clearButton(nullptr),
-        loadButton(nullptr),
-        saveButton(nullptr),
-        progressCount(0),
-        progressTimer(nullptr),
-        listView(nullptr),
-        iface(nullptr)
+        iconSize             (DEFAULTSIZE),
+        addButton            (nullptr),
+        removeButton         (nullptr),
+        moveUpButton         (nullptr),
+        moveDownButton       (nullptr),
+        clearButton          (nullptr),
+        loadButton           (nullptr),
+        saveButton           (nullptr),
+        progressPix          (nullptr),
+        progressCount        (0),
+        progressTimer        (nullptr),
+        listView             (nullptr),
+        iface                (nullptr)
     {
-        progressPix     = DWorkingPixmap();
         thumbLoadThread = ThumbnailLoadThread::defaultThread();
     }
 
@@ -508,7 +515,7 @@ public:
     CtrlButton*                saveButton;
 
     QList<QUrl>                processItems;
-    DWorkingPixmap             progressPix;
+    DWorkingPixmap*            progressPix;
     int                        progressCount;
     QTimer*                    progressTimer;
 
@@ -520,7 +527,7 @@ public:
 
 DItemsList::DItemsList(QWidget* const parent, int iconSize)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     if (iconSize != -1)  // default = ICONSIZE
     {
@@ -529,7 +536,8 @@ DItemsList::DItemsList(QWidget* const parent, int iconSize)
 
     // --------------------------------------------------------
 
-    d->listView = new DItemsListView(d->iconSize, this);
+    d->progressPix    = new DWorkingPixmap(this);
+    d->listView       = new DItemsListView(d->iconSize, this);
     d->listView->setSelectionMode(QAbstractItemView::ExtendedSelection);
 
     // --------------------------------------------------------
@@ -542,15 +550,15 @@ DItemsList::DItemsList(QWidget* const parent, int iconSize)
     d->loadButton     = new CtrlButton(QIcon::fromTheme(QLatin1String("document-open")).pixmap(16, 16), this);
     d->saveButton     = new CtrlButton(QIcon::fromTheme(QLatin1String("document-save")).pixmap(16, 16), this);
 
-    d->addButton->setToolTip(i18n("Add new images to the list"));
-    d->removeButton->setToolTip(i18n("Remove selected images from the list"));
-    d->moveUpButton->setToolTip(i18n("Move current selected image up in the list"));
-    d->moveDownButton->setToolTip(i18n("Move current selected image down in the list"));
-    d->clearButton->setToolTip(i18n("Clear the list."));
-    d->loadButton->setToolTip(i18n("Load a saved list."));
-    d->saveButton->setToolTip(i18n("Save the list."));
+    d->addButton->setToolTip(i18nc("@info", "Add new images to the list"));
+    d->removeButton->setToolTip(i18nc("@info", "Remove selected images from the list"));
+    d->moveUpButton->setToolTip(i18nc("@info", "Move current selected image up in the list"));
+    d->moveDownButton->setToolTip(i18nc("@info", "Move current selected image down in the list"));
+    d->clearButton->setToolTip(i18nc("@info", "Clear the list."));
+    d->loadButton->setToolTip(i18nc("@info", "Load a saved list."));
+    d->saveButton->setToolTip(i18nc("@info", "Save the list."));
 
-    d->progressTimer = new QTimer(this);
+    d->progressTimer  = new QTimer(this);
 
     // --------------------------------------------------------
 
@@ -575,6 +583,7 @@ DItemsList::DItemsList(QWidget* const parent, int iconSize)
     // queue this connection because itemSelectionChanged is emitted
     // while items are deleted, and accessing selectedItems at that
     // time causes a crash ...
+
     connect(d->listView, &DItemsListView::itemSelectionChanged,
             this, &DItemsList::slotImageListChanged, Qt::QueuedConnection);
 
@@ -609,9 +618,8 @@ DItemsList::DItemsList(QWidget* const parent, int iconSize)
 
     // --------------------------------------------------------
 
-    emit signalImageListChanged();
+    QTimer::singleShot(1000, this, SIGNAL(signalImageListChanged()));
 }
-
 
 DItemsList::~DItemsList()
 {
@@ -633,7 +641,7 @@ void DItemsList::setControlButtonsPlacement(ControlButtonPlacement placement)
 {
     delete layout();
 
-    const int spacing = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
+    const int spacing             = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
 
     QGridLayout* const mainLayout = new QGridLayout;
     mainLayout->addWidget(d->listView, 1, 1, 1, 1);
@@ -673,32 +681,42 @@ void DItemsList::setControlButtonsPlacement(ControlButtonPlacement placement)
     switch (placement)
     {
         case ControlButtonsAbove:
+        {
             mainLayout->addLayout(hBtnLayout, 0, 1, 1, 1);
             delete vBtnLayout;
             break;
+        }
 
         case ControlButtonsBelow:
+        {
             mainLayout->addLayout(hBtnLayout, 2, 1, 1, 1);
             delete vBtnLayout;
             break;
+        }
 
         case ControlButtonsLeft:
+        {
             mainLayout->addLayout(vBtnLayout, 1, 0, 1, 1);
             delete hBtnLayout;
             break;
+        }
 
         case ControlButtonsRight:
+        {
             mainLayout->addLayout(vBtnLayout, 1, 2, 1, 1);
             delete hBtnLayout;
             break;
+        }
 
         case NoControlButtons:
         default:
         {
             delete vBtnLayout;
             delete hBtnLayout;
+
             // set all buttons invisible
-            setControlButtons(nullptr);
+
+            setControlButtons(ControlButtons());
             break;
         }
     }
@@ -739,7 +757,7 @@ void DItemsList::setAllowRAW(bool allow)
 
 void DItemsList::setIconSize(int size)
 {
-    if (size < 16)
+    if      (size < 16)
     {
         d->iconSize = 16;
     }
@@ -824,7 +842,8 @@ void DItemsList::slotAddImages(const QList<QUrl>& list)
         QUrl imageUrl = *it;
 
         // Check if the new item already exist in the list.
-        bool found = false;
+
+        bool found    = false;
 
         QTreeWidgetItemIterator iter(d->listView);
 
@@ -843,6 +862,7 @@ void DItemsList::slotAddImages(const QList<QUrl>& list)
         if (d->allowDuplicate || !found)
         {
             // if RAW files are not allowed, skip the image
+
             if (!d->allowRAW && DRawDecoder::isRawFile(imageUrl))
             {
                 raw = true;
@@ -861,19 +881,19 @@ void DItemsList::slotAddImages(const QList<QUrl>& list)
 
 void DItemsList::slotAddItems()
 {
-    KConfig config;
-    KConfigGroup grp = config.group(objectName());
-    QUrl lastFileUrl = QUrl::fromLocalFile(grp.readEntry("Last Image Path",
-                                           QStandardPaths::writableLocation(QStandardPaths::PicturesLocation)));
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup grp        = config->group(objectName());
+    QUrl lastFileUrl        = QUrl::fromLocalFile(grp.readEntry("Last Image Path",
+                                                  QStandardPaths::writableLocation(QStandardPaths::PicturesLocation)));
 
     ImageDialog dlg(this, lastFileUrl, false);
-    QList<QUrl> urls = dlg.urls();
+    QList<QUrl> urls        = dlg.urls();
 
     if (!urls.isEmpty())
     {
         slotAddImages(urls);
         grp.writeEntry("Last Image Path", urls.first().adjusted(QUrl::RemoveFilename).toLocalFile());
-        config.sync();
+        config->sync();
     }
 }
 
@@ -908,7 +928,8 @@ void DItemsList::slotRemoveItems()
 void DItemsList::slotMoveUpItems()
 {
     // move above item down, then we don't have to fix the focus
-    QModelIndex curIndex = listView()->currentIndex();
+
+    QModelIndex curIndex   = listView()->currentIndex();
 
     if (!curIndex.isValid())
     {
@@ -922,13 +943,17 @@ void DItemsList::slotMoveUpItems()
         return;
     }
 
-    QTreeWidgetItem* const temp = listView()->takeTopLevelItem(aboveIndex.row());
+    QTreeWidgetItem* const temp  = listView()->takeTopLevelItem(aboveIndex.row());
     listView()->insertTopLevelItem(curIndex.row(), temp);
+
     // this is a quick fix. We loose the extra tags in flickr upload, but at list we don't get a crash
+
     DItemsListViewItem* const uw = dynamic_cast<DItemsListViewItem*>(temp);
 
     if (uw)
+    {
         uw->updateItemWidgets();
+    }
 
     emit signalImageListChanged();
     emit signalMoveUpItem();
@@ -937,7 +962,8 @@ void DItemsList::slotMoveUpItems()
 void DItemsList::slotMoveDownItems()
 {
     // move below item up, then we don't have to fix the focus
-    QModelIndex curIndex = listView()->currentIndex();
+
+    QModelIndex curIndex   = listView()->currentIndex();
 
     if (!curIndex.isValid())
     {
@@ -951,14 +977,17 @@ void DItemsList::slotMoveDownItems()
         return;
     }
 
-    QTreeWidgetItem* const temp = listView()->takeTopLevelItem(belowIndex.row());
+    QTreeWidgetItem* const temp  = listView()->takeTopLevelItem(belowIndex.row());
     listView()->insertTopLevelItem(curIndex.row(), temp);
 
     // This is a quick fix. We can loose extra tags in uploader, but at least we don't get a crash
+
     DItemsListViewItem* const uw = dynamic_cast<DItemsListViewItem*>(temp);
 
     if (uw)
+    {
         uw->updateItemWidgets();
+    }
 
     emit signalImageListChanged();
     emit signalMoveDownItem();
@@ -973,13 +1002,14 @@ void DItemsList::slotClearItems()
 
 void DItemsList::slotLoadItems()
 {
-    KConfig config;
-    KConfigGroup grp = config.group(objectName());
-    QUrl lastFileUrl = QUrl::fromLocalFile(grp.readEntry("Last Images List Path",
-                                           QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation)));
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup grp        = config->group(objectName());
+    QUrl lastFileUrl        = QUrl::fromLocalFile(grp.readEntry("Last Images List Path",
+                                                  QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation)));
     QUrl loadLevelsFile;
-    loadLevelsFile = DFileDialog::getOpenFileUrl(this, i18n("Select the image file list to load"), lastFileUrl,
-                                                 i18n("All Files (*)"));
+    loadLevelsFile          = DFileDialog::getOpenFileUrl(this,
+                                                          i18nc("@info", "Select the image file list to load"), lastFileUrl,
+                                                          i18nc("@option", "All Files (*)"));
 
     if (loadLevelsFile.isEmpty())
     {
@@ -1002,12 +1032,15 @@ void DItemsList::slotLoadItems()
 
     while (!xmlReader.atEnd())
     {
-        if (xmlReader.isStartElement() && xmlReader.name() == QLatin1String("Image"))
+        if      (xmlReader.isStartElement() && (xmlReader.name() == QLatin1String("Image")))
         {
             // get all attributes and its value of a tag in attrs variable.
+
             QXmlStreamAttributes attrs = xmlReader.attributes();
+
             // get value of each attribute from QXmlStreamAttributes
-            QStringRef url = attrs.value(QLatin1String("url"));
+
+            QStringRef url             = attrs.value(QLatin1String("url"));
 
             if (url.isEmpty())
             {
@@ -1021,21 +1054,26 @@ void DItemsList::slotLoadItems()
             if (!urls.isEmpty())
             {
                 //allow tools to append a new file
+
                 slotAddImages(urls);
+
                 // read tool Image custom attributes and children element
+
                 emit signalXMLLoadImageElement(xmlReader);
             }
         }
-        else if (xmlReader.isStartElement() && xmlReader.name() != QLatin1String("Images"))
+        else if (xmlReader.isStartElement() && (xmlReader.name() != QLatin1String("Images")))
         {
             // unmanaged start element (it should be tools one)
+
             emit signalXMLCustomElements(xmlReader);
         }
-        else if (xmlReader.isEndElement() && xmlReader.name() == QLatin1String("Images"))
+        else if (xmlReader.isEndElement() && (xmlReader.name() == QLatin1String("Images")))
         {
             // if EndElement is Images return
+
             grp.writeEntry("Last Images List Path", loadLevelsFile.adjusted(QUrl::RemoveFilename).toLocalFile());
-            config.sync();
+            config->sync();
             file.close();
             return;
         }
@@ -1048,13 +1086,15 @@ void DItemsList::slotLoadItems()
 
 void DItemsList::slotSaveItems()
 {
-    KConfig config;
-    KConfigGroup grp = config.group(objectName());
-    QUrl lastFileUrl = QUrl::fromLocalFile(grp.readEntry("Last Images List Path",
-                                           QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation)));
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup grp        = config->group(objectName());
+    QUrl lastFileUrl        = QUrl::fromLocalFile(grp.readEntry("Last Images List Path",
+                                                  QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation)));
     QUrl saveLevelsFile;
-    saveLevelsFile = DFileDialog::getSaveFileUrl(this, i18n("Select the image file list to save"), lastFileUrl,
-                                                 i18n("All Files (*)"));
+    saveLevelsFile          = DFileDialog::getSaveFileUrl(this,
+                                                          i18nc("@info", "Select the image file list to save"),
+                                                          lastFileUrl,
+                                                          i18nc("@option", "All Files (*)"));
 
     qCDebug(DIGIKAM_GENERAL_LOG) << "file url " << saveLevelsFile.toDisplayString();
 
@@ -1107,7 +1147,7 @@ void DItemsList::slotSaveItems()
     xmlWriter.writeEndDocument(); // end document
 
     grp.writeEntry("Last Images List Path", saveLevelsFile.adjusted(QUrl::RemoveFilename).toLocalFile());
-    config.sync();
+    config->sync();
     file.close();
 }
 
@@ -1181,7 +1221,7 @@ void DItemsList::slotProgressTimerDone()
 
             if (item)
             {
-                item->setProgressAnimation(d->progressPix.frameAt(d->progressCount));
+                item->setProgressAnimation(d->progressPix->frameAt(d->progressCount));
             }
         }
 
@@ -1270,9 +1310,11 @@ void DItemsList::slotImageListChanged()
 
     // All buttons are enabled / disabled now, but the "Add" button should always be
     // enabled, if the buttons are not explicitly disabled with enableControlButtons()
+
     d->addButton->setEnabled(d->controlButtonsEnabled);
 
     // TODO: should they be enabled by default now?
+
     d->loadButton->setEnabled(d->controlButtonsEnabled);
     d->saveButton->setEnabled(d->controlButtonsEnabled);
 }

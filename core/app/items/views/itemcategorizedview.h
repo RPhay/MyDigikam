@@ -52,35 +52,35 @@ class ItemCategorizedView : public ItemViewCategorized
 public:
 
     explicit ItemCategorizedView(QWidget* const parent = nullptr);
-    ~ItemCategorizedView();
+    ~ItemCategorizedView()                                                                override;
 
     void setModels(ItemModel* model, ImageSortFilterModel* filterModel);
 
-    ItemModel*            imageModel()                    const;
-    ImageSortFilterModel* imageSortFilterModel()          const;
+    ItemModel*            imageModel()                                              const;
+    ImageSortFilterModel* imageSortFilterModel()                                    const;
 
-    QItemSelectionModel*  getSelectionModel()             const;
+    QItemSelectionModel*  getSelectionModel()                                       const;
 
     /// Returns any ItemFilterMode in chain. May not be sourceModel()
-    ItemFilterModel*      imageFilterModel()              const;
+    ItemFilterModel*      imageFilterModel()                                        const;
 
     /// Returns 0 if the ItemModel is not an ItemThumbnailModel
-    ItemThumbnailModel*   imageThumbnailModel()           const;
+    ItemThumbnailModel*   imageThumbnailModel()                                     const;
 
     /// Returns 0 if the ItemModel is not an ItemAlbumModel
-    ItemAlbumModel*       imageAlbumModel()               const;
-    ItemAlbumFilterModel* imageAlbumFilterModel()         const;
+    ItemAlbumModel*       imageAlbumModel()                                         const;
+    ItemAlbumFilterModel* imageAlbumFilterModel()                                   const;
 
-    ItemDelegate*         delegate()                      const;
+    ItemDelegate*         delegate()                                                const;
 
-    Album*                currentAlbum()                  const;
-    ItemInfo              currentInfo()                   const;
-    QUrl                  currentUrl()                    const;
+    Album*                currentAlbum()                                            const;
+    ItemInfo              currentInfo()                                             const;
+    QUrl                  currentUrl()                                              const;
 
-    ItemInfoList          allItemInfos()                  const;
-    QList<QUrl>           allUrls()                       const;
-    ItemInfoList          selectedItemInfos()             const;
-    ItemInfoList          selectedItemInfosCurrentFirst() const;
+    ItemInfoList          allItemInfos()                                            const;
+    QList<QUrl>           allUrls()                                                 const;
+    ItemInfoList          selectedItemInfos()                                       const;
+    ItemInfoList          selectedItemInfosCurrentFirst()                           const;
 
     /** Selects the index as current and scrolls to it.
      */
@@ -104,9 +104,9 @@ public:
         return nextInOrder(info, 1);
     }
 
-    QModelIndex indexForInfo(const ItemInfo& info) const;
+    QModelIndex indexForInfo(const ItemInfo& info)                                  const;
 
-    ThumbnailSize thumbnailSize() const;
+    ThumbnailSize thumbnailSize()                                                   const;
 
     virtual void setThumbnailSize(const ThumbnailSize& size);
 
@@ -114,7 +114,7 @@ public:
      *  that contains the position.
      *  If this is not applicable, return the current album. May return 0.
      */
-    Album* albumAt(const QPoint& pos) const;
+    Album* albumAt(const QPoint& pos)                                               const;
 
     /// Add and remove an overlay. It will as well be removed automatically when destroyed.
     /// Unless you pass a different delegate, the current delegate will be used.
@@ -188,25 +188,24 @@ protected:
 
     // reimplemented from parent class
 
-    QSortFilterProxyModel*       filterModel()     const                                 override;
-    AbstractItemDragDropHandler* dragDropHandler() const                                 override;
+    QSortFilterProxyModel*       filterModel()                                      const override;
+    AbstractItemDragDropHandler* dragDropHandler()                                  const override;
     QModelIndex                  nextIndexHint(const QModelIndex& indexToAnchor,
-                                               const QItemSelectionRange& removed) const override;
+                                               const QItemSelectionRange& removed)  const override;
 
     void setItemDelegate(ItemDelegate* delegate);
-    void indexActivated(const QModelIndex& index, Qt::KeyboardModifiers modifiers) override;
-    void currentChanged(const QModelIndex& index, const QModelIndex& previous)     override;
-    void paintEvent(QPaintEvent* e)                                                override;
-    void selectionChanged(const QItemSelection&, const QItemSelection&)            override;
-    void updateGeometries()                                                        override;
+    void indexActivated(const QModelIndex& index, Qt::KeyboardModifiers modifiers)        override;
+    void currentChanged(const QModelIndex& index, const QModelIndex& previous)            override;
+    void selectionChanged(const QItemSelection&, const QItemSelection&)                   override;
+    void updateGeometries()                                                               override;
 
     /// Reimplement these in a subclass
     virtual void activated(const ItemInfo& info, Qt::KeyboardModifiers modifiers);
     virtual void showContextMenuOnInfo(QContextMenuEvent* event, const ItemInfo& info);
-    virtual void showContextMenuOnIndex(QContextMenuEvent* event, const QModelIndex& index) override;
+    void showContextMenuOnIndex(QContextMenuEvent* event, const QModelIndex& index)       override;
 
-    ItemInfo     imageInfo(const QModelIndex& index)           const;
-    ItemInfoList imageInfos(const QList<QModelIndex>& indexes) const;
+    ItemInfo     imageInfo(const QModelIndex& index)                                const;
+    ItemInfoList imageInfos(const QList<QModelIndex>& indexes)                      const;
 
 private Q_SLOTS:
 

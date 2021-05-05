@@ -6,7 +6,7 @@
  * Date        : 2004-02-14
  * Description : Color FX threaded image filter.
  *
- * Copyright 2005-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright 2005-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright 2006-2010 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  * Copyright 2010      by Martin Klapetek <martin dot klapetek at gmail dot com>
  * Copyright 2015      by Andrej Krutak <dev at andree dot sk>
@@ -53,8 +53,8 @@ namespace Digikam
 
 ColorFXFilter::ColorFXFilter(QObject* const parent)
     : DImgThreadedFilter(parent),
-      m_lutTable(nullptr),
-      m_lutTableSize(0)
+      m_lutTable        (nullptr),
+      m_lutTableSize    (0)
 {
     initFilter();
 }
@@ -63,8 +63,8 @@ ColorFXFilter::ColorFXFilter(DImg* const orgImage,
                              QObject* const parent,
                              const ColorFXContainer& settings)
     : DImgThreadedFilter(orgImage, parent, QLatin1String("ColorFX")),
-      m_settings(settings),
-      m_lutTable(nullptr),
+      m_settings    (settings),
+      m_lutTable    (nullptr),
       m_lutTableSize(0)
 {
     loadLut3D(m_settings.path);
@@ -139,6 +139,7 @@ void ColorFXFilter::solarize(DImg* const orgImage, DImg* const destImage, int fa
             r = ptr[2];
             a = ptr[3];
 
+            // cppcheck-suppress knownConditionTrueFalse
             if (stretch)
             {
                 r = (r > threshold) ? (255 - r) * 255 / (255 - threshold) : r * 255 / threshold;
@@ -187,6 +188,7 @@ void ColorFXFilter::solarize(DImg* const orgImage, DImg* const destImage, int fa
             r = ptr[2];
             a = ptr[3];
 
+            // cppcheck-suppress knownConditionTrueFalse
             if (stretch)
             {
                 r = (r > threshold) ? (65535 - r) * 65535 / (65535 - threshold) : r * 65535 / threshold;
@@ -419,7 +421,7 @@ void ColorFXFilter::loadLut3D(const QString& path)
     {
         qCDebug(DIGIKAM_DIMG_LOG) << "Ca not yet process Cube LUTs";
 
-        // TODO: Adobe Cube LUT http://wwwimages.adobe.com/content/dam/Adobe/en/products/speedgrade/cc/pdfs/cube-lut-specification-1.0.pdf
+        // TODO: Adobe Cube LUT wwwimages.adobe.com/content/dam/Adobe/en/products/speedgrade/cc/pdfs/cube-lut-specification-1.0.pdf
     }
     else
     {

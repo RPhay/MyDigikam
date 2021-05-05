@@ -9,7 +9,7 @@
 * Copyright (C) 2008      by Peter Penz <peter dot penz at gmx dot at>
 * Copyright (C) 2010      by Aditya Bhatt <adityabhatt1991 at gmail dot com>
 * Copyright (C) 2009-2010 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
-* Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+* Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
 *
 * This program is free software; you can redistribute it
 * and/or modify it under the terms of the GNU General
@@ -73,8 +73,10 @@ void TagsLineEditOverlay::setActive(bool active)
                 this, SLOT(slotTagChanged(QString)));
 
         if (view()->model())
+        {
             connect(view()->model(), SIGNAL(dataChanged(QModelIndex,QModelIndex)),
                     this, SLOT(slotDataChanged(QModelIndex,QModelIndex)));
+        }
     }
     else
     {
@@ -125,7 +127,7 @@ void TagsLineEditOverlay::updatePosition()
 
     QRect rect       = thumbrect;
 
-    if (rect.width() > addTagsLineEdit()->width() )
+    if (rect.width() > addTagsLineEdit()->width())
     {
         int offset = (rect.width() - addTagsLineEdit()->width()) / 2;
         rect.adjust(offset, 0, -offset, 0);

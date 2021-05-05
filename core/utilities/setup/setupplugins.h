@@ -6,7 +6,7 @@
  * Date        : 2007-02-06
  * Description : Setup view panel for dplugins.
  *
- * Copyright (C) 2018-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2018-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -48,7 +48,7 @@ public:
 public:
 
     explicit SetupPlugins(QWidget* const parent = nullptr);
-    ~SetupPlugins();
+    ~SetupPlugins() override;
 
     void applySettings();
 
@@ -58,6 +58,6 @@ private:
     Private* const d;
 };
 
-}  // namespace Digikam
+} // namespace Digikam
 
 #endif // DIGIKAM_SETUP_PLUGINS_H

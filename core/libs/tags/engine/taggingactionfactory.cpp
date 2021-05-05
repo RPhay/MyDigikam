@@ -43,12 +43,12 @@ class Q_DECL_HIDDEN TaggingActionFactory::Private
 public:
 
     explicit Private()
-        : parentTagId(0),               ///< 0 means toplevel tag
-          nameMatchMode(MatchStartingWithFragment),
+        : parentTagId        (0),               ///< 0 means toplevel tag
+          nameMatchMode      (MatchStartingWithFragment),
           constraintInterface(nullptr),
-          defaultIndex(-1),
-          recentIndex(0),
-          valid(false)
+          defaultIndex       (-1),
+          recentIndex        (0),
+          valid              (false)
     {
     }
 
@@ -62,10 +62,10 @@ public:
     int                  defaultIndex;  ///< use if valid is true
     int                  recentIndex;   ///< use if valid is true
 
-    QList<TaggingAction> actions;       // use if valid is true
+    QList<TaggingAction> actions;       ///< use if valid is true
     bool                 valid;
 
-    TaggingAction        defaultAction; // independent from valid
+    TaggingAction        defaultAction; ///< independent from valid
 
 public:
 
@@ -466,6 +466,7 @@ TaggingAction TaggingActionFactory::defaultTaggingAction(const QString& tagName,
             if (!tagId)
             {
                 // sort lexically
+
                 QMap<QString, int> map;
 
                 foreach (int id, tagIds)

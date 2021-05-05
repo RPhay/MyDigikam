@@ -7,7 +7,7 @@
  * Description : a presentation tool.
  *
  * Copyright (C) 2007-2009 by Valerio Fuoglio <valerio dot fuoglio at gmail dot com>
- * Copyright (C) 2012-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * Parts of this code are based on smoothslidesaver by Carsten Weinhold
  * <carsten dot weinhold at gmx dot de>
@@ -52,16 +52,16 @@ class Q_DECL_HIDDEN KBImageLoader::Private
 public:
 
     explicit Private()
+      : sharedData      (nullptr),
+        fileIndex       (0),
+        width           (0),
+        height          (0),
+        initialized     (false),
+        needImage       (true),
+        haveImages      (false),
+        quitRequested   (false),
+        textureAspect   (0.0)
     {
-        sharedData    = nullptr;
-        fileIndex     = 0;
-        width         = 0;
-        height        = 0;
-        initialized   = false;
-        needImage     = true;
-        haveImages    = false;
-        quitRequested = false;
-        textureAspect = 0.0;
     }
 
     PresentationContainer* sharedData;
@@ -87,7 +87,7 @@ public:
 
 KBImageLoader::KBImageLoader(PresentationContainer* const sharedData, int width, int height)
     : QThread(),
-      d(new Private)
+      d      (new Private)
 {
     d->sharedData = sharedData;
     d->width      = width;
@@ -135,7 +135,9 @@ void KBImageLoader::run()
     while (true)
     {
         if (d->quitRequested)
+        {
             break;
+        }
 
         if (d->needImage)
         {
@@ -162,7 +164,9 @@ void KBImageLoader::run()
                 ok = loadImage();
 
                 if (!ok)
+                {
                     invalidateCurrentImageName();
+                }
             }
             while (!ok && d->fileIndex < (int)d->sharedData->urlList.count());
 
@@ -175,6 +179,7 @@ void KBImageLoader::run()
             if (!ok)
             {
                 // generate a black dummy image
+
                 d->texture = QImage(128, 128, QImage::Format_ARGB32);
                 d->texture.fill(Qt::black);
             }
@@ -192,6 +197,7 @@ void KBImageLoader::run()
         else
         {
             // wait for new requests from the consumer
+
             d->imageRequest.wait(&d->condLock);
         }
     }
@@ -229,6 +235,7 @@ void KBImageLoader::invalidateCurrentImageName()
 bool KBImageLoader::grabImage()
 {
     d->imageLock.lock();
+
     return d->haveImages;
 }
 

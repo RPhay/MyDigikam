@@ -41,8 +41,8 @@ namespace Digikam
 
 enum DetectorNNModel
 {
-    SSDMOBILENET = 0,   /// SSD MobileNet neural network inference.
-    YOLO                /// YOLO neural network inference.
+    SSDMOBILENET = 0,   ///< SSD MobileNet neural network inference.
+    YOLO                ///< YOLO neural network inference.
 };
 
 class OpenCVDNNFaceDetector
@@ -58,6 +58,7 @@ public:
     cv::Mat prepareForDetection(const QString& inputImagePath, cv::Size& paddedSize) const;
 
     QList<QRect> detectFaces(const cv::Mat& inputImage, const cv::Size& paddedSize);
+    std::vector<cv::Rect> cvDetectFaces(const cv::Mat& inputImage, const cv::Size& paddedSize);
 
     /**
      * Returns the image size (one dimension)
@@ -67,10 +68,13 @@ public:
 
 private:
 
-    OpenCVDNNFaceDetector(const OpenCVDNNFaceDetector&);            // Disable
-    OpenCVDNNFaceDetector& operator=(const OpenCVDNNFaceDetector&); // Disable
+    cv::Mat prepareForDetection(cv::Mat& cvImage, cv::Size& paddedSize)              const;
 
-    cv::Mat prepareForDetection(cv::Mat& cvImage, cv::Size& paddedSize) const;
+private:
+
+    // Disable
+    OpenCVDNNFaceDetector(const OpenCVDNNFaceDetector&)            = delete;
+    OpenCVDNNFaceDetector& operator=(const OpenCVDNNFaceDetector&) = delete;
 
 private:
 

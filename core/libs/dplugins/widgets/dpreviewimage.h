@@ -6,7 +6,7 @@
  * Date        : 2009-12-13
  * Description : a widget to preview image effect.
  *
- * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2008      by Kare Sars <kare dot sars at iki dot fi>
  * Copyright (C) 2012      by Benjamin Girault <benjamin dot girault at gmail dot com>
  *
@@ -66,7 +66,7 @@ public:
 public:
 
     explicit DSelectionItem(const QRectF& rect);
-    ~DSelectionItem();
+    ~DSelectionItem() override;
 
 public:
 
@@ -108,7 +108,7 @@ class DIGIKAM_EXPORT DPreviewImage : public QGraphicsView
 public:
 
     explicit DPreviewImage(QWidget* const parent);
-    ~DPreviewImage();
+    ~DPreviewImage() override;
 
 public:
 
@@ -166,7 +166,7 @@ public Q_SLOTS:
      * \param percentage is the percentage of the highlighted area that is shown.
      * \param hideColor is the color to use to hide the highlighted area of the image.
      */
-    void slotSetHighlightShown(int percentage, QColor highLightColor = Qt::white);
+    void slotSetHighlightShown(int percentage, const QColor& highLightColor = Qt::white);
 
     /**
      * This function removes the highlight area.
@@ -175,14 +175,14 @@ public Q_SLOTS:
 
 protected:
 
-    void wheelEvent(QWheelEvent*) override;
-    void mousePressEvent(QMouseEvent*) override;
-    void mouseReleaseEvent(QMouseEvent*) override;
-    void mouseMoveEvent(QMouseEvent*) override;
-    void enterEvent(QEvent*) override;
-    void leaveEvent(QEvent*) override;
-    bool eventFilter(QObject*, QEvent*) override;
-    void resizeEvent(QResizeEvent*) override;
+    void wheelEvent(QWheelEvent*)           override;
+    void mousePressEvent(QMouseEvent*)      override;
+    void mouseReleaseEvent(QMouseEvent*)    override;
+    void mouseMoveEvent(QMouseEvent*)       override;
+    void enterEvent(QEvent*)                override;
+    void leaveEvent(QEvent*)                override;
+    bool eventFilter(QObject*, QEvent*)     override;
+    void resizeEvent(QResizeEvent*)         override;
 
     void updateSelVisibility();
     void updateHighlight();

@@ -7,7 +7,7 @@
  * Description : digiKam setup dialog.
  *
  * Copyright (C) 2003-2005 by Renchi Raju <renchi dot raju at gmail dot com>
- * Copyright (C) 2003-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2003-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU Album
@@ -49,13 +49,13 @@
 #include "setuplighttable.h"
 #include "setupmetadata.h"
 #include "setupmisc.h"
-#include "setupslideshow.h"
 #include "setupimagequalitysorter.h"
 #include "setuptooltip.h"
 #include "setupdatabase.h"
 #include "setupplugins.h"
 #include "importsettings.h"
 #include "dxmlguiwindow.h"
+#include "onlineversiondlg.h"
 
 namespace Digikam
 {
@@ -65,34 +65,32 @@ class Q_DECL_HIDDEN Setup::Private
 public:
 
     explicit Private()
-      : page_database(nullptr),
-        page_collections(nullptr),
-        page_albumView(nullptr),
-        page_tooltip(nullptr),
-        page_metadata(nullptr),
-        page_template(nullptr),
-        page_lighttable(nullptr),
-        page_editor(nullptr),
-        page_slideshow(nullptr),
-        page_imagequalitysorter(nullptr),
-        page_icc(nullptr),
-        page_camera(nullptr),
-        page_plugins(nullptr),
-        page_misc(nullptr),
-        databasePage(nullptr),
-        collectionsPage(nullptr),
-        albumViewPage(nullptr),
-        tooltipPage(nullptr),
-        metadataPage(nullptr),
-        templatePage(nullptr),
-        lighttablePage(nullptr),
-        editorPage(nullptr),
-        slideshowPage(nullptr),
-        imageQualitySorterPage(nullptr),
-        iccPage(nullptr),
-        cameraPage(nullptr),
-        pluginsPage(nullptr),
-        miscPage(nullptr)
+      : page_database           (nullptr),
+        page_collections        (nullptr),
+        page_albumView          (nullptr),
+        page_tooltip            (nullptr),
+        page_metadata           (nullptr),
+        page_template           (nullptr),
+        page_lighttable         (nullptr),
+        page_editor             (nullptr),
+        page_imagequalitysorter (nullptr),
+        page_icc                (nullptr),
+        page_camera             (nullptr),
+        page_plugins            (nullptr),
+        page_misc               (nullptr),
+        databasePage            (nullptr),
+        collectionsPage         (nullptr),
+        albumViewPage           (nullptr),
+        tooltipPage             (nullptr),
+        metadataPage            (nullptr),
+        templatePage            (nullptr),
+        lighttablePage          (nullptr),
+        editorPage              (nullptr),
+        imageQualitySorterPage  (nullptr),
+        iccPage                 (nullptr),
+        cameraPage              (nullptr),
+        pluginsPage             (nullptr),
+        miscPage                (nullptr)
     {
     }
 
@@ -104,7 +102,6 @@ public:
     DConfigDlgWdgItem*       page_template;
     DConfigDlgWdgItem*       page_lighttable;
     DConfigDlgWdgItem*       page_editor;
-    DConfigDlgWdgItem*       page_slideshow;
     DConfigDlgWdgItem*       page_imagequalitysorter;
     DConfigDlgWdgItem*       page_icc;
     DConfigDlgWdgItem*       page_camera;
@@ -119,7 +116,6 @@ public:
     SetupTemplate*           templatePage;
     SetupLightTable*         lighttablePage;
     SetupEditor*             editorPage;
-    SetupSlideShow*          slideshowPage;
     SetupImageQualitySorter* imageQualitySorterPage;
     SetupICC*                iccPage;
     SetupCamera*             cameraPage;
@@ -133,7 +129,7 @@ public:
 
 Setup::Setup(QWidget* const parent)
     : DConfigDlg(parent),
-      d(new Private)
+      d         (new Private)
 {
     setWindowFlags((windowFlags() & ~Qt::Dialog) |
                    Qt::Window                    |
@@ -200,12 +196,6 @@ Setup::Setup(QWidget* const parent)
                                        "<i>Customize tool used to compare images</i></qt>"));
     d->page_lighttable->setIcon(QIcon::fromTheme(QLatin1String("lighttable")));
 
-    d->slideshowPage  = new SetupSlideShow();
-    d->page_slideshow = addPage(d->slideshowPage, i18n("Slide Show"));
-    d->page_slideshow->setHeader(i18n("<qt>Slide Show Settings<br/>"
-                                      "<i>Customize slideshow settings</i></qt>"));
-    d->page_slideshow->setIcon(QIcon::fromTheme(QLatin1String("view-presentation")));
-
     d->imageQualitySorterPage = new SetupImageQualitySorter();
     d->page_imagequalitysorter = addPage(d->imageQualitySorterPage, i18n("Image Quality Sorter"));
     d->page_imagequalitysorter->setHeader(i18n("<qt>Image Quality Sorter Settings</qt>"));
@@ -226,8 +216,8 @@ Setup::Setup(QWidget* const parent)
                                     "<i>Set which plugins will be accessible from application</i></qt>"));
     d->page_plugins->setIcon(QIcon::fromTheme(QLatin1String("preferences-plugin")));
 
-    d->miscPage  = new SetupMisc();
-    d->page_misc = addPage(d->miscPage, i18n("Miscellaneous"));
+    d->miscPage  = new SetupMisc(this);
+    d->page_misc = addPage(d->miscPage, i18nc("@title: miscs settings section", "Miscellaneous"));
     d->page_misc->setHeader(i18n("<qt>Miscellaneous Settings<br/>"
                                  "<i>Customize behavior of the other parts of digiKam</i></qt>"));
     d->page_misc->setIcon(QIcon::fromTheme(QLatin1String("preferences-other")));
@@ -320,9 +310,9 @@ QSize Setup::sizeHint() const
                 continue;
             }
 
-            QWidget* const page           = item->widget();
-            maxHintHeight                 = qMax(maxHintHeight, page->sizeHint().height());
-            QScrollArea* const scrollArea = qobject_cast<QScrollArea*>(page);
+            QWidget* const wdg            = item->widget();
+            maxHintHeight                 = qMax(maxHintHeight, wdg->sizeHint().height());
+            QScrollArea* const scrollArea = qobject_cast<QScrollArea*>(wdg);
 
             if (scrollArea)
             {
@@ -387,18 +377,18 @@ bool Setup::execTemplateEditor(QWidget* const parent, const Template& t)
 
 bool Setup::execMetadataFilters(QWidget* const parent, int tab)
 {
-    QPointer<Setup> setup       = new Setup(parent);
+    QPointer<Setup> setup        = new Setup(parent);
     setup->showPage(MetadataPage);
     setup->setFaceType(Plain);
 
-    DConfigDlgWdgItem* const cur  = setup->currentPage();
+    DConfigDlgWdgItem* const cur = setup->currentPage();
 
     if (!cur)
     {
         return false;
     }
 
-    SetupMetadata* const widget = dynamic_cast<SetupMetadata*>(cur->widget());
+    SetupMetadata* const widget  = dynamic_cast<SetupMetadata*>(cur->widget());
 
     if (!widget)
     {
@@ -408,7 +398,35 @@ bool Setup::execMetadataFilters(QWidget* const parent, int tab)
     widget->setActiveMainTab(SetupMetadata::Display);
     widget->setActiveSubTab(tab);
 
-    bool success                = (setup->DConfigDlg::exec() == QDialog::Accepted);
+    bool success                 = (setup->DConfigDlg::exec() == QDialog::Accepted);
+    delete setup;
+
+    return success;
+}
+
+bool Setup::execExifTool(QWidget* const parent)
+{
+    QPointer<Setup> setup        = new Setup(parent);
+    setup->showPage(MetadataPage);
+    setup->setFaceType(Plain);
+
+    DConfigDlgWdgItem* const cur = setup->currentPage();
+
+    if (!cur)
+    {
+        return false;
+    }
+
+    SetupMetadata* const widget  = dynamic_cast<SetupMetadata*>(cur->widget());
+
+    if (!widget)
+    {
+        return false;
+    }
+
+    widget->setActiveMainTab(SetupMetadata::ExifTool);
+
+    bool success                 = (setup->DConfigDlg::exec() == QDialog::Accepted);
     delete setup;
 
     return success;
@@ -419,6 +437,12 @@ void Setup::slotOkClicked()
     if (!d->cameraPage->checkSettings())
     {
         showPage(CameraPage);
+        return;
+    }
+
+    if (!d->miscPage->checkSettings())
+    {
+        showPage(MiscellaneousPage);
         return;
     }
 
@@ -433,7 +457,6 @@ void Setup::slotOkClicked()
     d->templatePage->applySettings();
     d->lighttablePage->applySettings();
     d->editorPage->applySettings();
-    d->slideshowPage->applySettings();
     d->imageQualitySorterPage->applySettings();
     d->iccPage->applySettings();
     d->pluginsPage->applySettings();
@@ -515,11 +538,6 @@ Setup::Page Setup::activePageIndex() const
         return EditorPage;
     }
 
-    if (cur == d->page_slideshow)
-    {
-        return SlideshowPage;
-    }
-
     if (cur == d->page_imagequalitysorter)
     {
         return ImageQualityPage;
@@ -576,9 +594,6 @@ DConfigDlgWdgItem* Setup::Private::pageItem(Setup::Page page) const
         case Setup::EditorPage:
             return page_editor;
 
-        case Setup::SlideshowPage:
-            return page_slideshow;
-
         case Setup::ImageQualityPage:
             return page_imagequalitysorter;
 
@@ -597,6 +612,24 @@ DConfigDlgWdgItem* Setup::Private::pageItem(Setup::Page page) const
         default:
             return nullptr;
     }
+}
+
+void Setup::onlineVersionCheck()
+{
+    OnlineVersionDlg* const dlg = new OnlineVersionDlg(qApp->activeWindow(),
+                                                       QLatin1String(digikam_version_short),
+                                                       digiKamBuildDate(),
+                                                       ApplicationSettings::instance()->getUpdateType(),
+                                                       ApplicationSettings::instance()->getUpdateWithDebug());
+
+    connect(dlg, &OnlineVersionDlg::signalSetupUpdate,
+            [=]()
+        {
+            Setup::execSinglePage(nullptr, Setup::MiscellaneousPage);
+        }
+    );
+
+    dlg->exec();
 }
 
 } // namespace Digikam

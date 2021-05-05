@@ -7,7 +7,7 @@
  * Description : Integrated, multithread face detection / recognition
  *
  * Copyright (C) 2010-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2012-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -42,21 +42,29 @@ namespace Digikam
 {
 
 FacePipelineFaceTagsIface::FacePipelineFaceTagsIface()
-    : roles(NoRole),
-      assignedTagId(0)
+    : roles         (NoRole),
+      assignedTagId (0)
 {
 }
 
 FacePipelineFaceTagsIface::FacePipelineFaceTagsIface(const FaceTagsIface& face)
-    : FaceTagsIface(face),
-      roles(NoRole),
-      assignedTagId(0)
+    : FaceTagsIface (face),
+      roles         (NoRole),
+      assignedTagId (0)
+{
+}
+
+FacePipelineFaceTagsIface::~FacePipelineFaceTagsIface()
 {
 }
 
 // ----------------------------------------------------------------------------------------
 
 FacePipelineFaceTagsIfaceList::FacePipelineFaceTagsIfaceList()
+{
+}
+
+FacePipelineFaceTagsIfaceList::~FacePipelineFaceTagsIfaceList()
 {
 }
 
@@ -144,6 +152,16 @@ FacePipelinePackage::~FacePipelinePackage()
 
 // ----------------------------------------------------------------------------------------
 
+FacePipelineExtendedPackage::FacePipelineExtendedPackage()
+{
+}
+
+FacePipelineExtendedPackage::~FacePipelineExtendedPackage()
+{
+}
+
+// ----------------------------------------------------------------------------------------
+
 FacePipelineExtendedPackage::Ptr PackageLoadingDescriptionList::take(const LoadingDescription& description)
 {
     FacePipelineExtendedPackage::Ptr                  package;
@@ -160,6 +178,21 @@ FacePipelineExtendedPackage::Ptr PackageLoadingDescriptionList::take(const Loadi
     }
 
     return package;
+}
+
+bool FacePipelineExtendedPackage::operator==(const LoadingDescription& description) const
+{
+    return (filePath == description.filePath);
+}
+
+// ----------------------------------------------------------------------------------------
+
+PackageLoadingDescriptionList::PackageLoadingDescriptionList()
+{
+}
+
+PackageLoadingDescriptionList::~PackageLoadingDescriptionList()
+{
 }
 
 } // namespace Digikam

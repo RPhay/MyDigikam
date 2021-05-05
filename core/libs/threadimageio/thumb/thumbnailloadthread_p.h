@@ -7,7 +7,7 @@
  * Description : Thumbnail loading - private containers
  *
  * Copyright (C) 2006-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2005-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2005-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2015      by Mohamed_Anwer <m_dot_anwer at gmx dot com>
  *
  * This program is free software; you can redistribute it
@@ -31,10 +31,10 @@
 // Qt includes
 
 #include <QApplication>
-#include <QEventLoop>
-#include <QHash>
-#include <QPainter>
 #include <QMessageBox>
+#include <QEventLoop>
+#include <QPainter>
+#include <QHash>
 #include <QIcon>
 #include <QMimeType>
 #include <QMimeDatabase>
@@ -46,14 +46,11 @@
 // Local includes
 
 #include "digikam_debug.h"
-#include "dbengineparameters.h"
 #include "iccmanager.h"
 #include "iccprofile.h"
-#include "iccsettings.h"
-#include "metaenginesettings.h"
+#include "loadingcache.h"
 #include "thumbsdbaccess.h"
 #include "thumbnailsize.h"
-#include "thumbnailtask.h"
 #include "thumbnailcreator.h"
 
 namespace Digikam
@@ -66,7 +63,7 @@ public:
 
     explicit ThumbnailResult(const LoadingDescription& description, const QImage& image)
         : loadingDescription(description),
-          image(image)
+          image             (image)
     {
     }
 
@@ -81,10 +78,10 @@ class Q_DECL_HIDDEN ThumbnailLoadThreadStaticPriv
 public:
 
     explicit ThumbnailLoadThreadStaticPriv()
-      : firstThreadCreated(false),
-        storageMethod(ThumbnailCreator::FreeDesktopStandard),
-        provider(nullptr),
-        profile(IccProfile::sRGB())
+      : firstThreadCreated  (false),
+        storageMethod       (ThumbnailCreator::FreeDesktopStandard),
+        provider            (nullptr),
+        profile             (IccProfile::sRGB())
     {
     }
 
@@ -110,12 +107,12 @@ class Q_DECL_HIDDEN ThumbnailLoadThread::Private
 public:
 
     explicit Private()
-      : wantPixmap(true),
-        highlight(true),
-        sendSurrogate(true),
-        notifiedForResults(false),
-        size(ThumbnailSize::maxThumbsSize()),
-        creator(nullptr)
+      : wantPixmap          (true),
+        highlight           (true),
+        sendSurrogate       (true),
+        notifiedForResults  (false),
+        size                (ThumbnailSize::maxThumbsSize()),
+        creator             (nullptr)
     {
     }
 
@@ -141,9 +138,9 @@ public:
     bool                      checkDescription(const LoadingDescription& description);
     QList<LoadingDescription> makeDescriptions(const QList<ThumbnailIdentifier>& identifiers, int size);
     QList<LoadingDescription> makeDescriptions(const QList<QPair<ThumbnailIdentifier, QRect> >& idsAndRects, int size);
-    bool                      hasHighlightingBorder() const;
+    bool                      hasHighlightingBorder()                       const;
     int                       pixmapSizeForThumbnailSize(int thumbnailSize) const;
-    int                       thumbnailSizeForPixmapSize(int pixmapSize) const;
+    int                       thumbnailSizeForPixmapSize(int pixmapSize)    const;
 };
 
 // --- ThumbnailImageCatcher ---------------------------------------------------------
@@ -169,14 +166,14 @@ public:
 
         explicit CatcherResult(const LoadingDescription& d)
             : description(d),
-              received(false)
+              received   (false)
         {
         }
 
         CatcherResult(const LoadingDescription& d, const QImage& image)
-            : image(image),
+            : image      (image),
               description(d),
-              received(true)
+              received   (true)
         {
         }
 
@@ -190,10 +187,10 @@ public:
 public:
 
     explicit Private()
+      : state (Inactive),
+        active(true),
+        thread(nullptr)
     {
-        state   = Inactive;
-        thread  = nullptr;
-        active  = true;
     }
 
     void reset();

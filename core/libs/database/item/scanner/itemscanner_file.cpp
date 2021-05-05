@@ -7,7 +7,7 @@
  * Description : Scanning a single item - file metadata helper.
  *
  * Copyright (C) 2007-2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2013-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2013-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -52,6 +52,8 @@ void ItemScanner::fillCommonContainer(qlonglong imageid, ImageCommonContainer* c
                                                                  DatabaseFields::ColorModel);
     }
 
+    // We are already checking the field size in the CoreDB.
+
     if (!imagesFields.isEmpty())
     {
         container->fileName             = imagesFields.at(0).toString();
@@ -59,7 +61,7 @@ void ItemScanner::fillCommonContainer(qlonglong imageid, ImageCommonContainer* c
         container->fileSize             = imagesFields.at(3).toLongLong();
     }
 
-    if (!imageInformationFields.isEmpty())
+    if (!imagesFields.isEmpty() && !imageInformationFields.isEmpty())
     {
         container->rating           = imageInformationFields.at(0).toInt();
         container->creationDate     = imageInformationFields.at(1).toDateTime();
@@ -113,7 +115,7 @@ void ItemScanner::scanItemInformation()
                << MetadataInfo::CreationDate
                << MetadataInfo::DigitizationDate
                << MetadataInfo::Orientation;
-        QVariantList metadataInfos = d->metadata.getMetadataFields(fields);
+        QVariantList metadataInfos = d->metadata->getMetadataFields(fields);
 
         checkCreationDateFromMetadata(metadataInfos[1]);
 
@@ -129,7 +131,7 @@ void ItemScanner::scanItemInformation()
     {
         // Does _not_ update rating and orientation (unless dims were exchanged)!
 /*
-        int orientation = d->metadata.getItemOrientation();
+        int orientation = d->metadata->getItemOrientation();
         QVariantList data = CoreDbAccess().db()->getItemInformation(d->scanInfo.id,
                                                                        DatabaseFields::Width |
                                                                        DatabaseFields::Height |

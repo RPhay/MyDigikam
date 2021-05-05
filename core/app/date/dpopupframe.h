@@ -6,7 +6,7 @@
  * Date        : 1997-04-21
  * Description : Frame with popup menu behavior.
  *
- * Copyright (C) 2011-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2011-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 1997      by Tim D. Gilman <tdgilman at best dot org>
  * Copyright (C) 1998-2001 by Mirko Boehm <mirko at kde dot org>
  * Copyright (C) 2007      by John Layt <john at layt dot net>
@@ -48,7 +48,7 @@ public:
     /**
      * The destructor
      */
-    ~DPopupFrame();
+    ~DPopupFrame() override;
 
     /**
      * Set the main widget. You cannot set the main widget from the constructor,
@@ -94,7 +94,7 @@ protected:
     /**
      * Catch hide events.
      */
-    void hideEvent(QHideEvent* e) override;
+    void hideEvent(QHideEvent* e)    override;
 
 public Q_SLOTS:
 

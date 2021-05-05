@@ -15,7 +15,6 @@
 
 #include "NptConfig.h"
 #include "NptConsole.h"
-#include "NptDebug.h"
 
 /*----------------------------------------------------------------------
 |   NPT_Console::Output
@@ -23,7 +22,7 @@
 void
 NPT_Console::Output(const char* message)
 {
-    NPT_DebugOutput(message);
+    OutputDebugString(message);
     printf("%s", message);
 }
 

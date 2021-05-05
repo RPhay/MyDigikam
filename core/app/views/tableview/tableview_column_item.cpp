@@ -6,7 +6,8 @@
  * Date        : 2013-02-25
  * Description : Table view column helpers: Item properties
  *
- * Copyright (C) 2013 by Michael G. Hansen <mike at mghansen dot de>
+ * Copyright (C) 2017-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2013      by Michael G. Hansen <mike at mghansen dot de>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -48,7 +49,7 @@ ColumnItemProperties::ColumnItemProperties(TableViewShared* const tableViewShare
                                            const SubColumn pSubColumn,
                                            QObject* const parent)
     : TableViewColumn(tableViewShared, pConfiguration, parent),
-      subColumn(pSubColumn)
+      subColumn      (pSubColumn)
 {
 }
 
@@ -59,11 +60,16 @@ ColumnItemProperties::~ColumnItemProperties()
 QStringList ColumnItemProperties::getSubColumns()
 {
     QStringList columns;
-    columns << QLatin1String("width")                << QLatin1String("height")
-            << QLatin1String("dimensions")           << QLatin1String("pixelcount")
-            << QLatin1String("bitdepth")             << QLatin1String("colormode")
-            << QLatin1String("itemtype")             << QLatin1String("itemcreationdatetime")
-            << QLatin1String("itemdigitizationtime") << QLatin1String("itemaspectratio")
+    columns << QLatin1String("width")
+            << QLatin1String("height")
+            << QLatin1String("dimensions")
+            << QLatin1String("pixelcount")
+            << QLatin1String("bitdepth")
+            << QLatin1String("colormode")
+            << QLatin1String("itemtype")
+            << QLatin1String("itemcreationdatetime")
+            << QLatin1String("itemdigitizationtime")
+            << QLatin1String("itemaspectratio")
             << QLatin1String("similarity");
 
     return columns;
@@ -94,27 +100,59 @@ QString ColumnItemProperties::getTitle() const
     switch (subColumn)
     {
         case SubColumnWidth:
+        {
             return i18n("Width");
+        }
+
         case SubColumnHeight:
+        {
             return i18n("Height");
+        }
+
         case SubColumnDimensions:
+        {
             return i18n("Dimensions");
+        }
+
         case SubColumnPixelCount:
+        {
             return i18n("Pixel count");
+        }
+
         case SubColumnBitDepth:
+        {
             return i18n("Bit depth");
+        }
+
         case SubColumnColorMode:
+        {
             return i18n("Color mode");
+        }
+
         case SubColumnType:
+        {
             return i18n("Type");
+        }
+
         case SubColumnCreationDateTime:
+        {
             return i18n("Creation date/time");
+        }
+
         case SubColumnDigitizationDateTime:
+        {
             return i18n("Digitization date/time");
+        }
+
         case SubColumnAspectRatio:
+        {
             return i18n("Aspect ratio");
+        }
+
         case SubColumnSimilarity:
+        {
             return i18n("Similarity");
+        }
     }
 
     return QString();
@@ -124,15 +162,17 @@ TableViewColumn::ColumnFlags ColumnItemProperties::getColumnFlags() const
 {
     ColumnFlags flags(ColumnNoFlags);
 
-    if ((subColumn == SubColumnHeight)                  ||
-        (subColumn == SubColumnWidth)                   ||
-        (subColumn == SubColumnDimensions)              ||
-        (subColumn == SubColumnBitDepth)                ||
-        (subColumn == SubColumnPixelCount)              ||
-        (subColumn == SubColumnCreationDateTime)        ||
-        (subColumn == SubColumnDigitizationDateTime)    ||
-        (subColumn == SubColumnAspectRatio)             ||
-        (subColumn == SubColumnSimilarity) )
+    if (
+        (subColumn == SubColumnHeight)               ||
+        (subColumn == SubColumnWidth)                ||
+        (subColumn == SubColumnDimensions)           ||
+        (subColumn == SubColumnBitDepth)             ||
+        (subColumn == SubColumnPixelCount)           ||
+        (subColumn == SubColumnCreationDateTime)     ||
+        (subColumn == SubColumnDigitizationDateTime) ||
+        (subColumn == SubColumnAspectRatio)          ||
+        (subColumn == SubColumnSimilarity)
+       )
     {
         flags |= ColumnCustomSorting;
     }
@@ -142,8 +182,10 @@ TableViewColumn::ColumnFlags ColumnItemProperties::getColumnFlags() const
 
 QVariant ColumnItemProperties::data(TableViewModel::Item* const item, const int role) const
 {
-    if ( (role != Qt::DisplayRole) &&
-         (role != Qt::TextAlignmentRole) )
+    if (
+        (role != Qt::DisplayRole) &&
+        (role != Qt::TextAlignmentRole)
+       )
     {
         return QVariant();
     }
@@ -155,10 +197,14 @@ QVariant ColumnItemProperties::data(TableViewModel::Item* const item, const int 
             case SubColumnHeight:
             case SubColumnWidth:
             case SubColumnPixelCount:
+            {
                 return QVariant(Qt::Alignment(Qt::AlignRight | Qt::AlignVCenter));
+            }
 
             default:
+            {
                 return QVariant();
+            }
         }
     }
 
@@ -202,6 +248,7 @@ QVariant ColumnItemProperties::data(TableViewModel::Item* const item, const int 
             }
 
             /// @todo make this configurable with si-prefixes
+
             return QLocale().toString(pixelCount);
         }
 
@@ -258,10 +305,12 @@ QVariant ColumnItemProperties::data(TableViewModel::Item* const item, const int 
         {
             qlonglong referenceImageId = info.currentReferenceImage();
             double similarity = info.currentSimilarity() * 100;
+
             if (referenceImageId == info.id())
             {
                 similarity = 100.00;
             }
+
             return QLocale().toString(similarity,'f',2);
         }
     }
@@ -333,6 +382,7 @@ TableViewColumn::ColumnCompareResult ColumnItemProperties::compare(TableViewMode
             {
                 // at least one of the two does not have valid data,
                 // sort based on which one has data at all
+
                 return compareHelper<int>(heightA, heightB);
             }
 
@@ -340,6 +390,7 @@ TableViewColumn::ColumnCompareResult ColumnItemProperties::compare(TableViewMode
             const qreal aspectRatioB = qreal(widthB) / qreal(heightB);
 
             /// @todo use fuzzy compare?
+
             return compareHelper<qreal>(aspectRatioA, aspectRatioB);
         }
 
@@ -374,16 +425,20 @@ TableViewColumn::ColumnCompareResult ColumnItemProperties::compare(TableViewMode
         {
             qlonglong referenceImageIdA = infoA.currentReferenceImage();
             qlonglong referenceImageIdB = infoB.currentReferenceImage();
+
             if (referenceImageIdA == referenceImageIdB)
             {
                 // make sure that the original image has always the highest similarity.
+
                 double infoASimilarity  = infoA.id() == referenceImageIdA ? 1.0 : infoA.currentSimilarity();
                 double infoBSimilarity = infoB.id() == referenceImageIdB ? 1.0 : infoB.currentSimilarity();
+
                 return compareHelper<double>(infoASimilarity, infoBSimilarity);
             }
             else
             {
                 qCWarning(DIGIKAM_GENERAL_LOG) << "item: items have different fuzzy search reference images. Sorting is not possible.";
+
                 return CmpEqual;
             }
         }
@@ -391,6 +446,7 @@ TableViewColumn::ColumnCompareResult ColumnItemProperties::compare(TableViewMode
         default:
         {
             qCWarning(DIGIKAM_GENERAL_LOG) << "item: unimplemented comparison, subColumn=" << subColumn;
+
             return CmpEqual;
         }
     }

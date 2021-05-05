@@ -8,7 +8,7 @@
  *
  * Copyright (C) 2010      by Dirk Vanden Boer <dirk dot vdb at gmail dot com>
  * Copyright (C) 2016-2018 by Maik Qualmann <metzpinguin at gmail dot com>
- * Copyright (C) 2016-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2016-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -77,12 +77,12 @@ public:
 public:
 
     explicit Private()
-      : thumbnailSize(256),
-        seekPercentage(10),
-        overlayFilmStrip(false),
-        workAroundIssues(false),
-        maintainAspectRatio(true),
-        smartFrameSelection(false),
+      : thumbnailSize       (256),
+        seekPercentage      (10),
+        overlayFilmStrip    (false),
+        workAroundIssues    (false),
+        maintainAspectRatio (true),
+        smartFrameSelection (false),
         SMART_FRAME_ATTEMPTS(25)
     {
     }
@@ -218,7 +218,10 @@ void VideoThumbnailer::generateSmartThumbnail(VideoDecoder& movieDecoder,
 
     int bestFrame = d->getBestThumbnailIndex(videoFrames, histograms);
 
-    Q_ASSERT(bestFrame != -1);
+    if (bestFrame == -1)
+    {
+        bestFrame = 0;
+    }
 
     videoFrame = videoFrames[bestFrame];
 }
@@ -272,7 +275,7 @@ void VideoThumbnailer::Private::generateHistogram(const VideoFrame& videoFrame,
 
         for (quint32 j = 0 ; j < videoFrame.width * 3 ; j += 3)
         {
-            ++histogram.r[videoFrame.frameData[pixelIndex + j]];
+            ++histogram.r[videoFrame.frameData[pixelIndex + j    ]];
             ++histogram.g[videoFrame.frameData[pixelIndex + j + 1]];
             ++histogram.b[videoFrame.frameData[pixelIndex + j + 2]];
         }

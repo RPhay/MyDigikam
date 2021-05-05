@@ -7,7 +7,7 @@
  * Description : Multithreaded worker object
  *
  * Copyright (C) 2010-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2012-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -45,11 +45,11 @@ class Q_DECL_HIDDEN WorkerObject::Private
 public:
 
     Private()
-      : state(WorkerObject::Inactive),
-        eventLoop(nullptr),
-        runnable(nullptr),
-        inDestruction(false),
-        priority(QThread::InheritPriority)
+      : state           (WorkerObject::Inactive),
+        eventLoop       (nullptr),
+        runnable        (nullptr),
+        inDestruction   (false),
+        priority        (QThread::InheritPriority)
     {
     }
 
@@ -96,7 +96,9 @@ void WorkerObject::wait()
     }
 }
 
-bool WorkerObject::connectAndSchedule(const QObject* sender, const char* signal, const char* method,
+bool WorkerObject::connectAndSchedule(const QObject* sender,
+                                      const char* signal,
+                                      const char* method,
                                       Qt::ConnectionType type) const
 {
     connect(sender, signal,
@@ -106,8 +108,10 @@ bool WorkerObject::connectAndSchedule(const QObject* sender, const char* signal,
     return (QObject::connect(sender, signal, method, type));
 }
 
-bool WorkerObject::connectAndSchedule(const QObject* sender, const char* signal,
-                                      const WorkerObject* receiver, const char* method,
+bool WorkerObject::connectAndSchedule(const QObject* sender,
+                                      const char* signal,
+                                      const WorkerObject* receiver,
+                                      const char* method,
                                       Qt::ConnectionType type)
 {
     connect(sender, signal,
@@ -117,8 +121,10 @@ bool WorkerObject::connectAndSchedule(const QObject* sender, const char* signal,
     return (QObject::connect(sender, signal, receiver, method, type));
 }
 
-bool WorkerObject::disconnectAndSchedule(const QObject* sender, const char* signal,
-                                         const WorkerObject* receiver, const char* method)
+bool WorkerObject::disconnectAndSchedule(const QObject* sender,
+                                         const char* signal,
+                                         const WorkerObject* receiver,
+                                         const char* method)
 {
     disconnect(sender, signal,
                receiver, SLOT(schedule()));
@@ -212,12 +218,16 @@ void WorkerObject::schedule()
         {
             case Inactive:
             case Deactivating:
+            {
                 d->state = Scheduled;
                 break;
+            }
 
             case Scheduled:
             case Running:
+            {
                 return;
+            }
         }
     }
 
@@ -233,12 +243,16 @@ void WorkerObject::deactivate(DeactivatingMode mode)
         {
             case Scheduled:
             case Running:
+            {
                 d->state = Deactivating;
                 break;
+            }
 
             case Inactive:
             case Deactivating:
+            {
                 return;
+            }
         }
     }
 
@@ -275,12 +289,16 @@ bool WorkerObject::transitionToRunning()
     {
         case Running:
         case Scheduled:
+        {
             d->state = Running;
             return true;
+        }
 
         case Deactivating:
         default:
+        {
             return false;
+        }
     }
 }
 
@@ -291,13 +309,17 @@ void WorkerObject::transitionToInactive()
     switch (d->state)
     {
         case Scheduled:
+        {
             break;
+        }
 
         case Deactivating:
         default:
+        {
             d->state = Inactive;
             d->condVar.wakeAll();
             break;
+        }
     }
 }
 

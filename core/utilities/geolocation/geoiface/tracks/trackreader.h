@@ -6,7 +6,7 @@
  * Date        : 2006-09-19
  * Description : Track file reader
  *
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2010-2014 by Michael G. Hansen <mike at mghansen dot de>
  *
  * This program is free software; you can redistribute it
@@ -48,8 +48,8 @@ public:
     public:
 
         explicit TrackReadResult()
-          : track(),
-            isValid(false),
+          : track    (),
+            isValid  (false),
             loadError()
         {
         }
@@ -62,15 +62,15 @@ public:
     };
 
     explicit TrackReader(TrackReadResult* const dataTarget);
-    virtual ~TrackReader();
+    ~TrackReader()                                          override;
 
-    virtual bool characters(const QString& ch)              override;
+    bool characters(const QString& ch)                      override;
 
-    virtual bool endElement(const QString& namespaceURI,
+    bool endElement(const QString& namespaceURI,
                             const QString& localName,
                             const QString& qName)           override;
 
-    virtual bool startElement(const QString& namespaceURI,
+    bool startElement(const QString& namespaceURI,
                               const QString& localName,
                               const QString& qName,
                               const QXmlAttributes& atts)   override;

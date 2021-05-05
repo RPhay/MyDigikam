@@ -31,7 +31,7 @@
 
 namespace Ui
 {
-class SequenceNumberOptionDialogWidget;
+    class SequenceNumberOptionDialogWidget;
 }
 
 namespace Digikam
@@ -44,14 +44,16 @@ class SequenceNumberDialog : public RuleDialog
 public:
 
     explicit SequenceNumberDialog(Rule* const parent);
-    ~SequenceNumberDialog();
+    ~SequenceNumberDialog() override;
 
     Ui::SequenceNumberOptionDialogWidget* const ui;
 
 private:
 
-    SequenceNumberDialog(const SequenceNumberDialog&);
-    SequenceNumberDialog& operator=(const SequenceNumberDialog&);
+    // Disable
+    explicit SequenceNumberDialog(QWidget*)                      = delete;
+    SequenceNumberDialog(const SequenceNumberDialog&)            = delete;
+    SequenceNumberDialog& operator=(const SequenceNumberDialog&) = delete;
 };
 
 // --------------------------------------------------------
@@ -63,20 +65,22 @@ class SequenceNumberOption : public Option
 public:
 
     explicit SequenceNumberOption();
-    ~SequenceNumberOption();
+    ~SequenceNumberOption()                             override;
 
 protected:
 
-    virtual QString parseOperation(ParseSettings& settings);
+    QString parseOperation(ParseSettings& settings)     override;
 
 private Q_SLOTS:
 
-    void slotTokenTriggered(const QString& token);
+    void slotTokenTriggered(const QString& token)       override;
 
 private:
 
-    SequenceNumberOption(const SequenceNumberOption&);
-    SequenceNumberOption& operator=(const SequenceNumberOption&);
+    // Disable
+    explicit SequenceNumberOption(QObject*)                      = delete;
+    SequenceNumberOption(const SequenceNumberOption&)            = delete;
+    SequenceNumberOption& operator=(const SequenceNumberOption&) = delete;
 };
 
 } // namespace Digikam

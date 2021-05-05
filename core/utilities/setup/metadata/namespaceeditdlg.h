@@ -47,7 +47,7 @@ public:
     explicit NamespaceEditDlg(bool create,
                               NamespaceEntry& entry,
                               QWidget* const parent = nullptr);
-    ~NamespaceEditDlg();
+    ~NamespaceEditDlg() override;
 
     void saveData(NamespaceEntry& entry);
 
@@ -56,7 +56,7 @@ public:
 
 public Q_SLOTS:
 
-    virtual void accept();
+    void accept()       override;
 
 private Q_SLOTS:
 

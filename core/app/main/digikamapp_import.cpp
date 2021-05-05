@@ -6,7 +6,7 @@
  * Date        : 2002-16-10
  * Description : main digiKam interface implementation - Import tools
  *
- * Copyright (C) 2002-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2002-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -74,7 +74,7 @@ void DigikamApp::updateQuickImportAction()
 
         if (!primaryAction)
         {
-            primaryAction = d->quickImportMenu->actions().first();
+            primaryAction = d->quickImportMenu->actions().constFirst();
         }
 
         connect(d->quickImportMenu->menuAction(), SIGNAL(triggered()),
@@ -103,7 +103,7 @@ void DigikamApp::slotImportAddImages()
 void DigikamApp::slotImportAddFolders()
 {
     // NOTE: QFileDialog don't have an option to permit multiple selection of directories.
-    // This work around is inspired from http://www.qtcentre.org/threads/34226-QFileDialog-select-multiple-directories
+    // This work around is inspired from https://www.qtcentre.org/threads/34226-QFileDialog-select-multiple-directories
     // Check Later Qt 5.4 if a new native Qt way have been introduced.
 
     QPointer<DFileDialog> dlg = new DFileDialog(this);
@@ -125,7 +125,9 @@ void DigikamApp::slotImportAddFolders()
         t->setSelectionMode(QAbstractItemView::MultiSelection);
     }
 
-    if (dlg->exec() != QDialog::Accepted)
+    dlg->exec();
+
+    if (!dlg || dlg->selectedUrls().isEmpty())
     {
         delete dlg;
         return;
@@ -133,11 +135,6 @@ void DigikamApp::slotImportAddFolders()
 
     QList<QUrl> urls = dlg->selectedUrls();
     delete dlg;
-
-    if (urls.isEmpty())
-    {
-        return;
-    }
 
     QList<Album*> albumList = AlbumManager::instance()->currentAlbums();
     Album* album            = nullptr;
@@ -147,7 +144,7 @@ void DigikamApp::slotImportAddFolders()
         album = albumList.first();
     }
 
-    if (album && album->type() != Album::PHYSICAL)
+    if (album && (album->type() != Album::PHYSICAL))
     {
         album = nullptr;
     }
@@ -155,7 +152,7 @@ void DigikamApp::slotImportAddFolders()
     QString header(i18n("<p>Please select the destination album from the digiKam library to "
                         "import folders into.</p>"));
 
-    album = AlbumSelectDialog::selectAlbum(this, (PAlbum*)album, header);
+    album = AlbumSelectDialog::selectAlbum(this, static_cast<PAlbum*>(album), header);
 
     if (!album)
     {
@@ -167,6 +164,19 @@ void DigikamApp::slotImportAddFolders()
     if (!pAlbum)
     {
         return;
+    }
+
+    foreach (const QUrl& url, urls)
+    {
+        if (pAlbum->albumRootPath().contains(url.toLocalFile()) ||
+            url.toLocalFile().contains(pAlbum->albumRootPath()))
+        {
+            QMessageBox::warning(this, qApp->applicationName(),
+                                 i18n("The folder %1 is part of the album "
+                                      "path and cannot be imported recursively!",
+                                      QDir::toNativeSeparators(url.toLocalFile())));
+            return;
+        }
     }
 
     DIO::copy(urls, pAlbum);

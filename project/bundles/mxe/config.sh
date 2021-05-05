@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Copyright (c) 2013-2020 by Gilles Caulier  <caulier dot gilles at gmail dot com>
+# Copyright (c) 2013-2021 by Gilles Caulier  <caulier dot gilles at gmail dot com>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
@@ -19,7 +19,7 @@ BUILDING_DIR="`pwd`/temp.build"
 
 #------------
 # IMPORTANT: Target Windows architecture to build installer. Possible values: 32 or 64 bits.
-MXE_ARCHBITS=32
+MXE_ARCHBITS=64
 #------------
 
 if [[ $MXE_ARCHBITS == 32 ]]; then
@@ -45,7 +45,7 @@ MXE_TOOLCHAIN=${MXE_INSTALL_PREFIX}/share/cmake/mxe-conf.cmake
 #-------------------------------------------------------------------------------------------
 
 # URL to git repository to checkout digiKam source code
-DK_GITURL="git@invent.kde.org:kde/digikam.git"
+DK_GITURL="git@invent.kde.org:graphics/digikam.git"
 
 # digiKam tarball information.
 DK_URL="http://download.kde.org/stable/digikam"
@@ -54,16 +54,14 @@ DK_URL="http://download.kde.org/stable/digikam"
 DK_BUILDTEMP=~/dktemp
 
 # digiKam tag version from git. Official tarball do not include extra shared libraries.
-# The list of tags can be listed with this url: https://quickgit.kde.org/?p=digikam.git&a=tags
+# The list of tags can be listed with this url: https://invent.kde.org/graphics/digikam/-/tags
 # If you want to package current implemntation from git, use "master" as tag.
-#DK_VERSION=v7.0.0-beta2
+#DK_VERSION=v7.0.0
 DK_VERSION=master
 #DK_VERSION=development/dplugins
 
 # Installer sub version to differentiates newer updates of the installer itself, even if the underlying application hasn’t changed.
-#DK_EPOCH="-01"
-# Epoch with time-stamp for pre-release bundle in ISO format
-DK_EPOCH="-`date "+%Y%m%dT%H%M%S"`"
+#DK_SUBVER="-01"
 
 # Installer will include or not digiKam debug symbols
 DK_DEBUG=0
@@ -73,5 +71,5 @@ DK_SIGN=0
 
 # Upload automatically bundle to files.kde.org (pre-release only).
 DK_UPLOAD=1
-DK_UPLOADURL="digikam@milonia.kde.org"
+DK_UPLOADURL="digikam@deino.kde.org"
 DK_UPLOADDIR="/srv/archives/files/digikam/"

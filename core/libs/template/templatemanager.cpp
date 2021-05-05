@@ -6,7 +6,7 @@
  * Date        : 2009-06-20
  * Description : metadata template manager.
  *
- * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2009-2010 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  *
  * This program is free software; you can redistribute it
@@ -47,7 +47,7 @@ public:
 
     explicit Private()
         : modified(false),
-          mutex()
+          mutex   ()
     {
     }
 
@@ -76,7 +76,7 @@ TemplateManager* TemplateManager::defaultManager()
 TemplateManager::TemplateManager()
     : d(new Private)
 {
-    d->file = QStandardPaths::writableLocation(QStandardPaths::DataLocation) + QLatin1String("/template.xml");
+    d->file = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QLatin1String("/template.xml");
 
     load();
 }
@@ -113,7 +113,7 @@ bool TemplateManager::load()
         return false;
     }
 
-    for (QDomNode n = docElem.firstChild(); !n.isNull(); n = n.nextSibling())
+    for (QDomNode n = docElem.firstChild() ; !n.isNull() ; n = n.nextSibling())
     {
         QDomElement e = n.toElement();
 
@@ -270,7 +270,7 @@ bool TemplateManager::load()
             {
                 QStringList list;
 
-                for (QDomNode n3 = e2.firstChild(); !n3.isNull(); n3 = n3.nextSibling())
+                for (QDomNode n3 = e2.firstChild() ; !n3.isNull() ; n3 = n3.nextSibling())
                 {
                     QDomElement e3 = n3.toElement();
                     QString key    = e3.tagName();
@@ -363,7 +363,7 @@ bool TemplateManager::save()
 
             QDomElement rightusageterms = doc.createElement(QLatin1String("rightusageterms"));
             elem.appendChild(rightusageterms);
-            MetaEngine::AltLangMap usages   = t.rightUsageTerms();
+            MetaEngine::AltLangMap usages = t.rightUsageTerms();
             MetaEngine::AltLangMap::const_iterator it2;
 
             for (it2 = usages.constBegin() ; it2 != usages.constEnd() ; ++it2)

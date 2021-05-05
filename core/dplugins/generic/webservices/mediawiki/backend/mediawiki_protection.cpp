@@ -6,7 +6,7 @@
  * Date        : 2011-03-22
  * Description : a Iface C++ interface
  *
- * Copyright (C) 2011-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2011-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2011      by Vincent Garcia <xavier dot vincent dot garcia at gmail dot com>
  *
  * This program is free software; you can redistribute it
@@ -30,7 +30,7 @@
 namespace MediaWiki
 {
 
-class Q_DECL_HIDDEN Protection::ProtectionPrivate
+class Q_DECL_HIDDEN Protection::Private
 {
 public:
 
@@ -41,7 +41,7 @@ public:
 };
 
 Protection::Protection()
-    : d(new ProtectionPrivate())
+    : d(new Private())
 {
 }
 
@@ -51,22 +51,25 @@ Protection::~Protection()
 }
 
 Protection::Protection(const Protection& other)
-    : d(new ProtectionPrivate(*(other.d)))
+    : d(new Private(*(other.d)))
 {
 }
 
-Protection& Protection::operator=(Protection other)
+Protection& Protection::operator=(const Protection& other)
 {
     *d = *other.d;
+
     return *this;
 }
 
 bool Protection::operator==(const Protection& other) const
 {
-    return type()   == other.type()   &&
-           level()  == other.level()  &&
-           expiry() == other.expiry() &&
-           source() == other.source();
+    return (
+            (type()   == other.type())   &&
+            (level()  == other.level())  &&
+            (expiry() == other.expiry()) &&
+            (source() == other.source())
+           );
 }
 
 void Protection::setType(const QString& type)

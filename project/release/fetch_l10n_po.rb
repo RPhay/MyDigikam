@@ -5,7 +5,7 @@
 #
 # Copyright (c)      2005 by Mark Kretschmann, <kretschmann at kde dot org>
 # Copyright (c)      2014 by Nicolas Lécureuil, <kde at nicolaslecureuil dot fr>
-# Copyright (c) 2010-2020 by Gilles Caulier, <caulier dot gilles at gmail dot com>
+# Copyright (c) 2010-2021 by Gilles Caulier, <caulier dot gilles at gmail dot com>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
@@ -59,9 +59,9 @@ i18nlangs.each_line do |lang|
         for part in ['digikam']
 
             if isWindows
-                `svn cat svn://anonsvn.kde.org/home/kde/#{branch}/l10n-kf5/#{lang}/messages/extragear-graphics/#{part}.po > #{part}.po`
+                `svn cat svn://anonsvn.kde.org/home/kde/#{branch}/l10n-kf5/#{lang}/messages/digikam/#{part}.po > #{part}.po`
             else
-                `svn cat svn://anonsvn.kde.org/home/kde/#{branch}/l10n-kf5/#{lang}/messages/extragear-graphics/#{part}.po 2> /dev/null | tee #{part}.po `
+                `svn cat svn://anonsvn.kde.org/home/kde/#{branch}/l10n-kf5/#{lang}/messages/digikam/#{part}.po 2> /dev/null | tee #{part}.po `
             end
 
             if FileTest.size( "#{part}.po" ) == 0

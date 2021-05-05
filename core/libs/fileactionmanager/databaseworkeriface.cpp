@@ -36,21 +36,22 @@
 #include "fileactionmngr_p.h"
 #include "scancontroller.h"
 #include "disjointmetadata.h"
+#include "faceutils.h"
 
 namespace Digikam
 {
 
-void FileActionMngrDatabaseWorker::assignTags(FileActionItemInfoList infos, const QList<int>& tagIDs)
+void FileActionMngrDatabaseWorker::assignTags(const FileActionItemInfoList& infos, const QList<int>& tagIDs)
 {
     changeTags(infos, tagIDs, true);
 }
 
-void FileActionMngrDatabaseWorker::removeTags(FileActionItemInfoList infos, const QList<int>& tagIDs)
+void FileActionMngrDatabaseWorker::removeTags(const FileActionItemInfoList& infos, const QList<int>& tagIDs)
 {
     changeTags(infos, tagIDs, false);
 }
 
-void FileActionMngrDatabaseWorker::changeTags(FileActionItemInfoList infos,
+void FileActionMngrDatabaseWorker::changeTags(const FileActionItemInfoList& infos,
                                               const QList<int>& tagIDs, bool addOrRemove)
 {
     DisjointMetadata hub;
@@ -112,7 +113,7 @@ void FileActionMngrDatabaseWorker::changeTags(FileActionItemInfoList infos,
     infos.dbFinished();
 }
 
-void FileActionMngrDatabaseWorker::assignPickLabel(FileActionItemInfoList infos, int pickId)
+void FileActionMngrDatabaseWorker::assignPickLabel(const FileActionItemInfoList& infos, int pickId)
 {
     DisjointMetadata hub;
     QList<ItemInfo> forWriting;
@@ -159,7 +160,7 @@ void FileActionMngrDatabaseWorker::assignPickLabel(FileActionItemInfoList infos,
     infos.dbFinished();
 }
 
-void FileActionMngrDatabaseWorker::assignColorLabel(FileActionItemInfoList infos, int colorId)
+void FileActionMngrDatabaseWorker::assignColorLabel(const FileActionItemInfoList& infos, int colorId)
 {
     DisjointMetadata hub;
     QList<ItemInfo> forWriting;
@@ -206,7 +207,7 @@ void FileActionMngrDatabaseWorker::assignColorLabel(FileActionItemInfoList infos
     infos.dbFinished();
 }
 
-void FileActionMngrDatabaseWorker::assignRating(FileActionItemInfoList infos, int rating)
+void FileActionMngrDatabaseWorker::assignRating(const FileActionItemInfoList& infos, int rating)
 {
     DisjointMetadata hub;
     QList<ItemInfo> forWriting;
@@ -254,7 +255,7 @@ void FileActionMngrDatabaseWorker::assignRating(FileActionItemInfoList infos, in
     infos.dbFinished();
 }
 
-void FileActionMngrDatabaseWorker::editGroup(int groupAction, const ItemInfo& pick, FileActionItemInfoList infos)
+void FileActionMngrDatabaseWorker::editGroup(int groupAction, const ItemInfo& pick, const FileActionItemInfoList& infos)
 {
     {
         CoreDbOperationGroup group;
@@ -272,16 +273,22 @@ void FileActionMngrDatabaseWorker::editGroup(int groupAction, const ItemInfo& pi
             switch (groupAction)
             {
                 case AddToGroup:
+                {
                     info.addToGroup(pick);
                     break;
+                }
 
                 case RemoveFromGroup:
+                {
                     info.removeFromGroup();
                     break;
+                }
 
                 case Ungroup:
+                {
                     info.clearGroup();
                     break;
+                }
             }
 
             infos.dbProcessedOne();
@@ -292,7 +299,7 @@ void FileActionMngrDatabaseWorker::editGroup(int groupAction, const ItemInfo& pi
     infos.dbFinished();
 }
 
-void FileActionMngrDatabaseWorker::setExifOrientation(FileActionItemInfoList infos, int orientation)
+void FileActionMngrDatabaseWorker::setExifOrientation(const FileActionItemInfoList& infos, int orientation)
 {
     {
         CoreDbOperationGroup group;
@@ -304,6 +311,11 @@ void FileActionMngrDatabaseWorker::setExifOrientation(FileActionItemInfoList inf
             {
                 break;
             }
+
+            // Adjust Faces
+
+            FaceUtils().rotateFaces(info, orientation,
+                                          info.orientation());
 
             info.setOrientation(orientation);
         }
@@ -320,7 +332,7 @@ void FileActionMngrDatabaseWorker::setExifOrientation(FileActionItemInfoList inf
     infos.dbFinished();
 }
 
-void FileActionMngrDatabaseWorker::applyMetadata(FileActionItemInfoList infos, DisjointMetadata *hub)
+void FileActionMngrDatabaseWorker::applyMetadata(const FileActionItemInfoList& infos, DisjointMetadata *hub)
 {
     {
         CoreDbOperationGroup group;
@@ -359,7 +371,7 @@ void FileActionMngrDatabaseWorker::applyMetadata(FileActionItemInfoList infos, D
     infos.dbFinished();
 }
 
-void FileActionMngrDatabaseWorker::copyAttributes(FileActionItemInfoList infos, const QStringList& derivedPaths)
+void FileActionMngrDatabaseWorker::copyAttributes(const FileActionItemInfoList& infos, const QStringList& derivedPaths)
 {
     if (infos.size() == 1)
     {

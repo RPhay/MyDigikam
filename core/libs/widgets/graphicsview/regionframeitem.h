@@ -39,7 +39,7 @@ class QWidget;
 namespace Digikam
 {
 
-class DIGIKAM_EXPORT RegionFrameItem : public DImgChildItem
+class DIGIKAM_EXPORT RegionFrameItem : public DImgChildItem         // clazy:exclude=ctor-missing-parent-argument
 {
     Q_OBJECT
 
@@ -58,11 +58,11 @@ public:
 public:
 
     explicit RegionFrameItem(QGraphicsItem* const parent);
-    ~RegionFrameItem();
+    ~RegionFrameItem()                                      override;
 
     void  setFlags(Flags flags);
     void  changeFlags(Flags flags, bool addOrRemove);
-    Flags flags()                                             const;
+    Flags flags()                                     const;
 
     /**
      * Sets a widget item as HUD item. A HUD item will be positioned relative to this item,
@@ -71,15 +71,15 @@ public:
      * You can also add QWidget directly. It will be wrapped in a proxy item.
      */
     void             setHudWidget(QGraphicsWidget* const hudWidget);
-    void             setHudWidget(QWidget* const widget, Qt::WindowFlags wFlags = nullptr);
-    QGraphicsWidget* hudWidget() const;
+    void             setHudWidget(QWidget* const widget, Qt::WindowFlags wFlags = Qt::WindowFlags());
+    QGraphicsWidget* hudWidget()                      const;
     void             setHudWidgetVisible(bool visible);
 
     void setFixedRatio(double ratio);
 
     void setRectInSceneCoordinatesAdjusted(const QRectF& rect);
 
-    virtual QRectF boundingRect()                             const override;
+    QRectF boundingRect()                             const override;
 
 public Q_SLOTS:
 
@@ -98,17 +98,17 @@ Q_SIGNALS:
 
 protected:
 
-    virtual void paint(QPainter* painter,
-                       const QStyleOptionGraphicsItem* option,
-                       QWidget* widget = nullptr)                   override;
-    virtual void mousePressEvent(QGraphicsSceneMouseEvent*)         override;
-    virtual void mouseMoveEvent(QGraphicsSceneMouseEvent*)          override;
-    virtual void mouseReleaseEvent(QGraphicsSceneMouseEvent*)       override;
-    virtual void hoverEnterEvent(QGraphicsSceneHoverEvent* event)   override;
-    virtual void hoverMoveEvent(QGraphicsSceneHoverEvent* event)    override;
-    virtual void hoverLeaveEvent(QGraphicsSceneHoverEvent* event)   override;
+    void paint(QPainter* painter,
+               const QStyleOptionGraphicsItem* option,
+               QWidget* widget = nullptr)                   override;
+    void mousePressEvent(QGraphicsSceneMouseEvent*)         override;
+    void mouseMoveEvent(QGraphicsSceneMouseEvent*)          override;
+    void mouseReleaseEvent(QGraphicsSceneMouseEvent*)       override;
+    void hoverEnterEvent(QGraphicsSceneHoverEvent* event)   override;
+    void hoverMoveEvent(QGraphicsSceneHoverEvent* event)    override;
+    void hoverLeaveEvent(QGraphicsSceneHoverEvent* event)   override;
 
-    virtual bool eventFilter(QObject* watched, QEvent* event)       override;
+    bool eventFilter(QObject* watched, QEvent* event)       override;
 
 private Q_SLOTS:
 
@@ -120,7 +120,10 @@ private Q_SLOTS:
 
 private:
 
-    RegionFrameItem(); // Disable default constructor.
+    // Disable
+    RegionFrameItem();
+
+private:
 
     class Private;
     Private* const d;

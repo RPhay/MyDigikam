@@ -7,7 +7,7 @@
  * Description : Multithreaded loader for previews
  *
  * Copyright (C) 2006-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -29,6 +29,7 @@
 #include <QImage>
 #include <QVariant>
 #include <QMatrix>
+#include <QScopedPointer>
 
 // Local includes
 
@@ -43,10 +44,25 @@
 namespace Digikam
 {
 
+PreviewLoadingTask::PreviewLoadingTask(LoadSaveThread* const thread, const LoadingDescription& description)
+    : SharedLoadingTask       (thread, description, LoadSaveThread::AccessModeRead, LoadingTaskStatusLoading),
+      m_fromRawEmbeddedPreview(false)
+{
+}
+
+PreviewLoadingTask::~PreviewLoadingTask()
+{
+}
+
 void PreviewLoadingTask::execute()
 {
     if (m_loadingTaskStatus == LoadingTaskStatusStopping)
     {
+        if (m_thread)
+        {
+            m_thread->taskHasFinished();
+        }
+
         return;
     }
 
@@ -92,51 +108,42 @@ void PreviewLoadingTask::execute()
         {
             // image is found in image cache, loading is successful
 
-            m_img = DImg(*cachedImg);
+            m_img = *cachedImg;
         }
         else
         {
             // find possible running loading process
 
-            m_usedProcess = nullptr;
+            LoadingProcess* usedProcess = nullptr;
 
             for (QStringList::const_iterator it = lookupKeys.constBegin() ; it != lookupKeys.constEnd() ; ++it)
             {
-                if ((m_usedProcess = cache->retrieveLoadingProcess(*it)))
+                if ((usedProcess = cache->retrieveLoadingProcess(*it)))
                 {
                     break;
                 }
             }
 
-            if (m_usedProcess)
+            if (usedProcess)
             {
                 // Other process is right now loading this image.
                 // Add this task to the list of listeners and
                 // attach this thread to the other thread, wait until loading
                 // has finished.
 
-                m_usedProcess->addListener(this);
+                usedProcess->addListener(this);
 
                 // break loop when either the loading has completed, or this task is being stopped
 
                 // cppcheck-suppress knownConditionTrueFalse
-                while ((m_loadingTaskStatus != LoadingTaskStatusStopping) &&
-                       m_usedProcess                                      &&
-                       !m_usedProcess->completed())
+                while ((m_loadingTaskStatus != LoadingTaskStatusStopping) && !usedProcess->completed())
                 {
                     lock.timedWait();
                 }
 
                 // remove listener from process
 
-                if (m_usedProcess)
-                {
-                    m_usedProcess->removeListener(this);
-                }
-
-                // set to 0, as checked in setStatus
-
-                m_usedProcess = nullptr;
+                usedProcess->removeListener(this);
 
                 // wake up the process which is waiting until all listeners have removed themselves
 
@@ -144,31 +151,25 @@ void PreviewLoadingTask::execute()
 
                 // m_img is now set to the result
             }
-            else
-            {
-                // Neither in cache, nor currently loading in different thread.
-                // Load it here and now, add this LoadingProcess to cache list.
-
-                cache->addLoadingProcess(this);
-
-                // Add this to the list of listeners
-
-                addListener(this);
-
-                // for use in setStatus
-
-                m_usedProcess = this;
-
-                // Notify other processes that we are now loading this image.
-                // They might be interested - see notifyNewLoadingProcess below
-
-                cache->notifyNewLoadingProcess(this, m_loadingDescription);
-            }
         }
     }
 
     if (continueQuery() && m_img.isNull())
     {
+        {
+            LoadingCache::CacheLock lock(cache);
+
+            // Neither in cache, nor currently loading in different thread.
+            // Load it here and now, add this LoadingProcess to cache list.
+
+            cache->addLoadingProcess(this);
+
+            // Notify other processes that we are now loading this image.
+            // They might be interested - see notifyNewLoadingProcess below
+
+            cache->notifyNewLoadingProcess(this, m_loadingDescription);
+        }
+
         // Preview is not in cache, we will load image from file.
 
         DImg::FORMAT format      = DImg::fileFormat(m_loadingDescription.filePath);
@@ -317,14 +318,17 @@ void PreviewLoadingTask::execute()
             }
         }
 
-        if (continueQuery())
+        if (!m_img.isNull() && MetaEngineSettings::instance()->settings().exifRotate)
         {
-            if (!m_img.isNull() && MetaEngineSettings::instance()->settings().exifRotate)
-            {
-                m_img.exifRotate(m_loadingDescription.filePath);
-            }
+            m_img.exifRotate(m_loadingDescription.filePath);
+        }
 
+        {
             LoadingCache::CacheLock lock(cache);
+
+            // remove this from the list of loading processes in cache
+
+            cache->removeLoadingProcess(this);
 
             // put valid image into cache of loaded images
 
@@ -332,34 +336,26 @@ void PreviewLoadingTask::execute()
             {
                 cache->putImage(m_loadingDescription.cacheKey(), m_img,
                                 m_loadingDescription.filePath);
-            }
 
-            // remove this from the list of loading processes in cache
+                // dispatch image to all listeners
 
-            cache->removeLoadingProcess(this);
-
-            // dispatch image to all listeners, including this
-
-            for (int i = 0 ; i < m_listeners.count() ; ++i)
-            {
-                LoadingProcessListener* const l = m_listeners.at(i);
-
-                if (l->accessMode() == LoadSaveThread::AccessModeReadWrite)
+                for (int i = 0 ; i < m_listeners.count() ; ++i)
                 {
-                    // If a listener requested ReadWrite access, it gets a deep copy.
-                    // DImg is explicitly shared.
+                    LoadingProcessListener* const l = m_listeners.at(i);
 
-                    l->setResult(m_loadingDescription, m_img.copy());
-                }
-                else
-                {
-                    l->setResult(m_loadingDescription, m_img);
+                    if (l->accessMode() == LoadSaveThread::AccessModeReadWrite)
+                    {
+                        // If a listener requested ReadWrite access, it gets a deep copy.
+                        // DImg is explicitly shared.
+
+                        l->setResult(m_loadingDescription, m_img.copy());
+                    }
+                    else
+                    {
+                        l->setResult(m_loadingDescription, m_img);
+                    }
                 }
             }
-
-            // remove myself from list of listeners
-
-            removeListener(this);
 
             // indicate that loading has finished so that listeners can stop waiting
 
@@ -375,10 +371,6 @@ void PreviewLoadingTask::execute()
             {
                 lock.timedWait();
             }
-
-            // set to 0, as checked in setStatus
-
-            m_usedProcess = nullptr;
         }
     }
 
@@ -431,7 +423,7 @@ void PreviewLoadingTask::execute()
     }
     else if (continueQuery())
     {
-        qCWarning(DIGIKAM_GENERAL_LOG) << "Cannot extract preview for" << m_loadingDescription.filePath;
+        qCDebug(DIGIKAM_GENERAL_LOG) << "Cannot extract preview for" << m_loadingDescription.filePath;
     }
     else
     {
@@ -450,17 +442,22 @@ bool PreviewLoadingTask::needToScale()
     switch (m_loadingDescription.previewParameters.previewSettings.quality)
     {
         case PreviewSettings::FastPreview:
+        {
             if (m_loadingDescription.previewParameters.size > 0)
             {
                 int maxSize             = qMax(m_img.width(), m_img.height());
                 int acceptableUpperSize = lround(1.25 * (double)m_loadingDescription.previewParameters.size);
                 return (maxSize >= acceptableUpperSize);
             }
+
             break;
+        }
 
         case PreviewSettings::FastButLargePreview:
         case PreviewSettings::HighQualityPreview:
+        {
             break;
+        }
     }
 
     return false;
@@ -518,6 +515,7 @@ bool PreviewLoadingTask::loadHalfSizeRaw()
     }
 
     DRawDecoder::loadHalfPreview(m_qimage, m_loadingDescription.filePath);
+
     return (!m_qimage.isNull());
 }
 
@@ -536,8 +534,8 @@ void PreviewLoadingTask::convertQImageToDImg()
     m_img.setAttribute(QLatin1String("detectedFileFormat"), format);
     m_img.setAttribute(QLatin1String("originalFilePath"),   m_loadingDescription.filePath);
 
-    DMetadata metadata(m_loadingDescription.filePath);
-    QSize orgSize = metadata.getPixelSize();
+    QScopedPointer<DMetadata> metadata(new DMetadata(m_loadingDescription.filePath));
+    QSize orgSize = metadata->getPixelSize();
 
     if ((format == DImg::RAW) && LoadSaveThread::infoProvider())
     {
@@ -566,7 +564,7 @@ void PreviewLoadingTask::convertQImageToDImg()
 
     m_img.setAttribute(QLatin1String("originalSize"),   orgSize);
 
-    m_img.setMetadata(metadata.data());
+    m_img.setMetadata(metadata->data());
 
     // mark as embedded preview (for Exif rotation)
 
@@ -577,7 +575,7 @@ void PreviewLoadingTask::convertQImageToDImg()
         // If we loaded the embedded preview, the Exif of the RAW indicates
         // the color space of the preview (see bug 195950 for NEF files)
 
-        m_img.setIccProfile(metadata.getIccProfile());
+        m_img.setIccProfile(metadata->getIccProfile());
     }
 
     // free memory
@@ -587,11 +585,11 @@ void PreviewLoadingTask::convertQImageToDImg()
 
 bool PreviewLoadingTask::loadImagePreview(int sizeLimit)
 {
-    DMetadata metadata(m_loadingDescription.filePath);
+    QScopedPointer<DMetadata> metadata(new DMetadata(m_loadingDescription.filePath));
 
     QImage previewImage;
 
-    if (metadata.getItemPreview(previewImage))
+    if (metadata->getItemPreview(previewImage))
     {
         if ((sizeLimit == -1) || (qMax(previewImage.width(), previewImage.height()) > sizeLimit))
         {

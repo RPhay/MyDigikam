@@ -6,7 +6,7 @@
  * Date        : 2018-07-30
  * Description : a plugin to render presentation.
  *
- * Copyright (C) 2018-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2018-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -53,7 +53,7 @@ void PresentationPlugin::cleanUp()
 
 QString PresentationPlugin::name() const
 {
-    return i18n("Presentation");
+    return i18nc("@title", "Presentation");
 }
 
 QString PresentationPlugin::iid() const
@@ -68,14 +68,14 @@ QIcon PresentationPlugin::icon() const
 
 QString PresentationPlugin::description() const
 {
-    return i18n("A tool to render presentation");
+    return i18nc("@info", "A tool to render presentation");
 }
 
 QString PresentationPlugin::details() const
 {
-    return i18n("<p>This tool render a series of items as an advanced slide-show.</p>"
-                "<p>Plenty of transition effects are available are ones based on OpenGL and the famous Ken Burns effect.</p>"
-                "<p>You can add a sound-track in background while your presentation.</p>");
+    return i18nc("@info", "This tool render a series of items as an advanced slide-show.\n\n"
+                 "Plenty of transition effects are available are ones based on OpenGL and the famous Ken Burns effect.\n\n"
+                 "You can add a sound-track in background while your presentation.");
 }
 
 QList<DPluginAuthor> PresentationPlugin::authors() const
@@ -89,7 +89,13 @@ QList<DPluginAuthor> PresentationPlugin::authors() const
                              QString::fromUtf8("(C) 2006-2009"))
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2005-2020"))
+                             QString::fromUtf8("(C) 2005-2021"))
+            << DPluginAuthor(QString::fromUtf8("Phuoc Khanh Le"),
+                             QString::fromUtf8("phuockhanhnk94 at gmail dot com"),
+                             QString::fromUtf8("(C) 2021"))
+            << DPluginAuthor(QString::fromUtf8("Fady Khalaf"),
+                             QString::fromUtf8("fadykhalaf01 at gmail dot com"),
+                             QString::fromUtf8("(C) 2019"))
             ;
 }
 

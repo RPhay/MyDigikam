@@ -7,7 +7,7 @@
  * Description : A JPEG IO file for DImg framework - save operations
  *
  * Copyright (C) 2005      by Renchi Raju <renchi dot raju at gmail dot com>
- * Copyright (C) 2005-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2005-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -40,8 +40,8 @@ extern "C"
 
 // Local includes
 
-#include "digikam_config.h"
 #include "digikam_debug.h"
+#include "digikam_config.h"
 #include "dimgloaderobserver.h"
 
 #ifdef Q_OS_WIN
@@ -53,7 +53,15 @@ namespace DigikamJPEGDImgPlugin
 
 bool DImgJPEGLoader::save(const QString& filePath, DImgLoaderObserver* const observer)
 {
-    FILE* const file = fopen(QFile::encodeName(filePath).constData(), "wb");
+#ifdef Q_OS_WIN
+
+    FILE* const file = _wfopen((const wchar_t*)filePath.utf16(), L"wb");
+
+#else
+
+    FILE* const file = fopen(filePath.toUtf8().constData(), "wb");
+
+#endif
 
     if (!file)
     {
@@ -120,7 +128,15 @@ bool DImgJPEGLoader::save(const QString& filePath, DImgLoaderObserver* const obs
 
     // If an error occurs during writing, libjpeg will jump here
 
+#ifdef __MINGW32__  // krazy:exclude=cpp
+
+    if (__builtin_setjmp(jerr.setjmp_buffer))
+
+#else
+
     if (setjmp(jerr.setjmp_buffer))
+
+#endif
     {
         jpeg_destroy_compress(&cinfo);
         delete cleanupData;
@@ -271,7 +287,7 @@ bool DImgJPEGLoader::save(const QString& filePath, DImgLoaderObserver* const obs
                 }
 
                 // use 0-20% for pseudo-progress, now fill 20-100%
-                observer->progressInfo(0.2 + (0.8 * (((float)j) / ((float)h))));
+                observer->progressInfo(0.2F + (0.8F * (((float)j) / ((float)h))));
             }
 
             dstPtr = line;
@@ -308,7 +324,7 @@ bool DImgJPEGLoader::save(const QString& filePath, DImgLoaderObserver* const obs
                 }
 
                 // use 0-20% for pseudo-progress, now fill 20-100%
-                observer->progressInfo(0.2 + (0.8 * (((float)j) / ((float)h))));
+                observer->progressInfo(0.2F + (0.8F * (((float)j) / ((float)h))));
             }
 
             dstPtr = line;

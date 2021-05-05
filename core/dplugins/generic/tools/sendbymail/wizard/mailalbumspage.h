@@ -6,7 +6,7 @@
  * Date        : 2017-06-27
  * Description : a tool to export items by email.
  *
- * Copyright (C) 2017-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2017-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -40,13 +40,15 @@ namespace DigikamGenericSendByMailPlugin
 
 class MailAlbumsPage : public DWizardPage
 {
+    Q_OBJECT
+
 public:
 
     explicit MailAlbumsPage(QWizard* const dialog, const QString& title);
-    ~MailAlbumsPage();
+    ~MailAlbumsPage()       override;
 
-    bool validatePage();
-    bool isComplete() const;
+    bool validatePage()     override;
+    bool isComplete() const override;
 
 private:
 

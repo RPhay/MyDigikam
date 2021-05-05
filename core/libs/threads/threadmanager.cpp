@@ -44,6 +44,8 @@ namespace Digikam
 
 class Q_DECL_HIDDEN ParkingThread : public QThread
 {
+    Q_OBJECT
+
 public:
 
     explicit ParkingThread(QObject* const parent = nullptr)
@@ -53,7 +55,7 @@ public:
         start();
     }
 
-    ~ParkingThread()
+    ~ParkingThread() override
     {
         running = false;
         condVar.wakeAll();
@@ -87,7 +89,7 @@ public:
             condVar.wait(&mutex);
         }
 
-        QThread* targetThread = QThread::currentThread();
+        QThread* const targetThread = QThread::currentThread();
 
         // then, now that it's parked in ParkingThread, make ParkingThread move it to the current thread.
 
@@ -102,7 +104,7 @@ public:
         }
     }
 
-    virtual void run() override
+    void run() override
     {
         /* The quirk here is that this thread never runs an event loop.
          * That means events queued for parked object are only emitted when
@@ -158,13 +160,17 @@ protected:
 
 protected:
 
-    virtual void run() override;
+    void run() override;
+
+private:
+
+    Q_DISABLE_COPY(WorkerObjectRunnable)
 };
 
 // --------------------------------------------------------------------------------------------------
 
 WorkerObjectRunnable::WorkerObjectRunnable(WorkerObject* const object, ParkingThread* const parkingThread)
-    : object(object),
+    : object       (object),
       parkingThread(parkingThread)
 {
     setAutoDelete(true);
@@ -186,7 +192,7 @@ void WorkerObjectRunnable::run()
 
     object->addRunnable(this);
 
-    emit (object->started());
+    emit object->started();
 
     if (object->transitionToRunning())
     {
@@ -209,7 +215,8 @@ void WorkerObjectRunnable::run()
     }
 
     object->transitionToInactive();
-    emit (object->finished());
+
+    emit object->finished();
 
     // if this is rescheduled, it will wait in the other thread at moveToCurrentThread() above until we park
 
@@ -228,7 +235,7 @@ public:
 
     Private()
       : parkingThread(nullptr),
-        pool(nullptr)
+        pool         (nullptr)
     {
     }
 
@@ -243,6 +250,8 @@ public:
     }
 };
 
+// -------------------------------------------------------------------------------------------------
+
 class Q_DECL_HIDDEN ThreadManagerCreator
 {
 public:
@@ -251,6 +260,8 @@ public:
 };
 
 Q_GLOBAL_STATIC(ThreadManagerCreator, creator)
+
+// -------------------------------------------------------------------------------------------------
 
 ThreadManager* ThreadManager::instance()
 {
@@ -305,3 +316,5 @@ void ThreadManager::slotDestroyed(QObject*)
 }
 
 } // namespace Digikam
+
+#include "threadmanager.moc"

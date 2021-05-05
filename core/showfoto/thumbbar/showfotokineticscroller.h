@@ -46,7 +46,7 @@ class ShowfotoKineticScroller: public QObject
 public:
 
     explicit ShowfotoKineticScroller(QObject* const parent = nullptr);
-    ~ShowfotoKineticScroller();
+    ~ShowfotoKineticScroller() override;
 
     //! enabled for one widget only, new calls remove previous association
     void enableKineticScrollFor(QAbstractScrollArea* const scrollArea);
@@ -54,7 +54,7 @@ public:
 
 protected:
 
-    bool eventFilter(QObject* object, QEvent* event);
+    bool eventFilter(QObject* object, QEvent* event) override;
 
 private Q_SLOTS:
 

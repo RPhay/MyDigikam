@@ -7,7 +7,7 @@
  * Description : User interface for searches
  *
  * Copyright (C) 2008-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2011-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2011-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -52,11 +52,11 @@ namespace Digikam
 
 SearchGroup::SearchGroup(SearchView* const parent)
     : AbstractSearchGroupContainer(parent),
-      m_view(parent),
-      m_layout(nullptr),
-      m_label(nullptr),
-      m_subgroupLayout(nullptr),
-      m_groupType(FirstGroup)
+      m_view                      (parent),
+      m_layout                    (nullptr),
+      m_label                     (nullptr),
+      m_subgroupLayout            (nullptr),
+      m_groupType                 (FirstGroup)
 {
 }
 
@@ -64,11 +64,11 @@ void SearchGroup::setup(Type type)
 {
     m_groupType = type;
 
-    m_layout = new QVBoxLayout;
+    m_layout    = new QVBoxLayout;
     m_layout->setContentsMargins(QMargins());
     m_layout->setSpacing(0);
 
-    m_label  = new SearchGroupLabel(m_view, m_groupType, this);
+    m_label     = new SearchGroupLabel(m_view, m_groupType, this);
     m_layout->addWidget(m_label);
 
     connect(m_label, SIGNAL(removeClicked()),
@@ -134,6 +134,7 @@ void SearchGroup::setup(Type type)
     group->addField(SearchField::createField(QLatin1String("modificationdate"), group));
     group->addField(SearchField::createField(QLatin1String("digitizationdate"), group));
     group->addField(SearchField::createField(QLatin1String("filesize"),         group));
+    group->addField(SearchField::createField(QLatin1String("monthday"),         group));
 
     m_fieldLabels << label;
     m_fieldGroups << group;
@@ -172,6 +173,7 @@ void SearchGroup::setup(Type type)
     group->addField(SearchField::createField(QLatin1String("commentauthor"), group));
     group->addField(SearchField::createField(QLatin1String("headline"),      group));
     group->addField(SearchField::createField(QLatin1String("title"),         group));
+    group->addField(SearchField::createField(QLatin1String("emptytext"),     group));
 
     m_fieldLabels << label;
     m_fieldGroups << group;
@@ -399,6 +401,8 @@ QList<QRect> SearchGroup::startupAnimationArea() const
 
 class Q_DECL_HIDDEN RadioButtonHBox : public QHBoxLayout
 {
+    Q_OBJECT
+
 public:
 
     RadioButtonHBox(QWidget* const left, QWidget* const right, Qt::LayoutDirection dir)
@@ -424,19 +428,19 @@ class Q_DECL_HIDDEN SearchGroupLabel::Private
 public:
 
     explicit Private()
-      : extended(false),
-        groupOp(SearchXml::And),
-        fieldOp(SearchXml::And),
-        layout(nullptr),
-        groupOpLabel(nullptr),
-        allBox(nullptr),
-        anyBox(nullptr),
-        noneBox(nullptr),
-        oneNotBox(nullptr),
-        optionsLabel(nullptr),
-        removeLabel(nullptr),
+      : extended     (false),
+        groupOp      (SearchXml::And),
+        fieldOp      (SearchXml::And),
+        layout       (nullptr),
+        groupOpLabel (nullptr),
+        allBox       (nullptr),
+        anyBox       (nullptr),
+        noneBox      (nullptr),
+        oneNotBox    (nullptr),
+        optionsLabel (nullptr),
+        removeLabel  (nullptr),
         stackedLayout(nullptr),
-        themeCache(nullptr)
+        themeCache   (nullptr)
     {
     }
 
@@ -460,7 +464,7 @@ public:
 
 SearchGroupLabel::SearchGroupLabel(SearchViewThemedPartsCache* const cache, SearchGroup::Type type, QWidget* const parent)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     d->themeCache = cache;
     d->layout     = new QGridLayout;
@@ -502,10 +506,10 @@ SearchGroupLabel::SearchGroupLabel(SearchViewThemedPartsCache* const cache, Sear
 
     if (type == SearchGroup::FirstGroup)
     {
-        QLabel* const logo = new QLabel;
+        QLabel* const logo              = new QLabel;
         logo->setPixmap(QIcon::fromTheme(QLatin1String("digikam")).pixmap(QSize(48,48)));
 
-        d->optionsLabel = new DClickLabel;
+        d->optionsLabel                 = new DClickLabel;
         d->optionsLabel->setObjectName(QLatin1String("SearchGroupLabel_OptionsLabel"));
 
         connect(d->optionsLabel, SIGNAL(activated()),
@@ -556,7 +560,7 @@ SearchGroupLabel::SearchGroupLabel(SearchViewThemedPartsCache* const cache, Sear
         connect(d->groupOpLabel, SIGNAL(activated()),
                 this, SLOT(toggleGroupOperator()));
 
-        d->removeLabel = new DClickLabel(i18n("Remove Group"));
+        d->removeLabel  = new DClickLabel(i18n("Remove Group"));
         d->removeLabel->setObjectName(QLatin1String("SearchGroupLabel_RemoveLabel"));
 
         connect(d->removeLabel, SIGNAL(activated()),
@@ -600,7 +604,7 @@ void SearchGroupLabel::setExtended(bool extended)
         d->anyBox->setVisible(true);
         d->noneBox->setVisible(true);
         d->oneNotBox->setVisible(true);
-        d->optionsLabel->setText(i18n("Hide Options <<"));
+        d->optionsLabel->setText(i18n("Hide Options") + QLatin1String(" <<"));
     }
     else
     {
@@ -612,7 +616,7 @@ void SearchGroupLabel::setExtended(bool extended)
         d->anyBox->setVisible(false);
         d->noneBox->setVisible(false);
         d->oneNotBox->setVisible(false);
-        d->optionsLabel->setText(i18n("Options >>"));
+        d->optionsLabel->setText(i18n("Options") + QLatin1String(" >>"));
     }
 }
 
@@ -785,3 +789,5 @@ void SearchGroupLabel::paintEvent(QPaintEvent*)
 }
 
 } // namespace Digikam
+
+#include "searchgroup.moc"

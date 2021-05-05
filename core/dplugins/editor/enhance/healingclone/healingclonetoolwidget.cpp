@@ -48,19 +48,19 @@ class Q_DECL_HIDDEN HealingCloneToolWidget::Private
 public:
 
     explicit Private()
-      : srcSet(true),
+      : srcSet                  (true),
         isLassoPointsVectorEmpty(true),
-        src(QPoint(0, 0)),
-        amIFocused(false),
-        proceedInMoveEvent(false),
-        cloneVectorChanged(true),
-        brushRadius(1),
-        brushValue(1),
-        currentState(HealingCloneState::SELECT_SOURCE),
-        previousState(HealingCloneState::DO_NOTHING),
-        drawCursor(nullptr),
-        sourceCursor(nullptr),
-        sourceCursorCenter(nullptr)
+        src                     (QPoint(0, 0)),
+        amIFocused              (false),
+        proceedInMoveEvent      (false),
+        cloneVectorChanged      (true),
+        brushRadius             (1),
+        brushValue              (1),
+        currentState            (HealingCloneState::SELECT_SOURCE),
+        previousState           (HealingCloneState::DO_NOTHING),
+        drawCursor              (nullptr),
+        sourceCursor            (nullptr),
+        sourceCursorCenter      (nullptr)
     {
     }
 
@@ -83,7 +83,7 @@ public:
 
 HealingCloneToolWidget::HealingCloneToolWidget(QWidget* const parent)
     : ImageRegionWidget(parent, false),
-      d(new Private)
+      d                (new Private)
 {
     activateState(HealingCloneState::SELECT_SOURCE);
     updateSourceCursor(d->src, 10);
@@ -102,9 +102,9 @@ HealingCloneToolWidget::~HealingCloneToolWidget()
 
 void HealingCloneToolWidget::mousePressEvent(QMouseEvent* e)
 {
-    if (!d->amIFocused &&
-        (d->currentState == HealingCloneState::PAINT ||
-         d->currentState == HealingCloneState::LASSO_CLONE))
+    if      (!d->amIFocused                                 &&
+             ((d->currentState == HealingCloneState::PAINT) ||
+              (d->currentState == HealingCloneState::LASSO_CLONE)))
     {
         d->amIFocused = true;
         return;
@@ -122,18 +122,19 @@ void HealingCloneToolWidget::mousePressEvent(QMouseEvent* e)
         return;
     }
 
-    if ((d->currentState == HealingCloneState::PAINT ||
-         d->currentState == HealingCloneState::LASSO_CLONE))
+    if ((d->currentState == HealingCloneState::PAINT) ||
+        (d->currentState == HealingCloneState::LASSO_CLONE))
     {
         if (d->cloneVectorChanged)
         {
             setCloneVectorChanged(false);
+
             emit signalPushToUndoStack();
         }
     }
 
-    if (d->currentState == HealingCloneState::MOVE_IMAGE &&
-        (e->buttons() & Qt::LeftButton))
+    if      ((d->currentState == HealingCloneState::MOVE_IMAGE) &&
+             (e->buttons() & Qt::LeftButton))
     {
         ImageRegionWidget::mousePressEvent(e);
     }
@@ -141,10 +142,11 @@ void HealingCloneToolWidget::mousePressEvent(QMouseEvent* e)
     {
         ImageRegionWidget::mousePressEvent(e);
     }
-    else if (d->currentState == HealingCloneState::LASSO_DRAW_BOUNDARY &&
+    else if ((d->currentState == HealingCloneState::LASSO_DRAW_BOUNDARY) &&
              (e->buttons() & Qt::LeftButton))
     {
         QPoint dst = QPoint(e->x(), e->y());
+
         emit signalLasso(mapToImageCoordinates(dst));
     }
     else
@@ -152,6 +154,7 @@ void HealingCloneToolWidget::mousePressEvent(QMouseEvent* e)
         if (e->button() == Qt::LeftButton)
         {
             d->dst = mapToImageCoordinates(e->pos());
+
             emit signalClone(d->src, d->dst);
         }
     }
@@ -162,13 +165,13 @@ void HealingCloneToolWidget::mouseMoveEvent(QMouseEvent* e)
     bool cursorOutsideScene = checkPointOutsideScene(e->pos());
     d->lastCursorPosition   = mapToScene(e->pos());
 
-    if (cursorOutsideScene &&
-        d->currentState != HealingCloneState::DO_NOTHING)
+    if      (cursorOutsideScene &&
+             (d->currentState != HealingCloneState::DO_NOTHING))
     {
         activateState(HealingCloneState::DO_NOTHING);
     }
     else if (!cursorOutsideScene &&
-             d->currentState == HealingCloneState::DO_NOTHING)
+             (d->currentState == HealingCloneState::DO_NOTHING))
     {
         activateState(d->previousState);
     }
@@ -186,15 +189,16 @@ void HealingCloneToolWidget::mouseMoveEvent(QMouseEvent* e)
         return;
     }
 
-    if (d->currentState == HealingCloneState::MOVE_IMAGE &&
-        (e->buttons() & Qt::LeftButton))
+    if      ((d->currentState == HealingCloneState::MOVE_IMAGE) &&
+             (e->buttons() & Qt::LeftButton))
     {
         ImageRegionWidget::mouseMoveEvent(e);
     }
-    else if (d->currentState == HealingCloneState::LASSO_DRAW_BOUNDARY &&
+    else if ((d->currentState == HealingCloneState::LASSO_DRAW_BOUNDARY) &&
              (e->buttons() & Qt::LeftButton))
     {
         QPoint dst = QPoint(e->x(), e->y());
+
         emit signalLasso(mapToImageCoordinates(dst));
     }
     else if ((e->buttons() & Qt::LeftButton) && !d->srcSet)
@@ -228,9 +232,11 @@ void HealingCloneToolWidget::mouseReleaseEvent(QMouseEvent* e)
         return;
     }
 
-    if (d->currentState == HealingCloneState::MOVE_IMAGE)
+    if      (d->currentState == HealingCloneState::MOVE_IMAGE)
     {
-//      setCursor(Qt::OpenHandCursor);
+/*
+        setCursor(Qt::OpenHandCursor);
+*/
         ImageRegionWidget::mouseReleaseEvent(e);
     }
 
@@ -261,7 +267,7 @@ void HealingCloneToolWidget::mouseDoubleClickEvent(QMouseEvent* e)
 
 void HealingCloneToolWidget::keyPressEvent(QKeyEvent* e)
 {
-    if (e->key() == Qt::Key_M)
+    if      (e->key() == Qt::Key_M)
     {
         slotMoveImage();
     }
@@ -290,19 +296,19 @@ void HealingCloneToolWidget::keyPressEvent(QKeyEvent* e)
         emit signalRedoClone();
     }
 
-    QWidget::keyPressEvent(e);
+    ImageRegionWidget::keyPressEvent(e);
 }
 
 bool HealingCloneToolWidget::event(QEvent* e)
 {
     QKeyEvent* const keyEvent = static_cast<QKeyEvent*>(e);
 
-    if (keyEvent && keyEvent->key() == Qt::Key_Escape &&
-        d->currentState != HealingCloneState::PAINT)
+    if (keyEvent && (keyEvent->key() == Qt::Key_Escape) &&
+        (d->currentState != HealingCloneState::PAINT))
     {
         keyEvent->accept();
 
-        if (d->currentState == HealingCloneState::LASSO_DRAW_BOUNDARY)
+        if      (d->currentState == HealingCloneState::LASSO_DRAW_BOUNDARY)
         {
             if (!d->isLassoPointsVectorEmpty)
             {
@@ -319,7 +325,7 @@ bool HealingCloneToolWidget::event(QEvent* e)
         return true;
     }
 
-    return QWidget::event(e);
+    return ImageRegionWidget::event(e);
 }
 
 void HealingCloneToolWidget::keyReleaseEvent(QKeyEvent* e)
@@ -376,10 +382,11 @@ void HealingCloneToolWidget::slotMoveImage()
 
 void HealingCloneToolWidget::slotLassoSelect()
 {
-    if (d->currentState != HealingCloneState::LASSO_DRAW_BOUNDARY &&
-        d->currentState != HealingCloneState::LASSO_CLONE)
+    if      ((d->currentState != HealingCloneState::LASSO_DRAW_BOUNDARY) &&
+             (d->currentState != HealingCloneState::LASSO_CLONE))
     {
         activateState(HealingCloneState::LASSO_DRAW_BOUNDARY);
+
         emit signalResetLassoPoint();
     }
     else if (d->currentState == HealingCloneState::LASSO_DRAW_BOUNDARY)
@@ -391,12 +398,14 @@ void HealingCloneToolWidget::slotLassoSelect()
         else
         {
             activateState(HealingCloneState::LASSO_CLONE);
+
             emit signalContinuePolygon();
         }
     }
     else if (d->currentState == HealingCloneState::LASSO_CLONE)
     {
         activateState(HealingCloneState::PAINT);
+
         emit signalResetLassoPoint();
     }
 }
@@ -412,6 +421,7 @@ void HealingCloneToolWidget::undoSlotSetSourcePoint()
     else
     {
         activateState(HealingCloneState::LASSO_CLONE);
+
         emit signalContinuePolygon();
     }
 }
@@ -461,15 +471,15 @@ void HealingCloneToolWidget::activateState(HealingCloneState state)
         setDragMode(QGraphicsView::NoDrag);
     }
 
-    if (d->currentState == HealingCloneState::LASSO_DRAW_BOUNDARY &&
-        state != HealingCloneState::LASSO_CLONE)
+    if ((d->currentState == HealingCloneState::LASSO_DRAW_BOUNDARY) &&
+        (state != HealingCloneState::LASSO_CLONE))
     {
         emit signalContinuePolygon();
     }
 
     d->currentState = state;
 
-    if (state == HealingCloneState::PAINT)
+    if      (state == HealingCloneState::PAINT)
     {
         changeCursorShape(Qt::blue);
         setCursor(QCursor(Qt::BlankCursor));
@@ -496,7 +506,7 @@ void HealingCloneToolWidget::activateState(HealingCloneState state)
     {
         setCursor(QCursor(Qt::CrossCursor));
     }
-    else if (state ==HealingCloneState::DO_NOTHING)
+    else if (state == HealingCloneState::DO_NOTHING)
     {
         setCursor(QCursor(Qt::ArrowCursor));
     }
@@ -578,14 +588,14 @@ void HealingCloneToolWidget::setDrawCursorPosition(const QPointF& topLeftPos)
 
     // Check if source is outside scene
 
-    bool drawCursorOutsideScene = (topLeftPos.x() < 0)                ||
-                                  (topLeftPos.x() > scene()->width()) ||
-                                  (topLeftPos.y() < 0)                ||
-                                  (topLeftPos.y() > scene()->height());
+    bool drawCursorOutsideScene = ((topLeftPos.x() < 0)                ||
+                                   (topLeftPos.x() > scene()->width()) ||
+                                   (topLeftPos.y() < 0)                ||
+                                   (topLeftPos.y() > scene()->height()));
 
-    if (drawCursorOutsideScene                       ||
-        (d->currentState != HealingCloneState::PAINT &&
-         d->currentState != HealingCloneState::LASSO_CLONE))
+    if (drawCursorOutsideScene                         ||
+        ((d->currentState != HealingCloneState::PAINT) &&
+         (d->currentState != HealingCloneState::LASSO_CLONE)))
     {
         d->drawCursor->setVisible(false);
     }
@@ -607,10 +617,10 @@ void HealingCloneToolWidget::setSourceCursorPosition(const QPointF& topLeftPos)
 
     // Check if source is outside scene
 
-    bool sourceCursorOutsideScene = (topLeftPos.x() < 0)                ||
-                                    (topLeftPos.x() > scene()->width()) ||
-                                    (topLeftPos.y() < 0)                ||
-                                    (topLeftPos.y() > scene()->height());
+    bool sourceCursorOutsideScene = ((topLeftPos.x() < 0)                ||
+                                     (topLeftPos.x() > scene()->width()) ||
+                                     (topLeftPos.y() < 0)                ||
+                                     (topLeftPos.y() > scene()->height()));
 
     if (sourceCursorOutsideScene)
     {
@@ -634,10 +644,10 @@ bool HealingCloneToolWidget::checkPointOutsideScene(const QPoint& globalPoint) c
 
     if (viewport()->width() > scene()->width())
     {
-        pointOutsideScene = (temp.x() < 0)                ||
-                            (temp.x() > scene()->width()) ||
-                            (temp.y() < 0)                ||
-                            (temp.y() > scene()->height());
+        pointOutsideScene  = ((temp.x() < 0)                ||
+                              (temp.x() > scene()->width()) ||
+                              (temp.y() < 0)                ||
+                              (temp.y() > scene()->height()));
     }
     else
     {
@@ -649,10 +659,10 @@ bool HealingCloneToolWidget::checkPointOutsideScene(const QPoint& globalPoint) c
         int bottom         = mapToScene(bottomRight).y();
         int top            = bottom - viewport()->height();
 
-        pointOutsideScene  = (temp.x()     < left)  ||
-                             (temp.x() + 1 > right) ||
-                             (temp.y()     < top)   ||
-                             (temp.y() + 1 > bottom);
+        pointOutsideScene  = ((temp.x()     < left)  ||
+                              (temp.x() + 1 > right) ||
+                              (temp.y()     < top)   ||
+                              (temp.y() + 1 > bottom));
     }
 
     return pointOutsideScene;

@@ -46,7 +46,7 @@ public:
     explicit TwWidget(QWidget* const parent,
                       DInfoInterface* const iface,
                       const QString& toolName);
-    ~TwWidget();
+    ~TwWidget() override;
 
     void updateLabels(const QString& name = QString(),
                       const QString& url = QString()) override;
@@ -57,7 +57,9 @@ Q_SIGNALS:
 
 private Q_SLOTS:
 
-    //void slotReloadAlbumsRequest();
+/*
+    void slotReloadAlbumsRequest();
+*/
 
 private:
 

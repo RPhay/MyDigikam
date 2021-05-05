@@ -6,7 +6,7 @@
  * Date        : 2007-11-15
  * Description : widget item delegate for setup collection view
  *
- * Copyright (C) 2015-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2015-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2007-2008 by Rafael Fernández López <ereslibre at kde dot org>
  * Copyright (C) 2008      by Kevin Ottens <ervin at kde dot org>
  *
@@ -56,7 +56,7 @@ class DWItemDelegatePrivate;
  * with items. For instance you can add push buttons, line edits, etc. to your delegate
  * and use them to modify the state of your model.
  */
-class DIGIKAM_EXPORT DWItemDelegate : public QAbstractItemDelegate
+class DIGIKAM_GUI_EXPORT DWItemDelegate : public QAbstractItemDelegate
 {
     Q_OBJECT
 
@@ -69,21 +69,21 @@ public:
      * @param parent the parent of this delegate
      */
     explicit DWItemDelegate(QAbstractItemView* const itemView, QObject* const parent = nullptr);
-    virtual ~DWItemDelegate();
+    ~DWItemDelegate()                                                                             override;
 
     /**
      * Retrieves the item view this delegate is monitoring.
      *
      * @return the item view this delegate is monitoring
      */
-    QAbstractItemView* itemView() const;
+    QAbstractItemView* itemView()                                                           const;
 
     /**
      * Retrieves the currently focused index. An invalid index if none is focused.
      *
      * @return the current focused index, or QPersistentModelIndex() if none is focused.
      */
-    QPersistentModelIndex focusedIndex() const;
+    QPersistentModelIndex focusedIndex()                                                    const;
 
 protected:
 
@@ -106,7 +106,7 @@ protected:
      * @return the list of newly created widgets which will be used to interact with an item.
      * @see updateItemWidgets()
      */
-    virtual QList<QWidget*> createItemWidgets(const QModelIndex& index) const = 0;
+    virtual QList<QWidget*> createItemWidgets(const QModelIndex& index)                 const = 0;
 
     /**
      * Updates a list of widgets for its use inside of the delegate (painting or
@@ -121,9 +121,9 @@ protected:
      * @param option the current set of style options for the view.
      * @param index the model index of the item currently manipulated.
      */
-    virtual void updateItemWidgets(const QList<QWidget*> widgets,
+    virtual void updateItemWidgets(const QList<QWidget*>& widgets,
                                    const QStyleOptionViewItem& option,
-                                   const QPersistentModelIndex& index) const = 0;
+                                   const QPersistentModelIndex& index)                  const = 0;
 
     /**
      * Sets the list of event @p types that a @p widget will block.
@@ -134,7 +134,7 @@ protected:
      * @param widget the widget which must block events
      * @param types the list of event types the widget must block
      */
-    void setBlockedEventTypes(QWidget* const widget, QList<QEvent::Type> types) const;
+    void setBlockedEventTypes(QWidget* const widget, const QList<QEvent::Type>& types)  const;
 
     /**
      * Retrieves the list of blocked event types for the given widget.
@@ -143,7 +143,7 @@ protected:
      *
      * @return the list of blocked event types, can be empty if no events are blocked.
      */
-    QList<QEvent::Type> blockedEventTypes(QWidget* const widget) const;
+    QList<QEvent::Type> blockedEventTypes(QWidget* const widget)                        const;
 
 private:
 
@@ -152,13 +152,13 @@ private:
 
     DWItemDelegatePrivate* const d;
 
-    Q_PRIVATE_SLOT(d, void slotDWRowsInserted(const QModelIndex&,int,int))
-    Q_PRIVATE_SLOT(d, void slotDWRowsAboutToBeRemoved(const QModelIndex&,int,int))
-    Q_PRIVATE_SLOT(d, void slotDWRowsRemoved(const QModelIndex&,int,int))
-    Q_PRIVATE_SLOT(d, void slotDWDataChanged(const QModelIndex&,const QModelIndex&))
+    Q_PRIVATE_SLOT(d, void slotDWRowsInserted(const QModelIndex&, int, int))
+    Q_PRIVATE_SLOT(d, void slotDWRowsAboutToBeRemoved(const QModelIndex&, int, int))
+    Q_PRIVATE_SLOT(d, void slotDWRowsRemoved(const QModelIndex&, int, int))
+    Q_PRIVATE_SLOT(d, void slotDWDataChanged(const QModelIndex&, const QModelIndex&))
     Q_PRIVATE_SLOT(d, void slotDWLayoutChanged())
     Q_PRIVATE_SLOT(d, void slotDWModelReset())
-    Q_PRIVATE_SLOT(d, void slotDWSelectionChanged(const QItemSelection&,const QItemSelection&))
+    Q_PRIVATE_SLOT(d, void slotDWSelectionChanged(const QItemSelection&, const QItemSelection&))
 };
 
 } // namespace Digikam

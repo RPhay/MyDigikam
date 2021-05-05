@@ -1,8 +1,10 @@
 #
-# Copyright (c) 2010-2020 by Gilles Caulier, <caulier dot gilles at gmail dot com>
+# Copyright (c) 2010-2021 by Gilles Caulier, <caulier dot gilles at gmail dot com>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
+
+APPLY_COMMON_POLICIES()
 
 # OAuth2 library ---------------------------------------------------
 
@@ -11,7 +13,9 @@ remove_definitions(
     -DQT_NO_CAST_FROM_ASCII
     -DQT_NO_CAST_TO_ASCII
     -DQT_NO_URL_CAST_FROM_STRING
-    -DQT_NO_CAST_FROM_BYTEARRAY)
+    -DQT_NO_CAST_FROM_BYTEARRAY
+    -DQT_DISABLE_DEPRECATED_BEFORE=0x050E00
+)
 
 # Remove unwanted warnings from O2 library
 REMOVE_GCC_COMPILER_WARNINGS("-pedantic")
@@ -20,34 +24,43 @@ DISABLE_CLANG_COMPILER_WARNINGS("4.99.99" "-Wno-extra-semi")
 # It also does not export symbols, so export all by default
 unset(CMAKE_CXX_VISIBILITY_PRESET)
 
-# Copied from o2/src/CMakeLists.txt
-set(CMAKE_AUTOMOC ON)
-set(CMAKE_INCLUDE_CURRENT_DIR ON)
+
+if(WIN32)
+    add_definitions(-DO2_DLL_EXPORT)
+endif()
 
 set(libwso2_SRCS
-    ${CMAKE_CURRENT_SOURCE_DIR}/o2/src/o2.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/o2/src/o2reply.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/o2/src/o2replyserver.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/o2/src/o2requestor.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/o2/src/o2simplecrypt.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/o2/src/o0settingsstore.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/o2/src/o0baseauth.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/o2/src/o0abstractstore.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/o2/src/o0globals.h
+    o2/src/o2.cpp
+    o2/src/o2reply.cpp
+    o2/src/o2replyserver.cpp
+    o2/src/o2requestor.cpp
+    o2/src/o2simplecrypt.cpp
+    o2/src/o0settingsstore.cpp
+    o2/src/o0baseauth.cpp
+    o2/src/o0abstractstore.h
+    o2/src/o0globals.h
     # Enable when needed
-    ${CMAKE_CURRENT_SOURCE_DIR}/o2/src/o1.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/o2/src/o1requestor.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/o2/src/o1timedreply.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/o2/src/o1smugmug.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/o2/src/o1twitter.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/o2/src/oxtwitter.cpp
-    #${CMAKE_CURRENT_SOURCE_DIR}/o2/src/o1dropbox.h
-    #${CMAKE_CURRENT_SOURCE_DIR}/o2/src/o1flickr.h
-    #${CMAKE_CURRENT_SOURCE_DIR}/o2/src/o2gft.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/o2/src/o2facebook.cpp
-    #${CMAKE_CURRENT_SOURCE_DIR}/o2/src/o2skydrive.cpp
-    #${CMAKE_CURRENT_SOURCE_DIR}/o2/src/o2hubic.cpp
-    #${CMAKE_CURRENT_SOURCE_DIR}/o2/src/o2uber.cpp
+    o2/src/o1.cpp
+    o2/src/o1requestor.cpp
+    o2/src/o1timedreply.cpp
+    o2/src/o1smugmug.cpp
+    o2/src/o1twitter.h
+    o2/src/oxtwitter.cpp
+    #o2/src/o1dropbox.h
+    #o2/src/o1flickr.h
+    #o2/src/o2gft.cpp
+    o2/src/o2facebook.cpp
+    #o2/src/o2skydrive.cpp
+    #o2/src/o2hubic.cpp
+    #o2/src/o2uber.cpp
+    #o2/src/o2msgraph.cpp
+    #o2/src/o2vimeo.cpp
 )
 
-add_library(libwso2_src OBJECT ${libwso2_SRCS})
+# Used by digikamcore
+add_library(core_libwso2_obj OBJECT ${libwso2_SRCS})
+
+target_compile_definitions(core_libwso2_obj
+                           PRIVATE
+                           digikamcore_EXPORTS
+)

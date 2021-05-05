@@ -7,7 +7,7 @@
  * Description : Integrated, multithread face detection / recognition
  *
  * Copyright (C) 2010-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2012-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -24,11 +24,6 @@
 
 #include "databasewriter.h"
 
-// KDE includes
-
-#include <ksharedconfig.h>
-#include <kconfiggroup.h>
-
 // Local includes
 
 #include "digikam_debug.h"
@@ -36,16 +31,20 @@
 namespace Digikam
 {
 
-DatabaseWriter::DatabaseWriter(FacePipeline::WriteMode mode, FacePipeline::Private* const d)
-    : mode(mode),
-      thumbnailLoadThread(d->createThumbnailLoadThread()),
-      d(d)
+DatabaseWriter::DatabaseWriter(FacePipeline::WriteMode mode, FacePipeline::Private* const dd)
+    : mode               (mode),
+      thumbnailLoadThread(dd->createThumbnailLoadThread()),
+      d                  (dd)
+{
+}
+
+DatabaseWriter::~DatabaseWriter()
 {
 }
 
 void DatabaseWriter::process(FacePipelineExtendedPackage::Ptr package)
 {
-    if (package->databaseFaces.isEmpty())
+    if      (package->databaseFaces.isEmpty())
     {
         // Detection / Recognition
 
@@ -117,7 +116,7 @@ void DatabaseWriter::process(FacePipelineExtendedPackage::Ptr package)
 
         for (it = package->databaseFaces.begin() ; it != package->databaseFaces.end() ; ++it)
         {
-            if (it->roles & FacePipelineFaceTagsIface::ForConfirmation)
+            if      (it->roles & FacePipelineFaceTagsIface::ForConfirmation)
             {
                 FacePipelineFaceTagsIface confirmed = FacePipelineFaceTagsIface(utils.confirmName(*it, it->assignedTagId, it->assignedRegion));
                 confirmed.roles                    |= FacePipelineFaceTagsIface::Confirmed | FacePipelineFaceTagsIface::ForTraining;
@@ -136,8 +135,12 @@ void DatabaseWriter::process(FacePipelineExtendedPackage::Ptr package)
                 else if (it->assignedRegion.isValid())
                 {
                     add << FacePipelineFaceTagsIface(utils.changeRegion(*it, it->assignedRegion));
+                }
+                else if (FaceTags::isPerson(it->assignedTagId))
+                {
+                    // Change Tag operation.
 
-                    // not implemented: changing tag id
+                    add << FacePipelineFaceTagsIface(utils.changeTag(*it, it->assignedTagId, package->info));
                 }
                 else
                 {

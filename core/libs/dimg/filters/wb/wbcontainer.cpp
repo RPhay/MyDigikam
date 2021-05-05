@@ -6,7 +6,7 @@
  * Date        : 2007-16-01
  * Description : white balance color correction.
  *
- * Copyright (C) 2007-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2007-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2008      by Guillaume Castagnino <casta at xwing dot info>
  * Copyright (C) 2010      by Martin Klapetek <martin dot klapetek at gmail dot com>
  *
@@ -35,14 +35,14 @@ namespace Digikam
  * Neutral color temperature settings.
  */
 WBContainer::WBContainer()
-    : black(0.0),
+    : black         (0.0),
       expositionMain(0.0),
       expositionFine(0.0),
-      temperature(6500.0),
-      green(1.0),
-      dark(0.5),
-      gamma(1.0),
-      saturation(1.0)
+      temperature   (6500.0),
+      green         (1.0),
+      dark          (0.0),
+      gamma         (1.0),
+      saturation    (1.0)
 {
 }
 
@@ -88,6 +88,7 @@ WBContainer WBContainer::fromFilterAction(const FilterAction& action, const QStr
     settings.dark           = action.parameter(prefix + QLatin1String("dark"),           settings.dark);
     settings.gamma          = action.parameter(prefix + QLatin1String("gamma"),          settings.gamma);
     settings.saturation     = action.parameter(prefix + QLatin1String("saturation"),     settings.saturation);
+
     return settings;
 }
 

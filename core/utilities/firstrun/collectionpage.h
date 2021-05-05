@@ -6,7 +6,7 @@
  * Date        : 2009-28-04
  * Description : first run assistant dialog
  *
- * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -43,7 +43,7 @@ class CollectionPage : public DWizardPage
 public:
 
     explicit CollectionPage(QWizard* const dlg);
-    ~CollectionPage();
+    ~CollectionPage() override;
 
     bool checkSettings();
     void saveSettings();

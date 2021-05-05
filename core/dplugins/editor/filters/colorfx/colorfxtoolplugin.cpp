@@ -6,7 +6,7 @@
  * Date        : 2018-07-30
  * Description : image editor plugin to apply color effects.
  *
- * Copyright (C) 2018-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2018-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -49,7 +49,7 @@ ColorFXToolPlugin::~ColorFXToolPlugin()
 
 QString ColorFXToolPlugin::name() const
 {
-    return i18n("Color Effects");
+    return i18nc("@title", "Color Effects");
 }
 
 QString ColorFXToolPlugin::iid() const
@@ -64,12 +64,12 @@ QIcon ColorFXToolPlugin::icon() const
 
 QString ColorFXToolPlugin::description() const
 {
-    return i18n("A tool to apply color effects to an image");
+    return i18nc("@info", "A tool to apply color effects to an image");
 }
 
 QString ColorFXToolPlugin::details() const
 {
-    return i18n("<p>This Image Editor tool can apply color effects to an image.</p>");
+    return i18nc("@info", "This Image Editor tool can apply color effects to an image.");
 }
 
 QList<DPluginAuthor> ColorFXToolPlugin::authors() const
@@ -80,7 +80,7 @@ QList<DPluginAuthor> ColorFXToolPlugin::authors() const
                              QString::fromUtf8("(C) 2004-2005"))
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2006-2020"))
+                             QString::fromUtf8("(C) 2006-2021"))
             ;
 }
 

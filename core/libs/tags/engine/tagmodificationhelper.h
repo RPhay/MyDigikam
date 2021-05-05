@@ -7,7 +7,7 @@
  * Description : helper class used to modify tag albums in views
  *
  * Copyright (C) 2009-2010 by Johannes Wienke <languitar at semipol dot de>
- * Copyright (C) 2010-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2010-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -57,7 +57,7 @@ public:
     /**
      * Constructor.
      *
-     * @param parent parent for qt parent child mechanism
+     * @param parent the parent for qt parent child mechanism
      * @param dialogParent paret widget for dialogs displayed by this object
      */
     explicit TagModificationHelper(QObject* const parent, QWidget* const dialogParent);
@@ -65,7 +65,14 @@ public:
     /**
      * Destructor.
      */
-    virtual ~TagModificationHelper();
+    ~TagModificationHelper() override;
+
+    /**
+     * Returns the tag bound with bindTag. The given QObject shall be
+     * a QAction, but for convenience the given object
+     * will be checked with qobject_cast first, so you can pass QObject::sender().
+     */
+    TAlbum* boundTag(QObject* action) const;
 
 public Q_SLOTS:
 
@@ -75,7 +82,7 @@ public Q_SLOTS:
      * title and optionally an icon are given, then these values will be used
      * directly to create the tag.
      *
-     * @param parent parent tag album under which to create the new tags. May be
+     * @param parent the parent tag album under which to create the new tags. May be
      *               0 to use the root album
      * @param title if this isn't an empty string, then this tag name is
      *              suggested
@@ -100,7 +107,11 @@ public Q_SLOTS:
      * @param tag the tag to change
      */
     void slotTagEdit(TAlbum* tag);
-    void slotTagEdit(); /// must use bindTag and a QAction
+
+    /**
+     * must use bindTag and a QAction
+     */
+    void slotTagEdit();
 
     /**
      * Deletes the given tag and after prompting the user for this.
@@ -117,7 +128,7 @@ public Q_SLOTS:
     /**
      * Delete multiple tags and prompt user only once for all
      *
-     * @param tags tags to be deleted, without root tag
+     * @param tags the tags to be deleted, without root tag
      */
     void slotMultipleTagDel(QList<TAlbum*>& tags);
 
@@ -137,7 +148,7 @@ public Q_SLOTS:
     /**
      * must use bindTag and a QAction
      */
-    void slotFaceTagDelete(); /// must use bindTag and a QAction
+    void slotFaceTagDelete();
 
     /**
      * Delete multiple face tags and prompt user only once for all
@@ -176,6 +187,8 @@ public Q_SLOTS:
      */
     void slotMultipleTagsToFaceTags();
 
+public:
+
     /**
      * Sets the tag that the given action operates on.
      * You must call bindTag and then connect the action's triggered
@@ -185,20 +198,13 @@ public Q_SLOTS:
     void bindTag(QAction* action, TAlbum* parent) const;
 
     /**
-     * Returns the tag bound with bindTag. The given QObject shall be
-     * a QAction, but for convenience the given object
-     * will be checked with qobject_cast first, so you can pass QObject::sender().
-     */
-    TAlbum* boundTag(QObject* action) const;
-
-    /**
      * Set QVector's pointer into action's data. Make sure that QVector is not
      * a local object and it's not destroyed before boundMultipleTags are called
      *
      * @param action    - action to store pointer
      * @param tags      - QVector pointer to be stored
      */
-    void bindMultipleTags(QAction* action, QList<TAlbum*> tags);
+    void bindMultipleTags(QAction* action, const QList<TAlbum*>& tags);
 
     /**
      * Return QVector pointer bound with bindMultipleTags. Use when context menu

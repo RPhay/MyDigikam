@@ -6,7 +6,7 @@
  * Date        : 2004-11-17
  * Description : a tab to display item metadata information
  *
- * Copyright (C) 2004-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2004-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -30,6 +30,7 @@
 #include <QPixmap>
 #include <QFileInfo>
 #include <QVBoxLayout>
+#include <QScopedPointer>
 
 // KDE includes
 
@@ -45,6 +46,7 @@
 #include "makernotewidget.h"
 #include "iptcwidget.h"
 #include "xmpwidget.h"
+#include "exiftoolwidget.h"
 
 namespace Digikam
 {
@@ -55,17 +57,19 @@ public:
 
     enum MetadataTab
     {
-        EXIF=0,
+        EXIF       = 0,
         MAKERNOTE,
         IPTC,
-        XMP
+        XMP,
+        EXIFTOOL
     };
 
     explicit Private()
-      : exifWidget(nullptr),
+      : exifWidget     (nullptr),
         makernoteWidget(nullptr),
-        iptcWidget(nullptr),
-        xmpWidget(nullptr)
+        iptcWidget     (nullptr),
+        xmpWidget      (nullptr),
+        exifToolWidget (nullptr)
     {
     }
 
@@ -73,15 +77,16 @@ public:
     MakerNoteWidget* makernoteWidget;
     IptcWidget*      iptcWidget;
     XmpWidget*       xmpWidget;
+    ExifToolWidget*  exifToolWidget;
 };
 
 ItemPropertiesMetadataTab::ItemPropertiesMetadataTab(QWidget* const parent)
     : QTabWidget(parent),
-      d(new Private)
+      d         (new Private)
 {
     // Exif tab area ---------------------------------------
 
-    d->exifWidget = new ExifWidget(this);
+    d->exifWidget      = new ExifWidget(this);
     insertTab(Private::EXIF, d->exifWidget, i18n("EXIF"));
 
     // Makernote tab area ----------------------------------
@@ -91,12 +96,12 @@ ItemPropertiesMetadataTab::ItemPropertiesMetadataTab(QWidget* const parent)
 
     // IPTC tab area ---------------------------------------
 
-    d->iptcWidget = new IptcWidget(this);
+    d->iptcWidget      = new IptcWidget(this);
     insertTab(Private::IPTC, d->iptcWidget, i18n("IPTC"));
 
     // XMP tab area ----------------------------------------
 
-    d->xmpWidget = new XmpWidget(this);
+    d->xmpWidget       = new XmpWidget(this);
 
     if (DMetadata::supportXmp())
     {
@@ -106,6 +111,16 @@ ItemPropertiesMetadataTab::ItemPropertiesMetadataTab(QWidget* const parent)
     {
         d->xmpWidget->hide();
     }
+
+    // ExifTool tab area ----------------------------------
+
+    d->exifToolWidget = new ExifToolWidget(this);
+    insertTab(Private::EXIFTOOL, d->exifToolWidget, QLatin1String("ExifTool")); // No i18n here.
+
+    connect(d->exifToolWidget, SIGNAL(signalSetupExifTool()),
+            this, SIGNAL(signalSetupExifTool()));
+
+    // ---
 
     connect(d->exifWidget, SIGNAL(signalSetupMetadataFilters()),
             this, SLOT(slotSetupMetadataFilters()));
@@ -157,6 +172,7 @@ void ItemPropertiesMetadataTab::readSettings(const KConfigGroup& group)
     d->makernoteWidget->setCurrentItemByKey(group.readEntry("Current MAKERNOTE Item", QString()));
     d->iptcWidget->setCurrentItemByKey(group.readEntry("Current IPTC Item",           QString()));
     d->xmpWidget->setCurrentItemByKey(group.readEntry("Current XMP Item",             QString()));
+    d->exifToolWidget->setCurrentItemByKey(group.readEntry("Current ExifTool Item",   QString()));
 
     loadFilters();
 }
@@ -181,49 +197,69 @@ void ItemPropertiesMetadataTab::writeSettings(KConfigGroup& group)
     group.writeEntry("Current MAKERNOTE Item",      d->makernoteWidget->getCurrentItemKey());
     group.writeEntry("Current IPTC Item",           d->iptcWidget->getCurrentItemKey());
     group.writeEntry("Current XMP Item",            d->xmpWidget->getCurrentItemKey());
+    group.writeEntry("Current ExifTool Item",       d->exifToolWidget->getCurrentItemKey());
 }
 
 void ItemPropertiesMetadataTab::setCurrentURL(const QUrl& url)
 {
+    d->exifToolWidget->loadFromUrl(url);
+    d->exifToolWidget->setEnabled(true);
+
     if (url.isEmpty())
     {
         d->exifWidget->loadFromURL(url);
         d->makernoteWidget->loadFromURL(url);
         d->iptcWidget->loadFromURL(url);
         d->xmpWidget->loadFromURL(url);
-        setEnabled(false);
+        d->exifToolWidget->loadFromUrl(url);
+        d->exifWidget->setEnabled(false);
+        d->makernoteWidget->setEnabled(false);
+        d->iptcWidget->setEnabled(false);
+        d->xmpWidget->setEnabled(false);
         return;
     }
 
-    setEnabled(true);
-    DMetadata metadata(url.toLocalFile());
+    d->exifWidget->setEnabled(true);
+    d->makernoteWidget->setEnabled(true);
+    d->iptcWidget->setEnabled(true);
+    d->xmpWidget->setEnabled(true);
+    QScopedPointer<DMetadata> metadata(new DMetadata(url.toLocalFile()));
 
-    d->exifWidget->loadFromData(url.fileName(), metadata);
-    d->makernoteWidget->loadFromData(url.fileName(), metadata);
-    d->iptcWidget->loadFromData(url.fileName(), metadata);
-    d->xmpWidget->loadFromData(url.fileName(), metadata);
+    d->exifWidget->loadFromData(url.fileName(),      *metadata);
+    d->makernoteWidget->loadFromData(url.fileName(), *metadata);
+    d->iptcWidget->loadFromData(url.fileName(),      *metadata);
+    d->xmpWidget->loadFromData(url.fileName(),       *metadata);
 }
 
-void ItemPropertiesMetadataTab::setCurrentData(const DMetadata& metaData, const QString& filename)
+void ItemPropertiesMetadataTab::setCurrentData(DMetadata* const metaData, const QUrl& url)
 {
-    DMetadata data = metaData;
+    d->exifToolWidget->loadFromUrl(url);
+    d->exifToolWidget->setEnabled(true);
 
-    if (!data.hasExif() && !data.hasIptc() && !data.hasXmp())
+    QScopedPointer<DMetadata> data(new DMetadata(metaData->data()));
+
+    if (!data->hasExif() && !data->hasIptc() && !data->hasXmp())
     {
-        d->exifWidget->loadFromData(filename, data);
-        d->makernoteWidget->loadFromData(filename, data);
-        d->iptcWidget->loadFromData(filename, data);
-        d->xmpWidget->loadFromData(filename, data);
-        setEnabled(false);
+        d->exifWidget->loadFromData(url.fileName(),      *data);
+        d->makernoteWidget->loadFromData(url.fileName(), *data);
+        d->iptcWidget->loadFromData(url.fileName(),      *data);
+        d->xmpWidget->loadFromData(url.fileName(),       *data);
+        d->exifWidget->setEnabled(false);
+        d->makernoteWidget->setEnabled(false);
+        d->iptcWidget->setEnabled(false);
+        d->xmpWidget->setEnabled(false);
         return;
     }
 
-    setEnabled(true);
+    d->exifWidget->setEnabled(true);
+    d->makernoteWidget->setEnabled(true);
+    d->iptcWidget->setEnabled(true);
+    d->xmpWidget->setEnabled(true);
 
-    d->exifWidget->loadFromData(filename, data);
-    d->makernoteWidget->loadFromData(filename, data);
-    d->iptcWidget->loadFromData(filename, data);
-    d->xmpWidget->loadFromData(filename, data);
+    d->exifWidget->loadFromData(url.fileName(),      *data);
+    d->makernoteWidget->loadFromData(url.fileName(), *data);
+    d->iptcWidget->loadFromData(url.fileName(),      *data);
+    d->xmpWidget->loadFromData(url.fileName(),       *data);
 }
 
 } // namespace Digikam

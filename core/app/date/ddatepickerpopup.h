@@ -8,7 +8,7 @@
  *
  * Copyright (C) 2004      by Bram Schoenmakers <bramschoenmakers at kde dot nl>
  * Copyright (C) 2006      by Mikolaj Machowski <mikmach at wp dot pl>
- * Copyright (C) 2011-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2011-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -78,7 +78,7 @@ public:
     explicit DDatePickerPopup(Items items,
                               const QDate& date = QDate::currentDate(),
                               QWidget* const parent = nullptr);
-    ~DDatePickerPopup();
+    ~DDatePickerPopup()             override;
 
     /**
      * @return A pointer to the private variable mDatePicker, an instance of
@@ -99,7 +99,7 @@ public:
     /**
      * @return Returns the bitwise result of the active items in the popup.
      */
-    int items() const;
+    int items()               const;
 
 Q_SIGNALS:
 
@@ -131,7 +131,10 @@ private:
 
 private:
 
-    DDatePickerPopup(); // Disable
+    // Disable
+    DDatePickerPopup() = delete;
+
+private:
 
     class Private;
     Private* const d;

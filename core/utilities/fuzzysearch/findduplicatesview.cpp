@@ -7,7 +7,7 @@
  * Description : Find Duplicates View.
  *
  * Copyright (C) 2016-2017 by Mario Frank <mario dot frank at uni minus potsdam dot de>
- * Copyright (C) 2008-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2008-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2008-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  * Copyright (C) 2009-2012 by Andi Clemens <andi dot clemens at gmail dot com>
  *
@@ -69,20 +69,21 @@ class Q_DECL_HIDDEN FindDuplicatesView::Private
 public:
 
     explicit Private()
-      : includeAlbumsLabel(nullptr),
-        similarityLabel(nullptr),
-        restrictResultsLabel(nullptr),
-        albumTagRelationLabel(nullptr),
-        similarityRange(nullptr),
+      : includeAlbumsLabel     (nullptr),
+        similarityLabel        (nullptr),
+        restrictResultsLabel   (nullptr),
+        albumTagRelationLabel  (nullptr),
+        similarityRange        (nullptr),
         searchResultRestriction(nullptr),
-        albumTagRelation(nullptr),
-        scanDuplicatesBtn(nullptr),
-        updateFingerPrtBtn(nullptr),
-        listView(nullptr),
-        progressItem(nullptr),
-        albumSelectors(nullptr),
-        settings(nullptr),
-        active(false)
+        albumTagRelation       (nullptr),
+        findDuplicatesBtn      (nullptr),
+        updateFingerPrtBtn     (nullptr),
+        removeDuplicatesBtn    (nullptr),
+        listView               (nullptr),
+        progressItem           (nullptr),
+        albumSelectors         (nullptr),
+        settings               (nullptr),
+        active                 (false)
     {
     }
 
@@ -92,12 +93,12 @@ public:
     QLabel*              albumTagRelationLabel;
 
     DIntRangeBox*        similarityRange;
-
     SqueezedComboBox*    searchResultRestriction;
     SqueezedComboBox*    albumTagRelation;
 
-    QPushButton*         scanDuplicatesBtn;
+    QPushButton*         findDuplicatesBtn;
     QPushButton*         updateFingerPrtBtn;
+    QPushButton*         removeDuplicatesBtn;
 
     FindDuplicatesAlbum* listView;
 
@@ -112,7 +113,7 @@ public:
 
 FindDuplicatesView::FindDuplicatesView(QWidget* const parent)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     setAttribute(Qt::WA_DeleteOnClose);
 
@@ -125,13 +126,13 @@ FindDuplicatesView::FindDuplicatesView(QWidget* const parent)
     d->listView           = new FindDuplicatesAlbum();
     d->listView->setSortingEnabled(false);
 
-    d->updateFingerPrtBtn = new QPushButton(i18n("Update fingerprints"));
+    d->updateFingerPrtBtn = new QPushButton(i18nc("@action", "Update fingerprints"));
     d->updateFingerPrtBtn->setIcon(QIcon::fromTheme(QLatin1String("run-build")));
-    d->updateFingerPrtBtn->setWhatsThis(i18n("Use this button to update all image fingerprints."));
+    d->updateFingerPrtBtn->setWhatsThis(i18nc("@info", "Use this button to update all image fingerprints."));
 
-    d->scanDuplicatesBtn  = new QPushButton(i18n("Find duplicates"));
-    d->scanDuplicatesBtn->setIcon(QIcon::fromTheme(QLatin1String("edit-find")));
-    d->scanDuplicatesBtn->setWhatsThis(i18n("Use this button to scan the selected albums for "
+    d->findDuplicatesBtn  = new QPushButton(i18nc("@action", "Find duplicates"));
+    d->findDuplicatesBtn->setIcon(QIcon::fromTheme(QLatin1String("edit-find")));
+    d->findDuplicatesBtn->setWhatsThis(i18nc("@info", "Use this button to scan the selected albums for "
                                             "duplicate items."));
 
     // ---------------------------------------------------------------
@@ -146,8 +147,7 @@ FindDuplicatesView::FindDuplicatesView(QWidget* const parent)
     if (d->settings)
     {
         d->similarityRange->setRange(d->settings->getMinimumSimilarityBound(), 100);
-        d->similarityRange->setInterval(d->settings->getDuplicatesSearchLastMinSimilarity(),
-                                        d->settings->getDuplicatesSearchLastMaxSimilarity());
+        updateSimilarityRangeInterval();
     }
     else
     {
@@ -155,20 +155,20 @@ FindDuplicatesView::FindDuplicatesView(QWidget* const parent)
         d->similarityRange->setInterval(40, 100);
     }
 
-    d->similarityLabel         = new QLabel(i18n("Similarity range:"));
+    d->similarityLabel         = new QLabel(i18nc("@label", "Similarity range:"));
     d->similarityLabel->setBuddy(d->similarityRange);
 
-    d->restrictResultsLabel    = new QLabel(i18n("Restriction:"));
+    d->restrictResultsLabel    = new QLabel(i18nc("@label", "Restriction:"));
     d->restrictResultsLabel->setBuddy(d->searchResultRestriction);
 
     d->searchResultRestriction = new SqueezedComboBox();
-    d->searchResultRestriction->addSqueezedItem(i18nc("@label:listbox", "None"),                        HaarIface::DuplicatesSearchRestrictions::None);
-    d->searchResultRestriction->addSqueezedItem(i18nc("@label:listbox", "Restrict to reference album"), HaarIface::DuplicatesSearchRestrictions::SameAlbum);
-    d->searchResultRestriction->addSqueezedItem(i18nc("@label:listbox", "Exclude reference album"),     HaarIface::DuplicatesSearchRestrictions::DifferentAlbum);
-    d->searchResultRestriction->setToolTip(i18n("Use this option to restrict the duplicate search "
-                                                "with some criteria, as to limit search to the album "
-                                                "of reference image, or to exclude the album of "
-                                                "reference image of the search."));
+    d->searchResultRestriction->addSqueezedItem(i18nc("@label:listbox similarity restriction", "None"),                        HaarIface::DuplicatesSearchRestrictions::None);
+    d->searchResultRestriction->addSqueezedItem(i18nc("@label:listbox similarity restriction", "Restrict to reference album"), HaarIface::DuplicatesSearchRestrictions::SameAlbum);
+    d->searchResultRestriction->addSqueezedItem(i18nc("@label:listbox similarity restriction", "Exclude reference album"),     HaarIface::DuplicatesSearchRestrictions::DifferentAlbum);
+    d->searchResultRestriction->setToolTip(i18nc("@info", "Use this option to restrict the duplicate search "
+                                                          "with some criteria, as to limit search to the album "
+                                                          "of reference image, or to exclude the album of "
+                                                          "reference image of the search."));
 
     // Load the last choice from application settings.
 
@@ -178,23 +178,34 @@ FindDuplicatesView::FindDuplicatesView(QWidget* const parent)
 
     d->searchResultRestriction->setCurrentIndex(d->searchResultRestriction->findData(restrictions));
 
-    d->albumTagRelationLabel = new QLabel(i18n("Restrict to:"));
+    d->albumTagRelationLabel = new QLabel(i18nc("@label", "Restrict to:"));
     d->albumTagRelationLabel->setBuddy(d->albumTagRelation);
 
+    /*
+     * only selected tab   => search duplicates in albums or tags, use the viewed tab and ignore the other tab.
+     * one of              => search duplicates being in the selected albums or having the selected tags, use checkbox selection.
+     * both                => search duplicates that are both in one of the selected albums and have at least one of the selected tags.
+     * albums but not tags => search only duplicates in the selected albums that do not have the selected tags.
+     * tags but not albums => vice versa.
+     */
+
     d->albumTagRelation      = new SqueezedComboBox();
-    d->albumTagRelation->addSqueezedItem(i18nc("@label:listbox", "Only selected tab") ,  HaarIface::AlbumTagRelation::NoMix);
-    d->albumTagRelation->addSqueezedItem(i18nc("@label:listbox", "One of"),              HaarIface::AlbumTagRelation::Union);
-    d->albumTagRelation->addSqueezedItem(i18nc("@label:listbox", "Both"),                HaarIface::AlbumTagRelation::Intersection);
-    d->albumTagRelation->addSqueezedItem(i18nc("@label:listbox", "Albums but not tags"), HaarIface::AlbumTagRelation::AlbumExclusive);
-    d->albumTagRelation->addSqueezedItem(i18nc("@label:listbox", "Tags but not albums"), HaarIface::AlbumTagRelation::TagExclusive);
+    d->albumTagRelation->addSqueezedItem(i18nc("@label:listbox similarity album tag relation", "Only selected tab") ,  HaarIface::AlbumTagRelation::NoMix);
+    d->albumTagRelation->addSqueezedItem(i18nc("@label:listbox similarity album tag relation", "One of"),              HaarIface::AlbumTagRelation::Union);
+    d->albumTagRelation->addSqueezedItem(i18nc("@label:listbox similarity album tag relation", "Both"),                HaarIface::AlbumTagRelation::Intersection);
+    d->albumTagRelation->addSqueezedItem(i18nc("@label:listbox similarity album tag relation", "Albums but not tags"), HaarIface::AlbumTagRelation::AlbumExclusive);
+    d->albumTagRelation->addSqueezedItem(i18nc("@label:listbox similarity album tag relation", "Tags but not albums"), HaarIface::AlbumTagRelation::TagExclusive);
     d->albumTagRelation->setCurrentIndex(ApplicationSettings::instance()->getDuplicatesAlbumTagRelation());
 
-    d->albumTagRelation->setToolTip(i18n("Use this option to decide about the relation of the selected albums and tags.<br/>"
-                                         "<i>One of</i> means that the images are either in the selected albums or tags.<br/>"
-                                         "<i>Both</i> means that the images are both in the selected albums and tags.<br/>"
-                                         "<i>Albums but not tags</i> means that images must be in the selected albums but not tags.<br/>"
-                                         "<i>Tags but not albums</i> means that images must be in the selected tags but not albums.<br/>"
-                                         "<i>Only selected tab</i> means that only the selected tab is used."));
+    QString tip = i18nc("@info",
+                        "Use this option to decide about the relation of the selected albums and tags.\n"
+                        "\"One of\" means that the images are either in the selected albums or tags.\n"
+                        "\"Both\" means that the images are both in the selected albums and tags.\n"
+                        "\"Albums but not tags\" means that images must be in the selected albums but not tags.\n"
+                        "\"Tags but not albums\" means that images must be in the selected tags but not albums.\n"
+                        "\"Only selected tab\" means that only the selected tab is used.");
+
+    d->albumTagRelation->setToolTip(tip);
 
     // Load the last choice from application settings.
 
@@ -203,6 +214,12 @@ FindDuplicatesView::FindDuplicatesView(QWidget* const parent)
                       : HaarIface::AlbumTagRelation::NoMix;
 
     d->albumTagRelation->setCurrentIndex(d->albumTagRelation->findData(relation));
+
+    d->removeDuplicatesBtn   = new QPushButton(i18nc("@action", "Remove Duplicates"));
+    d->removeDuplicatesBtn->setIcon(QIcon::fromTheme(QLatin1String("user-trash")));
+    d->removeDuplicatesBtn->setWhatsThis(i18nc("@info", "Use this button to delete all duplicate images."));
+
+    d->removeDuplicatesBtn->setEnabled(false);
 
     // ---------------------------------------------------------------
 
@@ -216,7 +233,9 @@ FindDuplicatesView::FindDuplicatesView(QWidget* const parent)
     mainLayout->addWidget(d->restrictResultsLabel,    4, 0, 1,  2);
     mainLayout->addWidget(d->searchResultRestriction, 4, 2, 1, -1);
     mainLayout->addWidget(d->updateFingerPrtBtn,      5, 0, 1, -1);
-    mainLayout->addWidget(d->scanDuplicatesBtn,       6, 0, 1, -1);
+    mainLayout->addWidget(d->findDuplicatesBtn,       6, 0, 1, -1);
+    mainLayout->addWidget(d->removeDuplicatesBtn,     7, 0, 1, -1);
+
     mainLayout->setRowStretch(0, 10);
     mainLayout->setColumnStretch(2, 10);
     mainLayout->setContentsMargins(spacing, spacing, spacing, spacing);
@@ -228,8 +247,11 @@ FindDuplicatesView::FindDuplicatesView(QWidget* const parent)
     connect(d->updateFingerPrtBtn, SIGNAL(clicked()),
             this, SLOT(slotUpdateFingerPrints()));
 
-    connect(d->scanDuplicatesBtn, SIGNAL(clicked()),
+    connect(d->findDuplicatesBtn, SIGNAL(clicked()),
             this, SLOT(slotFindDuplicates()));
+
+    connect(d->removeDuplicatesBtn, SIGNAL(clicked()),
+            this, SLOT(slotRemoveDuplicates()));
 
     connect(d->listView, SIGNAL(itemSelectionChanged()),
             this, SLOT(slotDuplicatesAlbumActived()));
@@ -271,6 +293,8 @@ void FindDuplicatesView::initAlbumUpdateConnections()
 void FindDuplicatesView::setActive(bool val)
 {
     d->active = val;
+    slotCheckForValidSettings();
+    d->removeDuplicatesBtn->setEnabled(false);
     QTimer::singleShot(250, this, SLOT(slotSelectFirstItem()));
 }
 
@@ -378,8 +402,7 @@ void FindDuplicatesView::slotAlbumAdded(Album* a)
         salbum->setExtraData(this, item);
     }
 
-    d->similarityRange->setInterval(d->settings->getDuplicatesSearchLastMinSimilarity(),
-                                    d->settings->getDuplicatesSearchLastMaxSimilarity());
+    updateSimilarityRangeInterval();
 }
 
 void FindDuplicatesView::slotAlbumDeleted(Album* a)
@@ -399,8 +422,7 @@ void FindDuplicatesView::slotAlbumDeleted(Album* a)
         delete item;
     }
 
-    d->similarityRange->setInterval(d->settings->getDuplicatesSearchLastMinSimilarity(),
-                                    d->settings->getDuplicatesSearchLastMaxSimilarity());
+    updateSimilarityRangeInterval();
 }
 
 void FindDuplicatesView::slotSearchUpdated(SAlbum* a)
@@ -432,8 +454,9 @@ void FindDuplicatesView::slotClear()
 void FindDuplicatesView::enableControlWidgets(bool val)
 {
     d->searchResultRestriction->setEnabled(val);
+    d->removeDuplicatesBtn->setEnabled(val);
     d->updateFingerPrtBtn->setEnabled(val);
-    d->scanDuplicatesBtn->setEnabled(val);
+    d->findDuplicatesBtn->setEnabled(val);
     d->albumTagRelation->setEnabled(val);
     d->similarityRange->setEnabled(val);
     d->albumSelectors->setEnabled(val);
@@ -478,6 +501,18 @@ void FindDuplicatesView::slotFindDuplicates()
 
     connect(finder, SIGNAL(signalComplete()),
             this, SLOT(slotComplete()));
+
+    connect(finder, &DuplicatesFinder::signalComplete,
+            this, [this]
+            {
+                d->removeDuplicatesBtn->setEnabled(true);
+            });
+
+    connect(finder, &DuplicatesFinder::signalCanceled,
+            this, [this]
+            {
+                d->removeDuplicatesBtn->setEnabled(false);
+            });
 
     finder->start();
 }
@@ -530,7 +565,7 @@ void FindDuplicatesView::slotDuplicatesAlbumActived()
 void FindDuplicatesView::slotCheckForValidSettings()
 {
     bool valid = (d->albumSelectors->selectedAlbums().count() || d->albumSelectors->selectedTags().count());
-    d->scanDuplicatesBtn->setEnabled(valid);
+    d->findDuplicatesBtn->setEnabled(valid);
 }
 
 void FindDuplicatesView::slotUpdateFingerPrints()
@@ -539,38 +574,18 @@ void FindDuplicatesView::slotUpdateFingerPrints()
     tool->start();
 }
 
-void FindDuplicatesView::slotSetSelectedAlbum(PAlbum* album)
-{
-    if (!album)
-    {
-        return;
-    }
-
-    resetAlbumsAndTags();
-
-    // @ODD: Why is singleton set to true? resetAlbumsAndTags already clears the selection.
-
-    d->albumSelectors->setAlbumSelected(album, true);
-    d->albumSelectors->setTypeSelection(AlbumSelectors::AlbumType::PhysAlbum);
-    d->albumTagRelation->setCurrentIndex(d->albumTagRelation->findData(HaarIface::AlbumTagRelation::NoMix));
-    d->searchResultRestriction->setCurrentIndex(d->searchResultRestriction->findData(HaarIface::DuplicatesSearchRestrictions::None));
-    slotCheckForValidSettings();
-
-    if (d->scanDuplicatesBtn->isEnabled())
-    {
-        slotFindDuplicates();
-    }
-}
-
 void FindDuplicatesView::slotSetSelectedAlbums(const QList<PAlbum*>& albums)
 {
     // @ODD: Why is singleton set to true? resetAlbumsAndTags already clears the selection.
 
     resetAlbumsAndTags();
 
+    const AlbumSelectors::SelectionType type = albums.size() == 1 ? AlbumSelectors::SingleSelection
+                                                                  : AlbumSelectors::MultipleSelection;
+
     foreach (PAlbum* const album, albums)
     {
-        d->albumSelectors->setAlbumSelected(album, false);
+        d->albumSelectors->setAlbumSelected(album, type);
     }
 
     d->albumSelectors->setTypeSelection(AlbumSelectors::AlbumType::PhysAlbum);
@@ -578,7 +593,7 @@ void FindDuplicatesView::slotSetSelectedAlbums(const QList<PAlbum*>& albums)
     d->searchResultRestriction->setCurrentIndex(d->searchResultRestriction->findData(HaarIface::DuplicatesSearchRestrictions::None));
     slotCheckForValidSettings();
 
-    if (d->scanDuplicatesBtn->isEnabled())
+    if (d->findDuplicatesBtn->isEnabled())
     {
         slotFindDuplicates();
     }
@@ -588,9 +603,12 @@ void FindDuplicatesView::slotSetSelectedAlbums(const QList<TAlbum*>& albums)
 {
     resetAlbumsAndTags();
 
+    const AlbumSelectors::SelectionType type = albums.size() == 1 ? AlbumSelectors::SingleSelection
+                                                                  : AlbumSelectors::MultipleSelection;
+
     foreach (TAlbum* const album, albums)
     {
-        d->albumSelectors->setTagSelected(album, false);
+        d->albumSelectors->setTagSelected(album, type);
     }
 
     d->albumSelectors->setTypeSelection(AlbumSelectors::AlbumType::TagsAlbum);
@@ -598,16 +616,27 @@ void FindDuplicatesView::slotSetSelectedAlbums(const QList<TAlbum*>& albums)
     d->searchResultRestriction->setCurrentIndex(d->searchResultRestriction->findData(HaarIface::DuplicatesSearchRestrictions::None));
     slotCheckForValidSettings();
 
-    if (d->scanDuplicatesBtn->isEnabled())
+    if (d->findDuplicatesBtn->isEnabled())
     {
         slotFindDuplicates();
     }
+}
+
+void FindDuplicatesView::updateSimilarityRangeInterval()
+{
+    d->similarityRange->setInterval(d->settings->getDuplicatesSearchLastMinSimilarity(),
+                                    d->settings->getDuplicatesSearchLastMaxSimilarity());
 }
 
 void FindDuplicatesView::resetAlbumsAndTags()
 {
     d->albumSelectors->resetSelection();
     slotCheckForValidSettings();
+}
+
+void FindDuplicatesView::slotRemoveDuplicates()
+{
+    d->listView->removeDuplicates();
 }
 
 } // namespace Digikam

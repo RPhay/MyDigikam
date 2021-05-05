@@ -41,7 +41,7 @@ namespace Digikam
 
 class ItemInfo;
 
-class SidecarFinder
+class DIGIKAM_GUI_EXPORT SidecarFinder
 {
 
 public:
@@ -51,12 +51,13 @@ public:
 public:
 
     QList<QUrl>    localFiles;
+    QList<bool>    localFileModes;
     QList<QString> localFileSuffixes;
 };
 
 // -----------------------------------------------------------------------------------------
 
-class GroupedImagesFinder
+class DIGIKAM_GUI_EXPORT GroupedImagesFinder
 {
 
 public:

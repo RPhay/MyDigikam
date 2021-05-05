@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Copyright (c) 2013-2020 by Gilles Caulier, <caulier dot gilles at gmail dot com>
+# Copyright (c) 2013-2021 by Gilles Caulier, <caulier dot gilles at gmail dot com>
 #
 # Run CppCheck static analyzer on whole digiKam source code.
 # http://cppcheck.sourceforge.net/
@@ -9,6 +9,11 @@
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
 #
+
+# Halt and catch errors
+set -eE
+trap 'PREVIOUS_COMMAND=$THIS_COMMAND; THIS_COMMAND=$BASH_COMMAND' DEBUG
+trap 'echo "FAILED COMMAND: $PREVIOUS_COMMAND"' ERR
 
 . ./common.sh
 
@@ -34,6 +39,13 @@ for DROP_ITEM in $KRAZY_FILTERS ; do
     IGNORE_DIRS+="-i../../$DROP_ITEM/ "
 done
 
+# List sub-dirs with headers to append as cppcheck includes pathes
+HDIRS=$(find ../../core -name '*.h' -printf '%h\n' | sort -u)
+
+for INCLUDE_PATH in $HDIRS ; do
+    INCLUDE_DIRS+="-I $INCLUDE_PATH/ "
+done
+
 cppcheck -j$CPU_CORES \
          -DQ_OS_LINUX \
          --verbose \
@@ -42,7 +54,17 @@ cppcheck -j$CPU_CORES \
          --platform=unix64 \
          --enable=all \
          --report-progress \
-         --suppress=*:*CImg.h* \
+         --suppress=*:*cimg*.h \
+         --suppress=*:*libraw*.h \
+         --suppress=*:*libde265*.h \
+         --suppress=*:*libheif*.h \
+         --suppress=*:*libpgf*.h \
+         --suppress=*:*upnpsdk*.h \
+         --suppress=*:*yfauth*.h \
+         --suppress=*:*o2*.h \
+         --suppress=*:*libjpeg*.h \
+         --suppress=*:*dng_sdk*.h \
+         --suppress=*:*xmp_sdk*.h \
          --suppress=variableScope \
          --suppress=purgedConfiguration \
          --suppress=toomanyconfigs \
@@ -54,6 +76,7 @@ cppcheck -j$CPU_CORES \
          --suppress=ConfigurationNotChecked \
          --suppress=unmatchedSuppression \
          $IGNORE_DIRS \
+         $INCLUDE_DIRS \
          ../../core \
          2> report.cppcheck.xml
 

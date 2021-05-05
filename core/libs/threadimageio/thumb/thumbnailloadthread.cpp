@@ -7,7 +7,7 @@
  * Description : Thumbnail loading
  *
  * Copyright (C) 2006-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2005-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2005-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2015      by Mohamed_Anwer <m_dot_anwer at gmx dot com>
  *
  * This program is free software; you can redistribute it
@@ -65,14 +65,14 @@ LoadingDescription ThumbnailLoadThread::Private::createLoadingDescription(const 
                                                                           const QRect& detailRect,
                                                                           bool setLastDescription)
 {
-    size = thumbnailSizeForPixmapSize(size);
+    size                                          = thumbnailSizeForPixmapSize(size);
 
     LoadingDescription description(identifier.filePath, PreviewSettings(), size,
                                    LoadingDescription::NoColorConversion,
                                    LoadingDescription::PreviewParameters::DetailThumbnail);
-    description.previewParameters.storageReference = identifier.id;
 
-    description.previewParameters.extraParameter = detailRect;
+    description.previewParameters.storageReference = identifier.id;
+    description.previewParameters.extraParameter   = detailRect;
 
     if (IccSettings::instance()->useManagedPreviews())
     {
@@ -93,7 +93,7 @@ LoadingDescription ThumbnailLoadThread::Private::createLoadingDescription(const 
 
 ThumbnailLoadThread::ThumbnailLoadThread(QObject* const parent)
     : ManagedLoadSaveThread(parent),
-      d(new Private)
+      d                    (new Private)
 {
     static_d->firstThreadCreated = true;
     d->creator                   = new ThumbnailCreator(static_d->storageMethod);
@@ -130,11 +130,14 @@ ThumbnailLoadThread* ThumbnailLoadThread::defaultThread()
 
 void ThumbnailLoadThread::cleanUp()
 {
-    // NOTE : Nothing to do with Qt5 and Q_GLOBAL_STATIC. Qt clean up all automatically at end of application instance.
+    // NOTE: Nothing to do with Qt5 and Q_GLOBAL_STATIC. Qt clean up all automatically at end of application instance.
     // But stopping all running tasks to prevent a crash at end.
 
     defaultIconViewThread()->stopAllTasks();
     defaultThread()->stopAllTasks();
+
+    defaultIconViewThread()->wait();
+    defaultThread()->wait();
 }
 
 void ThumbnailLoadThread::initializeThumbnailDatabase(const DbEngineParameters& params, ThumbnailInfoProvider* const provider)
@@ -220,9 +223,9 @@ int ThumbnailLoadThread::thumbnailToPixmapSize(int size) const
 
 int ThumbnailLoadThread::thumbnailToPixmapSize(bool withHighlight, int size)
 {
-    if (withHighlight && size >= 10)
+    if (withHighlight && (size >= 10))
     {
-        return size + 2;
+        return (size + 2);
     }
 
     return size;
@@ -233,7 +236,11 @@ int ThumbnailLoadThread::pixmapToThumbnailSize(int size) const
     return d->thumbnailSizeForPixmapSize(size);
 }
 
-bool ThumbnailLoadThread::find(const ThumbnailIdentifier& identifier, int size, QPixmap* retPixmap, bool emitSignal, const QRect& detailRect)
+bool ThumbnailLoadThread::find(const ThumbnailIdentifier& identifier,
+                               int size,
+                               QPixmap* retPixmap,
+                               bool emitSignal,
+                               const QRect& detailRect)
 {
     const QPixmap* pix = nullptr;
     LoadingDescription description;
@@ -597,7 +604,7 @@ QPixmap ThumbnailLoadThread::surrogatePixmap(const LoadingDescription& descripti
     QSize size(pix.size());
     size.scale(description.previewParameters.size, description.previewParameters.size, Qt::KeepAspectRatio);
 
-    if (!pix.isNull() && size.width() < pix.width() && size.height() < pix.height())
+    if (!pix.isNull() && (size.width() < pix.width()) && (size.height() < pix.height()))
     {
         // only scale down
         // do not scale up, looks bad
@@ -646,13 +653,13 @@ void ThumbnailLoadThread::deleteThumbnail(const QString& filePath)
 
 ThumbnailImageCatcher::ThumbnailImageCatcher(QObject* const parent)
     : QObject(parent),
-      d(new Private)
+      d      (new Private)
 {
 }
 
 ThumbnailImageCatcher::ThumbnailImageCatcher(ThumbnailLoadThread* const thread, QObject* const parent)
     : QObject(parent),
-      d(new Private)
+      d      (new Private)
 {
     setThumbnailLoadThread(thread);
 }

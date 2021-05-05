@@ -7,7 +7,7 @@
  *
  * Copyright (C)      2010 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  * Copyright (C)      2010 by Aditya Bhatt <adityabhatt1991 at gmail dot com>
- * Copyright (C) 2010-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2010-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -46,18 +46,25 @@ class RecognitionTrainingProvider : public TrainingDataProvider
 {
 public:
 
-    explicit RecognitionTrainingProvider(const Identity& identity, const QList<QImage>& newImages);
-    ~RecognitionTrainingProvider();
+    explicit RecognitionTrainingProvider(const Identity& identity,
+                                         const QList<QImage*>& newImages);
+    ~RecognitionTrainingProvider()                   override;
 
     ImageListProvider* newImages(const Identity& id) override;
 
-    ImageListProvider* images(const Identity&) override;
+    ImageListProvider* images(const Identity&)       override;
 
 public:
 
     Identity               m_identity;
     QListImageListProvider m_toTrain;
     QListImageListProvider m_empty;
+
+private:
+
+    // Disable
+    RecognitionTrainingProvider(const RecognitionTrainingProvider&)            = delete;
+    RecognitionTrainingProvider& operator=(const RecognitionTrainingProvider&) = delete;
 };
 
 } // namespace Digikam

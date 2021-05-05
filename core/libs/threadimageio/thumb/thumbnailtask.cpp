@@ -7,7 +7,7 @@
  * Description : Multithreaded loader for thumbnails
  *
  * Copyright (C) 2006-2008 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -66,6 +66,8 @@ void ThumbnailLoadingTask::execute()
 {
     if (m_loadingTaskStatus == LoadingTaskStatusStopping)
     {
+        m_thread->taskHasFinished();
+
         return;
     }
 
@@ -105,7 +107,7 @@ void ThumbnailLoadingTask::execute()
 
         if (cachedImage)
         {
-            m_qimage = QImage(*cachedImage);
+            m_qimage = *cachedImage;
         }
 
         if (m_qimage.isNull())
@@ -113,67 +115,52 @@ void ThumbnailLoadingTask::execute()
             // find possible running loading process
             // do not wait on other loading processes?
 
-            m_usedProcess = cache->retrieveLoadingProcess(m_loadingDescription.cacheKey());
+            LoadingProcess* const usedProcess = cache->retrieveLoadingProcess(m_loadingDescription.cacheKey());
 
-            if (m_usedProcess)
+            if (usedProcess)
             {
                 // Other process is right now loading this image.
                 // Add this task to the list of listeners and
                 // attach this thread to the other thread, wait until loading
                 // has finished.
 
-                m_usedProcess->addListener(this);
+                usedProcess->addListener(this);
 
                 // break loop when either the loading has completed, or this task is being stopped
 
                 // cppcheck-suppress knownConditionTrueFalse
-                while ((m_loadingTaskStatus != LoadingTaskStatusStopping) &&
-                       m_usedProcess                                      &&
-                       !m_usedProcess->completed())
+                while ((m_loadingTaskStatus != LoadingTaskStatusStopping) && !usedProcess->completed())
                 {
                     lock.timedWait();
                 }
 
                 // remove listener from process
 
-                if (m_usedProcess)
-                {
-                    m_usedProcess->removeListener(this);
-                }
-
-                // set to 0, as checked in setStatus
-
-                m_usedProcess = nullptr;
+                usedProcess->removeListener(this);
 
                 // wake up the process which is waiting until all listeners have removed themselves
 
                 lock.wakeAll();
-            }
-            else
-            {
-                // Neither in cache, nor currently loading in different thread.
-                // Load it here and now, add this LoadingProcess to cache list.
-
-                cache->addLoadingProcess(this);
-
-                // Add this to the list of listeners
-
-                addListener(this);
-
-                // for use in setStatus
-
-                m_usedProcess = this;
-
-                // Notify other processes that we are now loading this image.
-                // They might be interested - see notifyNewLoadingProcess below
-
-                cache->notifyNewLoadingProcess(this, m_loadingDescription);
             }
         }
     }
 
     if (continueQuery() && m_qimage.isNull())
     {
+        {
+            LoadingCache::CacheLock lock(cache);
+
+            // Neither in cache, nor currently loading in different thread.
+            // Load it here and now, add this LoadingProcess to cache list.
+
+            cache->addLoadingProcess(this);
+
+            // Notify other processes that we are now loading this image.
+            // They might be interested - see notifyNewLoadingProcess below
+
+            cache->notifyNewLoadingProcess(this, m_loadingDescription);
+        }
+
         // Load or create thumbnail
 
         setupCreator();
@@ -193,9 +180,12 @@ void ThumbnailLoadingTask::execute()
                 break;
         }
 
-        if (continueQuery())
         {
             LoadingCache::CacheLock lock(cache);
+
+            // remove this from the list of loading processes in cache
+
+            cache->removeLoadingProcess(this);
 
             // put valid image into cache of loaded images
 
@@ -203,27 +193,19 @@ void ThumbnailLoadingTask::execute()
             {
                 cache->putThumbnail(m_loadingDescription.cacheKey(), m_qimage,
                                     m_loadingDescription.filePath);
-            }
 
-            // remove this from the list of loading processes in cache
+                // dispatch image to all listeners
 
-            cache->removeLoadingProcess(this);
-
-            // dispatch image to all listeners
-
-            for (int i = 0 ; i < m_listeners.count() ; ++i)
-            {
-                ThumbnailLoadingTask* const task = dynamic_cast<ThumbnailLoadingTask*>(m_listeners.at(i));
-
-                if (task)
+                for (int i = 0 ; i < m_listeners.count() ; ++i)
                 {
-                    task->setThumbResult(m_loadingDescription, m_qimage);
+                    ThumbnailLoadingTask* const task = dynamic_cast<ThumbnailLoadingTask*>(m_listeners.at(i));
+
+                    if (task)
+                    {
+                        task->setThumbResult(m_loadingDescription, m_qimage);
+                    }
                 }
             }
-
-            // remove myself from list of listeners
-
-            removeListener(this);
 
             // indicate that loading has finished so that listeners can stop waiting
 
@@ -239,10 +221,6 @@ void ThumbnailLoadingTask::execute()
             {
                 lock.timedWait();
             }
-
-            // set to 0, as checked in setStatus
-
-            m_usedProcess = nullptr;
         }
     }
 
@@ -270,7 +248,7 @@ void ThumbnailLoadingTask::setupCreator()
 
 void ThumbnailLoadingTask::setThumbResult(const LoadingDescription& loadingDescription, const QImage& qimage)
 {
-    // this is called from another process's execute while this task is waiting on m_usedProcess.
+    // this is called from another process's execute while this task is waiting on usedProcess.
     // Note that loadingDescription need not equal m_loadingDescription (may be superior)
 
     LoadingDescription tempDescription       = loadingDescription;
@@ -296,6 +274,7 @@ void ThumbnailLoadingTask::postProcess()
         case LoadingDescription::ConvertToSRGB:
         {
             // Thumbnails are stored in sRGB
+
             break;
         }
 

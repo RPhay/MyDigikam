@@ -44,6 +44,7 @@
 #include <QMenuBar>
 #include <QStatusBar>
 #include <QPointer>
+#include <QScopedPointer>
 #include <QProgressBar>
 #include <QDebug>
 
@@ -315,7 +316,7 @@ MainWindow::MainWindow(QCommandLineParser* const cmdLineArgs, QWidget* const par
     if (cmdLineArgs->isSet(QLatin1String("demopoints_single")) ||
         cmdLineArgs->isSet(QLatin1String("demopoints_group")))
     {
-        for (int i = 0; i < markerList.count(); ++i)
+        for (int i = 0 ; i < markerList.count() ; ++i)
         {
             QTreeWidgetItem* const treeItem = new QTreeWidgetItem();
             treeItem->setText(0, QString::fromLatin1("item %1").arg(i));
@@ -328,9 +329,6 @@ MainWindow::MainWindow(QCommandLineParser* const cmdLineArgs, QWidget* const par
 
 MainWindow::~MainWindow()
 {
-    // clean up the Exiv2 memory:
-    MetaEngine::cleanupExiv2();
-
     if (d->progressBar)
     {
         delete d->progressBar;
@@ -387,11 +385,11 @@ MyImageData LoadImageData(const QUrl& urlToLoad)
     imageData.url = urlToLoad;
 
     // TODO: error handling!
-    DMetadata meta;
-    meta.load(urlToLoad.toLocalFile());
+    QScopedPointer<DMetadata> meta(new DMetadata);
+    meta->load(urlToLoad.toLocalFile());
     double lat, lon, alt;
 
-    if (meta.getGPSInfo(alt, lat, lon))
+    if (meta->getGPSInfo(alt, lat, lon))
     {
         imageData.coordinates.setLatLon(lat, lon);
         imageData.coordinates.setAlt(alt);
@@ -464,7 +462,7 @@ void MainWindow::slotFutureResultsReadyAt(int startIndex, int endIndex)
     }
 }
 
-void MainWindow::slotScheduleImagesForLoading(const QList<QUrl> imagesToSchedule)
+void MainWindow::slotScheduleImagesForLoading(const QList<QUrl>& imagesToSchedule)
 {
     if (imagesToSchedule.isEmpty())
         return;

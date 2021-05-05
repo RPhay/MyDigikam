@@ -6,7 +6,7 @@
  * Date        : 2006-10-12
  * Description : IPTC credits settings page.
  *
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -38,7 +38,7 @@ class IPTCCredits : public QWidget
 public:
 
     explicit IPTCCredits(QWidget* const parent);
-    ~IPTCCredits();
+    ~IPTCCredits() override;
 
     void applyMetadata(QByteArray& iptcData);
     void readMetadata(QByteArray& iptcData);
@@ -46,6 +46,10 @@ public:
 Q_SIGNALS:
 
     void signalModified();
+
+private Q_SLOTS:
+
+    void slotLineEditModified();
 
 private:
 

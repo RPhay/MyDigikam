@@ -50,7 +50,7 @@ class DIGIKAM_EXPORT ComboBoxDelegate : public QAbstractItemDelegate
 public:
 
     explicit ComboBoxDelegate(DItemsList* const, const QMap<int, QString>&);
-    ~ComboBoxDelegate();
+    ~ComboBoxDelegate() override;
 
     /**
      * Whenever an element needs to be edited, this method should be called.

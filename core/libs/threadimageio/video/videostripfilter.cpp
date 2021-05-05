@@ -8,7 +8,7 @@
  *
  * Copyright (C) 2010      by Dirk Vanden Boer <dirk dot vdb at gmail dot com>
  * Copyright (C) 2016-2018 by Maik Qualmann <metzpinguin at gmail dot com>
- * Copyright (C) 2016-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2016-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -639,8 +639,8 @@ VideoStripFilter::~VideoStripFilter()
 
 void VideoStripFilter::process(VideoFrame& videoFrame)
 {
-    quint32 videoStripWidth       = 0;
-    quint32 videoStripHeight      = 0;
+    quint32 videoStripWidth      = 0;
+    quint32 videoStripHeight     = 0;
     const quint8* const filmHole = determineFilmStrip(videoFrame.width, videoStripWidth, videoStripHeight);
 
     if (!filmHole)
@@ -648,9 +648,9 @@ void VideoStripFilter::process(VideoFrame& videoFrame)
         return;
     }
 
-    int frameIndex    = 0;
-    int filmHoleIndex = 0;
-    int offset        = (videoFrame.width * 3) - 3;
+    int frameIndex               = 0;
+    int filmHoleIndex            = 0;
+    int offset                   = (videoFrame.width * 3) - 3;
 
     for (quint32 i = 0 ; i < videoFrame.height ; ++i)
     {

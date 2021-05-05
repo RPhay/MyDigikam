@@ -6,7 +6,7 @@
  * Date        : 2009-05-31
  * Description : rotate icon view item at mouse hover
  *
- * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -39,7 +39,7 @@ namespace Digikam
 
 ItemRotateOverlayButton::ItemRotateOverlayButton(ItemRotateOverlayDirection dir, QAbstractItemView* const parentView)
     : ItemViewHoverButton(parentView),
-      m_direction(dir)
+      m_direction        (dir)
 {
     setup();
 }
@@ -77,7 +77,7 @@ void ItemRotateOverlayButton::updateToolTip()
 
 ItemRotateOverlay::ItemRotateOverlay(ItemRotateOverlayDirection dir, QObject* const parent)
     : HoverButtonDelegateOverlay(parent),
-      m_direction(dir)
+      m_direction               (dir)
 {
 }
 
@@ -116,10 +116,12 @@ void ItemRotateOverlay::slotClicked()
 
     if (index.isValid())
     {
-        /*QItemSelectionModel* selModel = m_view->selectionModel();
+/*
+        QItemSelectionModel* selModel = m_view->selectionModel();
         selModel->reset();
         selModel->select(index, QItemSelectionModel::Select);
-        selModel->setCurrentIndex(index, QItemSelectionModel::Current);*/
+        selModel->setCurrentIndex(index, QItemSelectionModel::Current);
+*/
         emit signalRotate(affectedIndexes(index));
     }
 }

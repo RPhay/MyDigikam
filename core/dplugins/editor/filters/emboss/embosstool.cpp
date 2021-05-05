@@ -7,7 +7,7 @@
  * Description : a digiKam image editor tool to emboss
  *               an image.
  *
- * Copyright (C) 2004-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2004-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2006-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  *
  * This program is free software; you can redistribute it
@@ -53,9 +53,9 @@ class Q_DECL_HIDDEN EmbossTool::Private
 public:
 
     explicit Private()
-      : depthInput(nullptr),
+      : depthInput   (nullptr),
         previewWidget(nullptr),
-        gboxSettings(nullptr)
+        gboxSettings (nullptr)
     {
     }
 
@@ -74,7 +74,7 @@ const QString EmbossTool::Private::configDepthAdjustmentEntry(QLatin1String("Dep
 
 EmbossTool::EmbossTool(QObject* const parent)
     : EditorToolThreaded(parent),
-      d(new Private)
+      d                 (new Private)
 {
     setObjectName(QLatin1String("emboss"));
     setInitPreview(true);

@@ -7,7 +7,7 @@
  * Description : Multithreaded worker object
  *
  * Copyright (C) 2010-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2012-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -79,11 +79,10 @@ public:
      * Note that you cannot make this QObject the child of another QObject.
      * Please check if you need to call shutDown from your destructor (see below).
      */
-
     explicit WorkerObject();
-    ~WorkerObject();
+    ~WorkerObject()                       override;
 
-    State state() const;
+    State state()                   const;
 
     void wait();
 
@@ -95,7 +94,7 @@ public:
      * priority is not changed but inherited from the thread pool.
      */
     void setPriority(QThread::Priority priority);
-    QThread::Priority priority() const;
+    QThread::Priority priority()    const;
 
     /**
      * You must normally call schedule() to ensure that the object is active when you send
@@ -103,15 +102,21 @@ public:
      * when connecting your signal to this object, the signal that carries work data.
      * Then the object will be scheduled each time you emit the signal.
      */
-    bool connectAndSchedule(const QObject* sender, const char* signal, const char* method,
+    bool connectAndSchedule(const QObject* sender,
+                            const char* signal,
+                            const char* method,
                             Qt::ConnectionType type = Qt::AutoConnection) const;
 
-    static bool connectAndSchedule(const QObject* sender, const char* signal,
-                                   const WorkerObject* receiver, const char* method,
+    static bool connectAndSchedule(const QObject* sender,
+                                   const char* signal,
+                                   const WorkerObject* receiver,
+                                   const char* method,
                                    Qt::ConnectionType type = Qt::AutoConnection);
 
-    static bool disconnectAndSchedule(const QObject* sender, const char* signal,
-                                      const WorkerObject* receiver, const char* method);
+    static bool disconnectAndSchedule(const QObject* sender,
+                                      const char* signal,
+                                      const WorkerObject* receiver,
+                                      const char* method);
 
 public Q_SLOTS:
 
@@ -179,12 +184,19 @@ protected:
      */
     virtual void aboutToDeactivate();
 
-    virtual bool event(QEvent* e) override;
+    bool event(QEvent* e)                 override;
 
 private:
 
     friend class WorkerObjectRunnable;
     friend class ThreadManager;
+
+private:
+
+    // Disable.
+    WorkerObject(const WorkerObject&)            = delete;
+    WorkerObject& operator=(const WorkerObject&) = delete;
+    WorkerObject(QObject*)                       = delete;
 
 private:
 

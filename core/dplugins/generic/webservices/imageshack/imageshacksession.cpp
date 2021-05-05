@@ -30,7 +30,7 @@
 
 // KDE includes
 
-#include <kconfig.h>
+#include <ksharedconfig.h>
 #include <kconfiggroup.h>
 
 // Locla includes
@@ -148,16 +148,16 @@ void ImageShackSession::readSettings()
 
     bLoaded = true;
 
-    KConfig config;
-    KConfigGroup group = config.group("ImageShack Settings");
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup group      = config->group("ImageShack Settings");
 }
 
 void ImageShackSession::saveSettings()
 {
-    KConfig config;
-    KConfigGroup group = config.group("ImageShack Settings");
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup group      = config->group("ImageShack Settings");
 
-    config.sync();
+    config->sync();
 }
 
 } // namespace DigikamGenericImageShackPlugin

@@ -10,20 +10,20 @@ available at this url: http://doc.qt.io/qt-5/windows-deployment.html
 AUTHORS
 -------
 
-(c) 2015-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+(c) 2015-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
 
 
 DESCRIPTION
 -----------
 These files and scripts are used to make binary installer of the digiKam
-Software Collection for Windows 32 bits or 64 bits. In addition to this README,
+Software Collection for Windows 64 bits. In addition to this README,
 there are comments in the scripts that provide some additional explanations for
 how they work.
 
-Note: these cross-compiling scripts exists because the way provided to compile 
-a KDE application under Windows with MSVC compiler is just a big pain to 
+Note: these cross-compiling scripts exists because the way provided to compile
+a KDE application under Windows with MSVC compiler is just a big pain to
 use/configure/run with a Windows system.
-Another big advantage of cross-compiling is to not require a Windows to do the job, which 
+Another big advantage of cross-compiling is to not require a Windows to do the job, which
 is definitively a weird operating system to compile and hack. There is also no risk to
 inject a virus in the binary installer.
 
@@ -75,7 +75,8 @@ REQUIREMENTS
 The scripts build digiKam with MXE cross compiler, so you will need all dependencies
 and the other pre-requisites first for MXE.
 See http://mxe.cc/#requirements for details.
-
+NSIS CLI program is required to build final Windows installer.
+IcoTool CLI program from IcoUtils package is required to integrate application icons to target executables.
 
 IMPORTANT:
 - You must set the right target architecture : windows 32 or 64 bits.
@@ -142,11 +143,11 @@ https://github.com/mpreisler/mingw-bundledlls
 
 * makeall.sh
 
-This script permit to build whole 32 and 64 bits installers from scratch at the same time.
+This script permit to build whole 64 bits installers from scratch.
 
 * update.sh
 
-This script re-build only digiKam and installers in 32 and 64 bits.
+This script re-build only digiKam and installers 64 bits.
 
 
 LICENSES

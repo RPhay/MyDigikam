@@ -6,7 +6,7 @@
  * Date        : 2009-06-20
  * Description : template list view.
  *
- * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -41,7 +41,7 @@ class TemplateListItem : public QTreeWidgetItem
 public:
 
     explicit TemplateListItem(QTreeWidget* const parent, const Template& t);
-    ~TemplateListItem();
+    ~TemplateListItem()          override;
 
     void     setTemplate(const Template& t);
     Template getTemplate() const;
@@ -49,6 +49,10 @@ public:
 private:
 
     Template m_template;
+
+private:
+
+    Q_DISABLE_COPY(TemplateListItem)
 };
 
 // -------------------------------------------------------------------
@@ -59,8 +63,8 @@ class TemplateList : public QTreeWidget
 
 public:
 
-    explicit TemplateList(QWidget* const parent=nullptr);
-    ~TemplateList();
+    explicit TemplateList(QWidget* const parent = nullptr);
+    ~TemplateList() override;
 
     TemplateListItem* find(const QString& title);
 

@@ -1,6 +1,6 @@
 # Script to build jasperlib for digiKam bundle.
 #
-# Copyright (c) 2015-2020 by Gilles Caulier  <caulier dot gilles at gmail dot com>
+# Copyright (c) 2015-2021 by Gilles Caulier  <caulier dot gilles at gmail dot com>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
@@ -10,8 +10,9 @@ SET(PREFIX_ext_jasper "${EXTPREFIX}")
 
 ExternalProject_Add(ext_jasper
     DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
-    URL https://github.com/mdadams/jasper/archive/version-2.0.16.tar.gz
-    URL_MD5 6291678a9481c41f18679ccc22afac82
+
+    GIT_REPOSITORY https://github.com/jasper-software/jasper.git
+    GIT_TAG version-2.0.24
 
     INSTALL_DIR ${PREFIX_ext_jasper}
 

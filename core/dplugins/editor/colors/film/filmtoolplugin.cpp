@@ -6,7 +6,7 @@
  * Date        : 2018-07-30
  * Description : image editor plugin to emulate film color
  *
- * Copyright (C) 2018-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2018-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -49,7 +49,7 @@ FilmToolPlugin::~FilmToolPlugin()
 
 QString FilmToolPlugin::name() const
 {
-    return i18n("Color Negative Film");
+    return i18nc("@title", "Color Negative Film");
 }
 
 QString FilmToolPlugin::iid() const
@@ -64,12 +64,12 @@ QIcon FilmToolPlugin::icon() const
 
 QString FilmToolPlugin::description() const
 {
-    return i18n("A tool to emulate color negative film");
+    return i18nc("@info", "A tool to emulate color negative film");
 }
 
 QString FilmToolPlugin::details() const
 {
-    return i18n("<p>This Image Editor tool can emulate color negative film from image.</p>");
+    return i18nc("@info", "This Image Editor tool can emulate color negative film from image.");
 }
 
 QList<DPluginAuthor> FilmToolPlugin::authors() const

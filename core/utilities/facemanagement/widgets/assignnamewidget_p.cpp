@@ -8,7 +8,7 @@
  *
  * Copyright (C) 2010      by Aditya Bhatt <adityabhatt1991 at gmail dot com>
  * Copyright (C) 2010-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2012-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -29,21 +29,21 @@ namespace Digikam
 {
 
 AssignNameWidget::Private::Private(AssignNameWidget* const q)
-    : mode(InvalidMode),
-      layoutMode(InvalidLayout),
-      visualStyle(InvalidVisualStyle),
-      widgetMode(InvalidTagEntryWidgetMode),
-      comboBox(nullptr),
-      lineEdit(nullptr),
-      confirmButton(nullptr),
-      rejectButton(nullptr),
-      clickLabel(nullptr),
-      modelsGiven(0),
-      tagModel(nullptr),
-      tagFilterModel(nullptr),
+    : mode            (InvalidMode),
+      layoutMode      (InvalidLayout),
+      visualStyle     (InvalidVisualStyle),
+      widgetMode      (InvalidTagEntryWidgetMode),
+      comboBox        (nullptr),
+      lineEdit        (nullptr),
+      confirmButton   (nullptr),
+      rejectButton    (nullptr),
+      clickLabel      (nullptr),
+      modelsGiven     (false),
+      tagModel        (nullptr),
+      tagFilterModel  (nullptr),
       tagFilteredModel(nullptr),
-      layout(nullptr),
-      q(q)
+      layout          (nullptr),
+      q               (q)
 {
 }
 
@@ -160,7 +160,7 @@ void AssignNameWidget::Private::checkWidgets()
                     if (!comboBox)
                     {
                         comboBox = new AddTagsComboBox(q);
-                        comboBox->setMinimumWidth(230);
+                        comboBox->setMinimumWidth(250);
                         setupAddTagsWidget(comboBox);
                     }
 
@@ -181,11 +181,11 @@ void AssignNameWidget::Private::checkWidgets()
 
             if (!confirmButton)
             {
-                confirmButton = createToolButton(QIcon::fromTheme(QLatin1String("dialog-ok-apply")), i18n("OK"));
+                confirmButton = createToolButton(QIcon::fromTheme(QLatin1String("dialog-ok-apply")), i18nc("@action", "OK"));
 
                 if (mode == UnconfirmedEditMode)
                 {
-                    confirmButton->setText(i18n("Confirm"));
+                    confirmButton->setText(i18nc("@action", "Confirm"));
                 }
 
                 confirmButton->setToolTip(i18nc("@info:tooltip", "Confirm that the selected person is shown here"));
@@ -196,12 +196,31 @@ void AssignNameWidget::Private::checkWidgets()
 
             if (!rejectButton)
             {
-                rejectButton = createToolButton(QIcon::fromTheme(QLatin1String("list-remove")), i18n("Remove"));
-
-                rejectButton->setToolTip(i18nc("@info:tooltip", "If this is not a face, click to reject it."));
+                rejectButton = createToolButton(QIcon::fromTheme(QLatin1String("list-remove")), i18nc("@action", "Remove"));
+                rejectButton->setToolTip(i18nc("@info:tooltip", "Reject this suggestion"));
 
                 q->connect(rejectButton, SIGNAL(clicked()),
                            q, SLOT(slotReject()));
+            }
+
+            break;
+        }
+
+        case IgnoredMode:
+        {
+            if (!confirmButton)
+            {
+                confirmButton = createToolButton(QIcon::fromTheme(QLatin1String("dialog-ok-apply")), i18nc("@action", "OK"));
+                confirmButton->setToolTip(i18nc("@info:tooltip", "Unmark this face as Ignored"));
+
+                q->connect(confirmButton, SIGNAL(clicked()),
+                           q, SLOT(slotReject()));
+            }
+
+            if (!rejectButton)
+            {
+                rejectButton = createToolButton(QIcon::fromTheme(QLatin1String("list-remove")), i18nc("@action", "Reject"));
+                rejectButton->setEnabled(false);
             }
 
             break;
@@ -313,6 +332,18 @@ void AssignNameWidget::Private::updateLayout()
             break;
         }
 
+        case IgnoredMode:
+        {
+            layout->addWidget(confirmButton, 0, 0);
+            layout->addWidget(rejectButton,  0, 1);
+
+            confirmButton->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Minimum);
+            rejectButton->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Minimum);
+            setToolButtonStyles(Qt::ToolButtonIconOnly);
+
+            break;
+        }
+
         case ConfirmedMode:
         {
             layout->addWidget(clickLabel, 0, 0);
@@ -419,6 +450,7 @@ void AssignNameWidget::Private::updateVisualStyle()
                 ).arg(styleSheetFontDescriptor(appFont))
                  .arg((mode == ConfirmedMode) ? QLatin1String("8") : QLatin1String("4"))
             );
+
             break;
         }
 
@@ -443,6 +475,7 @@ void AssignNameWidget::Private::updateVisualStyle()
                  .arg(bg.green())
                  .arg(bg.blue())
             );
+
             break;
         }
 
@@ -450,6 +483,7 @@ void AssignNameWidget::Private::updateVisualStyle()
         {
             q->setStyleSheet(QString());
             q->setFrameStyle(Raised | StyledPanel);
+
             break;
         }
     }
@@ -461,7 +495,7 @@ void AssignNameWidget::Private::setAddTagsWidgetContents(T* const widget)
     if (widget)
     {
         widget->setCurrentTag(currentTag);
-        widget->setPlaceholderText((mode == UnconfirmedEditMode) ? i18n("Who is this?")
+        widget->setPlaceholderText((mode == UnconfirmedEditMode) ? i18nc("@label", "Who is this?")
                                                                  : QString());
 
         if (confirmButton)
@@ -473,7 +507,7 @@ void AssignNameWidget::Private::setAddTagsWidgetContents(T* const widget)
 
 void AssignNameWidget::Private::updateContents()
 {
-    if (!isValid())
+    if (!isValid() || (mode == AssignNameWidget::IgnoredMode))
     {
         return;
     }
@@ -491,6 +525,20 @@ void AssignNameWidget::Private::updateContents()
     {
         clickLabel->setText(currentTag ? currentTag->title()
                                        : QString());
+    }
+}
+
+void AssignNameWidget::Private::updateRejectButtonTooltip()
+{
+    FaceTagsIface face = FaceTagsIface::fromVariant(faceIdentifier);
+
+    if      (face.type() == FaceTagsIface::UnknownName)
+    {
+        rejectButton->setToolTip(i18nc("@info:tooltip", "Mark this face as Ignored"));
+    }
+    else if (face.type() == FaceTagsIface::UnconfirmedName)
+    {
+        rejectButton->setToolTip(i18nc("@info:tooltip", "Reject this suggestion"));
     }
 }
 

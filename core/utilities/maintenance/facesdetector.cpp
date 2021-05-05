@@ -7,7 +7,7 @@
  * Description : batch face detection
  *
  * Copyright (C) 2010      by Aditya Bhatt <adityabhatt1991 at gmail dot com>
- * Copyright (C) 2010-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2010-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2012      by Andi Clemens <andi dot clemens at gmail dot com>
  *
  * This program is free software; you can redistribute it
@@ -34,6 +34,7 @@
 #include <QPushButton>
 #include <QApplication>
 #include <QTextEdit>
+#include <QHash>
 
 // KDE includes
 
@@ -43,7 +44,7 @@
 
 // Local includes
 
-#include "recognitiondatabase.h"
+#include "facialrecognition_wrapper.h"
 #include "digikam_debug.h"
 #include "coredb.h"
 #include "album.h"
@@ -60,6 +61,8 @@ namespace Digikam
 
 class Q_DECL_HIDDEN BenchmarkMessageDisplay : public QWidget
 {
+    Q_OBJECT
+
 public:
 
     explicit BenchmarkMessageDisplay(const QString& richText)
@@ -85,6 +88,11 @@ public:
         show();
         raise();
     }
+
+private:
+
+    // Disable
+    BenchmarkMessageDisplay(QWidget*);
 };
 
 // --------------------------------------------------------------------------
@@ -94,7 +102,7 @@ class Q_DECL_HIDDEN FacesDetector::Private
 public:
 
     explicit Private()
-      : source(FacesDetector::Albums),
+      : source   (FacesDetector::Albums),
         benchmark(false)
     {
     }
@@ -112,15 +120,15 @@ public:
 
 FacesDetector::FacesDetector(const FaceScanSettings& settings, ProgressItem* const parent)
     : MaintenanceTool(QLatin1String("FacesDetector"), parent),
-      d(new Private)
+      d              (new Private)
 {
     setLabel(i18n("Updating faces database."));
     ProgressManager::addProgressItem(this);
 
-    if (settings.task == FaceScanSettings::RetrainAll)
+    if      (settings.task == FaceScanSettings::RetrainAll)
     {
         // clear all training data in the database
-        RecognitionDatabase().clearAllTraining(QLatin1String("digikam"));
+        FacialRecognitionWrapper().clearAllTraining(QLatin1String("digikam"));
         d->pipeline.plugRetrainingDatabaseFilter();
         d->pipeline.plugTrainer();
         d->pipeline.construct();
@@ -157,7 +165,7 @@ FacesDetector::FacesDetector(const FaceScanSettings& settings, ProgressItem* con
         FacePipeline::FilterMode filterMode;
         FacePipeline::WriteMode  writeMode;
 
-        if (settings.alreadyScannedHandling == FaceScanSettings::Skip)
+        if      (settings.alreadyScannedHandling == FaceScanSettings::Skip)
         {
             filterMode = FacePipeline::SkipAlreadyScanned;
             writeMode  = FacePipeline::NormalWrite;
@@ -188,22 +196,21 @@ FacesDetector::FacesDetector(const FaceScanSettings& settings, ProgressItem* con
         if (settings.task == FaceScanSettings::DetectAndRecognize)
         {
             //d->pipeline.plugRerecognizingDatabaseFilter();
-            qCDebug(DIGIKAM_GENERAL_LOG) << "recognize algorithm: " << (int)settings.recognizeAlgorithm;
             d->pipeline.plugFaceRecognizer();
-            d->pipeline.activeFaceRecognizer(settings.recognizeAlgorithm);
         }
 
         d->pipeline.plugDatabaseWriter(writeMode);
-        d->pipeline.setDetectionAccuracy(settings.accuracy);
+        d->pipeline.setAccuracyAndModel(settings.accuracy,
+                                        settings.useYoloV3);
         d->pipeline.construct();
     }
     else // FaceScanSettings::RecognizeMarkedFaces
     {
         d->pipeline.plugRerecognizingDatabaseFilter();
         d->pipeline.plugFaceRecognizer();
-        d->pipeline.activeFaceRecognizer(settings.recognizeAlgorithm);
         d->pipeline.plugDatabaseWriter(FacePipeline::NormalWrite);
-        d->pipeline.setDetectionAccuracy(settings.accuracy);
+        d->pipeline.setAccuracyAndModel(settings.accuracy,
+                                        settings.useYoloV3);
         d->pipeline.construct();
     }
 
@@ -268,7 +275,7 @@ void FacesDetector::slotStart()
 
     setThumbnail(QIcon::fromTheme(QLatin1String("edit-image-face-show")).pixmap(22));
 
-    if (d->source == FacesDetector::Infos)
+    if      (d->source == FacesDetector::Infos)
     {
         int total = d->infoTodoList.count();
         qCDebug(DIGIKAM_GENERAL_LOG) << "Total is" << total;
@@ -277,10 +284,12 @@ void FacesDetector::slotStart()
 
         if (d->infoTodoList.isEmpty())
         {
-            return slotDone();
+            slotDone();
+            return;
         }
 
-        return slotItemsInfo(d->infoTodoList);
+        slotItemsInfo(d->infoTodoList);
+        return;
     }
     else if (d->source == FacesDetector::Ids)
     {
@@ -293,15 +302,18 @@ void FacesDetector::slotStart()
 
         if (itemInfos.isEmpty())
         {
-            return slotDone();
+            slotDone();
+            return;
         }
 
-        return slotItemsInfo(itemInfos);
+        slotItemsInfo(itemInfos);
+        return;
     }
 
     setUsesBusyIndicator(true);
 
     // get total count, cached by AlbumManager
+
     QMap<int, int> palbumCounts;
     QMap<int, int> talbumCounts;
     bool hasPAlbums = false;
@@ -338,7 +350,7 @@ void FacesDetector::slotStart()
 
     // first, we use the progressValueMap map to store absolute counts
 
-    QMap<Album*, int> progressValueMap;
+    QHash<Album*, int> progressValueMap;
 
     foreach (Album* const album, d->albumTodoList)
     {
@@ -350,6 +362,7 @@ void FacesDetector::slotStart()
         {
             // this is possibly broken of course because we do not know if images have multiple tags,
             // but there's no better solution without expensive operation
+
             progressValueMap[album] = talbumCounts.value(album->id());
         }
     }
@@ -376,25 +389,29 @@ void FacesDetector::slotContinueAlbumListing()
 {
     if (d->source != FacesDetector::Albums)
     {
-        return slotDone();
+        slotDone();
+        return;
     }
 
     qCDebug(DIGIKAM_GENERAL_LOG) << d->albumListing.isRunning() << !d->pipeline.hasFinished();
 
     // we get here by the finished signal from both, and want both to have finished to continue
+
     if (d->albumListing.isRunning() || !d->pipeline.hasFinished())
     {
         return;
     }
 
     // list can have null pointer if album was deleted recently
+
     Album* album = nullptr;
 
     do
     {
         if (d->albumTodoList.isEmpty())
         {
-            return slotDone();
+            slotDone();
+            return;
         }
 
         album = d->albumTodoList.takeFirst();
@@ -417,6 +434,7 @@ void FacesDetector::slotDone()
     }
 
     // Switch on scanned for faces flag on digiKam config file.
+
     KSharedConfig::openConfig()->group("General Settings").writeEntry("Face Scanner First Run", true);
 
     MaintenanceTool::slotDone();
@@ -439,3 +457,5 @@ void FacesDetector::slotShowOneDetected(const FacePipelinePackage& /*package*/)
 }
 
 } // namespace Digikam
+
+#include "facesdetector.moc"

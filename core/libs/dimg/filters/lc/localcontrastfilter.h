@@ -5,10 +5,10 @@
  *
  * Date        : 2009-08-09
  * Description : Enhance image with local contrasts (as human eye does).
- *               LDR ToneMapper <http://zynaddsubfx.sourceforge.net/other/tonemapping>
+ *               LDR ToneMapper zynaddsubfx.sourceforge.net/other/tonemapping
  *
  * Copyright (C) 2009      by Julien Pontabry <julien dot pontabry at gmail dot com>
- * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2010      by Martin Klapetek <martin dot klapetek at gmail dot com>
  *
  * This program is free software; you can redistribute it
@@ -43,11 +43,24 @@ namespace Digikam
 
 class DIGIKAM_EXPORT LocalContrastFilter : public DImgThreadedFilter
 {
+    Q_OBJECT
 
 private:
 
-    struct Args
+    struct Q_DECL_HIDDEN Args
     {
+        explicit Args()
+            : start          (0),
+              stop           (0),
+              a              (0.0),
+              data           (nullptr),
+              sizex          (0),
+              sizey          (0),
+              blur           (0.0),
+              denormal_remove(0.0)
+        {
+        }
+
         uint   start;
         uint   stop;
         float  a;
@@ -61,8 +74,9 @@ private:
 public:
 
     explicit LocalContrastFilter(QObject* const parent = nullptr);
-    explicit LocalContrastFilter(DImg* const image, QObject* const parent=nullptr, const LocalContrastContainer& par=LocalContrastContainer());
-    ~LocalContrastFilter();
+    explicit LocalContrastFilter(DImg* const image, QObject* const parent = nullptr,
+                                 const LocalContrastContainer& par = LocalContrastContainer());
+    ~LocalContrastFilter()                                                    override;
 
     static QString          FilterIdentifier()
     {
@@ -81,12 +95,12 @@ public:
         return 2;
     }
 
-    virtual QString         filterIdentifier()                          const override
+    QString         filterIdentifier()                                  const override
     {
         return FilterIdentifier();
     }
 
-    virtual FilterAction    filterAction()                                    override;
+    FilterAction    filterAction()                                            override;
 
     void                    readParameters(const FilterAction& action)        override;
 

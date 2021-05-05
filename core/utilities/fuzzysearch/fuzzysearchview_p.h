@@ -7,7 +7,7 @@
  * Description : Fuzzy search sidebar tab contents - private container.
  *
  * Copyright (C) 2016-2018 by Mario Frank <mario dot frank at uni minus potsdam dot de>
- * Copyright (C) 2008-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2008-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2008-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  * Copyright (C) 2012      by Andi Clemens <andi dot clemens at gmail dot com>
  *
@@ -102,47 +102,47 @@ public:
 public:
 
     explicit Private()
-      : configTabEntry(QLatin1String("FuzzySearch Tab")),
-        configPenSketchSizeEntry(QLatin1String("Pen Sketch Size")),
-        configResultSketchItemsEntry(QLatin1String("Result Sketch items")),
-        configPenSketchHueEntry(QLatin1String("Pen Sketch Hue")),
-        configPenSketchSaturationEntry(QLatin1String("Pen Sketch Saturation")),
-        configPenSkethValueEntry(QLatin1String("Pen Sketch Value")),
-        configSimilarsThresholdEntry(QLatin1String("Similars Threshold")),
-        configSimilarsMaxThresholdEntry(QLatin1String("Similars Maximum Threshold")),
-        active(false),                      ///< initially be active to update sketch panel when the search list is restored
-        fingerprintsChecked(false),
-        resetButton(nullptr),
-        saveBtnSketch(nullptr),
-        undoBtnSketch(nullptr),
-        redoBtnSketch(nullptr),
-        saveBtnImage(nullptr),
-        penSize(nullptr),
-        resultsSketch(nullptr),
-        similarityRange(nullptr),
-        imageWidget(nullptr),
-        timerSketch(nullptr),
-        timerImage(nullptr),
-        folderView(nullptr),
-        nameEditSketch(nullptr),
-        nameEditImage(nullptr),
-        tabWidget(nullptr),
-        hsSelector(nullptr),
-        vSelector(nullptr),
-        labelFile(nullptr),
-        labelFolder(nullptr),
-        searchFuzzyBar(nullptr),
-        searchTreeView(nullptr),
-        sketchWidget(nullptr),
-        thumbLoadThread(nullptr),
-        findDuplicatesPanel(nullptr),
-        imageSAlbum(nullptr),
-        sketchSAlbum(nullptr),
-        fuzzySearchAlbumSelectors(nullptr),
-        sketchSearchAlbumSelectors(nullptr),
-        searchModel(nullptr),
-        searchModificationHelper(nullptr),
-        settings(nullptr)
+      : configTabEntry                  (QLatin1String("FuzzySearch Tab")),
+        configPenSketchSizeEntry        (QLatin1String("Pen Sketch Size")),
+        configResultSketchItemsEntry    (QLatin1String("Result Sketch items")),
+        configPenSketchHueEntry         (QLatin1String("Pen Sketch Hue")),
+        configPenSketchSaturationEntry  (QLatin1String("Pen Sketch Saturation")),
+        configPenSkethValueEntry        (QLatin1String("Pen Sketch Value")),
+        configSimilarsThresholdEntry    (QLatin1String("Similars Threshold")),
+        configSimilarsMaxThresholdEntry (QLatin1String("Similars Maximum Threshold")),
+        active                          (false),                      ///< initially be active to update sketch panel when the search list is restored
+        fingerprintsChecked             (false),
+        resetButton                     (nullptr),
+        saveBtnSketch                   (nullptr),
+        undoBtnSketch                   (nullptr),
+        redoBtnSketch                   (nullptr),
+        saveBtnImage                    (nullptr),
+        penSize                         (nullptr),
+        resultsSketch                   (nullptr),
+        similarityRange                 (nullptr),
+        imageWidget                     (nullptr),
+        timerSketch                     (nullptr),
+        timerImage                      (nullptr),
+        folderView                      (nullptr),
+        nameEditSketch                  (nullptr),
+        nameEditImage                   (nullptr),
+        tabWidget                       (nullptr),
+        hsSelector                      (nullptr),
+        vSelector                       (nullptr),
+        labelFile                       (nullptr),
+        labelFolder                     (nullptr),
+        searchFuzzyBar                  (nullptr),
+        searchTreeView                  (nullptr),
+        sketchWidget                    (nullptr),
+        thumbLoadThread                 (nullptr),
+        findDuplicatesPanel             (nullptr),
+        imageSAlbum                     (nullptr),
+        sketchSAlbum                    (nullptr),
+        fuzzySearchAlbumSelectors       (nullptr),
+        sketchSearchAlbumSelectors      (nullptr),
+        searchModel                     (nullptr),
+        searchModificationHelper        (nullptr),
+        settings                        (nullptr)
     {
     }
 

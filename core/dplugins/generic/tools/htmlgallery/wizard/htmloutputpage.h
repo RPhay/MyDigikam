@@ -6,7 +6,7 @@
  * Date        : 2006-04-04
  * Description : a tool to generate HTML image galleries
  *
- * Copyright (C) 2012-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -38,14 +38,16 @@ namespace DigikamGenericHtmlGalleryPlugin
 
 class HTMLOutputPage : public DWizardPage
 {
+    Q_OBJECT
+
 public:
 
     explicit HTMLOutputPage(QWizard* const dialog, const QString& title);
-    ~HTMLOutputPage();
+    ~HTMLOutputPage()       override;
 
-    void initializePage();
-    bool validatePage();
-    bool isComplete() const;
+    void initializePage()   override;
+    bool validatePage()     override;
+    bool isComplete() const override;
 
 private:
 

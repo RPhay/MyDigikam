@@ -7,8 +7,8 @@
  * Description : file copy actions using threads.
  *
  * Copyright (C) 2012      by Smit Mehta <smit dot meh at gmail dot com>
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (C) 2019      by Maik Qualmann <metzpinguin at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2019-2020 by Maik Qualmann <metzpinguin at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -32,6 +32,7 @@
 // Local includes
 
 #include "actionthreadbase.h"
+#include "fccontainer.h"
 
 using namespace Digikam;
 
@@ -45,9 +46,8 @@ class FCTask : public ActionJob
 public:
 
     explicit FCTask(const QUrl& srcUrl,
-                    const QUrl& dstUrl,
-                    bool overwrite, bool symLinks);
-    ~FCTask();
+                    const FCContainer& settings);
+    ~FCTask()  override;
 
 Q_SIGNALS:
 
@@ -55,7 +55,17 @@ Q_SIGNALS:
 
 protected:
 
-    void run();
+    void run() override;
+
+private:
+
+    // Disable
+    explicit FCTask(QObject*) = delete;
+
+private:
+
+    bool imageResize(const QString& orgPath, const QString& destPath);
+    void deleteTargetFile(const QString& filePath);
 
 private:
 
@@ -63,6 +73,6 @@ private:
     Private* const d;
 };
 
-}  // namespace DigikamGenericFileCopyPlugin
+} // namespace DigikamGenericFileCopyPlugin
 
 #endif // DIGIKAM_FC_TASK

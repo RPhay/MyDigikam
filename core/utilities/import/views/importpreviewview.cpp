@@ -51,10 +51,12 @@ namespace Digikam
 
 class Q_DECL_HIDDEN ImportPreviewViewItem : public DImgPreviewItem
 {
+    Q_OBJECT
+
 public:
 
     explicit ImportPreviewViewItem(ImportPreviewView* const view)
-        : m_view(view)
+        : m_view (view)
 /*
         FIXME
         , m_group(0)
@@ -71,7 +73,7 @@ public:
     }
 */
 
-    void contextMenuEvent(QGraphicsSceneContextMenuEvent* event)
+    void contextMenuEvent(QGraphicsSceneContextMenuEvent* event) override
     {
         m_view->showContextMenu(m_info, event);
     }
@@ -86,7 +88,7 @@ public:
         }
     }
 
-    void hoverEnterEvent(QGraphicsSceneHoverEvent* e)
+    void hoverEnterEvent(QGraphicsSceneHoverEvent* e) override
     {
         Q_UNUSED(e)
 /*
@@ -95,7 +97,7 @@ public:
 */
     }
 
-    void hoverLeaveEvent(QGraphicsSceneHoverEvent* e)
+    void hoverLeaveEvent(QGraphicsSceneHoverEvent* e) override
     {
         Q_UNUSED(e)
 /*
@@ -104,7 +106,7 @@ public:
 */
     }
 
-    void hoverMoveEvent(QGraphicsSceneHoverEvent* e)
+    void hoverMoveEvent(QGraphicsSceneHoverEvent* e) override
     {
         Q_UNUSED(e)
 /*
@@ -135,17 +137,17 @@ class Q_DECL_HIDDEN ImportPreviewView::Private
 public:
 
     explicit Private()
-      : fullSize(false),
-        scale(1.0),
-        isValid(false),
-        mode(ImportPreviewView::IconViewPreview),
-        item(nullptr),
-        escapePreviewAction(nullptr),
-        prevAction(nullptr),
-        nextAction(nullptr),
-        rotLeftAction(nullptr),
-        rotRightAction(nullptr),
-        toolBar(nullptr)
+      : fullSize            (false),
+        scale               (1.0),
+        isValid             (false),
+        mode                (ImportPreviewView::IconViewPreview),
+        item                (nullptr),
+        escapePreviewAction (nullptr),
+        prevAction          (nullptr),
+        nextAction          (nullptr),
+        rotLeftAction       (nullptr),
+        rotRightAction      (nullptr),
+        toolBar             (nullptr)
     {
 /*
         FIXME
@@ -183,7 +185,7 @@ public:
 
 ImportPreviewView::ImportPreviewView(QWidget* const parent, Mode mode)
     : GraphicsDImgView(parent),
-      d(new Private)
+      d               (new Private)
 {
     d->mode = mode;
     d->item = new ImportPreviewViewItem(this);
@@ -213,11 +215,11 @@ ImportPreviewView::ImportPreviewView(QWidget* const parent, Mode mode)
 
     // ------------------------------------------------------------
 
-    d->escapePreviewAction = new QAction(QIcon::fromTheme(QLatin1String("folder-pictures")),          i18n("Escape preview"),                 this);
-    d->prevAction          = new QAction(QIcon::fromTheme(QLatin1String("go-previous")),              i18nc("go to previous image", "Back"),  this);
-    d->nextAction          = new QAction(QIcon::fromTheme(QLatin1String("go-next")),                  i18nc("go to next image", "Forward"),   this);
-    d->rotLeftAction       = new QAction(QIcon::fromTheme(QLatin1String("object-rotate-left")),       i18nc("@info:tooltip", "Rotate Left"),  this);
-    d->rotRightAction      = new QAction(QIcon::fromTheme(QLatin1String("object-rotate-right")),      i18nc("@info:tooltip", "Rotate Right"), this);
+    d->escapePreviewAction = new QAction(QIcon::fromTheme(QLatin1String("folder-pictures")),          i18nc("@action",                       "Escape preview"),                 this);
+    d->prevAction          = new QAction(QIcon::fromTheme(QLatin1String("go-previous")),              i18nc("@action: go to previous image", "Back"),         this);
+    d->nextAction          = new QAction(QIcon::fromTheme(QLatin1String("go-next")),                  i18nc("@action: go to next image",     "Forward"),      this);
+    d->rotLeftAction       = new QAction(QIcon::fromTheme(QLatin1String("object-rotate-left")),       i18nc("@action",                       "Rotate Left"),  this);
+    d->rotRightAction      = new QAction(QIcon::fromTheme(QLatin1String("object-rotate-right")),      i18nc("@action",                       "Rotate Right"), this);
 /*
     FIXME
     d->addPersonAction    = new QAction(QIcon::fromTheme(QLatin1String("list-add-user")),    i18n("Add a Face Tag"),                 this);
@@ -302,7 +304,6 @@ void ImportPreviewView::camItemLoaded()
     emit signalPreviewLoaded(true);
     d->rotLeftAction->setEnabled(true);
     d->rotRightAction->setEnabled(true);
-
 /*
     FIXME
     d->faceGroup->setInfo(d->item->camItemInfo());
@@ -346,7 +347,7 @@ void ImportPreviewView::setCamItemInfo(const CamItemInfo& info, const CamItemInf
     d->item->setPreloadPaths(previewPaths);
 }
 
-QString ImportPreviewView::identifyCategoryforMime(QString mime)
+QString ImportPreviewView::identifyCategoryforMime(const QString& mime)
 {
     return mime.split(QLatin1Char('/')).at(0);
 }
@@ -364,7 +365,6 @@ bool ImportPreviewView::acceptsMouseClick(QMouseEvent* e)
     }
 
     return true;
-
 /*
     FIXME
     return d->faceGroup->acceptsMouseClick(mapToScene(e->pos()));
@@ -561,3 +561,5 @@ void ImportPreviewView::slotDeleteItem()
 }
 
 } // namespace Digikam
+
+#include "importpreviewview.moc"

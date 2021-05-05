@@ -7,7 +7,7 @@
  * Description : image file IO threaded interface.
  *
  * Copyright (C) 2005-2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2005-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2005-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -37,6 +37,7 @@ class LoadSaveTask;
 
 class DIGIKAM_EXPORT ManagedLoadSaveThread : public LoadSaveThread
 {
+    Q_OBJECT
 
 public:
 
@@ -132,7 +133,7 @@ public:
      * Default is TerminationPolicyTerminateLoading
      */
     explicit ManagedLoadSaveThread(QObject* const parent = nullptr);
-    ~ManagedLoadSaveThread();
+    ~ManagedLoadSaveThread() override;
 
     /**
      * Append a task to load the given file to the task list.
@@ -148,12 +149,14 @@ public:
      * Stop and remove tasks filtered by filePath and policy.
      * If filePath isNull, applies to all file paths.
      */
-    void stopLoading(const QString& filePath = QString(), LoadingTaskFilter filter = LoadingTaskFilterAll);
+    void stopLoading(const QString& filePath = QString(),
+                     LoadingTaskFilter filter = LoadingTaskFilterAll);
 
     /**
      * Same than previous method, but Stop and remove tasks filtered by LoadingDescription.
      */
-    void stopLoading(const LoadingDescription& desc, LoadingTaskFilter filter = LoadingTaskFilterAll);
+    void stopLoading(const LoadingDescription& desc,
+                     LoadingTaskFilter filter = LoadingTaskFilterAll);
 
     /**
      * Stop and remove saving tasks filtered by filePath.
@@ -169,7 +172,7 @@ public:
     void save(DImg& image, const QString& filePath, const QString& format);
 
     void              setTerminationPolicy(TerminationPolicy terminationPolicy);
-    TerminationPolicy terminationPolicy() const;
+    TerminationPolicy terminationPolicy()                                               const;
 
     /**
      * Set the loading policy.
@@ -177,7 +180,7 @@ public:
      * You can override the default value for each operation.
      */
     void          setLoadingPolicy(LoadingPolicy policy);
-    LoadingPolicy loadingPolicy() const;
+    LoadingPolicy loadingPolicy()                                                       const;
 
 protected:
 
@@ -203,12 +206,20 @@ protected:
 
 private:
 
-    LoadingTask* checkLoadingTask(LoadSaveTask* const task, LoadingTaskFilter filter) const;
-    LoadingTask* findExistingTask(const LoadingDescription& description) const;
-    LoadingTask* createLoadingTask(const LoadingDescription& description, bool preloading,
-                                   LoadingMode loadingMode, AccessMode accessMode);
+    LoadingTask* checkLoadingTask(LoadSaveTask* const task, LoadingTaskFilter filter)   const;
+    LoadingTask* findExistingTask(const LoadingDescription& description)                const;
+    LoadingTask* createLoadingTask(const LoadingDescription& description,
+                                   bool preloading,
+                                   LoadingMode loadingMode,
+                                   AccessMode accessMode);
 
     void removeLoadingTasks(const LoadingDescription& description, LoadingTaskFilter filter);
+
+private:
+
+    // Disable
+    ManagedLoadSaveThread(const ManagedLoadSaveThread&)            = delete;
+    ManagedLoadSaveThread& operator=(const ManagedLoadSaveThread&) = delete;
 };
 
 } // namespace Digikam

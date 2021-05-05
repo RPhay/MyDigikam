@@ -5,8 +5,11 @@
  *
  * Date        : 2007-05-02
  * Description : RAW file identification information container
+ * Note:         this container permit to not expose the rest of
+ *               digiKam code to libraw API and use Qt internal
+ *               containers when possible.
  *
- * Copyright (C) 2007-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2007-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -26,10 +29,12 @@
 
 // Qt includes
 
+#include <QByteArray>
 #include <QString>
 #include <QDateTime>
 #include <QSize>
 #include <QDebug>
+#include <QImage>
 
 // Local includes
 
@@ -43,7 +48,8 @@ class DIGIKAM_EXPORT DRawInfo
 
 public:
 
-    /** The RAW image orientation values
+    /**
+     * The RAW image orientation values
      */
     enum ImageOrientation
     {
@@ -56,96 +62,296 @@ public:
 
 public:
 
-    /** Standard constructor */
-    DRawInfo();
+    /**
+     * Standard constructor
+     */
+    explicit DRawInfo();
 
-    /** Standard destructor */
-    virtual ~DRawInfo();
-
-    /** Return 'true' if container is empty, else 'false' */
-    bool isEmpty();
+    /**
+     * Standard destructor
+     */
+    ~DRawInfo();
 
 public:
 
-    /** True if RAW file include an ICC color profile. */
+    /**
+     * True if RAW file include an ICC color profile.
+     */
     bool             hasIccProfile;
-    /** True is RAW file is decodable by dcraw. */
+
+    /**
+     * True is RAW file is decodable by dcraw.
+     */
     bool             isDecodable;
 
-    /** The number of RAW colors. */
+    /**
+     * The number of RAW colors.
+     */
     int              rawColors;
 
-    /** The number of RAW images. */
+    /**
+     * The number of RAW images.
+     */
     int              rawImages;
 
-    /** Black level from Raw histogram. */
+    /**
+     * Black level from Raw histogram.
+     */
     unsigned int     blackPoint;
 
-    /** Channel black levels from Raw histogram. */
+    /**
+     * Channel black levels from Raw histogram.
+     */
     unsigned int     blackPointCh[4];
 
-    /** White level from Raw histogram. */
+    /**
+     * White level from Raw histogram.
+     */
     unsigned int     whitePoint;
 
-    /** Top margin of raw image. */
+    /**
+     * Top margin of raw image.
+     */
     unsigned int     topMargin;
 
-    /** Left margin of raw image. */
+    /**
+     * Left margin of raw image.
+     */
     unsigned int     leftMargin;
 
-    /** The raw image orientation */
+    /**
+     * The raw image orientation
+     */
     ImageOrientation orientation;
 
-    /** The sensitivity in ISO used by camera to take the picture. */
+    /**
+     * The sensitivity in ISO used by camera to take the picture.
+     */
     float            sensitivity;
 
-    /** ==> 1/exposureTime = exposure time in seconds. */
+    /**
+     * 1/exposureTime = exposure time in seconds.
+     */
     float            exposureTime;
-    /** ==> Aperture value in APEX. */
+
+    /**
+     * Aperture value in APEX.
+     */
     float            aperture;
-    /** ==> Focal Length value in mm. */
+
+    /**
+     * Focal Length value in mm.
+     */
     float            focalLength;
-    /** The pixel Aspect Ratio if != 1.0. NOTE: if == 1.0, dcraw do not show this value. */
+
+    /**
+     * The pixel Aspect Ratio if != 1.0. NOTE: if == 1.0, dcraw do not show this value.
+     */
     float            pixelAspectRatio;
 
-    /** White color balance settings. */
+    /**
+     * Exposure compensation to be applied during raw conversion.
+     */
+    float            baselineExposure;
+
+    /**
+     * Ambient temperature in Celcius degrees.
+     */
+    float            ambientTemperature;
+
+    /**
+     * Ambient relative humidity in percent.
+     */
+    float            ambientHumidity;
+
+    /**
+     * Ambient air pressure in hPa or mbar.
+     */
+    float            ambientPressure;
+
+    /**
+     * Depth under water in metres, negative for above water.
+     */
+    float            ambientWaterDepth;
+
+    /**
+     * Directionless camera acceleration in units of mGal, or 10-5 m/s2.
+     */
+    float            ambientAcceleration;
+
+    /**
+     * Camera elevation angle in degrees.
+     */
+    float            ambientElevationAngle;
+
+    /**
+     * Describe how flash has been used by camera.
+     */
+    int              flashUsed;
+
+    /**
+     * The metering mode used by camera.
+     */
+    int              meteringMode;
+
+    /**
+     * The exposure program used by camera.
+     */
+    int              exposureProgram;
+
+    /**
+     * Exposure Index from the camera.
+     */
+    float            exposureIndex;
+
+    /**
+     * White color balance settings.
+     */
     double           daylightMult[3];
-    /** Camera multipliers used for White Balance adjustments */
+
+    /**
+     * Camera multipliers used for White Balance adjustments
+     */
     double           cameraMult[4];
 
-    /** Camera Color Matrix */
+    /**
+     * Camera Color Matrix
+     */
     float            cameraColorMatrix1[3][4];
     float            cameraColorMatrix2[3][4];
     float            cameraXYZMatrix[4][3];
 
-    /** The used Color Keys */
+    /**
+     * GPS information
+     */
+    double           latitude;
+    double           longitude;
+    double           altitude;
+    bool             hasGpsInfo;          ///< true if GPS info are parsed from RAW file.
+
+    /**
+     * The used Color Keys
+     */
     QString          colorKeys;
 
-    /** The camera maker. */
+    /**
+     * The camera maker.
+     */
     QString          make;
-    /** The camera model. */
+
+    /**
+     * The camera model.
+     */
     QString          model;
-    /** The artist name who have picture owner. */
+
+    /**
+     * The artist name who have picture owner.
+     */
     QString          owner;
-    /** The demosaising filter pattern. */
+
+    /**
+     * The software name which process raw image.
+     */
+    QString          software;
+
+    /**
+     * The Firmware name or version which create raw image.
+     */
+    QString          firmware;
+
+    /**
+     * The image description of raw image.
+     */
+    QString          description;
+
+    /**
+     * Serial number of raw image.
+     */
+    unsigned int     serialNumber;
+
+    /**
+     * The demosaising filter pattern.
+     */
     QString          filterPattern;
-    /** The DNG version. NOTE: it is only shown with DNG RAW files. */
+
+    /**
+     * The DNG version. NOTE: it is only shown with DNG RAW files.
+     */
     QString          DNGVersion;
 
-    /** Date & time when the picture has been taken. */
+    /**
+     * Non-localized name for the camera model that created the raw file
+     */
+    QString          uniqueCameraModel;
+
+    /**
+     * Localized name for the camera model that created the raw file
+     */
+    QString          localizedCameraModel;
+
+    /**
+     * An unique image ID generated by camera.
+     */
+    QString          imageID;
+
+    /**
+     * An unique RAW data ID.
+     */
+    QString          rawDataUniqueID;
+
+    /**
+     * The original RAW file name.
+     */
+    QString          originalRawFileName;
+
+    /**
+     * Date & time when the picture has been taken.
+     */
     QDateTime        dateTime;
 
-    /** The image dimensions in pixels. */
+    /**
+     * The image dimensions in pixels.
+     */
     QSize            imageSize;
 
-    /** The thumb dimensions in pixels. */
+    /**
+     * The thumb dimensions in pixels.
+     */
     QSize            thumbSize;
 
-    /** The full RAW image dimensions in pixels. */
+    /**
+     * The full RAW image dimensions in pixels.
+     */
     QSize            fullSize;
 
-    /** The output dimensions in pixels. */
+    /**
+     * The output dimensions in pixels.
+     */
     QSize            outputSize;
+
+    /**
+     * Xmp metadata container extracted from RAW file, if present.
+     */
+    QByteArray       xmpData;
+
+    /**
+     * ICC color profilr container extracted from RAW file, if present.
+     */
+    QByteArray       iccData;
+
+    /**
+     * Thumbnail image data extracted from raw file.
+     */
+    QByteArray       thumbnail;
+
+    /**
+     * Description of lens properties.
+     */
+    QString          lensModel;
+    QString          lensMake;
+    QString          lensSerial;
+    int              focalLengthIn35mmFilm;
+    float            maxAperture;
 };
 
 //! qDebug() stream operator. Writes container @a c to the debug output in a nicely formatted way.

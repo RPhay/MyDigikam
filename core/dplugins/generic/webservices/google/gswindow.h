@@ -8,7 +8,7 @@
  *
  * Copyright (C) 2013      by Pankaj Kumar <me at panks dot me>
  * Copyright (C) 2015      by Shourya Singh Gupta <shouryasgupta at gmail dot com>
- * Copyright (C) 2013-2018 by Caulier Gilles <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2013-2020 by Caulier Gilles <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -34,7 +34,6 @@
 
 // Local includes
 
-#include "digikam_export.h"
 #include "wstooldialog.h"
 #include "gsitem.h"
 #include "dinfointerface.h"
@@ -53,7 +52,7 @@ class GSPhoto;
 class GSFolder;
 class GSNewAlbumDlg;
 
-class DIGIKAM_EXPORT GSWindow : public WSToolDialog
+class GSWindow : public WSToolDialog
 {
     Q_OBJECT
 
@@ -62,7 +61,7 @@ public:
     explicit GSWindow(DInfoInterface* const iface,
                       QWidget* const parent,
                       const QString& serviceName);
-    ~GSWindow();
+    ~GSWindow() override;
 
     void reactivate();
 
@@ -94,13 +93,23 @@ private Q_SLOTS:
     void slotAccessTokenObtained();
     void slotAuthenticationRefused();
     void slotSetUserName(const QString& msg);
-    void slotListAlbumsDone(int, const QString&, const QList <GSFolder>&);
-    void slotListPhotosDoneForDownload(int errCode, const QString& errMsg, const QList <GSPhoto>& photosList);
-    void slotCreateFolderDone(int, const QString& msg, const QString& = QLatin1String("-1"));
-    void slotAddPhotoDone(int, const QString& msg);
-    void slotUploadPhotoDone(int, const QString& msg, const QStringList&);
-    void slotGetPhotoDone(int errCode, const QString& errMsg,
-                          const QByteArray& photoData, const QString& fileName);
+    void slotListAlbumsDone(int, const QString&,
+                            const QList <GSFolder>&);
+    void slotListPhotosDoneForDownload(int errCode,
+                                       const QString& errMsg,
+                                       const QList <GSPhoto>& photosList);
+    void slotCreateFolderDone(int,
+                              const QString& msg,
+                              const QString& = QLatin1String("-1"));
+    void slotAddPhotoDone(int,
+                          const QString& msg);
+    void slotUploadPhotoDone(int,
+                             const QString& msg,
+                             const QStringList&);
+    void slotGetPhotoDone(int errCode,
+                          const QString& errMsg,
+                          const QByteArray& photoData,
+                          const QString& fileName);
     void slotTransferCancel();
 
 private:

@@ -7,7 +7,7 @@
  * Description : color chooser widgets
  *
  * Copyright (C)      1997 by Martin Jones <mjones at kde dot org>
- * Copyright (C) 2015-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2015-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -58,9 +58,9 @@ class DIGIKAM_EXPORT DSelector : public QAbstractSlider
 
 public:
 
-    explicit DSelector(QWidget *parent=nullptr);
-    explicit DSelector(Qt::Orientation o, QWidget* const parent=nullptr);
-    ~DSelector();
+    explicit DSelector(QWidget *parent = nullptr);
+    explicit DSelector(Qt::Orientation o, QWidget* const parent = nullptr);
+    ~DSelector() override;
 
     /**
      * @return the rectangle on which subclasses should draw.
@@ -104,11 +104,11 @@ protected:
      */
     virtual void drawArrow(QPainter* painter, const QPoint& pos);
 
-    virtual void paintEvent(QPaintEvent*)           override;
-    virtual void mousePressEvent(QMouseEvent* e)    override;
-    virtual void mouseMoveEvent(QMouseEvent* e)     override;
-    virtual void mouseReleaseEvent(QMouseEvent* e)  override;
-    virtual void wheelEvent(QWheelEvent*)           override;
+    void paintEvent(QPaintEvent*)           override;
+    void mousePressEvent(QMouseEvent* e)    override;
+    void mouseMoveEvent(QMouseEvent* e)     override;
+    void mouseReleaseEvent(QMouseEvent* e)  override;
+    void wheelEvent(QWheelEvent*)           override;
 
 private:
 
@@ -137,7 +137,7 @@ public:
 
     explicit DColorValueSelector(QWidget* const parent = nullptr);
     explicit DColorValueSelector(Qt::Orientation o, QWidget* const parent = nullptr);
-    ~DColorValueSelector();
+    ~DColorValueSelector() override;
 
     /**
      * Updates the widget's contents.
@@ -211,20 +211,20 @@ protected:
      * which is used for buffering.
      */
     virtual void drawPalette(QPixmap*);
-    virtual void resizeEvent(QResizeEvent*) override;
+    void resizeEvent(QResizeEvent*) override;
 
     /**
      * Reimplemented from DSelector. The drawing is
      * buffered in a pixmap here. As real drawing
      * routine, drawPalette() is used.
      */
-    virtual void drawContents(QPainter*)    override;
+    void drawContents(QPainter*)    override;
 
 private:
 
     class Private;
     friend class Private;
-    Private *const d;
+    Private* const d;
 
     Q_DISABLE_COPY(DColorValueSelector)
 };

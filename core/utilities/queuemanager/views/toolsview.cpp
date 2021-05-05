@@ -6,7 +6,7 @@
  * Date        : 2009-04-20
  * Description : a view to host all available tools.
  *
- * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -49,9 +49,9 @@ class Q_DECL_HIDDEN ToolsView::Private
 public:
 
     explicit Private()
-      : baseTools(nullptr),
+      : baseTools  (nullptr),
         historyView(nullptr),
-        workflow(nullptr)
+        workflow   (nullptr)
     {
     }
 
@@ -62,7 +62,7 @@ public:
 
 ToolsView::ToolsView(QWidget* const parent)
     : QTabWidget(parent),
-      d(new Private)
+      d         (new Private)
 {
     setTabsClosable(false);
 
@@ -94,8 +94,8 @@ ToolsView::ToolsView(QWidget* const parent)
 
     // --------------------------------------------------------
 
-    connect(d->baseTools, SIGNAL(signalAssignTools(QMap<int,QString>)),
-            this, SIGNAL(signalAssignTools(QMap<int,QString>)));
+    connect(d->baseTools, SIGNAL(signalAssignTools(QMultiMap<int,QString>)),
+            this, SIGNAL(signalAssignTools(QMultiMap<int,QString>)));
 
     connect(d->workflow, SIGNAL(signalAssignQueueSettings(QString)),
             this, SIGNAL(signalAssignQueueSettings(QString)));

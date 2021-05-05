@@ -43,6 +43,7 @@
 #include "similaritydbschemaupdater.h"
 #include "dbengineparameters.h"
 #include "dbengineaccess.h"
+#include "dbengineerrorhandler.h"
 
 namespace Digikam
 {
@@ -52,8 +53,8 @@ class Q_DECL_HIDDEN SimilarityDbAccessStaticPriv
 public:
 
     SimilarityDbAccessStaticPriv()
-        : backend(nullptr),
-          db(nullptr),
+        : backend     (nullptr),
+          db          (nullptr),
           initializing(false)
     {
     }
@@ -79,9 +80,9 @@ class Q_DECL_HIDDEN SimilarityDbAccessMutexLocker : public QMutexLocker
 {
 public:
 
-    explicit SimilarityDbAccessMutexLocker(SimilarityDbAccessStaticPriv* const d)
-        : QMutexLocker(&d->lock.mutex),
-          d(d)
+    explicit SimilarityDbAccessMutexLocker(SimilarityDbAccessStaticPriv* const dd)
+        : QMutexLocker(&dd->lock.mutex),
+          d           (dd)
     {
         d->lock.lockCount++;
     }
@@ -101,6 +102,7 @@ public:
 SimilarityDbAccess::SimilarityDbAccess()
 {
     // You will want to call setParameters before constructing SimilarityDbAccess.
+
     Q_ASSERT(d);
 
     d->lock.mutex.lock();
@@ -109,6 +111,7 @@ SimilarityDbAccess::SimilarityDbAccess()
     if (!d->backend->isOpen() && !d->initializing)
     {
         // avoid endless loops
+
         d->initializing = true;
 
         d->backend->open(d->parameters);
@@ -127,6 +130,7 @@ SimilarityDbAccess::SimilarityDbAccess(bool)
 {
     // private constructor, when mutex is locked and
     // backend should not be checked
+
     d->lock.mutex.lock();
     d->lock.lockCount++;
 }
@@ -164,6 +168,7 @@ void SimilarityDbAccess::initDbEngineErrorHandler(DbEngineErrorHandler* const er
     }
 
     //DbEngineErrorHandler* const errorhandler = new DbEngineGuiErrorHandler(d->parameters);
+
     d->backend->setDbEngineErrorHandler(errorhandler);
 }
 
@@ -187,6 +192,7 @@ void SimilarityDbAccess::setParameters(const DbEngineParameters& parameters)
     }
 
     // Kill the old database error handler
+
     if (d->backend)
     {
         d->backend->setDbEngineErrorHandler(nullptr);
@@ -206,9 +212,12 @@ void SimilarityDbAccess::setParameters(const DbEngineParameters& parameters)
 bool SimilarityDbAccess::checkReadyForUse(InitializationObserver* const observer)
 {
     if (!DbEngineAccess::checkReadyForUse(d->lastError))
+    {
         return false;
+    }
 
     // create an object with private shortcut constructor
+
     SimilarityDbAccess access(false);
 
     if (!d->backend)
@@ -234,9 +243,11 @@ bool SimilarityDbAccess::checkReadyForUse(InitializationObserver* const observer
     }
 
     // avoid endless loops (if called methods create new SimilarityDbAccess objects)
+
     d->initializing = true;
 
     // update schema
+
     SimilarityDbSchemaUpdater updater(&access);
     updater.setObserver(observer);
 

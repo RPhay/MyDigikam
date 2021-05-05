@@ -27,13 +27,16 @@
 
 #include <QRegExp>
 
+// KDE includes
+
+#include <klocalizedstring.h>
+
 namespace
 {
-static const QString STR_AUTO_DETECTED(QLatin1String("auto-detected"));
+static const KLocalizedString STR_AUTO_DETECTED(ki18nc("in camera model string", "auto-detected"));
 
 static QRegExp REGEXP_CAMERA_NAME(QLatin1String("^(.*)\\s*\\((.*)\\)\\s*$"), Qt::CaseInsensitive);
 static QRegExp REGEXP_MODES(QLatin1String("^(ptp|normal|mtp)(\\s+mode)?$"), Qt::CaseInsensitive);
-static QRegExp REGEXP_AUTODETECTED(QString::fromUtf8("(%1|, %1)").arg(STR_AUTO_DETECTED));
 }
 
 namespace Digikam
@@ -53,16 +56,16 @@ QString CameraNameHelper::createCameraName(const QString& vendor, const QString&
     QString _mode    = mode.simplified().remove(QLatin1Char('(')).remove(QLatin1Char(')'));
     tmp              = QString::fromUtf8("%1 %2").arg(_vendor).arg(_product);
 
-    if      (!mode.isEmpty() && mode != STR_AUTO_DETECTED)
+    if      (!mode.isEmpty() && mode != STR_AUTO_DETECTED.toString())
     {
         tmp.append(QLatin1String(" ("));
         tmp.append(_mode);
-        tmp.append(autoDetected ? QString::fromUtf8(", %1)").arg(STR_AUTO_DETECTED)
+        tmp.append(autoDetected ? QString::fromUtf8(", %1)").arg(STR_AUTO_DETECTED.toString())
                                 : QLatin1String(")"));
     }
     else if (autoDetected)
     {
-        tmp.append(QString::fromUtf8(" (%1)").arg(STR_AUTO_DETECTED));
+        tmp.append(QString::fromUtf8(" (%1)").arg(STR_AUTO_DETECTED.toString()));
     }
 
     return tmp.simplified();
@@ -99,6 +102,8 @@ QString CameraNameHelper::parseAndFormatCameraName(const QString& cameraName,
 
 QString CameraNameHelper::extractCameraNameToken(const QString& cameraName, Token tokenID)
 {
+    static QRegExp REGEXP_AUTODETECTED(QString::fromUtf8("(%1|, %1)").arg(STR_AUTO_DETECTED.toString()));
+
     REGEXP_CAMERA_NAME.setMinimal(true);
     REGEXP_MODES.setMinimal(true);
     REGEXP_AUTODETECTED.setMinimal(true);

@@ -7,7 +7,7 @@
  * Description : A tool to export items to Rajce web service
  *
  * Copyright (C) 2011      by Lukas Krejci <krejci.l at centrum dot cz>
- * Copyright (C) 2011-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2011-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -51,7 +51,7 @@ using namespace Digikam;
 namespace DigikamGenericRajcePlugin
 {
 
-const QUrl RAJCE_URL(QLatin1String("http://www.rajce.idnes.cz/liveAPI/index.php"));
+const QUrl RAJCE_URL(QLatin1String("https://www.rajce.idnes.cz/liveAPI/index.php"));
 
 class Q_DECL_HIDDEN RajceTalker::Private
 {
@@ -59,8 +59,8 @@ public:
 
     explicit Private()
       : queueAccess(QMutex::Recursive),
-        netMngr(nullptr),
-        reply(nullptr)
+        netMngr    (nullptr),
+        reply      (nullptr)
     {
     }
 
@@ -76,7 +76,7 @@ public:
 
 RajceTalker::RajceTalker(QWidget* const parent)
     : QObject(parent),
-      d(new Private)
+      d      (new Private)
 {
     d->tmpDir  = WSToolUtils::makeTemporaryDir("rajce").absolutePath() + QLatin1Char('/');
     d->netMngr = new QNetworkAccessManager(this);

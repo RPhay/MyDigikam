@@ -5,10 +5,10 @@
  *
  * Date        : 2017-06-27
  * Description : page visualizing photos user choosing to upload and
- *               user albums list to upload photos to. Creating new album 
+ *               user albums list to upload photos to. Creating new album
  *               is also available on this page.
  *
- * Copyright (C) 2017-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2017-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2018      by Thanh Trung Dinh <dinhthanhtrung1996 at gmail dot com>
  *
  * This program is free software; you can redistribute it
@@ -179,7 +179,7 @@ void WSImagesPage::initializePage()
 bool WSImagesPage::validatePage()
 {
     /* If user album is not empty, get id for album to upload photos from currentItem on the list.
-     * Otherwise, set album id as empty string and uploading to empty album will be handled in 
+     * Otherwise, set album id as empty string and uploading to empty album will be handled in
      * specific talker of each web service
      */
     if (d->albumView->currentItem())
@@ -207,7 +207,7 @@ bool WSImagesPage::isComplete() const
 }
 
 void WSImagesPage::addChildToTreeView(QTreeWidgetItem* const parent,
-                                      const QMap<QString, AlbumSimplified>& albumTree, 
+                                      const QMap<QString, AlbumSimplified>& albumTree,
                                       const QStringList& childrenAlbums)
 {
     if (childrenAlbums.isEmpty())
@@ -240,7 +240,7 @@ void WSImagesPage::addChildToTreeView(QTreeWidgetItem* const parent,
         }
 
         /*
-         * Condition to call setCurrentItem for QTreeWidget is tested here to assure that after clicking on Reload, currentItem still points 
+         * Condition to call setCurrentItem for QTreeWidget is tested here to assure that after clicking on Reload, currentItem still points
          * to the same album as before
          */
         if (albumId == d->currentAlbumId)
@@ -252,7 +252,7 @@ void WSImagesPage::addChildToTreeView(QTreeWidgetItem* const parent,
     }
 }
 
-void WSImagesPage::slotListAlbumsDone(const QMap<QString, AlbumSimplified>& albumTree, 
+void WSImagesPage::slotListAlbumsDone(const QMap<QString, AlbumSimplified>& albumTree,
                                       const QStringList& rootAlbums,
                                       const QString& currentAlbumId)
 {
@@ -298,7 +298,7 @@ void WSImagesPage::slotListAlbumsDone(const QMap<QString, AlbumSimplified>& albu
         }
 
         /*
-         * Condition to call setCurrentItem for QTreeWidget is tested here to assure that after clicking on Reload, currentItem still points 
+         * Condition to call setCurrentItem for QTreeWidget is tested here to assure that after clicking on Reload, currentItem still points
          * to the same album as before
          */
         if (d->currentAlbumId == albumId)

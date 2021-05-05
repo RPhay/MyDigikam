@@ -6,7 +6,7 @@
  * Date        : 2007-11-15
  * Description : widget item delegate for setup collection view
  *
- * Copyright (C) 2015-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2015-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2007-2008 by Rafael Fernández López <ereslibre at kde dot org>
  * Copyright (C) 2008      by Kevin Ottens <ervin at kde dot org>
  *
@@ -45,7 +45,7 @@ namespace Digikam
 class DWItemDelegate;
 class DWItemDelegatePoolPrivate;
 
-class DIGIKAM_EXPORT DWItemDelegatePool
+class DIGIKAM_GUI_EXPORT DWItemDelegatePool
 {
 public:
 
@@ -81,12 +81,15 @@ public:
 
 private:
 
-    // Hidden copy constructor and assignment operator.
-    DWItemDelegatePool(const DWItemDelegatePool&);
-    DWItemDelegatePool& operator=(const DWItemDelegatePool&);
+    // Disable
+    DWItemDelegatePool(const DWItemDelegatePool&)            = delete;
+    DWItemDelegatePool& operator=(const DWItemDelegatePool&) = delete;
+
+private:
 
     friend class DWItemDelegate;
     friend class DWItemDelegatePrivate;
+
     DWItemDelegatePoolPrivate* const d;
 };
 
@@ -113,9 +116,9 @@ public:
 
 private:
 
-    // Hidden copy constructor and assignment operator.
-    DWItemDelegatePoolPrivate(const DWItemDelegatePoolPrivate&);
-    DWItemDelegatePoolPrivate& operator=(const DWItemDelegatePoolPrivate&);
+    // Disable
+    DWItemDelegatePoolPrivate(const DWItemDelegatePoolPrivate&)            = delete;
+    DWItemDelegatePoolPrivate& operator=(const DWItemDelegatePoolPrivate&) = delete;
 };
 
 } // namespace Digikam

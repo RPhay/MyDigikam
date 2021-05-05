@@ -10,7 +10,7 @@
  * Copyright (C) 2010-2011 by Andi Clemens <andi dot clemens at gmail dot com>
  * Copyright (C) 2014      by Mohamed_Anwer <m_dot_anwer at gmx dot com>
  * Copyright (C) 2014      by Michael G. Hansen <mike at mghansen dot de>
- * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -82,8 +82,8 @@ static QList<A*> selectedAlbums(QItemSelectionModel* const selModel,
 struct State
 {
     State()
-        : selected(false),
-          expanded(false),
+        : selected    (false),
+          expanded    (false),
           currentIndex(false)
     {
     }
@@ -97,21 +97,24 @@ struct State
 
 class Q_DECL_HIDDEN AlbumTreeViewDelegate : public QStyledItemDelegate
 {
+    Q_OBJECT
+
 public:
 
     explicit AlbumTreeViewDelegate(AbstractAlbumTreeView* const treeView = nullptr)
         : QStyledItemDelegate(treeView),
-          m_treeView(treeView),
-          m_height(0)
+          m_treeView         (treeView),
+          m_height           (0)
     {
         updateHeight();
     }
 
-    virtual QSize sizeHint(const QStyleOptionViewItem& option,
-                           const QModelIndex& index) const
+    QSize sizeHint(const QStyleOptionViewItem& option,
+                           const QModelIndex& index) const override
     {
         QSize size = QStyledItemDelegate::sizeHint(option, index);
         size.setHeight(qMax(size.height(), m_height));
+
         return size;
     }
 
@@ -153,19 +156,19 @@ class Q_DECL_HIDDEN AbstractAlbumTreeView::Private
 public:
 
     explicit Private()
-      : delegate(nullptr),
-        expandOnSingleClick(false),
-        expandNewCurrent(false),
-        selectAlbumOnClick(false),
-        selectOnContextMenu(true),
-        enableContextMenu(false),
-        setInAlbumManager(false),
-        resizeColumnsTimer(nullptr),
-        configSelectionEntry(QLatin1String("Selection")),
-        configExpansionEntry(QLatin1String("Expansion")),
-        configCurrentIndexEntry(QLatin1String("CurrentIndex")),
-        configSortColumnEntry(QLatin1String("SortColumn")),
-        configSortOrderEntry(QLatin1String("SortOrder"))
+      : delegate                (nullptr),
+        expandOnSingleClick     (false),
+        expandNewCurrent        (false),
+        selectAlbumOnClick      (false),
+        selectOnContextMenu     (true),
+        enableContextMenu       (false),
+        setInAlbumManager       (false),
+        resizeColumnsTimer      (nullptr),
+        configSelectionEntry    (QLatin1String("Selection")),
+        configExpansionEntry    (QLatin1String("Expansion")),
+        configCurrentIndexEntry (QLatin1String("CurrentIndex")),
+        configSortColumnEntry   (QLatin1String("SortColumn")),
+        configSortOrderEntry    (QLatin1String("SortOrder"))
     {
     }
 

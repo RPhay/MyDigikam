@@ -6,7 +6,7 @@
  * Date        : 2009-05-26
  * Description : History view.
  *
- * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -57,9 +57,11 @@ public:
 public:
 
     explicit DHistoryView(QWidget* const parent);
-    virtual ~DHistoryView();
+    ~DHistoryView()                     override;
 
-    void addEntry(const QString& msg, EntryType type, const QVariant& metadata = QVariant());
+    void addEntry(const QString& msg,
+                  EntryType type,
+                  const QVariant& metadata = QVariant());
 
 Q_SIGNALS:
 
@@ -73,7 +75,7 @@ private Q_SLOTS:
 
 private:
 
-    void mouseMoveEvent(QMouseEvent*) override;
+    void mouseMoveEvent(QMouseEvent*)   override;
 };
 
 } // namespace Digikam

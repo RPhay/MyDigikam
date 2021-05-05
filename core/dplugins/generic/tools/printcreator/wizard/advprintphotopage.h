@@ -6,7 +6,7 @@
  * Date        : 2017-05-25
  * Description : a tool to print images
  *
- * Copyright (C) 2017-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2017-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -53,18 +53,19 @@ class AdvPrintPhotoPage : public DWizardPage
 public:
 
     explicit AdvPrintPhotoPage(QWizard* const wizard, const QString& title);
-    ~AdvPrintPhotoPage();
+    ~AdvPrintPhotoPage()                            override;
 
     QPrinter*             printer()           const;
     DItemsList*           imagesList()        const;
     Ui_AdvPrintPhotoPage* ui()                const;
-    bool                  isComplete()        const;
+    bool                  isComplete()        const override;
     int                   getPageCount()      const;
 
-    void initializePage();
-    bool validatePage();
+    void initializePage()                           override;
+    bool validatePage()                             override;
 
-    /** Create a MxN grid of photos, fitting on the page.
+    /**
+     * Create a MxN grid of photos, fitting on the page.
      */
     void createPhotoGrid(AdvPrintPhotoSize* const p,
                          int pageWidth,
@@ -75,13 +76,15 @@ public:
 
     void manageBtnPreviewPage();
 
-    /** Initialize page layout to the given pageSize in mm.
+    /**
+     * Initialize page layout to the given pageSize in mm.
      */
     void initPhotoSizes(const QSizeF& pageSize);
 
 private:
 
-    /** To parse template file with 'fn' as filename, and 'pageSize' in mm.
+    /**
+     * To parse template file with 'fn' as filename, and 'pageSize' in mm.
      */
     void parseTemplateFile(const QString& fn,
                            const QSizeF& pageSize);
@@ -94,13 +97,15 @@ private Q_SLOTS:
 
     void slotXMLLoadElement(QXmlStreamReader&);
 
-    /** Save item list => we catch the signal to add
-     *  our PA attributes and elements Image children
+    /**
+     * Save item list => we catch the signal to add
+     * our PA attributes and elements Image children
      */
     void slotXMLSaveItem(QXmlStreamWriter&, int);
 
-    /** Save item list => we catch the signal to add
-     *  our PA elements (not per image)
+    /**
+     * Save item list => we catch the signal to add
+     * our PA elements (not per image)
      */
     void slotXMLCustomElement(QXmlStreamWriter&);
 

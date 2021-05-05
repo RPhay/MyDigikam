@@ -6,7 +6,7 @@
  * Date        : 2006-12-09
  * Description : a tread-safe libraw Qt interface
  *
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2006-2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  * Copyright (C) 2007-2008 by Guillaume Castagnino <casta at xwing dot info>
  *
@@ -55,12 +55,12 @@ public:
     /**
      * Standard constructor.
      */
-    explicit DRawDecoder();
+    DRawDecoder();
 
     /**
      * Standard destructor.
      */
-    virtual ~DRawDecoder();
+    ~DRawDecoder() override;
 
 public:
 
@@ -246,7 +246,7 @@ protected:
     bool                m_cancel;
 
     /**
-     * The settings container used to perform RAW pictures decoding. See 'rawdecodingsetting.h'
+     * The settings container used to perform RAW pictures decoding. See 'drawdecodingsetting.h'
      * for details.
      */
     DRawDecoderSettings m_decoderSettings;
@@ -269,10 +269,13 @@ protected:
 
 public:
 
-    // Declared public to be called externally by callbackForLibRaw() static method.
+    // NOTE: declared public to be called externally by s_progressCallbackForLibRaw() static method.
     class Private;
 
 private:
+
+    // Disabled
+    explicit DRawDecoder(QObject*) = delete;
 
     Private* const d;
 

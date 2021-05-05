@@ -6,7 +6,7 @@
  * Date        : 2009-12-23
  * Description : a widget to manage preview.
  *
- * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2012      by Benjamin Girault <benjamin dot girault at gmail dot com>
  *
  * This program is free software; you can redistribute it
@@ -54,40 +54,42 @@ class Q_DECL_HIDDEN DPreviewManager::Private
 public:
 
     explicit Private()
-      : busy(false),
-        textLabel(nullptr),
-        thumbLabel(nullptr),
-        button(nullptr),
-        progressCount(0),
-        progressPix(DWorkingPixmap()),
-        progressTimer(nullptr),
-        progressLabel(nullptr),
-        preview(nullptr)
+      : busy            (false),
+        textLabel       (nullptr),
+        thumbLabel      (nullptr),
+        button          (nullptr),
+        progressCount   (0),
+        progressPix     (nullptr),
+        progressTimer   (nullptr),
+        progressLabel   (nullptr),
+        preview         (nullptr)
     {
     }
 
-    bool           busy;
+    bool            busy;
 
-    QLabel*        textLabel;
-    QLabel*        thumbLabel;
+    QLabel*         textLabel;
+    QLabel*         thumbLabel;
 
-    QPushButton*   button;
+    QPushButton*    button;
 
-    int            progressCount;
-    DWorkingPixmap progressPix;
-    QTimer*        progressTimer;
-    QLabel*        progressLabel;
+    int             progressCount;
+    DWorkingPixmap* progressPix;
+    QTimer*         progressTimer;
+    QLabel*         progressLabel;
 
     DPreviewImage* preview;
 };
 
 DPreviewManager::DPreviewManager(QWidget* const parent)
     : QStackedWidget(parent),
-      d(new Private)
+      d             (new Private)
 {
     setAttribute(Qt::WA_DeleteOnClose);
     setMinimumSize(QSize(400, 300));
     setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+
+    d->progressPix             = new DWorkingPixmap(this);
 
     QFrame* const vbox         = new QFrame(this);
     QVBoxLayout* const vboxLay = new QVBoxLayout(vbox);
@@ -137,12 +139,12 @@ DPreviewManager::DPreviewManager(QWidget* const parent)
     vboxLay->setStretchFactor(hbox, 5);
     vboxLay->setStretchFactor(space6, 10);
 
-    d->preview = new DPreviewImage(this);
+    d->preview                 = new DPreviewImage(this);
 
     insertWidget(MessageMode, vbox);
     insertWidget(PreviewMode, d->preview);
 
-    d->progressTimer = new QTimer(this);
+    d->progressTimer           = new QTimer(this);
 
     connect(d->progressTimer, &QTimer::timeout,
             this, &DPreviewManager::slotProgressTimerDone);
@@ -167,7 +169,7 @@ void DPreviewManager::setImage(const QImage& img, bool fit)
 
     if (!d->preview->setImage(img))
     {
-        setText(i18n( "Failed to load image" ));
+        setText(i18nc("@info", "Failed to load image"));
         return;
     }
 
@@ -185,7 +187,7 @@ bool DPreviewManager::load(const QUrl& file, bool fit)
 
     if (!d->preview->load(file))
     {
-        setText(i18n( "Failed to load image" ));
+        setText(i18nc("@info", "Failed to load image"));
         return false;
     }
 
@@ -257,7 +259,7 @@ void DPreviewManager::setBusy(bool b, const QString& text)
 
 void DPreviewManager::slotProgressTimerDone()
 {
-    d->progressLabel->setPixmap(d->progressPix.frameAt(d->progressCount));
+    d->progressLabel->setPixmap(d->progressPix->frameAt(d->progressCount));
     d->progressCount++;
 
     if (d->progressCount == 8)

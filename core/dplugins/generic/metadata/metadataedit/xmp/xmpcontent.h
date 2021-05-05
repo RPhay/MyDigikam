@@ -6,7 +6,7 @@
  * Date        : 2007-10-18
  * Description : XMP content settings page.
  *
- * Copyright (C) 2007-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2007-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -38,18 +38,21 @@ class XMPContent : public QWidget
 public:
 
     explicit XMPContent(QWidget* const parent);
-    ~XMPContent();
+    ~XMPContent() override;
 
     void applyMetadata(QByteArray& exifData, QByteArray& xmpData);
     void readMetadata(QByteArray& xmpData);
 
-    bool syncJFIFCommentIsChecked() const;
-    bool syncEXIFCommentIsChecked() const;
+    bool syncJFIFCommentIsChecked()   const;
+    bool syncEXIFCommentIsChecked()   const;
+    bool syncEXIFCopyrightIsChecked() const;
 
     void setCheckedSyncJFIFComment(bool c);
     void setCheckedSyncEXIFComment(bool c);
+    void setCheckedSyncEXIFCopyright(bool c);
 
-    QString getXMPCaption() const;
+    QString getXMPCaption()           const;
+    QString getXMPCopyright()         const;
 
 Q_SIGNALS:
 
@@ -57,7 +60,8 @@ Q_SIGNALS:
 
 private Q_SLOTS:
 
-    void slotSyncOptionsEnabled(bool);
+    void slotSyncCaptionOptionsEnabled(bool);
+    void slotSyncCopyrightOptionsEnabled(bool);
 
 private:
 

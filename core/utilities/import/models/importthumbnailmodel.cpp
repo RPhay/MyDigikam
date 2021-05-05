@@ -99,7 +99,10 @@ QVariant ImportThumbnailModel::data(const QModelIndex& index, int role) const
         // this is to avoid querying the device for previews with unsupported file formats
         // at least gphoto2 doesn't really like it and will error a lot and slow down
 
-        if (info.isNull() || path.isEmpty() || !info.previewPossible)
+        bool thumbnailPossible = (info.previewPossible                                       ||
+                                  d->thumbsCtrl->cameraController()->cameraThumbnailSupport());
+
+        if (info.isNull() || path.isEmpty() || !thumbnailPossible)
         {
             return QVariant(d->thumbsCtrl->cameraController()->mimeTypeThumbnail(path).pixmap(d->thumbSize.size()));
         }

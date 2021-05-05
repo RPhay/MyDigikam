@@ -6,7 +6,7 @@
  * Date        : 2007-03-05
  * Description : digiKam light table GUI
  *
- * Copyright (C) 2007-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2007-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -45,8 +45,9 @@ bool LightTableWindow::lightTableWindowCreated()
 
 LightTableWindow::LightTableWindow()
     : DXmlGuiWindow(nullptr),
-      d(new Private)
+      d            (new Private)
 {
+    setObjectName(QLatin1String("Light Table"));
     setConfigGroupName(QLatin1String("LightTable Settings"));
     setXMLFile(QLatin1String("lighttablewindowui5.rc"));
 
@@ -317,7 +318,6 @@ void LightTableWindow::slotItemSelected(const ItemInfo& info)
     d->lastAction->setEnabled(hasInfo);
     d->syncPreviewAction->setEnabled(hasInfo);
     d->navigateByPairAction->setEnabled(hasInfo);
-    d->slideShowAction->setEnabled(hasInfo);
 
     if (hasInfo)
     {
@@ -948,6 +948,11 @@ void LightTableWindow::slotComponentsInfo()
 void LightTableWindow::slotDBStat()
 {
     showDigikamDatabaseStat();
+}
+
+void LightTableWindow::slotOnlineVersionCheck()
+{
+    Setup::onlineVersionCheck();
 }
 
 void LightTableWindow::moveEvent(QMoveEvent* e)

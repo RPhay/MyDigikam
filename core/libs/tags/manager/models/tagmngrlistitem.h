@@ -39,7 +39,7 @@ class ListItem : public QObject
 public:
 
     explicit ListItem(QList<QVariant>& data, ListItem* const parent = nullptr);
-    ~ListItem();
+    ~ListItem() override;
 
     void appendChild(ListItem* const child);
     void removeTagId(int tagId);

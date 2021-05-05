@@ -6,7 +6,7 @@
  * Date        : 2014-09-12
  * Description : Web Service tool utils methods
  *
- * Copyright (C) 2014-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2014-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -29,6 +29,10 @@
 #include <QByteArray>
 #include <QBuffer>
 #include <QTime>
+
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 10, 0))
+#   include <QRandomGenerator>
+#endif
 
 namespace Digikam
 {
@@ -66,12 +70,30 @@ QString WSToolUtils::randomString(const int& length)
     const QString possibleCharacters(QLatin1String("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"));
 
     QString randomString;
+
+#if (QT_VERSION < QT_VERSION_CHECK(5, 10, 0))
+
     qsrand((uint)QTime::currentTime().msec());
+
+#else
+
+    QRandomGenerator* const generator = QRandomGenerator::global();
+
+#endif
 
     for (int i = 0 ; i < length ; ++i)
     {
-        int index      = qrand() % possibleCharacters.length();
-        QChar nextChar = possibleCharacters.at(index);
+#if (QT_VERSION < QT_VERSION_CHECK(5, 10, 0))
+
+        const int index = qrand() % possibleCharacters.length();
+
+#else
+
+        const int index = generator->bounded(possibleCharacters.length());
+
+#endif
+
+        QChar nextChar  = possibleCharacters.at(index);
         randomString.append(nextChar);
     }
 

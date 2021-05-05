@@ -6,7 +6,7 @@
  * Date        : 2008-11-24
  * Description : Available batch tools list.
  *
- * Copyright (C) 2008-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2008-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -46,14 +46,19 @@ class ToolListViewGroup : public QTreeWidgetItem
 
 public:
 
-    ToolListViewGroup(QTreeWidget* const parent, BatchTool::BatchToolGroup group);
-    ~ToolListViewGroup();
+    ToolListViewGroup(QTreeWidget* const parent,
+                      BatchTool::BatchToolGroup group);
+    ~ToolListViewGroup()                        override;
 
     BatchTool::BatchToolGroup toolGroup() const;
 
 private:
 
-    BatchTool::BatchToolGroup  m_group;
+    BatchTool::BatchToolGroup m_group;
+
+ private:
+
+    Q_DISABLE_COPY(ToolListViewGroup)
 };
 
 // -------------------------------------------------------------------------
@@ -63,14 +68,19 @@ class ToolListViewItem : public QTreeWidgetItem
 
 public:
 
-    ToolListViewItem(ToolListViewGroup* const parent, BatchTool* const tool);
-    ~ToolListViewItem();
+    ToolListViewItem(ToolListViewGroup* const parent,
+                     BatchTool* const tool);
+    ~ToolListViewItem()                         override;
 
-    BatchTool* tool() const;
+    BatchTool* tool()                     const;
 
 private:
 
     BatchTool* m_tool;
+
+private:
+
+    Q_DISABLE_COPY(ToolListViewItem)
 };
 
 // -------------------------------------------------------------------------
@@ -82,7 +92,7 @@ class ToolsListView : public QTreeWidget
 public:
 
     explicit ToolsListView(QWidget* const parent);
-    ~ToolsListView();
+    ~ToolsListView()                                                               override;
 
     BatchToolsList toolsList();
 
@@ -91,7 +101,7 @@ public:
 
 Q_SIGNALS:
 
-    void signalAssignTools(const QMap<int, QString>&);
+    void signalAssignTools(const QMultiMap<int, QString>&);
 
 private Q_SLOTS:
 
@@ -105,12 +115,12 @@ private:
     ToolListViewItem* findTool(BatchTool* const tool);
     ToolListViewGroup* findToolGroup(BatchTool::BatchToolGroup group);
 
-    void        startDrag(Qt::DropActions supportedActions)                  override;
-    QStringList mimeTypes()                                            const override;
-    QMimeData*  mimeData(const QList<QTreeWidgetItem*> items)          const override;
+    void        startDrag(Qt::DropActions supportedActions)                        override;
+    QStringList mimeTypes()                                                  const override;
+    QMimeData*  mimeData(const QList<QTreeWidgetItem*> items)                const override;
 
-    void mouseDoubleClickEvent(QMouseEvent*)                                 override;
-    QMap<int, QString> itemsToMap(const QList<QTreeWidgetItem*> items) const;
+    void mouseDoubleClickEvent(QMouseEvent*)                                       override;
+    QMultiMap<int, QString> itemsToMap(const QList<QTreeWidgetItem*>& items) const;
 };
 
 } // namespace Digikam

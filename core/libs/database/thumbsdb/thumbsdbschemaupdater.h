@@ -7,7 +7,7 @@
  * Description : Thumbnail DB schema update
  *
  * Copyright (C) 2007-2009 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2010-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2010-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -25,13 +25,17 @@
 #ifndef DIGIKAM_THUMBS_DB_SCHEMA_UPDATER_H
 #define DIGIKAM_THUMBS_DB_SCHEMA_UPDATER_H
 
+// Local includes
+
+#include "digikam_export.h"
+
 namespace Digikam
 {
 
 class ThumbsDbAccess;
 class InitializationObserver;
 
-class ThumbsDbSchemaUpdater
+class DIGIKAM_EXPORT ThumbsDbSchemaUpdater
 {
 public:
 
@@ -58,9 +62,9 @@ private:
 
 private:
 
-    // Hidden copy constructor and assignment operator.
-    ThumbsDbSchemaUpdater(const ThumbsDbSchemaUpdater&);
-    ThumbsDbSchemaUpdater& operator=(const ThumbsDbSchemaUpdater&);
+    // Disable
+    ThumbsDbSchemaUpdater(const ThumbsDbSchemaUpdater&)            = delete;
+    ThumbsDbSchemaUpdater& operator=(const ThumbsDbSchemaUpdater&) = delete;
 
     class Private;
     Private* const d;

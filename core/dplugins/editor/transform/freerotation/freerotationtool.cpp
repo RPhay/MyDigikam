@@ -7,7 +7,7 @@
  * Description : a digiKam image editor tool to process image
  *               free rotation.
  *
- * Copyright (C) 2004-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2004-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2009-2010 by Andi Clemens <andi dot clemens at gmail dot com>
  *
  * This program is free software; you can redistribute it
@@ -44,7 +44,7 @@
 
 #include <klocalizedstring.h>
 #include <ksharedconfig.h>
-#include "kconfiggroup.h"
+#include <kconfiggroup.h>
 
 // Local includes
 
@@ -64,16 +64,16 @@ class Q_DECL_HIDDEN FreeRotationTool::Private
 public:
 
     explicit Private()
-      : configGroupName(QLatin1String("freerotation Tool")),
-        newHeightLabel(nullptr),
-        newWidthLabel(nullptr),
-        autoAdjustBtn(nullptr),
-        autoAdjustPoint1Btn(nullptr),
-        autoAdjustPoint2Btn(nullptr),
-        settingsView(nullptr),
-        expanderBox(nullptr),
-        gboxSettings(nullptr),
-        previewWidget(nullptr)
+      : configGroupName     (QLatin1String("freerotation Tool")),
+        newHeightLabel      (nullptr),
+        newWidthLabel       (nullptr),
+        autoAdjustBtn       (nullptr),
+        autoAdjustPoint1Btn (nullptr),
+        autoAdjustPoint2Btn (nullptr),
+        settingsView        (nullptr),
+        expanderBox         (nullptr),
+        gboxSettings        (nullptr),
+        previewWidget       (nullptr)
     {
     }
 
@@ -98,7 +98,7 @@ public:
 
 FreeRotationTool::FreeRotationTool(QObject* const parent)
     : EditorToolThreaded(parent),
-      d(new Private)
+      d                 (new Private)
 {
     setObjectName(QLatin1String("freerotation"));
 
@@ -122,31 +122,32 @@ FreeRotationTool::FreeRotationTool(QObject* const parent)
     d->gboxSettings->setTools(EditorToolSettings::ColorGuide);
 
     QLabel* const label1 = new QLabel(i18n("New width:"));
-    d->newWidthLabel     = new QLabel(temp.setNum( iface.originalSize().width()) + i18n(" px"));
-    d->newWidthLabel->setAlignment( Qt::AlignBottom | Qt::AlignRight );
+    d->newWidthLabel     = new QLabel(temp.setNum(iface.originalSize().width()) + i18n(" px"));
+    d->newWidthLabel->setAlignment(Qt::AlignBottom | Qt::AlignRight);
 
     QLabel* const label2 = new QLabel(i18n("New height:"));
-    d->newHeightLabel    = new QLabel(temp.setNum( iface.originalSize().height()) + i18n(" px"));
-    d->newHeightLabel->setAlignment( Qt::AlignBottom | Qt::AlignRight );
+    d->newHeightLabel    = new QLabel(temp.setNum(iface.originalSize().height()) + i18n(" px"));
+    d->newHeightLabel->setAlignment(Qt::AlignBottom | Qt::AlignRight);
 
     // -------------------------------------------------------------
 
     QString btnWhatsThis = i18n("Select a point in the preview widget, "
                                 "then click this button to assign the point for auto-correction.");
 
-    QPixmap pm1 = generateBtnPixmap(QLatin1String("1"), Qt::black);
+    QColor textColor     = qApp->palette().color(QPalette::Active, QPalette::Text);
+
+    QPixmap pm1 = generateBtnPixmap(QLatin1String("1"), textColor);
     d->autoAdjustPoint1Btn = new QPushButton;
     d->autoAdjustPoint1Btn->setIcon(pm1);
     d->autoAdjustPoint1Btn->setSizePolicy(QSizePolicy::MinimumExpanding,
                                           QSizePolicy::MinimumExpanding);
 
-    QPixmap pm2 = generateBtnPixmap(QLatin1String("2"), Qt::black);
+    QPixmap pm2 = generateBtnPixmap(QLatin1String("2"), textColor);
     d->autoAdjustPoint2Btn = new QPushButton;
     d->autoAdjustPoint2Btn->setIcon(pm2);
     d->autoAdjustPoint2Btn->setSizePolicy(QSizePolicy::MinimumExpanding,
                                           QSizePolicy::MinimumExpanding);
 
-    d->autoAdjustPoint1Btn->setShortcut(QKeySequence(Qt::Key_1));
     d->autoAdjustPoint1Btn->setToolTip(btnWhatsThis);
     d->autoAdjustPoint1Btn->setWhatsThis(btnWhatsThis);
     d->autoAdjustPoint2Btn->setToolTip(btnWhatsThis);
@@ -168,11 +169,15 @@ FreeRotationTool::FreeRotationTool(QObject* const parent)
     const int offset = (pm1.width() * 2) + 10;
 
 #if (QT_VERSION >= QT_VERSION_CHECK(5, 11, 0))
+
     int minWidth1    = fm.horizontalAdvance(invalidText) + offset;
     int minWidth2    = fm.horizontalAdvance(validText) + offset;
+
 #else
+
     int minWidth1    = fm.width(invalidText) + offset;
     int minWidth2    = fm.width(validText) + offset;
+
 #endif
 
     int minWidth     = qMax<int>(minWidth1, minWidth2);
@@ -203,10 +208,10 @@ FreeRotationTool::FreeRotationTool(QObject* const parent)
 
     const int cmargin = QApplication::style()->pixelMetric(QStyle::PM_DefaultChildMargin);
 
-    containerLayout2->addWidget(autoDescr,              0, 0, 1,-1);
-    containerLayout2->addWidget(d->autoAdjustPoint1Btn, 1, 0, 1, 1);
-    containerLayout2->addWidget(d->autoAdjustBtn,       1, 2, 2, 1);
-    containerLayout2->addWidget(d->autoAdjustPoint2Btn, 2, 0, 1, 1);
+    containerLayout2->addWidget(autoDescr,              0, 0, 1, -1);
+    containerLayout2->addWidget(d->autoAdjustPoint1Btn, 1, 0, 1,  1);
+    containerLayout2->addWidget(d->autoAdjustBtn,       1, 2, 2,  1);
+    containerLayout2->addWidget(d->autoAdjustPoint2Btn, 2, 0, 1,  1);
     containerLayout2->setColumnStretch(1, 10);
     containerLayout2->setContentsMargins(cmargin, cmargin, cmargin, cmargin);
     autoAdjustContainer->setLayout(containerLayout2);
@@ -228,12 +233,12 @@ FreeRotationTool::FreeRotationTool(QObject* const parent)
     const int spacing = d->gboxSettings->spacingHint();
 
     QGridLayout* const grid2 = new QGridLayout;
-    grid2->addWidget(label1,            0, 0, 1, 1);
-    grid2->addWidget(d->newWidthLabel,  0, 1, 1, 1);
-    grid2->addWidget(label2,            1, 0, 1, 1);
-    grid2->addWidget(d->newHeightLabel, 1, 1, 1, 1);
-    grid2->addWidget(line,              2, 0, 1,-1);
-    grid2->addWidget(d->expanderBox,    3, 0, 1,-1);
+    grid2->addWidget(label1,            0, 0, 1,  1);
+    grid2->addWidget(d->newWidthLabel,  0, 1, 1,  1);
+    grid2->addWidget(label2,            1, 0, 1,  1);
+    grid2->addWidget(d->newHeightLabel, 1, 1, 1,  1);
+    grid2->addWidget(line,              2, 0, 1, -1);
+    grid2->addWidget(d->expanderBox,    3, 0, 1, -1);
     grid2->setRowStretch(3, 10);
     grid2->setContentsMargins(spacing, spacing, spacing, spacing);
     grid2->setSpacing(spacing);
@@ -348,8 +353,8 @@ void FreeRotationTool::setPreviewImage()
         QSize newSize = tool->getNewSize();
         int new_w     = (newSize.width()  == -1) ? iface->originalSize().width()  : newSize.width();
         int new_h     = (newSize.height() == -1) ? iface->originalSize().height() : newSize.height();
-        d->newWidthLabel->setText(temp.setNum(new_w)  + i18n(" px") );
-        d->newHeightLabel->setText(temp.setNum(new_h) + i18n(" px") );
+        d->newWidthLabel->setText(temp.setNum(new_w)  + i18n(" px"));
+        d->newHeightLabel->setText(temp.setNum(new_h) + i18n(" px"));
     }
 }
 
@@ -384,6 +389,7 @@ QString FreeRotationTool::centerString(const QString& str, int maxLength) const
 
     // fill with additional whitespace, to match the original label length and center
     // the text, without moving the button icon
+
     int diff = qAbs<int>(max - str.count());
 
     if (diff > 0)
@@ -399,7 +405,7 @@ QString FreeRotationTool::centerString(const QString& str, int maxLength) const
         if (diff != 0)
         {
             // too long?
-            if (tmp.count() > maxLength)
+            if      (tmp.count() > maxLength)
             {
                 tmp.chop(diff);
             }
@@ -417,6 +423,7 @@ QString FreeRotationTool::centerString(const QString& str, int maxLength) const
 void FreeRotationTool::updatePoints()
 {
     // set labels
+
     QString tmp = generateButtonLabel(d->autoAdjustPoint1);
     d->autoAdjustPoint1Btn->setText(tmp);
 
@@ -424,6 +431,7 @@ void FreeRotationTool::updatePoints()
     d->autoAdjustPoint2Btn->setText(tmp);
 
     // set points in preview widget, don't add invalid points
+
     QPolygon points;
 
     if (pointIsValid(d->autoAdjustPoint1))
@@ -444,6 +452,7 @@ void FreeRotationTool::updatePoints()
     d->previewWidget->setPoints(points, true);
 
     // enable / disable adjustment buttons
+
     bool valid  = (pointIsValid(d->autoAdjustPoint1)  &&
                    pointIsValid(d->autoAdjustPoint2)) &&
                   (d->autoAdjustPoint1 != d->autoAdjustPoint2);
@@ -472,8 +481,9 @@ void FreeRotationTool::slotAutoAdjustP2Clicked()
 
 void FreeRotationTool::slotAutoAdjustClicked()
 {
-    // we need to check manually here if the button is enabled, because this slot can be called
-    // with an action now
+    // we need to check manually here if the button is enabled,
+    // because this slot can be called with an action now
+
     if (!d->autoAdjustBtn->isEnabled())
     {
         return;
@@ -494,13 +504,16 @@ void FreeRotationTool::slotAutoAdjustClicked()
     }
 
     // we need to add the calculated angle to the currently set angle
+
     angle                  = d->settingsView->settings().angle + angle;
 
     // convert the angle to a string so we can easily split it up
+
     QString angleStr       = QString::number(angle, 'f', 2);
     QStringList anglesList = angleStr.split(QLatin1Char('.'));
 
     // try to set the angle widgets with the extracted values
+
     if (anglesList.count() == 2)
     {
         bool ok       = false;
@@ -548,6 +561,7 @@ QPixmap FreeRotationTool::generateBtnPixmap(const QString& label, const QColor& 
 double FreeRotationTool::calculateAutoAngle() const
 {
     // check if all points are valid
+
     if (!pointIsValid(d->autoAdjustPoint1) && !pointIsValid(d->autoAdjustPoint2))
     {
         return 0.0;
@@ -566,7 +580,7 @@ bool FreeRotationTool::pointIsValid(const QPoint& p) const
 {
     bool valid = true;
 
-    if (p.x() == -1 || p.y() == -1)
+    if ((p.x() == -1) || (p.y() == -1))
     {
         valid = false;
     }
@@ -578,7 +592,7 @@ QString FreeRotationTool::repeatString(const QString& str, int times) const
 {
     QString tmp;
 
-    for (int i = 0; i < times; ++i)
+    for (int i = 0 ; i < times ; ++i)
     {
         tmp.append(str);
     }

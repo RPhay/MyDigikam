@@ -6,7 +6,7 @@
  * Date        : 2010-08-06
  * Description : A widget to show details about images
  *
- * Copyright (C) 2010-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2010-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2010      by Michael G. Hansen <mike at mghansen dot de>
  *
  * This program is free software; you can redistribute it
@@ -61,25 +61,25 @@ class Q_DECL_HIDDEN GPSItemDetails::Private
 public:
 
     explicit Private()
-        : imageModel(nullptr),
-          previewManager(nullptr),
-          cbCoordinates(nullptr),
-          leLatitude(nullptr),
-          leLongitude(nullptr),
-          cbAltitude(nullptr),
-          leAltitude(nullptr),
-          cbSpeed(nullptr),
-          leSpeed(nullptr),
-          cbNSatellites(nullptr),
-          leNSatellites(nullptr),
-          cbFixType(nullptr),
-          comboFixType(nullptr),
-          cbDop(nullptr),
-          leDop(nullptr),
-          pbApply(nullptr),
-          externalEnabledState(true),
-          activeState(false),
-          haveDelayedState(false)
+        : imageModel            (nullptr),
+          previewManager        (nullptr),
+          cbCoordinates         (nullptr),
+          leLatitude            (nullptr),
+          leLongitude           (nullptr),
+          cbAltitude            (nullptr),
+          leAltitude            (nullptr),
+          cbSpeed               (nullptr),
+          leSpeed               (nullptr),
+          cbNSatellites         (nullptr),
+          leNSatellites         (nullptr),
+          cbFixType             (nullptr),
+          comboFixType          (nullptr),
+          cbDop                 (nullptr),
+          leDop                 (nullptr),
+          pbApply               (nullptr),
+          externalEnabledState  (true),
+          activeState           (false),
+          haveDelayedState      (false)
     {
     }
 
@@ -111,7 +111,7 @@ public:
 
 GPSItemDetails::GPSItemDetails(QWidget* const parent, GPSItemModel* const imageModel)
     : QWidget(parent),
-      d(new Private())
+      d      (new Private())
 {
     d->imageModel = imageModel;
 
@@ -233,29 +233,29 @@ void GPSItemDetails::updateUIState()
 
     d->cbCoordinates->setEnabled(externalEnabled);
 
-    d->leLatitude->setEnabled(haveCoordinates&&externalEnabled);
-    d->leLongitude->setEnabled(haveCoordinates&&externalEnabled);
+    d->leLatitude->setEnabled(haveCoordinates && externalEnabled);
+    d->leLongitude->setEnabled(haveCoordinates && externalEnabled);
 
     /* altitude */
-    d->cbAltitude->setEnabled(haveCoordinates&&externalEnabled);
+    d->cbAltitude->setEnabled(haveCoordinates && externalEnabled);
     const bool haveAltitude = d->cbAltitude->isChecked();
-    d->leAltitude->setEnabled(haveAltitude&&haveCoordinates&&externalEnabled);
+    d->leAltitude->setEnabled(haveAltitude && haveCoordinates && externalEnabled);
 
     /* speed */
-    d->cbSpeed->setEnabled(haveCoordinates&&externalEnabled);
-    d->leSpeed->setEnabled(d->cbSpeed->isChecked()&&haveCoordinates&&externalEnabled);
+    d->cbSpeed->setEnabled(haveCoordinates && externalEnabled);
+    d->leSpeed->setEnabled(d->cbSpeed->isChecked() && haveCoordinates && externalEnabled);
 
     /* NSatellites */
-    d->cbNSatellites->setEnabled(haveCoordinates&&externalEnabled);
-    d->leNSatellites->setEnabled(d->cbNSatellites->isChecked()&&haveCoordinates&&externalEnabled);
+    d->cbNSatellites->setEnabled(haveCoordinates && externalEnabled);
+    d->leNSatellites->setEnabled(d->cbNSatellites->isChecked() && haveCoordinates && externalEnabled);
 
     /* fix type */
-    d->cbFixType->setEnabled(haveCoordinates&&externalEnabled);
-    d->comboFixType->setEnabled(d->cbFixType->isChecked()&&haveCoordinates&&externalEnabled);
+    d->cbFixType->setEnabled(haveCoordinates && externalEnabled);
+    d->comboFixType->setEnabled(d->cbFixType->isChecked() && haveCoordinates && externalEnabled);
 
     /* dop */
-    d->cbDop->setEnabled(haveCoordinates&&externalEnabled);
-    d->leDop->setEnabled(d->cbDop->isChecked()&&haveCoordinates&&externalEnabled);
+    d->cbDop->setEnabled(haveCoordinates && externalEnabled);
+    d->leDop->setEnabled(d->cbDop->isChecked() && haveCoordinates && externalEnabled);
 
     /* apply */
     d->pbApply->setEnabled(externalEnabled);
@@ -353,7 +353,7 @@ void GPSItemDetails::slotSetCurrentImage(const QModelIndex& index)
     if (index.isValid())
     {
         GPSItemContainer* const item = d->imageModel->itemFromIndex(index);
-        qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG)<<item;
+        qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << item;
 
         if (item)
         {
@@ -369,10 +369,12 @@ void GPSItemDetails::slotSetCurrentImage(const QModelIndex& index)
 void GPSItemDetails::slotModelDataChanged(const QModelIndex& topLeft, const QModelIndex& bottomRight)
 {
     if (!d->imageIndex.isValid())
+    {
         return;
+    }
 
-    if ((topLeft.row()<=d->imageIndex.row()&&bottomRight.row()>=d->imageIndex.row()) &&
-        (topLeft.column()<=d->imageIndex.column()&&bottomRight.column()>=d->imageIndex.column()))
+    if (((topLeft.row()    <= d->imageIndex.row())    && (bottomRight.row()    >= d->imageIndex.row())) &&
+        ((topLeft.column() <= d->imageIndex.column()) && (bottomRight.column() >= d->imageIndex.column())))
     {
         if (!d->activeState)
         {
@@ -435,7 +437,7 @@ void GPSItemDetails::slotApply()
         }
     }
 
-    GPSItemContainer* const gpsItem      = d->imageModel->itemFromIndex(d->imageIndex);
+    GPSItemContainer* const gpsItem   = d->imageModel->itemFromIndex(d->imageIndex);
     GPSUndoCommand* const undoCommand = new GPSUndoCommand();
 
     GPSUndoCommand::UndoInfo undoInfo(d->imageIndex);
@@ -451,7 +453,7 @@ void GPSItemDetails::slotSetActive(const bool state)
 {
     d->activeState = state;
 
-    if (state&&d->haveDelayedState)
+    if (state && d->haveDelayedState)
     {
         d->haveDelayedState = false;
         slotSetCurrentImage(d->imageIndex);

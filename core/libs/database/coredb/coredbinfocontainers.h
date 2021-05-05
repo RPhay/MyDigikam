@@ -37,12 +37,12 @@ class ImageCommonContainer
 public:
 
     explicit ImageCommonContainer()
+      : fileSize  (0),
+        rating    (-1),
+        width     (0),
+        height    (0),
+        colorDepth(0)
     {
-        fileSize   = 0;
-        rating     = -1;
-        width      = 0;
-        height     = 0;
-        colorDepth = 0;
     }
 
     QString   fileName;
@@ -67,8 +67,8 @@ class ImageMetadataContainer
 public:
 
     explicit ImageMetadataContainer()
+      : allFieldsNull(true)
     {
-        allFieldsNull = true;
     }
 
     bool allFieldsNull;
@@ -98,8 +98,8 @@ class VideoMetadataContainer
 public:
 
     explicit VideoMetadataContainer()
+      : allFieldsNull(true)
     {
-        allFieldsNull = true;
     }
 
     bool    allFieldsNull;

@@ -115,9 +115,8 @@ public:
      it is an allowed value. Once the value is validated, it is marked for eventing by
      calling the PLT_Service AddChanged function.
      @param value new state variable value. Can be a comma separated list of values.
-     @param clearonsend whether the statevariable should be cleared immediately after sending
      */
-    NPT_Result SetValue(const char* value, const bool clearonsend = false);
+    NPT_Result SetValue(const char* value);
     
     /**
      Validate the new value of the state variable.
@@ -130,7 +129,7 @@ public:
      @param name the attribute name
      @param value the attribute value
      */
-	NPT_Result SetExtraAttribute(const char* name, const char* value);
+    NPT_Result SetExtraAttribute(const char* name, const char* value);
 
     /**
      Return the state variable name.
@@ -154,7 +153,7 @@ public:
      Return the state variable allowed value range if any.
      @return state variable value range pointer or null if none.
      */
-	const NPT_AllowedValueRange* GetAllowedValueRange() const { return m_AllowedValueRange; }
+    const NPT_AllowedValueRange* GetAllowedValueRange() const { return m_AllowedValueRange; }
 
     /**
      Helper function to return a state variable given a list of state variables
@@ -174,15 +173,9 @@ protected:
     bool IsReadyToPublish();
     
     /**
-     * If this statevariable should clear after sending to all subscribers, clears the value without
-     * eventing the change
-     */
-    void OnSendCompleted();
-
-    /**
      Serialize the state variable into xml.
      */
-	NPT_Result Serialize(NPT_XmlElementNode& node);
+    NPT_Result Serialize(NPT_XmlElementNode& node);
 
 protected:
     friend class PLT_Service;
@@ -196,13 +189,12 @@ protected:
     NPT_String              m_DefaultValue;
     bool                    m_IsSendingEvents;
     bool                    m_IsSendingEventsIndirectly;
-    bool                    m_ShouldClearOnSend;
     NPT_TimeInterval        m_Rate;
     NPT_TimeStamp           m_LastEvent;
     NPT_Array<NPT_String*>  m_AllowedValues;
     NPT_String              m_Value;
 
-	NPT_Map<NPT_String,NPT_String> m_ExtraAttributes;
+    NPT_Map<NPT_String,NPT_String> m_ExtraAttributes;
 };
 
 /*----------------------------------------------------------------------

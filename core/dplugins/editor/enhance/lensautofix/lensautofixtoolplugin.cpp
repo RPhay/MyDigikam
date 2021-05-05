@@ -6,7 +6,7 @@
  * Date        : 2018-07-30
  * Description : image editor plugin to reduce lens artifacts
  *
- * Copyright (C) 2018-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2018-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -49,7 +49,7 @@ LensAutoFixToolPlugin::~LensAutoFixToolPlugin()
 
 QString LensAutoFixToolPlugin::name() const
 {
-    return i18n("Lens Auto-Correction");
+    return i18nc("@title", "Lens Auto-Correction");
 }
 
 QString LensAutoFixToolPlugin::iid() const
@@ -64,12 +64,12 @@ QIcon LensAutoFixToolPlugin::icon() const
 
 QString LensAutoFixToolPlugin::description() const
 {
-    return i18n("A tool to fix automatically lens artifacts");
+    return i18nc("@info", "A tool to fix automatically lens artifacts");
 }
 
 QString LensAutoFixToolPlugin::details() const
 {
-    return i18n("<p>This Image Editor tool can fix automatically lens artifacts over an image.</p>");
+    return i18nc("@info", "This Image Editor tool can fix automatically lens artifacts over an image.");
 }
 
 QList<DPluginAuthor> LensAutoFixToolPlugin::authors() const
@@ -80,7 +80,7 @@ QList<DPluginAuthor> LensAutoFixToolPlugin::authors() const
                              QString::fromUtf8("(C) 2008"))
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2008-2020"))
+                             QString::fromUtf8("(C) 2008-2021"))
             ;
 }
 
@@ -88,7 +88,7 @@ void LensAutoFixToolPlugin::setup(QObject* const parent)
 {
     DPluginAction* const ac = new DPluginAction(parent);
     ac->setIcon(icon());
-    ac->setText(i18nc("@action", "Auto-Correction..."));
+    ac->setText(i18nc("@action", "Lens Auto-Correction..."));
     ac->setObjectName(QLatin1String("editorwindow_enhance_lensautofix"));
     ac->setActionCategory(DPluginAction::EditorEnhance);
 

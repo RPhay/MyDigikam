@@ -6,8 +6,8 @@
  * Date        : 2009-12-13
  * Description : a tool to blend bracketed images.
  *
- * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (C) 2015      by Benjamin Girault, <benjamin dot girault at gmail dot com>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2015      by Benjamin Girault <benjamin dot girault at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -46,7 +46,7 @@ class BracketStackItem : public QTreeWidgetItem
 public:
 
     explicit BracketStackItem(QTreeWidget* const parent);
-    ~BracketStackItem();
+    ~BracketStackItem()                                 override = default;
 
     void setUrl(const QUrl& url);
     const QUrl& url() const;
@@ -59,11 +59,15 @@ public:
 
 private:
 
-    bool operator< (const QTreeWidgetItem& other) const;
+    bool operator< (const QTreeWidgetItem& other) const override;
 
 private:
 
     QUrl m_url;
+
+private:
+
+    Q_DISABLE_COPY(BracketStackItem)
 };
 
 // ---------------------------------------------------------------------
@@ -75,7 +79,7 @@ class BracketStackList : public QTreeWidget
 public:
 
     explicit BracketStackList(QWidget* const parent);
-    virtual ~BracketStackList();
+    ~BracketStackList() override = default;
 
     void addItems(const QList<QUrl>& list);
 

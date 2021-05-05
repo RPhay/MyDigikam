@@ -2,7 +2,7 @@
 
 # Common methods for script to build AppImage bundle.
 #
-# Copyright (c) 2013-2020 by Gilles Caulier  <caulier dot gilles at gmail dot com>
+# Copyright (c) 2013-2021 by Gilles Caulier  <caulier dot gilles at gmail dot com>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
@@ -61,10 +61,10 @@ echo "Elaspsed time for script execution : $(($difftimelps / 3600 )) hours $((($
 HostAdjustments()
 {
 
-# Check if we are inside Mageia 6 or not.
-grep -r "Mageia release 6" /etc/mageia-release || exit 1
+# Check if we are inside Mageia host or not.
+grep -r "Mageia release" /etc/mageia-release || exit 1
 
-# That's not always set correctly in Mageia 6 ?
+# That's not always set correctly in Mageia 6 at least?
 export LC_ALL=en_US.UTF-8
 export LANG=en_us.UTF-8
 
@@ -108,12 +108,12 @@ RegisterRemoteServers()
 {
 
 SERVER_LIST="\
-git.kde.org \
-milonia.kde.org \
+invent.kde.org \
+deino.kde.org \
 "
 
-if [[ ! -f ~/.ssh/known_hosts ]] ; then
-    touch ~/.ssh/known_hosts
+if [[ ! -f $HOME/.ssh/known_hosts ]] ; then
+    touch $HOME/.ssh/known_hosts
 fi
 
 for server in $SERVER_LIST; do
@@ -121,7 +121,7 @@ for server in $SERVER_LIST; do
     echo "Register $server"
 
     ssh-keygen -R $server
-    ssh-keyscan -H $server >> ~/.ssh/known_hosts
+    ssh-keyscan -H $server >> $HOME/.ssh/known_hosts
 
 done
 

@@ -8,7 +8,7 @@
  *
  * Copyright (C) 2009-2010 by Johannes Wienke <languitar at semipol dot de>
  * Copyright (C) 2010-2011 by Andi Clemens <andi dot clemens at gmail dot com>
- * Copyright (C) 2011-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2011-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -53,7 +53,7 @@ public:
     /**
      * Constructor.
      *
-     * @param parent parent for qt parent child mechanism
+     * @param parent the parent for qt parent child mechanism
      * @param tagFilterModel tag model to work on
      */
     explicit TagFilterView(QWidget* const parent, TagModel* const tagFilterModel);
@@ -61,7 +61,7 @@ public:
     /**
      * Destructor.
      */
-    virtual ~TagFilterView();
+    ~TagFilterView()                                                                      override;
 
 private Q_SLOTS:
 
@@ -69,8 +69,8 @@ private Q_SLOTS:
 
 protected:
 
-    virtual void addCustomContextMenuActions(ContextMenuHelper& cmh, Album* album);
-    virtual void handleCustomContextMenuAction(QAction* action, AlbumPointer<Album> album);
+    void addCustomContextMenuActions(ContextMenuHelper& cmh, Album* album)                override;
+    void handleCustomContextMenuAction(QAction* action, const AlbumPointer<Album>& album) override;
 
 private:
 

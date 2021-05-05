@@ -6,7 +6,7 @@
  * Date        : 2012-01-13
  * Description : progress manager
  *
- * Copyright (C) 2007-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2007-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2012      by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  * Copyright (C) 2004      by Till Adam <adam at kde dot org>
  *
@@ -80,13 +80,15 @@ TransactionItem* TransactionItemView::addTransactionItem(ProgressItem* const ite
 void TransactionItemView::resizeEvent(QResizeEvent* event)
 {
     // Tell the layout in the parent (progressview) that our size changed
+
     updateGeometry();
 
     QSize sz         = parentWidget()->sizeHint();
     int currentWidth = parentWidget()->width();
 
     // Don't resize to sz.width() every time when it only reduces a little bit
-    if ( currentWidth < sz.width() || currentWidth > sz.width() + 100 )
+
+    if ((currentWidth < sz.width()) || (currentWidth > sz.width() + 100))
     {
         currentWidth = sz.width();
     }
@@ -122,6 +124,7 @@ void TransactionItemView::slotLayoutFirstItem()
     // This slot is called whenever a TransactionItem is deleted, so this is a
     // good place to call updateGeometry(), so our parent takes the new size
     // into account and resizes.
+
     updateGeometry();
 
     /*
@@ -153,13 +156,13 @@ public:
 
     explicit Private()
       : maxLabelWidth(650),
-        progress(nullptr),
-        cancelButton(nullptr),
-        itemLabel(nullptr),
-        itemStatus(nullptr),
-        itemThumb(nullptr),
-        frame(nullptr),
-        item(nullptr)
+        progress     (nullptr),
+        cancelButton (nullptr),
+        itemLabel    (nullptr),
+        itemStatus   (nullptr),
+        itemThumb    (nullptr),
+        frame        (nullptr),
+        item         (nullptr)
     {
     }
 
@@ -305,7 +308,7 @@ public:
 
     explicit Private()
       : wasLastShown(false),
-        scrollView(nullptr),
+        scrollView  (nullptr),
         previousItem(nullptr)
     {
     }
@@ -318,7 +321,7 @@ public:
 
 ProgressView::ProgressView(QWidget* const alignWidget, QWidget* const parent, const QString& name)
     : OverlayWidget(alignWidget, parent, name),
-      d(new Private)
+      d            (new Private)
 {
     setFrameStyle(QFrame::Panel | QFrame::Sunken);
     setAutoFillBackground(true);
@@ -377,6 +380,7 @@ ProgressView::ProgressView(QWidget* const alignWidget, QWidget* const parent, co
 ProgressView::~ProgressView()
 {
     // NOTE: no need to delete child widgets.
+
     delete d;
 }
 
@@ -431,19 +435,19 @@ void ProgressView::slotTransactionCompleted(ProgressItem* item)
         TransactionItem* const ti = d->transactionsToListviewItems[item];
         d->transactionsToListviewItems.remove( item );
         ti->setItemComplete();
-        QTimer::singleShot( 3000, ti, SLOT(deleteLater()) );
+        QTimer::singleShot(3000, ti, SLOT(deleteLater()));
 
         // see the slot for comments as to why that works
 
-        connect ( ti, SIGNAL(destroyed()),
-                d->scrollView, SLOT(slotLayoutFirstItem()) );
+        connect(ti, SIGNAL(destroyed()),
+                d->scrollView, SLOT(slotLayoutFirstItem()));
     }
 
     // This was the last item, hide.
 
-    if ( d->transactionsToListviewItems.isEmpty() )
+    if (d->transactionsToListviewItems.isEmpty())
     {
-        QTimer::singleShot( 3000, this, SLOT(slotHide()) );
+        QTimer::singleShot(3000, this, SLOT(slotHide()));
     }
 }
 
@@ -513,7 +517,7 @@ void ProgressView::slotHide()
 {
     // check if a new item showed up since we started the timer. If not, hide
 
-    if ( d->transactionsToListviewItems.isEmpty() )
+    if (d->transactionsToListviewItems.isEmpty())
     {
         setVisible(false);
     }
@@ -541,9 +545,9 @@ void ProgressView::slotToggleVisibility()
      */
     d->wasLastShown = isHidden();
 
-    if ( !isHidden() || !d->transactionsToListviewItems.isEmpty() )
+    if (!isHidden() || !d->transactionsToListviewItems.isEmpty())
     {
-        setVisible( isHidden() );
+        setVisible(isHidden());
     }
 }
 

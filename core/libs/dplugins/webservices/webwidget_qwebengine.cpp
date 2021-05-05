@@ -49,7 +49,7 @@ public:
 
 WebWidget::WebWidget(QWidget* const parent)
     : QWebEngineView(parent),
-      d(new Private())
+      d             (new Private())
 {
     d->parent = parent;
 

@@ -55,6 +55,7 @@ TagMngrListView::TagMngrListView(QWidget* const parent)
     setRootIsDecorated(false);
     setAlternatingRowColors(true);
 }
+
 void TagMngrListView::startDrag(Qt::DropActions supportedActions)
 {
     QModelIndexList list             = selectionModel()->selectedIndexes();
@@ -146,7 +147,7 @@ void TagMngrListView::contextMenuEvent(QContextMenuEvent* event)
     }
 
     QAction* const delAction = new QAction(QIcon::fromTheme(QLatin1String("edit-delete")),
-                                           i18n("Delete Selected from List"), this);
+                                           i18nc("@action", "Delete Selected from List"), this);
     cmhelper.addAction(delAction, tagList, SLOT(slotDeleteSelected()), false);
 
     QModelIndexList sel = selectionModel()->selectedIndexes();

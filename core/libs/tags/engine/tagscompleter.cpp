@@ -58,13 +58,13 @@ class Q_DECL_HIDDEN TagCompleter::Private : public TaggingActionFactory::Constra
 public:
 
     explicit Private()
-        : model(nullptr),
+        : model          (nullptr),
           supportingModel(nullptr),
-          filterModel(nullptr)
+          filterModel    (nullptr)
     {
     }
 
-    ~Private()
+    ~Private() override
     {
     }
 
@@ -80,7 +80,7 @@ public:
         return supportingModel->indexForAlbum(talbum);
     }
 
-    virtual bool matches(int id)
+    bool matches(int id) override
     {
         TAlbum* const talbum = AlbumManager::instance()->findTAlbum(id);
 
@@ -98,7 +98,7 @@ public:
 
 TagCompleter::TagCompleter(QObject* const parent)
     : QCompleter(parent),
-      d(new Private)
+      d         (new Private)
 {
     d->model = new QStandardItemModel(this);
     setModel(d->model);
@@ -202,12 +202,12 @@ void TagCompleter::update(const QString& fragment)
 
 void TagCompleter::slotActivated(const QModelIndex& index)
 {
-    emit activated(index.data(TaggingActionRole).value<TaggingAction>());
+    emit signalActivated(index.data(TaggingActionRole).value<TaggingAction>());
 }
 
 void TagCompleter::slotHighlighted(const QModelIndex& index)
 {
-    emit highlighted(index.data(TaggingActionRole).value<TaggingAction>());
+    emit signalHighlighted(index.data(TaggingActionRole).value<TaggingAction>());
 }
 
 } // namespace Digikam

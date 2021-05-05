@@ -6,7 +6,7 @@
  * Date        : 2009-11-03
  * Description : A dialog base class which can handle multiple pages.
  *
- * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2007      by Matthias Kretz <kretz at kde dot org>
  *
  * This program is free software; you can redistribute it
@@ -84,7 +84,7 @@ public:
     /**
      * Destroys the page model.
      */
-    virtual ~DConfigDlgModel();
+    ~DConfigDlgModel() override;
 
 protected:
 
@@ -136,7 +136,7 @@ public:
     /**
      * Destroys the page widget item.
      */
-    ~DConfigDlgWdgItem();
+    ~DConfigDlgWdgItem() override;
 
     /**
      * Returns the widget of the page widget item.
@@ -261,7 +261,7 @@ public:
     /**
      * Destroys the page widget model.
      */
-    ~DConfigDlgWdgModel();
+    ~DConfigDlgWdgModel() override;
 
     /**
      * Adds a new top level page to the model.

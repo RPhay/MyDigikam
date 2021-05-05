@@ -6,7 +6,7 @@
  * Date        : 2010-03-16
  * Description : 8 to 16 bits color depth converter batch tool.
  *
- * Copyright (C) 2010-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2010-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -40,23 +40,20 @@ class Convert8to16 : public BatchTool
 public:
 
     explicit Convert8to16(QObject* const parent = nullptr);
-    ~Convert8to16();
+    ~Convert8to16()                                         override;
 
-    BatchToolSettings defaultSettings()
-    {
-        return BatchToolSettings();
-    };
+    BatchToolSettings defaultSettings()                     override;
 
-    BatchTool* clone(QObject* const parent=nullptr) const { return new Convert8to16(parent); };
+    BatchTool* clone(QObject* const parent = nullptr) const override;
 
 private:
 
-    bool toolOperations();
+    bool toolOperations()                                   override;
 
 private Q_SLOTS:
 
-    void slotAssignSettings2Widget() {};
-    void slotSettingsChanged()       {};
+    void slotAssignSettings2Widget()                        override {};
+    void slotSettingsChanged()                              override {};
 };
 
 } // namespace DigikamBqmConvert8To16Plugin

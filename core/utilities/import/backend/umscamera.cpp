@@ -7,7 +7,7 @@
  * Description : USB Mass Storage camera interface
  *
  * Copyright (C) 2004-2005 by Renchi Raju <renchi dot raju at gmail dot com>
- * Copyright (C) 2005-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2005-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -24,21 +24,6 @@
 
 #include "umscamera.h"
 
-// C ANSI includes
-
-extern "C"
-{
-#include <sys/types.h>
-#include <sys/stat.h>
-
-#ifndef Q_CC_MSVC
-#   include <unistd.h>
-#   include <utime.h>
-#else
-#   include <sys/utime.h>
-#endif
-}
-
 // Qt includes
 
 #include <QDir>
@@ -49,6 +34,7 @@ extern "C"
 #include <QDirIterator>
 #include <QTextDocument>
 #include <QtGlobal>
+#include <QScopedPointer>
 #include <QCryptographicHash>
 #include <qplatformdefs.h>
 
@@ -82,6 +68,7 @@ extern "C"
 #include "dimg.h"
 #include "dmetadata.h"
 #include "itemscanner.h"
+#include "dfileoperations.h"
 
 namespace Digikam
 {
@@ -243,9 +230,9 @@ void UMSCamera::getItemInfo(const QString& folder, const QString& itemName, CamI
         {
             // Try to use file metadata
 
-            DMetadata meta;
-            getMetadata(folder, itemName, meta);
-            fillItemInfoFromMetadata(info, meta);
+            QScopedPointer<DMetadata> meta(new DMetadata);
+            getMetadata(folder, itemName, *meta);
+            fillItemInfoFromMetadata(info, *meta);
 
             // Fall back to file system info
 
@@ -284,8 +271,8 @@ bool UMSCamera::getThumbnail(const QString& folder, const QString& itemName, QIm
 
     // Try to get preview from Exif data (good quality). Can work with Raw files
 
-    DMetadata metadata(path);
-    metadata.getItemPreview(thumbnail);
+    QScopedPointer<DMetadata> metadata(new DMetadata(path));
+    metadata->getItemPreview(thumbnail);
 
     if (!thumbnail.isNull())
     {
@@ -309,7 +296,7 @@ bool UMSCamera::getThumbnail(const QString& folder, const QString& itemName, QIm
 
     if (!turnHighQualityThumbs)
     {
-        thumbnail = metadata.getExifThumbnail(true);
+        thumbnail = metadata->getExifThumbnail(true);
 
         if (!thumbnail.isNull())
         {
@@ -325,7 +312,7 @@ bool UMSCamera::getThumbnail(const QString& folder, const QString& itemName, QIm
 
     QFileInfo fi(path);
 
-    if      (thumbnail.load(fi.path() + fi.baseName() + QLatin1String(".thm")))        // Lowercase
+    if      (thumbnail.load(fi.path() + fi.baseName() + QLatin1String(".thm")))   // Lowercase
     {
         if (!thumbnail.isNull())
         {
@@ -353,6 +340,7 @@ bool UMSCamera::getThumbnail(const QString& folder, const QString& itemName, QIm
     if (!dimgThumb.isNull())
     {
         thumbnail = dimgThumb.copyQImage();
+
         return true;
     }
 
@@ -363,7 +351,7 @@ bool UMSCamera::getMetadata(const QString& folder, const QString& itemName, DMet
 {
     QString path = !folder.endsWith(QLatin1Char('/')) ? folder + QLatin1Char('/') : folder;
     QFileInfo fi, thmlo, thmup;
-    bool ret = false;
+    bool ret     = false;
 
     fi.setFile(path    + itemName);
     thmlo.setFile(path + fi.baseName() + QLatin1String(".thm"));
@@ -404,6 +392,7 @@ bool UMSCamera::downloadItem(const QString& folder, const QString& itemName, con
     if (!sFile.open(QIODevice::ReadOnly))
     {
         qCWarning(DIGIKAM_IMPORTUI_LOG) << "Failed to open source file for reading: " << src;
+
         return false;
     }
 
@@ -411,6 +400,7 @@ bool UMSCamera::downloadItem(const QString& folder, const QString& itemName, con
     {
         sFile.close();
         qCWarning(DIGIKAM_IMPORTUI_LOG) << "Failed to open destination file for writing: " << dest;
+
         return false;
     }
 
@@ -424,6 +414,7 @@ bool UMSCamera::downloadItem(const QString& folder, const QString& itemName, con
         {
             sFile.close();
             dFile.close();
+
             return false;
         }
     }
@@ -434,16 +425,7 @@ bool UMSCamera::downloadItem(const QString& folder, const QString& itemName, con
     // Set the file modification time of the downloaded file to the original file.
     // NOTE: this behavior don't need to be managed through Setup/Metadata settings.
 
-    QT_STATBUF st;
-
-    if (QT_STAT(QFile::encodeName(src).constData(), &st) == 0)
-    {
-        struct utimbuf ut;
-        ut.modtime = st.st_mtime;
-        ut.actime  = st.st_atime;
-
-        ::utime(QFile::encodeName(dest).constData(), &ut);
-    }
+    DFileOperations::copyModificationTime(src, dest);
 
     return true;
 }
@@ -516,6 +498,7 @@ bool UMSCamera::uploadItem(const QString& folder, const QString& itemName, const
     if (!sFile.open(QIODevice::ReadOnly))
     {
         qCWarning(DIGIKAM_IMPORTUI_LOG) << "Failed to open source file for reading: " << src;
+
         return false;
     }
 
@@ -523,6 +506,7 @@ bool UMSCamera::uploadItem(const QString& folder, const QString& itemName, const
     {
         sFile.close();
         qCWarning(DIGIKAM_IMPORTUI_LOG) << "Failed to open destination file for writing: " << dest;
+
         return false;
     }
 
@@ -538,6 +522,7 @@ bool UMSCamera::uploadItem(const QString& folder, const QString& itemName, const
         {
             sFile.close();
             dFile.close();
+
             return false;
         }
     }
@@ -548,23 +533,14 @@ bool UMSCamera::uploadItem(const QString& folder, const QString& itemName, const
     // Set the file modification time of the uploaded file to original file.
     // NOTE: this behavior don't need to be managed through Setup/Metadata settings.
 
-    QT_STATBUF st;
-
-    if (QT_STAT(QFile::encodeName(src).constData(), &st) == 0)
-    {
-        struct utimbuf ut;
-        ut.modtime = st.st_mtime;
-        ut.actime  = st.st_atime;
-
-        ::utime(QFile::encodeName(dest).constData(), &ut);
-    }
+    DFileOperations::copyModificationTime(src, dest);
 
     // Get new camera item information.
 
-    PhotoInfoContainer pInfo;
-    DMetadata          meta;
-    QFileInfo          fi(dest);
-    QString            mime = mimeType(fi.suffix().toLower());
+    PhotoInfoContainer        pInfo;
+    QScopedPointer<DMetadata> meta(new DMetadata);
+    QFileInfo                 fi(dest);
+    QString                   mime = mimeType(fi.suffix().toLower());
 
     if (!mime.isEmpty())
     {
@@ -573,10 +549,10 @@ bool UMSCamera::uploadItem(const QString& folder, const QString& itemName, const
 
         // Try to load image metadata.
 
-        meta.load(fi.filePath());
-        dt    = meta.getItemDateTime();
-        dims  = meta.getItemDimensions();
-        pInfo = meta.getPhotographInformation();
+        meta->load(fi.filePath());
+        dt    = meta->getItemDateTime();
+        dims  = meta->getItemDimensions();
+        pInfo = meta->getPhotographInformation();
 
         if (dt.isNull()) // fall back to file system info
         {
@@ -601,18 +577,18 @@ bool UMSCamera::uploadItem(const QString& folder, const QString& itemName, const
 
 bool UMSCamera::cameraSummary(QString& summary)
 {
-    summary =  QString(i18n("<b>Mounted Camera</b> driver for USB/IEEE1394 mass storage cameras and "
-                            "Flash disk card readers.<br/><br/>"));
+    summary =  QString(i18nc("@info", "\"Mounted Camera\" driver for USB/IEEE1394 mass storage cameras and "
+                                      "Flash disk card readers.\n\n"));
 
     // we do not expect title/model/etc. to contain newlines,
     // so we just escape HTML characters
 
     summary += i18nc("@info List of device properties",
-                     "Title: <b>%1</b><br/>"
-                     "Model: <b>%2</b><br/>"
-                     "Port: <b>%3</b><br/>"
-                     "Path: <b>%4</b><br/>"
-                     "UUID: <b>%5</b><br/><br/>",
+                     "Title: \"%1\"\n"
+                     "Model: \"%2\"\n"
+                     "Port: \"%3\"\n"
+                     "Path: \"%4\"\n"
+                     "UUID: \"%5\"\n\n",
                      title().toHtmlEscaped(),
                      model().toHtmlEscaped(),
                      port().toHtmlEscaped(),
@@ -620,36 +596,36 @@ bool UMSCamera::cameraSummary(QString& summary)
                      uuid().toHtmlEscaped());
 
     summary += i18nc("@info List of supported device operations",
-                     "Thumbnails: <b>%1</b><br/>"
-                     "Capture image: <b>%2</b><br/>"
-                     "Delete items: <b>%3</b><br/>"
-                     "Upload items: <b>%4</b><br/>"
-                     "Create directories: <b>%5</b><br/>"
-                     "Delete directories: <b>%6</b><br/><br/>",
-                     thumbnailSupport()    ? i18n("yes") : i18n("no"),
-                     captureImageSupport() ? i18n("yes") : i18n("no"),
-                     deleteSupport()       ? i18n("yes") : i18n("no"),
-                     uploadSupport()       ? i18n("yes") : i18n("no"),
-                     mkDirSupport()        ? i18n("yes") : i18n("no"),
-                     delDirSupport()       ? i18n("yes") : i18n("no"));
+                     "Thumbnails: \"%1\"\n"
+                     "Capture image: \"%2\"\n"
+                     "Delete items: \"%3\"\n"
+                     "Upload items: \"%4\"\n"
+                     "Create directories: \"%5\"\n"
+                     "Delete directories: \"%6\"\n\n",
+                     thumbnailSupport()    ? i18nc("@info: ums backend feature", "yes") : i18nc("@info: ums backend feature", "no"),
+                     captureImageSupport() ? i18nc("@info: ums backend feature", "yes") : i18nc("@info: ums backend feature", "no"),
+                     deleteSupport()       ? i18nc("@info: ums backend feature", "yes") : i18nc("@info: ums backend feature", "no"),
+                     uploadSupport()       ? i18nc("@info: ums backend feature", "yes") : i18nc("@info: ums backend feature", "no"),
+                     mkDirSupport()        ? i18nc("@info: ums backend feature", "yes") : i18nc("@info: ums backend feature", "no"),
+                     delDirSupport()       ? i18nc("@info: ums backend feature", "yes") : i18nc("@info: ums backend feature", "no"));
     return true;
 }
 
 bool UMSCamera::cameraManual(QString& manual)
 {
-    manual = QString(i18n("For more information about the <b>Mounted Camera</b> driver, "
-                          "please read the <b>Supported Digital Still "
-                          "Cameras</b> section in the digiKam manual."));
+    manual = QString(i18nc("@info", "For more information about the \"Mounted Camera\" driver, "
+                                    "please read the \"Supported Digital Still "
+                                    "Cameras\" section in the digiKam manual."));
     return true;
 }
 
 bool UMSCamera::cameraAbout(QString& about)
 {
-    about = QString(i18n("The <b>Mounted Camera</b> driver is a simple interface to a camera disk "
-                         "mounted locally on your system.<br/><br/>"
-                         "It does not use libgphoto2 drivers.<br/><br/>"
-                         "To report any problems with this driver, please contact the digiKam team at:<br/><br/>"
-                         "https://www.digikam.org/?q=contact"));
+    about = QString(i18nc("@info", "The \"Mounted Camera\" driver is a simple interface to a camera disk "
+                                   "mounted locally on your system.\n\n"
+                                   "It does not use libgphoto2 drivers.\n\n"
+                                   "To report any problems with this driver, please contact the digiKam team at:\n\n"
+                                   "https://www.digikam.org/?q=contact"));
     return true;
 }
 
@@ -677,7 +653,8 @@ void UMSCamera::getUUIDFromSolid()
 
         Solid::Device driveDevice;
 
-        for (Solid::Device currentDevice = accessDevice; currentDevice.isValid();
+        for (Solid::Device currentDevice = accessDevice ;
+             currentDevice.isValid() ;
              currentDevice = currentDevice.parent())
         {
             if (currentDevice.is<Solid::StorageDrive>())
@@ -696,7 +673,9 @@ void UMSCamera::getUUIDFromSolid()
 
         Solid::Device volumeDevice;
 
-        for (Solid::Device currentDevice = accessDevice; currentDevice.isValid(); currentDevice = currentDevice.parent())
+        for (Solid::Device currentDevice = accessDevice ;
+             currentDevice.isValid() ;
+             currentDevice = currentDevice.parent())
         {
             if (currentDevice.is<Solid::StorageVolume>())
             {
@@ -713,7 +692,7 @@ void UMSCamera::getUUIDFromSolid()
         Solid::StorageVolume* const volume = volumeDevice.as<Solid::StorageVolume>();
 
         if (m_path.startsWith(QDir::fromNativeSeparators(access->filePath())) &&
-            QDir::fromNativeSeparators(access->filePath()) != QLatin1String("/"))
+            (QDir::fromNativeSeparators(access->filePath()) != QLatin1String("/")))
         {
             m_uuid = volume->uuid();
         }

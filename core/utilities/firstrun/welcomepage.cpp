@@ -6,7 +6,7 @@
  * Date        : 2009-28-04
  * Description : first run assistant dialog
  *
- * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -55,14 +55,14 @@ WelcomePage::WelcomePage(QWizard* const dlg)
                                "</qt>",
                                QLatin1String(digikam_version_short));
 
-#if defined Q_OS_WIN || defined Q_OS_OSX
+#if defined Q_OS_WIN || defined Q_OS_MACOS
 
     // Windows settings place.
 
     QString newPlace = QLatin1String("~/Local Settings/");
     QString oldPlace = QLatin1String("~/AppData/Local/");
 
-#if defined Q_OS_OSX
+#if defined Q_OS_MACOS
 
     // MacOS settings place.
 

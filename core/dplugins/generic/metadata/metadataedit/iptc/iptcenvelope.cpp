@@ -6,7 +6,7 @@
  * Date        : 2007-11-10
  * Description : IPTC envelope settings page.
  *
- * Copyright (C) 2007-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2007-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -28,14 +28,13 @@
 #include <QLabel>
 #include <QPushButton>
 #include <QTimeEdit>
-#include <QValidator>
 #include <QGridLayout>
 #include <QDateEdit>
 #include <QApplication>
 #include <QStyle>
 #include <QComboBox>
 #include <QLineEdit>
-#include <QPlainTextEdit>
+#include <QToolTip>
 
 // KDE includes
 
@@ -46,7 +45,9 @@
 #include "squeezedcombobox.h"
 #include "metadatacheckbox.h"
 #include "timezonecombobox.h"
+#include "limitedtextedit.h"
 #include "dmetadata.h"
+#include "dlayoutbox.h"
 
 using namespace Digikam;
 
@@ -61,6 +62,7 @@ public:
     {
         unoIDCheck       = nullptr;
         unoIDEdit        = nullptr;
+        destinationNote  = nullptr;
         destinationCheck = nullptr;
         destinationEdit  = nullptr;
         serviceIDCheck   = nullptr;
@@ -148,7 +150,8 @@ public:
 
     QDateEdit*                     dateSentSel;
 
-    QPlainTextEdit*                destinationEdit;
+    QLabel*                        destinationNote;
+    LimitedTextEdit*               destinationEdit;
 
     MetadataCheckBox*              priorityCheck;
     MetadataCheckBox*              formatCheck;
@@ -161,12 +164,7 @@ IPTCEnvelope::IPTCEnvelope(QWidget* const parent)
       d(new Private)
 {
     QGridLayout* const grid = new QGridLayout(this);
-
-    // IPTC only accept printable Ascii char.
-    QRegExp asciiRx(QLatin1String("[\x20-\x7F]+$"));
-    QValidator* const asciiValidator = new QRegExpValidator(asciiRx, this);
-
-    QString dateFormat  = QLocale().dateFormat(QLocale::ShortFormat);
+    QString dateFormat      = QLocale().dateFormat(QLocale::ShortFormat);
 
     if (!dateFormat.contains(QLatin1String("yyyy")))
     {
@@ -178,54 +176,51 @@ IPTCEnvelope::IPTCEnvelope(QWidget* const parent)
 
     // --------------------------------------------------------
 
-    d->destinationCheck = new QCheckBox(i18n("Destination:"), this);
-    d->destinationEdit  = new QPlainTextEdit(this);
-/*
-    d->specialInstructionEdit->setValidator(asciiValidator);
-    d->specialInstructionEdit->document()->setMaxLength;
-*/
+    DHBox* const destHeader = new DHBox(this);
+    d->destinationCheck     = new QCheckBox(i18n("Destination:"), destHeader);
+    d->destinationNote      = new QLabel(destHeader);
+    destHeader->setStretchFactor(d->destinationCheck, 10);
+
+    d->destinationEdit      = new LimitedTextEdit(this);
+    d->destinationEdit->setMaxLength(1024);
     d->destinationEdit->setWhatsThis(i18n("Enter the envelope destination. "
-                                          "This field is limited to 1024 ASCII characters."));
+                                          "This field is limited to 1024 characters."));
 
     // --------------------------------------------------------
 
     d->unoIDCheck = new QCheckBox(i18n("U.N.O ID:"), this);
     d->unoIDEdit  = new QLineEdit(this);
     d->unoIDEdit->setClearButtonEnabled(true);
-    d->unoIDEdit->setValidator(asciiValidator);
     d->unoIDEdit->setMaxLength(80);
     d->unoIDEdit->setWhatsThis(i18n("Set here the Unique Name of Object identifier. "
-                                  "This field is limited to 80 ASCII characters."));
+                                    "This field is limited to 80 characters."));
 
     // --------------------------------------------------------
 
     d->productIDCheck = new QCheckBox(i18n("Product ID:"), this);
     d->productIDEdit  = new QLineEdit(this);
     d->productIDEdit->setClearButtonEnabled(true);
-    d->productIDEdit->setValidator(asciiValidator);
     d->productIDEdit->setMaxLength(32);
     d->productIDEdit->setWhatsThis(i18n("Set here the product identifier. "
-                                         "This field is limited to 32 ASCII characters."));
+                                         "This field is limited to 32 characters."));
 
     // --------------------------------------------------------
 
     d->serviceIDCheck = new QCheckBox(i18n("Service ID:"), this);
     d->serviceIDEdit  = new QLineEdit(this);
     d->serviceIDEdit->setClearButtonEnabled(true);
-    d->serviceIDEdit->setValidator(asciiValidator);
     d->serviceIDEdit->setMaxLength(10);
     d->serviceIDEdit->setWhatsThis(i18n("Set here the service identifier. "
-                                         "This field is limited to 10 ASCII characters."));
+                                         "This field is limited to 10 characters."));
 
     // --------------------------------------------------------
 
     d->envelopeIDCheck = new QCheckBox(i18n("Envelope ID:"), this);
     d->envelopeIDEdit  = new QLineEdit(this);
     d->envelopeIDEdit->setClearButtonEnabled(true);
-    d->envelopeIDEdit->setValidator(asciiValidator);
     d->envelopeIDEdit->setMaxLength(8);
     d->envelopeIDEdit->setWhatsThis(i18n("Set here the envelope identifier. "
-                                         "This field is limited to 8 ASCII characters."));
+                                         "This field is limited to 8 characters."));
 
     // --------------------------------------------------------
 
@@ -250,8 +245,8 @@ IPTCEnvelope::IPTCEnvelope(QWidget* const parent)
 
     int index = 0;
 
-    for (Private::FileFormatMap::Iterator it = d->fileFormatMap.begin();
-         it != d->fileFormatMap.end(); ++it)
+    for (Private::FileFormatMap::Iterator it = d->fileFormatMap.begin() ;
+         it != d->fileFormatMap.end() ; ++it)
     {
         d->formatCB->insertSqueezedItem(it.value(), index);
         index++;
@@ -273,7 +268,7 @@ IPTCEnvelope::IPTCEnvelope(QWidget* const parent)
     d->timeSentSel->setDisplayFormat(timeFormat);
 
     d->setTodaySentBtn = new QPushButton();
-    d->setTodaySentBtn->setIcon(QIcon::fromTheme(QLatin1String("go-jump-today")));
+    d->setTodaySentBtn->setIcon(QIcon::fromTheme(QLatin1String("view-calendar")));
     d->setTodaySentBtn->setWhatsThis(i18n("Set envelope sent date to today"));
 
     d->dateSentSel->setWhatsThis(i18n("Set here the date when the service sent the material."));
@@ -285,18 +280,17 @@ IPTCEnvelope::IPTCEnvelope(QWidget* const parent)
     // --------------------------------------------------------
 
     QLabel* const note = new QLabel(i18n("<b>Note: "
-                 "<b><a href='https://en.wikipedia.org/wiki/IPTC_Information_Interchange_Model'>IPTC</a></b> "
-                 "text tags only support the printable "
-                 "<b><a href='https://en.wikipedia.org/wiki/Ascii'>ASCII</a></b> "
-                 "characters and limit string sizes. "
-                 "Use contextual help for details.</b>"), this);
+                 "<a href='https://en.wikipedia.org/wiki/IPTC_Information_Interchange_Model'>IPTC</a> "
+                 "text tags are limited string sizes. Use contextual help for details. "
+                 "Consider to use <a href='https://en.wikipedia.org/wiki/Extensible_Metadata_Platform'>XMP</a> instead.</b>"),
+                 this);
     note->setOpenExternalLinks(true);
     note->setWordWrap(true);
     note->setFrameStyle(QFrame::StyledPanel | QFrame::Raised);
 
     // --------------------------------------------------------
 
-    grid->addWidget(d->destinationCheck,    0, 0, 1, 6);
+    grid->addWidget(destHeader,             0, 0, 1, 6);
     grid->addWidget(d->destinationEdit,     1, 0, 1, 6);
     grid->addWidget(d->unoIDCheck,          2, 0, 1, 1);
     grid->addWidget(d->unoIDEdit,           2, 1, 1, 5);
@@ -388,17 +382,32 @@ IPTCEnvelope::IPTCEnvelope(QWidget* const parent)
     connect(d->envelopeIDEdit, SIGNAL(textChanged(QString)),
             this, SIGNAL(signalModified()));
 
+    connect(d->envelopeIDEdit, SIGNAL(textChanged(QString)),
+            this, SLOT(slotLineEditModified()));
+
     connect(d->destinationEdit, SIGNAL(textChanged()),
             this, SIGNAL(signalModified()));
+
+    connect(d->destinationEdit, SIGNAL(textChanged()),
+            this, SLOT(slotDestinationLeftCharacters()));
 
     connect(d->serviceIDEdit, SIGNAL(textChanged(QString)),
             this, SIGNAL(signalModified()));
 
+    connect(d->serviceIDEdit, SIGNAL(textChanged(QString)),
+            this, SLOT(slotLineEditModified()));
+
     connect(d->productIDEdit, SIGNAL(textChanged(QString)),
             this, SIGNAL(signalModified()));
 
+    connect(d->productIDEdit, SIGNAL(textChanged(QString)),
+            this, SLOT(slotLineEditModified()));
+
     connect(d->unoIDEdit, SIGNAL(textChanged(QString)),
             this, SIGNAL(signalModified()));
+
+    connect(d->unoIDEdit, SIGNAL(textChanged(QString)),
+            this, SLOT(slotLineEditModified()));
 
     connect(d->priorityCB, SIGNAL(activated(int)),
             this, SIGNAL(signalModified()));
@@ -433,11 +442,32 @@ void IPTCEnvelope::slotSetTodaySent()
     d->zoneSentSel->setToUTC();
 }
 
+void IPTCEnvelope::slotDestinationLeftCharacters()
+{
+    QToolTip::showText(d->destinationCheck->mapToGlobal(QPoint(0, -16)),
+                       i18np("%1 character left", "%1 characters left", d->destinationEdit->maxLength() - d->destinationEdit->toPlainText().size()),
+                       d->destinationEdit);
+}
+
+void IPTCEnvelope::slotLineEditModified()
+{
+    QLineEdit* const ledit = dynamic_cast<QLineEdit*>(sender());
+
+    if (!ledit)
+    {
+        return;
+    }
+
+    QToolTip::showText(ledit->mapToGlobal(QPoint(0, (-1)*(ledit->height() + 16))),
+                       i18np("%1 character left", "%1 characters left", ledit->maxLength() - ledit->text().size()),
+                       ledit);
+}
+
 void IPTCEnvelope::readMetadata(QByteArray& iptcData)
 {
     blockSignals(true);
-    DMetadata meta;
-    meta.setIptc(iptcData);
+    QScopedPointer<DMetadata> meta(new DMetadata);
+    meta->setIptc(iptcData);
 
     QString     data, format, version;
     QStringList list;
@@ -447,7 +477,7 @@ void IPTCEnvelope::readMetadata(QByteArray& iptcData)
 
     d->destinationEdit->clear();
     d->destinationCheck->setChecked(false);
-    data = meta.getIptcTagString("Iptc.Envelope.Destination", false);
+    data = meta->getIptcTagString("Iptc.Envelope.Destination", false);
 
     if (!data.isNull())
     {
@@ -456,10 +486,11 @@ void IPTCEnvelope::readMetadata(QByteArray& iptcData)
     }
 
     d->destinationEdit->setEnabled(d->destinationCheck->isChecked());
+    slotDestinationLeftCharacters();
 
     d->envelopeIDEdit->clear();
     d->envelopeIDCheck->setChecked(false);
-    data = meta.getIptcTagString("Iptc.Envelope.EnvelopeNumber", false);
+    data = meta->getIptcTagString("Iptc.Envelope.EnvelopeNumber", false);
 
     if (!data.isNull())
     {
@@ -471,7 +502,7 @@ void IPTCEnvelope::readMetadata(QByteArray& iptcData)
 
     d->serviceIDEdit->clear();
     d->serviceIDCheck->setChecked(false);
-    data = meta.getIptcTagString("Iptc.Envelope.ServiceId", false);
+    data = meta->getIptcTagString("Iptc.Envelope.ServiceId", false);
 
     if (!data.isNull())
     {
@@ -483,7 +514,7 @@ void IPTCEnvelope::readMetadata(QByteArray& iptcData)
 
     d->unoIDEdit->clear();
     d->unoIDCheck->setChecked(false);
-    data = meta.getIptcTagString("Iptc.Envelope.UNO", false);
+    data = meta->getIptcTagString("Iptc.Envelope.UNO", false);
 
     if (!data.isNull())
     {
@@ -495,7 +526,7 @@ void IPTCEnvelope::readMetadata(QByteArray& iptcData)
 
     d->productIDEdit->clear();
     d->productIDCheck->setChecked(false);
-    data = meta.getIptcTagString("Iptc.Envelope.ProductId", false);
+    data = meta->getIptcTagString("Iptc.Envelope.ProductId", false);
 
     if (!data.isNull())
     {
@@ -507,7 +538,7 @@ void IPTCEnvelope::readMetadata(QByteArray& iptcData)
 
     d->priorityCB->setCurrentIndex(0);
     d->priorityCheck->setChecked(false);
-    data = meta.getIptcTagString("Iptc.Envelope.EnvelopePriority", false);
+    data = meta->getIptcTagString("Iptc.Envelope.EnvelopePriority", false);
 
     if (!data.isNull())
     {
@@ -526,8 +557,8 @@ void IPTCEnvelope::readMetadata(QByteArray& iptcData)
 
     d->formatCB->setCurrentIndex(0);
     d->formatCheck->setChecked(false);
-    format  = meta.getIptcTagString("Iptc.Envelope.FileFormat", false);
-    version = meta.getIptcTagString("Iptc.Envelope.FileVersion", false);
+    format  = meta->getIptcTagString("Iptc.Envelope.FileFormat", false);
+    version = meta->getIptcTagString("Iptc.Envelope.FileVersion", false);
 
     if (!format.isNull())
     {
@@ -560,8 +591,8 @@ void IPTCEnvelope::readMetadata(QByteArray& iptcData)
 
     d->formatCB->setEnabled(d->formatCheck->isChecked());
 
-    dateStr = meta.getIptcTagString("Iptc.Envelope.DateSent", false);
-    timeStr = meta.getIptcTagString("Iptc.Envelope.TimeSent", false);
+    dateStr = meta->getIptcTagString("Iptc.Envelope.DateSent", false);
+    timeStr = meta->getIptcTagString("Iptc.Envelope.TimeSent", false);
 
     d->dateSentSel->setDate(QDate::currentDate());
     d->dateSentCheck->setChecked(false);
@@ -601,61 +632,61 @@ void IPTCEnvelope::readMetadata(QByteArray& iptcData)
 
 void IPTCEnvelope::applyMetadata(QByteArray& iptcData)
 {
-    DMetadata meta;
-    meta.setIptc(iptcData);
+    QScopedPointer<DMetadata> meta(new DMetadata);
+    meta->setIptc(iptcData);
 
     if (d->destinationCheck->isChecked())
     {
-        meta.setIptcTagString("Iptc.Envelope.Destination", d->destinationEdit->toPlainText());
+        meta->setIptcTagString("Iptc.Envelope.Destination", d->destinationEdit->toPlainText());
     }
     else
     {
-        meta.removeIptcTag("Iptc.Envelope.Destination");
+        meta->removeIptcTag("Iptc.Envelope.Destination");
     }
 
     if (d->envelopeIDCheck->isChecked())
     {
-        meta.setIptcTagString("Iptc.Envelope.EnvelopeNumber", d->envelopeIDEdit->text());
+        meta->setIptcTagString("Iptc.Envelope.EnvelopeNumber", d->envelopeIDEdit->text());
     }
     else
     {
-        meta.removeIptcTag("Iptc.Envelope.EnvelopeNumber");
+        meta->removeIptcTag("Iptc.Envelope.EnvelopeNumber");
     }
 
     if (d->serviceIDCheck->isChecked())
     {
-        meta.setIptcTagString("Iptc.Envelope.ServiceId", d->serviceIDEdit->text());
+        meta->setIptcTagString("Iptc.Envelope.ServiceId", d->serviceIDEdit->text());
     }
     else
     {
-        meta.removeIptcTag("Iptc.Envelope.ServiceId");
+        meta->removeIptcTag("Iptc.Envelope.ServiceId");
     }
 
     if (d->unoIDCheck->isChecked())
     {
-        meta.setIptcTagString("Iptc.Envelope.UNO", d->unoIDEdit->text());
+        meta->setIptcTagString("Iptc.Envelope.UNO", d->unoIDEdit->text());
     }
     else
     {
-        meta.removeIptcTag("Iptc.Envelope.UNO");
+        meta->removeIptcTag("Iptc.Envelope.UNO");
     }
 
     if (d->productIDCheck->isChecked())
     {
-        meta.setIptcTagString("Iptc.Envelope.ProductId", d->productIDEdit->text());
+        meta->setIptcTagString("Iptc.Envelope.ProductId", d->productIDEdit->text());
     }
     else
     {
-        meta.removeIptcTag("Iptc.Envelope.ProductId");
+        meta->removeIptcTag("Iptc.Envelope.ProductId");
     }
 
     if (d->priorityCheck->isChecked())
     {
-        meta.setIptcTagString("Iptc.Envelope.EnvelopePriority", QString::number(d->priorityCB->currentIndex()));
+        meta->setIptcTagString("Iptc.Envelope.EnvelopePriority", QString::number(d->priorityCB->currentIndex()));
     }
     else if (d->priorityCheck->isValid())
     {
-        meta.removeIptcTag("Iptc.Envelope.EnvelopePriority");
+        meta->removeIptcTag("Iptc.Envelope.EnvelopePriority");
     }
 
     if (d->formatCheck->isChecked())
@@ -663,8 +694,8 @@ void IPTCEnvelope::applyMetadata(QByteArray& iptcData)
         QString key;
         int i = 0;
 
-        for (Private::FileFormatMap::Iterator it = d->fileFormatMap.begin();
-             it != d->fileFormatMap.end(); ++it)
+        for (Private::FileFormatMap::Iterator it = d->fileFormatMap.begin() ;
+             it != d->fileFormatMap.end() ; ++it)
         {
             if (i == d->formatCB->currentIndex()) key = it.key();
             i++;
@@ -672,37 +703,37 @@ void IPTCEnvelope::applyMetadata(QByteArray& iptcData)
 
         QString format  = key.section(QLatin1Char('-'), 0, 0);
         QString version = key.section(QLatin1Char('-'), -1);
-        meta.setIptcTagString("Iptc.Envelope.FileFormat", format);
-        meta.setIptcTagString("Iptc.Envelope.FileVersion", version);
+        meta->setIptcTagString("Iptc.Envelope.FileFormat", format);
+        meta->setIptcTagString("Iptc.Envelope.FileVersion", version);
     }
     else if (d->priorityCheck->isValid())
     {
-        meta.removeIptcTag("Iptc.Envelope.FileFormat");
-        meta.removeIptcTag("Iptc.Envelope.FileVersion");
+        meta->removeIptcTag("Iptc.Envelope.FileFormat");
+        meta->removeIptcTag("Iptc.Envelope.FileVersion");
     }
 
     if (d->dateSentCheck->isChecked())
     {
-        meta.setIptcTagString("Iptc.Envelope.DateSent",
+        meta->setIptcTagString("Iptc.Envelope.DateSent",
                                     d->dateSentSel->date().toString(Qt::ISODate));
     }
     else
     {
-        meta.removeIptcTag("Iptc.Envelope.DateSent");
+        meta->removeIptcTag("Iptc.Envelope.DateSent");
     }
 
     if (d->timeSentCheck->isChecked())
     {
-        meta.setIptcTagString("Iptc.Envelope.TimeSent",
+        meta->setIptcTagString("Iptc.Envelope.TimeSent",
                                     d->timeSentSel->time().toString(Qt::ISODate) +
                                     d->zoneSentSel->getTimeZone());
     }
     else
     {
-        meta.removeIptcTag("Iptc.Envelope.TimeSent");
+        meta->removeIptcTag("Iptc.Envelope.TimeSent");
     }
 
-    iptcData = meta.getIptc();
+    iptcData = meta->getIptc();
 }
 
 } // namespace DigikamGenericMetadataEditPlugin

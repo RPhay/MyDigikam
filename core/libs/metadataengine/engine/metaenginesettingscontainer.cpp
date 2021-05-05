@@ -6,7 +6,7 @@
  * Date        : 2010-08-20
  * Description : MetaEngine Settings Container.
  *
- * Copyright (C) 2010-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2010-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -34,31 +34,34 @@
 // Local includes
 
 #include "metaenginesettings.h"
+#include "digikam_globals.h"
 
 namespace Digikam
 {
 
 MetaEngineSettingsContainer::MetaEngineSettingsContainer()
-    : exifRotate(true),
-      exifSetOrientation(true),
-      saveComments(false),
-      saveDateTime(false),
-      savePickLabel(false),
-      saveColorLabel(false),
-      saveRating(false),
-      saveTemplate(false),
-      saveTags(false),
-      saveFaceTags(false),
-      writeRawFiles(false),
-      updateFileTimeStamp(true),
-      rescanImageIfModified(false),
-      clearMetadataIfRescan(false),
-      useXMPSidecar4Reading(false),
-      useCompatibleFileName(false),
-      useLazySync(false),
-      metadataWritingMode(MetaEngine::WRITE_TO_FILE_ONLY),
-      rotationBehavior(RotatingFlags | RotateByLosslessRotation),
-      sidecarExtensions(QStringList())
+    : exifRotate            (true),
+      exifSetOrientation    (true),
+      saveComments          (false),
+      saveDateTime          (false),
+      savePickLabel         (false),
+      saveColorLabel        (false),
+      saveRating            (false),
+      saveTemplate          (false),
+      saveTags              (false),
+      saveFaceTags          (false),
+      savePosition          (false),
+      writeRawFiles         (false),
+      writeDngFiles         (false),
+      updateFileTimeStamp   (true),
+      rescanImageIfModified (false),
+      clearMetadataIfRescan (false),
+      useXMPSidecar4Reading (false),
+      useCompatibleFileName (false),
+      useLazySync           (false),
+      metadataWritingMode   (MetaEngine::WRITE_TO_FILE_ONLY),
+      rotationBehavior      (RotatingFlags | RotateByLosslessRotation),
+      sidecarExtensions     (QStringList())
 {
 }
 
@@ -74,6 +77,7 @@ void MetaEngineSettingsContainer::readFromConfig(KConfigGroup& group)
     saveTags              = group.readEntry("Save Tags",                   false);
     saveTemplate          = group.readEntry("Save Template",               false);
     saveFaceTags          = group.readEntry("Save FaceTags",               false);
+    savePosition          = group.readEntry("Save Position",               false);
 
     saveComments          = group.readEntry("Save EXIF Comments",          false);
     saveDateTime          = group.readEntry("Save Date Time",              false);
@@ -82,6 +86,7 @@ void MetaEngineSettingsContainer::readFromConfig(KConfigGroup& group)
     saveRating            = group.readEntry("Save Rating",                 false);
 
     writeRawFiles         = group.readEntry("Write Metadata To RAW Files", false);
+    writeDngFiles         = group.readEntry("Write Metadata To DNG Files", false);
     useXMPSidecar4Reading = group.readEntry("Use XMP Sidecar For Reading", false);
     useCompatibleFileName = group.readEntry("Use Compatible File Name",    false);
     metadataWritingMode   = (MetaEngine::MetadataWritingMode)
@@ -94,6 +99,8 @@ void MetaEngineSettingsContainer::readFromConfig(KConfigGroup& group)
     rotationBehavior      = NoRotation;
 
     sidecarExtensions     = group.readEntry("Custom Sidecar Extensions",   QStringList());
+
+    exifToolPath          = group.readEntry("ExifTool Path",               defaultExifToolSearchPaths().first());
 
     if (group.readEntry("Rotate By Internal Flag", true))
     {
@@ -124,6 +131,7 @@ void MetaEngineSettingsContainer::writeToConfig(KConfigGroup& group) const
     group.writeEntry("Save Tags",                   saveTags);
     group.writeEntry("Save Template",               saveTemplate);
     group.writeEntry("Save FaceTags",               saveFaceTags);
+    group.writeEntry("Save Position",               savePosition);
 
     group.writeEntry("Save EXIF Comments",          saveComments);
     group.writeEntry("Save Date Time",              saveDateTime);
@@ -132,6 +140,7 @@ void MetaEngineSettingsContainer::writeToConfig(KConfigGroup& group) const
     group.writeEntry("Save Rating",                 saveRating);
 
     group.writeEntry("Write Metadata To RAW Files", writeRawFiles);
+    group.writeEntry("Write Metadata To DNG Files", writeDngFiles);
     group.writeEntry("Use XMP Sidecar For Reading", useXMPSidecar4Reading);
     group.writeEntry("Use Compatible File Name",    useCompatibleFileName);
     group.writeEntry("Metadata Writing Mode",       (int)metadataWritingMode);
@@ -146,6 +155,40 @@ void MetaEngineSettingsContainer::writeToConfig(KConfigGroup& group) const
     group.writeEntry("Use Lazy Synchronization",    useLazySync);
 
     group.writeEntry("Custom Sidecar Extensions",   sidecarExtensions);
+
+    group.writeEntry("ExifTool Path",               exifToolPath);
+}
+
+QStringList MetaEngineSettingsContainer::defaultExifToolSearchPaths() const
+{
+    QStringList defPaths;
+
+#ifdef Q_OS_MACOS
+
+    // Install path for the official ExifTool DMG package
+    defPaths << QLatin1String("/usr/local/bin");
+
+    // digiKam Bundle PKG install path
+    defPaths << macOSBundlePrefix() + QLatin1String("bin");
+
+    // Std Macports install path
+    defPaths << QLatin1String("/opt/local/bin");
+
+#endif
+
+#ifdef Q_OS_WIN
+
+    defPaths << QLatin1String("C:/Program Files/digiKam");
+
+#endif
+
+#ifdef Q_OS_UNIX
+
+    defPaths << QLatin1String("/usr/bin");
+
+#endif
+
+    return defPaths;
 }
 
 QDebug operator<<(QDebug dbg, const MetaEngineSettingsContainer& inf)
@@ -170,8 +213,12 @@ QDebug operator<<(QDebug dbg, const MetaEngineSettingsContainer& inf)
                   << inf.saveTags << "), ";
     dbg.nospace() << "saveFaceTags("
                   << inf.saveFaceTags << "), ";
+    dbg.nospace() << "savePosition("
+                  << inf.savePosition << "), ";
     dbg.nospace() << "writeRawFiles("
                   << inf.writeRawFiles << "), ";
+    dbg.nospace() << "writeDngFiles("
+                  << inf.writeDngFiles << "), ";
     dbg.nospace() << "updateFileTimeStamp("
                   << inf.updateFileTimeStamp << "), ";
     dbg.nospace() << "rescanImageIfModified("
@@ -193,5 +240,6 @@ QDebug operator<<(QDebug dbg, const MetaEngineSettingsContainer& inf)
 
     return dbg.space();
 }
+
 
 } // namespace Digikam

@@ -6,7 +6,7 @@
  * Date        : 2010-02-10
  * Description : sharp settings view.
  *
- * Copyright (C) 2010-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2010-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -66,22 +66,24 @@ class Q_DECL_HIDDEN SharpSettings::Private
 public:
 
     explicit Private()
-      : stack(nullptr),
-        sharpMethod(nullptr),
-        radiusInput(nullptr),
+      : stack           (nullptr),
+        sharpMethod     (nullptr),
+        radiusInput     (nullptr),
 
 #ifdef HAVE_EIGEN3
-        radius(nullptr),
-        correlation(nullptr),
-        noise(nullptr),
-        gauss(nullptr),
-        matrixSize(nullptr),
+
+        radius          (nullptr),
+        correlation     (nullptr),
+        noise           (nullptr),
+        gauss           (nullptr),
+        matrixSize      (nullptr),
+
 #endif // HAVE_EIGEN3
 
-        radiusInput2(nullptr),
-        amountInput(nullptr),
-        thresholdInput(nullptr),
-        luma(nullptr)
+        radiusInput2    (nullptr),
+        amountInput     (nullptr),
+        thresholdInput  (nullptr),
+        luma            (nullptr)
     {
     }
 
@@ -136,7 +138,7 @@ const QString SharpSettings::Private::configRefocusMatrixSizeEntry(QLatin1String
 
 SharpSettings::SharpSettings(QWidget* const parent)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     const int spacing       = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
     QGridLayout* const grid = new QGridLayout(parent);
@@ -147,7 +149,9 @@ SharpSettings::SharpSettings(QWidget* const parent)
     d->sharpMethod->addItem(i18n("Unsharp mask"));
 
 #ifdef HAVE_EIGEN3
+
     d->sharpMethod->addItem(i18n("Refocus"));
+
 #endif // HAVE_EIGEN3
 
     d->sharpMethod->setDefaultIndex(SharpContainer::SimpleSharp);
@@ -372,11 +376,13 @@ SharpContainer SharpSettings::settings() const
 
 
 #ifdef HAVE_EIGEN3
+
     prm.rfRadius      = d->radius->value();
     prm.rfCorrelation = d->correlation->value();
     prm.rfNoise       = d->noise->value();
     prm.rfGauss       = d->gauss->value();
     prm.rfMatrix      = d->matrixSize->value();
+
 #endif // HAVE_EIGEN3
 
     return prm;
@@ -397,11 +403,13 @@ void SharpSettings::setSettings(const SharpContainer& settings)
     d->luma->setChecked(settings.umLumaOnly);
 
 #ifdef HAVE_EIGEN3
+
     d->radius->setValue(settings.rfRadius);
     d->correlation->setValue(settings.rfCorrelation);
     d->noise->setValue(settings.rfNoise);
     d->gauss->setValue(settings.rfGauss);
     d->matrixSize->setValue(settings.rfMatrix);
+
 #endif // HAVE_EIGEN3
 
     blockSignals(false);
@@ -446,11 +454,13 @@ SharpContainer SharpSettings::defaultSettings() const
     prm.umLumaOnly    = false;
 
 #ifdef HAVE_EIGEN3
+
     prm.rfRadius      = d->radius->defaultValue();
     prm.rfCorrelation = d->correlation->defaultValue();
     prm.rfNoise       = d->noise->defaultValue();
     prm.rfGauss       = d->gauss->defaultValue();
     prm.rfMatrix      = d->matrixSize->defaultValue();
+
 #endif // HAVE_EIGEN3
 
     return prm;
@@ -471,11 +481,13 @@ void SharpSettings::readSettings(KConfigGroup& group)
     prm.umLumaOnly            = group.readEntry(d->configUnsharpMaskLumaEntry,                defaultPrm.umLumaOnly);
 
 #ifdef HAVE_EIGEN3
+
     prm.rfRadius              = group.readEntry(d->configRefocusRadiusAdjustmentEntry,        defaultPrm.rfRadius);
     prm.rfCorrelation         = group.readEntry(d->configRefocusCorrelationAdjustmentEntry,   defaultPrm.rfCorrelation);
     prm.rfNoise               = group.readEntry(d->configRefocusNoiseAdjustmentEntry,         defaultPrm.rfNoise);
     prm.rfGauss               = group.readEntry(d->configRefocusGaussAdjustmentEntry,         defaultPrm.rfGauss);
     prm.rfMatrix              = group.readEntry(d->configRefocusMatrixSizeEntry,              defaultPrm.rfMatrix);
+
 #endif // HAVE_EIGEN3
 
     setSettings(prm);
@@ -495,12 +507,15 @@ void SharpSettings::writeSettings(KConfigGroup& group)
     group.writeEntry(d->configUnsharpMaskLumaEntry,                prm.umLumaOnly);
 
 #ifdef HAVE_EIGEN3
+
     group.writeEntry(d->configRefocusRadiusAdjustmentEntry,        prm.rfRadius);
     group.writeEntry(d->configRefocusCorrelationAdjustmentEntry,   prm.rfCorrelation);
     group.writeEntry(d->configRefocusNoiseAdjustmentEntry,         prm.rfNoise);
     group.writeEntry(d->configRefocusGaussAdjustmentEntry,         prm.rfGauss);
     group.writeEntry(d->configRefocusMatrixSizeEntry,              prm.rfMatrix);
+
 #endif // HAVE_EIGEN3
+
 }
 
 void SharpSettings::loadSettings()
@@ -532,11 +547,13 @@ void SharpSettings::loadSettings()
         blockSignals(true);
 
 #ifdef HAVE_EIGEN3
+
         d->matrixSize->setValue(stream.readLine().toInt());
         d->radius->setValue(stream.readLine().toDouble());
         d->gauss->setValue(stream.readLine().toDouble());
         d->correlation->setValue(stream.readLine().toDouble());
         d->noise->setValue(stream.readLine().toDouble());
+
 #endif // HAVE_EIGEN3
 
         blockSignals(false);
@@ -569,11 +586,13 @@ void SharpSettings::saveAsSettings()
         stream << QLatin1String("# Photograph Refocus Configuration File\n");
 
 #ifdef HAVE_EIGEN3
+
         stream << d->matrixSize->value()  << QLatin1Char('\n');
         stream << d->radius->value()      << QLatin1Char('\n');
         stream << d->gauss->value()       << QLatin1Char('\n');
         stream << d->correlation->value() << QLatin1Char('\n');
         stream << d->noise->value()       << QLatin1Char('\n');
+
 #endif // HAVE_EIGEN3
 
     }

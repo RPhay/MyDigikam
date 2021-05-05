@@ -6,7 +6,7 @@
  * Date        : 2005-01-18
  * Description : triangle geometry calculation class.
  *
- * Copyright (C) 2005-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2005-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -43,23 +43,23 @@ PerspectiveTriangle::PerspectiveTriangle(const QPoint& A, const QPoint& B, const
 
 float PerspectiveTriangle::angleABC() const
 {
-    return( RADIAN2DEGREE( acos( (m_b*m_b - m_a*m_a - m_c*m_c ) / (-2*m_a*m_c ) ) ) );
+    return ( RADIAN2DEGREE( acos( (m_b*m_b - m_a*m_a - m_c*m_c ) / (-2*m_a*m_c ) ) ) );
 }
 
 float PerspectiveTriangle::angleACB() const
 {
-    return( RADIAN2DEGREE( acos( (m_c*m_c - m_a*m_a - m_b*m_b ) / (-2*m_a*m_b ) ) ) );
+    return ( RADIAN2DEGREE( acos( (m_c*m_c - m_a*m_a - m_b*m_b ) / (-2*m_a*m_b ) ) ) );
 }
 
 float PerspectiveTriangle::angleBAC() const
 {
-    return( RADIAN2DEGREE( acos( (m_a*m_a - m_b*m_b - m_c*m_c ) / (-2*m_b*m_c ) ) ) );
+    return ( RADIAN2DEGREE( acos( (m_a*m_a - m_b*m_b - m_c*m_c ) / (-2*m_b*m_c ) ) ) );
 }
 
 float PerspectiveTriangle::distanceP2P(const QPoint& p1, const QPoint& p2) const
 {
-    return(sqrt( abs( p2.x()-p1.x() ) * abs( p2.x()-p1.x() ) +
-                 abs( p2.y()-p1.y() ) * abs( p2.y()-p1.y() ) ));
+    return (sqrt( abs( p2.x()-p1.x() ) * abs( p2.x()-p1.x() ) +
+                  abs( p2.y()-p1.y() ) * abs( p2.y()-p1.y() ) ));
 }
 
 } // namespace DigikamEditorPerspectiveToolPlugin

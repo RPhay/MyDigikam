@@ -6,7 +6,7 @@
  * Date        : 2018-12-31
  * Description : digiKam plugin about dialog
  *
- * Copyright (C) 2018-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2018-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -40,10 +40,17 @@
 #include <QTreeWidget>
 #include <QListWidget>
 #include <QHeaderView>
+#include <QFileInfo>
+#include <QLocale>
+#include <QDateTime>
 
 // KDE includes
 
 #include <klocalizedstring.h>
+
+// Local includes
+
+#include "itempropertiestab.h"
 
 namespace Digikam
 {
@@ -57,40 +64,41 @@ DPluginAboutDlg::DPluginAboutDlg(DPlugin* const tool, QWidget* const parent)
                    Qt::WindowMinMaxButtonsHint);
 
     setModal(false);
-    setWindowTitle(i18n("About %1 Plugin", tool->name()));
+    setWindowTitle(i18nc("@title", "About %1 Plugin", tool->name()));
 
     QDialogButtonBox* const buttons = new QDialogButtonBox(QDialogButtonBox::Ok, this);
     buttons->button(QDialogButtonBox::Ok)->setDefault(true);
 
-    QWidget* const page     = new QWidget(this);
-    QGridLayout* const grid = new QGridLayout(page);
+    QWidget* const page             = new QWidget(this);
+    QGridLayout* const grid         = new QGridLayout(page);
 
     // --------------------------------------------------------
 
-    QLabel* const logo      = new QLabel(page);
+    QLabel* const logo              = new QLabel(page);
     logo->setPixmap(tool->icon().pixmap(QSize(48, 48)));
 
     // --------------------------------------------------------
 
-    QLabel* const header    = new QLabel(page);
+    QLabel* const header            = new QLabel(page);
     header->setWordWrap(true);
-    header->setText(i18n("<font size=\"5\">%1</font><br/>"
-                         "<b>Version %2</b>"
-                         "<p>%3</p>",
-                         tool->name(),
-                         tool->version(),
-                         tool->description()));
+    header->setText(QString::fromUtf8("<font size=\"5\">%1</font><br/>"
+                                      "<b>%2 %3</b>"
+                                      "<p>%4</p>")
+                    .arg(tool->name())
+                    .arg(i18nc("@label", "Version"))
+                    .arg(tool->version())
+                    .arg(tool->description()));
 
-    QTabWidget* const tab       = new QTabWidget(page);
+    QTabWidget* const tab           = new QTabWidget(page);
 
     // --------------------------------------------------------
 
-    QTextBrowser* const details = new QTextBrowser(tab);
+    QTextBrowser* const details     = new QTextBrowser(tab);
     details->setOpenExternalLinks(true);
     details->setFocusPolicy(Qt::NoFocus);
     details->setText(tool->details());
 
-    tab->addTab(details, i18n("Details"));
+    tab->addTab(details, i18nc("@title", "Details"));
 
     // --------------------------------------------------------
 
@@ -115,24 +123,31 @@ DPluginAboutDlg::DPluginAboutDlg(DPlugin* const tool, QWidget* const parent)
 
     authors->setText(alist);
 
-    tab->addTab(authors, i18n("Authors"));
+    tab->addTab(authors, i18nc("@title", "Authors"));
 
     // --------------------------------------------------------
 
-    QTreeWidget* const props = new QTreeWidget(tab);
+    QTreeWidget* const props        = new QTreeWidget(tab);
     props->setSortingEnabled(false);
     props->setRootIsDecorated(false);
     props->setSelectionMode(QAbstractItemView::SingleSelection);
     props->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     props->setAllColumnsShowFocus(true);
     props->setColumnCount(2);
-    props->setHeaderLabels(QStringList() << i18n("Name") << i18n("Value"));
+    props->setHeaderLabels(QStringList() << i18nc("@title: DPlugin properties", "Name")
+                                         << i18nc("@title: DPlugin properties", "Value"));
 
-    new QTreeWidgetItem(props, QStringList() << i18n("Interface ID") << tool->ifaceIid());
-    new QTreeWidgetItem(props, QStringList() << i18n("Tool ID")      << tool->iid());
-    new QTreeWidgetItem(props, QStringList() << i18n("Library")      << tool->libraryFileName());
+    new QTreeWidgetItem(props, QStringList() << i18nc("@item", "Interface ID") << tool->ifaceIid());
+    new QTreeWidgetItem(props, QStringList() << i18nc("@item", "Tool ID")      << tool->iid());
+    new QTreeWidgetItem(props, QStringList() << i18nc("@item", "Library")      << tool->libraryFileName());
 
-    tab->addTab(props, i18n("Properties"));
+    QFileInfo fi(tool->libraryFileName());
+
+    new QTreeWidgetItem(props, QStringList() << i18nc("@item", "File Size")    << ItemPropertiesTab::humanReadableBytesCount(fi.size()));
+    new QTreeWidgetItem(props, QStringList() << i18nc("@item", "File Date")    << QLocale().toString(fi.lastModified(), QLocale::ShortFormat));
+
+
+    tab->addTab(props, i18nc("@title", "Properties"));
 
     // --------------------------------------------------------
 
@@ -147,7 +162,8 @@ DPluginAboutDlg::DPluginAboutDlg(DPlugin* const tool, QWidget* const parent)
         extra->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
         extra->setAllColumnsShowFocus(true);
         extra->setColumnCount(2);
-        extra->setHeaderLabels(QStringList() << i18n("Extension") << i18n("Description"));
+        extra->setHeaderLabels(QStringList() << i18nc("@title: DPlugin properties", "Extension")
+                                             << i18nc("@title: DPlugin properties", "Description"));
 
         for (QMap<QString, QString>::const_iterator it = list.constBegin() ; it != list.constEnd() ; ++it)
         {

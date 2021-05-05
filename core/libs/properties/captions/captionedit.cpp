@@ -6,7 +6,7 @@
  * Date        : 2009-07-12
  * Description : caption editor
  *
- * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -45,7 +45,7 @@ public:
 
     explicit Private()
       : altLangStrEdit(nullptr),
-        authorEdit(nullptr)
+        authorEdit    (nullptr)
     {
     }
 
@@ -61,7 +61,7 @@ public:
 
 CaptionEdit::CaptionEdit(QWidget* const parent)
     : DVBox(parent),
-      d(new Private)
+      d    (new Private)
 {
 
     d->altLangStrEdit = new AltLangStrEdit(this);

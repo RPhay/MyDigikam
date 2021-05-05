@@ -6,7 +6,7 @@
  * Date        : 2018-07-30
  * Description : a plugin to export to Piwigo web-service.
  *
- * Copyright (C) 2018-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2018-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -53,7 +53,7 @@ void PiwigoPlugin::cleanUp()
 
 QString PiwigoPlugin::name() const
 {
-    return i18n("Piwigo");
+    return i18nc("@title", "Piwigo");
 }
 
 QString PiwigoPlugin::iid() const
@@ -68,13 +68,14 @@ QIcon PiwigoPlugin::icon() const
 
 QString PiwigoPlugin::description() const
 {
-    return i18n("A tool to export to Piwigo web-service");
+    return i18nc("@info", "A tool to export to Piwigo web-service");
 }
 
 QString PiwigoPlugin::details() const
 {
-    return i18n("<p>This tool permit to export items to Piwigo web-service.</p>"
-                "<p>See Piwigo web site for details: <a href='https://piwigo.org/'>https://piwigo.org/</a></p>");
+    return i18nc("@info", "This tool permit to export items to Piwigo web-service."
+                 "See Piwigo web site for details: %1",
+                 QLatin1String("<a href='https://piwigo.org/'>https://piwigo.org/</a></p>"));
 }
 
 QList<DPluginAuthor> PiwigoPlugin::authors() const
@@ -91,10 +92,10 @@ QList<DPluginAuthor> PiwigoPlugin::authors() const
                              QString::fromUtf8("(C) 2008"))
             << DPluginAuthor(QString::fromUtf8("Frédéric Coiffier"),
                              QString::fromUtf8("frederic dot coiffier at free dot com"),
-                             QString::fromUtf8("(C) 2010-2020"))
+                             QString::fromUtf8("(C) 2010-2021"))
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2006-2020"))
+                             QString::fromUtf8("(C) 2006-2021"))
             ;
 }
 

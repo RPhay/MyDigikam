@@ -8,7 +8,7 @@
  *
  * Copyright (C) 2008-2009 by Valerio Fuoglio <valerio dot fuoglio at gmail dot com>
  * Copyright (C) 2009      by Andi Clemens <andi dot clemens at googlemail dot com>
- * Copyright (C) 2012-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -44,14 +44,17 @@ namespace DigikamGenericPresentationPlugin
 
 class PresentationContainer;
 
-class PresentationAudioWidget : public QWidget, public Ui::PresentationAudioWidget
+class PresentationAudioWidget : public QWidget,
+                                public Ui::PresentationAudioWidget
 {
     Q_OBJECT
 
 public:
 
-    explicit PresentationAudioWidget(QWidget* const, const QList<QUrl>&, PresentationContainer* const);
-    ~PresentationAudioWidget();
+    explicit PresentationAudioWidget(QWidget* const,
+                                     const QList<QUrl>&,
+                                     PresentationContainer* const);
+    ~PresentationAudioWidget() override;
 
     void enqueue(const QList<QUrl>&);
     bool canHide() const;

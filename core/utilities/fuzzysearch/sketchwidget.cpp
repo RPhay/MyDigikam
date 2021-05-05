@@ -6,7 +6,7 @@
  * Date        : 2008-05-19
  * Description : a widget to draw sketch.
  *
- * Copyright (C) 2008-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2008-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2008-2010 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  *
  * This program is free software; you can redistribute it
@@ -228,9 +228,11 @@ void SketchWidget::slotUndo()
 
         emit signalSketchChanged(sketchImage());
 
-        // cppcheck-suppress knownConditionTrueFalse
-        emit signalUndoRedoStateChanged((d->eventIndex != -1),
-                                        (d->eventIndex != (d->drawEventList.count() - 1)));
+        emit signalUndoRedoStateChanged(
+                                        // cppcheck-suppress knownConditionTrueFalse
+                                        (d->eventIndex != -1),
+                                        (d->eventIndex != (d->drawEventList.count() - 1))
+                                       );
     }
 }
 
@@ -247,9 +249,11 @@ void SketchWidget::slotRedo()
 
     emit signalSketchChanged(sketchImage());
 
-    // cppcheck-suppress knownConditionTrueFalse
-    emit signalUndoRedoStateChanged((d->eventIndex != -1),
-                                    (d->eventIndex != (d->drawEventList.count() - 1)));
+    emit signalUndoRedoStateChanged(
+                                    (d->eventIndex != -1),
+                                    // cppcheck-suppress knownConditionTrueFalse
+                                    (d->eventIndex != (d->drawEventList.count() - 1))
+                                   );
 }
 
 void SketchWidget::replayEvents(int index)
@@ -560,11 +564,11 @@ void SketchWidget::wheelEvent(QWheelEvent* e)
         int size = d->penWidth;
         int decr = (e->modifiers() & Qt::SHIFT) ? 1 : 10;
 
-        if (e->delta() > 0)
+        if      (e->angleDelta().y() > 0)
         {
             size += decr;
         }
-        else
+        else if (e->angleDelta().y() < 0)
         {
             size -= decr;
         }

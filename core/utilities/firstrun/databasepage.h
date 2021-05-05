@@ -6,7 +6,7 @@
  * Date        : 2009-28-04
  * Description : first run assistant dialog
  *
- * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -44,7 +44,7 @@ class DatabasePage : public DWizardPage
 public:
 
     explicit DatabasePage(QWizard* const dlg);
-    ~DatabasePage();
+    ~DatabasePage() override;
 
     bool checkSettings();
     void saveSettings();

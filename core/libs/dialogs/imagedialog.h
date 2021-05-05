@@ -6,7 +6,7 @@
  * Date        : 2008-03-13
  * Description : image files selector dialog.
  *
- * Copyright (C) 2008-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2008-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -48,8 +48,8 @@ class DIGIKAM_EXPORT ImageDialogPreview : public QScrollArea
 
 public:
 
-    explicit ImageDialogPreview(QWidget* const parent=nullptr);
-    ~ImageDialogPreview();
+    explicit ImageDialogPreview(QWidget* const parent = nullptr);
+    ~ImageDialogPreview() override;
 
     QSize sizeHint() const override;
 
@@ -81,10 +81,10 @@ class DIGIKAM_EXPORT DFileIconProvider : public QFileIconProvider
 public:
 
     explicit DFileIconProvider();
-    ~DFileIconProvider();
+    ~DFileIconProvider() override;
 
-    virtual QIcon icon(IconType type) const override;
-    virtual QIcon icon(const QFileInfo& info) const override;
+    QIcon icon(IconType type) const override;
+    QIcon icon(const QFileInfo& info) const override;
 /*
 private:
 
@@ -114,9 +114,11 @@ public:
 
 private:
 
-    // Hidden copy constructor and assignment operator.
-    ImageDialog(const ImageDialog&);
-    ImageDialog& operator=(const ImageDialog&);
+    // Disable
+    ImageDialog(const ImageDialog&)            = delete;
+    ImageDialog& operator=(const ImageDialog&) = delete;
+
+private:
 
     class Private;
     Private* const d;

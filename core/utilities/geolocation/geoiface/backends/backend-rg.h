@@ -41,7 +41,7 @@ public:
 
     explicit RGBackend(QObject* const parent);
     RGBackend();
-    virtual ~RGBackend();
+    ~RGBackend() override;
 
     virtual void callRGBackend(const QList<RGInfo>&, const  QString&) = 0;
     virtual QString getErrorMessage();

@@ -6,7 +6,7 @@
  * Date        : 2013-04-29
  * Description : digiKam XML GUI window
  *
- * Copyright (C) 2013-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2013-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -74,6 +74,7 @@
 #include "daboutdata.h"
 #include "dpluginloader.h"
 #include "webbrowserdlg.h"
+#include "solidhardwaredlg.h"
 
 namespace Digikam
 {
@@ -83,23 +84,23 @@ class Q_DECL_HIDDEN DXmlGuiWindow::Private
 public:
 
     explicit Private()
-      : fullScreenHideToolBars(false),
-        fullScreenHideThumbBar(true),
-        fullScreenHideSideBars(false),
-        fullScreenHideStatusBar(false),
-        fsOptions(FS_NONE),
-        fullScreenAction(nullptr),
-        fullScreenBtn(nullptr),
-        dirtyMainToolBar(false),
-        thumbbarVisibility(true),
-        menubarVisibility(true),
-        statusbarVisibility(true),
-        dbStatAction(nullptr),
-        libsInfoAction(nullptr),
-        showMenuBarAction(nullptr),
-        showStatusBarAction(nullptr),
-        about(nullptr),
-        anim(nullptr)
+      : fullScreenHideToolBars  (false),
+        fullScreenHideThumbBar  (true),
+        fullScreenHideSideBars  (false),
+        fullScreenHideStatusBar (false),
+        fsOptions               (FS_NONE),
+        fullScreenAction        (nullptr),
+        fullScreenBtn           (nullptr),
+        dirtyMainToolBar        (false),
+        thumbbarVisibility      (true),
+        menubarVisibility       (true),
+        statusbarVisibility     (true),
+        dbStatAction            (nullptr),
+        libsInfoAction          (nullptr),
+        showMenuBarAction       (nullptr),
+        showStatusBarAction     (nullptr),
+        about                   (nullptr),
+        anim                    (nullptr)
     {
     }
 
@@ -180,7 +181,7 @@ public:
 
 DXmlGuiWindow::DXmlGuiWindow(QWidget* const parent, Qt::WindowFlags f)
     : KXmlGuiWindow(parent, f),
-      d(new Private)
+      d            (new Private)
 {
     m_animLogo = nullptr;
 
@@ -229,7 +230,7 @@ void DXmlGuiWindow::registerPluginsActions()
 {
     guiFactory()->removeClient(this);
 
-    DPluginLoader* const dpl = DPluginLoader::instance();
+    DPluginLoader* const dpl      = DPluginLoader::instance();
     dpl->registerGenericPlugins(this);
 
     QList<DPluginAction*> actions = dpl->pluginsActions(DPluginAction::Generic, this);
@@ -259,33 +260,41 @@ void DXmlGuiWindow::registerPluginsActions()
 
 void DXmlGuiWindow::createHelpActions(bool coreOptions)
 {
-    d->libsInfoAction = new QAction(QIcon::fromTheme(QLatin1String("help-about")), i18n("Components Information"), this);
+    d->libsInfoAction                   = new QAction(QIcon::fromTheme(QLatin1String("help-about")), i18n("Components Information"), this);
     connect(d->libsInfoAction, SIGNAL(triggered()), this, SLOT(slotComponentsInfo()));
     actionCollection()->addAction(QLatin1String("help_librariesinfo"), d->libsInfoAction);
 
-    d->about          = new DAboutData(this);
+    d->about                            = new DAboutData(this);
 
-    QAction* const rawCameraListAction = new QAction(QIcon::fromTheme(QLatin1String("image-x-adobe-dng")), i18n("Supported RAW Cameras"), this);
+    QAction* const rawCameraListAction  = new QAction(QIcon::fromTheme(QLatin1String("image-x-adobe-dng")), i18n("Supported RAW Cameras"), this);
     connect(rawCameraListAction, SIGNAL(triggered()), this, SLOT(slotRawCameraList()));
     actionCollection()->addAction(QLatin1String("help_rawcameralist"), rawCameraListAction);
 
-    QAction* const donateMoneyAction   = new QAction(QIcon::fromTheme(QLatin1String("globe")), i18n("Donate..."), this);
+    QAction* const solidHardwareAction  = new QAction(QIcon::fromTheme(QLatin1String("preferences-devices-tree")), i18n("List of Detected Hardware"), this);
+    connect(solidHardwareAction, SIGNAL(triggered()), this, SLOT(slotSolidHardwareList()));
+    actionCollection()->addAction(QLatin1String("help_solidhardwarelist"), solidHardwareAction);
+
+    QAction* const donateMoneyAction    = new QAction(QIcon::fromTheme(QLatin1String("globe")), i18n("Donate..."), this);
     connect(donateMoneyAction, SIGNAL(triggered()), this, SLOT(slotDonateMoney()));
     actionCollection()->addAction(QLatin1String("help_donatemoney"), donateMoneyAction);
 
-    QAction* const recipesBookAction   = new QAction(QIcon::fromTheme(QLatin1String("globe")), i18n("Recipes Book..."), this);
+    QAction* const recipesBookAction    = new QAction(QIcon::fromTheme(QLatin1String("globe")), i18n("Recipes Book..."), this);
     connect(recipesBookAction, SIGNAL(triggered()), this, SLOT(slotRecipesBook()));
     actionCollection()->addAction(QLatin1String("help_recipesbook"), recipesBookAction);
 
-    QAction* const contributeAction    = new QAction(QIcon::fromTheme(QLatin1String("globe")), i18n("Contribute..."), this);
+    QAction* const contributeAction     = new QAction(QIcon::fromTheme(QLatin1String("globe")), i18n("Contribute..."), this);
     connect(contributeAction, SIGNAL(triggered()), this, SLOT(slotContribute()));
     actionCollection()->addAction(QLatin1String("help_contribute"), contributeAction);
 
-    QAction* const helpAction          = new QAction(QIcon::fromTheme(QLatin1String("help-contents")), i18n("Online Handbook..."), this);
+    QAction* const onlineVerCheckAction = new QAction(QIcon::fromTheme(QLatin1String("globe")), i18n("Check for New Version..."), this);
+    connect(onlineVerCheckAction, SIGNAL(triggered()), this, SLOT(slotOnlineVersionCheck()));
+    actionCollection()->addAction(QLatin1String("help_onlineversioncheck"), onlineVerCheckAction);
+
+    QAction* const helpAction           = new QAction(QIcon::fromTheme(QLatin1String("globe")), i18n("Online Handbook..."), this);
     connect(helpAction, SIGNAL(triggered()), this, SLOT(slotHelpContents()));
     actionCollection()->addAction(QLatin1String("help_handbook"), helpAction);
 
-    m_animLogo = new DLogoAction(this);
+    m_animLogo                          = new DLogoAction(this);
     actionCollection()->addAction(QLatin1String("logo_action"), m_animLogo);
 
     // Add options only for core components (typically all excepted Showfoto)
@@ -354,10 +363,13 @@ void DXmlGuiWindow::createSidebarActions()
 void DXmlGuiWindow::createSettingsActions()
 {
     d->showMenuBarAction   = KStandardAction::showMenubar(this, SLOT(slotShowMenuBar()), actionCollection());
-#ifdef Q_OS_OSX
+
+#ifdef Q_OS_MACOS
+
     // Under MacOS the menu bar visibility is managed by desktop.
 
     d->showMenuBarAction->setVisible(false);
+
 #endif
 
     d->showStatusBarAction = actionCollection()->action(QLatin1String("options_show_statusbar"));
@@ -378,8 +390,11 @@ void DXmlGuiWindow::createSettingsActions()
     KStandardAction::configureToolbars(this,      SLOT(slotConfToolbars()),      actionCollection());
 
 #ifdef HAVE_KNOTIFYCONFIG
+
     KStandardAction::configureNotifications(this, SLOT(slotConfNotifications()), actionCollection());
+
 #endif
+
 }
 
 QAction* DXmlGuiWindow::showMenuBarAction() const
@@ -404,9 +419,13 @@ void DXmlGuiWindow::slotShowStatusBar()
 
 void DXmlGuiWindow::slotConfNotifications()
 {
+
 #ifdef HAVE_KNOTIFYCONFIG
+
     KNotifyConfigWidget::configure(this);
+
 #endif
+
 }
 
 void DXmlGuiWindow::editKeyboardShortcuts(KActionCollection* const extraac, const QString& actitle)
@@ -537,18 +556,27 @@ void DXmlGuiWindow::slotToggleFullScreen(bool set)
         // hide menubar
 
 #ifdef Q_OS_WIN
+
         d->menubarVisibility = d->showMenuBarAction->isChecked();
+
 #else
+
         d->menubarVisibility = menuBar()->isVisible();
+
 #endif
+
         menuBar()->setVisible(false);
 
         // hide statusbar
 
 #ifdef Q_OS_WIN
+
         d->statusbarVisibility = d->showStatusBarAction->isChecked();
+
 #else
+
         d->statusbarVisibility = statusBar()->isVisible();
+
 #endif
 
         if ((d->fsOptions & FS_STATUSBAR) && d->fullScreenHideStatusBar)
@@ -594,7 +622,7 @@ void DXmlGuiWindow::slotToggleFullScreen(bool set)
                 }
                 else
                 {
-                    mainbar->insertAction(mainbar->actions().first(), d->fullScreenAction);
+                    mainbar->insertAction(mainbar->actions().constFirst(), d->fullScreenAction);
                 }
 
                 d->dirtyMainToolBar = true;
@@ -792,7 +820,7 @@ void DXmlGuiWindow::slotHelpContents()
 
 void DXmlGuiWindow::openHandbook()
 {
-    QUrl url = QUrl(QString::fromUtf8("https://docs.kde.org/trunk5/en/extragear-graphics/%1/index.html")
+    QUrl url = QUrl(QString::fromUtf8("https://docs.kde.org/?application=%1&branch=trunk5")
                .arg(QApplication::applicationName()));
 
     WebBrowserDlg* const browser = new WebBrowserDlg(url, qApp->activeWindow());
@@ -812,7 +840,7 @@ void DXmlGuiWindow::saveWindowSize(QWindow* const win, KConfigGroup& group)
 QAction* DXmlGuiWindow::buildStdAction(StdActionType type, const QObject* const recvr,
                                        const char* const slot, QObject* const parent)
 {
-    switch(type)
+    switch (type)
     {
         case StdCopyAction:
             return KStandardAction::copy(recvr, slot, parent);
@@ -870,9 +898,10 @@ QAction* DXmlGuiWindow::buildStdAction(StdActionType type, const QObject* const 
             break;
 
         default:
-            return nullptr;
             break;
     }
+
+    return nullptr;
 }
 
 void DXmlGuiWindow::slotRawCameraList()
@@ -880,27 +909,30 @@ void DXmlGuiWindow::slotRawCameraList()
     showRawCameraList();
 }
 
+void DXmlGuiWindow::slotSolidHardwareList()
+{
+    SolidHardwareDlg* const dlg = new SolidHardwareDlg(qApp->activeWindow());
+    dlg->exec();
+}
+
 void DXmlGuiWindow::slotDonateMoney()
 {
-    WebBrowserDlg* const browser
-        = new WebBrowserDlg(QUrl(QLatin1String("https://www.digikam.org/donate/")),
-                            qApp->activeWindow());
+    WebBrowserDlg* const browser = new WebBrowserDlg(QUrl(QLatin1String("https://www.digikam.org/donate/")),
+                                                     qApp->activeWindow());
     browser->show();
 }
 
 void DXmlGuiWindow::slotRecipesBook()
 {
-    WebBrowserDlg* const browser
-        = new WebBrowserDlg(QUrl(QLatin1String("https://www.digikam.org/recipes_book/")),
-                            qApp->activeWindow());
+    WebBrowserDlg* const browser = new WebBrowserDlg(QUrl(QLatin1String("https://www.digikam.org/recipes_book/")),
+                                                     qApp->activeWindow());
     browser->show();
 }
 
 void DXmlGuiWindow::slotContribute()
 {
-    WebBrowserDlg* const browser
-        = new WebBrowserDlg(QUrl(QLatin1String("https://www.digikam.org/contribute/")),
-                            qApp->activeWindow());
+    WebBrowserDlg* const browser = new WebBrowserDlg(QUrl(QLatin1String("https://www.digikam.org/contribute/")),
+                                                     qApp->activeWindow());
     browser->show();
 }
 
@@ -910,7 +942,7 @@ void DXmlGuiWindow::setupIconTheme()
     // this means e.g. for mac: "<APPDIR>/../Resources" and for win: "<APPDIR>/data".
 
     bool hasBreeze                = false;
-    const QString breezeIcons     = QStandardPaths::locate(QStandardPaths::DataLocation,
+    const QString breezeIcons     = QStandardPaths::locate(QStandardPaths::AppDataLocation,
                                                            QLatin1String("breeze.rcc"));
 
     if (!breezeIcons.isEmpty() && QFile::exists(breezeIcons))
@@ -921,7 +953,7 @@ void DXmlGuiWindow::setupIconTheme()
     }
 
     bool hasBreezeDark            = false;
-    const QString breezeDarkIcons = QStandardPaths::locate(QStandardPaths::DataLocation,
+    const QString breezeDarkIcons = QStandardPaths::locate(QStandardPaths::AppDataLocation,
                                                            QLatin1String("breeze-dark.rcc"));
 
     if (!breezeDarkIcons.isEmpty() && QFile::exists(breezeDarkIcons))
@@ -934,6 +966,7 @@ void DXmlGuiWindow::setupIconTheme()
     if (hasBreeze || hasBreezeDark)
     {
         // Tell Qt about the theme
+
         QIcon::setThemeSearchPaths(QStringList() << QLatin1String(":/icons"));
 
         const QStringList iconsDirs = QStandardPaths::locateAll(QStandardPaths::GenericDataLocation,

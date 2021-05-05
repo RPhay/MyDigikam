@@ -47,11 +47,11 @@ class GSPhoto
 public:
 
     GSPhoto()
+      : id          (QLatin1String("-1")),
+        gpsLon      (QLatin1String("")),
+        gpsLat      (QLatin1String("")),
+        canComment  (true)
     {
-        id         = QLatin1String("-1");
-        canComment = true;
-        gpsLon     = QLatin1String("");
-        gpsLat     = QLatin1String("");
     }
 
 public:
@@ -87,11 +87,11 @@ class GSFolder
 public:
 
     GSFolder()
+      : id          (QLatin1String("-1")),
+        title       (QLatin1String("<auto-create>")),
+        canComment  (true),
+        isWriteable (true)
     {
-        id          = QLatin1String("-1");
-        title       = QLatin1String("<auto-create>");
-        canComment  = true;
-        isWriteable = true;
     }
 
 public:

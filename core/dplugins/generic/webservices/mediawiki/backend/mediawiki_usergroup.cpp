@@ -6,7 +6,7 @@
  * Date        : 2011-03-22
  * Description : a Iface C++ interface
  *
- * Copyright (C) 2011-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2011-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2011      by Remi Benoit <r3m1 dot benoit at gmail dot com>
  *
  * This program is free software; you can redistribute it
@@ -30,7 +30,7 @@
 namespace MediaWiki
 {
 
-class Q_DECL_HIDDEN UserGroup::UserGroupPrivate
+class Q_DECL_HIDDEN UserGroup::Private
 {
 public:
 
@@ -42,13 +42,13 @@ public:
 };
 
 UserGroup::UserGroup()
-    : d(new UserGroupPrivate())
+    : d(new Private())
 {
     d->number = -1;
 }
 
 UserGroup::UserGroup(const UserGroup& other)
-    : d(new UserGroupPrivate(*(other.d)))
+    : d(new Private(*(other.d)))
 {
 }
 
@@ -57,17 +57,20 @@ UserGroup::~UserGroup()
     delete d;
 }
 
-UserGroup& UserGroup::operator=(UserGroup other)
+UserGroup& UserGroup::operator=(const UserGroup& other)
 {
     *d = *other.d;
+
     return *this;
 }
 
-bool UserGroup::operator==(const MediaWiki::UserGroup& other) const
+bool UserGroup::operator==(const UserGroup& other) const
 {
-    return number() == other.number() &&
-           rights() == other.rights() &&
-           name()   == other.name() ;
+    return (
+            (number() == other.number()) &&
+            (rights() == other.rights()) &&
+            (name()   == other.name())
+           );
 }
 
 QString UserGroup::name() const

@@ -6,7 +6,7 @@
  * Date        : 2012-01-26
  * Description : a progress bar with information dispatched to progress manager
  *
- * Copyright (C) 2012-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -42,7 +42,7 @@ class DIGIKAM_EXPORT DProgressWdg : public QProgressBar
 public:
 
     explicit DProgressWdg(QWidget* const parent);
-    ~DProgressWdg();
+    ~DProgressWdg() override;
 
     /**
      * Call this method to start a new instance of progress notification into progress manager

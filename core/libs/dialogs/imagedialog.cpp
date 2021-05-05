@@ -6,7 +6,7 @@
  * Date        : 2008-03-13
  * Description : image files selector dialog.
  *
- * Copyright (C) 2008-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2008-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -34,6 +34,7 @@
 #include <QLocale>
 #include <QPixmap>
 #include <QImage>
+#include <QScopedPointer>
 
 // KDE includes
 
@@ -69,8 +70,6 @@ public:
     QLabel*              infoLabel;
 
     QUrl                 currentURL;
-
-    DMetadata            metaIface;
 
     ThumbnailLoadThread* thumbLoadThread;
 };
@@ -135,9 +134,10 @@ void ImageDialogPreview::slotShowPreview(const QUrl& url)
         d->currentURL                = url;
         d->thumbLoadThread->find(ThumbnailIdentifier(d->currentURL.toLocalFile()));
 
-        d->metaIface.load(d->currentURL.toLocalFile());
-        PhotoInfoContainer info      = d->metaIface.getPhotographInformation();
-        VideoInfoContainer videoInfo = d->metaIface.getVideoInformation();
+        QScopedPointer<DMetadata> meta(new DMetadata);
+        meta->load(d->currentURL.toLocalFile());
+        PhotoInfoContainer info      = meta->getPhotographInformation();
+        VideoInfoContainer videoInfo = meta->getVideoInformation();
 
         if (!info.isEmpty())
         {
@@ -419,7 +419,7 @@ ImageDialog::ImageDialog(QWidget* const parent, const QUrl& url, bool singleSele
     qCDebug(DIGIKAM_GENERAL_LOG) << "file formats=" << d->fileFormats;
 
     DFileIconProvider* const provider = new DFileIconProvider();
-    DFileDialog* const dlg            = new DFileDialog(parent);
+    QPointer<DFileDialog> dlg         = new DFileDialog(parent);
     dlg->setWindowTitle(caption);
     dlg->setDirectoryUrl(url);
     dlg->setIconProvider(provider);
@@ -429,7 +429,11 @@ ImageDialog::ImageDialog(QWidget* const parent, const QUrl& url, bool singleSele
     dlg->setFileMode(singleSelect ? QFileDialog::ExistingFile : QFileDialog::ExistingFiles);
 
     dlg->exec();
-    d->urls = dlg->selectedUrls();
+
+    if (dlg)
+    {
+        d->urls = dlg->selectedUrls();
+    }
 
     delete dlg;
     delete provider;

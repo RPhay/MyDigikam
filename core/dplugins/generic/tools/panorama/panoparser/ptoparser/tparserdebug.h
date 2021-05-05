@@ -39,4 +39,4 @@
 #   define DEBUG_4(a,b,c,d)
 #endif
 
-#endif // DIGIKAM_T_PARSER_DEBUG_H
+#endif /* DIGIKAM_T_PARSER_DEBUG_H */

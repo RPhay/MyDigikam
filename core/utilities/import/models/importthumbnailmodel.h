@@ -36,7 +36,7 @@ namespace Digikam
 
 typedef QPair<CamItemInfo, QPixmap> CachedItem;
 
-class DIGIKAM_EXPORT ImportThumbnailModel : public ImportItemModel
+class DIGIKAM_GUI_EXPORT ImportThumbnailModel : public ImportItemModel
 {
     Q_OBJECT
 
@@ -48,10 +48,10 @@ public:
      *  and caching facility. Thumbnails size can be adjusted.
      */
     explicit ImportThumbnailModel(QObject* const parent);
-    ~ImportThumbnailModel();
+    ~ImportThumbnailModel() override;
 
     /// Sets the camera thumbs controller which is used to get the thumbnails for item infos.
-    void setCameraThumbsController(CameraThumbsCtrl* const thumbsCtrl) override;
+    void setCameraThumbsController(CameraThumbsCtrl* const thumbsCtrl)                                override;
 
     /// Get the thumbnail size
     ThumbnailSize thumbnailSize() const;
@@ -69,14 +69,14 @@ public:
      *  If it still needs to be loaded, returns a null QVariant and emits
      *  thumbnailAvailable() as soon as it is available.
      */
-    virtual QVariant data(const QModelIndex& index, int role = Qt::DisplayRole) const override;
+    QVariant data(const QModelIndex& index, int role = Qt::DisplayRole) const                 override;
 
     /**
      * You can override the current thumbnail size by giving an integer value for ThumbnailRole.
      * Set a null QVariant to use the thumbnail size set by setThumbnailSize() again.
      * The index given here is ignored for this purpose.
      */
-    virtual bool setData(const QModelIndex& index, const QVariant& value, int role = Qt::DisplayRole) override;
+    bool setData(const QModelIndex& index, const QVariant& value, int role = Qt::DisplayRole) override;
 
 Q_SIGNALS:
 
@@ -86,6 +86,12 @@ Q_SIGNALS:
 private Q_SLOTS:
 
     void slotThumbInfoReady(const CamItemInfo&);
+
+private:
+
+    // Disable
+    ImportThumbnailModel(const ImportThumbnailModel&)            = delete;
+    ImportThumbnailModel& operator=(const ImportThumbnailModel&) = delete;
 
 private:
 

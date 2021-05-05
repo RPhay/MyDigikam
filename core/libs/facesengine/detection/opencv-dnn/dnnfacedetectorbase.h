@@ -29,6 +29,10 @@
 
 #include <vector>
 
+// Qt includes
+
+#include <QMutex>
+
 // Local includes
 
 #include "digikam_opencv.h"
@@ -60,15 +64,15 @@ protected:
                     int top,
                     int bottom,
                     std::vector<float>& goodConfidences, std::vector<cv::Rect>& goodBoxes,
-                    std::vector<float>& doubtConfidences, std::vector<cv::Rect>& doubtBoxes);
+                    std::vector<float>& doubtConfidences, std::vector<cv::Rect>& doubtBoxes) const;
 
     void correctBbox(cv::Rect& bbox,
-                     const cv::Size& paddedSize);
+                     const cv::Size& paddedSize) const;
 
 public:
 
-    static float confidenceThreshold;    // Threshold for bbox detection. It can be init and changed in the GUI
-    static float nmsThreshold;           // Threshold for nms suppression
+    static float confidenceThreshold;    ///< Threshold for bbox detection. It can be init and changed in the GUI
+    static float nmsThreshold;           ///< Threshold for nms suppression
 
 protected:
 
@@ -77,6 +81,14 @@ protected:
     cv::Size     inputImageSize;
 
     cv::dnn::Net net;
+
+    QMutex       mutex;
+
+private:
+
+    // Disable
+    DNNFaceDetectorBase(const DNNFaceDetectorBase&)            = delete;
+    DNNFaceDetectorBase& operator=(const DNNFaceDetectorBase&) = delete;
 };
 
 } // namespace Digikam

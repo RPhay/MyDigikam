@@ -1,9 +1,11 @@
 #
-# Copyright (c) 2010-2020 by Gilles Caulier, <caulier dot gilles at gmail dot com>
+# Copyright (c) 2010-2021 by Gilles Caulier, <caulier dot gilles at gmail dot com>
 # Copyright (c) 2015      by Veaceslav Munteanu, <veaceslav dot munteanu90 at gmail dot com>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
+
+APPLY_COMMON_POLICIES()
 
 # -----------------------------------------------------------------------------------
 # Headers to configure
@@ -49,13 +51,16 @@ endif()
 # Targets to build
 
 include(DigikamCoreTarget.cmake)
+include(DigikamDatabaseTarget.cmake)
 include(DigikamGuiTarget.cmake)
 include(DigikamTarget.cmake)
 
 # -----------------------------------------------------------------------------------
 # Others Files to install
 
-install(PROGRAMS main/org.kde.digikam.desktop     DESTINATION ${XDG_APPS_INSTALL_DIR})
-install(FILES    main/org.kde.digikam.appdata.xml DESTINATION ${KDE_INSTALL_METAINFODIR})
-install(FILES    main/digikamui5.rc               DESTINATION ${KXMLGUI_INSTALL_DIR}/digikam)
-install(FILES    main/digikam.notifyrc            DESTINATION ${KNOTIFYRC_INSTALL_DIR})
+install(PROGRAMS ${CMAKE_CURRENT_SOURCE_DIR}/main/org.kde.digikam.desktop     DESTINATION ${XDG_APPS_INSTALL_DIR})
+install(FILES    ${CMAKE_CURRENT_SOURCE_DIR}/main/org.kde.digikam.appdata.xml DESTINATION ${KDE_INSTALL_METAINFODIR})
+install(FILES    ${CMAKE_CURRENT_SOURCE_DIR}/main/digikamui5.rc               DESTINATION ${KXMLGUI_INSTALL_DIR}/digikam)
+install(FILES    ${CMAKE_CURRENT_SOURCE_DIR}/main/digikam.notifyrc            DESTINATION ${KNOTIFYRC_INSTALL_DIR})
+
+include(DigikamExportAPI.cmake)

@@ -119,10 +119,10 @@ PLT_DeviceHost::AddIcon(const PLT_DeviceIcon& icon,
 {
     NPT_HttpStaticRequestHandler* icon_handler = 
         new NPT_HttpStaticRequestHandler(
-			data, 
-			size,
-			icon.m_MimeType,
-			copy);
+            data, 
+            size,
+            icon.m_MimeType,
+            copy);
     m_HttpServer->AddRequestHandler(icon_handler, icon.m_UrlPath, false, true);
     return m_Icons.Add(icon);
 }
@@ -133,20 +133,20 @@ PLT_DeviceHost::AddIcon(const PLT_DeviceIcon& icon,
 NPT_Result
 PLT_DeviceHost::SetupIcons()
 {
-	/*if (m_Icons.GetItemCount() == 0) {
-		AddIcon(
-			PLT_DeviceIcon("image/jpeg", 120, 120, 24, "/images/platinum-120x120.jpg"),
-			Platinum_120x120_jpg, sizeof(Platinum_120x120_jpg), false);
-		AddIcon(
-			PLT_DeviceIcon("image/jpeg", 48, 48, 24, "/images/platinum-48x48.jpg"),
-			Platinum_48x48_jpg, sizeof(Platinum_48x48_jpg), false);
-		AddIcon(
-			PLT_DeviceIcon("image/png", 120, 120, 24, "/images/platinum-120x120.png"),
-			Platinum_120x120_png, sizeof(Platinum_120x120_png), false);
-		AddIcon(
-			PLT_DeviceIcon("image/png", 48, 48, 24, "/images/platinum-48x48.png"),
-			Platinum_48x48_png, sizeof(Platinum_48x48_png), false);
-	}*/
+    /*if (m_Icons.GetItemCount() == 0) {
+        AddIcon(
+            PLT_DeviceIcon("image/jpeg", 120, 120, 24, "/images/platinum-120x120.jpg"),
+            Platinum_120x120_jpg, sizeof(Platinum_120x120_jpg), false);
+        AddIcon(
+            PLT_DeviceIcon("image/jpeg", 48, 48, 24, "/images/platinum-48x48.jpg"),
+            Platinum_48x48_jpg, sizeof(Platinum_48x48_jpg), false);
+        AddIcon(
+            PLT_DeviceIcon("image/png", 120, 120, 24, "/images/platinum-120x120.png"),
+            Platinum_120x120_png, sizeof(Platinum_120x120_png), false);
+        AddIcon(
+            PLT_DeviceIcon("image/png", 48, 48, 24, "/images/platinum-48x48.png"),
+            Platinum_48x48_png, sizeof(Platinum_48x48_png), false);
+    }*/
     return NPT_SUCCESS;
 }
 
@@ -392,7 +392,7 @@ PLT_DeviceHost::SetupResponse(NPT_HttpRequest&              request,
     NPT_String method     = request.GetMethod();
     NPT_String protocol   = request.GetProtocol(); 
 
-    PLT_LOG_HTTP_MESSAGE(NPT_LOG_LEVEL_FINER, "PLT_DeviceHost::SetupResponse:", &request);
+    PLT_LOG_HTTP_REQUEST(NPT_LOG_LEVEL_FINER, "PLT_DeviceHost::SetupResponse:", &request);
 
     if (method.Compare("POST") == 0) {
         return ProcessHttpPostRequest(request, context, response);
@@ -510,10 +510,10 @@ PLT_DeviceHost::ProcessHttpPostRequest(NPT_HttpRequest&              request,
 #endif
 
     if (NPT_FAILED(FindServiceByControlURL(url, service, true)))
-        goto bad_request_find_service;
+        goto bad_request;
 
     if (!request.GetHeaders().GetHeaderValue("SOAPAction"))
-        goto bad_request_soap_header_value;
+        goto bad_request;
 
     // extract the soap action name from the header
     soap_action_header = *request.GetHeaders().GetHeaderValue("SOAPAction");
@@ -522,45 +522,45 @@ PLT_DeviceHost::ProcessHttpPostRequest(NPT_HttpRequest&              request,
     
     components = soap_action_header.Split("#");
     if (components.GetItemCount() != 2)
-        goto bad_request_soap_action_header;
+        goto bad_request;
     
     soap_action_name = *components.GetItem(1);
-
+    
     // read the xml body and parse it
     if (NPT_FAILED(PLT_HttpHelper::ParseBody(request, xml)))
-        goto bad_request_body_parse_error;
+        goto bad_request;
 
     // check envelope
     if (xml->GetTag().Compare("Envelope", true))
-        goto bad_request_no_envelope;
+        goto bad_request;
 
 #if defined(PLATINUM_UPNP_SPECS_STRICT)
     // check namespace
     if (!xml->GetNamespace() || xml->GetNamespace()->Compare("http://schemas.xmlsoap.org/soap/envelope/"))
-        goto bad_request_upnp_not_strict;
+        goto bad_request;
 
     // check encoding
     attr = xml->GetAttribute("encodingStyle", "http://schemas.xmlsoap.org/soap/envelope/");
     if (!attr || attr->Compare("http://schemas.xmlsoap.org/soap/encoding/"))
-        goto bad_request_bad_encoding;
+        goto bad_request;
 #endif
 
     // read action
     soap_body = PLT_XmlHelper::GetChild(xml, "Body");
     if (soap_body == NULL)
-        goto bad_request_soap_body;
+        goto bad_request;
 
     PLT_XmlHelper::GetChild(soap_body, soap_action);
     if (soap_action == NULL)
-        goto bad_request_soap_action_body;
+        goto bad_request;
 
     // verify action name is identical to SOAPACTION header*/
     if (soap_action->GetTag().Compare(soap_action_name, true))
-        goto bad_request_action_mismatch;
+        goto bad_request;
 
     // verify namespace
     if (!soap_action->GetNamespace() || soap_action->GetNamespace()->Compare(service->GetServiceType()))
-        goto bad_request_bad_namespace;
+        goto bad_request;
 
     // create a buffer for our response body and call the service
     if ((action_desc = service->FindActionDesc(soap_action_name)) == NULL) {
@@ -574,8 +574,8 @@ PLT_DeviceHost::ProcessHttpPostRequest(NPT_HttpRequest&              request,
 
     // read all the arguments if any
     for (NPT_List<NPT_XmlNode*>::Iterator args = soap_action->GetChildren().GetFirstItem(); 
-		 args; 
-		 args++) {
+         args; 
+         args++) {
         NPT_XmlElementNode* child = (*args)->AsElementNode();
         if (!child) continue;
 
@@ -589,14 +589,14 @@ PLT_DeviceHost::ProcessHttpPostRequest(NPT_HttpRequest&              request,
             name,
             child->GetText()?*child->GetText():"");
 
-		// test if value was correct
-		if (res == NPT_ERROR_INVALID_PARAMETERS) {
-			action->SetError(701, "Invalid Name");
-			goto error;
-		}
+        // test if value was correct
+        if (res == NPT_ERROR_INVALID_PARAMETERS) {
+            action->SetError(701, "Invalid Name");
+            goto error;
+        }
     }
 
-	// verify all required arguments were passed
+    // verify all required arguments were passed
     if (NPT_FAILED(action->VerifyArguments(true))) {
         action->SetError(402, "Invalid or Missing Args");
         goto error;
@@ -646,58 +646,8 @@ done:
     return NPT_SUCCESS;
 
 bad_request:
-    // generic 500 now unused
-    response.SetStatus(500, "Bad Request");
-    goto bad_request_end;
-
-bad_request_find_service:
-    response.SetStatus(500, "Bad Request: Service by URL");
-    goto bad_request_end;
-
-bad_request_soap_header_value:
-    response.SetStatus(500, "Bad Request: SOAP Header");
-    goto bad_request_end;
-
-bad_request_soap_action_header:
-    response.SetStatus(500, "Bad Request: SOAP Action in Header");
-    goto bad_request_end;
-
-bad_request_body_parse_error:
-    response.SetStatus(500, "Bad Request: Error Parsing XML Body");
-    goto bad_request_end;
-
-bad_request_no_envelope:
-    response.SetStatus(500, "Bad Request: SOAP Envelope");
-    goto bad_request_end;
-
-#if defined(PLATINUM_UPNP_SPECS_STRICT)
-bad_request_upnp_not_strict:
-    response.SetStatus(500, "Bad Request: SOAP not Strict");
-    goto bad_request_end;
-
-bad_request_bad_encoding:
-    response.SetStatus(500, "Bad Request: SOAP Encoding");
-    goto bad_request_end;
-#endif
-
-bad_request_soap_body:
-    response.SetStatus(500, "Bad Request: SOAP Body");
-    goto bad_request_end;
-
-bad_request_soap_action_body:
-    response.SetStatus(500, "Bad Request: SOAP Action in Body");
-    goto bad_request_end;
-
-bad_request_action_mismatch:
-    response.SetStatus(500, "Bad Request: SOAP Action Mismatch");
-    goto bad_request_end;
-
-bad_request_bad_namespace:
-    response.SetStatus(500, "Bad Request: Bad Namespace");
-    goto bad_request_end;
-
-bad_request_end:
     delete xml;
+    response.SetStatus(500, "Bad Request");
     return NPT_SUCCESS;
 }
 
@@ -730,7 +680,7 @@ PLT_DeviceHost::ProcessHttpSubscriberRequest(NPT_HttpRequest&              reque
             }
           
             // default lease
-            NPT_Int32 timeout = *PLT_Constants::GetInstance().GetDefaultSubscribeLease().AsPointer();
+            NPT_Int32 timeout = (NPT_Int32)*PLT_Constants::GetInstance().GetDefaultSubscribeLease().AsPointer();
 
             // subscription renewed
             // send the info to the service
@@ -753,7 +703,7 @@ PLT_DeviceHost::ProcessHttpSubscriberRequest(NPT_HttpRequest&              reque
             }
 
             // default lease time
-            NPT_Int32 timeout = *PLT_Constants::GetInstance().GetDefaultSubscribeLease().AsPointer();
+            NPT_Int32 timeout = (NPT_Int32)*PLT_Constants::GetInstance().GetDefaultSubscribeLease().AsPointer();
 
             // send the info to the service
             service->ProcessNewSubscription(m_TaskManager,
@@ -800,14 +750,14 @@ PLT_DeviceHost::OnSsdpPacket(const NPT_HttpRequest&        request,
     NPT_String method      = request.GetMethod();
     NPT_String url         = request.GetUrl().ToRequestString(true);
     NPT_String protocol    = request.GetProtocol();
-	NPT_IpPort remote_port = context.GetRemoteAddress().GetPort();
-	const NPT_String* st   = PLT_UPnPMessageHelper::GetST(request);
+    NPT_IpPort remote_port = context.GetRemoteAddress().GetPort();
+    const NPT_String* st   = PLT_UPnPMessageHelper::GetST(request);
 
-	if (method.Compare("M-SEARCH") == 0) {
-		NPT_String prefix = NPT_String::Format("PLT_DeviceHost::OnSsdpPacket M-SEARCH for %s from %s:%d", 
-			st?st->GetChars():"Unknown",
-			(const char*) ip_address, remote_port);
-		PLT_LOG_HTTP_MESSAGE(NPT_LOG_LEVEL_FINER, prefix, request);
+    if (method.Compare("M-SEARCH") == 0) {
+        NPT_String prefix = NPT_String::Format("PLT_DeviceHost::OnSsdpPacket M-SEARCH for %s from %s:%d", 
+            st?st->GetChars():"Unknown",
+            (const char*) ip_address, remote_port);
+        PLT_LOG_HTTP_REQUEST(NPT_LOG_LEVEL_FINE, prefix, &request);
 
         /*
         // DLNA 7.2.3.5 support
@@ -836,6 +786,11 @@ PLT_DeviceHost::OnSsdpPacket(const NPT_HttpRequest&        request,
         PLT_SsdpDeviceSearchResponseTask* task = new PLT_SsdpDeviceSearchResponseTask(this, context.GetRemoteAddress(), *st);
         m_TaskManager->StartTask(task, &timer);
         return NPT_SUCCESS;
+    } else {
+        NPT_String prefix = NPT_String::Format("Ignoring %s request from %s:%d",
+                                               method.GetChars(),
+                                               (const char*) ip_address, remote_port);
+        PLT_LOG_HTTP_REQUEST(NPT_LOG_LEVEL_FINE, prefix, &request);
     }
 
     return NPT_FAILURE;
@@ -946,3 +901,4 @@ PLT_DeviceHost::OnAction(PLT_ActionReference&          action,
     action->SetError(401, "Invalid Action");
     return NPT_FAILURE;
 }
+

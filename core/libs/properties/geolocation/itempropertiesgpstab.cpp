@@ -6,7 +6,7 @@
  * Date        : 2006-02-22
  * Description : a tab widget to display GPS info
  *
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2011      by Michael G. Hansen <mike at mghansen dot de>
  *
  * This program is free software; you can redistribute it
@@ -24,7 +24,7 @@
 
 /**
  * NOTE: Good explanations about GPS (in French) can be found at this url :
- * http://www.gpspassion.com/forumsen/topic.asp?TOPIC_ID=16593
+ * www.gpspassion.com/forumsen/topic.asp?TOPIC_ID=16593
  */
 
 #include "itempropertiesgpstab.h"
@@ -45,6 +45,7 @@
 #include <QDesktopServices>
 #include <QIcon>
 #include <QLocale>
+#include <QScopedPointer>
 
 // KDE includes
 
@@ -74,22 +75,22 @@ class Q_DECL_HIDDEN ItemPropertiesGPSTab::Private
 public:
 
     explicit Private()
-      : altLabel(nullptr),
-        latLabel(nullptr),
-        lonLabel(nullptr),
-        dateLabel(nullptr),
-        detailsBtn(nullptr),
-        detailsCombo(nullptr),
-        altitude(nullptr),
-        latitude(nullptr),
-        longitude(nullptr),
-        date(nullptr),
-        map(nullptr),
-        itemMarkerTiler(nullptr),
-        itemModel(nullptr),
-        gpsModelHelper(nullptr),
-        gpsItemInfoSorter(nullptr),
-        boundariesShouldBeAdjusted(false)
+      : altLabel                    (nullptr),
+        latLabel                    (nullptr),
+        lonLabel                    (nullptr),
+        dateLabel                   (nullptr),
+        detailsBtn                  (nullptr),
+        detailsCombo                (nullptr),
+        altitude                    (nullptr),
+        latitude                    (nullptr),
+        longitude                   (nullptr),
+        date                        (nullptr),
+        map                         (nullptr),
+        itemMarkerTiler             (nullptr),
+        itemModel                   (nullptr),
+        gpsModelHelper              (nullptr),
+        gpsItemInfoSorter           (nullptr),
+        boundariesShouldBeAdjusted  (false)
     {
     }
 
@@ -118,20 +119,20 @@ public:
 
 ItemPropertiesGPSTab::ItemPropertiesGPSTab(QWidget* const parent)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     QGridLayout* const layout = new QGridLayout(this);
 
     // --------------------------------------------------------
 
-    QFrame* const mapPanel    = new QFrame(this);
+    QFrame* const mapPanel   = new QFrame(this);
     mapPanel->setMinimumWidth(200);
     mapPanel->setMinimumHeight(200);
     mapPanel->setFrameStyle(QFrame::StyledPanel | QFrame::Sunken);
     mapPanel->setLineWidth(style()->pixelMetric(QStyle::PM_DefaultFrameWidth));
 
-    QVBoxLayout* const vlay2  = new QVBoxLayout(mapPanel);
-    d->map                    = new MapWidget(mapPanel);
+    QVBoxLayout* const vlay2 = new QVBoxLayout(mapPanel);
+    d->map                   = new MapWidget(mapPanel);
     d->map->setAvailableMouseModes(MouseModePan | MouseModeZoomIntoGroup);
     d->map->setVisibleMouseModes(MouseModePan | MouseModeZoomIntoGroup);
     d->map->setEnabledExtraActions(ExtraActionSticky);
@@ -256,7 +257,7 @@ void ItemPropertiesGPSTab::slotGPSDetails()
     {
         case MapQuest:
         {
-            url.append(QLatin1String("http://www.mapquest.com/maps/map.adp?searchtype=address"
+            url.append(QLatin1String("https://www.mapquest.com/maps/map.adp?searchtype=address"
                                      "&formtype=address&latlongtype=decimal"));
             url.append(QLatin1String("&latitude="));
             url.append(val.setNum(info.coordinates.lat(), 'g', 12));
@@ -267,7 +268,7 @@ void ItemPropertiesGPSTab::slotGPSDetails()
 
         case GoogleMaps:
         {
-            url.append(QLatin1String("http://maps.google.com/?q="));
+            url.append(QLatin1String("https://maps.google.com/?q="));
             url.append(val.setNum(info.coordinates.lat(), 'g', 12));
             url.append(QLatin1String(","));
             url.append(val.setNum(info.coordinates.lon(), 'g', 12));
@@ -277,7 +278,7 @@ void ItemPropertiesGPSTab::slotGPSDetails()
 
         case LocAlizeMaps:
         {
-            url.append(QLatin1String("http://loc.alize.us/#/geo:"));
+            url.append(QLatin1String("https://loc.alize.us/#/geo:"));
             url.append(val.setNum(info.coordinates.lat(), 'g', 12));
             url.append(QLatin1String(","));
             url.append(val.setNum(info.coordinates.lon(), 'g', 12));
@@ -287,7 +288,7 @@ void ItemPropertiesGPSTab::slotGPSDetails()
 
         case BingMaps:
         {
-            url.append(QLatin1String("http://www.bing.com/maps/?v=2&where1="));
+            url.append(QLatin1String("https://www.bing.com/maps/?v=2&where1="));
             url.append(val.setNum(info.coordinates.lat(), 'g', 12));
             url.append(QLatin1String(","));
             url.append(val.setNum(info.coordinates.lon(), 'g', 12));
@@ -297,7 +298,7 @@ void ItemPropertiesGPSTab::slotGPSDetails()
         case OpenStreetMap:
         {
             // lat and lon would also work, but wouldn't show a marker
-            url.append(QLatin1String("http://www.openstreetmap.org/?"));
+            url.append(QLatin1String("https://www.openstreetmap.org/?"));
             url.append(QLatin1String("mlat="));
             url.append(val.setNum(info.coordinates.lat(), 'g', 12));
             url.append(QLatin1String("&mlon="));
@@ -310,11 +311,16 @@ void ItemPropertiesGPSTab::slotGPSDetails()
     qCDebug(DIGIKAM_GENERAL_LOG) << url;
 
 #ifdef HAVE_QWEBENGINE
+
     WebBrowserDlg* const browser = new WebBrowserDlg(QUrl(url), this);
     browser->show();
+
 #else
+
     QDesktopServices::openUrl(QUrl(url));
+
 #endif
+
 }
 
 void ItemPropertiesGPSTab::setCurrentURL(const QUrl& url)
@@ -325,20 +331,20 @@ void ItemPropertiesGPSTab::setCurrentURL(const QUrl& url)
         return;
     }
 
-    const DMetadata meta(url.toLocalFile());
+    QScopedPointer<DMetadata> meta(new DMetadata(url.toLocalFile()));
 
-    setMetadata(meta, url);
+    setMetadata(meta.data(), url);
 }
 
-void ItemPropertiesGPSTab::setMetadata(const DMetadata& meta, const QUrl& url)
+void ItemPropertiesGPSTab::setMetadata(DMetadata* const meta, const QUrl& url)
 {
     double lat, lng;
-    const bool haveCoordinates = meta.getGPSLatitudeNumber(&lat) && meta.getGPSLongitudeNumber(&lng);
+    const bool haveCoordinates = meta->getGPSLatitudeNumber(&lat) && meta->getGPSLongitudeNumber(&lng);
 
     if (haveCoordinates)
     {
         double alt;
-        const bool haveAlt = meta.getGPSAltitude(&alt);
+        const bool haveAlt = meta->getGPSAltitude(&alt);
 
         GeoCoordinates coordinates(lat, lng);
 
@@ -349,8 +355,8 @@ void ItemPropertiesGPSTab::setMetadata(const DMetadata& meta, const QUrl& url)
 
         GPSItemInfo gpsInfo;
         gpsInfo.coordinates = coordinates;
-        gpsInfo.dateTime    = meta.getItemDateTime();
-        gpsInfo.rating      = meta.getItemRating();
+        gpsInfo.dateTime    = meta->getItemDateTime();
+        gpsInfo.rating      = meta->getItemRating();
         gpsInfo.url         = url;
         setGPSInfoList(GPSItemInfo::List() << gpsInfo);
     }
@@ -395,7 +401,7 @@ void ItemPropertiesGPSTab::setGPSInfoList(const GPSItemInfo::List& list)
 
         if (!coordinates.hasAltitude())
         {
-            d->altitude->setAdjustedText(i18n("Undefined"));
+            d->altitude->setAdjustedText(i18nc("@label: no GPS coordinates", "Undefined"));
         }
         else
         {

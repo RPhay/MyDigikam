@@ -8,7 +8,7 @@
  *
  * Copyright (C) 2010      by Roman Tsisyk <roman at tsisyk dot com>
  * Copyright (C) 2005-2008 by Vardhman Jain <vardhman at gmail dot com>
- * Copyright (C) 2008-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2008-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2009      by Luka Renko <lure at kubuntu dot org>
  *
  * This program is free software; you can redistribute it
@@ -33,26 +33,25 @@
 // Local includes
 
 #include "wstooldialog.h"
-#include "digikam_export.h"
 #include "yfalbum.h"
 #include "yfphoto.h"
 #include "dinfointerface.h"
 
-using namespace Digikam;
-
 class QCloseEvent;
+
+using namespace Digikam;
 
 namespace DigikamGenericYFPlugin
 {
 
-class DIGIKAM_EXPORT YFWindow : public WSToolDialog
+class YFWindow : public WSToolDialog
 {
     Q_OBJECT
 
 public:
 
     explicit YFWindow(DInfoInterface* const iface, QWidget* const parent, bool import = false);
-    ~YFWindow();
+    ~YFWindow()                         override;
 
 public:
 
@@ -66,7 +65,7 @@ public:
 
 private Q_SLOTS:
 
-    // ui slots
+    /// ui slots
     void slotChangeUserClicked();
 
     void slotError();
@@ -78,7 +77,7 @@ private Q_SLOTS:
     void slotListPhotosDone(const QList <YFPhoto>& photosList);
     void slotListPhotosDoneForUpload(const QList <YFPhoto>& photosList);
     void slotListPhotosDoneForDownload(const QList <YFPhoto>& photosList);
-    void slotUpdatePhotoDone(YFPhoto& );
+    void slotUpdatePhotoDone(const YFPhoto&);
     void slotUpdateAlbumDone();
 
     void slotNewAlbumRequest();

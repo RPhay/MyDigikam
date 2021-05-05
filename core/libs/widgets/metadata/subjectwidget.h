@@ -6,7 +6,7 @@
  * Date        : 2006-10-15
  * Description : IPTC subjects editor.
  *
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2009-2012 by Andi Clemens <andi dot clemens at googlemail dot com>
  *
  * This program is free software; you can redistribute it
@@ -54,9 +54,9 @@ public:
     {
     }
 
-    QString name;         ///< English and Ascii Name of subject.
-    QString matter;       ///< English and Ascii Matter Name of subject.
-    QString detail;       ///< English and Ascii Detail Name of subject.
+    QString name;         ///< English and Name of subject.
+    QString matter;       ///< English and Matter Name of subject.
+    QString detail;       ///< English and Detail Name of subject.
 };
 
 // --------------------------------------------------------------------------------
@@ -67,8 +67,8 @@ class DIGIKAM_EXPORT SubjectWidget : public QWidget
 
 public:
 
-    explicit SubjectWidget(QWidget* const parent);
-    ~SubjectWidget();
+    explicit SubjectWidget(QWidget* const parent, bool sizesLimited = false);
+    ~SubjectWidget() override;
 
     void setSubjectsList(const QStringList& list);
     QStringList subjectsList() const;

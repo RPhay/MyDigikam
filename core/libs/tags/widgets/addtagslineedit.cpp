@@ -46,10 +46,10 @@ class Q_DECL_HIDDEN AddTagsLineEdit::Private
 public:
 
     explicit Private()
-        : completer(nullptr),
-          tagView(nullptr),
+        : completer     (nullptr),
+          tagView       (nullptr),
           tagFilterModel(nullptr),
-          parentTagId(0)
+          parentTagId   (0)
     {
     }
 
@@ -62,7 +62,7 @@ public:
 
 AddTagsLineEdit::AddTagsLineEdit(QWidget* const parent)
     : QLineEdit(parent),
-      d(new Private)
+      d        (new Private)
 {
     setClearButtonEnabled(true);
 
@@ -80,11 +80,19 @@ AddTagsLineEdit::AddTagsLineEdit(QWidget* const parent)
     connect(this, SIGNAL(textEdited(QString)),
             this, SLOT(slotTextEdited(QString)));
 
-    connect(d->completer, static_cast<void(TagCompleter::*)(const TaggingAction&)>(&TagCompleter::activated),
-            [this](const TaggingAction& action){ completerActivated(action); });
+    connect(d->completer, QOverload<const TaggingAction&>::of(&TagCompleter::signalActivated),
+            [=](const TaggingAction& action)
+            {
+                completerActivated(action);
+            }
+    );
 
-    connect(d->completer, static_cast<void(TagCompleter::*)(const TaggingAction&)>(&TagCompleter::highlighted),
-            [this](const TaggingAction& action){ completerHighlighted(action); });
+    connect(d->completer, QOverload<const TaggingAction&>::of(&TagCompleter::signalHighlighted),
+            [=](const TaggingAction& action)
+            {
+                completerHighlighted(action);
+            }
+    );
 }
 
 AddTagsLineEdit::~AddTagsLineEdit()

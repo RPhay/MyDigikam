@@ -6,7 +6,7 @@
  * Date        : 2010-06-21
  * Description : Demo test program for FacesEngine
  *
- * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C)      2010 by Alex Jironkin <alexjironkin at gmail dot com>
  * Copyright (C)      2010 by Aditya Bhatt <adityabhatt1991 at gmail dot com>
  *
@@ -111,22 +111,26 @@ FaceItem::FaceItem(QGraphicsItem* const parent,
     d->sceneHeight   = scene->height();
 
     // Scale all coordinates to fit the initial size of the scene
+
     d->x1 = rect.topLeft().x()     * scale;
     d->y1 = rect.topLeft().y()     * scale;
     d->x2 = rect.bottomRight().x() * scale;
     d->y2 = rect.bottomRight().y() * scale;
 
     // A QRect containing coordinates for the face rectangle
+
     QRect scaledRect;
     scaledRect.setTopLeft(QPoint(d->x1, d->y1));
     scaledRect.setBottomRight(QPoint(d->x2, d->y2));
 
     // marquee
+
     FancyRect* const fancy = new FancyRect(scaledRect);
     d->faceMarquee         = new Marquee(fancy);
     scene->addItem(d->faceMarquee);
 
     // Make a new QGraphicsTextItem for writing the name text, and a new QGraphicsRectItem to draw a good-looking, semi-transparent bounding box.
+
     d->nameRect = new QGraphicsRectItem(nullptr);
     scene->addItem(d->nameRect);
 
@@ -134,15 +138,18 @@ FaceItem::FaceItem(QGraphicsItem* const parent,
     scene->addItem(d->faceName);
 
     // Make the bounding box for the name update itself to cover all the text whenever contents are changed
+
     QTextDocument* const doc = d->faceName->document();
     QTextOption o;
     o.setAlignment(Qt::AlignCenter);
     doc->setDefaultTextOption(o);
 
     // Get coordinates of the name relative to the scene
+
     QRectF r = d->faceName->mapRectToScene(d->faceName->boundingRect());
 
     // Draw the bounding name rectangle with the scene coordinates
+
     d->nameRect->setRect(r);
     QPen p(QColor(QLatin1String("white")));
     p.setWidth(3);
@@ -152,6 +159,7 @@ FaceItem::FaceItem(QGraphicsItem* const parent,
     d->nameRect->show();
 
     // Draw the name input item
+
     d->faceName->setDefaultTextColor(QColor(QLatin1String("white")));
     d->faceName->setFont(QFont(QLatin1String("Helvetica"), 9));
     d->faceName->setTextInteractionFlags(Qt::TextEditorInteraction);
@@ -167,16 +175,18 @@ FaceItem::FaceItem(QGraphicsItem* const parent,
     QPixmap acceptPix  = QIcon::fromTheme(QLatin1String("dialog-ok-apply")).pixmap(16, 16);
     d->acceptButton    = new Button( acceptPix, acceptPix);
     scene->addItem(d->acceptButton);
-    //d->acceptButton->show();
-
+/*
+    d->acceptButton->show();
+*/
     d->suggestionRejectButton = new Button(rejectPix, rejectPix);
     scene->addItem(d->suggestionRejectButton);
     //d->suggestionAcceptButton->hide();
 
     d->suggestionAcceptButton = new Button(acceptPix, acceptPix);
     scene->addItem(d->suggestionAcceptButton);
-    //d->suggestionRejectButton->hide();
-
+/*
+    d->suggestionRejectButton->hide();
+*/
     update();
 
     switchToEditMode();
@@ -210,8 +220,11 @@ FaceItem::~FaceItem()
 QRectF FaceItem::boundingRect() const
 {
     qreal adjust = 0.5;
-    return QRectF(-18 - adjust, -22 - adjust,
-                   36 + adjust,  60 + adjust);
+
+    return QRectF(-18 - adjust,
+                  -22 - adjust,
+                   36 + adjust,
+                   60 + adjust);
 }
 
 void FaceItem::setText(const QString& newName)
@@ -263,11 +276,13 @@ void FaceItem::update()
     QSize s(newRect.size());
     s.scale(newRect.width() * qSqrt(d->origScale), newRect.height() * qSqrt(d->origScale), Qt::KeepAspectRatio);
     newRect.setSize(s);
-
-    //newRect.setRect(x,y,w,h);
+/*
+    newRect.setRect(x,y,w,h);
+*/
     qDebug() << "Orig before" << d->origRect;
-
-    //d->origRect = newRect;
+/*
+    d->origRect = newRect;
+*/
     qDebug() << "Orig after" << d->origRect;
 }
 

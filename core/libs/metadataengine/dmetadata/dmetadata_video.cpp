@@ -3,7 +3,7 @@
  * This file is a part of digiKam project
  * https://www.digikam.org
  *
- * Date        : 2018-02-26
+ * Date        : 2019-02-26
  * Description : item metadata interface - video helpers.
  *
  * References  :
@@ -23,7 +23,7 @@
  * MKV files  : Matroska container tags.
  * QT files   : Quicktime container tags (Apple).
  *
- * Copyright (C) 2019-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2019-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -86,7 +86,7 @@ namespace Digikam
 QString s_setXmpTagStringFromEntry(DMetadata* const meta,
                                    const QStringList& lst,
                                    const DMetadata::MetaDataMap& map,
-                                   const QStringList& xmpTags=QStringList())
+                                   const QStringList& xmpTags = QStringList())
 {
     foreach (const QString& tag, lst)
     {
@@ -101,7 +101,7 @@ QString s_setXmpTagStringFromEntry(DMetadata* const meta,
                 {
                     // Only register the tag value if it doesn't exists yet.
 
-                    if (meta->getXmpTagString(tag.toLatin1().data()).isNull()) 
+                    if (meta->getXmpTagString(tag.toLatin1().data()).isNull())
                     {
                         meta->setXmpTagString(tag.toLatin1().data(), it.value());
                     }
@@ -132,7 +132,7 @@ QStringList s_keywordsSeparation(const QString& data)
     return keywords;
 }
 
-qint64 s_secondsSinceJanuary1904(const QDateTime dt)
+qint64 s_secondsSinceJanuary1904(const QDateTime& dt)
 {
     QDateTime dt1904(QDate(1904, 1, 1), QTime(0, 0, 0));
 
@@ -216,12 +216,15 @@ DMetadata::MetaDataMap s_extractFFMpegMetadataEntriesFromDictionary(AVDictionary
 
 bool DMetadata::loadUsingFFmpeg(const QString& filePath)
 {
+
 #ifdef HAVE_MEDIAPLAYER
 
     qCDebug(DIGIKAM_METAENGINE_LOG) << "Parse metadada with FFMpeg:" << filePath;
 
 #if LIBAVFORMAT_VERSION_MAJOR < 58
+
     av_register_all();
+
 #endif
 
     AVFormatContext* fmt_ctx = avformat_alloc_context();
@@ -283,7 +286,7 @@ bool DMetadata::loadUsingFFmpeg(const QString& filePath)
 
         if (QLatin1String(cname) == QLatin1String("none"))
         {
-            if (codec->codec_type == AVMEDIA_TYPE_AUDIO)
+            if      (codec->codec_type == AVMEDIA_TYPE_AUDIO)
             {
                 setXmpTagString("Xmp.audio.Codec",
                     QString::fromUtf8(cname));
@@ -301,7 +304,7 @@ bool DMetadata::loadUsingFFmpeg(const QString& filePath)
         // Audio stream parsing
         // -----------------------------------------
 
-        if (!astream && codec->codec_type == AVMEDIA_TYPE_AUDIO)
+        if (!astream && (codec->codec_type == AVMEDIA_TYPE_AUDIO))
         {
             astream = true;
 
@@ -317,38 +320,52 @@ bool DMetadata::loadUsingFFmpeg(const QString& filePath)
                 QString::number(codec->sample_rate));
 
             // See XMP Dynamic Media properties from Adobe.
-            // Audio Channel type is a limited untranslated string choice depending of amount of audio channels 
+            // Audio Channel type is a limited untranslated string choice depending of amount of audio channels
 
             data = QString();
 
             switch (codec->channels)
             {
                 case 0:
+                {
                     break;
+                }
 
                 case 1:
+                {
                     data = QLatin1String("Mono");
                     break;
+                }
 
                 case 2:
+                {
                     data = QLatin1String("Stereo");
                     break;
+                }
 
                 case 6:
+                {
                     data = QLatin1String("5.1");
                     break;
+                }
 
                 case 8:
+                {
                     data = QLatin1String("7.1");
                     break;
+                }
 
                 case 16:
+                {
                     data = QLatin1String("16 Channel");
                     break;
+                }
 
                 default:
+                {
                     data = QLatin1String("Other");
                     break;
+                }
             }
 
             if (!data.isEmpty())
@@ -361,7 +378,7 @@ bool DMetadata::loadUsingFFmpeg(const QString& filePath)
                 QString::fromUtf8(av_get_sample_fmt_name((AVSampleFormat)codec->format)));
 
             // See XMP Dynamic Media properties from Adobe.
-            // Audio Sample type is a limited untranslated string choice depending of amount of audio samples 
+            // Audio Sample type is a limited untranslated string choice depending of amount of audio samples
 
             data = s_convertFFMpegFormatToXMP(codec->format);
 
@@ -411,7 +428,7 @@ bool DMetadata::loadUsingFFmpeg(const QString& filePath)
         // Video stream parsing
         // -----------------------------------------
 
-        if (!vstream && codec->codec_type == AVMEDIA_TYPE_VIDEO)
+        if (!vstream && (codec->codec_type == AVMEDIA_TYPE_VIDEO))
         {
             vstream = true;
 
@@ -434,27 +451,37 @@ bool DMetadata::loadUsingFFmpeg(const QString& filePath)
             switch (codec->color_space)
             {
                 case AVCOL_SPC_RGB:
+                {
                     cm = VIDEOCOLORMODEL_SRGB;
                     break;
+                }
 
                 case AVCOL_SPC_BT470BG:
                 case AVCOL_SPC_SMPTE170M:
                 case AVCOL_SPC_SMPTE240M:
+                {
                     cm = VIDEOCOLORMODEL_BT601;
                     break;
+                }
 
                 case AVCOL_SPC_BT709:
+                {
                     cm = VIDEOCOLORMODEL_BT709;
                     break;
+                }
 
                 case AVCOL_SPC_UNSPECIFIED:
                 case AVCOL_SPC_RESERVED:
                 case AVCOL_SPC_NB:
+                {
                     cm = VIDEOCOLORMODEL_UNKNOWN;
                     break;
+                }
 
                 default:
+                {
                     break;
+                }
             }
 
             // See XMP Dynamic Media properties from Adobe.
@@ -475,21 +502,29 @@ bool DMetadata::loadUsingFFmpeg(const QString& filePath)
             switch (codec->field_order)
             {
                 case AV_FIELD_PROGRESSIVE:
+                {
                     fo = QLatin1String("Progressive");
                     break;
+                }
 
                 case AV_FIELD_TT:                       // Top coded first, top displayed first
                 case AV_FIELD_BT:                       // Bottom coded first, top displayed first
+                {
                     fo = QLatin1String("Upper");
                     break;
+                }
 
                 case AV_FIELD_BB:                       // Bottom coded first, bottom displayed first
                 case AV_FIELD_TB:                       // Top coded first, bottom displayed first
+                {
                     fo = QLatin1String("Lower");
                     break;
+                }
 
                 default:
+                {
                     break;
+                }
             }
 
             if (!fo.isEmpty())
@@ -500,7 +535,7 @@ bool DMetadata::loadUsingFFmpeg(const QString& filePath)
             // ----------
 
             QString aspectRatio;
-            int frameRate = -1.0;
+            double frameRate = -1.0;
 
             if      (codec->sample_aspect_ratio.num != 0)    // Check if undefined by ffmpeg
             {
@@ -573,7 +608,7 @@ bool DMetadata::loadUsingFFmpeg(const QString& filePath)
                 {
                     data = QLatin1String("NTSC");
                 }
-                else if (frameRate == 25 || frameRate == 50)
+                else if (frameRate == 25.0 || frameRate == 50.0)
                 {
                     data = QLatin1String("PAL");
                 }
@@ -618,23 +653,33 @@ bool DMetadata::loadUsingFFmpeg(const QString& filePath)
                     switch (val)
                     {
                         case 0:
+                        {
                             ori = ORIENTATION_NORMAL;
                             break;
+                        }
 
                         case 90:
+                        {
                             ori = ORIENTATION_ROT_90;
                             break;
+                        }
 
                         case 180:
+                        {
                             ori = ORIENTATION_ROT_180;
                             break;
+                        }
 
                         case 270:
+                        {
                             ori = ORIENTATION_ROT_270;
                             break;
+                        }
 
                         default:
+                        {
                             break;
+                        }
                     }
 
                     setXmpTagString("Xmp.video.Orientation", QString::number(ori));
@@ -690,7 +735,7 @@ bool DMetadata::loadUsingFFmpeg(const QString& filePath)
         // Subtitle stream parsing
         // -----------------------------------------
 
-        if (!sstream && codec->codec_type == AVMEDIA_TYPE_SUBTITLE)
+        if (!sstream && (codec->codec_type == AVMEDIA_TYPE_SUBTITLE))
         {
             sstream = true;
 
@@ -839,21 +884,21 @@ bool DMetadata::loadUsingFFmpeg(const QString& filePath)
 
     // --------------
 
-    s_setXmpTagStringFromEntry(this, 
+    s_setXmpTagStringFromEntry(this,
                                QStringList() << QLatin1String("lyrics"),                                        // Generic.
                                rmeta,
                                QStringList() << QLatin1String("Xmp.video.Lyrics"));
 
     // --------------
 
-    s_setXmpTagStringFromEntry(this, 
+    s_setXmpTagStringFromEntry(this,
                                QStringList() << QLatin1String("filename"),                                      // Generic.
                                rmeta,
                                QStringList() << QLatin1String("Xmp.video.FileName"));
 
     // --------------
 
-    s_setXmpTagStringFromEntry(this, 
+    s_setXmpTagStringFromEntry(this,
                                QStringList() << QLatin1String("disk"),                                          // Generic.
                                rmeta,
                                QStringList() << QLatin1String("Xmp.xmpDM.discNumber"));
@@ -1681,10 +1726,13 @@ bool DMetadata::loadUsingFFmpeg(const QString& filePath)
     return true;
 
 #else
+
     Q_UNUSED(filePath);
 
     return false;
+
 #endif
+
 }
 
 QString DMetadata::videoColorModelToString(VIDEOCOLORMODEL videoColorModel)
@@ -1694,23 +1742,33 @@ QString DMetadata::videoColorModelToString(VIDEOCOLORMODEL videoColorModel)
     switch (videoColorModel)
     {
         case VIDEOCOLORMODEL_SRGB:
+        {
             cs = QLatin1String("sRGB");
             break;
+        }
 
         case VIDEOCOLORMODEL_BT601:
+        {
             cs = QLatin1String("CCIR-601");
             break;
+        }
 
         case VIDEOCOLORMODEL_BT709:
+        {
             cs = QLatin1String("CCIR-709");
             break;
+        }
 
         case VIDEOCOLORMODEL_OTHER:
+        {
             cs = QLatin1String("Other");
             break;
+        }
 
         default: // VIDEOCOLORMODEL_UNKNOWN
+        {
             break;
+        }
     }
 
     return cs;

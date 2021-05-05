@@ -7,7 +7,7 @@
  * Description : Access to comments of an item in the database
  *
  * Copyright (C) 2007-2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2008      by Patrick Spendrin <ps_ml at gmx dot de>
  *
  * This program is free software; you can redistribute it
@@ -112,7 +112,7 @@ public:
 
     ItemComments& operator=(const ItemComments& other);
 
-    bool isNull() const;
+    bool isNull()                                                                                               const;
 
     /**
      * Changes the behavior to unique comments per language, see the enum above for possible
@@ -127,12 +127,12 @@ public:
      * as the default value, when you just want to have one string.
      * Optionally also returns the index with which you can access further information about the comment.
      */
-    QString defaultComment(Digikam::DatabaseComment::Type type = DatabaseComment::Comment) const
+    QString defaultComment(Digikam::DatabaseComment::Type type = DatabaseComment::Comment)                      const
     {
         return defaultComment(nullptr, type);
     }
 
-    QString defaultComment(int* const index, Digikam::DatabaseComment::Type type = DatabaseComment::Comment) const;
+    QString defaultComment(int* const index, Digikam::DatabaseComment::Type type = DatabaseComment::Comment)    const;
 
     /**
      * Returns a comment for the specified language.
@@ -140,21 +140,24 @@ public:
      * Optionally also returns the index with which you can access further information about the comment.
      */
     QString commentForLanguage(const QString& languageCode, int* const index = nullptr,
-                               LanguageChoiceBehavior behavior = ReturnMatchingDefaultOrFirstLanguage) const;
+                               LanguageChoiceBehavior behavior = ReturnMatchingDefaultOrFirstLanguage)          const;
 
     /**
      * Returns the number of comments available.
      */
-    int numberOfComments()                const;
+    int numberOfComments()                                                                                      const;
 
     /**
      * Access individual properties. Please ensure that the specified index is a valid index
      */
-    DatabaseComment::Type type(int index) const;
-    QString language(int index)           const; /// RFC 3066 notation, or "x-default"
-    QString author(int index)             const;
-    QDateTime date(int index)             const;
-    QString comment(int index)            const;
+    DatabaseComment::Type type(int index)                                                                       const;
+    
+    /// RFC 3066 notation, or "x-default"
+    QString language(int index)                                                                                 const;
+    
+    QString author(int index)                                                                                   const;
+    QDateTime date(int index)                                                                                   const;
+    QString comment(int index)                                                                                  const;
 
     /**
      * Add a new comment to the list of normal image comments, specified with language and author.
@@ -232,7 +235,7 @@ public:
     /**
      * Returns all entries of the given type in a CaptionsMap container.
      */
-    CaptionsMap toCaptionsMap(DatabaseComment::Type = DatabaseComment::Comment) const;
+    CaptionsMap toCaptionsMap(DatabaseComment::Type = DatabaseComment::Comment)                                 const;
 
     /**
      * Replaces all entries in this object with all entries from source.

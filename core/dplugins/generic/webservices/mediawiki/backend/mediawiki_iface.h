@@ -6,7 +6,7 @@
  * Date        : 2011-03-22
  * Description : a Iface C++ interface
  *
- * Copyright (C) 2011-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2011-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2011      by Remi Benoit <r3m1 dot benoit at gmail dot com>
  *
  * This program is free software; you can redistribute it
@@ -31,17 +31,13 @@
 #include <QNetworkAccessManager>
 #include <QNetworkCookieJar>
 
-// Local includes
-
-#include "digikam_export.h"
-
 namespace MediaWiki
 {
 
 /**
  * @brief Provides access to wiki powered by Iface.
  */
-class DIGIKAM_EXPORT Iface
+class Iface
 {
 public:
 
@@ -79,9 +75,11 @@ public:
 
 private:
 
-    // Hidden copy constructor and assignment operator.
-    Iface(const Iface&);
-    Iface& operator=(const Iface&);
+    // Disable
+    Iface(const Iface&)            = delete;
+    Iface& operator=(const Iface&) = delete;
+
+private:
 
     class Private;
     Private* const d;

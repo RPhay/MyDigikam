@@ -1,8 +1,10 @@
 #
-# Copyright (c) 2010-2019, Gilles Caulier, <caulier dot gilles at gmail dot com>
+# Copyright (c) 2010-2020, Gilles Caulier, <caulier dot gilles at gmail dot com>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
+
+APPLY_COMMON_POLICIES()
 
 include(MacroDPlugins)
 
@@ -46,6 +48,7 @@ set(metadataeditplugin_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/exif/exifeditwidget.cpp
                             ${CMAKE_CURRENT_SOURCE_DIR}/dialog/altlangstringedit.cpp
                             ${CMAKE_CURRENT_SOURCE_DIR}/dialog/multistringsedit.cpp
                             ${CMAKE_CURRENT_SOURCE_DIR}/dialog/multivaluesedit.cpp
+                            ${CMAKE_CURRENT_SOURCE_DIR}/dialog/limitedtextedit.cpp
                             ${CMAKE_CURRENT_SOURCE_DIR}/dialog/objectattributesedit.cpp
                             ${CMAKE_CURRENT_SOURCE_DIR}/dialog/metadataedit.cpp
 
@@ -53,5 +56,5 @@ set(metadataeditplugin_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/exif/exifeditwidget.cpp
 )
 
 DIGIKAM_ADD_GENERIC_PLUGIN(NAME    MetadataEdit
-                                    SOURCES ${metadataeditplugin_SRCS}
+                           SOURCES ${metadataeditplugin_SRCS}
 )

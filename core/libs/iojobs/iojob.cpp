@@ -70,12 +70,13 @@ void CopyOrMoveJob::run()
             break;
         }
 
-        QFileInfo srcInfo(srcUrl.toLocalFile());
+        QFileInfo srcInfo(srcUrl.adjusted(QUrl::StripTrailingSlash).toLocalFile());
         QDir dstDir(m_data->destUrl().toLocalFile());
+        QString srcName = srcInfo.fileName();
 
         if (!srcInfo.exists())
         {
-            emit signalError(i18n("File/Folder %1 does not exist anymore", srcInfo.baseName()));
+            emit signalError(i18n("File/Folder %1 does not exist anymore", srcName));
             continue;
         }
 
@@ -87,14 +88,64 @@ void CopyOrMoveJob::run()
 
         // Checking if there is a file with the same name in destination folder
 
-        QString destenationName = srcInfo.isFile() ? srcInfo.fileName() : srcInfo.dir().dirName();
-        QString destenation     = dstDir.path() + QLatin1Char('/') + destenationName;
+        QString destenation = dstDir.path() + QLatin1Char('/') + srcName;
 
         if (QFileInfo::exists(destenation))
         {
-            emit signalError(i18n("A file or folder named %1 already exists in %2",
-                                  srcInfo.baseName(), QDir::toNativeSeparators(dstDir.path())));
-            continue;
+            if      (m_data->fileConflict() == IOJobData::Overwrite)
+            {
+                if (srcInfo.isDir())
+                {
+                    continue;
+                }
+                else
+                {
+                    if (srcInfo.filePath() == destenation)
+                    {
+                        continue;
+                    }
+
+                    if      (m_data->operation() == IOJobData::CopyToExt)
+                    {
+                        if (!QFile::remove(destenation))
+                        {
+                            emit signalError(i18n("Could not overwrite image %1",
+                                             srcName));
+
+                            continue;
+                        }
+                    }
+                    else if (!DTrash::deleteImage(destenation, m_data->jobTime()))
+                    {
+                        emit signalError(i18n("Could not move image %1 to collection trash",
+                                              srcName));
+
+                        continue;
+                    }
+                }
+            }
+            else if (m_data->fileConflict() == IOJobData::AutoRename)
+            {
+                QUrl destUrl = QUrl::fromLocalFile(destenation);
+
+                if (srcInfo.isDir())
+                {
+                    destenation = DFileOperations::getUniqueFolderUrl(destUrl).toLocalFile();
+                }
+                else
+                {
+                    QUrl renamed = DFileOperations::getUniqueFileUrl(destUrl);
+                    destenation  = renamed.toLocalFile();
+                    m_data->setDestUrl(srcUrl, renamed);
+                }
+            }
+            else
+            {
+                emit signalError(i18n("A file or folder named %1 already exists in %2",
+                                      srcName, QDir::toNativeSeparators(dstDir.path())));
+
+                continue;
+            }
         }
 
         if ((m_data->operation() == IOJobData::MoveAlbum) ||
@@ -109,16 +160,18 @@ void CopyOrMoveJob::run()
                 {
                     // If QDir::rename fails, try copy and remove.
 
-                    if (!DFileOperations::copyFolderRecursively(srcDir.path(), dstDir.path(), &m_cancel))
+                    if      (!DFileOperations::copyFolderRecursively(srcDir.path(), dstDir.path(),
+                                                                     m_data->getProgressId(), &m_cancel))
                     {
+                        emit signalOneProccessed(srcUrl);
+
                         if (m_cancel)
                         {
                             break;
                         }
 
                         emit signalError(i18n("Could not move folder %1 to album %2",
-                                              QDir::toNativeSeparators(srcDir.path()),
-                                              QDir::toNativeSeparators(dstDir.path())));
+                                              srcName, QDir::toNativeSeparators(dstDir.path())));
 
                         continue;
                     }
@@ -126,8 +179,7 @@ void CopyOrMoveJob::run()
                     {
                         emit signalError(i18n("Could not move folder %1 to album %2. "
                                               "The folder %1 was copied as well to album %2",
-                                              QDir::toNativeSeparators(srcDir.path()),
-                                              QDir::toNativeSeparators(dstDir.path())));
+                                              srcName, QDir::toNativeSeparators(dstDir.path())));
                     }
                 }
             }
@@ -136,8 +188,7 @@ void CopyOrMoveJob::run()
                 if (!DFileOperations::renameFile(srcInfo.filePath(), destenation))
                 {
                     emit signalError(i18n("Could not move file %1 to album %2",
-                                          srcInfo.filePath(),
-                                          QDir::toNativeSeparators(dstDir.path())));
+                                          srcName, QDir::toNativeSeparators(dstDir.path())));
 
                     continue;
                 }
@@ -149,16 +200,18 @@ void CopyOrMoveJob::run()
             {
                 QDir srcDir(srcInfo.filePath());
 
-                if (!DFileOperations::copyFolderRecursively(srcDir.path(), dstDir.path(), &m_cancel))
+                if (!DFileOperations::copyFolderRecursively(srcDir.path(), dstDir.path(),
+                                                            m_data->getProgressId(), &m_cancel))
                 {
+                    emit signalOneProccessed(srcUrl);
+
                     if (m_cancel)
                     {
                         break;
                     }
 
                     emit signalError(i18n("Could not copy folder %1 to album %2",
-                                          QDir::toNativeSeparators(srcDir.path()),
-                                          QDir::toNativeSeparators(dstDir.path())));
+                                          srcName, QDir::toNativeSeparators(dstDir.path())));
 
                     continue;
                 }
@@ -167,9 +220,16 @@ void CopyOrMoveJob::run()
             {
                 if (!DFileOperations::copyFile(srcInfo.filePath(), destenation))
                 {
-                    emit signalError(i18n("Could not copy file %1 to album %2",
-                                          QDir::toNativeSeparators(srcInfo.path()),
-                                          QDir::toNativeSeparators(dstDir.path())));
+                    if (m_data->operation() == IOJobData::CopyToExt)
+                    {
+                        emit signalError(i18n("Could not copy file %1 to folder %2",
+                                         srcName, QDir::toNativeSeparators(dstDir.path())));
+                    }
+                    else
+                    {
+                        emit signalError(i18n("Could not copy file %1 to album %2",
+                                         srcName, QDir::toNativeSeparators(dstDir.path())));
+                    }
 
                     continue;
                 }
@@ -291,10 +351,16 @@ void RenameFileJob::run()
         }
 
         QUrl destUrl = m_data->destUrl(renameUrl);
+        QFileInfo fileInfo(destUrl.toLocalFile());
 
-        if (QFileInfo::exists(destUrl.toLocalFile()))
+        QDir dir(fileInfo.dir());
+        const QStringList& dirList = dir.entryList(QDir::Dirs    |
+                                                   QDir::Files   |
+                                                   QDir::NoDotAndDotDot);
+
+        if (dirList.contains(fileInfo.fileName()))
         {
-            if (m_data->overwrite())
+            if (m_data->fileConflict() == IOJobData::Overwrite)
             {
                 if (!DTrash::deleteImage(destUrl.toLocalFile(), m_data->jobTime()))
                 {
@@ -369,14 +435,19 @@ void DTrashItemsListingJob::run()
 
 // ----------------------------------------------
 
-RestoreDTrashItemsJob::RestoreDTrashItemsJob(const DTrashItemInfoList& infos)
-    : m_dtrashItemInfoList(infos)
+RestoreDTrashItemsJob::RestoreDTrashItemsJob(IOJobData* const data)
+    : m_data(data)
 {
 }
 
 void RestoreDTrashItemsJob::run()
 {
-    foreach (const DTrashItemInfo& item, m_dtrashItemInfoList)
+    if (!m_data)
+    {
+        return;
+    }
+
+    foreach (const DTrashItemInfo& item, m_data->trashItems())
     {
         QUrl srcToRename = QUrl::fromLocalFile(item.collectionPath);
         QUrl newName     = DFileOperations::getUniqueFileUrl(srcToRename);
@@ -390,12 +461,15 @@ void RestoreDTrashItemsJob::run()
 
         if (!QFile::rename(item.trashPath, newName.toLocalFile()))
         {
-            qCDebug(DIGIKAM_IOJOB_LOG) << "Trash file could not be renamed!";
+            emit signalError(i18n("Could not restore file %1 from trash",
+                                  QDir::toNativeSeparators(newName.toLocalFile())));
         }
         else
         {
             QFile::remove(item.jsonFilePath);
         }
+
+        emit signalOneProccessed(newName);
     }
 
     emit signalDone();
@@ -403,34 +477,37 @@ void RestoreDTrashItemsJob::run()
 
 // ----------------------------------------------
 
-DeleteDTrashItemsJob::DeleteDTrashItemsJob(const DTrashItemInfoList& infos)
-    : m_dtrashItemInfoList(infos)
+EmptyDTrashItemsJob::EmptyDTrashItemsJob(IOJobData* const data)
+    : m_data(data)
 {
 }
 
-void DeleteDTrashItemsJob::run()
+void EmptyDTrashItemsJob::run()
 {
+    if (!m_data)
+    {
+        return;
+    }
+
+    QList<int> albumsFromImages;
+    QList<qlonglong> imagesToRemove;
+
+    foreach (const DTrashItemInfo& item, m_data->trashItems())
+    {
+        QFile::remove(item.trashPath);
+        QFile::remove(item.jsonFilePath);
+
+        imagesToRemove   << item.imageId;
+        albumsFromImages << ItemInfo(item.imageId).albumId();
+
+        emit signalOneProccessed(QUrl());
+    }
+
     {
         CoreDbOperationGroup group;
         group.setMaximumTime(200);
 
-        QList<int> albumsFromImages;
-        QList<qlonglong> imagesToRemove;
-
-        foreach (const DTrashItemInfo& item, m_dtrashItemInfoList)
-        {
-            QFile::remove(item.trashPath);
-            QFile::remove(item.jsonFilePath);
-
-            imagesToRemove   << item.imageId;
-            albumsFromImages << ItemInfo(item.imageId).albumId();
-
-            CoreDbAccess().db()->removeAllImageRelationsFrom(item.imageId,
-                                                             DatabaseRelation::Grouped);
-            group.allowLift();
-        }
-
-         CoreDbAccess().db()->removeItemsPermanently(imagesToRemove, albumsFromImages);
+        CoreDbAccess().db()->removeItemsPermanently(imagesToRemove, albumsFromImages);
     }
 
     emit signalDone();

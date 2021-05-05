@@ -6,7 +6,7 @@
  * Date        : 2018-07-30
  * Description : image editor plugin to adjust HSL
  *
- * Copyright (C) 2018-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2018-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -49,7 +49,7 @@ HSLToolPlugin::~HSLToolPlugin()
 
 QString HSLToolPlugin::name() const
 {
-    return i18n("HSL Correction");
+    return i18nc("@title", "HSL Correction");
 }
 
 QString HSLToolPlugin::iid() const
@@ -64,12 +64,12 @@ QIcon HSLToolPlugin::icon() const
 
 QString HSLToolPlugin::description() const
 {
-    return i18n("A tool to fix Hue / Saturation / Lightness");
+    return i18nc("@info", "A tool to fix Hue / Saturation / Lightness");
 }
 
 QString HSLToolPlugin::details() const
 {
-    return i18n("<p>This Image Editor tool can adjust Hue / Saturation / Lightness from image.</p>");
+    return i18nc("@info", "This Image Editor tool can adjust Hue / Saturation / Lightness from image.");
 }
 
 QList<DPluginAuthor> HSLToolPlugin::authors() const
@@ -77,7 +77,7 @@ QList<DPluginAuthor> HSLToolPlugin::authors() const
     return QList<DPluginAuthor>()
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2004-2020"))
+                             QString::fromUtf8("(C) 2004-2021"))
             ;
 }
 

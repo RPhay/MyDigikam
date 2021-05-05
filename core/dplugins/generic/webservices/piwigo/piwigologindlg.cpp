@@ -8,7 +8,7 @@
  *
  * Copyright (C) 2003-2005 by Renchi Raju <renchi dot raju at gmail dot com>
  * Copyright (C) 2006      by Colin Guthrie <kde at colin dot guthr dot ie>
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2008      by Andrea Diamantini <adjam7 at gmail dot com>
  * Copyright (C) 2010-2014 by Frederic Coiffier <frederic dot coiffier at free dot com>
  *
@@ -53,11 +53,11 @@ class Q_DECL_HIDDEN PiwigoLoginDlg::Private
 public:
 
     explicit Private()
+      : pUrlEdit     (nullptr),
+        pUsernameEdit(nullptr),
+        pPasswordEdit(nullptr),
+        pPiwigo      (nullptr)
     {
-        pUrlEdit      = nullptr;
-        pUsernameEdit = nullptr;
-        pPasswordEdit = nullptr;
-        pPiwigo       = nullptr;
     }
 
     QLineEdit*     pUrlEdit;
@@ -71,7 +71,7 @@ PiwigoLoginDlg::PiwigoLoginDlg(QWidget* const pParent,
                                PiwigoSession* const pPiwigo,
                                const QString& title)
     : QDialog(pParent, Qt::Dialog),
-      d(new Private)
+      d      (new Private)
 {
     d->pPiwigo = pPiwigo;
 
@@ -139,13 +139,19 @@ PiwigoLoginDlg::~PiwigoLoginDlg()
 void PiwigoLoginDlg::slotOk()
 {
     if (d->pUrlEdit->isModified())
+    {
         d->pPiwigo->setUrl(d->pUrlEdit->text());
+    }
 
     if (d->pUsernameEdit->isModified())
+    {
         d->pPiwigo->setUsername(d->pUsernameEdit->text());
+    }
 
     if (d->pPasswordEdit->isModified())
+    {
         d->pPiwigo->setPassword(d->pPasswordEdit->text());
+    }
 
     d->pPiwigo->save();
     accept();

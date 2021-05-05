@@ -6,7 +6,7 @@
  * Date        : 2011-03-22
  * Description : a Iface C++ interface
  *
- * Copyright (C) 2011-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2011-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2011      by Ludovic Delfau <ludovicdelfau at gmail dot com>
  * Copyright (C) 2011      by Paolo de Vathaire <paolo dot devathaire at gmail dot com>
  *
@@ -29,17 +29,13 @@
 
 #include <QString>
 
-// Local includes
-
-#include "digikam_export.h"
-
 namespace MediaWiki
 {
 
 /**
  * @brief A image.
  */
-class DIGIKAM_EXPORT Image
+class Image
 {
 public:
 
@@ -63,20 +59,20 @@ public:
      * @brief Assigning an image from an other image.
      * @param other an other image
      */
-    Image& operator=(Image other);
+    Image& operator=(const Image& other);
 
     /**
      * @brief Returns true if this instance and other are equal, else false.
      * @param other instance to compare
      * @return true if there are equal, else false
      */
-    bool operator==(const Image& other) const;
+    bool operator==(const Image& other)     const;
 
     /**
      * @brief Returns the namespace id of the image.
      * @return the namespace id of the image
      */
-    qint64 namespaceId() const;
+    qint64 namespaceId()                    const;
 
     /**
      * @brief Set the namespace id.
@@ -88,7 +84,7 @@ public:
      * @brief Returns the title of the image.
      * @return the title of the image
      */
-    QString title() const;
+    QString title()                         const;
 
     /**
      * @brief Set the title.

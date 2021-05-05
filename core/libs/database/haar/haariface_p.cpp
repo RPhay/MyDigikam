@@ -8,7 +8,7 @@
  *
  * Copyright (C) 2016-2018 by Mario Frank <mario dot frank at uni minus potsdam dot de>
  * Copyright (C) 2003      by Ricardo Niederberger Cabral <nieder at mail dot ru>
- * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2009-2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  * Copyright (C) 2009-2011 by Andi Clemens <andi dot clemens at gmail dot com>
  *
@@ -30,11 +30,12 @@
 namespace Digikam
 {
 
-void DatabaseBlob::read(const QByteArray& array, Haar::SignatureData* const data)
+void DatabaseBlob::read(const QByteArray& array, Haar::SignatureData& data)
 {
     QDataStream stream(array);
 
     // check version
+
     qint32 version;
     stream >> version;
 
@@ -47,22 +48,24 @@ void DatabaseBlob::read(const QByteArray& array, Haar::SignatureData* const data
     stream.setVersion(QDataStream::Qt_4_3);
 
     // read averages
+
     for (int i = 0 ; i < 3 ; ++i)
     {
-        stream >> data->avg[i];
+        stream >> data.avg[i];
     }
 
     // read coefficients
+
     for (int i = 0 ; i < 3 ; ++i)
     {
         for (int j = 0 ; j < Haar::NumberOfCoefficients ; ++j)
         {
-            stream >> data->sig[i][j];
+            stream >> data.sig[i][j];
         }
     }
 }
 
-QByteArray DatabaseBlob::write(Haar::SignatureData* const data)
+QByteArray DatabaseBlob::write(Haar::SignatureData& data)
 {
     QByteArray array;
     array.reserve(sizeof(qint32) + 3*sizeof(double) + 3*sizeof(qint32)*Haar::NumberOfCoefficients);
@@ -70,20 +73,23 @@ QByteArray DatabaseBlob::write(Haar::SignatureData* const data)
     stream.setVersion(QDataStream::Qt_4_3);
 
     // write version
+
     stream << (qint32)Version;
 
     // write averages
+
     for (int i = 0 ; i < 3 ; ++i)
     {
-        stream << data->avg[i];
+        stream << data.avg[i];
     }
 
     // write coefficients
+
     for (int i = 0 ; i < 3 ; ++i)
     {
         for (int j = 0 ; j < Haar::NumberOfCoefficients ; ++j)
         {
-            stream << data->sig[i][j];
+            stream << data.sig[i][j];
         }
     }
 
@@ -92,86 +98,22 @@ QByteArray DatabaseBlob::write(Haar::SignatureData* const data)
 
 // -----------------------------------------------------------------------------------------------------
 
+const QString HaarIface::Private::signatureQuery = QString::fromUtf8("SELECT imageid, matrix FROM ImageHaarMatrix;");
+const Haar::WeightBin HaarIface::Private::weightBin;
+
 HaarIface::Private::Private()
+    : m_data(new Haar::ImageData)
 {
-    data              = nullptr;
-    bin               = nullptr;
-    signatureCache    = nullptr;
-    albumCache        = nullptr;
-    useSignatureCache = false;
-    signatureQuery    = QString::fromUtf8("SELECT imageid, matrix FROM ImageHaarMatrix;");
 }
 
 HaarIface::Private::~Private()
 {
-    delete data;
-    delete bin;
-    delete signatureCache;
-    delete albumCache;
 }
 
-void HaarIface::Private::createLoadingBuffer()
+void HaarIface::Private::rebuildSignatureCache(const QSet<qlonglong>& imageIds)
 {
-    if (!data)
-    {
-        data = new Haar::ImageData;
-    }
-}
-
-void HaarIface::Private::createWeightBin()
-{
-    if (!bin)
-    {
-        bin = new Haar::WeightBin;
-    }
-}
-
-void HaarIface::Private::setSignatureCacheEnabled(bool cache, const QSet<qlonglong>& imageIds)
-{
-    setSignatureCacheEnabled(cache);
-
-    // stop here if we disable cached signatures
-    if (!cache || imageIds.isEmpty())
-    {
-        return;
-    }
-
-    // Remove all ids from the fully created signatureCache that are not needed for the duplicates search.
-    // This is usually faster then starting a query for every single id in imageIds.
-    for (SignatureCache::iterator it = signatureCache->begin() ;
-         it != signatureCache->end() ; )
-    {
-        if (!imageIds.contains(it.key()))
-        {
-            it = signatureCache->erase(it);
-        }
-        else
-        {
-            ++it;
-        }
-    }
-}
-
-void HaarIface::Private::setSignatureCacheEnabled(bool cache)
-{
-    delete signatureCache;
-    signatureCache    = nullptr;
-    delete albumCache;
-    albumCache        = nullptr;
-
-    if (cache)
-    {
-        signatureCache = new SignatureCache();
-        albumCache     = new AlbumCache();
-    }
-
-    useSignatureCache = cache;
-
-    // stop here if we disable cached signatures
-    if (!cache)
-    {
-        return;
-    }
+    m_signatureCache.reset(new SignatureCache);
+    m_albumCache.reset(new AlbumCache);
 
     // Variables for data read from DB
 
@@ -182,8 +124,8 @@ void HaarIface::Private::setSignatureCacheEnabled(bool cache)
 
     // reference for easier access
 
-    SignatureCache& signatureCache = *this->signatureCache;
-    AlbumCache&     albumCache     = *this->albumCache;
+    SignatureCache& signatureCache = *m_signatureCache;
+    AlbumCache&     albumCache     = *m_albumCache;
 
     DbEngineSqlQuery query         = SimilarityDbAccess().backend()->prepareQuery(signatureQuery);
 
@@ -192,7 +134,27 @@ void HaarIface::Private::setSignatureCacheEnabled(bool cache)
         return;
     }
 
-    const QHash<qlonglong, QPair<int, int> >& itemAlbumHash = CoreDbAccess().db()->getAllItemsWithAlbum();
+    QHash<qlonglong, QPair<int, int> > itemAlbumHash = CoreDbAccess().db()->getAllItemsWithAlbum();
+
+    // Remove all ids from the fully created itemAlbumHash that are not needed for the duplicates search.
+    // This is usually faster then starting a query for every single id in imageIds.
+
+    if (!imageIds.isEmpty())
+    {
+        for (auto it = itemAlbumHash.begin() ; it != itemAlbumHash.end() ; )
+        {
+            if (!imageIds.contains(it.key()))
+            {
+                it = itemAlbumHash.erase(it);
+            }
+            else
+            {
+                ++it;
+            }
+        }
+    }
+
+    const bool filterByAlbumRoots = !m_albumRootsToSearch.isEmpty();
 
     while (query.next())
     {
@@ -200,12 +162,80 @@ void HaarIface::Private::setSignatureCacheEnabled(bool cache)
 
         if (itemAlbumHash.contains(imageid))
         {
-            blob.read(query.value(1).toByteArray(), &targetSig);
-            albumid                 = itemAlbumHash.value(imageid).second;
+            // <albumroootid, albumid>
+            const QPair<int, int>& albumPair = itemAlbumHash.value(imageid);
+
+            if (filterByAlbumRoots)
+            {
+                if (!m_albumRootsToSearch.contains(albumPair.first))
+                {
+                    continue;
+                }
+            }
+
+            blob.read(query.value(1).toByteArray(), targetSig);
+            albumid                 = albumPair.second;
             signatureCache[imageid] = targetSig;
             albumCache[imageid]     = albumid;
         }
     }
+}
+
+bool HaarIface::Private::hasSignatureCache() const
+{
+    return !(m_signatureCache.isNull() || m_signatureCache->isEmpty());
+}
+
+bool HaarIface::Private::retrieveSignatureFromCache(qlonglong imageId, Haar::SignatureData& data)
+{
+    if (!hasSignatureCache())
+    {
+        return false;
+    }
+
+    if (m_signatureCache->contains(imageId))
+    {
+        data = m_signatureCache.get()->value(imageId);
+
+        return true;
+    }
+
+    return false;
+}
+
+void HaarIface::Private::setImageDataFromImage(const QImage& image)
+{
+    m_data->fillPixelData(image);
+}
+
+void HaarIface::Private::setImageDataFromImage(const DImg& image)
+{
+    m_data->fillPixelData(image);
+}
+
+SignatureCache* HaarIface::Private::signatureCache() const
+{
+    return m_signatureCache.get();
+}
+
+AlbumCache* HaarIface::Private::albumCache() const
+{
+    return m_albumCache.get();
+}
+
+Haar::ImageData* HaarIface::Private::imageData() const
+{
+    return m_data.get();
+}
+
+void HaarIface::Private::setAlbumRootsToSearch(const QSet<int>& albumRootIds)
+{
+    m_albumRootsToSearch = albumRootIds;
+}
+
+const QSet<int>& HaarIface::Private::albumRootsToSearch() const
+{
+    return m_albumRootsToSearch;
 }
 
 } // namespace Digikam

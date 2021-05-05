@@ -6,7 +6,7 @@
  * Date        : 2007-03-20
  * Description : Simple virtual interface for ItemLister
  *
- * Copyright (C) 2007-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2007-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2007-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  * Copyright (C) 2015      by Mohamed_Anwer <m_dot_anwer at gmx dot com>
  *
@@ -63,14 +63,17 @@ void ItemListerJobReceiver::sendData()
 
 void ItemListerJobReceiver::error(const QString& errMsg)
 {
-    m_job->error(errMsg);
+    emit m_job->error(errMsg);
+
     ItemListerValueListReceiver::error(errMsg);
 }
 
 // ----------------------------------------------
 
 ItemListerJobPartsSendingReceiver::ItemListerJobPartsSendingReceiver(DBJob* const job, int limit)
-    : ItemListerJobReceiver(job), m_limit(limit), m_count(0)
+    : ItemListerJobReceiver(job),
+      m_limit              (limit),
+      m_count              (0)
 {
 
 }
@@ -88,10 +91,13 @@ void ItemListerJobPartsSendingReceiver::receive(const ItemListerRecord &record)
 
 // ----------------------------------------------
 
-ItemListerJobGrowingPartsSendingReceiver::
-    ItemListerJobGrowingPartsSendingReceiver(DBJob* const job, int start, int end, int increment)
+ItemListerJobGrowingPartsSendingReceiver::ItemListerJobGrowingPartsSendingReceiver(DBJob* const job,
+                                                                                   int start,
+                                                                                   int end,
+                                                                                   int increment)
     : ItemListerJobPartsSendingReceiver(job, start),
-      m_maxLimit(end), m_increment(increment)
+      m_maxLimit                       (end),
+      m_increment                      (increment)
 {
 }
 

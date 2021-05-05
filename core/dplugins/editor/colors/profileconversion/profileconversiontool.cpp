@@ -7,7 +7,7 @@
  * Description : a tool for color space conversion
  *
  * Copyright (C) 2009-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -35,7 +35,7 @@
 
 #include <klocalizedstring.h>
 #include <ksharedconfig.h>
-#include "kconfiggroup.h"
+#include <kconfiggroup.h>
 
 // Local includes
 
@@ -59,9 +59,9 @@ class Q_DECL_HIDDEN ProfileConversionTool::Private
 public:
 
     explicit Private()
-      : profilesBox(nullptr),
+      : profilesBox  (nullptr),
         previewWidget(nullptr),
-        gboxSettings(nullptr)
+        gboxSettings (nullptr)
     {
     }
 
@@ -103,10 +103,9 @@ IccTransform ProfileConversionTool::Private::getTransform(const IccProfile& in, 
 
 ProfileConversionTool::ProfileConversionTool(QObject* const parent)
     : EditorToolThreaded(parent),
-      d(new Private)
+      d                 (new Private)
 {
     setObjectName(QLatin1String("profile conversion"));
-    //TODO setToolHelp(QLatin1String("colormanagement.anchor"));
 
     // -------------------------------------------------------------
 
@@ -234,9 +233,9 @@ void ProfileConversionTool::setFinalImage()
     iface.setOriginal(i18n("Color Profile Conversion"), filter()->filterAction(), imDest);
     iface.setOriginalIccProfile(imDest.getIccProfile());
 
-    DMetadata meta(iface.originalMetadata());
-    meta.removeExifColorSpace();
-    iface.setOriginalMetadata(meta.data());
+    QScopedPointer<DMetadata> meta(new DMetadata(iface.originalMetadata()));
+    meta->removeExifColorSpace();
+    iface.setOriginalMetadata(meta->data());
 }
 
 // Static Methods.
@@ -262,9 +261,9 @@ void ProfileConversionTool::fastConversion(const IccProfile& profile)
     iface.setOriginal(i18n("Color Profile Conversion"), filter.filterAction(), imDest);
     iface.setOriginalIccProfile(imDest.getIccProfile());
 
-    DMetadata meta(iface.originalMetadata());
-    meta.removeExifColorSpace();
-    iface.setOriginalMetadata(meta.data());
+    QScopedPointer<DMetadata> meta(new DMetadata(iface.originalMetadata()));
+    meta->removeExifColorSpace();
+    iface.setOriginalMetadata(meta->data());
 }
 
 } // namespace DigikamEditorProfileConversionToolPlugin

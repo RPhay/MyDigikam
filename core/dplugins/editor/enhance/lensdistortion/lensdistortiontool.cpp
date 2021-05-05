@@ -6,7 +6,7 @@
  * Date        : 2004-12-27
  * Description : a tool to reduce lens distortions to an image.
  *
- * Copyright (C) 2004-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2004-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2006-2010 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  *
  * This program is free software; you can redistribute it
@@ -61,12 +61,12 @@ public:
 
     explicit Private()
       : maskPreviewLabel(nullptr),
-        mainInput(nullptr),
-        edgeInput(nullptr),
-        rescaleInput(nullptr),
-        brightenInput(nullptr),
-        previewWidget(nullptr),
-        gboxSettings(nullptr)
+        mainInput       (nullptr),
+        edgeInput       (nullptr),
+        rescaleInput    (nullptr),
+        brightenInput   (nullptr),
+        previewWidget   (nullptr),
+        gboxSettings    (nullptr)
     {
     }
 
@@ -99,7 +99,7 @@ const QString LensDistortionTool::Private::configBrightenEntry(QLatin1String("Br
 
 LensDistortionTool::LensDistortionTool(QObject* const parent)
     : EditorToolThreaded(parent),
-      d(new Private)
+      d                 (new Private)
 {
     setObjectName(QLatin1String("lensdistortion"));
 

@@ -25,13 +25,18 @@
 
 // Qt includes
 
+#include <QApplication>
+#include <QScrollArea>
 #include <QHBoxLayout>
 #include <QKeyEvent>
-#include <QScrollArea>
+#include <QScreen>
+#include <QWindow>
 
 // KDE includes
 
 #include <klocalizedstring.h>
+#include <ksharedconfig.h>
+#include <kconfiggroup.h>
 
 // Local includes
 
@@ -47,10 +52,10 @@ class Q_DECL_HIDDEN SearchWindow::Private
 public:
 
     explicit Private()
-      : scrollArea(nullptr),
-        searchView(nullptr),
-        bottomBar(nullptr),
-        currentId(-1),
+      : scrollArea   (nullptr),
+        searchView   (nullptr),
+        bottomBar    (nullptr),
+        currentId    (-1),
         hasTouchedXml(false)
     {
     }
@@ -65,7 +70,7 @@ public:
 
 SearchWindow::SearchWindow()
     : QWidget(nullptr),
-      d(new Private)
+      d      (new Private)
 {
     QVBoxLayout* const layout = new QVBoxLayout;
 
@@ -90,7 +95,33 @@ SearchWindow::SearchWindow()
 
     setVisible(false);
     setWindowTitle(i18n("Advanced Search"));
-    resize(800, 600);
+
+    QScreen* screen = qApp->primaryScreen();
+
+    if (QWidget* const widget = qApp->activeWindow())
+    {
+        if (QWindow* const window = widget->windowHandle())
+        {
+            screen = window->screen();
+        }
+    }
+
+    QRect srect = screen->availableGeometry();
+    QSize wsize = QSize(1024 <= srect.width()  ? 1024 : srect.width(),
+                         800 <= srect.height() ?  800 : srect.height());
+
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup group      = config->group(QLatin1String("AdvancedSearch Widget"));
+
+    if (group.exists())
+    {
+        QSize confSize = group.readEntry(QLatin1String("Widget Size"), wsize);
+        resize(confSize);
+    }
+    else
+    {
+        resize(wsize);
+    }
 
     connect(d->searchView, SIGNAL(searchOk()),
             this, SLOT(searchOk()));
@@ -104,6 +135,10 @@ SearchWindow::SearchWindow()
 
 SearchWindow::~SearchWindow()
 {
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup group      = config->group(QLatin1String("AdvancedSearch Widget"));
+    group.writeEntry(QLatin1String("Widget Size"), size());
+
     delete d;
 }
 

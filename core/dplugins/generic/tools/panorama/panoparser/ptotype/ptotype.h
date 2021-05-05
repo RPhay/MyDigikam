@@ -6,7 +6,7 @@
  * Date        : 2012-02-04
  * Description : a tool to create panorama by fusion of several images.
  *               This type is based on pto file format described here:
- *               http://hugin.sourceforge.net/docs/nona/nona.txt, and
+ *               hugin.sourceforge.net/docs/nona/nona.txt, and
  *               on pto files produced by Hugin's tools.
  *
  * Copyright (C) 2012-2015 by Benjamin Girault <benjamin dot girault at gmail dot com>
@@ -37,14 +37,10 @@
 #include <QPair>
 #include <QTextStream>
 
-// Local includes
-
-#include "digikam_export.h"
-
 namespace Digikam
 {
 
-struct DIGIKAM_EXPORT PTOType
+struct PTOType
 {
     struct Project
     {
@@ -67,17 +63,17 @@ struct DIGIKAM_EXPORT PTOType
             } CompressionMethod;
 
             FileType          fileType;
-            unsigned char     quality;            // JPEG
-            CompressionMethod compressionMethod;  // TIFF
-            bool              cropped;            // TIFF
-            bool              savePositions;      // TIFF
+            unsigned char     quality;            ///< for JPEG
+            CompressionMethod compressionMethod;  ///< for TIFF
+            bool              cropped;            ///< for TIFF
+            bool              savePositions;      ///< for TIFF
 
             FileFormat()
-              : fileType(JPEG),
-                quality(90),
+              : fileType         (JPEG),
+                quality          (90),
                 compressionMethod(LZW),
-                cropped(false),
-                savePositions(false)
+                cropped          (false),
+                savePositions    (false)
             {
             }
         };
@@ -110,13 +106,13 @@ struct DIGIKAM_EXPORT PTOType
         QStringList    unmatchedParameters;
 
         Project()
-          : size(0, 0),
-            crop(0, 0, 0, 0),
-            projection(RECTILINEAR),
-            fieldOfView(0),
-            exposure(0),
-            hdr(false),
-            bitDepth(UINT8),
+          : size                  (0, 0),
+            crop                  (0, 0, 0, 0),
+            projection            (RECTILINEAR),
+            fieldOfView           (0),
+            exposure              (0),
+            hdr                   (false),
+            bitDepth              (UINT8),
             photometricReferenceId(0)
         {
         }
@@ -154,10 +150,10 @@ struct DIGIKAM_EXPORT PTOType
         QStringList  unmatchedParameters;
 
         Stitcher()
-          : gamma(1),
-            interpolator(POLY3),
-            speedUp(FAST),
-            huberSigma(0),
+          : gamma                (1),
+            interpolator         (POLY3),
+            speedUp              (FAST),
+            huberSigma           (0),
             photometricHuberSigma(0)
         {
         }
@@ -225,13 +221,13 @@ struct DIGIKAM_EXPORT PTOType
         struct LensParameter
         {
             LensParameter()
-              : value(T()),
+              : value      (T()),
                 referenceId(-1)
             {
             }
 
             explicit LensParameter(const T& v)
-              : value(v),
+              : value      (v),
                 referenceId(-1)
             {
             }
@@ -293,10 +289,10 @@ struct DIGIKAM_EXPORT PTOType
         LensParameter<double>         whiteBalanceRed;
         LensParameter<double>         whiteBalanceBlue;
         LensParameter<VignettingMode> vignettingMode;
-        LensParameter<double>         vignettingCorrectionI;      // Va
-        LensParameter<double>         vignettingCorrectionJ;      // Vb
-        LensParameter<double>         vignettingCorrectionK;      // Vc
-        LensParameter<double>         vignettingCorrectionL;      // Vd
+        LensParameter<double>         vignettingCorrectionI;      ///< Va
+        LensParameter<double>         vignettingCorrectionJ;      ///< Vb
+        LensParameter<double>         vignettingCorrectionK;      ///< Vc
+        LensParameter<double>         vignettingCorrectionL;      ///< Vd
         LensParameter<int>            vignettingOffsetX;
         LensParameter<int>            vignettingOffsetY;
         QString                       vignettingFlatfieldImageName;
@@ -316,42 +312,42 @@ struct DIGIKAM_EXPORT PTOType
         QStringList                   unmatchedParameters;
 
         Image()
-          : size(0, 0),
-            id(0),
-            lensProjection(RECTILINEAR),
-            fieldOfView(0),
-            yaw(0),
-            pitch(0),
-            roll(0),
-            lensBarrelCoefficientA(0),
-            lensBarrelCoefficientB(0),
-            lensBarrelCoefficientC(0),
-            lensCenterOffsetX(0),
-            lensCenterOffsetY(0),
-            lensShearX(0),
-            lensShearY(0),
-            exposure(0),
-            whiteBalanceRed(1),
-            whiteBalanceBlue(1),
-            vignettingMode(PANO_NONE),
-            vignettingCorrectionI(0),
-            vignettingCorrectionJ(0),
-            vignettingCorrectionK(0),
-            vignettingCorrectionL(0),
-            vignettingOffsetX(0),
-            vignettingOffsetY(0),
-            photometricEMoRA(0),
-            photometricEMoRB(0),
-            photometricEMoRC(0),
-            photometricEMoRD(0),
-            photometricEMoRE(0),
-            mosaicCameraPositionX(0),
-            mosaicCameraPositionY(0),
-            mosaicCameraPositionZ(0),
-            mosaicProjectionPlaneYaw(0),
+          : size                      (0, 0),
+            id                        (0),
+            lensProjection            (RECTILINEAR),
+            fieldOfView               (0),
+            yaw                       (0),
+            pitch                     (0),
+            roll                      (0),
+            lensBarrelCoefficientA    (0),
+            lensBarrelCoefficientB    (0),
+            lensBarrelCoefficientC    (0),
+            lensCenterOffsetX         (0),
+            lensCenterOffsetY         (0),
+            lensShearX                (0),
+            lensShearY                (0),
+            exposure                  (0),
+            whiteBalanceRed           (1),
+            whiteBalanceBlue          (1),
+            vignettingMode            (PANO_NONE),
+            vignettingCorrectionI     (0),
+            vignettingCorrectionJ     (0),
+            vignettingCorrectionK     (0),
+            vignettingCorrectionL     (0),
+            vignettingOffsetX         (0),
+            vignettingOffsetY         (0),
+            photometricEMoRA          (0),
+            photometricEMoRB          (0),
+            photometricEMoRC          (0),
+            photometricEMoRD          (0),
+            photometricEMoRE          (0),
+            mosaicCameraPositionX     (0),
+            mosaicCameraPositionY     (0),
+            mosaicCameraPositionZ     (0),
+            mosaicProjectionPlaneYaw  (0),
             mosaicProjectionPlanePitch(0),
-            crop(0, 0, 0, 0),
-            stackNumber(0)
+            crop                      (0, 0, 0, 0),
+            stackNumber               (0)
         {
         }
     };
@@ -367,7 +363,7 @@ struct DIGIKAM_EXPORT PTOType
         double      p1_y;
         double      p2_x;
         double      p2_y;
-        int         type;   // FIXME: change that for an enum if possible
+        int         type;                   // FIXME: change that for an enum if possible
         QStringList unmatchedParameters;
     };
 
@@ -385,8 +381,8 @@ struct DIGIKAM_EXPORT PTOType
     }
 
     explicit PTOType(const QString& version)
-      : version(version.split(QLatin1Char('.'))[0].toInt() >= 2014 ? V2014 
-                                                                   : PRE_V2014)
+      : version((version.split(QLatin1Char('.'))[0].toInt() >= 2014) ? V2014
+                                                                     : PRE_V2014)
     {
     }
 

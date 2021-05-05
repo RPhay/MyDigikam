@@ -6,7 +6,7 @@
  * Date        : 2018-07-30
  * Description : image editor plugin to add rain drops over an image.
  *
- * Copyright (C) 2018-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2018-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -49,7 +49,7 @@ RainDropToolPlugin::~RainDropToolPlugin()
 
 QString RainDropToolPlugin::name() const
 {
-    return i18n("Raindrops");
+    return i18nc("@title", "Raindrops");
 }
 
 QString RainDropToolPlugin::iid() const
@@ -64,12 +64,12 @@ QIcon RainDropToolPlugin::icon() const
 
 QString RainDropToolPlugin::description() const
 {
-    return i18n("A tool to add rain drops over an image");
+    return i18nc("@info", "A tool to add rain drops over an image");
 }
 
 QString RainDropToolPlugin::details() const
 {
-    return i18n("<p>This Image Editor tool can add rain drops over an image.</p>");
+    return i18nc("@info", "This Image Editor tool can add rain drops over an image.");
 }
 
 QList<DPluginAuthor> RainDropToolPlugin::authors() const
@@ -80,7 +80,7 @@ QList<DPluginAuthor> RainDropToolPlugin::authors() const
                              QString::fromUtf8("(C) 2006-2012"))
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2006-2020"))
+                             QString::fromUtf8("(C) 2006-2021"))
             ;
 }
 

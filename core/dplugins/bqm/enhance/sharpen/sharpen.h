@@ -7,7 +7,7 @@
  * Description : sharpen image batch tool.
  *
  * Copyright (C) 2009      by Matthias Welwarsky <matze at welwarsky dot de>
- * Copyright (C) 2010-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2010-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -40,22 +40,22 @@ class Sharpen : public BatchTool
 public:
 
     explicit Sharpen(QObject* const parent = nullptr);
-    ~Sharpen();
+    ~Sharpen()                                              override;
 
-    BatchToolSettings defaultSettings();
+    BatchToolSettings defaultSettings()                     override;
 
-    BatchTool* clone(QObject* const parent=nullptr) const { return new Sharpen(parent); };
+    BatchTool* clone(QObject* const parent = nullptr) const override;
 
-    void registerSettingsWidget();
+    void registerSettingsWidget()                           override;
 
 private:
 
-    bool toolOperations();
+    bool toolOperations()                                   override;
 
 private Q_SLOTS:
 
-    void slotAssignSettings2Widget();
-    void slotSettingsChanged();
+    void slotAssignSettings2Widget()                        override;
+    void slotSettingsChanged()                              override;
 
 private:
 

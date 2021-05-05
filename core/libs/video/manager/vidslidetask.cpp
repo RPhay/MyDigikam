@@ -6,7 +6,7 @@
  * Date        : 2017-05-25
  * Description : a tool to generate video slideshow from images.
  *
- * Copyright (C) 2017-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2017-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -88,7 +88,6 @@ public:
 public:
 
     VidSlideSettings*           settings;
-
     AVDemuxer                   demuxer;
     Packet                      apkt;
     int                         astream;
@@ -135,10 +134,14 @@ bool VidSlideTask::Private::encodeFrame(VideoFrame& vframe,
         vpkt = venc->encoded();
 
         if (vpkt.isValid())
+        {
             mux.writeVideo(vpkt);
+        }
 
         if (apkt.isValid())
+        {
             mux.writeAudio(apkt);
+        }
 
         return true;
     }
@@ -149,7 +152,9 @@ bool VidSlideTask::Private::encodeFrame(VideoFrame& vframe,
 AudioFrame VidSlideTask::Private::nextAudioFrame(const AudioFormat& afmt)
 {
     if (curAudioFile == settings->inputAudio.constEnd())
+    {
         return AudioFrame();
+    }
 
     if (demuxer.atEnd() || demuxer.fileName().isEmpty())
     {
@@ -192,7 +197,9 @@ AudioFrame VidSlideTask::Private::nextAudioFrame(const AudioFormat& afmt)
         if (!apkt.isValid())
         {
             if (!demuxer.readFrame() || (demuxer.stream() != astream))
+            {
                 continue;
+            }
 
             apkt = demuxer.packet();
         }
@@ -203,16 +210,16 @@ AudioFrame VidSlideTask::Private::nextAudioFrame(const AudioFormat& afmt)
             continue;
         }
 
-        apkt.data = QByteArray::fromRawData(apkt.data.constData() + apkt.data.size() -
-                                            adec->undecodedSize(), adec->undecodedSize());
+        apkt.data         = QByteArray::fromRawData(apkt.data.constData() + apkt.data.size() -
+                                                    adec->undecodedSize(), adec->undecodedSize());
 
         AudioFrame aframe = adec->frame();
 
         if (aframe.format() != afmt)
         {
-            qDebug() << "Audio transcoding:";
-            qDebug() << "current format =" << aframe.format();
-            qDebug() << "target format  =" << afmt;
+            qCDebug(DIGIKAM_GENERAL_LOG) << "Audio transcoding:";
+            qCDebug(DIGIKAM_GENERAL_LOG) << "current format =" << aframe.format();
+            qCDebug(DIGIKAM_GENERAL_LOG) << "target format  =" << afmt;
 /*
             adec->resampler()->setOutAudioFormat(afmt);
             adec->resampler()->prepare();
@@ -271,7 +278,7 @@ void VidSlideTask::run()
     venc->setBitRate(d->settings->videoBitRate());
     venc->setFrameRate(d->settings->videoFrameRate());
 
-    QSize osize = d->settings->videoSize();
+    QSize osize              = d->settings->videoSize();
     venc->setWidth(osize.width());
     venc->setHeight(osize.height());
 
@@ -280,6 +287,7 @@ void VidSlideTask::run()
         emit signalMessage(i18n("Failed to open video encoder"), true);
         qCWarning(DIGIKAM_GENERAL_LOG) << "Failed to open video encoder";
         emit signalDone(false);
+
         return;
     }
 
@@ -295,6 +303,7 @@ void VidSlideTask::run()
         emit signalMessage(i18n("Failed to open audio encoder"), true);
         qCWarning(DIGIKAM_GENERAL_LOG) << "Failed to open audio encoder";
         emit signalDone(false);
+
         return;
     }
 
@@ -307,6 +316,7 @@ void VidSlideTask::run()
     mux.copyProperties(aenc);  // Setup audio encoder
 /*
     // Segments muxer ffmpeg options. See : https://www.ffmpeg.org/ffmpeg-formats.html#Options-11
+
     QVariantHash avfopt;
     avfopt[QLatin1String("segment_time")]      = 4;
     avfopt[QLatin1String("segment_list_size")] = 0;
@@ -323,6 +333,7 @@ void VidSlideTask::run()
         emit signalMessage(i18n("Failed to open muxer"), true);
         qCWarning(DIGIKAM_GENERAL_LOG) << "Failed to open muxer";
         emit signalDone(false);
+
         return;
     }
 
@@ -360,32 +371,32 @@ void VidSlideTask::run()
         transmngr.setOutImage(qoimg);
         transmngr.setTransition(d->settings->transition);
 
-        int tmout = 0;
+        int ttmout = 0;
 
         do
         {
-            VideoFrame frame(transmngr.currentFrame(tmout));
+            VideoFrame frame(transmngr.currentFrame(ttmout));
 
             if (!d->encodeFrame(frame, venc, aenc, mux))
             {
                 qCWarning(DIGIKAM_GENERAL_LOG) << "Cannot encode transition frame";
             }
         }
-        while (tmout != -1 && !m_cancel);
+        while ((ttmout != -1) && !m_cancel);
 
         // -- Images encoding ----------
 
         if (i < d->settings->inputImages.count())
         {
             VideoFrame frame;
-            int count = 0;
-            int tmout = 0;
+            int count  = 0;
+            int itmout = 0;
             effmngr.setImage(qoimg);
             effmngr.setEffect(d->settings->vEffect);
 
             do
             {
-                qiimg = effmngr.currentFrame(tmout);
+                qiimg = effmngr.currentFrame(itmout);
                 frame = VideoFrame(qiimg);
 
                 if (d->encodeFrame(frame, venc, aenc, mux))
@@ -400,7 +411,7 @@ void VidSlideTask::run()
 */
                 }
             }
-            while (count < d->settings->imgFrames && !m_cancel);
+            while ((count < d->settings->imgFrames) && !m_cancel);
         }
 
         qCDebug(DIGIKAM_GENERAL_LOG) << "Encoded image" << i << "done";

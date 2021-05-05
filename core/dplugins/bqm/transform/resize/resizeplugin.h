@@ -6,7 +6,7 @@
  * Date        : 2018-07-30
  * Description : a BQM plugin to resize images.
  *
- * Copyright (C) 2018-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2018-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -43,7 +43,7 @@ class ResizePlugin : public DPluginBqm
 public:
 
     explicit ResizePlugin(QObject* const parent = nullptr);
-    ~ResizePlugin();
+    ~ResizePlugin()                      override;
 
     QString name()                 const override;
     QString iid()                  const override;
@@ -52,7 +52,7 @@ public:
     QString description()          const override;
     QList<DPluginAuthor> authors() const override;
 
-    void setup(QObject* const) override;
+    void setup(QObject* const)           override;
 };
 
 } // namespace DigikamBqmResizePlugin

@@ -6,7 +6,7 @@
  * Date        : 2005-05-25
  * Description : Blur FX threaded image filter.
  *
- * Copyright 2005-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright 2005-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright 2006-2010 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  * Copyright 2010      by Martin Klapetek <martin dot klapetek at gmail dot com>
  *
@@ -42,6 +42,7 @@ class RandomNumberGenerator;
 
 class DIGIKAM_EXPORT BlurFXFilter : public DImgThreadedFilter
 {
+    Q_OBJECT
 
 public:
 
@@ -61,34 +62,34 @@ public:
 
 private:
 
-    struct Args
+    struct Q_DECL_HIDDEN Args
     {
         explicit Args()
-          : start(0),
-            stop(0),
-            h(0),
-            w(0),
-            orgImage(nullptr),
-            destImage(nullptr),
-            X(0),
-            Y(0),
-            Distance(0),
-            nCount(0),
-            lpXArray(nullptr),
-            lpYArray(nullptr),
-            BlendRadius(0),
-            bInversed(0),
-            layer1(nullptr),
-            layer2(nullptr),
-            layer3(nullptr),
-            layer4(nullptr),
-            SizeW(0),
-            SizeH(0),
+          : start        (0),
+            stop         (0),
+            h            (0),
+            w            (0),
+            orgImage     (nullptr),
+            destImage    (nullptr),
+            X            (0),
+            Y            (0),
+            Distance     (0),
+            nCount       (0),
+            lpXArray     (nullptr),
+            lpYArray     (nullptr),
+            BlendRadius  (0),
+            bInversed    (0),
+            layer1       (nullptr),
+            layer2       (nullptr),
+            layer3       (nullptr),
+            layer4       (nullptr),
+            SizeW        (0),
+            SizeH        (0),
             StrengthRange(0),
-            Radius(0),
-            Kernel(nullptr),
-            arrMult(nullptr),
-            pBlur(nullptr)
+            Radius       (0),
+            Kernel       (nullptr),
+            arrMult      (nullptr),
+            pBlur        (nullptr)
         {
         }
 
@@ -127,9 +128,12 @@ private:
 public:
 
     explicit BlurFXFilter(QObject* const parent = nullptr);
-    explicit BlurFXFilter(DImg* const orgImage, QObject* const parent=nullptr, int blurFXType=ZoomBlur,
-                          int distance=100, int level=45);
-    ~BlurFXFilter();
+    explicit BlurFXFilter(DImg* const orgImage,
+                          QObject* const parent = nullptr,
+                          int blurFXType = ZoomBlur,
+                          int distance = 100,
+                          int level = 45);
+    ~BlurFXFilter() override;
 
     static QString          FilterIdentifier()
     {
@@ -148,12 +152,12 @@ public:
         return 1;
     }
 
-    virtual QString         filterIdentifier()                          const override
+    QString         filterIdentifier()                          const override
     {
         return FilterIdentifier();
     }
 
-    virtual FilterAction    filterAction()                                    override;
+    FilterAction    filterAction()                                    override;
 
     void                    readParameters(const FilterAction& action)        override;
 

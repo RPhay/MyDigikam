@@ -6,7 +6,7 @@
  * Date        : 2011-03-22
  * Description : a Iface C++ interface
  *
- * Copyright (C) 2011-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2011-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2011      by Alexandre Mendes <alex dot mendes1988 at gmail dot com>
  *
  * This program is free software; you can redistribute it
@@ -50,9 +50,9 @@ class Q_DECL_HIDDEN UploadPrivate : public JobPrivate
 public:
 
     explicit UploadPrivate(Iface& MediaWiki)
-        : JobPrivate(MediaWiki)
+        : JobPrivate(MediaWiki),
+          file(nullptr)
     {
-        file = nullptr;
     }
 
     static int error(const QString& error)
@@ -138,7 +138,7 @@ void Upload::start()
     info->start();
 }
 
-void Upload::doWorkSendRequest(Page page)
+void Upload::doWorkSendRequest(const Page& page)
 {
     Q_D(Upload);
 
@@ -146,13 +146,18 @@ void Upload::doWorkSendRequest(Page page)
     d->token             = token;
 
     // Get the extension
+
     QStringList filename = d->filename.split(QChar::fromLatin1('.'));
     QString extension    = filename.at(filename.size()-1);
 
-    if (extension == QLatin1String("jpg"))
+    if      (extension == QLatin1String("jpg"))
+    {
         extension = QStringLiteral("jpeg");
+    }
     else if (extension == QLatin1String("svg"))
+    {
         extension += QStringLiteral("+xml");
+    }
 
     QUrl url = d->MediaWiki.url();
     QUrlQuery query;
@@ -161,6 +166,7 @@ void Upload::doWorkSendRequest(Page page)
     url.setQuery(query);
 
     // Add the cookies
+
     QByteArray cookie = "";
     QList<QNetworkCookie> MediaWikiCookies = d->manager->cookieJar()->cookiesForUrl(d->MediaWiki.url());
 
@@ -171,6 +177,7 @@ void Upload::doWorkSendRequest(Page page)
     }
 
     // Set the request
+
     QNetworkRequest request(url);
     request.setRawHeader("User-Agent", d->MediaWiki.userAgent().toUtf8());
     request.setRawHeader("Accept-Charset", "utf-8");
@@ -180,21 +187,25 @@ void Upload::doWorkSendRequest(Page page)
     request.setRawHeader("Cookie", cookie);
 
     // send data
+
     boundary = "--" + boundary + "\r\n";
     QByteArray out = boundary;
 
     // ignore warnings
+
     out += "Content-Disposition: form-data; name=\"ignorewarnings\"\r\n\r\n";
     out += "true\r\n";
     out += boundary;
 
     // filename
+
     out += "Content-Disposition: form-data; name=\"filename\"\r\n\r\n";
     out += d->filename.toUtf8();
     out += "\r\n";
     out += boundary;
 
     // comment
+
     if (!d->comment.isEmpty())
     {
         out += "Content-Disposition: form-data; name=\"comment\"\r\n\r\n";
@@ -204,12 +215,14 @@ void Upload::doWorkSendRequest(Page page)
     }
 
     // token
+
     out += "Content-Disposition: form-data; name=\"token\"\r\n\r\n";
     out += d->token.toUtf8();
     out += "\r\n";
     out += boundary;
 
     // the actual file
+
     out += "Content-Disposition: form-data; name=\"file\"; filename=\"";
     out += d->filename.toUtf8();
     out += "\"\r\n";
@@ -221,6 +234,7 @@ void Upload::doWorkSendRequest(Page page)
     out += boundary;
 
     // description page
+
     out += "Content-Disposition: form-data; name=\"text\"\r\n";
     out += "Content-Type: text/plain\r\n\r\n";
     out += d->text.toUtf8();
@@ -247,6 +261,7 @@ void Upload::doWorkProcessReply()
         this->setError(this->NetworkError);
         d->reply->close();
         d->reply->deleteLater();
+
         emitResult();
         return;
     }
@@ -257,11 +272,11 @@ void Upload::doWorkProcessReply()
     {
         QXmlStreamReader::TokenType token = reader.readNext();
 
-        if (token == QXmlStreamReader::StartElement)
+        if      (token == QXmlStreamReader::StartElement)
         {
             QXmlStreamAttributes attrs = reader.attributes();
 
-            if (reader.name() == QLatin1String("upload"))
+            if      (reader.name() == QLatin1String("upload"))
             {
                 if (attrs.value(QStringLiteral("result")).toString() == QLatin1String("Success"))
                 {
@@ -274,8 +289,8 @@ void Upload::doWorkProcessReply()
                 this->setError(UploadPrivate::error(attrs.value(QStringLiteral("code")).toString()));
             }
         }
-        else if (token == QXmlStreamReader::Invalid && reader.error() !=
-                 QXmlStreamReader::PrematureEndOfDocumentError)
+        else if ((token          == QXmlStreamReader::Invalid) &&
+                 (reader.error() != QXmlStreamReader::PrematureEndOfDocumentError))
         {
             this->setError(this->XmlError);
         }
@@ -283,6 +298,7 @@ void Upload::doWorkProcessReply()
 
     d->reply->close();
     d->reply->deleteLater();
+
     emitResult();
 }
 

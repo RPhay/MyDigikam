@@ -34,9 +34,13 @@
 namespace DigikamGenericPanoramaPlugin
 {
 
-CreatePtoTask::CreatePtoTask(const QString& workDirPath, PanoramaFileType fileType,
-                             QUrl& ptoUrl, const QList<QUrl>& inputFiles, const PanoramaItemUrlsMap& preProcessedMap,
-                             bool addGPlusMetadata, const QString& huginVersion)
+CreatePtoTask::CreatePtoTask(const QString& workDirPath,
+                             PanoramaFileType fileType,
+                             QUrl& ptoUrl,
+                             const QList<QUrl>& inputFiles,
+                             const PanoramaItemUrlsMap& preProcessedMap,
+                             bool addGPlusMetadata,
+                             const QString& huginVersion)
     : PanoTask(PANO_CREATEPTO,
       workDirPath),
       ptoUrl(ptoUrl),
@@ -61,8 +65,9 @@ void CreatePtoTask::run(ThreadWeaver::JobPointer, ThreadWeaver::Thread*)
 
     if (pto.exists())
     {
-        errString = i18n("PTO file already created in the temporary directory.");
+        errString   = i18n("PTO file already created in the temporary directory.");
         successFlag = false;
+
         return;
     }
 
@@ -70,12 +75,14 @@ void CreatePtoTask::run(ThreadWeaver::JobPointer, ThreadWeaver::Thread*)
     {
         errString   = i18n("PTO file cannot be created in the temporary directory.");
         successFlag = false;
+
         return;
     }
 
     pto.close();
 
     // 1. Project parameters
+
     PTOType panoBase(huginVersion);
 
     if (addGPlusMetadata)
@@ -96,36 +103,40 @@ void CreatePtoTask::run(ThreadWeaver::JobPointer, ThreadWeaver::Thread*)
             panoBase.project.fileFormat.fileType = PTOType::Project::FileFormat::JPEG;
             panoBase.project.fileFormat.quality = 90;
             break;
+
         case TIFF:
             panoBase.project.fileFormat.fileType = PTOType::Project::FileFormat::TIFF_m;
             panoBase.project.fileFormat.compressionMethod = PTOType::Project::FileFormat::LZW;
             panoBase.project.fileFormat.savePositions = false;
             panoBase.project.fileFormat.cropped = false;
             break;
+
         case HDR:
             panoBase.project.hdr = true;
             // TODO HDR
             break;
     }
-
-//  panoBase.project.bitDepth = PTOType::Project::FLOAT;
-//  panoBase.project.crop.setLeft(X_left);
-//  panoBase.project.crop.setRight(X_right);
-//  panoBase.project.crop.setTop(X_top);
-//  panoBase.project.crop.setBottom(X_bottom);
+/*
+    panoBase.project.bitDepth = PTOType::Project::FLOAT;
+    panoBase.project.crop.setLeft(X_left);
+    panoBase.project.crop.setRight(X_right);
+    panoBase.project.crop.setTop(X_top);
+    panoBase.project.crop.setBottom(X_bottom);
+*/
     panoBase.project.photometricReferenceId = 0;
 
     // 2. Images
+
     panoBase.images.reserve(inputFiles.size());
     panoBase.images.resize(inputFiles.size());
     int i = 0;
 
-    for (i = 0; i < inputFiles.size(); ++i)
+    for (i = 0 ; i < inputFiles.size() ; ++i)
     {
         QUrl inputFile(inputFiles.at(i));
         QUrl preprocessedUrl(preProcessedMap->value(inputFile).preprocessedUrl);
         m_meta.load(preprocessedUrl.toLocalFile());
-        QSize size = m_meta.getPixelSize();
+        QSize size                        = m_meta.getPixelSize();
 
         panoBase.images[i]                = PTOType::Image();
         panoBase.images[i].lensProjection = PTOType::Image::RECTILINEAR;
@@ -134,6 +145,7 @@ void CreatePtoTask::run(ThreadWeaver::JobPointer, ThreadWeaver::Thread*)
         if (i > 0)
         {
             // We suppose that the pictures are all taken with the same camera and lens
+
             panoBase.images[i].lensBarrelCoefficientA.referenceId = 0;
             panoBase.images[i].lensBarrelCoefficientB.referenceId = 0;
             panoBase.images[i].lensBarrelCoefficientC.referenceId = 0;
@@ -205,10 +217,12 @@ void CreatePtoTask::run(ThreadWeaver::JobPointer, ThreadWeaver::Thread*)
             panoBase.lastComments << QLatin1String("#hugin_outputImageType tif");
             panoBase.lastComments << QLatin1String("#hugin_outputImageTypeCompression LZW");
             break;
+
         case JPEG:
             panoBase.lastComments << QLatin1String("#hugin_outputImageType jpg");
             panoBase.lastComments << QLatin1String("#hugin_outputJPEGQuality 90");
             break;
+
         case HDR:
             // TODO: HDR
             break;
@@ -217,7 +231,6 @@ void CreatePtoTask::run(ThreadWeaver::JobPointer, ThreadWeaver::Thread*)
     panoBase.createFile(ptoUrl.toLocalFile());
 
     successFlag = true;
-    return;
 }
 
 } // namespace DigikamGenericPanoramaPlugin

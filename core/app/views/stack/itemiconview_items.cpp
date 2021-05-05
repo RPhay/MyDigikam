@@ -7,7 +7,7 @@
  * Description : Item icon view interface - Item methods.
  *
  * Copyright (C) 2002-2005 by Renchi Raju <renchi dot raju at gmail dot com>
- * Copyright (C) 2002-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2002-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2009-2011 by Johannes Wienke <languitar at semipol dot de>
  * Copyright (C) 2010-2011 by Andi Clemens <andi dot clemens at gmail dot com>
  * Copyright (C) 2011-2013 by Michael G. Hansen <mike at mghansen dot de>
@@ -59,7 +59,9 @@ void ItemIconView::slotFirstItem()
 
         default:
             // all other views are tied to IconView's selection model
+
             d->iconView->toFirstIndex();
+            break;
     }
 }
 
@@ -73,7 +75,9 @@ void ItemIconView::slotPrevItem()
 
         default:
             // all other views are tied to IconView's selection model
+
             d->iconView->toPreviousIndex();
+            break;
     }
 }
 
@@ -87,7 +91,9 @@ void ItemIconView::slotNextItem()
 
         default:
             // all other views are tied to IconView's selection model
+
             d->iconView->toNextIndex();
+            break;
     }
 }
 
@@ -101,7 +107,9 @@ void ItemIconView::slotLastItem()
 
         default:
             // all other views are tied to IconView's selection model
+
             d->iconView->toLastIndex();
+            break;
     }
 }
 
@@ -109,12 +117,14 @@ void ItemIconView::slotSelectItemByUrl(const QUrl& url)
 {
     /// @todo This functions seems not to be used anywhere right now
     /// @todo Adapt to TableView
+
     d->iconView->toIndex(url);
 }
 
 void ItemIconView::slotImageSelected()
 {
     // delay to slotDispatchImageSelected
+
     d->needDispatchSelection = true;
     d->selectionTimer->start();
 
@@ -130,6 +140,7 @@ void ItemIconView::slotImageSelected()
 
         default:
             emit signalSelectionChanged(d->iconView->numberOfSelectedIndexes());
+            break;
     }
 }
 
@@ -144,7 +155,9 @@ void ItemIconView::slotDispatchImageSelected()
     if (d->needDispatchSelection)
     {
         // the list of ItemInfos of currently selected items, currentItem first
-        const ItemInfoList list      = selectedInfoList(true, true);
+        ApplicationSettings::ApplyToEntireGroup applyAll =
+            ApplicationSettings::instance()->getGroupingOperateOnAll(ApplicationSettings::Metadata);
+        const ItemInfoList list      = selectedInfoList(true, (applyAll == ApplicationSettings::Yes));
         const ItemInfoList allImages = allInfo(true);
 
         if (list.isEmpty())
@@ -155,7 +168,7 @@ void ItemIconView::slotDispatchImageSelected()
         }
         else
         {
-            d->rightSideBar->itemChanged(list);
+            d->rightSideBar->itemChanged(list, allImages);
 
             ItemInfo previousInfo;
             ItemInfo nextInfo;
@@ -171,9 +184,11 @@ void ItemIconView::slotDispatchImageSelected()
                 nextInfo     = d->iconView->nextInfo(list.first());
             }
 
-            if (viewMode() != StackedView::IconViewMode  &&
-                viewMode() != StackedView::MapWidgetMode &&
-                viewMode() != StackedView::TableViewMode)
+            if (
+                (viewMode() != StackedView::IconViewMode)  &&
+                (viewMode() != StackedView::MapWidgetMode) &&
+                (viewMode() != StackedView::TableViewMode)
+               )
             {
                 d->stackedview->setPreviewItem(list.first(), previousInfo, nextInfo);
             }
@@ -187,15 +202,16 @@ void ItemIconView::slotDispatchImageSelected()
 
 void ItemIconView::slotImageWriteMetadata()
 {
-    const ItemInfoList selected     = selectedInfoList(ApplicationSettings::Metadata);
+    const ItemInfoList selected      = selectedInfoList(ApplicationSettings::Metadata);
     MetadataSynchronizer* const tool = new MetadataSynchronizer(selected, MetadataSynchronizer::WriteFromDatabaseToFile);
     tool->start();
 }
 
 void ItemIconView::slotImageReadMetadata()
 {
-    const ItemInfoList selected     = selectedInfoList(ApplicationSettings::Metadata);
+    const ItemInfoList selected      = selectedInfoList(ApplicationSettings::Metadata);
     MetadataSynchronizer* const tool = new MetadataSynchronizer(selected, MetadataSynchronizer::ReadFromFileToDatabase);
+    tool->setUseMultiCoreCPU(false);
     tool->start();
 }
 
@@ -217,6 +233,7 @@ void ItemIconView::slotImageRename()
 
         default:
             d->iconView->rename();
+            break;
     }
 }
 
@@ -230,6 +247,7 @@ void ItemIconView::slotImageDelete()
 
         default:
             d->iconView->deleteSelected(ItemViewUtilities::DeleteUseTrash);
+            break;
     }
 }
 
@@ -243,6 +261,7 @@ void ItemIconView::slotImageDeletePermanently()
 
         default:
             d->iconView->deleteSelected(ItemViewUtilities::DeletePermanently);
+            break;
     }
 }
 
@@ -256,6 +275,7 @@ void ItemIconView::slotImageDeletePermanentlyDirectly()
 
         default:
             d->iconView->deleteSelectedDirectly(ItemViewUtilities::DeletePermanently);
+            break;
     }
 }
 
@@ -269,6 +289,7 @@ void ItemIconView::slotImageTrashDirectly()
 
         default:
             d->iconView->deleteSelectedDirectly(ItemViewUtilities::DeleteUseTrash);
+            break;
     }
 }
 
@@ -282,6 +303,7 @@ void ItemIconView::slotSelectAll()
 
         default:
             d->iconView->selectAll();
+            break;
     }
 }
 
@@ -295,6 +317,7 @@ void ItemIconView::slotSelectNone()
 
         default:
             d->iconView->clearSelection();
+            break;
     }
 }
 
@@ -308,6 +331,7 @@ void ItemIconView::slotSelectInvert()
 
         default:
             d->iconView->invertSelection();
+            break;
     }
 }
 
@@ -375,6 +399,7 @@ void ItemIconView::slotImagePaste()
 
         default:
             d->iconView->paste();
+            break;
     }
 }
 
@@ -399,10 +424,12 @@ bool ItemIconView::hasCurrentItem() const
 
 void ItemIconView::slotFocusAndNextImage()
 {
-    //slot is called on pressing "return" a second time after assigning a tag
+    // slot is called on pressing "return" a second time after assigning a tag
+
     d->stackedview->currentWidget()->setFocus();
 
-    //select next image, since the user is probably done tagging the current image
+    // select next image, since the user is probably done tagging the current image
+
     slotNextItem();
 }
 
@@ -426,14 +453,17 @@ ItemInfo ItemIconView::currentInfo() const
             return d->tableView->currentInfo();
 
 #ifdef HAVE_MARBLE
+
         case StackedView::MapWidgetMode:
             return d->mapView->currentItemInfo();
+
 #endif // HAVE_MARBLE
 
         case StackedView::MediaPlayerMode:
         case StackedView::PreviewImageMode:
         case StackedView::IconViewMode:
             // all of these modes use the same selection model and data as the IconViewMode
+
             return d->iconView->currentInfo();
 
         default:
@@ -461,6 +491,7 @@ ItemInfoList ItemIconView::selectedInfoList(const bool currentFirst,
         case StackedView::IconViewMode:
 
             // all of these modes use the same selection model and data as the IconViewMode
+
             if (currentFirst)
             {
                 return d->iconView->selectedItemInfosCurrentFirst(grouping);
@@ -492,6 +523,7 @@ ItemInfoList ItemIconView::allInfo(const bool grouping) const
         case StackedView::MediaPlayerMode:
         case StackedView::IconViewMode:
             // all of these modes use the same selection model and data as the IconViewMode
+
             return d->iconView->allItemInfos(grouping);
 
         default:
@@ -504,11 +536,30 @@ ItemInfoList ItemIconView::allInfo(const ApplicationSettings::OperationType type
     return allInfo(allNeedGroupResolving(type));
 }
 
+int ItemIconView::itemCount() const
+{
+    return d->iconView->imageModel()->itemCount();
+}
+
 QUrl ItemIconView::currentUrl() const
 {
     const ItemInfo cInfo = currentInfo();
 
     return cInfo.fileUrl();
+}
+
+void ItemIconView::slotSetCurrentUrlWhenAvailable(const QUrl& url)
+{
+    switch (viewMode())
+    {
+        case StackedView::TableViewMode:
+            d->tableView->slotSetCurrentUrlWhenAvailable(url);
+            break;
+
+        default:
+            d->iconView->setCurrentUrlWhenAvailable(url);
+            break;
+    }
 }
 
 void ItemIconView::slotSetCurrentWhenAvailable(const qlonglong id)
@@ -521,6 +572,7 @@ void ItemIconView::slotSetCurrentWhenAvailable(const qlonglong id)
 
         default:
             d->iconView->setCurrentWhenAvailable(id);
+            break;
     }
 }
 
@@ -534,7 +586,13 @@ void ItemIconView::slotAwayFromSelection()
 
         default:
             d->iconView->awayFromSelection();
+            break;
     }
+}
+
+void ItemIconView::slotCopySelectionTo()
+{
+    d->utilities->copyItemsToExternalFolder(selectedInfoList(false, true));
 }
 
 } // namespace Digikam

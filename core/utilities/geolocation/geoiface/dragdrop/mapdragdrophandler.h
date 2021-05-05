@@ -6,7 +6,7 @@
  * Date        : 2010-03-22
  * Description : Drag-and-drop handler for geolocation interface integration.
  *
- * Copyright (C) 2010-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2010-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2010      by Michael G. Hansen <mike at mghansen dot de>
  *
  * This program is free software; you can redistribute it
@@ -47,13 +47,20 @@ class DIGIKAM_EXPORT MapDragData : public QMimeData
 public:
 
     explicit MapDragData()
-      : QMimeData(),
+      : QMimeData     (),
         draggedIndices()
     {
     }
 
     QList<QPersistentModelIndex> draggedIndices;
+
+private:
+
+    // Disable
+    explicit MapDragData(QObject*) = delete;
 };
+
+//  -----------------------------------------------------------------------------------
 
 class DIGIKAM_EXPORT MapDragDropHandler : public GeoDragDropHandler
 {
@@ -63,11 +70,11 @@ public:
 
     explicit MapDragDropHandler(QAbstractItemModel* const /*pModel*/,
                                 GPSGeoIfaceModelHelper* const parent);
-    virtual ~MapDragDropHandler();
+    ~MapDragDropHandler()                                                       override;
 
-    virtual Qt::DropAction accepts(const QDropEvent* e)                                 override;
-    virtual bool dropEvent(const QDropEvent* e, const GeoCoordinates& dropCoordinates)  override;
-    virtual QMimeData* createMimeData(const QList<QPersistentModelIndex>& modelIndices) override;
+    Qt::DropAction accepts(const QDropEvent* e)                                 override;
+    bool dropEvent(const QDropEvent* e, const GeoCoordinates& dropCoordinates)  override;
+    QMimeData* createMimeData(const QList<QPersistentModelIndex>& modelIndices) override;
 
 private:
 

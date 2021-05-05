@@ -7,7 +7,7 @@
  * Description : Database access wrapper.
  *
  * Copyright (C) 2007-2008 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2010-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2010-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -41,6 +41,7 @@
 #include "thumbsdbschemaupdater.h"
 #include "dbengineparameters.h"
 #include "dbengineaccess.h"
+#include "dbengineerrorhandler.h"
 
 namespace Digikam
 {
@@ -50,8 +51,8 @@ class Q_DECL_HIDDEN ThumbsDbAccessStaticPriv
 public:
 
     explicit ThumbsDbAccessStaticPriv()
-        : backend(nullptr),
-          db(nullptr),
+        : backend     (nullptr),
+          db          (nullptr),
           initializing(false)
     {
     }
@@ -77,9 +78,9 @@ class Q_DECL_HIDDEN ThumbsDbAccessMutexLocker : public QMutexLocker
 {
 public:
 
-    explicit ThumbsDbAccessMutexLocker(ThumbsDbAccessStaticPriv* const d)
-        : QMutexLocker(&d->lock.mutex),
-          d(d)
+    explicit ThumbsDbAccessMutexLocker(ThumbsDbAccessStaticPriv* const dd)
+        : QMutexLocker(&dd->lock.mutex),
+          d           (dd)
     {
         d->lock.lockCount++;
     }
@@ -99,6 +100,7 @@ public:
 ThumbsDbAccess::ThumbsDbAccess()
 {
     // You will want to call setParameters before constructing ThumbsDbAccess.
+
     Q_ASSERT(d);
 
     d->lock.mutex.lock();
@@ -107,6 +109,7 @@ ThumbsDbAccess::ThumbsDbAccess()
     if (!d->backend->isOpen() && !d->initializing)
     {
         // avoid endless loops
+
         d->initializing = true;
 
         d->backend->open(d->parameters);
@@ -125,6 +128,7 @@ ThumbsDbAccess::ThumbsDbAccess(bool)
 {
     // private constructor, when mutex is locked and
     // backend should not be checked
+
     d->lock.mutex.lock();
     d->lock.lockCount++;
 }
@@ -160,8 +164,9 @@ void ThumbsDbAccess::initDbEngineErrorHandler(DbEngineErrorHandler* const errorh
     {
         d = new ThumbsDbAccessStaticPriv();
     }
-
-    //DbEngineErrorHandler* const errorhandler = new DbEngineGuiErrorHandler(d->parameters);
+/*
+    DbEngineErrorHandler* const errorhandler = new DbEngineGuiErrorHandler(d->parameters);
+*/
     d->backend->setDbEngineErrorHandler(errorhandler);
 }
 
@@ -185,6 +190,7 @@ void ThumbsDbAccess::setParameters(const DbEngineParameters& parameters)
     }
 
     // Kill the old database error handler
+
     if (d->backend)
     {
         d->backend->setDbEngineErrorHandler(nullptr);
@@ -204,9 +210,12 @@ void ThumbsDbAccess::setParameters(const DbEngineParameters& parameters)
 bool ThumbsDbAccess::checkReadyForUse(InitializationObserver* const observer)
 {
     if (!DbEngineAccess::checkReadyForUse(d->lastError))
+    {
         return false;
+    }
 
     // create an object with private shortcut constructor
+
     ThumbsDbAccess access(false);
 
     if (!d->backend)
@@ -232,9 +241,11 @@ bool ThumbsDbAccess::checkReadyForUse(InitializationObserver* const observer)
     }
 
     // avoid endless loops (if called methods create new ThumbsDbAccess objects)
+
     d->initializing = true;
 
     // update schema
+
     ThumbsDbSchemaUpdater updater(&access);
     updater.setObserver(observer);
 

@@ -6,7 +6,7 @@
  * Date        : 2010-12-05
  * Description : Placeholder widget for when backends are activated
  *
- * Copyright (C) 2010-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2010-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C)      2010 by Michael G. Hansen <mike at mghansen dot de>
  *
  * This program is free software; you can redistribute it
@@ -43,7 +43,7 @@ class DIGIKAM_EXPORT PlaceholderWidget : public QFrame
 public:
 
     explicit PlaceholderWidget(QWidget* const parent = nullptr);
-    ~PlaceholderWidget();
+    ~PlaceholderWidget() override;
 
     void setMessage(const QString& message);
 

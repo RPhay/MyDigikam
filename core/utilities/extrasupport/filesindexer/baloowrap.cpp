@@ -44,9 +44,9 @@ class Q_DECL_HIDDEN BalooWrap::Private
 public:
 
     explicit Private()
+      : syncFromDigikamToBaloo(false),
+        syncFromBalooToDigikam(false)
     {
-        syncFromBalooToDigikam = false;
-        syncFromDigikamToBaloo = false;
     }
 
     bool syncFromDigikamToBaloo;
@@ -80,25 +80,7 @@ BalooWrap* BalooWrap::instance()
     return BalooWrap::internalPtr;
 }
 
-void BalooWrap::setTags(const QUrl& url, QStringList* const tags)
-{
-    setAllData(url, tags, nullptr, -1);
-}
-
-void BalooWrap::setComment(const QUrl& url, QString* const comment)
-{
-    setAllData(url, nullptr, comment, -1);
-}
-
-void BalooWrap::setRating(const QUrl& url, int rating)
-{
-    setAllData(url, nullptr, nullptr, rating);
-}
-
-void BalooWrap::setAllData(const QUrl& url,
-                           QStringList* const tags,
-                           QString* const comment,
-                           int rating)
+void BalooWrap::setSemanticInfo(const QUrl& url, const BalooInfo& bInfo)
 {
     if (!d->syncFromDigikamToBaloo)
     {
@@ -107,22 +89,13 @@ void BalooWrap::setAllData(const QUrl& url,
 
     KFileMetaData::UserMetaData md(url.toLocalFile());
 
-    if (tags != nullptr)
-    {
-        md.setTags(*tags);
-    }
+    md.setTags(bInfo.tags);
+    md.setUserComment(bInfo.comment);
 
-    if (comment != nullptr)
-    {
-        md.setUserComment(*comment);
-    }
+    // digiKam store rating as value form 0 to 5
+    // while baloo store it as value from 0 to 10
 
-    if (rating != -1)
-    {
-        // digiKam store rating as value form 0 to 5
-        // while baloo store it as value from 0 to 10
-        md.setRating(rating * 2);
-    }
+    md.setRating((bInfo.rating == -1) ? 0 : bInfo.rating * 2);
 }
 
 BalooInfo BalooWrap::getSemanticInfo(const QUrl& url) const
@@ -134,18 +107,13 @@ BalooInfo BalooWrap::getSemanticInfo(const QUrl& url) const
 
     KFileMetaData::UserMetaData md(url.toLocalFile());
 
-    //Baloo::File file = job->file();
     BalooInfo bInfo;
 
     // Baloo have rating from 0 to 10, while digiKam have only from 0 to 5
-    bInfo.rating  = md.rating() / 2;
-    bInfo.comment = md.userComment();
 
-    foreach (const QString& tag, md.tags().toSet())
-    {
-        bInfo.tags.append(i18n("BalooTags") +
-                          QLatin1Char('/')  + tag);
-    }
+    bInfo.comment = md.userComment();
+    bInfo.rating  = md.rating() / 2;
+    bInfo.tags    = md.tags();
 
     return bInfo;
 }

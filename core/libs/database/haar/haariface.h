@@ -8,7 +8,7 @@
  *
  * Copyright (C) 2016-2018 by Mario Frank <mario dot frank at uni minus potsdam dot de>
  * Copyright (C) 2003      by Ricardo Niederberger Cabral <nieder at mail dot ru>
- * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2009-2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  * Copyright (C) 2009-2011 by Andi Clemens <andi dot clemens at gmail dot com>
  *
@@ -30,6 +30,7 @@
 
 // Qt includes
 
+#include <QSet>
 #include <QString>
 #include <QMap>
 #include <QList>
@@ -51,14 +52,18 @@ class HaarProgressObserver
 {
 public:
 
+    HaarProgressObserver()                                       = default;
     virtual ~HaarProgressObserver()                              = default;
 
-    virtual void totalNumberToScan(int number)                   = 0;
-    virtual void processedNumber(int numberThatHasBeenProcessed) = 0;
+    virtual void imageProcessed()                                = 0;
     virtual bool isCanceled()
     {
         return false;
     };
+
+private:
+
+    Q_DISABLE_COPY(HaarProgressObserver)
 };
 
 // --------------------------------------------------------------------------
@@ -76,23 +81,26 @@ public:
 
     enum DuplicatesSearchRestrictions
     {
-        None           = 0,
-        SameAlbum      = 1,
-        DifferentAlbum = 2
+        None            = 0,
+        SameAlbum       = 1,
+        DifferentAlbum  = 2
     };
 
     enum AlbumTagRelation
     {
-        NoMix          = 0,
-        Union          = 1,
-        Intersection   = 2,
-        AlbumExclusive = 3,
-        TagExclusive   = 4
+        NoMix           = 0,
+        Union           = 1,
+        Intersection    = 2,
+        AlbumExclusive  = 3,
+        TagExclusive    = 4
     };
+
+    using DuplicatesResultsMap = QMap<qlonglong, QPair<double, QList<qlonglong> > >;
 
 public:
 
     explicit HaarIface();
+    explicit HaarIface(const QSet<qlonglong>& images2Scan);
     ~HaarIface();
 
     static int preferredSize();
@@ -106,25 +114,6 @@ public:
     bool indexImage(qlonglong imageid, const QImage& image);
     bool indexImage(qlonglong imageid, const DImg& image);
 
-    /**
-     * Searches the database for the best matches for the specified query image.
-     * The numberOfResults best matches are returned.
-     */
-    QList<qlonglong> bestMatchesForImage(qlonglong imageid,
-                                         const QList<int>& targetAlbums,
-                                         int numberOfResults = 20,
-                                         SketchType type = ScannedSketch);
-
-    QList<qlonglong> bestMatchesForImage(const QImage& image,
-                                         const QList<int>& targetAlbums,
-                                         int numberOfResults = 20,
-                                         SketchType type=ScannedSketch);
-
-    QList<qlonglong> bestMatchesForFile(const QString& filename,
-                                        const QList<int>& targetAlbums,
-                                        int numberOfResults = 20,
-                                        SketchType type = ScannedSketch);
-
     QMap<qlonglong, double> bestMatchesForSignature(const QString& signature,
                                                     const QList<int>& targetAlbums,
                                                     int numberOfResults = 20,
@@ -135,28 +124,28 @@ public:
      * All matches with a similarity in a given threshold interval are returned.
      * The threshold is in the range requiredPercentage..maximumPercentage.
      */
-    QPair<double, QMap<qlonglong, double> > bestMatchesForImageWithThreshold(qlonglong imageid,
-                                                                             double requiredPercentage,
-                                                                             double maximumPercentage,
-                                                                             const QList<int>& targetAlbums,
-                                                                             DuplicatesSearchRestrictions
-                                                                                searchResultRestriction =
-                                                                                DuplicatesSearchRestrictions::None,
-                                                                             SketchType type = ScannedSketch);
+    QPair<double, QMap<qlonglong, double> > bestMatchesForImageWithThreshold(
+        qlonglong imageid,
+        double requiredPercentage,
+        double maximumPercentage,
+        const QList<int>& targetAlbums,
+        DuplicatesSearchRestrictions searchResultRestriction = DuplicatesSearchRestrictions::None,
+        SketchType type = ScannedSketch
+    );
 
     /**
      * Searches the database for the best matches for the specified query image.
      * All matches with a similarity in a given threshold interval are returned.
      * The threshold is in the range requiredPercentage..maximumPercentage.
      */
-    QPair<double, QMap<qlonglong, double> > bestMatchesForImageWithThreshold(const QString& imagePath,
-                                                                             double requiredPercentage,
-                                                                             double maximumPercentage,
-                                                                             const QList<int>& targetAlbums,
-                                                                             DuplicatesSearchRestrictions
-                                                                                searchResultRestriction =
-                                                                                DuplicatesSearchRestrictions::None,
-                                                                             SketchType type=ScannedSketch);
+    QPair<double, QMap<qlonglong, double> > bestMatchesForImageWithThreshold(
+        const QString& imagePath,
+        double requiredPercentage,
+        double maximumPercentage,
+        const QList<int>& targetAlbums,
+        DuplicatesSearchRestrictions searchResultRestriction = DuplicatesSearchRestrictions::None,
+        SketchType type = ScannedSketch
+    );
 
     /**
      * Calculates the Haar signature, bring it in a form as stored in the DB,
@@ -185,74 +174,39 @@ public:
                                       double* const highestAndWorstScore);
 
     /**
-     * Fill a map of duplicates images found over a list of image to scan.
+     * Fill a map of duplicates images found over a list of images to scan.
      * For each map item, the result values is list of candidate images which are duplicates of the key image.
      * All images are referenced by id from database.
      * The threshold is in the range 0..1, with 1 meaning identical signature.
      */
-    QMap<double, QMap<qlonglong, QList<qlonglong> > > findDuplicates(const QSet<qlonglong>& images2Scan,
-                                                                     double requiredPercentage,
-                                                                     double maximumPercentage,
-                                                                     DuplicatesSearchRestrictions
-                                                                        searchResultRestriction =
-                                                                        DuplicatesSearchRestrictions::None,
-                                                                     HaarProgressObserver* const observer = nullptr);
+    DuplicatesResultsMap findDuplicates(
+        const QSet<qlonglong>& images2Scan,
+        const QSet<qlonglong>::const_iterator& rangeBegin,
+        const QSet<qlonglong>::const_iterator& rangeEnd,
+        double requiredPercentage,
+        double maximumPercentage,
+        DuplicatesSearchRestrictions searchResultRestriction = DuplicatesSearchRestrictions::None,
+        HaarProgressObserver* const observer = nullptr
+    );
 
     /**
-     * Calls findDuplicates with all images in the given album ids
+     * Collects all images from the given album and tag ids according to their relation.
      */
-    QMap<double, QMap<qlonglong, QList<qlonglong> > > findDuplicatesInAlbums(const QList<int>& albums2Scan,
-                                                                             double requiredPercentage,
-                                                                             double maximumPercentage,
-                                                                             HaarProgressObserver* const observer = nullptr);
+    static QSet<qlonglong> imagesFromAlbumsAndTags(const QList<int>& albums2Scan,
+                                                   const QList<int>& tags2Scan,
+                                                   AlbumTagRelation relation);
 
     /**
-     * Calls findDuplicates with all images in the given album and tag ids
+     * This method rebuilds the given SAlbums using the given results.
+     * @param results Map of duplicates images found over a list of images.
      */
-    QMap<double, QMap<qlonglong, QList<qlonglong> > > findDuplicatesInAlbumsAndTags(const QList<int>& albums2Scan,
-                                                                                    const QList<int>& tags2Scan,
-                                                                                    AlbumTagRelation relation,
-                                                                                    double requiredPercentage,
-                                                                                    double maximumPercentage,
-                                                                                    DuplicatesSearchRestrictions
-                                                                                       searchResultRestriction =
-                                                                                       DuplicatesSearchRestrictions::None,
-                                                                                    HaarProgressObserver* const observer = nullptr);
-
-    /**
-     * Rebuilds the special search albums in the database that contain a list of possible candidates
-     * for duplicate images (one album per group of duplicates)
-     */
-    void rebuildDuplicatesAlbums(const QList<int>& albums2Scan,
-                                 const QList<int>& tags2Scan,
-                                 AlbumTagRelation relation,
-                                 double requiredPercentage,
-                                 double maximumPercentage,
-                                 DuplicatesSearchRestrictions
-                                    searchResultRestriction =
-                                    DuplicatesSearchRestrictions::None,
-                                 HaarProgressObserver* const observer = nullptr);
-
-    /**
-     * This method rebuilds the given SAlbums by searching duplicates and replacing the SAlbums by the updated versions.
-     * @param imageIds The set of images to scan for duplicates.
-     * @param requiredPercentage The minimum similarity for duplicate recognition.
-     * @param maximumPercentage The maximum similarity for duplicate recognition.
-     * @param observer The progress observer.
-     */
-    void rebuildDuplicatesAlbums(const QList<qlonglong>& imageIds,
-                                 double requiredPercentage,
-                                 double maximumPercentage,
-                                 DuplicatesSearchRestrictions
-                                    searchResultRestriction =
-                                    DuplicatesSearchRestrictions::None,
-                                 HaarProgressObserver* const observer = nullptr);
+    static void rebuildDuplicatesAlbums(const DuplicatesResultsMap& results, bool isAlbumUpdate);
 
     /**
      * Retrieve the Haar signature from database using image id.
      * Return true if item signature exist else false.
      */
-    bool retrieveSignatureFromDB(qlonglong imageid, Haar::SignatureData* const sig);
+    bool retrieveSignatureFromDB(qlonglong imageid, Haar::SignatureData& sig);
 
     /**
      * Give a list of albumRoots to which the search shall be limited.
@@ -276,7 +230,7 @@ private:
      * This method writes the search results to the SearchXml structure.
      * @param searchResults The results to write as XML.
      */
-    QMap<QString, QString> writeSAlbumQueries(const QMap<double, QMap<qlonglong, QList<qlonglong> > >& searchResults);
+    static QMap<QString, QString> writeSAlbumQueries(const DuplicatesResultsMap& searchResults);
 
     QMultiMap<double, qlonglong> bestMatches(Haar::SignatureData* const data,
                                              int numberOfResults,
@@ -288,8 +242,7 @@ private:
                                                                      double requiredPercentage,
                                                                      double maximumPercentage,
                                                                      const QList<int>& targetAlbums,
-                                                                     DuplicatesSearchRestrictions
-                                                                        searchResultRestriction,
+                                                                     DuplicatesSearchRestrictions searchResultRestriction,
                                                                      SketchType type);
 
     /**
@@ -304,20 +257,20 @@ private:
     QMap<qlonglong, double> searchDatabase(Haar::SignatureData* const data,
                                            SketchType type,
                                            const QList<int>& targetAlbums,
-                                           DuplicatesSearchRestrictions
-                                              searchResultRestriction = None,
+                                           DuplicatesSearchRestrictions searchResultRestriction = None,
                                            qlonglong originalImageId = -1,
                                            int albumId = -1);
 
-    double calculateScore(Haar::SignatureData& querySig,
-                          Haar::SignatureData& targetSig,
+    double calculateScore(const Haar::SignatureData& querySig,
+                          const Haar::SignatureData& targetSig,
                           Haar::Weights& weights,
-                          Haar::SignatureMap** const queryMaps);
+                          std::reference_wrapper<Haar::SignatureMap>* const queryMaps);
 
 private:
 
-    HaarIface(const HaarIface&);            // Disable
-    HaarIface& operator=(const HaarIface&); // Disable
+    // Disable
+    HaarIface(const HaarIface&)            = delete;
+    HaarIface& operator=(const HaarIface&) = delete;
 
 private:
 

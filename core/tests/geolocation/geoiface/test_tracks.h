@@ -26,13 +26,20 @@
 
 // Qt includes
 
-#include <QtTest>
+#include <QTest>
 
 // local includes
 
 class TestTracks : public QObject
 {
     Q_OBJECT
+
+public:
+
+    explicit TestTracks(QObject* const parent = nullptr)
+        : QObject(parent)
+    {
+    }
 
 private Q_SLOTS:
 

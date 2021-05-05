@@ -26,11 +26,18 @@
 
 // Qt includes
 
-#include <QtTest>
+#include <QTest>
 
 class TestPrimitives : public QObject
 {
     Q_OBJECT
+
+public:
+
+    explicit TestPrimitives(QObject* const parent = nullptr)
+        : QObject(parent)
+    {
+    }
 
 private Q_SLOTS:
 
@@ -43,4 +50,4 @@ private Q_SLOTS:
     void testGroupStateComputer();
 };
 
-#endif /* DIGIKAM_TEST_PRIMITIVES_H */
+#endif // DIGIKAM_TEST_PRIMITIVES_H

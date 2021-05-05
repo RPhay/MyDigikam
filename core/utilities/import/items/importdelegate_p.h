@@ -7,7 +7,7 @@
  * Description : Qt item view to import items - the delegate (private container)
  *
  * Copyright (C) 2012      by Islam Wazery <wazery at ubuntu dot com>
- * Copyright (C) 2012-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -47,15 +47,15 @@ class Q_DECL_HIDDEN ImportDelegate::ImportDelegatePrivate : public ItemViewImpor
 public:
 
     explicit ImportDelegatePrivate()
-      : contentWidth(0),
-        drawImageFormat(false),
-        drawCoordinates(false),
-        drawFocusFrame(true),
-        drawMouseOverFrame(true),
-        ratingOverThumbnail(false),
-        categoryDrawer(nullptr),
-        currentView(nullptr),
-        currentModel(nullptr)
+      : contentWidth        (0),
+        drawImageFormat     (false),
+        drawCoordinates     (false),
+        drawFocusFrame      (true),
+        drawMouseOverFrame  (true),
+        ratingOverThumbnail (false),
+        categoryDrawer      (nullptr),
+        currentView         (nullptr),
+        currentModel        (nullptr)
     {
         actualPixmapRectCache.setMaxCost(250);
     }
@@ -93,7 +93,7 @@ public:
 
 public:
 
-    virtual void clearRects();
+    void clearRects() override;
 };
 
 // --- ImportThumbnailDelegate ----------------------------------------------------
@@ -125,7 +125,7 @@ class Q_DECL_HIDDEN ImportNormalDelegatePrivate : public ImportDelegate::ImportD
 public:
 
     explicit ImportNormalDelegatePrivate() {};
-    virtual ~ImportNormalDelegatePrivate();
+    ~ImportNormalDelegatePrivate() override;
 
     void init(ImportNormalDelegate* const q, ImportCategorizedView* const parent);
 };

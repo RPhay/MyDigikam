@@ -7,7 +7,7 @@
  * Description : Wavelets Noise Reduction threaded image filter.
  *               This filter work in YCrCb color space.
  *
- * Copyright (C) 2005-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2005-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2010      by Martin Klapetek <martin dot klapetek at gmail dot com>
  *
  * This program is free software; you can redistribute it
@@ -63,22 +63,23 @@ DIGIKAM_EXPORT QDebug operator<<(QDebug dbg, const NRContainer& inf);
 
 class DIGIKAM_EXPORT NRFilter : public DImgThreadedFilter
 {
+    Q_OBJECT
 
 private:
 
-    struct Args
+    struct Q_DECL_HIDDEN Args
     {
         explicit Args()
-          : start(0),
-            stop(0),
-            thold(nullptr),
-            lpass(nullptr),
-            hpass(nullptr),
-            stdev(nullptr),
-            samples(nullptr),
-            fimg(nullptr),
-            threshold(0.0),
-            softness(0.0)
+          : start       (0),
+            stop        (0),
+            thold       (nullptr),
+            lpass       (nullptr),
+            hpass       (nullptr),
+            stdev       (nullptr),
+            samples     (nullptr),
+            fimg        (nullptr),
+            threshold   (0.0),
+            softness    (0.0)
         {
         }
 
@@ -98,17 +99,17 @@ public:
 
     explicit NRFilter(QObject* const parent = nullptr);
     NRFilter(DImg* const orgImage, QObject* const parent, const NRContainer& settings);
-    ~NRFilter();
+    ~NRFilter()                                           override;
 
     void readParameters(const FilterAction& action)       override;
 
-    virtual FilterAction    filterAction()                override;
-    virtual QString         filterIdentifier()      const override;
+    FilterAction filterAction()                           override;
+    QString filterIdentifier()                      const override;
 
-    static QString          FilterIdentifier();
-    static QString          DisplayableName();
-    static QList<int>       SupportedVersions();
-    static int              CurrentVersion();
+    static QString FilterIdentifier();
+    static QString DisplayableName();
+    static QList<int> SupportedVersions();
+    static int CurrentVersion();
 
     static void srgb2ycbcr(float** const fimg, int size);
 

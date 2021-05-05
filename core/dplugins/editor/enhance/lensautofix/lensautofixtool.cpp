@@ -4,7 +4,7 @@
  * Description : a tool to fix automatically camera lens aberrations
  *
  * Copyright (C) 2008      by Adrian Schroeter <adrian at suse dot de>
- * Copyright (C) 2008-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2008-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -38,7 +38,7 @@
 
 #include <klocalizedstring.h>
 #include <ksharedconfig.h>
-#include "kconfiggroup.h"
+#include <kconfiggroup.h>
 
 // Local includes
 
@@ -60,14 +60,14 @@ class Q_DECL_HIDDEN LensAutoFixTool::Private
 public:
 
     explicit Private()
-      : configGroupName(QLatin1String("Lens Auto-Correction Tool")),
-        configShowGrid(QLatin1String("Show Grid")),
+      : configGroupName (QLatin1String("Lens Auto-Correction Tool")),
+        configShowGrid  (QLatin1String("Show Grid")),
         maskPreviewLabel(nullptr),
-        showGrid(nullptr),
-        settingsView(nullptr),
-        cameraSelector(nullptr),
-        previewWidget(nullptr),
-        gboxSettings(nullptr)
+        showGrid        (nullptr),
+        settingsView    (nullptr),
+        cameraSelector  (nullptr),
+        previewWidget   (nullptr),
+        gboxSettings    (nullptr)
     {
     }
 
@@ -87,7 +87,7 @@ public:
 
 LensAutoFixTool::LensAutoFixTool(QObject* const parent)
     : EditorToolThreaded(parent),
-      d(new Private)
+      d                 (new Private)
 {
     setObjectName(QLatin1String("lensautocorrection"));
     setToolName(i18n("Lens Auto-Correction"));
@@ -109,8 +109,7 @@ LensAutoFixTool::LensAutoFixTool(QObject* const parent)
 
     d->cameraSelector      = new LensFunCameraSelector(d->gboxSettings->plainPage());
     DImg* const img        = d->previewWidget->imageIface()->original();
-    DMetadata meta(img->getMetadata());
-    d->cameraSelector->setMetadata(meta);
+    d->cameraSelector->setMetadata(img->getMetadata());
     DLineWidget* const line = new DLineWidget(Qt::Horizontal, d->gboxSettings->plainPage());
 
     // -------------------------------------------------------------
@@ -254,7 +253,9 @@ void LensAutoFixTool::setFinalImage()
     LensFunFilter* const fltr = dynamic_cast<LensFunFilter*>(filter());
 
     if (fltr)
+    {
         fltr->registerSettingsToXmp(data);
+    }
 
     iface.setOriginalMetadata(data);
 }

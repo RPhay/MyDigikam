@@ -39,12 +39,14 @@ class RemoveDoublesModifier : public Modifier
 public:
 
     explicit RemoveDoublesModifier();
-    virtual QString parseOperation(ParseSettings& settings);
+    QString parseOperation(ParseSettings& settings) override;
 
 private:
 
-    RemoveDoublesModifier(const RemoveDoublesModifier&);
-    RemoveDoublesModifier& operator=(const RemoveDoublesModifier&);
+    // Disable
+    explicit RemoveDoublesModifier(QObject*)                       = delete;
+    RemoveDoublesModifier(const RemoveDoublesModifier&)            = delete;
+    RemoveDoublesModifier& operator=(const RemoveDoublesModifier&) = delete;
 };
 
 } // namespace Digikam

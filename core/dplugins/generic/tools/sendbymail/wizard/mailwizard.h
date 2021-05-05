@@ -6,7 +6,7 @@
  * Date        : 2017-06-27
  * Description : a tool to export items by email.
  *
- * Copyright (C) 2017-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2017-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -32,7 +32,6 @@
 
 #include "dwizarddlg.h"
 #include "dinfointerface.h"
-#include "digikam_export.h"
 #include "mailsettings.h"
 
 using namespace Digikam;
@@ -40,15 +39,17 @@ using namespace Digikam;
 namespace DigikamGenericSendByMailPlugin
 {
 
-class DIGIKAM_EXPORT MailWizard : public DWizardDlg
+class MailWizard : public DWizardDlg
 {
+    Q_OBJECT
+
 public:
 
     explicit MailWizard(QWidget* const parent, DInfoInterface* const iface = nullptr);
-    ~MailWizard();
+    ~MailWizard() override;
 
-    bool validateCurrentPage() override;
-    int  nextId() const override;
+    bool validateCurrentPage()       override;
+    int  nextId() const              override;
 
     DInfoInterface* iface()    const;
     MailSettings*   settings() const;

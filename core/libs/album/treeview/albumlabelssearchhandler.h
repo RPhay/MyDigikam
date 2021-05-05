@@ -7,7 +7,7 @@
  * Description : Album Labels Search Tree View.
  *
  * Copyright (C) 2014-2015 by Mohamed_Anwer <m_dot_anwer at gmx dot com>
- * Copyright (C) 2014-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2014-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -37,7 +37,7 @@ class AlbumLabelsSearchHandler : public QObject
 public:
 
     explicit AlbumLabelsSearchHandler(LabelsTreeView* const treeWidget);
-    ~AlbumLabelsSearchHandler();
+    ~AlbumLabelsSearchHandler() override;
 
     /**
      * @return Album pointer of the currently selected labels

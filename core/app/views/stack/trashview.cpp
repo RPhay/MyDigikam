@@ -34,19 +34,19 @@
 #include <QPainter>
 #include <QAction>
 #include <QMenu>
+#include <QUrl>
 
 // KDE includes
 
-#include "klocalizedstring.h"
+#include <klocalizedstring.h>
 
 // Local includes
 
 #include "digikam_debug.h"
 #include "dtrashiteminfo.h"
 #include "dtrashitemmodel.h"
-#include "iojobsmanager.h"
 #include "thumbnailsize.h"
-#include "scancontroller.h"
+#include "dio.h"
 
 namespace Digikam
 {
@@ -57,17 +57,17 @@ class Q_DECL_HIDDEN TrashView::Private
 public:
 
     explicit Private()
-        : model(nullptr),
-          thumbDelegate(nullptr),
-          mainLayout(nullptr),
-          btnsLayout(nullptr),
-          tableView(nullptr),
-          undoButton(nullptr),
-          restoreButton(nullptr),
-          deleteButton(nullptr),
-          deleteAction(nullptr),
-          deleteAllAction(nullptr),
-          thumbSize(ThumbnailSize::Large)
+        : model             (nullptr),
+          thumbDelegate     (nullptr),
+          mainLayout        (nullptr),
+          btnsLayout        (nullptr),
+          tableView         (nullptr),
+          undoButton        (nullptr),
+          restoreButton     (nullptr),
+          deleteButton      (nullptr),
+          deleteAction      (nullptr),
+          deleteAllAction   (nullptr),
+          thumbSize         (ThumbnailSize::Large)
     {
     }
 
@@ -93,18 +93,21 @@ public:
 
 TrashView::TrashView(QWidget* const parent)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     // Layouts
+
     d->mainLayout    = new QVBoxLayout(this);
     d->btnsLayout    = new QHBoxLayout();
 
     // View and tools
+
     d->tableView     = new QTableView(this);
     d->model         = new DTrashItemModel(this);
     d->thumbDelegate = new ThumbnailAligningDelegate(this);
 
     // Table view settings
+
     d->tableView->setModel(d->model);
     d->tableView->setItemDelegateForColumn(0, d->thumbDelegate);
     d->tableView->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
@@ -117,6 +120,7 @@ TrashView::TrashView(QWidget* const parent)
     d->tableView->sortByColumn(2, Qt::DescendingOrder);
 
     // Action Buttons
+
     d->undoButton      = new QPushButton(i18n("Undo"),                   this);
     d->restoreButton   = new QPushButton(i18n("Restore"),                this);
     d->deleteButton    = new QPushButton(i18n("Delete..."),              this);
@@ -141,6 +145,7 @@ TrashView::TrashView(QWidget* const parent)
     d->deleteButton->setEnabled(false);
 
     // Adding widgets to layouts
+
     d->mainLayout->addWidget(d->tableView);
 
     d->btnsLayout->addWidget(d->undoButton);
@@ -151,6 +156,7 @@ TrashView::TrashView(QWidget* const parent)
     d->mainLayout->setContentsMargins(QMargins());
 
     // Signals and Slots connections
+
     connect(d->tableView->selectionModel(), SIGNAL(selectionChanged(QItemSelection,QItemSelection)),
             this, SLOT(slotSelectionChanged()));
 
@@ -251,10 +257,10 @@ void TrashView::slotUndoLastDeletedItems()
 
     qCDebug(DIGIKAM_GENERAL_LOG) << "Items to Restore:\n " << items;
 
-    IOJobsThread* const thread = IOJobsManager::instance()->startRestoringDTrashItems(items);
+    DIO::restoreTrash(items);
 
-    connect(thread, SIGNAL(finished()),
-            this, SLOT(slotRestoreFinished()));
+    connect(DIO::instance(), SIGNAL(signalTrashFinished()),
+            this, SLOT(slotRemoveItemsFromModel()));
 }
 
 void TrashView::slotRestoreSelectedItems()
@@ -276,29 +282,10 @@ void TrashView::slotRestoreSelectedItems()
 
     qCDebug(DIGIKAM_GENERAL_LOG) << "Items to Restore:\n " << items;
 
-    IOJobsThread* const thread = IOJobsManager::instance()->startRestoringDTrashItems(items);
+    DIO::restoreTrash(items);
 
-    connect(thread, SIGNAL(finished()),
-            this, SLOT(slotRestoreFinished()));
-}
-
-void TrashView::slotRestoreFinished()
-{
-    if (d->selectedIndexesToRemove.isEmpty())
-    {
-        return;
-    }
-
-    DTrashItemInfoList items = d->model->itemsForIndexes(d->selectedIndexesToRemove);
-
-    foreach (const DTrashItemInfo& item, items)
-    {
-        QUrl url     = QUrl::fromLocalFile(item.collectionPath);
-        QString path = url.adjusted(QUrl::RemoveFilename).toLocalFile();
-        ScanController::instance()->scheduleCollectionScanRelaxed(path);
-    }
-
-    slotRemoveItemsFromModel();
+    connect(DIO::instance(), SIGNAL(signalTrashFinished()),
+            this, SLOT(slotRemoveItemsFromModel()));
 }
 
 void TrashView::slotDeleteSelectedItems()
@@ -327,14 +314,16 @@ void TrashView::slotDeleteSelectedItems()
 
     qCDebug(DIGIKAM_GENERAL_LOG) << "Items count: " << items.count();
 
-    IOJobsThread* const thread = IOJobsManager::instance()->startDeletingDTrashItems(items);
+    DIO::emptyTrash(items);
 
-    connect(thread, SIGNAL(finished()),
+    connect(DIO::instance(), SIGNAL(signalTrashFinished()),
             this, SLOT(slotRemoveItemsFromModel()));
 }
 
 void TrashView::slotRemoveItemsFromModel()
 {
+    disconnect(DIO::instance(), nullptr, this, nullptr);
+
     if (d->selectedIndexesToRemove.isEmpty())
     {
         return;
@@ -348,6 +337,8 @@ void TrashView::slotRemoveItemsFromModel()
 
 void TrashView::slotRemoveAllItemsFromModel()
 {
+    disconnect(DIO::instance(), nullptr, this, nullptr);
+
     d->model->clearCurrentData();
 }
 
@@ -369,9 +360,9 @@ void TrashView::slotDeleteAllItems()
 
     qCDebug(DIGIKAM_GENERAL_LOG) << "Removing all item from trash permanently";
 
-    IOJobsThread* const thread = IOJobsManager::instance()->startDeletingDTrashItems(d->model->allItems());
+    DIO::emptyTrash(d->model->allItems());
 
-    connect(thread, SIGNAL(finished()),
+    connect(DIO::instance(), SIGNAL(signalTrashFinished()),
             this, SLOT(slotRemoveAllItemsFromModel()));
 }
 
@@ -398,7 +389,7 @@ void TrashView::slotChangeLastSelectedItem(const QModelIndex& curr, const QModel
     emit selectionChanged();
 }
 
-void TrashView::setThumbnailSize(ThumbnailSize thumbSize)
+void TrashView::setThumbnailSize(const ThumbnailSize& thumbSize)
 {
     d->model->changeThumbSize(thumbSize.size());
     d->tableView->verticalHeader()->setDefaultSectionSize(thumbSize.size());
@@ -471,7 +462,7 @@ void ThumbnailAligningDelegate::paint(QPainter* painter, const QStyleOptionViewI
 
     painter->save();
 
-    if (option.state & QStyle::State_Selected)
+    if      (option.state & QStyle::State_Selected)
     {
         painter->fillRect(option.rect, option.palette.highlight());
     }

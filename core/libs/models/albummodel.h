@@ -36,27 +36,33 @@
 namespace Digikam
 {
 
-class DIGIKAM_EXPORT AlbumModel : public AbstractCheckableAlbumModel
+class DIGIKAM_GUI_EXPORT AlbumModel : public AbstractCheckableAlbumModel
 {
+    Q_OBJECT
+
 public:
 
-    /// Create a model containing all physical albums
+    /**
+     * Create a model containing all physical albums
+     */
     explicit AlbumModel(RootAlbumBehavior rootBehavior = IncludeRootAlbum, QObject* const parent = nullptr);
-    virtual ~AlbumModel();
+    ~AlbumModel() override;
 
     PAlbum* albumForIndex(const QModelIndex& index) const;
 
 protected:
 
-    virtual QVariant albumData(Album* a, int role)  const override;
-    virtual QVariant decorationRoleData(Album* a)   const override;
-    virtual Album*   albumForId(int id)             const override;
+    QVariant albumData(Album* a, int role)          const override;
+    QVariant decorationRoleData(Album* a)           const override;
+    Album*   albumForId(int id)                     const override;
 };
 
 // ------------------------------------------------------------------
 
-class DIGIKAM_EXPORT TagModel : public AbstractCheckableAlbumModel
+class DIGIKAM_GUI_EXPORT TagModel : public AbstractCheckableAlbumModel
 {
+    Q_OBJECT
+
 public:
 
     /**
@@ -72,33 +78,42 @@ public:
 
 public:
 
-    /// Create a model containing all tags
+    /**
+     * Create a model containing all tags
+     */
     explicit TagModel(RootAlbumBehavior rootBehavior = IncludeRootAlbum, QObject* const parent = nullptr);
 
-    TAlbum* albumForIndex(const QModelIndex& index) const;
-    void    setColumnHeader(const QString& header);
-    void    setTagCount(TagCountMode mode);
+    TAlbum*      albumForIndex(const QModelIndex& index) const;
+    void         setColumnHeader(const QString& header);
+    void         setTagCount(TagCountMode mode);
 
 protected:
 
-    virtual QVariant albumData(Album* a, int role)  const override;
-    virtual QVariant decorationRoleData(Album* a)   const override;
-    virtual Album*   albumForId(int id)             const override;
+    QVariant     albumData(Album* a, int role)           const override;
+    QVariant     decorationRoleData(Album* a)            const override;
+    Album*       albumForId(int id)                      const override;
+    QVariant     fontRoleData(Album* a)                  const override;
+    bool         setData(const QModelIndex& index,
+                         const QVariant& value,
+                         int role = Qt::EditRole)              override;
 
 private:
 
+    bool           m_faceTagModel;
     QMap<int, int> m_unconfirmedFaceCount;
 };
 
 // ------------------------------------------------------------------
 
-class DIGIKAM_EXPORT SearchModel : public AbstractCheckableAlbumModel
+class DIGIKAM_GUI_EXPORT SearchModel : public AbstractCheckableAlbumModel
 {
     Q_OBJECT
 
 public:
 
-    /// Create a model containing searches
+    /**
+     * Create a model containing searches
+     */
     explicit SearchModel(QObject* const parent = nullptr);
 
     SAlbum* albumForIndex(const QModelIndex& index) const;
@@ -122,8 +137,8 @@ public:
 
 protected:
 
-    virtual QVariant albumData(Album* a, int role) const override;
-    virtual Album*   albumForId(int id)            const override;
+    QVariant albumData(Album* a, int role)          const override;
+    Album*   albumForId(int id)                     const override;
 
 private Q_SLOTS:
 
@@ -140,7 +155,7 @@ protected:
 /**
  * A model for date based albums.
  */
-class DIGIKAM_EXPORT DateAlbumModel : public AbstractCountingAlbumModel
+class DIGIKAM_GUI_EXPORT DateAlbumModel : public AbstractCountingAlbumModel
 {
     Q_OBJECT
 
@@ -149,27 +164,28 @@ public:
     /**
      * Constructor.
      *
-     * @param parent parent for Qt's parent child mechanism
+     * @param parent the parent for Qt's parent child mechanism
      */
     explicit DateAlbumModel(QObject* const parent = nullptr);
 
-    DAlbum* albumForIndex(const QModelIndex& index)  const;
+    DAlbum* albumForIndex(const QModelIndex& index)     const;
 
     /**
      * Finds an album index based on a date. The given date is therefore
      * normalized to year-month-form. The day is ignored. This means the
      * returned index always points to a month DAlbum.
      *
-     * @param date date to search for (year and month)
+     * @param date the date to search for (year and month)
      * @return model index corresponding to the album with the given date or an
      *         empty index if not found
      */
-    QModelIndex monthIndexForDate(const QDate& date) const;
+    QModelIndex monthIndexForDate(const QDate& date)    const;
 
     /**
      * Set pixmaps for the DecorationRole
      */
-    void setPixmaps(const QPixmap& forYearAlbums, const QPixmap& forMonthAlbums);
+    void setPixmaps(const QPixmap& forYearAlbums,
+                    const QPixmap& forMonthAlbums);
 
 public Q_SLOTS:
 
@@ -177,10 +193,10 @@ public Q_SLOTS:
 
 protected:
 
-    virtual QString  albumName(Album* a)             const override;
-    virtual QVariant decorationRoleData(Album* a)    const override;
-    virtual QVariant sortRoleData(Album* a)          const override;
-    virtual Album*   albumForId(int id)              const override;
+    QString  albumName(Album* a)                        const override;
+    QVariant decorationRoleData(Album* a)               const override;
+    QVariant sortRoleData(Album* a)                     const override;
+    Album*   albumForId(int id)                         const override;
 
 protected:
 

@@ -1,5 +1,5 @@
 /* -*- C++ -*-
- * Copyright 2019 LibRaw LLC (info@libraw.org)
+ * Copyright 2019-2021 LibRaw LLC (info@libraw.org)
  *
 
  LibRaw is free software; you can redistribute it and/or modify
@@ -48,7 +48,7 @@ void LibRaw::selectCRXTrack(short maxTrack)
   {
     if (bitcounts[i] == maxbitcount)
     {
-      if (framecnt <= shot_select)
+      if (framecnt <= (int)shot_select)
         framei = i;
       framecnt++;
     }
@@ -83,7 +83,7 @@ void LibRaw::selectCRXTrack(short maxTrack)
 
     int tiff_idx = -1;
     INT64 tpixels = 0;
-    for (int i = 0; i < tiff_nifds; i++)
+    for (unsigned i = 0; i < tiff_nifds && i < LIBRAW_IFD_MAXCOUNT; i++)
       if (INT64(tiff_ifd[i].t_height) * INT64(tiff_ifd[i].t_height) > tpixels)
       {
         tpixels = INT64(tiff_ifd[i].t_height) * INT64(tiff_ifd[i].t_height);
@@ -111,16 +111,15 @@ int LibRaw::parseCR3(unsigned long long oAtomList,
   */
   const char UIID_Canon[17] =
       "\x85\xc0\xb6\x87\x82\x0f\x11\xe0\x81\x11\xf4\xce\x46\x2b\x6a\x48";
-  const char UIID_Preview[17] =
-      "\xea\xf4\x2b\x5e\x1c\x98\x4b\x88\xb9\xfb\xb7\xdc\x40\x6e\x4d\x16";
-
+  const unsigned char UIID_CanonPreview[17] = "\xea\xf4\x2b\x5e\x1c\x98\x4b\x88\xb9\xfb\xb7\xdc\x40\x6e\x4d\x16";
+  const unsigned char UUID_XMP[17] = "\xbe\x7a\xcf\xcb\x97\xa9\x42\xe8\x9c\x71\x99\x94\x91\xe3\xaf\xac";
+  
   /*
   AtomType = 0 - unknown: "unk."
   AtomType = 1 - container atom: "cont"
   AtomType = 2 - leaf atom: "leaf"
   AtomType = 3 - can be container, can be leaf: "both"
   */
-  const char sAtomeType[4][5] = {"unk.", "cont", "leaf", "both"};
   short AtomType;
   static const struct
   {
@@ -219,15 +218,14 @@ int LibRaw::parseCR3(unsigned long long oAtomList,
 
   char UIID[16];
   uchar CMP1[36];
+  uchar CDI1[60];
   char HandlerType[5], MediaFormatID[5];
-  unsigned ImageWidth, ImageHeight;
-  long relpos_inDir, relpos_inBox;
+  uint32_t relpos_inDir, relpos_inBox;
   unsigned szItem, Tag, lTag;
   ushort tItem;
 
   nmAtom[0] = MediaFormatID[0] = nmAtom[4] = MediaFormatID[4] = '\0';
   strcpy(HandlerType, sHandlerType[0]);
-  ImageWidth = ImageHeight = 0U;
   oAtom = oAtomList;
   nesting++;
   if (nesting > 31)
@@ -246,7 +244,7 @@ int LibRaw::parseCR3(unsigned long long oAtomList,
     tL = 4;
     AtomType = 0;
 
-    for (c = 0; c < sizeof AtomNamesList / sizeof *AtomNamesList; c++)
+    for (c = 0; c < int(sizeof AtomNamesList / sizeof *AtomNamesList); c++)
       if (!strcmp(nmAtom, AtomNamesList[c].AtomName))
       {
         AtomType = AtomNamesList[c].AtomType;
@@ -286,6 +284,31 @@ int LibRaw::parseCR3(unsigned long long oAtomList,
       oAtomContent = oAtom + 8ULL;
       szAtomContent = szAtom - 8ULL;
     }
+
+	if (!strcmp(AtomNameStack, "uuid")) // Top level uuid
+	{
+		INT64 tt = ftell(ifp);
+		lHdr = 16ULL;
+		fread(UIID, 1, lHdr, ifp);
+		if (!memcmp(UIID, UUID_XMP, 16) && szAtom > 24 && szAtom < 1024000ULL)
+		{
+			xmpdata = (char *)malloc(xmplen = szAtom - 23);
+			fread(xmpdata, szAtom - 24, 1, ifp);
+			xmpdata[szAtom - 24] = 0;
+		}
+		else if (!memcmp(UIID, UIID_CanonPreview, 16) && szAtom > 48 && szAtom < 100ULL * 1024000ULL)
+		{
+			// read next 48 bytes, check for 'PRVW'
+			unsigned char xdata[32];
+			fread(xdata, 32, 1, ifp);	
+			if (!memcmp(xdata + 12, "PRVW", 4))
+			{
+				thumb_length = szAtom - 56;
+				thumb_offset = ftell(ifp);
+			}
+		}
+		fseek(ifp, tt, SEEK_SET);
+	}
 
     if (!strcmp(nmAtom, "trak"))
     {
@@ -365,7 +388,7 @@ int LibRaw::parseCR3(unsigned long long oAtomList,
     {
       fseek(ifp, 8L, SEEK_CUR);
       FORC4 HandlerType[c] = fgetc(ifp);
-      for (c = 1; c < sizeof sHandlerType / sizeof *sHandlerType; c++)
+      for (c = 1; c < int(sizeof sHandlerType / sizeof *sHandlerType); c++)
         if (!strcmp(HandlerType, sHandlerType[c]))
         {
           TrackType = c;
@@ -402,8 +425,8 @@ int LibRaw::parseCR3(unsigned long long oAtomList,
       }
 #define current_track libraw_internal_data.unpacker_data.crx_header[nTrack]
 
-      ImageWidth = get2();
-      ImageHeight = get2();
+      /*ImageWidth =*/ get2();
+      /*ImageHeight =*/ get2();
     }
     else if (!strcmp(AtomNameStack, "moovtrakmdiaminfstblstsdCRAW"))
     {
@@ -421,6 +444,21 @@ int LibRaw::parseCR3(unsigned long long oAtomList,
       if (!crxParseImageHeader(CMP1, nTrack))
         current_track.MediaType = 1;
     }
+
+    else if (!strcmp(AtomNameStack, "moovtrakmdiaminfstblstsdCRAWCDI1")) {
+      if (szAtomContent >= 60) {
+        fread(CDI1, 1, 60, ifp);
+        if (!strncmp((char *)CDI1+8, "IAD1", 4) && (sgetn(8, CDI1) == 0x38)) {
+          // sensor area at CDI1+12, 4 16-bit values
+          // Bayer pattern? - next 4 16-bit values
+          // image area, next 4 16-bit values
+          FORC4 imCanon.LeftOpticalBlack[c]  = sgetn(2, CDI1+12 + 3*4*2 +2*c);
+          FORC4 imCanon.UpperOpticalBlack[c] = sgetn(2, CDI1+12 + 4*4*2 +2*c);
+          FORC4 imCanon.ActiveArea[c]        = sgetn(2, CDI1+12 + 5*4*2 +2*c);
+        }
+      }
+    }
+
     else if (!strcmp(AtomNameStack, "moovtrakmdiaminfstblstsdCRAWJPEG"))
     {
       current_track.MediaType = 2;
@@ -450,7 +488,8 @@ int LibRaw::parseCR3(unsigned long long oAtomList,
       current_track.MediaOffset = (((unsigned long long)get4()) << 32) | get4();
     }
 
-    if (current_track.MediaSize && current_track.MediaOffset &&
+    if (nTrack >= 0 && nTrack < LIBRAW_CRXTRACKS_MAXCOUNT &&
+        current_track.MediaSize && current_track.MediaOffset &&
         ((oAtom + szAtom) >= (oAtomList + szAtomList)) &&
         !strncmp(AtomNameStack, "moovtrakmdiaminfstbl", 20))
     {
@@ -460,10 +499,15 @@ int LibRaw::parseCR3(unsigned long long oAtomList,
         relpos_inDir = 0L;
         while (relpos_inDir + 6 < current_track.MediaSize)
         {
+          if (current_track.MediaOffset + relpos_inDir > ifp->size() - 6) // need at least 6 bytes
+          {
+              err = -11;
+              goto fin;
+          }
           fseek(ifp, current_track.MediaOffset + relpos_inDir, SEEK_SET);
           szItem = get4();
           tItem = get2();
-          if ((relpos_inDir + szItem) > current_track.MediaSize)
+          if (szItem < 1 || (  (relpos_inDir + szItem) > current_track.MediaSize))
           {
             err = -11;
             goto fin;
@@ -473,6 +517,11 @@ int LibRaw::parseCR3(unsigned long long oAtomList,
             relpos_inBox = relpos_inDir + 12L;
             while (relpos_inBox + 8 < relpos_inDir + szItem)
             {
+              if (current_track.MediaOffset + relpos_inBox > ifp->size() - 8) // need at least 8 bytes
+              {
+                  err = -11;
+                  goto fin;
+              }
               fseek(ifp, current_track.MediaOffset + relpos_inBox, SEEK_SET);
               lTag = get4();
               Tag = get4();

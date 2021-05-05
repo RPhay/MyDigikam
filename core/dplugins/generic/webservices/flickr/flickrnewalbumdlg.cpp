@@ -8,7 +8,7 @@
  *
  * Copyright (C) 2013      by Pankaj Kumar <me at panks dot me>
  * Copyright (C) 2015      by Shourya Singh Gupta <shouryasgupta at gmail dot com>
- * Copyright (C) 2013-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2013-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -55,7 +55,8 @@ void FlickrNewAlbumDlg::getFolderProperties(FPhotoSet& folder)
     folder.title       = getTitleEdit()->text();
     folder.description = getDescEdit()->toPlainText();
 
-    qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Folder Title " << folder.title<<" Folder Description "<<folder.description;
+    qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Folder Title "        << folder.title
+                                     << " Folder Description " << folder.description;
 }
 
 } // namespace DigikamGenericFlickrPlugin

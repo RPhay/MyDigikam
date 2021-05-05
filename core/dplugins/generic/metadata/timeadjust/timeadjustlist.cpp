@@ -119,4 +119,4 @@ void TimeAdjustList::setStatus(const QMap<QUrl, int>& status)
     }
 }
 
-}  // namespace DigikamGenericTimeAdjustPlugin
+} // namespace DigikamGenericTimeAdjustPlugin

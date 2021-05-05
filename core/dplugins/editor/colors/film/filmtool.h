@@ -45,13 +45,13 @@ class FilmTool : public EditorToolThreaded
 public:
 
     explicit FilmTool(QObject* const parent);
-    ~FilmTool();
+    ~FilmTool()                         override;
 
 private Q_SLOTS:
 
-    void slotResetSettings();
-    void slotScaleChanged();
-    void slotChannelChanged();
+    void slotResetSettings()            override;
+    void slotScaleChanged()             override;
+    void slotChannelChanged()           override;
     void slotAdjustSliders();
     void slotFilmItemActivated(QListWidgetItem* item);
     void slotExposureChanged(double val);
@@ -64,16 +64,16 @@ private Q_SLOTS:
 
 private:
 
-    void readSettings();
-    void writeSettings();
-    void preparePreview();
-    void prepareFinal();
-    void setPreviewImage();
-    void setFinalImage();
+    void readSettings()                 override;
+    void writeSettings()                override;
+    void preparePreview()               override;
+    void prepareFinal()                 override;
+    void setPreviewImage()              override;
+    void setFinalImage()                override;
 
     void gammaInputChanged(double val);
     void setLevelsFromFilm();
-    bool eventFilter(QObject*, QEvent*);
+    bool eventFilter(QObject*, QEvent*) override;
 
 private:
 

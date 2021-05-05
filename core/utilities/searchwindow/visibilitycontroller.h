@@ -36,21 +36,23 @@
 namespace Digikam
 {
 
-class DIGIKAM_EXPORT VisibilityObject
+class DIGIKAM_GUI_EXPORT VisibilityObject
 {
 public:
 
-    virtual ~VisibilityObject()
-    {
-    }
-
+    VisibilityObject()                    = default;
+    virtual ~VisibilityObject()           = default;
     virtual void setVisible(bool visible) = 0;
     virtual bool isVisible()              = 0;
+
+private:
+
+    Q_DISABLE_COPY(VisibilityObject)
 };
 
 // -----------------------------------------------------------------------------------
 
-class DIGIKAM_EXPORT VisibilityController : public QObject
+class DIGIKAM_GUI_EXPORT VisibilityController : public QObject
 {
     Q_OBJECT
 
@@ -68,7 +70,7 @@ public:
 public:
 
     explicit VisibilityController(QObject* const parent);
-    ~VisibilityController();
+    ~VisibilityController() override;
 
     /**
      * Set the widget containing the widgets added to this controller

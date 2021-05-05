@@ -6,7 +6,7 @@
  * Date        : 2009-26-02
  * Description : a widget to select a physical album
  *
- * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2009-2010 by Johannes Wienke <languitar at semipol dot de>
  *
  * This program is free software; you can redistribute it
@@ -59,7 +59,7 @@ public:
 
     explicit Private()
       : albumModificationHelper(nullptr),
-        newAlbumAction(nullptr)
+        newAlbumAction         (nullptr)
     {
     }
 
@@ -71,7 +71,7 @@ AlbumSelectTreeView::AlbumSelectTreeView(AlbumModel* const model,
                                          AlbumModificationHelper* const albumModificationHelper,
                                          QWidget* const parent)
     : AlbumTreeView(parent),
-      d(new Private)
+      d            (new Private)
 {
     setAlbumModel(model);
     d->albumModificationHelper = albumModificationHelper;
@@ -90,12 +90,12 @@ void AlbumSelectTreeView::addCustomContextMenuActions(ContextMenuHelper& cmh, Al
     d->newAlbumAction->setEnabled(album);
 }
 
-void AlbumSelectTreeView::handleCustomContextMenuAction(QAction* action, AlbumPointer<Album> album)
+void AlbumSelectTreeView::handleCustomContextMenuAction(QAction* action, const AlbumPointer<Album>& album)
 {
     Album* const a       = album;
     PAlbum* const palbum = dynamic_cast<PAlbum*>(a);
 
-    if (palbum && action == d->newAlbumAction)
+    if (palbum && (action == d->newAlbumAction))
     {
         d->albumModificationHelper->slotAlbumNew(palbum);
     }
@@ -123,12 +123,12 @@ class Q_DECL_HIDDEN AlbumSelectWidget::Private
 public:
 
     explicit Private()
-      : complAlbum(nullptr),
-        albumModel(nullptr),
-        albumTreeView(nullptr),
+      : complAlbum             (nullptr),
+        albumModel             (nullptr),
+        albumTreeView          (nullptr),
         albumModificationHelper(nullptr),
-        searchBar(nullptr),
-        newAlbumBtn(nullptr)
+        searchBar              (nullptr),
+        newAlbumBtn            (nullptr)
     {
     }
 
@@ -146,13 +146,14 @@ public:
 AlbumSelectWidget::AlbumSelectWidget(QWidget* const parent,
                                      PAlbum* const albumToSelect, bool completerSelect)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     setObjectName(QLatin1String("AlbumSelectWidget"));
 
     d->albumModificationHelper = new AlbumModificationHelper(this, this);
 
     // TODO let this class implement StateSavingObject
+
     KConfigGroup group = KSharedConfig::openConfig()->group(objectName());
 
     QGridLayout* const grid = new QGridLayout(this);

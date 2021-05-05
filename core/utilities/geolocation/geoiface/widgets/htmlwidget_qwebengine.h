@@ -6,7 +6,7 @@
  * Date        : 2009-12-01
  * Description : Widget for displaying HTML in the backends
  *
- * Copyright (C) 2010-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2010-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2009-2011 by Michael G. Hansen <mike at mghansen dot de>
  * Copyright (C) 2015      by Mohamed_Anwer <m_dot_anwer at gmx dot com>
  *
@@ -50,7 +50,7 @@ class HTMLWidgetPage : public QWebEnginePage
 public:
 
     explicit HTMLWidgetPage(HTMLWidget* const parent = nullptr);
-    virtual ~HTMLWidgetPage();
+    ~HTMLWidgetPage() override;
 
 Q_SIGNALS:
 
@@ -79,7 +79,7 @@ class HTMLWidget : public QWebEngineView
 public:
 
     explicit HTMLWidget(QWidget* const parent = nullptr);
-    ~HTMLWidget();
+    ~HTMLWidget() override;
 
     void loadInitialHTML(const QString& initialHTML);
     QVariant runScript(const QString& scriptCode, bool async = true);
@@ -109,7 +109,7 @@ protected Q_SLOTS:
 private:
 
     class Private;
-    Private* const d;
+    Private* const      d;
 
     GeoIfaceSharedData* s;
 };

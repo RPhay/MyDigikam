@@ -6,7 +6,7 @@
  * Date        : 2009-06-29
  * Description : metadata template viewer.
  *
- * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -49,45 +49,45 @@ class Q_DECL_HIDDEN TemplateViewer::Private
 public:
 
     explicit Private()
-      : names(nullptr),
-        position(nullptr),
-        credit(nullptr),
-        copyright(nullptr),
-        usages(nullptr),
-        source(nullptr),
-        instructions(nullptr),
-        namesList(nullptr),
-        labelPosition(nullptr),
-        labelCredit(nullptr),
-        labelCopyright(nullptr),
-        labelUsages(nullptr),
-        labelSource(nullptr),
-        labelInstructions(nullptr),
-        locationCountry(nullptr),
-        locationProvinceState(nullptr),
-        locationCity(nullptr),
-        locationSublocation(nullptr),
-        labelLocationCountry(nullptr),
-        labelLocationProvinceState(nullptr),
-        labelLocationCity(nullptr),
-        labelLocationSublocation(nullptr),
-        contactCity(nullptr),
-        contactCountry(nullptr),
-        contactAddress(nullptr),
-        contactPostalCode(nullptr),
-        contactProvinceState(nullptr),
-        contactEmail(nullptr),
-        contactPhone(nullptr),
-        contactWebUrl(nullptr),
-        labelContactCity(nullptr),
-        labelContactCountry(nullptr),
-        labelContactAddress(nullptr),
-        labelContactPostalCode(nullptr),
-        labelContactProvinceState(nullptr),
-        labelContactPhone(nullptr),
-        labelContactEmail(nullptr),
-        labelContactWebUrl(nullptr),
-        subjectsList(nullptr)
+      : names                       (nullptr),
+        position                    (nullptr),
+        credit                      (nullptr),
+        copyright                   (nullptr),
+        usages                      (nullptr),
+        source                      (nullptr),
+        instructions                (nullptr),
+        namesList                   (nullptr),
+        labelPosition               (nullptr),
+        labelCredit                 (nullptr),
+        labelCopyright              (nullptr),
+        labelUsages                 (nullptr),
+        labelSource                 (nullptr),
+        labelInstructions           (nullptr),
+        locationCountry             (nullptr),
+        locationProvinceState       (nullptr),
+        locationCity                (nullptr),
+        locationSublocation         (nullptr),
+        labelLocationCountry        (nullptr),
+        labelLocationProvinceState  (nullptr),
+        labelLocationCity           (nullptr),
+        labelLocationSublocation    (nullptr),
+        contactCity                 (nullptr),
+        contactCountry              (nullptr),
+        contactAddress              (nullptr),
+        contactPostalCode           (nullptr),
+        contactProvinceState        (nullptr),
+        contactEmail                (nullptr),
+        contactPhone                (nullptr),
+        contactWebUrl               (nullptr),
+        labelContactCity            (nullptr),
+        labelContactCountry         (nullptr),
+        labelContactAddress         (nullptr),
+        labelContactPostalCode      (nullptr),
+        labelContactProvinceState   (nullptr),
+        labelContactPhone           (nullptr),
+        labelContactEmail           (nullptr),
+        labelContactWebUrl          (nullptr),
+        subjectsList                (nullptr)
     {
     }
 
@@ -144,7 +144,7 @@ public:
 
 TemplateViewer::TemplateViewer(QWidget* const parent)
     : DExpanderBox(parent),
-      d(new Private)
+      d           (new Private)
 {
     setFrameStyle(QFrame::NoFrame);
 
@@ -159,7 +159,7 @@ TemplateViewer::TemplateViewer(QWidget* const parent)
     d->labelCopyright    = new DTextBrowser(QString(), w1);
     d->usages            = new DTextLabelName(i18n("Usages:"), w1);
     d->labelUsages       = new DTextBrowser(QString(), w1);
-    d->source            = new DTextLabelName(i18n("Source:"), w1);
+    d->source            = new DTextLabelName(i18nc("@label: template properties", "Source:"), w1);
     d->labelSource       = new DTextBrowser(QString(), w1);
     d->instructions      = new DTextLabelName(i18n("Instructions:"), w1);
     d->labelInstructions = new DTextBrowser(QString(), w1);
@@ -199,7 +199,7 @@ TemplateViewer::TemplateViewer(QWidget* const parent)
     // ------------------------------------------------------------------
 
     DVBox* const w3              = new DVBox(this);
-    d->contactAddress            = new DTextLabelName(i18n("Address:"), w3);
+    d->contactAddress            = new DTextLabelName(i18nc("@label: template properties", "Address:"), w3);
     d->labelContactAddress       = new DTextBrowser(QString(), w3);
     d->contactPostalCode         = new DTextLabelName(i18n("Postal Code:"), w3);
     d->labelContactPostalCode    = new DTextBrowser(QString(), w3);
@@ -211,7 +211,7 @@ TemplateViewer::TemplateViewer(QWidget* const parent)
     d->labelContactCountry       = new DTextBrowser(QString(), w3);
     d->contactPhone              = new DTextLabelName(i18n("Phone:"), w3);
     d->labelContactPhone         = new DTextBrowser(QString(), w3);
-    d->contactEmail              = new DTextLabelName(i18n("Email:"), w3);
+    d->contactEmail              = new DTextLabelName(i18nc("@label: template properties", "Email:"), w3);
     d->labelContactEmail         = new DTextLabelValue(QString(), w3);
     d->contactWebUrl             = new DTextLabelName(i18n("URL:"), w3);
     d->labelContactWebUrl        = new DTextLabelValue(QString(), w3);
@@ -258,8 +258,8 @@ void TemplateViewer::setTemplate(const Template& t)
     d->namesList->addItems(t.authors());
     d->labelPosition->setText(t.authorsPosition());
     d->labelCredit->setText(t.credit());
-    d->labelCopyright->setText(t.copyright()[QLatin1String("x-default")]);
-    d->labelUsages->setText(t.rightUsageTerms()[QLatin1String("x-default")]);
+    d->labelCopyright->setText(t.copyright().value(QLatin1String("x-default")));
+    d->labelUsages->setText(t.rightUsageTerms().value(QLatin1String("x-default")));
     d->labelSource->setText(t.source());
     d->labelInstructions->setText(t.instructions());
 

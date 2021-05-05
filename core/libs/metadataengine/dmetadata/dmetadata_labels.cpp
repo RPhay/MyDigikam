@@ -6,7 +6,7 @@
  * Date        : 2006-02-23
  * Description : item metadata interface - labels helpers.
  *
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2006-2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  * Copyright (C) 2011      by Leif Huhn <leif at dkstat dot com>
  *
@@ -65,55 +65,93 @@ int DMetadata::getItemPickLabel() const
     return -1;
 }
 
-int DMetadata::getItemColorLabel() const
+int DMetadata::getItemColorLabel(const DMetadataSettingsContainer& settings) const
 {
     if (getFilePath().isEmpty())
     {
         return -1;
     }
 
-    if (hasXmp())
-    {
-        QString value = getXmpTagString("Xmp.digiKam.ColorLabel", false);
-        QString label = getXmpTagString("Xmp.xmp.Label", false);
+    bool xmpSupported  = hasXmp();
+    bool exivSupported = hasExif();
 
-        if (value.isEmpty() && label.isEmpty())
+    foreach (const NamespaceEntry& entry, settings.getReadMapping(NamespaceEntry::DM_COLORLABEL_CONTAINER()))
+    {
+        if (entry.isDisabled)
         {
-            // Nikon NX use this XMP tags to store Color Labels
-            value = getXmpTagString("Xmp.photoshop.Urgency", false);
+            continue;
         }
 
-        if (!value.isEmpty())
-        {
-            bool ok      = false;
-            long colorId = value.toLong(&ok);
+        const std::string myStr = entry.namespaceName.toStdString();
+        const char* nameSpace   = myStr.data();
+        QString value;
 
-            if (ok && (colorId >= NoColorLabel) && (colorId <= WhiteLabel))
+        switch (entry.subspace)
+        {
+            case NamespaceEntry::XMP:
             {
-                return colorId;
+                if (xmpSupported)
+                {
+                    value = getXmpTagString(nameSpace, false);
+                }
+
+                break;
             }
+
+            case NamespaceEntry::IPTC:
+            {
+                break;
+            }
+
+            case NamespaceEntry::EXIF:
+            {
+                if (exivSupported)
+                {
+                    value = getExifTagString(nameSpace, false);
+                }
+
+                break;
+            }
+
+            default:
+            {
+                break;
+            }
+        }
+
+        if (value.isEmpty())
+        {
+            continue;
+        }
+
+        bool ok      = false;
+        long colorId = value.toLong(&ok);
+
+        if (ok && (colorId >= NoColorLabel) && (colorId <= WhiteLabel))
+        {
+            return colorId;
         }
 
         // LightRoom use this tag to store color name as string.
         // Values are limited : see bug #358193.
 
-        if      (label == QLatin1String("Blue"))
+        if      (value == QLatin1String("Blue"))
         {
             return BlueLabel;
         }
-        else if (label == QLatin1String("Green"))
+        else if (value == QLatin1String("Green"))
         {
             return GreenLabel;
         }
-        else if (label == QLatin1String("Red"))
+        else if (value == QLatin1String("Red"))
         {
             return RedLabel;
         }
-        else if (label == QLatin1String("Yellow"))
+        else if (value == QLatin1String("Yellow"))
         {
             return YellowLabel;
         }
-        else if (label == QLatin1String("Purple"))
+        else if (value == QLatin1String("Purple"))
         {
             return MagentaLabel;
         }
@@ -134,7 +172,7 @@ int DMetadata::getItemRating(const DMetadataSettingsContainer& settings) const
     bool iptcSupported = hasIptc();
     bool exivSupported = hasExif();
 
-    for (NamespaceEntry entry : settings.getReadMapping(NamespaceEntry::DM_RATING_CONTAINER()))
+    foreach (const NamespaceEntry& entry, settings.getReadMapping(NamespaceEntry::DM_RATING_CONTAINER()))
     {
         if (entry.isDisabled)
         {
@@ -148,34 +186,42 @@ int DMetadata::getItemRating(const DMetadataSettingsContainer& settings) const
         switch (entry.subspace)
         {
             case NamespaceEntry::XMP:
-
+            {
                 if (xmpSupported)
                 {
                     value = getXmpTagString(nameSpace, false);
                 }
 
                 break;
+            }
 
             case NamespaceEntry::IPTC:
-
+            {
                 if (iptcSupported)
                 {
                     value = QString::fromUtf8(getIptcTagData(nameSpace));
                 }
 
                 break;
+            }
 
             case NamespaceEntry::EXIF:
-
+            {
                 if (exivSupported)
                 {
-                    value = getExifTagLong(nameSpace, rating);
+                    if (!getExifTagLong(nameSpace, rating))
+                    {
+                        continue;
+                    }
                 }
 
                 break;
+            }
 
             default:
+            {
                 break;
+            }
         }
 
         if (!value.isEmpty())
@@ -223,9 +269,9 @@ bool DMetadata::setItemPickLabel(int pickId) const
         qCDebug(DIGIKAM_METAENGINE_LOG) << "Pick Label value to write is out of range!";
         return false;
     }
-
-    //qCDebug(DIGIKAM_METAENGINE_LOG) << getFilePath() << " ==> Pick Label: " << pickId;
-
+/*
+    qCDebug(DIGIKAM_METAENGINE_LOG) << getFilePath() << " ==> Pick Label: " << pickId;
+*/
     if (supportXmp())
     {
         if (!setXmpTagString("Xmp.digiKam.PickLabel", QString::number(pickId)))
@@ -237,7 +283,7 @@ bool DMetadata::setItemPickLabel(int pickId) const
     return true;
 }
 
-bool DMetadata::setItemColorLabel(int colorId) const
+bool DMetadata::setItemColorLabel(int colorId, const DMetadataSettingsContainer& settings) const
 {
     if ((colorId < NoColorLabel) || (colorId > WhiteLabel))
     {
@@ -245,61 +291,117 @@ bool DMetadata::setItemColorLabel(int colorId) const
 
         return false;
     }
+/*
+    qCDebug(DIGIKAM_METAENGINE_LOG) << getFilePath() << " ==> Color Label: " << colorId;
+*/
+    QList<NamespaceEntry> toWrite = settings.getReadMapping(NamespaceEntry::DM_COLORLABEL_CONTAINER());
 
-    //qCDebug(DIGIKAM_METAENGINE_LOG) << getFilePath() << " ==> Color Label: " << colorId;
-
-    if (supportXmp())
+    if (!settings.unifyReadWrite())
     {
-        if (!setXmpTagString("Xmp.digiKam.ColorLabel", QString::number(colorId)))
+        toWrite = settings.getWriteMapping(NamespaceEntry::DM_COLORLABEL_CONTAINER());
+    }
+
+    for (const NamespaceEntry& entry : qAsConst(toWrite))
+    {
+        if (entry.isDisabled)
         {
-            return false;
+            continue;
         }
 
-        // Nikon NX use this XMP tags to store Color Labels
+        const std::string myStr = entry.namespaceName.toStdString();
+        const char* nameSpace   = myStr.data();
 
-        if (!setXmpTagString("Xmp.photoshop.Urgency", QString::number(colorId)))
+        switch (entry.subspace)
         {
-            return false;
-        }
-
-        // LightRoom use this XMP tags to store Color Labels name
-        // Values are limited : see bug #358193.
-
-        QString LRLabel;
-
-        switch(colorId)
-        {
-            case BlueLabel:
-                LRLabel = QLatin1String("Blue");
-                break;
-
-            case GreenLabel:
-                LRLabel = QLatin1String("Green");
-                break;
-
-            case RedLabel:
-                LRLabel = QLatin1String("Red");
-                break;
-
-            case YellowLabel:
-                LRLabel = QLatin1String("Yellow");
-                break;
-
-            case MagentaLabel:
-                LRLabel = QLatin1String("Purple");
-                break;
-        }
-
-        if (!LRLabel.isEmpty())
-        {
-            if (!setXmpTagString("Xmp.xmp.Label", LRLabel))
+            case NamespaceEntry::XMP:
             {
-                return false;
+                if (!supportXmp())
+                {
+                    continue;
+                }
+
+                if (QLatin1String(nameSpace) == QLatin1String("Xmp.xmp.Label"))
+                {
+                    // LightRoom use this XMP tags to store Color Labels name
+                    // Values are limited : see bug #358193.
+
+                    QString LRLabel;
+
+                    switch (colorId)
+                    {
+                        case BlueLabel:
+                        {
+                            LRLabel = QLatin1String("Blue");
+                            break;
+                        }
+
+                        case GreenLabel:
+                        {
+                            LRLabel = QLatin1String("Green");
+                            break;
+                        }
+
+                        case RedLabel:
+                        {
+                            LRLabel = QLatin1String("Red");
+                            break;
+                        }
+
+                        case YellowLabel:
+                        {
+                            LRLabel = QLatin1String("Yellow");
+                            break;
+                        }
+
+                        case MagentaLabel:
+                        {
+                            LRLabel = QLatin1String("Purple");
+                            break;
+                        }
+                    }
+
+                    if (!LRLabel.isEmpty())
+                    {
+                        if (!setXmpTagString(nameSpace, LRLabel))
+                        {
+                            return false;
+                        }
+                    }
+                    else
+                    {
+                        removeXmpTag(nameSpace);
+                    }
+                }
+                else
+                {
+                    if (!setXmpTagString(nameSpace, QString::number(colorId)))
+                    {
+                        return false;
+                    }
+                }
+
+                break;
             }
-        }
-        else
-        {
-            removeXmpTag("Xmp.xmp.Label");
+
+            case NamespaceEntry::EXIF:
+            {
+                if (!setExifTagString(nameSpace, QString::number(colorId)))
+                {
+                    return false;
+                }
+
+                break;
+            }
+
+            case NamespaceEntry::IPTC:
+            {
+                break;
+            }
+
+            default:
+            {
+                break;
+            }
         }
     }
 
@@ -316,9 +418,9 @@ bool DMetadata::setItemRating(int rating, const DMetadataSettingsContainer& sett
         qCDebug(DIGIKAM_METAENGINE_LOG) << "Rating value to write is out of range!";
         return false;
     }
-
-    //qCDebug(DIGIKAM_METAENGINE_LOG) << getFilePath() << " ==> Rating:" << rating;
-
+/*
+    qCDebug(DIGIKAM_METAENGINE_LOG) << getFilePath() << " ==> Rating:" << rating;
+*/
     QList<NamespaceEntry> toWrite = settings.getReadMapping(NamespaceEntry::DM_RATING_CONTAINER());
 
     if (!settings.unifyReadWrite())
@@ -326,7 +428,7 @@ bool DMetadata::setItemRating(int rating, const DMetadataSettingsContainer& sett
         toWrite = settings.getWriteMapping(NamespaceEntry::DM_RATING_CONTAINER());
     }
 
-    for (NamespaceEntry entry : toWrite)
+    for (const NamespaceEntry& entry : qAsConst(toWrite))
     {
         if (entry.isDisabled)
         {
@@ -336,9 +438,14 @@ bool DMetadata::setItemRating(int rating, const DMetadataSettingsContainer& sett
         const std::string myStr = entry.namespaceName.toStdString();
         const char* nameSpace   = myStr.data();
 
-        switch(entry.subspace)
+        switch (entry.subspace)
         {
             case NamespaceEntry::XMP:
+            {
+                if (!supportXmp())
+                {
+                    continue;
+                }
 
                 if (!setXmpTagString(nameSpace, QString::number(entry.convertRatio.at(rating))))
                 {
@@ -347,10 +454,11 @@ bool DMetadata::setItemRating(int rating, const DMetadataSettingsContainer& sett
                 }
 
                 break;
+            }
 
             case NamespaceEntry::EXIF:
-
-                if (QLatin1String(nameSpace) == QLatin1String("Exif.Image.0x4749"))
+            {
+                if (QLatin1String(nameSpace) == QLatin1String("Exif.Image.RatingPercent"))
                 {
                     // Wrapper around rating percents managed by Windows Vista.
 
@@ -359,28 +467,40 @@ bool DMetadata::setItemRating(int rating, const DMetadataSettingsContainer& sett
                     switch (rating)
                     {
                         case 0:
+                        {
                             ratePercents = 0;
                             break;
+                        }
 
                         case 1:
+                        {
                             ratePercents = 1;
                             break;
+                        }
 
                         case 2:
+                        {
                             ratePercents = 25;
                             break;
+                        }
 
                         case 3:
+                        {
                             ratePercents = 50;
                             break;
+                        }
 
                         case 4:
+                        {
                             ratePercents = 75;
                             break;
+                        }
 
                         case 5:
+                        {
                             ratePercents = 99;
                             break;
+                        }
                     }
 
                     if (!setExifTagLong(nameSpace, ratePercents))
@@ -399,10 +519,13 @@ bool DMetadata::setItemRating(int rating, const DMetadataSettingsContainer& sett
                 }
 
                 break;
+            }
 
             case NamespaceEntry::IPTC: // IPTC rating deprecated
             default:
+            {
                 break;
+            }
         }
     }
 

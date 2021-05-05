@@ -37,15 +37,17 @@ class Parser;
 
 class Highlighter : public QSyntaxHighlighter
 {
+    Q_OBJECT
 
 public:
 
-    Highlighter(QTextDocument* const document, Parser* const _parser);
-    virtual ~Highlighter();
+    Highlighter(QTextDocument* const document,
+                Parser* const _parser);
+    ~Highlighter()                           override;
 
 protected:
 
-    virtual void highlightBlock(const QString& text);
+    void highlightBlock(const QString& text) override;
 
 private:
 

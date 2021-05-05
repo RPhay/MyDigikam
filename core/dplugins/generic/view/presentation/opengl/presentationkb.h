@@ -7,7 +7,7 @@
  * Description : a presentation tool.
  *
  * Copyright (C) 2007-2009 by Valerio Fuoglio <valerio dot fuoglio at gmail dot com>
- * Copyright (C) 2012-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * Parts of this code are based on
  * smoothslidesaver by Carsten Weinhold <carsten dot weinhold at gmx dot de>
@@ -31,9 +31,9 @@
 // C++ includes
 
 #ifndef Q_CC_MSVC
-#include <cstdlib>
+#   include <cstdlib>
 #else
-#include <winsock2.h>
+#   include <winsock2.h>
 #endif
 
 // Qt includes
@@ -76,7 +76,7 @@ private:
 
 private:
 
-    // delta and scale values (begin to end) and the needed offsets
+    /// delta and scale values (begin to end) and the needed offsets
     double m_deltaX;
     double m_deltaY;
     double m_deltaScale;
@@ -117,7 +117,7 @@ public:
 
     explicit PresentationKB(PresentationContainer* const sharedData);
 
-    ~PresentationKB();
+    ~PresentationKB() override;
 
     static QStringList            effectNames();
     static QMap<QString, QString> effectNamesI18N();
@@ -154,6 +154,11 @@ private Q_SLOTS:
     void moveSlot();
     void slotMouseMoveTimeOut();
     void slotClose();
+
+private:
+
+    // Disable
+    explicit PresentationKB(QWidget*) = delete;
 
 private:
 

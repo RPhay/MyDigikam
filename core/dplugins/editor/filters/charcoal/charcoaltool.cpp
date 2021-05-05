@@ -7,7 +7,7 @@
  * Description : a digikam image editor tool to
  *               simulate charcoal drawing.
  *
- * Copyright (C) 2004-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2004-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -53,10 +53,10 @@ class Q_DECL_HIDDEN CharcoalTool::Private
 public:
 
     explicit Private()
-      : pencilInput(nullptr),
-        smoothInput(nullptr),
+      : pencilInput  (nullptr),
+        smoothInput  (nullptr),
         previewWidget(nullptr),
-        gboxSettings(nullptr)
+        gboxSettings (nullptr)
     {
     }
 
@@ -79,7 +79,7 @@ const QString CharcoalTool::Private::configSmoothAdjustmentEntry(QLatin1String("
 
 CharcoalTool::CharcoalTool(QObject* const parent)
     : EditorToolThreaded(parent),
-      d(new Private)
+      d                 (new Private)
 {
     setObjectName(QLatin1String("charcoal"));
     setToolName(i18n("Charcoal"));

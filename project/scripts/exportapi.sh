@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Copyright (c) 2013-2020, Gilles Caulier, <caulier dot gilles at gmail dot com>
+# Copyright (c) 2013-2021, Gilles Caulier, <caulier dot gilles at gmail dot com>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
@@ -9,8 +9,8 @@ ORIG_WD="`pwd`"
 API_DIR="${ORIG_WD}/../../html"
 WEBSITE_DIR="${ORIG_WD}/site"
 
-rm -fr $API_DIR
-rm -fr $WEBSITE_DIR
+rm -fr $API_DIR || true
+rm -fr $WEBSITE_DIR || true
 
 cd ${ORIG_WD}/../../ && doxygen
 cd ${ORIG_WD}
@@ -21,12 +21,16 @@ cd $WEBSITE_DIR
 
 git checkout -b dev remotes/origin/dev
 
-rm -r $WEBSITE_DIR/static/api/*
-cp -r $API_DIR/* $WEBSITE_DIR/static/api/
+cd $WEBSITE_DIR
+rm -r $WEBSITE_DIR/static/api || true
+mkdir -p $WEBSITE_DIR/static/api
+cd $API_DIR
+cp -r ./ $WEBSITE_DIR/static/api/
+cd $WEBSITE_DIR
 
 # Add new report contents in dev branch
 
-git add $WEBSITE_DIR/static/api/*
+git add $WEBSITE_DIR/static/api
 git commit . -m"update API documentation"
 git push
 

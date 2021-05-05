@@ -6,7 +6,7 @@
  * Date        : 2010-03-02
  * Description : Curves Adjust batch tool.
  *
- * Copyright (C) 2010-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2010-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -45,12 +45,12 @@ namespace DigikamBqmCurvesAdjustPlugin
 {
 
 CurvesAdjust::CurvesAdjust(QObject* const parent)
-    : BatchTool(QLatin1String("CurvesAdjust"), ColorTool, parent),
-      m_channelCB(nullptr),
+    : BatchTool     (QLatin1String("CurvesAdjust"), ColorTool, parent),
+      m_channelCB   (nullptr),
       m_settingsView(nullptr)
 {
-    setToolTitle(i18n("Curves Adjust"));
-    setToolDescription(i18n("Perform curves adjustments."));
+    setToolTitle(i18nc("@title", "Curves Adjust"));
+    setToolDescription(i18nc("@info", "Perform curves adjustments."));
     setToolIconName(QLatin1String("adjustcurves"));
 }
 
@@ -58,27 +58,32 @@ CurvesAdjust::~CurvesAdjust()
 {
 }
 
+BatchTool* CurvesAdjust::clone(QObject* const parent) const
+{
+    return new CurvesAdjust(parent);
+}
+
 void CurvesAdjust::registerSettingsWidget()
 {
     DVBox* const vbox          = new DVBox;
     DHBox* const hbox          = new DHBox(vbox);
     QLabel* const channelLabel = new QLabel(hbox);
-    channelLabel->setText(i18n("Channel:"));
+    channelLabel->setText(i18nc("@label: colcor properties", "Channel:"));
 
     m_channelCB                = new QComboBox(hbox);
-    m_channelCB->addItem(i18n("Luminosity"), QVariant(LuminosityChannel));
-    m_channelCB->addItem(i18n("Red"),        QVariant(RedChannel));
-    m_channelCB->addItem(i18n("Green"),      QVariant(GreenChannel));
-    m_channelCB->addItem(i18n("Blue"),       QVariant(BlueChannel));
-    m_channelCB->addItem(i18n("Alpha"),      QVariant(AlphaChannel));
+    m_channelCB->addItem(i18nc("@item: colcor properties", "Luminosity"), QVariant(LuminosityChannel));
+    m_channelCB->addItem(i18nc("@item: colcor properties", "Red"),        QVariant(RedChannel));
+    m_channelCB->addItem(i18nc("@item: colcor properties", "Green"),      QVariant(GreenChannel));
+    m_channelCB->addItem(i18nc("@item: colcor properties", "Blue"),       QVariant(BlueChannel));
+    m_channelCB->addItem(i18nc("@item: colcor properties", "Alpha"),      QVariant(AlphaChannel));
 
     m_settingsView             = new CurvesSettings(vbox, &m_preview);
 
     DHBox* const hbox1         = new DHBox(vbox);
 
-    QPushButton* const loadBt  = new QPushButton(i18n("Load..."), hbox1);
+    QPushButton* const loadBt  = new QPushButton(i18nc("@action: open file dialog", "Load..."), hbox1);
     loadBt->setIcon(QIcon::fromTheme(QLatin1String("document-open")));
-    loadBt->setToolTip(i18n("Load all parameters from settings text file."));
+    loadBt->setToolTip(i18nc("@info: open file dialog", "Load all parameters from settings text file."));
 
     QLabel* const load         = new QLabel(hbox1);
     load->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred);

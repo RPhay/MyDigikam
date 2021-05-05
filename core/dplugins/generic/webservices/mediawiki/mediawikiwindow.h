@@ -7,7 +7,7 @@
  * Description : a tool to export images to WikiMedia web service
  *
  * Copyright (C) 2011      by Alexandre Mendes <alex dot mendes1988 at gmail dot com>
- * Copyright (C) 2011-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2011-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2012      by Parthasarathy Gopavarapu <gparthasarathy93 at gmail dot com>
  * Copyright (C) 2013      by Peter Potrowl <peter dot potrowl at gmail dot com>
  *
@@ -30,7 +30,6 @@
 
 #include "wstooldialog.h"
 #include "dinfointerface.h"
-#include "digikam_export.h"
 
 class QCloseEvent;
 
@@ -41,14 +40,14 @@ using namespace Digikam;
 namespace DigikamGenericMediaWikiPlugin
 {
 
-class DIGIKAM_EXPORT MediaWikiWindow : public WSToolDialog
+class MediaWikiWindow : public WSToolDialog
 {
     Q_OBJECT
 
 public:
 
     explicit MediaWikiWindow(DInfoInterface* const iface, QWidget* const parent);
-    ~MediaWikiWindow();
+    ~MediaWikiWindow()                            override;
 
 public:
 
@@ -61,7 +60,10 @@ private Q_SLOTS:
     void slotProgressCanceled();
     void slotStartTransfer();
     void slotChangeUserClicked();
-    void slotDoLogin(const QString& login, const QString& pass, const QString& wikiName, const QUrl& wikiUrl);
+    void slotDoLogin(const QString& login,
+                     const QString& pass,
+                     const QString& wikiName,
+                     const QUrl& wikiUrl);
     void slotEndUpload();
     int  slotLoginHandle(KJob* loginJob);
 

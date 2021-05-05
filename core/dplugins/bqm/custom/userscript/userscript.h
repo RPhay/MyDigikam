@@ -6,7 +6,7 @@
  * Date        : 2014-05-24
  * Description : user script batch tool.
  *
- * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2014      by Hubert Law <hhclaw dot eb at gmail dot com>
  *
  * This program is free software; you can redistribute it
@@ -41,24 +41,24 @@ class UserScript : public BatchTool
 public:
 
     explicit UserScript(QObject* const parent = nullptr);
-    ~UserScript();
+    ~UserScript()                                           override;
 
-    QString outputSuffix() const;
+    QString outputSuffix()                            const override;
 
-    BatchToolSettings defaultSettings();
+    BatchToolSettings defaultSettings()                     override;
 
-    BatchTool* clone(QObject* const parent=nullptr) const { return new UserScript(parent); };
+    BatchTool* clone(QObject* const parent = nullptr) const override;
 
-    void registerSettingsWidget();
+    void registerSettingsWidget()                           override;
 
 private:
 
-    bool toolOperations();
+    bool toolOperations()                                   override;
 
 private Q_SLOTS:
 
-    void slotAssignSettings2Widget();
-    void slotSettingsChanged();
+    void slotAssignSettings2Widget()                        override;
+    void slotSettingsChanged()                              override;
 
 private:
 

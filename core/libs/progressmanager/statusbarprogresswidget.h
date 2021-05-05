@@ -6,7 +6,7 @@
  * Date        : 2012-01-13
  * Description : progress manager
  *
- * Copyright (C) 2007-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2007-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2004      by Till Adam <adam at kde dot org>
  * Copyright (C) 2004      by David Faure <faure at kde dot org>
  *
@@ -47,7 +47,7 @@ class DIGIKAM_EXPORT StatusbarProgressWidget : public QFrame
 public:
 
     StatusbarProgressWidget(ProgressView* const progressView, QWidget* const parent, bool button = true);
-    ~StatusbarProgressWidget();
+    ~StatusbarProgressWidget() override;
 
 public Q_SLOTS:
 
@@ -70,7 +70,7 @@ protected:
     void connectSingleItem();
     void activateSingleItemMode();
 
-    virtual bool eventFilter(QObject*, QEvent*) override;
+    bool eventFilter(QObject*, QEvent*) override;
 
 private:
 

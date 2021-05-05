@@ -6,7 +6,7 @@
  * Date        : 2009-11-03
  * Description : A dialog base class which can handle multiple pages.
  *
- * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2006      by Tobias Koenig <tokoe at kde dot org>
  *
  * This program is free software; you can redistribute it
@@ -58,7 +58,6 @@ class DConfigDlgModel;
 class DIGIKAM_EXPORT DConfigDlgView : public QWidget
 {
     Q_OBJECT
-    Q_ENUMS(FaceType)
     Q_PROPERTY(FaceType faceType READ faceType WRITE setFaceType)
     Q_DECLARE_PRIVATE(DConfigDlgView)
 
@@ -89,6 +88,7 @@ public:
         Tree,
         Tabbed
     };
+    Q_ENUM(FaceType)
 
 public:
 
@@ -100,7 +100,7 @@ public:
     /**
      * Destroys the page view.
      */
-    virtual ~DConfigDlgView();
+    ~DConfigDlgView() override;
 
     /**
      * Sets the @p model of the page view.

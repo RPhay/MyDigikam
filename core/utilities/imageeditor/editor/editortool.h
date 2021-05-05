@@ -6,7 +6,7 @@
  * Date        : 2008-08-20
  * Description : editor tool template class.
  *
- * Copyright (C) 2008-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2008-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -53,10 +53,10 @@ class DIGIKAM_EXPORT EditorTool : public QObject
 public:
 
     explicit EditorTool(QObject* const parent);
-    virtual ~EditorTool();
+    ~EditorTool()                               override;
 
     void setPlugin(DPluginEditor* const plugin);
-    DPluginEditor* plugin() const;
+    DPluginEditor* plugin()               const;
 
     /**
      * Called by editor tool interface to initialized tool when all is ready, through slotInit().
@@ -148,7 +148,7 @@ public:
 public:
 
     explicit EditorToolThreaded(QObject* const parent);
-    virtual ~EditorToolThreaded();
+    ~EditorToolThreaded()                                     override;
 
     /**
      * Set the small text to show in editor status progress bar during
@@ -159,7 +159,7 @@ public:
     /**
      * return the current tool rendering mode.
      */
-    RenderingMode renderingMode() const;
+    RenderingMode renderingMode()                       const;
 
 public Q_SLOTS:
 
@@ -170,13 +170,13 @@ protected:
     /**
      * Manage filter instance plugged in tool interface
      */
-    DImgThreadedFilter* filter() const;
+    DImgThreadedFilter* filter()                        const;
     void setFilter(DImgThreadedFilter* const filter);
 
     /**
      * Manage analyser instance plugged in tool interface
      */
-    DImgThreadedAnalyser* analyser() const;
+    DImgThreadedAnalyser* analyser()                    const;
     void setAnalyser(DImgThreadedAnalyser* const analyser);
 
     /**
@@ -211,10 +211,10 @@ protected Q_SLOTS:
      */
     void slotProgress(int progress);
 
-    virtual void slotInit()    override;
-    virtual void slotOk()      override;
-    virtual void slotCancel()  override;
-    virtual void slotPreview() override;
+    void slotInit()                                           override;
+    void slotOk()                                             override;
+    void slotCancel()                                         override;
+    void slotPreview()                                        override;
 
 private Q_SLOTS:
 

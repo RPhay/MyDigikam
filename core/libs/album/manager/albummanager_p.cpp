@@ -6,7 +6,7 @@
  * Date        : 2004-06-15
  * Description : Albums manager interface - private containers.
  *
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2006-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  * Copyright (C) 2015      by Mohamed_Anwer <m_dot_anwer at gmx dot com>
  *
@@ -35,7 +35,7 @@ PAlbumPath::PAlbumPath()
 
 PAlbumPath::PAlbumPath(int albumRootId, const QString& albumPath)
     : albumRootId(albumRootId),
-      albumPath(albumPath)
+      albumPath  (albumPath)
 {
 }
 
@@ -54,36 +54,37 @@ PAlbumPath::PAlbumPath(PAlbum* const album)
 
 bool PAlbumPath::operator==(const PAlbumPath& other) const
 {
-    return (other.albumRootId == albumRootId &&
-            other.albumPath   == albumPath);
+    return ((other.albumRootId == albumRootId) &&
+            (other.albumPath   == albumPath));
 }
 
 // -----------------------------------------------------------------------------------
 
 AlbumManager::Private::Private()
-    : changed(false),
-      hasPriorizedDbPath(false),
-      dbFakeConnection(false),
-      showOnlyAvailableAlbums(false),
+    : changed                 (false),
+      hasPriorizedDbPath      (false),
+      dbFakeConnection        (false),
+      showOnlyAvailableAlbums (false),
       longTimeMessageBoxResult(-1),
-      albumListJob(nullptr),
-      dateListJob(nullptr),
-      tagListJob(nullptr),
-      personListJob(nullptr),
-      albumWatch(nullptr),
-      rootPAlbum(nullptr),
-      rootTAlbum(nullptr),
-      rootDAlbum(nullptr),
-      rootSAlbum(nullptr),
-      currentlyMovingAlbum(nullptr),
-      changingDB(false),
-      scanPAlbumsTimer(nullptr),
-      scanTAlbumsTimer(nullptr),
-      scanSAlbumsTimer(nullptr),
-      scanDAlbumsTimer(nullptr),
-      updatePAlbumsTimer(nullptr),
-      albumItemCountTimer(nullptr),
-      tagItemCountTimer(nullptr)
+      askMergeMessageBoxResult(-1),
+      albumListJob            (nullptr),
+      dateListJob             (nullptr),
+      tagListJob              (nullptr),
+      personListJob           (nullptr),
+      albumWatch              (nullptr),
+      rootPAlbum              (nullptr),
+      rootTAlbum              (nullptr),
+      rootDAlbum              (nullptr),
+      rootSAlbum              (nullptr),
+      currentlyMovingAlbum    (nullptr),
+      changingDB              (false),
+      scanPAlbumsTimer        (nullptr),
+      scanTAlbumsTimer        (nullptr),
+      scanSAlbumsTimer        (nullptr),
+      scanDAlbumsTimer        (nullptr),
+      updatePAlbumsTimer      (nullptr),
+      albumItemCountTimer     (nullptr),
+      tagItemCountTimer       (nullptr)
 {
 }
 
@@ -101,8 +102,8 @@ QString AlbumManager::Private::labelForAlbumRootAlbum(const CollectionLocation& 
 
 // -----------------------------------------------------------------------------------
 
-ChangingDB::ChangingDB(AlbumManager::Private* const d)
-    : d(d)
+ChangingDB::ChangingDB(AlbumManager::Private* const dd)
+    : d(dd)
 {
     d->changingDB = true;
 }

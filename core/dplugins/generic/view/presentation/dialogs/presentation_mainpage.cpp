@@ -7,8 +7,9 @@
  * Description : a presentation tool.
  *
  * Copyright (C) 2008-2009 by Valerio Fuoglio <valerio dot fuoglio at gmail dot com>
- * Copyright (C) 2009      by Andi Clemens <andi dot clemens at googlemail dot com>
- * Copyright (C) 2012-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C)      2009 by Andi Clemens <andi dot clemens at googlemail dot com>
+ * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C)      2021 by Phuoc Khanh Le <phuockhanhnk94 at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -21,8 +22,6 @@
  * GNU General Public License for more details.
  *
  * ============================================================ */
-
-#define ICONSIZE 256
 
 #include "presentation_mainpage.h"
 
@@ -69,19 +68,23 @@ class Q_DECL_HIDDEN PresentationMainPage::Private
 public:
 
     explicit Private()
+      : sharedData        (nullptr),
+        imagesFilesListBox(nullptr),
+        ICON_SIZE         (256)
     {
-        sharedData         = nullptr;
-        imagesFilesListBox = nullptr;
     }
 
     PresentationContainer* sharedData;
     QTime                  totalTime;
-    DItemsList*           imagesFilesListBox;
+    DItemsList*            imagesFilesListBox;
+
+    const int              ICON_SIZE;
 };
 
-PresentationMainPage::PresentationMainPage(QWidget* const parent, PresentationContainer* const sharedData)
+PresentationMainPage::PresentationMainPage(QWidget* const parent,
+                                           PresentationContainer* const sharedData)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     setupUi(this);
 
@@ -103,14 +106,19 @@ PresentationMainPage::PresentationMainPage(QWidget* const parent, PresentationCo
 
     // --------------------------------------------------------
 
-    m_previewLabel->setMinimumWidth(ICONSIZE);
-    m_previewLabel->setMinimumHeight(ICONSIZE);
+    m_previewLabel->setMinimumWidth(d->ICON_SIZE);
+    m_previewLabel->setMinimumHeight(d->ICON_SIZE);
 
 #ifdef HAVE_OPENGL
+
     m_openglCheckBox->setEnabled(true);
+
 #else
+
     m_openglCheckBox->setEnabled(false);
+
 #endif
+
 }
 
 PresentationMainPage::~PresentationMainPage()
@@ -120,8 +128,11 @@ PresentationMainPage::~PresentationMainPage()
 
 void PresentationMainPage::readSettings()
 {
+
 #ifdef HAVE_OPENGL
+
     m_openglCheckBox->setChecked(d->sharedData->opengl);
+
 #endif
 
     m_delaySpinBox->setValue(d->sharedData->delay);
@@ -130,6 +141,7 @@ void PresentationMainPage::readSettings()
     m_printCommentsCheckBox->setChecked(d->sharedData->printFileComments);
     m_loopCheckBox->setChecked(d->sharedData->loop);
     m_shuffleCheckBox->setChecked(d->sharedData->shuffle);
+    m_offAutoDelayCheckBox->setChecked(d->sharedData->offAutoDelay);
 
     m_delaySpinBox->setValue(d->sharedData->useMilliseconds ? d->sharedData->delay
                                                             : d->sharedData->delay / 1000);
@@ -148,8 +160,11 @@ void PresentationMainPage::readSettings()
 
 void PresentationMainPage::saveSettings()
 {
+
 #ifdef HAVE_OPENGL
+
     d->sharedData->opengl                = m_openglCheckBox->isChecked();
+
 #endif
 
     d->sharedData->delay                 = d->sharedData->useMilliseconds ? m_delaySpinBox->value()
@@ -160,6 +175,7 @@ void PresentationMainPage::saveSettings()
     d->sharedData->printFileComments     = m_printCommentsCheckBox->isChecked();
     d->sharedData->loop                  = m_loopCheckBox->isChecked();
     d->sharedData->shuffle               = m_shuffleCheckBox->isChecked();
+    d->sharedData->offAutoDelay          = m_offAutoDelayCheckBox->isChecked();
 
     if (!m_openglCheckBox->isChecked())
     {
@@ -168,7 +184,7 @@ void PresentationMainPage::saveSettings()
         QMap<QString, QString> effectNames = PresentationWidget::effectNamesI18N();
         QMap<QString, QString>::ConstIterator it;
 
-        for (it = effectNames.constBegin(); it != effectNames.constEnd(); ++it)
+        for (it = effectNames.constBegin() ; it != effectNames.constEnd() ; ++it)
         {
             if (it.value() == m_effectsComboBox->currentText())
             {
@@ -179,7 +195,9 @@ void PresentationMainPage::saveSettings()
 
         d->sharedData->effectName = effect;
     }
+
 #ifdef HAVE_OPENGL
+
     else
     {
         QMap<QString, QString> effects;
@@ -187,24 +205,26 @@ void PresentationMainPage::saveSettings()
         QMap<QString, QString>::ConstIterator it;
 
         // Load slideshowgl effects
+
         effectNames = PresentationGL::effectNamesI18N();
 
-        for (it = effectNames.constBegin(); it != effectNames.constEnd(); ++it)
+        for (it = effectNames.constBegin() ; it != effectNames.constEnd() ; ++it)
         {
             effects.insert(it.key(), it.value());
         }
 
         // Load Ken Burns effect
+
         effectNames = PresentationKB::effectNamesI18N();
 
-        for (it = effectNames.constBegin(); it != effectNames.constEnd(); ++it)
+        for (it = effectNames.constBegin() ; it != effectNames.constEnd() ; ++it)
         {
             effects.insert(it.key(), it.value());
         }
 
         QString effect;
 
-        for (it = effects.constBegin(); it != effects.constEnd(); ++it)
+        for (it = effects.constBegin() ; it != effects.constEnd() ; ++it)
         {
             if (it.value() == m_effectsComboBox->currentText())
             {
@@ -215,7 +235,9 @@ void PresentationMainPage::saveSettings()
 
         d->sharedData->effectNameGL = effect;
     }
+
 #endif
+
 }
 
 void PresentationMainPage::showNumberImages()
@@ -226,8 +248,12 @@ void PresentationMainPage::showNumberImages()
     int transitionDuration = 2000;
 
 #ifdef HAVE_OPENGL
+
     if (m_openglCheckBox->isChecked())
+    {
         transitionDuration += 500;
+    }
+
 #endif
 
     if (numberOfImages != 0)
@@ -247,9 +273,17 @@ void PresentationMainPage::showNumberImages()
     d->totalTime = totalDuration;
 
     // Notify total time is changed
+
     emit signalTotalTimeChanged(d->totalTime);
 
-    m_label6->setText(i18np("%1 image [%2]", "%1 images [%2]", numberOfImages, totalDuration.toString()));
+    if (m_offAutoDelayCheckBox->isChecked() == false)
+    {
+        m_label6->setText(i18np("%1 image [%2]", "%1 images [%2]", numberOfImages, totalDuration.toString()));
+    }
+    else
+    {
+        m_label6->setText(i18np("%1 image", "%1 images", numberOfImages));
+    }
 }
 
 void PresentationMainPage::loadEffectNames()
@@ -261,14 +295,14 @@ void PresentationMainPage::loadEffectNames()
 
     QMap<QString, QString>::Iterator it;
 
-    for (it = effectNames.begin(); it != effectNames.end(); ++it)
+    for (it = effectNames.begin() ; it != effectNames.end() ; ++it)
     {
         effects.append(it.value());
     }
 
     m_effectsComboBox->insertItems(0, effects);
 
-    for (int i = 0; i < m_effectsComboBox->count(); ++i)
+    for (int i = 0 ; i < m_effectsComboBox->count() ; ++i)
     {
         if (effectNames[d->sharedData->effectName] == m_effectsComboBox->itemText(i))
         {
@@ -278,9 +312,21 @@ void PresentationMainPage::loadEffectNames()
     }
 }
 
+void PresentationMainPage::slotOffAutoDelay()
+{
+    m_delaySpinBox->setEnabled(!m_offAutoDelayCheckBox->isChecked());
+    m_delayLabel->setEnabled(!m_offAutoDelayCheckBox->isChecked());
+    m_openglCheckBox->setEnabled(!m_offAutoDelayCheckBox->isChecked());
+    m_openglCheckBox->setChecked(!m_offAutoDelayCheckBox->isChecked());
+    d->sharedData->advancedPage->m_useMillisecondsCheckBox->setEnabled(!m_offAutoDelayCheckBox->isChecked());
+    slotDelayChanged(0);
+}
+
 void PresentationMainPage::loadEffectNamesGL()
 {
+
 #ifdef HAVE_OPENGL
+
     m_effectsComboBox->clear();
 
     QStringList effects;
@@ -288,12 +334,14 @@ void PresentationMainPage::loadEffectNamesGL()
     QMap<QString, QString>::Iterator it;
 
     // Load slideshowgl effects
+
     effectNames = PresentationGL::effectNamesI18N();
 
     // Add Ken Burns effect
+
     effectNames.unite(PresentationKB::effectNamesI18N());
 
-    for (it = effectNames.begin(); it != effectNames.end(); ++it)
+    for (it = effectNames.begin() ; it != effectNames.end() ; ++it)
     {
         effects.append(it.value());
     }
@@ -304,7 +352,7 @@ void PresentationMainPage::loadEffectNamesGL()
 
     m_effectsComboBox->insertItems(0, effects);
 
-    for (int i = 0; i < m_effectsComboBox->count(); ++i)
+    for (int i = 0 ; i < m_effectsComboBox->count() ; ++i)
     {
         if (effectNames[d->sharedData->effectNameGL] == m_effectsComboBox->itemText(i))
         {
@@ -312,7 +360,9 @@ void PresentationMainPage::loadEffectNamesGL()
             break;
         }
     }
+
 #endif
+
 }
 
 bool PresentationMainPage::updateUrlList()
@@ -325,7 +375,9 @@ bool PresentationMainPage::updateUrlList()
         DItemsListViewItem* const item = dynamic_cast<DItemsListViewItem*>(*it);
 
         if (!item)
+        {
             continue;
+        }
 
         if (!QFile::exists(item->url().toLocalFile()))
         {
@@ -353,7 +405,9 @@ void PresentationMainPage::slotImagesFilesSelected(QTreeWidgetItem* item)
     DItemsListViewItem* const pitem = dynamic_cast<DItemsListViewItem*>(item);
 
     if (!pitem)
+    {
         return;
+    }
 
     connect(ThumbnailLoadThread::defaultThread(), SIGNAL(signalThumbnailLoaded(LoadingDescription,QPixmap)),
             this, SLOT(slotThumbnail(LoadingDescription,QPixmap)));
@@ -372,7 +426,9 @@ void PresentationMainPage::slotImagesFilesSelected(QTreeWidgetItem* item)
 void PresentationMainPage::addItems(const QList<QUrl>& fileList)
 {
     if (fileList.isEmpty())
+    {
         return;
+    }
 
     QList<QUrl> files = fileList;
 
@@ -402,9 +458,13 @@ void PresentationMainPage::slotEffectChanged()
     m_printNameCheckBox->setEnabled(!isKB);
     m_printProgressCheckBox->setEnabled(!isKB);
     m_printCommentsCheckBox->setEnabled(!isKB);
+
 #ifdef HAVE_OPENGL
+
     d->sharedData->advancedPage->m_openGlFullScale->setEnabled(!isKB && m_openglCheckBox->isChecked());
+
 #endif
+
     d->sharedData->captionPage->setEnabled((!isKB) && m_printCommentsCheckBox->isChecked());
 }
 
@@ -447,11 +507,11 @@ void PresentationMainPage::slotThumbnail(const LoadingDescription& /*desc*/, con
 {
     if (pix.isNull())
     {
-        m_previewLabel->setPixmap(QIcon::fromTheme(QLatin1String("view-preview")).pixmap(ICONSIZE, QIcon::Disabled));
+        m_previewLabel->setPixmap(QIcon::fromTheme(QLatin1String("view-preview")).pixmap(d->ICON_SIZE, QIcon::Disabled));
     }
     else
     {
-        m_previewLabel->setPixmap(pix.scaled(ICONSIZE, ICONSIZE, Qt::KeepAspectRatio));
+        m_previewLabel->setPixmap(pix.scaled(d->ICON_SIZE, d->ICON_SIZE, Qt::KeepAspectRatio));
     }
 
     disconnect(ThumbnailLoadThread::defaultThread(), nullptr,
@@ -460,7 +520,7 @@ void PresentationMainPage::slotThumbnail(const LoadingDescription& /*desc*/, con
 
 void PresentationMainPage::slotPrintCommentsToggled()
 {
-    d->sharedData->printFileComments =  m_printCommentsCheckBox->isChecked();
+    d->sharedData->printFileComments = m_printCommentsCheckBox->isChecked();
     d->sharedData->captionPage->setEnabled(m_printCommentsCheckBox->isChecked());
 }
 
@@ -468,6 +528,11 @@ void PresentationMainPage::slotImageListChanged()
 {
     showNumberImages();
     slotImagesFilesSelected(d->imagesFilesListBox->listView()->currentItem());
+}
+
+void PresentationMainPage::removeImageFromList(const QUrl& url)
+{
+    d->imagesFilesListBox->removeItemByUrl(url);
 }
 
 void PresentationMainPage::setupConnections()
@@ -483,6 +548,9 @@ void PresentationMainPage::setupConnections()
 
     connect(m_delaySpinBox, SIGNAL(valueChanged(int)),
             this, SLOT(slotDelayChanged(int)));
+
+    connect(m_offAutoDelayCheckBox, SIGNAL(toggled(bool)),
+            this, SLOT(slotOffAutoDelay()));
 
     connect(m_effectsComboBox, SIGNAL(activated(int)),
             this, SLOT(slotEffectChanged()));

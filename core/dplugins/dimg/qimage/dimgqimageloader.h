@@ -29,7 +29,6 @@
 
 #include "dimg.h"
 #include "dimgloader.h"
-#include "digikam_export.h"
 #include "digikam_config.h"
 
 using namespace Digikam;
@@ -37,23 +36,24 @@ using namespace Digikam;
 namespace DigikamQImageDImgPlugin
 {
 
-class DIGIKAM_EXPORT DImgQImageLoader : public DImgLoader
+class DImgQImageLoader : public DImgLoader
 {
 public:
 
     explicit DImgQImageLoader(DImg* const image);
-    ~DImgQImageLoader();
+    ~DImgQImageLoader()                                                    override;
 
     bool load(const QString& filePath, DImgLoaderObserver* const observer) override;
     bool save(const QString& filePath, DImgLoaderObserver* const observer) override;
 
-    bool hasAlpha()   const override;
-    bool sixteenBit() const override;
-    bool isReadOnly() const override;
+    bool hasAlpha()                                                  const override;
+    bool sixteenBit()                                                const override;
+    bool isReadOnly()                                                const override;
 
 private:
 
     bool m_hasAlpha;
+    bool m_sixteenBit;
 };
 
 } // namespace DigikamQImageDImgPlugin

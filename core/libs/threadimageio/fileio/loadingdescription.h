@@ -7,7 +7,7 @@
  * Description : image file IO threaded interface.
  *
  * Copyright (C) 2006-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2012-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -101,10 +101,7 @@ public:
 
         explicit PreviewParameters();
 
-        bool onlyPregenerate() const
-        {
-            return flags & OnlyPregenerate;
-        }
+        bool onlyPregenerate()                          const;
 
         bool operator==(const PreviewParameters& other) const;
 
@@ -129,15 +126,17 @@ public:
             colorManagement = NoColorConversion;
         }
 
-        bool needsProcessing()      const;
+    public:
+
+        bool needsProcessing()                                 const;
 
         void         setTransform(const IccTransform& transform);
-        bool         hasTransform() const;
-        IccTransform transform()    const;
+        bool         hasTransform()                            const;
+        IccTransform transform()                               const;
 
         void         setProfile(const IccProfile& profile);
-        bool         hasProfile()   const;
-        IccProfile   profile()      const;
+        bool         hasProfile()                              const;
+        IccProfile   profile()                                 const;
 
         bool operator==(const PostProcessingParameters& other) const;
 
@@ -185,62 +184,59 @@ public:
     /**
      * Return the cache key for this description
      */
-    QString             cacheKey() const;
+    QString             cacheKey()                                      const;
 
     /**
      * For some RAW images, the same cache key is not enough to say it is the correct result.
      * You must check the raw decoding settings in this case.
      */
-    bool                needCheckRawDecoding() const;
+    bool                needCheckRawDecoding()                          const;
 
     /**
      * Return all possible cache keys, starting with the best choice,
      * for which a result may be found in the cache for this description.
      * Included in the list are better quality versions, if this description is reduced.
      */
-    QStringList         lookupCacheKeys() const;
+    QStringList         lookupCacheKeys()                               const;
 
     /**
      * Returns whether this description describes a loading operation which
      * loads the image in a reduced version (quality, size etc.)
      */
-    bool                isReducedVersion() const;
+    bool                isReducedVersion()                              const;
 
     /**
      * Returns if this description will load a thumbnail
      */
-    bool                isThumbnail() const;
+    bool                isThumbnail()                                   const;
 
     /**
      * Returns if this description will load a preview
      */
-    bool                isPreviewImage() const;
+    bool                isPreviewImage()                                const;
 
     /**
      * If this referenced a thumbnail, recreate the identifier
      */
-    ThumbnailIdentifier thumbnailIdentifier() const;
+    ThumbnailIdentifier thumbnailIdentifier()                           const;
 
     /**
      * Returns whether the other loading task equals this one
      */
-    bool operator==(const LoadingDescription& other) const;
-    bool operator!=(const LoadingDescription& other) const
-    {
-        return !operator==(other);
-    }
+    bool operator==(const LoadingDescription& other)                    const;
+    bool operator!=(const LoadingDescription& other)                    const;
 
     /**
      * Returns whether the other loading task equals this one
      * ignoring parameters used to specify a reduced version.
      */
-    bool equalsIgnoreReducedVersion(const LoadingDescription& other) const;
+    bool equalsIgnoreReducedVersion(const LoadingDescription& other)    const;
 
     /**
      * Returns whether this loading task equals the other one
      * or is superior to it, if the other one is a reduced version
      */
-    bool equalsOrBetterThan(const LoadingDescription& other) const;
+    bool equalsOrBetterThan(const LoadingDescription& other)            const;
 
 public:
 

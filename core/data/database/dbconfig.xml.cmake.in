@@ -10,7 +10,7 @@
  *
  * Copyright (C)      2009 by Holger Foerster <hamsi2k at freenet dot de>
  * Copyright (C) 2007-2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2010-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2010-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C)      2018 by Mario Frank    <mario dot frank at uni minus potsdam dot de>
  *
  * This program is free software; you can redistribute it
@@ -404,7 +404,9 @@
                 <statement mode="query">INSERT INTO Tags (pid, name) VALUES( :tagPID, :tagname);</statement>
             </dbaction>
 
-            <dbaction name="DeleteTag"><statement mode="query">DELETE FROM Tags WHERE id=:tagID;</statement></dbaction>
+            <dbaction name="DeleteTag">
+                <statement mode="query">DELETE FROM Tags WHERE id=:tagID;</statement>
+            </dbaction>
 
             <dbaction name="deleteAlbumRoot">
                 <statement mode="query">DELETE FROM Albums WHERE albumRoot=:albumRoot;</statement>
@@ -548,12 +550,10 @@
 
             <!--
                 The face database file contains the tables listed below:
-                Identities:           contains a list of identities with type.
-                IdentityAttributes:   contains identity attributes as text name and UUID.
-                OpenCVLBPHRecognizer: this table currently will have only one entry, and was used with LPBH recognition algorithm (deprecated).
-                OpenCVLBPHistograms:  contains face histogram data for each identity for the LBPH recognition algorithm that was used when the training was done (deprecated).
-                FaceMatrices:         contains face matrices data for each identity for the DNN recognition algorithm that was used when the training was done.
-                Settings:             includes database version rules.
+                Identities:         contains a list of identities with type.
+                IdentityAttributes: contains identity attributes as text name and UUID.
+                FaceMatrices:       contains face matrices data for each identity for the DNN recognition algorithm that was used when the training was done.
+                Settings:           includes database version rules.
             -->
 
             <dbaction name="CreateFaceDB" mode="transaction">
@@ -572,37 +572,26 @@
                 </statement>
             </dbaction>
 
-            <dbaction name="CreateFaceDBOpenCVLBPH" mode="transaction">
-                <statement mode="plain">CREATE TABLE OpenCVLBPHRecognizer
-                    (id INTEGER PRIMARY KEY,
-                    version INTEGER,
-                    radius INTEGER,
-                    neighbors INTEGER,
-                    grid_x INTEGER,
-                    grid_y INTEGER);
-                </statement>
-                <statement mode="plain">CREATE TABLE OpenCVLBPHistograms
-                    (id INTEGER PRIMARY KEY,
-                    recognizerid INTEGER,
-                    identity INTEGER,
-                    context TEXT,
-                    type INTEGER,
-                    rows INTEGER,
-                    cols INTEGER,
-                    data BLOB);
+            <dbaction name="CreateFaceDBFaceMatrices" mode="transaction">
+                <statement mode="plain">DROP TABLE IF EXISTS FaceMatrices;</statement>
+                <statement mode="plain">CREATE TABLE FaceMatrices
+                (id INTEGER PRIMARY KEY,
+                identity INTEGER NOT NULL,
+                context TEXT,
+                embedding BLOB NOT NULL);
                 </statement>
             </dbaction>
 
-            <dbaction name="CreateFaceDBFaceMatrices" mode="transaction">
-                <statement mode="plain">CREATE TABLE FaceMatrices
+            <dbaction name="CreateFaceDBKDTree" mode="transaction">
+                <statement mode="plain">CREATE TABLE IF NOT EXISTS KDTree
                     (id INTEGER PRIMARY KEY,
-                    identity INTEGER,
-                    context TEXT,
-                    type INTEGER,
-                    rows INTEGER,
-                    cols INTEGER,
-                    data BLOB,
-                    vecdata BLOB);
+                    split_axis INTEGER NOT NULL,
+                    position INTEGER NOT NULL,
+                    max_range BLOB NOT NULL,
+                    min_range BLOB NOT NULL,
+                    parent INTEGER,
+                    left INTEGER,
+                    right INTEGER);
                 </statement>
             </dbaction>
 
@@ -802,6 +791,9 @@
                 INSERT OR REPLACE INTO Tags (id, pid, name, icon, iconkde) VALUES (:id, :pid, :name, :icon, :iconkde);
             </statement></dbaction>
 
+            <dbaction name="Migrate_Read_TagsTree"></dbaction>
+            <dbaction name="Migrate_Write_TagsTree"></dbaction>
+
             <dbaction name="Migrate_Read_ImageTags"><statement mode="query">
                 SELECT imageid, tagid FROM ImageTags
                 WHERE  imageid IN (SELECT id FROM Images);
@@ -992,6 +984,14 @@
                     END;
                 </statement>
                 <statement mode="plain">ALTER TABLE Images ADD manualOrder INTEGER;</statement>
+            </dbaction>
+
+            <dbaction name="UpdateSchemaFromV10ToV11" mode="transaction">
+                <!-- Nothing to do for SQLite -->
+            </dbaction>
+
+            <dbaction name="UpdateSchemaFromV11ToV12" mode="transaction">
+                <!-- Nothing to do for SQLite -->
             </dbaction>
 
             <dbaction name="UpdateThumbnailsDBSchemaFromV1ToV2" mode="transaction">
@@ -1243,10 +1243,14 @@
                     name LONGTEXT CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
                     icon BIGINT,
                     iconkde LONGTEXT CHARACTER SET utf8 COLLATE utf8_general_ci,
-                    lft INTEGER NOT NULL,
-                    rgt INTEGER NOT NULL,
                     CONSTRAINT Tags_Images FOREIGN KEY (icon) REFERENCES Images (id) ON DELETE SET NULL ON UPDATE CASCADE,
                     UNIQUE(pid, name(100)))
+                    ENGINE InnoDB;
+                </statement>
+                <statement mode="plain">CREATE TABLE IF NOT EXISTS TagsTree
+                    (id INTEGER NOT NULL,
+                    pid INTEGER NOT NULL,
+                    UNIQUE (id, pid))
                     ENGINE InnoDB;
                 </statement>
                 <statement mode="plain">CREATE TABLE IF NOT EXISTS ImageTags
@@ -1319,12 +1323,6 @@
                     CONSTRAINT ImageTagProperties_Tags FOREIGN KEY (tagid) REFERENCES Tags (id) ON DELETE CASCADE ON UPDATE CASCADE)
                     ENGINE InnoDB;
                 </statement>
-                <statement mode="plain">
-                    CREATE OR REPLACE VIEW TagsTree 
-                        AS
-                        SELECT id, pid
-                        FROM Tags;
-                </statement>
             </dbaction>
 
             <!-- Mysql Core Indexes -->
@@ -1381,29 +1379,42 @@
             <!-- Mysql Core Triggers -->
 
             <dbaction name="CreateTriggers" mode="transaction">
-<!-- Note move_tagstree does not exist for mysql
-                <statement mode="plain">DROP TRIGGER IF EXISTS move_tagstree;</statement>
--->
-
-                <statement mode="plain">
-                    SELECT
-                        @minLeft := IF(ISNULL(MIN(lft)), 1, MIN(lft)-1),
-                        @maxRight := IF(ISNULL(MAX(rgt)), 2, MAX(rgt)+1)
-                    FROM Tags
-                    WHERE id >= 0 AND pid >= 0;
-                </statement>
                 <statement mode="plain">SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO';</statement>
                 <statement mode="plain">
-                    REPLACE INTO Tags
-                    (id, pid, name, icon, iconkde, lft, rgt)
-                    VALUES
-                    (0, -1, '_Digikam_root_tag_', NULL, NULL, @minLeft, @maxRight);
+                    REPLACE INTO Tags (id, pid, name, icon, iconkde) VALUES (0, -1, '_Digikam_root_tag_', NULL, NULL);
                 </statement>
                 <statement mode="plain">SET SQL_MODE=@OLD_SQL_MODE;</statement>
-            </dbaction>
 
-            <dbaction name="checkIfDatabaseExists">
-                <statement mode="query">SELECT Albums.relativePath, Images.name FROM Images INNER JOIN Albums ON Albums.id=Images.album WHERE Albums.id=:albumID ORDER BY Images.name;</statement>
+                <statement mode="plain">CREATE TRIGGER insert_tagstree AFTER INSERT ON Tags FOR EACH ROW
+                    INSERT INTO TagsTree SELECT NEW.id, NEW.pid
+                     UNION SELECT NEW.id, pid FROM TagsTree WHERE id = NEW.pid;
+                </statement>
+
+                <statement mode="plain">CREATE TRIGGER delete_tagstree AFTER DELETE ON Tags FOR EACH ROW
+                    BEGIN
+                        DELETE FROM TagsTree WHERE id IN (SELECT id FROM
+                          (SELECT id FROM TagsTree WHERE pid = OLD.id) AS tmpTree1);
+                        DELETE FROM TagsTree WHERE id = OLD.id;
+                    END;
+                </statement>
+
+                <statement mode="plain">CREATE TRIGGER move_tagstree AFTER UPDATE ON Tags FOR EACH ROW
+                    BEGIN
+                        IF (NEW.pid != OLD.pid) THEN
+                            DELETE FROM TagsTree WHERE ((id = OLD.id) OR id IN (SELECT id FROM
+                              (SELECT id FROM TagsTree WHERE pid = OLD.id) AS tmpTree1))
+                             AND pid IN (SELECT pid FROM
+                              (SELECT pid FROM TagsTree WHERE id = OLD.id) AS tmpTree2);
+                            INSERT INTO TagsTree SELECT NEW.id, NEW.pid
+                             UNION SELECT NEW.id, pid FROM TagsTree
+                              WHERE id = NEW.pid
+                             UNION SELECT id, NEW.pid FROM TagsTree
+                              WHERE pid = NEW.id
+                             UNION SELECT A.id, B.pid FROM TagsTree A, TagsTree B
+                              WHERE A.pid = NEW.id AND B.id = NEW.pid;
+                        END IF;
+                    END;
+                </statement>
             </dbaction>
 
             <dbaction name="getItemURLsInAlbumByItemName">
@@ -1438,35 +1449,11 @@
             </dbaction>
 
             <dbaction name="InsertTag" mode="transaction">
-                <statement mode="query">SELECT @myLeft := lft FROM Tags WHERE id = :tagPID;</statement>
-                <statement mode="query">SELECT @myLeft := IF (@myLeft is null, 0, @myLeft);</statement>
-                <statement mode="query">UPDATE Tags SET rgt = rgt + 2 WHERE rgt > @myLeft;</statement>
-                <statement mode="query">UPDATE Tags SET lft = lft + 2 WHERE lft > @myLeft;</statement>
-                <statement mode="query">INSERT INTO Tags(name, pid, lft, rgt) VALUES(:tagname, :tagPID, @myLeft + 1, @myLeft + 2);</statement>
+                <statement mode="query">INSERT INTO Tags (pid, name) VALUES( :tagPID, :tagname);</statement>
             </dbaction>
 
             <dbaction name="DeleteTag" mode="transaction">
-                <statement mode="query">SELECT @myLeft := lft FROM Tags WHERE id = :tagID;</statement>
-                <statement mode="query">SELECT @myLeft := IF (@myLeft is null, 0, @myLeft);</statement>
-                <statement mode="query">DELETE FROM Tags WHERE id = :tagID;</statement>
-                <statement mode="query">UPDATE Tags SET rgt = rgt - 2 WHERE rgt > @myLeft;</statement>
-                <statement mode="query">UPDATE Tags SET lft = lft - 2 WHERE lft > @myLeft;</statement>
-            </dbaction>
-
-            <dbaction name="MoveTagTree" mode="transaction">
-                <statement mode="query">SELECT @myLeft := lft, @myRight := rgt, @myWidth := rgt - lft + 1
-                                        FROM Tags WHERE id = :tagID;</statement>
-                <statement mode="query">UPDATE Tags SET rgt = rgt * -1, lft = lft * -1
-                                        WHERE lft BETWEEN @myLeft AND @myRight;</statement>
-                <statement mode="query">UPDATE Tags SET rgt = rgt - @myWidth WHERE rgt > @myRight;</statement>
-                <statement mode="query">UPDATE Tags SET lft = lft - @myWidth WHERE lft > @myRight;</statement>
-                <statement mode="query">SELECT @myNewLeft := lft FROM Tags WHERE id = :newTagPID;</statement>
-                <statement mode="query">SELECT @myNewLeft := IF (@myNewLeft is null, 0, @myNewLeft);</statement>
-                <statement mode="query">UPDATE Tags SET rgt = rgt + @myWidth WHERE rgt > @myNewLeft;</statement>
-                <statement mode="query">UPDATE Tags SET lft = lft + @myWidth WHERE lft > @myNewLeft;</statement>
-                <statement mode="query">UPDATE Tags SET lft = lft * -1 - @myLeft + @myNewLeft + 1,
-                                                        rgt = rgt * -1 - @myLeft + @myNewLeft + 1
-                                        WHERE lft * -1 BETWEEN @myLeft AND @myRight;</statement>
+                <statement mode="query">DELETE FROM Tags WHERE id=:tagID;</statement>
             </dbaction>
 
             <dbaction name="deleteAlbumRoot" mode="transaction">
@@ -1488,113 +1475,62 @@
             </dbaction>
 
             <dbaction name="GetItemURLsInTagRecursive">
-                <statement mode="query">
-                    SELECT DISTINCT alb.albumRoot, alb.relativePath, img.name
-                    FROM (
-                           Images AS img
-                      JOIN Albums AS alb
-                        ON alb.id = img.album
-                      JOIN ImageTags AS ita
-                        ON ita.imageid = img.id
-                    ) JOIN (
-                      Tags As tp
-                      JOIN Tags As tc
-                        ON tc.lft BETWEEN tp.lft AND tp.rgt
-                    )
-                    ON tc.id = ita.tagID
-                    WHERE img.status = 1
-                      AND tp.id = :tagID
-                    ORDER BY img.name;
+                <statement mode="query">SELECT Albums.albumRoot, Albums.relativePath, Images.name
+                    FROM Images JOIN Albums ON Albums.id=Images.album
+                        WHERE Images.status=1 AND Images.id IN (SELECT imageid FROM ImageTags WHERE tagid=:tagID OR tagid IN (SELECT id FROM TagsTree WHERE pid=:tagID2)  );
                 </statement>
             </dbaction>
 
             <dbaction name="GetItemURLsInTag">
-                <statement mode="query">
-                    SELECT alb.albumRoot, alb.relativePath, img.name
-                    FROM Albums AS alb
-                    JOIN Images AS img
-                      ON alb.id = img.album
-                    JOIN ImageTags AS it
-                      ON it.imageid = img.id
-                    WHERE img.status = 1
-                      AND it.tagid = :tagID;
+                <statement mode="query">SELECT Albums.albumRoot, Albums.relativePath, Images.name
+                    FROM Images JOIN Albums ON Albums.id=Images.album
+                        WHERE Images.status=1 AND Images.id IN (SELECT imageid FROM ImageTags WHERE tagid=:tagID);
                 </statement>
             </dbaction>
 
             <dbaction name="getItemIDsInTagRecursive">
-                <statement mode="query">
-                    SELECT DISTINCT ita.imageid
-                    FROM (
-                           Images AS img
-                      JOIN ImageTags AS ita
-                        ON ita.imageid = img.id
-                    ) JOIN (
-                      Tags As tp
-                      JOIN Tags As tc
-                        ON tc.lft BETWEEN tp.lft AND tp.rgt
-                    )
-                    ON tc.id = ita.tagID
-                    WHERE img.status = 1
-                      AND tp.id = :tagID
-                    ORDER BY img.name;
+                <statement mode="query">SELECT imageid FROM ImageTags JOIN Images ON ImageTags.imageid=Images.id
+                    WHERE Images.status=1 AND
+                    ( tagid=:tagID
+                    OR tagid IN (SELECT id FROM TagsTree WHERE pid=:tagPID) );
                 </statement>
             </dbaction>
 
             <dbaction name="getItemIDsInTag">
                 <statement mode="query">SELECT imageid FROM ImageTags JOIN Images ON ImageTags.imageid=Images.id
-                                        WHERE Images.status=1 AND tagid=:tagID;
+                    WHERE Images.status=1 AND tagid=:tagID;
                 </statement>
             </dbaction>
 
             <dbaction name="listTagRecursive">
-                <statement mode="query">
-                    SELECT DISTINCT
-                        img.id, img.name, img.album,
-                        alb.albumRoot,
-                        inf.rating, img.category,
-                        inf.format, inf.creationDate,
-                        img.modificationDate, img.fileSize,
-                        inf.width, inf.height
-                    FROM (
-                      Images AS img
-                      JOIN ImageInformation AS inf
-                        ON img.id=inf.imageid
-                      JOIN Albums AS alb
-                        ON alb.id=img.album
-                      JOIN ImageTags AS ita
-                        ON ita.imageid = img.id
-                    ) JOIN (
-                      Tags As tp
-                      JOIN Tags As tc
-                        ON tc.lft BETWEEN tp.lft AND tp.rgt
-                    )
-                    ON tc.id = ita.tagID
-                    WHERE img.status = 1
-                      AND tp.id = :tagID
-                    ORDER BY inf.rating DESC, img.name ASC;
+                <statement mode="query">SELECT DISTINCT Images.id, Images.name, Images.album,
+                    Albums.albumRoot,
+                    ImageInformation.rating, Images.category,
+                    ImageInformation.format, ImageInformation.creationDate,
+                    Images.modificationDate, Images.fileSize,
+                    ImageInformation.width, ImageInformation.height
+                    FROM Images
+                        INNER JOIN ImageInformation ON Images.id=ImageInformation.imageid
+                        INNER JOIN Albums ON Albums.id=Images.album
+                        WHERE Images.status=1 AND Images.id IN
+                        (SELECT imageid FROM ImageTags
+                        WHERE tagid=:tagID OR tagid IN (SELECT id FROM TagsTree WHERE pid=:tagPID));
                 </statement>
             </dbaction>
 
             <dbaction name="listTag">
-                <statement mode="query">
-                    SELECT DISTINCT
-                        img.id, img.name, img.album,
-                        alb.albumRoot,
-                        inf.rating, img.category,
-                        inf.format, inf.creationDate,
-                        img.modificationDate, img.fileSize,
-                        inf.width, inf.height
-                    FROM
-                      Images AS img
-                      JOIN ImageInformation AS inf
-                        ON img.id=inf.imageid
-                      JOIN Albums AS alb
-                        ON alb.id=img.album
-                      JOIN ImageTags AS ita
-                        ON ita.imageid = img.id
-                    WHERE img.status = 1
-                      AND ita.tagID = :tagID
-                    ORDER BY inf.rating DESC, img.name ASC;
+                <statement mode="query">SELECT DISTINCT Images.id, Images.name, Images.album,
+                    Albums.albumRoot,
+                    ImageInformation.rating, Images.category,
+                    ImageInformation.format, ImageInformation.creationDate,
+                    Images.modificationDate, Images.fileSize,
+                    ImageInformation.width, ImageInformation.height
+                    FROM Images
+                        INNER JOIN ImageInformation ON Images.id=ImageInformation.imageid
+                        INNER JOIN Albums ON Albums.id=Images.album
+                        WHERE Images.status=1 AND Images.id IN
+                        (SELECT imageid FROM ImageTags
+                        WHERE tagid=:tagID );
                 </statement>
             </dbaction>
 
@@ -1699,12 +1635,10 @@
             <!-- Mysql Face Schema Database -->
             <!--
                 The face database file contains the tables listed below:
-                Identities:           contains a list of identities with type.
-                IdentityAttributes:   contains identity attributes as text name and UUID.
-                OpenCVLBPHRecognizer: this table currently will have only one entry, and was used with LPBH recognition algorithm (deprecated).
-                OpenCVLBPHistograms:  contains face histogram data for each identity for the LBPH recognition algorithm that was used when the training was done (deprecated).
-                FaceMatrices:         contains face matrices data for each identity for the DNN recognition algorithm that was used when the training was done.
-                Settings:             includes database version rules.
+                Identities:         contains a list of identities with type.
+                IdentityAttributes: contains identity attributes as text name and UUID.
+                FaceMatrices:       contains face matrices data for each identity for the DNN recognition algorithm that was used when the training was done.
+                Settings:           includes database version rules.
             -->
 
             <dbaction name="CreateFaceDB" mode="transaction">
@@ -1729,39 +1663,34 @@
                 </statement>
             </dbaction>
 
-            <dbaction name="CreateFaceDBOpenCVLBPH" mode="transaction">
-                <statement mode="plain">CREATE TABLE IF NOT EXISTS OpenCVLBPHRecognizer
+            <dbaction name="CreateFaceDBFaceMatrices" mode="transaction">
+                <statement mode="plain">SET FOREIGN_KEY_CHECKS=0;</statement>
+                <statement mode="plain">DROP TABLE IF EXISTS FaceMatrices;</statement>
+                <statement mode="plain">SET FOREIGN_KEY_CHECKS=1;</statement>
+                <statement mode="plain">CREATE TABLE FaceMatrices
                     (id INTEGER PRIMARY KEY AUTO_INCREMENT,
-                    version INTEGER,
-                    radius INTEGER,
-                    neighbors INTEGER,
-                    grid_x INTEGER,
-                    grid_y INTEGER)
-                    ENGINE InnoDB;
-                </statement>
-                <statement mode="plain">CREATE TABLE IF NOT EXISTS OpenCVLBPHistograms
-                    (id INTEGER PRIMARY KEY AUTO_INCREMENT,
-                    recognizerid INTEGER,
-                    identity INTEGER,
+                    identity INTEGER NOT NULL,
                     `context` LONGTEXT CHARACTER SET utf8 COLLATE utf8_general_ci,
-                    `type` INTEGER,
-                    `rows` INTEGER,
-                    `cols` INTEGER,
-                    `data` LONGBLOB)
+                    embedding BLOB NOT NULL,
+                    CONSTRAINT FaceEmbedding_Identities FOREIGN KEY (identity) REFERENCES Identities (id) ON DELETE CASCADE ON UPDATE CASCADE)
                     ENGINE InnoDB;
                 </statement>
             </dbaction>
 
-            <dbaction name="CreateFaceDBFaceMatrices" mode="transaction">
-                <statement mode="plain">CREATE TABLE IF NOT EXISTS FaceMatrices
+            <dbaction name="CreateFaceDBKDTree" mode="transaction">
+                <statement mode="plain">CREATE TABLE IF NOT EXISTS KDTree
                     (id INTEGER PRIMARY KEY AUTO_INCREMENT,
-                    identity INTEGER,
-                    `context` LONGTEXT CHARACTER SET utf8 COLLATE utf8_general_ci,
-                    `type` INTEGER,
-                    `rows` INTEGER,
-                    `cols` INTEGER,
-                    `data` LONGBLOB,
-                    vecdata LONGBLOB)
+                    split_axis INTEGER NOT NULL,
+                    position INTEGER NOT NULL,
+                    max_range BLOB NOT NULL,
+                    min_range BLOB NOT NULL,
+                    parent INTEGER,
+                    `left` INTEGER,
+                    `right` INTEGER,
+                    CONSTRAINT Node_position FOREIGN KEY (position) REFERENCES FaceMatrices (id) ON DELETE CASCADE ON UPDATE CASCADE,
+                    CONSTRAINT Parent_node FOREIGN KEY (parent) REFERENCES KDTree (id) ON DELETE CASCADE ON UPDATE CASCADE,
+                    CONSTRAINT Left_node FOREIGN KEY (`left`) REFERENCES KDTree (id) ON DELETE CASCADE ON UPDATE CASCADE,
+                    CONSTRAINT Right_node FOREIGN KEY (`right`) REFERENCES KDTree (id) ON DELETE CASCADE ON UPDATE CASCADE)
                     ENGINE InnoDB;
                 </statement>
             </dbaction>
@@ -1889,9 +1818,36 @@
 
             <!-- NOTE: Migrate_Cleanup_DB now it's done by the program except for cleanup prepare -->
             <dbaction name="Migrate_Cleanup_Prepare" mode="transaction">
+                <statement mode="plain">
+                    DROP PROCEDURE IF EXISTS drop_foreign_key;
+                </statement>
+                <statement mode="plain">
+                    CREATE PROCEDURE drop_foreign_key(IN tableName VARCHAR(64), IN constraintName VARCHAR(64))
+                    BEGIN
+                        IF EXISTS(
+                            SELECT * FROM information_schema.table_constraints
+                            WHERE
+                                table_schema    = DATABASE()                           AND
+                                table_name      = CONVERT(tableName USING latin1)      AND
+                                constraint_name = CONVERT(constraintName USING latin1) AND
+                                constraint_type = 'FOREIGN KEY')
+                        THEN
+                            SET @query = CONCAT(
+                                CONVERT('ALTER TABLE ' USING latin1),
+                                CONVERT(tableName USING latin1),
+                                CONVERT(' DROP FOREIGN KEY ' USING latin1),
+                                CONVERT(constraintName USING latin1),
+                                CONVERT(';'USING latin1)
+                            );
+                            PREPARE stmt FROM @query;
+                            EXECUTE stmt;
+                            DEALLOCATE PREPARE stmt;
+                        END IF;
+                    END;
+                </statement>
                 <statement mode="plain">SET FOREIGN_KEY_CHECKS=0;</statement>
-                <statement mode="plain">ALTER TABLE Albums DROP FOREIGN KEY Albums_Images;</statement>
-                <statement mode="plain">ALTER TABLE Albums DROP FOREIGN KEY Images_Albums;</statement>
+                <statement mode="plain">CALL drop_foreign_key('Albums', 'Albums_Images');</statement>
+                <statement mode="plain">CALL drop_foreign_key('Albums', 'Images_Albums');</statement>
                 <statement mode="plain">SET FOREIGN_KEY_CHECKS=1;</statement>
             </dbaction>
 
@@ -1960,8 +1916,7 @@
             </statement></dbaction>
 
             <dbaction name="Migrate_Read_TagProperties"><statement mode="query">
-                SELECT tagid, property, value FROM TagProperties
-                WHERE  imageid IN (SELECT id FROM Images);
+                SELECT tagid, property, value FROM TagProperties;
             </statement></dbaction>
             <dbaction name="Migrate_Write_TagProperties"><statement mode="query">
                 INSERT IGNORE INTO TagProperties (tagid, property, value) VALUES (:tagid, :property, :value);
@@ -1995,12 +1950,15 @@
                 SELECT id, pid, name, CASE WHEN icon = 0 THEN NULL ELSE icon END AS icon, iconkde FROM Tags WHERE id != 0;
             </statement></dbaction>
             <dbaction name="Migrate_Write_Tags" mode="transaction">
-                <statement mode="query">SELECT @myLeft := lft FROM Tags WHERE id = :pid;</statement>
-                <statement mode="query">SELECT @myLeft := IF (@myLeft is null, 0, @myLeft);</statement>
-                <statement mode="query">UPDATE Tags SET rgt = rgt + 2 WHERE rgt > @myLeft;</statement>
-                <statement mode="query">UPDATE Tags SET lft = lft + 2 WHERE lft > @myLeft;</statement>
-                <statement mode="query">REPLACE INTO Tags(id, pid, name, icon, iconkde, lft, rgt) VALUES(:id, :pid, :name, :icon, :iconkde, @myLeft + 1, @myLeft + 2);</statement>
+                <statement mode="plain">SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO';</statement>
+                <statement mode="query">
+                    REPLACE INTO Tags (id, pid, name, icon, iconkde) VALUES (:id, :pid, :name, :icon, :iconkde);
+                </statement>
+                <statement mode="plain">SET SQL_MODE=@OLD_SQL_MODE;</statement>
             </dbaction>
+
+            <dbaction name="Migrate_Read_TagsTree"></dbaction>
+            <dbaction name="Migrate_Write_TagsTree"></dbaction>
 
             <dbaction name="Migrate_Read_ImageTags"><statement mode="query">
                 SELECT imageid, tagid FROM ImageTags
@@ -2239,7 +2197,7 @@
                     CREATE PROCEDURE drop_index_if_exists(in tableName varchar(64), in indexName varchar(64))
                     BEGIN
                         IF((SELECT COUNT(*) AS index_exists FROM information_schema.statistics
-                            WHERE TABLE_SCHEMA = DATABASE() and table_name = CONVERT(tableName USING latin1) AND index_name = CONVERT(indexName USING latin1)) > 0)
+                            WHERE TABLE_SCHEMA = DATABASE() AND table_name = CONVERT(tableName USING latin1) AND index_name = CONVERT(indexName USING latin1)) > 0)
                         THEN
                             SET @query = CONCAT(
                                 CONVERT('DROP INDEX ' USING latin1),
@@ -2548,6 +2506,114 @@
             <dbaction name="UpdateSchemaFromV9ToV10" mode="transaction">
                 <statement mode="plain">DROP TABLE IF EXISTS ImageHaarMatrix;</statement>
                 <statement mode="plain">ALTER TABLE Images ADD manualOrder INTEGER;</statement>
+            </dbaction>
+
+            <dbaction name="UpdateSchemaFromV10ToV11" mode="transaction">
+                <statement mode="plain">DROP TRIGGER IF EXISTS temp_insert_tagstree;</statement>
+                <statement mode="plain">DROP TRIGGER IF EXISTS insert_tagstree;</statement>
+                <statement mode="plain">DROP TRIGGER IF EXISTS delete_tagstree;</statement>
+                <statement mode="plain">DROP TRIGGER IF EXISTS move_tagstree;</statement>
+                <statement mode="plain">DROP TABLE IF EXISTS temp_Tags;</statement>
+                <statement mode="plain">DROP TABLE IF EXISTS TagsTree;</statement>
+                <statement mode="plain">DROP VIEW IF EXISTS TagsTree;</statement>
+
+                <statement mode="plain">CREATE TABLE IF NOT EXISTS temp_Tags
+                    (id INTEGER,
+                    pid INTEGER,
+                    name LONGTEXT CHARACTER SET utf8 COLLATE utf8_general_ci,
+                    icon BIGINT,
+                    iconkde LONGTEXT CHARACTER SET utf8 COLLATE utf8_general_ci,
+                    lft INTEGER,
+                    rgt INTEGER)
+                    ENGINE InnoDB;
+                </statement>
+
+                <statement mode="plain">CREATE TABLE IF NOT EXISTS TagsTree
+                    (id INTEGER NOT NULL,
+                    pid INTEGER NOT NULL,
+                    UNIQUE (id, pid))
+                    ENGINE InnoDB;
+                </statement>
+
+                <statement mode="plain">CREATE TRIGGER temp_insert_tagstree AFTER INSERT ON temp_Tags
+                    FOR EACH ROW INSERT INTO TagsTree SELECT NEW.id, NEW.pid
+                     UNION SELECT NEW.id, pid FROM TagsTree WHERE id = NEW.pid;
+                </statement>
+
+                <statement mode="plain">REPLACE INTO temp_Tags SELECT * FROM Tags WHERE id != 0;</statement>
+                <statement mode="plain">DROP TRIGGER IF EXISTS temp_insert_tagstree;</statement>
+                <statement mode="plain">DROP TABLE IF EXISTS temp_Tags;</statement>
+
+                <statement mode="plain">CREATE TRIGGER insert_tagstree AFTER INSERT ON Tags FOR EACH ROW
+                    INSERT INTO TagsTree SELECT NEW.id, NEW.pid
+                     UNION SELECT NEW.id, pid FROM TagsTree WHERE id = NEW.pid;
+                </statement>
+
+                <statement mode="plain">CREATE TRIGGER delete_tagstree AFTER DELETE ON Tags FOR EACH ROW
+                    BEGIN
+                        DELETE FROM TagsTree WHERE id IN (SELECT id FROM
+                          (SELECT id FROM TagsTree WHERE pid = OLD.id) AS tmpTree1);
+                        DELETE FROM TagsTree WHERE id = OLD.id;
+                    END;
+                </statement>
+
+                <statement mode="plain">CREATE TRIGGER move_tagstree AFTER UPDATE ON Tags FOR EACH ROW
+                    BEGIN
+                        IF (NEW.pid != OLD.pid) THEN
+                            DELETE FROM TagsTree WHERE ((id = OLD.id) OR id IN (SELECT id FROM
+                              (SELECT id FROM TagsTree WHERE pid = OLD.id) AS tmpTree1))
+                             AND pid IN (SELECT pid FROM
+                              (SELECT pid FROM TagsTree WHERE id = OLD.id) AS tmpTree2);
+                            INSERT INTO TagsTree SELECT NEW.id, NEW.pid
+                             UNION SELECT NEW.id, pid FROM TagsTree
+                              WHERE id = NEW.pid
+                             UNION SELECT id, NEW.pid FROM TagsTree
+                              WHERE pid = NEW.id
+                             UNION SELECT A.id, B.pid FROM TagsTree A, TagsTree B
+                              WHERE A.pid = NEW.id AND B.id = NEW.pid;
+                        END IF;
+                    END;
+                </statement>
+
+                <statement mode="plain">ALTER TABLE Tags DROP COLUMN lft;</statement>
+                <statement mode="plain">ALTER TABLE Tags DROP COLUMN rgt;</statement>
+            </dbaction>
+
+            <dbaction name="UpdateSchemaFromV11ToV12" mode="transaction">
+                <statement mode="plain">DROP TRIGGER IF EXISTS insert_tagstree;</statement>
+                <statement mode="plain">DROP TRIGGER IF EXISTS delete_tagstree;</statement>
+                <statement mode="plain">DROP TRIGGER IF EXISTS move_tagstree;</statement>
+
+                <statement mode="plain">CREATE TRIGGER insert_tagstree AFTER INSERT ON Tags FOR EACH ROW
+                    INSERT INTO TagsTree SELECT NEW.id, NEW.pid
+                     UNION SELECT NEW.id, pid FROM TagsTree WHERE id = NEW.pid;
+                </statement>
+
+                <statement mode="plain">CREATE TRIGGER delete_tagstree AFTER DELETE ON Tags FOR EACH ROW
+                    BEGIN
+                        DELETE FROM TagsTree WHERE id IN (SELECT id FROM
+                          (SELECT id FROM TagsTree WHERE pid = OLD.id) AS tmpTree1);
+                        DELETE FROM TagsTree WHERE id = OLD.id;
+                    END;
+                </statement>
+
+                <statement mode="plain">CREATE TRIGGER move_tagstree AFTER UPDATE ON Tags FOR EACH ROW
+                    BEGIN
+                        IF (NEW.pid != OLD.pid) THEN
+                            DELETE FROM TagsTree WHERE ((id = OLD.id) OR id IN (SELECT id FROM
+                              (SELECT id FROM TagsTree WHERE pid = OLD.id) AS tmpTree1))
+                             AND pid IN (SELECT pid FROM
+                              (SELECT pid FROM TagsTree WHERE id = OLD.id) AS tmpTree2);
+                            INSERT INTO TagsTree SELECT NEW.id, NEW.pid
+                             UNION SELECT NEW.id, pid FROM TagsTree
+                              WHERE id = NEW.pid
+                             UNION SELECT id, NEW.pid FROM TagsTree
+                              WHERE pid = NEW.id
+                             UNION SELECT A.id, B.pid FROM TagsTree A, TagsTree B
+                              WHERE A.pid = NEW.id AND B.id = NEW.pid;
+                        END IF;
+                    END;
+                </statement>
             </dbaction>
 
             <dbaction name="UpdateThumbnailsDBSchemaFromV1ToV2" mode="transaction">

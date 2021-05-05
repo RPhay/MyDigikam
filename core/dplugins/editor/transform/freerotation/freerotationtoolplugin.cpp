@@ -6,7 +6,7 @@
  * Date        : 2018-07-30
  * Description : image editor plugin to rotate an image.
  *
- * Copyright (C) 2018-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2018-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -29,6 +29,8 @@
 // KDE includes
 
 #include <klocalizedstring.h>
+#include <kactioncollection.h>
+#include <kxmlguiwindow.h>
 
 // Local includes
 
@@ -49,7 +51,7 @@ FreeRotationToolPlugin::~FreeRotationToolPlugin()
 
 QString FreeRotationToolPlugin::name() const
 {
-    return i18n("Free Rotation");
+    return i18nc("@title", "Free Rotation");
 }
 
 QString FreeRotationToolPlugin::iid() const
@@ -64,12 +66,12 @@ QIcon FreeRotationToolPlugin::icon() const
 
 QString FreeRotationToolPlugin::description() const
 {
-    return i18n("A tool to rotate an image");
+    return i18nc("@info", "A tool to rotate an image");
 }
 
 QString FreeRotationToolPlugin::details() const
 {
-    return i18n("<p>This Image Editor tool can rotate an image with an arbitrary angle.</p>");
+    return i18nc("@info", "This Image Editor tool can rotate an image with an arbitrary angle.");
 }
 
 QList<DPluginAuthor> FreeRotationToolPlugin::authors() const
@@ -80,7 +82,7 @@ QList<DPluginAuthor> FreeRotationToolPlugin::authors() const
                              QString::fromUtf8("(C) 2009-2010"))
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2004-2020"))
+                             QString::fromUtf8("(C) 2004-2021"))
             ;
 }
 
@@ -97,26 +99,38 @@ void FreeRotationToolPlugin::setup(QObject* const parent)
 
     addAction(ac);
 
-    QAction* const point1Action = new QAction(i18n("Free Rotation Set Point 1"), parent);
+    QAction* const point1Action = new QAction(i18nc("@action", "Free Rotation Set Point 1"), parent);
     point1Action->setObjectName(QLatin1String("editorwindow_transform_freerotation_point1"));
-    point1Action->setShortcut(Qt::CTRL + Qt::SHIFT + Qt::Key_1);
 
     connect(point1Action, SIGNAL(triggered(bool)),
             this, SIGNAL(signalPoint1Action()));
 
-    QAction* const point2Action = new QAction(i18n("Free Rotation Set Point 2"), parent);
+    QAction* const point2Action = new QAction(i18nc("@action", "Free Rotation Set Point 2"), parent);
     point2Action->setObjectName(QLatin1String("editorwindow_transform_freerotation_point2"));
-    point2Action->setShortcut(Qt::CTRL + Qt::SHIFT + Qt::Key_2);
 
     connect(point2Action, SIGNAL(triggered(bool)),
             this, SIGNAL(signalPoint2Action()));
 
-    QAction* const autoAdjustAction = new QAction(i18n("Free Rotation Auto Adjust"), parent);
+    QAction* const autoAdjustAction = new QAction(i18nc("@action", "Free Rotation Auto Adjust"), parent);
     autoAdjustAction->setObjectName(QLatin1String("editorwindow_transform_freerotation_autoadjust"));
-    autoAdjustAction->setShortcut(Qt::CTRL + Qt::SHIFT + Qt::Key_R);
-    
+
     connect(autoAdjustAction, SIGNAL(triggered(bool)),
             this, SIGNAL(signalAutoAdjustAction()));
+
+    KXmlGuiWindow* const gui = dynamic_cast<KXmlGuiWindow*>(parent);
+
+    if (gui)
+    {
+        KActionCollection* const collection = gui->actionCollection();
+
+        collection->addAction(point1Action->objectName(),     point1Action);
+        collection->addAction(point2Action->objectName(),     point2Action);
+        collection->addAction(autoAdjustAction->objectName(), autoAdjustAction);
+
+        collection->setDefaultShortcut(point1Action,     Qt::CTRL + Qt::SHIFT + Qt::Key_1);
+        collection->setDefaultShortcut(point2Action,     Qt::CTRL + Qt::SHIFT + Qt::Key_2);
+        collection->setDefaultShortcut(autoAdjustAction, Qt::CTRL + Qt::SHIFT + Qt::Key_R);
+    }
 }
 
 void FreeRotationToolPlugin::slotFreeRotation()
@@ -127,7 +141,7 @@ void FreeRotationToolPlugin::slotFreeRotation()
     {
         FreeRotationTool* const tool = new FreeRotationTool(editor);
         tool->setPlugin(this);
-        
+
         connect(this, SIGNAL(signalPoint1Action()),
                 tool, SLOT(slotAutoAdjustP1Clicked()));
 
@@ -136,7 +150,7 @@ void FreeRotationToolPlugin::slotFreeRotation()
 
         connect(this, SIGNAL(signalAutoAdjustAction()),
                 tool, SLOT(slotAutoAdjustClicked()));
-        
+
         editor->loadTool(tool);
     }
 }

@@ -1,0 +1,5 @@
+https://github.com/strukturag/libheif
+tag v1.6.2
+*fuzzer* files removed
+heif_emscripten.h removed
+heif_version.h.in not updated and heif version definitions patched in ../CMakeLists.txt

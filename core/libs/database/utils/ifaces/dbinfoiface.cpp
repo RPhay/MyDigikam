@@ -6,7 +6,8 @@
  * Date        : 2017-05-06
  * Description : interface to database information for shared tools.
  *
- * Copyright (C) 2017-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2017-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2019-2020 by Minh Nghia Duong <minhnghiaduong997 at gmail dot com>
  * Copyright (C) 2017      by Mario Frank <mario dot frank at uni minus potsdam dot de>
  *
  * This program is free software; you can redistribute it
@@ -38,6 +39,7 @@
 #include "albummanager.h"
 #include "albumfiltermodel.h"
 #include "albumselectwidget.h"
+#include "albumparser.h"
 #include "coredb.h"
 #include "collectionmanager.h"
 #include "coredbnamefilter.h"
@@ -56,6 +58,8 @@
 #include "itemlister.h"
 #include "itemlisterreceiver.h"
 #include "dio.h"
+#include "fileactionmngr.h"
+#include "tagsactionmngr.h"
 
 #ifdef HAVE_MARBLE
 #   include "itemgps.h"
@@ -69,12 +73,12 @@ class Q_DECL_HIDDEN DBInfoIface::Private
 public:
 
     explicit Private()
-      : albumManager(AlbumManager::instance()),
-        albumsChooser(nullptr),
-        albumSelector(nullptr),
-        operationType(ApplicationSettings::Unspecified),
+      : albumManager    (AlbumManager::instance()),
+        albumsChooser   (nullptr),
+        albumSelector   (nullptr),
+        operationType   (ApplicationSettings::Unspecified),
         withGroupedIsSet(false),
-        withGrouped(false)
+        withGrouped     (false)
     {
     }
 
@@ -90,7 +94,8 @@ public:
 
 public:
 
-    /** get the images from the Physical album in database and return the items found.
+    /**
+     * get the images from the Physical album in database and return the items found.
      */
     QList<QUrl> imagesFromPAlbum(PAlbum* const album) const
     {
@@ -102,21 +107,30 @@ public:
         {
             default:
             case ItemSortSettings::SortByFileName:
+            {
                 sortOrder = CoreDB::ByItemName;
                 break;
+            }
 
             case ItemSortSettings::SortByFilePath:
+            {
                 sortOrder = CoreDB::ByItemPath;
                 break;
+            }
 
             case ItemSortSettings::SortByCreationDate:
+            {
                 sortOrder = CoreDB::ByItemDate;
                 break;
+            }
 
             case ItemSortSettings::SortByRating:
+            {
                 sortOrder = CoreDB::ByItemRating;
                 break;
-                // ByISize not supported
+            }
+
+            // NOTE: ByISize not supported
         }
 
         QStringList list = CoreDbAccess().db()->getItemURLsInAlbum(album->id(), sortOrder);
@@ -134,7 +148,8 @@ public:
         return urlList;
     }
 
-    /** get the images from the Tags album in database and return the items found.
+    /**
+     * get the images from the Tags album in database and return the items found.
      */
     QList<QUrl> imagesFromTAlbum(TAlbum* const album) const
     {
@@ -153,7 +168,8 @@ public:
         return urlList;
     }
 
-    /** get the images from the search album in database and return the items found.
+    /**
+     * get the images from the search album in database and return the items found.
      */
     QList<QUrl> imagesFromSAlbum(SAlbum* const album) const
     {
@@ -163,10 +179,12 @@ public:
         if (album->isDuplicatesSearch())
         {
             // duplicates search album -> get the id list from the query
+
             SearchXmlReader reader(album->query());
             reader.readToFirstField();
 
             // Get the defined image ids.
+
             QList<int> list;
             list << reader.valueToIntList();
 
@@ -177,6 +195,7 @@ public:
                 {
                     // if the image is visible, i.e. existent and not deleted,
                     // add the url if the name filter matches
+
                     QUrl imageUrl = imageInfo.fileUrl();
 /*
                     qCDebug(DIGIKAM_GENERAL_LOG) << "Duplicates search Image url "
@@ -192,6 +211,7 @@ public:
         else
         {
             // If we do not have a duplicates search, we use the image lister to get the images.
+
             ItemLister lister;
             lister.setListOnlyAvailable(true);
 
@@ -209,6 +229,7 @@ public:
             if (!receiver.hasError)
             {
                 // if there were no error, fetch and process the results.
+
                 foreach (const ItemListerRecord &record, receiver.records)
                 {
                     ItemInfo imageInfo(record);
@@ -228,7 +249,8 @@ public:
         return urlList;
     }
 
-    /** Remove grouped images if user chose/chooses to.
+    /**
+     * Remove grouped images if user chose/chooses to.
      */
     QList<QUrl> resolveGroupsFromAlbums(const QList<QUrl>& urlList)
     {
@@ -281,11 +303,16 @@ public:
 DBInfoIface::DBInfoIface(QObject* const parent, const QList<QUrl>& lst,
                          const ApplicationSettings::OperationType type)
     : DInfoInterface(parent),
-      d(new Private)
+      d             (new Private)
 {
     setObjectName(QLatin1String("DBInfoIface"));
     d->itemUrls      = lst;
     d->operationType = type;
+
+    // forward signal to DPluginAction of Digikam
+
+    connect(TagsActionMngr::defaultManager(), SIGNAL(signalShortcutPressed(QString,int)),
+            this, SIGNAL(signalShortcutPressed(QString,int)));
 }
 
 DBInfoIface::~DBInfoIface()
@@ -313,10 +340,26 @@ void DBInfoIface::slotDateTimeForUrl(const QUrl& url, const QDateTime& dt, bool 
 void DBInfoIface::slotMetadataChangedForUrl(const QUrl& url)
 {
     // Refresh Database with new metadata from file.
+
     CollectionScanner scanner;
 
     scanner.scanFile(url.toLocalFile(), CollectionScanner::Rescan);
     ItemAttributesWatch::instance()->fileMetadataChanged(url);
+}
+
+void DBInfoIface::parseAlbumItemsRecursive()
+{
+    Album* const currAlbum = d->albumManager->currentAlbums().constFirst();
+
+    if (currAlbum)
+    {
+        AlbumParser* const parser = new AlbumParser(currAlbum);
+
+        connect(parser, SIGNAL(signalComplete(QList<QUrl>)),
+                this, SIGNAL(signalAlbumItemsRecursiveCompleted(QList<QUrl>)));
+
+        parser->run();
+    }
 }
 
 QList<QUrl> DBInfoIface::currentAlbumItems() const
@@ -331,12 +374,12 @@ QList<QUrl> DBInfoIface::currentAlbumItems() const
         return QList<QUrl>();
     }
 
-    Album* const currAlbum = d->albumManager->currentAlbums().first();
-    QList<QUrl> imageList  = d->resolveGroupsFromAlbums(albumItems(currAlbum));
+    QList<QUrl> imageList = DigikamApp::instance()->view()->allUrls(d->includeGroupedFromSelected());
 
     if (imageList.isEmpty())
     {
-        imageList = DigikamApp::instance()->view()->allUrls(d->includeGroupedFromSelected());
+        Album* const currAlbum = d->albumManager->currentAlbums().constFirst();
+        imageList              = d->resolveGroupsFromAlbums(albumItems(currAlbum));
     }
 
     return imageList;
@@ -358,10 +401,11 @@ QList<QUrl> DBInfoIface::allAlbumItems() const
 
     const AlbumList palbumList = d->albumManager->allPAlbums();
 
-    for (AlbumList::ConstIterator it = palbumList.constBegin();
-         it != palbumList.constEnd(); ++it)
+    for (AlbumList::ConstIterator it = palbumList.constBegin() ;
+         it != palbumList.constEnd() ; ++it)
     {
         // don't add the root album
+
         if ((*it)->isRoot())
         {
             continue;
@@ -410,46 +454,51 @@ DBInfoIface::DInfoMap DBInfoIface::itemInfo(const QUrl& url) const
 
     if (!info.isNull())
     {
-        map.insert(QLatin1String("name"),        info.name());
-        map.insert(QLatin1String("title"),       info.title());
-        map.insert(QLatin1String("comment"),     info.comment());
-        map.insert(QLatin1String("orientation"), info.orientation());
-        map.insert(QLatin1String("datetime"),    info.dateTime());
-        map.insert(QLatin1String("rating"),      info.rating());
-        map.insert(QLatin1String("colorlabel"),  info.colorLabel());
-        map.insert(QLatin1String("picklabel"),   info.pickLabel());
-        map.insert(QLatin1String("filesize"),    info.fileSize());
-        map.insert(QLatin1String("dimensions"),  info.dimensions());
+        map.insert(QLatin1String("name"),            info.name());
+        map.insert(QLatin1String("title"),           info.title());
+        map.insert(QLatin1String("comment"),         info.comment());
+        map.insert(QLatin1String("orientation"),     info.orientation());
+        map.insert(QLatin1String("datetime"),        info.dateTime());
+        map.insert(QLatin1String("rating"),          info.rating());
+        map.insert(QLatin1String("colorlabel"),      info.colorLabel());
+        map.insert(QLatin1String("picklabel"),       info.pickLabel());
+        map.insert(QLatin1String("filesize"),        info.fileSize());
+        map.insert(QLatin1String("dimensions"),      info.dimensions());
 
         // Get digiKam Tags Path list of picture from database.
         // Ex.: "City/Paris/Monuments/Notre Dame"
-        QList<int> tagIds    = info.tagIds();
-        QStringList tagspath = AlbumManager::instance()->tagPaths(tagIds, false);
-        map.insert(QLatin1String("tagspath"),    tagspath);
+
+        QList<int> tagIds            = info.tagIds();
+        QStringList tagspath         = AlbumManager::instance()->tagPaths(tagIds, false);
+        map.insert(QLatin1String("tagspath"),        tagspath);
 
         // Get digiKam Tags name (keywords) list of picture from database.
         // Ex.: "Notre Dame"
-        QStringList tags     = AlbumManager::instance()->tagNames(tagIds);
-        map.insert(QLatin1String("keywords"),    tags);
+
+        QStringList tags             = AlbumManager::instance()->tagNames(tagIds);
+        map.insert(QLatin1String("keywords"),        tags);
 
         // Get GPS location of picture from database.
-        ItemPosition pos    = info.imagePosition();
+
+        ItemPosition pos             = info.imagePosition();
 
         if (!pos.isEmpty())
         {
-            map.insert(QLatin1String("latitude"),  pos.latitudeNumber());
-            map.insert(QLatin1String("longitude"), pos.longitudeNumber());
-            map.insert(QLatin1String("altitude"),  pos.altitude());
+            map.insert(QLatin1String("latitude"),    pos.latitudeNumber());
+            map.insert(QLatin1String("longitude"),   pos.longitudeNumber());
+            map.insert(QLatin1String("altitude"),    pos.altitude());
         }
 
         // Get Copyright information of picture from database.
-        ItemCopyright rights        = info.imageCopyright();
-        map.insert(QLatin1String("creators"),     rights.creator());
-        map.insert(QLatin1String("credit"),       rights.credit());
-        map.insert(QLatin1String("rights"),       rights.rights());
-        map.insert(QLatin1String("source"),       rights.source());
+
+        ItemCopyright rights         = info.imageCopyright();
+        map.insert(QLatin1String("creators"),        rights.creator());
+        map.insert(QLatin1String("credit"),          rights.credit());
+        map.insert(QLatin1String("rights"),          rights.rights());
+        map.insert(QLatin1String("source"),          rights.source());
 
         PhotoInfoContainer photoInfo = info.photoInfoContainer();
+        map.insert(QLatin1String("lens"),            photoInfo.lens);
         map.insert(QLatin1String("make"),            photoInfo.make);
         map.insert(QLatin1String("model"),           photoInfo.model);
         map.insert(QLatin1String("exposuretime"),    photoInfo.exposureTime);
@@ -459,15 +508,15 @@ DBInfoIface::DInfoMap DBInfoIface::itemInfo(const QUrl& url) const
         map.insert(QLatin1String("focalLength35mm"), photoInfo.focalLength35mm);
 
         // TODO: add more video metadata as needed
+
         VideoInfoContainer videoInfo = info.videoInfoContainer();
-        map.insert(QLatin1String("videocodec"),   videoInfo.videoCodec);
+        map.insert(QLatin1String("videocodec"),      videoInfo.videoCodec);
 
         qCDebug(DIGIKAM_GENERAL_LOG) << "Database Info populated for" << url;
     }
     else
     {
         qCDebug(DIGIKAM_GENERAL_LOG) << "Database Info is NULL for" << url;
-
     }
 
     return map;
@@ -500,6 +549,22 @@ void DBInfoIface::setItemInfo(const QUrl& url, const DInfoMap& map) const
     {
         info.setPickLabel(map[QLatin1String("picklabel")].toInt());
         keys.removeAll(QLatin1String("picklabel"));
+    }
+
+    // NOTE: For now tag doesn't really exist anywhere else apart from digikam therefore it's not really necessary to implement accessor method in InfoIface
+
+    if  (map.contains(QLatin1String("tag")))
+    {
+        int tagID = map[QLatin1String("tag")].toInt();
+
+        if (!info.tagIds().contains(tagID))
+        {
+            FileActionMngr::instance()->assignTag(info, tagID);
+        }
+        else
+        {
+            FileActionMngr::instance()->removeTag(info, tagID);
+        }
     }
 
     if (!keys.isEmpty())
@@ -608,7 +673,9 @@ DBInfoIface::DAlbumIDs DBInfoIface::albumChooserItems() const
     foreach (Album* const a, lst)
     {
         if (a)
+        {
             ids << a->globalID();
+        }
     }
 
     return ids;
@@ -655,7 +722,9 @@ QUrl DBInfoIface::defaultUploadUrl() const
     QStringList pics = QStandardPaths::standardLocations(QStandardPaths::PicturesLocation);
 
     if (!pics.isEmpty())
+    {
         place = QUrl::fromLocalFile(pics.first());
+    }
 
     Album* const album = AlbumManager::instance()->currentAlbums().first();
 
@@ -692,6 +761,7 @@ QAbstractItemModel* DBInfoIface::tagFilterModel()
 }
 
 #ifdef HAVE_MARBLE
+
 QList<GPSItemContainer*> DBInfoIface::currentGPSItems() const
 {
     QList<GPSItemContainer*> items;
@@ -704,6 +774,27 @@ QList<GPSItemContainer*> DBInfoIface::currentGPSItems() const
 
     return items;
 }
+
 #endif
+
+QMap<QString, QString> DBInfoIface::passShortcutActionsToWidget(QWidget* const wdg) const
+{
+    TagsActionMngr::defaultManager()->registerActionsToWidget(wdg);
+
+    QMap<QString, QString> shortcutPrefixes;
+    shortcutPrefixes.insert(QLatin1String("rating"),     TagsActionMngr::defaultManager()->ratingShortcutPrefix());
+    shortcutPrefixes.insert(QLatin1String("tag"),        TagsActionMngr::defaultManager()->tagShortcutPrefix());
+    shortcutPrefixes.insert(QLatin1String("picklabel"),  TagsActionMngr::defaultManager()->pickShortcutPrefix());
+    shortcutPrefixes.insert(QLatin1String("colorlabel"), TagsActionMngr::defaultManager()->colorShortcutPrefix());
+
+    return shortcutPrefixes;
+}
+
+void DBInfoIface::deleteImage(const QUrl& url)
+{
+    ItemInfo info = ItemInfo::fromUrl(url);
+
+    DIO::del(info, true);
+}
 
 } // namespace Digikam

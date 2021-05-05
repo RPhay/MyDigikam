@@ -6,7 +6,7 @@
  * Date        : 2008-07-23
  * Description : QGraphicsRectItem wrapper for FacesEngine Demo
  *
- * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C)      2008 by Adrien Bustany <madcat at mymadcat dot com>
  * Copyright (C)      2010 by Aditya Bhatt <adityabhatt1991 at gmail dot com>
  *
@@ -49,7 +49,9 @@ public:
     FancyRect(qreal x, qreal y, qreal w, qreal h, QGraphicsItem* const parent = nullptr);
     FancyRect(QGraphicsRectItem* const other, QGraphicsItem* const parent);
 
-    void paint(QPainter* painter, const QStyleOptionGraphicsItem* option, QWidget* widget = nullptr);
+public:
+
+    void paint(QPainter* painter, const QStyleOptionGraphicsItem* option, QWidget* widget = nullptr) override;
 };
 
 } // namespace FaceEngineDemo

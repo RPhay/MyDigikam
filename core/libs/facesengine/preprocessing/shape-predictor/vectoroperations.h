@@ -7,7 +7,7 @@
  * Description : Vector operations methods for red eyes detection.
  *
  * Copyright (C) 2016      by Omar Amin <Omar dot moh dot amin at gmail dot com>
- * Copyright (C) 2016-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2016-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -29,6 +29,10 @@
 
 #include <vector>
 
+// Qt includes
+
+#include <QtGlobal>
+
 namespace Digikam
 {
 
@@ -48,7 +52,7 @@ inline T length_squared(const std::vector<T>& diff)
 template<class T>
 std::vector<T> operator-(const std::vector<T>& v1, const std::vector<T>& v2)
 {
-    assert(v1.size() == v2.size());
+    Q_ASSERT(v1.size() == v2.size());
 
     std::vector<T> result(v1.size());
 
@@ -90,7 +94,7 @@ template<class T>
 std::vector<std::vector<T> > operator/(const std::vector<std::vector<T> >& v1, int divisor)
 {
 /*
-    assert(v1[0].size() != v2.size());
+    Q_ASSERT(v1[0].size() != v2.size());
 */
     std::vector<std::vector<T> > result(v1.size(),std::vector<T>(v1[0].size(),0));
 
@@ -108,7 +112,7 @@ std::vector<std::vector<T> > operator/(const std::vector<std::vector<T> >& v1, i
 template<class T>
 std::vector<T> operator+(const std::vector<T>& v1, const std::vector<T>& v2)
 {
-    assert(v1.size() == v2.size());
+    Q_ASSERT(v1.size() == v2.size());
 
     std::vector<T> result(v1.size());
 
@@ -124,8 +128,8 @@ template<class T>
 std::vector<std::vector<T> > operator+(const std::vector<std::vector<T> >& v1,
                                        const std::vector<std::vector<T> >& v2)
 {
-    assert((v1.size()    == v2.size())     &&
-           (v1[0].size() == v2[0].size()));
+    Q_ASSERT((v1.size()    == v2.size())     &&
+             (v1[0].size() == v2[0].size()));
 
     std::vector<std::vector<T> > result(v1.size(), std::vector<T>(v1[0].size(),0));
 
@@ -145,7 +149,7 @@ template<class T>
 std::vector<T> operator*(const std::vector<std::vector<T> >& v1,
                          const std::vector<T>& v2)
 {
-    assert(v1[0].size() == v2.size());
+    Q_ASSERT(v1[0].size() == v2.size());
 
     std::vector<T> result(v1.size());
 
@@ -166,7 +170,7 @@ template<class T>
 std::vector<std::vector<T> > operator*(const std::vector<std::vector<T> >& v1,
                                        const std::vector<std::vector<T> >& v2)
 {
-    assert(v1[0].size() == v2.size());
+    Q_ASSERT(v1[0].size() == v2.size());
 
     std::vector<std::vector<T> > result(v1.size(), std::vector<T>(v2[0].size(),0));
 
@@ -192,7 +196,7 @@ template<class T>
 std::vector<std::vector<T> > operator*(const std::vector<T>& v1,
                                        const std::vector<T>& v2)
 {
-    assert(v1.size() == v2.size());
+    Q_ASSERT(v1.size() == v2.size());
 
     std::vector<std::vector<T> > result(v1.size(), std::vector<T>(v2.size(), 0));
 
@@ -212,8 +216,8 @@ std::vector<std::vector<T> > operator+(const std::vector<std::vector<T> >& v1,
                                        float d)
 {
 /*
-    assert((v1.size()    == v2.size())    &&
-           (v1[0].size() == v2[0].size()));
+    Q_ASSERT((v1.size()    == v2.size())    &&
+             (v1[0].size() == v2[0].size()));
 */
     std::vector<std::vector<T> > result(v1.size(), std::vector<T>(v1[0].size(), 0));
 
@@ -234,8 +238,8 @@ std::vector<T> operator*(const std::vector<T>& v1,
                          float d)
 {
 /*
-    assert((v1.size()    == v2.size())    &&
-           (v1[0].size() == v2[0].size()));
+    Q_ASSERT((v1.size()    == v2.size())    &&
+             (v1[0].size() == v2[0].size()));
 */
     std::vector<T> result(v1.size());
 

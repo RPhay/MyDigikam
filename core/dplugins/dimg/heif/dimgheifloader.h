@@ -36,7 +36,6 @@
 
 #include "dimg.h"
 #include "dimgloader.h"
-#include "digikam_export.h"
 #include "heif.h"
 
 using namespace Digikam;
@@ -44,20 +43,20 @@ using namespace Digikam;
 namespace Digikam
 {
 
-class DIGIKAM_EXPORT DImgHEIFLoader : public DImgLoader
+class DImgHEIFLoader : public DImgLoader
 {
 
 public:
 
     explicit DImgHEIFLoader(DImg* const image);
-    ~DImgHEIFLoader();
+    ~DImgHEIFLoader()                                                      override;
 
     bool load(const QString& filePath, DImgLoaderObserver* const observer) override;
     bool save(const QString& filePath, DImgLoaderObserver* const observer) override;
 
-    bool hasAlpha()   const override;
-    bool sixteenBit() const override;
-    bool isReadOnly() const override;
+    bool hasAlpha()                                                  const override;
+    bool sixteenBit()                                                const override;
+    bool isReadOnly()                                                const override;
 
     /**
      * Determine libx265 encoder bits depth capability: 8=standard, 10, 12, or more.
@@ -71,12 +70,11 @@ private:
 
     // Read operations
     bool readHEICColorProfile(struct heif_image_handle* const image_handle);
-    bool readHEICMetadata(struct heif_image_handle* const image_handle);
     bool readHEICImageByID(struct heif_context* const heif_context,
                            heif_item_id image_id);
 
     bool readHEICImageByHandle(struct heif_image_handle* image_handle,
-                               struct heif_image* heif_image);
+                               struct heif_image* heif_image, bool loadImageData);
 
     // Save operations
     bool saveHEICColorProfile(struct heif_image* const image);

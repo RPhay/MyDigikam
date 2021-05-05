@@ -7,7 +7,6 @@
  * Description : Helper class for Image Description Editor Tab
  *
  * Copyright (C) 2015 by Veaceslav Munteanu <veaceslav dot munteanu90 at gmail dot com>
-
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -47,37 +46,39 @@
 namespace Digikam
 {
 
-// This class was split from Private to be able to use the automatic C++ copy constructor
-// (Private contains a QMutex and is thus non-copyable)
+/**
+ * This class was split from Private to be able to use the automatic C++ copy constructor
+ * (Private contains a QMutex and is thus non-copyable)
+ */
 class Q_DECL_HIDDEN DisjointMetadataDataFields
 {
 public:
 
     DisjointMetadataDataFields()
-        : dateTimeChanged(false),
-          titlesChanged(false),
-          commentsChanged(false),
-          pickLabelChanged(false),
-          colorLabelChanged(false),
-          ratingChanged(false),
-          templateChanged(false),
-          tagsChanged(false),
-          withoutTags(false),
-          pickLabel(-1),
-          highestPickLabel(-1),
-          colorLabel(-1),
-          highestColorLabel(-1),
-          rating(-1),
-          highestRating(-1),
-          count(0),
-          dateTimeStatus(DisjointMetadata::MetadataInvalid),
-          titlesStatus(DisjointMetadata::MetadataInvalid),
-          commentsStatus(DisjointMetadata::MetadataInvalid),
-          pickLabelStatus(DisjointMetadata::MetadataInvalid),
-          colorLabelStatus(DisjointMetadata::MetadataInvalid),
-          ratingStatus(DisjointMetadata::MetadataInvalid),
-          templateStatus(DisjointMetadata::MetadataInvalid),
-          invalid(false)
+        : dateTimeChanged   (false),
+          titlesChanged     (false),
+          commentsChanged   (false),
+          pickLabelChanged  (false),
+          colorLabelChanged (false),
+          ratingChanged     (false),
+          templateChanged   (false),
+          tagsChanged       (false),
+          withoutTags       (false),
+          pickLabel         (-1),
+          highestPickLabel  (-1),
+          colorLabel        (-1),
+          highestColorLabel (-1),
+          rating            (-1),
+          highestRating     (-1),
+          count             (0),
+          dateTimeStatus    (DisjointMetadata::MetadataInvalid),
+          titlesStatus      (DisjointMetadata::MetadataInvalid),
+          commentsStatus    (DisjointMetadata::MetadataInvalid),
+          pickLabelStatus   (DisjointMetadata::MetadataInvalid),
+          colorLabelStatus  (DisjointMetadata::MetadataInvalid),
+          ratingStatus      (DisjointMetadata::MetadataInvalid),
+          templateStatus    (DisjointMetadata::MetadataInvalid),
+          invalid           (false)
     {
     }
 
@@ -134,6 +135,7 @@ public:
     }
 
     // use the automatic copy constructor
+
     explicit Private(const Private& other)
         : DisjointMetadataDataFields(other)
     {
@@ -159,16 +161,18 @@ void DisjointMetadata::Private::makeConnections(DisjointMetadata* q)
                      q, SLOT(slotInvalidate()));
 }
 
-DisjointMetadata::DisjointMetadata(QObject* const parent)
-    : QObject(parent),
-      d(new Private())
+// --------------------------------------------------------------------------------
+
+DisjointMetadata::DisjointMetadata()
+    : QObject(),
+      d      (new Private())
 {
     d->makeConnections(this);
 }
 
 DisjointMetadata::DisjointMetadata(const DisjointMetadata& other)
     : QObject(other.parent()),
-      d(new Private(*other.d))
+      d      (new Private(*other.d))
 {
     d->makeConnections(this);
 }
@@ -263,7 +267,9 @@ void DisjointMetadata::load(const ItemInfo& info)
     {
         Template tref    = info.metadataTemplate();
         Template t       = TemplateManager::defaultManager()->findByContents(tref);
-        //qCDebug(DIGIKAM_GENERAL_LOG) << "Found Metadata Template: " << t.templateTitle();
+/*
+        qCDebug(DIGIKAM_GENERAL_LOG) << "Found Metadata Template: " << t.templateTitle();
+*/
         metadataTemplate = t.isNull() ? tref : t;
     }
 
@@ -419,7 +425,7 @@ void DisjointMetadata::setMetadataTemplate(const Template& t, DisjointMetadata::
 void DisjointMetadata::setTag(int albumID, DisjointMetadata::Status status)
 {
     d->tags[albumID] = status;
-    d->tagsChanged = true;
+    d->tagsChanged   = true;
 }
 
 void DisjointMetadata::resetChanged()
@@ -441,6 +447,7 @@ bool DisjointMetadata::write(ItemInfo info, WriteMode writeMode)
     bool changed = false;
 
     // find out in advance if we have something to write - needed for FullWriteIfChanged mode
+
     bool saveTitle      = (d->titlesStatus     == MetadataAvailable);
     bool saveComment    = (d->commentsStatus   == MetadataAvailable);
     bool saveDateTime   = (d->dateTimeStatus   == MetadataAvailable);
@@ -562,6 +569,7 @@ bool DisjointMetadata::willWriteMetadata(DisjointMetadata::WriteMode writeMode, 
 {
     // This is the same logic as in write(DMetadata) but without actually writing.
     // Adapt if the method above changes
+
     bool saveTitle      = (settings.saveComments   && d->titlesStatus     == MetadataAvailable);
     bool saveComment    = (settings.saveComments   && d->commentsStatus   == MetadataAvailable);
     bool saveDateTime   = (settings.saveDateTime   && d->dateTimeStatus   == MetadataAvailable);
@@ -833,11 +841,11 @@ void DisjointMetadata::dateTimeInterval(QDateTime& lowest, QDateTime& highest) c
     switch (d->dateTimeStatus)
     {
         case MetadataInvalid:
-            lowest = highest = QDateTime();
+            lowest  = highest = QDateTime();
             break;
 
         case MetadataAvailable:
-            lowest = highest = d->dateTime;
+            lowest  = highest = d->dateTime;
             break;
 
         case MetadataDisjoint:
@@ -852,11 +860,11 @@ void DisjointMetadata::pickLabelInterval(int& lowest, int& highest) const
     switch (d->pickLabelStatus)
     {
         case MetadataInvalid:
-            lowest = highest = -1;
+            lowest  = highest = -1;
             break;
 
         case MetadataAvailable:
-            lowest = highest = d->pickLabel;
+            lowest  = highest = d->pickLabel;
             break;
 
         case MetadataDisjoint:
@@ -871,11 +879,11 @@ void DisjointMetadata::colorLabelInterval(int& lowest, int& highest) const
     switch (d->colorLabelStatus)
     {
         case MetadataInvalid:
-            lowest = highest = -1;
+            lowest  = highest = -1;
             break;
 
         case MetadataAvailable:
-            lowest = highest = d->colorLabel;
+            lowest  = highest = d->colorLabel;
             break;
 
         case MetadataDisjoint:
@@ -926,6 +934,7 @@ QStringList DisjointMetadata::keywords() const
 QMap<int, DisjointMetadata::Status> DisjointMetadata::tags() const
 {
     // DatabaseMode == ManagedTags is assumed
+
     return d->tags;
 }
 
@@ -942,12 +951,14 @@ template <class T> void DisjointMetadata::Private::loadSingleValue(const T& data
         case DisjointMetadata::MetadataAvailable:
 
             // we have two values. If they are equal, status is unchanged
+
             if (data == storage)
             {
                 break;
             }
 
             // they are not equal. We need to enter the disjoint state.
+
             status = DisjointMetadata::MetadataDisjoint;
             break;
 

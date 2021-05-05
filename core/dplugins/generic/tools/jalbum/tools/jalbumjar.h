@@ -38,10 +38,10 @@ class JalbumJar : public DBinaryIface
 
 public:
 
-    explicit JalbumJar();
-    ~JalbumJar();
+    explicit JalbumJar(QObject* const parent = nullptr);
+    ~JalbumJar() override;
 
-    bool checkDirForPath(const QString& possibleDir);
+    bool checkDirForPath(const QString& possibleDir) override;
 };
 
 } // namespace DigikamGenericJAlbumPlugin

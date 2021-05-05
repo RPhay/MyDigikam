@@ -7,7 +7,7 @@
  * Description : A tool to export items to Rajce web service
  *
  * Copyright (C) 2011      by Lukas Krejci <krejci.l at centrum dot cz>
- * Copyright (C) 2011-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2011-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -29,12 +29,13 @@
 #include <QImage>
 #include <QObject>
 #include <QString>
-#include <QXmlQuery>
 
 // Local includes
 
 #include "rajcesession.h"
 #include "rajcempform.h"
+
+class QXmlQuery;
 
 namespace DigikamGenericRajcePlugin
 {
@@ -46,7 +47,7 @@ class RajceCommand : public QObject
 public:
 
     explicit RajceCommand(const QString& name, RajceCommandType commandType);
-    virtual ~RajceCommand();
+    ~RajceCommand() override;
 
 public:
 
@@ -74,9 +75,10 @@ private:
 
 private:
 
-    // Hidden copy constructor and assignment operator.
-    RajceCommand(const RajceCommand&);
-    RajceCommand& operator=(const RajceCommand&);
+    // Disable
+    explicit RajceCommand(QObject*)              = delete;
+    RajceCommand(const RajceCommand&)            = delete;
+    RajceCommand& operator=(const RajceCommand&) = delete;
 
 private:
 
@@ -88,6 +90,8 @@ private:
 
 class LoginCommand : public RajceCommand
 {
+    Q_OBJECT
+
 public:
 
     explicit LoginCommand(const QString& username, const QString& password);
@@ -96,12 +100,19 @@ protected:
 
     void parseResponse(QXmlQuery& response, RajceSession& state) override;
     void cleanUpOnError(RajceSession& state)                     override;
+
+private:
+
+    // Disable
+    explicit LoginCommand(QObject*) = delete;
 };
 
 // -----------------------------------------------------------------------
 
 class OpenAlbumCommand : public RajceCommand
 {
+    Q_OBJECT
+
 public:
 
     explicit OpenAlbumCommand(unsigned albumId, const RajceSession& state);
@@ -110,12 +121,19 @@ protected:
 
     void parseResponse(QXmlQuery& response, RajceSession& state) override;
     void cleanUpOnError(RajceSession& state)                     override;
+
+private:
+
+    // Disable
+    explicit OpenAlbumCommand(QObject*) = delete;
 };
 
 // -----------------------------------------------------------------------
 
 class CreateAlbumCommand : public RajceCommand
 {
+    Q_OBJECT
+
 public:
 
     explicit CreateAlbumCommand(const QString& name,
@@ -127,12 +145,19 @@ protected:
 
     void parseResponse(QXmlQuery& response, RajceSession& state) override;
     void cleanUpOnError(RajceSession& state)                     override;
+
+private:
+
+    // Disable
+    explicit CreateAlbumCommand(QObject*) = delete;
 };
 
 // -----------------------------------------------------------------------
 
 class CloseAlbumCommand : public RajceCommand
 {
+    Q_OBJECT
+
 public:
 
     explicit CloseAlbumCommand(const RajceSession& state);
@@ -141,12 +166,19 @@ protected:
 
     void parseResponse(QXmlQuery& response, RajceSession& state) override;
     void cleanUpOnError(RajceSession& state)                     override;
+
+private:
+
+    // Disable
+    explicit CloseAlbumCommand(QObject*) = delete;
 };
 
 // -----------------------------------------------------------------------
 
 class AlbumListCommand : public RajceCommand
 {
+    Q_OBJECT
+
 public:
 
     explicit AlbumListCommand(const RajceSession&);
@@ -155,12 +187,19 @@ protected:
 
     void parseResponse(QXmlQuery& response, RajceSession& state) override;
     void cleanUpOnError(RajceSession& state)                     override;
+
+private:
+
+    // Disable
+    explicit AlbumListCommand(QObject*) = delete;
 };
 
 // -----------------------------------------------------------------------
 
 class AddPhotoCommand : public RajceCommand
 {
+    Q_OBJECT
+
 public:
 
     explicit AddPhotoCommand(const    QString& tmpDir,
@@ -168,7 +207,7 @@ public:
                              unsigned dimension,
                              int      jpgQuality,
                              const    RajceSession& state);
-    virtual ~AddPhotoCommand();
+    ~AddPhotoCommand() override;
 
 public:
 
@@ -180,6 +219,11 @@ protected:
     void    cleanUpOnError(RajceSession& state)                        override;
     void    parseResponse(QXmlQuery& query, RajceSession& state)       override;
     QString additionalXml()                                      const override;
+
+private:
+
+    // Disable
+    explicit AddPhotoCommand(QObject*) = delete;
 
 private:
 

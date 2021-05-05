@@ -7,7 +7,7 @@
  * Description : a tool to export images to VKontakte web service
  *
  * Copyright (C) 2011-2015 by Alexander Potashev <aspotashev at gmail dot com>
- * Copyright (C) 2011-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2011-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -36,8 +36,8 @@
 
 // LibKvkontakte includes
 
-#include <Vkontakte/userinfojob.h>
-#include <Vkontakte/vkapi.h>
+#include "vkontakte_userinfojob.h"
+#include "vkontakte_vkapi.h"
 
 namespace DigikamGenericVKontaktePlugin
 {
@@ -69,7 +69,7 @@ public:
 VKAuthWidget::VKAuthWidget(QWidget* const parent,
                            Vkontakte::VkApi* const vkapi)
     : QGroupBox(i18n("Account"), parent),
-      d(new Private)
+      d        (new Private)
 {
     d->vkapi = vkapi;
 
@@ -77,7 +77,7 @@ VKAuthWidget::VKAuthWidget(QWidget* const parent,
 
     QGridLayout* const accountBoxLayout = new QGridLayout(this);
     QLabel* const loginDescLabel        = new QLabel(this);
-    loginDescLabel->setText(i18n("Name:"));
+    loginDescLabel->setText(i18nc("@label: account properties", "Name:"));
     loginDescLabel->setWhatsThis(i18n("Your VKontakte login"));
 
     d->loginLabel       = new QLabel(this);
@@ -187,9 +187,9 @@ void VKAuthWidget::handleVkError(KJob* kjob)
 QString VKAuthWidget::albumsURL() const
 {
     if (d->vkapi->isAuthenticated() && d->userId != -1)
-        return QString::fromLatin1("http://vk.com/albums%1").arg(d->userId);
+        return QString::fromLatin1("https://vk.com/albums%1").arg(d->userId);
     else
-        return QLatin1String("http://vk.com/");
+        return QLatin1String("https://vk.com/");
 }
 
 } // namespace DigikamGenericVKontaktePlugin

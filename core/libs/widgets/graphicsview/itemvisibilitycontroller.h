@@ -44,7 +44,6 @@ class DIGIKAM_EXPORT ItemVisibilityController : public QObject
     Q_OBJECT
     Q_PROPERTY(bool  shallBeShown READ shallBeShown WRITE setShallBeShown)
     Q_PROPERTY(bool  visible READ isVisible WRITE setVisible)
-    Q_ENUMS(State)
 
 public:
 
@@ -75,6 +74,7 @@ public:
         Visible,
         FadingOut
     };
+    Q_ENUM(State)
 
     enum IncludeFadingOutMode
     {
@@ -88,7 +88,7 @@ public:
 public:
 
     explicit ItemVisibilityController(QObject* const parent = nullptr);
-    ~ItemVisibilityController();
+    ~ItemVisibilityController() override;
 
     bool  shallBeShown()                                                        const;
     bool  isVisible()                                                           const;

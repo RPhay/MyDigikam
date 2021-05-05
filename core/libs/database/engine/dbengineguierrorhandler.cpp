@@ -7,7 +7,7 @@
  * Description : Database engine gui error handler
  *
  * Copyright (C) 2009-2010 by Holger Foerster <Hamsi2k at freenet dot de>
- * Copyright (C) 2010-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2010-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -54,9 +54,9 @@ class Q_DECL_HIDDEN DbEngineConnectionChecker::Private
 public:
 
     explicit Private()
+        : stop(false),
+          success(false)
     {
-        stop    = false;
-        success = false;
     }
 
     bool               stop;
@@ -123,6 +123,7 @@ void DbEngineConnectionChecker::run()
     }
 
     QSqlDatabase::removeDatabase(databaseID);
+
     emit done();
 }
 
@@ -146,8 +147,8 @@ class Q_DECL_HIDDEN DbEngineGuiErrorHandler::Private
 public:
 
     explicit Private()
+        : checker(nullptr)
     {
-        checker = nullptr;
     }
 
     QPointer<QProgressDialog>  dialog;
@@ -170,6 +171,7 @@ DbEngineGuiErrorHandler::~DbEngineGuiErrorHandler()
 bool DbEngineGuiErrorHandler::checkDatabaseConnection()
 {
     // now we try to connect periodically to the database
+
     d->checker = new DbEngineConnectionChecker(d->parameters);
     QEventLoop loop;
 
@@ -185,6 +187,7 @@ bool DbEngineGuiErrorHandler::checkDatabaseConnection()
     delete d->dialog;
 
     // ensure that the connection thread is closed
+
     d->checker->wait();
 
     bool result = d->checker->checkSuccessful();
@@ -230,9 +233,12 @@ void DbEngineGuiErrorHandler::connectionError(DbEngineErrorAnswer* answer, const
 
 void DbEngineGuiErrorHandler::consultUserForError(DbEngineErrorAnswer* answer, const QSqlError& error, const QString&)
 {
-    //NOTE: not used at all currently.
+    // NOTE: not used at all currently.
+
     QWidget* const parent = QWidget::find(0);
+
     // Handle all other database errors
+
     QString message = i18n("<p><b>A database error occurred.</b></p>"
                            "Details:\n %1", error.text());
     QMessageBox::critical(parent, qApp->applicationName(), message);

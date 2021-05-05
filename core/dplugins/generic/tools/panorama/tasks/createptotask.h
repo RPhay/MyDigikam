@@ -48,7 +48,7 @@ public:
                            const PanoramaItemUrlsMap& preProcessedMap,
                            bool addGPlusMetadata,
                            const QString& huginVersion);
-    ~CreatePtoTask();
+    ~CreatePtoTask() override;
 
 protected:
 
@@ -63,6 +63,13 @@ private:
     const bool                       addGPlusMetadata;
     const QString&                   huginVersion;
     MetaEngine                       m_meta;
+
+private:
+
+    // Disable
+    CreatePtoTask() = delete;
+
+    Q_DISABLE_COPY(CreatePtoTask)
 };
 
 } // namespace DigikamGenericPanoramaPlugin

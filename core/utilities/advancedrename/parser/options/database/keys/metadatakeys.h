@@ -38,16 +38,17 @@ class MetadataKeys : public DbKeysCollection
 public:
 
     explicit MetadataKeys();
-    virtual ~MetadataKeys() {};
+    ~MetadataKeys() override {};
 
 protected:
 
-    virtual QString getDbValue(const QString& key, ParseSettings& settings);
+    QString getDbValue(const QString& key, ParseSettings& settings) override;
 
 private:
 
-    MetadataKeys(const MetadataKeys&);
-    MetadataKeys& operator=(const MetadataKeys&);
+    // Disable
+    MetadataKeys(const MetadataKeys&)            = delete;
+    MetadataKeys& operator=(const MetadataKeys&) = delete;
 };
 
 } // namespace Digikam

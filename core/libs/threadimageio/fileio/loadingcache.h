@@ -27,8 +27,6 @@
 // Qt includes
 
 #include <QPixmap>
-#include <QSet>
-#include <QFileSystemWatcher>
 
 // Local includes
 
@@ -45,11 +43,18 @@ class LoadingProcessListener
 {
 public:
 
-    virtual ~LoadingProcessListener() {};
+    LoadingProcessListener();
+    virtual ~LoadingProcessListener();
     virtual bool querySendNotifyEvent()                                                     const = 0;
     virtual void setResult(const LoadingDescription& loadingDescription, const DImg& img)         = 0;
     virtual LoadSaveNotifier* loadSaveNotifier()                                            const = 0;
     virtual LoadSaveThread::AccessMode accessMode()                                         const = 0;
+
+private:
+
+    // Disable
+    LoadingProcessListener(const LoadingProcessListener&)            = delete;
+    LoadingProcessListener& operator=(const LoadingProcessListener&) = delete;
 };
 
 // --------------------------------------------------------------------------------------------------------------
@@ -58,29 +63,34 @@ class LoadingProcess
 {
 public:
 
-    virtual ~LoadingProcess() {};
+    LoadingProcess();
+    virtual ~LoadingProcess();
     virtual bool completed()                                                                             const = 0;
-    virtual QString filePath()                                                                           const = 0;
     virtual QString cacheKey()                                                                           const = 0;
     virtual void addListener(LoadingProcessListener* const listener)                                           = 0;
     virtual void removeListener(LoadingProcessListener* const listener)                                        = 0;
     virtual void notifyNewLoadingProcess(LoadingProcess* const process, const LoadingDescription& description) = 0;
+
+private:
+
+    // Disable
+    LoadingProcess(const LoadingProcess&)            = delete;
+    LoadingProcess& operator=(const LoadingProcess&) = delete;
 };
 
 // --------------------------------------------------------------------------------------------------------------
 
-class DIGIKAM_EXPORT LoadingCacheFileWatch
+class DIGIKAM_EXPORT LoadingCacheFileWatch : public QObject
 {
+    Q_OBJECT
+
 public:
 
-    virtual ~LoadingCacheFileWatch();
+    LoadingCacheFileWatch();
+    ~LoadingCacheFileWatch() override;
 
-    /**
-     * Called by the thread when a new entry is added to the cache
-     */
-    virtual void removeFile(const QString& filePath);
-    virtual void addedImage(const QString& filePath);
-    virtual void addedThumbnail(const QString& filePath);
+    void addedImage(const QString& filePath);
+    void checkFileWatch(const QString& filePath);
 
 protected:
 
@@ -96,45 +106,15 @@ protected:
 
     friend class LoadingCache;
 
-    class LoadingCache* m_cache;
-};
-
-// --------------------------------------------------------------------------------------------------------------
-
-class DIGIKAM_EXPORT ClassicLoadingCacheFileWatch : public QObject, public LoadingCacheFileWatch
-{
-    Q_OBJECT
-
-    /**
-     * Reference implementation
-     */
-
-public:
-
-    ClassicLoadingCacheFileWatch();
-    ~ClassicLoadingCacheFileWatch();
-    virtual void removeFile(const QString& filePath)     override;
-    virtual void addedImage(const QString& filePath)     override;
-    virtual void addedThumbnail(const QString& filePath) override;
-
-private Q_SLOTS:
-
-    void slotFileDirty(const QString& path);
-    void slotUpdateDirWatch();
-
-Q_SIGNALS:
-
-    void signalUpdateDirWatch();
-
-protected:
-
-    QFileSystemWatcher* m_watch;
+    QMap<QString, QPair<qint64, QDateTime> > m_watchMap;
+    class LoadingCache*                      m_cache;
 
 private:
 
-    // Hidden copy constructor and assignment operator.
-    ClassicLoadingCacheFileWatch(const ClassicLoadingCacheFileWatch&);
-    ClassicLoadingCacheFileWatch& operator=(const ClassicLoadingCacheFileWatch&);
+    // Disable
+    LoadingCacheFileWatch(const LoadingCacheFileWatch&)            = delete;
+    LoadingCacheFileWatch& operator=(const LoadingCacheFileWatch&) = delete;
+    LoadingCacheFileWatch(QObject*)                                = delete;
 };
 
 // --------------------------------------------------------------------------------------------------------------
@@ -144,10 +124,6 @@ class DIGIKAM_EXPORT LoadingCache : public QObject
     Q_OBJECT
 
 public:
-
-    static LoadingCache* cache();
-    static void cleanUp();
-    virtual ~LoadingCache();
 
     /**
      * NOTE: !! All methods of LoadingCache shall only be called when a CacheLock is held !!
@@ -166,6 +142,11 @@ public:
 
         LoadingCache* m_cache;
     };
+
+public:
+
+    static LoadingCache* cache();
+    static void cleanUp();
 
     /**
      * Retrieves an image for the given string from the cache,
@@ -282,11 +263,6 @@ public:
     void setFileWatch(LoadingCacheFileWatch* const watch);
 
     /**
-     * Remove file from LoadingCacheFileWatch.
-     */
-    void removeFromFileWatch(const QString& filePath);
-
-    /**
      * Returns a list of all possible file paths in cache.
      */
     QStringList imageFilePathsInCache()     const;
@@ -313,7 +289,15 @@ private Q_SLOTS:
 
 private:
 
+    // Disabled
     LoadingCache();
+    explicit LoadingCache(QObject*)              = delete;
+    ~LoadingCache() override;
+
+    LoadingCache(const LoadingCache&)            = delete;
+    LoadingCache& operator=(const LoadingCache&) = delete;
+
+private:
 
     friend class LoadingCacheFileWatch;
     friend class CacheLock;

@@ -7,7 +7,7 @@
  * Description : Layouting photos on a page
  *
  * Copyright (C) 2007-2009 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef ATKINS_PAGE_LAYOUT_NODE_H
-#define ATKINS_PAGE_LAYOUT_NODE_H
+#ifndef DIGIKAM_ATKINS_PAGE_LAYOUT_NODE_H
+#define DIGIKAM_ATKINS_PAGE_LAYOUT_NODE_H
 
 // Qt includes
 
@@ -30,27 +30,23 @@
 #include <QMap>
 
 /**
-    Implements the algorithm described in
-
-    "Adaptive Photo Collection Page Layout",
-    C. Brian Atkins
-    Imaging Technology Department
-    HP Labs
-    Palo Alto, CA 94304
-    cbatkins@hpl.hp.com
-
-    PDF available at:
-    http://hpl.hp.com/research/isl/layout/
-
-    Comments in the source file refer to the PDF file.
-*/
+ * Implements the algorithm described in
+ * "Adaptive Photo Collection Page Layout",
+ * C. Brian Atkins
+ * Imaging Technology Department
+ * HP Labs
+ * Palo Alto, CA 94304
+ * cbatkins@hpl.hp.com
+ *
+ * PDF available at this url:
+ * hpl.hp.com/research/isl/layout/
+ */
 
 /**
-    The classes AtkinsPageLayoutNode and AtkinsPageLayoutTree provide the actual implementation.
-    Do not use these classes directly.
-    Use the AtkinsPageLayout adaptor class.
-*/
-
+ * The classes AtkinsPageLayoutNode and AtkinsPageLayoutTree provide the actual implementation.
+ * Do not use these classes directly.
+ * Use the AtkinsPageLayout adaptor class.
+ */
 namespace DigikamGenericPrintCreatorPlugin
 {
 
@@ -61,8 +57,8 @@ public:
     enum Type
     {
         TerminalNode,
-        HorizontalDivision, // one image on top of the other
-        VerticalDivision    // images side by side
+        HorizontalDivision, ///< one image on top of the other
+        VerticalDivision    ///< images side by side
     };
 
 public:
@@ -77,6 +73,8 @@ public:
     AtkinsPageLayoutNode(const AtkinsPageLayoutNode&);
     ~AtkinsPageLayoutNode();
 
+    AtkinsPageLayoutNode& operator=(const AtkinsPageLayoutNode&);
+
     double aspectRatio()  const;
     double relativeArea() const;
     double division()     const;
@@ -86,35 +84,38 @@ public:
     AtkinsPageLayoutNode* leftChild()  const;
     AtkinsPageLayoutNode* rightChild() const;
 
-    /** Replace one child with a new one.
+    /**
+     * Replace one child with a new one.
      */
     void takeAndSetChild(AtkinsPageLayoutNode* const oldChild,
                          AtkinsPageLayoutNode* const newChild);
 
-    /** Retrieve the node which has the given index in the hierarchy of this node.
+    /**
+     * Retrieve the node which has the given index in the hierarchy of this node.
      */
     AtkinsPageLayoutNode* nodeForIndex(int index);
 
-    /** Retrieve the parent node of the given child in the hierarchy of this node.
+    /**
+     * Retrieve the parent node of the given child in the hierarchy of this node.
      */
     AtkinsPageLayoutNode* parentOf(AtkinsPageLayoutNode* const child);
 
-    /** Compute the "aspect ratio" (m_a) and "relative size" (m_e) parameters.
-     *  Section 2.2.1, (1)-(4).
+    /**
+     * Compute the "aspect ratio" (m_a) and "relative size" (m_e) parameters.
+     * Section 2.2.1, (1)-(4).
      */
     void computeRelativeSizes();
 
-    /** Compute the "division" (m_division) parameter.
-     *  Section 2.2.2
+    /**
+     * Compute the "division" (m_division) parameter.
+     * Section 2.2.2
      */
     void computeDivisions();
 
-    AtkinsPageLayoutNode& operator=(const AtkinsPageLayoutNode&);
-
 private:
 
-    double                m_a;        // aspect ration
-    double                m_e;        // relative size
+    double                m_a;        ///< aspect ratio
+    double                m_e;        ///< relative size
     double                m_division;
 
     Type                  m_type;
@@ -127,4 +128,4 @@ private:
 
 } // Namespace Digikam
 
-#endif // ATKINS_PAGE_LAYOUT_NODE_H
+#endif // DIGIKAM_ATKINS_PAGE_LAYOUT_NODE_H

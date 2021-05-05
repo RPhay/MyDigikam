@@ -40,11 +40,14 @@ namespace Digikam
 
 class HidingStateChanger;
 
-class Q_DECL_HIDDEN FaceItem : public RegionFrameItem
+class Q_DECL_HIDDEN FaceItem : public RegionFrameItem       // clazy:exclude=ctor-missing-parent-argument
 {
+    Q_OBJECT
+
 public:
 
-    explicit FaceItem(QGraphicsItem* const parent = nullptr);
+    explicit FaceItem(QGraphicsItem* const parent);
+    ~FaceItem() override;
 
     void setFace(const FaceTagsIface& face);
     FaceTagsIface face()                                const;
@@ -59,6 +62,13 @@ protected:
     FaceTagsIface       m_face;
     AssignNameWidget*   m_widget;
     HidingStateChanger* m_changer;
+
+private:
+
+    // Disable
+    FaceItem()                           = delete;
+    FaceItem(const FaceItem&)            = delete;
+    FaceItem& operator=(const FaceItem&) = delete;
 };
 
 } // namespace Digikam

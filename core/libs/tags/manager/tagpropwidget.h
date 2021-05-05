@@ -54,7 +54,7 @@ public:
 public:
 
     explicit TagPropWidget(QWidget* const parent);
-    ~TagPropWidget();
+    ~TagPropWidget() override;
 
 Q_SIGNALS:
 

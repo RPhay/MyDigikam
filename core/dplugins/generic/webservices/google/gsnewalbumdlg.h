@@ -54,7 +54,7 @@ public:
     explicit GSNewAlbumDlg(QWidget* const parent,
                            const QString& serviceName,
                            const QString& toolName);
-    ~GSNewAlbumDlg();
+    ~GSNewAlbumDlg() override;
 
     void getAlbumProperties(GSFolder& album);
 

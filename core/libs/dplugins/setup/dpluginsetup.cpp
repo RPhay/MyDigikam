@@ -6,7 +6,7 @@
  * Date        : 2007-02-06
  * Description : Config panel for generic dplugins.
  *
- * Copyright (C) 2018-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2018-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -51,14 +51,14 @@ class Q_DECL_HIDDEN DPluginSetup::Private
 public:
 
     explicit Private()
-      : pluginsNumber(nullptr),
+      : pluginsNumber         (nullptr),
         pluginsNumberActivated(nullptr),
-        checkAllBtn(nullptr),
-        clearBtn(nullptr),
-        grid(nullptr),
-        hbox(nullptr),
-        pluginFilter(nullptr),
-        pluginsList(nullptr)
+        checkAllBtn           (nullptr),
+        clearBtn              (nullptr),
+        grid                  (nullptr),
+        hbox                  (nullptr),
+        pluginFilter          (nullptr),
+        pluginsList           (nullptr)
     {
     }
 
@@ -85,8 +85,8 @@ DPluginSetup::DPluginSetup(QWidget* const parent)
     d->pluginFilter           = new SearchTextBar(this, QLatin1String("PluginsSearchBar"));
     d->pluginsNumber          = new QLabel(this);
     d->pluginsNumberActivated = new QLabel(this);
-    d->checkAllBtn            = new QPushButton(i18n("Check All"), this);
-    d->clearBtn               = new QPushButton(i18n("Clear"),     this);
+    d->checkAllBtn            = new QPushButton(i18nc("@action: search bar", "Check All"), this);
+    d->clearBtn               = new QPushButton(i18nc("@action: search bar", "Clear"),     this);
 
     d->grid->addWidget(d->pluginFilter,           0, 0, 1, 1);
     d->grid->addWidget(d->pluginsNumber,          0, 1, 1, 1);
@@ -164,22 +164,23 @@ void DPluginSetup::updateInfo()
     if (d->pluginFilter->text().isEmpty())
     {
         // List is not filtered
+
         int cnt = d->pluginsList->count();
 
         if (cnt > 0)
         {
-            d->pluginsNumber->setText(i18np("1 plugin installed", "%1 plugins installed", cnt));
+            d->pluginsNumber->setText(i18ncp("@info", "1 plugin installed", "%1 plugins installed", cnt));
         }
         else
         {
-            d->pluginsNumber->setText(i18n("No plugin installed"));
+            d->pluginsNumber->setText(i18nc("@info", "No plugin installed"));
         }
 
         int act = d->pluginsList->actived();
 
         if (act > 0)
         {
-            d->pluginsNumberActivated->setText(i18ncp("%1: number of plugins activated", "(%1 activated)", "(%1 activated)", act));
+            d->pluginsNumberActivated->setText(i18ncp("@info: %1: number of plugins activated", "(%1 activated)", "(%1 activated)", act));
         }
         else
         {
@@ -189,15 +190,16 @@ void DPluginSetup::updateInfo()
     else
     {
         // List filtering is active
+
         int cnt = d->pluginsList->itemsVisible();
 
         if (cnt > 0)
         {
-            d->pluginsNumber->setText(i18np("1 plugin found", "%1 plugins found", cnt));
+            d->pluginsNumber->setText(i18ncp("@info", "1 plugin found", "%1 plugins found", cnt));
         }
         else
         {
-            d->pluginsNumber->setText(i18n("No plugin found"));
+            d->pluginsNumber->setText(i18nc("@info", "No plugin found"));
         }
 
         d->pluginsNumberActivated->setText(QString());
@@ -232,4 +234,4 @@ void DPluginSetup::slotSearchResult(int found)
     d->pluginFilter->slotSearchResult(found ? true : false);
 }
 
-}  // namespace Digikam
+} // namespace Digikam

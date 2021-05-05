@@ -6,7 +6,7 @@
  * Date        : 2018-07-30
  * Description : image editor plugin to fix colors automatically
  *
- * Copyright (C) 2018-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2018-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -49,7 +49,7 @@ AutoCorrectionToolPlugin::~AutoCorrectionToolPlugin()
 
 QString AutoCorrectionToolPlugin::name() const
 {
-    return i18n("Auto Correction");
+    return i18nc("@title", "Color Auto-Correction");
 }
 
 QString AutoCorrectionToolPlugin::iid() const
@@ -64,12 +64,12 @@ QIcon AutoCorrectionToolPlugin::icon() const
 
 QString AutoCorrectionToolPlugin::description() const
 {
-    return i18n("A tool to fix colors automatically");
+    return i18nc("@info", "A tool to fix colors automatically");
 }
 
 QString AutoCorrectionToolPlugin::details() const
 {
-    return i18n("<p>This Image Editor tool can adjust colors automatically from image.</p>");
+    return i18nc("@info", "This Image Editor tool can adjust colors automatically from image.");
 }
 
 QList<DPluginAuthor> AutoCorrectionToolPlugin::authors() const
@@ -77,7 +77,7 @@ QList<DPluginAuthor> AutoCorrectionToolPlugin::authors() const
     return QList<DPluginAuthor>()
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2005-2020"))
+                             QString::fromUtf8("(C) 2005-2021"))
             ;
 }
 
@@ -85,9 +85,11 @@ void AutoCorrectionToolPlugin::setup(QObject* const parent)
 {
     DPluginAction* const ac = new DPluginAction(parent);
     ac->setIcon(icon());
-    ac->setText(i18nc("@action", "Auto-Correction..."));
+    ac->setText(i18nc("@action", "Color Auto-Correction..."));
     ac->setObjectName(QLatin1String("editorwindow_color_autocorrection"));
+
     // NOTE: Photoshop 7 use CTRL+SHIFT+B
+
     ac->setShortcut(Qt::CTRL + Qt::SHIFT + Qt::Key_B);
     ac->setActionCategory(DPluginAction::EditorColors);
 

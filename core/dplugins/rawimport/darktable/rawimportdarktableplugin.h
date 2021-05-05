@@ -48,7 +48,7 @@ class DarkTableRawImportPlugin : public DPluginRawImport
 public:
 
     explicit DarkTableRawImportPlugin(QObject* const parent = nullptr);
-    ~DarkTableRawImportPlugin();
+    ~DarkTableRawImportPlugin()                                override;
 
     QString name()                                       const override;
     QString iid()                                        const override;

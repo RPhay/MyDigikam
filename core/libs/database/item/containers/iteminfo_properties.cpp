@@ -8,7 +8,7 @@
  *
  * Copyright (C) 2005      by Renchi Raju <renchi dot raju at gmail dot com>
  * Copyright (C) 2007-2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2013      by Michael G. Hansen <mike at mghansen dot de>
  *
  * This program is free software; you can redistribute it
@@ -225,6 +225,44 @@ QSize ItemInfo::dimensions() const
     return m_data->imageSize;
 }
 
+int ItemInfo::unconfirmedFaceCount() const
+{
+    if (!m_data)
+    {
+        return 0;
+    }
+
+    RETURN_IF_CACHED(unconfirmedFaceCount);
+
+    FaceTagsEditor fte;
+    int count = fte.unconfirmedNameFaceTagsIfaces(m_data->id).count();
+
+    ItemInfoWriteLocker lock;
+    m_data.data()->unconfirmedFaceCountCached = true;
+    m_data.data()->unconfirmedFaceCount       = count;
+
+    return m_data->unconfirmedFaceCount;
+}
+
+QMap<QString, QString> ItemInfo::getSuggestedNames() const
+{
+    if (!m_data)
+    {
+        return QMap<QString, QString>();
+    }
+
+    RETURN_IF_CACHED(faceSuggestions);
+
+    FaceTagsEditor fte;
+    QMap<QString, QString> faceSuggestions = fte.getSuggestedNames(m_data->id);
+
+    ItemInfoWriteLocker lock;
+    m_data.data()->faceSuggestionsCached = true;
+    m_data.data()->faceSuggestions       = faceSuggestions;
+
+    return m_data->faceSuggestions;
+}
+
 int ItemInfo::orientation() const
 {
     if (!m_data)
@@ -232,14 +270,11 @@ int ItemInfo::orientation() const
         return 0; // ORIENTATION_UNSPECIFIED
     }
 
+    RETURN_IF_CACHED(orientation)
+
     QVariantList values = CoreDbAccess().db()->getItemInformation(m_data->id, DatabaseFields::Orientation);
 
-    if (values.isEmpty())
-    {
-        return 0;
-    }
-
-    return values.first().toInt();
+    STORE_IN_CACHE_AND_RETURN(orientation, values.first().toInt());
 }
 
 QUrl ItemInfo::fileUrl() const
@@ -346,6 +381,10 @@ void ItemInfo::setOrientation(int value)
     }
 
     CoreDbAccess().db()->changeItemInformation(m_data->id, QVariantList() << value, DatabaseFields::Orientation);
+
+    ItemInfoWriteLocker lock;
+    m_data->orientation       = value;
+    m_data->orientationCached = true;
 }
 
 void ItemInfo::setName(const QString& newName)

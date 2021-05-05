@@ -7,7 +7,7 @@
  * Description : a matrix implementation for image
  *               perspective adjustment.
  *
- * Copyright (C) 2005-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2005-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2006-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  *
  * Based on PerspectiveMatrix3 implementation inspired from gimp 2.0
@@ -35,7 +35,8 @@
 namespace DigikamEditorPerspectiveToolPlugin
 {
 
-static double identityPerspectiveMatrix[3][3] = {
+static double identityPerspectiveMatrix[3][3] =
+                                     {
                                        { 1.0, 0.0, 0.0 },
                                        { 0.0, 1.0, 0.0 },
                                        { 0.0, 0.0, 1.0 }

@@ -6,8 +6,8 @@
  * Date        : 2009-12-13
  * Description : a tool to blend bracketed images.
  *
- * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (C) 2015      by Benjamin Girault, <benjamin dot girault at gmail dot com>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2015      by Benjamin Girault <benjamin dot girault at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -65,7 +65,7 @@ public:
 
 EnfuseStackItem::EnfuseStackItem(QTreeWidget* const parent)
     : QTreeWidgetItem(parent),
-      d(new Private)
+      d              (new Private)
 {
     setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled | Qt::ItemIsUserCheckable);
     setCheckState(0, Qt::Unchecked);
@@ -133,7 +133,7 @@ bool EnfuseStackItem::asValidThumb() const
 
 bool EnfuseStackItem::isOn() const
 {
-    return (checkState(0) == Qt::Checked ? true : false);
+    return ((checkState(0) == Qt::Checked) ? true : false);
 }
 
 void EnfuseStackItem::setOn(bool b)
@@ -148,11 +148,11 @@ class Q_DECL_HIDDEN EnfuseStackList::Private
 public:
 
     explicit Private()
-      : outputFormat(DSaveSettingsWidget::OUTPUT_PNG),
+      : outputFormat (DSaveSettingsWidget::OUTPUT_PNG),
         progressCount(0),
         progressTimer(nullptr),
-        progressPix(DWorkingPixmap()),
-        processItem(nullptr)
+        progressPix  (nullptr),
+        processItem  (nullptr)
     {
     }
 
@@ -162,15 +162,16 @@ public:
 
     int                               progressCount;
     QTimer*                           progressTimer;
-    DWorkingPixmap                    progressPix;
+    DWorkingPixmap*                   progressPix;
     EnfuseStackItem*                  processItem;
 };
 
 EnfuseStackList::EnfuseStackList(QWidget* const parent)
     : QTreeWidget(parent),
-      d(new Private)
+      d          (new Private)
 {
     d->progressTimer = new QTimer(this);
+    d->progressPix   = new DWorkingPixmap(this);
 
     setContextMenuPolicy(Qt::CustomContextMenu);
     setIconSize(QSize(64, 64));
@@ -214,13 +215,16 @@ void EnfuseStackList::slotContextMenu(const QPoint& p)
     if (item)
     {
         QAction* const rmItem = new QAction(QIcon::fromTheme(QLatin1String("window-close")), i18nc("@item:inmenu", "Remove item"), this);
+
         connect(rmItem, SIGNAL(triggered(bool)),
                 this, SLOT(slotRemoveItem()));
+
         popmenu.addAction(rmItem);
         popmenu.addSeparator();
     }
 
     QAction* const rmAll = new QAction(QIcon::fromTheme(QLatin1String("edit-delete")), i18nc("@item:inmenu", "Clear all"), this);
+
     connect(rmAll, SIGNAL(triggered(bool)),
             this, SLOT(clear()));
 
@@ -272,7 +276,9 @@ void EnfuseStackList::clearSelected()
     }
 
     foreach (QTreeWidgetItem* const item, list)
+    {
         delete item;
+    }
 }
 
 void EnfuseStackList::setOnItem(const QUrl& url, bool on)
@@ -280,7 +286,9 @@ void EnfuseStackList::setOnItem(const QUrl& url, bool on)
     EnfuseStackItem* const item = findItemByUrl(url);
 
     if (item)
+    {
         item->setOn(on);
+    }
 }
 
 void EnfuseStackList::removeItem(const QUrl& url)
@@ -292,9 +300,12 @@ void EnfuseStackList::removeItem(const QUrl& url)
 void EnfuseStackList::addItem(const QUrl& url, const EnfuseSettings& settings)
 {
     if (!url.isValid())
+    {
         return;
+    }
 
     // Check if the new item already exist in the list.
+
     if (!findItemByUrl(url))
     {
         EnfuseSettings enfusePrms = settings;
@@ -313,12 +324,17 @@ void EnfuseStackList::addItem(const QUrl& url, const EnfuseSettings& settings)
 
 void EnfuseStackList::setThumbnail(const QUrl& url, const QImage& img)
 {
-    if (img.isNull()) return;
+    if (img.isNull())
+    {
+        return;
+    }
 
     EnfuseStackItem* const item = findItemByUrl(url);
 
     if (item && (!item->asValidThumb()))
+    {
         item->setThumbnail(QPixmap::fromImage(img.scaled(iconSize().width(), iconSize().height(), Qt::KeepAspectRatio)));
+    }
 }
 
 void EnfuseStackList::slotItemClicked(QTreeWidgetItem* item)
@@ -326,16 +342,20 @@ void EnfuseStackList::slotItemClicked(QTreeWidgetItem* item)
     EnfuseStackItem* const eItem = dynamic_cast<EnfuseStackItem*>(item);
 
     if (eItem)
+    {
         emit signalItemClicked(eItem->url());
+    }
 }
 
 void EnfuseStackList::slotProgressTimerDone()
 {
-    d->processItem->setProgressAnimation(d->progressPix.frameAt(d->progressCount));
+    d->processItem->setProgressAnimation(d->progressPix->frameAt(d->progressCount));
     d->progressCount++;
 
     if (d->progressCount == 8)
+    {
         d->progressCount = 0;
+    }
 
     d->progressTimer->start(300);
 }
@@ -349,7 +369,9 @@ EnfuseStackItem* EnfuseStackList::findItemByUrl(const QUrl& url)
         EnfuseStackItem* const item = dynamic_cast<EnfuseStackItem*>(*it);
 
         if (item && (item->url() == url))
+        {
             return item;
+        }
 
         ++it;
     }
@@ -382,7 +404,10 @@ void EnfuseStackList::processedItem(const QUrl& url, bool success)
     EnfuseStackItem* const item = findItemByUrl(url);
 
     if (item)
-        item->setProcessedIcon(QIcon::fromTheme(success ? QLatin1String("dialog-ok-apply") : QLatin1String("dialog-cancel")));
+    {
+        item->setProcessedIcon(QIcon::fromTheme(success ? QLatin1String("dialog-ok-apply")
+                                                        : QLatin1String("dialog-cancel")));
+    }
 }
 
 void EnfuseStackList::setTemplateFileName(DSaveSettingsWidget::OutputFormat frm, const QString& string)
@@ -403,7 +428,7 @@ void EnfuseStackList::setTemplateFileName(DSaveSettingsWidget::OutputFormat frm,
             EnfuseSettings settings = item->enfuseSettings();
             QString ext             = DSaveSettingsWidget::extensionForFormat(d->outputFormat);
             settings.outputFormat   = d->outputFormat;
-            settings.targetFileName = d->templateFileName + temp.sprintf("-%02i", count+1).append(ext);
+            settings.targetFileName = d->templateFileName + temp.asprintf("-%02i", count+1).append(ext);
             item->setEnfuseSettings(settings);
         }
 

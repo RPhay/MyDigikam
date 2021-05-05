@@ -1,9 +1,11 @@
 #
-# Copyright (c) 2010-2019, Gilles Caulier, <caulier dot gilles at gmail dot com>
+# Copyright (c) 2010-2020, Gilles Caulier, <caulier dot gilles at gmail dot com>
 # Copyright (c) 2011-2016, Benjamin Girault, <benjamin dot girault at gmail dot com>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying PANO_COPYING-CMAKE-SCRIPTS file.
+
+APPLY_COMMON_POLICIES()
 
 include(MacroDPlugins)
 
@@ -27,9 +29,16 @@ FLEX_TARGET(PTOScanner panoparser/ptoparser/panoScanner.l ${CMAKE_CURRENT_BINARY
 BISON_TARGET(PTOParser panoparser/ptoparser/panoParser.y  ${CMAKE_CURRENT_BINARY_DIR}/panoParser.c)
 ADD_FLEX_BISON_DEPENDENCY(PTOScanner PTOParser)
 
-if(NOT MSVC)
+if(MSVC)
+
     set_source_files_properties(${CMAKE_CURRENT_BINARY_DIR}/panoScanner.c
-                                PROPERTIES COMPILE_FLAGS "-Wno-unused-function -Wno-sign-compare")
+                                PROPERTIES COMPILE_FLAGS "/w")
+
+else()
+
+    set_source_files_properties(${CMAKE_CURRENT_BINARY_DIR}/panoScanner.c
+                                PROPERTIES COMPILE_FLAGS "-w")
+
 endif()
 
 set_property(SOURCE panoParser.h PROPERTY SKIP_AUTOMOC ON)
@@ -44,7 +53,17 @@ set(libpanoparser_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/panoparser/ptoparser/ptofile.cpp
 )
 
+# For unit-tests and plugin
 add_library(panoparser STATIC ${libpanoparser_SRCS})
+
+if(MSVC)
+
+    target_compile_definitions(panoparser
+                               PRIVATE
+                               YY_NO_UNISTD_H
+    )
+
+endif()
 
 target_link_libraries(panoparser
                       digikamcore
@@ -68,7 +87,15 @@ set(panoramaplugin_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/tasks/createpreviewtask.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/tasks/createptotask.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/tasks/preprocesstask.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/manager/cpfindbinary.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/tools/autooptimiserbinary.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/tools/cpcleanbinary.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/tools/cpfindbinary.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/tools/enblendbinary.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/tools/huginexecutorbinary.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/tools/makebinary.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/tools/nonabinary.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/tools/panomodifybinary.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/tools/pto2mkbinary.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/manager/panoactionthread.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/manager/panomanager.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/wizard/panointropage.cpp
@@ -88,7 +115,3 @@ DIGIKAM_ADD_GENERIC_PLUGIN(NAME    Panorama
 )
 
 add_subdirectory(icons)
-
-if(BUILD_TESTING)
-    add_subdirectory(tests)
-endif()

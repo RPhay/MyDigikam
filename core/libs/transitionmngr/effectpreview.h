@@ -6,7 +6,7 @@
  * Date        : 2017-06-04
  * Description : A label to show video frame effect preview
  *
- * Copyright (C) 2017-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2017-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -45,8 +45,8 @@ class DIGIKAM_EXPORT EffectPreview : public QLabel
 
 public:
 
-    explicit EffectPreview(QWidget* const parent=nullptr);
-    ~EffectPreview();
+    explicit EffectPreview(QWidget* const parent = nullptr);
+    ~EffectPreview() override;
 
     void setImagesList(const QList<QUrl>& images);
 

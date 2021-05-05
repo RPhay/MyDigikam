@@ -6,7 +6,7 @@
  * Date        : 2004-11-22
  * Description : stand alone digiKam image editor
  *
- * Copyright (C) 2004-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2004-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2006-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  * Copyright (C) 2009-2011 by Andi Clemens <andi dot clemens at gmail dot com>
  * Copyright (C) 2004-2005 by Renchi Raju <renchi dot raju at gmail dot com>
@@ -32,9 +32,9 @@
 namespace ShowFoto
 {
 
-ShowFoto::ShowFoto(const QList<QUrl>& urlList)
+ShowFoto::ShowFoto(const QList<QUrl>& urlList, QWidget* const)
     : Digikam::EditorWindow(QLatin1String("Showfoto")),
-      d(new Private)
+      d                    (new Private)
 {
     setXMLFile(QLatin1String("showfotoui5.rc"));
 
@@ -267,7 +267,7 @@ void ShowFoto::slotOpenFolder()
     }
 }
 
-void ShowFoto::openUrls(const QList<QUrl> &urls)
+void ShowFoto::openUrls(const QList<QUrl>& urls)
 {
     if (urls.isEmpty())
     {
@@ -275,7 +275,7 @@ void ShowFoto::openUrls(const QList<QUrl> &urls)
     }
 
     ShowfotoItemInfo iteminfo;
-    DMetadata meta;
+    QScopedPointer<DMetadata> meta(new DMetadata);
 
     for (QList<QUrl>::const_iterator it = urls.constBegin() ; it != urls.constEnd() ; ++it)
     {
@@ -296,11 +296,11 @@ void ShowFoto::openUrls(const QList<QUrl> &urls)
 
 #endif
 
-        meta.load(fi.filePath());
-        iteminfo.ctime     = meta.getItemDateTime();
-        iteminfo.width     = meta.getItemDimensions().width();
-        iteminfo.height    = meta.getItemDimensions().height();
-        iteminfo.photoInfo = meta.getPhotographInformation();
+        meta->load(fi.filePath());
+        iteminfo.ctime     = meta->getItemDateTime();
+        iteminfo.width     = meta->getItemDimensions().width();
+        iteminfo.height    = meta->getItemDimensions().height();
+        iteminfo.photoInfo = meta->getPhotographInformation();
 
         if (!d->infoList.contains(iteminfo))
         {
@@ -351,7 +351,7 @@ void ShowFoto::openFolder(const QUrl& url)
 
     QFileInfoList::const_iterator fi;
     ShowfotoItemInfo iteminfo;
-    DMetadata meta;
+    QScopedPointer<DMetadata> meta(new DMetadata);
 
     // And open all items in image editor.
 
@@ -373,11 +373,11 @@ void ShowFoto::openFolder(const QUrl& url)
 
 #endif
 
-        meta.load((*fi).filePath());
-        iteminfo.ctime     = meta.getItemDateTime();
-        iteminfo.width     = meta.getItemDimensions().width();
-        iteminfo.height    = meta.getItemDimensions().height();
-        iteminfo.photoInfo = meta.getPhotographInformation();
+        meta->load((*fi).filePath());
+        iteminfo.ctime     = meta->getItemDateTime();
+        iteminfo.width     = meta->getItemDimensions().width();
+        iteminfo.height    = meta->getItemDimensions().height();
+        iteminfo.photoInfo = meta->getPhotographInformation();
 
         if (!d->infoList.contains(iteminfo))
         {
@@ -403,16 +403,20 @@ void ShowFoto::slotDroppedUrls(const QList<QUrl>& droppedUrls, bool dropped)
         if (drop.isValid())
         {
             QFileInfo info(drop.toLocalFile());
-            QString ext(info.suffix().toUpper());
+            QString suffix(info.suffix().toUpper());
             QUrl url(QUrl::fromLocalFile(info.canonicalFilePath()));
 
             // Add extra check of the image extensions that are still
             // unknown in older Qt versions or have an application mime type.
 
-            if (QMimeDatabase().mimeTypeForUrl(url).name().startsWith(QLatin1String("image/")) ||
-                (ext == QLatin1String("HEIC"))                                                   ||
-                (ext == QLatin1String("HEIF"))                                                   ||
-                (ext == QLatin1String("KRA")))
+            QMimeDatabase mimeDB;
+            QString mimeType(mimeDB.mimeTypeForUrl(url).name());
+
+            if (mimeType.startsWith(QLatin1String("image/")) ||
+                (suffix == QLatin1String("PGF"))             ||
+                (suffix == QLatin1String("KRA"))             ||
+                (suffix == QLatin1String("HEIC"))            ||
+                (suffix == QLatin1String("HEIF")))
             {
                 imagesUrls << url;
             }
@@ -522,7 +526,7 @@ void ShowFoto::slotChanged()
 {
     QString mpixels;
     QSize dims(m_canvas->imageWidth(), m_canvas->imageHeight());
-    mpixels.setNum(dims.width()*dims.height()/1000000.0, 'f', 2);
+    mpixels = QLocale().toString(dims.width()*dims.height()/1000000.0, 'f', 1);
     QString str = (!dims.isValid()) ? i18nc("unknown image dimensions", "Unknown")
                                     : i18nc("%1 width, %2 height, %3 mpixels", "%1x%2 (%3Mpx)",
                                             dims.width(),dims.height(),mpixels);
@@ -878,6 +882,11 @@ void ShowFoto::slotSetupMetadataFilters(int tab)
     Setup::execMetadataFilters(this, tab+1);
 }
 
+void ShowFoto::slotSetupExifTool()
+{
+    Setup::execExifTool(this);
+}
+
 void ShowFoto::slotAddedDropedItems(QDropEvent* e)
 {
     QList<QUrl> list = e->mimeData()->urls();
@@ -915,13 +924,42 @@ DInfoInterface* ShowFoto::infoIface(DPluginAction* const)
 {
     DMetaInfoIface* const iface = new DMetaInfoIface(this, d->thumbBar->urls());
 
+    qCDebug(DIGIKAM_GENERAL_LOG) << "ShowFoto::infoIface: nb of file" << d->thumbBar->urls().size();
+
     connect(iface, SIGNAL(signalItemChanged(QUrl)),
             this, SLOT(slotChanged()));
 
     connect(iface, SIGNAL(signalImportedImage(QUrl)),
             this, SLOT(slotImportedImagefromScanner(QUrl)));
 
+    connect(iface, SIGNAL(signalRemoveImageFromAlbum(QUrl)),
+            this, SLOT(slotRemoveImageFromAlbum(QUrl)));
+
     return iface;
+}
+
+void ShowFoto::slotRemoveImageFromAlbum(const QUrl& url)
+{
+    d->thumbBar->setCurrentUrl(url);
+
+    d->model->removeIndex(d->thumbBar->currentIndex());
+
+    // Disable menu actions and SideBar if no current image.
+
+    d->itemsNb = d->thumbBar->showfotoItemInfos().size();
+
+    if (d->itemsNb == 0)
+    {
+        slotUpdateItemInfo();
+        toggleActions(false);
+        m_canvas->load(QString(), m_IOFileSettings);
+        emit signalNoCurrentItem();
+    }
+}
+
+void ShowFoto::slotOnlineVersionCheck()
+{
+    Setup::onlineVersionCheck();
 }
 
 } // namespace ShowFoto

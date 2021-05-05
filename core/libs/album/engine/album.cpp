@@ -7,7 +7,7 @@
  * Description : digiKam album types
  *
  * Copyright (C) 2004-2005 by Renchi Raju <renchi dot raju at gmail dot com>
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2014-2015 by Mohamed_Anwer <m_dot_anwer at gmx dot com>
  *
  * This program is free software; you can redistribute it
@@ -105,7 +105,7 @@ Album* Album::next() const
 
     int row = m_parent->m_childCache.indexOf(const_cast<Album*>(this));
 
-    if (row < 0 || (row + 1 >= m_parent->m_childCache.count()))
+    if ((row < 0) || ((row + 1) >= m_parent->m_childCache.count()))
     {
         return nullptr;
     }
@@ -132,7 +132,7 @@ Album* Album::prev() const
 
 Album* Album::childAtRow(int row) const
 {
-    return m_childCache.value(row, 0);
+    return m_childCache.value(row, nullptr);
 }
 
 AlbumList Album::childAlbums(bool recursive)
@@ -214,16 +214,16 @@ int Album::globalID(Type type, int id)
             return id;
 
         case (TAG):
-            return id | (1 << 27);
+            return (id | (1 << 27));
 
         case (DATE):
-            return id | (1 << 28);
+            return (id | (1 << 28));
 
         case (SEARCH):
-            return id | (1 << 29);
+            return (id | (1 << 29));
 
         case (FACE):
-            return id | (1 << 30);
+            return (id | (1 << 30));
 
         default:
             qCDebug(DIGIKAM_GENERAL_LOG) << "Unknown album type";
@@ -280,7 +280,7 @@ void Album::removeExtraData(const void* const key)
 
 void* Album::extraData(const void* const key) const
 {
-    return m_extraMap.value(key, 0);
+    return m_extraMap.value(key, nullptr);
 }
 
 bool Album::isRoot() const
@@ -443,7 +443,7 @@ QDate PAlbum::date() const
 
 QString PAlbum::albumPath() const
 {
-    return m_parentPath + m_path;
+    return (m_parentPath + m_path);
 }
 
 CoreDbUrl PAlbum::databaseUrl() const
@@ -499,7 +499,7 @@ QString TAlbum::tagPath(bool leadingSlash) const
 {
     if (isRoot())
     {
-        return leadingSlash ? QLatin1String("/") : QLatin1String("");
+        return (leadingSlash ? QLatin1String("/") : QLatin1String(""));
     }
 
     QString u;
@@ -519,9 +519,15 @@ QString TAlbum::tagPath(bool leadingSlash) const
     return u;
 }
 
+QString TAlbum::standardIconName() const
+{
+    return (hasProperty(TagPropertyName::person()) ? QLatin1String("smiley")
+                                                   : QLatin1String("tag"));
+}
+
 QString TAlbum::prettyUrl() const
 {
-    return i18n("Tags") + tagPath(true);
+    return (i18n("Tags") + tagPath(true));
 }
 
 CoreDbUrl TAlbum::databaseUrl() const
@@ -537,11 +543,11 @@ QList<int> TAlbum::tagIDs() const
     }
     else if (parent())
     {
-        return static_cast<TAlbum*>(parent())->tagIDs() << id();
+        return (static_cast<TAlbum*>(parent())->tagIDs() << id());
     }
     else
     {
-        return QList<int>() << id();
+        return (QList<int>() << id());
     }
 }
 
@@ -585,6 +591,7 @@ DAlbum::DAlbum(const QDate& date, bool root, Range range)
       m_range(range)
 {
     // Set the name of the date album
+
     QString dateTitle;
 
     if (m_range == Month)
@@ -828,6 +835,7 @@ AlbumIterator& AlbumIterator::operator++()
             {
                 // we have reached the root.
                 // that means no more children
+
                 m_current = nullptr;
                 break;
             }

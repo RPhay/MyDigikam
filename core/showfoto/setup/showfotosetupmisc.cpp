@@ -6,7 +6,7 @@
  * Date        : 2005-04-02
  * Description : setup Misc tab.
  *
- * Copyright (C) 2005-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2005-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C)      2008 by Arnd Baecker <arnd dot baecker at web dot de>
  * Copyright (C)      2014 by Mohamed_Anwer <m_dot_anwer at gmx dot com>
  *
@@ -34,10 +34,13 @@
 #include <QVBoxLayout>
 #include <QStyleFactory>
 #include <QApplication>
+#include <QDirIterator>
 #include <QStyle>
 #include <QComboBox>
 #include <QFile>
 #include <QTabWidget>
+#include <QMessageBox>
+#include <QPushButton>
 
 // KDE includes
 
@@ -49,6 +52,9 @@
 #include "dlayoutbox.h"
 #include "dfontselect.h"
 #include "showfotosettings.h"
+#include "systemsettingswidget.h"
+#include "onlineversionchecker.h"
+#include "showfotosetup.h"
 
 using namespace Digikam;
 
@@ -60,52 +66,62 @@ class Q_DECL_HIDDEN SetupMisc::Private
 public:
 
     explicit Private()
-      : tab(nullptr),
-        sidebarTypeLabel(nullptr),
-        applicationStyleLabel(nullptr),
-        applicationIconLabel(nullptr),
-        showSplash(nullptr),
-        nativeFileDialog(nullptr),
-        itemCenter(nullptr),
-        showMimeOverImage(nullptr),
-        showCoordinates(nullptr),
-        sortReverse(nullptr),
-        sidebarType(nullptr),
-        sortOrderComboBox(nullptr),
-        applicationStyle(nullptr),
-        applicationIcon(nullptr),
-        applicationFont(nullptr),
-        settings(ShowfotoSettings::instance())
+      : tab                     (nullptr),
+        updateTypeLabel         (nullptr),
+        sidebarTypeLabel        (nullptr),
+        applicationStyleLabel   (nullptr),
+        applicationIconLabel    (nullptr),
+        showSplash              (nullptr),
+        nativeFileDialog        (nullptr),
+        itemCenter              (nullptr),
+        showMimeOverImage       (nullptr),
+        showCoordinates         (nullptr),
+        sortReverse             (nullptr),
+        updateType              (nullptr),
+        updateWithDebug         (nullptr),
+        sidebarType             (nullptr),
+        sortOrderComboBox       (nullptr),
+        applicationStyle        (nullptr),
+        applicationIcon         (nullptr),
+        applicationFont         (nullptr),
+        systemSettingsWidget    (nullptr),
+        settings                (ShowfotoSettings::instance())
     {
     }
 
-    QTabWidget*          tab;
+    QTabWidget*           tab;
 
-    QLabel*              sidebarTypeLabel;
-    QLabel*              applicationStyleLabel;
-    QLabel*              applicationIconLabel;
+    QLabel*               updateTypeLabel;
+    QLabel*               sidebarTypeLabel;
+    QLabel*               applicationStyleLabel;
+    QLabel*               applicationIconLabel;
 
-    QCheckBox*           showSplash;
-    QCheckBox*           nativeFileDialog;
-    QCheckBox*           itemCenter;
-    QCheckBox*           showMimeOverImage;
-    QCheckBox*           showCoordinates;
-    QCheckBox*           sortReverse;
+    QCheckBox*            showSplash;
+    QCheckBox*            nativeFileDialog;
+    QCheckBox*            itemCenter;
+    QCheckBox*            showMimeOverImage;
+    QCheckBox*            showCoordinates;
+    QCheckBox*            sortReverse;
 
-    QComboBox*           sidebarType;
-    QComboBox*           sortOrderComboBox;
-    QComboBox*           applicationStyle;
-    QComboBox*           applicationIcon;
-    DFontSelect*         applicationFont;
+    QComboBox*            updateType;
+    QCheckBox*            updateWithDebug;
 
-    ShowfotoSettings*    settings;
+    QComboBox*            sidebarType;
+    QComboBox*            sortOrderComboBox;
+    QComboBox*            applicationStyle;
+    QComboBox*            applicationIcon;
+    DFontSelect*          applicationFont;
+
+    SystemSettingsWidget* systemSettingsWidget;
+
+    ShowfotoSettings*     settings;
 };
 
 // --------------------------------------------------------
 
 SetupMisc::SetupMisc(QWidget* const parent)
     : QScrollArea(parent),
-      d(new Private)
+      d          (new Private)
 {
     d->tab = new QTabWidget(viewport());
     setWidget(d->tab);
@@ -118,7 +134,7 @@ SetupMisc::SetupMisc(QWidget* const parent)
     QWidget* const behaviourPanel = new QWidget(d->tab);
     QVBoxLayout* const layout     = new QVBoxLayout(behaviourPanel);
 
-    // -- Sort Order Options --------------------------------------------------------
+    // -- Sort Order Options ----------------------------------
 
     QGroupBox* const sortOptionsGroup = new QGroupBox(i18n("Images Sort Order"), behaviourPanel);
     QVBoxLayout* const gLayout4       = new QVBoxLayout();
@@ -140,7 +156,7 @@ SetupMisc::SetupMisc(QWidget* const parent)
     gLayout4->addWidget(d->sortReverse);
     sortOptionsGroup->setLayout(gLayout4);
 
-    // Thumbnails Options ----------------------------------------------------------------------
+    // Thumbnails Options -------------------------------------
 
     QGroupBox* const thOptionsGroup = new QGroupBox(i18n("Thumbnails"), behaviourPanel);
     QVBoxLayout* const gLayout3     = new QVBoxLayout();
@@ -156,12 +172,54 @@ SetupMisc::SetupMisc(QWidget* const parent)
     gLayout3->addWidget(d->itemCenter);
     thOptionsGroup->setLayout(gLayout3);
 
+    // Update Options ----------------------------------------
+
+    QGroupBox* const upOptionsGroup = new QGroupBox(i18n("Updates"), behaviourPanel);
+    QVBoxLayout* const gLayout5     = new QVBoxLayout();
+
+    DHBox* const updateHbox = new DHBox(upOptionsGroup);
+    d->updateTypeLabel      = new QLabel(i18n("Check for new version:"), updateHbox);
+    d->updateType           = new QComboBox(updateHbox);
+    d->updateType->addItem(i18n("Only For Stable Releases"), 0);
+    d->updateType->addItem(i18n("Weekly Pre-Releases"),      1);
+    d->updateType->setToolTip(i18n("Set this option to configure which kind of new versions must be check for updates.\n"
+                                   "\"Stable\" releases are official versions safe to use in production.\n"
+                                   "\"Pre-releases\" are proposed weekly to tests quickly new features\n"
+                                   "and are not recommended to use in production as bugs can remain."));
+
+    d->updateWithDebug = new QCheckBox(i18n("Use Version With Debug Symbols"), upOptionsGroup);
+    d->updateWithDebug->setWhatsThis(i18n("If this option is enabled, a version including debug symbols will be used for updates.\n"
+                                          "This version is more heavy but can help developers to trace dysfunctions in debugger."));
+
+    DHBox* const updateHbox2     = new DHBox(upOptionsGroup);
+    QLabel* const lastCheckLabel = new QLabel(updateHbox2);
+    lastCheckLabel->setText(i18n("Last check: %1", OnlineVersionChecker::lastCheckDate()));
+    QPushButton* const updateNow = new QPushButton(i18n("Check now..."), updateHbox2);
+
+    connect(updateNow, &QPushButton::pressed,
+            this, [=]()
+        {
+            if (parent)
+            {
+                parent->close();
+            }
+
+            Setup::onlineVersionCheck();
+        }
+    );
+
+    gLayout5->addWidget(updateHbox);
+    gLayout5->addWidget(d->updateWithDebug);
+    gLayout5->addWidget(updateHbox2);
+    upOptionsGroup->setLayout(gLayout5);
+
     // ---------------------------------------------------------
 
     layout->setContentsMargins(spacing, spacing, spacing, spacing);
     layout->setSpacing(spacing);
     layout->addWidget(sortOptionsGroup);
     layout->addWidget(thOptionsGroup);
+    layout->addWidget(upOptionsGroup);
     layout->addStretch();
 
     d->tab->insertTab(Behaviour, behaviourPanel, i18nc("@title:tab", "Behaviour"));
@@ -186,11 +244,11 @@ SetupMisc::SetupMisc(QWidget* const parent)
     d->applicationStyle       = new QComboBox(appStyleHbox);
     d->applicationStyle->setToolTip(i18n("Set this option to choose the default window decoration and looks."));
 
-    QStringList styleList     = QStyleFactory::keys();
-
-    for (int i = 0 ; i < styleList.count() ; ++i)
+    foreach (const QString& style, QStyleFactory::keys())
     {
-        d->applicationStyle->addItem(styleList.at(i));
+        QString sitem = style;
+        sitem[0]      = sitem[0].toUpper();
+        d->applicationStyle->addItem(sitem, sitem.toLower());
     }
 
 #ifndef HAVE_APPSTYLE_SUPPORT
@@ -205,28 +263,42 @@ SetupMisc::SetupMisc(QWidget* const parent)
     d->applicationIcon         = new QComboBox(iconThemeHbox);
     d->applicationIcon->setToolTip(i18n("Set this option to choose the default icon theme."));
 
-    d->applicationIcon->addItem(i18n("Use Icon Theme From System"), QString());
-
-    const QString indexTheme = QLatin1String("/index.theme");
-    const QString breezeDark = QLatin1String("/breeze-dark");
-    const QString breeze     = QLatin1String("/breeze");
-
-    bool foundBreezeDark     = false;
-    bool foundBreeze         = false;
+    QMap<QString, QString> iconThemes;
+    QMap<QString, QString> themeWhiteList;
+    themeWhiteList.insert(QLatin1String("adwaita"),         i18nc("icon theme", "Adwaita"));
+    themeWhiteList.insert(QLatin1String("breeze"),          i18nc("icon theme", "Breeze"));
+    themeWhiteList.insert(QLatin1String("breeze-dark"),     i18nc("icon theme", "Breeze Dark"));
+    themeWhiteList.insert(QLatin1String("faenza"),          i18nc("icon theme", "Faenza"));
+    themeWhiteList.insert(QLatin1String("faenza-ambiance"), i18nc("icon theme", "Ambiance"));
+    themeWhiteList.insert(QLatin1String("humanity"),        i18nc("icon theme", "Humanity"));
+    themeWhiteList.insert(QLatin1String("oxygen"),          i18nc("icon theme", "Oxygen"));
 
     foreach (const QString& path, QIcon::themeSearchPaths())
     {
-        if (!foundBreeze && QFile::exists(path + breeze + indexTheme))
-        {
-            d->applicationIcon->addItem(i18n("Breeze"), breeze.mid(1));
-            foundBreeze = true;
-        }
+        QDirIterator it(path, QDir::Dirs       |
+                              QDir::NoSymLinks |
+                              QDir::NoDotAndDotDot);
 
-        if (!foundBreezeDark && QFile::exists(path + breezeDark + indexTheme))
+        while (it.hasNext())
         {
-            d->applicationIcon->addItem(i18n("Breeze Dark"), breezeDark.mid(1));
-            foundBreezeDark = true;
+            if (QFile::exists(it.next() + QLatin1String("/index.theme")))
+            {
+                QString iconKey = it.fileInfo().fileName().toLower();
+
+                if (themeWhiteList.contains(iconKey))
+                {
+                    iconThemes[themeWhiteList.value(iconKey)] = it.fileInfo().fileName();
+                }
+            }
         }
+    }
+
+    QMap<QString, QString>::const_iterator it = iconThemes.constBegin();
+    d->applicationIcon->addItem(i18n("Use Icon Theme From System"), QString());
+
+    for ( ; it != iconThemes.constEnd() ; ++it)
+    {
+        d->applicationIcon->addItem(it.key(), it.value());
     }
 
     d->applicationFont = new DFontSelect(i18n("Application font:"), appearancePanel);
@@ -246,6 +318,12 @@ SetupMisc::SetupMisc(QWidget* const parent)
 
     d->tab->insertTab(Appearance, appearancePanel, i18nc("@title:tab", "Appearance"));
 
+    // -- System Options --------------------------------------------------------
+
+    d->systemSettingsWidget = new SystemSettingsWidget(d->tab);
+
+    d->tab->insertTab(System, d->systemSettingsWidget, i18nc("@title:tab", "System"));
+
     // --------------------------------------------------------
 
     readSettings();
@@ -256,20 +334,51 @@ SetupMisc::~SetupMisc()
     delete d;
 }
 
+bool SetupMisc::checkSettings()
+{
+    // If check for new version use weekly pre-releases, warn end-user.
+
+    if ((d->updateType->currentIndex()                    == 1) &&
+        (ShowfotoSettings::instance()->getUpdateType() == 0))
+    {
+        d->tab->setCurrentIndex(0);
+
+        int result = QMessageBox::warning(this, qApp->applicationName(),
+                                          i18n("Check for new version option will verify the pre-releases.\n"
+                                               "\"Pre-releases\" are proposed weekly to tests quickly new features.\n"
+                                               "It's not recommended to use pre-release in production as bugs can remain,\n"
+                                               "unless you know what you are doing.\n"
+                                               "Do you want to continue?"),
+                                                QMessageBox::Yes | QMessageBox::No);
+        if (result == QMessageBox::Yes)
+        {
+            return true;
+        }
+
+        return false;
+    }
+
+    return true;
+}
+
 void SetupMisc::readSettings()
 {
+    d->systemSettingsWidget->readSettings();
+
     d->showSplash->setChecked(d->settings->getShowSplash());
     d->nativeFileDialog->setChecked(d->settings->getNativeFileDialog());
     d->itemCenter->setChecked(d->settings->getItemCenter());
     d->showMimeOverImage->setChecked(d->settings->getShowFormatOverThumbnail());
     d->showCoordinates->setChecked(d->settings->getShowCoordinates());
     d->sidebarType->setCurrentIndex(d->settings->getRightSideBarStyle());
+    d->updateType->setCurrentIndex(d->settings->getUpdateType());
+    d->updateWithDebug->setChecked(d->settings->getUpdateWithDebug());
     d->sortOrderComboBox->setCurrentIndex(d->settings->getSortRole());
     d->sortReverse->setChecked(d->settings->getReverseSort());
 
 #ifdef HAVE_APPSTYLE_SUPPORT
 
-    d->applicationStyle->setCurrentIndex(d->applicationStyle->findText(d->settings->getApplicationStyle(), Qt::MatchFixedString));
+    d->applicationStyle->setCurrentIndex(d->applicationStyle->findData(d->settings->getApplicationStyle().toLower()));
 
 #endif
 
@@ -279,12 +388,16 @@ void SetupMisc::readSettings()
 
 void SetupMisc::applySettings()
 {
+    d->systemSettingsWidget->saveSettings();
+
     d->settings->setShowSplash(d->showSplash->isChecked());
     d->settings->setNativeFileDialog(d->nativeFileDialog->isChecked());
     d->settings->setItemCenter(d->itemCenter->isChecked());
     d->settings->setShowFormatOverThumbnail(d->showMimeOverImage->isChecked());
     d->settings->setShowCoordinates(d->showCoordinates->isChecked());
     d->settings->setRightSideBarStyle(d->sidebarType->currentIndex());
+    d->settings->setUpdateType(d->updateType->currentIndex());
+    d->settings->setUpdateWithDebug(d->updateWithDebug->isChecked());
     d->settings->setSortRole(d->sortOrderComboBox->currentIndex());
     d->settings->setReverseSort(d->sortReverse->isChecked());
 

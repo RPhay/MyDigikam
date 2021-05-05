@@ -6,7 +6,7 @@
  * Date        : 2018-07-30
  * Description : image editor plugin to rotate an image.
  *
- * Copyright (C) 2018-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2018-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -43,7 +43,7 @@ class FreeRotationToolPlugin : public DPluginEditor
 public:
 
     explicit FreeRotationToolPlugin(QObject* const parent = nullptr);
-    ~FreeRotationToolPlugin();
+    ~FreeRotationToolPlugin()            override;
 
     QString name()                 const override;
     QString iid()                  const override;
@@ -52,14 +52,14 @@ public:
     QString description()          const override;
     QList<DPluginAuthor> authors() const override;
 
-    void setup(QObject* const) override;
+    void setup(QObject* const)           override;
 
 Q_SIGNALS:
 
     void signalPoint1Action();
     void signalPoint2Action();
-    void signalAutoAdjustAction();    
-    
+    void signalAutoAdjustAction();
+
 private Q_SLOTS:
 
     void slotFreeRotation();

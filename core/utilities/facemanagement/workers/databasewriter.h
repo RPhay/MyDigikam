@@ -7,7 +7,7 @@
  * Description : Integrated, multithread face detection / recognition
  *
  * Copyright (C) 2010-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2012-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -39,7 +39,8 @@ class Q_DECL_HIDDEN DatabaseWriter : public WorkerObject
 
 public:
 
-    DatabaseWriter(FacePipeline::WriteMode mode, FacePipeline::Private* const d);
+    DatabaseWriter(FacePipeline::WriteMode mode, FacePipeline::Private* const dd);
+    ~DatabaseWriter() override;
 
 public Q_SLOTS:
 
@@ -54,6 +55,12 @@ protected:
     FacePipeline::WriteMode      mode;
     ThumbnailLoadThread*         thumbnailLoadThread;
     FacePipeline::Private* const d;
+
+private:
+
+    // Disable
+    DatabaseWriter(const DatabaseWriter&)            = delete;
+    DatabaseWriter& operator=(const DatabaseWriter&) = delete;
 };
 
 } // namespace Digikam

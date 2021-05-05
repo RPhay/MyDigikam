@@ -6,7 +6,7 @@
  * Date        : 2010-03-26
  * Description : A widget to configure the GPS correlation
  *
- * Copyright (C) 2010-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2010-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2010-2014 by Michael G. Hansen <mike at mghansen dot de>
  * Copyright (C) 2014      by Justus Schwartz <justus at gmx dot li>
  *
@@ -74,29 +74,29 @@ class Q_DECL_HIDDEN GPSCorrelatorWidget::Private
 public:
 
     explicit Private()
-      : gpxLoadFilesButton(nullptr),
-        gpxFileList(nullptr),
-        timeZoneCB(nullptr),
-        offsetSign(nullptr),
-        offsetTime(nullptr),
-        interpolateButton(nullptr),
-        interpolateLimitLabel(nullptr),
-        interpolateLimitInput(nullptr),
-        directMatchButton(nullptr),
-        directMatchLimitLabel(nullptr),
-        directMatchLimitInput(nullptr),
-        showTracksOnMap(nullptr),
-        correlateButton(nullptr),
-        trackManager(nullptr),
-        trackCorrelator(nullptr),
-        trackListModel(nullptr),
-        uiEnabledInternal(true),
-        uiEnabledExternal(true),
-        imageModel(nullptr),
-        correlationTotalCount(0),
-        correlationCorrelatedCount(0),
-        correlationTriedCount(0),
-        correlationUndoCommand(nullptr)
+      : gpxLoadFilesButton          (nullptr),
+        gpxFileList                 (nullptr),
+        timeZoneCB                  (nullptr),
+        offsetSign                  (nullptr),
+        offsetTime                  (nullptr),
+        interpolateButton           (nullptr),
+        interpolateLimitLabel       (nullptr),
+        interpolateLimitInput       (nullptr),
+        directMatchButton           (nullptr),
+        directMatchLimitLabel       (nullptr),
+        directMatchLimitInput       (nullptr),
+        showTracksOnMap             (nullptr),
+        correlateButton             (nullptr),
+        trackManager                (nullptr),
+        trackCorrelator             (nullptr),
+        trackListModel              (nullptr),
+        uiEnabledInternal           (true),
+        uiEnabledExternal           (true),
+        imageModel                  (nullptr),
+        correlationTotalCount       (0),
+        correlationCorrelatedCount  (0),
+        correlationTriedCount       (0),
+        correlationUndoCommand      (nullptr)
     {
     }
 
@@ -260,6 +260,9 @@ GPSCorrelatorWidget::GPSCorrelatorWidget(QWidget* const parent,
     settingsLayout->addWidget(d->correlateButton,    9, 0, 1, 1);
     settingsLayout->setRowStretch(9, 100);
 
+    connect(d->gpxFileList->selectionModel(), SIGNAL(currentChanged(QModelIndex,QModelIndex)),
+            this, SLOT(slotCurrentChanged(QModelIndex,QModelIndex)));
+
     connect(d->gpxLoadFilesButton, SIGNAL(clicked()),
             this, SLOT(slotLoadTrackFiles()));
 
@@ -365,7 +368,7 @@ void GPSCorrelatorWidget::slotCorrelate()
 {
     // disable the UI of the entire dialog:
 
-    emit signalSetUIEnabled(false, this, QLatin1String(SLOT(slotCancelCorrelation())));
+    emit signalSetUIEnabled(false, this, QString::fromUtf8(SLOT(slotCancelCorrelation())));
 
     // store the options:
 
@@ -603,6 +606,20 @@ void GPSCorrelatorWidget::slotShowTracksStateChanged(int state)
 bool GPSCorrelatorWidget::getShowTracksOnMap() const
 {
     return d->showTracksOnMap->isChecked();
+}
+
+void GPSCorrelatorWidget::slotCurrentChanged(const QModelIndex& current, const QModelIndex& /*previous*/)
+{
+    if (d->showTracksOnMap->isChecked() && current.isValid())
+    {
+        const TrackManager::Track& track = d->trackListModel->getTrackForIndex(current);
+
+        if ((track.id != 0) && (track.points.size() > 0))
+        {
+            const GeoCoordinates& coordinates = track.points.at(0).coordinates;
+            emit signalTrackListChanged(coordinates);
+        }
+    }
 }
 
 } // namespace Digikam

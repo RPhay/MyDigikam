@@ -8,7 +8,7 @@
  *
  * Copyright (C) 2008-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  * Copyright (C) 2010      by Andi Clemens <andi dot clemens at gmail dot com>
- * Copyright (C) 2012-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -49,14 +49,14 @@ class Q_DECL_HIDDEN AbstractAlbumModel::Private
 public:
 
     explicit Private()
-        : rootAlbum(nullptr),
-          addingAlbum(nullptr),
-          type(Album::PHYSICAL),
-          dragDropHandler(nullptr),
-          rootBehavior(AbstractAlbumModel::IncludeRootAlbum),
-          removingAlbum(0),
-          itemDrag(true),
-          itemDrop(true)
+        : rootAlbum         (nullptr),
+          addingAlbum       (nullptr),
+          type              (Album::PHYSICAL),
+          dragDropHandler   (nullptr),
+          rootBehavior      (AbstractAlbumModel::IncludeRootAlbum),
+          removingAlbum     (0),
+          itemDrag          (true),
+          itemDrop          (true)
     {
     }
 
@@ -140,6 +140,9 @@ QVariant AbstractAlbumModel::albumData(Album* a, int role) const
             // reimplement in subclasses
             return decorationRoleData(a);
 
+        case Qt::FontRole:
+            return fontRoleData(a);
+
         case AlbumTitleRole:
             return a->title();
 
@@ -210,7 +213,7 @@ Qt::ItemFlags AbstractAlbumModel::flags(const QModelIndex& index) const
 {
     if (!index.isValid())
     {
-        return nullptr;
+        return Qt::NoItemFlags;
     }
 
     Album* const a = static_cast<Album*>(index.internalPointer());
@@ -430,6 +433,11 @@ Album::Type AbstractAlbumModel::albumType() const
 }
 
 QVariant AbstractAlbumModel::decorationRoleData(Album*) const
+{
+    return QVariant();
+}
+
+QVariant AbstractAlbumModel::fontRoleData(Album*) const
 {
     return QVariant();
 }
@@ -914,7 +922,7 @@ public:
           rootIsCheckable(true),
           addExcludeTristate(false),
           staticVectorContainingCheckStateRole(1, Qt::CheckStateRole)
-          
+
     {
     }
 
@@ -979,17 +987,50 @@ void AbstractCheckableAlbumModel::setTristate(bool isTristate)
 {
     if (isTristate)
     {
-        d->extraFlags |= Qt::ItemIsTristate;
+        d->extraFlags |= 
+
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 12, 0))
+
+        Qt::ItemIsAutoTristate;
+
+#else
+
+        Qt::ItemIsTristate;
+
+#endif
+
     }
     else
     {
-        d->extraFlags &= ~Qt::ItemIsTristate;
+        d->extraFlags &= ~
+
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 12, 0))
+
+        Qt::ItemIsAutoTristate;
+
+#else
+
+        Qt::ItemIsTristate;
+
+#endif
+
     }
 }
 
 bool AbstractCheckableAlbumModel::isTristate() const
 {
-    return d->extraFlags & Qt::ItemIsTristate;
+    return d->extraFlags &
+
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 12, 0))
+
+        Qt::ItemIsAutoTristate;
+
+#else
+
+        Qt::ItemIsTristate;
+
+#endif
+
 }
 
 void AbstractCheckableAlbumModel::setAddExcludeTristate(bool b)
@@ -1213,9 +1254,9 @@ bool AbstractCheckableAlbumModel::setData(const QModelIndex& index, const QVaria
         {
             return false;
         }
-
-        //qCDebug(DIGIKAM_GENERAL_LOG) << "Updating check state for album" << album->title() << "to" << value;
-
+/*
+        qCDebug(DIGIKAM_GENERAL_LOG) << "Updating check state for album" << album->title() << "to" << value;
+*/
         d->checkedAlbums.insert(album, state);
         emit dataChanged(index, index);
         emit checkStateChanged(album, state);

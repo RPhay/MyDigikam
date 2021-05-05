@@ -10,7 +10,7 @@
  * Copyright (C) 2006      by Ian Monroe <ian at monroe dot nu>
  * Copyright (C) 2009      by Andi Clemens <andi dot clemens at gmail dot com>
  * Copyright (C) 2006-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2008-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2008-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -72,13 +72,17 @@ class DeleteItem : public QTreeWidgetItem
 public:
 
     explicit DeleteItem(QTreeWidget* const parent, const QUrl& url);
-    virtual ~DeleteItem();
+    ~DeleteItem()                     override;
 
     bool    hasValidThumbnail() const;
     QUrl    url()               const;
     QString fileUrl()           const;
 
-    void setThumb(const QPixmap& pix, bool hasThumb=true);
+    void setThumb(const QPixmap& pix, bool hasThumb = true);
+
+private:
+
+    Q_DISABLE_COPY(DeleteItem)
 
 private:
 
@@ -94,12 +98,14 @@ class DeleteItemList : public QTreeWidget
 
 public:
 
-    explicit DeleteItemList(QWidget* const parent=nullptr);
-    virtual ~DeleteItemList();
+    explicit DeleteItemList(QWidget* const parent = nullptr);
+    ~DeleteItemList()                            override;
 
 private :
 
-    void drawRow(QPainter* p, const QStyleOptionViewItem& opt, const QModelIndex& index) const;
+    void drawRow(QPainter* p,
+                 const QStyleOptionViewItem& opt,
+                 const QModelIndex& index) const override;
 
 private Q_SLOTS:
 
@@ -120,7 +126,7 @@ class DeleteWidget : public QWidget
 public:
 
     explicit DeleteWidget(QWidget* const parent = nullptr);
-    virtual ~DeleteWidget();
+    ~DeleteWidget() override;
 
     void setUrls(const QList<QUrl>& urls);
     void setListMode(DeleteDialogMode::ListMode mode);
@@ -160,12 +166,12 @@ public:
 public:
 
     explicit DeleteDialog(QWidget* const parent);
-    virtual ~DeleteDialog();
+    ~DeleteDialog()                 override;
 
     bool confirmDeleteList(const QList<QUrl>& condemnedURLs,
                            DeleteDialogMode::ListMode listMode,
                            DeleteDialogMode::DeleteMode deleteMode);
-    bool shouldDelete() const;
+    bool shouldDelete()        const;
 
     void setUrls(const QList<QUrl>& urls);
     void presetDeleteMode(DeleteDialogMode::DeleteMode mode);
@@ -178,7 +184,7 @@ protected Q_SLOTS:
 
 private:
 
-    void keyPressEvent(QKeyEvent*) override;
+    void keyPressEvent(QKeyEvent*)  override;
 
 private:
 

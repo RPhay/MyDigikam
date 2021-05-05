@@ -7,7 +7,7 @@
  * Description : a presentation tool.
  *
  * Copyright (C) 2007-2008 by Valerio Fuoglio <valerio dot fuoglio at gmail dot com>
- * Copyright (C) 2012-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * Parts of this code are based on smoothslidesaver by Carsten Weinhold
  * <carsten dot weinhold at gmx dot de>
@@ -26,10 +26,6 @@
 
 #include "kbeffect.h"
 
-// C ANSI includes
-
-#include <assert.h>
-
 // Local includes
 
 #include "presentationkb.h"
@@ -45,15 +41,11 @@ int KBEffect::m_numKBEffectRepeated = 0;
 // -------------------------------------------------------------------------
 
 KBEffect::KBEffect(PresentationKB* const parent, bool needFadeIn)
+    : m_needFadeIn (needFadeIn),
+      m_slideWidget(parent)
 {
-    m_img[0]      = nullptr;
-    m_img[1]      = nullptr;
-    m_slideWidget = parent;
-    m_needFadeIn  = needFadeIn;
-}
-
-KBEffect::~KBEffect()
-{
+    m_img[0] = nullptr;
+    m_img[1] = nullptr;
 }
 
 void KBEffect::setupNewImage(int img)
@@ -68,14 +60,13 @@ void KBEffect::swapImages()
 
 KBImage* KBEffect::image(int img) const
 {
-    Q_ASSERT (img >= 0 && img < 2);
+    Q_ASSERT ((img >= 0) && (img < 2));
 
     return m_slideWidget->d->image[img];
 }
 
 KBEffect::Type KBEffect::chooseKBEffect(KBEffect::Type oldType)
 {
-
     KBEffect::Type type;
 
     do
@@ -85,9 +76,13 @@ KBEffect::Type KBEffect::chooseKBEffect(KBEffect::Type oldType)
     while ((type == oldType) && (m_numKBEffectRepeated >= 1));
 
     if (type == oldType)
+    {
         m_numKBEffectRepeated++;
+    }
     else
+    {
         m_numKBEffectRepeated = 0;
+    }
 
     return type;
 }
@@ -109,6 +104,7 @@ bool FadeKBEffect::done()
     if (m_img[0]->m_pos >= 1.0)
     {
         setupNewImage(0);
+
         return true;
     }
 
@@ -120,14 +116,22 @@ void FadeKBEffect::advanceTime(float step)
     m_img[0]->m_pos += step;
 
     if (m_img[0]->m_pos >= 1.0)
+    {
         m_img[0]->m_pos = 1.0;
+    }
 
-    if (m_needFadeIn && m_img[0]->m_pos < 0.1)
+    if      (m_needFadeIn && (m_img[0]->m_pos < 0.1))
+    {
         m_img[0]->m_opacity = m_img[0]->m_pos * 10;
+    }
     else if (m_img[0]->m_pos > 0.9)
+    {
         m_img[0]->m_opacity = (1.0 - m_img[0]->m_pos) * 10;
+    }
     else
+    {
         m_img[0]->m_opacity = 1.0;
+    }
 }
 
 // -------------------------------------------------------------------------
@@ -149,6 +153,7 @@ bool BlendKBEffect::done()
     {
         m_img[0]->m_paint = false;
         swapImages();
+
         return true;
     }
 
@@ -160,14 +165,19 @@ void BlendKBEffect::advanceTime(float step)
     m_img[0]->m_pos += step;
 
     if (m_img[0]->m_pos >= 1.0)
+    {
         m_img[0]->m_pos = 1.0;
+    }
 
     if (m_img[1])
+    {
         m_img[1]->m_pos += step;
+    }
 
-    if (m_needFadeIn && m_img[0]->m_pos < 0.1)
+    if      (m_needFadeIn && (m_img[0]->m_pos < 0.1))
+    {
         m_img[0]->m_opacity = m_img[0]->m_pos * 10;
-
+    }
     else if (m_img[0]->m_pos > 0.9)
     {
         m_img[0]->m_opacity = (1.0 - m_img[0]->m_pos) * 10;

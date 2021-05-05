@@ -6,7 +6,7 @@
  * Date        : 1997-04-21
  * Description : Frame with popup menu behavior.
  *
- * Copyright (C) 2011-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2011-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 1997      by Tim D. Gilman <tdgilman at best dot org>
  * Copyright (C) 1998-2001 by Mirko Boehm <mirko at kde dot org>
  * Copyright (C) 2007      by John Layt <john at layt dot net>
@@ -64,6 +64,8 @@ public:
 
 class Q_DECL_HIDDEN DPopupFrame::Private::OutsideClickCatcher : public QObject
 {
+    Q_OBJECT
+
 public:
 
     explicit OutsideClickCatcher(QObject* const parent = nullptr)
@@ -72,7 +74,7 @@ public:
     {
     }
 
-    ~OutsideClickCatcher()
+    ~OutsideClickCatcher() override
     {
     }
 
@@ -83,16 +85,18 @@ public:
     }
 
 
-    bool eventFilter(QObject* object, QEvent* event) Q_DECL_OVERRIDE
+    bool eventFilter(QObject* object, QEvent* event) override
     {
         Q_UNUSED(object);
 
         // To catch outside clicks, it is sufficient to check for
         // hide events on Qt::Popup type widgets
+
         if (event->type() == QEvent::Hide && m_popup)
         {
             // do not set d->result here, because the popup
             // hides itself after leaving the event loop.
+
             emit m_popup->leaveModality();
         }
 
@@ -105,9 +109,9 @@ public:
 };
 
 DPopupFrame::Private::Private(DPopupFrame* const qq)
-    : q(qq),
-      result(0),   // rejected
-      main(nullptr),
+    : q                  (qq),
+      result             (0),   // rejected
+      main               (nullptr),
       outsideClickCatcher(new OutsideClickCatcher)
 {
     outsideClickCatcher->setPopupFrame(q);
@@ -148,6 +152,7 @@ void DPopupFrame::hideEvent(QHideEvent *e)
 void DPopupFrame::close(int r)
 {
     d->result = r;
+
     emit leaveModality();
 }
 
@@ -175,12 +180,15 @@ void DPopupFrame::resizeEvent(QResizeEvent* e)
 void DPopupFrame::popup(const QPoint& p)
 {
     // Make sure the whole popup is visible.
+
     QScreen* screen = qApp->primaryScreen();
 
     if (QWidget* const widget = nativeParentWidget())
     {
         if (QWindow* const window = widget->windowHandle())
+        {
             screen = window->screen();
+        }
     }
 
     QRect desktopGeometry = screen->geometry();
@@ -190,12 +198,12 @@ void DPopupFrame::popup(const QPoint& p)
     int w = width();
     int h = height();
 
-    if (x + w > desktopGeometry.x() + desktopGeometry.width())
+    if ((x + w) > (desktopGeometry.x() + desktopGeometry.width()))
     {
         x = desktopGeometry.width() - w;
     }
 
-    if (y + h > desktopGeometry.y() + desktopGeometry.height())
+    if ((y + h) > (desktopGeometry.y() + desktopGeometry.height()))
     {
         y = desktopGeometry.height() - h;
     }
@@ -211,6 +219,7 @@ void DPopupFrame::popup(const QPoint& p)
     }
 
     // Pop the thingy up.
+
     move(x, y);
     show();
     d->main->setFocus();
@@ -229,6 +238,7 @@ int DPopupFrame::exec(const QPoint& p)
     eventLoop.exec();
 
     hide();
+
     return d->result;
 }
 
@@ -238,3 +248,5 @@ int DPopupFrame::exec(int x, int y)
 }
 
 } // namespace Digikam
+
+#include "dpopupframe.moc"

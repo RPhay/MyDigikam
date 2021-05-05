@@ -49,7 +49,7 @@ public:
      */
 
     explicit IccProfilesComboBox(QWidget* const parent = nullptr);
-    ~IccProfilesComboBox();
+    ~IccProfilesComboBox() override;
 
     /**
      * Checks the given profiles for validity, creates a suitable description (ICC profile description, file path),
@@ -89,6 +89,8 @@ public:
 
 class DIGIKAM_EXPORT IccRenderingIntentComboBox : public QComboBox
 {
+    Q_OBJECT
+
 public:
 
     explicit IccRenderingIntentComboBox(QWidget* const parent = nullptr);
@@ -146,6 +148,11 @@ protected Q_SLOTS:
 protected:
 
     QObject*       m_parent;
+
+private:
+
+    // Disable
+    IccProfilesMenuAction(QWidget*);
 };
 
 } // namespace Digikam

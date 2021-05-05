@@ -99,10 +99,12 @@ public:
     int size()                                                              const;
 
     bool operator==(const DImageHistory& other)                             const;
+
     bool operator!=(const DImageHistory& other)                             const
     {
         return !operator==(other);
     }
+
     bool operator<(const DImageHistory& other)                              const;
     bool operator>(const DImageHistory& other)                              const;
 
@@ -139,6 +141,7 @@ public:
      * There is one action per entry,
      * but the action may be null.
      */
+
     /// Returns if there is any non-null action
     bool hasActions()                                                       const;
     bool hasFilters()                                                       const
@@ -211,7 +214,7 @@ public:
 
 public:
 
-    // Set as public there because of PrivateSharedNull
+    /// Set as public there because of PrivateSharedNull
     class Private;
 
 private:

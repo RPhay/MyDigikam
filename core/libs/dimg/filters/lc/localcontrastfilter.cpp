@@ -5,11 +5,11 @@
  *
  * Date        : 2009-08-09
  * Description : Enhance image with local contrasts (as human eye does).
- *               LDR ToneMapper <http://zynaddsubfx.sourceforge.net/other/tonemapping>
+ *               LDR ToneMapper <zynaddsubfx.sourceforge.net/other/tonemapping>
  *
  * Copyright (C) 2009      by Nasca Octavian Paul <zynaddsubfx at yahoo dot com>
  * Copyright (C) 2009      by Julien Pontabry <julien dot pontabry at gmail dot com>
- * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2010      by Martin Klapetek <martin dot klapetek at gmail dot com>
  *
  * This program is free software; you can redistribute it
@@ -63,14 +63,14 @@ public:
 
 LocalContrastFilter::LocalContrastFilter(QObject* const parent)
     : DImgThreadedFilter(parent),
-      d(new Private)
+      d                 (new Private)
 {
     initFilter();
 }
 
 LocalContrastFilter::LocalContrastFilter(DImg* const image, QObject* const parent, const LocalContrastContainer& par)
     : DImgThreadedFilter(image, parent, QLatin1String("LocalContrast")),
-      d(new Private)
+      d                 (new Private)
 {
     d->par = par;
     d->generator.seedByTime();
@@ -80,6 +80,7 @@ LocalContrastFilter::LocalContrastFilter(DImg* const image, QObject* const paren
 LocalContrastFilter::~LocalContrastFilter()
 {
     cancelFilter();
+
     delete d;
 }
 

@@ -7,7 +7,7 @@
  * Description : a list of selectable options with preview
  *               effects as thumbnails.
  *
- * Copyright (C) 2010-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2010-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -61,14 +61,13 @@ public:
 
 PreviewThreadWrapper::PreviewThreadWrapper(QObject* const parent)
     : QObject(parent),
-      d(new Private)
+      d      (new Private)
 {
 }
 
 PreviewThreadWrapper::~PreviewThreadWrapper()
 {
-    qDeleteAll(d->map.values());
-    d->map.clear();
+    qDeleteAll(d->map);
 
     delete d;
 }
@@ -130,8 +129,9 @@ void PreviewThreadWrapper::slotFilterProgress(int /*progress*/)
     {
         return;
     }
-
-    //qCDebug(DIGIKAM_GENERAL_LOG) << filter->filterName() << " : " << progress << " %";
+/*
+    qCDebug(DIGIKAM_GENERAL_LOG) << filter->filterName() << " : " << progress << " %";
+*/
 }
 
 void PreviewThreadWrapper::startFilters()
@@ -159,7 +159,7 @@ public:
 
     explicit Private()
       : busy(false),
-        id(0)
+        id  (0)
     {
     }
 
@@ -169,7 +169,7 @@ public:
 
 PreviewListItem::PreviewListItem(QListWidget* const parent)
     : QListWidgetItem(parent),
-      d(new Private)
+      d              (new Private)
 {
 }
 
@@ -223,8 +223,8 @@ public:
     explicit Private()
       : progressCount(0),
         progressTimer(nullptr),
-        progressPix(DWorkingPixmap()),
-        wrapper(nullptr)
+        progressPix  (nullptr),
+        wrapper      (nullptr)
     {
     }
 
@@ -232,16 +232,17 @@ public:
 
     QTimer*               progressTimer;
 
-    DWorkingPixmap        progressPix;
+    DWorkingPixmap*       progressPix;
 
     PreviewThreadWrapper* wrapper;
 };
 
-PreviewList::PreviewList(QObject* const /*parent*/)
-    : QListWidget(),
-      d(new Private)
+PreviewList::PreviewList(QWidget* const parent)
+    : QListWidget(parent),
+      d          (new Private)
 {
-    d->wrapper = new PreviewThreadWrapper(this);
+    d->wrapper     = new PreviewThreadWrapper(this);
+    d->progressPix = new DWorkingPixmap(this);
 
     setSelectionMode(QAbstractItemView::SingleSelection);
     setDropIndicatorShown(true);
@@ -301,7 +302,7 @@ PreviewListItem* PreviewList::addItem(DImgThreadedFilter* const filter, const QS
     PreviewListItem* const item = new PreviewListItem(this);
     item->setText(txt);
 
-    //  in case text is mangled by textelide, it is displayed by hovering.
+    // in case text is mangled by textelide, it is displayed by hovering.
 
     item->setToolTip(txt);
     item->setId(id);
@@ -363,7 +364,7 @@ int PreviewList::currentId() const
 
 void PreviewList::slotProgressTimerDone()
 {
-    QPixmap ppix(d->progressPix.frameAt(d->progressCount));
+    QPixmap ppix(d->progressPix->frameAt(d->progressCount));
     QPixmap pixmap(128, 128);
     pixmap.fill(Qt::transparent);
     QPainter p(&pixmap);
@@ -393,7 +394,7 @@ void PreviewList::slotProgressTimerDone()
 
     d->progressCount++;
 
-    if (d->progressCount >= d->progressPix.frameCount())
+    if (d->progressCount >= d->progressPix->frameCount())
     {
         d->progressCount = 0;
     }

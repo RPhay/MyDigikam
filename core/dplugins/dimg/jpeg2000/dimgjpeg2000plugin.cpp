@@ -37,6 +37,7 @@
 // Local includes
 
 #include "digikam_debug.h"
+#include "digikam_config.h"
 #include "digikam_globals.h"
 #include "dimgjpeg2000loader.h"
 
@@ -64,7 +65,7 @@ QString DImgJPEG2000Plugin::iid() const
 
 QIcon DImgJPEG2000Plugin::icon() const
 {
-    return QIcon::fromTheme(QLatin1String("image-jpeg2000"));
+    return QIcon::fromTheme(QLatin1String("image-jpeg"));
 }
 
 QString DImgJPEG2000Plugin::description() const
@@ -89,7 +90,7 @@ QList<DPluginAuthor> DImgJPEG2000Plugin::authors() const
     return QList<DPluginAuthor>()
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2006-2020"))
+                             QString::fromUtf8("(C) 2006-2021"))
             ;
 }
 
@@ -117,7 +118,7 @@ QString DImgJPEG2000Plugin::loaderName() const
 
 QString DImgJPEG2000Plugin::typeMimes() const
 {
-    return QLatin1String("JP2 JPX JPC JP2K PGX");
+    return QLatin1String("JP2 JPX JPC J2K JP2K PGX");
 }
 
 int DImgJPEG2000Plugin::canRead(const QFileInfo& fileInfo, bool magic) const
@@ -129,16 +130,20 @@ int DImgJPEG2000Plugin::canRead(const QFileInfo& fileInfo, bool magic) const
 
     if (!magic)
     {
-        return (
-                format == QLatin1String("JP2") || format == QLatin1String("JPX") || // JPEG2000 file format
-                format == QLatin1String("JPC") || format == QLatin1String("J2K") || // JPEG2000 code stream
-                format == QLatin1String("PGX")                                      // JPEG2000 Verification Model
-               ) ? 10 : 0;
+        return typeMimes().contains(format) ? 10 : 0;
     }
 
     // In second, we trying to parse file header.
 
-    FILE* const f = fopen(QFile::encodeName(filePath).constData(), "rb");
+#ifdef Q_OS_WIN
+
+    FILE* const f = _wfopen((const wchar_t*)filePath.utf16(), L"rb");
+
+#else
+
+    FILE* const f = fopen(filePath.toUtf8().constData(), "rb");
+
+#endif
 
     if (!f)
     {
@@ -173,14 +178,7 @@ int DImgJPEG2000Plugin::canRead(const QFileInfo& fileInfo, bool magic) const
 
 int DImgJPEG2000Plugin::canWrite(const QString& format) const
 {
-    if (format == QLatin1String("JP2") || format == QLatin1String("JPX") || // JPEG2000 file format
-        format == QLatin1String("JPC") || format == QLatin1String("J2K") || // JPEG2000 code stream
-        format == QLatin1String("PGX"))                                     // JPEG2000 Verification Model
-    {
-        return 10;
-    }
-
-    return 0;
+    return typeMimes().contains(format.toUpper()) ? 10 : 0;
 }
 
 DImgLoader* DImgJPEG2000Plugin::loader(DImg* const image, const DRawDecoding&) const

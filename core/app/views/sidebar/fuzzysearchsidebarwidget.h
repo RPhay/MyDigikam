@@ -7,7 +7,7 @@
  * Description : Side Bar Widget for the fuzzy search.
  *
  * Copyright (C) 2009-2010 by Johannes Wienke <languitar at semipol dot de>
- * Copyright (C) 2010-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2010-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2014      by Mohamed_Anwer <m_dot_anwer at gmx dot com>
  * Copyright (C) 2010      by Aditya Bhatt <adityabhatt1991 at gmail dot com>
  *
@@ -46,7 +46,7 @@ public:
     explicit FuzzySearchSideBarWidget(QWidget* const parent,
                                       SearchModel* const searchModel,
                                       SearchModificationHelper* const searchModificationHelper);
-    virtual ~FuzzySearchSideBarWidget();
+    ~FuzzySearchSideBarWidget() override;
 
     void          setActive(bool active)                             override;
     void          doLoadState()                                      override;
@@ -56,7 +56,6 @@ public:
     const QIcon   getIcon()                                          override;
     const QString getCaption()                                       override;
 
-    void newDuplicatesSearch(PAlbum* album);
     void newDuplicatesSearch(const QList<PAlbum*>& albums);
     void newDuplicatesSearch(const QList<TAlbum*>& albums);
     void newSimilarSearch(const ItemInfo& imageInfo);

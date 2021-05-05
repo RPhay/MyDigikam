@@ -6,7 +6,7 @@
  * Date        : 2009-03-04
  * Description : assign metadata template batch tool.
  *
- * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -28,6 +28,7 @@
 #include <QLabel>
 #include <QWidget>
 #include <QFile>
+#include <QScopedPointer>
 
 // KDE includes
 
@@ -44,14 +45,19 @@ namespace DigikamBqmAssignTemplatePlugin
 {
 
 AssignTemplate::AssignTemplate(QObject* const parent)
-    : BatchTool(QLatin1String("AssignTemplate"), MetadataTool, parent)
+    : BatchTool(QLatin1String("AssignTemplate"), MetadataTool, parent),
+      m_templateSelector(nullptr),
+      m_templateViewer(nullptr)
 {
-    m_templateSelector = nullptr;
-    m_templateViewer   = nullptr;
 }
 
 AssignTemplate::~AssignTemplate()
 {
+}
+
+BatchTool* AssignTemplate::clone(QObject* const parent) const
+{
+    return new AssignTemplate(parent);
 }
 
 void AssignTemplate::registerSettingsWidget()
@@ -80,7 +86,7 @@ void AssignTemplate::slotAssignSettings2Widget()
 
     Template t;
 
-    if (title == Template::removeTemplateTitle())
+    if      (title == Template::removeTemplateTitle())
     {
         t.setTemplateTitle(Template::removeTemplateTitle());
     }
@@ -107,25 +113,25 @@ void AssignTemplate::slotSettingsChanged()
 
 bool AssignTemplate::toolOperations()
 {
-    DMetadata meta;
+    QScopedPointer<DMetadata> meta(new DMetadata);
 
     if (image().isNull())
     {
-        if (!meta.load(inputUrl().toLocalFile()))
+        if (!meta->load(inputUrl().toLocalFile()))
         {
             return false;
         }
     }
     else
     {
-        meta.setData(image().getMetadata());
+        meta->setData(image().getMetadata());
     }
 
     QString title = settings()[QLatin1String("TemplateTitle")].toString();
 
-    if (title == Template::removeTemplateTitle())
+    if      (title == Template::removeTemplateTitle())
     {
-        meta.removeMetadataTemplate();
+        meta->removeMetadataTemplate();
     }
     else if (title.isEmpty())
     {
@@ -134,8 +140,8 @@ bool AssignTemplate::toolOperations()
     else
     {
         Template t = TemplateManager::defaultManager()->findByTitle(title);
-        meta.removeMetadataTemplate();
-        meta.setMetadataTemplate(t);
+        meta->removeMetadataTemplate();
+        meta->setMetadataTemplate(t);
     }
 
     bool ret = true;
@@ -147,14 +153,14 @@ bool AssignTemplate::toolOperations()
 
         if (ret && !title.isEmpty())
         {
-            ret = meta.save(outputUrl().toLocalFile());
+            ret = meta->save(outputUrl().toLocalFile());
         }
     }
     else
     {
         if (!title.isEmpty())
         {
-            image().setMetadata(meta.data());
+            image().setMetadata(meta->data());
         }
 
         ret = savefromDImg();

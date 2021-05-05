@@ -6,7 +6,7 @@
  * Date        : 2018-07-30
  * Description : a plugin to export to Twitter web-service.
  *
- * Copyright (C) 2018-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2018-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -53,7 +53,7 @@ void TwitterPlugin::cleanUp()
 
 QString TwitterPlugin::name() const
 {
-    return i18n("Twitter");
+    return i18nc("@title", "Twitter");
 }
 
 QString TwitterPlugin::iid() const
@@ -68,13 +68,14 @@ QIcon TwitterPlugin::icon() const
 
 QString TwitterPlugin::description() const
 {
-    return i18n("A tool to export to Twitter web-service");
+    return i18nc("@info", "A tool to export to Twitter web-service");
 }
 
 QString TwitterPlugin::details() const
 {
-    return i18n("<p>This tool permit to export items to Twitter web-service.</p>"
-                "<p>See Twitter web site for details: <a href='https://twitter.com/'>https://twitter.com/</a></p>");
+    return i18nc("@info", "This tool permit to export items to Twitter web-service.\n\n"
+                 "See Twitter web site for details: %1",
+                 QLatin1String("<a href='https://twitter.com/'>https://twitter.com/</a>"));
 }
 
 QList<DPluginAuthor> TwitterPlugin::authors() const

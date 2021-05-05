@@ -1,9 +1,11 @@
 #
-# Copyright (c) 2010-2020 by Gilles Caulier, <caulier dot gilles at gmail dot com>
+# Copyright (c) 2010-2021 by Gilles Caulier, <caulier dot gilles at gmail dot com>
 # Copyright (c) 2015      by Veaceslav Munteanu, <veaceslav dot munteanu90 at gmail dot com>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
+
+APPLY_COMMON_POLICIES()
 
 kde_enable_exceptions()
 
@@ -26,43 +28,54 @@ if("${exiv2_VERSION}" VERSION_LESS "0.27.99")
 endif()
 
 set(libdmetadata_SRCS
-    engine/metaengine.cpp
-    engine/metaengine_p.cpp
-    engine/metaengine_data.cpp
-    engine/metaengine_data_p.cpp
-    engine/metaengine_exif.cpp
-    engine/metaengine_fileio.cpp
-    engine/metaengine_item.cpp
-    engine/metaengine_comments.cpp
-    engine/metaengine_iptc.cpp
-    engine/metaengine_gps.cpp
-    engine/metaengine_xmp.cpp
-    engine/metaengine_previews.cpp
-    engine/metaengine_rotation.cpp
-    engine/metaenginesettings.cpp
-    engine/metaenginesettingscontainer.cpp
-    dmetadata/dmetadata.cpp
-    dmetadata/dmetadata_video.cpp
-    dmetadata/dmetadata_fileio.cpp
-    dmetadata/dmetadata_comments.cpp
-    dmetadata/dmetadata_template.cpp
-    dmetadata/dmetadata_exif.cpp
-    dmetadata/dmetadata_iptc.cpp
-    dmetadata/dmetadata_labels.cpp
-    dmetadata/dmetadata_faces.cpp
-    dmetadata/dmetadata_history.cpp
-    dmetadata/dmetadata_photo.cpp
-    dmetadata/dmetadata_tags.cpp
-    dmetadata/dmetadata_generic.cpp
-    dmetadata/dmetadata_xmp.cpp
-    dmetadata/dmetadatasettings.cpp
-    dmetadata/dmetadatasettingscontainer.cpp
-    dmetadata/geodetictools.cpp
-    containers/metadatainfo.cpp
-    containers/photoinfocontainer.cpp
-    containers/videoinfocontainer.cpp
-    containers/template.cpp
-    containers/captionvalues.cpp
+
+    ${CMAKE_CURRENT_SOURCE_DIR}/engine/metaengine.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/engine/metaengine_p.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/engine/metaengine_data.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/engine/metaengine_data_p.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/engine/metaengine_exif.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/engine/metaengine_fileio.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/engine/metaengine_item.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/engine/metaengine_comments.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/engine/metaengine_iptc.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/engine/metaengine_gps.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/engine/metaengine_xmp.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/engine/metaengine_previews.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/engine/metaengine_rotation.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/engine/metaenginesettings.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/engine/metaenginesettingscontainer.cpp
+
+    ${CMAKE_CURRENT_SOURCE_DIR}/dmetadata/dmetadata.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/dmetadata/dmetadata_video.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/dmetadata/dmetadata_libheif.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/dmetadata/dmetadata_libraw.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/dmetadata/dmetadata_imagemagick.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/dmetadata/dmetadata_fileio.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/dmetadata/dmetadata_comments.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/dmetadata/dmetadata_template.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/dmetadata/dmetadata_exif.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/dmetadata/dmetadata_iptc.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/dmetadata/dmetadata_labels.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/dmetadata/dmetadata_faces.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/dmetadata/dmetadata_history.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/dmetadata/dmetadata_photo.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/dmetadata/dmetadata_tags.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/dmetadata/dmetadata_generic.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/dmetadata/dmetadata_xmp.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/dmetadata/dmetadatasettings.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/dmetadata/dmetadatasettingscontainer.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/dmetadata/geodetictools.cpp
+
+    ${CMAKE_CURRENT_SOURCE_DIR}/containers/metadatainfo.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/containers/photoinfocontainer.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/containers/videoinfocontainer.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/containers/template.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/containers/captionvalues.cpp
+
+    ${CMAKE_CURRENT_SOURCE_DIR}/exiftool/exiftoolparser.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/exiftool/exiftoolparser_p.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/exiftool/exiftoolprocess.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/exiftool/exiftoolprocess_p.cpp
 )
 
 include_directories(
@@ -75,4 +88,12 @@ include_directories(
     $<TARGET_PROPERTY:exiv2lib,INTERFACE_INCLUDE_DIRECTORIES>
 )
 
-add_library(dmetadata_src OBJECT ${libdmetadata_SRCS})
+# Used by digikamcore
+add_library(core_dmetadata_obj OBJECT ${libdmetadata_SRCS})
+
+add_dependencies(core_dmetadata_obj core_libheif_obj)
+
+target_compile_definitions(core_dmetadata_obj
+                           PRIVATE
+                           digikamcore_EXPORTS
+)

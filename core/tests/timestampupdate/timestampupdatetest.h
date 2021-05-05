@@ -26,11 +26,18 @@
 
 // Qt includes
 
-#include <QtTest>
+#include <QTest>
 
 class TimeStampUpdateTest : public QObject
 {
     Q_OBJECT
+
+public:
+
+    explicit TimeStampUpdateTest(QObject* const parent = nullptr)
+        : QObject(parent)
+    {
+    }
 
 private Q_SLOTS:
 
@@ -44,6 +51,8 @@ private:
 
     QString tempFileName(const QString& purpose) const;
     QString tempFilePath(const QString& purpose) const;
+
+private:
 
     QString          dbFile;
     QList<qlonglong> ids;

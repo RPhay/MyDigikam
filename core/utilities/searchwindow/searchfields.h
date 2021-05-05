@@ -7,7 +7,7 @@
  * Description : User interface for searches
  *
  * Copyright (C) 2008-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2011-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2011-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -61,7 +61,8 @@ class RatingComboBox;
 class PickLabelFilter;
 class ColorLabelFilter;
 
-class SearchField : public QObject, public VisibilityObject
+class SearchField : public QObject,
+                    public VisibilityObject
 {
     Q_OBJECT
 
@@ -93,8 +94,8 @@ public:
     virtual void write(SearchXmlWriter& writer)       = 0;
     virtual void reset()                              = 0;
 
-    virtual void setVisible(bool visible) override;
-    virtual bool isVisible()              override;
+    void setVisible(bool visible) override;
+    bool isVisible()              override;
 
 protected Q_SLOTS:
 
@@ -107,8 +108,8 @@ protected:
     virtual void setupValueWidgets(QGridLayout* layout, int row, int column) = 0;
     virtual void setupLabels(QGridLayout* layout, int line);
 
-    virtual void setValueWidgetsVisible(bool visible) = 0;
-    virtual QList<QRect> valueWidgetRects() const = 0;
+    virtual void setValueWidgetsVisible(bool visible)                        = 0;
+    virtual QList<QRect> valueWidgetRects()                            const = 0;
 
 protected:
 
@@ -124,9 +125,9 @@ protected:
 
 private:
 
-    // Hidden copy constructor and assignment operator.
-    SearchField(const SearchField&);
-    SearchField& operator=(const SearchField&);
+    // Disable
+    SearchField(const SearchField&)            = delete;
+    SearchField& operator=(const SearchField&) = delete;
 };
 
 //-----------------------------------------------------------------------------
@@ -139,12 +140,12 @@ public:
 
     explicit SearchFieldText(QObject* const parent);
 
-    virtual void setupValueWidgets(QGridLayout* layout, int row, int column) override;
-    virtual void read(SearchXmlCachingReader& reader) override;
-    virtual void write(SearchXmlWriter& writer) override;
-    virtual void setValueWidgetsVisible(bool visible) override;
-    virtual void reset() override;
-    virtual QList<QRect> valueWidgetRects() const override;
+    void setupValueWidgets(QGridLayout* layout, int row, int column) override;
+    void read(SearchXmlCachingReader& reader) override;
+    void write(SearchXmlWriter& writer) override;
+    void setValueWidgetsVisible(bool visible) override;
+    void reset() override;
+    QList<QRect> valueWidgetRects() const override;
 
 protected Q_SLOTS:
 
@@ -159,12 +160,14 @@ protected:
 
 class SearchFieldKeyword : public SearchFieldText
 {
+    Q_OBJECT
+
 public:
 
     explicit SearchFieldKeyword(QObject* const parent);
 
-    virtual void read(SearchXmlCachingReader& reader) override;
-    virtual void write(SearchXmlWriter& writer) override;
+    void read(SearchXmlCachingReader& reader) override;
+    void write(SearchXmlWriter& writer)       override;
 };
 
 //-----------------------------------------------------------------------------
@@ -188,12 +191,12 @@ public:
     void setSingleSteps(int smaller, int larger);
     void setInvertStepping(bool invert);
 
-    virtual void setupValueWidgets(QGridLayout* layout, int row, int column) override;
-    virtual void read(SearchXmlCachingReader& reader) override;
-    virtual void write(SearchXmlWriter& writer) override;
-    virtual void reset() override;
-    virtual void setValueWidgetsVisible(bool visible) override;
-    virtual QList<QRect> valueWidgetRects() const override;
+    void setupValueWidgets(QGridLayout* layout, int row, int column) override;
+    void read(SearchXmlCachingReader& reader) override;
+    void write(SearchXmlWriter& writer) override;
+    void reset() override;
+    void setValueWidgetsVisible(bool visible) override;
+    QList<QRect> valueWidgetRects() const override;
 
 protected Q_SLOTS:
 
@@ -210,9 +213,9 @@ protected:
 
 private:
 
-    // Hidden copy constructor and assignment operator.
-    SearchFieldRangeInt(const SearchFieldRangeInt&);
-    SearchFieldRangeInt& operator=(const SearchFieldRangeInt&);
+    // Disable
+    SearchFieldRangeInt(const SearchFieldRangeInt&)            = delete;
+    SearchFieldRangeInt& operator=(const SearchFieldRangeInt&) = delete;
 };
 
 //-----------------------------------------------------------------------------
@@ -236,12 +239,12 @@ public:
     void setSingleSteps(double smaller, double larger);
     void setInvertStepping(bool invert);
 
-    virtual void setupValueWidgets(QGridLayout* layout, int row, int column) override;
-    virtual void read(SearchXmlCachingReader& reader) override;
-    virtual void write(SearchXmlWriter& writer) override;
-    virtual void reset() override;
-    virtual void setValueWidgetsVisible(bool visible) override;
-    virtual QList<QRect> valueWidgetRects() const override;
+    void setupValueWidgets(QGridLayout* layout, int row, int column) override;
+    void read(SearchXmlCachingReader& reader) override;
+    void write(SearchXmlWriter& writer) override;
+    void reset() override;
+    void setValueWidgetsVisible(bool visible) override;
+    QList<QRect> valueWidgetRects() const override;
 
 protected Q_SLOTS:
 
@@ -258,9 +261,9 @@ protected:
 
 private:
 
-    // Hidden copy constructor and assignment operator.
-    SearchFieldRangeDouble(const SearchFieldRangeDouble&);
-    SearchFieldRangeDouble& operator=(const SearchFieldRangeDouble&);
+    // Disable
+    SearchFieldRangeDouble(const SearchFieldRangeDouble&)            = delete;
+    SearchFieldRangeDouble& operator=(const SearchFieldRangeDouble&) = delete;
 };
 
 //-----------------------------------------------------------------------------
@@ -284,12 +287,12 @@ public:
     void setBetweenText(const QString& between);
     void setBoundary(const QDateTime& min, const QDateTime& max);
 
-    virtual void setupValueWidgets(QGridLayout* layout, int row, int column) override;
-    virtual void read(SearchXmlCachingReader& reader) override;
-    virtual void write(SearchXmlWriter& writer) override;
-    virtual void reset() override;
-    virtual void setValueWidgetsVisible(bool visible) override;
-    virtual QList<QRect> valueWidgetRects() const override;
+    void setupValueWidgets(QGridLayout* layout, int row, int column) override;
+    void read(SearchXmlCachingReader& reader) override;
+    void write(SearchXmlWriter& writer) override;
+    void reset() override;
+    void setValueWidgetsVisible(bool visible) override;
+    QList<QRect> valueWidgetRects() const override;
 
 protected Q_SLOTS:
 
@@ -307,9 +310,9 @@ protected:
 
 private:
 
-    // Hidden copy constructor and assignment operator.
-    SearchFieldRangeDate(const SearchFieldRangeDate&);
-    SearchFieldRangeDate& operator=(const SearchFieldRangeDate&);
+    // Disable
+    SearchFieldRangeDate(const SearchFieldRangeDate&)            = delete;
+    SearchFieldRangeDate& operator=(const SearchFieldRangeDate&) = delete;
 };
 
 //-----------------------------------------------------------------------------
@@ -326,12 +329,12 @@ public:
     void setChoice(const QStringList& choice);
     void setAnyText(const QString& anyText);
 
-    virtual void setupValueWidgets(QGridLayout* layout, int row, int column) override;
-    virtual void read(SearchXmlCachingReader& reader) override;
-    virtual void write(SearchXmlWriter& writer) override;
-    virtual void reset() override;
-    virtual void setValueWidgetsVisible(bool visible) override;
-    virtual QList<QRect> valueWidgetRects() const override;
+    void setupValueWidgets(QGridLayout* layout, int row, int column) override;
+    void read(SearchXmlCachingReader& reader) override;
+    void write(SearchXmlWriter& writer) override;
+    void reset() override;
+    void setValueWidgetsVisible(bool visible) override;
+    QList<QRect> valueWidgetRects() const override;
 
 protected Q_SLOTS:
 
@@ -350,9 +353,9 @@ protected:
 
 private:
 
-    // Hidden copy constructor and assignment operator.
-    SearchFieldChoice(const SearchFieldChoice&);
-    SearchFieldChoice& operator=(const SearchFieldChoice&);
+    // Disable
+    SearchFieldChoice(const SearchFieldChoice&)            = delete;
+    SearchFieldChoice& operator=(const SearchFieldChoice&) = delete;
 };
 
 //-----------------------------------------------------------------------------
@@ -379,19 +382,20 @@ public:
     enum Operation
     {
         All,
-        OneOf
+        OneOf,
+        InTree
     };
 
 public:
 
     SearchFieldAlbum(QObject* const parent, Type type);
 
-    virtual void setupValueWidgets(QGridLayout* layout, int row, int column) override;
-    virtual void read(SearchXmlCachingReader& reader) override;
-    virtual void write(SearchXmlWriter& writer) override;
-    virtual void reset() override;
-    virtual void setValueWidgetsVisible(bool visible) override;
-    virtual QList<QRect> valueWidgetRects() const override;
+    void setupValueWidgets(QGridLayout* layout, int row, int column) override;
+    void read(SearchXmlCachingReader& reader) override;
+    void write(SearchXmlWriter& writer) override;
+    void reset() override;
+    void setValueWidgetsVisible(bool visible) override;
+    QList<QRect> valueWidgetRects() const override;
 
 protected Q_SLOTS:
 
@@ -419,12 +423,12 @@ public:
 
     void setBetweenText(const QString& text);
 
-    virtual void setupValueWidgets(QGridLayout* layout, int row, int column) override;
-    virtual void read(SearchXmlCachingReader& reader) override;
-    virtual void write(SearchXmlWriter& writer) override;
-    virtual void reset() override;
-    virtual void setValueWidgetsVisible(bool visible) override;
-    virtual QList<QRect> valueWidgetRects() const override;
+    void setupValueWidgets(QGridLayout* layout, int row, int column) override;
+    void read(SearchXmlCachingReader& reader) override;
+    void write(SearchXmlWriter& writer) override;
+    void reset() override;
+    void setValueWidgetsVisible(bool visible) override;
+    QList<QRect> valueWidgetRects() const override;
 
 protected Q_SLOTS:
 
@@ -439,9 +443,9 @@ protected:
 
 private:
 
-    // Hidden copy constructor and assignment operator.
-    SearchFieldRating(const SearchFieldRating&);
-    SearchFieldRating& operator=(const SearchFieldRating&);
+    // Disable
+    SearchFieldRating(const SearchFieldRating&)            = delete;
+    SearchFieldRating& operator=(const SearchFieldRating&) = delete;
 };
 
 //-----------------------------------------------------------------------------
@@ -454,11 +458,11 @@ public:
 
     explicit SearchFieldComboBox(QObject* const  parent);
 
-    virtual void setupValueWidgets(QGridLayout* layout, int row, int column) override;
-    virtual void write(SearchXmlWriter& writer) override;
-    virtual void reset() override;
-    virtual void setValueWidgetsVisible(bool visible) override;
-    virtual QList<QRect> valueWidgetRects() const override;
+    void setupValueWidgets(QGridLayout* layout, int row, int column) override;
+    void write(SearchXmlWriter& writer) override;
+    void reset() override;
+    void setValueWidgetsVisible(bool visible) override;
+    QList<QRect> valueWidgetRects() const override;
 
 protected Q_SLOTS:
 
@@ -481,12 +485,12 @@ public:
 
     void setLabel(const QString& text);
 
-    virtual void setupValueWidgets(QGridLayout* layout, int row, int column) override;
-    virtual void read(SearchXmlCachingReader& reader) override;
-    virtual void write(SearchXmlWriter& writer) override;
-    virtual void reset() override;
-    virtual void setValueWidgetsVisible(bool visible) override;
-    virtual QList<QRect> valueWidgetRects() const override;
+    void setupValueWidgets(QGridLayout* layout, int row, int column) override;
+    void read(SearchXmlCachingReader& reader) override;
+    void write(SearchXmlWriter& writer) override;
+    void reset() override;
+    void setValueWidgetsVisible(bool visible) override;
+    QList<QRect> valueWidgetRects() const override;
 
 protected Q_SLOTS:
 
@@ -508,8 +512,8 @@ public:
 
     explicit SearchFieldColorDepth(QObject* const parent);
 
-    virtual void setupValueWidgets(QGridLayout* layout, int row, int column) override;
-    virtual void read(SearchXmlCachingReader& reader) override;
+    void setupValueWidgets(QGridLayout* layout, int row, int column) override;
+    void read(SearchXmlCachingReader& reader) override;
 };
 
 //-----------------------------------------------------------------------------
@@ -522,8 +526,8 @@ public:
 
     explicit SearchFieldPageOrientation(QObject* const parent);
 
-    virtual void setupValueWidgets(QGridLayout* layout, int row, int column) override;
-    virtual void read(SearchXmlCachingReader& reader) override;
+    void setupValueWidgets(QGridLayout* layout, int row, int column) override;
+    void read(SearchXmlCachingReader& reader) override;
 };
 
 //-----------------------------------------------------------------------------
@@ -536,12 +540,12 @@ public:
 
     explicit SearchFieldLabels(QObject* const parent);
 
-    virtual void setupValueWidgets(QGridLayout* layout, int row, int column) override;
-    virtual void read(SearchXmlCachingReader& reader) override;
-    virtual void write(SearchXmlWriter& writer) override;
-    virtual void reset() override;
-    virtual void setValueWidgetsVisible(bool visible) override;
-    virtual QList<QRect> valueWidgetRects() const override;
+    void setupValueWidgets(QGridLayout* layout, int row, int column) override;
+    void read(SearchXmlCachingReader& reader) override;
+    void write(SearchXmlWriter& writer) override;
+    void reset() override;
+    void setValueWidgetsVisible(bool visible) override;
+    QList<QRect> valueWidgetRects() const override;
 
 protected Q_SLOTS:
 
@@ -551,6 +555,34 @@ protected:
 
     PickLabelFilter*  m_pickLabelFilter;
     ColorLabelFilter* m_colorLabelFilter;
+};
+
+//-----------------------------------------------------------------------------
+
+class SearchFieldMonthDay : public SearchField
+{
+    Q_OBJECT
+
+public:
+
+    explicit SearchFieldMonthDay(QObject* const parent);
+
+    void setupValueWidgets(QGridLayout* layout, int row, int column) override;
+    void read(SearchXmlCachingReader& reader) override;
+    void write(SearchXmlWriter& writer) override;
+    void reset() override;
+    void setValueWidgetsVisible(bool visible) override;
+    QList<QRect> valueWidgetRects() const override;
+
+protected Q_SLOTS:
+
+    void slotIndexChanged(int);
+
+protected:
+
+    QLabel*    m_dayLabel;
+    QComboBox* m_monthBox;
+    QComboBox* m_dayBox;
 };
 
 } // namespace Digikam

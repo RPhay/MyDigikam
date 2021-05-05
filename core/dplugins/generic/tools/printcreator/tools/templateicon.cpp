@@ -7,7 +7,7 @@
  * Description : a tool to print images
  *
  * Copyright (C) 2008      by Andreas Trink <atrink at nociaro dot org>
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -38,14 +38,14 @@ class Q_DECL_HIDDEN TemplateIcon::Private
 public:
 
     explicit Private()
+      : iconMargin(2),
+        scaleWidth(0.0),
+        scaleHeight(0.0),
+        rotate(false),
+        pixmap(nullptr),
+        painter(nullptr),
+        icon(nullptr)
     {
-        iconMargin  = 2;
-        rotate      = false;
-        scaleWidth  = 0.0;
-        scaleHeight = 0.0;
-        pixmap      = nullptr;
-        painter     = nullptr;
-        icon        = nullptr;
     }
 
     QSize     paperSize;
@@ -70,6 +70,7 @@ TemplateIcon::TemplateIcon(int height, const QSize& template_size)
 
     // remark: d->iconSize is the real size of the d->icon, in the combo-box there is no space
     // between the icons, therefore the variable d->iconMargin
+
     d->iconSize.rwidth() = (int)(float(d->iconSize.height()) *
                             float(d->paperSize.width()) / float(d->paperSize.height()));
     d->scaleWidth        = float(d->iconSize.width())   / float(d->paperSize.width());
@@ -93,15 +94,18 @@ void TemplateIcon::begin()
     d->scaleHeight       = float(d->iconSize.height())  / float(d->paperSize.height());
 
 #ifdef DEBUG_OUTPUT
+
     qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "begin: d->paperSize.width =" <<  d->paperSize.width();
     qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "begin: d->paperSize.height=" <<  d->paperSize.height();
     qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "begin: d->iconSize.width  =" <<  d->iconSize.width();
     qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "begin: d->iconSize.height =" <<  d->iconSize.height();
     qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "begin: d->scaleWidth      =" <<  d->scaleWidth;
     qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "begin: d->scaleHeight     =" <<  d->scaleHeight;
+
 #endif
 
     // d->icon back ground
+
     d->pixmap  = new QPixmap(d->iconSize);
     d->pixmap->fill(Qt::color0);
 
@@ -114,11 +118,14 @@ void TemplateIcon::begin()
 
 void TemplateIcon::fillRect( int x, int y, int w, int h, const QColor& color )
 {
+
 #ifdef DEBUG_OUTPUT
+
     qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "fillRect: x1=" << x << " => " << x       * d->scaleWidth;
     qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "fillRect: y1=" << y << " => " << y       * d->scaleHeight;
     qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "fillRect: x2=" << w << " => " << (x + w) * d->scaleWidth;
     qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "fillRect: y2=" << h << " => " << (y + h) * d->scaleHeight;
+
 #endif
 
     d->painter->fillRect((int)(d->iconMargin + x * d->scaleWidth),
@@ -131,6 +138,7 @@ void TemplateIcon::fillRect( int x, int y, int w, int h, const QColor& color )
 void TemplateIcon::end()
 {
     // paint boundary of template
+
     d->painter->setPen(Qt::color1);
 
     d->painter->drawRect(d->iconMargin,

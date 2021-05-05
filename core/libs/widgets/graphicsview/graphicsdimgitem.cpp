@@ -7,7 +7,7 @@
  * Description : Graphics View item for DImg
  *
  * Copyright (C) 2010-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2011-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2011-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -118,14 +118,14 @@ void CachedPixmaps::insert(const QRect& region, const QPixmap& pixmap)
 
 GraphicsDImgItem::GraphicsDImgItem(QGraphicsItem* const parent)
     : QGraphicsObject(parent),
-      d_ptr(new GraphicsDImgItemPrivate)
+      d_ptr          (new GraphicsDImgItemPrivate)
 {
     d_ptr->init(this);
 }
 
 GraphicsDImgItem::GraphicsDImgItem(GraphicsDImgItemPrivate& dd, QGraphicsItem* const parent)
     : QGraphicsObject(parent),
-      d_ptr(&dd)
+      d_ptr          (&dd)
 {
     d_ptr->init(this);
 }
@@ -151,10 +151,12 @@ GraphicsDImgItem::~GraphicsDImgItem()
 void GraphicsDImgItem::setImage(const DImg& img)
 {
     Q_D(GraphicsDImgItem);
+
     d->image = img;
     d->zoomSettings.setImageSize(img.size(), img.originalSize());
     d->cachedPixmaps.clear();
     sizeHasChanged();
+
     emit imageChanged();
 }
 
@@ -168,14 +170,17 @@ DImg GraphicsDImgItem::image() const
 void GraphicsDImgItem::sizeHasChanged()
 {
     Q_D(GraphicsDImgItem);
+
     QGraphicsItem::prepareGeometryChange();
     d->cachedPixmaps.clear();
+
     emit imageSizeChanged(d->zoomSettings.zoomedSize());
 }
 
 void GraphicsDImgItem::clearCache()
 {
     Q_D(GraphicsDImgItem);
+
     d->cachedPixmaps.clear();
 }
 

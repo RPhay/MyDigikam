@@ -7,7 +7,7 @@
  * Description : a combo box with a width not depending of text
  *               content size
  *
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C)      2008 by Andi Clemens <andi dot clemens at googlemail dot com>
  * Copyright (C)      2005 by Tom Albers <tomalbers at kde dot nl>
  *
@@ -55,15 +55,15 @@ public:
 
     /**
      * Constructor
-     * @param parent parent widget
-     * @param name name to give to the widget
+     * @param parent the parent widget
+     * @param name the name to give to the widget
      */
     explicit SqueezedComboBox(QWidget* const parent = nullptr, const char* name = nullptr);
 
     /**
      * destructor
      */
-    virtual ~SqueezedComboBox();
+    ~SqueezedComboBox()                                   override;
 
     /**
      *
@@ -71,7 +71,16 @@ public:
      * version of text.
      * @param text the original (not-squeezed) text to check for
      */
-    bool contains(const QString& text) const;
+    bool contains(const QString& text)                               const;
+
+    /**
+     * Returns the index of the combobox if found the original (not-squeezed)
+     * version of text.
+     * @param text the original (not-squeezed) text to find for
+     * @param cs case sensitive or case insensitive search
+     */
+    int findOriginalText(const QString& text,
+                         Qt::CaseSensitivity cs = Qt::CaseSensitive) const;
 
     /**
      * This inserts a item to the list. See QComboBox::insertItem()
@@ -83,7 +92,7 @@ public:
      * @param userData custom meta-data assigned to new item.
      */
     void insertSqueezedItem(const QString& newItem, int index,
-                            const QVariant& userData=QVariant());
+                            const QVariant& userData = QVariant());
 
     /**
      * This inserts items to the list. See QComboBox::insertItems()
@@ -102,7 +111,7 @@ public:
      * @param userData custom meta-data assigned to new item.
      */
     void addSqueezedItem(const QString& newItem,
-                         const QVariant& userData=QVariant());
+                         const QVariant& userData = QVariant());
 
     /**
      * Set the current item to the one matching the given text.
@@ -116,19 +125,19 @@ public:
      * highlighted item.
      * @return full text of the highlighted item
      */
-    QString itemHighlighted() const;
+    QString itemHighlighted()                                        const;
 
     /**
      * This method returns the full text (not squeezed) for the index.
      * @param index the position in the widget.
      * @return full text of the item
      */
-    QString item(int index) const;
+    QString item(int index)                                          const;
 
     /**
      * Sets the sizeHint() of this widget.
      */
-    virtual QSize sizeHint() const override;
+    QSize sizeHint()                                                 const override;
 
 private Q_SLOTS:
 
@@ -137,20 +146,25 @@ private Q_SLOTS:
 
 private:
 
-    void    resizeEvent(QResizeEvent*) override;
-    QString squeezeText(const QString& original) const;
+    void    resizeEvent(QResizeEvent*)                                     override;
+    QString squeezeText(const QString& original)                     const;
 
-    // Prevent these from being used.
-    QString currentText() const;
+    /// Prevent these from being used.
+    QString currentText()                                            const;
     void    setCurrentText(const QString& itemText);
     void    insertItem(const QString& text);
     void    insertItem(qint32 index, const QString& text);
-    void    insertItem(int index, const QIcon& icon, const QString& text, const QVariant& userData=QVariant());
+    void    insertItem(int index,
+                       const QIcon& icon,
+                       const QString& text,
+                       const QVariant& userData = QVariant());
     void    insertItems(int index, const QStringList& list);
     void    addItem(const QString& text);
-    void    addItem(const QIcon& icon, const QString& text, const QVariant& userData=QVariant());
+    void    addItem(const QIcon& icon,
+                    const QString& text,
+                    const QVariant& userData = QVariant());
     void    addItems(const QStringList& texts);
-    QString itemText(int index) const;
+    QString itemText(int index)                                      const;
 
 private:
 

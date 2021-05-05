@@ -42,7 +42,7 @@ class MetadataStatusBar : public QWidget
 public:
 
     explicit MetadataStatusBar(QWidget* const parent);
-    ~MetadataStatusBar();
+    ~MetadataStatusBar() override;
 
 public Q_SLOTS:
 

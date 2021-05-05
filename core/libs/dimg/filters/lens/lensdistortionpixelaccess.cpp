@@ -6,7 +6,7 @@
  * Date        : 2004-12-27
  * Description : access pixels method for lens distortion algorithm.
  *
- * Copyright (C) 2004-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2004-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2006-2010 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  *
  * This program is free software; you can redistribute it
@@ -34,13 +34,13 @@ namespace Digikam
 {
 
 LensDistortionPixelAccess::LensDistortionPixelAccess(DImg* srcImage)
-    : m_image(srcImage),
-      m_width(LensDistortionPixelAccessWidth),
-      m_height(LensDistortionPixelAccessHeight),
-      m_depth(m_image->bytesDepth()),
-      m_imageWidth(m_image->width()),
-      m_imageHeight(m_image->height()),
-      m_sixteenBit(m_image->sixteenBit())
+    : m_image       (srcImage),
+      m_width       (LensDistortionPixelAccessWidth),
+      m_height      (LensDistortionPixelAccessHeight),
+      m_depth       (m_image->bytesDepth()),
+      m_imageWidth  (m_image->width()),
+      m_imageHeight (m_image->height()),
+      m_sixteenBit  (m_image->sixteenBit())
 {
     for (int i = 0 ; i < LensDistortionPixelAccessRegions ; ++i)
     {
@@ -67,6 +67,7 @@ uchar* LensDistortionPixelAccess::pixelAccessAddress(int i, int j)
 }
 
 // Swap region[n] with region[0].
+
 void LensDistortionPixelAccess::pixelAccessSelectRegion(int n)
 {
     DImg* temp = nullptr;
@@ -96,6 +97,7 @@ void LensDistortionPixelAccess::pixelAccessSelectRegion(int n)
 }
 
 // NOTE: Buffer[0] is cleared, should start at [i, j], fill rows that overlap image.
+
 void LensDistortionPixelAccess::pixelAccessDoEdge(int i, int j)
 {
     int    lineStart, lineEnd;
@@ -146,6 +148,7 @@ void LensDistortionPixelAccess::pixelAccessDoEdge(int i, int j)
 }
 
 // Moves buffer[0] so that [x, y] is inside it.
+
 void LensDistortionPixelAccess::pixelAccessReposition(int xInt, int yInt)
 {
     int newStartX = xInt - LensDistortionPixelAccessXOffset;

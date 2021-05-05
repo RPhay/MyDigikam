@@ -7,7 +7,7 @@
  * Description : Database engine abstract database backend
  *
  * Copyright (C) 2007-2010 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2010-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2010-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -68,7 +68,7 @@ class DIGIKAM_EXPORT BdEngineBackendPrivate : public DbEngineErrorAnswer
 public:
 
     explicit BdEngineBackendPrivate(BdEngineBackend* const backend);
-    virtual ~BdEngineBackendPrivate();
+    ~BdEngineBackendPrivate()                                              override;
 
     void init(const QString& connectionName, DbEngineLocking* const locking);
 
@@ -83,8 +83,8 @@ public:
     bool incrementTransactionCount();
     bool decrementTransactionCount();
 
-    bool isInMainThread() const;
-    bool isInUIThread()   const;
+    bool isInMainThread()                                            const;
+    bool isInUIThread()                                              const;
 
     bool reconnectOnError()                                          const;
     bool isSQLiteLockError(const DbEngineSqlQuery& query)            const;
@@ -101,16 +101,20 @@ public:
     void setQueryOperationFlag(BdEngineBackend::QueryOperationStatus status);
     void queryOperationWakeAll(BdEngineBackend::QueryOperationStatus status);
 
-    // called by DbEngineErrorHandler, implementing DbEngineErrorAnswer
-    virtual void connectionErrorContinueQueries() override;
-    virtual void connectionErrorAbortQueries() override;
+    /// called by DbEngineErrorHandler, implementing DbEngineErrorAnswer
+    void connectionErrorContinueQueries()                                  override;
+    void connectionErrorAbortQueries()                                     override;
+
     virtual void transactionFinished();
 
 public:
 
     QThreadStorage<DbEngineThreadData*>       threadDataStorage;
 
-    // This compares to DbEngineThreadData's valid. If currentValidity is increased and > valid, the db is marked as invalid
+    /**
+     * This compares to DbEngineThreadData's valid.
+     * If currentValidity is increased and > valid, the db is marked as invalid
+     */
     int                                       currentValidity;
 
     bool                                      isInTransaction;

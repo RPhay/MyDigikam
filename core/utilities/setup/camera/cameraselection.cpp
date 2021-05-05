@@ -7,7 +7,7 @@
  * Description : Camera type selection dialog
  *
  * Copyright (C) 2003-2005 by Renchi Raju <renchi dot raju at gmail dot com>
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -62,17 +62,17 @@ class Q_DECL_HIDDEN CameraSelection::Private
 public:
 
     explicit Private()
-      : buttons(nullptr),
-        portButtonGroup(nullptr),
-        usbButton(nullptr),
-        serialButton(nullptr),
-        networkButton(nullptr),
+      : buttons         (nullptr),
+        portButtonGroup (nullptr),
+        usbButton       (nullptr),
+        serialButton    (nullptr),
+        networkButton   (nullptr),
         portPathComboBox(nullptr),
-        listView(nullptr),
-        titleEdit(nullptr),
-        networkEdit(nullptr),
-        umsMountURL(nullptr),
-        searchBar(nullptr)
+        listView        (nullptr),
+        titleEdit       (nullptr),
+        networkEdit     (nullptr),
+        umsMountURL     (nullptr),
+        searchBar       (nullptr)
     {
     }
 
@@ -105,16 +105,16 @@ public:
 
 CameraSelection::CameraSelection(QWidget* const parent)
     : QDialog(parent),
-      d(new Private)
+      d      (new Private)
 {
     qApp->setOverrideCursor(Qt::WaitCursor);
 
     setWindowTitle(i18n("Camera Configuration"));
     setModal(true);
 
-    const int spacing = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
+    const int spacing       = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
 
-    d->buttons        = new QDialogButtonBox(QDialogButtonBox::Help | QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
+    d->buttons              = new QDialogButtonBox(QDialogButtonBox::Help | QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
     d->buttons->button(QDialogButtonBox::Ok)->setDefault(true);
 
     d->UMSCameraNameActual  = QLatin1String("Directory Browse");   // Don't be i18n!
@@ -165,7 +165,7 @@ CameraSelection::CameraSelection(QWidget* const parent)
     d->usbButton->setWhatsThis(i18n("<p>Select this option if your camera is connected to your "
                                     "computer using a USB cable.</p>"));
 
-    d->serialButton     = new QRadioButton(i18n("Serial"), portPathBox);
+    d->serialButton     = new QRadioButton(i18nc("@item: serail port based camera", "Serial"), portPathBox);
     d->serialButton->setWhatsThis(i18n("<p>Select this option if your camera is connected to your "
                                        "computer using a serial cable.</p>"));
 
@@ -206,6 +206,7 @@ CameraSelection::CameraSelection(QWidget* const parent)
     d->umsMountURL = new DFileSelector(umsMountBox);
     d->umsMountURL->setFileDlgPath(QLatin1String("/mnt/camera"));
     d->umsMountURL->setFileDlgMode(QFileDialog::Directory);
+    d->umsMountURL->setFileDlgOptions(QFileDialog::ShowDirsOnly);
     d->umsMountURL->setWhatsThis(i18n("<p>Set here the mount path to use on your computer. This "
                                       "option is only required if you use a <b>USB Mass Storage</b> "
                                       "camera.</p>"));
@@ -245,7 +246,7 @@ CameraSelection::CameraSelection(QWidget* const parent)
     QLabel* const explanation = new QLabel(box2);
     explanation->setOpenExternalLinks(true);
     explanation->setText(i18n("<p>A complete list of camera settings to use is<br/>"
-                              "available at <a href='http://www.teaser.fr/~hfiguiere/linux/digicam.html'>"
+                              "available at <a href='https://www.figuiere.net/digicam/'>"
                               "this URL</a>.</p>"));
 
     gLayout4->setContentsMargins(spacing, spacing, spacing, spacing);

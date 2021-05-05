@@ -1,14 +1,11 @@
 #!/bin/bash
 
-# Copyright (c) 2008-2020 by Gilles Caulier, <caulier dot gilles at gmail dot com>
+# Copyright (c) 2008-2021 by Gilles Caulier, <caulier dot gilles at gmail dot com>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
 #
 # Copy this script on root folder where are source code
-
-export PATH=$QTDIR/bin:$PATH
-export PKG_CONFIG_PATH=/usr/lib/pkgconfig
 
 #export VERBOSE=1
 
@@ -25,7 +22,7 @@ export Exiv2Options='-DBUILD_SHARED_LIBS=ON \
                      -DEXIV2_ENABLE_XMP=ON \
                      -DEXIV2_ENABLE_EXTERNAL_XMP=OFF \
                      -DEXIV2_ENABLE_PNG=ON \
-                     -DEXIV2_ENABLE_HEIF=ON \
+                     -DEXIV2_ENABLE_BMFF=ON \
                      -DEXIV2_ENABLE_NLS=ON \
                      -DEXIV2_ENABLE_PRINTUCS2=ON \
                      -DEXIV2_ENABLE_LENSDATA=ON \

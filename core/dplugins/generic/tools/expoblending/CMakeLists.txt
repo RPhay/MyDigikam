@@ -1,9 +1,11 @@
 #
-# Copyright (c) 2010-2019, Gilles Caulier, <caulier dot gilles at gmail dot com>
+# Copyright (c) 2010-2020, Gilles Caulier, <caulier dot gilles at gmail dot com>
 # Copyright (c) 2015,      Benjamin Girault, <benjamin dot girault at gmail dot com>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
+
+APPLY_COMMON_POLICIES()
 
 include(MacroDPlugins)
 
@@ -18,6 +20,7 @@ include_directories($<TARGET_PROPERTY:Qt5::Widgets,INTERFACE_INCLUDE_DIRECTORIES
 set(expoblendingplugin_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/manager/expoblendingmanager.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/manager/expoblendingthread.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/manager/alignbinary.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/manager/enfusebinary.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/wizard/expoblendingwizard.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/wizard/expoblendingintropage.cpp
@@ -32,7 +35,7 @@ set(expoblendingplugin_SRCS
 )
 
 DIGIKAM_ADD_GENERIC_PLUGIN(NAME    ExpoBlending
-                                    SOURCES ${expoblendingplugin_SRCS}
+                           SOURCES ${expoblendingplugin_SRCS}
 )
 
 add_subdirectory(icons)

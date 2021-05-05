@@ -6,7 +6,7 @@
  * Date        : 2004-11-17
  * Description : item properties side bar (without support of digiKam database).
  *
- * Copyright (C) 2004-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2004-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -29,6 +29,7 @@
 #include <QUrl>
 #include <QWidget>
 #include <QRect>
+#include <QStackedWidget>
 
 // Local includes
 
@@ -43,11 +44,14 @@ namespace Digikam
 class DImg;
 class SidebarSplitter;
 class ItemPropertiesTab;
+class ItemSelectionPropertiesTab;
 class ItemPropertiesMetadataTab;
 class ItemPropertiesColorsTab;
 
 #ifdef HAVE_MARBLE
+
 class ItemPropertiesGPSTab;
+
 #endif // HAVE_MARBLE
 
 class DIGIKAM_EXPORT ItemPropertiesSideBar : public Sidebar
@@ -55,18 +59,18 @@ class DIGIKAM_EXPORT ItemPropertiesSideBar : public Sidebar
     Q_OBJECT
 
 public:
-
     explicit ItemPropertiesSideBar(QWidget* const parent,
-                                    SidebarSplitter* const splitter,
-                                    Qt::Edge side=Qt::LeftEdge,
-                                    bool mimimizedDefault=false);
-    ~ItemPropertiesSideBar();
+                                   SidebarSplitter* const splitter,
+                                   Qt::Edge side = Qt::LeftEdge,
+                                   bool mimimizedDefault = false);
+    ~ItemPropertiesSideBar() override;
 
     virtual void itemChanged(const QUrl& url, const QRect& rect = QRect(), DImg* const img = nullptr);
 
 Q_SIGNALS:
 
     void signalSetupMetadataFilters(int);
+    void signalSetupExifTool();
 
 public Q_SLOTS:
 
@@ -94,25 +98,31 @@ protected:
 
 protected:
 
-    bool                       m_dirtyPropertiesTab;
-    bool                       m_dirtyMetadataTab;
-    bool                       m_dirtyColorTab;
-    bool                       m_dirtyGpsTab;
-    bool                       m_dirtyHistoryTab;
+    bool                        m_dirtyPropertiesTab;
+    bool                        m_dirtyMetadataTab;
+    bool                        m_dirtyColorTab;
+    bool                        m_dirtyGpsTab;
+    bool                        m_dirtyHistoryTab;
 
-    QRect                      m_currentRect;
+    QRect                       m_currentRect;
 
-    QUrl                       m_currentURL;
+    QUrl                        m_currentURL;
 
-    DImg*                      m_image;
+    DImg*                       m_image;
 
-    ItemPropertiesTab*         m_propertiesTab;
-    ItemPropertiesMetadataTab* m_metadataTab;
-    ItemPropertiesColorsTab*   m_colorTab;
+    QStackedWidget*             m_propertiesStackedView;
+
+    ItemPropertiesTab*          m_propertiesTab;
+    ItemSelectionPropertiesTab* m_selectionPropertiesTab;
+    ItemPropertiesMetadataTab*  m_metadataTab;
+    ItemPropertiesColorsTab*    m_colorTab;
 
 #ifdef HAVE_MARBLE
-    ItemPropertiesGPSTab*      m_gpsTab;
+
+    ItemPropertiesGPSTab*       m_gpsTab;
+
 #endif // HAVE_MARBLE
+
 };
 
 } // namespace Digikam

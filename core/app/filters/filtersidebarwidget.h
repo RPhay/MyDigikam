@@ -8,7 +8,7 @@
  *
  * Copyright (C) 2009-2010 by Johannes Wienke <languitar at semipol dot de>
  * Copyright (C) 2010-2011 by Andi Clemens <andi dot clemens at gmail dot com>
- * Copyright (C) 2011-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2011-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C)      2011 by Michael G. Hansen <mike at mghansen dot de>
  * Copyright (C)      2014 by Mohamed_Anwer <m_dot_anwer at gmx dot com>
  *
@@ -59,7 +59,8 @@ class TAlbum;
  *
  * @author jwienke
  */
-class FilterSideBarWidget : public DVBox, public StateSavingObject
+class FilterSideBarWidget : public DVBox,
+                            public StateSavingObject
 {
     Q_OBJECT
 
@@ -68,7 +69,7 @@ public:
     /**
      * Constructor.
      *
-     * @param parent parent for qt parent child mechanism
+     * @param parent the parent for qt parent child mechanism
      * @param tagFilterModel tag model to work on
      */
     explicit FilterSideBarWidget(QWidget* const parent, TagModel* const tagFilterModel);
@@ -76,11 +77,11 @@ public:
     /**
      * Destructor.
      */
-    virtual ~FilterSideBarWidget();
+    ~FilterSideBarWidget()                         override;
 
-    virtual void setConfigGroup(const KConfigGroup& group);
-    virtual void doLoadState();
-    virtual void doSaveState();
+    void setConfigGroup(const KConfigGroup& group) override;
+    void doLoadState()                             override;
+    void doSaveState()                             override;
 
     void setFocusToTextFilter();
 
@@ -96,9 +97,12 @@ Q_SIGNALS:
      * @param clTagIds     a list of color label tag ids
      * @param plTagIds     a list of pick label tag ids
      */
-    void signalTagFilterChanged(const QList<int>& includedTags, const QList<int>& excludedTags,
-                                ItemFilterSettings::MatchingCondition matchingCond, bool showUnTagged,
-                                const QList<int>& clTagIds, const QList<int>& plTagIds);
+    void signalTagFilterChanged(const QList<int>& includedTags,
+                                const QList<int>& excludedTags,
+                                ItemFilterSettings::MatchingCondition matchingCond,
+                                bool showUnTagged,
+                                const QList<int>& clTagIds,
+                                const QList<int>& plTagIds);
 
     void signalRatingFilterChanged(int, ItemFilterSettings::RatingCondition, bool);
     void signalMimeTypeFilterChanged(int);
@@ -116,7 +120,8 @@ public Q_SLOTS:
 
 private Q_SLOTS:
 
-    void slotCheckedTagsChanged(const QList<TAlbum*>& includedTags, const QList<TAlbum*>& excludedTags);
+    void slotCheckedTagsChanged(const QList<TAlbum*>& includedTags,
+                                const QList<TAlbum*>& excludedTags);
     void slotColorLabelFilterChanged(const QList<ColorLabel>&);
     void slotPickLabelFilterChanged(const QList<PickLabel>&);
     void slotWithoutTagChanged(int newState);
@@ -126,7 +131,7 @@ private Q_SLOTS:
 
 private:
 
-    void filterChanged();
+    void checkFilterChanges();
 
 private:
 

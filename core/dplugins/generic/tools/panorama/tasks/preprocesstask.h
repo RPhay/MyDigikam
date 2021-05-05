@@ -49,13 +49,14 @@ public:
                             int id,
                             PanoramaPreprocessedUrls& targetUrls,
                             const QUrl& sourceUrl);
-    ~PreProcessTask();
+    ~PreProcessTask()                       override;
 
-    void requestAbort() override;
+    void requestAbort()                     override;
 
 protected:
 
-    void run(ThreadWeaver::JobPointer self, ThreadWeaver::Thread* thread) override;
+    void run(ThreadWeaver::JobPointer self,
+             ThreadWeaver::Thread* thread)  override;
 
 private:
 
@@ -66,6 +67,13 @@ private:
 
     class Private;
     Private* const d;
+
+private:
+
+    // Disable
+    PreProcessTask() = delete;
+
+    Q_DISABLE_COPY(PreProcessTask)
 };
 
 } // namespace DigikamGenericPanoramaPlugin

@@ -38,8 +38,7 @@
 /*----------------------------------------------------------------------
 |   includes
 +---------------------------------------------------------------------*/
-#include "NptStreams.h"
-#include "NptRingBuffer.h"
+#include "Neptune.h"
 
 /*----------------------------------------------------------------------
 |   PLT_PipeInputStream
@@ -99,9 +98,9 @@ class PLT_PipeInputStreamPump : public PLT_StreamPump,
 {
 public:
     PLT_PipeInputStreamPump(NPT_OutputStreamReference& output, NPT_Size size = 65535);
-    ~PLT_PipeInputStreamPump() override;
+    virtual ~PLT_PipeInputStreamPump();
 
-    NPT_Result Receive(NPT_InputStream& input, NPT_Size max_bytes_to_read, NPT_Size* bytes_read) override;
+    NPT_Result Receive(NPT_InputStream& input, NPT_Size max_bytes_to_read, NPT_Size* bytes_read);
 
 protected:
     NPT_OutputStreamReference   m_Output;
@@ -118,9 +117,9 @@ public:
     PLT_PipeOutputStreamPump(NPT_InputStreamReference& input, 
                              NPT_Size                  size = 65535,
                              NPT_Size                  max_bytes_to_read = 0);
-    ~PLT_PipeOutputStreamPump() override;
+    virtual ~PLT_PipeOutputStreamPump();
 
-    NPT_Result Transmit(NPT_OutputStream& output) override;
+    NPT_Result Transmit(NPT_OutputStream& output);
 
 protected:
     NPT_InputStreamReference    m_Input;

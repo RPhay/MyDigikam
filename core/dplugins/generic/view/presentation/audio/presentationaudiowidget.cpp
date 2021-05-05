@@ -8,7 +8,7 @@
  *
  * Copyright (C) 2008-2009 by Valerio Fuoglio <valerio dot fuoglio at gmail dot com>
  * Copyright (C) 2009      by Andi Clemens <andi dot clemens at googlemail dot com>
- * Copyright (C) 2012-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -53,13 +53,13 @@ class Q_DECL_HIDDEN PresentationAudioWidget::Private
 public:
 
     explicit Private()
+      : sharedData  (nullptr),
+        currIndex   (0),
+        canHide     (true),
+        isZeroTime  (false),
+        playingNext (false),
+        mediaObject (nullptr)
     {
-        sharedData  = nullptr;
-        currIndex   = 0;
-        mediaObject = nullptr;
-        canHide     = true;
-        isZeroTime  = false;
-        playingNext = false;
     }
 
     PresentationContainer* sharedData;
@@ -74,7 +74,7 @@ public:
 
 PresentationAudioWidget::PresentationAudioWidget(QWidget* const parent, const QList<QUrl>& urls, PresentationContainer* const sharedData)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     setupUi(this);
 
@@ -112,6 +112,7 @@ PresentationAudioWidget::PresentationAudioWidget(QWidget* const parent, const QL
     }
 
     // Waiting for files to be enqueued.
+
     m_playButton->setEnabled(false);
     m_prevButton->setEnabled(false);
 
@@ -196,7 +197,9 @@ void PresentationAudioWidget::enqueue(const QList<QUrl>& urls)
     qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Tracks : " << d->urlList;
 
     if (d->urlList.isEmpty())
+    {
         return;
+    }
 
     m_playButton->setEnabled(true);
 }
@@ -204,7 +207,9 @@ void PresentationAudioWidget::enqueue(const QList<QUrl>& urls)
 void PresentationAudioWidget::setPaused(bool val)
 {
     if (val == isPaused())
+    {
         return;
+    }
 
     slotPlay();
 }
@@ -213,32 +218,38 @@ void PresentationAudioWidget::keyPressEvent(QKeyEvent* event)
 {
     switch (event->key())
     {
-        case(Qt::Key_Space):
+        case (Qt::Key_Space):
         {
             m_playButton->animateClick();
             break;
         }
 
-        case(Qt::Key_A):
+        case (Qt::Key_A):
         {
             if (m_prevButton->isEnabled())
+            {
                 m_prevButton->animateClick();
+            }
 
             break;
         }
 
-        case(Qt::Key_S):
+        case (Qt::Key_S):
         {
             if (m_nextButton->isEnabled())
+            {
                 m_nextButton->animateClick();
+            }
 
             break;
         }
 
-        case(Qt::Key_Escape):
+        case (Qt::Key_Escape):
         {
             if (m_stopButton->isEnabled())
+            {
                 m_stopButton->animateClick();
+            }
 
             break;
         }
@@ -253,7 +264,9 @@ void PresentationAudioWidget::keyPressEvent(QKeyEvent* event)
 void PresentationAudioWidget::slotPlay()
 {
     if (!d->mediaObject)
+    {
         return;
+    }
 
     if (!d->mediaObject->isPlaying() || d->mediaObject->isPaused())
     {
@@ -282,11 +295,13 @@ void PresentationAudioWidget::slotPlay()
 void PresentationAudioWidget::slotStop()
 {
     if (!d->mediaObject)
+    {
         return;
+    }
 
     d->playingNext = false;
     d->mediaObject->stop();
-    d->currIndex  = 0;
+    d->currIndex   = 0;
     setZeroTime();
     checkSkip();
 }

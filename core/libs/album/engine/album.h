@@ -7,7 +7,7 @@
  * Description : digiKam album types
  *
  * Copyright (C) 2004-2005 by Renchi Raju <renchi dot raju at gmail dot com>
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2014-2015 by Mohamed_Anwer <m_dot_anwer at gmx dot com>
  *
  * This program is free software; you can redistribute it
@@ -44,7 +44,8 @@
 namespace Digikam
 {
 
-/** Album list type definition.
+/**
+ * Album list type definition.
  */
 class Album;
 typedef QList<Album*> AlbumList;
@@ -62,7 +63,7 @@ class CoreDbUrl;
  * This class provides a means of building a tree representation for
  * Albums @see Album::setParent().
  */
-class DIGIKAM_EXPORT Album
+class DIGIKAM_GUI_EXPORT Album
 {
 public:
 
@@ -183,7 +184,7 @@ public:
     /**
      * @return true if the @p album is in the parent hierarchy
      *
-     * @param album Album to check whether it belongs in the child
+     * @param album the album to check whether it belongs in the child
      * hierarchy
      */
     bool isAncestorOf(Album* const album)   const;
@@ -322,12 +323,10 @@ protected:
 
 private:
 
-    /**
-     * Disable copy and default constructor
-     */
-    Album();
+     // Disable
+    Album()                         = delete;
+    Album& operator==(const Album&) = delete;
     Q_DISABLE_COPY(Album)
-    Album& operator==(const Album&);
 
 private:
 
@@ -354,19 +353,22 @@ private:
  *
  * A Physical Album representation
  */
-class DIGIKAM_EXPORT PAlbum : public Album
+class DIGIKAM_GUI_EXPORT PAlbum : public Album
 {
 public:
 
     /// Constructor for root album
     explicit PAlbum(const QString& title);
+
     /// Constructor for album root albums
     PAlbum(int albumRoot, const QString& label);
+
     /// Constructor for normal albums
     PAlbum(int albumRoot, const QString& parentPath, const QString& title, int id);
+
     /// Constructor for Trash album
     PAlbum(const QString& parentPath, int albumRoot);
-    ~PAlbum();
+    ~PAlbum() override;
 
     void setCaption(const QString& caption);
     void setCategory(const QString& category);
@@ -388,8 +390,10 @@ public:
 
 private:
 
-    /// A special integer for Trash virtual folders Ids;
-    /// That gets decremented not incremented
+    /**
+     * A special integer for Trash virtual folders Ids;
+     * That gets decremented not incremented
+     */
     static int m_uniqueTrashId;
 
     bool       m_isAlbumRootAlbum;
@@ -412,19 +416,20 @@ private:
  *
  * A Tag Album representation
  */
-class DIGIKAM_EXPORT TAlbum : public Album
+class DIGIKAM_GUI_EXPORT TAlbum : public Album
 {
 public:
 
     TAlbum(const QString& title, int id, bool root=false);
-    ~TAlbum();
+    ~TAlbum() override;
 
     /**
      * @return The tag path, e.g. "/People/Friend/John" if leadingSlash is true,
-               "People/Friend/John" if leadingSlash if false.
+     *         "People/Friend/John" if leadingSlash if false.
      *         The root TAlbum returns "/" resp. "".
      */
     QString                tagPath(bool leadingSlash = true) const;
+    QString                standardIconName()                const;
     CoreDbUrl              databaseUrl()                     const override;
     QString                prettyUrl()                       const;
     QString                icon()                            const;
@@ -451,7 +456,7 @@ private:
  *
  * A Date Album representation
  */
-class DIGIKAM_EXPORT DAlbum : public Album
+class DIGIKAM_GUI_EXPORT DAlbum : public Album
 {
 public:
 
@@ -464,7 +469,7 @@ public:
 public:
 
     explicit DAlbum(const QDate& date, bool root=false, Range range=Month);
-    ~DAlbum();
+    ~DAlbum() override;
 
     QDate     date()        const;
     Range     range()       const;
@@ -484,12 +489,12 @@ private:
  *
  * A Search Album representation
  */
-class DIGIKAM_EXPORT SAlbum : public Album
+class DIGIKAM_GUI_EXPORT SAlbum : public Album
 {
 public:
 
     SAlbum(const QString& title, int id, bool root=false);
-    ~SAlbum();
+    ~SAlbum() override;
 
     CoreDbUrl            databaseUrl()        const override;
     QString              query()              const;
@@ -516,7 +521,7 @@ public:
      * temporary search that isn't saved officially yet and is only used for
      * viewing purposes.
      *
-     * @param type type of the search to get the temporary title for
+     * @param type the type of the search to get the temporary title for
      * @param haarType there are several haar searches, so that this search type
      *                 needs a special handling
      * @return string that identifies this album uniquely as an unsaved search
@@ -563,7 +568,7 @@ private:
  *
  *  \warning Do not delete albums using this iterator.
  */
-class DIGIKAM_EXPORT AlbumIterator
+class DIGIKAM_GUI_EXPORT AlbumIterator
 {
 public:
 
@@ -576,8 +581,8 @@ public:
 
 private:
 
-    // disable copying and construction without an album
-    AlbumIterator();
+    // Disable
+    AlbumIterator() = delete;
     Q_DISABLE_COPY(AlbumIterator)
 
 private:

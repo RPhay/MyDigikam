@@ -7,7 +7,7 @@
  * Description : thumbnails size interface
  *
  * Copyright (C) 2004      by Renchi Raju <renchi dot raju at gmail dot com>
- * Copyright (C) 2005-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2005-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -54,7 +54,7 @@ public:
          * overlays show under thumbs (as Pick label and Group indicator)
          * See bugs #321337 and #275381 for details.
          */
-        Small       = 128,
+        Small       = 100,
         Medium      = 142,
         Large       = 160,
         Huge        = 256,
@@ -74,7 +74,7 @@ public:
     bool operator==(const ThumbnailSize& thumbsize) const;
     bool operator!=(const ThumbnailSize& thumbsize) const;
 
-    int size() const;
+    int size()                                      const;
 
 public:
 

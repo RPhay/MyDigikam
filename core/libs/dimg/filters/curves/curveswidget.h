@@ -6,7 +6,7 @@
  * Date        : 2004-12-01
  * Description : a widget to draw histogram curves
  *
- * Copyright (C) 2004-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2004-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -52,7 +52,7 @@ class DIGIKAM_EXPORT CurvesWidget : public QWidget
 public:
 
     explicit CurvesWidget(int w, int h, QWidget* const parent, bool readOnly=false);
-    ~CurvesWidget();
+    ~CurvesWidget() override;
 
     void setup(int w, int h, bool readOnly);
 
@@ -60,8 +60,8 @@ public:
      * Saves the currently created curve to the given group with prefix as a
      * prefix for the curve point config entries.
      *
-     * @param group group to save the curve to
-     * @param prefix prefix prepended to the point numbers in the config
+     * @param group the group to save the curve to
+     * @param prefix the prefix prepended to the point numbers in the config
      */
     void saveCurve(KConfigGroup& group, const QString& prefix);
 
@@ -69,8 +69,8 @@ public:
      * Restores the curve tfrom the given group with prefix as a
      * prefix for the curve point config entries.
      *
-     * @param group group to restore the curve from
-     * @param prefix prefix prepended to the point numbers in the config
+     * @param group the group to restore the curve from
+     * @param prefix the prefix prepended to the point numbers in the config
      */
     void restoreCurve(KConfigGroup& group, const QString& prefix);
 

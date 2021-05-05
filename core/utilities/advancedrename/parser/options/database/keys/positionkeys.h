@@ -38,16 +38,17 @@ class PositionKeys : public DbKeysCollection
 public:
 
     explicit PositionKeys();
-    virtual ~PositionKeys() {};
+    ~PositionKeys() override {};
 
 protected:
 
-    virtual QString getDbValue(const QString& key, ParseSettings& settings);
+    QString getDbValue(const QString& key, ParseSettings& settings) override;
 
 private:
 
-    PositionKeys(const PositionKeys&);
-    PositionKeys& operator=(const PositionKeys&);
+    // Disable
+    PositionKeys(const PositionKeys&)            = delete;
+    PositionKeys& operator=(const PositionKeys&) = delete;
 };
 
 } // namespace Digikam

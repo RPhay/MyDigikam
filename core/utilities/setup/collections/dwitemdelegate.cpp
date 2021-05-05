@@ -6,7 +6,7 @@
  * Date        : 2007-11-15
  * Description : widget item delegate for setup collection view
  *
- * Copyright (C) 2015-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2015-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2007-2008 by Rafael Fernández López <ereslibre at kde dot org>
  * Copyright (C) 2008      by Kevin Ottens <ervin at kde dot org>
  *
@@ -49,7 +49,7 @@ namespace Digikam
 
 DWItemDelegate::DWItemDelegate(QAbstractItemView* const itemView, QObject* const parent)
     : QAbstractItemDelegate(parent),
-      d(new DWItemDelegatePrivate(this))
+      d                    (new DWItemDelegatePrivate(this))
 {
     Q_ASSERT(itemView);
 
@@ -97,9 +97,9 @@ QPersistentModelIndex DWItemDelegate::focusedIndex() const
     return d->itemView->indexAt(pos);
 }
 
-void DWItemDelegate::setBlockedEventTypes(QWidget* const widget, QList<QEvent::Type> types) const
+void DWItemDelegate::setBlockedEventTypes(QWidget* const widget, const QList<QEvent::Type>& types) const
 {
-    widget->setProperty("DigiKam:blockedEventTypes", qVariantFromValue(types));
+    widget->setProperty("DigiKam:blockedEventTypes", QVariant::fromValue(types));
 }
 
 QList<QEvent::Type> DWItemDelegate::blockedEventTypes(QWidget* const widget) const

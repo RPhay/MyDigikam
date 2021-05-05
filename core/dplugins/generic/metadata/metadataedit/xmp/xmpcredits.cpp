@@ -7,7 +7,7 @@
  * Description : XMP credits settings page.
  * Modified    : 2014-04-22 Alan Pater
  *
- * Copyright (C) 2007-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2007-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -53,31 +53,33 @@ public:
 
     explicit Private()
     {
-        bylineEdit       = nullptr;
-        bylineTitleEdit  = nullptr;
-        creditEdit       = nullptr;
-        sourceEdit       = nullptr;
-        emailEdit        = nullptr;
-        urlEdit          = nullptr;
-        phoneEdit        = nullptr;
-        addressEdit      = nullptr;
-        postalCodeEdit   = nullptr;
-        cityEdit         = nullptr;
-        countryEdit      = nullptr;
-        bylineTitleCheck = nullptr;
-        creditCheck      = nullptr;
-        sourceCheck      = nullptr;
-        emailCheck       = nullptr;
-        urlCheck         = nullptr;
-        phoneCheck       = nullptr;
-        addressCheck     = nullptr;
-        postalCodeCheck  = nullptr;
-        cityCheck        = nullptr;
-        countryCheck     = nullptr;
-        contactCheck     = nullptr;
+        syncEXIFArtistCheck = nullptr;
+        creatorEdit         = nullptr;
+        creatorTitleEdit    = nullptr;
+        creditEdit          = nullptr;
+        sourceEdit          = nullptr;
+        emailEdit           = nullptr;
+        urlEdit             = nullptr;
+        phoneEdit           = nullptr;
+        addressEdit         = nullptr;
+        postalCodeEdit      = nullptr;
+        cityEdit            = nullptr;
+        countryEdit         = nullptr;
+        creatorTitleCheck   = nullptr;
+        creditCheck         = nullptr;
+        sourceCheck         = nullptr;
+        emailCheck          = nullptr;
+        urlCheck            = nullptr;
+        phoneCheck          = nullptr;
+        addressCheck        = nullptr;
+        postalCodeCheck     = nullptr;
+        cityCheck           = nullptr;
+        countryCheck        = nullptr;
+        contactCheck        = nullptr;
     }
 
-    QCheckBox*        bylineTitleCheck;
+    QCheckBox*        syncEXIFArtistCheck;
+    QCheckBox*        creatorTitleCheck;
     QCheckBox*        creditCheck;
     QCheckBox*        sourceCheck;
     QCheckBox*        contactCheck;
@@ -89,7 +91,7 @@ public:
     QCheckBox*        cityCheck;
     QCheckBox*        countryCheck;
 
-    QLineEdit*        bylineTitleEdit;
+    QLineEdit*        creatorTitleEdit;
     QLineEdit*        creditEdit;
     QLineEdit*        sourceEdit;
     QLineEdit*        emailEdit;
@@ -100,12 +102,12 @@ public:
     QLineEdit*        cityEdit;
     QLineEdit*        countryEdit;
 
-    MultiStringsEdit* bylineEdit;
+    MultiStringsEdit* creatorEdit;
 };
 
 XMPCredits::XMPCredits(QWidget* const parent)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     const int spacing = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
 
@@ -113,16 +115,16 @@ XMPCredits::XMPCredits(QWidget* const parent)
 
     // --------------------------------------------------------
 
-    d->bylineEdit = new MultiStringsEdit(this, i18n("Byline:"),
-                                         i18n("Set here the name of content creator."),
-                                         false);
+    d->creatorEdit         = new MultiStringsEdit(this, i18nc("@option: name of content creator", "Creator:"),
+                                                  i18n("Set here the name of content creator."));
+    d->syncEXIFArtistCheck = new QCheckBox(i18n("Sync Exif Artist"), this);
 
     // --------------------------------------------------------
 
-    d->bylineTitleCheck = new QCheckBox(i18n("Byline Title:"), this);
-    d->bylineTitleEdit  = new QLineEdit(this);
-    d->bylineTitleEdit->setClearButtonEnabled(true);
-    d->bylineTitleEdit->setWhatsThis(i18n("Set here the title of content creator."));
+    d->creatorTitleCheck = new QCheckBox(i18n("Creator Title:"), this);
+    d->creatorTitleEdit  = new QLineEdit(this);
+    d->creatorTitleEdit->setClearButtonEnabled(true);
+    d->creatorTitleEdit->setWhatsThis(i18n("Set here the title of content creator."));
 
     // --------------------------------------------------------
 
@@ -198,23 +200,24 @@ XMPCredits::XMPCredits(QWidget* const parent)
 
     // --------------------------------------------------------
 
-    grid->addWidget(d->bylineEdit,          0, 0, 1, 3);
-    grid->addWidget(d->bylineTitleCheck,    1, 0, 1, 1);
-    grid->addWidget(d->bylineTitleEdit,     1, 1, 1, 2);
-    grid->addWidget(contactBox,             2, 0, 1, 3);
-    grid->addWidget(d->creditCheck,         3, 0, 1, 1);
-    grid->addWidget(d->creditEdit,          3, 1, 1, 2);
-    grid->addWidget(d->sourceCheck,         4, 0, 1, 1);
-    grid->addWidget(d->sourceEdit,          4, 1, 1, 2);
-    grid->setRowStretch(5, 10);
+    grid->addWidget(d->creatorEdit,         0, 0, 1, 3);
+    grid->addWidget(d->syncEXIFArtistCheck, 1, 0, 1, 3);
+    grid->addWidget(d->creatorTitleCheck,   2, 0, 1, 1);
+    grid->addWidget(d->creatorTitleEdit,    2, 1, 1, 2);
+    grid->addWidget(contactBox,             3, 0, 1, 3);
+    grid->addWidget(d->creditCheck,         4, 0, 1, 1);
+    grid->addWidget(d->creditEdit,          4, 1, 1, 2);
+    grid->addWidget(d->sourceCheck,         5, 0, 1, 1);
+    grid->addWidget(d->sourceEdit,          5, 1, 1, 2);
+    grid->setRowStretch(6, 10);
     grid->setColumnStretch(2, 10);
     grid->setContentsMargins(QMargins());
     grid->setSpacing(spacing);
 
     // --------------------------------------------------------
 
-    connect(d->bylineTitleCheck, SIGNAL(toggled(bool)),
-            d->bylineTitleEdit, SLOT(setEnabled(bool)));
+    connect(d->creatorTitleCheck, SIGNAL(toggled(bool)),
+            d->creatorTitleEdit, SLOT(setEnabled(bool)));
 
     connect(d->emailCheck, SIGNAL(toggled(bool)),
             d->emailEdit, SLOT(setEnabled(bool)));
@@ -245,10 +248,10 @@ XMPCredits::XMPCredits(QWidget* const parent)
 
     // --------------------------------------------------------
 
-    connect(d->bylineEdit, SIGNAL(signalModified()),
+    connect(d->creatorEdit, SIGNAL(signalModified()),
             this, SIGNAL(signalModified()));
 
-    connect(d->bylineTitleCheck, SIGNAL(toggled(bool)),
+    connect(d->creatorTitleCheck, SIGNAL(toggled(bool)),
             this, SIGNAL(signalModified()));
 
     connect(d->emailCheck, SIGNAL(toggled(bool)),
@@ -280,7 +283,7 @@ XMPCredits::XMPCredits(QWidget* const parent)
 
     // --------------------------------------------------------
 
-    connect(d->bylineTitleEdit, SIGNAL(textChanged(QString)),
+    connect(d->creatorTitleEdit, SIGNAL(textChanged(QString)),
             this, SIGNAL(signalModified()));
 
     connect(d->emailEdit, SIGNAL(textChanged(QString)),
@@ -316,37 +319,56 @@ XMPCredits::~XMPCredits()
     delete d;
 }
 
+bool XMPCredits::syncEXIFArtistIsChecked() const
+{
+    return d->syncEXIFArtistCheck->isChecked();
+}
+
+void XMPCredits::setCheckedSyncEXIFArtist(bool c)
+{
+    d->syncEXIFArtistCheck->setChecked(c);
+}
+
+QString XMPCredits::getXMPByLine() const
+{
+    QStringList oldv, newv;
+    bool b = d->creatorEdit->getValues(oldv, newv);
+    Q_UNUSED(b);
+
+    return (newv.join(QLatin1Char(';')));
+}
+
 void XMPCredits::readMetadata(QByteArray& xmpData)
 {
     blockSignals(true);
-    DMetadata meta;
-    meta.setXmp(xmpData);
+    QScopedPointer<DMetadata> meta(new DMetadata);
+    meta->setXmp(xmpData);
     QString     data;
     QStringList list;
 
-    list = meta.getXmpTagStringSeq("Xmp.dc.creator", false);
-    d->bylineEdit->setValues(list);
+    list = meta->getXmpTagStringSeq("Xmp.dc.creator", false);
+    d->creatorEdit->setValues(list);
 
-    d->bylineTitleEdit->clear();
-    d->bylineTitleCheck->setChecked(false);
-    data = meta.getXmpTagString("Xmp.photoshop.AuthorsPosition", false);
+    d->creatorTitleEdit->clear();
+    d->creatorTitleCheck->setChecked(false);
+    data = meta->getXmpTagString("Xmp.photoshop.AuthorsPosition", false);
 
     if (!data.isNull())
     {
-        d->bylineTitleEdit->setText(data);
-        d->bylineTitleCheck->setChecked(true);
+        d->creatorTitleEdit->setText(data);
+        d->creatorTitleCheck->setChecked(true);
     }
 
-    d->bylineTitleEdit->setEnabled(d->bylineTitleCheck->isChecked());
+    d->creatorTitleEdit->setEnabled(d->creatorTitleCheck->isChecked());
 
     // --------------------------------------------------------
 
     d->emailEdit->clear();
     d->emailCheck->setChecked(false);
-    data = meta.getXmpTagString("Xmp.iptc.CreatorContactInfo/Iptc4xmpCore:CiEmailWork", false);
+    data = meta->getXmpTagString("Xmp.iptc.CreatorContactInfo/Iptc4xmpCore:CiEmailWork", false);
 
     if (data.isNull())
-        data = meta.getXmpTagString("Xmp.iptc.CiEmailWork", false);
+        data = meta->getXmpTagString("Xmp.iptc.CiEmailWork", false);
 
     if (!data.isNull())
     {
@@ -360,10 +382,10 @@ void XMPCredits::readMetadata(QByteArray& xmpData)
 
     d->urlEdit->clear();
     d->urlCheck->setChecked(false);
-    data = meta.getXmpTagString("Xmp.iptc.CreatorContactInfo/Iptc4xmpCore:CiUrlWork", false);
+    data = meta->getXmpTagString("Xmp.iptc.CreatorContactInfo/Iptc4xmpCore:CiUrlWork", false);
 
     if (data.isNull())
-        data = meta.getXmpTagString("Xmp.iptc.CiUrlWork", false);
+        data = meta->getXmpTagString("Xmp.iptc.CiUrlWork", false);
 
     if (!data.isNull())
     {
@@ -377,10 +399,10 @@ void XMPCredits::readMetadata(QByteArray& xmpData)
 
     d->phoneEdit->clear();
     d->phoneCheck->setChecked(false);
-    data = meta.getXmpTagString("Xmp.iptc.CreatorContactInfo/Iptc4xmpCore:CiTelWork", false);
+    data = meta->getXmpTagString("Xmp.iptc.CreatorContactInfo/Iptc4xmpCore:CiTelWork", false);
 
     if (data.isNull())
-        data = meta.getXmpTagString("Xmp.iptc.CiTelWork", false);
+        data = meta->getXmpTagString("Xmp.iptc.CiTelWork", false);
 
     if (!data.isNull())
     {
@@ -394,10 +416,10 @@ void XMPCredits::readMetadata(QByteArray& xmpData)
 
     d->addressEdit->clear();
     d->addressCheck->setChecked(false);
-    data = meta.getXmpTagString("Xmp.iptc.CreatorContactInfo/Iptc4xmpCore:CiAdrExtadr", false);
+    data = meta->getXmpTagString("Xmp.iptc.CreatorContactInfo/Iptc4xmpCore:CiAdrExtadr", false);
 
     if (data.isNull())
-        data = meta.getXmpTagString("Xmp.iptc.CiAdrExtadr", false);
+        data = meta->getXmpTagString("Xmp.iptc.CiAdrExtadr", false);
 
     if (!data.isNull())
     {
@@ -411,10 +433,10 @@ void XMPCredits::readMetadata(QByteArray& xmpData)
 
     d->postalCodeEdit->clear();
     d->postalCodeCheck->setChecked(false);
-    data = meta.getXmpTagString("Xmp.iptc.CreatorContactInfo/Iptc4xmpCore:CiAdrPcode", false);
+    data = meta->getXmpTagString("Xmp.iptc.CreatorContactInfo/Iptc4xmpCore:CiAdrPcode", false);
 
     if (data.isNull())
-        data = meta.getXmpTagString("Xmp.iptc.CiAdrPcode", false);
+        data = meta->getXmpTagString("Xmp.iptc.CiAdrPcode", false);
 
     if (!data.isNull())
     {
@@ -428,10 +450,10 @@ void XMPCredits::readMetadata(QByteArray& xmpData)
 
     d->cityEdit->clear();
     d->cityCheck->setChecked(false);
-    data = meta.getXmpTagString("Xmp.iptc.CreatorContactInfo/Iptc4xmpCore:CiAdrCity", false);
+    data = meta->getXmpTagString("Xmp.iptc.CreatorContactInfo/Iptc4xmpCore:CiAdrCity", false);
 
     if (data.isNull())
-        data = meta.getXmpTagString("Xmp.iptc.CiAdrCity", false);
+        data = meta->getXmpTagString("Xmp.iptc.CiAdrCity", false);
 
     if (!data.isNull())
     {
@@ -445,10 +467,10 @@ void XMPCredits::readMetadata(QByteArray& xmpData)
 
     d->countryEdit->clear();
     d->countryCheck->setChecked(false);
-    data = meta.getXmpTagString("Xmp.iptc.CreatorContactInfo/Iptc4xmpCore:CiAdrCtry", false);
+    data = meta->getXmpTagString("Xmp.iptc.CreatorContactInfo/Iptc4xmpCore:CiAdrCtry", false);
 
     if (data.isNull())
-        data = meta.getXmpTagString("Xmp.iptc.CiAdrCtry", false);
+        data = meta->getXmpTagString("Xmp.iptc.CiAdrCtry", false);
 
     if (!data.isNull())
     {
@@ -462,7 +484,7 @@ void XMPCredits::readMetadata(QByteArray& xmpData)
 
     d->creditEdit->clear();
     d->creditCheck->setChecked(false);
-    data = meta.getXmpTagString("Xmp.photoshop.Credit", false);
+    data = meta->getXmpTagString("Xmp.photoshop.Credit", false);
 
     if (!data.isNull())
     {
@@ -476,10 +498,10 @@ void XMPCredits::readMetadata(QByteArray& xmpData)
 
     d->sourceEdit->clear();
     d->sourceCheck->setChecked(false);
-    data = meta.getXmpTagString("Xmp.photoshop.Source", false);
+    data = meta->getXmpTagString("Xmp.photoshop.Source", false);
 
     if (data.isNull())
-        data = meta.getXmpTagString("Xmp.dc.source", false);
+        data = meta->getXmpTagString("Xmp.dc.source", false);
 
     if (!data.isNull())
     {
@@ -492,120 +514,140 @@ void XMPCredits::readMetadata(QByteArray& xmpData)
     blockSignals(false);
 }
 
-void XMPCredits::applyMetadata(QByteArray& xmpData)
+void XMPCredits::applyMetadata(QByteArray& exifData, QByteArray& xmpData)
 {
     QStringList oldList, newList;
-    DMetadata meta;
-    meta.setXmp(xmpData);
+    QScopedPointer<DMetadata> meta(new DMetadata);
+    meta->setExif(exifData);
+    meta->setXmp(xmpData);
 
-    if (d->bylineEdit->getValues(oldList, newList))
-        meta.setXmpTagStringSeq("Xmp.dc.creator", newList);
-    else
-        meta.removeXmpTag("Xmp.dc.creator");
+    if (d->creatorEdit->getValues(oldList, newList))
+    {
+        meta->setXmpTagStringSeq("Xmp.dc.creator", newList);
 
-    if (d->bylineTitleCheck->isChecked())
-        meta.setXmpTagString("Xmp.photoshop.AuthorsPosition", d->bylineTitleEdit->text());
+        if (syncEXIFArtistIsChecked())
+        {
+            meta->removeExifTag("Exif.Image.Artist");
+            meta->setExifTagString("Exif.Image.Artist", getXMPByLine());
+        }
+    }
     else
-        meta.removeXmpTag("Xmp.photoshop.AuthorsPosition");
+    {
+        meta->removeXmpTag("Xmp.dc.creator");
+    }
+
+    if (d->creatorTitleCheck->isChecked())
+    {
+        meta->setXmpTagString("Xmp.photoshop.AuthorsPosition", d->creatorTitleEdit->text());
+    }
+    else
+    {
+        meta->removeXmpTag("Xmp.photoshop.AuthorsPosition");
+    }
 
     // --------------------------------------------------------
 
     if (d->emailCheck->isChecked())
     {
-        meta.setXmpTagString("Xmp.iptc.CreatorContactInfo/Iptc4xmpCore:CiEmailWork", d->emailEdit->text());
-        meta.removeXmpTag("Xmp.iptc.CiEmailWork");
+        meta->setXmpTagString("Xmp.iptc.CreatorContactInfo/Iptc4xmpCore:CiEmailWork", d->emailEdit->text());
+        meta->removeXmpTag("Xmp.iptc.CiEmailWork");
     }
     else
     {
-        meta.removeXmpTag("Xmp.iptc.CiEmailWork");
-        meta.removeXmpTag("Xmp.iptc.CreatorContactInfo/Iptc4xmpCore:CiEmailWork");
+        meta->removeXmpTag("Xmp.iptc.CiEmailWork");
+        meta->removeXmpTag("Xmp.iptc.CreatorContactInfo/Iptc4xmpCore:CiEmailWork");
     }
 
     if (d->urlCheck->isChecked())
     {
-        meta.setXmpTagString("Xmp.iptc.CreatorContactInfo/Iptc4xmpCore:CiUrlWork", d->urlEdit->text());
-        meta.removeXmpTag("Xmp.iptc.CiUrlWork");
+        meta->setXmpTagString("Xmp.iptc.CreatorContactInfo/Iptc4xmpCore:CiUrlWork", d->urlEdit->text());
+        meta->removeXmpTag("Xmp.iptc.CiUrlWork");
     }
     else
     {
-        meta.removeXmpTag("Xmp.iptc.CiUrlWork");
-        meta.removeXmpTag("Xmp.iptc.CreatorContactInfo/Iptc4xmpCore:CiUrlWork");
+        meta->removeXmpTag("Xmp.iptc.CiUrlWork");
+        meta->removeXmpTag("Xmp.iptc.CreatorContactInfo/Iptc4xmpCore:CiUrlWork");
     }
 
     if (d->phoneCheck->isChecked())
     {
-        meta.setXmpTagString("Xmp.iptc.CreatorContactInfo/Iptc4xmpCore:CiTelWork", d->phoneEdit->text());
-        meta.removeXmpTag("Xmp.iptc.CiTelWork");
+        meta->setXmpTagString("Xmp.iptc.CreatorContactInfo/Iptc4xmpCore:CiTelWork", d->phoneEdit->text());
+        meta->removeXmpTag("Xmp.iptc.CiTelWork");
     }
     else
     {
-        meta.removeXmpTag("Xmp.iptc.CiTelWork");
-        meta.removeXmpTag("Xmp.iptc.CreatorContactInfo/Iptc4xmpCore:CiTelWork");
+        meta->removeXmpTag("Xmp.iptc.CiTelWork");
+        meta->removeXmpTag("Xmp.iptc.CreatorContactInfo/Iptc4xmpCore:CiTelWork");
     }
 
     if (d->addressCheck->isChecked())
     {
-        meta.setXmpTagString("Xmp.iptc.CreatorContactInfo/Iptc4xmpCore:CiAdrExtadr", d->addressEdit->text());
-        meta.removeXmpTag("Xmp.iptc.CiAdrExtadr");
+        meta->setXmpTagString("Xmp.iptc.CreatorContactInfo/Iptc4xmpCore:CiAdrExtadr", d->addressEdit->text());
+        meta->removeXmpTag("Xmp.iptc.CiAdrExtadr");
     }
     else
     {
-        meta.removeXmpTag("Xmp.iptc.CiAdrExtadr");
-        meta.removeXmpTag("Xmp.iptc.CreatorContactInfo/Iptc4xmpCore:CiAdrExtadr");
+        meta->removeXmpTag("Xmp.iptc.CiAdrExtadr");
+        meta->removeXmpTag("Xmp.iptc.CreatorContactInfo/Iptc4xmpCore:CiAdrExtadr");
     }
 
     if (d->postalCodeCheck->isChecked())
     {
-        meta.setXmpTagString("Xmp.iptc.CreatorContactInfo/Iptc4xmpCore:CiAdrPcode", d->postalCodeEdit->text());
-        meta.removeXmpTag("Xmp.iptc.CiAdrPcode");
+        meta->setXmpTagString("Xmp.iptc.CreatorContactInfo/Iptc4xmpCore:CiAdrPcode", d->postalCodeEdit->text());
+        meta->removeXmpTag("Xmp.iptc.CiAdrPcode");
     }
     else
     {
-        meta.removeXmpTag("Xmp.iptc.CiAdrPcode");
-        meta.removeXmpTag("Xmp.iptc.CreatorContactInfo/Iptc4xmpCore:CiAdrPcode");
+        meta->removeXmpTag("Xmp.iptc.CiAdrPcode");
+        meta->removeXmpTag("Xmp.iptc.CreatorContactInfo/Iptc4xmpCore:CiAdrPcode");
     }
 
     if (d->cityCheck->isChecked())
     {
-        meta.setXmpTagString("Xmp.iptc.CreatorContactInfo/Iptc4xmpCore:CiAdrCity", d->cityEdit->text());
-        meta.removeXmpTag("Xmp.iptc.CiAdrCity");
+        meta->setXmpTagString("Xmp.iptc.CreatorContactInfo/Iptc4xmpCore:CiAdrCity", d->cityEdit->text());
+        meta->removeXmpTag("Xmp.iptc.CiAdrCity");
     }
     else
     {
-        meta.removeXmpTag("Xmp.iptc.CiAdrCity");
-        meta.removeXmpTag("Xmp.iptc.CreatorContactInfo/Iptc4xmpCore:CiAdrCity");
+        meta->removeXmpTag("Xmp.iptc.CiAdrCity");
+        meta->removeXmpTag("Xmp.iptc.CreatorContactInfo/Iptc4xmpCore:CiAdrCity");
     }
 
     if (d->countryCheck->isChecked())
     {
-        meta.setXmpTagString("Xmp.iptc.CreatorContactInfo/Iptc4xmpCore:CiAdrCtry", d->countryEdit->text());
-        meta.removeXmpTag("Xmp.iptc.CiAdrCtry");
+        meta->setXmpTagString("Xmp.iptc.CreatorContactInfo/Iptc4xmpCore:CiAdrCtry", d->countryEdit->text());
+        meta->removeXmpTag("Xmp.iptc.CiAdrCtry");
     }
     else
     {
-        meta.removeXmpTag("Xmp.iptc.CiAdrCtry");
-        meta.removeXmpTag("Xmp.iptc.CreatorContactInfo/Iptc4xmpCore:CiAdrCtry");
+        meta->removeXmpTag("Xmp.iptc.CiAdrCtry");
+        meta->removeXmpTag("Xmp.iptc.CreatorContactInfo/Iptc4xmpCore:CiAdrCtry");
     }
 
     // --------------------------------------------------------
 
     if (d->creditCheck->isChecked())
-        meta.setXmpTagString("Xmp.photoshop.Credit", d->creditEdit->text());
+    {
+        meta->setXmpTagString("Xmp.photoshop.Credit", d->creditEdit->text());
+    }
     else
-        meta.removeXmpTag("Xmp.photoshop.Credit");
+    {
+        meta->removeXmpTag("Xmp.photoshop.Credit");
+    }
 
     if (d->sourceCheck->isChecked())
     {
-        meta.setXmpTagString("Xmp.photoshop.Source", d->sourceEdit->text());
-        meta.setXmpTagString("Xmp.dc.source", d->sourceEdit->text());
+        meta->setXmpTagString("Xmp.photoshop.Source", d->sourceEdit->text());
+        meta->setXmpTagString("Xmp.dc.source", d->sourceEdit->text());
     }
     else
     {
-        meta.removeXmpTag("Xmp.photoshop.Source");
-        meta.removeXmpTag("Xmp.dc.source");
+        meta->removeXmpTag("Xmp.photoshop.Source");
+        meta->removeXmpTag("Xmp.dc.source");
     }
 
-    xmpData = meta.getXmp();
+    exifData = meta->getExifEncoded();
+    xmpData  = meta->getXmp();
 }
 
 } // namespace DigikamGenericMetadataEditPlugin

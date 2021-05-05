@@ -6,7 +6,7 @@
  * Date        : 2005-17-07
  * Description : A Unsharp Mask threaded image filter.
  *
- * Copyright (C) 2005-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2005-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2009      by Matthias Welwarsky <matze at welwarsky dot de>
  * Copyright (C) 2010      by Martin Klapetek <martin dot klapetek at gmail dot com>
  *
@@ -37,14 +37,19 @@ namespace Digikam
 
 class DIGIKAM_EXPORT UnsharpMaskFilter : public DImgThreadedFilter
 {
+    Q_OBJECT
 
 public:
 
     explicit UnsharpMaskFilter(QObject* const parent = nullptr);
-    explicit UnsharpMaskFilter(DImg* const orgImage, QObject* const parent=nullptr, double radius=1.0,
-                               double amount=1.0, double threshold=0.05, bool luma=false);
+    explicit UnsharpMaskFilter(DImg* const orgImage,
+                               QObject* const parent = nullptr,
+                               double radius = 1.0,
+                               double amount = 1.0,
+                               double threshold = 0.05,
+                               bool luma=false);
 
-    virtual ~UnsharpMaskFilter();
+    ~UnsharpMaskFilter()                                                      override;
 
     static QString          FilterIdentifier()
     {
@@ -63,12 +68,12 @@ public:
         return 1;
     }
 
-    virtual QString         filterIdentifier()                          const override
+    QString         filterIdentifier()                                  const override
     {
         return FilterIdentifier();
     }
 
-    virtual FilterAction    filterAction()                                    override;
+    FilterAction    filterAction()                                            override;
     void                    readParameters(const FilterAction& action)        override;
 
 private:
@@ -79,7 +84,6 @@ private:
 private:
 
     double m_radius;
-
     double m_amount;
     double m_threshold;
     bool   m_luma;

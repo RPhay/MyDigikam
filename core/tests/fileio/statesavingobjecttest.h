@@ -26,7 +26,7 @@
 
 // Qt includes
 
-#include <QtTest>
+#include <QTest>
 
 // Local includes
 
@@ -37,6 +37,10 @@ class KConfigGroup;
 class StateSavingObjectTest: public QObject
 {
     Q_OBJECT
+
+public:
+
+    explicit StateSavingObjectTest(QObject* const parent = nullptr);
 
 private Q_SLOTS:
 
@@ -59,13 +63,13 @@ class StubStateSaver: public QObject,
 public:
 
     explicit StubStateSaver(QObject* const parent = nullptr);
-    virtual ~StubStateSaver();
+    ~StubStateSaver() override;
 
     KConfigGroup getGroup();
     QString getEntryKey(const QString& base);
 
-    void doLoadState();
-    void doSaveState();
+    void doLoadState() override;
+    void doSaveState() override;
 
     bool loadCalled();
     bool saveCalled();

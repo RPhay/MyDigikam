@@ -6,7 +6,7 @@
  * Date        : 2004-07-09
  * Description : a tool to sharp an image
  *
- * Copyright (C) 2004-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2004-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -37,7 +37,7 @@
 
 #include <ksharedconfig.h>
 #include <klocalizedstring.h>
-#include "kconfiggroup.h"
+#include <kconfiggroup.h>
 
 // Local includes
 
@@ -63,9 +63,9 @@ public:
 
     explicit Private()
       : configGroupName(QLatin1String("sharpen Tool")),
-        sharpSettings(nullptr),
-        previewWidget(nullptr),
-        gboxSettings(nullptr)
+        sharpSettings  (nullptr),
+        previewWidget  (nullptr),
+        gboxSettings   (nullptr)
     {
     }
 
@@ -78,7 +78,7 @@ public:
 
 SharpenTool::SharpenTool(QObject* const parent)
     : EditorToolThreaded(parent),
-      d(new Private)
+      d                 (new Private)
 {
     setObjectName(QLatin1String("sharpen"));
     setToolHelp(QLatin1String("blursharpentool.anchor"));

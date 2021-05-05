@@ -6,7 +6,7 @@
  * Date        : 2007-11-07
  * Description : a tool to print images
  *
- * Copyright (C) 2017-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2017-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -37,7 +37,6 @@
 
 #include "advprintsettings.h"
 #include "actionthreadbase.h"
-#include "digikam_export.h"
 
 using namespace Digikam;
 
@@ -61,9 +60,9 @@ public:
 
     explicit AdvPrintTask(AdvPrintSettings* const settings,
                           PrintMode mode,
-                          const QSize& size = QSize(),        // For PREVIEW stage.
-                          int sizeIndex = 0);                 // For PREPAREPRINT stage.
-    ~AdvPrintTask();
+                          const QSize& size = QSize(),        ///< For PREVIEW stage.
+                          int sizeIndex = 0);                 ///< For PREPAREPRINT stage.
+    ~AdvPrintTask()     override;
 
 Q_SIGNALS:
 
@@ -73,7 +72,12 @@ Q_SIGNALS:
 
 private:
 
-    void run();
+    // Disable
+    explicit AdvPrintTask(QObject*) = delete;
+
+private:
+
+    void run()          override;
 
     void        preparePrint();
     void        printPhotos();

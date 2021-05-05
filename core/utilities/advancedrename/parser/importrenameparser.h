@@ -41,8 +41,9 @@ public:
 
 private:
 
-    ImportRenameParser(const ImportRenameParser&);
-    ImportRenameParser& operator=(const ImportRenameParser&);
+    // Disable
+    ImportRenameParser(const ImportRenameParser&)            = delete;
+    ImportRenameParser& operator=(const ImportRenameParser&) = delete;
 };
 
 } // namespace Digikam

@@ -6,7 +6,7 @@
  * Date        : 2006-01-10
  * Description : a widget to display CIE tongue from an ICC profile.
  *
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * Any source code are inspired from lprof project and
  * Copyright (C) 1998-2001 Marti Maria <info at littlecms dot com>
@@ -159,20 +159,20 @@ public:
 
     explicit Private()
       : profileDataAvailable(true),
-        loadingImageMode(false),
-        loadingImageSucess(false),
-        needUpdatePixmap(false),
-        uncalibratedColor(false),
-        xBias(0),
-        yBias(0),
-        pxcols(0),
-        pxrows(0),
-        progressCount(0),
-        gridside(0),
-        progressTimer(nullptr),
-        progressPix(DWorkingPixmap()),
-        hMonitorProfile(nullptr),
-        hXFORM(nullptr)
+        loadingImageMode    (false),
+        loadingImageSucess  (false),
+        needUpdatePixmap    (false),
+        uncalibratedColor   (false),
+        xBias               (0),
+        yBias               (0),
+        pxcols              (0),
+        pxrows              (0),
+        progressCount       (0),
+        gridside            (0),
+        progressTimer       (nullptr),
+        progressPix         (nullptr),
+        hMonitorProfile     (nullptr),
+        hXFORM              (nullptr)
     {
     }
 
@@ -195,7 +195,7 @@ public:
     QTimer*                      progressTimer;
 
     QPixmap                      pixmap;
-    DWorkingPixmap               progressPix;
+    DWorkingPixmap*              progressPix;
 
     cmsHPROFILE                  hMonitorProfile;
     cmsHTRANSFORM                hXFORM;
@@ -204,10 +204,12 @@ public:
 };
 
 CIETongueWidget::CIETongueWidget(int w, int h, QWidget* const parent, cmsHPROFILE hMonitor)
-    : QWidget(parent), d(new Private)
+    : QWidget(parent),
+      d      (new Private)
 {
     cmsHPROFILE hXYZProfile;
     d->progressTimer = new QTimer(this);
+    d->progressPix   = new DWorkingPixmap(this);
     setMinimumSize(w, h);
     setAttribute(Qt::WA_DeleteOnClose);
     dkCmsErrorAction(LCMS_ERROR_SHOW);
@@ -227,7 +229,6 @@ CIETongueWidget::CIETongueWidget(int w, int h, QWidget* const parent, cmsHPROFIL
     {
         return;
     }
-
 
     d->hXFORM = dkCmsCreateTransform(hXYZProfile, TYPE_XYZ_16,
                                      d->hMonitorProfile, TYPE_RGB_8,
@@ -349,22 +350,30 @@ void CIETongueWidget::setProfile(cmsHPROFILE hProfile)
 
         if (dkCmsReadICCMatrixRGB2XYZ(&Mat, hProfile))
         {
+
 #if defined(USE_LCMS_VERSION_1000)
+
             qCDebug(DIGIKAM_WIDGETS_LOG) << "dkCmsReadICCMatrixRGB2XYZ(1): " \
             << "[" << Mat.v[0].n[0] << ", " << Mat.v[0].n[1] << ", " << Mat.v[0].n[2] << "]" \
             << "[" << Mat.v[1].n[0] << ", " << Mat.v[1].n[1] << ", " << Mat.v[1].n[2] << "]" \
             << "[" << Mat.v[2].n[0] << ", " << Mat.v[2].n[1] << ", " << Mat.v[2].n[2] << "]" ;
+
 #else
+
             qCDebug(DIGIKAM_WIDGETS_LOG) << "dkCmsReadICCMatrixRGB2XYZ(2): " \
             << "[" << Mat.Red.X << ", " << Mat.Red.Y << ", " << Mat.Red.Z << "]" \
             << "[" << Mat.Green.X << ", " << Mat.Green.Y << ", " << Mat.Green.Z << "]" \
             << "[" << Mat.Blue.X << ", " << Mat.Blue.Y << ", " << Mat.Blue.Z << "]" ;
+
 #endif
+
             // Undo chromatic adaptation
 
             if (dkCmsAdaptMatrixFromD50(&Mat, &White))
             {
+
 #if defined(USE_LCMS_VERSION_1000)
+
                 cmsCIEXYZ tmp;
 
                 tmp.X = Mat.v[0].n[0];
@@ -391,7 +400,9 @@ void CIETongueWidget::setProfile(cmsHPROFILE hProfile)
                 ScaleToWhite(&MediaWhite, &tmp);
 */
                 dkCmsXYZ2xyY(&(d->Primaries.Blue), &tmp);
+
 #else
+
                 cmsCIEXYZ tmp;
 
                 tmp.X = Mat.Red.X;
@@ -420,7 +431,9 @@ void CIETongueWidget::setProfile(cmsHPROFILE hProfile)
                 ScaleToWhite(&MediaWhite, &tmp);
 */
                 dkCmsXYZ2xyY(&(d->Primaries.Blue), &tmp);
+
 #endif
+
             }
         }
     }
@@ -556,11 +569,11 @@ void CIETongueWidget::drawTongueAxis()
         int xstart = (y * (d->pxcols - 1)) / 10;
         int ystart = (y * (d->pxrows - 1)) / 10;
 
-        s.sprintf("0.%d", y);
+        s = QString().asprintf("0.%d", y);
         biasedLine(xstart, d->pxrows - grids(1), xstart,   d->pxrows - grids(4));
         biasedText(xstart - grids(11), d->pxrows + grids(15), s);
 
-        s.sprintf("0.%d", 10 - y);
+        s = QString().asprintf("0.%d", 10 - y);
         biasedLine(0, ystart, grids(3), ystart);
         biasedText(grids(-25), ystart + grids(5), s);
     }
@@ -625,7 +638,7 @@ void CIETongueWidget::drawLabels()
         QRgb Color = colorByCoord(icx, icy);
         d->painter.setPen(Color);
 
-        wl.sprintf("%d", x);
+        wl = QString().asprintf("%d", x);
         biasedText(icx+bx, icy+by, wl);
     }
 }
@@ -765,10 +778,10 @@ void CIETongueWidget::paintEvent(QPaintEvent*)
     {
         // In first, we draw an animation.
 
-        QPixmap anim(d->progressPix.frameAt(d->progressCount));
+        QPixmap anim(d->progressPix->frameAt(d->progressCount));
         d->progressCount++;
 
-        if (d->progressCount >= d->progressPix.frameCount())
+        if (d->progressCount >= d->progressPix->frameCount())
         {
             d->progressCount = 0;
         }

@@ -7,7 +7,7 @@
  * Description : Scanning a single item - baloo helper.
  *
  * Copyright (C) 2007-2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2013-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2013-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -54,24 +54,28 @@ void ItemScanner::scanBalooInfo()
 
     if (bInfo.rating != -1)
     {
+        qCDebug(DIGIKAM_DATABASE_LOG) << "Baloo rating" << bInfo.rating;
+
         if (!d->commit.imageInformationFields.testFlag(DatabaseFields::Rating))
         {
             d->commit.imageInformationFields |= DatabaseFields::Rating;
-            d->commit.imageInformationInfos.insert(0, QVariant(bInfo.rating));
         }
+        else
+        {
+            d->commit.imageInformationInfos.removeAt(0);
+        }
+
+        d->commit.imageInformationInfos.insert(0, bInfo.rating);
     }
 
     if (!bInfo.comment.isEmpty())
     {
-        qCDebug(DIGIKAM_DATABASE_LOG) << "Comment " << bInfo.comment;
+        qCDebug(DIGIKAM_DATABASE_LOG) << "Baloo comment" << bInfo.comment;
 
-        if (!d->commit.captions.contains(QLatin1String("x-default")))
-        {
-            CaptionValues val;
-            val.caption                  = bInfo.comment;
-            d->commit.commitItemComments = true;
-            d->commit.captions.insert(QLatin1String("x-default"), val);
-        }
+        CaptionValues val;
+        val.caption                  = bInfo.comment;
+        d->commit.commitItemComments = true;
+        d->commit.captions.insert(QLatin1String("x-default"), val);
     }
 
 #endif // HAVE_KFILEMETADATA

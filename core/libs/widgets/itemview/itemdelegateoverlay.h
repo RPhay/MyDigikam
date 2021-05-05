@@ -44,7 +44,7 @@ class DIGIKAM_EXPORT ItemDelegateOverlay : public QObject
 public:
 
     explicit ItemDelegateOverlay(QObject* const parent = nullptr);
-    ~ItemDelegateOverlay();
+    ~ItemDelegateOverlay() override;
 
     /**
      * Called when the overlay was installed and shall begin working,
@@ -110,12 +110,14 @@ protected:
 };
 
 #define REQUIRE_DELEGATE(Delegate)                                                                                                           \
+                                                                                                                                             \
 public:                                                                                                                                      \
+                                                                                                                                             \
     void setDelegate(Delegate* delegate)                                 { ItemDelegateOverlay::setDelegate(delegate);                     } \
     Delegate* delegate() const                                           { return static_cast<Delegate*>(ItemDelegateOverlay::delegate()); } \
     virtual bool acceptsDelegate(QAbstractItemDelegate*d) const override { return dynamic_cast<Delegate*>(d);                              } \
+                                                                                                                                             \
 private:
-
 
 // -------------------------------------------------------------------------------------------
 
@@ -139,7 +141,7 @@ public:
      * If active is false, this will delete the widget and
      * disconnect all signal from model and view to this object (!)
      */
-    virtual void setActive(bool active)                     override;
+    void setActive(bool active)                     override;
 
 protected:
 
@@ -230,7 +232,7 @@ public:
     /**
      * Will call createButton().
      */
-    virtual void setActive(bool active)                 override;
+    void setActive(bool active)                 override;
 
     ItemViewHoverButton* button()                 const;
 
@@ -247,13 +249,13 @@ protected:
      */
     virtual void updateButton(const QModelIndex& index) = 0;
 
-    virtual QWidget* createWidget()                     override;
-    virtual void visualChange()                         override;
+    QWidget* createWidget()                     override;
+    void visualChange()                         override;
 
 protected Q_SLOTS:
 
-    virtual void slotEntered(const QModelIndex& index)  override;
-    virtual void slotReset()                            override;
+    void slotEntered(const QModelIndex& index)  override;
+    void slotReset()                            override;
 };
 
 // -------------------------------------------------------------------------------------------
@@ -272,9 +274,11 @@ class DIGIKAM_EXPORT PersistentWidgetDelegateOverlay : public AbstractWidgetDele
 public:
 
     explicit PersistentWidgetDelegateOverlay(QObject* const parent);
-    ~PersistentWidgetDelegateOverlay();
+    ~PersistentWidgetDelegateOverlay() override;
 
-    virtual void setActive(bool active)                                         override;
+    void setActive(bool active)                                         override;
+
+    bool isPersistent() const;
 
 public Q_SLOTS:
 
@@ -285,7 +289,6 @@ public Q_SLOTS:
     void setPersistent(bool persistent);
     void enterPersistentMode();
     void leavePersistentMode();
-    bool isPersistent() const;
 
     void storeFocus();
 
@@ -299,13 +302,13 @@ protected:
      * This class instead provides showOnIndex() which you shall
      * use for this purpose.
      */
-    virtual void slotEntered(const QModelIndex& index)                          override;
-    virtual void slotReset()                                                    override;
-    virtual void slotViewportEntered()                                          override;
-    virtual void slotRowsRemoved(const QModelIndex& parent, int start, int end) override;
-    virtual void slotLayoutChanged()                                            override;
-    virtual void viewportLeaveEvent(QObject* obj, QEvent* event)                override;
-    virtual void hide()                                                         override;
+    void slotEntered(const QModelIndex& index)                          override;
+    void slotReset()                                                    override;
+    void slotViewportEntered()                                          override;
+    void slotRowsRemoved(const QModelIndex& parent, int start, int end) override;
+    void slotLayoutChanged()                                            override;
+    void viewportLeaveEvent(QObject* obj, QEvent* event)                override;
+    void hide()                                                         override;
 
     /**
      * Reimplement to set the focus on the correct subwidget.
@@ -336,7 +339,8 @@ public:
      * Does not inherit QObject, the delegate already does.
      */
 
-    virtual ~ItemDelegateOverlayContainer();
+    ItemDelegateOverlayContainer()          = default;
+    virtual ~ItemDelegateOverlayContainer() = default;
 
     QList<ItemDelegateOverlay*> overlays() const;
 
@@ -367,6 +371,10 @@ protected:
 protected:
 
     QList<ItemDelegateOverlay*> m_overlays;
+
+private:
+
+    Q_DISABLE_COPY(ItemDelegateOverlayContainer)
 };
 
 } // namespace Digikam

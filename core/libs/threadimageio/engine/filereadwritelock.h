@@ -90,19 +90,27 @@ private:
 
 class DIGIKAM_EXPORT SafeTemporaryFile : public QTemporaryFile
 {
+    Q_OBJECT
+
 public:
 
     explicit SafeTemporaryFile(const QString& templ);
     SafeTemporaryFile();
 
-    bool open()
-    {
-        return open(QIODevice::ReadWrite);
-    }
+    bool open();
+
+    QString safeFilePath() const;
 
 protected:
 
-    virtual bool open(QIODevice::OpenMode) override;
+    bool open(QIODevice::OpenMode) override;
+
+private:
+
+    // Disable
+    SafeTemporaryFile(QObject*) = delete;
+
+    QString m_templ;
 };
 
 } // namespace Digikam

@@ -42,8 +42,8 @@ namespace Digikam
 {
 
 ParallelWorkers::ParallelWorkers()
-    : m_currentIndex(0),
-      m_replacementMetaObject(nullptr),
+    : m_currentIndex          (0),
+      m_replacementMetaObject (nullptr),
       m_originalStaticMetacall(nullptr)
 {
 }
@@ -65,7 +65,7 @@ int ParallelWorkers::optimalWorkerCount()
 
 bool ParallelWorkers::optimalWorkerCountReached() const
 {
-    return m_workers.size() >= optimalWorkerCount();
+    return (m_workers.size() >= optimalWorkerCount());
 }
 
 void ParallelWorkers::schedule()
@@ -109,9 +109,9 @@ void ParallelWorkers::add(WorkerObject* const worker)
         return;
     }
 
-    QMetaObject* meta = asQObject()->metaObject();
+    QMetaObject* const meta = asQObject()->metaObject();
 
-    for (int i=0; i<meta->methodCount(); ++i)
+    for (int i = 0 ; i < meta->methodCount() ; ++i)
     {
         QMetaMethod method = meta->method(index);
         if (!method->methodType() == QMetaMethod::
@@ -159,6 +159,7 @@ int ParallelWorkers::replacementStaticQtMetacall(QMetaObject::Call _c, int _id, 
     if (_c == QMetaObject::InvokeMetaMethod)
     {
         // This is the common ancestor's meta object, below WorkerObject
+
         const QMetaObject* const mobj = mocMetaObject();
         const int properMethods       = mobj->methodCount() - mobj->methodOffset();
 
@@ -168,11 +169,13 @@ int ParallelWorkers::replacementStaticQtMetacall(QMetaObject::Call _c, int _id, 
         }
 
         // Get the relevant meta method. I'm not quite sure if this is rock solid.
-        QMetaMethod method = mobj->method(_id + mobj->methodOffset());
+
+        QMetaMethod method            = mobj->method(_id + mobj->methodOffset());
 
         // Copy the argument data - _a is going to be deleted in our current thread
-        QList<QByteArray> types = method.parameterTypes();
-        QVector<QGenericArgument> args(10);
+
+        QList<QByteArray> types       = method.parameterTypes();
+        QVector<QGenericArgument> args(10);                         // clazy:exclude=missing-typeinfo
 
         for (int i = 0 ; i < types.size() ; ++i)
         {
@@ -185,11 +188,13 @@ int ParallelWorkers::replacementStaticQtMetacall(QMetaObject::Call _c, int _id, 
             }
 
             // we use QMetaType to copy the data. _a[0] is reserved for a return parameter.
+
             void* const data = QMetaType::create(typeId, _a[i+1]);
             args[i]          = QGenericArgument(types[i].constData(), data);
         }
 
         // Find the object to be invoked
+
         WorkerObject* const obj = m_workers.at(m_currentIndex);
 
         if (++m_currentIndex == m_workers.size())
@@ -200,6 +205,7 @@ int ParallelWorkers::replacementStaticQtMetacall(QMetaObject::Call _c, int _id, 
         obj->schedule();
 
         // Invoke across-thread
+
         method.invoke(obj, Qt::QueuedConnection,
                       args[0],
                       args[1],
@@ -212,7 +218,7 @@ int ParallelWorkers::replacementStaticQtMetacall(QMetaObject::Call _c, int _id, 
                       args[8],
                       args[9]);
 
-        return _id - properMethods; // this return is used by replacementQtMetacall
+        return (_id - properMethods); // this return is used by replacementQtMetacall
     }
     else
     {
@@ -243,8 +249,8 @@ const QMetaObject* ParallelWorkers::replacementMetaObject() const
 {
     if (!m_replacementMetaObject)
     {
-        QMetaObject* rmo                       = new QMetaObject(*mocMetaObject());
-        ParallelWorkers* nonConstThis          = const_cast<ParallelWorkers*>(this);
+        QMetaObject* const rmo                 = new QMetaObject(*mocMetaObject());
+        ParallelWorkers* const nonConstThis    = const_cast<ParallelWorkers*>(this);
         nonConstThis->m_originalStaticMetacall = rmo->d.static_metacall;
         rmo->d.static_metacall                 = nonConstThis->staticMetacallPointer();
         nonConstThis->m_replacementMetaObject  = rmo;

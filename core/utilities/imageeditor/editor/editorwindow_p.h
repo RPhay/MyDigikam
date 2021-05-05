@@ -6,7 +6,7 @@
  * Date        : 2006-01-20
  * Description : core image editor GUI implementation private data.
  *
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -90,7 +90,6 @@
 #include "digikam_debug.h"
 #include "digikam_globals.h"
 #include "dmessagebox.h"
-#include "applicationsettings.h"
 #include "actioncategorizedview.h"
 #include "canvas.h"
 #include "categorizeditemmodel.h"
@@ -106,6 +105,7 @@
 #include "editortooliface.h"
 #include "exposurecontainer.h"
 #include "dfileoperations.h"
+#include "dservicemenu.h"
 #include "filereadwritelock.h"
 #include "filesaveoptionsbox.h"
 #include "filesaveoptionsdlg.h"
@@ -122,7 +122,6 @@
 #include "pngsettings.h"
 #include "savingcontext.h"
 #include "sidebar.h"
-#include "slideshowsettings.h"
 #include "softproofdialog.h"
 #include "statusprogressbar.h"
 #include "thememanager.h"
@@ -144,38 +143,37 @@ class Q_DECL_HIDDEN EditorWindow::Private
 public:
 
     Private()
-      : cmViewIndicator(nullptr),
-        underExposureIndicator(nullptr),
-        overExposureIndicator(nullptr),
-        infoLabel(nullptr),
-        copyAction(nullptr),
-        cropAction(nullptr),
-        flipHorizAction(nullptr),
-        flipVertAction(nullptr),
-        rotateLeftAction(nullptr),
-        rotateRightAction(nullptr),
-        selectAllAction(nullptr),
-        selectNoneAction(nullptr),
-        slideShowAction(nullptr),
-        softProofOptionsAction(nullptr),
-        zoomFitToSelectAction(nullptr),
-        zoomMinusAction(nullptr),
-        zoomPlusAction(nullptr),
-        zoomTo100percents(nullptr),
-        openWithAction(nullptr),
-        waitingLoop(nullptr),
-        currentWindowModalDialog(nullptr),
-        zoomFitToWindowAction(nullptr),
-        viewCMViewAction(nullptr),
-        viewSoftProofAction(nullptr),
-        viewUnderExpoAction(nullptr),
-        viewOverExpoAction(nullptr),
-        selectToolsActionView(nullptr),
-        ICCSettings(nullptr),
-        zoomBar(nullptr),
-        previewToolBar(nullptr),
-        exposureSettings(nullptr),
-        toolIface(nullptr)
+      : cmViewIndicator             (nullptr),
+        underExposureIndicator      (nullptr),
+        overExposureIndicator       (nullptr),
+        infoLabel                   (nullptr),
+        copyAction                  (nullptr),
+        cropAction                  (nullptr),
+        flipHorizAction             (nullptr),
+        flipVertAction              (nullptr),
+        rotateLeftAction            (nullptr),
+        rotateRightAction           (nullptr),
+        selectAllAction             (nullptr),
+        selectNoneAction            (nullptr),
+        softProofOptionsAction      (nullptr),
+        zoomFitToSelectAction       (nullptr),
+        zoomMinusAction             (nullptr),
+        zoomPlusAction              (nullptr),
+        zoomTo100percents           (nullptr),
+        openWithAction              (nullptr),
+        waitingLoop                 (nullptr),
+        currentWindowModalDialog    (nullptr),
+        zoomFitToWindowAction       (nullptr),
+        viewCMViewAction            (nullptr),
+        viewSoftProofAction         (nullptr),
+        viewUnderExpoAction         (nullptr),
+        viewOverExpoAction          (nullptr),
+        selectToolsActionView       (nullptr),
+        ICCSettings                 (nullptr),
+        zoomBar                     (nullptr),
+        previewToolBar              (nullptr),
+        exposureSettings            (nullptr),
+        toolIface                   (nullptr)
     {
     }
 
@@ -193,15 +191,17 @@ public:
 
     static const QString         configAutoZoomEntry;
     static const QString         configBackgroundColorEntry;
-    static const QString         configJpeg2000CompressionEntry;
-    static const QString         configJpeg2000LossLessEntry;
     static const QString         configJpegCompressionEntry;
     static const QString         configJpegSubSamplingEntry;
+    static const QString         configPngCompressionEntry;
+    static const QString         configTiffCompressionEntry;
+    static const QString         configJpeg2000CompressionEntry;
+    static const QString         configJpeg2000LossLessEntry;
     static const QString         configPgfCompressionEntry;
     static const QString         configPgfLossLessEntry;
-    static const QString         configPngCompressionEntry;
+    static const QString         configHeifCompressionEntry;
+    static const QString         configHeifLossLessEntry;
     static const QString         configSplitterStateEntry;
-    static const QString         configTiffCompressionEntry;
     static const QString         configUnderExposureColorEntry;
     static const QString         configUnderExposureIndicatorEntry;
     static const QString         configUnderExposurePercentsEntry;
@@ -229,7 +229,6 @@ public:
     QAction*                     rotateRightAction;
     QAction*                     selectAllAction;
     QAction*                     selectNoneAction;
-    QAction*                     slideShowAction;
     QAction*                     softProofOptionsAction;
     QAction*                     zoomFitToSelectAction;
     QAction*                     zoomMinusAction;
@@ -266,15 +265,17 @@ public:
 
 const QString EditorWindow::Private::configAutoZoomEntry(QLatin1String("AutoZoom"));
 const QString EditorWindow::Private::configBackgroundColorEntry(QLatin1String("BackgroundColor"));
-const QString EditorWindow::Private::configJpeg2000CompressionEntry(QLatin1String("JPEG2000Compression"));
-const QString EditorWindow::Private::configJpeg2000LossLessEntry(QLatin1String("JPEG2000LossLess"));
 const QString EditorWindow::Private::configJpegCompressionEntry(QLatin1String("JPEGCompression"));
 const QString EditorWindow::Private::configJpegSubSamplingEntry(QLatin1String("JPEGSubSampling"));
+const QString EditorWindow::Private::configPngCompressionEntry(QLatin1String("PNGCompression"));
+const QString EditorWindow::Private::configTiffCompressionEntry(QLatin1String("TIFFCompression"));
+const QString EditorWindow::Private::configJpeg2000CompressionEntry(QLatin1String("JPEG2000Compression"));
+const QString EditorWindow::Private::configJpeg2000LossLessEntry(QLatin1String("JPEG2000LossLess"));
 const QString EditorWindow::Private::configPgfCompressionEntry(QLatin1String("PGFCompression"));
 const QString EditorWindow::Private::configPgfLossLessEntry(QLatin1String("PGFLossLess"));
-const QString EditorWindow::Private::configPngCompressionEntry(QLatin1String("PNGCompression"));
+const QString EditorWindow::Private::configHeifCompressionEntry(QLatin1String("HEIFCompression"));
+const QString EditorWindow::Private::configHeifLossLessEntry(QLatin1String("HEIFLossLess"));
 const QString EditorWindow::Private::configSplitterStateEntry(QLatin1String("SplitterState"));
-const QString EditorWindow::Private::configTiffCompressionEntry(QLatin1String("TIFFCompression"));
 const QString EditorWindow::Private::configUnderExposureColorEntry(QLatin1String("UnderExposureColor"));
 const QString EditorWindow::Private::configUnderExposureIndicatorEntry(QLatin1String("UnderExposureIndicator"));
 const QString EditorWindow::Private::configUnderExposurePercentsEntry(QLatin1String("UnderExposurePercentsEntry"));
@@ -354,7 +355,11 @@ void EditorWindow::Private::plugNewVersionInFormatAction(EditorWindow* const q,
     QAction* const action = new QAction(text, q);
 
     connect(action, &QAction::triggered,
-            q, [q, format]() { q->saveNewVersionInFormat(format); });
+            q, [q, format]()
+            {
+                 q->saveNewVersionInFormat(format);
+            }
+    );
 
     menuAction->addAction(action);
 }

@@ -38,96 +38,96 @@ class Q_DECL_HIDDEN DColorComposerPorterDuffNone : public DColorComposer
 {
 public:
 
-    virtual void compose(DColor& dest, DColor src)                                          override;
-    virtual void compose(DColor& dest, DColor src, MultiplicationFlags multiplicationFlags) override;
+    void compose(DColor& dest, DColor& src)                                          override;
+    void compose(DColor& dest, DColor& src, MultiplicationFlags multiplicationFlags) override;
 };
 
 class Q_DECL_HIDDEN DColorComposerPorterDuffClear : public DColorComposer
 {
 public:
 
-    virtual void compose(DColor& dest, DColor src)                                          override;
-    virtual void compose(DColor& dest, DColor src, MultiplicationFlags multiplicationFlags) override;
+    void compose(DColor& dest, DColor& src)                                          override;
+    void compose(DColor& dest, DColor& src, MultiplicationFlags multiplicationFlags) override;
 };
 
 class Q_DECL_HIDDEN DColorComposerPorterDuffSrc : public DColorComposer
 {
 public:
 
-    virtual void compose(DColor& dest, DColor src)                                          override;
-    virtual void compose(DColor& dest, DColor src, MultiplicationFlags multiplicationFlags) override;
+    void compose(DColor& dest, DColor& src)                                          override;
+    void compose(DColor& dest, DColor& src, MultiplicationFlags multiplicationFlags) override;
 };
 
 class Q_DECL_HIDDEN DColorComposerPorterDuffSrcOver : public DColorComposer
 {
 public:
 
-    virtual void compose(DColor& dest, DColor src)                                          override;
-    virtual void compose(DColor& dest, DColor src, MultiplicationFlags multiplicationFlags) override;
+    void compose(DColor& dest, DColor& src)                                          override;
+    void compose(DColor& dest, DColor& src, MultiplicationFlags multiplicationFlags) override;
 };
 
 class Q_DECL_HIDDEN DColorComposerPorterDuffDstOver : public DColorComposer
 {
 public:
 
-    virtual void compose(DColor& dest, DColor src)                                          override;
-    virtual void compose(DColor& dest, DColor src, MultiplicationFlags multiplicationFlags) override;
+    void compose(DColor& dest, DColor& src)                                          override;
+    void compose(DColor& dest, DColor& src, MultiplicationFlags multiplicationFlags) override;
 };
 
 class Q_DECL_HIDDEN DColorComposerPorterDuffSrcIn : public DColorComposer
 {
 public:
 
-    virtual void compose(DColor& dest, DColor src)                                          override;
-    virtual void compose(DColor& dest, DColor src, MultiplicationFlags multiplicationFlags) override;
+    void compose(DColor& dest, DColor& src)                                          override;
+    void compose(DColor& dest, DColor& src, MultiplicationFlags multiplicationFlags) override;
 };
 
 class Q_DECL_HIDDEN DColorComposerPorterDuffDstIn : public DColorComposer
 {
 public:
 
-    virtual void compose(DColor& dest, DColor src)                                          override;
-    virtual void compose(DColor& dest, DColor src, MultiplicationFlags multiplicationFlags) override;
+    void compose(DColor& dest, DColor& src)                                          override;
+    void compose(DColor& dest, DColor& src, MultiplicationFlags multiplicationFlags) override;
 };
 
 class Q_DECL_HIDDEN DColorComposerPorterDuffSrcOut : public DColorComposer
 {
 public:
 
-    virtual void compose(DColor& dest, DColor src)                                          override;
-    virtual void compose(DColor& dest, DColor src, MultiplicationFlags multiplicationFlags) override;
+    void compose(DColor& dest, DColor& src)                                          override;
+    void compose(DColor& dest, DColor& src, MultiplicationFlags multiplicationFlags) override;
 };
 
 class Q_DECL_HIDDEN DColorComposerPorterDuffDstOut : public DColorComposer
 {
 public:
 
-    virtual void compose(DColor& dest, DColor src)                                          override;
-    virtual void compose(DColor& dest, DColor src, MultiplicationFlags multiplicationFlags) override;
+    void compose(DColor& dest, DColor& src)                                          override;
+    void compose(DColor& dest, DColor& src, MultiplicationFlags multiplicationFlags) override;
 };
 
 class Q_DECL_HIDDEN DColorComposerPorterDuffSrcAtop : public DColorComposer
 {
 public:
 
-    virtual void compose(DColor& dest, DColor src)                                          override;
-    virtual void compose(DColor& dest, DColor src, MultiplicationFlags multiplicationFlags) override;
+    void compose(DColor& dest, DColor& src)                                          override;
+    void compose(DColor& dest, DColor& src, MultiplicationFlags multiplicationFlags) override;
 };
 
 class Q_DECL_HIDDEN DColorComposerPorterDuffDstAtop : public DColorComposer
 {
 public:
 
-    virtual void compose(DColor& dest, DColor src)                                          override;
-    virtual void compose(DColor& dest, DColor src, MultiplicationFlags multiplicationFlags) override;
+    void compose(DColor& dest, DColor& src)                                          override;
+    void compose(DColor& dest, DColor& src, MultiplicationFlags multiplicationFlags) override;
 };
 
 class Q_DECL_HIDDEN DColorComposerPorterDuffXor : public DColorComposer
 {
 public:
 
-    virtual void compose(DColor& dest, DColor src)                                          override;
-    virtual void compose(DColor& dest, DColor src, MultiplicationFlags multiplicationFlags) override;
+    void compose(DColor& dest, DColor& src)                                          override;
+    void compose(DColor& dest, DColor& src, MultiplicationFlags multiplicationFlags) override;
 };
 
 /**
@@ -136,10 +136,11 @@ public:
  * Src blending function Src Alpha
  * Dst blending function Inv Src Alpha
  */
-void DColorComposerPorterDuffNone::compose(DColor& dest, DColor src)
+void DColorComposerPorterDuffNone::compose(DColor& dest, DColor& src)
 {
     // preserve src alpha value for dest blending,
     // src.alpha() will be changed after blending src
+
     int sa = src.alpha();
 
     if (dest.sixteenBit())
@@ -158,9 +159,11 @@ void DColorComposerPorterDuffNone::compose(DColor& dest, DColor src)
     }
 }
 
-void DColorComposerPorterDuffNone::compose(DColor& dest, DColor src, MultiplicationFlags multiplicationFlags)
+// cppcheck-suppress passedByValue
+void DColorComposerPorterDuffNone::compose(DColor& dest, DColor& src, MultiplicationFlags multiplicationFlags)
 {
     // Explicit implementation to please gcc 4.1
+
     DColorComposer::compose(dest, src, multiplicationFlags);
 }
 
@@ -170,16 +173,18 @@ void DColorComposerPorterDuffNone::compose(DColor& dest, DColor src, Multiplicat
  * Src blending function Zero
  * Dst blending function Zero
  */
-void DColorComposerPorterDuffClear::compose(DColor& dest, DColor src)
+void DColorComposerPorterDuffClear::compose(DColor& dest, DColor& src)
 {
     src.blendZero();
     dest.blendZero();
     dest.blendAdd(src);
 }
 
-void DColorComposerPorterDuffClear::compose(DColor& dest, DColor src, MultiplicationFlags)
+// cppcheck-suppress passedByValue
+void DColorComposerPorterDuffClear::compose(DColor& dest, DColor& src, MultiplicationFlags)
 {
     // skip pre- and demultiplication
+
     compose(dest, src);
 }
 
@@ -190,16 +195,19 @@ void DColorComposerPorterDuffClear::compose(DColor& dest, DColor src, Multiplica
  * Src blending function One
  * Dst blending function Zero
  */
-void DColorComposerPorterDuffSrc::compose(DColor& dest, DColor src)
+void DColorComposerPorterDuffSrc::compose(DColor& dest, DColor& src)
 {
     // src: no-op
+
     dest.blendZero();
     dest.blendAdd(src);
 }
 
-void DColorComposerPorterDuffSrc::compose(DColor& dest, DColor src, MultiplicationFlags)
+// cppcheck-suppress passedByValue
+void DColorComposerPorterDuffSrc::compose(DColor& dest, DColor& src, MultiplicationFlags)
 {
     // skip pre- and demultiplication
+
     compose(dest, src);
 }
 
@@ -209,11 +217,12 @@ void DColorComposerPorterDuffSrc::compose(DColor& dest, DColor src, Multiplicati
  * Src blending function One
  * Dst blending function Inv Src Alpha
  */
-void DColorComposerPorterDuffSrcOver::compose(DColor& dest, DColor src)
+void DColorComposerPorterDuffSrcOver::compose(DColor& dest, DColor& src)
 {
     if (dest.sixteenBit())
     {
         // src: no-op
+
         dest.blendInvAlpha16(src.alpha());
         dest.blendAdd(src);
         dest.blendClamp16();
@@ -221,15 +230,18 @@ void DColorComposerPorterDuffSrcOver::compose(DColor& dest, DColor src)
     else
     {
         // src: no-op
+
         dest.blendInvAlpha8(src.alpha());
         dest.blendAdd(src);
         dest.blendClamp8();
     }
 }
 
-void DColorComposerPorterDuffSrcOver::compose(DColor& dest, DColor src, MultiplicationFlags multiplicationFlags)
+// cppcheck-suppress passedByValue
+void DColorComposerPorterDuffSrcOver::compose(DColor& dest, DColor& src, MultiplicationFlags multiplicationFlags)
 {
     // Explicit implementation to please gcc 4.1
+
     DColorComposer::compose(dest, src, multiplicationFlags);
 }
 
@@ -239,27 +251,33 @@ void DColorComposerPorterDuffSrcOver::compose(DColor& dest, DColor src, Multipli
  * Src blending function Inv Dst Alpha
  * Dst blending function One
  */
-void DColorComposerPorterDuffDstOver::compose(DColor& dest, DColor src)
+void DColorComposerPorterDuffDstOver::compose(DColor& dest, DColor& src)
 {
     if (dest.sixteenBit())
     {
         src.blendInvAlpha16(dest.alpha());
+
         // dest: no-op
+
         dest.blendAdd(src);
         dest.blendClamp16();
     }
     else
     {
         src.blendInvAlpha8(dest.alpha());
+
         // dest: no-op
+
         dest.blendAdd(src);
         dest.blendClamp8();
     }
 }
 
-void DColorComposerPorterDuffDstOver::compose(DColor& dest, DColor src, MultiplicationFlags multiplicationFlags)
+// cppcheck-suppress passedByValue
+void DColorComposerPorterDuffDstOver::compose(DColor& dest, DColor& src, MultiplicationFlags multiplicationFlags)
 {
     // Explicit implementation to please gcc 4.1
+
     DColorComposer::compose(dest, src, multiplicationFlags);
 }
 
@@ -269,7 +287,7 @@ void DColorComposerPorterDuffDstOver::compose(DColor& dest, DColor src, Multipli
  * Src blending function Dst Alpha
  * Dst blending function Zero
  */
-void DColorComposerPorterDuffSrcIn::compose(DColor& dest, DColor src)
+void DColorComposerPorterDuffSrcIn::compose(DColor& dest, DColor& src)
 {
     if (dest.sixteenBit())
     {
@@ -287,9 +305,11 @@ void DColorComposerPorterDuffSrcIn::compose(DColor& dest, DColor src)
     }
 }
 
-void DColorComposerPorterDuffSrcIn::compose(DColor& dest, DColor src, MultiplicationFlags multiplicationFlags)
+// cppcheck-suppress passedByValue
+void DColorComposerPorterDuffSrcIn::compose(DColor& dest, DColor& src, MultiplicationFlags multiplicationFlags)
 {
     // Explicit implementation to please gcc 4.1
+
     DColorComposer::compose(dest, src, multiplicationFlags);
 }
 
@@ -299,7 +319,7 @@ void DColorComposerPorterDuffSrcIn::compose(DColor& dest, DColor src, Multiplica
  * Src blending function Zero
  * Dst blending function Src Alpha
  */
-void DColorComposerPorterDuffDstIn::compose(DColor& dest, DColor src)
+void DColorComposerPorterDuffDstIn::compose(DColor& dest, DColor& src)
 {
     int sa = src.alpha();
 
@@ -319,9 +339,11 @@ void DColorComposerPorterDuffDstIn::compose(DColor& dest, DColor src)
     }
 }
 
-void DColorComposerPorterDuffDstIn::compose(DColor& dest, DColor src, MultiplicationFlags multiplicationFlags)
+// cppcheck-suppress passedByValue
+void DColorComposerPorterDuffDstIn::compose(DColor& dest, DColor& src, MultiplicationFlags multiplicationFlags)
 {
     // Explicit implementation to please gcc 4.1
+
     DColorComposer::compose(dest, src, multiplicationFlags);
 }
 
@@ -331,7 +353,7 @@ void DColorComposerPorterDuffDstIn::compose(DColor& dest, DColor src, Multiplica
  * Src blending function Inv Dst Alpha
  * Dst blending function Zero
  */
-void DColorComposerPorterDuffSrcOut::compose(DColor& dest, DColor src)
+void DColorComposerPorterDuffSrcOut::compose(DColor& dest, DColor& src)
 {
     if (dest.sixteenBit())
     {
@@ -349,9 +371,11 @@ void DColorComposerPorterDuffSrcOut::compose(DColor& dest, DColor src)
     }
 }
 
-void DColorComposerPorterDuffSrcOut::compose(DColor& dest, DColor src, MultiplicationFlags multiplicationFlags)
+// cppcheck-suppress passedByValue
+void DColorComposerPorterDuffSrcOut::compose(DColor& dest, DColor& src, MultiplicationFlags multiplicationFlags)
 {
     // Explicit implementation to please gcc 4.1
+
     DColorComposer::compose(dest, src, multiplicationFlags);
 }
 
@@ -361,7 +385,7 @@ void DColorComposerPorterDuffSrcOut::compose(DColor& dest, DColor src, Multiplic
  * Src blending function Zero
  * Dst blending function Inv Src Alpha
  */
-void DColorComposerPorterDuffDstOut::compose(DColor& dest, DColor src)
+void DColorComposerPorterDuffDstOut::compose(DColor& dest, DColor& src)
 {
     int sa = src.alpha();
 
@@ -381,9 +405,11 @@ void DColorComposerPorterDuffDstOut::compose(DColor& dest, DColor src)
     }
 }
 
-void DColorComposerPorterDuffDstOut::compose(DColor& dest, DColor src, MultiplicationFlags multiplicationFlags)
+// cppcheck-suppress passedByValue
+void DColorComposerPorterDuffDstOut::compose(DColor& dest, DColor& src, MultiplicationFlags multiplicationFlags)
 {
     // Explicit implementation to please gcc 4.1
+
     DColorComposer::compose(dest, src, multiplicationFlags);
 }
 
@@ -393,7 +419,7 @@ void DColorComposerPorterDuffDstOut::compose(DColor& dest, DColor src, Multiplic
  * Src blending function Dst Alpha
  * Dst blending function Inv Src Alpha
  */
-void DColorComposerPorterDuffSrcAtop::compose(DColor& dest, DColor src)
+void DColorComposerPorterDuffSrcAtop::compose(DColor& dest, DColor& src)
 {
     int sa = src.alpha();
 
@@ -413,9 +439,11 @@ void DColorComposerPorterDuffSrcAtop::compose(DColor& dest, DColor src)
     }
 }
 
-void DColorComposerPorterDuffSrcAtop::compose(DColor& dest, DColor src, MultiplicationFlags multiplicationFlags)
+// cppcheck-suppress passedByValue
+void DColorComposerPorterDuffSrcAtop::compose(DColor& dest, DColor& src, MultiplicationFlags multiplicationFlags)
 {
     // Explicit implementation to please gcc 4.1
+
     DColorComposer::compose(dest, src, multiplicationFlags);
 }
 
@@ -425,7 +453,7 @@ void DColorComposerPorterDuffSrcAtop::compose(DColor& dest, DColor src, Multipli
  * Src blending function Inv Dest Alpha
  * Dst blending function Src Alpha
  */
-void DColorComposerPorterDuffDstAtop::compose(DColor& dest, DColor src)
+void DColorComposerPorterDuffDstAtop::compose(DColor& dest, DColor& src)
 {
     int sa = src.alpha();
 
@@ -445,9 +473,11 @@ void DColorComposerPorterDuffDstAtop::compose(DColor& dest, DColor src)
     }
 }
 
-void DColorComposerPorterDuffDstAtop::compose(DColor& dest, DColor src, MultiplicationFlags multiplicationFlags)
+// cppcheck-suppress passedByValue
+void DColorComposerPorterDuffDstAtop::compose(DColor& dest, DColor& src, MultiplicationFlags multiplicationFlags)
 {
     // Explicit implementation to please gcc 4.1
+
     DColorComposer::compose(dest, src, multiplicationFlags);
 }
 
@@ -457,7 +487,7 @@ void DColorComposerPorterDuffDstAtop::compose(DColor& dest, DColor src, Multipli
  * Src blending function Inv Dst Alpha
  * Dst blending function Inv Src Alpha
  */
-void DColorComposerPorterDuffXor::compose(DColor& dest, DColor src)
+void DColorComposerPorterDuffXor::compose(DColor& dest, DColor& src)
 {
     int sa = src.alpha();
 
@@ -477,15 +507,18 @@ void DColorComposerPorterDuffXor::compose(DColor& dest, DColor src)
     }
 }
 
-void DColorComposerPorterDuffXor::compose(DColor& dest, DColor src, MultiplicationFlags multiplicationFlags)
+// cppcheck-suppress passedByValue
+void DColorComposerPorterDuffXor::compose(DColor& dest, DColor& src, MultiplicationFlags multiplicationFlags)
 {
     // Explicit implementation to please gcc 4.1
+
     DColorComposer::compose(dest, src, multiplicationFlags);
 }
 
 // ----------------------------------------------------------
 
-void DColorComposer::compose(DColor& dest, DColor src, DColorComposer::MultiplicationFlags multiplicationFlags)
+// cppcheck-suppress passedByValue
+void DColorComposer::compose(DColor& dest, DColor& src, DColorComposer::MultiplicationFlags multiplicationFlags)
 {
     if (multiplicationFlags & PremultiplySrc)
     {
@@ -510,40 +543,64 @@ DColorComposer* DColorComposer::getComposer(DColorComposer::CompositingOperation
     switch (rule)
     {
         case PorterDuffNone:
+        {
             return new DColorComposerPorterDuffNone;
+        }
 
         case PorterDuffClear:
+        {
             return new DColorComposerPorterDuffClear;
+        }
 
         case PorterDuffSrc:
+        {
             return new DColorComposerPorterDuffSrc;
+        }
 
         case PorterDuffSrcOver:
+        {
             return new DColorComposerPorterDuffSrcOver;
+        }
 
         case PorterDuffDstOver:
+        {
             return new DColorComposerPorterDuffDstOver;
+        }
 
         case PorterDuffSrcIn:
+        {
             return new DColorComposerPorterDuffSrcIn;
+        }
 
         case PorterDuffDstIn:
+        {
             return new DColorComposerPorterDuffDstIn;
+        }
 
         case PorterDuffSrcOut:
+        {
             return new DColorComposerPorterDuffSrcOut;
+        }
 
         case PorterDuffDstOut:
+        {
             return new DColorComposerPorterDuffDstOut;
+        }
 
         case PorterDuffSrcAtop:
+        {
             return new DColorComposerPorterDuffDstOut;
+        }
 
         case PorterDuffDstAtop:
+        {
             return new DColorComposerPorterDuffDstOut;
+        }
 
         case PorterDuffXor:
+        {
             return new DColorComposerPorterDuffDstOut;
+        }
     }
 
     return nullptr;

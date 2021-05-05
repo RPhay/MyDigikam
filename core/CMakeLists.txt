@@ -1,101 +1,30 @@
 #
-# Copyright (c) 2010-2020 by Gilles Caulier, <caulier dot gilles at gmail dot com>
+# Copyright (c) 2010-2021 by Gilles Caulier, <caulier dot gilles at gmail dot com>
 # Copyright (c) 2015      by Veaceslav Munteanu, <veaceslav dot munteanu90 at gmail dot com>
 # Copyright (c) 2015      by Mohamed_Anwer, <m_dot_anwer at gmx dot com>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
 
-project(digikam)
+APPLY_COMMON_POLICIES()
+
+# ==============================================================================
 
 message(STATUS "----------------------------------------------------------------------------------")
-message(STATUS "Starting CMake configuration for: ${PROJECT_NAME}")
+message(STATUS "Check dependencies for ${PROJECT_NAME} version ${DIGIKAM_VERSION_STRING}")
+message(STATUS "")
 
-# ==============================================================================
-# Information to update before to release this package.
-
-# digiKam version
-set(DIGIKAM_MAJOR_VERSION "7")
-set(DIGIKAM_MINOR_VERSION "0")
-set(DIGIKAM_PATCH_VERSION "0")
-
-# Suffix to add at end of version string. Usual values are:
-# "-git"   : alpha code unstable from git. Do not use in production
-# "-beta1" : beta1 release.
-# "-beta2" : beta2 release.
-# "-beta3" : beta3 release.
-# "-rc"    : release candidate.
-# ""       : final release. Can be used in production.
-set(DIGIKAM_SUFFIX_VERSION "-beta3")
-
-# ==============================================================================
-# Set env. variables accordingly.
-
-# NOTE: This string is used to set libdigikamcore and libdigikamdatabase SO version ID
-set(DIGIKAM_VERSION_SHORT
-    "${DIGIKAM_MAJOR_VERSION}.${DIGIKAM_MINOR_VERSION}.${DIGIKAM_PATCH_VERSION}"
-)
-
-set(DIGIKAM_VERSION_STRING
-    "${DIGIKAM_VERSION_SHORT}${DIGIKAM_SUFFIX_VERSION}"
-)
-
-# Core Database XML version
-# We must set this variable here at top level because it is used in both
-# libs/database/core and data/database
-# Version history:
-# 1 : Original database XML file, published in production.
-# 2 : 08-08-2014 : Fix Images.names field size (see bug #327646).
-# 3 : 05/11/2015 : Add Face DB schema.
-set(DBCORECONFIG_XML_VERSION "3")
-
-# ==============================================================================
-
-set(CMAKE_MIN_VERSION     "3.0.0")
-set(ECM_MIN_VERSION       "1.7.0")
 set(KF5_MIN_VERSION       "5.5.0")
 set(QT_MIN_VERSION        "5.9.0")
-set(LENSFUN_MIN_VERSION   "0.2.6.0")
 set(EXIV2_MIN_VERSION     "0.27.0")
 set(OPENCV_MIN_VERSION    "3.3.0")
-set(QTAV_MIN_VERSION      "1.12.0")
+set(LENSFUN_MIN_VERSION   "0.2.6.0")      # For Lens auto-correction plugin
+set(QTAV_MIN_VERSION      "1.12.0")       # For video support.
 set(KSANE_MIN_VERSION     "5.5.0")        # For digital scanner support.
-set(CALENDAR_MIN_VERSION  "5.5.0")        # Calendar Core dependency
-set(AKONADI_MIN_VERSION   "4.89.0")       # Akonadi Contact dependency
-set(VKONTAKTE_MIN_VERSION "5.0.0")        # VKontakte library dependency
+set(CALENDAR_MIN_VERSION  "5.5.0")        # Calendar Core dependency for plugin.
+set(AKONADI_MIN_VERSION   "4.89.0")       # Akonadi Contact dependency.
 
 cmake_minimum_required(VERSION ${CMAKE_MIN_VERSION})
-
-############## ECM setup ######################
-
-find_package(ECM ${ECM_MIN_VERSION} CONFIG REQUIRED)
-set(CMAKE_MODULE_PATH ${digikam_SOURCE_DIR}/cmake/modules ${ECM_MODULE_PATH})
-
-# Cmake macros
-include(GenerateExportHeader)
-include(CheckFunctionExists)
-include(FeatureSummary)
-# ECM macros
-include(ECMOptionalAddSubdirectory)
-include(ECMAddTests)
-include(ECMMarkNonGuiExecutable)
-include(ECMGenerateHeaders)
-include(ECMGeneratePriFile)
-include(ECMSetupVersion)
-include(ECMInstallIcons)
-include(ECMAddAppIcon)
-include(ECMPoQmTools)
-# KDE macros
-include(KDEInstallDirs)
-include(KDECMakeSettings)
-include(KDEFrameworkCompilerSettings)
-include(KDECompilerSettings)
-# Local macros
-include(MacroUtils)
-include(MacroCompiler)
-include(MacroOpenCV)
-include(MacroJPEG)
-include(MacroBoolTo01)
 
 # ==============================================================================
 
@@ -104,7 +33,7 @@ option(ENABLE_AKONADICONTACTSUPPORT      "Build digiKam with KDE Mail Contacts s
 option(ENABLE_MEDIAPLAYER                "Build digiKam with Media Player support (default=OFF)"                              OFF)
 option(ENABLE_DBUS                       "Build digiKam with DBUS support (default=ON)"                                       ON)
 option(ENABLE_APPSTYLES                  "Build digiKam with support for changing the widget application style (default=OFF)" OFF)
-option(ENABLE_QWEBENGINE                 "Build digiKam with QWebEngine instead of QWebKit (default=OFF)"                     OFF)
+option(ENABLE_QWEBENGINE                 "Build digiKam with QWebEngine instead of QWebKit (default=ON)"                      ON)
 
 # Mysql support options (experimental):
 option(ENABLE_MYSQLSUPPORT               "Build digiKam with MySQL dabatase support (default=ON)"                             ON)
@@ -112,6 +41,8 @@ option(ENABLE_INTERNALMYSQL              "Build digiKam with internal MySQL serv
 
 # Developer options:
 option(ENABLE_DIGIKAM_MODELTEST          "Enable ModelTest on some models for debugging (default=OFF)"                        OFF)
+option(ENABLE_SANITIZERS                 "Enable ASAN and UBSAN sanitizers when available (default=OFF)"                      OFF)
+option(BUILD_WITH_CCACHE                 "Use ccache to speed up compilations"                                                OFF)
 
 # Packaging options:
 if(MINGW)
@@ -129,21 +60,21 @@ find_package(Qt5 ${QT_MIN_VERSION} REQUIRED
              Gui
              Sql
              Xml
-             XmlPatterns
              PrintSupport
              Network
 )
 
 if(ENABLE_QWEBENGINE)
-    find_package(Qt5 ${QT_MIN_VERSION} NO_MODULE COMPONENTS WebEngineWidgets)
+    find_package(Qt5 ${QT_MIN_VERSION} REQUIRED NO_MODULE COMPONENTS WebEngineWidgets)
 else()
-    find_package(Qt5 ${QT_MIN_VERSION} NO_MODULE COMPONENTS WebKitWidgets)
+    find_package(Qt5 ${QT_MIN_VERSION} REQUIRED NO_MODULE COMPONENTS WebKitWidgets)
 endif()
 
 find_package(Qt5 ${QT_MIN_VERSION}
              OPTIONAL_COMPONENTS
              DBus
              OpenGL
+             XmlPatterns                # For Rajce plugin
 )
 
 if(ENABLE_DBUS)
@@ -159,7 +90,9 @@ if(BUILD_TESTING)
                  NO_MODULE COMPONENTS
                  Test
     )
+
     find_package(Qt5 ${QT_MIN_VERSION}
+                 QUIET
                  OPTIONAL_COMPONENTS
                  Qml WebView  # Optional, for 'sialis' O2 library test tool.
     )
@@ -195,11 +128,6 @@ find_package(KF5 ${AKONADI_MIN_VERSION} QUIET
 find_package(KF5 ${KSANE_MIN_VERSION} QUIET
              OPTIONAL_COMPONENTS
              Sane                   # For digital scanner support.
-)
-
-find_package(KF5 ${VKONTAKTE_MIN_VERSION} QUIET
-             OPTIONAL_COMPONENTS
-             Vkontakte              # For VKontakte webservice support.
 )
 
 find_package(KF5 ${CALENDAR_MIN_VERSION} QUIET
@@ -248,6 +176,10 @@ find_package(EXPAT)    # For DNGWriter: XMP SDK need Expat library to compile.
 find_package(Threads)  # For DNGWriter and LibRaw which needs native threads support.
 find_package(X265)     # For HEIF encoding support.
 
+if(NOT X265_FOUND)
+    set(X265_LIBRARIES "")
+endif()
+
 find_package(exiv2 REQUIRED)
 
 set_package_properties("exiv2"     PROPERTIES
@@ -263,12 +195,12 @@ endif()
 
 # -- check Media player --------------------------------------------------------
 
-find_package(FFmpeg COMPONENTS AVCODEC AVFILTER AVFORMAT AVUTIL SWSCALE)
+find_package(FFmpeg COMPONENTS AVCODEC AVDEVICE AVFILTER AVFORMAT AVUTIL SWSCALE)
 find_package(QtAV)
 
 if(ENABLE_MEDIAPLAYER)
 
-    if(${AVCODEC_FOUND} AND ${AVFILTER_FOUND} AND ${AVFORMAT_FOUND} AND ${AVUTIL_FOUND} AND ${SWSCALE_FOUND})
+    if(${AVCODEC_FOUND} AND ${AVDEVICE_FOUND} AND ${AVFILTER_FOUND} AND ${AVFORMAT_FOUND} AND ${AVUTIL_FOUND} AND ${SWSCALE_FOUND})
 
         include_directories(${FFMPEG_INCLUDE_DIRS})
 
@@ -328,13 +260,16 @@ find_package(Marble)                               # For geolocation support.
 find_package(PkgConfig)
 find_package(Jasper)                               # For JPEG 2000 support.
 find_package(Eigen3)                               # For Refocus tool.
-find_package(OpenGL)                               # For Presentation tool.
 
-find_package(ImageMagick COMPONENTS Magick++ MagickCore)
+# -- ImageMagick rules --------------------------------------------------------
+
+find_package(ImageMagick COMPONENTS Magick++ MagickCore MagickWand)
 
 if(ImageMagick_Magick++_FOUND)
     add_definitions(${ImageMagick_Magick++_DEFINITIONS})
 endif()
+
+# -- X11 rules ----------------------------------------------------------------
 
 # For Monitor Profiles management with LCMS
 find_package(X11)
@@ -345,6 +280,20 @@ if(X11_FOUND)
 else()
     set(HAVE_X11 FALSE)
 endif()
+
+# -- OpenGL rules -------------------------------------------------------------
+
+if(POLICY CMP0072)
+    # Prefers Legacy OpenGL by default when available introduced in CMake version 3.11
+    # Details: https://cmake.org/cmake/help/git-stage/policy/CMP0072.html
+    cmake_policy(SET CMP0072 OLD)
+endif()
+
+find_package(OpenGL)                               # For Presentation tool.
+
+message(STATUS "OpenGL found;               ${OPENGL_FOUND}")
+message(STATUS "OpenGL GLU extension found; ${OPENGL_GLU_FOUND}")
+message(STATUS "OpenGL Qt5 found;           ${Qt5OpenGL_FOUND}")
 
 # decide if Presentation tool can be built with OpenGL
 if(OPENGL_FOUND AND OPENGL_GLU_FOUND AND Qt5OpenGL_FOUND)
@@ -411,6 +360,12 @@ find_package(Doxygen)
 
 if(NOT CMAKE_SYSTEM_NAME STREQUAL FreeBSD)
     find_package(Lqr-1)
+endif()
+
+if(BUILD_WITH_CCACHE)
+    message(STATUS "Looking for ccache...")
+    find_program(CCACHE_FOUND ccache)
+    message(STATUS "ccache program found: ${CCACHE_FOUND}...")
 endif()
 
 # -- libgphoto2 rules ----------------------------------------------------------
@@ -486,19 +441,38 @@ include(MacroOpenMP)
 DETECT_OPENMP()
 
 if(OPENMP_FOUND)
+
     message(STATUS "RawEngine will be compiled with OpenMP support")
+
 else()
-    message(STATUS "RawEngine will not be compiled with OpenMP support")
+
+    # to force libraw to use OpenMP with Macports and MXE.
+    if (APPLE OR MINGW)
+
+        add_definitions(-DLIBRAW_FORCE_OPENMP)
+        set(OPENMP_FOUND ON)
+        message(STATUS "RawEngine will be compiled with OpenMP support")
+
+    else()
+
+        message(STATUS "RawEngine will not be compiled with OpenMP support")
+
+    endif()
+
 endif()
 
 # Flag to use libjasper with LibRaw RedCine codec
 
 if(Jasper_FOUND)
+
     add_definitions(-DUSE_JASPER)
     include_directories(${JASPER_INCLUDE_DIR})
     message(STATUS "RawEngine will be compiled with RedCine codec")
+
 else()
+
     message(STATUS "RawEngine will not be compiled with RedCine codec")
+
 endif()
 
 # JPEG library check
@@ -506,23 +480,34 @@ endif()
 message(STATUS "Looking for LibJpeg")
 
 if(JPEG_FOUND)
+
     # JPEG lib version is done on top level through MacroJPEG.cmake
+
     if (${JPEG_LIB_VERSION} LESS 80)
+
         set(JPEG8_FOUND FALSE)
+
     else()
+
         set(JPEG8_FOUND TRUE)
+
     endif()
+
 endif()
 
 # Flag to use libjpeg with LibRaw DNG lossy codec
 
 if(JPEG8_FOUND)
+
     add_definitions(-DUSE_JPEG)
     add_definitions(-DUSE_JPEG8)
     include_directories(${JPEG_INCLUDE_DIR})
     message(STATUS "RawEngine will be compiled with DNG lossy codec")
+
 else()
+
     message(STATUS "RawEngine will not be compiled with DNG lossy codec")
+
 endif()
 
 message(STATUS "Looking for PThreads")
@@ -537,10 +522,14 @@ MACRO_BOOL_TO_01(Jasper_FOUND LIBRAW_USE_REDCINECODEC)
 configure_file(${CMAKE_CURRENT_SOURCE_DIR}/libs/rawengine/libraw/libraw_config.h.cmake
                ${CMAKE_CURRENT_BINARY_DIR}/libs/rawengine/libraw/libraw_config.h)
 
-message(STATUS "--------------------------------------------------")
-message(STATUS "")
+# -- Debug Symbols rules under MacOS -------------------------------------------
+
+MACOS_DEBUG_POLICIES()
 
 # -- compilation options definitions -------------------------------------------
+
+message(STATUS "--------------------------------------------------")
+message(STATUS "")
 
 MACRO_BOOL_TO_01(KF5Sane_FOUND                HAVE_KSANE)
 MACRO_BOOL_TO_01(KF5FileMetaData_FOUND        HAVE_KFILEMETADATA)
@@ -549,7 +538,6 @@ MACRO_BOOL_TO_01(KF5Notifications_FOUND       HAVE_KNOTIFICATIONS)
 MACRO_BOOL_TO_01(KF5NotifyConfig_FOUND        HAVE_KNOTIFYCONFIG)
 MACRO_BOOL_TO_01(KF5KIO_FOUND                 HAVE_KIO)
 MACRO_BOOL_TO_01(KF5IconThemes_FOUND          HAVE_KICONTHEMES)
-MACRO_BOOL_TO_01(KF5Vkontakte_FOUND           HAVE_VKONTAKTE)
 MACRO_BOOL_TO_01(LensFun_FOUND                HAVE_LENSFUN)
 MACRO_BOOL_TO_01(Lqr-1_FOUND                  HAVE_LIBLQR_1)
 MACRO_BOOL_TO_01(Gphoto2_FOUND                HAVE_GPHOTO2)
@@ -566,6 +554,8 @@ MACRO_BOOL_TO_01(ENABLE_QWEBENGINE            HAVE_QWEBENGINE)
 MACRO_BOOL_TO_01(ENABLE_DRMINGW               HAVE_DRMINGW)
 MACRO_BOOL_TO_01(ImageMagick_Magick++_FOUND   HAVE_IMAGE_MAGICK)
 MACRO_BOOL_TO_01(X265_FOUND                   HAVE_X265)
+MACRO_BOOL_TO_01(Qt5XmlPatterns_FOUND         HAVE_QTXMLPATTERNS)
+MACRO_BOOL_TO_01(CCACHE_FOUND                 HAVE_CCACHE)
 
 # Set config files accordingly with optional dependencies
 
@@ -604,6 +594,7 @@ PRINT_LIBRARY_STATUS("libtiff"       "https://gitlab.com/libtiff/libtiff/"      
 
 PRINT_OPTIONAL_LIBRARY_STATUS("bison"             "https://www.gnu.org/software/bison/"                             "(version >= 2.5.0)"                    "digiKam will be compiled without Panorama support."                          BISON_FOUND)
 PRINT_OPTIONAL_LIBRARY_STATUS("doxygen"           "https://github.com/doxygen/doxygen"                              "(version >= 1.8.0)"                    "digiKam will be compiled without API documentation building support."        Doxygen_FOUND)
+PRINT_OPTIONAL_LIBRARY_STATUS("ccache"            "https://ccache.dev"                                              "(version >= 3.0.0)"                    "digiKam will be compiled without CCACHE build support."                      HAVE_CCACHE)
 PRINT_OPTIONAL_LIBRARY_STATUS("flex"              "https://github.com/westes/flex"                                  "(version >= 2.5.0)"                    "digiKam will be compiled without Panorama support."                          FLEX_FOUND)
 PRINT_OPTIONAL_LIBRARY_STATUS("libakonadicontact" "https://cgit.kde.org/akonadi-contacts.git/about/"                "(version >= ${AKONADI_MIN_VERSION})"   "digiKam will be compiled without KDE desktop address book support."          KF5AkonadiContact_FOUND)
 PRINT_OPTIONAL_LIBRARY_STATUS("libmagick++"       "https://www.imagemagick.org"                                     "(version >= 6.7.0)"                    "digiKam will be compiled without ImageMagick codecs."                        HAVE_IMAGE_MAGICK)
@@ -611,7 +602,6 @@ PRINT_OPTIONAL_LIBRARY_STATUS("libeigen3"         "https://github.com/eigenteam/
 PRINT_OPTIONAL_LIBRARY_STATUS("libgphoto2"        "https://github.com/gphoto"                                       "(version >= 2.4.0)"                    "digiKam will be compiled without GPhoto2 camera drivers support."            Gphoto2_FOUND)
 PRINT_OPTIONAL_LIBRARY_STATUS("libjasper"         "https://github.com/mdadams/jasper"                               "(version >= 1.7.0)"                    "digiKam will be compiled without JPEG2000 support."                          Jasper_FOUND)
 PRINT_OPTIONAL_LIBRARY_STATUS("libkcalendarcore"  "https://cgit.kde.org/kcalendarcore.git/about/"                   "(version >= ${CALENDAR_MIN_VERSION})"  "digiKam will be compiled without advanced calendar support."                 KF5CalendarCore_FOUND)
-PRINT_OPTIONAL_LIBRARY_STATUS("libkvkontakte"     "https://cgit.kde.org/libkvkontatke.git/about/"                   "(version >= ${VKONTAKTE_MIN_VERSION})" "digiKam will be compiled without libkvkontakte support."                     KF5Vkontakte_FOUND)
 PRINT_OPTIONAL_LIBRARY_STATUS("libkfilemetadata"  "https://cgit.kde.org/kfilemetadata.git/about/"                   "(version >= ${KF5_MIN_VERSION})"       "digiKam will be compiled without KDE desktop file metadata support."         KF5FileMetaData_FOUND)
 PRINT_OPTIONAL_LIBRARY_STATUS("libkiconthemes"    "https://cgit.kde.org/kiconthemes.git/about/"                     "(version >= ${KF5_MIN_VERSION})"       "digiKam will be compiled without KDE desktop icon themes support."           KF5IconThemes_FOUND)
 PRINT_OPTIONAL_LIBRARY_STATUS("libkio"            "https://cgit.kde.org/kio.git/about/"                             "(version >= ${KF5_MIN_VERSION})"       "digiKam will be compiled without KDE desktop integration support."           KF5KIO_FOUND)
@@ -627,6 +617,7 @@ PRINT_OPTIONAL_LIBRARY_STATUS("libxml2"           "https://xmlsoft.org"         
 PRINT_OPTIONAL_LIBRARY_STATUS("libxslt"           "https://xmlsoft.org/XSLT"                                        "(version >= 1.1.0)"                    "digiKam will be compiled without HTMLGallery support."                       LibXslt_FOUND)
 PRINT_OPTIONAL_LIBRARY_STATUS("libx265"           "https://x265.org"                                                "(version >= 2.2)"                      "digiKam will be compiled without HEIF encoding support."                     X265_FOUND)
 PRINT_OPTIONAL_LIBRARY_STATUS("OpenGL"            "https://www.mesa3d.org"                                          "(version >= 11.0.0)"                   "digiKam will be compiled without OpenGL support."                            HAVE_OPENGL)
+PRINT_OPTIONAL_LIBRARY_STATUS("libqtxmlpatterns"  "https://www.qt.io"                                               "(version >= ${QT_MIN_VERSION})"        "digiKam will be compiled without Rajce tool support."                        HAVE_QTXMLPATTERNS)
 
 # ==============================================================================
 
@@ -657,25 +648,11 @@ message(STATUS "")
 
 if(DIGIKAM_CAN_BE_COMPILED)
 
-    # ==========================================================================
-    # Create git version header
+    include(MacroGitHeader)
+    GIT_HEADER()
 
-    # We only do this IF we are in a .git dir
-    find_file(GIT_MARKER entries PATHS ${CMAKE_SOURCE_DIR}/.git)
-
-    if(NOT GIT_MARKER)
-        set(GIT_MARKER ${CMAKE_SOURCE_DIR}/CMakeLists.txt)  # Dummy file
-    endif()
-
-    # Add a custom command to drive the git script whenever the git entries
-    # file changes.
-    configure_file("${CMAKE_CURRENT_SOURCE_DIR}/cmake/templates/gitscript.cmake.in"
-                   "${CMAKE_CURRENT_BINARY_DIR}/gitscript.cmake"
-                   @ONLY)
-
-    # Add a custom target to drive the custom command.
-    add_custom_target(digikam-gitversion ALL COMMAND ${CMAKE_COMMAND} -P
-                      "${CMAKE_CURRENT_BINARY_DIR}/gitscript.cmake")
+    include(MacroBuildDateHeader)
+    BUILD_DATE_HEADER()
 
     # ==========================================================================
     # To prevent warnings from M$ compiler
@@ -687,29 +664,42 @@ if(DIGIKAM_CAN_BE_COMPILED)
     endif()
 
     # ==========================================================================
+    # To use ccache with compiler
+
+    if(HAVE_CCACHE)
+        message(STATUS "Using ccache to speed-up compilations..... YES")
+        set_property(GLOBAL PROPERTY RULE_LAUNCH_COMPILE ccache)
+        set_property(GLOBAL PROPERTY RULE_LAUNCH_LINK    ccache)
+    else()
+        message(STATUS "Using ccache to speed-up compilations..... NO")
+    endif()
+
+    # ==========================================================================
     # Definitions rules
+
+    # TODO: revise dropped compiler flags accordingly with patched source code which fix compilation
 
     # Remove pedantic GCC flag which generate a lots of warnings on the console
     # with qCDebug()
     REMOVE_GCC_COMPILER_WARNINGS("-pedantic")
 
-    # Remove date-time GCC flag which generate a lots of compile warnings
-    REMOVE_GCC_COMPILER_WARNINGS("-Wdate-time")
-
-    # Remove suggest-override GCC flag which generate a lots of compile warnings
+    # Remove suggest-override GCC flag which generate a lots of compilation warnings
     REMOVE_GCC_COMPILER_WARNINGS("-Wsuggest-override")
 
-    # Remove zero-as-null-pointer-constant GCC and CLang flag which generate a lots of compile warnings
+    # Remove cast-align GCC flag which generate a lots of compilation warnings
+    REMOVE_GCC_COMPILER_WARNINGS("-Wcast-align")
+
+    # Remove zero-as-null-pointer-constant GCC and CLang flag which generate a lots of compilation warnings
     REMOVE_COMPILER_WARNINGS("-Wzero-as-null-pointer-constant")
 
-    # Remove deprecated-copy GCC warnings which generate a lots of compile warnings
+    # Remove deprecated-copy GCC warnings which generate a lots of compilation warnings
     DISABLE_GCC_COMPILER_WARNINGS("8.99.99" "-Wno-deprecated-copy")
 
-    # Remove date-time Clang warnings which generate a lots of compile warnings
-    DISABLE_CLANG_COMPILER_WARNINGS("7.99.99" "-Wdate-time")
-
-    # Remove inconsistent-missing-override Clang warnings which generate a lots of compile warnings
+    # Remove inconsistent-missing-override Clang warnings which generate a lots of compilation warnings
     DISABLE_CLANG_COMPILER_WARNINGS("7.99.99" "-Wno-inconsistent-missing-override")
+
+    include(MacroSanitizers)
+    ENABLE_COMPILER_SANITIZERS()
 
     # translations catalog
     add_definitions(-DTRANSLATION_DOMAIN=\"digikam\")
@@ -718,16 +708,24 @@ if(DIGIKAM_CAN_BE_COMPILED)
     # it to be safe. See B.K.O #273765 for details.
     add_definitions(-DLIBPGF_DISABLE_OPENMP)
 
-    # To force to declare as exported classes in all sub components.
-    # This will only done near to library declaration in Cmake files.
-    if(WIN32)
-        add_definitions(-Ddigikamcore_EXPORTS)
-        add_definitions(-Ddigikamdatabase_EXPORTS)
-    endif()
-
     # Enable C++ Exceptions support, require by Greycstoration algorithm
     # (CImg.h) and PGF codec
     kde_enable_exceptions()
+
+    # Enforce modern Qt code
+    add_definitions(-DQT_DEPRECATED_WARNINGS
+                    -DQT_USE_QSTRINGBUILDER
+                    -DQT_NO_CAST_TO_ASCII
+                    -DQT_NO_CAST_FROM_ASCII
+                    -DQT_NO_CAST_FROM_BYTEARRAY
+                    -DQT_NO_URL_CAST_FROM_STRING
+                    -DQT_STRICT_ITERATORS
+                    -DQT_NO_NARROWING_CONVERSIONS_IN_CONNECT
+                    -DQT_DEPRECATED_WARNINGS_SINCE=0x060000
+#                    -DQT_DISABLE_DEPRECATED_BEFORE=0x050E00
+#                    -DQT_NO_FOREACH
+#                    -DQT_NO_KEYWORDS
+    )
 
     # ==========================================================================
     # Includes rules
@@ -752,19 +750,14 @@ if(DIGIKAM_CAN_BE_COMPILED)
 
     include_directories(${DK_LOCAL_INCLUDES})
 
-    # for config headers digikam_version.h gitversion.h digikam_config.h
+    # for config headers digikam_version.h digikam_gitversion.h digikam_config.h
     # digikam_dbconfig.h digikam_opencv.h
     include_directories(${CMAKE_CURRENT_BINARY_DIR}/app/utils)
 
     include_directories(${OpenCV_INCLUDE_DIRS})
 
-    if(KF5Vkontakte_FOUND)
-        include_directories(${LIBKVKONTAKTE_INCLUDES})
-    endif()
-
-    if(LensFun_FOUND)
-        include_directories(${LENSFUN_INCLUDE_DIRS})
-    endif()
+    # for libheif version header
+    include_directories(${CMAKE_CURRENT_BINARY_DIR}/libs/heifutils)
 
     if(ImageMagick_FOUND)
         include_directories(${ImageMagick_INCLUDE_DIRS})
@@ -773,7 +766,6 @@ if(DIGIKAM_CAN_BE_COMPILED)
     # ==========================================================================
     # Common targets parts
 
-    set(CMAKE_POSITION_INDEPENDENT_CODE ON)
     add_subdirectory(data)
     add_subdirectory(libs)
     add_subdirectory(utilities)
@@ -785,8 +777,6 @@ if(DIGIKAM_CAN_BE_COMPILED)
         add_subdirectory(tests)
     endif()
 
-    include(DigikamExportAPI.cmake)
-
 endif()
 
 # ==============================================================================
@@ -794,12 +784,12 @@ endif()
 
 if(Doxygen_FOUND)
 
-    message(STATUS " ==> Doxygen is found:          ${Doxygen_FOUND}")
-    message(STATUS " ==> Graphviz Dot is found:     ${DOXYGEN_DOT_FOUND}")
+    message(STATUS "Doxygen is found.......................... ${Doxygen_FOUND}")
+    message(STATUS "Graphviz Dot is found..................... ${DOXYGEN_DOT_FOUND}")
 
     if(Doxygen_FOUND AND DOXYGEN_DOT_FOUND)
 
-        message(STATUS " To build API documentation use 'make doc'")
+        message(STATUS "To build API documentation use 'make doc'")
 
         add_custom_target(doc ${DOXYGEN_EXECUTABLE}
                           WORKING_DIRECTORY ${CMAKE_SOURCE_DIR})

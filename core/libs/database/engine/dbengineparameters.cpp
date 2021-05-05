@@ -8,7 +8,7 @@
  *
  * Copyright (C) 2007-2008 by Marcel Wiesweg  <marcel dot wiesweg at gmx dot de>
  * Copyright (C) 2010      by Holger Foerster <hamsi2k at freenet dot de>
- * Copyright (C) 2010-2020 by Gilles Caulier  <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2010-2021 by Gilles Caulier  <caulier dot gilles at gmail dot com>
  * Copyright (C) 2018      by Mario Frank     <mario dot frank at uni minus potsdam dot de>
  *
  * This program is free software; you can redistribute it
@@ -43,6 +43,7 @@
 
 #include "digikam_config.h"
 #include "digikam_debug.h"
+#include "o0simplecrypt.h"      // For password encrypt
 
 namespace
 {
@@ -60,7 +61,8 @@ static const char* configDatabaseNameSimilarity             = "Database Name Sim
 static const char* configDatabaseHostName                   = "Database Hostname";
 static const char* configDatabasePort                       = "Database Port";
 static const char* configDatabaseUsername                   = "Database Username";
-static const char* configDatabasePassword                   = "Database Password";
+static const char* configDatabasePassword                   = "Database Password";          // For compatbilitity. Use crypted version instead.
+static const char* configDatabaseEncryptedPassword          = "Database Encrypted Password";
 static const char* configDatabaseConnectOptions             = "Database Connectoptions";
 // Legacy for older versions.
 static const char* configDatabaseFilePathEntry              = "Database File Path";
@@ -139,6 +141,7 @@ DbEngineParameters::DbEngineParameters(const QUrl& url)
     }
 
 #if defined(HAVE_MYSQLSUPPORT) && defined(HAVE_INTERNALMYSQL)
+
     QString queryServer = QUrlQuery(url).queryItemValue(QLatin1String("internalServer"));
 
     if (!queryServer.isNull())
@@ -159,8 +162,11 @@ DbEngineParameters::DbEngineParameters(const QUrl& url)
 
     internalServerMysqlServCmd = QUrlQuery(url).queryItemValue(QLatin1String("internalServerMysqlServCmd"));
     internalServerMysqlInitCmd = QUrlQuery(url).queryItemValue(QLatin1String("internalServerMysqlInitCmd"));
+
 #else
+
     internalServer = false;
+
 #endif
 
     userName       = QUrlQuery(url).queryItemValue(QLatin1String("userName"));
@@ -360,15 +366,34 @@ void DbEngineParameters::readFromConfig(const QString& configGroup)
     hostName                   = group.readEntry(configDatabaseHostName,                   QString());
     port                       = group.readEntry(configDatabasePort,                       -1);
     userName                   = group.readEntry(configDatabaseUsername,                   QString());
+
+    // Non encrypted password for compatibility.
     password                   = group.readEntry(configDatabasePassword,                   QString());
+
+    if (password.isEmpty())
+    {
+        password               = group.readEntry(configDatabaseEncryptedPassword,          QString());
+
+        if (!password.isEmpty())
+        {
+            O0SimpleCrypt crypto(QCryptographicHash::hash(configDatabaseEncryptedPassword, QCryptographicHash::Sha1).toULongLong());
+            password = crypto.decryptToString(password);
+        }
+    }
+
     connectOptions             = group.readEntry(configDatabaseConnectOptions,             QString());
+
 #if defined(HAVE_MYSQLSUPPORT) && defined(HAVE_INTERNALMYSQL)
+
     internalServer             = group.readEntry(configInternalDatabaseServer,             false);
     internalServerDBPath       = group.readEntry(configInternalDatabaseServerPath,         internalServerPrivatePath());
     internalServerMysqlServCmd = group.readEntry(configInternalDatabaseServerMysqlServCmd, defaultMysqlServerCmd());
     internalServerMysqlInitCmd = group.readEntry(configInternalDatabaseServerMysqlInitCmd, defaultMysqlInitCmd());
+
 #else
+
     internalServer             = false;
+
 #endif
 
     if (isSQLite() && !databaseNameCore.isNull())
@@ -594,12 +619,17 @@ void DbEngineParameters::writeToConfig(const QString& configGroup) const
     group.writeEntry(configDatabaseHostName,                   hostName);
     group.writeEntry(configDatabasePort,                       port);
     group.writeEntry(configDatabaseUsername,                   userName);
-    group.writeEntry(configDatabasePassword,                   password);
+
+    O0SimpleCrypt crypto(QCryptographicHash::hash(configDatabaseEncryptedPassword, QCryptographicHash::Sha1).toULongLong());
+    group.writeEntry(configDatabaseEncryptedPassword,          crypto.encryptToString(password));
+
     group.writeEntry(configDatabaseConnectOptions,             connectOptions);
     group.writeEntry(configInternalDatabaseServer,             internalServer);
     group.writeEntry(configInternalDatabaseServerPath,         internalServerDBPath);
     group.writeEntry(configInternalDatabaseServerMysqlServCmd, internalServerMysqlServCmd);
     group.writeEntry(configInternalDatabaseServerMysqlInitCmd, internalServerMysqlInitCmd);
+
+    group.deleteEntry(configDatabasePassword);// Remove non encrypted password
 }
 
 QString DbEngineParameters::getCoreDatabaseNameOrDir() const

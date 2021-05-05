@@ -41,8 +41,9 @@ namespace Digikam
 
 class IOJobData;
 
-class DIGIKAM_EXPORT IOJobsManager : public QObject
+class DIGIKAM_GUI_EXPORT IOJobsManager : public QObject
 {
+    Q_OBJECT
 
 public:
 
@@ -66,24 +67,13 @@ public:
      */
     IOJobsThread* startDTrashItemsListingForCollection(const QString& collectionPath);
 
-    /**
-     * @brief Starts a thread to restore multiple trash items
-     * @param trashItemsList: list of selected trash items to restore
-     * @return IOJobsThread pointer for signal/slot connection
-     */
-    IOJobsThread* startRestoringDTrashItems(const DTrashItemInfoList& trashItemsList);
-
-    /**
-     * @brief Starts a thread to delete multiple trash items
-     * @param trashItemsList: list of selected trash items to delete
-     * @return IOJobsThread pointer for signal/slot connection
-     */
-    IOJobsThread* startDeletingDTrashItems(const DTrashItemInfoList& trashItemsList);
-
 private:
 
-    friend class IOJobsManagerCreator;
+    // Disable
     IOJobsManager();
+    explicit IOJobsManager(QObject*);
+
+    friend class IOJobsManagerCreator;
 };
 
 } // namespace Digikam

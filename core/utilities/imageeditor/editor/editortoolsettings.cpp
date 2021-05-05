@@ -6,7 +6,7 @@
  * Date        : 2008-08-21
  * Description : Editor tool settings template box
  *
- * Copyright (C) 2008-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2008-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2008-2011 by Andi Clemens <andi dot clemens at gmail dot com>
  *
  * This program is free software; you can redistribute it
@@ -67,26 +67,26 @@ class Q_DECL_HIDDEN EditorToolSettings::Private
 public:
 
     explicit Private()
-      : scaleBG(nullptr),
-        linHistoButton(nullptr),
-        logHistoButton(nullptr),
-        settingsArea(nullptr),
-        plainPage(nullptr),
-        toolName(nullptr),
-        toolIcon(nullptr),
-        toolAbout(nullptr),
-        guideBox(nullptr),
-        okBtn(nullptr),
-        cancelBtn(nullptr),
-        tryBtn(nullptr),
-        defaultBtn(nullptr),
-        saveAsBtn(nullptr),
-        loadBtn(nullptr),
-        guideColorBt(nullptr),
-        hGradient(nullptr),
-        histogramBox(nullptr),
-        guideSize(nullptr),
-        tool(nullptr)
+      : scaleBG         (nullptr),
+        linHistoButton  (nullptr),
+        logHistoButton  (nullptr),
+        settingsArea    (nullptr),
+        plainPage       (nullptr),
+        toolName        (nullptr),
+        toolIcon        (nullptr),
+        toolAbout       (nullptr),
+        guideBox        (nullptr),
+        okBtn           (nullptr),
+        cancelBtn       (nullptr),
+        tryBtn          (nullptr),
+        defaultBtn      (nullptr),
+        saveAsBtn       (nullptr),
+        loadBtn         (nullptr),
+        guideColorBt    (nullptr),
+        hGradient       (nullptr),
+        histogramBox    (nullptr),
+        guideSize       (nullptr),
+        tool            (nullptr)
     {
     }
 
@@ -124,12 +124,12 @@ public:
 
 EditorToolSettings::EditorToolSettings(QWidget* const parent)
     : QScrollArea(parent),
-      d(new Private)
+      d          (new Private)
 {
     setFrameStyle(QFrame::NoFrame);
     setWidgetResizable(true);
 
-    d->settingsArea = new QWidget;
+    d->settingsArea                 = new QWidget;
 
     // ---------------------------------------------------------------
 
@@ -140,14 +140,14 @@ EditorToolSettings::EditorToolSettings(QWidget* const parent)
 
     // ---------------------------------------------------------------
 
-    QFrame* const toolDescriptor = new QFrame;
-    d->toolName                  = new QLabel();
-    d->toolIcon                  = new QLabel();
-    QFont font                   = d->toolName->font();
+    QFrame* const toolDescriptor    = new QFrame;
+    d->toolName                     = new QLabel();
+    d->toolIcon                     = new QLabel();
+    QFont font                      = d->toolName->font();
     font.setBold(true);
     d->toolName->setFont(font);
 
-    d->toolAbout                 = new QPushButton();
+    d->toolAbout                    = new QPushButton();
     d->toolAbout->setIcon(QIcon::fromTheme(QLatin1String("help-about")));
     d->toolAbout->setToolTip(i18n("About this tool..."));
 
@@ -215,15 +215,15 @@ EditorToolSettings::EditorToolSettings(QWidget* const parent)
 
     // ---------------------------------------------------------------
 
-    d->loadBtn = new QPushButton(i18n("Load..."));
+    d->loadBtn = new QPushButton(i18nc("@action: load previously saved filter settings", "Load..."));
     d->loadBtn->setIcon(QIcon::fromTheme(QLatin1String("document-open")));
     d->loadBtn->setToolTip(i18n("Load all parameters from settings text file."));
 
-    d->saveAsBtn = new QPushButton(i18n("Save As..."));
+    d->saveAsBtn = new QPushButton(i18nc("@action: save current filter settings", "Save As..."));
     d->saveAsBtn->setIcon(QIcon::fromTheme(QLatin1String("document-save-as")));
     d->saveAsBtn->setToolTip(i18n("Save all parameters to settings text file."));
 
-    d->tryBtn = new QPushButton(i18n("Try"));
+    d->tryBtn = new QPushButton(i18nc("@action: try current filter settings", "Try"));
     d->tryBtn->setIcon(QIcon::fromTheme(QLatin1String("dialog-ok-apply")));
     d->tryBtn->setToolTip(i18n("Try all settings."));
 
@@ -449,9 +449,14 @@ void EditorToolSettings::slotAboutPlugin()
     {
         if (d->tool->plugin())
         {
-            QPointer<DPluginAboutDlg> dlg = new DPluginAboutDlg(dynamic_cast<DPlugin*>(d->tool->plugin()));
-            dlg->exec();
-            delete dlg;
+            DPlugin* const p = dynamic_cast<DPlugin*>(d->tool->plugin());
+
+            if (p)
+            {
+                QPointer<DPluginAboutDlg> dlg = new DPluginAboutDlg(p);
+                dlg->exec();
+                delete dlg;
+            }
         }
     }
 }

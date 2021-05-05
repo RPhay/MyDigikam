@@ -90,7 +90,7 @@ public:
  */
 BackendOsmRG::BackendOsmRG(QObject* const parent)
     : RGBackend(parent),
-      d(new Private())
+      d        (new Private())
 {
     d->mngr = new QNetworkAccessManager(this);
 

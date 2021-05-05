@@ -7,6 +7,7 @@
  * Description : Qt Model for Albums - drag and drop handling
  *
  * Copyright (C) 2009-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -42,15 +43,15 @@ public:
 
     AlbumModel* model() const;
 
-    virtual bool dropEvent(QAbstractItemView* view,
-                           const QDropEvent* e,
-                           const QModelIndex& droppedOn);
+    bool dropEvent(QAbstractItemView* view,
+                   const QDropEvent* e,
+                   const QModelIndex& droppedOn)         override;
 
-    virtual Qt::DropAction accepts(const QDropEvent* e,
-                                   const QModelIndex& dropIndex);
+    Qt::DropAction accepts(const QDropEvent* e,
+                           const QModelIndex& dropIndex) override;
 
-    virtual QStringList mimeTypes() const;
-    virtual QMimeData* createMimeData(const QList<Album*> &);
+    QStringList mimeTypes() const override;
+    QMimeData* createMimeData(const QList<Album*>&)      override;
 };
 
 } // namespace Digikam

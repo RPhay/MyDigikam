@@ -7,7 +7,7 @@
  * Description : Helper functions for geolocation interface interaction
  *
  * Copyright (C) 2011      by Michael G. Hansen <mike at mghansen dot de>
- * Copyright (C) 2011-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2011-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -47,12 +47,12 @@ class Q_DECL_HIDDEN GPSItemInfoSorter::Private
 public:
 
     explicit Private()
-      : mapWidgets(),
-        sortOrder(GPSItemInfoSorter::SortYoungestFirst),
-        sortMenu(nullptr),
-        sortActionOldestFirst(nullptr),
-        sortActionYoungestFirst(nullptr),
-        sortActionRating(nullptr)
+      : mapWidgets              (),
+        sortOrder               (GPSItemInfoSorter::SortYoungestFirst),
+        sortMenu                (nullptr),
+        sortActionOldestFirst   (nullptr),
+        sortActionYoungestFirst (nullptr),
+        sortActionRating        (nullptr)
     {
     }
 
@@ -67,7 +67,7 @@ public:
 
 GPSItemInfoSorter::GPSItemInfoSorter(QObject* const parent)
     : QObject(parent),
-      d(new Private())
+      d      (new Private())
 {
 }
 
@@ -204,15 +204,15 @@ void GPSItemInfoSorter::initializeSortMenu()
     connect(sortOrderExclusive, SIGNAL(triggered(QAction*)),
             this, SLOT(slotSortOptionTriggered()));
 
-    d->sortActionOldestFirst = new QAction(i18n("Show oldest first"), sortOrderExclusive);
+    d->sortActionOldestFirst               = new QAction(i18n("Show oldest first"), sortOrderExclusive);
     d->sortActionOldestFirst->setCheckable(true);
     d->sortMenu->addAction(d->sortActionOldestFirst);
 
-    d->sortActionYoungestFirst = new QAction(i18n("Show youngest first"), sortOrderExclusive);
+    d->sortActionYoungestFirst             = new QAction(i18n("Show youngest first"), sortOrderExclusive);
     d->sortActionYoungestFirst->setCheckable(true);
     d->sortMenu->addAction(d->sortActionYoungestFirst);
 
-    d->sortActionRating = new QAction(i18n("Sort by rating"), this);
+    d->sortActionRating                    = new QAction(i18n("Sort by rating"), this);
     d->sortActionRating->setCheckable(true);
     d->sortMenu->addAction(d->sortActionRating);
 

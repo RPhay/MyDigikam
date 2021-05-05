@@ -43,7 +43,7 @@
 
 #include <QVariant>
 #include <QDebug>
-#include <QtTest>
+#include <QTest>
 
 #undef Q_ASSERT
 #define Q_ASSERT  QVERIFY
@@ -310,7 +310,7 @@ void ModelTest::parent()
     found the basic bugs because it is easier to figure out the problem in
     those tests then this one.
  */
-void ModelTest::checkChildren ( const QModelIndex &parent, int currentDepth )
+void ModelTest::checkChildren ( const QModelIndex& parent, int currentDepth )
 {
     // First just try walking back up the tree.
     QModelIndex p = parent;
@@ -475,7 +475,7 @@ void ModelTest::data()
 
     \sa rowsInserted()
  */
-void ModelTest::rowsAboutToBeInserted ( const QModelIndex &parent, int start, int end )
+void ModelTest::rowsAboutToBeInserted ( const QModelIndex& parent, int start, int end )
 {
     Q_UNUSED(end);
 //    qDebug() << "rowsAboutToBeInserted" << "start=" << start << "end=" << end << "parent=" << model->data ( parent ).toString()
@@ -494,7 +494,7 @@ void ModelTest::rowsAboutToBeInserted ( const QModelIndex &parent, int start, in
 
     \sa rowsAboutToBeInserted()
  */
-void ModelTest::rowsInserted ( const QModelIndex & parent, int start, int end )
+void ModelTest::rowsInserted ( const QModelIndex& parent, int start, int end )
 {
     Changing c = insert.pop();
     Q_ASSERT ( c.parent == parent );
@@ -540,7 +540,7 @@ void ModelTest::layoutChanged()
 
     \sa rowsRemoved()
  */
-void ModelTest::rowsAboutToBeRemoved ( const QModelIndex &parent, int start, int end )
+void ModelTest::rowsAboutToBeRemoved ( const QModelIndex& parent, int start, int end )
 {
 qDebug() << "ratbr" << parent << start << end;
     Changing c;
@@ -556,7 +556,7 @@ qDebug() << "ratbr" << parent << start << end;
 
     \sa rowsAboutToBeRemoved()
  */
-void ModelTest::rowsRemoved ( const QModelIndex & parent, int start, int end )
+void ModelTest::rowsRemoved ( const QModelIndex& parent, int start, int end )
 {
   qDebug() << "rr" << parent << start << end;
     Changing c = remove.pop();

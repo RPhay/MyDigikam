@@ -6,7 +6,7 @@
  * Date        : 2018-07-30
  * Description : image editor plugin to adjust color curves.
  *
- * Copyright (C) 2018-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2018-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -49,7 +49,7 @@ AdjustCurvesToolPlugin::~AdjustCurvesToolPlugin()
 
 QString AdjustCurvesToolPlugin::name() const
 {
-    return i18n("Adjust Curves");
+    return i18nc("@title", "Adjust Curves");
 }
 
 QString AdjustCurvesToolPlugin::iid() const
@@ -64,12 +64,12 @@ QIcon AdjustCurvesToolPlugin::icon() const
 
 QString AdjustCurvesToolPlugin::description() const
 {
-    return i18n("A tool to adjust color curves");
+    return i18nc("@info", "A tool to adjust color curves");
 }
 
 QString AdjustCurvesToolPlugin::details() const
 {
-    return i18n("<p>This Image Editor tool can adjust the color curves from image.</p>");
+    return i18nc("@info", "This Image Editor tool can adjust the color curves from image.");
 }
 
 QList<DPluginAuthor> AdjustCurvesToolPlugin::authors() const
@@ -77,7 +77,7 @@ QList<DPluginAuthor> AdjustCurvesToolPlugin::authors() const
     return QList<DPluginAuthor>()
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2004-2020"))
+                             QString::fromUtf8("(C) 2004-2021"))
             ;
 }
 

@@ -6,8 +6,8 @@
  * Date        : 2012-02-12
  * Description : a tool to export images to IPFS web service
  *
- * Copyright (C) 2018 by Amar Lakshya <amar dot lakshya at xaviers dot edu dot in>
- * Copyright (C) 2018 by Caulier Gilles <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2018      by Amar Lakshya <amar dot lakshya at xaviers dot edu dot in>
+ * Copyright (C) 2018-2020 by Caulier Gilles <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -24,21 +24,11 @@
 #ifndef DIGIKAM_IPFS_TALKER_H
 #define DIGIKAM_IPFS_TALKER_H
 
-// C++ includes
-
-#include <atomic>
-#include <queue>
-
 // Qt includes
 
-#include <QNetworkAccessManager>
+#include <QObject>
 #include <QString>
-#include <QFile>
-#include <QUrl>
-
-// Local includes
-
-#include "o2.h"
+#include <QTimerEvent>
 
 namespace DigikamGenericIpfsPlugin
 {
@@ -81,7 +71,7 @@ Q_OBJECT
 public:
 
     explicit IpfsTalker(QObject* const parent = nullptr);
-    ~IpfsTalker();
+    ~IpfsTalker()                           override;
 
     unsigned int workQueueLength();
     void queueWork(const IpfsTalkerAction& action);
@@ -108,7 +98,7 @@ public Q_SLOTS:
 
 protected:
 
-    void timerEvent(QTimerEvent* event) override;
+    void timerEvent(QTimerEvent* event)     override;
 
 private:
 

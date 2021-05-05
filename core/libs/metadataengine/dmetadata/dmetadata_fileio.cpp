@@ -6,7 +6,7 @@
  * Date        : 2006-02-23
  * Description : item metadata interface - file I/O helpers.
  *
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2006-2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  * Copyright (C) 2011      by Leif Huhn <leif at dkstat dot com>
  *
@@ -38,8 +38,6 @@
 
 #include "filereadwritelock.h"
 #include "metaenginesettings.h"
-#include "drawinfo.h"
-#include "drawdecoder.h"
 #include "digikam_version.h"
 #include "digikam_globals.h"
 #include "digikam_debug.h"
@@ -47,31 +45,65 @@
 namespace Digikam
 {
 
-bool DMetadata::load(const QString& filePath)
+bool DMetadata::load(const QString& filePath, Backend* backend)
 {
     FileReadLocker lock(filePath);
 
-    bool hasLoaded = false;
+    Backend usedBackend = NoBackend;
+    bool hasLoaded      = false;
     QMimeDatabase mimeDB;
 
-    if (!mimeDB.mimeTypeForFile(filePath).name().startsWith(QLatin1String("video/")) &&
+    if (
+        !mimeDB.mimeTypeForFile(filePath).name().startsWith(QLatin1String("video/")) &&
         !mimeDB.mimeTypeForFile(filePath).name().startsWith(QLatin1String("audio/"))
        )
     {
-        // Non video or audio file, process with Exiv2 backend or libraw if fail with RAW files
-        // Never process video file Exiv2, the backend is very unstable.
+        // Process images only with Exiv2 backend first, or libraw in second for RAW files, or with libheif, or at end with ImageMagick.
+        // Never process video files with Exiv2, the backend is very unstable.
 
         if (!(hasLoaded = MetaEngine::load(filePath)))
         {
-            hasLoaded = loadUsingRawEngine(filePath);
+            if (!(hasLoaded = loadUsingRawEngine(filePath)))
+            {
+                if (!(hasLoaded = loadUsingLibheif(filePath)))
+                {
+                    hasLoaded   = loadUsingImageMagick(filePath);
+                    usedBackend = ImageMagickBackend;
+                }
+                else
+                {
+                    usedBackend = LibHeifBackend;
+                }
+            }
+            else
+            {
+                usedBackend = LibRawBackend;
+            }
+        }
+        else
+        {
+            usedBackend = Exiv2Backend;
         }
     }
     else
     {
-        // No image file, process with ffmpeg backend.
+        // No image files (aka video or audio), process with ffmpeg backend.
 
         hasLoaded  = loadUsingFFmpeg(filePath);
+
+        if (hasLoaded)
+        {
+            usedBackend = FFMpegBackend;
+        }
+
         hasLoaded |= loadFromSidecarAndMerge(filePath);
+    }
+
+    qCDebug(DIGIKAM_METAENGINE_LOG) << "Loading metadata with" << backendName(usedBackend) << "backend from" << filePath;
+
+    if (backend)
+    {
+        *backend = usedBackend;
     }
 
     return hasLoaded;
@@ -89,73 +121,6 @@ bool DMetadata::applyChanges(bool setVersion) const
     FileWriteLocker lock(getFilePath());
 
     return MetaEngine::applyChanges(setVersion);
-}
-
-bool DMetadata::loadUsingRawEngine(const QString& filePath)
-{
-    DRawInfo identify;
-
-    if (DRawDecoder::rawFileIdentify(identify, filePath))
-    {
-        long int num = 1;
-        long int den = 1;
-
-        if (!identify.model.isNull())
-        {
-            setExifTagString("Exif.Image.Model", identify.model);
-        }
-
-        if (!identify.make.isNull())
-        {
-            setExifTagString("Exif.Image.Make", identify.make);
-        }
-
-        if (!identify.owner.isNull())
-        {
-            setExifTagString("Exif.Image.Artist", identify.owner);
-        }
-
-        if (identify.sensitivity != -1)
-        {
-            setExifTagLong("Exif.Photo.ISOSpeedRatings", lroundf(identify.sensitivity));
-        }
-
-        if (identify.dateTime.isValid())
-        {
-            setImageDateTime(identify.dateTime, false);
-        }
-
-        if (identify.exposureTime != -1.0)
-        {
-            convertToRationalSmallDenominator(identify.exposureTime, &num, &den);
-            setExifTagRational("Exif.Photo.ExposureTime", num, den);
-        }
-
-        if (identify.aperture != -1.0)
-        {
-            convertToRational(identify.aperture, &num, &den, 8);
-            setExifTagRational("Exif.Photo.ApertureValue", num, den);
-        }
-
-        if (identify.focalLength != -1.0)
-        {
-            convertToRational(identify.focalLength, &num, &den, 8);
-            setExifTagRational("Exif.Photo.FocalLength", num, den);
-        }
-
-        if (identify.imageSize.isValid())
-        {
-            setItemDimensions(identify.imageSize);
-        }
-
-        // A RAW image is always uncalibrated. */
-
-        setItemColorWorkSpace(WORKSPACE_UNCALIBRATED);
-
-        return true;
-    }
-
-    return false;
 }
 
 } // namespace Digikam

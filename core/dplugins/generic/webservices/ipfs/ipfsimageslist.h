@@ -6,8 +6,8 @@
  * Date        : 2012-02-12
  * Description : a tool to export images to IPFS web service
  *
- * Copyright (C) 2018 by Amar Lakshya <amar dot lakshya at xaviers dot edu dot in>
- * Copyright (C) 2018 by Caulier Gilles <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2018      by Amar Lakshya <amar dot lakshya at xaviers dot edu dot in>
+ * Copyright (C) 2018-2020 by Caulier Gilles <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -58,7 +58,7 @@ public:
 public:
 
     explicit IpfsImagesList(QWidget* const parent = nullptr);
-    ~IpfsImagesList() Q_DECL_OVERRIDE {}
+    ~IpfsImagesList()                                            override = default;
 
     QList<const IpfsImagesListViewItem*> getPendingItems() const;
 
@@ -76,16 +76,16 @@ class IpfsImagesListViewItem : public DItemsListViewItem
 public:
 
     explicit IpfsImagesListViewItem(DItemsListView* const view, const QUrl& url);
-    ~IpfsImagesListViewItem() Q_DECL_OVERRIDE {}
+    ~IpfsImagesListViewItem()         override = default;
 
     void setTitle(const QString& str);
-    QString Title() const;
+    QString Title()             const;
 
     void setDescription(const QString& str);
-    QString Description() const;
+    QString Description()       const;
 
     void setIpfsUrl(const QString& str);
-    QString IpfsUrl() const;
+    QString IpfsUrl()           const;
 };
 
 } // namespace DigikamGenericIpfsPlugin

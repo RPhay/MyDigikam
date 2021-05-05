@@ -6,7 +6,7 @@
  * Date        : 2018-07-30
  * Description : image editor plugin to mix color channels
  *
- * Copyright (C) 2018-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2018-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -49,7 +49,7 @@ ChannelMixerToolPlugin::~ChannelMixerToolPlugin()
 
 QString ChannelMixerToolPlugin::name() const
 {
-    return i18n("Channel Mixer");
+    return i18nc("@title", "Channel Mixer");
 }
 
 QString ChannelMixerToolPlugin::iid() const
@@ -64,12 +64,12 @@ QIcon ChannelMixerToolPlugin::icon() const
 
 QString ChannelMixerToolPlugin::description() const
 {
-    return i18n("A tool to mix color channel");
+    return i18nc("@info", "A tool to mix color channel");
 }
 
 QString ChannelMixerToolPlugin::details() const
 {
-    return i18n("<p>This Image Editor tool can mix color channels from image.</p>");
+    return i18nc("@info", "This Image Editor tool can mix color channels from image.");
 }
 
 QList<DPluginAuthor> ChannelMixerToolPlugin::authors() const
@@ -77,7 +77,7 @@ QList<DPluginAuthor> ChannelMixerToolPlugin::authors() const
     return QList<DPluginAuthor>()
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2005-2020"))
+                             QString::fromUtf8("(C) 2005-2021"))
             ;
 }
 

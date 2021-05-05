@@ -1,11 +1,10 @@
 #
-# Copyright (c) 2010-2019, Gilles Caulier, <caulier dot gilles at gmail dot com>
+# Copyright (c) 2010-2020, Gilles Caulier, <caulier dot gilles at gmail dot com>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
 
-# =======================================================
-# Stand alone version of ExpoBlending tool
+APPLY_COMMON_POLICIES()
 
 include_directories(
     $<TARGET_PROPERTY:Qt5::Xml,INTERFACE_INCLUDE_DIRECTORIES>
@@ -24,14 +23,14 @@ remove_definitions(
 # =======================================================
 # Facebook demo test tool
 
-set(fbinter_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/../../../../libs/dplugins/webservices/o2/examples/facebookexternalinterceptordemo/fbdemo.cpp
-                 ${CMAKE_CURRENT_SOURCE_DIR}/../../../../libs/dplugins/webservices/o2/examples/facebookexternalinterceptordemo/main.cpp
-                 ${CMAKE_CURRENT_SOURCE_DIR}/../../../../libs/dplugins/webservices/o2/examples/facebookexternalinterceptordemo/webenginepage.cpp
-                 ${CMAKE_CURRENT_SOURCE_DIR}/../../../../libs/dplugins/webservices/o2/examples/facebookexternalinterceptordemo/webwindow.cpp
+set(fbinter_SRCS ${CMAKE_SOURCE_DIR}/core/libs/dplugins/webservices/o2/examples/facebookexternalinterceptordemo/fbdemo.cpp
+                 ${CMAKE_SOURCE_DIR}/core/libs/dplugins/webservices/o2/examples/facebookexternalinterceptordemo/main.cpp
+                 ${CMAKE_SOURCE_DIR}/core/libs/dplugins/webservices/o2/examples/facebookexternalinterceptordemo/webenginepage.cpp
+                 ${CMAKE_SOURCE_DIR}/core/libs/dplugins/webservices/o2/examples/facebookexternalinterceptordemo/webwindow.cpp
 )
 
 qt5_wrap_ui(fbinter_SRCS
-            ${CMAKE_CURRENT_SOURCE_DIR}/../../../../libs/dplugins/webservices/o2/examples/facebookexternalinterceptordemo/webwindow.ui
+            ${CMAKE_SOURCE_DIR}/core/libs/dplugins/webservices/o2/examples/facebookexternalinterceptordemo/webwindow.ui
 )
 
 add_executable(fbinter ${fbinter_SRCS})
@@ -45,3 +44,12 @@ target_link_libraries(fbinter
 
 target_compile_definitions(fbinter PRIVATE signals=Q_SIGNALS slots=Q_SLOTS)
 
+if(MSVC)
+
+    target_compile_options(fbinter PRIVATE /w)
+
+else()
+
+    target_compile_options(fbinter PRIVATE -w)
+
+endif()

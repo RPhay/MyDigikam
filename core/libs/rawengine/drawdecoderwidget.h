@@ -6,7 +6,7 @@
  * date        : 2006-09-13
  * Description : Raw Decoder settings widgets
  *
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2006-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  * Copyright (C) 2007-2008 by Guillaume Castagnino <casta at xwing dot info>
  *
@@ -71,7 +71,7 @@ public:
      * @param advSettings the default value is COLORSPACE
      */
     explicit DRawDecoderWidget(QWidget* const parent, int advSettings = COLORSPACE);
-    virtual ~DRawDecoderWidget();
+    ~DRawDecoderWidget()                        override;
 
     DFileSelector* inputProfileUrlEdit()  const;
     DFileSelector* outputProfileUrlEdit() const;
@@ -88,8 +88,8 @@ public:
     void setSettings(const DRawDecoderSettings& settings);
     DRawDecoderSettings settings()        const;
 
-    void readSettings(KConfigGroup& group) override;
-    void writeSettings(KConfigGroup& group) override;
+    void readSettings(KConfigGroup& group)      override;
+    void writeSettings(KConfigGroup& group)     override;
 
     static void readSettings(DRawDecoderSettings& setting, KConfigGroup& group);
     static void writeSettings(const DRawDecoderSettings& setting, KConfigGroup& group);

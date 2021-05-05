@@ -31,6 +31,7 @@
 #include <QLineEdit>
 #include <QApplication>
 #include <QStyle>
+#include <QScopedPointer>
 
 // KDE includes
 
@@ -168,23 +169,23 @@ QString MetadataOption::parseMetadata(const QString& token, ParseSettings& setti
         return result;
     }
 
-    DMetadata meta(settings.fileUrl.toLocalFile());
+    QScopedPointer<DMetadata> meta(new DMetadata(settings.fileUrl.toLocalFile()));
 
-    if (!meta.isEmpty())
+    if (!meta->isEmpty())
     {
         MetaEngine::MetaDataMap dataMap;
 
         if      (keyword.startsWith(QLatin1String("exif.")))
         {
-            dataMap = meta.getExifTagsDataList(QStringList(), true);
+            dataMap = meta->getExifTagsDataList(QStringList(), true);
         }
         else if (keyword.startsWith(QLatin1String("iptc.")))
         {
-            dataMap = meta.getIptcTagsDataList(QStringList(), true);
+            dataMap = meta->getIptcTagsDataList(QStringList(), true);
         }
         else if (keyword.startsWith(QLatin1String("xmp.")))
         {
-            dataMap = meta.getXmpTagsDataList(QStringList(), true);
+            dataMap = meta->getXmpTagsDataList(QStringList(), true);
         }
 
         foreach (const QString& key, dataMap.keys())
@@ -197,7 +198,7 @@ QString MetadataOption::parseMetadata(const QString& token, ParseSettings& setti
         }
     }
 
-    result.replace(QLatin1Char('/'), QLatin1Char('|'));
+    result.replace(QLatin1Char('/'), QLatin1Char('_'));
 
     return result;
 }

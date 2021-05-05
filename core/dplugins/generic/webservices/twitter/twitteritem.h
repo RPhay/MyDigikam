@@ -35,16 +35,16 @@ class TwUser
 public:
 
     TwUser()
+      : id        (0),
+        uploadPerm(false)
     {
-        id         = 0;
-        uploadPerm = false;
     }
 
     void clear()
     {
         id         = 0;
         name.clear();
-        profileURL = QStringLiteral("https://www.facebook.com");
+        profileURL = QLatin1String("https://www.facebook.com");
         uploadPerm = true;
     }
 
@@ -57,7 +57,8 @@ public:
 
 // ---------------------------------------------------------------
 
-/*enum TWPrivacy
+/*
+enum TWPrivacy
 {
     FB_ME = 0,
     FB_FRIENDS = 1,
@@ -65,7 +66,8 @@ public:
     FB_NETWORKS,
     FB_EVERYONE,
     FB_CUSTOM
-};*/
+};
+*/
 
 // ---------------------------------------------------------------
 
@@ -74,8 +76,10 @@ class TwAlbum
 public:
 
     TwAlbum()
+/*
+      : privacy = FB_FRIENDS;
+*/
     {
-        //privacy = FB_FRIENDS;
     }
 
     QString   id;
@@ -83,7 +87,9 @@ public:
     QString   title;
     QString   description;
     QString   location;
-    //FbPrivacy privacy;
+/*
+    FbPrivacy privacy;
+*/
     QString   url;
 };
 

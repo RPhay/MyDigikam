@@ -88,8 +88,10 @@ private Q_SLOTS:
 
 private:
 
+    // Disabled
     CollectionManager();
-    ~CollectionManager();
+    explicit CollectionManager(QObject*) = delete;
+    ~CollectionManager() override;
 
     void clearLocations();
 
@@ -132,9 +134,9 @@ public:
      * The text is i18n'ed and can be presented to the user.
      * The returned result enum describes the test result.
      */
-    LocationCheckResult checkLocation(const QUrl& fileUrl, QList<CollectionLocation> assumeDeleted,
+    LocationCheckResult checkLocation(const QUrl& fileUrl, QList<CollectionLocation>& assumeDeleted,
                                       QString* message = nullptr, QString* suggestedMessageIconName = nullptr);
-    LocationCheckResult checkNetworkLocation(const QUrl& fileUrl, QList<CollectionLocation> assumeDeleted,
+    LocationCheckResult checkNetworkLocation(const QUrl& fileUrl, QList<CollectionLocation>& assumeDeleted,
                                              QString* message = nullptr, QString* suggestedMessageIconName = nullptr);
 
     /**

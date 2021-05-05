@@ -7,7 +7,7 @@
  * Description : dialog to edit and create digiKam Tags
  *
  * Copyright (C) 2004-2005 by Renchi Raju <renchi dot raju at gmail dot com>
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -63,11 +63,12 @@ namespace Digikam
 
 class Q_DECL_HIDDEN TagsListCreationErrorDialog : public QDialog
 {
+    Q_OBJECT
 
 public:
 
     TagsListCreationErrorDialog(QWidget* const parent, const QMap<QString, QString>& errMap);
-    ~TagsListCreationErrorDialog() {};
+    ~TagsListCreationErrorDialog() override {};
 };
 
 // ------------------------------------------------------------------------------
@@ -77,14 +78,14 @@ class Q_DECL_HIDDEN TagEditDlg::Private
 public:
 
     explicit Private()
-      : create(false),
-        topLabel(nullptr),
-        iconButton(nullptr),
+      : create         (false),
+        topLabel       (nullptr),
+        iconButton     (nullptr),
         resetIconButton(nullptr),
-        buttons(nullptr),
-        keySeqWidget(nullptr),
-        mainRootAlbum(nullptr),
-        titleEdit(nullptr)
+        buttons        (nullptr),
+        keySeqWidget   (nullptr),
+        mainRootAlbum  (nullptr),
+        titleEdit      (nullptr)
     {
     }
 
@@ -107,7 +108,7 @@ public:
 
 TagEditDlg::TagEditDlg(QWidget* const parent, TAlbum* const album, bool create)
     : QDialog(parent),
-      d(new Private)
+      d      (new Private)
 {
     setModal(true);
 
@@ -142,7 +143,7 @@ TagEditDlg::TagEditDlg(QWidget* const parent, TAlbum* const album, bool create)
     // --------------------------------------------------------
 
     QLabel* const titleLabel = new QLabel(page);
-    titleLabel->setText(i18n("&Title:"));
+    titleLabel->setText(i18nc("@label: tag properties", "&Title:"));
 
     d->titleEdit             = new SearchTextBar(page, QLatin1String("TagEditDlgTitleEdit"), i18n("Enter tag name here..."));
     d->titleEdit->setCaseSensitive(false);
@@ -161,6 +162,7 @@ TagEditDlg::TagEditDlg(QWidget* const parent, TAlbum* const album, bool create)
 
     if (d->create)
     {
+        QStringList tagPaths;
         AlbumList tList = AlbumManager::instance()->allTAlbums();
 
         for (AlbumList::const_iterator it = tList.constBegin() ; it != tList.constEnd() ; ++it)
@@ -169,9 +171,11 @@ TagEditDlg::TagEditDlg(QWidget* const parent, TAlbum* const album, bool create)
 
             if (tag && !tag->isInternalTag())
             {
-                d->titleEdit->completerModel()->addItem(tag->tagPath());
+                tagPaths << tag->tagPath();
             }
         }
+
+        d->titleEdit->completerModel()->setList(tagPaths);
     }
     else
     {
@@ -194,11 +198,6 @@ TagEditDlg::TagEditDlg(QWidget* const parent, TAlbum* const album, bool create)
     d->icon = album->icon();
 
     d->resetIconButton = new QPushButton(QIcon::fromTheme(QLatin1String("view-refresh")), i18n("Reset"), page);
-
-    if (create)
-    {
-        d->resetIconButton->hide();
-    }
 
 #ifndef HAVE_KICONTHEMES
 
@@ -309,7 +308,7 @@ QKeySequence TagEditDlg::shortcut() const
 
 void TagEditDlg::slotIconResetClicked()
 {
-    d->icon = QLatin1String("tag");
+    d->icon = d->mainRootAlbum->standardIconName();
     d->iconButton->setIcon(QIcon::fromTheme(d->icon));
 }
 
@@ -571,3 +570,5 @@ TagsListCreationErrorDialog::TagsListCreationErrorDialog(QWidget* const parent, 
 }
 
 } // namespace Digikam
+
+#include "tageditdlg.moc"

@@ -3,7 +3,7 @@
 # Script to bundle data using previously-built KF5 with digiKam installation
 # and create a Linux AppImage bundle file.
 #
-# Copyright (c) 2015-2020 by Gilles Caulier  <caulier dot gilles at gmail dot com>
+# Copyright (c) 2015-2021 by Gilles Caulier  <caulier dot gilles at gmail dot com>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
@@ -61,6 +61,7 @@ echo -e "---------- Build icons-set ressource\n"
 cd $ORIG_WD/icon-rcc
 
 rm -f CMakeCache.txt > /dev/null
+rm -f *.rcc > /dev/null
 
 cmake -DCMAKE_INSTALL_PREFIX="/usr" \
       -DCMAKE_BUILD_TYPE=debug \
@@ -107,7 +108,8 @@ rm -fr ./usr/plugins/ktexteditor
 rm -fr ./usr/plugins/kf5/parts
 rm -fr ./usr/plugins/konsolepart.so
 
-# copy runtime data files
+echo -e "------------- Copy runtime data files\n"
+
 cp -r /usr/share/digikam                  ./usr/share
 cp -r /usr/share/showfoto                 ./usr/share
 cp $ORIG_WD/icon-rcc/breeze.rcc           ./usr/share/digikam
@@ -131,30 +133,43 @@ cp -r /usr/share/dbus-1/interfaces/kf5*   ./usr/share/dbus-1/interfaces/
 cp -r /usr/share/dbus-1/services/*kde*    ./usr/share/dbus-1/services/
 cp -r /usr/${LIBSUFFIX}/libexec/kf5       ./usr/lib/libexec/
 
-# AppImage stream data file
+echo -e "------------- Copy AppImage stream data file\n"
+
 cp -r /usr/share/metainfo/org.kde.digikam.appdata.xml   ./usr/share/metainfo/digikam.appdata.xml
 cp -r /usr/share/metainfo/org.kde.showfoto.appdata.xml  ./usr/share/metainfo/showfoto.appdata.xml
 
-# QWebEngine bin data files.
 # NOTE: no ressources data are provided with QtWebKit
+
 if [[ $DK_QTWEBENGINE = 1 ]] ; then
+
+    echo -e "------------- Copy QWebEngine bin data files\n"
 
     cp -r /usr/resources ./usr
 
 fi
 
-# copy libgphoto2 drivers
+echo -e "------------- Copy libgphoto2 drivers\n"
+
 find  /usr/${LIBSUFFIX}/libgphoto2      -name "*.so" -type f -exec cp {} ./usr/lib/libgphoto2 \;      2>/dev/null
 find  /usr/${LIBSUFFIX}/libgphoto2_port -name "*.so" -type f -exec cp {} ./usr/lib/libgphoto2_port \; 2>/dev/null
 
-# copy sane backends
+echo -e "------------- Copy sane backends\n"
+
 cp -r /usr/${LIBSUFFIX}/sane              ./usr/lib
 cp -r /etc/sane.d                         ./usr/etc
 
-# copy i18n
+echo -e "------------- Copy ImageMagick codecs\n"
+
+# NOTE: even with 64 bits, magick .so files are stored in /usr/lib
+
+cp -r /usr/lib64/ImageMagick*/modules*    ./usr/lib
+
+echo -e "------------- Copy I18n\n"
 
 # Qt translations files
 if [[ -e /usr/translations ]]; then
+
+    echo -e "------------- Copy Qt translations files\n"
 
     cp -r /usr/translations ./usr
     # optimizations
@@ -171,32 +186,38 @@ if [[ -e /usr/translations ]]; then
 
 fi
 
-# KF5 translations files
+echo -e "------------- Copy KF5 translations files\n"
+
 FILES=$(cat $ORIG_WD/logs/build-extralibs.full.log | grep /usr/share/locale | grep -e .qm -e .mo | cut -d' ' -f3)
 
 for FILE in $FILES ; do
     cp --parents $FILE ./
 done
 
-# digiKam translations files
+echo -e "------------- Copy digiKam translations files\n"
+
 FILES=$(cat $ORIG_WD/logs/build-digikam.full.log | grep /usr/share/locale | grep -e .qm -e .mo | cut -d' ' -f3)
 
 for FILE in $FILES ; do
     cp --parents $FILE ./
 done
 
-# digiKam icons files
+echo -e "---------- Copy digiKam icons files\n"
+
 FILES=$(cat $ORIG_WD/logs/build-digikam.full.log | grep /usr/share/icons/ | cut -d' ' -f3)
 
 for FILE in $FILES ; do
+    echo $FILE
     cp --parents $FILE ./
 done
 
-# Marble data and plugins files
+echo -e "---------- Copy Marble data and plugins files\n"
 
 cp -r /usr/${LIBSUFFIX}/marble/plugins/ ./usr/bin/
 
 cp -r /usr/share/marble/data            ./usr/bin/
+
+echo -e "---------- Copy system libraries for binary compatibility\n"
 
 # otherwise segfaults!?
 cp $(ldconfig -p | grep /$LIBSUFFIX/libsasl2.so.3      | cut -d ">" -f 2 | xargs) ./usr/lib/
@@ -219,6 +240,8 @@ cp $(ldconfig -p | grep /${LIBSUFFIX}/libEGL.so.1      | cut -d ">" -f 2 | xargs
 # For Fedora 20
 cp $(ldconfig -p | grep /${LIBSUFFIX}/libfreetype.so.6 | cut -d ">" -f 2 | xargs) ./usr/lib/
 
+echo -e "---------- Copy target binaries\n"
+
 cp /usr/bin/digikam                 ./usr/bin
 cp /usr/bin/showfoto                ./usr/bin
 cp /usr/bin/kbuildsycoca5           ./usr/bin
@@ -226,18 +249,22 @@ cp /usr/bin/solid-hardware5         ./usr/bin
 
 if [[ $DK_QTWEBENGINE = 1 ]] ; then
 
-    # QtWebEngine runtime process
+    echo -e "---------- Copy QtWebEngine runtime process\n"
+
     [[ -e /usr/libexec/QtWebEngineProcess ]] && cp /usr/libexec/QtWebEngineProcess ./usr/bin
 
 else
 
-    # QtWebKit runtime process
+    echo -e "---------- Copy QtWebKit runtime process\n"
+
     [[ -e /usr/libexec/QtWebNetworkProcess ]] && cp /usr/libexec/QtWebNetworkProcess ./usr/bin
     [[ -e /usr/libexec/QtWebProcess ]]        && cp /usr/libexec/QtWebProcess        ./usr/bin
     [[ -e /usr/libexec/QtWebStorageProcess ]] && cp /usr/libexec/QtWebStorageProcess ./usr/bin
     [[ -e /usr/libexec/QtWebPluginProcess ]]  && cp /usr/libexec/QtWebPluginProcess  ./usr/bin
 
 fi
+
+echo -e "---------- Copy Solid binary\n"
 
 # For Solid action when camera is connected to computer
 cp /usr/bin/qdbus                   ./usr/share/digikam/utils
@@ -315,6 +342,8 @@ libnss_files.so.2 \
 libnss_hesiod.so.2 \
 libnss_nisplus.so.2 \
 libnss_nis.so.2 \
+libnss3.so \
+libnssutil3.so \
 libp11-kit.so.0 \
 libpangocairo-1.0.so.0 \
 libpthread.so.0 \
@@ -339,8 +368,10 @@ for FILE in $EXCLUDE_FILES ; do
 done
 
 # This list is taken from older AppImage build script from krita
-# NOTE: libopenal => see bug 390162.
-#       libdbus-1 => see Krita rules.
+# NOTE: libopenal   => see bug 390162.
+#       libdbus-1   => see Krita rules.
+#       libxcb-dri3 => see bug 417088.
+
 EXTRA_EXCLUDE_FILES="\
 libgssapi_krb5.so.2 \
 libgssapi.so.3 \
@@ -359,6 +390,7 @@ libsasl2.so.2 \
 libwind.so.0 \
 libopenal.so.1 \
 libdbus-1.so.3 \
+libxcb-dri3.so.0 \
 "
 
 #liblber-2.4.so.2       # needed for Debian Wheezy
@@ -373,7 +405,7 @@ libdbus-1.so.3 \
 #libpango-1.0.so.0
 #libpangoft2-1.0.so.0
 
-for FILE in $EXCLUDE_FILES ; do
+for FILE in $EXTRA_EXCLUDE_FILES ; do
     if [[ -f usr/lib/${FILE} ]] ; then
         echo -e "   ==> ${FILE} will be removed for the bundle"
         rm -f usr/lib/${FILE}
@@ -428,16 +460,23 @@ sed -i -e 's|././/share/X11/|/usr/share/X11/|g' ./usr/lib/libQt5XcbQpa.so.5
 
 cd /
 
-APP=digikam
+APP=digiKam
 
 if [[ $DK_DEBUG = 1 ]] ; then
     DEBUG_SUF="-debug"
 fi
 
+if [[ $DK_VERSION = "master" ]] ; then
+
+    # with master branch, use build time-stamp as sub-version string.
+    DK_SUBVER="-`cat $ORIG_WD/data/BUILDDATE.txt`"
+
+fi
+
 if [[ "$ARCH" = "x86_64" ]] ; then
-    APPIMAGE=$APP"-"$DK_RELEASEID$DK_EPOCH"-x86-64$DEBUG_SUF.appimage"
+    APPIMAGE=$APP"-"$DK_RELEASEID$DK_SUBVER"-x86-64$DEBUG_SUF.appimage"
 elif [[ "$ARCH" = "i686" ]] ; then
-    APPIMAGE=$APP"-"$DK_RELEASEID$DK_EPOCH"-i386$DEBUG_SUF.appimage"
+    APPIMAGE=$APP"-"$DK_RELEASEID$DK_SUBVER"-i386$DEBUG_SUF.appimage"
 fi
 
 echo -e "---------- Create Bundle with AppImage SDK stage1\n"
@@ -467,7 +506,12 @@ mkdir -p $APP_IMG_DIR/usr/share/icons/default/128x128/mimetypes
 cp -r /usr/share/icons/hicolor/128x128/apps/digikam.png ./usr/share/icons/default/128x128/mimetypes/application-vnd.digikam.png
 
 mkdir -p $ORIG_WD/bundle
-rm -f $ORIG_WD/bundle/* || true
+
+if [[ "$ARCH" = "x86_64" ]] ; then
+    rm -f $ORIG_WD/bundle/*x86-64$DEBUG_SUF* || true
+elif [[ "$ARCH" = "i686" ]] ; then
+    rm -f $ORIG_WD/bundle/*i386$DEBUG_SUF* || true
+fi
 
 echo -e "---------- Create Bundle with AppImage SDK stage2\n"
 
@@ -487,7 +531,7 @@ fi
 
 chmod a+x ./$APPIMGBIN
 
-./$APPIMGBIN $APP_IMG_DIR/ $ORIG_WD/bundle/$APPIMAGE
+ARCH=x86_64 ./$APPIMGBIN $APP_IMG_DIR/ $ORIG_WD/bundle/$APPIMAGE
 chmod a+rwx $ORIG_WD/bundle/$APPIMAGE
 
 #################################################################################################
@@ -526,19 +570,28 @@ if [[ $DK_UPLOAD = 1 ]] ; then
     echo -e "---------- Cleanup older bundle AppImage files from files.kde.org repository \n"
 
     if [[ "$ARCH" = "x86_64" ]] ; then
-        ssh $DK_UPLOADURL rm -f $DK_UPLOADDIR*-x86-64$DEBUG_SUF.appimage*
+        sftp -q $DK_UPLOADURL:$DK_UPLOADDIR <<< "rm *-x86-64$DEBUG_SUF.appimage*"
     elif [[ "$ARCH" = "i686" ]] ; then
-        ssh $DK_UPLOADURL rm -f $DK_UPLOADDIR*-i386$DEBUG_SUF.appimage*
+        sftp -q $DK_UPLOADURL:$DK_UPLOADDIR <<< "rm *-i386$DEBUG_SUF.appimage*"
     fi
 
     echo -e "---------- Upload new bundle AppImage files to files.kde.org repository \n"
 
     rsync -r -v --progress -e ssh $ORIG_WD/bundle/$APPIMAGE $DK_UPLOADURL:$DK_UPLOADDIR
-    scp $ORIG_WD/bundle/$APPIMAGE.sum $DK_UPLOADURL:$DK_UPLOADDIR
 
     if [[ $DK_SIGN = 1 ]] ; then
         scp $ORIG_WD/bundle/$APPIMAGE.sig $DK_UPLOADURL:$DK_UPLOADDIR
     fi
+
+    # update remote files list
+
+    sftp -q $DK_UPLOADURL:$DK_UPLOADDIR <<< "ls digi*" > $ORIG_WD/bundle/ls.txt
+    tail -n +2 $ORIG_WD/bundle/ls.txt > $ORIG_WD/bundle/ls.tmp
+    cat $ORIG_WD/bundle/ls.tmp | grep -E '(.pkg |.appimage |.exe )' | grep -Ev '(debug)' > $ORIG_WD/bundle/FILES
+    rm $ORIG_WD/bundle/ls.tmp
+    rm $ORIG_WD/bundle/ls.txt
+    sftp -q $DK_UPLOADURL:$DK_UPLOADDIR <<< "rm FILES"
+    rsync -r -v --progress -e ssh $ORIG_WD/bundle/FILES $DK_UPLOADURL:$DK_UPLOADDIR
 
 else
     echo -e "\n------------------------------------------------------------------"

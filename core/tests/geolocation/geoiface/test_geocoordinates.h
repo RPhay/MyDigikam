@@ -26,11 +26,18 @@
 
 // Qt includes
 
-#include <QtTest>
+#include <QTest>
 
 class TestGeoCoordinates : public QObject
 {
     Q_OBJECT
+
+public:
+
+    explicit TestGeoCoordinates(QObject* const parent = nullptr)
+        : QObject(parent)
+    {
+    }
 
 private Q_SLOTS:
 
@@ -39,4 +46,4 @@ private Q_SLOTS:
     void testMovable();
 };
 
-#endif /* DIGIKAM_TEST_GEOCOORDINATES_H */
+#endif // DIGIKAM_TEST_GEOCOORDINATES_H

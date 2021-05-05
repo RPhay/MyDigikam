@@ -10,7 +10,7 @@
  * Copyright (C) 2006      by Ian Monroe <ian at monroe dot nu>
  * Copyright (C) 2009      by Andi Clemens <andi dot clemens at gmail dot com>
  * Copyright (C) 2006-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2008-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2008-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -75,7 +75,7 @@ public:
 
 DeleteItem::DeleteItem(QTreeWidget* const parent, const QUrl& url)
     : QTreeWidgetItem(parent),
-      d(new Private)
+      d              (new Private)
 {
     d->url = url;
 
@@ -159,7 +159,7 @@ class Q_DECL_HIDDEN DeleteItemList::Private
 public:
 
     explicit Private()
-        : iconSize(64),
+        : iconSize       (64),
           thumbLoadThread(nullptr)
     {
     }
@@ -171,7 +171,7 @@ public:
 
 DeleteItemList::DeleteItemList(QWidget* const parent)
     : QTreeWidget(parent),
-      d(new Private)
+      d          (new Private)
 {
     d->thumbLoadThread = ThumbnailLoadThread::defaultThread();
 
@@ -237,15 +237,15 @@ class Q_DECL_HIDDEN DeleteWidget::Private
 public:
 
     explicit Private()
-      : checkBoxStack(nullptr),
-        warningIcon(nullptr),
-        deleteText(nullptr),
-        numFiles(nullptr),
-        shouldDelete(nullptr),
+      : checkBoxStack (nullptr),
+        warningIcon   (nullptr),
+        deleteText    (nullptr),
+        numFiles      (nullptr),
+        shouldDelete  (nullptr),
         doNotShowAgain(nullptr),
-        fileList(nullptr),
-        listMode(DeleteDialogMode::Files),
-        deleteMode(DeleteDialogMode::UseTrash)
+        fileList      (nullptr),
+        listMode      (DeleteDialogMode::Files),
+        deleteMode    (DeleteDialogMode::UseTrash)
     {
     }
 
@@ -266,7 +266,7 @@ public:
 
 DeleteWidget::DeleteWidget(QWidget* const parent)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     setObjectName(QLatin1String("DeleteDialogBase"));
 
@@ -408,7 +408,7 @@ void DeleteWidget::updateText()
             else
             {
                 d->deleteText->setText(i18n("These items will be moved to Trash."));
-                d->warningIcon->setPixmap(QIcon::fromTheme(QLatin1String("user-trash-full")).pixmap(48));
+                d->warningIcon->setPixmap(QIcon::fromTheme(QLatin1String("user-trash")).pixmap(48));
                 d->numFiles->setText(i18np("<b>1</b> item selected.", "<b>%1</b> items selected.",
                                            d->fileList->topLevelItemCount()));
             }
@@ -429,7 +429,7 @@ void DeleteWidget::updateText()
             else
             {
                 d->deleteText->setText(i18n("These albums will be moved to Trash."));
-                d->warningIcon->setPixmap(QIcon::fromTheme(QLatin1String("user-trash-full")).pixmap(48));
+                d->warningIcon->setPixmap(QIcon::fromTheme(QLatin1String("user-trash")).pixmap(48));
             }
 
             d->numFiles->setText(i18np("<b>1</b> album selected.", "<b>%1</b> albums selected.",
@@ -456,7 +456,7 @@ void DeleteWidget::updateText()
                                             "<p>Note that <b>all subalbums</b> "
                                             "are included in this list and will "
                                             "be moved to Trash as well.</p>"));
-                d->warningIcon->setPixmap(QIcon::fromTheme(QLatin1String("user-trash-full")).pixmap(48));
+                d->warningIcon->setPixmap(QIcon::fromTheme(QLatin1String("user-trash")).pixmap(48));
             }
 
             d->numFiles->setText(i18np("<b>1</b> album selected.", "<b>%1</b> albums selected.",
@@ -474,10 +474,10 @@ public:
 
     explicit Private()
       : saveShouldDeleteUserPreference(true),
-        saveDoNotShowAgainTrash(false),
-        saveDoNotShowAgainPermanent(false),
-        page(nullptr),
-        buttons(nullptr)
+        saveDoNotShowAgainTrash       (false),
+        saveDoNotShowAgainPermanent   (false),
+        page                          (nullptr),
+        buttons                       (nullptr)
     {
     }
 
@@ -492,7 +492,7 @@ public:
 
 DeleteDialog::DeleteDialog(QWidget* const parent)
     : QDialog(parent),
-      d(new Private)
+      d      (new Private)
 {
     setModal(true);
 
@@ -601,7 +601,7 @@ void DeleteDialog::slotShouldDelete(bool shouldDelete)
     d->buttons->button(QDialogButtonBox::Apply)->setText(shouldDelete ? i18n("&Delete")
                                                                       : i18n("&Move to Trash"));
     d->buttons->button(QDialogButtonBox::Apply)->setIcon(shouldDelete ? QIcon::fromTheme(QLatin1String("edit-delete"))
-                                                                      : QIcon::fromTheme(QLatin1String("user-trash-full")));
+                                                                      : QIcon::fromTheme(QLatin1String("user-trash")));
 }
 
 void DeleteDialog::presetDeleteMode(DeleteDialogMode::DeleteMode mode)

@@ -7,7 +7,7 @@
  * Description : digiKam image editor to adjust Hue, Saturation,
  *               and Lightness of picture.
  *
- * Copyright (C) 2004-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2004-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -34,7 +34,7 @@
 
 #include <klocalizedstring.h>
 #include <ksharedconfig.h>
-#include "kconfiggroup.h"
+#include <kconfiggroup.h>
 
 // Local includes
 
@@ -54,9 +54,9 @@ class Q_DECL_HIDDEN HSLTool::Private
 public:
 
     explicit Private()
-      : hslSettings(nullptr),
+      : hslSettings  (nullptr),
         previewWidget(nullptr),
-        gboxSettings(nullptr)
+        gboxSettings (nullptr)
     {
     }
 
@@ -77,7 +77,7 @@ const QString HSLTool::Private::configHistogramScaleEntry(QLatin1String("Histogr
 
 HSLTool::HSLTool(QObject* const parent)
     : EditorToolThreaded(parent),
-      d(new Private)
+      d                 (new Private)
 {
     setObjectName(QLatin1String("adjusthsl"));
     setToolHelp(QLatin1String("hsladjusttool.anchor"));

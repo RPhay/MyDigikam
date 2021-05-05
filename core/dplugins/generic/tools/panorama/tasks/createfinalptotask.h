@@ -45,7 +45,7 @@ public:
                                 QSharedPointer<const PTOType> ptoData,
                                 QUrl& finalPtoUrl,
                                 const QRect& crop);
-    ~CreateFinalPtoTask();
+    ~CreateFinalPtoTask() override;
 
 protected:
 
@@ -56,6 +56,13 @@ private:
     PTOType     ptoData;
     QUrl&       finalPtoUrl;
     const QRect crop;
+
+private:
+
+    // Disable
+    CreateFinalPtoTask() = delete;
+
+    Q_DISABLE_COPY(CreateFinalPtoTask)
 };
 
 } // namespace DigikamGenericPanoramaPlugin

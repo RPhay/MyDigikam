@@ -7,7 +7,7 @@
  * Description : a combo box widget re-implemented with a
  *               reset button to switch to a default item
  *
- * Copyright (C) 2008-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2008-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -45,8 +45,8 @@ class DIGIKAM_EXPORT DComboBox : public QWidget
 
 public:
 
-    explicit DComboBox(QWidget* const parent=nullptr);
-    ~DComboBox();
+    explicit DComboBox(QWidget* const parent = nullptr);
+    ~DComboBox() override;
 
     void setCurrentIndex(int d);
     int  currentIndex() const;
@@ -56,7 +56,8 @@ public:
 
     QComboBox* combo()  const;
 
-    void addItem(const QString& t, int index = -1);
+    void addItem(const QString& t,
+                 const QVariant& data = QVariant());
     void insertItem(int index, const QString& t,
                     const QVariant& data = QVariant());
 

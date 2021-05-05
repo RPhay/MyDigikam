@@ -7,7 +7,7 @@
  * Description : Figure out camera clock delta from a clock picture.
  *
  * Copyright (C) 2009      by Pieter Edelman <p dot edelman at gmx dot net>
- * Copyright (C) 2011-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2011-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -41,7 +41,7 @@ class ClockPhotoDialog : public QDialog
 public:
 
     explicit ClockPhotoDialog(QWidget* const parent, const QUrl& defaultUrl);
-    ~ClockPhotoDialog();
+    ~ClockPhotoDialog() override;
 
     /**
      * Try to load the photo specified by the QUrl, and set the datetime widget

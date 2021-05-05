@@ -7,7 +7,7 @@
  * Description : a tool to show image using an OpenGL interface.
  *
  * Copyright (C) 2007-2008 by Markus Leuthold <kusi at forum dot titlis dot org>
- * Copyright (C) 2008-2016 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2008-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_GLVIEWERPLUGIN_GLVIEWERWIDGET_H
-#define DIGIKAM_GLVIEWERPLUGIN_GLVIEWERWIDGET_H
+#ifndef DIGIKAM_GLVIEWER_PLUGIN_GLVIEWER_WIDGET_H
+#define DIGIKAM_GLVIEWER_PLUGIN_GLVIEWER_WIDGET_H
 
 // Qt includes
 
@@ -54,7 +54,7 @@ public:
 
     explicit GLViewerWidget(DPlugin* const plugin,
                             DInfoInterface* const iface);
-    ~GLViewerWidget();
+    ~GLViewerWidget() override;
 
     void prevImage();
     void nextImage();
@@ -92,10 +92,15 @@ private Q_SLOTS:
 
 private:
 
+    // Disable
+    explicit GLViewerWidget(QWidget*) = delete;
+
+private:
+
     class Private;
     Private* const d;
 };
 
 } // namespace DigikamGenericGLViewerPlugin
 
-#endif // DIGIKAM_GLVIEWERPLUGIN_GLVIEWERWIDGET_H
+#endif // DIGIKAM_GLVIEWER_PLUGIN_GLVIEWER_WIDGET_H

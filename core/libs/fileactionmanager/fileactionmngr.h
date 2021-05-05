@@ -7,7 +7,7 @@
  * Description : file action manager
  *
  * Copyright (C) 2009-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2011-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2011-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -38,7 +38,7 @@ class MetadataHub;
 class MetadataHubOnTheRoad;
 class DisjointMetadata;
 
-class DIGIKAM_EXPORT FileActionMngr : public QObject
+class DIGIKAM_GUI_EXPORT FileActionMngr : public QObject
 {
     Q_OBJECT
 
@@ -115,8 +115,10 @@ public:
 
 private:
 
+    // Disable
     FileActionMngr();
-    ~FileActionMngr();
+    explicit FileActionMngr(QObject*);
+    ~FileActionMngr() override;
 
     Private* const d;
 

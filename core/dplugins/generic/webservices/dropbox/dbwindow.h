@@ -7,7 +7,7 @@
  * Description : a tool to export images to Dropbox web service
  *
  * Copyright (C) 2013      by Pankaj Kumar <me at panks dot me>
- * Copyright (C) 2013-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2013-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -33,7 +33,6 @@
 // Local includes
 
 #include "wstooldialog.h"
-#include "digikam_export.h"
 #include "dinfointerface.h"
 
 class QCloseEvent;
@@ -44,14 +43,14 @@ using namespace Digikam;
 namespace DigikamGenericDropBoxPlugin
 {
 
-class DIGIKAM_EXPORT DBWindow : public WSToolDialog
+class DBWindow : public WSToolDialog
 {
     Q_OBJECT
 
 public:
 
     explicit DBWindow(DInfoInterface* const iface, QWidget* const parent);
-    ~DBWindow();
+    ~DBWindow() override;
 
     void reactivate();
 

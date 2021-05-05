@@ -42,7 +42,7 @@ namespace Digikam
 class ParseSettings;
 class Parser;
 
-class DIGIKAM_EXPORT AdvancedRenameWidget : public QWidget
+class DIGIKAM_GUI_EXPORT AdvancedRenameWidget : public QWidget
 {
     Q_OBJECT
 
@@ -67,7 +67,7 @@ public:
 public:
 
     explicit AdvancedRenameWidget(QWidget* const parent = nullptr);
-    ~AdvancedRenameWidget();
+    ~AdvancedRenameWidget() override;
 
     /**
      * returns the current parse string
@@ -153,13 +153,10 @@ private Q_SLOTS:
 
 private:
 
-    AdvancedRenameWidget(const AdvancedRenameWidget&);
-    AdvancedRenameWidget& operator=(const AdvancedRenameWidget&);
-
     void createToolTip();
 
     void   registerParserControls();
-    QMenu* createControlsMenu(QWidget* parent, const RulesList &rules);
+    QMenu* createControlsMenu(QWidget* const parent, const RulesList& rules);
 
     void calculateLayout();
 
@@ -167,6 +164,12 @@ private:
 
     void readSettings();
     void writeSettings();
+
+private:
+
+    // Disable
+    AdvancedRenameWidget(const AdvancedRenameWidget&)            = delete;
+    AdvancedRenameWidget& operator=(const AdvancedRenameWidget&) = delete;
 
 private:
 

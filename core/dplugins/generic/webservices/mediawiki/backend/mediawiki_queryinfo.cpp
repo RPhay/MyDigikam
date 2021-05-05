@@ -6,7 +6,7 @@
  * Date        : 2011-03-22
  * Description : a Iface C++ interface
  *
- * Copyright (C) 2011-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2011-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2011      by Alexandre Mendes <alex dot mendes1988 at gmail dot com>
  *
  * This program is free software; you can redistribute it
@@ -101,6 +101,7 @@ void QueryInfo::doWorkSendRequest()
     Q_D(QueryInfo);
 
     // Set the url
+
     QUrl url = d->MediaWiki.url();
     QUrlQuery query;
     query.addQueryItem(QStringLiteral("format"), QStringLiteral("xml"));
@@ -108,16 +109,18 @@ void QueryInfo::doWorkSendRequest()
     query.addQueryItem(QStringLiteral("prop"),   QStringLiteral("info"));
     query.addQueryItem(QStringLiteral("inprop"), QStringLiteral("protection|talkid|watched|subjectid|url|readable|preload"));
 
-    QMapIterator<QString, QString> i(d->requestParameter);
+    QMapIterator<QString, QString> it(d->requestParameter);
 
-    while (i.hasNext())
+    while (it.hasNext())
     {
-        i.next();
-        query.addQueryItem(i.key(), i.value());
+        it.next();
+        query.addQueryItem(it.key(), it.value());
     }
+
     url.setQuery(query);
 
     // Set the request
+
     QNetworkRequest request(url);
     request.setRawHeader("User-Agent", d->MediaWiki.userAgent().toUtf8());
     QByteArray cookie = "";
@@ -128,9 +131,11 @@ void QueryInfo::doWorkSendRequest()
         cookie += MediaWikiCookies.at(i).toRawForm(QNetworkCookie::NameAndValueOnly);
         cookie += ';';
     }
+
     request.setRawHeader( "Cookie", cookie );
 
     // Send the request
+
     d->reply = d->manager->get(request);
     connectReply();
 
@@ -142,12 +147,13 @@ void QueryInfo::doWorkProcessReply()
 {
     Q_D(QueryInfo);
 
-    disconnect(d->reply, SIGNAL(finished()), 
+    disconnect(d->reply, SIGNAL(finished()),
                this, SLOT(doWorkProcessReply()));
 
     if (d->reply->error() == QNetworkReply::NoError)
     {
         // Replace & in &amp;
+
         QString content = QString::fromUtf8(d->reply->readAll());
         QRegExp regex(QStringLiteral("&(?!\\w+;)"));
         content.replace(regex, QStringLiteral("&amp;"));
@@ -161,7 +167,7 @@ void QueryInfo::doWorkProcessReply()
 
             if (token == QXmlStreamReader::StartElement)
             {
-                if (reader.name() == QLatin1String("page"))
+                if      (reader.name() == QLatin1String("page"))
                 {
                     d->page.setPageId(attrs.value(QStringLiteral("pageid")).toString().toUInt());
                     d->page.setTitle(attrs.value(QStringLiteral("title")).toString());
@@ -189,7 +195,7 @@ void QueryInfo::doWorkProcessReply()
                     QString type(attrs.value(QStringLiteral("type")).toString());
                     QString source;
 
-                    if (!attrs.value(QStringLiteral("source")).toString().isEmpty())
+                    if      (!attrs.value(QStringLiteral("source")).toString().isEmpty())
                     {
                         source = attrs.value(QStringLiteral("source")).toString();
                     }

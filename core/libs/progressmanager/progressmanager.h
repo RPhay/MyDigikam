@@ -6,7 +6,7 @@
  * Date        : 2012-01-13
  * Description : progress manager
  *
- * Copyright (C) 2007-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2007-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2012      by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  * Copyright (C) 2004      by Till Adam <adam at kde dot org>
  *
@@ -47,9 +47,13 @@ class DIGIKAM_EXPORT ProgressItem : public QObject
 
 public:
 
-    ProgressItem(ProgressItem* const parent, const QString& id, const QString& label,
-                 const QString& status, bool canBeCanceled, bool hasThumb);
-    virtual ~ProgressItem();
+    ProgressItem(ProgressItem* const parent,
+                 const QString& id,
+                 const QString& label,
+                 const QString& status,
+                 bool canBeCanceled,
+                 bool hasThumb);
+    ~ProgressItem() override;
 
     /**
      * Set the property to pop-up item when it's added in progress manager.
@@ -60,23 +64,23 @@ public:
     /**
      * @return true if item must be pop-up when it's added in progress manager.
      */
-    bool showAtStart() const;
+    bool showAtStart()                                      const;
 
     /**
      * @return The id string which uniquely identifies the operation
      *         represented by this item.
      */
-    const QString& id() const;
+    const QString& id()                                     const;
 
     /**
      * @return The parent item of this one, if there is one.
      */
-    ProgressItem* parent() const;
+    ProgressItem* parent()                                  const;
 
     /**
      * @return The user visible string to be used to represent this item.
      */
-    const QString& label() const;
+    const QString& label()                                  const;
 
     /**
      * @param v Set the user visible string identifying this item.
@@ -86,7 +90,7 @@ public:
     /**
      * @return The string to be used for showing this item's current status.
      */
-    const QString& status() const;
+    const QString& status()                                 const;
 
     /**
      * Set the string to be used for showing this item's current status.
@@ -97,12 +101,12 @@ public:
     /**
      * @return Whether this item can be canceled.
      */
-    bool canBeCanceled() const;
+    bool canBeCanceled()                                    const;
 
     /**
      * @return whether this item uses a busy indicator instead of real progress display
      */
-    bool usesBusyIndicator() const;
+    bool usesBusyIndicator()                                const;
 
     /**
      * Sets whether this item uses a busy indicator instead of real progress for its progress bar.
@@ -114,7 +118,7 @@ public:
     /**
      * @return whether this item has a thumbnail.
      */
-    bool hasThumbnail() const;
+    bool hasThumbnail()                                     const;
 
     /**
      * Sets whether this item has a thumbnail.
@@ -124,7 +128,7 @@ public:
     /**
      * @return The current progress value of this item in percent.
      */
-    unsigned int progress() const;
+    unsigned int progress()                                 const;
 
     /**
      * Set the progress (percentage of completion) value of this item.
@@ -148,16 +152,16 @@ public:
     void reset();
 
     void cancel();
-    bool canceled() const;
+    bool canceled()                                         const;
 
     // Often needed values for calculating progress.
     void         setTotalItems(unsigned int v);
     void         incTotalItems(unsigned int v = 1);
-    unsigned int totalItems() const;
+    unsigned int totalItems()                               const;
     bool         setCompletedItems(unsigned int v);
     bool         incCompletedItems(unsigned int v = 1);
-    unsigned int completedItems() const;
-    bool         totalCompleted() const;
+    unsigned int completedItems()                           const;
+    bool         totalCompleted()                           const;
 
     /**
      * Recalculate progress according to total/completed items and update.
@@ -208,7 +212,7 @@ Q_SIGNALS:
      * @param The canceled item;
      */
     void progressItemCanceled(ProgressItem*);
-    void progressItemCanceled(const QString& id);
+    void progressItemCanceledById(const QString& id);
 
     /**
      * Emitted when the status message of an item changed. Should be used by
@@ -279,12 +283,12 @@ public:
     /**
      * @return true when there are no more progress items.
      */
-    bool isEmpty() const;
+    bool isEmpty()                                  const;
 
     /**
      * @return the progressitem for this id if it exist, else null.
      */
-    ProgressItem* findItembyId(const QString& id) const;
+    ProgressItem* findItembyId(const QString& id)   const;
 
     /**
      * @return the only top level progressitem when there's only one.
@@ -293,7 +297,7 @@ public:
      * 0 if there is an item which uses a busy indicator, since that will invalidate
      * the overall progress.
      */
-    ProgressItem* singleItem() const;
+    ProgressItem* singleItem()                      const;
 
     /**
      * @return The singleton instance of this class.
@@ -371,7 +375,7 @@ public:
      * @param parent Specify an already existing item as the parent of this one (can be null).
      * @return true if ProgressItem have been added to manager, else false.
      */
-    static bool addProgressItem(ProgressItem* const t, ProgressItem* const parent=nullptr);
+    static bool addProgressItem(ProgressItem* const t, ProgressItem* const parent = nullptr);
 
     /**
      * Ask all listeners to show the progress dialog, because there is
@@ -451,10 +455,11 @@ private Q_SLOTS:
 
 private:
 
+    // Disable
     ProgressManager();
-     // prevent unsolicited copies
+    ProgressManager(QObject*);
     ProgressManager(const ProgressManager&);
-    ~ProgressManager();
+    ~ProgressManager() override;
 
     void emitShowProgressViewImpl();
 

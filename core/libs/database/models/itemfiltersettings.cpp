@@ -7,7 +7,7 @@
  * Description : Filter values for use with ItemFilterModel
  *
  * Copyright (C) 2009-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2011-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2011-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C)      2010 by Andi Clemens <andi dot clemens at gmail dot com>
  * Copyright (C)      2011 by Michael G. Hansen <mike at mghansen dot de>
  * Copyright (C)      2014 by Mohamed_Anwer <m_dot_anwer at gmx dot com>
@@ -48,12 +48,12 @@ namespace Digikam
 {
 
 ItemFilterSettings::ItemFilterSettings()
-    : m_untaggedFilter(false),
-      m_matchingCond(OrCondition),
-      m_ratingFilter(0),
-      m_ratingCond(GreaterEqualCondition),
-      m_isUnratedExcluded(false),
-      m_mimeTypeFilter(MimeFilter::AllFiles),
+    : m_untaggedFilter      (false),
+      m_matchingCond        (OrCondition),
+      m_ratingFilter        (0),
+      m_ratingCond          (GreaterEqualCondition),
+      m_isUnratedExcluded   (false),
+      m_mimeTypeFilter      (MimeFilter::AllFiles),
       m_geolocationCondition(GeolocationNoFilter)
 {
 }
@@ -394,6 +394,7 @@ bool ItemFilterSettings::matches(const ItemInfo& info, bool* const foundText) co
             {
                 // Searching for "has no ColorLabel" requires special handling:
                 // Scan that the tag ids contains none of the ColorLabel tags, except maybe the NoColorLabel tag
+
                 matchPL = containsNoneOfExcept(tagIds, TagsCache::instance()->pickLabelTags(), noPickLabelTagId);
             }
         }
@@ -439,6 +440,7 @@ bool ItemFilterSettings::matches(const ItemInfo& info, bool* const foundText) co
     if (m_ratingFilter >= 0)
     {
         // for now we treat -1 (no rating) just like a rating of 0.
+
         int rating = info.rating();
 
         if (rating == -1)
@@ -455,6 +457,7 @@ bool ItemFilterSettings::matches(const ItemInfo& info, bool* const foundText) co
             if (m_ratingCond == GreaterEqualCondition)
             {
                 // If the rating is not >=, i.e it is <, then it does not match.
+
                 if (rating < m_ratingFilter)
                 {
                     match = false;
@@ -463,6 +466,7 @@ bool ItemFilterSettings::matches(const ItemInfo& info, bool* const foundText) co
             else if (m_ratingCond == EqualCondition)
             {
                 // If the rating is not =, i.e it is !=, then it does not match.
+
                 if (rating != m_ratingFilter)
                 {
                     match = false;
@@ -471,6 +475,7 @@ bool ItemFilterSettings::matches(const ItemInfo& info, bool* const foundText) co
             else
             {
                 // If the rating is not <=, i.e it is >, then it does not match.
+
                 if (rating > m_ratingFilter)
                 {
                     match = false;
@@ -484,6 +489,7 @@ bool ItemFilterSettings::matches(const ItemInfo& info, bool* const foundText) co
     switch (m_mimeTypeFilter)
     {
         // info.format is a standardized string: Only one possibility per mime type
+
         case MimeFilter::ImageFiles:
         {
             if (info.category() != DatabaseItem::Image)
@@ -643,45 +649,60 @@ bool ItemFilterSettings::matches(const ItemInfo& info, bool* const foundText) co
     {
         bool textMatch = false;
 
+        QRegExp textRegExp(m_textFilterSettings.text);
+        textRegExp.setPatternSyntax(QRegExp::WildcardUnix);
+        textRegExp.setCaseSensitivity(m_textFilterSettings.caseSensitive);
+
         // Image name
+
         if ((m_textFilterSettings.textFields & SearchTextFilterSettings::ImageName) &&
-            info.name().contains(m_textFilterSettings.text, m_textFilterSettings.caseSensitive))
+            (textRegExp.exactMatch(info.name())                                     ||
+            info.name().contains(m_textFilterSettings.text, m_textFilterSettings.caseSensitive)))
         {
             textMatch = true;
         }
 
         // Image title
+
         if ((m_textFilterSettings.textFields & SearchTextFilterSettings::ImageTitle) &&
-            info.title().contains(m_textFilterSettings.text, m_textFilterSettings.caseSensitive))
+            (textRegExp.exactMatch(info.title())                                     ||
+            info.title().contains(m_textFilterSettings.text, m_textFilterSettings.caseSensitive)))
         {
             textMatch = true;
         }
 
         // Image comment
+
         if ((m_textFilterSettings.textFields & SearchTextFilterSettings::ImageComment) &&
-            info.comment().contains(m_textFilterSettings.text, m_textFilterSettings.caseSensitive))
+            (textRegExp.exactMatch(info.comment())                                     ||
+            info.comment().contains(m_textFilterSettings.text, m_textFilterSettings.caseSensitive)))
         {
             textMatch = true;
         }
 
         // Tag names
+
         foreach (int id, info.tagIds())
         {
             if ((m_textFilterSettings.textFields & SearchTextFilterSettings::TagName) &&
-                m_tagNameHash.value(id).contains(m_textFilterSettings.text, m_textFilterSettings.caseSensitive))
+                (textRegExp.exactMatch(m_tagNameHash.value(id))                       ||
+                m_tagNameHash.value(id).contains(m_textFilterSettings.text, m_textFilterSettings.caseSensitive)))
             {
                 textMatch = true;
             }
         }
 
         // Album names
+
         if ((m_textFilterSettings.textFields & SearchTextFilterSettings::AlbumName) &&
-            m_albumNameHash.value(info.albumId()).contains(m_textFilterSettings.text, m_textFilterSettings.caseSensitive))
+            (textRegExp.exactMatch(m_albumNameHash.value(info.albumId()))           ||
+            m_albumNameHash.value(info.albumId()).contains(m_textFilterSettings.text, m_textFilterSettings.caseSensitive)))
         {
             textMatch = true;
         }
 
         // Image Aspect Ratio
+
         if (m_textFilterSettings.textFields & SearchTextFilterSettings::ImageAspectRatio)
         {
             QRegExp expRatio (QLatin1String("^\\d+:\\d+$"));
@@ -733,7 +754,7 @@ bool ItemFilterSettings::matches(const ItemInfo& info, bool* const foundText) co
             int pixelSize = size.height()*size.width();
             QString text  = m_textFilterSettings.text;
 
-            if      (text.contains(QRegExp(QLatin1String("^>\\d{1,15}$"))) && 
+            if      (text.contains(QRegExp(QLatin1String("^>\\d{1,15}$"))) &&
                 (pixelSize > (text.remove(0, 1)).toInt()))
             {
                 textMatch = true;
@@ -799,9 +820,9 @@ bool ItemFilterSettings::matches(const ItemInfo& info, bool* const foundText) co
 // -------------------------------------------------------------------------------------------------
 
 VersionItemFilterSettings::VersionItemFilterSettings()
+    : m_includeTagFilter  (0),
+      m_exceptionTagFilter(0)
 {
-    m_includeTagFilter   = 0;
-    m_exceptionTagFilter = 0;
 }
 
 VersionItemFilterSettings::VersionItemFilterSettings(const VersionManagerSettings& settings)

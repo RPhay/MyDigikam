@@ -6,7 +6,7 @@
  * Date        : 2009-02-18
  * Description : Channel mixer settings view.
  *
- * Copyright (C) 2010-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2010-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -51,6 +51,7 @@
 #include "dfiledialog.h"
 #include "dexpanderbox.h"
 #include "digikam_debug.h"
+#include "digikam_config.h"
 
 namespace Digikam
 {
@@ -60,17 +61,17 @@ class Q_DECL_HIDDEN MixerSettings::Private
 public:
 
     explicit Private()
-      : currentChannel(RedChannel),
-        monochromeTips(nullptr),
-        totalPercents(nullptr),
-        outChannelLabel(nullptr),
-        resetButton(nullptr),
-        preserveLuminosity(nullptr),
-        monochrome(nullptr),
-        outChannelCB(nullptr),
-        redGain(nullptr),
-        greenGain(nullptr),
-        blueGain(nullptr)
+      : currentChannel      (RedChannel),
+        monochromeTips      (nullptr),
+        totalPercents       (nullptr),
+        outChannelLabel     (nullptr),
+        resetButton         (nullptr),
+        preserveLuminosity  (nullptr),
+        monochrome          (nullptr),
+        outChannelCB        (nullptr),
+        redGain             (nullptr),
+        greenGain           (nullptr),
+        blueGain            (nullptr)
     {
     }
 
@@ -128,66 +129,67 @@ const QString MixerSettings::Private::configBlackBlueGainEntry(QLatin1String("Bl
 
 MixerSettings::MixerSettings(QWidget* const parent)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     const int spacing       = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
 
     QGridLayout* const grid = new QGridLayout(this);
 
-    d->outChannelLabel = new QLabel(i18n("Output Channel:"));
+    d->outChannelLabel = new QLabel(i18nc("@label", "Output Channel:"));
     d->outChannelCB    = new QComboBox;
-    d->outChannelCB->addItem(i18n("Red"),   QVariant(RedChannel));
-    d->outChannelCB->addItem(i18n("Green"), QVariant(GreenChannel));
-    d->outChannelCB->addItem(i18n("Blue"),  QVariant(BlueChannel));
+    d->outChannelCB->addItem(i18nc("@item: color", "Red"),   QVariant(RedChannel));
+    d->outChannelCB->addItem(i18nc("@item: color", "Green"), QVariant(GreenChannel));
+    d->outChannelCB->addItem(i18nc("@item: color", "Blue"),  QVariant(BlueChannel));
 
-    QLabel* const redLabel = new QLabel(i18n("Red (%):"));
+    QLabel* const redLabel = new QLabel(i18nc("@label: color", "Red (%):"));
     d->redGain             = new DDoubleNumInput;
     d->redGain->setDecimals(1);
     d->redGain->setRange(-200.0, 200.0, 1);
     d->redGain->setDefaultValue(0);
-    d->redGain->setWhatsThis(i18n("Select the red color gain, as a percentage, "
-                                  "for the current channel."));
+    d->redGain->setWhatsThis(i18nc("@info", "Select the red color gain, as a percentage, "
+                                   "for the current channel."));
 
-    QLabel* const greenLabel = new QLabel(i18n("Green (%):"));
+    QLabel* const greenLabel = new QLabel(i18nc("@label: color", "Green (%):"));
     d->greenGain             = new DDoubleNumInput;
     d->greenGain->setDecimals(1);
     d->greenGain->setRange(-200.0, 200.0, 1);
     d->greenGain->setDefaultValue(0);
-    d->greenGain->setWhatsThis(i18n("Select the green color gain, as a percentage, "
-                                    "for the current channel."));
+    d->greenGain->setWhatsThis(i18nc("@info", "Select the green color gain, as a percentage, "
+                                     "for the current channel."));
 
-    QLabel* const blueLabel = new QLabel(i18n("Blue (%):"));
+    QLabel* const blueLabel = new QLabel(i18nc("@label: color", "Blue (%):"));
     d->blueGain             = new DDoubleNumInput;
     d->blueGain->setDecimals(1);
     d->blueGain->setRange(-200.0, 200.0, 1);
     d->blueGain->setDefaultValue(0);
-    d->blueGain->setWhatsThis(i18n("Select the blue color gain, as a percentage, "
-                                   "for the current channel."));
+    d->blueGain->setWhatsThis(i18nc("@info", "Select the blue color gain, as a percentage, "
+                                    "for the current channel."));
 
     // -------------------------------------------------------------
 
-    d->resetButton = new QPushButton(i18n("&Reset"));
+    d->resetButton = new QPushButton(i18nc("@option", "&Reset"));
     d->resetButton->setIcon(QIcon::fromTheme(QLatin1String("document-revert")));
-    d->resetButton->setWhatsThis(i18n("Reset color channels' gains settings from "
-                                      "the currently selected channel."));
+    d->resetButton->setWhatsThis(i18nc("@info", "Reset color channels' gains settings from "
+                                       "the currently selected channel."));
 
     d->totalPercents = new QLabel();
     d->totalPercents->setAlignment(Qt::AlignRight | Qt::AlignVCenter);
 
     // -------------------------------------------------------------
 
-    d->preserveLuminosity = new QCheckBox(i18n("Preserve luminosity"));
-    d->preserveLuminosity->setWhatsThis(i18n("Enable this option is you want preserve "
-                                             "the image luminosity."));
+    d->preserveLuminosity = new QCheckBox(i18nc("@option", "Preserve luminosity"));
+    d->preserveLuminosity->setWhatsThis(i18nc("@info", "Enable this option is you want preserve "
+                                              "the image luminosity."));
 
     // -------------------------------------------------------------
 
-    d->monochrome     = new QCheckBox(i18n("Monochrome"));
-    d->monochromeTips = new QLabel(i18n("<p>Use <b>Monochrome</b> mode to convert color picture to Black and White:</p>"
-                                        "<p>The <qt><font color=\"red\">red channel</font></qt> modifies <a href='https://en.wikipedia.org/wiki/Contrast_(vision)'>the contrast</a> of photograph.</p>"
-                                        "<p>The <qt><font color=\"green\">green channel</font></qt> enhances or reduces the details level of photograph.</p>"
-                                        "<p>The <qt><font color=\"blue\">blue channel</font></qt> affects <a href='https://en.wikipedia.org/wiki/Image_noise'>the noise</a> of photograph.</p>"
-                                        "<p><u>Note:</u> in this mode, the histogram will display only luminosity values.</p>"));
+    d->monochrome     = new QCheckBox(i18nc("@option: color", "Monochrome"));
+    d->monochromeTips = new QLabel(i18nc("@info: help",
+                                         "Use \"Monochrome\" mode to convert color picture to Black and White:\n"
+                                         "The \"red channel\" modifies the contrast of photograph.\n"
+                                         "The \"green channel\" enhances or reduces the details level of photograph.\n"
+                                         "The \"blue channel\" affects the noise of photograph.\n"
+                                         "Note: in this mode, the histogram will display only luminosity values."));
 
     d->monochromeTips->setEnabled(false);
     d->monochromeTips->setFont(QFontDatabase::systemFont(QFontDatabase::SmallestReadableFont));
@@ -354,7 +356,7 @@ void MixerSettings::updateTotalPercents()
 {
     double total = d->redGain->value() + d->greenGain->value() + d->blueGain->value();
     QString str;
-    d->totalPercents->setText(i18n("Total: %1 (%)", str.sprintf("%3.1f", total)));
+    d->totalPercents->setText(i18nc("@info: progress", "Total: %1 (%)", str.asprintf("%3.1f", total)));
 }
 
 void MixerSettings::updateSettingsWidgets()
@@ -548,7 +550,7 @@ void MixerSettings::loadSettings()
     FILE*          fp = nullptr;
     MixerContainer settings;
 
-    loadGainsFileUrl = DFileDialog::getOpenFileUrl(qApp->activeWindow(), i18n("Select Gimp Gains Mixer File to Load"),
+    loadGainsFileUrl = DFileDialog::getOpenFileUrl(qApp->activeWindow(), i18nc("@info", "Select Gimp Gains Mixer File to Load"),
                                                    QUrl::fromLocalFile(QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation)),
                                                    QLatin1String("*"));
 
@@ -557,7 +559,15 @@ void MixerSettings::loadSettings()
         return;
     }
 
-    fp = fopen(QFile::encodeName(loadGainsFileUrl.toLocalFile()).constData(), "r");
+#ifdef Q_OS_WIN
+
+    fp = _wfopen((const wchar_t*)loadGainsFileUrl.toLocalFile().utf16(), L"r");
+
+#else
+
+    fp = fopen(loadGainsFileUrl.toLocalFile().toUtf8().constData(), "r");
+
+#endif
 
     if (fp)
     {
@@ -620,7 +630,7 @@ void MixerSettings::loadSettings()
     else
     {
         QMessageBox::critical(qApp->activeWindow(), qApp->applicationName(),
-                              i18n("Cannot load settings from the Gains Mixer text file."));
+                              i18nc("@info", "Cannot load settings from the Gains Mixer text file."));
         return;
     }
 }
@@ -630,7 +640,7 @@ void MixerSettings::saveAsSettings()
     QUrl  saveGainsFileUrl;
     FILE* fp = nullptr;
 
-    saveGainsFileUrl = DFileDialog::getSaveFileUrl(qApp->activeWindow(), i18n("Gimp Gains Mixer File to Save"),
+    saveGainsFileUrl = DFileDialog::getSaveFileUrl(qApp->activeWindow(), i18nc("@info", "Gimp Gains Mixer File to Save"),
                                                    QUrl::fromLocalFile(QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation)),
                                                    QLatin1String("*"));
 
@@ -639,7 +649,15 @@ void MixerSettings::saveAsSettings()
         return;
     }
 
-    fp = fopen(QFile::encodeName(saveGainsFileUrl.toLocalFile()).constData(), "w");
+#ifdef Q_OS_WIN
+
+    fp = _wfopen((const wchar_t*)saveGainsFileUrl.toLocalFile().utf16(), L"w");
+
+#else
+
+    fp = fopen(saveGainsFileUrl.toLocalFile().toUtf8().constData(), "w");
+
+#endif
 
     if (fp)
     {
@@ -701,7 +719,7 @@ void MixerSettings::saveAsSettings()
     else
     {
         QMessageBox::critical(qApp->activeWindow(), qApp->applicationName(),
-                              i18n("Cannot save settings to the Gains Mixer text file."));
+                              i18nc("@info", "Cannot save settings to the Gains Mixer text file."));
         return;
     }
 }

@@ -35,9 +35,6 @@
 // Local includes
 
 #include "groupstatecomputer.h"
-
-// Local includes
-
 #include "gpsiteminfosorter.h"
 #include "dnotificationwrapper.h"
 #include "digikamapp.h"
@@ -91,8 +88,8 @@ public:
     public:
 
         InternalJobs()
-            : level(0),
-              jobThread(nullptr),
+            : level           (0),
+              jobThread       (nullptr),
               dataFromDatabase()
         {
         }
@@ -103,18 +100,18 @@ public:
     };
 
     explicit Private()
-        : jobs(),
-          thumbnailLoadThread(nullptr),
-          thumbnailMap(),
-          rectList(),
-          rectLevel(),
-          activeState(true),
-          imagesHash(),
-          imageFilterModel(),
-          imageAlbumModel(),
-          selectionModel(),
+        : jobs                  (),
+          thumbnailLoadThread   (nullptr),
+          thumbnailMap          (),
+          rectList              (),
+          rectLevel             (),
+          activeState           (true),
+          imagesHash            (),
+          imageFilterModel      (),
+          imageAlbumModel       (),
+          selectionModel        (),
           currentRegionSelection(),
-          mapGlobalGroupState()
+          mapGlobalGroupState   ()
     {
     }
 
@@ -134,12 +131,13 @@ public:
 
 /**
  * @brief Constructor
- * @param parent Parent object
+ * @param parent the parent object
  */
-GPSMarkerTiler::GPSMarkerTiler(QObject* const parent, ItemFilterModel* const imageFilterModel,
+GPSMarkerTiler::GPSMarkerTiler(QObject* const parent,
+                               ItemFilterModel* const imageFilterModel,
                                QItemSelectionModel* const selectionModel)
     : AbstractMarkerTiler(parent),
-      d(new Private())
+      d                  (new Private())
 {
     resetRootTile();
 
@@ -263,7 +261,7 @@ void GPSMarkerTiler::prepareTiles(const GeoCoordinates& upperLeft, const GeoCoor
     jobInfo.setLng1(lng1);
     jobInfo.setLng2(lng2);
 
-    GPSDBJobsThread *const currentJob = DBJobsManager::instance()->startGPSJobThread(jobInfo);
+    GPSDBJobsThread* const currentJob = DBJobsManager::instance()->startGPSJobThread(jobInfo);
 
     Private::InternalJobs currentJobInfo;
 
@@ -308,19 +306,19 @@ AbstractMarkerTiler::Tile* GPSMarkerTiler::getTile(const TileIndex& tileIndex, c
                 const GPSItemInfo currentItemInfo = d->imagesHash[currentImageId];
                 const TileIndex markerTileIndex   = TileIndex::fromCoordinates(currentItemInfo.coordinates, level);
                 const int newTileIndex            = markerTileIndex.lastIndex();
-                MyTile* const newTile             = static_cast<MyTile*>(tile->getChild(newTileIndex));
+                MyTile* const newTile1            = static_cast<MyTile*>(tile->getChild(newTileIndex));
 
-                if (newTile == nullptr)
+                if (newTile1 == nullptr)
                 {
-                    MyTile* const newTile = static_cast<MyTile*>(tileNew());
-                    newTile->imagesId.append(currentImageId);
-                    tile->addChild(newTileIndex, newTile);
+                    MyTile* const newTile2 = static_cast<MyTile*>(tileNew());
+                    newTile2->imagesId.append(currentImageId);
+                    tile->addChild(newTileIndex, newTile2);
                 }
                 else
                 {
-                    if (!newTile->imagesId.contains(currentImageId))
+                    if (!newTile1->imagesId.contains(currentImageId))
                     {
-                        newTile->imagesId.append(currentImageId);
+                        newTile1->imagesId.append(currentImageId);
                     }
                 }
             }
@@ -598,7 +596,7 @@ void GPSMarkerTiler::slotMapImagesJobResult()
 
     if (d->jobs.at(foundIndex).jobThread->hasErrors())
     {
-        const QString &err = d->jobs.at(foundIndex).jobThread->errorsList().first();
+        const QString& err = d->jobs.at(foundIndex).jobThread->errorsList().first();
 
         qCWarning(DIGIKAM_GENERAL_LOG) << "Failed to list images in selected area: "
                                        << err;
@@ -618,7 +616,7 @@ void GPSMarkerTiler::slotMapImagesJobResult()
     const int wantedLevel = d->jobs.at(foundIndex).level;
 */
     // remove the finished job
-    
+
     d->jobs[foundIndex].jobThread->cancel();
     d->jobs[foundIndex].jobThread = nullptr;
     d->jobs.removeAt(foundIndex);

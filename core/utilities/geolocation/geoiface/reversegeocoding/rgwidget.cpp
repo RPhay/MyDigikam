@@ -86,50 +86,50 @@ class Q_DECL_HIDDEN RGWidget::Private
 public:
 
     explicit Private()
-        : currentlyAskingCancelQuestion(false),
-          hideOptions(true),
-          UIEnabled(true),
-          label(nullptr),
-          imageModel(nullptr),
-          selectionModel(nullptr),
-          buttonRGSelected(nullptr),
-          undoCommand(nullptr),
-          serviceComboBox(nullptr),
-          languageEdit(nullptr),
-          currentBackend(nullptr),
-          requestedRGCount(0),
-          receivedRGCount(0),
-          buttonHideOptions(nullptr),
-          iptc(nullptr),
-          xmpLoc(nullptr),
-          xmpKey(nullptr),
-          UGridContainer(nullptr),
-          LGridContainer(nullptr),
-          serviceLabel(nullptr),
-          languageLabel(nullptr),
-          separator(nullptr),
-          tagModel(nullptr),
-          tagTreeView(nullptr),
-          tagSelectionModel(nullptr),
-          actionAddCountry(nullptr),
-          actionAddState(nullptr),
-          actionAddStateDistrict(nullptr),
-          actionAddCounty(nullptr),
-          actionAddCity(nullptr),
-          actionAddCityDistrict(nullptr),
-          actionAddSuburb(nullptr),
-          actionAddTown(nullptr),
-          actionAddVillage(nullptr),
-          actionAddHamlet(nullptr),
-          actionAddStreet(nullptr),
-          actionAddHouseNumber(nullptr),
-          actionAddPlace(nullptr),
-          actionAddLAU2(nullptr),
-          actionAddLAU1(nullptr),
-          actionAddCustomizedSpacer(nullptr),
-          actionRemoveTag(nullptr),
-          actionRemoveAllSpacers(nullptr),
-          actionAddAllAddressElementsToTag(nullptr)
+        : currentlyAskingCancelQuestion     (false),
+          hideOptions                       (true),
+          UIEnabled                         (true),
+          label                             (nullptr),
+          imageModel                        (nullptr),
+          selectionModel                    (nullptr),
+          buttonRGSelected                  (nullptr),
+          undoCommand                       (nullptr),
+          serviceComboBox                   (nullptr),
+          languageEdit                      (nullptr),
+          currentBackend                    (nullptr),
+          requestedRGCount                  (0),
+          receivedRGCount                   (0),
+          buttonHideOptions                 (nullptr),
+          iptc                              (nullptr),
+          xmpLoc                            (nullptr),
+          xmpKey                            (nullptr),
+          UGridContainer                    (nullptr),
+          LGridContainer                    (nullptr),
+          serviceLabel                      (nullptr),
+          languageLabel                     (nullptr),
+          separator                         (nullptr),
+          tagModel                          (nullptr),
+          tagTreeView                       (nullptr),
+          tagSelectionModel                 (nullptr),
+          actionAddCountry                  (nullptr),
+          actionAddState                    (nullptr),
+          actionAddStateDistrict            (nullptr),
+          actionAddCounty                   (nullptr),
+          actionAddCity                     (nullptr),
+          actionAddCityDistrict             (nullptr),
+          actionAddSuburb                   (nullptr),
+          actionAddTown                     (nullptr),
+          actionAddVillage                  (nullptr),
+          actionAddHamlet                   (nullptr),
+          actionAddStreet                   (nullptr),
+          actionAddHouseNumber              (nullptr),
+          actionAddPlace                    (nullptr),
+          actionAddLAU2                     (nullptr),
+          actionAddLAU1                     (nullptr),
+          actionAddCustomizedSpacer         (nullptr),
+          actionRemoveTag                   (nullptr),
+          actionRemoveAllSpacers            (nullptr),
+          actionAddAllAddressElementsToTag  (nullptr)
     {
     }
 
@@ -137,7 +137,7 @@ public:
     bool                 hideOptions;
     bool                 UIEnabled;
     QLabel*              label;
-    GPSItemModel*       imageModel;
+    GPSItemModel*        imageModel;
     QItemSelectionModel* selectionModel;
     QPushButton*         buttonRGSelected;
 
@@ -195,7 +195,7 @@ public:
 RGWidget::RGWidget(GPSItemModel* const imageModel, QItemSelectionModel* const selectionModel,
                    QAbstractItemModel* externTagModel, QWidget* const parent)
     : QWidget(parent),
-      d(new Private())
+      d      (new Private())
 {
     d->imageModel     = imageModel;
     d->selectionModel = selectionModel;
@@ -206,7 +206,7 @@ RGWidget::RGWidget(GPSItemModel* const imageModel, QItemSelectionModel* const se
     d->UGridContainer             = new QWidget(this);
 
     vBoxLayout->addWidget(d->UGridContainer);
-    d->tagTreeView = new QTreeView(this);
+    d->tagTreeView                = new QTreeView(this);
     d->tagTreeView->setHeaderHidden(true);
     vBoxLayout->addWidget(d->tagTreeView);
 
@@ -427,7 +427,8 @@ void RGWidget::updateUIState()
  */
 void RGWidget::slotButtonRGSelected()
 {
-    // get the selected images:
+    // get the selected images
+
     const QModelIndexList selectedItems = d->selectionModel->selectedRows();
     int currentServiceIndex             = d->serviceComboBox->currentIndex();
     d->currentBackend                   = d->backendRGList[currentServiceIndex];
@@ -444,8 +445,10 @@ void RGWidget::slotButtonRGSelected()
         GPSItemContainer* const selectedItem      = d->imageModel->itemFromIndex(itemIndex);
         const GPSDataContainer gpsData        = selectedItem->gpsData();
 
-         if (!gpsData.hasCoordinates())
+        if (!gpsData.hasCoordinates())
+        {
             continue;
+        }
 
         const qreal latitude  = gpsData.getCoordinates().lat();
         const qreal longitude = gpsData.getCoordinates().lon();
@@ -538,7 +541,7 @@ void RGWidget::slotRGReady(QList<RGInfo>& returnedRGList)
             QString addressFormat      = combinedResult[0];
             QString addressElements    = combinedResult[1];
 
-            //removes first "/" from tag addresses
+            // removes first "/" from tag addresses
 
             addressFormat.remove(0, 1);
             addressElements.remove(0, 1);
@@ -549,10 +552,10 @@ void RGWidget::slotRGReady(QList<RGInfo>& returnedRGList)
             const QStringList listAddressFormat               = addressFormat.split(QLatin1Char('/'));
             QStringList elements, resultedData;
 
-            for (int i = 0 ; i < listAddressElementsWantedFormat.count() ; ++i)
+            for (int j = 0 ; j < listAddressElementsWantedFormat.count() ; ++j)
             {
-                QString currentAddressFormat = listAddressElementsWantedFormat.at(i);
-                int currentIndexFormat       = listAddressFormat.indexOf(currentAddressFormat,0);
+                QString currentAddressFormat = listAddressElementsWantedFormat.at(j);
+                int currentIndexFormat       = listAddressFormat.indexOf(currentAddressFormat, 0);
 
                 if (currentIndexFormat != -1)
                 {
@@ -562,7 +565,7 @@ void RGWidget::slotRGReady(QList<RGInfo>& returnedRGList)
             }
 
             QList<QList<TagData> > returnedTags = d->tagModel->addNewData(elements, resultedData);
-            GPSItemContainer* const currentItem     = d->imageModel->itemFromIndex(currentImageIndex);
+            GPSItemContainer* const currentItem = d->imageModel->itemFromIndex(currentImageIndex);
 
             GPSUndoCommand::UndoInfo undoInfo(currentImageIndex);
             undoInfo.readOldDataFromItem(currentItem);

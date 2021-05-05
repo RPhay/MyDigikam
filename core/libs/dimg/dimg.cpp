@@ -8,7 +8,7 @@
  *               Contructors and destructor.
  *
  * Copyright (C) 2005      by Renchi Raju <renchi dot raju at gmail dot com>
- * Copyright (C) 2005-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2005-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2006-2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  *
  * This program is free software; you can redistribute it
@@ -134,7 +134,7 @@ DImg::DImg(uint width, uint height, bool sixteenBit, bool alpha, uchar* const da
     putImageData(width, height, sixteenBit, alpha, data, copyData);
 }
 
-DImg::DImg(const DImg& image, int w, int h)
+DImg::DImg(const DImg& image, uint w, uint h)
     : m_priv(new Private)
 {
     /**

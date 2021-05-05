@@ -7,7 +7,7 @@
  * Description : a presentation tool.
  *
  * Copyright (C) 2008      by Valerio Fuoglio <valerio dot fuoglio at gmail dot com>
- * Copyright (C) 2012-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -33,14 +33,16 @@ namespace DigikamGenericPresentationPlugin
 
 class PresentationContainer;
 
-class PresentationCaptionPage : public QWidget, Ui::PresentationCaptionPage
+class PresentationCaptionPage : public QWidget,
+                                public Ui::PresentationCaptionPage
 {
     Q_OBJECT
 
 public:
 
-    explicit PresentationCaptionPage(QWidget* const parent, PresentationContainer* const sharedData);
-    ~PresentationCaptionPage();
+    explicit PresentationCaptionPage(QWidget* const parent,
+                                     PresentationContainer* const sharedData);
+    ~PresentationCaptionPage() override;
 
     void readSettings();
     void saveSettings();

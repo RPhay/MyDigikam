@@ -36,12 +36,15 @@ namespace Digikam
 class DIGIKAM_EXPORT IccTransformFilter : public DImgThreadedFilter,
                                           public DImgLoaderObserver
 {
+    Q_OBJECT
 
 public:
 
     explicit IccTransformFilter(QObject* const parent = nullptr);
-    explicit IccTransformFilter(DImg* const orgImage, QObject* const parent, const IccTransform& transform);
-    ~IccTransformFilter();
+    explicit IccTransformFilter(DImg* const orgImage,
+                                QObject* const parent,
+                                const IccTransform& transform);
+    ~IccTransformFilter()                                                                   override;
 
     static QString          FilterIdentifier()
     {
@@ -60,21 +63,21 @@ public:
         return 1;
     }
 
-    virtual QString         filterIdentifier() const                                        override
+    QString         filterIdentifier()                                                const override
     {
         return FilterIdentifier();
     }
 
-    virtual FilterAction    filterAction()                                                  override;
+    FilterAction    filterAction()                                                          override;
 
     void                    readParameters(const FilterAction& action)                      override;
-    bool                    parametersSuccessfullyRead() const                              override;
+    bool                    parametersSuccessfullyRead()                              const override;
     QString                 readParametersError(const FilterAction& actionThatFailed) const override;
 
 protected:
 
-    virtual void progressInfo(float progress)                                               override;
-    virtual void filterImage()                                                              override;
+    void progressInfo(float progress)                                                       override;
+    void filterImage()                                                                      override;
 
 private:
 

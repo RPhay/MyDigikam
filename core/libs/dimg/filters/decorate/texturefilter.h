@@ -6,7 +6,7 @@
  * Date        : 2005-05-25
  * Description : TextureFilter threaded image filter.
  *
- * Copyright (C) 2005-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2005-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2006-2010 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  * Copyright (C) 2010      by Martin Klapetek <martin dot klapetek at gmail dot com>
  *
@@ -34,22 +34,23 @@
 
 #include "digikam_export.h"
 #include "dimgthreadedfilter.h"
+#include "texturecontainer.h"
 
 namespace Digikam
 {
 
 class DIGIKAM_EXPORT TextureFilter : public DImgThreadedFilter
 {
+    Q_OBJECT
 
 public:
 
     explicit TextureFilter(QObject* const parent = nullptr);
     explicit TextureFilter(DImg* const orgImage,
-                           QObject* const parent=nullptr,
-                           int blendGain=200,
-                           const QString& texturePath=QString());
+                           QObject* const parent = nullptr,
+                           const TextureContainer& settings = TextureContainer());
 
-    ~TextureFilter();
+    ~TextureFilter() override;
 
     static QString          FilterIdentifier()
     {
@@ -60,20 +61,20 @@ public:
 
     static QList<int>       SupportedVersions()
     {
-        return QList<int>() << 1;
+        return QList<int>() << 2;
     }
 
     static int              CurrentVersion()
     {
-        return 1;
+        return 2;
     }
 
-    virtual QString         filterIdentifier()                          const override
+    QString         filterIdentifier()                          const override
     {
         return FilterIdentifier();
     }
 
-    virtual FilterAction    filterAction()                                    override;
+    FilterAction    filterAction()                                    override;
     void                    readParameters(const FilterAction& action)        override;
 
 private:
@@ -82,9 +83,7 @@ private:
 
 private:
 
-    int     m_blendGain;
-
-    QString m_texturePath;
+    TextureContainer m_settings;
 };
 
 } // namespace Digikam

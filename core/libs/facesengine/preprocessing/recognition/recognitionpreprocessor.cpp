@@ -6,7 +6,8 @@
  * Date        : 2019-07-09
  * Description : Preprocessor for face recognition
  *
- * Copyright (C) 2019 by Thanh Trung Dinh <dinhthanhtrung1996 at gmail dot com>
+ * Copyright (C) 2019      by Thanh Trung Dinh <dinhthanhtrung1996 at gmail dot com>
+ * Copyright (C) 2019-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -40,7 +41,7 @@ public:
     ~Private();
 
     void init(PreprocessorSelection mode);
-    cv::Mat preprocess(const cv::Mat& image);
+    cv::Mat preprocess(const cv::Mat& image) const;
 
 private:
 
@@ -53,7 +54,7 @@ private:
 
 RecognitionPreprocessor::Private::Private()
   : preprocessingMode(-1),
-    ofpreprocessor(nullptr)
+    ofpreprocessor   (nullptr)
 {
 }
 
@@ -71,9 +72,10 @@ void RecognitionPreprocessor::Private::init(PreprocessorSelection mode)
         case OPENFACE:
         {
             ofpreprocessor = new OpenfacePreprocessor;
-            ofpreprocessor->init();
+            ofpreprocessor->loadModels();
             break;
         }
+
         default:
         {
             qCDebug(DIGIKAM_FACEDB_LOG) << "Error unknown preprocessingMode " << preprocessingMode;
@@ -82,7 +84,7 @@ void RecognitionPreprocessor::Private::init(PreprocessorSelection mode)
     }
 }
 
-cv::Mat RecognitionPreprocessor::Private::preprocess(const cv::Mat& image)
+cv::Mat RecognitionPreprocessor::Private::preprocess(const cv::Mat& image) const
 {
     switch (preprocessingMode)
     {
@@ -92,6 +94,7 @@ cv::Mat RecognitionPreprocessor::Private::preprocess(const cv::Mat& image)
 
             return ofpreprocessor->process(image);
         }
+
         default:
         {
             qCDebug(DIGIKAM_FACEDB_LOG) << "Error unknown preprocessingMode " << preprocessingMode;
@@ -104,8 +107,8 @@ cv::Mat RecognitionPreprocessor::Private::preprocess(const cv::Mat& image)
 // ------------------------------------------------------------------------------------------------------
 
 RecognitionPreprocessor::RecognitionPreprocessor()
-    : Preprocessor(),
-      d(new Private)
+    : FacePreprocessor(),
+      d               (new Private)
 {
 }
 
@@ -119,7 +122,7 @@ void RecognitionPreprocessor::init(PreprocessorSelection mode)
     d->init(mode);
 }
 
-cv::Mat RecognitionPreprocessor::preprocess(const cv::Mat& image)
+cv::Mat RecognitionPreprocessor::preprocess(const cv::Mat& image) const
 {
     return d->preprocess(image);
 }

@@ -1,8 +1,10 @@
 #
-# Copyright (c) 2015-2020 by Gilles Caulier, <caulier dot gilles at gmail dot com>
+# Copyright (c) 2015-2021 by Gilles Caulier, <caulier dot gilles at gmail dot com>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
+
+APPLY_COMMON_POLICIES()
 
 include(MacroDPlugins)
 
@@ -15,12 +17,8 @@ include_directories($<TARGET_PROPERTY:Qt5::Gui,INTERFACE_INCLUDE_DIRECTORIES>
 )
 
 set(hotpixelstoolplugin_SRCS
-    ${CMAKE_CURRENT_SOURCE_DIR}/blackframeparser.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/blackframelistview.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/hotpixelfixer.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/hotpixelstoolplugin.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/hotpixelstool.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/hotpixelsweights.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/hotpixelstoolplugin.cpp
 )
 
 DIGIKAM_ADD_EDITOR_PLUGIN(NAME    HotpixelsTool

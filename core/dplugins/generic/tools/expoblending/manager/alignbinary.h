@@ -6,7 +6,7 @@
  * Date        : 2009-12-23
  * Description : Autodetect align_image_stack binary program and version
  *
- * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2012-2015 by Benjamin Girault <benjamin dot girault at gmail dot com>
  *
  * This program is free software; you can redistribute it
@@ -35,25 +35,17 @@ namespace DigikamGenericExpoBlendingPlugin
 
 class AlignBinary : public DBinaryIface
 {
+    Q_OBJECT
+
 public:
 
-    explicit AlignBinary()
-        : DBinaryIface(QLatin1String("align_image_stack"),
-                       QLatin1String("0.8"),
-                       QLatin1String("align_image_stack version "),
-                       1,
-                       QLatin1String("Hugin"),
-                       QLatin1String("http://hugin.sourceforge.net/download/"),
-                       QLatin1String("ExpoBlending"),
-                       QStringList(QLatin1String("-h"))
-                      )
-        {
-            setup();
-        }
+    explicit AlignBinary();
+    ~AlignBinary() override;
 
-    ~AlignBinary()
-    {
-    }
+private:
+
+    // Disable
+    explicit AlignBinary(QObject*) = delete;
 };
 
 } // namespace DigikamGenericExpoBlendingPlugin

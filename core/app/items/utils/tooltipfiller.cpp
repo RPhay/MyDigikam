@@ -6,7 +6,7 @@
  * Date        : 2008-12-10
  * Description : album icon view tool tip
  *
- * Copyright (C) 2008-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2008-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2013      by Michael G. Hansen <mike at mghansen dot de>
  *
  * This program is free software; you can redistribute it
@@ -107,15 +107,14 @@ QString ToolTipFiller::imageInfoTipContents(const ItemInfo& info)
 
         if (settings->getToolTipsShowImageDim())
         {
-            if (commonInfo.width == 0 || commonInfo.height == 0)
+            if ((commonInfo.width == 0) || (commonInfo.height == 0))
             {
                 str = i18nc("unknown / invalid image dimension",
                             "Unknown");
             }
             else
             {
-                QString mpixels;
-                mpixels.setNum(commonInfo.width*commonInfo.height/1000000.0, 'f', 2);
+                QString mpixels = QLocale().toString(commonInfo.width*commonInfo.height/1000000.0, 'f', 1);
                 str = i18nc("width x height (megapixels Mpx)", "%1x%2 (%3Mpx)",
                             commonInfo.width, commonInfo.height, mpixels);
             }
@@ -178,7 +177,9 @@ QString ToolTipFiller::imageInfoTipContents(const ItemInfo& info)
                     int space = str.lastIndexOf(QLatin1Char(' '), cnt.maxStringLength);
 
                     if (space == -1)
+                    {
                         space = cnt.maxStringLength;
+                    }
 
                     metaStr += cnt.cellBeg + lens + cnt.cellMid + str.left(space).toHtmlEscaped() + cnt.cellEnd;
 
@@ -251,7 +252,7 @@ QString ToolTipFiller::imageInfoTipContents(const ItemInfo& info)
 
             if (settings->getToolTipsShowPhotoMode())
             {
-                if (photoInfo.exposureMode.isEmpty() && photoInfo.exposureProgram.isEmpty())
+                if      (photoInfo.exposureMode.isEmpty() && photoInfo.exposureProgram.isEmpty())
                 {
                     str = cnt.unavailable;
                 }
@@ -351,7 +352,7 @@ QString ToolTipFiller::imageInfoTipContents(const ItemInfo& info)
                     s = r / 1000;
                     f = r % 1000;
 
-                    durationString = QString().sprintf("%d.%02d:%02d:%02d.%03d", d, h, m, s, f);
+                    durationString = QString().asprintf("%d.%02d:%02d:%02d.%03d", d, h, m, s, f);
                 }
 
                 str = videoInfo.duration.isEmpty() ? cnt.unavailable : durationString;
@@ -519,7 +520,7 @@ QString ToolTipFiller::imageInfoTipContents(const ItemInfo& info)
                         tagText = cnt.elidedText(tagPaths.at(i), Qt::ElideLeft);
                     }
 
-                    tip += cnt.cellSpecBeg + title + cnt.cellSpecMid + tagText + cnt.cellSpecEnd;
+                    tip += cnt.cellSpecBeg + title + cnt.cellSpecMid + tagText.toHtmlEscaped() + cnt.cellSpecEnd;
                     title.clear();
                 }
             }
@@ -535,7 +536,7 @@ QString ToolTipFiller::imageInfoTipContents(const ItemInfo& info)
 
             int rating = info.rating();
 
-            if (rating > RatingMin && rating <= RatingMax)
+            if ((rating > RatingMin) && (rating <= RatingMax))
             {
                 for (int i = 0 ; i < rating ; ++i)
                 {
@@ -579,7 +580,7 @@ QString ToolTipFiller::albumTipContents(PAlbum* const album, int count)
 
         if (settings->getToolTipsShowAlbumTitle())
         {
-            tip += cnt.cellBeg + i18n("Name:") + cnt.cellMid;
+            tip += cnt.cellBeg + i18nc("@info: item properties", "Name:") + cnt.cellMid;
             tip += album->title() + cnt.cellEnd;
         }
 
@@ -625,7 +626,7 @@ QString ToolTipFiller::albumTipContents(PAlbum* const album, int count)
                 str = QLatin1String("---");
             }
 
-            tip += cnt.cellSpecBeg + i18n("Caption:") + cnt.cellSpecMid +
+            tip += cnt.cellSpecBeg + i18nc("@info: item properties", "Caption:") + cnt.cellSpecMid +
                    cnt.breakString(str) + cnt.cellSpecEnd;
         }
 
@@ -658,10 +659,12 @@ QString ToolTipFiller::filterActionTipContents(const FilterAction& action)
     tip += cnt.headBeg + i18n("Filter") + cnt.headEnd;
 
     // Displayable name
-    tip += cnt.cellBeg + i18n("Name:") + cnt.cellMid
+
+    tip += cnt.cellBeg + i18nc("@info: item properties", "Name:") + cnt.cellMid
         + DImgFilterManager::instance()->i18nDisplayableName(action) + cnt.cellEnd;
 
     // Category
+
     QString reproducible = QLatin1String("---");
 
     switch (action.category())
@@ -669,12 +672,15 @@ QString ToolTipFiller::filterActionTipContents(const FilterAction& action)
         case FilterAction::ReproducibleFilter:
             reproducible = i18nc("Image filter reproducible: Yes", "Yes");
             break;
+
         case FilterAction::ComplexFilter:
             reproducible = i18nc("Image filter reproducible: Partially", "Partially");
             break;
+
         case FilterAction::DocumentedHistory:
             reproducible = i18nc("Image filter reproducible: No", "No");
             break;
+
         default:
             break;
     };
@@ -695,6 +701,7 @@ QString ToolTipFiller::filterActionTipContents(const FilterAction& action)
         + cnt.breakString(str) + cnt.cellSpecEnd;
 
     // Identifier + version
+
     tip += cnt.cellBeg + i18n("Identifier:") + cnt.cellMid
         + action.identifier() + QLatin1String(" (v") + QString::number(action.version()) + QLatin1String(") ") + cnt.cellEnd;
 
@@ -710,7 +717,7 @@ QString ToolTipFiller::filterActionTipContents(const FilterAction& action)
         {
             QHash<QString, QVariant>::const_iterator it;
 
-            for (it = params.find(key) ; it != params.end() && it.key() == key ; ++it)
+            for (it = params.find(key) ; ((it != params.end()) && (it.key() == key)) ; ++it)
             {
                 if (it.key().isEmpty() || !it.value().isValid())
                 {

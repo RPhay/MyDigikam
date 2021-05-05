@@ -7,7 +7,7 @@
  * Description : a dialog to select user for Web Service tools
  *
  * Copyright (C) 2015      by Shourya Singh Gupta <shouryasgupta at gmail dot com>
- * Copyright (C) 2016-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2016-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -35,7 +35,7 @@
 // KDE includes
 
 #include <klocalizedstring.h>
-#include <kconfig.h>
+#include <ksharedconfig.h>
 #include <kconfiggroup.h>
 
 namespace Digikam
@@ -47,8 +47,8 @@ public:
 
     explicit Private()
       : userComboBox(nullptr),
-        label(nullptr),
-        okButton(nullptr)
+        label       (nullptr),
+        okButton    (nullptr)
     {
     }
 
@@ -61,7 +61,7 @@ public:
 
 WSSelectUserDlg::WSSelectUserDlg(QWidget* const parent, const QString& serviceName)
     : QDialog(parent),
-      d(new Private)
+      d      (new Private)
 {
     d->serviceName = serviceName;
 
@@ -123,18 +123,18 @@ WSSelectUserDlg::~WSSelectUserDlg()
 
 void WSSelectUserDlg::reactivate()
 {
-    KConfig config;
+    KSharedConfigPtr config = KSharedConfig::openConfig();
 
     d->userComboBox->clear();
 
-    foreach (const QString& group, config.groupList())
+    foreach (const QString& group, config->groupList())
     {
         if (!(group.contains(d->serviceName)))
         {
             continue;
         }
 
-        KConfigGroup grp = config.group(group);
+        KConfigGroup grp = config->group(group);
 
         if (QString::compare(grp.readEntry(QLatin1String("username")), QString(), Qt::CaseInsensitive) == 0)
         {

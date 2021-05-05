@@ -7,7 +7,7 @@
  * Description : history updater thread for importui
  *
  * Copyright (C) 2009-2011 by Andi Clemens <andi dot clemens at gmail dot com>
- * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -51,7 +51,7 @@ public:
 
     explicit Private()
       : canceled(false),
-        running(false)
+        running (false)
     {
     }
 
@@ -67,7 +67,7 @@ public:
 
 CameraHistoryUpdater::CameraHistoryUpdater(QWidget* const parent)
     : QThread(parent),
-      d(new Private)
+      d      (new Private)
 {
     qRegisterMetaType<CHUpdateItemMap>("CHUpdateItemMap");
 }
@@ -75,6 +75,7 @@ CameraHistoryUpdater::CameraHistoryUpdater(QWidget* const parent)
 CameraHistoryUpdater::~CameraHistoryUpdater()
 {
     // clear updateItems, stop processing
+
     slotCancel();
 
     // stop thread
@@ -155,6 +156,7 @@ void CameraHistoryUpdater::proccessMap(const QByteArray& id, CHUpdateItemMap& ma
     do
     {
         // We query database to check if (*it).have been already downloaded from camera.
+
         switch (CoreDbDownloadHistory::status(QString::fromUtf8(id), (*it).name, (*it).size, (*it).ctime))
         {
             case CoreDbDownloadHistory::NotDownloaded:

@@ -61,7 +61,7 @@ public:
     /**
      * Returns true if the current number of added workers has reached the optimalWorkerCount()
      */
-    bool optimalWorkerCountReached() const;
+    bool optimalWorkerCountReached()                            const;
 
     /**
      * Regarding the number of logical CPUs on the current machine,
@@ -76,7 +76,7 @@ public:
     bool connect(const char* signal,
                  const QObject* receiver,
                  const char* method,
-                 Qt::ConnectionType type = Qt::AutoConnection) const;
+                 Qt::ConnectionType type = Qt::AutoConnection)  const;
 
 protected:
 
@@ -86,7 +86,7 @@ protected:
 
     /// Replaces slot call distribution of the target QObject
     int replacementQtMetacall(QMetaObject::Call _c, int _id, void** _a);
-    const QMetaObject* replacementMetaObject() const;
+    const QMetaObject* replacementMetaObject()                  const;
 
     /// Return the target QObject (double inheritance)
     virtual QObject* asQObject()                                                        = 0;
@@ -95,7 +95,7 @@ protected:
     virtual int WorkerObjectQtMetacall(QMetaObject::Call _c, int _id, void** _a)        = 0;
 
     /// The moc-generated metaObject of the target object
-    virtual const QMetaObject* mocMetaObject() const                                    = 0;
+    virtual const QMetaObject* mocMetaObject()                  const                   = 0;
 
     int replacementStaticQtMetacall(QMetaObject::Call _c, int _id, void** _a);
     typedef void (*StaticMetacallFunction)(QObject*, QMetaObject::Call, int, void**);
@@ -108,6 +108,12 @@ protected:
     QMetaObject*           m_replacementMetaObject;
 
     StaticMetacallFunction m_originalStaticMetacall;
+
+private:
+
+    // Disable
+    ParallelWorkers(const ParallelWorkers&)            = delete;
+    ParallelWorkers& operator=(const ParallelWorkers&) = delete;
 };
 
 // -------------------------------------------------------------------------------------------------
@@ -128,8 +134,13 @@ public:
      * For outbound connections (signals emitted from the WorkerObject),
      * use ParallelAdapter's connect to have a connection from all added WorkerObjects.
      */
-    explicit ParallelAdapter() {}
-    ~ParallelAdapter()         {}
+    explicit ParallelAdapter()
+    {
+    }
+
+    ~ParallelAdapter()                                                   override
+    {
+    }
 
     void add(A* const worker)
     {
@@ -144,7 +155,7 @@ public:
         return WorkerObject::qt_metacall(_c, _id, _a);
     }
 
-    const QMetaObject* mocMetaObject() const override
+    const QMetaObject* mocMetaObject()                             const override
     {
         return A::metaObject();
     }
@@ -154,22 +165,22 @@ public:
         static_cast<ParallelAdapter*>(o)->replacementStaticQtMetacall(_c, _id, _a);
     }
 
-    virtual StaticMetacallFunction staticMetacallPointer() override
+    StaticMetacallFunction staticMetacallPointer()                      override
     {
         return qt_static_metacall;
     }
 
-    virtual const QMetaObject* metaObject() const override
+    const QMetaObject* metaObject()                                const override
     {
         return ParallelWorkers::replacementMetaObject();
     }
 
-    virtual int qt_metacall(QMetaObject::Call _c, int _id, void** _a) override
+    int qt_metacall(QMetaObject::Call _c, int _id, void** _a)            override
     {
         return ParallelWorkers::replacementQtMetacall(_c, _id, _a);
     }
 
-    virtual QObject* asQObject() override
+    QObject* asQObject()                                                 override
     {
         return this;
     }
@@ -192,10 +203,16 @@ public:
     bool connect(const char* signal,
                  const QObject* receiver,
                  const char* method,
-                 Qt::ConnectionType type = Qt::AutoConnection) const
+                 Qt::ConnectionType type = Qt::AutoConnection)     const
     {
         return ParallelWorkers::connect(signal, receiver, method, type);
     }
+
+private:
+
+    // Disable
+    ParallelAdapter(const ParallelAdapter&)            = delete;
+    ParallelAdapter& operator=(const ParallelAdapter&) = delete;
 };
 
 } // namespace Digikam

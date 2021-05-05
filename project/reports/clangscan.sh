@@ -1,14 +1,19 @@
 #!/bin/bash
 
-# Copyright (c) 2013-2020 by Gilles Caulier, <caulier dot gilles at gmail dot com>
+# Copyright (c) 2013-2021 by Gilles Caulier, <caulier dot gilles at gmail dot com>
 #
 # Run Clang static analyzer on whole digiKam source code.
 # https://clang-analyzer.llvm.org/
-# Dependencies : clang static analyzer version 3.9.0 (no need clang compiler).
+# Dependencies : clang static analyzer version >= 3.9.0.
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
 #
+
+# Halt and catch errors
+set -eE
+trap 'PREVIOUS_COMMAND=$THIS_COMMAND; THIS_COMMAND=$BASH_COMMAND' DEBUG
+trap 'echo "FAILED COMMAND: $PREVIOUS_COMMAND"' ERR
 
 . ./common.sh
 
@@ -20,7 +25,7 @@ WEBSITE_DIR="${ORIG_WD}/site"
 
 # Get active git branches to create report description string
 TITLE="digiKam-$(parseGitBranch)$(parseGitHash)"
-echo "Clang Static Analyzer task name: $TITLE"
+echo "Clang Scan Static Analyzer task name: $TITLE"
 
 # Clean up and prepare to scan.
 
@@ -40,10 +45,6 @@ scan-build cmake -G "Unix Makefiles" . \
       -DDIGIKAMSC_CHECKOUT_DOC=OFF \
       -DDIGIKAMSC_COMPILE_PO=OFF \
       -DDIGIKAMSC_COMPILE_DOC=OFF \
-      -DDIGIKAMSC_COMPILE_DIGIKAM=ON \
-      -DDIGIKAMSC_COMPILE_LIBKSANE=ON \
-      -DDIGIKAMSC_COMPILE_LIBMEDIAWIKI=ON \
-      -DDIGIKAMSC_COMPILE_LIBKVKONTAKTE=ON \
       -DENABLE_KFILEMETADATASUPPORT=ON \
       -DENABLE_AKONADICONTACTSUPPORT=ON \
       -DENABLE_MYSQLSUPPORT=ON \
@@ -51,7 +52,7 @@ scan-build cmake -G "Unix Makefiles" . \
       -DENABLE_MEDIAPLAYER=ON \
       -DENABLE_DBUS=ON \
       -DENABLE_APPSTYLES=ON \
-      -DENABLE_QWEBENGINE=OFF \
+      -DENABLE_QWEBENGINE=ON \
       -Wno-dev \
       ..
 
@@ -77,7 +78,7 @@ for DROP_ITEM in $KRAZY_FILTERS ; do
     echo -e "--- drop $DROP_ITEM from index.html with statistics adjustements"
 
     # List all report types including current pattern to drop.
-    REPORT_ENTRIES=( $(grep $DROP_ITEM $SCANBUILD_DIR/index.html) )
+    REPORT_ENTRIES=( $(grep $DROP_ITEM $SCANBUILD_DIR/index.html) ) || true
 
     # STAT_ENTRIES array contains the multi-entries list of statistic types to remove.
     STAT_ENTRIES=()   # clear array

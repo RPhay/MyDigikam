@@ -7,7 +7,7 @@
  * Description : Captions, Tags, and Rating properties editor
  *
  * Copyright (C) 2003-2005 by Renchi Raju <renchi dot raju at gmail dot com>
- * Copyright (C) 2003-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2003-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2006-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  *
  * This program is free software; you can redistribute it
@@ -56,7 +56,7 @@ class ItemDescEditTab : public DVBox
 public:
 
     explicit ItemDescEditTab(QWidget* const parent);
-    ~ItemDescEditTab();
+    ~ItemDescEditTab()                      override;
 
     void assignPickLabel(int pickId);
     void assignColorLabel(int colorId);
@@ -87,7 +87,7 @@ Q_SIGNALS:
 
 protected:
 
-    bool eventFilter(QObject* o, QEvent* e);
+    bool eventFilter(QObject* o, QEvent* e) override;
 
 private:
 
@@ -133,7 +133,6 @@ private Q_SLOTS:
     void slotRatingChanged(int rating);
     void slotTemplateSelected();
     void slotModified();
-    void slotCreateNewTag();
     void slotTaggingActionActivated(const TaggingAction&);
     void slotReloadForMetadataChange();
 

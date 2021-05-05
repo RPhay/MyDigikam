@@ -57,7 +57,7 @@ public:
 
 TagMngrListModel::TagMngrListModel(QObject* const parent)
     : QAbstractItemModel(parent),
-      d(new Private())
+      d                 (new Private())
 {
     QList<QVariant> rootData;
     rootData << QLatin1String("Quick List");
@@ -277,7 +277,7 @@ Qt::ItemFlags TagMngrListModel::flags(const QModelIndex& index) const
 {
     if (!index.isValid())
     {
-        return nullptr;
+        return Qt::NoItemFlags;
     }
 
     return (
@@ -292,7 +292,7 @@ QVariant TagMngrListModel::headerData(int /*section*/, Qt::Orientation orientati
 {
     if ((orientation == Qt::Horizontal) && (role == Qt::DisplayRole))
     {
-        return QVariant(i18n("Quick Access List"));
+        return QVariant(i18nc("@info", "Quick Access List"));
     }
 
     return QVariant();
@@ -328,7 +328,7 @@ QModelIndex TagMngrListModel::index(int row, int column, const QModelIndex& pare
     }
 }
 
-QModelIndex TagMngrListModel::parent(const QModelIndex &index) const
+QModelIndex TagMngrListModel::parent(const QModelIndex& index) const
 {
     if (!index.isValid())
     {
@@ -346,7 +346,7 @@ QModelIndex TagMngrListModel::parent(const QModelIndex &index) const
     return createIndex(parentItem->row(), 0, parentItem);
 }
 
-int TagMngrListModel::rowCount(const QModelIndex &parent) const
+int TagMngrListModel::rowCount(const QModelIndex& parent) const
 {
     ListItem* parentItem = nullptr;
 

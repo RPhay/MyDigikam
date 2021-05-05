@@ -1,9 +1,11 @@
 [Desktop Entry]
 Type=Theme
 Name=Full page
+Name[bg]=Цяла страница
 Name[ca]=Pàgina sencera
 Name[ca@valencia]=Pàgina sencera
 Name[cs]=Celá stránka
+Name[da]=Hel side
 Name[de]=Ganze Seite
 Name[el]=Πλήρης σελίδα
 Name[en_GB]=Full page
@@ -22,6 +24,7 @@ Name[pl]=Pełna strona
 Name[pt]=Página completa
 Name[pt_BR]=Página completa
 Name[ru]=Фотография на всю страницу
+Name[sl]=Polna stran
 Name[sv]=Hel sida
 Name[tr]=Tam sayfa
 Name[uk]=Вся сторінка

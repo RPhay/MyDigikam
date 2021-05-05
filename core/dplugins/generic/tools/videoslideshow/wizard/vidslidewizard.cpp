@@ -6,7 +6,7 @@
  * Date        : 2017-05-25
  * Description : a tool to generate video slideshow from images.
  *
- * Copyright (C) 2017-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2017-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -35,7 +35,7 @@
 // KDE includes
 
 #include <klocalizedstring.h>
-#include <kconfig.h>
+#include <ksharedconfig.h>
 #include <kconfiggroup.h>
 
 // Local includes
@@ -85,19 +85,19 @@ VidSlideWizard::VidSlideWizard(QWidget* const parent, DInfoInterface* const ifac
     setOption(QWizard::NoCancelButtonOnLastPage);
     setWindowTitle(i18n("Create a Video Slideshow"));
 
-    d->iface             = iface;
-    d->settings          = new VidSlideSettings;
+    d->iface                = iface;
+    d->settings             = new VidSlideSettings;
 
-    KConfig config;
-    KConfigGroup group   = config.group("Video SlideShow Dialog Settings");
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup group      = config->group("Video SlideShow Dialog Settings");
     d->settings->readSettings(group);
 
-    d->introPage         = new VidSlideIntroPage(this,  i18n("Welcome to Video Slideshow Tool"));
-    d->albumsPage        = new VidSlideAlbumsPage(this, i18n("Albums Selection"));
-    d->imagesPage        = new VidSlideImagesPage(this, i18n("Images List"));
-    d->videoPage         = new VidSlideVideoPage(this,  i18n("Video Settings"));
-    d->outputPage        = new VidSlideOutputPage(this, i18n("Output Settings"));
-    d->finalPage         = new VidSlideFinalPage(this,  i18n("Generating Video Slideshow"));
+    d->introPage            = new VidSlideIntroPage(this,  i18n("Welcome to Video Slideshow Tool"));
+    d->albumsPage           = new VidSlideAlbumsPage(this, i18n("Albums Selection"));
+    d->imagesPage           = new VidSlideImagesPage(this, i18n("Images List"));
+    d->videoPage            = new VidSlideVideoPage(this,  i18n("Video Settings"));
+    d->outputPage           = new VidSlideOutputPage(this, i18n("Output Settings"));
+    d->finalPage            = new VidSlideFinalPage(this,  i18n("Generating Video Slideshow"));
 
     connect(this, SIGNAL(currentIdChanged(int)),
             this, SLOT(slotCurrentIdChanged(int)));
@@ -105,8 +105,8 @@ VidSlideWizard::VidSlideWizard(QWidget* const parent, DInfoInterface* const ifac
 
 VidSlideWizard::~VidSlideWizard()
 {
-    KConfig config;
-    KConfigGroup group = config.group("Video SlideShow Dialog Settings");
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup group      = config->group("Video SlideShow Dialog Settings");
     d->settings->writeSettings(group);
 
     delete d;

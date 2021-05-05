@@ -7,7 +7,7 @@
  * Description : Albums folder view.
  *
  * Copyright (C) 2005-2006 by Joern Ahrens <joern dot ahrens at kdemail dot net>
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2009-2011 by Andi Clemens <andi dot clemens at gmail dot com>
  * Copyright (C) 2009-2011 by Johannes Wienke <languitar at semipol dot de>
  *
@@ -55,7 +55,7 @@ public:
     AlbumSelectionTreeView(QWidget* const parent,
                            AlbumModel* const model,
                            AlbumModificationHelper* const albumModificationHelper);
-    ~AlbumSelectionTreeView();
+    ~AlbumSelectionTreeView()         override;
 
     /**
      * Sets whether this widget shall display tool tips or not.
@@ -69,7 +69,7 @@ Q_SIGNALS:
      *
      * @param album the album to find duplicates in
      */
-    void signalFindDuplicates(PAlbum* album);
+    void signalFindDuplicates(const QList<PAlbum*>& albums);
 
 private Q_SLOTS:
 
@@ -83,7 +83,7 @@ private:
     /**
      * Re-implemented to handle custom tool tips.
      *
-     * @param event event to process.
+     * @param event the event to process.
      */
     bool viewportEvent(QEvent* event) override;
 

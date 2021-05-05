@@ -42,21 +42,21 @@ class Q_DECL_HIDDEN DynamicThread::Private : public QRunnable
 public:
 
     explicit Private(DynamicThread* const q)
-        : q(q),
-          assignedThread(nullptr),
-          running(true),
-          emitSignals(false),
-          inDestruction(false),
-          threadRequested(false),
-          state(DynamicThread::Inactive),
-          priority(QThread::InheritPriority),
-          previousPriority(QThread::InheritPriority)
+        : q                 (q),
+          assignedThread    (nullptr),
+          running           (true),
+          emitSignals       (false),
+          inDestruction     (false),
+          threadRequested   (false),
+          state             (DynamicThread::Inactive),
+          priority          (QThread::InheritPriority),
+          previousPriority  (QThread::InheritPriority)
     {
         setAutoDelete(false);
-
     };
 
-    virtual void run() override;
+    void run() override;
+
     void         takingThread();
     bool         transitionToRunning();
     void         transitionToInactive();
@@ -68,8 +68,8 @@ public:
 
     volatile bool                 running;
     volatile bool                 emitSignals;
-    bool                          inDestruction;
-    bool                          threadRequested;
+    volatile bool                 inDestruction;
+    volatile bool                 threadRequested;
 
     volatile DynamicThread::State state;
 
@@ -182,7 +182,7 @@ void DynamicThread::Private::run()
 {
     if (emitSignals)
     {
-        emit (q->starting());
+        emit q->starting();
     }
 
     if (transitionToRunning())
@@ -197,7 +197,7 @@ void DynamicThread::Private::run()
 
     if (emitSignals)
     {
-        emit (q->finished());
+        emit q->finished();
     }
 
     transitionToInactive();
@@ -209,9 +209,8 @@ void DynamicThread::Private::run()
 
 DynamicThread::DynamicThread(QObject* const parent)
     : QObject(parent),
-      d(new Private(this))
+      d      (new Private(this))
 {
-    setAutoDelete(false);
     ThreadManager::instance()->initialize(this);
 }
 
@@ -224,6 +223,7 @@ DynamicThread::~DynamicThread()
 void DynamicThread::shutDown()
 {
     QMutexLocker locker(&d->mutex);
+    d->running       = false;
     d->inDestruction = true;
     stop(locker);
     wait(locker);
@@ -246,7 +246,7 @@ QMutex* DynamicThread::threadMutex() const
 
 bool DynamicThread::isFinished() const
 {
-    return d->state == Inactive;
+    return (d->state == Inactive);
 }
 
 void DynamicThread::setEmitSignals(bool emitThem)
@@ -309,7 +309,6 @@ void DynamicThread::start(QMutexLocker& locker)
         case Inactive:
         case Deactivating:
         {
-            d->running = true;
             d->state   = Scheduled;
             break;
         }
@@ -324,6 +323,7 @@ void DynamicThread::start(QMutexLocker& locker)
     if (!d->threadRequested)
     {
         // avoid issuing multiple thread requests after very fast start/stop/start calls
+
         d->threadRequested = true;
 
         locker.unlock();
@@ -349,7 +349,6 @@ void DynamicThread::stop(QMutexLocker& locker)
         case Inactive:
         case Deactivating:
         {
-            d->running = false;
             break;
         }
     }

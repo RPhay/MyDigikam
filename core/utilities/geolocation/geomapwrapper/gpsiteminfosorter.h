@@ -7,7 +7,7 @@
  * Description : Helper class for geomap interaction
  *
  * Copyright (C) 2011      by Michael G. Hansen <mike at mghansen dot de>
- * Copyright (C) 2011-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2011-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -34,6 +34,7 @@
 
 // Local includes
 
+#include "digikam_export.h"
 #include "geocoordinates.h"
 #include "geogroupstate.h"
 #include "gpsiteminfo.h"
@@ -42,7 +43,7 @@
 namespace Digikam
 {
 
-class GPSItemInfoSorter : public QObject
+class DIGIKAM_EXPORT GPSItemInfoSorter : public QObject
 {
     Q_OBJECT
 
@@ -59,7 +60,7 @@ public:
 public:
 
     explicit GPSItemInfoSorter(QObject* const parent);
-    ~GPSItemInfoSorter();
+    ~GPSItemInfoSorter() override;
 
     void addToMapWidget(MapWidget* const mapWidget);
 
@@ -85,7 +86,10 @@ private:
 
 private:
 
-    GPSItemInfoSorter(); // Disable
+     // Disable
+    GPSItemInfoSorter() = delete;
+
+private:
 
     class Private;
     Private* const d;

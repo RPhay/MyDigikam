@@ -7,7 +7,7 @@
  * Description : A tool for importing images via KIO
  *
  * Copyright (C) 2009      by Johannes Wienke <languitar at semipol dot de>
- * Copyright (C) 2011-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2011-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -32,7 +32,6 @@
 
 #include "wstooldialog.h"
 #include "dinfointerface.h"
-#include "digikam_export.h"
 
 class KJob;
 
@@ -49,7 +48,7 @@ namespace DigikamGenericFileTransferPlugin
 /**
  * Main dialog used for the import tool.
  */
-class DIGIKAM_EXPORT FTImportWindow : public WSToolDialog
+class FTImportWindow : public WSToolDialog
 {
     Q_OBJECT
 
@@ -58,14 +57,14 @@ public:
     /**
      * Constructor.
      *
-     * @param parent parent widget
+     * @param parent the parent widget
      */
     explicit FTImportWindow(DInfoInterface* const iface, QWidget* const parent);
 
     /**
      * Destructor.
      */
-    ~FTImportWindow();
+    ~FTImportWindow() override;
 
 private Q_SLOTS:
 

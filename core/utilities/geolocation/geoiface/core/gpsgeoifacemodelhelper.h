@@ -6,7 +6,7 @@
  * Date        : 2006-05-16
  * Description : A tool to edit geolocation
  *
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2010-2014 by Michael G. Hansen <mike at mghansen dot de>
  * Copyright (C) 2010      by Gabriel Voicu <ping dot gabi at gmail dot com>
  * Copyright (C) 2014      by Justus Schwartz <justus at gmx dot li>
@@ -52,23 +52,23 @@ public:
     explicit GPSGeoIfaceModelHelper(GPSItemModel* const model,
                                     QItemSelectionModel* const selectionModel,
                                     QObject* const parent = nullptr);
-    virtual ~GPSGeoIfaceModelHelper();
+    ~GPSGeoIfaceModelHelper() override;
 
-    virtual QAbstractItemModel*  model()                                                                    const override;
-    virtual QItemSelectionModel* selectionModel() const override;
+    QAbstractItemModel*  model()                                                                    const override;
+    QItemSelectionModel* selectionModel() const override;
 
-    virtual bool itemCoordinates(const QModelIndex& index,
+    bool itemCoordinates(const QModelIndex& index,
                                  GeoCoordinates* const coordinates)                                         const override;
 
-    virtual PropertyFlags modelFlags()                                                                      const override;
+    PropertyFlags modelFlags()                                                                      const override;
 
-    virtual QPixmap pixmapFromRepresentativeIndex(const QPersistentModelIndex& index,
+    QPixmap pixmapFromRepresentativeIndex(const QPersistentModelIndex& index,
                                                   const QSize& size)                                              override;
 
-    virtual QPersistentModelIndex bestRepresentativeIndexFromList(const QList<QPersistentModelIndex>& list,
+    QPersistentModelIndex bestRepresentativeIndexFromList(const QList<QPersistentModelIndex>& list,
                                                                   const int sortKey)                              override;
 
-    virtual void onIndicesMoved(const QList<QPersistentModelIndex>& movedMarkers,
+    void onIndicesMoved(const QList<QPersistentModelIndex>& movedMarkers,
                                 const GeoCoordinates& targetCoordinates,
                                 const QPersistentModelIndex& targetSnapIndex)                                     override;
 

@@ -8,7 +8,7 @@
  *               location
  *
  * Copyright (C) 2006-2009 by Johannes Wienke <languitar at semipol dot de>
- * Copyright (C) 2011-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2011-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -26,10 +26,11 @@
 
 // Qt includes
 
-#include <QVBoxLayout>
-#include <QLabel>
 #include <QApplication>
 #include <QPushButton>
+#include <QVBoxLayout>
+#include <QPointer>
+#include <QLabel>
 
 // KDE includes
 
@@ -53,15 +54,13 @@ class Q_DECL_HIDDEN FTExportWidget::Private
 public:
 
     explicit Private()
+      : targetLabel        (nullptr),
+        targetSearchButton (nullptr),
+        imageList          (nullptr)
     {
-        targetLabel        = nullptr;
-        targetDialog       = nullptr;
-        targetSearchButton = nullptr;
-        imageList          = nullptr;
     }
 
     KUrlComboRequester* targetLabel;
-    DFileDialog*        targetDialog;
     QPushButton*        targetSearchButton;
     QUrl                targetUrl;
     DItemsList*         imageList;
@@ -69,7 +68,7 @@ public:
 
 FTExportWidget::FTExportWidget(DInfoInterface* const iface, QWidget* const parent)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     // setup remote target selection
 
@@ -78,7 +77,9 @@ FTExportWidget::FTExportWidget(DInfoInterface* const iface, QWidget* const paren
     d->targetLabel      = new KUrlComboRequester(hbox);
 
     if (d->targetLabel->button())
+    {
         d->targetLabel->button()->hide();
+    }
 
     d->targetLabel->comboBox()->setEditable(true);
 
@@ -91,6 +92,7 @@ FTExportWidget::FTExportWidget(DInfoInterface* const iface, QWidget* const paren
     d->targetSearchButton->setIcon(QIcon::fromTheme(QLatin1String("folder-remote")));
 
     // setup image list
+
     d->imageList = new DItemsList(this);
     d->imageList->setObjectName(QLatin1String("FTExport ImagesList"));
     d->imageList->setIface(iface);
@@ -100,6 +102,7 @@ FTExportWidget::FTExportWidget(DInfoInterface* const iface, QWidget* const paren
                                                 "to the specified target."));
 
     // layout dialog
+
     QVBoxLayout* const layout = new QVBoxLayout(this);
 
     layout->addWidget(hbox);
@@ -136,7 +139,9 @@ QList<QUrl> FTExportWidget::history() const
     QList<QUrl> urls;
 
     for (int i = 0 ; i <= d->targetLabel->comboBox()->count() ; ++i)
+    {
         urls << QUrl(d->targetLabel->comboBox()->itemText(i));
+    }
 
     return urls;
 }
@@ -146,7 +151,9 @@ void FTExportWidget::setHistory(const QList<QUrl>& urls)
     d->targetLabel->comboBox()->clear();
 
     foreach (const QUrl& url, urls)
+    {
         d->targetLabel->comboBox()->addUrl(url);
+    }
 }
 
 void FTExportWidget::setTargetUrl(const QUrl& url)
@@ -159,30 +166,33 @@ void FTExportWidget::slotShowTargetDialogClicked(bool checked)
 {
     Q_UNUSED(checked);
 
-    d->targetDialog = new DFileDialog(this, i18n("Select target..."),
-                                      d->targetUrl.toString(), i18n("All Files (*)"));
-    d->targetDialog->setAcceptMode(QFileDialog::AcceptSave);
-    d->targetDialog->setFileMode(QFileDialog::Directory);
-    d->targetDialog->setOptions(QFileDialog::ShowDirsOnly);
+    QPointer<DFileDialog> targetDialog = new DFileDialog(this, i18n("Select target..."),
+                                                         d->targetUrl.toString(), i18n("All Files (*)"));
+    targetDialog->setAcceptMode(QFileDialog::AcceptSave);
+    targetDialog->setFileMode(QFileDialog::Directory);
+    targetDialog->setOptions(QFileDialog::ShowDirsOnly);
 
-    if (d->targetDialog->exec() == QDialog::Accepted)
+    targetDialog->exec();
+
+    if (targetDialog && !targetDialog->selectedUrls().isEmpty())
     {
-        d->targetUrl = d->targetDialog->selectedUrls().isEmpty() ? QUrl() : d->targetDialog->selectedUrls().at(0);
+        d->targetUrl = targetDialog->selectedUrls().first();
         updateTargetLabel();
+
         emit signalTargetUrlChanged(d->targetUrl);
     }
 
-    delete d->targetDialog;
+    delete targetDialog;
 }
 
 void FTExportWidget::updateTargetLabel()
 {
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Call for url "
-                                 << d->targetUrl.toDisplayString()
-                                 << ", valid = "
-                                 << d->targetUrl.isValid();
+                                     << d->targetUrl.toDisplayString()
+                                     << ", valid = "
+                                     << d->targetUrl.isValid();
 
-    QString urlString = i18n("<not selected>");
+    QString urlString = i18n("<i>not selected</i>");
 
     if (d->targetUrl.isValid())
     {
@@ -199,6 +209,7 @@ DItemsList* FTExportWidget::imagesList() const
 void FTExportWidget::slotLabelUrlChanged()
 {
     d->targetUrl = d->targetLabel->url();
+
     emit signalTargetUrlChanged(d->targetUrl);
 }
 

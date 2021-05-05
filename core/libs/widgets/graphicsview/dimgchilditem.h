@@ -37,7 +37,7 @@ namespace Digikam
 
 class GraphicsDImgItem;
 
-class DIGIKAM_EXPORT DImgChildItem : public QGraphicsObject
+class DIGIKAM_EXPORT DImgChildItem : public QGraphicsObject     // clazy:exclude=ctor-missing-parent-argument
 {
     Q_OBJECT
 
@@ -51,7 +51,7 @@ public:
      */
 
     explicit DImgChildItem(QGraphicsItem* const parent = nullptr);
-    ~DImgChildItem();
+    ~DImgChildItem()                              override;
 
     /**
      * Sets the position and size of this item, relative to the DImg displayed in the parent item.
@@ -72,16 +72,16 @@ public:
     void setRelativeRect(const QRectF& rect);
     void setRelativeRect(qreal x, qreal y, qreal width, qreal height)
     {
-        setRelativeRect(QRectF(x,y,width, height));
+        setRelativeRect(QRectF(x, y, width, height));
     }
 
     /**
      * Returns the position and size relative to the DImg displayed in the parent item.
      * All four values are in the interval [0;1].
      */
-    QRectF  relativeRect() const;
-    QPointF relativePos()  const;
-    QSizeF  relativeSize() const;
+    QRectF  relativeRect()                  const;
+    QPointF relativePos()                   const;
+    QSizeF  relativeSize()                  const;
 
     /**
      * Sets the position and size of this item, in coordinates of the original image.
@@ -103,7 +103,7 @@ public:
     void setOriginalRect(const QRectF& rect);
     void setOriginalRect(qreal x, qreal y, qreal width, qreal height)
     {
-        setOriginalRect(QRectF(x,y,width, height));
+        setOriginalRect(QRectF(x, y,width, height));
     }
 
     /**
@@ -112,9 +112,9 @@ public:
      * different values of relativeRect() or zoomedRect() may result in the same originalRect(),
      * when one pixel in the original is represented by more than one pixel on screen.
      */
-    QRect  originalRect() const;
-    QPoint originalPos()  const;
-    QSize  originalSize() const;
+    QRect  originalRect()                   const;
+    QPoint originalPos()                    const;
+    QSize  originalSize()                   const;
 
     /**
      * Sets the position and size of this item, in coordinates of the parent DImg item.
@@ -150,8 +150,8 @@ public:
      * This is the same result as QRectF(pos(), boundingRect()), boundingRect is virtual and may be
      * overridden by base classes.
      */
-    QRectF rect() const;
-    QSizeF size() const;
+    QRectF rect()                           const;
+    QSizeF size()                           const;
 
     // Override
     void moveBy(qreal dx, qreal dy)
@@ -163,13 +163,13 @@ public:
      * If the parent item is a GraphicsDImgItem, return it,
      * if the parent item is null or of a different class, returns 0.
      */
-    GraphicsDImgItem* parentDImgItem() const;
+    GraphicsDImgItem* parentDImgItem()      const;
 
     /**
      * Reimplemented. Returns a rectangle starting at (0,0) (pos() in parent coordinates)
      * and has a size determined by the relative size.
      */
-    virtual QRectF boundingRect() const override;
+    QRectF boundingRect()                   const override;
 
 protected Q_SLOTS:
 
@@ -197,7 +197,8 @@ Q_SIGNALS:
 
 protected:
 
-    virtual QVariant itemChange(GraphicsItemChange change, const QVariant& value) override;
+    QVariant itemChange(GraphicsItemChange change,
+                        const QVariant& value)    override;
 
 private:
 

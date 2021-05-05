@@ -7,7 +7,7 @@
  * Description : a Brightness/Contrast/Gamma image filter.
  *
  * Copyright (C) 2005      by Renchi Raju <renchi dot raju at gmail dot com>
- * Copyright (C) 2005-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2005-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2010      by Martin Klapetek <martin dot klapetek at gmail dot com>
  *
  * This program is free software; you can redistribute it
@@ -41,49 +41,6 @@
 namespace Digikam
 {
 
-BCGContainer::BCGContainer()
-{
-    channel    = LuminosityChannel;
-    brightness = 0.0;
-    contrast   = 0.0;
-    gamma      = 1.0;
-}
-
-bool BCGContainer::isDefault() const
-{
-    return (*this == BCGContainer());
-}
-
-bool BCGContainer::operator==(const BCGContainer& other) const
-{
-    return (
-            (channel    == other.channel)    &&
-            (brightness == other.brightness) &&
-            (contrast   == other.contrast)   &&
-            (gamma      == other.gamma)
-           );
-}
-
-void BCGContainer::writeToFilterAction(FilterAction& action, const QString& prefix) const
-{
-    action.addParameter(prefix + QLatin1String("channel"),    channel);
-    action.addParameter(prefix + QLatin1String("brightness"), brightness);
-    action.addParameter(prefix + QLatin1String("contrast"),   contrast);
-    action.addParameter(prefix + QLatin1String("gamma"),      gamma);
-}
-
-BCGContainer BCGContainer::fromFilterAction(const FilterAction& action, const QString& prefix)
-{
-    BCGContainer settings;
-    settings.channel    = action.parameter(prefix + QLatin1String("channel"),    settings.channel);
-    settings.brightness = action.parameter(prefix + QLatin1String("brightness"), settings.brightness);
-    settings.contrast   = action.parameter(prefix + QLatin1String("contrast"),   settings.contrast);
-    settings.gamma      = action.parameter(prefix + QLatin1String("gamma"),      settings.gamma);
-    return settings;
-}
-
-// -----------------------------------------------------------------------------------------------
-
 class Q_DECL_HIDDEN BCGFilter::Private
 {
 public:
@@ -102,25 +59,31 @@ public:
 
 BCGFilter::BCGFilter(QObject* const parent)
     : DImgThreadedFilter(parent, QLatin1String("BCGFilter")),
-      d(new Private)
+      d                 (new Private)
 {
     reset();
     initFilter();
 }
 
-BCGFilter::BCGFilter(DImg* const orgImage, QObject* const parent, const BCGContainer& settings)
+BCGFilter::BCGFilter(DImg* const orgImage,
+                     QObject* const parent,
+                     const BCGContainer& settings)
     : DImgThreadedFilter(orgImage, parent, QLatin1String("BCGFilter")),
-      d(new Private)
+      d                 (new Private)
 {
     d->settings = settings;
     reset();
     initFilter();
 }
 
-BCGFilter::BCGFilter(const BCGContainer& settings, DImgThreadedFilter* const master,
-                     const DImg& orgImage, const DImg& destImage, int progressBegin, int progressEnd)
+BCGFilter::BCGFilter(const BCGContainer& settings,
+                     DImgThreadedFilter* const master,
+                     const DImg& orgImage,
+                     const DImg& destImage,
+                     int progressBegin,
+                     int progressEnd)
     : DImgThreadedFilter(master, orgImage, destImage, progressBegin, progressEnd, QLatin1String("WBFilter")),
-      d(new Private)
+      d                 (new Private)
 {
     d->settings = settings;
     reset();
@@ -220,7 +183,7 @@ void BCGFilter::reset()
     }
 }
 
-void BCGFilter::applyBCG(DImg& image)
+void BCGFilter::applyBCG(const DImg& image)
 {
     if (image.isNull())
     {

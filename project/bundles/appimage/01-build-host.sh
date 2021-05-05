@@ -3,7 +3,7 @@
 # Script to build a Linux Host installation to compile an AppImage bundle of digiKam.
 # This script must be run as sudo
 #
-# Copyright (c) 2015-2020 by Gilles Caulier  <caulier dot gilles at gmail dot com>
+# Copyright (c) 2015-2021 by Gilles Caulier  <caulier dot gilles at gmail dot com>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
@@ -66,6 +66,7 @@ urpmi --auto \
       fuse \
       automake \
       cmake \
+      ccache \
       gcc-c++ \
       patch \
       libdrm-devel \
@@ -85,7 +86,6 @@ urpmi --auto \
       glibc-devel \
       mysql-devel \
       eigen3-devel \
-      openssl-devel \
       cppunit-devel \
       libstdc++-devel \
       libstdc++-static-devel \
@@ -101,6 +101,7 @@ urpmi --auto \
       inotify-tools-devel \
       openssl-devel \
       cups-devel \
+      imagemagick \
       openal-soft-devel \
       libical-devel \
       libcap-devel \
@@ -141,8 +142,7 @@ urpmi --auto \
       ${LIBSUFFIX}fftw-devel \
       ${LIBSUFFIX}curl-devel \
       ${LIBSUFFIX}magick-devel \
-      ${LIBSUFFIX}wayland-devel \
-      ${LIBSUFFIX}wayland-egl1-devel
+      ${LIBSUFFIX}wayland-devel
 
 #################################################################################################
 
@@ -173,6 +173,10 @@ if [ ! -d $DOWNLOAD_DIR ] ; then
     mkdir $DOWNLOAD_DIR
 fi
 
+if [ ! -d /opt/cmake ] ; then
+    mkdir /opt/cmake
+fi
+
 #################################################################################################
 
 cd $BUILDING_DIR
@@ -180,6 +184,21 @@ cd $BUILDING_DIR
 rm -rf $BUILDING_DIR/* || true
 
 cmake $ORIG_WD/../3rdparty \
+      -DCMAKE_INSTALL_PREFIX:PATH=/opt/cmake \
+      -DINSTALL_ROOT=/opt/cmake \
+      -DEXTERNALS_DOWNLOAD_DIR=$DOWNLOAD_DIR
+
+# Install new cmake recent version to /opt
+
+cmake --build . --config RelWithDebInfo --target ext_cmake        -- -j$CPU_CORES
+
+#################################################################################################
+
+cd $BUILDING_DIR
+
+rm -rf $BUILDING_DIR/* || true
+
+/opt/cmake/bin/cmake $ORIG_WD/../3rdparty \
       -DCMAKE_INSTALL_PREFIX:PATH=/usr \
       -DINSTALL_ROOT=/usr \
       -DEXTERNALS_DOWNLOAD_DIR=$DOWNLOAD_DIR \
@@ -188,15 +207,16 @@ cmake $ORIG_WD/../3rdparty \
 # Low level libraries and Qt5 dependencies
 # NOTE: The order to compile each component here is very important.
 
-#cmake --build . --config RelWithDebInfo --target ext_libicu        -- -j$CPU_CORES
-cmake --build . --config RelWithDebInfo --target ext_qt            -- -j$CPU_CORES    # depend of tiff, png, jpeg
+#/opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_libicu        -- -j$CPU_CORES
+#/opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_openssl       -- -j$CPU_CORES
+
+/opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_qt            -- -j$CPU_CORES    # depend of tiff, png, jpeg
 
 if [[ $DK_QTWEBENGINE = 0 ]] ; then
-    cmake --build . --config RelWithDebInfo --target ext_qtwebkit  -- -j$CPU_CORES    # depend of Qt and libicu
+    /opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_qtwebkit  -- -j$CPU_CORES    # depend of Qt and libicu
 fi
 
-cmake --build . --config RelWithDebInfo --target ext_exiv2         -- -j$CPU_CORES
-cmake --build . --config RelWithDebInfo --target ext_opencv        -- -j$CPU_CORES
+/opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_opencv        -- -j$CPU_CORES
 
 #################################################################################################
 

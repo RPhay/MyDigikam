@@ -7,7 +7,7 @@
  * Description : Scanning a single item.
  *
  * Copyright (C) 2007-2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2013-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2013-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -124,8 +124,8 @@ void ItemScanner::loadFromDisk()
     }
 
     d->loadedFromDisk = true;
-    d->metadata.registerMetadataSettings();
-    d->hasMetadata    = d->metadata.load(d->fileInfo.filePath());
+    d->metadata->registerMetadataSettings();
+    d->hasMetadata    = d->metadata->load(d->fileInfo.filePath());
 
     if (d->scanInfo.category == DatabaseItem::Image)
     {
@@ -162,7 +162,7 @@ void ItemScanner::loadFromDisk()
    // faster than loading twice from disk
     if (d->hasMetadata)
     {
-        d->img.setMetadata(d->metadata.data());
+        d->img.setMetadata(d->metadata->data());
     }
 }
 

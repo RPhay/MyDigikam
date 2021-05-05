@@ -6,7 +6,7 @@
  * Date        : 2006-02-23
  * Description : item metadata interface
  *
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2006-2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  * Copyright (C) 2013      by Veaceslav Munteanu <veaceslav dot munteanu90 at gmail dot com>
  *
@@ -49,6 +49,8 @@ namespace Digikam
 class Template;
 class IccProfile;
 
+// TODO: merge with MetaEngine class.
+
 class DIGIKAM_EXPORT DMetadata : public MetaEngine
 {
 
@@ -60,7 +62,7 @@ public:
      */
     enum VIDEOCOLORMODEL
     {
-        VIDEOCOLORMODEL_UNKNOWN=1000,
+        VIDEOCOLORMODEL_UNKNOWN = 1000,
         VIDEOCOLORMODEL_OTHER,
         VIDEOCOLORMODEL_SRGB,
         VIDEOCOLORMODEL_BT709,
@@ -86,10 +88,12 @@ public: // Settings helpers
 public: // File I/O helpers
 
     /**
-     * Re-implemented from libMetaEngine to use libraw identify and
-     * ffmpeg probe methods if Exiv2 failed.
+     * Re-implemented from MetaEngine to use libraw identify, libheif,
+     * ffmpeg probe, and ImageMAgick identify methods if Exiv2 failed.
+     * If backend is non null, return the backend used to populate metadata (Exiv2).
+     * See MetaEngine::Backend enum for details.
      */
-    bool load(const QString& filePath)                                                                                        override;
+    bool load(const QString& filePath, Backend* backend = nullptr);
     bool save(const QString& filePath, bool setVersion = false)                                                         const;
     bool applyChanges(bool setVersion = false)                                                                          const;
 
@@ -101,7 +105,7 @@ public: // File I/O helpers
 public: // History helpers
 
     QString getItemHistory()                                                                                            const;
-    bool    setItemHistory(QString& imageHistoryXml)                                                                    const;
+    bool    setItemHistory(const QString& imageHistoryXml)                                                              const;
     bool    hasItemHistoryTag()                                                                                         const;
 
     QString getItemUniqueId()                                                                                           const;
@@ -126,7 +130,7 @@ public: // Faces helpers
     /**
      * Remove Images Face Map tags from Picassa/Metadatagroup format.
      */
-    void removeItemFacesMap();
+    bool removeItemFacesMap()                                                                                           const;
 
 public: // Tags helpers
 
@@ -159,8 +163,9 @@ public: // Labels helpers
     int  getItemPickLabel()                                                                                             const;
     bool setItemPickLabel(int pickId)                                                                                   const;
 
-    int  getItemColorLabel()                                                                                            const;
-    bool setItemColorLabel(int colorId)                                                                                 const;
+    int  getItemColorLabel(const DMetadataSettingsContainer& settings = DMetadataSettings::instance()->settings())      const;
+    bool setItemColorLabel(int colorId,
+                           const DMetadataSettingsContainer& settings = DMetadataSettings::instance()->settings())      const;
 
 public: // Template helpers
 
@@ -345,7 +350,12 @@ public: // Photo helpers
      */
     QString getLensDescription()                                                                                        const;
 
-    PhotoInfoContainer getPhotographInformation() const;
+    /**
+     * Return a string with Camera serial number.
+     */
+    QString getCameraSerialNumber()                                                                                     const;
+
+    PhotoInfoContainer getPhotographInformation()                                                                       const;
 
     static double apexApertureToFNumber(double aperture);
     static double apexShutterSpeedToExposureTime(double shutterSpeed);
@@ -376,8 +386,23 @@ private:
 
     QVariant fromExifOrXmp(const char* const exifTagName, const char* const xmpTagName)                                 const;
     QVariant fromIptcOrXmp(const char* const iptcTagName, const char* const xmpTagName)                                 const;
+    QVariant fromExifOrXmpList(const QStringList& tagList)                                                              const;
     bool hasValidField(const QVariantList& list)                                                                        const;
     QVariant toStringListVariant(const QStringList& list)                                                               const;
+
+private:
+
+    /**
+     * Libheif helper methods.
+     */
+    bool loadUsingLibheif(const QString& filePath);
+
+private:
+
+    /**
+     * ImageMagick helper methods.
+     */
+    bool loadUsingImageMagick(const QString& filePath);
 };
 
 } // namespace Digikam

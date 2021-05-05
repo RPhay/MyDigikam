@@ -7,7 +7,7 @@
  * Description : A JPEG IO file for DImg framework - load operations
  *
  * Copyright (C) 2005      by Renchi Raju <renchi dot raju at gmail dot com>
- * Copyright (C) 2005-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2005-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -40,8 +40,8 @@ extern "C"
 
 // Local includes
 
-#include "digikam_config.h"
 #include "digikam_debug.h"
+#include "digikam_config.h"
 #include "dimgloaderobserver.h"
 
 #ifdef Q_OS_WIN
@@ -55,7 +55,15 @@ bool DImgJPEGLoader::load(const QString& filePath, DImgLoaderObserver* const obs
 {
     readMetadata(filePath);
 
-    FILE* const file = fopen(QFile::encodeName(filePath).constData(), "rb");
+#ifdef Q_OS_WIN
+
+    FILE* const file = _wfopen((const wchar_t*)filePath.utf16(), L"rb");
+
+#else
+
+    FILE* const file = fopen(filePath.toUtf8().constData(), "rb");
+
+#endif
 
     if (!file)
     {
@@ -170,7 +178,16 @@ bool DImgJPEGLoader::load(const QString& filePath, DImgLoaderObserver* const obs
 
     // If an error occurs during reading, libjpeg will jump here
 
+#ifdef __MINGW32__  // krazy:exclude=cpp
+
+    if (__builtin_setjmp(jerr.setjmp_buffer))
+
+#else
+
     if (setjmp(jerr.setjmp_buffer))
+
+#endif
+
     {
         jpeg_destroy_decompress(&cinfo);
 
@@ -191,7 +208,7 @@ bool DImgJPEGLoader::load(const QString& filePath, DImgLoaderObserver* const obs
 
         if (observer)
         {
-            observer->progressInfo(1.0);
+            observer->progressInfo(1.0F);
         }
 
         imageWidth()  = cleanupData->size.width();
@@ -223,20 +240,7 @@ bool DImgJPEGLoader::load(const QString& filePath, DImgLoaderObserver* const obs
     jpeg_create_decompress(&cinfo);
     bool startedDecompress = false;
 
-#ifdef Q_OS_WIN
-    QFile inFile(filePath);
-    QByteArray buffer;
-
-    if (inFile.open(QIODevice::ReadOnly))
-    {
-        buffer = inFile.readAll();
-        inFile.close();
-    }
-
-    JPEGUtils::jpeg_memory_src(&cinfo, (JOCTET*)buffer.data(), buffer.size());
-#else
     jpeg_stdio_src(&cinfo, file);
-#endif
 
     // Recording ICC profile marker (from iccjpeg.c)
     if (m_loadFlags & LoadICCData)
@@ -306,11 +310,11 @@ bool DImgJPEGLoader::load(const QString& filePath, DImgLoaderObserver* const obs
         if (scaledLoadingSize)
         {
             int imgSize = qMax(cinfo.image_width, cinfo.image_height);
+            int scale   = 1;
 
             // libjpeg supports 1/1, 1/2, 1/4, 1/8
-            int scale = 1;
 
-            while (scaledLoadingSize* scale * 2 <= imgSize)
+            while (scaledLoadingSize * scale * 2 <= imgSize)
             {
                 scale *= 2;
             }
@@ -319,9 +323,10 @@ bool DImgJPEGLoader::load(const QString& filePath, DImgLoaderObserver* const obs
             {
                 scale = 8;
             }
-
-            //cinfo.scale_num   = 1;
-            //cinfo.scale_denom = scale;
+/*
+            cinfo.scale_num   = 1;
+            cinfo.scale_denom = scale;
+*/
             cinfo.scale_denom *= scale;
         }
 
@@ -431,7 +436,7 @@ bool DImgJPEGLoader::load(const QString& filePath, DImgLoaderObserver* const obs
                         return false;
                     }
 
-                    observer->progressInfo(0.1 + (0.8 * (((float)l) / ((float)h))));
+                    observer->progressInfo(0.1F + (0.8F * (((float)l) / ((float)h))));
                 }
 
                 jpeg_read_scanlines(&cinfo, &line[0], cinfo.rec_outbuf_height);
@@ -482,7 +487,7 @@ bool DImgJPEGLoader::load(const QString& filePath, DImgLoaderObserver* const obs
                         return false;
                     }
 
-                    observer->progressInfo(0.1 + (0.8 * (((float)l) / ((float)h))));
+                    observer->progressInfo(0.1F + (0.8F * (((float)l) / ((float)h))));
                 }
 
                 jpeg_read_scanlines(&cinfo, line, cinfo.rec_outbuf_height);
@@ -534,7 +539,7 @@ bool DImgJPEGLoader::load(const QString& filePath, DImgLoaderObserver* const obs
                         return false;
                     }
 
-                    observer->progressInfo(0.1 + (0.8 * (((float)l) / ((float)h))));
+                    observer->progressInfo(0.1F + (0.8F * (((float)l) / ((float)h))));
                 }
 
                 jpeg_read_scanlines(&cinfo, &line[0], cinfo.rec_outbuf_height);
@@ -618,7 +623,7 @@ bool DImgJPEGLoader::load(const QString& filePath, DImgLoaderObserver* const obs
 
     if (observer)
     {
-        observer->progressInfo(1.0);
+        observer->progressInfo(1.0F);
     }
 
     imageWidth()  = w;

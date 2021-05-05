@@ -72,9 +72,11 @@ public:
     QPointF        pressPos;
 };
 
+// ----------------------------------------------------------------------------
+
 ClickDragReleaseItem::ClickDragReleaseItem(QGraphicsItem* const parent)
     : QGraphicsObject(parent),
-      d(new Private)
+      d              (new Private)
 {
     setCursor(Qt::CrossCursor);
     setFlags(ItemIsFocusable | ItemHasNoContents);

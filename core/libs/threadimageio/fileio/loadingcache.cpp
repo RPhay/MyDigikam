@@ -25,8 +25,6 @@
 
 // Qt includes
 
-#include <QCoreApplication>
-#include <QEvent>
 #include <QCache>
 #include <QMap>
 
@@ -41,13 +39,34 @@
 namespace Digikam
 {
 
+LoadingProcessListener::LoadingProcessListener()
+{
+}
+
+LoadingProcessListener::~LoadingProcessListener()
+{
+}
+
+// -----------------------------------------------------------------------------------
+
+LoadingProcess::LoadingProcess()
+{
+}
+
+LoadingProcess::~LoadingProcess()
+{
+}
+
+
+// -----------------------------------------------------------------------------------
+
 class Q_DECL_HIDDEN LoadingCache::Private
 {
 public:
 
     explicit Private(LoadingCache* const q)
       : watch(nullptr),
-        q(q)
+        q    (q)
     {
     }
 
@@ -62,14 +81,15 @@ public:
     QCache<QString, DImg>           imageCache;
     QCache<QString, QImage>         thumbnailImageCache;
     QCache<QString, QPixmap>        thumbnailPixmapCache;
-    QMultiMap<QString, QString>     imageFilePathHash;
-    QMultiMap<QString, QString>     thumbnailFilePathHash;
-    QMap<QString, LoadingProcess*>  loadingDict;
+    QMultiMap<QString, QString>     imageFilePathMap;
+    QMultiMap<QString, QString>     thumbnailFilePathMap;
+    QHash<LoadingProcess*, QString> loadingDict;
 
     /// Note: Don't make the mutex recursive, we need to use a wait condition on it
     QMutex                          mutex;
 
     QWaitCondition                  condVar;
+
     LoadingCacheFileWatch*          watch;
     LoadingCache*                   q;
 };
@@ -80,7 +100,7 @@ LoadingCacheFileWatch* LoadingCache::Private::fileWatch() const
 
     if (!watch)
     {
-        q->setFileWatch(new ClassicLoadingCacheFileWatch);
+        q->setFileWatch(new LoadingCacheFileWatch);
     }
 
     return watch;
@@ -88,36 +108,36 @@ LoadingCacheFileWatch* LoadingCache::Private::fileWatch() const
 
 void LoadingCache::Private::mapImageFilePath(const QString& filePath, const QString& cacheKey)
 {
-    if (imageFilePathHash.size() > (5*imageCache.size()))
+    if (imageFilePathMap.size() > (5 * imageCache.size()))
     {
         cleanUpImageFilePathHash();
     }
 
-    imageFilePathHash.insert(filePath, cacheKey);
+    imageFilePathMap.insert(filePath, cacheKey);
 }
 
 void LoadingCache::Private::mapThumbnailFilePath(const QString& filePath, const QString& cacheKey)
 {
-    if (thumbnailFilePathHash.size() > (5*(thumbnailImageCache.size() + thumbnailPixmapCache.size())))
+    if (thumbnailFilePathMap.size() > (5 * (thumbnailImageCache.size() + thumbnailPixmapCache.size())))
     {
         cleanUpThumbnailFilePathHash();
     }
 
-    thumbnailFilePathHash.insert(filePath, cacheKey);
+    thumbnailFilePathMap.insert(filePath, cacheKey);
 }
 
 void LoadingCache::Private::cleanUpImageFilePathHash()
 {
     // Remove all entries from hash whose value is no longer a key in the cache
 
-    QSet<QString> keys = imageCache.keys().toSet();
+    QList<QString> keys = imageCache.keys();
     QMultiMap<QString, QString>::iterator it;
 
-    for (it = imageFilePathHash.begin() ; it != imageFilePathHash.end() ; )
+    for (it = imageFilePathMap.begin() ; it != imageFilePathMap.end() ; )
     {
         if (!keys.contains(it.value()))
         {
-            it = imageFilePathHash.erase(it);
+            it = imageFilePathMap.erase(it);
         }
         else
         {
@@ -128,16 +148,18 @@ void LoadingCache::Private::cleanUpImageFilePathHash()
 
 void LoadingCache::Private::cleanUpThumbnailFilePathHash()
 {
-    QSet<QString> keys;
-    keys += thumbnailImageCache.keys().toSet();
-    keys += thumbnailPixmapCache.keys().toSet();
+    QList<QString> keys;
+
+    keys += thumbnailImageCache.keys();
+    keys += thumbnailPixmapCache.keys();
+
     QMultiMap<QString, QString>::iterator it;
 
-    for (it = thumbnailFilePathHash.begin() ; it != thumbnailFilePathHash.end() ; )
+    for (it = thumbnailFilePathMap.begin() ; it != thumbnailFilePathMap.end() ; )
     {
         if (!keys.contains(it.value()))
         {
-            it = thumbnailFilePathHash.erase(it);
+            it = thumbnailFilePathMap.erase(it);
         }
         else
         {
@@ -167,7 +189,7 @@ LoadingCache::LoadingCache()
     : d(new Private(this))
 {
     KMemoryInfo memory = KMemoryInfo::currentInfo();
-    setCacheSize(qBound(60, int(memory.megabytes(KMemoryInfo::TotalRam)*0.05), 200));
+    setCacheSize(qBound(60, int(memory.megabytes(KMemoryInfo::TotalRam)*0.05), 400));
     setThumbnailCacheSize(5, 100); // the pixmap number should not be based on system memory, it's graphics memory
 
     // good place to call it here as LoadingCache is a singleton
@@ -176,7 +198,7 @@ LoadingCache::LoadingCache()
     qRegisterMetaType<DImg>("DImg");
     qRegisterMetaType<DMetadata>("DMetadata");
 
-    connect(IccSettings::instance(), SIGNAL(settingsChanged(ICCSettingsContainer,ICCSettingsContainer)),
+    connect(IccSettings::instance(), SIGNAL(signalICCSettingsChanged(ICCSettingsContainer,ICCSettingsContainer)),
             this, SLOT(iccSettingsChanged(ICCSettingsContainer,ICCSettingsContainer)));
 }
 
@@ -189,21 +211,29 @@ LoadingCache::~LoadingCache()
 
 DImg* LoadingCache::retrieveImage(const QString& cacheKey) const
 {
+    QString filePath(d->imageFilePathMap.key(cacheKey));
+    d->fileWatch()->checkFileWatch(filePath);
+
     return d->imageCache[cacheKey];
 }
 
 bool LoadingCache::putImage(const QString& cacheKey, const DImg& img, const QString& filePath) const
 {
-    int cost                 = img.numBytes();
-    bool successfulyInserted = d->imageCache.insert(cacheKey, new DImg(img), cost);
+    bool isInserted = false;
 
-    if (successfulyInserted && !filePath.isEmpty())
+    if (isCacheable(img))
     {
-        d->mapImageFilePath(filePath, cacheKey);
-        d->fileWatch()->addedImage(filePath);
+        int cost   = img.numBytes() / 1024;
+        isInserted = d->imageCache.insert(cacheKey, new DImg(img), cost);
+
+        if (isInserted && !filePath.isEmpty())
+        {
+            d->mapImageFilePath(filePath, cacheKey);
+            d->fileWatch()->addedImage(filePath);
+        }
     }
 
-    return successfulyInserted;
+    return isInserted;
 }
 
 void LoadingCache::removeImage(const QString& cacheKey)
@@ -220,37 +250,37 @@ bool LoadingCache::isCacheable(const DImg& img) const
 {
     // return whether image fits in cache
 
-    return (uint)d->imageCache.maxCost() >= img.numBytes();
+    return ((quint64)d->imageCache.maxCost() >= (img.numBytes() / 1024));
 }
 
 void LoadingCache::addLoadingProcess(LoadingProcess* const process)
 {
-    d->loadingDict[process->cacheKey()] = process;
+    d->loadingDict.insert(process, process->cacheKey());
 }
 
 LoadingProcess* LoadingCache::retrieveLoadingProcess(const QString& cacheKey) const
 {
-    return d->loadingDict.value(cacheKey);
+    return d->loadingDict.key(cacheKey, nullptr);
 }
 
 void LoadingCache::removeLoadingProcess(LoadingProcess* const process)
 {
-    d->loadingDict.remove(process->cacheKey());
+    d->loadingDict.remove(process);
 }
 
 void LoadingCache::notifyNewLoadingProcess(LoadingProcess* const process, const LoadingDescription& description)
 {
-    for (QMap<QString, LoadingProcess*>::const_iterator it = d->loadingDict.constBegin() ;
+    for (QHash<LoadingProcess*, QString>::const_iterator it = d->loadingDict.constBegin() ;
          it != d->loadingDict.constEnd() ; ++it)
     {
-        it.value()->notifyNewLoadingProcess(process, description);
+        it.key()->notifyNewLoadingProcess(process, description);
     }
 }
 
 void LoadingCache::setCacheSize(int megabytes)
 {
     qCDebug(DIGIKAM_GENERAL_LOG) << "Allowing a cache size of" << megabytes << "MB";
-    d->imageCache.setMaxCost(megabytes * 1024 * 1024);
+    d->imageCache.setMaxCost(megabytes * 1024);
 }
 
 // --- Thumbnails ----
@@ -272,16 +302,20 @@ bool LoadingCache::hasThumbnailPixmap(const QString& cacheKey) const
 
 void LoadingCache::putThumbnail(const QString& cacheKey, const QImage& thumb, const QString& filePath)
 {
+
 #if (QT_VERSION >= QT_VERSION_CHECK(5, 10, 0))
+
     int cost = thumb.sizeInBytes();
+
 #else
+
     int cost = thumb.byteCount();
+
 #endif
 
     if (d->thumbnailImageCache.insert(cacheKey, new QImage(thumb), cost))
     {
         d->mapThumbnailFilePath(filePath, cacheKey);
-        d->fileWatch()->addedThumbnail(filePath);
     }
 }
 
@@ -292,7 +326,6 @@ void LoadingCache::putThumbnail(const QString& cacheKey, const QPixmap& thumb, c
     if (d->thumbnailPixmapCache.insert(cacheKey, new QPixmap(thumb), cost))
     {
         d->mapThumbnailFilePath(filePath, cacheKey);
-        d->fileWatch()->addedThumbnail(filePath);
     }
 }
 
@@ -326,35 +359,30 @@ void LoadingCache::setFileWatch(LoadingCacheFileWatch* const watch)
     d->watch->m_cache = this;
 }
 
-void LoadingCache::removeFromFileWatch(const QString& filePath)
-{
-    d->fileWatch()->removeFile(filePath);
-}
-
 QStringList LoadingCache::imageFilePathsInCache() const
 {
     d->cleanUpImageFilePathHash();
 
-    return d->imageFilePathHash.uniqueKeys();
+    return d->imageFilePathMap.uniqueKeys();
 }
 
 QStringList LoadingCache::thumbnailFilePathsInCache() const
 {
     d->cleanUpThumbnailFilePathHash();
 
-    return d->thumbnailFilePathHash.uniqueKeys();
+    return d->thumbnailFilePathMap.uniqueKeys();
 }
 
 void LoadingCache::notifyFileChanged(const QString& filePath, bool notify)
 {
-    QList<QString> keys = d->imageFilePathHash.values(filePath);
+    QList<QString> keys = d->imageFilePathMap.values(filePath);
 
     foreach (const QString& cacheKey, keys)
     {
         d->imageCache.remove(cacheKey);
     }
 
-    keys = d->thumbnailFilePathHash.values(filePath);
+    keys = d->thumbnailFilePathMap.values(filePath);
 
     foreach (const QString& cacheKey, keys)
     {
@@ -382,6 +410,11 @@ void LoadingCache::iccSettingsChanged(const ICCSettingsContainer& current, const
 
 //---------------------------------------------------------------------------------------------------
 
+LoadingCacheFileWatch::LoadingCacheFileWatch()
+    : m_cache(nullptr)
+{
+}
+
 LoadingCacheFileWatch::~LoadingCacheFileWatch()
 {
     if (m_cache)
@@ -395,126 +428,61 @@ LoadingCacheFileWatch::~LoadingCacheFileWatch()
     }
 }
 
+void LoadingCacheFileWatch::addedImage(const QString& filePath)
+{
+    if (!m_cache || filePath.isEmpty())
+    {
+        return;
+    }
+
+    QStringList cachePaths = m_cache->imageFilePathsInCache();
+
+    if (m_watchMap.size() > cachePaths.size())
+    {
+        foreach (const QString& path, m_watchMap.keys())
+        {
+            if (!cachePaths.contains(path))
+            {
+                m_watchMap.remove(path);
+            }
+        }
+    }
+
+    QFileInfo info(filePath);
+
+    m_watchMap.insert(filePath, qMakePair(info.size(),
+                                          info.lastModified()));
+}
+
+void LoadingCacheFileWatch::checkFileWatch(const QString& filePath)
+{
+    if (!m_cache || filePath.isEmpty())
+    {
+        return;
+    }
+
+    if (m_watchMap.contains(filePath))
+    {
+        QFileInfo info(filePath);
+        QPair<qint64, QDateTime> pair = m_watchMap.value(filePath);
+
+        if ((info.size()         != pair.first) ||
+            (info.lastModified() != pair.second))
+        {
+            qCDebug(DIGIKAM_GENERAL_LOG) << "LoadingCache file dirty:" << filePath;
+
+            m_cache->notifyFileChanged(filePath);
+            m_watchMap.remove(filePath);
+        }
+    }
+}
+
 void LoadingCacheFileWatch::notifyFileChanged(const QString& filePath)
 {
     if (m_cache)
     {
         LoadingCache::CacheLock lock(m_cache);
         m_cache->notifyFileChanged(filePath);
-    }
-}
-
-void LoadingCacheFileWatch::removeFile(const QString&)
-{
-    // default: do nothing
-}
-
-void LoadingCacheFileWatch::addedImage(const QString&)
-{
-    // default: do nothing
-}
-
-void LoadingCacheFileWatch::addedThumbnail(const QString&)
-{
-    // default: do nothing
-}
-
-//---------------------------------------------------------------------------------------------------
-
-ClassicLoadingCacheFileWatch::ClassicLoadingCacheFileWatch()
-{
-    if (thread() != QCoreApplication::instance()->thread())
-    {
-        moveToThread(QCoreApplication::instance()->thread());
-    }
-
-    m_watch = new QFileSystemWatcher;
-
-    connect(m_watch, SIGNAL(fileChanged(QString)),
-            this, SLOT(slotFileDirty(QString)));
-
-    // Make sure the signal gets here directly from the event loop.
-    // If putImage is called from the main thread, with CacheLock,
-    // a deadlock would result (mutex is not recursive)
-
-    connect(this, SIGNAL(signalUpdateDirWatch()),
-            this, SLOT(slotUpdateDirWatch()),
-            Qt::QueuedConnection);
-}
-
-ClassicLoadingCacheFileWatch::~ClassicLoadingCacheFileWatch()
-{
-    delete m_watch;
-}
-
-void ClassicLoadingCacheFileWatch::removeFile(const QString& filePath)
-{
-    m_watch->removePath(filePath);
-}
-
-void ClassicLoadingCacheFileWatch::addedImage(const QString& filePath)
-{
-    Q_UNUSED(filePath)
-
-    // schedule update of file watch
-    // QFileSystemWatch can only be accessed from main thread!
-
-    emit signalUpdateDirWatch();
-}
-
-void ClassicLoadingCacheFileWatch::addedThumbnail(const QString& filePath)
-{
-    Q_UNUSED(filePath);
-
-    // ignore, we do not watch thumbnails
-}
-
-void ClassicLoadingCacheFileWatch::slotFileDirty(const QString& path)
-{
-    // Signal comes from main thread
-
-    qCDebug(DIGIKAM_GENERAL_LOG) << "LoadingCache slotFileDirty:" << path;
-
-    // This method acquires a lock itself
-
-    notifyFileChanged(path);
-
-    // No need for locking here, we are in main thread
-
-    m_watch->removePath(path);
-}
-
-void ClassicLoadingCacheFileWatch::slotUpdateDirWatch()
-{
-    // Event comes from main thread, we need to lock ourselves.
-
-    LoadingCache::CacheLock lock(m_cache);
-
-    // get a list of files in cache that need watch
-
-    QStringList watchedFiles = m_watch->files();
-    QList<QString> filePaths = m_cache->imageFilePathsInCache();
-
-    foreach (const QString& path, watchedFiles)
-    {
-        if (!path.isEmpty())
-        {
-            if (!filePaths.contains(path))
-            {
-                m_watch->removePath(path);
-            }
-        }
-    }
-
-    foreach (const QString& path, filePaths)
-    {
-        if (!path.isEmpty())
-        {
-            if (!watchedFiles.contains(path))
-            {
-                m_watch->addPath(path);
-            }
-        }
     }
 }
 

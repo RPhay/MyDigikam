@@ -7,7 +7,7 @@
  * Description : Exiv2 library interface.
  *               Tools for combining rotation operations.
  *
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2006-2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  *
  * This program is free software; you can redistribute it
@@ -64,7 +64,6 @@ namespace Digikam
  * static const MetaEngineRotation flipVertical;           //( 1,  0,  0, -1)
  * static const MetaEngineRotation rotate90flipHorizontal; //( 0,  1,  1,  0), first rotate, then flip
  * static const MetaEngineRotation rotate90flipVertical;   //( 0, -1, -1,  0), first rotate, then flip
- *
  */
 
 namespace Matrix
@@ -84,22 +83,34 @@ MetaEngineRotation matrix(MetaEngineRotation::TransformationAction action)
     switch (action)
     {
         case MetaEngineRotation::NoTransformation:
+        {
             return identity;
+        }
 
         case MetaEngineRotation::FlipHorizontal:
+        {
             return flipHorizontal;
+        }
 
         case MetaEngineRotation::FlipVertical:
+        {
             return flipVertical;
+        }
 
         case MetaEngineRotation::Rotate90:
+        {
             return rotate90;
+        }
 
         case MetaEngineRotation::Rotate180:
+        {
             return rotate180;
+        }
 
         case MetaEngineRotation::Rotate270:
+        {
             return rotate270;
+        }
     }
 
     return identity;
@@ -110,31 +121,49 @@ MetaEngineRotation matrix(MetaEngine::ImageOrientation exifOrientation)
     switch (exifOrientation)
     {
         case MetaEngine::ORIENTATION_NORMAL:
+        {
             return identity;
+        }
 
         case MetaEngine::ORIENTATION_HFLIP:
+        {
             return flipHorizontal;
+        }
 
         case MetaEngine::ORIENTATION_ROT_180:
+        {
             return rotate180;
+        }
 
         case MetaEngine::ORIENTATION_VFLIP:
+        {
             return flipVertical;
+        }
 
         case MetaEngine::ORIENTATION_ROT_90_HFLIP:
+        {
             return rotate90flipHorizontal;
+        }
 
         case MetaEngine::ORIENTATION_ROT_90:
+        {
             return rotate90;
+        }
 
         case MetaEngine::ORIENTATION_ROT_90_VFLIP:
+        {
             return rotate90flipVertical;
+        }
 
         case MetaEngine::ORIENTATION_ROT_270:
+        {
             return rotate270;
+        }
 
         case MetaEngine::ORIENTATION_UNSPECIFIED:
+        {
             return identity;
+        }
     }
 
     return identity;
@@ -164,10 +193,10 @@ MetaEngineRotation::MetaEngineRotation(int m11, int m12, int m21, int m22)
 
 void MetaEngineRotation::set(int m11, int m12, int m21, int m22)
 {
-    m[0][0]=m11;
-    m[0][1]=m12;
-    m[1][0]=m21;
-    m[1][1]=m22;
+    m[0][0] = m11;
+    m[0][1] = m12;
+    m[1][0] = m21;
+    m[1][1] = m22;
 }
 
 bool MetaEngineRotation::isNoTransform() const
@@ -316,37 +345,53 @@ QMatrix MetaEngineRotation::toMatrix(MetaEngine::ImageOrientation orientation)
     {
         case MetaEngine::ORIENTATION_NORMAL:
         case MetaEngine::ORIENTATION_UNSPECIFIED:
+        {
             break;
+        }
 
         case MetaEngine::ORIENTATION_HFLIP:
+        {
             matrix.scale(-1, 1);
             break;
+        }
 
         case MetaEngine::ORIENTATION_ROT_180:
+        {
             matrix.rotate(180);
             break;
+        }
 
         case MetaEngine::ORIENTATION_VFLIP:
+        {
             matrix.scale(1, -1);
             break;
+        }
 
         case MetaEngine::ORIENTATION_ROT_90_HFLIP:
+        {
             matrix.scale(-1, 1);
             matrix.rotate(90);
             break;
+        }
 
         case MetaEngine::ORIENTATION_ROT_90:
+        {
             matrix.rotate(90);
             break;
+        }
 
         case MetaEngine::ORIENTATION_ROT_90_VFLIP:
+        {
             matrix.scale(1, -1);
             matrix.rotate(90);
             break;
+        }
 
         case MetaEngine::ORIENTATION_ROT_270:
+        {
             matrix.rotate(270);
             break;
+        }
     }
 
     return matrix;

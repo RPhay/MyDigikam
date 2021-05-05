@@ -7,7 +7,7 @@
  * Description : a tool to export images to Smugmug web service
  *
  * Copyright (C) 2005-2008 by Vardhman Jain <vardhman at gmail dot com>
- * Copyright (C) 2008-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2008-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2008-2009 by Luka Renko <lure at kubuntu dot org>
  * Copyright (C) 2018      by Thanh Trung Dinh <dinhthanhtrung1996 at gmail dot com>
  *
@@ -38,14 +38,13 @@
 #include "wslogindialog.h"
 #include "smugitem.h"
 #include "dinfointerface.h"
-#include "digikam_export.h"
 
 using namespace Digikam;
 
 namespace DigikamGenericSmugPlugin
 {
 
-class DIGIKAM_EXPORT SmugWindow : public WSToolDialog
+class SmugWindow : public WSToolDialog
 {
     Q_OBJECT
 
@@ -53,9 +52,9 @@ public:
 
     explicit SmugWindow(DInfoInterface* const iface,
                         QWidget* const parent,
-                        bool import=false,
-                        QString nickName = QString());
-    ~SmugWindow();
+                        bool import = false,
+                        const QString& nickName = QString());
+    ~SmugWindow() override;
 
     /**
      * Use this method to (re-)activate the dialog after it has been created
@@ -99,17 +98,16 @@ private Q_SLOTS:
                                const QString& errMsg,
                                const QList <SmugAlbumTmpl>& albumTList);
 
-    /**
-     * Categories now are deprecated in API v2
-     * 
-     * void slotListCategoriesDone(int errCode,
-     *                            const QString& errMsg,
-     *                            const QList <SmugCategory>& categoriesList);
+/*  Categories now are deprecated in API v2
 
-     * void slotListSubCategoriesDone(int errCode,
-     *                               const QString& errMsg,
-     *                               const QList <SmugCategory>& categoriesList);
-     */
+    void slotListCategoriesDone(int errCode,
+                                const QString& errMsg,
+                                const QList <SmugCategory>& categoriesList);
+
+    void slotListSubCategoriesDone(int errCode,
+                                   const QString& errMsg,
+                                   const QList <SmugCategory>& categoriesList);
+*/
 
     void slotUserChangeRequest(bool anonymous);
     void slotReloadAlbumsRequest();
@@ -123,11 +121,11 @@ private Q_SLOTS:
     void slotImageListChanged();
 
     void slotTemplateSelectionChanged(int index);
-    /**
-     * Categories now are deprecated in API v2
-     *  
-     * void slotCategorySelectionChanged(int index);
-     */
+
+/*  Categories now are deprecated in API v2
+
+    void slotCategorySelectionChanged(int index);
+*/
 
 private:
 

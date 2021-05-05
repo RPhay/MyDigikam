@@ -6,7 +6,7 @@
  * Date        : 2008-07-30
  * Description : digiKam about data.
  *
- * Copyright (C) 2008-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2008-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -38,14 +38,17 @@ class KAboutData;
 
 namespace Digikam
 {
+
 class DXmlGuiWindow;
 
 class DIGIKAM_EXPORT DAboutData : public QObject
 {
+    Q_OBJECT
+
 public:
 
     explicit DAboutData(DXmlGuiWindow* const parent);
-    ~DAboutData();
+    ~DAboutData() override;
 
     static const QString digiKamSloganFormated();
     static const QString digiKamSlogan();
@@ -53,6 +56,11 @@ public:
     static const QString copyright();
     static const QUrl    webProjectUrl();
     static void          authorsRegistration(KAboutData& aboutData);
+
+private:
+
+    // Disable
+    explicit DAboutData(QObject*);
 };
 
 } // namespace Digikam

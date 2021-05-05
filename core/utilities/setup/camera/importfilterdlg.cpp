@@ -7,7 +7,7 @@
  * Description : Import filters configuration dialog
  *
  * Copyright (C) 2010-2011 by Petri Damstén <petri dot damsten at iki dot fi>
- * Copyright (C) 2012-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -56,15 +56,15 @@ class Q_DECL_HIDDEN ImportFilterDlg::Private
 public:
 
     explicit Private()
-      : buttons(nullptr),
-        filterName(nullptr),
-        mimeCheckBox(nullptr),
-        mimeLabel(nullptr),
-        mimeButton(nullptr),
+      : buttons         (nullptr),
+        filterName      (nullptr),
+        mimeCheckBox    (nullptr),
+        mimeLabel       (nullptr),
+        mimeButton      (nullptr),
         fileNameCheckBox(nullptr),
-        fileNameEdit(nullptr),
-        pathCheckBox(nullptr),
-        pathEdit(nullptr),
+        fileNameEdit    (nullptr),
+        pathCheckBox    (nullptr),
+        pathEdit        (nullptr),
         newFilesCheckBox(nullptr)
     {
     }
@@ -86,7 +86,7 @@ public:
 
 ImportFilterDlg::ImportFilterDlg(QWidget* const parent)
     : QDialog(parent),
-      d(new Private)
+      d      (new Private)
 {
     setWindowTitle(i18n("Edit Import Filters"));
 
@@ -105,7 +105,7 @@ ImportFilterDlg::ImportFilterDlg(QWidget* const parent)
     (void)spacer;
 
     label            = new QLabel(page);
-    label->setText(i18n("Name:"));
+    label->setText(i18nc("@label: name of items filter", "Name:"));
     verticalLayout->addWidget(label);
     d->filterName    = new QLineEdit(page);
     verticalLayout->addWidget(d->filterName);

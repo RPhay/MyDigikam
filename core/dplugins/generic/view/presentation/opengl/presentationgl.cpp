@@ -6,10 +6,11 @@
  * Date        : 2004-01-19
  * Description : a presentation tool.
  *
- * Copyright (C) 2004      by Renchi Raju <renchi dot raju at gmail dot com>
+ * Copyright (C)      2004 by Renchi Raju <renchi dot raju at gmail dot com>
  * Copyright (C) 2006-2009 by Valerio Fuoglio <valerio.fuoglio@gmail.com>
- * Copyright (C) 2009      by Andi Clemens <andi dot clemens at googlemail dot com>
- * Copyright (C) 2012-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C)      2009 by Andi Clemens <andi dot clemens at googlemail dot com>
+ * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C)      2021 by Phuoc Khanh Le <phuockhanhnk94 at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -44,6 +45,8 @@
 #include <QMatrix>
 #include <QMouseEvent>
 #include <QPainter>
+#include <QPainterPath>
+#include <QPainterPathStroker>
 #include <QPixmap>
 #include <QTimer>
 #include <QWheelEvent>
@@ -52,8 +55,6 @@
 
 // KDE includes
 
-#include <kconfiggroup.h>
-#include <kconfig.h>
 #include <klocalizedstring.h>
 
 // Local includes
@@ -63,6 +64,12 @@
 #include "presentationcontainer.h"
 #include "presentationctrlwidget.h"
 #include "presentationloader.h"
+
+// OpenGL headers is not included automatically with ARM targets
+
+#ifdef Q_PROCESSOR_ARM
+#   include <GL/gl.h>
+#endif
 
 #ifdef HAVE_MEDIAPLAYER
 #   include "presentationaudiowidget.h"
@@ -79,38 +86,40 @@ class Q_DECL_HIDDEN PresentationGL::Private
 public:
 
     explicit Private()
-    {
-        timer               = nullptr;
-        fileIndex           = 0;
-        imageLoader         = nullptr;
-        texture[0]          = nullptr;
-        texture[1]          = nullptr;
-        texture[2]          = nullptr;
-        curr                = 0;
-        width               = 0;
-        height              = 0;
-        xMargin             = 0;
-        yMargin             = 0;
-        effect              = nullptr;
-        tex1First           = true;
-        effectRunning       = false;
-        timeout             = 0;
-        endOfShow           = false;
-        random              = false;
-        i                   = 0;
-        dir                 = 0;
-        slideCtrlWidget     = nullptr;
+      : timer           (nullptr),
+        fileIndex       (0),
+        imageLoader     (nullptr),
+        tex1First       (true),
+        curr            (0),
+        width           (0),
+        height          (0),
+        xMargin         (0),
+        yMargin         (0),
+        effect          (nullptr),
+        effectRunning   (false),
+        timeout         (0),
+        random          (false),
+        endOfShow       (false),
+        i               (0),
+        dir             (0),
+        slideCtrlWidget (nullptr),
 
 #ifdef HAVE_MEDIAPLAYER
-        playbackWidget      = nullptr;
+
+        playbackWidget  (nullptr),
+
 #endif
 
-        mouseMoveTimer      = nullptr;
-        deskX               = 0;
-        deskY               = 0;
-        deskWidth           = 0;
-        deskHeight          = 0;
-        sharedData          = nullptr;
+        mouseMoveTimer  (nullptr),
+        deskX           (0),
+        deskY           (0),
+        deskWidth       (0),
+        deskHeight      (0),
+        sharedData      (nullptr)
+    {
+        texture[0] = nullptr;
+        texture[1] = nullptr;
+        texture[2] = nullptr;
     }
 
     QMap<QString, EffectMethod>       effects;
@@ -137,12 +146,14 @@ public:
 
     int                               i;
     int                               dir;
-    float                             points[40][40][3] = {{{0.0}}};
+    float                             points[40][40][3] = { { { 0.0 } } };
 
     PresentationCtrlWidget*           slideCtrlWidget;
 
 #ifdef HAVE_MEDIAPLAYER
+
     PresentationAudioWidget*          playbackWidget;
+
 #endif
 
     QTimer*                           mouseMoveTimer;
@@ -157,17 +168,31 @@ public:
 
 PresentationGL::PresentationGL(PresentationContainer* const sharedData)
     : QOpenGLWidget(),
-      d(new Private)
+      d            (new Private)
 {
     setAttribute(Qt::WA_DeleteOnClose);
-    setWindowFlags(Qt::FramelessWindowHint | Qt::WindowStaysOnTopHint | Qt::Popup);
+    setContextMenuPolicy(Qt::PreventContextMenu);
+
+#ifdef Q_OS_WIN
+
+    setWindowFlags(Qt::Popup               |
+                   Qt::FramelessWindowHint |
+                   Qt::WindowStaysOnTopHint);
+
+#else
+
+    setWindowState(windowState() | Qt::WindowFullScreen);
+
+#endif
 
     QScreen* screen = qApp->primaryScreen();
 
     if (QWidget* const widget = qApp->activeWindow())
     {
         if (QWindow* const window = widget->windowHandle())
+        {
             screen = window->screen();
+        }
     }
 
     QRect deskRect  = screen->geometry();
@@ -181,7 +206,7 @@ PresentationGL::PresentationGL(PresentationContainer* const sharedData)
 
     d->sharedData  = sharedData;
 
-    d->slideCtrlWidget = new PresentationCtrlWidget(this);
+    d->slideCtrlWidget = new PresentationCtrlWidget(this, d->sharedData);
     d->slideCtrlWidget->hide();
 
     if (!d->sharedData->loop)
@@ -212,8 +237,8 @@ PresentationGL::PresentationGL(PresentationContainer* const sharedData)
 
 #endif
 
-    int w = d->slideCtrlWidget->width();
-    d->slideCtrlWidget->move(d->deskX + d->deskWidth - w - 1, d->deskY);
+    int w = d->slideCtrlWidget->width() - 1;
+    d->slideCtrlWidget->move(d->deskX + d->deskWidth - w, d->deskY);
 
     // -- Minimal texture size (opengl specs) --------------
 
@@ -245,7 +270,9 @@ PresentationGL::PresentationGL(PresentationContainer* const sharedData)
         d->effect = d->effects[d->sharedData->effectNameGL];
 
         if (!d->effect)
+        {
             d->effect = d->effects[QLatin1String("None")];
+        }
 
         d->random = false;
     }
@@ -258,7 +285,7 @@ PresentationGL::PresentationGL(PresentationContainer* const sharedData)
             this, SLOT(slotTimeOut()));
 
     d->timer->setSingleShot(true);
-    d->timer->start(10);
+    d->timer->start(500);
 
     // -- hide cursor when not moved --------------------
 
@@ -274,15 +301,21 @@ PresentationGL::PresentationGL(PresentationContainer* const sharedData)
 #ifdef HAVE_MEDIAPLAYER
 
     if (d->sharedData->soundtrackPlay)
+    {
         d->playbackWidget->slotPlay();
+    }
 
 #endif
+
 }
 
 PresentationGL::~PresentationGL()
 {
+
 #ifdef HAVE_MEDIAPLAYER
+
     d->playbackWidget->slotStop();
+
 #endif
 
     d->timer->stop();
@@ -302,39 +335,52 @@ PresentationGL::~PresentationGL()
 void PresentationGL::initializeGL()
 {
     // Enable Texture Mapping
+
     glEnable(GL_TEXTURE_2D);
 
     // Clear The Background Color
+
     glClearColor(0.0, 0.0, 0.0, 1.0f);
 
     // Turn Blending On
+
     glEnable(GL_BLEND);
 
     // Blending Function For Translucency Based On Source Alpha Value
+
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
     // Enable perspective vision
+
     glClearDepth(1.0f);
 
     // get the maximum texture value.
+
     GLint maxTexVal;
     glGetIntegerv(GL_MAX_TEXTURE_SIZE, &maxTexVal);
 
     // allow only maximum texture value of 1024. anything bigger and things slow down
-    maxTexVal = qMin(1024, maxTexVal);
 
-    d->width  = d->deskWidth;
-    d->height = d->deskHeight;
+    maxTexVal     = qMin(1024, maxTexVal);
 
-    d->width  = 1 << (int)ceil(log((float)d->width)  / log((float)2)) ;
-    d->height = 1 << (int)ceil(log((float)d->height) / log((float)2));
+    d->width      = d->deskWidth;
+    d->height     = d->deskHeight;
 
-    d->width  = qMin(maxTexVal, d->width);
-    d->height = qMin(maxTexVal, d->height);
+    d->width      = 1 << (int)ceil(log((float)d->width)  / log((float)2)) ;
+    d->height     = 1 << (int)ceil(log((float)d->height) / log((float)2));
+
+    d->width      = qMin(maxTexVal, d->width);
+    d->height     = qMin(maxTexVal, d->height);
 
     d->texture[0] = new QOpenGLTexture(QOpenGLTexture::Target2D);
     d->texture[1] = new QOpenGLTexture(QOpenGLTexture::Target2D);
     d->texture[2] = new QOpenGLTexture(QOpenGLTexture::Target2D); // end screen texture
+
+    QImage black(width(), height(), QImage::Format_RGB32);
+    black.fill(QColor(0, 0, 0).rgb());
+
+    d->texture[0]->setData(black);
+    d->texture[0]->bind();
 }
 
 void PresentationGL::paintGL()
@@ -351,19 +397,26 @@ void PresentationGL::paintGL()
     glLoadIdentity();
 
     if (d->endOfShow)
+    {
         showEndOfShow();
+    }
     else
     {
         if (d->effectRunning && d->effect)
+        {
             (this->*d->effect)();
+        }
         else
+        {
             paintTexture();
+        }
     }
 }
 
 void PresentationGL::resizeGL(int w, int h)
 {
     // Reset The Current Viewport And Perspective Transformation
+
     glViewport(0, 0, (GLint)w, (GLint)h);
 
     glMatrixMode(GL_PROJECTION);
@@ -373,29 +426,37 @@ void PresentationGL::resizeGL(int w, int h)
 void PresentationGL::keyPressEvent(QKeyEvent* event)
 {
     if (!event)
+    {
         return;
+    }
 
     d->slideCtrlWidget->keyPressEvent(event);
+
 #ifdef HAVE_MEDIAPLAYER
+
     d->playbackWidget->keyPressEvent(event);
+
 #endif
+
 }
 
 void PresentationGL::mousePressEvent(QMouseEvent* e)
 {
     if (d->endOfShow)
+    {
         slotClose();
+    }
 
-    if (e->button() == Qt::LeftButton)
+    if      (e->button() == Qt::LeftButton)
     {
         d->timer->stop();
-        d->slideCtrlWidget->setPaused(true);
+        d->slideCtrlWidget->setPaused(!d->sharedData->offAutoDelay);
         slotNext();
     }
-    else if (e->button() == Qt::RightButton && d->fileIndex - 1 >= 0)
+    else if ((e->button() == Qt::RightButton) && ((d->fileIndex - 1) >= 0))
     {
         d->timer->stop();
-        d->slideCtrlWidget->setPaused(true);
+        d->slideCtrlWidget->setPaused(!d->sharedData->offAutoDelay);
         slotPrev();
     }
 }
@@ -406,11 +467,17 @@ void PresentationGL::mouseMoveEvent(QMouseEvent* e)
     d->mouseMoveTimer->start(1000);
 
     if (!d->slideCtrlWidget->canHide()
+
 #ifdef HAVE_MEDIAPLAYER
+
         || !d->playbackWidget->canHide()
+
 #endif
+
        )
+    {
         return;
+    }
 
     QPoint pos(e->pos());
 
@@ -418,48 +485,50 @@ void PresentationGL::mouseMoveEvent(QMouseEvent* e)
         (pos.y() < (d->deskY + d->deskHeight - 20 - 1)))
     {
         if (d->slideCtrlWidget->isHidden()
+
 #ifdef HAVE_MEDIAPLAYER
+
             || d->playbackWidget->isHidden()
+
 #endif
+
            )
         {
             return;
         }
         else
         {
-            d->slideCtrlWidget->hide();
-#ifdef HAVE_MEDIAPLAYER
-            d->playbackWidget->hide();
-#endif
+            hideOverlays();
             setFocus();
         }
 
         return;
     }
 
-    d->slideCtrlWidget->show();
-#ifdef HAVE_MEDIAPLAYER
-    d->playbackWidget->show();
-#endif
+    showOverlays();
 }
 
 void PresentationGL::wheelEvent(QWheelEvent* e)
 {
     if (!d->sharedData->enableMouseWheel)
+    {
         return;
+    }
 
     if (d->endOfShow)
+    {
         slotClose();
+    }
 
-    int delta = e->delta();
+    int delta = e->angleDelta().y();
 
-    if (delta < 0)
+    if      (delta < 0)
     {
         d->timer->stop();
         d->slideCtrlWidget->setPaused(true);
         slotNext();
     }
-    else if (delta > 0 && d->fileIndex - 1 >= 0)
+    else if ((delta > 0) && ((d->fileIndex - 1) >= 0))
     {
         d->timer->stop();
         d->slideCtrlWidget->setPaused(true);
@@ -554,7 +623,7 @@ void PresentationGL::advanceFrame()
     if (!d->sharedData->loop && !d->endOfShow)
     {
         d->slideCtrlWidget->setEnabledPrev(d->fileIndex > 0);
-        d->slideCtrlWidget->setEnabledNext(d->fileIndex < num - 1);
+        d->slideCtrlWidget->setEnabledNext(d->fileIndex < (num - 1));
     }
 
     d->tex1First = !d->tex1First;
@@ -586,7 +655,7 @@ void PresentationGL::previousFrame()
     if (!d->sharedData->loop && !d->endOfShow)
     {
         d->slideCtrlWidget->setEnabledPrev(d->fileIndex > 0);
-        d->slideCtrlWidget->setEnabledNext(d->fileIndex < num - 1);
+        d->slideCtrlWidget->setEnabledNext(d->fileIndex < (num - 1));
     }
 
     d->tex1First = !d->tex1First;
@@ -615,18 +684,25 @@ void PresentationGL::loadImage()
         }
 
         if (d->sharedData->printFileName)
+        {
             printFilename(black);
+        }
 
         if (d->sharedData->printProgress)
+        {
             printProgress(black);
+        }
 
         if (d->sharedData->printFileComments)
+        {
             printComments(black);
+        }
 
         /* create the texture */
+
         d->texture[a]->destroy();
         d->texture[a]->setData(black.mirrored());
-        d->texture[a]->setMinificationFilter(QOpenGLTexture::Linear);
+        d->texture[a]->setMinificationFilter(QOpenGLTexture::LinearMipMapLinear);
         d->texture[a]->setMagnificationFilter(QOpenGLTexture::Linear);
         d->texture[a]->bind();
     }
@@ -639,16 +715,22 @@ void PresentationGL::montage(QImage& top, QImage& bot)
     int bw = bot.width();
     int bh = bot.height();
 
-    if (tw > bw || th > bh)
+    if ((tw > bw) || (th > bh))
+    {
         qFatal("Top Image should be smaller or same size as Bottom Image");
+    }
 
     if (top.depth() != 32)
+    {
         top = top.convertToFormat(QImage::Format_RGB32);
+    }
 
     if (bot.depth() != 32)
+    {
         bot = bot.convertToFormat(QImage::Format_RGB32);
+    }
 
-    int sw = bw / 2 - tw / 2; //int ew = bw/2 + tw/2;
+    int sw = bw / 2 - tw / 2; // int ew = bw/2 + tw/2;
     int sh = bh / 2 - th / 2;
     int eh = bh / 2 + th / 2;
 
@@ -701,7 +783,9 @@ void PresentationGL::printComments(QImage& layer)
     int yPos = 5; // Text Y coordinate
 
     if (d->sharedData->printFileName)
+    {
         yPos += 20;
+    }
 
     QStringList commentsByLines;
 
@@ -717,7 +801,7 @@ void PresentationGL::printComments(QImage& layer)
 
         int commentsLinesLengthLocal = d->sharedData->commentsLinesLength;
 
-        for (currIndex = commentsIndex ; currIndex < (uint)comments.length() && !breakLine ; ++currIndex)
+        for (currIndex = commentsIndex ; (currIndex < (uint)comments.length()) && !breakLine ; ++currIndex)
         {
             if (comments[currIndex] == QLatin1Char('\n') || comments[currIndex].isSpace())
             {
@@ -726,19 +810,25 @@ void PresentationGL::printComments(QImage& layer)
         }
 
         if (commentsLinesLengthLocal <= (int)((currIndex - commentsIndex)))
+        {
             commentsLinesLengthLocal = (currIndex - commentsIndex);
+        }
 
         breakLine = false;
 
-        for ( currIndex = commentsIndex ; currIndex <= commentsIndex + commentsLinesLengthLocal &&
-                currIndex < (uint)comments.length() && !breakLine ; ++currIndex )
+        for (currIndex = commentsIndex ; (currIndex <= (commentsIndex + commentsLinesLengthLocal)) &&
+             (currIndex < (uint)comments.length()) && !breakLine ; ++currIndex )
         {
             breakLine = (comments[currIndex] == QLatin1Char('\n')) ? true : false;
 
             if (breakLine)
+            {
                 newLine.append(QLatin1Char(' '));
+            }
             else
-                newLine.append( comments[currIndex] );
+            {
+                newLine.append(comments[currIndex]);
+            }
         }
 
         commentsIndex = currIndex; // The line is ended
@@ -805,9 +895,10 @@ void PresentationGL::showEndOfShow()
     QImage image(pix.toImage());
 
     /* create the texture */
+
     d->texture[2]->destroy();
     d->texture[2]->setData(image.mirrored());
-    d->texture[2]->setMinificationFilter(QOpenGLTexture::Linear);
+    d->texture[2]->setMinificationFilter(QOpenGLTexture::LinearMipMapLinear);
     d->texture[2]->setMagnificationFilter(QOpenGLTexture::Linear);
     d->texture[2]->bind();
 
@@ -835,6 +926,39 @@ void PresentationGL::showEndOfShow()
     glEnd();
 }
 
+void PresentationGL::showOverlays()
+{
+    if (d->slideCtrlWidget->isHidden())
+    {
+        int w = d->slideCtrlWidget->width() - 1;
+        d->slideCtrlWidget->move(d->deskX + d->deskWidth - w, d->deskY);
+        d->slideCtrlWidget->show();
+    }
+
+#ifdef HAVE_MEDIAPLAYER
+
+    if (d->playbackWidget->isHidden())
+    {
+        d->playbackWidget->move(d->deskX, d->deskY);
+        d->playbackWidget->show();
+    }
+
+#endif
+
+}
+
+void PresentationGL::hideOverlays()
+{
+    d->slideCtrlWidget->hide();
+
+#ifdef HAVE_MEDIAPLAYER
+
+    d->playbackWidget->hide();
+
+#endif
+
+}
+
 void PresentationGL::slotTimeOut()
 {
     if (!d->effect)
@@ -853,6 +977,7 @@ void PresentationGL::slotTimeOut()
         {
             // effect was running and is complete now
             // run timer while showing current image
+
             d->timeout = d->sharedData->delay;
             d->i       = 0;
         }
@@ -861,8 +986,17 @@ void PresentationGL::slotTimeOut()
 
             // timed out after showing current image
             // load next image and start effect
+
             if (d->random)
+            {
                 d->effect = getRandomEffect();
+            }
+
+            if (d->sharedData->offAutoDelay)
+            {
+                d->effect = &PresentationGL::effectNone;
+                d->timer->stop();
+            }
 
             advanceFrame();
 
@@ -884,6 +1018,11 @@ void PresentationGL::slotTimeOut()
     update();
 
     d->timer->start(d->timeout);
+
+    if (d->sharedData->offAutoDelay)
+    {
+        d->timer->stop();
+    }
 }
 
 void PresentationGL::slotMouseMoveTimeOut()
@@ -892,12 +1031,19 @@ void PresentationGL::slotMouseMoveTimeOut()
 
     if ((pos.y() < (d->deskY + 20))                     ||
         (pos.y() > (d->deskY + d->deskHeight - 20 - 1)) ||
+        !d->timer->isActive()                           ||
         d->slideCtrlWidget->underMouse()
+
 #ifdef HAVE_MEDIAPLAYER
+
         || d->playbackWidget->underMouse()
+
 #endif
+
        )
+    {
         return;
+    }
 
     setCursor(QCursor(Qt::BlankCursor));
 }
@@ -933,7 +1079,6 @@ void PresentationGL::effectNone()
     paintTexture();
     d->effectRunning = false;
     d->timeout       = 0;
-    return;
 }
 
 void PresentationGL::effectBlend()
@@ -946,8 +1091,8 @@ void PresentationGL::effectBlend()
         return;
     }
 
-    int a = (d->curr == 0) ? 1 : 0;
-    int b =  d->curr;
+    int a     = (d->curr == 0) ? 1 : 0;
+    int b     =  d->curr;
 
     GLuint ta = d->texture[a]->textureId();
     GLuint tb = d->texture[b]->textureId();
@@ -1039,7 +1184,6 @@ void PresentationGL::effectFade()
 
     glEnd();
 
-
     d->i++;
 }
 
@@ -1054,10 +1198,12 @@ void PresentationGL::effectRotate()
     }
 
     if (d->i == 0)
+    {
         d->dir = (int)((2.0 * qrand() / (RAND_MAX + 1.0)));
+    }
 
-    int a = (d->curr == 0) ? 1 : 0;
-    int b =  d->curr;
+    int a     = (d->curr == 0) ? 1 : 0;
+    int b     = d->curr;
 
     GLuint ta = d->texture[a]->textureId();
     GLuint tb = d->texture[b]->textureId();
@@ -1121,10 +1267,12 @@ void PresentationGL::effectBend()
     }
 
     if (d->i == 0)
+    {
         d->dir = (int)((2.0 * qrand() / (RAND_MAX + 1.0)));
+    }
 
-    int a = (d->curr == 0) ? 1 : 0;
-    int b =  d->curr;
+    int a     = (d->curr == 0) ? 1 : 0;
+    int b     = d->curr;
 
     GLuint ta = d->texture[a]->textureId();
     GLuint tb = d->texture[b]->textureId();
@@ -1199,16 +1347,16 @@ void PresentationGL::effectInOut()
 
     if (d->i <= 50)
     {
-        a = (d->curr == 0) ? 1 : 0;
+        a   = (d->curr == 0) ? 1 : 0;
         out = 1;
     }
     else
     {
-        a = d->curr;
+        a   = d->curr;
         out = 0;
     }
 
-    GLuint ta = d->texture[a]->textureId();
+    GLuint ta  = d->texture[a]->textureId();
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
     float t    = out ? 1.0 / 50.0 * (50.0 - d->i) : 1.0 / 50.0 * (d->i - 50.0);
@@ -1254,16 +1402,17 @@ void PresentationGL::effectSlide()
     }
 
     if (d->i == 0)
+    {
         d->dir = 1 + (int)((4.0 * qrand() / (RAND_MAX + 1.0)));
+    }
 
-    int a      = (d->curr == 0) ? 1 : 0;
-    int b      =  d->curr;
+    int a     = (d->curr == 0) ? 1 : 0;
+    int b     =  d->curr;
     GLuint ta = d->texture[a]->textureId();
     GLuint tb = d->texture[b]->textureId();
     glBindTexture(GL_TEXTURE_2D, tb);
 
     glBegin(GL_QUADS);
-
     {
         glColor4f(1.0, 1.0, 1.0, 1.0);
         glTexCoord2f(0, 0);
@@ -1401,7 +1550,7 @@ void PresentationGL::effectFlutter()
 
     // wave every two iterations
 
-    if (d->i % 2 == 0)
+    if ((d->i % 2) == 0)
     {
 
         float hold;
@@ -1437,12 +1586,13 @@ void PresentationGL::effectCube()
     }
 
     // Enable perspective vision
+
     glEnable(GL_DEPTH_TEST);
     glDepthFunc(GL_LEQUAL);
     glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST);
 
-    int a      = (d->curr == 0) ? 1 : 0;
-    int b      =  d->curr;
+    int a     = (d->curr == 0) ? 1 : 0;
+    int b     =  d->curr;
     GLuint ta = d->texture[a]->textureId();
     GLuint tb = d->texture[b]->textureId();
     glMatrixMode(GL_PROJECTION);
@@ -1481,41 +1631,46 @@ void PresentationGL::effectCube()
         glColor4f(0.0f, 0.0f, 0.0f, 1.0f);
 
         /* Front Face */
+
         glVertex3f( -1.00f, -1.00f,  0.99f );
         glVertex3f(  1.00f, -1.00f,  0.99f );
         glVertex3f(  1.00f,  1.00f,  0.99f );
         glVertex3f( -1.00f,  1.00f,  0.99f );
 
         /* Back Face */
+
         glVertex3f( -1.00f, -1.00f, -0.99f );
         glVertex3f( -1.00f,  1.00f, -0.99f );
         glVertex3f(  1.00f,  1.00f, -0.99f );
         glVertex3f(  1.00f, -1.00f, -0.99f );
 
         /* Top Face */
+
         glVertex3f( -1.00f,  0.99f, -1.00f );
         glVertex3f( -1.00f,  0.99f,  1.00f );
         glVertex3f(  1.00f,  0.99f,  1.00f );
         glVertex3f(  1.00f,  0.99f, -1.00f );
 
         /* Bottom Face */
+
         glVertex3f( -1.00f, -0.99f, -1.00f );
         glVertex3f(  1.00f, -0.99f, -1.00f );
         glVertex3f(  1.00f, -0.99f,  1.00f );
         glVertex3f( -1.00f, -0.99f,  1.00f );
 
         /* Right face */
+
         glVertex3f( 0.99f, -1.00f, -1.00f );
         glVertex3f( 0.99f,  1.00f, -1.00f );
         glVertex3f( 0.99f,  1.00f,  1.00f );
         glVertex3f( 0.99f, -1.00f,  1.00f );
 
         /* Left Face */
+
         glVertex3f( -0.99f, -1.00f, -1.00f );
         glVertex3f( -0.99f, -1.00f,  1.00f );
         glVertex3f( -0.99f,  1.00f,  1.00f );
         glVertex3f( -0.99f,  1.00f, -1.00f );
-
     }
 
     glEnd();
@@ -1526,6 +1681,7 @@ void PresentationGL::effectCube()
         glColor4d(1.0, 1.0, 1.0, 1.0);
 
         // Front Face
+
         glTexCoord2f( 0.0f, 0.0f );
         glVertex3f( -1.0f, -1.0f,  1.00f );
         glTexCoord2f( 1.0f, 0.0f );
@@ -1535,8 +1691,8 @@ void PresentationGL::effectCube()
         glTexCoord2f( 0.0f, 1.0f );
         glVertex3f( -1.0f,  1.0f,  1.00f );
 
-
         // Top Face
+
         glTexCoord2f( 1.0f, 1.0f );
         glVertex3f( -1.0f,  1.00f, -1.0f );
         glTexCoord2f( 1.0f, 0.0f );
@@ -1547,6 +1703,7 @@ void PresentationGL::effectCube()
         glVertex3f(  1.0f,  1.00f, -1.0f );
 
         // Bottom Face
+
         glTexCoord2f( 0.0f, 1.0f );
         glVertex3f( -1.0f, -1.00f, -1.0f );
         glTexCoord2f( 1.0f, 1.0f );
@@ -1557,6 +1714,7 @@ void PresentationGL::effectCube()
         glVertex3f( -1.0f, -1.00f,  1.0f );
 
         // Right face
+
         glTexCoord2f( 0.0f, 0.0f );
         glVertex3f( 1.00f, -1.0f, -1.0f );
         glTexCoord2f( 0.0f, 1.0f );
@@ -1567,6 +1725,7 @@ void PresentationGL::effectCube()
         glVertex3f( 1.00f,  1.0f, -1.0f );
 
         // Left Face
+
         glTexCoord2f( 1.0f, 0.0f );
         glVertex3f( -1.00f, -1.0f, -1.0f );
         glTexCoord2f( 0.0f, 0.0f );
@@ -1575,7 +1734,6 @@ void PresentationGL::effectCube()
         glVertex3f( -1.00f,  1.0f,  1.0f );
         glTexCoord2f( 1.0f, 1.0f );
         glVertex3f( -1.00f, -1.0f,  1.0f );
-
     }
 
     glEnd();
@@ -1586,6 +1744,7 @@ void PresentationGL::effectCube()
         glColor4d(1.0, 1.0, 1.0, 1.0);
 
         // Back Face
+
         glTexCoord2f( 1.0f, 0.0f );
         glVertex3f( -1.0f, -1.0f, -1.00f );
         glTexCoord2f( 1.0f, 1.0f );
@@ -1610,18 +1769,12 @@ void PresentationGL::effectCube()
 void PresentationGL::slotPause()
 {
     d->timer->stop();
-
-    if (d->slideCtrlWidget->isHidden())
-    {
-        int w = d->slideCtrlWidget->width();
-        d->slideCtrlWidget->move(d->deskWidth - w - 1, 0);
-        d->slideCtrlWidget->show();
-    }
+    showOverlays();
 }
 
 void PresentationGL::slotPlay()
 {
-    d->slideCtrlWidget->hide();
+    hideOverlays();
     slotTimeOut();
 }
 
@@ -1675,12 +1828,13 @@ QPixmap PresentationGL::generateOutlinedTextPixmap(const QString& text, QFont& f
 {
     QColor fgColor(Qt::white);
     QColor bgColor(Qt::black);
+
     return generateCustomOutlinedTextPixmap(text, fn, fgColor, bgColor, 0, true);
 }
 
 QPixmap PresentationGL::generateCustomOutlinedTextPixmap(const QString& text, QFont& fn,
-                                                      QColor& fgColor, QColor& bgColor,
-                                                      int opacity, bool drawTextOutline)
+                                                         QColor& fgColor, QColor& bgColor,
+                                                         int opacity, bool drawTextOutline)
 {
     QFontMetrics fm(fn);
     QRect rect = fm.boundingRect(text);
@@ -1695,7 +1849,8 @@ QPixmap PresentationGL::generateCustomOutlinedTextPixmap(const QString& text, QF
         pbg.setBrush(bgColor);
         pbg.setPen(bgColor);
         pbg.setOpacity(opacity / 10.0);
-        pbg.drawRoundedRect(0, 0, (int)pix.width(), (int)pix.height(),
+        pbg.drawRoundedRect(0,                     0,
+                            (int)pix.width(),      (int)pix.height(),
                             (int)pix.height() / 3, (int)pix.height() / 3);
     }
 
@@ -1705,6 +1860,7 @@ QPixmap PresentationGL::generateCustomOutlinedTextPixmap(const QString& text, QF
     p.setPen(QPen());
 
     // draw outline
+
     QPainterPath path;
     path.addText(fm.maxWidth(), fm.height() * 1.5, fn, text);
 
@@ -1715,9 +1871,11 @@ QPixmap PresentationGL::generateCustomOutlinedTextPixmap(const QString& text, QF
     QPainterPath outline = stroker.createStroke(path);
 
     if (drawTextOutline)
+    {
         p.fillPath(outline, Qt::black);
+    }
 
-    p.fillPath(path,    QBrush(fgColor));
+    p.fillPath(path, QBrush(fgColor));
 
     p.setRenderHint(QPainter::Antialiasing, false);
     p.end();
@@ -1728,12 +1886,14 @@ QPixmap PresentationGL::generateCustomOutlinedTextPixmap(const QString& text, QF
 bool PresentationGL::checkOpenGL() const
 {
     // No OpenGL context is found. Are the drivers ok?
+
     if (!isValid())
     {
         return false;
     }
 
     // GL_EXT_texture3D is not supported
+
     QString s = QString::fromLatin1(reinterpret_cast<const char*>(glGetString(GL_EXTENSIONS)));
 
     if (!s.contains(QString::fromLatin1("GL_EXT_texture3D"), Qt::CaseInsensitive))
@@ -1742,6 +1902,7 @@ bool PresentationGL::checkOpenGL() const
     }
 
     // Everything is ok!
+
     return true;
 }
 

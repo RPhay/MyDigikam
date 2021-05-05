@@ -6,7 +6,7 @@
  * Date        : 2004-07-11
  * Description : digiKam image editor Color Balance tool.
  *
- * Copyright (C) 2004-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2004-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -42,20 +42,20 @@ class CBTool : public EditorToolThreaded
 public:
 
     explicit CBTool(QObject* const parent);
-    ~CBTool();
+    ~CBTool()                   override;
 
 private Q_SLOTS:
 
-    void slotResetSettings();
+    void slotResetSettings()    override;
 
 private:
 
-    void readSettings();
-    void writeSettings();
-    void preparePreview();
-    void prepareFinal();
-    void setPreviewImage();
-    void setFinalImage();
+    void readSettings()         override;
+    void writeSettings()        override;
+    void preparePreview()       override;
+    void prepareFinal()         override;
+    void setPreviewImage()      override;
+    void setFinalImage()        override;
 
 private:
 

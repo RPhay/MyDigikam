@@ -1,15 +1,11 @@
 #!/bin/bash
 
-# Copyright (c) 2008-2020 by Gilles Caulier, <caulier dot gilles at gmail dot com>
+# Copyright (c) 2008-2021 by Gilles Caulier, <caulier dot gilles at gmail dot com>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
 #
 # Copy this script on root folder where are source code
-
-export PATH=$QTDIR/bin:$PATH
-export LD_LIBRARY_PATH=/usr/lib/kde4
-export PKG_CONFIG_PATH=/usr/lib/pkgconfig
 
 #export VERBOSE=1
 
@@ -72,6 +68,7 @@ export OpenCVOptions='-DBUILD_EXAMPLES=OFF \
                       -DWITH_JASPER=OFF \
                       -DWITH_MATLAB=OFF \
                       -DWITH_OPENEXR=OFF \
+                      -DWITH_OPENJPEG=OFF \
                       -DWITH_OPENNI=OFF \
                       -DWITH_OPENMP=OFF \
                       -DWITH_PVAPI=OFF \

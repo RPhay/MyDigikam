@@ -7,7 +7,7 @@
  * Description : User interface for searches
  *
  * Copyright (C) 2008-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2011-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2011-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -67,7 +67,7 @@ public:
     void write(SearchXmlWriter& writer);
     void reset();
 
-    Type groupType() const;
+    Type groupType()                    const;
 
     QList<QRect> startupAnimationArea() const;
 
@@ -77,8 +77,8 @@ Q_SIGNALS:
 
 protected:
 
-    virtual SearchGroup* createSearchGroup() override;
-    virtual void addGroupToLayout(SearchGroup* group) override;
+    SearchGroup* createSearchGroup()          override;
+    void addGroupToLayout(SearchGroup* group) override;
 
 protected:
 
@@ -102,13 +102,15 @@ class SearchGroupLabel : public QWidget
 
 public:
 
-    SearchGroupLabel(SearchViewThemedPartsCache* const cache, SearchGroup::Type type, QWidget* const parent = nullptr);
-    ~SearchGroupLabel();
+    SearchGroupLabel(SearchViewThemedPartsCache* const cache,
+                     SearchGroup::Type type,
+                     QWidget* const parent = nullptr);
+    ~SearchGroupLabel()             override;
 
     void setGroupOperator(SearchXml::Operator op);
     void setDefaultFieldOperator(SearchXml::Operator op);
 
-    SearchXml::Operator groupOperator() const;
+    SearchXml::Operator groupOperator()        const;
     SearchXml::Operator defaultFieldOperator() const;
 
 Q_SIGNALS:
@@ -127,7 +129,7 @@ protected:
     void adjustOperatorOptions();
     void updateGroupLabel();
 
-    virtual void paintEvent(QPaintEvent*) override;
+    void paintEvent(QPaintEvent*)   override;
 
 private:
 

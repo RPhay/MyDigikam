@@ -37,7 +37,7 @@ public:
                          const QUrl& input,
                          QUrl& cpCleanPtoUrl,
                          const QString& cpCleanPath);
-    ~CpCleanTask();
+    ~CpCleanTask() = default;
 
 protected:
 
@@ -47,6 +47,13 @@ private:
 
     QUrl&       cpCleanPtoUrl;
     const QUrl& cpFindPtoUrl;
+
+private:
+
+    // Disable
+    CpCleanTask() = delete;
+
+    Q_DISABLE_COPY(CpCleanTask)
 };
 
 } // namespace DigikamGenericPanoramaPlugin

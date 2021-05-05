@@ -6,7 +6,7 @@
  * Date        : 2012-12-18
  * Description : Customized Workflow Settings list.
  *
- * Copyright (C) 2012-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -49,10 +49,14 @@ class WorkflowItem : public QTreeWidgetItem
 public:
 
     WorkflowItem(WorkflowList* const parent, const QString& name);
-    virtual ~WorkflowItem();
+    ~WorkflowItem()                                                 override;
 
-    QString title() const;
-    int     count() const;
+    QString title()                                           const;
+    int     count()                                           const;
+
+private:
+
+    Q_DISABLE_COPY(WorkflowItem)
 };
 
 // -------------------------------------------------------------------------
@@ -64,7 +68,7 @@ class WorkflowList : public QTreeWidget
 public:
 
     explicit WorkflowList(QWidget* const parent);
-    virtual ~WorkflowList();
+    ~WorkflowList()                                                 override;
 
 Q_SIGNALS:
 

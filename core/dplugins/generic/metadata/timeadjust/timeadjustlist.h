@@ -65,12 +65,12 @@ public:
 public:
 
     explicit TimeAdjustList(QWidget* const parent);
-    ~TimeAdjustList();
+    ~TimeAdjustList() override;
 
     void setItemDates(const QMap<QUrl, QDateTime>& map, FieldType type);
     void setStatus(const QMap<QUrl, int>& status);
 };
 
-}  // namespace DigikamGenericTimeAdjustPlugin
+} // namespace DigikamGenericTimeAdjustPlugin
 
 #endif // DIGIKAM_TIME_ADJUST_LIST_H

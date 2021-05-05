@@ -9,7 +9,7 @@
  * Copyright (C) 2003-2005 by Renchi Raju <renchi dot raju at gmail dot com>
  * Copyright (C) 2007-2008 by Orgad Shaneh <orgads at gmail dot com>
  * Copyright (C) 2012      by Angelo Naselli <anaselli at linux dot it>
- * Copyright (C) 2012-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -36,6 +36,7 @@
 #include <QUrl>
 #include <QImage>
 #include <QLocale>
+#include <QScopedPointer>
 
 // Local includes
 
@@ -56,7 +57,7 @@ class Q_DECL_HIDDEN CalPainter::Private
 public:
 
     explicit Private()
-      : cancelled(false),
+      : cancelled  (false),
         orientation(MetaEngine::ORIENTATION_UNSPECIFIED)
     {
     }
@@ -71,7 +72,7 @@ public:
 
 CalPainter::CalPainter(QPaintDevice* const pDevice)
     : QPainter(pDevice),
-      d(new Private)
+      d       (new Private)
 {
 }
 
@@ -88,8 +89,8 @@ void CalPainter::cancel()
 void CalPainter::setImage(const QUrl& imagePath)
 {
     d->imagePath   = imagePath;
-    MetaEngine meta(d->imagePath.toLocalFile());
-    d->orientation = (int)meta.getItemOrientation();
+    QScopedPointer<MetaEngine> meta(new MetaEngine(d->imagePath.toLocalFile()));
+    d->orientation = (int)meta->getItemOrientation();
 }
 
 void CalPainter::paint(int month)
@@ -107,6 +108,7 @@ void CalPainter::paint(int month)
     // --------------------------------------------------
 
     // FIXME: magic number 42
+
     int days[42];
     int startDayOffset = QLocale().weekdays().first();
 
@@ -204,7 +206,9 @@ void CalPainter::paint(int month)
         }
 
         default:
+        {
             return;
+        }
     }
 
     int fontPixels = cellSizeX / 3;
@@ -222,7 +226,7 @@ void CalPainter::paint(int month)
     f.setBold(true);
     f.setPixelSize(f.pixelSize() + 5);
     setFont(f);
-    drawText(rCalHeader, Qt::AlignLeft | Qt::AlignVCenter, QString::number(params.year));
+    drawText(rCalHeader, Qt::AlignLeft  | Qt::AlignVCenter, QString::number(params.year));
     drawText(rCalHeader, Qt::AlignRight | Qt::AlignVCenter, QLocale().standaloneMonthName(month));
     restore();
 
@@ -253,7 +257,7 @@ void CalPainter::paint(int month)
         sx     = cellSizeX * i + rCal.left();
         r.moveTopLeft(QPoint(sx, sy));
         rsmall = r;
-        rsmall.setWidth(r.width() - 2);
+        rsmall.setWidth(r.width() - (r.width() / 10));
         rsmall.setHeight(r.height() - 2);
         drawText(rsmall, Qt::AlignRight | Qt::AlignBottom,
                  QLocale().standaloneDayName(dayname, QLocale::ShortFormat));
@@ -270,7 +274,7 @@ void CalPainter::paint(int month)
             sx     = cellSizeX * i + rCal.left();
             r.moveTopLeft(QPoint(sx, sy));
             rsmall = r;
-            rsmall.setWidth(r.width() - 2);
+            rsmall.setWidth(r.width() - (r.width() / 10));
             rsmall.setHeight(r.height() - 2);
 
             if (days[index] != -1)
@@ -340,8 +344,8 @@ void CalPainter::paint(int month)
     {
         if ( d->orientation != MetaEngine::ORIENTATION_UNSPECIFIED )
         {
-            MetaEngine meta;
-            meta.rotateExifQImage(d->image, (MetaEngine::ImageOrientation)d->orientation);
+            QScopedPointer<MetaEngine> meta(new MetaEngine);
+            meta->rotateExifQImage(d->image, (MetaEngine::ImageOrientation)d->orientation);
         }
 
         emit signalProgress(0);
@@ -375,4 +379,4 @@ void CalPainter::paint(int month)
     }
 }
 
-}  // Namespace Digikam
+} // namespace Digikam

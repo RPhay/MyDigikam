@@ -6,7 +6,7 @@
  * Date        : 2003-01-15
  * Description : DImg interface for image editor
  *
- * Copyright (C) 2004-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2004-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -79,25 +79,25 @@ public:
 public:
 
     Private()
-      : valid(false),
-        rotatedOrFlipped(false),
-        exifOrient(false),
-        doSoftProofing(false),
-        width(0),
-        height(0),
-        origWidth(0),
-        origHeight(0),
-        selX(0),
-        selY(0),
-        selW(0),
-        selH(0),
-        zoom(1.0),
-        displayingWidget(nullptr),
+      : valid            (false),
+        rotatedOrFlipped (false),
+        exifOrient       (false),
+        doSoftProofing   (false),
+        width            (0),
+        height           (0),
+        origWidth        (0),
+        origHeight       (0),
+        selX             (0),
+        selY             (0),
+        selW             (0),
+        selH             (0),
+        zoom             (1.0),
+        displayingWidget (nullptr),
         currentFileToSave(0),
-        undoMan(nullptr),
-        expoSettings(nullptr),
-        thread(nullptr),
-        rawPlugin(nullptr)
+        undoMan          (nullptr),
+        expoSettings     (nullptr),
+        thread           (nullptr),
+        rawPlugin        (nullptr)
     {
     }
 
@@ -203,7 +203,7 @@ void EditorCore::Private::resetValues()
 
 void EditorCore::Private::saveNext()
 {
-    if (filesToSave.isEmpty() || currentFileToSave >= filesToSave.size())
+    if (filesToSave.isEmpty() || (currentFileToSave >= filesToSave.size()))
     {
         return;
     }
@@ -355,12 +355,12 @@ void EditorCore::Private::saveAs(const QString& filePath, IOFileSettings* const 
     // No need to toggle off undo, redo or save action during saving using
     // signalUndoStateChanged(), this is will done by GUI implementation directly.
 
-    EditorCore::defaultInstance()->emit signalSavingStarted(filePath);
+    emit EditorCore::defaultInstance()->signalSavingStarted(filePath);
 
     filesToSave.clear();
     currentFileToSave = 0;
 
-    QString mimeType = givenMimeType;
+    QString mimeType  = givenMimeType;
 
     // This is possibly empty
 
@@ -375,7 +375,7 @@ void EditorCore::Private::saveAs(const QString& filePath, IOFileSettings* const 
         // The current file will stored away at a different name. Adjust history.
 
         image.getItemHistory().moveCurrentReferredImage(op.intermediateForLoadedFile.path,
-                                                         op.intermediateForLoadedFile.fileName);
+                                                        op.intermediateForLoadedFile.fileName);
     }
 
     if (op.tasks & VersionFileOperation::Replace)
@@ -407,11 +407,11 @@ void EditorCore::Private::saveAs(const QString& filePath, IOFileSettings* const 
 
     FileToSave primary;
     primary.fileName              = op.saveFile.fileName;
-    primary.filePath              = filePath; // can be temporary file path
+    primary.filePath              = filePath;               // can be temporary file path
     primary.intendedFilePath      = intendedFilePath;
     primary.mimeType              = mimeType;
     primary.ioAttributes          = ioAttributes(iofileSettings, mimeType);
-    primary.historyStep           = -1; // special value
+    primary.historyStep           = -1;                     // special value
     primary.setExifOrientationTag = setExifOrientationTag;
     primary.image                 = image;
     filesToSave << primary;
@@ -427,7 +427,7 @@ void EditorCore::Private::loadCurrent()
                  SharedLoadSaveThread::AccessModeReadWrite,
                  SharedLoadSaveThread::LoadingPolicyFirstRemovePrevious);
 
-    EditorCore::defaultInstance()->emit signalLoadingStarted(currentDescription.filePath);
+    emit EditorCore::defaultInstance()->signalLoadingStarted(currentDescription.filePath);
 }
 
 void EditorCore::Private::load(const LoadingDescription& description)
@@ -445,8 +445,8 @@ void EditorCore::Private::load(const LoadingDescription& description)
     }
     else
     {
-        EditorCore::defaultInstance()->emit signalLoadingStarted(currentDescription.filePath);
-        EditorCore::defaultInstance()->emit signalImageLoaded(currentDescription.filePath, true);
+        emit EditorCore::defaultInstance()->signalLoadingStarted(currentDescription.filePath);
+        emit EditorCore::defaultInstance()->signalImageLoaded(currentDescription.filePath, true);
     }
 }
 

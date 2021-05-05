@@ -34,9 +34,10 @@
 
 // KDE includes
 
-#include <kconfig.h>
-#include <kconfiggroup.h>
 #include <klocalizedstring.h>
+#include <ksharedconfig.h>
+#include <kconfiggroup.h>
+
 
 // Local includes
 
@@ -80,9 +81,9 @@ JAlbumWizard::JAlbumWizard(QWidget* const parent, DInfoInterface* const iface)
     setWindowTitle(i18n("Create jAlbum Album"));
 
     d->settings          = new JAlbumSettings(iface);
-    
-    KConfig config;
-    KConfigGroup group   = config.group("jAlbum tool");
+
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup group      = config->group("jAlbum tool");
     d->settings->readSettings(group);
 
     d->introPage         = new JAlbumIntroPage(this,         i18n("Welcome to jAlbum Album Tool"));
@@ -104,12 +105,14 @@ void JAlbumWizard::setItemsList(const QList<QUrl>& urls)
 bool JAlbumWizard::validateCurrentPage()
 {
     if (!DWizardDlg::validateCurrentPage())
+    {
         return false;
+    }
 
     if (currentPage() == d->outputPage)
     {
-        KConfig config;
-        KConfigGroup group = config.group("jAlbum tool");
+        KSharedConfigPtr config = KSharedConfig::openConfig();
+        KConfigGroup group      = config->group("jAlbum tool");
         d->settings->writeSettings(group);
     }
 

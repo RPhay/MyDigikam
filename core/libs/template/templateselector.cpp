@@ -6,7 +6,7 @@
  * Date        : 2009-06-23
  * Description : a widget to select metadata template.
  *
- * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -51,8 +51,8 @@ class Q_DECL_HIDDEN TemplateSelector::Private
 public:
 
     explicit Private()
-      : label(nullptr),
-        setupButton(nullptr),
+      : label        (nullptr),
+        setupButton  (nullptr),
         templateCombo(nullptr)
     {
     }
@@ -67,7 +67,8 @@ public:
 };
 
 TemplateSelector::TemplateSelector(QWidget* const parent)
-    : DHBox(parent), d(new Private)
+    : DHBox(parent),
+      d    (new Private)
 {
     d->label         = new QLabel(i18n("Template: "), this);
     d->templateCombo = new SqueezedComboBox(this);
@@ -90,7 +91,7 @@ TemplateSelector::TemplateSelector(QWidget* const parent)
     connect(d->setupButton, SIGNAL(clicked()),
             this, SLOT(slotOpenSetup()));
 
-    TemplateManager* tm = TemplateManager::defaultManager();
+    TemplateManager* const tm = TemplateManager::defaultManager();
 
     if (tm)
     {

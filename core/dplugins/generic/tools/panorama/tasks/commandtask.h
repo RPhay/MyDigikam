@@ -39,9 +39,9 @@ class CommandTask : public PanoTask
 public:
 
     explicit CommandTask(PanoAction action, const QString& workDirPath, const QString& commandPath);
-    ~CommandTask();
+    ~CommandTask()          override = default;
 
-    void    requestAbort();
+    void    requestAbort()  override;
 
 protected:
 
@@ -59,6 +59,13 @@ private:
 
     QSharedPointer<QProcess> process;
     QString                  commandPath;
+
+private:
+
+    // Disable
+    CommandTask() = delete;
+
+    Q_DISABLE_COPY(CommandTask)
 };
 
 } // namespace DigikamGenericPanoramaPlugin

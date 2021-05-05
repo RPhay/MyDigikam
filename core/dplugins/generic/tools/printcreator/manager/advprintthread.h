@@ -6,7 +6,7 @@
  * Date        : 2007-11-07
  * Description : a tool to print images
  *
- * Copyright (C) 2017-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2017-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -29,21 +29,20 @@
 #include "advprintsettings.h"
 #include "advprinttask.h"
 #include "actionthreadbase.h"
-#include "digikam_export.h"
 
 using namespace Digikam;
 
 namespace DigikamGenericPrintCreatorPlugin
 {
 
-class DIGIKAM_EXPORT AdvPrintThread : public ActionThreadBase
+class AdvPrintThread : public ActionThreadBase
 {
     Q_OBJECT
 
 public:
 
     explicit AdvPrintThread(QObject* const parent);
-    ~AdvPrintThread();
+    ~AdvPrintThread() override;
 
     void preparePrint(AdvPrintSettings* const settings, int sizeIndex);
     void print(AdvPrintSettings* const settings);

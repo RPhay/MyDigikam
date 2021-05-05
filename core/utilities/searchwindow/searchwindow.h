@@ -42,7 +42,7 @@ public:
      */
     SearchWindow();
 
-    ~SearchWindow();
+    ~SearchWindow() override;
 
     /**
      * Read the given search into the search widgets.
@@ -77,7 +77,12 @@ protected Q_SLOTS:
 
 protected:
 
-    virtual void keyPressEvent(QKeyEvent*) override;
+    void keyPressEvent(QKeyEvent*) override;
+
+private:
+
+    // Disable
+    SearchWindow(QWidget*) = delete;
 
 private:
 

@@ -7,7 +7,7 @@
  * Description : tags filter view
  *
  * Copyright (C) 2005      by Renchi Raju <renchi dot raju at gmail dot com>
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2009-2010 by Andi Clemens <andi dot clemens at gmail dot com>
  * Copyright (C) 2009-2010 by Johannes Wienke <languitar at semipol dot de>
  *
@@ -51,13 +51,13 @@ class Q_DECL_HIDDEN TagCheckView::Private
 public:
 
     explicit Private()
-      : toggleAutoTags(TagCheckView::NoToggleAuto),
-        checkNewTags(false),
-        toggleAutoAction(nullptr),
-        toggleNoneAction(nullptr),
+      : toggleAutoTags      (TagCheckView::NoToggleAuto),
+        checkNewTags        (false),
+        toggleAutoAction    (nullptr),
+        toggleNoneAction    (nullptr),
         toggleChildrenAction(nullptr),
-        toggleParentsAction(nullptr),
-        toggleBothAction(nullptr)
+        toggleParentsAction (nullptr),
+        toggleBothAction    (nullptr)
     {
     }
 
@@ -79,7 +79,7 @@ const QString TagCheckView::Private::configToggleAutoTagsEntry(QLatin1String("To
 
 TagCheckView::TagCheckView(QWidget* const parent, TagModel* const tagModel)
     : TagFolderView(parent, tagModel),
-      d(new Private)
+      d            (new Private)
 {
     setSelectAlbumOnClick(false);
     setExpandOnSingleClick(false);
@@ -245,6 +245,11 @@ bool TagCheckView::checkNewTags() const
 void TagCheckView::slotCreatedNewTagByContextMenu(TAlbum* tag)
 {
     albumModel()->setChecked(tag, true);
+
+    if (albumFilterModel())
+    {
+        albumFilterModel()->updateFilter();
+    }
 }
 
 void TagCheckView::addCustomContextMenuActions(ContextMenuHelper& cmh, Album* album)

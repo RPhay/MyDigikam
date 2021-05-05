@@ -7,7 +7,7 @@
  * Description : Flickr file list view and items.
  *
  * Copyright (C) 2009      by Pieter Edelman <pieter dot edelman at gmx dot net>
- * Copyright (C) 2008-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2008-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -45,7 +45,8 @@ class FlickrList : public DItemsList
 
 public:
 
-    /** The different columns in a Flickr list.
+    /**
+     * The different columns in a Flickr list.
      */
     enum FieldType
     {
@@ -57,7 +58,8 @@ public:
         FRIENDS     = DItemsListView::User6
     };
 
-    /** The different possible safety levels recognized by Flickr.
+    /**
+     * The different possible safety levels recognized by Flickr.
      */
     enum SafetyLevel
     {
@@ -67,7 +69,8 @@ public:
         MIXEDLEVELS = -1
     };
 
-    /** The different possible content types recognized by Flickr.
+    /**
+     * The different possible content types recognized by Flickr.
      */
     enum ContentType
     {
@@ -80,7 +83,7 @@ public:
 public:
 
     explicit FlickrList(QWidget* const parent = nullptr);
-    ~FlickrList();
+    ~FlickrList()                               override;
 
     void setPublic(Qt::CheckState);
     void setFamily(Qt::CheckState);
@@ -90,9 +93,11 @@ public:
 
 Q_SIGNALS:
 
-    // Signal for notifying when the states of one of the permission columns has
-    // changed. The first argument specifies which permission has changed, the
-    // second the state.
+    /**
+     * Signal for notifying when the states of one of the permission columns has
+     * changed. The first argument specifies which permission has changed, the
+     * second the state.
+     */
     void signalPermissionChanged(FlickrList::FieldType, Qt::CheckState);
 
     void signalSafetyLevelChanged(FlickrList::SafetyLevel);
@@ -132,29 +137,30 @@ public:
                                 bool, bool, bool,
                                 FlickrList::SafetyLevel,
                                 FlickrList::ContentType);
-    ~FlickrListViewItem();
+    ~FlickrListViewItem()                       override;
 
     void setPublic(bool);
     void setFamily(bool);
     void setFriends(bool);
     void setSafetyLevel(FlickrList::SafetyLevel);
     void setContentType(FlickrList::ContentType);
-    bool isPublic() const;
-    bool isFamily() const;
-    bool isFriends() const;
+    bool isPublic()                       const;
+    bool isFamily()                       const;
+    bool isFriends()                      const;
     FlickrList::SafetyLevel safetyLevel() const;
     FlickrList::ContentType contentType() const;
 
     /**
      * Returns the list of extra tags that the user specified for this image.
      */
-    QStringList extraTags() const;
+    QStringList extraTags()               const;
 
-    /** This method should be called when one of the checkboxes is clicked.
+    /**
+     * This method should be called when one of the checkboxes is clicked.
      */
     void toggled();
 
-    void updateItemWidgets() override;
+    void updateItemWidgets()                    override;
 
 private:
 

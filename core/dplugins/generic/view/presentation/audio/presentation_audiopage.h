@@ -7,7 +7,7 @@
  * Description : a presentation tool.
  *
  * Copyright (C) 2008-2009 by Valerio Fuoglio <valerio dot fuoglio at gmail dot com>
- * Copyright (C) 2012-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -45,27 +45,31 @@ class PresentationContainer;
 
 class SoundtrackPreview : public QDialog
 {
+    Q_OBJECT
 
-public :
+public:
 
-    explicit SoundtrackPreview(QWidget* const, const QList<QUrl>&, PresentationContainer* const);
-    ~SoundtrackPreview();
+    explicit SoundtrackPreview(QWidget* const,
+                               const QList<QUrl>&, PresentationContainer* const);
+    ~SoundtrackPreview() override;
 
-private :
+private:
 
     PresentationAudioWidget* m_playbackWidget;
 };
 
 // ----------------------------------------------------------------------
 
-class PresentationAudioPage : public QWidget, public Ui::PresentationAudioPage
+class PresentationAudioPage : public QWidget,
+                              public Ui::PresentationAudioPage
 {
     Q_OBJECT
 
 public:
 
-    explicit PresentationAudioPage(QWidget* const parent, PresentationContainer* const sharedData);
-    ~PresentationAudioPage();
+    explicit PresentationAudioPage(QWidget* const parent,
+                                   PresentationContainer* const sharedData);
+    ~PresentationAudioPage() override;
 
     void readSettings();
     void saveSettings();

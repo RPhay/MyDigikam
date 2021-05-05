@@ -10,7 +10,7 @@
  * Copyright (C) 2007-2008 by Orgad Shaneh <orgads at gmail dot com>
  * Copyright (C) 2011      by Andi Clemens <andi dot clemens at googlemail dot com>
  * Copyright (C) 2012      by Angelo Naselli <anaselli at linux dot it>
- * Copyright (C) 2012-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -33,6 +33,7 @@
 
 
 #ifdef HAVE_KCALENDAR
+
     // KCalCore includes
 
 #   include <kcalcore/icalformat.h>
@@ -42,6 +43,7 @@
     // Qt includes
 
 #   include <QTimeZone>
+
 #endif // HAVE_KCALENDAR
 
 namespace DigikamGenericCalendarPlugin
@@ -63,7 +65,7 @@ QPointer<CalSettings> CalSettings::s_instance;
 
 CalSettings::CalSettings(QObject* const parent)
     : QObject(parent),
-      d(new Private)
+      d      (new Private)
 {
     params.drawLines = false;
     params.year      = CalSystem().earliestValidDate().year() + 1;
@@ -90,6 +92,7 @@ CalSettings* CalSettings::instance(QObject* const parent)
 void CalSettings::setYear(int year)
 {
     params.year = year;
+
     emit settingsChanged();
 }
 
@@ -105,12 +108,12 @@ void CalSettings::setImage(int month, const QUrl& path)
 
 QUrl CalSettings::image(int month) const
 {
-    return d->monthMap.contains(month) ? d->monthMap[month] : QUrl();
+    return (d->monthMap.contains(month) ? d->monthMap[month] : QUrl());
 }
 
 void CalSettings::setPaperSize(const QString& paperSize)
 {
-    if (paperSize == QLatin1String("A4"))
+    if      (paperSize == QLatin1String("A4"))
     {
         params.paperWidth  = 210;
         params.paperHeight = 297;
@@ -128,7 +131,7 @@ void CalSettings::setPaperSize(const QString& paperSize)
 
 void CalSettings::setResolution(const QString& resolution)
 {
-    if (resolution == QLatin1String("High"))
+    if      (resolution == QLatin1String("High"))
     {
         params.printResolution = QPrinter::HighResolution;
     }
@@ -259,7 +262,8 @@ QColor CalSettings::getDayColor(int month, int day) const
         return d->special[dt].first;
     }
 
-    //default
+    // default
+
     return Qt::black;
 }
 
@@ -295,13 +299,18 @@ void CalSettings::loadSpecial(const QUrl& url, const QColor& color)
         return;
     }
 
-#ifdef HAVE_KCALENDAR_QDATETIME
+#   ifdef HAVE_KCALENDAR_QDATETIME
+
     KCalCore::MemoryCalendar::Ptr memCal(new KCalCore::MemoryCalendar(QTimeZone::utc()));
     using DateTime = QDateTime;
-#else
+
+#   else
+
     KCalCore::MemoryCalendar::Ptr memCal(new KCalCore::MemoryCalendar(QLatin1String("UTC")));
     using DateTime = KDateTime;
-#endif
+
+#   endif
+
     KCalCore::FileStorage::Ptr fileStorage(new KCalCore::FileStorage(memCal, url.toLocalFile(), new KCalCore::ICalFormat));
 
     qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Loading calendar from file " << url.toLocalFile();
@@ -360,4 +369,4 @@ void CalSettings::loadSpecial(const QUrl& url, const QColor& color)
 
 #endif // HAVE_KCALENDAR
 
-}  // Namespace Digikam
+} // namespace Digikam

@@ -6,7 +6,7 @@
  * Date        : 2006-09-19
  * Description : Track file loading and managing
  *
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2010-2014 by Michael G. Hansen <mike at mghansen dot de>
  *
  * This program is free software; you can redistribute it
@@ -69,13 +69,13 @@ public:
     public:
 
         explicit TrackPoint()
-          : dateTime(),
-            coordinates(),
-            nSatellites(-1),
-            hDop(-1),
-            pDop(-1),
-            fixType(-1),
-            speed(-1)
+          : dateTime    (),
+            coordinates (),
+            nSatellites (-1),
+            hDop        (-1),
+            pDop        (-1),
+            fixType     (-1),
+            speed       (-1)
         {
         }
 
@@ -109,11 +109,11 @@ public:
     public:
 
         explicit Track()
-          : url(),
-            points(),
-            id(0),
-            color(Qt::red),
-            flags(FlagDefault)
+          : url     (),
+            points  (),
+            id      (0),
+            color   (Qt::red),
+            flags   (FlagDefault)
         {
             qRegisterMetaType<TrackChanges>("TrackChanges");
         }
@@ -132,7 +132,7 @@ public:
 public:
 
     explicit TrackManager(QObject* const parent = nullptr);
-    virtual ~TrackManager();
+    ~TrackManager() override;
 
     void loadTrackFiles(const QList<QUrl>& urls);
     QList<QPair<QUrl, QString> > readLoadErrors();

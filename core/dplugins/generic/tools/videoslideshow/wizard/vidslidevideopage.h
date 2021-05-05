@@ -6,7 +6,7 @@
  * Date        : 2017-05-25
  * Description : a tool to generate video slideshow from images.
  *
- * Copyright (C) 2017-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2017-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -43,10 +43,10 @@ class VidSlideVideoPage : public DWizardPage
 public:
 
     explicit VidSlideVideoPage(QWizard* const dialog, const QString& title);
-    ~VidSlideVideoPage();
+    ~VidSlideVideoPage()    override;
 
-    void initializePage();
-    bool validatePage();
+    void initializePage()   override;
+    bool validatePage()     override;
 
 public Q_SLOTS:
 

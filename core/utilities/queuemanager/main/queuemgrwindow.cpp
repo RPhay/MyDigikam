@@ -6,7 +6,7 @@
  * Date        : 2008-11-21
  * Description : Batch Queue Manager GUI
  *
- * Copyright (C) 2008-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2008-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -22,57 +22,6 @@
  * ============================================================ */
 
 #include "queuemgrwindow_p.h"
-
-// Qt includes
-
-#include <QDir>
-#include <QFile>
-#include <QFileInfo>
-#include <QGridLayout>
-#include <QGroupBox>
-#include <QVBoxLayout>
-#include <QLabel>
-#include <QKeySequence>
-#include <QAction>
-#include <QMenuBar>
-#include <QStatusBar>
-#include <QMenu>
-#include <QMessageBox>
-#include <QApplication>
-
-// KDE includes
-
-#include <klocalizedstring.h>
-#include <kactioncollection.h>
-#include <kconfiggroup.h>
-#include <ksharedconfig.h>
-
-// Local includes
-
-#include "drawdecoder.h"
-#include "digikam_debug.h"
-#include "actions.h"
-#include "album.h"
-#include "batchtoolsfactory.h"
-#include "actionthread.h"
-#include "queuepool.h"
-#include "workflowmanager.h"
-#include "queuelist.h"
-#include "queuesettings.h"
-#include "queuesettingsview.h"
-#include "assignedlist.h"
-#include "toolsettingsview.h"
-#include "toolsview.h"
-#include "componentsinfodlg.h"
-#include "digikamapp.h"
-#include "thememanager.h"
-#include "dimg.h"
-#include "dlogoaction.h"
-#include "albummanager.h"
-#include "imagewindow.h"
-#include "thumbnailsize.h"
-#include "sidebar.h"
-#include "dnotificationwrapper.h"
 
 namespace Digikam
 {
@@ -96,7 +45,7 @@ bool QueueMgrWindow::queueManagerWindowCreated()
 
 QueueMgrWindow::QueueMgrWindow()
     : DXmlGuiWindow(nullptr),
-      d(new Private)
+      d            (new Private)
 {
     setConfigGroupName(QLatin1String("Batch Queue Manager Settings"));
     setXMLFile(QLatin1String("queuemgrwindowui5.rc"));
@@ -271,8 +220,8 @@ void QueueMgrWindow::setupConnections()
     connect(d->assignedList, SIGNAL(signalAssignedToolsChanged(AssignedBatchTools)),
             this, SLOT(slotAssignedToolsChanged(AssignedBatchTools)));
 
-    connect(d->toolsView, SIGNAL(signalAssignTools(QMap<int,QString>)),
-            d->assignedList, SLOT(slotAssignTools(QMap<int,QString>)));
+    connect(d->toolsView, SIGNAL(signalAssignTools(QMultiMap<int,QString>)),
+            d->assignedList, SLOT(slotAssignTools(QMultiMap<int,QString>)));
 
     // -- Queued Items list connections -------------------------------------
 
@@ -509,7 +458,7 @@ void QueueMgrWindow::refreshStatusBar()
             break;
     }
 
-    message.append(QLatin1String(" - ") + i18n("Total: "));
+    message.append(QLatin1String(" - ") + i18nc("#info: total number of items to process", "Total: "));
 
     switch (totalItems)
     {
@@ -566,6 +515,11 @@ void QueueMgrWindow::slotComponentsInfo()
 void QueueMgrWindow::slotDBStat()
 {
     showDigikamDatabaseStat();
+}
+
+void QueueMgrWindow::slotOnlineVersionCheck()
+{
+    Setup::onlineVersionCheck();
 }
 
 bool QueueMgrWindow::queryClose()
@@ -666,8 +620,7 @@ void QueueMgrWindow::populateToolsList()
 
 void QueueMgrWindow::slotRun()
 {
-    d->currentQueueToProcess   = 0;
-
+    d->currentQueueToProcess   = d->queuePool->currentIndex();
     QueueListView* const queue = d->queuePool->currentQueue();
     QString msg;
 

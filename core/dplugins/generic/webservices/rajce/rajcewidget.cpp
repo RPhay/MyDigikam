@@ -7,7 +7,7 @@
  * Description : A tool to export items to Rajce web service
  *
  * Copyright (C) 2011      by Lukas Krejci <krejci.l at centrum dot cz>
- * Copyright (C) 2011-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2011-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -42,7 +42,7 @@
 // KDE includes
 
 #include <klocalizedstring.h>
-#include <kconfig.h>
+#include <ksharedconfig.h>
 #include <kconfiggroup.h>
 
 // Local includes
@@ -110,7 +110,7 @@ public:
 
 RajceWidget::RajceWidget(DInfoInterface* const iface, QWidget* const parent)
     : WSSettingsWidget(parent, iface, QLatin1String("Rajce.net")),
-      d(new Private)
+      d               (new Private)
 {
     d->iface             = iface;
     d->talker            = new RajceTalker(this);
@@ -177,7 +177,7 @@ void RajceWidget::updateLabels(const QString&, const QString&)
           QString::fromLatin1(".rajce.net'>"
                               "<font color=\"#9ACD32\">Rajce.net</font>"
                               "</a></h2></b>")
-        : QString::fromLatin1("<b><h2><a href='http://www.rajce.net'>"
+        : QString::fromLatin1("<b><h2><a href='https://www.rajce.net'>"
                               "<font color=\"#9ACD32\">Rajce.net</font>"
                               "</a></h2></b>");
 
@@ -303,7 +303,7 @@ void RajceWidget::slotProgressStarted(unsigned commandType)
 {
     QString text;
 
-    switch(commandType)
+    switch (commandType)
     {
         case Login:       text = i18n("Logging in %v%");     break;
         case Logout:      text = i18n("Logging out %v%");    break;
@@ -499,8 +499,8 @@ void RajceWidget::setEnabledWidgets(bool enabled)
 
 void RajceWidget::readSettings()
 {
-    KConfig config;
-    KConfigGroup grp = config.group("RajceExport Settings");
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup grp        = config->group("RajceExport Settings");
 
     RajceSession session;
 
@@ -522,8 +522,8 @@ void RajceWidget::readSettings()
 
 void RajceWidget::writeSettings()
 {
-    KConfig config;
-    KConfigGroup grp            = config.group("RajceExport Settings");
+    KSharedConfigPtr config     = KSharedConfig::openConfig();
+    KConfigGroup grp            = config->group("RajceExport Settings");
     const RajceSession& session = d->talker->session();
 
     grp.writeEntry("token",        session.sessionToken());

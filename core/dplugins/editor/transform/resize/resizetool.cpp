@@ -6,7 +6,7 @@
  * Date        : 2005-04-07
  * Description : a tool to resize an image
  *
- * Copyright (C) 2005-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2005-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -55,7 +55,7 @@
 
 #include <klocalizedstring.h>
 #include <ksharedconfig.h>
-#include "kconfiggroup.h"
+#include <kconfiggroup.h>
 
 // Local includes
 
@@ -110,27 +110,27 @@ public:
     };
 
     explicit Private()
-      : orgWidth(0),
-        orgHeight(0),
-        prevW(0),
-        prevH(0),
-        prevWP(0.0),
-        prevHP(0.0),
-        restorationTips(nullptr),
-        presetCBox(nullptr),
-        units(nullptr),
-        preserveRatioBox(nullptr),
+      : orgWidth            (0),
+        orgHeight           (0),
+        prevW               (0),
+        prevH               (0),
+        prevWP              (0.0),
+        prevHP              (0.0),
+        restorationTips     (nullptr),
+        presetCBox          (nullptr),
+        units               (nullptr),
+        preserveRatioBox    (nullptr),
         useGreycstorationBox(nullptr),
-        mainTab(nullptr),
-        cimgLogoLabel(nullptr),
-        previewWidget(nullptr),
-        wInput(nullptr),
-        hInput(nullptr),
-        resolution(nullptr),
-        wpInput(nullptr),
-        hpInput(nullptr),
-        gboxSettings(nullptr),
-        settingsWidget(nullptr)
+        mainTab             (nullptr),
+        cimgLogoLabel       (nullptr),
+        previewWidget       (nullptr),
+        wInput              (nullptr),
+        hInput              (nullptr),
+        resolution          (nullptr),
+        wpInput             (nullptr),
+        hpInput             (nullptr),
+        gboxSettings        (nullptr),
+        settingsWidget      (nullptr)
     {
     }
 
@@ -277,7 +277,7 @@ const QString ResizeTool::Private::configBTileEntry(QLatin1String("BTile"));
 
 ResizeTool::ResizeTool(QObject* const parent)
     : EditorToolThreaded(parent),
-      d(new Private)
+      d                 (new Private)
 {
     setObjectName(QLatin1String("resizeimage"));
 
@@ -401,7 +401,7 @@ ResizeTool::ResizeTool(QObject* const parent)
     d->resolution->setObjectName(QLatin1String("resolution"));
     d->resolution->setWhatsThis( i18n("New image resolution in pixels/inch."));
 
-    d->cimgLogoLabel        = new DActiveLabel(QUrl(QLatin1String("http://cimg.sourceforge.net")),
+    d->cimgLogoLabel        = new DActiveLabel(QUrl(QLatin1String("http://cimg.sourceforge.net")),      // krazy:exclude=insecurenet
                                                QStandardPaths::locate(QStandardPaths::GenericDataLocation,
                                                                       QLatin1String("digikam/data/logo-cimg.png")), firstPage);
     d->cimgLogoLabel->setToolTip(i18n("Visit CImg library website"));

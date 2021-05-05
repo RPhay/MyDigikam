@@ -6,7 +6,7 @@
  * Date        : 2018-07-30
  * Description : a plugin to export items to web-services (unified version).
  *
- * Copyright (C) 2018-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2018-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -49,7 +49,7 @@ void UnifiedPlugin::cleanUp()
 
 QString UnifiedPlugin::name() const
 {
-    return i18n("Unified");
+    return i18nc("@title", "Unified");
 }
 
 QString UnifiedPlugin::iid() const
@@ -64,13 +64,13 @@ QIcon UnifiedPlugin::icon() const
 
 QString UnifiedPlugin::description() const
 {
-    return i18n("A tool to export items to web-services");
+    return i18nc("@info", "A tool to export items to web-services");
 }
 
 QString UnifiedPlugin::details() const
 {
-    return i18n("<p>This tool permit to export items to many web-services.</p>"
-                "<p>This is a unified tool, grouping many tools in one.</p>");
+    return i18nc("@info", "This tool permit to export items to many web-services.\n\n"
+                 "This is a unified tool, grouping many tools in one.");
 }
 
 QList<DPluginAuthor> UnifiedPlugin::authors() const
@@ -81,10 +81,10 @@ QList<DPluginAuthor> UnifiedPlugin::authors() const
                              QString::fromUtf8("(C) 2018"))
             << DPluginAuthor(QString::fromUtf8("Maik Qualmann"),
                              QString::fromUtf8("metzpinguin at gmail dot com"),
-                             QString::fromUtf8("(C) 2018-2020"))
+                             QString::fromUtf8("(C) 2018-2021"))
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2018-2020"))
+                             QString::fromUtf8("(C) 2018-2021"))
             ;
 }
 

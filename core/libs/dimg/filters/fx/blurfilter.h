@@ -6,7 +6,7 @@
  * Date        : 2005-17-07
  * Description : A Gaussian Blur threaded image filter.
  *
- * Copyright (C) 2005-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2005-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2009      by Andi Clemens <andi dot clemens at gmail dot com>
  * Copyright (C) 2010      by Martin Klapetek <martin dot klapetek at gmail dot com>
  *
@@ -37,17 +37,26 @@ namespace Digikam
 
 class DIGIKAM_EXPORT BlurFilter : public DImgThreadedFilter
 {
+    Q_OBJECT
 
 public:
 
     explicit BlurFilter(QObject* const parent = nullptr);
-    explicit BlurFilter(DImg* const orgImage, QObject* const parent=nullptr, int radius=3);
+    explicit BlurFilter(DImg* const orgImage,
+                        QObject* const parent = nullptr,
+                        int radius = 3);
 
-    // Constructor for slave mode: execute immediately in current thread with specified master filter
-    explicit BlurFilter(DImgThreadedFilter* const parentFilter, const DImg& orgImage, const DImg& destImage,
-                        int progressBegin=0, int progressEnd=100, int radius=3);
+    /**
+     * Constructor for slave mode: execute immediately in current thread with specified master filter
+     */
+    explicit BlurFilter(DImgThreadedFilter* const parentFilter,
+                        const DImg& orgImage,
+                        const DImg& destImage,
+                        int progressBegin = 0,
+                        int progressEnd = 100,
+                        int radius = 3);
 
-    ~BlurFilter();
+    ~BlurFilter()                                                             override;
 
     static QString          FilterIdentifier()
     {
@@ -66,12 +75,12 @@ public:
         return 1;
     }
 
-    virtual QString         filterIdentifier()                          const override
+    QString         filterIdentifier()                                  const override
     {
         return FilterIdentifier();
     }
 
-    virtual FilterAction    filterAction()                                    override;
+    FilterAction    filterAction()                                            override;
 
     void                    readParameters(const FilterAction& action)        override;
 

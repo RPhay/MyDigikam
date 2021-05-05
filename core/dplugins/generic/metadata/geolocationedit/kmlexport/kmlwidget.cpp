@@ -7,7 +7,7 @@
  * Description : a tool to export GPS data to KML file.
  *
  * Copyright (C) 2006-2007 by Stephane Pontier <shadow dot walker at free dot fr>
- * Copyright (C) 2008-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2008-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -51,9 +51,9 @@ namespace DigikamGenericGeolocationEditPlugin
 KmlWidget::KmlWidget(GeolocationEdit* const dlg,
                      GPSItemModel* const imageModel,
                      DInfoInterface* const iface)
-    : QWidget(dlg),
-      m_model(imageModel),
-      m_dlg(dlg),
+    : QWidget    (dlg),
+      m_model    (imageModel),
+      m_dlg      (dlg),
       m_kmlExport(iface)
 {
     KMLExportConfigLayout = new QGridLayout(this);
@@ -67,6 +67,7 @@ KmlWidget::KmlWidget(GeolocationEdit* const dlg,
     TargetPreferenceGroupBoxLayout = new QGridLayout(TargetPreferenceGroupBox);
 
     // target type
+
     TargetTypeGroupBox             = new QGroupBox(i18n("Target Type"), this);
     buttonGroupTargetTypeLayout    = new QGridLayout(TargetTypeGroupBox);
     buttonGroupTargetType          = new QButtonGroup(TargetTypeGroupBox);
@@ -91,25 +92,29 @@ KmlWidget::KmlWidget(GeolocationEdit* const dlg,
     AltitudeCB_->addItem(i18n("relative to ground"));
     AltitudeCB_->addItem(i18n("absolute"));
     AltitudeCB_->setWhatsThis(i18n("<p>Specifies how pictures are displayed"
-                                   "<dl><dt>clamp to ground (default)</dt>"
-                                   "<dd>Indicates to ignore an altitude specification</dd>"
-                                   "<dt>relative to ground</dt>"
-                                   "<dd>Sets the altitude of the element relative to the actual ground "
-                                   "elevation of a particular location.</dd>"
-                                   "<dt>absolute</dt>"
-                                   "<dd>Sets the altitude of the coordinate relative to sea level, regardless "
-                                   "of the actual elevation of the terrain beneath the element.</dd></dl></p>"));
+                                       "<dl>"
+                                           "<dt>clamp to ground (default)</dt>"
+                                               "<dd>Indicates to ignore an altitude specification</dd>"
+                                           "<dt>relative to ground</dt>"
+                                               "<dd>Sets the altitude of the element relative to the actual ground "
+                                               "elevation of a particular location.</dd>"
+                                           "<dt>absolute</dt>"
+                                               "<dd>Sets the altitude of the coordinate relative to sea level, regardless "
+                                               "of the actual elevation of the terrain beneath the element.</dd>"
+                                       "</dl>"
+                                   "</p>"));
 
     destinationDirectoryLabel_ = new QLabel(i18n("Destination Directory:"), TargetPreferenceGroupBox);
 
-    DestinationDirectory_= new DFileSelector(TargetPreferenceGroupBox);
+    DestinationDirectory_      = new DFileSelector(TargetPreferenceGroupBox);
     DestinationDirectory_->setFileDlgMode(QFileDialog::Directory);
+    DestinationDirectory_->setFileDlgOptions(QFileDialog::ShowDirsOnly);
     DestinationDirectory_->setFileDlgTitle(i18n("Select a directory in which to save the kml file and pictures"));
 
-    DestinationUrlLabel_ = new QLabel(i18n("Destination Path:"), TargetPreferenceGroupBox);
-    DestinationUrl_      = new QLineEdit(TargetPreferenceGroupBox);
-    FileNameLabel_       = new QLabel(i18n("Filename:"), TargetPreferenceGroupBox);
-    FileName_            = new QLineEdit(TargetPreferenceGroupBox);
+    DestinationUrlLabel_       = new QLabel(i18n("Destination Path:"), TargetPreferenceGroupBox);
+    DestinationUrl_            = new QLineEdit(TargetPreferenceGroupBox);
+    FileNameLabel_             = new QLabel(i18n("Filename:"), TargetPreferenceGroupBox);
+    FileName_                  = new QLineEdit(TargetPreferenceGroupBox);
 
     TargetPreferenceGroupBoxLayout->addWidget(TargetTypeGroupBox,         0, 0, 2, 5);
     TargetPreferenceGroupBoxLayout->addWidget(AltitudeLabel_,             2, 0, 1, 1);
@@ -152,9 +157,11 @@ KmlWidget::KmlWidget(GeolocationEdit* const dlg,
     QGridLayout* const GPXTracksGroupBoxLayout = new QGridLayout(GPXTracksGroupBox);
 
     // add a gpx track checkbox
+
     GPXTracksCheckBox_   = new QCheckBox(i18n("Draw GPX Track"), GPXTracksGroupBox);
 
     // file selector
+
     GPXFileLabel_ = new QLabel(i18n("GPX file:"), GPXTracksGroupBox);
 
     GPXFileUrlRequester_ = new DFileSelector(GPXTracksGroupBox);
@@ -195,13 +202,13 @@ KmlWidget::KmlWidget(GeolocationEdit* const dlg,
                                   "picture shooting, so that the time stamps of the GPS "
                                   "can be converted to match the local time"));
 
-    GPXLineWidthLabel_ = new QLabel(i18n("Track Width:"), GPXTracksGroupBox);
-    GPXLineWidthInput_ = new QSpinBox(GPXTracksGroupBox);
+    GPXLineWidthLabel_     = new QLabel(i18n("Track Width:"), GPXTracksGroupBox);
+    GPXLineWidthInput_     = new QSpinBox(GPXTracksGroupBox);
     GPXLineWidthInput_->setValue(4);
 
-    GPXColorLabel_ = new QLabel(i18n("Track Color:"), GPXTracksGroupBox);
-    GPXTrackColor_ = new DColorSelector(GPXTracksGroupBox);
-    GPXTrackColor_->setColor(QColor("#ffffff"));
+    GPXColorLabel_         = new QLabel(i18n("Track Color:"), GPXTracksGroupBox);
+    GPXTrackColor_         = new DColorSelector(GPXTracksGroupBox);
+    GPXTrackColor_->setColor(QColor(0xff, 0xff, 0xff));
 
     GPXTracksOpacityLabel_ = new QLabel(i18n("Opacity (%):"), GPXTracksGroupBox);
     GPXTracksOpacityInput_ = new QSpinBox(GPXTracksGroupBox);
@@ -209,21 +216,24 @@ KmlWidget::KmlWidget(GeolocationEdit* const dlg,
     GPXTracksOpacityInput_->setSingleStep(1);
     GPXTracksOpacityInput_->setValue(100);
 
-    GPXAltitudeLabel_ = new QLabel(i18n("Track Altitude:"), GPXTracksGroupBox);
-    GPXAltitudeCB_    = new QComboBox(GPXTracksGroupBox);
+    GPXAltitudeLabel_      = new QLabel(i18n("Track Altitude:"), GPXTracksGroupBox);
+    GPXAltitudeCB_         = new QComboBox(GPXTracksGroupBox);
     GPXAltitudeCB_->addItem(i18n("clamp to ground"));
     GPXAltitudeCB_->addItem(i18n("relative to ground"));
     GPXAltitudeCB_->addItem(i18n("absolute"));
     GPXAltitudeCB_->setWhatsThis(i18n("<p>Specifies how the points are displayed"
-                                      "<dl><dt>clamp to ground (default)</dt>"
-                                      "<dd>Indicates to ignore an altitude specification</dd>"
-                                      "<dt>relative to ground</dt>"
-                                      "<dd>Sets the altitude of the element relative to the actual ground "
-                                      "elevation of a particular location.</dd>"
-                                      "<dt>absolute</dt>"
-                                      "<dd>Sets the altitude of the coordinate relative to sea level, "
-                                      "regardless of the actual elevation of the terrain beneath "
-                                      "the element.</dd></dl>"));
+                                          "<dl>"
+                                              "<dt>clamp to ground (default)</dt>"
+                                                  "<dd>Indicates to ignore an altitude specification</dd>"
+                                              "<dt>relative to ground</dt>"
+                                                  "<dd>Sets the altitude of the element relative to the actual ground "
+                                                  "elevation of a particular location.</dd>"
+                                              "<dt>absolute</dt>"
+                                                  "<dd>Sets the altitude of the coordinate relative to sea level, "
+                                                  "regardless of the actual elevation of the terrain beneath "
+                                                  "the element.</dd>"
+                                          "</dl>"
+                                      "</p>"));
 
     GPXTracksGroupBoxLayout->addWidget(GPXTracksCheckBox_,     0, 0, 1, 4);
     GPXTracksGroupBoxLayout->addWidget(GPXFileLabel_,          1, 0, 1, 1);
@@ -293,7 +303,7 @@ void KmlWidget::slotKMLGenerate()
 
     QList<QUrl> urls;
 
-    for (int i = 0; i < m_model->rowCount(); ++i)
+    for (int i = 0 ; i < m_model->rowCount() ; ++i)
     {
         GPSItemContainer* const item = m_model->itemFromIndex(m_model->index(i, 0));
 
@@ -366,7 +376,7 @@ void KmlWidget::readSettings()
     bool    optimize_googlemap;
     int     iconSize;
 
-    // int googlemapSize;
+    /// int googlemapSize;
     int     size;
     QString UrlDestDir;
     QString baseDestDir;
@@ -387,12 +397,15 @@ void KmlWidget::readSettings()
     localTarget         = group.readEntry(QLatin1String("localTarget"), true);
     optimize_googlemap  = group.readEntry(QLatin1String("optimize_googlemap"), false);
     iconSize            = group.readEntry(QLatin1String("iconSize"), 33);
+
     // not saving this size as it should not change
     // googlemapSize = group.readNumEntry("googlemapSize", 32);
+
     size                = group.readEntry(QLatin1String("size"), 320);
-    // UrlDestDir have to have the trailing /
+
+    /// UrlDestDir have to have the trailing /
     baseDestDir         = group.readEntry(QLatin1String("baseDestDir"), QString::fromUtf8("/tmp/"));
-    UrlDestDir          = group.readEntry(QLatin1String("UrlDestDir"),  QString::fromUtf8("http://www.example.com/"));
+    UrlDestDir          = group.readEntry(QLatin1String("UrlDestDir"),  QString::fromUtf8("https://www.example.com/"));
     KMLFileName         = group.readEntry(QLatin1String("KMLFileName"), QString::fromUtf8("kmldocument"));
     AltitudeMode        = group.readEntry(QLatin1String("Altitude Mode"), 0);
 

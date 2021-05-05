@@ -27,11 +27,18 @@
 
 // Qt includes
 
-#include <QtTest>
+#include <QTest>
 
 class TestRGParsing : public QObject
 {
     Q_OBJECT
+
+public:
+
+    explicit TestRGParsing(QObject* const parent = nullptr)
+        : QObject(parent)
+    {
+    }
 
 private Q_SLOTS:
 
@@ -39,4 +46,4 @@ private Q_SLOTS:
     void testVerifyRG();
 };
 
-#endif /* DIGIKAM_TEST_RGPARSING_H */
+#endif // DIGIKAM_TEST_RGPARSING_H

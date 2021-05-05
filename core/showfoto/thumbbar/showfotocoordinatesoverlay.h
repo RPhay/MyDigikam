@@ -6,7 +6,7 @@
  * Date        : 2014-05-28
  * Description : overlay for GPS location indicator
  *
- * Copyright (C) 2014-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2014-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -50,7 +50,7 @@ public:
 
 protected:
 
-    virtual void paintEvent(QPaintEvent*) override;
+    void paintEvent(QPaintEvent*) override;
 };
 
 // ----------------------------------------------------------------------
@@ -69,11 +69,11 @@ protected:
 
     void updatePosition();
 
-    virtual QWidget* createWidget()                         override;
-    virtual void setActive(bool active)                     override;
-    virtual void visualChange()                             override;
-    virtual bool checkIndex(const QModelIndex& index) const override;
-    virtual void slotEntered(const QModelIndex& index)      override;
+    QWidget* createWidget()                         override;
+    void setActive(bool active)                     override;
+    void visualChange()                             override;
+    bool checkIndex(const QModelIndex& index) const override;
+    void slotEntered(const QModelIndex& index)      override;
 
 protected:
 

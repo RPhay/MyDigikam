@@ -6,7 +6,7 @@
  * Date        : 2018-12-31
  * Description : configuration view for external editor plugin
  *
- * Copyright (C) 2018-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2018-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -42,10 +42,10 @@ class DIGIKAM_EXPORT DPluginConfViewEditor : public DPluginConfView
 
 public:
 
-    explicit DPluginConfViewEditor(QWidget* const parent=nullptr);
-    ~DPluginConfViewEditor();
+    explicit DPluginConfViewEditor(QWidget* const parent = nullptr);
+    ~DPluginConfViewEditor() override;
 
-    void loadPlugins() override;
+    void loadPlugins()       override;
 };
 
 } // namespace Digikam

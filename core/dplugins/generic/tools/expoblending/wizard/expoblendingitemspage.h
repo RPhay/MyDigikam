@@ -6,8 +6,8 @@
  * Date        : 2009-11-13
  * Description : a tool to blend bracketed images.
  *
- * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (C) 2015      by Benjamin Girault, <benjamin dot girault at gmail dot com>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2015      by Benjamin Girault <benjamin dot girault at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -43,7 +43,7 @@ class ItemsPage : public DWizardPage
 public:
 
     explicit ItemsPage(ExpoBlendingManager* const mngr, QWizard* const dlg);
-    ~ItemsPage();
+    ~ItemsPage() override;
 
     QList<QUrl> itemUrls() const;
 

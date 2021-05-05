@@ -42,7 +42,7 @@ public:
     explicit Private()
         : dbAccess(nullptr),
           acquired(false),
-          maxTime(0)
+          maxTime (0)
     {
     }
 

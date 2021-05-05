@@ -7,7 +7,7 @@
  * Description : a tool to show image using an OpenGL interface.
  *
  * Copyright (C) 2007-2008 by Markus Leuthold <kusi at forum dot titlis dot org>
- * Copyright (C) 2008-2016 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2008-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_GLVIEWERPLUGIN_GLVIEWERTEXTURE_H
-#define DIGIKAM_GLVIEWERPLUGIN_GLVIEWERTEXTURE_H
+#ifndef DIGIKAM_GLVIEWER_PLUGIN_GLVIEWER_TEXTURE_H
+#define DIGIKAM_GLVIEWER_PLUGIN_GLVIEWER_TEXTURE_H
 
 // Qt includes
 
@@ -46,10 +46,10 @@ class GLViewerTexture : public QOpenGLTexture
 public:
 
     explicit GLViewerTexture(DInfoInterface* const iface);
-    virtual ~GLViewerTexture();
+    ~GLViewerTexture();
 
     bool load(const QString& fn, const QSize& size);
-    bool load(const QImage& im, const QSize& size);
+    bool load(const QImage& im);
     bool loadFullSize();
 
     GLfloat vertex_bottom() const;
@@ -59,7 +59,7 @@ public:
 
     void setViewport(int w, int h);
     void zoom(float delta, const QPoint& mousepos);
-    void reset();
+    void reset(bool resetFullImage = false);
     void move(const QPoint& diff);
     bool setNewSize(QSize size);
     void rotate();
@@ -72,8 +72,10 @@ private:
 
 private:
 
-    // No copy constructor
-    GLViewerTexture(const GLViewerTexture&);
+    // Disable
+    GLViewerTexture(const GLViewerTexture&) = delete;
+
+private:
 
     class Private;
     Private* const d;
@@ -81,4 +83,4 @@ private:
 
 } // namespace DigikamGenericGLViewerPlugin
 
-#endif // DIGIKAM_GLVIEWERPLUGIN_GLVIEWERTEXTURE_H
+#endif // DIGIKAM_GLVIEWER_PLUGIN_GLVIEWER_TEXTURE_H

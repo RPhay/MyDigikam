@@ -7,7 +7,7 @@
  * Description : DImg interface for image editor
  *
  * Copyright (C) 2004-2005 by Renchi Raju <renchi dot raju at gmail dot com>
- * Copyright (C) 2004-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2004-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -66,7 +66,7 @@ public:
 public:
 
     explicit EditorCore();
-    ~EditorCore();
+    ~EditorCore() override;
 
     void    load(const QString& filename, IOFileSettings* const iofileSettings);
     void    applyTransform(const IccTransform& transform);
@@ -176,23 +176,23 @@ public:
 
 protected Q_SLOTS:
 
-    void   slotImageLoaded(const LoadingDescription& loadingDescription, const DImg& img);
-    void   slotImageSaved(const QString& filePath, bool success);
-    void   slotLoadingProgress(const LoadingDescription& loadingDescription, float progress);
-    void   slotSavingProgress(const QString& filePath, float progress);
+    void slotImageLoaded(const LoadingDescription& loadingDescription, const DImg& img);
+    void slotImageSaved(const QString& filePath, bool success);
+    void slotLoadingProgress(const LoadingDescription& loadingDescription, float progress);
+    void slotSavingProgress(const QString& filePath, float progress);
 
 Q_SIGNALS:
 
-    void   signalModified();
-    void   signalUndoStateChanged();
-    void   signalFileOriginChanged(const QString& filePath);
+    void signalModified();
+    void signalUndoStateChanged();
+    void signalFileOriginChanged(const QString& filePath);
 
-    void   signalLoadingStarted(const QString& filename);
-    void   signalLoadingProgress(const QString& filePath, float progress);
-    void   signalImageLoaded(const QString& filePath, bool success);
-    void   signalSavingStarted(const QString& filename);
-    void   signalSavingProgress(const QString& filePath, float progress);
-    void   signalImageSaved(const QString& filePath, bool success);
+    void signalLoadingStarted(const QString& filename);
+    void signalLoadingProgress(const QString& filePath, float progress);
+    void signalImageLoaded(const QString& filePath, bool success);
+    void signalSavingStarted(const QString& filename);
+    void signalSavingProgress(const QString& filePath, float progress);
+    void signalImageSaved(const QString& filePath, bool success);
 
 private Q_SLOTS:
 
@@ -201,10 +201,15 @@ private Q_SLOTS:
 
 private:
 
+    // Disable
+    EditorCore(QObject*);
+
+private:
+
     static EditorCore* m_defaultInstance;
 
     class Private;
-    Private* const d;
+    Private* const     d;
 };
 
 } // namespace Digikam

@@ -46,8 +46,6 @@ void TestGPSItemContainer::initTestCase()
 
 void TestGPSItemContainer::cleanupTestCase()
 {
-    // clean up the exiv2 memory:
-    DMetadata::cleanupExiv2();
 }
 
 /**

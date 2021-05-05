@@ -6,7 +6,7 @@
  * Date        : 2017-05-15
  * Description : a node container for GPS bookmarks
  *
- * Copyright (C) 2017-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2017-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -55,7 +55,7 @@ public:
 public:
 
     explicit BookmarkNode(Type type = Root, BookmarkNode* const parent = nullptr);
-    ~BookmarkNode();
+    ~BookmarkNode() override;
 
     bool operator==(const BookmarkNode& other) const;
 
@@ -78,9 +78,11 @@ public:
 
 private:
 
-    // Hidden copy constructor and assignment operator.
-    BookmarkNode(const BookmarkNode&);
-    BookmarkNode& operator=(const BookmarkNode&);
+    // Disable
+    BookmarkNode(const BookmarkNode&)            = delete;
+    BookmarkNode& operator=(const BookmarkNode&) = delete;
+
+private:
 
     class Private;
     Private* const d;

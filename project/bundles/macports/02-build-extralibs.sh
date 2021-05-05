@@ -3,7 +3,7 @@
 # Script to build extra libraries using MacPorts env.
 # This script must be run as sudo
 #
-# Copyright (c) 2015-2020 by Gilles Caulier  <caulier dot gilles at gmail dot com>
+# Copyright (c) 2015-2021 by Gilles Caulier  <caulier dot gilles at gmail dot com>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
@@ -97,6 +97,8 @@ cmake --build . --config RelWithDebInfo --target ext_kxmlgui             -- -j$C
 cmake --build . --config RelWithDebInfo --target ext_kbookmarks          -- -j$CPU_CORES
 cmake --build . --config RelWithDebInfo --target ext_kimageformats       -- -j$CPU_CORES
 
+# Extra support for digiKam
+
 # libksane support
 #cmake --build . --config RelWithDebInfo --target ext_libksane            -- -j$CPU_CORES
 
@@ -104,7 +106,7 @@ cmake --build . --config RelWithDebInfo --target ext_kimageformats       -- -j$C
 cmake --build . --config RelWithDebInfo --target ext_marble              -- -j$CPU_CORES
 
 # Calendar support
-cmake --build . --config RelWithDebInfo --target ext_kcalcore            -- -j$CPU_CORES
+cmake --build . --config RelWithDebInfo --target ext_kcalendarcore       -- -j$CPU_CORES
 
 # Marble install shared lib at wrong place.
 mv $INSTALL_PREFIX/Marble.app/Contents/MacOS/lib/libastro*  $INSTALL_PREFIX/lib

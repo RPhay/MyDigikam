@@ -74,21 +74,18 @@ public:
 public:
 
     explicit Private()
+      : clientId(QLatin1String("yvd43v8av9zgg9phig80m2dc3r7mks4t")),
+        clientSecret(QLatin1String("KJkuMjvzOKDMyp3oxweQBEYixg678Fh5")),
+        authUrl(QLatin1String("https://account.box.com/api/oauth2/authorize")),
+        tokenUrl(QLatin1String("https://api.box.com/oauth2/token")),
+        redirectUrl(QLatin1String("https://app.box.com")),
+        state(BOX_USERNAME),
+        parent(nullptr),
+        netMngr(nullptr),
+        reply(nullptr),
+        settings(nullptr),
+        o2(nullptr)
     {
-        clientId     = QLatin1String("yvd43v8av9zgg9phig80m2dc3r7mks4t");
-        clientSecret = QLatin1String("KJkuMjvzOKDMyp3oxweQBEYixg678Fh5");
-
-        authUrl      = QLatin1String("https://account.box.com/api/oauth2/authorize");
-        tokenUrl     = QLatin1String("https://api.box.com/oauth2/token");
-        redirectUrl  = QLatin1String("https://app.box.com");
-
-        state        = BOX_USERNAME;
-
-        parent       = nullptr;
-        netMngr      = nullptr;
-        reply        = nullptr;
-        settings     = nullptr;
-        o2           = nullptr;
     }
 
 public:
@@ -302,21 +299,21 @@ bool BOXTalker::addPhoto(const QString& imgPath, const QString& uploadFolder, bo
         path = WSToolUtils::makeTemporaryDir("box").filePath(QFileInfo(imgPath)
                                              .baseName().trimmed() + QLatin1String(".jpg"));
 
-        if (rescale && (image.width() > maxDim || image.height() > maxDim))
+        if (rescale && ((image.width() > maxDim) || (image.height() > maxDim)))
         {
             image = image.scaled(maxDim, maxDim, Qt::KeepAspectRatio, Qt::SmoothTransformation);
         }
 
         image.save(path, "JPEG", imageQuality);
 
-        DMetadata meta;
+        QScopedPointer<DMetadata> meta(new DMetadata);
 
-        if (meta.load(imgPath))
+        if (meta->load(imgPath))
         {
-            meta.setItemDimensions(image.size());
-            meta.setItemOrientation(DMetadata::ORIENTATION_NORMAL);
-            meta.setMetadataWritingMode((int)DMetadata::WRITE_TO_FILE_ONLY);
-            meta.save(path, true);
+            meta->setItemDimensions(image.size());
+            meta->setItemOrientation(DMetadata::ORIENTATION_NORMAL);
+            meta->setMetadataWritingMode((int)DMetadata::WRITE_TO_FILE_ONLY);
+            meta->save(path, true);
         }
     }
 
@@ -497,8 +494,8 @@ void BOXTalker::parseResponseListFolders(const QByteArray& data)
 
 void BOXTalker::parseResponseCreateFolder(const QByteArray& data)
 {
-    QJsonDocument doc      = QJsonDocument::fromJson(data);
-    QJsonObject jsonObject = doc.object();
+    QJsonDocument doc1     = QJsonDocument::fromJson(data);
+    QJsonObject jsonObject = doc1.object();
     bool fail              = jsonObject.contains(QLatin1String("error"));
 
     emit signalBusy(false);
@@ -506,7 +503,7 @@ void BOXTalker::parseResponseCreateFolder(const QByteArray& data)
     if (fail)
     {
         QJsonParseError err;
-        QJsonDocument doc = QJsonDocument::fromJson(data, &err);
+        QJsonDocument doc2 = QJsonDocument::fromJson(data, &err);
         emit signalCreateFolderFailed(jsonObject[QLatin1String("error_summary")].toString());
     }
     else

@@ -7,7 +7,7 @@
  * Description : Integrated, multithread face detection / recognition
  *
  * Copyright (C) 2010-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2012-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -68,7 +68,7 @@ public:
 public:
 
     explicit FacePipeline();
-    ~FacePipeline();
+    ~FacePipeline() override;
 
     /**
      * You can plug these four different steps in the working pipeline.
@@ -114,11 +114,6 @@ public:
     void plugDetectionBenchmarker();
     void plugRecognitionBenchmarker();
     void construct();
-
-    /**
-     * Set the face recognition algorithm type
-     */
-    void activeFaceRecognizer(RecognitionDatabase::RecognizeAlgorithm algorithmType);
 
     /**
      * Cancels all processing
@@ -198,13 +193,22 @@ public Q_SLOTS:
                              const TagRegion& newRegion);
 
     /**
+     * Changes the given face's tagId to newTagId.
+     * Used to Reject Facial Recognition suggestions, since
+     * the tag needs to be converted from Unconfirmed to Unknown.
+     */
+    FaceTagsIface editTag(const ItemInfo& info,
+                          const FaceTagsIface& databaseFace,
+                          int newTagId);
+
+    /**
      * Batch processing. If a filter is installed, the skipped() signal
      * will inform about skipped infos. Filtering is done in a thread, returns immediately.
      * Some of the signals below will be emitted in any case.
      */
     void process(const QList<ItemInfo>& infos);
 
-    void setDetectionAccuracy(double accuracy);
+    void setAccuracyAndModel(double accuracy, bool yolo);
 
 Q_SIGNALS:
 
@@ -230,6 +234,13 @@ Q_SIGNALS:
 public:
 
     class Private;
+
+private:
+
+    // Disable
+    explicit FacePipeline(QObject*)              = delete;
+    FacePipeline(const FacePipeline&)            = delete;
+    FacePipeline& operator=(const FacePipeline&) = delete;
 
 private:
 

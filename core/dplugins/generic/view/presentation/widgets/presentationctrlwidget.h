@@ -6,9 +6,9 @@
  * Date        : 2008-10-05
  * Description : a presentation tool.
  *
- * Copyright (C) 2008 by Valerio Fuoglio <valerio dot fuoglio at gmail dot com>
- *
- * Partially based on Renchi Raju's PresentationCtrlWidget class.
+ * Copyright (C) 2008      by Valerio Fuoglio <valerio dot fuoglio at gmail dot com>
+ * Copyright (C) 2021      by Phuoc Khanh Le <phuockhanhnk94 at gmail dot com>
+ * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -33,18 +33,21 @@
 // Local includes
 
 #include "ui_presentationctrlwidget.h"
+#include "presentationcontainer.h"
 
 namespace DigikamGenericPresentationPlugin
 {
 
-class PresentationCtrlWidget : public QWidget, public Ui::PresentationCtrlWidget
+class PresentationCtrlWidget : public QWidget,
+                               public Ui::PresentationCtrlWidget
 {
     Q_OBJECT
 
 public:
 
-    explicit PresentationCtrlWidget(QWidget* const parent);
-    ~PresentationCtrlWidget();
+    explicit PresentationCtrlWidget(QWidget* const parent,
+                                    PresentationContainer* const sharedData);
+    ~PresentationCtrlWidget()            override;
 
     bool canHide()  const;
     bool isPaused() const;
@@ -61,6 +64,7 @@ Q_SIGNALS:
     void signalClose();
     void signalPlay();
     void signalPause();
+    void signalRemoveImageFromList();
 
 protected:
 
@@ -70,10 +74,13 @@ private Q_SLOTS:
 
     void slotPlayButtonToggled();
     void slotNexPrevClicked();
+    void slotChangeDelayButtonPressed();
+    void slotMoveToTrash();
 
 private:
 
-    bool         m_canHide;
+    bool                    m_canHide;
+    PresentationContainer*  m_sharedData;
 
     friend class PresentationWidget;
     friend class PresentationGL;

@@ -7,7 +7,7 @@
  * Description : Thumbnail loading
  *
  * Copyright (C) 2006-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2008-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2008-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -49,7 +49,7 @@ class DIGIKAM_EXPORT ThumbnailLoadThread : public ManagedLoadSaveThread
 public:
 
     explicit ThumbnailLoadThread(QObject* const parent = nullptr);
-    ~ThumbnailLoadThread();
+    ~ThumbnailLoadThread() override;
 
     /**
      * Return application-wide default thumbnail threads.
@@ -218,7 +218,10 @@ public:
      * is potentially slower.
      * The image should at least have storedSize().
      */
-    void storeDetailThumbnail(const QString& filePath, const QRect& detailRect, const QImage& image, bool isFace = false);
+    void storeDetailThumbnail(const QString& filePath,
+                              const QRect& detailRect,
+                              const QImage& image,
+                              bool isFace = false);
     int  storedSize() const;
 
     /**
@@ -242,7 +245,7 @@ public:
 
 protected:
 
-    virtual void thumbnailLoaded(const LoadingDescription& loadingDescription, const QImage& img) override;
+    void thumbnailLoaded(const LoadingDescription& loadingDescription, const QImage& img) override;
 
 private:
 
@@ -261,6 +264,12 @@ private Q_SLOTS:
 
     void slotThumbnailsAvailable();
     void slotThumbnailLoaded(const LoadingDescription&, const QImage&);
+
+private:
+
+    // Disable
+    ThumbnailLoadThread(const ThumbnailLoadThread&)            = delete;
+    ThumbnailLoadThread& operator=(const ThumbnailLoadThread&) = delete;
 
 private:
 
@@ -287,8 +296,9 @@ public:
      */
 
     explicit ThumbnailImageCatcher(QObject* const parent = nullptr);
-    explicit ThumbnailImageCatcher(ThumbnailLoadThread* const thread, QObject* const parent = nullptr);
-    ~ThumbnailImageCatcher();
+    explicit ThumbnailImageCatcher(ThumbnailLoadThread* const thread,
+                                   QObject* const parent = nullptr);
+    ~ThumbnailImageCatcher() override;
 
     ThumbnailLoadThread* thread() const;
     void setThumbnailLoadThread(ThumbnailLoadThread* const thread);
@@ -324,6 +334,12 @@ public Q_SLOTS:
 protected Q_SLOTS:
 
     void slotThumbnailLoaded(const LoadingDescription&, const QImage&);
+
+private:
+
+    // Disable
+    ThumbnailImageCatcher(const ThumbnailImageCatcher&)            = delete;
+    ThumbnailImageCatcher& operator=(const ThumbnailImageCatcher&) = delete;
 
 private:
 

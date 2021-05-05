@@ -7,7 +7,7 @@
  * Description : Icon view for import tool items
  *
  * Copyright (C) 2012      by Islam Wazery <wazery at ubuntu dot com>
- * Copyright (C) 2012-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -41,7 +41,7 @@ class ImportIconView : public ImportCategorizedView
 public:
 
     explicit ImportIconView(QWidget* const parent = nullptr);
-    ~ImportIconView();
+    ~ImportIconView() override;
 
     ItemViewUtilities* utilities() const;
 
@@ -50,7 +50,7 @@ public:
     CamItemInfo  camItemInfo(const QString& folder, const QString& file);
     CamItemInfo& camItemInfoRef(const QString& folder, const QString& file);
 
-    virtual void setThumbnailSize(const ThumbnailSize& size) override;
+    void setThumbnailSize(const ThumbnailSize& size) override;
 
 public Q_SLOTS:
 
@@ -91,10 +91,16 @@ private Q_SLOTS:
 
 protected:
 
-    virtual void activated(const CamItemInfo& info, Qt::KeyboardModifiers modifiers)      override;
-    virtual void showContextMenuOnInfo(QContextMenuEvent* event, const CamItemInfo& info) override;
-    virtual void showContextMenu(QContextMenuEvent* event)                                override;
-    virtual void slotSetupChanged()                                                       override;
+    void activated(const CamItemInfo& info, Qt::KeyboardModifiers modifiers)      override;
+    void showContextMenuOnInfo(QContextMenuEvent* event, const CamItemInfo& info) override;
+    void showContextMenu(QContextMenuEvent* event)                                override;
+    void slotSetupChanged()                                                       override;
+
+private:
+
+    // Disable
+    ImportIconView(const ImportIconView&)            = delete;
+    ImportIconView& operator=(const ImportIconView&) = delete;
 
 private:
 

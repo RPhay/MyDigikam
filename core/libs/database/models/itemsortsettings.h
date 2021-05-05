@@ -26,20 +26,19 @@
 
 // Qt includes
 
-#include <QHash>
-#include <QList>
-#include <QMap>
 #include <QString>
-#include <QCollator>
+#include <QVariant>
 
 // Local includes
 
 #include "digikam_export.h"
+#include "itemsortcollator.h"
 
 namespace Digikam
 {
 
 class ItemInfo;
+class FaceTagsIface;
 
 namespace DatabaseFields
 {
@@ -63,7 +62,8 @@ public:
         OneCategory,                ///< all items in one global category
         CategoryByAlbum,
         CategoryByFormat,
-        CategoryByMonth
+        CategoryByMonth,
+        CategoryByFaces
     };
 
     enum SortRole
@@ -77,6 +77,7 @@ public:
         SortByRating,
         SortByImageSize,            ///< pixel number
         SortByAspectRatio,          ///< width / height * 100000
+        SortByFaces,                ///< count of unconfirmed faces
         SortBySimilarity,
         SortByManualOrderAndName,
         SortByManualOrderAndDate
@@ -93,8 +94,11 @@ public:
      * Return -1 if left is less than right, 0 if both fall in the same category,
      * and 1 if left is greater than right.
      * Adheres to set categorization mode and current category sort order.
+     * Face passed in to allow Categorization by Faces. Pass in an empty
+     * Face if not needed.
      */
-    int compareCategories(const ItemInfo& left, const ItemInfo& right) const;
+    int compareCategories(const ItemInfo& left, const ItemInfo& right,
+                          const FaceTagsIface& leftFace, const FaceTagsIface& rightFace) const;
 
     /**
      * Returns true if left is less than right.
@@ -218,18 +222,9 @@ public:
                                      Qt::CaseSensitivity caseSensitive = Qt::CaseSensitive,
                                      bool natural = true)
     {
-        QCollator collator;
-        collator.setNumericMode(natural);
-        collator.setCaseSensitivity(caseSensitive);
-        collator.setIgnorePunctuation(a.contains(QLatin1String("_v"),
-                                                 Qt::CaseInsensitive));
+        ItemSortCollator* const sorter = ItemSortCollator::instance();
 
-        if (sortOrder == Qt::AscendingOrder)
-        {
-            return collator.compare(a, b);
-        }
-
-        return (- collator.compare(a, b));
+        return compareByOrder(sorter->itemCompare(a, b, caseSensitive, natural), sortOrder);
     }
 
 public:

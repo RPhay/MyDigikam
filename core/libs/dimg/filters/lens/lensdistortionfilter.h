@@ -6,7 +6,7 @@
  * Date        : 2005-05-25
  * Description : lens distortion algorithm.
  *
- * Copyright (C) 2005-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2005-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2001-2003 by David Hodson <hodsond@acm.org>
  * Copyright (C) 2010      by Martin Klapetek <martin dot klapetek at gmail dot com>
  *
@@ -36,15 +36,16 @@ namespace Digikam
 
 class DIGIKAM_EXPORT LensDistortionFilter : public DImgThreadedFilter
 {
+    Q_OBJECT
 
 public:
 
     explicit LensDistortionFilter(QObject* const parent = nullptr);
-    explicit LensDistortionFilter(DImg* const orgImage, QObject* const parent=nullptr, double main=0.0,
+    explicit LensDistortionFilter(DImg* const orgImage, QObject* const parent = nullptr, double main=0.0,
                                   double edge=0.0, double rescale=0.0, double brighten=0.0,
                                   int center_x=0, int center_y=0);
 
-    ~LensDistortionFilter();
+    ~LensDistortionFilter() override;
 
     static QString          FilterIdentifier()
     {
@@ -63,12 +64,12 @@ public:
         return 1;
     }
 
-    virtual QString         filterIdentifier()                          const override
+    QString         filterIdentifier()                          const override
     {
         return FilterIdentifier();
     }
 
-    virtual FilterAction    filterAction()                                    override;
+    FilterAction    filterAction()                                    override;
     void                    readParameters(const FilterAction& action)        override;
 
 private:

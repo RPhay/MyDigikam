@@ -7,7 +7,7 @@
  * Description : A tool to export items to Rajce web service
  *
  * Copyright (C) 2011      by Lukas Krejci <krejci.l at centrum dot cz>
- * Copyright (C) 2011-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2011-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -37,10 +37,12 @@ namespace DigikamGenericRajcePlugin
 
 class RajceNewAlbumDlg : public WSNewAlbumDialog
 {
+    Q_OBJECT
+
 public:
 
     explicit RajceNewAlbumDlg(QWidget* const parent = nullptr);
-    ~RajceNewAlbumDlg();
+    ~RajceNewAlbumDlg() override;
 
 public:
 

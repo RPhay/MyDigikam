@@ -7,7 +7,7 @@
  * Description : Loader for thumbnails - thumbnail generation and image handling
  *
  * Copyright (C) 2003-2005 by Renchi Raju <renchi dot raju at gmail dot com>
- * Copyright (C) 2003-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2003-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2006-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  *
  * This program is free software; you can redistribute it
@@ -40,7 +40,7 @@ ThumbnailImage ThumbnailCreator::createThumbnail(const ThumbnailInfo& info, cons
     }
 
     QImage qimage;
-    DMetadata metadata(path);
+    QScopedPointer<DMetadata> metadata(new DMetadata(path));
     bool fromEmbeddedPreview = false;
     bool fromDetail          = false;
     bool failedAtDImg        = false;
@@ -58,7 +58,7 @@ ThumbnailImage ThumbnailCreator::createThumbnail(const ThumbnailInfo& info, cons
 
         // when taking a detail, we have to load the image full size
 
-        qimage     = loadImageDetail(info, metadata, detailRect, &profile);
+        qimage     = loadImageDetail(info, *metadata, detailRect, &profile);
         fromDetail = !qimage.isNull();
     }
     else
@@ -69,7 +69,12 @@ ThumbnailImage ThumbnailCreator::createThumbnail(const ThumbnailInfo& info, cons
             {
                 // Try to extract Exif/IPTC preview first.
 
-                qimage = loadImagePreview(metadata);
+                qimage = loadImagePreview(*metadata);
+            }
+
+            if (d->observer && !d->observer->continueQuery())
+            {
+                return ThumbnailImage();
             }
 
             // To speed-up thumb extraction, we now try to load the images by the file extension.
@@ -110,6 +115,11 @@ ThumbnailImage ThumbnailCreator::createThumbnail(const ThumbnailInfo& info, cons
                     PGFUtils::loadPGFScaled(qimage, path, d->storageSize());
                     failedAtPGFScaled = qimage.isNull();
                 }
+
+                if (d->observer && !d->observer->continueQuery())
+                {
+                    return ThumbnailImage();
+                }
             }
 
             // Trying to load with libraw: RAW files.
@@ -121,7 +131,7 @@ ThumbnailImage ThumbnailCreator::createThumbnail(const ThumbnailInfo& info, cons
                 if (DRawDecoder::loadEmbeddedPreview(qimage, path))
                 {
                     fromEmbeddedPreview = true;
-                    profile             = metadata.getIccProfile();
+                    profile             = metadata->getIccProfile();
                 }
             }
 
@@ -149,6 +159,11 @@ ThumbnailImage ThumbnailCreator::createThumbnail(const ThumbnailInfo& info, cons
             if (qimage.isNull() && !failedAtDImg)
             {
                 qimage = loadWithDImgScaled(path, &profile);
+
+                if (d->observer && !d->observer->continueQuery())
+                {
+                    return ThumbnailImage();
+                }
             }
 
             // Try JPEG anyway
@@ -172,6 +187,7 @@ ThumbnailImage ThumbnailCreator::createThumbnail(const ThumbnailInfo& info, cons
             // Try video thumbnail anyway
 
 #ifdef HAVE_MEDIAPLAYER
+
             qCDebug(DIGIKAM_GENERAL_LOG) << "Trying to load video preview with FFmpeg";
 
             VideoThumbnailer thumbnailer;
@@ -180,9 +196,12 @@ ThumbnailImage ThumbnailCreator::createThumbnail(const ThumbnailInfo& info, cons
             thumbnailer.addFilter(&videoStrip);
             thumbnailer.setThumbnailSize(d->storageSize());
             thumbnailer.generateThumbnail(path, qimage);
+
 #else
+
             qDebug(DIGIKAM_GENERAL_LOG) << "Cannot load video preview for" << path;
             qDebug(DIGIKAM_GENERAL_LOG) << "Video support is not available";
+
 #endif
 
         }
@@ -205,7 +224,7 @@ ThumbnailImage ThumbnailCreator::createThumbnail(const ThumbnailInfo& info, cons
 
     ThumbnailImage image;
     image.qimage          = qimage;
-    image.exifOrientation = exifOrientation(info, metadata, fromEmbeddedPreview, fromDetail);
+    image.exifOrientation = exifOrientation(info, *metadata, fromEmbeddedPreview, fromDetail);
 
     return image;
 }
@@ -245,13 +264,23 @@ QImage ThumbnailCreator::loadImageDetail(const ThumbnailInfo& info,
     {
         // discard if smaller than half preview
 
+        QImage qimage        = previews.image();
         int acceptableWidth  = lround(previews.originalSize().width()  * 0.5);
         int acceptableHeight = lround(previews.originalSize().height() * 0.5);
 
-        if (previews.width() >= acceptableWidth &&  previews.height() >= acceptableHeight)
+        if (!qimage.isNull() && (previews.width() >= acceptableWidth) && (previews.height() >= acceptableHeight))
         {
-            QImage qimage           = previews.image();
-            QRect reducedSizeDetail = TagRegion::mapFromOriginalSize(previews.originalSize(), qimage.size(), detailRect);
+            QSize orgSize = previews.originalSize();
+            qimage        = exifRotate(qimage, exifOrientation(info, metadata, true, false));
+
+            if (((qimage.width() < qimage.height()) && (orgSize.width() > orgSize.height())) ||
+                ((qimage.width() > qimage.height()) && (orgSize.width() < orgSize.height())))
+            {
+                orgSize.transpose();
+            }
+
+            QRect reducedSizeDetail = TagRegion::mapFromOriginalSize(orgSize, qimage.size(), detailRect);
+
             return qimage.copy(reducedSizeDetail.intersected(qimage.rect()));
         }
     }
@@ -267,7 +296,22 @@ QImage ThumbnailCreator::loadImageDetail(const ThumbnailInfo& info,
 
     qDebug(DIGIKAM_GENERAL_LOG) << "Try to get thumbnail from DImg preview for" << path;
 
-    if (!img.load(path, loadFlags, d->observer, d->fastRawSettings))
+    if (img.load(path, loadFlags, d->observer, d->fastRawSettings))
+    {
+        // discard if smaller than half preview
+
+        unsigned int acceptableWidth  = lround(img.originalRatioSize().width()  * 0.5);
+        unsigned int acceptableHeight = lround(img.originalRatioSize().height() * 0.5);
+
+        if ((img.width() < acceptableWidth) && (img.height() < acceptableHeight))
+        {
+            qDebug(DIGIKAM_GENERAL_LOG) << "Preview image is smaller than the accepted size:"
+                                        << acceptableWidth << "x" << acceptableHeight;
+            img.reset();
+        }
+    }
+
+    if (img.isNull())
     {
         qDebug(DIGIKAM_GENERAL_LOG) << "Try to get thumbnail from DImg scaled for" << path;
 
@@ -334,37 +378,27 @@ QImage ThumbnailCreator::handleAlphaChannel(const QImage& qimage) const
     switch (qimage.format())
     {
         case QImage::Format_RGB32:
+        {
             break;
+        }
 
         case QImage::Format_ARGB32:
         case QImage::Format_ARGB32_Premultiplied:
         {
+            QImage newImage(qimage.size(), QImage::Format_RGB32);
+            newImage.fill(Qt::transparent);
+            QPainter p(&newImage);
+
             if (d->removeAlphaChannel)
             {
-                QImage newImage(qimage.size(), QImage::Format_RGB32);
-                QImage chbImage(20, 20, QImage::Format_RGB32);
-
-                // create checkerboard brush
-
-                QPainter chb(&chbImage);
-                chb.fillRect( 0,  0, 20, 20, Qt::white);
-                chb.fillRect( 0, 10 ,10, 10, Qt::lightGray);
-                chb.fillRect(10,  0, 10, 10, Qt::lightGray);
-                QBrush chbBrush(chbImage);
-
-                // use raster paint engine
-
-                QPainter p(&newImage);
-
-                // blend over white, or a checkerboard?
-
-                p.fillRect(newImage.rect(), chbBrush);
-                p.drawImage(0, 0, qimage);
-
-                return newImage;
+                QBrush brush(d->alphaImage);
+                p.fillRect(newImage.rect(), brush);
             }
 
-            break;
+            p.drawImage(0, 0, qimage);
+            p.end();
+
+            return newImage;
         }
 
         default: // indexed and monochrome formats

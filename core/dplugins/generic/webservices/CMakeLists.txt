@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2010-2020 by Gilles Caulier, <caulier dot gilles at gmail dot com>
+# Copyright (c) 2010-2021 by Gilles Caulier, <caulier dot gilles at gmail dot com>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
@@ -14,31 +14,30 @@ endif()
 
 add_subdirectory(box)
 add_subdirectory(dropbox)
-add_subdirectory(facebook)
+#add_subdirectory(facebook)
 add_subdirectory(filecopy)
 add_subdirectory(flickr)
 add_subdirectory(google)
 add_subdirectory(imgur)
 add_subdirectory(imageshack)
-add_subdirectory(ipfs)
+add_subdirectory(inaturalist)
+#add_subdirectory(ipfs)
 add_subdirectory(mediawiki)
 add_subdirectory(onedrive)
 add_subdirectory(pinterest)
 add_subdirectory(piwigo)
-add_subdirectory(rajce)
+
+if(Qt5XmlPatterns_FOUND)
+    add_subdirectory(rajce)
+endif()
+
 add_subdirectory(smugmug)
 add_subdirectory(twitter)
 add_subdirectory(yandexfotki)
 
-if(KF5Vkontakte_FOUND)
-    add_subdirectory(vkontakte)
-endif()
-
 if(KF5KIO_FOUND)
+    add_subdirectory(vkontakte)
     add_subdirectory(filetransfer)
-
-#    Not yet finalized
-#    add_subdirectory(debianscreenshots)
 endif()
 
 # Not yet finalized

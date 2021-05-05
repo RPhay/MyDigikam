@@ -6,7 +6,7 @@
  * Date        : 2011-03-22
  * Description : a Iface C++ interface
  *
- * Copyright (C) 2011-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2011-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2011      by Vincent Garcia <xavier dot vincent dot garcia at gmail dot com>
  *
  * This program is free software; you can redistribute it
@@ -28,10 +28,6 @@
 
 #include <QString>
 
-// Local includes
-
-#include "digikam_export.h"
-
 namespace MediaWiki
 {
 
@@ -40,7 +36,7 @@ namespace MediaWiki
  *
  * Represent protection parameters in a page.
  */
-class DIGIKAM_EXPORT Protection
+class Protection
 {
 
 public:
@@ -67,14 +63,14 @@ public:
      * @brief Assigning an protection from an other protection.
      * @param other an other protection
      */
-    Protection& operator=(Protection other);
+    Protection& operator=(const Protection& other);
 
     /**
      * @brief Returns true if this instance and other are equal, else false.
      * @param other instance to compare
      * @return true if there are equal, else false
      */
-    bool operator==(const Protection& other) const;
+    bool operator==(const Protection& other)    const;
 
     /**
      * @brief Set the protection type.
@@ -86,7 +82,7 @@ public:
      * @brief Get the protection type.
      * @return the protection type
      */
-    QString type() const;
+    QString type()                              const;
 
     /**
      * @brief Set the page protection level.
@@ -98,7 +94,7 @@ public:
      * @brief Get the page protection level.
      * @return the page protection level
      */
-    QString level() const;
+    QString level()                             const;
 
     /**
      * @brief Set the expiry date.
@@ -110,7 +106,7 @@ public:
    ² * @brief Get the expiry date.
      * @return the expiry date
      */
-    QString expiry() const;
+    QString expiry()                            const;
 
     /**
      * @brief Set the source.
@@ -122,12 +118,12 @@ public:
      * @brief Get the source.
      * @return the source
      */
-    QString source() const;
+    QString source()                            const;
 
 private:
 
-    class ProtectionPrivate;
-    ProtectionPrivate* const d;
+    class Private;
+    Private* const d;
 };
 
 } // namespace MediaWiki

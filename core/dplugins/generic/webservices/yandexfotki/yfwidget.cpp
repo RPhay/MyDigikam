@@ -7,7 +7,7 @@
  * Description : a tool to export items to YandexFotki web service
  *
  * Copyright (C) 2015      by Shourya Singh Gupta <shouryasgupta at gmail dot com>
- * Copyright (C) 2015-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2015-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -53,15 +53,16 @@ class Q_DECL_HIDDEN YFWidget::Private
 public:
 
     explicit Private()
+      : accessCombo         (nullptr),
+        hideOriginalCheck   (nullptr),
+        disableCommentsCheck(nullptr),
+        adultCheck          (nullptr),
+        policyGroup         (nullptr)
     {
-        accessCombo          = nullptr;
-        hideOriginalCheck    = nullptr;
-        disableCommentsCheck = nullptr;
-        adultCheck           = nullptr;
-        policyGroup          = nullptr;
     }
 
-    // upload settings
+    /// upload settings
+
     QComboBox*    accessCombo;
     QCheckBox*    hideOriginalCheck;
     QCheckBox*    disableCommentsCheck;
@@ -71,7 +72,7 @@ public:
 
 YFWidget::YFWidget(QWidget* const parent, DInfoInterface* const iface, const QString& toolName)
     : WSSettingsWidget(parent, iface, toolName),
-      d(new Private)
+      d               (new Private)
 {
     QGroupBox* const optionsBox         = getOptionsBox();
     QGridLayout* const optionsBoxLayout = getOptionsBoxLayout();
@@ -106,17 +107,17 @@ YFWidget::YFWidget(QWidget* const parent, DInfoInterface* const iface, const QSt
     d->policyGroup->addButton(policyRadio3, POLICY_SKIP);
     d->policyGroup->addButton(policyRadio4, POLICY_ADDNEW);
 
-    optionsBoxLayout->addItem(spacer1,                  3, 0, 1, 5);
-    optionsBoxLayout->addWidget(accessLabel,            4, 0, 1, 5);
+    optionsBoxLayout->addItem(spacer1,                   3, 0, 1, 5);
+    optionsBoxLayout->addWidget(accessLabel,             4, 0, 1, 5);
     optionsBoxLayout->addWidget(d->accessCombo,          5, 1, 1, 4);
     optionsBoxLayout->addWidget(d->adultCheck,           6, 1, 1, 4);
     optionsBoxLayout->addWidget(d->hideOriginalCheck,    7, 1, 1, 4);
     optionsBoxLayout->addWidget(d->disableCommentsCheck, 8, 1, 1, 4);
-    optionsBoxLayout->addItem(spacer2,                  9, 0, 1, 5);
-    optionsBoxLayout->addWidget(policyLabel,            10, 0, 1, 5);
-    optionsBoxLayout->addWidget(policyRadio1,           11, 1, 1, 4);
-    optionsBoxLayout->addWidget(policyRadio3,           13, 1, 1, 4);
-    optionsBoxLayout->addWidget(policyRadio4,           14, 1, 1, 4);
+    optionsBoxLayout->addItem(spacer2,                   9, 0, 1, 5);
+    optionsBoxLayout->addWidget(policyLabel,             10, 0, 1, 5);
+    optionsBoxLayout->addWidget(policyRadio1,            11, 1, 1, 4);
+    optionsBoxLayout->addWidget(policyRadio3,            13, 1, 1, 4);
+    optionsBoxLayout->addWidget(policyRadio4,            14, 1, 1, 4);
 
     getUploadBox()->hide();
     getSizeBox()->hide();
@@ -140,20 +141,20 @@ QCheckBox* YFWidget::hideOriginalCB() const
 {
     return d->hideOriginalCheck;
 }
-    
+
 QCheckBox* YFWidget::disableCommentsCB() const
 {
     return d->disableCommentsCheck;
 }
-    
+
 QCheckBox* YFWidget::adultCB() const
 {
     return d->adultCheck;
 }
-    
+
 QButtonGroup* YFWidget::policyGB() const
 {
     return d->policyGroup;
 }
-    
+
 } // namespace DigikamGenericYFPlugin

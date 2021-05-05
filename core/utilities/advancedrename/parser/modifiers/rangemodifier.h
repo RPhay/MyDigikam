@@ -44,7 +44,7 @@ class RangeDialog : public RuleDialog
 public:
 
     explicit RangeDialog(Rule* const parent);
-    ~RangeDialog();
+    ~RangeDialog() override;
 
     Ui::RangeModifierDialogWidget* const ui;
 
@@ -54,8 +54,10 @@ private Q_SLOTS:
 
 private:
 
-    RangeDialog(const RangeDialog&);
-    RangeDialog& operator=(const RangeDialog&);
+    // Disable
+    explicit RangeDialog(QWidget*)             = delete;
+    RangeDialog(const RangeDialog&)            = delete;
+    RangeDialog& operator=(const RangeDialog&) = delete;
 };
 
 // --------------------------------------------------------
@@ -67,16 +69,18 @@ class RangeModifier : public Modifier
 public:
 
     explicit RangeModifier();
-    virtual QString parseOperation(ParseSettings& settings);
+    QString parseOperation(ParseSettings& settings) override;
 
 private Q_SLOTS:
 
-    void slotTokenTriggered(const QString& token);
+    void slotTokenTriggered(const QString& token) override;
 
 private:
 
-    RangeModifier(const RangeModifier&);
-    RangeModifier& operator=(const RangeModifier&);
+    // Disable
+    explicit RangeModifier(QObject*)               = delete;
+    RangeModifier(const RangeModifier&)            = delete;
+    RangeModifier& operator=(const RangeModifier&) = delete;
 };
 
 } // namespace Digikam

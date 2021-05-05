@@ -48,7 +48,7 @@ public:
      * A completion object operating on a TagModel
      */
     explicit TagCompleter(QObject* const parent = nullptr);
-    ~TagCompleter();
+    ~TagCompleter() override;
 
     /// Update the completer for the given fragment
     void update(const QString& fragment);
@@ -62,8 +62,8 @@ public:
 
 Q_SIGNALS:
 
-    void activated(const TaggingAction& action);
-    void highlighted(const TaggingAction& action);
+    void signalActivated(const TaggingAction& action);
+    void signalHighlighted(const TaggingAction& action);
 
 private Q_SLOTS:
 

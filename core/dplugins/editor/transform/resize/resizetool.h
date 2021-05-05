@@ -6,7 +6,7 @@
  * Date        : 2005-04-07
  * Description : a tool to resize an image
  *
- * Copyright (C) 2005-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2005-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -44,17 +44,17 @@ class ResizeTool : public EditorToolThreaded
 public:
 
     explicit ResizeTool(QObject* const parent);
-    ~ResizeTool();
+    ~ResizeTool()               override;
 
 private:
 
-    void writeSettings();
-    void readSettings();
-    void preparePreview();
-    void prepareFinal();
-    void setPreviewImage();
-    void setFinalImage();
-    void renderingFinished();
+    void writeSettings()        override;
+    void readSettings()         override;
+    void preparePreview()       override;
+    void prepareFinal()         override;
+    void setPreviewImage()      override;
+    void setFinalImage()        override;
+    void renderingFinished()    override;
     void blockWidgetSignals(bool b);
 
     double pixelsToUnits(int pix);
@@ -62,9 +62,9 @@ private:
 
 private Q_SLOTS:
 
-    void slotSaveAsSettings();
-    void slotLoadSettings();
-    void slotResetSettings();
+    void slotSaveAsSettings()   override;
+    void slotLoadSettings()     override;
+    void slotResetSettings()    override;
     void slotValuesChanged();
     void slotUnitsChanged();
     void slotPresetsChanged();

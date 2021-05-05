@@ -27,11 +27,11 @@ namespace ShowFoto
 {
 
 ItemViewShowfotoDelegatePrivate::ItemViewShowfotoDelegatePrivate()
-    : spacing(0),
-      thumbSize(ThumbnailSize(0)),
-      q(nullptr),
-      radius(3),                // painting constants
-      margin(5)
+    : spacing   (0),
+      thumbSize (ThumbnailSize(0)),
+      q         (nullptr),
+      radius    (3),                ///< painting constants
+      margin    (5)
 {
 }
 
@@ -53,13 +53,14 @@ void ItemViewShowfotoDelegatePrivate::clearRects()
 
 ItemViewShowfotoDelegate::ItemViewShowfotoDelegate(QObject* const parent)
     : DItemDelegate(parent),
-      d_ptr(new ItemViewShowfotoDelegatePrivate)
+      d_ptr        (new ItemViewShowfotoDelegatePrivate)
 {
     d_ptr->init(this);
 }
 
 ItemViewShowfotoDelegate::ItemViewShowfotoDelegate(ItemViewShowfotoDelegatePrivate& dd, QObject* const parent)
-    : DItemDelegate(parent), d_ptr(&dd)
+    : DItemDelegate(parent),
+      d_ptr        (&dd)
 {
     d_ptr->init(this);
 }
@@ -308,7 +309,7 @@ void ItemViewShowfotoDelegate::drawImageSize(QPainter* p, const QRect& dimsRect,
     {
         p->setFont(d->fontXtra);
         QString mpixels, resolution;
-        mpixels.setNum(dims.width()*dims.height()/1000000.0, 'f', 2);
+        mpixels = QLocale().toString(dims.width()*dims.height()/1000000.0, 'f', 1);
 
         if (dims.isValid())
         {

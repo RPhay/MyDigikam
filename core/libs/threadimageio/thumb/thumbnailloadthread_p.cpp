@@ -7,7 +7,7 @@
  * Description : Thumbnail loading - private containers
  *
  * Copyright (C) 2006-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2005-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2005-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2015      by Mohamed_Anwer <m_dot_anwer at gmx dot com>
  *
  * This program is free software; you can redistribute it
@@ -37,7 +37,7 @@ int ThumbnailLoadThread::Private::pixmapSizeForThumbnailSize(int thumbnailSize) 
 {
     if (hasHighlightingBorder())
     {
-        return thumbnailSize + 2;
+        return (thumbnailSize + 2);
     }
 
     return thumbnailSize;
@@ -45,11 +45,11 @@ int ThumbnailLoadThread::Private::pixmapSizeForThumbnailSize(int thumbnailSize) 
 
 int ThumbnailLoadThread::Private::thumbnailSizeForPixmapSize(int pixmapSize) const
 {
-    // bug #206666: Do not cut off one-pixel line for highlighting border
+    // Bug #206666: Do not cut off one-pixel line for highlighting border
 
     if (hasHighlightingBorder())
     {
-        return pixmapSize - 2;
+        return (pixmapSize - 2);
     }
 
     return pixmapSize;
@@ -110,12 +110,12 @@ QList<LoadingDescription> ThumbnailLoadThread::Private::makeDescriptions(const Q
 {
     QList<LoadingDescription> descriptions;
     {
-        LoadingDescription description = createLoadingDescription(ThumbnailIdentifier(), size, QRect(1,1,1,1), false);
+        LoadingDescription description = createLoadingDescription(ThumbnailIdentifier(), size, QRect(1, 1, 1, 1), false);
         typedef QPair<ThumbnailIdentifier, QRect> IdRectPair;
 
         foreach (const IdRectPair& pair, identifiersAndRects)
         {
-            description.filePath = pair.first.filePath;
+            description.filePath                           = pair.first.filePath;
             description.previewParameters.storageReference = pair.first.id;
 
             if (!checkDescription(description))
@@ -151,6 +151,7 @@ void ThumbnailImageCatcher::Private::reset()
 void ThumbnailImageCatcher::Private::harvest(const LoadingDescription& description, const QImage& image)
 {
     // called under lock
+
     bool finished = true;
 
     for (int i = 0 ; i < tasks.size() ; ++i)
@@ -163,9 +164,10 @@ void ThumbnailImageCatcher::Private::harvest(const LoadingDescription& descripti
             task.received = true;
         }
 
-        finished = finished && task.received;
+        finished = (finished && task.received);
     }
 
+    // cppcheck-suppress knownConditionTrueFalse
     if (finished)
     {
         state = Quitting;

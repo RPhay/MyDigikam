@@ -8,7 +8,7 @@
  * Acknowledge : based on the expoblending tool
  *
  * Copyright (C) 2011-2016 by Benjamin Girault <benjamin dot girault at gmail dot com>
- * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -26,10 +26,9 @@
 
 // KDE includes
 
-#include <kconfig.h>
 #include <klocalizedstring.h>
 
-// Local includes.
+// Local includes
 
 #include "panomanager.h"
 #include "panointropage.h"
@@ -48,13 +47,13 @@ class Q_DECL_HIDDEN PanoWizard::Private
 public:
 
     explicit Private()
-      : mngr(nullptr),
-        introPage(nullptr),
-        itemsPage(nullptr),
+      : mngr             (nullptr),
+        introPage        (nullptr),
+        itemsPage        (nullptr),
         preProcessingPage(nullptr),
-        optimizePage(nullptr),
-        previewPage(nullptr),
-        lastPage(nullptr)
+        optimizePage     (nullptr),
+        previewPage      (nullptr),
+        lastPage         (nullptr)
     {
     }
 
@@ -75,26 +74,26 @@ PanoWizard::PanoWizard(PanoManager* const mngr, QWidget* const parent)
     setWindowTitle(i18nc("@title:window", "Panorama Creator Wizard"));
 
     d->mngr              = mngr;
-    d->introPage         = new PanoIntroPage(d->mngr, this);
-    d->itemsPage         = new PanoItemsPage(d->mngr, this);
+    d->introPage         = new PanoIntroPage(d->mngr,      this);
+    d->itemsPage         = new PanoItemsPage(d->mngr,      this);
     d->preProcessingPage = new PanoPreProcessPage(d->mngr, this);
-    d->optimizePage      = new PanoOptimizePage(d->mngr, this);
-    d->previewPage       = new PanoPreviewPage(d->mngr, this);
-    d->lastPage          = new PanoLastPage(d->mngr, this);
+    d->optimizePage      = new PanoOptimizePage(d->mngr,   this);
+    d->previewPage       = new PanoPreviewPage(d->mngr,    this);
+    d->lastPage          = new PanoLastPage(d->mngr,       this);
 
     // ---------------------------------------------------------------
 
-    connect(d->preProcessingPage, SIGNAL(signalPreProcessed(void)),
-            this, SLOT(next(void)));
+    connect(d->preProcessingPage, SIGNAL(signalPreProcessed()),
+            this, SLOT(next()));
 
-    connect(d->optimizePage, SIGNAL(signalOptimized(void)),
-            this, SLOT(next(void)));
+    connect(d->optimizePage, SIGNAL(signalOptimized()),
+            this, SLOT(next()));
 
-    connect(d->previewPage, SIGNAL(signalStitchingFinished(void)),
-            this, SLOT(next(void)));
+    connect(d->previewPage, SIGNAL(signalStitchingFinished()),
+            this, SLOT(next()));
 
-    connect(d->lastPage, SIGNAL(signalCopyFinished(void)),
-            this, SLOT(accept(void)));
+    connect(d->lastPage, SIGNAL(signalCopyFinished()),
+            this, SLOT(accept()));
 }
 
 PanoWizard::~PanoWizard()

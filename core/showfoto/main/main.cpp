@@ -8,7 +8,7 @@
  *               editor with no support of digiKam database.
  *
  * Copyright (C) 2004-2005 by Renchi Raju <renchi dot raju at gmail dot com>
- * Copyright (C) 2004-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2004-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -29,6 +29,8 @@
 
 #include <QDir>
 #include <QFile>
+#include <QTranslator>
+#include <QMessageBox>
 #include <QApplication>
 #include <QStandardPaths>
 #include <QCommandLineParser>
@@ -62,6 +64,8 @@ using namespace Magick;
 #include "digikam_debug.h"
 #include "digikam_globals.h"
 #include "digikam_version.h"
+#include "filesdownloader.h"
+#include "systemsettings.h"
 #include "metaengine.h"
 #include "daboutdata.h"
 #include "showfoto.h"
@@ -76,6 +80,27 @@ using namespace Digikam;
 
 int main(int argc, char* argv[])
 {
+    SystemSettings system(QLatin1String("showfoto"));
+    system.readSettings();
+
+    QCoreApplication::setAttribute(Qt::AA_UseHighDpiPixmaps,
+                                   system.useHighDpiPixmaps);
+
+    if (system.useHighDpiScaling)
+    {
+        QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
+    }
+    else
+    {
+        QCoreApplication::setAttribute(Qt::AA_DisableHighDpiScaling);
+    }
+
+#ifdef HAVE_QWEBENGINE
+
+    QCoreApplication::setAttribute(Qt::AA_ShareOpenGLContexts);
+
+#endif
+
     QApplication app(argc, argv);
 
     digikamSetDebugFilterRules();
@@ -83,15 +108,9 @@ int main(int argc, char* argv[])
     tryInitDrMingw();
 
 #ifdef HAVE_IMAGE_MAGICK
+
     InitializeMagick(nullptr);
-#endif
 
-#ifdef Q_OS_LINUX
-    app.setAttribute(Qt::AA_UseHighDpiPixmaps, true);
-#endif
-
-#ifdef HAVE_QWEBENGINE
-    app.setAttribute(Qt::AA_ShareOpenGLContexts, true);
 #endif
 
     // if we have some local breeze icon resource, prefer it
@@ -125,12 +144,58 @@ int main(int argc, char* argv[])
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
     KConfigGroup group        = config->group(QLatin1String("ImageViewer Settings"));
     QString iconTheme         = group.readEntry(QLatin1String("Icon Theme"), QString());
+    bool loadTranslation      = isRunningInAppImageBundle();
+
+#if defined Q_OS_WIN || defined Q_OS_MACOS
+
+    loadTranslation      = true;
+
+#endif
+
+    QString transPath = QStandardPaths::locate(QStandardPaths::DataLocation,
+                                               QLatin1String("translations"),
+                                               QStandardPaths::LocateDirectory);
+
+    qCDebug(DIGIKAM_GENERAL_LOG) << "Qt translations path:" << transPath;
+
+    QTranslator translator;
+
+    if (loadTranslation && !transPath.isEmpty())
+    {
+        QLocale locale;
+
+        qCDebug(DIGIKAM_GENERAL_LOG) << "Application locale:" << locale.name();
+
+        bool ret = translator.load(locale, QLatin1String("qtbase"),
+                                   QLatin1String("_"), transPath);
+
+        qCDebug(DIGIKAM_GENERAL_LOG) << "Loading translation:" << ret;
+
+        if (ret)
+        {
+            app.installTranslator(&translator);
+        }
+    }
 
     MetaEngine::initializeExiv2();
 
     // Force to use application icon for non plasma desktop as Unity for ex.
 
     QApplication::setWindowIcon(QIcon::fromTheme(QLatin1String("showfoto"), app.windowIcon()));
+
+#ifdef Q_OS_WIN
+
+    if (QSysInfo::currentCpuArchitecture().contains(QLatin1String("64")) &&
+        !QSysInfo::buildCpuArchitecture().contains(QLatin1String("64")))
+    {
+        QMessageBox::critical(qApp->activeWindow(),
+                              qApp->applicationName(),
+                              i18n("<p>You are running Showfoto as a 32-bit version on a 64-bit Windows.</p>"
+                                   "<p>Please install the 64-bit version of Showfoto to get "
+                                   "a better experience with Showfoto.</p>"));
+    }
+
+#endif
 
     QList<QUrl> urlList;
     QStringList urls = parser.positionalArguments();
@@ -147,9 +212,24 @@ int main(int argc, char* argv[])
         QIcon::setThemeName(iconTheme);
     }
 
+    // Workaround for the automatic icon theme color
+    // in KF-5.80, depending on the color scheme.
+
+    if      (QIcon::themeName() == QLatin1String("breeze-dark"))
+    {
+        qApp->setPalette(QPalette(Qt::darkGray));
+    }
+    else if (QIcon::themeName() == QLatin1String("breeze"))
+    {
+        qApp->setPalette(QPalette(Qt::white));
+    }
+
 #ifdef Q_OS_WIN
+
     // Necessary to open native open with dialog on windows
+
     CoInitializeEx(NULL, COINIT_APARTMENTTHREADED | COINIT_DISABLE_OLE1DDE);
+
 #endif
 
     ShowFoto::ShowFoto* const w = new ShowFoto::ShowFoto(urlList);
@@ -157,9 +237,9 @@ int main(int argc, char* argv[])
     // If application storage place in home directory to save customized XML settings files do not exist, create it,
     // else QFile will not able to create new files as well.
 
-    if (!QFile::exists(QStandardPaths::writableLocation(QStandardPaths::DataLocation)))
+    if (!QFile::exists(QStandardPaths::writableLocation(QStandardPaths::AppDataLocation)))
     {
-        QDir().mkpath(QStandardPaths::writableLocation(QStandardPaths::DataLocation));
+        QDir().mkpath(QStandardPaths::writableLocation(QStandardPaths::AppDataLocation));
     }
 
     // If application cache place in home directory to save cached files do not exist, create it.
@@ -171,19 +251,28 @@ int main(int argc, char* argv[])
 
     w->show();
 
+    QPointer<FilesDownloader> floader = new FilesDownloader(w);
+
+    if (!floader->checkDownloadFiles())
+    {
+        floader->startDownload();
+    }
+
     int ret = app.exec();
 
-    MetaEngine::cleanupExiv2();
-
 #ifdef Q_OS_WIN
+
     // Necessary to open native open with dialog on windows
 
     CoUninitialize();
+
 #endif
 
 #ifdef HAVE_IMAGE_MAGICK
 #   if MagickLibVersion >= 0x693
+
     TerminateMagick();
+
 #   endif
 #endif
 

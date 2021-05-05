@@ -7,7 +7,7 @@
  * Description : a rename dialog for the AdvancedRename utility
  *
  * Copyright (C) 2009-2012 by Andi Clemens <andi dot clemens at gmail dot com>
- * Copyright (C) 2013-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2013-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -48,7 +48,7 @@ namespace Digikam
 
 class Parser;
 
-class DIGIKAM_EXPORT AdvancedRenameListItem : public QTreeWidgetItem
+class DIGIKAM_GUI_EXPORT AdvancedRenameListItem : public QTreeWidgetItem
 {
 public:
 
@@ -62,7 +62,7 @@ public:
 
     explicit AdvancedRenameListItem(QTreeWidget* const view);
     AdvancedRenameListItem(QTreeWidget* const view, const QUrl& info);
-    virtual ~AdvancedRenameListItem();
+    ~AdvancedRenameListItem() override;
 
     void setImageUrl(const QUrl& url);
     QUrl imageUrl() const;
@@ -78,8 +78,9 @@ public:
 
 private:
 
-    AdvancedRenameListItem(const AdvancedRenameListItem&);
-    AdvancedRenameListItem& operator=(const AdvancedRenameListItem&);
+    // Disable
+    AdvancedRenameListItem(const AdvancedRenameListItem&)            = delete;
+    AdvancedRenameListItem& operator=(const AdvancedRenameListItem&) = delete;
 
 private:
 
@@ -92,14 +93,14 @@ private:
 typedef QPair<QUrl, QString> NewNameInfo;
 typedef QList<NewNameInfo>   NewNamesList;
 
-class DIGIKAM_EXPORT AdvancedRenameDialog : public QDialog
+class DIGIKAM_GUI_EXPORT AdvancedRenameDialog : public QDialog
 {
     Q_OBJECT
 
 public:
 
     explicit AdvancedRenameDialog(QWidget* const parent = nullptr);
-    ~AdvancedRenameDialog();
+    ~AdvancedRenameDialog() override;
 
     NewNamesList newNames() const;
 
@@ -120,9 +121,6 @@ private Q_SLOTS:
 
 private:
 
-    AdvancedRenameDialog(const AdvancedRenameDialog&);
-    AdvancedRenameDialog& operator=(const AdvancedRenameDialog&);
-
     void setupWidgets();
     void setupConnections();
 
@@ -132,6 +130,12 @@ private:
     bool checkNewNames() const;
 
     NewNamesList filterNewNames() const;
+
+private:
+
+    // Disable
+    AdvancedRenameDialog(const AdvancedRenameDialog&)            = delete;
+    AdvancedRenameDialog& operator=(const AdvancedRenameDialog&) = delete;
 
 private:
 

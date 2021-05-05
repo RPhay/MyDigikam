@@ -7,7 +7,7 @@
  * Description : Exiv2 library interface.
  *               File I/O methods
  *
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2006-2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  *
  * This program is free software; you can redistribute it
@@ -28,6 +28,7 @@
 // Local includes
 
 #include "digikam_debug.h"
+#include "digikam_config.h"
 #include "digikam_version.h"
 
 #if defined(Q_CC_CLANG)
@@ -88,8 +89,49 @@ bool MetaEngine::hasSidecar(const QString& path)
     return QFileInfo::exists(sidecarFilePathForFile(path));
 }
 
-bool MetaEngine::load(const QString& filePath)
+QString MetaEngine::backendName(Backend t)
 {
+    switch (t)
+    {
+        case LibRawBackend:
+        {
+            return QLatin1String("LibRaw");
+        }
+
+        case LibHeifBackend:
+        {
+            return QLatin1String("LibHeif");
+        }
+
+        case ImageMagickBackend:
+        {
+            return QLatin1String("ImageMagick");
+        }
+
+        case FFMpegBackend:
+        {
+            return QLatin1String("FFMpeg");
+        }
+
+        case NoBackend:
+        {
+            return QLatin1String("No Backend");
+        }
+
+        default:
+        {
+            return QLatin1String("Exiv2");
+        }
+    }
+}
+
+bool MetaEngine::load(const QString& filePath, Backend* backend)
+{
+    if (backend)
+    {
+        *backend = NoBackend;
+    }
+
     if (filePath.isEmpty())
     {
         return false;
@@ -104,14 +146,26 @@ bool MetaEngine::load(const QString& filePath)
     {
         Exiv2::Image::AutoPtr image;
 
-        image        = Exiv2::ImageFactory::open((const char*)(QFile::encodeName(filePath)).constData());
+#if defined Q_OS_WIN && defined EXV_UNICODE_PATH
+
+        image        = Exiv2::ImageFactory::open((const wchar_t*)filePath.utf16());
+
+#elif defined Q_OS_WIN
+
+        image        = Exiv2::ImageFactory::open(QFile::encodeName(filePath).constData());
+
+#else
+
+        image        = Exiv2::ImageFactory::open(filePath.toUtf8().constData());
+
+#endif
 
         image->readMetadata();
 
         // Size and mimetype ---------------------------------
 
         d->pixelSize = QSize(image->pixelWidth(), image->pixelHeight());
-        d->mimeType  = QLatin1String(image->mimeType().c_str());
+        d->mimeType  = QString::fromStdString(image->mimeType());
 
         // Image comments ---------------------------------
 
@@ -132,13 +186,20 @@ bool MetaEngine::load(const QString& filePath)
 
 #endif // _XMP_SUPPORT_
 
+
+        if (backend)
+        {
+            *backend = Exiv2Backend;
+        }
+
         hasLoaded = true;
+
     }
-    catch(Exiv2::AnyError& e)
+    catch (Exiv2::AnyError& e)
     {
         d->printExiv2ExceptionError(QString::fromUtf8("Cannot load metadata from file %1").arg(getFilePath()), e);
     }
-    catch(...)
+    catch (...)
     {
         qCCritical(DIGIKAM_METAENGINE_LOG) << "Default exception from Exiv2";
     }
@@ -175,7 +236,20 @@ bool MetaEngine::loadFromSidecarAndMerge(const QString& filePath)
             {
                 // Read sidecar data
 
+#if defined Q_OS_WIN && defined EXV_UNICODE_PATH
+
+                xmpsidecar = Exiv2::ImageFactory::open((const wchar_t*)xmpSidecarPath.utf16());
+
+#elif defined Q_OS_WIN
+
                 xmpsidecar = Exiv2::ImageFactory::open(QFile::encodeName(xmpSidecarPath).constData());
+
+#else
+
+                xmpsidecar = Exiv2::ImageFactory::open(xmpSidecarPath.toUtf8().constData());
+
+#endif
+
                 xmpsidecar->readMetadata();
 
                 // Merge
@@ -194,11 +268,11 @@ bool MetaEngine::loadFromSidecarAndMerge(const QString& filePath)
             }
         }
     }
-    catch(Exiv2::AnyError& e)
+    catch (Exiv2::AnyError& e)
     {
         d->printExiv2ExceptionError(QString::fromUtf8("Cannot load XMP sidecar from file %1").arg(getFilePath()), e);
     }
-    catch(...)
+    catch (...)
     {
         qCCritical(DIGIKAM_METAENGINE_LOG) << "Default exception from Exiv2";
     }
@@ -260,25 +334,33 @@ bool MetaEngine::save(const QString& imageFilePath, bool setVersion) const
 
     qCDebug(DIGIKAM_METAENGINE_LOG) << "MetaEngine::metadataWritingMode" << d->metadataWritingMode;
 
-    switch(d->metadataWritingMode)
+    switch (d->metadataWritingMode)
     {
         case WRITE_TO_SIDECAR_ONLY:
+        {
             writeToSidecar = true;
             break;
+        }
 
         case WRITE_TO_FILE_ONLY:
+        {
             writeToFile    = true;
             break;
+        }
 
         case WRITE_TO_SIDECAR_AND_FILE:
+        {
             writeToFile    = true;
             writeToSidecar = true;
             break;
+        }
 
         case WRITE_TO_SIDECAR_ONLY_FOR_READ_ONLY_FILES:
+        {
             writeToFile                     = true;
             writeToSidecarIfFileNotPossible = true;
             break;
+        }
     }
 
     if (writeToFile)

@@ -6,7 +6,7 @@
  * Date        : 2004-11-22
  * Description : stand alone digiKam image editor GUI
  *
- * Copyright (C) 2004-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2004-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2006-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  * Copyright (C) 2009-2011 by Andi Clemens <andi dot clemens at gmail dot com>
  * Copyright (C) 2004-2005 by Renchi Raju <renchi dot raju at gmail dot com>
@@ -46,113 +46,114 @@ class ShowFoto : public Digikam::EditorWindow
 
 public:
 
-    explicit ShowFoto(const QList<QUrl>& urlList);
-    ~ShowFoto();
+    explicit ShowFoto(const QList<QUrl>& urlList, QWidget* const parent = nullptr);
+    ~ShowFoto()                                             override;
 
 public:
 
-    DInfoInterface* infoIface(DPluginAction* const ac);
+    DInfoInterface* infoIface(DPluginAction* const ac)      override;
 
     virtual void show();
 
 private:
 
-    bool queryClose();
+    bool queryClose()                                       override;
 
-    bool save();
-    bool saveAs();
-    void moveFile();
-    void finishSaving(bool success);
-    QUrl saveDestinationUrl();
-    bool saveNewVersion();
-    bool saveCurrentVersion();
-    bool saveNewVersionAs();
-    bool saveNewVersionInFormat(const QString&);
+    bool save()                                             override;
+    bool saveAs()                                           override;
+    void moveFile()                                         override;
+    void finishSaving(bool success)                         override;
+    QUrl saveDestinationUrl()                               override;
+    bool saveNewVersion()                                   override;
+    bool saveCurrentVersion()                               override;
+    bool saveNewVersionAs()                                 override;
+    bool saveNewVersionInFormat(const QString&)             override;
 
-    void saveIsComplete();
-    void saveAsIsComplete();
-    void saveVersionIsComplete();
+    void saveIsComplete()                                   override;
+    void saveAsIsComplete()                                 override;
+    void saveVersionIsComplete()                            override;
 
     void openFolder(const QUrl& url);
     void openUrls(const QList<QUrl>& urls);
 
-    Digikam::ThumbBarDock* thumbBar()     const;
-    Digikam::Sidebar*      rightSideBar() const;
+    Digikam::ThumbBarDock* thumbBar()                 const override;
+    Digikam::Sidebar*      rightSideBar()             const override;
 
 private Q_SLOTS:
 
-    void slotForward();
-    void slotBackward();
-    void slotLast();
-    void slotFirst();
-    void slotFileWithDefaultApplication();
-    void slotOpenWith(QAction* action=nullptr);
+    void slotForward()                                      override;
+    void slotBackward()                                     override;
+    void slotLast()                                         override;
+    void slotFirst()                                        override;
+    void slotFileWithDefaultApplication()                   override;
+    void slotOpenWith(QAction* action = nullptr)            override;
     void slotShowfotoItemInfoActivated(const ShowfotoItemInfo& info);
 
     void slotOpenFile();
     void slotOpenFolder();
     void slotOpenUrl(const ShowfotoItemInfo& info);
-    void slotDroppedUrls(const QList<QUrl>& droppedUrls, bool dropped);
-    void slotDeleteCurrentItem();
+    void slotDroppedUrls(const QList<QUrl>& droppedUrls,
+                         bool dropped);
+    void slotRemoveImageFromAlbum(const QUrl& url);
 
-    void slotChanged();
-    void slotUpdateItemInfo();
+    void slotDeleteCurrentItem()                            override;
 
-    void slotPrepareToLoad();
-    void slotLoadingStarted(const QString& filename);
-    void slotLoadingFinished(const QString& filename, bool success);
-    void slotSavingStarted(const QString& filename);
+    void slotChanged()                                      override;
+    void slotUpdateItemInfo()                               override;
 
-    void slotRevert();
+    void slotPrepareToLoad()                                override;
+    void slotLoadingStarted(const QString& filename)        override;
+    void slotLoadingFinished(const QString& filename,
+                             bool success)                  override;
+    void slotSavingStarted(const QString& filename)         override;
 
-    void slotAddedDropedItems(QDropEvent*);
+    void slotRevert()                                       override;
+
+    void slotAddedDropedItems(QDropEvent*)                  override;
+
+    void slotOnlineVersionCheck()                           override;
 
 Q_SIGNALS:
 
     void signalLoadCurrentItem(const QList<QUrl>& urlList);
     void signalOpenFolder(const QUrl&);
     void signalOpenFile(const QList<QUrl>& urls);
-    void signalInfoList(ShowfotoItemInfoList&);
+    void signalInfoList(const ShowfotoItemInfoList&);
 
 // -- Internal setup methods implemented in showfoto_config.cpp ----------------------------------------
 
 public Q_SLOTS:
 
-    void slotSetup();
-    void slotSetupICC();
+    void slotSetup()                                        override;
+    void slotSetupICC()                                     override;
 
 private:
 
-    bool setup(bool iccSetupPage=false);
+    bool setup(bool iccSetupPage = false);
     void applySettings();
-    void readSettings();
-    void saveSettings();
+    void readSettings()                                     override;
+    void saveSettings()                                     override;
 
 private Q_SLOTS:
 
     void slotSetupMetadataFilters(int);
+    void slotSetupExifTool();
 
 // -- Internal setup methods implemented in showfoto_setup.cpp ----------------------------------------
 
 private:
 
-    void setupActions();
-    void setupConnections();
-    void setupUserArea();
+    void setupActions()                                     override;
+    void setupConnections()                                 override;
+    void setupUserArea()                                    override;
 
-    void toggleActions(bool val);
+    void toggleActions(bool val)                            override;
     void toggleNavigation(int index);
-    void addServicesMenu();
+    void addServicesMenu()                                  override;
 
 private Q_SLOTS:
 
-    void slotContextMenu();
-
-// -- Extra tool methods implemented in showfoto_tools.cpp ----------------------------------------
-
-private:
-
-    void slideShow(Digikam::SlideShowSettings& settings);
+    void slotContextMenu()                                  override;
 
 // -- Import tools methods implemented in showfoto_import.cpp -------------------------------------
 

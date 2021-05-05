@@ -4,11 +4,12 @@
  * https://www.digikam.org
  *
  * Date        : 2017-05-06
- * Description : template interface to image information.
+ * Description : abstract interface to image information.
  *               This class do not depend of digiKam database library
- *               to permit to re-use tools on Showfoto.
+ *               to permit to re-use plugins with Showfoto.
  *
- * Copyright (C) 2017-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2017-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2019-2020 by Minh Nghia Duong <minhnghiaduong997 at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -57,49 +58,58 @@ class DIGIKAM_EXPORT DInfoInterface : public QObject
 
 public:
 
-    typedef QMap<QString, QVariant> DInfoMap;  ///< Map of properties name and value.
-    typedef QList<int>              DAlbumIDs; ///< List of Album ids.
+    typedef QMap<QString, QVariant> DInfoMap;       ///< Map of properties name and value.
+    typedef QList<int>              DAlbumIDs;      ///< List of Album ids.
 
 public:
 
     explicit DInfoInterface(QObject* const parent);
-    ~DInfoInterface();
+    ~DInfoInterface() override;
 
 public:
 
     /// Slot to call when date time stamp from item is changed.
-    Q_SLOT virtual void slotDateTimeForUrl(const QUrl& url, const QDateTime& dt, bool updModDate);
+    Q_SLOT virtual void slotDateTimeForUrl(const QUrl& url,
+                                           const QDateTime& dt,
+                                           bool updModDate);
 
     /// Slot to call when something in metadata from item is changed.
     Q_SLOT virtual void slotMetadataChangedForUrl(const QUrl& url);
+
+    Q_SIGNAL void signalAlbumItemsRecursiveCompleted(const QList<QUrl>& imageList);
+
+    Q_SIGNAL void signalShortcutPressed(const QString& shortcut, int val);
 
 public:
 
     ///@{
     /// Low level items and albums methods
 
-    virtual QList<QUrl> currentSelectedItems()                 const;
-    virtual QList<QUrl> currentAlbumItems()                    const;
+    virtual QList<QUrl> currentSelectedItems()                                  const;
+    virtual QList<QUrl> currentAlbumItems()                                     const;
+    virtual void        parseAlbumItemsRecursive();
 
-    virtual QList<QUrl> albumItems(int)                        const;
-    virtual QList<QUrl> albumsItems(const DAlbumIDs&)          const;
-    virtual QList<QUrl> allAlbumItems()                        const;
+    virtual QList<QUrl> albumItems(int)                                         const;
+    virtual QList<QUrl> albumsItems(const DAlbumIDs&)                           const;
+    virtual QList<QUrl> allAlbumItems()                                         const;
 
-    virtual DInfoMap albumInfo(int)                            const;
-    virtual void     setAlbumInfo(int, const DInfoMap&)        const;
+    virtual DInfoMap albumInfo(int)                                             const;
+    virtual void     setAlbumInfo(int, const DInfoMap&)                         const;
 
-    virtual DInfoMap itemInfo(const QUrl&)                     const;
-    virtual void     setItemInfo(const QUrl&, const DInfoMap&) const;
+    virtual DInfoMap itemInfo(const QUrl&)                                      const;
+    virtual void     setItemInfo(const QUrl&, const DInfoMap&)                  const;
+
+    Q_SIGNAL void signalLastItemUrl(const QUrl&);
     ///@}
 
 public:
 
     ///@{
-    // Albums chooser view methods (to use items from albums before to process).
+    /// Albums chooser view methods (to use items from albums before to process).
 
-    virtual QWidget*  albumChooser(QWidget* const parent)      const;
-    virtual DAlbumIDs albumChooserItems()                      const;
-    virtual bool      supportAlbums()                          const;
+    virtual QWidget*  albumChooser(QWidget* const parent)                       const;
+    virtual DAlbumIDs albumChooserItems()                                       const;
+    virtual bool      supportAlbums()                                           const;
 
     Q_SIGNAL void signalAlbumChooserSelectionChanged();
     ///@}
@@ -107,35 +117,48 @@ public:
 public:
 
     ///@{
-    // Album selector view methods (to upload items from an external place).
+    /// Album selector view methods (to upload items from an external place).
 
-    virtual QWidget* uploadWidget(QWidget* const parent)       const;
-    virtual QUrl     uploadUrl()                               const;
+    virtual QWidget* uploadWidget(QWidget* const parent)                        const;
+    virtual QUrl     uploadUrl()                                                const;
 
     Q_SIGNAL void signalUploadUrlChanged();
 
     /// Url to upload new items without to use album selector.
-    virtual QUrl     defaultUploadUrl()                        const;
+    virtual QUrl     defaultUploadUrl()                                         const;
 
     Q_SIGNAL void signalImportedImage(const QUrl&);
     ///@}
 
 public:
 
-    // Return an instance of tag filter model if host application support this feature, else null pointer.
+    /// Return an instance of tag filter model if host application support this feature, else null pointer.
     virtual QAbstractItemModel* tagFilterModel();
 
 #ifdef HAVE_MARBLE
-    virtual QList<GPSItemContainer*> currentGPSItems()         const;
+
+    virtual QList<GPSItemContainer*> currentGPSItems()                          const;
+
 #endif
 
+public:
+
+    /// Pass extra shortcut actions to widget and return prefixes of shortcuts
+    virtual QMap<QString, QString> passShortcutActionsToWidget(QWidget* const)  const;
+
+public:
+
+    /// Manipulate with item
+    virtual void deleteImage(const QUrl& url);
 };
 
-// -----------------------------------------------------------------
+// -------------------------------------------------------------------------------------------------------------
 
-/** DItemInfo is a class to get item information from host application (Showfoto or digiKam)
- *  The interface is re-implemented in host and depend how item infromation must be retrieved (from a database or by file metadata).
- *  The easy way to use this container is given below:
+/**
+ * DItemInfo is a class to get item information from host application (Showfoto or digiKam)
+ * The interface is re-implemented in host and depend how item infromation must be retrieved
+ * (from a database or by file metadata).
+ * The easy way to use this container is given below:
  *
  *  // READ INFO FROM HOST ---------------------------------------------
  *
@@ -195,6 +218,7 @@ public:
     QString            credit()               const;
     QString            rights()               const;
     QString            source()               const;
+    QString            lens()                 const;
     QString            make()                 const;
     QString            model()                const;
     QString            exposureTime()         const;
@@ -227,10 +251,10 @@ public:
 
 public:
 
-    QString title()   const;
-    QString caption() const;
-    QDate   date()    const;
-    QString path()    const;
+    QString title()                           const;
+    QString caption()                         const;
+    QDate   date()                            const;
+    QString path()                            const;
 
 private:
 

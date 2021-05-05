@@ -54,8 +54,10 @@ public:
 
 private:
 
-    explicit DatabaseServerStarter();
-    ~DatabaseServerStarter();
+    // Disable
+    DatabaseServerStarter();
+    explicit DatabaseServerStarter(QObject*) = delete;
+    ~DatabaseServerStarter() override;
 
 private:
 

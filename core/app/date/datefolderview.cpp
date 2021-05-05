@@ -7,7 +7,7 @@
  * Description : a folder view for date albums.
  *
  * Copyright (C) 2005      by Renchi Raju <renchi dot raju at gmail dot com>
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2009-2010 by Johannes Wienke <languitar at semipol dot de>
  * Copyright (C) 2014      by Michael G. Hansen <mike at mghansen dot de>
  *
@@ -47,25 +47,22 @@ class Q_DECL_HIDDEN DateFolderView::Private
 public:
 
     explicit Private()
-      : active(false),
-        selected(),
+      : active      (false),
         dateTreeView(nullptr),
-        monthview(nullptr)
+        monthview   (nullptr)
     {
     }
 
-    bool               active;
+    bool          active;
 
-    QString            selected;
-
-    DateTreeView*      dateTreeView;
-    MonthWidget*       monthview;
+    DateTreeView* dateTreeView;
+    MonthWidget*  monthview;
 };
 
 DateFolderView::DateFolderView(QWidget* const parent, DateAlbumModel* const dateAlbumModel)
-    : DVBox(parent),
+    : DVBox            (parent),
       StateSavingObject(this),
-      d(new Private)
+      d                (new Private)
 {
     setObjectName(QLatin1String("DateFolderView"));
 
@@ -82,6 +79,7 @@ DateFolderView::DateFolderView(QWidget* const parent, DateAlbumModel* const date
     // manager as it is not yet loaded. To achieve this, we wait for loading
     // DAlbums and set the active album in the album manager if this tab is
     // active
+
     connect(AlbumManager::instance(), SIGNAL(signalAllDAlbumsLoaded()),
             this, SLOT(slotAllAlbumsLoaded()));
 }
@@ -108,7 +106,7 @@ void DateFolderView::setActive(const bool val)
     if (d->active)
     {
         AlbumManager::instance()->setCurrentAlbums(QList<Album*>()
-                                                    << d->dateTreeView->currentAlbum());
+                                                   << d->dateTreeView->currentAlbum());
         slotSelectionChanged(d->dateTreeView->currentAlbum());
     }
     else
@@ -136,7 +134,6 @@ void DateFolderView::slotSelectionChanged(Album* selectedAlbum)
 
     if (dalbum->range() == DAlbum::Month)
     {
-
         QDate date = dalbum->date();
         d->monthview->setActive(true);
         d->monthview->setYearMonth(date.year(), date.month());
@@ -152,8 +149,7 @@ void DateFolderView::slotAllAlbumsLoaded()
 {
     if (d->active)
     {
-        AlbumManager::instance()->setCurrentAlbums(QList<Album*>()
-                                                    << d->dateTreeView->currentAlbum());
+        AlbumManager::instance()->setCurrentAlbums(QList<Album*>() << d->dateTreeView->currentAlbum());
         slotSelectionChanged(d->dateTreeView->currentAlbum());
     }
 }
@@ -183,6 +179,7 @@ void DateFolderView::gotoDate(const QDate& dt)
     if (!dateIndex.isValid())
     {
         qCDebug(DIGIKAM_GENERAL_LOG) << "Cannot find an album for date " << dt;
+
         return;
     }
 
@@ -191,6 +188,7 @@ void DateFolderView::gotoDate(const QDate& dt)
     if (!dateAlbum)
     {
         qCWarning(DIGIKAM_GENERAL_LOG) << "Could not retrieve an album for index " << dateIndex;
+
         return;
     }
 
@@ -207,7 +205,7 @@ void DateFolderView::changeAlbumFromHistory(DAlbum* const album)
 
 AlbumPointer<DAlbum> DateFolderView::currentAlbum() const
 {
-    return AlbumPointer<DAlbum> (d->dateTreeView->currentAlbum());
+    return AlbumPointer<DAlbum>(d->dateTreeView->currentAlbum());
 }
 
 } // namespace Digikam

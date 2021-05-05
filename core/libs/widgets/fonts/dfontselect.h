@@ -6,7 +6,7 @@
  * Date        : 2008-12-23
  * Description : a widget to select between system font or a custom font.
  *
- * Copyright (C) 2008-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2008-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -50,8 +50,8 @@ public:
 
 public:
 
-    explicit DFontSelect(const QString& text, QWidget* const parent=nullptr);
-    virtual ~DFontSelect();
+    explicit DFontSelect(const QString& text, QWidget* const parent = nullptr);
+    ~DFontSelect() override;
 
     void setMode(FontMode mode);
     FontMode mode() const;

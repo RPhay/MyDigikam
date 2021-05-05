@@ -4,7 +4,7 @@
  * Description : a tool to fix automatically camera lens aberrations
  *
  * Copyright (C) 2008      by Adrian Schroeter <adrian at suse dot de>
- * Copyright (C) 2008-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2008-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -26,6 +26,7 @@
 #include <QCheckBox>
 #include <QString>
 #include <QtConcurrent>    // krazy:exclude=includes
+#include <QScopedPointer>
 
 // KDE includes
 
@@ -56,9 +57,9 @@ class Q_DECL_HIDDEN LensFunFilter::Private
 public:
 
     explicit Private()
-      : iface(nullptr),
+      : iface   (nullptr),
         modifier(nullptr),
-        loop(0)
+        loop    (0)
     {
     }
 
@@ -73,7 +74,7 @@ public:
 
 LensFunFilter::LensFunFilter(QObject* const parent)
     : DImgThreadedFilter(parent),
-      d(new Private)
+      d                 (new Private)
 {
     d->iface = new LensFunIface;
     initFilter();
@@ -83,7 +84,7 @@ LensFunFilter::LensFunFilter(DImg* const orgImage,
                              QObject* const parent,
                              const LensFunContainer& settings)
     : DImgThreadedFilter(orgImage, parent, QLatin1String("LensCorrection")),
-      d(new Private)
+      d                 (new Private)
 {
     d->iface = new LensFunIface;
     d->iface->setSettings(settings);
@@ -105,7 +106,7 @@ LensFunFilter::~LensFunFilter()
 
 QString LensFunFilter::DisplayableName()
 {
-    return QString::fromUtf8(I18N_NOOP("Lens Auto-Correction Tool"));
+    return QString::fromUtf8(I18N_NOOP2("@title", "Lens Auto-Correction Tool"));
 }
 
 void LensFunFilter::filterCCAMultithreaded(uint start, uint stop)
@@ -136,7 +137,7 @@ void LensFunFilter::filterCCAMultithreaded(uint start, uint stop)
 void LensFunFilter::filterVIGMultithreaded(uint start, uint stop)
 {
     uchar* data = m_destImage.bits();
-    data += m_destImage.width() * m_destImage.bytesDepth() * start;
+    data       += m_destImage.width() * m_destImage.bytesDepth() * start;
 
     for (unsigned int y = start ; runningFlag() && (y < stop) ; ++y)
     {
@@ -355,30 +356,34 @@ bool LensFunFilter::registerSettingsToXmp(MetaEngineData& data) const
     QString str;
     LensFunContainer prm = d->iface->settings();
 
-    str.append(i18n("Camera: %1-%2",        prm.cameraMake, prm.cameraModel));
+    str.append(i18nc("@info; XMP settings", "Camera: %1-%2",        prm.cameraMake, prm.cameraModel));
     str.append(QLatin1Char('\n'));
-    str.append(i18n("Lens: %1",             prm.lensModel));
+    str.append(i18nc("@info; XMP settings", "Lens: %1",             prm.lensModel));
     str.append(QLatin1Char('\n'));
-    str.append(i18n("Subject Distance: <numid>%1</numid>", prm.subjectDistance));
+    str.append(i18nc("@info; XMP settings", "Subject Distance: <numid>%1</numid>", prm.subjectDistance));
     str.append(QLatin1Char('\n'));
-    str.append(i18n("Aperture: <numid>%1</numid>",         prm.aperture));
+    str.append(i18nc("@info; XMP settings", "Aperture: <numid>%1</numid>",         prm.aperture));
     str.append(QLatin1Char('\n'));
-    str.append(i18n("Focal Length: <numid>%1</numid>",     prm.focalLength));
+    str.append(i18nc("@info; XMP settings", "Focal Length: <numid>%1</numid>",     prm.focalLength));
     str.append(QLatin1Char('\n'));
-    str.append(i18n("Crop Factor: <numid>%1</numid>",      prm.cropFactor));
+    str.append(i18nc("@info; XMP settings", "Crop Factor: <numid>%1</numid>",      prm.cropFactor));
     str.append(QLatin1Char('\n'));
-    str.append(i18n("CCA Correction: %1",   prm.filterCCA  && d->iface->supportsCCA()       ? i18n("enabled") : i18n("disabled")));
+    str.append(i18nc("@info; XMP settings", "CCA Correction: %1",   prm.filterCCA  && d->iface->supportsCCA()       ? i18nc("@info: correction status", "enabled")
+                                                                                                                    : i18nc("@info: correction status", "disabled")));
     str.append(QLatin1Char('\n'));
-    str.append(i18n("VIG Correction: %1",   prm.filterVIG  && d->iface->supportsVig()       ? i18n("enabled") : i18n("disabled")));
+    str.append(i18nc("@info; XMP settings", "VIG Correction: %1",   prm.filterVIG  && d->iface->supportsVig()       ? i18nc("@info: correction status", "enabled")
+                                                                                                                    : i18nc("@info: correction status", "disabled")));
     str.append(QLatin1Char('\n'));
-    str.append(i18n("DST Correction: %1",   prm.filterDST && d->iface->supportsDistortion() ? i18n("enabled") : i18n("disabled")));
+    str.append(i18nc("@info; XMP settings", "DST Correction: %1",   prm.filterDST && d->iface->supportsDistortion() ? i18nc("@info: correction status", "enabled")
+                                                                                                                    : i18nc("@info: correction status", "disabled")));
     str.append(QLatin1Char('\n'));
-    str.append(i18n("GEO Correction: %1",   prm.filterGEO && d->iface->supportsGeometry()   ? i18n("enabled") : i18n("disabled")));
+    str.append(i18nc("@info; XMP settings", "GEO Correction: %1",   prm.filterGEO && d->iface->supportsGeometry()   ? i18nc("@info: correction status", "enabled")
+                                                                                                                    : i18nc("@info: correction status", "disabled")));
 
-    DMetadata meta(data);
-    bool ret = meta.setXmpTagString("Xmp.digiKam.LensCorrectionSettings",
+    QScopedPointer<DMetadata> meta(new DMetadata(data));
+    bool ret = meta->setXmpTagString("Xmp.digiKam.LensCorrectionSettings",
                                     str.replace(QLatin1Char('\n'), QLatin1String(" ; ")));
-    data     = meta.data();
+    data     = meta->data();
 
     return ret;
 }

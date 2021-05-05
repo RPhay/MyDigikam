@@ -43,9 +43,14 @@ class FileActionProgressItemCreator
 {
 public:
 
-    virtual ~FileActionProgressItemCreator() {}
+    FileActionProgressItemCreator()                                       = default;
+    virtual ~FileActionProgressItemCreator()                              = default;
     virtual ProgressItem* createProgressItem(const QString& action) const = 0;
     virtual void addProgressItem(ProgressItem* const item)                = 0;
+
+private:
+
+    Q_DISABLE_COPY(FileActionProgressItemCreator)
 };
 
 // -------------------------------------------------------------------------------------------------------------------
@@ -86,6 +91,11 @@ public:
 Q_SIGNALS:
 
     void signalWrittingDone();
+
+private:
+
+    // Disable
+    explicit FileActionProgressItemContainer(QObject*);
 };
 
 // -------------------------------------------------------------------------------------------------------------------
@@ -99,7 +109,7 @@ public:
     }
 
     FileActionItemInfoList(const FileActionItemInfoList& copy)
-        : QList(copy),
+        : QList    (copy),
           container(copy.container)
     {
     }
@@ -134,28 +144,28 @@ public:
     }
 
     /// db worker progress info
-    void dbProcessedOne()               { dbProcessed(1);                         }
-    void dbProcessed(int numberOfInfos) { progress()->dbProcessed(numberOfInfos); }
-    void dbFinished()                   { progress()->dbFinished();               }
+    void dbProcessedOne()               const { dbProcessed(1);                         }
+    void dbProcessed(int numberOfInfos) const { progress()->dbProcessed(numberOfInfos); }
+    void dbFinished()                   const { progress()->dbFinished();               }
 
     /// db worker calls this before sending to file worker
     void schedulingForWrite(int numberOfInfos,
                             const QString& action,
-                            FileActionProgressItemCreator* const creator)
+                            FileActionProgressItemCreator* const creator) const
     {
         progress()->schedulingForWrite(numberOfInfos, action, creator);
     }
 
     void schedulingForWrite(const QString& action,
-                            FileActionProgressItemCreator* const creator)
+                            FileActionProgressItemCreator* const creator) const
     {
         schedulingForWrite(size(), action, creator);
     }
 
     /// file worker calls this when finished
-    void writtenToOne()                 { written(1);                             }
-    void written(int numberOfInfos)     { progress()->written(numberOfInfos);     }
-    void finishedWriting()              { progress()->finishedWriting();          }
+    void writtenToOne()             const    { written(1);                             }
+    void written(int numberOfInfos) const    { progress()->written(numberOfInfos);     }
+    void finishedWriting()          const    { progress()->finishedWriting();          }
 
 public:
 

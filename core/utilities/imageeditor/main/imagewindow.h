@@ -7,7 +7,7 @@
  * Description : digiKam image editor GUI
  *
  * Copyright (C) 2004-2005 by Renchi Raju <renchi dot raju at gmail dot com>
- * Copyright (C) 2004-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2004-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -42,7 +42,6 @@ class QDropEvent;
 namespace Digikam
 {
 
-class SlideShowSettings;
 class CollectionImageChangeset;
 
 class ImageWindow : public EditorWindow
@@ -51,19 +50,19 @@ class ImageWindow : public EditorWindow
 
 public:
 
-    ~ImageWindow();
+    ~ImageWindow()                                                      override;
 
     static ImageWindow* imageWindow();
     static bool         imageWindowCreated();
 
-    bool queryClose() override;
+    bool queryClose()                                                   override;
     void toggleTag(int tagID);
 
 public:
 
     DInfoInterface* infoIface(DPluginAction* const ac)                  override;
 
-    virtual VersionManager* versionManager() const                      override;
+    VersionManager* versionManager()                              const override;
 
 public Q_SLOTS:
 
@@ -83,7 +82,9 @@ Q_SIGNALS:
 
 private:
 
+    // Disable
     ImageWindow();
+    ImageWindow(QWidget*);
 
     void loadIndex(const QModelIndex& index);
 
@@ -168,11 +169,12 @@ private Q_SLOTS:
 */
     void slotDroppedOnThumbbar(const QList<ItemInfo>& infos);
 
-    void slotComponentsInfo() override;
-    void slotDBStat()         override;
+    void slotComponentsInfo()                                           override;
+    void slotDBStat()                                                   override;
+    void slotOnlineVersionCheck()                                       override;
 
     void slotAddedDropedItems(QDropEvent*)                              override;
-    void slotOpenWith(QAction* action=nullptr)                          override;
+    void slotOpenWith(QAction* action = nullptr)                        override;
 
     void slotRightSideBarActivateTitles();
     void slotRightSideBarActivateComments();
@@ -201,12 +203,6 @@ private Q_SLOTS:
 
     void slotContextMenu()                                              override;
 
-// -- Extra tool methods implemented in imagewindow_tools.cpp ----------------------------------------
-
-private:
-
-    void slideShow(SlideShowSettings& settings)                         override;
-
 // -- Import tools methods implemented in imagewindow_import.cpp -------------------------------------
 
 private Q_SLOTS:
@@ -220,7 +216,7 @@ private:
     static ImageWindow* m_instance;
 
     class Private;
-    Private* const d;
+    Private* const      d;
 };
 
 } // namespace Digikam

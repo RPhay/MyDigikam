@@ -6,7 +6,7 @@
  * Date        : 2009-11-03
  * Description : A dialog base class which can handle multiple pages.
  *
- * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2007      by Rafael Fernández López <ereslibre at kde dot org>
  * Copyright (C) 2006      by Tobias Koenig <tokoe at kde dot org>
  *
@@ -47,6 +47,8 @@ namespace Digikam
 
 class Q_DECL_HIDDEN DConfigDlgStackedWidget : public QStackedWidget
 {
+    Q_OBJECT
+
 public:
 
     explicit DConfigDlgStackedWidget(QWidget* const parent = nullptr)
@@ -59,7 +61,7 @@ public:
         mMinimumSize = size;
     }
 
-    QSize minimumSizeHint() const Q_DECL_OVERRIDE
+    QSize minimumSizeHint() const override
     {
         return mMinimumSize.expandedTo(QStackedWidget::minimumSizeHint());
     }
@@ -127,6 +129,8 @@ class DConfigDlgListViewProxy;
 
 class Q_DECL_HIDDEN DConfigDlgPlainView : public QAbstractItemView
 {
+    Q_OBJECT
+
 public:
 
     explicit DConfigDlgPlainView(QWidget* const parent = nullptr);
@@ -154,7 +158,7 @@ class Q_DECL_HIDDEN DConfigDlgListView : public QListView
 public:
 
     explicit DConfigDlgListView(QWidget* const parent = nullptr);
-    virtual ~DConfigDlgListView();
+    ~DConfigDlgListView() override;
 
     void setModel(QAbstractItemModel* model) override;
 
@@ -193,7 +197,7 @@ class Q_DECL_HIDDEN DConfigDlgTabbedView : public QAbstractItemView
 public:
 
     explicit DConfigDlgTabbedView(QWidget* const parent = nullptr);
-    virtual ~DConfigDlgTabbedView();
+    ~DConfigDlgTabbedView() override;
 
     void setModel(QAbstractItemModel* model)                                            override;
     QModelIndex indexAt(const QPoint& point) const                                      override;
@@ -252,7 +256,7 @@ class Q_DECL_HIDDEN DConfigDlgListViewProxy : public QAbstractProxyModel
 public:
 
     explicit DConfigDlgListViewProxy(QObject* const parent = nullptr);
-    virtual ~DConfigDlgListViewProxy();
+    ~DConfigDlgListViewProxy() override;
 
     int rowCount(const QModelIndex& parent = QModelIndex()) const                           override;
     int columnCount(const QModelIndex& parent = QModelIndex()) const                        override;

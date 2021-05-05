@@ -6,8 +6,8 @@
  * Date        : 2012-02-12
  * Description : a tool to export images to IPFS web service
  *
- * Copyright (C) 2018 by Amar Lakshya <amar dot lakshya at xaviers dot edu dot in>
- * Copyright (C) 2018 by Caulier Gilles <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2018      by Amar Lakshya <amar dot lakshya at xaviers dot edu dot in>
+ * Copyright (C) 2018-2020 by Caulier Gilles <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -84,22 +84,25 @@ QList<const IpfsImagesListViewItem*> IpfsImagesList::getPendingItems() const
 
 void IpfsImagesList::slotAddImages(const QList<QUrl>& list)
 {
-    /* NOTE: Replaces the DItemsList::slotAddImages method, so that
+    /**
+     * NOTE: Replaces the DItemsList::slotAddImages method, so that
      * IpfsImagesListViewItems can be added instead of ImagesListViewItems
      */
 
-    DMetadata meta;
+    QScopedPointer<DMetadata> meta(new DMetadata);
 
     for (QList<QUrl>::ConstIterator it = list.constBegin() ; it != list.constEnd() ; ++it)
     {
         // Already in the list?
+
         if (listView()->findItem(*it) == nullptr)
         {
             // Load URLs from meta data, if possible
-            if (meta.load((*it).toLocalFile()))
+
+            if (meta->load((*it).toLocalFile()))
             {
                 auto* const item = new IpfsImagesListViewItem(listView(), *it);
-                item->setIpfsUrl(meta.getXmpTagString("Xmp.digiKam.IPFSId"));
+                item->setIpfsUrl(meta->getXmpTagString("Xmp.digiKam.IPFSId"));
             }
         }
     }
@@ -114,13 +117,14 @@ void IpfsImagesList::slotSuccess(const IpfsTalkerResult& result)
 
     processed(ipfsl, true);
 
-    DMetadata meta;
+    QScopedPointer<DMetadata> meta(new DMetadata);
 
     // Save URLs to meta data, if possible
-    if (meta.load(ipfsl.toLocalFile()))
+
+    if (meta->load(ipfsl.toLocalFile()))
     {
-        meta.setXmpTagString("Xmp.digiKam.IPFSId", result.image.url);
-        bool saved = meta.applyChanges();
+        meta->setXmpTagString("Xmp.digiKam.IPFSId", result.image.url);
+        bool saved = meta->applyChanges();
         qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Metadata" << (saved ? "Saved" : "Not Saved") << "to" << ipfsl;
     }
 
@@ -138,7 +142,9 @@ void IpfsImagesList::slotDoubleClick(QTreeWidgetItem* element, int i)
     if (i == Url)
     {
         const QUrl url = QUrl(element->text(i));
+
         // The delete page asks for confirmation, so we don't need to do that here
+
         QDesktopServices::openUrl(url);
     }
 }

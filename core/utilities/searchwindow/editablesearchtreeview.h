@@ -6,7 +6,7 @@
  * Date        : 2008-01-14
  * Description : Basic search tree view with editing functionality
  *
- * Copyright (C) 2008-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2008-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2009-2010 by Johannes Wienke <languitar at semipol dot de>
  *
  * This program is free software; you can redistribute it
@@ -60,24 +60,24 @@ public:
     /**
      * Destructor.
      */
-    virtual ~EditableSearchTreeView();
+    ~EditableSearchTreeView() override;
 
 protected:
 
     /**
      * implemented hook methods for context menus.
      */
-    virtual QString contextMenuTitle() const;
+    QString contextMenuTitle() const override;
 
     /**
      * Adds actions to delete or rename existing searches.
      */
-    virtual void addCustomContextMenuActions(ContextMenuHelper& cmh, Album* album);
+    void addCustomContextMenuActions(ContextMenuHelper& cmh, Album* album) override;
 
     /**
      * Handles deletion and renaming actions.
      */
-    virtual void handleCustomContextMenuAction(QAction* action, AlbumPointer<Album> album);
+    void handleCustomContextMenuAction(QAction* action, const AlbumPointer<Album>& album) override;
 
 private:
 

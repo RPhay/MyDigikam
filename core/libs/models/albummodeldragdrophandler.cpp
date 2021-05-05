@@ -35,7 +35,12 @@ namespace Digikam
 {
 
 AlbumModelDragDropHandler::AlbumModelDragDropHandler(AbstractAlbumModel* model)
-    : QObject(model), m_model(model)
+    : QObject(model),
+      m_model(model)
+{
+}
+
+AlbumModelDragDropHandler::~AlbumModelDragDropHandler()
 {
 }
 

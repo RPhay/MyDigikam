@@ -48,15 +48,17 @@ class DatabaseOptionDialog : public RuleDialog
 public:
 
     explicit DatabaseOptionDialog(Rule* const parent);
-    ~DatabaseOptionDialog();
+    ~DatabaseOptionDialog() override;
 
     DbKeySelectorView* dbkeySelectorView;
     QLineEdit*         separatorLineEdit;
 
 private:
 
-    DatabaseOptionDialog(const DatabaseOptionDialog&);
-    DatabaseOptionDialog& operator=(const DatabaseOptionDialog&);
+    // Disable
+    explicit DatabaseOptionDialog(QWidget*)                      = delete;
+    DatabaseOptionDialog(const DatabaseOptionDialog&)            = delete;
+    DatabaseOptionDialog& operator=(const DatabaseOptionDialog&) = delete;
 };
 
 // --------------------------------------------------------
@@ -72,20 +74,17 @@ class DatabaseOption : public Option
 public:
 
     explicit DatabaseOption();
-    ~DatabaseOption();
+    ~DatabaseOption()                               override;
 
 protected:
 
-    virtual QString parseOperation(ParseSettings& settings);
+    QString parseOperation(ParseSettings& settings) override;
 
 private Q_SLOTS:
 
-    void slotTokenTriggered(const QString& token);
+    void slotTokenTriggered(const QString& token)   override;
 
 private:
-
-    DatabaseOption(const DatabaseOption&);
-    DatabaseOption& operator=(const DatabaseOption&);
 
     QString parseDatabase(const QString& keyword, ParseSettings& settings);
     void addDbKeysCollection(DbKeysCollection* key);
@@ -96,6 +95,13 @@ private:
 private:
 
     DbOptionKeysMap m_map;
+
+private:
+
+    // Disable
+    explicit DatabaseOption(QObject*)                = delete;
+    DatabaseOption(const DatabaseOption&)            = delete;
+    DatabaseOption& operator=(const DatabaseOption&) = delete;
 };
 
 } // namespace Digikam

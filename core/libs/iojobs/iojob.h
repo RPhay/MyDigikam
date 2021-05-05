@@ -32,7 +32,6 @@
 // Local includes
 
 #include "actionthreadbase.h"
-#include "dtrashiteminfo.h"
 #include "digikam_export.h"
 #include "iojobdata.h"
 
@@ -41,7 +40,7 @@ namespace Digikam
 
 class ItemInfo;
 
-class DIGIKAM_EXPORT IOJob : public ActionJob
+class DIGIKAM_GUI_EXPORT IOJob : public ActionJob
 {
     Q_OBJECT
 
@@ -53,11 +52,16 @@ Q_SIGNALS:
 
     void signalError(const QString& errMsg);
     void signalOneProccessed(const QUrl& url);
+
+private:
+
+    // Disable
+    explicit IOJob(QObject*);
 };
 
 // ---------------------------------------
 
-class DIGIKAM_EXPORT CopyOrMoveJob : public IOJob
+class DIGIKAM_GUI_EXPORT CopyOrMoveJob : public IOJob
 {
     Q_OBJECT
 
@@ -67,7 +71,12 @@ public:
 
 protected:
 
-    void run();
+    void run() override;
+
+private:
+
+    // Disable
+    CopyOrMoveJob(QObject*);
 
 private:
 
@@ -76,7 +85,7 @@ private:
 
 // ---------------------------------------
 
-class DIGIKAM_EXPORT DeleteJob : public IOJob
+class DIGIKAM_GUI_EXPORT DeleteJob : public IOJob
 {
     Q_OBJECT
 
@@ -86,7 +95,12 @@ public:
 
 protected:
 
-    void run();
+    void run() override;
+
+private:
+
+    // Disable
+    DeleteJob(QObject*);
 
 private:
 
@@ -95,7 +109,7 @@ private:
 
 // ---------------------------------------
 
-class DIGIKAM_EXPORT RenameFileJob : public IOJob
+class DIGIKAM_GUI_EXPORT RenameFileJob : public IOJob
 {
     Q_OBJECT
 
@@ -109,7 +123,12 @@ Q_SIGNALS:
 
 protected:
 
-    void run();
+    void run() override;
+
+private:
+
+    // Disable
+    RenameFileJob(QObject*);
 
 private:
 
@@ -118,7 +137,7 @@ private:
 
 // ----------------------------------------------
 
-class DIGIKAM_EXPORT DTrashItemsListingJob : public IOJob
+class DIGIKAM_GUI_EXPORT DTrashItemsListingJob : public IOJob
 {
     Q_OBJECT
 
@@ -132,7 +151,12 @@ Q_SIGNALS:
 
 protected:
 
-    void run();
+    void run() override;
+
+private:
+
+    // Disable
+    DTrashItemsListingJob(QObject*);
 
 private:
 
@@ -141,40 +165,50 @@ private:
 
 // ----------------------------------------------
 
-class DIGIKAM_EXPORT RestoreDTrashItemsJob : public IOJob
+class DIGIKAM_GUI_EXPORT RestoreDTrashItemsJob : public IOJob
 {
     Q_OBJECT
 
 public:
 
-    explicit RestoreDTrashItemsJob(const DTrashItemInfoList& infos);
+    explicit RestoreDTrashItemsJob(IOJobData* const data);
 
 protected:
 
-    void run();
+    void run() override;
 
 private:
 
-    DTrashItemInfoList m_dtrashItemInfoList;
+    // Disable
+    RestoreDTrashItemsJob(QObject*);
+
+private:
+
+    IOJobData* m_data;
 };
 
 // ----------------------------------------------
 
-class DIGIKAM_EXPORT DeleteDTrashItemsJob : public IOJob
+class DIGIKAM_GUI_EXPORT EmptyDTrashItemsJob : public IOJob
 {
     Q_OBJECT
 
 public:
 
-    explicit DeleteDTrashItemsJob(const DTrashItemInfoList& infos);
+    explicit EmptyDTrashItemsJob(IOJobData* const data);
 
 protected:
 
-    void run();
+    void run() override;
 
 private:
 
-    DTrashItemInfoList m_dtrashItemInfoList;
+    // Disable
+    EmptyDTrashItemsJob(QObject*);
+
+private:
+
+    IOJobData* m_data;
 };
 
 } // namespace Digikam

@@ -7,7 +7,7 @@
  * Description : helper methods for JPEG image format.
  *
  * Copyright (C) 2004-2005 by Renchi Raju <renchi dot raju at gmail dot com>
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2006-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  *
  * This program is free software; you can redistribute it
@@ -58,6 +58,11 @@ public:
     explicit JpegRotator(const QString& file);
 
     /**
+     * Destructor
+     */
+    ~JpegRotator();
+
+    /**
      * Per default, the orientation is read from the metadata of the file.
      * You can override this value
      */
@@ -101,13 +106,19 @@ protected:
     QString                      m_destFile;
     QString                      m_documentName;
     QSize                        m_originalSize;
-    DMetadata                    m_metadata;
+    DMetadata*                   m_metadata;
     MetaEngine::ImageOrientation m_orientation;
 
 protected:
 
     void updateMetadata(const QString& fileName, const MetaEngineRotation& matrix);
     bool performJpegTransform(TransformAction action, const QString& src, const QString& dest);
+
+private:
+
+    // Disable
+    JpegRotator(const JpegRotator&)            = delete;
+    JpegRotator& operator=(const JpegRotator&) = delete;
 };
 
 DIGIKAM_EXPORT bool loadJPEGScaled(QImage& image, const QString& path, int maximumSize);

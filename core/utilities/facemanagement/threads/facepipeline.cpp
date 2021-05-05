@@ -7,7 +7,7 @@
  * Description : Integrated, multithread face detection / recognition
  *
  * Copyright (C) 2010-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2012-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -116,15 +116,16 @@ void FacePipeline::plugFaceDetector()
 {
     d->detectionWorker = new DetectionWorker(d);
 
-    connect(d, SIGNAL(accuracyChanged(double)),
-            d->detectionWorker, SLOT(setAccuracy(double)));
+    connect(d, SIGNAL(accuracyAndModel(double,bool)),
+            d->detectionWorker, SLOT(setAccuracyAndModel(double,bool)));
 }
 
 void FacePipeline::plugParallelFaceDetectors()
 {
     if (QThread::idealThreadCount() <= 1)
     {
-        return plugFaceDetector();
+        plugFaceDetector();
+        return;
     }
 
     // limit number of parallel detectors to 3, because of memory cost (cascades)
@@ -136,8 +137,8 @@ void FacePipeline::plugParallelFaceDetectors()
     {
         DetectionWorker* const worker = new DetectionWorker(d);
 
-        connect(d, SIGNAL(accuracyChanged(double)),
-                worker, SLOT(setAccuracy(double)));
+        connect(d, SIGNAL(accuracyAndModel(double,bool)),
+                worker, SLOT(setAccuracyAndModel(double,bool)));
 
         d->parallelDetectors->add(worker);
     }
@@ -146,28 +147,24 @@ void FacePipeline::plugParallelFaceDetectors()
 void FacePipeline::plugFaceRecognizer()
 {
     d->recognitionWorker = new RecognitionWorker(d);
-    d->createThumbnailLoadThread();
 
-    connect(d, SIGNAL(accuracyChanged(double)),
-            d->recognitionWorker, SLOT(setThreshold(double)));
+    connect(d, SIGNAL(accuracyAndModel(double,bool)),
+            d->recognitionWorker, SLOT(setThreshold(double,bool)));
 }
 
 void FacePipeline::plugDatabaseWriter(WriteMode mode)
 {
     d->databaseWriter = new DatabaseWriter(mode, d);
-    d->createThumbnailLoadThread();
 }
 
 void FacePipeline::plugTrainer()
 {
     d->trainerWorker = new TrainerWorker(d);
-    d->createThumbnailLoadThread();
 }
 
 void FacePipeline::plugDetectionBenchmarker()
 {
     d->detectionBenchmarker = new DetectionBenchmarker(d);
-    d->createThumbnailLoadThread();
 }
 
 void FacePipeline::plugRecognitionBenchmarker()
@@ -178,7 +175,6 @@ void FacePipeline::plugRecognitionBenchmarker()
 void FacePipeline::plugDatabaseEditor()
 {
     plugDatabaseWriter(NormalWrite);
-    d->createThumbnailLoadThread();
 }
 
 void FacePipeline::construct()
@@ -189,7 +185,7 @@ void FacePipeline::construct()
         qCDebug(DIGIKAM_GENERAL_LOG) << "Face PipeLine: add preview thread";
     }
 
-    if (d->parallelDetectors)
+    if      (d->parallelDetectors)
     {
         d->pipeline << d->parallelDetectors;
         qCDebug(DIGIKAM_GENERAL_LOG) << "Face PipeLine: add parallel thread detectors";
@@ -237,16 +233,19 @@ void FacePipeline::construct()
     }
 
     connect(d, SIGNAL(startProcess(FacePipelineExtendedPackage::Ptr)),
-            d->pipeline.first(), SLOT(process(FacePipelineExtendedPackage::Ptr)));
+            d->pipeline.first(), SLOT(process(FacePipelineExtendedPackage::Ptr)),
+            Qt::QueuedConnection);
 
     for (int i = 0 ; i < (d->pipeline.size() - 1) ; ++i)
     {
         connect(d->pipeline.at(i), SIGNAL(processed(FacePipelineExtendedPackage::Ptr)),
-                d->pipeline.at(i + 1), SLOT(process(FacePipelineExtendedPackage::Ptr)));
+                d->pipeline.at(i + 1), SLOT(process(FacePipelineExtendedPackage::Ptr)),
+                Qt::QueuedConnection);
     }
 
     connect(d->pipeline.last(), SIGNAL(processed(FacePipelineExtendedPackage::Ptr)),
-            d, SLOT(finishProcess(FacePipelineExtendedPackage::Ptr)));
+            d, SLOT(finishProcess(FacePipelineExtendedPackage::Ptr)),
+            Qt::QueuedConnection);
 
     d->applyPriority();
 }
@@ -265,14 +264,6 @@ void FacePipeline::setPriority(QThread::Priority priority)
 QThread::Priority FacePipeline::priority() const
 {
     return d->priority;
-}
-
-void FacePipeline::activeFaceRecognizer(RecognitionDatabase::RecognizeAlgorithm algorithmType)
-{
-    if (d->recognitionWorker != nullptr)
-    {
-        d->recognitionWorker->activeFaceRecognizer(algorithmType);
-    }
 }
 
 void FacePipeline::cancel()
@@ -377,7 +368,7 @@ FaceTagsIface FacePipeline::addManually(const ItemInfo& info,
                                         const DImg& image,
                                         const TagRegion& assignedRegion)
 {
-    FacePipelineFaceTagsIface face; // giving a null face => no existing face yet, add it
+    FacePipelineFaceTagsIface face;     // giving a null face => no existing face yet, add it
     face.assignedTagId                        = -1;
     face.assignedRegion                       = assignedRegion;
     face.roles                               |= FacePipelineFaceTagsIface::ForEditing;
@@ -408,6 +399,23 @@ FaceTagsIface FacePipeline::editRegion(const ItemInfo& info,
     return std::move(face);
 }
 
+FaceTagsIface FacePipeline::editTag(const ItemInfo& info,
+                                    const FaceTagsIface& databaseFace,
+                                    int newTagId)
+{
+    FacePipelineFaceTagsIface face           = FacePipelineFaceTagsIface(databaseFace);
+    face.assignedTagId                       = newTagId;
+    face.assignedRegion                      = TagRegion();
+    face.roles                              |= FacePipelineFaceTagsIface::ForEditing;
+
+    FacePipelineExtendedPackage::Ptr package = d->buildPackage(info, face, DImg());
+
+    package->databaseFaces.setRole(FacePipelineFaceTagsIface::ForEditing);
+    d->send(package);
+
+    return std::move(face);
+}
+
 void FacePipeline::remove(const ItemInfo& info,
                           const FaceTagsIface& databaseFace)
 {
@@ -423,9 +431,9 @@ void FacePipeline::process(const QList<ItemInfo>& infos)
     d->processBatch(infos);
 }
 
-void FacePipeline::setDetectionAccuracy(double value)
+void FacePipeline::setAccuracyAndModel(double value, bool yolo)
 {
-    emit d->accuracyChanged(value);
+    emit d->accuracyAndModel(value, yolo);
 }
 
 } // namespace Digikam

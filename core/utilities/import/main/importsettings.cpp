@@ -7,7 +7,7 @@
  * Description : Settings for the import tool
  *
  * Copyright (C) 2012      by Islam Wazery <wazery at ubuntu dot com>
- * Copyright (C) 2012-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -46,41 +46,43 @@ class Q_DECL_HIDDEN ImportSettings::Private
 public:
 
     explicit Private()
-      : iconShowName(true),
-        iconShowSize(false),
-        iconShowDate(true),
-        iconShowTitle(false),
-        iconShowResolution(false),
-        iconShowTags(false),
-        iconShowOverlays(false),
-        iconShowRating(false),
-        iconShowImageFormat(false),
-        iconShowCoordinates(false),
-        thumbnailSize(0),
-        imageSortOrder(0),
-        imageSortBy(0),
-        imageSeparationMode(0),
-        itemLeftClickAction(ImportSettings::ShowPreview),
-        showToolTips(false),
-        tooltipShowFileName(false),
-        tooltipShowFileDate(false),
-        tooltipShowFileSize(false),
-        tooltipShowImageType(false),
-        tooltipShowImageDim(true),
-        tooltipShowPhotoMake(false),
-        tooltipShowPhotoLens(false),
-        tooltipShowPhotoFocal(false),
-        tooltipShowPhotoExpo(false),
-        tooltipShowPhotoFlash(false),
-        tooltipShowPhotoWb(false),
-        tooltipShowFolderName(false),
-        tooltipShowTags(false),
-        tooltipShowLabelRating(false),
-        previewLoadFullImageSize(false),
-        previewItemsWhileDownload(false),
-        previewShowIcons(true),
-//      ratingFilterCond(0),
-        showThumbbar(false)
+      : iconShowName                (true),
+        iconShowSize                (false),
+        iconShowDate                (true),
+        iconShowTitle               (false),
+        iconShowResolution          (false),
+        iconShowTags                (false),
+        iconShowOverlays            (false),
+        iconShowRating              (false),
+        iconShowImageFormat         (false),
+        iconShowCoordinates         (false),
+        thumbnailSize               (0),
+        imageSortOrder              (0),
+        imageSortBy                 (0),
+        imageSeparationMode         (0),
+        itemLeftClickAction         (ImportSettings::ShowPreview),
+        showToolTips                (false),
+        tooltipShowFileName         (false),
+        tooltipShowFileDate         (false),
+        tooltipShowFileSize         (false),
+        tooltipShowImageType        (false),
+        tooltipShowImageDim         (true),
+        tooltipShowPhotoMake        (false),
+        tooltipShowPhotoLens        (false),
+        tooltipShowPhotoFocal       (false),
+        tooltipShowPhotoExpo        (false),
+        tooltipShowPhotoFlash       (false),
+        tooltipShowPhotoWb          (false),
+        tooltipShowFolderName       (false),
+        tooltipShowTags             (false),
+        tooltipShowLabelRating      (false),
+        previewLoadFullImageSize    (false),
+        previewItemsWhileDownload   (false),
+        previewShowIcons            (true),
+/*
+        ratingFilterCond            (0),
+*/
+        showThumbbar                (false)
     {
     }
 
@@ -141,7 +143,7 @@ public:
     int                                 imageSortOrder;
     int                                 imageSortBy;
     int                                 imageSeparationMode;
-    ImportSettings::ItemLeftClickAction itemLeftClickAction;
+    int                                 itemLeftClickAction;
 
     // Import icon-view tooltip settings
     bool                                showToolTips;
@@ -231,7 +233,7 @@ ImportSettings* ImportSettings::instance()
 
 ImportSettings::ImportSettings()
     : QObject(),
-      d(new Private)
+      d      (new Private)
 {
     d->config = KSharedConfig::openConfig();
     init();
@@ -424,12 +426,12 @@ int ImportSettings::getImageSeparationMode() const
     return d->imageSeparationMode;
 }
 
-void ImportSettings::setItemLeftClickAction(const ItemLeftClickAction action)
+void ImportSettings::setItemLeftClickAction(int action)
 {
     d->itemLeftClickAction = action;
 }
 
-ImportSettings::ItemLeftClickAction ImportSettings::getItemLeftClickAction() const
+int ImportSettings::getItemLeftClickAction() const
 {
     return d->itemLeftClickAction;
 }

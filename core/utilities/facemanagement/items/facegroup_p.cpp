@@ -8,7 +8,7 @@
  *
  * Copyright (C) 2010      by Aditya Bhatt <adityabhatt1991 at gmail dot com>
  * Copyright (C) 2010-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2012-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -29,18 +29,18 @@ namespace Digikam
 {
 
 FaceGroup::Private::Private(FaceGroup* const q)
-    : view(nullptr),
-      exifRotate(true),
-      autoSuggest(false),
-      showOnHover(false),
-      manuallyAddWrapItem(nullptr),
-      manuallyAddedItem(nullptr),
-      state(NoFaces),
-      visibilityController(nullptr),
-      tagModel(nullptr),
-      filterModel(nullptr),
-      filteredModel(nullptr),
-      q(q)
+    : view                  (nullptr),
+      exifRotate            (true),
+      autoSuggest           (false),
+      showOnHover           (false),
+      manuallyAddWrapItem   (nullptr),
+      manuallyAddedItem     (nullptr),
+      state                 (NoFaces),
+      visibilityController  (nullptr),
+      tagModel              (nullptr),
+      filterModel           (nullptr),
+      filteredModel         (nullptr),
+      q                     (q)
 {
 }
 
@@ -94,7 +94,7 @@ FaceItem* FaceGroup::Private::createItem(const FaceTagsIface& face)
     FaceItem* const item = new FaceItem(view->previewItem());
     item->setFace(face);
 
-    QRect faceRect = face.region().toRect();
+    QRect faceRect       = face.region().toRect();
 
     if (!exifRotate)
     {
@@ -115,7 +115,10 @@ FaceItem* FaceGroup::Private::addItem(const FaceTagsIface& face)
 
     // for identification, use index in our list
 
-    AssignNameWidget* const assignWidget = createAssignNameWidget(face, items.size());
+    QList<QVariant> identifier(face.toVariant().toList());
+    identifier << items.size();
+
+    AssignNameWidget* const assignWidget = createAssignNameWidget(face, identifier);
     item->setHudWidget(assignWidget);
 /*
     new StyleSheetDebugger(assignWidget);
@@ -151,13 +154,24 @@ AssignNameWidget::Mode FaceGroup::Private::assignWidgetMode(FaceTagsIface::Type 
     {
         case FaceTagsIface::UnknownName:
         case FaceTagsIface::UnconfirmedName:
+        {
             return AssignNameWidget::UnconfirmedEditMode;
+        }
+
+        case FaceTagsIface::Type::IgnoredName:
+        {
+            return AssignNameWidget::IgnoredMode;
+        }
 
         case FaceTagsIface::ConfirmedName:
+        {
             return AssignNameWidget::ConfirmedMode;
+        }
 
         default:
+        {
             return AssignNameWidget::InvalidMode;
+        }
     }
 }
 

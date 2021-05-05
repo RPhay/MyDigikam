@@ -1,9 +1,11 @@
 #
-# Copyright (c) 2010-2020 by Gilles Caulier, <caulier dot gilles at gmail dot com>
+# Copyright (c) 2010-2021 by Gilles Caulier, <caulier dot gilles at gmail dot com>
 # Copyright (c) 2017      by Ahmed Fathi, <ahmed dot fathi dot abdelmageed at gmail dot com>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
+
+APPLY_COMMON_POLICIES()
 
 include(MacroDPlugins)
 
@@ -56,12 +58,12 @@ set(upnpsdk_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/upnpsdk/Platinum/Source/Core/PltAct
                  ${CMAKE_CURRENT_SOURCE_DIR}/upnpsdk/Platinum/Source/Devices/MediaRenderer/RenderingControlSCPD.cpp
                  ${CMAKE_CURRENT_SOURCE_DIR}/upnpsdk/Platinum/Source/Devices/MediaConnect/X_MS_MediaReceiverRegistrarSCPD.cpp
                  ${CMAKE_CURRENT_SOURCE_DIR}/upnpsdk/Platinum/Source/Devices/MediaConnect/PltMediaConnect.cpp
+
                  ${CMAKE_CURRENT_SOURCE_DIR}/upnpsdk/Neptune/Source/Core/NptAutomaticCleaner.cpp
                  ${CMAKE_CURRENT_SOURCE_DIR}/upnpsdk/Neptune/Source/Core/NptBase64.cpp
                  ${CMAKE_CURRENT_SOURCE_DIR}/upnpsdk/Neptune/Source/Core/NptBufferedStreams.cpp
                  ${CMAKE_CURRENT_SOURCE_DIR}/upnpsdk/Neptune/Source/Core/NptCommon.cpp
                  ${CMAKE_CURRENT_SOURCE_DIR}/upnpsdk/Neptune/Source/Core/NptDataBuffer.cpp
-                 ${CMAKE_CURRENT_SOURCE_DIR}/upnpsdk/Neptune/Source/Core/NptDebug.cpp
                  ${CMAKE_CURRENT_SOURCE_DIR}/upnpsdk/Neptune/Source/Core/NptFile.cpp
                  ${CMAKE_CURRENT_SOURCE_DIR}/upnpsdk/Neptune/Source/Core/NptHash.cpp
                  ${CMAKE_CURRENT_SOURCE_DIR}/upnpsdk/Neptune/Source/Core/NptHttp.cpp
@@ -84,10 +86,13 @@ set(upnpsdk_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/upnpsdk/Platinum/Source/Core/PltAct
                  ${CMAKE_CURRENT_SOURCE_DIR}/upnpsdk/Neptune/Source/Core/NptUtils.cpp
                  ${CMAKE_CURRENT_SOURCE_DIR}/upnpsdk/Neptune/Source/Core/NptXml.cpp
                  ${CMAKE_CURRENT_SOURCE_DIR}/upnpsdk/Neptune/Source/System/Bsd/NptBsdSockets.cpp
+                 ${CMAKE_CURRENT_SOURCE_DIR}/upnpsdk/Neptune/Source/System/Bsd/NptBsdResolver.cpp
                  ${CMAKE_CURRENT_SOURCE_DIR}/upnpsdk/Neptune/Source/System/StdC/NptStdcDebug.cpp
                  ${CMAKE_CURRENT_SOURCE_DIR}/upnpsdk/Neptune/Source/System/StdC/NptStdcEnvironment.cpp
                  ${CMAKE_CURRENT_SOURCE_DIR}/upnpsdk/Neptune/Source/System/StdC/NptStdcFile.cpp
+                 ${CMAKE_CURRENT_SOURCE_DIR}/upnpsdk/Neptune/Source/System/Posix/NptPosixFile.cpp
                  ${CMAKE_CURRENT_SOURCE_DIR}/upnpsdk/Neptune/Source/System/Posix/NptPosixEnvironment.cpp
+                 ${CMAKE_CURRENT_SOURCE_DIR}/upnpsdk/Neptune/Source/System/Null/NptNullAutoreleasePool.cpp
 )
 
 if(NOT MSVC)
@@ -98,7 +103,7 @@ if(NOT MSVC)
                              ${CMAKE_CURRENT_SOURCE_DIR}/upnpsdk/Neptune/Source/System/Posix/NptSelectableMessageQueue.cpp
                              ${CMAKE_CURRENT_SOURCE_DIR}/upnpsdk/Neptune/Source/System/Posix/NptPosixQueue.cpp
                              ${CMAKE_CURRENT_SOURCE_DIR}/upnpsdk/Neptune/Source/System/Posix/NptPosixThreads.cpp
-                             ${CMAKE_CURRENT_SOURCE_DIR}/upnpsdk/Neptune/Source/System/Posix/NptPosixFile.cpp
+                             ${CMAKE_CURRENT_SOURCE_DIR}/upnpsdk/Neptune/Source/Core/NptDebug.cpp
     )
 
 endif()
@@ -132,37 +137,46 @@ if(APPLE)
 
 endif()
 
-#if(MSVC)
-#
-#    list(APPEND upnpsdk_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/upnpsdk/Neptune/Source/System/Win32/NptWin32Console.cpp
-#                             ${CMAKE_CURRENT_SOURCE_DIR}/upnpsdk/Neptune/Source/System/Win32/NptWin32Debug.cpp
-#                             ${CMAKE_CURRENT_SOURCE_DIR}/upnpsdk/Neptune/Source/System/Win32/NptWin32DynamicLibraries.cpp
-#                             ${CMAKE_CURRENT_SOURCE_DIR}/upnpsdk/Neptune/Source/System/Win32/NptWin32MessageQueue.cpp
-#                             ${CMAKE_CURRENT_SOURCE_DIR}/upnpsdk/Neptune/Source/System/Win32/NptWin32Queue.cpp
+if(MSVC)
+
+    list(APPEND upnpsdk_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/upnpsdk/Neptune/Source/System/Win32/NptWin32DynamicLibraries.cpp
+                             ${CMAKE_CURRENT_SOURCE_DIR}/upnpsdk/Neptune/Source/System/Win32/NptWin32MessageQueue.cpp
+                             ${CMAKE_CURRENT_SOURCE_DIR}/upnpsdk/Neptune/Source/System/Win32/NptWin32Queue.cpp
 #                             ${CMAKE_CURRENT_SOURCE_DIR}/upnpsdk/Neptune/Source/System/Win32/NptWin32SerialPort.cpp
-#                             ${CMAKE_CURRENT_SOURCE_DIR}/upnpsdk/Neptune/Source/System/Win32/NptWin32System.cpp
-#                             ${CMAKE_CURRENT_SOURCE_DIR}/upnpsdk/Neptune/Source/System/Win32/NptWin32Threads.cpp
-#    )
-#
-#endif()
+                             ${CMAKE_CURRENT_SOURCE_DIR}/upnpsdk/Neptune/Source/System/Win32/NptWin32System.cpp
+                             ${CMAKE_CURRENT_SOURCE_DIR}/upnpsdk/Neptune/Source/System/Win32/NptWin32Threads.cpp
+    )
+
+endif()
+
+# Don't process automoc on UpnpSdk headers
+
+file(GLOB_RECURSE upnpsdk_headers ${CMAKE_CURRENT_SOURCE_DIR}/upnpsdk/*.h)
+
+foreach(_file ${upnpsdk_headers})
+    set_property(SOURCE ${_file} PROPERTY SKIP_AUTOMOC ON)
+endforeach()
 
 set(libmediaserver_SRCS
+    ${upnpsdk_SRCS}
     ${CMAKE_CURRENT_SOURCE_DIR}/server/dlnaserver.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/server/dlnaserverdelegate.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/server/dmediaserver.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/server/dmediaservermngr.cpp
-    ${upnpsdk_SRCS}
 )
 
-# Adjust flag for static lib and 64 bits computers using -fPIC for GCC compiler (bug: #269903)
-foreach(_currentfile ${libmediaserver_SRCS})
-    if(NOT MSVC)
-        set_source_files_properties(${_currentfile} PROPERTIES COMPILE_FLAGS
-            "-Wno-unused-parameter -Wno-sequence-point -Wno-unused-label -Wno-unused-variable -Wno-nonnull -Wno-narrowing -Wno-cast-align -Wno-deprecated-declarations")
-    endif()
-endforeach()
-
+# For Unit-tests and plugin
 add_library(mediaserverbackend STATIC ${libmediaserver_SRCS})
+
+if(MSVC)
+
+    target_compile_options(mediaserverbackend PRIVATE /w)
+
+else()
+
+    target_compile_options(mediaserverbackend PRIVATE -w)
+
+endif()
 
 target_link_libraries(mediaserverbackend
                       PRIVATE
@@ -185,7 +199,3 @@ DIGIKAM_ADD_GENERIC_PLUGIN(NAME    MediaServer
                            SOURCES ${mediaserverplugin_SRCS}
                            DEPENDS mediaserverbackend
 )
-
-if(BUILD_TESTING)
-    add_subdirectory(tests)
-endif()

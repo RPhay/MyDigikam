@@ -6,7 +6,7 @@
  * Date        : 2009-07-16
  * Description : metadata selector.
  *
- * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -43,30 +43,34 @@ class MdKeyListViewItem;
 
 class DIGIKAM_EXPORT MetadataSelectorItem : public QTreeWidgetItem
 {
-
 public:
 
     MetadataSelectorItem(MdKeyListViewItem* const parent, const QString& key, const QString& title, const QString& desc);
-    virtual ~MetadataSelectorItem();
+    ~MetadataSelectorItem()    override;
 
-    QString key() const;
+    QString key()        const;
     QString mdKeyTitle() const;
 
 private:
 
     QString            m_key;
     MdKeyListViewItem* m_parent;
+
+private:
+
+    Q_DISABLE_COPY(MetadataSelectorItem)
 };
 
 // ------------------------------------------------------------------------------------
 
 class DIGIKAM_EXPORT MetadataSelector : public QTreeWidget
 {
+    Q_OBJECT
 
 public:
 
     explicit MetadataSelector(QWidget* const parent);
-    virtual ~MetadataSelector();
+    ~MetadataSelector() override;
 
     void setTagsMap(const DMetadata::TagsMap& map);
 
@@ -74,7 +78,7 @@ public:
     QStringList checkedTagsList();
 
     void clearSelection();
-    void selectAll() override;
+    void selectAll()    override;
 };
 
 // ------------------------------------------------------------------------------------
@@ -97,18 +101,18 @@ public:
 public:
 
     explicit MetadataSelectorView(QWidget* const parent);
-    virtual ~MetadataSelectorView();
+    ~MetadataSelectorView()               override;
 
-    int itemsCount() const;
+    int itemsCount()                const;
 
     void setTagsMap(const DMetadata::TagsMap& map);
 
     void setcheckedTagsList(const QStringList& list);
 
     void setDefaultFilter(const QStringList& list);
-    QStringList defaultFilter() const;
+    QStringList defaultFilter()     const;
 
-    QStringList checkedTagsList() const;
+    QStringList checkedTagsList()   const;
 
     void setControlElements(ControlElements controllerMask);
 
@@ -129,7 +133,8 @@ private:
 
 private:
 
-    MetadataSelectorView(); // Disable default constructor.
+    // Disable.
+    MetadataSelectorView() = delete;
 
     class Private;
     Private* const d;

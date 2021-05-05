@@ -6,7 +6,7 @@
  * Date        : 2011-03-22
  * Description : a Iface C++ interface
  *
- * Copyright (C) 2011-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2011-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2011      by Paolo de Vathaire <paolo dot devathaire at gmail dot com>
  *
  * This program is free software; you can redistribute it
@@ -28,10 +28,6 @@
 
 #include <kjob.h>
 
-// Local includes
-
-#include "digikam_export.h"
-
 namespace MediaWiki
 {
 
@@ -41,7 +37,7 @@ class JobPrivate;
 /**
  * @brief The base class for all Iface jobs.
  */
-class DIGIKAM_EXPORT Job : public KJob
+class Job : public KJob
 {
     Q_OBJECT
     Q_DECLARE_PRIVATE(Job)
@@ -64,12 +60,12 @@ public:
     /**
      * @brief Destructs the Job.
      */
-    virtual ~Job();
+    ~Job() override;
 
     /**
      * @brief Aborts this job quietly.
      */
-    bool doKill() Q_DECL_OVERRIDE;
+    bool doKill() override;
 
 protected:
 
@@ -78,7 +74,7 @@ protected:
      * @param dd a private class
      * @param parent the QObject parent
      */
-    Job(JobPrivate& dd, QObject* const parent = nullptr);
+    explicit Job(JobPrivate& dd, QObject* const parent = nullptr);
 
     /**
      * @brief Connects signals of the reply object (in the private object) to

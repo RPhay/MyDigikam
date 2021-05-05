@@ -6,7 +6,7 @@
  * Date        : 2007-12-08
  * Description : a widget to display date and time statistics of pictures
  *
- * Copyright (C) 2007-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2007-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2011-2012 by Andi Clemens <andi dot clemens at gmail dot com>
  *
  * This program is free software; you can redistribute it
@@ -57,21 +57,21 @@ public:
 
     enum SelectionMode
     {
-        Unselected = 0,    // No selection.
-        FuzzySelection,    // Partially selected.
-        Selected           // Fully selected.
+        Unselected = 0,    ///< No selection.
+        FuzzySelection,    ///< Partially selected.
+        Selected           ///< Fully selected.
     };
 
     enum ScaleMode
     {
-        LinScale = 0,      // Linear scale.
-        LogScale           // Logarithmic scale.
+        LinScale = 0,      ///< Linear scale.
+        LogScale           ///< Logarithmic scale.
     };
 
 public:
 
     explicit TimeLineWidget(QWidget* const parent = nullptr);
-    ~TimeLineWidget();
+    ~TimeLineWidget() override;
 
     void      setTimeUnit(TimeUnit timeUnit);
     TimeUnit  timeUnit()                                                        const;
@@ -103,7 +103,7 @@ Q_SIGNALS:
 
 public Q_SLOTS:
 
-    void slotDatesMap(const QMap<QDateTime, int>&);
+    void slotDatesHash(const QHash<QDateTime, int>&);
     void slotPrevious();
     void slotNext();
     void slotBackward();
@@ -155,7 +155,9 @@ private:
                                       const QDateTime& dte);
     void          updateAllSelection();
 
-    // helper methods for painting
+    /**
+     * helper methods for painting
+     */
     int           calculateTop(int& val)                                        const;
     void          paintItem(QPainter& p,
                             const QRect& barRect,

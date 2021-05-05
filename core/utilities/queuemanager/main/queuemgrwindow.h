@@ -6,7 +6,7 @@
  * Date        : 2008-11-21
  * Description : Batch Queue Manager GUI
  *
- * Copyright (C) 2008-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2008-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -54,7 +54,7 @@ class QueueMgrWindow : public DXmlGuiWindow
 
 public:
 
-    ~QueueMgrWindow();
+    ~QueueMgrWindow()                                   override;
 
     static QueueMgrWindow* queueManagerWindow();
     static bool            queueManagerWindowCreated();
@@ -74,11 +74,11 @@ public:
     bool isBusy()                          const;
     int  currentQueueId()                  const;
 
-    bool queryClose() override;
+    bool queryClose()                                   override;
 
 public:
 
-    DInfoInterface* infoIface(DPluginAction* const) override
+    DInfoInterface* infoIface(DPluginAction* const)     override
     {
         return nullptr;
     };
@@ -90,7 +90,7 @@ Q_SIGNALS:
 
 protected:
 
-    void moveEvent(QMoveEvent* e)           override;
+    void moveEvent(QMoveEvent* e)                       override;
 
 public Q_SLOTS:
 
@@ -101,8 +101,8 @@ public Q_SLOTS:
 
 private:
 
-    void customizedFullScreenMode(bool set) override;
-    void closeEvent(QCloseEvent* e)         override;
+    void customizedFullScreenMode(bool set)             override;
+    void closeEvent(QCloseEvent* e)                     override;
     void setupActions();
     void setupConnections();
     void setupUserArea();
@@ -112,7 +112,9 @@ private:
     void refreshStatusBar();
     void populateToolsList();
     void setup(Setup::Page page);
-    void addHistoryMessage(QueueListViewItem* const cItem, const QString& msg, DHistoryView::EntryType type);
+    void addHistoryMessage(QueueListViewItem* const cItem,
+                           const QString& msg,
+                           DHistoryView::EntryType type);
 
     bool checkTargetAlbum(int queueId);
     void busy(bool busy);
@@ -123,9 +125,10 @@ private:
 
 private Q_SLOTS:
 
-    void slotSetup()                        override;
-    void slotComponentsInfo()               override;
-    void slotDBStat()                       override;
+    void slotSetup()                                    override;
+    void slotComponentsInfo()                           override;
+    void slotDBStat()                                   override;
+    void slotOnlineVersionCheck()                       override;
     void slotAction(const Digikam::ActionData&);
     void slotHistoryEntryClicked(int, qlonglong);
     void slotAssignedToolsChanged(const AssignedBatchTools&);
@@ -133,6 +136,11 @@ private Q_SLOTS:
     void slotItemSelectionChanged();
     void slotQueueProcessed();
     void slotSaveWorkflow();
+
+private:
+
+    // Disable
+    QueueMgrWindow(QWidget*) = delete;
 
 private:
 

@@ -4,6 +4,8 @@
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
 
+APPLY_COMMON_POLICIES()
+
 include_directories($<TARGET_PROPERTY:Qt5::Xml,INTERFACE_INCLUDE_DIRECTORIES>
                     $<TARGET_PROPERTY:Qt5::Network,INTERFACE_INCLUDE_DIRECTORIES>
                     $<TARGET_PROPERTY:Qt5::Gui,INTERFACE_INCLUDE_DIRECTORIES>
@@ -100,4 +102,10 @@ endif()
 # Marble translations need explicit loading
 ecm_create_qm_loader(libgeoiface_SRCS marble_qt)
 
-add_library(geoiface_src OBJECT ${libgeoiface_SRCS})
+# Used by digikamcore
+add_library(core_geoiface_obj OBJECT ${libgeoiface_SRCS})
+
+target_compile_definitions(core_geoiface_obj
+                           PRIVATE
+                           digikamcore_EXPORTS
+)

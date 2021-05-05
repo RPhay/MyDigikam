@@ -7,7 +7,7 @@
  * Description : Album Labels Tree View.
  *
  * Copyright (C) 2014-2015 by Mohamed_Anwer <m_dot_anwer at gmx dot com>
- * Copyright (C) 2014-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2014-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -55,7 +55,7 @@ public:
 public:
 
     explicit LabelsTreeView(QWidget* const parent = nullptr, bool setCheckable = false);
-    ~LabelsTreeView();
+    ~LabelsTreeView() override;
 
     /**
      * @return true if the tree widget is checkable
@@ -97,8 +97,8 @@ public:
      * @brief Loading and saving state function inherited from
      *        StateSavingObject
      */
-    void doLoadState();
-    void doSaveState();
+    void doLoadState() override;
+    void doSaveState() override;
 
     /**
      * @brief Restores the selection state from the AlbumHistory

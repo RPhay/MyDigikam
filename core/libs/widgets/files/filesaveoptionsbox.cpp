@@ -7,7 +7,7 @@
  * Description : a stack of widgets to set image file save
  *               options into image editor.
  *
- * Copyright (C) 2007-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2007-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -65,23 +65,27 @@ class Q_DECL_HIDDEN FileSaveOptionsBox::Private
 
 public:
 
-    explicit Private() :
-        noneOptions(nullptr),
-        noneGrid(nullptr),
-        labelNone(nullptr),
-        JPEGOptions(nullptr),
-        PNGOptions(nullptr),
-        TIFFOptions(nullptr),
+    explicit Private()
+      : noneOptions     (nullptr),
+        noneGrid        (nullptr),
+        labelNone       (nullptr),
+        JPEGOptions     (nullptr),
+        PNGOptions      (nullptr),
+        TIFFOptions     (nullptr),
 
 #ifdef HAVE_JASPER
-        JPEG2000Options(nullptr),
+
+        JPEG2000Options (nullptr),
+
 #endif // HAVE_JASPER
 
 #ifdef HAVE_X265
-        HEIFOptions(nullptr),
+
+        HEIFOptions     (nullptr),
+
 #endif // HAVE_X265
 
-        PGFOptions(nullptr)
+        PGFOptions      (nullptr)
     {
     }
 
@@ -96,11 +100,15 @@ public:
     TIFFSettings* TIFFOptions;
 
 #ifdef HAVE_JASPER
+
     JP2KSettings* JPEG2000Options;
+
 #endif // HAVE_JASPER
 
 #ifdef HAVE_X265
+
     HEIFSettings* HEIFOptions;
+
 #endif // HAVE_X265
 
     PGFSettings*  PGFOptions;
@@ -108,7 +116,7 @@ public:
 
 FileSaveOptionsBox::FileSaveOptionsBox(QWidget* const parent)
     : QStackedWidget(parent),
-      d(new Private)
+      d             (new Private)
 {
     setAttribute(Qt::WA_DeleteOnClose);
 
@@ -136,7 +144,9 @@ FileSaveOptionsBox::FileSaveOptionsBox(QWidget* const parent)
     //-- JPEG 2000 Settings -------------------------------------------------
 
 #ifdef HAVE_JASPER
+
     d->JPEG2000Options = new JP2KSettings(this);
+
 #endif // HAVE_JASPER
 
     //-- PGF Settings -------------------------------------------------
@@ -146,7 +156,9 @@ FileSaveOptionsBox::FileSaveOptionsBox(QWidget* const parent)
     //-- HEIF Settings -------------------------------------------------
 
 #ifdef HAVE_X265
+
     d->HEIFOptions     = new HEIFSettings(this);
+
 #endif // HAVE_X265
 
     //-----------------------------------------------------------------------
@@ -155,12 +167,19 @@ FileSaveOptionsBox::FileSaveOptionsBox(QWidget* const parent)
     insertWidget(DImg::JPEG, d->JPEGOptions);
     insertWidget(DImg::PNG,  d->PNGOptions);
     insertWidget(DImg::TIFF, d->TIFFOptions);
+
 #ifdef HAVE_JASPER
+
     insertWidget(DImg::JP2K, d->JPEG2000Options);
+
 #endif // HAVE_JASPER
+
     insertWidget(DImg::PGF,  d->PGFOptions);
+
 #ifdef HAVE_X265
+
     insertWidget(DImg::HEIF, d->HEIFOptions);
+
 #endif // HAVE_X265
 
     //-----------------------------------------------------------------------
@@ -202,7 +221,7 @@ DImg::FORMAT FileSaveOptionsBox::discoverFormat(const QString& filename, DImg::F
 
     DImg::FORMAT format = fallback;
 
-    if (ext.contains(QLatin1String("JPEG")) || ext.contains(QLatin1String("JPG")) || ext.contains(QLatin1String("JPE")))
+    if      (ext.contains(QLatin1String("JPEG")) || ext.contains(QLatin1String("JPG")) || ext.contains(QLatin1String("JPE")))
     {
         format = DImg::JPEG;
     }
@@ -216,18 +235,22 @@ DImg::FORMAT FileSaveOptionsBox::discoverFormat(const QString& filename, DImg::F
     }
 
 #ifdef HAVE_JASPER
+
     else if (ext.contains(QLatin1String("JP2")) || ext.contains(QLatin1String("JPX")) || ext.contains(QLatin1String("JPC")) ||
              ext.contains(QLatin1String("PGX")) || ext.contains(QLatin1String("J2K")))
     {
         format = DImg::JP2K;
     }
+
 #endif // HAVE_JASPER
 
 #ifdef HAVE_X265
+
     else if (ext.contains(QLatin1String("HEIC")) || ext.contains(QLatin1String("HEIF")))
     {
         format = DImg::HEIF;
     }
+
 #endif // HAVE_X265
 
     else if (ext.contains(QLatin1String("PGF")))
@@ -254,16 +277,20 @@ void FileSaveOptionsBox::applySettings()
     group.writeEntry(QLatin1String("TIFFCompression"),     d->TIFFOptions->getCompression());
 
 #ifdef HAVE_JASPER
+
     group.writeEntry(QLatin1String("JPEG2000Compression"), d->JPEG2000Options->getCompressionValue());
     group.writeEntry(QLatin1String("JPEG2000LossLess"),    d->JPEG2000Options->getLossLessCompression());
+
 #endif // HAVE_JASPER
 
     group.writeEntry(QLatin1String("PGFCompression"),      d->PGFOptions->getCompressionValue());
     group.writeEntry(QLatin1String("PGFLossLess"),         d->PGFOptions->getLossLessCompression());
 
 #ifdef HAVE_X265
+
     group.writeEntry(QLatin1String("HEIFCompression"),     d->HEIFOptions->getCompressionValue());
     group.writeEntry(QLatin1String("HEIFLossLess"),        d->HEIFOptions->getLossLessCompression());
+
 #endif // HAVE_X265
 
     config->sync();
@@ -273,22 +300,26 @@ void FileSaveOptionsBox::readSettings()
 {
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
     KConfigGroup group        = config->group("ImageViewer Settings");
-    d->JPEGOptions->setCompressionValue( group.readEntry(QLatin1String("JPEGCompression"),         75) );
-    d->JPEGOptions->setSubSamplingValue( group.readEntry(QLatin1String("JPEGSubSampling"),         1) );  ///< Medium subsampling
-    d->PNGOptions->setCompressionValue( group.readEntry(QLatin1String("PNGCompression"),           9) );
-    d->TIFFOptions->setCompression( group.readEntry(QLatin1String("TIFFCompression"),              false) );
+    d->JPEGOptions->setCompressionValue( group.readEntry(QLatin1String("JPEGCompression"),         75));
+    d->JPEGOptions->setSubSamplingValue( group.readEntry(QLatin1String("JPEGSubSampling"),         1));  ///< Medium subsampling
+    d->PNGOptions->setCompressionValue( group.readEntry(QLatin1String("PNGCompression"),           9));
+    d->TIFFOptions->setCompression( group.readEntry(QLatin1String("TIFFCompression"),              false));
 
 #ifdef HAVE_JASPER
-    d->JPEG2000Options->setCompressionValue( group.readEntry(QLatin1String("JPEG2000Compression"), 75) );
-    d->JPEG2000Options->setLossLessCompression( group.readEntry(QLatin1String("JPEG2000LossLess"), true) );
+
+    d->JPEG2000Options->setCompressionValue( group.readEntry(QLatin1String("JPEG2000Compression"), 75));
+    d->JPEG2000Options->setLossLessCompression( group.readEntry(QLatin1String("JPEG2000LossLess"), true));
+
 #endif // HAVE_JASPER
 
-    d->PGFOptions->setCompressionValue( group.readEntry(QLatin1String("PGFCompression"),           3) );
-    d->PGFOptions->setLossLessCompression( group.readEntry(QLatin1String("PGFLossLess"),           true) );
+    d->PGFOptions->setCompressionValue( group.readEntry(QLatin1String("PGFCompression"),           3));
+    d->PGFOptions->setLossLessCompression( group.readEntry(QLatin1String("PGFLossLess"),           true));
 
 #ifdef HAVE_X265
-    d->HEIFOptions->setCompressionValue( group.readEntry(QLatin1String("HEIFCompression"),         75) );
-    d->HEIFOptions->setLossLessCompression( group.readEntry(QLatin1String("HEIFLossLess"),         true) );
+
+    d->HEIFOptions->setCompressionValue( group.readEntry(QLatin1String("HEIFCompression"),         75));
+    d->HEIFOptions->setLossLessCompression( group.readEntry(QLatin1String("HEIFLossLess"),         true));
+
 #endif // HAVE_X265
 
 }

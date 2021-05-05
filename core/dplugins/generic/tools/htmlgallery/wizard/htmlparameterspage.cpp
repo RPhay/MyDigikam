@@ -6,7 +6,7 @@
  * Date        : 2006-04-04
  * Description : a tool to generate HTML image galleries
  *
- * Copyright (C) 2012-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -64,7 +64,7 @@ public:
 
 HTMLParametersPage::HTMLParametersPage(QWizard* const dialog, const QString& title)
     : DWizardPage(dialog, title),
-      d(new Private)
+      d          (new Private)
 {
     setObjectName(QLatin1String("ThemeParametersPage"));
 
@@ -116,7 +116,9 @@ void HTMLParametersPage::initializePage()
     HTMLWizard* const wizard = dynamic_cast<HTMLWizard*>(assistant());
 
     if (!wizard)
+    {
         return;
+    }
 
     GalleryInfo* const info  = wizard->galleryInfo();
     GalleryTheme::Ptr theme  = wizard->galleryTheme();
@@ -124,19 +126,20 @@ void HTMLParametersPage::initializePage()
     qDeleteAll(d->content->children());
     d->themePrmWdgtList.clear();
 
-    // Create layout. We need to recreate it every time, to get rid of
-    // spacers
+    // Create layout. We need to recreate it every time, to get rid of spacers
+
     QGridLayout* const layout = new QGridLayout(d->content);
     layout->setContentsMargins(QMargins());
     layout->setSpacing(QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing));
 
     // Create widgets
+
     GalleryTheme::ParameterList parameterList      = theme->parameterList();
     QString themeInternalName                      = theme->internalName();
     GalleryTheme::ParameterList::ConstIterator it  = parameterList.constBegin();
     GalleryTheme::ParameterList::ConstIterator end = parameterList.constEnd();
 
-    for (; it != end ; ++it)
+    for ( ; it != end ; ++it)
     {
         AbstractThemeParameter* const themeParameter = *it;
         QByteArray internalName                      = themeParameter->internalName();
@@ -158,11 +161,13 @@ void HTMLParametersPage::initializePage()
         if (widget->sizePolicy().expandingDirections() & Qt::Horizontal)
         {
             // Widget wants full width
+
             layout->addWidget(widget, row, 1, 1, 2);
         }
         else
         {
             // Widget doesn't like to be stretched, add a spacer next to it
+
             layout->addWidget(widget, row, 1);
             QSpacerItem* const spacer = new QSpacerItem(1, 1, QSizePolicy::Expanding,
                                                         QSizePolicy::Minimum);

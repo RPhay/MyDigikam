@@ -9,7 +9,7 @@
  * Copyright (C) 2006-2009 by Valerio Fuoglio <valerio dot fuoglio at gmail dot com>
  * Copyright (C) 2009      by Andi Clemens <andi dot clemens at googlemail dot com>
  * Copyright (C) 2003-2005 by Renchi Raju <renchi dot raju at gmail dot com>
- * Copyright (C) 2012-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -43,14 +43,13 @@
 // KDE includes
 
 #include <klocalizedstring.h>
-#include <kconfig.h>
+#include <ksharedconfig.h>
 #include <kconfiggroup.h>
 
 // Local includes
 
 #include "digikam_config.h"
 #include "digikam_debug.h"
-#include "presentationdlg.h"
 #include "presentationwidget.h"
 #include "presentationcontainer.h"
 
@@ -63,15 +62,17 @@ namespace DigikamGenericPresentationPlugin
 {
 
 PresentationMngr::PresentationMngr(QObject* const parent, DInfoInterface* const iface)
-    : QObject(parent)
+    : QObject (parent),
+      m_plugin(nullptr),
+      m_dialog(nullptr)
 {
-    m_sharedData        = new PresentationContainer();
-    m_sharedData->iface = iface;
-    m_plugin            = nullptr;
+      m_sharedData        = new PresentationContainer();
+      m_sharedData->iface = iface;
 }
 
 PresentationMngr::~PresentationMngr()
 {
+    delete m_dialog;
     delete m_sharedData;
 }
 
@@ -87,22 +88,22 @@ void PresentationMngr::addFiles(const QList<QUrl>& urls)
 
 void PresentationMngr::showConfigDialog()
 {
-    PresentationDlg* const dlg = new PresentationDlg(QApplication::activeWindow(), m_sharedData);
+    m_dialog = new PresentationDlg(QApplication::activeWindow(), m_sharedData);
 
-    connect(dlg, SIGNAL(buttonStartClicked()),
+    connect(m_dialog, SIGNAL(buttonStartClicked()),
             this, SLOT(slotSlideShow()));
 
-    dlg->setPlugin(m_plugin);
-    dlg->show();
+    m_dialog->setPlugin(m_plugin);
+    m_dialog->show();
 }
 
 void PresentationMngr::slotSlideShow()
 {
-    KConfig config;
-    KConfigGroup grp = config.group("Presentation Settings");
-    bool opengl      = grp.readEntry("OpenGL",  false);
-    bool shuffle     = grp.readEntry("Shuffle", false);
-    bool wantKB      = grp.readEntry("Effect Name (OpenGL)") == QLatin1String("Ken Burns");
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup grp        = config->group("Presentation Settings");
+    bool opengl             = grp.readEntry("OpenGL",  false);
+    bool shuffle            = grp.readEntry("Shuffle", false);
+    bool wantKB             = grp.readEntry("Effect Name (OpenGL)") == QLatin1String("Ken Burns");
 
     if (m_sharedData->urlList.isEmpty())
     {
@@ -117,7 +118,7 @@ void PresentationMngr::slotSlideShow()
         QList<QUrl>::iterator it = m_sharedData->urlList.begin();
         QList<QUrl>::iterator it1;
 
-        for (uint i = 0; i < (uint) m_sharedData->urlList.size(); ++i)
+        for (uint i = 0 ; i < (uint) m_sharedData->urlList.size() ; ++i)
         {
             int inc = (int) (float(m_sharedData->urlList.count()) * qrand() / (RAND_MAX + 1.0));
 
@@ -135,7 +136,9 @@ void PresentationMngr::slotSlideShow()
     }
     else
     {
+
 #ifdef HAVE_OPENGL
+
         bool supportsOpenGL = true;
 
         if (wantKB)
@@ -167,9 +170,13 @@ void PresentationMngr::slotSlideShow()
             QMessageBox::critical(QApplication::activeWindow(), QString(),
                                   i18n("OpenGL support is not available on your system."));
         }
+
 #else
+
         Q_UNUSED(wantKB);
+
 #endif
+
     }
 }
 

@@ -7,7 +7,7 @@
  * Description : albums history manager.
  *
  * Copyright (C) 2004      by Joern Ahrens <joern dot ahrens at kdemail dot net>
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2014      by Mohamed_Anwer <m_dot_anwer at gmx dot com>
  *
  * This program is free software; you can redistribute it
@@ -39,29 +39,31 @@
 #include "albummanager.h"
 #include "labelstreeview.h"
 
-namespace Digikam
-{
+// NOTE: ust be declared outside namespace
 
-inline uint qHash(const QList<Album*>& key)
+inline uint qHash(const QList<Digikam::Album*>& key)
 {
     if (key.isEmpty())
     {
         return 0;
     }
 
-    Album* const temp = key.first();
-    quint64 myint     = (unsigned long long)temp;
-    uint value        = ::qHash(myint);
+    Digikam::Album* const temp = key.first();
+    quint64 myint              = (unsigned long long)temp;
+    uint value                 = ::qHash(myint);
 
     for (int it = 1 ; it < key.size() ; ++it)
     {
-        Album* const al = key.at(it);
-        quint64 myint2  = (unsigned long long)al;
-        value          ^= ::qHash(myint2);
+        Digikam::Album* const al = key.at(it);
+        quint64 myint2           = (unsigned long long)al;
+        value                   ^= ::qHash(myint2);
     }
 
     return value;
 }
+
+namespace Digikam
+{
 
 /**
  * Stores an album along with the sidebar view, where the album
@@ -72,21 +74,21 @@ class Q_DECL_HIDDEN HistoryItem
 public:
 
     HistoryItem()
+        : widget(nullptr)
     {
-        widget = nullptr;
     };
 
-    HistoryItem(QList<Album*> const a, QWidget* const w)
+    HistoryItem(const QList<Album*>& a, QWidget* const w)
+        : widget(w)
     {
         albums.append(a);
-        widget = w;
     };
 
-    HistoryItem(QList<Album*> const a, QWidget* const w, QHash<LabelsTreeView::Labels, QList<int> > selectedLabels)
+    HistoryItem(const QList<Album*>& a, QWidget* const w, const QHash<LabelsTreeView::Labels, QList<int> >& selectedLabels)
+        : widget(w),
+          labels(selectedLabels)
     {
         albums.append(a);
-        widget = w;
-        labels = selectedLabels;
     };
 
     bool operator==(const HistoryItem& item)
@@ -96,7 +98,7 @@ public:
             return false;
         }
 
-        return albums == item.albums;
+        return (albums == item.albums);
     }
 
     QList<Album*>                              albums;
@@ -116,14 +118,16 @@ public:
 
     HistoryPosition(const ItemInfo& c, const QList<ItemInfo>& s)
         : current(c),
-          select(s)
+          select (s)
     {
     };
 
     bool operator==(const HistoryPosition& item)
     {
-        return (current == item.current) && (select == item.select);
+        return ((current == item.current) && (select == item.select));
     }
+
+public:
 
     ItemInfo        current;
     QList<ItemInfo> select;
@@ -136,7 +140,7 @@ class Q_DECL_HIDDEN AlbumHistory::Private
 public:
 
     explicit Private()
-        : moving(false),
+        : moving        (false),
           blockSelection(false)
     {
     }
@@ -156,7 +160,7 @@ public:
 
 void AlbumHistory::Private::forward(unsigned int steps)
 {
-    if (forwardStack.isEmpty() || (int)steps > forwardStack.count())
+    if (forwardStack.isEmpty() || ((int)steps > forwardStack.count()))
     {
         return;
     }
@@ -170,8 +174,9 @@ void AlbumHistory::Private::forward(unsigned int steps)
     moving = true;
 }
 
-AlbumHistory::AlbumHistory()
-    : d(new Private)
+AlbumHistory::AlbumHistory(QObject* const parent)
+    : QObject(parent),
+      d      (new Private)
 {
 }
 
@@ -196,14 +201,16 @@ void AlbumHistory::addAlbums(const QList<Album*>& albums, QWidget* const widget)
     if (albums.isEmpty() || !widget || d->moving)
     {
         d->moving = false;
+
         return;
     }
 
     // Same album as before in the history
 
-    if (!d->backwardStack.isEmpty() && d->backwardStack.last().albums == albums)
+    if (!d->backwardStack.isEmpty() && (d->backwardStack.last().albums == albums))
     {
         d->backwardStack.last().widget = widget;
+
         return;
     }
 
@@ -223,8 +230,7 @@ void AlbumHistory::addAlbums(const QList<Album*>& albums, QWidget* const widget)
  */
 void AlbumHistory::addAlbums(const QList<Album*>& albums,
                              QWidget* const widget,
-                             QHash<LabelsTreeView::Labels,
-                             QList<int> > selectedLabels)
+                             const QHash<LabelsTreeView::Labels, QList<int> >& selectedLabels)
 {
 
     if (albums.isEmpty() || !widget || d->moving)
@@ -331,7 +337,7 @@ void AlbumHistory::deleteAlbum(Album* const album)
         }
         else
         {
-            if (lhs == (d->backwardStack.isEmpty() ? d->backwardStack.end() 
+            if (lhs == (d->backwardStack.isEmpty() ?   d->backwardStack.end()
                                                    : --d->backwardStack.end()))
             {
                 lhs = d->forwardStack.begin();
@@ -361,7 +367,7 @@ void AlbumHistory::getBackwardHistory(QStringList& list) const
 
     QList<HistoryItem>::const_iterator it = d->backwardStack.constBegin();
 
-    for ( ; it != (d->backwardStack.isEmpty() ? d->backwardStack.constEnd()
+    for ( ; it != (d->backwardStack.isEmpty() ?   d->backwardStack.constEnd()
                                               : --d->backwardStack.constEnd())
           ; ++it)
     {
@@ -445,7 +451,7 @@ void AlbumHistory::forward(QList<Album*>& album, QWidget** const widget, unsigne
 {
     *widget = nullptr;
 
-    if (d->forwardStack.isEmpty() || (int)steps > d->forwardStack.count())
+    if (d->forwardStack.isEmpty() || ((int)steps > d->forwardStack.count()))
     {
         return;
     }
@@ -490,7 +496,7 @@ bool AlbumHistory::isBackwardEmpty() const
     // the last album of the backwardStack is the currently shown
     // album, and therefore not really a previous album
 
-    return (d->backwardStack.count() <= 1) ? true : false;
+    return ((d->backwardStack.count() <= 1) ? true : false);
 }
 
 QHash<LabelsTreeView::Labels, QList<int> > AlbumHistory::neededLabels()

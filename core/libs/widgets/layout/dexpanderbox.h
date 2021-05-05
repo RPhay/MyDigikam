@@ -7,7 +7,7 @@
  * Description : A widget to host settings as expander box
  *
  * Copyright (C) 2008-2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2008-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2008-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C)      2010 by Manuel Viet <contact at 13zenrv dot fr>
  *
  * This program is free software; you can redistribute it
@@ -46,20 +46,21 @@ namespace Digikam
 
 /**
  * A widget to show an horizontal or vertical line separator
- **/
+ */
 class DIGIKAM_EXPORT DLineWidget : public QFrame
 {
     Q_OBJECT
 
 public:
 
-    explicit DLineWidget(Qt::Orientation orientation, QWidget* const parent=nullptr);
-    virtual ~DLineWidget();
+    explicit DLineWidget(Qt::Orientation orientation, QWidget* const parent = nullptr);
+    ~DLineWidget() override;
 };
 
 // -------------------------------------------------------------------------
 
-/** A label to show text adjusted to widget size
+/**
+ * A label to show text adjusted to widget size
  */
 class DIGIKAM_EXPORT DAdjustableLabel : public QLabel
 {
@@ -67,8 +68,8 @@ class DIGIKAM_EXPORT DAdjustableLabel : public QLabel
 
 public:
 
-    explicit DAdjustableLabel(QWidget* const parent=nullptr);
-    virtual ~DAdjustableLabel();
+    explicit DAdjustableLabel(QWidget* const parent = nullptr);
+    ~DAdjustableLabel() override;
 
     QSize minimumSizeHint() const override;
     QSize sizeHint()        const override;
@@ -80,7 +81,7 @@ public:
 
 public Q_SLOTS:
 
-    void setAdjustedText(const QString& text=QString());
+    void setAdjustedText(const QString& text = QString());
 
 private:
 
@@ -108,20 +109,21 @@ public:
 
     explicit DClickLabel(QWidget* const parent = nullptr);
     explicit DClickLabel(const QString& text, QWidget* const parent = nullptr);
-    ~DClickLabel();
+    ~DClickLabel()                             override;
 
 Q_SIGNALS:
 
     /// Emitted when activated by left mouse click
     void leftClicked();
+
     /// Emitted when activated, by mouse or key press
     void activated();
 
 protected:
 
-    virtual void mousePressEvent(QMouseEvent* event)   override;
-    virtual void mouseReleaseEvent(QMouseEvent* event) override;
-    virtual void keyPressEvent(QKeyEvent* event)       override;
+    void mousePressEvent(QMouseEvent* event)   override;
+    void mouseReleaseEvent(QMouseEvent* event) override;
+    void keyPressEvent(QKeyEvent* event)       override;
 };
 
 // -------------------------------------------------------------------------
@@ -134,7 +136,7 @@ public:
 
     explicit DSqueezedClickLabel(QWidget* const parent = nullptr);
     explicit DSqueezedClickLabel(const QString& text, QWidget* const parent = nullptr);
-    ~DSqueezedClickLabel();
+    ~DSqueezedClickLabel()                     override;
 
 Q_SIGNALS:
 
@@ -143,9 +145,9 @@ Q_SIGNALS:
 
 protected:
 
-    virtual void mousePressEvent(QMouseEvent* event)   override;
-    virtual void mouseReleaseEvent(QMouseEvent* event) override;
-    virtual void keyPressEvent(QKeyEvent* event)       override;
+    void mousePressEvent(QMouseEvent* event)   override;
+    void mouseReleaseEvent(QMouseEvent* event) override;
+    void keyPressEvent(QKeyEvent* event)       override;
 };
 
 // -------------------------------------------------------------------------
@@ -157,12 +159,12 @@ class DIGIKAM_EXPORT DArrowClickLabel : public QWidget
 public:
 
     explicit DArrowClickLabel(QWidget* const parent = nullptr);
-    ~DArrowClickLabel();
+    ~DArrowClickLabel()                               override;
 
     void setArrowType(Qt::ArrowType arrowType);
-    Qt::ArrowType arrowType() const;
+    Qt::ArrowType arrowType()                   const;
 
-    virtual QSize sizeHint () const override;
+    QSize sizeHint ()                           const override;
 
 Q_SIGNALS:
 
@@ -170,9 +172,9 @@ Q_SIGNALS:
 
 protected:
 
-    virtual void mousePressEvent(QMouseEvent* event)   override;
-    virtual void mouseReleaseEvent(QMouseEvent* event) override;
-    virtual void paintEvent(QPaintEvent* event)        override;
+    void mousePressEvent(QMouseEvent* event)          override;
+    void mouseReleaseEvent(QMouseEvent* event)        override;
+    void paintEvent(QPaintEvent* event)               override;
 
 protected:
 
@@ -190,31 +192,31 @@ class DIGIKAM_EXPORT DLabelExpander : public QWidget
 public:
 
     explicit DLabelExpander(QWidget* const parent = nullptr);
-    ~DLabelExpander();
+    ~DLabelExpander()                 override;
 
     void setCheckBoxVisible(bool b);
-    bool checkBoxIsVisible() const;
+    bool checkBoxIsVisible()    const;
 
     void setChecked(bool b);
-    bool isChecked() const;
+    bool isChecked()            const;
 
     void setLineVisible(bool b);
-    bool lineIsVisible() const;
+    bool lineIsVisible()        const;
 
     void setText(const QString& txt);
-    QString text() const;
+    QString text()              const;
 
     void setIcon(const QIcon &icon);
-    QIcon icon() const;
+    QIcon icon()                const;
 
     void setWidget(QWidget* const widget);
-    QWidget* widget() const;
+    QWidget* widget()           const;
 
     void setExpanded(bool b);
-    bool isExpanded() const;
+    bool isExpanded()           const;
 
     void setExpandByDefault(bool b);
-    bool isExpandByDefault() const;
+    bool isExpandByDefault()    const;
 
 Q_SIGNALS:
 
@@ -227,7 +229,8 @@ private Q_SLOTS:
 
 private:
 
-    bool eventFilter(QObject* obj, QEvent* ev) override;
+    bool eventFilter(QObject* obj,
+                     QEvent* ev)      override;
 
 private:
 
@@ -244,7 +247,7 @@ class DIGIKAM_EXPORT DExpanderBox : public QScrollArea
 public:
 
     explicit DExpanderBox(QWidget* const parent = nullptr);
-    ~DExpanderBox();
+    ~DExpanderBox()                                   override;
 
     /**
      * Add DLabelExpander item at end of box layout with these settings :
@@ -275,33 +278,33 @@ public:
     void removeItem(int index);
 
     void setCheckBoxVisible(int index, bool b);
-    bool checkBoxIsVisible(int index) const;
+    bool checkBoxIsVisible(int index)           const;
 
     void setChecked(int index, bool b);
-    bool isChecked(int index) const;
+    bool isChecked(int index)                   const;
 
     void setItemText(int index, const QString& txt);
-    QString itemText (int index) const;
+    QString itemText (int index)                const;
 
     void setItemIcon(int index, const QIcon &icon);
-    QIcon itemIcon(int index) const;
+    QIcon itemIcon(int index)                   const;
 
     void setItemToolTip(int index, const QString& tip);
-    QString itemToolTip(int index) const;
+    QString itemToolTip(int index)              const;
 
     void setItemEnabled(int index, bool enabled);
-    bool isItemEnabled(int index) const;
+    bool isItemEnabled(int index)               const;
 
     void addStretch();
     void insertStretch(int index);
 
     void setItemExpanded(int index, bool b);
-    bool isItemExpanded(int index) const;
+    bool isItemExpanded(int index)              const;
 
     int  count() const;
 
-    DLabelExpander* widget(int index) const;
-    int indexOf(DLabelExpander* const widget) const;
+    DLabelExpander* widget(int index)           const;
+    int indexOf(DLabelExpander* const widget)   const;
 
     virtual void readSettings(KConfigGroup& group);
     virtual void writeSettings(KConfigGroup& group);
@@ -331,13 +334,13 @@ class DIGIKAM_EXPORT DExpanderBoxExclusive : public DExpanderBox
 public:
 
     explicit DExpanderBoxExclusive(QWidget* const parent = nullptr);
-    ~DExpanderBoxExclusive();
+    ~DExpanderBoxExclusive()   override;
 
     /**
      * Show one expander open at most
      */
     void setIsToolBox(bool b);
-    bool isToolBox() const;
+    bool isToolBox()    const;
 
 private Q_SLOTS:
 

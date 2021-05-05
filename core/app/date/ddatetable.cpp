@@ -6,7 +6,7 @@
  * Date        : 1997-04-21
  * Description : Date selection table.
  *
- * Copyright (C) 2011-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2011-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 1997      by Tim D. Gilman <tdgilman at best dot org>
  * Copyright (C) 1998-2001 by Mirko Boehm <mirko at kde dot org>
  * Copyright (C) 2007      by John Layt <john at layt dot net>
@@ -24,7 +24,6 @@
  *
  * ============================================================ */
 
-#include "ddatetable.h"
 #include "ddatetable_p.h"
 
 // C++ includes
@@ -51,14 +50,14 @@ namespace Digikam
 
 DDateTable::DDateTable(const QDate& date, QWidget* const parent)
     : QWidget(parent),
-      d(new Private(this))
+      d      (new Private(this))
 {
     initWidget(date);
 }
 
 DDateTable::DDateTable(QWidget* const parent)
     : QWidget(parent),
-      d(new Private(this))
+      d      (new Private(this))
 {
     initWidget(QDate::currentDate());
 }
@@ -140,6 +139,7 @@ int DDateTable::posFromDate(const QDate& date)
 
     // make sure at least one day of the previous month is visible.
     // adjust this < 1 if more days should be forced visible:
+
     if (offset < 1)
     {
         offset += d->numDayColumns;
@@ -154,6 +154,7 @@ QDate DDateTable::dateFromPos(int position)
 
     // make sure at least one day of the previous month is visible.
     // adjust this < 1 if more days should be forced visible:
+
     if (offset < 1)
     {
         offset += d->numDayColumns;
@@ -184,9 +185,9 @@ void DDateTable::paintEvent(QPaintEvent *e)
         p.translate(leftCol * cellWidth, topRow * cellHeight);
     }
 
-    for (int i = leftCol; i <= rightCol; ++i)
+    for (int i = leftCol ; i <= rightCol ; ++i)
     {
-        for (int j = topRow; j <= bottomRow; ++j)
+        for (int j = topRow ; j <= bottomRow ; ++j)
         {
             paintCell(&p, j, i);
             p.translate(0, cellHeight);
@@ -217,11 +218,13 @@ void DDateTable::paintCell(QPainter* painter, int row, int col)
     bool workingDay = false;
     int cellWeekDay, pos;
 
-    //Calculate the position of the cell in the grid
+    // Calculate the position of the cell in the grid
+
     pos = d->numDayColumns * (row - 1) + col;
 
-    //Calculate what day of the week the cell is
-    if (col + locale().firstDayOfWeek() <= d->numDayColumns)
+    // Calculate what day of the week the cell is
+
+    if ((col + locale().firstDayOfWeek()) <= d->numDayColumns)
     {
         cellWeekDay = col + locale().firstDayOfWeek();
     }
@@ -230,20 +233,21 @@ void DDateTable::paintCell(QPainter* painter, int row, int col)
         cellWeekDay = col + locale().firstDayOfWeek() - d->numDayColumns;
     }
 
-    //FIXME This is wrong if the widget is not using the global!
-    //See if cell day is normally a working day
+    // FIXME This is wrong if the widget is not using the global!
+    // See if cell day is normally a working day
+
     if (locale().weekdays().first() <= locale().weekdays().last())
     {
-        if (cellWeekDay >= locale().weekdays().first() &&
-            cellWeekDay <= locale().weekdays().last())
+        if ((cellWeekDay >= locale().weekdays().first()) &&
+            (cellWeekDay <= locale().weekdays().last()))
         {
             workingDay = true;
         }
     }
     else
     {
-        if (cellWeekDay >= locale().weekdays().first() ||
-            cellWeekDay <= locale().weekdays().last())
+        if ((cellWeekDay >= locale().weekdays().first()) ||
+            (cellWeekDay <= locale().weekdays().last()))
         {
             workingDay = true;
         }
@@ -251,9 +255,10 @@ void DDateTable::paintCell(QPainter* painter, int row, int col)
 
     if (row == 0)
     {
-        //We are drawing a header cell
+        // We are drawing a header cell
 
-        //If not a normal working day, then use "do not work today" color
+        // If not a normal working day, then use "do not work today" color
+
         if (workingDay)
         {
             cellTextColor = palette().color(QPalette::WindowText);
@@ -265,20 +270,22 @@ void DDateTable::paintCell(QPainter* painter, int row, int col)
 
         cellBackgroundColor = palette().color(QPalette::Window);
 
-        //Set the text to the short day name and bold it
+        // Set the text to the short day name and bold it
+
         cellFont.setBold(true);
         cellText = locale().standaloneDayName(cellWeekDay, QLocale::ShortFormat);
-
     }
     else
     {
-        //We are drawing a day cell
+        // We are drawing a day cell
 
-        //Calculate the date the cell represents
+        // Calculate the date the cell represents
+
         QDate cellDate = dateFromPos(pos);
         bool validDay  = cellDate.isValid();
 
         // Draw the day number in the cell, if the date is not valid then we don't want to show it
+
         if (validDay)
         {
             cellText = QString::number(cellDate.day());
@@ -288,18 +295,19 @@ void DDateTable::paintCell(QPainter* painter, int row, int col)
             cellText = QLatin1String("");
         }
 
-        if (! validDay || cellDate.month() != d->date.month())
+        if (! validDay || (cellDate.month() != d->date.month()))
         {
             // we are either
             // ° painting an invalid day
             // ° painting a day of the previous month or
             // ° painting a day of the following month or
+
             cellBackgroundColor = palette().color(backgroundRole());
             cellTextColor       = palette().color(QPalette::Disabled, QPalette::Text);
         }
         else
         {
-            //Paint a day of the current month
+            // Paint a day of the current month
 
             // Background Colour priorities will be (high-to-low):
             // * Selected Day Background Colour
@@ -316,19 +324,25 @@ void DDateTable::paintCell(QPainter* painter, int row, int col)
             // * Selected Day Colour
             // * Normal Day Colour
 
-            //Determine various characteristics of the cell date
+            // Determine various characteristics of the cell date
+
             bool selectedDay = (cellDate == date());
             bool currentDay  = (cellDate == QDate::currentDate());
             bool dayOfPray   = (cellDate.dayOfWeek() == Qt::Sunday);
+
             // TODO: Uncomment if QLocale ever gets the feature...
-            //bool dayOfPray = ( cellDate.dayOfWeek() == locale().dayOfPray() );
+/*
+            bool dayOfPray = ( cellDate.dayOfWeek() == locale().dayOfPray() );
+*/
             bool customDay   = (d->useCustomColors && d->customPaintingModes.contains(cellDate.toJulianDay()));
 
-            //Default values for a normal cell
+            // Default values for a normal cell
+
             cellBackgroundColor = palette().color(backgroundRole());
             cellTextColor = palette().color(foregroundRole());
 
             // If we are drawing the current date, then draw it bold and active
+
             if (currentDay)
             {
                 cellFont.setBold(true);
@@ -336,14 +350,17 @@ void DDateTable::paintCell(QPainter* painter, int row, int col)
             }
 
             // if we are drawing the day cell currently selected in the table
+
             if (selectedDay)
             {
                 // set the background to highlighted
+
                 cellBackgroundColor = palette().color(QPalette::Highlight);
                 cellTextColor = palette().color(QPalette::HighlightedText);
             }
 
-            //If custom colors or shape are required for this date
+            // If custom colors or shape are required for this date
+
             if (customDay)
             {
                 Private::DatePaintingMode mode = d->customPaintingModes[cellDate.toJulianDay()];
@@ -359,23 +376,24 @@ void DDateTable::paintCell(QPainter* painter, int row, int col)
                 cellTextColor = mode.fgColor;
             }
 
-            //If the cell day is the day of religious observance, then always color text red unless Custom overrides
+            // If the cell day is the day of religious observance, then always color text red unless Custom overrides
+
             if (! customDay && dayOfPray)
             {
                 cellTextColor = Qt::darkRed;
             }
-
         }
     }
 
-    //Draw the background
-    if (row == 0)
+    // Draw the background
+
+    if      (row == 0)
     {
         painter->setPen(cellBackgroundColor);
         painter->setBrush(cellBackgroundColor);
         painter->drawRect(cell);
     }
-    else if (cellBackgroundColor != palette().color(backgroundRole()) || pos == d->hoveredPos)
+    else if ((cellBackgroundColor != palette().color(backgroundRole())) || (pos == d->hoveredPos))
     {
         QStyleOptionViewItem opt;
         opt.initFrom(this);
@@ -387,7 +405,7 @@ void DDateTable::paintCell(QPainter* painter, int row, int col)
             opt.state |= QStyle::State_Selected;
         }
 
-        if (pos == d->hoveredPos && opt.state & QStyle::State_Enabled)
+        if ((pos == d->hoveredPos) && (opt.state & QStyle::State_Enabled))
         {
             opt.state |= QStyle::State_MouseOver;
         }
@@ -401,12 +419,14 @@ void DDateTable::paintCell(QPainter* painter, int row, int col)
         style()->drawPrimitive(QStyle::PE_PanelItemViewItem, &opt, painter, this);
     }
 
-    //Draw the text
+    // Draw the text
+
     painter->setPen(cellTextColor);
     painter->setFont(cellFont);
     painter->drawText(cell, Qt::AlignCenter, cellText, &cell);
 
-    //Draw the base line
+    // Draw the base line
+
     if (row == 0)
     {
         painter->setPen(palette().color(foregroundRole()));
@@ -415,6 +435,7 @@ void DDateTable::paintCell(QPainter* painter, int row, int col)
 
     // If the day cell we just drew is bigger than the current max cell sizes,
     // then adjust the max to the current cell
+
     if (cell.width() > d->maxCell.width())
     {
         d->maxCell.setWidth(cell.width());
@@ -432,45 +453,65 @@ void DDateTable::keyPressEvent(QKeyEvent *e)
     {
         case Qt::Key_Up:
             // setDate does validity checking for us
+
             setDate(d->date.addDays(- d->numDayColumns));
             break;
+
         case Qt::Key_Down:
             // setDate does validity checking for us
+
             setDate(d->date.addDays(d->numDayColumns));
             break;
+
         case Qt::Key_Left:
             // setDate does validity checking for us
+
             setDate(d->date.addDays(-1));
             break;
+
         case Qt::Key_Right:
             // setDate does validity checking for us
+
             setDate(d->date.addDays(1));
             break;
+
         case Qt::Key_Minus:
             // setDate does validity checking for us
+
             setDate(d->date.addDays(-1));
             break;
+
         case Qt::Key_Plus:
             // setDate does validity checking for us
+
             setDate(d->date.addDays(1));
             break;
+
         case Qt::Key_N:
             // setDate does validity checking for us
+
             setDate(QDate::currentDate());
             break;
+
         case Qt::Key_Return:
         case Qt::Key_Enter:
             emit tableClicked();
             break;
+
         case Qt::Key_Control:
         case Qt::Key_Alt:
         case Qt::Key_Meta:
         case Qt::Key_Shift:
             // Don't beep for modifiers
+
             break;
+
         default:
+
             if (!e->modifiers())
-            {   // hm
+            {
+                // hm
+
                 QApplication::beep();
             }
     }
@@ -482,13 +523,15 @@ void DDateTable::setFontSize(int size)
     QRectF rect;
 
     // ----- store rectangles:
+
     d->fontsize = size;
 
     // ----- find largest day name:
+
     d->maxCell.setWidth(0);
     d->maxCell.setHeight(0);
 
-    for (int weekday = 1; weekday <= 7; ++weekday)
+    for (int weekday = 1 ; weekday <= 7 ; ++weekday)
     {
         rect = metrics.boundingRect(locale().standaloneDayName(weekday, QLocale::ShortFormat));
         d->maxCell.setWidth(qMax(d->maxCell.width(), rect.width()));
@@ -496,6 +539,7 @@ void DDateTable::setFontSize(int size)
     }
 
     // ----- compare with a real wide number and add some space:
+
     rect = metrics.boundingRect(QLatin1String("88"));
     d->maxCell.setWidth(qMax(d->maxCell.width() + 2, rect.width()));
     d->maxCell.setHeight(qMax(d->maxCell.height() + 4, rect.height()));
@@ -503,7 +547,7 @@ void DDateTable::setFontSize(int size)
 
 void DDateTable::wheelEvent(QWheelEvent *e)
 {
-    setDate(d->date.addMonths(-(int)(e->delta() / 120)));
+    setDate(d->date.addMonths(-(int)(e->angleDelta().y() / 120)));
     e->accept();
 }
 
@@ -513,8 +557,8 @@ bool DDateTable::event(QEvent *ev)
     {
         case QEvent::HoverMove:
         {
-            QHoverEvent *e = static_cast<QHoverEvent *>(ev);
-            const int row = e->pos().y() * d->numWeekRows / height();
+            QHoverEvent* const e = static_cast<QHoverEvent*>(ev);
+            const int row        = e->pos().y() * d->numWeekRows / height();
             int col;
 
             if (layoutDirection() == Qt::RightToLeft)
@@ -533,17 +577,23 @@ bool DDateTable::event(QEvent *ev)
                 d->hoveredPos = pos;
                 update();
             }
+
             break;
         }
         case QEvent::HoverLeave:
+        {
             if (d->hoveredPos != -1)
             {
                 d->hoveredPos = -1;
                 update();
             }
+
             break;
+        }
         default:
+        {
             break;
+        }
     }
 
     return QWidget::event(ev);
@@ -553,20 +603,22 @@ void DDateTable::mousePressEvent(QMouseEvent *e)
 {
     if (e->type() != QEvent::MouseButtonPress)
     {
-        // the KDatePicker only reacts on mouse press events:
+        // the Date Picker only reacts on mouse press events:
+
         return;
     }
 
     if (!isEnabled())
     {
         QApplication::beep();
+
         return;
     }
 
     int row, col, pos;
 
     QPoint mouseCoord = e->pos();
-    row = mouseCoord.y() * d->numWeekRows / height();
+    row               = mouseCoord.y() * d->numWeekRows / height();
 
     if (layoutDirection() == Qt::RightToLeft)
     {
@@ -577,8 +629,10 @@ void DDateTable::mousePressEvent(QMouseEvent *e)
         col = mouseCoord.x() * d->numDayColumns / width();
     }
 
-    if (row < 1 || col < 0)
-    {  // the user clicked on the frame of the table
+    if ((row < 1) || (col < 0))
+    {
+        // the user clicked on the frame of the table
+
         return;
     }
 
@@ -586,23 +640,26 @@ void DDateTable::mousePressEvent(QMouseEvent *e)
     // the row with the days of the week in the calculation.
 
     // new position and date
+
     pos               = (d->numDayColumns * (row - 1)) + col;
     QDate clickedDate = dateFromPos(pos);
 
     // set the new date. If it is in the previous or next month, the month will
     // automatically be changed, no need to do that manually...
     // validity checking done inside setDate
+
     setDate(clickedDate);
 
     // This could be optimized to only call update over the regions
     // of old and new cell, but 99% of times there is also a call to
     // setDate that already calls update() so no need to optimize that
     // much here
+
     update();
 
     emit tableClicked();
 
-    if (e->button() == Qt::RightButton && d->popupMenuEnabled)
+    if ((e->button() == Qt::RightButton) && d->popupMenuEnabled)
     {
         QMenu* const menu = new QMenu();
         menu->addSection(locale().toString(d->date));
@@ -651,14 +708,17 @@ void DDateTable::focusOutEvent(QFocusEvent* e)
 
 QSize DDateTable::sizeHint() const
 {
-    if (d->maxCell.height() > 0 && d->maxCell.width() > 0)
+    if ((d->maxCell.height() > 0) && (d->maxCell.width() > 0))
     {
-        return QSize( qRound(d->maxCell.width() * d->numDayColumns),
-                     (qRound(d->maxCell.height() + 2) * d->numWeekRows));
+        return QSize(
+                      qRound(d->maxCell.width()       * d->numDayColumns),
+                     (qRound(d->maxCell.height() + 2) * d->numWeekRows)
+                    );
     }
     else
     {
         //qCDebug(DIGIKAM_GENERAL_LOG) << "DDateTable::sizeHint: obscure failure - " << endl;
+
         return QSize(-1, -1);
     }
 }
@@ -683,9 +743,9 @@ void DDateTable::setCustomDatePainting(const QDate& date, const QColor& fgColor,
     }
 
     Private::DatePaintingMode mode;
-    mode.bgMode          = bgMode;
-    mode.fgColor         = fgColor;
-    mode.bgColor         = bgColor;
+    mode.bgMode        = bgMode;
+    mode.fgColor       = fgColor;
+    mode.bgColor       = bgColor;
 
     d->customPaintingModes.insert(date.toJulianDay(), mode);
     d->useCustomColors = true;
@@ -700,6 +760,7 @@ void DDateTable::unsetCustomDatePainting(const QDate& date)
     {
         d->useCustomColors = false;
     }
+
     update();
 }
 

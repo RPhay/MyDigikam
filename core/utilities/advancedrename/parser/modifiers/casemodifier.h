@@ -33,15 +33,21 @@ namespace Digikam
 
 class CaseModifier : public Modifier
 {
+    Q_OBJECT
+
 public:
 
     explicit CaseModifier();
-    virtual QString parseOperation(ParseSettings& settings);
+    QString parseOperation(ParseSettings& settings) override;
 
 private:
 
-    CaseModifier(const CaseModifier&);
-    CaseModifier& operator=(const CaseModifier&);
+    // Disable
+    explicit CaseModifier(QObject*)              = delete;
+    CaseModifier(const CaseModifier&)            = delete;
+    CaseModifier& operator=(const CaseModifier&) = delete;
+
+private:
 
     QString firstupper(const QString& str2Modify);
 };

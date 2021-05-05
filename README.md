@@ -1,12 +1,14 @@
 ![](https://c1.staticflickr.com/1/822/26082076957_5ff0796a99_o.png) digiKam - Professional Photo Management with the Power of Open Source
 
-| Job           | Status                                                                                                                                                                                          |
-|---------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Linux Build   | [![Linux Build Status](https://build.kde.org/job/Extragear/job/digikam/job/kf5-qt5%20SUSEQt5.12/badge/icon)](https://build.kde.org/job/Extragear/job/digikam/job/kf5-qt5%20SUSEQt5.12/)         |
-| FreeBSD build | [![FreeBSD Build Status](https://build.kde.org/job/Extragear/job/digikam/job/kf5-qt5%20FreeBSDQt5.13/badge/icon)](https://build.kde.org/job/Extragear/job/digikam/job/kf5-qt5%20FreeBSDQt5.13/) |
-| Coverity Scan | [![Coverity Scan Status](https://scan.coverity.com/projects/285/badge.svg)](https://scan.coverity.com/projects/digikam)                                                                         |
+| CI Job        | Status                                                                                                                                                                                                  |
+|---------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Linux Build   | [![Linux Build Status](https://build.kde.org/job/Extragear/job/digikam/job/kf5-qt5%20SUSEQt5.15/badge/icon)](https://build.kde.org/job/Extragear/job/digikam/job/kf5-qt5%20SUSEQt5.15/)                 |
+| FreeBSD Build | [![FreeBSD Build Status](https://build.kde.org/job/Extragear/job/digikam/job/kf5-qt5%20FreeBSDQt5.15/badge/icon)](https://build.kde.org/job/Extragear/job/digikam/job/kf5-qt5%20FreeBSDQt5.15/)         |
+| Windows Build | [![Windows build Status](https://build.kde.org/job/Extragear/job/digikam/job/kf5-qt5%20WindowsMSVCQt5.15/badge/icon)](https://build.kde.org/job/Extragear/job/digikam/job/kf5-qt5%20WindowsMSVCQt5.15/) |
+| Flatpak Build | [![FlatPak Build Status](https://binary-factory.kde.org/view/Flatpak/job/Digikam_x86_64_flatpak/badge/icon)](https://binary-factory.kde.org/view/Flatpak/job/Digikam_x86_64_flatpak/)                                 |
+| Coverity Scan | [![Coverity Scan Status](https://scan.coverity.com/projects/285/badge.svg)](https://scan.coverity.com/projects/digikam)                                                                                 |
 
-If you are reading this on Github, be aware that this is just a mirror. Our real code repository [is located here](https://invent.kde.org/kde/digikam)
+If you are reading this on Github, be aware that this is just a mirror. Our real code repository [is located here](https://invent.kde.org/graphics/digikam)
 
 Developers, if you want to contribute, see the online [API documentation here](https://www.digikam.org/api)
 
@@ -62,19 +64,19 @@ See [AUTHORS](AUTHORS) file for details.
 
 # Related URLs
 
-http://www.digikam.org
+https://www.digikam.org
 
 # Contact
 
-If you have questions, comments, suggestions to make do email at :
+If you have questions, comments, and suggestions, write an email to:
 
 digikam-users@kde.org
 
-If you want contribute to digiKam developments do email at :
+If you want contribute to digiKam developments write an email to:
 
 digikam-devel@kde.org
 
-IRC channel from irc.freenode.org server: [#digikam](http://webchat.freenode.net/?channels=digikam)
+IRC channel from irc.freenode.org server: [#digikam](https://webchat.freenode.net/?channels=digikam)
 
 # Bug reports
 
@@ -84,9 +86,9 @@ A mail will automatically be sent to the digiKam development mailing list.
 There is no need to contact directly the digiKam mailing list for a bug report
 or a devel wish.
 
-The current bugs and devel wishes reported to the bugzilla servers can be seen at these urls :
+The current bugs and devel wishes reported to the bugzilla servers can be seen at this url:
 
-* [digiKam](http://bugs.kde.org/buglist.cgi?product=digikam&bug_status=UNCONFIRMED&bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED)
+* [digiKam](https://bugs.kde.org/buglist.cgi?product=digikam&bug_status=UNCONFIRMED&bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED)
 
 Extra Bugzilla servers for shared libs used by digiKam :
 
@@ -112,25 +114,19 @@ In order to compile, just use something like that:
     export QTDIR=/usr/lib/qt5
     export PATH=$QTDIR/bin:$PATH
     cmake .
-    make
+    make -j4
     sudo make install
 
 Usual CMake options :
 
-* `-DCMAKE_INSTALL_PREFIX` : decide where the program will be install on your computer.
-* `-DCMAKE_BUILD_TYPE`     : decide which type of build you want. You can chose between:
-  * `debugfull`.     : for hacking. Include all debug information.
-  * `debug`.
-  * `profile`.
-  * `relwithdebinfo` : default. use gcc `-O2` `-g` options.
-  * `release`        : generate stripped and optimized bin files. For packaging.
+* `-DCMAKE_INSTALL_PREFIX`     : decide where the program will be install on your computer.
+* `-DCMAKE_BUILD_TYPE`         : decide which type of build you want. You can chose between:
+  * `debugfull`.               : for hacking. Include all debug information.
+  * `relwithdebinfo`           : default. use gcc `-O2` `-g` options.
+  * `release`                  : generate stripped and optimized bin files. For packaging.
+* `-DCMAKE_INSTALL_PREFIX=/usr`: install program in /usr.
 
-Compared to old autoconf options:
-
-* `cmake . -DCMAKE_BUILD_TYPE=debugfull` is equivalent to `./configure --enable-debug=full`
-* `cmake . -DCMAKE_INSTALL_PREFIX=/usr`  is equivalent to `./configure --prefix=/usr`
-
-More details can be found [at this url](http://techbase.kde.org/Development/Tutorials/CMake#Environment_Variables)
+More details can be found [at this url](https://community.kde.org/Guidelines_and_HOWTOs/CMake)
 
 Note: To know KDE install path on your computer, use `kf5-config --prefix` command line like this (with full debug object enabled):
 

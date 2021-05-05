@@ -6,7 +6,7 @@
  * Date        : 2005-11-01
  * Description : A digital camera RAW files loader for DImg
  *
- * Copyright (C) 2005-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2005-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2005-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  *
  * This program is free software; you can redistribute it
@@ -31,6 +31,7 @@
 // Qt includes
 
 #include <QByteArray>
+#include <QScopedPointer>
 
 // Local includes
 
@@ -61,9 +62,9 @@ bool DImgRAWLoader::load(const QString& filePath, DImgLoaderObserver* const obse
 
     readMetadata(filePath);
 
-    DRawInfo dcrawIdentify;
+    QScopedPointer<DRawInfo> dcrawIdentify(new DRawInfo);
 
-    if (!DRawDecoder::rawFileIdentify(dcrawIdentify, filePath))
+    if (!DRawDecoder::rawFileIdentify(*dcrawIdentify, filePath))
     {
         return false;
     }
@@ -79,7 +80,7 @@ bool DImgRAWLoader::load(const QString& filePath, DImgLoaderObserver* const obse
 
         if (m_decoderSettings.outputColorSpace == DRawDecoderSettings::CUSTOMOUTPUTCS)
         {
-            if (m_decoderSettings.outputProfile == IccProfile::sRGB().filePath())
+            if      (m_decoderSettings.outputProfile == IccProfile::sRGB().filePath())
             {
                 m_decoderSettings.outputColorSpace = DRawDecoderSettings::SRGB;
             }
@@ -99,6 +100,7 @@ bool DImgRAWLoader::load(const QString& filePath, DImgLoaderObserver* const obse
             {
                 // Specifying a custom output is broken somewhere. We use the extremely
                 // wide gamut pro photo profile for 16bit (sRGB for 8bit) and convert afterwards.
+
                 m_filter->setOutputProfile(IccProfile(m_decoderSettings.outputProfile));
 
                 if (m_decoderSettings.sixteenBitsImage)
@@ -126,14 +128,14 @@ bool DImgRAWLoader::load(const QString& filePath, DImgLoaderObserver* const obse
     }
     else
     {
-        imageWidth()  = dcrawIdentify.imageSize.width();
-        imageHeight() = dcrawIdentify.imageSize.height();
+        imageWidth()  = dcrawIdentify->imageSize.width();
+        imageHeight() = dcrawIdentify->imageSize.height();
     }
 
     imageSetAttribute(QLatin1String("format"),             QLatin1String("RAW"));
     imageSetAttribute(QLatin1String("originalColorModel"), DImg::COLORMODELRAW);
     imageSetAttribute(QLatin1String("originalBitDepth"),   16);
-    imageSetAttribute(QLatin1String("originalSize"),       dcrawIdentify.imageSize);
+    imageSetAttribute(QLatin1String("originalSize"),       dcrawIdentify->imageSize);
 
     return true;
 }
@@ -147,7 +149,7 @@ void DImgRAWLoader::setWaitingDataProgress(double value)
 {
     if (m_observer)
     {
-        m_observer->progressInfo(value);
+        m_observer->progressInfo((float)value);
     }
 }
 
@@ -178,7 +180,7 @@ bool DImgRAWLoader::loadedFromRawData(const QByteArray& data,
         {
             if (observer && h == checkpoint)
             {
-                checkpoint += granularity(observer, height, 1.0);
+                checkpoint += granularity(observer, height, 1.0F);
 
                 if (!observer->continueQuery())
                 {
@@ -186,7 +188,7 @@ bool DImgRAWLoader::loadedFromRawData(const QByteArray& data,
                     return false;
                 }
 
-                observer->progressInfo(0.7 + 0.2 * (((float)h) / ((float)height)));
+                observer->progressInfo(0.7F + 0.2F * (((float)h) / ((float)height)));
             }
 
             for (int w = 0 ; w < width ; ++w)
@@ -234,7 +236,7 @@ bool DImgRAWLoader::loadedFromRawData(const QByteArray& data,
 
             if (observer && h == checkpoint)
             {
-                checkpoint += granularity(observer, height, 1.0);
+                checkpoint += granularity(observer, height, 1.0F);
 
                 if (!observer->continueQuery())
                 {
@@ -242,7 +244,7 @@ bool DImgRAWLoader::loadedFromRawData(const QByteArray& data,
                     return false;
                 }
 
-                observer->progressInfo(0.7 + 0.2 * (((float)h) / ((float)height)));
+                observer->progressInfo(0.7F + 0.2F * (((float)h) / ((float)height)));
             }
 
             for (int w = 0 ; w < width ; ++w)
@@ -304,6 +306,7 @@ bool DImgRAWLoader::loadedFromRawData(const QByteArray& data,
         case DRawDecoderSettings::RAWCOLOR:
         {
             // No icc color-space profile to assign in RAW color mode.
+
             imageSetAttribute(QLatin1String("uncalibratedColor"), true);
             break;
         }
@@ -318,6 +321,7 @@ bool DImgRAWLoader::loadedFromRawData(const QByteArray& data,
     imageHeight()       = height;
     imageSetAttribute(QLatin1String("rawDecodingSettings"),     QVariant::fromValue(m_filter->settings()));
     imageSetAttribute(QLatin1String("rawDecodingFilterAction"), QVariant::fromValue(action));
+
     // other attributes are set above
 
     return true;
@@ -338,9 +342,10 @@ FilterAction DImgRAWLoader::filterAction() const
     return m_filter->filterAction();
 }
 
-bool DImgRAWLoader::save(const QString& /*filePath*/, DImgLoaderObserver* const /*observer=0*/)
+bool DImgRAWLoader::save(const QString&, DImgLoaderObserver* const)
 {
     // NOTE: RAW files are always Read only.
+
     return false;
 }
 

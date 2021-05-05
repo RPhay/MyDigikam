@@ -6,7 +6,7 @@
  * Date        : 2009-09-08
  * Description : global macros, variables and flags
  *
- * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -26,6 +26,7 @@
 // Qt includes
 
 #include <QObject>
+#include <QDir>
 #include <QList>
 #include <QImageReader>
 #include <QImageWriter>
@@ -34,6 +35,7 @@
 #include <QApplication>
 #include <QStandardPaths>
 #include <QLibrary>
+#include <QSysInfo>
 
 // KDE includes
 
@@ -70,20 +72,31 @@ QStringList supportedImageMimeTypes(QIODevice::OpenModeFlag mode, QString& allTy
     QStringList       formats;
     QList<QByteArray> supported;
 
-    switch(mode)
+    switch (mode)
     {
         case QIODevice::ReadOnly:
+        {
             supported = QImageReader::supportedImageFormats();
             break;
+        }
+
         case QIODevice::WriteOnly:
+        {
             supported = QImageWriter::supportedImageFormats();
             break;
+        }
+
         case QIODevice::ReadWrite:
+        {
             supported = QImageWriter::supportedImageFormats() + QImageReader::supportedImageFormats();
             break;
+        }
+
         default:
+        {
             qCDebug(DIGIKAM_GENERAL_LOG) << "Unsupported mode!";
             break;
+        }
     }
 
     foreach (const QByteArray& frm, supported)
@@ -101,6 +114,7 @@ QStringList supportedImageMimeTypes(QIODevice::OpenModeFlag mode, QString& allTy
         }
 
 #ifdef HAVE_JASPER
+
         if (QString::fromLatin1(frm).contains(QLatin1String("jp2"),  Qt::CaseInsensitive) ||
             QString::fromLatin1(frm).contains(QLatin1String("j2k"),  Qt::CaseInsensitive) ||
             QString::fromLatin1(frm).contains(QLatin1String("jpx"),  Qt::CaseInsensitive) ||
@@ -109,15 +123,29 @@ QStringList supportedImageMimeTypes(QIODevice::OpenModeFlag mode, QString& allTy
         {
             continue;
         }
+
 #endif // HAVE_JASPER
 
 #ifdef HAVE_X265
+
         if (QString::fromLatin1(frm).contains(QLatin1String("heic"), Qt::CaseInsensitive) ||
             QString::fromLatin1(frm).contains(QLatin1String("heif"), Qt::CaseInsensitive))
         {
             continue;
         }
+
 #endif // HAVE_X265
+
+#ifdef HAVE_IMAGE_MAGICK
+
+        if (QString::fromLatin1(frm).contains(QLatin1String("fts"),  Qt::CaseInsensitive) ||
+            QString::fromLatin1(frm).contains(QLatin1String("fit"),  Qt::CaseInsensitive) ||
+            QString::fromLatin1(frm).contains(QLatin1String("fits"), Qt::CaseInsensitive))
+        {
+            continue;
+        }
+
+#endif // HAVE_IMAGE_MAGICK
 
         formats.append(i18n("%1 Image (%2)", QString::fromLatin1(frm).toUpper(), QLatin1String("*.") + QLatin1String(frm)));
         allTypes.append(QString::fromLatin1("*.%1 ").arg(QLatin1String(frm)));
@@ -129,17 +157,28 @@ QStringList supportedImageMimeTypes(QIODevice::OpenModeFlag mode, QString& allTy
     allTypes.append(QLatin1String("*.jpg *.jpeg *.jpe "));
 
 #ifdef HAVE_JASPER
+
     formats.append(i18n("JPEG2000 Image (*.jp2 *.j2k *.jpx *.pgx)"));
     allTypes.append(QLatin1String("*.jp2 *.j2k *.jpx *.pgx "));
+
 #endif // HAVE_JASPER
 
     formats << i18n("Progressive Graphics file (*.pgf)");
     allTypes.append(QLatin1String("*.pgf "));
 
 #ifdef HAVE_X265
+
     formats << i18n("High Efficiency Image Coding (*.heic *.heif)");
-    allTypes.append(QLatin1String("*.heic *.heif"));
+    allTypes.append(QLatin1String("*.heic *.heif "));
+
 #endif // HAVE_X265
+
+#ifdef HAVE_IMAGE_MAGICK
+
+    formats << i18n("Flexible Image Transport System (*.fts *.fit *.fits)");
+    allTypes.append(QLatin1String("*.fts *.fit *.fits "));
+
+#endif // HAVE_IMAGE_MAGICK
 
     if (mode != QIODevice::WriteOnly)
     {
@@ -157,15 +196,28 @@ void showRawCameraList()
     dlg->show();
 }
 
+bool isRunningInAppImageBundle()
+{
+    QProcessEnvironment env = QProcessEnvironment::systemEnvironment();
+
+    if (env.contains(QLatin1String("APPIMAGE_ORIGINAL_LD_LIBRARY_PATH")) &&
+        env.contains(QLatin1String("APPIMAGE_ORIGINAL_QT_PLUGIN_PATH"))  &&
+        env.contains(QLatin1String("APPIMAGE_ORIGINAL_XDG_DATA_DIRS"))   &&
+        env.contains(QLatin1String("APPIMAGE_ORIGINAL_PATH")))
+    {
+        return true;
+    }
+
+    return false;
+}
+
 QProcessEnvironment adjustedEnvironmentForAppImage()
 {
     QProcessEnvironment env = QProcessEnvironment::systemEnvironment();
 
     // If we are running into AppImage bundle, switch env var to the right values.
-    if (env.contains(QLatin1String("APPIMAGE_ORIGINAL_LD_LIBRARY_PATH")) &&
-        env.contains(QLatin1String("APPIMAGE_ORIGINAL_QT_PLUGIN_PATH"))  &&
-        env.contains(QLatin1String("APPIMAGE_ORIGINAL_XDG_DATA_DIRS"))   &&
-        env.contains(QLatin1String("APPIMAGE_ORIGINAL_PATH")))
+
+    if (isRunningInAppImageBundle())
     {
         qCDebug(DIGIKAM_GENERAL_LOG) << "Adjusting environment variables for AppImage bundle";
 
@@ -213,34 +265,41 @@ QProcessEnvironment adjustedEnvironmentForAppImage()
     return env;
 }
 
-
 void tryInitDrMingw()
 {
+
 #ifdef HAVE_DRMINGW
 
     qCDebug(DIGIKAM_GENERAL_LOG) << "Loading DrMinGw run-time...";
 
-    wchar_t path[MAX_PATH];
-    QString pathStr = QCoreApplication::applicationDirPath().replace(L'/', L'\\') + QLatin1String("\\exchndl.dll");
+    QRegExp versionRegExp(QLatin1String("(\\d+[.]*\\d*)"));
+    QSysInfo::productVersion().indexOf(versionRegExp);
+    double version = versionRegExp.capturedTexts().constFirst().toDouble();
 
-    if (pathStr.size() > MAX_PATH - 1)
+    if  (
+         ((version < 2000.0) && (version < 10.0)) ||
+         ((version > 2000.0) && (version < 2016.0))
+        )
     {
-        qCDebug(DIGIKAM_GENERAL_LOG) << "DrMinGw: cannot find crash handler dll.";
+        qCDebug(DIGIKAM_GENERAL_LOG) << "DrMinGw: unsupported Windows version" << version;
         return;
     }
 
-    int pathLen   = pathStr.toWCharArray(path);
-    path[pathLen] = L'\0'; // toWCharArray doesn't add NULL terminator
-    HMODULE hMod  = LoadLibraryW(path);
+    QString appPath = QCoreApplication::applicationDirPath();
+    QString excFile = QDir::toNativeSeparators(appPath + QLatin1String("/exchndl.dll"));
 
-    if (!hMod)
+    HMODULE hModExc = LoadLibraryW((LPCWSTR)excFile.utf16());
+
+    if (!hModExc)
     {
         qCDebug(DIGIKAM_GENERAL_LOG) << "DrMinGw: cannot init crash handler dll.";
         return;
     }
 
     // No need to call ExcHndlInit since the crash handler is installed on DllMain
-    auto myExcHndlSetLogFileNameA = reinterpret_cast<BOOL (APIENTRY*)(const char*)>(GetProcAddress(hMod, "ExcHndlSetLogFileNameA"));
+
+    auto myExcHndlSetLogFileNameA = reinterpret_cast<BOOL (APIENTRY*)(const char*)>
+                                        (GetProcAddress(hModExc, "ExcHndlSetLogFileNameA"));
 
     if (!myExcHndlSetLogFileNameA)
     {
@@ -248,14 +307,17 @@ void tryInitDrMingw()
         return;
     }
 
-    // Set the log file path to %LocalAppData%\kritacrash.log
-    QString logFile = QStandardPaths::writableLocation(QStandardPaths::GenericConfigLocation).replace(L'/', L'\\') + QLatin1String("\\digikam_crash.log");
+    // Set the log file path to %LocalAppData%\digikam_crash.log
+
+    QString logPath = QStandardPaths::writableLocation(QStandardPaths::GenericConfigLocation);
+    QString logFile = QDir::toNativeSeparators(logPath + QLatin1String("/digikam_crash.log"));
     myExcHndlSetLogFileNameA(logFile.toLocal8Bit().data());
 
     qCDebug(DIGIKAM_GENERAL_LOG) << "DrMinGw run-time loaded.";
     qCDebug(DIGIKAM_GENERAL_LOG) << "DrMinGw crash-file will be located at: " << logFile;
 
 #endif // HAVE_DRMINGW
+
 }
 
 QString toolButtonStyleSheet()
@@ -283,6 +345,11 @@ QString toolButtonStyleSheet()
                          "  qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, "
                          "  stop: 0 rgba(40, 40, 40, 50%), "
                          "  stop: 1 rgba(50, 50, 50, 50%)); }");
+}
+
+QString macOSBundlePrefix()
+{
+    return QString::fromUtf8("/Applications/digiKam.org/digikam.app/Contents/");
 }
 
 } // namespace Digikam

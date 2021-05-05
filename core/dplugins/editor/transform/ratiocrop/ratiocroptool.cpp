@@ -8,7 +8,7 @@
  *
  * Copyright (C) 2007      by Jaromir Malenko <malenko at email dot cz>
  * Copyright (C) 2008      by Roberto Castagnola <roberto dot castagnola at gmail dot com>
- * Copyright (C) 2004-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2004-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -48,7 +48,7 @@
 
 #include <klocalizedstring.h>
 #include <ksharedconfig.h>
-#include "kconfiggroup.h"
+#include <kconfiggroup.h>
 
 // Local includes
 
@@ -71,36 +71,36 @@ class Q_DECL_HIDDEN RatioCropTool::Private
 public:
 
     explicit Private()
-      : originalIsLandscape(false),
-        customLabel(nullptr),
-        orientLabel(nullptr),
-        colorGuideLabel(nullptr),
-        resLabel(nullptr),
-        centerWidth(nullptr),
-        centerHeight(nullptr),
-        goldenSectionBox(nullptr),
-        goldenSpiralSectionBox(nullptr),
-        goldenSpiralBox(nullptr),
-        goldenTriangleBox(nullptr),
-        flipHorBox(nullptr),
-        flipVerBox(nullptr),
-        autoOrientation(nullptr),
-        preciseCrop(nullptr),
-        ratioCB(nullptr),
-        orientCB(nullptr),
-        guideLinesCB(nullptr),
-        customRatioDInput(nullptr),
-        customRatioNInput(nullptr),
-        guideSize(nullptr),
-        heightInput(nullptr),
-        widthInput(nullptr),
-        xInput(nullptr),
-        yInput(nullptr),
-        guideColorBt(nullptr),
-        ratioCropWidget(nullptr),
-        expbox(nullptr),
-        gboxSettings(nullptr),
-        histogramBox(nullptr)
+      : originalIsLandscape     (false),
+        customLabel             (nullptr),
+        orientLabel             (nullptr),
+        colorGuideLabel         (nullptr),
+        resLabel                (nullptr),
+        centerWidth             (nullptr),
+        centerHeight            (nullptr),
+        goldenSectionBox        (nullptr),
+        goldenSpiralSectionBox  (nullptr),
+        goldenSpiralBox         (nullptr),
+        goldenTriangleBox       (nullptr),
+        flipHorBox              (nullptr),
+        flipVerBox              (nullptr),
+        autoOrientation         (nullptr),
+        preciseCrop             (nullptr),
+        ratioCB                 (nullptr),
+        orientCB                (nullptr),
+        guideLinesCB            (nullptr),
+        customRatioDInput       (nullptr),
+        customRatioNInput       (nullptr),
+        guideSize               (nullptr),
+        heightInput             (nullptr),
+        widthInput              (nullptr),
+        xInput                  (nullptr),
+        yInput                  (nullptr),
+        guideColorBt            (nullptr),
+        ratioCropWidget         (nullptr),
+        expbox                  (nullptr),
+        gboxSettings            (nullptr),
+        histogramBox            (nullptr)
     {
     }
 
@@ -210,7 +210,7 @@ const QString RatioCropTool::Private::configHistogramScaleEntry(QLatin1String("H
 
 RatioCropTool::RatioCropTool(QObject* const parent)
     : EditorTool(parent),
-      d(new Private)
+      d         (new Private)
 {
     setObjectName(QLatin1String("aspectratiocrop"));
     setToolName(i18n("Aspect Ratio Crop"));
@@ -425,7 +425,7 @@ RatioCropTool::RatioCropTool(QObject* const parent)
     QWidget* const compositionGuide = new QWidget(d->expbox);
     QGridLayout* const grid2        = new QGridLayout(compositionGuide);
 
-    QLabel* const labelGuideLines = new QLabel(i18n("Form:"), compositionGuide);
+    QLabel* const labelGuideLines = new QLabel(i18nc("@label: guide lines", "Form:"), compositionGuide);
     d->guideLinesCB               = new DComboBox(compositionGuide);
     d->guideLinesCB->addItem(i18n("Rules of Thirds"));
     d->guideLinesCB->addItem(i18n("Diagonal Method"));
@@ -1048,8 +1048,7 @@ void RatioCropTool::updateCropInfo()
     d->imageSelection = img->copy(getNormalizedRegion());
     d->histogramBox->histogram()->updateData(d->imageSelection);
 
-    QString mpixels;
-    mpixels.setNum(d->widthInput->value() * d->heightInput->value() / 1000000.0, 'f', 2);
+    QString mpixels = QLocale().toString(d->widthInput->value() * d->heightInput->value() / 1000000.0, 'f', 1);
     d->resLabel->setText(i18nc("width x height (megapixels Mpx)", "%1x%2 (%3Mpx)",
                          d->widthInput->value(), d->heightInput->value(), mpixels));
 }

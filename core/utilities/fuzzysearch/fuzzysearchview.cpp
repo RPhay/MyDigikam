@@ -7,7 +7,7 @@
  * Description : Fuzzy search sidebar tab contents.
  *
  * Copyright (C) 2016-2018 by Mario Frank <mario dot frank at uni minus potsdam dot de>
- * Copyright (C) 2008-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2008-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2008-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  * Copyright (C) 2012      by Andi Clemens <andi dot clemens at gmail dot com>
  *
@@ -32,9 +32,9 @@ namespace Digikam
 FuzzySearchView::FuzzySearchView(SearchModel* const searchModel,
                                  SearchModificationHelper* const searchModificationHelper,
                                  QWidget* const parent)
-    : QScrollArea(parent),
+    : QScrollArea      (parent),
       StateSavingObject(this),
-      d(new Private)
+      d                (new Private)
 {
     d->settings                 = ApplicationSettings::instance();
 
@@ -56,9 +56,9 @@ FuzzySearchView::FuzzySearchView(SearchModel* const searchModel,
     d->findDuplicatesPanel     = new FindDuplicatesView();
 
     d->tabWidget               = new QTabWidget();
-    d->tabWidget->insertTab(Private::DUPLICATES, d->findDuplicatesPanel, i18n("Duplicates"));
-    d->tabWidget->insertTab(Private::SIMILARS,   imagePanel,             i18n("Image"));
-    d->tabWidget->insertTab(Private::SKETCH,     sketchPanel,            i18n("Sketch"));
+    d->tabWidget->insertTab(Private::DUPLICATES, d->findDuplicatesPanel, i18nc("Find Duplicates Tab", "Duplicates"));
+    d->tabWidget->insertTab(Private::SIMILARS,   imagePanel,             i18nc("Similar Image Tab", "Image"));
+    d->tabWidget->insertTab(Private::SKETCH,     sketchPanel,            i18nc("Sketch Search Tab", "Sketch"));
 
     // ---------------------------------------------------------------
 
@@ -206,16 +206,6 @@ void FuzzySearchView::setCurrentAlbum(SAlbum* const album)
     d->searchTreeView->setCurrentAlbums(QList<Album*>() << album);
 }
 
-void FuzzySearchView::newDuplicatesSearch(PAlbum* const album)
-{
-    if (album)
-    {
-        d->findDuplicatesPanel->slotSetSelectedAlbum(album);
-    }
-
-    d->tabWidget->setCurrentIndex(Private::DUPLICATES);
-}
-
 void FuzzySearchView::newDuplicatesSearch(const QList<PAlbum*>& albums)
 {
     if (!albums.isEmpty())
@@ -300,7 +290,7 @@ void FuzzySearchView::setActive(bool val)
                                "The Similarity Search Tools will not be operational "
                                "without pre-generated fingerprints. Please generate "
                                "the fingerprints first.");
-            emit signalNofificationError(msg, DNotificationWidget::Warning);
+            emit signalNotificationError(msg, DNotificationWidget::Warning);
         }
 
         d->fingerprintsChecked = true;

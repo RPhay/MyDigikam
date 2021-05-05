@@ -6,7 +6,7 @@
  * Date        : 2007-11-25
  * Description : a bar used to search a string - version based on database models
  *
- * Copyright (C) 2007-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2007-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -41,7 +41,7 @@ class AlbumFilterModel;
  *
  * @author Gilles Caulier
  */
-class DIGIKAM_EXPORT SearchTextBarDb : public SearchTextBar
+class DIGIKAM_GUI_EXPORT SearchTextBarDb : public SearchTextBar
 {
     Q_OBJECT
 
@@ -50,7 +50,7 @@ public:
     explicit SearchTextBarDb(QWidget* const parent,
                              const QString& name,
                              const QString& msg=QString());
-    ~SearchTextBarDb();
+    ~SearchTextBarDb() override;
 
     /**
      * If the given model is != null, the model is used to populate the

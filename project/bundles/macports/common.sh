@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Copyright (c) 2013-2020 by Gilles Caulier  <caulier dot gilles at gmail dot com>
+# Copyright (c) 2013-2021 by Gilles Caulier  <caulier dot gilles at gmail dot com>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
@@ -24,6 +24,9 @@ fi
 ChecksXCodeCLI()
 {
 
+# See https://bugreports.qt.io/browse/QTBUG-85546
+export SYSTEM_VERSION_COMPAT=1
+
 xcode-select --print-path
 
 if [[ $? -ne 0 ]]; then
@@ -35,14 +38,37 @@ else
 fi
 
 export MACOSX_DEPLOYMENT_TARGET=$OSX_MIN_TARGET
+echo "Target OSX minimal version: $MACOSX_DEPLOYMENT_TARGET"
 
-OSX_MAJOR=`echo $MACOSX_DEPLOYMENT_TARGET | awk -F '.' '{print $1 "." $2}'| cut -d . -f 2`
+MACOS_MAJOR=`echo $MACOSX_DEPLOYMENT_TARGET | awk -F '.' '{print $1 "." $2}'| cut -d . -f 1`
+MACOS_MINOR=`echo $MACOSX_DEPLOYMENT_TARGET | awk -F '.' '{print $1 "." $2}'| cut -d . -f 2`
 
-if [[ $OSX_MAJOR -lt 9 ]]; then
+if [[ $MACOS_MAJOR -lt 11 && $MACOS_MINOR -lt 9 ]]; then
     export CXXFLAGS=-stdlib=libc++
 fi
 
-echo "Target OSX minimal version: $MACOSX_DEPLOYMENT_TARGET"
+if [[ ! -d /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX$MACOS_MAJOR.$MACOS_MINOR.sdk ]] ; then
+    echo "XCode Target SDK $MACOS_MAJOR.$MACOS_MINOR as minimal version is not installed in /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs"
+
+    if [[ ! -d $DOWNLOAD_DIR/macos-sdk.git ]] ; then
+
+        echo "Downloading archive of SDK from https://github.com/alexey-lysiuk/macos-sdk, please wait..."
+        git clone https://github.com/alexey-lysiuk/macos-sdk.git $DOWNLOAD_DIR/macos-sdk.git
+
+    fi
+
+    echo "Copying SDK $MACOS_MAJOR.$MACOS_MINOR into XCode, please wait..."
+    cp -R $DOWNLOAD_DIR/macos-sdk.git/MacOSX$MACOS_MAJOR.$MACOS_MINOR.sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/
+
+else
+
+    echo "Check XCode Target SDK minimal version passed..."
+
+fi
+
+# Adjust the property "MinimumSDKVersion" from /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Info.plist
+/usr/libexec/PlistBuddy -c "Set MinimumSDKVersion $MACOS_MAJOR.$MACOS_MINOR" /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Info.plist
+
 }
 
 ########################################################################
@@ -110,44 +136,60 @@ echo "Elaspsed time for script execution : $(($difftimelps / 3600 )) hours $((($
 
 ########################################################################
 # Set strings with detected MacOS info :
-#    $MAJOR_OSX_VERSION : detected MacOS major ID (as 7 for 10.7 or 10 for 10.10)
+#    $MAJOR_OSX_VERSION : detected MacOS major ID (as 10 or 11)
+#    $MINOR_OSX_VERSION : detected MacOS minor ID (as 7 for 10.7 or 10 for 10.10)
 #    $OSX_CODE_NAME     : detected MacOS code name
 OsxCodeName()
 {
 
-MAJOR_OSX_VERSION=$(sw_vers -productVersion | awk -F '.' '{print $1 "." $2}'| cut -d . -f 2)
+MAJOR_OSX_VERSION=$(sw_vers -productVersion | awk -F '.' '{print $1 "." $2}'| cut -d . -f 1)
+MINOR_OSX_VERSION=$(sw_vers -productVersion | awk -F '.' '{print $1 "." $2}'| cut -d . -f 2)
 
-if   [[ $MAJOR_OSX_VERSION == "13" ]]
-    then OSX_CODE_NAME="HighSierra"
-elif [[ $MAJOR_OSX_VERSION == "12" ]]
-    then OSX_CODE_NAME="Sierra"
-elif [[ $MAJOR_OSX_VERSION == "11" ]]
-    then OSX_CODE_NAME="ElCapitan"
-elif [[ $MAJOR_OSX_VERSION == "10" ]]
-    then OSX_CODE_NAME="Yosemite"
-elif [[ $MAJOR_OSX_VERSION == "9" ]]
-    then OSX_CODE_NAME="Mavericks"
-elif [[ $MAJOR_OSX_VERSION == "8" ]]
-    then OSX_CODE_NAME="MountainLion"
-elif [[ $MAJOR_OSX_VERSION == "7" ]]
-    then OSX_CODE_NAME="Lion"
-elif [[ $MAJOR_OSX_VERSION == "6" ]]
-    then OSX_CODE_NAME="SnowLeopard"
-elif [[ $MAJOR_OSX_VERSION == "5" ]]
-    then OSX_CODE_NAME="Leopard"
-elif [[ $MAJOR_OSX_VERSION == "4" ]]
-    then OSX_CODE_NAME="Tiger"
-elif [[ $MAJOR_OSX_VERSION == "3" ]]
-    then OSX_CODE_NAME="Panther"
-elif [[ $MAJOR_OSX_VERSION == "2" ]]
-    then OSX_CODE_NAME="Jaguar"
-elif [[ $MAJOR_OSX_VERSION == "1" ]]
-    then OSX_CODE_NAME="Puma"
-elif [[ $MAJOR_OSX_VERSION == "0" ]]
-    then OSX_CODE_NAME="Cheetah"
+if   [[ $MAJOR_OSX_VERSION == "10" ]] ; then
+
+    if   [[ $MINOR_OSX_VERSION == "15" ]]
+        then OSX_CODE_NAME="Catalina"
+    elif [[ $MINOR_OSX_VERSION == "14" ]]
+        then OSX_CODE_NAME="Mojave"
+    elif [[ $MINOR_OSX_VERSION == "13" ]]
+        then OSX_CODE_NAME="HighSierra"
+    elif [[ $MINOR_OSX_VERSION == "12" ]]
+        then OSX_CODE_NAME="Sierra"
+    elif [[ $MINOR_OSX_VERSION == "11" ]]
+        then OSX_CODE_NAME="ElCapitan"
+    elif [[ $MINOR_OSX_VERSION == "10" ]]
+        then OSX_CODE_NAME="Yosemite"
+    elif [[ $MINOR_OSX_VERSION == "9" ]]
+        then OSX_CODE_NAME="Mavericks"
+    elif [[ $MINOR_OSX_VERSION == "8" ]]
+        then OSX_CODE_NAME="MountainLion"
+    elif [[ $MINOR_OSX_VERSION == "7" ]]
+        then OSX_CODE_NAME="Lion"
+    elif [[ $MINOR_OSX_VERSION == "6" ]]
+        then OSX_CODE_NAME="SnowLeopard"
+    elif [[ $MINOR_OSX_VERSION == "5" ]]
+        then OSX_CODE_NAME="Leopard"
+    elif [[ $MINOR_OSX_VERSION == "4" ]]
+        then OSX_CODE_NAME="Tiger"
+    elif [[ $MINOR_OSX_VERSION == "3" ]]
+        then OSX_CODE_NAME="Panther"
+    elif [[ $MINOR_OSX_VERSION == "2" ]]
+        then OSX_CODE_NAME="Jaguar"
+    elif [[ $MINOR_OSX_VERSION == "1" ]]
+        then OSX_CODE_NAME="Puma"
+    elif [[ $MINOR_OSX_VERSION == "0" ]]
+        then OSX_CODE_NAME="Cheetah"
+    fi
+
+elif [[ $MAJOR_OSX_VERSION == "11" ]] ; then
+
+    if   [[ $MINOR_OSX_VERSION == "0" ]]
+        then OSX_CODE_NAME="BigSur"
+    fi
+
 fi
 
-echo -e "---------- Detected OSX version 10.$MAJOR_OSX_VERSION and code name $OSX_CODE_NAME"
+echo -e "---------- Detected OSX version $MAJOR_OSX_VERSION.$MINOR_OSX_VERSION and code name $OSX_CODE_NAME"
 
 }
 
@@ -155,31 +197,42 @@ echo -e "---------- Detected OSX version 10.$MAJOR_OSX_VERSION and code name $OS
 # Relocate list of binaries files.
 # Replace INSTALL_PREFIX by @rpath in library pathes dependencies registered in bin file.
 # List of bin files to patch is passed as first argument.
-RelocateBinaries()
+RelocatableBinaries()
 {
 
 RPATHSTR="@rpath"
 
 FILESLIST=("${!1}")
 
-#echo "Relocate list: ${FILESLIST[@]}"
+#echo "Relocatable list: ${FILESLIST[@]}"
 
 for FILE in ${FILESLIST[@]} ; do
 
-    echo "Relocate binary $FILE"
+    ISMACHO=`file "$FILE" | grep "Mach-O" || true`
 
-    # List all external dependencies starting with INSTALL_PREFIX
-    DEPS=$(otool -L $FILE | grep $INSTALL_PREFIX | awk -F ' \\\(' '{print $1}')
+    # Do not touch debug extension
+    ISDSYM=`file "$FILE" | grep "dSYM" || true`
 
-    # For each file from bin list, we replace the absolute path to external dependency with a relative path
-    # NOTE: releative path must be resolved in main executable later.
-    for EXTLIB in $DEPS ; do
+    if [[ $ISMACHO ]] && [[ ! $ISDSYM ]] ; then
 
-        RPATHLIB=${EXTLIB/$INSTALL_PREFIX/$RPATHSTR}
-#        echo "   $EXTLIB ==> $RPATHLIB"
-        install_name_tool -change $EXTLIB $RPATHLIB $FILE
+        # For each file from bin list, we replace the absolute path to external dependency with a relative path
+        # NOTE: relative path must be resolved in main executable later.
 
-    done
+        echo "Relocate $FILE"
+
+        # List all external dependencies starting with INSTALL_PREFIX
+
+        DEPS=$(otool -L $FILE | grep $INSTALL_PREFIX | awk -F ' \\\(' '{print $1}')
+
+        for EXTLIB in $DEPS ; do
+
+            RPATHLIB=${EXTLIB/$INSTALL_PREFIX/$RPATHSTR}
+ #           echo "   $EXTLIB ==> $RPATHLIB"
+            install_name_tool -change $EXTLIB $RPATHLIB $FILE
+
+        done
+
+    fi
 
 done
 
@@ -191,8 +244,8 @@ RegisterRemoteServers()
 {
 
 SERVER_LIST="\
-git.kde.org \
-milonia.kde.org \
+invent.kde.org \
+deino.kde.org \
 "
 
 if [[ ! -f ~/.ssh/known_hosts ]] ; then

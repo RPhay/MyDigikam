@@ -44,12 +44,17 @@ class DIGIKAM_DATABASE_EXPORT DBJob : public ActionJob
 protected:
 
     explicit DBJob();
-    ~DBJob();
+    ~DBJob()        override;
 
 Q_SIGNALS:
 
     void data(const QList<ItemListerRecord>& records);
     void error(const QString& err);
+
+private:
+
+    // Disable
+    explicit DBJob(QObject*) = delete;
 };
 
 // ----------------------------------------------
@@ -61,11 +66,11 @@ class DIGIKAM_DATABASE_EXPORT AlbumsJob : public DBJob
 public:
 
     explicit AlbumsJob(const AlbumsDBJobInfo& jobInfo);
-    ~AlbumsJob();
+    ~AlbumsJob()    override;
 
 protected:
 
-    void run() override;
+    void run()      override;
 
 Q_SIGNALS:
 
@@ -74,6 +79,11 @@ Q_SIGNALS:
 private:
 
     AlbumsDBJobInfo m_jobInfo;
+
+private:
+
+    // Disable
+    AlbumsJob(QObject*);
 };
 
 // ----------------------------------------------
@@ -85,19 +95,24 @@ class DIGIKAM_DATABASE_EXPORT DatesJob : public DBJob
 public:
 
     explicit DatesJob(const DatesDBJobInfo& jobInfo);
-    ~DatesJob();
+    ~DatesJob()     override;
 
 protected:
 
-    void run() override;
+    void run()      override;
 
 Q_SIGNALS:
 
-    void foldersData(const QMap<QDateTime, int>& datesStatMap);
+    void foldersData(const QHash<QDateTime, int>& datesStatMap);
 
 private:
 
     DatesDBJobInfo m_jobInfo;
+
+private:
+
+    // Disable
+    DatesJob(QObject*) = delete;
 };
 
 // ----------------------------------------------
@@ -109,11 +124,11 @@ class DIGIKAM_DATABASE_EXPORT GPSJob : public DBJob
 public:
 
     explicit GPSJob(const GPSDBJobInfo& jobInfo);
-    ~GPSJob();
+    ~GPSJob()       override;
 
 protected:
 
-    void run() override;
+    void run()      override;
 
 Q_SIGNALS:
 
@@ -122,6 +137,11 @@ Q_SIGNALS:
 private:
 
     GPSDBJobInfo m_jobInfo;
+
+private:
+
+    // Disable
+    GPSJob(QObject*);
 };
 
 // ----------------------------------------------
@@ -133,11 +153,11 @@ class DIGIKAM_DATABASE_EXPORT TagsJob : public DBJob
 public:
 
     explicit TagsJob(const TagsDBJobInfo& jobInfo);
-    ~TagsJob();
+    ~TagsJob()      override;
 
 protected:
 
-    void run() override;
+    void run()      override;
 
 Q_SIGNALS:
 
@@ -147,6 +167,11 @@ Q_SIGNALS:
 private:
 
     TagsDBJobInfo m_jobInfo;
+
+private:
+
+    // Disable
+    TagsJob(QObject*);
 };
 
 // ----------------------------------------------
@@ -158,22 +183,38 @@ class DIGIKAM_DATABASE_EXPORT SearchesJob : public DBJob
 public:
 
     explicit SearchesJob(const SearchesDBJobInfo& jobInfo);
-    ~SearchesJob();
+    SearchesJob(const SearchesDBJobInfo& jobInfo,
+                const QSet<qlonglong>::const_iterator& begin,
+                const QSet<qlonglong>::const_iterator& end,
+                HaarIface* iface);
 
-    bool isCanceled();
+    ~SearchesJob()  override;
+
+    bool isCanceled() const;
 
 Q_SIGNALS:
 
-    void processedSize(int);
-    void totalSize(int);
+    void signalImageProcessed();
+    void signalDuplicatesResults(const HaarIface::DuplicatesResultsMap&);
 
 protected:
 
-    void run() override;
+    void run()      override;
 
 private:
 
-    SearchesDBJobInfo m_jobInfo;
+    SearchesDBJobInfo                m_jobInfo;
+    QSet<qlonglong>::const_iterator  m_begin;
+    QSet<qlonglong>::const_iterator  m_end;
+    HaarIface*                       m_iface;
+
+private:
+
+    // Disable
+    SearchesJob(QObject*);
+
+    void runSearches();
+    void runFindDuplicates();
 };
 
 } // namespace Digikam

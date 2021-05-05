@@ -6,7 +6,7 @@
  * Date        : 2011-12-28
  * Description : Low level threads management for batch processing on multi-core
  *
- * Copyright (C) 2011-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2011-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C)      2014 by Veaceslav Munteanu <veaceslav dot munteanu90 at gmail dot com>
  * Copyright (C) 2011-2012 by Janardhan Reddy <annapareddyjanardhanreddy at gmail dot com>
  *
@@ -39,10 +39,10 @@
 namespace Digikam
 {
 
-ActionJob::ActionJob()
-    : QObject(),
+ActionJob::ActionJob(QObject* const parent)
+    : QObject  (parent),
       QRunnable(),
-      m_cancel(false)
+      m_cancel (false)
 {
     setAutoDelete(false);
 }
@@ -65,7 +65,7 @@ public:
 
     explicit Private()
       : running(false),
-        pool(nullptr)
+        pool   (nullptr)
     {
     }
 
@@ -83,33 +83,28 @@ public:
 
 ActionThreadBase::ActionThreadBase(QObject* const parent)
     : QThread(parent),
-      d(new Private)
+      d      (new Private)
 {
     d->pool = new QThreadPool(this);
 
-    defaultMaximumNumberOfThreads();
+    setDefaultMaximumNumberOfThreads();
 }
 
 ActionThreadBase::~ActionThreadBase()
 {
     // cancel the thread
+
     cancel();
+
     // wait for the thread to finish
+
     wait();
 
-    //wait for the jobs to finish
+    // wait for the jobs to finish
+
     d->pool->waitForDone();
 
     // Cleanup all jobs from memory
-    foreach (ActionJob* const job, d->todo.keys())
-    {
-        delete job;
-    }
-
-    foreach (ActionJob* const job, d->pending.keys())
-    {
-        delete job;
-    }
 
     foreach (ActionJob* const job, d->processed.keys())
     {
@@ -122,6 +117,7 @@ ActionThreadBase::~ActionThreadBase()
 void ActionThreadBase::setMaximumNumberOfThreads(int n)
 {
     d->pool->setMaxThreadCount(n);
+
     qCDebug(DIGIKAM_GENERAL_LOG) << "Using " << n << " CPU core to run threads";
 }
 
@@ -130,10 +126,9 @@ int ActionThreadBase::maximumNumberOfThreads() const
     return d->pool->maxThreadCount();
 }
 
-void ActionThreadBase::defaultMaximumNumberOfThreads()
+void ActionThreadBase::setDefaultMaximumNumberOfThreads()
 {
-    const int maximumNumberOfThreads = qMax(QThread::idealThreadCount(), 1);
-    setMaximumNumberOfThreads(maximumNumberOfThreads);
+    setMaximumNumberOfThreads(QThread::idealThreadCount());
 }
 
 void ActionThreadBase::slotJobFinished()
@@ -163,9 +158,13 @@ void ActionThreadBase::slotJobFinished()
 void ActionThreadBase::cancel()
 {
     qCDebug(DIGIKAM_GENERAL_LOG) << "Cancel Main Thread";
+
     QMutexLocker lock(&d->mutex);
 
-    d->todo.clear();
+    foreach (ActionJob* const job, d->todo.keys())
+    {
+        delete job;
+    }
 
     foreach (ActionJob* const job, d->pending.keys())
     {
@@ -173,6 +172,7 @@ void ActionThreadBase::cancel()
         d->processed.insert(job, 0);
     }
 
+    d->todo.clear();
     d->pending.clear();
     d->running = false;
 

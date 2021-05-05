@@ -7,7 +7,7 @@
  * Description : Side Bar Widget for the tag view.
  *
  * Copyright (C) 2009-2010 by Johannes Wienke <languitar at semipol dot de>
- * Copyright (C) 2010-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2010-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2012      by Andi Clemens <andi dot clemens at gmail dot com>
  * Copyright (C) 2014      by Mohamed_Anwer <m_dot_anwer at gmx dot com>
  * Copyright (C) 2010      by Aditya Bhatt <adityabhatt1991 at gmail dot com>
@@ -67,14 +67,14 @@ public:
 public:
 
     explicit Private()
-      : openTagMngr(nullptr),
-        tagSearchBar(nullptr),
-        tagFolderView(nullptr),
-        btnGroup(nullptr),
-        noTagsBtn(nullptr),
-        tagsBtn(nullptr),
-        noTagsWasChecked(false),
-        ExistingTagsWasChecked(false)
+      : openTagMngr             (nullptr),
+        tagSearchBar            (nullptr),
+        tagFolderView           (nullptr),
+        btnGroup                (nullptr),
+        noTagsBtn               (nullptr),
+        tagsBtn                 (nullptr),
+        noTagsWasChecked        (false),
+        ExistingTagsWasChecked  (false)
     {
     }
 
@@ -99,7 +99,7 @@ const QString TagViewSideBarWidget::Private::configTagsSourceEntry(QLatin1String
 
 TagViewSideBarWidget::TagViewSideBarWidget(QWidget* const parent, TagModel* const model)
     : SidebarWidget(parent),
-      d(new Private)
+      d            (new Private)
 {
     setObjectName(QLatin1String("TagView Sidebar"));
     setProperty("Shortcut", Qt::CTRL + Qt::SHIFT + Qt::Key_F2);
@@ -120,7 +120,6 @@ TagViewSideBarWidget::TagViewSideBarWidget(QWidget* const parent, TagModel* cons
 
     d->tagFolderView = new TagFolderView(this, model);
     d->tagFolderView->setConfigGroup(getConfigGroup());
-    d->tagFolderView->setExpandNewCurrentItem(true);
     d->tagFolderView->setAlbumManagerCurrentAlbum(true);
 
     //d->tagFolderView->filteredModel()->doNotListTagsWithProperty(TagPropertyName::person());
@@ -198,6 +197,8 @@ void TagViewSideBarWidget::doSaveState()
 
 void TagViewSideBarWidget::applySettings()
 {
+    ApplicationSettings* const settings = ApplicationSettings::instance();
+    d->tagFolderView->setExpandNewCurrentItem(settings->getExpandNewCurrentItem());
 }
 
 void TagViewSideBarWidget::changeAlbumFromHistory(const QList<Album*>& album)

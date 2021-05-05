@@ -40,7 +40,7 @@ class Q_DECL_HIDDEN ItemViewToolTip::Private
 public:
 
     explicit Private()
-      : view(nullptr),
+      : view           (nullptr),
         filterInstalled(false)
     {
     }
@@ -54,7 +54,7 @@ public:
 
 ItemViewToolTip::ItemViewToolTip(QAbstractItemView* const view)
     : DItemToolTip(view),
-      d(new Private)
+      d           (new Private)
 {
     d->view = view;
 
@@ -139,7 +139,8 @@ bool ItemViewToolTip::eventFilter(QObject* o, QEvent* e)
     switch (e->type())
     {
 
-#ifdef Q_OS_OSX
+#ifdef Q_OS_MACOS
+
         case QEvent::KeyPress:
         case QEvent::KeyRelease:
         {
@@ -157,7 +158,8 @@ bool ItemViewToolTip::eventFilter(QObject* o, QEvent* e)
 
             break;
         }
-#endif // Q_OS_OSX
+
+#endif // Q_OS_MACOS
 
         case QEvent::Leave:
             hide(); // could add a 300ms timer here, like Qt

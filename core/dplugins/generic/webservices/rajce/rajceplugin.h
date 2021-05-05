@@ -6,7 +6,7 @@
  * Date        : 2018-07-30
  * Description : a plugin to export to Rajce web-service.
  *
- * Copyright (C) 2018-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2018-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -45,7 +45,7 @@ class RajcePlugin : public DPluginGeneric
 public:
 
     explicit RajcePlugin(QObject* const parent = nullptr);
-    ~RajcePlugin();
+    ~RajcePlugin()                       override;
 
     QString name()                 const override;
     QString iid()                  const override;

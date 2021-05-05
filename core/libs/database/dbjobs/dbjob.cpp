@@ -44,13 +44,12 @@ DBJob::DBJob()
 
 DBJob::~DBJob()
 {
-    this->cancel();
 }
 
 // ----------------------------------------------
 
 AlbumsJob::AlbumsJob(const AlbumsDBJobInfo& jobInfo)
-    : DBJob(),
+    : DBJob    (),
       m_jobInfo(jobInfo)
 {
 }
@@ -86,7 +85,7 @@ void AlbumsJob::run()
 // ----------------------------------------------
 
 DatesJob::DatesJob(const DatesDBJobInfo& jobInfo)
-    : DBJob(),
+    : DBJob    (),
       m_jobInfo(jobInfo)
 {
 }
@@ -99,14 +98,41 @@ void DatesJob::run()
 {
     if (m_jobInfo.isFoldersJob())
     {
-        QMap<QDateTime, int> dateNumberMap = CoreDbAccess().db()->getAllCreationDatesAndNumberOfImages();
+        const QVariantList& values = CoreDbAccess().db()->getAllCreationDates();
 
-        emit foldersData(dateNumberMap);
+        QHash<QDateTime, int> dateNumberHash;
+        QHash<QDateTime, int>::iterator it;
+
+        foreach (const QVariant& value, values)
+        {
+            if (!value.isNull())
+            {
+                QDateTime dateTime = value.toDateTime();
+
+                if (!dateTime.isValid())
+                {
+                    continue;
+                }
+
+                it = dateNumberHash.find(dateTime);
+
+                if (it == dateNumberHash.end())
+                {
+                    dateNumberHash.insert(dateTime, 1);
+                }
+                else
+                {
+                    it.value()++;
+                }
+            }
+        }
+
+        emit foldersData(dateNumberHash);
     }
     else
     {
         ItemLister lister;
-        lister.setListOnlyAvailable(true);
+        lister.setListOnlyAvailable(m_jobInfo.isListAvailableImagesOnly());
 
         // Send data every 200 images to be more responsive
 
@@ -124,7 +150,7 @@ void DatesJob::run()
 // ----------------------------------------------
 
 GPSJob::GPSJob(const GPSDBJobInfo& jobInfo)
-    : DBJob(),
+    : DBJob    (),
       m_jobInfo(jobInfo)
 {
 }
@@ -150,7 +176,6 @@ void GPSJob::run()
     else
     {
         ItemLister lister;
-        lister.setAllowExtraValues(true);
         lister.setListOnlyAvailable(m_jobInfo.isListAvailableImagesOnly());
 
         // Send data every 200 images to be more responsive
@@ -172,7 +197,7 @@ void GPSJob::run()
 // ----------------------------------------------
 
 TagsJob::TagsJob(const TagsDBJobInfo& jobInfo)
-    : DBJob(),
+    : DBJob    (),
       m_jobInfo(jobInfo)
 {
 }
@@ -212,6 +237,11 @@ void TagsJob::run()
 
         facesNumberMap.insert(property, counts);
 
+        property = ImageTagPropertyName::ignoredFace();
+        counts   = CoreDbAccess().db()->getNumberOfImagesInTagProperties(property);
+
+        facesNumberMap.insert(property, counts);
+
         property = ImageTagPropertyName::tagRegion();
         counts   = CoreDbAccess().db()->getNumberOfImagesInTagProperties(property);
 
@@ -239,11 +269,9 @@ void TagsJob::run()
 
         if (!m_jobInfo.specialTag().isNull())
         {
-            QString searchXml =
-                lister.tagSearchXml(m_jobInfo.tagsIds().first(),
-                                    m_jobInfo.specialTag(),
-                                    m_jobInfo.isRecursive());
-            lister.setAllowExtraValues(true); // pass property value as extra value, different binary protocol
+            QString searchXml = lister.tagSearchXml(m_jobInfo.tagsIds().constFirst(),
+                                                    m_jobInfo.specialTag(),
+                                                    m_jobInfo.isRecursive());
             lister.listImageTagPropertySearch(&receiver, searchXml);
         }
         else
@@ -262,8 +290,21 @@ void TagsJob::run()
 // ----------------------------------------------
 
 SearchesJob::SearchesJob(const SearchesDBJobInfo& jobInfo)
-    : DBJob(),
-      m_jobInfo(jobInfo)
+    : DBJob    (),
+      m_jobInfo(jobInfo),
+      m_iface  (nullptr)
+{
+}
+
+SearchesJob::SearchesJob(const SearchesDBJobInfo& jobInfo,
+                         const QSet<qlonglong>::const_iterator& begin,
+                         const QSet<qlonglong>::const_iterator& end,
+                         HaarIface* iface)
+    : DBJob    (),
+      m_jobInfo(jobInfo),
+      m_begin  (begin),
+      m_end    (end),
+      m_iface  (iface)
 {
 }
 
@@ -273,94 +314,84 @@ SearchesJob::~SearchesJob()
 
 void SearchesJob::run()
 {
-    if (!m_jobInfo.isDuplicatesJob())
+    m_jobInfo.isDuplicatesJob() ? runFindDuplicates() : runSearches();
+}
+
+void SearchesJob::runSearches()
+{
+    QList<SearchInfo> infos;
+
+    foreach (int id, m_jobInfo.searchIds())
     {
-        QList<SearchInfo> infos;
-
-        foreach (int id, m_jobInfo.searchIds())
-        {
-            infos << CoreDbAccess().db()->getSearchInfo(id);
-        }
-
-        ItemLister lister;
-        lister.setListOnlyAvailable(m_jobInfo.isListAvailableImagesOnly());
-
-        // Send data every 200 images to be more responsive
-
-        ItemListerJobPartsSendingReceiver receiver(this, 200);
-
-        foreach (const SearchInfo& info, infos)
-        {
-            if (info.type == DatabaseSearch::HaarSearch)
-            {
-                lister.listHaarSearch(&receiver, info.query);
-            }
-            else
-            {
-                bool ok;
-                qlonglong referenceImageId = info.name.toLongLong(&ok);
-
-                if (ok)
-                {
-                    lister.listSearch(&receiver, info.query, 0, referenceImageId);
-                }
-                else
-                {
-                    lister.listSearch(&receiver, info.query, 0, -1);
-                }
-            }
-
-            if (!receiver.hasError)
-            {
-                receiver.sendData();
-            }
-        }
+        infos << CoreDbAccess().db()->getSearchInfo(id);
     }
-    else
+
+    ItemLister lister;
+    lister.setListOnlyAvailable(m_jobInfo.isListAvailableImagesOnly());
+
+    // Send data every 200 images to be more responsive
+
+    ItemListerJobPartsSendingReceiver receiver(this, 200);
+
+    foreach (const SearchInfo& info, infos)
     {
-        if (m_jobInfo.albumsIds().isEmpty() &&
-            m_jobInfo.tagsIds().isEmpty()   &&
-            m_jobInfo.imageIds().isEmpty())
+        if (info.type == DatabaseSearch::HaarSearch)
         {
-            qCDebug(DIGIKAM_DBJOB_LOG) << "No album, tag or image ids passed for duplicates search";
-            return;
-        }
-
-        if (m_jobInfo.minThreshold() == 0)
-        {
-            m_jobInfo.setMinThreshold(0.4);
-        }
-
-        DuplicatesProgressObserver observer(this);
-
-        // Rebuild the duplicate albums
-
-        HaarIface iface;
-
-        if (m_jobInfo.isAlbumUpdate())
-        {
-            iface.rebuildDuplicatesAlbums(m_jobInfo.imageIds(),
-                                          m_jobInfo.minThreshold(),
-                                          m_jobInfo.maxThreshold(),
-                                          static_cast<HaarIface::DuplicatesSearchRestrictions>(m_jobInfo.searchResultRestriction()),
-                                          &observer);
+            lister.listHaarSearch(&receiver, info.query);
         }
         else
         {
-            iface.rebuildDuplicatesAlbums(m_jobInfo.albumsIds(),
-                                          m_jobInfo.tagsIds(),
-                                          static_cast<HaarIface::AlbumTagRelation>(m_jobInfo.albumTagRelation()),
-                                          m_jobInfo.minThreshold(),
-                                          m_jobInfo.maxThreshold(),
-                                          static_cast<HaarIface::DuplicatesSearchRestrictions>(m_jobInfo.searchResultRestriction()),
-                                          &observer);
+            bool ok;
+            qlonglong referenceImageId = info.name.toLongLong(&ok);
+
+            if (ok)
+            {
+                lister.listSearch(&receiver, info.query, 0, referenceImageId);
+            }
+            else
+            {
+                lister.listSearch(&receiver, info.query, 0, -1);
+            }
+        }
+
+        if (!receiver.hasError)
+        {
+            receiver.sendData();
         }
     }
 
     emit signalDone();
 }
 
-bool SearchesJob::isCanceled()
+void SearchesJob::runFindDuplicates()
+{
+    if (m_jobInfo.imageIds().isEmpty())
+    {
+        qCDebug(DIGIKAM_DBJOB_LOG) << "No image ids passed for duplicates search";
+        return;
+    }
+
+    DuplicatesProgressObserver observer(this);
+
+    if (!m_iface)
+    {
+        qCDebug(DIGIKAM_DBJOB_LOG) << "Invalid HaarIface pointer";
+        return;
+    }
+
+    auto restriction = static_cast<HaarIface::DuplicatesSearchRestrictions>(m_jobInfo.searchResultRestriction());
+    auto results     = m_iface->findDuplicates(m_jobInfo.imageIds(),
+                                               m_begin,
+                                               m_end,
+                                               m_jobInfo.minThreshold(),
+                                               m_jobInfo.maxThreshold(),
+                                               restriction,
+                                               &observer);
+
+    emit signalDuplicatesResults(results);
+}
+
+bool SearchesJob::isCanceled() const
 {
     return m_cancel;
 }

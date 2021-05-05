@@ -52,12 +52,13 @@ class DModelFactory: public QObject
 public:
 
     DModelFactory();
-    virtual ~DModelFactory();
+    ~DModelFactory() override;
+
+    TagModel*          getTagModel()          const;
+    TagModel*          getTagFacesModel()     const;
+    TagModel*          getTagFilterModel()    const;
 
     AlbumModel*        getAlbumModel()        const;
-    TagModel*          getTagModel()          const;
-    TagModel*          getTagFilterModel()    const;
-    TagModel*          getTagFacesModel()     const;
     SearchModel*       getSearchModel()       const;
     DateAlbumModel*    getDateAlbumModel()    const;
     ItemVersionsModel* getItemVersionsModel() const;
@@ -65,6 +66,11 @@ public:
 private Q_SLOTS:
 
     void slotApplicationSettingsChanged();
+
+private:
+
+    // Disable
+    explicit DModelFactory(QObject*) = delete;
 
 private:
 

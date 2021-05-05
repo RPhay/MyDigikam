@@ -7,7 +7,7 @@
  * Description : ICC Settings Container.
  *
  * Copyright (C) 2005-2007 by F.J. Cruz <fj dot cruz at supercable dot es>
- * Copyright (C) 2005-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2005-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -24,6 +24,10 @@
 
 #include "iccsettingscontainer.h"
 
+// Qt includes
+
+#include <QStandardPaths>
+
 // KDE includes
 
 #include <kconfiggroup.h>
@@ -37,20 +41,20 @@ namespace Digikam
 {
 
 ICCSettingsContainer::ICCSettingsContainer()
-    : enableCM(true),
-      defaultMismatchBehavior(EmbeddedToWorkspace),
-      defaultMissingProfileBehavior(SRGBToWorkspace),
-      defaultUncalibratedBehavior(AutoToWorkspace),
-      lastMismatchBehavior(EmbeddedToWorkspace),
-      lastMissingProfileBehavior(SRGBToWorkspace),
-      lastUncalibratedBehavior(AutoToWorkspace),
-      useManagedView(true),
-      useManagedPreviews(true),
-      useBPC(true),
-      renderingIntent(IccTransform::Perceptual),
-      proofingRenderingIntent(IccTransform::AbsoluteColorimetric),
-      doGamutCheck(false),
-      gamutCheckMaskColor(QColor(126, 255, 255))
+    : enableCM                      (true),
+      defaultMismatchBehavior       (EmbeddedToWorkspace),
+      defaultMissingProfileBehavior (SRGBToWorkspace),
+      defaultUncalibratedBehavior   (AutoToWorkspace),
+      lastMismatchBehavior          (EmbeddedToWorkspace),
+      lastMissingProfileBehavior    (SRGBToWorkspace),
+      lastUncalibratedBehavior      (AutoToWorkspace),
+      useManagedView                (true),
+      useManagedPreviews            (true),
+      useBPC                        (true),
+      renderingIntent               (IccTransform::Perceptual),
+      proofingRenderingIntent       (IccTransform::AbsoluteColorimetric),
+      doGamutCheck                  (false),
+      gamutCheckMaskColor           (QColor(126, 255, 255))
 {
 }
 
@@ -61,10 +65,8 @@ void ICCSettingsContainer::readFromConfig(KConfigGroup& group)
     //if (!group.hasKey("OnProfileMismatch") && group.hasKey("BehaviourICC")) // legacy
     //  behavior = group.readEntry("BehaviourICC", false) ? "convert" : "ask";
 
-    QString sRGB = IccProfile::sRGB().filePath();
-
-    workspaceProfile              = group.readPathEntry("WorkProfileFile", sRGB);
-    monitorProfile                = group.readPathEntry("MonitorProfileFile", sRGB);
+    workspaceProfile              = getProfilePath(group, "WorkProfileFile");
+    monitorProfile                = getProfilePath(group, "MonitorProfileFile");
     defaultInputProfile           = group.readPathEntry("InProfileFile", QString());
     defaultProofProfile           = group.readPathEntry("ProofProfileFile", QString());
 
@@ -75,7 +77,7 @@ void ICCSettingsContainer::readFromConfig(KConfigGroup& group)
     lastMismatchBehavior          = (Behavior)group.readEntry("LastMismatchBehavior", (int)EmbeddedToWorkspace);
     lastMissingProfileBehavior    = (Behavior)group.readEntry("LastMissingProfileBehavior", (int)SRGBToWorkspace);
     lastUncalibratedBehavior      = (Behavior)group.readEntry("LastUncalibratedBehavior", (int)AutoToWorkspace);
-    lastSpecifiedAssignProfile    = group.readEntry("LastSpecifiedAssignProfile", sRGB);
+    lastSpecifiedAssignProfile    = getProfilePath(group, "LastSpecifiedAssignProfile");
     lastSpecifiedInputProfile     = group.readEntry("LastSpecifiedInputProfile", defaultInputProfile);
 
     useBPC                        = group.readEntry("BPCAlgorithm", true);
@@ -131,6 +133,7 @@ void ICCSettingsContainer::writeManagedViewToConfig(KConfigGroup& group) const
     // Save Color Managed View setting in config file. For performance
     // reason, no need to flush file, it cached in memory and will be flushed
     // to disk at end of session.
+
     group.writeEntry("ManagedView", useManagedView);
 }
 
@@ -139,7 +142,32 @@ void ICCSettingsContainer::writeManagedPreviewsToConfig(KConfigGroup& group) con
     // Save Color Managed Previews setting in config file. For performance
     // reason, no need to flush file, it cached in memory and will be flushed
     // to disk at end of session.
+
     group.writeEntry("ManagedPreviews", useManagedView);
+}
+
+QString ICCSettingsContainer::getProfilePath(KConfigGroup& group, const char* key) const
+{
+    QString sRGB         = IccProfile::sRGB().filePath();
+    QString profilesPath = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
+                                                  QLatin1String("digikam/profiles/"),
+                                                  QStandardPaths::LocateDirectory);
+
+    QString configPath   = group.readPathEntry(key, sRGB);
+
+    if (!QFileInfo::exists(configPath))
+    {
+        configPath = profilesPath + QFileInfo(configPath).fileName();
+
+        if (!QFileInfo::exists(configPath))
+        {
+            configPath = sRGB;
+        }
+
+        group.writePathEntry(key, configPath);
+    }
+
+    return configPath;
 }
 
 } // namespace Digikam

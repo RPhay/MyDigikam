@@ -6,7 +6,7 @@
  * Date        : 2011-04-27
  * Description : image preview item for image editor.
  *
- * Copyright (C) 2011-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2011-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -38,13 +38,21 @@ namespace Digikam
 
 class DIGIKAM_EXPORT ImagePreviewItem : public GraphicsDImgItem
 {
+    Q_OBJECT
 
 public:
 
     explicit ImagePreviewItem();
-    virtual ~ImagePreviewItem();
+    ~ImagePreviewItem()         override;
 
-    void paint(QPainter* painter, const QStyleOptionGraphicsItem* option, QWidget* widget) override;
+    void paint(QPainter* painter,
+               const QStyleOptionGraphicsItem* option,
+               QWidget* widget) override;
+
+private:
+
+    // Disable
+    explicit ImagePreviewItem(QObject*) = delete;
 };
 
 } // namespace Digikam

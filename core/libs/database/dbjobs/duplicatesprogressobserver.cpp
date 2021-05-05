@@ -31,7 +31,8 @@ namespace Digikam
 {
 
 DuplicatesProgressObserver::DuplicatesProgressObserver(SearchesJob* const thread)
-    : m_job(thread)
+    : HaarProgressObserver(),
+      m_job(thread)
 {
 }
 
@@ -40,14 +41,9 @@ DuplicatesProgressObserver::~DuplicatesProgressObserver()
     m_job = nullptr;
 }
 
-void DuplicatesProgressObserver::totalNumberToScan(int number)
+void DuplicatesProgressObserver::imageProcessed()
 {
-    m_job->totalSize(number);
-}
-
-void DuplicatesProgressObserver::processedNumber(int number)
-{
-    m_job->processedSize(number);
+    emit m_job->signalImageProcessed();
 }
 
 bool DuplicatesProgressObserver::isCanceled()

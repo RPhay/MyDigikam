@@ -6,7 +6,7 @@
  * Date        : 2009-08-16
  * Description : GeoCoordinates class
  *
- * Copyright (C) 2010-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2010-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2009-2010 by Michael G. Hansen <mike at mghansen dot de>
  *
  * This program is free software; you can redistribute it
@@ -185,7 +185,7 @@ GeoCoordinates GeoCoordinates::fromGeoUrl(const QString& url,
                                           bool* const parsedOkay)
 {
     // parse geo:-uri according to (only partially implemented):
-    // http://tools.ietf.org/html/draft-ietf-geopriv-geo-uri-04
+    // tools.ietf.org/html/draft-ietf-geopriv-geo-uri-04
     // TODO: verify that we follow the spec fully!
 
     if (!url.startsWith(QLatin1String("geo:")))

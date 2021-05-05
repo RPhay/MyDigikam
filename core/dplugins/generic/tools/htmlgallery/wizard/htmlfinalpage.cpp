@@ -6,7 +6,7 @@
  * Date        : 2006-04-04
  * Description : a tool to generate HTML image galleries
  *
- * Copyright (C) 2012-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -59,8 +59,8 @@ public:
 
     explicit Private()
       : progressView(nullptr),
-        progressBar(nullptr),
-        complete(false)
+        progressBar (nullptr),
+        complete    (false)
     {
     }
 
@@ -71,7 +71,7 @@ public:
 
 HTMLFinalPage::HTMLFinalPage(QWizard* const dialog, const QString& title)
     : DWizardPage(dialog, title),
-      d(new Private)
+      d          (new Private)
 {
     setObjectName(QLatin1String("FinalPage"));
 
@@ -125,7 +125,9 @@ void HTMLFinalPage::slotProcess()
     if (info->m_getOption == GalleryInfo::ALBUMS)
     {
         if (!info->m_iface)
+        {
             return;
+        }
 
         d->progressView->addEntry(i18n("%1 albums to process:", info->m_albumList.count()),
                                   DHistoryView::ProgressEntry);
@@ -188,7 +190,9 @@ void HTMLFinalPage::slotProcess()
         }
 
         default:
+        {
             break;
+        }
     }
 
     d->complete = true;

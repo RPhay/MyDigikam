@@ -41,7 +41,7 @@ class TAlbum;
 class PAlbum;
 class LoadingDescription;
 
-class DIGIKAM_EXPORT AlbumThumbnailLoader : public QObject
+class DIGIKAM_GUI_EXPORT AlbumThumbnailLoader : public QObject
 {
     Q_OBJECT
 
@@ -71,7 +71,7 @@ public:
      * If the size differs from the current size,
      * signalReloadThumbnails will be emitted.
      */
-    void setThumbnailSize(int size);
+    void setThumbnailSize(int size, int face);
 
     /**
      * Get the current default icon size
@@ -129,6 +129,13 @@ public:
     QPixmap getTagThumbnailDirectly(TAlbum* const album);
 
     /**
+     * Loads face tag thumbnail,
+     * like getTagThumbnailDirectly() but
+     * loads thumbnails in the size for faces
+     */
+    QPixmap getFaceThumbnailDirectly(TAlbum* const album);
+
+    /**
      * Return standard tag and album icons.
      * The third methods check if album is the root,
      * and returns the standard icon or the root standard icon.
@@ -136,6 +143,7 @@ public:
     QPixmap getStandardTagIcon(RelativeSize size = NormalSize);
     QPixmap getStandardTagRootIcon(RelativeSize size = NormalSize);
     QPixmap getStandardTagIcon(TAlbum* const album, RelativeSize size = NormalSize);
+    QPixmap getStandardFaceIcon(TAlbum* const album, RelativeSize size = NormalSize);
     QPixmap getNewTagIcon(RelativeSize size = NormalSize);
 
     QPixmap getStandardAlbumIcon(RelativeSize size = NormalSize);
@@ -143,10 +151,13 @@ public:
     QPixmap getStandardAlbumRootIcon(RelativeSize size = NormalSize);
     QPixmap getStandardAlbumIcon(PAlbum* const album, RelativeSize size = NormalSize);
 
-    /** Return a preview of physical album directly without to use cache.
-     *  Size of image can be passed as argument.
+    /**
+     * Return a preview of physical album directly without to use cache.
+     * Size of image can be passed as argument.
      */
-    //QImage getAlbumPreviewDirectly(PAlbum* const album, int size);
+/*
+    QImage getAlbumPreviewDirectly(PAlbum* const album, int size);
+*/
 
 public:
 
@@ -186,12 +197,15 @@ protected Q_SLOTS:
 
 private:
 
+    // Disable
     AlbumThumbnailLoader();
-    ~AlbumThumbnailLoader();
+    explicit AlbumThumbnailLoader(QObject*) = delete;
+    ~AlbumThumbnailLoader() override;
 
     void    addUrl(Album* const album, qlonglong id);
     QPixmap loadIcon(const QString& name, int size = 0) const;
     int     computeIconSize(RelativeSize size)          const;
+    int     computeFaceSize(RelativeSize size)          const;
 
 private:
 

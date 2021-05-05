@@ -37,7 +37,7 @@
 namespace DigikamGenericJAlbumPlugin
 {
 
-JalbumJar::JalbumJar()
+JalbumJar::JalbumJar(QObject* const)
     : DBinaryIface(QLatin1String("JAlbum.jar"),
                    QLatin1String("jAlbum"),
                    QLatin1String("https://jalbum.net/"),

@@ -8,7 +8,7 @@
  *
  * Copyright (C) 2010      by Aditya Bhatt <adityabhatt1991 at gmail dot com>
  * Copyright (C) 2010-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2012-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -47,7 +47,6 @@ class TagPropertiesFilterModel;
 class AssignNameWidget : public QFrame
 {
     Q_OBJECT
-    Q_ENUMS(Mode TagEntryWidgetMode LayoutMode VisualStyle)
     Q_PROPERTY(Mode mode READ mode WRITE setMode)
     Q_PROPERTY(TagEntryWidgetMode tagEntryWidgetMode READ tagEntryWidgetMode WRITE setTagEntryWidgetMode)
     Q_PROPERTY(LayoutMode layoutMode READ layoutMode WRITE setLayoutMode)
@@ -60,8 +59,10 @@ public:
         InvalidMode,
         UnconfirmedEditMode,
         ConfirmedMode,
-        ConfirmedEditMode
+        ConfirmedEditMode,
+        IgnoredMode
     };
+    Q_ENUM(Mode)
 
     enum TagEntryWidgetMode
     {
@@ -69,6 +70,7 @@ public:
         AddTagsComboBoxMode,
         AddTagsLineEditMode
     };
+    Q_ENUM(TagEntryWidgetMode)
 
     enum LayoutMode
     {
@@ -77,6 +79,7 @@ public:
         TwoLines,
         Compact
     };
+    Q_ENUM(LayoutMode)
 
     enum VisualStyle
     {
@@ -85,6 +88,7 @@ public:
         TranslucentDarkRound,
         TranslucentThemedFrameless
     };
+    Q_ENUM(VisualStyle)
 
 public:
 
@@ -92,7 +96,7 @@ public:
      * Please take care: you must set all four modes before usage!
      */
     explicit AssignNameWidget(QWidget* const parent = nullptr);
-    ~AssignNameWidget();
+    ~AssignNameWidget() override;
 
     /**
      * Set the tag model to use for completion.
@@ -150,7 +154,7 @@ Q_SIGNALS:
     void assigned(const TaggingAction& action, const ItemInfo& info, const QVariant& faceIdentifier);
 
     /**
-     * The face has been reject and shall be removed.
+     * The suggestion has been rejected and the face will be moved to Unknown.
      * For convenience, info() and faceIdentifier() are provided.
      */
     void rejected(const ItemInfo& info, const QVariant& faceIdentifier);

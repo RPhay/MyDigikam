@@ -43,7 +43,7 @@ namespace Digikam
 {
 
 IccProfilesComboBox::IccProfilesComboBox(QWidget* const parent)
-    : SqueezedComboBox( parent )
+    : SqueezedComboBox(parent)
 {
 }
 
@@ -65,7 +65,7 @@ static QString profileUserString(const IccProfile& p)
 
     QString description = profile.description();
 
-    if (!description.isEmpty() && !fileName.isEmpty())
+    if      (!description.isEmpty() && !fileName.isEmpty())
     {
         return i18nc("<Profile Description> (<File Name>)", "%1 (%2)", description, fileName);
     }
@@ -186,14 +186,14 @@ void IccProfilesComboBox::setCurrentProfile(const IccProfile& profile)
 // ------------------------------------------------------------------------------------------
 
 IccProfilesMenuAction::IccProfilesMenuAction(const QIcon& icon, const QString& text, QObject* const parent)
-    : QMenu(text),
+    : QMenu   (text),
       m_parent(parent)
 {
     setIcon(icon);
 }
 
 IccProfilesMenuAction::IccProfilesMenuAction(const QString& text, QObject* const parent)
-    : QMenu(text),
+    : QMenu   (text),
       m_parent(parent)
 {
 }
@@ -262,32 +262,32 @@ QObject* IccProfilesMenuAction::parentObject() const
 IccRenderingIntentComboBox::IccRenderingIntentComboBox(QWidget* const parent)
     : QComboBox(parent)
 {
-    addItem(QLatin1String("Perceptual"), IccTransform::Perceptual);
-    addItem(QLatin1String("Relative Colorimetric"), IccTransform::RelativeColorimetric);
-    addItem(QLatin1String("Absolute Colorimetric"), IccTransform::AbsoluteColorimetric);
-    addItem(QLatin1String("Saturation"), IccTransform::Saturation);
-    setWhatsThis( i18n("<ul><li><p><b>Perceptual intent</b> causes the full gamut of the image to be "
-                       "compressed or expanded to fill the gamut of the destination device, so that gray balance is "
-                       "preserved but colorimetric accuracy may not be preserved.</p>"
-                       "<p>In other words, if certain colors in an image fall outside of the range of colors that the output "
-                       "device can render, the image intent will cause all the colors in the image to be adjusted so that "
-                       "the every color in the image falls within the range that can be rendered and so that the relationship "
-                       "between colors is preserved as much as possible.</p>"
-                       "<p>This intent is most suitable for display of photographs and images, and is the default intent.</p></li>"
-                       "<li><p><b>Absolute Colorimetric intent</b> causes any colors that fall outside the range that the output device "
-                       "can render to be adjusted to the closest color that can be rendered, while all other colors are "
-                       "left unchanged.</p>"
-                       "<p>This intent preserves the white point and is most suitable for spot colors (Pantone, TruMatch, "
-                       "logo colors, ....)</p></li>"
-                       "<li><p><b>Relative Colorimetric intent</b> is defined such that any colors that fall outside the range that the "
-                       "output device can render are adjusted to the closest color that can be rendered, while all other colors "
-                       "are left unchanged. Proof intent does not preserve the white point.</p></li>"
-                       "<li><p><b>Saturation intent</b> preserves the saturation of colors in the image at the possible expense of "
-                       "hue and lightness.</p>"
-                       "<p>Implementation of this intent remains somewhat problematic, and the ICC is still working on methods to "
-                       "achieve the desired effects.</p>"
-                       "<p>This intent is most suitable for business graphics such as charts, where it is more important that the "
-                       "colors be vivid and contrast well with each other rather than a specific color.</p></li></ul>"));
+    addItem(i18n("Perceptual"),            IccTransform::Perceptual);
+    addItem(i18n("Relative Colorimetric"), IccTransform::RelativeColorimetric);
+    addItem(i18n("Absolute Colorimetric"), IccTransform::AbsoluteColorimetric);
+    addItem(i18n("Saturation"),            IccTransform::Saturation);
+    setWhatsThis(i18n("<ul><li><p><b>Perceptual intent</b> causes the full gamut of the image to be "
+                      "compressed or expanded to fill the gamut of the destination device, so that gray balance is "
+                      "preserved but colorimetric accuracy may not be preserved.</p>"
+                      "<p>In other words, if certain colors in an image fall outside of the range of colors that the output "
+                      "device can render, the image intent will cause all the colors in the image to be adjusted so that "
+                      "the every color in the image falls within the range that can be rendered and so that the relationship "
+                      "between colors is preserved as much as possible.</p>"
+                      "<p>This intent is most suitable for display of photographs and images, and is the default intent.</p></li>"
+                      "<li><p><b>Absolute Colorimetric intent</b> causes any colors that fall outside the range that the output device "
+                      "can render to be adjusted to the closest color that can be rendered, while all other colors are "
+                      "left unchanged.</p>"
+                      "<p>This intent preserves the white point and is most suitable for spot colors (Pantone, TruMatch, "
+                      "logo colors, ....)</p></li>"
+                      "<li><p><b>Relative Colorimetric intent</b> is defined such that any colors that fall outside the range that the "
+                      "output device can render are adjusted to the closest color that can be rendered, while all other colors "
+                      "are left unchanged. Proof intent does not preserve the white point.</p></li>"
+                      "<li><p><b>Saturation intent</b> preserves the saturation of colors in the image at the possible expense of "
+                      "hue and lightness.</p>"
+                      "<p>Implementation of this intent remains somewhat problematic, and the ICC is still working on methods to "
+                      "achieve the desired effects.</p>"
+                      "<p>This intent is most suitable for business graphics such as charts, where it is more important that the "
+                      "colors be vivid and contrast well with each other rather than a specific color.</p></li></ul>"));
 }
 
 void IccRenderingIntentComboBox::setIntent(int intent)

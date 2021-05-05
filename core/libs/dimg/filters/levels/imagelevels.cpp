@@ -6,7 +6,7 @@
  * Date        : 2004-07-29
  * Description : image levels manipulation methods.
  *
- * Copyright (C) 2004-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2004-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -48,6 +48,7 @@
 // Local includes
 
 #include "digikam_debug.h"
+#include "digikam_config.h"
 #include "imagehistogram.h"
 #include "digikam_globals.h"
 
@@ -67,41 +68,41 @@ public:
         AlphaPixel
     };
 
-    struct _Levels
+    struct Q_DECL_HIDDEN _Levels
     {
-        double gamma[5];
+        double gamma[5]         = { 0.0 };
 
-        int    low_input[5];
-        int    high_input[5];
+        int    low_input[5]     = { 0 };
+        int    high_input[5]    = { 0 };
 
-        int    low_output[5];
-        int    high_output[5];
+        int    low_output[5]    = { 0 };
+        int    high_output[5]   = { 0 };
     };
 
-    struct _Lut
+    struct Q_DECL_HIDDEN _Lut
     {
-        unsigned short** luts;
-        int              nchannels;
+        unsigned short** luts      = nullptr;
+        int              nchannels = 0;
     };
 
 public:
 
     explicit Private()
-      : levels(nullptr),
-        lut(nullptr),
-        sixteenBit(false),
-        dirty(false)
+      : levels      (nullptr),
+        lut         (nullptr),
+        sixteenBit  (false),
+        dirty       (false)
     {
     }
 
     /// Levels data.
-    struct _Levels* levels;
+    _Levels* levels;
 
     /// Lut data.
-    struct _Lut*    lut;
+    _Lut*    lut;
 
-    bool            sixteenBit;
-    bool            dirty;
+    bool     sixteenBit;
+    bool     dirty;
 };
 
 ImageLevels::ImageLevels(bool sixteenBit)
@@ -110,8 +111,6 @@ ImageLevels::ImageLevels(bool sixteenBit)
     d->lut            = new Private::_Lut;
     d->levels         = new Private::_Levels;
     d->sixteenBit     = sixteenBit;
-
-    memset(d->levels, 0, sizeof(struct Private::_Levels));
     d->lut->luts      = nullptr;
     d->lut->nchannels = 0;
 
@@ -716,7 +715,15 @@ bool ImageLevels::loadLevelsFromGimpLevelsFile(const QUrl& fileUrl)
     char    buf[50];
     char*   nptr = nullptr;
 
-    file = fopen(QFile::encodeName(fileUrl.toLocalFile()).constData(), "r");
+#ifdef Q_OS_WIN
+
+    file = _wfopen((const wchar_t*)fileUrl.toLocalFile().utf16(), L"r");
+
+#else
+
+    file = fopen(fileUrl.toLocalFile().toUtf8().constData(), "r");
+
+#endif
 
     if (!file)
     {
@@ -789,7 +796,15 @@ bool ImageLevels::saveLevelsToGimpLevelsFile(const QUrl& fileUrl)
     FILE* file = nullptr;
     int   i;
 
-    file = fopen(QFile::encodeName(fileUrl.toLocalFile()).constData(), "w");
+#ifdef Q_OS_WIN
+
+    file = _wfopen((const wchar_t*)fileUrl.toLocalFile().utf16(), L"w");
+
+#else
+
+    file = fopen(fileUrl.toLocalFile().toUtf8().constData(), "w");
+
+#endif
 
     if (!file)
     {

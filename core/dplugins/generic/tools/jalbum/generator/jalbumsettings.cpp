@@ -33,7 +33,7 @@ JAlbumSettings::JAlbumSettings(DInfoInterface* const iface)
 {
     m_iface     = iface;
     m_getOption = IMAGES;
-    
+
     QString dfltAlbumPath;
 
 #ifdef Q_OS_WIN
@@ -55,8 +55,8 @@ JAlbumSettings::~JAlbumSettings()
 void JAlbumSettings::readSettings(KConfigGroup& group)
 {
     m_destPath            = group.readEntry("destPath",                 QString());
-    m_jalbumPath          = group.readEntry("jalbumPath",               QString());          
-    m_javaPath            = group.readEntry("javaPath",                 QString());        
+    m_jalbumPath          = group.readEntry("jalbumPath",               QString());
+    m_javaPath            = group.readEntry("javaPath",                 QString());
     m_imageSelectionTitle = group.readEntry("imageSelectionTitle",     QString());
     m_getOption           = (ImageGetOption)group.readEntry("SelMode", (int)IMAGES);
 }

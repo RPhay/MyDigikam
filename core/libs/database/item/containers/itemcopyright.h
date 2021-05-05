@@ -7,7 +7,7 @@
  * Description : Access to copy-right info of an item in the database
  *
  * Copyright (C) 2008-2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -22,8 +22,8 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_ITEM_COPYRIGHT_H
-#define DIGIKAM_ITEM_COPYRIGHT_H
+#ifndef DIGIKAM_ITEM_COPY_RIGHT_H
+#define DIGIKAM_ITEM_COPY_RIGHT_H
 
 // Qt includes
 
@@ -50,12 +50,10 @@ public:
 
     enum ReplaceMode
     {
-        /// Remove entries for all languages and add one new entry
-        ReplaceAllEntries,
-        /// Only replace the entry with the given language
-        ReplaceLanguageEntry,
-        /// No constraints on adding the entry
-        AddEntryToExisting
+        ReplaceAllEntries,         ///< Remove entries for all languages and add one new entry
+        ReplaceLanguageEntry,      ///< Only replace the entry with the given language
+        AddEntryToExisting         ///< No constraints on adding the entry
+
     };
 
 public:
@@ -173,10 +171,12 @@ public:
      * this is regarded as an entry for the default language (&ldquo;x-default&rdquo;).
      * The ReplaceMode determines how existing entries are handled.
      */
-    void setCopyrightNotice(const QString& notice, const QString& languageCode = QString(),
+    void setCopyrightNotice(const QString& notice,
+                            const QString& languageCode = QString(),
                             ReplaceMode mode = ReplaceLanguageEntry);
 
-    void setRights(const QString& notice, const QString& languageCode = QString(),
+    void setRights(const QString& notice,
+                   const QString& languageCode = QString(),
                    ReplaceMode mode = ReplaceLanguageEntry)
     {
         setCopyrightNotice(notice, languageCode, mode);
@@ -194,7 +194,8 @@ public:
     QString rightsUsageTerms(const QString& languageCode = QString());
     MetaEngine::AltLangMap allRightsUsageTerms();
 
-    void setRightsUsageTerms(const QString& term, const QString& languageCode = QString(),
+    void setRightsUsageTerms(const QString& term,
+                             const QString& languageCode = QString(),
                              ReplaceMode mode = ReplaceLanguageEntry);
 
     void removeRightsUsageTerms();
@@ -231,7 +232,7 @@ public:
         return creatorJobTitle();
     }
 
-    QString byLineTitle() const
+    QString byLineTitle()     const
     {
         return creatorJobTitle();
     }
@@ -300,15 +301,20 @@ public:
 
 protected:
 
-    CopyrightInfo copyrightInfo(const QString& property)                                 const;
-    QList<CopyrightInfo> copyrightInfos(const QString& property)                         const;
-    QString readSimpleProperty(const QString& property)                                  const;
-    int     languageMatch(const QList<CopyrightInfo> infos, const QString& languageCode) const;
+    CopyrightInfo copyrightInfo(const QString& property)                                  const;
+    QList<CopyrightInfo> copyrightInfos(const QString& property)                          const;
+    QString readSimpleProperty(const QString& property)                                   const;
+    int     languageMatch(const QList<CopyrightInfo>& infos, const QString& languageCode) const;
 
     void    setSimpleProperty(const QString& property, const QString& value);
     QString readLanguageProperty(const QString& property, const QString& languageCode);
     MetaEngine::AltLangMap readLanguageProperties(const QString& property);
-    void    setLanguageProperty(const QString& property, const QString& value, const QString& languageCode, ReplaceMode mode);
+
+    void    setLanguageProperty(const QString& property,
+                                const QString& value,
+                                const QString& languageCode,
+                                ReplaceMode mode);
+
     void    removeProperties(const QString& property);
     void    removeLanguageProperty(const QString& property, const QString& languageCode);
 
@@ -322,4 +328,4 @@ protected:
 
 } // namespace Digikam
 
-#endif // DIGIKAM_ITEM_COPYRIGHT_H
+#endif // DIGIKAM_ITEM_COPY_RIGHT_H

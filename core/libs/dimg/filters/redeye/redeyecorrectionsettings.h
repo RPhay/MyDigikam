@@ -6,7 +6,7 @@
  * Date        : 2010-02-09
  * Description : Red Eyes auto correction settings view.
  *
- * Copyright (C) 2010-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2010-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2016      by Omar Amin <Omar dot moh dot amin at gmail dot com>
  *
  * This program is free software; you can redistribute it
@@ -45,8 +45,8 @@ class DIGIKAM_EXPORT RedEyeCorrectionSettings : public QWidget
 
 public:
 
-    explicit RedEyeCorrectionSettings(QWidget* const parent=nullptr);
-    ~RedEyeCorrectionSettings();
+    explicit RedEyeCorrectionSettings(QWidget* const parent = nullptr);
+    ~RedEyeCorrectionSettings()                       override;
 
     RedEyeCorrectionContainer defaultSettings() const;
     void resetToDefault();

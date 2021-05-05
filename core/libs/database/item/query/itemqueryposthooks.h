@@ -7,7 +7,7 @@
  * Description : database SQL queries helper class
  *
  * Copyright (C) 2007-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2012-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -41,14 +41,17 @@ class Q_DECL_HIDDEN ItemQueryPostHook
 public:
 
     /// This is the single hook, ItemQueryPostHookS is the container
-    virtual ~ItemQueryPostHook()
-    {
-    };
+    ItemQueryPostHook()          = default;
+    virtual ~ItemQueryPostHook() = default;
 
     virtual bool checkPosition(double /*latitudeNumber*/, double /*longitudeNumber*/)
     {
         return true;
     };
+
+private:
+
+    Q_DISABLE_COPY(ItemQueryPostHook)
 };
 
 // --------------------------------------------------------------------

@@ -8,7 +8,7 @@
  *
  * Copyright (C) 2010      by Aditya Bhatt <adityabhatt1991 at gmail dot com>
  * Copyright (C) 2010-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2012-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -50,6 +50,7 @@
 #include "albummanager.h"
 #include "albumtreeview.h"
 #include "facetagsiface.h"
+#include "facetags.h"
 #include "dimg.h"
 #include "iteminfo.h"
 #include "thememanager.h"
@@ -66,6 +67,14 @@ public:
 
     void         updateModes();
     void         updateContents();
+
+    /**
+     * Reject button shows different Tooltips for
+     * Unconfirmed and Unknown faces, however both
+     * are of type UnconfirmedEditMode.
+     * This method is responsible for the Tooltip updates.
+     */
+    void         updateRejectButtonTooltip();
 
     bool         isValid()                                        const;
 

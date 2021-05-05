@@ -6,7 +6,7 @@
  * Date        : 2008-07-30
  * Description : digiKam about data.
  *
- * Copyright (C) 2008-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2008-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -59,7 +59,7 @@ const QString DAboutData::digiKamSloganFormated()
                  "<i>%1</i>"
                  "</font></qt>",
                  digiKamFamily()
-                 );
+                );
 }
 
 const QString DAboutData::digiKamSlogan()
@@ -74,7 +74,7 @@ const QString DAboutData::digiKamFamily()
 
 const QString DAboutData::copyright()
 {
-    return i18n("(c) 2002-2020, digiKam developers team");
+    return i18n("(c) 2001-2021, digiKam developers team");
 }
 
 const QUrl DAboutData::webProjectUrl()
@@ -92,16 +92,16 @@ void DAboutData::authorsRegistration(KAboutData& aboutData)
                           QLatin1String("https://www.linkedin.com/in/gilles-caulier/")
                         );
 
-    aboutData.addAuthor ( ki18n("Marcel Wiesweg").toString(),
-                          ki18n("Developer and Mentoring").toString(),
-                          QLatin1String("marcel dot wiesweg at gmx dot de"),
-                          QLatin1String("https://www.facebook.com/marcel.wiesweg")
-                        );
-
     aboutData.addAuthor ( ki18n("Maik Qualmann").toString(),
                           ki18n("Developer and Mentoring").toString(),
                           QLatin1String("metzpinguin at gmail dot com"),
                           QLatin1String("https://www.linkedin.com/in/maik-qualmann-2b266717b/")
+                        );
+
+    aboutData.addAuthor ( ki18n("Marcel Wiesweg").toString(),
+                          ki18n("Developer and Mentoring").toString(),
+                          QLatin1String("marcel dot wiesweg at gmx dot de"),
+                          QLatin1String("https://www.facebook.com/marcel.wiesweg")
                         );
 
     aboutData.addAuthor ( ki18n("Mohamed Anwer").toString(),                                    // krazy:exclude=spelling
@@ -113,13 +113,20 @@ void DAboutData::authorsRegistration(KAboutData& aboutData)
     aboutData.addAuthor ( ki18n("Michael G. Hansen").toString(),
                           ki18n("Developer and Mentoring").toString(),
                           QLatin1String("mike at mghansen dot de"),
-                          QLatin1String("http://www.mghansen.de")
+                          QLatin1String("http://www.mghansen.de")           // krazy:exclude=insecurenet
                         );
 
     aboutData.addAuthor ( ki18n("Teemu Rytilahti").toString(),
                           ki18n("Developer").toString(),
                           QLatin1String("tpr at iki dot fi"),
                           QLatin1String("https://www.linkedin.com/in/teemurytilahti/")
+                        );
+
+    aboutData.addAuthor ( ki18n("Thanh Trung Dinh").toString(),
+                          ki18n("Mentoring, Port web-service tools to OAuth, factoring web service tools, "
+                                "and port faces recognition engine to OpenCV neural network").toString(),
+                          QLatin1String("dinhthanhtrung1996 at gmail dot com"),
+                          QLatin1String("https://www.linkedin.com/in/thanhtrungdinh/")
                         );
 
     // -- Contributors -----------------------------------------------------------
@@ -149,11 +156,18 @@ void DAboutData::authorsRegistration(KAboutData& aboutData)
 
     // -- Students ---------------------------------------------------------------
 
-    aboutData.addCredit ( ki18n("Thanh Trung Dinh").toString(),
-                          ki18n("Port web-service tools to OAuth, factoring web service tools, "
-                                "and port faces recognition engine to OpenCV neural network").toString(),
-                          QLatin1String("dinhthanhtrung1996 at gmail dot com"),
-                          QLatin1String("https://www.linkedin.com/in/thanhtrungdinh/")
+
+    aboutData.addCredit ( ki18n("Minh Nghĩa Duong").toString(),
+                          ki18n("Clustering support and improvement for Face Engine, "
+                                "Port Slideshow tool to plugins interface").toString(),
+                          QLatin1String("minhnghiaduong997 at gmail dot com"),
+                          QLatin1String("https://www.linkedin.com/in/minh-nghia-duong-2b5bbb15a/")
+                        );
+
+    aboutData.addCredit ( ki18n("Kartik Ramesh").toString(),
+                          ki18n("Face management workflow improvements").toString(),
+                          QLatin1String("kartikx2000 at gmail dot com"),
+                          QLatin1String("https://www.linkedin.com/in/kartikxramesh/")
                         );
 
     aboutData.addCredit ( ki18n("Ahmed Fathi").toString(),
@@ -400,7 +414,7 @@ void DAboutData::authorsRegistration(KAboutData& aboutData)
     // -- Former Members ---------------------------------------------------------
 
     aboutData.addAuthor ( ki18n("Renchi Raju").toString(),
-                          ki18n("Developer (2002-2005)").toString(),
+                          ki18n("Developer (2001-2005)").toString(),
                           QLatin1String("renchi dot raju at gmail dot com"),
                           QLatin1String("https://www.facebook.com/renchi.raju")
                         );
@@ -408,7 +422,7 @@ void DAboutData::authorsRegistration(KAboutData& aboutData)
     aboutData.addAuthor ( ki18n("Joern Ahrens").toString(),
                           ki18n("Developer (2004-2005)").toString(),
                           QLatin1String("kde at jokele dot de"),
-                          QLatin1String("http://www.jokele.de/")
+                          QLatin1String("http://www.jokele.de/")        // krazy:exclude=insecurenet
                         );
 
     aboutData.addAuthor ( ki18n("Tom Albers").toString(),

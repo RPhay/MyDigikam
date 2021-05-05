@@ -7,7 +7,7 @@
  * Description : a tool to export images to Flickr web service
  *
  * Copyright (C) 2005-2008 by Vardhman Jain <vardhman at gmail dot com>
- * Copyright (C) 2008-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2008-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2009      by Luka Renko <lure at kubuntu dot org>
  *
  * This program is free software; you can redistribute it
@@ -31,11 +31,12 @@ FlickrWidget::FlickrWidget(QWidget* const parent,
                            DInfoInterface* const iface,
                            const QString& serviceName)
     : WSSettingsWidget(parent, iface, serviceName),
-      d(new Private)
+      d               (new Private)
 {
     d->serviceName         = serviceName;
 
-    //Adding Remove Account button
+    // Adding Remove Account button
+
     d->removeAccount       = new QPushButton(getAccountBox());
     d->removeAccount->setText(i18n("Remove Account"));
     getAccountBoxLayout()->addWidget(d->removeAccount, 2, 0, 1, 4);
@@ -45,13 +46,18 @@ FlickrWidget::FlickrWidget(QWidget* const parent,
     d->imglst              = new FlickrList(this);
 
     // For figuring out the width of the permission columns.
+
     QHeaderView* const hdr = d->imglst->listView()->header();
     QFontMetrics hdrFont   = QFontMetrics(hdr->font());
 
 #if (QT_VERSION >= QT_VERSION_CHECK(5, 11, 0))
+
     int permColWidth       = hdrFont.horizontalAdvance(i18nc("photo permissions", "Public"));
+
 #else
+
     int permColWidth       = hdrFont.width(i18nc("photo permissions", "Public"));
+
 #endif
 
     d->imglst->setAllowRAW(true);
@@ -62,25 +68,36 @@ FlickrWidget::FlickrWidget(QWidget* const parent,
     d->imglst->listView()->setColumn(static_cast<DItemsListView::ColumnType>(FlickrList::PUBLIC), i18nc("photo permissions", "Public"), true);
 
     // Handle extra tags per image.
+
     d->imglst->listView()->setColumn(static_cast<DItemsListView::ColumnType>(FlickrList::TAGS),
                                     i18n("Extra tags"), true);
 
     int tmpWidth;
 
 #if (QT_VERSION >= QT_VERSION_CHECK(5, 11, 0))
+
     if ((tmpWidth = hdrFont.horizontalAdvance(i18nc("photo permissions", "Family"))) > permColWidth)
+
 #else
+
     if ((tmpWidth = hdrFont.width(i18nc("photo permissions", "Family"))) > permColWidth)
+
 #endif
+
     {
         permColWidth = tmpWidth;
     }
 
 #if (QT_VERSION >= QT_VERSION_CHECK(5, 11, 0))
+
     if ((tmpWidth = hdrFont.horizontalAdvance(i18nc("photo permissions", "Friends"))) > permColWidth)
+
 #else
+
     if ((tmpWidth = hdrFont.width(i18nc("photo permissions", "Friends"))) > permColWidth)
+
 #endif
+
     {
         permColWidth = tmpWidth;
     }
@@ -120,27 +137,29 @@ FlickrWidget::FlickrWidget(QWidget* const parent,
 
     // -- Layout for the tags -------------------------------------------------
 
-    QGroupBox* const tagsBox         = new QGroupBox(i18n("Tag options"), getSettingsBox());
-    QGridLayout* const tagsBoxLayout = new QGridLayout(tagsBox);
+    QGroupBox* const tagsBox          = new QGroupBox(i18n("Tag options"), getSettingsBox());
+    QGridLayout* const tagsBoxLayout  = new QGridLayout(tagsBox);
 
     d->exportHostTagsCheckBox         = new QCheckBox(tagsBox);
     d->exportHostTagsCheckBox->setText(i18n("Use Host Application Tags"));
 
     d->extendedTagsButton             = new QPushButton(i18n("More tag options"));
     d->extendedTagsButton->setCheckable(true);
+
     // Initialize this button to checked, so extended options are shown.
     // FlickrWindow::readSettings can change this, but if checked is false it
     // cannot uncheck and subsequently hide the extended options (the toggled
     // signal won't be emitted).
+
     d->extendedTagsButton->setChecked(true);
     d->extendedTagsButton->setSizePolicy(QSizePolicy::Maximum,
                                         QSizePolicy::Preferred);
 
     d->extendedTagsBox               = new QGroupBox(QLatin1String(""), getSettingsBox());
     d->extendedTagsBox->setFlat(true);
-    QGridLayout* extendedTagsLayout = new QGridLayout(d->extendedTagsBox);
+    QGridLayout* extendedTagsLayout  = new QGridLayout(d->extendedTagsBox);
 
-    QLabel* const tagsLabel         = new QLabel(i18n("Added Tags: "), d->extendedTagsBox);
+    QLabel* const tagsLabel          = new QLabel(i18n("Added Tags: "), d->extendedTagsBox);
     d->tagsLineEdit                  = new QLineEdit(d->extendedTagsBox);
     d->tagsLineEdit->setToolTip(i18n("Enter new tags here, separated by commas."));
     d->addExtraTagsCheckBox          = new QCheckBox(d->extendedTagsBox);
@@ -151,7 +170,7 @@ FlickrWidget::FlickrWidget(QWidget* const parent,
     d->stripSpaceTagsCheckBox        = new QCheckBox(d->extendedTagsBox);
     d->stripSpaceTagsCheckBox->setText(i18n("Strip Spaces From Tags"));
 
-    extendedTagsLayout->addWidget(tagsLabel,                0, 0);
+    extendedTagsLayout->addWidget(tagsLabel,                 0, 0);
     extendedTagsLayout->addWidget(d->tagsLineEdit,           0, 1);
     extendedTagsLayout->addWidget(d->stripSpaceTagsCheckBox, 1, 0, 1, 2);
     extendedTagsLayout->addWidget(d->addExtraTagsCheckBox,   2, 0, 1, 2);
@@ -176,12 +195,15 @@ FlickrWidget::FlickrWidget(QWidget* const parent,
     d->friendsCheckBox->setText(i18n("Visible to Friends"));
 
     // Extended publication settings
+
     d->extendedPublicationButton = new QPushButton(i18n("More publication options"));
     d->extendedPublicationButton->setCheckable(true);
+
     // Initialize this button to checked, so extended options are shown.
     // FlickrWindow::readSettings can change this, but if checked is false it
     // cannot uncheck and subsequently hide the extended options (the toggled
     // signal won't be emitted).
+
     d->extendedPublicationButton->setChecked(true);
     d->extendedPublicationButton->setSizePolicy(QSizePolicy::Maximum, QSizePolicy::Preferred);
 
@@ -220,10 +242,12 @@ FlickrWidget::FlickrWidget(QWidget* const parent,
     addWidgetToSettingsBox(tagsBox);
 
     // hiding widgets not required.
+
     getUploadBox()->hide();
     getSizeBox()->hide();
 
     // Removing DItemsList inherited from WSSettingsWidget and replacing it with more specific FlickrList
+
     replaceImageList(d->imglst);
 
     updateLabels();
@@ -269,7 +293,7 @@ FlickrWidget::~FlickrWidget()
 
 void FlickrWidget::updateLabels(const QString& /*name*/, const QString& /*url*/)
 {
-    getHeaderLbl()->setText(i18n("<b><h2><a href='http://www.flickr.com'>"
+    getHeaderLbl()->setText(i18n("<b><h2><a href='https://www.flickr.com'>"
                                  "<font color=\"#0065DE\">flick</font>"
                                  "<font color=\"#FF0084\">r</font></a>"
                                  " Export"
@@ -278,17 +302,20 @@ void FlickrWidget::updateLabels(const QString& /*name*/, const QString& /*url*/)
 
 void FlickrWidget::slotPermissionChanged(FlickrList::FieldType checkbox, Qt::CheckState state)
 {
-    /* Slot for handling the signal from the FlickrList that the general
+    /*
+     * Slot for handling the signal from the FlickrList that the general
      * permissions have changed, considering the clicks in the checkboxes next
      * to each image. In response, the main permission checkboxes should be set
      * to the proper state.
      * The checkbox variable determines which of the checkboxes should be
-     * changed. */
+     * changed.
+     */
 
     // Select the proper checkbox.
+
     QCheckBox* currBox = nullptr;
 
-    if (checkbox == FlickrList::PUBLIC)
+    if      (checkbox == FlickrList::PUBLIC)
     {
         currBox = d->publicCheckBox;
     }
@@ -304,6 +331,7 @@ void FlickrWidget::slotPermissionChanged(FlickrList::FieldType checkbox, Qt::Che
     // If the checkbox should be set in the intermediate state, the tristate
     // property of the checkbox should be manually set to true, otherwise, it
     // has to be set to false so that the user cannot select it.
+
     currBox->setCheckState(state);
 
     if ((state == Qt::Checked) || (state == Qt::Unchecked))
@@ -318,9 +346,12 @@ void FlickrWidget::slotPermissionChanged(FlickrList::FieldType checkbox, Qt::Che
 
 void FlickrWidget::slotSafetyLevelChanged(FlickrList::SafetyLevel safetyLevel)
 {
-    /* Called when the general safety level of the FlickrList has changed,
+    /*
+     * Called when the general safety level of the FlickrList has changed,
      * considering the individual comboboxes next to the photos. Used to set the
-     * main safety level combobox appropriately. */
+     * main safety level combobox appropriately.
+     */
+
     if (safetyLevel == FlickrList::MIXEDLEVELS)
     {
         d->safetyLevelComboBox->setIntermediate(true);
@@ -334,9 +365,12 @@ void FlickrWidget::slotSafetyLevelChanged(FlickrList::SafetyLevel safetyLevel)
 
 void FlickrWidget::slotContentTypeChanged(FlickrList::ContentType contentType)
 {
-    /* Called when the general content type of the FlickrList has changed,
+    /*
+     * Called when the general content type of the FlickrList has changed,
      * considering the individual comboboxes next to the photos. Used to set the
-     * main content type combobox appropriately. */
+     * main content type combobox appropriately.
+     */
+
     if (contentType == FlickrList::MIXEDTYPES)
     {
         d->contentTypeComboBox->setIntermediate(true);
@@ -365,13 +399,16 @@ void FlickrWidget::slotMainFriendsToggled(int state)
 
 void FlickrWidget::mainPermissionToggled(FlickrList::FieldType checkbox, Qt::CheckState state)
 {
-    /* Callback for when one of the main permission checkboxes is toggled.
-     * checkbox specifies which of the checkboxes is toggled. */
+    /*
+     * Callback for when one of the main permission checkboxes is toggled.
+     * checkbox specifies which of the checkboxes is toggled.
+     */
 
     if (state != Qt::PartiallyChecked)
     {
         // Set the states for the image list.
-        if (checkbox == FlickrList::PUBLIC)
+
+        if      (checkbox == FlickrList::PUBLIC)
         {
             d->imglst->setPublic(state);
         }
@@ -386,9 +423,10 @@ void FlickrWidget::mainPermissionToggled(FlickrList::FieldType checkbox, Qt::Che
 
         // Dis- or enable the family and friends checkboxes if the public
         // checkbox is clicked.
+
         if (checkbox == 0)
         {
-            if (state == Qt::Checked)
+            if      (state == Qt::Checked)
             {
                 d->familyCheckBox->setEnabled(false);
                 d->friendsCheckBox->setEnabled(false);
@@ -402,7 +440,8 @@ void FlickrWidget::mainPermissionToggled(FlickrList::FieldType checkbox, Qt::Che
 
         // Set the main checkbox tristate state to false, so that the user
         // cannot select the intermediate state.
-        if (checkbox == FlickrList::PUBLIC)
+
+        if      (checkbox == FlickrList::PUBLIC)
         {
             d->publicCheckBox->setTristate(false);
         }
@@ -420,14 +459,18 @@ void FlickrWidget::mainPermissionToggled(FlickrList::FieldType checkbox, Qt::Che
 void FlickrWidget::slotMainSafetyLevelChanged(int index)
 {
     int currValue = (d->safetyLevelComboBox->itemData(index)).value<int>();
-//     int currValue = qVariantValue<int>(d->safetyLevelComboBox->itemData(index));
+/*
+     int currValue = qVariantValue<int>(d->safetyLevelComboBox->itemData(index));
+*/
     d->imglst->setSafetyLevels(static_cast<FlickrList::SafetyLevel>(currValue));
 }
 
 void FlickrWidget::slotMainContentTypeChanged(int index)
 {
     int currValue = (d->contentTypeComboBox->itemData(index)).value<int>();
-//     int currValue = qVariantValue<int>(d->contentTypeComboBox->itemData(index));
+/*
+     int currValue = qVariantValue<int>(d->contentTypeComboBox->itemData(index));
+*/
     d->imglst->setContentTypes(static_cast<FlickrList::ContentType>(currValue));
 }
 
@@ -435,6 +478,7 @@ void FlickrWidget::slotExtendedPublicationToggled(bool status)
 {
     // Show or hide the extended settings when the extended settings button
     // is toggled.
+
     d->extendedPublicationBox->setVisible(status);
     d->imglst->listView()->setColumnHidden(FlickrList::SAFETYLEVEL, !status);
     d->imglst->listView()->setColumnHidden(FlickrList::CONTENTTYPE, !status);
@@ -453,6 +497,7 @@ void FlickrWidget::slotExtendedTagsToggled(bool status)
 {
     // Show or hide the extended tag settings when the extended tag option
     // button is toggled.
+
     d->extendedTagsBox->setVisible(status);
 
     if (!status)

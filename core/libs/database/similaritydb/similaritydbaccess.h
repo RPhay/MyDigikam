@@ -31,17 +31,17 @@
 
 #include "digikam_export.h"
 #include "dbengineparameters.h"
-#include "dbengineerrorhandler.h"
 
 namespace Digikam
 {
 
+class DbEngineErrorHandler;
 class InitializationObserver;
 class SimilarityDb;
 class SimilarityDbAccessStaticPriv;
 class SimilarityDbBackend;
 
-class DIGIKAM_EXPORT SimilarityDbAccess
+class DIGIKAM_DATABASE_EXPORT SimilarityDbAccess
 {
 public:
 

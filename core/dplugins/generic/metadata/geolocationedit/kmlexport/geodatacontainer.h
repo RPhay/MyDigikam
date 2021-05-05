@@ -6,7 +6,7 @@
  * Date        : 2006-09-19
  * Description : Geolocation data container.
  *
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -23,6 +23,8 @@
 #ifndef DIGIKAM_GEO_DATA_CONTAINER_H
 #define DIGIKAM_GEO_DATA_CONTAINER_H
 
+// Qt includes
+
 #include <QStringList>
 #include <QMetaType>
 
@@ -35,9 +37,9 @@ public:
 
     GeoDataContainer()
         : m_interpolated(false),
-          m_altitude(0.0),
-          m_latitude(0.0),
-          m_longitude(0.0)
+          m_altitude    (0.0),
+          m_latitude    (0.0),
+          m_longitude   (0.0)
     {
     };
 
@@ -46,9 +48,9 @@ public:
                      double longitude,
                      bool interpolated)
         : m_interpolated(interpolated),
-          m_altitude(altitude),
-          m_latitude(latitude),
-          m_longitude(longitude)
+          m_altitude    (altitude),
+          m_latitude    (latitude),
+          m_longitude   (longitude)
     {
     };
 
@@ -76,11 +78,14 @@ public:
 
     // use this instead of '==', because '==' implies having the
     // same value for m_interpolated
+
     bool sameCoordinatesAs(const GeoDataContainer& a) const
     {
-        return ( a.m_altitude  == m_altitude ) &&
-               ( a.m_latitude  == m_latitude ) &&
-               ( a.m_longitude == m_longitude);
+        return (
+                (a.m_altitude  == m_altitude) &&
+                (a.m_latitude  == m_latitude) &&
+                (a.m_longitude == m_longitude)
+               );
     }
 
     void setInterpolated(bool ite)  { m_interpolated = ite; };
@@ -108,13 +113,17 @@ public:
     static GeoDataContainer fromGeoUrl(const QString& url, bool* const parsedOkay)
     {
         // parse geo:-uri according to (only partially implemented):
-        // http://tools.ietf.org/html/draft-ietf-geopriv-geo-uri-04
+        // https://tools.ietf.org/html/draft-ietf-geopriv-geo-uri-04
         // TODO: verify that we follow the spec fully!
+
         if (!url.startsWith(QLatin1String("geo:")))
         {
             // TODO: error
+
             if (parsedOkay)
+            {
                 *parsedOkay = false;
+            }
 
             return GeoDataContainer();
         }
@@ -131,14 +140,19 @@ public:
             double ptLatitude  = parts[0].toDouble(&okay);
 
             if (okay)
+            {
                 ptLongitude = parts[1].toDouble(&okay);
+            }
 
             if (okay&&(parts.size()==3))
+            {
                 ptAltitude = parts[2].toDouble(&okay);
+            }
 
             if (!okay)
             {
                 *parsedOkay = false;
+
                 return GeoDataContainer();
             }
 
@@ -147,13 +161,17 @@ public:
         else
         {
             if (parsedOkay)
+            {
                 *parsedOkay = false;
+            }
 
             return GeoDataContainer();
         }
 
         if (parsedOkay)
-                *parsedOkay = true;
+        {
+            *parsedOkay = true;
+        }
 
         return position;
     }

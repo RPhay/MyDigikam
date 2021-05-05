@@ -6,7 +6,7 @@
  * Date        : 2018-07-30
  * Description : image editor plugin to blur an image
  *
- * Copyright (C) 2018-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2018-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -49,7 +49,7 @@ BlurToolPlugin::~BlurToolPlugin()
 
 QString BlurToolPlugin::name() const
 {
-    return i18n("Blur");
+    return i18nc("@title", "Blur");
 }
 
 QString BlurToolPlugin::iid() const
@@ -64,12 +64,12 @@ QIcon BlurToolPlugin::icon() const
 
 QString BlurToolPlugin::description() const
 {
-    return i18n("A tool to blur an image");
+    return i18nc("@info", "A tool to blur an image");
 }
 
 QString BlurToolPlugin::details() const
 {
-    return i18n("<p>This Image Editor tool can blur an image.</p>");
+    return i18nc("@info", "This Image Editor tool can blur an image.");
 }
 
 QList<DPluginAuthor> BlurToolPlugin::authors() const
@@ -80,7 +80,7 @@ QList<DPluginAuthor> BlurToolPlugin::authors() const
                              QString::fromUtf8("(C) 2009"))
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2004-2020"))
+                             QString::fromUtf8("(C) 2004-2021"))
             ;
 }
 

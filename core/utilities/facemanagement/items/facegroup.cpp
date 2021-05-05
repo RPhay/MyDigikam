@@ -8,7 +8,7 @@
  *
  * Copyright (C) 2010      by Aditya Bhatt <adityabhatt1991 at gmail dot com>
  * Copyright (C) 2010-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2012-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -143,7 +143,7 @@ void FaceGroup::setVisibleItem(RegionFrameItem* item)
 
 void FaceGroup::setInfo(const ItemInfo& info)
 {
-    if (d->info == info && d->state != NoFaces)
+    if ((d->info == info) && (d->state != NoFaces))
     {
         return;
     }
@@ -310,7 +310,10 @@ void FaceGroup::load()
         return;
     }
 
-    d->state = LoadingFaces;
+    d->state      = LoadingFaces;
+    d->exifRotate = (MetaEngineSettings::instance()->settings().exifRotate            ||
+                     ((d->view->previewItem()->image().detectedFormat() == DImg::RAW) &&
+                      !d->view->previewItem()->image().attribute(QLatin1String("fromRawEmbeddedPreview")).toBool()));
 
     if (d->info.isNull())
     {
@@ -319,7 +322,6 @@ void FaceGroup::load()
         return;
     }
 
-    d->exifRotate              = MetaEngineSettings::instance()->settings().exifRotate;
     QList<FaceTagsIface> faces = FaceTagsEditor().databaseFaces(d->info.id());
     d->visibilityController->clear();
 
@@ -404,7 +406,14 @@ void FaceGroup::slotAlbumRenamed(Album* album)
 
 void FaceGroup::slotAssigned(const TaggingAction& action, const ItemInfo&, const QVariant& faceIdentifier)
 {
-    FaceItem* const item    = d->items[faceIdentifier.toInt()];
+   QList<QVariant> faceList(faceIdentifier.toList());
+
+    if (faceList.size() != 5)
+    {
+        return;
+    }
+
+    FaceItem* const item    = d->items[faceList[4].toInt()];
     FaceTagsIface face      = item->face();
     TagRegion currentRegion = TagRegion(item->originalRect());
 
@@ -453,17 +462,27 @@ void FaceGroup::slotAssigned(const TaggingAction& action, const ItemInfo&, const
 
 void FaceGroup::slotRejected(const ItemInfo&, const QVariant& faceIdentifier)
 {
-    FaceItem* const item = d->items[faceIdentifier.toInt()];
-    d->editPipeline.remove(d->info, item->face());
+    QList<QVariant> faceList(faceIdentifier.toList());
 
-    item->setFace(FaceTagsIface());
-    d->visibilityController->hideAndRemoveItem(item);
+    if (faceList.size() == 5)
+    {
+        FaceItem* const item = d->items[faceList[4].toInt()];
+        d->editPipeline.remove(d->info, item->face());
+
+        item->setFace(FaceTagsIface());
+        d->visibilityController->hideAndRemoveItem(item);
+    }
 }
 
 void FaceGroup::slotLabelClicked(const ItemInfo&, const QVariant& faceIdentifier)
 {
-    FaceItem* const item = d->items[faceIdentifier.toInt()];
-    item->switchMode(AssignNameWidget::ConfirmedEditMode);
+    QList<QVariant> faceList(faceIdentifier.toList());
+
+    if (faceList.size() == 5)
+    {
+        FaceItem* const item = d->items[faceList[4].toInt()];
+        item->switchMode(AssignNameWidget::ConfirmedEditMode);
+    }
 }
 
 void FaceGroup::startAutoSuggest()

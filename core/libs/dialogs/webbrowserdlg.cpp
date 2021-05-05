@@ -6,7 +6,7 @@
  * Date        : 2017-06-21
  * Description : a simple web browser dialog based on Qt WebEngine.
  *
- * Copyright (C) 2017-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2017-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -76,9 +76,13 @@ public:
     QUrl               home;
 
 #ifdef HAVE_QWEBENGINE
+
     QWebEngineView*    browser;
+
 #else
+
     QWebView*          browser;
+
 #endif
 
     QToolBar*          toolbar;
@@ -91,15 +95,21 @@ WebBrowserDlg::WebBrowserDlg(const QUrl& url, QWidget* const parent, bool hideDe
       d(new Private)
 {
     setModal(false);
+    setAttribute(Qt::WA_DeleteOnClose, true);
+
     d->home    = url;
 
 #ifdef HAVE_QWEBENGINE
+
     d->browser = new QWebEngineView(this);
     d->browser->page()->profile()->cookieStore()->deleteAllCookies();
+
 #else
+
     d->browser = new QWebView(this);
     d->browser->settings()->setAttribute(QWebSettings::LocalStorageEnabled, true);
     d->browser->page()->networkAccessManager()->setCookieJar(new QNetworkCookieJar());
+
 #endif
 
     // --------------------------
@@ -108,15 +118,19 @@ WebBrowserDlg::WebBrowserDlg(const QUrl& url, QWidget* const parent, bool hideDe
     d->toolbar->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
 
 #ifdef HAVE_QWEBENGINE
+
     d->toolbar->addAction(d->browser->pageAction(QWebEnginePage::Back));
     d->toolbar->addAction(d->browser->pageAction(QWebEnginePage::Forward));
     d->toolbar->addAction(d->browser->pageAction(QWebEnginePage::Reload));
     d->toolbar->addAction(d->browser->pageAction(QWebEnginePage::Stop));
+
 #else
+
     d->toolbar->addAction(d->browser->pageAction(QWebPage::Back));
     d->toolbar->addAction(d->browser->pageAction(QWebPage::Forward));
     d->toolbar->addAction(d->browser->pageAction(QWebPage::Reload));
     d->toolbar->addAction(d->browser->pageAction(QWebPage::Stop));
+
 #endif
 
     QAction* const gohome  = new QAction(QIcon::fromTheme(QLatin1String("go-home")),
@@ -157,10 +171,8 @@ WebBrowserDlg::WebBrowserDlg(const QUrl& url, QWidget* const parent, bool hideDe
 
     // ----------------------
 /*
-#if QT_VERSION >= 0x050700
     connect(d->browser, SIGNAL(iconChanged(const QIcon&)),
             this, SLOT(slotIconChanged(const QIcon&)));
-#endif
 */
     connect(d->browser, SIGNAL(titleChanged(QString)),
             this, SLOT(slotTitleChanged(QString)));
@@ -248,16 +260,20 @@ void WebBrowserDlg::slotLoadingFinished(bool b)
 void WebBrowserDlg::slotSearchTextChanged(const SearchTextSettings& settings)
 {
 #ifdef HAVE_QWEBENGINE
+
     d->browser->findText(settings.text,
                          (settings.caseSensitive == Qt::CaseSensitive) ? QWebEnginePage::FindCaseSensitively
                                                                        : QWebEnginePage::FindFlags(),
                          [this](bool found) { d->searchbar->slotSearchResult(found); });
+
 #else
+
     bool found = d->browser->findText(
                     settings.text,
-                    (settings.caseSensitive == Qt::CaseInsensitive) ? QWebPage::FindCaseSensitively 
+                    (settings.caseSensitive == Qt::CaseInsensitive) ? QWebPage::FindCaseSensitively
                                                                     : QWebPage::FindFlags());
     d->searchbar->slotSearchResult(found);
+
 #endif
 }
 

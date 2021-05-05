@@ -6,7 +6,7 @@
  * Date        : 2004-07-09
  * Description : a tool to blur an image
  *
- * Copyright (C) 2004-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2004-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2009      by Andi Clemens <andi dot clemens at gmail dot com>
  *
  * This program is free software; you can redistribute it
@@ -32,7 +32,7 @@
 
 // KDE includes
 
-#include "kconfiggroup.h"
+#include <kconfiggroup.h>
 #include <ksharedconfig.h>
 #include <klocalizedstring.h>
 
@@ -52,9 +52,9 @@ class Q_DECL_HIDDEN BlurTool::Private
 public:
 
     explicit Private()
-      : radiusInput(nullptr),
+      : radiusInput  (nullptr),
         previewWidget(nullptr),
-        gboxSettings(nullptr)
+        gboxSettings (nullptr)
     {
     }
 
@@ -73,7 +73,7 @@ const QString BlurTool::Private::configRadiusAdjustmentEntry(QLatin1String("Radi
 
 BlurTool::BlurTool(QObject* const parent)
     : EditorToolThreaded(parent),
-      d(new Private)
+      d                 (new Private)
 {
     setObjectName(QLatin1String("gaussianblur"));
     setToolHelp(QLatin1String("blursharpentool.anchor"));

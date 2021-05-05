@@ -6,7 +6,7 @@
  * Date        : 2009-08-03
  * Description : digiKam config header
  *
- * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -108,10 +108,13 @@
 /* Define to 1 if changing application styles is supported */
 #cmakedefine HAVE_APPSTYLE_SUPPORT 1
 
-/* Define to 1 if system use QWebEngine instead of QWebKit */
+/* Define to 1 if system use QtWebEngine instead of QWebKit */
 #cmakedefine HAVE_QWEBENGINE 1
 
-/* Define to 1 if ImageMAgick codecs are supported */
+/* Define to 1 if system use QtXmlPatterns */
+#cmakedefine HAVE_QTXMLPATTERNS 1
+
+/* Define to 1 if ImageMagick codecs are supported */
 #cmakedefine HAVE_IMAGE_MAGICK 1
 
 /* Defines to 1 if the Dr. Mingw crash handler should be used */

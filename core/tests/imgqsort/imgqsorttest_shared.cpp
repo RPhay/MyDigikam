@@ -6,7 +6,7 @@
  * Date        : 2009-02-04
  * Description : an unit-test to detect image quality level - shared code
  *
- * Copyright (C) 2011-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2011-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -44,7 +44,7 @@ QMultiMap<int, QString> ImgQSortTest_ParseTestImages(DetectionType type, const Q
     switch (type)
     {
         case DetectNoise:
-            tname = QLatin1String("Noise");
+            tname                       = QLatin1String("Noise");
             settings.enableSorter       = true;
             settings.detectBlur         = false;
             settings.detectNoise        = true;
@@ -61,8 +61,9 @@ QMultiMap<int, QString> ImgQSortTest_ParseTestImages(DetectionType type, const Q
             settings.compressionWeight  = 100;
             settings.speed              = 1;
             break;
+
         case DetectCompression:
-            tname = QLatin1String("Compression");
+            tname                       = QLatin1String("Compression");
             settings.enableSorter       = true;
             settings.detectBlur         = false;
             settings.detectNoise        = false;
@@ -79,8 +80,9 @@ QMultiMap<int, QString> ImgQSortTest_ParseTestImages(DetectionType type, const Q
             settings.compressionWeight  = 100;
             settings.speed              = 1;
             break;
+
         case DetectExposure:
-            tname = QLatin1String("Exposure");
+            tname                       = QLatin1String("Exposure");
             settings.enableSorter       = true;
             settings.detectBlur         = false;
             settings.detectNoise        = false;
@@ -97,8 +99,9 @@ QMultiMap<int, QString> ImgQSortTest_ParseTestImages(DetectionType type, const Q
             settings.compressionWeight  = 100;
             settings.speed              = 1;
             break;
+
         default:
-            tname = QLatin1String("Blur");
+            tname                       = QLatin1String("Blur");
             settings.enableSorter       = true;
             settings.detectBlur         = true;
             settings.detectNoise        = false;

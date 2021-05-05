@@ -6,7 +6,7 @@
  * Date        : 2008-11-27
  * Description : batch tools list assigned to an queued item.
  *
- * Copyright (C) 2008-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2008-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -47,7 +47,7 @@ public:
 
     explicit AssignedListViewItem(QTreeWidget* const parent);
     AssignedListViewItem(QTreeWidget* const parent, QTreeWidgetItem* const preceding);
-    virtual ~AssignedListViewItem();
+    ~AssignedListViewItem()                                             override;
 
     void setIndex(int index);
 
@@ -57,6 +57,10 @@ public:
 private:
 
     BatchToolSet m_set;
+
+private:
+
+    Q_DISABLE_COPY(AssignedListViewItem)
 };
 
 // -------------------------------------------------------------------------
@@ -68,7 +72,7 @@ class AssignedListView : public QTreeWidget
 public:
 
     explicit AssignedListView(QWidget* const parent);
-    ~AssignedListView();
+    ~AssignedListView()                                                 override;
 
     int                assignedCount();
     AssignedBatchTools assignedList();
@@ -94,11 +98,11 @@ public Q_SLOTS:
     void slotClearToolsList();
     void slotQueueSelected(int, const QueueSettings&, const AssignedBatchTools&);
     void slotSettingsChanged(const BatchToolSet&);
-    void slotAssignTools(const QMap<int, QString>&);
+    void slotAssignTools(const QMultiMap<int, QString>&);
 
 protected:
 
-    void keyPressEvent(QKeyEvent*) override;
+    void keyPressEvent(QKeyEvent*)                                      override;
 
 private Q_SLOTS:
 
@@ -108,7 +112,7 @@ private Q_SLOTS:
 private:
 
     AssignedListViewItem* findTool(const BatchToolSet& set);
-    void assignTools(const QMap<int, QString>& map, AssignedListViewItem* const preceding);
+    void assignTools(const QMultiMap<int, QString>& map, AssignedListViewItem* const preceding);
     void refreshIndex();
 
     Qt::DropActions supportedDropActions()                        const override;

@@ -7,7 +7,7 @@
  * Description : time adjust actions using threads.
  *
  * Copyright (C) 2012      by Smit Mehta <smit dot meh at gmail dot com>
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (c) 2018      by Maik Qualmann <metzpinguin at gmail dot com>
  *
  * This program is free software; you can redistribute it
@@ -46,7 +46,7 @@ class TimeAdjustTask : public ActionJob
 public:
 
     explicit TimeAdjustTask(const QUrl& url);
-    ~TimeAdjustTask();
+    ~TimeAdjustTask() override;
 
     void setSettings(const TimeAdjustContainer& settings);
     void setItemsMap(const QMap<QUrl, QDateTime>& itemsMap);
@@ -59,7 +59,12 @@ Q_SIGNALS:
 
 protected:
 
-    void run();
+    void run() override;
+
+private:
+
+    // Disable
+    TimeAdjustTask(QObject*) = delete;
 
 private:
 
@@ -67,6 +72,6 @@ private:
     Private* const d;
 };
 
-}  // namespace DigikamGenericTimeAdjustPlugin
+} // namespace DigikamGenericTimeAdjustPlugin
 
 #endif // DIGIKAM_TIME_ADJUST_TASK

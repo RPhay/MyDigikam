@@ -6,7 +6,7 @@
  * Date        : 2005-02-14
  * Description : a tool to insert a text over an image.
  *
- * Copyright (C) 2005-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2005-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2006-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  *
  * This program is free software; you can redistribute it
@@ -49,7 +49,7 @@
 
 #include <klocalizedstring.h>
 #include <ksharedconfig.h>
-#include "kconfiggroup.h"
+#include <kconfiggroup.h>
 
 // Local includes
 
@@ -70,18 +70,18 @@ class Q_DECL_HIDDEN InsertTextTool::Private
 public:
 
     explicit Private()
-      : alignTextMode(0),
-        defaultSizeFont(0),
-        borderText(nullptr),
-        transparentText(nullptr),
-        alignButtonGroup(nullptr),
-        textRotation(nullptr),
-        textOpacity(nullptr),
-        fontColorButton(nullptr),
-        fontChooserWidget(nullptr),
-        textEdit(nullptr),
-        previewWidget(nullptr),
-        gboxSettings(nullptr)
+      : alignTextMode       (0),
+        defaultSizeFont     (0),
+        borderText          (nullptr),
+        transparentText     (nullptr),
+        alignButtonGroup    (nullptr),
+        textRotation        (nullptr),
+        textOpacity         (nullptr),
+        fontColorButton     (nullptr),
+        fontChooserWidget   (nullptr),
+        textEdit            (nullptr),
+        previewWidget       (nullptr),
+        gboxSettings        (nullptr)
     {
     }
 
@@ -130,7 +130,7 @@ const QString InsertTextTool::Private::configPositionHintEntry(QLatin1String("Po
 
 InsertTextTool::InsertTextTool(QObject* const parent)
     : EditorTool(parent),
-      d(new Private)
+      d         (new Private)
 {
     setObjectName(QLatin1String("inserttext"));
 
@@ -363,7 +363,7 @@ void InsertTextTool::slotResetSettings()
     d->fontColorButton->setColor(Qt::black);
     d->textOpacity->slotReset();
     QFont defaultFont;
-    d->textFont = defaultFont; // Reset to default KDE font.
+    d->textFont = defaultFont;           // Reset to default KDE font.
     d->textFont.setPointSize(d->defaultSizeFont);
     d->fontChooserWidget->setFont(d->textFont);
     d->borderText->setChecked(false);

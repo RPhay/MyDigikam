@@ -7,7 +7,7 @@
  * Description : scan item controller - progress operations.
  *
  * Copyright (C) 2005-2006 by Tom Albers <tomalbers at kde dot nl>
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2007-2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  *
  * This program is free software; you can redistribute it
@@ -140,7 +140,7 @@ AlbumCopyMoveHint ScanController::hintForAlbum(const PAlbum* const album,
 
 QList<AlbumCopyMoveHint> ScanController::hintsForAlbum(const PAlbum* const album,
                                                        int dstAlbumRootId,
-                                                       QString relativeDstPath,
+                                                       const QString& relativeDstPath,
                                                        const QString& albumName)
 {
     QList<AlbumCopyMoveHint> newHints;
@@ -213,7 +213,7 @@ void ScanController::hintAtMoveOrCopyOfAlbum(const PAlbum* const album,
     d->hints->recordHints(newHints);
 }
 
-void ScanController::hintAtMoveOrCopyOfItems(const QList<qlonglong> ids,
+void ScanController::hintAtMoveOrCopyOfItems(const QList<qlonglong>& ids,
                                              const PAlbum* const dstAlbum,
                                              const QStringList& itemNames)
 {
@@ -245,7 +245,7 @@ void ScanController::hintAtMoveOrCopyOfItem(qlonglong id,
     d->hints->recordHints(QList<ItemCopyMoveHint>() << hint);
 }
 
-void ScanController::hintAtModificationOfItems(const QList<qlonglong> ids)
+void ScanController::hintAtModificationOfItems(const QList<qlonglong>& ids)
 {
     ItemChangeHint hint(ids, ItemChangeHint::ItemModified);
 

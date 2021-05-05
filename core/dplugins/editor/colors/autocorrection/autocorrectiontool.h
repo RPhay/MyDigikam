@@ -6,7 +6,7 @@
  * Date        : 2005-05-31
  * Description : Auto-Color correction tool.
  *
- * Copyright (C) 2005-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2005-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -45,21 +45,21 @@ class AutoCorrectionTool : public EditorToolThreaded
 public:
 
     explicit AutoCorrectionTool(QObject* const parent);
-    ~AutoCorrectionTool();
+    ~AutoCorrectionTool()       override;
 
 private Q_SLOTS:
 
-    void slotInit();
-    void slotResetSettings();
+    void slotInit() override;
+    void slotResetSettings()    override;
 
 private:
 
-    void writeSettings();
-    void readSettings();
-    void preparePreview();
-    void prepareFinal();
-    void setPreviewImage();
-    void setFinalImage();
+    void writeSettings()        override;
+    void readSettings()         override;
+    void preparePreview()       override;
+    void prepareFinal()         override;
+    void setPreviewImage()      override;
+    void setFinalImage()        override;
 
     void autoCorrection(DImg* const img, DImg* const ref, int type);
 

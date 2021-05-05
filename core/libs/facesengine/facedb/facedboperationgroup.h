@@ -73,9 +73,11 @@ public:
 
 private:
 
-    // Hidden copy constructor and assignment operator.
-    FaceDbOperationGroup(const FaceDbOperationGroup&);
-    FaceDbOperationGroup& operator=(const FaceDbOperationGroup&);
+    // Disable
+    FaceDbOperationGroup(const FaceDbOperationGroup&)            = delete;
+    FaceDbOperationGroup& operator=(const FaceDbOperationGroup&) = delete;
+
+private:
 
     class Private;
     Private* const d;

@@ -6,7 +6,7 @@
  * Date        : 2017-06-27
  * Description : a tool to print images
  *
- * Copyright (C) 2017-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2017-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -38,10 +38,10 @@ class Q_DECL_HIDDEN AdvPrintAlbumsPage::Private
 public:
 
     explicit Private(QWizard* const dialog)
-      : albumSupport(false),
+      : albumSupport (false),
         albumSelector(nullptr),
-        wizard(nullptr),
-        iface(nullptr)
+        wizard       (nullptr),
+        iface        (nullptr)
     {
         wizard = dynamic_cast<AdvPrintWizard*>(dialog);
 
@@ -59,7 +59,7 @@ public:
 
 AdvPrintAlbumsPage::AdvPrintAlbumsPage(QWizard* const dialog, const QString& title)
     : DWizardPage(dialog, title),
-      d(new Private(dialog))
+      d          (new Private(dialog))
 {
     if (d->iface)
     {
@@ -85,14 +85,19 @@ AdvPrintAlbumsPage::~AdvPrintAlbumsPage()
 bool AdvPrintAlbumsPage::validatePage()
 {
     if (!d->iface)
+    {
         return false;
+    }
 
     if (d->iface->albumChooserItems().isEmpty())
+    {
         return false;
+    }
 
     d->wizard->settings()->inputImages.clear();
 
     // update image list with album contents.
+
     foreach (const QUrl& url, d->iface->albumsItems(d->iface->albumChooserItems()))
     {
         d->wizard->settings()->inputImages << url;
@@ -104,7 +109,9 @@ bool AdvPrintAlbumsPage::validatePage()
 bool AdvPrintAlbumsPage::isComplete() const
 {
     if (!d->iface)
+    {
         return false;
+    }
 
     return (!d->iface->albumChooserItems().isEmpty());
 }

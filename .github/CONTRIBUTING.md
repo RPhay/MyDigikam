@@ -5,7 +5,7 @@ Github.
 
 Please join our Gitlab instance to start contributing.
 
-https://invent.kde.org/kde/digikam
+https://invent.kde.org/graphics/digikam
 
 Please use our Bugzilla instance to report bugs and whishes.
 

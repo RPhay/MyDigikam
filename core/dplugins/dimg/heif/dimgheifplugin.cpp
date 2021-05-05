@@ -36,8 +36,8 @@
 
 // Local includes
 
-#include "digikam_config.h"
 #include "digikam_debug.h"
+#include "digikam_config.h"
 #include "digikam_globals.h"
 #include "dimgheifloader.h"
 
@@ -78,6 +78,7 @@ QString DImgHEIFPlugin::details() const
     QString x265Notice = i18n("This library is not present on your system.");
 
 #ifdef HAVE_X265
+
     int depth = DImgHEIFLoader::x265MaxBitsDepth();
 
     if (depth != -1)
@@ -90,6 +91,7 @@ QString DImgHEIFPlugin::details() const
         x265Notice = i18n("This library is available on your system but is not able to encode "
                           "image with a suitable color depth.");
     }
+
 #endif
 
     return i18n("<p>This plugin permit to load and save image using Libheif codec.</p>"
@@ -109,7 +111,7 @@ QList<DPluginAuthor> DImgHEIFPlugin::authors() const
     return QList<DPluginAuthor>()
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2019-2020"))
+                             QString::fromUtf8("(C) 2019-2021"))
             ;
 }
 
@@ -123,6 +125,7 @@ QMap<QString, QString> DImgHEIFPlugin::extraAboutData() const
     QMap<QString, QString> map;
     map.insert(QLatin1String("HEIC"), i18n("High efficiency image coding"));
     map.insert(QLatin1String("HEIF"), i18n("High efficiency image file format"));
+
     return map;
 }
 
@@ -150,12 +153,20 @@ int DImgHEIFPlugin::canRead(const QFileInfo& fileInfo, bool magic) const
 
     if (!magic)
     {
-        return (format == QLatin1String("HEIC")) ? 10 : 0;
+        return typeMimes().contains(format) ? 10 : 0;
     }
 
     // In second, we trying to parse file header.
 
-    FILE* const f = fopen(QFile::encodeName(filePath).constData(), "rb");
+#ifdef Q_OS_WIN
+
+    FILE* const f = _wfopen((const wchar_t*)filePath.utf16(), L"rb");
+
+#else
+
+    FILE* const f = fopen(filePath.toUtf8().constData(), "rb");
+
+#endif
 
     if (!f)
     {
@@ -176,9 +187,11 @@ int DImgHEIFPlugin::canRead(const QFileInfo& fileInfo, bool magic) const
 
     fclose(f);
 
-    if (memcmp(&header[4], "ftypheic", 8) == 0 ||
-        memcmp(&header[4], "ftypheix", 8) == 0 ||
-        memcmp(&header[4], "ftypmif1", 8) == 0)
+    if (
+        (memcmp(&header[4], "ftypheic", 8) == 0) ||
+        (memcmp(&header[4], "ftypheix", 8) == 0) ||
+        (memcmp(&header[4], "ftypmif1", 8) == 0)
+       )
     {
         return 10;
     }
@@ -188,13 +201,18 @@ int DImgHEIFPlugin::canRead(const QFileInfo& fileInfo, bool magic) const
 
 int DImgHEIFPlugin::canWrite(const QString& format) const
 {
+
 #ifdef HAVE_X265
-    if (format.toUpper() == QLatin1String("HEIC"))
-    {
-        return 10;
-    }
-#endif
+
+    return typeMimes().contains(format.toUpper()) ? 10 : 0;
+
+#else
+
+    Q_UNUSED(format);
+
     return 0;
+
+#endif
 }
 
 DImgLoader* DImgHEIFPlugin::loader(DImg* const image, const DRawDecoding&) const

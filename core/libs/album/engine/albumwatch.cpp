@@ -7,7 +7,7 @@
  * Description : Directory watch interface
  *
  * Copyright (C) 2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2015-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2015-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -71,6 +71,7 @@ public:
 bool AlbumWatch::Private::inBlackList(const QString& path) const
 {
     // Filter out dirty signals triggered by changes on the database file
+
     foreach (const QString& bannedFile, fileNameBlackList)
     {
         if (path.endsWith(bannedFile))
@@ -100,20 +101,26 @@ bool AlbumWatch::Private::inDirWatchParametersBlackList(const QFileInfo& info, c
         QFileInfo dbFile(params.SQLiteDatabaseFile());
 
         // is the signal for the directory containing the database file?
+
         if (dbFile.dir() == dir)
         {
             // retrieve modification dates
+
             QList<QDateTime> modList = buildDirectoryModList(dbFile);
 
             // check for equality
+
             if (modList == dbPathModificationDateList)
             {
                 //qCDebug(DIGIKAM_GENERAL_LOG) << "Filtering out db-file-triggered dir watch signal";
+
                 // we can skip the signal
+
                 return true;
             }
 
             // set new list
+
             dbPathModificationDateList = modList;
         }
     }
@@ -217,6 +224,7 @@ void AlbumWatch::setDbEngineParameters(const DbEngineParameters& params)
     d->fileNameBlackList.clear();
 
     // filter out notifications caused by database operations
+
     if (params.isSQLite())
     {
         d->fileNameBlackList << QLatin1String("thumbnails-digikam.db")
@@ -229,13 +237,14 @@ void AlbumWatch::setDbEngineParameters(const DbEngineParameters& params)
                              << dbFile.fileName() + QLatin1String("-journal");
 
         // ensure this is done after setting up the black list
+
         d->dbPathModificationDateList = d->buildDirectoryModList(dbFile);
     }
 }
 
 void AlbumWatch::slotAlbumAdded(Album* a)
 {
-    if (a->isRoot() || a->isTrashAlbum() || a->type() != Album::PHYSICAL)
+    if (a->isRoot() || a->isTrashAlbum() || (a->type() != Album::PHYSICAL))
     {
         return;
     }
@@ -260,7 +269,7 @@ void AlbumWatch::slotAlbumAdded(Album* a)
 
 void AlbumWatch::slotAlbumAboutToBeDeleted(Album* a)
 {
-    if (a->isRoot() || a->isTrashAlbum() || a->type() != Album::PHYSICAL)
+    if (a->isRoot() || a->isTrashAlbum() || (a->type() != Album::PHYSICAL))
     {
         return;
     }

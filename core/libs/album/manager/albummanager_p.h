@@ -6,7 +6,7 @@
  * Date        : 2004-06-15
  * Description : Albums manager interface - private containers.
  *
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2006-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  * Copyright (C) 2015      by Mohamed_Anwer <m_dot_anwer at gmx dot com>
  *
@@ -92,6 +92,7 @@ extern "C"
 #include "coredboperationgroup.h"
 #include "dbengineguierrorhandler.h"
 #include "dbengineparameters.h"
+#include "dbsettingswidget.h"
 #include "databaseserverstarter.h"
 #include "coredbthumbinfoprovider.h"
 #include "coredburl.h"
@@ -156,6 +157,7 @@ public:
     bool                        showOnlyAvailableAlbums;
 
     int                         longTimeMessageBoxResult;
+    int                         askMergeMessageBoxResult;
 
     AlbumsDBJobsThread*         albumListJob;
     DatesDBJobsThread*          dateListJob;
@@ -196,8 +198,9 @@ public:
     QMap<int, int>              tAlbumsCount;
     QMap<YearMonth, int>        dAlbumsCount;
     QMap<int, int>              fAlbumsCount;
-    //Unconfirmed face counts
+    /// Unconfirmed face counts
     QMap<int, int>              uAlbumsCount;
+    QList<int>                  toUpdatedFaces;
 
 public:
 
@@ -210,7 +213,7 @@ class Q_DECL_HIDDEN ChangingDB
 {
 public:
 
-    explicit ChangingDB(AlbumManager::Private* const d);
+    explicit ChangingDB(AlbumManager::Private* const dd);
     ~ChangingDB();
 
     AlbumManager::Private* const d;

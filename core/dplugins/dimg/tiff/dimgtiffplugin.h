@@ -50,7 +50,7 @@ class DImgTIFFPlugin : public DPluginDImg
 public:
 
     explicit DImgTIFFPlugin(QObject* const parent = nullptr);
-    ~DImgTIFFPlugin();
+    ~DImgTIFFPlugin()                                                                             override;
 
     QString name()                                                                          const override;
     QString iid()                                                                           const override;

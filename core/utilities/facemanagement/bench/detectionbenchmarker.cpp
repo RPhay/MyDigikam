@@ -7,7 +7,7 @@
  * Description : Face detection benchmarker
  *
  * Copyright (C) 2010-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2012-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -33,16 +33,16 @@ namespace Digikam
 {
 
 DetectionBenchmarker::DetectionBenchmarker(FacePipeline::Private* const d)
-    : totalImages(0),
-      faces(0),
-      totalPixels(0),
-      facePixels(0),
-      trueNegativeImages(0),
-      falsePositiveImages(0),
-      truePositiveFaces(0),
-      falseNegativeFaces(0),
-      falsePositiveFaces(0),
-      d(d)
+    : totalImages           (0),
+      faces                 (0),
+      totalPixels           (0),
+      facePixels            (0),
+      trueNegativeImages    (0),
+      falsePositiveImages   (0),
+      truePositiveFaces     (0),
+      falseNegativeFaces    (0),
+      falsePositiveFaces    (0),
+      d                     (d)
 {
 }
 
@@ -51,6 +51,7 @@ void DetectionBenchmarker::process(FacePipelineExtendedPackage::Ptr package)
     if (package->databaseFaces.isEmpty())
     {
         // Detection / Recognition
+
         qCDebug(DIGIKAM_GENERAL_LOG) << "Benchmarking image" << package->info.name();
 
         FaceUtils utils;
@@ -131,7 +132,9 @@ void DetectionBenchmarker::process(FacePipelineExtendedPackage::Ptr package)
     emit processed(package);
 }
 
-// NOTE: Bench performance code. No need i18n here
+/**
+ * NOTE: Bench performance code. No need i18n here
+ */
 QString DetectionBenchmarker::result() const
 {
     qCDebug(DIGIKAM_GENERAL_LOG) << "Per-image:"

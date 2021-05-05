@@ -6,7 +6,7 @@
  * Date        : 2011-03-22
  * Description : a Iface C++ interface
  *
- * Copyright (C) 2011-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2011-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2011      by Alexandre Mendes <alex dot mendes1988 at gmail dot com>
  * Copyright (C) 2011      by Vincent Garcia <xavier dot vincent dot garcia at gmail dot com>
  *
@@ -33,7 +33,7 @@
 // Local includes
 
 #include "mediawiki_job.h"
-#include "digikam_export.h"
+
 
 namespace MediaWiki
 {
@@ -41,7 +41,7 @@ namespace MediaWiki
 class Iface;
 class ParsePrivate;
 
-class DIGIKAM_EXPORT Parse : public Job
+class Parse : public Job
 {
     Q_OBJECT
     Q_DECLARE_PRIVATE(Parse)
@@ -70,7 +70,7 @@ public:
     };
 
     explicit Parse(Iface& MediaWiki, QObject* const parent = nullptr);
-    virtual ~Parse();
+    ~Parse() override;
 
     void setText(const QString& param);
 
@@ -80,7 +80,7 @@ public:
 
     void setUseLang(const QString& param);
 
-    void start() Q_DECL_OVERRIDE;
+    void start() override;
 
     Q_SIGNALS:
 

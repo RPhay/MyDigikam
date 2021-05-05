@@ -39,7 +39,6 @@ namespace DigikamEditorHealingCloneToolPlugin
 class HealingCloneToolWidget : public ImageRegionWidget
 {
     Q_OBJECT
-    Q_ENUMS(HealingCloneState)
 
 public:
 
@@ -52,6 +51,7 @@ public:
         MOVE_IMAGE,
         DO_NOTHING
     };
+    Q_ENUM(HealingCloneState)
 
 public:
 
@@ -59,7 +59,7 @@ public:
      * Standard constructor
      */
     explicit HealingCloneToolWidget(QWidget* const parent = nullptr);
-    ~HealingCloneToolWidget();
+    ~HealingCloneToolWidget()                                                       override;
 
     void setBrushValue(int value);
     void setIsLassoPointsVectorEmpty(bool);
@@ -69,11 +69,12 @@ public:
 
     void changeCursorShape(const QColor& color);
 
-    bool checkPointOutsideScene(const QPoint& point)    const;
-    void updateSourceCursor(const QPointF& pos = QPoint(), int diamter = 10);
+    bool checkPointOutsideScene(const QPoint& point)                          const;
+    void updateSourceCursor(const QPointF& pos = QPoint(),
+                            int diamter = 10);
 
-    QPoint mapToImageCoordinates(const QPoint& point)   const;
-    QPoint mapFromImageCoordinates(const QPoint& point) const;
+    QPoint mapToImageCoordinates(const QPoint& point)                         const;
+    QPoint mapFromImageCoordinates(const QPoint& point)                       const;
 
 public Q_SLOTS:
 
@@ -106,18 +107,24 @@ private Q_SLOTS:
 
 protected:
 
-    void mouseReleaseEvent(QMouseEvent*)     override;
-    void mousePressEvent(QMouseEvent*)       override;
-    void mouseMoveEvent(QMouseEvent*)        override;
-    void mouseDoubleClickEvent(QMouseEvent*) override;
-    void keyPressEvent(QKeyEvent*)           override;
-    void keyReleaseEvent(QKeyEvent*)         override;
-    void focusOutEvent(QFocusEvent*)         override;
-    void focusInEvent(QFocusEvent*)          override;
-    bool event(QEvent*)                      override;
+    void mouseReleaseEvent(QMouseEvent*)                                            override;
+    void mousePressEvent(QMouseEvent*)                                              override;
+    void mouseMoveEvent(QMouseEvent*)                                               override;
+    void mouseDoubleClickEvent(QMouseEvent*)                                        override;
+    void keyPressEvent(QKeyEvent*)                                                  override;
+    void keyReleaseEvent(QKeyEvent*)                                                override;
+    void focusOutEvent(QFocusEvent*)                                                override;
+    void focusInEvent(QFocusEvent*)                                                 override;
+    bool event(QEvent*)                                                             override;
 
     void undoSlotSetSourcePoint();
     void activateState(HealingCloneState state);
+
+private:
+
+    // Disable
+    HealingCloneToolWidget(const HealingCloneToolWidget&)            = delete;
+    HealingCloneToolWidget& operator=(const HealingCloneToolWidget&) = delete;
 
 private:
 

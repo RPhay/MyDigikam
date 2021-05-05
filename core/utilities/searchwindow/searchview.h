@@ -47,12 +47,15 @@ class SearchViewThemedPartsCache
 {
 public:
 
-    virtual ~SearchViewThemedPartsCache()
-    {
-    }
+    SearchViewThemedPartsCache()                   = default;
+    virtual ~SearchViewThemedPartsCache()          = default;
 
     virtual QPixmap groupLabelPixmap(int w, int h) = 0;
     virtual QPixmap bottomBarPixmap(int w, int h)  = 0;
+
+private:
+
+    Q_DISABLE_COPY(SearchViewThemedPartsCache)
 };
 
 class AbstractSearchGroupContainer : public QWidget
@@ -108,23 +111,24 @@ protected:
 
 // -------------------------------------------------------------------------
 
-class SearchView : public AbstractSearchGroupContainer, public SearchViewThemedPartsCache
+class SearchView : public AbstractSearchGroupContainer,
+                   public SearchViewThemedPartsCache
 {
     Q_OBJECT
 
 public:
 
     SearchView();
-    ~SearchView();
+    ~SearchView()                                  override;
 
     void setup();
     void setBottomBar(SearchViewBottomBar* const bar);
 
     void read(const QString& search);
-    QString write() const;
+    QString write()                          const;
 
-    QPixmap groupLabelPixmap(int w, int h) override;
-    QPixmap bottomBarPixmap(int w, int h) override;
+    QPixmap groupLabelPixmap(int w, int h)         override;
+    QPixmap bottomBarPixmap(int w, int h)          override;
 
 Q_SIGNALS:
 
@@ -145,17 +149,20 @@ protected:
 
     QPixmap cachedBannerPixmap(int w, int h) const;
 
-    virtual void paintEvent(QPaintEvent* e) override;
-    virtual void showEvent(QShowEvent* event) override;
+    void paintEvent(QPaintEvent* e)                 override;
+    void showEvent(QShowEvent* event)               override;
 
-    virtual SearchGroup* createSearchGroup() override;
-    virtual void addGroupToLayout(SearchGroup* group) override;
+    SearchGroup* createSearchGroup()                override;
+    void addGroupToLayout(SearchGroup* group)       override;
 
 private:
 
-    // Hidden copy constructor and assignment operator.
-    SearchView(const SearchView&);
-    SearchView& operator=(const SearchView&);
+    // Disable.
+    SearchView(QWidget*)                     = delete;
+    SearchView(const SearchView&)            = delete;
+    SearchView& operator=(const SearchView&) = delete;
+
+private:
 
     class Private;
     Private* const d;
@@ -169,7 +176,8 @@ class SearchViewBottomBar : public QWidget
 
 public:
 
-    explicit SearchViewBottomBar(SearchViewThemedPartsCache* const cache, QWidget* const parent = nullptr);
+    explicit SearchViewBottomBar(SearchViewThemedPartsCache* const cache,
+                                 QWidget* const parent = nullptr);
 
 Q_SIGNALS:
 
@@ -181,7 +189,7 @@ Q_SIGNALS:
 
 protected:
 
-    virtual void paintEvent(QPaintEvent*) override;
+    void paintEvent(QPaintEvent*) override;
 
 protected:
 

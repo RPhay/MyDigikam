@@ -58,38 +58,38 @@ class Q_DECL_HIDDEN NamespaceEditDlg::Private
 public:
 
     explicit Private()
-      : buttons(nullptr),
-        create(0),
-        topLabel(nullptr),
-        logo(nullptr),
-        gridLayout(nullptr),
-        page(nullptr),
-        subspaceCombo(nullptr),           // NamespaceEntry variables
-        specialOptsCombo(nullptr),
-        altSpecialOptsCombo(nullptr),
-        namespaceName(nullptr),
-        alternativeName(nullptr),
-        nameSpaceSeparator(nullptr),
-        isPath(nullptr),
-        ratingMappings(nullptr),
-        zeroStars(nullptr),
-        oneStar(nullptr),
-        twoStars(nullptr),
-        threeStars(nullptr),
-        fourStars(nullptr),
-        fiveStars(nullptr),
-        tagTipLabel(nullptr),             // Labels
-        ratingTipLabel(nullptr),
-        commentTipLabel(nullptr),
-        subspaceLabel(nullptr),
-        titleLabel(nullptr),
-        specialOptsLabel(nullptr),
+      : buttons             (nullptr),
+        create              (0),
+        topLabel            (nullptr),
+        logo                (nullptr),
+        gridLayout          (nullptr),
+        page                (nullptr),
+        subspaceCombo       (nullptr),           ///< NamespaceEntry variables
+        specialOptsCombo    (nullptr),
+        altSpecialOptsCombo (nullptr),
+        namespaceName       (nullptr),
+        alternativeName     (nullptr),
+        nameSpaceSeparator  (nullptr),
+        isPath              (nullptr),
+        ratingMappings      (nullptr),
+        zeroStars           (nullptr),
+        oneStar             (nullptr),
+        twoStars            (nullptr),
+        threeStars          (nullptr),
+        fourStars           (nullptr),
+        fiveStars           (nullptr),
+        tagTipLabel         (nullptr),           ///< Labels
+        ratingTipLabel      (nullptr),
+        commentTipLabel     (nullptr),
+        subspaceLabel       (nullptr),
+        titleLabel          (nullptr),
+        specialOptsLabel    (nullptr),
         alternativeNameLabel(nullptr),
-        altspecialOptsLabel(nullptr),
-        isTagLabel(nullptr),
-        separatorLabel(nullptr),
-        tipLabel2(nullptr),
-        nsType(NamespaceEntry::TAGS)
+        altspecialOptsLabel (nullptr),
+        isTagLabel          (nullptr),
+        separatorLabel      (nullptr),
+        tipLabel2           (nullptr),
+        nsType              (NamespaceEntry::TAGS)
     {
     }
 
@@ -100,7 +100,7 @@ public:
     QGridLayout*                    gridLayout;
     QWidget*                        page;
 
-    // NamespaceEntry variables
+    /// NamespaceEntry variables
     QComboBox*                      subspaceCombo;
     QComboBox*                      specialOptsCombo;
     QComboBox*                      altSpecialOptsCombo;
@@ -117,7 +117,7 @@ public:
     QSpinBox*                       fourStars;
     QSpinBox*                       fiveStars;
 
-    // Labels
+    /// Labels
     QLabel*                         tagTipLabel;
     QLabel*                         ratingTipLabel;
     QLabel*                         commentTipLabel;
@@ -138,7 +138,7 @@ NamespaceEditDlg::NamespaceEditDlg(bool create,
                                    NamespaceEntry& entry,
                                    QWidget* const parent)
     : QDialog(parent),
-      d(new Private())
+      d      (new Private())
 {
     setModal(true);
 
@@ -260,7 +260,7 @@ void NamespaceEditDlg::setupTagGui(NamespaceEntry& entry)
     // -------------------Tag Elements---------------------------------
 
     d->titleLabel    = new QLabel(d->page);
-    d->titleLabel->setText(i18n("Name:"));
+    d->titleLabel->setText(i18nc("@label: namespace name", "Name:"));
     d->namespaceName = new QLineEdit(this);
 
     //----------------- Tip Labels --------------------------------------
@@ -269,32 +269,32 @@ void NamespaceEditDlg::setupTagGui(NamespaceEntry& entry)
     d->tagTipLabel->setTextFormat(Qt::RichText);
     d->tagTipLabel->setWordWrap(true);
     d->tagTipLabel->setText(i18n("<p>To create new namespaces, you need to specify parameters:</p>"
-                           "<p><ul><li>Namespace name with dots.<br/>"
-                           "Ex.: <i>\"Xmp.digiKam.TagsList\"</i></li>"
-                           "<li>Separator parameter, used by tag paths <br/>"
-                           "Ex.: \"City/Paris\" or \"City|Paris\"</li>"
-                           "<li>Specify if only keyword or the whole path must be written.</li></ul></p>"
-                          ));
+                                 "<p><ul><li>Namespace name with dots.<br/>"
+                                 "Ex.: <i>\"Xmp.digiKam.TagsList\"</i></li>"
+                                 "<li>Separator parameter, used by tag paths <br/>"
+                                 "Ex.: \"City/Paris\" or \"City|Paris\"</li>"
+                                 "<li>Specify if only keyword or the whole path must be written.</li></ul></p>"
+    ));
 
     d->ratingTipLabel   = new QLabel(d->page);
     d->ratingTipLabel->setTextFormat(Qt::RichText);
     d->ratingTipLabel->setWordWrap(true);
     d->ratingTipLabel->setText(i18n("<p>To create new rating namespaces, you need to specify parameters:</p>"
-                           "<p><ul><li>Namespace name with dots.<br/>"
-                           "Ex.: <i>\"Xmp.xmp.Rating\"</i></li>"
-                           "<li>Rating mappings, if namespace need other values than 0-5 <br/>"
-                           "Ex.: Microsoft uses 0 1 25 50 75 99</li>"
-                           "<li>Select the correct namespace option from list.</li></ul></p>"
-                          ));
+                                    "<p><ul><li>Namespace name with dots.<br/>"
+                                    "Ex.: <i>\"Xmp.xmp.Rating\"</i></li>"
+                                    "<li>Rating mappings, if namespace need other values than 0-5 <br/>"
+                                    "Ex.: Microsoft uses 0 1 25 50 75 99</li>"
+                                    "<li>Select the correct namespace option from list.</li></ul></p>"
+    ));
 
     d->commentTipLabel   = new QLabel(d->page);
     d->commentTipLabel->setTextFormat(Qt::RichText);
     d->commentTipLabel->setWordWrap(true);
     d->commentTipLabel->setText(i18n("<p>To create new comment namespaces, you need to specify parameters:</p>"
-                           "<p><ul><li>Namespace name with dots.<br/>"
-                           "Ex.: <i>\"Xmp.xmp.Rating\"</i></li>"
-                           "<li>Select the correct namespace option from list.</li></ul></p>"
-                          ));
+                                     "<p><ul><li>Namespace name with dots.<br/>"
+                                     "Ex.: <i>\"Xmp.xmp.Comment\"</i></li>"
+                                     "<li>Select the correct namespace option from list.</li></ul></p>"
+    ));
 
     // -------------------------------------------------------
 
@@ -425,13 +425,13 @@ void NamespaceEditDlg::setupTagGui(NamespaceEntry& entry)
     d->gridLayout->addWidget(d->altspecialOptsLabel,        9, 0, 1, 2);
     d->gridLayout->addWidget(d->altSpecialOptsCombo,        9, 2, 1, 4);
 
-    d->gridLayout->addWidget(d->separatorLabel,             10, 0, 1, 2);
-    d->gridLayout->addWidget(d->nameSpaceSeparator,         10, 2, 1, 4);
-    d->gridLayout->addWidget(d->isTagLabel,                 11, 0, 1, 2);
-    d->gridLayout->addWidget(d->isPath,                     11, 2, 1, 3);
+    d->gridLayout->addWidget(d->separatorLabel,            10, 0, 1, 2);
+    d->gridLayout->addWidget(d->nameSpaceSeparator,        10, 2, 1, 4);
+    d->gridLayout->addWidget(d->isTagLabel,                11, 0, 1, 2);
+    d->gridLayout->addWidget(d->isPath,                    11, 2, 1, 3);
 
-    d->gridLayout->addWidget(d->ratingMappings,             12, 0, 2, 6);
-    d->gridLayout->addWidget(d->tipLabel2,                  14, 0, 1, 6);
+    d->gridLayout->addWidget(d->ratingMappings,            12, 0, 2, 6);
+    d->gridLayout->addWidget(d->tipLabel2,                 14, 0, 1, 6);
 
     d->gridLayout->setContentsMargins(cmargin, cmargin, cmargin, cmargin);
     d->gridLayout->setSpacing(spacing);
@@ -480,7 +480,7 @@ void NamespaceEditDlg::setType(NamespaceEntry::NamespaceType type)
             d->commentTipLabel->hide();
             d->ratingMappings->hide();
 
-            // disable IPTC and EXIV for tags
+            // disable IPTC and EXIF for tags
 
             d->subspaceCombo->setItemData(0, 0, Qt::UserRole -1);
             d->subspaceCombo->setItemData(1, 0, Qt::UserRole -1);
@@ -496,6 +496,16 @@ void NamespaceEditDlg::setType(NamespaceEntry::NamespaceType type)
             break;
 
         case NamespaceEntry::COMMENT:
+            d->tagTipLabel->hide();
+            d->ratingTipLabel->hide();
+            d->isPath->hide();
+            d->isTagLabel->hide();
+            d->separatorLabel->hide();
+            d->nameSpaceSeparator->hide();
+            d->ratingMappings->hide();
+            break;
+
+        case NamespaceEntry::COLORLABEL:
             d->tagTipLabel->hide();
             d->ratingTipLabel->hide();
             d->isPath->hide();
@@ -555,7 +565,7 @@ bool NamespaceEditDlg::validifyCheck(QString& errMsg)
             }
 
             if (!d->alternativeName->text().isEmpty() &&
-                d->alternativeName->text().split(QLatin1Char('.')).first() != QLatin1String("Exif"))
+                (d->alternativeName->text().split(QLatin1Char('.')).first() != QLatin1String("Exif")))
             {
                 errMsg = i18n("EXIF alternative namespace name must start with \"Exif\".");
                 return false;
@@ -572,7 +582,7 @@ bool NamespaceEditDlg::validifyCheck(QString& errMsg)
             }
 
             if (!d->alternativeName->text().isEmpty() &&
-                d->alternativeName->text().split(QLatin1Char('.')).first() != QLatin1String("Iptc"))
+                (d->alternativeName->text().split(QLatin1Char('.')).first() != QLatin1String("Iptc")))
             {
                 errMsg = i18n("IPTC alternative namespace name must start with \"Iptc\".");
                 return false;
@@ -589,7 +599,7 @@ bool NamespaceEditDlg::validifyCheck(QString& errMsg)
             }
 
             if (!d->alternativeName->text().isEmpty() &&
-                d->alternativeName->text().split(QLatin1Char('.')).first() != QLatin1String("Xmp"))
+                (d->alternativeName->text().split(QLatin1Char('.')).first() != QLatin1String("Xmp")))
             {
                 errMsg = i18n("XMP alternative namespace name must start with \"Xmp\".");
                 return false;
@@ -623,6 +633,9 @@ bool NamespaceEditDlg::validifyCheck(QString& errMsg)
             break;
 
         case NamespaceEntry::COMMENT:
+            break;
+
+        case NamespaceEntry::COLORLABEL:
             break;
 
         default:

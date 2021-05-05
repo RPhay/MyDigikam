@@ -42,15 +42,15 @@ class PanoOptimizePage : public DWizardPage
 public:
 
     explicit PanoOptimizePage(PanoManager* const mngr, QWizard* const dlg);
-    ~PanoOptimizePage();
+    ~PanoOptimizePage() override;
 
 private:
 
     void process();
 
-    void initializePage();
-    bool validatePage();
-    void cleanupPage();
+    void initializePage()   override;
+    bool validatePage()     override;
+    void cleanupPage()      override;
 
 Q_SIGNALS:
 

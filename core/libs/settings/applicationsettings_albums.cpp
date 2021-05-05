@@ -7,7 +7,7 @@
  * Description : application settings interface
  *
  * Copyright (C) 2003-2004 by Renchi Raju <renchi dot raju at gmail dot com>
- * Copyright (C) 2003-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2003-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2007      by Arnd Baecker <arnd dot baecker at web dot de>
  * Copyright (C) 2014-2015 by Mohamed_Anwer <m_dot_anwer at gmx dot com>
  * Copyright (C) 2014      by Veaceslav Munteanu <veaceslav dot munteanu90 at gmail dot com>
@@ -38,7 +38,18 @@ void ApplicationSettings::setTreeViewIconSize(int val)
 int ApplicationSettings::getTreeViewIconSize() const
 {
     return ((d->treeThumbnailSize < 8) ||
-            (d->treeThumbnailSize > 64)) ? 22 : d->treeThumbnailSize;
+            (d->treeThumbnailSize > 64)) ? 32 : d->treeThumbnailSize;
+}
+
+void ApplicationSettings::setTreeViewFaceSize(int val)
+{
+    d->treeThumbFaceSize = val;
+}
+
+int ApplicationSettings::getTreeViewFaceSize() const
+{
+    return ((d->treeThumbFaceSize < 8) ||
+            (d->treeThumbFaceSize > 128)) ? 48 : d->treeThumbFaceSize;
 }
 
 void ApplicationSettings::setTreeViewFont(const QFont& font)

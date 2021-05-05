@@ -7,7 +7,7 @@
  * Description : Qt model-view for items - the delegate
  *
  * Copyright (C) 2009-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -47,37 +47,32 @@ class ItemDelegate : public ItemViewDelegate
 public:
 
     explicit ItemDelegate(QObject* const parent = nullptr);
-    ~ItemDelegate();
+    ~ItemDelegate()                                                                                    override;
 
     void setView(ItemCategorizedView* view);
 
-    ItemCategoryDrawer* categoryDrawer() const;
+    ItemCategoryDrawer* categoryDrawer()                                                         const;
 
-    QRect commentsRect()                             const;
-    QRect tagsRect()                                 const;
-    QRect actualPixmapRect(const QModelIndex& index) const;
-    QRect groupIndicatorRect()                       const;
-    QRect coordinatesIndicatorRect()                 const;
+    QRect commentsRect()                                                                         const;
+    QRect tagsRect()                                                                             const;
+    QRect actualPixmapRect(const QModelIndex& index)                                             const;
+    QRect groupIndicatorRect()                                                                   const;
+    QRect coordinatesIndicatorRect()                                                             const;
 
     int calculatethumbSizeToFit(int ws);
 
-    virtual void setSpacing(int spacing);
-    virtual void setDefaultViewOptions(const QStyleOptionViewItem& option);
-    virtual bool acceptsToolTip(const QPoint& pos, const QRect& visualRect,
-                                const QModelIndex& index, QRect* tooltipRect = nullptr) const;
-    virtual bool acceptsActivation(const QPoint& pos, const QRect& visualRect,
-                                   const QModelIndex& index, QRect* activationRect = nullptr) const;
+    void setSpacing(int spacing) override;
+    void setDefaultViewOptions(const QStyleOptionViewItem& option)                                     override;
+    bool acceptsToolTip(const QPoint& pos, const QRect& visualRect,
+                                const QModelIndex& index, QRect* tooltipRect = nullptr)          const override;
+    bool acceptsActivation(const QPoint& pos, const QRect& visualRect,
+                                   const QModelIndex& index, QRect* activationRect = nullptr)    const override;
 
-    virtual QRect pixmapRect()           const;
-    virtual QRect imageInformationRect() const;
+    QRect pixmapRect()                                                                           const override;
+    QRect imageInformationRect()                                                                 const override;
 
-    virtual void paint(QPainter* painter, const QStyleOptionViewItem& option, const QModelIndex& index)  const;
-    virtual QPixmap pixmapForDrag(const QStyleOptionViewItem& option, const QList<QModelIndex>& indexes) const;
-
-    /** Call this from a paint event, with all indexes expected to be painted immediately,
-     *  so that thumbnails become available in order.
-     */
-    virtual void prepareThumbnails(ItemThumbnailModel* thumbModel, const QList<QModelIndex>& indexes);
+    void paint(QPainter* painter, const QStyleOptionViewItem& option, const QModelIndex& index)  const override;
+    QPixmap pixmapForDrag(const QStyleOptionViewItem& option, const QList<QModelIndex>& indexes) const override;
 
     /**
      * Retrieve the thumbnail pixmap in given size for the ItemModel::ThumbnailRole for
@@ -102,21 +97,21 @@ protected:
      */
     virtual void updateRects() = 0;
 
-    virtual void clearCaches();
+    void clearCaches() override;
 
     /** Reimplement to clear caches based on model indexes (hash on row number etc.)
      *  Change signals are listened to this is called whenever such properties become invalid.
      */
     virtual void clearModelDataCaches();
 
-    virtual QPixmap thumbnailPixmap(const QModelIndex& index) const;
+    virtual QPixmap thumbnailPixmap(const QModelIndex& index)               const;
 
     bool onActualPixmapRect(const QPoint& pos, const QRect& visualRect,
-                            const QModelIndex& index, QRect* actualRect) const;
+                            const QModelIndex& index, QRect* actualRect)    const;
     void updateActualPixmapRect(const QModelIndex& index, const QRect& rect);
 
-    virtual void invalidatePaintingCache();
-    virtual void updateSizeRectsAndPixmaps();
+    void invalidatePaintingCache() override;
+    void updateSizeRectsAndPixmaps() override;
 
     void setModel(QAbstractItemModel* model);
 

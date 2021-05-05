@@ -6,7 +6,7 @@
  * Date        : 2017-06-15
  * Description : a tool to replace part of the image using another
  *
- * Copyright (C) 2004-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2004-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2017      by Shaza Ismail Kaoud <shaza dot ismail dot k at gmail dot com>
  * Copyright (C) 2019      by Ahmed Fathi <ahmed dot fathi dot abdelmageed at gmail dot com>
  *
@@ -49,18 +49,18 @@ public:
     /**
      * Constructor.
      *
-     * @param parent parent for qt parent child mechanism
+     * @param parent the parent for qt parent child mechanism
      */
     explicit HealingCloneTool(QObject* const parent);
 
     /**
      * Destructor.
      */
-    ~HealingCloneTool();
+    ~HealingCloneTool()      override;
 
 private Q_SLOTS:
 
-    void slotResetSettings();
+    void slotResetSettings() override;
     void slotResized();
 
 public Q_SLOTS:
@@ -84,16 +84,16 @@ public Q_SLOTS:
 
 private:
 
-    void readSettings();
-    void writeSettings();
-    void finalRendering();
+    void readSettings()      override;
+    void writeSettings()     override;
+    void finalRendering()    override;
 
     /**
      * @brief clone the method responsible for the clone/heal of preview image
      * @param img the preview image is passed to this method by reference
      * @param srcPoint center of brush source
      * @param dstPoint center of brush destination
-     * @param radius radius of cloning brush
+     * @param radius the radius of cloning brush
      */
     void clone(DImg* const img, const QPoint& srcPoint, const QPoint& dstPoint);
     std::vector<QPoint> interpolate(const QPoint& start,const QPoint& end);

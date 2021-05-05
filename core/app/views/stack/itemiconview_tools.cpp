@@ -7,7 +7,7 @@
  * Description : Item icon view interface - Tools methods.
  *
  * Copyright (C) 2002-2005 by Renchi Raju <renchi dot raju at gmail dot com>
- * Copyright (C) 2002-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2002-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2009-2011 by Johannes Wienke <languitar at semipol dot de>
  * Copyright (C) 2010-2011 by Andi Clemens <andi dot clemens at gmail dot com>
  * Copyright (C) 2011-2013 by Michael G. Hansen <mike at mghansen dot de>
@@ -53,7 +53,7 @@ void ItemIconView::slotFileWithDefaultApplication()
 
 void ItemIconView::slotLightTable()
 {
-    bool grouping = selectedNeedGroupResolving(ApplicationSettings::LightTable);
+    bool grouping                   = selectedNeedGroupResolving(ApplicationSettings::LightTable);
     const ItemInfoList selectedList = selectedInfoList(false, grouping);
 
     if (selectedList.isEmpty())
@@ -61,7 +61,7 @@ void ItemIconView::slotLightTable()
         grouping = allNeedGroupResolving(ApplicationSettings::LightTable);
     }
 
-    const ItemInfoList allInfoList  = allInfo(grouping);
+    const ItemInfoList allInfoList = allInfo(grouping);
     const ItemInfo currentItemInfo = currentInfo();
 
     d->utilities->insertToLightTableAuto(allInfoList, selectedList, currentItemInfo);
@@ -69,7 +69,7 @@ void ItemIconView::slotLightTable()
 
 void ItemIconView::slotQueueMgr()
 {
-    bool grouping = selectedNeedGroupResolving(ApplicationSettings::BQM);
+    bool grouping              = selectedNeedGroupResolving(ApplicationSettings::BQM);
     ItemInfoList imageInfoList = selectedInfoList(false, grouping);
     ItemInfo     singleInfo    = currentInfo();
 
@@ -80,7 +80,7 @@ void ItemIconView::slotQueueMgr()
 
     if (singleInfo.isNull())
     {
-        grouping = allNeedGroupResolving(ApplicationSettings::BQM);
+        grouping                    = allNeedGroupResolving(ApplicationSettings::BQM);
         const ItemInfoList allItems = allInfo(grouping);
 
         if (!allItems.isEmpty())
@@ -95,42 +95,45 @@ void ItemIconView::slotQueueMgr()
 void ItemIconView::slotImageEdit()
 {
     // Where is the difference to slotEditor?
+
     slotEditor();
 }
 
 void ItemIconView::slotImageLightTable()
 {
     const ItemInfoList selectedList = selectedInfoList(ApplicationSettings::LightTable);
-    const ItemInfo currentItemInfo = currentInfo();
+    const ItemInfo currentItemInfo  = currentInfo();
 
     // replace images in light table
+
     d->utilities->insertToLightTable(selectedList, currentItemInfo, false);
 }
 
 void ItemIconView::slotImageAddToLightTable()
 {
     const ItemInfoList selectedList = selectedInfoList(ApplicationSettings::LightTable);
-    const ItemInfo currentItemInfo = currentInfo();
+    const ItemInfo currentItemInfo  = currentInfo();
 
     // add to images in light table
+
     d->utilities->insertToLightTable(selectedList, currentItemInfo, true);
 }
 
 void ItemIconView::slotImageAddToCurrentQueue()
 {
     const ItemInfoList selectedList = selectedInfoList(ApplicationSettings::BQM);
-    const ItemInfo currentItemInfo = currentInfo();
+    const ItemInfo currentItemInfo  = currentInfo();
 
     d->utilities->insertToQueueManager(selectedList, currentItemInfo, false);
 }
 
 void ItemIconView::slotImageAddToNewQueue()
 {
-    const bool newQueue = QueueMgrWindow::queueManagerWindowCreated() &&
+    const bool newQueue             = QueueMgrWindow::queueManagerWindowCreated() &&
                     !QueueMgrWindow::queueManagerWindow()->queuesMap().isEmpty();
 
     const ItemInfoList selectedList = selectedInfoList(ApplicationSettings::BQM);
-    const ItemInfo currentItemInfo = currentInfo();
+    const ItemInfo currentItemInfo  = currentInfo();
 
     d->utilities->insertToQueueManager(selectedList, currentItemInfo, newQueue);
 }
@@ -138,7 +141,7 @@ void ItemIconView::slotImageAddToNewQueue()
 void ItemIconView::slotImageAddToExistingQueue(int queueid)
 {
     const ItemInfoList selectedList = selectedInfoList(ApplicationSettings::BQM);
-    const ItemInfo currentItemInfo = currentInfo();
+    const ItemInfo currentItemInfo  = currentInfo();
 
     if (!selectedList.isEmpty())
     {

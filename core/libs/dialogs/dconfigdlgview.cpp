@@ -6,7 +6,7 @@
  * Date        : 2009-11-03
  * Description : A dialog base class which can handle multiple pages.
  *
- * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2007      by Rafael Fernández López <ereslibre at kde dot org>
  * Copyright (C) 2006      by Tobias Koenig <tokoe at kde dot org>
  *
@@ -78,7 +78,7 @@ void DConfigDlgViewPrivate::_k_rebuildGui()
         QObject::connect(view->selectionModel(), SIGNAL(selectionChanged(QItemSelection,QItemSelection)),
                          q, SLOT(_k_pageSelected(QItemSelection,QItemSelection)));
 
-        if (currentLastIndex.isValid())
+        if      (currentLastIndex.isValid())
         {
             view->selectionModel()->setCurrentIndex(currentLastIndex, QItemSelectionModel::Select);
         }
@@ -314,6 +314,7 @@ void DConfigDlgViewPrivate::_k_pageSelected(const QItemSelection& index, const Q
     }
 
     Q_Q(DConfigDlgView);
+
     emit q->currentPageChanged(currentIndex, previousIndex);
 }
 
@@ -353,14 +354,14 @@ void DConfigDlgViewPrivate::_k_dataChanged(const QModelIndex&, const QModelIndex
 }
 
 DConfigDlgViewPrivate::DConfigDlgViewPrivate(DConfigDlgView* const _parent)
-    : q_ptr(_parent),
-      model(nullptr),
-      faceType(DConfigDlgView::Auto),
-      layout(nullptr),
-      stack(nullptr),
-      titleWidget(nullptr),
-      defaultWidget(nullptr),
-      view(nullptr)
+    : q_ptr         (_parent),
+      model         (nullptr),
+      faceType      (DConfigDlgView::Auto),
+      layout        (nullptr),
+      stack         (nullptr),
+      titleWidget   (nullptr),
+      defaultWidget (nullptr),
+      view          (nullptr)
 {
 }
 
@@ -389,14 +390,14 @@ void DConfigDlgViewPrivate::init()
 
 DConfigDlgView::DConfigDlgView(QWidget* const parent)
     : QWidget(parent),
-      d_ptr(new DConfigDlgViewPrivate(this))
+      d_ptr  (new DConfigDlgViewPrivate(this))
 {
     d_ptr->init();
 }
 
 DConfigDlgView::DConfigDlgView(DConfigDlgViewPrivate& dd, QWidget* const parent)
     : QWidget(parent),
-      d_ptr(&dd)
+      d_ptr  (&dd)
 {
     d_ptr->init();
 }
@@ -535,7 +536,7 @@ QAbstractItemView* DConfigDlgView::createView()
 {
     Q_D(DConfigDlgView);
 
-    if (d->faceType == Auto)
+    if      (d->faceType == Auto)
     {
         const FaceType faceType = d->detectAutoFace();
 

@@ -6,7 +6,7 @@
  * Date        : 2006-10-15
  * Description : IPTC keywords settings page.
  *
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -27,12 +27,12 @@
 #include <QCheckBox>
 #include <QLabel>
 #include <QPushButton>
-#include <QValidator>
 #include <QGridLayout>
 #include <QApplication>
 #include <QStyle>
 #include <QLineEdit>
 #include <QListWidget>
+#include <QToolTip>
 
 // KDE includes
 
@@ -58,7 +58,7 @@ public:
         repKeywordButton = nullptr;
         keywordsBox      = nullptr;
         keywordsCheck    = nullptr;
-        keywordEdit      = nullptr;
+        keywordsEdit     = nullptr;
     }
 
     QStringList  oldKeywords;
@@ -69,7 +69,7 @@ public:
 
     QCheckBox*   keywordsCheck;
 
-    QLineEdit*   keywordEdit;
+    QLineEdit*   keywordsEdit;
 
     QListWidget* keywordsBox;
 };
@@ -80,20 +80,15 @@ IPTCKeywords::IPTCKeywords(QWidget* const parent)
 {
     QGridLayout* const grid = new QGridLayout(this);
 
-    // IPTC only accept printable Ascii char.
-    QRegExp asciiRx(QLatin1String("[\x20-\x7F]+$"));
-    QValidator* const asciiValidator = new QRegExpValidator(asciiRx, this);
-
     // --------------------------------------------------------
 
     d->keywordsCheck = new QCheckBox(i18n("Use information retrieval words:"), this);
 
-    d->keywordEdit   = new QLineEdit(this);
-    d->keywordEdit->setClearButtonEnabled(true);
-    d->keywordEdit->setValidator(asciiValidator);
-    d->keywordEdit->setMaxLength(64);
-    d->keywordEdit->setWhatsThis(i18n("Enter here a new keyword. "
-                                      "This field is limited to 64 ASCII characters."));
+    d->keywordsEdit   = new QLineEdit(this);
+    d->keywordsEdit->setClearButtonEnabled(true);
+    d->keywordsEdit->setMaxLength(64);
+    d->keywordsEdit->setWhatsThis(i18n("Enter here a new keyword. "
+                                      "This field is limited to 64 characters."));
 
     d->keywordsBox   = new QListWidget(this);
     d->keywordsBox->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
@@ -110,11 +105,10 @@ IPTCKeywords::IPTCKeywords(QWidget* const parent)
     // --------------------------------------------------------
 
     QLabel* const note = new QLabel(i18n("<b>Note: "
-                 "<b><a href='https://en.wikipedia.org/wiki/IPTC_Information_Interchange_Model'>IPTC</a></b> "
-                 "text tags only support the printable "
-                 "<b><a href='https://en.wikipedia.org/wiki/Ascii'>ASCII</a></b> "
-                 "characters and limit string sizes. "
-                 "Use contextual help for details.</b>"), this);
+                 "<a href='https://en.wikipedia.org/wiki/IPTC_Information_Interchange_Model'>IPTC</a> "
+                 "text tags are limited string sizes. Use contextual help for details. "
+                 "Consider to use <a href='https://en.wikipedia.org/wiki/Extensible_Metadata_Platform'>XMP</a> instead.</b>"),
+                 this);
     note->setMaximumWidth(150);
     note->setOpenExternalLinks(true);
     note->setWordWrap(true);
@@ -124,7 +118,7 @@ IPTCKeywords::IPTCKeywords(QWidget* const parent)
 
     grid->setAlignment( Qt::AlignTop );
     grid->addWidget(d->keywordsCheck,       0, 0, 1, 2);
-    grid->addWidget(d->keywordEdit,         1, 0, 1, 1);
+    grid->addWidget(d->keywordsEdit,         1, 0, 1, 1);
     grid->addWidget(d->keywordsBox,         2, 0, 5, 1);
     grid->addWidget(d->addKeywordButton,    2, 1, 1, 1);
     grid->addWidget(d->delKeywordButton,    3, 1, 1, 1);
@@ -152,7 +146,7 @@ IPTCKeywords::IPTCKeywords(QWidget* const parent)
     // --------------------------------------------------------
 
     connect(d->keywordsCheck, SIGNAL(toggled(bool)),
-            d->keywordEdit, SLOT(setEnabled(bool)));
+            d->keywordsEdit, SLOT(setEnabled(bool)));
 
     connect(d->keywordsCheck, SIGNAL(toggled(bool)),
             d->addKeywordButton, SLOT(setEnabled(bool)));
@@ -179,6 +173,9 @@ IPTCKeywords::IPTCKeywords(QWidget* const parent)
 
     connect(d->repKeywordButton, SIGNAL(clicked()),
             this, SIGNAL(signalModified()));
+
+    connect(d->keywordsEdit, SIGNAL(textChanged(QString)),
+            this, SLOT(slotLineEditModified()));
 }
 
 IPTCKeywords::~IPTCKeywords()
@@ -197,13 +194,13 @@ void IPTCKeywords::slotDelKeyword()
 
 void IPTCKeywords::slotRepKeyword()
 {
-    QString newKeyword = d->keywordEdit->text();
+    QString newKeyword = d->keywordsEdit->text();
     if (newKeyword.isEmpty()) return;
 
     if (!d->keywordsBox->selectedItems().isEmpty())
     {
         d->keywordsBox->selectedItems()[0]->setText(newKeyword);
-        d->keywordEdit->clear();
+        d->keywordsEdit->clear();
     }
 }
 
@@ -211,7 +208,7 @@ void IPTCKeywords::slotKeywordSelectionChanged()
 {
     if (!d->keywordsBox->selectedItems().isEmpty())
     {
-        d->keywordEdit->setText(d->keywordsBox->selectedItems()[0]->text());
+        d->keywordsEdit->setText(d->keywordsBox->selectedItems()[0]->text());
         d->delKeywordButton->setEnabled(true);
         d->repKeywordButton->setEnabled(true);
     }
@@ -224,7 +221,7 @@ void IPTCKeywords::slotKeywordSelectionChanged()
 
 void IPTCKeywords::slotAddKeyword()
 {
-    QString newKeyword = d->keywordEdit->text();
+    QString newKeyword = d->keywordsEdit->text();
     if (newKeyword.isEmpty()) return;
 
     bool found = false;
@@ -243,16 +240,30 @@ void IPTCKeywords::slotAddKeyword()
     if (!found)
     {
         d->keywordsBox->insertItem(d->keywordsBox->count(), newKeyword);
-        d->keywordEdit->clear();
+        d->keywordsEdit->clear();
     }
+}
+
+void IPTCKeywords::slotLineEditModified()
+{
+    QLineEdit* const ledit = dynamic_cast<QLineEdit*>(sender());
+
+    if (!ledit)
+    {
+        return;
+    }
+
+    QToolTip::showText(ledit->mapToGlobal(QPoint(0, (-1)*(ledit->height() + 16))),
+                       i18np("%1 character left", "%1 characters left", ledit->maxLength() - ledit->text().size()),
+                       ledit);
 }
 
 void IPTCKeywords::readMetadata(QByteArray& iptcData)
 {
     blockSignals(true);
-    DMetadata meta;
-    meta.setIptc(iptcData);
-    d->oldKeywords = meta.getIptcKeywords();
+    QScopedPointer<DMetadata> meta(new DMetadata);
+    meta->setIptc(iptcData);
+    d->oldKeywords = meta->getIptcKeywords();
 
     d->keywordsBox->clear();
     d->keywordsCheck->setChecked(false);
@@ -263,7 +274,7 @@ void IPTCKeywords::readMetadata(QByteArray& iptcData)
         d->keywordsCheck->setChecked(true);
     }
 
-    d->keywordEdit->setEnabled(d->keywordsCheck->isChecked());
+    d->keywordsEdit->setEnabled(d->keywordsCheck->isChecked());
     d->keywordsBox->setEnabled(d->keywordsCheck->isChecked());
     d->addKeywordButton->setEnabled(d->keywordsCheck->isChecked());
     d->delKeywordButton->setEnabled(d->keywordsCheck->isChecked());
@@ -273,8 +284,8 @@ void IPTCKeywords::readMetadata(QByteArray& iptcData)
 
 void IPTCKeywords::applyMetadata(QByteArray& iptcData)
 {
-    DMetadata meta;
-    meta.setIptc(iptcData);
+    QScopedPointer<DMetadata> meta(new DMetadata);
+    meta->setIptc(iptcData);
     QStringList newKeywords;
 
     for (int i = 0 ; i < d->keywordsBox->count(); ++i)
@@ -284,11 +295,11 @@ void IPTCKeywords::applyMetadata(QByteArray& iptcData)
     }
 
     if (d->keywordsCheck->isChecked())
-        meta.setIptcKeywords(d->oldKeywords, newKeywords);
+        meta->setIptcKeywords(d->oldKeywords, newKeywords);
     else
-        meta.setIptcKeywords(d->oldKeywords, QStringList());
+        meta->setIptcKeywords(d->oldKeywords, QStringList());
 
-    iptcData = meta.getIptc();
+    iptcData = meta->getIptc();
 }
 
 } // namespace DigikamGenericMetadataEditPlugin

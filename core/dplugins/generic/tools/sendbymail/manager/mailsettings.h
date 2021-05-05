@@ -6,7 +6,7 @@
  * Date        : 2007-11-07
  * Description : mail settings container.
  *
- * Copyright (C) 2007-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2007-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2010      by Andi Clemens <andi dot clemens at googlemail dot com>
  *
  * This program is free software; you can redistribute it
@@ -43,7 +43,9 @@ class MailSettings
 
 public:
 
-    // Images selection mode
+    /**
+     * Images selection mode
+     */
     enum Selection
     {
         IMAGES = 0,
@@ -56,7 +58,7 @@ public:
         CLAWSMAIL,
         EVOLUTION,
         KMAIL,
-        NETSCAPE,       // Messenger (https://en.wikipedia.org/wiki/Netscape_Messenger_9)
+        NETSCAPE,       ///< Messenger (https://en.wikipedia.org/wiki/Netscape_Messenger_9)
         OUTLOOK,
         SYLPHEED,
         THUNDERBIRD
@@ -73,28 +75,33 @@ public:
     explicit MailSettings();
     ~MailSettings();
 
-    // Read and write settings in config file between sessions.
+    /**
+     * Read and write settings in config file between sessions.
+     */
     void  readSettings(KConfigGroup& group);
     void  writeSettings(KConfigGroup& group);
 
     QString format()           const;
 
-    /** Return the attachment limit in bytes
+    /**
+     * Return the attachment limit in bytes
      */
     qint64  attachementLimit() const;
 
     void setMailUrl(const QUrl& orgUrl, const QUrl& emailUrl);
     QUrl mailUrl(const QUrl& orgUrl) const;
 
-    // Helper methods to fill combobox from GUI.
+    /**
+     * Helper methods to fill combobox from GUI.
+     */
     static QMap<MailClient,  QString> mailClientNames();
     static QMap<ImageFormat, QString> imageFormatNames();
 
 public:
 
-    Selection                 selMode;             // Items selection mode
+    Selection                 selMode;              ///< Items selection mode
 
-    QList<QUrl>               inputImages;         // Selected items to send.
+    QList<QUrl>               inputImages;          ///< Selected items to send.
 
     bool                      addFileProperties;
     bool                      imagesChangeProp;
@@ -113,9 +120,9 @@ public:
 
     ImageFormat               imageFormat;
 
-    QMap<QUrl, QUrl>          itemsList; // Map of original item and attached item (can be resized).
+    QMap<QUrl, QUrl>          itemsList;            ///< Map of original item and attached item (can be resized).
 
-    QMap<MailClient, QString> binPaths;  // Map of paths for all mail clients.
+    QMap<MailClient, QString> binPaths;             ///< Map of paths for all mail clients.
 };
 
 } // namespace DigikamGenericSendByMailPlugin

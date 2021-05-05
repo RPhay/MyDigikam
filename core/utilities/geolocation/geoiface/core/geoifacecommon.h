@@ -6,7 +6,7 @@
  * Date        : 2010-07-14
  * Description : Common internal data structures for geolocation interface
  *
- * Copyright (C) 2010-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2010-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2010-2014 by Michael G. Hansen <mike at mghansen dot de>
  * Copyright (C)      2014 by Justus Schwartz <justus at gmx dot li>
  *
@@ -74,11 +74,11 @@ public:
     Q_DECLARE_FLAGS(InternalWidgetStates, InternalWidgetState)
 
     GeoIfaceInternalWidgetInfo()
-        : state(),
-          widget(),
-          backendData(),
-          backendName(),
-          currentOwner(nullptr),
+        : state         (),
+          widget        (),
+          backendData   (),
+          backendName   (),
+          currentOwner  (nullptr),
           deleteFunction(nullptr)
     {
     }
@@ -127,13 +127,17 @@ public:
 
 private:
 
+    // Disable
+    explicit GeoIfaceGlobalObject(QObject*) = delete;
     GeoIfaceGlobalObject();
-    ~GeoIfaceGlobalObject();
+    ~GeoIfaceGlobalObject() override;
+
+    Q_DISABLE_COPY(GeoIfaceGlobalObject)
+
+private:
 
     class Private;
     Private* const d;
-
-    Q_DISABLE_COPY(GeoIfaceGlobalObject)
 
     friend class GeoIfaceGlobalObjectCreator;
 };
@@ -157,16 +161,16 @@ public:
 public:
 
     GeoIfaceCluster()
-        : pixmapType(PixmapMarker),
-          tileIndicesList(),
-          markerCount(0),
-          markerSelectedCount(0),
-          coordinates(),
-          pixelPos(),
-          groupState(SelectedNone),
-          representativeMarkers(),
-          pixmapSize(),
-          pixmapOffset()
+        : pixmapType            (PixmapMarker),
+          tileIndicesList       (),
+          markerCount           (0),
+          markerSelectedCount   (0),
+          coordinates           (),
+          pixelPos              (),
+          groupState            (SelectedNone),
+          representativeMarkers (),
+          pixmapSize            (),
+          pixmapOffset          ()
     {
     }
 
@@ -201,10 +205,7 @@ const int GeoIfaceMinThumbnailSize           = GeoIfaceMinThumbnailGroupingRadiu
  * @param b Point b
  * @return Square of the distance between a and b
  */
-DIGIKAM_EXPORT inline int QPointSquareDistance(const QPoint& a, const QPoint& b)
-{
-    return (a.x() - b.x()) * (a.x() - b.x()) + (a.y() - b.y()) * (a.y() - b.y());
-}
+DIGIKAM_EXPORT int QPointSquareDistance(const QPoint& a, const QPoint& b);
 
 // ----------------------------------------------------------------------------------------------
 
@@ -213,27 +214,27 @@ class DIGIKAM_EXPORT GeoIfaceSharedData : public QSharedData
 public:
 
     GeoIfaceSharedData()
-        : QSharedData(),
-          worldMapWidget(nullptr),
-          tileGrouper(nullptr),
-          markerModel(nullptr),
-          clusterList(),
-          trackManager(nullptr),
-          showThumbnails(true),
-          thumbnailSize(GeoIfaceMinThumbnailSize),
-          thumbnailGroupingRadius(GeoIfaceMinThumbnailGroupingRadius),
-          markerGroupingRadius(GeoIfaceMinMarkerGroupingRadius),
-          previewSingleItems(true),
-          previewGroupedItems(true),
-          showNumbersOnItems(true),
-          sortKey(0),
-          modificationsAllowed(true),
-          selectionRectangle(),
-          haveMovingCluster(false),
-          currentMouseMode(nullptr),
-          availableMouseModes(nullptr),
-          visibleMouseModes(nullptr),
-          activeState(false)
+        : QSharedData               (),
+          worldMapWidget            (nullptr),
+          tileGrouper               (nullptr),
+          markerModel               (nullptr),
+          clusterList               (),
+          trackManager              (nullptr),
+          showThumbnails            (true),
+          thumbnailSize             (GeoIfaceMinThumbnailSize),
+          thumbnailGroupingRadius   (GeoIfaceMinThumbnailGroupingRadius),
+          markerGroupingRadius      (GeoIfaceMinMarkerGroupingRadius),
+          previewSingleItems        (true),
+          previewGroupedItems       (true),
+          showNumbersOnItems        (true),
+          sortKey                   (0),
+          modificationsAllowed      (true),
+          selectionRectangle        (),
+          haveMovingCluster         (false),
+          currentMouseMode          (),
+          availableMouseModes       (),
+          visibleMouseModes         (),
+          activeState               (false)
     {
     }
 

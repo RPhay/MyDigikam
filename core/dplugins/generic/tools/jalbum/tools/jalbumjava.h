@@ -34,24 +34,12 @@ namespace DigikamGenericJAlbumPlugin
 
 class JalbumJava : public DBinaryIface
 {
+    Q_OBJECT
+
 public:
 
-    explicit JalbumJava()
-        : DBinaryIface(
-                       QLatin1String("java"),
-                       QLatin1String("Java"),
-                       QLatin1String("https://www.java.com/"),
-                       QLatin1String("jAlbum Export"),
-                       QStringList(QLatin1String("-version")),
-                       i18n("jAlbum Gallery Generator.")
-                      )
-        {
-            setup();
-        }
-
-    ~JalbumJava()
-    {
-    }
+    explicit JalbumJava(QObject* const parent = nullptr);
+    ~JalbumJava() override;
 };
 
 } // namespace DigikamGenericJAlbumPlugin

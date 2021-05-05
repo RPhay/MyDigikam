@@ -51,14 +51,14 @@ class Q_DECL_HIDDEN DbCleaner::Private
 public:
 
     explicit Private()
-      : thread(nullptr),
-        cleanThumbsDb(false),
-        cleanFacesDb(false),
-        cleanSimilarityDb(false),
-        shrinkDatabases(false),
+      : thread                 (nullptr),
+        cleanThumbsDb          (false),
+        cleanFacesDb           (false),
+        cleanSimilarityDb      (false),
+        shrinkDatabases        (false),
         databasesToAnalyseCount(1),
-        databasesToShrinkCount(0),
-        shrinkDlg(nullptr)
+        databasesToShrinkCount (0),
+        shrinkDlg              (nullptr)
     {
     }
 
@@ -85,9 +85,10 @@ DbCleaner::DbCleaner(bool cleanThumbsDb,
                      bool shrinkDatabases,
                      ProgressItem* const parent)
     : MaintenanceTool(QLatin1String("DbCleaner"), parent),
-      d(new Private)
+      d              (new Private)
 {
     // register the identity list as meta type to be able to use it in signal/slot connection
+
     qRegisterMetaType<QList<Identity>>("QList<Identity>");
 
     d->cleanThumbsDb     = cleanThumbsDb;
@@ -141,9 +142,9 @@ void DbCleaner::slotStart()
     // Set one item to make sure that the progress bar is shown.
 
     setTotalItems(d->databasesToAnalyseCount + d->databasesToShrinkCount);
-
-    //qCDebug(DIGIKAM_GENERAL_LOG) << "Completed items at start: " << completedItems() << "/" << totalItems();
-
+/*
+    qCDebug(DIGIKAM_GENERAL_LOG) << "Completed items at start: " << completedItems() << "/" << totalItems();
+*/
     connect(d->thread, SIGNAL(signalCompleted()),
             this, SLOT(slotCleanItems()));
 
@@ -155,8 +156,7 @@ void DbCleaner::slotStart()
     connect(d->thread,SIGNAL(signalData(QList<qlonglong>,QList<int>,QList<Identity>,QList<qlonglong>)),
             this, SLOT(slotFetchedData(QList<qlonglong>,QList<int>,QList<Identity>,QList<qlonglong>)));
 
-    // Compute the database junk. This will lead to the call of the slot
-    // slotFetchedData.
+    // Compute the database junk. This will lead to the call of the slot slotFetchedData.
 
     d->thread->computeDatabaseJunk(d->cleanThumbsDb, d->cleanFacesDb, d->cleanSimilarityDb);
     d->thread->start();
@@ -225,6 +225,7 @@ void DbCleaner::slotCleanItems()
         setLabel(i18n("Clean up the databases : ") + i18n("cleaning core db"));
 
         // GO!
+
         d->thread->cleanCoreDb(d->imagesToRemove);
         d->thread->start();
     }
@@ -238,6 +239,7 @@ void DbCleaner::slotCleanItems()
 void DbCleaner::slotCleanedItems()
 {
     // We cleaned the items. Now clean the thumbs db
+
     disconnect(d->thread, SIGNAL(signalCompleted()),
                this, SLOT(slotCleanedItems()));
 
@@ -252,6 +254,7 @@ void DbCleaner::slotCleanedItems()
             setLabel(i18n("Clean up the databases : ") + i18n("cleaning thumbnails db"));
 
             // GO!
+
             d->thread->cleanThumbsDb(d->staleThumbnails);
             d->thread->start();
         }
@@ -373,18 +376,22 @@ void DbCleaner::slotShrinkDatabases()
             this, SLOT(slotDone()));
 
     d->thread->shrinkDatabases();
-
-    //qCDebug(DIGIKAM_GENERAL_LOG) << "Completed items before vacuum: " << completedItems() << "/" << totalItems();
-
-//    slotShrinkNextDBInfo(true,true);
-//    qCDebug(DIGIKAM_GENERAL_LOG) << "Is timer active before start():"
-//                                 << d->progressTimer->isActive();
+/*
+    qCDebug(DIGIKAM_GENERAL_LOG) << "Completed items before vacuum: " << completedItems() << "/" << totalItems();
+*/
+/*
+    slotShrinkNextDBInfo(true,true);
+    qCDebug(DIGIKAM_GENERAL_LOG) << "Is timer active before start():"
+                                 << d->progressTimer->isActive();
+*/
 
     d->thread->start();
 
-//    qCDebug(DIGIKAM_GENERAL_LOG) << "Is timer active after start():"
-//                                 << d->progressTimer->isActive();
-//    d->progressTimer->start(300);
+/*
+    qCDebug(DIGIKAM_GENERAL_LOG) << "Is timer active after start():"
+                                 << d->progressTimer->isActive();
+    d->progressTimer->start(300);
+*/
 }
 
 void DbCleaner::slotAdvance()
@@ -410,27 +417,35 @@ void DbCleaner::slotShrinkNextDBInfo(bool done, bool passed)
         }
     }
 
-    switch(d->databasesToShrinkCount)
+    switch (d->databasesToShrinkCount)
     {
         case 3:
+        {
             d->shrinkDlg->setIcon(0, statusIcon);
             d->shrinkDlg->setActive(1);
             break;
+        }
 
         case 2:
+        {
             d->shrinkDlg->setIcon(1, statusIcon);
             d->shrinkDlg->setActive(2);
             break;
+        }
 
         case 1:
+        {
             d->shrinkDlg->setIcon(2, statusIcon);
             d->shrinkDlg->setActive(3);
             break;
+        }
 
         case 0:
+        {
             d->shrinkDlg->setIcon(3, statusIcon);
             d->shrinkDlg->setActive(-1);
             break;
+        }
     }
 }
 
@@ -462,31 +477,31 @@ class Q_DECL_HIDDEN DbShrinkDialog::Private
 public:
 
     explicit Private()
-      : active(-1),
+      : active       (-1),
+        progressPix  (nullptr),
         progressTimer(nullptr),
         progressIndex(1),
-        statusList(nullptr)
+        statusList   (nullptr)
     {
     }
 
-    int            active;
-    DWorkingPixmap progressPix;
-    QTimer*        progressTimer;
-    int            progressIndex;
-    QListWidget*   statusList;
+    int             active;
+    DWorkingPixmap* progressPix;
+    QTimer*         progressTimer;
+    int             progressIndex;
+    QListWidget*    statusList;
 };
 
 DbShrinkDialog::DbShrinkDialog(QWidget* const parent)
     : QDialog(parent),
-      d(new Private)
+      d      (new Private)
 {
-    d->progressPix   = DWorkingPixmap();
-    d->progressTimer = new QTimer(parent);
-    d->statusList    = new QListWidget(this);
-
+    d->progressPix                  = new DWorkingPixmap(this);
+    d->progressTimer                = new QTimer(parent);
+    d->statusList                   = new QListWidget(this);
     QVBoxLayout* const statusLayout = new QVBoxLayout(this);
 
-    QLabel* const infos = new QLabel(i18n("<p>Database shrinking in progress.</p>"
+    QLabel* const infos             = new QLabel(i18n("<p>Database shrinking in progress.</p>"
                                           "<p>Currently, your databases are being shrunk. "
                                           "This will take some time - depending on "
                                           "your databases size.</p>"
@@ -495,7 +510,7 @@ DbShrinkDialog::DbShrinkDialog(QWidget* const parent)
                                           "will vanish when the shrinking process is "
                                           "finished.</p>"
                                           "Current Status:"),
-                                     this);
+                                          this);
     infos->setWordWrap(true);
     statusLayout->addWidget(infos);
 
@@ -508,9 +523,11 @@ DbShrinkDialog::DbShrinkDialog(QWidget* const parent)
     {
         d->statusList->item(i)->setIcon(QIcon::fromTheme(QLatin1String("system-run")));
     }
-//    d->statusList->setMinimumSize(0, 0);
-//    d->statusList->setSizePolicy(QSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum));
-//    d->statusList->adjustSize();
+/*
+    d->statusList->setMinimumSize(0, 0);
+    d->statusList->setSizePolicy(QSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum));
+    d->statusList->adjustSize();
+*/
     d->statusList->setMaximumHeight(4 * d->statusList->sizeHintForRow(0) +
                                     2 * d->statusList->frameWidth());
     statusLayout->addWidget(d->statusList);
@@ -540,7 +557,7 @@ void DbShrinkDialog::setActive(const int pos)
     {
         if (d->active >= 0)
         {
-            d->statusList->item(d->active)->setIcon(d->progressPix.frameAt(0));
+            d->statusList->item(d->active)->setIcon(d->progressPix->frameAt(0));
             d->progressTimer->start(300);
             d->progressIndex = 1;
         }
@@ -572,12 +589,12 @@ void DbShrinkDialog::slotProgressTimerDone()
         return;
     }
 
-    if (d->progressIndex == d->progressPix.frameCount())
+    if (d->progressIndex == d->progressPix->frameCount())
     {
         d->progressIndex = 0;
     }
 
-    d->statusList->item(d->active)->setIcon(d->progressPix.frameAt(d->progressIndex));
+    d->statusList->item(d->active)->setIcon(d->progressPix->frameAt(d->progressIndex));
     ++d->progressIndex;
 }
 

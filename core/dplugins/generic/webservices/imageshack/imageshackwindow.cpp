@@ -49,9 +49,9 @@
 
 // KDE includes
 
-#include <kconfig.h>
 #include <klocalizedstring.h>
-#include <kwindowconfig.h>
+#include <ksharedconfig.h>
+#include <kconfiggroup.h>
 
 // Local includes
 
@@ -201,11 +201,8 @@ void ImageShackWindow::closeEvent(QCloseEvent* e)
 
 void ImageShackWindow::readSettings()
 {
-    winId();
-    KConfig config;
-    KConfigGroup group = config.group("ImageShack Settings");
-    KWindowConfig::restoreWindowSize(windowHandle(), group);
-    resize(windowHandle()->size());
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup group      = config->group("ImageShack Settings");
 
     if (group.readEntry("Private", false))
     {
@@ -224,13 +221,11 @@ void ImageShackWindow::readSettings()
 
 void ImageShackWindow::saveSettings()
 {
-    KConfig config;
-    KConfigGroup group = config.group("ImageShack Settings");
-    KWindowConfig::saveWindowSize(windowHandle(), group);
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup group      = config->group("ImageShack Settings");
 
     group.writeEntry("Private", d->widget->d->privateImagesChb->isChecked());
     group.writeEntry("Rembar",  d->widget->d->remBarChb->isChecked());
-    group.sync();
 }
 
 void ImageShackWindow::slotStartTransfer()
@@ -311,7 +306,7 @@ void ImageShackWindow::slotBusy(bool val)
     }
 }
 
-void ImageShackWindow::slotJobInProgress(int step, int maxStep, const QString &format)
+void ImageShackWindow::slotJobInProgress(int step, int maxStep, const QString& format)
 {
     if (maxStep > 0)
     {
@@ -345,7 +340,7 @@ void ImageShackWindow::slotLoginDone(int errCode, const QString& errMsg)
     }
 }
 
-void ImageShackWindow::slotGetGalleriesDone(int errCode, const QString &errMsg)
+void ImageShackWindow::slotGetGalleriesDone(int errCode, const QString& errMsg)
 {
     slotBusy(false);
     d->widget->d->progressBar->setVisible(false);
@@ -397,7 +392,7 @@ void ImageShackWindow::uploadNextItem()
 
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Album ID is "<< d->widget->d->galleriesCob->itemData(gidx).toString();
 
-    switch(gidx)
+    switch (gidx)
     {
         case 0:
             d->talker->uploadItem(imgPath, opts);

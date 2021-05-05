@@ -26,27 +26,28 @@
 
 // Qt includes
 
-#include <QDateTime>
 #include <QRectF>
+#include <QDateTime>
 
 // Local includes
 
-#include "coredbfields.h"
 #include "iteminfo.h"
+#include "coredbfields.h"
+#include "facetagseditor.h"
 
 namespace Digikam
 {
 
 ItemSortSettings::ItemSortSettings()
-    : categorizationMode(NoCategories),
-      categorizationSortOrder(DefaultOrder),
+    : categorizationMode            (NoCategories),
+      categorizationSortOrder       (DefaultOrder),
       currentCategorizationSortOrder(Qt::AscendingOrder),
-      categorizationCaseSensitivity(Qt::CaseSensitive),
-      sortRole(SortByFileName),
-      sortOrder(DefaultOrder),
-      strTypeNatural(true),
-      currentSortOrder(Qt::AscendingOrder),
-      sortCaseSensitivity(Qt::CaseSensitive)
+      categorizationCaseSensitivity (Qt::CaseSensitive),
+      sortRole                      (SortByFileName),
+      sortOrder                     (DefaultOrder),
+      strTypeNatural                (true),
+      currentSortOrder              (Qt::AscendingOrder),
+      sortCaseSensitivity           (Qt::CaseSensitive)
 {
 }
 
@@ -139,6 +140,7 @@ Qt::SortOrder ItemSortSettings::defaultSortOrderForSortRole(SortRole role)
         case SortByModificationDate:
         case SortByManualOrderAndName:
         case SortByManualOrderAndDate:
+        case SortByFaces:
             return Qt::AscendingOrder;
 
         case SortByRating:
@@ -153,7 +155,25 @@ Qt::SortOrder ItemSortSettings::defaultSortOrderForSortRole(SortRole role)
     }
 }
 
-int ItemSortSettings::compareCategories(const ItemInfo& left, const ItemInfo& right) const
+// Feel free to optimize. QString::number is 3x slower.
+static inline QString fastNumberToString(int id)
+{
+    const int size = sizeof(int) * 2;
+    int number     = id;
+    char c[size + 1];
+    c[size]        = '\0';
+
+    for (int i = 0 ; i < size ; ++i)
+    {
+        c[i]     = 'a' + (number & 0xF);
+        number >>= 4;
+    }
+
+    return QLatin1String(c);
+}
+
+int ItemSortSettings::compareCategories(const ItemInfo& left, const ItemInfo& right,
+                                        const FaceTagsIface& leftFace, const FaceTagsIface& rightFace) const
 {
     switch (categorizationMode)
     {
@@ -167,6 +187,7 @@ int ItemSortSettings::compareCategories(const ItemInfo& left, const ItemInfo& ri
             int rightAlbum = right.albumId();
 
             // return comparison result
+
             if      (leftAlbum == rightAlbum)
             {
                 return 0;
@@ -196,6 +217,74 @@ int ItemSortSettings::compareCategories(const ItemInfo& left, const ItemInfo& ri
                                   currentCategorizationSortOrder);
         }
 
+        case CategoryByFaces:
+        {
+            if (leftFace.isNull() && rightFace.isNull())
+            {
+                return 0;
+            }
+
+            bool isLeftIgnored = (leftFace.type() == FaceTagsIface::IgnoredName);
+            bool isLeftUnknown = (leftFace.type() == FaceTagsIface::UnknownName);
+
+            if (isLeftIgnored != (rightFace.type() == FaceTagsIface::IgnoredName))
+            {
+                if (currentCategorizationSortOrder == Qt::AscendingOrder)
+                {
+                    return isLeftIgnored ? 1 : -1;
+                }
+                else
+                {
+                    return isLeftIgnored ? -1 : 1;
+                }
+            }
+
+            if (isLeftUnknown != (rightFace.type() == FaceTagsIface::UnknownName))
+            {
+                if (currentCategorizationSortOrder == Qt::AscendingOrder)
+                {
+                    return isLeftUnknown ? 1 : -1;
+                }
+                else
+                {
+                    return isLeftUnknown ? -1 : 1;
+                }
+            }
+
+            QString leftValue;
+            QString rightValue;
+
+            if      (leftFace.type() == FaceTagsIface::ConfirmedName)
+            {
+                leftValue = FaceTags::faceNameForTag(leftFace.tagId());
+            }
+            else if (leftFace.type() == FaceTagsIface::UnconfirmedName)
+            {
+                leftValue = left.getSuggestedNames().value(leftFace.region().toXml());
+            }
+
+            if      (rightFace.type() == FaceTagsIface::ConfirmedName)
+            {
+                rightValue = FaceTags::faceNameForTag(rightFace.tagId());
+            }
+            else if (rightFace.type() == FaceTagsIface::UnconfirmedName)
+            {
+                 rightValue = right.getSuggestedNames().value(rightFace.region().toXml());
+            }
+
+            leftValue  += fastNumberToString(leftFace.tagId()) +
+                          fastNumberToString(leftFace.type());
+
+            rightValue += fastNumberToString(rightFace.tagId()) +
+                          fastNumberToString(rightFace.type());
+
+            // Compare alphabetically based on the face name
+
+            return naturalCompare(leftValue, rightValue,
+                                  currentCategorizationSortOrder,
+                                  categorizationCaseSensitivity, strTypeNatural);
+        }
+
         default:
             return 0;
     }
@@ -211,12 +300,14 @@ bool ItemSortSettings::lessThan(const ItemInfo& left, const ItemInfo& right) con
     }
 
     // are they identical?
+
     if (left == right)
     {
         return false;
     }
 
     // If left and right equal for first sort order, use a hierarchy of all sort orders
+
     if ((result = compare(left, right, SortByFileName)) != 0)
     {
         return (result < 0);
@@ -289,7 +380,9 @@ int ItemSortSettings::compare(const ItemInfo& left, const ItemInfo& right, SortR
             return compareByOrder(left.modDateTime(), right.modDateTime(), currentSortOrder);
 
         case SortByRating:
+
             // I have the feeling that inverting the sort order for rating is the natural order
+
             return - compareByOrder(left.rating(), right.rating(), currentSortOrder);
 
         case SortByImageSize:
@@ -314,10 +407,19 @@ int ItemSortSettings::compare(const ItemInfo& left, const ItemInfo& right, SortR
         {
             qlonglong leftReferenceImageId  = left.currentReferenceImage();
             qlonglong rightReferenceImageId = right.currentReferenceImage();
+
             // make sure that the original image has always the highest similarity.
+
             double leftSimilarity           = left.id()  == leftReferenceImageId  ? 1.1 : left.currentSimilarity();
             double rightSimilarity          = right.id() == rightReferenceImageId ? 1.1 : right.currentSimilarity();
             return compareByOrder(leftSimilarity, rightSimilarity, currentSortOrder);
+        }
+
+        // Implementation to make Unconfirmed Faces of a tag appear before Confirmed faces.
+
+        case SortByFaces:
+        {
+            return compareByOrder(right.unconfirmedFaceCount(), left.unconfirmedFaceCount(), currentSortOrder);
         }
 
         case SortByManualOrderAndName:
@@ -409,7 +511,8 @@ bool ItemSortSettings::lessThan(const QVariant& left, const QVariant& right) con
 
         default:
         {
-            return naturalCompare(left.toString(), right.toString(), currentSortOrder, sortCaseSensitivity, strTypeNatural);
+            return naturalCompare(left.toString(), right.toString(),
+                                  currentSortOrder, sortCaseSensitivity, strTypeNatural);
         }
     }
 }
@@ -453,8 +556,16 @@ DatabaseFields::Set ItemSortSettings::watchFlags() const
             break;
 
         case SortBySimilarity:
+
             // TODO: Not sure what to do here....
+
             set |= DatabaseFields::Name;
+            break;
+
+        case SortByFaces:
+
+            // Nothing needed for this.
+
             break;
 
         case SortByManualOrderAndName:
@@ -479,6 +590,12 @@ DatabaseFields::Set ItemSortSettings::watchFlags() const
 
         case CategoryByMonth:
             set |= DatabaseFields::CreationDate;
+            break;
+
+        case CategoryByFaces:
+
+            // nothing needed here.
+
             break;
     }
 

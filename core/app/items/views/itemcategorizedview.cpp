@@ -54,6 +54,8 @@ namespace Digikam
 
 class Q_DECL_HIDDEN ItemCategorizedViewToolTip : public ItemViewToolTip
 {
+    Q_OBJECT
+
 public:
 
     explicit ItemCategorizedViewToolTip(ItemCategorizedView* const view)
@@ -68,9 +70,10 @@ public:
 
 protected:
 
-    virtual QString tipContents()
+    QString tipContents() override
     {
         ItemInfo info = ItemModel::retrieveItemInfo(currentIndex());
+
         return ToolTipFiller::imageInfoTipContents(info);
     }
 };
@@ -82,11 +85,11 @@ class Q_DECL_HIDDEN ItemCategorizedView::Private
 public:
 
     explicit Private()
-      : model(nullptr),
-        filterModel(nullptr),
-        delegate(nullptr),
-        showToolTip(false),
-        scrollToItemId(0),
+      : model            (nullptr),
+        filterModel      (nullptr),
+        delegate         (nullptr),
+        showToolTip      (false),
+        scrollToItemId   (0),
         delayedEnterTimer(nullptr),
         currentMouseEvent(nullptr)
     {
@@ -111,14 +114,14 @@ public:
 
 ItemCategorizedView::ItemCategorizedView(QWidget* const parent)
     : ItemViewCategorized(parent),
-      d(new Private)
+      d                  (new Private)
 {
     setToolTip(new ItemCategorizedViewToolTip(this));
 
     LoadingCacheInterface::connectToSignalFileChanged(this,
             SLOT(slotFileChanged(QString)));
 
-    connect(IccSettings::instance(), SIGNAL(settingsChanged(ICCSettingsContainer,ICCSettingsContainer)),
+    connect(IccSettings::instance(), SIGNAL(signalICCSettingsChanged(ICCSettingsContainer,ICCSettingsContainer)),
             this, SLOT(slotIccSettingsChanged(ICCSettingsContainer,ICCSettingsContainer)));
 
     d->delayedEnterTimer = new QTimer(this);
@@ -283,12 +286,12 @@ void ItemCategorizedView::setItemDelegate(ItemDelegate* delegate)
 Album* ItemCategorizedView::currentAlbum() const
 {
     ItemAlbumModel* const albumModel = imageAlbumModel();
-    
+
     // TODO: Change to QList return type
 
     if (albumModel && !(albumModel->currentAlbums().isEmpty()))
     {
-        return albumModel->currentAlbums().first();
+        return albumModel->currentAlbums().constFirst();
     }
 
     return nullptr;
@@ -374,14 +377,16 @@ QModelIndex ItemCategorizedView::nextIndexHint(const QModelIndex& anchor, const 
 {
     QModelIndex hint = ItemViewCategorized::nextIndexHint(anchor, removed);
     ItemInfo info    = imageInfo(anchor);
-
-    //qCDebug(DIGIKAM_GENERAL_LOG) << "Having initial hint" << hint << "for" << anchor << d->model->numberOfIndexesForItemInfo(info);
-
+/*
+    qCDebug(DIGIKAM_GENERAL_LOG) << "Having initial hint" << hint << "for" << anchor << d->model->numberOfIndexesForItemInfo(info);
+*/
     // Fixes a special case of multiple (face) entries for the same image.
     // If one is removed, any entry of the same image shall be preferred.
+
     if (d->model->numberOfIndexesForItemInfo(info) > 1)
     {
         // The hint is for a different info, but we may have a hint for the same info
+
         if (info != imageInfo(hint))
         {
             int minDiff                           = d->filterModel->rowCount();
@@ -389,7 +394,7 @@ QModelIndex ItemCategorizedView::nextIndexHint(const QModelIndex& anchor, const 
 
             foreach (const QModelIndex& index, indexesForItemInfo)
             {
-                if (index == anchor || !index.isValid() || removed.contains(index))
+                if ((index == anchor) || !index.isValid() || removed.contains(index))
                 {
                     continue;
                 }
@@ -400,8 +405,10 @@ QModelIndex ItemCategorizedView::nextIndexHint(const QModelIndex& anchor, const 
                 {
                     minDiff = distance;
                     hint    = index;
-                    //qCDebug(DIGIKAM_GENERAL_LOG) << "Chose index" << hint << "at distance" << minDiff << "to" << anchor;
-                }
+
+/*                  qCDebug(DIGIKAM_GENERAL_LOG) << "Chose index" << hint << "at distance" << minDiff << "to" << anchor;
+
+*/                }
             }
         }
     }
@@ -445,6 +452,7 @@ void ItemCategorizedView::setThumbnailSize(int size)
 void ItemCategorizedView::setThumbnailSize(const ThumbnailSize& s)
 {
     // we abuse this pair of method calls to restore scroll position
+
     layoutAboutToBeChanged();
     d->delegate->setThumbnailSize(s);
     layoutWasChanged();
@@ -522,6 +530,7 @@ void ItemCategorizedView::setSelectedUrls(const QList<QUrl>& urlList)
         else
         {
             // TODO: is there a better way?
+
             mySelection.select(index, index);
         }
     }
@@ -628,7 +637,7 @@ void ItemCategorizedView::scrollToStoredItem()
 
 void ItemCategorizedView::slotItemInfosAdded()
 {
-    if (d->scrollToItemId)
+    if      (d->scrollToItemId)
     {
         scrollToStoredItem();
     }
@@ -719,20 +728,6 @@ void ItemCategorizedView::showContextMenuOnInfo(QContextMenuEvent*, const ItemIn
     // implemented in subclass
 }
 
-void ItemCategorizedView::paintEvent(QPaintEvent* e)
-{
-    // We want the thumbnails to be loaded in order.
-    ItemThumbnailModel* const thumbModel = imageThumbnailModel();
-
-    if (thumbModel)
-    {
-        QModelIndexList indexesToThumbnail = imageFilterModel()->mapListToSource(categorizedIndexesIn(viewport()->rect()));
-        d->delegate->prepareThumbnails(thumbModel, indexesToThumbnail);
-    }
-
-    ItemViewCategorized::paintEvent(e);
-}
-
 QItemSelectionModel* ItemCategorizedView::getSelectionModel() const
 {
     return selectionModel();
@@ -749,3 +744,5 @@ void ItemCategorizedView::slotIccSettingsChanged(const ICCSettingsContainer&, co
 }
 
 } // namespace Digikam
+
+#include "itemcategorizedview.moc"

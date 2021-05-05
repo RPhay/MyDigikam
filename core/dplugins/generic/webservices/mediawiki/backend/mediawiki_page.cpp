@@ -6,7 +6,7 @@
  * Date        : 2011-03-22
  * Description : a Iface C++ interface
  *
- * Copyright (C) 2011-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2011-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2011      by Joris Munoz <munozjoris at gmail dot com>
  *
  * This program is free software; you can redistribute it
@@ -34,7 +34,7 @@
 namespace MediaWiki
 {
 
-class Q_DECL_HIDDEN Page::PagePrivate
+class Q_DECL_HIDDEN Page::Private
 {
 public:
 
@@ -55,7 +55,7 @@ public:
 };
 
 Page::Page()
-    :d(new PagePrivate())
+    : d(new Private())
 {
 }
 
@@ -65,37 +65,40 @@ Page::~Page()
 }
 
 Page::Page( const Page& other)
-        : d(new PagePrivate(*(other.d)))
+    : d(new Private(*(other.d)))
 {
 }
 
-Page& Page::operator=(Page other)
+Page& Page::operator=(const Page& other)
 {
     *d = *other.d;
+
     return *this;
 }
 
 bool Page::operator==(const Page& other) const
 {
-    return pageId()             == other.pageId()        &&
-           pageTitle()          == other.pageTitle()     &&
-           pageNs()             == other.pageNs()        &&
-           pageLastRevId()      == other.pageLastRevId() &&
-           pageCounter()        == other.pageCounter()   &&
-           pageLength()         == other.pageLength()    &&
-           pageEditToken()      == other.pageEditToken() &&
-           pageTalkid()         == other.pageTalkid()    &&
-           pageFullurl()        == other.pageFullurl()   &&
-           pageEditurl()        == other.pageEditurl()   &&
-           pageReadable()       == other.pageReadable()  &&
-           pagePreload()        == other.pagePreload()   &&
-           pageTouched()        == other.pageTouched()   &&
-           pageStarttimestamp() == other.pageStarttimestamp();
+    return (
+            (pageId()             == other.pageId())        &&
+            (pageTitle()          == other.pageTitle())     &&
+            (pageNs()             == other.pageNs())        &&
+            (pageLastRevId()      == other.pageLastRevId()) &&
+            (pageCounter()        == other.pageCounter())   &&
+            (pageLength()         == other.pageLength())    &&
+            (pageEditToken()      == other.pageEditToken()) &&
+            (pageTalkid()         == other.pageTalkid())    &&
+            (pageFullurl()        == other.pageFullurl())   &&
+            (pageEditurl()        == other.pageEditurl())   &&
+            (pageReadable()       == other.pageReadable())  &&
+            (pagePreload()        == other.pagePreload())   &&
+            (pageTouched()        == other.pageTouched())   &&
+            (pageStarttimestamp() == other.pageStarttimestamp())
+           );
 }
 
 void Page::setPageId(unsigned int id)
 {
-    d->m_pageid=id;
+    d->m_pageid = id;
 }
 
 unsigned int Page::pageId() const
@@ -105,7 +108,7 @@ unsigned int Page::pageId() const
 
 void Page::setTitle(const QString& title)
 {
-    d->m_title=title;
+    d->m_title = title;
 }
 
 QString Page::pageTitle() const
@@ -115,7 +118,7 @@ QString Page::pageTitle() const
 
 void Page::setNs(unsigned int ns) const
 {
-    d->m_ns=ns;
+    d->m_ns = ns;
 }
 
 unsigned int Page::pageNs() const
@@ -125,7 +128,7 @@ unsigned int Page::pageNs() const
 
 void Page::setLastRevId(unsigned int lastRevId) const
 {
-    d->m_lastrevid=lastRevId;
+    d->m_lastrevid = lastRevId;
 }
 
 unsigned int Page::pageLastRevId() const
@@ -135,7 +138,7 @@ unsigned int Page::pageLastRevId() const
 
 void Page::setCounter(unsigned int counter) const
 {
-    d->m_counter=counter;
+    d->m_counter = counter;
 }
 
 unsigned int Page::pageCounter() const
@@ -145,7 +148,7 @@ unsigned int Page::pageCounter() const
 
 void Page::setLength(unsigned int length) const
 {
-     d->m_length=length;
+     d->m_length = length;
 }
 
 unsigned int Page::pageLength() const
@@ -155,7 +158,7 @@ unsigned int Page::pageLength() const
 
 void Page::setEditToken(const QString& editToken)
 {
-    d->m_edittoken=editToken;
+    d->m_edittoken = editToken;
 }
 
 QString Page::pageEditToken() const
@@ -165,7 +168,7 @@ QString Page::pageEditToken() const
 
 void Page::setTalkid(unsigned int talkid) const
 {
-     d->m_talkid=talkid;
+     d->m_talkid = talkid;
 }
 
 unsigned int Page::pageTalkid() const
@@ -175,7 +178,7 @@ unsigned int Page::pageTalkid() const
 
 void Page::setFullurl(const QUrl& fullurl)
 {
-    d->m_fullurl=fullurl;
+    d->m_fullurl = fullurl;
 }
 
 QUrl Page::pageFullurl() const
@@ -185,7 +188,7 @@ QUrl Page::pageFullurl() const
 
 void Page::setEditurl(const QUrl& editurl)
 {
-    d->m_editurl=editurl;
+    d->m_editurl = editurl;
 }
 
 QUrl Page::pageEditurl() const
@@ -195,7 +198,7 @@ QUrl Page::pageEditurl() const
 
 void Page::setReadable(const QString& readable)
 {
-    d->m_readable=readable;
+    d->m_readable = readable;
 }
 
 QString Page::pageReadable() const
@@ -205,7 +208,7 @@ QString Page::pageReadable() const
 
 void Page::setPreload(const QString& preload)
 {
-    d->m_preload=preload;
+    d->m_preload = preload;
 }
 
 QString Page::pagePreload() const
@@ -215,7 +218,7 @@ QString Page::pagePreload() const
 
 void Page::setTouched(const QDateTime& touched)
 {
-    d->m_touched=touched;
+    d->m_touched = touched;
 }
 
 QDateTime Page::pageTouched() const
@@ -225,7 +228,7 @@ QDateTime Page::pageTouched() const
 
 void Page::setStarttimestamp(const QDateTime& starttimestamp)
 {
-    d->m_starttimestamp=starttimestamp;
+    d->m_starttimestamp = starttimestamp;
 }
 
 QDateTime Page::pageStarttimestamp() const

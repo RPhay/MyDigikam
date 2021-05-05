@@ -6,7 +6,7 @@
  * Date        : 2005-01-18
  * Description : a widget class to edit perspective.
  *
- * Copyright (C) 2005-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2005-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2006-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  *
  * This program is free software; you can redistribute it
@@ -72,21 +72,21 @@ public:
 public:
 
     explicit Private()
-      : antiAliasing(false),
-        drawWhileMoving(true),
-        drawGrid(false),
-        inverseTransformation(false),
-        validPerspective(true),
-        data(nullptr),
-        width(0),
-        height(0),
-        origW(0),
-        origH(0),
-        currentResizing(ResizingNone),
-        guideSize(1),
-        guideColor(Qt::red),
-        pixmap(nullptr),
-        iface(nullptr)
+      : antiAliasing            (false),
+        drawWhileMoving         (true),
+        drawGrid                (false),
+        inverseTransformation   (false),
+        validPerspective        (true),
+        data                    (nullptr),
+        width                   (0),
+        height                  (0),
+        origW                   (0),
+        origH                   (0),
+        currentResizing         (ResizingNone),
+        guideSize               (1),
+        guideColor              (Qt::red),
+        pixmap                  (nullptr),
+        iface                   (nullptr)
     {
     }
 
@@ -129,6 +129,7 @@ public:
     QColor      bgColor;
 
     // 60 points will be stored to compute a grid of 15x15 lines.
+
     QPolygon    grid;
 
     QPixmap*    pixmap;
@@ -138,7 +139,8 @@ public:
 };
 
 PerspectiveWidget::PerspectiveWidget(int w, int h, QWidget* const parent)
-    : QWidget(parent), d(new Private)
+    : QWidget(parent),
+      d      (new Private)
 {
     setAttribute(Qt::WA_DeleteOnClose);
     setMinimumSize(w, h);
@@ -169,23 +171,23 @@ PerspectiveWidget::~PerspectiveWidget()
 
 void PerspectiveWidget::resizeEvent(QResizeEvent* e)
 {
-    int old_w     = d->width;
-    int old_h     = d->height;
+    int old_w            = d->width;
+    int old_h            = d->height;
 
     delete d->pixmap;
-    int w         = e->size().width();
-    int h         = e->size().height();
-    d->preview    = d->iface->setPreviewSize(QSize(w, h));
-    d->width      = d->iface->previewSize().width();
-    d->height     = d->iface->previewSize().height();
+    int w                = e->size().width();
+    int h                = e->size().height();
+    d->preview           = d->iface->setPreviewSize(QSize(w, h));
+    d->width             = d->iface->previewSize().width();
+    d->height            = d->iface->previewSize().height();
     d->preview.setIccProfile( d->iface->original()->getIccProfile() );
 
-    d->pixmap     = new QPixmap(w, h);
-    QRect oldRect = d->rect;
-    d->rect       = QRect(w/2-d->width/2, h/2-d->height/2, d->width, d->height);
+    d->pixmap            = new QPixmap(w, h);
+    QRect oldRect        = d->rect;
+    d->rect              = QRect(w/2-d->width/2, h/2-d->height/2, d->width, d->height);
 
-    float xFactor = (float)d->rect.width()/(float)(oldRect.width());
-    float yFactor = (float)d->rect.height()/(float)(oldRect.height());
+    float xFactor        = (float)d->rect.width()  / (float)(oldRect.width());
+    float yFactor        = (float)d->rect.height() / (float)(oldRect.height());
 
     d->topLeftPoint      = QPoint(lroundf(d->topLeftPoint.x()*xFactor),
                                   lroundf(d->topLeftPoint.y()*yFactor));
@@ -249,24 +251,28 @@ QRect PerspectiveWidget::getTargetSize() const
 float PerspectiveWidget::getAngleTopLeft() const
 {
     PerspectiveTriangle topLeft(getTopLeftCorner(), getTopRightCorner(), getBottomLeftCorner());
+
     return topLeft.angleBAC();
 }
 
 float PerspectiveWidget::getAngleTopRight() const
 {
     PerspectiveTriangle topLeft(getTopRightCorner(), getBottomRightCorner(), getTopLeftCorner());
+
     return topLeft.angleBAC();
 }
 
 float PerspectiveWidget::getAngleBottomLeft() const
 {
     PerspectiveTriangle topLeft(getBottomLeftCorner(), getTopLeftCorner(), getBottomRightCorner());
+
     return topLeft.angleBAC();
 }
 
 float PerspectiveWidget::getAngleBottomRight() const
 {
     PerspectiveTriangle topLeft(getBottomRightCorner(), getBottomLeftCorner(), getTopRightCorner());
+
     return topLeft.angleBAC();
 }
 
@@ -284,7 +290,7 @@ void PerspectiveWidget::reset()
     d->bottomRightPoint.setX(d->width-1);
     d->bottomRightPoint.setY(d->height-1);
 
-    d->spot.setX(d->width / 2);
+    d->spot.setX(d->width  / 2);
     d->spot.setY(d->height / 2);
 
     d->antiAliasing = true;
@@ -296,7 +302,10 @@ void PerspectiveWidget::applyPerspectiveAdjustment()
 {
     DImg* const orgImage = d->iface->original();
 
-    if (!orgImage) return;
+    if (!orgImage)
+    {
+        return;
+    }
 
     DImg destImage(orgImage->width(), orgImage->height(), orgImage->sixteenBit(), orgImage->hasAlpha());
 
@@ -330,7 +339,9 @@ void PerspectiveWidget::applyPerspectiveAdjustment()
     action.addParameter(QLatin1String("spotY"),             d->spot.y());
 
     action.addParameter(QLatin1String("antiAliasing"),      d->antiAliasing);
+
     // Update target image.
+
     d->iface->setOriginal(i18n("Perspective Adjustment"), action, targetImg);
 }
 
@@ -402,10 +413,12 @@ void PerspectiveWidget::updatePixmap()
         int j = i*4;
 
         // Horizontal line.
+
         d->grid.setPoint(j  , 0,        i*gYS);
         d->grid.setPoint(j+1, d->width, i*gYS);
 
         // Vertical line.
+
         d->grid.setPoint(j+2, i*gXS, 0);
         d->grid.setPoint(j+3, i*gXS, d->height);
     }
@@ -414,7 +427,7 @@ void PerspectiveWidget::updatePixmap()
 
     d->pixmap->fill(d->bgColor);
 
-    if (d->inverseTransformation)
+    if      (d->inverseTransformation)
     {
         d->transformedCenter = buildPerspective(QPoint(0, 0), QPoint(d->width, d->height),
                                                 d->topLeftPoint, d->topRightPoint,
@@ -423,8 +436,10 @@ void PerspectiveWidget::updatePixmap()
         d->iface->setPreview(d->preview);
         d->iface->paint(d->pixmap, d->rect);
     }
+
     // if we are resizing with the mouse, compute and draw only if drawWhileMoving is set
-    else if ((d->currentResizing == Private::ResizingNone || d->drawWhileMoving) &&
+
+    else if (((d->currentResizing == Private::ResizingNone) || d->drawWhileMoving) &&
              d->validPerspective)
     {
         // Create preview image
@@ -476,9 +491,11 @@ void PerspectiveWidget::updatePixmap()
         for (int i = 0 ; i < d->grid.size() ; i += 4)
         {
             // Horizontal line.
+
             p.drawLine(d->grid.point(i)+d->rect.topLeft(), d->grid.point(i+1)+d->rect.topLeft());
 
             // Vertical line.
+
             p.drawLine(d->grid.point(i+2)+d->rect.topLeft(), d->grid.point(i+3)+d->rect.topLeft());
         }
     }
@@ -519,11 +536,11 @@ QPoint PerspectiveWidget::buildPerspective(const QPoint& orignTopLeft, const QPo
     double scalex;
     double scaley;
 
-    double x1 = (double)orignTopLeft.x();
-    double y1 = (double)orignTopLeft.y();
+    double x1  = (double)orignTopLeft.x();
+    double y1  = (double)orignTopLeft.y();
 
-    double x2 = (double)orignBottomRight.x();
-    double y2 = (double)orignBottomRight.y();
+    double x2  = (double)orignBottomRight.x();
+    double y2  = (double)orignBottomRight.y();
 
     double tx1 = (double)transTopLeft.x();
     double ty1 = (double)transTopLeft.y();
@@ -582,7 +599,7 @@ QPoint PerspectiveWidget::buildPerspective(const QPoint& orignTopLeft, const QPo
         det1 = dx3 * dy2 - dy3 * dx2;
         det2 = dx1 * dy2 - dy1 * dx2;
 
-        if (det1 == 0.0 && det2 == 0.0)
+        if ((det1 == 0.0) && (det2 == 0.0))
         {
             matrix.coeff[2][0] = 1.0;
         }
@@ -593,7 +610,7 @@ QPoint PerspectiveWidget::buildPerspective(const QPoint& orignTopLeft, const QPo
 
         det1 = dx1 * dy3 - dy1 * dx3;
 
-        if (det1 == 0.0 && det2 == 0.0)
+        if ((det1 == 0.0) && (det2 == 0.0))
         {
             matrix.coeff[2][1] = 1.0;
         }
@@ -614,6 +631,7 @@ QPoint PerspectiveWidget::buildPerspective(const QPoint& orignTopLeft, const QPo
     matrix.coeff[2][2] = 1.0;
 
     // transform is initialized to the identity matrix
+
     transform.translate(-x1, -y1);
     transform.scale    (scalex, scaley);
     transform.multiply (matrix);
@@ -625,9 +643,11 @@ QPoint PerspectiveWidget::buildPerspective(const QPoint& orignTopLeft, const QPo
             PerspectiveMatrix inverseTransform = transform;
             inverseTransform.invert();
 
-            //Transform the matrix so it puts the result into the getTargetSize() rectangle
+            // Transform the matrix so it puts the result into the getTargetSize() rectangle
+
             PerspectiveMatrix transformIntoBounds;
-            transformIntoBounds.scale(double(getTargetSize().width()) / double(orgImage->width()), double(getTargetSize().height()) / double(orgImage->height()));
+            transformIntoBounds.scale(double(getTargetSize().width())  / double(orgImage->width()),
+                                      double(getTargetSize().height()) / double(orgImage->height()));
             transformIntoBounds.translate(getTargetSize().left(), getTargetSize().top());
             inverseTransform.multiply(transformIntoBounds);
             transformAffine(orgImage, destImage, inverseTransform, background);
@@ -635,11 +655,13 @@ QPoint PerspectiveWidget::buildPerspective(const QPoint& orignTopLeft, const QPo
         else
         {
             // Compute perspective transformation to image if image data containers exist.
+
             transformAffine(orgImage, destImage, transform, background);
         }
     }
 
     // Calculate the grid array points.
+
     double newX, newY;
 
     for (int i = 0 ; i < d->grid.size() ; ++i)
@@ -649,6 +671,7 @@ QPoint PerspectiveWidget::buildPerspective(const QPoint& orignTopLeft, const QPo
     }
 
     // Calculate and return new image center.
+
     double newCenterX, newCenterY;
     transform.transformPoint(x2/2.0, y2/2.0, &newCenterX, &newCenterY);
 
@@ -703,12 +726,13 @@ void PerspectiveWidget::transformAffine(DImg* const orgImage,
     {
         bg.convertToSixteenBit();
     }
-
-    //destImage->fill(bg);
-
+/*
+    destImage->fill(bg);
+*/
     DPixelsAliasFilter alias;
 
     // Find the inverse of the transformation matrix
+
     m.invert();
 
     u1 = 0;
@@ -769,11 +793,12 @@ void PerspectiveWidget::transformAffine(DImg* const orgImage,
             int iu = lround( u [0] );
             int iv = lround( v [0] );
 
-            if (iu >= u1 && iu < u2 && iv >= v1 && iv < v2)
+            if ((iu >= u1) && (iu < u2) && (iv >= v1) && (iv < v2))
             {
                 // u, v coordinates into source
 
                 //In inverse transformation we always enable anti-aliasing, because there is always under-sampling
+
                 if (d->antiAliasing || d->inverseTransformation)
                 {
                     double finalU = u[0] - u1;
@@ -791,9 +816,9 @@ void PerspectiveWidget::transformAffine(DImg* const orgImage,
                 }
                 else
                 {
-                    int u  = iu - u1;
-                    int v  = iv - v1;
-                    offset = (v * width * bytesDepth) + (u * bytesDepth);
+                    int uu = iu - u1;
+                    int vv = iv - v1;
+                    offset = (vv * width * bytesDepth) + (uu * bytesDepth);
                     color.setColor(data + offset, sixteenBit);
                     color.setPixel(d2);
                 }
@@ -832,9 +857,9 @@ void PerspectiveWidget::paintEvent(QPaintEvent*)
 
 void PerspectiveWidget::mousePressEvent(QMouseEvent* e)
 {
-    if ( e->button() == Qt::LeftButton && d->rect.contains( e->x(), e->y() ))
+    if ( (e->button() == Qt::LeftButton) && d->rect.contains( e->x(), e->y() ))
     {
-        if ( d->topLeftCorner.contains( e->x(), e->y() ) )
+        if      ( d->topLeftCorner.contains( e->x(), e->y() ) )
         {
             d->currentResizing = Private::ResizingTopLeft;
         }
@@ -866,6 +891,7 @@ void PerspectiveWidget::mouseReleaseEvent(QMouseEvent* e)
         d->currentResizing = Private::ResizingNone;
 
         // in this case, the pixmap has not been drawn on mouse move
+
         if (!d->drawWhileMoving)
         {
             updatePixmap();
@@ -894,7 +920,7 @@ void PerspectiveWidget::mouseMoveEvent(QMouseEvent* e)
 
             if (!d->rect.contains( pm ))
             {
-                if (pm.x() > d->rect.right())
+                if      (pm.x() > d->rect.right())
                 {
                     pm.setX(d->rect.right());
                 }
@@ -903,7 +929,7 @@ void PerspectiveWidget::mouseMoveEvent(QMouseEvent* e)
                     pm.setX(d->rect.left());
                 }
 
-                if (pm.y() > d->rect.bottom())
+                if      (pm.y() > d->rect.bottom())
                 {
                     pm.setY(d->rect.bottom());
                 }
@@ -1006,6 +1032,7 @@ void PerspectiveWidget::mouseMoveEvent(QMouseEvent* e)
             updatePixmap();
 /*
             // NOTE ; To hack unusable region
+
             QPainter p(d->pixmap);
             QPainterPath pp;
             pp.addPolygon(unusablePoints);
@@ -1017,7 +1044,7 @@ void PerspectiveWidget::mouseMoveEvent(QMouseEvent* e)
     }
     else
     {
-        if ( d->topLeftCorner.contains( e->x(), e->y() ) ||
+        if      ( d->topLeftCorner.contains( e->x(), e->y() ) ||
              d->bottomRightCorner.contains( e->x(), e->y() ) )
         {
             setCursor( Qt::SizeFDiagCursor );

@@ -56,13 +56,13 @@ class Q_DECL_HIDDEN ColorFXSettings::Private
 public:
 
     explicit Private()
-      : stack(nullptr),
-        effectType(nullptr),
-        levelInput(nullptr),
-        iterationInput(nullptr),
-        intensityInput(nullptr),
-        iterationLabel(nullptr),
-        correctionTools(nullptr)
+      : stack           (nullptr),
+        effectType      (nullptr),
+        levelInput      (nullptr),
+        iterationInput  (nullptr),
+        intensityInput  (nullptr),
+        iterationLabel  (nullptr),
+        correctionTools (nullptr)
     {
     }
 
@@ -97,7 +97,7 @@ const QString ColorFXSettings::Private::configLut3DIntensityEntry(QLatin1String(
 
 ColorFXSettings::ColorFXSettings(QWidget* const parent, bool useGenericImg)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     DImg thumbImage;
 
@@ -122,22 +122,23 @@ ColorFXSettings::ColorFXSettings(QWidget* const parent, bool useGenericImg)
 
     QGridLayout* const grid       = new QGridLayout(parent);
 
-    QLabel* const effectTypeLabel = new QLabel(i18n("Type:"), parent);
+    QLabel* const effectTypeLabel = new QLabel(i18nc("@label", "Type:"), parent);
     d->effectType                 = new DComboBox(parent);
-    d->effectType->addItem(i18n("Solarize"));
-    d->effectType->addItem(i18n("Vivid"));
-    d->effectType->addItem(i18n("Neon"));
-    d->effectType->addItem(i18n("Find Edges"));
-    d->effectType->addItem(i18n("Lut3D"));
+    d->effectType->addItem(i18nc("@item: color effect", "Solarize"));
+    d->effectType->addItem(i18nc("@item: color effect", "Vivid"));
+    d->effectType->addItem(i18nc("@item: color effect", "Neon"));
+    d->effectType->addItem(i18nc("@item: color effect", "Find Edges"));
+    d->effectType->addItem(i18nc("@item: color effect", "Lut3D"));
     d->effectType->setDefaultIndex(ColorFXFilter::Solarize);
-    d->effectType->setWhatsThis(i18n("<p>Select the effect type to apply to the image here.</p>"
-                                     "<p><b>Solarize</b>: simulates solarization of photograph.</p>"
-                                     "<p><b>Vivid</b>: simulates the Velvia(tm) slide film colors.</p>"
-                                     "<p><b>Neon</b>: coloring the edges in a photograph to "
-                                     "reproduce a fluorescent light effect.</p>"
-                                     "<p><b>Find Edges</b>: detects the edges in a photograph "
-                                     "and their strength.</p>"
-                                     "<p><b>Lut3D</b>: coloring images with Lut3D filters</p>"));
+    d->effectType->setWhatsThis(i18nc("@info",
+                                      "Select the effect type to apply to the image here.\n"
+                                      "\"Solarize\": simulates solarization of photograph.\n"
+                                      "\"Vivid\": simulates the Velvia(tm) slide film colors.\n"
+                                      "\"Neon\": coloring the edges in a photograph to\n"
+                                      "reproduce a fluorescent light effect.\n"
+                                      "\"Find Edges\": detects the edges in a photograph\n"
+                                      "and their strength.\n"
+                                      "\"Lut3D\": coloring images with Lut3D filters"));
 
     d->stack                      = new QStackedWidget(parent);
 
@@ -154,18 +155,18 @@ ColorFXSettings::ColorFXSettings(QWidget* const parent, bool useGenericImg)
     QWidget* const solarizeSettings = new QWidget(d->stack);
     QGridLayout* const grid1        = new QGridLayout(solarizeSettings);
 
-    QLabel* const levelLabel        = new QLabel(i18nc("level of the effect", "Level:"), solarizeSettings);
+    QLabel* const levelLabel        = new QLabel(i18nc("@label: level of the effect", "Level:"), solarizeSettings);
     d->levelInput                   = new DIntNumInput(solarizeSettings);
     d->levelInput->setRange(0, 100, 1);
     d->levelInput->setDefaultValue(3);
-    d->levelInput->setWhatsThis( i18n("Set here the level of the effect."));
+    d->levelInput->setWhatsThis(i18nc("@info", "Set here the level of the effect."));
 
-    d->iterationLabel               = new QLabel(i18n("Iteration:"), solarizeSettings);
+    d->iterationLabel               = new QLabel(i18nc("@label", "Iteration:"), solarizeSettings);
     d->iterationInput               = new DIntNumInput(solarizeSettings);
     d->iterationInput->setRange(0, 100, 1);
     d->iterationInput->setDefaultValue(2);
-    d->iterationInput->setWhatsThis(i18n("This value controls the number of iterations "
-                                         "to use with the Neon and Find Edges effects."));
+    d->iterationInput->setWhatsThis(i18nc("@info", "This value controls the number of iterations "
+                                          "to use with the Neon and Find Edges effects."));
 
     grid1->addWidget(levelLabel,        0, 0, 1, 1);
     grid1->addWidget(d->levelInput,     1, 0, 1, 1);
@@ -196,11 +197,11 @@ ColorFXSettings::ColorFXSettings(QWidget* const parent, bool useGenericImg)
                                                       translateLuts(fi.baseName()), idx);
     }
 
-    QLabel* const intensityLabel = new QLabel(i18n("Intensity:"), lut3DSettings);
+    QLabel* const intensityLabel = new QLabel(i18nc("@label", "Intensity:"), lut3DSettings);
     d->intensityInput            = new DIntNumInput(lut3DSettings);
     d->intensityInput->setRange(1, 100, 1);
     d->intensityInput->setDefaultValue(100);
-    d->intensityInput->setWhatsThis(i18n("Set here the intensity of the filter."));
+    d->intensityInput->setWhatsThis(i18nc("@info", "Set here the intensity of the filter."));
 
     grid2->addWidget(d->correctionTools, 0, 0, 1, 1);
     grid2->addWidget(intensityLabel,     1, 0, 1, 1);
@@ -380,51 +381,51 @@ QString ColorFXSettings::translateLuts(const QString& name) const
 {
     if      (name.toLower() == QLatin1String("bleach"))
     {
-        return i18n("Bleach");
+        return i18nc("@info: effect type", "Bleach");
     }
     else if (name.toLower() == QLatin1String("blue_crush"))
     {
-        return i18n("Blue Crush");
+        return i18nc("@info: effect type", "Blue Crush");
     }
     else if (name.toLower() == QLatin1String("bw_contrast"))
     {
-        return i18n("BW Contrast");
+        return i18nc("@info: effect type", "BW Contrast");
     }
     else if (name.toLower() == QLatin1String("instant"))
     {
-        return i18n("Instant");
+        return i18nc("@info: effect type", "Instant");
     }
     else if (name.toLower() == QLatin1String("original"))
     {
-        return i18n("Original");
+        return i18nc("@info: effect type", "Original");
     }
     else if (name.toLower() == QLatin1String("punch"))
     {
-        return i18n("Punch");
+        return i18nc("@info: effect type", "Punch");
     }
     else if (name.toLower() == QLatin1String("summer"))
     {
-        return i18n("Summer");
+        return i18nc("@info: effect type", "Summer");
     }
     else if (name.toLower() == QLatin1String("tokyo"))
     {
-        return i18n("Tokyo");
+        return i18nc("@info: effect type", "Tokyo");
     }
     else if (name.toLower() == QLatin1String("vintage"))
     {
-        return i18n("Vintage");
+        return i18nc("@info: effect type", "Vintage");
     }
     else if (name.toLower() == QLatin1String("washout"))
     {
-        return i18n("Washout");
+        return i18nc("@info: effect type", "Washout");
     }
     else if (name.toLower() == QLatin1String("washout_color"))
     {
-        return i18n("Washout Color");
+        return i18nc("@info: effect type", "Washout Color");
     }
     else if (name.toLower() == QLatin1String("x_process"))
     {
-        return i18n("X Process");
+        return i18nc("@info: effect type", "X Process");
     }
 
     return name;

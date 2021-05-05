@@ -6,7 +6,7 @@
  * Date        : 2006-12-09
  * Description : Raw decoding settings
  *
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2006-2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  * Copyright (C) 2007-2008 by Guillaume Castagnino <casta at xwing dot info>
  *
@@ -64,7 +64,7 @@ public:
      *  AHD:      use Adaptive Homogeneity-Directed interpolation.
      *            This method selects the direction of interpolation so as to
      *            maximize a homogeneity metric, thus typically minimizing color artifacts.
-     *  DCB:      DCB interpolation (see http://www.linuxphoto.org/html/dcb.html for details)
+     *  DCB:      DCB interpolation (see www.linuxphoto.org/html/dcb.html for details)
      *  DHT:      DHT interpolation.
      *  AAHD:     Enhanced Adaptive AHD interpolation.
      */
@@ -160,7 +160,7 @@ public:
     /**
      * Standard destructor
      */
-    virtual ~DRawDecoderSettings();
+    ~DRawDecoderSettings();
 
     /**
      * Method to use a settings to optimize time loading, for example to compute image histogram

@@ -140,16 +140,18 @@ bool RawTherapeeRawImportPlugin::run(const QString& filePath, const DRawDecoding
 
     // --------
 
-    QString binary;
-
 #ifdef Q_OS_WIN
+
     QSettings settings(QLatin1String("HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\"
                                      "CurrentVersion\\App Paths\\rawtherapee.exe"),
                                      QSettings::NativeFormat);
 
-    binary = settings.value(QLatin1String("Default"), QString()).toString();
+    QString binary = settings.value(QLatin1String("Default"), QString()).toString();
+
 #else
-    binary = QLatin1String("rawtherapee");
+
+    QString binary = QLatin1String("rawtherapee");
+
 #endif
 
     d->rawtherapee->setProgram(binary);
@@ -198,7 +200,7 @@ void RawTherapeeRawImportPlugin::slotProcessFinished(int code, QProcess::ExitSta
     if (d->decoded.isNull())
     {
         QString message = i18n("Error to import RAW image with RawTherapee\nClose this dialog to load RAW image with native import tool");
-        QMessageBox::information(0, qApp->applicationName(), message);
+        QMessageBox::information(nullptr, qApp->applicationName(), message);
 
         qCDebug(DIGIKAM_GENERAL_LOG) << "Decoded image is null! Load with Native tool...";
         qCDebug(DIGIKAM_GENERAL_LOG) << d->props.filePath;

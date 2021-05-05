@@ -71,7 +71,7 @@ public:
 public:
 
      explicit ShowfotoItemModel(QObject* const parent);
-    ~ShowfotoItemModel();
+    ~ShowfotoItemModel() override;
 
     /**
      * If a cache is kept, lookup by file path is fast,
@@ -167,11 +167,11 @@ public:
     static qlonglong        retrieveShowfotoItemId(const QModelIndex& index);
 
     /// QAbstractListModel implementation
-    virtual int           rowCount(const QModelIndex& parent)                            const override;
-    virtual QVariant      data(const QModelIndex& index, int role)                       const override;
-    virtual QVariant      headerData(int section, Qt::Orientation orientation, int role) const override;
-    virtual Qt::ItemFlags flags(const QModelIndex& index)                                const override;
-    virtual QModelIndex   index(int row, int column, const QModelIndex& parent)          const override;
+    int           rowCount(const QModelIndex& parent)                            const override;
+    QVariant      data(const QModelIndex& index, int role)                       const override;
+    QVariant      headerData(int section, Qt::Orientation orientation, int role) const override;
+    Qt::ItemFlags flags(const QModelIndex& index)                                const override;
+    QModelIndex   index(int row, int column, const QModelIndex& parent)          const override;
 
     /// DragDrop methods
     DECLARE_MODEL_DRAG_DROP_METHODS
@@ -234,7 +234,7 @@ Q_SIGNALS:
 
 public Q_SLOTS:
 
-    void reAddShowfotoItemInfos(ShowfotoItemInfoList& infos);
+    void reAddShowfotoItemInfos(const ShowfotoItemInfoList& infos);
     void reAddingFinished();
     void slotFileDeleted(const QString& folder, const QString& file, bool status);
     void slotFileUploaded(const ShowfotoItemInfo& info);
@@ -285,9 +285,16 @@ public:
 
 private:
 
+    // Disable
+    ShowfotoItemModel(const ShowfotoItemModel&)            = delete;
+    ShowfotoItemModel& operator=(const ShowfotoItemModel&) = delete;
+
+private:
+
     Private* const d;
 };
-}
+
+} // namespace ShowFoto
 
 Q_DECLARE_METATYPE(ShowFoto::ShowfotoItemModel*)
 

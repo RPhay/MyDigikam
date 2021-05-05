@@ -6,7 +6,7 @@
  * Date        : 2005-02-26
  * Description : image channels mixer.
  *
- * Copyright (C) 2005-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2005-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -38,7 +38,7 @@
 
 // KDE includes
 
-#include "kconfiggroup.h"
+#include <kconfiggroup.h>
 #include <klocalizedstring.h>
 #include <ksharedconfig.h>
 
@@ -64,9 +64,9 @@ class Q_DECL_HIDDEN ChannelMixerTool::Private
 public:
 
     explicit Private()
-      : settingsView(nullptr),
+      : settingsView (nullptr),
         previewWidget(nullptr),
-        gboxSettings(nullptr)
+        gboxSettings (nullptr)
     {
     }
 
@@ -88,7 +88,7 @@ const QString ChannelMixerTool::Private::configHistogramScaleEntry(QLatin1String
 
 ChannelMixerTool::ChannelMixerTool(QObject* const parent)
     : EditorToolThreaded(parent),
-      d(new Private)
+      d                 (new Private)
 {
     setObjectName(QLatin1String("channelmixer"));
 

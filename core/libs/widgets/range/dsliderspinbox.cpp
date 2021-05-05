@@ -6,7 +6,7 @@
  * Date        : 2014-11-30
  * Description : Save space slider widget
  *
- * Copyright (C) 2014-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2014-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C)      2010 by Justin Noel <justin at ics dot com>
  * Copyright (C)      2010 by Cyrille Berger <cberger at cberger dot net>
  *
@@ -590,11 +590,11 @@ void DAbstractSliderSpinBox::wheelEvent(QWheelEvent *e)
 {
     Q_D(DAbstractSliderSpinBox);
 
-    if (e->delta() > 0)
+    if      (e->angleDelta().y() > 0)
     {
         setInternalValue(d->value + d->singleStep);
     }
-    else
+    else if (e->angleDelta().y() < 0)
     {
         setInternalValue(d->value - d->singleStep);
     }
@@ -765,7 +765,7 @@ QStyleOptionSpinBox DAbstractSliderSpinBox::spinBoxOptions() const
     }
     else
     {
-        opts.activeSubControls = nullptr;
+        opts.activeSubControls = QStyle::SC_None;
     }
 
     return opts;

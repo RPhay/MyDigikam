@@ -1,6 +1,6 @@
 /* -*- C++ -*-
  * File: libraw_datastream.cpp
- * Copyright 2008-2019 LibRaw LLC (info@libraw.org)
+ * Copyright 2008-2021 LibRaw LLC (info@libraw.org)
  *
  * LibRaw C++ interface (implementation)
 
@@ -34,10 +34,126 @@
 #endif
 #ifdef USE_JPEG
 #include <jpeglib.h>
+#include <jerror.h>
 #else
 #define NO_JPEG
 #endif
 
+#ifdef USE_JPEG
+
+typedef struct
+{
+    struct jpeg_source_mgr pub; /* public fields */
+    LibRaw_abstract_datastream *instream;            /* source stream */
+    JOCTET *buffer;             /* start of buffer */
+    boolean start_of_file;      /* have we gotten any data yet? */
+} lr_jpg_source_mgr;
+
+typedef lr_jpg_source_mgr *lr_jpg_src_ptr;
+
+#define LR_JPEG_INPUT_BUF_SIZE 16384 
+
+static void f_init_source(j_decompress_ptr cinfo)
+{
+    lr_jpg_src_ptr src = (lr_jpg_src_ptr)cinfo->src;
+    src->start_of_file = TRUE;
+}
+
+#ifdef ERREXIT
+#undef ERREXIT
+#endif
+
+#define ERREXIT(cinfo, code)                                                   \
+  ((cinfo)->err->msg_code = (code),                                            \
+   (*(cinfo)->err->error_exit)((j_common_ptr)(cinfo)))
+
+static boolean lr_fill_input_buffer(j_decompress_ptr cinfo)
+{
+    lr_jpg_src_ptr src = (lr_jpg_src_ptr)cinfo->src;
+    size_t nbytes;
+
+    nbytes = src->instream->read((void*)src->buffer, 1, LR_JPEG_INPUT_BUF_SIZE);
+
+    if (nbytes <= 0)
+    {
+        if (src->start_of_file) /* Treat empty input file as fatal error */
+            ERREXIT(cinfo, JERR_INPUT_EMPTY);
+        WARNMS(cinfo, JWRN_JPEG_EOF);
+        /* Insert a fake EOI marker */
+        src->buffer[0] = (JOCTET)0xFF;
+        src->buffer[1] = (JOCTET)JPEG_EOI;
+        nbytes = 2;
+    }
+
+    src->pub.next_input_byte = src->buffer;
+    src->pub.bytes_in_buffer = nbytes;
+    src->start_of_file = FALSE;
+    return TRUE;
+}
+
+static void lr_skip_input_data(j_decompress_ptr cinfo, long num_bytes)
+{
+    struct jpeg_source_mgr *src = cinfo->src;
+    if (num_bytes > 0)
+    {
+        while (num_bytes > (long)src->bytes_in_buffer)
+        {
+            num_bytes -= (long)src->bytes_in_buffer;
+            (void)(*src->fill_input_buffer)(cinfo);
+            /* note we assume that fill_input_buffer will never return FALSE,
+             * so suspension need not be handled.
+             */
+        }
+        src->next_input_byte += (size_t)num_bytes;
+        src->bytes_in_buffer -= (size_t)num_bytes;
+    }
+}
+
+static void lr_term_source(j_decompress_ptr cinfo) {}
+
+static void lr_jpeg_src(j_decompress_ptr cinfo, LibRaw_abstract_datastream *inf)
+{
+    lr_jpg_src_ptr src;
+    if (cinfo->src == NULL)
+    { /* first time for this JPEG object? */
+        cinfo->src = (struct jpeg_source_mgr *)(*cinfo->mem->alloc_small)(
+            (j_common_ptr)cinfo, JPOOL_PERMANENT, sizeof(lr_jpg_source_mgr));
+        src = (lr_jpg_src_ptr)cinfo->src;
+        src->buffer = (JOCTET *)(*cinfo->mem->alloc_small)(
+            (j_common_ptr)cinfo, JPOOL_PERMANENT,
+            LR_JPEG_INPUT_BUF_SIZE * sizeof(JOCTET));
+    }
+    else if (cinfo->src->init_source != f_init_source)
+    {
+        ERREXIT(cinfo, JERR_BUFFER_SIZE);
+    }
+
+    src = (lr_jpg_src_ptr)cinfo->src;
+    src->pub.init_source = f_init_source;
+    src->pub.fill_input_buffer = lr_fill_input_buffer;
+    src->pub.skip_input_data = lr_skip_input_data;
+    src->pub.resync_to_restart = jpeg_resync_to_restart; /* use default method */
+    src->pub.term_source = lr_term_source;
+    src->instream = inf;
+    src->pub.bytes_in_buffer = 0;    /* forces fill_input_buffer on first read */
+    src->pub.next_input_byte = NULL; /* until buffer loaded */
+}
+#endif
+
+int LibRaw_abstract_datastream::jpeg_src(void *jpegdata)
+{
+#ifdef NO_JPEG
+    return -1;
+#else
+    j_decompress_ptr cinfo = (j_decompress_ptr)jpegdata;
+    buffering_off();
+    lr_jpeg_src(cinfo, this);
+    return 0; // OK
+#endif
+}
+
+
+#ifndef LIBRAW_NO_IOSTREAMS_DATASTREAM
 // == LibRaw_file_datastream ==
 
 LibRaw_file_datastream::~LibRaw_file_datastream()
@@ -171,6 +287,7 @@ INT64 LibRaw_file_datastream::tell()
 
 char *LibRaw_file_datastream::gets(char *str, int sz)
 {
+  if(sz<1) return NULL;
   LR_STREAM_CHK();
   std::istream is(f.get());
   is.getline(str, sz);
@@ -213,6 +330,7 @@ const char *LibRaw_file_datastream::fname()
 
 #undef LR_STREAM_CHK
 
+#ifdef LIBRAW_OLD_VIDEO_SUPPORT
 void *LibRaw_file_datastream::make_jas_stream()
 {
 #ifdef NO_JASPER
@@ -231,40 +349,11 @@ void *LibRaw_file_datastream::make_jas_stream()
   }
 #endif
 }
-
-int LibRaw_file_datastream::jpeg_src(void *jpegdata)
-{
-#ifdef NO_JPEG
-  return -1; // not supported
-#else
-  if (jas_file)
-  {
-    fclose(jas_file);
-    jas_file = NULL;
-  }
-#ifdef LIBRAW_WIN32_UNICODEPATHS
-  if (wfname())
-  {
-    jas_file = _wfopen(wfname(), L"rb");
-  }
-  else
 #endif
-  {
-    jas_file = fopen(fname(), "rb");
-  }
-  if (jas_file)
-  {
-    fseek(jas_file, tell(), SEEK_SET);
-    j_decompress_ptr cinfo = (j_decompress_ptr)jpegdata;
-    jpeg_stdio_src(cinfo, jas_file);
-    return 0; // OK
-  }
-  return -1;
 #endif
-}
 
 // == LibRaw_buffer_datastream
-LibRaw_buffer_datastream::LibRaw_buffer_datastream(void *buffer, size_t bsize)
+LibRaw_buffer_datastream::LibRaw_buffer_datastream(const void *buffer, size_t bsize)
 {
   buf = (unsigned char *)buffer;
   streampos = 0;
@@ -333,12 +422,13 @@ INT64 LibRaw_buffer_datastream::tell()
 
 char *LibRaw_buffer_datastream::gets(char *s, int sz)
 {
+  if(sz<1) return NULL;
   unsigned char *psrc, *pdest, *str;
   str = (unsigned char *)s;
   psrc = buf + streampos;
   pdest = str;
   if(streampos >= streamsize) return NULL;
-  while ((size_t(psrc - buf) < streamsize) && ((pdest - str) < sz))
+  while ((size_t(psrc - buf) < streamsize) && ((pdest - str) < (sz-1)))
   {
     *pdest = *psrc;
     if (*psrc == '\n')
@@ -348,8 +438,11 @@ char *LibRaw_buffer_datastream::gets(char *s, int sz)
   }
   if (size_t(psrc - buf) < streamsize)
     psrc++;
-  if ((pdest - str) < sz)
+  if ((pdest - str) < sz-1)
     *(++pdest) = 0;
+  else
+    s[sz - 1] = 0; // ensure trailing zero
+
   streampos = psrc - buf;
   return s;
 }
@@ -385,6 +478,7 @@ int LibRaw_buffer_datastream::eof()
 }
 int LibRaw_buffer_datastream::valid() { return buf ? 1 : 0; }
 
+#ifdef LIBRAW_OLD_VIDEO_SUPPORT
 void *LibRaw_buffer_datastream::make_jas_stream()
 {
 #ifdef NO_JASPER
@@ -393,6 +487,7 @@ void *LibRaw_buffer_datastream::make_jas_stream()
   return jas_stream_memopen((char *)buf + streampos, streamsize - streampos);
 #endif
 }
+#endif
 
 int LibRaw_buffer_datastream::jpeg_src(void *jpegdata)
 {
@@ -525,6 +620,7 @@ INT64 LibRaw_bigfile_datastream::tell()
 
 char *LibRaw_bigfile_datastream::gets(char *str, int sz)
 {
+  if(sz<1) return NULL;
   LR_BF_CHK();
   return fgets(str, sz, f);
 }
@@ -546,7 +642,7 @@ const char *LibRaw_bigfile_datastream::fname()
   return filename.size() > 0 ? filename.c_str() : NULL;
 }
 
-
+#ifdef LIBRAW_OLD_VIDEO_SUPPORT
 void *LibRaw_bigfile_datastream::make_jas_stream()
 {
 #ifdef NO_JASPER
@@ -555,19 +651,7 @@ void *LibRaw_bigfile_datastream::make_jas_stream()
   return jas_stream_fdopen(fileno(f), "rb");
 #endif
 }
-
-int LibRaw_bigfile_datastream::jpeg_src(void *jpegdata)
-{
-#ifdef NO_JPEG
-  return -1;
-#else
-  if (!f)
-    return -1;
-  j_decompress_ptr cinfo = (j_decompress_ptr)jpegdata;
-  jpeg_stdio_src(cinfo, f);
-  return 0; // OK
 #endif
-}
 
 // == LibRaw_windows_datastream
 #ifdef LIBRAW_WIN32_CALLS
@@ -575,8 +659,12 @@ int LibRaw_bigfile_datastream::jpeg_src(void *jpegdata)
 LibRaw_windows_datastream::LibRaw_windows_datastream(const TCHAR *sFile)
     : LibRaw_buffer_datastream(NULL, 0), hMap_(0), pView_(NULL)
 {
+#if defined(WINAPI_FAMILY) && defined(WINAPI_FAMILY_APP) && (WINAPI_FAMILY == WINAPI_FAMILY_APP)
+    HANDLE hFile = CreateFile2(sFile, GENERIC_READ, 0, OPEN_EXISTING, 0);
+#else
   HANDLE hFile = CreateFile(sFile, GENERIC_READ, 0, 0, OPEN_EXISTING,
                             FILE_ATTRIBUTE_NORMAL, 0);
+#endif
   if (hFile == INVALID_HANDLE_VALUE)
     throw std::runtime_error("failed to open the file");
 
@@ -631,3 +719,331 @@ void LibRaw_windows_datastream::Open(HANDLE hFile)
 }
 
 #endif
+
+#if defined (LIBRAW_NO_IOSTREAMS_DATASTREAM)  && defined (LIBRAW_WIN32_CALLS)
+
+/* LibRaw_bigfile_buffered_datastream: copypasted from LibRaw_bigfile_datastream + extra cache on read */
+
+#undef LR_BF_CHK
+#define LR_BF_CHK()                                                    \
+  do                                                                    \
+  {                                                                     \
+     if (fhandle ==0 || fhandle == INVALID_HANDLE_VALUE)                \
+         throw LIBRAW_EXCEPTION_IO_EOF;                                 \
+  } while (0)
+
+#define LIBRAW_BUFFER_ALIGN 4096
+
+int LibRaw_bufio_params::bufsize = 16384;
+
+void LibRaw_bufio_params::set_bufsize(int bs)
+{
+    if (bs > 0)
+        bufsize = bs;
+}
+
+
+LibRaw_bigfile_buffered_datastream::LibRaw_bigfile_buffered_datastream(const char *fname)
+    : filename(fname), _fsize(0), _fpos(0)
+#ifdef LIBRAW_WIN32_UNICODEPATHS
+    , wfilename()
+#endif
+    , iobuffers(), buffered(1)
+{
+    if (filename.size() > 0)
+    {
+        std::string fn(fname);
+        std::wstring fpath(fn.begin(), fn.end());
+#if defined(WINAPI_FAMILY) && defined(WINAPI_FAMILY_APP) && (WINAPI_FAMILY == WINAPI_FAMILY_APP)
+        if ((fhandle = CreateFile2(fpath.c_str(), GENERIC_READ, 0, OPEN_EXISTING, 0)) != INVALID_HANDLE_VALUE)
+#else
+        if ((fhandle = CreateFileW(fpath.c_str(), GENERIC_READ, FILE_SHARE_READ, 0,
+            OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, 0)) != INVALID_HANDLE_VALUE)
+#endif
+        {
+            LARGE_INTEGER fs;
+            if (GetFileSizeEx(fhandle, &fs))
+                _fsize = fs.QuadPart;
+        }
+    }
+    else
+    {
+        filename = std::string();
+        fhandle = INVALID_HANDLE_VALUE;
+    }
+}
+
+#ifdef LIBRAW_WIN32_UNICODEPATHS
+LibRaw_bigfile_buffered_datastream::LibRaw_bigfile_buffered_datastream(const wchar_t *fname)
+    : filename(), _fsize(0), _fpos(0),
+    wfilename(fname), iobuffers(), buffered(1)
+{
+    if (wfilename.size() > 0)
+    {
+#if defined(WINAPI_FAMILY) && defined(WINAPI_FAMILY_APP) && (WINAPI_FAMILY == WINAPI_FAMILY_APP)
+        if ((fhandle = CreateFile2(wfilename.c_str(), GENERIC_READ, 0, OPEN_EXISTING, 0)) != INVALID_HANDLE_VALUE)
+#else
+        if ((fhandle = CreateFileW(wfilename.c_str(), GENERIC_READ, FILE_SHARE_READ, 0,
+            OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, 0)) != INVALID_HANDLE_VALUE)
+#endif
+        {
+            if (fhandle > 0)
+            {
+                LARGE_INTEGER fs;
+                if (GetFileSizeEx(fhandle, &fs))
+                    _fsize = fs.QuadPart;
+            }
+        }
+
+    }
+    else
+    {
+        wfilename = std::wstring();
+        fhandle = INVALID_HANDLE_VALUE;
+    }
+}
+
+const wchar_t *LibRaw_bigfile_buffered_datastream::wfname()
+{
+    return wfilename.size() > 0 ? wfilename.c_str() : NULL;
+}
+#endif
+
+LibRaw_bigfile_buffered_datastream::~LibRaw_bigfile_buffered_datastream()
+{
+    if (fhandle > 0)
+        CloseHandle(fhandle);
+}
+int LibRaw_bigfile_buffered_datastream::valid() {
+    return fhandle > 0 && fhandle != INVALID_HANDLE_VALUE;
+}
+
+const char *LibRaw_bigfile_buffered_datastream::fname()
+{
+    return filename.size() > 0 ? filename.c_str() : NULL;
+}
+
+#ifdef LIBRAW_OLD_VIDEO_SUPPORT
+void *LibRaw_bigfile_buffered_datastream::make_jas_stream()
+{
+#ifdef NO_JASPER
+    return NULL;
+#else
+    return NULL;
+#endif
+}
+#endif
+
+INT64 LibRaw_bigfile_buffered_datastream::readAt(void *ptr, size_t size, INT64 off)
+{
+    LR_BF_CHK();
+    DWORD NumberOfBytesRead;
+    DWORD nNumberOfBytesToRead = size;
+    struct _OVERLAPPED olap;
+    memset(&olap, 0, sizeof(olap));
+    olap.Offset = off & 0xffffffff;
+    olap.OffsetHigh = off >> 32;
+    if (ReadFile(fhandle, ptr, nNumberOfBytesToRead, &NumberOfBytesRead, &olap))
+        return NumberOfBytesRead;
+    else
+        return 0;
+}
+
+#define MAX(a, b) ((a) > (b) ? (a) : (b))
+#define MIN(a, b) ((a) < (b) ? (a) : (b))
+
+#ifdef _MSC_VER
+#pragma intrinsic(memcpy)
+#endif
+
+int LibRaw_bigfile_buffered_datastream::read(void *data, size_t size, size_t nmemb)
+{
+    if (size < 1 || nmemb < 1)
+        return 0;
+    LR_BF_CHK();
+    INT64 count = size * nmemb;
+    INT64 partbytes = 0;
+    if (!buffered)
+    {
+        INT64 r = readAt(data, count, _fpos);
+        _fpos += r;
+        return r / size;
+    }
+
+    unsigned char *fBuffer = (unsigned char*)iobuffers[0].data();
+    while (count)
+    {
+        INT64 inbuffer = 0;
+        // See if the request is totally inside buffer.
+        if (iobuffers[0].contains(_fpos, inbuffer))
+        {
+            if (inbuffer >= count)
+            {
+                memcpy(data, fBuffer + (unsigned)(_fpos - iobuffers[0]._bstart), count);
+                _fpos += count;
+                return (count + partbytes) / size;
+            }
+            memcpy(data, fBuffer + (_fpos - iobuffers[0]._bstart), inbuffer);
+            partbytes += inbuffer;
+            count -= inbuffer;
+            data = (void *)(((char *)data) + inbuffer);
+            _fpos += inbuffer;
+        }
+        if (count > iobuffers[0].size())
+        {
+        fallback:
+            if (_fpos + count > _fsize)
+                count = MAX(0, _fsize - _fpos);
+            if (count > 0)
+            {
+                INT64 r = readAt(data, count, _fpos);
+                _fpos += r;
+                return (r + partbytes) / size;
+            }
+            else
+                return 0;
+        }
+
+        if (!fillBufferAt(0, _fpos))
+            goto fallback;
+    }
+    return 0;
+}
+
+bool LibRaw_bigfile_buffered_datastream::fillBufferAt(int bi, INT64 off)
+{
+    iobuffers[bi]._bstart = off;
+    if (iobuffers[bi].size() >= LIBRAW_BUFFER_ALIGN * 2)// Align to a file block.
+        iobuffers[bi]._bstart &= (INT64)~((INT64)(LIBRAW_BUFFER_ALIGN - 1));
+
+    iobuffers[bi]._bend = MIN(iobuffers[bi]._bstart + iobuffers[bi].size(), _fsize);
+    if (iobuffers[bi]._bend <= off) // Buffer alignment problem, fallback
+        return false;
+    INT64 rr = readAt(iobuffers[bi].data(), (uint32_t)(iobuffers[bi]._bend - iobuffers[bi]._bstart), iobuffers[bi]._bstart);
+    if (rr > 0)
+    {
+        iobuffers[bi]._bend = iobuffers[bi]._bstart + rr;
+        return true;
+    }
+    return false;
+}
+
+
+int LibRaw_bigfile_buffered_datastream::eof()
+{
+    LR_BF_CHK();
+    return _fpos >= _fsize;
+}
+
+int LibRaw_bigfile_buffered_datastream::seek(INT64 o, int whence)
+{
+    LR_BF_CHK();
+    if (whence == SEEK_SET) _fpos = o;
+    else if (whence == SEEK_END) _fpos = o > 0 ? _fsize : _fsize + o;
+    else if (whence == SEEK_CUR) _fpos += o;
+
+    return 0;
+}
+
+INT64 LibRaw_bigfile_buffered_datastream::tell()
+{
+    LR_BF_CHK();
+    return _fpos;
+}
+
+char *LibRaw_bigfile_buffered_datastream::gets(char *s, int sz)
+{
+    if (sz < 1)
+        return NULL;
+    else if (sz < 2)
+    {
+        s[0] = 0;
+        return s;
+    }
+
+    LR_BF_CHK();
+    INT64 contains;
+    int bufindex = selectStringBuffer(sz, contains);
+    if (bufindex < 0) return NULL;
+    if (contains >= sz)
+    {
+        unsigned char *buf = iobuffers[bufindex].data() + (_fpos - iobuffers[bufindex]._bstart);
+        int streampos = 0;
+        int streamsize = contains;
+        unsigned char *str = (unsigned char *)s;
+        unsigned char *psrc, *pdest;
+        psrc = buf + streampos;
+        pdest = str;
+
+        while ((size_t(psrc - buf) < streamsize) && ((pdest - str) < sz-1)) // sz-1: to append \0
+        {
+            *pdest = *psrc;
+            if (*psrc == '\n')
+                break;
+            psrc++;
+            pdest++;
+        }
+        if (size_t(psrc - buf) < streamsize)
+            psrc++;
+        if ((pdest - str) < sz - 1)
+            *(++pdest) = 0;
+        else
+            s[sz - 1] = 0; // ensure trailing zero
+        streampos = psrc - buf;
+        _fpos += streampos;
+        return s;
+    }
+    return NULL;
+}
+
+int LibRaw_bigfile_buffered_datastream::selectStringBuffer(INT64 len, INT64& contains)
+{
+    if (iobuffers[0].contains(_fpos, contains) && contains >= len)
+        return 0;
+
+    if (iobuffers[1].contains(_fpos, contains) && contains >= len)
+        return 1;
+
+    fillBufferAt(1, _fpos);
+    if (iobuffers[1].contains(_fpos, contains) && contains >= len)
+        return 1;
+    return -1;
+}
+
+int LibRaw_bigfile_buffered_datastream::scanf_one(const char *fmt, void *val)
+{
+    LR_BF_CHK();
+    INT64 contains = 0;
+    int bufindex = selectStringBuffer(24, contains);
+    if (bufindex < 0) return -1;
+    if (contains >= 24)
+    {
+        unsigned char *bstart = iobuffers[bufindex].data() + (_fpos - iobuffers[bufindex]._bstart);
+        int streampos = 0;
+        int streamsize = contains;
+        int
+#ifndef WIN32SECURECALLS
+            scanf_res = sscanf((char *)(bstart), fmt, val);
+#else
+            scanf_res = sscanf_s((char *)(bstart), fmt, val);
+#endif
+        if (scanf_res > 0)
+        {
+            int xcnt = 0;
+            while (streampos < streamsize)
+            {
+                streampos++;
+                xcnt++;
+                if (bstart[streampos] == 0 || bstart[streampos] == ' ' ||
+                    bstart[streampos] == '\t' || bstart[streampos] == '\n' || xcnt > 24)
+                    break;
+            }
+            _fpos += streampos;
+            return scanf_res;
+        }
+    }
+    return -1;
+}
+
+#endif
+

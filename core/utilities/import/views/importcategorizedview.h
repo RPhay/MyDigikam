@@ -40,16 +40,17 @@ namespace Digikam
 class ImportDelegate;
 class ICCSettingsContainer;
 
-class DIGIKAM_EXPORT ImportCategorizedView : public ItemViewCategorized
+class DIGIKAM_GUI_EXPORT ImportCategorizedView : public ItemViewCategorized
 {
     Q_OBJECT
 
 public:
 
     explicit ImportCategorizedView(QWidget* const parent = nullptr);
-    ~ImportCategorizedView();
+    ~ImportCategorizedView() override;
 
-    void setModels(ImportItemModel* model, ImportSortFilterModel* filterModel);
+    void setModels(ImportItemModel* model,
+                   ImportSortFilterModel* filterModel);
 
     ImportItemModel*       importItemModel()                  const;
     ImportSortFilterModel* importSortFilterModel()            const;
@@ -110,7 +111,7 @@ public:
 
     void addSelectionOverlay(ImportDelegate* delegate = nullptr);
 
-    ThumbnailSize thumbnailSize() const;
+    ThumbnailSize thumbnailSize()                             const;
 
     virtual void setThumbnailSize(const ThumbnailSize& size);
 
@@ -186,16 +187,16 @@ protected:
     QModelIndex                  nextIndexHint(const QModelIndex& indexToAnchor, const QItemSelectionRange& removed) const override;
 
     void setItemDelegate(ImportDelegate* delegate);
-    void indexActivated(const QModelIndex& index, Qt::KeyboardModifiers modifiers) override;
-    void currentChanged(const QModelIndex& index, const QModelIndex& previous)     override;
-    void paintEvent(QPaintEvent* e)                                                override;
-    void selectionChanged(const QItemSelection&, const QItemSelection&)            override;
-    void updateGeometries()                                                        override;
+    void indexActivated(const QModelIndex& index, Qt::KeyboardModifiers modifiers)                                         override;
+    void currentChanged(const QModelIndex& index, const QModelIndex& previous)                                             override;
+    void paintEvent(QPaintEvent* e)                                                                                        override;
+    void selectionChanged(const QItemSelection&, const QItemSelection&)                                                    override;
+    void updateGeometries()                                                                                                override;
 
     /// Reimplement these in a subclass
     virtual void activated(const CamItemInfo& info, Qt::KeyboardModifiers modifiers);
     virtual void showContextMenuOnInfo(QContextMenuEvent* event, const CamItemInfo& info);
-    virtual void showContextMenuOnIndex(QContextMenuEvent* event, const QModelIndex& index) override;
+    void showContextMenuOnIndex(QContextMenuEvent* event, const QModelIndex& index)                                        override;
 
 private Q_SLOTS:
 
@@ -206,6 +207,12 @@ private Q_SLOTS:
 private:
 
     void scrollToStoredItem();
+
+private:
+
+    // Disable
+    ImportCategorizedView(const ImportCategorizedView&)            = delete;
+    ImportCategorizedView& operator=(const ImportCategorizedView&) = delete;
 
 private:
 

@@ -39,7 +39,7 @@
 namespace Digikam
 {
 
-// --- FaceIfacePriv ----------------------------------------------------------------------------------------
+// --- FaceIfacePriv ---
 
 class Q_DECL_HIDDEN FaceTagsHelper
 {
@@ -107,10 +107,11 @@ int FaceTagsHelper::tagForName(const QString& name, int tagId, int parentId, con
 
     if (tagId)
     {
-        if (FaceTags::isPerson(tagId))
+        if      (FaceTags::isPerson(tagId))
         {
-            //qCDebug(DIGIKAM_DATABASE_LOG) << "Proposed tag is already a person";
-
+/*
+            qCDebug(DIGIKAM_DATABASE_LOG) << "Proposed tag is already a person";
+*/
             return tagId;
         }
         else if (convert)
@@ -243,6 +244,11 @@ bool FaceTags::isTheUnconfirmedPerson(int tagId)
     return TagsCache::instance()->hasProperty(tagId, TagPropertyName::unconfirmedPerson());
 }
 
+bool FaceTags::isTheIgnoredPerson(int tagId)
+{
+    return TagsCache::instance()->hasProperty(tagId, TagPropertyName::ignoredPerson());
+}
+
 QList<int> FaceTags::allPersonTags()
 {
     return TagsCache::instance()->tagsWithProperty(TagPropertyName::person());
@@ -363,6 +369,7 @@ int FaceTags::getOrCreateTagForIdentity(const QMap<QString, QString>& attributes
     }
 
     // identity is in FacesEngine's database, but not in ours, so create.
+
     tagId = FaceTagsHelper::tagForName(name, 0, -1, attributes.value(QLatin1String("fullName")), true, true);
     applyTagIdentityMapping(tagId, attributes);
 
@@ -465,6 +472,38 @@ int FaceTags::unconfirmedPersonTagId()
     props.setProperty(TagPropertyName::unconfirmedPerson(), QString()); // special property
 
     return unknownPersonTagId;
+}
+
+int FaceTags::ignoredPersonTagId()
+{
+    QList<int> ids = TagsCache::instance()->tagsWithPropertyCached(TagPropertyName::ignoredPerson());
+
+    if (!ids.isEmpty())
+    {
+        return ids.first();
+    }
+
+    int ignoredPersonTagId = TagsCache::instance()->getOrCreateTag(
+                                        FaceTagsHelper::tagPath(
+                                        i18nc("List of detected faces that need not be recognized", "Ignored"),
+                                        personParentTag()));
+    TagProperties props(ignoredPersonTagId);
+    props.setProperty(TagPropertyName::person(),        QString());
+    props.setProperty(TagPropertyName::ignoredPerson(), QString());
+
+    return ignoredPersonTagId;
+}
+
+bool FaceTags::existsIgnoredPerson()
+{
+    QList<int> ids = TagsCache::instance()->tagsWithPropertyCached(TagPropertyName::ignoredPerson());
+
+    if (!ids.isEmpty())
+    {
+        return true;
+    }
+
+    return false;
 }
 
 } // Namespace Digikam

@@ -6,7 +6,7 @@
  * Date        : 2007-03-05
  * Description : digiKam light table GUI
  *
- * Copyright (C) 2007-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2007-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -38,15 +38,13 @@
 namespace Digikam
 {
 
-class SlideShowSettings;
-
 class LightTableWindow : public DXmlGuiWindow
 {
     Q_OBJECT
 
 public:
 
-    ~LightTableWindow();
+    ~LightTableWindow()                                 override;
 
     static LightTableWindow* lightTableWindow();
     static bool              lightTableWindowCreated();
@@ -60,7 +58,7 @@ public:
 
 public:
 
-    DInfoInterface* infoIface(DPluginAction* const ac) override;
+    DInfoInterface* infoIface(DPluginAction* const ac)  override;
 
 Q_SIGNALS:
 
@@ -75,19 +73,21 @@ public Q_SLOTS:
 
 protected:
 
-    void moveEvent(QMoveEvent* e) override;
+    void moveEvent(QMoveEvent* e)                       override;
 
 private:
 
-    void customizedFullScreenMode(bool set) override;
-    void showSideBars(bool visible)         override;
-    void closeEvent(QCloseEvent* e)         override;
-    void showEvent(QShowEvent*)             override;
+    void customizedFullScreenMode(bool set)             override;
+    void showSideBars(bool visible)                     override;
+    void closeEvent(QCloseEvent* e)                     override;
+    void showEvent(QShowEvent*)                         override;
 
     void deleteItem(bool permanently);
     void deleteItem(const ItemInfo& info, bool permanently);
 
+    // Disable
     LightTableWindow();
+    explicit LightTableWindow(QWidget*);
 
 private Q_SLOTS:
 
@@ -131,19 +131,20 @@ private Q_SLOTS:
     void slotThumbbarDroppedItems(const QList<ItemInfo>&);
 
     void slotToggleColorManagedView();
-    void slotComponentsInfo() override;
-    void slotDBStat()         override;
+    void slotComponentsInfo()                           override;
+    void slotDBStat()                                   override;
+    void slotOnlineVersionCheck()                       override;
 
     void slotFileWithDefaultApplication();
 
     void slotRefreshStatusBar();
 
-    void slotToggleLeftSideBar()       override;
-    void slotToggleRightSideBar()      override;
-    void slotPreviousLeftSideBarTab()  override;
-    void slotNextLeftSideBarTab()      override;
-    void slotPreviousRightSideBarTab() override;
-    void slotNextRightSideBarTab()     override;
+    void slotToggleLeftSideBar()                        override;
+    void slotToggleRightSideBar()                       override;
+    void slotPreviousLeftSideBarTab()                   override;
+    void slotNextLeftSideBarTab()                       override;
+    void slotPreviousRightSideBarTab()                  override;
+    void slotNextRightSideBarTab()                      override;
 
     void slotRightSideBarActivateTitles();
     void slotRightSideBarActivateComments();
@@ -187,12 +188,9 @@ private Q_SLOTS:
     void slotEditItem();
     void slotEditItem(const ItemInfo&);
 
-    void slotSlideShowAll();
     void slotLeftSlideShowManualFromCurrent();
     void slotRightSlideShowManualFromCurrent();
-    void slotSlideShowLastItemUrl(const QUrl&);
-    void slotSlideShowManualFrom(const ItemInfo&);
-    void slotSlideShowBuilderComplete(const SlideShowSettings&);
+    void slotSlideShowLastItemUrl();
 
 // -- Import tools methods implemented in lighttablewindow_import.cpp -------------------------------------
 

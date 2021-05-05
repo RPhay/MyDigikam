@@ -7,7 +7,7 @@
  * Description : scan item controller - private containers.
  *
  * Copyright (C) 2005-2006 by Tom Albers <tomalbers at kde dot nl>
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2007-2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  *
  * This program is free software; you can redistribute it
@@ -67,22 +67,26 @@ namespace Digikam
 {
 
 /*
- * This class is derived from the ClassicLoadingCacheFileWatch,
+ * This class is derived from the LoadingCacheFileWatch,
  * which means it has the full functionality of the class
  * and only extends it by listening to CollectionScanner information
  */
-class Q_DECL_HIDDEN ScanControllerLoadingCacheFileWatch : public ClassicLoadingCacheFileWatch
+class Q_DECL_HIDDEN ScanControllerLoadingCacheFileWatch : public LoadingCacheFileWatch
 {
     Q_OBJECT
 
-
 public:
 
-    explicit ScanControllerLoadingCacheFileWatch();
+    ScanControllerLoadingCacheFileWatch();
 
 private Q_SLOTS:
 
     void slotImageChanged(const ImageChangeset& changeset);
+
+private:
+
+    // Disable
+    explicit ScanControllerLoadingCacheFileWatch(QObject*) = delete;
 };
 
 // ------------------------------------------------------------------------------

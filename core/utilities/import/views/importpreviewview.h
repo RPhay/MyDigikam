@@ -46,13 +46,13 @@ public:
 public:
 
     explicit ImportPreviewView(QWidget* const parent, Mode mode = IconViewPreview);
-    ~ImportPreviewView();
+    ~ImportPreviewView()                   override;
 
     void setCamItemInfo(const CamItemInfo& info     = CamItemInfo(),
                         const CamItemInfo& previous = CamItemInfo(),
                         const CamItemInfo& next     = CamItemInfo());
 
-    CamItemInfo getCamItemInfo() const;
+    CamItemInfo getCamItemInfo()     const;
 
     void reload();
     void setCamItemPath(const QString& path = QString());
@@ -62,7 +62,7 @@ public:
 
 private:
 
-    QString identifyCategoryforMime(QString mime);
+    QString identifyCategoryforMime(const QString& mime);
 
 Q_SIGNALS:
 
@@ -87,9 +87,9 @@ Q_SIGNALS:
 protected:
 
     bool acceptsMouseClick(QMouseEvent* e) override;
-    void enterEvent(QEvent* e) override;
-    void leaveEvent(QEvent* e) override;
-    void showEvent(QShowEvent* e) override;
+    void enterEvent(QEvent* e)             override;
+    void leaveEvent(QEvent* e)             override;
+    void showEvent(QShowEvent* e)          override;
 
 private Q_SLOTS:
 

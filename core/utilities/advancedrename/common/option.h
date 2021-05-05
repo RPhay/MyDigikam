@@ -39,16 +39,18 @@ public:
 
     Option(const QString& name, const QString& description);
     Option(const QString& name, const QString& description, const QString& icon);
-    virtual ~Option();
+    ~Option()                                       override;
 
 protected:
 
-    virtual QString parseOperation(ParseSettings& settings) override = 0;
+    QString parseOperation(ParseSettings& settings) override = 0;
 
 private:
 
-    Option(const Option&);
-    Option& operator=(const Option&);
+    // Disable
+    Option(QObject*)                 = delete;
+    Option(const Option&)            = delete;
+    Option& operator=(const Option&) = delete;
 
 private:
 

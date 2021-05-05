@@ -7,7 +7,7 @@
  * Description : A JPEG IO file for DImg framework
  *
  * Copyright (C) 2005      by Renchi Raju <renchi dot raju at gmail dot com>
- * Copyright (C) 2005-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2005-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -62,7 +62,16 @@ void DImgJPEGLoader::dimg_jpeg_error_exit(j_common_ptr cinfo)
 
     qCWarning(DIGIKAM_DIMG_LOG_JPEG) << buffer;
 
+#ifdef __MINGW32__  // krazy:exclude=cpp
+
+    __builtin_longjmp(myerr->setjmp_buffer, 1);
+
+#else
+
     longjmp(myerr->setjmp_buffer, 1);
+
+#endif
+
 }
 
 void DImgJPEGLoader::dimg_jpeg_emit_message(j_common_ptr cinfo, int msg_level)

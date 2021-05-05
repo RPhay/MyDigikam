@@ -6,7 +6,8 @@
  * Date        : 2013-02-25
  * Description : Table view column helpers: File properties
  *
- * Copyright (C) 2013 by Michael G. Hansen <mike at mghansen dot de>
+ * Copyright (C) 2017-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2013      by Michael G. Hansen <mike at mghansen dot de>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -50,7 +51,7 @@ ColumnFileProperties::ColumnFileProperties(TableViewShared* const tableViewShare
                                            const SubColumn pSubColumn,
                                            QObject* const parent)
     : TableViewColumn(tableViewShared, pConfiguration, parent),
-      subColumn(pSubColumn)
+      subColumn      (pSubColumn)
 {
 }
 
@@ -70,8 +71,10 @@ TableViewColumnDescription ColumnFileProperties::getDescription()
 QStringList ColumnFileProperties::getSubColumns()
 {
     QStringList columns;
-    columns << QLatin1String("filename") << QLatin1String("filepath")
-            << QLatin1String("filesize") << QLatin1String("filelastmodified");
+    columns << QLatin1String("filename")
+            << QLatin1String("filepath")
+            << QLatin1String("filesize")
+            << QLatin1String("filelastmodified");
 
     return columns;
 }
@@ -81,13 +84,24 @@ QString ColumnFileProperties::getTitle() const
     switch (subColumn)
     {
         case SubColumnName:
+        {
             return i18n("Filename");
+        }
+
         case SubColumnFilePath:
+        {
             return i18n("Path");
+        }
+
         case SubColumnSize:
+        {
             return i18n("Size");
+        }
+
         case SubColumnLastModified:
+        {
             return i18n("Last modified");
+        }
     }
 
     return QString();
@@ -95,10 +109,12 @@ QString ColumnFileProperties::getTitle() const
 
 TableViewColumn::ColumnFlags ColumnFileProperties::getColumnFlags() const
 {
-    if ((subColumn == SubColumnSize) ||
-        (subColumn == SubColumnLastModified))
+    if (
+        (subColumn == SubColumnSize) ||
+        (subColumn == SubColumnLastModified)
+       )
     {
-        return ColumnCustomSorting | ColumnHasConfigurationWidget;
+        return (ColumnCustomSorting | ColumnHasConfigurationWidget);
     }
 
     return ColumnNoFlags;
@@ -106,8 +122,10 @@ TableViewColumn::ColumnFlags ColumnFileProperties::getColumnFlags() const
 
 QVariant ColumnFileProperties::data(TableViewModel::Item* const item, const int role) const
 {
-    if ( (role != Qt::DisplayRole) &&
-         (role != Qt::TextAlignmentRole) )
+    if (
+        (role != Qt::DisplayRole) &&
+        (role != Qt::TextAlignmentRole)
+       )
     {
         return QVariant();
     }
@@ -117,10 +135,14 @@ QVariant ColumnFileProperties::data(TableViewModel::Item* const item, const int 
         switch (subColumn)
         {
             case SubColumnSize:
+            {
                 return QVariant(Qt::Alignment(Qt::AlignRight | Qt::AlignVCenter));
+            }
 
             default:
+            {
                 return QVariant();
+            }
         }
     }
 
@@ -129,17 +151,20 @@ QVariant ColumnFileProperties::data(TableViewModel::Item* const item, const int 
     switch (subColumn)
     {
         case SubColumnName:
+        {
             return info.fileUrl().fileName();
-            break;
+        }
 
         case SubColumnFilePath:
+        {
             return QDir::toNativeSeparators(info.fileUrl().toLocalFile());
-            break;
+        }
 
         case SubColumnSize:
         {
             /// @todo Add configuration options for SI-prefixes
             /// @todo Use an enum instead to avoid lots of string comparisons
+
             const QString formatKey = configuration.getSetting(QLatin1String("format"), QLatin1String("human"));
 
             if (formatKey == QLatin1String("human"))
@@ -149,8 +174,10 @@ QVariant ColumnFileProperties::data(TableViewModel::Item* const item, const int 
             else
             {
                 // formatKey == "plain"
+
                 return QLocale().toString(info.fileSize());
             }
+
             break;
         }
 
@@ -191,6 +218,7 @@ TableViewColumn::ColumnCompareResult ColumnFileProperties::compare(TableViewMode
         default:
         {
             qCWarning(DIGIKAM_GENERAL_LOG) << "file: unimplemented comparison, subColumn=" << subColumn;
+
             return CmpEqual;
         }
     }
@@ -213,19 +241,21 @@ ColumnFileConfigurationWidget::ColumnFileConfigurationWidget(TableViewShared* co
         {
             QFormLayout* const box1 = new QFormLayout();
             selectorSizeType        = new QComboBox(this);
-            selectorSizeType->addItem(i18n("Human readable"), QLatin1String("human"));
-            selectorSizeType->addItem(i18n("Plain"),          QLatin1String("plain"));
+            selectorSizeType->addItem(i18nc("@item: tableview", "Human readable"), QLatin1String("human"));
+            selectorSizeType->addItem(i18nc("@item: tableview", "Plain"),          QLatin1String("plain"));
             box1->addRow(i18n("Display format"), selectorSizeType);
 
             setLayout(box1);
 
             const int index = selectorSizeType->findData(configuration.getSetting(QLatin1String("format"), QLatin1String("human")));
-            selectorSizeType->setCurrentIndex(index>=0 ? index : 0);
+            selectorSizeType->setCurrentIndex((index >= 0) ? index : 0);
             break;
         }
 
         default:
+        {
             break;
+        }
     }
 }
 

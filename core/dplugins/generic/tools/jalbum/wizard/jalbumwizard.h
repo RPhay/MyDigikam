@@ -31,7 +31,6 @@
 // Local includes
 
 #include "dwizarddlg.h"
-#include "digikam_export.h"
 #include "dinfointerface.h"
 
 using namespace Digikam;
@@ -44,19 +43,19 @@ class JAlbumSettings;
 /**
  * The wizard used by the user to select the various settings.
  */
-class DIGIKAM_EXPORT JAlbumWizard : public DWizardDlg
+class JAlbumWizard : public DWizardDlg
 {
     Q_OBJECT
 
 public:
 
     explicit JAlbumWizard(QWidget* const parent, DInfoInterface* const iface = nullptr);
-    ~JAlbumWizard();
+    ~JAlbumWizard()                  override;
 
     JAlbumSettings* settings() const;
 
-    bool validateCurrentPage() override;
-    int  nextId()                    const override;
+    bool validateCurrentPage()       override;
+    int  nextId()              const override;
 
     void setItemsList(const QList<QUrl>& urls);
 

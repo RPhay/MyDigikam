@@ -62,10 +62,12 @@ namespace Digikam
 
 class Q_DECL_HIDDEN KeywordLineEdit : public QLineEdit
 {
+    Q_OBJECT
+
 public:
 
     explicit KeywordLineEdit(QWidget* const parent = nullptr)
-        : QLineEdit(parent),
+        : QLineEdit    (parent),
           m_hasAdvanced(false)
     {
         KSharedConfig::Ptr config = KSharedConfig::openConfig();
@@ -84,7 +86,7 @@ public:
         adjustStatus(m_hasAdvanced);
     }
 
-    void focusInEvent(QFocusEvent* e)
+    void focusInEvent(QFocusEvent* e) override
     {
         if (m_hasAdvanced)
         {
@@ -94,7 +96,7 @@ public:
         QLineEdit::focusInEvent(e);
     }
 
-    void focusOutEvent(QFocusEvent* e)
+    void focusOutEvent(QFocusEvent* e) override
     {
         QLineEdit::focusOutEvent(e);
 
@@ -104,7 +106,7 @@ public:
         }
     }
 
-    void contextMenuEvent(QContextMenuEvent* e)
+    void contextMenuEvent(QContextMenuEvent* e) override
     {
         QAction* const action = new QAction(i18nc("@action:inmenu",
                                                   "Autostart Search"), this);
@@ -170,24 +172,24 @@ class Q_DECL_HIDDEN SearchTabHeader::Private
 {
 public:
 
-    explicit Private() :
-        newSearchWidget(nullptr),
-        saveAsWidget(nullptr),
-        editSimpleWidget(nullptr),
-        editAdvancedWidget(nullptr),
-        lowerArea(nullptr),
-        keywordEdit(nullptr),
-        advancedEditLabel(nullptr),
-        saveNameEdit(nullptr),
-        saveButton(nullptr),
-        storedKeywordEditName(nullptr),
-        storedKeywordEdit(nullptr),
-        storedAdvancedEditName(nullptr),
-        storedAdvancedEditLabel(nullptr),
-        keywordEditTimer(nullptr),
-        storedKeywordEditTimer(nullptr),
-        searchWindow(nullptr),
-        currentAlbum(nullptr)
+    explicit Private()
+      : newSearchWidget         (nullptr),
+        saveAsWidget            (nullptr),
+        editSimpleWidget        (nullptr),
+        editAdvancedWidget      (nullptr),
+        lowerArea               (nullptr),
+        keywordEdit             (nullptr),
+        advancedEditLabel       (nullptr),
+        saveNameEdit            (nullptr),
+        saveButton              (nullptr),
+        storedKeywordEditName   (nullptr),
+        storedKeywordEdit       (nullptr),
+        storedAdvancedEditName  (nullptr),
+        storedAdvancedEditLabel (nullptr),
+        keywordEditTimer        (nullptr),
+        storedKeywordEditTimer  (nullptr),
+        searchWindow            (nullptr),
+        currentAlbum            (nullptr)
     {
     }
 
@@ -222,7 +224,7 @@ public:
 
 SearchTabHeader::SearchTabHeader(QWidget* const parent)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     const int spacing = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
 
@@ -253,7 +255,7 @@ SearchTabHeader::SearchTabHeader(QWidget* const parent)
 
     d->newSearchWidget->setTitle(i18n("New Search"));
     QGridLayout* const grid1  = new QGridLayout;
-    QLabel* const searchLabel = new QLabel(i18n("Search:"), this);
+    QLabel* const searchLabel = new QLabel(i18nc("@label: quick search properties", "Search:"), this);
     d->keywordEdit            = new KeywordLineEdit(this);
     d->keywordEdit->setClearButtonEnabled(true);
     d->keywordEdit->setPlaceholderText(i18n("Enter keywords here..."));
@@ -670,3 +672,5 @@ QString SearchTabHeader::keywordsFromQuery(const QString& query) const
 }
 
 } // namespace Digikam
+
+#include "searchtabheader.moc"

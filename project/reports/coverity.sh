@@ -1,40 +1,74 @@
 #!/bin/bash
 
-# Copyright (c) 2013-2020 by Gilles Caulier, <caulier dot gilles at gmail dot com>
+# Copyright (c) 2013-2021 by Gilles Caulier, <caulier dot gilles at gmail dot com>
 #
 # Run Coverity Scan static analyzer on whole digiKam source code.
 # https://scan.coverity.com/
 #
-# Before to run this script you must set $DKCoverityToken Shell variable:
-# with token of digiKam project given by Coverity SCAN web interface.
+# Before to run this script you must:
+#
+# - Install Coverity Scan to /opt/ from https://scan.coverity.com/download?tab=cxx
+# - Export binary path /opt/_coverity_version_/bin to PATH variable
+# - Export $DKCoverityToken Shell variable with token of digiKam project given by Coverity SCAN web interface.
+#
+# Exemple in .bashrc:
+#
+# export DKCoverityToken=xxxxxxx
+# export PATH=$PATH:/opt/cov-analysis-linux64-2020.09/bin
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
 #
 
+# Halt and catch errors
+set -eE
+trap 'PREVIOUS_COMMAND=$THIS_COMMAND; THIS_COMMAND=$BASH_COMMAND' DEBUG
+trap 'echo "FAILED COMMAND: $PREVIOUS_COMMAND"' ERR
+
+# Check run-time dependencies
+
 if ! which cov-build ; then
-    echo "Coverity SCAN Toolkit is not installed"
-    echo "See https://scan.coverity.com/projects/digikam/builds/new for details."
-    exit 1
-else
-    echo "Check Coverity SCAN Toolkit passed..."
+
+    echo "Coverity SCAN Toolkit is not installed!"
+    echo "See https://scan.coverity.com/download?tab=cxx for details."
+    exit -1
+
 fi
 
+# Check if Coverity token is set.
+
+if [ ! compgen -e -X "!$DKCoverityToken" ] ; then
+
+    echo "Coverity SCAN token variable is not set!"
+    exit -1
+
+fi
+
+echo "Check Coverity SCAN Toolkit passed..."
 
 cd ../..
 
 # Manage build sub-dir
+
 if [ -d "build" ]; then
+
     rm -rfv ./build
+
 fi
 
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
+
     ./bootstrap.linux
+
 elif [[ "$OSTYPE" == "darwin"* ]]; then
+
     ./bootstrap.macports
+
 else
+
     echo "Unsupported platform..."
     exit -1
+
 fi
 
 # Get active git branches to create report description string

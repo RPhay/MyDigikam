@@ -7,7 +7,7 @@
  * Description : Database engine gui error handler
  *
  * Copyright (C) 2009-2010 by Holger Foerster <Hamsi2k at freenet dot de>
- * Copyright (C) 2010-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2010-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -45,7 +45,7 @@ class DIGIKAM_EXPORT DbEngineConnectionChecker : public QThread
 public:
 
     explicit DbEngineConnectionChecker(const DbEngineParameters& parameters);
-    ~DbEngineConnectionChecker();
+    ~DbEngineConnectionChecker() override;
 
     bool checkSuccessful() const;
 
@@ -55,7 +55,7 @@ public Q_SLOTS:
 
 protected:
 
-    virtual void run() override;
+    void run() override;
 
 Q_SIGNALS:
 
@@ -63,6 +63,9 @@ Q_SIGNALS:
     void done();
 
 private:
+
+    // Disable
+    DbEngineConnectionChecker(QObject*) = delete;
 
     class Private;
     Private* const d;
@@ -77,20 +80,23 @@ class DIGIKAM_EXPORT DbEngineGuiErrorHandler : public DbEngineErrorHandler
 public:
 
     explicit DbEngineGuiErrorHandler(const DbEngineParameters& parameters);
-    ~DbEngineGuiErrorHandler();
+    ~DbEngineGuiErrorHandler() override;
 
     bool checkDatabaseConnection();
 
 public Q_SLOTS:
 
-    virtual void connectionError(DbEngineErrorAnswer* answer, const QSqlError& error, const QString& query) override;
-    virtual void consultUserForError(DbEngineErrorAnswer* answer, const QSqlError& error, const QString& query) override;
+    void connectionError(DbEngineErrorAnswer* answer, const QSqlError& error, const QString& query) override;
+    void consultUserForError(DbEngineErrorAnswer* answer, const QSqlError& error, const QString& query) override;
 
 private Q_SLOTS:
 
     void showProgressDialog();
 
 private:
+
+    // Disabled
+    DbEngineGuiErrorHandler(QObject*) = delete;
 
     class Private;
     Private* const d;

@@ -6,7 +6,7 @@
  * Date        : 2007-07-19
  * Description : A widget to display XMP metadata
  *
- * Copyright (C) 2007-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2007-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -27,6 +27,7 @@
 
 #include <QMap>
 #include <QFile>
+#include <QScopedPointer>
 
 // KDE includes
 
@@ -41,28 +42,33 @@ namespace Digikam
 
 static const char* StandardXmpEntryList[] =
 {
+
+    "acdsee",          ///< Schema for ACDSee.
+    "audio",           ///< Exiv2 Audio Metadata Schema
     "aux",             ///< Schema for Additional Exif Properties.
     "crs",             ///< Camera Raw schema.
     "dc",              ///< Dublin Core schema.
-    "digiKam",         ///< Our Xmp schema used to store private information (see DMetadata class for details).
-    "kipi",            ///< Xmp schema used to store private information from tools.
+    "digiKam",         ///< Our Xmp schema used to store private information (see MetaEngine classes for details).
+    "dwc",             ///< Qualified Dublin Core schema.
     "exif",            ///< Schema for Exif-specific Properties.
     "iptc",            ///< IPTC Core schema.
     "iptcExt",         ///< IPTC Extension schema.
+    "kipi",            ///< Xmp schema used to store private information from tools.
+    "lr",              ///< Adobe LightRoom schema.
     "MicrosoftPhoto",  ///< Microsoft schema.
+    "MP",              ///< Microsoft Photo 1.2 schema.
+    "mwg-rs",          ///< Metadata Working Group schema.
     "pdf",             ///< Adobe PDF schema.
     "photoshop",       ///< Adobe Photoshop schema.
     "plus",            ///< PLUS License Data Format Schema.
     "tiff",            ///< Schema for TIFF Properties
+    "video",           ///< Exiv2 Video Metadata Schema
     "xmp",             ///< Basic schema.
     "xmpBJ",           ///< Basic Job Ticket schema.
     "xmpDM",           ///< Dynamic Media schema.
     "xmpMM",           ///< Media Management schema.
     "xmpRights",       ///< Rights Management schema.
     "xmpTPg",          ///< Paged-Text schema.
-    "lr",              ///< Adobe LightRoom schema.
-    "video",           ///< Exiv2 Video Metadata Schema
-    "audio",           ///< Exiv2 Audio Metadata Schema
 
     "-1"
 };
@@ -98,16 +104,16 @@ bool XmpWidget::loadFromURL(const QUrl& url)
     }
     else
     {
-        DMetadata metadata(url.toLocalFile());
+        QScopedPointer<DMetadata> metadata(new DMetadata(url.toLocalFile()));
 
-        if (!metadata.hasXmp())
+        if (!metadata->hasXmp())
         {
             setMetadata();
             return false;
         }
         else
         {
-            setMetadata(metadata);
+            setMetadata(*metadata);
         }
     }
 
@@ -116,16 +122,16 @@ bool XmpWidget::loadFromURL(const QUrl& url)
 
 bool XmpWidget::decodeMetadata()
 {
-    DMetadata data = getMetadata();
+    QScopedPointer<DMetadata> data(new DMetadata(getMetadata()->data()));
 
-    if (!data.hasXmp())
+    if (!data->hasXmp())
     {
         return false;
     }
 
     // Update all metadata contents.
 
-    setMetadataMap(data.getXmpTagsDataList(QStringList()));
+    setMetadataMap(data->getXmpTagsDataList(QStringList()));
 
     return true;
 }
@@ -152,8 +158,8 @@ void XmpWidget::buildView()
 
 QString XmpWidget::getTagTitle(const QString& key)
 {
-    DMetadata metadataIface;
-    QString title = metadataIface.getXmpTagTitle(key.toLatin1().constData());
+    QScopedPointer<DMetadata> metadataIface(new DMetadata);
+    QString title = metadataIface->getXmpTagTitle(key.toLatin1().constData());
 
     if (title.isEmpty())
     {
@@ -165,8 +171,8 @@ QString XmpWidget::getTagTitle(const QString& key)
 
 QString XmpWidget::getTagDescription(const QString& key)
 {
-    DMetadata metadataIface;
-    QString desc = metadataIface.getXmpTagDescription(key.toLatin1().constData());
+    QScopedPointer<DMetadata> metadataIface(new DMetadata);
+    QString desc = metadataIface->getXmpTagDescription(key.toLatin1().constData());
 
     if (desc.isEmpty())
     {
@@ -180,7 +186,7 @@ void XmpWidget::slotSaveMetadataToFile()
 {
     QUrl url = saveMetadataToFile(i18n("XMP File to Save"),
                                   QString(QLatin1String("*.xmp|") + i18n("XMP text Files (*.xmp)")));
-    storeMetadataToFile(url, getMetadata().getXmp());
+    storeMetadataToFile(url, getMetadata()->getXmp());
 }
 
 } // namespace Digikam

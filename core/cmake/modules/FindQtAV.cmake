@@ -10,7 +10,7 @@
 #  QTAV_PATCH_VERSION  - The patch value of QtAV version ID defined in QtAV/version.h as "0".
 #  QTAV_VERSION_STRING - Version string e.g. "1.12.0"
 #
-# Copyright (c) 2016-2020 by Gilles Caulier, <caulier dot gilles at gmail dot com>
+# Copyright (c) 2016-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
@@ -24,25 +24,26 @@ find_package(Qt5
 Message(STATUS "QtAV search path: ${_qt5_install_prefix}")
 
 if (NOT APPLE)
+
     find_path(QTAV_CORE_INCLUDE_DIR
               NAMES QtAV.h
               HINTS ${Qt5Core_INCLUDE_DIRS}
-                    ${_qt5_install_prefix}                                           # For MXE
-                    ${_qt5_install_prefix}/../qt5/include                            # For Mageia
-                    ${_qt5_install_prefix}/../../include/qt5                         # For Suse
+                    ${_qt5_install_prefix}                                                        # For MXE
+                    ${_qt5_install_prefix}/../qt5/include                                         # For Mageia
+                    ${_qt5_install_prefix}/../../include/qt5                                      # For Suse
                     ${_qt5_install_prefix}/../../../include/${CMAKE_LIBRARY_ARCHITECTURE}/qt5     # For Debian
-                    ${_qt5_install_prefix}/../../include/qt                          # For Arch
+                    ${_qt5_install_prefix}/../../include/qt                                       # For Arch
               PATH_SUFFIXES QtAV
     )
 
     find_path(QTAV_WIDGETS_INCLUDE_DIR
               NAMES QtAVWidgets.h
               HINTS ${Qt5Core_INCLUDE_DIRS}
-                    ${_qt5_install_prefix}                                           # For MXE
-                    ${_qt5_install_prefix}/../qt5/include                            # For Mageia
-                    ${_qt5_install_prefix}/../../include/qt5                         # For Suse
+                    ${_qt5_install_prefix}                                                        # For MXE
+                    ${_qt5_install_prefix}/../qt5/include                                         # For Mageia
+                    ${_qt5_install_prefix}/../../include/qt5                                      # For Suse
                     ${_qt5_install_prefix}/../../../include/${CMAKE_LIBRARY_ARCHITECTURE}/qt5     # For Debian
-                    ${_qt5_install_prefix}/../../include/qt                          # For Arch
+                    ${_qt5_install_prefix}/../../include/qt                                       # For Arch
               PATH_SUFFIXES QtAVWidgets
     )
 
@@ -82,11 +83,15 @@ else()
     )
 
     if (QTAV_CORE_INCLUDE_DIR AND QTAV_WIDGETS_INCLUDE_DIR)
+
         set(QTAV_INCLUDE_DIRS "${QTAV_CORE_INCLUDE_DIR};${QTAV_WIDGETS_INCLUDE_DIR}")
         set(QTAV_LIBRARIES    "${_qt5_install_prefix}/../QtAV.framework/QtAV;${_qt5_install_prefix}/../QtAVWidgets.framework/QtAVWidgets")
+
     else()
+
         set(QTAV_INCLUDE_DIRS "${_qt5_install_prefix}/../../include/QtAV;${_qt5_install_prefix}/../../include/QtAVWidgets")
         set(QTAV_LIBRARIES    "${_qt5_install_prefix}/../QtAV.framework/QtAV;${_qt5_install_prefix}/../QtAVWidgets.framework/QtAVWidgets")
+
     endif()
 
 endif()
@@ -96,18 +101,48 @@ find_package_handle_standard_args(QtAV REQUIRED_VARS QTAV_LIBRARIES QTAV_INCLUDE
 
 if(QtAV_FOUND)
 
-    if (NOT APPLE)
-        file(READ ${QTAV_CORE_INCLUDE_DIR}/version.h QTAV_VERSION_CONTENT)
+    if(NOT APPLE)
+
+        if(EXISTS ${QTAV_CORE_INCLUDE_DIR}/version.h)
+
+            Message(STATUS "Found QtAV version header: ${QTAV_CORE_INCLUDE_DIR}/version.h")
+            file(READ ${QTAV_CORE_INCLUDE_DIR}/version.h QTAV_VERSION_CONTENT)
+            set(QtAV_VERSION_FOUND TRUE)
+
+        endif()
+
     else()
-        file(READ ${QTAV_CORE_INCLUDE_DIR}/QtAV/version.h QTAV_VERSION_CONTENT)
+
+        if(EXISTS ${QTAV_CORE_INCLUDE_DIR}/QtAV/version.h)
+
+            Message(STATUS "Found QtAV version header: ${QTAV_CORE_INCLUDE_DIR}/QtAV/version.h")
+            file(READ ${QTAV_CORE_INCLUDE_DIR}/QtAV/version.h QTAV_VERSION_CONTENT)
+            set(QtAV_VERSION_FOUND TRUE)
+
+        else()
+
+            if(EXISTS ${QTAV_CORE_INCLUDE_DIR}/version.h)
+
+                Message(STATUS "Found QtAV version header: ${QTAV_CORE_INCLUDE_DIR}/version.h")
+                file(READ ${QTAV_CORE_INCLUDE_DIR}/version.h QTAV_VERSION_CONTENT)
+                set(QtAV_VERSION_FOUND TRUE)
+
+            endif()
+
+        endif()
+
     endif()
 
-    string(REGEX MATCH "#define QTAV_MAJOR ([0-9]+)" QTAV_MAJOR_MATCH ${QTAV_VERSION_CONTENT})
-    string(REPLACE "#define QTAV_MAJOR " "" QTAV_MAJOR_VERSION ${QTAV_MAJOR_MATCH})
-    string(REGEX MATCH "#define QTAV_MINOR ([0-9]+)" QTAV_MINOR_MATCH ${QTAV_VERSION_CONTENT})
-    string(REPLACE "#define QTAV_MINOR " "" QTAV_MINOR_VERSION ${QTAV_MINOR_MATCH})
-    string(REGEX MATCH "#define QTAV_PATCH ([0-9]+)" QTAV_PATCH_MATCH ${QTAV_VERSION_CONTENT})
-    string(REPLACE "#define QTAV_PATCH " "" QTAV_PATCH_VERSION ${QTAV_PATCH_MATCH})
+    if(QtAV_VERSION_FOUND)
+
+        string(REGEX MATCH "#define QTAV_MAJOR ([0-9]+)" QTAV_MAJOR_MATCH ${QTAV_VERSION_CONTENT})
+        string(REPLACE "#define QTAV_MAJOR " "" QTAV_MAJOR_VERSION ${QTAV_MAJOR_MATCH})
+        string(REGEX MATCH "#define QTAV_MINOR ([0-9]+)" QTAV_MINOR_MATCH ${QTAV_VERSION_CONTENT})
+        string(REPLACE "#define QTAV_MINOR " "" QTAV_MINOR_VERSION ${QTAV_MINOR_MATCH})
+        string(REGEX MATCH "#define QTAV_PATCH ([0-9]+)" QTAV_PATCH_MATCH ${QTAV_VERSION_CONTENT})
+        string(REPLACE "#define QTAV_PATCH " "" QTAV_PATCH_VERSION ${QTAV_PATCH_MATCH})
+
+    endif()
 
     if(NOT QTAV_MAJOR_VERSION STREQUAL "" AND
        NOT QTAV_MINOR_VERSION STREQUAL "" AND

@@ -6,7 +6,7 @@
  * Date        : 2017-05-25
  * Description : a tool to print images
  *
- * Copyright (C) 2017-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2017-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -31,6 +31,7 @@
 #include <QApplication>
 #include <QStyle>
 #include <QFileInfo>
+#include <QScopedPointer>
 
 // KDE includes
 
@@ -69,7 +70,7 @@ public:
 
     explicit Private(QWizard* const dialog)
       : settings(nullptr),
-        iface(nullptr)
+        iface   (nullptr)
     {
         captionUi = new CaptionUI(dialog);
         wizard    = dynamic_cast<AdvPrintWizard*>(dialog);
@@ -89,7 +90,7 @@ public:
 
 AdvPrintCaptionPage::AdvPrintCaptionPage(QWizard* const wizard, const QString& title)
     : DWizardPage(wizard, title),
-      d(new Private(wizard))
+      d          (new Private(wizard))
 {
     QMap<AdvPrintSettings::CaptionType, QString> map                = AdvPrintSettings::captionTypeNames();
     QMap<AdvPrintSettings::CaptionType, QString>::const_iterator it = map.constBegin();
@@ -126,8 +127,8 @@ AdvPrintCaptionPage::AdvPrintCaptionPage(QWizard* const wizard, const QString& t
     d->captionUi->mPrintList->setAllowDuplicate(true);
     d->captionUi->mPrintList->setControlButtonsPlacement(DItemsList::NoControlButtons);
     d->captionUi->mPrintList->listView()->setColumn(DItemsListView::User1,
-                                        i18nc("@title:column", "Caption"),
-                                        true);
+                                                    i18nc("@title: column", "Caption"),
+                                                    true);
 
     // -----------------------------------
 
@@ -188,7 +189,7 @@ void AdvPrintCaptionPage::enableCaptionGroup(int index)
 {
     bool fontSettingsEnabled;
 
-    if (index == AdvPrintSettings::NONE)
+    if      (index == AdvPrintSettings::NONE)
     {
         fontSettingsEnabled = false;
         d->captionUi->m_customCaptionGB->setEnabled(false);
@@ -219,13 +220,13 @@ void AdvPrintCaptionPage::updateCaption(AdvPrintPhoto* const pPhoto)
 {
     if (pPhoto)
     {
-        if (!pPhoto->m_pAdvPrintCaptionInfo &&
-            d->captionUi->m_captionType->currentIndex() != AdvPrintSettings::NONE)
+        if      (!pPhoto->m_pAdvPrintCaptionInfo &&
+                 (d->captionUi->m_captionType->currentIndex() != AdvPrintSettings::NONE))
         {
             pPhoto->m_pAdvPrintCaptionInfo = new AdvPrintCaptionInfo();
         }
         else if (pPhoto->m_pAdvPrintCaptionInfo &&
-                 d->captionUi->m_captionType->currentIndex() == AdvPrintSettings::NONE)
+                 (d->captionUi->m_captionType->currentIndex() == AdvPrintSettings::NONE))
         {
             delete pPhoto->m_pAdvPrintCaptionInfo;
             pPhoto->m_pAdvPrintCaptionInfo = nullptr;
@@ -245,7 +246,7 @@ void AdvPrintCaptionPage::updateCaption(AdvPrintPhoto* const pPhoto)
                 d->captionUi->m_FreeCaptionFormat->text();
 
             qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Update caption properties for"
-                                         << pPhoto->m_url;
+                                                 << pPhoto->m_url;
         }
     }
 }
@@ -266,9 +267,10 @@ void AdvPrintCaptionPage::slotUpdateCaptions()
                 {
                     QString cap;
 
-                    if (pPhoto->m_pAdvPrintCaptionInfo->m_captionType !=
-                        AdvPrintSettings::NONE)
+                    if (pPhoto->m_pAdvPrintCaptionInfo->m_captionType != AdvPrintSettings::NONE)
+                    {
                         cap = captionFormatter(pPhoto);
+                    }
 
                     qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << cap;
 
@@ -279,6 +281,7 @@ void AdvPrintCaptionPage::slotUpdateCaptions()
     }
 
     // create our photo sizes list
+
     d->wizard->previewPhotos();
 }
 
@@ -287,7 +290,7 @@ QString AdvPrintCaptionPage::captionFormatter(AdvPrintPhoto* const photo)
     if (!photo->m_pAdvPrintCaptionInfo)
     {
         qCWarning(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Internal caption info container is NULL for"
-                                       << photo->m_url;
+                                               << photo->m_url;
         return QString();
     }
 
@@ -309,18 +312,22 @@ QString AdvPrintCaptionPage::captionFormatter(AdvPrintPhoto* const photo)
         case AdvPrintSettings::FILENAME:
             format = QLatin1String("%f");
             break;
+
         case AdvPrintSettings::DATETIME:
             format = QLatin1String("%d");
             break;
+
         case AdvPrintSettings::COMMENT:
             format = QLatin1String("%c");
             break;
+
         case AdvPrintSettings::CUSTOM:
             format = photo->m_pAdvPrintCaptionInfo->m_captionText;
             break;
+
         default:
             qCWarning(DIGIKAM_DPLUGIN_GENERIC_LOG) << "UNKNOWN caption type "
-                                           << photo->m_pAdvPrintCaptionInfo->m_captionType;
+                                                   << photo->m_pAdvPrintCaptionInfo->m_captionType;
             break;
     }
 
@@ -343,16 +350,14 @@ QString AdvPrintCaptionPage::captionFormatter(AdvPrintPhoto* const photo)
     else
     {
         QFileInfo fi(photo->m_url.toLocalFile());
-        DMetadata meta(photo->m_url.toLocalFile());
-        imageSize = meta.getItemDimensions();
+        QScopedPointer<DMetadata> meta(new DMetadata(photo->m_url.toLocalFile()));
+        imageSize                    = meta->getItemDimensions();
 
-        format.replace(QString::fromUtf8("%c"),
-            meta.getItemComments()[QLatin1String("x-default")].caption);
-        format.replace(QString::fromUtf8("%d"),
-            QLocale().toString(meta.getItemDateTime(), QLocale::ShortFormat));
+        format.replace(QString::fromUtf8("%c"), meta->getItemComments()[QLatin1String("x-default")].caption);
+        format.replace(QString::fromUtf8("%d"), QLocale().toString(meta->getItemDateTime(), QLocale::ShortFormat));
         format.replace(QString::fromUtf8("%f"), fi.fileName());
 
-        PhotoInfoContainer photoInfo = meta.getPhotographInformation();
+        PhotoInfoContainer photoInfo = meta->getPhotographInformation();
         format.replace(QString::fromUtf8("%t"), photoInfo.exposureTime);
         format.replace(QString::fromUtf8("%i"), photoInfo.sensitivity);
         format.replace(QString::fromUtf8("%a"), photoInfo.aperture);
@@ -367,8 +372,8 @@ QString AdvPrintCaptionPage::captionFormatter(AdvPrintPhoto* const photo)
     format.replace(QString::fromUtf8("%r"), resolution);
 
     qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Caption for"
-                                 << photo->m_url
-                                 << ":" << format;
+                                         << photo->m_url
+                                         << ":" << format;
     return format;
 }
 

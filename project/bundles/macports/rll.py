@@ -1,10 +1,10 @@
-#! /usr/bin/python
+#!/usr/bin/env python
 
 # Script to list recursive dylib dependencies for binaries/dylibs passed as arguments.
 # Modified from https://github.com/mixxxdj/mixxx/blob/master/build/osx/otool.py.
 #
 # Copyright (c) 2015      by Shanti <listaccount at revenant dot org>
-# Copyright (c) 2015-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+# Copyright (c) 2015-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
@@ -150,8 +150,8 @@ def embed_dependencies(binary,
             else:
                 p = e # fallthrough to the exception below #XXX icky bad logic, there must be a way to avoid saying exists() twice
 
-        if not os.path.exists(p):
-            raise Exception("Dependent library '%s' not found. Make sure it is installed." % e)
+#        if not os.path.exists(p):
+#            raise Exception("Dependent library '%s' not found. Make sure it is installed." % e)
 
         if not any(p.startswith(P) for P in SYSTEM):
 

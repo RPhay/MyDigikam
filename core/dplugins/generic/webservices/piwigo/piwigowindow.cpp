@@ -8,7 +8,7 @@
  *
  * Copyright (C) 2003-2005 by Renchi Raju <renchi dot raju at gmail dot com>
  * Copyright (C) 2006      by Colin Guthrie <kde at colin dot guthr dot ie>
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2008      by Andrea Diamantini <adjam7 at gmail dot com>
  * Copyright (C) 2010-2014 by Frederic Coiffier <frederic dot coiffier at free dot com>
  *
@@ -51,8 +51,8 @@
 
 // KDE includes
 
-#include <kconfig.h>
 #include <klocalizedstring.h>
+#include <ksharedconfig.h>
 #include <kconfiggroup.h>
 
 // Local includes
@@ -99,14 +99,20 @@ public:
 
 PiwigoWindow::Private::Private(PiwigoWindow* const parent,
                                DInfoInterface* const interface)
+    : widget        (new QWidget(parent)),
+      albumView     (nullptr),
+      confButton    (nullptr),
+      resizeCheckBox(nullptr),
+      widthSpinBox  (nullptr),
+      heightSpinBox (nullptr),
+      qualitySpinBox(nullptr),
+      talker        (nullptr),
+      pPiwigo       (nullptr),
+      iface         (interface),
+      progressDlg   (nullptr),
+      uploadCount   (0),
+      uploadTotal   (0)
 {
-    iface       = interface;
-    talker      = nullptr;
-    pPiwigo     = nullptr;
-    progressDlg = nullptr;
-    uploadCount = 0;
-    uploadTotal = 0;
-    widget      = new QWidget(parent);
     parent->setMainWidget(widget);
     parent->setModal(false);
 
@@ -131,7 +137,7 @@ PiwigoWindow::Private::Private(PiwigoWindow* const parent,
     QBuffer    buffer(&byteArray);
     img.save(&buffer, "PNG");
     logo->setText(QString::fromLatin1("<a href=\"%1\">%2</a>")
-                  .arg(QLatin1String("http://piwigo.org"))
+                  .arg(QLatin1String("https://piwigo.org"))
                   .arg(QString::fromLatin1("<img src=\"data:image/png;base64,%1\">")
                   .arg(QLatin1String(byteArray.toBase64().data()))));
 
@@ -230,6 +236,7 @@ PiwigoWindow::PiwigoWindow(DInfoInterface* const iface,
     setModal(false);
 
     // "Start Upload" button
+
     startButton()->setText(i18n("Start Upload"));
     startButton()->setEnabled(false);
 
@@ -237,9 +244,11 @@ PiwigoWindow::PiwigoWindow(DInfoInterface* const iface,
             this, SLOT(slotAddPhoto()));
 
     // we need to let d->talker work..
+
     d->talker      = new PiwigoTalker(iface, d->widget);
 
     // setting progressDlg and its numeric hints
+
     d->progressDlg = new QProgressDialog(this);
     d->progressDlg->setModal(true);
     d->progressDlg->setAutoReset(true);
@@ -248,11 +257,12 @@ PiwigoWindow::PiwigoWindow(DInfoInterface* const iface,
     d->progressDlg->reset();
 
     // connect functions
+
     connectSignals();
 
-    KConfig config;
+    KSharedConfigPtr config = KSharedConfig::openConfig();
 
-    if (!config.hasGroup("Piwigo Settings"))
+    if (!config->hasGroup("Piwigo Settings"))
     {
         QPointer<PiwigoLoginDlg> dlg = new PiwigoLoginDlg(QApplication::activeWindow(),
                                                           d->pPiwigo, i18n("Edit Piwigo Data"));
@@ -267,8 +277,9 @@ PiwigoWindow::PiwigoWindow(DInfoInterface* const iface,
 PiwigoWindow::~PiwigoWindow()
 {
     // write config
-    KConfig config;
-    KConfigGroup group = config.group("PiwigoSync Galleries");
+
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup group      = config->group("PiwigoSync Galleries");
 
     group.writeEntry("Resize",         d->resizeCheckBox->isChecked());
     group.writeEntry("Maximum Width",  d->widthSpinBox->value());
@@ -318,8 +329,8 @@ void PiwigoWindow::connectSignals()
 
 void PiwigoWindow::readSettings()
 {
-    KConfig config;
-    KConfigGroup group = config.group("PiwigoSync Galleries");
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup group      = config->group("PiwigoSync Galleries");
 
     if (group.readEntry("Resize", false))
     {
@@ -334,9 +345,9 @@ void PiwigoWindow::readSettings()
         d->widthSpinBox->setEnabled(false);
     }
 
-    d->widthSpinBox->setValue(group.readEntry("Maximum Width", 1600));
+    d->widthSpinBox->setValue(group.readEntry("Maximum Width",   1600));
     d->heightSpinBox->setValue(group.readEntry("Maximum Height", 1600));
-    d->qualitySpinBox->setValue(group.readEntry("Quality", 95));
+    d->qualitySpinBox->setValue(group.readEntry("Quality",       95));
 }
 
 void PiwigoWindow::slotDoLogin()
@@ -350,7 +361,8 @@ void PiwigoWindow::slotDoLogin()
     }
 
     // If we've done something clever, save it back to the piwigo.
-    if (!url.url().isEmpty() && d->pPiwigo->url() != url.url())
+
+    if (!url.url().isEmpty() && (d->pPiwigo->url() != url.url()))
     {
         d->pPiwigo->setUrl(url.url());
         d->pPiwigo->save();
@@ -416,13 +428,16 @@ void PiwigoWindow::slotAlbums(const QList<PiwigoAlbum>& albumList)
     d->albumView->clear();
 
     // album work list
+
     QList<PiwigoAlbum> workList(albumList);
     QList<QTreeWidgetItem*> parentItemList;
 
     // fill QTreeWidget
+
     while (!workList.isEmpty())
     {
         // the album to work on
+
         PiwigoAlbum album = workList.takeFirst();
         int parentRefNum  = album.m_parentRefNum;
 
@@ -475,8 +490,11 @@ void PiwigoWindow::slotAlbumSelected()
     QTreeWidgetItem* const item = d->albumView->currentItem();
 
     // stop loading if user clicked an image
-    if (item && item->text(2) == i18n("Image"))
+
+    if (item && (item->text(2) == i18n("Image")))
+    {
         return;
+    }
 
     if (!item)
     {
@@ -511,8 +529,8 @@ void PiwigoWindow::slotAddPhoto()
         return;
     }
 
-    for (QList<QUrl>::const_iterator it = urls.constBegin();
-         it != urls.constEnd(); ++it)
+    for (QList<QUrl>::const_iterator it = urls.constBegin() ;
+         it != urls.constEnd() ; ++it)
     {
         d->pUploadList.append((*it).toLocalFile());
     }
@@ -554,7 +572,9 @@ void PiwigoWindow::slotAddPhotoNext()
     d->progressDlg->setLabelText(i18n("Uploading file %1", QUrl(photoPath).fileName()));
 
     if (d->progressDlg->isHidden())
+    {
         d->progressDlg->show();
+    }
 }
 
 void PiwigoWindow::slotAddPhotoSucceeded()
@@ -598,10 +618,12 @@ void PiwigoWindow::slotEnableSpinBox(int n)
         case 0:
             b = false;
             break;
+
         case 1:
         case 2:
             b = true;
             break;
+
         default:
             b = false;
             break;
@@ -615,6 +637,7 @@ void PiwigoWindow::slotEnableSpinBox(int n)
 void PiwigoWindow::slotSettings()
 {
     // TODO: reload albumlist if OK slot used.
+
     QPointer<PiwigoLoginDlg> dlg = new PiwigoLoginDlg(QApplication::activeWindow(),
                                                       d->pPiwigo, i18n("Edit Piwigo Data"));
 

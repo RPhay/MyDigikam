@@ -7,7 +7,7 @@
  * Description : Qt item model for database entries
  *
  * Copyright (C) 2009-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2012-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -47,13 +47,13 @@ class Q_DECL_HIDDEN ItemModel::Private
 public:
 
     explicit Private()
-      : keepFilePathCache(false),
-        sendRemovalSignals(false),
-        preprocessor(nullptr),
-        refreshing(false),
-        reAdding(false),
+      : keepFilePathCache          (false),
+        sendRemovalSignals         (false),
+        preprocessor               (nullptr),
+        refreshing                 (false),
+        reAdding                   (false),
         incrementalRefreshRequested(false),
-        incrementalUpdater(nullptr)
+        incrementalUpdater         (nullptr)
     {
     }
 
@@ -63,7 +63,7 @@ public:
     ItemInfo                           itemInfo;
 
     QList<QVariant>                    extraValues;
-    QHash<qlonglong, int>              idHash;
+    QMultiHash<qlonglong, int>         idHash;
 
     bool                               keepFilePathCache;
     QHash<QString, qlonglong>          filePathHash;
@@ -91,7 +91,7 @@ public:
             return false;
         }
 
-        if (index.row() < 0 || index.row() >= infos.size())
+        if ((index.row() < 0) || (index.row() >= infos.size()))
         {
             qCDebug(DIGIKAM_GENERAL_LOG) << "Invalid index" << index;
             return false;
@@ -103,7 +103,12 @@ public:
     inline bool extraValueValid(const QModelIndex& index)
     {
         // we assume isValid() being called before, no duplicate checks
-        if (index.row() >= extraValues.size())
+
+        if      (extraValues.size() == 0)
+        {
+            return false;
+        }
+        else if (index.row() >= extraValues.size())
         {
             qCDebug(DIGIKAM_GENERAL_LOG) << "Invalid index for extraData" << index;
             return false;
@@ -175,6 +180,11 @@ bool ItemModel::keepsFilePathCache() const
 bool ItemModel::isEmpty() const
 {
     return d->infos.isEmpty();
+}
+
+int ItemModel::itemCount() const
+{
+    return d->infos.count();
 }
 
 void ItemModel::setWatchFlags(const DatabaseFields::Set& set)
@@ -300,7 +310,7 @@ QModelIndex ItemModel::indexForImageId(qlonglong id, const QVariant& extraValue)
         return indexForImageId(id);
     }
 
-    QHash<qlonglong, int>::const_iterator it;
+    QMultiHash<qlonglong, int>::const_iterator it;
 
     for (it = d->idHash.constFind(id) ; it != d->idHash.constEnd() && it.key() == id ; ++it)
     {
@@ -316,7 +326,7 @@ QModelIndex ItemModel::indexForImageId(qlonglong id, const QVariant& extraValue)
 QList<QModelIndex> ItemModel::indexesForImageId(qlonglong id) const
 {
     QList<QModelIndex> indexes;
-    QHash<qlonglong, int>::const_iterator it;
+    QMultiHash<qlonglong, int>::const_iterator it;
 
     for (it = d->idHash.constFind(id) ; it != d->idHash.constEnd() && it.key() == id ; ++it)
     {
@@ -339,7 +349,7 @@ int ItemModel::numberOfIndexesForImageId(qlonglong id) const
     }
 
     int count = 0;
-    QHash<qlonglong, int>::const_iterator it;
+    QMultiHash<qlonglong, int>::const_iterator it;
 
     for (it = d->idHash.constFind(id) ; it != d->idHash.constEnd() && it.key() == id ; ++it)
     {
@@ -436,9 +446,9 @@ ItemInfo ItemModel::imageInfo(const QString& filePath) const
 {
     if (d->keepFilePathCache)
     {
-        qlonglong id = d->filePathHash.value(filePath);
+        qlonglong id = d->filePathHash.value(filePath, -1);
 
-        if (id)
+        if (id != -1)
         {
             int index = d->idHash.value(id, -1);
 
@@ -468,9 +478,9 @@ QList<ItemInfo> ItemModel::imageInfos(const QString& filePath) const
 
     if (d->keepFilePathCache)
     {
-        qlonglong id = d->filePathHash.value(filePath);
+        qlonglong id = d->filePathHash.value(filePath, -1);
 
-        if (id)
+        if (id != -1)
         {
             foreach (int index, d->idHash.values(id))
             {
@@ -634,7 +644,7 @@ bool ItemModel::hasImage(qlonglong id, const QVariant& extraValue) const
         return hasImage(id);
     }
 
-    QHash<qlonglong, int>::const_iterator it;
+    QMultiHash<qlonglong, int>::const_iterator it;
 
     for (it = d->idHash.constFind(id) ; it != d->idHash.constEnd() && it.key() == id ; ++it)
     {
@@ -779,6 +789,7 @@ void ItemModel::appendInfosChecked(const QList<ItemInfo>& infos, const QList<QVa
 void ItemModel::reAddItemInfos(const QList<ItemInfo>& infos, const QList<QVariant>& extraValues)
 {
     // addItemInfos -> appendInfos -> preprocessor -> reAddItemInfos
+
     publiciseInfos(infos, extraValues);
 }
 
@@ -858,7 +869,7 @@ void ItemModel::publiciseInfos(const QList<ItemInfo>& infos, const QList<QVarian
     {
         const ItemInfo& info = d->infos.at(i);
         qlonglong id         = info.id();
-        d->idHash.insertMulti(id, i);
+        d->idHash.insert(id, i);
 
         if (d->keepFilePathCache)
         {
@@ -988,7 +999,7 @@ void ItemModel::setSendRemovalSignals(bool send)
 {
     d->sendRemovalSignals = send;
 }
-
+/*
 template <class List, typename T>
 static bool pairsContain(const List& list, T value)
 {
@@ -1020,7 +1031,7 @@ static bool pairsContain(const List& list, T value)
 
     return false;
 }
-
+*/
 void ItemModel::removeRowPairsWithCheck(const QList<QPair<int, int> >& toRemove)
 {
     if (d->incrementalUpdater)
@@ -1042,9 +1053,11 @@ void ItemModel::removeRowPairs(const QList<QPair<int, int> >& toRemove)
     // Keep in mind that when calling beginRemoveRows all structures announced to be removed
     // must still be valid, and this includes our hashes as well, which limits what we can optimize
 
-    int removedRows = 0;
-    int offset      = 0;
-    typedef QPair<int, int> IntPair; // to make foreach macro happy
+    int                     removedRows = 0;
+    int                     offset      = 0;
+    QList<qlonglong>        removeFilePaths;
+    typedef QPair<int, int> IntPair;            // to make foreach macro happy
+
 
     foreach (const IntPair& pair, toRemove)
     {
@@ -1053,6 +1066,7 @@ void ItemModel::removeRowPairs(const QList<QPair<int, int> >& toRemove)
         removedRows     = end - begin + 1;
 
         // when removing from the list, all subsequent indexes are affected
+
         offset += removedRows;
 
         QList<ItemInfo> removedInfos;
@@ -1067,7 +1081,8 @@ void ItemModel::removeRowPairs(const QList<QPair<int, int> >& toRemove)
         beginRemoveRows(QModelIndex(), begin, end);
 
         // update idHash - which points to indexes of d->infos, and these change now!
-        QHash<qlonglong, int>::iterator it;
+
+        QMultiHash<qlonglong, int>::iterator it;
 
         for (it = d->idHash.begin() ; it != d->idHash.end() ; )
         {
@@ -1076,11 +1091,14 @@ void ItemModel::removeRowPairs(const QList<QPair<int, int> >& toRemove)
                 if (it.value() > end)
                 {
                     // after the removed interval: adjust index
+
                     it.value() -= removedRows;
                 }
                 else
                 {
                     // in the removed interval
+
+                    removeFilePaths << it.key();
                     it = d->idHash.erase(it);
                     continue;
                 }
@@ -1114,7 +1132,7 @@ void ItemModel::removeRowPairs(const QList<QPair<int, int> >& toRemove)
 
         for (it = d->filePathHash.begin() ; it != d->filePathHash.end() ; )
         {
-            if (pairsContain(toRemove, it.value()))
+            if (removeFilePaths.contains(it.value()))
             {
                 it = d->filePathHash.erase(it);
             }
@@ -1262,7 +1280,7 @@ QList<QPair<int, int> > ItemModelIncrementalUpdater::toContiguousPairs(const QLi
 
     for (int i = 1 ; i < indices.size() ; ++i)
     {
-        const int &index = indices.at(i);
+        const int& index = indices.at(i);
 
         if (index == pair.second + 1)
         {
@@ -1270,7 +1288,7 @@ QList<QPair<int, int> > ItemModelIncrementalUpdater::toContiguousPairs(const QLi
             continue;
         }
 
-        pairs << pair; // insert last pair
+        pairs << pair;          // insert last pair
         pair.first  = index;
         pair.second = index;
     }
@@ -1349,7 +1367,7 @@ Qt::ItemFlags ItemModel::flags(const QModelIndex& index) const
 {
     if (!d->isValid(index))
     {
-        return nullptr;
+        return Qt::NoItemFlags;
     }
 
     Qt::ItemFlags f = Qt::ItemIsSelectable | Qt::ItemIsEnabled;

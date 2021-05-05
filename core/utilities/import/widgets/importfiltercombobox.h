@@ -44,7 +44,7 @@ class ImportFilterComboBox : public QComboBox
 public:
 
     explicit ImportFilterComboBox(QWidget* const parent);
-    ~ImportFilterComboBox();
+    ~ImportFilterComboBox() override;
 
     Filter* currentFilter();
     void saveSettings();
@@ -55,7 +55,7 @@ public:
 
 Q_SIGNALS:
 
-    void filterChanged(Filter*);
+    void signalFilterChanged(Filter*);
 
 protected:
 

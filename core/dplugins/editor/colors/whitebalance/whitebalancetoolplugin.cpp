@@ -6,7 +6,7 @@
  * Date        : 2018-07-30
  * Description : image editor plugin to fix white balance
  *
- * Copyright (C) 2018-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2018-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -49,7 +49,7 @@ WhiteBalanceToolPlugin::~WhiteBalanceToolPlugin()
 
 QString WhiteBalanceToolPlugin::name() const
 {
-    return i18n("White Balance");
+    return i18nc("@title", "White Balance");
 }
 
 QString WhiteBalanceToolPlugin::iid() const
@@ -64,12 +64,12 @@ QIcon WhiteBalanceToolPlugin::icon() const
 
 QString WhiteBalanceToolPlugin::description() const
 {
-    return i18n("A tool to adjust white balance");
+    return i18nc("@info", "A tool to adjust white balance");
 }
 
 QString WhiteBalanceToolPlugin::details() const
 {
-    return i18n("<p>This Image Editor tool can adjust the white balance from image.</p>");
+    return i18nc("@info", "This Image Editor tool can adjust the white balance from image.");
 }
 
 QList<DPluginAuthor> WhiteBalanceToolPlugin::authors() const
@@ -80,7 +80,7 @@ QList<DPluginAuthor> WhiteBalanceToolPlugin::authors() const
                              QString::fromUtf8("(C) 2008-2009"))
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2004-2020"))
+                             QString::fromUtf8("(C) 2004-2021"))
             ;
 }
 

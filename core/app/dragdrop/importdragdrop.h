@@ -6,8 +6,8 @@
  * Date        : 2012-09-07
  * Description : Qt Model for ImportUI - drag and drop handling
  *
- * Copyright (C) 2012 by Islam Wazery <wazery at ubuntu dot com>
- * Copyright (C) 2013-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2012      by Islam Wazery <wazery at ubuntu dot com>
+ * Copyright (C) 2013-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -39,7 +39,7 @@
 namespace Digikam
 {
 
-class DIGIKAM_EXPORT ImportDragDropHandler : public AbstractItemDragDropHandler
+class DIGIKAM_GUI_EXPORT ImportDragDropHandler : public AbstractItemDragDropHandler
 {
     Q_OBJECT
 
@@ -47,17 +47,17 @@ public:
 
     explicit ImportDragDropHandler(ImportItemModel* const model);
 
-    ImportItemModel* model() const;
+    ImportItemModel* model()   const;
 
-    virtual bool           dropEvent(QAbstractItemView* view,
-                                     const QDropEvent* e,
-                                     const QModelIndex& droppedOn)      override;
+    bool           dropEvent(QAbstractItemView* view,
+                             const QDropEvent* e,
+                             const QModelIndex& droppedOn)      override;
 
-    virtual Qt::DropAction accepts(const QDropEvent* e,
-                                   const QModelIndex& dropIndex)        override;
+    Qt::DropAction accepts(const QDropEvent* e,
+                           const QModelIndex& dropIndex)        override;
 
-    virtual QStringList    mimeTypes() const                            override;
-    virtual QMimeData*     createMimeData(const QList<QModelIndex> &)   override;
+    QStringList    mimeTypes() const                            override;
+    QMimeData*     createMimeData(const QList<QModelIndex>&)    override;
 
 private:
 

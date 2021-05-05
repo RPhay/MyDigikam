@@ -44,15 +44,17 @@ class MyTreeWidget : public QTreeWidget
 public:
 
     explicit MyTreeWidget(QWidget* const parent = nullptr);
-    ~MyTreeWidget();
+    ~MyTreeWidget()                                                override;
 
 protected:
 
-//     void mousePressEvent(QMouseEvent* event);
-//     void mouseMoveEvent(QMouseEvent* event);
-    void startDrag(Qt::DropActions supportedActions);
-    virtual QMimeData* mimeData(const QList<QTreeWidgetItem*> items) const;
-    virtual QMimeData* mimeData(const QModelIndexList items)         const;
+/*
+    void mousePressEvent(QMouseEvent* event);
+    void mouseMoveEvent(QMouseEvent* event);
+*/
+    void startDrag(Qt::DropActions supportedActions)               override;
+    QMimeData* mimeData(const QList<QTreeWidgetItem*> items) const override;
+    virtual QMimeData* mimeData(const QModelIndexList items) const;
 
 private:
 

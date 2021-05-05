@@ -37,14 +37,14 @@ public:
     explicit OptimisationTask(const QString& workDirPath,
                               const QUrl& input,
                               QUrl& autoOptimiserPtoUrl,
-                              bool levelHorizon,
-                              bool gPano,
+                              bool  levelHorizon,
+                              bool  gPano,
                               const QString& autooptimiserPath);
-    ~OptimisationTask();
+    ~OptimisationTask() override;
 
 protected:
 
-    void run(ThreadWeaver::JobPointer self, ThreadWeaver::Thread *thread) override;
+    void run(ThreadWeaver::JobPointer self, ThreadWeaver::Thread* thread) override;
 
 private:
 
@@ -52,6 +52,13 @@ private:
     const QUrl& ptoUrl;
     const bool  levelHorizon;
     const bool  buildGPano;
+
+private:
+
+    // Disable
+    OptimisationTask() = delete;
+
+    Q_DISABLE_COPY(OptimisationTask)
 };
 
 } // namespace DigikamGenericPanoramaPlugin

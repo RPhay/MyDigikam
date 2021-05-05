@@ -8,7 +8,7 @@
 *
 * Copyright (C) 2010      by Aditya Bhatt <caulier dot gilles at gmail dot com>
 * Copyright (C) 2009-2010 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
-* Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+* Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
 * Copyright (C) 2008      by Peter Penz <peter.penz@gmx.at>
 *
 * This program is free software; you can redistribute it
@@ -58,7 +58,7 @@ class Q_DECL_HIDDEN AssignNameOverlay::Private
 public:
 
     explicit Private()
-        : tagModel(AbstractAlbumModel::IgnoreRootAlbum),
+        : tagModel        (AbstractAlbumModel::IgnoreRootAlbum),
           assignNameWidget(nullptr)
     {
     }
@@ -96,7 +96,7 @@ public:
 
 AssignNameOverlay::AssignNameOverlay(QObject* const parent)
     : PersistentWidgetDelegateOverlay(parent),
-      d(new Private)
+      d                              (new Private)
 {
     d->filteredModel.setSourceAlbumModel(&d->tagModel);
     d->filterModel.setSourceFilterModel(&d->filteredModel);
@@ -240,8 +240,14 @@ void AssignNameOverlay::updateFace()
     }
 
     QVariant extraData = index().data(ItemModel::ExtraDataRole);
-    assignNameWidget()->setCurrentFace(FaceTagsIface::fromVariant(extraData));
+
+    /**
+     * The order to plug these functions is important, since
+     * setUserData() controls how the Overlay appears on
+     * a particular face.
+     */
     assignNameWidget()->setUserData(ItemModel::retrieveItemInfo(index()), extraData);
+    assignNameWidget()->setCurrentFace(FaceTagsIface::fromVariant(extraData));
 }
 
 /*
@@ -266,7 +272,8 @@ bool AssignNameOverlay::checkIndex(const QModelIndex& index) const
         return false;
     }
 
-    return FaceTagsIface::fromVariant(extraData).isUnconfirmedType();
+    return (FaceTagsIface::fromVariant(extraData).isIgnoredName() ||
+            FaceTagsIface::fromVariant(extraData).isUnconfirmedType());
 }
 
 void AssignNameOverlay::showOnIndex(const QModelIndex& index)
@@ -339,6 +346,7 @@ void AssignNameOverlay::slotRejected(const ItemInfo& info, const QVariant& faceI
 {
     Q_UNUSED(info);
     Q_UNUSED(faceIdentifier);
+
     emit removeFaces(affectedIndexes(index()));
     hide();
 }
@@ -380,7 +388,7 @@ bool AssignNameOverlay::eventFilter(QObject* o, QEvent* e)
             }
             break;
         }
-    
+
         default:
             break;
     }

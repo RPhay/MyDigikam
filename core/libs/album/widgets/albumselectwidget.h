@@ -6,7 +6,7 @@
  * Date        : 2009-26-02
  * Description : a widget to select a physical album
  *
- * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2009-2010 by Johannes Wienke <languitar at semipol dot de>
  *
  * This program is free software; you can redistribute it
@@ -59,7 +59,7 @@ public:
      *
      * @param model album model to work with
      * @param albumModificationHelper helper object for modifying albums
-     * @param parent parent for Qt's parent child mechanism
+     * @param parent the parent for Qt's parent child mechanism
      */
     AlbumSelectTreeView(AlbumModel* const model,
                         AlbumModificationHelper* const albumModificationHelper,
@@ -68,10 +68,10 @@ public:
     /**
      * Destructor.
      */
-    ~AlbumSelectTreeView();
+    ~AlbumSelectTreeView() override;
 
-    virtual void addCustomContextMenuActions(ContextMenuHelper& cmh, Album* album) override;
-    virtual void handleCustomContextMenuAction(QAction* action, AlbumPointer<Album> album) override;
+    void addCustomContextMenuActions(ContextMenuHelper& cmh, Album* album) override;
+    void handleCustomContextMenuAction(QAction* action, const AlbumPointer<Album>& album) override;
 
 public Q_SLOTS:
 
@@ -98,7 +98,7 @@ public:
     explicit AlbumSelectWidget(QWidget* const parent = nullptr,
                                PAlbum* const albumToSelect = nullptr,
                                bool completerSelect = false);
-    ~AlbumSelectWidget();
+    ~AlbumSelectWidget() override;
 
     void setCurrentAlbumUrl(const QUrl& albumUrl);
     QUrl currentAlbumUrl() const;

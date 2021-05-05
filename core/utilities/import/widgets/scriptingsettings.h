@@ -39,14 +39,14 @@ class KConfigGroup;
 namespace Digikam
 {
 
-class DIGIKAM_EXPORT ScriptingSettings : public QWidget
+class DIGIKAM_GUI_EXPORT ScriptingSettings : public QWidget
 {
     Q_OBJECT
 
 public:
 
     explicit ScriptingSettings(QWidget* const parent = nullptr);
-    ~ScriptingSettings();
+    ~ScriptingSettings() override;
 
     void readSettings(KConfigGroup& group);
     void saveSettings(KConfigGroup& group);

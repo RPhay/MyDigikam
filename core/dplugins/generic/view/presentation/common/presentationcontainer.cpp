@@ -28,47 +28,52 @@ namespace DigikamGenericPresentationPlugin
 {
 
 PresentationContainer::PresentationContainer()
-{
-    delayMsMaxValue               = 0;
-    delayMsMinValue               = 0;
-    delayMsLineStep               = 0;
-    urlList                       = QList<QUrl>();
-    mainPage                      = nullptr;
-    captionPage                   = nullptr;
-    advancedPage                  = nullptr;
+    : delayMsMaxValue               (0),
+      delayMsMinValue               (0),
+      delayMsLineStep               (0),
+      urlList                       (QList<QUrl>()),
+      mainPage                      (nullptr),
+      captionPage                   (nullptr),
 
 #ifdef HAVE_MEDIAPLAYER
-    soundtrackPage                = nullptr;
+
+      soundtrackPage                (nullptr),
+
 #endif
 
-    opengl                        = false;
-    openGlFullScale               = false;
-    delay                         = 0;
-    printFileName                 = false;
-    printProgress                 = false;
-    printFileComments             = false;
-    loop                          = false;
-    shuffle                       = false;
-    commentsFontColor             = 0;
-    commentsBgColor               = 0;
-    commentsDrawOutline           = false;
-    bgOpacity                     = 10;
-    commentsLinesLength           = 0;
-    captionFont                   = nullptr;
+      advancedPage                  (nullptr),
 
-    soundtrackLoop                = false;
-    soundtrackPlay                = false;
-    soundtrackRememberPlaylist    = false;
-    soundtrackPlayListNeedsUpdate = false;
+      opengl                        (false),
+      openGlFullScale               (false),
+      delay                         (0),
+      printFileName                 (false),
+      printProgress                 (false),
+      printFileComments             (false),
+      loop                          (false),
+      shuffle                       (false),
+      offAutoDelay                  (false),
+      commentsFontColor             (0),
+      commentsBgColor               (0),
+      commentsDrawOutline           (false),
+      bgOpacity                     (10),
+      commentsLinesLength           (0),
+      captionFont                   (nullptr),
 
-    useMilliseconds               = false;
-    enableMouseWheel              = false;
-    enableCache                   = false;
-    kbDisableFadeInOut            = false;
-    kbDisableCrossFade            = false;
-    cacheSize                     = 0;
-    
-    iface                         = nullptr;
+      soundtrackLoop                (false),
+      soundtrackPlay                (false),
+      soundtrackRememberPlaylist    (false),
+      soundtrackPlayListNeedsUpdate (false),
+
+      useMilliseconds               (false),
+      enableMouseWheel              (false),
+      enableCache                   (false),
+      kbDisableFadeInOut            (false),
+      kbDisableCrossFade            (false),
+      kbEnableSameSpeed             (false),
+      cacheSize                     (0),
+
+      iface                         (nullptr)
+{
 }
 
 PresentationContainer::~PresentationContainer()

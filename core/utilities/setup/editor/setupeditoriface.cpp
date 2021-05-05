@@ -6,7 +6,7 @@
  * Date        : 2004-08-03
  * Description : setup Image Editor interface.
  *
- * Copyright (C) 2004-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2004-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -61,17 +61,17 @@ public:
 
     explicit Private()
       : themebackgroundColor(nullptr),
-        expoIndicatorMode(nullptr),
-        restoreSettings(nullptr),
-        expoPreview(nullptr),
-        colorBox(nullptr),
-        backgroundColor(nullptr),
-        underExposureColor(nullptr),
-        overExposureColor(nullptr),
-        expoPreviewHisto(nullptr),
-        fullScreenSettings(nullptr),
-        underExposurePcents(nullptr),
-        overExposurePcents(nullptr)
+        expoIndicatorMode   (nullptr),
+        restoreSettings     (nullptr),
+        expoPreview         (nullptr),
+        colorBox            (nullptr),
+        backgroundColor     (nullptr),
+        underExposureColor  (nullptr),
+        overExposureColor   (nullptr),
+        expoPreviewHisto    (nullptr),
+        fullScreenSettings  (nullptr),
+        underExposurePcents (nullptr),
+        overExposurePcents  (nullptr)
     {
     }
 
@@ -120,7 +120,7 @@ const QString SetupEditorIface::Private::configRestoreSettingsEntry(QLatin1Strin
 
 SetupEditorIface::SetupEditorIface(QWidget* const parent)
     : QScrollArea(parent),
-      d(new Private)
+      d          (new Private)
 {
     const int spacing    = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
     QWidget* const panel = new QWidget(viewport());
@@ -140,9 +140,9 @@ SetupEditorIface::SetupEditorIface(QWidget* const parent)
     d->themebackgroundColor->setWhatsThis(i18n("Enable this option to use the background theme "
                                                "color in the image editor area."));
 
-    d->colorBox                       = new DHBox(interfaceOptionsGroup);
-    QLabel*const backgroundColorlabel = new QLabel(i18n("&Background color:"), d->colorBox);
-    d->backgroundColor                = new DColorSelector(d->colorBox);
+    d->colorBox                        = new DHBox(interfaceOptionsGroup);
+    QLabel* const backgroundColorlabel = new QLabel(i18n("&Background color:"), d->colorBox);
+    d->backgroundColor                 = new DColorSelector(d->colorBox);
     backgroundColorlabel->setBuddy(d->backgroundColor);
     d->backgroundColor->setWhatsThis(i18n("Customize the background color to use "
                                           "in the image editor area."));

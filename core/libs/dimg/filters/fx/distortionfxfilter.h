@@ -6,7 +6,7 @@
  * Date        : 2005-07-18
  * Description : Distortion FX threaded image filter.
  *
- * Copyright (C) 2005-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2005-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2006-2010 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  * Copyright (C) 2010      by Martin Klapetek <martin dot klapetek at gmail dot com>
  *
@@ -40,6 +40,7 @@ namespace Digikam
 
 class DIGIKAM_EXPORT DistortionFXFilter : public DImgThreadedFilter
 {
+    Q_OBJECT
 
 public:
 
@@ -65,7 +66,7 @@ public:
 
 private:
 
-    struct Args
+    struct Q_DECL_HIDDEN Args
     {
         explicit Args()
           : start(0),
@@ -124,10 +125,10 @@ private:
 public:
 
     explicit DistortionFXFilter(QObject* const parent = nullptr);
-    explicit DistortionFXFilter(DImg* const orgImage, QObject* const parent=nullptr, int effectType=0,
+    explicit DistortionFXFilter(DImg* const orgImage, QObject* const parent = nullptr, int effectType=0,
                                 int level=0, int iteration=0, bool antialiasing=true);
 
-    ~DistortionFXFilter();
+    ~DistortionFXFilter() override;
 
     static QString          FilterIdentifier()
     {
@@ -146,12 +147,12 @@ public:
         return 1;
     }
 
-    virtual QString         filterIdentifier()                          const override
+    QString         filterIdentifier()                          const override
     {
         return FilterIdentifier();
     }
 
-    virtual FilterAction    filterAction()                                    override;
+    FilterAction    filterAction()                                    override;
 
     void                    readParameters(const FilterAction& action)        override;
 

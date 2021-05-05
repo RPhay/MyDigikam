@@ -6,7 +6,8 @@
  * Date        : 2013-03-02
  * Description : Table view: Tree view subelement
  *
- * Copyright (C) 2013 by Michael G. Hansen <mike at mghansen dot de>
+ * Copyright (C) 2017-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2013      by Michael G. Hansen <mike at mghansen dot de>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -50,7 +51,7 @@ namespace Digikam
 
 TableViewItemDelegate::TableViewItemDelegate(TableViewShared* const tableViewShared, QObject* const parent)
     : QItemDelegate(parent),
-      s(tableViewShared)
+      s            (tableViewShared)
 {
 }
 
@@ -63,7 +64,7 @@ void TableViewItemDelegate::paint(QPainter* painter, const QStyleOptionViewItem&
     const int columnIndex               = tableViewModelIndex.column();
     const int columnCount               = s->tableViewModel->columnCount(QModelIndex());
 
-    if (columnIndex < 0 || columnIndex >= columnCount)
+    if ((columnIndex < 0) || (columnIndex >= columnCount))
     {
         QItemDelegate::paint(painter, option, tableViewModelIndex);
         return;
@@ -91,16 +92,17 @@ QSize TableViewItemDelegate::sizeHint(const QStyleOptionViewItem& option, const 
     /// we have to take the maximum of all columns for the height
     /// @todo somehow cache this calculation
     /// @todo check column flags
+
     const int columnCount            = s->tableViewModel->columnCount(QModelIndex());
     TableViewModel::Item* const item = s->tableViewModel->itemFromIndex(tableViewModelIndex);
     int maxHeight                    = 0;
 
-    if (columnIndex < 0 || columnIndex >= columnCount)
+    if ((columnIndex < 0) || (columnIndex >= columnCount))
     {
         return QItemDelegate::sizeHint(option, tableViewModelIndex);
     }
 
-    for (int i = 0; i < columnCount ; ++i)
+    for (int i = 0 ; i < columnCount ; ++i)
     {
         TableViewColumn* const iColumnObject = s->tableViewModel->getColumnObject(i);
 
@@ -119,12 +121,16 @@ QSize TableViewItemDelegate::sizeHint(const QStyleOptionViewItem& option, const 
     TableViewColumn* const columnObject = s->tableViewModel->getColumnObject(columnIndex);
 
     if (columnObject && item)
+    {
         columnSize = columnObject->sizeHint(option, item);
+    }
 
     if (!columnSize.isValid())
     {
         columnSize = QItemDelegate::sizeHint(option, tableViewModelIndex);
+
         /// @todo we have to incorporate the height given by QItemDelegate for the other columns, too
+
         maxHeight  = qMax(maxHeight, columnSize.height());
     }
 

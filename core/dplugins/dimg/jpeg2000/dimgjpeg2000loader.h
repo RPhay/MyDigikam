@@ -6,7 +6,7 @@
  * Date        : 2006-06-14
  * Description : A JPEG-2000 IO file for DImg framework
  *
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * Others Linux JPEG-2000 Loader implementation:
  *    https://github.com/ImageMagick/ImageMagick/blob/master/coders/jp2.c
@@ -34,27 +34,26 @@
 
 #include "dimg.h"
 #include "dimgloader.h"
-#include "digikam_export.h"
 
 using namespace Digikam;
 
 namespace DigikamJPEG2000DImgPlugin
 {
 
-class DIGIKAM_EXPORT DImgJPEG2000Loader : public DImgLoader
+class DImgJPEG2000Loader : public DImgLoader
 {
 
 public:
 
     explicit DImgJPEG2000Loader(DImg* const image);
-    ~DImgJPEG2000Loader();
+    ~DImgJPEG2000Loader()                                                  override;
 
     bool load(const QString& filePath, DImgLoaderObserver* const observer) override;
     bool save(const QString& filePath, DImgLoaderObserver* const observer) override;
 
-    bool hasAlpha()   const override;
-    bool sixteenBit() const override;
-    bool isReadOnly() const override;
+    bool hasAlpha()                                                  const override;
+    bool sixteenBit()                                                const override;
+    bool isReadOnly()                                                const override;
 
 private:
 

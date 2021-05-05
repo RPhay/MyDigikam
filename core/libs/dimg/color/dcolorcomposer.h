@@ -35,6 +35,7 @@ namespace Digikam
 class DIGIKAM_EXPORT DColorComposer
 {
 public:
+
     /**
      * The available rules to combine src and destination color.
      *
@@ -66,7 +67,6 @@ public:
      *     The documentation of java.awt.AlphaComposite (Java 1.5)
      *     provides a good introduction and documentation on Porter Duff.
      */
-
     enum CompositingOperation
     {
         PorterDuffNone,
@@ -113,7 +113,7 @@ public:
      *
      * The bit depth of source and destination color must be identical.
      */
-    virtual void compose(DColor& dest, DColor src) = 0;
+    virtual void compose(DColor& dest, DColor& src) = 0;
 
     /**
      * Compose the two colors by calling compose(dest, src).
@@ -124,11 +124,14 @@ public:
      * - PremultiplyDst    if dst is not premultiplied (read from a DImg)
      * - DemultiplyDst     if dst will be written to non-premultiplied data (a DImg)
      */
-    virtual void compose(DColor& dest, DColor src, MultiplicationFlags multiplicationFlags);
+    virtual void compose(DColor& dest, DColor& src, MultiplicationFlags multiplicationFlags);
 
-    virtual ~DColorComposer()
-    {
-    };
+    DColorComposer()          = default;
+    virtual ~DColorComposer() = default;
+
+private:
+
+    Q_DISABLE_COPY(DColorComposer)
 };
 
 } // namespace Digikam

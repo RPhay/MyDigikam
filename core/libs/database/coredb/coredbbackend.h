@@ -7,7 +7,7 @@
  * Description : Core database abstract backend.
  *
  * Copyright (C) 2007-2009 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2010-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2010-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -44,10 +44,12 @@ class DIGIKAM_DATABASE_EXPORT CoreDbBackend : public BdEngineBackend
 
 public:
 
-    explicit CoreDbBackend(DbEngineLocking* const locking, const QString& backendName = QLatin1String("digikamDatabase-"));
-    ~CoreDbBackend();
+    explicit CoreDbBackend(DbEngineLocking* const locking,
+                           const QString& backendName = QLatin1String("digikamDatabase-"));
+    ~CoreDbBackend() override;
 
-    /** Sets the global database watch
+    /**
+     * Sets the global database watch
      */
     void setCoreDbWatch(CoreDbWatch* watch);
 
@@ -70,6 +72,9 @@ public:
     void recordChangeset(const SearchChangeset& changeset);
 
 private:
+
+    // Disable
+    explicit CoreDbBackend(QObject*) = delete;
 
     Q_DECLARE_PRIVATE(CoreDbBackend)
 };

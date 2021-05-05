@@ -6,7 +6,7 @@
  * Date        : 2008-11-24
  * Description : Batch Tool Container.
  *
- * Copyright (C) 2008-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2008-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -29,10 +29,10 @@
 #include <QDateTime>
 #include <QFileInfo>
 #include <QPolygon>
-#include <QTemporaryFile>
 #include <QWidget>
 #include <QLabel>
 #include <QUuid>
+#include <QScopedPointer>
 
 // KDE includes
 
@@ -63,16 +63,16 @@ class Q_DECL_HIDDEN BatchTool::Private
 public:
 
     explicit Private()
-      : exifResetOrientation(false),
+      : exifResetOrientation  (false),
         exifCanEditOrientation(true),
-        saveAsNewVersion(true),
-        branchHistory(true),
-        cancel(false),
-        last(false),
-        observer(nullptr),
-        toolGroup(BaseTool),
-        rawLoadingRule(QueueSettings::DEMOSAICING),
-        plugin(nullptr)
+        saveAsNewVersion      (true),
+        branchHistory         (true),
+        cancel                (false),
+        last                  (false),
+        observer              (nullptr),
+        toolGroup             (BaseTool),
+        rawLoadingRule        (QueueSettings::DEMOSAICING),
+        plugin                (nullptr)
     {
     }
 
@@ -122,7 +122,7 @@ public:
     {
     }
 
-    ~BatchToolObserver()
+    ~BatchToolObserver() override
     {
     }
 
@@ -138,7 +138,7 @@ private:
 
 BatchTool::BatchTool(const QString& name, BatchToolGroup group, QObject* const parent)
     : QObject(parent),
-      d(new Private)
+      d      (new Private)
 {
     d->observer      = new BatchToolObserver(d);
     d->toolGroup     = group;
@@ -191,37 +191,37 @@ QString BatchTool::toolGroupToString() const
     switch (toolGroup())
     {
         case BaseTool:
-            return i18n("Base");
+            return i18nc("@title: tool group", "Base");
 
         case CustomTool:
-            return i18n("Custom");
+            return i18nc("@title: tool group", "Custom");
 
         case ColorTool:
-            return i18n("Colors");
+            return i18nc("@title: tool group", "Colors");
 
         case EnhanceTool:
-            return i18n("Enhance");
+            return i18nc("@title: tool group", "Enhance");
 
         case TransformTool:
-            return i18n("Transform");
+            return i18nc("@title: tool group", "Transform");
 
         case DecorateTool:
-            return i18n("Decorate");
+            return i18nc("@title: tool group", "Decorate");
 
         case FiltersTool:
-            return i18n("Filters");
+            return i18nc("@title: tool group", "Filters");
 
         case ConvertTool:
-            return i18n("Convert");
+            return i18nc("@title: tool group", "Convert");
 
         case MetadataTool:
-            return i18n("Metadata");
+            return i18nc("@title: tool group", "Metadata");
 
         default:
             break;
     }
 
-    return i18n("Invalid");
+    return i18nc("@title: tool group", "Invalid");
 }
 
 void BatchTool::setToolTitle(const QString& toolTitle)
@@ -418,7 +418,6 @@ bool BatchTool::isLastChainedTool() const
 
 void BatchTool::setOutputUrlFromInputUrl()
 {
-    QString randomString(QUuid::createUuid().toString());
     QString path(workingUrl().toLocalFile());
     QString suffix = outputSuffix();
 
@@ -428,14 +427,15 @@ void BatchTool::setOutputUrlFromInputUrl()
         suffix = fi.suffix();
     }
 
-    SafeTemporaryFile temp(path + QLatin1String("/BatchTool-XXXXXX-") + randomString.mid(1, 8) +
-                           QLatin1String(".digikamtempfile.") + suffix);
+    QString random = QUuid::createUuid().toString().mid(1, 8);
+    SafeTemporaryFile temp(path + QLatin1String("/BatchTool-XXXXXX-") +
+                           random + QLatin1String(".digikamtempfile.") + suffix);
 
     temp.setAutoRemove(false);
     temp.open();
-    qCDebug(DIGIKAM_GENERAL_LOG) << "path: " << temp.fileName();
+    qCDebug(DIGIKAM_GENERAL_LOG) << "path: " << temp.safeFilePath();
 
-    setOutputUrl(QUrl::fromLocalFile(temp.fileName()));
+    setOutputUrl(QUrl::fromLocalFile(temp.safeFilePath()));
 }
 
 bool BatchTool::isRawFile(const QUrl& url) const
@@ -457,10 +457,10 @@ bool BatchTool::loadToDImg() const
     {
         QImage img;
         bool   ret = DRawDecoder::loadRawPreview(img, inputUrl().toLocalFile());
-        DMetadata meta(inputUrl().toLocalFile());
-        meta.setItemDimensions(QSize(img.width(), img.height()));
+        QScopedPointer<DMetadata> meta(new DMetadata(inputUrl().toLocalFile()));
+        meta->setItemDimensions(QSize(img.width(), img.height()));
         d->image   = DImg(img);
-        d->image.setMetadata(meta.data());
+        d->image.setMetadata(meta->data());
 
         return ret;
     }
@@ -629,7 +629,7 @@ void BatchTool::registerSettingsWidget()
     if (!m_settingsWidget)
     {
         QLabel* const label = new QLabel;
-        label->setText(i18n("No setting available"));
+        label->setText(i18nc("@label", "No setting available"));
         label->setAlignment(Qt::AlignCenter);
         label->setWordWrap(true);
         m_settingsWidget    = label;

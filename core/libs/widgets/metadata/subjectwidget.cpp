@@ -6,7 +6,7 @@
  * Date        : 2006-10-15
  * Description : IPTC subjects editor.
  *
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2009-2012 by Andi Clemens <andi dot clemens at googlemail dot com>
  *
  * This program is free software; you can redistribute it
@@ -65,20 +65,20 @@ public:
 public:
 
     explicit Private()
-      : optionsBox(nullptr),
+      : optionsBox      (nullptr),
         addSubjectButton(nullptr),
         delSubjectButton(nullptr),
         repSubjectButton(nullptr),
-        iprLabel(nullptr),
-        refLabel(nullptr),
-        nameLabel(nullptr),
-        matterLabel(nullptr),
-        detailLabel(nullptr),
-        btnGroup(nullptr),
-        stdBtn(nullptr),
-        customBtn(nullptr),
-        refCB(nullptr),
-        subjectsBox(nullptr)
+        iprLabel        (nullptr),
+        refLabel        (nullptr),
+        nameLabel       (nullptr),
+        matterLabel     (nullptr),
+        detailLabel     (nullptr),
+        btnGroup        (nullptr),
+        stdBtn          (nullptr),
+        customBtn       (nullptr),
+        refCB           (nullptr),
+        subjectsBox     (nullptr)
     {
     }
 
@@ -112,12 +112,12 @@ public:
 
 // --------------------------------------------------------------------------------
 
-SubjectWidget::SubjectWidget(QWidget* const parent)
+SubjectWidget::SubjectWidget(QWidget* const parent, bool sizeLimited)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     // Load subject codes provided by IPTC/NAA as xml file.
-    // See http://iptc.cms.apa.at/std/topicset/topicset.iptc-subjectcode.xml for details.
+    // See iptc.cms.apa.at/std/topicset/topicset.iptc-subjectcode.xml for details.
 
     QString path = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
                                           QLatin1String("digikam/metadata/topicset.iptc-subjectcode.xml"));
@@ -138,15 +138,15 @@ SubjectWidget::SubjectWidget(QWidget* const parent)
 
     // --------------------------------------------------------
 
-    m_subjectsCheck        = new QCheckBox(i18n("Use structured definition of the subject matter:"), this);
+    m_subjectsCheck        = new QCheckBox(i18nc("@title: subject widget", "Use structured definition of the subject matter:"), this);
     d->optionsBox          = new QWidget;
     d->btnGroup            = new QButtonGroup(this);
     d->stdBtn              = new QRadioButton;
     d->customBtn           = new QRadioButton;
     d->refCB               = new QComboBox;
-    QLabel* const codeLink = new QLabel(i18n("Use standard "
-                                       "<b><a href='https://www.iptc.org/site/NewsCodes'>"
-                                       "reference code</a></b>"));
+    QLabel* const codeLink = new QLabel(QString::fromUtf8("%1 <b><a href='https://www.iptc.org/site/NewsCodes'>%2</a></b>")
+                                        .arg(i18nc("@label: subject widget", "Use standard"))
+                                        .arg(i18nc("@label: subject widget", "reference code")));
     codeLink->setOpenExternalLinks(true);
     codeLink->setWordWrap(false);
 
@@ -155,7 +155,7 @@ SubjectWidget::SubjectWidget(QWidget* const parent)
     m_subjectsCheck->setVisible(false);
     m_subjectsCheck->setEnabled(false);
 
-    QLabel* const customLabel = new QLabel(i18n("Use custom definition"));
+    QLabel* const customLabel = new QLabel(i18nc("@label: subject widget", "Use custom definition"));
 
     d->btnGroup->addButton(d->stdBtn,    Private::STANDARD);
     d->btnGroup->addButton(d->customBtn, Private::CUSTOM);
@@ -171,52 +171,72 @@ SubjectWidget::SubjectWidget(QWidget* const parent)
 
     m_iprEdit = new QLineEdit;
     m_iprEdit->setClearButtonEnabled(true);
-    m_iprEdit->setMaxLength(32);
+
+    if (sizeLimited)
+    {
+        m_iprEdit->setMaxLength(32);
+    }
 
     // --------------------------------------------------------
 
     m_refEdit = new QLineEdit;
     m_refEdit->setClearButtonEnabled(true);
     m_refEdit->setValidator(refValidator);
-    m_refEdit->setMaxLength(8);
+
+    if (sizeLimited)
+    {
+        m_refEdit->setMaxLength(8);
+    }
 
     // --------------------------------------------------------
 
     m_nameEdit = new QLineEdit;
     m_nameEdit->setClearButtonEnabled(true);
-    m_nameEdit->setMaxLength(64);
+
+    if (sizeLimited)
+    {
+        m_nameEdit->setMaxLength(64);
+    }
 
     // --------------------------------------------------------
 
     m_matterEdit = new QLineEdit;
     m_matterEdit->setClearButtonEnabled(true);
-    m_matterEdit->setMaxLength(64);
+
+    if (sizeLimited)
+    {
+        m_matterEdit->setMaxLength(64);
+    }
 
     // --------------------------------------------------------
 
     m_detailEdit = new QLineEdit;
     m_detailEdit->setClearButtonEnabled(true);
-    m_detailEdit->setMaxLength(64);
+
+    if (sizeLimited)
+    {
+        m_detailEdit->setMaxLength(64);
+    }
 
     // --------------------------------------------------------
 
-    d->iprLabel    = new QLabel(i18nc("Information Provider Reference: "
+    d->iprLabel    = new QLabel(i18nc("@label: Information Provider Reference: "
                                       "A name, registered with the IPTC/NAA, "
                                       "identifying the provider that guarantees "
                                       "the uniqueness of the UNO", "I.P.R:"));
-    d->refLabel    = new QLabel(i18n("Reference:"));
-    d->nameLabel   = new QLabel(i18n("Name:"));
-    d->matterLabel = new QLabel(i18n("Matter:"));
-    d->detailLabel = new QLabel(i18n("Detail:"));
+    d->refLabel    = new QLabel(i18nc("@label: subject properties", "Reference:"));
+    d->nameLabel   = new QLabel(i18nc("@label: subject properties", "Name:"));
+    d->matterLabel = new QLabel(i18nc("@label: subject properties", "Matter:"));
+    d->detailLabel = new QLabel(i18nc("@label: subject properties", "Detail:"));
 
     // --------------------------------------------------------
 
     d->subjectsBox = new QListWidget;
     d->subjectsBox->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
 
-    d->addSubjectButton = new QPushButton(i18n("&Add"));
-    d->delSubjectButton = new QPushButton(i18n("&Delete"));
-    d->repSubjectButton = new QPushButton(i18n("&Replace"));
+    d->addSubjectButton = new QPushButton(i18nc("@action: subject properties", "&Add"));
+    d->delSubjectButton = new QPushButton(i18nc("@action: subject properties", "&Delete"));
+    d->repSubjectButton = new QPushButton(i18nc("@action: subject properties", "&Replace"));
     d->addSubjectButton->setIcon(QIcon::fromTheme(QLatin1String("list-add")).pixmap(16, 16));
     d->delSubjectButton->setIcon(QIcon::fromTheme(QLatin1String("edit-delete")).pixmap(16, 16));
     d->repSubjectButton->setIcon(QIcon::fromTheme(QLatin1String("view-refresh")).pixmap(16, 16));
@@ -615,7 +635,7 @@ bool SubjectWidget::loadSubjectCodesFromXML(const QUrl& url)
             name      = it.value().name;
 
             for (Private::SubjectCodesMap::Iterator it2 = d->subMap.begin() ;
-                it2 != d->subMap.end() ; ++it2)
+                 it2 != d->subMap.end() ; ++it2)
             {
                 if (it2.key().startsWith(keyPrefix) &&
                     !it2.key().endsWith(QLatin1String("00000")))

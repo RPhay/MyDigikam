@@ -7,7 +7,7 @@
  * Description : Camera interface
  *
  * Copyright (C) 2004-2005 by Renchi Raju <renchi dot raju at gmail dot com>
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2006-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  * Copyright (C) 2012      by Islam Wazery <wazery at ubuntu dot com>
  *
@@ -58,7 +58,7 @@ class CameraHistoryUpdater;
 class ImportIconView;
 class CameraThumbsCtrl;
 
-class DIGIKAM_EXPORT ImportUI : public DXmlGuiWindow
+class DIGIKAM_GUI_EXPORT ImportUI : public DXmlGuiWindow
 {
     Q_OBJECT
 
@@ -69,7 +69,7 @@ public:
                       const QString& port,
                       const QString& path,
                       int startIndex);
-    virtual ~ImportUI();
+    ~ImportUI() override;
 
     static ImportUI* instance();
 
@@ -194,8 +194,9 @@ private Q_SLOTS:
     void slotDownloadAndDeleteSelected();
     void slotDownloadAndDeleteAll();
 
-    void slotDeleteNew();
+    void slotDeleteAfterDownload();
     void slotDeleteSelected();
+    void slotDeleteNew();
     void slotDeleteAll();
 
     void slotToggleLock();
@@ -223,7 +224,7 @@ private Q_SLOTS:
 
     void slotMetadata(const QString& folder, const QString& file, const DMetadata& meta);
 
-    void setFilter(Filter *);
+    void setFilter(Filter*);
 
     void slotToggleShowBar();
     void slotColorManagementOptionsChanged();
@@ -231,6 +232,7 @@ private Q_SLOTS:
     void slotSetup()                   override;
     void slotComponentsInfo()          override;
     void slotDBStat()                  override;
+    void slotOnlineVersionCheck()      override;
     void slotToggleRightSideBar()      override;
     void slotPreviousRightSideBarTab() override;
     void slotNextRightSideBarTab()     override;
@@ -239,8 +241,13 @@ private Q_SLOTS:
 
 private:
 
+    // Disable
+    ImportUI(QWidget*) = delete;
+
+private:
+
     class Private;
-    Private* const d;
+    Private* const   d;
 
     static ImportUI* m_instance;
 };

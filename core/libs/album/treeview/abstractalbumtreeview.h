@@ -8,7 +8,7 @@
  *
  * Copyright (C) 2009-2010 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  * Copyright (C) 2010-2011 by Andi Clemens <andi dot clemens at gmail dot com>
- * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -60,7 +60,8 @@ class AbstractAlbumTreeView;
  * default mode no context menu is shown at all. It must be enabled via a call
  * to setEnableContextMenu.
  */
-class AbstractAlbumTreeView : public QTreeView, public StateSavingObject
+class AbstractAlbumTreeView : public QTreeView,
+                              public StateSavingObject
 {
     Q_OBJECT
 
@@ -109,7 +110,7 @@ public:
      * If you supply 0 for filterModel, call setAlbumFilterModel afterwards.
      */
     AbstractAlbumTreeView(QWidget* const parent, Flags flags);
-    ~AbstractAlbumTreeView();
+    ~AbstractAlbumTreeView()                                                    override;
 
     AbstractSpecificAlbumModel* albumModel() const;
     AlbumFilterModel* albumFilterModel()     const;
@@ -166,7 +167,7 @@ public:
      * Ensures that every current match is visible by expanding all parent
      * entries.
      *
-     * @param index index to start ensuring expansion state
+     * @param index the index to start ensuring expansion state
      * @return <code>true</code> if there was a match under <code>index</code>.
      *         This return value can normally be ignored by the caller because
      *         it is only used for an internal recursion.
@@ -187,8 +188,8 @@ public:
      * the state of new rows based on the remaining entries in
      * d->statesByAlbumId.
      */
-    virtual void doLoadState() override;
-    virtual void doSaveState() override;
+    void doLoadState()                                                          override;
+    void doSaveState()                                                          override;
     //@}
 
     /**
@@ -208,19 +209,24 @@ public:
     {
     public:
 
-        virtual ~ContextMenuElement()
-        {
-        }
+        ContextMenuElement()                    = default;
+        virtual ~ContextMenuElement()           = default;
 
         /**
          * Add actions to the context menu being generated
          *
          * @param view The AbstractAlbumTreeView which generates the menu
          * @param cmh helper object to create the context menu
-         * @param album album on which the context menu will be created. May be null if
+         * @param album the album on which the context menu will be created. May be null if
          *              it is requested on no tag entry
          */
-        virtual void addActions(AbstractAlbumTreeView* view, ContextMenuHelper& cmh, Album* album) = 0;
+        virtual void addActions(AbstractAlbumTreeView* view,
+                                ContextMenuHelper& cmh,
+                                Album* album)   = 0;
+
+    private:
+
+        Q_DISABLE_COPY(ContextMenuElement)
     };
 
     void addContextMenuElement(ContextMenuElement* const element);
@@ -231,7 +237,7 @@ public:
     QList<A*> currentAlbums();
 
     // for internal use: public viewportEvent
-    virtual bool viewportEvent(QEvent* event) override;
+    bool viewportEvent(QEvent* event)                                           override;
 
     /**
      * @brief selectedItems() -
@@ -245,7 +251,7 @@ public Q_SLOTS:
     /**
      * Selects the given album.
      *
-     * @param albums albums to select
+     * @param albums the albums to select
      * @param selectInAlbumManager the album will be set as current album, if both
      * this parameter is true and setAlbumManagerCurrentAlbum() was set to true.
      */
@@ -264,7 +270,7 @@ public Q_SLOTS:
     /**
      * Expands the complete tree under the given index.
      *
-     * @param index index to start expanding everything
+     * @param index the index to start expanding everything
      */
     void expandEverything(const QModelIndex& index);
 
@@ -310,7 +316,7 @@ protected:
      *
      * @return the icon for the context menu
      */
-    virtual QPixmap contextMenuIcon() const;
+    virtual QPixmap contextMenuIcon()  const;
 
     /**
      * Hook method to implement that returns the title for the context menu.
@@ -337,19 +343,20 @@ protected:
      * @param album the tag on which the context menu was requested. May be null
      *              if there was no
      */
-    virtual void handleCustomContextMenuAction(QAction* action, AlbumPointer<Album> album);
+    virtual void handleCustomContextMenuAction(QAction* action,
+                                               const AlbumPointer<Album>& album);
 
     // other stuff
 
-    void mousePressEvent(QMouseEvent* e) override;
+    void mousePressEvent(QMouseEvent* e)                                        override;
 
-    void rowsInserted(const QModelIndex& index, int start, int end) override;
-    void rowsAboutToBeRemoved(const QModelIndex& parent, int start, int end) override;
-    void startDrag(Qt::DropActions supportedActions) override;
-    void dragEnterEvent(QDragEnterEvent* e) override;
-    void dragMoveEvent(QDragMoveEvent* e) override;
-    void dragLeaveEvent(QDragLeaveEvent* e) override;
-    void dropEvent(QDropEvent* e) override;
+    void rowsInserted(const QModelIndex& index, int start, int end)             override;
+    void rowsAboutToBeRemoved(const QModelIndex& parent, int start, int end)    override;
+    void startDrag(Qt::DropActions supportedActions)                            override;
+    void dragEnterEvent(QDragEnterEvent* e)                                     override;
+    void dragMoveEvent(QDragMoveEvent* e)                                       override;
+    void dragLeaveEvent(QDragLeaveEvent* e)                                     override;
+    void dropEvent(QDropEvent* e)                                               override;
 
     virtual void middleButtonPressed(Album* a);
     virtual QPixmap pixmapForDrag(const QStyleOptionViewItem& option, QList<QModelIndex> indexes);
@@ -363,35 +370,39 @@ protected:
     AlbumFilterModel*           m_albumFilterModel;
     AlbumModelDragDropHandler*  m_dragDropHandler;
 
+    int                         m_lastScrollBarValue;
     bool                        m_checkOnMiddleClick;
     bool                        m_restoreCheckState;
     Flags                       m_flags;
 
 private:
 
-    void saveStateRecursive(const QModelIndex& index, QList<int>& selection, QList<int>& expansion);
+    void saveStateRecursive(const QModelIndex& index,
+                            QList<int>& selection, QList<int>& expansion);
 
     /**
      * Restores the state of the index and all sub-indexes if there is an entry
      * for this index in stateStore. Every album that is restored is removed
      * from the stateStore.
      *
-     * @param index index to start restoring
+     * @param index the index to start restoring
      * @param stateStore states indexed by album id
      */
-    void restoreStateForHierarchy(const QModelIndex& index, const QMap<int, Digikam::State>& stateStore);
+    void restoreStateForHierarchy(const QModelIndex& index,
+                                  const QMap<int, Digikam::State>& stateStore);
 
     /**
      * Restore the state for this index.
      */
-    void restoreState(const QModelIndex& index, const QMap<int, Digikam::State>& stateStore);
+    void restoreState(const QModelIndex& index,
+                      const QMap<int, Digikam::State>& stateStore);
 
     /**
      * Creates the context menu.
      *
-     * @param event event that requested the menu
+     * @param event the event that requested the menu
      */
-    void contextMenuEvent(QContextMenuEvent* event) override;
+    void contextMenuEvent(QContextMenuEvent* event)                             override;
 
 private Q_SLOTS:
 
@@ -408,9 +419,9 @@ private Q_SLOTS:
      * Adapt the column sizes to new contents. This can be connected to all
      * signals indicating row changes.
      *
-     * @param parent parent index of changed rows
-     * @param start start row changed under the parent
-     * @param end end row changed under the parent
+     * @param parent the parent index of changed rows
+     * @param start the start row changed under the parent
+     * @param end the end row changed under the parent
      */
     void adaptColumnsOnRowChange(const QModelIndex& parent, int start, int end);
 
@@ -424,6 +435,12 @@ private Q_SLOTS:
      * album is selected again. Therefore it tracks new selections.
      */
     void currentAlbumChangedForBackupSelection(Album* currentAlbum);
+
+    /**
+     * This slots is used to fix bug 400960.
+     */
+    void slotScrollBarValueChanged(int value);
+    void slotScrollBarActionTriggered(int action);
 
 private:
 

@@ -7,7 +7,7 @@
  * Description : image file IO threaded interface.
  *
  * Copyright (C) 2005-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2005-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2005-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -51,17 +51,22 @@ class DIGIKAM_EXPORT LoadSaveNotifier
 {
 public:
 
-    virtual ~LoadSaveNotifier() {};
+    LoadSaveNotifier();
+    virtual ~LoadSaveNotifier();
 
-    virtual void imageStartedLoading(const LoadingDescription& loadingDescription) = 0;
-    virtual void loadingProgress(const LoadingDescription& loadingDescription, float progress) = 0;
-    virtual void imageLoaded(const LoadingDescription& loadingDescription, const DImg& img) = 0;
+    virtual void imageStartedLoading(const LoadingDescription& loadingDescription)                  = 0;
+    virtual void loadingProgress(const LoadingDescription& loadingDescription, float progress)      = 0;
+    virtual void imageLoaded(const LoadingDescription& loadingDescription, const DImg& img)         = 0;
     virtual void moreCompleteLoadingAvailable(const LoadingDescription& oldLoadingDescription,
-                                              const LoadingDescription& newLoadingDescription) = 0;
-    virtual void imageStartedSaving(const QString& filePath) = 0;
-    virtual void savingProgress(const QString& filePath, float progress) = 0;
-    virtual void imageSaved(const QString& filePath, bool success) = 0;
-    virtual void thumbnailLoaded(const LoadingDescription& loadingDescription, const QImage& img) = 0;
+                                              const LoadingDescription& newLoadingDescription)      = 0;
+    virtual void imageStartedSaving(const QString& filePath)                                        = 0;
+    virtual void savingProgress(const QString& filePath, float progress)                            = 0;
+    virtual void imageSaved(const QString& filePath, bool success)                                  = 0;
+    virtual void thumbnailLoaded(const LoadingDescription& loadingDescription, const QImage& img)   = 0;
+
+private:
+
+    Q_DISABLE_COPY(LoadSaveNotifier)
 };
 
 // -------------------------------------------------------------------------------------------------------
@@ -70,20 +75,25 @@ class DIGIKAM_EXPORT LoadSaveFileInfoProvider
 {
 public:
 
-    virtual ~LoadSaveFileInfoProvider() {}
+    LoadSaveFileInfoProvider();
+    virtual ~LoadSaveFileInfoProvider();
 
     /**
      * Gives a hint at the orientation of the image.
      * This can be used to supersede the Exif information in the file.
      * Will not be used if DMetadata::ORIENTATION_UNSPECIFIED (default value)
      */
-    virtual int   orientationHint(const QString& path) = 0;
+    virtual int   orientationHint(const QString& path)  = 0;
 
     /**
      * Gives a hint at the size of the image.
      * This can be used to supersede the Exif information in the file.
      */
-    virtual QSize dimensionsHint(const QString& path) = 0;
+    virtual QSize dimensionsHint(const QString& path)   = 0;
+
+private:
+
+    Q_DISABLE_COPY(LoadSaveFileInfoProvider)
 };
 
 // -------------------------------------------------------------------------------------------------------
@@ -133,7 +143,7 @@ public:
      * Destructor:
      * The thread will execute all pending tasks and wait for this upon destruction
      */
-    ~LoadSaveThread();
+    ~LoadSaveThread() override;
 
     /**
      * Append a task to load the given file to the task list
@@ -147,6 +157,8 @@ public:
 
     void setNotificationPolicy(NotificationPolicy notificationPolicy);
 
+public:
+
     static void setInfoProvider(LoadSaveFileInfoProvider* const infoProvider);
     static LoadSaveFileInfoProvider* infoProvider();
 
@@ -154,8 +166,10 @@ public:
      * Retrieves the Exif orientation, either from the info provider if available,
      * or from the metadata
      */
-    static int exifOrientation(const QString& filePath, const DMetadata& metadata,
-                               bool isRaw, bool fromRawEmbeddedPreview);
+    static int exifOrientation(const QString& filePath,
+                               const DMetadata& metadata,
+                               bool isRaw,
+                               bool fromRawEmbeddedPreview);
 
 Q_SIGNALS:
 
@@ -202,22 +216,23 @@ Q_SIGNALS:
 
 public:
 
-    virtual void imageStartedLoading(const LoadingDescription& loadingDescription) override;
-    virtual void loadingProgress(const LoadingDescription& loadingDescription, float progress) override;
-    virtual void imageLoaded(const LoadingDescription& loadingDescription, const DImg& img) override;
-    virtual void moreCompleteLoadingAvailable(const LoadingDescription& oldLoadingDescription,
-                                              const LoadingDescription& newLoadingDescription) override;
-    virtual void imageStartedSaving(const QString& filePath) override;
-    virtual void savingProgress(const QString& filePath, float progress) override;
-    virtual void imageSaved(const QString& filePath, bool success) override;
-    virtual void thumbnailLoaded(const LoadingDescription& loadingDescription, const QImage& img) override;
+    void imageStartedLoading(const LoadingDescription& loadingDescription)                override;
+    void loadingProgress(const LoadingDescription& loadingDescription, float progress)    override;
+    void imageLoaded(const LoadingDescription& loadingDescription, const DImg& img)       override;
+    void moreCompleteLoadingAvailable(const LoadingDescription& oldLoadingDescription,
+                                      const LoadingDescription& newLoadingDescription)    override;
+    void imageStartedSaving(const QString& filePath)                                      override;
+    void savingProgress(const QString& filePath, float progress)                          override;
+    void imageSaved(const QString& filePath, bool success)                                override;
+    void thumbnailLoaded(const LoadingDescription& loadingDescription, const QImage& img) override;
 
     virtual bool querySendNotifyEvent() const;
     virtual void taskHasFinished();
 
 protected:
 
-    virtual void run() override;
+    void run()                                                                            override;
+
     void notificationReceived();
 
 protected:
@@ -232,9 +247,11 @@ protected:
 
 private:
 
-    // Hidden copy constructor and assignment operator.
-    LoadSaveThread(const LoadSaveThread&);
-    LoadSaveThread& operator=(const LoadSaveThread&);
+    // Disable
+    LoadSaveThread(const LoadSaveThread&)            = delete;
+    LoadSaveThread& operator=(const LoadSaveThread&) = delete;
+
+private:
 
     class Private;
     Private* const d;

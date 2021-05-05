@@ -6,7 +6,7 @@
  * Date        : 2009-28-04
  * Description : first run assistant dialog
  *
- * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -212,7 +212,7 @@ bool CollectionPage::checkRootAlbum(QString& rootAlbumFolder)
     // Work around bug #189168
 
     QTemporaryFile temp;
-    temp.setFileTemplate(rootAlbumFolder + QLatin1String("XXXXXX"));
+    temp.setFileTemplate(path.filePath() + QLatin1String("/XXXXXX"));
 
     if (!temp.open())
 

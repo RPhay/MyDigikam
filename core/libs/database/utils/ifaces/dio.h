@@ -33,6 +33,7 @@
 // Local includes
 
 #include "digikam_export.h"
+#include "dtrashiteminfo.h"
 
 class QUrl;
 
@@ -45,7 +46,7 @@ class ItemInfo;
 class IOJobData;
 class ProgressItem;
 
-class DIGIKAM_EXPORT DIO : public QObject
+class DIGIKAM_GUI_EXPORT DIO : public QObject
 {
     Q_OBJECT
 
@@ -73,6 +74,9 @@ public:
     /// Copy external files to another album
     static void copy(const QList<QUrl>& srcList, PAlbum* const dest);
 
+    /// Copy items to external folder
+    static void copy(const QList<ItemInfo>& infos, const QUrl& dest);
+
     /// Move an album into another album
     static void move(PAlbum* const src, PAlbum* const dest);
 
@@ -92,15 +96,17 @@ public:
     /// Rename item to new name
     static void rename(const QUrl& src, const QString& newName, bool overwrite = false);
 
+    /// Trash operations
+    static void restoreTrash(const DTrashItemInfoList& infos);
+    static void emptyTrash(const DTrashItemInfoList& infos);
+
 Q_SIGNALS:
 
+    void signalTrashFinished();
     void signalRenameFinished();
     void signalRenameFailed(const QUrl& url);
 
 private:
-
-    explicit DIO();
-    ~DIO();
 
     void processJob(IOJobData* const data);
     void createJob(IOJobData* const data);
@@ -114,6 +120,13 @@ private Q_SLOTS:
     void slotResult();
     void slotOneProccessed(const QUrl& url);
     void slotCancel(ProgressItem* item);
+
+private:
+
+    // Disable
+    DIO();
+    explicit DIO(QObject*) = delete;
+    ~DIO() override;
 
 private:
 

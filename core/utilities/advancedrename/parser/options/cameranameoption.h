@@ -43,16 +43,18 @@ class CameraNameOption : public Option
 public:
 
     explicit CameraNameOption();
-    ~CameraNameOption() {};
+    ~CameraNameOption()                             override = default;
 
 protected:
 
-    virtual QString parseOperation(ParseSettings& settings);
+    QString parseOperation(ParseSettings& settings) override;
 
 private:
 
-    CameraNameOption(const CameraNameOption&);
-    CameraNameOption& operator=(const CameraNameOption&);
+    // Disable
+    CameraNameOption(QObject*)                           = delete;
+    CameraNameOption(const CameraNameOption&)            = delete;
+    CameraNameOption& operator=(const CameraNameOption&) = delete;
 };
 
 } // namespace Digikam

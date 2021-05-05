@@ -63,10 +63,15 @@ struct SortByDate
         QFileInfo fi2(s2);
 
 #if (QT_VERSION >= QT_VERSION_CHECK(5, 10, 0))
+
         return (fi1.birthTime() < fi2.birthTime());
+
 #else
+
         return (fi1.created() < fi2.created());
+
 #endif
+
     }
 };
 
@@ -86,12 +91,12 @@ class Q_DECL_HIDDEN AdvancedRenameManager::Private
 public:
 
     explicit Private()
-      : parser(nullptr),
-        widget(nullptr),
-        parserType(AdvancedRenameManager::DefaultParser),
-        sortAction(AdvancedRenameManager::SortCustom),
+      : parser       (nullptr),
+        widget       (nullptr),
+        parserType   (AdvancedRenameManager::DefaultParser),
+        sortAction   (AdvancedRenameManager::SortCustom),
         sortDirection(AdvancedRenameManager::SortAscending),
-        startIndex(1)
+        startIndex   (1)
     {
     }
 
@@ -174,7 +179,7 @@ AdvancedRenameManager::SortDirection AdvancedRenameManager::sortDirection() cons
 
 void AdvancedRenameManager::setStartIndex(int index)
 {
-    d->startIndex = index < 1 ? 1 : index;
+    d->startIndex = (index < 1) ? 1 : index;
     initialize();
 }
 
@@ -261,7 +266,7 @@ void AdvancedRenameManager::parseFiles(const QString& parseString)
 
     foreach (const QString& file, d->files)
     {
-        QUrl url = QUrl::fromLocalFile(file);
+        QUrl url              = QUrl::fromLocalFile(file);
         ParseSettings settings;
         settings.fileUrl      = url;
         settings.parseString  = parseString;
@@ -283,14 +288,14 @@ void AdvancedRenameManager::parseFiles(const QString& parseString, const ParseSe
 
     foreach (const QString& file, d->files)
     {
-        QUrl url = QUrl::fromLocalFile(file);
+        QUrl url               = QUrl::fromLocalFile(file);
         ParseSettings settings = _settings;
         settings.fileUrl       = url;
         settings.parseString   = parseString;
         settings.startIndex    = d->startIndex;
         settings.manager       = this;
 
-        d->renamedFiles[file] = d->parser->parse(settings);
+        d->renamedFiles[file]  = d->parser->parse(settings);
     }
 }
 
@@ -359,7 +364,7 @@ void AdvancedRenameManager::initializeFileList()
             break;
     }
 
-    if (d->sortAction != SortCustom && d->sortDirection == SortDescending)
+    if ((d->sortAction != SortCustom) && (d->sortDirection == SortDescending))
     {
         std::reverse(tmpFiles.begin(), tmpFiles.end());
     }
@@ -372,8 +377,20 @@ QStringList AdvancedRenameManager::fileList() const
     return d->files;
 }
 
-QMap<QString, QString> AdvancedRenameManager::newFileList() const
+QMap<QString, QString> AdvancedRenameManager::newFileList(bool checkFileSystem) const
 {
+    if (checkFileSystem)
+    {
+        QMap<QString, QString> renamedFiles;
+
+        foreach (const QString& fileName, d->renamedFiles.keys())
+        {
+            renamedFiles[fileName] = newName(fileName);
+        }
+
+        return renamedFiles;
+    }
+
     return d->renamedFiles;
 }
 
@@ -459,6 +476,7 @@ QString AdvancedRenameManager::fileGroupKey(const QString& filename) const
 {
     QFileInfo fi(filename);
     QString tmp = fi.absoluteFilePath().left(fi.absoluteFilePath().lastIndexOf(fi.suffix()));
+
     return tmp;
 }
 

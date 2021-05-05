@@ -7,7 +7,7 @@
  * Description : stand alone test application for plugin
  *               loader and generic tools.
  *
- * Copyright (C) 2018-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2018-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -50,11 +50,12 @@ int main(int argc, char* argv[])
 
     QCommandLineParser parser;
     parser.addHelpOption();
-    parser.setApplicationDescription(QLatin1String("Test application to run digiKam plugins as stand alone"));
+    parser.setApplicationDescription(QLatin1String("Test application to run digiKam generic plugins as stand alone\n"
+                                                   "Example: ./loadandrun_generic -l \"org.kde.digikam.plugin.generic.TimeAdjust\" -a \"timeadjust_edit\" /mnt/photo/*.jpg"));
 
     parser.addOption(QCommandLineOption(QStringList() << QLatin1String("list"), QLatin1String("List all available plugins")));
     parser.addOption(QCommandLineOption(QStringList() << QLatin1String("l"),    QLatin1String("Unique name ID of the plugin to use"), QLatin1String("Plugin IID")));
-    parser.addOption(QCommandLineOption(QStringList() << QLatin1String("a"),    QLatin1String("Plugin action name to run"), QLatin1String("Action Name")));
+    parser.addOption(QCommandLineOption(QStringList() << QLatin1String("a"),    QLatin1String("Plugin internal action name to run"),  QLatin1String("Internal Action Name")));
     parser.addOption(QCommandLineOption(QStringList() << QLatin1String("w"),    QLatin1String("Wait until plugin non-modal dialog is closed")));
     parser.addPositionalArgument(QLatin1String("files"), QLatin1String("File(s) to open"), QLatin1String("+[file(s)]"));
     parser.process(app);
@@ -74,32 +75,32 @@ int main(int argc, char* argv[])
 
     bool found = false;
 
-    if (parser.isSet(QString::fromLatin1("list")))
+    if      (parser.isSet(QString::fromLatin1("list")))
     {
         foreach (DPlugin* const p, dpl->allPlugins())
         {
-            qDebug() << "--------------------------------------------";
-            qDebug() << "IID    :" << p->iid();
-            qDebug() << "Name   :" << p->name();
-            qDebug() << "Version:" << p->version();
-            qDebug() << "Desc   :" << p->description();
-
-            QString authors;
-
-            foreach (const DPluginAuthor& au, p->authors())
-            {
-                authors.append(au.toString());
-                authors.append(QLatin1String(" ; "));
-            }
-
-            qDebug() << "Authors:" << authors;
-
-            QString actions;
-
             DPluginGeneric* const gene = dynamic_cast<DPluginGeneric*>(p);
 
             if (gene)
             {
+                qDebug() << "--------------------------------------------";
+                qDebug() << "IID    :" << p->iid();
+                qDebug() << "Name   :" << p->name();
+                qDebug() << "Version:" << p->version();
+                qDebug() << "Desc   :" << p->description();
+
+                QString authors;
+
+                foreach (const DPluginAuthor& au, p->authors())
+                {
+                    authors.append(au.toString());
+                    authors.append(QLatin1String(" ; "));
+                }
+
+                qDebug() << "Authors:" << authors;
+
+                QString actions;
+
                 foreach (DPluginAction* const ac, gene->actions(&iface))
                 {
                     actions.append(ac->toString());
@@ -153,14 +154,22 @@ int main(int argc, char* argv[])
                     else
                     {
                         qDebug() << action << "action not found in plugin!";
+
+                        QString actions;
+
+                        foreach (DPluginAction* const ac, gene->actions(&iface))
+                        {
+                            actions.append(ac->toString());
+                            actions.append(QLatin1String(" ; "));
+                        }
+
+                        qDebug() << "Available Actions:" << actions;
                     }
 
                     break;
                 }
             }
         }
-
-        MetaEngine::cleanupExiv2();
     }
     else
     {

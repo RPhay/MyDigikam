@@ -6,7 +6,7 @@
  * Date        : 2013-08-14
  * Description : Thread actions task for finger-prints generator.
  *
- * Copyright (C) 2013-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2013-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -47,7 +47,7 @@ class FingerprintsTask : public ActionJob
 public:
 
     explicit FingerprintsTask();
-    ~FingerprintsTask();
+    ~FingerprintsTask() override;
 
     void setMaintenanceData(MaintenanceData* const data = nullptr);
 
@@ -57,7 +57,12 @@ Q_SIGNALS:
 
 protected:
 
-    void run();
+    void run() override;
+
+private:
+
+    // Disable
+    FingerprintsTask(QObject*) = delete;
 
 private:
 

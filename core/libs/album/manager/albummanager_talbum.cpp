@@ -6,7 +6,7 @@
  * Date        : 2004-06-15
  * Description : Albums manager interface - Tag Album helpers.
  *
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2006-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  * Copyright (C) 2015      by Mohamed_Anwer <m_dot_anwer at gmx dot com>
  *
@@ -579,15 +579,28 @@ bool AlbumManager::mergeTAlbum(TAlbum* album, TAlbum* destAlbum, bool dialog, QS
 
     if (dialog)
     {
-        QPointer<QMessageBox> msgBox = new QMessageBox(QMessageBox::Warning,
-                 qApp->applicationName(),
-                 i18n("Do you want to merge tag '%1' into tag '%2'?",
-                      album->title(), destAlbum->title()),
-                 QMessageBox::Yes | QMessageBox::No,
-                 qApp->activeWindow());
+        int result = d->askMergeMessageBoxResult;
 
-        int result = msgBox->exec();
-        delete msgBox;
+        if (result == -1)
+        {
+            QPointer<QMessageBox> msgBox = new QMessageBox(QMessageBox::Warning,
+                     qApp->applicationName(),
+                     i18n("Do you want to merge tag '%1' into tag '%2'?",
+                          album->title(), destAlbum->title()),
+                     QMessageBox::Yes | QMessageBox::No,
+                     qApp->activeWindow());
+            QCheckBox* const chkBox      = new QCheckBox(i18n("Don't ask again at this session"), msgBox);
+            msgBox->setCheckBox(chkBox);
+
+            result = msgBox->exec();
+
+            if (chkBox->isChecked())
+            {
+                d->askMergeMessageBoxResult = result;
+            }
+
+            delete msgBox;
+        }
 
         if (result == QMessageBox::No)
         {
@@ -960,7 +973,7 @@ void AlbumManager::slotTagChange(const TagChangeset& changeset)
 
         case TagChangeset::PropertiesChanged:
         {
-            TAlbum* tag = findTAlbum(changeset.tagId());
+            TAlbum* const tag = findTAlbum(changeset.tagId());
 
             if (tag)
             {
@@ -994,6 +1007,14 @@ void AlbumManager::slotImageTagChange(const ImageTagChangeset& changeset)
         // Thus, the count of entries in face tags are not
         // updated. This adoption should fix the problem.
         case ImageTagChangeset::PropertiesChanged:
+        {
+            foreach (int id, changeset.tags())
+            {
+                if (!d->toUpdatedFaces.contains(id))
+                {
+                    d->toUpdatedFaces << id;
+                }
+            }
 
             if (!d->tagItemCountTimer->isActive())
             {
@@ -1001,6 +1022,7 @@ void AlbumManager::slotImageTagChange(const ImageTagChangeset& changeset)
             }
 
             break;
+        }
 
         default:
             break;
@@ -1036,7 +1058,7 @@ void AlbumManager::askUserForWriteChangedTAlbumToFiles(const QList<qlonglong>& i
                           imageIds.count()),
                      QMessageBox::Yes | QMessageBox::No,
                      qApp->activeWindow());
-            QCheckBox* const chkBox      = new QCheckBox(i18n("Do not ask again for this session"), msgBox);
+            QCheckBox* const chkBox      = new QCheckBox(i18n("Don't ask again at this session"), msgBox);
             msgBox->setCheckBox(chkBox);
 
             result = msgBox->exec();

@@ -8,7 +8,7 @@
  *
  * Copyright (C) 2002-2003 by Todd Shoemaker <todd at theshoemakers dot net>
  * Copyright (C) 2007-2012 by Angelo Naselli <anaselli at linux dot it>
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -61,7 +61,7 @@ public:
     QString       m_label;
     int           m_dpi;
     bool          m_autoRotate;
-    QList<QRect*> m_layouts;     // first element is page size
+    QList<QRect*> m_layouts;     ///< first element is page size
     QIcon         m_icon;
 };
 
@@ -95,6 +95,7 @@ class AdvPrintCaptionInfo
 public:
 
     explicit AdvPrintCaptionInfo();
+
     /// Copy constructor to get old photo info.
     AdvPrintCaptionInfo(const AdvPrintCaptionInfo& other);
     ~AdvPrintCaptionInfo();
@@ -132,22 +133,22 @@ public:
 
 public:
 
-    // Url of original image file.
+    /// Url of original image file.
     QUrl                    m_url;
 
-    // Thumbnail size in pixels.
+    /// Thumbnail size in pixels.
     int                     m_thumbnailSize;
 
-    // Region to crop while print from original image.
+    /// Region to crop while print from original image.
     QRect                   m_cropRegion;
 
-    // To get first copy quickly.
+    /// To get first copy quickly.
     bool                    m_first;
 
-    // Number of copies while printing stage.
+    /// Number of copies while printing stage.
     int                     m_copies;
 
-    // Rotation angle in degrees.
+    /// Rotation angle in degrees.
     int                     m_rotation;
 
     AdvPrintAdditionalInfo* m_pAddInfo;

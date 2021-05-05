@@ -8,7 +8,7 @@
  *               Contrast, and Gamma of picture.
  *
  * Copyright (C) 2004      by Renchi Raju <renchi dot raju at gmail dot com>
- * Copyright (C) 2005-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2005-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -34,7 +34,7 @@
 
 #include <klocalizedstring.h>
 #include <ksharedconfig.h>
-#include "kconfiggroup.h"
+#include <kconfiggroup.h>
 
 // Local includes
 
@@ -55,9 +55,9 @@ class Q_DECL_HIDDEN BCGTool::Private
 public:
 
     explicit Private()
-      : settingsView(nullptr),
+      : settingsView (nullptr),
         previewWidget(nullptr),
-        gboxSettings(nullptr)
+        gboxSettings (nullptr)
     {
     }
 
@@ -78,7 +78,7 @@ const QString BCGTool::Private::configHistogramScaleEntry(QLatin1String("Histogr
 
 BCGTool::BCGTool(QObject* const parent)
     : EditorToolThreaded(parent),
-      d(new Private)
+      d                 (new Private)
 {
     setObjectName(QLatin1String("bcgadjust"));
     setToolVersion(1);

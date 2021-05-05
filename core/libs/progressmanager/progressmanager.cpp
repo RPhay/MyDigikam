@@ -6,7 +6,7 @@
  * Date        : 2012-01-13
  * Description : progress manager
  *
- * Copyright (C) 2007-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2007-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2012      by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  * Copyright (C) 2004      by Till Adam <adam at kde dot org>
  *
@@ -56,17 +56,17 @@ public:
 
 public:
 
-    explicit Private() :
-        waitingForKids(false),
-        canceled(false),
-        usesBusyIndicator(false),
-        canBeCanceled(false),
-        hasThumb(false),
-        showAtStart(false),
-        progress(0),
-        total(0),
-        completed(0),
-        parent(nullptr)
+    explicit Private()
+      : waitingForKids      (false),
+        canceled            (false),
+        usesBusyIndicator   (false),
+        canBeCanceled       (false),
+        hasThumb            (false),
+        showAtStart         (false),
+        progress            (0),
+        total               (0),
+        completed           (0),
+        parent              (nullptr)
     {
     }
 
@@ -179,7 +179,7 @@ void ProgressItem::cancel()
     setStatus(i18n("Aborting..."));
 
     emit progressItemCanceled(this);
-    emit progressItemCanceled(this->id());
+    emit progressItemCanceledById(this->id());
 }
 
 void ProgressItem::setLabel(const QString& v)
@@ -243,6 +243,7 @@ bool ProgressItem::advance(unsigned int v)
 {
     bool complete = incCompletedItems(v);
     updateProgress();
+
     return complete;
 }
 
@@ -344,7 +345,7 @@ class Q_DECL_HIDDEN ProgressManager::Private
 public:
 
     explicit Private()
-        : uID(1000),
+        : uID        (1000),
           waitingLoop(nullptr)
     {
     }
@@ -498,11 +499,13 @@ void ProgressManager::addProgressItemImpl(ProgressItem* const t, ProgressItem* c
         if (t->thread() != QThread::currentThread())
         {
             // we cannot moveToThread this item living in a third thread. Refusing to add.
+
             qCDebug(DIGIKAM_GENERAL_LOG) << "Refusing to add in thread 1 a ProgressItem created in thread 2 to ProgressManager, living in thread 3";
             return;
         }
 
         // Move to ProgressManager's thread
+
         t->moveToThread(thread());
     }
 
@@ -580,12 +583,14 @@ ProgressItem* ProgressManager::singleItem() const
     while (it != hash.constEnd())
     {
         // No single item for progress possible, as one of them is a busy indicator one.
+
         if ((*it)->usesBusyIndicator())
         {
             return nullptr;
         }
 
         // If it's a top level one, only those count.
+
         if (!(*it)->parent())
         {
             if (item)

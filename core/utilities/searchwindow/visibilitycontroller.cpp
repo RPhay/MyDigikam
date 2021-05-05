@@ -31,7 +31,7 @@ class Q_DECL_HIDDEN VisibilityController::Private
 public:
 
     explicit Private()
-      : status(VisibilityController::Unknown),
+      : status         (VisibilityController::Unknown),
         containerWidget(nullptr)
     {
     }
@@ -41,22 +41,25 @@ public:
     QWidget*                     containerWidget;
 };
 
-class Q_DECL_HIDDEN VisibilityWidgetWrapper : public QObject, public VisibilityObject
+class Q_DECL_HIDDEN VisibilityWidgetWrapper : public QObject,
+                                              public VisibilityObject
 {
+    Q_OBJECT
+
 public:
 
     VisibilityWidgetWrapper(VisibilityController* const parent, QWidget* const widget)
-        : QObject(parent),
+        : QObject (parent),
           m_widget(widget)
     {
     }
 
-    virtual void setVisible(bool visible) override
+    void setVisible(bool visible) override
     {
-        return m_widget->setVisible(visible);
+        m_widget->setVisible(visible);
     }
 
-    virtual bool isVisible() override
+    bool isVisible() override
     {
         return m_widget->isVisible();
     }
@@ -68,7 +71,7 @@ public:
 
 VisibilityController::VisibilityController(QObject* const parent)
     : QObject(parent),
-      d(new Private)
+      d      (new Private)
 {
 }
 
@@ -245,3 +248,5 @@ void VisibilityController::allSteps()
 }
 
 } // namespace Digikam
+
+#include "visibilitycontroller.moc"

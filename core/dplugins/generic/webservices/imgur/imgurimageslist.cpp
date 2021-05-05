@@ -7,7 +7,7 @@
  * Description : a tool to export images to Imgur web service
  *
  * Copyright (C) 2010-2012 by Marius Orcsik <marius at habarnam dot ro>
- * Copyright (C) 2013-2018 by Caulier Gilles <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2013-2020 by Caulier Gilles <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -92,22 +92,26 @@ QList<const ImgurImageListViewItem*> ImgurImagesList::getPendingItems()
 
 void ImgurImagesList::slotAddImages(const QList<QUrl>& list)
 {
-    /* Replaces the DItemsList::slotAddImages method, so that
-     * ImgurImageListViewItems can be added instead of ImagesListViewItems */
+    /**
+     * Replaces the DItemsList::slotAddImages method, so that
+     * ImgurImageListViewItems can be added instead of ImagesListViewItems
+     */
 
-    DMetadata meta;
+    QScopedPointer<DMetadata> meta(new DMetadata);
 
     for (QList<QUrl>::ConstIterator it = list.constBegin() ; it != list.constEnd() ; ++it)
     {
         // Already in the list?
+
         if (listView()->findItem(*it) == nullptr)
         {
             // Load URLs from meta data, if possible
-            if (meta.load((*it).toLocalFile()))
+
+            if (meta->load((*it).toLocalFile()))
             {
                 auto* const item = new ImgurImageListViewItem(listView(), *it);
-                item->setImgurUrl(meta.getXmpTagString("Xmp.digiKam.ImgurId"));
-                item->setImgurDeleteUrl(meta.getXmpTagString("Xmp.digiKam.ImgurDeleteHash"));
+                item->setImgurUrl(meta->getXmpTagString("Xmp.digiKam.ImgurId"));
+                item->setImgurDeleteUrl(meta->getXmpTagString("Xmp.digiKam.ImgurDeleteHash"));
             }
         }
     }
@@ -122,17 +126,18 @@ void ImgurImagesList::slotSuccess(const ImgurTalkerResult& result)
 
     processed(imgurl, true);
 
-    DMetadata meta;
+    QScopedPointer<DMetadata> meta(new DMetadata);
 
     // Save URLs to meta data, if possible
-    if (meta.load(imgurl.toLocalFile()))
+
+    if (meta->load(imgurl.toLocalFile()))
     {
-        meta.setXmpTagString("Xmp.digiKam.ImgurId",
+        meta->setXmpTagString("Xmp.digiKam.ImgurId",
                              result.image.url);
-        meta.setXmpTagString("Xmp.digiKam.ImgurDeleteHash",
+        meta->setXmpTagString("Xmp.digiKam.ImgurDeleteHash",
                              ImgurTalker::urlForDeletehash(result.image.deletehash).toString());
-        meta.setMetadataWritingMode((int)DMetadata::WRITE_TO_FILE_ONLY);
-        bool saved = meta.applyChanges();
+        meta->setMetadataWritingMode((int)DMetadata::WRITE_TO_FILE_ONLY);
+        bool saved = meta->applyChanges();
 
         qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Metadata"
                                          << (saved ? "Saved" : "Not Saved")
@@ -142,21 +147,29 @@ void ImgurImagesList::slotSuccess(const ImgurTalkerResult& result)
     ImgurImageListViewItem* const currItem = dynamic_cast<ImgurImageListViewItem*>(listView()->findItem(imgurl));
 
     if (!currItem)
+    {
         return;
+    }
 
     if (!result.image.url.isEmpty())
+    {
         currItem->setImgurUrl(result.image.url);
+    }
 
     if (!result.image.deletehash.isEmpty())
+    {
         currItem->setImgurDeleteUrl(ImgurTalker::urlForDeletehash(result.image.deletehash).toString());
+    }
 }
 
 void ImgurImagesList::slotDoubleClick(QTreeWidgetItem* element, int i)
 {
-    if (i == URL || i == DeleteURL)
+    if ((i == URL) || (i == DeleteURL))
     {
         const QUrl url = QUrl(element->text(i));
+
         // The delete page asks for confirmation, so we don't need to do that here
+
         QDesktopServices::openUrl(url);
     }
 }

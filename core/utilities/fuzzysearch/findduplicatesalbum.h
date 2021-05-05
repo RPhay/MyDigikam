@@ -6,7 +6,7 @@
  * Date        : 2008-05-19
  * Description : Find Duplicates tree-view search album.
  *
- * Copyright (C) 2008-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2008-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2008-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  * Copyright (C) 2009      by Andi Clemens <andi dot clemens at gmail dot com>
  *
@@ -48,17 +48,20 @@ class FindDuplicatesAlbum : public QTreeWidget
 public:
 
     explicit FindDuplicatesAlbum(QWidget* const parent = nullptr);
-    virtual ~FindDuplicatesAlbum();
+    ~FindDuplicatesAlbum()                        override;
 
     void updateDuplicatesAlbumItems(const QList<SAlbum*>& sAlbumsToRebuild,
                                     const QList<qlonglong>& deletedImages);
 
     void selectFirstItem();
     QTreeWidgetItem* firstItem();
+    void removeDuplicates();
 
-private :
+private:
 
-    void drawRow(QPainter* p, const QStyleOptionViewItem& opt, const QModelIndex& index) const;
+    void drawRow(QPainter* p,
+                 const QStyleOptionViewItem& opt,
+                 const QModelIndex& index) const override;
 
 private Q_SLOTS:
 

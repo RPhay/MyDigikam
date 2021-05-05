@@ -7,7 +7,7 @@
  * Description : Side Bar Widget for the fuzzy search.
  *
  * Copyright (C) 2009-2010 by Johannes Wienke <languitar at semipol dot de>
- * Copyright (C) 2010-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2010-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2012      by Andi Clemens <andi dot clemens at gmail dot com>
  * Copyright (C) 2014      by Mohamed_Anwer <m_dot_anwer at gmx dot com>
  * Copyright (C) 2010      by Aditya Bhatt <adityabhatt1991 at gmail dot com>
@@ -53,7 +53,7 @@ class Q_DECL_HIDDEN FuzzySearchSideBarWidget::Private
 public:
 
     explicit Private()
-      : fuzzySearchView(nullptr),
+      : fuzzySearchView         (nullptr),
         searchModificationHelper(nullptr)
     {
     }
@@ -66,7 +66,7 @@ FuzzySearchSideBarWidget::FuzzySearchSideBarWidget(QWidget* const parent,
                                                    SearchModel* const searchModel,
                                                    SearchModificationHelper* const searchModificationHelper)
     : SidebarWidget(parent),
-      d(new Private)
+      d            (new Private)
 {
     setObjectName(QLatin1String("Fuzzy Search Sidebar"));
     setProperty("Shortcut", Qt::CTRL + Qt::SHIFT + Qt::Key_F7);
@@ -76,8 +76,8 @@ FuzzySearchSideBarWidget::FuzzySearchSideBarWidget(QWidget* const parent,
     d->fuzzySearchView        = new FuzzySearchView(searchModel, searchModificationHelper, this);
     d->fuzzySearchView->setConfigGroup(getConfigGroup());
 
-    connect(d->fuzzySearchView, SIGNAL(signalNofificationError(QString,int)),
-            this, SIGNAL(signalNofificationError(QString,int)));
+    connect(d->fuzzySearchView, SIGNAL(signalNotificationError(QString,int)),
+            this, SIGNAL(signalNotificationError(QString,int)));
 
     QVBoxLayout* const layout = new QVBoxLayout(this);
 
@@ -130,11 +130,6 @@ const QIcon FuzzySearchSideBarWidget::getIcon()
 const QString FuzzySearchSideBarWidget::getCaption()
 {
     return i18nc("Fuzzy Search images, as duplicates, sketch, searches by similarities", "Similarity");
-}
-
-void FuzzySearchSideBarWidget::newDuplicatesSearch(PAlbum* album)
-{
-    d->fuzzySearchView->newDuplicatesSearch(album);
 }
 
 void FuzzySearchSideBarWidget::newDuplicatesSearch(const QList<PAlbum*>& albums)

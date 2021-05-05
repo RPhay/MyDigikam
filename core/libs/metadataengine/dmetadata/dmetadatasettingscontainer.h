@@ -4,10 +4,10 @@
  * https://www.digikam.org
  *
  * Date        : 2010-08-20
- * Description : DMetadata Settings Container.
+ * Description : metadata Settings Container.
  *
  * Copyright (C) 2015      by Veaceslav Munteanu <veaceslav dot munteanu90 at gmail dot com>
- * Copyright (C) 2015-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2015-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -47,7 +47,7 @@ namespace Digikam
  *        as names, what types of data expects and extra
  *        xml tags
  */
-class NamespaceEntry
+class DIGIKAM_EXPORT NamespaceEntry
 {
 
 public:
@@ -79,38 +79,40 @@ public:
 
     enum NamespaceType
     {
-        TAGS    = 0,
-        RATING  = 1,
-        COMMENT = 2
+        TAGS       = 0,
+        RATING     = 1,
+        COMMENT    = 2,
+     // PICKLABEL  = 3,
+        COLORLABEL = 4
     };
 
 public:
 
     explicit NamespaceEntry()
-      : nsType(TAGS),
-        subspace(XMP),
-        isDefault(true),
-        isDisabled(false),
-        index(-1),
-        tagPaths(TAGPATH),
-        specialOpts(NO_OPTS),
-        secondNameOpts(NO_OPTS)
+      : nsType          (TAGS),
+        subspace        (XMP),
+        isDefault       (true),
+        isDisabled      (false),
+        index           (-1),
+        tagPaths        (TAGPATH),
+        specialOpts     (NO_OPTS),
+        secondNameOpts  (NO_OPTS)
     {
     }
 
     NamespaceEntry(const NamespaceEntry& other)
-      : nsType(other.nsType),
-        subspace(other.subspace),
-        isDefault(other.isDefault),
-        isDisabled(other.isDisabled),
-        index(other.index),
-        namespaceName(other.namespaceName),
-        alternativeName(other.alternativeName),
-        tagPaths(other.tagPaths),
-        separator(other.separator),
-        convertRatio(QList<int>(other.convertRatio)),
-        specialOpts(other.specialOpts),
-        secondNameOpts(other.secondNameOpts)
+      : nsType          (other.nsType),
+        subspace        (other.subspace),
+        isDefault       (other.isDefault),
+        isDisabled      (other.isDisabled),
+        index           (other.index),
+        namespaceName   (other.namespaceName),
+        alternativeName (other.alternativeName),
+        tagPaths        (other.tagPaths),
+        separator       (other.separator),
+        convertRatio    (QList<int>(other.convertRatio)),
+        specialOpts     (other.specialOpts),
+        secondNameOpts  (other.secondNameOpts)
     {
     }
 
@@ -123,6 +125,7 @@ public:
     static QString DM_TAG_CONTAINER();
     static QString DM_RATING_CONTAINER();
     static QString DM_COMMENT_CONTAINER();
+    static QString DM_COLORLABEL_CONTAINER();
 
 public:
 
@@ -191,6 +194,7 @@ private:
     void defaultTagValues();
     void defaultRatingValues();
     void defaultCommentValues();
+    void defaultColorLabelValues();
     void readOneGroup(KConfigGroup& group, const QString& name, QList<NamespaceEntry>& container);
     void writeOneGroup(KConfigGroup& group, const QString& name, QList<NamespaceEntry>& container)  const;
 

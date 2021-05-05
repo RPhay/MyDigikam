@@ -7,7 +7,7 @@
  * Description : Qt model-view for items
  *
  * Copyright (C) 2009-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2011      by Andi Clemens <andi dot clemens at gmail dot com>
  * Copyright (C) 2013      by Michael G. Hansen <mike at mghansen dot de>
  * Copyright (C) 2014      by Mohamed_Anwer <m_dot_anwer at gmx dot com>
@@ -32,9 +32,9 @@
 
 #include <QApplication>
 #include <QPointer>
+#include <QAction>
 #include <QMenu>
 #include <QIcon>
-#include <QAction>
 #include <QUrl>
 
 // Local includes
@@ -77,7 +77,7 @@ namespace Digikam
 
 DigikamItemView::DigikamItemView(QWidget* const parent)
     : ItemCategorizedView(parent),
-      d(new Private(this))
+      d                  (new Private(this))
 {
     installDefaultModels();
 
@@ -99,7 +99,11 @@ DigikamItemView::DigikamItemView(QWidget* const parent)
     imageFilterModel()->setCategorizationMode(ItemSortSettings::CategoryByAlbum);
 
     imageAlbumModel()->setThumbnailLoadThread(ThumbnailLoadThread::defaultIconViewThread());
-    setThumbnailSize(ThumbnailSize(settings->getDefaultIconSize()));
+
+    // Virtual method: use Dynamic binding.
+
+    this->setThumbnailSize(ThumbnailSize(settings->getDefaultIconSize()));
+
     imageAlbumModel()->setPreloadThumbnails(true);
 
     imageModel()->setDragDropHandler(new ItemDragDropHandler(imageModel()));
@@ -115,21 +119,25 @@ DigikamItemView::DigikamItemView(QWidget* const parent)
     imageFilterModel()->setCategorizationSortOrder((ItemSortSettings::SortOrder) settings->getImageSeparationSortOrder());
 
     // selection overlay
+
     addSelectionOverlay(d->normalDelegate);
     addSelectionOverlay(d->faceDelegate);
 
     // rotation overlays
+
     d->rotateLeftOverlay  = ItemRotateOverlay::left(this);
     d->rotateRightOverlay = ItemRotateOverlay::right(this);
     d->fullscreenOverlay  = ItemFullScreenOverlay::instance(this);
     d->updateOverlays();
 
     // rating overlay
+
     ItemRatingOverlay* const ratingOverlay = new ItemRatingOverlay(this);
     addOverlay(ratingOverlay);
 
     // face overlays
     // NOTE: order to plug this overlay is important, else rejection cant be suitable (see bug #324759).
+
     addAssignNameOverlay(d->faceDelegate);
     addRejectionOverlay(d->faceDelegate);
 
@@ -162,11 +170,11 @@ DigikamItemView::DigikamItemView(QWidget* const parent)
             this, SLOT(setCurrentUrlWhenAvailable(QUrl)));
 
     // --- NOTE: use dynamic binding as slotSetupChanged() is a virtual method which can be re-implemented in derived classes.
+
     connect(settings, &ApplicationSettings::setupChanged,
             this, &DigikamItemView::slotSetupChanged);
 
     this->slotSetupChanged();
-    // ---
 }
 
 DigikamItemView::~DigikamItemView()
@@ -223,10 +231,10 @@ void DigikamItemView::dragDropSort(const ItemInfo& pick, const QList<ItemInfo>& 
     }
 
     ItemInfoList infoList = allItemInfos(false);
-    qlonglong counter      = pick.manualOrder();
-    bool order             = (ApplicationSettings::instance()->
-                                getImageSorting() == Qt::AscendingOrder);
-    bool found             = false;
+    qlonglong counter     = pick.manualOrder();
+    bool order            = (ApplicationSettings::instance()->
+                               getImageSorting() == Qt::AscendingOrder);
+    bool found            = false;
 
     QApplication::setOverrideCursor(Qt::WaitCursor);
 
@@ -235,7 +243,7 @@ void DigikamItemView::dragDropSort(const ItemInfo& pick, const QList<ItemInfo>& 
 
     foreach (ItemInfo info, infoList)
     {
-        if (!found && info.id() == pick.id())
+        if      (!found && info.id() == pick.id())
         {
             foreach (ItemInfo dropInfo, infos)
             {
@@ -324,10 +332,19 @@ void DigikamItemView::setFaceMode(bool on)
     if (on)
     {
         // See ItemLister, which creates a search the implements listing tag in the ioslave
+
         imageAlbumModel()->setSpecialTagListing(QLatin1String("faces"));
         setItemDelegate(d->faceDelegate);
+
         // grouping is not very much compatible with faces
+
         imageFilterModel()->setAllGroupsOpen(true);
+
+        // by default, Face View is categorized by Faces.
+
+        imageFilterModel()->setCategorizationMode(ItemSortSettings::CategoryByFaces);
+
+        emit signalSeparationModeChanged((int)ItemSortSettings::CategoryByFaces);
     }
     else
     {
@@ -335,7 +352,12 @@ void DigikamItemView::setFaceMode(bool on)
         setItemDelegate(d->normalDelegate);
 
         bool open = ApplicationSettings::instance()->getAllGroupsOpen();
+        int separationMode = ApplicationSettings::instance()->getImageSeparationMode();
+
         imageFilterModel()->setAllGroupsOpen(open);
+        imageFilterModel()->setCategorizationMode((ItemSortSettings::CategorizationMode)separationMode);
+
+        emit signalSeparationModeChanged((int)separationMode);
     }
 }
 
@@ -370,11 +392,22 @@ void DigikamItemView::addAssignNameOverlay(ItemDelegate* delegate)
             this, SLOT(confirmFaces(QList<QModelIndex>,int)));
 
     connect(nameOverlay, SIGNAL(removeFaces(QList<QModelIndex>)),
-            this, SLOT(removeFaces(QList<QModelIndex>)));
+            this, SLOT(rejectFaces(QList<QModelIndex>)));
 }
 
 void DigikamItemView::confirmFaces(const QList<QModelIndex>& indexes, int tagId)
 {
+    /**
+     * You aren't allowed to "confirm" a person as
+     * Ignored. Marking as Ignored is treated as a
+     * changeTag() operation.
+     */
+    if (FaceTags::isTheIgnoredPerson(tagId))
+    {
+        rejectFaces(indexes);
+        return;
+    }
+
     QList<ItemInfo>      infos;
     QList<FaceTagsIface> faces;
     QList<QModelIndex>   sourceIndexes;
@@ -391,8 +424,8 @@ void DigikamItemView::confirmFaces(const QList<QModelIndex>& indexes, int tagId)
 
     foreach (const QModelIndex& index, indexes)
     {
-        infos << ItemModel::retrieveItemInfo(index);
         faces << d->faceDelegate->face(index);
+        infos << ItemModel::retrieveItemInfo(index);
 
         if (needFastRemove)
         {
@@ -416,8 +449,8 @@ void DigikamItemView::removeFaces(const QList<QModelIndex>& indexes)
 
     foreach (const QModelIndex& index, indexes)
     {
-        infos << ItemModel::retrieveItemInfo(index);
-        faces << d->faceDelegate->face(index);
+        faces         << d->faceDelegate->face(index);
+        infos         << ItemModel::retrieveItemInfo(index);
         sourceIndexes << imageSortFilterModel()->mapToSourceItemModel(index);
     }
 
@@ -429,6 +462,38 @@ void DigikamItemView::removeFaces(const QList<QModelIndex>& indexes)
     }
 }
 
+void DigikamItemView::rejectFaces(const QList<QModelIndex>& indexes)
+{
+    QList<ItemInfo> infos;
+    QList<FaceTagsIface> faces;
+    QList<QModelIndex> sourceIndexes;
+
+    foreach (const QModelIndex& index, indexes)
+    {
+        faces         << d->faceDelegate->face(index);
+        infos         << ItemModel::retrieveItemInfo(index);
+        sourceIndexes << imageSortFilterModel()->mapToSourceItemModel(index);
+    }
+
+    imageAlbumModel()->removeIndexes(sourceIndexes);
+
+    for (int i = 0 ; i < infos.size() ; ++i)
+    {
+        if (FaceTags::isTheUnknownPerson(faces[i].tagId()))
+        {
+            // Reject signal was sent from an Unknown Face. Mark as Ignored.
+
+            d->editPipeline.editTag(infos[i], faces[i], FaceTags::ignoredPersonTagId());
+        }
+        else
+        {
+            // Reject face suggestion. Mark as Unknown.
+
+            d->editPipeline.editTag(infos[i], faces[i], FaceTags::unknownPersonTagId());
+        }
+    }
+}
+
 void DigikamItemView::activated(const ItemInfo& info, Qt::KeyboardModifiers modifiers)
 {
     if (info.isNull())
@@ -436,15 +501,21 @@ void DigikamItemView::activated(const ItemInfo& info, Qt::KeyboardModifiers modi
         return;
     }
 
-    if (modifiers != Qt::MetaModifier)
+    if (modifiers != Qt::AltModifier)
     {
-        if (ApplicationSettings::instance()->getItemLeftClickAction() == ApplicationSettings::ShowPreview)
+        int leftClickAction = ApplicationSettings::instance()->getItemLeftClickAction();
+
+        if      (leftClickAction == ApplicationSettings::ShowPreview)
         {
             emit previewRequested(info);
         }
-        else
+        else if (leftClickAction == ApplicationSettings::StartEditor)
         {
             openFile(info);
+        }
+        else
+        {
+            d->utilities->openInfosWithDefaultApplication(QList<ItemInfo>() << info);
         }
     }
     else
@@ -586,9 +657,22 @@ void DigikamItemView::slotFullscreen(const QList<QModelIndex>& indexes)
    }
 
    // Just fullscreen the first.
+
    const ItemInfo& info = infos.at(0);
 
-   emit fullscreenRequested(info);
+   QList<DPluginAction*> actions = DPluginLoader::instance()->
+                                      pluginActions(QLatin1String("org.kde.digikam.plugin.generic.SlideShow"),
+                                      DigikamApp::instance());
+
+   if (actions.isEmpty())
+   {
+       return;
+   }
+
+   // Trigger SlideShow manual
+
+   actions[0]->setData(info.fileUrl());
+   actions[0]->trigger();
 }
 
 void DigikamItemView::slotInitProgressIndicator()

@@ -6,7 +6,7 @@
  * Date        : 2010-07-17
  * Description : A marker tiler operating on item models
  *
- * Copyright (C) 2010-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2010-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2010-2011 by Michael G. Hansen <mike at mghansen dot de>
  *
  * This program is free software; you can redistribute it
@@ -45,34 +45,34 @@ class DIGIKAM_EXPORT ItemMarkerTiler : public AbstractMarkerTiler
 public:
 
     explicit ItemMarkerTiler(GeoModelHelper* const modelHelper, QObject* const parent = nullptr);
-    virtual ~ItemMarkerTiler();
+    ~ItemMarkerTiler()                                                                                    override;
 
-    virtual TilerFlags tilerFlags()                                                                         const override;
-    virtual Tile* tileNew()                                                                                       override;
-    virtual void tileDeleteInternal(Tile* const tile)                                                             override;
-    virtual void prepareTiles(const GeoCoordinates& upperLeft, const GeoCoordinates& lowerRight, int level)       override;
-    virtual void regenerateTiles()                                                                                override;
-    virtual Tile* getTile(const TileIndex& tileIndex, const bool stopIfEmpty = false)                             override;
-    virtual int getTileMarkerCount(const TileIndex& tileIndex)                                                    override;
-    virtual int getTileSelectedCount(const TileIndex& tileIndex)                                                  override;
+    TilerFlags tilerFlags()                                                                         const override;
+    Tile* tileNew()                                                                                       override;
+    void tileDeleteInternal(Tile* const tile)                                                             override;
+    void prepareTiles(const GeoCoordinates& upperLeft, const GeoCoordinates& lowerRight, int level)       override;
+    void regenerateTiles()                                                                                override;
+    Tile* getTile(const TileIndex& tileIndex, const bool stopIfEmpty = false)                             override;
+    int getTileMarkerCount(const TileIndex& tileIndex)                                                    override;
+    int getTileSelectedCount(const TileIndex& tileIndex)                                                  override;
 
-    virtual QVariant getTileRepresentativeMarker(const TileIndex& tileIndex, const int sortKey)                   override;
-    virtual QVariant bestRepresentativeIndexFromList(const QList<QVariant>& indices, const int sortKey)           override;
-    virtual QPixmap pixmapFromRepresentativeIndex(const QVariant& index, const QSize& size)                       override;
-    virtual bool indicesEqual(const QVariant& a, const QVariant& b)                                         const override;
-    virtual GeoGroupState getTileGroupState(const TileIndex& tileIndex)                                           override;
-    virtual GeoGroupState getGlobalGroupState()                                                                   override;
+    QVariant getTileRepresentativeMarker(const TileIndex& tileIndex, const int sortKey)                   override;
+    QVariant bestRepresentativeIndexFromList(const QList<QVariant>& indices, const int sortKey)           override;
+    QPixmap pixmapFromRepresentativeIndex(const QVariant& index, const QSize& size)                       override;
+    bool indicesEqual(const QVariant& a, const QVariant& b)                                         const override;
+    GeoGroupState getTileGroupState(const TileIndex& tileIndex)                                           override;
+    GeoGroupState getGlobalGroupState()                                                                   override;
 
-    virtual void onIndicesClicked(const ClickInfo& clickInfo)                                                     override;
-    virtual void onIndicesMoved(const TileIndex::List& tileIndicesList,
+    void onIndicesClicked(const ClickInfo& clickInfo)                                                     override;
+    void onIndicesMoved(const TileIndex::List& tileIndicesList,
                                 const GeoCoordinates& targetCoordinates,
-                                const QPersistentModelIndex& targetSnapIndex)                                     override;
+                                const QPersistentModelIndex& targetSnapIndex)                             override;
 
     void setMarkerGeoModelHelper(GeoModelHelper* const modelHelper);
     void removeMarkerIndexFromGrid(const QModelIndex& markerIndex, const bool ignoreSelection = false);
     void addMarkerIndexToGrid(const QPersistentModelIndex& markerIndex);
 
-    void setActive(const bool state)                                                                              override;
+    void setActive(const bool state)                                                                      override;
 
 private Q_SLOTS:
 

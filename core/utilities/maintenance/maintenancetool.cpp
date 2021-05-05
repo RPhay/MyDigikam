@@ -6,7 +6,7 @@
  * Date        : 2012-02-02
  * Description : maintenance tool
  *
- * Copyright (C) 2012-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2012      by Andi Clemens <andi dot clemens at gmail dot com>
  *
  * This program is free software; you can redistribute it
@@ -64,12 +64,17 @@ MaintenanceTool::MaintenanceTool(const QString& id, ProgressItem* const parent)
     // --- NOTE: use dynamic binding as slotCancel() is a virtual method which can be re-implemented in derived classes.
 
 #ifdef Q_OS_WIN
-    connect(this, SIGNAL(progressItemCanceled(QString)),
+
+    connect(this, SIGNAL(progressItemCanceledById(QString)),
             this, SLOT(slotCancel()));
+
 #else
-    connect(this, static_cast<void (ProgressItem::*)(const QString&)>(&ProgressItem::progressItemCanceled),
+
+    connect(this, static_cast<void (ProgressItem::*)(const QString&)>(&ProgressItem::progressItemCanceledById),
             this, &MaintenanceTool::slotCancel);
+
 #endif
+
 }
 
 MaintenanceTool::~MaintenanceTool()

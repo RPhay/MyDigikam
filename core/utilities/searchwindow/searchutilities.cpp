@@ -64,11 +64,13 @@ namespace Digikam
 
 class Q_DECL_HIDDEN AnimatedClearButton::Private : public AnimatedVisibility
 {
+    Q_OBJECT
+
 public:
 
     explicit Private(QObject* const parent)
         : AnimatedVisibility(parent),
-          stayAlwaysVisible(false)
+          stayAlwaysVisible (false)
     {
     }
 
@@ -78,7 +80,7 @@ public:
 
 AnimatedClearButton::AnimatedClearButton(QWidget* const parent)
     : QWidget(parent),
-      d(new Private(this))
+      d      (new Private(this))
 {
     setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
 
@@ -179,10 +181,10 @@ public:
 
     explicit Private()
       : beforeInitialValue(true),
-        initialValue(0),
-        smallerStep(0),
-        largerStep(0),
-        invertStepping(false)
+        initialValue      (0),
+        smallerStep       (0),
+        largerStep        (0),
+        invertStepping    (false)
     {
     }
 
@@ -196,7 +198,7 @@ public:
 
 CustomStepsDoubleSpinBox::CustomStepsDoubleSpinBox(QWidget* const parent)
     : QDoubleSpinBox(parent),
-      d(new Private)
+      d             (new Private)
 {
 }
 
@@ -354,10 +356,10 @@ public:
 
     explicit Private()
       : beforeInitialValue(true),
-        initialValue(0),
-        smallerStep(0),
-        largerStep(0),
-        invertStepping(false)
+        initialValue      (0),
+        smallerStep       (0),
+        largerStep        (0),
+        invertStepping    (false)
     {
     }
 
@@ -403,7 +405,7 @@ void CustomStepsIntSpinBox::stepBy(int steps)
 
     int v = value();
 
-    if (v >= d->values.first() && v <= d->values.last())
+    if ((v >= d->values.first()) && (v <= d->values.last()))
     {
         int nextStep = 0;
 
@@ -442,7 +444,7 @@ void CustomStepsIntSpinBox::stepBy(int steps)
         }
         else
         {
-            for (nextStep = d->values.count() - 1 ; nextStep >= 0 ; --nextStep)
+            for ((nextStep = d->values.count() - 1) ; (nextStep >= 0) ; --nextStep)
             {
                 if (v >= d->values.at(nextStep))
                 {
@@ -629,7 +631,7 @@ void CustomStepsIntSpinBox::slotValueChanged(int val)
 // ------------------------------------------------------------------------
 
 StyleSheetDebugger::StyleSheetDebugger(QWidget* const object)
-    : QWidget(nullptr),
+    : QWidget (nullptr),
       m_widget(object)
 {
     setAttribute(Qt::WA_DeleteOnClose);
@@ -659,3 +661,5 @@ void StyleSheetDebugger::buttonClicked()
 }
 
 } // namespace Digikam
+
+#include "searchutilities.moc"

@@ -40,7 +40,7 @@ class Q_DECL_HIDDEN ItemVersionsModel::Private
 public:
 
     explicit Private()
-      : data(nullptr),
+      : data     (nullptr),
         paintTree(false)
     {
     }
@@ -59,14 +59,16 @@ public:
 
 ItemVersionsModel::ItemVersionsModel(QObject* const parent)
     : QAbstractListModel(parent),
-      d(new Private)
+      d                 (new Private)
 {
     d->data = new QList<QPair<QString, int> >;
 }
 
 ItemVersionsModel::~ItemVersionsModel()
 {
-    //qDeleteAll(d->data);
+/*
+    qDeleteAll(d->data);
+*/
     delete d;
 }
 
@@ -74,7 +76,7 @@ Qt::ItemFlags ItemVersionsModel::flags(const QModelIndex& index) const
 {
     if (!index.isValid())
     {
-        return nullptr;
+        return Qt::NoItemFlags;
     }
 
     return Qt::ItemIsEnabled | Qt::ItemIsSelectable;
@@ -97,7 +99,8 @@ QVariant ItemVersionsModel::data(const QModelIndex& index, int role) const
     }
     else if ((role == Qt::DisplayRole) && d->data->isEmpty())
     {
-        //TODO: make this text Italic
+        // TODO: make this text Italic
+
         return QVariant(QString(i18n("No image selected")));
     }
 

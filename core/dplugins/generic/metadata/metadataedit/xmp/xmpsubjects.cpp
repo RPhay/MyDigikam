@@ -6,7 +6,7 @@
  * Date        : 2006-10-15
  * Description : XMP subjects settings page.
  *
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2009      by Andi Clemens <andi dot clemens at googlemail dot com>
  *
  * This program is free software; you can redistribute it
@@ -93,25 +93,25 @@ XMPSubjects::~XMPSubjects()
 
 void XMPSubjects::readMetadata(QByteArray& xmpData)
 {
-    DMetadata meta;
-    meta.setXmp(xmpData);
-    setSubjectsList(meta.getXmpSubjects());
+    QScopedPointer<DMetadata> meta(new DMetadata);
+    meta->setXmp(xmpData);
+    setSubjectsList(meta->getXmpSubjects());
 }
 
 void XMPSubjects::applyMetadata(QByteArray& xmpData)
 {
-    DMetadata meta;
-    meta.setXmp(xmpData);
+    QScopedPointer<DMetadata> meta(new DMetadata);
+    meta->setXmp(xmpData);
     QStringList newSubjects = subjectsList();
 
     // We remove in first all existing subjects.
-    meta.removeXmpTag("Xmp.iptc.SubjectCode");
+    meta->removeXmpTag("Xmp.iptc.SubjectCode");
 
     // And add new list if necessary.
     if (m_subjectsCheck->isChecked())
-        meta.setXmpSubjects(newSubjects);
+        meta->setXmpSubjects(newSubjects);
 
-    xmpData = meta.getXmp();
+    xmpData = meta->getXmp();
 }
 
 } // namespace DigikamGenericMetadataEditPlugin

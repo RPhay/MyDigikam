@@ -6,7 +6,7 @@
  * Date        : 2009-02-17
  * Description : resize image batch tool.
  *
- * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -62,11 +62,12 @@ public:
 public:
 
     explicit Private()
-      : labelPreset(nullptr),
-        useCustom(nullptr),
-        usePercent(nullptr),
-        customLength(nullptr),
-        presetCBox(nullptr),
+      : labelPreset   (nullptr),
+        useCustom     (nullptr),
+        scaleDown     (nullptr),
+        usePercent    (nullptr),
+        customLength  (nullptr),
+        presetCBox    (nullptr),
         changeSettings(true)
     {
     }
@@ -78,6 +79,7 @@ public:
     QLabel*       labelPreset;
 
     QCheckBox*    useCustom;
+    QCheckBox*    scaleDown;
     QCheckBox*    usePercent;
 
     DIntNumInput* customLength;
@@ -94,28 +96,40 @@ int Resize::Private::presetLengthValue(WidthPreset preset)
     switch (preset)
     {
         case Private::Tiny:
+        {
             length = 480;
             break;
+        }
 
         case Private::Small:
+        {
             length = 640;
             break;
+        }
 
         case Private::Medium:
+        {
             length = 800;
             break;
+        }
 
         case Private::Big:
+        {
             length = 1024;
             break;
+        }
 
         case Private::Large:
+        {
             length = 1280;
             break;
+        }
 
         default:   // Private::Huge
+        {
             length = 1600;
             break;
+        }
     }
 
     return length;
@@ -125,13 +139,18 @@ int Resize::Private::presetLengthValue(WidthPreset preset)
 
 Resize::Resize(QObject* const parent)
     : BatchTool(QLatin1String("Resize"), TransformTool, parent),
-      d(new Private)
+      d        (new Private)
 {
 }
 
 Resize::~Resize()
 {
     delete d;
+}
+
+BatchTool* Resize::clone(QObject* const parent) const
+{
+    return new Resize(parent);
 }
 
 void Resize::registerSettingsWidget()
@@ -146,8 +165,9 @@ void Resize::registerSettingsWidget()
     d->presetCBox->insertItem(Private::Large,  i18np("Large (1 pixel)",  "Large (%1 pixels)",  d->presetLengthValue(Private::Large)));
     d->presetCBox->insertItem(Private::Huge,   i18np("Huge (1 pixel)",   "Huge (%1 pixels)",   d->presetLengthValue(Private::Huge)));
 
-    d->useCustom        = new QCheckBox(i18n("Use Custom Length"), vbox);
-    d->usePercent       = new QCheckBox(i18n("Use Percentage"), vbox);
+    d->scaleDown        = new QCheckBox(i18n("Not enlarge small images"), vbox);
+    d->useCustom        = new QCheckBox(i18n("Use Custom Length"),        vbox);
+    d->usePercent       = new QCheckBox(i18n("Use Percentage"),           vbox);
     d->customLength     = new DIntNumInput(vbox);
     d->customLength->setSuffix(i18n(" Pixels"));
     d->customLength->setRange(10, 10000, 1);
@@ -167,6 +187,9 @@ void Resize::registerSettingsWidget()
     connect(d->useCustom, SIGNAL(toggled(bool)),
             this, SLOT(slotSettingsChanged()));
 
+    connect(d->scaleDown, SIGNAL(toggled(bool)),
+            this, SLOT(slotSettingsChanged()));
+
     connect(d->usePercent, SIGNAL(toggled(bool)),
             this, SLOT(slotPercentChanged()));
 
@@ -176,16 +199,19 @@ void Resize::registerSettingsWidget()
 BatchToolSettings Resize::defaultSettings()
 {
     BatchToolSettings settings;
+    settings.insert(QLatin1String("ScaleDown"),    false);
     settings.insert(QLatin1String("UseCustom"),    false);
     settings.insert(QLatin1String("UsePercent"),   false);
     settings.insert(QLatin1String("LengthCustom"), 1024);
     settings.insert(QLatin1String("LengthPreset"), Private::Medium);
+
     return settings;
 }
 
 void Resize::slotAssignSettings2Widget()
 {
     d->changeSettings = false;
+    d->scaleDown->setChecked(settings()[QLatin1String("ScaleDown")].toBool());
     d->useCustom->setChecked(settings()[QLatin1String("UseCustom")].toBool());
     d->usePercent->setChecked(settings()[QLatin1String("UsePercent")].toBool());
     d->customLength->setValue(settings()[QLatin1String("LengthCustom")].toInt());
@@ -203,6 +229,7 @@ void Resize::slotSettingsChanged()
     if (d->changeSettings)
     {
         BatchToolSettings settings;
+        settings.insert(QLatin1String("ScaleDown"),    d->scaleDown->isChecked());
         settings.insert(QLatin1String("UseCustom"),    d->useCustom->isChecked());
         settings.insert(QLatin1String("UsePercent"),   d->usePercent->isChecked());
         settings.insert(QLatin1String("LengthCustom"), d->customLength->value());
@@ -233,6 +260,7 @@ void Resize::slotPercentChanged()
 
 bool Resize::toolOperations()
 {
+    bool scaleDown              = settings()[QLatin1String("ScaleDown")].toBool();
     bool useCustom              = settings()[QLatin1String("UseCustom")].toBool();
     bool usePercent             = settings()[QLatin1String("UsePercent")].toBool();
     int length                  = settings()[QLatin1String("LengthCustom")].toInt();
@@ -243,28 +271,32 @@ bool Resize::toolOperations()
         return false;
     }
 
-    if (!useCustom)
+    int longest = qMax(image().width(), image().height());
+
+    if      (!useCustom)
     {
         length = d->presetLengthValue(preset);
     }
     else if (usePercent)
     {
-        int longest = qMax(image().width(), image().height());
-        length      = (int)(longest * (double)length / 100.0);
+        length = (int)(longest * (double)length / 100.0);
     }
 
-    QSize newSize(image().size());
-    newSize.scale(QSize(length, length), Qt::KeepAspectRatio);
-
-    if (!newSize.isValid())
+    if (!scaleDown || (longest > length))
     {
-        return false;
+        QSize newSize(image().size());
+        newSize.scale(QSize(length, length), Qt::KeepAspectRatio);
+
+        if (!newSize.isValid())
+        {
+            return false;
+        }
+
+        DImgBuiltinFilter filter(DImgBuiltinFilter::Resize, newSize);
+        applyFilter(&filter);
     }
 
-    DImgBuiltinFilter filter(DImgBuiltinFilter::Resize, newSize);
-    applyFilter(&filter);
-
-    return (savefromDImg());
+    return savefromDImg();
 }
 
 } // namespace DigikamBqmResizePlugin

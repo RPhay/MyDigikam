@@ -7,7 +7,7 @@
  * Description : a tool to export items to Google web services
  *
  * Copyright (C) 2007-2008 by Vardhman Jain <vardhman at gmail dot com>
- * Copyright (C) 2008-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2008-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2018      by Thanh Trung Dinh <dinhthanhtrung1996 at gmail dot com>
  *
  * This program is free software; you can redistribute it
@@ -48,7 +48,7 @@ class GPTalker : public GSTalkerBase
 public:
 
     explicit GPTalker(QWidget* const parent);
-    ~GPTalker();
+    ~GPTalker() override;
 
 public:
 
@@ -56,7 +56,7 @@ public:
 
     void    listAlbums(const QString& nextPageToken = QString());
     void    listPhotos(const QString& albumId,
-                       const QString& imgmax = QString());
+                       const QString& nextPageToken = QString());
 
     void    createAlbum(const GSFolder& newAlbum);
 
@@ -69,7 +69,6 @@ public:
                      int imageQuality);
     bool    updatePhoto(const QString& photoPath,
                         GSPhoto& info,
-                        //const QString& albumId,
                         bool rescale,
                         int maxDim,
                         int imageQuality);

@@ -7,7 +7,7 @@
  * Description : Integrated, multithread face detection / recognition
  *
  * Copyright (C) 2010-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2012-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -24,11 +24,6 @@
 
 #include "trainerworker.h"
 
-// KDE includes
-
-#include <ksharedconfig.h>
-#include <kconfiggroup.h>
-
 // Local includes
 
 #include "digikam_debug.h"
@@ -44,20 +39,30 @@ public:
     {
     }
 
-    ImageListProvider* newImages(const Identity& identity)
+    ~MapListTrainingDataProvider() override
+    {
+        qDeleteAll(imagesToTrain);
+        imagesToTrain.clear();
+    }
+
+    ImageListProvider* newImages(const Identity& identity) override
     {
         if (imagesToTrain.contains(identity.id()))
         {
-            QListImageListProvider& provider = imagesToTrain[identity.id()];
-            provider.reset();
+            QListImageListProvider* const provider = imagesToTrain.value(identity.id());
 
-            return &provider;
+            if (provider)
+            {
+                provider->reset();
+            }
+
+            return provider;
         }
 
         return &empty;
     }
 
-    ImageListProvider* images(const Identity&)
+    ImageListProvider* images(const Identity&) override
     {
         // Not implemented. Would be needed if we use a backend with a "holistic" approach that needs all images to train.
 
@@ -66,23 +71,16 @@ public:
 
 public:
 
-    EmptyImageListProvider            empty;
-    QMap<int, QListImageListProvider> imagesToTrain;
+    EmptyImageListProvider             empty;
+    QMap<int, QListImageListProvider*> imagesToTrain;
 };
 
 // ----------------------------------------------------------------------------------------
 
-TrainerWorker::TrainerWorker(FacePipeline::Private* const d)
-    : imageRetriever(d),
-      d(d)
+TrainerWorker::TrainerWorker(FacePipeline::Private* const dd)
+    : imageRetriever(dd),
+      d             (dd)
 {
-    KSharedConfig::Ptr config                    = KSharedConfig::openConfig();
-    KConfigGroup group                           = config->group(QLatin1String("Face Management Settings"));
-
-    RecognitionDatabase::RecognizeAlgorithm algo =
-            (RecognitionDatabase::RecognizeAlgorithm)group.readEntry(QLatin1String("Recognize Algorithm"),
-                                                                     (int)RecognitionDatabase::RecognizeAlgorithm::DNN);
-    database.activeFaceRecognizer(algo);
 }
 
 TrainerWorker::~TrainerWorker()
@@ -90,10 +88,14 @@ TrainerWorker::~TrainerWorker()
     wait();    // protect detector
 }
 
+/**
+ * TODO: investigate this method
+ */
 void TrainerWorker::process(FacePipelineExtendedPackage::Ptr package)
 {
-    //qCDebug(DIGIKAM_GENERAL_LOG) << "TrainerWorker: processing one package";
-
+/*
+    qCDebug(DIGIKAM_GENERAL_LOG) << "TrainerWorker: processing one package";
+*/
     // Get a list of faces with type FaceForTraining (probably type is ConfirmedFace)
 
     QList<FaceTagsIface> toTrain;
@@ -109,9 +111,9 @@ void TrainerWorker::process(FacePipelineExtendedPackage::Ptr package)
             dbFace.setType(FaceTagsIface::FaceForTraining);
             toTrain << dbFace;
 
-            Identity identity    = utils.identityForTag(dbFace.tagId(), database);
+            Identity identity    = utils.identityForTag(dbFace.tagId(), recognizer);
 
-            identities  << identity.id();
+            identities << identity.id();
 
             if (!identitySet.contains(identity))
             {
@@ -122,7 +124,7 @@ void TrainerWorker::process(FacePipelineExtendedPackage::Ptr package)
 
     if (!toTrain.isEmpty())
     {
-        QList<QImage> images;
+        QList<QImage*> images;
 
         if (package->image.isNull())
         {
@@ -139,10 +141,14 @@ void TrainerWorker::process(FacePipelineExtendedPackage::Ptr package)
 
         for (int i = 0 ; i < toTrain.size() ; ++i)
         {
-            provider.imagesToTrain[identities[i]].list << images[i];
+            QListImageListProvider* const imageList = new QListImageListProvider;
+            imageList->setImages(QList<QImage*>() << images[i]);
+            provider.imagesToTrain[identities[i]] = imageList;
         }
 
-        database.train(identitySet, &provider, QLatin1String("digikam"));
+        // NOTE: cropped faces will be deleted by training provider
+
+        recognizer.train(identitySet, &provider, QLatin1String("digikam"));
     }
 
     utils.removeFaces(toTrain);

@@ -48,15 +48,15 @@ class ShowHideVersionsOverlay : public HoverButtonDelegateOverlay
 public:
 
     explicit ShowHideVersionsOverlay(QObject* const parent);
-    virtual void setActive(bool active);
+    void setActive(bool active)                     override;
 
     void setSettings(const VersionManagerSettings& settings);
 
 protected:
 
-    virtual ItemViewHoverButton* createButton();
-    virtual void updateButton(const QModelIndex& index);
-    virtual bool checkIndex(const QModelIndex& index) const;
+    ItemViewHoverButton* createButton()             override;
+    void updateButton(const QModelIndex& index)     override;
+    bool checkIndex(const QModelIndex& index) const override;
 
 protected Q_SLOTS:
 
@@ -80,7 +80,7 @@ public:
                                    const QIcon& icon,
                                    const QString& text,
                                    const QString& tip = QString());
-    virtual void setActive(bool active);
+    void setActive(bool active)                     override;
 
     void setReferenceModel(const ItemModel* model);
 
@@ -90,9 +90,9 @@ Q_SIGNALS:
 
 protected:
 
-    virtual ItemViewHoverButton* createButton();
-    virtual void updateButton(const QModelIndex& index);
-    virtual bool checkIndex(const QModelIndex& index) const;
+    ItemViewHoverButton* createButton()             override;
+    void updateButton(const QModelIndex& index)     override;
+    bool checkIndex(const QModelIndex& index) const override;
 
 protected Q_SLOTS:
 
@@ -101,7 +101,7 @@ protected Q_SLOTS:
 protected:
 
     class Button;
-    Button* button() const;
+    Button* button()                          const;
 
 protected:
 

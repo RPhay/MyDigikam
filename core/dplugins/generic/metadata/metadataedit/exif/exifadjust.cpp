@@ -6,7 +6,7 @@
  * Date        : 2006-10-18
  * Description : EXIF adjustments settings page.
  *
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -238,15 +238,15 @@ EXIFAdjust::~EXIFAdjust()
 void EXIFAdjust::readMetadata(QByteArray& exifData)
 {
     blockSignals(true);
-    DMetadata meta;
-    meta.setExif(exifData);
+    QScopedPointer<DMetadata> meta(new DMetadata);
+    meta->setExif(exifData);
     long int num=1, den=1;
     long     val=0;
 
     d->brightnessEdit->setValue(0.0);
     d->brightnessCheck->setChecked(false);
 
-    if (meta.getExifTagRational("Exif.Photo.BrightnessValue", num, den))
+    if (meta->getExifTagRational("Exif.Photo.BrightnessValue", num, den))
     {
         d->brightnessEdit->setValue((double)(num) / (double)(den));
         d->brightnessCheck->setChecked(true);
@@ -257,7 +257,7 @@ void EXIFAdjust::readMetadata(QByteArray& exifData)
     d->gainControlCB->setCurrentIndex(0);
     d->gainControlCheck->setChecked(false);
 
-    if (meta.getExifTagLong("Exif.Photo.GainControl", val))
+    if (meta->getExifTagLong("Exif.Photo.GainControl", val))
     {
         if (val >= 0 && val <= 4)
         {
@@ -273,7 +273,7 @@ void EXIFAdjust::readMetadata(QByteArray& exifData)
     d->contrastCB->setCurrentIndex(0);
     d->contrastCheck->setChecked(false);
 
-    if (meta.getExifTagLong("Exif.Photo.Contrast", val))
+    if (meta->getExifTagLong("Exif.Photo.Contrast", val))
     {
         if (val >= 0 && val <= 2)
         {
@@ -289,7 +289,7 @@ void EXIFAdjust::readMetadata(QByteArray& exifData)
     d->saturationCB->setCurrentIndex(0);
     d->saturationCheck->setChecked(false);
 
-    if (meta.getExifTagLong("Exif.Photo.Saturation", val))
+    if (meta->getExifTagLong("Exif.Photo.Saturation", val))
     {
         if (val >= 0 && val <= 2)
         {
@@ -305,7 +305,7 @@ void EXIFAdjust::readMetadata(QByteArray& exifData)
     d->sharpnessCB->setCurrentIndex(0);
     d->sharpnessCheck->setChecked(false);
 
-    if (meta.getExifTagLong("Exif.Photo.Sharpness", val))
+    if (meta->getExifTagLong("Exif.Photo.Sharpness", val))
     {
         if (val >= 0 && val <= 2)
         {
@@ -321,7 +321,7 @@ void EXIFAdjust::readMetadata(QByteArray& exifData)
     d->customRenderedCB->setCurrentIndex(0);
     d->customRenderedCheck->setChecked(false);
 
-    if (meta.getExifTagLong("Exif.Photo.CustomRendered", val))
+    if (meta->getExifTagLong("Exif.Photo.CustomRendered", val))
     {
         if (val >= 0 && val <= 1)
         {
@@ -339,44 +339,44 @@ void EXIFAdjust::readMetadata(QByteArray& exifData)
 
 void EXIFAdjust::applyMetadata(QByteArray& exifData)
 {
-    DMetadata meta;
-    meta.setExif(exifData);
+    QScopedPointer<DMetadata> meta(new DMetadata);
+    meta->setExif(exifData);
     long int num=1, den=1;
 
     if (d->brightnessCheck->isChecked())
     {
-        meta.convertToRational(d->brightnessEdit->value(), &num, &den, 1);
-        meta.setExifTagRational("Exif.Photo.BrightnessValue", num, den);
+        meta->convertToRational(d->brightnessEdit->value(), &num, &den, 1);
+        meta->setExifTagRational("Exif.Photo.BrightnessValue", num, den);
     }
     else
-        meta.removeExifTag("Exif.Photo.BrightnessValue");
+        meta->removeExifTag("Exif.Photo.BrightnessValue");
 
     if (d->gainControlCheck->isChecked())
-        meta.setExifTagLong("Exif.Photo.GainControl", d->gainControlCB->currentIndex());
+        meta->setExifTagLong("Exif.Photo.GainControl", d->gainControlCB->currentIndex());
     else if (d->gainControlCheck->isValid())
-        meta.removeExifTag("Exif.Photo.GainControl");
+        meta->removeExifTag("Exif.Photo.GainControl");
 
     if (d->contrastCheck->isChecked())
-        meta.setExifTagLong("Exif.Photo.Contrast", d->contrastCB->currentIndex());
+        meta->setExifTagLong("Exif.Photo.Contrast", d->contrastCB->currentIndex());
     else if (d->contrastCheck->isValid())
-        meta.removeExifTag("Exif.Photo.Contrast");
+        meta->removeExifTag("Exif.Photo.Contrast");
 
     if (d->saturationCheck->isChecked())
-        meta.setExifTagLong("Exif.Photo.Saturation", d->saturationCB->currentIndex());
+        meta->setExifTagLong("Exif.Photo.Saturation", d->saturationCB->currentIndex());
     else if (d->saturationCheck->isValid())
-        meta.removeExifTag("Exif.Photo.Saturation");
+        meta->removeExifTag("Exif.Photo.Saturation");
 
     if (d->sharpnessCheck->isChecked())
-        meta.setExifTagLong("Exif.Photo.Sharpness", d->sharpnessCB->currentIndex());
+        meta->setExifTagLong("Exif.Photo.Sharpness", d->sharpnessCB->currentIndex());
     else if (d->sharpnessCheck->isValid())
-        meta.removeExifTag("Exif.Photo.Sharpness");
+        meta->removeExifTag("Exif.Photo.Sharpness");
 
     if (d->customRenderedCheck->isChecked())
-        meta.setExifTagLong("Exif.Photo.CustomRendered", d->customRenderedCB->currentIndex());
+        meta->setExifTagLong("Exif.Photo.CustomRendered", d->customRenderedCB->currentIndex());
     else if (d->customRenderedCheck->isValid())
-        meta.removeExifTag("Exif.Photo.CustomRendered");
+        meta->removeExifTag("Exif.Photo.CustomRendered");
 
-    exifData = meta.getExifEncoded();
+    exifData = meta->getExifEncoded();
 }
 
 } // namespace DigikamGenericMetadataEditPlugin

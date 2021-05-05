@@ -6,7 +6,7 @@
  * Date        : 2009-02-06
  * Description : Thread actions task.
  *
- * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2012      by Pankaj Kumar <me at panks dot me>
  *
  * This program is free software; you can redistribute it
@@ -52,7 +52,7 @@ public:
 
     explicit Private()
       : cancel(false),
-        tool(nullptr)
+        tool  (nullptr)
     {
     }
 
@@ -68,7 +68,7 @@ public:
 
 Task::Task()
     : ActionJob(),
-      d(new Private)
+      d        (new Private)
 {
 }
 
@@ -140,6 +140,7 @@ void Task::run()
     QUrl        outUrl  = d->tools.m_itemUrl;
     QUrl        workUrl = !d->settings.useOrgAlbum ? d->settings.workingUrl
                                                    : d->tools.m_itemUrl.adjusted(QUrl::RemoveFilename);
+    workUrl             = workUrl.adjusted(QUrl::StripTrailingSlash);
     QUrl        inUrl;
     QList<QUrl> tmp2del;
     DImg        tmpImage;
@@ -148,11 +149,25 @@ void Task::run()
     // ItemInfo must be tread-safe.
 
     ItemInfo source = ItemInfo::fromUrl(d->tools.m_itemUrl);
-    bool timeAdjust  = false;
+    bool timeAdjust = false;
 
     foreach (const BatchToolSet& set, d->tools.m_toolsList)
     {
-        d->tool     = BatchToolsFactory::instance()->findTool(set.name, set.group)->clone();
+        BatchTool* const tool = BatchToolsFactory::instance()->findTool(set.name, set.group);
+
+        if (!tool)
+        {
+            emitActionData(ActionData::BatchFailed, i18n("Failed to find tool..."));
+            removeTempFiles(tmp2del);
+            emit signalDone();
+            return;
+        }
+
+        d->tool               = tool->clone();
+        d->tool->setToolIcon(tool->toolIcon());
+        d->tool->setToolTitle(tool->toolTitle());
+        d->tool->setToolDescription(tool->toolDescription());
+
         timeAdjust |= (set.name == QLatin1String("TimeAdjust"));
         inUrl       = outUrl;
         index       = set.index + 1;
@@ -223,8 +238,8 @@ void Task::run()
 
     // Move processed temp file to target
 
-    QUrl dest = workUrl.adjusted(QUrl::RemoveFilename);
-    dest.setPath(dest.path() + d->tools.m_destFileName);
+    QUrl dest = workUrl;
+    dest.setPath(dest.path() + QLatin1Char('/') + d->tools.m_destFileName);
     QString renameMess;
 
     if (QFileInfo::exists(dest.toLocalFile()))

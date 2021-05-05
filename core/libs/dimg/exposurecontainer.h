@@ -6,7 +6,7 @@
  * Date        : 2007-01-12
  * Description : exposure indicator settings container.
  *
- * Copyright (C) 2007-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2007-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -42,12 +42,12 @@ public:
 
     explicit ExposureSettingsContainer()
         : underExposureIndicator(false),
-          overExposureIndicator(false),
-          exposureIndicatorMode(true),
-          underExposurePercent(1.0),
-          overExposurePercent(1.0),
-          underExposureColor(Qt::white),
-          overExposureColor(Qt::black)
+          overExposureIndicator (false),
+          exposureIndicatorMode (true),
+          underExposurePercent  (1.0),
+          overExposurePercent   (1.0),
+          underExposureColor    (Qt::white),
+          overExposureColor     (Qt::black)
     {
     };
 
@@ -73,6 +73,10 @@ public:
 
     QColor underExposureColor;
     QColor overExposureColor;
+
+private:
+
+    Q_DISABLE_COPY(ExposureSettingsContainer)
 };
 
 } // namespace Digikam

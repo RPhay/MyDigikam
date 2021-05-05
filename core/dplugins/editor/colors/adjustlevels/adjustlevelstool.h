@@ -6,7 +6,7 @@
  * Date        : 2004-07-20
  * Description : image histogram adjust levels.
  *
- * Copyright (C) 2004-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2004-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -41,17 +41,17 @@ class AdjustLevelsTool : public EditorToolThreaded
 public:
 
     explicit AdjustLevelsTool(QObject* const parent);
-    ~AdjustLevelsTool();
+    ~AdjustLevelsTool()                     override;
 
 private Q_SLOTS:
 
-    void slotSaveAsSettings();
-    void slotLoadSettings();
-    void slotResetSettings();
+    void slotSaveAsSettings()               override;
+    void slotLoadSettings()                 override;
+    void slotResetSettings()                override;
     void slotResetCurrentChannel();
     void slotAutoLevels();
-    void slotChannelChanged();
-    void slotScaleChanged();
+    void slotChannelChanged()               override;
+    void slotScaleChanged()                 override;
     void slotAdjustSliders();
     void slotGammaInputchanged(double val);
     void slotAdjustMinInputSpinBox(double val);
@@ -66,17 +66,17 @@ private Q_SLOTS:
 
 private:
 
-    void readSettings();
-    void writeSettings();
-    void preparePreview();
-    void prepareFinal();
+    void readSettings()                     override;
+    void writeSettings()                    override;
+    void preparePreview()                   override;
+    void prepareFinal()                     override;
     void abortPreview();
-    void setPreviewImage();
-    void setFinalImage();
+    void setPreviewImage()                  override;
+    void setFinalImage()                    override;
 
     void adjustSliders(int minIn, double gamIn, int maxIn, int minOut, int maxOut);
     void adjustSlidersAndSpinboxes(int minIn, double gamIn, int maxIn, int minOut, int maxOut);
-    bool eventFilter(QObject*, QEvent*);
+    bool eventFilter(QObject*, QEvent*)     override;
 
 private:
 

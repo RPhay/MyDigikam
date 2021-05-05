@@ -6,7 +6,7 @@
  * Date        : 2009-11-03
  * Description : A dialog base class which can handle multiple pages.
  *
- * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 1999-2001 by Mirko Boehm <mirko at kde dot org>
  * Copyright (C) 1999-2001 by Espen Sand <espen at kde dot org>
  * Copyright (C) 1999-2001 by Holger Freyther <freyther at kde dot org>
@@ -43,9 +43,9 @@ class Q_DECL_HIDDEN DConfigDlgPrivate
 protected:
 
     explicit DConfigDlgPrivate(DConfigDlg* const parent)
-        : q_ptr(parent),
+        : q_ptr      (parent),
           mPageWidget(nullptr),
-          mButtonBox(nullptr)
+          mButtonBox (nullptr)
     {
     }
 
@@ -93,13 +93,17 @@ protected:
     DConfigDlg* const q_ptr;
     DConfigDlgWdg*    mPageWidget;
     QDialogButtonBox* mButtonBox;
+
+private:
+
+    Q_DISABLE_COPY(DConfigDlgPrivate)
 };
 
 // ------------------------------------------------------------------------
 
 DConfigDlg::DConfigDlg(QWidget* const parent, Qt::WindowFlags flags)
     : QDialog(parent, flags),
-      d_ptr(new DConfigDlgPrivate(this))
+      d_ptr  (new DConfigDlgPrivate(this))
 {
     Q_D(DConfigDlg);
     d->mPageWidget = new DConfigDlgWdg(this);
@@ -114,7 +118,7 @@ DConfigDlg::DConfigDlg(QWidget* const parent, Qt::WindowFlags flags)
 
 DConfigDlg::DConfigDlg(DConfigDlgWdg* const widget, QWidget* const parent, Qt::WindowFlags flags)
     : QDialog(parent, flags),
-      d_ptr(new DConfigDlgPrivate(this))
+      d_ptr  (new DConfigDlgPrivate(this))
 {
     Q_D(DConfigDlg);
     Q_ASSERT(widget);
@@ -129,7 +133,7 @@ DConfigDlg::DConfigDlg(DConfigDlgWdg* const widget, QWidget* const parent, Qt::W
 
 DConfigDlg::DConfigDlg(DConfigDlgPrivate& dd, DConfigDlgWdg* const widget, QWidget* const parent, Qt::WindowFlags flags)
     : QDialog(parent, flags),
-      d_ptr(&dd)
+      d_ptr  (&dd)
 {
     Q_D(DConfigDlg);
 

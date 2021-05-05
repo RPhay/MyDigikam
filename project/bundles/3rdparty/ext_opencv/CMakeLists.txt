@@ -1,6 +1,6 @@
 # Script to build OpenCV for digiKam bundle.
 #
-# Copyright (c) 2015-2020 by Gilles Caulier  <caulier dot gilles at gmail dot com>
+# Copyright (c) 2015-2021 by Gilles Caulier  <caulier dot gilles at gmail dot com>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
@@ -32,11 +32,11 @@ set(Opencv_Conf -DBUILD_EXAMPLES=OFF
                 -DBUILD_opencv_python2=OFF
                 -DBUILD_opencv_python3=OFF
                 -DBUILD_opencv_python_bindings_generator=OFF
-                -DBUILD_opencv_ml=OFF
-                -DBUILD_opencv_shape=OFF
-                -DBUILD_opencv_highgui=OFF
-                -DBUILD_opencv_superres=OFF
-                -DBUILD_opencv_stitching=OFF
+                -DBUILD_opencv_ml=ON
+                -DBUILD_opencv_shape=ON
+                -DBUILD_opencv_highgui=ON
+                -DBUILD_opencv_superres=ON
+                -DBUILD_opencv_stitching=ON
                 -DBUILD_opencv_videostab=OFF
                 -DBUILD_opencv_videoio=OFF
                 -DBUILD_opencv_video=OFF
@@ -58,6 +58,7 @@ set(Opencv_Conf -DBUILD_EXAMPLES=OFF
                 -DWITH_OPENEXR=OFF
                 -DWITH_OPENNI=OFF
                 -DWITH_OPENMP=OFF
+                -DWITH_OPENJPEG=OFF
                 -DWITH_PNG=OFF
                 -DWITH_PVAPI=OFF
                 -DWITH_WIN32UI=OFF
@@ -96,8 +97,8 @@ if(MINGW)
 
     ExternalProject_Add(ext_opencv
 
-        URL https://github.com/opencv/opencv/archive/3.4.9.tar.gz
-        URL_MD5 013936f80fa8536486f2ed8ef3808aa3
+        GIT_REPOSITORY https://github.com/opencv/opencv.git
+        GIT_TAG 4.5.1
 
         CMAKE_ARGS -DCMAKE_BUILD_TYPE=${GLOBAL_BUILD_TYPE}
                    -DCMAKE_TOOLCHAIN_FILE=${MXE_TOOLCHAIN}
@@ -110,21 +111,13 @@ if(MINGW)
         ALWAYS 0
     )
 
-    ExternalProject_Add_step(ext_opencv before_download
-
-        # Note : under MXE, in case of curl is not compiled with https support,
-        # we cannot download the tarball as under Linux/MacOS.
-#        COMMAND wget -N https://github.com/opencv/opencv/archive/3.4.1.tar.gz -O ${EXTERNALS_DOWNLOAD_DIR}/3.4.1.zip
-#        DEPENDERS download
-    )
-
 elseif(APPLE)
 
     ExternalProject_Add(ext_opencv
         DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
 
-        URL https://github.com/opencv/opencv/archive/3.4.9.tar.gz
-        URL_MD5 013936f80fa8536486f2ed8ef3808aa3
+        GIT_REPOSITORY https://github.com/opencv/opencv.git
+        GIT_TAG 4.5.1
 
         CONFIGURE_COMMAND cp ${CMAKE_CURRENT_SOURCE_DIR}/../../../../bootstrap.macports <SOURCE_DIR>/. &&
                           <SOURCE_DIR>/bootstrap.macports ${EXTPREFIX_opencv} RelWithDebInfo x86_64 "${BASH_OPTIONS}"
@@ -144,11 +137,12 @@ else() #Linux
     ExternalProject_Add(ext_opencv
         DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
 
-        URL https://github.com/opencv/opencv/archive/3.4.9.tar.gz
-        URL_MD5 013936f80fa8536486f2ed8ef3808aa3
+        GIT_REPOSITORY https://github.com/opencv/opencv.git
+        GIT_TAG 4.5.1
 
         INSTALL_DIR ${EXTPREFIX_opencv}
 
+        # To fix broken compilation under Linux 32 bits
         PATCH_COMMAND ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/opencv-mmpause-linux.patch
 
         CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${EXTPREFIX_opencv}

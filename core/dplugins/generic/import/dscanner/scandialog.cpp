@@ -6,7 +6,7 @@
  * Date        : 2007-09-09
  * Description : scanner dialog
  *
- * Copyright (C) 2007-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2007-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -37,7 +37,6 @@
 
 // KDE includes
 
-#include <kconfig.h>
 #include <klocalizedstring.h>
 
 // LibKSane includes
@@ -60,9 +59,9 @@ class Q_DECL_HIDDEN ScanDialog::Private
 public:
 
     explicit Private()
+      : progress  (nullptr),
+        saneWidget(nullptr)
     {
-        progress   = nullptr;
-        saneWidget = nullptr;
     }
 
     QString            targetDir;
@@ -72,13 +71,13 @@ public:
 
 ScanDialog::ScanDialog(KSaneWidget* const saneWdg, QWidget* const parent)
     : DPluginDialog(parent, QLatin1String("Scan Tool Dialog")),
-      d(new Private)
+      d            (new Private)
 {
     setWindowTitle(i18n("Scan Image"));
     setModal(false);
 
-    d->saneWidget = saneWdg;
-    d->progress   = new StatusProgressBar(this);
+    d->saneWidget          = saneWdg;
+    d->progress            = new StatusProgressBar(this);
     d->progress->setProgressBarMode(StatusProgressBar::ProgressBarMode);
     d->progress->setProgressTotalSteps(100);
     d->progress->setNotify(true);
@@ -87,6 +86,7 @@ ScanDialog::ScanDialog(KSaneWidget* const saneWdg, QWidget* const parent)
     QVBoxLayout* const vbx = new QVBoxLayout(this);
     vbx->addWidget(d->saneWidget, 10);
     vbx->addWidget(d->progress);
+    vbx->addWidget(m_buttons);
     setLayout(vbx);
 
     // ------------------------------------------------------------------------
@@ -124,17 +124,19 @@ void ScanDialog::slotDialogFinished()
     d->saneWidget->closeDevice();
 }
 
+// cppcheck-suppress constParameter
 void ScanDialog::slotSaveImage(QByteArray& ksane_data, int width, int height, int bytes_per_line, int ksaneformat)
 {
     QStringList writableMimetypes;
     QList<QByteArray> supported = QImageWriter::supportedMimeTypes();
 
-    foreach (QByteArray mimeType, supported)
+    foreach (const QByteArray& mimeType, supported)
     {
         writableMimetypes.append(QLatin1String(mimeType));
     }
 
     // Put first class citizens at first place
+
     writableMimetypes.removeAll(QLatin1String("image/jpeg"));
     writableMimetypes.removeAll(QLatin1String("image/tiff"));
     writableMimetypes.removeAll(QLatin1String("image/png"));
@@ -154,19 +156,24 @@ void ScanDialog::slotSaveImage(QByteArray& ksane_data, int width, int height, in
     imageFileSaveDialog->selectFile(defaultFileName);
 
     // Start dialog and check if canceled.
-    if (imageFileSaveDialog->exec() != QDialog::Accepted)
+
+    imageFileSaveDialog->exec();
+
+    if (!imageFileSaveDialog || imageFileSaveDialog->selectedUrls().isEmpty())
     {
         delete imageFileSaveDialog;
+
         return;
     }
 
-    QUrl newURL = imageFileSaveDialog->selectedUrls().at(0);
+    QUrl newURL                  = imageFileSaveDialog->selectedUrls().first();
     QFileInfo fi(newURL.toLocalFile());
 
     // Parse name filter and extract file extension
+
     QString selectedFilterString = imageFileSaveDialog->selectedNameFilter();
     QLatin1String triggerString("*.");
-    int triggerPos = selectedFilterString.lastIndexOf(triggerString);
+    int triggerPos               = selectedFilterString.lastIndexOf(triggerString);
     QString format;
 
     if (triggerPos != -1)
@@ -177,6 +184,7 @@ void ScanDialog::slotSaveImage(QByteArray& ksane_data, int width, int height, in
     }
 
     // If name filter was selected, we guess image type using file extension.
+
     if (format.isEmpty())
     {
         format = fi.suffix().toUpper();
@@ -193,6 +201,7 @@ void ScanDialog::slotSaveImage(QByteArray& ksane_data, int width, int height, in
                                   i18n("The target image file format \"%1\" is unsupported.", format));
             qCWarning(DIGIKAM_DPLUGIN_GENERIC_LOG) << "target image file format " << format << " is unsupported!";
             delete imageFileSaveDialog;
+
             return;
         }
     }
@@ -205,6 +214,7 @@ void ScanDialog::slotSaveImage(QByteArray& ksane_data, int width, int height, in
                               QDir::toNativeSeparators(newURL.toLocalFile().section(QLatin1Char('/'), -2, -2))));
         qCWarning(DIGIKAM_DPLUGIN_GENERIC_LOG) << "target URL is not valid !";
         delete imageFileSaveDialog;
+
         return;
     }
 
@@ -222,6 +232,7 @@ void ScanDialog::slotSaveImage(QByteArray& ksane_data, int width, int height, in
         if (result != QMessageBox::Yes)
         {
             delete imageFileSaveDialog;
+
             return;
         }
     }
@@ -259,7 +270,7 @@ void ScanDialog::slotThreadDone(const QUrl& url, bool success)
         QMessageBox::critical(nullptr, i18n("File Not Saved"), i18n("Cannot save \"%1\" file", url.fileName()));
     }
 
-    d->progress->setProgressText(QLatin1String(""));
+    d->progress->setProgressText(QString());
     QApplication::restoreOverrideCursor();
     setEnabled(true);
 

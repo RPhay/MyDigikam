@@ -6,7 +6,7 @@
  * Date        : 2005-05-25
  * Description : lens distortion algorithm.
  *
- * Copyright (C) 2005-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2005-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2001-2003 by David Hodson <hodsond@acm.org>
  * Copyright (C) 2010      by Martin Klapetek <martin dot klapetek at gmail dot com>
  *
@@ -46,9 +46,9 @@ LensDistortionFilter::LensDistortionFilter(QObject* const parent)
     : DImgThreadedFilter(parent),
       m_centre_x(0),
       m_centre_y(0),
-      m_main(0.0),
-      m_edge(0.0),
-      m_rescale(0.0),
+      m_main    (0.0),
+      m_edge    (0.0),
+      m_rescale (0.0),
       m_brighten(0.0)
 {
     initFilter();
@@ -60,9 +60,9 @@ LensDistortionFilter::LensDistortionFilter(DImg* const orgImage, QObject* const 
     : DImgThreadedFilter(orgImage, parent, QLatin1String("LensDistortionFilter")),
       m_centre_x(center_x),
       m_centre_y(center_y),
-      m_main(main),
-      m_edge(edge),
-      m_rescale(rescale),
+      m_main    (main),
+      m_edge    (edge),
+      m_rescale (rescale),
       m_brighten(brighten)
 {
 

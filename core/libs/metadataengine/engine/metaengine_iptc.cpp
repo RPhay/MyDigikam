@@ -7,7 +7,7 @@
  * Description : Exiv2 library interface.
  *               Iptc manipulation methods.
  *
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2006-2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  *
  * This program is free software; you can redistribute it
@@ -27,6 +27,7 @@
 
 #include "metaengine_p.h"
 #include "digikam_debug.h"
+#include "digikam_config.h"
 
 #if defined(Q_CC_CLANG)
 #   pragma clang diagnostic push
@@ -42,20 +43,31 @@ bool MetaEngine::canWriteIptc(const QString& filePath)
 
     try
     {
-        Exiv2::Image::AutoPtr image = Exiv2::ImageFactory::open((const char*)
-                                      (QFile::encodeName(filePath).constData()));
 
-        Exiv2::AccessMode mode = image->checkMode(Exiv2::mdIptc);
+#if defined Q_OS_WIN && defined EXV_UNICODE_PATH
+
+        Exiv2::Image::AutoPtr image = Exiv2::ImageFactory::open((const wchar_t*)filePath.utf16());
+
+#elif defined Q_OS_WIN
+
+        Exiv2::Image::AutoPtr image = Exiv2::ImageFactory::open(QFile::encodeName(filePath).constData());
+
+#else
+
+        Exiv2::Image::AutoPtr image = Exiv2::ImageFactory::open(filePath.toUtf8().constData());
+
+#endif
+
+        Exiv2::AccessMode mode      = image->checkMode(Exiv2::mdIptc);
 
         return ((mode == Exiv2::amWrite) || (mode == Exiv2::amReadWrite));
     }
-    catch(Exiv2::AnyError& e)
+    catch (Exiv2::AnyError& e)
     {
-        std::string s(e.what());
         qCCritical(DIGIKAM_METAENGINE_LOG) << "Cannot check Iptc access mode using Exiv2 (Error #"
-                                  << e.code() << ": " << s.c_str() << ")";
+                                           << e.code() << ": " << QString::fromStdString(e.what()) << ")";
     }
-    catch(...)
+    catch (...)
     {
         qCCritical(DIGIKAM_METAENGINE_LOG) << "Default exception from Exiv2";
     }
@@ -77,11 +89,11 @@ bool MetaEngine::clearIptc() const
         d->iptcMetadata().clear();
         return true;
     }
-    catch(Exiv2::AnyError& e)
+    catch (Exiv2::AnyError& e)
     {
         d->printExiv2ExceptionError(QLatin1String("Cannot clear Iptc data using Exiv2 "), e);
     }
-    catch(...)
+    catch (...)
     {
         qCCritical(DIGIKAM_METAENGINE_LOG) << "Default exception from Exiv2";
     }
@@ -112,10 +124,9 @@ QByteArray MetaEngine::getIptc(bool addIrbHeader) const
             QByteArray data((const char*)c2.pData_, c2.size_);
 
             return data;
-
         }
     }
-    catch(Exiv2::AnyError& e)
+    catch (Exiv2::AnyError& e)
     {
         if (!d->filePath.isEmpty())
         {
@@ -124,7 +135,7 @@ QByteArray MetaEngine::getIptc(bool addIrbHeader) const
 
         d->printExiv2ExceptionError(QLatin1String("Cannot get Iptc data using Exiv2 "), e);
     }
-    catch(...)
+    catch (...)
     {
         qCCritical(DIGIKAM_METAENGINE_LOG) << "Default exception from Exiv2";
     }
@@ -144,7 +155,7 @@ bool MetaEngine::setIptc(const QByteArray& data) const
             return (!d->iptcMetadata().empty());
         }
     }
-    catch(Exiv2::AnyError& e)
+    catch (Exiv2::AnyError& e)
     {
         if (!d->filePath.isEmpty())
         {
@@ -153,7 +164,7 @@ bool MetaEngine::setIptc(const QByteArray& data) const
 
         d->printExiv2ExceptionError(QLatin1String("Cannot set Iptc data using Exiv2 "), e);
     }
-    catch(...)
+    catch (...)
     {
         qCCritical(DIGIKAM_METAENGINE_LOG) << "Default exception from Exiv2";
     }
@@ -178,15 +189,9 @@ MetaEngine::MetaDataMap MetaEngine::getIptcTagsDataList(const QStringList& iptcK
         QString     ifDItemName;
         MetaDataMap metaDataMap;
 
-        for (Exiv2::IptcData::const_iterator md = iptcData.begin(); md != iptcData.end(); ++md)
+        for (Exiv2::IptcData::const_iterator md = iptcData.begin() ; md != iptcData.end() ; ++md)
         {
-            QString key = QString::fromLocal8Bit(md->key().c_str());
-
-            // Decode the tag value with a user friendly output.
-
-            std::ostringstream os;
-            os << *md;
-
+            QString key = QString::fromStdString(md->key());
             QString value;
 
             if (key == QLatin1String("Iptc.Envelope.CharacterSet"))
@@ -195,7 +200,7 @@ MetaEngine::MetaDataMap MetaEngine::getIptcTagsDataList(const QStringList& iptcK
             }
             else
             {
-                value = QString::fromUtf8(os.str().c_str());
+                value = d->extractIptcTagString(iptcData, *md);
             }
 
             // To make a string just on one line.
@@ -267,7 +272,7 @@ MetaEngine::MetaDataMap MetaEngine::getIptcTagsDataList(const QStringList& iptcK
     {
         d->printExiv2ExceptionError(QLatin1String("Cannot parse Iptc metadata using Exiv2 "), e);
     }
-    catch(...)
+    catch (...)
     {
         qCCritical(DIGIKAM_METAENGINE_LOG) << "Default exception from Exiv2";
     }
@@ -284,13 +289,13 @@ QString MetaEngine::getIptcTagTitle(const char* iptcTagName)
         std::string iptckey(iptcTagName);
         Exiv2::IptcKey ik(iptckey);
 
-        return QString::fromLocal8Bit( Exiv2::IptcDataSets::dataSetTitle(ik.tag(), ik.record()) );
+        return QString::fromLocal8Bit(Exiv2::IptcDataSets::dataSetTitle(ik.tag(), ik.record()));
     }
     catch (Exiv2::AnyError& e)
     {
         d->printExiv2ExceptionError(QLatin1String("Cannot get metadata tag title using Exiv2 "), e);
     }
-    catch(...)
+    catch (...)
     {
         qCCritical(DIGIKAM_METAENGINE_LOG) << "Default exception from Exiv2";
     }
@@ -307,13 +312,13 @@ QString MetaEngine::getIptcTagDescription(const char* iptcTagName)
         std::string iptckey(iptcTagName);
         Exiv2::IptcKey ik(iptckey);
 
-        return QString::fromLocal8Bit( Exiv2::IptcDataSets::dataSetDesc(ik.tag(), ik.record()) );
+        return QString::fromLocal8Bit(Exiv2::IptcDataSets::dataSetDesc(ik.tag(), ik.record()));
     }
     catch (Exiv2::AnyError& e)
     {
         d->printExiv2ExceptionError(QLatin1String("Cannot get metadata tag description using Exiv2 "), e);
     }
-    catch(...)
+    catch (...)
     {
         qCCritical(DIGIKAM_METAENGINE_LOG) << "Default exception from Exiv2";
     }
@@ -332,7 +337,7 @@ bool MetaEngine::removeIptcTag(const char* iptcTagName) const
 
         while(it != d->iptcMetadata().end())
         {
-            QString key = QString::fromLocal8Bit(it->key().c_str());
+            QString key = QString::fromStdString(it->key());
 
             if (key == QLatin1String(iptcTagName))
             {
@@ -350,11 +355,11 @@ bool MetaEngine::removeIptcTag(const char* iptcTagName) const
             return true;
         }
     }
-    catch(Exiv2::AnyError& e)
+    catch (Exiv2::AnyError& e)
     {
         d->printExiv2ExceptionError(QLatin1String("Cannot remove Iptc tag using Exiv2 "), e);
     }
-    catch(...)
+    catch (...)
     {
         qCCritical(DIGIKAM_METAENGINE_LOG) << "Default exception from Exiv2";
     }
@@ -373,16 +378,16 @@ bool MetaEngine::setIptcTagData(const char* iptcTagName, const QByteArray& data)
 
     try
     {
-        Exiv2::DataValue val((Exiv2::byte *)data.data(), data.size());
+        Exiv2::DataValue val((Exiv2::byte*)data.data(), data.size());
         d->iptcMetadata()[iptcTagName] = val;
 
         return true;
     }
-    catch(Exiv2::AnyError& e)
+    catch (Exiv2::AnyError& e)
     {
         d->printExiv2ExceptionError(QLatin1String("Cannot set Iptc tag data into image using Exiv2 "), e);
     }
-    catch(...)
+    catch (...)
     {
         qCCritical(DIGIKAM_METAENGINE_LOG) << "Default exception from Exiv2";
     }
@@ -410,12 +415,12 @@ QByteArray MetaEngine::getIptcTagData(const char* iptcTagName) const
             return data;
         }
     }
-    catch(Exiv2::AnyError& e)
+    catch (Exiv2::AnyError& e)
     {
         d->printExiv2ExceptionError(QString::fromLatin1("Cannot find Iptc key '%1' into image using Exiv2 ")
                                     .arg(QLatin1String(iptcTagName)), e);
     }
-    catch(...)
+    catch (...)
     {
         qCCritical(DIGIKAM_METAENGINE_LOG) << "Default exception from Exiv2";
     }
@@ -432,12 +437,11 @@ QString MetaEngine::getIptcTagString(const char* iptcTagName, bool escapeCR) con
         Exiv2::IptcKey  iptcKey(iptcTagName);
         Exiv2::IptcData iptcData(d->iptcMetadata());
         Exiv2::IptcData::const_iterator it = iptcData.findKey(iptcKey);
+        QString charSet                    = QLatin1String(iptcData.detectCharset());
 
         if (it != iptcData.end())
         {
-            std::ostringstream os;
-            os << *it;
-            QString tagValue(QLatin1String(os.str().c_str()));
+            QString tagValue = d->extractIptcTagString(iptcData, *it);
 
             if (escapeCR)
             {
@@ -447,12 +451,12 @@ QString MetaEngine::getIptcTagString(const char* iptcTagName, bool escapeCR) con
             return tagValue;
         }
     }
-    catch(Exiv2::AnyError& e)
+    catch (Exiv2::AnyError& e)
     {
         d->printExiv2ExceptionError(QString::fromLatin1("Cannot find Iptc key '%1' into image using Exiv2 ")
                                     .arg(QLatin1String(iptcTagName)), e);
     }
-    catch(...)
+    catch (...)
     {
         qCCritical(DIGIKAM_METAENGINE_LOG) << "Default exception from Exiv2";
     }
@@ -466,7 +470,7 @@ bool MetaEngine::setIptcTagString(const char* iptcTagName, const QString& value)
 
     try
     {
-        d->iptcMetadata()[iptcTagName] = std::string(value.toUtf8().constData());
+        d->iptcMetadata()[iptcTagName] = value.toStdString();
 
         // Make sure we have set the charset to UTF-8
 
@@ -474,11 +478,11 @@ bool MetaEngine::setIptcTagString(const char* iptcTagName, const QString& value)
 
         return true;
     }
-    catch(Exiv2::AnyError& e)
+    catch (Exiv2::AnyError& e)
     {
         d->printExiv2ExceptionError(QLatin1String("Cannot set Iptc tag string into image using Exiv2 "), e);
     }
-    catch(...)
+    catch (...)
     {
         qCCritical(DIGIKAM_METAENGINE_LOG) << "Default exception from Exiv2";
     }
@@ -499,11 +503,11 @@ QStringList MetaEngine::getIptcTagsStringList(const char* iptcTagName, bool esca
 
             for (Exiv2::IptcData::const_iterator it = iptcData.begin() ; it != iptcData.end() ; ++it)
             {
-                QString key = QString::fromLocal8Bit(it->key().c_str());
+                QString key = QString::fromStdString(it->key());
 
                 if (key == QLatin1String(iptcTagName))
                 {
-                    QString tagValue = QString::fromUtf8(it->toString().c_str());
+                    QString tagValue = d->extractIptcTagString(iptcData, *it);
 
                     if (escapeCR)
                     {
@@ -517,12 +521,12 @@ QStringList MetaEngine::getIptcTagsStringList(const char* iptcTagName, bool esca
             return values;
         }
     }
-    catch(Exiv2::AnyError& e)
+    catch (Exiv2::AnyError& e)
     {
         d->printExiv2ExceptionError(QString::fromLatin1("Cannot find Iptc key '%1' into image using Exiv2 ")
                                     .arg(QLatin1String(iptcTagName)), e);
     }
-    catch(...)
+    catch (...)
     {
         qCCritical(DIGIKAM_METAENGINE_LOG) << "Default exception from Exiv2";
     }
@@ -541,7 +545,8 @@ bool MetaEngine::setIptcTagsStringList(const char* iptcTagName, int maxSize,
         QStringList oldvals = oldValues;
         QStringList newvals = newValues;
 
-        qCDebug(DIGIKAM_METAENGINE_LOG) << d->filePath.toLatin1().constData() << " : " << iptcTagName
+        qCDebug(DIGIKAM_METAENGINE_LOG) << d->filePath.toLatin1().constData()
+                                        << " : " << iptcTagName
                                         << " => " << newvals.join(QString::fromLatin1(",")).toLatin1().constData();
 
         // Remove all old values.
@@ -551,14 +556,13 @@ bool MetaEngine::setIptcTagsStringList(const char* iptcTagName, int maxSize,
 
         while (it2 != iptcData.end())
         {
-            QString key = QString::fromLocal8Bit(it2->key().c_str());
-            QString val = QString::fromUtf8(it2->toString().c_str());
+            QString key = QString::fromStdString(it2->key());
+            QString val = QString::fromStdString(it2->toString());
 
             // Also remove new values to avoid duplicates. They will be added again below.
 
             if ((key == QLatin1String(iptcTagName)) &&
-                (oldvals.contains(val) || newvals.contains(val))
-               )
+                (oldvals.contains(val) || newvals.contains(val)))
             {
                 it2 = iptcData.erase(it2);
             }
@@ -590,12 +594,12 @@ bool MetaEngine::setIptcTagsStringList(const char* iptcTagName, int maxSize,
 
         return true;
     }
-    catch(Exiv2::AnyError& e)
+    catch (Exiv2::AnyError& e)
     {
         d->printExiv2ExceptionError(QString::fromLatin1("Cannot set Iptc key '%1' into image using Exiv2 ")
                                     .arg(QLatin1String(iptcTagName)), e);
     }
-    catch(...)
+    catch (...)
     {
         qCCritical(DIGIKAM_METAENGINE_LOG) << "Default exception from Exiv2";
     }
@@ -616,25 +620,25 @@ QStringList MetaEngine::getIptcKeywords() const
 
             for (Exiv2::IptcData::const_iterator it = iptcData.begin() ; it != iptcData.end() ; ++it)
             {
-                QString key = QString::fromLocal8Bit(it->key().c_str());
+                QString key = QString::fromStdString(it->key());
 
                 if (key == QLatin1String("Iptc.Application2.Keywords"))
                 {
-                    QString val = QString::fromUtf8(it->toString().c_str());
+                    QString val = d->extractIptcTagString(iptcData, *it);
                     keywords.append(val);
                 }
             }
-
-            //qCDebug(DIGIKAM_METAENGINE_LOG) << d->filePath << " ==> Read Iptc Keywords: " << keywords;
-
+/*
+            qCDebug(DIGIKAM_METAENGINE_LOG) << d->filePath << " ==> Read Iptc Keywords: " << keywords;
+*/
             return keywords;
         }
     }
-    catch(Exiv2::AnyError& e)
+    catch (Exiv2::AnyError& e)
     {
         d->printExiv2ExceptionError(QLatin1String("Cannot get Iptc Keywords from image using Exiv2 "), e);
     }
-    catch(...)
+    catch (...)
     {
         qCCritical(DIGIKAM_METAENGINE_LOG) << "Default exception from Exiv2";
     }
@@ -660,8 +664,8 @@ bool MetaEngine::setIptcKeywords(const QStringList& oldKeywords, const QStringLi
 
         while (it2 != iptcData.end())
         {
-            QString key = QString::fromLocal8Bit(it2->key().c_str());
-            QString val = QString::fromUtf8(it2->toString().c_str());
+            QString key = QString::fromStdString(it2->key());
+            QString val = QString::fromStdString(it2->toString());       // FIXME: check charset
 
             // Also remove new keywords to avoid duplicates. They will be added again below.
 
@@ -699,11 +703,11 @@ bool MetaEngine::setIptcKeywords(const QStringList& oldKeywords, const QStringLi
 
         return true;
     }
-    catch(Exiv2::AnyError& e)
+    catch (Exiv2::AnyError& e)
     {
         d->printExiv2ExceptionError(QLatin1String("Cannot set Iptc Keywords into image using Exiv2 "), e);
     }
-    catch(...)
+    catch (...)
     {
         qCCritical(DIGIKAM_METAENGINE_LOG) << "Default exception from Exiv2";
     }
@@ -724,11 +728,12 @@ QStringList MetaEngine::getIptcSubjects() const
 
             for (Exiv2::IptcData::const_iterator it = iptcData.begin() ; it != iptcData.end() ; ++it)
             {
-                QString key = QString::fromLocal8Bit(it->key().c_str());
+                QString tagValue = d->extractIptcTagString(iptcData, *it);
+                QString key      = QString::fromStdString(it->key());
 
                 if (key == QLatin1String("Iptc.Application2.Subject"))
                 {
-                    QString val(QLatin1String(it->toString().c_str()));
+                    QString val = d->extractIptcTagString(iptcData, *it);
                     subjects.append(val);
                 }
             }
@@ -736,11 +741,11 @@ QStringList MetaEngine::getIptcSubjects() const
             return subjects;
         }
     }
-    catch(Exiv2::AnyError& e)
+    catch (Exiv2::AnyError& e)
     {
         d->printExiv2ExceptionError(QLatin1String("Cannot get Iptc Subjects from image using Exiv2 "), e);
     }
-    catch(...)
+    catch (...)
     {
         qCCritical(DIGIKAM_METAENGINE_LOG) << "Default exception from Exiv2";
     }
@@ -764,8 +769,8 @@ bool MetaEngine::setIptcSubjects(const QStringList& oldSubjects, const QStringLi
 
         while (it2 != iptcData.end())
         {
-            QString key = QString::fromLocal8Bit(it2->key().c_str());
-            QString val = QString::fromUtf8(it2->toString().c_str());
+            QString key = QString::fromStdString(it2->key());
+            QString val = QString::fromStdString(it2->toString());               // FIXME: check charset
 
             if (key == QLatin1String("Iptc.Application2.Subject") && oldDef.contains(val))
             {
@@ -799,11 +804,11 @@ bool MetaEngine::setIptcSubjects(const QStringList& oldSubjects, const QStringLi
 
         return true;
     }
-    catch(Exiv2::AnyError& e)
+    catch (Exiv2::AnyError& e)
     {
         d->printExiv2ExceptionError(QLatin1String("Cannot set Iptc Subjects into image using Exiv2 "), e);
     }
-    catch(...)
+    catch (...)
     {
         qCCritical(DIGIKAM_METAENGINE_LOG) << "Default exception from Exiv2";
     }
@@ -824,11 +829,11 @@ QStringList MetaEngine::getIptcSubCategories() const
 
             for (Exiv2::IptcData::const_iterator it = iptcData.begin() ; it != iptcData.end() ; ++it)
             {
-                QString key = QString::fromLocal8Bit(it->key().c_str());
+                QString key = QString::fromStdString(it->key());
 
                 if (key == QLatin1String("Iptc.Application2.SuppCategory"))
                 {
-                    QString val(QLatin1String(it->toString().c_str()));
+                    QString val = d->extractIptcTagString(iptcData, *it);
                     subCategories.append(val);
                 }
             }
@@ -836,11 +841,11 @@ QStringList MetaEngine::getIptcSubCategories() const
             return subCategories;
         }
     }
-    catch(Exiv2::AnyError& e)
+    catch (Exiv2::AnyError& e)
     {
         d->printExiv2ExceptionError(QLatin1String("Cannot get Iptc Sub Categories from image using Exiv2 "), e);
     }
-    catch(...)
+    catch (...)
     {
         qCCritical(DIGIKAM_METAENGINE_LOG) << "Default exception from Exiv2";
     }
@@ -854,8 +859,8 @@ bool MetaEngine::setIptcSubCategories(const QStringList& oldSubCategories, const
 
     try
     {
-        QStringList oldkeys = oldSubCategories;
-        QStringList newkeys = newSubCategories;
+        QStringList oldkeys           = oldSubCategories;
+        QStringList newkeys           = newSubCategories;
 
         // Remove all old Sub Categories.
 
@@ -864,8 +869,8 @@ bool MetaEngine::setIptcSubCategories(const QStringList& oldSubCategories, const
 
         while (it2 != iptcData.end())
         {
-            QString key = QString::fromLocal8Bit(it2->key().c_str());
-            QString val = QString::fromUtf8(it2->toString().c_str());
+            QString key = QString::fromStdString(it2->key());
+            QString val = QString::fromStdString(it2->toString());       // FIXME: check charset
 
             if ((key == QLatin1String("Iptc.Application2.SuppCategory")) && oldSubCategories.contains(val))
             {
@@ -900,11 +905,11 @@ bool MetaEngine::setIptcSubCategories(const QStringList& oldSubCategories, const
 
         return true;
     }
-    catch(Exiv2::AnyError& e)
+    catch (Exiv2::AnyError& e)
     {
         d->printExiv2ExceptionError(QLatin1String("Cannot set Iptc Sub Categories into image using Exiv2 "), e);
     }
-    catch(...)
+    catch (...)
     {
         qCCritical(DIGIKAM_METAENGINE_LOG) << "Default exception from Exiv2";
     }
@@ -928,7 +933,7 @@ MetaEngine::TagsMap MetaEngine::getIptcTagsList() const
         {
             do
             {
-                QString     key = QLatin1String( Exiv2::IptcKey( (*it)->number_, (*it)->recordId_ ).key().c_str() );
+                QString key = QLatin1String(Exiv2::IptcKey( (*it)->number_, (*it)->recordId_).key().c_str());
                 QStringList values;
                 values << QLatin1String((*it)->name_) << QLatin1String((*it)->title_) << QLatin1String((*it)->desc_);
                 tagsMap.insert(key, values);
@@ -939,11 +944,11 @@ MetaEngine::TagsMap MetaEngine::getIptcTagsList() const
 
         return tagsMap;
     }
-    catch(Exiv2::AnyError& e)
+    catch (Exiv2::AnyError& e)
     {
         d->printExiv2ExceptionError(QLatin1String("Cannot get Iptc Tags list using Exiv2 "), e);
     }
-    catch(...)
+    catch (...)
     {
         qCCritical(DIGIKAM_METAENGINE_LOG) << "Default exception from Exiv2";
     }

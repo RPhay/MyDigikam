@@ -6,7 +6,7 @@
  * Date        : 2006-01-03
  * Description : IO file Settings Container.
  *
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -38,18 +38,18 @@ class DIGIKAM_EXPORT IOFileSettings
 public:
 
     IOFileSettings()
-      : JPEGCompression(75),
-        JPEGSubSampling(1),    // Medium sub-sampling
-        PNGCompression(9),
-        TIFFCompression(false),
+      : JPEGCompression    (75),
+        JPEGSubSampling    (1),    // Medium sub-sampling
+        PNGCompression     (9),
+        TIFFCompression    (false),
         JPEG2000Compression(75),
-        JPEG2000LossLess(true),
-        PGFCompression(3),
-        PGFLossLess(true),
-        HEIFCompression(75),
-        HEIFLossLess(true),
-        useRAWImport(true),
-        rawImportToolIid(QLatin1String("org.kde.digikam.plugin.rawimport.Native"))
+        JPEG2000LossLess   (true),
+        PGFCompression     (3),
+        PGFLossLess        (true),
+        HEIFCompression    (75),
+        HEIFLossLess       (true),
+        useRAWImport       (true),
+        rawImportToolIid   (QLatin1String("org.kde.digikam.plugin.rawimport.Native"))
     {
     };
 
@@ -60,39 +60,39 @@ public:
 public:
 
     /// JPEG quality value.
-    int     JPEGCompression;
+    int          JPEGCompression;
 
     /// JPEG chroma sub-sampling value.
-    int     JPEGSubSampling;
+    int          JPEGSubSampling;
 
     /// PNG compression value.
-    int     PNGCompression;
+    int          PNGCompression;
 
     /// TIFF deflate compression.
-    bool    TIFFCompression;
+    bool         TIFFCompression;
 
     /// JPEG2000 quality value.
-    int     JPEG2000Compression;
+    int          JPEG2000Compression;
 
     /// JPEG2000 lossless compression.
-    bool    JPEG2000LossLess;
+    bool         JPEG2000LossLess;
 
     /// PGF quality value.
-    int     PGFCompression;
+    int          PGFCompression;
 
     /// PGF lossless compression.
-    bool    PGFLossLess;
+    bool         PGFLossLess;
 
     /// HEIF quality value.
-    int     HEIFCompression;
+    int          HEIFCompression;
 
     /// HEIF lossless compression.
-    bool    HEIFLossLess;
+    bool         HEIFLossLess;
 
     /// Use Raw Import tool to load a RAW picture.
-    bool    useRAWImport;
+    bool         useRAWImport;
 
-    QString rawImportToolIid;
+    QString      rawImportToolIid;
 
     /// RAW File decoding options.
     DRawDecoding rawDecodingSettings;

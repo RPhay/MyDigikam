@@ -6,7 +6,7 @@
  * Date        : 2007-11-07
  * Description : a tool to print images
  *
- * Copyright (C) 2007-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2007-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -54,14 +54,14 @@ class AdvPrintSettings
 
 public:
 
-    // Images selection mode
+    /// Images selection mode
     enum Selection
     {
         IMAGES = 0,
         ALBUMS
     };
 
-    // Print output destination, outside real printers configured
+    /// Print output destination, outside real printers configured
     enum Output
     {
         PDF = 0,
@@ -69,7 +69,7 @@ public:
         GIMP
     };
 
-    // Image format for Output::FILES
+    /// Image format for Output::FILES
     enum ImageFormat
     {
         JPEG = 0,
@@ -77,7 +77,7 @@ public:
         TIFF
     };
 
-    // Caption type to print over the images
+    /// Caption type to print over the images
     enum CaptionType
     {
         NONE = 0,
@@ -92,7 +92,7 @@ public:
     explicit AdvPrintSettings();
     ~AdvPrintSettings();
 
-    // Read and write settings in config file between sessions.
+    /// Read and write settings in config file between sessions.
     void readSettings(KConfigGroup& group);
     void writeSettings(KConfigGroup& group);
 
@@ -100,50 +100,50 @@ public:
     QString outputName(Output out)                   const;
     QRect*  getLayout(int photoIndex, int sizeIndex) const;
 
-    // Helper methods to fill combobox from GUI.
+    /// Helper methods to fill combobox from GUI.
     static QMap<Output,      QString> outputNames();
     static QMap<ImageFormat, QString> imageFormatNames();
     static QMap<CaptionType, QString> captionTypeNames();
 
 public:
 
-    Selection                         selMode;       // Items selection mode
+    Selection                         selMode;       ///< Items selection mode
 
     QList<QUrl>                       inputImages;
 
     QString                           printerName;
 
-    QSizeF                            pageSize;      // Page Size in mm
+    QSizeF                            pageSize;      ///< Page Size in mm
 
     QList<AdvPrintPhoto*>             photos;
     QList<AdvPrintPhotoSize*>         photosizes;
 
-    // Caption management.
+    /// Caption management.
     CaptionType                       captionType;
     QColor                            captionColor;
     QFont                             captionFont;
     int                               captionSize;
-    QString                           captionTxt;   // String use to customize caption with CUSTOM mode.
+    QString                           captionTxt;    ///< String use to customize caption with CUSTOM mode.
 
     int                               currentPreviewPage;
 
-    // Crop management
+    /// Crop management
     int                               currentCropPhoto;
     bool                              disableCrop;
 
-    // For Print to Gimp only
+    /// For Print to Gimp only
     QString                           tempPath;
     QStringList                       gimpFiles;
     QString                           gimpPath;
     QString                           savedPhotoSize;
 
-    // For print to image files only.
+    /// For print to image files only.
     ImageFormat                       imageFormat;
-    FileSaveConflictBox::ConflictRule conflictRule;  // Rule if output image files already exists.
-    QUrl                              outputDir;     // Directory where to store output images.
+    FileSaveConflictBox::ConflictRule conflictRule;  ///< Rule if output image files already exists.
+    QUrl                              outputDir;     ///< Directory where to store output images.
     bool                              openInFileBrowser;
 
-    // Generic data used by printing thread.
+    /// Generic data used by printing thread.
     AdvPrintPhotoSize*                outputLayouts;
     QPrinter*                         outputPrinter;
     QString                           outputPath;

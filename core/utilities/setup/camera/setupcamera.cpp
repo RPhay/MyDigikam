@@ -7,7 +7,7 @@
  * Description : camera setup tab.
  *
  * Copyright (C) 2003-2005 by Renchi Raju <renchi dot raju at gmail dot com>
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -79,12 +79,12 @@ public:
 
     explicit SetupCameraItem(QTreeWidget* const parent, CameraType* const ctype)
         : QTreeWidgetItem(parent),
-          m_ctype(nullptr)
+          m_ctype        (nullptr)
     {
         setCameraType(ctype);
     };
 
-    ~SetupCameraItem()
+    ~SetupCameraItem() override
     {
         delete m_ctype;
     };
@@ -112,6 +112,10 @@ public:
 private:
 
     CameraType* m_ctype;
+
+private:
+
+    Q_DISABLE_COPY(SetupCameraItem)
 };
 
 // -------------------------------------------------------------------
@@ -133,7 +137,7 @@ public:
 
 CameraAutoDetectThread::CameraAutoDetectThread(QObject* const parent)
     : DBusyThread(parent),
-      d(new Private)
+      d          (new Private)
 {
     d->result = -1;
 }
@@ -172,41 +176,41 @@ class Q_DECL_HIDDEN SetupCamera::Private
 public:
 
     explicit Private()
-      : addButton(nullptr),
-        removeButton(nullptr),
-        editButton(nullptr),
-        autoDetectButton(nullptr),
-        importAddButton(nullptr),
-        importRemoveButton(nullptr),
-        importEditButton(nullptr),
-        storeDiffButton(nullptr),
-        overwriteButton(nullptr),
-        skipFileButton(nullptr),
-        conflictButtonGroup(nullptr),
-        useFileMetadata(nullptr),
-        turnHighQualityThumbs(nullptr),
-        useDefaultTargetAlbum(nullptr),
-        iconShowNameBox(nullptr),
-        iconShowSizeBox(nullptr),
-        iconShowDateBox(nullptr),
-        iconShowResolutionBox(nullptr),
-        iconShowTagsBox(nullptr),
-        iconShowOverlaysBox(nullptr),
-        iconShowRatingBox(nullptr),
-        iconShowFormatBox(nullptr),
-        iconShowCoordinatesBox(nullptr),
-        previewLoadFullImageSize(nullptr),
-        previewItemsWhileDownload(nullptr),
-        previewShowIcons(nullptr),
-        leftClickActionComboBox(nullptr),
-        iconViewFontSelect(nullptr),
-        target1AlbumSelector(nullptr),
-        listView(nullptr),
-        importListView(nullptr),
-        tab(nullptr),
-        ignoreNamesEdit(nullptr),
-        ignoreExtensionsEdit(nullptr),
-        fullScreenSettings(nullptr)
+      : addButton                   (nullptr),
+        removeButton                (nullptr),
+        editButton                  (nullptr),
+        autoDetectButton            (nullptr),
+        importAddButton             (nullptr),
+        importRemoveButton          (nullptr),
+        importEditButton            (nullptr),
+        storeDiffButton             (nullptr),
+        overwriteButton             (nullptr),
+        skipFileButton              (nullptr),
+        conflictButtonGroup         (nullptr),
+        useFileMetadata             (nullptr),
+        turnHighQualityThumbs       (nullptr),
+        useDefaultTargetAlbum       (nullptr),
+        iconShowNameBox             (nullptr),
+        iconShowSizeBox             (nullptr),
+        iconShowDateBox             (nullptr),
+        iconShowResolutionBox       (nullptr),
+        iconShowTagsBox             (nullptr),
+        iconShowOverlaysBox         (nullptr),
+        iconShowRatingBox           (nullptr),
+        iconShowFormatBox           (nullptr),
+        iconShowCoordinatesBox      (nullptr),
+        previewLoadFullImageSize    (nullptr),
+        previewItemsWhileDownload   (nullptr),
+        previewShowIcons            (nullptr),
+        leftClickActionComboBox     (nullptr),
+        iconViewFontSelect          (nullptr),
+        target1AlbumSelector        (nullptr),
+        listView                    (nullptr),
+        importListView              (nullptr),
+        tab                         (nullptr),
+        ignoreNamesEdit             (nullptr),
+        ignoreExtensionsEdit        (nullptr),
+        fullScreenSettings          (nullptr)
     {
     }
 
@@ -279,7 +283,7 @@ const QString SetupCamera::Private::importFiltersConfigGroupName(QLatin1String("
 
 SetupCamera::SetupCamera(QWidget* const parent)
     : QScrollArea(parent),
-      d(new Private)
+      d          (new Private)
 {
     d->tab               = new QTabWidget(viewport());
     setWidget(d->tab);
@@ -301,10 +305,10 @@ SetupCamera::SetupCamera(QWidget* const parent)
                                    "via the Gphoto interface."));
 
     QStringList labels;
-    labels.append(i18n("Title"));
-    labels.append(i18n("Model"));
-    labels.append(i18n("Port"));
-    labels.append(i18n("Path"));
+    labels.append(i18nc("@title: camera title",      "Title"));
+    labels.append(i18nc("@title: camera model",      "Model"));
+    labels.append(i18nc("@title: camera port",       "Port"));
+    labels.append(i18nc("@title: camera mount path", "Path"));
     d->listView->setHeaderLabels(labels);
     d->listView->header()->setSectionResizeMode(0, QHeaderView::ResizeToContents);
     d->listView->header()->setSectionResizeMode(1, QHeaderView::Stretch);
@@ -332,7 +336,7 @@ SetupCamera::SetupCamera(QWidget* const parent)
     // -------------------------------------------------------------
 
     QSpacerItem* const spacer           = new QSpacerItem(20, 20, QSizePolicy::Minimum, QSizePolicy::Expanding);
-    DActiveLabel* const gphotoLogoLabel = new DActiveLabel(QUrl(QLatin1String("http://www.gphoto.org")),
+    DActiveLabel* const gphotoLogoLabel = new DActiveLabel(QUrl(QLatin1String("http://www.gphoto.org")),        // krazy:exclude=insecurenet
                                                            QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("digikam/data/logo-gphoto.png")),
                                                            panel);
     gphotoLogoLabel->setToolTip(i18n("Visit Gphoto project website"));
@@ -502,8 +506,9 @@ SetupCamera::SetupCamera(QWidget* const parent)
 
     QLabel* const leftClickLabel = new QLabel(i18n("Thumbnail click action:"), iconViewGroup);
     d->leftClickActionComboBox   = new QComboBox(iconViewGroup);
-    d->leftClickActionComboBox->addItem(i18n("Show embedded preview"), ImportSettings::ShowPreview);
-    d->leftClickActionComboBox->addItem(i18n("Start image editor"), ImportSettings::StartEditor);
+    d->leftClickActionComboBox->addItem(i18n("Show embedded preview"),         ImportSettings::ShowPreview);
+    d->leftClickActionComboBox->addItem(i18n("Start image editor"),            ImportSettings::StartEditor);
+    d->leftClickActionComboBox->addItem(i18n("Open With Default Application"), ImportSettings::OpenDefault);
     d->leftClickActionComboBox->setToolTip(i18n("Choose what should happen when you click on a thumbnail."));
 
     d->iconViewFontSelect = new DFontSelect(i18n("Icon View font:"), panel);
@@ -714,7 +719,7 @@ void SetupCamera::readSettings()
     d->iconShowCoordinatesBox->setChecked(settings->getIconShowCoordinates());
     d->iconViewFontSelect->setFont(settings->getIconViewFont());
 
-    d->leftClickActionComboBox->setCurrentIndex((int)settings->getItemLeftClickAction());
+    d->leftClickActionComboBox->setCurrentIndex(settings->getItemLeftClickAction());
 
     d->previewLoadFullImageSize->setChecked(settings->getPreviewLoadFullImageSize());
     d->previewItemsWhileDownload->setChecked(settings->getPreviewItemsWhileDownload());
@@ -805,9 +810,7 @@ void SetupCamera::applySettings()
     settings->setIconShowCoordinates(d->iconShowCoordinatesBox->isChecked());
     settings->setIconViewFont(d->iconViewFontSelect->font());
 
-    settings->setItemLeftClickAction((ImportSettings::ItemLeftClickAction)
-                                     d->leftClickActionComboBox->currentIndex());
-
+    settings->setItemLeftClickAction(d->leftClickActionComboBox->currentIndex());
     settings->setPreviewLoadFullImageSize(d->previewLoadFullImageSize->isChecked());
     settings->setPreviewItemsWhileDownload(d->previewItemsWhileDownload->isChecked());
     settings->setPreviewShowIcons(d->previewShowIcons->isChecked());

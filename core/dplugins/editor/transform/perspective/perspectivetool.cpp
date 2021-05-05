@@ -6,7 +6,7 @@
  * Date        : 2005-02-17
  * Description : a tool to change image perspective .
  *
- * Copyright (C) 2005-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2005-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2006-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  *
  * This program is free software; you can redistribute it
@@ -40,7 +40,7 @@
 
 #include <klocalizedstring.h>
 #include <ksharedconfig.h>
-#include "kconfiggroup.h"
+#include <kconfiggroup.h>
 
 // Local includes
 
@@ -58,17 +58,17 @@ class Q_DECL_HIDDEN PerspectiveTool::Private
 public:
 
     explicit Private()
-      : newWidthLabel(nullptr),
-        newHeightLabel(nullptr),
-        topLeftAngleLabel(nullptr),
-        topRightAngleLabel(nullptr),
-        bottomLeftAngleLabel(nullptr),
-        bottomRightAngleLabel(nullptr),
-        drawWhileMovingCheckBox(nullptr),
-        drawGridCheckBox(nullptr),
-        inverseTransformation(nullptr),
-        previewWidget(nullptr),
-        gboxSettings(nullptr)
+      : newWidthLabel           (nullptr),
+        newHeightLabel          (nullptr),
+        topLeftAngleLabel       (nullptr),
+        topRightAngleLabel      (nullptr),
+        bottomLeftAngleLabel    (nullptr),
+        bottomRightAngleLabel   (nullptr),
+        drawWhileMovingCheckBox (nullptr),
+        drawGridCheckBox        (nullptr),
+        inverseTransformation   (nullptr),
+        previewWidget           (nullptr),
+        gboxSettings            (nullptr)
     {
     }
 
@@ -101,7 +101,7 @@ const QString PerspectiveTool::Private::configInverseTransformationEntry(QLatin1
 
 PerspectiveTool::PerspectiveTool(QObject* const parent)
     : EditorTool(parent),
-      d(new Private)
+      d         (new Private)
 {
     setObjectName(QLatin1String("perspective"));
 
@@ -122,7 +122,7 @@ PerspectiveTool::PerspectiveTool(QObject* const parent)
     QString temp;
     ImageIface iface;
 
-    d->gboxSettings = new EditorToolSettings(nullptr);
+    d->gboxSettings      = new EditorToolSettings(nullptr);
     d->gboxSettings->setTools(EditorToolSettings::ColorGuide);
 
     // -------------------------------------------------------------

@@ -1,6 +1,6 @@
 /* -*- C++ -*-
  * File: libraw.h
- * Copyright 2008-2019 LibRaw LLC (info@libraw.org)
+ * Copyright 2008-2021 LibRaw LLC (info@libraw.org)
  * Created: Sat Mar  8, 2008
  *
  * LibRaw C++ interface
@@ -24,8 +24,19 @@ it under the terms of the one of two licenses as you choose:
 #define _FILE_OFFSET_BITS 64
 #endif
 
+// Enable use old cinema cameras if USE_OLD_VIDEOCAMS defined
+#ifdef USE_OLD_VIDEOCAMS
+#define LIBRAW_OLD_VIDEO_SUPPORT
+#endif
+
+#ifndef LIBRAW_USE_DEPRECATED_IOSTREAMS_DATASTREAM
+#define LIBRAW_NO_IOSTREAMS_DATASTREAM
+#endif
+
+#ifndef LIBRAW_NO_IOSTREAMS_DATASTREAM
 /* maximum file size to use LibRaw_file_datastream (fully buffered) I/O */
 #define LIBRAW_USE_STREAMS_DATASTREAM_MAXSIZE (250 * 1024L * 1024L)
+#endif
 
 #include <limits.h>
 #include <memory.h>
@@ -79,14 +90,19 @@ extern "C"
   /* LibRaw C API */
   DllDef libraw_data_t *libraw_init(unsigned int flags);
   DllDef int libraw_open_file(libraw_data_t *, const char *);
+#ifndef LIBRAW_NO_IOSTREAMS_DATASTREAM
   DllDef int libraw_open_file_ex(libraw_data_t *, const char *,
                                  INT64 max_buff_sz);
+#endif
 #if defined(_WIN32) || defined(WIN32)
   DllDef int libraw_open_wfile(libraw_data_t *, const wchar_t *);
+#ifndef LIBRAW_NO_IOSTREAMS_DATASTREAM
   DllDef int libraw_open_wfile_ex(libraw_data_t *, const wchar_t *,
                                   INT64 max_buff_sz);
 #endif
-  DllDef int libraw_open_buffer(libraw_data_t *, void *buffer, size_t size);
+#endif
+
+  DllDef int libraw_open_buffer(libraw_data_t *, const void *buffer, size_t size);
   DllDef int libraw_unpack(libraw_data_t *);
   DllDef int libraw_unpack_thumb(libraw_data_t *);
   DllDef void libraw_recycle_datastream(libraw_data_t *);
@@ -147,7 +163,7 @@ extern "C"
   DllDef float libraw_get_pre_mul(libraw_data_t *lr, int index);
   DllDef float libraw_get_rgb_cam(libraw_data_t *lr, int index1, int index2);
   DllDef int libraw_get_color_maximum(libraw_data_t *lr);
-
+  DllDef void libraw_set_output_tif(libraw_data_t *lr, int value);
   DllDef libraw_iparams_t *libraw_get_iparams(libraw_data_t *lr);
   DllDef libraw_lensinfo_t *libraw_get_lensinfo(libraw_data_t *lr);
   DllDef libraw_imgother_t *libraw_get_imgother(libraw_data_t *lr);
@@ -165,15 +181,23 @@ public:
 
   LibRaw(unsigned int flags = LIBRAW_OPTIONS_NONE);
   libraw_output_params_t *output_params_ptr() { return &imgdata.params; }
+#ifndef LIBRAW_NO_IOSTREAMS_DATASTREAM
   int open_file(const char *fname,
                 INT64 max_buffered_sz = LIBRAW_USE_STREAMS_DATASTREAM_MAXSIZE);
 #if defined(_WIN32) || defined(WIN32)
   int open_file(const wchar_t *fname,
                 INT64 max_buffered_sz = LIBRAW_USE_STREAMS_DATASTREAM_MAXSIZE);
 #endif
-  int open_buffer(void *buffer, size_t size);
+#else
+  int open_file(const char *fname);
+#if defined(_WIN32) || defined(WIN32)
+  int open_file(const wchar_t *fname);
+#endif
+
+#endif
+  int open_buffer(const void *buffer, size_t size);
   virtual int open_datastream(LibRaw_abstract_datastream *);
-  virtual int open_bayer(unsigned char *data, unsigned datalen,
+  virtual int open_bayer(const unsigned char *data, unsigned datalen,
                          ushort _raw_width, ushort _raw_height,
                          ushort _left_margin, ushort _top_margin,
                          ushort _right_margin, ushort _bottom_margin,
@@ -313,6 +337,11 @@ protected:
                       size_t needlelen);
   static char *strcasestr(char *h, const char *n);
   static size_t strnlen(const char *s, size_t n);
+
+#ifdef LIBRAW_NO_IOSTREAMS_DATASTREAM
+  int libraw_openfile_tail(LibRaw_abstract_datastream *stream);
+#endif
+
   int is_curve_linear();
   void checkCancel();
   void cam_xyz_coeff(float _rgb_cam[3][4], double cam_xyz[4][3]);
@@ -326,15 +355,15 @@ protected:
   virtual void copy_bayer(unsigned short cblack[4], unsigned short *dmaxp);
   virtual void fuji_rotate();
   virtual void convert_to_rgb_loop(float out_cam[3][4]);
-  virtual void lin_interpolate_loop(int code[16][16][32], int size);
+  virtual void lin_interpolate_loop(int *code, int size);
   virtual void scale_colors_loop(float scale_mul[4]);
 
   /* Fujifilm compressed decoder public interface (to make parallel decoder) */
   virtual void
-  fuji_decode_loop(const struct fuji_compressed_params *common_info, int count,
-                   INT64 *offsets, unsigned *sizes);
-  void fuji_decode_strip(const struct fuji_compressed_params *info_common,
-                         int cur_block, INT64 raw_offset, unsigned size);
+  fuji_decode_loop(struct fuji_compressed_params *common_info, int count,
+                   INT64 *offsets, unsigned *sizes, uchar *q_bases);
+  void fuji_decode_strip(struct fuji_compressed_params *info_common,
+                         int cur_block, INT64 raw_offset, unsigned size, uchar *q_bases);
   /* CR3 decoder public interface to make parallel decoder */
   virtual void crxLoadDecodeLoop(void *, int);
   int crxDecodePlane(void *, uint32_t planeNumber);
@@ -382,8 +411,10 @@ protected:
 
   void kodak_thumb_loader();
   void write_thumb_ppm_tiff(FILE *);
+#ifdef USE_X3FTOOLS
   void x3f_thumb_loader();
   INT64 x3f_thumb_size();
+#endif
 
   int own_filtering_supported() { return 0; }
   void identify();
@@ -453,7 +484,7 @@ protected:
   int valid_for_dngsdk();
   int try_dngsdk();
   /* X3F data */
-  void *_x3f_data;
+  void *_x3f_data; /* keep it even if USE_X3FTOOLS is not defined to do not change sizeof(LibRaw)*/
 
   int raw_was_read()
   {
@@ -466,6 +497,15 @@ protected:
 #include "internal/libraw_internal_funcs.h"
 #endif
 };
+
+#ifdef LIBRAW_LIBRARY_BUILD
+ushort libraw_sget2_static(short _order, uchar *s);
+unsigned libraw_sget4_static(short _order, uchar *s);
+int libraw_tagtype_dataunit_bytes(int tagtype);
+double  libraw_sgetreal_static(short _order, int type, uchar *s);
+float   libraw_int_to_float (int i);
+#endif
+
 
 #ifdef LIBRAW_LIBRARY_BUILD
 #define RUN_CALLBACK(stage, iter, expect)                                      \

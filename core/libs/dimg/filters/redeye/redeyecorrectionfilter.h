@@ -6,7 +6,7 @@
  * Date        : 16/08/2016
  * Description : A Red-Eye automatic detection and correction filter.
  *
- * Copyright (C) 2005-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2005-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2016      by Omar Amin <Omar dot moh dot amin at gmail dot com>
  *
  * This program is free software; you can redistribute it
@@ -38,53 +38,62 @@ namespace Digikam
 
 class DIGIKAM_EXPORT RedEyeCorrectionFilter : public DImgThreadedFilter
 {
+    Q_OBJECT
 
 public:
 
-    explicit RedEyeCorrectionFilter(QObject* const parent=nullptr);
-    explicit RedEyeCorrectionFilter(DImg* const orgImage, QObject* const parent=nullptr,
-                                    const RedEyeCorrectionContainer& settings=RedEyeCorrectionContainer());
+    explicit RedEyeCorrectionFilter(QObject* const parent = nullptr);
+    explicit RedEyeCorrectionFilter(DImg* const orgImage,
+                                    QObject* const parent = nullptr,
+                                    const RedEyeCorrectionContainer& settings = RedEyeCorrectionContainer());
 
     /**
      * Constructor for slave mode: execute immediately in current thread with specified master filter
      */
     explicit RedEyeCorrectionFilter(const RedEyeCorrectionContainer& settings,
-                                    DImgThreadedFilter* const parentFilter, const DImg& orgImage, const DImg& destImage,
-                                    int progressBegin=0, int progressEnd=100);
+                                    DImgThreadedFilter* const parentFilter,
+                                    const DImg& orgImage,
+                                    const DImg& destImage,
+                                    int progressBegin = 0,
+                                    int progressEnd = 100);
 
-    ~RedEyeCorrectionFilter();
+    ~RedEyeCorrectionFilter()                     override;
 
-    static QString          FilterIdentifier()
+    static QString FilterIdentifier()
     {
         return QLatin1String("digikam:RedEyeCorrectionFilter");
     }
 
-    static QString          DisplayableName();
+    static QString DisplayableName();
 
-    static QList<int>       SupportedVersions()
+    static QList<int> SupportedVersions()
     {
         return QList<int>() << 1;
     }
 
-    static int              CurrentVersion()
+    static int CurrentVersion()
     {
         return 1;
     }
 
-    virtual QString         filterIdentifier()      const override
+    QString filterIdentifier()              const override
     {
         return FilterIdentifier();
     }
 
-    virtual FilterAction    filterAction()                override;
+    FilterAction filterAction()                   override;
 
 private:
 
-    void filterImage()                                    override;
-    void readParameters(const FilterAction&)              override;
+    void filterImage()                            override;
+    void readParameters(const FilterAction&)      override;
 
-    void correctRedEye(uchar* data, int type, cv::Rect eyerect, cv::Rect imgRect);
-    void QRectFtocvRect(const QList<QRect>& faces, std::vector<cv::Rect>& result);
+    void correctRedEye(uchar* data,
+                       int type,
+                       const cv::Rect& eyerect,
+                       const cv::Rect& imgRect);
+    void QRectFtocvRect(const QList<QRect>& faces,
+                        std::vector<cv::Rect>& result);
 
 private:
 

@@ -40,11 +40,11 @@ class Q_DECL_HIDDEN ShowfotoItemModel::Private
 public:
 
     explicit Private()
-      : keepFileUrlCache(false),
-        refreshing(false),
-        reAdding(false),
+      : keepFileUrlCache           (false),
+        refreshing                 (false),
+        reAdding                   (false),
         incrementalRefreshRequested(false),
-        sendRemovalSignals(false)
+        sendRemovalSignals         (false)
     {
     }
 
@@ -60,7 +60,7 @@ public:
 public:
 
     ShowfotoItemInfoList                      infos;
-    QHash<qlonglong, int>                     idHash;
+    QMultiHash<qlonglong, int>                idHash;
     QHash<QString, qlonglong>                 fileUrlHash;
 
     bool                                      keepFileUrlCache;
@@ -76,7 +76,7 @@ public:
 
 ShowfotoItemModel::ShowfotoItemModel(QObject* const parent)
     : QAbstractListModel(parent),
-      d(new Private)
+      d                 (new Private)
 {
 }
 
@@ -328,7 +328,7 @@ void ShowfotoItemModel::appendInfos(const QList<ShowfotoItemInfo>& infos)
     publiciseInfos(infos);
 }
 
-void ShowfotoItemModel::reAddShowfotoItemInfos(ShowfotoItemInfoList& infos)
+void ShowfotoItemModel::reAddShowfotoItemInfos(const ShowfotoItemInfoList& infos)
 {
     publiciseInfos(infos);
 }
@@ -374,7 +374,7 @@ void ShowfotoItemModel::publiciseInfos(const QList<ShowfotoItemInfo>& infos)
     {
         const ShowfotoItemInfo& info = d->infos.at(i);
         qlonglong id                 = info.id;
-        d->idHash.insertMulti(id, i);
+        d->idHash.insert(id, i);
 
         if (d->keepFileUrlCache)
         {
@@ -385,7 +385,7 @@ void ShowfotoItemModel::publiciseInfos(const QList<ShowfotoItemInfo>& infos)
     endInsertRows();
     emit itemInfosAdded(infos);
 }
-
+/*
 template <class List, typename T>
 static bool pairsContain(const List& list, T value)
 {
@@ -417,7 +417,7 @@ static bool pairsContain(const List& list, T value)
 
     return false;
 }
-
+*/
 void ShowfotoItemModel::removeIndex(const QModelIndex& index)
 {
     removeIndexs(QList<QModelIndex>() << index);
@@ -461,6 +461,7 @@ void ShowfotoItemModel::removeRowPairs(const QList<QPair<int, int> >& toRemove)
 
     int                     removedRows = 0;
     int                     offset      = 0;
+    QList<qlonglong>        removeFilePaths;
     typedef QPair<int, int> IntPair;
 
     foreach (const IntPair& pair, toRemove)
@@ -486,7 +487,7 @@ void ShowfotoItemModel::removeRowPairs(const QList<QPair<int, int> >& toRemove)
 
         // update idHash - which points to indexes of d->infos
 
-        QHash<qlonglong, int>::iterator it;
+        QMultiHash<qlonglong, int>::iterator it;
 
         for (it = d->idHash.begin() ; it != d->idHash.end() ;)
         {
@@ -502,6 +503,7 @@ void ShowfotoItemModel::removeRowPairs(const QList<QPair<int, int> >& toRemove)
                 {
                     // in the removed interval
 
+                    removeFilePaths << it.key();
                     it = d->idHash.erase(it);
                     continue;
                 }
@@ -528,9 +530,9 @@ void ShowfotoItemModel::removeRowPairs(const QList<QPair<int, int> >& toRemove)
     {
         QHash<QString, qlonglong>::iterator it;
 
-        for (it = d->fileUrlHash.begin() ; it!= d->fileUrlHash.end() ;)
+        for (it = d->fileUrlHash.begin() ; it != d->fileUrlHash.end() ; )
         {
-            if (pairsContain(toRemove, it.value()))
+            if (removeFilePaths.contains(it.value()))
             {
                 it = d->fileUrlHash.erase(it);
             }
@@ -560,7 +562,7 @@ QList<QPair<int, int> > ShowfotoItemModel::toContiguousPairs(const QList<int>& u
 
     for (int i = 1 ; i < indices.size() ; ++i)
     {
-        const int &index = indices.at(i);
+        const int& index = indices.at(i);
 
         if (index == pair.second + 1)
         {
@@ -594,7 +596,7 @@ Qt::ItemFlags ShowfotoItemModel::flags(const QModelIndex& index) const
 {
     if (!d->isValid(index))
     {
-        return nullptr;
+        return Qt::NoItemFlags;
     }
 
     Qt::ItemFlags f = Qt::ItemIsSelectable | Qt::ItemIsEnabled;
@@ -630,7 +632,7 @@ QVariant ShowfotoItemModel::data(const QModelIndex& index, int role) const
         return QVariant();
     }
 
-    switch(role)
+    switch (role)
     {
         case Qt::DisplayRole:
         case Qt::ToolTipRole:

@@ -6,7 +6,7 @@
  * Date        : 2005-12-02
  * Description : 8-16 bits color container.
  *
- * Copyright (C) 2005-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2005-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -47,13 +47,13 @@ public:
      * Initialize with default value, fully transparent eight bit black
      */
     DColor()
-        : m_red(0),
-          m_green(0),
-          m_blue(0),
-          m_alpha(0),
+        : m_red       (0),
+          m_green     (0),
+          m_blue      (0),
+          m_alpha     (0),
           m_sixteenBit(false)
     {
-    };
+    }
 
     /**
      * Read value from data. Equivalent to setColor()
@@ -67,13 +67,13 @@ public:
      * Initialize with given RGBA values
      */
     DColor(int red, int green, int blue, int alpha, bool sixteenBit)
-        : m_red(red),
-          m_green(green),
-          m_blue(blue),
-          m_alpha(alpha),
-          m_sixteenBit(sixteenBit)
+        : m_red         (red),
+          m_green       (green),
+          m_blue        (blue),
+          m_alpha       (alpha),
+          m_sixteenBit  (sixteenBit)
     {
-    };
+    }
 
     /**
      * Read values from QColor, convert to sixteenBit of sixteenBit is true
@@ -153,12 +153,12 @@ public:
     inline bool isPureGrayValue(int v)
     {
         return ((m_red == v) && (m_green == v) && (m_blue == v));
-    };
+    }
 
     inline bool isPureGray()
     {
         return ((m_red == m_green) && (m_red == m_blue));
-    };
+    }
 
     /**
      * Convert the color values of this color to and from sixteen bit

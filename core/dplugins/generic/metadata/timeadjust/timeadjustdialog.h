@@ -8,7 +8,7 @@
  *
  * Copyright (C) 2012      by Smit Mehta <smit dot meh at gmail dot com>
  * Copyright (C) 2003-2005 by Jesper Pedersen <blackie at kde dot org>
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (c) 2018      by Maik Qualmann <metzpinguin at gmail dot com>
  *
  * This program is free software; you can redistribute it
@@ -33,7 +33,6 @@
 // Local includes
 
 #include "dplugindialog.h"
-#include "digikam_export.h"
 #include "timeadjustsettings.h"
 #include "dinfointerface.h"
 
@@ -42,14 +41,14 @@ using namespace Digikam;
 namespace DigikamGenericTimeAdjustPlugin
 {
 
-class DIGIKAM_EXPORT TimeAdjustDialog : public DPluginDialog
+class TimeAdjustDialog : public DPluginDialog
 {
     Q_OBJECT
 
 public:
 
     explicit TimeAdjustDialog(QWidget* const parent, DInfoInterface* const iface);
-    ~TimeAdjustDialog();
+    ~TimeAdjustDialog() override;
 
 private Q_SLOTS:
 
@@ -102,6 +101,6 @@ private:
     Private* const d;
 };
 
-}  // namespace DigikamGenericTimeAdjustPlugin
+} // namespace DigikamGenericTimeAdjustPlugin
 
 #endif // DIGIKAM_TIME_ADJUST_DIALOG_H

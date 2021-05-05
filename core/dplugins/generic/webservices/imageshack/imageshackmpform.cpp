@@ -41,8 +41,8 @@ namespace DigikamGenericImageShackPlugin
 {
 
 ImageShackMPForm::ImageShackMPForm()
+    : m_boundary(WSToolUtils::randomString(42 + 13).toLatin1())
 {
-    m_boundary = WSToolUtils::randomString(42 + 13).toLatin1();
     reset();
 }
 

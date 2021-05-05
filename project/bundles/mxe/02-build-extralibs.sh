@@ -2,7 +2,7 @@
 
 # Script to build extra libraries using MEX.
 #
-# Copyright (c) 2015-2020 by Gilles Caulier  <caulier dot gilles at gmail dot com>
+# Copyright (c) 2015-2021 by Gilles Caulier  <caulier dot gilles at gmail dot com>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
@@ -99,32 +99,20 @@ ${MXE_BUILD_TARGETS}-cmake --build . --config RelWithDebInfo --target ext_kxmlgu
 ${MXE_BUILD_TARGETS}-cmake --build . --config RelWithDebInfo --target ext_kbookmarks          -- -j$CPU_CORES
 ${MXE_BUILD_TARGETS}-cmake --build . --config RelWithDebInfo --target ext_kimageformats       -- -j$CPU_CORES
 
+# Extra support for digiKam
+
+# libksane support
+${MXE_BUILD_TARGETS}-cmake --build . --config RelWithDebInfo --target ext_libksane            -- -j$CPU_CORES
+
 # Geolocation support
 ${MXE_BUILD_TARGETS}-cmake --build . --config RelWithDebInfo --target ext_marble              -- -j$CPU_CORES
 
 # Calendar support
-${MXE_BUILD_TARGETS}-cmake --build . --config RelWithDebInfo --target ext_kcalcore            -- -j$CPU_CORES
+${MXE_BUILD_TARGETS}-cmake --build . --config RelWithDebInfo --target ext_kcalendarcore       -- -j$CPU_CORES
 
 # Marble install shared lib at wrong place.
 mv $MXE_INSTALL_PREFIX/libastro* $MXE_INSTALL_PREFIX/bin
 mv $MXE_INSTALL_PREFIX/libmarble* $MXE_INSTALL_PREFIX/bin
-
-#################################################################################################
-
-export PATH=$ORIG_PATH
-
-# Build PNG2Ico CLI tool used by ECM for host OS.
-
-cd $ORIG_WD/png2ico
-
-rm -f CMakeCache.txt > /dev/null
-
-cmake . \
-      -DCMAKE_BUILD_TYPE=RelWithDebInfo \
-      -DCMAKE_COLOR_MAKEFILE=ON \
-      -Wno-dev
-
-make -j$CPU_CORES
 
 #################################################################################################
 

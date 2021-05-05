@@ -7,8 +7,8 @@
  * Description : a tool to export items to a local storage
  *
  * Copyright (C) 2006-2009 by Johannes Wienke <languitar at semipol dot de>
- * Copyright (C) 2011-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (C) 2019      by Maik Qualmann <metzpinguin at gmail dot com>
+ * Copyright (C) 2011-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2019-2020 by Maik Qualmann <metzpinguin at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -33,7 +33,6 @@
 
 #include "wstooldialog.h"
 #include "dinfointerface.h"
-#include "digikam_export.h"
 
 using namespace Digikam;
 
@@ -46,7 +45,7 @@ class FCExportWidget;
  * Main window of the FileCopyExport tool.
  */
 
-class DIGIKAM_EXPORT FCExportWindow: public WSToolDialog
+class FCExportWindow: public WSToolDialog
 {
     Q_OBJECT
 
@@ -55,14 +54,14 @@ public:
     /**
      * Constructor.
      *
-     * @param parent parent QWidget
+     * @param parent the parent QWidget
      */
     explicit FCExportWindow(DInfoInterface* const iface, QWidget* const parent);
 
     /**
      * Destructor.
      */
-    ~FCExportWindow();
+    ~FCExportWindow() override;
 
     /**
      * Use this method to (re-)activate the dialog after it has been created

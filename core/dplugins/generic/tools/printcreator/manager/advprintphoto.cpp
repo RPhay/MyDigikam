@@ -8,7 +8,7 @@
  *
  * Copyright (C) 2002-2003 by Todd Shoemaker <todd at theshoemakers dot net>
  * Copyright (C) 2007-2012 by Angelo Naselli <anaselli at linux dot it>
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -43,19 +43,20 @@ namespace DigikamGenericPrintCreatorPlugin
 {
 
 AdvPrintPhotoSize::AdvPrintPhotoSize()
-    : m_label(i18n("Unsupported Paper Size")),
-      m_dpi(0),
+    : m_label     (i18n("Unsupported Paper Size")),
+      m_dpi       (0),
       m_autoRotate(false)
 {
 }
 
 AdvPrintPhotoSize::AdvPrintPhotoSize(const AdvPrintPhotoSize& other)
+    : m_label     (other.m_label),
+      m_dpi       (other.m_dpi),
+      m_autoRotate(other.m_autoRotate),
+      m_layouts   (other.m_layouts),
+      m_icon      (other.m_icon)
+
 {
-    m_label      = other.m_label;
-    m_dpi        = other.m_dpi;
-    m_autoRotate = other.m_autoRotate;
-    m_layouts    = other.m_layouts;
-    m_icon       = other.m_icon;
 }
 
 AdvPrintPhotoSize::~AdvPrintPhotoSize()
@@ -65,27 +66,27 @@ AdvPrintPhotoSize::~AdvPrintPhotoSize()
 // -----------------------------
 
 AdvPrintAdditionalInfo::AdvPrintAdditionalInfo()
-    : m_unit(0),
-      m_printPosition(0),
-      m_scaleMode(0),
-      m_keepRatio(true),
-      m_autoRotate(true),
-      m_printWidth(0.0),
-      m_printHeight(0.0),
+    : m_unit                (0),
+      m_printPosition       (0),
+      m_scaleMode           (0),
+      m_keepRatio           (true),
+      m_autoRotate          (true),
+      m_printWidth          (0.0),
+      m_printHeight         (0.0),
       m_enlargeSmallerImages(false)
 {
 }
 
 AdvPrintAdditionalInfo::AdvPrintAdditionalInfo(const AdvPrintAdditionalInfo& other)
+    : m_unit                (other.m_unit),
+      m_printPosition       (other.m_printPosition),
+      m_scaleMode           (other.m_scaleMode),
+      m_keepRatio           (other.m_keepRatio),
+      m_autoRotate          (other.m_autoRotate),
+      m_printWidth          (other.m_printWidth),
+      m_printHeight         (other.m_printHeight),
+      m_enlargeSmallerImages(other.m_enlargeSmallerImages)
 {
-    m_unit                 = other.m_unit;
-    m_printPosition        = other.m_printPosition;
-    m_scaleMode            = other.m_scaleMode;
-    m_keepRatio            = other.m_keepRatio;
-    m_autoRotate           = other.m_autoRotate;
-    m_printWidth           = other.m_printWidth;
-    m_printHeight          = other.m_printHeight;
-    m_enlargeSmallerImages = other.m_enlargeSmallerImages;
 }
 
 AdvPrintAdditionalInfo::~AdvPrintAdditionalInfo()
@@ -95,21 +96,21 @@ AdvPrintAdditionalInfo::~AdvPrintAdditionalInfo()
 // -----------------------------
 
 AdvPrintCaptionInfo::AdvPrintCaptionInfo()
-    : m_captionType(AdvPrintSettings::NONE),
-      m_captionFont(QLatin1String("Sans Serif")),
+    : m_captionType (AdvPrintSettings::NONE),
+      m_captionFont (QLatin1String("Sans Serif")),
       m_captionColor(Qt::yellow),
-      m_captionSize(2),
-      m_captionText(QLatin1String(""))
+      m_captionSize (2),
+      m_captionText (QLatin1String(""))
 {
 }
 
 AdvPrintCaptionInfo::AdvPrintCaptionInfo(const AdvPrintCaptionInfo& other)
+    : m_captionType (other.m_captionType),
+      m_captionFont (other.m_captionFont),
+      m_captionColor(other.m_captionColor),
+      m_captionSize (other.m_captionSize),
+      m_captionText (other.m_captionText)
 {
-    m_captionType  = other.m_captionType;
-    m_captionFont  = other.m_captionFont;
-    m_captionColor = other.m_captionColor;
-    m_captionSize  = other.m_captionSize;
-    m_captionText  = other.m_captionText;
 }
 
 AdvPrintCaptionInfo::~AdvPrintCaptionInfo()
@@ -119,31 +120,33 @@ AdvPrintCaptionInfo::~AdvPrintCaptionInfo()
 // -----------------------------
 
 AdvPrintPhoto::AdvPrintPhoto(int thumbnailSize, DInfoInterface* const iface)
-    : m_pAddInfo(nullptr),
-      m_pAdvPrintCaptionInfo(nullptr)
+    : m_url                 (QUrl()),
+      m_thumbnailSize       (thumbnailSize),
+      m_cropRegion          (QRect(-1, -1, -1, -1)),
+      m_first               (false),
+      m_copies              (1),
+      m_rotation            (0),
+      m_pAddInfo            (nullptr),
+      m_pAdvPrintCaptionInfo(nullptr),
+      m_iface               (iface),
+      m_thumbnail           (nullptr),
+      m_size                (nullptr)
 {
-    m_size          = nullptr;
-    m_cropRegion    = QRect(-1, -1, -1, -1);
-    m_rotation      = 0;
-    m_first         = false;
-    m_copies        = 1;
-    m_url           = QUrl();
-    m_iface         = iface;
-    m_thumbnail     = nullptr;
-    m_thumbnailSize = thumbnailSize;
 }
 
 AdvPrintPhoto::AdvPrintPhoto(const AdvPrintPhoto& other)
-    : m_pAddInfo(nullptr),
-      m_pAdvPrintCaptionInfo(nullptr)
+    : m_url                 (other.m_url),
+      m_thumbnailSize       (other.m_thumbnailSize),
+      m_cropRegion          (other.m_cropRegion),
+      m_first               (other.m_first),
+      m_copies              (other.m_copies),
+      m_rotation            (other.m_rotation),
+      m_pAddInfo            (nullptr),
+      m_pAdvPrintCaptionInfo(nullptr),
+      m_iface               (other.m_iface),
+      m_thumbnail           (nullptr),
+      m_size                (nullptr)
 {
-    m_thumbnailSize = other.m_thumbnailSize;
-    m_cropRegion    = other.m_cropRegion;
-    m_url           = other.m_url;
-    m_first         = other.m_first;
-    m_copies        = other.m_copies;
-    m_rotation      = other.m_rotation;
-
     if (other.m_pAddInfo)
     {
         m_pAddInfo = new AdvPrintAdditionalInfo(*other.m_pAddInfo);
@@ -153,10 +156,6 @@ AdvPrintPhoto::AdvPrintPhoto(const AdvPrintPhoto& other)
     {
         m_pAdvPrintCaptionInfo = new AdvPrintCaptionInfo(*other.m_pAdvPrintCaptionInfo);
     }
-
-    m_size      = nullptr;
-    m_thumbnail = nullptr;
-    m_iface     = other.m_iface;
 }
 
 AdvPrintPhoto::~AdvPrintPhoto()
@@ -222,7 +221,7 @@ double AdvPrintPhoto::scaleWidth(double unitToInches)
                          (int)(m_pAddInfo->m_printWidth  * unitToInches),
                          (int)(m_pAddInfo->m_printHeight * unitToInches));
 
-    return m_pAddInfo->m_printWidth * unitToInches;
+    return (m_pAddInfo->m_printWidth * unitToInches);
 }
 
 double AdvPrintPhoto::scaleHeight(double unitToInches)
@@ -233,7 +232,7 @@ double AdvPrintPhoto::scaleHeight(double unitToInches)
                          (int)(m_pAddInfo->m_printWidth  * unitToInches),
                          (int)(m_pAddInfo->m_printHeight * unitToInches));
 
-    return m_pAddInfo->m_printHeight * unitToInches;
+    return (m_pAddInfo->m_printHeight * unitToInches);
 }
 
 QMatrix AdvPrintPhoto::updateCropRegion(int woutlay, int houtlay, bool autoRotate)
@@ -249,10 +248,11 @@ QMatrix AdvPrintPhoto::updateCropRegion(int woutlay, int houtlay, bool autoRotat
         if (autoRotate)
         {
             if ((m_rotation == 0) &&
-                ((woutlay > houtlay && thmSize.height() > thmSize.width()) ||
-                 (houtlay > woutlay && thmSize.width()  > thmSize.height())))
+                (((woutlay > houtlay) && (thmSize.height() > thmSize.width())) ||
+                 ((houtlay > woutlay) && (thmSize.width()  > thmSize.height()))))
             {
                 // We will perform a rotation
+
                 m_rotation = 90;
             }
         }
@@ -260,6 +260,7 @@ QMatrix AdvPrintPhoto::updateCropRegion(int woutlay, int houtlay, bool autoRotat
     else
     {
         // Does the crop region need updating (but the image shouldn't be rotated)?
+
         resetCropRegion = (m_cropRegion == QRect(-2, -2, -2, -2));
     }
 

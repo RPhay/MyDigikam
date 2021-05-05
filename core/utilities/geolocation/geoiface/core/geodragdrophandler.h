@@ -6,7 +6,7 @@
  * Date        : 2010-03-18
  * Description : Drag-and-drop handler for geolocation interface
  *
- * Copyright (C) 2010-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2010-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C)      2010 by Michael G. Hansen <mike at mghansen dot de>
  *
  * This program is free software; you can redistribute it
@@ -43,7 +43,7 @@ class DIGIKAM_EXPORT GeoDragDropHandler : public QObject
 public:
 
     explicit GeoDragDropHandler(QObject* const parent = nullptr);
-    virtual ~GeoDragDropHandler();
+    ~GeoDragDropHandler() override;
 
     virtual Qt::DropAction accepts(const QDropEvent* e)                                 = 0;
     virtual bool dropEvent(const QDropEvent* e, const GeoCoordinates& dropCoordinates)  = 0;

@@ -8,7 +8,7 @@
  *
  * Copyright (C) 2005      by Renchi Raju <renchi dot raju at gmail dot com>
  * Copyright (C) 2007-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2012-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -343,7 +343,7 @@ bool ItemQueryBuilder::buildField(QString& sql, SearchXmlCachingReader& reader, 
             sql += QString::fromUtf8(" (Images.id IN "
                    "   (SELECT ImageTags.imageid FROM ImageTags INNER JOIN TagsTree ON ImageTags.tagid = TagsTree.id "
                    "    WHERE TagsTree.pid = (SELECT id FROM Tags WHERE name LIKE ?) "
-                   "    or ImageTags.tagid = (SELECT id FROM Tags WHERE name LIKE ?) )) ");
+                   "    OR ImageTags.tagid = (SELECT id FROM Tags WHERE name LIKE ?) )) ");
             *boundValues << tagname << tagname;
         }
         else if (relation == SearchXml::NotInTree)
@@ -351,7 +351,7 @@ bool ItemQueryBuilder::buildField(QString& sql, SearchXmlCachingReader& reader, 
             sql += QString::fromUtf8(" (Images.id NOT IN "
                    "   (SELECT ImageTags.imageid FROM ImageTags INNER JOIN TagsTree ON ImageTags.tagid = TagsTree.id "
                    "    WHERE TagsTree.pid = (SELECT id FROM Tags WHERE name LIKE ?) "
-                   "    or ImageTags.tagid = (SELECT id FROM Tags WHERE name LIKE ?) )) ");
+                   "    OR ImageTags.tagid = (SELECT id FROM Tags WHERE name LIKE ?) )) ");
             *boundValues << tagname << tagname;
         }
     }
@@ -383,7 +383,7 @@ bool ItemQueryBuilder::buildField(QString& sql, SearchXmlCachingReader& reader, 
     }
     else if (name == QLatin1String("filesize"))
     {
-        fieldQuery.addIntField(QLatin1String("Images.fileSize"));
+        fieldQuery.addLongField(QLatin1String("Images.fileSize"));
     }
     else if (name == QLatin1String("rating"))
     {
@@ -795,7 +795,7 @@ bool ItemQueryBuilder::buildField(QString& sql, SearchXmlCachingReader& reader, 
     {
         sql += QString::fromUtf8(" (Images.id IN "
                " (SELECT imageid FROM ImageCopyright "
-               "  WHERE property='creator' and value ");
+               "  WHERE property='creator' AND value ");
         ItemQueryBuilder::addSqlRelation(sql, relation);
         sql += QString::fromUtf8(" ?)) ");
         *boundValues << fieldQuery.prepareForLike(reader.value());
@@ -835,6 +835,123 @@ bool ItemQueryBuilder::buildField(QString& sql, SearchXmlCachingReader& reader, 
         ItemQueryBuilder::addSqlRelation(sql, relation);
         sql += QString::fromUtf8(" ?)) ");
         *boundValues << DatabaseComment::Title << fieldQuery.prepareForLike(reader.value());
+    }
+    else if (name == QLatin1String("emptytext"))
+    {
+        if ((relation == SearchXml::OneOf) || (relation == SearchXml::Equal))
+        {
+            QStringList values;
+
+            if (relation == SearchXml::OneOf)
+            {
+                values = reader.valueToStringList();
+            }
+            else
+            {
+                values << reader.value();
+            }
+
+            if (values.isEmpty())
+            {
+                qCDebug(DIGIKAM_DATABASE_LOG) << "List for OneOf or Equal is empty";
+                return false;
+            }
+
+            if (values.contains(QLatin1String("creator")))
+            {
+                sql += QString::fromUtf8(" (Images.id NOT IN "
+                       " (SELECT imageid FROM ImageCopyright "
+                       "  WHERE property='creator' AND value != '')) ");
+
+                values.removeAll(QLatin1String("creator"));
+
+                if (!values.isEmpty())
+                {
+                    sql += QString::fromUtf8("OR");
+                }
+            }
+
+            if (!values.isEmpty())
+            {
+                sql += QString::fromUtf8(" (Images.id NOT IN "
+                       " (SELECT imageid FROM ImageComments WHERE ");
+
+                foreach (const QString& value, values)
+                {
+                    if      (value == QLatin1String("headline"))
+                    {
+                        sql += QString::fromUtf8("(type=? AND comment != '') ");
+                        *boundValues << DatabaseComment::Headline;
+                    }
+                    else if (value == QLatin1String("comment"))
+                    {
+                        sql += QString::fromUtf8("(type=? AND comment != '') ");
+                        *boundValues << DatabaseComment::Comment;
+                    }
+                    else if (value == QLatin1String("title"))
+                    {
+                        sql += QString::fromUtf8("(type=? AND comment != '') ");
+                        *boundValues << DatabaseComment::Title;
+                    }
+                    else if (value == QLatin1String("author"))
+                    {
+                        sql += QString::fromUtf8("(type=? AND author != '') ");
+                        *boundValues << DatabaseComment::Comment;
+                    }
+
+                    if (value != values.last())
+                    {
+                        sql += QString::fromUtf8("OR ");
+                    }
+                }
+
+                sql += QString::fromUtf8(")) ");
+            }
+        }
+    }
+    else if (name == QLatin1String("monthday"))
+    {
+        if (relation == SearchXml::Equal)
+        {
+            QList<int> values = reader.valueToIntList();
+
+            if (values.size() != 2)
+            {
+                qCWarning(DIGIKAM_DATABASE_LOG) << "Relation Interval requires a list of two values";
+                return false;
+            }
+
+            // to extract a part of the date we need different SQL code for SQLite and MySQL
+
+            if (CoreDbAccess().backend()->databaseType() == BdEngineBackend::DbType::SQLite)
+            {
+                if (values.at(1) > 0)
+                {
+                    sql += QString::fromUtf8(" (STRFTIME('%m%d', ImageInformation.creationDate) = ?) ");
+                    QString date = QString::number(values.at(0)).rightJustified(2, QLatin1Char('0'));
+                    date        += QString::number(values.at(1)).rightJustified(2, QLatin1Char('0'));
+                    *boundValues << date;
+                }
+                else
+                {
+                    sql += QString::fromUtf8(" (STRFTIME('%m', ImageInformation.creationDate) = ?) ");
+                    *boundValues << QString::number(values.at(0)).rightJustified(2, QLatin1Char('0'));
+                }
+            }
+            else
+            {
+                sql += QString::fromUtf8(" (MONTH(ImageInformation.creationDate) = ?");
+                *boundValues << values.at(0);
+
+                if (values.at(1) > 0)
+                {
+                    sql += QString::fromUtf8(" AND DAY(ImageInformation.creationDate) = ?");
+                    *boundValues << values.at(1);
+                }
+
+                sql += QString::fromUtf8(") ");
+            }
+        }
     }
     else if (name == QLatin1String("imagetagproperty"))
     {
@@ -1395,7 +1512,7 @@ QString ItemQueryBuilder::possibleDate(const QString& str, bool& exact) const
                 (str.toLower() == m_longMonths[i-1]))
             {
                 QString monGlob;
-                monGlob.sprintf("%.2d", i);
+                monGlob = QString().asprintf("%.2d", i);
                 monGlob = QString::fromUtf8("%-") + monGlob + QString::fromUtf8("-%");
 
                 return monGlob;

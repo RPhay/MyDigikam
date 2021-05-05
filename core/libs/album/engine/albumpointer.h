@@ -6,7 +6,7 @@
  * Date        : 2004-06-15
  * Description : Albums manager interface.
  *
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2006-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  *
  * This program is free software; you can redistribute it
@@ -77,6 +77,7 @@ public:
         Album* const oldAlbum = album;
         album                 = a;
         AlbumManager::instance()->changeGuardedPointer(oldAlbum, album, &album);
+
         return *this;
     }
 
@@ -85,6 +86,7 @@ public:
         Album* const oldAlbum = album;
         album                 = p.album;
         AlbumManager::instance()->changeGuardedPointer(oldAlbum, album, &album);
+
         return *this;
     }
 
@@ -136,6 +138,7 @@ public:
         operator=(list);
     }
 
+    // cppcheck-suppress operatorEqRetRefThis
     AlbumPointerList<T>& operator=(const AlbumPointerList<T>& list)
     {
         return QList<AlbumPointer<T> >::operator=(list);

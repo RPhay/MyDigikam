@@ -6,7 +6,7 @@
  * Date   : 2005-05-25
  * Description : Infrared threaded image filter.
  *
- * Copyright (C) 2005-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2005-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2006-2010 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  * Copyright (C) 2010      by Martin Klapetek <martin dot klapetek at gmail dot com>
  *
@@ -41,9 +41,9 @@ public:
 
     explicit InfraredContainer()
         : sensibility(200),
-          redGain(0.4),
-          greenGain(2.1),
-          blueGain(-0.8)
+          redGain    (0.4),
+          greenGain  (2.1),
+          blueGain   (-0.8)
     {
     };
 
@@ -65,14 +65,15 @@ public:
 
 class DIGIKAM_EXPORT InfraredFilter : public DImgThreadedFilter
 {
+    Q_OBJECT
 
 public:
 
     explicit InfraredFilter(QObject* const parent = nullptr);
     explicit InfraredFilter(DImg* const orgImage,
-                            QObject* const parent=nullptr, 
-                            const InfraredContainer& settings=InfraredContainer());
-    ~InfraredFilter();
+                            QObject* const parent = nullptr,
+                            const InfraredContainer& settings = InfraredContainer());
+    ~InfraredFilter()                                                         override;
 
     static QString          FilterIdentifier()
     {
@@ -91,12 +92,12 @@ public:
         return 1;
     }
 
-    virtual QString         filterIdentifier()                          const override
+    QString         filterIdentifier()                                  const override
     {
         return FilterIdentifier();
     }
 
-    virtual FilterAction    filterAction()                                    override;
+    FilterAction    filterAction()                                            override;
     void                    readParameters(const FilterAction& action)        override;
 
 private:

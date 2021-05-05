@@ -6,7 +6,7 @@
  * Date        : 2011-12-28
  * Description : Low level threads management for batch processing on multi-core
  *
- * Copyright (C) 2011-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2011-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C)      2014 by Veaceslav Munteanu <veaceslav dot munteanu90 at gmail dot com>
  * Copyright (C) 2011-2012 by Janardhan Reddy <annapareddyjanardhanreddy at gmail dot com>
  *
@@ -28,9 +28,10 @@
 
 // Qt includes
 
+#include <QHash>
+#include <QObject>
 #include <QThread>
 #include <QRunnable>
-#include <QObject>
 
 // Local includes
 
@@ -48,11 +49,11 @@ public:
 
     /** Constructor which delegate deletion of QRunnable instance to ActionThreadBase, not QThreadPool.
      */
-    ActionJob();
+    explicit ActionJob(QObject* const parent = nullptr);
 
     /** Re-implement destructor in you implementation. Don't forget to cancel job.
      */
-    virtual ~ActionJob();
+    ~ActionJob() override;
 
 Q_SIGNALS:
 
@@ -81,11 +82,11 @@ protected:
     bool m_cancel;
 };
 
-/** Define a map of job/priority to process by ActionThreadBase manager.
+/** Define a QHash of job/priority to process by ActionThreadBase manager.
  *  Priority value can be used to control the run queue's order of execution.
  *  Zero priority want mean to process job with higher priority.
  */
-typedef QMap<ActionJob*, int> ActionJobCollection;
+typedef QHash<ActionJob*, int> ActionJobCollection;
 
 // -------------------------------------------------------------------------------------------------------
 
@@ -95,8 +96,8 @@ class DIGIKAM_EXPORT ActionThreadBase : public QThread
 
 public:
 
-    explicit ActionThreadBase(QObject* const parent=nullptr);
-    virtual ~ActionThreadBase();
+    explicit ActionThreadBase(QObject* const parent = nullptr);
+    ~ActionThreadBase() override;
 
     /** Adjust maximum number of threads used to parallelize collection of job processing.
      */
@@ -109,7 +110,7 @@ public:
     /** Reset maximum number of threads used to parallelize collection of job processing to max core detected on computer.
      *  This method is called in contructor.
      */
-    void defaultMaximumNumberOfThreads();
+    void setDefaultMaximumNumberOfThreads();
 
     /** Cancel processing of current jobs under progress.
      */

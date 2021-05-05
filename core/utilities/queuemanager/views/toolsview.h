@@ -6,7 +6,7 @@
  * Date        : 2009-04-20
  * Description : a view to host all available tools.
  *
- * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -49,7 +49,7 @@ public:
 public:
 
     explicit ToolsView(QWidget* const parent = nullptr);
-    ~ToolsView();
+    ~ToolsView() override;
 
     void addTool(BatchTool* const tool);
     bool removeTool(BatchTool* const tool);
@@ -65,7 +65,7 @@ public:
 Q_SIGNALS:
 
     void signalAssignQueueSettings(QString);
-    void signalAssignTools(const QMap<int, QString>&);
+    void signalAssignTools(const QMultiMap<int, QString>&);
     void signalHistoryEntryClicked(int, qlonglong);
 
 private Q_SLOTS:

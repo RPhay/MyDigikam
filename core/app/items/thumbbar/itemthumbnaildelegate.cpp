@@ -8,7 +8,7 @@
  *
  * Copyright (C) 2002-2005 by Renchi Raju <renchi dot raju at gmail dot com>
  * Copyright (C) 2010-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2002-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2002-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2009-2011 by Andi Clemens <andi dot clemens at gmail dot com>
  *
  * This program is free software; you can redistribute it
@@ -66,7 +66,9 @@ void ItemThumbnailDelegate::setFlow(QListView::Flow flow)
 void ItemThumbnailDelegate::setDefaultViewOptions(const QStyleOptionViewItem& option)
 {
     Q_D(ItemThumbnailDelegate);
+
     // store before calling parent class
+
     d->viewSize = option.rect;
     ItemDelegate::setDefaultViewOptions(option);
 }
@@ -82,14 +84,15 @@ int ItemThumbnailDelegate::minimumSize() const
 {
     Q_D(const ItemThumbnailDelegate);
 
-    return ThumbnailSize::Small + 2*d->radius + 2*d->margin;
+    return (ThumbnailSize::Small + 2*d->radius + 2*d->margin);
 }
 
 bool ItemThumbnailDelegate::acceptsActivation(const QPoint& pos, const QRect& visualRect,
         const QModelIndex& index, QRect* activationRect) const
 {
     // reuse implementation from grandparent
-    return ItemViewDelegate::acceptsActivation(pos, visualRect, index, activationRect);
+
+    return ItemViewDelegate::acceptsActivation(pos, visualRect, index, activationRect); // clazy:exclude=skipped-base-method
 }
 
 void ItemThumbnailDelegate::updateContentWidth()

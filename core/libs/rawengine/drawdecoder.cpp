@@ -6,7 +6,7 @@
  * Date        : 2006-12-09
  * Description : a tread-safe libraw Qt interface
  *
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2006-2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  * Copyright (C) 2007-2008 by Guillaume Castagnino <casta at xwing dot info>
  *
@@ -23,7 +23,6 @@
  *
  * ============================================================ */
 
-#include "drawdecoder.h"
 #include "drawdecoder_p.h"
 
 // Qt includes
@@ -32,6 +31,7 @@
 #include <QFileInfo>
 #include <QStringList>
 #include <QUrl>
+#include <QPointer>
 
 // LibRaw includes
 
@@ -41,15 +41,16 @@
 // Local includes
 
 #include "digikam_debug.h"
+#include "digikam_config.h"
 #include "drawfiles.h"
 
 namespace Digikam
 {
 
 DRawDecoder::DRawDecoder()
-    : d(new Private(this))
+    : m_cancel(false),
+      d       (new Private(this))
 {
-    m_cancel = false;
 }
 
 DRawDecoder::~DRawDecoder()
@@ -90,6 +91,7 @@ bool DRawDecoder::loadEmbeddedPreview(QImage& image, const QString& path)
         if (image.loadFromData(imgData))
         {
             qCDebug(DIGIKAM_RAWENGINE_LOG) << "Using embedded RAW preview extraction";
+
             return true;
         }
     }
@@ -110,15 +112,26 @@ bool DRawDecoder::loadEmbeddedPreview(QByteArray& imgData, const QString& path)
         return false;
     }
 
+    qCDebug(DIGIKAM_RAWENGINE_LOG) << "LibRaw: loadEmbeddedPreview from" << path;
+
     LibRaw* const raw = new LibRaw;
 
-    int ret           = raw->open_file((const char*)(QFile::encodeName(path)).constData());
+#ifdef Q_OS_WIN
+
+    int ret           = raw->open_file((const wchar_t*)path.utf16());
+
+#else
+
+    int ret           = raw->open_file(path.toUtf8().constData());
+
+#endif
 
     if (ret != LIBRAW_SUCCESS)
     {
         qCDebug(DIGIKAM_RAWENGINE_LOG) << "LibRaw: failed to run open_file: " << libraw_strerror(ret);
         raw->recycle();
         delete raw;
+
         return false;
     }
 
@@ -161,7 +174,16 @@ bool DRawDecoder::loadHalfPreview(QImage& image, const QString& path)
     raw->imgdata.params.use_auto_wb   = 1;         // Use automatic white balance.
     raw->imgdata.params.use_camera_wb = 1;         // Use camera white balance, if possible.
     raw->imgdata.params.half_size     = 1;         // Half-size color image (3x faster than -q).
-    int ret                           = raw->open_file((const char*)(QFile::encodeName(path)).constData());
+
+#ifdef Q_OS_WIN
+
+    int ret                           = raw->open_file((const wchar_t*)path.utf16());
+
+#else
+
+    int ret                           = raw->open_file(path.toUtf8().constData());
+
+#endif
 
     if (ret != LIBRAW_SUCCESS)
     {
@@ -179,7 +201,7 @@ bool DRawDecoder::loadHalfPreview(QImage& image, const QString& path)
         return false;
     }
 
-    qCDebug(DIGIKAM_RAWENGINE_LOG) << "Using reduced RAW picture extraction";
+    qCDebug(DIGIKAM_RAWENGINE_LOG) << "Using reduced RAW picture extraction for" << path;
 
     return true;
 }
@@ -198,7 +220,16 @@ bool DRawDecoder::loadHalfPreview(QByteArray& imgData, const QString& path)
     qCDebug(DIGIKAM_RAWENGINE_LOG) << "Try to use reduced RAW picture extraction";
 
     LibRaw* const raw = new LibRaw;
-    int ret           = raw->open_file((const char*)(QFile::encodeName(path)).constData());
+
+#ifdef Q_OS_WIN
+
+    int ret           = raw->open_file((const wchar_t*)path.utf16());
+
+#else
+
+    int ret           = raw->open_file(path.toUtf8().constData());
+
+#endif
 
     if (ret != LIBRAW_SUCCESS)
     {
@@ -214,6 +245,7 @@ bool DRawDecoder::loadHalfPreview(QByteArray& imgData, const QString& path)
     if (!Private::loadHalfPreview(image, raw))
     {
         qCDebug(DIGIKAM_RAWENGINE_LOG) << "DRawDecoder: failed to get half preview: " << libraw_strerror(ret);
+
         return false;
     }
 
@@ -271,16 +303,17 @@ bool DRawDecoder::loadFullImage(QImage& image,
 
     qCDebug(DIGIKAM_RAWENGINE_LOG) << "Try to load full RAW picture...";
 
-    DRawDecoder decoder;
+    QPointer<DRawDecoder> decoder(new DRawDecoder);
     QByteArray imgData;
     int width, height, rgbmax;
     DRawDecoderSettings prm = settings;
     prm.sixteenBitsImage    = false;
-    bool ret                = decoder.decodeRAWImage(path, prm, imgData, width, height, rgbmax);
+    bool ret                = decoder->decodeRAWImage(path, prm, imgData, width, height, rgbmax);
 
     if (!ret)
     {
         qCDebug(DIGIKAM_RAWENGINE_LOG) << "Failled to load full RAW picture";
+
         return false;
     }
 
@@ -288,9 +321,11 @@ bool DRawDecoder::loadFullImage(QImage& image,
     uchar tmp8[2];
 
     // Set RGB color components.
+
     for (int i = 0 ; i < (width * height) ; ++i)
     {
         // Swap Red and Blue
+
         tmp8[0] = sptr[2];
         tmp8[1] = sptr[0];
         sptr[0] = tmp8[0];
@@ -326,7 +361,16 @@ bool DRawDecoder::rawFileIdentify(DRawInfo& identify, const QString& path)
     }
 
     LibRaw* const raw = new LibRaw;
-    int ret           = raw->open_file((const char*)(QFile::encodeName(path)).constData());
+
+#ifdef Q_OS_WIN
+
+    int ret           = raw->open_file((const wchar_t*)path.utf16());
+
+#else
+
+    int ret           = raw->open_file(path.toUtf8().constData());
+
+#endif
 
     if (ret != LIBRAW_SUCCESS)
     {
@@ -383,9 +427,18 @@ bool DRawDecoder::extractRAWData(const QString& filePath,
 
     // Set progress call back function.
 
-    raw->set_progress_handler(callbackForLibRaw, d);
+    raw->set_progress_handler(s_progressCallbackForLibRaw, d);
+    raw->set_exifparser_handler(s_exifParserCallbackForLibRaw, d);
 
-    int ret           = raw->open_file((const char*)(QFile::encodeName(filePath)).constData());
+#ifdef Q_OS_WIN
+
+    int ret           = raw->open_file((const wchar_t*)filePath.utf16());
+
+#else
+
+    int ret           = raw->open_file(filePath.toUtf8().constData());
+
+#endif
 
     if (ret != LIBRAW_SUCCESS)
     {
@@ -571,18 +624,38 @@ QStringList DRawDecoder::supportedCamera()
 
 QString DRawDecoder::librawVersion()
 {
-    return QString::fromLatin1(LIBRAW_VERSION_STR)
-                    .remove(QLatin1String("-Release"))
-                    .remove(QLatin1String("-WorkInProgress"));
+    QString simplified = QString::fromLatin1(LIBRAW_VERSION_STR)
+                         .section(QLatin1Char('-'), 0, -2);
+
+    if (simplified.isEmpty())
+    {
+        simplified = QString::fromLatin1(LIBRAW_VERSION_STR);
+    }
+
+    return simplified;
 }
 
 int DRawDecoder::librawUseGomp()
 {
-#ifdef LIBRAW_USE_OPENMP
+
+#ifdef LIBRAW_FORCE_OPENMP
+
     return true;
+
 #else
+
+#   ifdef LIBRAW_USE_OPENMP
+
+    return true;
+
+#   else
+
     return false;
+
+#   endif
+
 #endif
+
 }
 
 bool DRawDecoder::isRawFile(const QUrl& url)

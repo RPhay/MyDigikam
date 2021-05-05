@@ -55,7 +55,7 @@ public:
     /**
      * Reimplement to match the size of your icon
      */
-    virtual QSize sizeHint() const override = 0;
+    QSize sizeHint() const override = 0;
 
 protected:
 

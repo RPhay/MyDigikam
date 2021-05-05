@@ -6,7 +6,7 @@
  * Date        : 2009-02-10
  * Description : flip image batch tool.
  *
- * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -45,9 +45,18 @@ namespace DigikamBqmFlipPlugin
 {
 
 Flip::Flip(QObject* const parent)
-    : BatchTool(QLatin1String("Flip"), TransformTool, parent)
+    : BatchTool(QLatin1String("Flip"), TransformTool, parent),
+      m_comboBox(nullptr)
 {
-    m_comboBox = nullptr;
+}
+
+Flip::~Flip()
+{
+}
+
+BatchTool* Flip::clone(QObject* const parent) const
+{
+    return new Flip(parent);
 }
 
 void Flip::registerSettingsWidget()
@@ -55,13 +64,13 @@ void Flip::registerSettingsWidget()
     DVBox* const vbox      = new DVBox;
     QLabel* const label    = new QLabel(vbox);
     m_comboBox             = new QComboBox(vbox);
-    m_comboBox->insertItem(DImg::HORIZONTAL, i18n("Horizontal"));
-    m_comboBox->insertItem(DImg::VERTICAL,   i18n("Vertical"));
-    label->setText(i18n("Flip:"));
+    m_comboBox->insertItem(DImg::HORIZONTAL, i18nc("@item: orientation", "Horizontal"));
+    m_comboBox->insertItem(DImg::VERTICAL,   i18nc("@item: orientation", "Vertical"));
+    label->setText(i18nc("@label", "Flip:"));
     QLabel* const space    = new QLabel(vbox);
     vbox->setStretchFactor(space, 10);
 
-    m_settingsWidget = vbox;
+    m_settingsWidget       = vbox;
 
     setNeedResetExifOrientation(true);
 
@@ -71,14 +80,11 @@ void Flip::registerSettingsWidget()
     BatchTool::registerSettingsWidget();
 }
 
-Flip::~Flip()
-{
-}
-
 BatchToolSettings Flip::defaultSettings()
 {
     BatchToolSettings settings;
     settings.insert(QLatin1String("Flip"), DImg::HORIZONTAL);
+
     return settings;
 }
 
@@ -106,17 +112,23 @@ bool Flip::toolOperations()
         switch (flip)
         {
             case DImg::HORIZONTAL:
+            {
                 return rotator.exifTransform(MetaEngineRotation::FlipHorizontal);
                 break;
+            }
 
             case DImg::VERTICAL:
+            {
                 return rotator.exifTransform(MetaEngineRotation::FlipVertical);
                 break;
+            }
 
             default:
+            {
                 qCDebug(DIGIKAM_DPLUGIN_BQM_LOG) << "Unknown flip action";
                 return false;
                 break;
+            }
         }
     }
 
@@ -126,15 +138,22 @@ bool Flip::toolOperations()
     }
 
     DImgBuiltinFilter filter;
+
     switch (flip)
     {
         case DImg::HORIZONTAL:
+        {
             filter = DImgBuiltinFilter(DImgBuiltinFilter::FlipHorizontally);
             break;
+        }
+
         case DImg::VERTICAL:
+        {
             filter = DImgBuiltinFilter(DImgBuiltinFilter::FlipVertically);
             break;
+        }
     }
+
     applyFilter(&filter);
 
     return (savefromDImg());

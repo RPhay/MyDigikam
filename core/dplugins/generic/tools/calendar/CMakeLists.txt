@@ -1,8 +1,10 @@
 #
-# Copyright (c) 2010-2019, Gilles Caulier, <caulier dot gilles at gmail dot com>
+# Copyright (c) 2010-2020, Gilles Caulier, <caulier dot gilles at gmail dot com>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
+
+APPLY_COMMON_POLICIES()
 
 include(MacroDPlugins)
 
@@ -39,13 +41,17 @@ ki18n_wrap_ui(calendarplugin_SRCS
 )
 
 if(KF5CalendarCore_FOUND)
+
     DIGIKAM_ADD_GENERIC_PLUGIN(NAME    Calendar
-                                        SOURCES ${calendarplugin_SRCS}
-                                        DEPENDS KF5::CalendarCore Qt5::PrintSupport
+                               SOURCES ${calendarplugin_SRCS}
+                               DEPENDS KF5::CalendarCore Qt5::PrintSupport
     )
+
 else()
+
     DIGIKAM_ADD_GENERIC_PLUGIN(NAME    Calendar
-                                        SOURCES ${calendarplugin_SRCS}
-                                        DEPENDS Qt5::PrintSupport
+                               SOURCES ${calendarplugin_SRCS}
+                               DEPENDS Qt5::PrintSupport
     )
+
 endif()

@@ -50,18 +50,18 @@ public:
     // methods
     PLT_InputFrameStream(NPT_Reference<PLT_FrameBuffer>& frame_buffer,
                          const char*                     boundary);
-    ~PLT_InputFrameStream() override;
+    virtual ~PLT_InputFrameStream();
 
     // NPT_InputStream methods
     NPT_Result Read(void*     buffer, 
                     NPT_Size  bytes_to_read, 
-                    NPT_Size* bytes_read = 0) override;
+                    NPT_Size* bytes_read = 0);
 
-    NPT_Result Seek(NPT_Position offset) override      { NPT_COMPILER_UNUSED(offset); return NPT_FAILURE; }
-    NPT_Result Skip(NPT_Size offset) override          { NPT_COMPILER_UNUSED(offset); return NPT_FAILURE; }
-    NPT_Result Tell(NPT_Position& offset) override     { NPT_COMPILER_UNUSED(offset); return NPT_FAILURE; }
-    NPT_Result GetSize(NPT_LargeSize& size) override   { NPT_COMPILER_UNUSED(size);   return NPT_FAILURE; }
-    NPT_Result GetAvailable(NPT_LargeSize& available) override;
+    NPT_Result Seek(NPT_Position offset)      { NPT_COMPILER_UNUSED(offset); return NPT_FAILURE; }
+    NPT_Result Skip(NPT_Size offset)          { NPT_COMPILER_UNUSED(offset); return NPT_FAILURE; }
+    NPT_Result Tell(NPT_Position& offset)     { NPT_COMPILER_UNUSED(offset); return NPT_FAILURE; }
+    NPT_Result GetSize(NPT_LargeSize& size)   { NPT_COMPILER_UNUSED(size);   return NPT_FAILURE; }
+    NPT_Result GetAvailable(NPT_LargeSize& available);
         
 private:
     NPT_Result FillBuffer();

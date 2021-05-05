@@ -26,7 +26,7 @@
 
 // Qt includes
 
-#include <QtTest>
+#include <QTest>
 
 // Local includes
 
@@ -43,12 +43,12 @@ public:
 
     explicit MarkerModelHelper(QAbstractItemModel* const itemModel,
                                QItemSelectionModel* const itemSelectionModel);
-    ~MarkerModelHelper();
+    ~MarkerModelHelper() override;
 
-    virtual QAbstractItemModel*  model()          const;
-    virtual QItemSelectionModel* selectionModel() const;
-    virtual bool itemCoordinates(const QModelIndex& index,
-                                 GeoCoordinates* const coordinates) const;
+    QAbstractItemModel*  model()          const override;
+    QItemSelectionModel* selectionModel() const override;
+    bool itemCoordinates(const QModelIndex& index,
+                                 GeoCoordinates* const coordinates) const override;
 
 private Q_SLOTS:
 
@@ -66,6 +66,13 @@ private:
 class TestItemMarkerTiler : public QObject
 {
     Q_OBJECT
+
+public:
+
+    explicit TestItemMarkerTiler(QObject* const parent = nullptr)
+        : QObject(parent)
+    {
+    }
 
 private Q_SLOTS:
 

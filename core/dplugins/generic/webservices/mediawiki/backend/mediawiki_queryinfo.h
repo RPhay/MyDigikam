@@ -6,7 +6,7 @@
  * Date        : 2011-03-22
  * Description : a Iface C++ interface
  *
- * Copyright (C) 2011-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2011-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2011      by Alexandre Mendes <alex dot mendes1988 at gmail dot com>
  *
  * This program is free software; you can redistribute it
@@ -36,7 +36,7 @@
 #include "mediawiki_page.h"
 #include "mediawiki_protection.h"
 #include "mediawiki_job.h"
-#include "digikam_export.h"
+
 
 namespace MediaWiki
 {
@@ -49,7 +49,7 @@ class QueryInfoPrivate;
  *
  * Uses to send a request to get basic page information.
  */
-class DIGIKAM_EXPORT QueryInfo : public Job
+class QueryInfo : public Job
 {
     Q_OBJECT
     Q_DECLARE_PRIVATE(QueryInfo)
@@ -66,12 +66,12 @@ public:
     /**
      * @brief Destroys the QuerySiteInfoGeneral job.
      */
-    virtual ~QueryInfo();
+    ~QueryInfo() override;
 
     /**
      * @brief Starts the job asynchronously.
      */
-    void start() Q_DECL_OVERRIDE;
+    void start() override;
 
     /**
      * @brief Set the page name.

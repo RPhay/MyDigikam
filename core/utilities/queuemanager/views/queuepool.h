@@ -6,7 +6,7 @@
  * Date        : 2009-02-13
  * Description : tabbed queue items list.
  *
- * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -53,7 +53,7 @@ class QueuePoolBar : public QTabBar
 public:
 
     explicit QueuePoolBar(QWidget* const parent);
-    ~QueuePoolBar();
+    ~QueuePoolBar() override;
 
 Q_SIGNALS:
 
@@ -74,7 +74,7 @@ class QueuePool : public QTabWidget
 public:
 
     explicit QueuePool(QWidget* const parent);
-    ~QueuePool();
+    ~QueuePool() override;
 
     QueueListView*     currentQueue()                    const;
     QString            currentTitle()                    const;
@@ -119,7 +119,7 @@ public Q_SLOTS:
 
 protected:
 
-    virtual void keyPressEvent(QKeyEvent* event);
+    void keyPressEvent(QKeyEvent* event) override;
 
 private :
 

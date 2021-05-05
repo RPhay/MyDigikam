@@ -37,6 +37,7 @@
 // Local includes
 
 #include "digikam_debug.h"
+#include "digikam_config.h"
 #include "digikam_globals.h"
 #include "dimgpngloader.h"
 
@@ -88,7 +89,7 @@ QList<DPluginAuthor> DImgPNGPlugin::authors() const
     return QList<DPluginAuthor>()
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2005-2020"))
+                             QString::fromUtf8("(C) 2005-2021"))
             ;
 }
 
@@ -116,12 +117,20 @@ int DImgPNGPlugin::canRead(const QFileInfo& fileInfo, bool magic) const
 
     if (!magic)
     {
-        return (format == QLatin1String("PNG")) ? 10 : 0;
+        return typeMimes().contains(format) ? 10 : 0;
     }
 
     // In second, we trying to parse file header.
 
-    FILE* const f = fopen(QFile::encodeName(filePath).constData(), "rb");
+#ifdef Q_OS_WIN
+
+    FILE* const f = _wfopen((const wchar_t*)filePath.utf16(), L"rb");
+
+#else
+
+    FILE* const f = fopen(filePath.toUtf8().constData(), "rb");
+
+#endif
 
     if (!f)
     {
@@ -154,12 +163,7 @@ int DImgPNGPlugin::canRead(const QFileInfo& fileInfo, bool magic) const
 
 int DImgPNGPlugin::canWrite(const QString& format) const
 {
-    if (format == QLatin1String("PNG"))
-    {
-        return 10;
-    }
-
-    return 0;
+    return typeMimes().contains(format.toUpper()) ? 10 : 0;
 }
 
 DImgLoader* DImgPNGPlugin::loader(DImg* const image, const DRawDecoding&) const

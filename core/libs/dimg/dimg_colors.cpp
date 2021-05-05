@@ -7,7 +7,7 @@
  * Description : digiKam 8/16 bits image management API.
  *               Color operations.
  *
- * Copyright (C) 2005-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2005-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2006-2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  *
  * This program is free software; you can redistribute it
@@ -69,7 +69,7 @@ void DImg::convertDepth(int depth)
         return;
     }
 
-    if (depth == 32)
+    if      (depth == 32)
     {
         // downgrading from 16 bit to 8 bit
 
@@ -130,6 +130,7 @@ void DImg::fill(const DColor& color)
     }
 
     // caching
+
     uint dim = width() * height() * 4;
 
     if (sixteenBit())

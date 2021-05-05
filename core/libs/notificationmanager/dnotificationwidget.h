@@ -6,7 +6,7 @@
  * Date        : 2011-07-03
  * Description : A widget to provide feedback or propose opportunistic interactions
  *
- * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (c) 2011      by Aurelien Gateau <agateau at kde dot org>
  * Copyright (c) 2014      by Dominik Haumann <dhaumann at kde dot org>
  *
@@ -47,8 +47,6 @@ namespace Digikam
 class DIGIKAM_EXPORT DNotificationWidget : public QFrame
 {
     Q_OBJECT
-    Q_ENUMS(MessageType)
-
     Q_PROPERTY(QString text READ text WRITE setText)
     Q_PROPERTY(bool wordWrap READ wordWrap WRITE setWordWrap)
     Q_PROPERTY(bool closeButtonVisible READ isCloseButtonVisible WRITE setCloseButtonVisible)
@@ -68,6 +66,7 @@ public:
         Warning,
         Error
     };
+    Q_ENUM(MessageType)
 
 public:
 
@@ -85,7 +84,7 @@ public:
     /**
      * Destructor.
      */
-    ~DNotificationWidget();
+    ~DNotificationWidget() override;
 
     /**
      * Get the text of this message widget.
@@ -136,6 +135,13 @@ public:
      * @see DNotificationWidget::MessageType, addAction(), setMessageType()
      */
     void removeAction(QAction* action);
+
+    /**
+     * clear all actions from the message widget.
+     *
+     * @see DNotificationWidget::MessageType, addAction(), setMessageType()
+     */
+    void clearAllActions();
 
     /**
      * Returns the preferred size of the message widget.

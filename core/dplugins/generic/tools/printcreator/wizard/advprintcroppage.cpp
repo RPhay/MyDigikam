@@ -6,7 +6,7 @@
  * Date        : 2017-05-25
  * Description : a tool to print images
  *
- * Copyright (C) 2017-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2017-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -32,8 +32,6 @@
 
 // KDE includes
 
-#include <kconfig.h>
-#include <kconfiggroup.h>
 #include <klocalizedstring.h>
 
 // Local includes
@@ -68,7 +66,7 @@ public:
 
     explicit Private(QWizard* const dialog)
       : settings(nullptr),
-        iface(nullptr)
+        iface   (nullptr)
     {
         cropUi = new CropUI(dialog);
         wizard = dynamic_cast<AdvPrintWizard*>(dialog);
@@ -88,7 +86,7 @@ public:
 
 AdvPrintCropPage::AdvPrintCropPage(QWizard* const wizard, const QString& title)
     : DWizardPage(wizard, title),
-      d(new Private(wizard))
+      d          (new Private(wizard))
 {
     d->cropUi->BtnCropRotateRight->setIcon(QIcon::fromTheme(QLatin1String("object-rotate-right"))
                                            .pixmap(16, 16));
@@ -186,14 +184,22 @@ void AdvPrintCropPage::slotBtnCropNextClicked()
 void AdvPrintCropPage::setBtnCropEnabled()
 {
     if (d->settings->currentCropPhoto == 0)
+    {
         d->cropUi->BtnCropPrev->setEnabled(false);
+    }
     else
+    {
         d->cropUi->BtnCropPrev->setEnabled(true);
+    }
 
     if (d->settings->currentCropPhoto == (int)d->settings->photos.count() - 1)
+    {
         d->cropUi->BtnCropNext->setEnabled(false);
+    }
     else
+    {
         d->cropUi->BtnCropNext->setEnabled(true);
+    }
 }
 
 void AdvPrintCropPage::slotBtnCropRotateLeftClicked()
@@ -203,6 +209,7 @@ void AdvPrintCropPage::slotBtnCropRotateLeftClicked()
     // so we will initialize it to -2 in an awful hack (this
     // tells the cropFrame to reset the crop region, but don't
     // automatically rotate the image to fit.
+
     AdvPrintPhoto* const photo = d->settings->photos[d->settings->currentCropPhoto];
     photo->m_cropRegion        = QRect(-2, -2, -2, -2);
     photo->m_rotation          = (photo->m_rotation - 90) % 360;
@@ -217,6 +224,7 @@ void AdvPrintCropPage::slotBtnCropRotateRightClicked()
     // so we will initialize it to -2 in an awful hack (this
     // tells the cropFrame to reset the crop region, but don't
     // automatically rotate the image to fit.
+
     AdvPrintPhoto* const photo = d->settings->photos[d->settings->currentCropPhoto];
     photo->m_cropRegion        = QRect(-2, -2, -2, -2);
     photo->m_rotation          = (photo->m_rotation + 90) % 360;

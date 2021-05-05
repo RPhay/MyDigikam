@@ -30,9 +30,12 @@
 namespace DigikamGenericPanoramaPlugin
 {
 
-HuginExecutorTask::HuginExecutorTask(const QString& workDirPath, const QUrl& input,
-                                     QUrl& panoUrl, PanoramaFileType fileType,
-                                     const QString& huginExecutorPath, bool preview)
+HuginExecutorTask::HuginExecutorTask(const QString& workDirPath,
+                                     const QUrl& input,
+                                     QUrl& panoUrl,
+                                     PanoramaFileType fileType,
+                                     const QString& huginExecutorPath,
+                                     bool preview)
     : CommandTask(preview ? PANO_HUGINEXECUTORPREVIEW : PANO_HUGINEXECUTOR, workDirPath, huginExecutorPath),
       ptoUrl(input),
       panoUrl(panoUrl),
@@ -54,9 +57,11 @@ void HuginExecutorTask::run(ThreadWeaver::JobPointer, ThreadWeaver::Thread*)
         case JPEG:
             panoUrl.setPath(panoUrl.path() + fi.completeBaseName() + QLatin1String(".jpg"));
             break;
+
         case TIFF:
             panoUrl.setPath(panoUrl.path() + fi.completeBaseName() + QLatin1String(".tif"));
             break;
+
         case HDR:
             panoUrl.setPath(panoUrl.path() + fi.completeBaseName() + QLatin1String(".hdr"));
             break;
@@ -71,6 +76,7 @@ void HuginExecutorTask::run(ThreadWeaver::JobPointer, ThreadWeaver::Thread*)
     runProcess(args);
 
     // HuginExecutor does not return an error code when something went wrong...
+
     QFile panoOutput(panoUrl.toLocalFile());
 
     if (!panoOutput.exists())

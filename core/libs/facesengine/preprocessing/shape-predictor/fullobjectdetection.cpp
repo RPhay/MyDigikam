@@ -9,7 +9,7 @@
  *               eye, nose, and mouth.
  *
  * Copyright (C)      2016 by Omar Amin <Omar dot moh dot amin at gmail dot com>
- * Copyright (C) 2016-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2016-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -31,7 +31,7 @@ namespace Digikam
 
 FullObjectDetection::FullObjectDetection(const cv::Rect& rect_,
                                          const std::vector<std::vector<float> >& parts_)
-    : rect(rect_),
+    : rect (rect_),
       parts(parts_)
 {
 }
@@ -57,7 +57,7 @@ cv::Rect& FullObjectDetection::get_rect()
 
 unsigned long FullObjectDetection::num_parts() const
 {
-    return parts.size();
+    return (unsigned long)parts.size();
 }
 
 const std::vector<float>& FullObjectDetection::part(unsigned long idx) const
@@ -83,11 +83,12 @@ std::vector<cv::Rect> getEyes(const FullObjectDetection& shape)
         int tlx, tly, brx, bry;
 
         // initializing
+
         std::vector<float> firstpoint = shape.part(start);
-        tlx                           = firstpoint[0];
-        brx                           = firstpoint[0];
-        tly                           = firstpoint[1];
-        bry                           = firstpoint[1];
+        tlx                           = (int)firstpoint[0];
+        brx                           = (int)firstpoint[0];
+        tly                           = (int)firstpoint[1];
+        bry                           = (int)firstpoint[1];
 
         for (int i = start ; i <= end ; ++i)
         {
@@ -95,20 +96,20 @@ std::vector<cv::Rect> getEyes(const FullObjectDetection& shape)
 
             if      (x[0] < tlx)
             {
-                tlx = x[0];
+                tlx = (int)x[0];
             }
             else if (x[0] > brx)
             {
-                brx = x[0];
+                brx = (int)x[0];
             }
 
             if      (x[1] < tly)
             {
-                tly = x[1];
+                tly = (int)x[1];
             }
             else if (x[1] > bry)
             {
-                bry = x[1];
+                bry = (int)x[1];
             }
         }
 

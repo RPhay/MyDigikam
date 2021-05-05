@@ -6,7 +6,7 @@
  * Date        : 2017-06-27
  * Description : a tool to export items by email.
  *
- * Copyright (C) 2017-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2017-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -43,14 +43,14 @@ class MailSettingsPage : public DWizardPage
 public:
 
     explicit MailSettingsPage(QWizard* const dialog, const QString& title);
-    ~MailSettingsPage();
+    ~MailSettingsPage() override;
 
-    void initializePage();
-    bool validatePage();
+    void initializePage() override;
+    bool validatePage() override;
 
 private Q_SLOTS:
 
-    void slotImagesFormatChanged(int);
+    void slotImageFormatChanged(int);
 
 private:
 

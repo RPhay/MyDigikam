@@ -7,7 +7,7 @@
  * Description : Qt model-view for items - the delegate
  *
  * Copyright (C) 2002-2005 by Renchi Raju <renchi dot raju at gmail dot com>
- * Copyright (C) 2002-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2002-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2009-2011 by Andi Clemens <andi dot clemens at gmail dot com>
  * Copyright (C) 2006-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  *
@@ -77,17 +77,18 @@ void DigikamItemDelegate::updateRects()
 {
     Q_D(DigikamItemDelegate);
 
-    int y                                          = d->margin;
-    d->pixmapRect                                  = QRect(d->margin, y, d->contentWidth, d->contentWidth);
-    y                                              = d->pixmapRect.bottom();
-    d->imageInformationRect                        = QRect(d->margin, y, d->contentWidth, 0);
-    const ApplicationSettings* const albumSettings = ApplicationSettings::instance();
-    d->drawImageFormat                             = albumSettings->getIconShowImageFormat();
-    d->drawCoordinates                             = albumSettings->getIconShowCoordinates();
-    const int iconSize                             = qBound(16, (d->contentWidth + 2*d->margin) / 8 - 2, 48);
-    d->pickLabelRect                               = QRect(d->margin, y, iconSize, iconSize);
-    d->groupRect                                   = QRect(d->contentWidth - iconSize, y, iconSize, iconSize);
-    d->coordinatesRect                             = QRect(d->contentWidth - iconSize+2, d->pixmapRect.top(), iconSize, iconSize);
+    int y                                    = d->margin;
+    d->pixmapRect                            = QRect(d->margin, y, d->contentWidth, d->contentWidth);
+    y                                        = d->pixmapRect.bottom();
+    d->imageInformationRect                  = QRect(d->margin, y, d->contentWidth, 0);
+    ApplicationSettings* const albumSettings = ApplicationSettings::instance();
+    d->drawImageFormat                       = albumSettings->getIconShowImageFormat();
+    d->drawCoordinates                       = albumSettings->getIconShowCoordinates();
+    const int iconSize                       = qBound(16, (d->contentWidth + 2*d->margin) / 8 - 2, 48);
+    d->pickLabelRect                         = QRect(d->margin, y - d->margin, iconSize, iconSize);
+    d->coordinatesRect                       = QRect(d->contentWidth - iconSize+2, d->pixmapRect.top(), iconSize, iconSize);
+    d->groupRect                             = QRect(d->contentWidth - iconSize + d->margin, y - d->margin, iconSize, iconSize);
+    const bool showInfos                     = ((d->contentWidth - 2*d->radius) > ThumbnailSize::Small);
 
     if (albumSettings->getIconShowRating())
     {
@@ -104,46 +105,46 @@ void DigikamItemDelegate::updateRects()
     if (albumSettings->getIconShowTitle())
     {
         d->titleRect = QRect(d->margin, y, d->contentWidth, d->oneRowRegRect.height());
-        y = d->titleRect.bottom();
+        y            = d->titleRect.bottom();
     }
 
-    if (albumSettings->getIconShowComments())
+    if (showInfos && albumSettings->getIconShowComments())
     {
         d->commentsRect = QRect(d->margin, y, d->contentWidth, d->oneRowComRect.height());
         y               = d->commentsRect.bottom();
     }
 
-    if (albumSettings->getIconShowDate())
+    if (showInfos && albumSettings->getIconShowDate())
     {
         d->dateRect = QRect(d->margin, y, d->contentWidth, d->oneRowXtraRect.height());
         y           = d->dateRect.bottom();
     }
 
-    if (albumSettings->getIconShowModDate())
+    if (showInfos && albumSettings->getIconShowModDate())
     {
         d->modDateRect = QRect(d->margin, y, d->contentWidth, d->oneRowXtraRect.height());
         y              = d->modDateRect.bottom();
     }
 
-    if (albumSettings->getIconShowResolution())
+    if (showInfos && albumSettings->getIconShowResolution())
     {
         d->resolutionRect = QRect(d->margin, y, d->contentWidth, d->oneRowXtraRect.height());
         y                 = d->resolutionRect.bottom() ;
     }
 
-    if (albumSettings->getIconShowAspectRatio())
+    if (showInfos && albumSettings->getIconShowAspectRatio())
     {
         d->arRect = QRect(d->margin, y, d->contentWidth, d->oneRowXtraRect.height());
-        y                 = d->arRect.bottom() ;
+        y         = d->arRect.bottom() ;
     }
 
-    if (albumSettings->getIconShowSize())
+    if (showInfos && albumSettings->getIconShowSize())
     {
         d->sizeRect = QRect(d->margin, y, d->contentWidth, d->oneRowXtraRect.height());
         y           = d->sizeRect.bottom();
     }
 
-    if (albumSettings->getIconShowTags())
+    if (showInfos && albumSettings->getIconShowTags())
     {
         d->tagRect = QRect(d->margin, y, d->contentWidth, d->oneRowComRect.height());
         y          = d->tagRect.bottom();

@@ -7,7 +7,7 @@
  * Description : a tool to export images to Dropbox web service
  *
  * Copyright (C) 2013      by Pankaj Kumar <me at panks dot me>
- * Copyright (C) 2013-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2013-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -34,8 +34,8 @@
 // KDE includes
 
 #include <klocalizedstring.h>
-#include <kconfig.h>
-#include <kwindowconfig.h>
+#include <ksharedconfig.h>
+#include <kconfiggroup.h>
 
 // Local includes
 
@@ -76,7 +76,7 @@ public:
 
 DBWindow::DBWindow(DInfoInterface* const iface, QWidget* const /*parent*/)
     : WSToolDialog(nullptr, QLatin1String("Dropbox Export Dialog")),
-      d(new Private)
+      d           (new Private)
 {
     d->widget   = new DBWidget(this, iface, QLatin1String("Dropbox"));
     d->widget->imagesList()->setIface(iface);
@@ -169,9 +169,9 @@ void DBWindow::reactivate()
 
 void DBWindow::readSettings()
 {
-    KConfig config;
-    KConfigGroup grp    = config.group("Dropbox Settings");
-    d->currentAlbumName = grp.readEntry("Current Album", QString());
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup grp        = config->group("Dropbox Settings");
+    d->currentAlbumName     = grp.readEntry("Current Album", QString());
 
     if (grp.readEntry("Resize", false))
     {
@@ -187,28 +187,18 @@ void DBWindow::readSettings()
     d->widget->getOriginalCheckBox()->setChecked(grp.readEntry("Upload Original", false));
     d->widget->getDimensionSpB()->setValue(grp.readEntry("Maximum Width",         1600));
     d->widget->getImgQualitySpB()->setValue(grp.readEntry("Image Quality",        90));
-
-    winId();
-    KConfigGroup dialogGroup = config.group("Dropbox Export Dialog");
-    KWindowConfig::restoreWindowSize(windowHandle(), dialogGroup);
-    resize(windowHandle()->size());
 }
 
 void DBWindow::writeSettings()
 {
-    KConfig config;
-    KConfigGroup grp = config.group("Dropbox Settings");
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup grp        = config->group("Dropbox Settings");
 
     grp.writeEntry("Current Album",   d->currentAlbumName);
     grp.writeEntry("Resize",          d->widget->getResizeCheckBox()->isChecked());
     grp.writeEntry("Upload Original", d->widget->getOriginalCheckBox()->isChecked());
     grp.writeEntry("Maximum Width",   d->widget->getDimensionSpB()->value());
     grp.writeEntry("Image Quality",   d->widget->getImgQualitySpB()->value());
-
-    KConfigGroup dialogGroup = config.group("Dropbox Export Dialog");
-    KWindowConfig::saveWindowSize(windowHandle(), dialogGroup);
-
-    config.sync();
 }
 
 void DBWindow::slotSetUserName(const QString& msg)

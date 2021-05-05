@@ -7,7 +7,7 @@
  * Description : a tool to show image using an OpenGL interface.
  *
  * Copyright (C) 2007-2008 by Markus Leuthold <kusi at forum dot titlis dot org>
- * Copyright (C) 2008-2016 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2008-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -21,13 +21,13 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_GLVIEWERPLUGIN_GLVIEWERGLOBAL_H
-#define DIGIKAM_GLVIEWERPLUGIN_GLVIEWERGLOBAL_H
+#ifndef DIGIKAM_GLVIEWER_PLUGIN_GLVIEWER_GLOBAL_H
+#define DIGIKAM_GLVIEWER_PLUGIN_GLVIEWER_GLOBAL_H
 
-//Uncomment this line to enable performance checks.
+// Uncomment this line to enable performance checks.
 //#define PERFORMANCE_ANALYSIS
 
-// Images cache settings. Keep in mind that one cache entry takes 20MB for a 5mpix pic
+/// Images cache settings. Keep in mind that one cache entry takes 20MB for a 5mpix pic
 #define CACHESIZE 4
 #define EMPTY     99999
 
@@ -43,4 +43,4 @@ enum OGLstate
 
 } // namespace DigikamGenericGLViewerPlugin
 
-#endif // DIGIKAM_GLVIEWERPLUGIN_GLVIEWERGLOBAL_H
+#endif // DIGIKAM_GLVIEWER_PLUGIN_GLVIEWER_GLOBAL_H

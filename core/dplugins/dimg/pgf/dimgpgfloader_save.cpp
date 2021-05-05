@@ -6,7 +6,7 @@
  * Date        : 2009-06-03
  * Description : A PGF IO file for DImg framework - save operations
  *
- * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -53,7 +53,7 @@ extern "C"
 
 // Windows includes
 
-#ifdef Q_OS_WIN32
+#ifdef Q_OS_WIN
 #   include <windows.h>
 #endif
 
@@ -96,29 +96,28 @@ bool DImgPGFLoader::save(const QString& filePath, DImgLoaderObserver* const obse
 {
     m_observer = observer;
 
-#ifdef Q_OS_WIN32
-#   ifdef UNICODE
+#ifdef Q_OS_WIN
+
     HANDLE fd = CreateFileW((LPCWSTR)filePath.utf16(), GENERIC_READ | GENERIC_WRITE, 0,
                             NULL, CREATE_ALWAYS, FILE_ATTRIBUTE_NORMAL, 0);
-#   else
-    HANDLE fd = CreateFile(QFile::encodeName(filePath).constData(), GENERIC_READ | GENERIC_WRITE, 0,
-                           NULL, CREATE_ALWAYS, FILE_ATTRIBUTE_NORMAL, 0);
-#   endif
 
     if (fd == INVALID_HANDLE_VALUE)
     {
         qCWarning(DIGIKAM_DIMG_LOG_PGF) << "Error: Could not open destination file.";
         qCWarning(DIGIKAM_DIMG_LOG_PGF) << "Last error code:" << GetLastError();
+
         return false;
     }
 
-#elif defined(__POSIX__)
-    int fd = QT_OPEN(QFile::encodeName(filePath).constData(),
+#else
+
+    int fd = QT_OPEN(filePath.toUtf8().constData(),
                      O_RDWR | O_CREAT | O_TRUNC, S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH);
 
     if (fd == -1)
     {
         qCWarning(DIGIKAM_DIMG_LOG_PGF) << "Error: Could not open destination file.";
+
         return false;
     }
 
@@ -171,11 +170,15 @@ bool DImgPGFLoader::save(const QString& filePath, DImgLoaderObserver* const obse
         }
 
 #ifdef PGFCodecVersionID
+
 #   if PGFCodecVersionID < 0x061142
+
         header.background.rgbtBlue  = 0;
         header.background.rgbtGreen = 0;
         header.background.rgbtRed   = 0;
+
 #   endif
+
 #endif
 
         pgf.SetHeader(header);
@@ -192,11 +195,17 @@ bool DImgPGFLoader::save(const QString& filePath, DImgLoaderObserver* const obse
         UINT32 nWrittenBytes = 0;
 
 #ifdef PGFCodecVersionID
+
 #   if PGFCodecVersionID >= 0x061124
+
         pgf.Write(&stream, &nWrittenBytes, CallbackForLibPGF, this);
+
 #   endif
+
 #else
+
         pgf.Write(&stream, 0, CallbackForLibPGF, &nWrittenBytes, this);
+
 #endif
 
         qCDebug(DIGIKAM_DIMG_LOG_PGF) << "PGF width     = " << header.width;
@@ -207,17 +216,21 @@ bool DImgPGFLoader::save(const QString& filePath, DImgLoaderObserver* const obse
         qCDebug(DIGIKAM_DIMG_LOG_PGF) << "PGF mode      = " << header.mode;
         qCDebug(DIGIKAM_DIMG_LOG_PGF) << "Bytes Written = " << nWrittenBytes;
 
-#ifdef Q_OS_WIN32
+#ifdef Q_OS_WIN
+
         CloseHandle(fd);
+
 #else
+
         close(fd);
+
 #endif
         // TODO: Store ICC profile in an appropriate place in the image
         storeColorProfileInMetadata();
 
         if (observer)
         {
-            observer->progressInfo(1.0);
+            observer->progressInfo(1.0F);
         }
 
         imageSetAttribute(QLatin1String("savedFormat"), QLatin1String("PGF"));
@@ -236,10 +249,14 @@ bool DImgPGFLoader::save(const QString& filePath, DImgLoaderObserver* const obse
 
         qCWarning(DIGIKAM_DIMG_LOG_PGF) << "Error: Opening and saving PGF image failed (" << err << ")!";
 
-#ifdef Q_OS_WIN32
+#ifdef Q_OS_WIN
+
         CloseHandle(fd);
+
 #else
+
         close(fd);
+
 #endif
 
         return false;

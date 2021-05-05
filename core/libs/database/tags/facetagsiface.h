@@ -49,12 +49,13 @@ public:
         InvalidFace      = 0,
         UnknownName      = 1 << 0,
         UnconfirmedName  = 1 << 1,
-        ConfirmedName    = 1 << 2,
-        FaceForTraining  = 1 << 3,
+        IgnoredName      = 1 << 2,
+        ConfirmedName    = 1 << 3,
+        FaceForTraining  = 1 << 4,
 
         UnconfirmedTypes = UnknownName | UnconfirmedName,
-        NormalFaces      = UnknownName | UnconfirmedName | ConfirmedName,
-        AllTypes         = UnknownName | UnconfirmedName | ConfirmedName | FaceForTraining,
+        NormalFaces      = UnknownName | UnconfirmedName | IgnoredName | ConfirmedName,
+        AllTypes         = UnknownName | UnconfirmedName | IgnoredName | ConfirmedName | FaceForTraining,
         TypeFirst        = UnknownName,
         TypeLast         = FaceForTraining
     };
@@ -73,6 +74,11 @@ public:
     int       tagId()                           const;
     TagRegion region()                          const;
 
+    bool      isInvalidFace()                   const
+    {
+        return (type() == InvalidFace);
+    }
+
     bool      isUnknownName()                   const
     {
         return (type() == UnknownName);
@@ -86,6 +92,11 @@ public:
     bool      isUnconfirmedType()               const
     {
         return (type() & UnconfirmedTypes);
+    }
+
+    bool      isIgnoredName()                   const
+    {
+        return (type() == IgnoredName);
     }
 
     bool      isConfirmedName()                 const
@@ -104,11 +115,21 @@ public:
 
     bool operator==(const FaceTagsIface& other) const;
 
-    /// Returns a list of all image tag properties for which flags are set
+    /**
+     * Returns a list of all image tag properties for which flags are set
+     */
     static QStringList attributesForFlags(TypeFlags flags);
 
-    /// Return the corresponding image tag property for the given type
+    /**
+     * Return the corresponding image tag property for the given type
+     */
     static QString attributeForType(Type type);
+
+    /**
+     * Returns the Face Type corresponding to
+     * the given TagId.
+     */
+    static Type typeForId(int tagId);
 
     /**
      * Return the Type for the given attribute. To distinguish between UnknownName
@@ -144,7 +165,7 @@ protected:
 
 DIGIKAM_DATABASE_EXPORT QDebug operator<<(QDebug dbg, const FaceTagsIface& f);
 
-}  // Namespace Digikam
+} // namespace Digikam
 
 Q_DECLARE_OPERATORS_FOR_FLAGS(Digikam::FaceTagsIface::TypeFlags)
 

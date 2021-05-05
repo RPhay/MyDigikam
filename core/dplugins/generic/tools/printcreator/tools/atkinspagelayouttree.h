@@ -7,7 +7,7 @@
  * Description : Layouting photos on a page
  *
  * Copyright (C) 2007-2009 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef ATKINS_PAGE_LAYOUT_TREE_H
-#define ATKINS_PAGE_LAYOUT_TREE_H
+#ifndef DIGIKAM_ATKINS_PAGE_LAYOUT_TREE_H
+#define DIGIKAM_ATKINS_PAGE_LAYOUT_TREE_H
 
 // Qt includes
 
@@ -30,26 +30,23 @@
 #include <QMap>
 
 /**
-    Implements the algorithm described in
-
-    "Adaptive Photo Collection Page Layout",
-    C. Brian Atkins
-    Imaging Technology Department
-    HP Labs
-    Palo Alto, CA 94304
-    cbatkins@hpl.hp.com
-
-    PDF available at:
-    http://hpl.hp.com/research/isl/layout/
-
-    Comments in the source file refer to the PDF file.
-*/
+ * Implements the algorithm described in
+ * "Adaptive Photo Collection Page Layout",
+ * C. Brian Atkins
+ * Imaging Technology Department
+ * HP Labs
+ * Palo Alto, CA 94304
+ * cbatkins@hpl.hp.com
+ *
+ * PDF available at this url:
+ * hpl.hp.com/research/isl/layout/
+ */
 
 /**
-    The classes AtkinsPageLayoutNode and AtkinsPageLayoutTree provide the actual implementation.
-    Do not use these classes directly.
-    Use the AtkinsPageLayout adaptor class.
-*/
+ * The classes AtkinsPageLayoutNode and AtkinsPageLayoutTree provide the actual implementation.
+ * Do not use these classes directly.
+ * Use the AtkinsPageLayout adaptor class.
+ */
 
 namespace DigikamGenericPrintCreatorPlugin
 {
@@ -65,6 +62,8 @@ public:
     AtkinsPageLayoutTree(const AtkinsPageLayoutTree&);
     ~AtkinsPageLayoutTree();
 
+    AtkinsPageLayoutTree& operator=(const AtkinsPageLayoutTree& other);
+
     int    addImage(double aspectRatio,
                     double relativeArea);
     QRectF drawingArea(int index,
@@ -75,14 +74,13 @@ public:
                  int nodeCount);
     double G() const;
 
-    AtkinsPageLayoutTree& operator=(const AtkinsPageLayoutTree& other);
-
 private:
 
     double absoluteArea(AtkinsPageLayoutNode* const node);
 
-    /** Lays out a rectangle with given aspect ratio and absolute area inside the given
-     *  larger rectangle (not in the paper).
+    /**
+     * Lays out a rectangle with given aspect ratio and absolute area inside the given
+     * larger rectangle (not in the paper).
      */
     QRectF rectInRect(const QRectF& rect,
                       double aspectRatio,
@@ -99,4 +97,4 @@ private:
 
 } // Namespace Digikam
 
-#endif // ATKINS_PAGE_LAYOUT_TREE_H
+#endif // DIGIKAM_ATKINS_PAGE_LAYOUT_TREE_H

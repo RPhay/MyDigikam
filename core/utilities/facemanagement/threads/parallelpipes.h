@@ -38,7 +38,7 @@ class Q_DECL_HIDDEN ParallelPipes : public QObject
 public:
 
     explicit ParallelPipes();
-    ~ParallelPipes();
+    ~ParallelPipes() override;
 
     void schedule();
     void deactivate(WorkerObject::DeactivatingMode mode = WorkerObject::FlushSignals);
@@ -53,7 +53,7 @@ public:
 
 public Q_SLOTS:
 
-    void process(FacePipelineExtendedPackage::Ptr package);
+    void process(const FacePipelineExtendedPackage::Ptr& package);
 
 Q_SIGNALS:
 
@@ -63,6 +63,13 @@ protected:
 
     QList<QMetaMethod> m_methods;
     int                m_currentIndex;
+
+private:
+
+    // Disable
+    ParallelPipes(QObject*)                        = delete;
+    ParallelPipes(const ParallelPipes&)            = delete;
+    ParallelPipes& operator=(const ParallelPipes&) = delete;
 };
 
 } // namespace Digikam

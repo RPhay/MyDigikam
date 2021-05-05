@@ -7,7 +7,7 @@
  * Description : Scanning a single item - history metadata helper.
  *
  * Copyright (C) 2007-2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2013-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2013-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -31,8 +31,8 @@ void ItemScanner::scanImageHistory()
 {
     /** Stage 1 of history scanning */
 
-    d->commit.historyXml = d->metadata.getItemHistory();
-    d->commit.uuid       = d->metadata.getItemUniqueId();
+    d->commit.historyXml = d->metadata->getItemHistory();
+    d->commit.uuid       = d->metadata->getItemUniqueId();
 }
 
 void ItemScanner::commitImageHistory()
@@ -57,7 +57,7 @@ void ItemScanner::scanImageHistoryIfModified()
 {
     // If a file has a modified history, it must have a new UUID
     QString previousUuid = CoreDbAccess().db()->getImageUuid(d->scanInfo.id);
-    QString currentUuid  = d->metadata.getItemUniqueId();
+    QString currentUuid  = d->metadata->getItemUniqueId();
 
     if (!currentUuid.isEmpty() && previousUuid != currentUuid)
     {

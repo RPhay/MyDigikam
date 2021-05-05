@@ -6,7 +6,7 @@
  * Date        : 2018-07-30
  * Description : a plugin to acquire images with a digital scanner.
  *
- * Copyright (C) 2018-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2018-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -100,7 +100,7 @@ QList<DPluginAuthor> DigitalScannerPlugin::authors() const
                              QString::fromUtf8("(C) 2006-2007"))
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2003-2020"))
+                             QString::fromUtf8("(C) 2003-2021"))
             ;
 }
 
@@ -131,13 +131,17 @@ void DigitalScannerPlugin::slotDigitalScanner()
 
         if (dev.isEmpty())
         {
+            QMessageBox::warning(nullptr, qApp->applicationName(), i18n("There is no scanner device available.\n"
+                                                                        "Please check your configuration"));
             return;
         }
 
         if (!m_saneWidget->openDevice(dev))
         {
             // could not open a scanner
-            QMessageBox::warning(nullptr, qApp->applicationName(), i18n("Cannot open scanner device."));
+
+            QMessageBox::warning(nullptr, qApp->applicationName(), i18n("Cannot open scanner device \"%1\".\n"
+                                                                        "Please check your configuration", dev));
             return;
         }
 

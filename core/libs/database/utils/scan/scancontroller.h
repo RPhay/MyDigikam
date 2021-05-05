@@ -7,7 +7,7 @@
  * Description : scan item controller.
  *
  * Copyright (C) 2005-2006 by Tom Albers <tomalbers at kde dot nl>
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2007-2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  *
  * This program is free software; you can redistribute it
@@ -47,7 +47,7 @@ namespace Digikam
 class CollectionScanner;
 class PAlbum;
 
-class DIGIKAM_EXPORT ScanController : public QThread,
+class DIGIKAM_GUI_EXPORT ScanController : public QThread,
                                       public InitializationObserver
 {
     Q_OBJECT
@@ -108,18 +108,18 @@ public:
 
 protected:
 
-    virtual void run() override;
+    void run() override;
 
 private:
 
     explicit ScanController();
-    ~ScanController();
+    ~ScanController() override;
 
     void setInitializationMessage();
     void createProgressDialog();
 
-    virtual bool continueQuery()                                            override;
-    virtual void connectCollectionScanner(CollectionScanner* const scanner) override;
+    bool continueQuery()                                            override;
+    void connectCollectionScanner(CollectionScanner* const scanner) override;
 
     // -----------------------------------------------------------------------------
 
@@ -251,7 +251,7 @@ public:
      * and give the names at destination in itemNames (Unless for rename, names wont usually change.
      * Give them nevertheless.)
      */
-    void hintAtMoveOrCopyOfItems(const QList<qlonglong> ids,
+    void hintAtMoveOrCopyOfItems(const QList<qlonglong>& ids,
                                  const PAlbum* const dstAlbum,
                                  const QStringList& itemNames);
     void hintAtMoveOrCopyOfItem(qlonglong id,
@@ -262,7 +262,7 @@ public:
      * Hint at the fact that an item may have changed, although its modification date may not have changed.
      * Note that a scan of the containing directory will need to be triggered nonetheless for the hints to take effect.
      */
-    void hintAtModificationOfItems(const QList<qlonglong> ids);
+    void hintAtModificationOfItems(const QList<qlonglong>& ids);
     void hintAtModificationOfItem(qlonglong id);
 
 Q_SIGNALS:
@@ -285,9 +285,9 @@ private Q_SLOTS:
 
 private:
 
-    virtual void moreSchemaUpdateSteps(int numberOfSteps) override;
-    virtual void schemaUpdateProgress(const QString& message, int numberOfSteps) override;
-    virtual void error(const QString& errorMessage) override;
+    void moreSchemaUpdateSteps(int numberOfSteps)                        override;
+    void schemaUpdateProgress(const QString& message, int numberOfSteps) override;
+    void error(const QString& errorMessage) override;
 
     AlbumCopyMoveHint hintForAlbum(const PAlbum* const album,
                                    int dstAlbumRootId,
@@ -296,7 +296,7 @@ private:
 
     QList<AlbumCopyMoveHint> hintsForAlbum(const PAlbum* const album,
                                            int dstAlbumRootId,
-                                           QString relativeDstPath,
+                                           const QString& relativeDstPath,
                                            const QString& albumName);
     //@}
 
@@ -366,9 +366,16 @@ private Q_SLOTS:
 
 private:
 
-    virtual void finishedSchemaUpdate(UpdateResult result) override;
+    void finishedSchemaUpdate(UpdateResult result) override;
 
     //@}
+
+private:
+
+    // Disable
+    ScanController(QObject*)                         = delete;
+    ScanController(const ScanController&)            = delete;
+    ScanController& operator=(const ScanController&) = delete;
 
 private:
 

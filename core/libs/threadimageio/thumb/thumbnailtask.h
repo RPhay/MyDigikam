@@ -7,7 +7,7 @@
  * Description : Multithreaded loader for thumbnails
  *
  * Copyright (C) 2006-2008 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -42,11 +42,13 @@ class ThumbnailLoadingTask : public SharedLoadingTask
 {
 public:
 
-    explicit ThumbnailLoadingTask(LoadSaveThread* const thread, const LoadingDescription& description);
+    explicit ThumbnailLoadingTask(LoadSaveThread* const thread,
+                                  const LoadingDescription& description);
 
     void execute()     override;
     void postProcess() override;
-    void setThumbResult(const LoadingDescription& loadingDescription, const QImage& qimage);
+    void setThumbResult(const LoadingDescription& loadingDescription,
+                        const QImage& qimage);
 
 private:
 
@@ -56,6 +58,12 @@ private:
 
     QImage            m_qimage;
     ThumbnailCreator* m_creator;
+
+private:
+
+    // Disable
+    ThumbnailLoadingTask(const ThumbnailLoadingTask&)            = delete;
+    ThumbnailLoadingTask& operator=(const ThumbnailLoadingTask&) = delete;
 };
 
 } // namespace Digikam

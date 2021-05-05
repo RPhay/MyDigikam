@@ -6,7 +6,7 @@
  * Date        : 2018-07-30
  * Description : image editor plugin to convert 8 bits color depth to 16
  *
- * Copyright (C) 2018-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2018-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -49,7 +49,7 @@ Convert8To16ToolPlugin::~Convert8To16ToolPlugin()
 
 QString Convert8To16ToolPlugin::name() const
 {
-    return i18n("Convert to 16 bits");
+    return i18nc("@title", "Convert to 16 bits");
 }
 
 QString Convert8To16ToolPlugin::iid() const
@@ -64,12 +64,12 @@ QIcon Convert8To16ToolPlugin::icon() const
 
 QString Convert8To16ToolPlugin::description() const
 {
-    return i18n("A tool to convert color depth to 16 bits");
+    return i18nc("@info", "A tool to convert color depth to 16 bits");
 }
 
 QString Convert8To16ToolPlugin::details() const
 {
-    return i18n("<p>This Image Editor tool can convert image color depth to 16 bits.</p>");
+    return i18nc("@info", "This Image Editor tool can convert image color depth to 16 bits.");
 }
 
 QList<DPluginAuthor> Convert8To16ToolPlugin::authors() const
@@ -77,7 +77,7 @@ QList<DPluginAuthor> Convert8To16ToolPlugin::authors() const
     return QList<DPluginAuthor>()
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2005-2020"))
+                             QString::fromUtf8("(C) 2005-2021"))
             ;
 }
 
@@ -102,12 +102,13 @@ void Convert8To16ToolPlugin::slotConvert8To16()
     if (iface.originalSixteenBit())
     {
         QMessageBox::critical(qApp->activeWindow(), qApp->applicationName(),
-                              i18n("This image is already using a depth of 16 bits / color / pixel."));
+                              i18nc("@info", "This image is already using a depth of 16 bits / color / pixel."));
         return;
     }
 
     qApp->setOverrideCursor(Qt::WaitCursor);
     iface.convertOriginalColorDepth(64);
-    qApp->restoreOverrideCursor();}
+    qApp->restoreOverrideCursor();
+}
 
 } // namespace DigikamEditorConvert8To16ToolPlugin

@@ -8,7 +8,7 @@
  *
  * Copyright (C) 2003-2005 by Renchi Raju <renchi dot raju at gmail dot com>
  * Copyright (C) 2006      by Colin Guthrie <kde at colin dot guthr dot ie>
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2008      by Andrea Diamantini <adjam7 at gmail dot com>
  * Copyright (C) 2010-2014 by Frederic Coiffier <frederic dot coiffier at free dot com>
  *
@@ -33,7 +33,7 @@
 
 // KDE includes
 
-#include <kconfig.h>
+#include <ksharedconfig.h>
 #include <kconfiggroup.h>
 
 // Local includes
@@ -99,24 +99,24 @@ void PiwigoSession::setPassword(const QString& password)
 
 void PiwigoSession::load()
 {
-    KConfig config;
-    KConfigGroup group = config.group("Piwigo Settings");
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup group      = config->group("Piwigo Settings");
 
-    d->url      = group.readEntry("URL",      QString());
-    d->username = group.readEntry("Username", QString());
-    d->password = group.readEntry("Password", QString());
+    d->url                  = group.readEntry("URL",      QString());
+    d->username             = group.readEntry("Username", QString());
+    d->password             = group.readEntry("Password", QString());
 }
 
 void PiwigoSession::save()
 {
-    KConfig config;
-    KConfigGroup group = config.group("Piwigo Settings");
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup group      = config->group("Piwigo Settings");
 
     group.writeEntry(QString::fromUtf8("URL"),      url());
     group.writeEntry(QString::fromUtf8("Username"), username());
     group.writeEntry(QString::fromUtf8("Password"), password());
 
-    config.sync();
+    config->sync();
 }
 
 } // namespace DigikamGenericPiwigoPlugin

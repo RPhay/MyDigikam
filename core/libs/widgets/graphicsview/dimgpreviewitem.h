@@ -59,7 +59,7 @@ public:
 public:
 
     explicit DImgPreviewItem(QGraphicsItem* const parent = nullptr);
-    virtual ~DImgPreviewItem();
+    ~DImgPreviewItem() override;
 
     void setDisplayingWidget(QWidget* const widget);
     void setPreviewSettings(const PreviewSettings& settings);
@@ -90,12 +90,15 @@ private Q_SLOTS:
 
 private:
 
+    // Disable
+    DImgPreviewItem(QObject*);
+
     class DImgPreviewItemPrivate;
     Q_DECLARE_PRIVATE(DImgPreviewItem)
 
 protected:
 
-    DImgPreviewItem(DImgPreviewItemPrivate& dd, QGraphicsItem* const parent = nullptr);
+    explicit DImgPreviewItem(DImgPreviewItemPrivate& dd, QGraphicsItem* const parent = nullptr);
 };
 
 } // namespace Digikam

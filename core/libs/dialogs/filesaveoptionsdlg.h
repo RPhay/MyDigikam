@@ -7,7 +7,7 @@
  * Description : a dialog to display image file save options.
  *
  * Copyright (C)      2009 by David Eriksson <meldavid at acc umu se>
- * Copyright (C) 2010-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2010-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -41,6 +41,7 @@ namespace Digikam
 
 class DIGIKAM_EXPORT FileSaveOptionsDlg : public QDialog
 {
+    Q_OBJECT
 
 public:
 
@@ -52,7 +53,7 @@ public:
      * filename.
      *
      * @param filename file name to discover the desired format from
-     * @param fallback fallback format to return if no format could be
+     * @param fallback the fallback format to return if no format could be
      *                 discovered based on the filename
      * @return file format guessed from the file name or the given fallback
      *         format if no format could be guessed based on the file name

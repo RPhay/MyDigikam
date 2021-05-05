@@ -7,7 +7,7 @@
  * Description : ItemInfo common data
  *
  * Copyright (C) 2007-2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2013-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2013-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -42,15 +42,15 @@ namespace Digikam
 class AlbumShortInfo;
 class ItemInfoData;
 
-// No EXPORT class
+// NOTE: No need to EXPORT this class
 class ItemInfoCache : public QObject
 {
     Q_OBJECT
 
 public:
 
-    explicit ItemInfoCache();
-    ~ItemInfoCache();
+    ItemInfoCache();
+    ~ItemInfoCache() override;
 
     /**
      * Return an ItemInfoData object for the given image id.
@@ -103,6 +103,9 @@ private Q_SLOTS:
     void slotAlbumChange(const AlbumChangeset&);
 
 private:
+
+    // Disable
+    explicit ItemInfoCache(QObject*) = delete;
 
     QList<AlbumShortInfo>::const_iterator findAlbum(int id);
     void                                  checkAlbums();

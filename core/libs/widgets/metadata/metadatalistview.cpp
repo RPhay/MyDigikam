@@ -7,7 +7,7 @@
  * Description : a generic list view widget to
  *               display metadata
  *
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -29,6 +29,8 @@
 #include <QHeaderView>
 #include <QTimer>
 #include <QPalette>
+#include <QApplication>
+#include <QStyle>
 
 // KDE includes
 
@@ -50,6 +52,7 @@ MetadataListView::MetadataListView(QWidget* const parent)
     setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     setAllColumnsShowFocus(true);
     setColumnCount(2);
+    setIndentation(QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing));
     header()->setSectionResizeMode(QHeaderView::Stretch);
     header()->hide();
 
@@ -71,7 +74,7 @@ MetadataListView::~MetadataListView()
 {
 }
 
-QString MetadataListView::getCurrentItemKey()
+QString MetadataListView::getCurrentItemKey() const
 {
     if (currentItem() && (currentItem()->flags() & Qt::ItemIsSelectable))
     {
@@ -120,12 +123,14 @@ void MetadataListView::setCurrentItemByKey(const QString& itemKey)
 
 void MetadataListView::slotSelectionChanged(QTreeWidgetItem* item, int)
 {
-    if (!item)
+
+    MetadataListViewItem* const viewItem = dynamic_cast<MetadataListViewItem*>(item);
+
+    if (!viewItem)
     {
         return;
     }
 
-    MetadataListViewItem* const viewItem = static_cast<MetadataListViewItem*>(item);
     m_selectedItemKey                    = viewItem->getKey();
     QString tagValue                     = viewItem->getValue().simplified();
     QString tagTitle                     = m_parent->getTagTitle(m_selectedItemKey);
@@ -152,7 +157,7 @@ void MetadataListView::setIfdList(const DMetadata::MetaDataMap& ifds, const QStr
     QStringList        filters       = tagsFilter;
     QString            ifDItemName;
 
-    for (DMetadata::MetaDataMap::const_iterator it = ifds.constBegin(); it != ifds.constEnd(); ++it)
+    for (DMetadata::MetaDataMap::const_iterator it = ifds.constBegin() ; it != ifds.constEnd() ; ++it)
     {
         // We checking if we have changed of ifDName
 
@@ -173,7 +178,7 @@ void MetadataListView::setIfdList(const DMetadata::MetaDataMap& ifds, const QStr
             subItems      = 0;
         }
 
-        if      (filters.isEmpty())
+        if      (tagsFilter.isEmpty())
         {
             QString tagTitle = m_parent->getTagTitle(it.key());
             new MetadataListViewItem(parentifDItem, it.key(), tagTitle, it.value());
@@ -183,7 +188,7 @@ void MetadataListView::setIfdList(const DMetadata::MetaDataMap& ifds, const QStr
         {
             // We ignore all unknown tags if necessary.
 
-            if (filters.contains(QLatin1String("FULL")))
+            if      (filters.contains(QLatin1String("FULL")))
             {
                 // We don't filter the output (Photo Mode)
 
@@ -197,7 +202,7 @@ void MetadataListView::setIfdList(const DMetadata::MetaDataMap& ifds, const QStr
 
                 // Filter is not a list of complete tag keys
 
-                if (!filters.at(0).contains(QLatin1Char('.')) && filters.contains(it.key().section(QLatin1Char('.'), 2, 2)))
+                if      (!filters.at(0).contains(QLatin1Char('.')) && filters.contains(it.key().section(QLatin1Char('.'), 2, 2)))
                 {
                     QString tagTitle = m_parent->getTagTitle(it.key());
                     new MetadataListViewItem(parentifDItem, it.key(), tagTitle, it.value());
@@ -260,9 +265,8 @@ void MetadataListView::setIfdList(const DMetadata::MetaDataMap& ifds, const QStr
         return;
     }
 
-    for (QStringList::const_iterator itKeysFilter = keysFilter.constBegin();
-         itKeysFilter != keysFilter.constEnd();
-         ++itKeysFilter)
+    for (QStringList::const_iterator itKeysFilter = keysFilter.constBegin() ;
+         itKeysFilter != keysFilter.constEnd() ; ++itKeysFilter)
     {
         subItems      = 0;
         parentifDItem = new MdKeyListViewItem(this, *itKeysFilter);
@@ -275,7 +279,7 @@ void MetadataListView::setIfdList(const DMetadata::MetaDataMap& ifds, const QStr
 
             if (*itKeysFilter == it.key().section(QLatin1Char('.'), 1, 1))
             {
-                if      (filters.isEmpty())
+                if      (tagsFilter.isEmpty())
                 {
                     QString tagTitle = m_parent->getTagTitle(it.key());
                     new MetadataListViewItem(parentifDItem, it.key(), tagTitle, it.value());
@@ -299,8 +303,8 @@ void MetadataListView::setIfdList(const DMetadata::MetaDataMap& ifds, const QStr
 
                         // Filter is not a list of complete tag keys
 
-                        if (!filters.at(0).contains(QLatin1Char('.')) &&
-                            filters.contains(it.key().section(QLatin1Char('.'), 2, 2)))
+                        if      (!filters.at(0).contains(QLatin1Char('.')) &&
+                                 filters.contains(it.key().section(QLatin1Char('.'), 2, 2)))
                         {
                             QString tagTitle = m_parent->getTagTitle(it.key());
                             new MetadataListViewItem(parentifDItem, it.key(), tagTitle, it.value());
@@ -313,6 +317,31 @@ void MetadataListView::setIfdList(const DMetadata::MetaDataMap& ifds, const QStr
                             new MetadataListViewItem(parentifDItem, it.key(), tagTitle, it.value());
                             ++subItems;
                             filters.removeAll(it.key());
+                        }
+                        else if (it.key().contains(QLatin1String("]/")))
+                        {
+                            // Special case to filter metadata tags in bag containers
+
+                            int propIndex = it.key().lastIndexOf(QLatin1Char(':'));
+                            int nameIndex = it.key().lastIndexOf(QLatin1Char('.'));
+
+                            if ((propIndex != -1) && (nameIndex != -1))
+                            {
+                                QString property  = it.key().mid(propIndex + 1);
+                                QString nameSpace = it.key().left(nameIndex + 1);
+
+                                if (filters.contains(nameSpace + property))
+                                {
+                                    QString tagTitle = m_parent->getTagTitle(it.key());
+                                    new MetadataListViewItem(parentifDItem, it.key(), tagTitle, it.value());
+                                    ++subItems;
+
+                                    if (it.key().contains(QLatin1String("[1]")))
+                                    {
+                                        filters.removeAll(nameSpace + property);
+                                    }
+                                }
+                            }
                         }
                     }
                 }

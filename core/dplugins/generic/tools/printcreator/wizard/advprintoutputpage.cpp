@@ -6,7 +6,7 @@
  * Date        : 2017-05-25
  * Description : a tool to print images
  *
- * Copyright (C) 2017-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2017-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -53,12 +53,12 @@ public:
 
     explicit Private(QWizard* const dialog)
       : labelImagesFormat(nullptr),
-        destUrl(nullptr),
-        conflictBox(nullptr),
-        imagesFormat(nullptr),
-        fileBrowserCB(nullptr),
-        wizard(nullptr),
-        settings(nullptr)
+        destUrl          (nullptr),
+        conflictBox      (nullptr),
+        imagesFormat     (nullptr),
+        fileBrowserCB    (nullptr),
+        wizard           (nullptr),
+        settings         (nullptr)
     {
         wizard = dynamic_cast<AdvPrintWizard*>(dialog);
 
@@ -79,7 +79,7 @@ public:
 
 AdvPrintOutputPage::AdvPrintOutputPage(QWizard* const dialog, const QString& title)
     : DWizardPage(dialog, title),
-      d(new Private(dialog))
+      d          (new Private(dialog))
 {
     QWidget* const main  = new QWidget(this);
 
@@ -167,7 +167,9 @@ void AdvPrintOutputPage::initializePage()
 bool AdvPrintOutputPage::validatePage()
 {
     if (d->destUrl->fileDlgPath().isEmpty())
+    {
         return false;
+    }
 
     d->settings->outputDir         = QUrl::fromLocalFile(d->destUrl->fileDlgPath());
     d->settings->conflictRule      = d->conflictBox->conflictRule();

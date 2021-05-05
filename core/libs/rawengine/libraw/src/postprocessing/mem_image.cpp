@@ -1,5 +1,5 @@
 /* -*- C++ -*-
- * Copyright 2019 LibRaw LLC (info@libraw.org)
+ * Copyright 2019-2021 LibRaw LLC (info@libraw.org)
  *
  LibRaw is free software; you can redistribute it and/or modify
  it under the terms of the one of two licenses as you choose:
@@ -33,6 +33,20 @@ libraw_processed_image_t *LibRaw::dcraw_make_mem_thumb(int *errcode)
     return NULL;
   }
 
+  if (T.tlength < 64u)
+  {
+      if (errcode)
+          *errcode = EINVAL;
+      return NULL;
+  }
+
+  if (INT64(T.tlength) > 1024ULL * 1024ULL * LIBRAW_MAX_THUMBNAIL_MB)
+  {
+      if (errcode)
+          *errcode = LIBRAW_TOO_BIG;
+      return NULL;
+  }
+
   if (T.tformat == LIBRAW_THUMBNAIL_BITMAP)
   {
     libraw_processed_image_t *ret = (libraw_processed_image_t *)::malloc(
@@ -49,7 +63,10 @@ libraw_processed_image_t *LibRaw::dcraw_make_mem_thumb(int *errcode)
     ret->type = LIBRAW_IMAGE_BITMAP;
     ret->height = T.theight;
     ret->width = T.twidth;
-    ret->colors = 3;
+    if (T.tcolors > 0 && T.tcolors < 4)
+        ret->colors = T.tcolors;
+    else
+        ret->colors = 3; // defaults
     ret->bits = 8;
     ret->data_size = T.tlength;
     memmove(ret->data, T.thumb, T.tlength);
@@ -119,15 +136,30 @@ void LibRaw::get_mem_image_format(int *width, int *height, int *colors,
                                   int *bps) const
 
 {
+  *width = S.width;
+  *height = S.height;
+  if (imgdata.progress_flags < LIBRAW_PROGRESS_FUJI_ROTATE)
+  {
+    if (O.use_fuji_rotate)
+    {
+      if (IO.fuji_width)
+      {
+        int fuji_width = (IO.fuji_width - 1 + IO.shrink) >> IO.shrink;
+        *width = (ushort)(fuji_width / sqrt(0.5));
+        *height = (ushort)((*height - fuji_width) / sqrt(0.5));
+      }
+      else
+      {
+        if (S.pixel_aspect < 0.995)
+          *height = (ushort)(*height / S.pixel_aspect + 0.5);
+        if (S.pixel_aspect > 1.005)
+          *width = (ushort)(*width * S.pixel_aspect + 0.5);
+      }
+    }
+  }
   if (S.flip & 4)
   {
-    *width = S.height;
-    *height = S.width;
-  }
-  else
-  {
-    *width = S.width;
-    *height = S.height;
+    std::swap(*width, *height);
   }
   *colors = P1.colors;
   *bps = O.output_bps;

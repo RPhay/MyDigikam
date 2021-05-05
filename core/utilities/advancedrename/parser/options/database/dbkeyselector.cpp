@@ -49,8 +49,8 @@ namespace Digikam
 
 DbKeySelectorItem::DbKeySelectorItem(DbHeaderListItem* const parent, const QString& title, const QString& desc)
     : QTreeWidgetItem(parent),
-      m_key(title),
-      m_description(desc)
+      m_key          (title),
+      m_description  (desc)
 {
     setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled | Qt::ItemIsUserCheckable);
     setCheckState(0, Qt::Unchecked);
@@ -158,8 +158,8 @@ class Q_DECL_HIDDEN DbKeySelectorView::Private
 {
 public:
 
-    explicit Private() :
-        selector(nullptr),
+    explicit Private()
+      : selector (nullptr),
         searchBar(nullptr)
     {
     }
@@ -170,9 +170,9 @@ public:
 
 DbKeySelectorView::DbKeySelectorView(QWidget* const parent)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
-    const int spacing = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
+    const int spacing       = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
 
     QGridLayout* const grid = new QGridLayout(this);
     d->selector             = new DbKeySelector(this);
@@ -202,6 +202,7 @@ void DbKeySelectorView::setKeysMap(const DbOptionKeysMap& map)
 QStringList DbKeySelectorView::checkedKeysList() const
 {
     d->searchBar->clear();
+
     return d->selector->checkedKeysList();
 }
 

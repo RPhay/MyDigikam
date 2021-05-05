@@ -25,7 +25,6 @@
 
 // C++ includes
 
-#include <cassert>
 #include <vector>
 
 // Qt includes
@@ -54,14 +53,16 @@ OpenCVDNNFaceDetector::OpenCVDNNFaceDetector(DetectorNNModel model)
             m_inferenceEngine = new DNNFaceDetectorSSD;
             break;
         }
+
         case DetectorNNModel::YOLO:
         {
             m_inferenceEngine = new DNNFaceDetectorYOLO;
             break;
         }
+
         default:
         {
-            assert(0 && "UNKNOWN neural network model");
+            qFatal("UNKNOWN neural network model");
         }
     }
 }
@@ -76,6 +77,7 @@ int OpenCVDNNFaceDetector::recommendedImageSizeForDetection()
     return 800;
 }
 
+// TODO: prepareForDetection give different performances
 cv::Mat OpenCVDNNFaceDetector::prepareForDetection(const DImg& inputImage, cv::Size& paddedSize) const
 {
     if (inputImage.isNull() || !inputImage.size().isValid())
@@ -84,23 +86,21 @@ cv::Mat OpenCVDNNFaceDetector::prepareForDetection(const DImg& inputImage, cv::S
     }
 
     cv::Mat cvImage;
-    cv::Mat cvImageWrapper;
-    int type = inputImage.sixteenBit() ? CV_16UC3 : CV_8UC3;
-    type     = inputImage.hasAlpha()   ? type     : type + 8;
+    int type               = inputImage.sixteenBit() ? CV_16UC4 : CV_8UC4;
+    cv::Mat cvImageWrapper = cv::Mat(inputImage.height(), inputImage.width(), type, inputImage.bits());
 
-    switch (type)
+    if (inputImage.hasAlpha())
     {
-        case CV_8UC4:
-        case CV_16UC4:
-            cvImageWrapper = cv::Mat(inputImage.height(), inputImage.width(), type, inputImage.bits());
-            cvtColor(cvImageWrapper, cvImage, cv::COLOR_RGBA2BGR);
-            break;
+        cvtColor(cvImageWrapper, cvImage, cv::COLOR_RGBA2BGR);
+    }
+    else
+    {
+        cvtColor(cvImageWrapper, cvImage, cv::COLOR_RGB2BGR);
+    }
 
-        case CV_8UC3:
-        case CV_16UC3:
-            cvImageWrapper = cv::Mat(inputImage.height(), inputImage.width(), type, inputImage.bits());
-            cvtColor(cvImageWrapper, cvImage, cv::COLOR_RGB2BGR);
-            break;
+    if (type == CV_16UC4)
+    {
+        cvImage.convertTo(cvImage, CV_8UC3, 1 / 256.0);
     }
 
     return prepareForDetection(cvImage, paddedSize);
@@ -122,20 +122,23 @@ cv::Mat OpenCVDNNFaceDetector::prepareForDetection(const QImage& inputImage, cv:
         case QImage::Format_RGB32:
         case QImage::Format_ARGB32:
         case QImage::Format_ARGB32_Premultiplied:
-
+        {
             // I think we can ignore premultiplication when converting to grayscale
 
             cvImageWrapper = cv::Mat(qimage.height(), qimage.width(), CV_8UC4,
                                      qimage.scanLine(0), qimage.bytesPerLine());
             cvtColor(cvImageWrapper, cvImage, cv::COLOR_RGBA2BGR);
             break;
+        }
 
         default:
+        {
             qimage         = qimage.convertToFormat(QImage::Format_RGB888);
             cvImageWrapper = cv::Mat(qimage.height(), qimage.width(), CV_8UC3,
                                      qimage.scanLine(0), qimage.bytesPerLine());
             cvtColor(cvImageWrapper, cvImage, cv::COLOR_RGB2BGR);
             break;
+        }
     }
 
     return prepareForDetection(cvImage, paddedSize);
@@ -162,6 +165,8 @@ cv::Mat OpenCVDNNFaceDetector::prepareForDetection(const QString& inputImagePath
 
 cv::Mat OpenCVDNNFaceDetector::prepareForDetection(cv::Mat& cvImage, cv::Size& paddedSize) const
 {
+    // Resize image before padding to fit in neural net
+
     cv::Size inputImageSize = m_inferenceEngine->nnInputSizeRequired();
     float k                 = qMin(inputImageSize.width  * 1.0 / cvImage.cols,
                                    inputImageSize.height * 1.0 / cvImage.rows);
@@ -203,7 +208,7 @@ void OpenCVDNNFaceDetector::resizeBboxToStandardHumanFace(int& width, int& heigh
 
     float r = width*1.0/height, rReference;
 
-    if ((r >= minRatioNonFrontalFace*0.9) && r <= (maxRatioFrontalFace * 1.1))
+    if      ((r >= minRatioNonFrontalFace*0.9) && r <= (maxRatioFrontalFace * 1.1))
     {
         rReference = r;
     }
@@ -238,14 +243,13 @@ void OpenCVDNNFaceDetector::resizeBboxToStandardHumanFace(int& width, int& heigh
 QList<QRect> OpenCVDNNFaceDetector::detectFaces(const cv::Mat& inputImage,
                                                 const cv::Size& paddedSize)
 {
-    std::vector<cv::Rect> detectedBboxes;
-    m_inferenceEngine->detectFaces(inputImage, paddedSize, detectedBboxes);
+    std::vector<cv::Rect> detectedBboxes = cvDetectFaces(inputImage, paddedSize);
 
     QList<QRect> results;
 /*
     cv::Mat imageTest = inputImage.clone();
 */
-    for (cv::Rect bbox : detectedBboxes)
+    for (const cv::Rect& bbox : detectedBboxes)
     {
         QRect rect(bbox.x, bbox.y, bbox.width, bbox.height);
         results << rect;
@@ -261,6 +265,16 @@ QList<QRect> OpenCVDNNFaceDetector::detectFaces(const cv::Mat& inputImage,
     cv::waitKey(0);
 */
     return results;
+}
+
+std::vector<cv::Rect> OpenCVDNNFaceDetector::cvDetectFaces(const cv::Mat& inputImage,
+                                                           const cv::Size& paddedSize)
+{
+    std::vector<cv::Rect> detectedBboxes;
+
+    m_inferenceEngine->detectFaces(inputImage, paddedSize, detectedBboxes);
+
+    return detectedBboxes;
 }
 
 } // namespace Digikam

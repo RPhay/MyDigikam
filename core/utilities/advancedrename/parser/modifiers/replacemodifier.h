@@ -46,14 +46,16 @@ class ReplaceDialog : public RuleDialog
 public:
 
     explicit ReplaceDialog(Rule* const parent);
-    ~ReplaceDialog();
+    ~ReplaceDialog() override;
 
     Ui::ReplaceModifierDialogWidget* const ui;
 
 private:
 
-    ReplaceDialog(const ReplaceDialog&);
-    ReplaceDialog& operator=(const ReplaceDialog&);
+    // Disable
+    explicit ReplaceDialog(QWidget*)               = delete;
+    ReplaceDialog(const ReplaceDialog&)            = delete;
+    ReplaceDialog& operator=(const ReplaceDialog&) = delete;
 };
 
 // --------------------------------------------------------
@@ -65,16 +67,18 @@ class ReplaceModifier : public Modifier
 public:
 
     explicit ReplaceModifier();
-    virtual QString parseOperation(ParseSettings& settings);
+    QString parseOperation(ParseSettings& settings) override;
 
 private Q_SLOTS:
 
-    void slotTokenTriggered(const QString& token);
+    void slotTokenTriggered(const QString& token) override;
 
 private:
 
-    ReplaceModifier(const ReplaceModifier&);
-    ReplaceModifier& operator=(const ReplaceModifier&);
+    // Disable
+    explicit ReplaceModifier(QObject*)                 = delete;
+    ReplaceModifier(const ReplaceModifier&)            = delete;
+    ReplaceModifier& operator=(const ReplaceModifier&) = delete;
 };
 
 } // namespace Digikam

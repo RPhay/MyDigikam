@@ -6,7 +6,7 @@
  * Date        : 2004-08-02
  * Description : colors theme manager - private classes
  *
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2007      by Matthew Woehlke <mw_triad at users dot sourceforge dot net>
  *
  * This program is free software; you can redistribute it
@@ -35,15 +35,16 @@
 
 // KDE includes
 
-#include <kconfig.h>
-#include <kconfiggroup.h>
 #include <klocalizedstring.h>
+#include <ksharedconfig.h>
+#include <kconfiggroup.h>
 
 namespace Digikam
 {
 
-// HCY color space management
-
+/**
+ * HCY color space management
+ */
 class Q_DECL_HIDDEN HCYColorSpace
 {
 public:
@@ -233,7 +234,7 @@ static QColor tintHelper(const QColor& base, qreal baseLuma, const QColor& color
  * chroma of @p color is mostly inherited.
  *
  * @param base color to be tinted
- * @param color color with which to tint
+ * @param color the color with which to tint
  * @param amount how strongly to tint the base; 0.0 gives @p base,
  * 1.0 gives @p color
  */
@@ -254,10 +255,11 @@ QColor tint(const QColor& base, const QColor& color, qreal amount = 0.3)
         return base;
     }
 
-    qreal baseLuma = luma(base); //cache value because luma call is expensive
+    qreal baseLuma = luma(base);    // cache value because luma call is expensive
     double ri      = contrastRatioForLuma(baseLuma, luma(color));
     double rg      = 1.0 + ((ri + 1.0) * amount * amount * amount);
-    double u       = 1.0, l = 0.0;
+    double u       = 1.0;
+    double l       = 0.0;
     QColor result;
 
     for (int i = 12 ; i ; --i)
@@ -292,6 +294,7 @@ QColor overlayColors(const QColor& base, const QColor& paint,
 {
     // This isn't the fastest way, but should be "fast enough".
     // It's also the only safe way to use QPainter::CompositionMode
+
     QImage img(1, 1, QImage::Format_ARGB32_Premultiplied);
     QPainter p(&img);
     QColor start = base;
@@ -495,11 +498,9 @@ class Q_DECL_HIDDEN StateEffects
 public:
 
     explicit StateEffects(QPalette::ColorGroup state, const KSharedConfigPtr&);
-    ~StateEffects()
-    {
-    }
+    ~StateEffects() = default;
 
-    QBrush brush(const QBrush& background) const;
+    QBrush brush(const QBrush& background)                           const;
     QBrush brush(const QBrush& foreground, const QBrush& background) const;
 
 private:
@@ -510,16 +511,19 @@ private:
         Intensity         = 0,
         Color             = 1,
         Contrast          = 2,
+
         /// Intensity
         IntensityNoEffect = 0,
         IntensityShade    = 1,
         IntensityDarken   = 2,
         IntensityLighten  = 3,
+
         /// Color
         ColorNoEffect     = 0,
         ColorDesaturate   = 1,
         ColorFade         = 2,
         ColorTint         = 3,
+
         /// Contrast
         ContrastNoEffect  = 0,
         ContrastFade      = 1,
@@ -754,20 +758,28 @@ class Q_DECL_HIDDEN SchemeManagerPrivate : public QSharedData
 {
 public:
 
-    explicit SchemeManagerPrivate(const KSharedConfigPtr&, QPalette::ColorGroup, const char*, SetDefaultColors);
-    explicit SchemeManagerPrivate(const KSharedConfigPtr&, QPalette::ColorGroup, const char*, SetDefaultColors, const QBrush&);
-    ~SchemeManagerPrivate()
-    {
-    }
+    explicit SchemeManagerPrivate(const KSharedConfigPtr&,
+                                  QPalette::ColorGroup,
+                                  const char*,
+                                  const SetDefaultColors&);
+    explicit SchemeManagerPrivate(const KSharedConfigPtr&,
+                                  QPalette::ColorGroup,
+                                  const char*,
+                                  const SetDefaultColors&,
+                                  const QBrush&);
+    ~SchemeManagerPrivate() = default;
 
     QBrush background(SchemeManager::BackgroundRole) const;
     QBrush foreground(SchemeManager::ForegroundRole) const;
     QBrush decoration(SchemeManager::DecorationRole) const;
-    qreal  contrast() const;
+    qreal  contrast()                                const;
 
 private:
 
-    void init(const KSharedConfigPtr&, QPalette::ColorGroup, const char*, SetDefaultColors);
+    void init(const KSharedConfigPtr&,
+              QPalette::ColorGroup,
+              const char*,
+              const SetDefaultColors&);
 
 private:
 
@@ -788,7 +800,7 @@ private:
 SchemeManagerPrivate::SchemeManagerPrivate(const KSharedConfigPtr& config,
                                            QPalette::ColorGroup state,
                                            const char* group,
-                                           SetDefaultColors defaults)
+                                           const SetDefaultColors& defaults)
 {
     KConfigGroup cfg(config, group);
     _contrast      = SchemeManager::contrastF(config);
@@ -806,7 +818,7 @@ SchemeManagerPrivate::SchemeManagerPrivate(const KSharedConfigPtr& config,
 SchemeManagerPrivate::SchemeManagerPrivate(const KSharedConfigPtr& config,
                                            QPalette::ColorGroup state,
                                            const char* group,
-                                           SetDefaultColors defaults,
+                                           const SetDefaultColors& defaults,
                                            const QBrush& tint)
 {
     KConfigGroup cfg(config, group);
@@ -830,7 +842,7 @@ SchemeManagerPrivate::SchemeManagerPrivate(const KSharedConfigPtr& config,
 void SchemeManagerPrivate::init(const KSharedConfigPtr& config,
                                 QPalette::ColorGroup state,
                                 const char* group,
-                                SetDefaultColors defaults)
+                                const SetDefaultColors& defaults)
 {
     KConfigGroup cfg(config, group);
 
@@ -965,10 +977,6 @@ SchemeManager& SchemeManager::operator=(const SchemeManager& other)
     return *this;
 }
 
-SchemeManager::~SchemeManager()
-{
-}
-
 SchemeManager::SchemeManager(QPalette::ColorGroup state,
                              ColorSet set,
                              KSharedConfigPtr config)
@@ -981,52 +989,64 @@ SchemeManager::SchemeManager(QPalette::ColorGroup state,
     switch (set)
     {
         case Window:
+        {
             d = new SchemeManagerPrivate(config, state, "Colors:Window", defaultWindowColors);
             break;
+        }
 
         case Button:
+        {
             d = new SchemeManagerPrivate(config, state, "Colors:Button", defaultButtonColors);
             break;
+        }
 
         case Selection:
+        {
+            KConfigGroup group(config, "ColorEffects:Inactive");
+
+            // NOTE: keep this in sync with kdebase/workspace/kcontrol/colors/colorscm.cpp
+
+            bool inactiveSelectionEffect = group.readEntry("ChangeSelectionColor", group.readEntry("Enable", true));
+
+            // if enabled, inactiver/disabled uses Window colors instead, ala gtk
+            // ...except tinted with the Selection:NormalBackground color so it looks more like selection
+
+            if      ((state == QPalette::Active) || ((state == QPalette::Inactive) && !inactiveSelectionEffect))
             {
-                KConfigGroup group(config, "ColorEffects:Inactive");
-
-                // NOTE: keep this in sync with kdebase/workspace/kcontrol/colors/colorscm.cpp
-
-                bool inactiveSelectionEffect = group.readEntry("ChangeSelectionColor", group.readEntry("Enable", true));
-
-                // if enabled, inactiver/disabled uses Window colors instead, ala gtk
-                // ...except tinted with the Selection:NormalBackground color so it looks more like selection
-
-                if      ((state == QPalette::Active) || ((state == QPalette::Inactive) && !inactiveSelectionEffect))
-                {
-                    d = new SchemeManagerPrivate(config, state, "Colors:Selection", defaultSelectionColors);
-                }
-                else if (state == QPalette::Inactive)
-                {
-                    d = new SchemeManagerPrivate(config, state, "Colors:Window", defaultWindowColors,
-                                                 SchemeManager(QPalette::Active, Selection, config).background());
-                }
-                else
-                {
-                    // disabled (...and still want this branch when inactive+disabled exists)
-
-                    d = new SchemeManagerPrivate(config, state, "Colors:Window", defaultWindowColors);
-                }
+                d = new SchemeManagerPrivate(config, state, "Colors:Selection", defaultSelectionColors);
             }
+            else if (state == QPalette::Inactive)
+            {
+                d = new SchemeManagerPrivate(config, state, "Colors:Window", defaultWindowColors,
+                                             SchemeManager(QPalette::Active, Selection, config).background());
+            }
+            else
+            {
+                // disabled (...and still want this branch when inactive+disabled exists)
+
+                d = new SchemeManagerPrivate(config, state, "Colors:Window", defaultWindowColors);
+            }
+
             break;
+        }
 
         case Tooltip:
+        {
             d = new SchemeManagerPrivate(config, state, "Colors:Tooltip", defaultTooltipColors);
             break;
+        }
 
         case Complementary:
+        {
             d = new SchemeManagerPrivate(config, state, "Colors:Complementary", defaultComplementaryColors);
             break;
+        }
 
         default:
+        {
             d = new SchemeManagerPrivate(config, state, "Colors:View", defaultViewColors);
+            break;
+        }
     }
 }
 
@@ -1156,7 +1176,7 @@ void SchemeManager::adjustBackground(QPalette& palette,
                                      BackgroundRole newRole,
                                      QPalette::ColorRole color,
                                      ColorSet set,
-                                     KSharedConfigPtr config)
+                                     const KSharedConfigPtr& config)
 {
     palette.setBrush(QPalette::Active,   color, SchemeManager(QPalette::Active,   set, config).background(newRole));
     palette.setBrush(QPalette::Inactive, color, SchemeManager(QPalette::Inactive, set, config).background(newRole));
@@ -1167,7 +1187,7 @@ void SchemeManager::adjustForeground(QPalette& palette,
                                      ForegroundRole newRole,
                                      QPalette::ColorRole color,
                                      ColorSet set,
-                                     KSharedConfigPtr config)
+                                     const KSharedConfigPtr& config)
 {
     palette.setBrush(QPalette::Active,   color, SchemeManager(QPalette::Active,   set, config).foreground(newRole));
     palette.setBrush(QPalette::Inactive, color, SchemeManager(QPalette::Inactive, set, config).foreground(newRole));
@@ -1225,9 +1245,9 @@ QPalette SchemeManager::createApplicationPalette(const KSharedConfigPtr& config)
 // ---------------------------------------------------------------
 
 ThemeManager::Private::Private()
-    : defaultThemeName(i18nc("default theme name", "Default")),
+    : defaultThemeName    (i18nc("default theme name", "Default")),
       themeMenuActionGroup(nullptr),
-      themeMenuAction(nullptr)
+      themeMenuAction     (nullptr)
 {
 }
 

@@ -7,7 +7,7 @@
  * Description : Item delegate for import interface items.
  *
  * Copyright (C) 2012      by Islam Wazery <wazery at ubuntu dot com>
- * Copyright (C) 2012-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -272,18 +272,23 @@ QRect ItemViewImportDelegate::drawThumbnail(QPainter* p, const QRect& thumbRect,
         return QRect();
     }
 
-    QRect r = thumbRect;
+    QRect r      = thumbRect;
+    double ratio = thumbnail.devicePixelRatio();
+    int thumbW   = qRound((double)thumbnail.width()  / ratio);
+    int thumbH   = qRound((double)thumbnail.height() / ratio);
 
-    QRect actualPixmapRect(r.x() + (r.width()-thumbnail.width())/2,
-                           r.y() + (r.height()-thumbnail.height())/2,
-                           thumbnail.width(), thumbnail.height());
+    QRect actualPixmapRect(r.x() + (r.width()  - thumbW) / 2,
+                           r.y() + (r.height() - thumbH) / 2,
+                           thumbW, thumbH);
 
     QPixmap borderPix = thumbnailBorderPixmap(actualPixmapRect.size());
-    p->drawPixmap(actualPixmapRect.x()-3, actualPixmapRect.y()-3, borderPix);
 
-    p->drawPixmap(r.x() + (r.width()-thumbnail.width())/2,
-                  r.y() + (r.height()-thumbnail.height())/2,
-                  thumbnail);
+    p->drawPixmap(actualPixmapRect.x() - 3,
+                  actualPixmapRect.y() - 3, borderPix);
+
+    p->drawPixmap(r.x() + (r.width()  - thumbW) / 2,
+                  r.y() + (r.height() - thumbH) / 2,
+                  thumbW, thumbH, thumbnail);
 
     return actualPixmapRect;
 }
@@ -356,7 +361,7 @@ void ItemViewImportDelegate::drawImageSize(QPainter* p, const QRect& dimsRect, c
     {
         p->setFont(d->fontXtra);
         QString mpixels, resolution;
-        mpixels.setNum(dims.width()*dims.height()/1000000.0, 'f', 2);
+        mpixels = QLocale().toString(dims.width()*dims.height()/1000000.0, 'f', 1);
 
         if (dims.isValid())
         {

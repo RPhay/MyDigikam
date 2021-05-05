@@ -6,7 +6,7 @@
  * Date        : 2007-11-10
  * Description : IPTC workflow status properties settings page.
  *
- * Copyright (C) 2007-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2007-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -28,13 +28,13 @@
 #include <QLabel>
 #include <QPushButton>
 #include <QTimeEdit>
-#include <QValidator>
 #include <QGridLayout>
 #include <QLineEdit>
 #include <QComboBox>
 #include <QDateEdit>
 #include <QApplication>
 #include <QStyle>
+#include <QToolTip>
 
 // KDE includes
 
@@ -123,15 +123,10 @@ public:
 
 IPTCProperties::IPTCProperties(QWidget* const parent)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     QGridLayout* const grid = new QGridLayout(this);
-
-    // IPTC only accept printable Ascii char.
-    QRegExp asciiRx(QLatin1String("[\x20-\x7F]+$"));
-    QValidator* const asciiValidator = new QRegExpValidator(asciiRx, this);
-
-    QString dateFormat  = QLocale().dateFormat(QLocale::ShortFormat);
+    QString dateFormat      = QLocale().dateFormat(QLocale::ShortFormat);
 
     if (!dateFormat.contains(QLatin1String("yyyy")))
     {
@@ -154,7 +149,7 @@ IPTCProperties::IPTCProperties(QWidget* const parent)
     d->timeReleasedSel->setDisplayFormat(timeFormat);
 
     d->setTodayReleasedBtn = new QPushButton();
-    d->setTodayReleasedBtn->setIcon(QIcon::fromTheme(QLatin1String("go-jump-today")));
+    d->setTodayReleasedBtn->setIcon(QIcon::fromTheme(QLatin1String("view-calendar")));
     d->setTodayReleasedBtn->setWhatsThis(i18n("Set release date to today"));
 
     d->dateReleasedSel->setWhatsThis(i18n("Set here the earliest intended usable date of "
@@ -179,7 +174,7 @@ IPTCProperties::IPTCProperties(QWidget* const parent)
     d->timeExpiredSel->setDisplayFormat(timeFormat);
 
     d->setTodayExpiredBtn = new QPushButton();
-    d->setTodayExpiredBtn->setIcon(QIcon::fromTheme(QLatin1String("go-jump-today")));
+    d->setTodayExpiredBtn->setIcon(QIcon::fromTheme(QLatin1String("view-calendar")));
     d->setTodayExpiredBtn->setWhatsThis(i18n("Set expiration date to today"));
 
     d->dateExpiredSel->setWhatsThis(i18n("Set here the latest intended usable date of "
@@ -225,10 +220,10 @@ IPTCProperties::IPTCProperties(QWidget* const parent)
 
     d->objectCycleCheck = new MetadataCheckBox(i18n("Cycle:"), this);
     d->objectCycleCB    = new QComboBox(this);
-    d->objectCycleCB->insertItem(0, i18n("Morning"));
-    d->objectCycleCB->insertItem(1, i18n("Afternoon"));
-    d->objectCycleCB->insertItem(2, i18n("Evening"));
-    d->objectCycleCB->setWhatsThis(i18n("Select here the editorial cycle of content."));
+    d->objectCycleCB->insertItem(0, i18nc("@item: object cycle", "Morning"));
+    d->objectCycleCB->insertItem(1, i18nc("@item: object cycle", "Afternoon"));
+    d->objectCycleCB->insertItem(2, i18nc("@item: object cycle", "Evening"));
+    d->objectCycleCB->setWhatsThis(i18nc("@info", "Select here the editorial cycle of content."));
 
     // --------------------------------------------------------
 
@@ -236,37 +231,34 @@ IPTCProperties::IPTCProperties(QWidget* const parent)
     d->objectTypeCB       = new QComboBox(this);
     d->objectTypeDescEdit = new QLineEdit(this);
     d->objectTypeDescEdit->setClearButtonEnabled(true);
-    d->objectTypeDescEdit->setValidator(asciiValidator);
     d->objectTypeDescEdit->setMaxLength(64);
     d->objectTypeCB->insertItem(0, i18n("News"));
     d->objectTypeCB->insertItem(1, i18n("Data"));
     d->objectTypeCB->insertItem(2, i18n("Advisory"));
     d->objectTypeCB->setWhatsThis(i18n("Select here the editorial type of content."));
     d->objectTypeDescEdit->setWhatsThis(i18n("Set here the editorial type description of content. "
-                                             "This field is limited to 64 ASCII characters."));
+                                             "This field is limited to 64 characters."));
 
     // --------------------------------------------------------
 
-    d->objectAttribute = new ObjectAttributesEdit(this, true, 64);
+    d->objectAttribute = new ObjectAttributesEdit(this, 64);
 
     // --------------------------------------------------------
 
     d->originalTransCheck = new QCheckBox(i18n("Reference:"), this);
     d->originalTransEdit  = new QLineEdit(this);
     d->originalTransEdit->setClearButtonEnabled(true);
-    d->originalTransEdit->setValidator(asciiValidator);
     d->originalTransEdit->setMaxLength(32);
     d->originalTransEdit->setWhatsThis(i18n("Set here the original content transmission "
-                                            "reference. This field is limited to 32 ASCII characters."));
+                                            "reference. This field is limited to 32 characters."));
 
     // --------------------------------------------------------
 
     QLabel* const note = new QLabel(i18n("<b>Note: "
-                 "<b><a href='https://en.wikipedia.org/wiki/IPTC_Information_Interchange_Model'>IPTC</a></b> "
-                 "text tags only support the printable "
-                 "<b><a href='https://en.wikipedia.org/wiki/Ascii'>ASCII</a></b> "
-                 "characters and limit string sizes. "
-                 "Use contextual help for details.</b>"), this);
+                 "<a href='https://en.wikipedia.org/wiki/IPTC_Information_Interchange_Model'>IPTC</a> "
+                 "text tags are limited string sizes. Use contextual help for details. "
+                 "Consider to use <a href='https://en.wikipedia.org/wiki/Extensible_Metadata_Platform'>XMP</a> instead.</b>"),
+                 this);
     note->setOpenExternalLinks(true);
     note->setWordWrap(true);
     note->setFrameStyle(QFrame::StyledPanel | QFrame::Raised);
@@ -421,8 +413,17 @@ IPTCProperties::IPTCProperties(QWidget* const parent)
     connect(d->objectTypeDescEdit, SIGNAL(textChanged(QString)),
             this, SIGNAL(signalModified()));
 
+    connect(d->objectTypeDescEdit, SIGNAL(textChanged(QString)),
+            this, SLOT(slotLineEditModified()));
+
     connect(d->originalTransEdit, SIGNAL(textChanged(QString)),
             this, SIGNAL(signalModified()));
+
+    connect(d->originalTransEdit, SIGNAL(textChanged(QString)),
+            this, SLOT(slotLineEditModified()));
+
+    connect(d->objectAttribute->valueEdit(), SIGNAL(textChanged(QString)),
+            this, SLOT(slotLineEditModified()));
 }
 
 IPTCProperties::~IPTCProperties()
@@ -444,11 +445,25 @@ void IPTCProperties::slotSetTodayExpired()
     d->zoneExpiredSel->setToUTC();
 }
 
+void IPTCProperties::slotLineEditModified()
+{
+    QLineEdit* const ledit = dynamic_cast<QLineEdit*>(sender());
+
+    if (!ledit)
+    {
+        return;
+    }
+
+    QToolTip::showText(ledit->mapToGlobal(QPoint(0, (-1)*(ledit->height() + 16))),
+                       i18np("%1 character left", "%1 characters left", ledit->maxLength() - ledit->text().size()),
+                       ledit);
+}
+
 void IPTCProperties::readMetadata(QByteArray& iptcData)
 {
     blockSignals(true);
-    DMetadata meta;
-    meta.setIptc(iptcData);
+    QScopedPointer<DMetadata> meta(new DMetadata);
+    meta->setIptc(iptcData);
 
     QString     data;
     QStringList list;
@@ -456,8 +471,8 @@ void IPTCProperties::readMetadata(QByteArray& iptcData)
     QTime       time;
     QString     dateStr, timeStr;
 
-    dateStr = meta.getIptcTagString("Iptc.Application2.ReleaseDate", false);
-    timeStr = meta.getIptcTagString("Iptc.Application2.ReleaseTime", false);
+    dateStr = meta->getIptcTagString("Iptc.Application2.ReleaseDate", false);
+    timeStr = meta->getIptcTagString("Iptc.Application2.ReleaseTime", false);
 
     d->dateReleasedSel->setDate(QDate::currentDate());
     d->dateReleasedCheck->setChecked(false);
@@ -494,8 +509,8 @@ void IPTCProperties::readMetadata(QByteArray& iptcData)
     d->timeReleasedSel->setEnabled(d->timeReleasedCheck->isChecked());
     d->zoneReleasedSel->setEnabled(d->timeReleasedCheck->isChecked());
 
-    dateStr = meta.getIptcTagString("Iptc.Application2.ExpirationDate", false);
-    timeStr = meta.getIptcTagString("Iptc.Application2.ExpirationTime", false);
+    dateStr = meta->getIptcTagString("Iptc.Application2.ExpirationDate", false);
+    timeStr = meta->getIptcTagString("Iptc.Application2.ExpirationTime", false);
 
     d->dateExpiredSel->setDate(QDate::currentDate());
     d->dateExpiredCheck->setChecked(false);
@@ -533,7 +548,7 @@ void IPTCProperties::readMetadata(QByteArray& iptcData)
     d->zoneExpiredSel->setEnabled(d->timeExpiredCheck->isChecked());
 
     d->languageCheck->setChecked(false);
-    data = meta.getIptcTagString("Iptc.Application2.Language", false);
+    data = meta->getIptcTagString("Iptc.Application2.Language", false);
 
     if (!data.isNull())
     {
@@ -553,7 +568,7 @@ void IPTCProperties::readMetadata(QByteArray& iptcData)
 
     d->priorityCB->setCurrentIndex(0);
     d->priorityCheck->setChecked(false);
-    data = meta.getIptcTagString("Iptc.Application2.Urgency", false);
+    data = meta->getIptcTagString("Iptc.Application2.Urgency", false);
 
     if (!data.isNull())
     {
@@ -574,7 +589,7 @@ void IPTCProperties::readMetadata(QByteArray& iptcData)
 
     d->objectCycleCB->setCurrentIndex(0);
     d->objectCycleCheck->setChecked(false);
-    data = meta.getIptcTagString("Iptc.Application2.ObjectCycle", false);
+    data = meta->getIptcTagString("Iptc.Application2.ObjectCycle", false);
 
     if (!data.isNull())
     {
@@ -602,7 +617,7 @@ void IPTCProperties::readMetadata(QByteArray& iptcData)
     d->objectTypeCB->setCurrentIndex(0);
     d->objectTypeDescEdit->clear();
     d->objectTypeCheck->setChecked(false);
-    data = meta.getIptcTagString("Iptc.Application2.ObjectType", false);
+    data = meta->getIptcTagString("Iptc.Application2.ObjectType", false);
 
     if (!data.isNull())
     {
@@ -628,12 +643,12 @@ void IPTCProperties::readMetadata(QByteArray& iptcData)
     d->objectTypeCB->setEnabled(d->objectTypeCheck->isChecked());
     d->objectTypeDescEdit->setEnabled(d->objectTypeCheck->isChecked());
 
-    list = meta.getIptcTagsStringList("Iptc.Application2.ObjectAttribute", false);
+    list = meta->getIptcTagsStringList("Iptc.Application2.ObjectAttribute", false);
     d->objectAttribute->setValues(list);
 
     d->originalTransEdit->clear();
     d->originalTransCheck->setChecked(false);
-    data = meta.getIptcTagString("Iptc.Application2.TransmissionReference", false);
+    data = meta->getIptcTagString("Iptc.Application2.TransmissionReference", false);
 
     if (!data.isNull())
     {
@@ -648,67 +663,67 @@ void IPTCProperties::readMetadata(QByteArray& iptcData)
 
 void IPTCProperties::applyMetadata(QByteArray& iptcData)
 {
-    DMetadata meta;
-    meta.setIptc(iptcData);
+    QScopedPointer<DMetadata> meta(new DMetadata);
+    meta->setIptc(iptcData);
 
     if (d->dateReleasedCheck->isChecked())
     {
-        meta.setIptcTagString("Iptc.Application2.ReleaseDate",
+        meta->setIptcTagString("Iptc.Application2.ReleaseDate",
                                     d->dateReleasedSel->date().toString(Qt::ISODate));
     }
     else
     {
-        meta.removeIptcTag("Iptc.Application2.ReleaseDate");
+        meta->removeIptcTag("Iptc.Application2.ReleaseDate");
     }
 
     if (d->dateExpiredCheck->isChecked())
     {
-        meta.setIptcTagString("Iptc.Application2.ExpirationDate",
+        meta->setIptcTagString("Iptc.Application2.ExpirationDate",
                                     d->dateExpiredSel->date().toString(Qt::ISODate));
     }
     else
     {
-        meta.removeIptcTag("Iptc.Application2.ExpirationDate");
+        meta->removeIptcTag("Iptc.Application2.ExpirationDate");
     }
 
     if (d->timeReleasedCheck->isChecked())
     {
-        meta.setIptcTagString("Iptc.Application2.ReleaseTime",
+        meta->setIptcTagString("Iptc.Application2.ReleaseTime",
                                     d->timeReleasedSel->time().toString(Qt::ISODate) +
                                     d->zoneReleasedSel->getTimeZone());
     }
     else
     {
-        meta.removeIptcTag("Iptc.Application2.ReleaseTime");
+        meta->removeIptcTag("Iptc.Application2.ReleaseTime");
     }
 
     if (d->timeExpiredCheck->isChecked())
     {
-        meta.setIptcTagString("Iptc.Application2.ExpirationTime",
+        meta->setIptcTagString("Iptc.Application2.ExpirationTime",
                                     d->timeExpiredSel->time().toString(Qt::ISODate) +
                                     d->zoneExpiredSel->getTimeZone());
     }
     else
     {
-        meta.removeIptcTag("Iptc.Application2.ExpirationTime");
+        meta->removeIptcTag("Iptc.Application2.ExpirationTime");
     }
 
     if (d->languageCheck->isChecked())
     {
-        meta.setIptcTagString("Iptc.Application2.Language", d->languageBtn->currentData().toString());
+        meta->setIptcTagString("Iptc.Application2.Language", d->languageBtn->currentData().toString());
     }
     else if (d->languageCheck->isValid())
     {
-        meta.removeIptcTag("Iptc.Application2.Language");
+        meta->removeIptcTag("Iptc.Application2.Language");
     }
 
     if (d->priorityCheck->isChecked())
     {
-        meta.setIptcTagString("Iptc.Application2.Urgency", QString::number(d->priorityCB->currentIndex()));
+        meta->setIptcTagString("Iptc.Application2.Urgency", QString::number(d->priorityCB->currentIndex()));
     }
     else if (d->priorityCheck->isValid())
     {
-        meta.removeIptcTag("Iptc.Application2.Urgency");
+        meta->removeIptcTag("Iptc.Application2.Urgency");
     }
 
     if (d->objectCycleCheck->isChecked())
@@ -716,48 +731,48 @@ void IPTCProperties::applyMetadata(QByteArray& iptcData)
         switch (d->objectCycleCB->currentIndex())
         {
             case(0):
-                meta.setIptcTagString("Iptc.Application2.ObjectCycle", QLatin1String("a"));
+                meta->setIptcTagString("Iptc.Application2.ObjectCycle", QLatin1String("a"));
                 break;
 
             case(1):
-                meta.setIptcTagString("Iptc.Application2.ObjectCycle", QLatin1String("b"));
+                meta->setIptcTagString("Iptc.Application2.ObjectCycle", QLatin1String("b"));
                 break;
 
             case(2):
-                meta.setIptcTagString("Iptc.Application2.ObjectCycle", QLatin1String("c"));
+                meta->setIptcTagString("Iptc.Application2.ObjectCycle", QLatin1String("c"));
                 break;
         }
     }
     else if (d->objectCycleCheck->isValid())
     {
-        meta.removeIptcTag("Iptc.Application2.ObjectCycle");
+        meta->removeIptcTag("Iptc.Application2.ObjectCycle");
     }
 
     if (d->objectTypeCheck->isChecked())
     {
         QString objectType;
-        objectType.sprintf("%2d", d->objectTypeCB->currentIndex()+1);
+        objectType = QString().asprintf("%2d", d->objectTypeCB->currentIndex()+1);
         objectType.append(QString::fromUtf8(":%1").arg(d->objectTypeDescEdit->text()));
-        meta.setIptcTagString("Iptc.Application2.ObjectType", objectType);
+        meta->setIptcTagString("Iptc.Application2.ObjectType", objectType);
     }
     else if (d->objectTypeCheck->isValid())
     {
-        meta.removeIptcTag("Iptc.Application2.ObjectType");
+        meta->removeIptcTag("Iptc.Application2.ObjectType");
     }
 
     QStringList oldList, newList;
 
     if (d->objectAttribute->getValues(oldList, newList))
-        meta.setIptcTagsStringList("Iptc.Application2.ObjectAttribute", 64, oldList, newList);
+        meta->setIptcTagsStringList("Iptc.Application2.ObjectAttribute", 64, oldList, newList);
     else if (d->objectAttribute->isValid())
-        meta.removeIptcTag("Iptc.Application2.ObjectAttribute");
+        meta->removeIptcTag("Iptc.Application2.ObjectAttribute");
 
     if (d->originalTransCheck->isChecked())
-        meta.setIptcTagString("Iptc.Application2.TransmissionReference", d->originalTransEdit->text());
+        meta->setIptcTagString("Iptc.Application2.TransmissionReference", d->originalTransEdit->text());
     else
-        meta.removeIptcTag("Iptc.Application2.TransmissionReference");
+        meta->removeIptcTag("Iptc.Application2.TransmissionReference");
 
-    iptcData = meta.getIptc();
+    iptcData = meta->getIptc();
 }
 
 } // namespace DigikamGenericMetadataEditPlugin

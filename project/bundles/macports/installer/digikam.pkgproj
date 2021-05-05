@@ -5,6 +5,17 @@
 	<key>PACKAGES</key>
 	<array>
 		<dict>
+			<key>MUST-CLOSE-APPLICATION-ITEMS</key>
+			<array>
+				<dict>
+					<key>APPLICATION_ID</key>
+					<string>org.kde.digikam</string>
+					<key>STATE</key>
+					<false/>
+				</dict>
+			</array>
+			<key>MUST-CLOSE-APPLICATIONS</key>
+			<true/>
 			<key>PACKAGE_FILES</key>
 			<dict>
 				<key>DEFAULT_INSTALL_LOCATION</key>
@@ -251,7 +262,7 @@
 									<key>PATH_TYPE</key>
 									<integer>0</integer>
 									<key>PERMISSIONS</key>
-									<integer>493</integer>
+									<integer>1005</integer>
 									<key>TYPE</key>
 									<integer>1</integer>
 									<key>UID</key>
@@ -353,6 +364,22 @@
 									<key>UID</key>
 									<integer>0</integer>
 								</dict>
+								<dict>
+									<key>CHILDREN</key>
+									<array/>
+									<key>GID</key>
+									<integer>0</integer>
+									<key>PATH</key>
+									<string>Extensions</string>
+									<key>PATH_TYPE</key>
+									<integer>0</integer>
+									<key>PERMISSIONS</key>
+									<integer>493</integer>
+									<key>TYPE</key>
+									<integer>1</integer>
+									<key>UID</key>
+									<integer>0</integer>
+								</dict>
 							</array>
 							<key>GID</key>
 							<integer>0</integer>
@@ -379,7 +406,7 @@
 											<key>GID</key>
 											<integer>0</integer>
 											<key>PATH</key>
-											<string>../opt/digikam/Applications</string>
+											<string>../Applications/digiKam.org/digikam.app</string>
 											<key>PATH_TYPE</key>
 											<integer>1</integer>
 											<key>PERMISSIONS</key>
@@ -395,71 +422,7 @@
 											<key>GID</key>
 											<integer>0</integer>
 											<key>PATH</key>
-											<string>../opt/digikam/bin</string>
-											<key>PATH_TYPE</key>
-											<integer>1</integer>
-											<key>PERMISSIONS</key>
-											<integer>493</integer>
-											<key>TYPE</key>
-											<integer>3</integer>
-											<key>UID</key>
-											<integer>0</integer>
-										</dict>
-										<dict>
-											<key>CHILDREN</key>
-											<array/>
-											<key>GID</key>
-											<integer>0</integer>
-											<key>PATH</key>
-											<string>../opt/digikam/etc</string>
-											<key>PATH_TYPE</key>
-											<integer>1</integer>
-											<key>PERMISSIONS</key>
-											<integer>493</integer>
-											<key>TYPE</key>
-											<integer>3</integer>
-											<key>UID</key>
-											<integer>0</integer>
-										</dict>
-										<dict>
-											<key>CHILDREN</key>
-											<array/>
-											<key>GID</key>
-											<integer>0</integer>
-											<key>PATH</key>
-											<string>../opt/digikam/lib</string>
-											<key>PATH_TYPE</key>
-											<integer>1</integer>
-											<key>PERMISSIONS</key>
-											<integer>493</integer>
-											<key>TYPE</key>
-											<integer>3</integer>
-											<key>UID</key>
-											<integer>0</integer>
-										</dict>
-										<dict>
-											<key>CHILDREN</key>
-											<array/>
-											<key>GID</key>
-											<integer>0</integer>
-											<key>PATH</key>
-											<string>../opt/digikam/libexec</string>
-											<key>PATH_TYPE</key>
-											<integer>1</integer>
-											<key>PERMISSIONS</key>
-											<integer>493</integer>
-											<key>TYPE</key>
-											<integer>3</integer>
-											<key>UID</key>
-											<integer>0</integer>
-										</dict>
-										<dict>
-											<key>CHILDREN</key>
-											<array/>
-											<key>GID</key>
-											<integer>0</integer>
-											<key>PATH</key>
-											<string>../opt/digikam/share</string>
+											<string>../Applications/digiKam.org/showfoto.app</string>
 											<key>PATH_TYPE</key>
 											<integer>1</integer>
 											<key>PERMISSIONS</key>
@@ -475,7 +438,7 @@
 									<key>GID</key>
 									<integer>0</integer>
 									<key>PATH</key>
-									<string>../opt/digikam</string>
+									<string>../Applications/digiKam.org</string>
 									<key>PATH_TYPE</key>
 									<integer>1</integer>
 									<key>PERMISSIONS</key>
@@ -491,7 +454,7 @@
 							<key>GID</key>
 							<integer>0</integer>
 							<key>PATH</key>
-							<string>../opt</string>
+							<string>../Applications</string>
 							<key>PATH_TYPE</key>
 							<integer>1</integer>
 							<key>PERMISSIONS</key>
@@ -600,6 +563,8 @@
 				</dict>
 				<key>PAYLOAD_TYPE</key>
 				<integer>0</integer>
+				<key>PRESERVE_EXTENDED_ATTRIBUTES</key>
+				<false/>
 				<key>SHOW_INVISIBLE</key>
 				<false/>
 				<key>SPLIT_FORKS</key>
@@ -607,7 +572,7 @@
 				<key>TREAT_MISSING_FILES_AS_WARNING</key>
 				<false/>
 				<key>VERSION</key>
-				<integer>3</integer>
+				<integer>5</integer>
 			</dict>
 			<key>PACKAGE_SCRIPTS</key>
 			<dict>
@@ -637,7 +602,7 @@
 				<key>FOLLOW_SYMBOLIC_LINKS</key>
 				<false/>
 				<key>IDENTIFIER</key>
-				<string>org.freedesktop.digikam</string>
+				<string>org.kde.digikam</string>
 				<key>LOCATION</key>
 				<integer>0</integer>
 				<key>NAME</key>
@@ -646,12 +611,14 @@
 				<true/>
 				<key>PAYLOAD_SIZE</key>
 				<integer>-1</integer>
+				<key>REFERENCE_PATH</key>
+				<string></string>
 				<key>RELOCATABLE</key>
-				<false/>
+				<true/>
 				<key>USE_HFS+_COMPRESSION</key>
 				<true/>
 				<key>VERSION</key>
-				<string>6.0.0</string>
+				<string>7.2.0</string>
 			</dict>
 			<key>TYPE</key>
 			<integer>0</integer>
@@ -681,7 +648,17 @@
 		<key>PROJECT_PRESENTATION</key>
 		<dict>
 			<key>BACKGROUND</key>
-			<dict/>
+			<dict>
+				<key>APPAREANCES</key>
+				<dict>
+					<key>DARK_AQUA</key>
+					<dict/>
+					<key>LIGHT_AQUA</key>
+					<dict/>
+				</dict>
+				<key>SHARED_SETTINGS_FOR_ALL_APPAREANCES</key>
+				<true/>
+			</dict>
 			<key>INSTALLATION TYPE</key>
 			<dict>
 				<key>HIERARCHIES</key>

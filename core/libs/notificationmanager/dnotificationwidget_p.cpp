@@ -6,7 +6,7 @@
  * Date        : 2011-07-03
  * Description : A widget to provide feedback or propose opportunistic interactions
  *
- * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (c) 2011      by Aurelien Gateau <agateau at kde dot org>
  * Copyright (c) 2014      by Dominik Haumann <dhaumann at kde dot org>
  *
@@ -46,16 +46,16 @@ namespace Digikam
 {
 
 DNotificationWidget::Private::Private(DNotificationWidget* const q_ptr)
-    : QObject(q_ptr),
-      q(q_ptr),
-      content(nullptr),
-      iconLabel(nullptr),
-      textLabel(nullptr),
-      closeButton(nullptr),
-      timeLine(nullptr),
-      messageType(DNotificationWidget::Information),
-      wordWrap(false),
-      delay(-1)
+    : QObject       (q_ptr),
+      q             (q_ptr),
+      content       (nullptr),
+      iconLabel     (nullptr),
+      textLabel     (nullptr),
+      closeButton   (nullptr),
+      timeLine      (nullptr),
+      messageType   (DNotificationWidget::Information),
+      wordWrap      (false),
+      delay         (-1)
 {
 }
 
@@ -223,6 +223,7 @@ void DNotificationWidget::Private::slotTimeLineFinished()
     else
     {
         // hide and notify about finished animation
+
         q->hide();
         emit q->hideAnimationFinished();
     }

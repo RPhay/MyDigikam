@@ -6,7 +6,7 @@
  * Date        : 2010-03-26
  * Description : A widget to configure the GPS correlation
  *
- * Copyright (C) 2010-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2010-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2010-2014 by Michael G. Hansen <mike at mghansen dot de>
  * Copyright (C) 2014      by Justus Schwartz <justus at gmx dot li>
  *
@@ -51,7 +51,7 @@ class DIGIKAM_EXPORT GPSCorrelatorWidget : public QWidget
 public:
 
     explicit GPSCorrelatorWidget(QWidget* const parent, GPSItemModel* const imageModel, TrackManager* const trackManager);
-    virtual ~GPSCorrelatorWidget();
+    ~GPSCorrelatorWidget() override;
 
     void setUIEnabledExternal(const bool state);
     void saveSettingsToGroup(KConfigGroup* const group);
@@ -71,6 +71,7 @@ Q_SIGNALS:
     void signalProgressChanged(const int currentProgress);
     void signalUndoCommand(GPSUndoCommand* undoCommand);
     void signalAllTrackFilesReady();
+    void signalTrackListChanged(const Digikam::GeoCoordinates& coordinate);
 
 public Q_SLOTS:
 
@@ -86,6 +87,7 @@ private Q_SLOTS:
     void slotAllItemsCorrelated();
     void slotCorrelationCanceled();
     void slotShowTracksStateChanged(int state);
+    void slotCurrentChanged(const QModelIndex& current, const QModelIndex& previous);
 
 private:
 

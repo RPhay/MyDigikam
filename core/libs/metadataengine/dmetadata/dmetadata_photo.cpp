@@ -6,7 +6,7 @@
  * Date        : 2006-02-23
  * Description : item metadata interface - photo info helpers.
  *
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2006-2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  * Copyright (C) 2011      by Leif Huhn <leif at dkstat dot com>
  *
@@ -60,6 +60,11 @@ PhotoInfoContainer DMetadata::getPhotographInformation() const
             photoInfo.make = getXmpTagString("Xmp.tiff.Make");
         }
 
+        if (photoInfo.make.isEmpty())
+        {
+            photoInfo.make = getExifTagString("Exif.PanasonicRaw.Make");
+        }
+
         // -----------------------------------------------------------------------------------
 
         photoInfo.model    = getExifTagString("Exif.Image.Model");
@@ -69,6 +74,11 @@ PhotoInfoContainer DMetadata::getPhotographInformation() const
             photoInfo.model = getXmpTagString("Xmp.tiff.Model");
         }
 
+        if (photoInfo.model.isEmpty())
+        {
+            photoInfo.model = getExifTagString("Exif.PanasonicRaw.Model");
+        }
+
         // -----------------------------------------------------------------------------------
 
         photoInfo.lens     = getLensDescription();
@@ -76,6 +86,11 @@ PhotoInfoContainer DMetadata::getPhotographInformation() const
         // -----------------------------------------------------------------------------------
 
         photoInfo.aperture = getExifTagString("Exif.Photo.FNumber");
+
+        if (photoInfo.aperture.isEmpty())
+        {
+            photoInfo.aperture = getExifTagString("Exif.Image.FNumber");
+        }
 
         if (photoInfo.aperture.isEmpty())
         {
@@ -95,6 +110,11 @@ PhotoInfoContainer DMetadata::getPhotographInformation() const
         // -----------------------------------------------------------------------------------
 
         photoInfo.exposureTime = getExifTagString("Exif.Photo.ExposureTime");
+
+        if (photoInfo.exposureTime.isEmpty())
+        {
+            photoInfo.exposureTime = getExifTagString("Exif.Image.ExposureTime");
+        }
 
         if (photoInfo.exposureTime.isEmpty())
         {
@@ -145,6 +165,11 @@ PhotoInfoContainer DMetadata::getPhotographInformation() const
 
         if (photoInfo.focalLength.isEmpty())
         {
+            photoInfo.focalLength = getXmpTagString("Exif.Image.FocalLength");
+        }
+
+        if (photoInfo.focalLength.isEmpty())
+        {
             photoInfo.focalLength = getXmpTagString("Xmp.exif.FocalLength");
         }
 
@@ -187,6 +212,7 @@ PhotoInfoContainer DMetadata::getPhotographInformation() const
         ISOSpeedTags << QLatin1String("Exif.Sony1Cs2.ISOSetting");
         ISOSpeedTags << QLatin1String("Exif.Sony2Cs2.ISOSetting");
         ISOSpeedTags << QLatin1String("Exif.Sony1MltCsA100.ISOSetting");
+        ISOSpeedTags << QLatin1String("Exif.PanasonicRaw.ISOSpeed");
         ISOSpeedTags << QLatin1String("Exif.Pentax.ISO");
         ISOSpeedTags << QLatin1String("Exif.Olympus.ISOSpeed");
         ISOSpeedTags << QLatin1String("Exif.Samsung2.ISO");
@@ -232,29 +258,41 @@ QString DMetadata::getLensDescription() const
 
     // In first, try to get Lens information from makernotes.
 
-    lensExifTags.append(QLatin1String("Exif.CanonCs.LensType"));      // Canon Cameras Makernote.
-    lensExifTags.append(QLatin1String("Exif.CanonCs.Lens"));          // Canon Cameras Makernote.
-    lensExifTags.append(QLatin1String("Exif.Canon.0x0095"));          // Alternative Canon Cameras Makernote.
-    lensExifTags.append(QLatin1String("Exif.NikonLd1.LensIDNumber")); // Nikon Cameras Makernote.
-    lensExifTags.append(QLatin1String("Exif.NikonLd2.LensIDNumber")); // Nikon Cameras Makernote.
-    lensExifTags.append(QLatin1String("Exif.NikonLd3.LensIDNumber")); // Nikon Cameras Makernote.
-    lensExifTags.append(QLatin1String("Exif.Minolta.LensID"));        // Minolta Cameras Makernote.
-    lensExifTags.append(QLatin1String("Exif.Photo.LensModel"));       // Sony Cameras Makernote (and others?).
-    lensExifTags.append(QLatin1String("Exif.Sony1.LensID"));          // Sony Cameras Makernote.
-    lensExifTags.append(QLatin1String("Exif.Sony2.LensID"));          // Sony Cameras Makernote.
-    lensExifTags.append(QLatin1String("Exif.SonyMinolta.LensID"));    // Sony Cameras Makernote.
-    lensExifTags.append(QLatin1String("Exif.Pentax.LensType"));       // Pentax Cameras Makernote.
-    lensExifTags.append(QLatin1String("Exif.PentaxDng.LensType"));    // Pentax Cameras Makernote.
-    lensExifTags.append(QLatin1String("Exif.Panasonic.0x0051"));      // Panasonic Cameras Makernote.
-    lensExifTags.append(QLatin1String("Exif.Panasonic.0x0310"));      // Panasonic Cameras Makernote.
-    lensExifTags.append(QLatin1String("Exif.Sigma.LensRange"));       // Sigma Cameras Makernote.
-    lensExifTags.append(QLatin1String("Exif.Samsung2.LensType"));     // Samsung Cameras Makernote.
-    lensExifTags.append(QLatin1String("Exif.Photo.0xFDEA"));          // Non-standard Exif tag set by Camera Raw.
-    lensExifTags.append(QLatin1String("Exif.OlympusEq.LensModel"));   // Olympus Cameras Makernote.
+    lensExifTags.append(QLatin1String("Exif.CanonCs.LensType"));      ///< Canon Cameras Makernote.
+    lensExifTags.append(QLatin1String("Exif.CanonCs.Lens"));          ///< Canon Cameras Makernote.
+    lensExifTags.append(QLatin1String("Exif.Canon.0x0095"));          ///< Alternative Canon Cameras Makernote.
+    lensExifTags.append(QLatin1String("Exif.NikonLd1.LensIDNumber")); ///< Nikon Cameras Makernote.
+    lensExifTags.append(QLatin1String("Exif.NikonLd2.LensIDNumber")); ///< Nikon Cameras Makernote.
+    lensExifTags.append(QLatin1String("Exif.NikonLd3.LensIDNumber")); ///< Nikon Cameras Makernote.
+    lensExifTags.append(QLatin1String("Exif.Minolta.LensID"));        ///< Minolta Cameras Makernote.
+    lensExifTags.append(QLatin1String("Exif.Sony1.LensID"));          ///< Sony Cameras Makernote.
+    lensExifTags.append(QLatin1String("Exif.Sony2.LensID"));          ///< Sony Cameras Makernote.
+    lensExifTags.append(QLatin1String("Exif.SonyMinolta.LensID"));    ///< Sony Cameras Makernote.
+    lensExifTags.append(QLatin1String("Exif.Pentax.LensType"));       ///< Pentax Cameras Makernote.
+    lensExifTags.append(QLatin1String("Exif.PentaxDng.LensType"));    ///< Pentax Cameras Makernote.
+    lensExifTags.append(QLatin1String("Exif.Panasonic.0x0051"));      ///< Panasonic Cameras Makernote.
+    lensExifTags.append(QLatin1String("Exif.Panasonic.0x0310"));      ///< Panasonic Cameras Makernote.
+    lensExifTags.append(QLatin1String("Exif.Sigma.LensRange"));       ///< Sigma Cameras Makernote.
+    lensExifTags.append(QLatin1String("Exif.Samsung2.LensType"));     ///< Samsung Cameras Makernote.
+    lensExifTags.append(QLatin1String("Exif.Photo.0xFDEA"));          ///< Non-standard Exif tag set by Camera Raw.
+    lensExifTags.append(QLatin1String("Exif.OlympusEq.LensType"));    ///< Olympus Cameras Makernote.
+    lensExifTags.append(QLatin1String("Exif.OlympusEq.LensModel"));   ///< Olympus Cameras Makernote.
 
-    // Olympus Cameras Makernote. FIXME is this necessary? exiv2 returns complete name,
-    // which doesn't match with lensfun information, see bug #311295
-    //lensExifTags.append("Exif.OlympusEq.LensType");
+    // Check Makernotes first.
+
+    // Sony Cameras Makernote and others.
+
+    QString make      = getExifTagString("Exif.Image.Make");
+    QString lensModel = QLatin1String("Exif.Photo.LensModel");
+
+    if (make.contains(QLatin1String("SONY"), Qt::CaseInsensitive))
+    {
+        lensExifTags.prepend(lensModel);
+    }
+    else
+    {
+        lensExifTags.append(lensModel);
+    }
 
     // TODO : add Fuji camera Makernotes.
 
@@ -268,9 +306,10 @@ QString DMetadata::getLensDescription() const
         // To prevent undecoded tag values from Exiv2 as "(65535)"
         // or the value "----" from Exif.Photo.LensModel
 
-        if (!lens.isEmpty()                     &&
-            (lens != QLatin1String("----"))     &&
-            !(lens.startsWith(QLatin1Char('(')) &&
+        if (!lens.isEmpty()                        &&
+            (lens != QLatin1String("----"))        &&
+            (lens != QLatin1String("65535"))       &&
+            !(lens.startsWith(QLatin1Char('('))    &&
               lens.endsWith(QLatin1Char(')'))
              )
            )
@@ -282,13 +321,13 @@ QString DMetadata::getLensDescription() const
     // -------------------------------------------------------------------
     // Try to get Lens Data information from XMP.
     // XMP aux tags.
- 
+
     lens = getXmpTagString("Xmp.aux.Lens");
 
     if (lens.isEmpty())
     {
         // XMP M$ tags (Lens Maker + Lens Model).
- 
+
         lens = getXmpTagString("Xmp.MicrosoftPhoto.LensManufacturer");
 
         if (!lens.isEmpty())
@@ -302,10 +341,92 @@ QString DMetadata::getLensDescription() const
     return lens;
 }
 
+QString DMetadata::getCameraSerialNumber() const
+{
+    QString sn = getExifTagString("Exif.Image.CameraSerialNumber");
+
+    if (sn.isEmpty())
+    {
+        sn = getExifTagString("Exif.Canon.SerialNumber");
+    }
+
+    if (sn.isEmpty())
+    {
+        sn = getExifTagString("Exif.Fujifilm.SerialNumber");
+    }
+
+    if (sn.isEmpty())
+    {
+        sn = getExifTagString("Exif.Nikon3.SerialNumber");
+    }
+
+    if (sn.isEmpty())
+    {
+        sn = getExifTagString("Exif.Nikon3.SerialNO");
+    }
+
+    if (sn.isEmpty())
+    {
+        sn = getExifTagString("Exif.OlympusEq.SerialNumber");
+    }
+
+    if (sn.isEmpty())
+    {
+        sn = getExifTagString("Exif.Olympus.SerialNumber2");
+    }
+
+    if (sn.isEmpty())
+    {
+        sn = getExifTagString("Exif.OlympusEq.InternalSerialNumber");
+    }
+
+    if (sn.isEmpty())
+    {
+        sn = getExifTagString("Exif.Panasonic.InternalSerialNumber");
+    }
+
+    if (sn.isEmpty())
+    {
+        sn = getExifTagString("Exif.Sigma.SerialNumber");
+    }
+
+    if (sn.isEmpty())
+    {
+        sn = getExifTagString("Exif.Sigma.SerialNumber");
+    }
+
+    if (sn.isEmpty())
+    {
+        sn = getExifTagString("Exif.Sigma.SerialNumber");
+    }
+
+    if (sn.isEmpty())
+    {
+        sn = getExifTagString("Exif.Pentax.SerialNumber");
+    }
+
+    if (sn.isEmpty())
+    {
+        sn = getXmpTagString("Xmp.exifEX.BodySerialNumber");
+    }
+
+    if (sn.isEmpty())
+    {
+        sn = getXmpTagString("Xmp.aux.SerialNumber");
+    }
+
+    if (sn.isEmpty())
+    {
+        sn = getXmpTagString("Xmp.MicrosoftPhoto.CameraSerialNumber");
+    }
+
+    return sn;
+}
+
 double DMetadata::apexApertureToFNumber(double aperture)
 {
     // convert from APEX. See Exif spec, Annex C.
- 
+
     if      (aperture == 0.0)
     {
         return 1;
@@ -426,7 +547,7 @@ double DMetadata::apexShutterSpeedToExposureTime(double shutterSpeed)
     {
         return 0.0005;    // 1/2000
     }
-    // additions by me
+    // supplemental rules
     else if (shutterSpeed == 12.0)
     {
         return 0.00025;    // 1/4000

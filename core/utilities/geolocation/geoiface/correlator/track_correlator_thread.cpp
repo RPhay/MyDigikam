@@ -6,7 +6,7 @@
  * Date        : 2006-09-19
  * Description : Thread for correlator for tracks and images
  *
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2010      by Michael G. Hansen <mike at mghansen dot de>
  *
  * This program is free software; you can redistribute it
@@ -41,7 +41,7 @@ bool TrackCorrelationLessThan(const TrackCorrelator::Correlation& a, const Track
 }
 
 TrackCorrelatorThread::TrackCorrelatorThread(QObject* const parent)
-    : QThread(parent),
+    : QThread (parent),
       doCancel(false),
       canceled(false)
 {
@@ -240,9 +240,9 @@ void TrackCorrelatorThread::run()
             {
                 const TrackManager::TrackPoint& dataPointBefore = fileList.at(lastIndexPair.first).points.at(lastIndexPair.second);
                 const TrackManager::TrackPoint& dataPointAfter  = fileList.at(firstIndexPair.first).points.at(firstIndexPair.second);
-                const uint tBefore                              = dataPointBefore.dateTime.toTime_t();
-                const uint tAfter                               = dataPointAfter.dateTime.toTime_t();
-                const uint tCor                                 = itemDateTime.toTime_t();
+                const uint tBefore                              = dataPointBefore.dateTime.toSecsSinceEpoch();
+                const uint tAfter                               = dataPointAfter.dateTime.toSecsSinceEpoch();
+                const uint tCor                                 = itemDateTime.toSecsSinceEpoch();
 
                 if (tCor-tBefore != 0)
                 {

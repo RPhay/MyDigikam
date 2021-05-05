@@ -6,7 +6,7 @@
  * Date        : 2008-11-28
  * Description : TIFF image Converter batch tool.
  *
- * Copyright (C) 2008-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2008-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -43,13 +43,18 @@ namespace DigikamBqmConvertToTiffPlugin
 {
 
 ConvertToTIFF::ConvertToTIFF(QObject* const parent)
-    : BatchTool(QLatin1String("ConvertToTIFF"), ConvertTool, parent)
+    : BatchTool(QLatin1String("ConvertToTIFF"), ConvertTool, parent),
+      m_changeSettings(true)
 {
-    m_changeSettings = true;
 }
 
 ConvertToTIFF::~ConvertToTIFF()
 {
+}
+
+BatchTool* ConvertToTIFF::clone(QObject* const parent) const
+{
+    return new ConvertToTIFF(parent);
 }
 
 void ConvertToTIFF::registerSettingsWidget()

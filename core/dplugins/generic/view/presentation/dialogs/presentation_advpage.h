@@ -39,8 +39,9 @@ class PresentationAdvPage : public QWidget,
 
 public:
 
-    explicit PresentationAdvPage(QWidget* const parent, PresentationContainer* const sharedData);
-    ~PresentationAdvPage();
+    explicit PresentationAdvPage(QWidget* const parent,
+                                 PresentationContainer* const sharedData);
+    ~PresentationAdvPage() override;
 
     void readSettings();
     void saveSettings();

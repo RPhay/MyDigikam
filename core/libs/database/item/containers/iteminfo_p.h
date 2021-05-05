@@ -8,7 +8,7 @@
  *
  * Copyright (C) 2005      by Renchi Raju <renchi dot raju at gmail dot com>
  * Copyright (C) 2007-2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2013      by Michael G. Hansen <mike at mghansen dot de>
  *
  * This program is free software; you can redistribute it
@@ -57,6 +57,7 @@
 #include "itemposition.h"
 #include "itemscanner.h"
 #include "itemtagpair.h"
+#include "facetagseditor.h"
 #include "tagscache.h"
 #include "template.h"
 #include "thumbnailinfo.h"
@@ -69,35 +70,42 @@ namespace Digikam
 MetadataInfo::Field DatabaseVideoMetadataFieldsToMetadataInfoField(const DatabaseFields::VideoMetadata videoMetadataField);
 MetadataInfo::Field DatabaseImageMetadataFieldsToMetadataInfoField(const DatabaseFields::ImageMetadata imageMetadataField);
 
-#define RETURN_IF_CACHED(x)                             \
-    if (m_data->x##Cached)                              \
-    {                                                   \
-        ItemInfoReadLocker lock;                        \
-        if (m_data->x##Cached)                          \
-        {                                               \
-            return m_data->x;                           \
-        }                                               \
+#define RETURN_IF_CACHED(x)                            \
+                                                       \
+    {                                                  \
+        ItemInfoReadLocker lock;                       \
+                                                       \
+        if (m_data->x##Cached)                         \
+        {                                              \
+            return m_data->x;                          \
+        }                                              \
     }
 
-#define RETURN_ASPECTRATIO_IF_IMAGESIZE_CACHED()        \
-    if (m_data->imageSizeCached)                        \
-    {                                                   \
-        ItemInfoReadLocker lock;                        \
-        if (m_data->imageSizeCached)                    \
-        {                                               \
-            return (double)m_data->imageSize.width()/   \
-                           m_data->imageSize.height();  \
-        }                                               \
+#define RETURN_ASPECTRATIO_IF_IMAGESIZE_CACHED()       \
+                                                       \
+    {                                                  \
+        ItemInfoReadLocker lock;                       \
+                                                       \
+        if (m_data->imageSizeCached)                   \
+        {                                              \
+            return (double)m_data->imageSize.width() / \
+                           m_data->imageSize.height(); \
+        }                                              \
     }
 
-#define STORE_IN_CACHE_AND_RETURN(x, retrieveMethod)    \
-    ItemInfoWriteLocker lock;                           \
-    m_data.data()->x##Cached = true;                    \
-    if (!values.isEmpty())                              \
-    {                                                   \
-        m_data.data()->x = retrieveMethod;              \
-    }                                                   \
-    return m_data->x;
+#define STORE_IN_CACHE_AND_RETURN(x, retrieveMethod)   \
+                                                       \
+    {                                                  \
+        ItemInfoWriteLocker lock;                      \
+                                                       \
+        if (!values.isEmpty())                         \
+        {                                              \
+            m_data.data()->x##Cached = true;           \
+            m_data.data()->x         = retrieveMethod; \
+        }                                              \
+                                                       \
+        return m_data->x;                              \
+    }
 
 } // namespace Digikam
 

@@ -6,7 +6,7 @@
  * Date        : 2007-10-08
  * Description : a widget to edit a tag with multiple string entries.
  *
- * Copyright (C) 2007-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2007-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -30,7 +30,6 @@
 #include <QGridLayout>
 #include <QApplication>
 #include <QListWidget>
-#include <QLineEdit>
 
 // KDE includes
 
@@ -44,13 +43,13 @@ class Q_DECL_HIDDEN MultiStringsEdit::Private
 public:
 
     explicit Private()
+      : addValueButton(nullptr),
+        delValueButton(nullptr),
+        repValueButton(nullptr),
+        valueCheck    (nullptr),
+        valueEdit     (nullptr),
+        valueBox      (nullptr)
     {
-        addValueButton = nullptr;
-        delValueButton = nullptr;
-        repValueButton = nullptr;
-        valueBox       = nullptr;
-        valueCheck     = nullptr;
-        valueEdit      = nullptr;
     }
 
     QStringList  oldValues;
@@ -66,16 +65,18 @@ public:
     QListWidget* valueBox;
 };
 
-MultiStringsEdit::MultiStringsEdit(QWidget* const parent, const QString& title,
-                                   const QString& desc, bool ascii, int size)
+MultiStringsEdit::MultiStringsEdit(QWidget* const parent,
+                                   const QString& title,
+                                   const QString& desc,
+                                   int size)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     QGridLayout* const grid = new QGridLayout(this);
 
     // --------------------------------------------------------
 
-    d->valueCheck = new QCheckBox(title, this);
+    d->valueCheck     = new QCheckBox(title, this);
 
     d->addValueButton = new QPushButton(this);
     d->delValueButton = new QPushButton(this);
@@ -89,30 +90,17 @@ MultiStringsEdit::MultiStringsEdit(QWidget* const parent, const QString& title,
     d->delValueButton->setEnabled(false);
     d->repValueButton->setEnabled(false);
 
-    d->valueBox  = new QListWidget(this);
-    d->valueBox->setSizePolicy(QSizePolicy::Maximum, QSizePolicy::Ignored);
+    d->valueBox       = new QListWidget(this);
+    d->valueBox->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Ignored);
     d->valueBox->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 
-    d->valueEdit = new QLineEdit(this);
+    d->valueEdit      = new QLineEdit(this);
     d->valueEdit->setClearButtonEnabled(true);
     QString whatsThis = desc;
 
-    if (ascii || size != -1)
-    {
-        whatsThis.append(i18n(" This field is limited to:"));
-    }
-
-    if (ascii)
-    {
-        // IPTC only accept printable Ascii char.
-        QRegExp asciiRx(QLatin1String("[\x20-\x7F]+$"));
-        QValidator* const asciiValidator = new QRegExpValidator(asciiRx, this);
-        d->valueEdit->setValidator(asciiValidator);
-        whatsThis.append(i18n("<p>Printable ASCII characters.</p>"));
-    }
-
     if (size != -1)
     {
+        whatsThis.append(i18n(" This field is limited to:"));
         d->valueEdit->setMaxLength(size);
         whatsThis.append(i18np("<p>1 character.</p>","<p>%1 characters.</p>", size));
     }
@@ -121,16 +109,16 @@ MultiStringsEdit::MultiStringsEdit(QWidget* const parent, const QString& title,
 
     // --------------------------------------------------------
 
-    grid->setAlignment( Qt::AlignTop );
-    grid->addWidget(d->valueCheck,      0, 0, 1, 1);
-    grid->addWidget(d->addValueButton,  0, 1, 1, 1);
-    grid->addWidget(d->delValueButton,  0, 2, 1, 1);
-    grid->addWidget(d->repValueButton,  0, 3, 1, 1);
-    grid->addWidget(d->valueBox,        0, 4, 3, 1);
-    grid->addWidget(d->valueEdit,       2, 0, 1, 4);
+    grid->setAlignment(Qt::AlignTop);
+    grid->addWidget(d->valueCheck,     0, 0, 1, 1);
+    grid->addWidget(d->addValueButton, 0, 1, 1, 1);
+    grid->addWidget(d->delValueButton, 0, 2, 1, 1);
+    grid->addWidget(d->repValueButton, 0, 3, 1, 1);
+    grid->addWidget(d->valueBox,       0, 4, 3, 1);
+    grid->addWidget(d->valueEdit,      2, 0, 1, 4);
     grid->setRowStretch(1, 10);
     grid->setColumnStretch(0, 10);
-    grid->setColumnStretch(4, 100);
+    grid->setColumnStretch(4, 10);
     grid->setContentsMargins(QMargins());
     grid->setSpacing(QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing));
 
@@ -185,10 +173,19 @@ MultiStringsEdit::~MultiStringsEdit()
     delete d;
 }
 
+QLineEdit* MultiStringsEdit::valueEdit() const
+{
+    return d->valueEdit;
+}
+
 void MultiStringsEdit::slotDeleteValue()
 {
     QListWidgetItem* const item = d->valueBox->currentItem();
-    if (!item) return;
+
+    if (!item)
+    {
+        return;
+    }
 
     d->valueBox->takeItem(d->valueBox->row(item));
     delete item;
@@ -197,7 +194,11 @@ void MultiStringsEdit::slotDeleteValue()
 void MultiStringsEdit::slotReplaceValue()
 {
     QString newValue = d->valueEdit->text();
-    if (newValue.isEmpty()) return;
+
+    if (newValue.isEmpty())
+    {
+        return;
+    }
 
     if (!d->valueBox->selectedItems().isEmpty())
     {
@@ -224,11 +225,15 @@ void MultiStringsEdit::slotSelectionChanged()
 void MultiStringsEdit::slotAddValue()
 {
     QString newValue = d->valueEdit->text();
-    if (newValue.isEmpty()) return;
+
+    if (newValue.isEmpty())
+    {
+        return;
+    }
 
     bool found = false;
 
-    for (int i = 0 ; i < d->valueBox->count(); ++i)
+    for (int i = 0 ; i < d->valueBox->count() ; ++i)
     {
         QListWidgetItem* const item = d->valueBox->item(i);
 
@@ -273,7 +278,7 @@ bool MultiStringsEdit::getValues(QStringList& oldValues, QStringList& newValues)
     oldValues = d->oldValues;
     newValues.clear();
 
-    for (int i = 0 ; i < d->valueBox->count(); ++i)
+    for (int i = 0 ; i < d->valueBox->count() ; ++i)
     {
         QListWidgetItem* const item = d->valueBox->item(i);
         newValues.append(item->text());

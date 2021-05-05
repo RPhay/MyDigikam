@@ -6,7 +6,7 @@
  * Date        : 2012-04-04
  * Description : Web Service Tool dialog
  *
- * Copyright (C) 2012-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -47,8 +47,8 @@ class Q_DECL_HIDDEN WSToolDialog::Private
 public:
 
     explicit Private()
-        : startButton(nullptr),
-          mainWidget(nullptr),
+        : startButton    (nullptr),
+          mainWidget     (nullptr),
           propagateReject(true)
     {
     }
@@ -61,11 +61,11 @@ public:
 
 WSToolDialog::WSToolDialog(QWidget* const parent, const QString& objName)
     : DPluginDialog(parent, objName),
-      d(new Private)
+      d            (new Private)
 {
     m_buttons->addButton(QDialogButtonBox::Close);
     m_buttons->button(QDialogButtonBox::Close)->setDefault(true);
-    d->startButton = new QPushButton(i18nc("@action:button", "&Start"), this);
+    d->startButton = new QPushButton(i18nc("@action: button", "&Start"), this);
     d->startButton->setIcon(QIcon::fromTheme(QLatin1String("media-playback-start")));
     m_buttons->addButton(d->startButton, QDialogButtonBox::ActionRole);
 

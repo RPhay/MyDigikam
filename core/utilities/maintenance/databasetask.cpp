@@ -35,7 +35,7 @@
 #include "thumbsdbaccess.h"
 #include "coredb.h"
 #include "coredbaccess.h"
-#include "recognitiondatabase.h"
+#include "facialrecognition_wrapper.h"
 #include "facetagseditor.h"
 #include "maintenancedata.h"
 #include "similaritydb.h"
@@ -49,11 +49,11 @@ class Q_DECL_HIDDEN DatabaseTask::Private
 public:
 
     explicit Private()
-        : scanThumbsDb(false),
+        : scanThumbsDb     (false),
           scanRecognitionDb(false),
-          scanSimilarityDb(false),
-          mode(Mode::Unknown),
-          data(nullptr)
+          scanSimilarityDb (false),
+          mode             (Mode::Unknown),
+          data             (nullptr)
     {
     }
 
@@ -72,7 +72,7 @@ public:
 
 DatabaseTask::DatabaseTask()
     : ActionJob(),
-      d(new Private)
+      d        (new Private)
 {
 }
 
@@ -110,7 +110,7 @@ void DatabaseTask::run()
 
     QThread::sleep(1);
 
-    if (d->mode == Mode::ShrinkDatabases)
+    if      (d->mode == Mode::ShrinkDatabases)
     {
         qCDebug(DIGIKAM_GENERAL_LOG) << "Shrinking databases";
 
@@ -121,7 +121,9 @@ void DatabaseTask::run()
             if (!CoreDbAccess().db()->integrityCheck())
             {
                 qCWarning(DIGIKAM_DATABASE_LOG) << "Integrity check for core DB failed after vacuum. Something went wrong.";
+
                 // Signal that the database was vacuumed but failed the integrity check afterwards.
+
                 emit signalFinished(true, false);
             }
             else
@@ -133,7 +135,9 @@ void DatabaseTask::run()
         else
         {
             qCWarning(DIGIKAM_DATABASE_LOG) << "Integrity check for core DB failed. Will not vacuum.";
+
             // Signal that the integrity check failed and thus the vacuum was skipped
+
             emit signalFinished(false, false);
         }
 
@@ -153,7 +157,9 @@ void DatabaseTask::run()
                 if (!ThumbsDbAccess().db()->integrityCheck())
                 {
                     qCWarning(DIGIKAM_DATABASE_LOG) << "Integrity check for thumbnails DB failed after vacuum. Something went wrong.";
+
                     // Signal that the database was vacuumed but failed the integrity check afterwards.
+
                     emit signalFinished(true, false);
                 }
                 else
@@ -165,7 +171,9 @@ void DatabaseTask::run()
             else
             {
                 qCWarning(DIGIKAM_DATABASE_LOG) << "Integrity check for thumbnails DB failed. Will not vacuum.";
+
                 // Signal that the integrity check failed and thus the vacuum was skipped
+
                 emit signalFinished(false, false);
             }
         }
@@ -182,14 +190,16 @@ void DatabaseTask::run()
             return;
         }
 
-        if (RecognitionDatabase().integrityCheck())
+        if (FacialRecognitionWrapper().integrityCheck())
         {
-            RecognitionDatabase().vacuum();
+            FacialRecognitionWrapper().vacuum();
 
-            if (!RecognitionDatabase().integrityCheck())
+            if (!FacialRecognitionWrapper().integrityCheck())
             {
                 qCWarning(DIGIKAM_DATABASE_LOG) << "Integrity check for recognition DB failed after vacuum. Something went wrong.";
+
                 // Signal that the database was vacuumed but failed the integrity check afterwards.
+
                 emit signalFinished(true, false);
             }
             else
@@ -201,7 +211,9 @@ void DatabaseTask::run()
         else
         {
             qCWarning(DIGIKAM_DATABASE_LOG) << "Integrity check for recognition DB failed. Will not vacuum.";
+
             // Signal that the integrity check failed and thus the vacuum was skipped
+
             emit signalFinished(false, false);
         }
 
@@ -221,7 +233,9 @@ void DatabaseTask::run()
                 if (!SimilarityDbAccess().db()->integrityCheck())
                 {
                     qCWarning(DIGIKAM_DATABASE_LOG) << "Integrity check for similarity DB failed after vacuum. Something went wrong.";
+
                     // Signal that the database was vacuumed but failed the integrity check afterwards.
+
                     emit signalFinished(true, false);
                 }
                 else
@@ -233,7 +247,9 @@ void DatabaseTask::run()
             else
             {
                 qCWarning(DIGIKAM_DATABASE_LOG) << "Integrity check for recognition DB failed. Will not vacuum.";
+
                 // Signal that the integrity check failed and thus the vacuum was skipped
+
                 emit signalFinished(false, false);
             }
         }
@@ -251,18 +267,21 @@ void DatabaseTask::run()
         QList<qlonglong> coredbItems = CoreDbAccess().db()->getAllItems();
 
         // Get the count of image entries in DB to delete.
+
         staleImageIds                = CoreDbAccess().db()->getImageIds(DatabaseItem::Status::Obsolete);
 
         // get the count of items to process for thumbnails cleanup it enabled.
+
         if (d->scanThumbsDb && ThumbsDbAccess::isInitialized())
         {
             additionalItemsToProcess += coredbItems.size();
         }
 
         // get the count of items to process for identities cleanup it enabled.
+
         if (d->scanRecognitionDb)
         {
-            additionalItemsToProcess += RecognitionDatabase().allIdentities().size();
+            additionalItemsToProcess += FacialRecognitionWrapper().allIdentities().size();
         }
 
         if (d->scanSimilarityDb)
@@ -304,16 +323,19 @@ void DatabaseTask::run()
                 if (!info.isNull())
                 {
                     // Remove the id that is found by the file path. Finding the id -1 does no harm
+
                     bool removed = thumbIds.remove(ThumbsDbAccess().db()->findByFilePath(info.filePath()).id);
 
                     if (!removed)
                     {
                         // Remove the id that is found by the hash and file size. Finding the id -1 does no harm
+
                         thumbIds.remove(ThumbsDbAccess().db()->findByHash(info.uniqueHash(), info.fileSize()).id);
                     }
 
                     // Add the custom identifier.
                     // get all faces for the image and generate the custom identifiers
+
                     QUrl url;
                     url.setScheme(QLatin1String("detail"));
                     url.setPath(info.filePath());
@@ -326,25 +348,30 @@ void DatabaseTask::run()
                         QUrlQuery q(url);
 
                         // Remove the previous query if existent.
+
                         q.removeQueryItem(QLatin1String("rect"));
                         q.addQueryItem(QLatin1String("rect"), r);
                         url.setQuery(q);
 
-                        //qCDebug(DIGIKAM_GENERAL_LOG) << "URL: " << url.toString(); 
+                        //qCDebug(DIGIKAM_GENERAL_LOG) << "URL: " << url.toString();
 
                         // Remove the id that is found by the custom identifier. Finding the id -1 does no harm
+
                         thumbIds.remove(ThumbsDbAccess().db()->findByCustomIdentifier(url.toString()).id);
                     }
                 }
 
                 // Signal that this item was processed.
+
                 emit signalFinished();
             }
 
             // The remaining thumbnail ids should be used to remove them since they are stale.
-            staleThumbIds = thumbIds.toList();
+
+            staleThumbIds = thumbIds.values();
 
             // Signal that the database was processed.
+
             emit signalFinished();
         }
 
@@ -354,6 +381,7 @@ void DatabaseTask::run()
         }
 
         // Get the stale face identities.
+
         if (d->scanRecognitionDb)
         {
             QList<TagProperty> properties = CoreDbAccess().db()->getTagProperties(TagPropertyName::faceEngineUuid());
@@ -364,7 +392,7 @@ void DatabaseTask::run()
                 uuidSet << prop.value;
             }
 
-            QList<Identity> identities = RecognitionDatabase().allIdentities();
+            QList<Identity> identities = FacialRecognitionWrapper().allIdentities();
 
             // Get all identities to remove. Don't remove now in order to make sure no side effects occur.
 
@@ -378,10 +406,12 @@ void DatabaseTask::run()
                 }
 
                 // Signal that this identity was processed.
+
                 emit signalFinished();
             }
 
             // Signal that the database was processed.
+
             emit signalFinished();
         }
 
@@ -393,21 +423,27 @@ void DatabaseTask::run()
         if (d->scanSimilarityDb)
         {
             // Get all registered image ids from the similarity db.
+
             QSet<qlonglong> similarityDbItems = SimilarityDbAccess().db()->registeredImageIds();
 
             // Remove all image ids that are existent in the core db
+
             foreach (const qlonglong& imageId, coredbItems)
             {
                 similarityDbItems.remove(imageId);
 
                 // Signal that this image id was processed.
-                signalFinished();
+
+                emit signalFinished();
             }
+
             // The remaining image ids should be removed from the similarity db.
-            staleSimilarityImageIds = similarityDbItems.toList();
+
+            staleSimilarityImageIds = similarityDbItems.values();
 
             // Signal that the database was processed.
-            signalFinished();
+
+            emit signalFinished();
         }
 
         emit signalData(staleImageIds, staleThumbIds, staleIdentities, staleSimilarityImageIds);
@@ -415,6 +451,7 @@ void DatabaseTask::run()
     else if (d->mode == Mode::CleanCoreDb)
     {
         // While we have data (using this as check for non-null)
+
         while (d->data)
         {
             if (m_cancel)
@@ -440,6 +477,7 @@ void DatabaseTask::run()
         (void)lastQueryState; // prevent cppcheck warning.
 
         // Connect to the database
+
         lastQueryState                             = ThumbsDbAccess().backend()->beginTransaction();
 
         if (BdEngineBackend::NoErrors == lastQueryState)
@@ -447,6 +485,7 @@ void DatabaseTask::run()
             // Start removing.
 
             // While we have data (using this as check for non-null)
+
             while (d->data)
             {
                 if (m_cancel)
@@ -470,6 +509,7 @@ void DatabaseTask::run()
             if (BdEngineBackend::NoErrors == lastQueryState)
             {
                 // Commit the removal if everything was fine.
+
                 lastQueryState = ThumbsDbAccess().backend()->commitTransaction();
 
                 if (BdEngineBackend::NoErrors != lastQueryState)
@@ -496,6 +536,7 @@ void DatabaseTask::run()
     else if (d->mode == Mode::CleanRecognitionDb)
     {
         // While we have data (using this as check for non-null)
+
         while (d->data)
         {
             if (m_cancel)
@@ -510,13 +551,14 @@ void DatabaseTask::run()
                 break;
             }
 
-            RecognitionDatabase().deleteIdentity(identity);
+            FacialRecognitionWrapper().deleteIdentity(identity);
             emit signalFinished();
         }
     }
     else if (d->mode == Mode::CleanSimilarityDb)
     {
         // While we have data (using this as check for non-null)
+
         while (d->data)
         {
             if (m_cancel)

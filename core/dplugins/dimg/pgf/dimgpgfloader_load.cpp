@@ -6,7 +6,7 @@
  * Date        : 2009-06-03
  * Description : A PGF IO file for DImg framework - load operations
  *
- * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -53,7 +53,7 @@ extern "C"
 
 // Windows includes
 
-#ifdef Q_OS_WIN32
+#ifdef Q_OS_WIN
 #   include <windows.h>
 #endif
 
@@ -97,7 +97,15 @@ bool DImgPGFLoader::load(const QString& filePath, DImgLoaderObserver* const obse
     m_observer = observer;
     readMetadata(filePath);
 
-    FILE* const file = fopen(QFile::encodeName(filePath).constData(), "rb");
+#ifdef Q_OS_WIN
+
+    FILE* const file = _wfopen((const wchar_t*)filePath.utf16(), L"rb");
+
+#else
+
+    FILE* const file = fopen(filePath.toUtf8().constData(), "rb");
+
+#endif
 
     if (!file)
     {
@@ -110,8 +118,9 @@ bool DImgPGFLoader::load(const QString& filePath, DImgLoaderObserver* const obse
 
     if (fread(&header, 3, 1, file) != 1)
     {
-        fclose(file);
         loadingFailed();
+        fclose(file);
+
         return false;
     }
 
@@ -120,8 +129,9 @@ bool DImgPGFLoader::load(const QString& filePath, DImgLoaderObserver* const obse
     if (memcmp(&header[0], &pgfID, 3) != 0)
     {
         // not a PGF file
-        fclose(file);
         loadingFailed();
+        fclose(file);
+
         return false;
     }
 
@@ -130,28 +140,27 @@ bool DImgPGFLoader::load(const QString& filePath, DImgLoaderObserver* const obse
     // -------------------------------------------------------------------
     // Initialize PGF API.
 
-#ifdef Q_OS_WIN32
-#   ifdef UNICODE
+#ifdef Q_OS_WIN
+
     HANDLE fd = CreateFileW((LPCWSTR)filePath.utf16(), GENERIC_READ, 0, NULL, OPEN_EXISTING, 0, 0);
-#   else
-    HANDLE fd = CreateFile(QFile::encodeName(filePath).constData(), GENERIC_READ, 0, NULL, OPEN_EXISTING, 0, 0);
-#   endif
 
     if (fd == INVALID_HANDLE_VALUE)
     {
         qCWarning(DIGIKAM_DIMG_LOG_PGF) << "Error: Could not open source file.";
         qCWarning(DIGIKAM_DIMG_LOG_PGF) << "Last error code:" << GetLastError();
         loadingFailed();
+
         return false;
     }
 
 #else
 
-    int fd = QT_OPEN(QFile::encodeName(filePath).constData(), O_RDONLY);
+    int fd = QT_OPEN(filePath.toUtf8().constData(), O_RDONLY);
 
     if (fd == -1)
     {
         loadingFailed();
+
         return false;
     }
 
@@ -300,7 +309,7 @@ bool DImgPGFLoader::load(const QString& filePath, DImgLoaderObserver* const obse
 
             if (observer)
             {
-                observer->progressInfo(1.0);
+                observer->progressInfo(1.0F);
             }
         }
 
@@ -321,10 +330,14 @@ bool DImgPGFLoader::load(const QString& filePath, DImgLoaderObserver* const obse
         imageSetAttribute(QLatin1String("originalBitDepth"),   bitDepth);
         imageSetAttribute(QLatin1String("originalSize"),       originalSize);
 
-#ifdef Q_OS_WIN32
+#ifdef Q_OS_WIN
+
         CloseHandle(fd);
+
 #else
+
         close(fd);
+
 #endif
 
         return true;
@@ -340,26 +353,36 @@ bool DImgPGFLoader::load(const QString& filePath, DImgLoaderObserver* const obse
 
         qCWarning(DIGIKAM_DIMG_LOG_PGF) << "Error: Opening and reading PGF image failed (" << err << ")!";
 
-#ifdef Q_OS_WIN32
+#ifdef Q_OS_WIN
+
         CloseHandle(fd);
+
 #else
+
         close(fd);
+
 #endif
 
         loadingFailed();
+
         return false;
     }
     catch (std::bad_alloc& e)
     {
         qCWarning(DIGIKAM_DIMG_LOG_PGF) << "Failed to allocate memory for loading" << filePath << e.what();
 
-#ifdef Q_OS_WIN32
+#ifdef Q_OS_WIN
+
         CloseHandle(fd);
+
 #else
+
         close(fd);
+
 #endif
 
         loadingFailed();
+
         return false;
     }
 

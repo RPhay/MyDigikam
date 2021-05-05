@@ -30,6 +30,10 @@
 #include <QByteArray>
 #include <QImageReader>
 
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 14, 0))
+#   include <QColorSpace>
+#endif
+
 // Local includes
 
 #include "digikam_debug.h"
@@ -39,9 +43,10 @@ namespace DigikamQImageDImgPlugin
 {
 
 DImgQImageLoader::DImgQImageLoader(DImg* const image)
-    : DImgLoader(image)
+    : DImgLoader  (image),
+      m_hasAlpha  (false),
+      m_sixteenBit(false)
 {
-    m_hasAlpha = false;
 }
 
 DImgQImageLoader::~DImgQImageLoader()
@@ -58,7 +63,8 @@ bool DImgQImageLoader::load(const QString& filePath, DImgLoaderObserver* const o
     QImageReader reader(filePath);
     reader.setDecideFormatFromContent(true);
 
-    QImage image = reader.read();
+    QByteArray readFormat = reader.format();
+    QImage image          = reader.read();
 
     if (observer)
     {
@@ -105,34 +111,108 @@ bool DImgQImageLoader::load(const QString& filePath, DImgLoaderObserver* const o
             colorModel    = DImg::RGB;
             originalDepth = 8;
             break;
+
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 12, 0))
+
+        case QImage::Format_RGBX64:
+        case QImage::Format_RGBA64:
+        case QImage::Format_RGBA64_Premultiplied:
+            colorModel    = DImg::RGB;
+            m_sixteenBit  = true;
+            originalDepth = 16;
+            break;
+
+#endif
+
     }
 
-    m_hasAlpha        = image.hasAlphaChannel();
-    QImage target     = image.convertToFormat(QImage::Format_ARGB32);
-    uint w            = target.width();
-    uint h            = target.height();
-    uchar* const data = new_failureTolerant(w, h, 4);
+    QImage target;
+    uint w      = 0;
+    uint h      = 0;
+    uchar* data = nullptr;
 
-    if (!data)
+    if (!m_sixteenBit)
     {
-        qCWarning(DIGIKAM_DIMG_LOG_QIMAGE) << "Failed to allocate memory for loading" << filePath;
-        loadingFailed();
-        return false;
+        qCDebug(DIGIKAM_DIMG_LOG_QIMAGE) << filePath << "is a 8 bits per color per pixels QImage";
+
+        m_hasAlpha    = (image.hasAlphaChannel() && (readFormat != "psd"));
+        target        = image.convertToFormat(QImage::Format_ARGB32);
+        w             = target.width();
+        h             = target.height();
+        data          = new_failureTolerant(w, h, 4);
+
+        if (!data)
+        {
+            qCWarning(DIGIKAM_DIMG_LOG_QIMAGE) << "Failed to allocate memory for loading" << filePath;
+            loadingFailed();
+            return false;
+        }
+
+        const QRgb* sptr = reinterpret_cast<const QRgb*>(target.constBits());
+        uchar*      dptr = data;
+
+        for (uint i = 0 ; i < w * h ; ++i)
+        {
+            dptr[0] = qBlue(*sptr);
+            dptr[1] = qGreen(*sptr);
+            dptr[2] = qRed(*sptr);
+            dptr[3] = m_hasAlpha ? qAlpha(*sptr) : 255;
+
+            dptr   += 4;
+            sptr++;
+        }
     }
-
-    uint*  sptr = reinterpret_cast<uint*>(target.bits());
-    uchar* dptr = data;
-
-    for (uint i = 0 ; i < w * h ; ++i)
+    else
     {
-        dptr[0] = qBlue(*sptr);
-        dptr[1] = qGreen(*sptr);
-        dptr[2] = qRed(*sptr);
-        dptr[3] = qAlpha(*sptr);
 
-        dptr += 4;
-        sptr++;
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 12, 0))
+
+        qCDebug(DIGIKAM_DIMG_LOG_QIMAGE) << filePath << "is a 16 bits per color per pixels QImage";
+
+        m_hasAlpha    = (image.hasAlphaChannel() && (readFormat != "psd"));
+        target        = image.convertToFormat(QImage::Format_RGBA64);
+        w             = target.width();
+        h             = target.height();
+        data          = new_failureTolerant(w, h, 8);
+
+        if (!data)
+        {
+            qCWarning(DIGIKAM_DIMG_LOG_QIMAGE) << "Failed to allocate memory for loading" << filePath;
+            loadingFailed();
+            return false;
+        }
+
+        const QRgba64* sptr = reinterpret_cast<const QRgba64*>(target.constBits());
+        ushort*        dptr = reinterpret_cast<ushort*>(data);
+
+        for (uint i = 0 ; i < w * h ; ++i)
+        {
+            dptr[0] = (*sptr).blue();
+            dptr[1] = (*sptr).green();
+            dptr[2] = (*sptr).red();
+            dptr[3] = m_hasAlpha ? (*sptr).alpha() : 65535;
+
+            dptr   += 4;
+            sptr++;
+        }
+
+#endif
+
     }
+
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 14, 0))
+
+    if ((m_loadFlags & LoadICCData) && target.colorSpace().isValid())
+    {
+        QByteArray iccRawProfile(target.colorSpace().iccProfile());
+
+        if (!iccRawProfile.isEmpty())
+        {
+            imageSetIccProfile(IccProfile(iccRawProfile));
+        }
+    }
+
+#endif
 
     if (observer)
     {
@@ -143,8 +223,7 @@ bool DImgQImageLoader::load(const QString& filePath, DImgLoaderObserver* const o
     imageHeight() = h;
     imageData()   = data;
 
-    // We considering that PNG is the most representative format of an image loaded by Qt
-    imageSetAttribute(QLatin1String("format"),             QLatin1String("PNG"));
+    imageSetAttribute(QLatin1String("format"),             QString::fromLatin1(readFormat).toUpper());
     imageSetAttribute(QLatin1String("originalColorModel"), colorModel);
     imageSetAttribute(QLatin1String("originalBitDepth"),   originalDepth);
     imageSetAttribute(QLatin1String("originalSize"),       QSize(w, h));
@@ -170,6 +249,17 @@ bool DImgQImageLoader::save(const QString& filePath, DImgLoaderObserver* const o
     QVariant formatAttr = imageGetAttribute(QLatin1String("format"));
     QByteArray format   = formatAttr.toByteArray();
     QImage image        = m_image->copyQImage();
+
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 14, 0))
+
+    QByteArray iccRawProfile = m_image->getIccProfile().data();
+
+    if (!iccRawProfile.isEmpty())
+    {
+        image.setColorSpace(QColorSpace::fromIccProfile(iccRawProfile));
+    }
+
+#endif
 
     if (observer)
     {
@@ -199,7 +289,7 @@ bool DImgQImageLoader::hasAlpha() const
 
 bool DImgQImageLoader::sixteenBit() const
 {
-    return false;
+    return m_sixteenBit;
 }
 
 bool DImgQImageLoader::isReadOnly() const

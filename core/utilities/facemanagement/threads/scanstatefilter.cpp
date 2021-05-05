@@ -31,11 +31,15 @@ namespace Digikam
 {
 
 ScanStateFilter::ScanStateFilter(FacePipeline::FilterMode mode, FacePipeline::Private* const d)
-    : d(d),
-      mode(mode)
+    : d     (d),
+      mode  (mode)
 {
     connect(this, SIGNAL(infosToDispatch()),
             this, SLOT(dispatch()));
+}
+
+ScanStateFilter::~ScanStateFilter()
+{
 }
 
 FacePipelineExtendedPackage::Ptr ScanStateFilter::filter(const ItemInfo& info)
@@ -83,9 +87,9 @@ FacePipelineExtendedPackage::Ptr ScanStateFilter::filter(const ItemInfo& info)
             {
                 FacePipelineExtendedPackage::Ptr package = d->buildPackage(info);
                 package->databaseFaces                   = databaseFaces;
-
-                //qCDebug(DIGIKAM_GENERAL_LOG) << "Prepared package with" << databaseFaces.size();
-
+/*
+                qCDebug(DIGIKAM_GENERAL_LOG) << "Prepared package with" << databaseFaces.size();
+*/
                 package->databaseFaces.setRole(FacePipelineFaceTagsIface::ReadFromDatabase);
 
                 if (tasks)
@@ -107,9 +111,9 @@ void ScanStateFilter::process(const QList<ItemInfo>& infos)
 {
     QMutexLocker lock(threadMutex());
     toFilter << infos;
-
-    //qCDebug(DIGIKAM_GENERAL_LOG) << "Received" << infos.size() << "images for filtering";
-
+/*
+    qCDebug(DIGIKAM_GENERAL_LOG) << "Received" << infos.size() << "images for filtering";
+*/
     start(lock);
 }
 
@@ -161,9 +165,9 @@ void ScanStateFilter::run()
                     itemsToSkip << info;
                 }
             }
-
-            //qCDebug(DIGIKAM_GENERAL_LOG) << "Filtered" << todo.size() << "images, send" << send.size() << "skip" << skip.size();
-
+/*
+            qCDebug(DIGIKAM_GENERAL_LOG) << "Filtered" << todo.size() << "images, send" << send.size() << "skip" << skip.size();
+*/
             {
                 QMutexLocker lock(threadMutex());
                 toSend      << itemsToSend;
@@ -187,9 +191,9 @@ void ScanStateFilter::dispatch()
         itemsToSkip = toBeSkipped;
         toBeSkipped.clear();
     }
-
-    //qCDebug(DIGIKAM_GENERAL_LOG) << "Dispatching, sending" << send.size() << "skipping" << skip.size();
-
+/*
+    qCDebug(DIGIKAM_GENERAL_LOG) << "Dispatching, sending" << send.size() << "skipping" << skip.size();
+*/
     if (!itemsToSkip.isEmpty())
     {
         d->skipFromFilter(itemsToSkip);

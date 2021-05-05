@@ -101,8 +101,7 @@ QString ShowfotoToolTipFiller::ShowfotoItemInfoTipContents(const ShowfotoItemInf
             }
             else
             {
-                QString mpixels;
-                mpixels.setNum(info.width*info.height/1000000.0, 'f', 2);
+                QString mpixels = QLocale().toString(info.width*info.height/1000000.0, 'f', 1);
                 str = i18nc("width x height (megapixels Mpx)", "%1x%2 (%3Mpx)",
                             info.width, info.height, mpixels);
             }

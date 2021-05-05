@@ -4,9 +4,10 @@
  * https://www.digikam.org
  *
  * Date        : 2019-04-02
- * Description : plugin to export images as wallpaper.
+ * Description : plugin to export image as wallpaper.
  *
- * Copyright (C) 2019 by Igor Antropov <antropovi at yahoo dot com>
+ * Copyright (C) 2019      by Igor Antropov <antropovi at yahoo dot com>
+ * Copyright (C) 2019-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -24,14 +25,16 @@
 
 // Qt includes
 
-#include <QDBusMessage>
-#include <QDBusConnection>
-#include <QString>
-#include <QMessageBox>
+#include <QPointer>
 
 // KDE includes
 
 #include <klocalizedstring.h>
+
+// Local includes
+
+#include "digikam_debug.h"
+#include "wallpaperplugindlg.h"
 
 namespace DigikamGenericWallpaperPlugin
 {
@@ -77,7 +80,11 @@ QList<DPluginAuthor> WallpaperPlugin::authors() const
     return QList<DPluginAuthor>()
             << DPluginAuthor(QString::fromUtf8("Igor Antropov"),
                              QString::fromUtf8("antropovi at yahoo dot com"),
-                             QString::fromUtf8("(C) 2019"));
+                             QString::fromUtf8("(C) 2019"))
+            << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
+                             QString::fromUtf8("caulier dot gilles at gmail dot com"),
+                             QString::fromUtf8("(C) 2019-2021"),
+                             i18n("Author and Maintainer"));
 }
 
 void WallpaperPlugin::setup(QObject* const parent)
@@ -106,33 +113,22 @@ void WallpaperPlugin::slotWallpaper()
 
     if (!images.isEmpty())
     {
-        QDBusMessage message = QDBusMessage::createMethodCall(
-            QLatin1String("org.kde.plasmashell"),
-            QLatin1String("/PlasmaShell"),
-            QLatin1String("org.kde.PlasmaShell"),
-            QLatin1String("evaluateScript"));
 
-        message << QString::fromUtf8
-        (
-            "var allDesktops = desktops();"
-            "for (i=0;i<allDesktops.length;i++)"
-            "{"
-                "d = allDesktops[i];"
-                "d.wallpaperPlugin = \"org.kde.image\";"
-                "d.currentConfigGroup = Array(\"Wallpaper\", \"org.kde.image\", \"General\");"
-                "d.writeConfig(\"Image\", \"%1\")"
-            "}"
-        ).arg(images[0].toString());
+#ifndef Q_OS_MACOS
 
-        QDBusMessage reply = QDBusConnection::sessionBus().call(message);
+        QPointer<WallpaperPluginDlg> dlg = new WallpaperPluginDlg(this);
 
-        if (reply.type() == QDBusMessage::ErrorMessage)
+        if (dlg->exec() == QDialog::Accepted)
         {
-            QMessageBox::critical(nullptr,
-                                  i18nc("@title:window",
-                                        "Error while set image as wallpaper"),
-                                  reply.errorMessage());
+            setWallpaper(images[0].toString(), dlg->wallpaperLayout());
         }
+
+#else
+
+        setWallpaper(images[0].toString());
+
+#endif
+
     }
 }
 

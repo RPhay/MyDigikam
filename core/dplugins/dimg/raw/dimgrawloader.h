@@ -7,7 +7,7 @@
  * Description : A digital camera RAW files loader for DImg
  *               framework using an external dcraw instance.
  *
- * Copyright (C) 2005-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2005-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2005-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  *
  * This program is free software; you can redistribute it
@@ -32,7 +32,6 @@
 #include "drawdecoder.h"
 #include "dimgloader.h"
 #include "drawdecoding.h"
-#include "digikam_export.h"
 #include "rawprocessingfilter.h"
 
 using namespace Digikam;
@@ -40,21 +39,22 @@ using namespace Digikam;
 namespace DigikamRAWDImgPlugin
 {
 
-class DIGIKAM_EXPORT DImgRAWLoader : public DRawDecoder, public DImgLoader
+class DImgRAWLoader : public DRawDecoder,
+                      public DImgLoader
 {
     Q_OBJECT
 
 public:
 
     explicit DImgRAWLoader(DImg* const image, const DRawDecoding& rawDecodingSettings = DRawDecoding());
-    ~DImgRAWLoader();
+    ~DImgRAWLoader()                                                                 override;
 
     bool load(const QString& filePath, DImgLoaderObserver* const observer = nullptr) override;
-    bool save(const QString& /*filePath*/, DImgLoaderObserver* const /*observer=0*/) override;
+    bool save(const QString&, DImgLoaderObserver* const)                             override;
 
-    bool hasAlpha()   const override;
-    bool isReadOnly() const override;
-    bool sixteenBit() const override;
+    bool hasAlpha()   const                                                          override;
+    bool isReadOnly() const                                                          override;
+    bool sixteenBit() const                                                          override;
 
     void postProcess(DImgLoaderObserver* const observer);
 
@@ -68,8 +68,15 @@ private:
                            int rgbmax,
                            DImgLoaderObserver* const observer);
 
-    bool checkToCancelWaitingData() override;
-    void setWaitingDataProgress(double value) override;
+    bool checkToCancelWaitingData()                                                 override;
+    void setWaitingDataProgress(double value)                                       override;
+
+private:
+
+    // Disable
+    explicit DImgRAWLoader(QObject*)               = delete;
+    DImgRAWLoader(const DImgRAWLoader&)            = delete;
+    DImgRAWLoader& operator=(const DImgRAWLoader&) = delete;
 
 private:
 

@@ -43,6 +43,7 @@ const char O2_OAUTH2_GRANT_TYPE_TOKEN[] = "token";
 const char O2_OAUTH2_GRANT_TYPE_PASSWORD[] = "password";
 const char O2_OAUTH2_GRANT_TYPE[] = "grant_type";
 const char O2_OAUTH2_API_KEY[] = "api_key";
+const char O2_OAUTH2_STATE[] = "state";
 
 // OAuth 2 Response Parameters
 const char O2_OAUTH2_ACCESS_TOKEN[] = "access_token";
@@ -57,6 +58,7 @@ const char O2_SIGNATURE_TYPE_PLAINTEXT[] = "PLAINTEXT";
 const char O2_AUTHORIZATION_CODE[] = "authorization_code";
 
 // Standard HTTP headers
+const char O2_HTTP_HTTP_HEADER[] = "HTTP";
 const char O2_HTTP_AUTHORIZATION_HEADER[] = "Authorization";
 
 #endif // O0GLOBALS_H

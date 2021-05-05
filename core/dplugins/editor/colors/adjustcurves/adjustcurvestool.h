@@ -6,7 +6,7 @@
  * Date        : 2004-12-01
  * Description : image histogram adjust curves.
  *
- * Copyright (C) 2004-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2004-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -41,28 +41,28 @@ class AdjustCurvesTool : public EditorToolThreaded
 public:
 
     explicit AdjustCurvesTool(QObject* const parent);
-    ~AdjustCurvesTool();
+    ~AdjustCurvesTool()         override;
 
 private Q_SLOTS:
 
-    void slotSaveAsSettings();
-    void slotLoadSettings();
-    void slotResetSettings();
+    void slotSaveAsSettings()   override;
+    void slotLoadSettings()     override;
+    void slotResetSettings()    override;
     void slotPickerColorButtonActived(int);
     void slotSpotColorChanged();
     void slotColorSelectedFromTarget(const Digikam::DColor&);
     void slotResetCurrentChannel();
-    void slotChannelChanged();
-    void slotScaleChanged();
+    void slotChannelChanged()   override;
+    void slotScaleChanged()     override;
 
 private:
 
-    void readSettings();
-    void writeSettings();
-    void preparePreview();
-    void prepareFinal();
-    void setPreviewImage();
-    void setFinalImage();
+    void readSettings()         override;
+    void writeSettings()        override;
+    void preparePreview()       override;
+    void prepareFinal()         override;
+    void setPreviewImage()      override;
+    void setFinalImage()        override;
 
 private:
 

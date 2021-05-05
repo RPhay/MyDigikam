@@ -42,7 +42,7 @@ class TagMngrTreeView : public TagFolderView
 public:
 
     explicit TagMngrTreeView(TagsManager* const parent, TagModel* const model);
-    virtual ~TagMngrTreeView();
+    ~TagMngrTreeView() override;
 
     /**
      * @brief setAlbumFilterModel - reimplement from AbstractAlbumTree
@@ -80,7 +80,7 @@ protected:
      *                             basic actions
      * @param albums             - List of currently selected albums
      */
-    virtual void setContexMenuItems(ContextMenuHelper& cmh, const QList<TAlbum*>& albums) override;
+    void setContexMenuItems(ContextMenuHelper& cmh, const QList<TAlbum*>& albums) override;
 
     /**
      * @brief contextMenuEvent   - Reimplement contextMenuEvent from AbstractAlbumTree
@@ -93,6 +93,11 @@ protected:
 protected:
 
     TagsManagerFilterModel* m_tfilteredModel;
+
+private:
+
+    // Disable
+    TagMngrTreeView(QWidget*) = delete;
 
 private:
 

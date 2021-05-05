@@ -48,7 +48,7 @@ class UFRawRawImportPlugin : public DPluginRawImport
 public:
 
     explicit UFRawRawImportPlugin(QObject* const parent = nullptr);
-    ~UFRawRawImportPlugin();
+    ~UFRawRawImportPlugin()                                    override;
 
     QString name()                                       const override;
     QString iid()                                        const override;

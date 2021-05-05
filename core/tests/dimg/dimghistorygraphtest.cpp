@@ -48,11 +48,16 @@
 #include "itemhistorygraphmodel.h"
 #include "iofilesettings.h"
 #include "tagscache.h"
-#include "../modeltest/modeltest.h"
+#include "modeltest.h"
 
 using namespace Digikam;
 
 QTEST_MAIN(DImgHistoryGraphTest)
+
+DImgHistoryGraphTest::DImgHistoryGraphTest(QObject* const parent)
+    : DImgAbstractHistoryTest(parent)
+{
+}
 
 void DImgHistoryGraphTest::initTestCase()
 {
@@ -166,8 +171,8 @@ void DImgHistoryGraphTest::testEditing()
 
     CollectionScanner().completeScan();
 
-    ItemInfo orig  = ItemInfo::fromLocalFile(readOnlyImages.first());
-    ItemInfo one   = ItemInfo::fromLocalFile(collectionDir.filePath(QLatin1String("1.jpg"))),
+    ItemInfo orig   = ItemInfo::fromLocalFile(readOnlyImages.first());
+    ItemInfo one    = ItemInfo::fromLocalFile(collectionDir.filePath(QLatin1String("1.jpg"))),
               two   = ItemInfo::fromLocalFile(collectionDir.filePath(QLatin1String("2.jpg"))),
               three = ItemInfo::fromLocalFile(collectionDir.filePath(QLatin1String("3.jpg"))),
               four  = ItemInfo::fromLocalFile(collectionDir.filePath(QLatin1String("4.jpg")));
@@ -193,6 +198,7 @@ void DImgHistoryGraphTest::testEditing()
     qDebug() << graph3;
 
     // all three must have the full cloud
+
     QVERIFY(graph1.data().vertexCount() == 5);
     QVERIFY(graph2.data().vertexCount() == 5);
     QVERIFY(graph3.data().vertexCount() == 5);
@@ -209,6 +215,7 @@ void DImgHistoryGraphTest::testEditing()
     int intermediateVersionTag = TagsCache::instance()->getOrCreateInternalTag(InternalTagName::intermediateVersion());
 
     //qDebug() << orig.tagIds() << one.tagIds() << two.tagIds() << three.tagIds() << four.tagIds();
+
     QVERIFY(!orig.tagIds().contains(needResolvingTag));
     QVERIFY(!orig.tagIds().contains(needTaggingTag));
 
@@ -223,11 +230,14 @@ void DImgHistoryGraphTest::testEditing()
     QVERIFY(!fileTwo.exists());
     CollectionScanner().completeScan();
     graph2 = ItemHistoryGraph::fromInfo(four);
+
     // graph is prepared for display, vertex of removed file cleared
+
     QVERIFY(graph2.data().vertexCount() == 4);
     qDebug() << graph2;
 
     // Check that removal of current version leads to resetting of current version tag
+
     QFile fileThree(three.filePath());
     fileThree.remove();
     QFile fileFour(four.filePath());
@@ -408,7 +418,7 @@ void DImgHistoryGraphTest::testGraph()
     QVERIFY(cloud.contains(IdPair(8,1)));
     QVERIFY(cloud.contains(IdPair(9,1)));
 
-    /*
+/*
     QBENCHMARK
     {
         ItemHistoryGraph benchGraph;
@@ -416,7 +426,7 @@ void DImgHistoryGraphTest::testGraph()
         graph.finish();
         graph.relationCloud();
     }
-    */
+*/
 
     QMap<qlonglong,HistoryGraph::Vertex> idToVertex;
     QMap<HistoryGraph::Vertex, qlonglong> vertexToId;
@@ -442,22 +452,27 @@ void DImgHistoryGraphTest::testGraph()
     QVERIFY(longestPath2 == controlLongestPathTwentyFour);
 
     // depth-first
+
     QList<qlonglong> subgraphTwo = mapList(graph.data().verticesDominatedBy(idToVertex.value(2), idToVertex.value(1),
                                            HistoryGraph::DepthFirstOrder), vertexToId);
     std::sort(subgraphTwo.begin(), subgraphTwo.end());
     QVERIFY(subgraphTwo == controlSubgraphTwo);
 
     // breadth-first
+
     QList<qlonglong> subgraphFour = mapList(graph.data().verticesDominatedBy(idToVertex.value(4), idToVertex.value(1)), vertexToId);
     QVERIFY(subgraphFour.indexOf(22) > subgraphFour.indexOf(13));
     std::sort(subgraphFour.begin(), subgraphFour.end());
     QVERIFY(subgraphFour == controlSubgraphFour);
 
     // depth-first
+
     QList<qlonglong> subgraphTwoSorted = mapList(
             graph.data().verticesDominatedByDepthFirstSorted(idToVertex.value(2), idToVertex.value(1),lessThanById(vertexToId)),
             vertexToId);
+
     // no sorting this time
+
     QVERIFY(subgraphTwoSorted == controlSubgraphTwoSorted);
 
     QList<qlonglong> rootsOfEighteen = mapList(graph.data().rootsOf(idToVertex.value(18)), vertexToId);

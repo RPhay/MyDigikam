@@ -6,7 +6,7 @@
  * Date        : 2005-11-01
  * Description : a PNG image loader for DImg framework - save operations.
  *
- * Copyright (C) 2005-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2005-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -27,7 +27,9 @@
 
 extern "C"
 {
-#include <unistd.h>
+#ifndef Q_CC_MSVC
+#   include <unistd.h>
+#endif
 }
 
 // C++ includes
@@ -62,9 +64,13 @@ namespace DigikamPNGDImgPlugin
 {
 
 #if PNG_LIBPNG_VER_MAJOR >= 1 && PNG_LIBPNG_VER_MINOR >= 5
+
 typedef png_bytep iCCP_data;
+
 #else
+
 typedef png_charp iCCP_data;
+
 #endif
 
 bool DImgPNGLoader::save(const QString& filePath, DImgLoaderObserver* const observer)
@@ -90,7 +96,15 @@ bool DImgPNGLoader::save(const QString& filePath, DImgLoaderObserver* const obse
     // -------------------------------------------------------------------
     // Open the file
 
-    f = fopen(QFile::encodeName(filePath).constData(), "wb");
+#ifdef Q_OS_WIN
+
+    f = _wfopen((const wchar_t*)filePath.utf16(), L"wb");
+
+#else
+
+    f = fopen(filePath.toUtf8().constData(), "wb");
+
+#endif
 
     if (!f)
     {
@@ -165,8 +179,11 @@ bool DImgPNGLoader::save(const QString& filePath, DImgLoaderObserver* const obse
 #if PNG_LIBPNG_VER >= 10400
 
     if (setjmp(png_jmpbuf(png_ptr)))
+
 #else
+
     if (setjmp(png_ptr->jmpbuf))
+
 #endif
     {
         qCWarning(DIGIKAM_DIMG_LOG_PNG) << "Internal libPNG error during writing file. Process aborted!";
@@ -339,7 +356,7 @@ bool DImgPNGLoader::save(const QString& filePath, DImgLoaderObserver* const obse
                 return false;
             }
 
-            observer->progressInfo(0.2 + (0.8 * (((float)y) / ((float)imageHeight()))));
+            observer->progressInfo(0.2F + (0.8F * (((float)y) / ((float)imageHeight()))));
         }
 
         j = 0;

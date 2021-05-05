@@ -7,7 +7,7 @@
  * Description : digiKam 8/16 bits image management API.
  *               Properties accessors.
  *
- * Copyright (C) 2005-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2005-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2006-2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  *
  * This program is free software; you can redistribute it
@@ -120,6 +120,19 @@ QSize DImg::originalSize() const
     return size();
 }
 
+QSize DImg::originalRatioSize() const
+{
+    QSize size = originalSize();
+
+    if (((width() < height()) && (size.width() > size.height())) ||
+        ((width() > height()) && (size.width() < size.height())))
+    {
+        size.transpose();
+    }
+
+    return size;
+}
+
 DImg::FORMAT DImg::detectedFormat() const
 {
     if (hasAttribute(QLatin1String("detectedFileFormat")))
@@ -156,40 +169,35 @@ DRawDecoding DImg::rawDecodingSettings() const
 
 IccProfile DImg::getIccProfile() const
 {
-    QMutexLocker lock(&m_priv->mutex);
-
     return m_priv->iccProfile;
 }
 
 void DImg::setIccProfile(const IccProfile& profile)
 {
-    QMutexLocker lock(&m_priv->mutex);
-
     m_priv->iccProfile = profile;
 }
 
 MetaEngineData DImg::getMetadata() const
 {
-    QMutexLocker lock(&m_priv->mutex);
-
     return m_priv->metaData;
 }
 
 void DImg::setMetadata(const MetaEngineData& data)
 {
-    QMutexLocker lock(&m_priv->mutex);
-
     m_priv->metaData = data;
 }
 
-uint DImg::numBytes() const
+quint64 DImg::numBytes() const
 {
-    return (width() * height() * bytesDepth());
+    return ((quint64)width()  *
+            (quint64)height() *
+            (quint64)bytesDepth());
 }
 
-uint DImg::numPixels() const
+quint64 DImg::numPixels() const
 {
-    return (width() * height());
+    return ((quint64)width() *
+            (quint64)height());
 }
 
 int DImg::bytesDepth() const
@@ -214,15 +222,11 @@ int DImg::bitsDepth() const
 
 void DImg::setAttribute(const QString& key, const QVariant& value)
 {
-    QMutexLocker lock(&m_priv->mutex);
-
     m_priv->attributes.insert(key, value);
 }
 
 QVariant DImg::attribute(const QString& key) const
 {
-    QMutexLocker lock(&m_priv->mutex);
-
     if (m_priv->attributes.contains(key))
     {
         return m_priv->attributes[key];
@@ -233,29 +237,21 @@ QVariant DImg::attribute(const QString& key) const
 
 bool DImg::hasAttribute(const QString& key) const
 {
-    QMutexLocker lock(&m_priv->mutex);
-
     return m_priv->attributes.contains(key);
 }
 
 void DImg::removeAttribute(const QString& key)
 {
-    QMutexLocker lock(&m_priv->mutex);
-
     m_priv->attributes.remove(key);
 }
 
 void DImg::setEmbeddedText(const QString& key, const QString& text)
 {
-    QMutexLocker lock(&m_priv->mutex);
-
     m_priv->embeddedText.insert(key, text);
 }
 
 QString DImg::embeddedText(const QString& key) const
 {
-    QMutexLocker lock(&m_priv->mutex);
-
     if (m_priv->embeddedText.contains(key))
     {
         return m_priv->embeddedText[key];
@@ -284,7 +280,7 @@ QVariant DImg::fileOriginData() const
 {
     QVariantMap map;
 
-    foreach (const QString& key, m_priv->fileOriginAttributes())
+    foreach (const QString& key, DImgStaticPriv::fileOriginAttributes())
     {
         QVariant attr = attribute(key);
 
@@ -342,7 +338,7 @@ void DImg::setFileOriginData(const QVariant& data)
 {
     QVariantMap map = data.toMap();
 
-    foreach (const QString& key, m_priv->fileOriginAttributes())
+    foreach (const QString& key, DImgStaticPriv::fileOriginAttributes())
     {
         removeAttribute(key);
         QVariant attr = map.value(key);
@@ -380,6 +376,7 @@ void DImg::prepareSubPixelAccess()
     }
 
     /* Precompute the Lanczos kernel */
+
     LANCZOS_DATA_TYPE* lanczos_func = new LANCZOS_DATA_TYPE[LANCZOS_SUPPORT * LANCZOS_SUPPORT * LANCZOS_TABLE_RES];
 
     for (int i = 0 ; (i < LANCZOS_SUPPORT * LANCZOS_SUPPORT * LANCZOS_TABLE_RES) ; ++i)

@@ -6,7 +6,7 @@
  * Date        : 2002-16-10
  * Description : main digiKam interface implementation - Extra tools
  *
- * Copyright (C) 2002-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2002-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -40,6 +40,7 @@ void DigikamApp::setupSelectToolsAction()
     actionModel->addAction(d->openTagMngrAction,          mainCategory);
     actionModel->addAction(d->bqmAction,                  mainCategory);
     actionModel->addAction(d->maintenanceAction,          mainCategory);
+    actionModel->addAction(d->scanNewItemsAction,         mainCategory);
     actionModel->addAction(d->ltAction,                   mainCategory);
     actionModel->addAction(d->advSearchAction,            mainCategory);
 
@@ -74,8 +75,9 @@ void DigikamApp::setupSelectToolsAction()
     DCategorizedSortFilterProxyModel* const filterModel = actionModel->createFilterModel();
 
     ActionCategorizedView* const selectToolsActionView  = new ActionCategorizedView;
-    selectToolsActionView->setupIconMode();
+    selectToolsActionView->setIconSize(QSize(22, 22));
     selectToolsActionView->setModel(filterModel);
+    selectToolsActionView->setupIconMode();
     selectToolsActionView->adjustGridSize();
 
     connect(selectToolsActionView, SIGNAL(clicked(QModelIndex)),
@@ -91,6 +93,7 @@ void DigikamApp::slotMaintenance()
     if (dlg->exec() == QDialog::Accepted)
     {
         d->maintenanceAction->setEnabled(false);
+        d->scanNewItemsAction->setEnabled(false);
 
         MaintenanceMngr* const mngr = new MaintenanceMngr(this);
 
@@ -101,9 +104,24 @@ void DigikamApp::slotMaintenance()
     }
 }
 
+void DigikamApp::slotScanNewItems()
+{
+    d->maintenanceAction->setEnabled(false);
+    d->scanNewItemsAction->setEnabled(false);
+
+    NewItemsFinder* const tool = new NewItemsFinder(NewItemsFinder::ScanDeferredFiles);
+
+    connect(tool, SIGNAL(signalComplete()),
+            this, SLOT(slotMaintenanceDone()));
+
+    tool->start();
+}
+
 void DigikamApp::slotMaintenanceDone()
 {
     d->maintenanceAction->setEnabled(true);
+    d->scanNewItemsAction->setEnabled(true);
+
     d->view->refreshView();
 
     if (LightTableWindow::lightTableWindowCreated())

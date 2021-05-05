@@ -62,7 +62,14 @@ protected Q_SLOTS:
 protected:
 
     explicit ThreadManager();
-    ~ThreadManager();
+    ~ThreadManager() override;
+
+private:
+
+    // Disable
+    explicit ThreadManager(QObject*)               = delete;
+    ThreadManager(const ThreadManager&)            = delete;
+    ThreadManager& operator=(const ThreadManager&) = delete;
 
 private:
 

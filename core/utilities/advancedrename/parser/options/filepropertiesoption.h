@@ -43,16 +43,18 @@ class FilePropertiesOption : public Option
 public:
 
     explicit FilePropertiesOption();
-    ~FilePropertiesOption() {};
+    ~FilePropertiesOption()                         override = default;
 
 protected:
 
-    virtual QString parseOperation(ParseSettings& settings);
+    QString parseOperation(ParseSettings& settings) override;
 
 private:
 
-    FilePropertiesOption(const FilePropertiesOption&);
-    FilePropertiesOption& operator=(const FilePropertiesOption&);
+    // Disable
+    FilePropertiesOption(QObject*)                               = delete;
+    FilePropertiesOption(const FilePropertiesOption&)            = delete;
+    FilePropertiesOption& operator=(const FilePropertiesOption&) = delete;
 };
 
 } // namespace Digikam

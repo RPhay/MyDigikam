@@ -6,7 +6,7 @@
  * Date        : 2014-06-09
  * Description : A model to list the tracks
  *
- * Copyright (C) 2014-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2014-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2014      by Michael G. Hansen <mike at mghansen dot de>
  *
  * This program is free software; you can redistribute it
@@ -57,7 +57,7 @@ public:
 
 TrackListModel::TrackListModel(TrackManager* const trackManager, QObject* const parent)
     : QAbstractItemModel(parent),
-      d(new Private())
+      d                 (new Private())
 {
     d->trackManager = trackManager;
 
@@ -106,6 +106,7 @@ QVariant TrackListModel::data(const QModelIndex& index, int role) const
     if (track.id == 0)
     {
         // track not found, invalid id
+
         return QVariant();
     }
 
@@ -128,6 +129,7 @@ QVariant TrackListModel::data(const QModelIndex& index, int role) const
             break;
 
         case Qt::BackgroundRole:
+        case Qt::DecorationRole:
 
             switch (columnNumber)
             {
@@ -146,6 +148,7 @@ QModelIndex TrackListModel::index(int row, int column, const QModelIndex& parent
     if (parent.isValid())
     {
         Q_ASSERT(parent.model() == this);
+
         return QModelIndex();
     }
 
@@ -214,13 +217,19 @@ QVariant TrackListModel::headerData(int section, Qt::Orientation orientation, in
     switch (section)
     {
         case ColumnVisible:
-            return i18n("Color");
+        {
+            return i18nc("@title: track list header", "Color");
+        }
 
         case ColumnFilename:
-            return i18n("Filename");
+        {
+            return i18nc("@title: track list header", "Filename");
+        }
 
         case ColumnNPoints:
-            return i18n("#points");
+        {
+            return i18nc("@title: track list header", "#points");
+        }
     }
 
     return false;
@@ -230,7 +239,7 @@ Qt::ItemFlags TrackListModel::flags(const QModelIndex& index) const
 {
     if (!index.isValid())
     {
-        return nullptr;
+        return Qt::NoItemFlags;
     }
 
     if (index.isValid())
@@ -247,6 +256,16 @@ void Digikam::TrackListModel::slotTrackManagerUpdated()
 
     beginResetModel();
     endResetModel();
+}
+
+TrackManager::Track TrackListModel::getTrackForIndex(const QModelIndex& index) const
+{
+    if (index.isValid())
+    {
+        return d->trackManager->getTrackById(index.internalId());
+    }
+
+    return TrackManager::Track();
 }
 
 } // namespace Digikam

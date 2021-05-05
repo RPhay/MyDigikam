@@ -74,9 +74,9 @@ class Q_DECL_HIDDEN BackendGeonamesRG::Private
 public:
 
     explicit Private()
-      : itemCounter(0),
-        itemCount(0),
-        mngr(nullptr)
+      : itemCounter (0),
+        itemCount   (0),
+        mngr        (nullptr)
     {
     }
 
@@ -90,11 +90,11 @@ public:
 
 /**
  * Constructor
- * @param parent Parent object.
+ * @param parent the parent object.
  */
 BackendGeonamesRG::BackendGeonamesRG(QObject* const parent)
     : RGBackend(parent),
-      d(new Private())
+      d        (new Private())
 {
     d->mngr = new QNetworkAccessManager(this);
 
@@ -120,7 +120,7 @@ void BackendGeonamesRG::nextPhoto()
         return;
     }
 
-    QUrl netUrl(QLatin1String("http://api.geonames.org/findNearbyPlaceName"));
+    QUrl netUrl(QLatin1String("http://api.geonames.org/findNearbyPlaceName"));      // krazy:exclude=insecurenet
 
     QUrlQuery q(netUrl);
     q.addQueryItem(QLatin1String("lat"),      d->jobs.first().request.first().coordinates.latString());

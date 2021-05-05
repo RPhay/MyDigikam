@@ -7,7 +7,7 @@
  * Description : Core database searches XML queries manager
  *
  * Copyright (C) 2008-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2010-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2010-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -1177,7 +1177,8 @@ QList<int> SearchXmlCachingReader::valueToIntList()
 
     foreach (const QString& s, list)
     {
-        intList << s.toInt();
+        double val = s.toDouble();
+        intList << (int)val;
     }
 
     return intList;
@@ -1192,7 +1193,8 @@ QList<qlonglong> SearchXmlCachingReader::valueToLongLongList()
 
     foreach (const QString& s, list)
     {
-        qlonglongList << s.toLongLong();
+        double val = s.toDouble();
+        qlonglongList << (qlonglong)val;
     }
 
     return qlonglongList;

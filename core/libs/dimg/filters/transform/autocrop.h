@@ -7,7 +7,7 @@
  * Description : Auto Crop analyzer
  *
  * Copyright (C) 2013      by Sayantan Datta <sayantan dot knz at gmail dot com>
- * Copyright (C) 2013-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2013-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -43,13 +43,15 @@ namespace Digikam
 
 class DIGIKAM_EXPORT AutoCrop : public DImgThreadedAnalyser
 {
+    Q_OBJECT
+
 public:
 
     /**
      * Standard constructor with image container to parse
      */
     explicit AutoCrop(DImg* const orgImage, QObject* const parent = nullptr);
-    ~AutoCrop();
+    ~AutoCrop() override;
 
     /**
      * Perform auto-crop analyze to find best inner crop. Use autoInnerCrop()

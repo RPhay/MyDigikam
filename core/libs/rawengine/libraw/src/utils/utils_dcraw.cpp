@@ -1,5 +1,5 @@
 /* -*- C++ -*-
- * Copyright 2019 LibRaw LLC (info@libraw.org)
+ * Copyright 2019-2021 LibRaw LLC (info@libraw.org)
  *
  LibRaw uses code from dcraw.c -- Dave Coffin's raw photo decoder,
  dcraw.c is copyright 1997-2018 by Dave Coffin, dcoffin a cybercom o net.
@@ -78,14 +78,6 @@ char *LibRaw::strcasestr(char *haystack, const char *needle)
   return 0;
 }
 
-ushort LibRaw::sget2(uchar *s)
-{
-  if (order == 0x4949) /* "II" means little-endian */
-    return s[0] | s[1] << 8;
-  else /* "MM" means big-endian */
-    return s[0] << 8 | s[1];
-}
-
 void LibRaw::initdata()
 {
   tiff_flip = flip = filters = UINT_MAX; /* unknown */
@@ -120,10 +112,11 @@ void LibRaw::initdata()
   tile_width = tile_length = 0;
   metadata_blocks = 0;
   is_NikonTransfer = 0;
+  is_Olympus = 0;
+  OlympusDNG_SubDirOffsetValid = 0;
   is_Sony = 0;
   is_pana_raw = 0;
   maker_index = LIBRAW_CAMERAMAKER_Unknown;
-  is_4K_RAFdata = 0;
   FujiCropMode = 0;
   is_PentaxRicohMakernotes = 0;
   normalized_model[0] = 0;
@@ -232,7 +225,8 @@ mask_set:
     for (row = MAX(mask[m][0], 0); row < MIN(mask[m][2], raw_height); row++)
       for (col = MAX(mask[m][1], 0); col < MIN(mask[m][3], raw_width); col++)
       {
-        c = FC(row - top_margin, col - left_margin);
+        /* No need to subtract margins because full area and active area filters are the same */
+        c = FC(row, col);
         mblack[c] += val = raw_image[(row)*raw_pitch / 2 + (col)];
         mblack[4 + c]++;
         zero += !val;
@@ -261,7 +255,7 @@ void LibRaw::pseudoinverse(double (*in)[3], double (*out)[3], int size)
     for (j = 0; j < 6; j++)
       work[i][j] = j == i + 3;
     for (j = 0; j < 3; j++)
-      for (k = 0; k < size; k++)
+      for (k = 0; k < size && k < 4; k++)
         work[i][j] += in[k][i] * in[k][j];
   }
   for (i = 0; i < 3; i++)
@@ -279,7 +273,7 @@ void LibRaw::pseudoinverse(double (*in)[3], double (*out)[3], int size)
         work[k][j] -= work[i][j] * num;
     }
   }
-  for (i = 0; i < size; i++)
+  for (i = 0; i < size && i < 4; i++)
     for (j = 0; j < 3; j++)
       for (out[i][j] = k = 0; k < 3; k++)
         out[i][j] += work[j][k + 3] * in[i][k];
@@ -290,12 +284,12 @@ void LibRaw::cam_xyz_coeff(float _rgb_cam[3][4], double cam_xyz[4][3])
   double cam_rgb[4][3], inverse[4][3], num;
   int i, j, k;
 
-  for (i = 0; i < colors; i++) /* Multiply out XYZ colorspace */
+  for (i = 0; i < colors && i < 4; i++) /* Multiply out XYZ colorspace */
     for (j = 0; j < 3; j++)
       for (cam_rgb[i][j] = k = 0; k < 3; k++)
         cam_rgb[i][j] += cam_xyz[i][k] * LibRaw_constants::xyz_rgb[k][j];
 
-  for (i = 0; i < colors; i++)
+  for (i = 0; i < colors && i < 4; i++)
   {                               /* Normalize cam_rgb so that */
     for (num = j = 0; j < 3; j++) /* cam_rgb * (1,1,1) is (1,1,1,1) */
       num += cam_rgb[i][j];
@@ -314,7 +308,7 @@ void LibRaw::cam_xyz_coeff(float _rgb_cam[3][4], double cam_xyz[4][3])
   }
   pseudoinverse(cam_rgb, inverse, colors);
   for (i = 0; i < 3; i++)
-    for (j = 0; j < colors; j++)
+    for (j = 0; j < colors && j < 4; j++)
       _rgb_cam[i][j] = inverse[j][i];
 }
 
@@ -331,6 +325,6 @@ void LibRaw::tiff_get(unsigned base, unsigned *tag, unsigned *type,
   *type = get2();
   *len = get4();
   *save = ftell(ifp) + 4;
-  if (*len * ("11124811248484"[*type < 14 ? *type : 0] - '0') > 4)
+  if (*len * tagtype_dataunit_bytes[(*type <= LIBRAW_EXIFTAG_TYPE_IFD8) ? *type : 0] > 4)
     fseek(ifp, get4() + base, SEEK_SET);
 }

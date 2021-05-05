@@ -6,7 +6,7 @@
  * Date        : 2018-12-31
  * Description : digiKam plugin main dialog
  *
- * Copyright (C) 2018-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2018-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -32,9 +32,9 @@
 
 // KDE includes
 
-#include <kconfiggroup.h>
-#include <kconfig.h>
 #include <klocalizedstring.h>
+#include <ksharedconfig.h>
+#include <kconfiggroup.h>
 
 // Local includes
 
@@ -46,9 +46,9 @@ namespace Digikam
 {
 
 DPluginDialog::DPluginDialog(QWidget* const parent, const QString& objName)
-    : QDialog(parent),
+    : QDialog  (parent),
       m_buttons(nullptr),
-      m_tool(nullptr)
+      m_tool   (nullptr)
 {
     setObjectName(objName);
     setWindowFlags((windowFlags() & ~Qt::Dialog) |
@@ -72,7 +72,7 @@ void DPluginDialog::setPlugin(DPlugin* const tool)
     if (m_tool)
     {
         QPushButton* const help = m_buttons->addButton(QDialogButtonBox::Help);
-        help->setText(i18n("About..."));
+        help->setText(i18nc("@action: button", "About..."));
 
         connect(help, SIGNAL(clicked()),
                 this, SLOT(slotAboutPlugin()));
@@ -88,8 +88,8 @@ void DPluginDialog::slotAboutPlugin()
 
 void DPluginDialog::restoreDialogSize()
 {
-    KConfig config;
-    KConfigGroup group = config.group(objectName());
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup group      = config->group(objectName());
 
     if (group.exists())
     {
@@ -117,10 +117,9 @@ void DPluginDialog::restoreDialogSize()
 
 void DPluginDialog::saveDialogSize()
 {
-    KConfig config;
-    KConfigGroup group = config.group(objectName());
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup group      = config->group(objectName());
     DXmlGuiWindow::saveWindowSize(windowHandle(), group);
-    config.sync();
 }
 
 } // namespace Digikam

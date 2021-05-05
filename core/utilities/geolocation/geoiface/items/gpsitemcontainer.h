@@ -6,7 +6,7 @@
  * Date        : 2010-03-21
  * Description : A container to hold GPS information about an item.
  *
- * Copyright (C) 2010-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2010-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2010-2014 by Michael G. Hansen <mike at mghansen dot de>
  *
  * This program is free software; you can redistribute it
@@ -61,13 +61,13 @@ class SaveProperties
 public:
 
     explicit SaveProperties()
-      : shouldRemoveCoordinates(false),
-        shouldRemoveAltitude(false),
-        shouldWriteCoordinates(false),
-        shouldWriteAltitude(false),
-        altitude(0.0),
-        latitude(0.0),
-        longitude(0.0)
+      : shouldRemoveCoordinates (false),
+        shouldRemoveAltitude    (false),
+        shouldWriteCoordinates  (false),
+        shouldWriteAltitude     (false),
+        altitude                (0.0),
+        latitude                (0.0),
+        longitude               (0.0)
     {
     }
 
@@ -189,7 +189,14 @@ protected:
     QList<QList<TagData> > m_savedTagList;
     bool                   m_writeXmpTags;
 
+    bool                   m_saveTags;
+    bool                   m_saveGPS;
+
     friend class GPSItemModel;
+
+private:
+
+    Q_DISABLE_COPY(GPSItemContainer)
 };
 
 } // namespace Digikam

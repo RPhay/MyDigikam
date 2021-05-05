@@ -50,10 +50,10 @@ class Q_DECL_HIDDEN GSNewAlbumDlg::Private
 public:
 
     explicit Private()
+      : publicRBtn   (nullptr),
+        unlistedRBtn (nullptr),
+        protectedRBtn(nullptr)
     {
-        publicRBtn    = nullptr;
-        unlistedRBtn  = nullptr;
-        protectedRBtn = nullptr;
     }
 
     QString        serviceName;
@@ -66,7 +66,7 @@ GSNewAlbumDlg::GSNewAlbumDlg(QWidget* const parent,
                              const QString& serviceName,
                              const QString& toolName)
     : WSNewAlbumDialog(parent, toolName),
-      d(new Private)
+      d               (new Private)
 {
     d->serviceName           = serviceName;
     const int spacing        = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
@@ -93,8 +93,8 @@ GSNewAlbumDlg::GSNewAlbumDlg(QWidget* const parent,
     privBoxLayout->setSpacing(spacing);
     privBox->setLayout(privBoxLayout);
 
-    /**
-     * Album on google-photos now only needs title to create, so gdrive and gphoto now share the same newalbumdlg
+/*  Album on google-photos now only needs title to create, so gdrive and gphoto now share the same newalbumdlg
+
     if (!(QString::compare(d->serviceName,
                            QLatin1String("googledriveexport"),
                            Qt::CaseInsensitive) == 0))
@@ -109,7 +109,7 @@ GSNewAlbumDlg::GSNewAlbumDlg(QWidget* const parent,
         hideLocation();
         getMainWidget()->setMinimumSize(300,0);
     }
-    */
+*/
 
     privBox->hide();
     hideDateTime();
@@ -126,8 +126,8 @@ GSNewAlbumDlg::~GSNewAlbumDlg()
 
 void GSNewAlbumDlg::getAlbumProperties(GSFolder& album)
 {
-    /**
-     * Album on google-photos now only needs title to create, so gdrive and gphoto now share the same newalbumdlg
+/*  Album on google-photos now only needs title to create, so gdrive and gphoto now share the same newalbumdlg
+
     if (QString::compare(d->serviceName,
                          QLatin1String("googledriveexport"),
                          Qt::CaseInsensitive) == 0)
@@ -141,15 +141,21 @@ void GSNewAlbumDlg::getAlbumProperties(GSFolder& album)
     album.location    = getLocEdit()->text();
 
     if (d->publicRBtn->isChecked())
+    {
         album.access = QLatin1String("public");
+    }
     else if (d->unlistedRBtn->isChecked())
+    {
         album.access = QLatin1String("private");
+    }
     else
+    {
         album.access = QLatin1String("protected");
+    }
 
     long long timestamp = getDateTimeEdit()->dateTime().toTime_t();
     album.timestamp     = QString::number(timestamp * 1000);
-    */
+*/
 
     album.title = getTitleEdit()->text();
     return;

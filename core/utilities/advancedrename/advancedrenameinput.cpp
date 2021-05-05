@@ -60,20 +60,23 @@ public:
     explicit Private()
       : allowDirectoryCreation(false),
         verticalSliderPosition(INVALID),
-        parseTimer(nullptr),
-        parser(nullptr)
+        parseTimer            (nullptr),
+        parser                (nullptr)
     {
     }
 
     bool    allowDirectoryCreation;
     int     verticalSliderPosition;
+
+    QString lastPlainText;
+
     QTimer* parseTimer;
     Parser* parser;
 };
 
 AdvancedRenameLineEdit::AdvancedRenameLineEdit(QWidget* const parent)
     : QPlainTextEdit(parent),
-      d(new Private)
+      d             (new Private)
 {
     setupWidgets();
     setupConnections();
@@ -174,7 +177,6 @@ void AdvancedRenameLineEdit::keyPressEvent(QKeyEvent* e)
         // the key "/" should not be allowed (QTextEdit is not able to use a QValidator, so we must do it in here)
 
         case Qt::Key_Slash:
-        case Qt::Key_Backslash:
         {
             if (!d->allowDirectoryCreation)
             {
@@ -204,7 +206,12 @@ void AdvancedRenameLineEdit::slotTextChanged()
 
 void AdvancedRenameLineEdit::slotParseTimer()
 {
-    emit signalTextChanged(toPlainText());
+    if (d->lastPlainText != toPlainText())
+    {
+        d->lastPlainText = toPlainText();
+
+        emit signalTextChanged(d->lastPlainText);
+    }
 }
 
 void AdvancedRenameLineEdit::scrollContentsBy(int dx, int dy)
@@ -257,9 +264,9 @@ public:
     explicit Private()
       : maxVisibleItems(10),
         maxHistoryItems(30),
-        lineEdit(nullptr),
-        proxy(nullptr),
-        highlighter(nullptr)
+        lineEdit       (nullptr),
+        proxy          (nullptr),
+        highlighter    (nullptr)
     {
     }
 
@@ -281,7 +288,7 @@ const QString AdvancedRenameInput::Private::configPatternHistoryListEntry(QLatin
 
 AdvancedRenameInput::AdvancedRenameInput(QWidget* const parent)
     : QComboBox(parent),
-      d(new Private)
+      d        (new Private)
 {
     setupWidgets();
     setupConnections();

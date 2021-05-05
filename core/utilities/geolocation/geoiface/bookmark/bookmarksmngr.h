@@ -6,7 +6,7 @@
  * Date        : 2017-05-15
  * Description : low level manager for GPS bookmarks
  *
- * Copyright (C) 2017-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2017-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -48,10 +48,10 @@ public:
     explicit RemoveBookmarksCommand(BookmarksManager* const mngr,
                                     BookmarkNode* const parent,
                                     int row);
-    ~RemoveBookmarksCommand();
+    ~RemoveBookmarksCommand() override;
 
-    void undo() override;
-    void redo() override;
+    void undo()                override;
+    void redo()                override;
 
 protected:
 
@@ -96,10 +96,10 @@ public:
                                    BookmarkNode* const node,
                                    const QString& newValue,
                                    BookmarkData type);
-    ~ChangeBookmarkCommand();
+    ~ChangeBookmarkCommand() override;
 
-    void undo() override;
-    void redo() override;
+    void undo()               override;
+    void redo()               override;
 
 private:
 
@@ -128,7 +128,7 @@ public:
 public:
 
     explicit BookmarksModel(BookmarksManager* const mngr, QObject* const parent = nullptr);
-    ~BookmarksModel();
+    ~BookmarksModel()                                                                              override;
 
     BookmarksManager* bookmarksManager()                                                      const;
     QVariant headerData(int section, Qt::Orientation orientation, int role = Qt::DisplayRole) const override;
@@ -146,10 +146,10 @@ public:
     QModelIndex index(BookmarkNode* node)                                                     const;
 
     bool dropMimeData(const QMimeData* data, Qt::DropAction action, int row,
-                      int column, const QModelIndex& parent) override;
+                      int column, const QModelIndex& parent)                                         override;
 
-    bool removeRows(int row, int count, const QModelIndex& parent = QModelIndex()) override;
-    bool setData(const QModelIndex& index, const QVariant& value, int role = Qt::EditRole) override;
+    bool removeRows(int row, int count, const QModelIndex& parent = QModelIndex())                   override;
+    bool setData(const QModelIndex& index, const QVariant& value, int role = Qt::EditRole)           override;
 
 public Q_SLOTS:
 
@@ -192,7 +192,7 @@ public:
 
     explicit TreeProxyModel(QObject* const parent = nullptr);
 
-    int columnCount(const QModelIndex&) const override;
+    int columnCount(const QModelIndex&) const                        override;
 
 Q_SIGNALS:
 
@@ -217,7 +217,7 @@ class BookmarksManager : public QObject
 public:
 
     explicit BookmarksManager(const QString& bookmarksFile, QObject* const parent = nullptr);
-    ~BookmarksManager();
+    ~BookmarksManager() override;
 
     void addBookmark(BookmarkNode* const parent, BookmarkNode* const node, int row = -1);
     void removeBookmark(BookmarkNode* const node);

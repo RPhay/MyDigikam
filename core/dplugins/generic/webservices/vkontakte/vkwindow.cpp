@@ -8,7 +8,7 @@
  *
  * Copyright (C) 2011-2015 by Alexander Potashev <aspotashev at gmail dot com>
  * Copyright (C) 2005-2008 by Vardhman Jain <vardhman at gmail dot com>
- * Copyright (C) 2008-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2008-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2009      by Luka Renko <lure at kubuntu dot org>
  * Copyright (C) 2010      by Roman Tsisyk <roman at tsisyk dot com>
  *
@@ -47,13 +47,13 @@
 // KDE includes
 
 #include <klocalizedstring.h>
-#include <kconfig.h>
+#include <ksharedconfig.h>
 #include <kconfiggroup.h>
 
 // libkvkontakte includes
 
-#include <Vkontakte/uploadphotosjob.h>
-#include <Vkontakte/vkapi.h>
+#include "vkontakte_uploadphotosjob.h"
+#include "vkontakte_vkapi.h"
 
 // Local includes
 
@@ -70,19 +70,19 @@ class Q_DECL_HIDDEN VKWindow::Private
 public:
 
     explicit Private()
+      : import        (false),
+        mainWidget    (nullptr),
+        settingsBox   (nullptr),
+        headerLabel   (nullptr),
+        accountBox    (nullptr),
+        albumsBox     (nullptr),
+        imgList       (nullptr),
+        uploadWidget  (nullptr),
+        iface         (nullptr),
+        progressBar   (nullptr),
+        vkapi         (nullptr),
+        albumToSelect (-1)
     {
-        import        = false;
-        mainWidget    = nullptr;
-        settingsBox   = nullptr;
-        headerLabel   = nullptr;
-        accountBox    = nullptr;
-        albumsBox     = nullptr;
-        imgList       = nullptr;
-        uploadWidget  = nullptr;
-        iface         = nullptr;
-        progressBar   = nullptr;
-        vkapi         = nullptr;
-        albumToSelect = -1;
     }
 
     bool              import;
@@ -98,7 +98,7 @@ public:
     // album selection
     VKAlbumChooser*   albumsBox;
 
-    DItemsList*      imgList;
+    DItemsList*       imgList;
     QWidget*          uploadWidget;
     DInfoInterface*   iface;
     DProgressWdg*     progressBar;
@@ -117,12 +117,13 @@ VKWindow::VKWindow(DInfoInterface* const iface,
                    QWidget* const parent,
                    bool import)
     : WSToolDialog(parent, QLatin1String("VKontakte Dialog")),
-      d(new Private)
+      d           (new Private)
 {
     d->iface = iface;
     d->vkapi = new Vkontakte::VkApi(this);
 
     // read settings from file
+
     readSettings();
 
     connect(this, SIGNAL(finished(int)),
@@ -150,9 +151,11 @@ VKWindow::VKWindow(DInfoInterface* const iface,
     d->headerLabel->setFocusPolicy(Qt::NoFocus);
 
     // Account box
+
     initAccountBox();
 
     // Album box
+
     d->albumsBox = new VKAlbumChooser(d->settingsBox, d->vkapi);
     d->albumsBox->selectAlbum(d->albumToSelect);
 
@@ -171,23 +174,27 @@ VKWindow::VKWindow(DInfoInterface* const iface,
     QGroupBox* const optionsBox = new QGroupBox(i18n("Options"), d->settingsBox);
     optionsBox->setWhatsThis(i18n("These are options that will be applied to images before upload."));
 #endif
+/*
+    store state in rc file
 
-//    store state in rc file
-//    d->checkKeepOriginal = new QCheckBox(i18n("Save in high resolution"), d->settingsBox);
+    d->checkKeepOriginal = new QCheckBox(i18n("Save in high resolution"), d->settingsBox);
 
-//    QVBoxLayout* const optionsBoxLayout = new QVBoxLayout(optionsBox);
-//    optionsBoxLayout->addWidget(d->checkKeepOriginal);
-
+    QVBoxLayout* const optionsBoxLayout = new QVBoxLayout(optionsBox);
+    optionsBoxLayout->addWidget(d->checkKeepOriginal);
+*/
     d->progressBar = new DProgressWdg(d->settingsBox);
     d->progressBar->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed);
     d->progressBar->hide();
 
     // Layouts
+
     settingsBoxLayout->addWidget(d->headerLabel);
     settingsBoxLayout->addWidget(d->accountBox);
     settingsBoxLayout->addWidget(d->albumsBox);
     settingsBoxLayout->addWidget(uploadBox);
-//     settingsBoxLayout->addWidget(optionsBox);
+/*
+     settingsBoxLayout->addWidget(optionsBox);
+*/
     settingsBoxLayout->addSpacerItem(new QSpacerItem(0, 0, QSizePolicy::Minimum, QSizePolicy::Expanding));
     settingsBoxLayout->addWidget(d->progressBar);
 
@@ -210,23 +217,30 @@ VKWindow::VKWindow(DInfoInterface* const iface,
     else
     {
         // TODO: import support
+
         d->imgList->hide();
-//         optionsBox->hide();
+/*
+         optionsBox->hide();
+*/
     }
 
     // UI slots
+
     connect(startButton(), SIGNAL(clicked(bool)),
             this, SLOT(slotStartTransfer()));
 
     // for startReactivation()
+
     connect(d->vkapi, SIGNAL(authenticated()),
             this, SLOT(show()));
 
     // Dialog update slots
+
     connect(this, SIGNAL(signalUpdateBusyStatus(bool)),
             this, SLOT(slotUpdateBusyStatus(bool)));
 
     // TBD: busy status handling needs improvement
+
     connect(d->vkapi, SIGNAL(authenticated()),
             this, SLOT(slotUpdateBusyStatusReady()));
 
@@ -263,6 +277,7 @@ void VKWindow::startReactivation()
     reset();
 
      // show() will be called after that
+
     d->accountBox->slotStartAuthentication(false);
 }
 
@@ -274,7 +289,9 @@ void VKWindow::reset()
 void VKWindow::slotUpdateBusyStatus(bool busy)
 {
     if (d->albumsBox)
+    {
         d->albumsBox->setEnabled(!busy && d->vkapi->isAuthenticated());
+    }
 
     if (!busy)
     {
@@ -299,11 +316,11 @@ void VKWindow::slotUpdateBusyStatusReady()
 
 void VKWindow::readSettings()
 {
-    KConfig config;
-    KConfigGroup grp = config.group("VKontakte Settings");
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup grp        = config->group("VKontakte Settings");
 
-    d->appId         = grp.readEntry("VkAppId", "2446321");
-    d->albumToSelect = grp.readEntry("SelectedAlbumId", -1);
+    d->appId                = grp.readEntry("VkAppId", "2446321");
+    d->albumToSelect        = grp.readEntry("SelectedAlbumId", -1);
     d->vkapi->setAppId(d->appId);
     d->vkapi->setRequiredPermissions(Vkontakte::AppPermissions::Photos);
     d->vkapi->setInitialAccessToken(grp.readEntry("AccessToken", ""));
@@ -311,13 +328,15 @@ void VKWindow::readSettings()
 
 void VKWindow::writeSettings()
 {
-    KConfig config;
-    KConfigGroup grp = config.group("VKontakte Settings");
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup grp        = config->group("VKontakte Settings");
 
     grp.writeEntry("VkAppId", d->appId);
 
     if (!d->vkapi->accessToken().isEmpty())
+    {
         grp.writeEntry("AccessToken", d->vkapi->accessToken());
+    }
 
     int aid = 0;
 
@@ -353,7 +372,9 @@ void VKWindow::slotFinished()
 void VKWindow::slotAuthenticated()
 {
     if (d->albumsBox)
+    {
         d->albumsBox->setEnabled(true);
+    }
 }
 
 void VKWindow::slotAuthCleared()
@@ -376,8 +397,11 @@ void VKWindow::slotUpdateHeaderLabel()
 
 void VKWindow::handleVkError(KJob* kjob)
 {
-    QMessageBox::critical(this, i18nc("@title:window", "Request to VKontakte failed"),
-                          kjob->errorText());
+    if (kjob)
+    {
+        QMessageBox::critical(this, i18nc("@title:window", "Request to VKontakte failed"),
+                              kjob->errorText());
+    }
 }
 
 //---------------------------------------------------------------------------
@@ -389,11 +413,13 @@ void VKWindow::slotStartTransfer()
     if (!d->albumsBox->getCurrentAlbumId(aid))
     {
         // TODO: offer the user to create an album if there are no albums yet
+
         QMessageBox::information(this, QString(), i18n("Please select album first."));
         return;
     }
 
     // TODO: import support
+
     if (!d->import)
     {
         emit signalUpdateBusyStatus(true);
@@ -401,7 +427,9 @@ void VKWindow::slotStartTransfer()
         QStringList files;
 
         foreach (const QUrl& url, d->imgList->imageUrls(true))
+        {
             files.append(url.toLocalFile());
+        }
 
         Vkontakte::UploadPhotosJob* const job
             = new Vkontakte::UploadPhotosJob(d->vkapi->accessToken(),
@@ -428,17 +456,22 @@ void VKWindow::slotStartTransfer()
 void VKWindow::slotPhotoUploadDone(KJob* kjob)
 {
     Vkontakte::UploadPhotosJob* const job = dynamic_cast<Vkontakte::UploadPhotosJob*>(kjob);
-    Q_ASSERT(job);
+
+    if (!job)
+    {
+        return;
+    }
 
     d->jobs.removeAll(job);
 
-    if (job == nullptr || job->error())
+    if (job->error())
     {
         handleVkError(job);
     }
 
     d->progressBar->hide();
     d->progressBar->progressCompleted();
+
     emit signalUpdateBusyStatus(false);
 }
 

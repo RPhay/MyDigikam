@@ -30,14 +30,10 @@ namespace DigikamGenericPanoramaPlugin
 {
 
 PanoTask::PanoTask(PanoAction action, const QString& workDirPath)
-    : action(action),
-      isAbortedFlag(false),
-      successFlag(false),
-      tmpDir(QUrl::fromLocalFile(workDirPath + QLatin1Char('/')))
-{
-}
-
-PanoTask::~PanoTask()
+    : action        (action),
+      isAbortedFlag (false),
+      successFlag   (false),
+      tmpDir        (QUrl::fromLocalFile(workDirPath + QLatin1Char('/')))
 {
 }
 

@@ -26,13 +26,18 @@
 #ifndef DIGIKAM_T_PARSER_H
 #define DIGIKAM_T_PARSER_H
 
-/* Maximum size for an input token */
+/**
+ * Maximum size for an input token
+ */
 #define PARSER_MAX_LINE 1000
 #define PT_TOKEN_MAX_LEN PARSER_MAX_LINE
 
 #define PANO_PARSER_MAX_PROJECTION_PARMS 10
 #define PANO_PARSER_MAX_MASK_POINTS 20
-/* Data structure where the entire input file will be read */
+
+/**
+ * Data structure where the entire input file will be read
+ */
 
 #ifndef FALSE
 #define FALSE 0
@@ -68,8 +73,8 @@ typedef struct
     int          iImage;
     pt_mask_type type;
 
-    int       iPointsCount;
-    pt_point* points;
+    int          iPointsCount;
+    pt_point*    points;
 } pt_script_mask;
 
 typedef struct
@@ -104,19 +109,21 @@ typedef struct
 {
     int                 width;
     int                 height;
-    int                 cropArea[PANO_PARSER_COEF_COUNT]; /* the rectangle to crop to */
+    int                 cropArea[PANO_PARSER_COEF_COUNT];            /* the rectangle to crop to */
 
     int                 projection;
     int                 projectionParmsCount;
     double              projectionParms[PANO_PARSER_MAX_PROJECTION_PARMS];
 
     double              fHorFOV;
-    char*               outputFormat;  /* n : file format of output */
+    char*               outputFormat;                                /* n : file format of output */
 
-    /* Hugin parameters */
-    int                 dynamicRangeMode; /* R[01] 0 -> LDR; 1 -> HDR */
+    /**
+     * Hugin parameters
+     */
+    int                 dynamicRangeMode;                            /* R[01] 0 -> LDR; 1 -> HDR */
     pt_bitdepthoutput   bitDepthOutput;
-    double              exposureValue;  /* E exposure value of final panorama */
+    double              exposureValue;                               /* E exposure value of final panorama */
     int                 iImagePhotometricReference;
 }  pt_script_pano;
 
@@ -131,47 +138,53 @@ typedef struct
     double pitch;
     double roll;
 
-    double geometryCoef[PANO_PARSER_COEF_COUNT]; /* a, b, c, d, e, g, t */
+    double geometryCoef[PANO_PARSER_COEF_COUNT];                     /* a, b, c, d, e, g, t */
 
-    /* Exposure related */
-    double imageEV;  /* Exposure value of image Eev */
-    double whiteBalanceFactorRed;  /* Er */
-    double whiteBalanceFactorBlue; /* Eb */
+    /**
+     * Exposure related
+     */
+    double imageEV;                                                  /* Exposure value of image Eev */
+    double whiteBalanceFactorRed;                                    /* Er */
+    double whiteBalanceFactorBlue;                                   /* Eb */
 
-    double photometricCoef[PANO_PARSER_RESP_CURVE_COEF_COUNT]; /* R[abcde] */
+    double photometricCoef[PANO_PARSER_RESP_CURVE_COEF_COUNT];       /* R[abcde] */
 
-    int    vignettingCorrectionMode; /* Vm */
-    double vignettingCorrectionCoef[PANO_PARSER_VIGN_COEF_COUNT]; /* V[abcdxy] */
+    int    vignettingCorrectionMode;                                 /* Vm */
+    double vignettingCorrectionCoef[PANO_PARSER_VIGN_COEF_COUNT];    /* V[abcdxy] */
     char*  vignettingFlatFieldFile;
-    double cameraPosition[PANO_TRANSLATION_COEF_COUNT]; /* TrX and TpX params */
-    double projectionPlaneRotation[PANO_PROJECTION_COEF_COUNT]; /* TpX params */
+    double cameraPosition[PANO_TRANSLATION_COEF_COUNT];              /* TrX and TpX params */
+    double projectionPlaneRotation[PANO_PROJECTION_COEF_COUNT];      /* TpX params */
 
 
     char*  name;
-    int    cropArea[PANO_PARSER_COEF_COUNT]; /* the rectangle to crop to */
+    int    cropArea[PANO_PARSER_COEF_COUNT];                         /* the rectangle to crop to */
 
     int    stack;
 
-    /* these variables hold pointers to equivalent variables in other images
-     *  they are equivalent to the format <var>=<index> where
+    /**
+     * these variables hold pointers to equivalent variables in other images
+     * they are equivalent to the format <var>=<index> where
      * <var> is variable name, and index is a base-zero pointer to another image
-     * If they are -1 they are unused */
+     * If they are -1 they are unused
+     */
     int    fHorFOVRef;
     int    yawRef;
     int    pitchRef;
     int    rollRef;
 
-    int    geometryCoefRef[PANO_PARSER_COEF_COUNT]; /* a, b, c, d, e, g, t */
+    int    geometryCoefRef[PANO_PARSER_COEF_COUNT];                  /* a, b, c, d, e, g, t */
 
-    /* image references for de-referencing (var=index) */
+    /**
+     * image references for de-referencing (var=index)
+     */
 
-    int    imageEVRef; /*Exposure value of image */
-    int    whiteBalanceFactorRedRef;  /* Er */
-    int    whiteBalanceFactorBlueRef; /* Eb */
+    int    imageEVRef;                                               /*Exposure value of image */
+    int    whiteBalanceFactorRedRef;                                 /* Er */
+    int    whiteBalanceFactorBlueRef;                                /* Eb */
 
-    int    photometricCoefRef[PANO_PARSER_RESP_CURVE_COEF_COUNT]; /* R[abcde] */
+    int    photometricCoefRef[PANO_PARSER_RESP_CURVE_COEF_COUNT];    /* R[abcde] */
 
-    int    vignettingCorrectionModeRef; /* Vm */
+    int    vignettingCorrectionModeRef;                              /* Vm */
     int    vignettingCorrectionCoefRef[PANO_PARSER_VIGN_COEF_COUNT]; /* V[abcdxy] */
 
     int    stackRef;
@@ -224,4 +237,4 @@ void    panoScriptParserSetDefaults(pt_script* ptr);
 int     panoScriptParse(const char* const filename, pt_script* scriptOut);
 void    panoScriptFree(pt_script* ptr);
 
-#endif // DIGIKAM_T_PARSER_H
+#endif /* DIGIKAM_T_PARSER_H */

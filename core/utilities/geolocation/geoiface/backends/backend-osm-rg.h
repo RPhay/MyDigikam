@@ -47,14 +47,14 @@ class DIGIKAM_EXPORT BackendOsmRG : public RGBackend
 public:
 
     explicit BackendOsmRG(QObject* const parent);
-    virtual ~BackendOsmRG();
+    ~BackendOsmRG()                                                         override;
 
     QMap<QString, QString> makeQMapFromXML(const QString& xmlData);
 
-    virtual void callRGBackend(const QList<RGInfo>& rgList,const QString& language) override;
-    virtual QString getErrorMessage()                                               override;
-    virtual QString backendName()                                                   override;
-    virtual void cancelRequests()                                                   override;
+    void callRGBackend(const QList<RGInfo>& rgList,const QString& language) override;
+    QString getErrorMessage()                                               override;
+    QString backendName()                                                   override;
+    void cancelRequests()                                                   override;
 
 private Q_SLOTS:
 

@@ -6,7 +6,8 @@
  * Date        : 2013-02-12
  * Description : Table view column helpers
  *
- * Copyright (C) 2013 by Michael G. Hansen <mike at mghansen dot de>
+ * Copyright (C) 2017-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2013      by Michael G. Hansen <mike at mghansen dot de>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -39,8 +40,8 @@ namespace Digikam
 TableViewColumn::TableViewColumn(TableViewShared* const tableViewShared,
                                  const TableViewColumnConfiguration& pConfiguration,
                                  QObject* const parent)
-    : QObject(parent),
-      s(tableViewShared),
+    : QObject      (parent),
+      s            (tableViewShared),
       configuration(pConfiguration)
 {
 }
@@ -54,7 +55,7 @@ TableViewColumn::~TableViewColumn()
 TableViewColumnFactory::TableViewColumnFactory(TableViewShared* const tableViewShared,
                                                QObject* const parent)
     : QObject(parent),
-      s(tableViewShared)
+      s      (tableViewShared)
 {
 }
 
@@ -161,7 +162,7 @@ TableViewColumn::ColumnCompareResult TableViewColumn::compare(TableViewModel::It
     Q_UNUSED(itemA)
     Q_UNUSED(itemB)
 
-    qCWarning(DIGIKAM_GENERAL_LOG)<<"Unimplemented custom comparison. Make sure getColumnFlags() does not return ColumnCustomSorting.";
+    qCWarning(DIGIKAM_GENERAL_LOG) << "Unimplemented custom comparison. Make sure getColumnFlags() does not return ColumnCustomSorting.";
 
     return CmpEqual;
 }
@@ -192,16 +193,19 @@ bool TableViewColumn::compareHelperBoolFailCheck(const bool okA, const bool okB,
     if (okA && !okB)
     {
         *result = CmpABiggerB;
+
         return false;
     }
 
     if (okB && !okA)
     {
         *result = CmpALessB;
+
         return false;
     }
 
     *result = CmpEqual;
+
     return false;
 }
 
@@ -226,13 +230,15 @@ void TableViewColumnProfile::loadSettings(const KConfigGroup& configGroup)
     headerState        = configGroup.readEntry("Header State", QByteArray());
     const int nColumns = configGroup.readEntry("Column Count", int(0));
 
-    for (int i = 0; i < nColumns; ++i)
+    for (int i = 0 ; i < nColumns ; ++i)
     {
         /// @todo check for invalid column configurations
+
         const QString configSubGroupName = QString::fromUtf8("Column %1").arg(i);
-        const KConfigGroup subGroup = configGroup.group(configSubGroupName);
+        const KConfigGroup subGroup      = configGroup.group(configSubGroupName);
 
         /// @todo move loading into TableViewColumnConfiguration
+
         TableViewColumnConfiguration columnConfiguration;
         columnConfiguration.loadSettings(subGroup);
 
@@ -242,7 +248,9 @@ void TableViewColumnProfile::loadSettings(const KConfigGroup& configGroup)
     if (columnConfigurationList.isEmpty())
     {
         // no data loaded, create default entries
+
         /// @todo Set the default sorting column to something other than the thumbnail.
+
         TableViewColumnDescription::List allColumns = TableViewColumnFactory::getColumnDescriptionList();
 
         TableViewColumnDescription nextDesc;
@@ -271,6 +279,11 @@ void TableViewColumnProfile::loadSettings(const KConfigGroup& configGroup)
         {
             columnConfigurationList << nextDesc.toConfiguration();
         }
+
+        if (TableViewColumnDescription::FindInListById(allColumns, QLatin1String("digikam-tags"), &nextDesc))
+        {
+            columnConfigurationList << nextDesc.toConfiguration();
+        }
     }
 }
 
@@ -281,7 +294,7 @@ void TableViewColumnProfile::saveSettings(KConfigGroup& configGroup)
     configGroup.writeEntry(QLatin1String("Column Count"), nColumns);
     configGroup.writeEntry(QLatin1String("Header State"), headerState);
 
-    for (int i = 0; i < nColumns; ++i)
+    for (int i = 0 ; i < nColumns ; ++i)
     {
         const QString configSubGroupName                        = QString::fromUtf8("Column %1").arg(i);
         KConfigGroup subGroup                                   = configGroup.group(configSubGroupName);
@@ -297,7 +310,7 @@ void TableViewColumnConfiguration::loadSettings(const KConfigGroup& configGroup)
     columnId            = configGroup.readEntry(QLatin1String("Column Id"), QString());
     const int nSettings = configGroup.readEntry(QLatin1String("NSettings"), int(0));
 
-    for (int i = 0; i < nSettings; ++i)
+    for (int i = 0 ; i < nSettings ; ++i)
     {
         const QString& key   = configGroup.readEntry(QString::fromUtf8("Key %1").arg(i),   QString());
         const QString& value = configGroup.readEntry(QString::fromUtf8("Value %1").arg(i), QString());
@@ -318,7 +331,7 @@ void TableViewColumnConfiguration::saveSettings(KConfigGroup& configGroup) const
 
     QHashIterator<QString, QString> settingsIterator(columnSettings);
 
-    for (int i = 0; settingsIterator.hasNext(); ++i)
+    for (int i = 0 ; settingsIterator.hasNext() ; ++i)
     {
         settingsIterator.next();
         configGroup.writeEntry(QString::fromUtf8("Key %1").arg(i),   settingsIterator.key());

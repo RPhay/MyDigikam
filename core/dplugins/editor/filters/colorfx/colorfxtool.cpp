@@ -8,7 +8,7 @@
  *               effect to an image.
  *
  * Copyright (C) 2004-2005 by Renchi Raju <renchi dot raju at gmail dot com>
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -66,8 +66,8 @@ public:
 
     explicit Private()
       : previewWidget(nullptr),
-        gboxSettings(nullptr),
-        settingsView(nullptr)
+        gboxSettings (nullptr),
+        settingsView (nullptr)
     {
     }
 
@@ -88,14 +88,14 @@ const QString ColorFxTool::Private::configHistogramScaleEntry(QLatin1String("His
 
 ColorFxTool::ColorFxTool(QObject* const parent)
     : EditorToolThreaded(parent),
-      d(new Private)
+      d                 (new Private)
 {
     setObjectName(QLatin1String("coloreffects"));
 
     // -------------------------------------------------------------
 
     d->previewWidget = new ImageRegionWidget;
-    d->previewWidget->setWhatsThis(i18n("This is the color effects preview"));
+    d->previewWidget->setWhatsThis(i18nc("@info", "This is the color effects preview"));
     setToolView(d->previewWidget);
     setPreviewModeMask(PreviewToolBar::AllPreviewModes);
 
@@ -173,6 +173,7 @@ void ColorFxTool::preparePreview()
     bool useDownscaledImage = true;
 
     // See bug #237719 : we cannot use downscaled image to render preview.
+
     if (prm.colorFXType == ColorFXFilter::Neon ||
         prm.colorFXType == ColorFXFilter::FindEdges)
     {
@@ -212,23 +213,23 @@ void ColorFxTool::setFinalImage()
     switch (d->settingsView->settings().colorFXType)
     {
         case ColorFXFilter::Solarize:
-            name = i18n("Solarize");
+            name = i18nc("@title: filter", "Solarize");
             break;
 
         case ColorFXFilter::Vivid:
-            name = i18n("Vivid");
+            name = i18nc("@title: filter", "Vivid");
             break;
 
         case ColorFXFilter::Neon:
-            name = i18n("Neon");
+            name = i18nc("@title: filter", "Neon");
             break;
 
         case ColorFXFilter::FindEdges:
-            name = i18n("Find Edges");
+            name = i18nc("@title: filter", "Find Edges");
             break;
 
         case ColorFXFilter::Lut3D:
-            name = i18n("Lut3D");
+            name = i18nc("@title: filter", "Lut3D");
             break;
     }
 

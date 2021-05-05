@@ -7,7 +7,7 @@
  * Description : Labels sidebar widgets
  *
  * Copyright (C) 2009-2010 by Johannes Wienke <languitar at semipol dot de>
- * Copyright (C) 2010-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2010-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2012      by Andi Clemens <andi dot clemens at gmail dot com>
  * Copyright (C) 2014      by Mohamed_Anwer <m_dot_anwer at gmx dot com>
  * Copyright (C) 2010      by Aditya Bhatt <adityabhatt1991 at gmail dot com>
@@ -64,7 +64,7 @@ public:
 
 LabelsSideBarWidget::LabelsSideBarWidget(QWidget* const parent)
     : SidebarWidget(parent),
-      d(new Private)
+      d            (new Private)
 {
     setObjectName(QLatin1String("Labels Sidebar"));
     setProperty("Shortcut", Qt::CTRL + Qt::SHIFT + Qt::Key_F3);

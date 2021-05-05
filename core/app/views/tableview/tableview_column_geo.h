@@ -6,7 +6,8 @@
  * Date        : 2013-02-25
  * Description : Table view column helpers: Geographic column
  *
- * Copyright (C) 2013 by Michael G. Hansen <mike at mghansen dot de>
+ * Copyright (C) 2017-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2013      by Michael G. Hansen <mike at mghansen dot de>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -48,8 +49,8 @@ public:
     enum SubColumn
     {
         SubColumnHasCoordinates = 0,
-        SubColumnCoordinates = 1,
-        SubColumnAltitude = 2
+        SubColumnCoordinates    = 1,
+        SubColumnAltitude       = 2
     } subColumn;
 
 public:
@@ -58,14 +59,14 @@ public:
                                  const TableViewColumnConfiguration& pConfiguration,
                                  const SubColumn pSubColumn,
                                  QObject* const parent = nullptr);
-    virtual ~ColumnGeoProperties();
+    ~ColumnGeoProperties() override;
 
-    virtual QString getTitle() const;
-    virtual ColumnFlags getColumnFlags() const;
-    virtual QVariant data(TableViewModel::Item* const item, const int role) const;
-    virtual ColumnCompareResult compare(TableViewModel::Item* const itemA, TableViewModel::Item* const itemB) const;
-    virtual TableViewColumnConfigurationWidget* getConfigurationWidget(QWidget* const parentWidget) const;
-    virtual void setConfiguration(const TableViewColumnConfiguration& newConfiguration);
+    QString getTitle()                                                                                const override;
+    ColumnFlags getColumnFlags()                                                                      const override;
+    QVariant data(TableViewModel::Item* const item, const int role)                                   const override;
+    ColumnCompareResult compare(TableViewModel::Item* const itemA, TableViewModel::Item* const itemB) const override;
+    TableViewColumnConfigurationWidget* getConfigurationWidget(QWidget* const parentWidget)           const override;
+    void setConfiguration(const TableViewColumnConfiguration& newConfiguration) override;
 
     static QStringList getSubColumns();
     static TableViewColumnDescription getDescription();
@@ -81,9 +82,9 @@ public:
     explicit ColumnGeoConfigurationWidget(TableViewShared* const sharedObject,
                                           const TableViewColumnConfiguration& columnConfiguration,
                                           QWidget* const parentWidget);
-    virtual ~ColumnGeoConfigurationWidget();
+    ~ColumnGeoConfigurationWidget() override;
 
-    virtual TableViewColumnConfiguration getNewConfiguration();
+    TableViewColumnConfiguration getNewConfiguration() override;
 
 private:
 

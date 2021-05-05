@@ -6,7 +6,8 @@
  * Date        : 2009-02-06
  * Description : image editor printing interface.
  *
- * Copyright (C) 2009 by Angelo Naselli <anaselli at linux dot it>
+ * Copyright (C) 2009      by Angelo Naselli <anaselli at linux dot it>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -26,7 +27,6 @@
 
 // Local includes
 
-#include "digikam_export.h"
 #include "dimg.h"
 
 class QWidget;
@@ -36,7 +36,7 @@ using namespace Digikam;
 namespace DigikamEditorPrintToolPlugin
 {
 
-class DIGIKAM_EXPORT PrintHelper
+class PrintHelper
 {
 
 public:
@@ -48,9 +48,11 @@ public:
 
 private:
 
-    // Hidden copy constructor and assignment operator.
-    PrintHelper(const PrintHelper&);
-    PrintHelper& operator=(const PrintHelper&);
+    // Disable
+    PrintHelper(const PrintHelper&)            = delete;
+    PrintHelper& operator=(const PrintHelper&) = delete;
+
+private:
 
     class Private;
     Private* const d;

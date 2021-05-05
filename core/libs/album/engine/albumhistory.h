@@ -7,7 +7,7 @@
  * Description : Albums history manager.
  *
  * Copyright (C) 2004      by Joern Ahrens <joern dot ahrens at kdemail dot net>
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2014      by Mohamed_Anwer <m_dot_anwer at gmx dot com>
  *
  * This program is free software; you can redistribute it
@@ -57,26 +57,35 @@ class AlbumHistory : public QObject
 
 public:
 
-    explicit AlbumHistory();
-    ~AlbumHistory();
+    explicit AlbumHistory(QObject* const parent = nullptr);
+    ~AlbumHistory()                                   override;
 
     void addAlbums(const QList<Album*>& albums,
                    QWidget* const widget = nullptr);
+
     void addAlbums(const QList<Album*>& albums,
                    QWidget* const widget,
-                   QHash<LabelsTreeView::Labels, QList<int> > selectedLabels);
+                   const QHash<LabelsTreeView::Labels, QList<int> >& selectedLabels);
 
     void deleteAlbum(Album* const album);
     void clearHistory();
-    void back(QList<Album*>& album, QWidget** const widget, unsigned int steps=1);
-    void forward(QList<Album*>& album, QWidget** const widget, unsigned int steps=1);
-    void getCurrentAlbum(Album** const album, QWidget** const widget) const;
 
-    void getBackwardHistory(QStringList& list) const;
-    void getForwardHistory(QStringList& list)  const;
+    void back(QList<Album*>& album,
+              QWidget** const widget,
+              unsigned int steps = 1);
 
-    bool isForwardEmpty()                      const;
-    bool isBackwardEmpty()                     const;
+    void forward(QList<Album*>& album,
+                 QWidget** const widget,
+                 unsigned int steps = 1);
+
+    void getCurrentAlbum(Album** const album,
+                         QWidget** const widget) const;
+
+    void getBackwardHistory(QStringList& list)   const;
+    void getForwardHistory(QStringList& list)    const;
+
+    bool isForwardEmpty()                        const;
+    bool isBackwardEmpty()                       const;
 
     QHash<LabelsTreeView::Labels, QList<int> > neededLabels();
 

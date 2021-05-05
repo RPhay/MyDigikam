@@ -30,18 +30,19 @@ namespace DigikamGenericPanoramaPlugin
 {
 
 CompileMKTask::CompileMKTask(const QString& workDirPath,
-                             const QUrl& mkUrl, const QUrl& /*panoUrl*/,
-                             const QString& nonaPath, const QString& enblendPath,
-                             const QString& makePath, bool preview)
+                             const QUrl& mkUrl,
+                             const QUrl& /*panoUrl*/,
+                             const QString& nonaPath,
+                             const QString& enblendPath,
+                             const QString& makePath,
+                             bool preview)
     : CommandTask(preview ? PANO_STITCHPREVIEW : PANO_STITCH, workDirPath, makePath),
-      /*panoUrl(&panoUrl),*/
+/*
+      panoUrl(&panoUrl),
+*/
       mkUrl(mkUrl),
       nonaPath(nonaPath),
       enblendPath(enblendPath)
-{
-}
-
-CompileMKTask::~CompileMKTask()
 {
 }
 

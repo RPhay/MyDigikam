@@ -127,8 +127,9 @@ bool HistoryVertexProperties::operator==(const HistoryImageId& other) const
     {
         if (ItemScanner::sameReferredImage(id, other))
         {
-            //qCDebug(DIGIKAM_DATABASE_LOG) << id << "is the same as" << other;
-
+/*
+            qCDebug(DIGIKAM_DATABASE_LOG) << id << "is the same as" << other;
+*/
             return true;
         }
     }
@@ -190,13 +191,13 @@ QDebug operator<<(QDebug dbg, const HistoryImageId& id)
 {
     dbg.nospace() << " { ";
     dbg.nospace() << id.m_uuid;
-    dbg.space() << id.m_type;
-    dbg.space() << id.m_fileName;
-    dbg.space() << id.m_filePath;
-    dbg.space() << id.m_creationDate;
-    dbg.space() << id.m_uniqueHash;
-    dbg.space() << id.m_fileSize;
-    dbg.space() << id.m_originalUUID;
+    dbg.space()   << id.m_type;
+    dbg.space()   << id.m_fileName;
+    dbg.space()   << id.m_filePath;
+    dbg.space()   << id.m_creationDate;
+    dbg.space()   << id.m_uniqueHash;
+    dbg.space()   << id.m_fileSize;
+    dbg.space()   << id.m_originalUUID;
     dbg.nospace() << " } ";
 
     return dbg;
@@ -239,15 +240,15 @@ HistoryGraph::Vertex ItemHistoryGraphData::addVertex(const HistoryImageId& image
 
     Vertex v;
     QList<ItemInfo> infos;
-
-    //qCDebug(DIGIKAM_DATABASE_LOG) << "Adding vertex" << imageId.m_uuid.left(6) << imageId.fileName();
-
+/*
+    qCDebug(DIGIKAM_DATABASE_LOG) << "Adding vertex" << imageId.m_uuid.left(6) << imageId.fileName();
+*/
     // find by HistoryImageId (most notably, by UUID)
 
     v = findVertexByProperties(imageId);
-
-    //qCDebug(DIGIKAM_DATABASE_LOG) << "Found by properties:" << (v.isNull() ? -1 : int(v));
-
+/*
+    qCDebug(DIGIKAM_DATABASE_LOG) << "Found by properties:" << (v.isNull() ? -1 : int(v));
+*/
     if (v.isNull())
     {
         // Resolve HistoryImageId, find by ItemInfo
@@ -255,9 +256,9 @@ HistoryGraph::Vertex ItemHistoryGraphData::addVertex(const HistoryImageId& image
         foreach (const qlonglong& id, ItemScanner::resolveHistoryImageId(imageId))
         {
             ItemInfo info(id);
-
-            //qCDebug(DIGIKAM_DATABASE_LOG) << "Found info id:" << info.id();
-
+/*
+            qCDebug(DIGIKAM_DATABASE_LOG) << "Found info id:" << info.id();
+*/
             infos << info;
 
             v = findVertexByProperties(info);
@@ -265,9 +266,9 @@ HistoryGraph::Vertex ItemHistoryGraphData::addVertex(const HistoryImageId& image
     }
 
     applyProperties(v, infos, QList<HistoryImageId>() << imageId);
-
-    //qCDebug(DIGIKAM_DATABASE_LOG) << "Returning vertex" << v;
-
+/*
+    qCDebug(DIGIKAM_DATABASE_LOG) << "Returning vertex" << v;
+*/
     return v;
 }
 
@@ -285,9 +286,9 @@ HistoryGraph::Vertex ItemHistoryGraphData::addVertex(const ItemInfo& info)
     // Simply find by image id
 
     v = findVertexByProperties(info);
-
-    //qCDebug(DIGIKAM_DATABASE_LOG) << "Find by id" << info.id() << ": found" << v.isNull();
-
+/*
+    qCDebug(DIGIKAM_DATABASE_LOG) << "Find by id" << info.id() << ": found" << v.isNull();
+*/
     if (v.isNull())
     {
         // Find by contents
@@ -298,15 +299,16 @@ HistoryGraph::Vertex ItemHistoryGraphData::addVertex(const ItemInfo& info)
         {
             v = findVertexByProperties(uuid);
         }
-
-        //qCDebug(DIGIKAM_DATABASE_LOG) << "Find by uuid" << uuid << ": found" << v.isNull();
-
+/*
+        qCDebug(DIGIKAM_DATABASE_LOG) << "Find by uuid" << uuid << ": found" << v.isNull();
+*/
         if (v.isNull())
         {
             id = info.historyImageId();
             v  = findVertexByProperties(id);
-
-            //qCDebug(DIGIKAM_DATABASE_LOG) << "Find by h-i-m" << ": found" << v.isNull();
+/*
+            qCDebug(DIGIKAM_DATABASE_LOG) << "Find by h-i-m" << ": found" << v.isNull();
+*/
         }
 
         // Need to add new vertex. Do this through the method which will resolve the history id
@@ -318,9 +320,9 @@ HistoryGraph::Vertex ItemHistoryGraphData::addVertex(const ItemInfo& info)
     }
 
     applyProperties(v, QList<ItemInfo>() << info, QList<HistoryImageId>() << id);
-
-    //qCDebug(DIGIKAM_DATABASE_LOG) << "Returning vertex" << v << properties(v).infos.size();
-
+/*
+    qCDebug(DIGIKAM_DATABASE_LOG) << "Returning vertex" << v << properties(v).infos.size();
+*/
     return v;
 }
 
@@ -363,7 +365,7 @@ void ItemHistoryGraphData::applyProperties(Vertex& v,
 
 int ItemHistoryGraphData::removeNextUnresolvedVertex(int index)
 {
-    QList<Vertex> vs = vertices();
+    QList<Vertex> vs = vertices();       // clazy:exclude=missing-typeinfo
 
     for ( ; index < vs.size() ; ++index)
     {
@@ -658,9 +660,9 @@ void ItemHistoryGraph::addRelations(const QList<QPair<qlonglong, qlonglong> >& p
 
         v1 = d->addVertex(pair.first);
         v2 = d->addVertex(pair.second);
-
-        //qCDebug(DIGIKAM_DATABASE_LOG) << "Adding" << v1 << "->" << v2;
-
+/*
+        qCDebug(DIGIKAM_DATABASE_LOG) << "Adding" << v1 << "->" << v2;
+*/
         d->addEdge(v1, v2);
     }
 }
@@ -723,7 +725,7 @@ void ItemHistoryGraph::sortForInfo(const ItemInfo& subject)
 {
     // Remove nodes which could not be resolved into image infos
 
-    QList<HistoryGraph::Vertex> toRemove;
+    QList<HistoryGraph::Vertex> toRemove;   // clazy:exclude=missing-typeinfo
 
     foreach (const HistoryGraph::Vertex& v, d->vertices())
     {
@@ -879,7 +881,7 @@ QDebug operator<<(QDebug dbg, const ItemHistoryGraph& g)
         return dbg;
     }
 
-    QList<HistoryGraph::Vertex> vertices = g.data().topologicalSort();
+    QList<HistoryGraph::Vertex> vertices = g.data().topologicalSort();  // clazy:exclude=missing-typeinfo
 
     if (vertices.isEmpty())
     {

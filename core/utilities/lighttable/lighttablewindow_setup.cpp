@@ -6,7 +6,7 @@
  * Date        : 2004-11-22
  * Description : digiKam light table - Configure
  *
- * Copyright (C) 2007-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2007-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -41,13 +41,13 @@ void LightTableWindow::setupActions()
     ac->setDefaultShortcuts(d->forwardAction, QList<QKeySequence>() << Qt::Key_PageDown << Qt::Key_Space);
     d->forwardAction->setEnabled(false);
 
-    d->firstAction = new QAction(QIcon::fromTheme(QLatin1String("go-first")), i18n("&First"), this);
+    d->firstAction = new QAction(QIcon::fromTheme(QLatin1String("go-first")), i18nc("@action: go to first item on list", "&First"), this);
     d->firstAction->setEnabled(false);
     connect(d->firstAction, SIGNAL(triggered()), this, SLOT(slotFirst()));
     ac->addAction(QLatin1String("lighttable_first"), d->firstAction);
     ac->setDefaultShortcuts(d->firstAction, QList<QKeySequence>() << Qt::CTRL + Qt::Key_Home);
 
-    d->lastAction = new QAction(QIcon::fromTheme(QLatin1String("go-last")), i18n("&Last"), this);
+    d->lastAction = new QAction(QIcon::fromTheme(QLatin1String("go-last")), i18nc("@action: go to last item on list", "&Last"), this);
     d->lastAction->setEnabled(false);
     connect(d->lastAction, SIGNAL(triggered()), this, SLOT(slotLast()));
     ac->addAction(QLatin1String("lighttable_last"), d->lastAction);
@@ -91,7 +91,7 @@ void LightTableWindow::setupActions()
     ac->addAction(QLatin1String("lighttable_clearlist"), d->clearListAction);
     ac->setDefaultShortcut(d->clearListAction, Qt::CTRL + Qt::SHIFT + Qt::Key_K);
 
-    d->fileDeleteAction = new QAction(QIcon::fromTheme(QLatin1String("user-trash-full")), i18nc("Non-pluralized", "Move to Trash"), this);
+    d->fileDeleteAction = new QAction(QIcon::fromTheme(QLatin1String("user-trash")), i18nc("Non-pluralized", "Move to Trash"), this);
     d->fileDeleteAction->setEnabled(false);
     connect(d->fileDeleteAction, SIGNAL(triggered()), this, SLOT(slotDeleteItem()));
     ac->addAction(QLatin1String("lighttable_filedelete"), d->fileDeleteAction);
@@ -138,11 +138,6 @@ void LightTableWindow::setupActions()
 
     createFullScreenAction(QLatin1String("lighttable_fullscreen"));
     createSidebarActions();
-
-    d->slideShowAction = new QAction(QIcon::fromTheme(QLatin1String("view-presentation")), i18n("Slideshow"), this);
-    connect(d->slideShowAction, SIGNAL(triggered()), this, SLOT(slotSlideShowAll()));
-    ac->addAction(QLatin1String("lighttable_slideshow"), d->slideShowAction);
-    ac->setDefaultShortcut(d->slideShowAction, Qt::Key_F9);
 
     // Left Panel Zoom Actions
 
@@ -308,7 +303,7 @@ void LightTableWindow::setupConnections()
     connect(ThemeManager::instance(), SIGNAL(signalThemeChanged()),
             this, SLOT(slotThemeChanged()));
 
-    connect(IccSettings::instance(), SIGNAL(settingsChanged()),
+    connect(IccSettings::instance(), SIGNAL(signalSettingsChanged()),
             this, SLOT(slotColorManagementOptionsChanged()));
 
     // Thumbs bar connections ---------------------------------------
@@ -404,6 +399,8 @@ void LightTableWindow::setupConnections()
     connect(this, SIGNAL(signalWindowHasMoved()),
             d->rightZoomBar, SLOT(slotUpdateTrackerPos()));
 
+    // TODO: connect signal last image from SLideShow plugin to slotSlideShowLastItemUrl
+
     // -- FileWatch connections ------------------------------
 
     LoadingCacheInterface::connectToSignalFileChanged(this, SLOT(slotFileChanged(QString)));
@@ -448,7 +445,6 @@ void LightTableWindow::setupUserArea()
 
     d->barViewDock = new ThumbBarDock(viewContainer, Qt::Tool);
     d->barViewDock->setObjectName(QLatin1String("lighttable_thumbbar"));
-    d->barViewDock->setWindowTitle(i18n("Light Table Thumbnail Dock"));
 
     d->thumbView   = new LightTableThumbBar(d->barViewDock);
 

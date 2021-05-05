@@ -6,7 +6,7 @@
  * Date        : 2017-05-25
  * Description : a tool to generate video slideshow from images.
  *
- * Copyright (C) 2017-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2017-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -32,7 +32,6 @@
 
 #include "dwizarddlg.h"
 #include "dinfointerface.h"
-#include "digikam_export.h"
 #include "vidslidesettings.h"
 
 using namespace Digikam;
@@ -40,17 +39,17 @@ using namespace Digikam;
 namespace DigikamGenericVideoSlideShowPlugin
 {
 
-class DIGIKAM_EXPORT VidSlideWizard : public DWizardDlg
+class VidSlideWizard : public DWizardDlg
 {
     Q_OBJECT
 
 public:
 
     explicit VidSlideWizard(QWidget* const parent, DInfoInterface* const iface = nullptr);
-    ~VidSlideWizard();
+    ~VidSlideWizard()                  override;
 
-    bool validateCurrentPage() override;
-    int  nextId() const override;
+    bool validateCurrentPage()         override;
+    int  nextId()                const override;
 
     DInfoInterface*   iface()    const;
     VidSlideSettings* settings() const;

@@ -6,7 +6,7 @@
  * Date        : 2015-12-13
  * Description : test cases for tags tree manipulation in database
  *
- * Copyright (C) 2015-2020 by Gilles Caulier, <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2015-2021 by Gilles Caulier, <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -40,6 +40,7 @@
 #include "loadingcacheinterface.h"
 #include "scancontroller.h"
 #include "thumbnailloadthread.h"
+#include "databaseserverstarter.h"
 
 using namespace Digikam;
 
@@ -47,21 +48,22 @@ const QString IMAGE_PATH(QFINDTESTDATA("data/"));
 
 QTEST_MAIN(DatabaseTagsTest)
 
-DatabaseTagsTest::DatabaseTagsTest()
-    : palbumRoot0(0),
-      palbumRoot1(0),
-      palbumRoot2(0),
-      palbumChild0Root0(0),
-      palbumChild1Root0(0),
-      palbumChild2Root0(0),
-      palbumChild0Root1(0),
-      rootTag(0),
-      talbumRoot0(0),
-      talbumRoot1(0),
-      talbumChild0Root0(0),
-      talbumChild1Root0(0),
-      talbumChild0Child1Root0(0),
-      talbumChild0Root1(0)
+DatabaseTagsTest::DatabaseTagsTest(QObject* const parent)
+    : QObject                (parent),
+      palbumRoot0            (nullptr),
+      palbumRoot1            (nullptr),
+      palbumRoot2            (nullptr),
+      palbumChild0Root0      (nullptr),
+      palbumChild1Root0      (nullptr),
+      palbumChild2Root0      (nullptr),
+      palbumChild0Root1      (nullptr),
+      rootTag                (nullptr),
+      talbumRoot0            (nullptr),
+      talbumRoot1            (nullptr),
+      talbumChild0Root0      (nullptr),
+      talbumChild1Root0      (nullptr),
+      talbumChild0Child1Root0(nullptr),
+      talbumChild0Root1      (nullptr)
 {
 }
 
@@ -92,7 +94,7 @@ void DatabaseTagsTest::initTestCase()
 
     DbEngineParameters params = DbEngineParameters::defaultParameters(QLatin1String("QMYSQL"));
     params.setInternalServerPath(dbPath);
-    DatabaseServerStarter::startServerManagerProcess();
+    DatabaseServerStarter::instance()->startServerManagerProcess(params);
 
     bool dbChangeGood = AlbumManager::instance()->setDatabase(params, false,
                         QDir::temp().absoluteFilePath(tempSuffix));

@@ -7,7 +7,7 @@
  * Description : Loading parameters for multithreaded loading
  *
  * Copyright (C) 2006-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2012-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -34,8 +34,8 @@ namespace Digikam
 {
 
 LoadingDescription::PreviewParameters::PreviewParameters()
-    : type(NoPreview),
-      size(0),
+    : type (NoPreview),
+      size (0),
       flags(NoFlags)
 {
 }
@@ -50,14 +50,19 @@ bool LoadingDescription::PreviewParameters::operator==(const PreviewParameters& 
             (storageReference == other.storageReference));
 }
 
+bool LoadingDescription::PreviewParameters::onlyPregenerate() const
+{
+    return (flags & OnlyPregenerate);
+}
+
 bool LoadingDescription::PostProcessingParameters::operator==(const PostProcessingParameters& other) const
 {
-    return colorManagement == other.colorManagement;
+    return (colorManagement == other.colorManagement);
 }
 
 bool LoadingDescription::PostProcessingParameters::needsProcessing() const
 {
-    return colorManagement != NoColorConversion;
+    return (colorManagement != NoColorConversion);
 }
 
 void LoadingDescription::PostProcessingParameters::setTransform(const IccTransform& transform)
@@ -67,7 +72,7 @@ void LoadingDescription::PostProcessingParameters::setTransform(const IccTransfo
 
 bool LoadingDescription::PostProcessingParameters::hasTransform() const
 {
-    return !iccData.isNull() && iccData.canConvert<IccTransform>();
+    return (!iccData.isNull() && iccData.canConvert<IccTransform>());
 }
 
 IccTransform LoadingDescription::PostProcessingParameters::transform() const
@@ -82,7 +87,7 @@ void LoadingDescription::PostProcessingParameters::setProfile(const IccProfile& 
 
 bool LoadingDescription::PostProcessingParameters::hasProfile() const
 {
-    return !iccData.isNull() && iccData.canConvert<IccProfile>();
+    return (!iccData.isNull() && iccData.canConvert<IccProfile>());
 }
 
 IccProfile LoadingDescription::PostProcessingParameters::profile() const
@@ -93,20 +98,20 @@ IccProfile LoadingDescription::PostProcessingParameters::profile() const
 // ----------------------------------------------------------------------------
 
 LoadingDescription::LoadingDescription()
-    : filePath(QString()),
-      rawDecodingSettings(DRawDecoding()),
-      rawDecodingHint(RawDecodingDefaultSettings),
-      previewParameters(PreviewParameters()),
-      postProcessingParameters(PostProcessingParameters())
+    : filePath                  (QString()),
+      rawDecodingSettings       (DRawDecoding()),
+      rawDecodingHint           (RawDecodingDefaultSettings),
+      previewParameters         (PreviewParameters()),
+      postProcessingParameters  (PostProcessingParameters())
 {
 }
 
 LoadingDescription::LoadingDescription(const QString& filePath,
                                        ColorManagementSettings cm)
-    : filePath(filePath),
-      rawDecodingSettings(DRawDecoding()),
-      rawDecodingHint(RawDecodingDefaultSettings),
-      previewParameters(PreviewParameters())
+    : filePath              (filePath),
+      rawDecodingSettings   (DRawDecoding()),
+      rawDecodingHint       (RawDecodingDefaultSettings),
+      previewParameters     (PreviewParameters())
 {
       postProcessingParameters.colorManagement = cm;
 }
@@ -115,10 +120,10 @@ LoadingDescription::LoadingDescription(const QString& filePath,
                                        const DRawDecoding& settings,
                                        RawDecodingHint hint,
                                        ColorManagementSettings cm)
-    : filePath(filePath),
-      rawDecodingSettings(settings),
-      rawDecodingHint(hint),
-      previewParameters(PreviewParameters())
+    : filePath              (filePath),
+      rawDecodingSettings   (settings),
+      rawDecodingHint       (hint),
+      previewParameters     (PreviewParameters())
 {
       postProcessingParameters.colorManagement = cm;
 }
@@ -147,15 +152,21 @@ QString LoadingDescription::cacheKey() const
 
     if      (previewParameters.type == PreviewParameters::Thumbnail)
     {
-        QString fileRef = filePath.isEmpty() ? (QLatin1String("id:/") + previewParameters.storageReference.toString()) : filePath;
+        QString fileRef = filePath.isEmpty() ? (QLatin1String("id:/") + previewParameters.storageReference.toString())
+                                             : filePath;
 
         return (fileRef + QLatin1String("-thumbnail-") + QString::number(previewParameters.size));
     }
     else if (previewParameters.type == PreviewParameters::DetailThumbnail)
     {
-        QString fileRef    = filePath.isEmpty() ? (QLatin1String("id:/") + previewParameters.storageReference.toString()) : filePath;
+        QString fileRef    = filePath.isEmpty() ? (QLatin1String("id:/") + previewParameters.storageReference.toString())
+                                                : filePath;
         QRect rect         =  previewParameters.extraParameter.toRect();
-        QString rectString = QString::fromLatin1("%1,%2-%3x%4-").arg(rect.x()).arg(rect.y()).arg(rect.width()).arg(rect.height());
+        QString rectString = QString::fromLatin1("%1,%2-%3x%4-")
+                             .arg(rect.x())
+                             .arg(rect.y())
+                             .arg(rect.width())
+                             .arg(rect.height());
 
         return (fileRef + QLatin1String("-thumbnail-") + rectString + QString::number(previewParameters.size));
     }
@@ -316,6 +327,11 @@ bool LoadingDescription::operator==(const LoadingDescription& other) const
             (postProcessingParameters == other.postProcessingParameters));
 }
 
+bool LoadingDescription::operator!=(const LoadingDescription& other) const
+{
+    return (!operator==(other));
+}
+
 bool LoadingDescription::equalsIgnoreReducedVersion(const LoadingDescription& other) const
 {
     return (filePath == other.filePath);
@@ -391,7 +407,7 @@ QStringList LoadingDescription::possibleCacheKeys(const QString& filePath)
 
 QStringList LoadingDescription::possibleThumbnailCacheKeys(const QString& filePath)
 {
-    //FIXME: With details, there is an endless number of possible cache keys. Need different approach.
+    // FIXME: With details, there is an endless number of possible cache keys. Need different approach.
 
     QStringList keys;
 

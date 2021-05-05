@@ -1,11 +1,10 @@
 #
-# Copyright (c) 2010-2019, Gilles Caulier, <caulier dot gilles at gmail dot com>
+# Copyright (c) 2010-2020, Gilles Caulier, <caulier dot gilles at gmail dot com>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
 
-# =======================================================
-# Stand alone version of ExpoBlending tool
+APPLY_COMMON_POLICIES()
 
 include_directories(
     $<TARGET_PROPERTY:Qt5::Xml,INTERFACE_INCLUDE_DIRECTORIES>
@@ -24,12 +23,12 @@ remove_definitions(
 # =======================================================
 # Twitter demo test tool
 
-set(sialis_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/../../../../libs/dplugins/webservices/o2/examples/sialis/tweetmodel.cpp
-                ${CMAKE_CURRENT_SOURCE_DIR}/../../../../libs/dplugins/webservices/o2/examples/sialis/twitterapi.cpp
-                ${CMAKE_CURRENT_SOURCE_DIR}/../../../../libs/dplugins/webservices/o2/examples/sialis/main.cpp
+set(sialis_SRCS ${CMAKE_SOURCE_DIR}/core/libs/dplugins/webservices/o2/examples/sialis/tweetmodel.cpp
+                ${CMAKE_SOURCE_DIR}/core/libs/dplugins/webservices/o2/examples/sialis/twitterapi.cpp
+                ${CMAKE_SOURCE_DIR}/core/libs/dplugins/webservices/o2/examples/sialis/main.cpp
 )
 
-qt5_add_resources(QT_RESOURCES ${CMAKE_CURRENT_SOURCE_DIR}/../../../../libs/dplugins/webservices/o2/examples/sialis/main.qml
+qt5_add_resources(QT_RESOURCES ${CMAKE_SOURCE_DIR}/core/libs/dplugins/webservices/o2/examples/sialis/main.qml
 )
 
 add_executable(sialis ${sialis_SRCS})
@@ -44,3 +43,13 @@ target_link_libraries(sialis
 )
 
 target_compile_definitions(sialis PRIVATE signals=Q_SIGNALS slots=Q_SLOTS)
+
+if(MSVC)
+
+    target_compile_options(sialis PRIVATE /w)
+
+else()
+
+    target_compile_options(sialis PRIVATE -w)
+
+endif()

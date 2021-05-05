@@ -6,7 +6,8 @@
  * Date        : 2009-02-06
  * Description : image editor printing interface.
  *
- * Copyright (C) 2009 by Angelo Naselli <anaselli at linux dot it>
+ * Copyright (C) 2009      by Angelo Naselli <anaselli at linux dot it>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -69,10 +70,10 @@ public:
         QSize size                            = doc.size();
         PrintOptionsPage::ScaleMode scaleMode = optionsPage->scaleMode();
 
-        if (scaleMode == PrintOptionsPage::ScaleToPage)
+        if      (scaleMode == PrintOptionsPage::ScaleToPage)
         {
-            bool imageBiggerThanPaper = size.width()  > viewportSize.width() ||
-                                        size.height() > viewportSize.height();
+            bool imageBiggerThanPaper = (size.width()  > viewportSize.width()) ||
+                                        (size.height() > viewportSize.height());
 
             if (imageBiggerThanPaper || optionsPage->enlargeSmallerImages())
             {
@@ -95,7 +96,7 @@ public:
             int dpmX                      = img.dotsPerMeterX();
             int dpmY                      = img.dotsPerMeterY();
 
-            if (dpmX > 0 && dpmY > 0)
+            if ((dpmX > 0) && (dpmY > 0))
             {
                 double wImg = double(size.width())  / double(dpmX) * INCHES_PER_METER;
                 double hImg = double(size.height()) / double(dpmY) * INCHES_PER_METER;
@@ -112,9 +113,10 @@ public:
                           const QSize& viewportSize)
     {
         Qt::Alignment alignment = optionsPage->alignment();
-        int posX, posY;
+        int posX;
+        int posY;
 
-        if (alignment & Qt::AlignLeft)
+        if      (alignment & Qt::AlignLeft)
         {
             posX = 0;
         }
@@ -127,7 +129,7 @@ public:
             posX = viewportSize.width() - imageSize.width();
         }
 
-        if (alignment & Qt::AlignTop)
+        if      (alignment & Qt::AlignTop)
         {
             posY = 0;
         }
@@ -144,7 +146,7 @@ public:
     }
 
     void adjustImage(PrintOptionsPage* const optionsPage,
-                     DImg& img)
+                     const DImg& img)
     {
         if (optionsPage->colorManaged())
         {
@@ -173,7 +175,7 @@ void PrintHelper::print(DImg& doc)
 
     QPrintDialog* const dialog          = new QPrintDialog(&printer, d->parent);
     dialog->setWindowTitle(i18n("Print Image"));
-    PrintOptionsPage* const optionsPage = new PrintOptionsPage(dialog, doc.size());
+    PrintOptionsPage* const optionsPage = new PrintOptionsPage(d->parent, doc.size());
     optionsPage->loadConfig();
     dialog->setOptionTabs(QList<QWidget*>() << optionsPage);
 
@@ -187,13 +189,15 @@ void PrintHelper::print(DImg& doc)
     }
 
     if (optionsPage->autoRotation())
+    {
         printer.setOrientation(doc.size().width() <= doc.size().height() ? QPrinter::Portrait
                                                                          : QPrinter::Landscape);
+    }
 
     QPainter painter(&printer);
-    QRect rect = painter.viewport();
-    QSize size = d->adjustSize(optionsPage, doc, printer.resolution(), rect.size());
-    QPoint pos = d->adjustPosition(optionsPage, size, rect.size());
+    QRect rect   = painter.viewport();
+    QSize size   = d->adjustSize(optionsPage, doc, printer.resolution(), rect.size());
+    QPoint pos   = d->adjustPosition(optionsPage, size, rect.size());
     d->adjustImage(optionsPage, doc);
     painter.setViewport(pos.x(), pos.y(), size.width(), size.height());
 

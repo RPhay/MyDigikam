@@ -6,7 +6,7 @@
  * Date        : 2006-20-12
  * Description : a view to embed QtAv media player.
  *
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -30,6 +30,7 @@
 #include <QMouseEvent>
 #include <QProxyStyle>
 #include <QPushButton>
+#include <QFileInfo>
 #include <QToolBar>
 #include <QAction>
 #include <QSlider>
@@ -43,6 +44,7 @@
 #include <QtAVWidgets/WidgetRenderer.h>   // krazy:exclude=includes
 #include <QtAV/AudioDecoder.h>            // krazy:exclude=includes
 #include <QtAV/VideoDecoder.h>            // krazy:exclude=includes
+#include <QtAV/VideoCapture.h>            // krazy:exclude=includes
 #include <QtAV/version.h>                 // krazy:exclude=includes
 
 // KDE includes
@@ -58,6 +60,7 @@
 #include "thememanager.h"
 #include "dlayoutbox.h"
 #include "metaengine.h"
+#include "dmetadata.h"
 
 using namespace QtAV;
 
@@ -66,21 +69,23 @@ namespace Digikam
 
 class Q_DECL_HIDDEN MediaPlayerMouseClickFilter : public QObject
 {
+    Q_OBJECT
+
 public:
 
     explicit MediaPlayerMouseClickFilter(QObject* const parent)
-        : QObject(parent),
+        : QObject (parent),
           m_parent(parent)
     {
     }
 
 protected:
 
-    bool eventFilter(QObject* obj, QEvent* event)
+    bool eventFilter(QObject* obj, QEvent* event) override
     {
         if ((event->type() == QEvent::MouseButtonRelease) || (event->type() == QEvent::MouseButtonDblClick))
         {
-            bool singleClick = qApp->style()->styleHint(QStyle::SH_ItemView_ActivateItemOnSingleClick);
+            bool singleClick              = qApp->style()->styleHint(QStyle::SH_ItemView_ActivateItemOnSingleClick);
             QMouseEvent* const mouseEvent = dynamic_cast<QMouseEvent*>(event);
 
             if (m_parent && mouseEvent)
@@ -114,14 +119,20 @@ private:
     QObject* m_parent;
 };
 
-class Q_DECL_HIDDEN VideoStyle : public QProxyStyle
+// --------------------------------------------------------
+
+class Q_DECL_HIDDEN PlayerVideoStyle : public QProxyStyle
 {
+    Q_OBJECT
+
 public:
 
     using QProxyStyle::QProxyStyle;
 
-    int styleHint(QStyle::StyleHint hint, const QStyleOption* option = nullptr,
-                  const QWidget* widget = nullptr, QStyleHintReturn* returnData = nullptr) const
+    int styleHint(QStyle::StyleHint hint,
+                  const QStyleOption* option = nullptr,
+                  const QWidget* widget = nullptr,
+                  QStyleHintReturn* returnData = nullptr) const override
     {
         if (hint == QStyle::SH_Slider_AbsoluteSetButtons)
         {
@@ -141,27 +152,30 @@ public:
 
     enum MediaPlayerViewMode
     {
-        ErrorView=0,
+        ErrorView = 0,
         PlayerView
     };
 
 public:
 
     explicit Private()
-      : errorView(nullptr),
-        playerView(nullptr),
-        prevAction(nullptr),
-        nextAction(nullptr),
-        playAction(nullptr),
-        loopPlay(nullptr),
-        toolBar(nullptr),
-        iface(nullptr),
-        videoWidget(nullptr),
-        player(nullptr),
-        slider(nullptr),
-        volume(nullptr),
-        tlabel(nullptr),
-        videoOrientation(0)
+      : errorView       (nullptr),
+        playerView      (nullptr),
+        prevAction      (nullptr),
+        nextAction      (nullptr),
+        playAction      (nullptr),
+        grabAction      (nullptr),
+        loopPlay        (nullptr),
+        toolBar         (nullptr),
+        iface           (nullptr),
+        videoWidget     (nullptr),
+        player          (nullptr),
+        slider          (nullptr),
+        volume          (nullptr),
+        tlabel          (nullptr),
+        videoOrientation(0),
+        capturePosition (0),
+        sliderTime      (0)
     {
     }
 
@@ -171,6 +185,7 @@ public:
     QAction*             prevAction;
     QAction*             nextAction;
     QAction*             playAction;
+    QAction*             grabAction;
 
     QPushButton*         loopPlay;
 
@@ -186,21 +201,29 @@ public:
     QLabel*              tlabel;
     QUrl                 currentItem;
 
+
     int                  videoOrientation;
+    qint64               capturePosition;
+    qint64               sliderTime;
 };
 
 MediaPlayerView::MediaPlayerView(QWidget* const parent)
     : QStackedWidget(parent),
-      d(new Private)
+      d             (new Private)
 {
     setAttribute(Qt::WA_DeleteOnClose);
     setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
 
     const int spacing      = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
 
-    d->prevAction          = new QAction(QIcon::fromTheme(QLatin1String("go-previous")),          i18nc("go to previous image", "Back"),   this);
-    d->nextAction          = new QAction(QIcon::fromTheme(QLatin1String("go-next")),              i18nc("go to next image", "Forward"),    this);
-    d->playAction          = new QAction(QIcon::fromTheme(QLatin1String("media-playback-start")), i18nc("pause/play video", "Pause/Play"), this);
+    d->prevAction          = new QAction(QIcon::fromTheme(QLatin1String("go-previous")),
+                                         i18nc("go to previous image", "Back"),   this);
+    d->nextAction          = new QAction(QIcon::fromTheme(QLatin1String("go-next")),
+                                         i18nc("go to next image", "Forward"),    this);
+    d->playAction          = new QAction(QIcon::fromTheme(QLatin1String("media-playback-start")),
+                                         i18nc("pause/play video", "Pause/Play"), this);
+    d->grabAction          = new QAction(QIcon::fromTheme(QLatin1String("view-preview")),
+                                         i18nc("capture video frame", "Capture"), this);
 
     d->errorView           = new QFrame(this);
     QLabel* const errorMsg = new QLabel(i18n("An error has occurred with the media player..."), this);
@@ -224,13 +247,14 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
 
     DHBox* const hbox = new DHBox(this);
     d->slider         = new QSlider(Qt::Horizontal, hbox);
-    d->slider->setStyle(new VideoStyle(d->slider->style()));
+    d->slider->setStyle(new PlayerVideoStyle(d->slider->style()));
     d->slider->setRange(0, 0);
     d->tlabel         = new QLabel(hbox);
     d->tlabel->setText(QLatin1String("00:00:00 / 00:00:00"));
     d->loopPlay       = new QPushButton(hbox);
     d->loopPlay->setIcon(QIcon::fromTheme(QLatin1String("media-playlist-normal")));
     d->loopPlay->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
+    d->loopPlay->setToolTip(i18n("Toggle playing in a loop"));
     d->loopPlay->setFocusPolicy(Qt::NoFocus);
     d->loopPlay->setMinimumSize(22, 22);
     d->loopPlay->setCheckable(true);
@@ -262,6 +286,7 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
     d->toolBar->addAction(d->prevAction);
     d->toolBar->addAction(d->nextAction);
     d->toolBar->addAction(d->playAction);
+    d->toolBar->addAction(d->grabAction);
     d->toolBar->setStyleSheet(toolButtonStyleSheet());
 
     setPreviewMode(Private::PlayerView);
@@ -290,6 +315,9 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
     connect(d->playAction, SIGNAL(triggered()),
             this, SLOT(slotPausePlay()));
 
+    connect(d->grabAction, SIGNAL(triggered()),
+            this, SLOT(slotCapture()));
+
     connect(d->slider, SIGNAL(sliderMoved(int)),
             this, SLOT(slotPosition(int)));
 
@@ -309,13 +337,18 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
             this, SLOT(slotMediaStatusChanged(QtAV::MediaStatus)));
 
     connect(d->player, SIGNAL(positionChanged(qint64)),
-            this, SLOT(slotPositionChanged(qint64)));
+            this, SLOT(slotPositionChanged(qint64)),
+            Qt::QueuedConnection);
 
     connect(d->player, SIGNAL(durationChanged(qint64)),
             this, SLOT(slotDurationChanged(qint64)));
 
     connect(d->player, SIGNAL(error(QtAV::AVError)),
             this, SLOT(slotHandlePlayerError(QtAV::AVError)));
+
+    connect(d->player->videoCapture(), SIGNAL(imageCaptured(QImage)),
+            this, SLOT(slotImageCaptured(QImage)));
+
 
     qCDebug(DIGIKAM_GENERAL_LOG) << "Audio output backends:"
                                  << d->player->audio()->backendsAvailable();
@@ -352,9 +385,13 @@ void MediaPlayerView::slotPlayerStateChanged(QtAV::AVPlayer::State state)
         int rotate = 0;
 
 #if QTAV_VERSION > QTAV_VERSION_CHK(1, 12, 0)
+
         // fix wrong rotation from QtAV git/master
+
         rotate     = d->player->statistics().video_only.rotate;
+
 #endif
+
         d->videoWidget->setOrientation((-rotate) + d->videoOrientation);
         qCDebug(DIGIKAM_GENERAL_LOG) << "Found video orientation:"
                                      << d->videoOrientation;
@@ -436,6 +473,75 @@ void MediaPlayerView::slotPausePlay()
     }
 
     d->player->pause(!d->player->isPaused());
+}
+
+void MediaPlayerView::slotCapture()
+{
+    if (d->player->isPlaying())
+    {
+        d->player->videoCapture()->setAutoSave(false);
+        d->capturePosition = d->player->position();
+        d->player->videoCapture()->capture();
+    }
+}
+
+void MediaPlayerView::slotImageCaptured(const QImage& image)
+{
+    if (!image.isNull() && d->currentItem.isValid())
+    {
+        QFileInfo info(d->currentItem.toLocalFile());
+        QString tempPath = QString::fromUtf8("%1/%2-%3.digikamtempfile.jpg")
+                          .arg(info.path())
+                          .arg(info.baseName())
+                          .arg(d->capturePosition);
+
+        if (image.save(tempPath, "JPG", 100))
+        {
+            QScopedPointer<DMetadata> meta(new DMetadata);
+
+            if (meta->load(tempPath))
+            {
+                DItemInfo dinfo(d->iface->itemInfo(d->currentItem));
+
+                QDateTime dateTime = dinfo.dateTime();
+
+                if (dateTime.isValid())
+                {
+                    dateTime = dateTime.addMSecs(d->capturePosition);
+                }
+                else
+                {
+                    dateTime = QDateTime::currentDateTime();
+                }
+
+                MetaEngine::ImageOrientation orientation = MetaEngine::ORIENTATION_NORMAL;
+
+                if ((MetaEngine::ImageOrientation)dinfo.orientation() != MetaEngine::ORIENTATION_UNSPECIFIED)
+                {
+                    orientation = (MetaEngine::ImageOrientation)dinfo.orientation();
+                }
+
+                meta->setImageDateTime(dateTime, true);
+                meta->setItemDimensions(image.size());
+                meta->setItemOrientation(orientation);
+                meta->save(tempPath, true);
+            }
+
+            QString finalPath = QString::fromUtf8("%1/%2-%3.jpg")
+                               .arg(info.path())
+                               .arg(info.baseName())
+                               .arg(d->capturePosition);
+
+            if (QFile::rename(tempPath, finalPath))
+            {
+                d->iface->slotMetadataChangedForUrl(QUrl::fromLocalFile(finalPath));
+            }
+            else
+            {
+                QFile::remove(tempPath);
+            }
+        }
+    }
 }
 
 int MediaPlayerView::previewMode()
@@ -529,6 +635,14 @@ void MediaPlayerView::setCurrentItem(const QUrl& url, bool hasPrevious, bool has
 
 void MediaPlayerView::slotPositionChanged(qint64 position)
 {
+    if ((d->sliderTime < position)       &&
+        ((d->sliderTime + 100) > position))
+    {
+        return;
+    }
+
+    d->sliderTime = position;
+
     if (!d->slider->isSliderDown())
     {
         d->slider->blockSignals(true);
@@ -590,3 +704,5 @@ void MediaPlayerView::slotHandlePlayerError(const QtAV::AVError& err)
 }
 
 } // namespace Digikam
+
+#include "mediaplayerview.moc"

@@ -7,7 +7,7 @@
  * Description : Media server manager
  *
  * Copyright (C) 2012      by Smit Mehta <smit dot meh at gmail dot com>
- * Copyright (C) 2012-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -68,17 +68,17 @@ class Q_DECL_HIDDEN DMediaServerMngr::Private
 public:
 
     explicit Private()
+      : server(nullptr)
     {
-        server = nullptr;
     }
 
-    // Configuration XML file to store albums map to share in case of restoring between sessions.
+    /// Configuration XML file to store albums map to share in case of restoring between sessions.
     QString              mapsConf;
 
-    // Server instance pointer.
+    /// Server instance pointer.
     DMediaServer*        server;
 
-    // The current albums collection to share.
+    /// The current albums collection to share.
     MediaServerMap       collectionMap;
 
     static const QString configGroupName;
@@ -96,7 +96,7 @@ DMediaServerMngr* DMediaServerMngr::instance()
 DMediaServerMngr::DMediaServerMngr()
     : d(new Private)
 {
-    d->mapsConf = QStandardPaths::writableLocation(QStandardPaths::DataLocation) +
+    d->mapsConf = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) +
                   QLatin1String("/mediaserver.xml");
 }
 
@@ -131,6 +131,7 @@ bool DMediaServerMngr::loadAtStartup()
     if (startServerOnStartup)
     {
         // Restore the old sharing configuration and start the server.
+
         result &= load();
         result &= startMediaServer();
 
@@ -151,6 +152,7 @@ void DMediaServerMngr::saveAtShutdown()
     if (startServerOnStartup)
     {
         // Save the current sharing configuration for the next session.
+
         save();
     }
 
@@ -179,7 +181,7 @@ QList<QUrl> DMediaServerMngr::itemsList() const
     {
         QList<QList<QUrl> > ulst = d->collectionMap.values();
 
-        foreach (QList<QUrl> urls, ulst)
+        foreach (const QList<QUrl>& urls, ulst)
         {
             ret << urls;
         }
@@ -207,6 +209,7 @@ bool DMediaServerMngr::startMediaServer()
         if (!d->server->init())
         {
             cleanUp();
+
             return false;
         }
     }
@@ -214,6 +217,7 @@ bool DMediaServerMngr::startMediaServer()
     if (d->collectionMap.isEmpty())
     {
         cleanUp();
+
         return false;
     }
 
@@ -224,13 +228,15 @@ bool DMediaServerMngr::startMediaServer()
 
 bool DMediaServerMngr::isRunning() const
 {
-    return d->server ? true : false;
+    return (d->server ? true : false);
 }
 
 int DMediaServerMngr::albumsShared() const
 {
     if (d->collectionMap.isEmpty())
+    {
         return 0;
+    }
 
     return d->collectionMap.uniqueKeys().count();
 }
@@ -273,6 +279,7 @@ bool DMediaServerMngr::save()
     {
         qCDebug(DIGIKAM_MEDIASRV_LOG) << "Cannot open XML file to store MediaServer list";
         qCDebug(DIGIKAM_MEDIASRV_LOG) << file.fileName();
+
         return false;
     }
 
@@ -294,6 +301,7 @@ bool DMediaServerMngr::load()
         if (!file.open(QIODevice::ReadOnly))
         {
             qCDebug(DIGIKAM_MEDIASRV_LOG) << "Cannot open XML file to load MediaServer list";
+
             return false;
         }
 
@@ -303,6 +311,7 @@ bool DMediaServerMngr::load()
         {
             qCDebug(DIGIKAM_MEDIASRV_LOG) << "Cannot load MediaServer list XML file";
             file.close();
+
             return false;
         }
 
@@ -337,8 +346,8 @@ bool DMediaServerMngr::load()
                     continue;
                 }
 
-                QString name2 = e2.tagName();
-                QString val2  = e2.attribute(QLatin1String("value"));
+                QString name2  = e2.tagName();
+                QString val2   = e2.attribute(QLatin1String("value"));
 
                 if (name2 == QLatin1String("path"))
                 {
@@ -350,8 +359,8 @@ bool DMediaServerMngr::load()
         }
 
         setCollectionMap(map);
-
         file.close();
+
         return true;
     }
     else

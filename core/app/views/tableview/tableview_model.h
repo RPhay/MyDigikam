@@ -6,7 +6,8 @@
  * Date        : 2013-02-12
  * Description : Wrapper model for table view
  *
- * Copyright (C) 2013 by Michael G. Hansen <mike at mghansen dot de>
+ * Copyright (C) 2017-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2013      by Michael G. Hansen <mike at mghansen dot de>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -71,7 +72,7 @@ public:
     public:
 
         explicit Item();
-        virtual ~Item();
+        ~Item();
 
         void  addChild(Item* const newChild);
         void  insertChild(const int pos, Item* const newChild);
@@ -88,71 +89,77 @@ public:
 public:
 
     explicit TableViewModel(TableViewShared* const sharedObject, QObject* const parent = nullptr);
-    virtual ~TableViewModel();
+    ~TableViewModel()                                                                                                 override;
 
-    void                    addColumnAt(const TableViewColumnDescription& description, const int targetColumn = -1);
-    void                    addColumnAt(const TableViewColumnConfiguration& cpp, const int targetColumn = -1);
+    void                    addColumnAt(const TableViewColumnDescription& description,
+                                        const int targetColumn = -1);
+    void                    addColumnAt(const TableViewColumnConfiguration& cpp,
+                                        const int targetColumn = -1);
     void                    removeColumnAt(const int columnIndex);
     TableViewColumn*        getColumnObject(const int columnIndex);
     QList<TableViewColumn*> getColumnObjects();
     QModelIndex             fromItemFilterModelIndex(const QModelIndex& imageFilterModelIndex);
     QModelIndex             fromItemModelIndex(const QModelIndex& imageModelIndex);
-    QModelIndex             toItemFilterModelIndex(const QModelIndex& i) const;
-    QModelIndex             toItemModelIndex(const QModelIndex& i) const;
+    QModelIndex             toItemFilterModelIndex(const QModelIndex& i)                                        const;
+    QModelIndex             toItemModelIndex(const QModelIndex& i)                                              const;
     void                    loadColumnProfile(const TableViewColumnProfile& columnProfile);
-    TableViewColumnProfile  getColumnProfile() const;
+    TableViewColumnProfile  getColumnProfile()                                                                  const;
 
-    QModelIndex deepRowIndex(const int rowNumber) const;
-    int indexToDeepRowNumber(const QModelIndex& index) const;
-    int deepRowCount() const;
+    QModelIndex deepRowIndex(const int rowNumber)                                                               const;
+    int indexToDeepRowNumber(const QModelIndex& index)                                                          const;
+    int deepRowCount()                                                                                          const;
     int firstDeepRowNotInList(const QList<QModelIndex>& needleList);
-    QModelIndex toCol0(const QModelIndex& anIndex) const;
+    QModelIndex toCol0(const QModelIndex& anIndex)                                                              const;
 
-    QModelIndex   itemIndex(Item* const item) const;
-    QModelIndex   indexFromImageId(const qlonglong imageId, const int columnIndex) const;
-    Item*         itemFromImageId(const qlonglong imageId) const;
-    Item*         itemFromIndex(const QModelIndex& i) const;
-    ItemInfo     infoFromItem(Item* const item) const;
-    ItemInfoList infosFromItems(QList<Item*> const items) const;
+    QModelIndex   itemIndex(Item* const item)                                                                   const;
+    QModelIndex   indexFromImageId(const qlonglong imageId, const int columnIndex)                              const;
+    Item*         itemFromImageId(const qlonglong imageId)                                                      const;
+    Item*         itemFromIndex(const QModelIndex& i)                                                           const;
+    ItemInfo     infoFromItem(Item* const item)                                                                 const;
+    ItemInfoList infosFromItems(const QList<Item*>& items)                                                      const;
 
-    QVariant              itemDatabaseFieldRaw(Item* const item, const DatabaseFields::Set requestedField);
-    DatabaseFieldsHashRaw itemDatabaseFieldsRaw(Item* const item, const DatabaseFields::Set requestedSet);
+    QVariant              itemDatabaseFieldRaw(Item* const item, const DatabaseFields::Set& requestedField);
+    DatabaseFieldsHashRaw itemDatabaseFieldsRaw(Item* const item, const DatabaseFields::Set& requestedSet);
 
-    qlonglong        imageId(const QModelIndex& anIndex) const;
-    QList<qlonglong> imageIds(const QModelIndexList& indexList) const;
-    QList<ItemInfo> imageInfos(const QModelIndexList& indexList) const;
-    ItemInfo        imageInfo(const QModelIndex& index) const;
-    QList<ItemInfo> allItemInfo() const;
+    qlonglong        imageId(const QModelIndex& anIndex)                                                        const;
+    QList<qlonglong> imageIds(const QModelIndexList& indexList)                                                 const;
+    QList<ItemInfo> imageInfos(const QModelIndexList& indexList)                                                const;
+    ItemInfo        imageInfo(const QModelIndex& index)                                                         const;
+    QList<ItemInfo> allItemInfo()                                                                               const;
 
-    QList<Item*> sortItems(const QList<Item*> itemList);
+    QList<Item*> sortItems(const QList<Item*>& itemList);
     class LessThan;
     bool lessThan(Item* const itemA, Item* const itemB);
     int findChildSortedPosition(Item* const parentItem, Item* const childItem);
 
     void scheduleResort();
-    GroupingMode groupingMode() const;
+    GroupingMode groupingMode()                                                                                 const;
     void setGroupingMode(const GroupingMode newGroupingMode);
 
 public:
 
-    virtual QModelIndex index(int row, int column, const QModelIndex& parent = QModelIndex()) const;
-    virtual QModelIndex parent(const QModelIndex& childIndex) const;
-    virtual int rowCount(const QModelIndex& parent) const;
-    virtual int columnCount(const QModelIndex& i) const;
-    virtual QVariant data(const QModelIndex& i, int role) const;
-    virtual QVariant headerData(int section, Qt::Orientation orientation, int role) const;
-    virtual Qt::ItemFlags flags(const QModelIndex& index) const;
-    virtual bool hasChildren(const QModelIndex& parent = QModelIndex()) const;
+    QModelIndex index(int row, int column, const QModelIndex& parent = QModelIndex())                   const override;
+    QModelIndex parent(const QModelIndex& childIndex)                                                   const override;
+    int rowCount(const QModelIndex& parent)                                                             const override;
+    int columnCount(const QModelIndex& i)                                                               const override;
+    QVariant data(const QModelIndex& i, int role)                                                       const override;
+    QVariant headerData(int section, Qt::Orientation orientation, int role)                             const override;
+    Qt::ItemFlags flags(const QModelIndex& index)                                                       const override;
+    bool hasChildren(const QModelIndex& parent = QModelIndex())                                         const override;
 
-    // drag-and-drop related functions
-    virtual Qt::DropActions supportedDropActions() const;
-    virtual QStringList mimeTypes() const;
-    virtual bool dropMimeData(const QMimeData* data, Qt::DropAction action, int row, int column, const QModelIndex& parent);
-    virtual QMimeData* mimeData(const QModelIndexList& indexes) const;
+    /// drag-and-drop related functions
+    Qt::DropActions supportedDropActions()                                                              const override;
+    QStringList mimeTypes()                                                                             const override;
+    bool dropMimeData(const QMimeData* data,
+                              Qt::DropAction action,
+                              int row,
+                              int column,
+                              const QModelIndex& parent) override;
+    QMimeData* mimeData(const QModelIndexList& indexes)                                                 const override;
 
 protected:
 
-    virtual void sort(int column, Qt::SortOrder order = Qt::AscendingOrder);
+    void sort(int column, Qt::SortOrder order = Qt::AscendingOrder)                                           override;
 
 private Q_SLOTS:
 

@@ -6,7 +6,7 @@
  * Date        : 2005-02-26
  * Description : image channels mixer.
  *
- * Copyright (C) 2005-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2005-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -40,24 +40,24 @@ class ChannelMixerTool : public EditorToolThreaded
 public:
 
     explicit ChannelMixerTool(QObject* const parent);
-    ~ChannelMixerTool();
+    ~ChannelMixerTool()         override;
 
 private:
 
-    void readSettings();
-    void writeSettings();
-    void preparePreview();
-    void prepareFinal();
-    void setPreviewImage();
-    void setFinalImage();
+    void readSettings()         override;
+    void writeSettings()        override;
+    void preparePreview()       override;
+    void prepareFinal()         override;
+    void setPreviewImage()      override;
+    void setFinalImage()        override;
 
     void updateSettingsWidgets();
 
 private Q_SLOTS:
 
-    void slotResetSettings();
-    void slotSaveAsSettings();
-    void slotLoadSettings();
+    void slotResetSettings()    override;
+    void slotSaveAsSettings()   override;
+    void slotLoadSettings()     override;
     void slotOutChannelChanged();
 
 private:

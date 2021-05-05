@@ -47,7 +47,7 @@ public:
 public:
 
     explicit ShowfotoCategorizedView(QWidget* const parent = nullptr);
-    ~ShowfotoCategorizedView();
+    ~ShowfotoCategorizedView() override;
 
     void setModels(ShowfotoItemModel* model, ShowfotoSortFilterModel* filterModel);
 
@@ -186,7 +186,7 @@ protected:
     /// Reimplement these in a subclass
     virtual void activated(const ShowfotoItemInfo& info, Qt::KeyboardModifiers modifiers);
     virtual void showContextMenuOnInfo(QContextMenuEvent* event, const ShowfotoItemInfo& info);
-    virtual void showContextMenuOnIndex(QContextMenuEvent* event, const QModelIndex& index) override;
+    void showContextMenuOnIndex(QContextMenuEvent* event, const QModelIndex& index) override;
 
 private Q_SLOTS:
 
@@ -196,6 +196,12 @@ private Q_SLOTS:
 private:
 
     void scrollToStoredItem();
+
+private:
+
+    // Disable
+    ShowfotoCategorizedView(const ShowfotoCategorizedView&)            = delete;
+    ShowfotoCategorizedView& operator=(const ShowfotoCategorizedView&) = delete;
 
 private:
 

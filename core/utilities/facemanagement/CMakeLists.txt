@@ -1,33 +1,36 @@
 #
-# Copyright (c) 2010-2020 by Gilles Caulier, <caulier dot gilles at gmail dot com>
+# Copyright (c) 2010-2021 by Gilles Caulier, <caulier dot gilles at gmail dot com>
 # Copyright (c) 2015      by Veaceslav Munteanu, <veaceslav dot munteanu90 at gmail dot com>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
 
+APPLY_COMMON_POLICIES()
+
 set(libfacemanagement_SRCS
-    database/faceutils.cpp
-    database/faceitemretriever.cpp
-    database/facescansettings.cpp
-    items/faceitem.cpp
-    items/facegroup.cpp
-    items/facegroup_p.cpp
-    threads/facepreviewloader.cpp
-    threads/facepipeline.cpp
-    threads/facepipeline_p.cpp
-    threads/facepipelinepackage.cpp
-    threads/parallelpipes.cpp
-    threads/scanstatefilter.cpp
-    widgets/facescanwidget.cpp
-    widgets/assignnamewidget.cpp
-    widgets/assignnamewidget_p.cpp
-    widgets/assignnamewidgetstates.cpp
-    bench/detectionbenchmarker.cpp
-    bench/recognitionbenchmarker.cpp
-    workers/detectionworker.cpp
-    workers/recognitionworker.cpp
-    workers/databasewriter.cpp
-    workers/trainerworker.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/database/faceutils.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/database/faceitemretriever.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/database/facescansettings.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/items/faceitem.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/items/facegroup.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/items/facegroup_p.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/threads/facepreviewloader.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/threads/facepipeline.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/threads/facepipeline_p.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/threads/facepipelinepackage.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/threads/parallelpipes.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/threads/scanstatefilter.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/facescanwidget.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/assignnamewidget.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/assignnamewidget_p.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/assignnamewidgetstates.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/facemanagementhelpdlg.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/bench/detectionbenchmarker.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/bench/recognitionbenchmarker.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/workers/detectionworker.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/workers/recognitionworker.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/workers/databasewriter.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/workers/trainerworker.cpp
 )
 
 include_directories($<TARGET_PROPERTY:Qt5::Sql,INTERFACE_INCLUDE_DIRECTORIES>
@@ -43,4 +46,10 @@ if(ENABLE_DBUS)
     include_directories($<TARGET_PROPERTY:Qt5::DBus,INTERFACE_INCLUDE_DIRECTORIES>)
 endif()
 
-add_library(facemanagement_src OBJECT ${libfacemanagement_SRCS})
+# Used by digikamgui
+add_library(gui_facemanagement_obj OBJECT ${libfacemanagement_SRCS})
+
+target_compile_definitions(gui_facemanagement_obj
+                           PRIVATE
+                           digikamgui_EXPORTS
+)

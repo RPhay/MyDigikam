@@ -7,7 +7,7 @@
  * Description : a presentation tool.
  *
  * Copyright (C) 2007-2008 by Valerio Fuoglio <valerio dot fuoglio at gmail dot com>
- * Copyright (C) 2012-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * Parts of this code are based on smoothslidesaver by Carsten Weinhold
  * <carsten dot weinhold at gmx dot de>
@@ -26,6 +26,10 @@
 
 #ifndef DIGIKAM_KB_EFFECT_H
 #define DIGIKAM_KB_EFFECT_H
+
+// Qt includes
+
+#include <QObject>
 
 namespace DigikamGenericPresentationPlugin
 {
@@ -47,9 +51,9 @@ public:
 public:
 
     explicit KBEffect(PresentationKB* const parent, bool m_needFadeIn = true);
-    virtual ~KBEffect();
+    virtual ~KBEffect()                  = default;
 
-    virtual bool fadeIn() const
+    virtual bool fadeIn()       const
     {
         return m_needFadeIn;
     };
@@ -64,7 +68,7 @@ protected:
 
     void     setupNewImage(int img);
     void     swapImages();
-    KBImage* image(int img) const;
+    KBImage* image(int img)     const;
 
 protected:
 
@@ -75,6 +79,10 @@ protected:
 private:
 
     PresentationKB* m_slideWidget;
+
+private:
+
+    Q_DISABLE_COPY(KBEffect)
 };
 
 // -------------------------------------------------------------------------
@@ -85,15 +93,19 @@ class FadeKBEffect: public KBEffect
 public:
 
     explicit FadeKBEffect(PresentationKB* const parent, bool m_needFadeIn = true);
-    virtual ~FadeKBEffect();
+    ~FadeKBEffect()              override;
 
-    virtual Type type() override
+    Type type()                  override
     {
         return Fade;
     };
 
-    virtual void advanceTime(float step) override;
-    virtual bool done() override;
+    void advanceTime(float step) override;
+    bool done()                  override;
+
+private:
+
+    Q_DISABLE_COPY(FadeKBEffect)
 };
 
 // -------------------------------------------------------------------------
@@ -104,15 +116,19 @@ class BlendKBEffect: public KBEffect
 public:
 
     explicit BlendKBEffect(PresentationKB* const parent, bool m_needFadeIn = true);
-    virtual ~BlendKBEffect();
+    ~BlendKBEffect()             override;
 
-    virtual Type type() override
+    Type type()                  override
     {
         return Blend;
     };
 
-    virtual void advanceTime(float step) override;
-    virtual bool done() override;
+    void advanceTime(float step) override;
+    bool done()                  override;
+
+private:
+
+    Q_DISABLE_COPY(BlendKBEffect)
 };
 
 } // namespace DigikamGenericPresentationPlugin

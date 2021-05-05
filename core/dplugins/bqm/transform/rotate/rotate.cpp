@@ -6,7 +6,7 @@
  * Date        : 2009-02-10
  * Description : rotate image batch tool.
  *
- * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -54,10 +54,10 @@ public:
 
     explicit Private()
       : CUSTOM_ANGLE(DImg::ROT270 + 1),
-        label(nullptr),
-        useExif(nullptr),
-        comboBox(nullptr),
-        frSettings(nullptr)
+        label       (nullptr),
+        useExif     (nullptr),
+        comboBox    (nullptr),
+        frSettings  (nullptr)
     {
     }
 
@@ -74,7 +74,7 @@ public:
 
 Rotate::Rotate(QObject* const parent)
     : BatchTool(QLatin1String("Rotate"), TransformTool, parent),
-      d(new Private)
+      d        (new Private)
 {
 }
 
@@ -83,20 +83,25 @@ Rotate::~Rotate()
     delete d;
 }
 
+BatchTool* Rotate::clone(QObject* const parent) const
+{
+    return new Rotate(parent);
+}
+
 void Rotate::registerSettingsWidget()
 {
 
     DVBox* const vbox = new DVBox;
-    d->useExif        = new QCheckBox(i18n("Use Exif Orientation"), vbox);
+    d->useExif        = new QCheckBox(i18nc("@title", "Use Exif Orientation"), vbox);
 
     d->label     = new QLabel(vbox);
     d->comboBox  = new DComboBox(vbox);
-    d->comboBox->insertItem(DImg::ROT90,     i18n("90 degrees"));
-    d->comboBox->insertItem(DImg::ROT180,    i18n("180 degrees"));
-    d->comboBox->insertItem(DImg::ROT270,    i18n("270 degrees"));
-    d->comboBox->insertItem(d->CUSTOM_ANGLE, i18n("Custom"));
+    d->comboBox->insertItem(DImg::ROT90,     i18nc("@item: angle", "90 degrees"));
+    d->comboBox->insertItem(DImg::ROT180,    i18nc("@item: angle", "180 degrees"));
+    d->comboBox->insertItem(DImg::ROT270,    i18nc("@item: angle", "270 degrees"));
+    d->comboBox->insertItem(d->CUSTOM_ANGLE, i18nc("@item: angle", "Custom"));
     d->comboBox->setDefaultIndex(DImg::ROT90);
-    d->label->setText(i18n("Angle:"));
+    d->label->setText(i18nc("@label", "Angle:"));
 
     d->frSettings       = new FreeRotationSettings(vbox);
 
@@ -131,6 +136,7 @@ BatchToolSettings Rotate::defaultSettings()
     settings.insert(QLatin1String("angle"),     defaultPrm.angle);
     settings.insert(QLatin1String("antiAlias"), defaultPrm.antiAlias);
     settings.insert(QLatin1String("autoCrop"),  defaultPrm.autoCrop);
+
     return settings;
 }
 
@@ -188,21 +194,26 @@ bool Rotate::toolOperations()
             switch (rotation)
             {
                 case DImg::ROT90:
+                {
                     return rotator.exifTransform(MetaEngineRotation::Rotate90);
-                    break;
+                }
 
                 case DImg::ROT180:
+                {
                     return rotator.exifTransform(MetaEngineRotation::Rotate180);
-                    break;
+                }
 
                 case DImg::ROT270:
+                {
                     return rotator.exifTransform(MetaEngineRotation::Rotate270);
-                    break;
+                }
 
                 default:
+                {
                     // there is no lossless method to turn JPEG image with a custom angle.
                     // fall through
                     break;
+                }
             }
         }
     }
@@ -217,6 +228,7 @@ bool Rotate::toolOperations()
     if (useExif)
     {
         // Exif rotation is currently not recorded to image history
+
         image().rotateAndFlip(image().exifOrientation(inputUrl().toLocalFile()));
     }
     else
@@ -229,18 +241,21 @@ bool Rotate::toolOperations()
                 applyFilter(&filter);
                 break;
             }
+
             case DImg::ROT180:
             {
                 DImgBuiltinFilter filter(DImgBuiltinFilter::Rotate180);
                 applyFilter(&filter);
                 break;
             }
+
             case DImg::ROT270:
             {
                 DImgBuiltinFilter filter(DImgBuiltinFilter::Rotate270);
                 applyFilter(&filter);
                 break;
             }
+
             default:      // Custom value
             {
                 FreeRotationFilter fr(&image(), nullptr, prm);

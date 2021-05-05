@@ -6,7 +6,7 @@
  * Date        : 2009-02-15
  * Description : Plasma Address Book contacts interface
  *
- * Copyright (C) 2010-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2010-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -56,17 +56,14 @@
 namespace Digikam
 {
 
-// See http://techbase.kde.org/Development/AkonadiPorting/AddressBook
+// See techbase.kde.org/Development/AkonadiPorting/AddressBook
 
 AkonadiIface::AkonadiIface(QMenu* const parent)
-    : QObject(parent)
+    : QObject(parent),
+      m_parent(parent)
 {
-    m_parent  = parent;
-    m_ABCmenu = 0;
-
-    m_ABCmenu = new QMenu(m_parent);
-
-    QAction* const abcAction = m_ABCmenu->menuAction();
+    m_ABCmenu                   = new QMenu(m_parent);
+    QAction* const abcAction    = m_ABCmenu->menuAction();
     abcAction->setIcon(QIcon::fromTheme(QLatin1String("address-book-new")));
     abcAction->setText(i18n("Create Tag From Address Book"));
     m_parent->addMenu(m_ABCmenu);
@@ -89,7 +86,7 @@ void AkonadiIface::slotABCSearchResult(KJob* job)
 {
     if (job->error())
     {
-        qCDebug(DIGIKAM_GENERAL_LOG) << "Akonadi search was not successful";
+        qCDebug(DIGIKAM_GENERAL_LOG) << "Address book search was not successful";
         return;
     }
 
@@ -98,7 +95,7 @@ void AkonadiIface::slotABCSearchResult(KJob* job)
 
     if (contacts.isEmpty())
     {
-        qCDebug(DIGIKAM_GENERAL_LOG) << "No contacts in Akonadi";
+        qCDebug(DIGIKAM_GENERAL_LOG) << "No contacts in address book";
         return;
     }
 
@@ -135,6 +132,7 @@ void AkonadiIface::slotABCSearchResult(KJob* job)
 void AkonadiIface::slotABCMenuTriggered(QAction* action)
 {
     QString name = action->iconText();
+
     emit signalContactTriggered(name);
 }
 

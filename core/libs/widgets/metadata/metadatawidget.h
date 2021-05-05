@@ -6,7 +6,7 @@
  * Date        : 2006-02-22
  * Description : a generic widget to display metadata
  *
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -55,8 +55,8 @@ public:
 
 public:
 
-    explicit MetadataWidget(QWidget* const parent, const QString& name=QString());
-    ~MetadataWidget();
+    explicit MetadataWidget(QWidget* const parent, const QString& name = QString());
+    ~MetadataWidget() override;
 
     int     getMode()           const;
     void    setMode(int mode);
@@ -69,11 +69,13 @@ public:
 
     void    setUserAreaWidget(QWidget* const w);
 
+public:
+
     virtual QString getTagTitle(const QString& key);
     virtual QString getTagDescription(const QString& key);
 
     virtual bool loadFromData(const QString& fileName,
-                              const DMetadata& data=DMetadata());
+                              const DMetadata& data = DMetadata());
 
     virtual bool loadFromURL(const QUrl& url) = 0;
 
@@ -91,18 +93,25 @@ protected:
     void   setFileName(const QString& fileName);
     MetadataListView* view() const;
 
-    bool   setMetadata(const DMetadata& data=DMetadata());
-    const  DMetadata& getMetadata();
+    bool   setMetadata(const DMetadata& data = DMetadata());
+    DMetadata* getMetadata() const;
 
-    void   setMetadataMap(const DMetadata::MetaDataMap& data=DMetadata::MetaDataMap());
+    void   setMetadataMap(const DMetadata::MetaDataMap& data = DMetadata::MetaDataMap());
     const  DMetadata::MetaDataMap& getMetadataMap();
 
-    void   setIfdList(const DMetadata::MetaDataMap& ifds, const QStringList& tagsFilter=QStringList());
+    void   setIfdList(const DMetadata::MetaDataMap& ifds, const QStringList& tagsFilter = QStringList());
     void   setIfdList(const DMetadata::MetaDataMap& ifds, const QStringList& keysFilter,
                       const QStringList& tagsFilter);
 
     QUrl   saveMetadataToFile(const QString& caption, const QString& fileFilter);
     bool   storeMetadataToFile(const QUrl& url, const QByteArray& metaData);
+
+    /**
+     * Call this method in children class contructors to init signal/slots connections.
+     */
+    void setup();
+
+protected:
 
     virtual void buildView();
     virtual void setMetadataEmpty();
@@ -110,18 +119,11 @@ protected:
     virtual bool    decodeMetadata()   = 0;
     virtual QString getMetadataTitle() = 0;
 
-private Q_SLOTS :
+private Q_SLOTS:
 
     void slotCopy2Clipboard();
     void slotPrintMetadata();
     void slotFilterChanged(QAction*);
-
-protected:
-
-    /**
-     * Call this method in children class contructors to init signal/slots connections.
-     */
-    void setup();
 
 private:
 

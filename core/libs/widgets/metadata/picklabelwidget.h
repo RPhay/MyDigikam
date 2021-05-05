@@ -6,7 +6,7 @@
  * Date        : 2011-02-14
  * Description : pick label widget
  *
- * Copyright (C) 2011-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2011-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -48,8 +48,8 @@ class DIGIKAM_EXPORT PickLabelWidget : public DVBox
 
 public:
 
-    explicit PickLabelWidget(QWidget* const parent=nullptr);
-    virtual ~PickLabelWidget();
+    explicit PickLabelWidget(QWidget* const parent = nullptr);
+    ~PickLabelWidget() override;
 
     /**
      * Show or not on the bottom view the description of label with shortcuts.
@@ -102,8 +102,8 @@ class DIGIKAM_EXPORT PickLabelSelector : public QPushButton
 
 public:
 
-    explicit PickLabelSelector(QWidget* const parent=nullptr);
-    virtual ~PickLabelSelector();
+    explicit PickLabelSelector(QWidget* const parent = nullptr);
+    ~PickLabelSelector() override;
 
     void setPickLabel(PickLabel label);
     PickLabel colorLabel();
@@ -132,8 +132,8 @@ class DIGIKAM_EXPORT PickLabelMenuAction : public QMenu
 
 public:
 
-    explicit PickLabelMenuAction(QMenu* const parent=nullptr);
-    virtual ~PickLabelMenuAction();
+    explicit PickLabelMenuAction(QMenu* const parent = nullptr);
+    ~PickLabelMenuAction() override;
 
 Q_SIGNALS:
 

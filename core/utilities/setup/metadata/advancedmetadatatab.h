@@ -45,7 +45,7 @@ class AdvancedMetadataTab : public QWidget
 public:
 
     explicit AdvancedMetadataTab(QWidget* const parent = nullptr);
-    virtual ~AdvancedMetadataTab();
+    ~AdvancedMetadataTab() override;
 
     void applySettings();
 
@@ -89,16 +89,6 @@ private:
         ALTNAMEOPTS_ROLE = Qt::UserRole+15,
 
         ISDEFAULT_ROLE   = Qt::UserRole+16,
-    };
-
-    enum ModelNumbers
-    {
-        READ_TAGS      = 0,
-        READ_RATINGS   = 1,
-        READ_COMMENTS  = 2,
-        WRITE_TAGS     = 3,
-        WRITE_RATINGS  = 4,
-        WRITE_COMMENTS = 5
     };
 
 private:

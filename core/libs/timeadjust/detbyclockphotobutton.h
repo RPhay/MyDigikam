@@ -46,6 +46,11 @@ public:
 Q_SIGNALS:
 
     void signalClockPhotoDropped(const QUrl&);
+
+private:
+
+    // Disable
+    DetByClockPhotoButton(QWidget*);
 };
 
 } // namespace Digikam

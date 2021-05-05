@@ -8,7 +8,7 @@
  *
  * Copyright (C) 2007      by Rafael Fernández López <ereslibre at kde dot org>
  * Copyright (C) 2009-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2011-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2011-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -55,9 +55,9 @@ public:
 };
 
 
-DCategoryDrawer::DCategoryDrawer(DCategorizedView *view)
+DCategoryDrawer::DCategoryDrawer(DCategorizedView* const view)
      : QObject(view),
-       d(new Private(view))
+       d      (new Private(view))
 {
 }
 
@@ -73,8 +73,8 @@ void DCategoryDrawer::drawCategory(const QModelIndex& index,
 {
     painter->setRenderHint(QPainter::Antialiasing);
 
-    const QString category = index.model()->data(index, DCategorizedSortFilterProxyModel::CategoryDisplayRole).toString();
-    const QRect optRect    = option.rect;
+    const QString category         = index.model()->data(index, DCategorizedSortFilterProxyModel::CategoryDisplayRole).toString();
+    const QRect optRect            = option.rect;
     QFont font(QApplication::font());
     font.setBold(true);
     const QFontMetrics fontMetrics = QFontMetrics(font);
@@ -96,7 +96,7 @@ void DCategoryDrawer::drawCategory(const QModelIndex& index,
     //BEGIN: left vertical line
     {
         QPoint start(optRect.topLeft());
-        start.ry() += 3;
+        start.ry()              += 3;
         QPoint verticalGradBottom(optRect.topLeft());
         verticalGradBottom.ry() += fontMetrics.height() + 5;
         QLinearGradient gradient(start, verticalGradBottom);
@@ -109,7 +109,7 @@ void DCategoryDrawer::drawCategory(const QModelIndex& index,
     //BEGIN: horizontal line
     {
         QPoint start(optRect.topLeft());
-        start.rx() += 3;
+        start.rx()             += 3;
         QPoint horizontalGradTop(optRect.topLeft());
         horizontalGradTop.rx() += optRect.width() - 6;
         painter->fillRect(QRect(start, QSize(optRect.width() - 6, 1)), outlineColor);
@@ -132,7 +132,7 @@ void DCategoryDrawer::drawCategory(const QModelIndex& index,
     //BEGIN: right vertical line
     {
         QPoint start(optRect.topRight());
-        start.ry() += 3;
+        start.ry()              += 3;
         QPoint verticalGradBottom(optRect.topRight());
         verticalGradBottom.ry() += fontMetrics.height() + 5;
         QLinearGradient gradient(start, verticalGradBottom);

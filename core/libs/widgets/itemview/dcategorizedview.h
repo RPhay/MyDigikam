@@ -8,7 +8,7 @@
  *
  * Copyright (C) 2007      by Rafael Fernández López <ereslibre at kde dot org>
  * Copyright (C) 2009-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2011-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2011-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -52,7 +52,7 @@ class DIGIKAM_EXPORT DCategorizedView : public QListView
 public:
 
     explicit DCategorizedView(QWidget* const parent = nullptr);
-    ~DCategorizedView();
+    ~DCategorizedView() override;
 
     void setGridSize(const QSize& size);
 
@@ -69,9 +69,9 @@ public:
      */
     void setDrawDraggedItems(bool drawDraggedItems);
 
-    virtual void        setModel(QAbstractItemModel* model)                                    override;
-    virtual QRect       visualRect(const QModelIndex& index)                            const  override;
-    virtual QModelIndex indexAt(const QPoint& point)                                    const  override;
+    void        setModel(QAbstractItemModel* model)                                    override;
+    QRect       visualRect(const QModelIndex& index)                            const  override;
+    QModelIndex indexAt(const QPoint& point)                                    const  override;
 
     /**
      * This method will return all indexes whose visual rect intersects @p rect.
@@ -103,47 +103,47 @@ public:
 
 public Q_SLOTS:
 
-    virtual void reset()                                                                       override;
+    void reset()                                                                       override;
 
 protected:
 
-    virtual void paintEvent(QPaintEvent* event)                                                override;
+    void paintEvent(QPaintEvent* event)                                                override;
 
-    virtual void resizeEvent(QResizeEvent* event)                                              override;
+    void resizeEvent(QResizeEvent* event)                                              override;
 
-    virtual void setSelection(const QRect& rect, QItemSelectionModel::SelectionFlags flags)    override;
+    void setSelection(const QRect& rect, QItemSelectionModel::SelectionFlags flags)    override;
 
-    virtual void mouseMoveEvent(QMouseEvent* event)                                            override;
+    void mouseMoveEvent(QMouseEvent* event)                                            override;
 
-    virtual void mousePressEvent(QMouseEvent* event)                                           override;
+    void mousePressEvent(QMouseEvent* event)                                           override;
 
-    virtual void mouseReleaseEvent(QMouseEvent* event)                                         override;
+    void mouseReleaseEvent(QMouseEvent* event)                                         override;
 
-    virtual void leaveEvent(QEvent* event)                                                     override;
+    void leaveEvent(QEvent* event)                                                     override;
 
-    virtual void startDrag(Qt::DropActions supportedActions)                                   override;
+    void startDrag(Qt::DropActions supportedActions)                                   override;
 
-    virtual void dragMoveEvent(QDragMoveEvent* event)                                          override;
+    void dragMoveEvent(QDragMoveEvent* event)                                          override;
 
-    virtual void dragLeaveEvent(QDragLeaveEvent* event)                                        override;
+    void dragLeaveEvent(QDragLeaveEvent* event)                                        override;
 
-    virtual void dropEvent(QDropEvent* event)                                                  override;
+    void dropEvent(QDropEvent* event)                                                  override;
 
-    virtual QModelIndex moveCursor(CursorAction cursorAction, Qt::KeyboardModifiers modifiers) override;
+    QModelIndex moveCursor(CursorAction cursorAction, Qt::KeyboardModifiers modifiers) override;
 
 protected Q_SLOTS:
 
-    virtual void rowsInserted(const QModelIndex& parent, int start, int end)                   override;
+    void rowsInserted(const QModelIndex& parent, int start, int end)                   override;
 
     virtual void rowsInsertedArtifficial(const QModelIndex& parent, int start, int end);
 
     virtual void rowsRemoved(const QModelIndex& parent, int start, int end);
 
-    virtual void updateGeometries()                                                            override;
+    void updateGeometries()                                                            override;
 
     virtual void slotLayoutChanged();
 
-    virtual void currentChanged(const QModelIndex& current, const QModelIndex& previous)       override;
+    void currentChanged(const QModelIndex& current, const QModelIndex& previous)       override;
 
 private:
 

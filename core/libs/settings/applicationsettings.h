@@ -7,7 +7,7 @@
  * Description : application settings interface
  *
  * Copyright (C) 2003-2004 by Renchi Raju <renchi dot raju at gmail dot com>
- * Copyright (C) 2003-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2003-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2007      by Arnd Baecker <arnd dot baecker at web dot de>
  * Copyright (C) 2014-2015 by Mohamed_Anwer <m_dot_anwer at gmx dot com>
  * Copyright (C) 2017      by Simon Frei <freisim93 at gmail dot com>
@@ -53,7 +53,7 @@ class DbEngineParameters;
 class VersionManagerSettings;
 class PreviewSettings;
 
-class DIGIKAM_EXPORT ApplicationSettings : public QObject
+class DIGIKAM_GUI_EXPORT ApplicationSettings : public QObject
 {
     Q_OBJECT
 
@@ -69,7 +69,8 @@ public:
     enum ItemLeftClickAction
     {
         ShowPreview = 0,
-        StartEditor
+        StartEditor,
+        OpenDefault
     };
 
     /**
@@ -162,6 +163,9 @@ public:
     void setTreeViewIconSize(int val);
     int  getTreeViewIconSize() const;
 
+    void setTreeViewFaceSize(int val);
+    int  getTreeViewFaceSize() const;
+
     void setTreeViewFont(const QFont& font);
     QFont getTreeViewFont() const;
 
@@ -215,8 +219,8 @@ public:
     void setImageSeparationSortOrder(int order);
     int  getImageSeparationSortOrder() const;
 
-    void setItemLeftClickAction(const ItemLeftClickAction action);
-    ItemLeftClickAction getItemLeftClickAction() const;
+    void setItemLeftClickAction(int action);
+    int  getItemLeftClickAction() const;
 
     void setIconShowName(bool val);
     bool getIconShowName() const;
@@ -422,6 +426,9 @@ public:
     void setDrawFramesToGrouped(bool val);
     bool getDrawFramesToGrouped() const;
 
+    void setExpandNewCurrentItem(bool val);
+    bool getExpandNewCurrentItem() const;
+
     void setScrollItemToCenter(bool val);
     bool getScrollItemToCenter() const;
 
@@ -462,11 +469,20 @@ public:
     void setSidebarTitleStyle(DMultiTabBar::TextStyle style);
     DMultiTabBar::TextStyle getSidebarTitleStyle() const;
 
+    int getUpdateType() const;
+    void setUpdateType(int type);
+
+    bool getUpdateWithDebug() const;
+    void setUpdateWithDebug(bool dbg);
+
     void setVersionManagerSettings(const VersionManagerSettings& settings);
     VersionManagerSettings getVersionManagerSettings() const;
 
     double getFaceDetectionAccuracy() const;
     void setFaceDetectionAccuracy(double value);
+
+    bool getFaceDetectionYoloV3() const;
+    void setFaceDetectionYoloV3(bool yolo);
 
     void setShowThumbbar(bool val);
     bool getShowThumbbar() const;
@@ -533,14 +549,19 @@ public:
     void setDuplicatesSearchRestrictions(int val);
     int  getDuplicatesSearchRestrictions() const;
 
+    void setHelpBoxNotificationSeen(bool val);
+    bool getHelpBoxNotificationSeen();
+
 private Q_SLOTS:
 
     void applyBalooSettings();
 
 private:
 
-    explicit ApplicationSettings();
-    ~ApplicationSettings();
+    // Disabled
+    ApplicationSettings();
+    explicit ApplicationSettings(QObject*) = delete;
+    ~ApplicationSettings() override;
 
     KConfigGroup generalConfigGroup() const;
 

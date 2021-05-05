@@ -8,7 +8,7 @@
  *
  * Copyright (C) 2005      by Renchi Raju <renchi dot raju at gmail dot com>
  * Copyright (C) 2007-2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2013      by Michael G. Hansen <mike at mghansen dot de>
  *
  * This program is free software; you can redistribute it
@@ -260,7 +260,9 @@ Template ItemInfo::metadataTemplate() const
     }
 
     Template t;
-    imageCopyright().fillTemplate(t);
+
+    ItemCopyright ic          = imageCopyright();
+    ic.fillTemplate(t);
 
     ItemExtendedProperties ep = imageExtendedProperties();
     t.setLocationInfo(ep.location());
@@ -277,7 +279,9 @@ void ItemInfo::setMetadataTemplate(const Template& t)
     }
 
     removeMetadataTemplate();
-    imageCopyright().setFromTemplate(t);
+
+    ItemCopyright ic          = imageCopyright();
+    ic.setFromTemplate(t);
 
     ItemExtendedProperties ep = imageExtendedProperties();
     ep.setLocation(t.locationInfo());
@@ -291,7 +295,8 @@ void ItemInfo::removeMetadataTemplate()
         return;
     }
 
-    imageCopyright().removeAll();
+    ItemCopyright ic          = imageCopyright();
+    ic.removeAll();
 
     ItemExtendedProperties ep = imageExtendedProperties();
     ep.removeLocation();

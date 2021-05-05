@@ -6,7 +6,7 @@
  * Date        : 2012-01-04
  * Description : a message box to manage camera items
  *
- * Copyright (C) 2012-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -40,13 +40,13 @@ class QDialogButtonBox;
 namespace Digikam
 {
 
-class DIGIKAM_EXPORT CameraItem : public QTreeWidgetItem
+class DIGIKAM_GUI_EXPORT CameraItem : public QTreeWidgetItem
 {
 
 public:
 
     CameraItem(QTreeWidget* const parent, const CamItemInfo& info);
-    virtual ~CameraItem();
+    ~CameraItem()                  override;
 
     bool hasValidThumbnail() const;
     CamItemInfo info()       const;
@@ -57,25 +57,31 @@ private:
 
     class Private;
     Private* const d;
+
+private:
+
+    Q_DISABLE_COPY(CameraItem)
 };
 
 // -----------------------------------------------------------
 
-class DIGIKAM_EXPORT CameraItemList : public QTreeWidget
+class DIGIKAM_GUI_EXPORT CameraItemList : public QTreeWidget
 {
     Q_OBJECT
 
 public:
 
     explicit CameraItemList(QWidget* const parent = nullptr);
-    virtual ~CameraItemList();
+    ~CameraItemList()                             override;
 
     void setThumbCtrl(CameraThumbsCtrl* const ctrl);
     void setItems(const CamItemInfoList& items);
 
-private :
+private:
 
-    void drawRow(QPainter* p, const QStyleOptionViewItem& opt, const QModelIndex& index) const;
+    void drawRow(QPainter* p,
+                 const QStyleOptionViewItem& opt,
+                 const QModelIndex& index)  const override;
 
 private Q_SLOTS:
 
@@ -89,7 +95,7 @@ private:
 
 // -----------------------------------------------------------
 
-class DIGIKAM_EXPORT CameraMessageBox
+class DIGIKAM_GUI_EXPORT CameraMessageBox
 {
 
 public:

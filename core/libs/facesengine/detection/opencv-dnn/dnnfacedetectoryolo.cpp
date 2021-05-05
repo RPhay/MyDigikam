@@ -11,8 +11,8 @@
  *               sthanhng github on face detection with Yolov3:
  *               https://github.com/sthanhng/yoloface
  *
- * Copyright (C) 2019 by Thanh Trung Dinh <dinhthanhtrung1996 at gmail dot com>
- * Copyright (C) 2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2019      by Thanh Trung Dinh <dinhthanhtrung1996 at gmail dot com>
+ * Copyright (C) 2020-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -31,39 +31,91 @@
 
 // Qt includes
 
-#include <QString>
-#include <QStandardPaths>
 #include <QList>
 #include <QRect>
+#include <QString>
+#include <QElapsedTimer>
+#include <QStandardPaths>
 
 // Local includes
 
 #include "digikam_debug.h"
+#include "digikam_config.h"
 
 namespace Digikam
 {
 
 DNNFaceDetectorYOLO::DNNFaceDetectorYOLO()
-    : DNNFaceDetectorBase(1.0 / 255.0, cv::Scalar(0.0, 0.0, 0.0), cv::Size(416, 416))
+    : DNNFaceDetectorBase(1.0F / 255.0F, cv::Scalar(0.0, 0.0, 0.0), cv::Size(416, 416))
 {
-    QString nnmodel = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
-                                             QLatin1String("digikam/facesengine/yolov3-face.cfg"));
-    QString nndata  = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
-                                             QLatin1String("digikam/facesengine/yolov3-wider_16000.weights"));
-
-    qCDebug(DIGIKAM_FACEDB_LOG) << "nnmodel: " << nnmodel << ", nndata " << nndata;
-
-    net             = cv::dnn::readNetFromDarknet(nnmodel.toStdString(), nndata.toStdString());
+    loadModels();
 }
 
 DNNFaceDetectorYOLO::~DNNFaceDetectorYOLO()
 {
 }
 
+bool DNNFaceDetectorYOLO::loadModels()
+{
+    QString model   = QLatin1String("yolov3-face.cfg");
+    QString data    = QLatin1String("yolov3-wider_16000.weights");
+
+    QString nnmodel = QStandardPaths::locate(QStandardPaths::AppDataLocation,
+                                             QString::fromLatin1("facesengine/%1").arg(model));
+    QString nndata  = QStandardPaths::locate(QStandardPaths::AppDataLocation,
+                                             QString::fromLatin1("facesengine/%1").arg(data));
+
+    if (!nnmodel.isEmpty() && !nndata.isEmpty())
+    {
+        try
+        {
+            qCDebug(DIGIKAM_FACEDB_LOG) << "YOLO model:" << nnmodel << ", YOLO data:" << nndata;
+
+#ifdef Q_OS_WIN
+
+            net = cv::dnn::readNetFromDarknet(nnmodel.toLocal8Bit().constData(),
+                                              nndata.toLocal8Bit().constData());
+
+#else
+
+            net = cv::dnn::readNetFromDarknet(nnmodel.toStdString(),
+                                              nndata.toStdString());
+
+#endif
+
+            net.setPreferableBackend(cv::dnn::DNN_BACKEND_DEFAULT);
+            net.setPreferableTarget(cv::dnn::DNN_TARGET_CPU);
+        }
+        catch (cv::Exception& e)
+        {
+            qCWarning(DIGIKAM_FACEDB_LOG) << "cv::Exception:" << e.what();
+
+            return false;
+        }
+        catch (...)
+        {
+           qCWarning(DIGIKAM_FACEDB_LOG) << "Default exception from OpenCV";
+
+           return false;
+        }
+    }
+    else
+    {
+        qCCritical(DIGIKAM_FACEDB_LOG) << "Cannot found faces engine DNN model" << model << "or" << data;
+        qCCritical(DIGIKAM_FACEDB_LOG) << "Faces detection feature cannot be used!";
+
+        return false;
+    }
+
+    return true;
+}
+
 void DNNFaceDetectorYOLO::detectFaces(const cv::Mat& inputImage,
                                       const cv::Size& paddedSize,
                                       std::vector<cv::Rect>& detectedBboxes)
 {
+    QElapsedTimer timer;
+
     if (inputImage.empty())
     {
         qCDebug(DIGIKAM_FACESENGINE_LOG) << "Invalid image given, not detecting faces.";
@@ -71,16 +123,27 @@ void DNNFaceDetectorYOLO::detectFaces(const cv::Mat& inputImage,
     }
 
     cv::Mat inputBlob = cv::dnn::blobFromImage(inputImage, scaleFactor, inputImageSize, meanValToSubtract, true, false);
-    net.setInput(inputBlob);
     std::vector<cv::Mat> outs;
-    net.forward(outs, getOutputsNames());
+
+    mutex.lock();
+    {
+        net.setInput(inputBlob);
+        timer.start();
+        net.forward(outs, getOutputsNames());
+        qCDebug(DIGIKAM_FACESENGINE_LOG) << "forward YOLO detection in" << timer.elapsed() << "ms";
+    }
+    mutex.unlock();
+
+    timer.start();
 
     postprocess(outs, paddedSize, detectedBboxes);
+
+    qCDebug(DIGIKAM_FACESENGINE_LOG) << "postprocess YOLO detection in" << timer.elapsed() << "ms";
 }
 
 void DNNFaceDetectorYOLO::postprocess(const std::vector<cv::Mat>& outs,
                                       const cv::Size& paddedSize,
-                                      std::vector<cv::Rect>& detectedBboxes)
+                                      std::vector<cv::Rect>& detectedBboxes) const
 {
     std::vector<float>    goodConfidences;
     std::vector<float>    doubtConfidences;
@@ -104,7 +167,7 @@ void DNNFaceDetectorYOLO::postprocess(const std::vector<cv::Mat>& outs,
             // Get the value and location of the maximum score
 
             double confidence;
-            cv::minMaxLoc(scores, 0, &confidence, 0, 0);
+            cv::minMaxLoc(scores, nullptr, &confidence, nullptr, nullptr);
 
             if (confidence > confidenceThreshold)
             {
@@ -131,6 +194,9 @@ void DNNFaceDetectorYOLO::postprocess(const std::vector<cv::Mat>& outs,
             }
         }
     }
+
+    qCDebug(DIGIKAM_FACESENGINE_LOG) << "nb of doubtbox = " << doubtBoxes.size();
+    qCDebug(DIGIKAM_FACESENGINE_LOG) << "nb of goodbox = "  << goodBoxes.size();
 
     if (goodBoxes.empty())
     {
@@ -160,7 +226,7 @@ void DNNFaceDetectorYOLO::postprocess(const std::vector<cv::Mat>& outs,
 
 /** Get the names of the output layers
  */
-std::vector<cv::String> DNNFaceDetectorYOLO::getOutputsNames()
+std::vector<cv::String> DNNFaceDetectorYOLO::getOutputsNames() const
 {
     static std::vector<cv::String> names;
 
@@ -168,7 +234,7 @@ std::vector<cv::String> DNNFaceDetectorYOLO::getOutputsNames()
     {
         // Get the indices of the output layers, i.e. the layers with unconnected outputs
 
-        std::vector<int> outLayers = net.getUnconnectedOutLayers();
+        std::vector<int> outLayers          = net.getUnconnectedOutLayers();
 
         // Get the names of all the layers in the network
 

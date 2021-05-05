@@ -6,7 +6,7 @@
  * Date        : 2017-05-25
  * Description : a tool to print images
  *
- * Copyright (C) 2012-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -65,14 +65,14 @@ public:
 
     explicit Private(QWizard* const dialog)
       : FONT_HEIGHT_RATIO(0.8F),
-        progressView(nullptr),
-        progressBar(nullptr),
-        wizard(nullptr),
-        settings(nullptr),
-        printThread(nullptr),
-        photoPage(nullptr),
-        iface(nullptr),
-        complete(false)
+        progressView     (nullptr),
+        progressBar      (nullptr),
+        wizard           (nullptr),
+        settings         (nullptr),
+        printThread      (nullptr),
+        photoPage        (nullptr),
+        iface            (nullptr),
+        complete         (false)
     {
         wizard = dynamic_cast<AdvPrintWizard*>(dialog);
 
@@ -97,7 +97,7 @@ public:
 
 AdvPrintFinalPage::AdvPrintFinalPage(QWizard* const dialog, const QString& title)
     : DWizardPage(dialog, title),
-      d(new Private(dialog))
+      d          (new Private(dialog))
 {
     DVBox* const vbox = new DVBox(this);
     d->progressView   = new DHistoryView(vbox);
@@ -114,7 +114,9 @@ AdvPrintFinalPage::AdvPrintFinalPage(QWizard* const dialog, const QString& title
 AdvPrintFinalPage::~AdvPrintFinalPage()
 {
     if (d->printThread)
+    {
         d->printThread->cancel();
+    }
 
     delete d;
 }
@@ -127,7 +129,9 @@ void AdvPrintFinalPage::setPhotoPage(AdvPrintPhotoPage* const photoPage)
 void AdvPrintFinalPage::initializePage()
 {
     d->complete = false;
+
     emit completeChanged();
+
     QTimer::singleShot(0, this, SLOT(slotProcess()));
 }
 
@@ -160,6 +164,7 @@ void AdvPrintFinalPage::slotProcess()
     d->progressBar->setMaximum(d->settings->photos.count());
 
     // set the default crop regions if not already set
+
     int sizeIndex              = d->photoPage->ui()->ListPhotoSizes->currentRow();
     d->settings->outputLayouts = d->settings->photosizes.at(sizeIndex);
     d->printThread             = new AdvPrintThread(this);
@@ -236,7 +241,7 @@ void AdvPrintFinalPage::slotDone(bool completed)
         d->progressView->addEntry(i18n("Printing process completed."),
                                   DHistoryView::ProgressEntry);
 
-        if (d->settings->printerName == d->settings->outputName(AdvPrintSettings::FILES))
+        if      (d->settings->printerName == d->settings->outputName(AdvPrintSettings::FILES))
         {
             if (d->settings->openInFileBrowser)
             {
@@ -302,6 +307,7 @@ void AdvPrintFinalPage::removeGimpFiles()
 bool AdvPrintFinalPage::checkTempPath(const QString& tempPath) const
 {
     // does the temp path exist?
+
     QDir tempDir(tempPath);
 
     if (!tempDir.exists())
@@ -324,10 +330,11 @@ bool AdvPrintFinalPage::print()
 {
     // Real printer to use.
 
-    if (d->settings->printerName != d->settings->outputName(AdvPrintSettings::FILES) &&
-        d->settings->printerName != d->settings->outputName(AdvPrintSettings::GIMP))
+    if ((d->settings->printerName != d->settings->outputName(AdvPrintSettings::FILES)) &&
+        (d->settings->printerName != d->settings->outputName(AdvPrintSettings::GIMP)))
     {
         // tell him again!
+
         d->photoPage->printer()->setFullPage(true);
 
         qreal left, top, right, bottom;
@@ -338,27 +345,27 @@ bool AdvPrintFinalPage::print()
                                                 QPrinter::Millimeter);
 
         qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Margins before print dialog: left "
-                                     << left
-                                     << " right "
-                                     << right
-                                     << " top "
-                                     << top
-                                     << " bottom "
-                                     << bottom;
+                                             << left
+                                             << " right "
+                                             << right
+                                             << " top "
+                                             << top
+                                             << " bottom "
+                                             << bottom;
 
         qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "(1) paper page "
-                                     << d->photoPage->printer()->paperSize()
-                                     << " size "
-                                     << d->photoPage->printer()->paperSize(QPrinter::Millimeter);
+                                             << d->photoPage->printer()->paperSize()
+                                             << " size "
+                                             << d->photoPage->printer()->paperSize(QPrinter::Millimeter);
 
         QPrinter::PaperSize paperSize = d->photoPage->printer()->paperSize();
         QPrintDialog* const dialog    = new QPrintDialog(d->photoPage->printer(), this);
         dialog->setWindowTitle(i18n("Print Creator"));
 
         qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "(2) paper page "
-                                     << dialog->printer()->paperSize()
-                                     << " size "
-                                     << dialog->printer()->paperSize(QPrinter::Millimeter);
+                                             << dialog->printer()->paperSize()
+                                             << " size "
+                                             << dialog->printer()->paperSize(QPrinter::Millimeter);
 
         if (dialog->exec() != QDialog::Accepted)
         {
@@ -366,31 +373,32 @@ bool AdvPrintFinalPage::print()
         }
 
         qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "(3) paper page "
-                                     << dialog->printer()->paperSize()
-                                     << " size "
-                                     << dialog->printer()->paperSize(QPrinter::Millimeter);
+                                             << dialog->printer()->paperSize()
+                                             << " size "
+                                             << dialog->printer()->paperSize(QPrinter::Millimeter);
 
         // Why paperSize changes if printer properties is not pressed?
+
         if (paperSize != d->photoPage->printer()->paperSize())
         {
             d->photoPage->printer()->setPaperSize(paperSize);
         }
 
         qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "(4) paper page "
-                                     << dialog->printer()->paperSize()
-                                     << " size "
-                                     << dialog->printer()->paperSize(QPrinter::Millimeter);
+                                             << dialog->printer()->paperSize()
+                                             << " size "
+                                             << dialog->printer()->paperSize(QPrinter::Millimeter);
 
         dialog->printer()->getPageMargins(&left, &top, &right, &bottom, QPrinter::Millimeter);
 
         qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Dialog exit, new margins: left "
-                                     << left
-                                     << " right "
-                                     << right
-                                     << " top "
-                                     << top
-                                     << " bottom "
-                                     << bottom;
+                                             << left
+                                             << " right "
+                                             << right
+                                             << " top "
+                                             << top
+                                             << " bottom "
+                                             << bottom;
 
         d->settings->outputPrinter = d->photoPage->printer();
 

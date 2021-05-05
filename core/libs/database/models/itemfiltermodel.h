@@ -43,6 +43,7 @@ namespace Digikam
 class ImageChangeset;
 class ItemFilterModel;
 class ImageTagChangeset;
+class FaceTagsIface;
 
 class DIGIKAM_DATABASE_EXPORT ItemFilterModelPrepareHook
 {
@@ -50,6 +51,10 @@ public:
 
     virtual ~ItemFilterModelPrepareHook() {};
     virtual void prepare(const QVector<ItemInfo>& infos) = 0;
+
+private:
+
+    Q_DISABLE_COPY(ItemFilterModelPrepareHook)
 };
 
 // -----------------------------------------------------------------------------------------------
@@ -101,7 +106,7 @@ protected:
     virtual void setDirectSourceItemModel(ItemModel* const model);
 
     // made protected
-    virtual void setSourceModel(QAbstractItemModel* const model)                                   override;
+    void setSourceModel(QAbstractItemModel* const model)                                   override;
 
 protected:
 
@@ -130,15 +135,17 @@ public:
         CategoryFormatRole          = ItemModel::FilterModelRoles + 4,
         /// Returns the date of the index which is used for category
         CategoryDateRole            = ItemModel::FilterModelRoles + 5,
+        /// Returns the suggested name for the face in this index
+        CategoryFaceRole            = ItemModel::FilterModelRoles + 6,
         /// Returns true if the given image is a group leader, and the group is opened
-        GroupIsOpenRole             = ItemModel::FilterModelRoles + 6,
+        GroupIsOpenRole             = ItemModel::FilterModelRoles + 7,
         ItemFilterModelPointerRole  = ItemModel::FilterModelRoles + 50
     };
 
 public:
 
     explicit ItemFilterModel(QObject* const parent = nullptr);
-    ~ItemFilterModel();
+    ~ItemFilterModel() override;
 
     /**
      * Add a hook to get added images for preparation tasks before they are added in the model
@@ -164,8 +171,8 @@ public:
     /// Enables sending imageInfosAdded and imageInfosAboutToBeRemoved
     void setSendItemInfoSignals(bool sendSignals);
 
-    virtual QVariant data(const QModelIndex& index, int role = Qt::DisplayRole)             const override;
-    virtual ItemFilterModel* imageFilterModel()                                             const override;
+    QVariant data(const QModelIndex& index, int role = Qt::DisplayRole)             const override;
+    ItemFilterModel* imageFilterModel()                                             const override;
 
 public Q_SLOTS:
 
@@ -196,7 +203,7 @@ public Q_SLOTS:
     void setSortRole(ItemSortSettings::SortRole role);
     void setSortOrder(ItemSortSettings::SortOrder order);
     void setStringTypeNatural(bool natural);
-    void setUrlWhitelist(const QList<QUrl> urlList, const QString& id);
+    void setUrlWhitelist(const QList<QUrl>& urlList, const QString& id);
     void setIdWhitelist(const QList<qlonglong>& idList, const QString& id);
 
     void setVersionManagerSettings(const VersionManagerSettings& settings);
@@ -246,12 +253,12 @@ protected:
 
     ItemFilterModel(ItemFilterModelPrivate& dd, QObject* const parent);
 
-    virtual void setDirectSourceItemModel(ItemModel* const model)                                 override;
+    void setDirectSourceItemModel(ItemModel* const model)                                 override;
 
-    virtual bool filterAcceptsRow(int source_row, const QModelIndex& source_parent)         const override;
+    bool filterAcceptsRow(int source_row, const QModelIndex& source_parent)         const override;
 
-    virtual int  compareCategories(const QModelIndex& left, const QModelIndex& right)       const override;
-    virtual bool subSortLessThan(const QModelIndex& left, const QModelIndex& right)         const override;
+    int  compareCategories(const QModelIndex& left, const QModelIndex& right)       const override;
+    bool subSortLessThan(const QModelIndex& left, const QModelIndex& right)         const override;
 /*
     virtual int  categoryCount(const ItemInfo& info)                                        const;
 */
@@ -259,15 +266,25 @@ protected:
      *  Return negative if category of left < category right,
      *  Return 0 if left and right are in the same category, else return positive.
      */
-    virtual int compareInfosCategories(const ItemInfo& left, const ItemInfo& right)         const;
+
+    virtual int compareInfosCategories(const ItemInfo& left, const ItemInfo& right)          const;
+
+    /**
+     * In order to be able to Categorize by Faces, it's necessary to pass in the
+     * face as well. One image may have multiple Faces in it, hence just the ItemInfo
+     * isn't sufficient.
+     */
+    virtual int compareInfosCategories(const ItemInfo& left, const ItemInfo& right,
+                                       const FaceTagsIface& leftFace,
+                                       const FaceTagsIface& rightFace)                       const;
 
     /** Reimplement to customize sorting. Do not take categories into account here.
      */
-    virtual bool infosLessThan(const ItemInfo& left, const ItemInfo& right)                 const;
+    virtual bool infosLessThan(const ItemInfo& left, const ItemInfo& right)                  const;
 
     /** Returns a unique identifier for the category if info. The string need not be for user display.
      */
-    virtual QString categoryIdentifier(const ItemInfo& info)                                const;
+    virtual QString categoryIdentifier(const ItemInfo& info, const FaceTagsIface& face)      const;
 
 protected Q_SLOTS:
 
@@ -297,7 +314,7 @@ public:
 
 protected:
 
-    virtual bool filterAcceptsRow(int source_row, const QModelIndex& source_parent)         const override;
+    bool filterAcceptsRow(int source_row, const QModelIndex& source_parent)         const override;
 };
 
 } // namespace Digikam

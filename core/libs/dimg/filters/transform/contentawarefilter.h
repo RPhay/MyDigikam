@@ -7,7 +7,7 @@
  * Description : Content aware resizer class.
  *
  * Copyright (C) 2009      by Julien Pontabry <julien dot pontabry at ulp dot u-strasbg dot fr>
- * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2010      by Martin Klapetek <martin dot klapetek at gmail dot com>
  *
  * This program is free software; you can redistribute it
@@ -95,6 +95,7 @@ public:
 
 class DIGIKAM_EXPORT ContentAwareFilter : public DImgThreadedFilter
 {
+    Q_OBJECT
 
 public:
 
@@ -102,7 +103,7 @@ public:
     explicit ContentAwareFilter(DImg* const orgImage,
                                 QObject* const parent = nullptr,
                                 const ContentAwareContainer& settings = ContentAwareContainer());
-    ~ContentAwareFilter();
+    ~ContentAwareFilter() override;
 
     void progressCallback(int progress);
 
@@ -123,12 +124,12 @@ public:
         return 1;
     }
 
-    virtual QString         filterIdentifier()                          const override
+    QString         filterIdentifier()                          const override
     {
         return FilterIdentifier();
     }
 
-    virtual FilterAction    filterAction()                                    override;
+    FilterAction    filterAction()                                    override;
     void                    readParameters(const FilterAction& action)        override;
 
 private:

@@ -6,7 +6,7 @@
  * Date        : 2009-12-01
  * Description : world map widget library
  *
- * Copyright (C) 2010-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2010-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2009-2011 by Michael G. Hansen <mike at mghansen dot de>
  * Copyright (C)      2014 by Justus Schwartz <justus at gmx dot li>
  *
@@ -61,7 +61,7 @@ class DIGIKAM_EXPORT MapWidget : public QWidget
 public:
 
     explicit MapWidget(QWidget* const parent = nullptr);
-    ~MapWidget();
+    ~MapWidget() override;
 
     void saveSettingsToGroup(KConfigGroup* const group);
     void readSettingsFromGroup(const KConfigGroup* const group);
@@ -225,7 +225,7 @@ private:
     const QExplicitlySharedDataPointer<GeoIfaceSharedData> s;
 
     class Private;
-    Private* const d;
+    Private* const                                         d;
 
     Q_DISABLE_COPY(MapWidget)
 };

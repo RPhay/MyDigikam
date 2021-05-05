@@ -26,14 +26,15 @@
 
 // Qt includes
 
-#include <QString>
-#include <QStandardPaths>
 #include <QList>
 #include <QRect>
+#include <QString>
+#include <QStandardPaths>
 
 // Local includes
 
 #include "digikam_debug.h"
+#include "digikam_config.h"
 
 namespace Digikam
 {
@@ -41,18 +42,64 @@ namespace Digikam
 DNNFaceDetectorSSD::DNNFaceDetectorSSD()
     : DNNFaceDetectorBase(1.0, cv::Scalar(104.0, 177.0, 123.0), cv::Size(300, 300))
 {
-    QString nnmodel = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
-                                             QLatin1String("digikam/facesengine/deploy.prototxt"));
-    QString nndata  = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
-                                             QLatin1String("digikam/facesengine/res10_300x300_ssd_iter_140000_fp16.caffemodel"));
-
-    qCDebug(DIGIKAM_FACEDB_LOG) << "nnmodel: " << nnmodel << ", nndata " << nndata;
-
-    net = cv::dnn::readNetFromCaffe(nnmodel.toStdString(), nndata.toStdString());
+    loadModels();
 }
 
 DNNFaceDetectorSSD::~DNNFaceDetectorSSD()
 {
+}
+
+bool DNNFaceDetectorSSD::loadModels()
+{
+    QString model   = QLatin1String("deploy.prototxt");
+    QString data    = QLatin1String("res10_300x300_ssd_iter_140000_fp16.caffemodel");
+
+    QString nnmodel = QStandardPaths::locate(QStandardPaths::AppDataLocation,
+                                             QString::fromLatin1("facesengine/%1").arg(model));
+    QString nndata  = QStandardPaths::locate(QStandardPaths::AppDataLocation,
+                                             QString::fromLatin1("facesengine/%1").arg(data));
+
+    if (!nnmodel.isEmpty() && !nndata.isEmpty())
+    {
+        try
+        {
+            qCDebug(DIGIKAM_FACEDB_LOG) << "SSD model:" << nnmodel << ", SSD data:" << nndata;
+
+#ifdef Q_OS_WIN
+
+            net = cv::dnn::readNetFromCaffe(nnmodel.toLocal8Bit().constData(),
+                                            nndata.toLocal8Bit().constData());
+
+#else
+
+            net = cv::dnn::readNetFromCaffe(nnmodel.toStdString(),
+                                            nndata.toStdString());
+
+#endif
+
+        }
+        catch (cv::Exception& e)
+        {
+            qCWarning(DIGIKAM_FACEDB_LOG) << "cv::Exception:" << e.what();
+
+            return false;
+        }
+        catch (...)
+        {
+           qCWarning(DIGIKAM_FACEDB_LOG) << "Default exception from OpenCV";
+
+           return false;
+        }
+    }
+    else
+    {
+        qCCritical(DIGIKAM_FACEDB_LOG) << "Cannot found faces engine DNN model" << model << "or" << data;
+        qCCritical(DIGIKAM_FACEDB_LOG) << "Faces detection feature cannot be used!";
+
+        return false;
+    }
+
+    return true;
 }
 
 void DNNFaceDetectorSSD::detectFaces(const cv::Mat& inputImage,
@@ -65,21 +112,29 @@ void DNNFaceDetectorSSD::detectFaces(const cv::Mat& inputImage,
         return;
     }
 
+    cv::Mat detection;
     cv::Mat inputBlob = cv::dnn::blobFromImage(inputImage, scaleFactor, inputImageSize, meanValToSubtract, true, false);
-    net.setInput(inputBlob);
-    cv::Mat detection = net.forward();
+
+    mutex.lock();
+    {
+        net.setInput(inputBlob);
+        detection = net.forward();
+    }
+    mutex.unlock();
 
     postprocess(detection, paddedSize, detectedBboxes);
 }
 
 void DNNFaceDetectorSSD::postprocess(cv::Mat detection,
                                      const cv::Size& paddedSize,
-                                     std::vector<cv::Rect>& detectedBboxes)
+                                     std::vector<cv::Rect>& detectedBboxes) const
 {
     std::vector<float> goodConfidences, doubtConfidences, confidences;
     std::vector<cv::Rect> goodBoxes, doubtBoxes, boxes;
 
     cv::Mat detectionMat(detection.size[2], detection.size[3], CV_32F, detection.ptr<float>());
+
+    // TODO: model problem, confidence of ssd output too low ===> false detection
 
     for (int i = 0 ; i < detectionMat.rows ; ++i)
     {
@@ -109,7 +164,10 @@ void DNNFaceDetectorSSD::postprocess(cv::Mat detection,
                        doubtBoxes);
         }
     }
-
+/*
+    qCDebug(DIGIKAM_FACESENGINE_LOG) << "nb of doubtbox = " << doubtBoxes.size();
+    qCDebug(DIGIKAM_FACESENGINE_LOG) << "nb of goodbox = " << goodBoxes.size();
+*/
     if (goodBoxes.empty())
     {
         boxes       = doubtBoxes;

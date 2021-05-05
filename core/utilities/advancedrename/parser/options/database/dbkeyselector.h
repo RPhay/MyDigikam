@@ -45,39 +45,42 @@ class DbKeySelectorItem : public QTreeWidgetItem
 public:
 
     explicit DbKeySelectorItem(DbHeaderListItem* const parent, const QString& title, const QString& desc);
-    virtual ~DbKeySelectorItem();
+    ~DbKeySelectorItem() override;
 
     QString key()         const;
     QString description() const;
 
 private:
 
-    DbKeySelectorItem(const DbKeySelectorItem&);
-    DbKeySelectorItem& operator=(const DbKeySelectorItem&);
+    QString m_key;
+    QString m_description;
 
 private:
 
-    QString m_key;
-    QString m_description;
+    // Disable
+    DbKeySelectorItem(const DbKeySelectorItem&)            = delete;
+    DbKeySelectorItem& operator=(const DbKeySelectorItem&) = delete;
 };
 
 // ------------------------------------------------------------------------------------
 
 class DbKeySelector : public QTreeWidget
 {
+    Q_OBJECT
 
 public:
 
     explicit DbKeySelector(QWidget* const parent);
-    virtual ~DbKeySelector();
+    ~DbKeySelector() override;
 
     void setKeysMap(const DbOptionKeysMap& map);
     QStringList checkedKeysList();
 
 private:
 
-    DbKeySelector(const DbKeySelector&);
-    DbKeySelector& operator=(const DbKeySelector&);
+    // Disable
+    DbKeySelector(const DbKeySelector&)            = delete;
+    DbKeySelector& operator=(const DbKeySelector&) = delete;
 };
 
 // ------------------------------------------------------------------------------------
@@ -89,7 +92,7 @@ class DbKeySelectorView : public QWidget
 public:
 
     explicit DbKeySelectorView(QWidget* const parent);
-    virtual ~DbKeySelectorView();
+    ~DbKeySelectorView() override;
 
     void setKeysMap(const DbOptionKeysMap& map);
     QStringList checkedKeysList() const;
@@ -100,10 +103,13 @@ private Q_SLOTS:
 
 private:
 
-    DbKeySelectorView(const DbKeySelectorView&);
-    DbKeySelectorView& operator=(const DbKeySelectorView&);
-
     void removeChildlessHeaders();
+
+private:
+
+    // Disable
+    DbKeySelectorView(const DbKeySelectorView&)            = delete;
+    DbKeySelectorView& operator=(const DbKeySelectorView&) = delete;
 
 private:
 

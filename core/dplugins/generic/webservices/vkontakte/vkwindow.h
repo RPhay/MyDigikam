@@ -8,7 +8,7 @@
  *
  * Copyright (C) 2011-2015 by Alexander Potashev <aspotashev at gmail dot com>
  * Copyright (C) 2005-2008 by Vardhman Jain <vardhman at gmail dot com>
- * Copyright (C) 2008-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2008-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2009      by Luka Renko <lure at kubuntu dot org>
  * Copyright (C) 2010      by Roman Tsisyk <roman at tsisyk dot com>
  *
@@ -30,7 +30,6 @@
 // Local includes
 
 #include "wstooldialog.h"
-#include "digikam_export.h"
 #include "dprogresswdg.h"
 #include "dinfointerface.h"
 #include "ditemslist.h"
@@ -42,7 +41,7 @@ using namespace Digikam;
 namespace DigikamGenericVKontaktePlugin
 {
 
-class DIGIKAM_EXPORT VKWindow : public WSToolDialog
+class VKWindow : public WSToolDialog
 {
     Q_OBJECT
 
@@ -51,7 +50,7 @@ public:
     explicit VKWindow(DInfoInterface* const iface,
                       QWidget* const parent,
                       bool import = false);
-    ~VKWindow();
+    ~VKWindow()                             override;
 
     /**
      * Use this method to (re-)activate the dialog after it has been created
@@ -90,7 +89,7 @@ private:
 
     void handleVkError(KJob* kjob);
 
-    void closeEvent(QCloseEvent* event) override;
+    void closeEvent(QCloseEvent* event)     override;
 
 private:
 

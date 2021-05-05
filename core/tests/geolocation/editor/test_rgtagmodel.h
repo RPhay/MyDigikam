@@ -27,11 +27,18 @@
 
 // Qt includes
 
-#include <QtTest>
+#include <QTest>
 
 class TestRGTagModel : public QObject
 {
     Q_OBJECT
+
+public:
+
+    explicit TestRGTagModel(QObject* const parent = nullptr)
+        : QObject(parent)
+    {
+    }
 
 private Q_SLOTS:
 
@@ -44,4 +51,4 @@ private Q_SLOTS:
     void testModelSpacerTags();
 };
 
-#endif /* DIGIKAM_TEST_RGTAGMODEL_H */
+#endif // DIGIKAM_TEST_RGTAGMODEL_H

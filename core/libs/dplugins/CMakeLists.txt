@@ -1,15 +1,16 @@
 #
-# Copyright (c) 2010-2020 by Gilles Caulier, <caulier dot gilles at gmail dot com>
+# Copyright (c) 2010-2021 by Gilles Caulier, <caulier dot gilles at gmail dot com>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
+
+APPLY_COMMON_POLICIES()
 
 include_directories($<TARGET_PROPERTY:Qt5::Widgets,INTERFACE_INCLUDE_DIRECTORIES>
                     $<TARGET_PROPERTY:Qt5::Core,INTERFACE_INCLUDE_DIRECTORIES>
                     $<TARGET_PROPERTY:Qt5::Network,INTERFACE_INCLUDE_DIRECTORIES>
                     $<TARGET_PROPERTY:Qt5::Gui,INTERFACE_INCLUDE_DIRECTORIES>
                     $<TARGET_PROPERTY:Qt5::Xml,INTERFACE_INCLUDE_DIRECTORIES>
-                    $<TARGET_PROPERTY:Qt5::XmlPatterns,INTERFACE_INCLUDE_DIRECTORIES>
 
                     $<TARGET_PROPERTY:KF5::XmlGui,INTERFACE_INCLUDE_DIRECTORIES>
                     $<TARGET_PROPERTY:KF5::I18n,INTERFACE_INCLUDE_DIRECTORIES>
@@ -29,6 +30,7 @@ if(KF5KIO_FOUND)
 endif()
 
 set(libdpluginsinterface_SRCS
+
     ${CMAKE_CURRENT_SOURCE_DIR}/core/dplugin.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/core/dplugingeneric.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/core/dplugineditor.cpp
@@ -36,6 +38,7 @@ set(libdpluginsinterface_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/core/dplugindimg.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/core/dpluginauthor.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/core/dpluginaction.cpp
+
     ${CMAKE_CURRENT_SOURCE_DIR}/setup/dpluginloader.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/setup/dpluginloader_p.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/setup/dpluginconfview.cpp
@@ -44,8 +47,10 @@ set(libdpluginsinterface_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/setup/dpluginconfviewdimg.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/setup/dpluginsetup.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/setup/dpluginaboutdlg.cpp
+
     ${CMAKE_CURRENT_SOURCE_DIR}/iface/dinfointerface.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/iface/dmetainfoiface.cpp
+
     ${CMAKE_CURRENT_SOURCE_DIR}/widgets/dplugindialog.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/widgets/dwizardpage.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/widgets/dwizarddlg.cpp
@@ -54,6 +59,7 @@ set(libdpluginsinterface_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/widgets/dpreviewmanager.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/widgets/dpreviewimage.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/widgets/ditemslist.cpp
+
     ${CMAKE_CURRENT_SOURCE_DIR}/webservices/wscomboboxdelegate.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/webservices/wscomboboxintermediate.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/webservices/wstooldialog.cpp
@@ -77,7 +83,13 @@ set(libdpluginsinterface_SRCS
 #       )
 #endif()
 
-add_library(dpluginsinterface_src OBJECT ${libdpluginsinterface_SRCS})
+# Used by digikamcore
+add_library(core_dpluginsinterface_obj OBJECT ${libdpluginsinterface_SRCS})
+
+target_compile_definitions(core_dpluginsinterface_obj
+                           PRIVATE
+                           digikamcore_EXPORTS
+)
 
 # Parse O2 library code and rules at end, and compilation rules remove important Qt definitions.
 

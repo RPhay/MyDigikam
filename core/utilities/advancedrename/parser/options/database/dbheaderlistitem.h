@@ -41,7 +41,7 @@ class DbHeaderListItem : public QObject, public QTreeWidgetItem
 public:
 
     explicit DbHeaderListItem(QTreeWidget* parent, const QString& key);
-    ~DbHeaderListItem();
+    ~DbHeaderListItem() override;
 
 private Q_SLOTS:
 
@@ -49,8 +49,8 @@ private Q_SLOTS:
 
 private:
 
-    DbHeaderListItem(const DbHeaderListItem&);
-    DbHeaderListItem& operator=(const DbHeaderListItem&);
+    DbHeaderListItem(const DbHeaderListItem&)            = delete;
+    DbHeaderListItem& operator=(const DbHeaderListItem&) = delete;
 };
 
 } // namespace Digikam

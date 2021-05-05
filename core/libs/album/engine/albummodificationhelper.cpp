@@ -27,10 +27,11 @@
 // Qt includes
 
 #include <QApplication>
-#include <QAction>
+#include <QDirIterator>
 #include <QInputDialog>
-#include <QUrl>
 #include <QMessageBox>
+#include <QAction>
+#include <QUrl>
 
 // KDE includes
 
@@ -67,7 +68,8 @@ public:
 };
 
 AlbumModificationHelper::AlbumModificationHelper(QObject* const parent, QWidget* const dialogParent)
-    : QObject(parent), d(new Private)
+    : QObject(parent),
+      d(new Private)
 {
     d->dialogParent = dialogParent;
 }
@@ -86,7 +88,7 @@ PAlbum* AlbumModificationHelper::boundAlbum(QObject* const sender) const
 {
     QAction* action = nullptr;
 
-    if ( (action = qobject_cast<QAction*>(sender)) )
+    if ((action = qobject_cast<QAction*>(sender)))
     {
         return action->data().value<AlbumPointer<PAlbum> >();
     }
@@ -130,9 +132,10 @@ PAlbum* AlbumModificationHelper::slotAlbumNew(PAlbum* parent)
 */
 
     // if we create an album under root, need to supply the album root path.
+
     QString albumRootPath;
 
-    albumRootPath = CollectionManager::instance()->oneAlbumRootPath();
+    albumRootPath = CollectionManager::instance()->albumRootPath(parent->albumRootId());
 
     QString     title;
     QString     comments;
@@ -157,7 +160,7 @@ PAlbum* AlbumModificationHelper::slotAlbumNew(PAlbum* parent)
     QString errMsg;
     PAlbum* album = nullptr;
 
-    if (parent->isRoot() || parentSelector == 1)
+    if (parent->isRoot() || (parentSelector == 1))
     {
         album = AlbumManager::instance()->createPAlbum(albumRootPath, title, comments,
                                                        date, category, errMsg);
@@ -171,6 +174,7 @@ PAlbum* AlbumModificationHelper::slotAlbumNew(PAlbum* parent)
     if (!album)
     {
         QMessageBox::critical(qApp->activeWindow(), qApp->applicationName(), errMsg);
+
         return nullptr;
     }
 
@@ -190,21 +194,65 @@ void AlbumModificationHelper::slotAlbumDelete(PAlbum* album)
     }
 
     // find subalbums
+
     QList<QUrl> childrenList;
     addAlbumChildrenToList(childrenList, album);
 
     DeleteDialog dialog(d->dialogParent);
 
     // All subalbums will be presented in the list as well
+
     if (!dialog.confirmDeleteList(childrenList,
-                                  childrenList.size() == 1 ?
-                                  DeleteDialogMode::Albums : DeleteDialogMode::Subalbums,
+                                  (childrenList.size() == 1) ? DeleteDialogMode::Albums
+                                                             : DeleteDialogMode::Subalbums,
                                   DeleteDialogMode::UserPreference))
     {
         return;
     }
 
     bool useTrash = !dialog.shouldDelete();
+    QFileInfo fileInfo(album->folderPath());
+
+    // If the trash is used no check is necessary, as the trash lists all files
+    // and only perform this check if the album is a directory
+
+    if (!useTrash && fileInfo.isDir())
+    {
+        QStringList imageTypes, audioTypes, videoTypes, allTypes, foundTypes;
+        QDirIterator it(fileInfo.path(), QDir::Files, QDirIterator::Subdirectories);
+
+        CoreDbAccess().db()->getFilterSettings(&imageTypes, &videoTypes, &audioTypes);
+        allTypes << imageTypes << audioTypes << videoTypes;
+
+        while (it.hasNext())
+        {
+            it.next();
+            QString ext = it.fileInfo().suffix().toLower();
+
+            if (!allTypes.contains(ext) && !foundTypes.contains(ext))
+            {
+                foundTypes << ext;
+            }
+        }
+
+        if (!foundTypes.isEmpty())
+        {
+            foundTypes.sort();
+
+            QString found = foundTypes.join(QLatin1String(", "));
+
+            int result    = QMessageBox::warning(qApp->activeWindow(), qApp->applicationName(),
+                                                 i18n("<p>The folder you want to delete contains files "
+                                                      "(%1) which are not displayed in digiKam.</p>"
+                                                      "<p>Do you want to continue?</p>", found),
+                                                 QMessageBox::Yes | QMessageBox::No);
+
+            if (result != QMessageBox::Yes)
+            {
+                return;
+            }
+        }
+    }
 
     DIO::del(album, useTrash);
 }
@@ -237,7 +285,7 @@ void AlbumModificationHelper::slotAlbumRename(PAlbum* album)
         return;
     }
 
-    QString title = textDlg->textValue();
+    QString title = textDlg->textValue().trimmed();
     delete textDlg;
 
     if (title != oldTitle)
@@ -254,6 +302,7 @@ void AlbumModificationHelper::slotAlbumRename(PAlbum* album)
 void AlbumModificationHelper::addAlbumChildrenToList(QList<QUrl>& list, Album* const album)
 {
     // simple recursive helper function
+
     if (album)
     {
         if (!list.contains(album->databaseUrl()))
@@ -301,7 +350,7 @@ void AlbumModificationHelper::slotAlbumEdit(PAlbum* album)
             album->setCaption(comments);
         }
 
-        if (date != oldDate && date.isValid())
+        if ((date != oldDate) && date.isValid())
         {
             album->setDate(date);
         }
@@ -327,6 +376,7 @@ void AlbumModificationHelper::slotAlbumEdit(PAlbum* album)
         }
 
         // Resorting the tree View after changing metadata
+
         DigikamApp::instance()->view()->slotSortAlbums(ApplicationSettings::instance()->getAlbumSortRole());
     }
 }

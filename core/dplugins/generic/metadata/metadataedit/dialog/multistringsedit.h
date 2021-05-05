@@ -6,7 +6,7 @@
  * Date        : 2007-10-08
  * Description : a widget to edit a tag with multiple string entries.
  *
- * Copyright (C) 2007-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2007-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -26,6 +26,7 @@
 // Qt includes
 
 #include <QWidget>
+#include <QLineEdit>
 
 namespace DigikamGenericMetadataEditPlugin
 {
@@ -37,11 +38,13 @@ class MultiStringsEdit : public QWidget
 public:
 
     explicit MultiStringsEdit(QWidget* const parent, const QString& title,
-                              const QString& desc, bool ascii=true, int size=-1);
-    ~MultiStringsEdit();
+                              const QString& desc, int size=-1);
+    ~MultiStringsEdit() override;
 
     void setValues(const QStringList& values);
     bool getValues(QStringList& oldValues, QStringList& newValues);
+
+    QLineEdit* valueEdit() const;
 
 Q_SIGNALS:
 

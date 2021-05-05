@@ -7,7 +7,7 @@
  * Description : a tool to export items to YandexFotki web service
  *
  * Copyright (C) 2010      by Roman Tsisyk <roman at tsisyk dot com>
- * Copyright (C) 2010-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2010-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -50,14 +50,14 @@ class Q_DECL_HIDDEN YFTalker::Private
 public:
 
     explicit Private()
+      : state       (STATE_UNAUTHENTICATED),
+        lastPhoto   (nullptr),
+        netMngr     (nullptr),
+        reply       (nullptr)
     {
-        state     = STATE_UNAUTHENTICATED;
-        lastPhoto = nullptr;
-        netMngr   = nullptr;
-        reply     = nullptr;
     }
 
-    // API-related fields
+    /// API-related fields
     QString                 sessionKey;
     QString                 sessionId;
     QString                 token;
@@ -67,14 +67,13 @@ public:
     QString                 apiPhotosUrl;
     QString                 apiTagsUrl;
 
-    // FSM data
+    /// FSM data
     State                   state;
-    // temporary data
+    /// temporary data
     YFPhoto*                lastPhoto;
     QString                 lastPhotosUrl;
 
-    // for albums pagination
-    //in listAlbums()
+    /// for albums pagination in listAlbums()
     QList<YandexFotkiAlbum> albums;
 
     QString                 albumsNextUrl;
@@ -86,11 +85,10 @@ public:
 
     QNetworkReply*          reply;
 
-    // Data buffer
+    /// Data buffer
     QByteArray              buffer;
 
-    // constants
-    // use QString instead of QUrl, we need .arg
+    /// Constants: use QString instead of QUrl, we need .arg
     static const QString    SESSION_URL;
     static const QString    TOKEN_URL;
     static const QString    SERVICE_URL;
@@ -113,14 +111,14 @@ const QString YFTalker::Private::ACCESS_STRINGS[]     =
     QLatin1String("private")
 };
 
-const QString YFTalker::USERPAGE_URL         = QLatin1String("http://fotki.yandex.ru/users/%1/");
-const QString YFTalker::USERPAGE_DEFAULT_URL = QLatin1String("http://fotki.yandex.ru/");
+const QString YFTalker::USERPAGE_URL         = QLatin1String("https://fotki.yandex.ru/users/%1/");
+const QString YFTalker::USERPAGE_DEFAULT_URL = QLatin1String("https://fotki.yandex.ru/");
 
 // ------------------------------------------------------------
 
 YFTalker::YFTalker(QObject* const parent)
     : QObject(parent),
-      d(new Private)
+      d      (new Private)
 {
     d->netMngr = new QNetworkAccessManager(this);
 
@@ -176,12 +174,12 @@ void YFTalker::setPassword(const QString& password)
 
 bool YFTalker::isAuthenticated() const
 {
-    return (d->state & STATE_AUTHENTICATED) != 0;
+    return ((d->state & STATE_AUTHENTICATED) != 0);
 }
 
 bool YFTalker::isErrorState() const
 {
-    return (d->state & STATE_ERROR) != 0;
+    return ((d->state & STATE_ERROR) != 0);
 }
 
 const QList<YandexFotkiAlbum>& YFTalker::albums() const
@@ -248,6 +246,7 @@ void YFTalker::getToken()
                                 d->login, d->password);
 
     // prepare params
+
     QStringList paramList;
 
     paramList.append(QLatin1String("request_id=") + d->sessionId);
@@ -270,7 +269,9 @@ void YFTalker::getToken()
 void YFTalker::listAlbums()
 {
     if (isErrorState() || !isAuthenticated())
+    {
         return;
+    }
 
     d->albumsNextUrl = d->apiAlbumsUrl;
     d->albums.clear();
@@ -304,7 +305,7 @@ void YFTalker::listPhotos(const YandexFotkiAlbum& album)
     listPhotosNext();
 }
 
-// protected member
+/// protected member
 void YFTalker::listPhotosNext()
 {
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "listPhotosNext";
@@ -325,28 +326,37 @@ void YFTalker::listPhotosNext()
 void YFTalker::updatePhoto(YFPhoto& photo, const YandexFotkiAlbum& album)
 {
     if (isErrorState() || !isAuthenticated())
+    {
         return;
+    }
 
     // sanity check
+
     if (photo.title().isEmpty())
     {
         photo.setTitle(QFileInfo(photo.localUrl()).baseName().trimmed());
     }
 
     // move photo to another album (if changed)
+
     photo.m_apiAlbumUrl = album.m_apiSelfUrl;
+
     // FIXME: hack
+
     d->lastPhotosUrl     = album.m_apiPhotosUrl;
 
     if (!photo.remoteUrl().isNull())
     {
         // TODO: updating image file haven't yet supported by API
         // so, just update info
-        return updatePhotoInfo(photo);
+
+        updatePhotoInfo(photo);
+        return;
     }
     else
     {
         // for new images also upload file
+
         updatePhotoFile(photo);
     }
 }
@@ -373,7 +383,7 @@ void YFTalker::updatePhotoFile(YFPhoto& photo)
                                              .arg(d->AUTH_REALM).arg(d->token).toLatin1());
     netRequest.setRawHeader("Slug", QUrl::toPercentEncoding(photo.title()) + ".jpg");
 
-    d->reply = d->netMngr->post(netRequest, imageFile.readAll());
+    d->reply     = d->netMngr->post(netRequest, imageFile.readAll());
 
     d->buffer.resize(0);
     imageFile.close();
@@ -388,7 +398,7 @@ void YFTalker::updatePhotoInfo(YFPhoto& photo)
 
     doc.appendChild(instr);
     QDomElement entryElem = doc.createElement(QLatin1String("entry"));
-    entryElem.setAttribute(QLatin1String("xmlns"), QLatin1String("http://www.w3.org/2005/Atom"));
+    entryElem.setAttribute(QLatin1String("xmlns"), QLatin1String("http://www.w3.org/2005/Atom"));       // krazy:exclude=insecurenet
     entryElem.setAttribute(QLatin1String("xmlns:f"), QLatin1String("yandex:fotki"));
     doc.appendChild(entryElem);
 
@@ -428,6 +438,7 @@ void YFTalker::updatePhotoInfo(YFPhoto& photo)
     entryElem.appendChild(access);
 
     // FIXME: undocumented API
+
     foreach (const QString& t, photo.tags)
     {
         QDomElement tag = doc.createElement(QLatin1String("category"));
@@ -459,12 +470,15 @@ void YFTalker::updatePhotoInfo(YFPhoto& photo)
 void YFTalker::updateAlbum(YandexFotkiAlbum& album)
 {
     if (isErrorState() || !isAuthenticated())
+    {
         return;
+    }
 
     if (album.urn().isEmpty())
     {
         // new album
-        return updateAlbumCreate(album);
+        updateAlbumCreate(album);
+        return;
     }
     else
     {
@@ -481,7 +495,7 @@ void YFTalker::updateAlbumCreate(YandexFotkiAlbum& album)
 
     doc.appendChild(instr);
     QDomElement entryElem = doc.createElement(QLatin1String("entry"));
-    entryElem.setAttribute(QLatin1String("xmlns"), QLatin1String("http://www.w3.org/2005/Atom"));
+    entryElem.setAttribute(QLatin1String("xmlns"), QLatin1String("http://www.w3.org/2005/Atom"));       // krazy:exclude=insecurenet
     entryElem.setAttribute(QLatin1String("xmlns:f"), QLatin1String("yandex:fotki"));
     doc.appendChild(entryElem);
 
@@ -565,7 +579,7 @@ void YFTalker::slotFinished(QNetworkReply* reply)
         int code = reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
         qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Transfer Error" << code << reply->errorString();
 
-        if (code == 401 || code == 403 || code == 404) // auth required, 404 user not found
+        if      ((code == 401) || (code == 403) || (code == 404)) // auth required, 404 user not found
         {
             setErrorState(STATE_INVALID_CREDENTIALS);
         }
@@ -608,32 +622,40 @@ void YFTalker::slotFinished(QNetworkReply* reply)
 
     d->buffer.append(reply->readAll());
 
-    switch(d->state)
+    switch (d->state)
     {
         case (STATE_GETSERVICE):
             slotParseResponseGetService();
             break;
+
         case (STATE_GETSESSION):
             slotParseResponseGetSession();
             break;
+
         case (STATE_GETTOKEN):
             slotParseResponseGetToken();
             break;
+
         case (STATE_LISTALBUMS):
             slotParseResponseListAlbums();
             break;
+
         case (STATE_LISTPHOTOS):
             slotParseResponseListPhotos();
             break;
+
         case (STATE_UPDATEPHOTO_FILE):
             slotParseResponseUpdatePhotoFile();
             break;
+
         case (STATE_UPDATEPHOTO_INFO):
             slotParseResponseUpdatePhotoInfo();
             break;
+
         case (STATE_UPDATEALBUM):
             slotParseResponseUpdateAlbum();
             break;
+
         default:
             break;
     }
@@ -648,14 +670,16 @@ void YFTalker::slotParseResponseGetService()
     if (!doc.setContent(d->buffer))
     {
         qCCritical(DIGIKAM_WEBSERVICES_LOG) << "Invalid XML: parse error" << d->buffer;
-        return setErrorState(STATE_GETSERVICE_ERROR);
+        setErrorState(STATE_GETSERVICE_ERROR);
+        return;
     }
 
     const QDomElement rootElem = doc.documentElement();
 
-    QDomElement workspaceElem = rootElem.firstChildElement(QLatin1String("app:workspace"));
+    QDomElement workspaceElem  = rootElem.firstChildElement(QLatin1String("app:workspace"));
 
     // FIXME: workaround for Yandex xml namespaces bugs
+
     QString prefix = QLatin1String("app:");
 
     if (workspaceElem.isNull())
@@ -668,7 +692,8 @@ void YFTalker::slotParseResponseGetService()
     if (workspaceElem.isNull())
     {
         qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Invalid XML data: workspace element";
-        return setErrorState(STATE_GETSERVICE_ERROR);
+        setErrorState(STATE_GETSERVICE_ERROR);
+        return;
     }
 
     QString apiAlbumsUrl;
@@ -688,6 +713,7 @@ void YFTalker::slotParseResponseGetService()
         }
 
         // FIXME: id attribute is undocumented
+
         if (collectionElem.attribute(QLatin1String("id")) == QLatin1String("album-list"))
         {
             apiAlbumsUrl = collectionElem.attribute(QLatin1String("href"));
@@ -700,13 +726,15 @@ void YFTalker::slotParseResponseGetService()
         {
             apiTagsUrl = collectionElem.attribute(QLatin1String("href"));
         }
+
         // else skip unknown section
     }
 
     if (apiAlbumsUrl.isNull() || apiPhotosUrl.isNull())
     {
         qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Invalid XML data: service URLs";
-        return setErrorState(STATE_GETSERVICE_ERROR);
+        setErrorState(STATE_GETSERVICE_ERROR);
+        return;
     }
 
     d->apiAlbumsUrl = apiAlbumsUrl;
@@ -737,20 +765,24 @@ void YFTalker::slotParseResponseGetSession()
 
     if (!doc.setContent(d->buffer))
     {
-        return setErrorState(STATE_GETSESSION_ERROR);
+        setErrorState(STATE_GETSESSION_ERROR);
+        return;
     }
 
-    const QDomElement rootElem = doc.documentElement();
+    const QDomElement rootElem      = doc.documentElement();
 
-    const QDomElement keyElem =  rootElem.firstChildElement(QLatin1String("key"));
+    const QDomElement keyElem       = rootElem.firstChildElement(QLatin1String("key"));
 
-    const QDomElement requestIdElem =  rootElem.firstChildElement(QLatin1String("request_id"));
+    const QDomElement requestIdElem = rootElem.firstChildElement(QLatin1String("request_id"));
 
-    if (keyElem.isNull() || keyElem.nodeType() != QDomNode::ElementNode ||
-        requestIdElem.isNull() || requestIdElem.nodeType() != QDomNode::ElementNode)
+    if (keyElem.isNull()                              ||
+        (keyElem.nodeType() != QDomNode::ElementNode) ||
+        requestIdElem.isNull()                        ||
+        (requestIdElem.nodeType() != QDomNode::ElementNode))
     {
         qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Invalid XML" << d->buffer;
-        return setErrorState(STATE_GETSESSION_ERROR);
+        setErrorState(STATE_GETSESSION_ERROR);
+        return;
     }
 
     d->sessionKey = keyElem.text();
@@ -769,31 +801,36 @@ void YFTalker::slotParseResponseGetToken()
     if (!doc.setContent(d->buffer))
     {
         qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Invalid XML: parse error" << d->buffer;
-        return setErrorState(STATE_GETTOKEN_ERROR);
+        setErrorState(STATE_GETTOKEN_ERROR);
+        return;
     }
 
     const QDomElement rootElem  = doc.documentElement();
     const QDomElement tokenElem = rootElem.firstChildElement(QLatin1String("token"));
 
-    if (tokenElem.isNull() || tokenElem.nodeType() != QDomNode::ElementNode)
+    if (tokenElem.isNull() || (tokenElem.nodeType() != QDomNode::ElementNode))
     {
         const QDomElement errorElem = rootElem.firstChildElement(QLatin1String("error"));
 
-        if (errorElem.isNull() || errorElem.nodeType() != QDomNode::ElementNode)
+        if (errorElem.isNull() || (errorElem.nodeType() != QDomNode::ElementNode))
         {
             qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Auth unknown error";
-            return setErrorState(STATE_GETTOKEN_ERROR);
+            setErrorState(STATE_GETTOKEN_ERROR);
+            return;
         }
 
 /*
         // checked by HTTP error code in prepareJobResult
+
         const QString errorCode = errorElem.attribute("code", "0");
         qCDebug(DIGIKAM_WEBSERVICES_LOG) << QString("Auth error: %1, code=%2").arg(errorElem.text()).arg(errorCode);
 
         if (errorCode == "2")
         {
             // Invalid credentials
-            return setErrorState(STATE_GETTOKEN_INVALID_CREDENTIALS);
+
+            setErrorState(STATE_GETTOKEN_INVALID_CREDENTIALS);
+            return;
         }
 */
 
@@ -815,23 +852,25 @@ void YFTalker::slotParseResponseListAlbums()
     if (!doc.setContent(d->buffer))
     {
         qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Invalid XML: parse error";
-        return setErrorState(STATE_LISTALBUMS_ERROR);
+        setErrorState(STATE_LISTALBUMS_ERROR);
+        return;
     }
 
     bool errorOccurred         = false;
     const QDomElement rootElem = doc.documentElement();
 
     // find next page link
-    d->albumsNextUrl.clear();
-    QDomElement linkElem       = rootElem.firstChildElement(QLatin1String("link"));
 
-    for ( ; !linkElem.isNull() ;
-          linkElem = linkElem.nextSiblingElement(QLatin1String("link")))
+    d->albumsNextUrl.clear();
+    QDomElement linkElem1      = rootElem.firstChildElement(QLatin1String("link"));
+
+    for ( ; !linkElem1.isNull() ;
+          linkElem1 = linkElem1.nextSiblingElement(QLatin1String("link")))
     {
-        if (linkElem.attribute(QLatin1String("rel")) == QLatin1String("next") &&
-            !linkElem.attribute(QLatin1String("href")).isNull())
+        if ((linkElem1.attribute(QLatin1String("rel")) == QLatin1String("next")) &&
+            !linkElem1.attribute(QLatin1String("href")).isNull())
         {
-            d->albumsNextUrl = linkElem.attribute(QLatin1String("href"));
+            d->albumsNextUrl = linkElem1.attribute(QLatin1String("href"));
             break;
         }
     }
@@ -854,17 +893,24 @@ void YFTalker::slotParseResponseListAlbums()
         QDomElement linkEdit;
         QDomElement linkPhotos;
 
-        QDomElement linkElem = entryElem.firstChildElement(QLatin1String("link"));
+        QDomElement linkElem2       = entryElem.firstChildElement(QLatin1String("link"));
 
-        for ( ; !linkElem.isNull() ;
-              linkElem = linkElem.nextSiblingElement(QLatin1String("link")))
+        for ( ; !linkElem2.isNull() ;
+              linkElem2 = linkElem2.nextSiblingElement(QLatin1String("link")))
         {
-            if (linkElem.attribute(QLatin1String("rel")) == QLatin1String("self"))
-                linkSelf = linkElem;
-            else if (linkElem.attribute(QLatin1String("rel")) == QLatin1String("edit"))
-                linkEdit = linkElem;
-            else if (linkElem.attribute(QLatin1String("rel")) == QLatin1String("photos"))
-                linkPhotos = linkElem;
+            if      (linkElem2.attribute(QLatin1String("rel")) == QLatin1String("self"))
+            {
+                linkSelf = linkElem2;
+            }
+            else if (linkElem2.attribute(QLatin1String("rel")) == QLatin1String("edit"))
+            {
+                linkEdit = linkElem2;
+            }
+            else if (linkElem2.attribute(QLatin1String("rel")) == QLatin1String("photos"))
+            {
+                linkPhotos = linkElem2;
+            }
+
             // else skip <link>
         }
 
@@ -873,13 +919,15 @@ void YFTalker::slotParseResponseListAlbums()
         {
             errorOccurred = true;
             qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Invalid XML data: invalid entry on line" << entryElem.lineNumber();
+
             // simple skip this record, no additional messages to user
+
             continue;
         }
 
         QString password;
 
-        if (!prot.isNull() && prot.attribute(QLatin1String("value"), QLatin1String("false")) == QLatin1String("true"))
+        if (!prot.isNull() && (prot.attribute(QLatin1String("value"), QLatin1String("false")) == QLatin1String("true")))
         {
             password = QLatin1String(""); // set not null value
         }
@@ -904,16 +952,20 @@ void YFTalker::slotParseResponseListAlbums()
     // TODO: pagination like listPhotos
 
     // if an error has occurred and we didn't find anything => notify user
+
     if (errorOccurred && d->albums.isEmpty())
     {
         qCDebug(DIGIKAM_WEBSERVICES_LOG) << "No result and errors have occurred";
-        return setErrorState(STATE_LISTALBUMS_ERROR);
+        setErrorState(STATE_LISTALBUMS_ERROR);
+        return;
     }
 
     // we have next page
+
     if (!d->albumsNextUrl.isNull())
     {
-        return listAlbumsNext();
+        listAlbumsNext();
+        return;
     }
     else
     {
@@ -925,7 +977,6 @@ void YFTalker::slotParseResponseListAlbums()
 
 bool YFTalker::slotParsePhotoXml(const QDomElement& entryElem, YFPhoto& photo)
 {
-
     const QDomElement urn             = entryElem.firstChildElement(QLatin1String("id"));
     const QDomElement author          = entryElem.firstChildElement(QLatin1String("author"));
     const QDomElement title           = entryElem.firstChildElement(QLatin1String("title"));
@@ -951,18 +1002,28 @@ bool YFTalker::slotParsePhotoXml(const QDomElement& entryElem, YFPhoto& photo)
           linkElem = linkElem.nextSiblingElement(QLatin1String("link")))
     {
 
-        if (linkElem.attribute(QLatin1String("rel")) == QLatin1String("self"))
+        if      (linkElem.attribute(QLatin1String("rel")) == QLatin1String("self"))
+        {
             linkSelf = linkElem;
+        }
         else if (linkElem.attribute(QLatin1String("rel")) == QLatin1String("edit"))
+        {
             linkEdit = linkElem;
+        }
         else if (linkElem.attribute(QLatin1String("rel")) == QLatin1String("edit-media"))
+        {
             linkMedia = linkElem;
+        }
         else if (linkElem.attribute(QLatin1String("rel")) == QLatin1String("album"))
+        {
             linkAlbum = linkElem;
+        }
+
         // else skip <link>
     }
 
     // XML sanity checks
+
     if (urn.isNull()       || title.isNull()              ||
         linkSelf.isNull()  || linkEdit.isNull()           ||
         linkMedia.isNull() || linkAlbum.isNull()          ||
@@ -971,7 +1032,9 @@ bool YFTalker::slotParsePhotoXml(const QDomElement& entryElem, YFPhoto& photo)
     {
 
         qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Invalid XML data, error on line" << entryElem.lineNumber();
+
         // simple skip this record, no additional messages to user
+
         return false;
     }
 
@@ -979,12 +1042,18 @@ bool YFTalker::slotParsePhotoXml(const QDomElement& entryElem, YFPhoto& photo)
 
     YFPhoto::Access access;
 
-    if (accessString == d->ACCESS_STRINGS[YFPhoto::ACCESS_PRIVATE])
+    if      (accessString == d->ACCESS_STRINGS[YFPhoto::ACCESS_PRIVATE])
+    {
         access = YFPhoto::ACCESS_PRIVATE;
+    }
     else if (accessString == d->ACCESS_STRINGS[YFPhoto::ACCESS_FRIENDS])
+    {
         access = YFPhoto::ACCESS_FRIENDS;
+    }
     else if (accessString == d->ACCESS_STRINGS[YFPhoto::ACCESS_PUBLIC])
+    {
         access = YFPhoto::ACCESS_PUBLIC;
+    }
     else
     {
         qCCritical(DIGIKAM_WEBSERVICES_LOG) << "Unknown photo access level: " << accessString;
@@ -1020,16 +1089,19 @@ bool YFTalker::slotParsePhotoXml(const QDomElement& entryElem, YFPhoto& photo)
      */
 
     // reload all tags from the response
+
     photo.tags.clear();
     QDomElement category = entryElem.firstChildElement(QLatin1String("category"));
 
     for ( ; !category.isNull() ;
          category = category.nextSiblingElement(QLatin1String("category")))
     {
-        if (category.hasAttribute(QLatin1String("term")) &&
+        if (category.hasAttribute(QLatin1String("term"))   &&
             category.hasAttribute(QLatin1String("scheme")) &&
+
             // FIXME: I have no idea how to make its better, usable API is needed
-            category.attribute(QLatin1String("scheme")) == d->apiTagsUrl)
+
+            (category.attribute(QLatin1String("scheme")) == d->apiTagsUrl))
         {
             photo.tags.append(category.attribute(QLatin1String("term")));
         }
@@ -1045,7 +1117,8 @@ void YFTalker::slotParseResponseListPhotos()
     if (!doc.setContent(d->buffer))
     {
         qCCritical(DIGIKAM_WEBSERVICES_LOG) << "Invalid XML, parse error: " << d->buffer;
-        return setErrorState(STATE_LISTPHOTOS_ERROR);
+        setErrorState(STATE_LISTPHOTOS_ERROR);
+        return;
     }
 
     int initialSize            = d->photos.size();
@@ -1081,21 +1154,26 @@ void YFTalker::slotParseResponseListPhotos()
         else
         {
             // set error mark and continue
+
             errorOccurred = true;
         }
     }
 
     // if an error has occurred and we didn't find anything => notify user
-    if (errorOccurred && initialSize == d->photos.size())
+
+    if (errorOccurred && (initialSize == d->photos.size()))
     {
         qCCritical(DIGIKAM_WEBSERVICES_LOG) << "No photos found, some XML errors have occurred";
-        return setErrorState(STATE_LISTPHOTOS_ERROR);
+        setErrorState(STATE_LISTPHOTOS_ERROR);
+        return;
     }
 
     // we have next page
+
     if (!d->photosNextUrl.isNull())
     {
-        return listPhotosNext();
+        listPhotosNext();
+        return;
     }
     else
     {
@@ -1113,7 +1191,8 @@ void YFTalker::slotParseResponseUpdatePhotoFile()
     if (!doc.setContent(d->buffer))
     {
         qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Invalid XML, parse error" << d->buffer;
-        return setErrorState(STATE_UPDATEPHOTO_INFO_ERROR);
+        setErrorState(STATE_UPDATEPHOTO_INFO_ERROR);
+        return;
     }
 
     YFPhoto& photo              = *d->lastPhoto;
@@ -1123,7 +1202,8 @@ void YFTalker::slotParseResponseUpdatePhotoFile()
     if (!slotParsePhotoXml(entryElem, tmpPhoto))
     {
         qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Invalid XML, entry not found" << d->buffer;
-        return setErrorState(STATE_UPDATEPHOTO_INFO_ERROR);
+        setErrorState(STATE_UPDATEPHOTO_INFO_ERROR);
+        return;
     }
 
     photo.m_urn         = tmpPhoto.m_urn;
@@ -1134,6 +1214,7 @@ void YFTalker::slotParseResponseUpdatePhotoFile()
     photo.m_author      = tmpPhoto.m_author;
 
     // update info
+
     updatePhotoInfo(photo);
 }
 
@@ -1148,7 +1229,8 @@ void YFTalker::slotParseResponseUpdatePhotoInfo()
     if (!doc.setContent(d->buffer))
     {
         qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Invalid XML: parse error" << d->buffer;
-        return setErrorState(STATE_UPDATEPHOTO_INFO_ERROR);
+        setErrorState(STATE_UPDATEPHOTO_INFO_ERROR);
+        return;
     }
 
     const QDomElement entryElem = doc.documentElement();
@@ -1156,12 +1238,14 @@ void YFTalker::slotParseResponseUpdatePhotoInfo()
     if (!slotParsePhotoXml(entryElem, photo))
     {
         qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Can't reload photo after uploading";
-        return setErrorState(STATE_UPDATEPHOTO_INFO_ERROR);
+        setErrorState(STATE_UPDATEPHOTO_INFO_ERROR);
+        return;
     }
 */
 
     d->state     = STATE_UPDATEPHOTO_DONE;
     d->lastPhoto = nullptr;
+
     emit signalUpdatePhotoDone(photo);
 }
 

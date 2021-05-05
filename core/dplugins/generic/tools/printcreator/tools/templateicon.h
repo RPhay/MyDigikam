@@ -7,7 +7,7 @@
  * Description : a tool to print images
  *
  * Copyright (C) 2008      by Andreas Trink <atrink at nociaro dot org>
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef TEMPLATE_ICON_H
-#define TEMPLATE_ICON_H
+#ifndef DIGIKAM_TEMPLATE_ICON_H
+#define DIGIKAM_TEMPLATE_ICON_H
 
 // Qt includes
 
@@ -79,9 +79,11 @@ public:
 
 private:
 
-    // Hidden copy constructor and assignment operator.
-    TemplateIcon(const TemplateIcon&);
-    TemplateIcon& operator=(const TemplateIcon&);
+    // Disable
+    TemplateIcon(const TemplateIcon&)            = delete;
+    TemplateIcon& operator=(const TemplateIcon&) = delete;
+
+private:
 
     class Private;
     Private* const d;
@@ -89,4 +91,4 @@ private:
 
 } // namespace DigikamGenericPrintCreatorPlugin
 
-#endif // TEMPLATE_ICON_H
+#endif // DIGIKAM_TEMPLATE_ICON_H

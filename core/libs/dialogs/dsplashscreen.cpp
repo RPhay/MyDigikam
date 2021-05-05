@@ -7,7 +7,7 @@
  * Description : a widget to display splash with progress bar
  *
  * Copyright (C) 2003-2005 by Renchi Raju <renchi dot raju at gmail dot com>
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -51,13 +51,13 @@ class Q_DECL_HIDDEN DSplashScreen::Private
 public:
 
     explicit Private()
-      : state(0),
-        progressBarSize(3),
-        messageAlign(Qt::AlignLeft),
-        version(QLatin1String(digikam_version_short)),
-        messageColor(Qt::white),
-        versionColor(Qt::white),
-        lastStateUpdateTime(QTime::currentTime())
+      : state               (0),
+        progressBarSize     (3),
+        messageAlign        (Qt::AlignLeft),
+        version             (QLatin1String(digikam_version_short)),
+        messageColor        (Qt::white),
+        versionColor        (Qt::white),
+        lastStateUpdateTime (QTime::currentTime())
     {
     }
 
@@ -76,7 +76,7 @@ public:
 
 DSplashScreen::DSplashScreen()
     : QSplashScreen(QPixmap()),
-      d(new Private)
+      d            (new Private)
 {
     QPixmap splash;
 

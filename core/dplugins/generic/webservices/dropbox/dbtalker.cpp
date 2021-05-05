@@ -79,7 +79,7 @@ public:
 
 public:
 
-    explicit Private(QWidget* p)
+    explicit Private(QWidget* const p)
     {
         apikey   = QLatin1String("mv2pk07ym9bx3r8");
         secret   = QLatin1String("f33sflc8jhiozqu");
@@ -116,7 +116,7 @@ public:
 };
 
 DBTalker::DBTalker(QWidget* const parent)
-    : d(new Private(parent))
+    : d           (new Private(parent))
 {
     d->netMngr = new QNetworkAccessManager(this);
 
@@ -318,14 +318,14 @@ bool DBTalker::addPhoto(const QString& imgPath, const QString& uploadFolder,
 
         image.save(path, "JPEG", imageQuality);
 
-        DMetadata meta;
+        QScopedPointer<DMetadata> meta(new DMetadata);
 
-        if (meta.load(imgPath))
+        if (meta->load(imgPath))
         {
-            meta.setItemDimensions(image.size());
-            meta.setItemOrientation(DMetadata::ORIENTATION_NORMAL);
-            meta.setMetadataWritingMode((int)DMetadata::WRITE_TO_FILE_ONLY);
-            meta.save(path, true);
+            meta->setItemDimensions(image.size());
+            meta->setItemOrientation(DMetadata::ORIENTATION_NORMAL);
+            meta->setMetadataWritingMode((int)DMetadata::WRITE_TO_FILE_ONLY);
+            meta->save(path, true);
         }
     }
 

@@ -8,7 +8,7 @@
  *
  * Copyright (C) 2005-2006 by Tom Albers <tomalbers at kde dot nl>
  * Copyright (C) 2007-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -54,7 +54,7 @@ NewlyAppearedFile::NewlyAppearedFile()
 }
 
 NewlyAppearedFile::NewlyAppearedFile(int albumId, const QString& fileName)
-    : albumId(albumId),
+    : albumId (albumId),
       fileName(fileName)
 {
 }

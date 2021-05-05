@@ -7,7 +7,7 @@
  * Description : Pressable Button class using QGraphicsItem
  *               based on Frederico Duarte implementation.
  *
- * Copyright (C) 2010-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2010-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -36,8 +36,8 @@ class Q_DECL_HIDDEN Button::Private
 public:
 
     explicit Private()
+      : isPressed(false)
     {
-        isPressed = false;
     }
 
     bool    isPressed;
@@ -81,9 +81,13 @@ void Button::paint(QPainter* painter, const QStyleOptionGraphicsItem* option, QW
     Q_UNUSED(widget);
 
     if (d->isPressed)
+    {
         painter->drawPixmap(0, 0, d->pressed);
+    }
     else
+    {
         painter->drawPixmap(0, 0, d->normal);
+    }
 }
 
 void Button::setPixmap(const QString& normal, const QString& pressed)
@@ -109,7 +113,9 @@ void Button::mousePressEvent(QGraphicsSceneMouseEvent* event)
     if (event->button() == Qt::LeftButton)
     {
         if (contains(event->pos()))
+        {
             d->isPressed = true;
+        }
 
         update();
     }

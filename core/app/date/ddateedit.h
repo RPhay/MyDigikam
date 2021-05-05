@@ -7,7 +7,7 @@
  * Description : a combo box to list date.
  *               this widget come from libkdepim.
  *
- * Copyright (C) 2011-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2011-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2002      by Cornelius Schumacher <schumacher at kde dot org>
  * Copyright (C) 2003-2004 by Reinhold Kainhofer <reinhold at kainhofer dot com>
  * Copyright (C) 2004      by Tobias Koenig <tokoe at kde dot org>
@@ -54,14 +54,14 @@ class DDateEdit : public QComboBox
 
 public:
 
-    explicit DDateEdit(QWidget* const parent=nullptr, const QString& name=QString());
-    virtual ~DDateEdit();
+    explicit DDateEdit(QWidget* const parent = nullptr, const QString& name = QString());
+    ~DDateEdit() override;
 
     /**
      * @return The date entered. This date could be invalid,
      *         you have to check validity yourself.
      */
-    QDate date() const;
+    QDate date()                                                const;
 
     /**
      * Sets whether the widget is read-only for the user. If read-only,
@@ -74,9 +74,9 @@ public:
     /**
      * @return True if the widget is read-only, false if read-write.
      */
-    bool isReadOnly() const;
+    bool isReadOnly()                                           const;
 
-    virtual void showPopup() override;
+    void showPopup()                                                  override;
 
 Q_SIGNALS:
 
@@ -105,8 +105,8 @@ protected Q_SLOTS:
 
 protected:
 
-    virtual bool eventFilter(QObject*, QEvent*) override;
-    virtual void mousePressEvent(QMouseEvent*) override;
+    bool eventFilter(QObject*, QEvent*)                               override;
+    void mousePressEvent(QMouseEvent*)                                override;
 
     /**
      * Sets the date, without altering the display.
@@ -129,7 +129,7 @@ protected:
 
 private:
 
-    QDate parseDate(bool* = nullptr) const;
+    QDate parseDate(bool* = nullptr)                            const;
     void updateView();
 
 private:

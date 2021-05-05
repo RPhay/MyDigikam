@@ -7,7 +7,7 @@
  * Description : digiKam image editor GUI
  *
  * Copyright (C) 2004-2005 by Renchi Raju <renchi dot raju at gmail dot com>
- * Copyright (C) 2004-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2004-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -46,7 +46,7 @@ bool ImageWindow::imageWindowCreated()
 
 ImageWindow::ImageWindow()
     : EditorWindow(QLatin1String("Image Editor")),
-      d(new Private)
+      d           (new Private)
 {
     setXMLFile(QLatin1String("imageeditorui5.rc"));
 
@@ -64,6 +64,7 @@ ImageWindow::ImageWindow()
     setupStatusBar();
     createGUI(xmlFile());
     registerPluginsActions();
+
     cleanupActions();
 
     showMenuBarAction()->setChecked(!menuBar()->isHidden());  // NOTE: workaround for bug #171080
@@ -364,9 +365,9 @@ void ImageWindow::slotChanged()
 {
     QString mpixels;
     QSize dims(m_canvas->imageWidth(), m_canvas->imageHeight());
-    mpixels.setNum(dims.width()*dims.height() / 1000000.0, 'f', 2);
-    QString str = (!dims.isValid()) ? i18n("Unknown") : i18n("%1x%2 (%3Mpx)",
-                                                             dims.width(), dims.height(), mpixels);
+    mpixels     = QLocale().toString(dims.width()*dims.height() / 1000000.0, 'f', 1);
+    QString str = (!dims.isValid()) ? i18nc("@title: unknown image dimension", "Unknown")
+                                    : i18n("%1x%2 (%3Mpx)", dims.width(), dims.height(), mpixels);
 
     m_resLabel->setAdjustedText(str);
 
@@ -574,8 +575,8 @@ void ImageWindow::saveIsComplete()
 
     // reset the orientation flag in the database
 
-    DMetadata meta(m_canvas->currentImage().getMetadata());
-    d->currentItemInfo.setOrientation(meta.getItemOrientation());
+    QScopedPointer<DMetadata> meta(new DMetadata(m_canvas->currentImage().getMetadata()));
+    d->currentItemInfo.setOrientation(meta->getItemOrientation());
 
     // Pop-up a message to bring user when save is done.
 
@@ -637,8 +638,8 @@ void ImageWindow::saveAsIsComplete()
     {
         // reset the orientation flag in the database
 
-        DMetadata meta(m_canvas->currentImage().getMetadata());
-        d->currentItemInfo.setOrientation(meta.getItemOrientation());
+        QScopedPointer<DMetadata> meta(new DMetadata(m_canvas->currentImage().getMetadata()));
+        d->currentItemInfo.setOrientation(meta->getItemOrientation());
     }
 
     QStringList derivedFilePaths;
@@ -759,7 +760,7 @@ void ImageWindow::prepareImageToSave()
                                                  << faceRect.width() << faceRect.height();
                 }
 
-                d->newFaceTags.insertMulti(it.key(), QVariant(faceRect));
+                d->newFaceTags.insert(it.key(), QVariant(faceRect));
             }
         }
 
@@ -786,7 +787,7 @@ void ImageWindow::saveFaceTagsToImage(const ItemInfo& info)
 
         FaceTagsEditor().removeAllFaces(info.id());
 
-        QMap<QString, QVariant>::const_iterator it;
+        QMultiMap<QString, QVariant>::const_iterator it;
 
         for (it = d->newFaceTags.constBegin() ; it != d->newFaceTags.constEnd() ; ++it)
         {
@@ -1284,6 +1285,11 @@ void ImageWindow::slotComponentsInfo()
 void ImageWindow::slotDBStat()
 {
     showDigikamDatabaseStat();
+}
+
+void ImageWindow::slotOnlineVersionCheck()
+{
+    Setup::onlineVersionCheck();
 }
 
 void ImageWindow::slotAddedDropedItems(QDropEvent* e)

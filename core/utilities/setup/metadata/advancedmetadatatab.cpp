@@ -57,19 +57,19 @@ class Q_DECL_HIDDEN AdvancedMetadataTab::Private
 public:
 
     explicit Private()
-      : metadataType(nullptr),
-        operationType(nullptr),
-        addButton(nullptr),
-        editButton(nullptr),
-        deleteButton(nullptr),
-        moveUpButton(nullptr),
-        moveDownButton(nullptr),
-        revertChanges(nullptr),
-        resetButton(nullptr),
-        unifyReadWrite(nullptr),
-        namespaceView(nullptr),
+      : metadataType    (nullptr),
+        operationType   (nullptr),
+        addButton       (nullptr),
+        editButton      (nullptr),
+        deleteButton    (nullptr),
+        moveUpButton    (nullptr),
+        moveDownButton  (nullptr),
+        revertChanges   (nullptr),
+        resetButton     (nullptr),
+        unifyReadWrite  (nullptr),
+        namespaceView   (nullptr),
         metadataTypeSize(0),
-        changed(false)
+        changed         (false)
     {
     }
 
@@ -93,7 +93,7 @@ public:
 
 AdvancedMetadataTab::AdvancedMetadataTab(QWidget* const parent)
     : QWidget(parent),
-      d(new Private())
+      d      (new Private())
 {
     // ---------- Advanced Configuration Panel -----------------------------
 
@@ -135,10 +135,10 @@ void AdvancedMetadataTab::slotResetToDefault()
 {
     const int result = DMessageBox::showContinueCancel(QMessageBox::Warning,
                                                        this,
-                                                       i18n("Warning"),
-                                                       i18n("This option will reset configuration to default\n"
-                                                            "All your changes will be lost.\n "
-                                                            "Do you want to continue?"));
+                                                       i18nc("@title: reset to default warning dialog", "Warning"),
+                                                       i18nc("@info", "This option will reset configuration to default\n"
+                                                                      "All your changes will be lost.\n "
+                                                                      "Do you want to continue?"));
 
     if (result != QMessageBox::Yes)
     {
@@ -180,6 +180,10 @@ void AdvancedMetadataTab::slotAddNewNamespace()
     else if (d->metadataType->currentData().toString() == NamespaceEntry::DM_COMMENT_CONTAINER())
     {
         entry.nsType = NamespaceEntry::COMMENT;
+    }
+    else if (d->metadataType->currentData().toString() == NamespaceEntry::DM_COLORLABEL_CONTAINER())
+    {
+        entry.nsType = NamespaceEntry::COLORLABEL;
     }
 
     entry.isDefault  = false;
@@ -417,9 +421,9 @@ int AdvancedMetadataTab::getModelIndex()
     }
     else
     {
-        // for 3 metadata types:
-        // read operation  = 3*0 + (0, 1, 2)
-        // write operation = 3*1 + (0, 1, 2) = (3, 4 ,5)
+        // for 4 metadata types:
+        // read operation  = 4*0 + (0, 1, 2, 3)
+        // write operation = 4*1 + (0, 1, 2, 3) = (4, 5, 6, 7)
 
         return (
                 (d->metadataTypeSize * d->operationType->currentIndex()) +
@@ -434,11 +438,11 @@ QList<NamespaceEntry>& AdvancedMetadataTab::getCurrentContainer()
 
     if (currentIndex >= d->metadataTypeSize)
     {
-        return d->container.getWriteMapping(QString::fromUtf8(d->metadataType->currentData().toByteArray()));
+        return d->container.getWriteMapping(d->metadataType->currentData().toString());
     }
     else
     {
-        return d->container.getReadMapping(QString::fromUtf8(d->metadataType->currentData().toByteArray()));
+        return d->container.getReadMapping(d->metadataType->currentData().toString());
     }
 }
 
@@ -448,7 +452,7 @@ void AdvancedMetadataTab::setModels()
 
     foreach (const QString& str, keys)
     {
-        d->metadataType->addItem(str, str);
+        d->metadataType->addItem(i18n(str.toUtf8().constData()), str);
     }
 
     d->metadataTypeSize = keys.size();

@@ -6,7 +6,7 @@
  * Date        : 2011-03-22
  * Description : a Iface C++ interface
  *
- * Copyright (C) 2011-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2011-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2011      by Hormiere Guillaume <hormiere dot guillaume at gmail dot com>
  * Copyright (C) 2011      by Manuel Campomanes <campomanes dot manuel at gmail dot com>
  *
@@ -88,7 +88,9 @@ void QueryRevision::setProperties(Properties properties)
     if (properties & QueryRevision::Flags)
     {
         if (buff.length())
+        {
             buff.append(QStringLiteral("|"));
+        }
 
         buff.append(QStringLiteral("flags"));
     }
@@ -96,7 +98,9 @@ void QueryRevision::setProperties(Properties properties)
     if (properties & QueryRevision::Timestamp)
     {
         if (buff.length())
+        {
             buff.append(QStringLiteral("|"));
+        }
 
         buff.append(QStringLiteral("timestamp"));
     }
@@ -104,7 +108,9 @@ void QueryRevision::setProperties(Properties properties)
     if (properties & QueryRevision::User)
     {
         if (buff.length())
+        {
             buff.append(QStringLiteral("|"));
+        }
 
         buff.append(QStringLiteral("user"));
     }
@@ -112,7 +118,9 @@ void QueryRevision::setProperties(Properties properties)
     if (properties & QueryRevision::Comment)
     {
         if (buff.length())
+        {
             buff.append(QStringLiteral("|"));
+        }
 
         buff.append(QStringLiteral("comment"));
     }
@@ -120,7 +128,9 @@ void QueryRevision::setProperties(Properties properties)
     if (properties & QueryRevision::Size)
     {
         if (buff.length())
+        {
             buff.append(QStringLiteral("|"));
+        }
 
         buff.append(QStringLiteral("size"));
     }
@@ -128,7 +138,9 @@ void QueryRevision::setProperties(Properties properties)
     if (properties & QueryRevision::Content)
     {
         if (buff.length())
+        {
             buff.append(QStringLiteral("|"));
+        }
 
         buff.append(QStringLiteral("content"));
     }
@@ -194,7 +206,7 @@ void QueryRevision::setDirection(QueryRevision::Direction direction)
 {
     Q_D(QueryRevision);
 
-    if (direction == QueryRevision::Older)
+    if      (direction == QueryRevision::Older)
     {
         d->requestParameter[QStringLiteral("rvdir")] = QStringLiteral("older");
     }
@@ -244,6 +256,7 @@ void QueryRevision::doWorkSendRequest()
     Q_D(QueryRevision);
 
     // Set the url
+
     QUrl url = d->MediaWiki.url();
     QUrlQuery query;
     query.addQueryItem(QStringLiteral("format"), QStringLiteral("xml"));
@@ -257,19 +270,22 @@ void QueryRevision::doWorkSendRequest()
         i.next();
         query.addQueryItem(i.key(), i.value());
     }
+
     url.setQuery(query);
 
     // Set the request
+
     QNetworkRequest request(url);
     request.setRawHeader("User-Agent", d->MediaWiki.userAgent().toUtf8());
 
     setPercent(25); // Request ready.
 
     // Send the request
+
     d->reply = d->manager->get(request);
     connectReply();
 
-    connect(d->reply, SIGNAL(finished()), 
+    connect(d->reply, SIGNAL(finished()),
             this, SLOT(doWorkProcessReply()));
 
     setPercent(50); // Request sent.
@@ -292,15 +308,30 @@ void QueryRevision::doWorkProcessReply()
 
         if (d->requestParameter.contains(QStringLiteral("rvgeneratexml")))
         {
-            for (int i = replytmp.indexOf(QStringLiteral("parsetree")); i != -1; i = replytmp.indexOf(QStringLiteral("parsetree"), i+1))
+            for (int i = replytmp.indexOf(QStringLiteral("parsetree")) ;
+                 i != -1 ;
+                 i = replytmp.indexOf(QStringLiteral("parsetree"), i+1))
             {
                 int count = 0;
 
                 while (count < 2)
                 {
-                    if (replytmp[i] == QLatin1Char('"') && replytmp[i-1] != QLatin1Char('\\')) count++;
-                    if (replytmp[i] == QLatin1Char('<'))                          replytmp[i] = char(255);
-                    if (replytmp[i] == QLatin1Char('>'))                          replytmp[i] = char(254);
+                    if ((replytmp[i]   == QLatin1Char('"')) &&
+                        (replytmp[i-1] != QLatin1Char('\\')))
+                    {
+                        count++;
+                    }
+
+                    if (replytmp[i] == QLatin1Char('<'))
+                    {
+                        replytmp[i] = QChar(255);
+                    }
+
+                    if (replytmp[i] == QLatin1Char('>'))
+                    {
+                        replytmp[i] = QChar(254);
+                    }
+
                     ++i;
                 }
             }
@@ -314,7 +345,7 @@ void QueryRevision::doWorkProcessReply()
 
             if (token == QXmlStreamReader::StartElement)
             {
-                if (reader.name() == QLatin1String("page") && d->requestParameter.contains(QStringLiteral("rvtoken")))
+                if ((reader.name() == QLatin1String("page")) && d->requestParameter.contains(QStringLiteral("rvtoken")))
                 {
                     tempR.setRollback(reader.attributes().value(QStringLiteral("rollbacktoken")).toString());
                 }
@@ -331,41 +362,65 @@ void QueryRevision::doWorkProcessReply()
                             tempR.setParentId(reader.attributes().value(QStringLiteral("parentid")).toString().toInt());}
 
                             if (rvprop.contains(QStringLiteral("size")))
+                            {
                                 tempR.setSize(reader.attributes().value(QStringLiteral("size")).toString().toInt());
+                            }
 
                             if (rvprop.contains(QStringLiteral("minor")))
+                            {
                                 tempR.setMinorRevision(true);
+                            }
 
                             if (rvprop.contains(QStringLiteral("user")))
+                            {
                                 tempR.setUser(reader.attributes().value(QStringLiteral("user")).toString());
+                            }
 
                             if (rvprop.contains(QStringLiteral("timestamp")))
+                            {
                                 tempR.setTimestamp(QDateTime::fromString(reader.attributes().value(QStringLiteral("timestamp")).toString(),QStringLiteral("yyyy-MM-ddThh:mm:ssZ")));
+                            }
 
                             if (rvprop.contains(QStringLiteral("comment")))
+                            {
                                 tempR.setComment(reader.attributes().value(QStringLiteral("comment")).toString());
+                            }
 
                             if (d->requestParameter.contains(QStringLiteral("rvgeneratexml")))
+                            {
                                 tempR.setParseTree(reader.attributes().value(QStringLiteral("parsetree")).toString());
+                            }
 
                             if (rvprop.contains(QStringLiteral("content")))
+                            {
                                 tempR.setContent(reader.readElementText());
+                            }
                         }
 
                         results << tempR;
                     }
                     else if (reader.name() == QLatin1String("error"))
                     {
-                        if (reader.attributes().value(QStringLiteral("code")).toString() == QLatin1String("rvrevids"))
+                        if      (reader.attributes().value(QStringLiteral("code")).toString() == QLatin1String("rvrevids"))
+                        {
                             this->setError(this->WrongRevisionId);
+                        }
                         else if (reader.attributes().value(QStringLiteral("code")).toString() == QLatin1String("rvmultpages"))
+                        {
                             this->setError(this->MultiPagesNotAllowed);
+                        }
                         else if (reader.attributes().value(QStringLiteral("code")).toString() == QLatin1String("rvaccessdenied"))
+                        {
                             this->setError(this->TitleAccessDenied);
+                        }
                         else if (reader.attributes().value(QStringLiteral("code")).toString() == QLatin1String("rvbadparams"))
+                        {
                             this->setError(this->TooManyParams);
+                        }
                         else if (reader.attributes().value(QStringLiteral("code")).toString() == QLatin1String("rvnosuchsection"))
+                        {
                             this->setError(this->SectionNotFound);
+                        }
 
                         d->reply->close();
                         d->reply->deleteLater();
@@ -393,6 +448,7 @@ void QueryRevision::doWorkProcessReply()
             setError(XmlError);
             d->reply->close();
             d->reply->deleteLater();
+
             //emit revision(QList<Revision>());
         }
     }
@@ -401,6 +457,7 @@ void QueryRevision::doWorkProcessReply()
         setError(NetworkError);
         d->reply->close();
         d->reply->deleteLater();
+
         //emit revision(QList<Revision>());
     }
 

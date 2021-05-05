@@ -6,7 +6,7 @@
  * Date        : 2011-03-22
  * Description : a Iface C++ interface
  *
- * Copyright (C) 2011-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2011-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2011      by Ludovic Delfau <ludovicdelfau at gmail dot com>
  *
  * This program is free software; you can redistribute it
@@ -32,7 +32,6 @@
 
 #include "mediawiki_job.h"
 #include "mediawiki_image.h"
-#include "digikam_export.h"
 
 namespace MediaWiki
 {
@@ -45,7 +44,7 @@ class QueryImagesPrivate;
  *
  * Gets a list of all images used on pages.
  */
-class DIGIKAM_EXPORT QueryImages : public Job
+class QueryImages : public Job
 {
     Q_OBJECT
     Q_DECLARE_PRIVATE(QueryImages)
@@ -80,7 +79,7 @@ public:
     /**
      * @brief Destroys a query images job.
      */
-    virtual ~QueryImages();
+    ~QueryImages() override;
 
     /**
      * @brief Set the title.
@@ -97,7 +96,7 @@ public:
     /**
      * @brief Starts the job asynchronously.
      */
-    void start() Q_DECL_OVERRIDE;
+    void start() override;
 
 Q_SIGNALS:
 
@@ -108,7 +107,7 @@ Q_SIGNALS:
      *
      * @param pages list of all images used on pages
      */
-    void images(const QList<Image> & images);
+    void images(const QList<Image>& images);
 
 private Q_SLOTS:
 

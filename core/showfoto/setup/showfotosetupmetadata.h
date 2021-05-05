@@ -6,7 +6,7 @@
  * Date        : 2009-07-18
  * Description : setup Metadata tab.
  *
- * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -43,13 +43,14 @@ public:
         ExifViewer,
         MakernotesViewer,
         IptcViewer,
-        XmpViewer
+        XmpViewer,
+        ExifTool
     };
 
 public:
 
     explicit SetupMetadata(QWidget* const parent = nullptr);
-    ~SetupMetadata();
+    ~SetupMetadata() override;
 
     void applySettings();
     void setActiveTab(MetadataTab tab);

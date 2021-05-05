@@ -6,7 +6,7 @@
  * Date        : 2008-13-08
  * Description : Raw post processing corrections.
  *
- * Copyright (C) 2008-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2008-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -37,23 +37,27 @@ namespace DigikamRawImportNativePlugin
 {
 
 RawPostProcessing::RawPostProcessing(DImg* const orgImage, QObject* const parent, const DRawDecoding& settings)
-    : DImgThreadedFilter(parent)
+    : DImgThreadedFilter (parent),
+      m_customRawSettings(settings)
+
 {
     setFilterName("RawPostProcessing");
     setOriginalImage(orgImage->copy());
-    m_customRawSettings = settings;
     initFilter();
 }
 
 RawPostProcessing::RawPostProcessing(DImgThreadedFilter* const parentFilter,
-                                     const DImg& orgImage, const DImg& destImage,
-                                     int progressBegin, int progressEnd, const DRawDecoding& settings)
+                                     const DImg& orgImage,
+                                     const DImg& destImage,
+                                     int progressBegin,
+                                     int progressEnd,
+                                     const DRawDecoding& settings)
     : DImgThreadedFilter(parentFilter, orgImage, destImage, progressBegin, progressEnd,
-                         parentFilter->filterName() + ": RawPostProcessing")
+                         parentFilter->filterName() + ": RawPostProcessing"),
+      m_customRawSettings(settings)
 {
-    m_customRawSettings = settings;
-
     // NOTE: use dynamic binding as this virtual method can be re-implemented in derived classes.
+
     this->filterImage();
 }
 
@@ -83,7 +87,7 @@ void RawPostProcessing::rawPostProcessing()
 
     postProgress(20);
 
-    if (m_customRawSettings.exposureComp != 0.0 || m_customRawSettings.saturation != 1.0)
+    if ((m_customRawSettings.exposureComp != 0.0) || (m_customRawSettings.saturation != 1.0))
     {
         WBContainer settings;
         settings.temperature  = 6500.0;
@@ -100,7 +104,7 @@ void RawPostProcessing::rawPostProcessing()
 
     postProgress(40);
 
-    if (m_customRawSettings.lightness != 0.0 || m_customRawSettings.contrast != 1.0 || m_customRawSettings.gamma != 1.0)
+    if ((m_customRawSettings.lightness != 0.0) || (m_customRawSettings.contrast != 1.0) || (m_customRawSettings.gamma != 1.0))
     {
         BCGContainer settings;
         settings.brightness = m_customRawSettings.lightness;

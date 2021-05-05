@@ -6,7 +6,7 @@
  * Date        : 2010-03-21
  * Description : A model to hold GPS information about items.
  *
- * Copyright (C) 2010-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2010-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2010      by Michael G. Hansen <mike at mghansen dot de>
  *
  * This program is free software; you can redistribute it
@@ -46,30 +46,30 @@ class DIGIKAM_EXPORT GPSItemModel : public QAbstractItemModel
 public:
 
     explicit GPSItemModel(QObject* const parent = nullptr);
-    ~GPSItemModel();
+    ~GPSItemModel() override;
 
     // own functions:
 
     void addItem(GPSItemContainer* const newItem);
     void setColumnCount(const int nColumns);
-    GPSItemContainer* itemFromIndex(const QModelIndex& index)                                               const;
-    GPSItemContainer* itemFromUrl(const QUrl& url)                                                          const;
-    QModelIndex indexFromUrl(const QUrl& url)                                                               const;
+    GPSItemContainer* itemFromIndex(const QModelIndex& index)                                       const;
+    GPSItemContainer* itemFromUrl(const QUrl& url)                                                  const;
+    QModelIndex indexFromUrl(const QUrl& url)                                                       const;
 
     QPixmap getPixmapForIndex(const QPersistentModelIndex& itemIndex, const int size);
 
     // QAbstractItemModel:
 
-    virtual int columnCount(const QModelIndex& parent = QModelIndex())                                      const override;
-    virtual bool setData(const QModelIndex& index, const QVariant& value, int role)                               override;
-    virtual QVariant data(const QModelIndex& index, int role = Qt::DisplayRole)                             const override;
-    virtual QModelIndex index(int row, int column, const QModelIndex& parent = QModelIndex())               const override;
-    virtual QModelIndex parent(const QModelIndex& index)                                                    const override;
-    virtual int rowCount(const QModelIndex& parent = QModelIndex())                                         const override;
-    virtual bool setHeaderData(int section, Qt::Orientation orientation, const QVariant& value, int role)         override;
-    virtual QVariant headerData(int section, Qt::Orientation orientation, int role)                         const override;
-    virtual Qt::ItemFlags flags(const QModelIndex& index)                                                   const override;
-    virtual Qt::DropActions supportedDragActions()                                                          const override;
+    int columnCount(const QModelIndex& parent = QModelIndex())                                      const override;
+    bool setData(const QModelIndex& index, const QVariant& value, int role)                               override;
+    QVariant data(const QModelIndex& index, int role = Qt::DisplayRole)                             const override;
+    QModelIndex index(int row, int column, const QModelIndex& parent = QModelIndex())               const override;
+    QModelIndex parent(const QModelIndex& index)                                                    const override;
+    int rowCount(const QModelIndex& parent = QModelIndex())                                         const override;
+    bool setHeaderData(int section, Qt::Orientation orientation, const QVariant& value, int role)         override;
+    QVariant headerData(int section, Qt::Orientation orientation, int role)                         const override;
+    Qt::ItemFlags flags(const QModelIndex& index)                                                   const override;
+    Qt::DropActions supportedDragActions()                                                          const override;
 
 protected:
 

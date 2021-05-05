@@ -1,8 +1,10 @@
 #
-# Copyright (c) 2010-2020 by Gilles Caulier, <caulier dot gilles at gmail dot com>
+# Copyright (c) 2010-2021 by Gilles Caulier, <caulier dot gilles at gmail dot com>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
+
+APPLY_COMMON_POLICIES()
 
 include_directories(
     $<TARGET_PROPERTY:Qt5::Test,INTERFACE_INCLUDE_DIRECTORIES>
@@ -10,29 +12,27 @@ include_directories(
     $<TARGET_PROPERTY:KF5::I18n,INTERFACE_INCLUDE_DIRECTORIES>
 )
 
-set(searchtextbartest_SRCS
-    searchtextbartest.cpp
-)
+##################################################################
 
-add_executable(searchtextbartest ${searchtextbartest_SRCS})
-add_test(searchtextbartest searchtextbartest)
-ecm_mark_as_test(searchtextbartest)
+ecm_add_tests(${CMAKE_CURRENT_SOURCE_DIR}/searchtextbartest.cpp
 
-target_link_libraries(searchtextbartest
-                      digikamcore
+              NAME_PREFIX
 
-                      ${COMMON_TEST_LINK}
+              "digikam-"
+
+              LINK_LIBRARIES
+
+              digikamcore
+
+              ${COMMON_TEST_LINK}
 )
 
 ##################################################################
 
-set(ditemslisttest_SRCS
-    ditemslisttest.cpp
-)
-
-add_executable(ditemslisttest ${ditemslisttest_SRCS})
+add_executable(ditemslisttest ${CMAKE_CURRENT_SOURCE_DIR}/ditemslisttest.cpp)
 
 target_link_libraries(ditemslisttest
+
                       digikamcore
 
                       ${COMMON_TEST_LINK}

@@ -6,7 +6,7 @@
  * Date        : 2004-08-24
  * Description : a tool to reduce CCD noise.
  *
- * Copyright (C) 2004-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2004-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -40,23 +40,23 @@ class NoiseReductionTool : public EditorToolThreaded
 public:
 
     explicit NoiseReductionTool(QObject* const parent);
-    ~NoiseReductionTool();
+    ~NoiseReductionTool()       override;
 
 private:
 
-    void readSettings();
-    void writeSettings();
-    void preparePreview();
-    void prepareFinal();
-    void setPreviewImage();
-    void setFinalImage();
-    void analyserCompleted();
+    void readSettings()         override;
+    void writeSettings()        override;
+    void preparePreview()       override;
+    void prepareFinal()         override;
+    void setPreviewImage()      override;
+    void setFinalImage()        override;
+    void analyserCompleted()    override;
 
 private Q_SLOTS:
 
-    void slotResetSettings();
-    void slotLoadSettings();
-    void slotSaveAsSettings();
+    void slotResetSettings()    override;
+    void slotLoadSettings()     override;
+    void slotSaveAsSettings()   override;
     void slotEstimateNoise();
 
 private:

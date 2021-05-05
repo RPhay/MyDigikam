@@ -6,7 +6,7 @@
  * Date        : 2009-11-13
  * Description : a tool to blend bracketed images.
  *
- * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2012      by Benjamin Girault <benjamin dot girault at gmail dot com>
  *
  * This program is free software; you can redistribute it
@@ -48,32 +48,32 @@ class Q_DECL_HIDDEN ExpoBlendingLastPage::Private
 public:
 
     explicit Private()
+        : mngr(nullptr)
     {
-        mngr = nullptr;
     }
 
     ExpoBlendingManager* mngr;
 };
 
 ExpoBlendingLastPage::ExpoBlendingLastPage(ExpoBlendingManager* const mngr, QWizard* const dlg)
-    : DWizardPage(dlg, i18nc("@title:window", "Pre-Processing is Complete")),
-      d(new Private)
+    : DWizardPage(dlg, QString::fromLatin1("<b>%1</b>").arg(i18nc("@title:window", "Pre-Processing is Complete"))),
+      d          (new Private)
 {
     d->mngr                 = mngr;
     DVBox* const vbox       = new DVBox(this);
     QLabel* const title     = new QLabel(vbox);
     title->setOpenExternalLinks(true);
     title->setWordWrap(true);
-    title->setText(i18n("<qt>"
-                        "<p><h1><b>Bracketed Images Pre-Processing is Done</b></h1></p>"
-                        "<p>Congratulations. Your images are ready to be fused. </p>"
-                        "<p>To perform this operation, <b>%1</b> program from "
-                        "<a href='%2'>Enblend</a> "
-                        "project will be used.</p>"
-                        "<p>Press \"Finish\" button to fuse your items and make a pseudo HDR image.</p>"
-                        "</qt>",
-                        QDir::toNativeSeparators(d->mngr->enfuseBinary().path()),
-                        d->mngr->enfuseBinary().url().url()));
+    title->setText(QString::fromUtf8("<qt>"
+                                     "<p><h1><b>%1</b></h1></p>"
+                                     "<p>%2</p>"
+                                     "<p>%3</p>"
+                                     "<p>%4</p>"
+                                     "</qt>")
+                   .arg(i18nc("@info", "Bracketed Images Pre-Processing is Done"))
+                   .arg(i18nc("@info", "Congratulations. Your images are ready to be fused."))
+                   .arg(i18nc("@info", "To perform this operation, Enblend program from will be used."))
+                   .arg(i18nc("@info", "Press \"Finish\" button to fuse your items and make a pseudo HDR image.")));
 
     vbox->setStretchFactor(new QWidget(vbox), 10);
 

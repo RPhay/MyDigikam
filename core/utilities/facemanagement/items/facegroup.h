@@ -7,7 +7,7 @@
  * Description : Managing of face tag region items on a GraphicsDImgView
  *
  * Copyright (C) 2010-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2012-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -53,7 +53,7 @@ public:
      * of a particular image, displayed on a GraphicsDImgView.
      */
     explicit FaceGroup(GraphicsDImgView* const view);
-    ~FaceGroup();
+    ~FaceGroup() override;
 
     bool isVisible()                                                     const;
     ItemInfo info()                                                      const;
@@ -145,7 +145,12 @@ protected Q_SLOTS:
 
 private:
 
-    FaceGroup(); // Disable
+    // Disable
+    FaceGroup()                            = delete;
+    FaceGroup(const FaceGroup&)            = delete;
+    FaceGroup& operator=(const FaceGroup&) = delete;
+
+private:
 
     class Private;
     Private* const d;

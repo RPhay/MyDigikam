@@ -55,20 +55,20 @@ class ItemFilterModelTodoPackage
 public:
 
     ItemFilterModelTodoPackage()
-        : version(0),
+        : version   (0),
           isForReAdd(false)
     {
     }
 
     ItemFilterModelTodoPackage(const QVector<ItemInfo>& infos, const QVector<QVariant>& extraValues, int version, bool isForReAdd)
-        : infos(infos),
+        : infos      (infos),
           extraValues(extraValues),
-          version(version),
-          isForReAdd(isForReAdd)
+          version    (version),
+          isForReAdd (isForReAdd)
     {
     }
 
-    QVector<ItemInfo>     infos;
+    QVector<ItemInfo>      infos;
     QVector<QVariant>      extraValues;
     unsigned int           version;
     bool                   isForReAdd;
@@ -86,8 +86,8 @@ class DIGIKAM_DATABASE_EXPORT ItemFilterModel::ItemFilterModelPrivate : public Q
 
 public:
 
-    explicit ItemFilterModelPrivate();
-    ~ItemFilterModelPrivate();
+    ItemFilterModelPrivate();
+    ~ItemFilterModelPrivate() override;
 
     void init(ItemFilterModel* q);
     void setupWorkers();
@@ -161,6 +161,11 @@ Q_SIGNALS:
     void packageToFilter(const ItemFilterModelTodoPackage& package);
     void reAddItemInfos(const QList<ItemInfo>& infos, const QList<QVariant>& extraValues);
     void reAddingFinished();
+
+private:
+
+    // Disable
+    explicit ItemFilterModelPrivate(QObject*) = delete;
 };
 
 } // namespace Digikam

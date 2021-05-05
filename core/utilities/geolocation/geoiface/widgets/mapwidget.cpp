@@ -6,7 +6,7 @@
  * Date        : 2009-12-01
  * Description : world map widget library
  *
- * Copyright (C) 2010-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2010-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2009-2011 by Michael G. Hansen <mike at mghansen dot de>
  * Copyright (C)      2014 by Justus Schwartz <justus at gmx dot li>
  *
@@ -39,6 +39,7 @@
 #include <QPointer>
 #include <QStackedLayout>
 #include <QTimer>
+#include <QPushButton>
 #include <QToolButton>
 #include <QHBoxLayout>
 #include <QAction>
@@ -46,9 +47,8 @@
 
 // KDE includes
 
-#include <kconfig.h>
-#include <kconfiggroup.h>
 #include <klocalizedstring.h>
+#include <kconfiggroup.h>
 
 // Marbel includes
 
@@ -145,8 +145,8 @@ public:
         thumbnailTimer(nullptr),
         thumbnailTimerCount(0),
         thumbnailsHaveBeenLoaded(false),
-        availableExtraActions(nullptr),
-        visibleExtraActions(nullptr),
+        availableExtraActions(),
+        visibleExtraActions(),
         actionStickyMode(nullptr),
         buttonStickyMode(nullptr),
         placeholderWidget(nullptr)
@@ -411,9 +411,8 @@ MapWidget::~MapWidget()
 QStringList MapWidget::availableBackends() const
 {
     QStringList result;
-    MapBackend* backend = nullptr;
 
-    foreach (backend, d->loadedBackends)
+    foreach (MapBackend* const backend, d->loadedBackends)
     {
         result.append(backend->backendName());
     }
@@ -467,9 +466,7 @@ bool MapWidget::setBackend(const QString& backendName)
 
     }
 
-    MapBackend* backend = nullptr;
-
-    foreach (backend, d->loadedBackends)
+    foreach (MapBackend* const backend, d->loadedBackends)
     {
         if (backend->backendName() == backendName)
         {
@@ -671,7 +668,10 @@ void MapWidget::readSettingsFromGroup(const KConfigGroup* const group)
         return;
     }
 
-    setBackend(group->readEntry("Backend", "marble"));
+    if (d->currentBackendName.isEmpty())
+    {
+        setBackend(group->readEntry("Backend", "marble"));
+    }
 
     // Options concerning the display of markers
 
@@ -789,12 +789,11 @@ QWidget* MapWidget::getControlWidget()
         QHBoxLayout* const controlWidgetHBoxLayout = new QHBoxLayout(d->controlWidget);
         controlWidgetHBoxLayout->setContentsMargins(QMargins());
 
-        QToolButton* const configurationButton = new QToolButton(d->controlWidget);
+        QPushButton* const configurationButton = new QPushButton(d->controlWidget);
+        configurationButton->setIcon(QIcon::fromTheme(QLatin1String("globe")));
         controlWidgetHBoxLayout->addWidget(configurationButton);
         configurationButton->setToolTip(i18n("Map settings"));
-        configurationButton->setIcon(QIcon::fromTheme( QLatin1String("globe") ));
         configurationButton->setMenu(d->configurationMenu);
-        configurationButton->setPopupMode(QToolButton::InstantPopup);
 
         QToolButton* const zoomInButton = new QToolButton(d->controlWidget);
         controlWidgetHBoxLayout->addWidget(zoomInButton);
@@ -1471,7 +1470,7 @@ void MapWidget::slotLazyReclusteringRequestCallBack()
  */
 void MapWidget::slotClustersClicked(const QIntList& clusterIndices)
 {
-    qCDebug(DIGIKAM_GEOIFACE_LOG)<<clusterIndices;
+    qCDebug(DIGIKAM_GEOIFACE_LOG) << clusterIndices;
 
     if ((s->currentMouseMode == MouseModeZoomIntoGroup) ||
         (s->currentMouseMode == MouseModeRegionSelectionFromIcon) )
@@ -1812,11 +1811,13 @@ QPixmap MapWidget::getDecoratedPixmapForCluster(const int clusterId,
     {
         const QVariant representativeMarker = getClusterRepresentativeMarker(clusterId, s->sortKey);
         const int undecoratedThumbnailSize  = getUndecoratedThumbnailSize();
-        QPixmap clusterPixmap               = s->markerModel->pixmapFromRepresentativeIndex(representativeMarker, QSize(undecoratedThumbnailSize, undecoratedThumbnailSize));
+        QPixmap clusterPixmap               = s->markerModel->pixmapFromRepresentativeIndex(representativeMarker,
+                                                                                            QSize(undecoratedThumbnailSize,
+                                                                                                  undecoratedThumbnailSize));
 
         if (!clusterPixmap.isNull())
         {
-            QPixmap resultPixmap(clusterPixmap.size() + QSize(2,2));
+            QPixmap resultPixmap(clusterPixmap.size() + QSize(2, 2));
 
             // we may draw with partially transparent pixmaps later, so make sure we have a defined
             // background color
@@ -1859,7 +1860,7 @@ QPixmap MapWidget::getDecoratedPixmapForCluster(const int clusterId,
                 p.end();
             }
 
-            painter.drawPixmap(QPoint(1,1), clusterPixmap);
+            painter.drawPixmap(QPoint(1, 1), clusterPixmap);
 
             if (shouldGrayOut || shouldCrossOut)
             {

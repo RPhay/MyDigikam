@@ -1,6 +1,6 @@
 # Script to build Boost for digiKam bundle.
 #
-# Copyright (c) 2015-2020 by Gilles Caulier  <caulier dot gilles at gmail dot com>
+# Copyright (c) 2015-2021 by Gilles Caulier  <caulier dot gilles at gmail dot com>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
@@ -10,8 +10,8 @@ SET(PREFIX_ext_boost "${EXTPREFIX}")
 
 ExternalProject_Add( ext_boost
     DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
-    URL http://downloads.sourceforge.net/project/boost/boost/1.70.0/boost_1_70_0.tar.bz2
-    URL_MD5 242ecc63507711d6706b9b0c0d0c7d4f
+    URL http://downloads.sourceforge.net/project/boost/boost/1.74.0/boost_1_74_0.tar.bz2
+    URL_MD5 da07ca30dd1c0d1fdedbd487efee01bd
     CONFIGURE_COMMAND <SOURCE_DIR>/bootstrap.sh --prefix=${PREFIX_ext_boost} --with-libraries=system
     BUILD_COMMAND <SOURCE_DIR>/b2 install
     INSTALL_COMMAND ""

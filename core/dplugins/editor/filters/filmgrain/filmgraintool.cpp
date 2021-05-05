@@ -7,7 +7,7 @@
  * Description : a digiKam image editor tool for add film
  *               grain on an image.
  *
- * Copyright (C) 2004-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2004-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2006-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  *
  * This program is free software; you can redistribute it
@@ -56,10 +56,10 @@ class Q_DECL_HIDDEN FilmGrainTool::Private
 public:
 
     explicit Private()
-      : configGroupName(QLatin1String("filmgrain Tool")),
-        settingsView(nullptr),
-        previewWidget(nullptr),
-        gboxSettings(nullptr)
+      : configGroupName (QLatin1String("filmgrain Tool")),
+        settingsView    (nullptr),
+        previewWidget   (nullptr),
+        gboxSettings    (nullptr)
     {
     }
 
@@ -73,7 +73,7 @@ public:
 
 FilmGrainTool::FilmGrainTool(QObject* const parent)
     : EditorToolThreaded(parent),
-      d(new Private)
+      d                 (new Private)
 {
     setObjectName(QLatin1String("filmgrain"));
     setInitPreview(true);

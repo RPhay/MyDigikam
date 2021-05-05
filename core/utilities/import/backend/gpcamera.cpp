@@ -7,7 +7,7 @@
  * Description : Gphoto2 camera interface
  *
  * Copyright (C) 2003-2005 by Renchi Raju <renchi dot raju at gmail dot com>
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2006-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  *
  * This program is free software; you can redistribute it
@@ -49,6 +49,7 @@ extern "C"
 #include <QImage>
 #include <QPixmap>
 #include <QFile>
+#include <QScopedPointer>
 #include <QDateTime>
 #include <QTextDocument>
 #include <QCryptographicHash>
@@ -61,6 +62,7 @@ extern "C"
 
 #include "digikam_debug.h"
 #include "digikam_config.h"
+#include "dfileoperations.h"
 #include "dmetadata.h"
 
 //#define GPHOTO2_DEBUG 1
@@ -85,6 +87,7 @@ public:
 
     GPStatus()
     {
+
 #ifdef HAVE_GPHOTO2
 
         context = gp_context_new();
@@ -105,12 +108,14 @@ public:
 
     ~GPStatus()
     {
+
 #ifdef HAVE_GPHOTO2
 
         gp_context_unref(context);
         cancel = false;
 
 #endif // HAVE_GPHOTO2
+
     }
 
     static bool cancel;
@@ -177,8 +182,8 @@ public:
 #ifdef HAVE_GPHOTO2
 
         : cameraInitialized(false),
-          camera(nullptr),
-          status(nullptr)
+          camera           (nullptr),
+          status           (nullptr)
 
 #endif // HAVE_GPHOTO2
 
@@ -204,12 +209,13 @@ public:
 GPCamera::GPCamera(const QString& title, const QString& model,
                    const QString& port, const QString& path)
     : DKCamera(title, model, port, path),
-      d(new Private)
+      d       (new Private)
 {
 }
 
 GPCamera::~GPCamera()
 {
+
 #ifdef HAVE_GPHOTO2
 
     if (d->status)
@@ -262,6 +268,7 @@ QByteArray GPCamera::cameraMD5ID()
 
 bool GPCamera::doConnect()
 {
+
 #ifdef HAVE_GPHOTO2
 
     int errorCode;
@@ -391,10 +398,12 @@ bool GPCamera::doConnect()
     return false;
 
 #endif // HAVE_GPHOTO2
+
 }
 
 void GPCamera::cancel()
 {
+
 #ifdef HAVE_GPHOTO2
 
 /*
@@ -409,10 +418,12 @@ void GPCamera::cancel()
     d->status->cancel = true;
 
 #endif // HAVE_GPHOTO2
+
 }
 
 bool GPCamera::getFreeSpace(unsigned long& kBSize, unsigned long& kBAvail)
 {
+
 #ifdef HAVE_GPHOTO2
 
     // NOTE: This method depends of libgphoto2 2.4.0
@@ -434,7 +445,7 @@ bool GPCamera::getFreeSpace(unsigned long& kBSize, unsigned long& kBAvail)
     {
         if (sinfos[i].fields & GP_STORAGEINFO_FILESYSTEMTYPE)
         {
-            switch(sinfos[i].fstype)
+            switch (sinfos[i].fstype)
             {
                 case GP_STORAGEINFO_FST_UNDEFINED:
                     qCDebug(DIGIKAM_IMPORTUI_LOG) << "Storage fstype: undefined";
@@ -538,6 +549,7 @@ bool GPCamera::getFreeSpace(unsigned long& kBSize, unsigned long& kBAvail)
 
 
     return true;
+
 #else
 
     Q_UNUSED(kBSize);
@@ -550,6 +562,7 @@ bool GPCamera::getFreeSpace(unsigned long& kBSize, unsigned long& kBAvail)
 
 bool GPCamera::getPreview(QImage& preview)
 {
+
 #ifdef HAVE_GPHOTO2
 
     int               errorCode;
@@ -584,6 +597,7 @@ bool GPCamera::getPreview(QImage& preview)
 
     gp_file_unref(cfile);
     return true;
+
 #else
 
     Q_UNUSED(preview);
@@ -595,6 +609,7 @@ bool GPCamera::getPreview(QImage& preview)
 
 bool GPCamera::capture(CamItemInfo& itemInfo)
 {
+
 #ifdef HAVE_GPHOTO2
 
     int            errorCode;
@@ -644,7 +659,7 @@ bool GPCamera::capture(CamItemInfo& itemInfo)
 
     if (info.file.fields & GP_FILE_INFO_MTIME)
     {
-        itemInfo.ctime = QDateTime::fromTime_t(info.file.mtime);
+        itemInfo.ctime = QDateTime::fromSecsSinceEpoch(info.file.mtime);
     }
 
     if (info.file.fields & GP_FILE_INFO_SIZE)
@@ -708,6 +723,7 @@ bool GPCamera::capture(CamItemInfo& itemInfo)
 
 bool GPCamera::getFolders(const QString& folder)
 {
+
 #ifdef HAVE_GPHOTO2
 
     int         errorCode;
@@ -754,6 +770,7 @@ bool GPCamera::getFolders(const QString& folder)
     emit signalFolderList(subFolderList);
 
     return true;
+
 #else
 
     Q_UNUSED(folder);
@@ -766,6 +783,7 @@ bool GPCamera::getFolders(const QString& folder)
 // TODO unused, remove?
 bool GPCamera::getItemsList(const QString& folder, QStringList& itemsList)
 {
+
 #ifdef HAVE_GPHOTO2
 
     int         errorCode;
@@ -819,6 +837,7 @@ bool GPCamera::getItemsList(const QString& folder, QStringList& itemsList)
 
 bool GPCamera::getItemsInfoList(const QString& folder, bool useMetadata, CamItemInfoList& items)
 {
+
 #ifdef HAVE_GPHOTO2
 
     int         errorCode;
@@ -871,10 +890,12 @@ bool GPCamera::getItemsInfoList(const QString& folder, bool useMetadata, CamItem
     return false;
 
 #endif // HAVE_GPHOTO2
+
 }
 
 void GPCamera::getItemInfo(const QString& folder, const QString& itemName, CamItemInfo& info, bool useMetadata)
 {
+
 #ifdef HAVE_GPHOTO2
 
     getItemInfoInternal(folder, itemName, info, useMetadata);
@@ -891,18 +912,20 @@ void GPCamera::getItemInfo(const QString& folder, const QString& itemName, CamIt
 
 void GPCamera::getItemInfoInternal(const QString& folder, const QString& itemName, CamItemInfo& info, bool useMetadata)
 {
+
 #ifdef HAVE_GPHOTO2
 
     info.folder          = folder;
     info.name            = itemName;
     d->status->cancel    = false;
-    info.previewPossible = m_captureImagePreviewSupport;
+    info.previewPossible = false;
 
     CameraFileInfo cfinfo;
     gp_camera_file_get_info(d->camera, QFile::encodeName(info.folder).constData(),
                             QFile::encodeName(info.name).constData(), &cfinfo, d->status->context);
 
     // if preview has size field, it's a valid preview most likely, otherwise we'll skip it later on
+
     if (cfinfo.preview.fields & GP_FILE_INFO_SIZE)
     {
         info.previewPossible = true;
@@ -958,16 +981,17 @@ void GPCamera::getItemInfoInternal(const QString& folder, const QString& itemNam
         if (useMetadata)
         {
             // Try to use file metadata
-            DMetadata meta;
-            getMetadata(folder, itemName, meta);
-            fillItemInfoFromMetadata(info, meta);
+            QScopedPointer<DMetadata> meta(new DMetadata);
+            getMetadata(folder, itemName, *meta);
+            fillItemInfoFromMetadata(info, *meta);
 
             // Fall back to camera file system info
+
             if (info.ctime.isNull())
             {
                 if (cfinfo.file.fields & GP_FILE_INFO_MTIME)
                 {
-                    info.ctime = QDateTime::fromTime_t(cfinfo.file.mtime);
+                    info.ctime = QDateTime::fromSecsSinceEpoch(cfinfo.file.mtime);
                 }
                 else
                 {
@@ -980,7 +1004,7 @@ void GPCamera::getItemInfoInternal(const QString& folder, const QString& itemNam
             // Only use properties provided by camera.
             if (cfinfo.file.fields & GP_FILE_INFO_MTIME)
             {
-                info.ctime = QDateTime::fromTime_t(cfinfo.file.mtime);
+                info.ctime = QDateTime::fromSecsSinceEpoch(cfinfo.file.mtime);
             }
             else
             {
@@ -1188,17 +1212,15 @@ bool GPCamera::downloadItem(const QString& folder, const QString& itemName,
     time_t mtime;
     errorCode = gp_file_get_mtime(cfile, &mtime);
 
-    if (errorCode == GP_OK && mtime)
-    {
-        struct utimbuf ut;
-        ut.modtime = mtime;
-        ut.actime  = mtime;
-        ::utime(QFile::encodeName(saveFile).constData(), &ut);
-    }
-
     file.close();
 
+    if ((errorCode == GP_OK) && mtime)
+    {
+        DFileOperations::setModificationTime(saveFile, QDateTime::fromSecsSinceEpoch(mtime));
+    }
+
     gp_file_unref(cfile);
+
     return true;
 
 #else
@@ -1430,7 +1452,7 @@ bool GPCamera::uploadItem(const QString& folder, const QString& itemName, const 
 
     if (info.file.fields & GP_FILE_INFO_MTIME)
     {
-        itemInfo.ctime = QDateTime::fromTime_t(info.file.mtime);
+        itemInfo.ctime = QDateTime::fromSecsSinceEpoch(info.file.mtime);
     }
 
     if (info.file.fields & GP_FILE_INFO_SIZE)
@@ -1518,28 +1540,28 @@ bool GPCamera::cameraSummary(QString& summary)
     // we do not expect titel/model/etc. to contain newlines,
     // so we just escape HTML characters
     summary =  i18nc("@info List of device properties",
-                     "Title: <b>%1</b><br/>"
-                     "Model: <b>%2</b><br/>"
-                     "Port: <b>%3</b><br/>"
-                     "Path: <b>%4</b><br/><br/>",
+                     "Title: \"%1\"\n"
+                     "Model: \"%2\"\n"
+                     "Port: \"%3\"\n"
+                     "Path: \"%4\"\n\n",
                      title().toHtmlEscaped(),
                      model().toHtmlEscaped(),
                      port().toHtmlEscaped(),
                      path().toHtmlEscaped());
 
     summary += i18nc("@info List of supported device operations",
-                     "Thumbnails: <b>%1</b><br/>"
-                     "Capture image: <b>%2</b><br/>"
-                     "Delete items: <b>%3</b><br/>"
-                     "Upload items: <b>%4</b><br/>"
-                     "Create directories: <b>%5</b><br/>"
-                     "Delete Directories: <b>%6</b><br/><br/>",
-                     thumbnailSupport()    ? i18n("yes") : i18n("no"),
-                     captureImageSupport() ? i18n("yes") : i18n("no"),
-                     deleteSupport()       ? i18n("yes") : i18n("no"),
-                     uploadSupport()       ? i18n("yes") : i18n("no"),
-                     mkDirSupport()        ? i18n("yes") : i18n("no"),
-                     delDirSupport()       ? i18n("yes") : i18n("no"));
+                     "Thumbnails: \"%1\"\n"
+                     "Capture image: \"%2\"\n"
+                     "Delete items: \"%3\"\n"
+                     "Upload items: \"%4\"\n"
+                     "Create directories: \"%5\"\n"
+                     "Delete Directories: \"%6\"\n\n",
+                     thumbnailSupport()    ? i18nc("@info: gphoto backend feature", "yes") : i18nc("@info: gphoto backend feature", "no"),
+                     captureImageSupport() ? i18nc("@info: gphoto backend feature", "yes") : i18nc("@info: gphoto backend feature", "no"),
+                     deleteSupport()       ? i18nc("@info: gphoto backend feature", "yes") : i18nc("@info: gphoto backend feature", "no"),
+                     uploadSupport()       ? i18nc("@info: gphoto backend feature", "yes") : i18nc("@info: gphoto backend feature", "no"),
+                     mkDirSupport()        ? i18nc("@info: gphoto backend feature", "yes") : i18nc("@info: gphoto backend feature", "no"),
+                     delDirSupport()       ? i18nc("@info: gphoto backend feature", "yes") : i18nc("@info: gphoto backend feature", "no"));
 
     // here we need to make sure whitespace and newlines
     // are converted to HTML properly
@@ -1611,7 +1633,7 @@ bool GPCamera::cameraAbout(QString& about)
     // are converted to HTML properly
     about = Qt::convertFromPlainText(QString::fromLocal8Bit(abt.text), Qt::WhiteSpacePre);
     about.append(QString::fromUtf8("<br/><br/>To report problems about this driver, please contact "
-                 "the gphoto2 team at:<br/><br/>http://gphoto.org/bugs"));
+                 "the gphoto2 team at:<br/><br/>http://gphoto.org/bugs"));      // krazy:exclude=insecurenet
 
     return true;
 

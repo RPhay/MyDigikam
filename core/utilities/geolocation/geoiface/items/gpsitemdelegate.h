@@ -6,7 +6,7 @@
  * Date        : 2010-03-22
  * Description : A model for the view to display a list of items.
  *
- * Copyright (C) 2010-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2010-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2010      by Michael G. Hansen <mike at mghansen dot de>
  *
  * This program is free software; you can redistribute it
@@ -43,13 +43,13 @@ class GPSItemDelegate : public QItemDelegate
 public:
 
     explicit GPSItemDelegate(GPSItemList* const imageList, QObject* const parent = nullptr);
-    virtual ~GPSItemDelegate();
+    ~GPSItemDelegate() override;
 
     void setThumbnailSize(const int size);
-    int  getThumbnailSize()                                                                                       const;
+    int  getThumbnailSize()                                                                               const;
 
-    virtual void paint(QPainter* painter, const QStyleOptionViewItem& option, const QModelIndex& sortMappedindex) const override;
-    virtual QSize sizeHint(const QStyleOptionViewItem& option, const QModelIndex& sortMappedindex)                const override;
+    void paint(QPainter* painter, const QStyleOptionViewItem& option, const QModelIndex& sortMappedindex) const override;
+    QSize sizeHint(const QStyleOptionViewItem& option, const QModelIndex& sortMappedindex)                const override;
 
 private:
 

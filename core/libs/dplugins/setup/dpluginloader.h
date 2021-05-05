@@ -6,7 +6,7 @@
  * Date        : 2018-07-30
  * Description : manager to load external plugins at run-time
  *
- * Copyright (C) 2018-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2018-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -145,7 +145,8 @@ private:
 
     // Disable constructor and destructor
     DPluginLoader();
-    ~DPluginLoader();
+    explicit DPluginLoader(QObject*);
+    ~DPluginLoader() override;
 
     Q_DISABLE_COPY(DPluginLoader)
 

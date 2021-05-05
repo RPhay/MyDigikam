@@ -6,7 +6,7 @@
  * Date        : 2008-11-27
  * Description : a view to show Batch Tool Settings.
  *
- * Copyright (C) 2008-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2008-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -63,13 +63,13 @@ public:
 public:
 
     explicit Private()
-      : messageView(nullptr),
-        settingsViewIcon(nullptr),
+      : messageView      (nullptr),
+        settingsViewIcon (nullptr),
         settingsViewTitle(nullptr),
         settingsViewReset(nullptr),
         settingsViewAbout(nullptr),
-        settingsView(nullptr),
-        tool(nullptr)
+        settingsView     (nullptr),
+        tool             (nullptr)
     {
     }
 
@@ -88,7 +88,7 @@ public:
 
 ToolSettingsView::ToolSettingsView(QWidget* const parent)
     : QStackedWidget(parent),
-      d(new Private)
+      d             (new Private)
 {
     setAttribute(Qt::WA_DeleteOnClose);
 
@@ -118,11 +118,11 @@ ToolSettingsView::ToolSettingsView(QWidget* const parent)
     d->settingsViewAbout->setToolTip(i18n("About this tool..."));
 
     QString frameStyle = QString::fromUtf8("QFrame {"
-                                 "color: %1;"
-                                 "border: 1px solid %2;"
-                                 "border-radius: 5px;"
-                                 "background-color: %3;"
-                                 "}")
+                                           "color: %1;"
+                                           "border: 1px solid %2;"
+                                           "border-radius: 5px;"
+                                           "background-color: %3;"
+                                           "}")
                          .arg(qApp->palette().color(QPalette::HighlightedText).name())
                          .arg(qApp->palette().color(QPalette::HighlightedText).name())
                          .arg(qApp->palette().color(QPalette::Highlight).name());
@@ -300,6 +300,7 @@ void ToolSettingsView::slotToolSelected(const BatchToolSet& set)
 void ToolSettingsView::slotSettingsChanged(const BatchToolSettings& settings)
 {
     d->set.settings = settings;
+
     emit signalSettingsChanged(d->set);
 }
 

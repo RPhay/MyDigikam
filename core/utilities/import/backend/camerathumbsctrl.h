@@ -6,7 +6,7 @@
  * Date        : 2011-08-03
  * Description : digital camera thumbnails controller
  *
- * Copyright (C) 2011-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2011-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -44,14 +44,14 @@ class CameraController;
 
 typedef QPair<CamItemInfo, QPixmap> CachedItem;
 
-class DIGIKAM_EXPORT CameraThumbsCtrl : public QObject
+class DIGIKAM_GUI_EXPORT CameraThumbsCtrl : public QObject
 {
     Q_OBJECT
 
 public:
 
     explicit CameraThumbsCtrl(CameraController* const ctrl, QWidget* const parent);
-    ~CameraThumbsCtrl();
+    ~CameraThumbsCtrl()                                                override;
 
     /**
      * Fill item with relevant information.
@@ -71,7 +71,7 @@ public:
     /**
      * Return camera controller instance.
      */
-    CameraController* cameraController() const;
+    CameraController* cameraController()                         const;
 
 Q_SIGNALS:
 
@@ -87,8 +87,8 @@ private:
     /// Cache management methods.
     void removeItemFromCache(const QUrl& url);
     void putItemToCache(const QUrl& url, const CamItemInfo&, const QPixmap& thumb);
-    bool hasItemFromCache(const QUrl& url) const;
-    const CachedItem* retrieveItemFromCache(const QUrl& url) const;
+    bool hasItemFromCache(const QUrl& url)                       const;
+    const CachedItem* retrieveItemFromCache(const QUrl& url)     const;
 
 private:
 

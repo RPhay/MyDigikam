@@ -8,7 +8,7 @@
  *
  * Copyright (C) 2005      by Renchi Raju <renchi dot raju at gmail dot com>
  * Copyright (C) 2005      by Joern Ahrens <joern dot ahrens at kdemail dot net>
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -84,9 +84,11 @@ public:
 
 private:
 
-    // Hidden copy constructor and assignment operator.
-    UndoAction(const UndoAction&);
-    UndoAction& operator=(const UndoAction&);
+    // Disable
+    UndoAction(const UndoAction&)            = delete;
+    UndoAction& operator=(const UndoAction&) = delete;
+
+private:
 
     class Private;
     Private* const d;
@@ -119,7 +121,7 @@ public:
 
     explicit UndoActionIrreversible(EditorCore* const core,
                                     const QString& title = QString());
-    ~UndoActionIrreversible();
+    ~UndoActionIrreversible() override;
 };
 
 } // namespace Digikam

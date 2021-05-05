@@ -41,21 +41,28 @@ public:
                                const QString& enblendPath,
                                const QString& makePath,
                                bool preview);
-    ~CompileMKStepTask();
+    ~CompileMKStepTask() = default;
 
 public:
 
-    const int                           id;
+    const int     id;
 
 protected:
 
-    void run(ThreadWeaver::JobPointer self, ThreadWeaver::Thread *thread) override;
+    void run(ThreadWeaver::JobPointer self, ThreadWeaver::Thread* thread) override;
 
 private:
 
     const QUrl&   mkUrl;
     const QString nonaPath;
     const QString enblendPath;
+
+private:
+
+    // Disable
+    CompileMKStepTask() = delete;
+
+    Q_DISABLE_COPY(CompileMKStepTask)
 };
 
 } // namespace DigikamGenericPanoramaPlugin

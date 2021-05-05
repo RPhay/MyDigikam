@@ -8,7 +8,7 @@
  *
  * Copyright (C) 2005      by Renchi Raju <renchi dot raju at gmail dot com>
  * Copyright (C) 2007-2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2013      by Michael G. Hansen <mike at mghansen dot de>
  *
  * This program is free software; you can redistribute it
@@ -77,7 +77,7 @@ class ThumbnailInfo;
 class DIGIKAM_DATABASE_EXPORT ItemInfo
 {
 public:
-    
+
     typedef DatabaseFields::Hash<QVariant> DatabaseFieldsHashRaw;
 
 public:
@@ -254,6 +254,18 @@ public:
      * @return the default comment for this item
      */
     QString comment()                                                                   const;
+
+    /**
+     * @return the number of Unconfirmed Faces in this item.
+     */
+    int unconfirmedFaceCount()                                                          const;
+
+    /**
+     * @return the map of Tag Region (in XML form) to Suggested Names for all
+     * Faces in the Image.
+     * Used to categorize images based on Face Suggestions.
+     */
+    QMap<QString, QString> getSuggestedNames()                                          const;
 
     /**
      * Set the name (write it to database)
@@ -542,7 +554,7 @@ public:
 private:
 
     void loadTagIds()                                                                   const;
-    
+
     //@}
 
 public:
@@ -568,7 +580,6 @@ public:
      * Returns the rating
      */
     int rating()                                                                        const;
-
 
     /** Set the pick Label Id for the item (see PickLabel values from globals.h)
      */

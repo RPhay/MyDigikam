@@ -6,7 +6,7 @@
  * Date        : 2011-03-22
  * Description : a Iface C++ interface
  *
- * Copyright (C) 2011-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2011-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2011      by Remi Benoit <r3m1 dot benoit at gmail dot com>
  *
  * This program is free software; you can redistribute it
@@ -29,17 +29,13 @@
 #include <QString>
 #include <QList>
 
-// Local includes
-
-#include "digikam_export.h"
-
 namespace MediaWiki
 {
 
 /**
  * @brief A user group.
  */
-class DIGIKAM_EXPORT UserGroup
+class UserGroup
 {
 
 public:
@@ -64,7 +60,7 @@ public:
      * @brief Assigning a user group from an other user group.
      * @param other an other user group
      */
-    UserGroup& operator=(UserGroup other);
+    UserGroup& operator=(const UserGroup& other);
 
     /**
      * @brief Returns true if this instance and other are equal, else false.
@@ -77,7 +73,7 @@ public:
      * @brief Returns the name of the user group.
      * @return the name of the user group
      */
-    QString name() const;
+    QString name()                          const;
 
     /**
      * @brief Set the name of the user group.
@@ -89,7 +85,7 @@ public:
      * @brief Returns rights of the user group.
      * @return rights of the user group
      */
-    const QList<QString>& rights() const;
+    const QList<QString>& rights()          const;
 
     /**
      * @brief Returns rights of the user group.
@@ -99,7 +95,7 @@ public:
 
     /**
      * @brief Set rights of the user group.
-     * @param rights rights of the user group
+     * @param rights the rights of the user group
      */
      void setRights(const QList<QString>& rights);
 
@@ -107,18 +103,18 @@ public:
      * @brief Returns the numbers of users in the user group.
      * @return the numbers of users in the user group
      */
-    qint64 number() const;
+    qint64 number()                         const;
 
     /**
      * @brief Set the number of users in the user group.
      * @param number the number of users in the user group
      */
-    void setNumber(qint64 number) ;
+    void setNumber(qint64 number);
 
 private:
 
-    class UserGroupPrivate;
-    UserGroupPrivate* const d;
+    class Private;
+    Private* const d;
 };
 
 } // namespace MediaWiki

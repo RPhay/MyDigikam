@@ -6,7 +6,7 @@
  * Date        : 2005-24-01
  * Description : auto levels image filter.
  *
- * Copyright (C) 2005-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2005-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -50,7 +50,7 @@ AutoLevelsFilter::AutoLevelsFilter(QObject* const parent)
 
 AutoLevelsFilter::AutoLevelsFilter(DImg* const orgImage, const DImg* const refImage, QObject* const parent)
     : DImgThreadedFilter(orgImage, parent, QLatin1String("AutoLevelsFilter")),
-      m_refImage(*refImage)
+      m_refImage        (*refImage)
 {
     initFilter();
 }
@@ -107,6 +107,7 @@ void AutoLevelsFilter::autoLevelsCorrectionImage()
 
     // Create the new empty destination image data space.
 
+    // cppcheck-suppress duplicateCondition
     if (runningFlag())
     {
         if (sixteenBit)
@@ -123,6 +124,7 @@ void AutoLevelsFilter::autoLevelsCorrectionImage()
 
     // Create an histogram of the reference image.
 
+    // cppcheck-suppress duplicateCondition
     if (runningFlag())
     {
         histogram.reset(new ImageHistogram(m_refImage));
@@ -132,6 +134,7 @@ void AutoLevelsFilter::autoLevelsCorrectionImage()
 
     // Create an empty instance of levels to use.
 
+    // cppcheck-suppress duplicateCondition
     if (runningFlag())
     {
         levels.reset(new ImageLevels(sixteenBit));
@@ -140,6 +143,7 @@ void AutoLevelsFilter::autoLevelsCorrectionImage()
 
     // Initialize an auto levels correction of the histogram.
 
+    // cppcheck-suppress duplicateCondition
     if (runningFlag())
     {
         levels->levelsAuto(histogram.data());
@@ -148,6 +152,7 @@ void AutoLevelsFilter::autoLevelsCorrectionImage()
 
     // Calculate the LUT to apply on the image.
 
+    // cppcheck-suppress duplicateCondition
     if (runningFlag())
     {
         levels->levelsLutSetup(AlphaChannel);
@@ -156,12 +161,14 @@ void AutoLevelsFilter::autoLevelsCorrectionImage()
 
     // Apply the lut to the image.
 
+    // cppcheck-suppress duplicateCondition
     if (runningFlag())
     {
         levels->levelsLutProcess(data, desData.data(), w, h);
         postProgress(70);
     }
 
+    // cppcheck-suppress duplicateCondition
     if (runningFlag())
     {
         if (sixteenBit)
@@ -176,6 +183,7 @@ void AutoLevelsFilter::autoLevelsCorrectionImage()
         postProgress(80);
     }
 
+    // cppcheck-suppress duplicateCondition
     if (runningFlag())
     {
         postProgress(90);

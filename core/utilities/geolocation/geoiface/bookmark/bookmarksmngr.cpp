@@ -6,7 +6,7 @@
  * Date        : 2017-05-15
  * Description : low level manager for GPS bookmarks
  *
- * Copyright (C) 2017-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2017-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -53,11 +53,11 @@ RemoveBookmarksCommand::RemoveBookmarksCommand(BookmarksManager* const mngr,
                                                BookmarkNode* const parent,
                                                int row)
     : QUndoCommand(i18n("Remove Bookmark")),
-      m_row(row),
+      m_row            (row),
       m_bookmarkManager(mngr),
-      m_node(parent->children().value(row)),
-      m_parent(parent),
-      m_done(false)
+      m_node           (parent->children().value(row)),
+      m_parent         (parent),
+      m_done           (false)
 {
 }
 
@@ -112,9 +112,9 @@ class Q_DECL_HIDDEN ChangeBookmarkCommand::Private
 public:
 
     explicit Private()
-      : manager(nullptr),
-        type(Url),
-        node(nullptr)
+      : manager (nullptr),
+        type    (Url),
+        node    (nullptr)
     {
     }
 
@@ -130,7 +130,7 @@ ChangeBookmarkCommand::ChangeBookmarkCommand(BookmarksManager* const mngr,
                                              const QString& newValue,
                                              BookmarkData type)
     : QUndoCommand(),
-      d(new Private)
+      d           (new Private)
 {
     d->manager  = mngr;
     d->type     = type;
@@ -140,19 +140,25 @@ ChangeBookmarkCommand::ChangeBookmarkCommand(BookmarksManager* const mngr,
     switch (d->type)
     {
         case Title:
+        {
             d->oldValue = d->node->title;
             setText(i18n("Title Change"));
             break;
+        }
 
         case Desc:
+        {
             d->oldValue = d->node->desc;
             setText(i18n("Comment Change"));
             break;
+        }
 
         default:    // Url
+        {
             d->oldValue = d->node->url;
             setText(i18n("Address Change"));
             break;
+        }
     }
 }
 
@@ -166,16 +172,22 @@ void ChangeBookmarkCommand::undo()
     switch (d->type)
     {
         case Title:
+        {
             d->node->title = d->oldValue;
             break;
+        }
 
         case Desc:
+        {
             d->node->desc  = d->oldValue;
             break;
+        }
 
         default:    // Url
+        {
             d->node->url   = d->oldValue;
             break;
+        }
     }
 
     emit d->manager->entryChanged(d->node);
@@ -186,16 +198,22 @@ void ChangeBookmarkCommand::redo()
     switch (d->type)
     {
         case Title:
+        {
             d->node->title = d->newValue;
             break;
+        }
 
         case Desc:
+        {
             d->node->desc  = d->newValue;
             break;
+        }
 
         default:    // Url
+        {
             d->node->url   = d->newValue;
             break;
+        }
     }
 
     emit d->manager->entryChanged(d->node);
@@ -208,7 +226,7 @@ class Q_DECL_HIDDEN BookmarksModel::Private
 public:
 
     explicit Private()
-      : manager(nullptr),
+      : manager (nullptr),
         endMacro(false)
     {
     }
@@ -219,7 +237,7 @@ public:
 
 BookmarksModel::BookmarksModel(BookmarksManager* const mngr, QObject* const parent)
     : QAbstractItemModel(parent),
-      d(new Private)
+      d                 (new Private)
 {
     d->manager = mngr;
 
@@ -317,10 +335,14 @@ QVariant BookmarksModel::headerData(int section, Qt::Orientation orientation, in
         switch (section)
         {
             case 0:
-                return i18n("Title");
+            {
+                return i18nc("@title: bookmark header", "Title");
+            }
 
             case 1:
-                return i18n("Comment");
+            {
+                return i18nc("@title: bookmark header", "Comment");
+            }
         }
     }
 
@@ -340,49 +362,66 @@ QVariant BookmarksModel::data(const QModelIndex& index, int role) const
     {
         case Qt::EditRole:
         case Qt::DisplayRole:
+        {
             if (bookmarkNode->type() == BookmarkNode::Separator)
             {
                 switch (index.column())
                 {
                     case 0:
+                    {
                         return QString(50, 0xB7);
+                    }
 
                     case 1:
+                    {
                         return QString();
+                    }
                 }
             }
 
             switch (index.column())
             {
                 case 0:
+                {
                     return bookmarkNode->title;
+                }
 
                 case 1:
+                {
                     return bookmarkNode->desc;
+                }
             }
+
             break;
+        }
 
         case BookmarksModel::UrlRole:
+        {
             return QUrl(bookmarkNode->url);
-            break;
+        }
 
         case BookmarksModel::UrlStringRole:
+        {
             return bookmarkNode->url;
-            break;
+        }
 
         case BookmarksModel::DateAddedRole:
+        {
             return bookmarkNode->dateAdded;
-            break;
+        }
 
         case BookmarksModel::TypeRole:
+        {
             return bookmarkNode->type();
-            break;
+        }
 
         case BookmarksModel::SeparatorRole:
+        {
             return (bookmarkNode->type() == BookmarkNode::Separator);
-            break;
+        }
 
         case Qt::DecorationRole:
+        {
             if (index.column() == 0)
             {
                 if (bookmarkNode->type() == BookmarkNode::Bookmark)
@@ -394,6 +433,7 @@ QVariant BookmarksModel::data(const QModelIndex& index, int role) const
                     return QIcon::fromTheme(QLatin1String("folder"));
                 }
             }
+        }
     }
 
     return QVariant();
@@ -608,6 +648,7 @@ bool BookmarksModel::setData(const QModelIndex& index, const QVariant& value, in
     {
         case Qt::EditRole:
         case Qt::DisplayRole:
+        {
             if (index.column() == 0)
             {
                 d->manager->setTitle(item, value.toString());
@@ -621,17 +662,24 @@ bool BookmarksModel::setData(const QModelIndex& index, const QVariant& value, in
             }
 
             return false;
+        }
 
         case BookmarksModel::UrlRole:
+        {
             d->manager->setUrl(item, value.toUrl().toString());
             break;
+        }
 
         case BookmarksModel::UrlStringRole:
+        {
             d->manager->setUrl(item, value.toString());
             break;
+        }
 
         default:
+        {
             return false;
+        }
     }
 
     return true;
@@ -721,9 +769,9 @@ class Q_DECL_HIDDEN BookmarksManager::Private
 public:
 
     explicit Private()
-      : loaded(false),
+      : loaded          (false),
         bookmarkRootNode(nullptr),
-        bookmarkModel(nullptr)
+        bookmarkModel   (nullptr)
     {
     }
 
@@ -736,7 +784,7 @@ public:
 
 BookmarksManager::BookmarksManager(const QString& bookmarksFile, QObject* const parent)
     : QObject(parent),
-      d(new Private)
+      d      (new Private)
 {
     d->bookmarksFile = bookmarksFile;
     load();

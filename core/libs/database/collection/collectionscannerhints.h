@@ -58,14 +58,19 @@ public:
 
     /// Note: All methods of this class must be thread-safe.
 
-    virtual ~CollectionScannerHintContainer() {};
+    CollectionScannerHintContainer()                                 = default;
+    virtual ~CollectionScannerHintContainer()                        = default;
 
     virtual void recordHints(const QList<AlbumCopyMoveHint>& hints)  = 0;
     virtual void recordHints(const QList<ItemCopyMoveHint>& hints)   = 0;
     virtual void recordHints(const QList<ItemChangeHint>& hints)     = 0;
     virtual void recordHint(const ItemMetadataAdjustmentHint& hints) = 0;
 
-    virtual void clear() = 0;
+    virtual void clear()                                             = 0;
+
+private:
+
+    Q_DISABLE_COPY(CollectionScannerHintContainer)
 };
 
 // ------------------------------------------------------------------------------
@@ -155,7 +160,6 @@ public:
      * and a destination to which this album is expected to be
      * copied, moved or renamed.
      */
-
     AlbumCopyMoveHint();
     AlbumCopyMoveHint(int srcAlbumRootId, int srcAlbum,
                       int dstAlbumRootId, const QString& dstRelativePath);
@@ -226,7 +230,10 @@ public:
      */
 
     ItemCopyMoveHint();
-    ItemCopyMoveHint(const QList<qlonglong>& srcIds, int dstAlbumRootId, int albumId, const QStringList& dstNames);
+    ItemCopyMoveHint(const QList<qlonglong>& srcIds,
+                     int dstAlbumRootId,
+                     int albumId,
+                     const QStringList& dstNames);
 
     QList<qlonglong> srcIds()                                   const;
     bool isSrcId(qlonglong id)                                  const;
@@ -286,7 +293,8 @@ public:
 public:
 
     ItemChangeHint();
-    explicit ItemChangeHint(QList<qlonglong> srcIds, ChangeType type = ItemModified);
+    explicit ItemChangeHint(const QList<qlonglong>& srcIds,
+                            ChangeType type = ItemModified);
 
     QList<qlonglong> ids()                                      const;
     bool isId(qlonglong id)                                     const;
@@ -338,7 +346,8 @@ public:
 public:
 
     ItemMetadataAdjustmentHint();
-    explicit ItemMetadataAdjustmentHint(qlonglong id, AdjustmentStatus status,
+    explicit ItemMetadataAdjustmentHint(qlonglong id,
+                                        AdjustmentStatus status,
                                         const QDateTime& modificationDateOnDisk,
                                         qlonglong fileSize);
 
@@ -363,8 +372,10 @@ public:
     }
 
 #ifdef HAVE_DBUS
+
     ItemMetadataAdjustmentHint& operator<<(const QDBusArgument& argument);
     const ItemMetadataAdjustmentHint& operator>>(QDBusArgument& argument)   const;
+
 #endif
 
 protected:

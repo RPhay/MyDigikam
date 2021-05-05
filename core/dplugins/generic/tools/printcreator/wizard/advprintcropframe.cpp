@@ -8,7 +8,7 @@
  *
  * Copyright (C) 2002-2003 by Todd Shoemaker <todd at theshoemakers dot net>
  * Copyright (C) 2007-2012 by Angelo Naselli <anaselli at linux dot it>
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -51,13 +51,13 @@ class Q_DECL_HIDDEN AdvPrintCropFrame::Private
 public:
 
     explicit Private()
-      : photo(nullptr),
+      : photo    (nullptr),
         mouseDown(false),
-        image(nullptr),
-        imageX(0),
-        imageY(0),
-        color(Qt::red),
-        drawRec(true)
+        image    (nullptr),
+        imageX   (0),
+        imageY   (0),
+        color    (Qt::red),
+        drawRec  (true)
     {
     }
 
@@ -77,7 +77,7 @@ public:
 
 AdvPrintCropFrame::AdvPrintCropFrame(QWidget* const parent)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
 }
 
@@ -105,14 +105,16 @@ void AdvPrintCropFrame::init(AdvPrintPhoto* const photo,
 QRect AdvPrintCropFrame::screenToPhotoRect(const QRect& r) const
 {
     // 'r' is given in screen coordinates, and we want to convert that to photo coordinates.
+
     double xRatio = 0.0;
     double yRatio = 0.0;
 
     // Flip the photo dimensions if rotated
+
     int photoW;
     int photoH;
 
-    if (d->photo->m_rotation == 0 || d->photo->m_rotation == 180)
+    if ((d->photo->m_rotation == 0) || (d->photo->m_rotation == 180))
     {
         photoW = d->photo->width();
         photoH = d->photo->height();
@@ -148,14 +150,16 @@ QRect AdvPrintCropFrame::screenToPhotoRect(const QRect& r) const
 QRect AdvPrintCropFrame::photoToScreenRect(const QRect& r) const
 {
     // 'r' is given in photo coordinates, and we want to convert that to screen coordinates
+
     double xRatio = 0.0;
     double yRatio = 0.0;
 
     // Flip the photo dimensions if rotated
+
     int photoW;
     int photoH;
 
-    if (d->photo->m_rotation == 0 || d->photo->m_rotation == 180)
+    if ((d->photo->m_rotation == 0) || (d->photo->m_rotation == 180))
     {
         photoW = d->photo->width();
         photoH = d->photo->height();
@@ -184,6 +188,7 @@ QRect AdvPrintCropFrame::photoToScreenRect(const QRect& r) const
 
     QRect result;
     result.setRect(x1, y1, w, h);
+
     return result;
 }
 
@@ -217,15 +222,18 @@ void AdvPrintCropFrame::paintEvent(QPaintEvent*)
     p.eraseRect(0, 0, this->width(), this->height());
 
     // Draw the background image
+
     p.drawImage(d->imageX, d->imageY, d->image);
 
     if (d->drawRec)
     {
         // Draw the rectangle
+
         p.setPen(QPen(d->color, 2));
         p.drawRect(d->cropRegion);
 
         // Draw the crosshairs
+
         int midX = d->cropRegion.left() + d->cropRegion.width()  / 2;
         int midY = d->cropRegion.top()  + d->cropRegion.height() / 2;
         p.drawLine(midX - 10, midY,      midX + 10, midY);
@@ -239,7 +247,7 @@ void AdvPrintCropFrame::paintEvent(QPaintEvent*)
 
 void AdvPrintCropFrame::mousePressEvent(QMouseEvent* e)
 {
-    if (e && e->button() == Qt::LeftButton)
+    if (e && (e->button() == Qt::LeftButton))
     {
         d->mouseDown = true;
         QWidget::mouseMoveEvent(e);
@@ -248,8 +256,10 @@ void AdvPrintCropFrame::mousePressEvent(QMouseEvent* e)
 
 void AdvPrintCropFrame::mouseReleaseEvent(QMouseEvent* e)
 {
-    if (e && e->button() == Qt::LeftButton)
+    if (e && (e->button() == Qt::LeftButton))
+    {
         d->mouseDown = false;
+    }
 }
 
 void AdvPrintCropFrame::mouseMoveEvent(QMouseEvent* e)
@@ -257,6 +267,7 @@ void AdvPrintCropFrame::mouseMoveEvent(QMouseEvent* e)
     if (d->mouseDown)
     {
         // Don't let the rectangle float off the image.
+
         int newW = d->cropRegion.width();
         int newH = d->cropRegion.height();
 
@@ -284,12 +295,15 @@ void AdvPrintCropFrame::keyReleaseEvent(QKeyEvent* e)
         case Qt::Key_Up:
             newY--;
             break;
+
         case Qt::Key_Down:
             newY++;
             break;
+
         case Qt::Key_Left:
             newX--;
             break;
+
         case Qt::Key_Right:
             newX++;
             break;

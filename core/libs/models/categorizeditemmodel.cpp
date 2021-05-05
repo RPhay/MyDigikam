@@ -77,8 +77,7 @@ static QString adjustedActionText(const QAction* const action)
 {
     QString text = action->text();
     text.remove(QLatin1Char('&'));
-    text.remove(QLatin1String(" ..."));
-    text.remove(QLatin1String("..."));
+    text.remove(QRegExp(QString::fromUtf8("[ \u00A0]?(\\.\\.\\.|…)$")));
     int slashPos = -1;
 
     while ((slashPos = text.indexOf(QLatin1Char('/'), slashPos + 1)) != -1)
@@ -186,8 +185,8 @@ protected:
 
 ActionItemModel::ActionItemModel(QObject* const parent)
     : CategorizedItemModel(parent),
-      m_mode(ToplevelMenuCategory | SortCategoriesAlphabetically),
-      m_filterModel(nullptr)
+      m_mode              (ToplevelMenuCategory | SortCategoriesAlphabetically),
+      m_filterModel       (nullptr)
 {
 }
 

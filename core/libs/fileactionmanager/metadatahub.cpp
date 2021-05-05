@@ -7,7 +7,7 @@
  * Description : Metadata handling
  *
  * Copyright (C) 2007-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2007-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2007-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2014-2015 by Veaceslav Munteanu <veaceslav dot munteanu90 at gmail dot com>
  *
  * This program is free software you can redistribute it
@@ -29,6 +29,7 @@
 
 #include <QFileInfo>
 #include <QMutex>
+#include <QScopedPointer>
 #include <QMutexLocker>
 
 // Local includes
@@ -38,6 +39,7 @@
 #include "coredbwatch.h"
 #include "iteminfo.h"
 #include "itemcomments.h"
+#include "itemposition.h"
 #include "template.h"
 #include "templatemanager.h"
 #include "applicationsettings.h"
@@ -58,17 +60,17 @@ class Q_DECL_HIDDEN MetadataHub::Private
 public:
 
     explicit Private()
-      : pickLabel(-1),
-        colorLabel(-1),
-        rating(-1),
-        count(0),
-        dateTimeStatus(MetadataHub::MetadataInvalid),
-        titlesStatus(MetadataHub::MetadataInvalid),
-        commentsStatus(MetadataHub::MetadataInvalid),
-        pickLabelStatus(MetadataHub::MetadataInvalid),
+      : pickLabel       (-1),
+        colorLabel      (-1),
+        rating          (-1),
+        count           (0),
+        dateTimeStatus  (MetadataHub::MetadataInvalid),
+        titlesStatus    (MetadataHub::MetadataInvalid),
+        commentsStatus  (MetadataHub::MetadataInvalid),
+        pickLabelStatus (MetadataHub::MetadataInvalid),
         colorLabelStatus(MetadataHub::MetadataInvalid),
-        ratingStatus(MetadataHub::MetadataInvalid),
-        templateStatus(MetadataHub::MetadataInvalid)
+        ratingStatus    (MetadataHub::MetadataInvalid),
+        templateStatus  (MetadataHub::MetadataInvalid)
     {
     }
 
@@ -92,6 +94,8 @@ public:
 
     QMultiMap<QString, QVariant>      faceTagsList;
 
+    ItemPosition                      itemPosition;
+
     MetadataHub::Status               dateTimeStatus;
     MetadataHub::Status               titlesStatus;
     MetadataHub::Status               commentsStatus;
@@ -112,26 +116,9 @@ MetadataHub::MetadataHub()
 {
 }
 
-MetadataHub::MetadataHub(const MetadataHub& other)
-    : d(new Private(*other.d))
-{
-}
-
 MetadataHub::~MetadataHub()
 {
     delete d;
-}
-
-MetadataHub& MetadataHub::operator=(const MetadataHub& other)
-{
-    (*d) = (*other.d);
-
-    return *this;
-}
-
-MetadataHub* MetadataHub::clone() const
-{
-    return (new MetadataHub(*this));
 }
 
 void MetadataHub::reset()
@@ -159,9 +146,9 @@ void MetadataHub::load(const ItemInfo& info)
 
     Template tref = info.metadataTemplate();
     Template t    = TemplateManager::defaultManager()->findByContents(tref);
-
-    //qCDebug(DIGIKAM_GENERAL_LOG) << "Found Metadata Template: " << t.templateTitle();
-
+/*
+    qCDebug(DIGIKAM_GENERAL_LOG) << "Found Metadata Template: " << t.templateTitle();
+*/
     load(info.dateTime(),
          titleMap,
          commentMap,
@@ -174,9 +161,13 @@ void MetadataHub::load(const ItemInfo& info)
     loadTags(tagIds);
 
     loadFaceTags(info, info.dimensions());
+
+    d->itemPosition = info.imagePosition();
 }
 
-// private common code to merge tags
+/**
+ * private common code to merge tags
+ */
 void MetadataHub::loadTags(const QList<int>& loadedTags)
 {
     d->tags.clear();
@@ -192,9 +183,12 @@ void MetadataHub::loadTags(const QList<int>& loadedTags)
     }
 }
 
-// private common code to load dateTime, comment, color label, pick label, rating
+/**
+ * private common code to load dateTime, comment, color label, pick label, rating
+ */
 void MetadataHub::load(const QDateTime& dateTime,
-                       const CaptionsMap& titles, const CaptionsMap& comments,
+                       const CaptionsMap& titles,
+                       const CaptionsMap& comments,
                        int colorLabel, int pickLabel,
                        int rating, const Template& t)
 {
@@ -216,7 +210,9 @@ void MetadataHub::load(const QDateTime& dateTime,
     d->loadSingleValue<Template>(t, d->metadataTemplate, d->templateStatus);
 }
 
-// template method used by comment and template
+/**
+ * template method used by comment and template
+ */
 template <class T> void MetadataHub::Private::loadSingleValue(const T& data, T& storage,
                                                               MetadataHub::Status& status)
 {
@@ -235,12 +231,14 @@ template <class T> void MetadataHub::Private::loadSingleValue(const T& data, T& 
 
 // ------------------------------------------------------------------------------------------------------------
 
-/** safe **/
+/**
+ * safe method
+ **/
 bool MetadataHub::writeToMetadata(const ItemInfo& info, WriteComponent writeMode, bool ignoreLazySync, const MetaEngineSettingsContainer &settings)
 {
     applyChangeNotifications();
 
-    // if no DMetadata object is needed at all, don't construct one -
+    // if no metadata constainer is needed at all, don't construct one -
     // important optimization if writing to file is turned off in setup!
 
     if (!willWriteMetadata(writeMode, settings))
@@ -257,11 +255,11 @@ bool MetadataHub::writeToMetadata(const ItemInfo& info, WriteComponent writeMode
 
     writeToBaloo(info.filePath());
 
-    DMetadata metadata(info.filePath());
+    QScopedPointer<DMetadata> metadata(new DMetadata(info.filePath()));
 
-    if (write(metadata, writeMode, settings))
+    if (write(*metadata, writeMode, settings))
     {
-        bool success = metadata.applyChanges();
+        bool success = metadata->applyChanges();
         ItemAttributesWatch::instance()->fileMetadataChanged(QUrl::fromLocalFile(info.filePath()));
         return success;
     }
@@ -278,6 +276,7 @@ bool MetadataHub::write(DMetadata& metadata, WriteComponent writeMode, const Met
     metadata.setSettings(settings);
 
     // find out in advance if we have something to write - needed for FullWriteIfChanged mode
+
     bool saveTitle      = (settings.saveComments   && (d->titlesStatus     == MetadataAvailable) && writeMode.testFlag(WRITE_TITLE));
     bool saveComment    = (settings.saveComments   && (d->commentsStatus   == MetadataAvailable) && writeMode.testFlag(WRITE_COMMENTS));
     bool saveDateTime   = (settings.saveDateTime   && (d->dateTimeStatus   == MetadataAvailable) && writeMode.testFlag(WRITE_DATETIME));
@@ -285,42 +284,49 @@ bool MetadataHub::write(DMetadata& metadata, WriteComponent writeMode, const Met
     bool saveColorLabel = (settings.saveColorLabel && (d->colorLabelStatus == MetadataAvailable) && writeMode.testFlag(WRITE_COLORLABEL));
     bool saveRating     = (settings.saveRating     && (d->ratingStatus     == MetadataAvailable) && writeMode.testFlag(WRITE_RATING));
     bool saveTemplate   = (settings.saveTemplate   && (d->templateStatus   == MetadataAvailable) && writeMode.testFlag(WRITE_TEMPLATE));
-    bool saveTags       = settings.saveTags && writeMode.testFlag(WRITE_TAGS);
-    bool saveFaces      = settings.saveFaceTags && writeMode.testFlag((WRITE_TAGS));
+    bool saveTags       = (settings.saveTags       && writeMode.testFlag(WRITE_TAGS));
+    bool saveFaces      = (settings.saveFaceTags   && writeMode.testFlag(WRITE_TAGS));
+    bool savePosition   = (settings.savePosition   && writeMode.testFlag(WRITE_POSITION));
 
     if (saveTitle)
     {
         // Store titles in image as Iptc Object name and Xmp.
+
         dirty |= metadata.setItemTitles(d->titles);
     }
 
     if (saveComment)
     {
         // Store comments in image as JFIF comments, Exif comments, Iptc Caption, and Xmp.
+
         dirty |= metadata.setItemComments(d->comments);
     }
 
     if (saveDateTime)
     {
         // Store Image Date & Time as Exif and Iptc tags.
+
         dirty |= metadata.setImageDateTime(d->dateTime, false);
     }
 
     if (savePickLabel)
     {
         // Store Image Pick Label as XMP tag.
+
         dirty |= metadata.setItemPickLabel(d->pickLabel);
     }
 
     if (saveColorLabel)
     {
         // Store Image Color Label as XMP tag.
+
         dirty |= metadata.setItemColorLabel(d->colorLabel);
     }
 
     if (saveRating)
     {
         // Store Image rating as Iptc tag.
+
         dirty |= metadata.setItemRating(d->rating);
     }
 
@@ -339,12 +345,27 @@ bool MetadataHub::write(DMetadata& metadata, WriteComponent writeMode, const Met
         else
         {
             // Store metadata template as XMP tag.
+
             dirty |= metadata.removeMetadataTemplate();
             dirty |= metadata.setMetadataTemplate(d->metadataTemplate);
         }
     }
 
-    dirty |= metadata.setItemFacesMap(d->faceTagsList, saveFaces);
+    if (savePosition)
+    {
+        if (d->itemPosition.hasCoordinates())
+        {
+            dirty |= metadata.setGPSInfo(d->itemPosition.altitude(),
+                                         d->itemPosition.latitudeNumber(),
+                                         d->itemPosition.longitudeNumber());
+        }
+        else
+        {
+            dirty |= metadata.removeGPSInfo();
+        }
+    }
+
+    dirty |= writeFaceTagsMap(metadata, saveFaces);
 
     dirty |= writeTags(metadata, saveTags);
 
@@ -355,7 +376,7 @@ bool MetadataHub::write(const QString& filePath, WriteComponent writeMode, bool 
 {
     applyChangeNotifications();
 
-    // if no DMetadata object is needed at all, don't construct one -
+    // if no metadata container is needed at all, don't construct one -
     // important optimization if writing to file is turned off in setup!
 
     if (!willWriteMetadata(writeMode, settings))
@@ -373,11 +394,11 @@ bool MetadataHub::write(const QString& filePath, WriteComponent writeMode, bool 
 
     writeToBaloo(filePath);
 
-    DMetadata metadata(filePath);
+    QScopedPointer<DMetadata> metadata(new DMetadata(filePath));
 
-    if (write(metadata, writeMode, settings))
+    if (write(*metadata, writeMode, settings))
     {
-        bool success = metadata.applyChanges();
+        bool success = metadata->applyChanges();
         ItemAttributesWatch::instance()->fileMetadataChanged(QUrl::fromLocalFile(filePath));
 
         return success;
@@ -390,7 +411,7 @@ bool MetadataHub::write(DImg& image, WriteComponent writeMode, bool ignoreLazySy
 {
     applyChangeNotifications();
 
-    // if no DMetadata object is needed at all, don't construct one
+    // if no metadata container is needed at all, don't construct one
 
     if (!willWriteMetadata(writeMode, settings))
     {
@@ -399,8 +420,8 @@ bool MetadataHub::write(DImg& image, WriteComponent writeMode, bool ignoreLazySy
 
     // See DImgLoader::readMetadata() and saveMetadata()
 
-    DMetadata metadata;
-    metadata.setData(image.getMetadata());
+    QScopedPointer<DMetadata> metadata(new DMetadata);
+    metadata->setData(image.getMetadata());
 
     QString filePath = image.originalFilePath();
 
@@ -422,7 +443,7 @@ bool MetadataHub::write(DImg& image, WriteComponent writeMode, bool ignoreLazySy
         writeToBaloo(filePath);
     }
 
-    return write(metadata, writeMode, settings);
+    return write(*metadata, writeMode, settings);
 }
 
 bool MetadataHub::writeTags(const QString& filePath, WriteComponent writeMode,
@@ -430,7 +451,7 @@ bool MetadataHub::writeTags(const QString& filePath, WriteComponent writeMode,
 {
     applyChangeNotifications();
 
-    // if no DMetadata object is needed at all, don't construct one -
+    // if no metadata container is needed at all, don't construct one -
     // important optimization if writing to file is turned off in setup!
 
     if (!willWriteMetadata(writeMode, settings))
@@ -438,25 +459,18 @@ bool MetadataHub::writeTags(const QString& filePath, WriteComponent writeMode,
         return false;
     }
 
-    DMetadata metadata(filePath);
-    metadata.setSettings(settings);
+    QScopedPointer<DMetadata> metadata(new DMetadata(filePath));
+    metadata->setSettings(settings);
     bool saveFaces = settings.saveFaceTags;
     bool saveTags  = settings.saveTags;
 
-    if (saveFaces)
-    {
-        metadata.setItemFacesMap(d->faceTagsList, true);
-    }
-    else
-    {
-        metadata.setItemFacesMap(d->faceTagsList, false);
-    }
+    writeFaceTagsMap(*metadata, saveFaces);
 
     writeToBaloo(filePath);
 
-    if (writeTags(metadata, saveTags))
+    if (writeTags(*metadata, saveTags))
     {
-        bool success = metadata.applyChanges();
+        bool success = metadata->applyChanges();
         ItemAttributesWatch::instance()->fileMetadataChanged(QUrl::fromLocalFile(filePath));
 
         return success;
@@ -516,7 +530,7 @@ bool MetadataHub::writeTags(DMetadata& metadata, bool saveTags)
         }
 
         tagsPathList = cleanupTags(tagsPathList);
-        newKeywords = cleanupTags(newKeywords);
+        newKeywords  = cleanupTags(newKeywords);
 
         if (!newKeywords.isEmpty())
         {
@@ -540,6 +554,26 @@ bool MetadataHub::writeTags(DMetadata& metadata, bool saveTags)
     return dirty;
 }
 
+bool MetadataHub::writeFaceTagsMap(DMetadata& metadata, bool saveFaces)
+{
+    // add person tags to which no region is assigned to Microsoft Photo Region schema
+
+    foreach (int tagId, d->tags.keys())
+    {
+        if ((d->tags.value(tagId) == MetadataAvailable) && FaceTags::isPerson(tagId))
+        {
+            QString faceName = FaceTags::faceNameForTag(tagId);
+
+            if (!faceName.isEmpty() && !d->faceTagsList.contains(faceName))
+            {
+                d->faceTagsList.insert(faceName, QRectF());
+            }
+        }
+    }
+
+    return metadata.setItemFacesMap(d->faceTagsList, saveFaces);
+}
+
 QStringList MetadataHub::cleanupTags(const QStringList& toClean)
 {
     QSet<QString> deduplicator;
@@ -550,7 +584,7 @@ QStringList MetadataHub::cleanupTags(const QStringList& toClean)
 
         if (!keyword.isEmpty())
         {
-            // _Digikam_root_tag_ is present in some photos tagged with older
+            // digiKam_root_tag is present in some photos tagged with older
             // version of digiKam, must be removed
 
             if (keyword.contains(QRegExp(QLatin1String("(_Digikam_root_tag_/|/_Digikam_root_tag_|_Digikam_root_tag_)"))))
@@ -563,7 +597,7 @@ QStringList MetadataHub::cleanupTags(const QStringList& toClean)
         }
     }
 
-    return deduplicator.toList();
+    return deduplicator.values();
 }
 
 bool MetadataHub::willWriteMetadata(WriteComponent writeMode, const MetaEngineSettingsContainer& settings) const
@@ -578,7 +612,9 @@ bool MetadataHub::willWriteMetadata(WriteComponent writeMode, const MetaEngineSe
     bool saveColorLabel = (settings.saveColorLabel && (d->colorLabelStatus == MetadataAvailable) && writeMode.testFlag(WRITE_COLORLABEL));
     bool saveRating     = (settings.saveRating     && (d->ratingStatus     == MetadataAvailable) && writeMode.testFlag(WRITE_RATING));
     bool saveTemplate   = (settings.saveTemplate   && (d->templateStatus   == MetadataAvailable) && writeMode.testFlag(WRITE_TEMPLATE));
-    bool saveTags       = settings.saveTags && writeMode.testFlag(WRITE_TAGS);
+    bool saveTags       = (settings.saveTags       && writeMode.testFlag(WRITE_TAGS));
+    bool saveFaces      = (settings.saveFaceTags   && writeMode.testFlag(WRITE_TAGS));
+    bool savePosition   = (settings.savePosition   && writeMode.testFlag(WRITE_POSITION));
 
     return (
                saveTitle       ||
@@ -587,18 +623,19 @@ bool MetadataHub::willWriteMetadata(WriteComponent writeMode, const MetaEngineSe
                savePickLabel   ||
                saveColorLabel  ||
                saveRating      ||
+               saveTemplate    ||
                saveTags        ||
-               saveTemplate
+               saveFaces       ||
+               savePosition
            );
 }
 
 void MetadataHub::writeToBaloo(const QString& filePath, const MetaEngineSettingsContainer& settings)
 {
+
 #ifdef HAVE_KFILEMETADATA
 
     BalooWrap* const baloo = BalooWrap::instance();
-    int rating             = -1;
-    QString* comment       = nullptr;
 
     if (!baloo->getSyncToBaloo())
     {
@@ -606,10 +643,12 @@ void MetadataHub::writeToBaloo(const QString& filePath, const MetaEngineSettings
         return;
     }
 
-    bool saveComment = (settings.saveComments   && d->commentsStatus   == MetadataAvailable);
-    bool saveRating  = (settings.saveRating     && d->ratingStatus     == MetadataAvailable);
+    BalooInfo bInfo;
 
-    QStringList newKeywords;
+    bool saveComment = (settings.saveComments && (d->commentsStatus == MetadataAvailable));
+    bool saveRating  = (settings.saveRating   && (d->ratingStatus   == MetadataAvailable));
+
+    QStringList tagPathList;
 
     for (QMap<int, MetadataHub::Status>::iterator it = d->tags.begin() ; it != d->tags.end() ; ++it)
     {
@@ -622,45 +661,53 @@ void MetadataHub::writeToBaloo(const QString& filePath, const MetaEngineSettings
 
         if (it.value() == MetadataAvailable)
         {
-            QString tagName = TagsCache::instance()->tagName(it.key());
+            QString tagPath = TagsCache::instance()->tagPath(it.key(), TagsCache::NoLeadingSlash);
 
-            if (!tagName.isEmpty())
+            if (!tagPath.isEmpty())
             {
-                newKeywords << tagName;
+                tagPathList << tagPath;
             }
         }
     }
 
     if (saveComment)
     {
-        comment = new QString(d->comments.value(QLatin1String("x-default")).caption);
+        bInfo.comment = d->comments.value(QLatin1String("x-default")).caption;
     }
 
     if (saveRating)
     {
-        rating = d->rating;
+        bInfo.rating = d->rating;
     }
 
-    newKeywords = cleanupTags(newKeywords);
-    QUrl url    = QUrl::fromLocalFile(filePath);
-    baloo->setAllData(url, &newKeywords, comment, rating);
+    bInfo.tags = cleanupTags(tagPathList);
+    baloo->setSemanticInfo(QUrl::fromLocalFile(filePath), bInfo);
+
 #else
+
     Q_UNUSED(filePath);
     Q_UNUSED(settings);
+
 #endif
+
 }
 
 void MetadataHub::applyChangeNotifications()
 {
 }
 
-void Digikam::MetadataHub::loadFaceTags(const ItemInfo& info, const QSize& size)
+void MetadataHub::loadFaceTags(const ItemInfo& info, const QSize& size)
 {
     FaceTagsEditor editor;
-
-    //qCDebug(DIGIKAM_GENERAL_LOG) << "Image Dimensions ----------------" << info.dimensions();
-
+/*
+    qCDebug(DIGIKAM_GENERAL_LOG) << "Image Dimensions ----------------" << info.dimensions();
+*/
     QList<FaceTagsIface> facesList = editor.confirmedFaceTagsIfaces(info.id());
+
+    // ignored faces metadata needs to be written to Images.
+
+    facesList.append(editor.ignoredFaceTagsIfaces(info.id()));
+
     d->faceTagsList.clear();
 
     if (!facesList.isEmpty())
@@ -674,29 +721,29 @@ void Digikam::MetadataHub::loadFaceTags(const ItemInfo& info, const QSize& size)
                 continue;
             }
 
-            QRect  temprect = dface.region().toRect();
-            TagRegion::reverseToOrientation(temprect, info.orientation(), size);
-            QRectF faceRect = TagRegion::absoluteToRelative(temprect, size);
-            d->faceTagsList.insertMulti(faceName, QVariant(faceRect));
+            QRect  tempRect = dface.region().toRect();
+            TagRegion::reverseToOrientation(tempRect, info.orientation(), size);
+            QRectF faceRect = TagRegion::absoluteToRelative(tempRect, size);
+            d->faceTagsList.insert(faceName, faceRect);
         }
     }
 }
 
-QMultiMap<QString, QVariant> Digikam::MetadataHub::getFaceTags()
+QMultiMap<QString, QVariant> MetadataHub::getFaceTags()
 {
     return d->faceTagsList;
 }
 
-void Digikam::MetadataHub::setFaceTags(QMultiMap<QString, QVariant> newFaceTags, QSize size)
+void MetadataHub::setFaceTags(QMultiMap<QString, QVariant> newFaceTags, QSize size)
 {
     d->faceTagsList.clear();
     QMultiMap<QString, QVariant>::iterator it;
 
     for (it = newFaceTags.begin() ; it != newFaceTags.end() ; ++it)
     {
-        QRect  temprect = it.value().toRect();
-        QRectF faceRect = TagRegion::absoluteToRelative(temprect, size);
-        d->faceTagsList.insertMulti(it.key(), faceRect);
+        QRect  tempRect = it.value().toRect();
+        QRectF faceRect = TagRegion::absoluteToRelative(tempRect, size);
+        d->faceTagsList.insert(it.key(), faceRect);
     }
 }
 
@@ -765,10 +812,10 @@ void Digikam::MetadataHub::setFaceTags(QMultiMap<QString, QVariant> newFaceTags,
 //bool MetadataHub::load(const QString& filePath, const MetaEngineSettingsContainer& settings)
 //{
 
-//    DMetadata metadata;
-//    metadata.setSettings(settings);
-//    bool success = metadata.load(filePath);
-//    load(metadata); // increments count
+//    QScopedPointer<DMetadata> metadata(new DMetadata);
+//    metadata->setSettings(settings);
+//    bool success = metadata->load(filePath);
+//    load(*metadata); // increments count
 //    return success;
 //}
 

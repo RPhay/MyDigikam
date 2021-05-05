@@ -7,7 +7,7 @@
  * Description : DImg interface for image editor
  *
  * Copyright (C) 2004-2005 by Renchi Raju <renchi dot raju at gmail dot com>
- * Copyright (C) 2004-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2004-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -43,6 +43,7 @@
 #include <QVariant>
 #include <QImageReader>
 #include <QPainter>
+#include <QScopedPointer>
 
 namespace Digikam
 {
@@ -61,7 +62,7 @@ void EditorCore::setDefaultInstance(EditorCore* const instance)
 
 EditorCore::EditorCore()
     : QObject(),
-      d(new Private)
+      d      (new Private)
 {
     d->undoMan = new UndoManager(this);
     d->thread  = new SharedLoadSaveThread;
@@ -147,6 +148,10 @@ void EditorCore::load(const QString& filePath, IOFileSettings* const iofileSetti
             qCCritical(DIGIKAM_GENERAL_LOG) << "Cannot found Raw Import tool! This probably due to a wrong "
                                                "install of plugins. Load Raw file with default settings...";
         }
+
+        description = LoadingDescription(filePath, iofileSettings->rawDecodingSettings,
+                                         LoadingDescription::RawDecodingGlobalSettings,
+                                         LoadingDescription::ConvertForEditor);
     }
 
     d->load(description);
@@ -167,8 +172,9 @@ void EditorCore::slotLoadRawFromTool(const LoadingDescription& props, const DImg
 
 void EditorCore::slotLoadRaw(const LoadingDescription& props)
 {
-    //qCDebug(DIGIKAM_GENERAL_LOG) << d->nextRawDescription.rawDecodingSettings;
-
+/*
+    qCDebug(DIGIKAM_GENERAL_LOG) << d->nextRawDescription.rawDecodingSettings;
+*/
     d->load(props);
 }
 
@@ -519,7 +525,7 @@ void EditorCore::setModified()
 
 void EditorCore::readMetadataFromFile(const QString& file)
 {
-    DMetadata meta(file);
+    QScopedPointer<DMetadata> meta(new DMetadata(file));
 
     // This can overwrite metadata changes introduced by tools.
     // Currently, this is ProfileConversion and lensfun.
@@ -527,13 +533,13 @@ void EditorCore::readMetadataFromFile(const QString& file)
     // Lensfun is not critical.
     // For a clean solution, we'd need to record a sort of metadata changeset in UndoMetadataContainer.
 
-    d->image.setMetadata(meta.data());
+    d->image.setMetadata(meta->data());
 
     // If we are editing, and someone else at the same time, there's nothing we can do.
 
     if (!d->undoMan->hasChanges())
     {
-        d->image.setItemHistory(DImageHistory::fromXml(meta.getItemHistory()));
+        d->image.setItemHistory(DImageHistory::fromXml(meta->getItemHistory()));
     }
 }
 
@@ -768,9 +774,9 @@ void EditorCore::putIccProfile(const IccProfile& profile)
         qCWarning(DIGIKAM_GENERAL_LOG) << "d->image is NULL";
         return;
     }
-
-    //qCDebug(DIGIKAM_GENERAL_LOG) << "Embedding profile: " << profile;
-
+/*
+    qCDebug(DIGIKAM_GENERAL_LOG) << "Embedding profile: " << profile;
+*/
     d->image.setIccProfile(profile);
     setModified();
 }

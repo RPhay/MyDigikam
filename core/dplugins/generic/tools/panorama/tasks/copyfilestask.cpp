@@ -26,6 +26,7 @@
 
 #include <QFileInfo>
 #include <QDateTime>
+#include <QScopedPointer>
 
 // KDE includes
 
@@ -40,8 +41,13 @@
 namespace DigikamGenericPanoramaPlugin
 {
 
-CopyFilesTask::CopyFilesTask(const QString& workDirPath, const QUrl& panoUrl, const QUrl& finalPanoUrl,
-                             const QUrl& ptoUrl, const PanoramaItemUrlsMap& urls, bool sPTO, bool GPlusMetadata)
+CopyFilesTask::CopyFilesTask(const QString& workDirPath,
+                             const QUrl& panoUrl,
+                             const QUrl& finalPanoUrl,
+                             const QUrl& ptoUrl,
+                             const PanoramaItemUrlsMap& urls,
+                             bool sPTO,
+                             bool GPlusMetadata)
     : PanoTask(PANO_COPY, workDirPath),
       panoUrl(panoUrl),
       finalPanoUrl(finalPanoUrl),
@@ -105,69 +111,75 @@ void CopyFilesTask::run(ThreadWeaver::JobPointer, ThreadWeaver::Thread*)
     // Find first src image which contain geolocation and save it to target pano file.
 
     double lat, lng, alt;
+    QScopedPointer<DMetadata> meta(new DMetadata);
 
     for (PanoramaItemUrlsMap::const_iterator i = urlList->constBegin() ; i != urlList->constEnd() ; ++i)
     {
         qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << i.key();
 
-        m_meta.load(i.key().toLocalFile());
+        meta->load(i.key().toLocalFile());
 
-        if (m_meta.getGPSInfo(alt, lat, lng))
+        if (meta->getGPSInfo(alt, lat, lng))
         {
             qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "GPS info found and saved in " << panoUrl;
-            m_meta.load(panoUrl.toLocalFile());
-            m_meta.setGPSInfo(alt, lat, lng);
-            m_meta.applyChanges(true);
+            meta->load(panoUrl.toLocalFile());
+            meta->setGPSInfo(alt, lat, lng);
+            meta->applyChanges(true);
             break;
         }
     }
 
     // Restore usual and common metadata from first shot.
 
-    m_meta.load(urlList->constBegin().key().toLocalFile());
-    QByteArray iptc = m_meta.getIptc();
-    QByteArray xmp  = m_meta.getXmp();
-    QString make    = m_meta.getExifTagString("Exif.Image.Make");
-    QString model   = m_meta.getExifTagString("Exif.Image.Model");
-    QDateTime dt    = m_meta.getItemDateTime();
+    meta->load(urlList->constBegin().key().toLocalFile());
+    QByteArray iptc = meta->getIptc();
+    QByteArray xmp  = meta->getXmp();
+    QString make    = meta->getExifTagString("Exif.Image.Make");
+    QString model   = meta->getExifTagString("Exif.Image.Model");
+    QDateTime dt    = meta->getItemDateTime();
 
-    m_meta.load(panoUrl.toLocalFile());
-    m_meta.setIptc(iptc);
-    m_meta.setXmp(xmp);
-    m_meta.setXmpTagString("Xmp.tiff.Make",   make);
-    m_meta.setXmpTagString("Xmp.tiff.Model", model);
-    m_meta.setImageDateTime(dt);
+    meta->load(panoUrl.toLocalFile());
+    meta->setIptc(iptc);
+    meta->setXmp(xmp);
+    meta->setXmpTagString("Xmp.tiff.Make",   make);
+    meta->setXmpTagString("Xmp.tiff.Model", model);
+    meta->setImageDateTime(dt);
 
     QString filesList;
 
     for (PanoramaItemUrlsMap::const_iterator i = urlList->constBegin() ; i != urlList->constEnd() ; ++i)
+    {
         filesList.append(i.key().fileName() + QLatin1String(" ; "));
+    }
 
     filesList.truncate(filesList.length()-3);
 
-    m_meta.setXmpTagString("Xmp.digiKam.PanoramaInputFiles", filesList);
+    meta->setXmpTagString("Xmp.digiKam.PanoramaInputFiles", filesList);
 
     // NOTE : See https://developers.google.com/photo-sphere/metadata/ for details
+
     if (addGPlusMetadata)
     {
         qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Adding PhotoSphere metadata...";
-        m_meta.registerXmpNameSpace(QLatin1String("http://ns.google.com/photos/1.0/panorama/"), QLatin1String("GPano"));
-        m_meta.setXmpTagString("Xmp.GPano.UsePanoramaViewer", QLatin1String("True"));
-        m_meta.setXmpTagString("Xmp.GPano.StitchingSoftware", QLatin1String("Panorama digiKam tool with Hugin"));
-        m_meta.setXmpTagString("Xmp.GPano.ProjectionType",    QLatin1String("equirectangular"));
+        meta->registerXmpNameSpace(QLatin1String("http://ns.google.com/photos/1.0/panorama/"),      // krazy:exclude=insecurenet
+                                   QLatin1String("GPano"));
+        meta->setXmpTagString("Xmp.GPano.UsePanoramaViewer", QLatin1String("True"));
+        meta->setXmpTagString("Xmp.GPano.StitchingSoftware", QLatin1String("Panorama digiKam tool with Hugin"));
+        meta->setXmpTagString("Xmp.GPano.ProjectionType",    QLatin1String("equirectangular"));
     }
 
-    m_meta.applyChanges(true);
+    meta->applyChanges(true);
 
     qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Copying panorama file...";
 
     if (!panoFile.copy(finalPanoUrl.toLocalFile()) || !panoFile.remove())
     {
-        errString = i18n("Cannot move panorama from <filename>%1</filename> to <filename>%2</filename>.",
-                         panoUrl.toLocalFile(),
-                         finalPanoUrl.toLocalFile());
+        errString   = i18n("Cannot move panorama from <filename>%1</filename> to <filename>%2</filename>.",
+                           panoUrl.toLocalFile(),
+                           finalPanoUrl.toLocalFile());
         qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Cannot move panorama: QFile error = " << panoFile.error();
         successFlag = false;
+
         return;
     }
 
@@ -177,10 +189,11 @@ void CopyFilesTask::run(ThreadWeaver::JobPointer, ThreadWeaver::Thread*)
 
         if (!ptoFile.copy(finalPTOUrl.toLocalFile()))
         {
-            errString = i18n("Cannot move project file from <filename>%1</filename> to <filename>%2</filename>.",
-                             panoUrl.toLocalFile(),
-                             finalPanoUrl.toLocalFile());
+            errString   = i18n("Cannot move project file from <filename>%1</filename> to <filename>%2</filename>.",
+                               panoUrl.toLocalFile(),
+                               finalPanoUrl.toLocalFile());
             successFlag = false;
+
             return;
         }
 
@@ -202,10 +215,11 @@ void CopyFilesTask::run(ThreadWeaver::JobPointer, ThreadWeaver::Thread*)
 
                 if (!imgFile.copy(finalImgUrl.toLocalFile()))
                 {
-                    errString = i18n("Cannot copy converted image file from <filename>%1</filename> to <filename>%2</filename>.",
-                                     i->preprocessedUrl.toLocalFile(),
-                                     finalImgUrl.toLocalFile());
+                    errString   = i18n("Cannot copy converted image file from <filename>%1</filename> to <filename>%2</filename>.",
+                                       i->preprocessedUrl.toLocalFile(),
+                                       finalImgUrl.toLocalFile());
                     successFlag = false;
+
                     return;
                 }
             }
@@ -215,7 +229,6 @@ void CopyFilesTask::run(ThreadWeaver::JobPointer, ThreadWeaver::Thread*)
     emit PanoManager::instance()->updateHostApp(finalPanoUrl);
 
     successFlag = true;
-    return;
 }
 
 } // namespace DigikamGenericPanoramaPlugin

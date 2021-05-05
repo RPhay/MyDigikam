@@ -8,7 +8,7 @@
  * Acknowledge : based on the expoblending tool
  *
  * Copyright (C) 2011-2016 by Benjamin Girault <benjamin dot girault at gmail dot com>
- * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -44,14 +44,14 @@ class PanoPreProcessPage : public DWizardPage
 public:
 
     explicit PanoPreProcessPage(PanoManager* const mngr, QWizard* const dlg);
-    ~PanoPreProcessPage();
+    ~PanoPreProcessPage() override;
 
 private:
 
     void process();
-    void initializePage();
-    bool validatePage();
-    void cleanupPage();
+    void initializePage() override;
+    bool validatePage()   override;
+    void cleanupPage()    override;
 
 Q_SIGNALS:
 

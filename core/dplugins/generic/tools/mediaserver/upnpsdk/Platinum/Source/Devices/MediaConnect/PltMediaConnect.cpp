@@ -54,7 +54,7 @@ PLT_MediaConnect::PLT_MediaConnect(const char*  friendly_name,
                                    bool         add_hostname     /* = true */, 
                                    const char*  udn              /* = NULL */, 
                                    NPT_UInt16   port             /* = 0 */,
-                                   bool         port_rebind      /* = false */) :	
+                                   bool         port_rebind      /* = false */) :   
     PLT_MediaServer(friendly_name, false, udn, port, port_rebind),
     m_AddHostname(add_hostname)
 {
@@ -73,7 +73,7 @@ PLT_MediaConnect::~PLT_MediaConnect()
 NPT_Result
 PLT_MediaConnect::SetupServices()
 {
-	NPT_Reference<PLT_Service> service(new PLT_Service(
+    NPT_Reference<PLT_Service> service(new PLT_Service(
         this,
         "urn:microsoft.com:service:X_MS_MediaReceiverRegistrar:1", 
         "urn:microsoft.com:serviceId:X_MS_MediaReceiverRegistrar",
@@ -99,10 +99,10 @@ PLT_MediaConnect::ProcessGetDescription(NPT_HttpRequest&              request,
                                         const NPT_HttpRequestContext& context,
                                         NPT_HttpResponse&             response)
 {
-	// lock to make sure another request is not modifying the device while we are already
-	NPT_AutoLock lock(m_Lock);
+    // lock to make sure another request is not modifying the device while we are already
+    NPT_AutoLock lock(m_Lock);
 
-	NPT_Result res				   = NPT_SUCCESS;
+    NPT_Result res                 = NPT_SUCCESS;
     NPT_String oldModelName        = m_ModelName;
     NPT_String oldModelNumber      = m_ModelNumber;
     NPT_String oldModelURL         = m_ModelURL;
@@ -117,20 +117,15 @@ PLT_MediaConnect::ProcessGetDescription(NPT_HttpRequest&              request,
     
     PLT_DeviceSignature signature = PLT_HttpHelper::GetDeviceSignature(request);
 
-    if (signature == PLT_DEVICE_XBOX /*|| signature == PLT_SONOS*/) {
-        // XBox needs to see something behind a ':' to even show it
-        if (m_AddHostname && hostname.GetLength() > 0) {
-            m_FriendlyName += ": " + hostname;
-        } else if (m_FriendlyName.Find(":") == -1) {
-            m_FriendlyName += ": 1";
-        }
-    }
-    else if (m_AddHostname && hostname.GetLength() > 0) {
-      m_FriendlyName += " (" + hostname + ")";
+    // XBox needs to see something behind a ':' to even show it
+    if (m_AddHostname && hostname.GetLength() > 0) {
+        m_FriendlyName += ": " + hostname;
+    } else if (m_FriendlyName.Find(":") == -1) {
+        m_FriendlyName += ": 1";
     }
 
     // change some things based on device signature from request
-    if (signature == PLT_DEVICE_XBOX || signature == PLT_DEVICE_WMP /*|| signature == PLT_SONOS*/) {
+    if (signature == PLT_DEVICE_XBOX_360  || signature == PLT_DEVICE_XBOX_ONE || signature == PLT_DEVICE_WMP /*|| signature == PLT_SONOS*/) {
         m_ModelName        = "Windows Media Player Sharing";
         m_ModelNumber      = (signature == PLT_DEVICE_SONOS)?"3.0":"12.0";
         m_ModelURL         = "http://www.microsoft.com/";//"http://go.microsoft.com/fwlink/?LinkId=105926";
@@ -183,7 +178,10 @@ PLT_MediaConnect::ProcessGetSCPD(PLT_Service*                  service,
     // Override SCPD response by providing an SCPD without a Search action
     // to all devices except XBox or WMP which need it
     if (service->GetServiceType() == "urn:schemas-upnp-org:service:ContentDirectory:1" &&
-        signature != PLT_DEVICE_XBOX && signature != PLT_DEVICE_WMP && signature != PLT_DEVICE_SONOS) {
+        signature != PLT_DEVICE_XBOX_360 &&
+        signature != PLT_DEVICE_XBOX_ONE &&
+        signature != PLT_DEVICE_WMP &&
+        signature != PLT_DEVICE_SONOS) {
         NPT_HttpEntity* entity;
         PLT_HttpHelper::SetBody(response, (const char*) MS_ContentDirectorySCPD, &entity);    
         entity->SetContentType("text/xml; charset=\"utf-8\"");

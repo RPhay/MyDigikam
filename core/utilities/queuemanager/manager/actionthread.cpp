@@ -6,7 +6,7 @@
  * Date        : 2009-02-06
  * Description : Thread actions manager.
  *
- * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2012      by Pankaj Kumar <me at panks dot me>
  *
  * This program is free software; you can redistribute it
@@ -49,10 +49,10 @@ public:
 
 ActionThread::ActionThread(QObject* const parent)
     : ActionThreadBase(parent),
-      d(new Private)
+      d               (new Private)
 {
     setObjectName(QLatin1String("QueueMngrThread"));
-    qRegisterMetaType<ActionData>();
+    qRegisterMetaType<ActionData>("ActionData");
 
     connect(this, SIGNAL(finished()),
             this, SLOT(slotThreadFinished()));
@@ -77,7 +77,7 @@ void ActionThread::setSettings(const QueueSettings& settings)
     }
     else
     {
-        defaultMaximumNumberOfThreads();
+        setDefaultMaximumNumberOfThreads();
     }
 }
 

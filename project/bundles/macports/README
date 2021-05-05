@@ -1,4 +1,4 @@
-RESUMEé
+RESUME
 ------
 Scripts to build binary digiKam package for MacOS
 
@@ -13,7 +13,7 @@ AUTHORS
 -------
 
 (c)      2015 by Shanti <listaccount at revenant dot org>
-(c) 2015-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+(c) 2015-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
 
 
 DESCRIPTION
@@ -27,76 +27,78 @@ how they work.
 BUNDLE CONTENTS
 ---------------
 
-Note : the bundle is not relocatable.
+Note: the bundle is relocatable.
 
-   |-- Applications
-   |   |-- KF5                                Binary applications directories (digiKam and Showfoto)
-   |       |-- digikam.app
-   |       |   |-- Contents
-   |       |       |-- MacOS
-   |       |       |-- Resources              Shared data files (marble, i18n, etc...)
-   |       |-- showfoto.app
-   |           |-- Contents
-   |               |-- MacOS
-   |               |-- Resources              ==> symbolic link to Applications/KF5/digikam.app/Contents/Resources
-   |-- digiKam                                Link to MacOS desktop with scripts.
-   |   |-- digikam.app
-   |       |-- Contents
-   |          |-- MacOS
-   |          |-- Resources
-   |              |-- Scripts
-   |     showfoto.app
-   |     |-- Contents
-   |         |-- MacOS
-   |         |-- Resources
-   |             |-- Scripts
-   |-- bin                                    Extra binaries
-   |-- etc                                    Really need ?
-   |   |-- xdg
-   |       |-- ui
-   |-- lib                                    Shared libraries
-   |   |-- mysql56
-   |       |-- mysql
-   |-- libexec                                Run-times libraries and plugins
-   |   |-- qt5
-   |       |-- lib
-   |       |   |-- QtConcurrent.framework
-   |       |   |-- QtCore.framework
-   |       |   |-- QtDBus.framework
-   |       |   |-- QtGui.framework
-   |       |   |-- QtLocation.framework
-   |       |   |-- QtMultimedia.framework
-   |       |   |-- QtMultimediaWidgets.framework
-   |       |   |-- QtNetwork.framework
-   |       |   |-- QtOpenGL.framework
-   |       |   |-- QtPositioning.framework
-   |       |   |-- QtPrintSupport.framework
-   |       |   |-- QtQml.framework
-   |       |   |-- QtQuick.framework
-   |       |   |-- QtScript.framework
-   |       |   |-- QtSensors.framework
-   |       |   |-- QtSql.framework
-   |       |   |-- QtSvg.framework
-   |       |   |-- QtWebChannel.framework
-   |       |   |-- QtWebKit.framework
-   |       |   |-- QtWebKitWidgets.framework
-   |       |   |-- QtWidgets.framework
-   |       |   |-- QtXml.framework
-   |       |   |-- QtXmlPatterns.framework
-   |       |-- plugins                              Qt and KF5 plugins
-   |           |-- audio
-   |           |-- geoservices
-   |           |-- iconengines
-   |           |-- imageformats
-   |           |-- mediaservice
-   |           |-- platforms
-   |           |-- position
-   |           |-- printsupport
-   |           |-- sqldrivers
+Bundle is composed of two main application containers (digikam and showfoto), to start from the macOS lauchpad.
+The digikam sub-container include all resources shared with showfoto.
+The showfoto sub-container directories are linked to the digikam sub-container to reduce used-space.
+The host directory is called "digiKam.org" and not "digiKam" to allow Showfoto icon to be show on macOS lauchpad,
+else only digiKam is visible.
 
+digiKam.org
+├── digikam.app                             digiKam sub-container
+│   └── Contents
+│       ├── bin                             Extra binaries
+│       ├── etc                             Extra configuration
+│       ├── lib                             Libraries and extra dependencies
+│       ├── libexec                         Run time dependencies
+│       │   └── qt5
+│       │       ├── lib
+│       │       └── plugins                 Plugins
+│       │           ├── bearer
+│       │           ├── designer
+│       │           ├── digikam             digiKam and Showfoto DPlugins
+│       │           │   ├── bqm
+│       │           │   ├── dimg
+│       │           │   ├── editor
+│       │           │   ├── generic
+│       │           │   └── rawimport
+│       │           ├── generic
+│       │           ├── iconengines
+│       │           ├── imageformats
+│       │           ├── kauth
+│       │           ├── kf5
+│       │           ├── platforms
+│       │           ├── platformthemes
+│       │           ├── printsupport
+│       │           ├── sqldrivers
+│       │           └── styles
+│       ├── MacOS                           digiKam binary
+│       ├── Resources                       Data and resource files
+│       │   ├── applications
+│       │   ├── data
+│       │   ├── digikam
+│       │   ├── kf5
+│       │   ├── knotifications5
+│       │   ├── kservices5
+│       │   ├── kservicetypes5
+│       │   ├── kxmlgui5
+│       │   ├── lensfun                     Lens auto correction profiles
+│       │   ├── locale
+│       │   ├── mime
+│       │   ├── opencv4
+│       │   ├── plugins
+│       │   ├── showfoto
+│       │   └── solid
+│       └── share                           Shared files
+└── showfoto.app                            Showfoto sub-container
+    └── Contents
+        ├── bin                             -> ../../digikam.app/Contents/bin
+        ├── etc                             -> ../../digikam.app/Contents/etc
+        ├── lib                             -> ../../digikam.app/Contents/lib
+        ├── libexec                         -> ../../digikam.app/Contents/libexec
+        ├── MacOS                           Showfoto binary
+        ├── Resources                       -> ../../digikam.app/Contents/Resources
+        └── share                           -> ../../digikam.app/Contents/share
 
 REQUIREMENTS
 ------------
+
+To build bundle you need a macOS install in a real computer (best) or in a VM.
+This Github project have been tested to install automatically BigSur in VirtualBox and work as expected:
+
+https://github.com/myspaghetti/macos-virtualbox
+
 The scripts build digiKam with MacPorts, so you will need Xcode and the other
 prerequisites for Macports.
 
@@ -136,25 +138,25 @@ All scripts should be run from within the digikam-package directory.
 * 01-build-macports.sh:
 
 This script downloads and configures a custom non-root install
-of MacPorts to /opt/digikam. The PKG will install to the same place,
+of MacPorts to /opt/digikam.org._arch_. The PKG will install to the same place,
 avoiding the confusion associated with relocation and install_name_tool. The
 custom location, as opposed to /opt/local, should allow digiKam to co-exist
 with a standard Macports installation
 
 * 02-build-extralibs.sh:
 
-This script configures, and compile a custom non-root install to /opt/digikam
+This script configures, and compile a custom non-root install to /opt/digikam.org._arch_
 of extra libraries, including KF5 frameworks, and most important photo management
 libs used by digiKam as Exiv2 and LensFun.
 
 * 03-build-digikam.sh:
 
 This script configures, and compile a custom non-root install of digiKam to
-/opt/digikam.
+/opt/digikam.org._arch_.
 
 * 04-build-installer.sh:
 
-Once you've successfully built digiKam, /opt/digikam may contain over 10GB of files.
+Once you've successfully built digiKam, /opt/digikam.org._arch_ may contain over 10GB of files.
 This script grabs the ~250MB needed to run digiKam and Showfoto,
 and places them in ./installer/opt. These include applications documentations
 and translations.
@@ -169,8 +171,8 @@ The launcher applications:
         +debug variant.
 
 This script also create the pre-install and post-install scripts that are run
-when the package is installed. They delete any pre-existing /opt/digikam,
-delete and recreate /Applications/digiKam.
+when the package is installed. They delete any pre-existing /opt/digikam.org._arch_,
+delete and recreate /Applications/digiKam.org.
 
 Finally, this script sets the version number, and runs Packages to
 put everything together in the bundle.
@@ -183,7 +185,7 @@ at startup following instruction give at this url:
 https://unix.stackexchange.com/questions/90853/how-can-i-run-ssh-add-automatically-without-password-prompt
 
 Note: the bundle can be signed with GPG. You must setup your private and public keys before
-and put your passphare to a text file (~/.gnupg/dkorg-gpg-pwd.txt) 
+and put your passphare to a text file (~/.gnupg/dkorg-gpg-pwd.txt)
 
 * rll.py
 

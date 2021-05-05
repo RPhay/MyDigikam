@@ -6,7 +6,7 @@
  * Date        : 2018-07-30
  * Description : a BQM plugin to convert 8 bits color depth to 16
  *
- * Copyright (C) 2018-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2018-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -43,7 +43,7 @@ class Convert8To16Plugin : public DPluginBqm
 public:
 
     explicit Convert8To16Plugin(QObject* const parent = nullptr);
-    ~Convert8To16Plugin();
+    ~Convert8To16Plugin()                override;
 
     QString name()                 const override;
     QString iid()                  const override;
@@ -52,7 +52,7 @@ public:
     QString description()          const override;
     QList<DPluginAuthor> authors() const override;
 
-    void setup(QObject* const) override;
+    void setup(QObject* const)           override;
 };
 
 } // namespace DigikamBqmConvert8To16Plugin

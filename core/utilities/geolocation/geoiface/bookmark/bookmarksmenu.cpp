@@ -6,7 +6,7 @@
  * Date        : 2017-05-15
  * Description : menu to manage GPS bookmarks
  *
- * Copyright (C) 2017-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2017-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -43,12 +43,12 @@ class Q_DECL_HIDDEN ModelMenu::Private
 public:
 
     explicit Private()
-      : maxRows(7),
-        firstSeparator(-1),
-        maxWidth(-1),
-        hoverRole(0),
-        separatorRole(0),
-        model(nullptr)
+      : maxRows         (7),
+        firstSeparator  (-1),
+        maxWidth        (-1),
+        hoverRole       (0),
+        separatorRole   (0),
+        model           (nullptr)
     {
     }
 
@@ -63,7 +63,7 @@ public:
 
 ModelMenu::ModelMenu(QWidget* const parent)
     : QMenu(parent),
-      d(new Private)
+      d    (new Private)
 {
     // --- NOTE: use dynamic binding as slotAboutToShow() is a virtual method which can be re-implemented in derived classes.
 
@@ -210,10 +210,10 @@ void ModelMenu::createMenu(const QModelIndex& parent, int max, QMenu* parentMenu
     }
 
     connect(menu, SIGNAL(triggered(QAction*)),
-            this, SLOT(triggered(QAction*)));
+            this, SLOT(slotTriggered(QAction*)));
 
     connect(menu, SIGNAL(hovered(QAction*)),
-            this, SLOT(hovered(QAction*)));
+            this, SLOT(slotHovered(QAction*)));
 
     for (int i = 0 ; i < end ; ++i)
     {
@@ -225,7 +225,7 @@ void ModelMenu::createMenu(const QModelIndex& parent, int max, QMenu* parentMenu
         }
         else
         {
-            if (d->separatorRole != 0 && idx.data(d->separatorRole).toBool())
+            if ((d->separatorRole != 0) && idx.data(d->separatorRole).toBool())
             {
                 addSeparator();
             }
@@ -259,6 +259,7 @@ QAction* ModelMenu::makeAction(const QIcon& icon, const QString& text, QObject* 
 
     if (d->maxWidth == -1)
     {
+
 #if (QT_VERSION >= QT_VERSION_CHECK(5, 11, 0))
 
         d->maxWidth = fm.horizontalAdvance(QLatin1Char('m')) * 30;
@@ -268,6 +269,7 @@ QAction* ModelMenu::makeAction(const QIcon& icon, const QString& text, QObject* 
         d->maxWidth = fm.width(QLatin1Char('m')) * 30;
 
 #endif
+
     }
 
     QString smallText = fm.elidedText(text, Qt::ElideMiddle, d->maxWidth);
@@ -275,7 +277,7 @@ QAction* ModelMenu::makeAction(const QIcon& icon, const QString& text, QObject* 
     return (new QAction(icon, smallText, parent));
 }
 
-void ModelMenu::triggered(QAction* action)
+void ModelMenu::slotTriggered(QAction* action)
 {
     QVariant v = action->data();
 
@@ -286,7 +288,7 @@ void ModelMenu::triggered(QAction* action)
     }
 }
 
-void ModelMenu::hovered(QAction* action)
+void ModelMenu::slotHovered(QAction* action)
 {
     QVariant v = action->data();
 
@@ -319,12 +321,12 @@ public:
 
 BookmarksMenu::BookmarksMenu(BookmarksManager* const mngr, QWidget* const parent)
     : ModelMenu(parent),
-      d(new Private)
+      d        (new Private)
 {
     d->manager = mngr;
 
     connect(this, SIGNAL(activated(QModelIndex)),
-            this, SLOT(activated(QModelIndex)));
+            this, SLOT(slotActivated(QModelIndex)));
 
     setMaxRows(-1);
     setHoverRole(BookmarksModel::UrlStringRole);
@@ -336,7 +338,7 @@ BookmarksMenu::~BookmarksMenu()
     delete d;
 }
 
-void BookmarksMenu::activated(const QModelIndex& index)
+void BookmarksMenu::slotActivated(const QModelIndex& index)
 {
     emit openUrl(index.data(BookmarksModel::UrlRole).toUrl());
 }

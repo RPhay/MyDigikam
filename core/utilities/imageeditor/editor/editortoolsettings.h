@@ -6,7 +6,7 @@
  * Date        : 2008-08-21
  * Description : Editor tool settings template box
  *
- * Copyright (C) 2008-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2008-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2008-2014 by Andi Clemens <andi dot clemens at gmail dot com>
  *
  * This program is free software; you can redistribute it
@@ -74,7 +74,7 @@ public:
 public:
 
     explicit EditorToolSettings(QWidget* const parent);
-    virtual ~EditorToolSettings();
+    ~EditorToolSettings()                     override;
 
     void setButtons(Buttons buttonMask);
     void setTools(Tools toolMask);
@@ -96,7 +96,7 @@ public:
     QPushButton* button(int buttonCode) const;
     void enableButton(int buttonCode, bool state);
 
-    virtual QSize minimumSizeHint()     const override;
+    QSize minimumSizeHint()             const override;
     virtual void setBusy(bool)   {};
     virtual void writeSettings() {};
     virtual void readSettings()  {};
@@ -115,12 +115,15 @@ Q_SIGNALS:
     void signalScaleChanged();
 
 private Q_SLOTS:
-    
+
     void slotAboutPlugin();
 
 private:
 
-    EditorToolSettings(); // Disable
+    // Disable
+    EditorToolSettings() = delete;
+
+private:
 
     class Private;
     Private* const d;

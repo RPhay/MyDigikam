@@ -4,7 +4,7 @@
 # and create a Windows installer file with NSIS application
 # Dependency : NSIS makensis program for Linux.
 #
-# Copyright (c) 2015-2020 by Gilles Caulier  <caulier dot gilles at gmail dot com>
+# Copyright (c) 2015-2021 by Gilles Caulier  <caulier dot gilles at gmail dot com>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
@@ -69,6 +69,7 @@ echo -e "\n---------- Build icons-set ressource\n"
 cd $ORIG_WD/icon-rcc
 
 rm -f CMakeCache.txt > /dev/null
+rm -f *.rcc > /dev/null
 
 cmake -DCMAKE_INSTALL_PREFIX="$MXE_INSTALL_PREFIX" \
       -DCMAKE_BUILD_TYPE=RelWithDebInfo \
@@ -109,6 +110,12 @@ cp -r $MXE_INSTALL_PREFIX/bin/data/showfoto                             $BUNDLED
 cp -r $MXE_INSTALL_PREFIX/bin/data/solid                                $BUNDLEDIR/data         2>/dev/null
 cp -r $MXE_INSTALL_PREFIX/bin/data/k*                                   $BUNDLEDIR/data         2>/dev/null
 
+# Copy digiKam hi-colors PNG icons-set to the bundle
+
+cp -r $MXE_INSTALL_PREFIX/bin/data/icons                                $BUNDLEDIR/data         2>/dev/null
+rm -fr $BUNDLEDIR/data/icons/breeze*                                                            2>/dev/null
+rm -fr $BUNDLEDIR/data/icons/*.qrc                                                              2>/dev/null
+
 echo -e "\n---------- Qt config"
 cp    $BUILDDIR/data/qt.conf                                            $BUNDLEDIR/             2>/dev/null
 
@@ -142,6 +149,9 @@ cp -r $MXE_INSTALL_PREFIX/bin/OpenAL32.dll                              $BUNDLED
 echo -e "\n---------- DrMinGw run-time"
 cp -r $MXE_INSTALL_PREFIX/bin/exchndl.dll                               $BUNDLEDIR/             2>/dev/null
 cp -r $MXE_INSTALL_PREFIX/bin/mgwhelp.dll                               $BUNDLEDIR/             2>/dev/null
+cp -r $MXE_INSTALL_PREFIX/bin/dbghelp.dll                               $BUNDLEDIR/             2>/dev/null
+cp -r $MXE_INSTALL_PREFIX/bin/symsrv.dll                                $BUNDLEDIR/             2>/dev/null
+cp -r $MXE_INSTALL_PREFIX/bin/symsrv.yes                                $BUNDLEDIR/             2>/dev/null
 
 echo -e "\n---------- Copy executables with recursive dependencies in bundle directory\n"
 
@@ -155,10 +165,6 @@ $MXE_INSTALL_PREFIX/qt5/bin/QtWebNetworkProcess.exe \
 $MXE_INSTALL_PREFIX/qt5/bin/QtWebProcess.exe \
 $MXE_INSTALL_PREFIX/qt5/bin/QtWebStorageProcess.exe \
 "
-if [[ $DK_DEBUG = 1 ]] ; then
-    EXE_FILES="$EXE_FILES $MXE_INSTALL_PREFIX/bin/gdb.exe"
-fi
-
 for app in $EXE_FILES ; do
 
     cp $app $BUNDLEDIR/
@@ -181,25 +187,45 @@ for app in $DLL_FILES ; do
 
 done
 
-# Remove this dll as it require the Microsoft debug SDK. Even if this dll is redistributable we won't be be relevant of this stuff.
-# This will not breal DrMinGw as backtraces will generated in a text file from home directory instead into a crash-course dialog.
-rm -f $BUNDLEDIR/dbghelp.dll
-
 #################################################################################################
 # Cleanup symbols in binary files to free space.
 
 echo -e "\n---------- Strip symbols in binary files\n"
 
 if [[ $DK_DEBUG = 1 ]] ; then
+
     find $BUNDLEDIR -name \*exe | grep -Ev '(digikam|showfoto|exiv2)' | xargs ${MXE_BUILDROOT}/usr/bin/${MXE_BUILD_TARGETS}-strip
     find $BUNDLEDIR -name \*dll | grep -Ev '(digikam|showfoto|exiv2)' | xargs ${MXE_BUILDROOT}/usr/bin/${MXE_BUILD_TARGETS}-strip
+
 else
+
     find $BUNDLEDIR -name \*exe | xargs ${MXE_BUILDROOT}/usr/bin/${MXE_BUILD_TARGETS}-strip
     find $BUNDLEDIR -name \*dll | xargs ${MXE_BUILDROOT}/usr/bin/${MXE_BUILD_TARGETS}-strip
+
 fi
 
+#################################################################################################
+# Install ExifTool binary.
+
+EXIFTOOL_VERSION="12.25"
+wget https://exiftool.org/exiftool-$EXIFTOOL_VERSION.zip -P $BUNDLEDIR
+unzip $BUNDLEDIR/exiftool-$EXIFTOOL_VERSION.zip -o -d $BUNDLEDIR
+mv "$BUNDLEDIR/exiftool(-k).exe" "$BUNDLEDIR/exiftool.exe"
+rm -f $BUNDLEDIR/exiftool-$EXIFTOOL_VERSION.zip
+
+#################################################################################################
+
 if [[ $DK_DEBUG = 1 ]] ; then
+
     DEBUG_SUF="-debug"
+
+fi
+
+if [[ $DK_VERSION = "master" ]] ; then
+
+    # with master branch, use build time-stamp as sub-version string.
+    DK_SUBVER="-`cat $ORIG_WD/data/BUILDDATE.txt`"
+
 fi
 
 #################################################################################################
@@ -210,15 +236,19 @@ echo -e "\n---------- Build NSIS installer and Portable archive\n"
 mkdir -p $ORIG_WD/bundle
 
 if [ $MXE_BUILD_TARGETS == "i686-w64-mingw32.shared" ]; then
-    TARGET_INSTALLER=digiKam-$DK_RELEASEID$DK_EPOCH-Win32$DEBUG_SUF.exe
-    PORTABLE_FILE=digiKam-$DK_RELEASEID$DK_EPOCH-Win32$DEBUG_SUF.tar.xz
-    CHECKSUM_FILE=digiKam-$DK_RELEASEID$DK_EPOCH-Win32$DEBUG_SUF.sum
-    rm -f $ORIG_WD/bundle/*Win32* || true
+
+    TARGET_INSTALLER=digiKam-$DK_RELEASEID$DK_SUBVER-Win32$DEBUG_SUF.exe
+    PORTABLE_FILE=digiKam-$DK_RELEASEID$DK_SUBVER-Win32$DEBUG_SUF.tar.xz
+    CHECKSUM_FILE=digiKam-$DK_RELEASEID$DK_SUBVER-Win32$DEBUG_SUF.sum
+    rm -f $ORIG_WD/bundle/*Win32$DEBUG_SUF* || true
+
 else
-    TARGET_INSTALLER=digiKam-$DK_RELEASEID$DK_EPOCH-Win64$DEBUG_SUF.exe
-    PORTABLE_FILE=digiKam-$DK_RELEASEID$DK_EPOCH-Win64$DEBUG_SUF.tar.xz
-    CHECKSUM_FILE=digiKam-$DK_RELEASEID$DK_EPOCH-Win64$DEBUG_SUF.sum
-    rm -f $ORIG_WD/bundle/*Win64* || true
+
+    TARGET_INSTALLER=digiKam-$DK_RELEASEID$DK_SUBVER-Win64$DEBUG_SUF.exe
+    PORTABLE_FILE=digiKam-$DK_RELEASEID$DK_SUBVER-Win64$DEBUG_SUF.tar.xz
+    CHECKSUM_FILE=digiKam-$DK_RELEASEID$DK_SUBVER-Win64$DEBUG_SUF.sum
+    rm -f $ORIG_WD/bundle/*Win64$DEBUG_SUF* || true
+
 fi
 
 cd $ORIG_WD/installer
@@ -235,10 +265,6 @@ echo -e "\n---------- Compute installer checksums for digiKam $DK_RELEASEID\n"  
 echo    "File       : $TARGET_INSTALLER"                                                >> $ORIG_WD/bundle/$TARGET_INSTALLER.sum
 echo -n "Size       : "                                                                 >> $ORIG_WD/bundle/$TARGET_INSTALLER.sum
 du -h "$ORIG_WD/bundle/$TARGET_INSTALLER"        | { read first rest ; echo $first ; }  >> $ORIG_WD/bundle/$TARGET_INSTALLER.sum
-echo -n "MD5 sum    : "                                                                 >> $ORIG_WD/bundle/$TARGET_INSTALLER.sum
-md5sum "$ORIG_WD/bundle/$TARGET_INSTALLER"       | { read first rest ; echo $first ; }  >> $ORIG_WD/bundle/$TARGET_INSTALLER.sum
-echo -n "SHA1 sum   : "                                                                 >> $ORIG_WD/bundle/$TARGET_INSTALLER.sum
-shasum -a1 "$ORIG_WD/bundle/$TARGET_INSTALLER"   | { read first rest ; echo $first ; }  >> $ORIG_WD/bundle/$TARGET_INSTALLER.sum
 echo -n "SHA256 sum : "                                                                 >> $ORIG_WD/bundle/$TARGET_INSTALLER.sum
 shasum -a256 "$ORIG_WD/bundle/$TARGET_INSTALLER" | { read first rest ; echo $first ; }  >> $ORIG_WD/bundle/$TARGET_INSTALLER.sum
 
@@ -249,10 +275,6 @@ echo -e "\n---------- Compute Portable archive checksums for digiKam $DK_RELEASE
 echo    "File       : $PORTABLE_FILE"                                                   >> $ORIG_WD/bundle/$PORTABLE_FILE.sum
 echo -n "Size       : "                                                                 >> $ORIG_WD/bundle/$PORTABLE_FILE.sum
 du -h "$ORIG_WD/bundle/$PORTABLE_FILE"        | { read first rest ; echo $first ; }     >> $ORIG_WD/bundle/$PORTABLE_FILE.sum
-echo -n "MD5 sum    : "                                                                 >> $ORIG_WD/bundle/$PORTABLE_FILE.sum
-md5sum "$ORIG_WD/bundle/$PORTABLE_FILE"       | { read first rest ; echo $first ; }     >> $ORIG_WD/bundle/$PORTABLE_FILE.sum
-echo -n "SHA1 sum   : "                                                                 >> $ORIG_WD/bundle/$PORTABLE_FILE.sum
-shasum -a1 "$ORIG_WD/bundle/$PORTABLE_FILE"   | { read first rest ; echo $first ; }     >> $ORIG_WD/bundle/$PORTABLE_FILE.sum
 echo -n "SHA256 sum : "                                                                 >> $ORIG_WD/bundle/$PORTABLE_FILE.sum
 shasum -a256 "$ORIG_WD/bundle/$PORTABLE_FILE" | { read first rest ; echo $first ; }     >> $ORIG_WD/bundle/$PORTABLE_FILE.sum
 
@@ -299,29 +321,39 @@ if [[ $DK_UPLOAD = 1 ]] ; then
     echo -e "---------- Cleanup older Windows bundle files from files.kde.org repository \n"
 
     if [ $MXE_BUILD_TARGETS == "i686-w64-mingw32.shared" ]; then
-        ssh $DK_UPLOADURL rm -f $DK_UPLOADDIR*-Win32$DEBUG_SUF.exe*
-        ssh $DK_UPLOADURL rm -f $DK_UPLOADDIR*-Win32$DEBUG_SUF.tar.xz*
+        sftp -q $DK_UPLOADURL:$DK_UPLOADDIR <<< "rm *-Win32$DEBUG_SUF.exe*"
+        sftp -q $DK_UPLOADURL:$DK_UPLOADDIR <<< "rm *-Win32$DEBUG_SUF.tar.xz*"
     else
-        ssh $DK_UPLOADURL rm -f $DK_UPLOADDIR*-Win64$DEBUG_SUF.exe*
-        ssh $DK_UPLOADURL rm -f $DK_UPLOADDIR*-Win64$DEBUG_SUF.tar.xz*
+        sftp -q $DK_UPLOADURL:$DK_UPLOADDIR <<< "rm *-Win64$DEBUG_SUF.exe*"
+        sftp -q $DK_UPLOADURL:$DK_UPLOADDIR <<< "rm *-Win64$DEBUG_SUF.tar.xz*"
     fi
 
     echo -e "---------- Upload new Windows bundle files to files.kde.org repository \n"
 
     rsync -r -v --progress -e ssh $ORIG_WD/bundle/$TARGET_INSTALLER $DK_UPLOADURL:$DK_UPLOADDIR
     rsync -r -v --progress -e ssh $ORIG_WD/bundle/$PORTABLE_FILE $DK_UPLOADURL:$DK_UPLOADDIR
-    scp $ORIG_WD/bundle/$TARGET_INSTALLER.sum $DK_UPLOADURL:$DK_UPLOADDIR
-    scp $ORIG_WD/bundle/$PORTABLE_FILE.sum $DK_UPLOADURL:$DK_UPLOADDIR
 
     if [[ $DK_SIGN = 1 ]] ; then
         scp $ORIG_WD/bundle/$TARGET_INSTALLER.sig $DK_UPLOADURL:$DK_UPLOADDIR
         scp $ORIG_WD/bundle/$PORTABLE_FILE.sig $DK_UPLOADURL:$DK_UPLOADDIR
     fi
 
+    # update remote files list
+
+    sftp -q $DK_UPLOADURL:$DK_UPLOADDIR <<< "ls digi*" > $ORIG_WD/bundle/ls.txt
+    tail -n +2 $ORIG_WD/bundle/ls.txt > $ORIG_WD/bundle/ls.tmp
+    cat $ORIG_WD/bundle/ls.tmp | grep -E '(.pkg |.appimage |.exe )' | grep -Ev '(debug)' > $ORIG_WD/bundle/FILES
+    rm $ORIG_WD/bundle/ls.tmp
+    rm $ORIG_WD/bundle/ls.txt
+    sftp -q $DK_UPLOADURL:$DK_UPLOADDIR <<< "rm FILES"
+    rsync -r -v --progress -e ssh $BUILDDIR/bundle/FILES $DK_UPLOADURL:$DK_UPLOADDIR
+
 else
+
     echo -e "\n------------------------------------------------------------------"
     curl https://download.kde.org/README_UPLOAD
     echo -e "------------------------------------------------------------------\n"
+
 fi
 
 #################################################################################################

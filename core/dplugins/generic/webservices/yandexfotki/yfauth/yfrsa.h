@@ -14,16 +14,16 @@
  *
  * See links for more details:
  *  Author homepage
- *    http://www.george-barwood.pwp.blueyonder.co.uk/hp/
+ *    www.george-barwood.pwp.blueyonder.co.uk/hp/
  *
  *  Getting token for Yandex.Fotki web service
- *    http://api.yandex.ru/fotki/doc/overview/authorization-token.xml
+ *    api.yandex.ru/fotki/doc/overview/authorization-token.xml
  *
  *  Yandex published source code
- *    http://download.yandex.ru/api-fotki/c-yamrsa.tar.gz
+ *    download.yandex.ru/api-fotki/c-yamrsa.tar.gz
  *
  *  Yandex company web site
- *    http://company.yandex.com/
+ *    https://company.yandex.com/
  *
  * Included by Roman Tsisyk <roman at tsisyk dot com>
  * All unneeded parts was commented out and can be removed
@@ -61,32 +61,32 @@ public:
 
     friend inline int operator !=( const vlong& x, const vlong& y )
     {
-        return x.cf( y ) != 0;
+        return (x.cf( y ) != 0);
     }
 
     friend inline int operator ==( const vlong& x, const vlong& y )
     {
-        return x.cf( y ) == 0;
+        return (x.cf( y ) == 0);
     }
 
     friend inline int operator >=( const vlong& x, const vlong& y )
     {
-        return x.cf( y ) >= 0;
+        return (x.cf( y ) >= 0);
     }
 
     friend inline int operator <=( const vlong& x, const vlong& y )
     {
-        return x.cf( y ) <= 0;
+        return (x.cf( y ) <= 0);
     }
 
     friend inline int operator > ( const vlong& x, const vlong& y )
     {
-        return x.cf( y ) > 0;
+        return (x.cf( y ) > 0);
     }
 
     friend inline int operator < ( const vlong& x, const vlong& y )
     {
-        return x.cf( y ) < 0;
+        return (x.cf( y ) < 0);
     }
 
 public:
@@ -148,7 +148,7 @@ public:
     CCryptoProviderRSA();
     virtual ~CCryptoProviderRSA();
 
-    virtual void Encrypt(const char*, std::size_t,char*, std::size_t&);
+    virtual void Encrypt(const char*, std::size_t, char*, std::size_t&);
     virtual void ImportPublicKey(const char*);
 };
 

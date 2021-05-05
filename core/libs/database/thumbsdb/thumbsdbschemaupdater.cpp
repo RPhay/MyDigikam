@@ -7,7 +7,7 @@
  * Description : Schema update
  *
  * Copyright (C) 2007-2009 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2010-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2010-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -59,11 +59,11 @@ class Q_DECL_HIDDEN ThumbsDbSchemaUpdater::Private
 public:
 
     explicit Private()
-      : setError(false),
-        currentVersion(0),
+      : setError              (false),
+        currentVersion        (0),
         currentRequiredVersion(0),
-        dbAccess(nullptr),
-        observer(nullptr)
+        dbAccess              (nullptr),
+        observer              (nullptr)
     {
     }
 
@@ -95,6 +95,7 @@ bool ThumbsDbSchemaUpdater::update()
     bool success = startUpdates();
 
     // even on failure, try to set current version - it may have incremented
+
     if (d->currentVersion)
     {
         d->dbAccess->db()->setSetting(QLatin1String("DBThumbnailsVersion"),
@@ -118,16 +119,19 @@ void ThumbsDbSchemaUpdater::setObserver(InitializationObserver* const observer)
 bool ThumbsDbSchemaUpdater::startUpdates()
 {
     // First step: do we have an empty database?
+
     QStringList tables = d->dbAccess->backend()->tables();
 
     if (tables.contains(QLatin1String("Thumbnails"), Qt::CaseInsensitive))
     {
         // Find out schema version of db file
+
         QString version         = d->dbAccess->db()->getSetting(QLatin1String("DBThumbnailsVersion"));
         QString versionRequired = d->dbAccess->db()->getSetting(QLatin1String("DBThumbnailsVersionRequired"));
         qCDebug(DIGIKAM_THUMBSDB_LOG) << "Thumbs database: have a structure version " << version;
 
         // mini schema update
+
         if (version.isEmpty() && d->dbAccess->parameters().isSQLite())
         {
             version = d->dbAccess->db()->getSetting(QLatin1String("DBVersion"));
@@ -140,6 +144,7 @@ bool ThumbsDbSchemaUpdater::startUpdates()
         }
 
         // We absolutely require the DBThumbnailsVersion setting
+
         if (version.isEmpty())
         {
             // Something is damaged. Give up.
@@ -163,14 +168,17 @@ bool ThumbsDbSchemaUpdater::startUpdates()
 
         // current version describes the current state of the schema in the db,
         // schemaVersion is the version required by the program.
+
         d->currentVersion = version.toInt();
 
         if (d->currentVersion > schemaVersion())
         {
             // trying to open a database with a more advanced than this ThumbsDbSchemaUpdater supports
+
             if (!versionRequired.isEmpty() && versionRequired.toInt() <= schemaVersion())
             {
                 // version required may be less than current version
+
                 return true;
             }
             else
@@ -202,6 +210,7 @@ bool ThumbsDbSchemaUpdater::startUpdates()
         DbEngineParameters parameters = d->dbAccess->parameters();
 
         // No legacy handling: start with a fresh db
+
         if (!createDatabase())
         {
             QString errorMsg = i18n("Failed to create tables in database.\n ") +

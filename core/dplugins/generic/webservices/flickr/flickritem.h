@@ -7,7 +7,7 @@
  * Description : a tool to export images to Flickr web service
  *
  * Copyright (C) 2005-2008 by Vardhman Jain <vardhman at gmail dot com>
- * Copyright (C) 2013-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2013-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -36,52 +36,19 @@
 namespace DigikamGenericFlickrPlugin
 {
 
-class GPhoto
-{
-
-public:
-
-    GPhoto()
-    {
-        is_public  = false;
-        is_private = false;
-        is_family  = false;
-        ref_num    = -1;
-    }
-
-    bool        is_public;
-    bool        is_private;
-    bool        is_family;
-
-    int         ref_num;
-
-    QStringList tags;
-    QString     title;
-    QString     description;
-
-/*
-    int         album_num;
-    QString     caption;
-    QString     thumbName;
-    QString     albumURL;
-*/
-};
-
-// -------------------------------------------------------------
-
 class FPhotoInfo
 {
 
 public:
 
     FPhotoInfo()
+      : is_public   (false),
+        is_friend   (false),
+        is_family   (false),
+        size        (0),
+        safety_level(FlickrList::SAFE),
+        content_type(FlickrList::PHOTO)
     {
-        is_public    = false;
-        is_family    = false;
-        is_friend    = false;
-        safety_level = FlickrList::SAFE;
-        content_type = FlickrList::PHOTO;
-        size         = 0;
     }
 
     bool                    is_public;
@@ -99,54 +66,19 @@ public:
 
 // -------------------------------------------------------------
 
-class GAlbum
-{
-
-public:
-
-    GAlbum()
-    {
-        ref_num        = -1;
-        parent_ref_num = -1;
-
-        add            = false;
-        write          = false;
-        del_item       = false;
-        del_alb        = false;
-        create_sub     = false;
-    }
-
-    bool    add;
-    bool    write;
-    bool    del_item;
-    bool    del_alb;
-    bool    create_sub;
-
-    int     ref_num;
-    int     parent_ref_num;
-
-    QString name;
-    QString parentName;
-    QString title;
-    QString summary;
-    QString baseurl;
-};
-
-// -------------------------------------------------------------
-
 class FPhotoSet
 {
 
 public:
 
     FPhotoSet()
+      : id(QLatin1String("-1"))
     {
-        id = QStringLiteral("-1");
     }
 
     QString id;
-    QString primary;    //="2483"
-    QString secret;     //="abcdef"
+    QString primary;    ///< "2483"
+    QString secret;     ///< "abcdef"
     QString server;
     QString photos;
     QString title;

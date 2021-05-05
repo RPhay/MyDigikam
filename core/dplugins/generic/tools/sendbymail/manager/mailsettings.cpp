@@ -6,7 +6,7 @@
  * Date        : 2007-11-07
  * Description : mail settings container.
  *
- * Copyright (C) 2007-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2007-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2010      by Andi Clemens <andi dot clemens at googlemail dot com>
  *
  * This program is free software; you can redistribute it
@@ -25,24 +25,23 @@
 
 // KDE includes
 
-#include <kconfig.h>
-#include <kconfiggroup.h>
 #include <klocalizedstring.h>
+#include <kconfiggroup.h>
 
 namespace DigikamGenericSendByMailPlugin
 {
 
 MailSettings::MailSettings()
+    : selMode(IMAGES),
+      addFileProperties(false),
+      imagesChangeProp(false),
+      removeMetadata(false),
+      imageCompression(75),
+      attLimitInMbytes(17),
+      mailProgram(THUNDERBIRD),
+      imageSize(1024),
+      imageFormat(JPEG)
 {
-    selMode           = IMAGES;
-    addFileProperties = false;
-    imagesChangeProp  = false;
-    removeMetadata    = false;
-    attLimitInMbytes  = 17;
-    imageCompression  = 75;
-    mailProgram       = THUNDERBIRD;
-    imageSize         = 1024;
-    imageFormat       = JPEG;
 }
 
 MailSettings::~MailSettings()
@@ -87,7 +86,9 @@ void MailSettings::writeSettings(KConfigGroup& group)
 QString MailSettings::format() const
 {
     if (imageFormat == JPEG)
+    {
         return QLatin1String("JPEG");
+    }
 
     return QLatin1String("PNG");
 }
@@ -110,6 +111,7 @@ QUrl MailSettings::mailUrl(const QUrl& orgUrl) const
 qint64 MailSettings::attachementLimit() const
 {
     qint64 val = attLimitInMbytes * 1024 * 1024;
+
     return val;
 }
 

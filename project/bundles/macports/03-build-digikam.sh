@@ -3,7 +3,7 @@
 # Script to build digiKam using MacPorts
 # This script must be run as sudo
 #
-# Copyright (c) 2015-2020 by Gilles Caulier  <caulier dot gilles at gmail dot com>
+# Copyright (c) 2015-2021 by Gilles Caulier  <caulier dot gilles at gmail dot com>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
@@ -60,8 +60,10 @@ cmake $ORIG_WD/../3rdparty \
        -DINSTALL_ROOT=$INSTALL_PREFIX \
        -DEXTERNALS_DOWNLOAD_DIR=$DOWNLOAD_DIR \
        -DENABLE_QTWEBENGINE=$DK_QTWEBENGINE \
+       -DMACOSX_DEPLOYMENT_TARGET=$OSX_MIN_TARGET \
        -Wno-dev
 
+cmake --build . --config RelWithDebInfo --target ext_exiv2   -- -j$CPU_CORES
 cmake --build . --config RelWithDebInfo --target ext_qtav    -- -j$CPU_CORES
 cmake --build . --config RelWithDebInfo --target ext_lensfun -- -j$CPU_CORES
 
@@ -78,6 +80,8 @@ if [ -d "$DK_BUILDTEMP/digikam-$DK_VERSION" ] ; then
     git reset --hard
     git pull
 
+    rm -fr po
+    rm -fr build
     mkdir -p build
 
 else
@@ -95,7 +99,7 @@ else
     echo -e "\n\n"
     echo "---------- Downloading digiKam $DK_VERSION"
 
-    git clone --progress --verbose $DK_GITURL digikam-$DK_VERSION
+    git clone --progress --verbose --branch $DK_VERSION --single-branch $DK_GITURL digikam-$DK_VERSION
     cd digikam-$DK_VERSION
 
     if [ $? -ne 0 ] ; then
@@ -103,8 +107,6 @@ else
         echo "---------- Aborting..."
         exit;
     fi
-
-    git checkout $DK_VERSION
 
     mkdir build
 
@@ -118,9 +120,9 @@ sed -e "s/DIGIKAMSC_COMPILE_PO=OFF/DIGIKAMSC_COMPILE_PO=ON/g"   ./bootstrap.macp
 sed -e "s/DBUILD_TESTING=ON/DBUILD_TESTING=OFF/g"               ./bootstrap.macports > ./tmp.macports ; mv -f ./tmp.macports ./bootstrap.macports
 sed -e "s/DENABLE_DBUS=ON/DENABLE_DBUS=OFF/g"                   ./bootstrap.macports > ./tmp.macports ; mv -f ./tmp.macports ./bootstrap.macports
 
-if [[ $DK_QTWEBENGINE = 1 ]] ; then
+if [[ $DK_QTWEBENGINE = 0 ]] ; then
 
-    sed -e "s/DENABLE_QWEBENGINE=OFF/DENABLE_QWEBENGINE=ON/g"   ./bootstrap.macports > ./tmp.macports ; mv -f ./tmp.macports ./bootstrap.macports
+    sed -e "s/DENABLE_QWEBENGINE=ON/DENABLE_QWEBENGINE=OFF/g"   ./bootstrap.macports > ./tmp.macports ; mv -f ./tmp.macports ./bootstrap.macports
 
 fi
 
@@ -138,8 +140,6 @@ if [ $? -ne 0 ]; then
     exit;
 fi
 
-cat ./build/core/app/utils/digikam_version.h | grep "digikam_version\[\]" | awk '{print $6}' | tr -d '";' > $ORIG_WD/data/RELEASEID.txt
-
 echo -e "\n\n"
 echo "---------- Building digiKam $DK_VERSION"
 
@@ -152,11 +152,14 @@ if [ $? -ne 0 ]; then
     exit;
 fi
 
+cat $DK_BUILDTEMP/digikam-$DK_VERSION/build/core/app/utils/digikam_version.h   | grep "digikam_version\[\]" | awk '{print $6}' | tr -d '";'  > $ORIG_WD/data/RELEASEID.txt
+cat $DK_BUILDTEMP/digikam-$DK_VERSION/build/core/app/utils/digikam_builddate.h | grep "define BUILD_DATE"   | awk '{print $3}' | tr -d '"\n' > $ORIG_WD/data/BUILDDATE.txt
+
 echo -e "\n\n"
 echo "---------- Installing digiKam $DK_VERSION"
 echo -e "\n\n"
 
-make install/fast && cd "$ORIG_WD" && rm -rf "$DK_BUILDTEMP"
+make install/fast && cd "$ORIG_WD"
 
 if [ $? -ne 0 ]; then
     echo "---------- Cannot install digiKam $DK_VERSION."
@@ -175,12 +178,14 @@ cmake $ORIG_WD/../3rdparty \
        -DCMAKE_INSTALL_PREFIX:PATH=$INSTALL_PREFIX \
        -DINSTALL_ROOT=$INSTALL_PREFIX \
        -DEXTERNALS_DOWNLOAD_DIR=$DOWNLOAD_DIR \
-       -DENABLE_QTWEBENGINE=$DK_QTWEBENGINE \
        -Wno-dev
 
-cmake --build . --config RelWithDebInfo --target ext_gmic_qt -- -j$CPU_CORES
+cmake --build . --config RelWithDebInfo --target ext_gmic_qt    -- -j$CPU_CORES
+cmake --build . --config RelWithDebInfo --target ext_mosaicwall -- -j$CPU_CORES
 
 mv -f $INSTALL_PREFIX/libexec/qt5/plugins/digikam/editor/*.so $INSTALL_PREFIX/lib/plugins/digikam/editor/
+# Install GmicQt plugin debug symbols.
+cp -pr $BUILDING_DIR/ext_gmicqt/ext_gmic_qt-prefix/src/ext_gmic_qt-build/Editor_GmicQt_Plugin.so.dSYM $INSTALL_PREFIX/lib/plugins/digikam/editor/ || true
 
 #################################################################################################
 

@@ -6,7 +6,7 @@
  * Date        : 2006-22-01
  * Description : interface to get item info from database.
  *
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -46,7 +46,7 @@ class Q_DECL_HIDDEN ItemInfoJob::Private
 public:
 
     explicit Private()
-      : jobThread(nullptr)
+      : jobThread   (nullptr)
     {
     }
 
@@ -82,9 +82,10 @@ void ItemInfoJob::allItemsFromAlbum(Album* const album)
     }
 
     // TODO: Drop Database Url usage
+
     CoreDbUrl url = album->databaseUrl();
 
-    if (album->type() == Album::DATE)
+    if      (album->type() == Album::DATE)
     {
         DatesDBJobInfo jobInfo;
         jobInfo.setStartDate(url.startDate());
@@ -95,8 +96,10 @@ void ItemInfoJob::allItemsFromAlbum(Album* const album)
     else if (album->type() == Album::TAG)
     {
         TagsDBJobInfo jobInfo;
+
         // If we want to search for images with this tag, we only want the tag and not
         // all images in the tag path.
+
         jobInfo.setTagsIds(QList<int>() << url.tagId());
 
         d->jobThread = DBJobsManager::instance()->startTagsJobThread(jobInfo);
@@ -111,8 +114,8 @@ void ItemInfoJob::allItemsFromAlbum(Album* const album)
     }
     else if (album->type() == Album::SEARCH)
     {
-        SearchesDBJobInfo jobInfo;
-        jobInfo.setSearchId(url.searchId());
+        QList<int> searchIds = QList<int>() << url.searchId();
+        SearchesDBJobInfo jobInfo(std::move(searchIds));
 
         d->jobThread = DBJobsManager::instance()->startSearchesJobThread(jobInfo);
     }

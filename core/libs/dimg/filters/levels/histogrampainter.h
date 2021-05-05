@@ -7,7 +7,7 @@
  * Description : a class that manages painting histograms
  *
  * Copyright (C) 2009      by Johannes Wienke <languitar at semipol dot de>
- * Copyright (C) 2011-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2011-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -53,14 +53,14 @@ public:
     /**
      * Constructor.
      *
-     * @param parent parent for Qt's destruction mechanism
+     * @param parent the parent for Qt's destruction mechanism
      */
     explicit HistogramPainter(QObject* const parent);
 
     /**
      * Destructor.
      */
-    virtual ~HistogramPainter();
+    ~HistogramPainter() override;
 
     /**
      * Set the histogram to paint with the next call to render.
@@ -131,7 +131,7 @@ public:
      * destroyed as long as you want to use the render method without a new call
      * to this method!!!
      *
-     * @param widget widget to initialize painting from
+     * @param widget the widget to initialize painting from
      */
     void initFrom(QWidget* const widget);
 

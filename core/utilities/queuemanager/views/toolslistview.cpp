@@ -6,7 +6,7 @@
  * Date        : 2008-11-24
  * Description : Available batch tools list.
  *
- * Copyright (C) 2008-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2008-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -59,44 +59,60 @@ ToolListViewGroup::ToolListViewGroup(QTreeWidget* const parent, BatchTool::Batch
     switch (m_group)
     {
         case BatchTool::ColorTool:
+        {
             setIcon(0, QIcon::fromTheme(QLatin1String("digikam")));
-            setText(0, i18n("Color"));
+            setText(0, i18nc("@title: color tools category", "Color"));
             break;
+        }
 
         case BatchTool::EnhanceTool:
+        {
             setIcon(0, QIcon::fromTheme(QLatin1String("digikam")));
-            setText(0, i18n("Enhance"));
+            setText(0, i18nc("@title: enhance tools category", "Enhance"));
             break;
+        }
 
         case BatchTool::TransformTool:
+        {
             setIcon(0, QIcon::fromTheme(QLatin1String("digikam")));
-            setText(0, i18n("Transform"));
+            setText(0, i18nc("@title: transform tools category", "Transform"));
             break;
+        }
 
         case BatchTool::DecorateTool:
+        {
             setIcon(0, QIcon::fromTheme(QLatin1String("digikam")));
-            setText(0, i18n("Decorate"));
+            setText(0, i18nc("@title: decorate tools category", "Decorate"));
             break;
+        }
 
         case BatchTool::FiltersTool:
+        {
             setIcon(0, QIcon::fromTheme(QLatin1String("digikam")));
-            setText(0, i18n("Filters"));
+            setText(0, i18nc("@title: filters tools category", "Filters"));
             break;
+        }
 
         case BatchTool::ConvertTool:
+        {
             setIcon(0, QIcon::fromTheme(QLatin1String("digikam")));
-            setText(0, i18n("Convert"));
+            setText(0, i18nc("@title: convert tools category", "Convert"));
             break;
+        }
 
         case BatchTool::MetadataTool:
+        {
             setIcon(0, QIcon::fromTheme(QLatin1String("digikam")));
-            setText(0, i18n("Metadata"));
+            setText(0, i18nc("@title: metadata tools category", "Metadata"));
             break;
+        }
 
         default:      // User customized tools.
+        {
             setIcon(0, QIcon::fromTheme(QLatin1String("user-properties")));
-            setText(0, i18n("Custom Tools"));
+            setText(0, i18nc("@title: custom tools category", "Custom Tools"));
             break;
+        }
     }
 }
 
@@ -301,7 +317,7 @@ void ToolsListView::startDrag(Qt::DropActions /*supportedActions*/)
     p.setPen(QPen(Qt::black, 1));
     p.drawRect(0, 0, pix.width() - 1, pix.height() - 1);
     p.drawPixmap(2, 2, icon);
-    QRect r = p.boundingRect(2, 2, w, h, Qt::AlignLeft | Qt::AlignTop, text);
+    QRect r     = p.boundingRect(2, 2, w, h, Qt::AlignLeft | Qt::AlignTop, text);
     r.setWidth(qMax(r.width(), r.height()));
     r.setHeight(qMax(r.width(), r.height()));
     p.fillRect(r, QColor(0, 80, 0));
@@ -322,6 +338,7 @@ QStringList ToolsListView::mimeTypes() const
 {
     QStringList types;
     types << QLatin1String("digikam/batchtoolslist");
+
     return types;
 }
 
@@ -342,17 +359,18 @@ void ToolsListView::slotAssignTools()
         return;
     }
 
-    QMap<int, QString> map = itemsToMap(items);
+    QMultiMap<int, QString> map = itemsToMap(items);
+
     emit signalAssignTools(map);
 }
 
-QMimeData* ToolsListView::mimeData(const QList<QTreeWidgetItem*> items) const
+QMimeData* ToolsListView::mimeData(const QList<QTreeWidgetItem*> items) const       // clazy:exclude=function-args-by-ref
 {
-    QMimeData* const mimeData = new QMimeData();
+    QMimeData* const mimeData   = new QMimeData();
     QByteArray encodedData;
 
     QDataStream stream(&encodedData, QIODevice::WriteOnly);
-    QMap<int, QString> map    = itemsToMap(items);
+    QMultiMap<int, QString> map = itemsToMap(items);
     stream << map;
 
     mimeData->setData(QLatin1String("digikam/batchtoolslist"), encodedData);
@@ -360,9 +378,9 @@ QMimeData* ToolsListView::mimeData(const QList<QTreeWidgetItem*> items) const
     return mimeData;
 }
 
-QMap<int, QString> ToolsListView::itemsToMap(const QList<QTreeWidgetItem*> items) const
+QMultiMap<int, QString> ToolsListView::itemsToMap(const QList<QTreeWidgetItem*>& items) const
 {
-    QMap<int, QString> map;
+    QMultiMap<int, QString> map;
 
     foreach (QTreeWidgetItem* const itm, items)
     {
@@ -370,7 +388,7 @@ QMap<int, QString> ToolsListView::itemsToMap(const QList<QTreeWidgetItem*> items
 
         if (tlwi)
         {
-            map.insertMulti((int)(tlwi->tool()->toolGroup()), tlwi->tool()->objectName());
+            map.insert((int)(tlwi->tool()->toolGroup()), tlwi->tool()->objectName());
         }
     }
 
@@ -380,7 +398,7 @@ QMap<int, QString> ToolsListView::itemsToMap(const QList<QTreeWidgetItem*> items
 void ToolsListView::slotContextMenu()
 {
     QMenu popmenu(this);
-    QAction* const action = new QAction(QIcon::fromTheme(QLatin1String("list-add")), i18n("Assign tools"), this);
+    QAction* const action = new QAction(QIcon::fromTheme(QLatin1String("list-add")), i18nc("@action", "Assign tools"), this);
 
     connect(action, SIGNAL(triggered(bool)),
             this, SLOT(slotAssignTools()));

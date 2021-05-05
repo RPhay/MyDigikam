@@ -6,7 +6,7 @@
  * Date        : 2009-07-07
  * Description : country selector combo-box.
  *
- * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -39,14 +39,17 @@ namespace Digikam
 
 class DIGIKAM_EXPORT CountrySelector : public QComboBox
 {
+    Q_OBJECT
 
 public:
 
     explicit CountrySelector(QWidget* const parent);
-    ~CountrySelector();
+    ~CountrySelector() override;
 
     void setCountry(const QString& countryCode);
     bool country(QString& countryCode, QString& countryName) const;
+
+public:
 
     static QString countryForCode(const QString& countryCode);
 

@@ -6,7 +6,7 @@
  * Date        : 2008-11-24
  * Description : Batch Tool Container.
  *
- * Copyright (C) 2008-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2008-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -52,7 +52,7 @@ class DPluginBqm;
  */
 typedef QMap<QString, QVariant> BatchToolSettings;
 
-class DIGIKAM_EXPORT BatchTool : public QObject
+class DIGIKAM_GUI_EXPORT BatchTool : public QObject
 {
     Q_OBJECT
 
@@ -77,7 +77,7 @@ public:
 public:
 
     explicit BatchTool(const QString& name, BatchToolGroup group, QObject* const parent = nullptr);
-    ~BatchTool();
+    ~BatchTool() override;
 
     void setPlugin(DPluginBqm* const plugin);
     DPluginBqm* plugin()                                    const;
@@ -247,7 +247,7 @@ public:
     virtual int toolVersion()                               const
     {
         return 1;
-     };
+    };
 
     /**
      * Re-implement this method is you want customize cancellation of tool, for ex. to call
@@ -272,7 +272,7 @@ public:
      * Clone this tool without to create settings widget.
      * It's a safe construction of tools instance used in multithreading (ActionThread) to process items in parallel.
      */
-    virtual BatchTool* clone(QObject* const parent=nullptr) const = 0;
+    virtual BatchTool* clone(QObject* const parent = nullptr) const = 0;
 
 Q_SIGNALS:
 

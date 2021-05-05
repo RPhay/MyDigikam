@@ -79,6 +79,8 @@ public:
         CNFujicolorSuperia1600
     };
 
+public:
+
     class ListItem : public QListWidgetItem
     {
     public:
@@ -87,7 +89,13 @@ public:
             : QListWidgetItem(text, parent, type + QListWidgetItem::UserType)
         {
         }
+
+    private:
+
+        Q_DISABLE_COPY(ListItem)
     };
+
+public:
 
     explicit FilmContainer();
     explicit FilmContainer(CNFilmProfile profile, double gamma, bool sixteenBit);
@@ -111,6 +119,8 @@ public:
     LevelsContainer toLevels()                  const;
     CBContainer     toCB()                      const;
 
+public:
+
     static const QMap<int, QString> profileMap;
     static QList<ListItem*> profileItemList(QListWidget* const view);
 
@@ -132,11 +142,14 @@ private:
 
 class DIGIKAM_EXPORT FilmFilter: public DImgThreadedFilter
 {
+    Q_OBJECT
+
 public:
 
-    explicit FilmFilter(QObject* const parent=nullptr);
-    explicit FilmFilter(DImg* const orgImage, QObject* const parent=nullptr, const FilmContainer& settings=FilmContainer());
-    virtual ~FilmFilter();
+    explicit FilmFilter(QObject* const parent = nullptr);
+    explicit FilmFilter(DImg* const orgImage, QObject* const parent = nullptr,
+                        const FilmContainer& settings = FilmContainer());
+    ~FilmFilter()                                                 override;
 
     static QString FilterIdentifier()
     {
@@ -155,13 +168,13 @@ public:
         return 1;
     }
 
-    virtual QString filterIdentifier()                      const override
+    QString filterIdentifier()                              const override
     {
         return FilterIdentifier();
     }
 
-    virtual FilterAction filterAction()                           override;
-    virtual void readParameters(const FilterAction& action)       override;
+    FilterAction filterAction()                                   override;
+    void readParameters(const FilterAction& action)               override;
 
 private:
 

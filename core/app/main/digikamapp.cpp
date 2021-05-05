@@ -11,7 +11,7 @@
  * Copyright (C) 2009-2012 by Andi Clemens <andi dot clemens at gmail dot com>
  * Copyright (C)      2013 by Michael G. Hansen <mike at mghansen dot de>
  * Copyright (C) 2014-2015 by Mohamed_Anwer <m_dot_anwer at gmx dot com>
- * Copyright (C) 2002-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2002-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -35,7 +35,7 @@ DigikamApp* DigikamApp::m_instance = nullptr;
 
 DigikamApp::DigikamApp()
     : DXmlGuiWindow(nullptr),
-      d(new Private)
+      d            (new Private)
 {
     setObjectName(QLatin1String("Digikam"));
     setConfigGroupName(ApplicationSettings::instance()->generalConfigGroupName());
@@ -45,7 +45,6 @@ DigikamApp::DigikamApp()
     m_instance         = this;
     d->config          = KSharedConfig::openConfig();
     KConfigGroup group = d->config->group(configGroupName());
-
 
 #ifdef HAVE_DBUS
 
@@ -109,7 +108,7 @@ DigikamApp::DigikamApp()
     connect(ApplicationSettings::instance(), SIGNAL(setupChanged()),
             this, SLOT(slotSetupChanged()));
 
-    connect(IccSettings::instance(), SIGNAL(settingsChanged()),
+    connect(IccSettings::instance(), SIGNAL(signalSettingsChanged()),
             this, SLOT(slotColorManagementOptionsChanged()));
 
     d->cameraMenu      = new QMenu(this);
@@ -117,7 +116,8 @@ DigikamApp::DigikamApp()
     d->cardReaderMenu  = new QMenu(this);
     d->quickImportMenu = new QMenu(this);
 
-    d->cameraList = new CameraList(this, QStandardPaths::writableLocation(QStandardPaths::DataLocation) + QLatin1String("/cameras.xml"));
+    d->cameraList = new CameraList(this, QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) +
+                                         QLatin1String("/cameras.xml"));
 
     connect(d->cameraList, SIGNAL(signalCameraAdded(CameraType*)),
             this, SLOT(slotCameraAdded(CameraType*)));
@@ -209,12 +209,7 @@ DigikamApp::~DigikamApp()
 
     if (ImageWindow::imageWindowCreated())
     {
-        // Delete after close
-
         ImageWindow::imageWindow()->setAttribute(Qt::WA_DeleteOnClose, true);
-
-        // close the window
-
         ImageWindow::imageWindow()->close();
         qApp->processEvents();
     }
@@ -237,8 +232,11 @@ DigikamApp::~DigikamApp()
         qApp->processEvents();
     }
 
+    // Close and delete Tags Manager instance.
+
     if (TagsManager::isCreated())
     {
+        TagsManager::instance()->setAttribute(Qt::WA_DeleteOnClose, true);
         TagsManager::instance()->close();
     }
 
@@ -257,6 +255,7 @@ DigikamApp::~DigikamApp()
 #endif
 
     delete d->view;
+    d->view = nullptr;
 
     DPluginLoader::instance()->cleanUp();
 
@@ -352,7 +351,7 @@ void DigikamApp::show()
 
     if (ApplicationSettings::instance()->getCleanAtStart())
     {
-        DbCleaner* const tool = new DbCleaner(false,false);
+        DbCleaner* const tool = new DbCleaner(false, false);
         QTimer::singleShot(1000, tool, SLOT(start()));
     }
 }
@@ -477,11 +476,9 @@ void DigikamApp::slotAlbumSelected(Album* album)
 
             d->deleteAction->setEnabled(false);
             d->renameAction->setEnabled(false);
-            d->addImagesAction->setEnabled(false);
             d->propsEditAction->setEnabled(false);
             d->openInFileManagerAction->setEnabled(false);
             d->newAction->setEnabled(false);
-            d->addFoldersAction->setEnabled(false);
             d->writeAlbumMetadataAction->setEnabled(true);
             d->readAlbumMetadataAction->setEnabled(true);
 
@@ -493,8 +490,12 @@ void DigikamApp::slotAlbumSelected(Album* album)
 
             // Special case if Tag album.
 
-            bool enabled = (album->type() == Album::TAG) && !album->isRoot() &&
-                    album->id() != FaceTags::unconfirmedPersonTagId() && album->id() != FaceTags::unknownPersonTagId();
+            bool enabled = (
+                            (album->type() == Album::TAG)                       &&
+                            !album->isRoot()                                    &&
+                            (album->id() != FaceTags::unconfirmedPersonTagId()) &&
+                            (album->id() != FaceTags::unknownPersonTagId())
+                           );
 
             d->newTagAction->setEnabled(enabled);
             d->deleteTagAction->setEnabled(enabled);
@@ -513,11 +514,9 @@ void DigikamApp::slotAlbumSelected(Album* album)
 
             d->deleteAction->setEnabled(isNormalAlbum);
             d->renameAction->setEnabled(isNormalAlbum);
-            d->addImagesAction->setEnabled(isNormalAlbum || isAlbumRoot);
             d->propsEditAction->setEnabled(isNormalAlbum);
             d->openInFileManagerAction->setEnabled(isNormalAlbum || isAlbumRoot);
             d->newAction->setEnabled(isNormalAlbum || isAlbumRoot);
-            d->addFoldersAction->setEnabled(isNormalAlbum || isAlbumRoot);
             d->writeAlbumMetadataAction->setEnabled(isNormalAlbum || isAlbumRoot);
             d->readAlbumMetadataAction->setEnabled(isNormalAlbum || isAlbumRoot);
 
@@ -534,11 +533,9 @@ void DigikamApp::slotAlbumSelected(Album* album)
 
         d->deleteAction->setEnabled(false);
         d->renameAction->setEnabled(false);
-        d->addImagesAction->setEnabled(false);
         d->propsEditAction->setEnabled(false);
         d->openInFileManagerAction->setEnabled(false);
         d->newAction->setEnabled(false);
-        d->addFoldersAction->setEnabled(false);
         d->writeAlbumMetadataAction->setEnabled(false);
         d->readAlbumMetadataAction->setEnabled(false);
 
@@ -558,19 +555,30 @@ void DigikamApp::slotAlbumSelected(Album* album)
 
 void DigikamApp::slotImageSelected(const ItemInfoList& selection, const ItemInfoList& listAll)
 {
-    int numOfImagesInAlbum               = 0;
+    qint64 listAllFileSize               = 0;
+    qint64 selectionFileSize             = 0;
+
+    int numOfImagesInModel               = 0;
     int numImagesWithGrouped             = listAll.count();
     int numImagesWithoutGrouped          = d->view->allUrls(false).count();
+
     ItemInfoList selectionWithoutGrouped = d->view->selectedInfoList(true, false);
 
-    Album* const album                   = d->view->currentAlbum();
+    foreach (const ItemInfo& info, selection)
+    {
+        selectionFileSize += info.fileSize();
+    }
+
+    foreach (const ItemInfo& info, listAll)
+    {
+        listAllFileSize += info.fileSize();
+    }
+
+    Album* const album = d->view->currentAlbum();
 
     if (album && (album->type() == Album::PHYSICAL))
     {
-        if (!CoreDbAccess().backend()->isInTransaction())
-        {
-            numOfImagesInAlbum = CoreDbAccess().db()->getNumberOfItemsInAlbum(album->id());
-        }
+        numOfImagesInModel = d->view->itemCount();
     }
 
     QString statusBarSelectionText;
@@ -603,8 +611,10 @@ void DigikamApp::slotImageSelected(const ItemInfoList& selection, const ItemInfo
         {
             if (numImagesWithGrouped == numImagesWithoutGrouped)
             {
-                statusBarSelectionText = i18n("%1/%2 items selected",
-                                              selection.count(), numImagesWithoutGrouped);
+                statusBarSelectionText = i18n("%1/%2 items selected (%3/%4)",
+                                              selection.count(), numImagesWithoutGrouped,
+                                              ItemPropertiesTab::humanReadableBytesCount(selectionFileSize),
+                                              ItemPropertiesTab::humanReadableBytesCount(listAllFileSize));
                 break;
             }
 
@@ -613,8 +623,10 @@ void DigikamApp::slotImageSelected(const ItemInfoList& selection, const ItemInfo
                 if (selection.count() == selectionWithoutGrouped.count())
                 {
                     statusBarSelectionText
-                            = i18n("%1/%2 [%3] items selected", selectionWithoutGrouped.count(),
-                                   numImagesWithoutGrouped, numImagesWithGrouped);
+                            = i18n("%1/%2 [%3] items selected (%4/%5)", selectionWithoutGrouped.count(),
+                                   numImagesWithoutGrouped, numImagesWithGrouped,
+                                   ItemPropertiesTab::humanReadableBytesCount(selectionFileSize),
+                                   ItemPropertiesTab::humanReadableBytesCount(listAllFileSize));
                     statusBarSelectionToolTip
                             = i18n("%1/%2 items selected. Total with grouped items: %3",
                                    selectionWithoutGrouped.count(), numImagesWithoutGrouped,
@@ -623,9 +635,11 @@ void DigikamApp::slotImageSelected(const ItemInfoList& selection, const ItemInfo
                 else
                 {
                     statusBarSelectionText
-                            = i18n("%1/%2 [%3/%4] items selected",
+                            = i18n("%1/%2 [%3/%4] items selected (%5/%6)",
                                    selectionWithoutGrouped.count(), numImagesWithoutGrouped,
-                                   selection.count(), numImagesWithGrouped);
+                                   selection.count(), numImagesWithGrouped,
+                                   ItemPropertiesTab::humanReadableBytesCount(selectionFileSize),
+                                   ItemPropertiesTab::humanReadableBytesCount(listAllFileSize));
                     statusBarSelectionToolTip
                             = i18n("%1/%2 items selected. With grouped items: %3/%4",
                                    selectionWithoutGrouped.count(), numImagesWithoutGrouped,
@@ -645,7 +659,10 @@ void DigikamApp::slotImageSelected(const ItemInfoList& selection, const ItemInfo
 
         case 1:
         {
-            slotSetCheckedExifOrientationAction(selectionWithoutGrouped.first());
+            if (!selectionWithoutGrouped.isEmpty())
+            {
+                slotSetCheckedExifOrientationAction(selectionWithoutGrouped.first());
+            }
 
             int index = listAll.indexOf(selection.first()) + 1;
 
@@ -657,11 +674,16 @@ void DigikamApp::slotImageSelected(const ItemInfoList& selection, const ItemInfo
             }
             else
             {
-                int indexWithoutGrouped
-                        = d->view->allInfo(false).indexOf(selectionWithoutGrouped.first()) + 1;
+                int indexWithoutGrouped = 0;
+
+                if (!selectionWithoutGrouped.isEmpty())
+                {
+                    indexWithoutGrouped = d->view->allInfo(false).indexOf(selectionWithoutGrouped.first()) + 1;
+                }
+
                 statusBarSelectionText
                         = selection.first().fileUrl().fileName()
-                          + i18n(" (%1 of %2 [%3])", indexWithoutGrouped,
+                          + i18n(" (%1 of %2 [%3] )", indexWithoutGrouped,
                                  numImagesWithoutGrouped, numImagesWithGrouped);
                 statusBarSelectionToolTip
                         = selection.first().fileUrl().fileName()
@@ -673,11 +695,11 @@ void DigikamApp::slotImageSelected(const ItemInfoList& selection, const ItemInfo
         }
     }
 
-    if (numImagesWithGrouped < numOfImagesInAlbum)
+    if (numImagesWithGrouped < numOfImagesInModel)
     {
         statusBarSelectionText += QLatin1String(" - ");
         statusBarSelectionText += i18np("%1 item hidden", "%1 items hidden",
-                                        numOfImagesInAlbum - numImagesWithGrouped);
+                                        numOfImagesInModel - numImagesWithGrouped);
     }
 
     d->statusLabel->setAdjustedText(statusBarSelectionText);
@@ -712,8 +734,8 @@ void DigikamApp::slotSelectionChanged(int selectionCount)
     d->imageRotateActionMenu->setEnabled(selectionCount > 0);
     d->imageFlipActionMenu->setEnabled(selectionCount > 0);
     d->imageExifOrientationActionMenu->setEnabled(selectionCount > 0);
-    d->slideShowSelectionAction->setEnabled(selectionCount > 0);
     d->moveSelectionToAlbumAction->setEnabled(selectionCount > 0);
+    d->copySelectionToAction->setEnabled(selectionCount > 0);
     d->cutItemsAction->setEnabled(selectionCount > 0);
     d->copyItemsAction->setEnabled(selectionCount > 0);
     d->openWithAction->setEnabled(selectionCount > 0);
@@ -838,8 +860,8 @@ void DigikamApp::slotResetExifOrientationActions()
 void DigikamApp::slotSetCheckedExifOrientationAction(const ItemInfo& info)
 {
 /*
-    DMetadata meta(info.fileUrl().toLocalFile());
-    int orientation = (meta.isEmpty()) ? 0 : meta.getItemOrientation();
+    QScopedPointer<DMetadata> meta(new DMetadata(info.fileUrl().toLocalFile()));
+    int orientation = (meta->isEmpty()) ? 0 : meta->getItemOrientation();
 */
     int orientation = info.orientation();
 
@@ -881,11 +903,6 @@ void DigikamApp::slotSetCheckedExifOrientationAction(const ItemInfo& info)
             slotResetExifOrientationActions();
             break;
     }
-}
-
-QMenu* DigikamApp::slideShowMenu() const
-{
-    return d->slideShowAction;
 }
 
 void DigikamApp::showSideBars(bool visible)
@@ -986,6 +1003,7 @@ void DigikamApp::customizedFullScreenMode(bool set)
     toolBarMenuAction()->setEnabled(!set);
     showMenuBarAction()->setEnabled(!set);
     showStatusBarAction()->setEnabled(!set);
+
     set ? d->showBarAction->setEnabled(false)
         : toggleShowBar();
 
@@ -994,7 +1012,6 @@ void DigikamApp::customizedFullScreenMode(bool set)
 
 void DigikamApp::customizedTrashView(bool set)
 {
-    d->slideShowSelectionAction->setEnabled(set);
     d->imageTableViewAction->setEnabled(set);
     d->imageIconViewAction->setEnabled(set);
 
@@ -1005,7 +1022,6 @@ void DigikamApp::customizedTrashView(bool set)
 #endif
 
     d->imagePreviewAction->setEnabled(set);
-    d->slideShowAction->setEnabled(set);
     d->bqmAction->setEnabled(set);
     d->ltAction->setEnabled(set);
     d->ieAction->setEnabled(set);
@@ -1045,6 +1061,11 @@ void DigikamApp::toggleShowBar()
 void DigikamApp::slotComponentsInfo()
 {
     showDigikamComponentsInfo();
+}
+
+void DigikamApp::slotOnlineVersionCheck()
+{
+    Setup::onlineVersionCheck();
 }
 
 void DigikamApp::slotToggleColorManagedView()
@@ -1099,6 +1120,12 @@ DInfoInterface* DigikamApp::infoIface(DPluginAction* const ac)
 
     connect(iface, SIGNAL(signalImportedImage(QUrl)),
             this, SLOT(slotImportedImagefromScanner(QUrl)));
+
+    if (aset == ApplicationSettings::Slideshow)
+    {
+        connect(iface, SIGNAL(signalLastItemUrl(QUrl)),
+                d->view, SLOT(slotSetCurrentUrlWhenAvailable(QUrl)));
+    }
 
     return iface;
 }

@@ -6,7 +6,7 @@
  * Date        : 2008-12-10
  * Description : misc file operation methods
  *
- * Copyright (C) 2014-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2014-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -26,13 +26,10 @@
 
 // Qt includes
 
-#include <QString>
-#include <QStringList>
 #include <QUrl>
-
-// KDE includes
-
-#include <kservice.h>
+#include <QString>
+#include <QDateTime>
+#include <QStringList>
 
 // Local includes
 
@@ -56,31 +53,22 @@ public:
                                 bool ignoreSettings = false);
 
     /**
-     * Open file urls to default application relevant of file type-mimes desktop configuration.
+     * Open file urls to default application relevant of
+     * file type-mimes desktop configuration.
      */
     static void openFilesWithDefaultApplication(const QList<QUrl>& urls);
 
     /**
-     * Get unique file url if file exist by appending a counter suffix or return original url.
+     * Get unique file url if file exist by appending a counter suffix
+     * or return original url.
      */
     static QUrl getUniqueFileUrl(const QUrl& orgUrl, bool* const newurl = nullptr);
 
     /**
-     * Open file urls with the service.
+     * Get unique folder url if folder exist by appending a counter suffix
+     * or return original url.
      */
-    static bool runFiles(KService* const service, const QList<QUrl>& urls);
-
-    /**
-     * Open file urls with the application command.
-     */
-    static bool runFiles(const QString& appCmd,
-                         const QList<QUrl>& urls,
-                         KService* const service = nullptr);
-
-    /**
-     * Return list of service available on desktop to open files.
-     */
-    static KService::List servicesForOpenWith(const QList<QUrl>& urls);
+    static QUrl getUniqueFolderUrl(const QUrl& orgUrl);
 
     /**
      * Open system file manager and select the item.
@@ -92,7 +80,9 @@ public:
      */
     static bool copyFolderRecursively(const QString& srcPath,
                                       const QString& dstPath,
-                                      const bool* cancel = nullptr);
+                                      const QString& itemId = QString(),
+                                      bool* const cancel = nullptr,
+                                      bool  countTotal = true);
 
     /**
      * Copy a list of files to another place.
@@ -111,6 +101,18 @@ public:
      */
     static bool copyFile(const QString& srcFile,
                          const QString& dstFile);
+
+    /**
+     * Copy file modification time from source to destination file.
+     */
+    static bool copyModificationTime(const QString& srcFile,
+                                     const QString& dstFile);
+    /**
+     * Set file modification time from QDateTime.
+     * Keep access time from source file.
+     */
+    static bool setModificationTime(const QString& srcFile,
+                                    const QDateTime& dateTime);
 };
 
 } // namespace Digikam

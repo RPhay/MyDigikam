@@ -41,7 +41,7 @@ class TrashView : public QWidget
 public:
 
     explicit TrashView(QWidget* const parent = nullptr);
-    ~TrashView();
+    ~TrashView() override;
 
     /**
      * @return model used for the view
@@ -57,7 +57,7 @@ public:
      * @brief set thumbnail size to give to model
      * @param thumbSize: size to set
      */
-    void setThumbnailSize(ThumbnailSize thumbSize);
+    void setThumbnailSize(const ThumbnailSize& thumbSize);
 
     /**
      * @return QUrl to the last selected item in view
@@ -79,7 +79,6 @@ private Q_SLOTS:
     void slotSelectionChanged();
     void slotUndoLastDeletedItems();
     void slotRestoreSelectedItems();
-    void slotRestoreFinished();
     void slotDeleteSelectedItems();
     void slotRemoveItemsFromModel();
     void slotRemoveAllItemsFromModel();
@@ -101,12 +100,13 @@ private:
 
 class ThumbnailAligningDelegate : public QStyledItemDelegate
 {
+    Q_OBJECT
 
 public:
 
     explicit ThumbnailAligningDelegate(QObject* const parent = nullptr);
 
-    void paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const;
+    void paint(QPainter* painter, const QStyleOptionViewItem& option, const QModelIndex& index) const override;
 };
 
 } // namespace Digikam

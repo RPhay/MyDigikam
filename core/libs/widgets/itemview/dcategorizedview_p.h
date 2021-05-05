@@ -8,7 +8,7 @@
  *
  * Copyright (C) 2007      by Rafael Fernández López <ereslibre at kde dot org>
  * Copyright (C) 2009-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2011-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2011-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -183,9 +183,15 @@ public:
 public:
 
     /// Attributes
-
-    struct ElementInfo
+    class Q_DECL_HIDDEN ElementInfo
     {
+    public:
+
+        explicit ElementInfo()
+            : relativeOffsetToCategory(0)
+        {
+        }
+
         QString category;
         int     relativeOffsetToCategory;
     };
@@ -193,13 +199,11 @@ public:
 public:
 
     /// Basic data
-
     DCategorizedView*                 listView;
     DCategoryDrawer*                  categoryDrawer;
     QSize                             biggestItemSize;
 
     /// Behavior data
-
     bool                              mouseButtonPressed;
     bool                              rightMouseButtonPressed;
     bool                              dragLeftViewport;
@@ -215,7 +219,7 @@ public:
      * We cannot merge some of them into structs because it would affect
      * performance
      */
-    QVector<struct ElementInfo>       elementsInfo;
+    QVector<ElementInfo>              elementsInfo;
     QHash<int, QRect>                 elementsPosition;
     QHash<QString, QVector<int> >     categoriesIndexes;
     QHash<QString, QRect>             categoriesPosition;
@@ -225,7 +229,6 @@ public:
     QItemSelection                    lastSelection;
 
     /// Attributes for speed reasons
-
     DCategorizedSortFilterProxyModel* proxyModel;
 };
 

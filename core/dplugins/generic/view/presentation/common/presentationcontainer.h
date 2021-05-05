@@ -45,7 +45,9 @@ class PresentationCaptionPage;
 class PresentationAdvPage;
 
 #ifdef HAVE_MEDIAPLAYER
+
 class PresentationAudioPage;
+
 #endif
 
 class PresentationContainer
@@ -68,14 +70,16 @@ public:
     PresentationCaptionPage* captionPage;
 
 #ifdef HAVE_MEDIAPLAYER
+
     PresentationAudioPage*   soundtrackPage;
+
 #endif
 
     PresentationAdvPage*     advancedPage;
 
     // Config file data
 
-    // --> Main page
+    /// Main page
     bool                     opengl;
     bool                     openGlFullScale;
     int                      delay;
@@ -84,10 +88,11 @@ public:
     bool                     printFileComments;
     bool                     loop;
     bool                     shuffle;
+    bool                     offAutoDelay;
     QString                  effectName;
     QString                  effectNameGL;
 
-    // --> Captions page
+    /// Captions page
     uint                     commentsFontColor;
     uint                     commentsBgColor;
     bool                     commentsDrawOutline;
@@ -95,7 +100,7 @@ public:
     int                      commentsLinesLength;
     QFont*                   captionFont;
 
-    // --> Soundtrack page
+    /// Soundtrack page
     bool                     soundtrackLoop;
     bool                     soundtrackPlay;
     bool                     soundtrackRememberPlaylist;
@@ -103,14 +108,15 @@ public:
     QUrl                     soundtrackPath;
     QList<QUrl>              soundtrackUrls;
 
-    // --> Advanced page
+    /// Advanced page
     bool                     useMilliseconds;
     bool                     enableMouseWheel;
     bool                     enableCache;
     bool                     kbDisableFadeInOut;
     bool                     kbDisableCrossFade;
+    bool                     kbEnableSameSpeed;
     uint                     cacheSize;
-    
+
     DInfoInterface*          iface;
 };
 

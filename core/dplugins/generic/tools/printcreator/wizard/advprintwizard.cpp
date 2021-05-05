@@ -7,7 +7,7 @@
  * Description : a tool to print images
  *
  * Copyright (C) 2008-2012 by Angelo Naselli <anaselli at linux dot it>
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -44,9 +44,9 @@
 
 // KDE includes
 
-#include <kconfig.h>
-#include <kconfiggroup.h>
 #include <klocalizedstring.h>
+#include <ksharedconfig.h>
+#include <kconfiggroup.h>
 
 // Local includes
 
@@ -74,17 +74,17 @@ class Q_DECL_HIDDEN AdvPrintWizard::Private
 public:
 
     explicit Private()
-      : introPage(nullptr),
-        albumsPage(nullptr),
-        photoPage(nullptr),
-        captionPage(nullptr),
-        cropPage(nullptr),
-        outputPage(nullptr),
-        finalPage(nullptr),
-        settings(nullptr),
+      : introPage    (nullptr),
+        albumsPage   (nullptr),
+        photoPage    (nullptr),
+        captionPage  (nullptr),
+        cropPage     (nullptr),
+        outputPage   (nullptr),
+        finalPage    (nullptr),
+        settings     (nullptr),
         previewThread(nullptr),
-        iface(nullptr),
-        tempPath(nullptr)
+        iface        (nullptr),
+        tempPath     (nullptr)
     {
     }
 
@@ -104,25 +104,25 @@ public:
 
 AdvPrintWizard::AdvPrintWizard(QWidget* const parent, DInfoInterface* const iface)
     : DWizardDlg(parent, QLatin1String("PrintCreatorDialog")),
-      d(new Private)
+      d         (new Private)
 {
     setWindowTitle(i18n("Print Creator"));
 
-    d->iface         = iface;
-    d->settings      = new AdvPrintSettings;
-    d->previewThread = new AdvPrintThread(this);
+    d->iface           = iface;
+    d->settings        = new AdvPrintSettings;
+    d->previewThread   = new AdvPrintThread(this);
 
-    KConfig config;
-    KConfigGroup group = config.group("PrintCreator");
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup group      = config->group("PrintCreator");
     d->settings->readSettings(group);
 
-    d->introPage   = new AdvPrintIntroPage(this,   i18n("Welcome to Print Creator"));
-    d->albumsPage  = new AdvPrintAlbumsPage(this,  i18n("Albums Selection"));
-    d->photoPage   = new AdvPrintPhotoPage(this,   i18n("Select Page Layout"));
-    d->captionPage = new AdvPrintCaptionPage(this, i18n("Caption Settings"));
-    d->cropPage    = new AdvPrintCropPage(this,    i18n("Crop and Rotate Photos"));
-    d->outputPage  = new AdvPrintOutputPage(this,  i18n("Images Output Settings"));
-    d->finalPage   = new AdvPrintFinalPage(this,   i18n("Render Printing"));
+    d->introPage       = new AdvPrintIntroPage(this,   i18n("Welcome to Print Creator"));
+    d->albumsPage      = new AdvPrintAlbumsPage(this,  i18n("Albums Selection"));
+    d->photoPage       = new AdvPrintPhotoPage(this,   i18n("Select Page Layout"));
+    d->captionPage     = new AdvPrintCaptionPage(this, i18n("Caption Settings"));
+    d->cropPage        = new AdvPrintCropPage(this,    i18n("Crop and Rotate Photos"));
+    d->outputPage      = new AdvPrintOutputPage(this,  i18n("Images Output Settings"));
+    d->finalPage       = new AdvPrintFinalPage(this,   i18n("Render Printing"));
     d->finalPage->setPhotoPage(d->photoPage);
 
     // -----------------------------------
@@ -136,7 +136,7 @@ AdvPrintWizard::AdvPrintWizard(QWidget* const parent, DInfoInterface* const ifac
     connect(d->previewThread, SIGNAL(signalPreview(QImage)),
             this, SLOT(slotPreview(QImage)));
 
-    d->tempPath = new QTemporaryDir();
+    d->tempPath           = new QTemporaryDir();
     d->settings->tempPath = d->tempPath->path();
 
     installEventFilter(this);
@@ -146,8 +146,8 @@ AdvPrintWizard::~AdvPrintWizard()
 {
     d->previewThread->cancel();
 
-    KConfig config;
-    KConfigGroup group = config.group("PrintCreator");
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup group      = config->group("PrintCreator");
     d->settings->writeSettings(group);
 
     delete d->settings;
@@ -275,9 +275,10 @@ void AdvPrintWizard::previewPhotos()
     d->previewThread->cancel();
 
     // get the selected layout
+
     int photoCount             = d->settings->photos.count();
-    int curr                   = d->photoPage->ui()->ListPhotoSizes->currentRow();
-    AdvPrintPhotoSize* const s = d->settings->photosizes.at(curr);
+    int curr1                  = d->photoPage->ui()->ListPhotoSizes->currentRow();
+    AdvPrintPhotoSize* const s = d->settings->photosizes.at(curr1);
     int emptySlots             = 0;
     int pageCount              = 0;
     int photosPerPage          = 0;
@@ -285,6 +286,7 @@ void AdvPrintWizard::previewPhotos()
     if (photoCount > 0)
     {
         // how many pages?  Recall that the first layout item is the paper size
+
         photosPerPage = s->m_layouts.count() - 1;
         int remainder = photoCount % photosPerPage;
 
@@ -310,6 +312,7 @@ void AdvPrintWizard::previewPhotos()
         // photo previews
         // preview the first page.
         // find the first page of photos
+
         int count   = 0;
         int page    = 0;
         int current = 0;
@@ -322,10 +325,10 @@ void AdvPrintWizard::previewPhotos()
             if (page == d->settings->currentPreviewPage)
             {
                 photo->m_cropRegion.setRect(-1, -1, -1, -1);
-                photo->m_rotation = 0;
-                QRect* const curr = s->m_layouts.at(count + 1);
-                photo->updateCropRegion(curr->width(),
-                                        curr->height(),
+                photo->m_rotation  = 0;
+                QRect* const curr2 = s->m_layouts.at(count + 1);
+                photo->updateCropRegion(curr2->width(),
+                                        curr2->height(),
                                         s->m_autoRotate);
             }
 
@@ -334,7 +337,9 @@ void AdvPrintWizard::previewPhotos()
             if (count >= photosPerPage)
             {
                 if (page == d->settings->currentPreviewPage)
+                {
                     break;
+                }
 
                 page++;
                 current += photosPerPage;
@@ -383,7 +388,7 @@ int AdvPrintWizard::normalizedInt(double n)
 
 bool AdvPrintWizard::eventFilter(QObject* o, QEvent* e)
 {
-    if (e && e->type() == QEvent::KeyRelease)
+    if (e && (e->type() == QEvent::KeyRelease))
     {
         QKeyEvent* const k = (QKeyEvent*)e;
 
@@ -395,8 +400,10 @@ bool AdvPrintWizard::eventFilter(QObject* o, QEvent* e)
             if (currentPage() == d->cropPage)
             {
                 // Pass the key event to move crop frame region.
+
                 d->cropPage->ui()->cropFrame->setFocus();
                 QApplication::sendEvent(d->cropPage->ui()->cropFrame, e);
+
                 return true; // eat event
             }
         }

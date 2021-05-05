@@ -6,7 +6,7 @@
  * Date        : 2011-04-30
  * Description : Class for geonames.org based altitude lookup
  *
- * Copyright (C) 2010-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2010-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2010-2011 by Michael G. Hansen <mike at mghansen dot de>
  *
  * This program is free software; you can redistribute it
@@ -44,19 +44,19 @@ class DIGIKAM_EXPORT LookupAltitudeGeonames : public LookupAltitude
 public:
 
     explicit LookupAltitudeGeonames(QObject* const parent);
-    virtual ~LookupAltitudeGeonames();
+    ~LookupAltitudeGeonames() override;
 
-    virtual QString backendName()                           const override;
-    virtual QString backendHumanName()                      const override;
+    QString backendName()                           const override;
+    QString backendHumanName()                      const override;
 
-    virtual void addRequests(const Request::List& requests)       override;
-    virtual Request::List getRequests()                     const override;
-    virtual Request getRequest(const int index)             const override;
+    void addRequests(const Request::List& requests)       override;
+    Request::List getRequests()                     const override;
+    Request getRequest(const int index)             const override;
 
-    virtual void startLookup()                                    override;
-    virtual StatusAltitude getStatus()                      const override;
-    virtual QString errorMessage()                          const override;
-    virtual void cancel()                                         override;
+    void startLookup()                                    override;
+    StatusAltitude getStatus()                      const override;
+    QString errorMessage()                          const override;
+    void cancel()                                         override;
 
 private Q_SLOTS:
 

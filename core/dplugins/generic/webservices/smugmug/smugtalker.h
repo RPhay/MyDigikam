@@ -7,7 +7,7 @@
  * Description : a tool to export images to Smugmug web service
  *
  * Copyright (C) 2008-2009 by Luka Renko <lure at kubuntu dot org>
- * Copyright (C) 2008-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2008-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2018      by Thanh Trung Dinh <dinhthanhtrung1996 at gmail dot com>
  *
  * This program is free software; you can redistribute it
@@ -65,7 +65,7 @@ class SmugTalker : public QObject
 public:
 
     explicit SmugTalker(DInfoInterface* const iface, QWidget* const parent);
-    ~SmugTalker();
+    ~SmugTalker() override;
 
 public:
 
@@ -87,11 +87,11 @@ public:
                        const QString& albumPassword = QString(),
                        const QString& sitePassword = QString());
     void    listAlbumTmpl();
-    /**
-     * Categories are deprecated in API v2
-     *   void    listCategories();
-     *   void    listSubCategories(qint64 categoryID);
-     */
+
+/*  Categories are deprecated in API v2
+    void    listCategories();
+    void    listSubCategories(qint64 categoryID);
+*/
 
     void    createAlbum(const SmugAlbum& album);
 
@@ -127,32 +127,34 @@ Q_SIGNALS:
                               const QList <SmugPhoto>& photosList);
     void signalListAlbumTmplDone(int errCode, const QString& errMsg,
                                  const QList <SmugAlbumTmpl>& albumTList);
-    /**
-     * Categories deprecated in API v2
-     *
-     *   void signalListCategoriesDone(int errCode, const QString& errMsg,
-     *                               const QList <SmugCategory>& categoriesList);
-     *   void signalListSubCategoriesDone(int errCode, const QString& errMsg,
-     *                                   const QList <SmugCategory>& categoriesList);
-     */
+
+/* Categories deprecated in API v2
+
+    void signalListCategoriesDone(int errCode, const QString& errMsg,
+                                  const QList <SmugCategory>& categoriesList);
+    void signalListSubCategoriesDone(int errCode, const QString& errMsg,
+                                     const QList <SmugCategory>& categoriesList);
+*/
 
 private:
 
     QString htmlToText(const QString& htmlText) const;
     QString errorToText(int errCode, const QString& errMsg) const;
     void parseResponseLogin(const QByteArray& data);
+
 //     void parseResponseLogout(const QByteArray& data);
+
     void parseResponseAddPhoto(const QByteArray& data);
     void parseResponseCreateAlbum(const QByteArray& data);
     void parseResponseListAlbums(const QByteArray& data);
     void parseResponseListPhotos(const QByteArray& data);
     void parseResponseListAlbumTmpl(const QByteArray& data);
-    /**
-     * Categories deprecated in API v2
-     *
-     *   void parseResponseListCategories(const QByteArray& data);
-     *   void parseResponseListSubCategories(const QByteArray& data);
-     */
+
+/*  Categories deprecated in API v2
+
+    void parseResponseListCategories(const QByteArray& data);
+    void parseResponseListSubCategories(const QByteArray& data);
+*/
 
 private Q_SLOTS:
 

@@ -1,13 +1,13 @@
 # Script to build libksane for digiKam bundle.
 #
-# Copyright (c) 2015-2020 by Gilles Caulier  <caulier dot gilles at gmail dot com>
+# Copyright (c) 2015-2021 by Gilles Caulier  <caulier dot gilles at gmail dot com>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
 #
 
 set(EXTPREFIX_libksane "${EXTPREFIX}" )
-set(KA_VERSION 19.08.3)
+set(KA_VERSION 20.12.3)
 
 GetKF5ApplicationMd5Sums(libksane ${KA_VERSION})
 
@@ -15,11 +15,11 @@ if(MINGW)
 
     ExternalProject_Add(ext_libksane
                         DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
-                        URL http://download.kde.org/stable/applications/${KA_VERSION}/src/libksane-${KA_VERSION}.tar.xz
+                        URL http://download.kde.org/stable/release-service/${KA_VERSION}/src/libksane-${KA_VERSION}.tar.xz
                         URL_MD5 ${KF5_APPLICATION_MD5SUM}
 
                         INSTALL_DIR ${EXTPREFIX_libksane}
-                        PATCH_COMMAND ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/libksane-drop-ktextwidgets.patch
+                        PATCH_COMMAND ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/libksane-common-rules.patch
 
                         CMAKE_ARGS -DMXE_TOOLCHAIN=${MXE_TOOLCHAIN}
                                    -DCMAKE_BUILD_TYPE=${GLOBAL_BUILD_TYPE}
@@ -46,10 +46,10 @@ elseif(APPLE)
 
     ExternalProject_Add(ext_libksane
                         DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
-                        URL http://download.kde.org/stable/applications/${KA_VERSION}/src/libksane-${KA_VERSION}.tar.xz
+                        URL http://download.kde.org/stable/release-service/${KA_VERSION}/src/libksane-${KA_VERSION}.tar.xz
                         URL_MD5 ${KF5_APPLICATION_MD5SUM}
 
-                        PATCH_COMMAND ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/libksane-drop-ktextwidgets.patch
+                        PATCH_COMMAND ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/libksane-common-rules.patch
 
                         CONFIGURE_COMMAND cp ${CMAKE_CURRENT_SOURCE_DIR}/../../../../bootstrap.macports <SOURCE_DIR>/. &&
                                           <SOURCE_DIR>/bootstrap.macports ${EXTPREFIX_libksane} debug x86_64 "-DWITH_DESIGNER_PLUGIN=OFF -DBUILD_TESTING=OFF -Wno-dev"
@@ -68,7 +68,7 @@ else() # Linux
 
     ExternalProject_Add(ext_libksane
                         DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
-                        URL http://download.kde.org/stable/applications/${KA_VERSION}/src/libksane-${KA_VERSION}.tar.xz
+                        URL http://download.kde.org/stable/release-service/${KA_VERSION}/src/libksane-${KA_VERSION}.tar.xz
                         URL_MD5 ${KF5_APPLICATION_MD5SUM}
                         INSTALL_DIR ${EXTPREFIX_libksane}
                         CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${EXTPREFIX_libksane}
@@ -78,7 +78,7 @@ else() # Linux
                                    -DWITH_DESIGNER_PLUGIN=OFF
                                    -DBUILD_TESTING=OFF
                                    -Wno-dev
-                        PATCH_COMMAND ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/libksane-drop-ktextwidgets.patch
+                        PATCH_COMMAND ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/libksane-common-rules.patch
                         UPDATE_COMMAND ""
                         ALWAYS 0
    )

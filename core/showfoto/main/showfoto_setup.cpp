@@ -6,7 +6,7 @@
  * Date        : 2004-11-22
  * Description : stand alone digiKam image editor - Internal setup
  *
- * Copyright (C) 2004-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2004-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -75,17 +75,20 @@ void ShowFoto::setupConnections()
     connect(this, &ShowFoto::signalOpenFile,
             this, &ShowFoto::slotOpenFile);
 
-    connect(this,SIGNAL(signalInfoList(ShowfotoItemInfoList&)),
-            d->model,SLOT(reAddShowfotoItemInfos(ShowfotoItemInfoList&)));
+    connect(this, SIGNAL(signalInfoList(ShowfotoItemInfoList)),
+            d->model, SLOT(reAddShowfotoItemInfos(ShowfotoItemInfoList)));
 
-    connect(d->thumbLoadThread,SIGNAL(signalThumbnailLoaded(LoadingDescription,QPixmap)),
-            d->model,SLOT(slotThumbnailLoaded(LoadingDescription,QPixmap)));
+    connect(d->thumbLoadThread, SIGNAL(signalThumbnailLoaded(LoadingDescription,QPixmap)),
+            d->model, SLOT(slotThumbnailLoaded(LoadingDescription,QPixmap)));
 
     connect(this, SIGNAL(signalNoCurrentItem()),
             d->rightSideBar, SLOT(slotNoCurrentItem()));
 
     connect(d->rightSideBar, SIGNAL(signalSetupMetadataFilters(int)),
             this, SLOT(slotSetupMetadataFilters(int)));
+
+    connect(d->rightSideBar, SIGNAL(signalSetupExifTool()),
+            this, SLOT(slotSetupExifTool()));
 
     connect(d->dDHandler, SIGNAL(signalDroppedUrls(QList<QUrl>,bool)),
             this, SLOT(slotDroppedUrls(QList<QUrl>,bool)));
@@ -132,7 +135,6 @@ void ShowFoto::setupUserArea()
 
     d->thumbBarDock = new Digikam::ThumbBarDock(viewContainer, Qt::Tool);
     d->thumbBarDock->setObjectName(QLatin1String("editor_thumbbar"));
-    d->thumbBarDock->setWindowTitle(i18n("ShowFoto Thumbnail Dock"));
     d->thumbBarDock->setAllowedAreas(Qt::LeftDockWidgetArea | Qt::TopDockWidgetArea  | Qt::BottomDockWidgetArea);
     d->thumbBar     = new ShowfotoThumbnailBar(d->thumbBarDock);
 

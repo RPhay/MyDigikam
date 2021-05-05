@@ -32,6 +32,13 @@ class CameraNameHelperTest : public QObject
 {
     Q_OBJECT
 
+public:
+
+    explicit CameraNameHelperTest(QObject* const parent = nullptr)
+        : QObject(parent)
+    {
+    }
+
 private Q_SLOTS:
 
     void testCreateCameraName();

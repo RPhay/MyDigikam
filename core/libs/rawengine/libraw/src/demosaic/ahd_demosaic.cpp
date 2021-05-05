@@ -1,5 +1,5 @@
 /* -*- C++ -*-
- * Copyright 2019 LibRaw LLC (info@libraw.org)
+ * Copyright 2019-2021 LibRaw LLC (info@libraw.org)
  *
  LibRaw uses code from dcraw.c -- Dave Coffin's raw photo decoder,
  dcraw.c is copyright 1997-2018 by Dave Coffin, dcoffin a cybercom o net.
@@ -107,7 +107,6 @@ void LibRaw::ahd_interpolate_r_and_b_in_rgb_and_convert_to_cielab(
   ushort(*pix)[4];
   ushort(*rix)[3];
   short(*lix)[3];
-  float xyz[3];
   const unsigned num_pix_per_row = 4 * width;
   const unsigned rowlimit = MIN(top + LIBRAW_AHD_TILE - 1, height - 3);
   const unsigned collimit = MIN(left + LIBRAW_AHD_TILE - 1, width - 3);
@@ -178,7 +177,7 @@ void LibRaw::ahd_interpolate_build_homogeneity_map(
     char (*out_homogeneity_map)[LIBRAW_AHD_TILE][2])
 {
   int row, col;
-  int tr, tc;
+  int tr;
   int direction;
   int i;
   short(*lix)[3];
@@ -204,7 +203,6 @@ void LibRaw::ahd_interpolate_build_homogeneity_map(
 
     for (col = left + 2; col < collimit; col++)
     {
-      tc = col - left;
       homogeneity_map_p++;
 
       for (direction = 0; direction < 2; direction++)
@@ -294,64 +292,68 @@ void LibRaw::ahd_interpolate_combine_homogeneous_pixels(
 }
 void LibRaw::ahd_interpolate()
 {
-  int i, j, k, top, left;
-  float xyz_cam[3][4], r;
-  char *buffer;
-  ushort(*rgb)[LIBRAW_AHD_TILE][LIBRAW_AHD_TILE][3];
-  short(*lab)[LIBRAW_AHD_TILE][LIBRAW_AHD_TILE][3];
-  char(*homo)[LIBRAW_AHD_TILE][2];
-  int terminate_flag = 0;
-
-  cielab(0, 0);
-  border_interpolate(5);
+    int terminate_flag = 0;
+    cielab(0, 0);
+    border_interpolate(5);
 
 #ifdef LIBRAW_USE_OPENMP
-#pragma omp parallel private(buffer, rgb, lab, homo, top, left, i, j, k)       \
-    shared(xyz_cam, terminate_flag)
+    int buffer_count = omp_get_max_threads();
+#else
+    int buffer_count = 1;
 #endif
-  {
-#ifdef LIBRAW_USE_OPENMP
-#pragma omp critical
-#endif
-    buffer =
-        (char *)malloc(26 * LIBRAW_AHD_TILE * LIBRAW_AHD_TILE); /* 1664 kB */
-    merror(buffer, "ahd_interpolate()");
-    rgb = (ushort(*)[LIBRAW_AHD_TILE][LIBRAW_AHD_TILE][3])buffer;
-    lab = (short(*)[LIBRAW_AHD_TILE][LIBRAW_AHD_TILE][3])(
-        buffer + 12 * LIBRAW_AHD_TILE * LIBRAW_AHD_TILE);
-    homo = (char(*)[LIBRAW_AHD_TILE][2])(buffer + 24 * LIBRAW_AHD_TILE *
-                                                      LIBRAW_AHD_TILE);
+
+    size_t buffer_size = 26 * LIBRAW_AHD_TILE * LIBRAW_AHD_TILE; /* 1664 kB */
+    char** buffers = malloc_omp_buffers(buffer_count, buffer_size, "ahd_interpolate()");
 
 #ifdef LIBRAW_USE_OPENMP
-#pragma omp for schedule(dynamic)
+#pragma omp parallel for schedule(dynamic) default(none) shared(terminate_flag) firstprivate(buffers)
 #endif
-    for (top = 2; top < height - 5; top += LIBRAW_AHD_TILE - 6)
+    for (int top = 2; top < height - 5; top += LIBRAW_AHD_TILE - 6)
     {
 #ifdef LIBRAW_USE_OPENMP
-      if (0 == omp_get_thread_num())
+        if (0 == omp_get_thread_num())
 #endif
-        if (callbacks.progress_cb)
+            if (callbacks.progress_cb)
+            {
+                int rr = (*callbacks.progress_cb)(callbacks.progresscb_data,
+                    LIBRAW_PROGRESS_INTERPOLATE,
+                    top - 2, height - 7);
+                if (rr)
+                    terminate_flag = 1;
+            }
+
+#if defined(LIBRAW_USE_OPENMP)
+        char* buffer = buffers[omp_get_thread_num()];
+#else
+        char* buffer = buffers[0];
+#endif
+
+        ushort(*rgb)[LIBRAW_AHD_TILE][LIBRAW_AHD_TILE][3];
+        short(*lab)[LIBRAW_AHD_TILE][LIBRAW_AHD_TILE][3];
+        char(*homo)[LIBRAW_AHD_TILE][2];
+
+        rgb = (ushort(*)[LIBRAW_AHD_TILE][LIBRAW_AHD_TILE][3])buffer;
+        lab = (short(*)[LIBRAW_AHD_TILE][LIBRAW_AHD_TILE][3])(
+            buffer + 12 * LIBRAW_AHD_TILE * LIBRAW_AHD_TILE);
+        homo = (char(*)[LIBRAW_AHD_TILE][2])(buffer + 24 * LIBRAW_AHD_TILE *
+            LIBRAW_AHD_TILE);
+
+        for (int left = 2; !terminate_flag && (left < width - 5);
+            left += LIBRAW_AHD_TILE - 6)
         {
-          int rr = (*callbacks.progress_cb)(callbacks.progresscb_data,
-                                            LIBRAW_PROGRESS_INTERPOLATE,
-                                            top - 2, height - 7);
-          if (rr)
-            terminate_flag = 1;
+            ahd_interpolate_green_h_and_v(top, left, rgb);
+            ahd_interpolate_r_and_b_and_convert_to_cielab(top, left, rgb, lab);
+            ahd_interpolate_build_homogeneity_map(top, left, lab, homo);
+            ahd_interpolate_combine_homogeneous_pixels(top, left, rgb, homo);
         }
-      for (left = 2; !terminate_flag && (left < width - 5);
-           left += LIBRAW_AHD_TILE - 6)
-      {
-        ahd_interpolate_green_h_and_v(top, left, rgb);
-        ahd_interpolate_r_and_b_and_convert_to_cielab(top, left, rgb, lab);
-        ahd_interpolate_build_homogeneity_map(top, left, lab, homo);
-        ahd_interpolate_combine_homogeneous_pixels(top, left, rgb, homo);
-      }
     }
+
 #ifdef LIBRAW_USE_OPENMP
-#pragma omp critical
+#pragma omp barrier
 #endif
-    free(buffer);
-  }
-  if (terminate_flag)
-    throw LIBRAW_EXCEPTION_CANCELLED_BY_CALLBACK;
+
+    free_omp_buffers(buffers, buffer_count);
+
+    if (terminate_flag)
+        throw LIBRAW_EXCEPTION_CANCELLED_BY_CALLBACK;
 }

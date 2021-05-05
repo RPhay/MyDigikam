@@ -6,7 +6,7 @@
  * Date        : 2008-05-19
  * Description : Find Duplicates tree-view search album.
  *
- * Copyright (C) 2008-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2008-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2008-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  * Copyright (C) 2009-2012 by Andi Clemens <andi dot clemens at gmail dot com>
  *
@@ -27,6 +27,7 @@
 
 // Qt includes
 
+#include <QApplication>
 #include <QHeaderView>
 #include <QPainter>
 
@@ -37,6 +38,8 @@
 // Local includes
 
 #include "findduplicatesalbumitem.h"
+#include "deletedialog.h"
+#include "dio.h"
 
 namespace Digikam
 {
@@ -47,7 +50,7 @@ class Q_DECL_HIDDEN FindDuplicatesAlbum::Private
 public:
 
     explicit Private()
-        : iconSize(64),
+        : iconSize       (64),
           thumbLoadThread(nullptr)
     {
     }
@@ -70,13 +73,17 @@ FindDuplicatesAlbum::FindDuplicatesAlbum(QWidget* const parent)
     setAllColumnsShowFocus(true);
     setIconSize(QSize(d->iconSize, d->iconSize));
     setSortingEnabled(true);
-    setColumnCount(3);
+    setColumnCount(5);
     setHeaderLabels(QStringList() << i18n("Ref. images")
+                                  << i18n("Ref. dates")
+                                  << i18n("Ref. albums")
                                   << i18n("Items")
                                   << i18n("Avg. similarity"));
-    header()->setSectionResizeMode(0, QHeaderView::Stretch);
-    header()->setSectionResizeMode(1, QHeaderView::ResizeToContents);
-    header()->setSectionResizeMode(2, QHeaderView::ResizeToContents);
+    header()->setSectionResizeMode(0, QHeaderView::Interactive);
+    header()->setSectionResizeMode(1, QHeaderView::Interactive);
+    header()->setSectionResizeMode(2, QHeaderView::Interactive);
+    header()->setSectionResizeMode(3, QHeaderView::ResizeToContents);
+    header()->setSectionResizeMode(4, QHeaderView::ResizeToContents);
     setWhatsThis(i18n("This shows all found duplicate items."));
 
     connect(d->thumbLoadThread, SIGNAL(signalThumbnailLoaded(LoadingDescription,QPixmap)),
@@ -149,18 +156,14 @@ void FindDuplicatesAlbum::slotThumbnailLoaded(const LoadingDescription& desc,
 void FindDuplicatesAlbum::updateDuplicatesAlbumItems(const QList<SAlbum*>& sAlbumsToRebuild,
                                                      const QList<qlonglong>& deletedImages)
 {
-    QTreeWidgetItemIterator it(this);
-
-    while (*it)
+    foreach (QTreeWidgetItem* const selectedItem, selectedItems())
     {
-        FindDuplicatesAlbumItem* const item = dynamic_cast<FindDuplicatesAlbumItem*>(*it);
+        FindDuplicatesAlbumItem* const item = dynamic_cast<FindDuplicatesAlbumItem*>(selectedItem);
 
         if (item && sAlbumsToRebuild.contains(item->album()))
         {
             item->calculateInfos(deletedImages);
         }
-
-        ++it;
     }
 }
 
@@ -176,6 +179,46 @@ void FindDuplicatesAlbum::drawRow(QPainter* p,
     }
 
     QTreeWidget::drawRow(p, opt, index);
+}
+
+void FindDuplicatesAlbum::removeDuplicates()
+{
+    QTreeWidgetItemIterator it(this);
+
+    QList<ItemInfo> duplicatedItems;
+
+    while (*it)
+    {
+        FindDuplicatesAlbumItem* const item = dynamic_cast<FindDuplicatesAlbumItem*>(*it);
+
+        if (item)
+        {
+            duplicatedItems += item->duplicatedItems();
+        }
+
+        ++it;
+    }
+
+    QList<QUrl> urlList;
+
+    DeleteDialog dialog(qApp->activeWindow());
+
+    // Buffer the urls for deletion and imageids
+    // for notification of the AlbumManager
+
+    foreach (const ItemInfo& info, duplicatedItems)
+    {
+        urlList  << info.fileUrl();
+    }
+
+    if (!dialog.confirmDeleteList(urlList,
+                                  DeleteDialogMode::Files,
+                                  DeleteDialogMode::NoChoiceTrash))
+    {
+        return;
+    }
+
+    DIO::del(duplicatedItems, true);
 }
 
 } // namespace Digikam

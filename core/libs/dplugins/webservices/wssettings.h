@@ -6,7 +6,7 @@
  * Date        : 2017-01-24
  * Description : Web Service settings container.
  *
- * Copyright (C) 2017-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2017-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2018      by Thanh Trung Dinh <dinhthanhtrung1996 at gmail dot com>
  *
  * This program is free software; you can redistribute it
@@ -77,8 +77,8 @@ public:
 
 public:
 
-    explicit WSSettings(QObject* const parent=nullptr);
-    ~WSSettings();
+    explicit WSSettings(QObject* const parent = nullptr);
+    ~WSSettings() override;
 
     ///@{
     /// Read and write settings in config file between sessions.

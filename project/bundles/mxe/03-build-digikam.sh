@@ -3,7 +3,7 @@
 # Script to build digiKam using MXE
 # This script must be run as sudo
 #
-# Copyright (c) 2015-2020 by Gilles Caulier  <caulier dot gilles at gmail dot com>
+# Copyright (c) 2015-2021 by Gilles Caulier  <caulier dot gilles at gmail dot com>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
@@ -33,6 +33,17 @@ echo "---------------------------------------------------"
 StartScript
 ChecksCPUCores
 RegisterRemoteServers
+
+#################################################################################################
+# Check if IcoTool CLI program is installed
+
+if ! which icotool ; then
+    echo "IcoTool is not installed"
+    echo "See https://www.nongnu.org/icoutils/ for details."
+    exit 1
+else
+    echo "Check IcoTool CLI passed..."
+fi
 
 #################################################################################################
 
@@ -68,6 +79,7 @@ ${MXE_BUILD_TARGETS}-cmake $ORIG_WD/../3rdparty \
                            -DEXTERNALS_DOWNLOAD_DIR=$DOWNLOAD_DIR
 
 
+${MXE_BUILD_TARGETS}-cmake --build . --config RelWithDebInfo --target ext_exiv2      -- -j$CPU_CORES
 ${MXE_BUILD_TARGETS}-cmake --build . --config RelWithDebInfo --target ext_qtav       -- -j$CPU_CORES
 ${MXE_BUILD_TARGETS}-cmake --build . --config RelWithDebInfo --target ext_lensfun    -- -j$CPU_CORES
 
@@ -84,6 +96,8 @@ if [ -d "$DK_BUILDTEMP/digikam-$DK_VERSION" ] ; then
     git reset --hard
     git pull
 
+    rm -fr po
+    rm -fr build.mxe
     mkdir -p build.mxe
 
 else
@@ -101,7 +115,7 @@ else
     echo -e "\n\n"
     echo "---------- Downloading digiKam $DK_VERSION"
 
-    git clone --progress --verbose $DK_GITURL digikam-$DK_VERSION
+    git clone --progress --verbose --branch $DK_VERSION --single-branch $DK_GITURL digikam-$DK_VERSION
     cd digikam-$DK_VERSION
 
     if [ $? -ne 0 ] ; then
@@ -109,8 +123,6 @@ else
         echo "---------- Aborting..."
         exit;
     fi
-
-    git checkout $DK_VERSION
 
     mkdir build.mxe
 
@@ -127,15 +139,13 @@ sed -e "s/DENABLE_DRMINGW=OFF/DENABLE_DRMINGW=ON/g"             ./bootstrap.mxe 
 
 chmod +x ./bootstrap.mxe
 
-./bootstrap.mxe $MXE_BUILDROOT RelWithDebInfo -DPng2Ico_EXECUTABLE=${ORIG_WD}/png2ico/png2ico
+./bootstrap.mxe $MXE_BUILDROOT RelWithDebInfo
 
 if [ $? -ne 0 ]; then
     echo "---------- Cannot configure digiKam $DK_VERSION."
     echo "---------- Aborting..."
     exit;
 fi
-
-cat ./build.mxe/core/app/utils/digikam_version.h | grep "digikam_version\[\]" | awk '{print $6}' | tr -d '";' > $ORIG_WD/data/RELEASEID.txt
 
 echo -e "\n\n"
 echo "---------- Building digiKam $DK_VERSION"
@@ -149,11 +159,14 @@ if [ $? -ne 0 ]; then
     exit;
 fi
 
+cat $DK_BUILDTEMP/digikam-$DK_VERSION/build.mxe/core/app/utils/digikam_version.h   | grep "digikam_version\[\]" | awk '{print $6}' | tr -d '";'  > $ORIG_WD/data/RELEASEID.txt
+cat $DK_BUILDTEMP/digikam-$DK_VERSION/build.mxe/core/app/utils/digikam_builddate.h | grep "define BUILD_DATE"   | awk '{print $3}' | tr -d '"\n' > $ORIG_WD/data/BUILDDATE.txt
+
 echo -e "\n\n"
 echo "---------- Installing digiKam $DK_VERSION"
 echo -e "\n\n"
 
-make install/fast && cd "$ORIG_WD" && rm -rf "$DK_BUILDTEMP"
+make install/fast && cd "$ORIG_WD"
 
 if [ $? -ne 0 ]; then
     echo "---------- Cannot install digiKam $DK_VERSION."
@@ -183,7 +196,8 @@ ${MXE_BUILD_TARGETS}-cmake $ORIG_WD/../3rdparty \
                            -DINSTALL_ROOT=${MXE_INSTALL_PREFIX} \
                            -DEXTERNALS_DOWNLOAD_DIR=$DOWNLOAD_DIR
 
-${MXE_BUILD_TARGETS}-cmake --build . --config RelWithDebInfo --target ext_gmic_qt -- -j$CPU_CORES
+${MXE_BUILD_TARGETS}-cmake --build . --config RelWithDebInfo --target ext_gmic_qt    -- -j$CPU_CORES
+${MXE_BUILD_TARGETS}-cmake --build . --config RelWithDebInfo --target ext_mosaicwall -- -j$CPU_CORES
 
 #################################################################################################
 

@@ -26,11 +26,18 @@
 
 // Qt includes
 
-#include <QtTest>
+#include <QTest>
 
 class TestGPXParsing : public QObject
 {
     Q_OBJECT
+
+public:
+
+    explicit TestGPXParsing(QObject* const parent = nullptr)
+        : QObject(parent)
+    {
+    }
 
 private Q_SLOTS:
 
@@ -40,4 +47,4 @@ private Q_SLOTS:
 
 };
 
-#endif /* DIGIKAM_TEST_CORRELATOR_H */
+#endif // DIGIKAM_TEST_CORRELATOR_H

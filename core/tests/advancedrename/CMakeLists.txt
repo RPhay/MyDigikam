@@ -1,12 +1,10 @@
 #
-# Copyright (c) 2010-2020 by Gilles Caulier, <caulier dot gilles at gmail dot com>
+# Copyright (c) 2010-2021 by Gilles Caulier, <caulier dot gilles at gmail dot com>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
 
-set(renamecustomizertest_SRCS
-    renamecustomizertest.cpp
-)
+APPLY_COMMON_POLICIES()
 
 include_directories(
     $<TARGET_PROPERTY:Qt5::Test,INTERFACE_INCLUDE_DIRECTORIES>
@@ -18,61 +16,52 @@ include_directories(
     $<TARGET_PROPERTY:KF5::Solid,INTERFACE_INCLUDE_DIRECTORIES>
 )
 
-add_executable(renamecustomizertest ${renamecustomizertest_SRCS})
-add_test(renamecustomizertest renamecustomizertest)
-ecm_mark_as_test(renamecustomizertest)
+#------------------------------------------------------------------------
 
-target_link_libraries(renamecustomizertest
+ecm_add_tests(${CMAKE_CURRENT_SOURCE_DIR}/renamecustomizertest.cpp
 
-                      digikamcore
-                      digikamgui
+              NAME_PREFIX
 
-                      ${COMMON_TEST_LINK}
-                      ${OpenCV_LIBRARIES}
+              "digikam-"
+
+              LINK_LIBRARIES
+
+              digikamcore
+              digikamgui
+
+              ${COMMON_TEST_LINK}
 )
 
 #------------------------------------------------------------------------
 
-set(cameranamehelper_SRCS
-    cameranamehelpertest.cpp
+ecm_add_tests(${CMAKE_CURRENT_SOURCE_DIR}/cameranamehelpertest.cpp
+
+              NAME_PREFIX
+
+              "digikam-"
+
+              LINK_LIBRARIES
+
+              digikamcore
+              digikamdatabase
+              digikamgui
+
+              ${COMMON_TEST_LINK}
 )
-
-add_executable(cameranamehelpertest ${cameranamehelper_SRCS})
-add_test(cameranamehelpertest cameranamehelpertest)
-ecm_mark_as_test(cameranamehelpertest)
-
-target_link_libraries(cameranamehelpertest
-
-                      digikamdatabase
-                      digikamcore
-                      digikamgui
-
-                      ${COMMON_TEST_LINK}
-
-                      ${OpenCV_LIBRARIES}
-)
-
-if(Gphoto2_FOUND)
-    target_link_libraries(cameranamehelpertest ${GPHOTO2_LIBRARIES})
-endif()
 
 #------------------------------------------------------------------------
 
-set(advancedrenametest_SRCS
-    advancedrenametest.cpp
-)
+ecm_add_tests(${CMAKE_CURRENT_SOURCE_DIR}/advancedrenametest.cpp
 
-add_executable(advancedrenametest ${advancedrenametest_SRCS})
-add_test(advancedrenametest advancedrenametest)
-ecm_mark_as_test(advancedrenametest)
+              NAME_PREFIX
 
-target_link_libraries(advancedrenametest
+              "digikam-"
 
-                      digikamdatabase
-                      digikamcore
-                      digikamgui
+              LINK_LIBRARIES
 
-                      ${COMMON_TEST_LINK}
+              digikamcore
+              digikamdatabase
+              digikamgui
 
-                      ${OpenCV_LIBRARIES}
+              ${COMMON_TEST_LINK}
 )

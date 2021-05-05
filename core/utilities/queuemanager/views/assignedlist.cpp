@@ -6,7 +6,7 @@
  * Date        : 2008-11-21
  * Description : Batch Queue Manager items list.
  *
- * Copyright (C) 2008-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2008-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -70,7 +70,7 @@ AssignedListViewItem::~AssignedListViewItem()
 
 void AssignedListViewItem::setToolSet(const BatchToolSet& set)
 {
-    m_set = set;
+    m_set                 = set;
     setIndex(m_set.index);
 
     BatchTool* const tool = BatchToolsFactory::instance()->findTool(m_set.name, m_set.group);
@@ -289,7 +289,7 @@ bool AssignedListView::removeTool(const BatchToolSet& set)
     {
         AssignedListViewItem* const item = dynamic_cast<AssignedListViewItem*>(*it);
 
-        if (item && item->toolSet() == set)
+        if (item && (item->toolSet() == set))
         {
             delete item;
             refreshIndex();
@@ -310,7 +310,7 @@ AssignedListViewItem* AssignedListView::findTool(const BatchToolSet& set)
     {
         AssignedListViewItem* const item = dynamic_cast<AssignedListViewItem*>(*it);
 
-        if (item && item->toolSet() == set)
+        if (item && (item->toolSet() == set))
         {
             return item;
         }
@@ -334,7 +334,7 @@ QStringList AssignedListView::mimeTypes() const
     return types;
 }
 
-QMimeData* AssignedListView::mimeData(const QList<QTreeWidgetItem*> items) const
+QMimeData* AssignedListView::mimeData(const QList<QTreeWidgetItem*> items) const    // clazy:exclude=function-args-by-ref
 {
     QMimeData* const mimeData = new QMimeData();
     QByteArray encodedData;
@@ -383,14 +383,14 @@ void AssignedListView::dragMoveEvent(QDragMoveEvent* e)
 
 void AssignedListView::dropEvent(QDropEvent* e)
 {
-    if (e->mimeData()->formats().contains(QLatin1String("digikam/batchtoolslist")))
+    if      (e->mimeData()->formats().contains(QLatin1String("digikam/batchtoolslist")))
     {
         QByteArray ba = e->mimeData()->data(QLatin1String("digikam/batchtoolslist"));
 
         if (ba.size())
         {
             QDataStream ds(ba);
-            QMap<int, QString> map;
+            QMultiMap<int, QString> map;
             ds >> map;
 
             AssignedListViewItem* const preceding = dynamic_cast<AssignedListViewItem*>(itemAt(e->pos()));
@@ -424,12 +424,12 @@ void AssignedListView::dropEvent(QDropEvent* e)
                 AssignedListViewItem* const preceding = dynamic_cast<AssignedListViewItem*>(itemAt(e->pos()));
 
                 BatchToolSet set;
-                set.name                         = name;
-                set.group                        = (BatchTool::BatchToolGroup)group;
-                set.index                        = index;
-                set.version                      = version;
-                set.settings                     = settings;
-                AssignedListViewItem* const item = moveTool(preceding, set);
+                set.name                              = name;
+                set.group                             = (BatchTool::BatchToolGroup)group;
+                set.index                             = index;
+                set.version                           = version;
+                set.settings                          = settings;
+                AssignedListViewItem* const item      = moveTool(preceding, set);
                 setCurrentItem(item);
             }
         }
@@ -495,7 +495,7 @@ void AssignedListView::slotSettingsChanged(const BatchToolSet& set)
     }
 }
 
-void AssignedListView::slotAssignTools(const QMap<int, QString>& map)
+void AssignedListView::slotAssignTools(const QMultiMap<int, QString>& map)
 {
     if (map.isEmpty())
     {
@@ -505,7 +505,7 @@ void AssignedListView::slotAssignTools(const QMap<int, QString>& map)
     assignTools(map, nullptr);
 }
 
-void AssignedListView::assignTools(const QMap<int, QString>& map, AssignedListViewItem* const preceding)
+void AssignedListView::assignTools(const QMultiMap<int, QString>& map, AssignedListViewItem* const preceding)
 {
     // We pop all items in reverse order to have same order than selection from Batch Tools list.
 

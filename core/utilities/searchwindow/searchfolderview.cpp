@@ -8,7 +8,7 @@
  *
  * Copyright (C) 2005      by Renchi Raju <renchi at pooh dot tam dot uiuc dot edu>
  * Copyright (C) 2008-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2009      by Andi Clemens <andi dot clemens at gmail dot com>
  * Copyright (C) 2009      by Johannes Wienke <languitar at semipol dot de>
  *
@@ -48,8 +48,8 @@ class Q_DECL_HIDDEN NormalSearchTreeView::Private
 public:
 
     explicit Private()
-      : newAction(nullptr),
-        editAction(nullptr)
+      : newAction   (nullptr),
+        editAction  (nullptr)
     {
     }
 
@@ -61,7 +61,7 @@ NormalSearchTreeView::NormalSearchTreeView(QWidget* const parent,
                                            SearchModel* const searchModel,
                                            SearchModificationHelper* const searchModificationHelper)
     : EditableSearchTreeView(parent, searchModel, searchModificationHelper),
-      d(new Private)
+      d                     (new Private)
 {
 
     d->newAction  = new QAction(QIcon::fromTheme(QLatin1String("document-new")), i18nc("Create new search",    "New..."),  this);
@@ -86,7 +86,7 @@ void NormalSearchTreeView::addCustomContextMenuActions(ContextMenuHelper& cmh, A
     cmh.addAction(d->editAction);
 }
 
-void NormalSearchTreeView::handleCustomContextMenuAction(QAction* action, AlbumPointer<Album> album)
+void NormalSearchTreeView::handleCustomContextMenuAction(QAction* action, const AlbumPointer<Album>& album)
 {
     Album* a             = album;
     SAlbum* const salbum = dynamic_cast<SAlbum*>(a);

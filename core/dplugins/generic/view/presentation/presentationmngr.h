@@ -9,7 +9,7 @@
  * Copyright (C) 2006-2009 by Valerio Fuoglio <valerio dot fuoglio at gmail dot com>
  * Copyright (C) 2009      by Andi Clemens <andi dot clemens at googlemail dot com>
  * Copyright (C) 2003-2005 by Renchi Raju <renchi dot raju at gmail dot com>
- * Copyright (C) 2012-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -34,9 +34,9 @@
 
 // Local includes
 
-#include "digikam_export.h"
 #include "dplugingeneric.h"
 #include "dinfointerface.h"
+#include "presentationdlg.h"
 
 using namespace Digikam;
 
@@ -45,14 +45,14 @@ namespace DigikamGenericPresentationPlugin
 
 class PresentationContainer;
 
-class DIGIKAM_EXPORT PresentationMngr : public QObject
+class PresentationMngr : public QObject
 {
     Q_OBJECT
 
 public:
 
     explicit PresentationMngr(QObject* const parent, DInfoInterface* const iface);
-    ~PresentationMngr();
+    ~PresentationMngr() override;
 
     void addFiles(const QList<QUrl>& urls);
     void showConfigDialog();
@@ -66,6 +66,7 @@ private Q_SLOTS:
 private:
 
     DPlugin*               m_plugin;
+    PresentationDlg*       m_dialog;
     PresentationContainer* m_sharedData;
 };
 

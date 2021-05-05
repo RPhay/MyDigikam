@@ -42,6 +42,11 @@
 
 QTEST_MAIN(DImgFilterActionTest)
 
+DImgFilterActionTest::DImgFilterActionTest(QObject* const parent)
+    : QObject(parent)
+{
+}
+
 void DImgFilterActionTest::testDRawDecoding()
 {
     DRawDecoding params;
@@ -154,8 +159,6 @@ void DImgFilterActionTest::initTestCase()
 
 void DImgFilterActionTest::cleanupTestCase()
 {
-    // clean up the Exiv2 memory:
-    MetaEngine::cleanupExiv2();
     DPluginLoader::instance()->cleanUp();
 }
 

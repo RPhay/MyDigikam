@@ -40,7 +40,7 @@ class DBTalker : public QObject
 public:
 
     explicit DBTalker(QWidget* const parent);
-    ~DBTalker();
+    ~DBTalker() override;
 
 public:
 
@@ -72,7 +72,7 @@ private Q_SLOTS:
 
     void slotLinkingFailed();
     void slotLinkingSucceeded();
-    void slotOpenBrowser(const QUrl& url); 
+    void slotOpenBrowser(const QUrl& url);
     void slotFinished(QNetworkReply* reply);
 
 private:

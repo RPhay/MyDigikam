@@ -26,14 +26,17 @@
 
 // Qt includes
 
-#include <QCollator>
+#include <QString>
+#include <QVariant>
 
 // Local includes
 
-#include "camiteminfo.h"
+#include "itemsortcollator.h"
 
 namespace Digikam
 {
+
+class CamItemInfo;
 
 class CamItemSortSettings
 {
@@ -173,22 +176,9 @@ public:
                                      Qt::CaseSensitivity caseSensitive = Qt::CaseSensitive,
                                      bool natural = true)
     {
-        QCollator collator;
-        collator.setNumericMode(natural);
-        collator.setIgnorePunctuation(false);
-        collator.setCaseSensitivity(caseSensitive);
+        ItemSortCollator* const sorter = ItemSortCollator::instance();
 
-        if (a.contains(QLatin1String("_v"), Qt::CaseInsensitive))
-        {
-            collator.setIgnorePunctuation(true);
-        }
-
-        if (sortOrder == Qt::AscendingOrder)
-        {
-            return collator.compare(a, b);
-        }
-
-        return - collator.compare(a, b);
+        return compareByOrder(sorter->itemCompare(a, b, caseSensitive, natural), sortOrder);
     }
 
 public:

@@ -6,7 +6,7 @@
  * Date        : 2018-07-30
  * Description : a plugin to edit items geolocation.
  *
- * Copyright (C) 2018-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2018-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -48,7 +48,7 @@ GeolocationEditPlugin::~GeolocationEditPlugin()
 
 QString GeolocationEditPlugin::name() const
 {
-    return i18n("Geolocation Edit");
+    return i18nc("@title", "Geolocation Edit");
 }
 
 QString GeolocationEditPlugin::iid() const
@@ -63,15 +63,15 @@ QIcon GeolocationEditPlugin::icon() const
 
 QString GeolocationEditPlugin::description() const
 {
-    return i18n("A tool to edit items geolocation");
+    return i18nc("@info", "A tool to edit items geolocation");
 }
 
 QString GeolocationEditPlugin::details() const
 {
-    return i18n("<p>This tool permit to changes geolocation information from items.</p>"
-                "<p>This tool can edit GPS data, manually or over a map. Reverse geo-coding is also available through web services.</p>"
-                "<p>This tool as also an export function to KML to store map traces in Google format.</p>"
-                "<p>Finally, this tool is able to read a GPS trace from a device to synchronize geo-location of items if you camera do not have an embedded GPS device.</p>");
+    return i18nc("@info", "This tool permit to changes geolocation information from items.\n\n"
+                 "This tool can edit GPS data, manually or over a map. Reverse geo-coding is also available through web services.\n\n"
+                 "This tool as also an export function to KML to store map traces in Google format.\n\n"
+                 "Finally, this tool is able to read a GPS trace from a device to synchronize geo-location of items if you camera do not have an embedded GPS device.");
 }
 
 QList<DPluginAuthor> GeolocationEditPlugin::authors() const
@@ -88,7 +88,7 @@ QList<DPluginAuthor> GeolocationEditPlugin::authors() const
                              QString::fromUtf8("(C) 2014"))
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2006-2020"))
+                             QString::fromUtf8("(C) 2006-2021"))
             ;
 }
 

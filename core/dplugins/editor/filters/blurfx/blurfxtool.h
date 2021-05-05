@@ -6,7 +6,7 @@
  * Date        : 2005-02-09
  * Description : a tool to apply Blur FX to images
  *
- * Copyright 2005-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright 2005-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright 2006-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  *
  * This program is free software; you can redistribute it
@@ -41,22 +41,22 @@ class BlurFXTool : public EditorToolThreaded
 public:
 
     explicit BlurFXTool(QObject* const parent);
-    ~BlurFXTool();
+    ~BlurFXTool()               override;
 
 private Q_SLOTS:
 
     void slotEffectTypeChanged(int type);
-    void slotResetSettings();
+    void slotResetSettings()    override;
 
 private:
 
-    void readSettings();
-    void writeSettings();
-    void preparePreview();
-    void prepareFinal();
-    void setPreviewImage();
-    void setFinalImage();
-    void renderingFinished();
+    void readSettings()         override;
+    void writeSettings()        override;
+    void preparePreview()       override;
+    void prepareFinal()         override;
+    void setPreviewImage()      override;
+    void setFinalImage()        override;
+    void renderingFinished()    override;
     void blockWidgetSignals(bool b);
 
 private:

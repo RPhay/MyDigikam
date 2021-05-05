@@ -120,7 +120,7 @@ public:
      *
      * @return state saving / restoring depth
      */
-    StateSavingDepth getStateSavingDepth() const;
+    StateSavingDepth getStateSavingDepth()  const;
 
     /**
      * Sets the depth used for state saving or loading.
@@ -148,7 +148,7 @@ public:
      * You can re-implement this method to pass the prefix set here to child
      * objects. Don't forget to call this method in your implementation.
      *
-     * @param prefix prefix to use for the config entries
+     * @param prefix the prefix to use for the config entries
      */
     virtual void setEntryPrefix(const QString& prefix);
 
@@ -181,7 +181,7 @@ protected:
      *
      * @return config group for state saving and loading
      */
-    KConfigGroup getConfigGroup() const;
+    KConfigGroup getConfigGroup()           const;
 
     /**
      * Always use this method to create config group entry names. This allows
@@ -190,13 +190,15 @@ protected:
      * @param base original name planned for the config group entry
      * @return entry name after manipulating it with externally set parameters
      */
-    QString entryName(const QString& base) const;
+    QString entryName(const QString& base)  const;
 
 private:
 
-    // Hidden copy constructor and assignment operator.
-    StateSavingObject(const StateSavingObject&);
-    StateSavingObject& operator=(const StateSavingObject&);
+    // Disable
+    StateSavingObject(const StateSavingObject&)            = delete;
+    StateSavingObject& operator=(const StateSavingObject&) = delete;
+
+private:
 
     class Private;
     Private* const d;

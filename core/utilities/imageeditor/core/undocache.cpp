@@ -8,7 +8,7 @@
  *
  * Copyright (C) 2005      by Renchi Raju <renchi dot raju at gmail dot com>
  * Copyright (C) 2005      by Joern Ahrens <joern dot ahrens at kdemail dot net>
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -139,7 +139,7 @@ bool UndoCache::putData(int level, const DImg& img) const
 
         QMessageBox::critical(qApp->activeWindow(), qApp->applicationName(),
                               i18n("The free disk space in the path \"%1\" for the undo "
-                                   "cache file is < 2 GiB! Undo cache is now disabled!",
+                                   "cache file is inferior to 2 GiB! Undo cache is now disabled!",
                                    QDir::toNativeSeparators(d->cacheDir)));
         d->cacheError = true;
 
@@ -179,11 +179,11 @@ bool UndoCache::putData(int level, const DImg& img) const
 
 DImg UndoCache::getData(int level) const
 {
-    uint w          = 0;
-    uint h          = 0;
-    uint numBytes   = 0;
-    bool hasAlpha   = false;
-    bool sixteenBit = false;
+    uint w             = 0;
+    uint h             = 0;
+    quint64 numBytes   = 0;
+    bool    hasAlpha   = false;
+    bool    sixteenBit = false;
 
     QFile file(d->cacheFile(level));
 
@@ -219,7 +219,7 @@ DImg UndoCache::getData(int level) const
 
     qint64 readBytes = file.read((char*)img.bits(), numBytes);
 
-    if ((file.error() != QFileDevice::NoError) || (readBytes != numBytes))
+    if ((file.error() != QFileDevice::NoError) || ((quint64)readBytes != numBytes))
     {
         file.close();
 

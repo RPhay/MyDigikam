@@ -7,7 +7,7 @@
  * Description : a media server to export collections through DLNA.
  *               Implementation inspired on Platinum File Media Server.
  *
- * Copyright (C) 2017-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2017-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -36,23 +36,6 @@
 #include "PltVersion.h"
 #include "PltMimeType.h"
 
-// Qt includes
-
-#include <QString>
-#include <QUrl>
-#include <QList>
-#include <QMap>
-#include <QImage>
-#include <QByteArray>
-#include <QBuffer>
-
-// Local includes
-
-#include "digikam_debug.h"
-#include "previewloadthread.h"
-#include "dimg.h"
-#include "drawdecoder.h"
-
 NPT_SET_LOCAL_LOGGER("digiKam.media.server.delegate")
 
 namespace Digikam
@@ -64,7 +47,7 @@ public:
 
     explicit Private()
       : filterUnknownOut(false),
-        useCache(false)
+        useCache        (false)
     {
     }
 
@@ -102,11 +85,12 @@ NPT_Result DLNAMediaServerDelegate::ProcessFileRequest(NPT_HttpRequest&         
 {
     NPT_HttpUrlQuery query(request.GetUrl().GetQuery());
 
-    PLT_LOG_HTTP_MESSAGE(NPT_LOG_LEVEL_FINE, "DLNAMediaServerDelegate::ProcessFileRequest:", &request);
+    PLT_LOG_HTTP_REQUEST(NPT_LOG_LEVEL_FINE, "DLNAMediaServerDelegate::ProcessFileRequest:", &request);
 
     if (request.GetMethod().Compare("GET") && request.GetMethod().Compare("HEAD"))
     {
         response.SetStatus(500, "Internal Server Error");
+
         return NPT_SUCCESS;
     }
 
@@ -118,6 +102,7 @@ NPT_Result DLNAMediaServerDelegate::ProcessFileRequest(NPT_HttpRequest&         
     // Serve file
 
     NPT_CHECK_WARNING(ServeFile(request, context, response, NPT_FilePath::Create(d->fileRoot, file_path)));
+
     return NPT_SUCCESS;
 
 // cppcheck-suppress unusedLabel
@@ -155,6 +140,7 @@ NPT_Result DLNAMediaServerDelegate::OnBrowseMetadata(PLT_ActionReference&       
                                       << ":: ObjectID not found \""
                                       << object_id << "\"";
         action->SetError(701, "No Such Object.");
+
         return NPT_FAILURE;
     }
 
@@ -248,6 +234,7 @@ NPT_Result DLNAMediaServerDelegate::OnBrowseDirectChildren(PLT_ActionReference& 
                 // Internal URL separator between container path and local file path.
                 // Ex: Linux => "/country/town/Paris/?file:/mnt/data/travel/Paris/eiffeltower.jpg
                 //     Win32 => "/Friends/US/Brown/?file:C:/Users/Foo/My Images/Friends/US/Brown/homer.png
+
                 list << QLatin1String("?file:") + u.toLocalFile();
             }
         }
@@ -336,7 +323,8 @@ NPT_Result DLNAMediaServerDelegate::OnBrowseDirectChildren(PLT_ActionReference& 
     NPT_CHECK_SEVERE(action->SetArgumentValue("NumberReturned", NPT_String::FromInteger(num_returned)));
 
     // 0 means we don't know how many we have but most browsers don't like that!!
-    NPT_CHECK_SEVERE(action->SetArgumentValue("TotalMatches",   NPT_String::FromInteger(total_matches))); 
+
+    NPT_CHECK_SEVERE(action->SetArgumentValue("TotalMatches",   NPT_String::FromInteger(total_matches)));
 
     NPT_CHECK_SEVERE(action->SetArgumentValue("UpdateId",       "1"));
 
@@ -380,6 +368,7 @@ PLT_MediaObject* DLNAMediaServerDelegate::BuildFromFilePath(const NPT_String&   
         {
             // Special case for RAW file where extension need to be patched as JPEG for client renderer,
             // as we provide a JPEG preview.
+
             object->m_Title += ".jpg";
         }
 
@@ -494,7 +483,7 @@ PLT_MediaObject* DLNAMediaServerDelegate::BuildFromFilePath(const NPT_String&   
 
         if (with_count && NPT_SUCCEEDED(NPT_File::GetSize(filepath, count)))
         {
-            ((PLT_MediaContainer*)object)->m_ChildrenCount = (NPT_Int32)count;
+            (static_cast<PLT_MediaContainer*>(object))->m_ChildrenCount = (NPT_Int32)count;
         }
 
         object->m_ObjectClass.type = "object.container.storageFolder";
@@ -508,8 +497,8 @@ PLT_MediaObject* DLNAMediaServerDelegate::BuildFromFilePath(const NPT_String&   
     if (filepath.Compare("/", true) == 0)
     {
         qCDebug(DIGIKAM_MEDIASRV_LOG) << "BuildFromFilePath() :: New item is root";
-        object->m_ParentID = "-1";      // krazy:exclude=doublequote_chars
-        object->m_ObjectID = "0";       // krazy:exclude=doublequote_chars
+        object->m_ParentID = "-1";                                                      // krazy:exclude=doublequote_chars
+        object->m_ObjectID = "0";                                                       // krazy:exclude=doublequote_chars
     }
     else
     {
@@ -517,14 +506,14 @@ PLT_MediaObject* DLNAMediaServerDelegate::BuildFromFilePath(const NPT_String&   
 
         if (filepath.EndsWith("/"))
         {
-            object->m_ParentID = "0";   // krazy:exclude=doublequote_chars
+            object->m_ParentID = "0";                                                   // krazy:exclude=doublequote_chars
         }
         else
         {
             object->m_ParentID = "0" + filepath.Left(filepath.Find("/?file:") + 1);     // krazy:exclude=doublequote_chars
         }
 
-        object->m_ObjectID = "0" + filepath.SubString(0);   // krazy:exclude=doublequote_chars
+        object->m_ObjectID = "0" + filepath.SubString(0);                               // krazy:exclude=doublequote_chars
     }
 
     qCDebug(DIGIKAM_MEDIASRV_LOG) << "BuildFromFilePath() :: New item parent ID:"
@@ -552,7 +541,7 @@ NPT_Result DLNAMediaServerDelegate::GetFilePath(const char* object_id,
         return NPT_ERROR_INVALID_PARAMETERS;
     }
 
-    filepath = "/";     // krazy:exclude=doublequote_chars
+    filepath = "/";                                                                     // krazy:exclude=doublequote_chars
 
     // object id is formatted as 0/<filepath>
 
@@ -560,7 +549,7 @@ NPT_Result DLNAMediaServerDelegate::GetFilePath(const char* object_id,
     {
         int index = 0;
 
-        if (object_id[0] == '0' && object_id[1] == '/')
+        if      ((object_id[0] == '0') && (object_id[1] == '/'))
         {
             index = 2;
         }
@@ -600,6 +589,7 @@ NPT_Result DLNAMediaServerDelegate::OnSearchContainer(PLT_ActionReference&      
 
         qCDebug(DIGIKAM_MEDIASRV_LOG) << "Unsupported or invalid search criteria" << search_criteria;
         action->SetError(708, "Unsupported or invalid search criteria");
+
         return NPT_FAILURE;
     }
 
@@ -613,6 +603,7 @@ NPT_Result DLNAMediaServerDelegate::OnSearchContainer(PLT_ActionReference&      
 
         qCDebug(DIGIKAM_MEDIASRV_LOG) << "ObjectID not found" << object_id;
         action->SetError(710, "No Such Container.");
+
         return NPT_FAILURE;
     }
 
@@ -679,7 +670,7 @@ NPT_Result DLNAMediaServerDelegate::ExtractResourcePath(const NPT_HttpUrl& url,
     NPT_String url_root_encode = NPT_Uri::PercentEncode(d->urlRoot, NPT_Uri::PathCharsToEncode);
     NPT_Ordinal skip           = 0;
 
-    if (uri_path.StartsWith(d->urlRoot))
+    if      (uri_path.StartsWith(d->urlRoot))
     {
         skip = d->urlRoot.GetLength();
     }
@@ -740,6 +731,7 @@ NPT_Result DLNAMediaServerDelegate::ServeFile(const NPT_HttpRequest&        requ
         qCDebug(DIGIKAM_MEDIASRV_LOG) << file_path.GetChars() << "not recognized as an image to stream as preview.";
 
         NPT_CHECK_WARNING(PLT_HttpServer::ServeFile(request, context, response, file_path));
+
         return NPT_SUCCESS;
     }
 
@@ -752,9 +744,11 @@ NPT_Result DLNAMediaServerDelegate::ServeFile(const NPT_HttpRequest&        requ
 
     // prevent hackers from accessing files outside of our root
 
-    if ((file_path.Find("/..") >= 0)  ||
+    if (
+        (file_path.Find("/..") >= 0)  ||
         (file_path.Find("\\..") >= 0) ||
-        NPT_FAILED(NPT_File::GetInfo(file_path, &file_info)))
+        NPT_FAILED(NPT_File::GetInfo(file_path, &file_info))
+       )
     {
         return NPT_ERROR_NO_SUCH_ITEM;
     }
@@ -773,7 +767,7 @@ NPT_Result DLNAMediaServerDelegate::ServeFile(const NPT_HttpRequest&        requ
     {
         date.ToTimeStamp(timestamp);
 
-        NPT_LOG_INFO_5("File %s timestamps: request=%d (%s) vs file=%d (%s)", 
+        NPT_LOG_INFO_5("File %s timestamps: request=%d (%s) vs file=%d (%s)",
                        (const char*)request.GetUrl().GetPath(),
                        (NPT_UInt32)timestamp.ToSeconds(),
                        (const char*)date.ToString(),
@@ -786,6 +780,7 @@ NPT_Result DLNAMediaServerDelegate::ServeFile(const NPT_HttpRequest&        requ
 
             NPT_LOG_FINE_1("Returning 304 for %s", request.GetUrl().GetPath().GetChars());
             response.SetStatus(304, "Not Modified", NPT_HTTP_PROTOCOL_1_1);
+
             return NPT_SUCCESS;
         }
     }
@@ -828,15 +823,6 @@ NPT_String DLNAMediaServerDelegate::BuildResourceUri(const NPT_HttpUrl& base_uri
                                                      const char*        file_path)
 {
     return BuildSafeResourceUri(base_uri, host, file_path);
-}
-
-NPT_Result DLNAMediaServerDelegate::OnUpdateObject(PLT_ActionReference&,
-                                                   const char*,
-                                                   NPT_Map<NPT_String,NPT_String>&,
-                                                   NPT_Map<NPT_String,NPT_String>&,
-                                                   const PLT_HttpRequestContext&)
-{
-    return NPT_SUCCESS;
 }
 
 bool DLNAMediaServerDelegate::ProcessFile(const NPT_String&, const char*)

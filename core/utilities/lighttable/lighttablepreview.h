@@ -6,7 +6,7 @@
  * Date        : 2006-21-12
  * Description : digiKam light table preview item.
  *
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -46,7 +46,7 @@ class LightTablePreview : public ItemPreviewView
 public:
 
     explicit LightTablePreview(QWidget* const parent = nullptr);
-    ~LightTablePreview();
+    ~LightTablePreview()                              override;
 
     void setDragAndDropEnabled(bool b);
     void showDragAndDropMessage();
@@ -57,10 +57,10 @@ Q_SIGNALS:
 
 private:
 
-    void dragMoveEvent(QDragMoveEvent*)   override;
-    void dragEnterEvent(QDragEnterEvent*) override;
-    void dropEvent(QDropEvent*)           override;
-    bool dragEventWrapper(const QMimeData*) const;
+    void dragMoveEvent(QDragMoveEvent*)               override;
+    void dragEnterEvent(QDragEnterEvent*)             override;
+    void dropEvent(QDropEvent*)                       override;
+    bool dragEventWrapper(const QMimeData*)     const;
 };
 
 } // namespace Digikam

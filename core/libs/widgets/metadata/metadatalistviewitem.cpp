@@ -7,7 +7,7 @@
  * Description : a generic list view item widget to
  *               display metadata
  *
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -44,7 +44,7 @@ namespace Digikam
 MetadataListViewItem::MetadataListViewItem(QTreeWidgetItem* const parent, const QString& key,
                                            const QString& title, const QString& value)
     : QTreeWidgetItem(parent),
-      m_key(key)
+      m_key          (key)
 {
     setChildIndicatorPolicy(QTreeWidgetItem::DontShowIndicator);
     setText(0, title);
@@ -67,7 +67,7 @@ MetadataListViewItem::MetadataListViewItem(QTreeWidgetItem* const parent, const 
 MetadataListViewItem::MetadataListViewItem(QTreeWidgetItem* const parent, const QString& key,
                                            const QString& title)
     : QTreeWidgetItem(parent),
-      m_key(key)
+      m_key          (key)
 {
     setChildIndicatorPolicy(QTreeWidgetItem::DontShowIndicator);
     setText(0, title);
@@ -83,17 +83,17 @@ MetadataListViewItem::~MetadataListViewItem()
 {
 }
 
-QString MetadataListViewItem::getKey()
+QString MetadataListViewItem::getKey() const
 {
     return m_key;
 }
 
-QString MetadataListViewItem::getTitle()
+QString MetadataListViewItem::getTitle() const
 {
     return text(0);
 }
 
-QString MetadataListViewItem::getValue()
+QString MetadataListViewItem::getValue() const
 {
     return text(1);
 }

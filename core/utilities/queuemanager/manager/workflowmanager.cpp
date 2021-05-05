@@ -6,7 +6,7 @@
  * Date        : 2012-12-17
  * Description : workflow manager.
  *
- * Copyright (C) 2012-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -48,7 +48,7 @@ public:
 
     explicit Private()
         : modified(false),
-          mutex()
+          mutex   ()
     {
     }
 
@@ -81,7 +81,7 @@ WorkflowManager* WorkflowManager::instance()
 WorkflowManager::WorkflowManager()
     : d(new Private)
 {
-    d->file = QStandardPaths::writableLocation(QStandardPaths::DataLocation) + QLatin1String("/queue.xml");
+    d->file = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QLatin1String("/queue.xml");
 }
 
 WorkflowManager::~WorkflowManager()

@@ -53,7 +53,7 @@ namespace Digikam
 {
 
 AbstractSearchGroupContainer::AbstractSearchGroupContainer(QWidget* const parent)
-    : QWidget(parent),
+    : QWidget     (parent),
       m_groupIndex(0)
 {
 }
@@ -158,9 +158,9 @@ public:
 
     explicit Private()
       : needAnimationForReadIn(false),
-        layout(nullptr),
-        timeline(nullptr),
-        bar(nullptr)
+        layout                (nullptr),
+        timeline              (nullptr),
+        bar                   (nullptr)
     {
     }
 
@@ -501,7 +501,7 @@ QPixmap SearchView::bottomBarPixmap(int w, int h)
 // -------------------------------------------------------------------------
 
 SearchViewBottomBar::SearchViewBottomBar(SearchViewThemedPartsCache* const cache, QWidget* const parent)
-    : QWidget(parent),
+    : QWidget     (parent),
       m_themeCache(cache)
 {
     m_mainLayout      = new QHBoxLayout;

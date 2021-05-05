@@ -6,7 +6,7 @@
  * Date        : 2006-02-23
  * Description : item metadata interface - comments helpers.
  *
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2006-2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  * Copyright (C) 2011      by Leif Huhn <leif at dkstat dot com>
  *
@@ -84,7 +84,7 @@ CaptionsMap DMetadata::getItemComments(const DMetadataSettingsContainer& setting
     bool iptcSupported = hasIptc();
     bool exivSupported = hasExif();
 
-    for (NamespaceEntry entry : settings.getReadMapping(NamespaceEntry::DM_COMMENT_CONTAINER()))
+    foreach (const NamespaceEntry& entry, settings.getReadMapping(NamespaceEntry::DM_COMMENT_CONTAINER()))
     {
         if (entry.isDisabled)
         {
@@ -95,11 +95,11 @@ CaptionsMap DMetadata::getItemComments(const DMetadataSettingsContainer& setting
         const std::string myStr = entry.namespaceName.toStdString();
         const char* nameSpace   = myStr.data();
 
-        switch(entry.subspace)
+        switch (entry.subspace)
         {
             case NamespaceEntry::XMP:
             {
-                switch(entry.specialOpts)
+                switch (entry.specialOpts)
                 {
                     case NamespaceEntry::COMMENT_ALTLANG:
                     {
@@ -141,7 +141,9 @@ CaptionsMap DMetadata::getItemComments(const DMetadataSettingsContainer& setting
                     }
 
                     default:
+                    {
                         break;
+                    }
                 }
 
                 break;
@@ -168,7 +170,9 @@ CaptionsMap DMetadata::getItemComments(const DMetadataSettingsContainer& setting
             }
 
             default:
+            {
                 break;
+            }
         }
 
         if (!commentString.isEmpty() && !commentString.trimmed().isEmpty())
@@ -201,8 +205,9 @@ bool DMetadata::setItemComments(const CaptionsMap& comments, const DMetadataSett
     }
 */
 
-    //qCDebug(DIGIKAM_METAENGINE_LOG) << getFilePath() << " ==> Comment: " << comments;
-
+/*
+    qCDebug(DIGIKAM_METAENGINE_LOG) << getFilePath() << " ==> Comment: " << comments;
+*/
     // In first, set captions properties to digiKam XMP namespace
 
     if (supportXmp())
@@ -237,7 +242,7 @@ bool DMetadata::setItemComments(const CaptionsMap& comments, const DMetadataSett
         toWrite = settings.getWriteMapping(NamespaceEntry::DM_COMMENT_CONTAINER());
     }
 
-    for (NamespaceEntry entry : toWrite)
+    for (const NamespaceEntry& entry : qAsConst(toWrite))
     {
         if (entry.isDisabled)
         {
@@ -251,12 +256,17 @@ bool DMetadata::setItemComments(const CaptionsMap& comments, const DMetadataSett
         {
             case NamespaceEntry::XMP:
             {
+                if (!supportXmp())
+                {
+                    continue;
+                }
+
                 if (entry.namespaceName.contains(QLatin1String("Xmp.")))
                 {
                     removeXmpTag(nameSpace);
                 }
 
-                switch(entry.specialOpts)
+                switch (entry.specialOpts)
                 {
                     case NamespaceEntry::COMMENT_ALTLANG:
                     {
@@ -308,7 +318,9 @@ bool DMetadata::setItemComments(const CaptionsMap& comments, const DMetadataSett
                     }
 
                     default:
+                    {
                         break;
+                    }
                 }
 
                 break;
@@ -342,7 +354,9 @@ bool DMetadata::setItemComments(const CaptionsMap& comments, const DMetadataSett
             }
 
             default:
+            {
                 break;
+            }
         }
     }
 
@@ -405,6 +419,7 @@ CaptionsMap DMetadata::getItemTitles() const
         {
             titlesMap.insert(QLatin1String("x-default"), iptcTitle);
             captionsMap.setData(titlesMap, authorsMap, commonAuthor, datesMap);
+
             return captionsMap;
         }
     }
@@ -505,7 +520,9 @@ MetaEngine::AltLangMap DMetadata::toAltLangMap(const QVariant& var)
         }
 
         default:
+        {
             break;
+        }
     }
 
     return map;

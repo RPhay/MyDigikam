@@ -6,7 +6,7 @@
  * Date        : 2008-09-24
  * Description : DNG save settings widgets
  *
- * Copyright (C) 2008-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2008-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -73,7 +73,7 @@ DNGSettings::DNGSettings(QWidget* const parent)
 {
     setAttribute(Qt::WA_DeleteOnClose);
 
-    const int spacing = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
+    const int spacing                    = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
 
     QGridLayout* const settingsBoxLayout = new QGridLayout(this);
 

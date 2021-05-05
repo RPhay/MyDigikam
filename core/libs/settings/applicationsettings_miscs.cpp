@@ -7,7 +7,7 @@
  * Description : application settings interface
  *
  * Copyright (C) 2003-2004 by Renchi Raju <renchi dot raju at gmail dot com>
- * Copyright (C) 2003-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2003-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2007      by Arnd Baecker <arnd dot baecker at web dot de>
  * Copyright (C) 2014      by Mohamed_Anwer <m_dot_anwer at gmx dot com>
  * Copyright (C) 2014      by Veaceslav Munteanu <veaceslav dot munteanu90 at gmail dot com>
@@ -30,6 +30,26 @@
 
 namespace Digikam
 {
+
+int ApplicationSettings::getUpdateType() const
+{
+    return d->updateType;
+}
+
+void ApplicationSettings::setUpdateType(int type)
+{
+    d->updateType = type;
+}
+
+bool ApplicationSettings::getUpdateWithDebug() const
+{
+    return d->updateWithDebug;
+}
+
+void ApplicationSettings::setUpdateWithDebug(bool dbg)
+{
+    d->updateWithDebug = dbg;
+}
 
 void ApplicationSettings::setCurrentTheme(const QString& theme)
 {
@@ -121,6 +141,16 @@ bool ApplicationSettings::getDrawFramesToGrouped() const
     return d->drawFramesToGrouped;
 }
 
+void ApplicationSettings::setExpandNewCurrentItem(bool val)
+{
+    d->expandNewCurrentItem = val;
+}
+
+bool ApplicationSettings::getExpandNewCurrentItem() const
+{
+    return d->expandNewCurrentItem;
+}
+
 void ApplicationSettings::setScrollItemToCenter(bool val)
 {
     d->scrollItemToCenter = val;
@@ -174,6 +204,16 @@ double ApplicationSettings::getFaceDetectionAccuracy() const
 void ApplicationSettings::setFaceDetectionAccuracy(double value)
 {
     d->faceDetectionAccuracy = value;
+}
+
+bool ApplicationSettings::getFaceDetectionYoloV3() const
+{
+    return d->faceDetectionYoloV3;
+}
+
+void ApplicationSettings::setFaceDetectionYoloV3(bool yolo)
+{
+    d->faceDetectionYoloV3 = yolo;
 }
 
 void ApplicationSettings::setApplicationStyle(const QString& style)
@@ -445,6 +485,22 @@ void ApplicationSettings::setApplicationFont(const QFont& font)
 QFont ApplicationSettings::getApplicationFont() const
 {
     return d->applicationFont;
+}
+
+bool ApplicationSettings::getHelpBoxNotificationSeen() {
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup group      = config->group("Notification Messages");
+    bool value              = group.readEntry("HelpBoxNotifSeen", false);
+
+    return value;
+}
+
+void ApplicationSettings::setHelpBoxNotificationSeen(bool val) {
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup group      = config->group("Notification Messages");
+
+    group.writeEntry("HelpBoxNotifSeen", val);
+    config->sync();
 }
 
 } // namespace Digikam

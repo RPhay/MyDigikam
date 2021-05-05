@@ -7,7 +7,7 @@
  * Description : Loader for thumbnails
  *
  * Copyright (C) 2003-2005 by Renchi Raju <renchi dot raju at gmail dot com>
- * Copyright (C) 2003-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2003-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2006-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  *
  * This program is free software; you can redistribute it
@@ -30,16 +30,18 @@
 
 // Qt includes
 
-#include <QFileInfo>
-#include <QFile>
-#include <QPainter>
-#include <QBuffer>
-#include <QIODevice>
 #include <QUrl>
+#include <QFile>
+#include <QBuffer>
+#include <QPainter>
+#include <QIODevice>
+#include <QFileInfo>
 #include <QUrlQuery>
 #include <QApplication>
 #include <QMimeDatabase>
 #include <QTemporaryFile>
+#include <QScopedPointer>
+#include <QStandardPaths>
 
 // KDE includes
 
@@ -55,6 +57,7 @@
 #include "digikam_debug.h"
 #include "dimg.h"
 #include "dimgloader.h"
+#include "dimgloaderobserver.h"
 #include "dmetadata.h"
 #include "iccmanager.h"
 #include "iccprofile.h"
@@ -81,8 +84,8 @@ class ThumbnailImage
 public:
 
     explicit ThumbnailImage()
+      : exifOrientation(DMetadata::ORIENTATION_UNSPECIFIED)
     {
-        exifOrientation = DMetadata::ORIENTATION_UNSPECIFIED;
     }
 
     bool isNull() const
@@ -103,15 +106,15 @@ class Q_DECL_HIDDEN ThumbnailCreator::Private
 public:
 
     explicit Private()
-      : exifRotate(true),
-        removeAlphaChannel(true),
-        onlyLargeThumbnails(false),
-        thumbnailStorage(ThumbnailCreator::FreeDesktopStandard),
-        infoProvider(nullptr),
-        dbIdForReplacement(-1),
-        thumbnailSize(0),
-        digiKamFingerPrint(QLatin1String("Digikam Thumbnail Generator")), // Used internaly as PNG metadata. Do not use i18n.
-        observer(nullptr)
+      : exifRotate          (true),
+        removeAlphaChannel  (true),
+        onlyLargeThumbnails (false),
+        thumbnailStorage    (ThumbnailCreator::FreeDesktopStandard),
+        infoProvider        (nullptr),
+        dbIdForReplacement  (-1),
+        thumbnailSize       (0),
+        digiKamFingerPrint  (QLatin1String("Digikam Thumbnail Generator")), // Used internaly as PNG metadata. Do not use i18n.
+        observer            (nullptr)
     {
         fastRawSettings.optimizeTimeLoading();
         fastRawSettings.rawPrm.halfSizeColorImage = true;
@@ -133,6 +136,8 @@ public:
     QString                         smallThumbPath;
 
     QString                         digiKamFingerPrint;
+
+    QImage                          alphaImage;
 
     DImgLoaderObserver*             observer;
     DRawDecoding                    rawSettings;

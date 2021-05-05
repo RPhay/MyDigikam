@@ -6,7 +6,7 @@
  * Date        : 2009-07-06
  * Description : metadata template settings panel.
  *
- * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -53,26 +53,26 @@ class Q_DECL_HIDDEN TemplatePanel::Private
 public:
 
     explicit Private()
-      : authorsEdit(nullptr),
-        authorsPositionEdit(nullptr),
-        creditEdit(nullptr),
-        sourceEdit(nullptr),
-        instructionsEdit(nullptr),
-        copyrightEdit(nullptr),
-        rightUsageEdit(nullptr),
-        locationCountryCodeEdit(nullptr),
-        locationProvinceStateEdit(nullptr),
-        locationCityEdit(nullptr),
-        locationSublocationEdit(nullptr),
-        contactCityEdit(nullptr),
-        contactCountryEdit(nullptr),
-        contactAddressEdit(nullptr),
-        contactPostalCodeEdit(nullptr),
-        contactProvinceStateEdit(nullptr),
-        contactEmailEdit(nullptr),
-        contactPhoneEdit(nullptr),
-        contactWebUrlEdit(nullptr),
-        subjects(nullptr)
+      : authorsEdit                 (nullptr),
+        authorsPositionEdit         (nullptr),
+        creditEdit                  (nullptr),
+        sourceEdit                  (nullptr),
+        instructionsEdit            (nullptr),
+        copyrightEdit               (nullptr),
+        rightUsageEdit              (nullptr),
+        locationCountryCodeEdit     (nullptr),
+        locationProvinceStateEdit   (nullptr),
+        locationCityEdit            (nullptr),
+        locationSublocationEdit     (nullptr),
+        contactCityEdit             (nullptr),
+        contactCountryEdit          (nullptr),
+        contactAddressEdit          (nullptr),
+        contactPostalCodeEdit       (nullptr),
+        contactProvinceStateEdit    (nullptr),
+        contactEmailEdit            (nullptr),
+        contactPhoneEdit            (nullptr),
+        contactWebUrlEdit           (nullptr),
+        subjects                    (nullptr)
     {
     }
 
@@ -108,7 +108,7 @@ public:
 
 TemplatePanel::TemplatePanel(QWidget* const parent)
     : QTabWidget(parent),
-      d(new Private)
+      d         (new Private)
 {
     // -- Rights Template information panel -------------------------------------------------------------
 
@@ -125,7 +125,7 @@ TemplatePanel::TemplatePanel(QWidget* const parent)
                                       "the photographer needs to be protected) the name of a company or organization can also be used. "
                                       "Once saved, this field should not be changed by anyone.</p>"
                                       "<p>To enter more than one name, use <b>semi-colons as separators</b>.</p>"
-                                      "<p>With IPTC, this field is limited to 32 ASCII characters.</p>"));
+                                      "<p>With IPTC, this field is limited to 32 characters.</p>"));
 
     // --------------------------------------------------------
 
@@ -138,7 +138,7 @@ TemplatePanel::TemplatePanel(QWidget* const parent)
                                          "titles such as: Staff Photographer, Freelance Photographer, or Independent Commercial "
                                          "Photographer. Since this is a qualifier for the Author field, the Author field must also "
                                          "be filled out.</p>"
-                                         "<p>With IPTC, this field is limited to 32 ASCII characters.</p>"));
+                                         "<p>With IPTC, this field is limited to 32 characters.</p>"));
 
     // --------------------------------------------------------
 
@@ -152,7 +152,7 @@ TemplatePanel::TemplatePanel(QWidget* const parent)
                                      "such as Reuters or the Associated Press, these organizations could be listed here as they are "
                                      "\"providing\" the image for use by others. If the image is a stock photograph, then the group "
                                      "(agency) involved in supplying the image should be listed here.</p>"
-                                     "<p>With IPTC, this field is limited to 32 ASCII characters.</p>"));
+                                     "<p>With IPTC, this field is limited to 32 characters.</p>"));
 
     // --------------------------------------------------------
 
@@ -175,7 +175,7 @@ TemplatePanel::TemplatePanel(QWidget* const parent)
                                         "(a) the word, Copyright; (b) year of the first publication; and (c) name of the author. "
                                         "You may also wish to include the phrase \"all rights reserved\".</p>"
                                         "<p>With XMP, you can include more than one copyright string using different languages.</p>"
-                                        "<p>With IPTC, this field is limited to 128 ASCII characters.</p>"));
+                                        "<p>With IPTC, this field is limited to 128 characters.</p>"));
 
     // --------------------------------------------------------
 
@@ -191,7 +191,7 @@ TemplatePanel::TemplatePanel(QWidget* const parent)
 
     // --------------------------------------------------------
 
-    QLabel* const label6 = new QLabel(i18n("Source:"), page1);
+    QLabel* const label6 = new QLabel(i18nc("@label: template properties", "Source:"), page1);
     d->sourceEdit        = new QLineEdit(page1);
     d->sourceEdit->setClearButtonEnabled(true);
     d->sourceEdit->setPlaceholderText(i18n("Enter the original owner of the photograph here."));
@@ -204,7 +204,7 @@ TemplatePanel::TemplatePanel(QWidget* const parent)
                                      "\"/\" with a blank space. Use the form \"photographer / agency\" rather than "
                                      "\"photographer/agency.\" Source may also be different from Creator and from the names "
                                      "listed in the Copyright Notice.</p>"
-                                     "<p>With IPTC, this field is limited to 32 ASCII characters.</p>"));
+                                     "<p>With IPTC, this field is limited to 32 characters.</p>"));
 
     // --------------------------------------------------------
 
@@ -215,7 +215,7 @@ TemplatePanel::TemplatePanel(QWidget* const parent)
     label7->setBuddy(d->instructionsEdit);
     d->instructionsEdit->setWhatsThis(i18n("<p>The Instructions field should be used to list editorial "
                                            "instructions concerning the use of photograph.</p>"
-                                           "<p>With IPTC, this field is limited to 256 ASCII characters.</p>"));
+                                           "<p>With IPTC, this field is limited to 256 characters.</p>"));
 
     // --------------------------------------------------------
 
@@ -330,7 +330,7 @@ TemplatePanel::TemplatePanel(QWidget* const parent)
 
     // --------------------------------------------------------
 
-    QLabel* const label15 = new QLabel(i18n("Address:"), page3);
+    QLabel* const label15 = new QLabel(i18nc("@label: template properties", "Address:"), page3);
     d->contactAddressEdit = new QLineEdit(page3);
     d->contactAddressEdit->setClearButtonEnabled(true);
     d->contactAddressEdit->setPlaceholderText(i18n("Enter the address of the lead author here."));
@@ -360,7 +360,7 @@ TemplatePanel::TemplatePanel(QWidget* const parent)
 
     // --------------------------------------------------------
 
-    QLabel* const label18 = new QLabel(i18n("Email:"), page3);
+    QLabel* const label18 = new QLabel(i18nc("@label: template properties", "Email:"), page3);
     d->contactEmailEdit   = new QLineEdit(page3);
     d->contactEmailEdit->setClearButtonEnabled(true);
     d->contactEmailEdit->setPlaceholderText(i18n("Enter the email of the lead author here."));

@@ -7,7 +7,7 @@
  * Description : A tool for importing images via KIO
  *
  * Copyright (C) 2009      by Johannes Wienke <languitar at semipol dot de>
- * Copyright (C) 2011-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2011-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -60,7 +60,7 @@ public:
 
 FTImportWindow::FTImportWindow(DInfoInterface* const iface, QWidget* const /*parent*/)
     : WSToolDialog(nullptr, QLatin1String("Kio Import Dialog")),
-      d(new Private)
+      d           (new Private)
 {
     d->iface        = iface;
     d->importWidget = new FTImportWidget(this, d->iface);
@@ -104,6 +104,7 @@ void FTImportWindow::slotImport()
         qCDebug(DIGIKAM_WEBSERVICES_LOG) << "starting to import urls: " << d->importWidget->sourceUrls();
 
         // start copying and react on signals
+
         setEnabled(false);
 
         KIO::CopyJob* const copyJob = KIO::copy(d->importWidget->imagesList()->imageUrls(), url);
@@ -155,7 +156,7 @@ void FTImportWindow::slotSourceAndTargetUpdated()
     bool hasTarget      = !d->iface->uploadUrl().isEmpty();
 
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "switching import button activity with: hasUrlToImport = "
-                                 << hasUrlToImport << ", hasTarget = " << hasTarget;
+                                     << hasUrlToImport << ", hasTarget = " << hasTarget;
 
     startButton()->setEnabled(hasUrlToImport && hasTarget);
 }

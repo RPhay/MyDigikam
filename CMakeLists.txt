@@ -4,34 +4,117 @@
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
 
-project(digikam-software-collection)
-
-message(STATUS "----------------------------------------------------------------------------------")
-message(STATUS "Starting CMake configuration for: ${PROJECT_NAME}")
-
-set(CMAKE_MIN_VERSION   "3.0.0")
-set(ECM_MIN_VERSION     "1.5.0")
+set(CMAKE_MIN_VERSION   "3.3.2")
+set(ECM_MIN_VERSION     "5.5.0")
 
 cmake_minimum_required(VERSION ${CMAKE_MIN_VERSION})
 
-############## ECM setup #################################################################################################################
+execute_process(COMMAND ${CMAKE_COMMAND} --version OUTPUT_VARIABLE VERSION_CMAKE_INFO)
+message(STATUS "CMake version: ${VERSION_CMAKE_INFO}")
+
+# ==============================================================================
+# Information to update before to release this package.
+
+# digiKam version
+set(DIGIKAM_MAJOR_VERSION "7")
+set(DIGIKAM_MINOR_VERSION "3")
+set(DIGIKAM_PATCH_VERSION "0")
+
+# Suffix to add at end of version string. Usual values are:
+# "-git"   : alpha code unstable from git. Do not use in production
+# "-beta1" : beta1 release.
+# "-beta2" : beta2 release.
+# "-beta3" : beta3 release.
+# "-rc"    : release candidate.
+# ""       : final release. Can be used in production.
+set(DIGIKAM_SUFFIX_VERSION "")
+
+# ==============================================================================
+# Set env. variables accordingly.
+
+# NOTE: This string is used to set libdigikamcore and libdigikamdatabase SO version ID
+set(DIGIKAM_VERSION_SHORT
+    "${DIGIKAM_MAJOR_VERSION}.${DIGIKAM_MINOR_VERSION}.${DIGIKAM_PATCH_VERSION}"
+)
+
+set(DIGIKAM_VERSION_STRING
+    "${DIGIKAM_VERSION_SHORT}${DIGIKAM_SUFFIX_VERSION}"
+)
+
+# Core Database XML version
+# We must set this variable here at top level because it is used in both
+# libs/database/core and data/database
+# Version history:
+# 1 : Original database XML file, published in production.
+# 2 : 08-08-2014 : Fix Images.names field size (see bug #327646).
+# 3 : 05/11/2015 : Add Face DB schema.
+set(DBCORECONFIG_XML_VERSION "3")
+
+# ==============================================================================
+
+project(digikam
+        VERSION ${DIGIKAM_VERSION_SHORT}
+        LANGUAGES CXX C)
+
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+message(STATUS "----------------------------------------------------------------------------------")
+message(STATUS "Starting CMake configuration for ${PROJECT_NAME}")
+message(STATUS "")
+
+### ECM setup #########################################################################################################
 
 find_package(ECM ${ECM_MIN_VERSION} CONFIG REQUIRED)
-set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH})
+set(CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/core/cmake/modules ${ECM_MODULE_PATH})
 
+# Cmake macros
+include(CMakePackageConfigHelpers)
+include(GenerateExportHeader)
+include(CheckFunctionExists)
+include(FeatureSummary)
+
+# ECM macros
+include(ECMOptionalAddSubdirectory)
+include(ECMMarkNonGuiExecutable)
 include(ECMGenerateHeaders)
 include(ECMGeneratePriFile)
 include(ECMSetupVersion)
-include(ECMMarkNonGuiExecutable)
-include(ECMOptionalAddSubdirectory)
+include(ECMInstallIcons)
+include(ECMAddAppIcon)
+include(ECMPoQmTools)
+include(ECMAddTests)
+include(ECMMarkAsTest)
+
+# KF5 Framework macros
 include(KDEInstallDirs)
 include(KDECMakeSettings)
-include(KDEFrameworkCompilerSettings)
-include(CMakePackageConfigHelpers)
-include(GenerateExportHeader)
-include(FeatureSummary)
+include(KDECompilerSettings)
 
-# COMPILATION OPTIONS MANAGEMENT ###########################################################################################################
+# Local macros
+include(MacroUtils)
+include(MacroCompiler)
+include(MacroOpenCV)
+include(MacroJPEG)
+include(MacroBoolTo01)
+
+#######################################################################################################################
+
+APPLY_COMMON_POLICIES()
+
+set(CMAKE_POSITION_INDEPENDENT_CODE ON)
+set(CMAKE_AUTOMOC ON)
+#set(CMAKE_AUTOUIC ON)
+#set(CMAKE_AUTORCC ON)
+
+if(MSVC)
+    set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
+endif()
+
+set_property(GLOBAL PROPERTY USE_FOLDERS ON)
+set_property(GLOBAL PROPERTY AUTOGEN_TARGETS_FOLDER "Generated")
+
+### COMPILATION OPTIONS MANAGEMENT ####################################################################################
 
 # doc and translations options
 
@@ -41,7 +124,7 @@ option(DIGIKAMSC_COMPILE_PO              "Build translations files (default=ON)"
 option(DIGIKAMSC_COMPILE_DOC             "Build handbook files (default=ON)"                                                      ON)
 option(DIGIKAMSC_COMPILE_DIGIKAM         "Build digiKam core (default=ON)"                                                        ON)
 
-###########################################################################################################################################
+#######################################################################################################################
 
 if(DIGIKAMSC_CHECKOUT_PO OR DIGIKAMSC_CHECKOUT_DOC)
 
@@ -75,7 +158,7 @@ if(DIGIKAMSC_CHECKOUT_PO OR DIGIKAMSC_CHECKOUT_DOC)
 
     else()
 
-        message(STATUS "Could not find Ruby or Subversion to extract translation files")
+        message(FATAL_ERROR "Could not find Ruby or Subversion to extract translation files")
 
     endif()
 
@@ -115,20 +198,21 @@ if(BUILD_TESTING)
     include(CTest)
 endif()
 
-############################################################################################################################################
+######################################################################################################################
 
 message(STATUS "----------------------------------------------------------------------------------")
-message(STATUS "Compilation configuration for: ${PROJECT_NAME}")
+message(STATUS "Top level compilation configuration for ${PROJECT_NAME}")
+message(STATUS "")
 
 if(DIGIKAMSC_COMPILE_DIGIKAM)
     if(NOT EXISTS ${CMAKE_SOURCE_DIR}/core)
-        message(STATUS "digiKam core will be compiled.................. NO (source code not available)")
+        message(STATUS "${PROJECT_NAME} will be compiled....................... NO (source code not available)")
         set (DIGIKAMSC_COMPILE_DIGIKAM OFF)
     else()
-        message(STATUS "digiKam core will be compiled.................. YES")
+        message(STATUS "${PROJECT_NAME} will be compiled....................... YES")
     endif()
 else()
-    message(STATUS     "digiKam core will be compiled.................. NO")
+    message(STATUS     "${PROJECT_NAME} will be compiled....................... NO")
 endif()
 
 if(DIGIKAMSC_CHECKOUT_PO)
@@ -161,7 +245,7 @@ else()
     message(STATUS "Tests code will be compiled.................... NO")
 endif()
 
-#############################################################################################
+######################################################################################################################
 
 if(DIGIKAMSC_COMPILE_DIGIKAM)
     add_subdirectory(core)

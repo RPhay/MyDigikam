@@ -7,7 +7,7 @@
  * Description : Metadata handling
  *
  * Copyright (C) 2007-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2007-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2007-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -97,7 +97,8 @@ public:
         WRITE_RATING    = 32,
         WRITE_TEMPLATE  = 64,
         WRITE_TAGS      = 128,
-        WRITE_ALL       = 255
+        WRITE_POSITION  = 256,
+        WRITE_ALL       = 511
     };
     Q_DECLARE_FLAGS(WriteComponent, WriteComponents)
 
@@ -105,20 +106,9 @@ public:
 
     /**
      * Constructs a MetadataHub.
-     * @param dbmode Determines if the database may be accessed or not. See the enum description above.
      */
     MetadataHub();
-    virtual ~MetadataHub();
-
-    /// Copies by value - no sharing involved.
-    MetadataHub& operator=(const MetadataHub&);
-    MetadataHub(const MetadataHub&);
-
-    /**
-     * Creates a copy (as always, by value) of this hub.
-     * Shall be reimplemented by subclasses to return an object of the correct type.
-     */
-    virtual MetadataHub* clone() const;
+    ~MetadataHub();
 
     void reset();
 
@@ -133,7 +123,7 @@ public:
     void load(const ItemInfo& info);
 
 //    /**
-//     * Add metadata information from the DMetadata object
+//     * Add metadata information from the meta engine object
 //     */
 //    void load(const DMetadata& metadata);
 
@@ -154,12 +144,14 @@ public:
      * @param settings
      * @return true           - if everything is successful
      */
-    bool writeToMetadata(const ItemInfo& info, WriteComponent writeMode = WRITE_ALL,
-               bool ignoreLazySync = false, const MetaEngineSettingsContainer& settings = MetaEngineSettings::instance()->settings());
+    bool writeToMetadata(const ItemInfo& info,
+                         WriteComponent writeMode = WRITE_ALL,
+                         bool ignoreLazySync = false,
+                         const MetaEngineSettingsContainer& settings = MetaEngineSettings::instance()->settings());
 
 
     /**
-     * Constructs a DMetadata object for given filePath,
+     * Constructs a meta engine object for given filePath,
      * calls the above method, writes the changes out to the file,
      * and notifies the ItemAttributesWatch.
      * WARNING: Do not use this method when multiple image infos are loaded
@@ -167,29 +159,34 @@ public:
      *          Use writeToMetadata(Image info ...) instead
      * @return Returns if the file has been touched
      */
-    bool write(const QString& filePath, WriteComponent writeMode = WRITE_ALL,
-               bool ignoreLazySync = false, const MetaEngineSettingsContainer& settings = MetaEngineSettings::instance()->settings());
+    bool write(const QString& filePath,
+               WriteComponent writeMode = WRITE_ALL,
+               bool ignoreLazySync = false,
+               const MetaEngineSettingsContainer& settings = MetaEngineSettings::instance()->settings());
 
     /**
-     * Constructs a DMetadata object from the metadata stored in the given DImg object,
+     * Constructs a meta engine object from the metadata stored in the given DImg object,
      * calls the above method, and changes the stored metadata in the DImg object.
      * @return Returns if the DImg object has been touched
      */
-    bool write(DImg& image, WriteComponent writeMode = WRITE_ALL,
-               bool ignoreLazySync = false, const MetaEngineSettingsContainer& settings = MetaEngineSettings::instance()->settings());
+    bool write(DImg& image,
+               WriteComponent writeMode = WRITE_ALL,
+               bool ignoreLazySync = false,
+               const MetaEngineSettingsContainer& settings = MetaEngineSettings::instance()->settings());
 
     /**
      * Will write only Tags to image. Used by TagsManager to write tags to image
      * Other metadata are not updated.
      * @return if tags were successfully written.
      */
-    bool writeTags(const QString& filePath, WriteComponent writeMode = WRITE_ALL,
+    bool writeTags(const QString& filePath,
+                   WriteComponent writeMode = WRITE_ALL,
                    const MetaEngineSettingsContainer& settings = MetaEngineSettings::instance()->settings());
 
     /**
      * @brief writeTags - used to deduplicate code from writeTags and usual write, all write to tags
      *                    operations must be done here
-     * @param metadata  - DMetadata object that apply changes
+     * @param metadata  - meta engine object that apply changes
      * @param saveTags  - save switch
      * @return          - if tags were successfully set
      */
@@ -215,7 +212,8 @@ public:
      * @param filePath     - path to file to add comments, tags and rating
      * @param settings     - metadata settings to be set
      */
-    void writeToBaloo(const QString& filePath, const MetaEngineSettingsContainer& settings = MetaEngineSettings::instance()->settings());
+    void writeToBaloo(const QString& filePath,
+                      const MetaEngineSettingsContainer& settings = MetaEngineSettings::instance()->settings());
 
 
     // --------------------------------------------------
@@ -243,7 +241,7 @@ protected:
 
     /**
      * Applies the set of metadata contained in this MetadataHub
-     * to the given DMetadata object.
+     * to the given meta engine object.
      * The MetaEngineSettingsContainer determine whether data is actually
      * set or not.
      * The following metadata fields may be set (depending on settings):
@@ -260,23 +258,34 @@ protected:
      * metadata field is not touched.
      * @return Returns true if the metadata object has been touched
      */
-    bool write(DMetadata& metadata, WriteComponent writeMode = WRITE_ALL,
+    bool write(DMetadata& metadata,
+               WriteComponent writeMode = WRITE_ALL,
                const MetaEngineSettingsContainer& settings = MetaEngineSettings::instance()->settings());
 
     void load(const QDateTime& dateTime,
-              const CaptionsMap& titles, const CaptionsMap& comment,
+              const CaptionsMap& titles,
+              const CaptionsMap& comment,
               int colorLabel, int pickLabel,
               int rating, const Template& t);
+
     void loadTags(const QList<int>& loadedTagIds);
     void loadTags(const QStringList& loadedTagPaths);
     void notifyTagDeleted(int id);
 
-    virtual void applyChangeNotifications();
+    void applyChangeNotifications();
+
+private:
+
+    bool writeFaceTagsMap(DMetadata& metadata, bool saveFaces);
 
 private:
 
     class Private;
     Private* const d;
+
+private:
+
+    Q_DISABLE_COPY(MetadataHub)
 };
 
 } // namespace Digikam

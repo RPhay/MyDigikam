@@ -6,7 +6,7 @@
  * Date        : 2007-10-16
  * Description : XMP keywords settings page.
  *
- * Copyright (C) 2007-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2007-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -227,9 +227,9 @@ void XMPKeywords::slotAddKeyword()
 void XMPKeywords::readMetadata(QByteArray& xmpData)
 {
     blockSignals(true);
-    DMetadata meta;
-    meta.setXmp(xmpData);
-    d->oldKeywords = meta.getXmpKeywords();
+    QScopedPointer<DMetadata> meta(new DMetadata);
+    meta->setXmp(xmpData);
+    d->oldKeywords = meta->getXmpKeywords();
 
     d->keywordsBox->clear();
     d->keywordsCheck->setChecked(false);
@@ -250,8 +250,8 @@ void XMPKeywords::readMetadata(QByteArray& xmpData)
 
 void XMPKeywords::applyMetadata(QByteArray& xmpData)
 {
-    DMetadata meta;
-    meta.setXmp(xmpData);
+    QScopedPointer<DMetadata> meta(new DMetadata);
+    meta->setXmp(xmpData);
     QStringList newKeywords;
 
     for (int i = 0 ; i < d->keywordsBox->count(); ++i)
@@ -261,13 +261,13 @@ void XMPKeywords::applyMetadata(QByteArray& xmpData)
     }
 
     // We remove in first all existing keywords.
-    meta.removeXmpTag("Xmp.dc.subject");
+    meta->removeXmpTag("Xmp.dc.subject");
 
     // And add new list if necessary.
     if (d->keywordsCheck->isChecked())
-        meta.setXmpKeywords(newKeywords);
+        meta->setXmpKeywords(newKeywords);
 
-    xmpData = meta.getXmp();
+    xmpData = meta->getXmp();
 }
 
 } // namespace DigikamGenericMetadataEditPlugin

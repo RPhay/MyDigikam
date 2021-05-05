@@ -6,7 +6,7 @@
  * Date        : 2007-12-03
  * Description : Greycstoration interface.
  *
- * Copyright (C) 2007-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2007-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2010      by Martin Klapetek <martin dot klapetek at gmail dot com>
  *
  * This program is free software; you can redistribute it
@@ -147,6 +147,7 @@ public:
 
 class DIGIKAM_EXPORT GreycstorationFilter : public DImgThreadedFilter
 {
+    Q_OBJECT
 
 public:
 
@@ -165,54 +166,54 @@ public:
      * you need to call in order: setSettings(), setMode(), optionally setInPaintingMask(),
      * setOriginalImage(), and necessary setup() at end.
      */
-    explicit GreycstorationFilter(QObject* const parent=nullptr);
+    explicit GreycstorationFilter(QObject* const parent = nullptr);
 
     /**
      * Contructor with all arguments. Ready to use.
      */
     GreycstorationFilter(DImg* const orgImage,
                          const GreycstorationContainer& settings,
-                         int mode=Restore,
-                         int newWidth=0, int newHeight=0,
-                         const QImage& inPaintingMask=QImage(),
-                         QObject* const parent=nullptr);
+                         int mode = Restore,
+                         int newWidth = 0, int newHeight = 0,
+                         const QImage& inPaintingMask = QImage(),
+                         QObject* const parent = nullptr);
 
-    ~GreycstorationFilter();
+    ~GreycstorationFilter()                                   override;
 
-    void setMode(int mode, int newWidth=0, int newHeight=0);
+    void setMode(int mode, int newWidth = 0, int newHeight = 0);
     void setSettings(const GreycstorationContainer& settings);
     void setInPaintingMask(const QImage& inPaintingMask);
 
     void setup();
 
-    virtual void cancelFilter() override;
+    void cancelFilter() override;
 
     static QString cimgVersionString();
 
-    static QString          FilterIdentifier()
+    static QString FilterIdentifier()
     {
         return QLatin1String("digikam:GreycstorationFilter");
     }
 
-    static QString          DisplayableName();
+    static QString DisplayableName();
 
-    static QList<int>       SupportedVersions()
+    static QList<int> SupportedVersions()
     {
         return QList<int>() << 1;
     }
 
-    static int              CurrentVersion()
+    static int CurrentVersion()
     {
         return 1;
     }
 
-    virtual QString         filterIdentifier()                          const override
+    QString filterIdentifier()                          const override
     {
         return FilterIdentifier();
     }
 
-    virtual FilterAction    filterAction()                                    override;
-    void                    readParameters(const FilterAction& action)        override;
+    FilterAction filterAction()                               override;
+    void readParameters(const FilterAction& action)           override;
 
 private:
 
@@ -223,8 +224,8 @@ private:
     void simpleResize();
     void iterationLoop(uint iter);
 
-    virtual void initFilter()                                                 override;
-    virtual void filterImage()                                                override;
+    void initFilter()                                         override;
+    void filterImage()                                        override;
 
 private:
 

@@ -6,7 +6,7 @@
  * date        : 2006-09-13
  * Description : Raw Decoder settings widgets
  *
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2006-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  * Copyright (C) 2007-2008 by Guillaume Castagnino <casta at xwing dot info>
  *
@@ -90,51 +90,51 @@ class Q_DECL_HIDDEN DRawDecoderWidget::Private
 public:
 
     explicit Private()
-      : demosaicingSettings(nullptr),
-        whiteBalanceSettings(nullptr),
-        correctionsSettings(nullptr),
-        colormanSettings(nullptr),
-        whiteBalanceLabel(nullptr),
-        customWhiteBalanceLabel(nullptr),
-        customWhiteBalanceGreenLabel(nullptr),
-        brightnessLabel   (nullptr),
-        RAWQualityLabel(nullptr),
-        NRLabel1(nullptr),
-        unclipColorLabel(nullptr),
-        reconstructLabel(nullptr),
-        inputColorSpaceLabel(nullptr),
-        outputColorSpaceLabel(nullptr),
-        medianFilterPassesLabel(nullptr),
-        noiseReductionLabel(nullptr),
-        expoCorrectionShiftLabel(nullptr),
-        expoCorrectionHighlightLabel(nullptr),
-        blackPointCheckBox(nullptr),
-        whitePointCheckBox(nullptr),
-        sixteenBitsImage  (nullptr),
-        autoBrightnessBox (nullptr),
-        fourColorCheckBox (nullptr),
-        dontStretchPixelsCheckBox(nullptr),
-        fixColorsHighlightsBox(nullptr),
-        refineInterpolationBox(nullptr),
-        expoCorrectionBox(nullptr),
-        inIccUrlEdit(nullptr),
-        outIccUrlEdit(nullptr),
-        noiseReductionComboBox(nullptr),
-        whiteBalanceComboBox(nullptr),
-        RAWQualityComboBox(nullptr),
-        unclipColorComboBox(nullptr),
-        inputColorSpaceComboBox(nullptr),
-        outputColorSpaceComboBox(nullptr),
-        customWhiteBalanceSpinBox(nullptr),
-        reconstructSpinBox(nullptr),
-        blackPointSpinBox (nullptr),
-        whitePointSpinBox (nullptr),
-        NRSpinBox1(nullptr),
-        medianFilterPassesSpinBox(nullptr),
-        customWhiteBalanceGreenSpinBox(nullptr),
-        brightnessSpinBox (nullptr),
-        expoCorrectionShiftSpinBox(nullptr),
-        expoCorrectionHighlightSpinBox(nullptr)
+      : demosaicingSettings             (nullptr),
+        whiteBalanceSettings            (nullptr),
+        correctionsSettings             (nullptr),
+        colormanSettings                (nullptr),
+        whiteBalanceLabel               (nullptr),
+        customWhiteBalanceLabel         (nullptr),
+        customWhiteBalanceGreenLabel    (nullptr),
+        brightnessLabel                 (nullptr),
+        RAWQualityLabel                 (nullptr),
+        NRLabel1                        (nullptr),
+        unclipColorLabel                (nullptr),
+        reconstructLabel                (nullptr),
+        inputColorSpaceLabel            (nullptr),
+        outputColorSpaceLabel           (nullptr),
+        medianFilterPassesLabel         (nullptr),
+        noiseReductionLabel             (nullptr),
+        expoCorrectionShiftLabel        (nullptr),
+        expoCorrectionHighlightLabel    (nullptr),
+        blackPointCheckBox              (nullptr),
+        whitePointCheckBox              (nullptr),
+        sixteenBitsImage                (nullptr),
+        autoBrightnessBox               (nullptr),
+        fourColorCheckBox               (nullptr),
+        dontStretchPixelsCheckBox       (nullptr),
+        fixColorsHighlightsBox          (nullptr),
+        refineInterpolationBox          (nullptr),
+        expoCorrectionBox               (nullptr),
+        inIccUrlEdit                    (nullptr),
+        outIccUrlEdit                   (nullptr),
+        noiseReductionComboBox          (nullptr),
+        whiteBalanceComboBox            (nullptr),
+        RAWQualityComboBox              (nullptr),
+        unclipColorComboBox             (nullptr),
+        inputColorSpaceComboBox         (nullptr),
+        outputColorSpaceComboBox        (nullptr),
+        customWhiteBalanceSpinBox       (nullptr),
+        reconstructSpinBox              (nullptr),
+        blackPointSpinBox               (nullptr),
+        whitePointSpinBox               (nullptr),
+        NRSpinBox1                      (nullptr),
+        medianFilterPassesSpinBox       (nullptr),
+        customWhiteBalanceGreenSpinBox  (nullptr),
+        brightnessSpinBox               (nullptr),
+        expoCorrectionShiftSpinBox      (nullptr),
+        expoCorrectionHighlightSpinBox  (nullptr)
     {
     }
 
@@ -213,7 +213,7 @@ public:
 
 DRawDecoderWidget::DRawDecoderWidget(QWidget* const parent, int advSettings)
     : DExpanderBox(parent),
-      d(new Private)
+      d           (new Private)
 {
     setup(advSettings);
 }
@@ -269,7 +269,7 @@ void DRawDecoderWidget::setup(int advSettings)
     dcrawVersion->setTextFormat(Qt::RichText);
     dcrawVersion->setTextInteractionFlags(Qt::LinksAccessibleByMouse);
     dcrawVersion->setText(QString::fromLatin1("<a href=\"%1\">%2</a>")
-                          .arg(QLatin1String("http://www.libraw.org"))
+                          .arg(QLatin1String("https://www.libraw.org"))
                           .arg(QString::fromLatin1("libraw %1").arg(DRawDecoder::librawVersion())));
 
     demosaicingLayout->addWidget(dcrawVersion, 0, 2, 1, 1);
@@ -608,7 +608,7 @@ void DRawDecoderWidget::setup(int advSettings)
 
     d->inIccUrlEdit = new DFileSelector(d->colormanSettings);
     d->inIccUrlEdit->setFileDlgMode(QFileDialog::ExistingFile);
-    d->inIccUrlEdit->setFileDlgFilter(i18n("ICC Files (*.icc *.icm)"));
+    d->inIccUrlEdit->setFileDlgFilter(i18nc("@info: open file filters", "ICC Files (*.icc *.icm)"));
 
     d->outputColorSpaceLabel    = new QLabel(i18nc("@label:listbox", "Workspace:"), d->colormanSettings);
     d->outputColorSpaceComboBox = new DComboBox( d->colormanSettings );
@@ -642,7 +642,7 @@ void DRawDecoderWidget::setup(int advSettings)
 
     d->outIccUrlEdit = new DFileSelector(d->colormanSettings);
     d->outIccUrlEdit->setFileDlgMode(QFileDialog::ExistingFile);
-    d->outIccUrlEdit->setFileDlgFilter(i18n("ICC Files (*.icc *.icm)"));
+    d->outIccUrlEdit->setFileDlgFilter(i18nc("@info: open file filters", "ICC Files (*.icc *.icm)"));
 
     colormanLayout->addWidget(d->inputColorSpaceLabel,     0, 0, 1, 1);
     colormanLayout->addWidget(d->inputColorSpaceComboBox,  0, 1, 1, 2);
@@ -855,13 +855,17 @@ void DRawDecoderWidget::slotNoiseReductionChanged(int item)
     {
         case DRawDecoderSettings::WAVELETSNR:
         case DRawDecoderSettings::FBDDNR:
+        {
             // NOTE : no ops
             break;
+        }
 
         default:
+        {
             d->NRSpinBox1->setEnabled(false);
             d->NRLabel1->setEnabled(false);
             break;
+        }
     }
 
     emit signalSettingsChanged();
@@ -880,6 +884,7 @@ void DRawDecoderWidget::slotExposureCorrectionToggled(bool b)
 void DRawDecoderWidget::slotExpoCorrectionShiftChanged(double ev)
 {
     // Only enable Highlight exposure correction if Shift correction is >= 1.0, else this settings do not take effect.
+
     bool b = (ev >= 1.0);
 
     d->expoCorrectionHighlightLabel->setEnabled(b);
@@ -903,16 +908,20 @@ void DRawDecoderWidget::slotRAWQualityChanged(int quality)
     switch (quality)
     {
         case DRawDecoderSettings::DCB:
+        {
             d->medianFilterPassesLabel->setEnabled(true);
             d->medianFilterPassesSpinBox->setEnabled(true);
             d->refineInterpolationBox->setEnabled(true);
             break;
+        }
 
         default: // BILINEAR, VNG, PPG, AHD
+        {
             d->medianFilterPassesLabel->setEnabled(true);
             d->medianFilterPassesSpinBox->setEnabled(true);
             d->refineInterpolationBox->setEnabled(false);
             break;
+        }
     }
 
     emit signalSettingsChanged();
@@ -936,20 +945,28 @@ void DRawDecoderWidget::setSettings(const DRawDecoderSettings& settings)
     switch (settings.whiteBalance)
     {
         case DRawDecoderSettings::CAMERA:
+        {
             d->whiteBalanceComboBox->setCurrentIndex(1);
             break;
+        }
 
         case DRawDecoderSettings::AUTO:
+        {
             d->whiteBalanceComboBox->setCurrentIndex(2);
             break;
+        }
 
         case DRawDecoderSettings::CUSTOM:
+        {
             d->whiteBalanceComboBox->setCurrentIndex(3);
             break;
+        }
 
         default:
+        {
             d->whiteBalanceComboBox->setCurrentIndex(0);
             break;
+        }
     }
 
     slotWhiteBalanceToggled(d->whiteBalanceComboBox->currentIndex());
@@ -963,21 +980,29 @@ void DRawDecoderWidget::setSettings(const DRawDecoderSettings& settings)
     switch (settings.unclipColors)
     {
         case 0:
+        {
             d->unclipColorComboBox->setCurrentIndex(0);
             break;
+        }
 
         case 1:
+        {
             d->unclipColorComboBox->setCurrentIndex(1);
             break;
+        }
 
         case 2:
+        {
             d->unclipColorComboBox->setCurrentIndex(2);
             break;
+        }
 
         default:         // Reconstruct Highlight method
+        {
             d->unclipColorComboBox->setCurrentIndex(3);
             d->reconstructSpinBox->setValue(settings.unclipColors-3);
             break;
+        }
     }
 
     slotUnclipColorActivated(d->unclipColorComboBox->currentIndex());
@@ -1003,14 +1028,18 @@ void DRawDecoderWidget::setSettings(const DRawDecoderSettings& settings)
     switch (q)
     {
         case DRawDecoderSettings::DCB:
+        {
             d->medianFilterPassesSpinBox->setValue(settings.dcbIterations);
             d->refineInterpolationBox->setChecked(settings.dcbEnhanceFl);
             break;
+        }
 
         default:
+        {
             d->medianFilterPassesSpinBox->setValue(settings.medianFilterPasses);
             d->refineInterpolationBox->setChecked(false); // option not used.
             break;
+        }
     }
 
     slotRAWQualityChanged(q);
@@ -1041,20 +1070,28 @@ DRawDecoderSettings DRawDecoderWidget::settings() const
     switch (d->whiteBalanceComboBox->currentIndex())
     {
         case 1:
+        {
             prm.whiteBalance = DRawDecoderSettings::CAMERA;
             break;
+        }
 
         case 2:
+        {
             prm.whiteBalance = DRawDecoderSettings::AUTO;
             break;
+        }
 
         case 3:
+        {
             prm.whiteBalance = DRawDecoderSettings::CUSTOM;
             break;
+        }
 
         default:
+        {
             prm.whiteBalance = DRawDecoderSettings::NONE;
             break;
+        }
     }
 
     prm.customWhiteBalance      = d->customWhiteBalanceSpinBox->value();
@@ -1066,20 +1103,28 @@ DRawDecoderSettings DRawDecoderWidget::settings() const
     switch (d->unclipColorComboBox->currentIndex())
     {
         case 0:
+        {
             prm.unclipColors = 0;
             break;
+        }
 
         case 1:
+        {
             prm.unclipColors = 1;
             break;
+        }
 
         case 2:
+        {
             prm.unclipColors = 2;
             break;
+        }
 
         default:         // Reconstruct Highlight method
+        {
             prm.unclipColors =  d->reconstructSpinBox->value()+3;
             break;
+        }
     }
 
     prm.DontStretchPixels    = d->dontStretchPixelsCheckBox->isChecked();
@@ -1094,13 +1139,17 @@ DRawDecoderSettings DRawDecoderWidget::settings() const
     switch (prm.RAWQuality)
     {
         case DRawDecoderSettings::DCB:
+        {
             prm.dcbIterations      = d->medianFilterPassesSpinBox->value();
             prm.dcbEnhanceFl       = d->refineInterpolationBox->isChecked();
             break;
+        }
 
         default:
+        {
             prm.medianFilterPasses = d->medianFilterPassesSpinBox->value();
             break;
+        }
     }
 
     prm.NRType = (DRawDecoderSettings::NoiseReduction)d->noiseReductionComboBox->currentIndex();

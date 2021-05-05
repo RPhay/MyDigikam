@@ -27,10 +27,24 @@ namespace Digikam
 {
 
 PreviewSettings::PreviewSettings(Quality quality, RawLoading rawLoading)
-    : quality(quality),
-      rawLoading(rawLoading),
+    : quality          (quality),
+      rawLoading       (rawLoading),
       convertToEightBit(true)
 {
+}
+
+PreviewSettings::~PreviewSettings()
+{
+}
+
+PreviewSettings PreviewSettings::fastPreview()
+{
+    return PreviewSettings(FastPreview, RawPreviewAutomatic);
+}
+
+PreviewSettings PreviewSettings::highQualityPreview()
+{
+    return PreviewSettings(FastButLargePreview, RawPreviewAutomatic);
 }
 
 bool PreviewSettings::operator==(const PreviewSettings& other) const
@@ -41,4 +55,3 @@ bool PreviewSettings::operator==(const PreviewSettings& other) const
 }
 
 } // namespace Digikam
-

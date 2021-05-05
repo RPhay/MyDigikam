@@ -6,7 +6,7 @@
  * Date        : 2010-03-16
  * Description : 8 to 16 bits color depth converter batch tool.
  *
- * Copyright (C) 2010-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2010-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -42,6 +42,16 @@ Convert8to16::Convert8to16(QObject* const parent)
 
 Convert8to16::~Convert8to16()
 {
+}
+
+BatchToolSettings Convert8to16::defaultSettings()
+{
+    return BatchToolSettings();
+}
+
+BatchTool* Convert8to16::clone(QObject* const parent) const
+{
+    return new Convert8to16(parent);
 }
 
 bool Convert8to16::toolOperations()

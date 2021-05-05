@@ -7,7 +7,7 @@
  * Description : a tool to export items to Google web services
  *
  * Copyright (C) 2010      by Jens Mueller <tschenser at gmx dot de>
- * Copyright (C) 2013-2018 by Caulier Gilles <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2013-2020 by Caulier Gilles <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -53,20 +53,20 @@ class Q_DECL_HIDDEN ReplaceDialog::Private
 public:
 
     explicit Private()
+      : bAdd            (nullptr),
+        bAddAll         (nullptr),
+        bReplace        (nullptr),
+        bReplaceAll     (nullptr),
+        iface           (nullptr),
+        lbSrc           (nullptr),
+        lbDest          (nullptr),
+        netMngr         (nullptr),
+        progressPix     (nullptr),
+        thumbLoadThread (ThumbnailLoadThread::defaultThread()),
+        progressCount   (0),
+        progressTimer   (nullptr),
+        result          (-1)
     {
-        progressPix     = DWorkingPixmap();
-        bAdd            = nullptr;
-        bAddAll         = nullptr;
-        bReplace        = nullptr;
-        bReplaceAll     = nullptr;
-        iface           = nullptr;
-        lbSrc           = nullptr;
-        lbDest          = nullptr;
-        netMngr         = nullptr;
-        progressCount   = 0;
-        progressTimer   = nullptr;
-        result          = -1;
-        thumbLoadThread = ThumbnailLoadThread::defaultThread();
     }
 
     QPushButton*           bAdd;
@@ -80,7 +80,7 @@ public:
     QLabel*                lbDest;
     QNetworkAccessManager* netMngr;
     QPixmap                mimePix;
-    DWorkingPixmap         progressPix;
+    DWorkingPixmap*        progressPix;
     ThumbnailLoadThread*   thumbLoadThread;
     int                    progressCount;
     QTimer*                progressTimer;
@@ -93,13 +93,14 @@ ReplaceDialog::ReplaceDialog(QWidget* const parent,
                              const QUrl& src,
                              const QUrl& dest)
     : QDialog(parent),
-      d(new Private)
+      d      (new Private)
 {
     setObjectName(QLatin1String("ReplaceDialog"));
 
-    d->src   = src;
-    d->dest  = dest;
-    d->iface = iface;
+    d->src         = src;
+    d->dest        = dest;
+    d->iface       = iface;
+    d->progressPix = new DWorkingPixmap(this);
 
     setWindowTitle(_caption);
 
@@ -180,7 +181,7 @@ ReplaceDialog::ReplaceDialog(QWidget* const parent,
     gridLayout->addWidget(lb2, 2, 0, 1, 1);
 
     QLabel* const lb3 = new QLabel(this);
-    lb3->setText(i18n("Source"));
+    lb3->setText(i18nc("@label: source file", "Source"));
     lb3->setAlignment(Qt::AlignHCenter);
     gridLayout->addWidget(lb3, 2, 2, 1, 1);
 
@@ -311,16 +312,19 @@ QPixmap ReplaceDialog::setProgressAnimation(const QPixmap& thumb, const QPixmap&
     QPainter p(&overlay);
     p.drawPixmap(0, 0, mask);
     p.drawPixmap((overlay.width()/2) - (pix.width()/2), (overlay.height()/2) - (pix.height()/2), pix);
+
     return overlay;
 }
 
 void ReplaceDialog::slotProgressTimerDone()
 {
-    d->lbDest->setPixmap(setProgressAnimation(d->mimePix, d->progressPix.frameAt(d->progressCount)));
+    d->lbDest->setPixmap(setProgressAnimation(d->mimePix, d->progressPix->frameAt(d->progressCount)));
     d->progressCount++;
 
     if (d->progressCount == 8)
+    {
         d->progressCount = 0;
+    }
 
     d->progressTimer->start(300);
 }

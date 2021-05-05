@@ -33,15 +33,19 @@ namespace Digikam
 
 class TrimmedModifier : public Modifier
 {
+    Q_OBJECT
+
 public:
 
     explicit TrimmedModifier();
-    virtual QString parseOperation(ParseSettings& settings);
+    QString parseOperation(ParseSettings& settings) override;
 
 private:
 
-    TrimmedModifier(const TrimmedModifier&);
-    TrimmedModifier& operator=(const TrimmedModifier&);
+    // Disable
+    explicit TrimmedModifier(QObject*)                 = delete;
+    TrimmedModifier(const TrimmedModifier&)            = delete;
+    TrimmedModifier& operator=(const TrimmedModifier&) = delete;
 };
 
 } // namespace Digikam

@@ -46,8 +46,8 @@ class BalooInfo
 public:
 
     BalooInfo()
+      : rating(-1)
     {
-        rating = -1;
     }
 
     QStringList tags;
@@ -65,14 +65,14 @@ public:
  *        it also watches for changes in Baloo and notify
  *        digiKam, so it could trigger a scan
  */
-class DIGIKAM_DATABASE_EXPORT BalooWrap : public QObject
+class DIGIKAM_EXPORT BalooWrap : public QObject
 {
     Q_OBJECT
 
 public:
 
-    explicit BalooWrap();
-    ~BalooWrap();
+    BalooWrap();
+    ~BalooWrap() override;
 
     /**
      * @brief internalPtr - singleton implementation
@@ -81,36 +81,33 @@ public:
     static BalooWrap*          instance();
     static bool                isCreated();
 
-    void setTags(const QUrl& url, QStringList* const tags);
-
-    void setComment(const QUrl& url, QString* const comment);
-
-    void setRating(const QUrl& url, int rating);
-
     /**
-     * @brief setAllData - generic method to set all data from digiKam to Baloo
-     * @param url        - image filepath
-     * @param tags       - tags to set to image, pass NULL to ignore
-     * @param comment    - comment set to image, pass NULL to ignore
-     * @param rating     - rating to set to image, set to -1 to ignore
+     * @brief setSemanticInfo - generic method to set all data from digiKam to Baloo
+     * @param url             - image url
+     * @param bInfo           - container class for tags, comment, rating
      */
-    void setAllData(const QUrl& url, QStringList* const tags, QString* const comment, int rating);
+    void setSemanticInfo(const QUrl& url, const BalooInfo& bInfo);
 
     /**
-     * @brief getSemanticInfo - Used by ItemScanner to retrieve all information
+     * @brief getSemanticInfo - used by ItemScanner to retrieve all information
      *                          tags, comment, rating
-     * @param url  - image url
-     * @return     - container class for tags, comment, rating
+     * @param url             - image url
+     * @return                - container class for tags, comment, rating
      */
     BalooInfo getSemanticInfo(const QUrl& url) const;
 
     void setSyncToBaloo(bool value);
 
-    bool getSyncToBaloo() const;
+    bool getSyncToBaloo()                      const;
 
     void setSyncToDigikam(bool value);
 
-    bool getSyncToDigikam() const;
+    bool getSyncToDigikam()                    const;
+
+private:
+
+    // Disable
+    explicit BalooWrap(QObject*) = delete;
 
 private:
 

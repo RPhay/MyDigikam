@@ -6,7 +6,7 @@
  * Date        : 2003-16-10
  * Description : application settings interface
  *
- * Copyright (C) 2003-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2003-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2015      by Mohamed_Anwer <m_dot_anwer at gmx dot com>
  * Copyright (C) 2017      by Simon Frei <freisim93 at gmail dot com>
  *
@@ -47,8 +47,11 @@ const QString ApplicationSettings::Private::configImageSeparationSortOrderEntry(
 const QString ApplicationSettings::Private::configItemLeftClickActionEntry(QLatin1String("Item Left Click Action"));
 const QString ApplicationSettings::Private::configDefaultIconSizeEntry(QLatin1String("Default Icon Size"));
 const QString ApplicationSettings::Private::configDefaultTreeIconSizeEntry(QLatin1String("Default Tree Icon Size"));
+const QString ApplicationSettings::Private::configDefaultTreeFaceSizeEntry(QLatin1String("Default Tree Face Size"));
 const QString ApplicationSettings::Private::configTreeViewFontEntry(QLatin1String("TreeView Font"));
 const QString ApplicationSettings::Private::configThemeEntry(QLatin1String("Theme"));
+const QString ApplicationSettings::Private::configUpdateType(QLatin1String("Update Type"));
+const QString ApplicationSettings::Private::configUpdateWithDebug(QLatin1String("Update With Debug"));
 const QString ApplicationSettings::Private::configSidebarTitleStyleEntry(QLatin1String("Sidebar Title Style"));
 const QString ApplicationSettings::Private::configRatingFilterConditionEntry(QLatin1String("Rating Filter Condition"));
 const QString ApplicationSettings::Private::configRecursiveAlbumsEntry(QLatin1String("Recursive Albums"));
@@ -118,12 +121,14 @@ const QString ApplicationSettings::Private::configShowPermanentDeleteDialogEntry
 const QString ApplicationSettings::Private::configApplySidebarChangesDirectlyEntry(QLatin1String("Apply Sidebar Changes Directly"));
 const QString ApplicationSettings::Private::configUseNativeFileDialogEntry(QLatin1String("Use Native File Dialog"));
 const QString ApplicationSettings::Private::configDrawFramesToGroupedEntry(QLatin1String("Draw Frames To Grouped Items"));
+const QString ApplicationSettings::Private::configExpandNewCurrentItemEntry(QLatin1String("Expand New Current Item On Click"));
 const QString ApplicationSettings::Private::configScrollItemToCenterEntry(QLatin1String("Scroll Current Item To Center"));
 const QString ApplicationSettings::Private::configShowOnlyPersonTagsInPeopleSidebarEntry(QLatin1String("Show Only Face Tags For Assigning Name"));
 const QString ApplicationSettings::Private::configSyncBalootoDigikamEntry(QLatin1String("Sync Baloo to Digikam"));
 const QString ApplicationSettings::Private::configSyncDigikamtoBalooEntry(QLatin1String("Sync Digikam to Baloo"));
 const QString ApplicationSettings::Private::configStringComparisonTypeEntry(QLatin1String("String Comparison Type"));
 const QString ApplicationSettings::Private::configFaceDetectionAccuracyEntry(QLatin1String("Detection Accuracy"));
+const QString ApplicationSettings::Private::configFaceDetectionYoloV3Entry(QLatin1String("Use Yolo V3"));
 const QString ApplicationSettings::Private::configApplicationStyleEntry(QLatin1String("Application Style"));
 const QString ApplicationSettings::Private::configIconThemeEntry(QLatin1String("Icon Theme"));
 const QString ApplicationSettings::Private::configApplicationFontEntry(QLatin1String("Application Font"));
@@ -152,95 +157,100 @@ ApplicationSettings::OperationStrings ApplicationSettings::Private::createConfig
 }
 
 ApplicationSettings::Private::Private(ApplicationSettings* const qq)
-    : showSplash(false),
-      useTrash(false),
-      showTrashDeleteDialog(false),
-      showPermanentDeleteDialog(false),
-      sidebarApplyDirectly(false),
-      useNativeFileDialog(false),
-      drawFramesToGrouped(true),
-      scrollItemToCenter(false),
-      showOnlyPersonTagsInPeopleSidebar(false),
-      iconShowName(false),
-      iconShowSize(false),
-      iconShowDate(false),
-      iconShowModDate(false),
-      iconShowTitle(false),
-      iconShowComments(false),
-      iconShowResolution(false),
-      iconShowTags(false),
-      iconShowOverlays(false),
-      iconShowFullscreen(false),
-      iconShowRating(false),
-      iconShowImageFormat(false),
-      iconShowCoordinates(false),
-      iconShowAspectRatio(false),
-      showToolTips(false),
-      tooltipShowFileName(false),
-      tooltipShowFileDate(false),
-      tooltipShowFileSize(false),
-      tooltipShowImageType(false),
-      tooltipShowImageDim(false),
-      tooltipShowImageAR(false),
-      tooltipShowPhotoMake(false),
-      tooltipShowPhotoLens(false),
-      tooltipShowPhotoDate(false),
-      tooltipShowPhotoFocal(false),
-      tooltipShowPhotoExpo(false),
-      tooltipShowPhotoMode(false),
-      tooltipShowPhotoFlash(false),
-      tooltipShowPhotoWb(false),
-      tooltipShowAlbumName(false),
-      tooltipShowTitles(false),
-      tooltipShowComments(false),
-      tooltipShowTags(false),
-      tooltipShowLabelRating(false),
-      tooltipShowVideoAspectRatio(false),
-      tooltipShowVideoAudioBitRate(false),
-      tooltipShowVideoAudioChannelType(false),
-      tooltipShowVideoAudioCodec(false),
-      tooltipShowVideoDuration(false),
-      tooltipShowVideoFrameRate(false),
-      tooltipShowVideoVideoCodec(false),
-      showAlbumToolTips(false),
-      tooltipShowAlbumTitle(false),
-      tooltipShowAlbumDate(false),
-      tooltipShowAlbumCollection(false),
-      tooltipShowAlbumCategory(false),
-      tooltipShowAlbumCaption(false),
-      tooltipShowAlbumPreview(false),
-      previewShowIcons(true),
-      showThumbbar(false),
-      showFolderTreeViewItemsCount(false),
-      treeThumbnailSize(0),
-      thumbnailSize(0),
-      ratingFilterCond(0),
-      recursiveAlbums(false),
-      recursiveTags(false),
-      allGroupsOpen(false),
-      scanAtStart(true),
-      cleanAtStart(true),
-      databaseDirSetAtCmd(false),
-      albumMonitoring(false),
-      sidebarTitleStyle(DMultiTabBar::AllIconsText),
-      albumSortRole(ApplicationSettings::ByFolder),
-      albumSortChanged(false),
-      imageSortOrder(0),
-      imageSorting(0),
-      imageSeparationMode(0),
-      imageSeparationSortOrder(0),
-      itemLeftClickAction(ApplicationSettings::ShowPreview),
-      syncToDigikam(false),
-      syncToBaloo(false),
-      faceDetectionAccuracy(0.7),
-      stringComparisonType(ApplicationSettings::Natural),
-      minimumSimilarityBound(40),
-      duplicatesSearchLastMinSimilarity(90),
-      duplicatesSearchLastMaxSimilarity(100),
-      duplicatesSearchLastAlbumTagRelation(0),
-      duplicatesSearchLastRestrictions(0),
-      groupingOperateOnAll(ApplicationSettings::OperationModes()),
-      q(qq)
+    : showSplash                            (false),
+      useTrash                              (false),
+      showTrashDeleteDialog                 (false),
+      showPermanentDeleteDialog             (false),
+      sidebarApplyDirectly                  (false),
+      useNativeFileDialog                   (false),
+      drawFramesToGrouped                   (true),
+      expandNewCurrentItem                  (false),
+      scrollItemToCenter                    (false),
+      showOnlyPersonTagsInPeopleSidebar     (false),
+      iconShowName                          (false),
+      iconShowSize                          (false),
+      iconShowDate                          (false),
+      iconShowModDate                       (false),
+      iconShowTitle                         (false),
+      iconShowComments                      (false),
+      iconShowResolution                    (false),
+      iconShowTags                          (false),
+      iconShowOverlays                      (false),
+      iconShowFullscreen                    (false),
+      iconShowRating                        (false),
+      iconShowImageFormat                   (false),
+      iconShowCoordinates                   (false),
+      iconShowAspectRatio                   (false),
+      showToolTips                          (false),
+      tooltipShowFileName                   (false),
+      tooltipShowFileDate                   (false),
+      tooltipShowFileSize                   (false),
+      tooltipShowImageType                  (false),
+      tooltipShowImageDim                   (false),
+      tooltipShowImageAR                    (false),
+      tooltipShowPhotoMake                  (false),
+      tooltipShowPhotoLens                  (false),
+      tooltipShowPhotoDate                  (false),
+      tooltipShowPhotoFocal                 (false),
+      tooltipShowPhotoExpo                  (false),
+      tooltipShowPhotoMode                  (false),
+      tooltipShowPhotoFlash                 (false),
+      tooltipShowPhotoWb                    (false),
+      tooltipShowAlbumName                  (false),
+      tooltipShowTitles                     (false),
+      tooltipShowComments                   (false),
+      tooltipShowTags                       (false),
+      tooltipShowLabelRating                (false),
+      tooltipShowVideoAspectRatio           (false),
+      tooltipShowVideoAudioBitRate          (false),
+      tooltipShowVideoAudioChannelType      (false),
+      tooltipShowVideoAudioCodec            (false),
+      tooltipShowVideoDuration              (false),
+      tooltipShowVideoFrameRate             (false),
+      tooltipShowVideoVideoCodec            (false),
+      showAlbumToolTips                     (false),
+      tooltipShowAlbumTitle                 (false),
+      tooltipShowAlbumDate                  (false),
+      tooltipShowAlbumCollection            (false),
+      tooltipShowAlbumCategory              (false),
+      tooltipShowAlbumCaption               (false),
+      tooltipShowAlbumPreview               (false),
+      previewShowIcons                      (true),
+      showThumbbar                          (false),
+      showFolderTreeViewItemsCount          (false),
+      treeThumbnailSize                     (0),
+      treeThumbFaceSize                     (0),
+      thumbnailSize                         (0),
+      ratingFilterCond                      (0),
+      recursiveAlbums                       (false),
+      recursiveTags                         (false),
+      allGroupsOpen                         (false),
+      scanAtStart                           (true),
+      cleanAtStart                          (true),
+      databaseDirSetAtCmd                   (false),
+      albumMonitoring                       (false),
+      updateType                            (0),
+      updateWithDebug                       (false),
+      sidebarTitleStyle                     (DMultiTabBar::AllIconsText),
+      albumSortRole                         (ApplicationSettings::ByFolder),
+      albumSortChanged                      (false),
+      imageSortOrder                        (0),
+      imageSorting                          (0),
+      imageSeparationMode                   (0),
+      imageSeparationSortOrder              (0),
+      itemLeftClickAction                   (ApplicationSettings::ShowPreview),
+      syncToDigikam                         (false),
+      syncToBaloo                           (false),
+      faceDetectionAccuracy                 (0.7),
+      faceDetectionYoloV3                   (false),
+      stringComparisonType                  (ApplicationSettings::Natural),
+      minimumSimilarityBound                (40),
+      duplicatesSearchLastMinSimilarity     (90),
+      duplicatesSearchLastMaxSimilarity     (100),
+      duplicatesSearchLastAlbumTagRelation  (0),
+      duplicatesSearchLastRestrictions      (0),
+      groupingOperateOnAll                  (ApplicationSettings::OperationModes()),
+      q                                     (qq)
 {
     for (int i = 0 ; i != ApplicationSettings::Unspecified ; ++i)
     {
@@ -256,14 +266,14 @@ ApplicationSettings::Private::~Private()
 void ApplicationSettings::Private::init()
 {
     albumCategoryNames.clear();
-    albumCategoryNames.append(i18n("Category"));
-    albumCategoryNames.append(i18n("Travel"));
-    albumCategoryNames.append(i18n("Holidays"));
-    albumCategoryNames.append(i18n("Friends"));
-    albumCategoryNames.append(i18n("Nature"));
-    albumCategoryNames.append(i18n("Party"));
-    albumCategoryNames.append(i18n("Todo"));
-    albumCategoryNames.append(i18n("Miscellaneous"));
+    albumCategoryNames.append(i18nc("@item: album categories", "Category"));
+    albumCategoryNames.append(i18nc("@item: album categories", "Travel"));
+    albumCategoryNames.append(i18nc("@item: album categories", "Holidays"));
+    albumCategoryNames.append(i18nc("@item: album categories", "Friends"));
+    albumCategoryNames.append(i18nc("@item: album categories", "Nature"));
+    albumCategoryNames.append(i18nc("@item: album categories", "Party"));
+    albumCategoryNames.append(i18nc("@item: album categories", "Todo"));
+    albumCategoryNames.append(i18nc("@item: album categories", "Miscellaneous"));
     albumCategoryNames.sort();
 
     albumSortRole                        = ApplicationSettings::ByFolder;
@@ -276,7 +286,11 @@ void ApplicationSettings::Private::init()
 
     thumbnailSize                        = ThumbnailSize::Medium;
     treeThumbnailSize                    = 22;
+    treeThumbFaceSize                    = 48;
     treeviewFont                         = QFontDatabase::systemFont(QFontDatabase::GeneralFont);
+
+    updateType                           = 0;
+    updateWithDebug                      = false;
     sidebarTitleStyle                    = DMultiTabBar::AllIconsText;
 
     ratingFilterCond                     = ItemFilterSettings::GreaterEqualCondition;
@@ -288,15 +302,16 @@ void ApplicationSettings::Private::init()
     sidebarApplyDirectly                 = false;
     useNativeFileDialog                  = false;
     drawFramesToGrouped                  = true;
+    expandNewCurrentItem                 = true;
     scrollItemToCenter                   = false;
     showOnlyPersonTagsInPeopleSidebar    = false;
 
-    iconShowName                         = false;
+    iconShowName                         = true;
     iconShowSize                         = false;
-    iconShowDate                         = false;
+    iconShowDate                         = true;
     iconShowModDate                      = false;
-    iconShowTitle                        = false;
-    iconShowComments                     = false;
+    iconShowTitle                        = true;
+    iconShowComments                     = true;
     iconShowResolution                   = false;
     iconShowAspectRatio                  = false;
     iconShowTags                         = true;
@@ -358,6 +373,7 @@ void ApplicationSettings::Private::init()
     albumSortChanged                     = false;
 
     faceDetectionAccuracy                = 0.7;
+    faceDetectionYoloV3                  = false;
 
     minimumSimilarityBound               = 40;
     duplicatesSearchLastMinSimilarity    = 90;

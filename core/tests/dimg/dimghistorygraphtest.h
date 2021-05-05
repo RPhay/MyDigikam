@@ -26,7 +26,7 @@
 
 // Qt includes
 
-#include <QtTest>
+#include <QTest>
 #include <QEventLoop>
 #include <QDir>
 
@@ -37,6 +37,10 @@
 class DImgHistoryGraphTest : public DImgAbstractHistoryTest
 {
     Q_OBJECT
+
+public:
+
+    explicit DImgHistoryGraphTest(QObject* const parent = nullptr);
 
 public Q_SLOTS:
 

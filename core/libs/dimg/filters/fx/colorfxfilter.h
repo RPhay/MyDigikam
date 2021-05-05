@@ -6,7 +6,7 @@
  * Date        : 2005-05-25
  * Description : Color FX threaded image filter.
  *
- * Copyright 2005-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright 2005-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright 2006-2010 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  * Copyright 2010      by Martin Klapetek <martin dot klapetek at gmail dot com>
  * Copyright 2015      by Andrej Krutak <dev at andree dot sk>
@@ -45,11 +45,11 @@ class DIGIKAM_EXPORT ColorFXContainer
 public:
 
     explicit ColorFXContainer()
-      : colorFXType(0),            ///< ColorFXFilter::Solarize
-        level(0),
-        iterations(2),
-        intensity(100),
-        path(QString())
+      : colorFXType (0),            ///< ColorFXFilter::Solarize
+        level       (0),
+        iterations  (2),
+        intensity   (100),
+        path        (QString())
     {
     };
 
@@ -70,6 +70,7 @@ public:
 
 class DIGIKAM_EXPORT ColorFXFilter : public DImgThreadedFilter
 {
+    Q_OBJECT
 
 public:
 
@@ -87,38 +88,38 @@ public:
     explicit ColorFXFilter(QObject* const parent = nullptr);
     explicit ColorFXFilter(DImg* const orgImage,
                            QObject* const parent,
-                           const ColorFXContainer& settings=ColorFXContainer());
-    ~ColorFXFilter();
+                           const ColorFXContainer& settings = ColorFXContainer());
+    ~ColorFXFilter()                                          override;
 
-    static QString          FilterIdentifier()
+    static QString FilterIdentifier()
     {
         return QLatin1String("digikam:ColorFXFilter");
     }
 
-    static QString          DisplayableName();
+    static QString DisplayableName();
 
-    static QList<int>       SupportedVersions()
+    static QList<int> SupportedVersions()
     {
         return QList<int>() << 1;
     }
 
-    static int              CurrentVersion()
+    static int CurrentVersion()
     {
         return 1;
     }
 
-    virtual QString         filterIdentifier()                          const override
+    QString filterIdentifier()                          const override
     {
         return FilterIdentifier();
     }
 
-    virtual FilterAction    filterAction()                                    override;
+    FilterAction filterAction()                               override;
 
-    void                    readParameters(const FilterAction& action)        override;
+    void readParameters(const FilterAction& action)           override;
 
 private:
 
-    void filterImage()                                                        override;
+    void filterImage()                                        override;
 
     void solarize(DImg* const orgImage, DImg* const destImage, int factor);
     void vivid(DImg* const orgImage, DImg* const destImage, int factor);

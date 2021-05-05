@@ -8,7 +8,7 @@
  * Acknowledge : based on the expoblending tool
  *
  * Copyright (C) 2011-2016 by Benjamin Girault <benjamin dot girault at gmail dot com>
- * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -40,8 +40,8 @@
 // KDE includes
 
 #include <klocalizedstring.h>
+#include <ksharedconfig.h>
 #include <kconfiggroup.h>
-#include <kconfig.h>
 
 // Local includes
 
@@ -58,14 +58,14 @@ class Q_DECL_HIDDEN PanoLastPage::Private
 public:
 
     explicit Private()
-      : copyDone(false),
-        title(nullptr),
-        saveSettingsGroupBox(nullptr),
+      : copyDone             (false),
+        title                (nullptr),
+        saveSettingsGroupBox (nullptr),
         fileTemplateQLineEdit(nullptr),
-        savePtoCheckBox(nullptr),
-        warningLabel(nullptr),
-        errorLabel(nullptr),
-        mngr(nullptr)
+        savePtoCheckBox      (nullptr),
+        warningLabel         (nullptr),
+        errorLabel           (nullptr),
+        mngr                 (nullptr)
     {
     }
 
@@ -83,53 +83,53 @@ public:
 };
 
 PanoLastPage::PanoLastPage(PanoManager* const mngr, QWizard* const dlg)
-     : DWizardPage(dlg, i18nc("@title:window", "<b>Panorama Stitched</b>")),
-       d(new Private)
+     : DWizardPage(dlg, QString::fromLatin1("<b>%1</b>").arg(i18nc("@title:window", "Panorama Stitched"))),
+       d          (new Private)
 {
-    KConfig config;
-    KConfigGroup group        = config.group("Panorama Settings");
+    KSharedConfigPtr config         = KSharedConfig::openConfig();
+    KConfigGroup group              = config->group("Panorama Settings");
 
-    d->mngr                   = mngr;
+    d->mngr                         = mngr;
 
-    DVBox* const vbox         = new DVBox(this);
+    DVBox* const vbox               = new DVBox(this);
 
-    d->title                  = new QLabel(vbox);
+    d->title                        = new QLabel(vbox);
     d->title->setOpenExternalLinks(true);
     d->title->setWordWrap(true);
 
-    QVBoxLayout* const formatVBox = new QVBoxLayout();
+    QVBoxLayout* const formatVBox   = new QVBoxLayout();
 
-    d->saveSettingsGroupBox   = new QGroupBox(i18nc("@title:group", "Save Settings"), vbox);
+    d->saveSettingsGroupBox         = new QGroupBox(i18nc("@title:group", "Save Settings"), vbox);
     d->saveSettingsGroupBox->setLayout(formatVBox);
     formatVBox->addStretch(1);
 
     QLabel* const fileTemplateLabel = new QLabel(i18nc("@label:textbox", "File name template:"), d->saveSettingsGroupBox);
     formatVBox->addWidget(fileTemplateLabel);
 
-    d->fileTemplateQLineEdit  = new QLineEdit(QLatin1String("panorama"), d->saveSettingsGroupBox);
+    d->fileTemplateQLineEdit        = new QLineEdit(QLatin1String("panorama"), d->saveSettingsGroupBox);
     d->fileTemplateQLineEdit->setToolTip(i18nc("@info:tooltip", "Name of the panorama file (without its extension)."));
-    d->fileTemplateQLineEdit->setWhatsThis(i18nc("@info:whatsthis", "<b>File name template</b>: Set here the base name of the files that "
-                                                "will be saved. For example, if your template is <i>panorama</i> and if "
+    d->fileTemplateQLineEdit->setWhatsThis(i18nc("@info:whatsthis", "\"File name template\": Set here the base name of the files that "
+                                                "will be saved. For example, if your template is \"panorama\" and if "
                                                 "you chose a JPEG output, then your panorama will be saved with the "
-                                                "name <i>panorama.jpg</i>. If you choose to save also the project file, "
-                                                "it will have the name <i>panorama.pto</i>."));
+                                                "name \"panorama.jpg\". If you choose to save also the project file, "
+                                                "it will have the name \"panorama.pto\"."));
     formatVBox->addWidget(d->fileTemplateQLineEdit);
 
-    d->savePtoCheckBox        = new QCheckBox(i18nc("@option:check", "Save project file"), d->saveSettingsGroupBox);
+    d->savePtoCheckBox              = new QCheckBox(i18nc("@option:check", "Save project file"), d->saveSettingsGroupBox);
     d->savePtoCheckBox->setChecked(group.readEntry("Save PTO", false));
     d->savePtoCheckBox->setToolTip(i18nc("@info:tooltip", "Save the project file for further processing within Hugin GUI."));
-    d->savePtoCheckBox->setWhatsThis(i18nc("@info:whatsthis", "<b>Save project file</b>: You can keep the project file generated to stitch "
-                                          "your panorama for further tweaking within "
-                                          "<a href=\"http://hugin.sourceforge.net/\">Hugin</a> by checking this. "
+    d->savePtoCheckBox->setWhatsThis(i18nc("@info:whatsthis", "\"Save project file\": You can keep the project file generated to stitch "
+                                          "your panorama for further tweaking within %1 by checking this. "
                                           "This is useful if you want a different projection, modify the horizon or "
-                                          "the center of the panorama, or modify the control points to get better results."));
+                                          "the center of the panorama, or modify the control points to get better results.",
+                                          QLatin1String("<a href=\"http://hugin.sourceforge.net/\">Hugin</a>")));        // krazy:exclude=insecurenet
     formatVBox->addWidget(d->savePtoCheckBox);
 
-    d->warningLabel = new QLabel(d->saveSettingsGroupBox);
+    d->warningLabel                 = new QLabel(d->saveSettingsGroupBox);
     d->warningLabel->hide();
     formatVBox->addWidget(d->warningLabel);
 
-    d->errorLabel = new QLabel(d->saveSettingsGroupBox);
+    d->errorLabel                   = new QLabel(d->saveSettingsGroupBox);
     d->errorLabel->hide();
     formatVBox->addWidget(d->errorLabel);
 
@@ -149,10 +149,10 @@ PanoLastPage::PanoLastPage(PanoManager* const mngr, QWizard* const dlg)
 
 PanoLastPage::~PanoLastPage()
 {
-    KConfig config;
-    KConfigGroup group = config.group("Panorama Settings");
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup group      = config->group("Panorama Settings");
     group.writeEntry("Save PTO", d->savePtoCheckBox->isChecked());
-    config.sync();
+    config->sync();
 
     delete d;
 }
@@ -165,7 +165,8 @@ void PanoLastPage::copyFiles()
     QUrl panoUrl = d->mngr->preProcessedMap().begin().key().adjusted(QUrl::RemoveFilename);
     panoUrl.setPath(panoUrl.path() + panoFileName(d->fileTemplateQLineEdit->text()));
 
-    d->mngr->thread()->copyFiles(d->mngr->panoPtoUrl(),
+    d->mngr->thread()->copyFiles(
+                                 d->mngr->panoPtoUrl(),
                                  d->mngr->panoUrl(),
                                  panoUrl,
                                  d->mngr->preProcessedMap(),
@@ -181,6 +182,7 @@ QString PanoLastPage::panoFileName(const QString& fileTemplate) const
         default:
         case JPEG:
             return fileTemplate + QLatin1String(".jpg");
+
         case TIFF:
             return fileTemplate + QLatin1String(".tif");
     }
@@ -205,25 +207,27 @@ void PanoLastPage::checkFiles()
                 QString dir2 = input.toString(QUrl::RemoveFilename);
                 QUrl derawUrl(dir2 + d->mngr->preProcessedMap()[input].preprocessedUrl.fileName());
                 QFile derawFile(derawUrl.toString(QUrl::PreferLocalFile));
-                rawsOk &= !derawFile.exists();
+                rawsOk      &= !derawFile.exists();
             }
         }
     }
 
-    if (panoFile.exists() || (d->savePtoCheckBox->isChecked() && ptoFile.exists()))
+    if      (panoFile.exists() || (d->savePtoCheckBox->isChecked() && ptoFile.exists()))
     {
         setComplete(false);
         emit completeChanged();
-        d->warningLabel->setText(i18n("<qt><p><font color=\"red\"><b>Warning:</b> "
-                                      "This file already exists.</font></p></qt>"));
+        d->warningLabel->setText(QString::fromUtf8("<qt><p><font color=\"red\"><b>%1:</b> %2.</font></p></qt>")
+                                 .arg(i18nc("@title: dialog", "Warning"))
+                                 .arg(i18nc("@label", "This file already exists")));
         d->warningLabel->show();
     }
     else if (!rawsOk)
     {
         setComplete(true);
         emit completeChanged();
-        d->warningLabel->setText(i18n("<qt><p><font color=\"orange\"><b>Warning:</b> "
-                                      "One or more converted raw files already exists (they will be skipped during the copying process).</font></p></qt>"));
+        d->warningLabel->setText(QString::fromUtf8("<qt><p><font color=\"orange\"><b>:</b> %2.</font></p></qt>")
+                                 .arg(i18nc("@title: dialog", "Warning"))
+                                 .arg(i18nc("@label", "One or more converted raw files already exists (they will be skipped during the copying process)")));
         d->warningLabel->show();
     }
     else
@@ -249,7 +253,9 @@ void PanoLastPage::initializePage()
 bool PanoLastPage::validatePage()
 {
     if (d->copyDone)
+    {
         return true;
+    }
 
     setComplete(false);
     copyFiles();
@@ -259,19 +265,22 @@ bool PanoLastPage::validatePage()
 
 void PanoLastPage::slotTemplateChanged(const QString&)
 {
-    d->title->setText(i18n("<qt>"
-                           "<p><h1><b>Panorama Stitching is Done</b></h1></p>"
-                           "<p>Congratulations. Your images are stitched into a panorama.</p>"
-                           "<p>Your panorama will be created to the directory:<br />"
-                           "<b>%1</b><br />"
-                           "once you press the <i>Finish</i> button, with the name set below.</p>"
-                           "<p>If you choose to save the project file, and "
-                           "if your images were raw images then the converted images used during "
-                           "the stitching process will be copied at the same time (those are "
-                           "TIFF files that can be big).</p>"
-                           "</qt>",
-                           QDir::toNativeSeparators(d->mngr->preProcessedMap().begin().key().toString(QUrl::RemoveFilename | QUrl::PreferLocalFile))
-                          ));
+    d->title->setText(QString::fromUtf8("<qt>"
+                                        "<p><h1><b>%1</b></h1></p>"
+                                        "<p>%2</p>"
+                                        "<p>%3</p>"
+                                        "<p>%4<br /><b>%5</b><br /></p>"
+                                        "<p>%6</p>"
+                                        "</qt>")
+                   .arg(i18nc("@info", "Panorama Stitching is Done"))
+                   .arg(i18nc("@info", "Congratulations. Your images are stitched into a panorama."))
+                   .arg(i18nc("@info", "Your panorama will be created to the directory:"))
+                   .arg(QDir::toNativeSeparators(d->mngr->preProcessedMap().begin().key().toString(QUrl::RemoveFilename | QUrl::PreferLocalFile)))
+                   .arg(i18nc("@info", "once you press the \"Finish\" button, with the name set below."))
+                   .arg(i18nc("@info", "If you choose to save the project file, and "
+                                       "if your images were raw images then the converted images used during "
+                                       "the stitching process will be copied at the same time (those are "
+                                       "TIFF files that can be big).")));
     checkFiles();
 }
 
@@ -296,11 +305,13 @@ void PanoLastPage::slotPanoAction(const DigikamGenericPanoramaPlugin::PanoAction
                     disconnect(d->mngr->thread(), SIGNAL(jobCollectionFinished(DigikamGenericPanoramaPlugin::PanoActionData)),
                                this, SLOT(slotPanoAction(DigikamGenericPanoramaPlugin::PanoActionData)));
 
-                    d->errorLabel->setText(i18n("<qt><p><font color=\"red\"><b>Error:</b> "
-                                                 "%1</font></p></qt>", ad.message));
+                    d->errorLabel->setText(QString::fromUtf8("<qt><p><font color=\"red\"><b>%1:</b> %2</font></p></qt>")
+                                           .arg(i18nc("@label", "Error"))
+                                           .arg(ad.message));
                     d->errorLabel->show();
                     break;
                 }
+
                 default:
                 {
                     qCWarning(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Unknown action (last) " << ad.action;
@@ -321,6 +332,7 @@ void PanoLastPage::slotPanoAction(const DigikamGenericPanoramaPlugin::PanoAction
                     emit signalCopyFinished();
                     break;
                 }
+
                 default:
                 {
                     qCWarning(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Unknown action (last) " << ad.action;

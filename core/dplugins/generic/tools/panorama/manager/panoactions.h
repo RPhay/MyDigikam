@@ -7,7 +7,7 @@
  * Description : a tool to create panorama by fusion of several images.
  *
  * Copyright (C) 2011-2016 by Benjamin Girault <benjamin dot girault at gmail dot com>
- * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -65,27 +65,26 @@ typedef enum
 }
 PanoramaFileType;
 
-struct PanoramaPreprocessedUrls
+class PanoramaPreprocessedUrls
 {
-    PanoramaPreprocessedUrls()
-    {
-    }
+public:
 
-    PanoramaPreprocessedUrls(const QUrl& preprocessed, const QUrl& preview)
+    PanoramaPreprocessedUrls()          = default;
+    explicit PanoramaPreprocessedUrls(const QUrl& preprocessed, const QUrl& preview)
         : preprocessedUrl(preprocessed),
-          previewUrl(preview)
+          previewUrl     (preview)
     {
     }
 
-    virtual ~PanoramaPreprocessedUrls()
-    {
-    }
+    ~PanoramaPreprocessedUrls()         = default;
 
-    QUrl preprocessedUrl;              // Can be an original file or a converted version, depending on the original file type
-    QUrl previewUrl;                   // The JPEG preview version, accordingly of preprocessedUrl constant.
+public:
+
+    QUrl preprocessedUrl;              ///< Can be an original file or a converted version, depending on the original file type
+    QUrl previewUrl;                   ///< The JPEG preview version, accordingly of preprocessedUrl constant.
 };
 
-typedef QMap<QUrl, PanoramaPreprocessedUrls> PanoramaItemUrlsMap;   // Map between original Url and processed temp Urls.
+typedef QMap<QUrl, PanoramaPreprocessedUrls> PanoramaItemUrlsMap;   ///< Map between original Url and processed temp Urls.
 
 // ----------------------------------------------------------------------------------------------------------
 
@@ -93,16 +92,16 @@ struct PanoActionData
 {
     PanoActionData()
         : starting(false),
-          success(false),
-          id(0),
-          action(PANO_NONE)
+          success (false),
+          id      (0),
+          action  (PANO_NONE)
     {
     }
 
     bool                starting;
     bool                success;
 
-    QString             message;        // Usually, an error message
+    QString             message;        ///< Usually, an error message
 
     int                 id;
 

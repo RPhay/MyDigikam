@@ -7,7 +7,7 @@
  * Description : Thumbnails database interface.
  *
  * Copyright (C)      2009 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -64,8 +64,8 @@ class DIGIKAM_EXPORT ThumbsDbInfo
 public:
 
     explicit ThumbsDbInfo()
-        : id(-1),
-          type(DatabaseThumbnail::UndefinedType),
+        : id             (-1),
+          type           (DatabaseThumbnail::UndefinedType),
           orientationHint(0)
     {
     }
@@ -92,14 +92,16 @@ public:
     ThumbsDbInfo findByFilePath(const QString& path);
     ThumbsDbInfo findByCustomIdentifier(const QString& id);
 
-    /** This is findByFilePath with extra security: Pass the uniqueHash which you have.
-     *  If an entry is found by file path, and the entry is referenced by any uniqueHash,
-     *  which is different from the given hash, a null info is returned.
-     *  If uniqueHash is null, equivalent to the simple findByFilePath.
+    /**
+     * This is findByFilePath with extra security: Pass the uniqueHash which you have.
+     * If an entry is found by file path, and the entry is referenced by any uniqueHash,
+     * which is different from the given hash, a null info is returned.
+     * If uniqueHash is null, equivalent to the simple findByFilePath.
      */
     ThumbsDbInfo findByFilePath(const QString& path, const QString& uniqueHash);
 
-    /** Returns the thumbnail ids of all thumbnails in the database.
+    /**
+     * Returns the thumbnail ids of all thumbnails in the database.
      */
     QList<int> findAll();
 
@@ -108,9 +110,15 @@ public:
     BdEngineBackend::QueryState insertCustomIdentifier(const QString& id, int thumbId);
 
     BdEngineBackend::QueryState remove(int thumbId);
-    /** Removes thumbnail data associated to the given uniqueHash/fileSize */
+
+    /**
+     * Removes thumbnail data associated to the given uniqueHash/fileSize
+     */
     BdEngineBackend::QueryState removeByUniqueHash(const QString& uniqueHash, qlonglong fileSize);
-    /** Removes thumbnail data associated to the given file path */
+
+    /**
+     * Removes thumbnail data associated to the given file path
+     */
     BdEngineBackend::QueryState removeByFilePath(const QString& path);
     BdEngineBackend::QueryState removeByCustomIdentifier(const QString& id);
 
@@ -145,9 +153,9 @@ private:
 
 private:
 
-    // Hidden copy constructor and assignment operator.
-    ThumbsDb(const ThumbsDb&);
-    ThumbsDb& operator=(const ThumbsDb&);
+    // Disable
+    ThumbsDb(const ThumbsDb&)            = delete;
+    ThumbsDb& operator=(const ThumbsDb&) = delete;
 
     class Private;
     Private* const d;

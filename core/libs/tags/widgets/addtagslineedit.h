@@ -49,7 +49,7 @@ class AddTagsLineEdit : public QLineEdit
 public:
 
     explicit AddTagsLineEdit(QWidget* const parent = nullptr);
-    ~AddTagsLineEdit();
+    ~AddTagsLineEdit() override;
 
     /**
      * Optional: set a model for additional information, like tag icons
@@ -64,7 +64,9 @@ public:
     /**
      * Convenience: Will call setSupportingTagModel() and setFilterModel()
      */
-    void setModel(TagModel* const model, TagPropertiesFilterModel* const filteredModel, AlbumFilterModel* const filterModel);
+    void setModel(TagModel* const model,
+                  TagPropertiesFilterModel* const filteredModel,
+                  AlbumFilterModel* const filterModel);
 
     /**
      * Reads a tag treeview and takes the currently selected tag into account

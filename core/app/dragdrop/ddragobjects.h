@@ -6,7 +6,7 @@
  * Date        : 2008-02-29
  * Description : Drag object info containers.
  *
- * Copyright (C) 2008-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2008-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -50,6 +50,8 @@ namespace Digikam
  */
 class DItemDrag : public QMimeData
 {
+    Q_OBJECT
+
 public:
 
     DItemDrag(const QList<QUrl>& urls,
@@ -62,6 +64,11 @@ public:
                        QList<QUrl>& urls,
                        QList<int>& albumIDs,
                        QList<qlonglong>& imageIDs);
+
+private:
+
+    // Disable
+    explicit DItemDrag(QObject*) = delete;
 };
 
 // ------------------------------------------------------------------------
@@ -74,12 +81,19 @@ public:
  */
 class DAlbumDrag : public QMimeData
 {
+    Q_OBJECT
+
 public:
 
     DAlbumDrag(const QUrl& databaseUrl, int albumid, const QUrl& fileUrl = QUrl());
     static QStringList mimeTypes();
     static bool canDecode(const QMimeData* e);
     static bool decode(const QMimeData* e, QList<QUrl>& urls, int& albumID);
+
+private:
+
+    // Disable
+    explicit DAlbumDrag(QObject*) = delete;
 };
 
 // ------------------------------------------------------------------------
@@ -92,12 +106,19 @@ public:
  */
 class DTagListDrag : public QMimeData
 {
+    Q_OBJECT
+
 public:
 
     explicit DTagListDrag(const QList<int>& tagIDs);
     static QStringList mimeTypes();
     static bool canDecode(const QMimeData* e);
     static bool decode(const QMimeData* e, QList<int>& tagIDs);
+
+private:
+
+    // Disable
+    explicit DTagListDrag(QObject*) = delete;
 };
 
 // ------------------------------------------------------------------------
@@ -110,12 +131,19 @@ public:
  */
 class DCameraItemListDrag : public QMimeData
 {
+    Q_OBJECT
+
 public:
 
     explicit DCameraItemListDrag(const QStringList& cameraItemPaths);
     static QStringList mimeTypes();
     static bool canDecode(const QMimeData* e);
     static bool decode(const QMimeData* e, QStringList& cameraItemPaths);
+
+private:
+
+    // Disable
+    explicit DCameraItemListDrag(QObject*) = delete;
 };
 
 // ------------------------------------------------------------------------
@@ -128,6 +156,7 @@ public:
  */
 class DCameraDragObject : public QMimeData
 {
+    Q_OBJECT
 
 public:
 
@@ -135,6 +164,11 @@ public:
     static QStringList mimeTypes();
     static bool canDecode(const QMimeData* e);
     static bool decode(const QMimeData* e, CameraType& ctype);
+
+private:
+
+    // Disable
+    explicit DCameraDragObject(QObject*) = delete;
 };
 
 } // namespace Digikam

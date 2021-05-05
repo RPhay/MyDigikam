@@ -63,7 +63,7 @@ PLT_MediaServer::PLT_MediaServer(const char*  friendly_name,
                                  bool         show_ip     /* = false */, 
                                  const char*  uuid        /* = NULL */, 
                                  NPT_UInt16   port        /* = 0 */,
-                                 bool         port_rebind /* = false */) :	
+                                 bool         port_rebind /* = false */) :  
     PLT_DeviceHost("/DeviceDescription.xml", 
                    uuid, 
                    "urn:schemas-upnp-org:device:MediaServer:1", 
@@ -168,9 +168,6 @@ PLT_MediaServer::OnAction(PLT_ActionReference&          action,
     }
     if (name.Compare("Search", true) == 0) {
         return OnSearch(action, context);
-    }
-    if (name.Compare("UpdateObject", true) == 0) {
-        return OnUpdate(action, context);
     }
     if (name.Compare("GetSystemUpdateID", true) == 0) {
         return OnGetSystemUpdateID(action, context);
@@ -345,8 +342,6 @@ PLT_MediaServer::ParseSort(const NPT_String& sort, NPT_List<NPT_String>& list)
     NPT_List<NPT_String>::Iterator property = list.GetFirstItem();
     while (property) {
         NPT_List<NPT_String> parsed_property = (*property).Split(":");
-        if (parsed_property.GetItemCount() != 2)
-          parsed_property = (*property).Split("@");
         if (parsed_property.GetItemCount() != 2 || 
             (!(*property).StartsWith("-") && !(*property).StartsWith("+"))) {
             NPT_LOG_WARNING_1("Invalid SortCriteria property %s", (*property).GetChars());
@@ -357,60 +352,6 @@ PLT_MediaServer::ParseSort(const NPT_String& sort, NPT_List<NPT_String>& list)
     
     return NPT_SUCCESS;
 }
-
-/*----------------------------------------------------------------------
-|   PLT_MediaServer::ParseTagList
-+---------------------------------------------------------------------*/
-NPT_Result
-PLT_MediaServer::ParseTagList(const NPT_String& updates, NPT_Map<NPT_String,NPT_String>& tags)
-{
-    // reset output params first
-    tags.Clear();
-
-    NPT_List<NPT_String> split = updates.Split(",");
-    NPT_XmlNode*        node = NULL;
-    NPT_XmlElementNode* didl_partial = NULL;
-    NPT_XmlParser       parser;
-
-    // as these are single name value pairs, separated by commas we wrap in a tag
-    // to create a valid tree
-    NPT_String xml("<TagValueList>");
-    for (NPT_List<NPT_String>::Iterator entry = split.GetFirstItem(); entry; entry++) {
-        NPT_String& element = (*entry);
-        if (element.IsEmpty())
-           xml.Append("<empty>empty</empty>");
-        else
-           xml.Append(element);
-    }
-    xml.Append("</TagValueList>");
-
-    NPT_LOG_FINE("Parsing TagList...");
-    NPT_CHECK_LABEL_SEVERE(parser.Parse(xml, node), cleanup);
-    if (!node || !node->AsElementNode()) {
-        NPT_LOG_SEVERE("Invalid node type");
-        goto cleanup;
-    }
-
-    didl_partial = node->AsElementNode();
-    if (didl_partial->GetTag().Compare("TagValueList", true)) {
-        NPT_LOG_SEVERE("Invalid node tag");
-        goto cleanup;
-    }
-
-    for (NPT_List<NPT_XmlNode*>::Iterator children = didl_partial->GetChildren().GetFirstItem(); children; children++) {
-        NPT_XmlElementNode* child = (*children)->AsElementNode();
-        if (!child) continue;
-        const NPT_String *txt = child->GetText();
-        tags[child->GetTag()] = txt ? *txt : "";
-    }
-
-    return NPT_SUCCESS;
-
-cleanup:
-    if (node) delete node;
-    return NPT_FAILURE;
-}
-
 
 /*----------------------------------------------------------------------
 |   PLT_MediaServer::OnBrowse
@@ -515,7 +456,7 @@ PLT_MediaServer::OnSearch(PLT_ActionReference&          action,
     NPT_Result res;
     NPT_String container_id;
     NPT_String search;
-	NPT_String filter;
+    NPT_String filter;
     NPT_String start;
     NPT_String count;
     NPT_String sort;
@@ -523,7 +464,7 @@ PLT_MediaServer::OnSearch(PLT_ActionReference&          action,
 
     if (NPT_FAILED(action->GetArgumentValue("ContainerId", container_id)) ||
         NPT_FAILED(action->GetArgumentValue("SearchCriteria", search)) || 
-		NPT_FAILED(action->GetArgumentValue("Filter",  filter)) ||
+        NPT_FAILED(action->GetArgumentValue("Filter",  filter)) ||
         NPT_FAILED(action->GetArgumentValue("StartingIndex",  start)) || 
         NPT_FAILED(action->GetArgumentValue("RequestedCount",  count)) || 
         NPT_FAILED(action->GetArgumentValue("SortCriteria",  sort))) {
@@ -561,7 +502,7 @@ PLT_MediaServer::OnSearch(PLT_ActionReference&          action,
         res = OnBrowseDirectChildren(
             action, 
             container_id,
-			filter,
+            filter,
             starting_index, 
             requested_count, 
             sort, 
@@ -571,7 +512,7 @@ PLT_MediaServer::OnSearch(PLT_ActionReference&          action,
             action, 
             container_id, 
             search, 
-			filter,
+            filter,
             starting_index, 
             requested_count, 
             sort,
@@ -583,57 +524,6 @@ PLT_MediaServer::OnSearch(PLT_ActionReference&          action,
     }
 
     return res;
-}
-
-/*----------------------------------------------------------------------
-|   PLT_MediaServer::OnUpdate
-+---------------------------------------------------------------------*/
-NPT_Result
-PLT_MediaServer::OnUpdate(PLT_ActionReference&          action,
-                          const PLT_HttpRequestContext& context)
-{
-    if (!m_Delegate)
-        return NPT_ERROR_NOT_IMPLEMENTED;
-
-    int err;
-    const char* msg = NULL;
-
-    NPT_String object_id, current_xml, new_xml;
-    NPT_Map<NPT_String,NPT_String> curr_values;
-    NPT_Map<NPT_String,NPT_String> new_values;
-
-    NPT_CHECK_LABEL(action->GetArgumentValue("ObjectID", object_id), args);
-    NPT_CHECK_LABEL(object_id.IsEmpty(),args);
-    NPT_CHECK_LABEL(action->GetArgumentValue("CurrentTagValue", current_xml), args);
-    NPT_CHECK_LABEL(action->GetArgumentValue("NewTagValue",  new_xml), args);
-
-    if (NPT_FAILED(ParseTagList(current_xml, curr_values))) {
-        err = 702;
-        msg = "Invalid currentTagvalue";
-        goto failure;
-    }
-    if (NPT_FAILED(ParseTagList(new_xml, new_values))) {
-        err = 703;
-        msg = "Invalid newTagValue";
-        goto failure;
-    }
-
-    if (curr_values.GetEntryCount() != new_values.GetEntryCount()) {
-        err = 706;
-        msg = "Parameters mismatch";
-        goto failure;
-    }
-
-    return m_Delegate->OnUpdateObject(action, object_id, curr_values, new_values, context);
-
-args:
-    err = 402;
-    msg = "Invalid args";
-
-failure:
-    NPT_LOG_WARNING(msg);
-    action->SetError(err, msg);
-    return NPT_FAILURE;
 }
 
 /*----------------------------------------------------------------------
@@ -691,7 +581,7 @@ NPT_Result
 PLT_MediaServer::OnSearchContainer(PLT_ActionReference&          action, 
                                    const char*                   object_id, 
                                    const char*                   search_criteria,
-								   const char*                   filter,
+                                   const char*                   filter,
                                    NPT_UInt32                    starting_index,
                                    NPT_UInt32                    requested_count,
                                    const char*                   sort_criteria,

@@ -26,11 +26,18 @@
 
 // Qt includes
 
-#include <QtTest>
+#include <QTest>
 
 class TestLookupAltitudeGeonames : public QObject
 {
     Q_OBJECT
+
+public:
+
+    explicit TestLookupAltitudeGeonames(QObject* const parent = nullptr)
+        : QObject(parent)
+    {
+    }
 
 private Q_SLOTS:
 
@@ -38,4 +45,4 @@ private Q_SLOTS:
     void testSimpleLookup();
 };
 
-#endif /* DIGIKAM_TEST_LOOKUP_ALTITUDE_GEONAMES_H */
+#endif // DIGIKAM_TEST_LOOKUP_ALTITUDE_GEONAMES_H

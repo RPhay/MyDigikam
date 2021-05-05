@@ -6,7 +6,7 @@
  * Date        : 2008-10-09
  * Description : internal private container for DRawDecoder
  *
- * Copyright (C) 2008-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2008-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -34,7 +34,7 @@
 #   pragma GCC diagnostic ignored "-Wdeprecated-declarations"
 #endif
 
-#if defined(Q_OS_DARWIN) && defined(Q_CC_CLANG)
+#if defined(Q_CC_CLANG)
 #   pragma clang diagnostic push
 #   pragma clang diagnostic ignored "-Wdeprecated-declarations"
 #   pragma clang diagnostic ignored "-Wundef"
@@ -51,7 +51,7 @@
 #   pragma GCC diagnostic pop
 #endif
 
-#if defined(Q_OS_DARWIN) && defined(Q_CC_CLANG)
+#if defined(Q_CC_CLANG)
 #   pragma clang diagnostic pop
 #endif
 
@@ -65,7 +65,8 @@ namespace Digikam
 
 extern "C"
 {
-    int callbackForLibRaw(void* data, enum LibRaw_progress p, int iteration, int expected);
+    int  s_progressCallbackForLibRaw(void* context, enum LibRaw_progress p, int iteration, int expected);
+    void s_exifParserCallbackForLibRaw(void* context, int tag, int type, int len, unsigned int ord, void* ifp, INT64 base);
 }
 
 class Q_DECL_HIDDEN DRawDecoder::Private
@@ -79,6 +80,7 @@ public:
 public:
 
     int    progressCallback(enum LibRaw_progress p, int iteration, int expected);
+    void   exifParserCallback(int tag, int type, int len, unsigned int ord, void* ifp, INT64 base);
 
     void   setProgress(double value);
     double progressValue() const;

@@ -6,7 +6,7 @@
  * Date        : 2009-11-03
  * Description : a busy dialog for digiKam
  *
- * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -44,7 +44,7 @@ class DIGIKAM_EXPORT DBusyThread : public QThread
 public:
 
     explicit DBusyThread(QObject* const parent);
-    virtual ~DBusyThread();
+    ~DBusyThread() override;
 
 Q_SIGNALS:
 
@@ -53,7 +53,7 @@ Q_SIGNALS:
 protected:
 
     /// Reimplement this method with your code to run in a separate thread.
-    virtual void run() override {};
+    void run() override {};
 };
 
 // ----------------------------------------------------------------------------------
@@ -64,8 +64,8 @@ class DIGIKAM_EXPORT DBusyDlg : public QProgressDialog
 
 public:
 
-    explicit DBusyDlg(const QString& txt, QWidget* const parent=nullptr);
-    virtual ~DBusyDlg();
+    explicit DBusyDlg(const QString& txt, QWidget* const parent = nullptr);
+    ~DBusyDlg() override;
 
     void setBusyThread(DBusyThread* const thread);
 

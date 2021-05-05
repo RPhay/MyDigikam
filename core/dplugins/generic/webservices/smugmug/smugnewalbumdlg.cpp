@@ -7,7 +7,7 @@
  * Description : a tool to export images to Smugmug web service
  *
  * Copyright (C) 2008-2009 by Luka Renko <lure at kubuntu dot org>
- * Copyright (C) 2008-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2008-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2018      by Thanh Trung Dinh <dinhthanhtrung1996 at gmail dot com>
  *
  * This program is free software; you can redistribute it
@@ -52,30 +52,28 @@ class Q_DECL_HIDDEN SmugNewAlbumDlg::Private
 public:
 
     explicit Private()
+      : templateCoB(nullptr),
+/*
+        categCoB(nullptr)
+        subCategCoB(nullptr),
+*/
+        privBox(nullptr),
+        titleEdt(nullptr),
+        passwdEdt(nullptr),
+        hintEdt(nullptr),
+        descEdt(nullptr),
+        publicRBtn(nullptr),
+        unlistedRBtn(nullptr)
     {
-        /*
-         * categCoB     = 0;
-         * subCategCoB  = 0;
-         */
-
-        templateCoB  = nullptr;
-        privBox      = nullptr;
-        titleEdt     = nullptr;
-        passwdEdt    = nullptr;
-        hintEdt      = nullptr;
-        descEdt      = nullptr;
-        publicRBtn   = nullptr;
-        unlistedRBtn = nullptr;
     }
 
-    /**
-     * Categories are deprecated
-     *
-     * QComboBox*    categCoB;
-     * QComboBox*    subCategCoB;
-     */
-
     QComboBox*    templateCoB;
+
+/*  Categories are deprecated
+    QComboBox*    categCoB;
+    QComboBox*    subCategCoB;
+*/
+
     QGroupBox*    privBox;
     QLineEdit*    titleEdt;
     QLineEdit*    passwdEdt;
@@ -104,17 +102,15 @@ SmugNewAlbumDlg::SmugNewAlbumDlg(QWidget* const parent)
     d->titleEdt          = new QLineEdit;
     d->titleEdt->setWhatsThis(i18n("Title of the album that will be created (required)."));
 
-    /**
-     * Categories are deprecated
-     *
-     * d->categCoB          = new QComboBox;
-     * d->categCoB->setEditable(false);
-     * d->categCoB->setWhatsThis(i18n("Category of the album that will be created (required)."));
+/*  Categories are deprecated
+    d->categCoB          = new QComboBox;
+    d->categCoB->setEditable(false);
+    d->categCoB->setWhatsThis(i18n("Category of the album that will be created (required)."));
 
-     * d->subCategCoB       = new QComboBox;
-     * d->subCategCoB->setEditable(false);
-     * d->subCategCoB->setWhatsThis(i18n("Subcategory of the album that will be created (optional)."));
-     */
+    d->subCategCoB       = new QComboBox;
+    d->subCategCoB->setEditable(false);
+    d->subCategCoB->setWhatsThis(i18n("Subcategory of the album that will be created (optional)."));
+*/
 
     d->descEdt           = new QTextEdit;
     d->descEdt->setWhatsThis(i18n("Description of the album that will be created (optional)."));
@@ -126,10 +122,10 @@ SmugNewAlbumDlg::SmugNewAlbumDlg(QWidget* const parent)
     QFormLayout* const albumBoxLayout = new QFormLayout;
     albumBoxLayout->addRow(i18nc("new smug album dialog", "Title:"),       d->titleEdt);
 
-    /*
-     * albumBoxLayout->addRow(i18nc("new smug album dialog", "Category:"),    d->categCoB);
-     * albumBoxLayout->addRow(i18nc("new smug album dialog", "Subcategory:"), d->subCategCoB);
-     */
+/*
+    albumBoxLayout->addRow(i18nc("new smug album dialog", "Category:"),    d->categCoB);
+    albumBoxLayout->addRow(i18nc("new smug album dialog", "Subcategory:"), d->subCategCoB);
+*/
 
     albumBoxLayout->addRow(i18nc("new smug album dialog", "Description:"), d->descEdt);
     albumBoxLayout->addRow(i18nc("new smug album dialog", "Template:"),    d->templateCoB);
@@ -198,15 +194,13 @@ void SmugNewAlbumDlg::getAlbumProperties(SmugAlbum &album)
 {
     album.title         = d->titleEdt->text();
 
-    /**
-     * Categories are deprecated
-     *
-     * album.category      = d->categCoB->currentText();
-     * album.categoryID    = d->categCoB->itemData(d->categCoB->currentIndex()).toLongLong();
+/*  Categories are deprecated
+    album.category      = d->categCoB->currentText();
+    album.categoryID    = d->categCoB->itemData(d->categCoB->currentIndex()).toLongLong();
 
-     * album.subCategory   = d->subCategCoB->currentText();
-     * album.subCategoryID = d->subCategCoB->itemData(d->subCategCoB->currentIndex()).toLongLong();
-     */
+    album.subCategory   = d->subCategCoB->currentText();
+    album.subCategoryID = d->subCategCoB->itemData(d->subCategCoB->currentIndex()).toLongLong();
+*/
 
     album.description   = d->descEdt->toPlainText();
 
@@ -218,7 +212,7 @@ void SmugNewAlbumDlg::getAlbumProperties(SmugAlbum &album)
     album.passwordHint  = d->hintEdt->text();
 }
 
-/**
+/*
  * Categories are deprecated
  *
 QComboBox* SmugNewAlbumDlg::categoryCombo() const

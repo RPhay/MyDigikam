@@ -6,7 +6,8 @@
  * Date        : 2019-07-09
  * Description : Preprocessor for openface nn model
  *
- * Copyright (C) 2019 by Thanh Trung Dinh <dinhthanhtrung1996 at gmail dot com>
+ * Copyright (C) 2019      by Thanh Trung Dinh <dinhthanhtrung1996 at gmail dot com>
+ * Copyright (C) 2019-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -28,6 +29,10 @@
 
 #include <array>
 
+// Qt includes
+
+#include <QMutex>
+
 // Local includes
 
 #include "digikam_opencv.h"
@@ -44,7 +49,10 @@ public:
     explicit OpenfacePreprocessor();
     ~OpenfacePreprocessor();
 
-    void init();
+    /**
+     * Load shapepredictor model for face alignment with 68 points of face landmark extraction.
+     */
+    bool loadModels();
 
     cv::Mat process(const cv::Mat& image);
 
@@ -56,6 +64,14 @@ private:
     std::array<int, 3>     outerEyesNosePositions;
 
     RedEye::ShapePredictor sp;
+
+    QMutex                 mutex;
+
+private:
+
+    // Disable
+    OpenfacePreprocessor(const OpenfacePreprocessor&)            = delete;
+    OpenfacePreprocessor& operator=(const OpenfacePreprocessor&) = delete;
 };
 
 } // namespace Digikam

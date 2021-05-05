@@ -7,7 +7,7 @@
  * Description : a tool to show image using an OpenGL interface.
  *
  * Copyright (C) 2007-2008 by Markus Leuthold <kusi at forum dot titlis dot org>
- * Copyright (C) 2008-2016 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2008-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -27,6 +27,7 @@
 
 #include <QUrl>
 #include <QApplication>
+#include <QScopedPointer>
 
 // Local includes
 
@@ -41,26 +42,26 @@
 namespace DigikamGenericGLViewerPlugin
 {
 
-class GLViewerTexture::Private
+class Q_DECL_HIDDEN GLViewerTexture::Private
 {
 public:
 
     explicit Private()
-      : rdx(0.0),
-        rdy(0.0),
-        z(0.0),
-        ux(0.0),
-        uy(0.0),
-        rtx(0.0),
-        rty(0.0),
-        vtop(0.0),
-        vbottom(0.0),
-        vleft(0.0),
-        vright(0.0),
-        display_x(0),
-        display_y(0),
+      : rdx       (0.0),
+        rdy       (0.0),
+        z         (0.0),
+        ux        (0.0),
+        uy        (0.0),
+        rtx       (0.0),
+        rty       (0.0),
+        vtop      (0.0),
+        vbottom   (0.0),
+        vleft     (0.0),
+        vright    (0.0),
+        display_x (0),
+        display_y (0),
         rotate_idx(0),
-        iface(nullptr)
+        iface     (nullptr)
     {
         rotate_list[0] = DMetadata::ORIENTATION_ROT_90;
         rotate_list[1] = DMetadata::ORIENTATION_ROT_180;
@@ -73,7 +74,7 @@ public:
     int                         display_x, display_y;
     QString                     filename;
     QImage                      qimage;
-    QSize                       initial_size;
+    QImage                      fimage;
     DMetadata::ImageOrientation rotate_list[4];
     int                         rotate_idx;
     IccProfile                  iccProfile;
@@ -81,13 +82,13 @@ public:
 
 private:
 
-    // No copy constructor
+    /// No copy constructor
     Private(const Private&);
 };
 
 GLViewerTexture::GLViewerTexture(DInfoInterface* const iface)
     : QOpenGLTexture(QOpenGLTexture::TargetRectangle),
-      d(new Private)
+      d             (new Private)
 {
     d->iface                      = iface;
     ICCSettingsContainer settings = IccSettings::instance()->settings();
@@ -102,6 +103,8 @@ GLViewerTexture::GLViewerTexture(DInfoInterface* const iface)
 
 GLViewerTexture::~GLViewerTexture()
 {
+    destroy();
+
     delete d;
 }
 
@@ -109,17 +112,17 @@ GLViewerTexture::~GLViewerTexture()
     \fn GLViewerTexture::load(QString fn, QSize size)
     \brief load file from disc and save it in texture
     \param fn filename to load
-    \param size size of image which is downloaded to texture mem
+    \param size the size of image which is downloaded to texture mem
     if "size" is set to image size, scaling is only performed by the GPU but not
     by the CPU, however the AGP usage to texture memory is increased (20MB for a 5mp image)
  */
 bool GLViewerTexture::load(const QString& fn, const QSize& size)
 {
-    d->filename     = fn;
-    d->initial_size = size;
-    d->qimage       = PreviewLoadThread::loadFastSynchronously(d->filename,
-                                                               qMax(size.width(), size.height()),
-                                                               d->iccProfile).copyQImage();
+    d->filename   = fn;
+    d->qimage     = PreviewLoadThread::loadFastSynchronously(d->filename,
+                                                             qMax(size.width()  * 1.2,
+                                                                  size.height() * 1.2),
+                                                             d->iccProfile).copyQImage();
 
     if (d->qimage.isNull())
     {
@@ -128,8 +131,9 @@ bool GLViewerTexture::load(const QString& fn, const QSize& size)
 
     loadInternal();
     reset();
+
     d->rotate_idx = 0;
-    
+
     return true;
 }
 
@@ -137,16 +141,14 @@ bool GLViewerTexture::load(const QString& fn, const QSize& size)
     \fn GLViewerTexture::load(QImage im, QSize size)
     \brief copy file from QImage to texture
     \param im Qimage to be copied from
-    \param size size of image which is downloaded to texture mem
-    if "size" is set to image size, scaling is only performed by the GPU but not
-    by the CPU, however the AGP usage to texture memory is increased (20MB for a 5mp image)
  */
-bool GLViewerTexture::load(const QImage& im, const QSize& size)
+bool GLViewerTexture::load(const QImage& im)
 {
-    d->qimage       = im;
-    d->initial_size = size;
+    d->qimage = im;
+
     loadInternal();
     reset();
+
     d->rotate_idx   = 0;
 
     return true;
@@ -157,19 +159,23 @@ bool GLViewerTexture::load(const QImage& im, const QSize& size)
  */
 bool GLViewerTexture::loadFullSize()
 {
-    d->qimage       = PreviewLoadThread::loadHighQualitySynchronously(d->filename,
-                                                                      PreviewSettings::RawPreviewAutomatic,
-                                                                      d->iccProfile).copyQImage();
-
-    if (d->qimage.isNull())
+    if (!d->fimage.isNull())
     {
         return false;
     }
 
-    d->initial_size = d->qimage.size();
+    d->fimage     = PreviewLoadThread::loadHighQualitySynchronously(d->filename,
+                                                                    PreviewSettings::RawPreviewAutomatic,
+                                                                    d->iccProfile).copyQImage();
+
+    if (d->fimage.isNull())
+    {
+        return false;
+    }
 
     loadInternal();
     reset();
+
     d->rotate_idx = 0;
 
     return true;
@@ -182,26 +188,17 @@ bool GLViewerTexture::loadFullSize()
  */
 bool GLViewerTexture::loadInternal()
 {
-    int w = d->initial_size.width();
-    int h = d->initial_size.height();
-
     destroy();
+    create();
 
-    if ((w == 0) || (w > d->qimage.width()) || (h > d->qimage.height()))
-    {
-        setData(d->qimage.mirrored());
-    }
-    else
-    {
-        setData(d->qimage.scaled(w, h, Qt::KeepAspectRatio,
-                                 Qt::FastTransformation).mirrored());
-    }
+    QImage texImg = d->fimage.isNull() ? d->qimage : d->fimage;
+    setData(texImg.mirrored(), QOpenGLTexture::DontGenerateMipMaps);
 
-    setMinificationFilter(QOpenGLTexture::Linear);
+    setMinificationFilter(QOpenGLTexture::LinearMipMapLinear);
     setMagnificationFilter(QOpenGLTexture::Linear);
 
-    w = width();
-    h = height();
+    int w = width();
+    int h = height();
 
     if (h < w)
     {
@@ -220,7 +217,7 @@ bool GLViewerTexture::loadInternal()
 /*!
     \fn GLViewerTexture::zoom(float delta, QPoint mousepos)
     \brief calculate new tex coords on zooming
-    \param delta delta between previous zoom and current zoom
+    \param delta the delta between previous zoom and current zoom
     \param mousepos mouse position returned by QT
     \TODO rename mousepos to something more generic
 */
@@ -351,7 +348,7 @@ void GLViewerTexture::move(const QPoint& diff)
 /*!
     \fn GLViewerTexture::reset()
  */
-void GLViewerTexture::reset()
+void GLViewerTexture::reset(bool resetFullImage)
 {
     d->ux           = 0;
     d->uy           = 0;
@@ -378,8 +375,13 @@ void GLViewerTexture::reset()
         zoomdelta = d->z - d->rty;
     }
 
-    QPoint p = QPoint(d->display_x / 2, d->display_y / 2);
+    QPoint p  = QPoint(d->display_x / 2, d->display_y / 2);
     zoom(1.0 - zoomdelta, p);
+
+    if (resetFullImage)
+    {
+        d->fimage = QImage();
+    }
 
     calcVertex();
 }
@@ -392,9 +394,16 @@ void GLViewerTexture::reset()
  */
 bool GLViewerTexture::setNewSize(QSize size)
 {
+    if (d->qimage.isNull())
+    {
+        return false;
+    }
+
     // don't allow larger textures than the original image. the image will be upsampled by
     // OpenGL if necessary and not by QImage::scale
-    size = size.boundedTo(d->qimage.size());
+
+    QImage texImg = d->fimage.isNull() ? d->qimage : d->fimage;
+    size          = size.boundedTo(texImg.size());
 
     if (width() == size.width())
     {
@@ -405,21 +414,24 @@ bool GLViewerTexture::setNewSize(QSize size)
     int h = size.height();
 
     destroy();
+    create();
 
     if (w == 0)
     {
-        setData(d->qimage.mirrored());
+        setData(texImg.mirrored(), QOpenGLTexture::DontGenerateMipMaps);
     }
     else
     {
-        setData(d->qimage.scaled(w, h, Qt::KeepAspectRatio,
-                                 Qt::FastTransformation).mirrored());
+        setData(texImg.scaled(w, h, Qt::KeepAspectRatio,
+                              Qt::SmoothTransformation).mirrored(),
+                              QOpenGLTexture::DontGenerateMipMaps);
     }
 
-    setMinificationFilter(QOpenGLTexture::Linear);
+    setMinificationFilter(QOpenGLTexture::LinearMipMapLinear);
     setMagnificationFilter(QOpenGLTexture::Linear);
 
     // recalculate half-texel offset
+
     calcVertex();
 
     return true;
@@ -433,8 +445,14 @@ bool GLViewerTexture::setNewSize(QSize size)
  */
 void GLViewerTexture::rotate()
 {
-    DMetadata meta;
-    meta.rotateExifQImage(d->qimage, (DMetadata::ImageOrientation)d->rotate_list[d->rotate_idx % 4]);
+    QScopedPointer<DMetadata> meta(new DMetadata);
+
+    if (!d->fimage.isNull())
+    {
+        meta->rotateExifQImage(d->fimage, (DMetadata::ImageOrientation)d->rotate_list[d->rotate_idx % 4]);
+    }
+
+    meta->rotateExifQImage(d->qimage, (DMetadata::ImageOrientation)d->rotate_list[d->rotate_idx % 4]);
 
     loadInternal();
 
@@ -456,19 +474,21 @@ void GLViewerTexture::rotate()
  */
 void GLViewerTexture::zoomToOriginal()
 {
+    QSize imgSize = d->fimage.isNull() ? d->qimage.size() : d->fimage.size();
     float zoomfactorToOriginal;
     reset();
 
-    if (float(d->qimage.width()) / float(d->qimage.height()) > float(d->display_x) / float(d->display_y))
+    if (float(imgSize.width()) / float(imgSize.height()) > float(d->display_x) / float(d->display_y))
     {
         // Image touches right and left edge of window
 
-        zoomfactorToOriginal = float(d->display_x) / d->qimage.width();
+        zoomfactorToOriginal = float(d->display_x) / imgSize.width();
     }
     else
     {
         // Image touches upper and lower edge of window
-        zoomfactorToOriginal = float(d->display_y) / d->qimage.height();
+
+        zoomfactorToOriginal = float(d->display_y) / imgSize.height();
     }
 
     zoomfactorToOriginal *= qApp->devicePixelRatio();

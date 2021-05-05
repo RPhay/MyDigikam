@@ -8,7 +8,7 @@
  *
  * Copyright (C) 2010      by Gabriel Voicu <ping dot gabi at gmail dot com>
  * Copyright (C) 2010      by Michael G. Hansen <mike at mghansen dot de>
- * Copyright (C) 2014-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2014-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -46,7 +46,8 @@ namespace Digikam
 class AlbumWidgetStack;
 class ImageChangeset;
 
-class DIGIKAM_EXPORT MapWidgetView : public QWidget, public StateSavingObject
+class DIGIKAM_GUI_EXPORT MapWidgetView : public QWidget,
+                                         public StateSavingObject
 {
     Q_OBJECT
 
@@ -64,7 +65,7 @@ public:
                            DCategorizedSortFilterProxyModel* const imageFilterModel,
                            QWidget* const parent,
                            const Application application);
-    ~MapWidgetView();
+    ~MapWidgetView()                        override;
 
     void openAlbum(Album* const album);
     void setActive(const bool state);
@@ -75,8 +76,8 @@ public:
 
 protected:
 
-    void doLoadState();
-    void doSaveState();
+    void doLoadState()                      override;
+    void doSaveState()                      override;
 
 private:
 
@@ -96,19 +97,19 @@ public:
                                 DCategorizedSortFilterProxyModel* const filterModel,
                                 QObject* const parent,
                                 const MapWidgetView::Application application);
-    virtual ~MapViewModelHelper();
+    ~MapViewModelHelper()                                                     override;
 
-    virtual QAbstractItemModel* model()                             const;
-    virtual QItemSelectionModel* selectionModel()                   const;
-    virtual bool itemCoordinates(const QModelIndex& index,
-                                 GeoCoordinates* const coordinates) const;
+    QAbstractItemModel* model()                                         const override;
+    QItemSelectionModel* selectionModel()                               const override;
+    bool itemCoordinates(const QModelIndex& index,
+                         GeoCoordinates* const coordinates)             const override;
 
-    virtual QPixmap pixmapFromRepresentativeIndex(const QPersistentModelIndex& index,
-                                                  const QSize& size);
-    virtual QPersistentModelIndex bestRepresentativeIndexFromList(const QList<QPersistentModelIndex>& list,
-                                                                  const int sortKey);
+    QPixmap pixmapFromRepresentativeIndex(const QPersistentModelIndex& index,
+                                          const QSize& size)                  override;
+    QPersistentModelIndex bestRepresentativeIndexFromList(const QList<QPersistentModelIndex>& list,
+                                                          const int sortKey)  override;
 
-    virtual void onIndicesClicked(const QList<QPersistentModelIndex>& clickedIndices);
+    void onIndicesClicked(const QList<QPersistentModelIndex>& clickedIndices) override;
 
 Q_SIGNALS:
 

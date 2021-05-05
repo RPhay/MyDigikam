@@ -7,7 +7,7 @@
  * Description : color chooser widgets
  *
  * Copyright (C)      1997 by Martin Jones (mjones at kde dot org)
- * Copyright (C) 2015-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2015-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -51,7 +51,7 @@ public:
      * has a value range of [0..100] in both directions.
      */
     explicit DPointSelect(QWidget* const parent);
-    ~DPointSelect();
+    ~DPointSelect() override;
 
     /**
      * Sets the current values in horizontal and
@@ -102,7 +102,7 @@ public:
     /**
      * Reimplemented to give the widget a minimum size
      */
-    virtual QSize minimumSizeHint() const override;
+    QSize minimumSizeHint() const override;
 
 Q_SIGNALS:
 
@@ -128,10 +128,10 @@ protected:
      */
     virtual void drawMarker(QPainter* p, int xp, int yp);
 
-    virtual void paintEvent(QPaintEvent* e) override;
-    virtual void mousePressEvent(QMouseEvent* e) override;
-    virtual void mouseMoveEvent(QMouseEvent* e) override;
-    virtual void wheelEvent(QWheelEvent*) override;
+    void paintEvent(QPaintEvent* e) override;
+    void mousePressEvent(QMouseEvent* e) override;
+    void mouseMoveEvent(QMouseEvent* e) override;
+    void wheelEvent(QWheelEvent*) override;
 
     /**
      * Converts a pixel position to its corresponding values.
@@ -168,7 +168,7 @@ public:
     /**
      * Destructor.
      */
-    ~DHueSaturationSelector();
+    ~DHueSaturationSelector() override;
 
     /**
      * Sets the chooser mode. The allowed modes are defined
@@ -240,14 +240,14 @@ protected:
      * which is used for buffering.
      */
     virtual void drawPalette(QPixmap* pixmap);
-    virtual void resizeEvent(QResizeEvent*) override;
+    void resizeEvent(QResizeEvent*) override;
 
     /**
      * Reimplemented from DPointSelect. This drawing is
      * buffered in a pixmap here. As real drawing
      * routine, drawPalette() is used.
      */
-    virtual void drawContents(QPainter* painter) override;
+    void drawContents(QPainter* painter) override;
 
 private:
 

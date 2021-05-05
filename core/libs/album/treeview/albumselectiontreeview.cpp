@@ -7,7 +7,7 @@
  * Description : Albums folder view.
  *
  * Copyright (C) 2005-2006 by Joern Ahrens <joern dot ahrens at kdemail dot net>
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2009-2012 by Andi Clemens <andi dot clemens at gmail dot com>
  * Copyright (C) 2009-2011 by Johannes Wienke <languitar at semipol dot de>
  *
@@ -58,6 +58,8 @@ namespace Digikam
 
 class Q_DECL_HIDDEN AlbumViewToolTip: public ItemViewToolTip
 {
+    Q_OBJECT
+
 public:
 
     explicit AlbumViewToolTip(AlbumSelectionTreeView* const view)
@@ -72,9 +74,10 @@ public:
 
 protected:
 
-    virtual QString tipContents()
+    QString tipContents() override
     {
         PAlbum* const album = view()->albumForIndex(currentIndex());
+
         return (ToolTipFiller::albumTipContents(album, view()->albumModel()->albumCount(album)));
     }
 };
@@ -87,16 +90,16 @@ class Q_DECL_HIDDEN AlbumSelectionTreeView::Private
 public:
 
     explicit Private()
-      : enableToolTips(false),
-        albumModificationHelper(nullptr),
-        toolTip(nullptr),
-        renameAction(nullptr),
-        resetIconAction(nullptr),
-        findDuplAction(nullptr),
-        scanFacesAction(nullptr),
-        repairHiddenAction(nullptr),
-        rebuildThumbsAction(nullptr),
-        contextMenuElement(nullptr)
+      : enableToolTips          (false),
+        albumModificationHelper (nullptr),
+        toolTip                 (nullptr),
+        renameAction            (nullptr),
+        resetIconAction         (nullptr),
+        findDuplAction          (nullptr),
+        scanFacesAction         (nullptr),
+        repairHiddenAction      (nullptr),
+        rebuildThumbsAction     (nullptr),
+        contextMenuElement      (nullptr)
     {
     }
 
@@ -121,14 +124,15 @@ public:
 class Q_DECL_HIDDEN AlbumSelectionTreeView::Private::AlbumSelectionTreeViewContextMenuElement
     : public AbstractAlbumTreeView::ContextMenuElement
 {
+
 public:
 
-    explicit AlbumSelectionTreeViewContextMenuElement(AlbumSelectionTreeView::Private* const d)
-        : d(d)
+    explicit AlbumSelectionTreeViewContextMenuElement(AlbumSelectionTreeView::Private* const dd)
+        : d(dd)
     {
     }
 
-    virtual void addActions(AbstractAlbumTreeView*, ContextMenuHelper& cmh, Album* a)
+    void addActions(AbstractAlbumTreeView*, ContextMenuHelper& cmh, Album* a) override
     {
         if (!a || a->isRoot())
         {
@@ -146,7 +150,12 @@ public:
         {
             cmh.addActionNewAlbum(d->albumModificationHelper, album);
             cmh.addAction(QLatin1String("album_openinfilemanager"));
-            cmh.addAction(QLatin1String("album_openinterminal"));
+            cmh.addSeparator();
+
+        // --------------------------------------------------------
+
+            cmh.addAction(d->rebuildThumbsAction);
+            d->albumModificationHelper->bindAlbum(d->rebuildThumbsAction, album);
             return;
         }
 
@@ -154,7 +163,6 @@ public:
 
         cmh.addActionNewAlbum(d->albumModificationHelper, album);
         cmh.addAction(QLatin1String("album_openinfilemanager"));
-        cmh.addAction(QLatin1String("album_openinterminal"));
         cmh.addSeparator();
 
         // --------------------------------------------------------
@@ -247,7 +255,7 @@ void AlbumSelectionTreeView::setEnableToolTips(bool enable)
 
 void AlbumSelectionTreeView::slotFindDuplicates()
 {
-    emit signalFindDuplicates(d->albumModificationHelper->boundAlbum(sender()));
+    emit signalFindDuplicates(QList<PAlbum*> { d->albumModificationHelper->boundAlbum(sender()) });
 }
 
 void AlbumSelectionTreeView::slotScanForFaces()
@@ -275,7 +283,7 @@ void AlbumSelectionTreeView::slotScanForFaces()
     FaceScanSettings settings;
 
     settings.accuracy               = ApplicationSettings::instance()->getFaceDetectionAccuracy();
-    settings.recognizeAlgorithm     = RecognitionDatabase::RecognizeAlgorithm::DNN; // Default now change to DNN
+    settings.useYoloV3              = ApplicationSettings::instance()->getFaceDetectionYoloV3();
     settings.task                   = FaceScanSettings::DetectAndRecognize;
     settings.alreadyScannedHandling = FaceScanSettings::Rescan;
     settings.albums                 = albums;
@@ -379,6 +387,7 @@ bool AlbumSelectionTreeView::viewportEvent(QEvent* event)
     if (!album || album->isRoot() || album->isAlbumRoot())
     {
         // there was no album so we really don't want to show a tooltip.
+
         return true;
     }
 
@@ -402,3 +411,5 @@ bool AlbumSelectionTreeView::viewportEvent(QEvent* event)
 }
 
 } // namespace Digikam
+
+#include "albumselectiontreeview.moc"

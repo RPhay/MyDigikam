@@ -6,7 +6,7 @@
  * Date        : 2009-05-04
  * Description : Various operation on items
  *
- * Copyright (C) 2002-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2002-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2009-2010 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  *
  * This program is free software; you can redistribute it
@@ -40,7 +40,7 @@ namespace Digikam
 {
 class Album;
 
-class DIGIKAM_EXPORT ItemViewUtilities : public QObject
+class DIGIKAM_GUI_EXPORT ItemViewUtilities : public QObject
 {
     Q_OBJECT
 
@@ -58,6 +58,7 @@ public:
 
 public Q_SLOTS:
 
+    void copyItemsToExternalFolder(const QList<ItemInfo>& infos);
     void createNewAlbumForInfos(const QList<ItemInfo>& infos, Album* currentAlbum);
     bool deleteImages(const QList<ItemInfo>& infos, const DeleteMode deleteMode);
     void deleteImagesDirectly(const QList<ItemInfo>& infos, const DeleteMode deleteMode);

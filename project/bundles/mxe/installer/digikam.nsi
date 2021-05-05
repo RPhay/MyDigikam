@@ -9,7 +9,7 @@
  ;
  ; Copyright (C) 2010      by Julien Narboux <julien at narboux dot fr>
  ; Copyright (C) 2011-2014 by Ananta Palani  <anantapalani at gmail dot com>
- ; Copyright (C) 2010-2019 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ ; Copyright (C) 2010-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  ;
  ; Script arguments:
  ; VERSION    : the digiKam version as string.
@@ -79,7 +79,7 @@
     UninstallIcon "digikam-uninstaller.ico"
     OutFile "${OUTFILE}"
 
-    ;Request application privileges for Windows Vista
+    ;Request application privileges for Windows Vista and upper versions
 
     RequestExecutionLevel admin
 
@@ -112,7 +112,7 @@
 ;Interface Configuration
 
     !define MUI_HEADERIMAGE
-    !define MUI_HEADERIMAGE_BITMAP "digikam_header.bmp" 
+    !define MUI_HEADERIMAGE_BITMAP "digikam_header.bmp"
     !define MUI_WELCOMEFINISHPAGE_BITMAP "digikam_welcome.bmp"
     !define MUI_UNWELCOMEFINISHPAGE_BITMAP "digikam_welcome.bmp"
     !define MUI_ABORTWARNING
@@ -233,13 +233,20 @@
         ;folder with the name 'bin' in all subdirectories of ${BUNDLEPATH}
 
         SetOutPath "$INSTDIR\"
-        File /r "${BUNDLEPATH}\*.dll"
-        File /r "${BUNDLEPATH}\*.exe"
-        File /r "${BUNDLEPATH}\*.conf"
-        File /r "${BUNDLEPATH}\*.rcc"
+        File "${BUNDLEPATH}\*.exe"
+        File "${BUNDLEPATH}\*.conf"
+        File "${BUNDLEPATH}\*.rcc"
+        File "${BUNDLEPATH}\*.dll"
+        File "${BUNDLEPATH}\*.yes"
+
+        SetOutPath "$INSTDIR\etc"
+        File /r "${BUNDLEPATH}\etc\*.*"
 
         SetOutPath "$INSTDIR\data"
         File /r "${BUNDLEPATH}\data\*.*"
+
+        SetOutPath "$INSTDIR\share"
+        File /r "${BUNDLEPATH}\share\*.*"
 
         SetOutPath "$INSTDIR\plugins"
         File /r "${BUNDLEPATH}\plugins\*.*"
@@ -258,7 +265,7 @@
         ;Register uninstaller in windows registery with only the option to uninstall (no repair nor modify)
 
         WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\${MY_PRODUCT}" "Comments" "${MY_PRODUCT} ${VERSION}"
-        WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\${MY_PRODUCT}" "DisplayIcon" '"$INSTDIR\bin\digikam.exe"'
+        WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\${MY_PRODUCT}" "DisplayIcon" '"$INSTDIR\digikam.exe"'
         WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\${MY_PRODUCT}" "DisplayName" "${MY_PRODUCT} ${VERSION}"
         WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\${MY_PRODUCT}" "DisplayVersion" "${VERSION}"
         WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\${MY_PRODUCT}" "HelpLink" "${SUPPORT_HOMEPAGE}"
@@ -309,12 +316,20 @@
         Call un.CheckDigikamRunning
         Call un.CheckShowfotoRunning
 
+        Delete "$INSTDIR\*.exe"
+        Delete "$INSTDIR\*.conf"
+        Delete "$INSTDIR\*.rcc"
+        Delete "$INSTDIR\*.dll"
+        Delete "$INSTDIR\*.yes"
+
         Delete "$INSTDIR\Uninstall.exe"
         Delete "$INSTDIR\releasenotes.html"
         Delete "$INSTDIR\digikam-uninstaller.ico"
 
-        RMDir /r "$INSTDIR\"
+        RMDir /r "$INSTDIR\bin"
+        RMDir /r "$INSTDIR\etc"
         RMDir /r "$INSTDIR\data"
+        RMDir /r "$INSTDIR\share"
         RMDir /r "$INSTDIR\plugins"
         RMDir /r "$INSTDIR\translations"
 
@@ -332,7 +347,7 @@
         Delete "$SMPROGRAMS\$StartMenuFolder\Showfoto.lnk"
         Delete "$SMPROGRAMS\$StartMenuFolder\The ${MY_PRODUCT} HomePage.url"
 
-        RMDir /r "$SMPROGRAMS\$StartMenuFolder"
+        RMDir "$SMPROGRAMS\$StartMenuFolder"
 
         ;Remove registry entries
 

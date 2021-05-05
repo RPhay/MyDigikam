@@ -56,14 +56,18 @@ using namespace QtAV;
 namespace Digikam
 {
 
-class Q_DECL_HIDDEN VideoStyle : public QProxyStyle
+class Q_DECL_HIDDEN SlideVideoStyle : public QProxyStyle
 {
+    Q_OBJECT
+
 public:
 
     using QProxyStyle::QProxyStyle;
 
-    int styleHint(QStyle::StyleHint hint, const QStyleOption* option = nullptr,
-                  const QWidget* widget = nullptr, QStyleHintReturn* returnData = nullptr) const
+    int styleHint(QStyle::StyleHint hint,
+                  const QStyleOption* option = nullptr,
+                  const QWidget* widget = nullptr,
+                  QStyleHintReturn* returnData = nullptr) const override
     {
         if (hint == QStyle::SH_Slider_AbsoluteSetButtons)
         {
@@ -80,13 +84,13 @@ class Q_DECL_HIDDEN SlideVideo::Private
 public:
 
     explicit Private()
-      : iface(nullptr),
-        videoWidget(nullptr),
-        player(nullptr),
-        slider(nullptr),
-        volume(nullptr),
-        tlabel(nullptr),
-        indicator(nullptr),
+      : iface           (nullptr),
+        videoWidget     (nullptr),
+        player          (nullptr),
+        slider          (nullptr),
+        volume          (nullptr),
+        tlabel          (nullptr),
+        indicator       (nullptr),
         videoOrientation(0)
     {
     }
@@ -107,7 +111,7 @@ public:
 
 SlideVideo::SlideVideo(QWidget* const parent)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     setAttribute(Qt::WA_DeleteOnClose);
     setMouseTracking(true);
@@ -122,7 +126,7 @@ SlideVideo::SlideVideo(QWidget* const parent)
 
     d->indicator      = new DHBox(this);
     d->slider         = new QSlider(Qt::Horizontal, d->indicator);
-    d->slider->setStyle(new VideoStyle(d->slider->style()));
+    d->slider->setStyle(new SlideVideoStyle(d->slider->style()));
     d->slider->setRange(0, 0);
     d->slider->setAutoFillBackground(true);
     d->tlabel         = new QLabel(d->indicator);
@@ -262,8 +266,11 @@ void SlideVideo::slotPlayerStateChanged(QtAV::AVPlayer::State state)
         int rotate = 0;
 
 #if QTAV_VERSION > QTAV_VERSION_CHK(1, 12, 0)
+
         // fix wrong rotation from QtAV git/master
+
         rotate     = d->player->statistics().video_only.rotate;
+
 #endif
         d->videoWidget->setOrientation((-rotate) + d->videoOrientation);
         qCDebug(DIGIKAM_GENERAL_LOG) << "Found video orientation:"
@@ -352,3 +359,5 @@ void SlideVideo::slotHandlePlayerError(const QtAV::AVError& err)
 }
 
 } // namespace Digikam
+
+#include "slidevideo.moc"

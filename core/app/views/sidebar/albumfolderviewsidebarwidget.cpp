@@ -7,7 +7,7 @@
  * Description : Side Bar Widget for the folder view.
  *
  * Copyright (C) 2009-2010 by Johannes Wienke <languitar at semipol dot de>
- * Copyright (C) 2010-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2010-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2012      by Andi Clemens <andi dot clemens at gmail dot com>
  * Copyright (C) 2014      by Mohamed_Anwer <m_dot_anwer at gmx dot com>
  * Copyright (C) 2010      by Aditya Bhatt <adityabhatt1991 at gmail dot com>
@@ -56,8 +56,8 @@ public:
 
     explicit Private()
       : albumModificationHelper(nullptr),
-        albumFolderView(nullptr),
-        searchTextBar(nullptr)
+        albumFolderView        (nullptr),
+        searchTextBar          (nullptr)
     {
     }
 
@@ -70,7 +70,7 @@ AlbumFolderViewSideBarWidget::AlbumFolderViewSideBarWidget(QWidget* const parent
                                                            AlbumModel* const model,
                                                            AlbumModificationHelper* const albumModificationHelper)
     : SidebarWidget(parent),
-      d(new Private)
+      d            (new Private)
 {
     setObjectName(QLatin1String("AlbumFolderView Sidebar"));
     setProperty("Shortcut", Qt::CTRL + Qt::SHIFT + Qt::Key_F1);
@@ -82,7 +82,6 @@ AlbumFolderViewSideBarWidget::AlbumFolderViewSideBarWidget(QWidget* const parent
     d->albumFolderView         = new AlbumSelectionTreeView(this, model, d->albumModificationHelper);
     d->albumFolderView->setObjectName(QLatin1String("AlbumFolderView"));
     d->albumFolderView->setConfigGroup(getConfigGroup());
-    d->albumFolderView->setExpandNewCurrentItem(true);
     d->albumFolderView->setAlbumManagerCurrentAlbum(true);
     d->searchTextBar           = new SearchTextBarDb(this, QLatin1String("ItemIconViewFolderSearchBar"));
     d->searchTextBar->setHighlightOnResult(true);
@@ -94,8 +93,8 @@ AlbumFolderViewSideBarWidget::AlbumFolderViewSideBarWidget(QWidget* const parent
     layout->setContentsMargins(0, 0, spacing, 0);
 
     // setup connection
-    connect(d->albumFolderView, SIGNAL(signalFindDuplicates(PAlbum*)),
-            this, SIGNAL(signalFindDuplicates(PAlbum*)));
+    connect(d->albumFolderView, SIGNAL(signalFindDuplicates(QList<PAlbum*>)),
+            this, SIGNAL(signalFindDuplicates(QList<PAlbum*>)));
 }
 
 AlbumFolderViewSideBarWidget::~AlbumFolderViewSideBarWidget()
@@ -125,6 +124,7 @@ void AlbumFolderViewSideBarWidget::applySettings()
 {
     ApplicationSettings* const settings = ApplicationSettings::instance();
     d->albumFolderView->setEnableToolTips(settings->getShowAlbumToolTips());
+    d->albumFolderView->setExpandNewCurrentItem(settings->getExpandNewCurrentItem());
 }
 
 void AlbumFolderViewSideBarWidget::changeAlbumFromHistory(const QList<Album*>& album)

@@ -6,7 +6,7 @@
  * Date        : 2010-06-01
  * Description : A simple backend to search OSM and Geonames.org.
  *
- * Copyright (C) 2010-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2010-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2010-2011 by Michael G. Hansen <mike at mghansen dot de>
  *
  * This program is free software; you can redistribute it
@@ -48,7 +48,7 @@ public:
 
     explicit Private()
       : netReply(nullptr),
-        mngr(nullptr)
+        mngr    (nullptr)
     {
     }
 
@@ -63,7 +63,7 @@ public:
 
 SearchBackend::SearchBackend(QObject* const parent)
     : QObject(parent),
-      d(new Private())
+      d      (new Private())
 {
     d->mngr = new QNetworkAccessManager(this);
 
@@ -105,9 +105,9 @@ bool SearchBackend::search(const QString& backendName, const QString& searchTerm
     {
         d->runningBackend = backendName;
 
-        // documentation: http://www.geonames.org/export/geonames-search.html
+        // documentation: https://www.geonames.org/export/geonames-search.html
 
-        QUrl netUrl(QLatin1String("http://api.geonames.org/search"));
+        QUrl netUrl(QLatin1String("http://api.geonames.org/search"));       // krazy:exclude=insecurenet
 
         QUrlQuery q(netUrl);
         q.addQueryItem(QLatin1String("type"), QLatin1String("xml"));
@@ -177,6 +177,7 @@ void SearchBackend::slotFinished(QNetworkReply* reply)
             }
 
             // now parse the strings:
+
             qreal lat;
             qreal lon;
             bool okay = false;
@@ -209,8 +210,8 @@ void SearchBackend::slotFinished(QNetworkReply* reply)
     else if (d->runningBackend == QLatin1String("geonames.org"))
     {
         QDomDocument doc;
-        doc.setContent(resultString); // error-handling
-        QDomElement docElement = doc.documentElement(); // error-handling
+        doc.setContent(resultString);                       // error-handling
+        QDomElement docElement = doc.documentElement();     // error-handling
         qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG)<<docElement.toElement().tagName();
 
         for (QDomNode resultNode = docElement.firstChild() ; !resultNode.isNull() ; resultNode = resultNode.nextSibling())
@@ -242,7 +243,7 @@ void SearchBackend::slotFinished(QNetworkReply* reply)
                     continue;
                 }
 
-                if (resultSubElement.tagName() == QLatin1String("lat"))
+                if      (resultSubElement.tagName() == QLatin1String("lat"))
                 {
                     latString = resultSubElement.text();
                 }
@@ -266,6 +267,7 @@ void SearchBackend::slotFinished(QNetworkReply* reply)
             }
 
             // now parse the strings:
+
             qreal lat;
             qreal lon;
             bool okay = false;

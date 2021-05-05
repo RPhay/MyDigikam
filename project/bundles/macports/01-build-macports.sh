@@ -4,7 +4,7 @@
 # This script must be run as sudo
 #
 # Copyright (c) 2015      by Shanti, <listaccount at revenant dot org>
-# Copyright (c) 2015-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+# Copyright (c) 2015-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
@@ -53,23 +53,31 @@ export PATH=$INSTALL_PREFIX/bin:/$INSTALL_PREFIX/sbin:/$INSTALL_PREFIX/libexec/q
 # Check if /opt exists and standard Macports install path
 
 if [ -d "/opt" ] ; then
+
     if [ -d "/opt/local" ] ; then
+
         echo "---------- A standard Macports install exists on /opt/local."
         echo "           To prevent wrong links from this bundle to this repository"
         echo "           this one must be disabled (moving to /opt/local.back for ex)."
         echo "---------- Aborting..."
         exit;
+
     fi
+
 else
+
     echo "---------- /opt do not exist, creating"
 
     mkdir "/opt"
 
     if [ $? -ne 0 ] ; then
+
         echo "---------- Cannot create /opt directory."
         echo "---------- Aborting..."
         exit;
+
     fi
+
 fi
 
 #################################################################################################
@@ -84,8 +92,8 @@ if [ -d "$INSTALL_PREFIX" ] ; then
     if echo "$answer" | grep -iq "^r" ;then
 
         echo "---------- Removing existing $INSTALL_PREFIX"
-        mv $INSTALL_PREFIX $INSTALL_PREFIX.old
-        rm -rf $INSTALL_PREFIX.old
+        mv $INSTALL_PREFIX $INSTALL_PREFIX.old || true
+        rm -rf $INSTALL_PREFIX.old || true
 
     elif echo "$answer" | grep -iq "^c" ;then
 
@@ -108,7 +116,7 @@ if [[ $CONTINUE_INSTALL == 0 ]]; then
 
     echo "---------- Creating $INSTALL_PREFIX"
 
-    mkdir "$INSTALL_PREFIX"
+    mkdir -p "$INSTALL_PREFIX"
 
     if [ $? -ne 0 ] ; then
 
@@ -129,9 +137,11 @@ if [[ $CONTINUE_INSTALL == 0 ]]; then
             sort -t. -rn -k1,1 -k2,2 -k3,3 | head -1)
 
         if [ -z $MP_LASTEST_VER ] ; then
+
             echo "---------- Cannot check the lastest Macports verion from $MP_URL"
             echo "---------- Aborting..."
             exit;
+
         fi
 
         echo "---------- Detected lastest Macports version : $MP_LASTEST_VER"
@@ -144,17 +154,21 @@ if [[ $CONTINUE_INSTALL == 0 ]]; then
     # Build Macports in temporary directory and installation
 
     if [ -d "$MP_BUILDTEMP" ] ; then
-    echo "---------- Removing existing $MP_BUILDTEMP"
-    rm -rf "$MP_BUILDTEMP"
+
+        echo "---------- Removing existing $MP_BUILDTEMP"
+        rm -rf "$MP_BUILDTEMP"
+
     fi
 
     echo "---------- Creating $MP_BUILDTEMP"
     mkdir "$MP_BUILDTEMP"
 
     if [ $? -ne 0 ] ; then
+
         echo "---------- Cannot create temporary directory $MP_BUILDTEMP to compile Macports"
         echo "---------- Aborting..."
         exit;
+
     fi
 
     cd "$MP_BUILDTEMP"
@@ -189,7 +203,18 @@ if [[ $CONTINUE_INSTALL == 0 ]]; then
 startupitem_type none
 startupitem_install no
 macosx_deployment_target $OSX_MIN_TARGET
+build_arch $ARCH_TARGET
 EOF
+
+    if [[ $ARCH_TARGET = "arm64" ]] ; then
+
+        # No need to build with both architectures embeded (x86 and ARM) for Apple Silicon target
+
+        cat << EOF >> "$INSTALL_PREFIX/etc/macports/variants.conf"
++universal
+EOF
+
+    fi
 
 fi
 
@@ -217,20 +242,35 @@ echo -e "\n"
 echo "---------- Building digiKam dependencies with Macports"
 
 # With OSX less than El Capitan, we need a more recent Clang compiler than one provided by XCode.
+# This only concern x86_64 architecture.
 
-if [[ $MAJOR_OSX_VERSION -lt 10 ]]; then
+if [[ $MAJOR_OSX_VERSION -lt 11 && $MINOR_OSX_VERSION -lt 10 ]]; then
 
     echo "---------- Install more recent Clang compiler from Macports for specific ports"
     port install clang_select
     port install clang-3.4
     port select --set clang mp-clang-3.4
+
 fi
 
 echo -e "\n"
 
+if [[ $ARCH_TARGET = "x86_64" ]] ; then
+
+    # Note: subversion is used to checkout translations from KDE repositories.
+    # Subversion do not compile under arm64 and XCode drop svn supports.
+    # KDE team plan to migrate svn to git: https://phabricator.kde.org/T13514
+
+    port install \
+                 ld64 +ld64_xcode \
+                 subversion
+
+fi
+
 port install \
-             ld64 +ld64_xcode \
+             cctools +xcode \
              cmake \
+             ccache \
              libpng \
              jpeg \
              tiff \
@@ -264,8 +304,16 @@ port install \
              ImageMagick
 
 if [[ $DK_QTWEBENGINE = 1 ]] ; then
+
+    export SYSTEM_VERSION_COMPAT=1
     port install qt5-qtwebengine
+
+else
+
+    port install qt5-qtwebkit
+
 fi
+
 
 #             sane-backends
 
@@ -280,11 +328,17 @@ echo -e "\n"
 #################################################################################################
 
 # Create the build dir for the 3rdparty deps
+
 if [ ! -d $BUILDING_DIR ] ; then
+
     mkdir $BUILDING_DIR
+
 fi
+
 if [ ! -d $DOWNLOAD_DIR ] ; then
+
     mkdir $DOWNLOAD_DIR
+
 fi
 
 cd $BUILDING_DIR
@@ -303,7 +357,6 @@ if [[ $DK_QTWEBENGINE = 0 ]] ; then
 fi
 
 cmake --build . --config RelWithDebInfo --target ext_opencv      -- -j$CPU_CORES
-cmake --build . --config RelWithDebInfo --target ext_exiv2       -- -j$CPU_CORES
 
 #################################################################################################
 

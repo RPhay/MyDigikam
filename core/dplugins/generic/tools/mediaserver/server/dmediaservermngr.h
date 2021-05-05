@@ -7,7 +7,7 @@
  * Description : Media server manager
  *
  * Copyright (C) 2012      by Smit Mehta <smit dot meh at gmail dot com>
- * Copyright (C) 2012-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -34,13 +34,12 @@
 
 // Local includes
 
-#include "digikam_export.h"
 #include "dmediaserver.h"
 
 namespace Digikam
 {
 
-class DIGIKAM_EXPORT DMediaServerMngr : public QObject
+class DMediaServerMngr : public QObject
 {
     Q_OBJECT
 
@@ -50,13 +49,13 @@ public:
     void setItemsList(const QString& aname, const QList<QUrl>& urls);
 
     /// Return a flat list of items shared
-    QList<QUrl> itemsList() const;
+    QList<QUrl> itemsList()                  const;
 
     /// Setup the list of albums to share with DLNA server.
     void setCollectionMap(const MediaServerMap&);
 
     /// Return the current album map shared.
-    MediaServerMap collectionMap() const;
+    MediaServerMap collectionMap()           const;
 
     /// Start the DLNA server and share the contents. Return true is all is on-line.
     bool startMediaServer();
@@ -73,11 +72,11 @@ public:
     void saveAtShutdown();
 
     /// Return true if server is running in background.
-    bool isRunning()    const;
+    bool isRunning()                         const;
 
     /// Return some stats about total albums and total items shared on the network.
-    int  albumsShared() const;
-    int  itemsShared()  const;
+    int  albumsShared()                      const;
+    int  itemsShared()                       const;
 
     /// Config properties methods.
 
@@ -94,8 +93,10 @@ public:
 
 private:
 
-    explicit DMediaServerMngr();
-    ~DMediaServerMngr();
+    // Disable
+    DMediaServerMngr();
+    explicit DMediaServerMngr(QObject*) = delete;
+    ~DMediaServerMngr() override;
 
 private:
 

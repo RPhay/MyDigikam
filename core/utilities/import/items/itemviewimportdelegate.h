@@ -7,7 +7,7 @@
  * Description : Item delegate for import interface items.
  *
  * Copyright (C) 2012      by Islam Wazery <wazery at ubuntu dot com>
- * Copyright (C) 2012-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -49,24 +49,24 @@ class ItemViewImportDelegate : public DItemDelegate, public ItemDelegateOverlayC
 public:
 
     explicit ItemViewImportDelegate(QObject* const parent = nullptr);
-    ~ItemViewImportDelegate();
+    ~ItemViewImportDelegate() override;
 
     ThumbnailSize thumbnailSize() const;
     int           spacing() const;
     QRect         rect() const;
 
-    virtual QSize sizeHint(const QStyleOptionViewItem& option, const QModelIndex& index) const;
-    virtual QSize gridSize() const;
+    QSize sizeHint(const QStyleOptionViewItem& option, const QModelIndex& index) const override;
+    QSize gridSize() const override;
 
     /// reimplemented from DItemDelegate
 
-    virtual void setThumbnailSize(const ThumbnailSize& thumbSize);
-    virtual void setSpacing(int spacing);
-    virtual void setDefaultViewOptions(const QStyleOptionViewItem& option);
-    virtual bool acceptsToolTip(const QPoint& pos, const QRect& visualRect,
-                                const QModelIndex& index, QRect* tooltipRect = nullptr) const;
-    virtual bool acceptsActivation(const QPoint& pos, const QRect& visualRect,
-                                   const QModelIndex& index, QRect* activationRect = nullptr) const;
+    void setThumbnailSize(const ThumbnailSize& thumbSize) override;
+    void setSpacing(int spacing) override;
+    void setDefaultViewOptions(const QStyleOptionViewItem& option) override;
+    bool acceptsToolTip(const QPoint& pos, const QRect& visualRect,
+                                const QModelIndex& index, QRect* tooltipRect = nullptr) const override;
+    bool acceptsActivation(const QPoint& pos, const QRect& visualRect,
+                                   const QModelIndex& index, QRect* activationRect = nullptr) const override;
 
     /**
      * Returns the area where the pixmap is drawn,
@@ -95,14 +95,14 @@ public:
      */
     virtual QRect ratingRect() const;
 
-    virtual void mouseMoved(QMouseEvent* e, const QRect& visualRect, const QModelIndex& index);
+    void mouseMoved(QMouseEvent* e, const QRect& visualRect, const QModelIndex& index) override;
 
 protected Q_SLOTS:
 
     void slotThemeChanged();
     void slotSetupChanged();
 
-    virtual void overlayDestroyed(QObject* o);
+    void overlayDestroyed(QObject* o) override;
 
 Q_SIGNALS:
 
@@ -136,7 +136,7 @@ protected:
     /// Returns the relevant pixmap from the cached rating pixmaps
     QPixmap ratingPixmap(int rating, bool selected) const;
 
-    virtual QAbstractItemDelegate* asDelegate();
+    QAbstractItemDelegate* asDelegate() override;
 
     /// reimplement these in subclasses
     virtual void invalidatePaintingCache();
@@ -146,6 +146,12 @@ protected:
 
     ItemViewImportDelegatePrivate* const d_ptr;
     ItemViewImportDelegate(ItemViewImportDelegatePrivate& dd, QObject* const parent);
+
+private:
+
+    // Disable
+    ItemViewImportDelegate(const ItemViewImportDelegate&)            = delete;
+    ItemViewImportDelegate& operator=(const ItemViewImportDelegate&) = delete;
 
 private:
 

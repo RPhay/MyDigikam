@@ -6,8 +6,8 @@
  * Date        : 2010-01-17
  * Description : test parsing gpx data
  *
- * Copyright (C) 2010 by Michael G. Hansen <mike at mghansen dot de>
- * Copyright (C) 2017-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2010      by Michael G. Hansen <mike at mghansen dot de>
+ * Copyright (C) 2017-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -26,7 +26,7 @@
 // Qt includes
 
 #include <QDateTime>
-#include <QtTest>
+#include <QTest>
 
 // Local includes
 
@@ -47,6 +47,7 @@ void TestGPXParsing::testQDateTimeParsing()
 {
     {
         // strings ending with a 'Z' are taken to be in UTC, regardless of milliseconds
+
         QDateTime time1 = QDateTime::fromString(QLatin1String("2009-03-11T13:39:55.622Z"), Qt::ISODate);
         QCOMPARE(time1.timeSpec(), Qt::UTC);
         QDateTime time2 = QDateTime::fromString(QLatin1String("2009-03-11T13:39:55Z"), Qt::ISODate);
@@ -56,21 +57,17 @@ void TestGPXParsing::testQDateTimeParsing()
     {
         // eCoach in N900 records GPX files with this kind of date format:
         // 2010-01-14T09:26:02.287+02:00
+
         QDateTime time1 = QDateTime::fromString(QLatin1String("2010-01-14T09:26:02.287+02:00"), Qt::ISODate);
 
-#if QT_VERSION>=0x040700
-        // Qt >= 4.7: both date and time are parsed fine
         /// @todo What about the timezone?
+
         QCOMPARE(time1.date(), QDate(2010, 01, 14));
         QCOMPARE(time1.time(), QTime(9, 26, 2, 287));
-#else
-        // Qt < 4.7: the date is parsed fine, but the time fails:
-        QCOMPARE(time1.date(), QDate(2010, 01, 14));
-        QCOMPARE(time1.time(), QTime(0, 0, 0));
-#endif
 
         // when we omit the time zone data, parsing succeeds
         // time is interpreted as local time
+
         QDateTime time2 = QDateTime::fromString(QLatin1String("2010-01-14T09:26:02.287")/*"+02:00"*/, Qt::ISODate);
         QCOMPARE(time2.date(), QDate(2010, 01, 14));
         QCOMPARE(time2.time(), QTime(9, 26, 2, 287));
@@ -85,6 +82,7 @@ void TestGPXParsing::testCustomParsing()
 {
     {
         // this should work as usual:
+
         const QDateTime time1 = GeoDataParserParseTime(QLatin1String("2009-03-11T13:39:55.622Z"));
         QCOMPARE(time1.timeSpec(), Qt::UTC);
         QCOMPARE(time1.date(), QDate(2009, 03, 11));
@@ -93,6 +91,7 @@ void TestGPXParsing::testCustomParsing()
 
     {
         // eCoach in N900: 2010-01-14T09:26:02.287+02:00
+
         const QDateTime time1 = GeoDataParserParseTime(QLatin1String("2010-01-14T09:26:02.287+02:00"));
         QCOMPARE(time1.timeSpec(), Qt::UTC);
         QCOMPARE(time1.date(), QDate(2010, 01, 14));
@@ -101,6 +100,7 @@ void TestGPXParsing::testCustomParsing()
 
     {
         // test negative time zone offset: 2010-01-14T09:26:02.287+02:00
+
         const QDateTime time1 = GeoDataParserParseTime(QLatin1String("2010-01-14T09:26:02.287-02:00"));
         QCOMPARE(time1.timeSpec(), Qt::UTC);
         QCOMPARE(time1.date(), QDate(2010, 01, 14));
@@ -109,6 +109,7 @@ void TestGPXParsing::testCustomParsing()
 
     {
         // test negative time zone offset with minutes: 2010-01-14T09:26:02.287+03:15
+
         const QDateTime time1 = GeoDataParserParseTime(QLatin1String("2010-01-14T09:26:02.287-03:15"));
         QCOMPARE(time1.timeSpec(), Qt::UTC);
         QCOMPARE(time1.date(), QDate(2010, 01, 14));

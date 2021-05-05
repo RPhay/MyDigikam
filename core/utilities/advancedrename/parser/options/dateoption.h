@@ -81,8 +81,8 @@ public:
 
 private:
 
-    DateFormat(const DateFormat&);
-    DateFormat& operator=(const DateFormat&);
+    DateFormat(const DateFormat&)            = delete;
+    DateFormat& operator=(const DateFormat&) = delete;
 
 private:
 
@@ -107,7 +107,7 @@ public:
 public:
 
     explicit DateOptionDialog(Rule* parent);
-    ~DateOptionDialog();
+    ~DateOptionDialog() override;
 
     Ui::DateOptionDialogWidget* const ui;
 
@@ -121,6 +121,8 @@ private Q_SLOTS:
 
 private:
 
+    // Disable
+    explicit DateOptionDialog(QWidget*) = delete;
     DateOptionDialog(const DateOptionDialog&);
     DateOptionDialog& operator=(const DateOptionDialog&);
 
@@ -137,20 +139,22 @@ class DateOption : public Option
 public:
 
     explicit DateOption();
-    ~DateOption() {};
+    ~DateOption()                                   override = default;
 
 protected:
 
-    virtual QString parseOperation(ParseSettings& settings);
-
-private:
-
-    DateOption(const DateOption&);
-    DateOption& operator=(const DateOption&);
+    QString parseOperation(ParseSettings& settings) override;
 
 private Q_SLOTS:
 
-    void slotTokenTriggered(const QString& token);
+    void slotTokenTriggered(const QString& token)   override;
+
+private:
+
+    // Disable
+    explicit DateOption(QObject*)            = delete;
+    DateOption(const DateOption&)            = delete;
+    DateOption& operator=(const DateOption&) = delete;
 };
 
 } // namespace Digikam

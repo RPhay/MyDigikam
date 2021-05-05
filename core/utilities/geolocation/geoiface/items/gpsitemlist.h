@@ -6,7 +6,7 @@
  * Date        : 2010-03-22
  * Description : A view to display a list of items with GPS info.
  *
- * Copyright (C) 2010-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2010-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2010      by Michael G. Hansen <mike at mghansen dot de>
  *
  * This program is free software; you can redistribute it
@@ -50,7 +50,7 @@ class DIGIKAM_EXPORT GPSItemList : public QTreeView
 public:
 
     explicit GPSItemList(QWidget* const parent = nullptr);
-    ~GPSItemList();
+    ~GPSItemList() override;
 
     void setModelAndSelectionModel(GPSItemModel* const model, QItemSelectionModel* const selectionModel);
     GPSItemModel* getModel()                    const;
@@ -76,15 +76,15 @@ public Q_SLOTS:
 
 private Q_SLOTS:
 
+    void slotInternalTreeViewImageActivated(const QModelIndex& current, const QModelIndex& previous);
     void slotThumbnailFromModel(const QPersistentModelIndex& index, const QPixmap& pixmap);
-    void slotInternalTreeViewImageActivated(const QModelIndex& index);
     void slotColumnVisibilityActionTriggered(QAction* action);
 
 protected:
 
-    virtual bool eventFilter(QObject* watched, QEvent* event) override;
-    virtual void startDrag(Qt::DropActions supportedActions)  override;
-    virtual void wheelEvent(QWheelEvent* we)                  override;
+    bool eventFilter(QObject* watched, QEvent* event) override;
+    void startDrag(Qt::DropActions supportedActions)  override;
+    void wheelEvent(QWheelEvent* we)                  override;
 
 private:
 

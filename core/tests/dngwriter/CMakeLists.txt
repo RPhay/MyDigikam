@@ -9,7 +9,7 @@ include(${CMAKE_SOURCE_DIR}/core/cmake/modules/DNGSdkRules.cmake)
 # =======================================================
 # DNGVALIDATE tool from DNG SDK
 
-set(dngvalidate_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/../../libs/dngwriter/extra/dng_sdk/dng_validate.cpp)
+set(dngvalidate_SRCS ${CMAKE_SOURCE_DIR}/core/libs/dngwriter/extra/dng_sdk/dng_validate.cpp)
 
 add_executable(dngvalidate ${dngvalidate_SRCS})
 ecm_mark_nongui_executable(dngvalidate)
@@ -24,7 +24,7 @@ target_link_libraries(dngvalidate
 # =======================================================
 # DNGINFO command line tool
 
-set(dnginfo_SRCS dnginfo.cpp)
+set(dnginfo_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/dnginfo.cpp)
 
 add_executable(dnginfo ${dnginfo_SRCS})
 ecm_mark_nongui_executable(dnginfo)
@@ -33,27 +33,20 @@ target_link_libraries(dnginfo
                       digikamcore
 
                       ${COMMON_TEST_LINK}
-
-                      ${EXPAT_LIBRARY}
-                      ${CMAKE_THREAD_LIBS_INIT}
-                     )
+)
 
 # =======================================================
 # RAW2DNG command line tool
 
-set(raw2dng_SRCS raw2dng.cpp)
+set(raw2dng_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/raw2dng.cpp)
 
-add_executable(raw2dng
-               ${raw2dng_SRCS}
-              )
+add_executable(raw2dng ${raw2dng_SRCS})
 
 ecm_mark_nongui_executable(raw2dng)
 
 target_link_libraries(raw2dng
+
                       digikamcore
 
                       ${COMMON_TEST_LINK}
-
-                      ${EXPAT_LIBRARY}
-                      ${CMAKE_THREAD_LIBS_INIT}
-                     )
+)

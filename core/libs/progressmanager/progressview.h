@@ -6,7 +6,7 @@
  * Date        : 2012-01-13
  * Description : progress manager
  *
- * Copyright (C) 2007-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2007-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2012      by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  * Copyright (C) 2004      by Till Adam <adam at kde dot org>
  *
@@ -46,7 +46,7 @@ class TransactionItem : public DVBox
 public:
 
     explicit TransactionItem(QWidget* const parent, ProgressItem* const item, bool first);
-    ~TransactionItem();
+    ~TransactionItem() override;
 
     void hideHLine();
 
@@ -54,8 +54,8 @@ public:
     void setLabel(const QString&);
     void setThumbnail(const QPixmap&);
 
-    // the given text is interpreted as RichText, so you might need to
-    // .toHtmlEscaped() it before passing
+    // NOTE: the given text is interpreted as RichText, so you might need to
+    // use .toHtmlEscaped() it before passing
     void setStatus(const QString&);
 
     void setTotalSteps( int totalSteps );
@@ -86,8 +86,8 @@ class TransactionItemView : public QScrollArea
 
 public:
 
-    explicit TransactionItemView(QWidget* const parent=nullptr, const QString& name=QString());
-    virtual ~TransactionItemView() {}
+    explicit TransactionItemView(QWidget* const parent = nullptr, const QString& name=QString());
+    ~TransactionItemView() override {}
 
     TransactionItem* addTransactionItem(ProgressItem* item, bool first);
 
@@ -104,7 +104,7 @@ Q_SIGNALS:
 
 protected:
 
-    virtual void resizeEvent(QResizeEvent* event) override;
+    void resizeEvent(QResizeEvent* event) override;
 
 private:
 
@@ -120,7 +120,7 @@ class DIGIKAM_EXPORT ProgressView : public OverlayWidget
 public:
 
     explicit ProgressView(QWidget* const alignWidget, QWidget* const parent, const QString& name = QString());
-    ~ProgressView();
+    ~ProgressView() override;
 
     void setVisible(bool b) override;
 
@@ -148,7 +148,7 @@ protected Q_SLOTS:
 
 protected:
 
-    virtual void closeEvent(QCloseEvent*) override;
+    void closeEvent(QCloseEvent*) override;
 
 private:
 

@@ -7,7 +7,7 @@
  * Description : mics configuration setup tab
  *
  * Copyright (C) 2004      by Renchi Raju <renchi dot raju at gmail dot com>
- * Copyright (C) 2005-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2005-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2017      by Simon Frei <freisim93 at gmail dot com>
  *
  * This program is free software; you can redistribute it
@@ -42,6 +42,8 @@
 #include <QStyleFactory>
 #include <QVBoxLayout>
 #include <QTabWidget>
+#include <QMessageBox>
+#include <QPushButton>
 
 // KDE includes
 
@@ -52,7 +54,11 @@
 #include "digikam_config.h"
 #include "dlayoutbox.h"
 #include "dfontselect.h"
+#include "thememanager.h"
 #include "applicationsettings.h"
+#include "systemsettingswidget.h"
+#include "onlineversionchecker.h"
+#include "setup.h"
 
 namespace Digikam
 {
@@ -62,33 +68,41 @@ class Q_DECL_HIDDEN SetupMisc::Private
 public:
 
     explicit Private()
-      : tab(nullptr),
-        sidebarTypeLabel(nullptr),
-        stringComparisonTypeLabel(nullptr),
-        applicationStyleLabel(nullptr),
-        applicationIconLabel(nullptr),
-        minSimilarityBoundLabel(nullptr),
-        showSplashCheck(nullptr),
-        showTrashDeleteDialogCheck(nullptr),
-        showPermanentDeleteDialogCheck(nullptr),
-        sidebarApplyDirectlyCheck(nullptr),
-        useNativeFileDialogCheck(nullptr),
-        drawFramesToGroupedCheck(nullptr),
-        scrollItemToCenterCheck(nullptr),
-        showOnlyPersonTagsInPeopleSidebarCheck(nullptr),
-        scanAtStart(nullptr),
-        cleanAtStart(nullptr),
-        sidebarType(nullptr),
-        stringComparisonType(nullptr),
-        applicationStyle(nullptr),
-        applicationIcon(nullptr),
-        applicationFont(nullptr),
-        minimumSimilarityBound(nullptr),
-        groupingButtons(QHash<int, QButtonGroup*>())
+      : tab                                     (nullptr),
+        updateTypeLabel                         (nullptr),
+        updateWithDebug                         (nullptr),
+        sidebarTypeLabel                        (nullptr),
+        stringComparisonTypeLabel               (nullptr),
+        applicationStyleLabel                   (nullptr),
+        applicationIconLabel                    (nullptr),
+        minSimilarityBoundLabel                 (nullptr),
+        showSplashCheck                         (nullptr),
+        showTrashDeleteDialogCheck              (nullptr),
+        showPermanentDeleteDialogCheck          (nullptr),
+        sidebarApplyDirectlyCheck               (nullptr),
+        useNativeFileDialogCheck                (nullptr),
+        drawFramesToGroupedCheck                (nullptr),
+        expandNewCurrentItemCheck               (nullptr),
+        scrollItemToCenterCheck                 (nullptr),
+        showOnlyPersonTagsInPeopleSidebarCheck  (nullptr),
+        scanAtStart                             (nullptr),
+        cleanAtStart                            (nullptr),
+        updateType                              (nullptr),
+        sidebarType                             (nullptr),
+        stringComparisonType                    (nullptr),
+        applicationStyle                        (nullptr),
+        applicationIcon                         (nullptr),
+        applicationFont                         (nullptr),
+        minimumSimilarityBound                  (nullptr),
+        systemSettingsWidget                    (nullptr),
+        groupingButtons                         (QHash<int, QButtonGroup*>())
     {
     }
 
     QTabWidget*               tab;
+
+    QLabel*                   updateTypeLabel;
+    QCheckBox*                updateWithDebug;
 
     QLabel*                   sidebarTypeLabel;
     QLabel*                   stringComparisonTypeLabel;
@@ -102,11 +116,13 @@ public:
     QCheckBox*                sidebarApplyDirectlyCheck;
     QCheckBox*                useNativeFileDialogCheck;
     QCheckBox*                drawFramesToGroupedCheck;
+    QCheckBox*                expandNewCurrentItemCheck;
     QCheckBox*                scrollItemToCenterCheck;
     QCheckBox*                showOnlyPersonTagsInPeopleSidebarCheck;
     QCheckBox*                scanAtStart;
     QCheckBox*                cleanAtStart;
 
+    QComboBox*                updateType;
     QComboBox*                sidebarType;
     QComboBox*                stringComparisonType;
     QComboBox*                applicationStyle;
@@ -115,12 +131,14 @@ public:
 
     QSpinBox*                 minimumSimilarityBound;
 
+    SystemSettingsWidget*     systemSettingsWidget;
+
     QHash<int, QButtonGroup*> groupingButtons;
 };
 
 SetupMisc::SetupMisc(QWidget* const parent)
     : QScrollArea(parent),
-      d(new Private)
+      d          (new Private)
 {
     d->tab            = new QTabWidget(viewport());
     setWidget(d->tab);
@@ -168,6 +186,7 @@ SetupMisc::SetupMisc(QWidget* const parent)
                                      "This option does not clean up other databases as the thumbnails or recognition db.\n"
                                      "For clean up routines for other databases, please use the maintenance."));
 
+    d->expandNewCurrentItemCheck              = new QCheckBox(i18n("Expand current tree item with a single mouse click"), behaviourPanel);
     d->scrollItemToCenterCheck                = new QCheckBox(i18n("Scroll current item to center of thumbbar"), behaviourPanel);
     d->showOnlyPersonTagsInPeopleSidebarCheck = new QCheckBox(i18n("Show only face tags for assigning names in people sidebar"), behaviourPanel);
 
@@ -189,6 +208,54 @@ SetupMisc::SetupMisc(QWidget* const parent)
 
     // ---------------------------------------------------------
 
+    QGroupBox* const upOptionsGroup = new QGroupBox(i18n("Updates"), behaviourPanel);
+    QVBoxLayout* const gLayout5     = new QVBoxLayout();
+
+    DHBox* const updateHbox = new DHBox(upOptionsGroup);
+    d->updateTypeLabel      = new QLabel(i18n("Check for new version:"), updateHbox);
+    d->updateType           = new QComboBox(updateHbox);
+    d->updateType->addItem(i18n("Only For Stable Releases"), 0);
+    d->updateType->addItem(i18n("Weekly Pre-Releases"),      1);
+    d->updateType->setToolTip(i18n("Set this option to configure which kind of new versions must be check for updates.\n"
+                                   "\"Stable\" releases are official versions safe to use in production.\n"
+                                   "\"Pre-releases\" are proposed weekly to tests quickly new features\n"
+                                   "and are not recommended to use in production as bugs can remain."));
+
+    d->updateWithDebug = new QCheckBox(i18n("Use Version With Debug Symbols"), upOptionsGroup);
+    d->updateWithDebug->setWhatsThis(i18n("If this option is enabled, a version including debug symbols will be used for updates.\n"
+                                          "This version is more heavy but can help developers to trace dysfunctions in debugger."));
+
+    DHBox* const updateHbox2     = new DHBox(upOptionsGroup);
+    QLabel* const lastCheckLabel = new QLabel(updateHbox2);
+    lastCheckLabel->setText(i18n("Last check: %1", OnlineVersionChecker::lastCheckDate()));
+    QPushButton* const updateNow = new QPushButton(i18n("Check now..."), updateHbox2);
+
+    connect(updateNow, &QPushButton::pressed,
+            this, [=]()
+        {
+            if (!checkSettings())
+            {
+                return;
+            }
+
+            applySettings();
+
+            if (parent)
+            {
+                parent->close();
+            }
+
+            Setup::onlineVersionCheck();
+        }
+    );
+
+    gLayout5->addWidget(updateHbox);
+    gLayout5->addWidget(d->updateWithDebug);
+    gLayout5->addWidget(updateHbox2);
+    upOptionsGroup->setLayout(gLayout5);
+
+    // ---------------------------------------------------------
+
     layout->setContentsMargins(spacing, spacing, spacing, spacing);
     layout->setSpacing(spacing);
     layout->addWidget(stringComparisonHbox);
@@ -197,9 +264,11 @@ SetupMisc::SetupMisc(QWidget* const parent)
     layout->addWidget(d->showTrashDeleteDialogCheck);
     layout->addWidget(d->showPermanentDeleteDialogCheck);
     layout->addWidget(d->sidebarApplyDirectlyCheck);
+    layout->addWidget(d->expandNewCurrentItemCheck);
     layout->addWidget(d->scrollItemToCenterCheck);
     layout->addWidget(d->showOnlyPersonTagsInPeopleSidebarCheck);
     layout->addWidget(minSimilarityBoundHbox);
+    layout->addWidget(upOptionsGroup);
     layout->addStretch();
 
     d->tab->insertTab(Behaviour, behaviourPanel, i18nc("@title:tab", "Behaviour"));
@@ -209,9 +278,9 @@ SetupMisc::SetupMisc(QWidget* const parent)
     QWidget* const appearancePanel = new QWidget(d->tab);
     QVBoxLayout* const layout2     = new QVBoxLayout(appearancePanel);
 
-    d->showSplashCheck                        = new QCheckBox(i18n("&Show splash screen at startup"), appearancePanel);
-    d->useNativeFileDialogCheck               = new QCheckBox(i18n("Use native file dialogs from system"), appearancePanel);
-    d->drawFramesToGroupedCheck               = new QCheckBox(i18n("Draw frames around grouped items"), appearancePanel);
+    d->showSplashCheck             = new QCheckBox(i18n("&Show splash screen at startup"), appearancePanel);
+    d->useNativeFileDialogCheck    = new QCheckBox(i18n("Use native file dialogs from system"), appearancePanel);
+    d->drawFramesToGroupedCheck    = new QCheckBox(i18n("Draw frames around grouped items"), appearancePanel);
 
     DHBox* const tabStyleHbox = new DHBox(appearancePanel);
     d->sidebarTypeLabel       = new QLabel(i18n("Sidebar tab title:"), tabStyleHbox);
@@ -226,14 +295,11 @@ SetupMisc::SetupMisc(QWidget* const parent)
     d->applicationStyle       = new QComboBox(appStyleHbox);
     d->applicationStyle->setToolTip(i18n("Set this option to choose the default window decoration and looks."));
 
-    QStringList styleList = QStyleFactory::keys();
-
-    for (int i = 0 ; i < styleList.count() ; ++i)
+    foreach (const QString& style, QStyleFactory::keys())
     {
-        if (styleList.at(i).compare(QLatin1String("windowsvista"), Qt::CaseInsensitive) != 0)
-        {
-            d->applicationStyle->addItem(styleList.at(i), styleList.at(i).toLower());
-        }
+        QString sitem = style;
+        sitem[0]      = sitem[0].toUpper();
+        d->applicationStyle->addItem(sitem, sitem.toLower());
     }
 
 #ifndef HAVE_APPSTYLE_SUPPORT
@@ -318,9 +384,9 @@ SetupMisc::SetupMisc(QWidget* const parent)
                                  "If Ask is selected, there will be a prompt every<br/>"
                                  "time this operation is executed."));
 
-    QLabel* const noLabel        = new QLabel(i18n("No"), groupingPanel);
-    QLabel* const yesLabel       = new QLabel(i18n("Yes"), groupingPanel);
-    QLabel* const askLabel       = new QLabel(i18n("Ask"), groupingPanel);
+    QLabel* const noLabel        = new QLabel(i18nc("@label: grouped image ops", "No"),  groupingPanel);
+    QLabel* const yesLabel       = new QLabel(i18nc("@label: grouped image ops", "Yes"), groupingPanel);
+    QLabel* const askLabel       = new QLabel(i18nc("@label: grouped image ops", "Ask"), groupingPanel);
 
     QHash<int, QLabel*> labels;
 
@@ -367,6 +433,12 @@ SetupMisc::SetupMisc(QWidget* const parent)
 
     d->tab->insertTab(Grouping, groupingPanel, i18nc("@title:tab", "Grouping"));
 
+    // -- System Options --------------------------------------------------------
+
+    d->systemSettingsWidget = new SystemSettingsWidget(d->tab);
+
+    d->tab->insertTab(System, d->systemSettingsWidget, i18nc("@title:tab", "System"));
+
     // --------------------------------------------------------
 
     readSettings();
@@ -378,8 +450,37 @@ SetupMisc::~SetupMisc()
     delete d;
 }
 
+bool SetupMisc::checkSettings()
+{
+    // If check for new version use weekly pre-releases, warn end-user.
+
+    if ((d->updateType->currentIndex()                    == 1) &&
+        (ApplicationSettings::instance()->getUpdateType() == 0))
+    {
+        d->tab->setCurrentIndex(0);
+
+        int result = QMessageBox::warning(this, qApp->applicationName(),
+                                          i18n("Check for new version option will verify the pre-releases.\n"
+                                               "\"Pre-releases\" are proposed weekly to tests quickly new features.\n"
+                                               "It's not recommended to use pre-release in production as bugs can remain,\n"
+                                               "unless you know what you are doing.\n"
+                                               "Do you want to continue?"),
+                                                QMessageBox::Yes | QMessageBox::No);
+        if (result == QMessageBox::Yes)
+        {
+            return true;
+        }
+
+        return false;
+    }
+
+    return true;
+}
+
 void SetupMisc::applySettings()
 {
+    d->systemSettingsWidget->saveSettings();
+
     ApplicationSettings* const settings = ApplicationSettings::instance();
 
     settings->setShowSplashScreen(d->showSplashCheck->isChecked());
@@ -391,9 +492,12 @@ void SetupMisc::applySettings()
     settings->setCleanAtStart(d->cleanAtStart->isChecked());
     settings->setUseNativeFileDialog(d->useNativeFileDialogCheck->isChecked());
     settings->setDrawFramesToGrouped(d->drawFramesToGroupedCheck->isChecked());
+    settings->setExpandNewCurrentItem(d->expandNewCurrentItemCheck->isChecked());
     settings->setScrollItemToCenter(d->scrollItemToCenterCheck->isChecked());
     settings->setShowOnlyPersonTagsInPeopleSidebar(d->showOnlyPersonTagsInPeopleSidebarCheck->isChecked());
     settings->setSidebarTitleStyle(d->sidebarType->currentIndex() == 0 ? DMultiTabBar::ActiveIconText : DMultiTabBar::AllIconsText);
+    settings->setUpdateType(d->updateType->currentIndex());
+    settings->setUpdateWithDebug(d->updateWithDebug->isChecked());
     settings->setStringComparisonType((ApplicationSettings::StringComparisonType)
                                       d->stringComparisonType->itemData(d->stringComparisonType->currentIndex()).toInt());
 
@@ -405,7 +509,11 @@ void SetupMisc::applySettings()
 
 #ifdef HAVE_APPSTYLE_SUPPORT
 
-    settings->setApplicationStyle(d->applicationStyle->currentText());
+    if (settings->getApplicationStyle().compare(d->applicationStyle->currentText(), Qt::CaseInsensitive) != 0)
+    {
+        settings->setApplicationStyle(d->applicationStyle->currentText());
+        ThemeManager::instance()->updateThemeMenu();
+    }
 
 #endif
 
@@ -416,6 +524,8 @@ void SetupMisc::applySettings()
 
 void SetupMisc::readSettings()
 {
+    d->systemSettingsWidget->readSettings();
+
     ApplicationSettings* const settings = ApplicationSettings::instance();
 
     d->showSplashCheck->setChecked(settings->getShowSplashScreen());
@@ -428,9 +538,12 @@ void SetupMisc::readSettings()
     d->cleanAtStart->setChecked(settings->getCleanAtStart());
     d->useNativeFileDialogCheck->setChecked(settings->getUseNativeFileDialog());
     d->drawFramesToGroupedCheck->setChecked(settings->getDrawFramesToGrouped());
+    d->expandNewCurrentItemCheck->setChecked(settings->getExpandNewCurrentItem());
     d->scrollItemToCenterCheck->setChecked(settings->getScrollItemToCenter());
     d->showOnlyPersonTagsInPeopleSidebarCheck->setChecked(settings->showOnlyPersonTagsInPeopleSidebar());
     d->sidebarType->setCurrentIndex(settings->getSidebarTitleStyle() == DMultiTabBar::ActiveIconText ? 0 : 1);
+    d->updateType->setCurrentIndex(settings->getUpdateType());
+    d->updateWithDebug->setChecked(settings->getUpdateWithDebug());
     d->stringComparisonType->setCurrentIndex(settings->getStringComparisonType());
 
     for (int i = 0 ; i != ApplicationSettings::Unspecified ; ++i)

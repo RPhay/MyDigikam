@@ -7,7 +7,7 @@
  * Description : a tool to export GPS data to KML file.
  *
  * Copyright (C) 2006-2007 by Stephane Pontier <shadow dot walker at free dot fr>
- * Copyright (C) 2008-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2008-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -24,6 +24,8 @@
 #ifndef DIGIKAM_KML_WIDGET_H
 #define DIGIKAM_KML_WIDGET_H
 
+// Qt includes
+
 #include <QWidget>
 #include <QList>
 #include <QUrl>
@@ -34,7 +36,6 @@
 #include "dfileselector.h"
 #include "dcolorselector.h"
 #include "dinfointerface.h"
-#include "digikam_export.h"
 #include "geolocationedit.h"
 #include "gpsitemmodel.h"
 
@@ -56,7 +57,7 @@ using namespace Digikam;
 namespace DigikamGenericGeolocationEditPlugin
 {
 
-class DIGIKAM_EXPORT KmlWidget : public QWidget
+class KmlWidget : public QWidget
 {
     Q_OBJECT
 
@@ -65,7 +66,7 @@ public:
     explicit KmlWidget(GeolocationEdit* const dlg,
                        GPSItemModel* const imageModel,
                        DInfoInterface* const iface);
-    ~KmlWidget();
+    ~KmlWidget() override;
 
 public:
 

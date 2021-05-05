@@ -26,6 +26,7 @@
 // Qt includes
 
 #include <QMutex>
+#include <QMutexLocker>
 
 // Local includes
 
@@ -41,31 +42,32 @@ class Q_DECL_HIDDEN IOJobData::Private
 public:
 
     explicit Private()
-      : operation(Unknown),
-        overwrite(false),
-        srcAlbum(nullptr),
-        destAlbum(nullptr),
-        jobTime(QDateTime::currentDateTime())
+      : operation   (Unknown),
+        fileConflict(Continue),
+        srcAlbum    (nullptr),
+        destAlbum   (nullptr),
+        jobTime     (QDateTime::currentDateTime()),
+        mutex       (QMutex::Recursive)
     {
     }
 
-    int              operation;
+    int                operation;
+    int                fileConflict;
 
-    bool             overwrite;
+    PAlbum*            srcAlbum;
+    PAlbum*            destAlbum;
 
-    PAlbum*          srcAlbum;
-    PAlbum*          destAlbum;
+    DTrashItemInfoList trashItemList;
+    QMap<QUrl, QUrl>   changeDestMap;
+    QList<ItemInfo>    itemInfosList;
+    QList<QUrl>        sourceUrlList;
 
-    QMap<QUrl, QUrl> changeDestMap;
-    QList<ItemInfo>  itemInfosList;
-    QList<QUrl>      sourceUrlList;
+    QUrl               destUrl;
 
-    QUrl             destUrl;
+    QString            progressId;
+    QDateTime          jobTime;
 
-    QString          progressId;
-    QDateTime        jobTime;
-
-    QMutex           mutex;
+    QMutex             mutex;
 };
 
 IOJobData::IOJobData(int operation,
@@ -82,6 +84,17 @@ IOJobData::IOJobData(int operation,
     {
         d->destUrl = d->destAlbum->fileUrl();
     }
+}
+
+IOJobData::IOJobData(int operation,
+                     const QList<ItemInfo>& infos,
+                     const QUrl& dest)
+    : d(new Private)
+{
+    d->operation = operation;
+    d->destUrl   = dest;
+
+    setItemInfos(infos);
 }
 
 IOJobData::IOJobData(int operation,
@@ -136,12 +149,31 @@ IOJobData::IOJobData(int operation,
     : d(new Private)
 {
     d->operation = operation;
-    d->overwrite = overwrite;
+
+    if (overwrite)
+    {
+        d->fileConflict = Overwrite;
+    }
 
     setItemInfos(QList<ItemInfo>() << info);
 
     d->destUrl = info.fileUrl().adjusted(QUrl::RemoveFilename);
     d->destUrl.setPath(d->destUrl.path() + newName);
+}
+
+IOJobData::IOJobData(int operation,
+                     const DTrashItemInfoList& infos)
+    : d(new Private)
+{
+    d->operation     = operation;
+    d->trashItemList = infos;
+
+    // We need source URLs as dummy.
+
+    foreach (const DTrashItemInfo& item, d->trashItemList)
+    {
+        d->sourceUrlList << QUrl::fromLocalFile(item.trashPath);
+    }
 }
 
 IOJobData::~IOJobData()
@@ -169,6 +201,8 @@ void IOJobData::setSourceUrls(const QList<QUrl>& urls)
 void IOJobData::setDestUrl(const QUrl& srcUrl,
                            const QUrl& destUrl)
 {
+    QMutexLocker lock(&d->mutex);
+
     d->changeDestMap.insert(srcUrl, destUrl);
 }
 
@@ -177,14 +211,19 @@ void IOJobData::setProgressId(const QString& id)
     d->progressId = id;
 }
 
+void IOJobData::setFileConflict(int fc)
+{
+    d->fileConflict = fc;
+}
+
 int IOJobData::operation() const
 {
     return d->operation;
 }
 
-bool IOJobData::overwrite() const
+int IOJobData::fileConflict() const
 {
-    return d->overwrite;
+    return d->fileConflict;
 }
 
 PAlbum* IOJobData::srcAlbum() const
@@ -209,15 +248,14 @@ QUrl IOJobData::destUrl(const QUrl& srcUrl) const
 
 QUrl IOJobData::getNextUrl() const
 {
-    d->mutex.lock();
+    QMutexLocker lock(&d->mutex);
+
     QUrl url;
 
     if (!d->sourceUrlList.isEmpty())
     {
         url = d->sourceUrlList.takeFirst();
     }
-
-    d->mutex.unlock();
 
     return url;
 }
@@ -253,6 +291,11 @@ QList<QUrl> IOJobData::sourceUrls() const
 QList<ItemInfo> IOJobData::itemInfos() const
 {
     return d->itemInfosList;
+}
+
+DTrashItemInfoList IOJobData::trashItems() const
+{
+    return d->trashItemList;
 }
 
 } // namespace Digikam

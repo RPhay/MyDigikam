@@ -6,7 +6,7 @@
  * Description : Face database interface to train identities.
  *
  * Copyright (C) 2012-2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2010-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2010-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C)      2019 by Thanh Trung Dinh <dinhthanhtrung1996 at gmail dot com>
  *
  * This program is free software; you can redistribute it
@@ -76,21 +76,22 @@ bool FaceDb::integrityCheck()
     switch (d->db->databaseType())
     {
         case BdEngineBackend::DbType::SQLite:
-
+        {
             // For SQLite the integrity check returns a single row with one string column "ok" on success and multiple rows on error.
 
             return(
                     (values.size() == 1) &&
                     (values.first().toString().toLower().compare(QLatin1String("ok")) == 0)
                   );
+        }
 
         case BdEngineBackend::DbType::MySQL:
-
+        {
             // For MySQL, for every checked table, the table name, operation (check), message type (status) and the message text (ok on success)
             // are returned. So we check if there are four elements and if yes, whether the fourth element is "ok".
-
-            //qCDebug(DIGIKAM_DATABASE_LOG) << "MySQL check returned " << values.size() << " rows";
-
+/*
+            qCDebug(DIGIKAM_DATABASE_LOG) << "MySQL check returned " << values.size() << " rows";
+*/
             if ((values.size() % 4) != 0)
             {
                 return false;
@@ -121,9 +122,12 @@ bool FaceDb::integrityCheck()
             // No error conditions. Db passed the integrity check.
 
             return true;
+        }
 
         default:
+        {
             return false;
+        }
     }
 }
 

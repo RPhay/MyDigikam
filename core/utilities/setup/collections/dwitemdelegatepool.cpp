@@ -6,7 +6,7 @@
  * Date        : 2007-11-15
  * Description : widget item delegate for setup collection view
  *
- * Copyright (C) 2015-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2015-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2007-2008 by Rafael Fernández López <ereslibre at kde dot org>
  * Copyright (C) 2008      by Kevin Ottens <ervin at kde dot org>
  *
@@ -48,19 +48,20 @@
 namespace Digikam
 {
 
-class Q_DECL_HIDDEN DWItemDelegateEventListener
-    : public QObject
+class Q_DECL_HIDDEN DWItemDelegateEventListener : public QObject
 {
+    Q_OBJECT
+
 public:
 
-    DWItemDelegateEventListener(DWItemDelegatePoolPrivate* const poolPrivate,
-                                QObject* const parent = nullptr)
-        : QObject(parent),
+    explicit DWItemDelegateEventListener(DWItemDelegatePoolPrivate* const poolPrivate,
+                                         QObject* const parent = nullptr)
+        : QObject    (parent),
           poolPrivate(poolPrivate)
     {
     }
 
-    virtual bool eventFilter(QObject* watched, QEvent* event);
+    bool eventFilter(QObject* watched, QEvent* event) override;
 
 private:
 
@@ -70,9 +71,9 @@ private:
 // -------------------------------------------------------------------------------------------
 
 DWItemDelegatePoolPrivate::DWItemDelegatePoolPrivate(DWItemDelegate* const d)
-    : delegate(d),
+    : delegate     (d),
       eventListener(new DWItemDelegateEventListener(this)),
-      clearing(false)
+      clearing     (false)
 {
 }
 
@@ -183,7 +184,7 @@ QList<QWidget*> DWItemDelegatePool::invalidIndexesWidgets() const
 void DWItemDelegatePool::fullClear()
 {
     d->clearing = true;
-    qDeleteAll(d->widgetInIndex.keys());
+    qDeleteAll(d->widgetInIndex.keyBegin(), d->widgetInIndex.keyEnd());
     d->clearing = false;
     d->allocatedWidgets.clear();
     d->usedWidgets.clear();
@@ -194,7 +195,7 @@ bool DWItemDelegateEventListener::eventFilter(QObject* watched, QEvent* event)
 {
     QWidget* const widget = static_cast<QWidget*>(watched);
 
-    if (event->type() == QEvent::Destroy && !poolPrivate->clearing)
+    if ((event->type() == QEvent::Destroy) && !poolPrivate->clearing)
     {
         qCWarning(DIGIKAM_GENERAL_LOG) << "User of DWItemDelegate should not delete widgets created by createItemWidgets!";
 
@@ -228,7 +229,7 @@ bool DWItemDelegateEventListener::eventFilter(QObject* watched, QEvent* event)
             {
                 QWheelEvent* const wheelEvent = static_cast<QWheelEvent*>(event);
                 QWheelEvent evt(viewport->mapFromGlobal(wheelEvent->globalPos()),
-                                wheelEvent->delta(), wheelEvent->buttons(), wheelEvent->modifiers(),
+                                wheelEvent->angleDelta().y(), wheelEvent->buttons(), wheelEvent->modifiers(),
                                 wheelEvent->orientation());
                 QApplication::sendEvent(viewport, &evt);
                 break;
@@ -251,8 +252,10 @@ bool DWItemDelegateEventListener::eventFilter(QObject* watched, QEvent* event)
             }
 
             default:
+            {
                 QApplication::sendEvent(viewport, event);
                 break;
+            }
         }
     }
 
@@ -260,3 +263,5 @@ bool DWItemDelegateEventListener::eventFilter(QObject* watched, QEvent* event)
 }
 
 } // namespace Digikam
+
+#include "dwitemdelegatepool.moc"

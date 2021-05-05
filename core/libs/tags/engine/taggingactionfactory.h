@@ -41,11 +41,13 @@ public:
     {
     public:
 
-        virtual ~ConstraintInterface()
-        {
-        }
-
+        ConstraintInterface()           = default;
+        virtual ~ConstraintInterface()  = default;
         virtual bool matches(int tagId) = 0;
+
+    private:
+
+        Q_DISABLE_COPY(ConstraintInterface)
     };
 
 public:
@@ -105,9 +107,9 @@ public:
 
 private:
 
-    // Hidden copy constructor and assignment operator.
-    TaggingActionFactory(const TaggingActionFactory&);
-    TaggingActionFactory& operator=(const TaggingActionFactory&);
+    // Disable
+    TaggingActionFactory(const TaggingActionFactory&)            = delete;
+    TaggingActionFactory& operator=(const TaggingActionFactory&) = delete;
 
     class Private;
     Private* const d;

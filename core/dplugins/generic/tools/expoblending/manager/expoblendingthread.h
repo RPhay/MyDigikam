@@ -6,7 +6,7 @@
  * Date        : 2009-11-13
  * Description : a tool to blend bracketed images.
  *
- * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2009-2011 by Johannes Wienke <languitar at semipol dot de>
  * Copyright (C) 2012-2015 by Benjamin Girault <benjamin dot girault at gmail dot com>
  *
@@ -51,7 +51,7 @@ class ExpoBlendingThread : public QThread
 public:
 
     explicit ExpoBlendingThread(QObject* const parent);
-    ~ExpoBlendingThread();
+    ~ExpoBlendingThread() override;
 
     void setEnfuseVersion(const double version);
     void setPreProcessingSettings(bool align);
@@ -78,7 +78,7 @@ Q_SIGNALS:
 
 private:
 
-    void    run();
+    void    run() override;
 
     void    preProcessingMultithreaded(const QUrl& url, volatile bool& error);
     bool    startPreProcessing(const QList<QUrl>& inUrls, bool  align, const QString& alignPath, QString& errors);

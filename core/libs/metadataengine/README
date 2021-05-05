@@ -7,3 +7,4 @@ The file Metadata manipulation Qt wrapper:
                    * All Exiv2 API are only used in this area to not expose all digiKam core classes of API changes.
 - dmetadata  : the high level metadata class, based on metadata engine, but not based on Exiv2 API.
                This class must be used everywhere in digiKam.
+- exiftool   : class to wrap exiftool command line tool.

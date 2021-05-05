@@ -7,9 +7,10 @@
  * Description : a presentation tool.
  *
  * Copyright (C) 2006-2009 by Valerio Fuoglio <valerio dot fuoglio at gmail dot com>
- * Copyright (C) 2009      by Andi Clemens <andi dot clemens at googlemail dot com>
+ * Copyright (C)      2009 by Andi Clemens <andi dot clemens at googlemail dot com>
  * Copyright (C) 2003-2005 by Renchi Raju <renchi dot raju at gmail dot com>
- * Copyright (C) 2012-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C)      2021 by Phuoc Khanh Le <phuockhanhnk94 at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -27,7 +28,6 @@
 
 // C++ includes
 
-#include <cassert>
 #include <cmath>
 #include <cstdlib>
 #include <ctime>
@@ -48,6 +48,8 @@
 #include <QScreen>
 #include <QWindow>
 
+#include <QDebug>
+
 // KDE includes
 
 #include <klocalizedstring.h>
@@ -58,6 +60,7 @@
 #include "presentationcontainer.h"
 #include "presentationctrlwidget.h"
 #include "presentationloader.h"
+#include "presentation_mainpage.h"
 
 #ifdef HAVE_MEDIAPLAYER
 #   include "presentationaudiowidget.h"
@@ -75,49 +78,50 @@ class Q_DECL_HIDDEN PresentationWidget::Private
 public:
 
     explicit Private()
-    {
-        sharedData                   = nullptr;
-        imageLoader                  = nullptr;
+      : sharedData      (nullptr),
+        imageLoader     (nullptr),
 
 #ifdef HAVE_MEDIAPLAYER
-        playbackWidget               = nullptr;
-        videoView                    = nullptr;
+
+        playbackWidget  (nullptr),
+        videoView       (nullptr),
+
 #endif
 
-        timer                        = nullptr;
-        fileIndex                    = 0;
-        effect                       = nullptr;
-        effectRunning                = false;
-        x                            = 0;
-        y                            = 0;
-        w                            = 0;
-        h                            = 0;
-        dx                           = 0;
-        dy                           = 0;
-        ix                           = 0;
-        iy                           = 0;
-        i                            = 0;
-        j                            = 0;
-        subType                      = 0;
-        x0                           = 0;
-        y0                           = 0;
-        x1                           = 0;
-        y1                           = 0;
-        wait                         = 0;
-        fx                           = 0;
-        fy                           = 0;
-        alpha                        = 0;
-        fd                           = 0;
-        intArray                     = nullptr;
-        pdone                        = 0;
-        pixelMatrix                  = nullptr;
-
-        slideCtrlWidget              = nullptr;
-        mouseMoveTimer               = nullptr;
-        deskX                        = 0;
-        deskY                        = 0;
-        deskWidth                    = 0;
-        deskHeight                   = 0;
+        timer           (nullptr),
+        fileIndex       (0),
+        effect          (nullptr),
+        effectRunning   (false),
+        x               (0),
+        y               (0),
+        w               (0),
+        h               (0),
+        dx              (0),
+        dy              (0),
+        ix              (0),
+        iy              (0),
+        i               (0),
+        j               (0),
+        subType         (0),
+        x0              (0),
+        y0              (0),
+        x1              (0),
+        y1              (0),
+        wait            (0),
+        fx              (0),
+        fy              (0),
+        alpha           (0),
+        fd              (0),
+        intArray        (nullptr),
+        pdone           (0),
+        pixelMatrix     (nullptr),
+        slideCtrlWidget (nullptr),
+        mouseMoveTimer  (nullptr),
+        deskX           (0),
+        deskY           (0),
+        deskWidth       (0),
+        deskHeight      (0)
+    {
     }
 
     PresentationContainer*      sharedData;
@@ -130,8 +134,10 @@ public:
     QPixmap                     currImage;
 
 #ifdef HAVE_MEDIAPLAYER
+
     PresentationAudioWidget*    playbackWidget;
     SlideVideo*                 videoView;
+
 #endif
 
     QTimer*                     timer;
@@ -141,7 +147,7 @@ public:
     bool                        effectRunning;
     QString                     effectName;
 
-    // values for state of various effects:
+    /// values for state of various effects
     int                         x;
     int                         y;
     int                         w;
@@ -166,7 +172,7 @@ public:
     bool                        pdone;
     bool**                      pixelMatrix;
 
-    //static
+    /// static
     QPolygon                    pa;
 
     PresentationCtrlWidget*     slideCtrlWidget;
@@ -180,17 +186,31 @@ public:
 
 PresentationWidget::PresentationWidget(PresentationContainer* const sharedData)
     : QWidget(),
-      d(new Private)
+      d      (new Private)
 {
     setAttribute(Qt::WA_DeleteOnClose);
-    setWindowFlags(Qt::FramelessWindowHint | Qt::WindowStaysOnTopHint | Qt::Popup);
+    setContextMenuPolicy(Qt::PreventContextMenu);
+
+#ifdef Q_OS_WIN
+
+    setWindowFlags(Qt::Popup               |
+                   Qt::FramelessWindowHint |
+                   Qt::WindowStaysOnTopHint);
+
+#else
+
+    setWindowState(windowState() | Qt::WindowFullScreen);
+
+#endif
 
     QScreen* screen = qApp->primaryScreen();
 
     if (QWidget* const widget = qApp->activeWindow())
     {
         if (QWindow* const window = widget->windowHandle())
+        {
             screen = window->screen();
+        }
     }
 
     QRect deskRect  = screen->geometry();
@@ -204,9 +224,11 @@ PresentationWidget::PresentationWidget(PresentationContainer* const sharedData)
 
     d->sharedData   = sharedData;
 
-    d->slideCtrlWidget = new PresentationCtrlWidget(this);
+    d->slideCtrlWidget = new PresentationCtrlWidget(this, d->sharedData);
     d->slideCtrlWidget->hide();
-    d->slideCtrlWidget->move(d->deskWidth - d->slideCtrlWidget->width(), d->deskY);
+
+    int w = d->slideCtrlWidget->width() - 1;
+    d->slideCtrlWidget->move(d->deskX + d->deskWidth - w, d->deskY);
 
     if (!d->sharedData->loop)
     {
@@ -228,6 +250,9 @@ PresentationWidget::PresentationWidget(PresentationContainer* const sharedData)
     connect(d->slideCtrlWidget, SIGNAL(signalClose()),
             this, SLOT(slotClose()));
 
+    connect(d->slideCtrlWidget, SIGNAL(signalRemoveImageFromList()),
+            this, SLOT(slotRemoveImageFromList()));
+
 #ifdef HAVE_MEDIAPLAYER
 
     // -- playback widget -------------------------------
@@ -239,7 +264,8 @@ PresentationWidget::PresentationWidget(PresentationContainer* const sharedData)
     // -- video preview ---------------------------------
 
     d->videoView = new SlideVideo(this);
-    //TODO: pass mouse events from d->videoView to this ?
+
+    // TODO: pass mouse events from d->videoView to this ?
     //d->videoView->installEventFilter(this);
 
     connect(d->videoView, SIGNAL(signalVideoLoaded(bool)),
@@ -262,16 +288,17 @@ PresentationWidget::PresentationWidget(PresentationContainer* const sharedData)
     m_endOfShow      = false;
     m_simplyShow     = false;
     m_startPainter   = false;
+    m_firstPainter   = true;
     d->timer         = new QTimer(this);
 
     connect(d->timer, SIGNAL(timeout()),
             this, SLOT(slotTimeOut()));
 
-    d->pa    = QPolygon(4);
-    m_buffer = QPixmap(size());
+    d->pa            = QPolygon(4);
+    m_buffer         = QPixmap(size());
     m_buffer.fill(Qt::black);
 
-    d->imageLoader = new PresentationLoader(d->sharedData, width(), height(), d->fileIndex);
+    d->imageLoader   = new PresentationLoader(d->sharedData, width(), height(), d->fileIndex);
 
     // --------------------------------------------------
 
@@ -294,7 +321,16 @@ PresentationWidget::PresentationWidget(PresentationContainer* const sharedData)
     }
 
     d->timer->setSingleShot(true);
-    d->timer->start(10);
+
+    if (d->sharedData->offAutoDelay)
+    {
+        d->timer->stop();
+        slotTimeOut();
+    }
+    else
+    {
+        d->timer->start(500);
+    }
 
     // -- hide cursor when not moved --------------------
 
@@ -310,22 +346,30 @@ PresentationWidget::PresentationWidget(PresentationContainer* const sharedData)
 #ifdef HAVE_MEDIAPLAYER
 
     if (d->sharedData->soundtrackPlay)
+    {
         d->playbackWidget->slotPlay();
+    }
 
 #endif
+
 }
 
 PresentationWidget::~PresentationWidget()
 {
+
 #ifdef HAVE_MEDIAPLAYER
+
     d->playbackWidget->slotStop();
+
 #endif
 
     d->timer->stop();
     d->mouseMoveTimer->stop();
 
     if (d->intArray)
+    {
         delete [] d->intArray;
+    }
 
     delete d->imageLoader;
     delete d;
@@ -339,7 +383,8 @@ void PresentationWidget::loadNextImage()
 {
     if (!d->currImage.isNull())
     {
-        m_buffer = d->currImage;
+        m_firstPainter = false;
+        m_buffer       = d->currImage;
     }
     else
     {
@@ -372,7 +417,7 @@ void PresentationWidget::loadNextImage()
         d->slideCtrlWidget->setEnabledNext(d->fileIndex < num - 1);
     }
 
-    QImage img = d->imageLoader->getCurrent();
+    QImage img        = d->imageLoader->getCurrent();
 
     QPixmap newPixmap = QPixmap::fromImage(img);
     QPixmap pixmap(width(), height());
@@ -387,9 +432,13 @@ void PresentationWidget::loadNextImage()
 
     if (img.isNull())
     {
+
 #ifdef HAVE_MEDIAPLAYER
+
         d->videoView->setCurrentUrl(d->imageLoader->currPath());
+
 #endif
+
     }
 }
 
@@ -426,7 +475,7 @@ void PresentationWidget::loadPrevImage()
     pixmap.fill(Qt::black);
     QPainter p(&pixmap);
 
-    p.drawPixmap((width() - newPixmap.width()) / 2,
+    p.drawPixmap((width()  - newPixmap.width())  / 2,
                  (height() - newPixmap.height()) / 2, newPixmap,
                  0, 0, newPixmap.width(), newPixmap.height());
 
@@ -434,16 +483,22 @@ void PresentationWidget::loadPrevImage()
 
     if (img.isNull())
     {
+
 #ifdef HAVE_MEDIAPLAYER
+
         d->videoView->setCurrentUrl(d->imageLoader->currPath());
+
 #endif
+
     }
 }
 
 void PresentationWidget::printFilename()
 {
     if (d->currImage.isNull())
+    {
         return;
+    }
 
     QPainter p;
 
@@ -465,7 +520,9 @@ void PresentationWidget::printFilename()
 void PresentationWidget::printComments()
 {
     if (d->currImage.isNull())
+    {
         return;
+    }
 
     DItemInfo info(d->sharedData->iface->itemInfo(d->imageLoader->currPath()));
     QString comments = info.comment();
@@ -473,7 +530,9 @@ void PresentationWidget::printComments()
     int yPos = 30; // Text Y coordinate
 
     if (d->sharedData->printFileName)
+    {
         yPos = 50;
+    }
 
     QStringList commentsByLines;
 
@@ -489,28 +548,34 @@ void PresentationWidget::printComments()
 
         uint commentsLinesLengthLocal = d->sharedData->commentsLinesLength;
 
-        for (currIndex = commentsIndex ; currIndex < (uint)comments.length() && !breakLine ; ++currIndex)
+        for (currIndex = commentsIndex ; (currIndex < (uint)comments.length()) && !breakLine ; ++currIndex)
         {
-            if (comments[currIndex] == QLatin1Char('\n') || comments[currIndex].isSpace())
+            if ((comments[currIndex] == QLatin1Char('\n')) || comments[currIndex].isSpace())
             {
                 breakLine = true;
             }
         }
 
         if (commentsLinesLengthLocal <= (currIndex - commentsIndex))
+        {
             commentsLinesLengthLocal = (currIndex - commentsIndex);
+        }
 
         breakLine = false;
 
-        for (currIndex = commentsIndex ; currIndex <= commentsIndex + commentsLinesLengthLocal &&
-             currIndex < (uint)comments.length() && !breakLine ; ++currIndex)
+        for (currIndex = commentsIndex ; ((currIndex <= (commentsIndex + commentsLinesLengthLocal)) &&
+             (currIndex < (uint)comments.length()) && !breakLine) ; ++currIndex)
         {
             breakLine = (comments[currIndex] == QLatin1Char('\n')) ? true : false;
 
             if (breakLine)
+            {
                 newLine.append(QLatin1Char(' '));
+            }
             else
+            {
                 newLine.append(comments[currIndex]);
+            }
         }
 
         commentsIndex = currIndex; // The line is ended
@@ -556,7 +621,9 @@ void PresentationWidget::printComments()
 void PresentationWidget::printProgress()
 {
     if (d->currImage.isNull())
+    {
         return;
+    }
 
     QPainter p;
     p.begin(&d->currImage);
@@ -565,9 +632,13 @@ void PresentationWidget::printProgress()
                                      QString::number(d->sharedData->urlList.count()));
 
 #if (QT_VERSION >= QT_VERSION_CHECK(5, 11, 0))
+
     int stringLength = p.fontMetrics().horizontalAdvance(progress) * progress.length();
+
 #else
+
     int stringLength = p.fontMetrics().width(progress) * progress.length();
+
 #endif
 
     p.setPen(QColor(Qt::black));
@@ -594,13 +665,50 @@ void PresentationWidget::showEndOfShow()
     d->slideCtrlWidget->setEnabledPrev(false);
 }
 
+void PresentationWidget::showOverlays()
+{
+    if (d->slideCtrlWidget->isHidden())
+    {
+        int w = d->slideCtrlWidget->width() - 1;
+        d->slideCtrlWidget->move(d->deskX + d->deskWidth - w, d->deskY);
+        d->slideCtrlWidget->show();
+    }
+
+#ifdef HAVE_MEDIAPLAYER
+
+    if (d->playbackWidget->isHidden())
+    {
+        d->playbackWidget->move(d->deskX, d->deskY);
+        d->playbackWidget->show();
+    }
+
+#endif
+
+}
+
+void PresentationWidget::hideOverlays()
+{
+    d->slideCtrlWidget->hide();
+
+#ifdef HAVE_MEDIAPLAYER
+
+    d->playbackWidget->hide();
+
+#endif
+
+}
+
 void PresentationWidget::keyPressEvent(QKeyEvent* event)
 {
     if (!event)
+    {
         return;
+    }
 
 #ifdef HAVE_MEDIAPLAYER
+
     d->playbackWidget->keyPressEvent(event);
+
 #endif
 
     d->slideCtrlWidget->keyPressEvent(event);
@@ -609,18 +717,20 @@ void PresentationWidget::keyPressEvent(QKeyEvent* event)
 void PresentationWidget::mousePressEvent(QMouseEvent* e)
 {
     if (m_endOfShow)
+    {
         slotClose();
+    }
 
-    if (e->button() == Qt::LeftButton)
+    if      (e->button() == Qt::LeftButton)
     {
         d->timer->stop();
-        d->slideCtrlWidget->setPaused(true);
+        d->slideCtrlWidget->setPaused(!d->sharedData->offAutoDelay);
         slotNext();
     }
-    else if (e->button() == Qt::RightButton && d->fileIndex - 1 >= 0)
+    else if ((e->button() == Qt::RightButton) && ((d->fileIndex - 1) >= 0))
     {
         d->timer->stop();
-        d->slideCtrlWidget->setPaused(true);
+        d->slideCtrlWidget->setPaused(!d->sharedData->offAutoDelay);
         slotPrev();
     }
 }
@@ -631,11 +741,17 @@ void PresentationWidget::mouseMoveEvent(QMouseEvent* e)
     d->mouseMoveTimer->start(1000);
 
     if (!d->slideCtrlWidget->canHide()
+
 #ifdef HAVE_MEDIAPLAYER
+
         || !d->playbackWidget->canHide()
+
 #endif
+
        )
+    {
         return;
+    }
 
     QPoint pos(e->pos());
 
@@ -643,69 +759,49 @@ void PresentationWidget::mouseMoveEvent(QMouseEvent* e)
         (pos.y() < (d->deskY + d->deskHeight - 20 - 1)))
     {
         if (!d->slideCtrlWidget->canHide()
+
 #ifdef HAVE_MEDIAPLAYER
+
             || !d->playbackWidget->canHide()
+
 #endif
+
            )
         {
             return;
         }
         else
         {
-            d->slideCtrlWidget->hide();
-#ifdef HAVE_MEDIAPLAYER
-            d->playbackWidget->hide();
-#endif
+            hideOverlays();
         }
 
         return;
     }
 
-//    int w = d->slideCtrlWidget->width();
-//    int h = d->slideCtrlWidget->height();
-//
-//    if (pos.y() < (d->deskY + 20))
-//    {
-//        if (pos.x() <= (d->deskX + d->deskWidth / 2))
-//            // position top left
-//            d->slideCtrlWidget->move(d->deskX, d->deskY);
-//        else
-//            // position top right
-//            d->slideCtrlWidget->move(d->deskX + d->deskWidth - w - 1, d->deskY);
-//    }
-//    else
-//    {
-//        if (pos.x() <= (d->deskX + d->deskWidth / 2))
-//            // position bot left
-//            d->slideCtrlWidget->move(d->deskX, d->deskY + d->deskHeight - h - 1);
-//        else
-//            // position bot right
-//            d->slideCtrlWidget->move(d->deskX + d->deskWidth - w - 1, d->deskY + d->deskHeight - h - 1);
-//    }
-
-    d->slideCtrlWidget->show();
-#ifdef HAVE_MEDIAPLAYER
-    d->playbackWidget->show();
-#endif
+    showOverlays();
 }
 
 void PresentationWidget::wheelEvent(QWheelEvent* e)
 {
     if (!d->sharedData->enableMouseWheel)
+    {
         return;
+    }
 
     if (m_endOfShow)
+    {
         slotClose();
+    }
 
-    int delta = e->delta();
+    int delta = e->angleDelta().y();
 
-    if (delta < 0)
+    if      (delta < 0)
     {
         d->timer->stop();
         d->slideCtrlWidget->setPaused(true);
         slotNext();
     }
-    else if (delta > 0 && d->fileIndex - 1 >= 0)
+    else if ((delta > 0) && ((d->fileIndex - 1) >= 0))
     {
         d->timer->stop();
         d->slideCtrlWidget->setPaused(true);
@@ -719,12 +815,19 @@ void PresentationWidget::slotMouseMoveTimeOut()
 
     if ((pos.y() < (d->deskY + 20))                     ||
         (pos.y() > (d->deskY + d->deskHeight - 20 - 1)) ||
+        !d->timer->isActive()                           ||
         d->slideCtrlWidget->underMouse()
+
 #ifdef HAVE_MEDIAPLAYER
+
         || d->playbackWidget->underMouse()
+
 #endif
+
        )
+    {
         return;
+    }
 
     setCursor(QCursor(Qt::BlankCursor));
 }
@@ -733,16 +836,22 @@ void PresentationWidget::paintEvent(QPaintEvent*)
 {
     QPainter p(this);
 
-    if (m_simplyShow)
+    if (m_simplyShow || m_firstPainter)
     {
         if (d->sharedData->printFileName)
+        {
             printFilename();
+        }
 
         if (d->sharedData->printProgress)
+        {
             printProgress();
+        }
 
         if (d->sharedData->printFileComments)
+        {
             printComments();
+        }
 
         double ratio   = devicePixelRatioF();
         QSize fullSize = QSizeF(ratio * width(), ratio * height()).toSize();
@@ -778,6 +887,7 @@ void PresentationWidget::paintEvent(QPaintEvent*)
     }
 
     // If execution reach this line, an effect is running
+
     p.drawPixmap(0, 0, m_buffer);
 }
 
@@ -790,18 +900,12 @@ void PresentationWidget::startPainter()
 void PresentationWidget::slotPause()
 {
     d->timer->stop();
-
-    if (d->slideCtrlWidget->isHidden())
-    {
-        int w = d->slideCtrlWidget->width();
-        d->slideCtrlWidget->move(d->deskWidth - w - 1, 0);
-        d->slideCtrlWidget->show();
-    }
+    showOverlays();
 }
 
 void PresentationWidget::slotPlay()
 {
-    d->slideCtrlWidget->hide();
+    hideOverlays();
     slotTimeOut();
 }
 
@@ -840,23 +944,48 @@ void PresentationWidget::slotClose()
     close();
 }
 
+void PresentationWidget::slotRemoveImageFromList()
+{
+    QUrl url = d->imageLoader->currPath();
+
+    // Delete or move to trash by url
+
+    d->sharedData->iface->deleteImage(url);
+
+    // Delete from list of presentation
+
+    d->sharedData->urlList.removeOne(url);
+
+    // Delete from list of mainpage
+
+    d->sharedData->mainPage->removeImageFromList(url);
+}
+
 void PresentationWidget::slotVideoLoaded(bool loaded)
 {
     if (loaded)
     {
+
 #ifdef HAVE_MEDIAPLAYER
+
         slotPause();
         d->videoView->show();
+
 #endif
+
     }
 }
 
 void PresentationWidget::slotVideoFinished()
 {
+
 #ifdef HAVE_MEDIAPLAYER
+
     d->videoView->hide();
     slotPlay();
+
 #endif
+
 }
 
 // -- Effects rules --------------------------------------------------------------------------------------------------------
@@ -925,7 +1054,9 @@ QMap<QString, QString> PresentationWidget::effectNamesI18N()
 void PresentationWidget::slotTimeOut()
 {
     if (!d->effect)
+    {
         return;                     // No effect -> bye !
+    }
 
     int tmout = -1;
 
@@ -937,23 +1068,30 @@ void PresentationWidget::slotTimeOut()
     {
         loadNextImage();
 
-        if (d->currImage.isNull() || d->sharedData->urlList.isEmpty())   // End of slideshow ?
+        if (d->sharedData->offAutoDelay)
         {
-            showEndOfShow();
-            return;
+            showCurrentImage();
         }
-
-        if (d->sharedData->effectName  == QLatin1String("Random")) // Take a random effect.
+        else
         {
-            d->effect = getRandomEffect();
-
-            if (!d->effect)
+            if (d->currImage.isNull() || d->sharedData->urlList.isEmpty())   // End of slideshow ?
+            {
+                showEndOfShow();
                 return;
+            }
+
+            if (d->sharedData->effectName  == QLatin1String("Random")) // Take a random effect.
+            {
+                if (d->currImage.isNull() || d->sharedData->urlList.isEmpty())   // End of slideshow ?
+                {
+                    showEndOfShow();
+                    return;
+                }
+            }
+            d->effectRunning = true;
+
+            tmout = (this->*d->effect)(true);
         }
-
-        d->effectRunning = true;
-
-        tmout = (this->*d->effect)(true);
     }
 
     if (tmout <= 0)                 // Effect finished -> delay.
@@ -962,13 +1100,23 @@ void PresentationWidget::slotTimeOut()
         d->effectRunning = false;
     }
 
-    d->timer->start(tmout);
+    if (d->sharedData->offAutoDelay)
+    {
+        d->timer->stop();
+    }
+    else
+    {
+        d->timer->setSingleShot(true);
+        d->timer->start(tmout);
+    }
 }
 
 void PresentationWidget::showCurrentImage()
 {
     if (d->currImage.isNull())
+    {
         return;
+    }
 
     m_simplyShow = true;
 
@@ -991,6 +1139,7 @@ PresentationWidget::EffectMethod PresentationWidget::getRandomEffect()
 int PresentationWidget::effectNone(bool /* aInit */)
 {
     showCurrentImage();
+
     return -1;
 }
 
@@ -1027,7 +1176,7 @@ int PresentationWidget::effectChessboard(bool aInit)
     for (int y = 0 ; y < d->w ; y += (d->dy << 1))
     {
         bufferPainter.fillRect(d->ix, y + d->iy, d->dx, d->dy, brush);
-        bufferPainter.fillRect(d->x, y + d->y, d->dx, d->dy, brush);
+        bufferPainter.fillRect(d->x,  y + d->y,  d->dx, d->dy, brush);
     }
 
     repaint();
@@ -1050,7 +1199,9 @@ int PresentationWidget::effectMeltdown(bool aInit)
         d->intArray = new int[d->ix];
 
         for (i = d->ix - 1 ; i >= 0 ; --i)
+        {
             d->intArray[i] = 0;
+        }
     }
 
     d->pdone = true;
@@ -1063,14 +1214,19 @@ int PresentationWidget::effectMeltdown(bool aInit)
         y = d->intArray[i];
 
         if (y >= d->h)
+        {
             continue;
+        }
 
         d->pdone = false;
 
         if ((qrand() & 15) < 6)
+        {
             continue;
-
-        //bufferPainter.drawPixmap(x, y + d->dy, m_buffer, x, y, d->dx, d->h - y - d->dy);
+        }
+/*
+        bufferPainter.drawPixmap(x, y + d->dy, m_buffer, x, y, d->dx, d->h - y - d->dy);
+*/
         bufferPainter.drawPixmap(x, y, d->currImage, x, y, d->dx, d->dy);
 
         d->intArray[i] += d->dy;
@@ -1085,6 +1241,7 @@ int PresentationWidget::effectMeltdown(bool aInit)
         delete [] d->intArray;
         d->intArray = nullptr;
         showCurrentImage();
+
         return -1;
     }
 
@@ -1097,19 +1254,21 @@ int PresentationWidget::effectSweep(bool aInit)
     {
         // subtype: 0=sweep right to left, 1=sweep left to right
         //          2=sweep bottom to top, 3=sweep top to bottom
+
         d->subType = qrand() % 4;
         d->w       = width();
         d->h       = height();
         d->dx      = (d->subType == 1 ? 16 : -16);
         d->dy      = (d->subType == 3 ? 16 : -16);
-        d->x       = (d->subType == 1 ? 0 : d->w);
-        d->y       = (d->subType == 3 ? 0 : d->h);
+        d->x       = (d->subType == 1 ? 0  : d->w);
+        d->y       = (d->subType == 3 ? 0  : d->h);
     }
 
     if (d->subType == 0 || d->subType == 1)
     {
         // horizontal sweep
-        if ((d->subType == 0 && d->x < -64) || (d->subType == 1 && d->x > d->w + 64))
+
+        if (((d->subType == 0) && (d->x < -64)) || ((d->subType == 1) && (d->x > d->w + 64)))
         {
             showCurrentImage();
             return -1;
@@ -1138,7 +1297,8 @@ int PresentationWidget::effectSweep(bool aInit)
     else
     {
         // vertical sweep
-        if ((d->subType == 2 && d->y < -64) || (d->subType == 3 && d->y > d->h + 64))
+
+        if (((d->subType == 2) && (d->y < -64)) || ((d->subType == 3) && (d->y > d->h + 64)))
         {
             showCurrentImage();
             return -1;
@@ -1206,7 +1366,10 @@ int PresentationWidget::effectMosaic(bool aInit)
         {
             if (d->pixelMatrix[x][y] == true)
             {
-                if (y != 0) y--;
+                if (y != 0)
+                {
+                    y--;
+                }
 
                 continue;
             }
@@ -1294,9 +1457,10 @@ int PresentationWidget::effectGrowing(bool aInit)
     d->y = (d->h >> 1) - (int)(d->i * d->fy);
     d->i++;
 
-    if (d->x < 0 || d->y < 0)
+    if ((d->x < 0) || (d->y < 0))
     {
         showCurrentImage();
+
         return -1;
     }
 
@@ -1325,7 +1489,9 @@ int PresentationWidget::effectHorizLines(bool aInit)
     }
 
     if (iyPos[d->i] < 0)
+    {
         return -1;
+    }
 
     int iPos;
     int until = d->h;
@@ -1334,7 +1500,9 @@ int PresentationWidget::effectHorizLines(bool aInit)
     QBrush brush = QBrush(d->currImage);
 
     for (iPos = iyPos[d->i] ; iPos < until ; iPos += 8)
+    {
         bufferPainter.fillRect(0, iPos, d->w, 1, brush);
+    }
 
     bufferPainter.end();
     repaint();
@@ -1342,7 +1510,9 @@ int PresentationWidget::effectHorizLines(bool aInit)
     d->i++;
 
     if (iyPos[d->i] >= 0)
+    {
         return 160;
+    }
 
     showCurrentImage();
 
@@ -1361,7 +1531,9 @@ int PresentationWidget::effectVertLines(bool aInit)
     }
 
     if (ixPos[d->i] < 0)
+    {
         return -1;
+    }
 
     int iPos;
     int until = d->w;
@@ -1370,7 +1542,9 @@ int PresentationWidget::effectVertLines(bool aInit)
     QBrush brush = QBrush(d->currImage);
 
     for (iPos = ixPos[d->i] ; iPos < until ; iPos += 8)
+    {
         bufferPainter.fillRect(iPos, 0, 1, d->h, brush);
+    }
 
     bufferPainter.end();
     repaint();
@@ -1378,7 +1552,9 @@ int PresentationWidget::effectVertLines(bool aInit)
     d->i++;
 
     if (ixPos[d->i] >= 0)
+    {
         return 160;
+    }
 
     showCurrentImage();
 
@@ -1410,6 +1586,7 @@ int PresentationWidget::effectMultiCircleOut(bool aInit)
     if (d->alpha < 0)
     {
         showCurrentImage();
+
         return -1;
     }
 
@@ -1459,34 +1636,35 @@ int PresentationWidget::effectSpiralIn(bool aInit)
         d->y  = 0;
     }
 
-    if (d->i == 0 && d->x0 >= d->x1)
+    if ((d->i == 0) && (d->x0 >= d->x1))
     {
         showCurrentImage();
+
         return -1;
     }
 
-    if (d->i == 0 && d->x >= d->x1)      // switch to: down on right side
+    if      ((d->i == 0) && (d->x >= d->x1))      // switch to: down on right side
     {
         d->i   = 1;
         d->dx  = 0;
         d->dy  = d->iy;
         d->x1 -= d->ix;
     }
-    else if (d->i == 1 && d->y >= d->y1) // switch to: right to left on bottom side
+    else if ((d->i == 1) && (d->y >= d->y1)) // switch to: right to left on bottom side
     {
         d->i   = 2;
         d->dx  = -d->ix;
         d->dy  = 0;
         d->y1 -= d->iy;
     }
-    else if (d->i == 2 && d->x <= d->x0) // switch to: up on left side
+    else if ((d->i == 2) && (d->x <= d->x0)) // switch to: up on left side
     {
         d->i   = 3;
         d->dx  = 0;
         d->dy  = -d->iy;
         d->x0 += d->ix;
     }
-    else if (d->i == 3 && d->y <= d->y0) // switch to: left to right on top side
+    else if ((d->i == 3) && (d->y <= d->y0)) // switch to: left to right on top side
     {
         d->i   = 0;
         d->dx  = d->ix;
@@ -1532,6 +1710,7 @@ int PresentationWidget::effectCircleOut(bool aInit)
     if (d->alpha < 0)
     {
         showCurrentImage();
+
         return -1;
     }
 
@@ -1569,6 +1748,7 @@ int PresentationWidget::effectBlobs(bool aInit)
     if (d->i <= 0)
     {
         showCurrentImage();
+
         return -1;
     }
 

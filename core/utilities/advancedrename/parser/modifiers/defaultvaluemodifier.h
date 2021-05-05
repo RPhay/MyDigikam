@@ -41,12 +41,14 @@ class DefaultValueDialog : public RuleDialog
 public:
 
     explicit DefaultValueDialog(Rule* parent);
-    ~DefaultValueDialog();
+    ~DefaultValueDialog()                           override;
 
     QLineEdit* valueInput;
 
 private:
 
+    // Disable
+    explicit DefaultValueDialog(QWidget*) = delete;
     DefaultValueDialog(const DefaultValueDialog&);
     DefaultValueDialog& operator=(const DefaultValueDialog&);
 };
@@ -60,16 +62,18 @@ class DefaultValueModifier : public Modifier
 public:
 
     explicit DefaultValueModifier();
-    virtual QString parseOperation(ParseSettings& settings);
+    QString parseOperation(ParseSettings& settings) override;
 
 private Q_SLOTS:
 
-    void slotTokenTriggered(const QString& token);
+    void slotTokenTriggered(const QString& token)   override;
 
 private:
 
-    DefaultValueModifier(const DefaultValueModifier&);
-    DefaultValueModifier& operator=(const DefaultValueModifier&);
+    // Disable
+    explicit DefaultValueModifier(QObject*)                      = delete;
+    DefaultValueModifier(const DefaultValueModifier&)            = delete;
+    DefaultValueModifier& operator=(const DefaultValueModifier&) = delete;
 };
 
 } // namespace Digikam

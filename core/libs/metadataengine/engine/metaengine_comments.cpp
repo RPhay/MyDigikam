@@ -7,7 +7,7 @@
  * Description : Exiv2 library interface.
  *               Comments manipulation methods.
  *
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2006-2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  *
  * This program is free software; you can redistribute it
@@ -27,6 +27,7 @@
 
 #include "metaengine_p.h"
 #include "digikam_debug.h"
+#include "digikam_config.h"
 
 #if defined(Q_CC_CLANG)
 #   pragma clang diagnostic push
@@ -42,20 +43,30 @@ bool MetaEngine::canWriteComment(const QString& filePath)
 
     try
     {
-        Exiv2::Image::AutoPtr image = Exiv2::ImageFactory::open((const char*)
-                                      (QFile::encodeName(filePath).constData()));
+#if defined Q_OS_WIN && defined EXV_UNICODE_PATH
+
+        Exiv2::Image::AutoPtr image = Exiv2::ImageFactory::open((const wchar_t*)filePath.utf16());
+
+#elif defined Q_OS_WIN
+
+        Exiv2::Image::AutoPtr image = Exiv2::ImageFactory::open(QFile::encodeName(filePath).constData());
+
+#else
+
+        Exiv2::Image::AutoPtr image = Exiv2::ImageFactory::open(filePath.toUtf8().constData());
+
+#endif
 
         Exiv2::AccessMode mode      = image->checkMode(Exiv2::mdComment);
 
-        return (mode == Exiv2::amWrite || mode == Exiv2::amReadWrite);
+        return ((mode == Exiv2::amWrite) || (mode == Exiv2::amReadWrite));
     }
-    catch(Exiv2::AnyError& e)
+    catch (Exiv2::AnyError& e)
     {
-        std::string s(e.what());
         qCCritical(DIGIKAM_METAENGINE_LOG) << "Cannot check Comment access mode using Exiv2 (Error #"
-                                           << e.code() << ": " << s.c_str() << ")";
+                                           << e.code() << ": " << QString::fromStdString(e.what()) << ")";
     }
-    catch(...)
+    catch (...)
     {
         qCCritical(DIGIKAM_METAENGINE_LOG) << "Default exception from Exiv2";
     }
@@ -75,7 +86,7 @@ bool MetaEngine::clearComments() const
 
 QByteArray MetaEngine::getComments() const
 {
-    return QByteArray(d->itemComments().data(), d->itemComments().size());
+    return QByteArray(d->itemComments().data(), (int)d->itemComments().size());
 }
 
 QString MetaEngine::getCommentsDecoded() const

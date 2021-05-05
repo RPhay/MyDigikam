@@ -6,7 +6,7 @@
  * Date        : 2006-04-19
  * Description : A tab to display general item information
  *
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -46,9 +46,9 @@ class DIGIKAM_EXPORT ItemPropertiesTab : public DExpanderBox
 public:
 
     explicit ItemPropertiesTab(QWidget* const parent);
-    ~ItemPropertiesTab();
+    ~ItemPropertiesTab() override;
 
-    void setCurrentURL(const QUrl& url=QUrl());
+    void setCurrentURL(const QUrl& url = QUrl());
 
     void setPhotoInfoDisable(const bool b);
     void setVideoInfoDisable(const bool b);
@@ -119,13 +119,14 @@ public:
     static QString permissionsString(const QFileInfo& fi);
 
     /**
-     * Return human readable string of file size in bytes.
+     * Return an human readable string of file size in 'bytes'.
+     * If 'si' is true, a decade of bytes is interpreted on base of 1000 byte, else 1024.
      */
-    static QString humanReadableBytesCount(qint64 bytes, bool si=false);
+    static QString humanReadableBytesCount(qint64 bytes, bool si = false);
 
 private:
 
-    static double doubleToHumanReadableFraction(double val, long* num, long* den, long maxden=2);
+    static double doubleToHumanReadableFraction(double val, long* num, long* den, long maxden = 2);
 
 private:
 

@@ -6,7 +6,7 @@
  * Date        : 2010-09-15
  * Description : a command line tool to parse metadata dedicated to LensFun
  *
- * Copyright (C) 2012-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -26,6 +26,7 @@
 #include <QString>
 #include <QFile>
 #include <QDebug>
+#include <QScopedPointer>
 
 // Local includes
 
@@ -48,9 +49,9 @@ int main(int argc, char** argv)
     bool valRet = false;
 
     DImg         img(filePath);
-    DMetadata    meta(img.getMetadata());
+    QScopedPointer<DMetadata> meta(new DMetadata(img.getMetadata()));
     LensFunIface iface;
-    LensFunIface::MetadataMatch ret = iface.findFromMetadata(meta);
+    LensFunIface::MetadataMatch ret = iface.findFromMetadata(meta.data());
 
     if (ret == LensFunIface::MetadataExactMatch)
     {
@@ -65,8 +66,6 @@ int main(int argc, char** argv)
 
         valRet = true;
     }
-
-    MetaEngine::cleanupExiv2();
 
     return valRet;
 }

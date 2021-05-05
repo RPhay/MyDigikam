@@ -8,7 +8,7 @@
  *
  * Copyright (C) 2002-2005 by Renchi Raju <renchi dot raju at gmail dot com>
  * Copyright (C) 2009-2011 by Andi Clemens <andi dot clemens at gmail dot com>
- * Copyright (C) 2002-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2002-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2006-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  *
  * This program is free software; you can redistribute it
@@ -207,11 +207,6 @@ QRect ItemDelegate::coordinatesIndicatorRect() const
 {
     Q_D(const ItemDelegate);
     return d->coordinatesRect;
-}
-
-void ItemDelegate::prepareThumbnails(ItemThumbnailModel* thumbModel, const QList<QModelIndex>& indexes)
-{
-    thumbModel->prepareThumbnails(indexes, thumbnailSize());
 }
 
 QPixmap ItemDelegate::retrieveThumbnailPixmap(const QModelIndex& index, int thumbnailSize)

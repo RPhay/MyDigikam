@@ -54,22 +54,18 @@ CollectionManager::CollectionManager()
 {
     qRegisterMetaType<CollectionLocation>("CollectionLocation");
 
-    connect(Solid::DeviceNotifier::instance(),
-            SIGNAL(deviceAdded(QString)),
-            this,
-            SLOT(deviceAdded(QString)));
+    connect(Solid::DeviceNotifier::instance(), SIGNAL(deviceAdded(QString)),
+            this, SLOT(deviceAdded(QString)));
 
-    connect(Solid::DeviceNotifier::instance(),
-            SIGNAL(deviceRemoved(QString)),
-            this,
-            SLOT(deviceRemoved(QString)));
+    connect(Solid::DeviceNotifier::instance(), SIGNAL(deviceRemoved(QString)),
+            this, SLOT(deviceRemoved(QString)));
 
     // CoreDbWatch slot is connected at construction of CoreDbWatch, which may be later.
 }
 
 CollectionManager::~CollectionManager()
 {
-    qDeleteAll(d->locations.values());
+    qDeleteAll(d->locations);
     delete d;
 }
 

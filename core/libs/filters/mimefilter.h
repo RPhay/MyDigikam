@@ -6,7 +6,7 @@
  * Date        : 2007-10-22
  * Description : a widget to filter album contents by type mime
  *
- * Copyright (C) 2007-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2007-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -57,7 +57,7 @@ public:
 public:
 
     explicit MimeFilter(QWidget* const parent);
-    ~MimeFilter();
+    ~MimeFilter() override;
 
     void setMimeFilter(int filter);
     int mimeFilter();

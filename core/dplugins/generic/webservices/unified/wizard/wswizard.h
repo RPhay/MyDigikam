@@ -6,7 +6,7 @@
  * Date        : 2017-06-27
  * Description : a tool to export items to web services.
  *
- * Copyright (C) 2017-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2017-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2018      by Thanh Trung Dinh <dinhthanhtrung1996 at gmail dot com>
  *
  * This program is free software; you can redistribute it
@@ -34,7 +34,6 @@
 
 #include "dwizarddlg.h"
 #include "dinfointerface.h"
-#include "digikam_export.h"
 #include "o0settingsstore.h"
 #include "wssettings.h"
 #include "wsauthentication.h"
@@ -44,7 +43,7 @@ using namespace Digikam;
 namespace DigikamGenericUnifiedPlugin
 {
 
-class DIGIKAM_EXPORT WSWizard : public DWizardDlg
+class WSWizard : public DWizardDlg
 {
     Q_OBJECT
 
@@ -54,10 +53,10 @@ public:
     ~WSWizard();
 
     bool validateCurrentPage() override;
-    int  nextId() const override;
+    int  nextId() const        override;
 
-    DInfoInterface*     iface()    const;
-    WSSettings*         settings() const;
+    DInfoInterface*     iface()              const;
+    WSSettings*         settings()           const;
 
     /*
      * Instance of WSAuthentication (which wraps instance of WSTalker) and correspondent QSettings

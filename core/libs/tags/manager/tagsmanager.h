@@ -45,8 +45,8 @@ class TagsManager : public QMainWindow, public StateSavingObject
 
 public:
 
-    explicit TagsManager();
-    ~TagsManager();
+    TagsManager();
+    ~TagsManager()                      override;
 
     /**
      * @brief setupUi   setup all gui elements for Tag Manager
@@ -138,18 +138,22 @@ private Q_SLOTS:
     void slotRemoveTagsFromImgs();
 
     /**
-     * @brief slotRemoveNotAssignedTags - remove all tags that are not assigned to images
+     * @brief slotMarkNotAssignedTags - mark all tags that are not assigned to images
      */
-    void slotRemoveNotAssignedTags();
+    void slotMarkNotAssignedTags();
 
 protected:
 
     void closeEvent(QCloseEvent* event) override;
+    void showEvent(QShowEvent* event)   override;
 
-    virtual void doLoadState() override;
-    virtual void doSaveState() override;
+    void doLoadState()                  override;
+    void doSaveState()                  override;
 
 private:
+
+    // Disable
+    explicit TagsManager(QWidget*) = delete;
 
     void setupActions();
 

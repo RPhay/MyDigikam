@@ -7,7 +7,7 @@
  * Description : helper class used to modify search albums in views
  *
  * Copyright (C) 2009-2010 by Johannes Wienke <languitar at semipol dot de>
- * Copyright (C) 2014-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2014-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -64,7 +64,7 @@ public:
     /**
      * Constructor.
      *
-     * @param parent parent for qt parent child mechanism
+     * @param parent the parent for qt parent child mechanism
      * @param dialogParent paret widget for dialogs displayed by this object
      */
     SearchModificationHelper(QObject* const parent, QWidget* const dialogParent);
@@ -72,7 +72,7 @@ public:
     /**
      * Destructor.
      */
-    virtual ~SearchModificationHelper();
+    ~SearchModificationHelper() override;
 
     /**
      * @see slotCreateFuzzySearchFromSketch()
@@ -142,7 +142,7 @@ public Q_SLOTS:
      * Creates a new fuzzy search based on a sketch created by the user and
      * selects it in the AlbumManager after creation.
      *
-     * @param name name of the new sketch search
+     * @param name the name of the new sketch search
      * @param sketchWidget the widget containing the sketch of the user
      * @param numberOfResults max number of results to display
      * @param targetAlbums The image must be in one of these albums
@@ -161,8 +161,8 @@ public Q_SLOTS:
      * and selects it in the album manager after creation.
      *
      * @param name of the new search
-     * @param image image to base this search on
-     * @param threshold threshold for image search, 0 <= threshold <= 1
+     * @param image the image to base this search on
+     * @param threshold the threshold for image search, 0 <= threshold <= 1
      * @param maxThreshold the maximum threshold of similarity.
      * @param targetAlbums The image must be in one of these albums
      * @param overwriteIfExisting if true, an existing search with the desired
@@ -177,7 +177,7 @@ public Q_SLOTS:
                                         bool overwriteIfExisting = false);
 
     /**
-     * Creates a new fuzzy search for finding similar photos based on the file 
+     * Creates a new fuzzy search for finding similar photos based on the file
      * path of a photo
      * and selects it in the album manager after creation.
      *

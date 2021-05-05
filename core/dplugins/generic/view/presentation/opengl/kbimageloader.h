@@ -7,7 +7,7 @@
  * Description : a presentation tool.
  *
  * Copyright (C) 2007-2009 by Valerio Fuoglio <valerio dot fuoglio at gmail dot com>
- * Copyright (C) 2012-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * Parts of this code are based on smoothslidesaver by Carsten Weinhold
  * <carsten dot weinhold at gmx dot de>
@@ -49,7 +49,7 @@ class KBImageLoader : public QThread
 public:
 
     KBImageLoader(PresentationContainer* const sharedData, int width, int height);
-    ~KBImageLoader();
+    ~KBImageLoader()                  override;
 
     void  quit();
     void  requestNewImage();
@@ -62,9 +62,14 @@ public:
 
 protected:
 
-    void run();
+    void run()                        override;
     bool loadImage();
     void invalidateCurrentImageName();
+
+private:
+
+    // Disable
+    explicit KBImageLoader(QObject*) = delete;
 
 private:
 

@@ -7,6 +7,7 @@
  * Description : Geodetic tools
  *
  * Copyright (C) 2008-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
+ * Copyright (C) 2015-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -476,22 +477,22 @@ protected:
      */
     Ellipsoid m_ellipsoid;
 
-    /*
+    /**
      * The semi major axis of the referenced ellipsoid.
      */
     double m_semiMajorAxis;
 
-    /*
+    /**
      * The semi minor axis of the referenced ellipsoid.
      */
     double m_semiMinorAxis;
 
-    /*
+    /**
      * The eccentricity squared of the referenced ellipsoid.
      */
     double m_eccentricitySquared;
 
-    /*
+    /**
      * The maximum orthodromic distance that could be calculated onto the referenced ellipsoid.
      */
     double m_maxOrthodromicDistance;

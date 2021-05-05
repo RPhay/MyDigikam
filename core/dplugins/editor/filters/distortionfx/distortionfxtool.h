@@ -6,7 +6,7 @@
  * Date        : 2005-02-11
  * Description : a tool to apply Distortion FX to an image.
  *
- * Copyright (C) 2005-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2005-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2006-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  *
  * Original Distortion algorithms copyrighted 2004-2005 by
@@ -44,22 +44,22 @@ class DistortionFXTool : public EditorToolThreaded
 public:
 
     explicit DistortionFXTool(QObject* const parent);
-    ~DistortionFXTool();
+    ~DistortionFXTool()         override;
 
 private Q_SLOTS:
 
     void slotEffectTypeChanged(int type);
-    void slotResetSettings();
+    void slotResetSettings()    override;
 
 private:
 
-    void readSettings();
-    void writeSettings();
-    void preparePreview();
-    void prepareFinal();
-    void setPreviewImage();
-    void setFinalImage();
-    void renderingFinished();
+    void readSettings()         override;
+    void writeSettings()        override;
+    void preparePreview()       override;
+    void prepareFinal()         override;
+    void setPreviewImage()      override;
+    void setFinalImage()        override;
+    void renderingFinished()    override;
     void blockWidgetSignals(bool b);
 
 private:

@@ -6,7 +6,7 @@
  * Date        : 2007-03-05
  * Description : digiKam light table GUI
  *
- * Copyright (C) 2007-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2007-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -71,8 +71,6 @@
 #include "iccsettings.h"
 #include "imagewindow.h"
 #include "itemdescedittab.h"
-#include "slideshowbuilder.h"
-#include "slideshow.h"
 #include "setup.h"
 #include "syncjob.h"
 #include "lighttablepreview.h"
@@ -98,45 +96,44 @@ class Q_DECL_HIDDEN LightTableWindow::Private
 public:
 
     Private()
-      : autoLoadOnRightPanel(true),
-        autoSyncPreview(true),
-        fromLeftPreview(true),
-        setItemLeftAction(nullptr),
-        setItemRightAction(nullptr),
-        clearListAction(nullptr),
-        editItemAction(nullptr),
-        removeItemAction(nullptr),
-        fileDeleteAction(nullptr),
-        fileDeleteFinalAction(nullptr),
-        slideShowAction(nullptr),
-        leftZoomPlusAction(nullptr),
-        leftZoomMinusAction(nullptr),
-        leftZoomTo100percents(nullptr),
-        leftZoomFitToWindowAction(nullptr),
-        rightZoomPlusAction(nullptr),
-        rightZoomMinusAction(nullptr),
-        rightZoomTo100percents(nullptr),
-        rightZoomFitToWindowAction(nullptr),
-        forwardAction(nullptr),
-        backwardAction(nullptr),
-        firstAction(nullptr),
-        lastAction(nullptr),
-        showBarAction(nullptr),
-        viewCMViewAction(nullptr),
-        syncPreviewAction(nullptr),
-        navigateByPairAction(nullptr),
-        clearOnCloseAction(nullptr),
-        leftFileName(nullptr),
-        rightFileName(nullptr),
-        hSplitter(nullptr),
-        barViewDock(nullptr),
-        thumbView(nullptr),
-        previewView(nullptr),
-        leftZoomBar(nullptr),
-        rightZoomBar(nullptr),
-        statusProgressBar(nullptr),
-        leftSideBar(nullptr),
-        rightSideBar(nullptr)
+      : autoLoadOnRightPanel        (true),
+        autoSyncPreview             (true),
+        fromLeftPreview             (true),
+        setItemLeftAction           (nullptr),
+        setItemRightAction          (nullptr),
+        clearListAction             (nullptr),
+        editItemAction              (nullptr),
+        removeItemAction            (nullptr),
+        fileDeleteAction            (nullptr),
+        fileDeleteFinalAction       (nullptr),
+        leftZoomPlusAction          (nullptr),
+        leftZoomMinusAction         (nullptr),
+        leftZoomTo100percents       (nullptr),
+        leftZoomFitToWindowAction   (nullptr),
+        rightZoomPlusAction         (nullptr),
+        rightZoomMinusAction        (nullptr),
+        rightZoomTo100percents      (nullptr),
+        rightZoomFitToWindowAction  (nullptr),
+        forwardAction               (nullptr),
+        backwardAction              (nullptr),
+        firstAction                 (nullptr),
+        lastAction                  (nullptr),
+        showBarAction               (nullptr),
+        viewCMViewAction            (nullptr),
+        syncPreviewAction           (nullptr),
+        navigateByPairAction        (nullptr),
+        clearOnCloseAction          (nullptr),
+        leftFileName                (nullptr),
+        rightFileName               (nullptr),
+        hSplitter                   (nullptr),
+        barViewDock                 (nullptr),
+        thumbView                   (nullptr),
+        previewView                 (nullptr),
+        leftZoomBar                 (nullptr),
+        rightZoomBar                (nullptr),
+        statusProgressBar           (nullptr),
+        leftSideBar                 (nullptr),
+        rightSideBar                (nullptr)
     {
     }
 
@@ -161,7 +158,6 @@ public:
     QAction*                  removeItemAction;
     QAction*                  fileDeleteAction;
     QAction*                  fileDeleteFinalAction;
-    QAction*                  slideShowAction;
     QAction*                  leftZoomPlusAction;
     QAction*                  leftZoomMinusAction;
     QAction*                  leftZoomTo100percents;

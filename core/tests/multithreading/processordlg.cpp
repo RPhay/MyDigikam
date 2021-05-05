@@ -6,7 +6,7 @@
  * Date        : 2011-12-28
  * Description : test for implementation of thread manager api
  *
- * Copyright (C) 2011-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2011-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C)      2014 by Veaceslav Munteanu <veaceslav dot munteanu90 at gmail dot com>
  *
  * This program is free software; you can redistribute it
@@ -43,45 +43,45 @@
 
 // Local includes
 
-#include "myactionthread.h"
+#include "rawtopngconverterthread.h"
 
 class Q_DECL_HIDDEN ProcessorDlg::Private
 {
 public:
 
     explicit Private()
+      : count        (0),
+        page         (nullptr),
+        items        (nullptr),
+        buttons      (nullptr),
+        progressView (nullptr),
+        usedCore     (nullptr),
+        thread       (nullptr)
     {
-        count        = 0;
-        page         = nullptr;
-        items        = nullptr;
-        buttons      = nullptr;
-        progressView = nullptr;
-        usedCore     = nullptr;
-        thread       = nullptr;
     }
 
-    int                  count;
+    int                      count;
 
-    QWidget*             page;
-    QLabel*              items;
-    QDialogButtonBox*    buttons;
-    QScrollArea*         progressView;
+    QWidget*                 page;
+    QLabel*                  items;
+    QDialogButtonBox*        buttons;
+    QScrollArea*             progressView;
 
-    QList<QUrl>          list;
+    QList<QUrl>              list;
 
-    QSpinBox*            usedCore;
-    MyActionThread*      thread;
+    QSpinBox*                usedCore;
+    RAWToPNGConverterThread* thread;
 };
 
-ProcessorDlg::ProcessorDlg(const QList<QUrl>& list)
-    : QDialog(nullptr),
-      d(new Private)
+ProcessorDlg::ProcessorDlg(const QList<QUrl>& list, QWidget* const parent)
+    : QDialog(parent),
+      d      (new Private)
 {
     setModal(false);
     setWindowTitle(QString::fromUtf8("Convert RAW files To PNG"));
 
     d->buttons               = new QDialogButtonBox(QDialogButtonBox::Apply | QDialogButtonBox::Close, this);
-    d->thread                = new MyActionThread(this);
+    d->thread                = new RAWToPNGConverterThread(this);
     d->list                  = list;
     d->count                 = d->list.count();
     qDebug() << d->list;

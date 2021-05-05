@@ -39,7 +39,7 @@
 namespace Digikam
 {
 
-class DIGIKAM_EXPORT RemoveFilterAction : public QAction
+class DIGIKAM_GUI_EXPORT RemoveFilterAction : public QAction
 {
     Q_OBJECT
 
@@ -47,22 +47,14 @@ public:
 
     explicit RemoveFilterAction(const QString& label,
                                 const QModelIndex& index,
-                                QObject* const parent = 0);
-    ~RemoveFilterAction()
-    {
-    }
+                                QObject* const parent = nullptr);
+    ~RemoveFilterAction();
 
-    void setIndex(QModelIndex& index)
-    {
-        m_index = index;
-    }
+    void setIndex(const QModelIndex& index);
 
 public Q_SLOTS:
 
-    void triggerSlot()
-    {
-        emit actionTriggered(m_index);
-    }
+    void triggerSlot();
 
 Q_SIGNALS:
 
@@ -75,7 +67,7 @@ private:
 
 // -------------------------------------------------------------------------------------
 
-class DIGIKAM_EXPORT ItemPropertiesHistoryTab : public QWidget
+class DIGIKAM_GUI_EXPORT ItemPropertiesHistoryTab : public QWidget
 {
     Q_OBJECT
 

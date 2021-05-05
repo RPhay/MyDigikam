@@ -2,7 +2,7 @@
 
 # Script to build a bundle MXE installation with all digiKam low level dependencies in a dedicated directory.
 #
-# Copyright (c) 2015-2020 by Gilles Caulier  <caulier dot gilles at gmail dot com>
+# Copyright (c) 2015-2021 by Gilles Caulier  <caulier dot gilles at gmail dot com>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
@@ -98,12 +98,18 @@ fi
 #################################################################################################
 # Dependencies build and installation
 
+# Use a more recent gcc version with MXE
+echo -e "\n"
+echo "---------- Building cross-compiler for MXE"
+make MXE_TARGETS=$MXE_BUILD_TARGETS cc MXE_PLUGIN_DIRS="plugins/gcc9" 
+
 echo -e "\n"
 echo "---------- Building digiKam low level dependencies with MXE"
 
+# Switch to a more recent gcc version
+echo 'override MXE_PLUGIN_DIRS += plugins/gcc9' >> settings.mk
+
 make MXE_TARGETS=$MXE_BUILD_TARGETS \
-     gcc \
-     gdb \
      cmake \
      gettext \
      freeglut \
@@ -124,10 +130,10 @@ make MXE_TARGETS=$MXE_BUILD_TARGETS \
      qtbase \
      qttranslations \
      qtimageformats \
-     qtwebkit \
      qttools \
      qtwinextras \
      qtscript \
+     qtwebkit \
      x265 \
      ffmpeg \
      openal \
@@ -135,6 +141,8 @@ make MXE_TARGETS=$MXE_BUILD_TARGETS \
      imagemagick
 
 echo -e "\n"
+
+#     gdb \
 
 #################################################################################################
 
@@ -174,7 +182,6 @@ ${MXE_BUILD_TARGETS}-cmake $ORIG_WD/../3rdparty \
 # NOTE: The order to compile each component here is very important.
 
 ${MXE_BUILD_TARGETS}-cmake --build . --config RelWithDebInfo --target ext_opencv     -- -j$CPU_CORES
-${MXE_BUILD_TARGETS}-cmake --build . --config RelWithDebInfo --target ext_exiv2      -- -j$CPU_CORES
 #${MXE_BUILD_TARGETS}-cmake --build . --config RelWithDebInfo --target ext_libgphoto2 -- -j$CPU_CORES
 ${MXE_BUILD_TARGETS}-cmake --build . --config RelWithDebInfo --target ext_drmingw    -- -j$CPU_CORES
 

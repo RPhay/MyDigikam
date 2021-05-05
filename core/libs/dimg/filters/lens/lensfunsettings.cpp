@@ -4,7 +4,7 @@
  * Description : a tool to fix automatically camera lens aberrations
  *
  * Copyright (C) 2008      by Adrian Schroeter <adrian at suse dot de>
- * Copyright (C) 2008-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2008-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -74,7 +74,7 @@ const QString LensFunSettings::Private::configGeometryEntry(QLatin1String("Geome
 
 LensFunSettings::LensFunSettings(QWidget* const parent)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     const int spacing = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
 
@@ -97,7 +97,7 @@ LensFunSettings::LensFunSettings(QWidget* const parent)
     d->filterGEO->setWhatsThis(i18n("Four geometries are handled here: Rectilinear (99 percent of all lenses), "
                                     "Fisheye, Cylindrical, Equirectangular."));
     QLabel* const note = new QLabel(i18n("<b>Note: lens correction options depend of filters available in LensFun library. "
-                                         "See <a href='http://lensfun.sourceforge.net'>LensFun project web site</a> "
+                                         "See <a href='http://lensfun.sourceforge.net'>LensFun project web site</a> "       // krazy:exclude=insecurenet
                                          "for more information.</b>"), this);
     note->setOpenExternalLinks(true);
     note->setWordWrap(true);

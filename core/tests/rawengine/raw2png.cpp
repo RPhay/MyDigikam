@@ -6,7 +6,7 @@
  * Date        : 2008-15-09
  * Description : a command line tool to convert RAW file to PNG
  *
- * Copyright (C) 2008-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2008-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -27,6 +27,8 @@
 #include <QFile>
 #include <QFileInfo>
 #include <QDebug>
+#include <QPointer>
+#include <QScopedPointer>
 
 // Local includes
 
@@ -53,35 +55,36 @@ int main(int argc, char** argv)
     QString            fullFilePath(input.baseName() + QString::fromLatin1(".full.png"));
     QFileInfo          fullOutput(fullFilePath);
     QImage             image;
-    DRawInfo identify;
+    QScopedPointer<DRawInfo> identify(new DRawInfo);
 
     // -----------------------------------------------------------
 
     qDebug() << "raw2png: Identify RAW image from " << input.fileName();
 
-    DRawDecoder rawProcessor;
-    if (!rawProcessor.rawFileIdentify(identify, filePath))
+    QPointer<DRawDecoder> rawProcessor(new DRawDecoder);
+
+    if (!rawProcessor->rawFileIdentify(*identify, filePath))
     {
         qDebug() << "raw2png: Identifying RAW image failed. Aborted...";
         return -1;
     }
 
-    int width  = identify.imageSize.width();
-    int height = identify.imageSize.height();
+    int width  = identify->imageSize.width();
+    int height = identify->imageSize.height();
 
     qDebug() << "raw2png: Raw image info:";
-    qDebug() << "--- Date:      " << identify.dateTime.toString(Qt::ISODate);
-    qDebug() << "--- Make:      " << identify.make;
-    qDebug() << "--- Model:     " << identify.model;
+    qDebug() << "--- Date:      " << identify->dateTime.toString(Qt::ISODate);
+    qDebug() << "--- Make:      " << identify->make;
+    qDebug() << "--- Model:     " << identify->model;
     qDebug() << "--- Size:      " << width << "x" << height;
-    qDebug() << "--- Filter:    " << identify.filterPattern;
-    qDebug() << "--- Colors:    " << identify.rawColors;
+    qDebug() << "--- Filter:    " << identify->filterPattern;
+    qDebug() << "--- Colors:    " << identify->rawColors;
 
     // -----------------------------------------------------------
 
     qDebug() << "raw2png: Loading RAW image preview";
 
-    if (!rawProcessor.loadRawPreview(image, filePath))
+    if (!rawProcessor->loadRawPreview(image, filePath))
     {
         qDebug() << "raw2png: Loading RAW image preview failed. Aborted...";
         return -1;
@@ -99,7 +102,7 @@ int main(int argc, char** argv)
 
     image = QImage();
 
-    if (!rawProcessor.loadHalfPreview(image, filePath))
+    if (!rawProcessor->loadHalfPreview(image, filePath))
     {
         qDebug() << "raw2png: Loading half RAW image failed. Aborted...";
         return -1;
@@ -123,7 +126,7 @@ int main(int argc, char** argv)
     settings.RGBInterpolate4Colors = false;
     settings.RAWQuality            = DRawDecoderSettings::BILINEAR;
 
-    if (!rawProcessor.loadFullImage(image, filePath, settings))
+    if (!rawProcessor->loadFullImage(image, filePath, settings))
     {
         qDebug() << "raw2png: Loading full RAW image failed. Aborted...";
         return -1;

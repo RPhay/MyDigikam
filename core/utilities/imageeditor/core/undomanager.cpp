@@ -8,7 +8,7 @@
  *
  * Copyright (C) 2005-2006 by Renchi Raju <renchi dot raju at gmail dot com>
  * Copyright (C) 2005-2006 Joern Ahrens <joern dot ahrens at kdemail dot net>
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -49,9 +49,9 @@ class Q_DECL_HIDDEN UndoManager::Private
 public:
 
     explicit Private()
-      : origin(0),
+      : origin   (0),
         undoCache(nullptr),
-        core(nullptr)
+        core     (nullptr)
     {
     }
 
@@ -91,7 +91,7 @@ void UndoManager::addAction(UndoAction* const action)
 
     // If the _last_ action was irreversible, we need to snapshot it
 
-    UndoAction* const lastAction               = d->undoActions.isEmpty() ? 0 : d->undoActions.last();
+    UndoAction* const lastAction               = d->undoActions.isEmpty() ? nullptr : d->undoActions.last();
 
     d->undoActions << action;
 
@@ -235,19 +235,22 @@ void UndoManager::undoStep(bool saveRedo, bool execute, bool flyingRollback)
     {
         bool needSnapshot = false;
 
-        if (d->redoActions.isEmpty())
+        if (irreversible)
         {
-            // Undoing from the tip of the list:
-            // Save the "last", current state for the redo operation
+            if (d->redoActions.isEmpty())
+            {
+                // Undoing from the tip of the list:
+                // Save the "last", current state for the redo operation
 
-            needSnapshot = irreversible;
-        }
-        else
-        {
-            // Undoing an irreversible with next redo reversible:
-            // Here, no snapshot was made in addAction, but we need it now
+                needSnapshot = true;
+            }
+            else
+            {
+                // Undoing an irreversible with next redo reversible:
+                // Here, no snapshot was made in addAction, but we need it now
 
-            needSnapshot = dynamic_cast<UndoActionReversible*>(d->redoActions.last());
+                needSnapshot = dynamic_cast<UndoActionReversible*>(d->redoActions.last());
+            }
         }
 
         if (needSnapshot)

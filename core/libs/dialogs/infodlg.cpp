@@ -6,7 +6,7 @@
  * Date        : 2008-07-11
  * Description : general info list dialog
  *
- * Copyright (C) 2008-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2008-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2009      by Andi Clemens <andi dot clemens at gmail dot com>
  *
  * This program is free software; you can redistribute it
@@ -30,14 +30,12 @@
 #include <QString>
 #include <QLabel>
 #include <QGridLayout>
-#include <QTreeWidget>
 #include <QHeaderView>
 #include <QMimeData>
 #include <QClipboard>
 #include <QApplication>
 #include <QStyle>
 #include <QStandardPaths>
-#include <QDialogButtonBox>
 #include <QVBoxLayout>
 #include <QPushButton>
 
@@ -57,26 +55,32 @@ class Q_DECL_HIDDEN InfoDlg::Private
 {
 public:
 
-    explicit Private() :
-        listView(nullptr),
-        page(nullptr)
+    explicit Private()
+      : listView(nullptr),
+        page    (nullptr),
+        buttons (nullptr),
+        tabView (nullptr)
     {
     }
 
-    QTreeWidget* listView;
-    QWidget*     page;
+    QTreeWidget*      listView;
+    QWidget*          page;
+    QDialogButtonBox* buttons;
+    QTabWidget*       tabView;
 };
 
 InfoDlg::InfoDlg(QWidget* const parent)
     : QDialog(parent),
-      d(new Private)
+      d      (new Private)
 {
     setModal(false);
     setWindowTitle(i18n("Shared Libraries and Components Information"));
 
-    QDialogButtonBox* const buttons = new QDialogButtonBox(QDialogButtonBox::Help | QDialogButtonBox::Apply | QDialogButtonBox::Ok, this);
-    buttons->button(QDialogButtonBox::Ok)->setDefault(true);
-    buttons->button(QDialogButtonBox::Apply)->setText(i18n("Copy to Clipboard"));
+    d->buttons = new QDialogButtonBox(QDialogButtonBox::Help  |
+                                      QDialogButtonBox::Apply |
+                                      QDialogButtonBox::Ok, this);
+    d->buttons->button(QDialogButtonBox::Ok)->setDefault(true);
+    d->buttons->button(QDialogButtonBox::Apply)->setText(i18n("Copy to Clipboard"));
 
     d->page                 = new QWidget(this);
     QGridLayout* const grid = new QGridLayout(d->page);
@@ -107,6 +111,8 @@ InfoDlg::InfoDlg(QWidget* const parent)
 
     // --------------------------------------------------------
 
+    d->tabView              = new QTabWidget(d->page);
+
     d->listView             = new QTreeWidget(d->page);
     d->listView->setSortingEnabled(false);
     d->listView->setRootIsDecorated(false);
@@ -117,6 +123,9 @@ InfoDlg::InfoDlg(QWidget* const parent)
     d->listView->header()->setSectionResizeMode(QHeaderView::Stretch);
     d->listView->header()->setVisible(false);
 
+    d->tabView->addTab(d->listView, i18n("Items List"));
+    d->tabView->setTabBarAutoHide(true);
+
     // --------------------------------------------------------
 
     grid->addWidget(logo,        0, 0, 1, 1);
@@ -124,7 +133,7 @@ InfoDlg::InfoDlg(QWidget* const parent)
 
     // row 1 can be expanded by custom widgets in the subclassed dialog
 
-    grid->addWidget(d->listView, 2, 0, 1, -1);
+    grid->addWidget(d->tabView,  2, 0, 1, -1);
     grid->setColumnStretch(1, 10);
     grid->setRowStretch(2, 10);
     grid->setContentsMargins(QMargins());
@@ -132,20 +141,20 @@ InfoDlg::InfoDlg(QWidget* const parent)
 
     QVBoxLayout* const vbx = new QVBoxLayout(this);
     vbx->addWidget(d->page);
-    vbx->addWidget(buttons);
+    vbx->addWidget(d->buttons);
     setLayout(vbx);
 
     // --------------------------------------------------------
 
-    connect(buttons->button(QDialogButtonBox::Ok), SIGNAL(clicked()),
+    connect(d->buttons->button(QDialogButtonBox::Ok), SIGNAL(clicked()),
             this, SLOT(accept()));
 
-    connect(buttons->button(QDialogButtonBox::Help), SIGNAL(clicked()),
+    connect(d->buttons->button(QDialogButtonBox::Help), SIGNAL(clicked()),
             this, SLOT(slotHelp()));
 
     // --- NOTE: use dynamic binding as slotCopy2ClipBoard() is a virtual slot which can be re-implemented in derived classes.
 
-    connect(buttons->button(QDialogButtonBox::Apply), &QPushButton::clicked,
+    connect(d->buttons->button(QDialogButtonBox::Apply), &QPushButton::clicked,
             this, &InfoDlg::slotCopy2ClipBoard);
 
     resize(400, 500);
@@ -156,9 +165,19 @@ InfoDlg::~InfoDlg()
     delete d;
 }
 
+QTabWidget* InfoDlg::tabView() const
+{
+    return d->tabView;
+}
+
 QTreeWidget* InfoDlg::listView() const
 {
     return d->listView;
+}
+
+QDialogButtonBox* InfoDlg::buttonBox() const
+{
+    return d->buttons;
 }
 
 QWidget* InfoDlg::mainWidget() const

@@ -14,16 +14,16 @@
  *
  * See links for more details:
  *  Author homepage
- *    http://www.george-barwood.pwp.blueyonder.co.uk/hp/
+ *    www.george-barwood.pwp.blueyonder.co.uk/hp/
  *
  *  Getting token for Yandex.Fotki web service
- *    http://api.yandex.ru/fotki/doc/overview/authorization-token.xml
+ *    api.yandex.ru/fotki/doc/overview/authorization-token.xml
  *
  *  Yandex published source code
- *    http://download.yandex.ru/api-fotki/c-yamrsa.tar.gz
+ *    download.yandex.ru/api-fotki/c-yamrsa.tar.gz
  *
  *  Yandex company web site
- *    http://company.yandex.com/
+ *    https://company.yandex.com/
  *
  * Included by Roman Tsisyk <roman at tsisyk dot com>
  * All unneeded parts was commented out and can be removed
@@ -893,6 +893,7 @@ void CCryptoProviderRSA::EncryptPortion(const char* pt, size_t pt_size, char* ct
     ct_size = cipher.get_nunits() * bytes_per_unit;
 
     // ensure big-endianness
+
     cipher.store(reinterpret_cast<unsigned int*>(tmp), (int)ct_size / bytes_per_unit);
     _rmemcpy(ct, tmp, ct_size);
 }
@@ -902,21 +903,25 @@ void CCryptoProviderRSA::ImportPublicKey(const char* pk)
     prkface.MakeMe(pk);
 }
 
-void CCryptoProviderRSA::Encrypt(const char* inbuf, size_t in_size,char* outbuf, size_t& out_size)
+void CCryptoProviderRSA::Encrypt(const char* inbuf, size_t in_size, char* outbuf, size_t& out_size)
 {
     size_t i,cp_size;
 
-    char portbuf[MAX_CRYPT_BITS/8];
-    char cpbuf[MAX_CRYPT_BITS/4];
+    char portbuf[MAX_CRYPT_BITS / 8];
+    char cpbuf[MAX_CRYPT_BITS / 4];
     const char* inp = inbuf;
 
     unsigned short lm;
 
     // must ensure that any data block would be < key's modulus
     // hence -1
+
     int portion_len = (prkface.m.bits() - 1)  / 8;
 
-    if (portion_len < 0) portion_len = 0;
+    if (portion_len < 0)
+    {
+        portion_len = 0;
+    }
 
     char* prev_crypted = new char[portion_len];
     memset(prev_crypted, 0, portion_len);
@@ -925,31 +930,31 @@ void CCryptoProviderRSA::Encrypt(const char* inbuf, size_t in_size,char* outbuf,
 
     while (in_size)
     {
-        size_t uportion_len = (std::size_t) (portion_len);
-        size_t cur_size     = in_size > uportion_len ? uportion_len : in_size;
+        size_t uportion_len = (std::size_t)(portion_len);
+        size_t cur_size     = (in_size > uportion_len) ? uportion_len : in_size;
 
-        for (i=0; i<cur_size; ++i)
+        for (i = 0 ; i < cur_size ; ++i)
         {
             portbuf[i] = inp[i] ^ prev_crypted[i];
         }
 
         EncryptPortion(portbuf, cur_size, cpbuf, cp_size);
 
-        for (i=0; i< uportion_len; ++i)
+        for (i = 0 ; i < uportion_len ; ++i)
         {
-            prev_crypted[i] = i < cp_size ? cpbuf[i] : 0;
+            prev_crypted[i] = (i < cp_size) ? cpbuf[i] : 0;
         }
 
-        lm=cur_size;
-        memcpy (outbuf+out_size,&lm, sizeof(unsigned short));
-        out_size+=sizeof (unsigned short);
-        lm=(unsigned short)cp_size;
-        memcpy (outbuf+out_size,&lm, sizeof(unsigned short));
-        out_size+=sizeof (unsigned short);
-        memcpy (outbuf+out_size,cpbuf, cp_size);
-        out_size+=cp_size;
-        inp+=cur_size;
-        in_size-=cur_size;
+        lm        = (unsigned short)cur_size;
+        memcpy (outbuf + out_size, &lm, sizeof(unsigned short));
+        out_size += sizeof (unsigned short);
+        lm        = (unsigned short)cp_size;
+        memcpy (outbuf + out_size, &lm, sizeof(unsigned short));
+        out_size += sizeof (unsigned short);
+        memcpy (outbuf + out_size, cpbuf, cp_size);
+        out_size += cp_size;
+        inp      += cur_size;
+        in_size  -= cur_size;
     }
 
     delete [] prev_crypted;

@@ -61,9 +61,11 @@ public:
 
 private:
 
-    // Hidden copy constructor and assignment operator.
-    MaintenanceData(const MaintenanceData&);
-    MaintenanceData& operator=(const MaintenanceData&);
+    // Disable
+    MaintenanceData(const MaintenanceData&)            = delete;
+    MaintenanceData& operator=(const MaintenanceData&) = delete;
+
+private:
 
     class Private;
     Private* const d;

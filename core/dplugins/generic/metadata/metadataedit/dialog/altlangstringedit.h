@@ -7,7 +7,7 @@
  * Description : a widget to edit a tag with multiple alternative
  *               language string entries.
  *
- * Copyright (C) 2007-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2007-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -44,16 +44,16 @@ class AltLangStringsEdit : public QWidget
 public:
 
     explicit AltLangStringsEdit(QWidget* const parent, const QString& title, const QString& desc);
-    ~AltLangStringsEdit();
+    ~AltLangStringsEdit() override;
 
     void setValues(const DMetadata::AltLangMap& values);
     bool getValues(DMetadata::AltLangMap& oldValues, DMetadata::AltLangMap& newValues);
 
     void setValid(bool v);
-    bool isValid() const;
+    bool isValid()              const;
 
-    QString defaultAltLang() const;
-    bool    asDefaultAltLang() const;
+    QString defaultAltLang()    const;
+    bool    asDefaultAltLang()  const;
 
 Q_SIGNALS:
 

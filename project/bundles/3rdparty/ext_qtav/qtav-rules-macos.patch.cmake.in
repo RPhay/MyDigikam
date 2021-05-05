@@ -1,0 +1,16 @@
+diff --git a/.qmake.conf b/.qmake.conf
+index ef57faf6..91948294 100644
+--- a/.qmake.conf
++++ b/.qmake.conf
+@@ -10,5 +10,10 @@ CONFIG *= enable_new_dtags
+ # OSX10.6 is not supported in Qt5.4
+ macx:isEqual(QT_MAJOR_VERSION,5):greaterThan(QT_MINOR_VERSION, 3): CONFIG *= c++11
+ android: CONFIG*=c++11
+-QMAKE_MACOSX_DEPLOYMENT_TARGET = 10.8
++QMAKE_MACOSX_DEPLOYMENT_TARGET = @MACOSX_DEPLOYMENT_TARGET@
+ QMAKE_IOS_DEPLOYMENT_TARGET = 6.0
++
++CONFIG += no_examples no_rpath
++INCLUDEPATH += @INSTALL_ROOT@/include/
++LIBS += -L@INSTALL_ROOT@/lib/
++

@@ -6,7 +6,7 @@
  * date        : 2017-07-04
  * Description : wrapper for the QFileDialog
  *
- * Copyright (C) 2014-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2014-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2017      by Maik Qualmann <metzpinguin at gmail dot com>
  *
  * This program is free software; you can redistribute it
@@ -49,7 +49,7 @@ public:
                          const QString& caption = QString(),
                          const QString& directory = QString(),
                          const QString& filter = QString());
-    virtual ~DFileDialog();
+    ~DFileDialog() override;
 
     static QString getExistingDirectory(QWidget* const parent = nullptr,
                                         const QString& caption = QString(),

@@ -6,7 +6,7 @@
  * Date        : 2017-05-15
  * Description : Managemenet dialogs for GPS bookmarks
  *
- * Copyright (C) 2017-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2017-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -67,11 +67,11 @@ class Q_DECL_HIDDEN AddBookmarkDialog::Private
 public:
 
     explicit Private()
-      : manager(nullptr),
-        proxyModel(nullptr),
-        location(nullptr),
-        title(nullptr),
-        desc(nullptr)
+      : manager     (nullptr),
+        proxyModel  (nullptr),
+        location    (nullptr),
+        title       (nullptr),
+        desc        (nullptr)
     {
     }
 
@@ -88,7 +88,7 @@ AddBookmarkDialog::AddBookmarkDialog(const QString& url,
                                      QWidget* const parent,
                                      BookmarksManager* const mngr)
     : QDialog(parent),
-      d(new Private)
+      d      (new Private)
 {
     d->url     = url;
     d->manager = mngr;
@@ -188,12 +188,12 @@ class Q_DECL_HIDDEN BookmarksDialog::Private
 public:
 
     explicit Private()
-      : manager(nullptr),
-        bookmarksModel(nullptr),
-        proxyModel(nullptr),
-        search(nullptr),
-        tree(nullptr),
-        mapView(nullptr)
+      : manager         (nullptr),
+        bookmarksModel  (nullptr),
+        proxyModel      (nullptr),
+        search          (nullptr),
+        tree            (nullptr),
+        mapView         (nullptr)
     {
     }
 
@@ -207,7 +207,7 @@ public:
 
 BookmarksDialog::BookmarksDialog(QWidget* const parent, BookmarksManager* const mngr)
     : QDialog(parent),
-      d(new Private)
+      d      (new Private)
 {
     d->manager = mngr;
 
@@ -341,7 +341,7 @@ void BookmarksDialog::expandNodes(BookmarkNode* const node)
 {
     for (int i = 0 ; i < node->children().count() ; ++i)
     {
-        BookmarkNode* const childNode = node->children()[i];
+        BookmarkNode* const childNode = node->children().value(i);
 
         if (childNode->expanded)
         {

@@ -6,7 +6,7 @@
  * Date        : 2018-07-30
  * Description : a BQM plugin to convert to JPEG2000.
  *
- * Copyright (C) 2018-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2018-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -61,7 +61,7 @@ QString ConvertToJp2Plugin::iid() const
 
 QIcon ConvertToJp2Plugin::icon() const
 {
-    return QIcon::fromTheme(QLatin1String("image-jpeg2000"));
+    return QIcon::fromTheme(QLatin1String("image-jpeg"));
 }
 
 QString ConvertToJp2Plugin::description() const
@@ -81,7 +81,7 @@ QList<DPluginAuthor> ConvertToJp2Plugin::authors() const
     return QList<DPluginAuthor>()
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2008-2020"))
+                             QString::fromUtf8("(C) 2008-2021"))
             ;
 }
 

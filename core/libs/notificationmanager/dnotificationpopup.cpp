@@ -6,7 +6,7 @@
  * Date        : 2004-07-03
  * Description : dialog-like popup that displays messages without interrupting the user
  *
- * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2001-2006 by Richard Moore <rich at kde dot org>
  * Copyright (C) 2004-2005 by Sascha Cunz <sascha.cunz at tiscali dot de>
  *
@@ -59,16 +59,16 @@ class Q_DECL_HIDDEN DNotificationPopup::Private
 public:
 
     explicit Private(DNotificationPopup* const q, WId winId)
-        : q(q),
+        : q         (q),
           popupStyle(DEFAULT_POPUP_TYPE),
-          window(winId),
-          msgView(nullptr),
-          topLayout(nullptr),
-          hideDelay(DEFAULT_POPUP_TIME),
-          hideTimer(new QTimer(q)),
-          ttlIcon(nullptr),
-          ttl(nullptr),
-          msg(nullptr),
+          window    (winId),
+          msgView   (nullptr),
+          topLayout (nullptr),
+          hideDelay (DEFAULT_POPUP_TIME),
+          hideTimer (new QTimer(q)),
+          ttlIcon   (nullptr),
+          ttl       (nullptr),
+          msg       (nullptr),
           autoDelete(false)
     {
         q->setWindowFlags(POPUP_FLAGS);
@@ -299,13 +299,13 @@ public:
 
 DNotificationPopup::DNotificationPopup(QWidget* const parent, Qt::WindowFlags f)
     : QFrame(nullptr, f ? f : POPUP_FLAGS),
-      d(new Private(this, parent ? parent->effectiveWinId() : 0L))
+      d     (new Private(this, parent ? parent->effectiveWinId() : 0L))
 {
 }
 
 DNotificationPopup::DNotificationPopup(WId win)
     : QFrame(nullptr),
-      d(new Private(this, win))
+      d     (new Private(this, win))
 {
 }
 
@@ -344,8 +344,8 @@ void DNotificationPopup::setView(QWidget* child)
 
     if (d->popupStyle == Balloon)
     {
-        const int marginHint = style()->pixelMetric(QStyle::PM_DefaultChildMargin);
-        d->topLayout->setMargin(2 * marginHint);
+        const int margin = 2 * style()->pixelMetric(QStyle::PM_DefaultChildMargin);
+        d->topLayout->setContentsMargins(margin, margin, margin, margin);
     }
 
     d->topLayout->addWidget(d->msgView);

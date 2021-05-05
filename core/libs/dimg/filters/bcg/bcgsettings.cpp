@@ -6,7 +6,7 @@
  * Date        : 2010-02-09
  * Description : BCG settings view.
  *
- * Copyright (C) 2010-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2010-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -78,11 +78,11 @@ const QString BCGSettings::Private::configGammaAdjustmentEntry(QLatin1String("Ga
 
 BCGSettings::BCGSettings(QWidget* const parent)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
-    const int spacing = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
+    const int spacing       = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
 
-    QGridLayout* grid = new QGridLayout(parent);
+    QGridLayout* const grid = new QGridLayout(parent);
 
     QLabel* const label2 = new QLabel(i18n("Brightness:"));
     d->bInput            = new DIntNumInput();
@@ -136,7 +136,7 @@ BCGContainer BCGSettings::settings() const
 {
     BCGContainer prm;
 
-    prm.brightness = (double)d->bInput->value() / 250.0;
+    prm.brightness = (double)d->bInput->value()  / 250.0;
     prm.contrast   = (double)(d->cInput->value() / 100.0) + 1.00;
     prm.gamma      = d->gInput->value();
 

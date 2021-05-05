@@ -6,7 +6,7 @@
  * Date        : 2007-12-03
  * Description : Greycstoration interface.
  *
- * Copyright (C) 2007-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2007-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2010      by Martin Klapetek <martin dot klapetek at gmail dot com>
  *
  * This program is free software; you can redistribute it
@@ -28,10 +28,6 @@
 #define cimg_debug 1
 
 #include "greycstorationfilter.h"
-
-// C++ includes
-
-#include <cassert>
 
 // Qt includes
 
@@ -105,10 +101,10 @@ class Q_DECL_HIDDEN GreycstorationFilter::Private
 public:
 
     explicit Private()
-      : gfact(1.0),
+      : gfact             (1.0),
         computationThreads(2),
-        mode(GreycstorationFilter::Restore),
-        threadManager(new CImg<>::GreycstorationThreadManager)
+        mode              (GreycstorationFilter::Restore),
+        threadManager     (new CImg<>::GreycstorationThreadManager)
     {
     }
 
@@ -137,7 +133,7 @@ public:
 
 GreycstorationFilter::GreycstorationFilter(QObject* const parent)
     : DImgThreadedFilter(parent),
-      d(new Private)
+      d                 (new Private)
 {
     setOriginalImage(DImg());
     setSettings(GreycstorationContainer());
@@ -152,7 +148,7 @@ GreycstorationFilter::GreycstorationFilter(DImg* const orgImage,
                                            const QImage& inPaintingMask,
                                            QObject* const parent)
     : DImgThreadedFilter(parent),
-      d(new Private)
+      d                 (new Private)
 {
     setOriginalImage(orgImage->copyImageData());
     setSettings(settings);

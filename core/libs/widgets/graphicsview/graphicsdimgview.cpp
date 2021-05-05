@@ -7,7 +7,7 @@
  * Description : Graphics View for DImg preview
  *
  * Copyright (C) 2010-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2011-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2011-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -383,11 +383,11 @@ void GraphicsDImgView::wheelEvent(QWheelEvent* e)
     {
         e->accept();
 
-        if      (e->delta() < 0)
+        if      (e->angleDelta().y() < 0)
         {
             emit toNextImage();
         }
-        else if (e->delta() > 0)
+        else if (e->angleDelta().y() > 0)
         {
             emit toPreviousImage();
         }
@@ -397,12 +397,12 @@ void GraphicsDImgView::wheelEvent(QWheelEvent* e)
     else if (e->modifiers() & Qt::ControlModifier)
     {
         // When zooming with the mouse-wheel, the image center is kept fixed.
- 
-        if      (e->delta() < 0)
+
+        if      (e->angleDelta().y() < 0)
         {
             d->layout->decreaseZoom(e->pos());
         }
-        else if (e->delta() > 0)
+        else if (e->angleDelta().y() > 0)
         {
             d->layout->increaseZoom(e->pos());
         }
@@ -410,10 +410,10 @@ void GraphicsDImgView::wheelEvent(QWheelEvent* e)
         return;
     }
 
-    else if(
-            ((p == this->verticalScrollBar()->maximum()) && (e->angleDelta().y() < 0)) ||
-            ((p == this->verticalScrollBar()->minimum()) && (e->angleDelta().y() > 0))
-           )
+    else if (
+             ((p == this->verticalScrollBar()->maximum()) && (e->angleDelta().y() < 0)) ||
+             ((p == this->verticalScrollBar()->minimum()) && (e->angleDelta().y() > 0))
+            )
     {
         // I had to add this condition for "ImageBrushGuideWidget" that subclasses ImageRegionWidget, used
         // in the healingclone tool.

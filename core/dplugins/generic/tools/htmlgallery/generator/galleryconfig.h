@@ -6,7 +6,7 @@
  * Date        : 2006-04-04
  * Description : a tool to generate HTML image galleries
  *
- * Copyright (C) 2012-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -37,6 +37,8 @@ namespace DigikamGenericHtmlGalleryPlugin
 
 class GalleryConfig : public KConfigSkeleton
 {
+    Q_OBJECT
+
 public:
 
     class EnumFullFormat
@@ -74,8 +76,8 @@ public:
 
 public:
 
-    explicit GalleryConfig();
-    virtual ~GalleryConfig();
+    explicit GalleryConfig(QObject* const parent = nullptr);
+    ~GalleryConfig() override;
 
     void setTheme(const QString&);
     QString theme() const;

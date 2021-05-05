@@ -7,7 +7,7 @@
  * Description : Integrated, multithread face detection / recognition
  *
  * Copyright (C) 2010-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2012-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -39,22 +39,23 @@ namespace Digikam
 {
 
 FacePipeline::Private::Private(FacePipeline* const q)
-    : databaseFilter(nullptr),
-      previewThread(nullptr),
-      detectionWorker(nullptr),
-      parallelDetectors(nullptr),
-      recognitionWorker(nullptr),
-      databaseWriter(nullptr),
-      trainerWorker(nullptr),
-      detectionBenchmarker(nullptr),
+    : databaseFilter        (nullptr),
+      previewThread         (nullptr),
+      detectionWorker       (nullptr),
+      parallelDetectors     (nullptr),
+      recognitionWorker     (nullptr),
+      databaseWriter        (nullptr),
+      trainerWorker         (nullptr),
+      detectionBenchmarker  (nullptr),
       recognitionBenchmarker(nullptr),
-      priority(QThread::LowPriority),
-      started(false),
-      infosForFiltering(0),
-      packagesOnTheRoad(0),
-      maxPackagesOnTheRoad(50),
-      totalPackagesAdded(0),
-      q(q)
+      priority              (QThread::LowPriority),
+      started               (false),
+      waiting               (false),
+      infosForFiltering     (0),
+      packagesOnTheRoad     (0),
+      maxPackagesOnTheRoad  (30),
+      totalPackagesAdded    (0),
+      q                     (q)
 {
 }
 
@@ -139,7 +140,7 @@ FacePipelineExtendedPackage::Ptr FacePipeline::Private::buildPackage(const ItemI
     return package;
 }
 
-void FacePipeline::Private::send(FacePipelineExtendedPackage::Ptr package)
+void FacePipeline::Private::send(const FacePipelineExtendedPackage::Ptr& package)
 {
     start();
     ++totalPackagesAdded;
@@ -171,7 +172,7 @@ void FacePipeline::Private::finishProcess(FacePipelineExtendedPackage::Ptr packa
     checkFinished();
 }
 
-bool FacePipeline::Private::senderFlowControl(FacePipelineExtendedPackage::Ptr package)
+bool FacePipeline::Private::senderFlowControl(const FacePipelineExtendedPackage::Ptr& package)
 {
     if (packagesOnTheRoad > maxPackagesOnTheRoad)
     {
@@ -238,6 +239,7 @@ void FacePipeline::Private::start()
     }
 
     started = true;
+    waiting = false;
     emit q->started(i18n("Applying face changes"));
 }
 
@@ -279,11 +281,12 @@ void FacePipeline::Private::stop()
     }
 
     started = false;
+    waiting = true;
 }
 
 void FacePipeline::Private::wait()
 {
-    if (!started)
+    if (!waiting)
     {
         return;
     }
@@ -318,7 +321,7 @@ void FacePipeline::Private::wait()
         }
     }
 
-    started = false;
+    waiting = false;
 }
 
 void FacePipeline::Private::applyPriority()

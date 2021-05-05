@@ -7,7 +7,7 @@
  * Description : a Brightness/Contrast/Gamma settings container.
  *
  * Copyright (C) 2005      by Renchi Raju <renchi dot raju at gmail dot com>
- * Copyright (C) 2005-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2005-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2010      by Martin Klapetek <martin dot klapetek at gmail dot com>
  *
  * This program is free software; you can redistribute it
@@ -46,11 +46,13 @@ public:
 
     explicit BCGContainer();
 
-    bool isDefault() const;
+    bool isDefault()                                                                  const;
     bool operator==(const BCGContainer& other)                                        const;
 
     void writeToFilterAction(FilterAction& action, const QString& prefix = QString()) const;
-    static BCGContainer fromFilterAction(const FilterAction& action, const QString& prefix = QString());
+
+    static BCGContainer fromFilterAction(const FilterAction& action,
+                                         const QString& prefix = QString());
 
 public:
 

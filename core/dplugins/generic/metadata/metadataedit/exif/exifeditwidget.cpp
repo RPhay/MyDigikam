@@ -6,7 +6,7 @@
  * Date        : 2011-03-14
  * Description : a widget to edit EXIF metadata
  *
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2011      by Victor Dodon <dodon dot victor at gmail dot com>
  *
  * This program is free software; you can redistribute it
@@ -102,32 +102,32 @@ public:
 
 EXIFEditWidget::EXIFEditWidget(MetadataEditDialog* const parent)
     : DConfigDlgWdg(parent),
-      d(new Private)
+      d            (new Private)
 {
     d->dlg           = parent;
 
     d->captionPage   = new EXIFCaption(this);
-    d->page_caption  = addPage(d->captionPage, i18nc("image caption", "Caption"));
+    d->page_caption  = addPage(d->captionPage, i18nc("@item: image caption", "Caption"));
     d->page_caption->setIcon(QIcon::fromTheme(QLatin1String("document-edit")));
 
     d->datetimePage  = new EXIFDateTime(this);
-    d->page_datetime = addPage(d->datetimePage, i18n("Date & Time"));
+    d->page_datetime = addPage(d->datetimePage, i18nc("@item: date properties", "Date & Time"));
     d->page_datetime->setIcon(QIcon::fromTheme(QLatin1String("view-calendar")));
 
     d->lensPage      = new EXIFLens(this);
-    d->page_lens     = addPage(d->lensPage, i18n("Lens"));
+    d->page_lens     = addPage(d->lensPage, i18nc("@item: lens properties", "Lens"));
     d->page_lens->setIcon(QIcon::fromTheme(QLatin1String("camera-photo")));
 
     d->devicePage    = new EXIFDevice(this);
-    d->page_device   = addPage(d->devicePage, i18n("Device"));
+    d->page_device   = addPage(d->devicePage, i18nc("@item: device properties", "Device"));
     d->page_device->setIcon(QIcon::fromTheme(QLatin1String("scanner")));
 
     d->lightPage     = new EXIFLight(this);
-    d->page_light    = addPage(d->lightPage, i18n("Light"));
+    d->page_light    = addPage(d->lightPage, i18nc("@item; light properties", "Light"));
     d->page_light->setIcon(QIcon::fromTheme(QLatin1String("view-preview")));
 
     d->adjustPage    = new EXIFAdjust(this);
-    d->page_adjust   = addPage(d->adjustPage, i18nc("Picture adjustments", "Adjustments"));
+    d->page_adjust   = addPage(d->adjustPage, i18nc("@item: picture adjustments", "Adjustments"));
     d->page_adjust->setIcon(QIcon::fromTheme(QLatin1String("fill-color")));
 
     // ------------------------------------------------------------
@@ -188,19 +188,19 @@ void EXIFEditWidget::saveSettings()
 
 void EXIFEditWidget::slotItemChanged()
 {
-    d->page_caption->setHeader(d->dlg->currentItemTitleHeader(i18n("Caption Information")));
-    d->page_datetime->setHeader(d->dlg->currentItemTitleHeader(i18n("Date and Time Information")));
-    d->page_lens->setHeader(d->dlg->currentItemTitleHeader(i18n("Lens Settings")));
-    d->page_device->setHeader(d->dlg->currentItemTitleHeader(i18n("Capture Device Settings")));
-    d->page_light->setHeader(d->dlg->currentItemTitleHeader(i18n("Light Source Information")));
-    d->page_adjust->setHeader(d->dlg->currentItemTitleHeader(i18n("Pictures Adjustments")));
+    d->page_caption->setHeader(d->dlg->currentItemTitleHeader(i18nc("@info", "Caption Information")));
+    d->page_datetime->setHeader(d->dlg->currentItemTitleHeader(i18nc("@info", "Date and Time Information")));
+    d->page_lens->setHeader(d->dlg->currentItemTitleHeader(i18nc("@info", "Lens Settings")));
+    d->page_device->setHeader(d->dlg->currentItemTitleHeader(i18nc("@info", "Capture Device Settings")));
+    d->page_light->setHeader(d->dlg->currentItemTitleHeader(i18nc("@info", "Light Source Information")));
+    d->page_adjust->setHeader(d->dlg->currentItemTitleHeader(i18nc("@info", "Pictures Adjustments")));
 
-    DMetadata meta;
-    meta.load((*d->dlg->currentItem()).toLocalFile());
+    QScopedPointer<DMetadata> meta(new DMetadata);
+    meta->load((*d->dlg->currentItem()).toLocalFile());
 
-    d->exifData = meta.getExifEncoded();
-    d->iptcData = meta.getIptc();
-    d->xmpData  = meta.getXmp();
+    d->exifData = meta->getExifEncoded();
+    d->iptcData = meta->getIptc();
+    d->xmpData  = meta->getXmp();
     d->captionPage->readMetadata(d->exifData);
     d->datetimePage->readMetadata(d->exifData);
     d->lensPage->readMetadata(d->exifData);
@@ -222,12 +222,12 @@ void EXIFEditWidget::apply()
 {
     if (d->modified && !d->isReadOnly)
     {
-        DMetadata meta;
-        meta.load((*d->dlg->currentItem()).toLocalFile());
+        QScopedPointer<DMetadata> meta(new DMetadata);
+        meta->load((*d->dlg->currentItem()).toLocalFile());
 
-        d->exifData = meta.getExifEncoded();
-        d->iptcData = meta.getIptc();
-        d->xmpData  = meta.getXmp();
+        d->exifData = meta->getExifEncoded();
+        d->iptcData = meta->getIptc();
+        d->xmpData  = meta->getXmp();
 
         d->captionPage->applyMetadata(d->exifData, d->iptcData, d->xmpData);
         d->datetimePage->applyMetadata(d->exifData, d->iptcData, d->xmpData);
@@ -237,10 +237,10 @@ void EXIFEditWidget::apply()
         d->lightPage->applyMetadata(d->exifData);
         d->adjustPage->applyMetadata(d->exifData);
 
-        meta.setExif(d->exifData);
-        meta.setIptc(d->iptcData);
-        meta.setXmp(d->xmpData);
-        meta.save((*d->dlg->currentItem()).toLocalFile());
+        meta->setExif(d->exifData);
+        meta->setIptc(d->iptcData);
+        meta->setXmp(d->xmpData);
+        meta->save((*d->dlg->currentItem()).toLocalFile());
 
         d->modified = false;
     }
@@ -257,7 +257,7 @@ void EXIFEditWidget::slotModified()
 
 void EXIFEditWidget::showPage(int page)
 {
-    switch(page)
+    switch (page)
     {
         case 0:
             setCurrentPage(d->page_caption);

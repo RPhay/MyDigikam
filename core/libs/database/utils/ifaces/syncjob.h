@@ -7,7 +7,7 @@
  * Description : synchronize Input/Output jobs.
  *
  * Copyright (C) 2006-2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -30,6 +30,10 @@
 #include <QObject>
 #include <QPixmap>
 
+// Local includes
+
+#include "digikam_export.h"
+
 class QString;
 
 namespace Digikam
@@ -40,24 +44,22 @@ class TAlbum;
 
 // -------------------------------------------------------------------------------
 
-class SyncJob : public QObject
+class DIGIKAM_GUI_EXPORT SyncJob : public QObject
 {
     Q_OBJECT
 
 public:
 
-    /** Load the image or icon for the tag thumbnail.
+    /**
+     * Load the image or icon for the tag thumbnail.
      */
     static QPixmap getTagThumbnail(TAlbum* const album);
     static QPixmap getTagThumbnail(const QString& name, int size);
 
 private:
 
-    explicit SyncJob();
-    ~SyncJob();
-
-    void enterWaitingLoop() const;
-    void quitWaitingLoop()  const;
+    void enterWaitingLoop()                          const;
+    void quitWaitingLoop()                           const;
 
     QPixmap getTagThumbnailPriv(TAlbum* const album) const;
 
@@ -65,6 +67,13 @@ private Q_SLOTS:
 
     void slotGotThumbnailFromIcon(Album* album, const QPixmap& pix);
     void slotLoadThumbnailFailed(Album* album);
+
+private:
+
+    // Disable
+    SyncJob();
+    explicit SyncJob(QObject*) = delete;
+    ~SyncJob() override;
 
 private:
 

@@ -1,22 +1,33 @@
-# Script to build OpenSSL for digiKam bundle.
+# Script to build static version of OpenSSL for AppImage bundle.
 #
-# Copyright (c) 2015-2020 by Gilles Caulier  <caulier dot gilles at gmail dot com>
+# Copyright (c) 2015-2021 by Gilles Caulier  <caulier dot gilles at gmail dot com>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
 #
 
-SET(EXTPREFIX_openssl "${EXTPREFIX}")
+if (NOT MINGW AND NOT APPLE)
 
-ExternalProject_Add(ext_openssl
-    DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
-    URL https://github.com/janbar/openssl-cmake/archive/1.1.1.tar.gz
-    URL_MD5 214a26666f61d12e0dffafb22b5fc26a
+    SET(EXTPREFIX_openssl "/opt/openssl")
 
-    CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${EXTPREFIX_openssl}
-               -DCMAKE_BUILD_TYPE=${GLOBAL_BUILD_TYPE}
-               ${GLOBAL_PROFILE}
+    ExternalProject_Add(ext_openssl
 
-    UPDATE_COMMAND ""
-    ALWAYS 0
-)
+        GIT_REPOSITORY https://github.com/flagarde/openssl-cmake.git
+
+        INSTALL_DIR ${EXTPREFIX_openssl}
+
+        CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${EXTPREFIX_openssl}
+                   -DCMAKE_BUILD_TYPE=${GLOBAL_BUILD_TYPE}
+                   -DCMAKE_POSITION_INDEPENDENT_CODE=TRUE
+                   -DWITH_APPS=OFF
+                   -DWITH_DOCS=OFF
+                   -DWITH_TESTS=OFF
+                   ${GLOBAL_PROFILE}
+
+        BUILD_COMMAND ${BUILD_CLI}
+
+        UPDATE_COMMAND ""
+        ALWAYS 0
+    )
+
+endif()

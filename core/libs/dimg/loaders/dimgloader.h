@@ -7,7 +7,7 @@
  * Description : DImg image loader interface
  *
  * Copyright (C) 2005      by Renchi Raju <renchi dot raju at gmail dot com>
- * Copyright (C) 2005-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2005-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -47,29 +47,30 @@ namespace Digikam
 class DImgLoaderObserver;
 class DMetadata;
 
-class DImgLoader
+class DIGIKAM_EXPORT DImgLoader
 {
 public:
 
-    /** This is the list of loading modes usable by DImg image plugins
+    /**
+     * This is the list of loading modes usable by DImg image plugins
      */
     enum LoadFlag
     {
-        // Load image information without image data
+        /// Load image information without image data
 
-        LoadItemInfo     = 1,           /// Image info as width and height
-        LoadMetadata     = 2,           /// Image metadata
-        LoadICCData      = 4,           /// Image color profile
+        LoadItemInfo     = 1,           ///< Image info as width and height
+        LoadMetadata     = 2,           ///< Image metadata
+        LoadICCData      = 4,           ///< Image color profile
 
-        LoadImageData    = 8,           /// Full image data
-        LoadUniqueHash   = 16,          /// Image unique hash
-        LoadImageHistory = 32,          /// Image version history
+        LoadImageData    = 8,           ///< Full image data
+        LoadUniqueHash   = 16,          ///< Image unique hash
+        LoadImageHistory = 32,          ///< Image version history
 
-        // Special mode to load reduced image data
+        /// Special mode to load reduced image data
 
-        LoadPreview      = 64,          /// Load embedded preview image instead full size image
+        LoadPreview      = 64,          ///< Load embedded preview image instead full size image
 
-        // Helper to load all information, metadata and full image.
+        /// Helper to load all information, metadata and full image.
 
         LoadAll          = LoadItemInfo | LoadMetadata | LoadICCData | LoadImageData | LoadUniqueHash | LoadImageHistory
     };
@@ -115,7 +116,7 @@ protected:
     bool                    imageHasAlpha()                                         const;
     bool                    imageSixteenBit()                                       const;
 
-    unsigned int            imageNumBytes()                                         const;
+    quint64                 imageNumBytes()                                         const;
     int                     imageBitsDepth()                                        const;
     int                     imageBytesDepth()                                       const;
 
@@ -136,7 +137,7 @@ protected:
 
     virtual bool            readMetadata(const QString& filePath);
     virtual bool            saveMetadata(const QString& filePath);
-    virtual int             granularity(DImgLoaderObserver* const observer, int total, float progressSlice = 1.0);
+    virtual int             granularity(DImgLoaderObserver* const observer, int total, float progressSlice = 1.0F);
 
 protected:
 
@@ -145,22 +146,28 @@ protected:
 
 private:
 
-    DImgLoader();
+    // Disable
+    DImgLoader() = delete;
+
+private:
+
+    Q_DISABLE_COPY(DImgLoader)
 };
 
 // ---------------------------------------------------------------------------------------------------
 
-/// Allows safe multiplication of requested pixel number and bytes per pixel, avoiding particularly
-/// 32bit overflow and exceeding the size_t type
+/**
+ * Allows safe multiplication of requested pixel number and bytes per pixel, avoiding particularly
+ * 32 bits overflow and exceeding the size_t type
+ */
 template <typename Type>
 Q_INLINE_TEMPLATE Type* DImgLoader::new_failureTolerant(quint64 w, quint64 h, uint typesPerPixel)
 {
-    quint64 requested = w * h * quint64(typesPerPixel);
-    quint64 maximum   = std::numeric_limits<size_t>::max();
+    quint64 requested = w * h * (quint64)typesPerPixel;
 
-    if (requested > maximum)
+    if (requested >= std::numeric_limits<size_t>::max())
     {
-        qCCritical(DIGIKAM_DIMG_LOG) << "Requested memory of" << requested*quint64(sizeof(Type))
+        qCCritical(DIGIKAM_DIMG_LOG) << "Requested memory of" << requested * quint64(sizeof(Type))
                                      << "is larger than size_t supported by platform.";
         return nullptr;
     }
@@ -176,15 +183,20 @@ Q_INLINE_TEMPLATE Type* DImgLoader::new_failureTolerant(size_t size)
     switch (res)
     {
         case 0:       // parse failure from supported platform
+        {
             return nullptr;
-            break;
+        }
 
         case -1:      // unsupported platform
+        {
             // We will try to continue to allocate
             break;
+        }
 
         default:     // parse done with success from supported platform
+        {
             break;
+        }
     }
 
     Type* const reserved = new (std::nothrow) Type[size];

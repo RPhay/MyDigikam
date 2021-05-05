@@ -7,7 +7,7 @@
  * Description : a tool to export images to Flickr web service
  *
  * Copyright (C) 2005-2008 by Vardhman Jain <vardhman at gmail dot com>
- * Copyright (C) 2008-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2008-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -26,29 +26,27 @@
 
 // Qt includes
 
+#include <QUrl>
 #include <QHash>
 #include <QList>
 #include <QPair>
 #include <QLabel>
-#include <QLinkedList>
-#include <QLineEdit>
-#include <QUrl>
-#include <QComboBox>
 #include <QDialog>
+#include <QLineEdit>
+#include <QComboBox>
 
 // Local includes
 
 #include "wscomboboxintermediate.h"
 #include "dinfointerface.h"
 #include "wstooldialog.h"
-#include "digikam_export.h"
 
 using namespace Digikam;
 
 namespace DigikamGenericFlickrPlugin
 {
 
-class DIGIKAM_EXPORT FlickrWindow : public WSToolDialog
+class FlickrWindow : public WSToolDialog
 {
     Q_OBJECT
 
@@ -57,7 +55,7 @@ public:
     explicit FlickrWindow(DInfoInterface* const iface,
                           QWidget* const parent,
                           const QString& serviceName = QLatin1String("Flickr"));
-    ~FlickrWindow();
+    ~FlickrWindow()                                                   override;
 
     /**
      * Use this method to (re-)activate the dialog after it has been created
@@ -92,10 +90,10 @@ private Q_SLOTS:
 
 private:
 
-    QString guessSensibleSetName(const QList<QUrl>& urlList) const;
+    QString guessSensibleSetName(const QList<QUrl>& urlList)    const;
 
-    void closeEvent(QCloseEvent*) override;
-    void readSettings(QString uname);
+    void closeEvent(QCloseEvent*)                                     override;
+    void readSettings(const QString& uname);
     void writeSettings();
 
     void setUiInProgressState(bool inProgress);

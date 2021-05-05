@@ -6,7 +6,7 @@
  * Date        : 2012-02-04
  * Description : a tool to create panorama by fusion of several images.
  *               This parser is based on pto file format described here:
- *               http://hugin.sourceforge.net/docs/nona/nona.txt, and
+ *               hugin.sourceforge.net/docs/nona/nona.txt, and
  *               on pto files produced by Hugin's tools.
  *
  * Copyright (C) 2012-2015 by Benjamin Girault <benjamin dot girault at gmail dot com>
@@ -33,12 +33,11 @@
 // Local includes
 
 #include "ptotype.h"
-#include "digikam_export.h"
 
 namespace Digikam
 {
 
-class DIGIKAM_EXPORT PTOFile
+class PTOFile
 {
 public:
 
@@ -50,9 +49,11 @@ public:
 
 private:
 
-    // Hidden copy constructor and assignment operator.
-    PTOFile(const PTOFile&);
-    PTOFile& operator=(const PTOFile&);
+    // Disable
+    PTOFile(const PTOFile&)            = delete;
+    PTOFile& operator=(const PTOFile&) = delete;
+
+private:
 
     class Private;
     Private* const d;

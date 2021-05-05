@@ -45,7 +45,7 @@ class DIGIKAM_EXPORT ColorFXSettings : public QWidget
 public:
 
     explicit ColorFXSettings(QWidget* const parent, bool useGenericImg = true);
-    ~ColorFXSettings();
+    ~ColorFXSettings() override;
 
     ColorFXContainer defaultSettings()          const;
     void resetToDefault();

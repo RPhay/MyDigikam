@@ -6,7 +6,7 @@
  * Date        : 2012-02-04
  * Description : a tool to create panorama by fusion of several images.
  *               This parser is based on pto file format described here:
- *               http://hugin.sourceforge.net/docs/nona/nona.txt, and
+ *               hugin.sourceforge.net/docs/nona/nona.txt, and
  *               on pto files produced by Hugin's tools.
  *
  * Copyright (C) 2012-2015 by Benjamin Girault <benjamin dot girault at gmail dot com>
@@ -79,8 +79,9 @@ PTOFile::~PTOFile()
 
 bool PTOFile::openFile(const QString& path)
 {
-//     mtrace();
-
+/*
+    mtrace();
+*/
     if (d->script != nullptr)
     {
         panoScriptFree(d->script);
@@ -94,9 +95,9 @@ bool PTOFile::openFile(const QString& path)
     {
         return false;
     }
-
-//     muntrace();
-
+/*
+    muntrace();
+*/
     return true;
 }
 
@@ -110,6 +111,7 @@ PTOType* PTOFile::getPTO()
     PTOType* const out = new PTOType(d->huginVersion);
 
     // Project data conversion
+
     for (int c = 0 ; c < panoScriptGetPanoPrevCommentsCount(d->script) ; ++c)
     {
         out->project.previousComments << QString::fromLocal8Bit(panoScriptGetPanoComment(d->script, c));
@@ -165,9 +167,11 @@ PTOType* PTOFile::getPTO()
     out->project.hdr                    = panoScriptGetPanoIsHDR(d->script) != 0;
     out->project.bitDepth               = PTOType::Project::BitDepth(panoScriptGetPanoBitDepth(d->script));
     out->project.photometricReferenceId = panoScriptGetPanoImageReference(d->script);
+
     // NOTE: there should not be any unmatched parameters at this point, because the parsing would otherwise have failed
 
     // Stitcher
+
     for (int c = 0 ; c < panoScriptGetOptimizePrevCommentsCount(d->script) ; ++c)
     {
         out->stitcher.previousComments << QString::fromLocal8Bit(panoScriptGetOptimizeComment(d->script, c));
@@ -180,6 +184,7 @@ PTOType* PTOFile::getPTO()
     out->stitcher.photometricHuberSigma = panoScriptGetOptimizePhotometricHuberSigma(d->script);
 
     // Images
+
     out->images.clear();
 
     for (int i = 0 ; i < panoScriptGetImagesCount(d->script) ; ++i)
@@ -485,6 +490,7 @@ PTOType* PTOFile::getPTO()
     }
 
     // Masks
+
     for (int m = 0 ; m < panoScriptGetMaskCount(d->script) ; ++m)
     {
         int image           = panoScriptGetMaskImage(d->script, m);
@@ -507,6 +513,7 @@ PTOType* PTOFile::getPTO()
     }
 
     // Variable optimization
+
     for (int v = 0 ; v < panoScriptGetVarsToOptimizeCount(d->script) ; ++v)
     {
         int image                = panoScriptGetVarsToOptimizeImageId(d->script, v);
@@ -522,6 +529,7 @@ PTOType* PTOFile::getPTO()
     }
 
     // Control Points
+
     for (int cp = 0 ; cp < panoScriptGetCtrlPointCount(d->script) ; ++cp)
     {
         out->controlPoints.append(PTOType::ControlPoint());
@@ -541,6 +549,7 @@ PTOType* PTOFile::getPTO()
     }
 
     // Ending comments
+
     for (int c = 0 ; c < panoScriptGetEndingCommentCount(d->script) ; ++c)
     {
         out->lastComments << QString::fromLocal8Bit(panoScriptGetEndingComment(d->script, c));

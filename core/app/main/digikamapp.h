@@ -8,7 +8,7 @@
  *
  * Copyright (C) 2002-2005 by Renchi Raju <renchi dot raju at gmail dot com>
  * Copyright (C)      2006 by Tom Albers <tomalbers at kde dot nl>
- * Copyright (C) 2002-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2002-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2009-2011 by Andi Clemens <andi dot clemens at gmail dot com>
  * Copyright (C)      2013 by Michael G. Hansen <mike at mghansen dot de>
  *
@@ -52,14 +52,14 @@ class ItemInfo;
 class ItemInfoList;
 class CameraType;
 
-class DIGIKAM_EXPORT DigikamApp : public DXmlGuiWindow
+class DIGIKAM_GUI_EXPORT DigikamApp : public DXmlGuiWindow
 {
     Q_OBJECT
 
 public:
 
     explicit DigikamApp();
-    ~DigikamApp();
+    ~DigikamApp()                                                       override;
 
     virtual void show();
     void restoreSession();
@@ -70,13 +70,12 @@ public:
     void enableAlbumForwardHistory(bool enable);
 
     ItemIconView* view()    const;
-    QMenu* slideShowMenu()  const;
 
     static DigikamApp* instance();
 
 public:
 
-    DInfoInterface* infoIface(DPluginAction* const ac) override;
+    DInfoInterface* infoIface(DPluginAction* const ac)                  override;
 
 Q_SIGNALS:
 
@@ -115,6 +114,7 @@ private Q_SLOTS:
     void slotExit();
     void slotDBStat()                                                   override;
     void slotComponentsInfo()                                           override;
+    void slotOnlineVersionCheck()                                       override;
 
     void slotRecurseAlbums(bool);
     void slotRecurseTags(bool);
@@ -176,6 +176,7 @@ private:
 private Q_SLOTS:
 
     void slotMaintenance();
+    void slotScanNewItems();
     void slotMaintenanceDone();
     void slotDatabaseMigration();
 //@}
@@ -261,6 +262,11 @@ private Q_SLOTS:
     void slotOpenSolidDevice(const QString& udi);
     void slotSolidDeviceChanged(const QString& udi);
 //@}
+
+private:
+
+    // Disable
+    DigikamApp(QWidget*) = delete;
 
 private:
 

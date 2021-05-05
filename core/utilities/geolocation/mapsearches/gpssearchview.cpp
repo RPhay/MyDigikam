@@ -6,7 +6,7 @@
  * Date        : 2008-05-30
  * Description : GPS search sidebar tab contents.
  *
- * Copyright (C) 2008-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2008-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C)      2009 by Johannes Wienke <languitar at semipol dot de>
  * Copyright (C) 2010-2011 by Michael G. Hansen <mike at mghansen dot de>
  * Copyright (C)      2014 by Mohamed_Anwer <m_dot_anwer at gmx dot com>
@@ -68,19 +68,19 @@ class Q_DECL_HIDDEN GPSSearchView::Private
 public:
 
     explicit Private()
-      : saveBtn(nullptr),
-        nameEdit(nullptr),
-        imageInfoJob(),
-        searchGPSBar(nullptr),
-        searchTreeView(nullptr),
-        splitter(nullptr),
-        mapSearchWidget(nullptr),
-        gpsMarkerTiler(nullptr),
-        imageAlbumModel(nullptr),
-        imageFilterModel(nullptr),
-        selectionModel(nullptr),
-        searchModel(nullptr),
-        sortOrderOptionsHelper(nullptr)
+      : saveBtn                 (nullptr),
+        nameEdit                (nullptr),
+        imageInfoJob            (),
+        searchGPSBar            (nullptr),
+        searchTreeView          (nullptr),
+        splitter                (nullptr),
+        mapSearchWidget         (nullptr),
+        gpsMarkerTiler          (nullptr),
+        imageAlbumModel         (nullptr),
+        imageFilterModel        (nullptr),
+        selectionModel          (nullptr),
+        searchModel             (nullptr),
+        sortOrderOptionsHelper  (nullptr)
     {
     }
 
@@ -105,7 +105,7 @@ const QString GPSSearchView::Private::configSplitterStateEntry(QLatin1String("Sp
 
 /**
  * @brief Constructor
- * @param parent Parent object.
+ * @param parent the parent object.
  * @param searchModel The model that stores the searches.
  * @param imageFilterModel The image model used by displaying the selected images on map.
  * @param itemSelectionModel The selection model corresponding to the imageFilterModel.
@@ -115,9 +115,9 @@ GPSSearchView::GPSSearchView(QWidget* const parent,
                              SearchModificationHelper* const searchModificationHelper,
                              ItemFilterModel* const imageFilterModel,
                              QItemSelectionModel* const itemSelectionModel)
-    : QWidget(parent),
+    : QWidget          (parent),
       StateSavingObject(this),
-      d(new Private)
+      d                (new Private)
 {
     setAttribute(Qt::WA_DeleteOnClose);
 
@@ -206,9 +206,10 @@ GPSSearchView::GPSSearchView(QWidget* const parent,
                                              MouseModeFilter        |
                                              MouseModeSelectThumbnail);
 
-    // construct a second row of control actions below the control widget
-    /// @todo Should we still replace the icons of the actions with text as discussed during the sprint?
-
+    /**
+     * construct a second row of control actions below the control widget
+     * @todo Should we still replace the icons of the actions with text as discussed during the sprint?
+     */
     QWidget* const secondActionRow            = new QWidget();
     QHBoxLayout* const secondActionRowHBox    = new QHBoxLayout();
     secondActionRowHBox->setContentsMargins(QMargins());

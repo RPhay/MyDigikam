@@ -6,7 +6,7 @@
  * Date        : 2009-11-03
  * Description : A dialog base class which can handle multiple pages.
  *
- * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2006      by Tobias Koenig <tokoe at kde dot org>
  *
  * This program is free software; you can redistribute it
@@ -62,6 +62,7 @@ void DConfigDlgWdgPrivate::_k_slotCurrentPageChanged(const QModelIndex& current,
     }
 
     Q_Q(DConfigDlgWdg);
+
     emit q->currentPageChanged(currentItem, beforeItem);
 }
 
@@ -175,7 +176,7 @@ DConfigDlgWdgItem* DConfigDlgWdg::currentPage() const
 
 DConfigDlgTitle::DConfigDlgTitle(QWidget* const parent)
     : QWidget(parent),
-      d(new Private(this))
+      d      (new Private(this))
 {
     QFrame* const titleFrame = new QFrame(this);
     titleFrame->setAutoFillBackground(true);
@@ -187,13 +188,13 @@ DConfigDlgTitle::DConfigDlgTitle(QWidget* const parent)
 
     d->headerLayout = new QGridLayout(titleFrame);
     d->headerLayout->setColumnStretch(0, 1);
-    d->headerLayout->setMargin(6);
+    d->headerLayout->setContentsMargins(6, 6, 6, 6);
 
-    d->textLabel = new QLabel(titleFrame);
+    d->textLabel    = new QLabel(titleFrame);
     d->textLabel->setVisible(false);
     d->textLabel->setTextInteractionFlags(Qt::TextSelectableByMouse | Qt::LinksAccessibleByMouse);
 
-    d->imageLabel = new QLabel(titleFrame);
+    d->imageLabel   = new QLabel(titleFrame);
     d->imageLabel->setVisible(false);
 
     d->headerLayout->addWidget(d->textLabel,  0, 0);

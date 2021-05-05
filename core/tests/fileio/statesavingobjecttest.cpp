@@ -112,6 +112,11 @@ unsigned int StubStateSaver::numSaveCalls()
 
 // -----------------------------------------------------------------------------
 
+StateSavingObjectTest::StateSavingObjectTest(QObject* const parent)
+    : QObject(parent)
+{
+}
+
 void StateSavingObjectTest::testGroupName()
 {
     StubStateSaver saver;

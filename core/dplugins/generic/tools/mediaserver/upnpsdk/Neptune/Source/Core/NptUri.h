@@ -150,6 +150,7 @@ public:
      * form, and will thus be encoded automatically.
      *
      * @param scheme The URL scheme
+     * @param host The host name (enclose with [ and ] for IPv6 addresses)
      * @param port The port number
      * @param path The path
      * @param query The query, if any, or NULL
@@ -166,7 +167,7 @@ public:
      * Parse a URL from its fully encoded form.
      *
      * @param url The URL string in its encoded form
-     * @param default port The default port number, or 0 if not specified
+     * @param default port The defautl port number, or 0 if not specified
      */
     NPT_Result Parse(const char* url, NPT_UInt16  default_port = 0);
     
@@ -237,7 +238,7 @@ public:
     /**
      * Sets the host part of the URL.
      *
-     * @param host The host part of the URL
+     * @param host The host part of the URL (enclose with [ and ] for IPv6 addresses)
      */
     NPT_Result SetHost(const char* host);
     
@@ -291,7 +292,7 @@ public:
      * Return the string representation of the URL.
      *
      * @param default_port default port number for the scheme. If the port number of
-     * the URL is not equal to the default port, then port number is explicitly 
+     * the URL is not equal to the default port, then port number is explicitely 
      * included in the string representation of the URL. 
      * @param with_fragment Boolean flag specifiying whether the fragment part of 
      * the URL should be included in the returned string or not.
@@ -309,6 +310,7 @@ public:
 protected:
     // members
     NPT_String m_Host;
+    bool       m_HostIsIpv6Address;
     NPT_UInt16 m_Port;
     NPT_String m_Path;
     bool       m_HasQuery;

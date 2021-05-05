@@ -39,21 +39,18 @@ namespace Digikam
 
 class LoadingDescription;
 
-class DIGIKAM_EXPORT AdvancedRenameProcessDialog : public DProgressDlg
+class DIGIKAM_GUI_EXPORT AdvancedRenameProcessDialog : public DProgressDlg
 {
     Q_OBJECT
 
 public:
 
     explicit AdvancedRenameProcessDialog(const NewNamesList& list, QWidget* const parent = nullptr);
-    ~AdvancedRenameProcessDialog();
+    ~AdvancedRenameProcessDialog() override;
 
     QList<QUrl> failedUrls() const;
 
 private:
-
-    AdvancedRenameProcessDialog(const AdvancedRenameProcessDialog&);
-    AdvancedRenameProcessDialog& operator=(const AdvancedRenameProcessDialog&);
 
     void abort();
     void complete();
@@ -74,6 +71,12 @@ private Q_SLOTS:
 
     void slotRenameImages();
     void slotGotThumbnail(const LoadingDescription& desc, const QPixmap& pix);
+
+private:
+
+    // Disable
+    AdvancedRenameProcessDialog(const AdvancedRenameProcessDialog&)            = delete;
+    AdvancedRenameProcessDialog& operator=(const AdvancedRenameProcessDialog&) = delete;
 
 private:
 

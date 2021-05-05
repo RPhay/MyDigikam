@@ -6,7 +6,7 @@
  * Date        : 2008-11-28
  * Description : PNG image Converter batch tool.
  *
- * Copyright (C) 2008-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2008-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -45,13 +45,18 @@ namespace DigikamBqmConvertToPngPlugin
 {
 
 ConvertToPNG::ConvertToPNG(QObject* const parent)
-    : BatchTool(QLatin1String("ConvertToPNG"), ConvertTool, parent)
+    : BatchTool(QLatin1String("ConvertToPNG"), ConvertTool, parent),
+      m_changeSettings(true)
 {
-    m_changeSettings = true;
 }
 
 ConvertToPNG::~ConvertToPNG()
 {
+}
+
+BatchTool* ConvertToPNG::clone(QObject* const parent) const
+{
+    return new ConvertToPNG(parent);
 }
 
 void ConvertToPNG::registerSettingsWidget()

@@ -6,7 +6,7 @@
  * Date        : 2015-12-13
  * Description : test cases for tags tree manipulation in database
  *
- * Copyright (C) 2015-2020 by Gilles Caulier, <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2015-2021 by Gilles Caulier, <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -39,13 +39,12 @@ class AlbumModel;
 
 class DatabaseTagsTest: public QObject
 {
-
     Q_OBJECT
 
 public:
 
-    DatabaseTagsTest();
-    virtual ~DatabaseTagsTest();
+    DatabaseTagsTest(QObject* const parent = nullptr);
+    ~DatabaseTagsTest() override;
 
 private Q_SLOTS:
 

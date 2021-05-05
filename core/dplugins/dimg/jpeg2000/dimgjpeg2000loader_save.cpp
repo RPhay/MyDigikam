@@ -6,7 +6,7 @@
  * Date        : 2006-06-14
  * Description : A JPEG-2000 IO file for DImg framework - save operations
  *
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -31,9 +31,9 @@
 
 // Local includes
 
-#include "digikam_config.h"
 #include "dimg.h"
 #include "digikam_debug.h"
+#include "digikam_config.h"
 #include "dimgloaderobserver.h"
 #include "dmetadata.h"
 
@@ -64,14 +64,22 @@ namespace DigikamJPEG2000DImgPlugin
 
 bool DImgJPEG2000Loader::save(const QString& filePath, DImgLoaderObserver* const observer)
 {
-    FILE* const file = fopen(QFile::encodeName(filePath).constData(), "wb");
+#ifdef Q_OS_WIN
+
+    FILE* const file = _wfopen((const wchar_t*)filePath.utf16(), L"wb");
+
+#else
+
+    FILE* const file = fopen(filePath.toUtf8().constData(), "wb");
+
+#endif
 
     if (!file)
     {
+        qCWarning(DIGIKAM_DIMG_LOG_JP2K) << "Unable to open JPEG2000 file";
+
         return false;
     }
-
-    fclose(file);
 
     // -------------------------------------------------------------------
     // Initialize JPEG 2000 API.
@@ -89,14 +97,18 @@ bool DImgJPEG2000Loader::save(const QString& filePath, DImgLoaderObserver* const
     if (init != 0)
     {
         qCWarning(DIGIKAM_DIMG_LOG_JP2K) << "Unable to init JPEG2000 decoder";
+        fclose(file);
+
         return false;
     }
 
-    jp2_stream = jas_stream_fopen(QFile::encodeName(filePath).constData(), "wb");
+    jp2_stream = jas_stream_freopen(filePath.toUtf8().constData(), "wb", file);
 
     if (jp2_stream == nullptr)
     {
         qCWarning(DIGIKAM_DIMG_LOG_JP2K) << "Unable to open JPEG2000 stream";
+        fclose(file);
+
         return false;
     }
 
@@ -118,8 +130,9 @@ bool DImgJPEG2000Loader::save(const QString& filePath, DImgLoaderObserver* const
 
     if (jp2_image == nullptr)
     {
-        jas_stream_close(jp2_stream);
         qCWarning(DIGIKAM_DIMG_LOG_JP2K) << "Unable to create JPEG2000 image";
+        jas_stream_close(jp2_stream);
+
         return false;
     }
 
@@ -188,8 +201,9 @@ bool DImgJPEG2000Loader::save(const QString& filePath, DImgLoaderObserver* const
                 jas_matrix_destroy(pixels[x]);
             }
 
-            jas_image_destroy(jp2_image);
             qCWarning(DIGIKAM_DIMG_LOG_JP2K) << "Error encoding JPEG2000 image data : Memory Allocation Failed";
+            jas_image_destroy(jp2_image);
+
             return false;
         }
     }
@@ -222,7 +236,7 @@ bool DImgJPEG2000Loader::save(const QString& filePath, DImgLoaderObserver* const
                 return false;
             }
 
-            observer->progressInfo(0.1 + (0.8 * (((float)y) / ((float)imageHeight()))));
+            observer->progressInfo(0.1F + (0.8F * (((float)y) / ((float)imageHeight()))));
         }
 
         for (x = 0 ; x < (long)imageWidth() ; ++x)
@@ -279,6 +293,7 @@ bool DImgJPEG2000Loader::save(const QString& filePath, DImgLoaderObserver* const
                 }
 
                 jas_cleanup();
+
                 return false;
             }
         }
@@ -330,7 +345,7 @@ bool DImgJPEG2000Loader::save(const QString& filePath, DImgLoaderObserver* const
 
     if (observer)
     {
-        observer->progressInfo(1.0);
+        observer->progressInfo(1.0F);
     }
 
     jas_image_destroy(jp2_image);

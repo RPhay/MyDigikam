@@ -8,7 +8,7 @@
  *
  * Copyright (C) 2005-2006 by Renchi Raju <renchi dot raju at gmail dot com>
  * Copyright (C) 2005-2006 by Joern Ahrens <joern dot ahrens at kdemail dot net>
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -86,9 +86,11 @@ private:
 
 private:
 
-    // Hidden copy constructor and assignment operator.
-    UndoManager(const UndoManager&);
-    UndoManager& operator=(const UndoManager&);
+    // Disable
+    UndoManager(const UndoManager&)            = delete;
+    UndoManager& operator=(const UndoManager&) = delete;
+
+private:
 
     class Private;
     Private* const d;

@@ -7,7 +7,7 @@
  * Description : a tool to export images to WikiMedia web service
  *
  * Copyright (C) 2011      by Alexandre Mendes <alex dot mendes1988 at gmail dot com>
- * Copyright (C) 2011-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2011-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2012      by Parthasarathy Gopavarapu <gparthasarathy93 at gmail dot com>
  * Copyright (C) 2012-2016 by Peter Potrowl <peter dot potrowl at gmail dot com>
  *
@@ -42,9 +42,9 @@
 
 // KDE includes
 
-#include <kconfig.h>
 #include <klocalizedstring.h>
-#include <kwindowconfig.h>
+#include <ksharedconfig.h>
+#include <kconfiggroup.h>
 
 // MediaWiki includes
 
@@ -93,7 +93,7 @@ public:
 
 MediaWikiWindow::MediaWikiWindow(DInfoInterface* const iface, QWidget* const /*parent*/)
     : WSToolDialog(nullptr, QLatin1String("MediaWiki export dialog")),
-      d(new Private)
+      d           (new Private)
 {
     d->tmpPath.clear();
     d->tmpDir       = WSToolUtils::makeTemporaryDir("MediaWiki").absolutePath() + QLatin1Char('/');
@@ -164,27 +164,18 @@ void MediaWikiWindow::reactivate()
 
 void MediaWikiWindow::readSettings()
 {
-    KConfig config;
-    KConfigGroup group  = config.group(QLatin1String("MediaWiki export settings"));
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup group      = config->group(QLatin1String("MediaWiki export settings"));
 
     d->widget->readSettings(group);
-
-    winId();
-    KConfigGroup group2 = config.group(QLatin1String("MediaWiki export dialog"));
-    KWindowConfig::restoreWindowSize(windowHandle(), group2);
-    resize(windowHandle()->size());
 }
 
 void MediaWikiWindow::saveSettings()
 {
-    KConfig config;
-    KConfigGroup group  = config.group(QLatin1String("MediaWiki export settings"));
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup group      = config->group(QLatin1String("MediaWiki export settings"));
 
     d->widget->saveSettings(group);
-
-    KConfigGroup group2 = config.group(QLatin1String("MediaWiki export dialog"));
-    KWindowConfig::saveWindowSize(windowHandle(), group2);
-    config.sync();
 }
 
 void MediaWikiWindow::slotFinished()
@@ -254,32 +245,32 @@ bool MediaWikiWindow::prepareImageForUpload(const QString& imgPath)
     // NOTE : In case of metadata are saved to tmp file, we will override metadata processor settings from host
     // to write metadata to image file rather than sidecar file, to be effective with remote web service.
 
-    DMetadata meta;
-    meta.setMetadataWritingMode((int)DMetadata::WRITE_TO_FILE_ONLY);
+    QScopedPointer<DMetadata> meta(new DMetadata);
+    meta->setMetadataWritingMode((int)DMetadata::WRITE_TO_FILE_ONLY);
 
     if (d->widget->removeMeta())
     {
         // save empty metadata to erase them
-        meta.save(d->tmpPath);
+        meta->save(d->tmpPath);
     }
     else
     {
         // copy meta data from initial to temporary image
 
-        if (meta.load(imgPath))
+        if (meta->load(imgPath))
         {
             if (d->widget->resize())
             {
-                meta.setItemDimensions(image.size());
+                meta->setItemDimensions(image.size());
             }
 
             if (d->widget->removeGeo())
             {
-                meta.removeGPSInfo();
+                meta->removeGPSInfo();
             }
 
-            meta.setItemOrientation(MetaEngine::ORIENTATION_NORMAL);
-            meta.save(d->tmpPath, true);
+            meta->setItemOrientation(MetaEngine::ORIENTATION_NORMAL);
+            meta->save(d->tmpPath, true);
         }
     }
 

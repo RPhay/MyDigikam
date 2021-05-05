@@ -6,7 +6,7 @@
  * Date        : 2005-04-02
  * Description : showFoto setup dialog.
  *
- * Copyright (C) 2005-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2005-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -27,6 +27,7 @@
 
 #include <QPointer>
 #include <QPushButton>
+#include <QApplication>
 
 // KDE includes
 
@@ -39,13 +40,14 @@
 #include "setupeditoriface.h"
 #include "setupicc.h"
 #include "setupiofiles.h"
-#include "setupslideshow.h"
+#include "showfotosettings.h"
 #include "showfotosetupraw.h"
 #include "showfotosetupmisc.h"
 #include "showfotosetupmetadata.h"
 #include "showfotosetuptooltip.h"
 #include "showfotosetupplugins.h"
 #include "dxmlguiwindow.h"
+#include "onlineversiondlg.h"
 
 namespace ShowFoto
 {
@@ -56,23 +58,21 @@ public:
 
     explicit Private()
       : page_editorIface(nullptr),
-        page_metadata(nullptr),
-        page_tooltip(nullptr),
-        page_raw(nullptr),
-        page_iofiles(nullptr),
-        page_slideshow(nullptr),
-        page_icc(nullptr),
-        page_plugins(nullptr),
-        page_misc(nullptr),
-        metadataPage(nullptr),
-        toolTipPage(nullptr),
-        miscPage(nullptr),
-        rawPage(nullptr),
-        pluginsPage(nullptr),
-        editorIfacePage(nullptr),
-        iofilesPage(nullptr),
-        slideshowPage(nullptr),
-        iccPage(nullptr)
+        page_metadata   (nullptr),
+        page_tooltip    (nullptr),
+        page_raw        (nullptr),
+        page_iofiles    (nullptr),
+        page_icc        (nullptr),
+        page_plugins    (nullptr),
+        page_misc       (nullptr),
+        metadataPage    (nullptr),
+        toolTipPage     (nullptr),
+        miscPage        (nullptr),
+        rawPage         (nullptr),
+        pluginsPage     (nullptr),
+        editorIfacePage (nullptr),
+        iofilesPage     (nullptr),
+        iccPage         (nullptr)
     {
     }
 
@@ -81,7 +81,6 @@ public:
     DConfigDlgWdgItem*            page_tooltip;
     DConfigDlgWdgItem*            page_raw;
     DConfigDlgWdgItem*            page_iofiles;
-    DConfigDlgWdgItem*            page_slideshow;
     DConfigDlgWdgItem*            page_icc;
     DConfigDlgWdgItem*            page_plugins;
     DConfigDlgWdgItem*            page_misc;
@@ -94,7 +93,6 @@ public:
 
     Digikam::SetupEditorIface*    editorIfacePage;
     Digikam::SetupIOFiles*        iofilesPage;
-    Digikam::SetupSlideShow*      slideshowPage;
     Digikam::SetupICC*            iccPage;
 
 public:
@@ -104,7 +102,7 @@ public:
 
 Setup::Setup(QWidget* const parent, Setup::Page page)
     : DConfigDlg(parent),
-      d(new Private)
+      d         (new Private)
 {
     setWindowTitle(i18n("Configure"));
     setStandardButtons(QDialogButtonBox::Help | QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
@@ -148,20 +146,14 @@ Setup::Setup(QWidget* const parent, Setup::Page page)
                                     "<i>Set default configuration used to save images</i></qt>"));
     d->page_iofiles->setIcon(QIcon::fromTheme(QLatin1String("document-save-all")));
 
-    d->slideshowPage  = new Digikam::SetupSlideShow();
-    d->page_slideshow = addPage(d->slideshowPage, i18n("Slide Show"));
-    d->page_slideshow->setHeader(i18n("<qt>Slide Show Settings<br/>"
-                                      "<i>Customize slideshow settings</i></qt>"));
-    d->page_slideshow->setIcon(QIcon::fromTheme(QLatin1String("view-presentation")));
-
     d->pluginsPage  = new SetupPlugins();
     d->page_plugins = addPage(d->pluginsPage, i18n("Plugins"));
     d->page_plugins->setHeader(i18n("<qt>Main Interface Plug-in Settings<br/>"
                                     "<i>Set which plugins will be accessible from application</i></qt>"));
     d->page_plugins->setIcon(QIcon::fromTheme(QLatin1String("preferences-plugin")));
 
-    d->miscPage       = new SetupMisc();
-    d->page_misc      = addPage(d->miscPage, i18n("Miscellaneous"));
+    d->miscPage       = new SetupMisc(this);
+    d->page_misc      = addPage(d->miscPage, i18nc("@title: misc setup options page", "Miscellaneous"));
     d->page_misc->setHeader(i18n("<qt>Miscellaneous Settings<br/>"
                                  "<i>Customize behavior of the other parts of Showfoto</i></qt>"));
     d->page_misc->setIcon(QIcon::fromTheme(QLatin1String("preferences-other")));
@@ -202,6 +194,7 @@ Setup::Setup(QWidget* const parent, Setup::Page page)
         showPage((Page)group.readEntry(QLatin1String("Setup Page"), (int)EditorPage));
     }
 
+    winId();
     Digikam::DXmlGuiWindow::restoreWindowSize(windowHandle(), group);
     resize(windowHandle()->size());
 }
@@ -223,16 +216,26 @@ void Setup::slotHelp()
 
 void Setup::slotOkClicked()
 {
+    if (!d->miscPage->checkSettings())
+    {
+        showPage(MiscellaneousPage);
+        return;
+    }
+
+    qApp->setOverrideCursor(Qt::WaitCursor);
+
     d->editorIfacePage->applySettings();
     d->metadataPage->applySettings();
     d->toolTipPage->applySettings();
     d->rawPage->applySettings();
     d->iofilesPage->applySettings();
-    d->slideshowPage->applySettings();
     d->iccPage->applySettings();
     d->pluginsPage->applySettings();
     d->miscPage->applySettings();
-    close();
+
+    qApp->restoreOverrideCursor();
+
+    accept();
 }
 
 void Setup::showPage(Setup::Page page)
@@ -249,10 +252,6 @@ void Setup::showPage(Setup::Page page)
 
         case IOFilesPage:
             setCurrentPage(d->page_iofiles);
-            break;
-
-        case SlideshowPage:
-            setCurrentPage(d->page_slideshow);
             break;
 
         case ICCPage:
@@ -294,11 +293,6 @@ Setup::Page Setup::activePageIndex()
     if (cur == d->page_iofiles)
     {
         return IOFilesPage;
-    }
-
-    if (cur == d->page_slideshow)
-    {
-        return SlideshowPage;
     }
 
     if (cur == d->page_icc)
@@ -343,9 +337,6 @@ DConfigDlgWdgItem* Setup::Private::pageItem(Setup::Page page) const
         case Setup::IOFilesPage:
             return page_iofiles;
 
-        case Setup::SlideshowPage:
-            return page_slideshow;
-
         case Setup::ICCPage:
             return page_icc;
 
@@ -358,6 +349,23 @@ DConfigDlgWdgItem* Setup::Private::pageItem(Setup::Page page) const
         default:
             return nullptr;
     }
+}
+
+bool Setup::execSinglePage(Page page)
+{
+    return (execSinglePage(nullptr, page));
+}
+
+bool Setup::execSinglePage(QWidget* const parent, Page page)
+{
+    QPointer<Setup> setup = new Setup(parent);
+    setup->showPage(page);
+    setup->setFaceType(Plain);
+
+    bool success          = (setup->DConfigDlg::exec() == QDialog::Accepted);
+    delete setup;
+
+    return success;
 }
 
 bool Setup::execMetadataFilters(QWidget* const parent, int tab)
@@ -382,9 +390,56 @@ bool Setup::execMetadataFilters(QWidget* const parent, int tab)
 
     widget->setActiveTab((SetupMetadata::MetadataTab)tab);
 
-    bool success                = setup->DConfigDlg::exec() == QDialog::Accepted;
+    bool success                = (setup->DConfigDlg::exec() == QDialog::Accepted);
     delete setup;
+
     return success;
+}
+
+bool Setup::execExifTool(QWidget* const parent)
+{
+    QPointer<Setup> setup        = new Setup(parent);
+    setup->showPage(MetadataPage);
+    setup->setFaceType(Plain);
+
+    DConfigDlgWdgItem* const cur = setup->currentPage();
+
+    if (!cur)
+    {
+        return false;
+    }
+
+    SetupMetadata* const widget  = dynamic_cast<SetupMetadata*>(cur->widget());
+
+    if (!widget)
+    {
+        return false;
+    }
+
+    widget->setActiveTab(SetupMetadata::ExifTool);
+
+    bool success                 = (setup->DConfigDlg::exec() == QDialog::Accepted);
+    delete setup;
+
+    return success;
+}
+
+void Setup::onlineVersionCheck()
+{
+    Digikam::OnlineVersionDlg* const dlg = new Digikam::OnlineVersionDlg(qApp->activeWindow(),
+                                                                         QLatin1String(digikam_version_short),
+                                                                         Digikam::digiKamBuildDate(),
+                                                                         ShowfotoSettings::instance()->getUpdateType(),
+                                                                         ShowfotoSettings::instance()->getUpdateWithDebug());
+
+    connect(dlg, &OnlineVersionDlg::signalSetupUpdate,
+            [=]()
+        {
+            Setup::execSinglePage(nullptr, Setup::MiscellaneousPage);
+        }
+    );
+
+    dlg->exec();
 }
 
 } // namespace ShowFoto

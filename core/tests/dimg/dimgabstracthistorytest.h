@@ -43,6 +43,8 @@ class DImgAbstractHistoryTest : public QObject
 
 public:
 
+    explicit DImgAbstractHistoryTest(QObject* const parent = nullptr);
+
     HistoryImageId id1() const;
     HistoryImageId id2() const;
     HistoryImageId id3() const;

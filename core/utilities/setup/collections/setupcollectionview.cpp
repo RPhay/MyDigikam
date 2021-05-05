@@ -7,7 +7,7 @@
  * Description : collections setup tab model/view
  *
  * Copyright (C) 2008-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2005-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2005-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C)      2012 by Andi Clemens <andi dot clemens at gmail dot com>
  *
  * This program is free software; you can redistribute it
@@ -102,7 +102,7 @@ QList<QWidget*> SetupCollectionDelegate::createItemWidgets(const QModelIndex& /*
     // but we have no index here, but need to provide the widgets for each index
 
     QList<QWidget*> list;
-    QPushButton* const pushButton = new QPushButton();
+    QPushButton* const pushButton   = new QPushButton();
     list << pushButton;
 
     connect(pushButton, &QPushButton::clicked,
@@ -186,7 +186,7 @@ QSize SetupCollectionDelegate::sizeHint(const QStyleOptionViewItem& option, cons
     return hint;
 }
 
-void SetupCollectionDelegate::updateItemWidgets(const QList<QWidget*> widgets,
+void SetupCollectionDelegate::updateItemWidgets(const QList<QWidget*>& widgets,
                                                 const QStyleOptionViewItem& option,
                                                 const QPersistentModelIndex& index) const
 {
@@ -353,7 +353,7 @@ void SetupCollectionTreeView::modelLoadedCollections()
     SetupCollectionModel* const collectionModel = static_cast<SetupCollectionModel*>(model());
     QModelIndex categoryIndex = collectionModel->indexForCategory(SetupCollectionModel::CategoryLocal);
     QModelIndex firstChildOfFirstCategory       = collectionModel->index(0, SetupCollectionModel::ColumnStatus, categoryIndex);
-    QSize hint = sizeHintForIndex(firstChildOfFirstCategory);
+    QSize hint                                  = sizeHintForIndex(firstChildOfFirstCategory);
     setColumnWidth(SetupCollectionModel::ColumnStatus, hint.width() + indentation());
 }
 
@@ -361,25 +361,25 @@ void SetupCollectionTreeView::modelLoadedCollections()
 
 SetupCollectionModel::Item::Item()
     : parentId(INTERNALID),
-      updated(false),
-      deleted(false)
+      updated (false),
+      deleted (false)
 {
 }
 
 SetupCollectionModel::Item::Item(const CollectionLocation& location)
     : location(location),
-      updated(false),
-      deleted(false)
+      updated (false),
+      deleted (false)
 {
     parentId = SetupCollectionModel::typeToCategory(location.type());
 }
 
 SetupCollectionModel::Item::Item(const QString& path, const QString& label, SetupCollectionModel::Category category)
-    : label(label),
-      path(path),
+    : label   (label),
+      path    (path),
       parentId(category),
-      updated(false),
-      deleted(false)
+      updated (false),
+      deleted (false)
 {
 }
 
@@ -501,7 +501,7 @@ void SetupCollectionModel::apply()
 
     foreach (int i, updatedItems)
     {
-        Item& item = m_collections[i];
+        Item& item  = m_collections[i];
         CollectionLocation location;
 
         int newType = CollectionLocation::TypeVolumeHardWired;
@@ -515,8 +515,8 @@ void SetupCollectionModel::apply()
             newType = CollectionLocation::TypeNetwork;
         }
 
-        location = CollectionManager::instance()->refreshLocation(item.location, newType,
-                                                                  QUrl::fromLocalFile(item.path), item.label);
+        location    = CollectionManager::instance()->refreshLocation(item.location, newType,
+                                                                     QUrl::fromLocalFile(item.path), item.label);
 
         if (location.isNull())
         {
@@ -727,48 +727,70 @@ QVariant SetupCollectionModel::data(const QModelIndex& index, int role) const
             switch (role)
             {
                 case Qt::DisplayRole:
-
+                {
                     switch (index.row())
                     {
                         case CategoryLocal:
+                        {
                             return i18n("Local Collections");
+                        }
 
                         case CategoryRemovable:
+                        {
                             return i18n("Collections on Removable Media");
+                        }
 
                         case CategoryRemote:
+                        {
                             return i18n("Collections on Network Shares");
+                        }
                     }
 
                     break;
+                }
 
                 case Qt::DecorationRole:
-
+                {
                     switch (index.row())
                     {
                         case CategoryLocal:
+                        {
                             return QIcon::fromTheme(QLatin1String("drive-harddisk"));
+                        }
 
                         case CategoryRemovable:
+                        {
                             return QIcon::fromTheme(QLatin1String("drive-removable-media"));
+                        }
 
                         case CategoryRemote:
+                        {
                             return QIcon::fromTheme(QLatin1String("network-wired-activated"));
+                        }
                     }
 
                     break;
+                }
 
                 case IsCategoryRole:
+                {
                     return true;
+                }
 
                 case CategoryButtonDisplayRole:
+                {
                     return i18n("Add Collection");
+                }
 
                 case CategoryButtonMapId:
+                {
                     return categoryButtonMapId(index);
+                }
 
                 default:
+                {
                     break;
+                }
             }
         }
     }
@@ -779,7 +801,7 @@ QVariant SetupCollectionModel::data(const QModelIndex& index, int role) const
         switch (index.column())
         {
             case ColumnName:
-
+            {
                 if ((role == Qt::DisplayRole) || (role == Qt::EditRole))
                 {
                     if (!item.label.isNull())
@@ -796,9 +818,10 @@ QVariant SetupCollectionModel::data(const QModelIndex& index, int role) const
                 }
 
                 break;
+            }
 
             case ColumnPath:
-
+            {
                 if ((role == Qt::DisplayRole) || (role == Qt::ToolTipRole))
                 {
                     if (!item.path.isNull())
@@ -813,9 +836,10 @@ QVariant SetupCollectionModel::data(const QModelIndex& index, int role) const
                 }
 
                 break;
+            }
 
             case ColumnStatus:
-
+            {
                 if (role == Qt::DecorationRole)
                 {
                     if (item.updated)
@@ -836,30 +860,43 @@ QVariant SetupCollectionModel::data(const QModelIndex& index, int role) const
                     switch (item.location.status())
                     {
                         case CollectionLocation::LocationAvailable:
+                        {
                             return QIcon::fromTheme(QLatin1String("dialog-ok-apply"));
+                        }
 
                         case CollectionLocation::LocationHidden:
+                        {
                             return QIcon::fromTheme(QLatin1String("object-locked"));
+                        }
 
                         case CollectionLocation::LocationUnavailable:
-
+                        {
                             switch (item.parentId)
                             {
                                 case CategoryLocal:
+                                {
                                     return QIcon::fromTheme(QLatin1String("drive-harddisk")).pixmap(16, QIcon::Disabled);
+                                }
 
                                 case CategoryRemovable:
+                                {
                                     return QIcon::fromTheme(QLatin1String("drive-removable-media-usb")).pixmap(16, QIcon::Disabled);
+                                }
 
                                 case CategoryRemote:
+                                {
                                     return QIcon::fromTheme(QLatin1String("network-wired-activated")).pixmap(16, QIcon::Disabled);
+                                }
                             }
 
                             break;
+                        }
 
                         case CollectionLocation::LocationNull:
                         case CollectionLocation::LocationDeleted:
+                        {
                             return QIcon::fromTheme(QLatin1String("edit-delete"));
+                        }
                     }
                 }
                 else if (role == Qt::ToolTipRole)
@@ -867,58 +904,85 @@ QVariant SetupCollectionModel::data(const QModelIndex& index, int role) const
                     switch (item.location.status())
                     {
                         case CollectionLocation::LocationUnavailable:
+                        {
                             return i18n("This collection is currently not available.");
+                        }
 
                         case CollectionLocation::LocationAvailable:
+                        {
                             return i18n("No problems found, enjoy this collection.");
+                        }
 
                         case CollectionLocation::LocationHidden:
+                        {
                             return i18n("This collection is hidden.");
+                        }
 
                         default:
+                        {
                             break;
+                        }
                     }
                 }
 
                 break;
+            }
 
             case ColumnUpdateButton:
-
+            {
                 switch (role)
                 {
                     case Qt::ToolTipRole:
+                    {
                         return i18n("Update collection");
+                    }
 
                     case IsUpdateRole:
+                    {
                         return true;
+                    }
 
                     case UpdateDecorationRole:
+                    {
                         return QIcon::fromTheme(QLatin1String("view-refresh"));
+                    }
 
                     case UpdateMapId:
+                    {
                         return buttonMapId(index);
+                    }
                 }
 
                 break;
+            }
 
             case ColumnDeleteButton:
-
+            {
                 switch (role)
                 {
                     case Qt::ToolTipRole:
+                    {
                         return i18n("Remove collection");
+                    }
 
                     case IsDeleteRole:
+                    {
                         return true;
+                    }
 
                     case DeleteDecorationRole:
+                    {
                         return QIcon::fromTheme(QLatin1String("edit-delete"));
+                    }
 
                     case DeleteMapId:
+                    {
                         return buttonMapId(index);
+                    }
                 }
 
                 break;
+            }
         }
     }
 
@@ -932,19 +996,29 @@ QVariant SetupCollectionModel::headerData(int section, Qt::Orientation orientati
         switch (section)
         {
             case ColumnName:
-                return i18n("Name");
+            {
+                return i18nc("#title: collection name",       "Name");
+            }
 
             case ColumnPath:
-                return i18n("Path");
+            {
+                return i18nc("#title: collection mount path", "Path");
+            }
 
             case ColumnStatus:
-                return i18n("Status");
+            {
+                return i18nc("#title: collection status",     "Status");
+            }
 
             case ColumnUpdateButton:
+            {
                 break;
+            }
 
             case ColumnDeleteButton:
+            {
                 break;
+            }
         }
     }
 
@@ -1005,10 +1079,14 @@ Qt::ItemFlags SetupCollectionModel::flags(const QModelIndex& index) const
         switch (index.column())
         {
             case ColumnName:
+            {
                 return (Qt::ItemIsEnabled | Qt::ItemIsSelectable | Qt::ItemIsEditable);
+            }
 
             default:
+            {
                 return (Qt::ItemIsEnabled | Qt::ItemIsSelectable);
+            }
         }
     }
 }
@@ -1125,13 +1203,19 @@ SetupCollectionModel::Category SetupCollectionModel::typeToCategory(CollectionLo
     {
         default:
         case CollectionLocation::TypeVolumeHardWired:
+        {
             return CategoryLocal;
+        }
 
         case CollectionLocation::TypeVolumeRemovable:
+        {
             return CategoryRemovable;
+        }
 
         case CollectionLocation::TypeNetwork:
+        {
             return CategoryRemote;
+        }
     }
 }
 
@@ -1179,7 +1263,7 @@ bool SetupCollectionModel::askForNewCollectionPath(int category, QString* const 
                                                               &messageFromManager, &deviceIcon);
     }
 
-    QString path = QDir::fromNativeSeparators(curl.toDisplayString(QUrl::PreferLocalFile ));
+    QString path = curl.toLocalFile();
 
     // If there are other added collections then CollectionManager does not know about them. Check here.
 
@@ -1193,7 +1277,7 @@ bool SetupCollectionModel::askForNewCollectionPath(int category, QString* const 
                 {
                     messageFromManager = i18n("You have previously added a collection "
                                               "that contains the path \"%1\".", QDir::toNativeSeparators(path));
-                    result = CollectionManager::LocationNotAllowed;
+                    result             = CollectionManager::LocationNotAllowed;
                     break;
                 }
             }
@@ -1207,18 +1291,24 @@ bool SetupCollectionModel::askForNewCollectionPath(int category, QString* const 
     switch (result)
     {
         case CollectionManager::LocationAllRight:
+        {
             iconName = QLatin1String("dialog-ok-apply");
             break;
+        }
 
         case CollectionManager::LocationHasProblems:
+        {
             iconName = QLatin1String("dialog-information");
             break;
+        }
 
         case CollectionManager::LocationNotAllowed:
         case CollectionManager::LocationInvalidCheck:
+        {
             QMessageBox::warning(m_dialogParentWidget, i18n("Problem Adding Collection"), messageFromManager);
             // fail
             return false;
+        }
     }
 
     // Create a dialog that displays volume information and allows to change the name of the collection
@@ -1242,7 +1332,7 @@ bool SetupCollectionModel::askForNewCollectionPath(int category, QString* const 
     QLabel* const deviceIconLabel = new QLabel;
     deviceIconLabel->setPixmap(QIcon::fromTheme(deviceIcon).pixmap(64));
 
-    QGroupBox* const infoBox = new QGroupBox;
+    QGroupBox* const infoBox      = new QGroupBox;
 /*
     infoBox->setTitle(i18n("More Information"));
 */
@@ -1322,7 +1412,7 @@ bool SetupCollectionModel::askForNewCollectionCategory(int* const category)
     QLabel* const questionIconLabel = new QLabel;
     questionIconLabel->setPixmap(QIcon::fromTheme(QLatin1String("view-sort")).pixmap(64));
 
-    QGridLayout* const grid1 = new QGridLayout;
+    QGridLayout* const grid1        = new QGridLayout;
     grid1->addWidget(questionIconLabel, 0, 0, 3, 1);
     grid1->addWidget(nameLabel,         0, 1);
     grid1->addWidget(categoryBox,       1, 1);

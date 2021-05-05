@@ -6,7 +6,7 @@
  * Date        : 2005-02-11
  * Description : a tool to apply Distortion FX to an image.
  *
- * Copyright (C) 2005-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2005-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2006-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  *
  * Original Distortion algorithms copyrighted 2004-2005 by
@@ -60,14 +60,14 @@ class Q_DECL_HIDDEN DistortionFXTool::Private
 public:
 
     explicit Private()
-      : effectTypeLabel(nullptr),
-        levelLabel(nullptr),
-        iterationLabel(nullptr),
-        effectType(nullptr),
-        levelInput(nullptr),
-        iterationInput(nullptr),
-        previewWidget(nullptr),
-        gboxSettings(nullptr)
+      : effectTypeLabel (nullptr),
+        levelLabel      (nullptr),
+        iterationLabel  (nullptr),
+        effectType      (nullptr),
+        levelInput      (nullptr),
+        iterationInput  (nullptr),
+        previewWidget   (nullptr),
+        gboxSettings    (nullptr)
     {
     }
 
@@ -98,7 +98,7 @@ const QString DistortionFXTool::Private::configLevelAdjustmentEntry(QLatin1Strin
 
 DistortionFXTool::DistortionFXTool(QObject* const parent)
     : EditorToolThreaded(parent),
-      d(new Private)
+      d                 (new Private)
 {
     setObjectName(QLatin1String("distortionfx"));
 

@@ -33,13 +33,15 @@ namespace Digikam
 
 class ItemFiltersHistoryItemDelegate : public QStyledItemDelegate
 {
+    Q_OBJECT
+
 public:
 
     explicit ItemFiltersHistoryItemDelegate(QObject* const parent = nullptr);
-    ~ItemFiltersHistoryItemDelegate();
+    ~ItemFiltersHistoryItemDelegate()                                                                 override;
 
-    virtual void paint(QPainter* painter, const QStyleOptionViewItem& option, const QModelIndex& index) const;
-    virtual QSize sizeHint(const QStyleOptionViewItem& option, const QModelIndex& index)                const;
+    void paint(QPainter* painter, const QStyleOptionViewItem& option, const QModelIndex& index) const override;
+    QSize sizeHint(const QStyleOptionViewItem& option, const QModelIndex& index)                const override;
 };
 
 } //namespace Digikam

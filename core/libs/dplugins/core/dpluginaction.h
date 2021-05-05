@@ -6,7 +6,7 @@
  * Date        : 2018-07-30
  * Description : action container for external plugin
  *
- * Copyright (C) 2018-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2018-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -38,6 +38,8 @@ namespace Digikam
 
 class DIGIKAM_EXPORT DPluginAction : public QAction
 {
+    Q_OBJECT
+
 public:
 
     /// Plugin action types to resume where they can be used.
@@ -71,7 +73,7 @@ public:
 public:
 
     explicit DPluginAction(QObject* const parent = nullptr);
-    ~DPluginAction();
+    ~DPluginAction() override;
 
     /**
      * Manage the internal action category.
@@ -83,23 +85,23 @@ public:
     /**
      * Return the action type depending of category.
      */
-    ActionType actionType() const;
+    ActionType actionType()          const;
 
     /**
      * Return the plugin id string hosting this action.
      */
-    QString pluginId() const;
+    QString pluginId()               const;
 
     /**
      * Return the XML section to merge in KXMLGUIClient host XML definition.
      */
-    QString xmlSection() const;
+    QString xmlSection()             const;
 
     /**
      * Return details as string about action properties.
      * For debug purpose only.
      */
-    QString toString() const;
+    QString toString()               const;
 
     static bool pluginActionLessThan(DPluginAction* const a, DPluginAction* const b);
 };

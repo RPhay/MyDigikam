@@ -6,7 +6,7 @@
  * Date        : 2013-08-09
  * Description : Thread actions task for metadata synchronizer.
  *
- * Copyright (C) 2013-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2013-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -46,11 +46,11 @@ class MetadataTask : public ActionJob
 public:
 
     explicit MetadataTask();
-    ~MetadataTask();
+    ~MetadataTask()         override;
 
     void setTagsOnly(bool value);
     void setDirection(MetadataSynchronizer::SyncDirection dir);
-    void setMaintenanceData(MaintenanceData* const data=nullptr);
+    void setMaintenanceData(MaintenanceData* const data = nullptr);
 
 Q_SIGNALS:
 
@@ -58,7 +58,12 @@ Q_SIGNALS:
 
 protected:
 
-    void run();
+    void run()              override;
+
+private:
+
+    // Disable
+    MetadataTask(QObject*) = delete;
 
 private:
 

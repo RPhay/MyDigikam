@@ -7,7 +7,7 @@
  * Description : a tool to create panorama by fusion of several images.
  *
  * Copyright (C) 2011-2016 by Benjamin Girault <benjamin dot girault at gmail dot com>
- * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -34,7 +34,6 @@
 #include "panoactions.h"
 #include "ptotype.h"
 #include "dplugingeneric.h"
-#include "digikam_export.h"
 
 using namespace Digikam;
 
@@ -52,14 +51,14 @@ class PanoModifyBinary;
 class Pto2MkBinary;
 class HuginExecutorBinary;
 
-class DIGIKAM_EXPORT PanoManager : public QObject
+class PanoManager : public QObject
 {
     Q_OBJECT
 
 public:
 
     explicit PanoManager(QObject* const parent = nullptr);
-    ~PanoManager();
+    ~PanoManager() override;
 
 public:
 
@@ -72,66 +71,66 @@ public:
     bool checkBinaries();
 
     void checkForHugin2015();
-    bool hugin2015() const;
+    bool hugin2015()                                    const;
 
     void setGPano(bool gPano);
     bool gPano() const;
-
-//     void setHDR(bool hdr);
-//     bool hdr() const;
-
+/*
+     void setHDR(bool hdr);
+     bool hdr() const;
+*/
     void setFileFormatJPEG();
     void setFileFormatTIFF();
     void setFileFormatHDR();
-    PanoramaFileType format() const;
+    PanoramaFileType format()                           const;
 
     void setItemsList(const QList<QUrl>& urls);
-    QList<QUrl>& itemsList() const;
+    QList<QUrl>& itemsList()                            const;
 
     void setPlugin(DPlugin* const plugin);
 
-    QUrl&                   basePtoUrl() const;
+    QUrl&                   basePtoUrl()                const;
     QSharedPointer<PTOType> basePtoData();
     void                    resetBasePto();
-    QUrl&                   cpFindPtoUrl() const;
+    QUrl&                   cpFindPtoUrl()              const;
     QSharedPointer<PTOType> cpFindPtoData();
     void                    resetCpFindPto();
-    QUrl&                   cpCleanPtoUrl() const;
+    QUrl&                   cpCleanPtoUrl()             const;
     QSharedPointer<PTOType> cpCleanPtoData();
     void                    resetCpCleanPto();
-    QUrl&                   autoOptimisePtoUrl() const;
+    QUrl&                   autoOptimisePtoUrl()        const;
     QSharedPointer<PTOType> autoOptimisePtoData();
     void                    resetAutoOptimisePto();
     QUrl&                   viewAndCropOptimisePtoUrl() const;
     QSharedPointer<PTOType> viewAndCropOptimisePtoData();
     void                    resetViewAndCropOptimisePto();
-    QUrl&                   previewPtoUrl() const;
+    QUrl&                   previewPtoUrl()             const;
     QSharedPointer<PTOType> previewPtoData();
     void                    resetPreviewPto();
-    QUrl&                   panoPtoUrl() const;
+    QUrl&                   panoPtoUrl()                const;
     QSharedPointer<PTOType> panoPtoData();
     void                    resetPanoPto();
 
-    QUrl&                   previewMkUrl() const;
+    QUrl&                   previewMkUrl()              const;
     void                    resetPreviewMkUrl();
-    QUrl&                   previewUrl() const;
+    QUrl&                   previewUrl()                const;
     void                    resetPreviewUrl();
-    QUrl&                   mkUrl() const;
+    QUrl&                   mkUrl()                     const;
     void                    resetMkUrl();
-    QUrl&                   panoUrl() const;
+    QUrl&                   panoUrl()                   const;
     void                    resetPanoUrl();
 
-    PanoramaItemUrlsMap&    preProcessedMap()     const;
-    PanoActionThread*       thread()              const;
-    AutoOptimiserBinary&    autoOptimiserBinary() const;
-    CPCleanBinary&          cpCleanBinary()       const;
-    CPFindBinary&           cpFindBinary()        const;
-    EnblendBinary&          enblendBinary()       const;
-    MakeBinary&             makeBinary()          const;
-    NonaBinary&             nonaBinary()          const;
-    PanoModifyBinary&       panoModifyBinary()    const;
-    Pto2MkBinary&           pto2MkBinary()        const;
-    HuginExecutorBinary&    huginExecutorBinary() const;
+    PanoramaItemUrlsMap&    preProcessedMap()           const;
+    PanoActionThread*       thread()                    const;
+    AutoOptimiserBinary&    autoOptimiserBinary()       const;
+    CPCleanBinary&          cpCleanBinary()             const;
+    CPFindBinary&           cpFindBinary()              const;
+    EnblendBinary&          enblendBinary()             const;
+    MakeBinary&             makeBinary()                const;
+    NonaBinary&             nonaBinary()                const;
+    PanoModifyBinary&       panoModifyBinary()          const;
+    Pto2MkBinary&           pto2MkBinary()              const;
+    HuginExecutorBinary&    huginExecutorBinary()       const;
 
     void run();
 

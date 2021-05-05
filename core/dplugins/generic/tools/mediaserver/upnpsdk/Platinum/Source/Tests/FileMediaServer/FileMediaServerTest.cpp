@@ -112,19 +112,19 @@ int
 main(int /* argc */, char** argv)
 {
     // setup Neptune logging
-    NPT_LogManager::GetDefault().Configure("plist:.level=FINE;.handlers=ConsoleHandler;.ConsoleHandler.colors=off;.ConsoleHandler.filter=42");
+    NPT_LogManager::GetDefault().Configure("plist:.level=FINE;.handlers=ConsoleHandler;.ConsoleHandler.colors=off;.ConsoleHandler.filter=56");
 
     /* parse command line */
     ParseCommandLine(argv+1);
 
-	/* for faster DLNA faster testing */
+    /* for faster DLNA faster testing */
     PLT_Constants::GetInstance().SetDefaultDeviceLease(NPT_TimeInterval(60.));
     
     PLT_UPnP upnp;
     PLT_DeviceHostReference device(
         new PLT_FileMediaServer(
             Options.path, 
-            Options.friendly_name ? Options.friendly_name : "Platinum UPnP Media Server",
+            Options.friendly_name?Options.friendly_name:"Platinum UPnP Media Server",
             false,
             Options.guid, // NULL for random ID
             (NPT_UInt16)Options.port)
@@ -148,7 +148,8 @@ main(int /* argc */, char** argv)
     NPT_LOG_INFO("Press 'q' to quit.");
 
     char buf[256];
-    while (gets(buf)) {
+    while (true) {
+        fgets(buf, 256, stdin);
         if (*buf == 'q')
             break;
     }

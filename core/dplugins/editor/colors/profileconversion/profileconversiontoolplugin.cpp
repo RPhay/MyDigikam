@@ -6,7 +6,7 @@
  * Date        : 2018-07-30
  * Description : image editor plugin to convert to color space
  *
- * Copyright (C) 2018-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2018-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -55,7 +55,7 @@ ProfileConversionToolPlugin::~ProfileConversionToolPlugin()
 
 QString ProfileConversionToolPlugin::name() const
 {
-    return i18n("Color Profile Conversion");
+    return i18nc("@title", "Color Profile Conversion");
 }
 
 QString ProfileConversionToolPlugin::iid() const
@@ -70,12 +70,12 @@ QIcon ProfileConversionToolPlugin::icon() const
 
 QString ProfileConversionToolPlugin::description() const
 {
-    return i18n("A tool to convert image to a color space");
+    return i18nc("@info", "A tool to convert image to a color space");
 }
 
 QString ProfileConversionToolPlugin::details() const
 {
-    return i18n("<p>This Image Editor tool can convert image to a different color space.</p>");
+    return i18nc("@info", "This Image Editor tool can convert image to a different color space.");
 }
 
 QList<DPluginAuthor> ProfileConversionToolPlugin::authors() const
@@ -86,7 +86,7 @@ QList<DPluginAuthor> ProfileConversionToolPlugin::authors() const
                              QString::fromUtf8("(C) 2009-2012"))
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2009-2020"))
+                             QString::fromUtf8("(C) 2009-2021"))
             ;
 }
 
@@ -98,11 +98,11 @@ void ProfileConversionToolPlugin::setup(QObject* const parent)
     connect(m_profileMenuAction, SIGNAL(triggered(IccProfile)),
             this, SLOT(slotConvertToColorSpace(IccProfile)));
 
-    connect(IccSettings::instance(), SIGNAL(settingsChanged()),
+    connect(IccSettings::instance(), SIGNAL(signalSettingsChanged()),
             this, SLOT(slotUpdateColorSpaceMenu()));
 
     ac->setMenu(m_profileMenuAction);
-    ac->setText(i18n("Color Spaces"));
+    ac->setText(i18nc("@action", "Color Spaces"));
     ac->setObjectName(QLatin1String("editorwindow_colormanagement"));
     ac->setActionCategory(DPluginAction::EditorColors);
 
@@ -131,7 +131,7 @@ void ProfileConversionToolPlugin::slotConvertToColorSpace(const IccProfile& prof
     if (iface.originalIccProfile().isNull())
     {
         QMessageBox::critical(qApp->activeWindow(), qApp->applicationName(),
-                              i18n("This image is not color managed."));
+                              i18nc("@info", "This image is not color managed."));
         return;
     }
 
@@ -148,7 +148,7 @@ void ProfileConversionToolPlugin::slotUpdateColorSpaceMenu()
 
     if (!IccSettings::instance()->isEnabled())
     {
-        QAction* const action = new QAction(i18n("Color Management is disabled..."), this);
+        QAction* const action = new QAction(i18nc("@action", "Color Management is disabled..."), this);
         m_profileMenuAction->addAction(action);
 
         if (editor)
@@ -161,8 +161,10 @@ void ProfileConversionToolPlugin::slotUpdateColorSpaceMenu()
     {
         ICCSettingsContainer settings = IccSettings::instance()->settings();
 
-        QList<IccProfile> standardProfiles, favoriteProfiles;
-        QSet<QString> standardProfilePaths, favoriteProfilePaths;
+        QList<IccProfile> standardProfiles;
+        QList<IccProfile> favoriteProfiles;
+        QSet<QString> standardProfilePaths;
+
         standardProfiles << IccProfile::sRGB()
                          << IccProfile::adobeRGB()
                          << IccProfile::wideGamutRGB()
@@ -176,8 +178,19 @@ void ProfileConversionToolPlugin::slotUpdateColorSpaceMenu()
 
         m_profileMenuAction->addSeparator();
 
-        favoriteProfilePaths  = QSet<QString>::fromList(ProfileConversionTool::favoriteProfiles());
-        favoriteProfilePaths -= standardProfilePaths;
+        QStringList profileList = ProfileConversionTool::favoriteProfiles();
+
+#if (QT_VERSION < QT_VERSION_CHECK(5, 14, 0))
+
+        QSet<QString> favoriteProfilePaths = QSet<QString>::fromList(profileList);
+
+#else
+
+        QSet<QString> favoriteProfilePaths(profileList.begin(), profileList.end());
+
+#endif
+
+        favoriteProfilePaths   -= standardProfilePaths;
 
         foreach (const QString& path, favoriteProfilePaths)
         {

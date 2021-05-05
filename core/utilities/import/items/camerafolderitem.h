@@ -7,7 +7,7 @@
  * Description : A widget to display a camera folder.
  *
  * Copyright (C) 2003-2005 by Renchi Raju <renchi dot raju at gmail dot com>
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -37,7 +37,6 @@ namespace Digikam
 
 class CameraFolderItem : public QTreeWidgetItem
 {
-
 public:
 
     CameraFolderItem(QTreeWidget* const parent,
@@ -49,7 +48,7 @@ public:
                      const QString& folderPath,
                      const QIcon& icon = QIcon::fromTheme(QLatin1String("folder")));
 
-    ~CameraFolderItem();
+    ~CameraFolderItem()               override;
 
     QString folderName()        const;
     QString folderPath()        const;
@@ -63,6 +62,10 @@ private:
 
     class Private;
     Private* const d;
+
+private:
+
+    Q_DISABLE_COPY(CameraFolderItem)
 };
 
 } // namespace Digikam

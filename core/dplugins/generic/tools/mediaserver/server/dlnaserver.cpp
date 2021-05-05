@@ -7,7 +7,7 @@
  * Description : a media server to export collections through DLNA.
  *               Implementation inspired on Platinum File Media Server.
  *
- * Copyright (C) 2017-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2017-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -22,17 +22,6 @@
  * ============================================================ */
 
 #include "dlnaserver.h"
-
-// Qt includes
-
-#include <QApplication>
-#include <QStandardPaths>
-#include <QBuffer>
-#include <QIODevice>
-
-// Local includes
-
-#include "digikam_debug.h"
 
 namespace Digikam
 {

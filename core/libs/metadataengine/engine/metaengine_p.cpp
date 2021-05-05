@@ -7,7 +7,7 @@
  * Description : Exiv2 library interface.
  *               Internal private container.
  *
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2006-2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  *
  * This program is free software; you can redistribute it
@@ -46,9 +46,11 @@ extern "C"
 // Local includes
 
 #include "digikam_debug.h"
+#include "digikam_config.h"
 #include "metaengine_data_p.h"
 
 // Pragma directives to reduce warnings from Exiv2.
+
 #if defined(Q_CC_GNU) && !defined(Q_CC_CLANG)
 #   pragma GCC diagnostic push
 #   pragma GCC diagnostic ignored "-Wdeprecated-declarations"
@@ -67,14 +69,21 @@ namespace Digikam
  */
 QMutex s_metaEngineMutex(QMutex::Recursive);
 
+/**
+ * Boolean value about Bmff based file support (CR3, HEIF, HEIC, and AVIF).
+ * Initialized at run time by initializeExiv2().
+ */
+bool s_metaEngineSupportBmff = false;
+
 MetaEngine::Private::Private()
-    : writeRawFiles(false),
-      updateFileTimeStamp(false),
-      useXMPSidecar4Reading(false),
-      useCompatibleFileName(false),
-      metadataWritingMode(WRITE_TO_FILE_ONLY),
-      loadedFromSidecar(false),
-      data(new MetaEngineData::Private)
+    : writeRawFiles         (false),
+      writeDngFiles         (false),
+      updateFileTimeStamp   (false),
+      useXMPSidecar4Reading (false),
+      useCompatibleFileName (false),
+      metadataWritingMode   (WRITE_TO_FILE_ONLY),
+      loadedFromSidecar     (false),
+      data                  (new MetaEngineData::Private)
 {
     QMutexLocker lock(&s_metaEngineMutex);
     Exiv2::LogMsg::setHandler(MetaEngine::Private::printExiv2MessageHandler);
@@ -135,6 +144,7 @@ void MetaEngine::Private::copyPrivateData(const Private* const other)
     data                  = other->data;
     filePath              = other->filePath;
     writeRawFiles         = other->writeRawFiles;
+    writeDngFiles         = other->writeDngFiles;
     updateFileTimeStamp   = other->updateFileTimeStamp;
     useXMPSidecar4Reading = other->useXMPSidecar4Reading;
     useCompatibleFileName = other->useCompatibleFileName;
@@ -143,10 +153,10 @@ void MetaEngine::Private::copyPrivateData(const Private* const other)
 
 bool MetaEngine::Private::saveToXMPSidecar(const QFileInfo& finfo) const
 {
-    QString filePath = MetaEngine::sidecarFilePathForFile(finfo.filePath(),
-                                                          useCompatibleFileName);
+    QString xmpFile = MetaEngine::sidecarFilePathForFile(finfo.filePath(),
+                                                         useCompatibleFileName);
 
-    if (filePath.isEmpty())
+    if (xmpFile.isEmpty())
     {
         return false;
     }
@@ -156,8 +166,23 @@ bool MetaEngine::Private::saveToXMPSidecar(const QFileInfo& finfo) const
     try
     {
         Exiv2::Image::AutoPtr image;
+
+#if defined Q_OS_WIN && defined EXV_UNICODE_PATH
+
         image = Exiv2::ImageFactory::create(Exiv2::ImageType::xmp,
-                                            (const char*)(QFile::encodeName(filePath).constData()));
+                                            (const wchar_t*)xmpFile.utf16());
+
+#elif defined Q_OS_WIN
+
+        image = Exiv2::ImageFactory::create(Exiv2::ImageType::xmp,
+                                            QFile::encodeName(xmpFile).constData());
+
+#else
+
+        image = Exiv2::ImageFactory::create(Exiv2::ImageType::xmp,
+                                            xmpFile.toUtf8().constData());
+
+#endif
 
 #if EXIV2_TEST_VERSION(0,27,99)
 
@@ -170,13 +195,13 @@ bool MetaEngine::Private::saveToXMPSidecar(const QFileInfo& finfo) const
 #endif
 
     }
-    catch(Exiv2::AnyError& e)
+    catch (Exiv2::AnyError& e)
     {
         printExiv2ExceptionError(QLatin1String("Cannot save metadata to XMP sidecar using Exiv2 "), e);
 
         return false;
     }
-    catch(...)
+    catch (...)
     {
         qCCritical(DIGIKAM_METAENGINE_LOG) << "Default exception from Exiv2";
 
@@ -195,17 +220,16 @@ bool MetaEngine::Private::saveToFile(const QFileInfo& finfo) const
 
     QStringList rawTiffBasedSupported, rawTiffBasedNotSupported;
 
-    // Raw files supported by Exiv2 0.26
+    // Raw files supported by Exiv2 0.27
 
     rawTiffBasedSupported << QLatin1String("cr2")
                           << QLatin1String("crw")
-                          << QLatin1String("dng")
                           << QLatin1String("nef")
                           << QLatin1String("pef")
                           << QLatin1String("orf")
                           << QLatin1String("srw");
 
-    // Raw files not supported by Exiv2 0.26
+    // Raw files not supported by Exiv2 0.27
 
     rawTiffBasedNotSupported << QLatin1String("3fr")
                              << QLatin1String("arw")
@@ -214,11 +238,18 @@ bool MetaEngine::Private::saveToFile(const QFileInfo& finfo) const
                              << QLatin1String("k25")
                              << QLatin1String("kdc")
                              << QLatin1String("mos")
+                             << QLatin1String("mrw")
                              << QLatin1String("raf")
                              << QLatin1String("raw")
+                             << QLatin1String("rw2")
                              << QLatin1String("sr2")
                              << QLatin1String("srf")
                              << QLatin1String("rw2");
+
+    if (!writeDngFiles)
+    {
+         rawTiffBasedNotSupported << (QLatin1String("dng"));
+    }
 
     QString ext = finfo.suffix().toLower();
 
@@ -256,7 +287,20 @@ bool MetaEngine::Private::saveToFile(const QFileInfo& finfo) const
     try
     {
         Exiv2::Image::AutoPtr image;
-        image = Exiv2::ImageFactory::open((const char*)(QFile::encodeName(finfo.filePath()).constData()));
+
+#if defined Q_OS_WIN && defined EXV_UNICODE_PATH
+
+        image = Exiv2::ImageFactory::open((const wchar_t*)finfo.filePath().utf16());
+
+#elif defined Q_OS_WIN
+
+        image = Exiv2::ImageFactory::open(QFile::encodeName(finfo.filePath()).constData());
+
+#else
+
+        image = Exiv2::ImageFactory::open(finfo.filePath().toUtf8().constData());
+
+#endif
 
 #if EXIV2_TEST_VERSION(0,27,99)
 
@@ -269,13 +313,13 @@ bool MetaEngine::Private::saveToFile(const QFileInfo& finfo) const
 #endif
 
     }
-    catch(Exiv2::AnyError& e)
+    catch (Exiv2::AnyError& e)
     {
         printExiv2ExceptionError(QLatin1String("Cannot save metadata to image using Exiv2 "), e);
 
         return false;
     }
-    catch(...)
+    catch (...)
     {
         qCCritical(DIGIKAM_METAENGINE_LOG) << "Default exception from Exiv2";
 
@@ -403,6 +447,7 @@ bool MetaEngine::Private::saveOperations(const QFileInfo& finfo, Exiv2::Image::A
 
         qCDebug(DIGIKAM_METAENGINE_LOG) << "wroteXMP: " << wroteXMP;
 
+        // cppcheck-suppress knownConditionTrueFalse
         if      (!wroteComment && !wroteEXIF && !wroteIPTC && !wroteXMP)
         {
             qCDebug(DIGIKAM_METAENGINE_LOG) << "Writing metadata is not supported for file" << finfo.fileName();
@@ -414,13 +459,37 @@ bool MetaEngine::Private::saveOperations(const QFileInfo& finfo, Exiv2::Image::A
             qCDebug(DIGIKAM_METAENGINE_LOG) << "Support for writing metadata is limited for file" << finfo.fileName();
         }
 
+#ifdef _XMP_SUPPORT_
+
+        if (!updateFileTimeStamp && (image->imageType() != Exiv2::ImageType::xmp))
+#else
+
         if (!updateFileTimeStamp)
+
+#endif
+
         {
             // Don't touch access and modification timestamp of file.
 
-            QT_STATBUF     st;
-            struct utimbuf ut;
-            int ret = QT_STAT(QFile::encodeName(filePath).constData(), &st);
+#ifdef Q_OS_WIN64
+
+            struct __utimbuf64 ut;
+            struct __stat64    st;
+            int ret = _wstat64((const wchar_t*)finfo.filePath().utf16(), &st);
+
+#elif defined Q_OS_WIN
+
+            struct _utimbuf    ut;
+            struct _stat       st;
+            int ret = _wstat((const wchar_t*)finfo.filePath().utf16(), &st);
+
+#else
+
+            struct utimbuf     ut;
+            QT_STATBUF         st;
+            int ret = QT_STAT(finfo.filePath().toUtf8().constData(), &st);
+
+#endif
 
             if (ret == 0)
             {
@@ -432,7 +501,21 @@ bool MetaEngine::Private::saveOperations(const QFileInfo& finfo, Exiv2::Image::A
 
             if (ret == 0)
             {
-                ::utime(QFile::encodeName(filePath).constData(), &ut);
+
+#ifdef Q_OS_WIN64
+
+                _wutime64((const wchar_t*)finfo.filePath().utf16(), &ut);
+
+#elif defined Q_OS_WIN
+
+                _wutime((const wchar_t*)finfo.filePath().utf16(), &ut);
+
+#else
+
+                ::utime(finfo.filePath().toUtf8().constData(), &ut);
+
+#endif
+
             }
 
             qCDebug(DIGIKAM_METAENGINE_LOG) << "File time stamp restored";
@@ -444,11 +527,11 @@ bool MetaEngine::Private::saveOperations(const QFileInfo& finfo, Exiv2::Image::A
 
         return true;
     }
-    catch(Exiv2::AnyError& e)
+    catch (Exiv2::AnyError& e)
     {
         printExiv2ExceptionError(QLatin1String("Cannot save metadata using Exiv2 "), e);
     }
-    catch(...)
+    catch (...)
     {
         qCCritical(DIGIKAM_METAENGINE_LOG) << "Default exception from Exiv2";
     }
@@ -458,9 +541,8 @@ bool MetaEngine::Private::saveOperations(const QFileInfo& finfo, Exiv2::Image::A
 
 void MetaEngine::Private::printExiv2ExceptionError(const QString& msg, Exiv2::AnyError& e)
 {
-    std::string s(e.what());
     qCCritical(DIGIKAM_METAENGINE_LOG) << msg.toLatin1().constData()
-                                       << " (Error #" << e.code() << ": " << s.c_str();
+                                       << " (Error #" << e.code() << ": " << QString::fromStdString(e.what());
 }
 
 void MetaEngine::Private::printExiv2MessageHandler(int lvl, const char* msg)
@@ -522,18 +604,18 @@ QString MetaEngine::Private::convertCommentValue(const Exiv2::Exifdatum& exifDat
         }
         else if (charset == "\"Ascii\"")
         {
-            return QLatin1String(comment.c_str());
+            return QString::fromStdString(comment);
         }
         else
         {
             return detectEncodingAndDecode(comment);
         }
     }
-    catch(Exiv2::AnyError& e)
+    catch (Exiv2::AnyError& e)
     {
         printExiv2ExceptionError(QLatin1String("Cannot convert Comment using Exiv2 "), e);
     }
-    catch(...)
+    catch (...)
     {
         qCCritical(DIGIKAM_METAENGINE_LOG) << "Default exception from Exiv2";
     }
@@ -556,7 +638,7 @@ QString MetaEngine::Private::detectEncodingAndDecode(const std::string& value) c
 
     if (isUtf8(value.c_str()))
     {
-        return QString::fromUtf8(value.c_str());
+        return QString::fromStdString(value);
     }
 
     // Utf8 has a pretty unique byte pattern.
@@ -737,9 +819,9 @@ int MetaEngine::Private::getXMPTagsListFromPrefix(const QString& pf, MetaEngine:
 
         for (QList<const Exiv2::XmpPropertyInfo*>::iterator it = tags.begin() ; it != tags.end() ; ++it)
         {
-            while ( (*it) && !QString::fromLatin1((*it)->name_).isNull() )
+            while ((*it) && !QString::fromLatin1((*it)->name_).isNull())
             {
-                QString     key = QLatin1String( Exiv2::XmpKey( pf.toLatin1().data(), (*it)->name_ ).key().c_str() );
+                QString     key = QLatin1String(Exiv2::XmpKey(pf.toLatin1().data(), (*it)->name_).key().c_str());
                 QStringList values;
                 values << QLatin1String((*it)->name_)
                        << QLatin1String((*it)->title_)
@@ -750,11 +832,11 @@ int MetaEngine::Private::getXMPTagsListFromPrefix(const QString& pf, MetaEngine:
             }
         }
     }
-    catch(Exiv2::AnyError& e)
+    catch (Exiv2::AnyError& e)
     {
         printExiv2ExceptionError(QLatin1String("Cannot get Xmp tags list using Exiv2 "), e);
     }
-    catch(...)
+    catch (...)
     {
         qCCritical(DIGIKAM_METAENGINE_LOG) << "Default exception from Exiv2";
     }
@@ -770,6 +852,7 @@ int MetaEngine::Private::getXMPTagsListFromPrefix(const QString& pf, MetaEngine:
 }
 
 #ifdef _XMP_SUPPORT_
+
 void MetaEngine::Private::loadSidecarData(Exiv2::Image::AutoPtr xmpsidecar)
 {
     // Having a sidecar is a special situation.
@@ -802,7 +885,6 @@ void MetaEngine::Private::loadSidecarData(Exiv2::Image::AutoPtr xmpsidecar)
 
     ExifMetaEngineMergeHelper exifWritebackHelper;
     exifWritebackHelper << QLatin1String("Exif.Image.DateTime")
-                        << QLatin1String("Exif.Image.DateTime")
                         << QLatin1String("Exif.Photo.DateTimeOriginal")
                         << QLatin1String("Exif.Photo.DateTimeDigitized")
                         << QLatin1String("Exif.Image.Orientation")
@@ -865,6 +947,45 @@ void MetaEngine::Private::loadSidecarData(Exiv2::Image::AutoPtr xmpsidecar)
 }
 
 #endif // _XMP_SUPPORT_
+
+QString MetaEngine::Private::extractIptcTagString(const Exiv2::IptcData& iptcData, const Exiv2::Iptcdatum& iptcTag) const
+{
+    QString charSet = QLatin1String(iptcData.detectCharset());
+    QString value;
+
+    // NOTE: no need mutex lock here as this method is always called from a top level function by a parent mutex lock
+
+    try
+    {
+        if ((iptcTag.typeId() == Exiv2::string) && !charSet.isNull())
+        {
+            // Perform Utf8 conversion from std::string
+            // TODO: check if a parse of charset content can improve the string conversion if not Utf8 use.
+
+            value = QString::fromStdString(iptcTag.toString());
+        }
+        else
+        {
+            // No characterset want mean ASCII-latin1
+            // Decode the tag value with a user friendly output.
+
+            std::ostringstream os;
+            os << iptcTag;
+            value = QString::fromStdString(os.str());
+        }
+    }
+    catch (Exiv2::AnyError& e)
+    {
+        printExiv2ExceptionError(QLatin1String("Cannot decode Iptc tag string with right encoding using Exiv2 "), e);
+    }
+    catch (...)
+    {
+        qCCritical(DIGIKAM_METAENGINE_LOG) << "Default exception from Exiv2";
+    }
+
+
+    return value;
+}
 
 } // namespace Digikam
 

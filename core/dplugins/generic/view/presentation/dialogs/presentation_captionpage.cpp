@@ -7,7 +7,7 @@
  * Description : a presentation tool.
  *
  * Copyright (C) 2008      by Valerio Fuoglio <valerio dot fuoglio at gmail dot com>
- * Copyright (C) 2012-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -36,10 +36,12 @@
 namespace DigikamGenericPresentationPlugin
 {
 
-PresentationCaptionPage::PresentationCaptionPage(QWidget* const parent, PresentationContainer* const sharedData)
+PresentationCaptionPage::PresentationCaptionPage(QWidget* const parent,
+                                                 PresentationContainer* const sharedData)
     : QWidget(parent)
 {
     setupUi(this);
+
     m_sharedData = sharedData;
     m_fontSampleLbl->setText(i18n("This is a comment sample..."));
     m_fontSampleLbl->setAutoFillBackground(true);

@@ -55,7 +55,7 @@ class DIGIKAM_EXPORT WSNewAlbumDialog : public QDialog
 public:
 
     explicit WSNewAlbumDialog(QWidget* const parent, const QString& toolName);
-    ~WSNewAlbumDialog();
+    ~WSNewAlbumDialog() override;
 
     void hideDateTime();
     void hideDesc();

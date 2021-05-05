@@ -75,11 +75,6 @@ public:
     static void cleanThumbnailCache();
 
     /**
-     * Remove file from LoadingCacheFileWatch.
-     */
-    static void removeFromFileWatch(const QString& filePath);
-
-    /**
      * add a copy of the image to cache
      */
     static void putImage(const QString& filePath, const DImg& img);
@@ -89,6 +84,15 @@ public:
      * Set to 0 to disable caching.
      */
     static void setCacheOptions(int cacheSize);
+
+private:
+
+    explicit LoadingCacheInterface();
+    ~LoadingCacheInterface();
+
+    // Disable
+    LoadingCacheInterface(const LoadingCacheInterface&)            = delete;
+    LoadingCacheInterface& operator=(const LoadingCacheInterface&) = delete;
 };
 
 } // namespace Digikam

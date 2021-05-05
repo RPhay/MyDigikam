@@ -8,7 +8,7 @@
  *
  * Copyright (C) 2008-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  * Copyright (C) 2008      by Peter Penz <peter dot penz at gmx dot at>
- * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -128,11 +128,11 @@ bool GroupIndicatorOverlay::checkIndex(const QModelIndex& index) const
 
         if (index.data(ItemFilterModel::GroupIsOpenRole).toBool())
         {
-            tip += i18n("Group is open.");
+            tip += i18nc("@info:tooltip", "Group is open.");
         }
         else
         {
-            tip += i18n("Group is closed.");
+            tip += i18nc("@info:tooltip", "Group is closed.");
         }
 
         m_widget->setToolTip(tip);

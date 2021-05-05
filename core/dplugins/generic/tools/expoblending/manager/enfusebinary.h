@@ -6,7 +6,7 @@
  * Date        : 2009-12-23
  * Description : Autodetect enfuse binary program and version
  *
- * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2012-2015 by Benjamin Girault <benjamin dot girault at gmail dot com>
  *
  * This program is free software; you can redistribute it
@@ -53,7 +53,7 @@ public:
         setup();
     }
 
-    ~EnfuseBinary()
+    ~EnfuseBinary() override
     {
     }
 
@@ -65,11 +65,16 @@ Q_SIGNALS:
 
 protected:
 
-    bool parseHeader(const QString& output);
+    bool parseHeader(const QString& output) override;
 
 private:
 
     double versionDouble;
+
+private:
+
+    // Disable
+    explicit EnfuseBinary(QObject*) = delete;
 };
 
 } // namespace DigikamGenericExpoBlendingPlugin

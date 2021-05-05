@@ -6,7 +6,7 @@
  * Date        : 2017-06-15
  * Description : a tool to replace part of the image using another
  *
- * Copyright (C) 2004-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2004-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2017      by Shaza Ismail Kaoud <shaza dot ismail dot k at gmail dot com>
  * Copyright (C) 2019      by Ahmed Fathi <ahmed dot fathi dot abdelmageed at gmail dot com>
  *
@@ -40,7 +40,7 @@
 
 // KDE includes
 
-#include "kconfiggroup.h"
+#include <kconfiggroup.h>
 #include <ksharedconfig.h>
 #include <klocalizedstring.h>
 
@@ -62,18 +62,18 @@ class Q_DECL_HIDDEN HealingCloneTool::Private
 public:
 
     explicit Private()
-      : btnSize(QSize(50, 50)),
-        iconSize(QSize(30, 30)),
-        radiusInput(nullptr),
-        blurPercent(nullptr),
-        previewWidget(nullptr),
-        gboxSettings(nullptr),
-        srcButton(nullptr),
-        lassoButton(nullptr),
-        moveButton(nullptr),
-        undoCloneButton(nullptr),
-        redoCloneButton(nullptr),
-        resetLassoPoint(true),
+      : btnSize             (QSize(50, 50)),
+        iconSize            (QSize(30, 30)),
+        radiusInput         (nullptr),
+        blurPercent         (nullptr),
+        previewWidget       (nullptr),
+        gboxSettings        (nullptr),
+        srcButton           (nullptr),
+        lassoButton         (nullptr),
+        moveButton          (nullptr),
+        undoCloneButton     (nullptr),
+        redoCloneButton     (nullptr),
+        resetLassoPoint     (true),
         insideLassoOperation(false)
     {
     }
@@ -122,13 +122,13 @@ const QString HealingCloneTool::Private::configBlurAdjustmentEntry(QLatin1String
 
 HealingCloneTool::HealingCloneTool(QObject* const parent)
     : EditorTool(parent),
-      d(new Private)
+      d         (new Private)
 {
     setObjectName(QLatin1String("healing clone"));
     setToolHelp(QLatin1String("healingclonetool.anchor"));
 
-    d->gboxSettings      = new EditorToolSettings(0);
-    d->previewWidget     = new HealingCloneToolWidget;
+    d->gboxSettings  = new EditorToolSettings(nullptr);
+    d->previewWidget = new HealingCloneToolWidget;
     refreshImage();
 
     d->previewWidget->setFocusPolicy(Qt::StrongFocus);
@@ -137,8 +137,8 @@ HealingCloneTool::HealingCloneTool(QObject* const parent)
 
     // --------------------------------------------------------
 
-    QLabel* const label  = new QLabel(i18n("Brush Radius:"));
-    d->radiusInput       = new DIntNumInput();
+    QLabel* const label = new QLabel(i18n("Brush Radius:"));
+    d->radiusInput      = new DIntNumInput();
     d->radiusInput->setRange(0, 200, 1);
     d->radiusInput->setDefaultValue(50);
     d->radiusInput->setWhatsThis(i18n("A radius of 0 has no effect, "
@@ -625,8 +625,9 @@ void HealingCloneTool::slotUndoClone()
 
 void HealingCloneTool::slotRedoClone()
 {
-//  slotResetLassoPoints();
-
+/*
+    slotResetLassoPoints();
+*/
     if (d->redoStack.empty())
     {
         return;

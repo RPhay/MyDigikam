@@ -59,7 +59,7 @@ public:
                       QItemSelectionModel* const selectionModel,
                       QAbstractItemModel* externTagModel,
                       QWidget* const parent = nullptr);
-    ~RGWidget();
+    ~RGWidget()                                             override;
 
     void setUIEnabled(const bool state);
     void readSettingsFromGroup(const KConfigGroup* const group);
@@ -110,7 +110,7 @@ Q_SIGNALS:
 
 protected:
 
-    virtual bool eventFilter(QObject* watched, QEvent* event) override;
+    bool eventFilter(QObject* watched, QEvent* event)       override;
 
 private:
 

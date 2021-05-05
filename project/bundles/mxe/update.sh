@@ -2,7 +2,7 @@
 
 # Script to update digiKam installer.
 #
-# Copyright (c) 2013-2020 by Gilles Caulier  <caulier dot gilles at gmail dot com>
+# Copyright (c) 2013-2021 by Gilles Caulier  <caulier dot gilles at gmail dot com>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
@@ -17,26 +17,9 @@ trap 'echo "FAILED COMMAND: $PREVIOUS_COMMAND"' ERR
 . ./common.sh
 StartScript
 
-echo "++++++++++++++++   Build 32 bits Installer   ++++++++++++++++++++++++++++++++++"
-echo "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
-
-sed -e "s/MXE_ARCHBITS=64/MXE_ARCHBITS=32/g" ./config.sh > ./tmp.sh ; mv -f ./tmp.sh ./config.sh
-
-./03-build-digikam.sh
-
-sed -e "s/DK_DEBUG=1/DK_DEBUG=0/g"           ./config.sh > ./tmp.sh ; mv -f ./tmp.sh ./config.sh
-
-./04-build-installer.sh
-
-sed -e "s/DK_DEBUG=0/DK_DEBUG=1/g"           ./config.sh > ./tmp.sh ; mv -f ./tmp.sh ./config.sh
-
-./04-build-installer.sh
-
 echo "++++++++++++++++   Build 64 bits Installer   ++++++++++++++++++++++++++++++++++"
 echo "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
 
-sed -e "s/MXE_ARCHBITS=32/MXE_ARCHBITS=64/g" ./config.sh > ./tmp.sh ; mv -f ./tmp.sh ./config.sh
-
 ./03-build-digikam.sh
 
 sed -e "s/DK_DEBUG=1/DK_DEBUG=0/g"           ./config.sh > ./tmp.sh ; mv -f ./tmp.sh ./config.sh
@@ -48,7 +31,6 @@ sed -e "s/DK_DEBUG=0/DK_DEBUG=1/g"           ./config.sh > ./tmp.sh ; mv -f ./tm
 ./04-build-installer.sh
 
 sed -e "s/DK_DEBUG=1/DK_DEBUG=0/g"           ./config.sh > ./tmp.sh ; mv -f ./tmp.sh ./config.sh
-sed -e "s/MXE_ARCHBITS=64/MXE_ARCHBITS=32/g" ./config.sh > ./tmp.sh ; mv -f ./tmp.sh ./config.sh
 
 echo "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
 

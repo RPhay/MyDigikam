@@ -7,7 +7,7 @@
  * Description : file action manager
  *
  * Copyright (C) 2009-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2011-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2011-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -50,7 +50,8 @@ enum GroupAction
     Ungroup
 };
 
-class Q_DECL_HIDDEN PrivateProgressItemCreator : public QObject, public FileActionProgressItemCreator
+class Q_DECL_HIDDEN PrivateProgressItemCreator : public QObject,                            // clazy:exclude=ctor-missing-parent-argument
+                                                 public FileActionProgressItemCreator
 {
     Q_OBJECT
 
@@ -80,7 +81,7 @@ class Q_DECL_HIDDEN FileActionMngr::Private : public QObject
 public:
 
     explicit Private(FileActionMngr* const qq);
-    ~Private();
+    ~Private() override;
 
 Q_SIGNALS:
 

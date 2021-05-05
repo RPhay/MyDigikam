@@ -1,5 +1,5 @@
 <!DOCTYPE kpartgui SYSTEM "kpartgui.dtd">
-<gui version="616" name="digikam" translationDomain="digikam" >
+<gui version="702" name="digikam" translationDomain="digikam" >
 
  <MenuBar>
 
@@ -90,7 +90,6 @@
      <Action name="table_view" />
      <!--<Action name="view_selection" />-->
      <Separator/>
-     <Action name="slideshow" />
      <Action name="full_screen" />
      <Action name="view_refresh" />
 
@@ -126,6 +125,7 @@
         <Action name="find_duplicates" />
       <Separator/>
         <Action name="maintenance" />
+        <Action name="scan_newitems" />
       <Separator/>
 
         <!-- _DPLUGINS_GENERIC_TOOL_ACTIONS_ -->
@@ -160,6 +160,7 @@
      <Action name="showthumbs" />
      <Separator/>
      <Action name="theme_menu" />
+     <Action name="switch_application_language" />
      <Action name="options_configure_keybinding" />
      <Action name="options_configure_toolbars" />
      <Action name="options_configure_notifications" />
@@ -169,10 +170,12 @@
 
   <Menu name="help"><Text>&amp;Help</Text>
     <Action name="help_rawcameralist" />
+    <Action name="help_solidhardwarelist" />
     <Action name="help_librariesinfo" />
     <Action name="help_dbstat" />
     <Separator/>
     <Action name="help_donatemoney" />
+    <Action name="help_onlineversioncheck" />
     <Action name="help_recipesbook" />
     <Action name="help_contribute" />
     <Action name="help_handbook" />
@@ -197,7 +200,7 @@
   <Action name="map_view" />
   <Action name="table_view" />
   <Separator/>
-  <Action name="slideshow" />
+  <Action name="slideshow_plugin" />
   <Action name="full_screen" />
   <Merge />
   <WeakSeparator />

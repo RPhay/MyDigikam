@@ -7,7 +7,7 @@
  * Description : LCMS2 wrapper
  *
  * Copyright (C) 2012      by Francesco Riosa <francesco+kde at pnpitalia dot it>
- * Copyright (C) 2012-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -43,7 +43,7 @@
 
 // Turn off the specific compiler warnings with LCMS header.
 
-#if defined(Q_OS_DARWIN) && defined(Q_CC_CLANG)
+#if defined(Q_CC_CLANG)
 #    pragma clang diagnostic push
 #    pragma clang diagnostic ignored "-Wundef"
 #    pragma clang diagnostic ignored "-Wdeprecated-register"
@@ -51,7 +51,7 @@
 
 #include <lcms2.h>
 
-#if defined(Q_OS_DARWIN) && defined(Q_CC_CLANG)
+#if defined(Q_CC_CLANG)
 #    pragma clang diagnostic pop
 #endif
 
@@ -226,20 +226,20 @@ DIGIKAM_EXPORT icProfileClassSignature dkCmsGetDeviceClass(cmsHPROFILE hProfile)
 DIGIKAM_EXPORT LCMSBOOL                dkCmsCloseProfile(cmsHPROFILE hProfile);
 
 DIGIKAM_EXPORT cmsHTRANSFORM           dkCmsCreateProofingTransform(cmsHPROFILE Input,
-                                                                         DWORD InputFormat,
-                                                                         cmsHPROFILE Output,
-                                                                         DWORD OutputFormat,
-                                                                         cmsHPROFILE Proofing,
-                                                                         int Intent,
-                                                                         int ProofingIntent,
-                                                                         DWORD dwFlags);
+                                                                    DWORD InputFormat,
+                                                                    cmsHPROFILE Output,
+                                                                    DWORD OutputFormat,
+                                                                    cmsHPROFILE Proofing,
+                                                                    int Intent,
+                                                                    int ProofingIntent,
+                                                                    DWORD dwFlags);
 
 DIGIKAM_EXPORT cmsHTRANSFORM           dkCmsCreateTransform(cmsHPROFILE Input,
-                                                                 DWORD InputFormat,
-                                                                 cmsHPROFILE Output,
-                                                                 DWORD OutputFormat,
-                                                                 int Intent,
-                                                                 DWORD dwFlags);
+                                                            DWORD InputFormat,
+                                                            cmsHPROFILE Output,
+                                                            DWORD OutputFormat,
+                                                            int Intent,
+                                                            DWORD dwFlags);
 
 DIGIKAM_EXPORT cmsHPROFILE             dkCmsCreateXYZProfile();
 
@@ -250,9 +250,9 @@ DIGIKAM_EXPORT void                    dkCmsDeleteTransform(cmsHTRANSFORM hTrans
 DIGIKAM_EXPORT double                  dkCmsDeltaE(LPcmsCIELab Lab1, LPcmsCIELab Lab2);
 
 DIGIKAM_EXPORT void                    dkCmsDoTransform(cmsHTRANSFORM Transform,
-                                                             LPVOID InputBuffer,
-                                                             LPVOID OutputBuffer,
-                                                             unsigned int Size);
+                                                        LPVOID InputBuffer,
+                                                        LPVOID OutputBuffer,
+                                                        unsigned int Size);
 
 DIGIKAM_EXPORT void                    dkCmsFloat2XYZEncoded(WORD XYZ[3], const cmsCIEXYZ* const fXYZ);
 

@@ -7,7 +7,7 @@
  * Description : Black and White conversion tool.
  *
  * Copyright (C) 2004-2005 by Renchi Raju <renchi dot raju at gmail dot com>
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -41,24 +41,24 @@ class BWSepiaTool : public EditorToolThreaded
 public:
 
     explicit BWSepiaTool(QObject* const parent);
-    ~BWSepiaTool();
+    ~BWSepiaTool()              override;
 
 private Q_SLOTS:
 
-    void slotInit();
-    void slotSaveAsSettings();
-    void slotLoadSettings();
-    void slotResetSettings();
+    void slotInit()             override;
+    void slotSaveAsSettings()   override;
+    void slotLoadSettings()     override;
+    void slotResetSettings()    override;
 
 private:
 
-    void readSettings();
-    void writeSettings();
-    void preparePreview();
-    void prepareFinal();
-    void setPreviewImage();
-    void setFinalImage();
-    void slotScaleChanged();
+    void readSettings()         override;
+    void writeSettings()        override;
+    void preparePreview()       override;
+    void prepareFinal()         override;
+    void setPreviewImage()      override;
+    void setFinalImage()        override;
+    void slotScaleChanged()     override;
 
 private:
 

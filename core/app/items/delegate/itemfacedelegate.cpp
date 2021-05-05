@@ -7,7 +7,7 @@
  * Description : Qt model-view for face item - the delegate
  *
  * Copyright (C) 2002-2005 by Renchi Raju <renchi dot raju at gmail dot com>
- * Copyright (C) 2002-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2002-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2009-2010 by Andi Clemens <andi dot clemens at gmail dot com>
  * Copyright (C) 2006-2010 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  *
@@ -49,12 +49,6 @@ ItemFaceDelegate::~ItemFaceDelegate()
 {
 }
 
-void ItemFaceDelegate::prepareThumbnails(ItemThumbnailModel* thumbModel, const QList<QModelIndex>& indexes)
-{
-    //TODO
-    DigikamItemDelegate::prepareThumbnails(thumbModel, indexes);
-}
-
 QPixmap ItemFaceDelegate::thumbnailPixmap(const QModelIndex& index) const
 {
     QRect rect = largerFaceRect(index);
@@ -65,6 +59,7 @@ QPixmap ItemFaceDelegate::thumbnailPixmap(const QModelIndex& index) const
     }
 
     // set requested thumbnail detail
+
     if (rect.isValid())
     {
         const_cast<QAbstractItemModel*>(index.model())->setData(index, rect, ItemModel::ThumbnailRole);
@@ -104,7 +99,7 @@ QRect ItemFaceDelegate::largerFaceRect(const QModelIndex& index) const
     return rect.adjusted(-margin, -margin, margin, margin);
 }
 
-FaceTagsIface ItemFaceDelegate::face(const QModelIndex& index) const
+FaceTagsIface ItemFaceDelegate::face(const QModelIndex& index)
 {
     QVariant extraData = index.data(ItemModel::ExtraDataRole);
 
@@ -113,8 +108,7 @@ FaceTagsIface ItemFaceDelegate::face(const QModelIndex& index) const
         return FaceTagsIface();
     }
 
-    FaceTagsIface face = FaceTagsIface::fromVariant(extraData);
-    return face;
+    return FaceTagsIface::fromVariant(extraData);
 }
 
 void ItemFaceDelegate::updateRects()

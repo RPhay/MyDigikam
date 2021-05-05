@@ -6,7 +6,7 @@
  * Date        : 2006-05-16
  * Description : A tool to edit geolocation
  *
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2010-2014 by Michael G. Hansen <mike at mghansen dot de>
  * Copyright (C) 2010      by Gabriel Voicu <ping dot gabi at gmail dot com>
  * Copyright (C) 2014      by Justus Schwartz <justus at gmx dot li>
@@ -110,7 +110,9 @@ public:
         GPSItemContainer* const item = imageModel->itemFromIndex(itemIndex);
 
         if (!item)
+        {
             return QPair<QUrl, QString>(QUrl(), QString());
+        }
 
         return QPair<QUrl, QString>(item->url(), item->saveChanges());
     }
@@ -137,7 +139,9 @@ public:
         GPSItemContainer* const item = imageModel->itemFromIndex(itemIndex);
 
         if (!item)
+        {
             return QPair<QUrl, QString>(QUrl(), QString());
+        }
 
         item->loadImageData();
 
@@ -147,7 +151,7 @@ public:
 public:
 
     typedef QPair<QUrl, QString> result_type;
-    GPSItemModel* const         imageModel;
+    GPSItemModel* const          imageModel;
 };
 
 // ---------------------------------------------------------------------------------
@@ -263,10 +267,10 @@ public:
 
 GeolocationEdit::GeolocationEdit(QWidget* const parent, DInfoInterface* const iface)
     : DPluginDialog(parent, QLatin1String("Geolocation Edit Settings")),
-      d(new Private)
+      d            (new Private)
 {
     setAttribute(Qt::WA_DeleteOnClose, true);
-    setWindowTitle(i18n("Geolocation Editor"));
+    setWindowTitle(i18nc("@title", "Geolocation Editor"));
     setMinimumSize(300, 400);
     setModal(true);
 
@@ -276,7 +280,9 @@ GeolocationEdit::GeolocationEdit(QWidget* const parent, DInfoInterface* const if
     d->trackManager   = new TrackManager(this);
 
 #ifdef GPSSYNC_MODELTEST
+
     new ModelTest(d->imageModel, this);
+
 #endif
 
     d->bookmarkOwner = new GPSBookmarkOwner(d->imageModel, this);
@@ -297,7 +303,7 @@ GeolocationEdit::GeolocationEdit(QWidget* const parent, DInfoInterface* const if
 
     d->actionBookmarkVisibility = new QAction(this);
     d->actionBookmarkVisibility->setIcon(QIcon::fromTheme(QLatin1String("bookmark-new")));
-    d->actionBookmarkVisibility->setToolTip(i18n("Display bookmarked positions on the map."));
+    d->actionBookmarkVisibility->setToolTip(i18nc("@info", "Display bookmarked positions on the map."));
     d->actionBookmarkVisibility->setCheckable(true);
 
     connect(d->actionBookmarkVisibility, SIGNAL(changed()),
@@ -315,11 +321,11 @@ GeolocationEdit::GeolocationEdit(QWidget* const parent, DInfoInterface* const if
     // ------------------------------------------------------------------------------------------------
 
     DHBox* const hbox            = new DHBox(this);
-    QLabel* const labelMapLayout = new QLabel(i18n("Layout:"), hbox);
+    QLabel* const labelMapLayout = new QLabel(i18nc("@label", "Layout:"), hbox);
     d->cbMapLayout               = new QComboBox(hbox);
-    d->cbMapLayout->addItem(i18n("One map"),               QVariant::fromValue(MapLayoutOne));
-    d->cbMapLayout->addItem(i18n("Two maps - horizontal"), QVariant::fromValue(MapLayoutHorizontal));
-    d->cbMapLayout->addItem(i18n("Two maps - vertical"),   QVariant::fromValue(MapLayoutVertical));
+    d->cbMapLayout->addItem(i18nc("@item", "One map"),               QVariant::fromValue(MapLayoutOne));
+    d->cbMapLayout->addItem(i18nc("@item", "Two maps - horizontal"), QVariant::fromValue(MapLayoutHorizontal));
+    d->cbMapLayout->addItem(i18nc("@item", "Two maps - vertical"),   QVariant::fromValue(MapLayoutVertical));
     labelMapLayout->setBuddy(d->cbMapLayout);
 
     d->progressBar          = new StatusProgressBar(hbox);
@@ -354,18 +360,18 @@ GeolocationEdit::GeolocationEdit(QWidget* const parent, DInfoInterface* const if
     d->HSplitter->setStretchFactor(0, 10);
 
     d->sortMenu = new QMenu(this);
-    d->sortMenu->setTitle(i18n("Sorting"));
+    d->sortMenu->setTitle(i18nc("@title", "Sorting"));
     QActionGroup* const sortOrderExclusive = new QActionGroup(d->sortMenu);
     sortOrderExclusive->setExclusive(true);
 
     connect(sortOrderExclusive, SIGNAL(triggered(QAction*)),
             this, SLOT(slotSortOptionTriggered(QAction*)));
 
-    d->sortActionOldestFirst = new QAction(i18n("Show oldest first"), sortOrderExclusive);
+    d->sortActionOldestFirst = new QAction(i18nc("@action", "Show oldest first"), sortOrderExclusive);
     d->sortActionOldestFirst->setCheckable(true);
     d->sortMenu->addAction(d->sortActionOldestFirst);
 
-    d->sortActionYoungestFirst = new QAction(i18n("Show youngest first"), sortOrderExclusive);
+    d->sortActionYoungestFirst = new QAction(i18nc("@action", "Show youngest first"), sortOrderExclusive);
     d->sortMenu->addAction(d->sortActionYoungestFirst);
     d->sortActionYoungestFirst->setCheckable(true);
 
@@ -380,9 +386,13 @@ GeolocationEdit::GeolocationEdit(QWidget* const parent, DInfoInterface* const if
     d->treeView->setModelAndSelectionModel(d->imageModel, d->selectionModel);
     d->treeView->setDragDropHandler(new GPSItemListDragDropHandler(this));
     d->treeView->setDragEnabled(true);
-    // TODO: save and restore the state of the header
-    // TODO: add a context menu to the header to select which columns should be visible
-    // TODO: add sorting by column
+
+    /**
+     * TODO: save and restore the state of the header
+     * TODO: add a context menu to the header to select which columns should be visible
+     * TODO: add sorting by column
+     */
+
     d->treeView->setSelectionMode(QAbstractItemView::ExtendedSelection);
     d->treeView->setSortingEnabled(true);
     d->VSplitter->addWidget(d->treeView);
@@ -401,12 +411,12 @@ GeolocationEdit::GeolocationEdit(QWidget* const parent, DInfoInterface* const if
 
     dynamic_cast<QVBoxLayout*>(vboxTabBar->layout())->addStretch(200);
 
-    d->tabBar->addTab(i18n("Details"));
-    d->tabBar->addTab(i18n("GPS Correlator"));
-    d->tabBar->addTab(i18n("Undo/Redo"));
-    d->tabBar->addTab(i18n("Reverse Geocoding"));
-    d->tabBar->addTab(i18n("Search"));
-    d->tabBar->addTab(i18n("KML Export"));
+    d->tabBar->addTab(i18nc("@item: map tool", "Details"));
+    d->tabBar->addTab(i18nc("@item: map tool", "GPS Correlator"));
+    d->tabBar->addTab(i18nc("@item: map tool", "Undo/Redo"));
+    d->tabBar->addTab(i18nc("@item: map tool", "Reverse Geocoding"));
+    d->tabBar->addTab(i18nc("@item: map tool", "Search"));
+    d->tabBar->addTab(i18nc("@item: map tool", "KML Export"));
 
     d->tabBar->installEventFilter(this);
 
@@ -446,6 +456,9 @@ GeolocationEdit::GeolocationEdit(QWidget* const parent, DInfoInterface* const if
 
     connect(d->correlatorWidget, SIGNAL(signalUndoCommand(GPSUndoCommand*)),
             this, SLOT(slotGPSUndoCommand(GPSUndoCommand*)));
+
+    connect(d->correlatorWidget, SIGNAL(signalTrackListChanged(Digikam::GeoCoordinates)),
+            this, SLOT(slotTrackListChanged(Digikam::GeoCoordinates)));
 
     connect(d->mapModelHelper, SIGNAL(signalUndoCommand(GPSUndoCommand*)),
             this, SLOT(slotGPSUndoCommand(GPSUndoCommand*)));
@@ -529,7 +542,7 @@ bool GeolocationEdit::eventFilter(QObject* const o, QEvent* const e)
 
         if (d->splitterSize == 0)
         {
-            if (sizes.at(1) == 0)
+            if      (sizes.at(1) == 0)
             {
                 sizes[1] = d->stackedWidget->widget(var)->minimumSizeHint().width();
             }
@@ -609,9 +622,10 @@ void GeolocationEdit::setItems(const QList<GPSItemContainer*>& items)
     }
 
     slotSetUIEnabled(false);
-    slotProgressSetup(imagesToLoad.count(), i18n("Loading metadata -"));
+    slotProgressSetup(imagesToLoad.count(), i18nc("@info", "Loading metadata -"));
 
     // initiate the saving
+
     d->fileIOCountDone     = 0;
     d->fileIOCountTotal    = imagesToLoad.count();
     d->fileIOFutureWatcher = new QFutureWatcher<QPair<QUrl, QString> >(this);
@@ -638,11 +652,12 @@ void GeolocationEdit::slotFileMetadataLoaded(int beginIndex, int endIndex)
 void GeolocationEdit::readSettings()
 {
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
-    KConfigGroup group = config->group("Geolocation Edit Settings");
+    KConfigGroup group        = config->group("Geolocation Edit Settings");
 
     // --------------------------
 
     // TODO: sanely determine a default backend
+
     const KConfigGroup groupMapWidget = KConfigGroup(&group, "Map Widget");
     d->mapWidget->readSettingsFromGroup(&groupMapWidget);
 
@@ -709,8 +724,8 @@ void GeolocationEdit::readSettings()
 
     if (d->mapWidget2)
     {
-        const KConfigGroup groupMapWidget = KConfigGroup(&group, "Map Widget 2");
-        d->mapWidget2->readSettingsFromGroup(&groupMapWidget);
+        const KConfigGroup groupMapWidget2 = KConfigGroup(&group, "Map Widget 2");
+        d->mapWidget2->readSettingsFromGroup(&groupMapWidget2);
 
         d->mapWidget2->setActive(true);
     }
@@ -728,8 +743,8 @@ void GeolocationEdit::saveSettings()
 
     if (d->mapWidget2)
     {
-        KConfigGroup groupMapWidget = KConfigGroup(&group, "Map Widget 2");
-        d->mapWidget2->saveSettingsToGroup(&groupMapWidget);
+        KConfigGroup groupMapWidget2 = KConfigGroup(&group, "Map Widget 2");
+        d->mapWidget2->saveSettingsToGroup(&groupMapWidget2);
     }
 
     KConfigGroup groupCorrelatorWidget = KConfigGroup(&group, "Correlator Widget");
@@ -757,18 +772,26 @@ void GeolocationEdit::saveSettings()
     config->sync();
 }
 
+void GeolocationEdit::reject()
+{
+    close();
+}
+
 void GeolocationEdit::closeEvent(QCloseEvent *e)
 {
     if (!e) return;
 
     // is the UI locked?
+
     if (!d->uiEnabled)
     {
         // please wait until we are done ...
+
         return;
     }
 
     // are there any modified images?
+
     int dirtyImagesCount = 0;
 
     for (int i = 0 ; i < d->imageModel->rowCount() ; ++i)
@@ -784,7 +807,7 @@ void GeolocationEdit::closeEvent(QCloseEvent *e)
 
     if (dirtyImagesCount > 0)
     {
-        const QString message = i18np(
+        const QString message = i18ncp("@info",
                     "You have 1 modified image.",
                     "You have %1 modified images.",
                     dirtyImagesCount
@@ -792,8 +815,8 @@ void GeolocationEdit::closeEvent(QCloseEvent *e)
 
         const int chosenAction = DMessageBox::showYesNo(QMessageBox::Warning,
                                                         this,
-                                                        i18n("Unsaved changes"),
-                                                        i18n("%1 Would you like to save the changes you made to them?", message)
+                                                        i18nc("@title", "Unsaved changes"),
+                                                        i18nc("@info", "%1 Would you like to save the changes you made to them?", message)
                                                        );
 
         if (chosenAction == QMessageBox::No)
@@ -807,10 +830,12 @@ void GeolocationEdit::closeEvent(QCloseEvent *e)
         {
             // the user wants to save his changes.
             // this will initiate the saving process and then close the dialog.
+
             saveChanges(true);
         }
 
         // do not close the dialog for now
+
         e->ignore();
         return;
     }
@@ -824,12 +849,16 @@ void GeolocationEdit::slotImageActivated(const QModelIndex& index)
     d->detailsWidget->slotSetCurrentImage(index);
 
     if (!index.isValid())
+    {
         return;
+    }
 
     GPSItemContainer* const item = d->imageModel->itemFromIndex(index);
 
     if (!item)
+    {
         return;
+    }
 
     const GeoCoordinates imageCoordinates = item->coordinates();
 
@@ -846,12 +875,14 @@ void GeolocationEdit::slotSetUIEnabled(const bool enabledState,
     if (enabledState)
     {
         // hide the progress bar
+
         d->progressBar->setVisible(false);
         d->progressCancelButton->setVisible(false);
         d->progressBar->setProgressValue(d->progressBar->progressTotalSteps());
     }
 
-    // TODO: disable the worldmapwidget and the images list (at least disable editing operations)
+    /// TODO: disable the worldmapwidget and the images list (at least disable editing operations)
+
     d->progressCancelObject = cancelObject;
     d->progressCancelSlot   = cancelSlot;
     d->uiEnabled            = enabledState;
@@ -871,8 +902,10 @@ void GeolocationEdit::slotSetUIEnabled(const bool enabledState)
 
 void GeolocationEdit::saveChanges(const bool closeAfterwards)
 {
-    // TODO: actually save the changes
-    // are there any modified images?
+    /**
+     * TODO: actually save the changes are there any modified images?
+     */
+
     QList<QPersistentModelIndex> dirtyImages;
 
     for (int i = 0 ; i < d->imageModel->rowCount() ; ++i)
@@ -896,11 +929,13 @@ void GeolocationEdit::saveChanges(const bool closeAfterwards)
         return;
     }
 
-    // TODO: disable the UI and provide progress and cancel information
+    /// TODO: disable the UI and provide progress and cancel information
+
     slotSetUIEnabled(false);
-    slotProgressSetup(dirtyImages.count(), i18n("Saving changes -"));
+    slotProgressSetup(dirtyImages.count(), i18nc("@info", "Saving changes -"));
 
     // initiate the saving
+
     d->fileIOCountDone        = 0;
     d->fileIOCountTotal       = dirtyImages.count();
     d->fileIOCloseAfterSaving = closeAfterwards;
@@ -925,15 +960,22 @@ void GeolocationEdit::slotFileChangesSaved(int beginIndex, int endIndex)
         slotSetUIEnabled(true);
 
         // any errors?
+
         QList<QPair<QUrl, QString> > errorList;
 
         for (int i = 0 ; i < d->fileIOFuture.resultCount() ; ++i)
         {
             if (!d->fileIOFuture.resultAt(i).second.isEmpty())
+            {
                 errorList << d->fileIOFuture.resultAt(i);
+            }
 
-            // To rescan item metadata from host.
-            emit signalMetadataChangedForUrl(d->fileIOFuture.resultAt(i).first);
+            if (!d->iface->supportAlbums())
+            {
+                // To rescan item metadata from host.
+
+                emit signalMetadataChangedForUrl(d->fileIOFuture.resultAt(i).first);
+            }
         }
 
         if (!errorList.isEmpty())
@@ -949,12 +991,13 @@ void GeolocationEdit::slotFileChangesSaved(int beginIndex, int endIndex)
 
             DMessageBox::showInformationList(QMessageBox::Critical,
                                              this,
-                                             i18n("Error"),
-                                             i18n("Failed to save some information:"),
+                                             i18nc("@title", "Error"),
+                                             i18nc("@info", "Failed to save some information:"),
                                              errorStrings);
         }
 
         // done saving files
+
         if (d->fileIOCloseAfterSaving)
         {
             close();
@@ -965,6 +1008,7 @@ void GeolocationEdit::slotFileChangesSaved(int beginIndex, int endIndex)
 void GeolocationEdit::slotApplyClicked()
 {
     // save the changes, but do not close afterwards
+
     saveChanges(false);
 }
 
@@ -979,7 +1023,7 @@ void GeolocationEdit::slotProgressSetup(const int maxProgress, const QString& pr
     d->progressBar->setProgressTotalSteps(maxProgress);
     d->progressBar->setProgressValue(0);
     d->progressBar->setNotify(true);
-    d->progressBar->setNotificationTitle(i18n("Edit Geolocation"), QIcon::fromTheme(QLatin1String("globe")));
+    d->progressBar->setNotificationTitle(i18nc("@title", "Edit Geolocation"), QIcon::fromTheme(QLatin1String("globe")));
     d->progressBar->setVisible(true);
     d->progressCancelButton->setVisible(d->progressCancelObject != nullptr);
 }
@@ -1020,6 +1064,11 @@ void GeolocationEdit::slotLayoutChanged(int lay)
 {
     d->mapLayout = (MapLayout)lay;
     adjustMapLayout(true);
+}
+
+void GeolocationEdit::slotTrackListChanged(const GeoCoordinates& coordinate)
+{
+    d->mapWidget->setCenter(coordinate);
 }
 
 MapWidget* GeolocationEdit::makeMapWidget(QWidget** const pvbox)

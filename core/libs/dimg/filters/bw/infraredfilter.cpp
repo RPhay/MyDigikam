@@ -6,7 +6,7 @@
  * Date        : 2005-05-25
  * Description : Infrared threaded image filter.
  *
- * Copyright (C) 2005-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2005-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2006-2010 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  * Copyright (C) 2010      by Martin Klapetek <martin dot klapetek at gmail dot com>
  *
@@ -54,9 +54,11 @@ InfraredFilter::InfraredFilter(QObject* const parent)
     initFilter();
 }
 
-InfraredFilter::InfraredFilter(DImg* const orgImage, QObject* const parent, const InfraredContainer& settings)
+InfraredFilter::InfraredFilter(DImg* const orgImage,
+                               QObject* const parent,
+                               const InfraredContainer& settings)
     : DImgThreadedFilter(orgImage, parent, QLatin1String("Infrared")),
-      m_settings(settings)
+      m_settings        (settings)
 {
     initFilter();
 }
@@ -73,11 +75,10 @@ QString InfraredFilter::DisplayableName()
 
 /**
  * This method is based on the Simulate Infrared Film tutorial from GimpGuru.org web site
- *  available at this url : http://www.gimpguru.org/Tutorials/SimulatedInfrared/
+ * available at this url : www.gimpguru.org/Tutorials/SimulatedInfrared/
  *
- *  More info about IR film can be seen at this url :
- *
- *  http://www.pauck.de/marco/photo/infrared/comparison_of_films/comparison_of_films.html
+ * More info about IR film can be seen at this url :
+ * www.pauck.de/marco/photo/infrared/comparison_of_films/comparison_of_films.html
  */
 void InfraredFilter::filterImage()
 {
@@ -98,7 +99,7 @@ void InfraredFilter::filterImage()
 
     // Infrared film variables depending on Sensibility.
     // We can reproduce famous Ilford SFX200 infrared film
-    // http://www.ilford.com/html/us_english/prod_html/sfx200/sfx200.html
+    // www.ilford.com/html/us_english/prod_html/sfx200/sfx200.html
     // This film have a sensibility escursion from 200 to 800 ISO.
     // Over 800 ISO, we reproduce The Kodak HIE high speed infrared film.
 
@@ -146,9 +147,12 @@ void InfraredFilter::filterImage()
     // This way simulate Infrared film dispersion for the highlights.
 
     DImg BWBlurImage(Width, Height, sixteenBit);
+
+    // cppcheck-suppress unusedScopedObject
     BlurFilter(this, BWImage, BWBlurImage, 10, 20, blurRadius);
 
     // save a memcpy
+
     pOverlayBits = BWBlurImage.bits();
 
     postProgress(40);
@@ -195,6 +199,7 @@ void InfraredFilter::filterImage()
         }
 
         // Update progress bar in dialog.
+
         progress = (int)(50.0 + ((double)x * 50.0) / Width);
 
         if ((progress % 5) == 0)

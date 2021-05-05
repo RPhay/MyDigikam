@@ -7,7 +7,7 @@
  * Description : Item icon view interface.
  *
  * Copyright (C) 2002-2005 by Renchi Raju <renchi dot raju at gmail dot com>
- * Copyright (C) 2002-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2002-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2009-2011 by Johannes Wienke <languitar at semipol dot de>
  * Copyright (C) 2010-2011 by Andi Clemens <andi dot clemens at gmail dot com>
  *
@@ -53,7 +53,6 @@ class PAlbum;
 class TAlbum;
 class BatchSyncMetadata;
 class FilterStatusBar;
-class SlideShowSettings;
 class DCategorizedView;
 class ItemFilterModel;
 
@@ -65,7 +64,7 @@ public:
 
     explicit ItemIconView(QWidget* const parent,
                           DModelFactory* const modelCollection);
-    ~ItemIconView();
+    ~ItemIconView() override;
 
     void applySettings();
 
@@ -92,6 +91,7 @@ public Q_SLOTS:
     void slotImageAddToCurrentQueue();
     void slotImageAddToNewQueue();
     void slotImageAddToExistingQueue(int);
+
     //@}
 
     // ----------------------------------------------------------------------------------------
@@ -149,7 +149,7 @@ public:
 
 public Q_SLOTS:
 
-    void slotNofificationError(const QString& message, int type);
+    void slotNotificationError(const QString& message, int type);
 
     void slotLeftSideBarActivate(QWidget* widget);
     void slotLeftSideBarActivate(SidebarWidget* widget);
@@ -201,29 +201,6 @@ public Q_SLOTS:
     // ----------------------------------------------------------------------------------------
 
     //@{
-    /// Slide-show methods - itemiconview_slideshow.cpp
-
-private:
-
-    void slideShow(const ItemInfoList& infoList);
-
-public Q_SLOTS:
-
-    void slotSlideShowAll();
-    void slotSlideShowSelection();
-    void slotSlideShowRecursive();
-    void slotSlideShowManualFromCurrent();
-    void slotSlideShowManualFrom(const ItemInfo& info);
-
-private Q_SLOTS:
-
-    void slotSlideShowBuilderComplete(const SlideShowSettings& settings);
-
-    //@}
-
-    // ----------------------------------------------------------------------------------------
-
-    //@{
     /// Album management methods - itemiconview_album.cpp
 
 public:
@@ -243,8 +220,8 @@ public Q_SLOTS:
     void slotRenameAlbum();
     void slotAlbumPropsEdit();
     void slotAlbumOpenInFileManager();
-    void slotAlbumHistoryBack(int steps=1);
-    void slotAlbumHistoryForward(int steps=1);
+    void slotAlbumHistoryBack(int steps = 1);
+    void slotAlbumHistoryForward(int steps = 1);
     void slotAlbumWriteMetadata();
     void slotAlbumReadMetadata();
     void slotAlbumSelected(const QList<Album*>& albums);
@@ -254,17 +231,19 @@ public Q_SLOTS:
     void slotGotoTagAndItem(int tagID);
 
     void slotSelectAlbum(const QUrl& url);
+    void slotSetCurrentUrlWhenAvailable(const QUrl& url);
     void slotSetCurrentWhenAvailable(const qlonglong id);
 
     void slotSetAsAlbumThumbnail(const ItemInfo& info);
     void slotMoveSelectionToAlbum();
+    void slotCopySelectionTo();
 
 Q_SIGNALS:
 
     void signalAlbumSelected(Album*);
 
 private:
-    
+
     void changeAlbumFromHistory(const QList<Album*>& album, QWidget* const widget);
 
 private Q_SLOTS:
@@ -283,8 +262,7 @@ public Q_SLOTS:
 
     void slotNewKeywordSearch();
     void slotNewAdvancedSearch();
-    void slotNewDuplicatesSearch(PAlbum* album = nullptr);
-    void slotNewDuplicatesSearch(const QList<PAlbum*>& albums);
+    void slotNewDuplicatesSearch(const QList<PAlbum*>& albums = {});
     void slotNewDuplicatesSearch(const QList<TAlbum*>& albums);
     void slotImageFindSimilar();
     void slotImageScanForFaces();
@@ -315,10 +293,10 @@ public Q_SLOTS:
 
 private Q_SLOTS:
 
-    void slotRatingChanged(const QUrl&, int);
-    void slotColorLabelChanged(const QUrl&, int);
-    void slotPickLabelChanged(const QUrl&, int);
-    void slotToggleTag(const QUrl&, int);
+    //void slotRatingChanged(const QUrl&, int);
+    //void slotColorLabelChanged(const QUrl&, int);
+    //void slotPickLabelChanged(const QUrl&, int);
+    //void slotToggleTag(const QUrl&, int);
 
     //@}
 
@@ -329,6 +307,7 @@ private Q_SLOTS:
 
 public:
 
+    int       itemCount()                                                          const;
     QUrl      currentUrl()                                                         const;
     bool      hasCurrentItem()                                                     const;
     ItemInfo  currentInfo()                                                        const;
@@ -358,8 +337,9 @@ public:
     void imageTransform(MetaEngineRotation::TransformationAction transform);
 
 Q_SIGNALS:
-    
+
     void signalNoCurrentItem();
+    void signalSeparationModeChanged(int category);
     void signalSelectionChanged(int numberOfSelectedItems);
     void signalTrashSelectionChanged(const QString& text);
     void signalImageSelected(const ItemInfoList& selectedImage,
@@ -435,6 +415,7 @@ private Q_SLOTS:
     void slotRefreshImagePreview();
     void slotViewModeChanged();
     void slotSetupMetadataFilters(int);
+    void slotSetupExifTool();
 
     void slotShowContextMenu(QContextMenuEvent* event,
                              const QList<QAction*>& extraGroupingActions = QList<QAction*>());

@@ -7,7 +7,7 @@
  * Description : Scanning a single item.
  *
  * Copyright (C) 2007-2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2013-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2013-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -102,10 +102,6 @@ public:
     static QString formatToString(const QString& format);
 
 private:
-
-    // Hidden copy constructor and assignment operator.
-    ItemScanner(const ItemScanner&);
-    ItemScanner& operator=(const ItemScanner&);
 
     static bool hasValidField(const QVariantList& list);
     static bool lessThanForIdentity(const ItemScanInfo& a, const ItemScanInfo& b);
@@ -230,12 +226,6 @@ protected:
     //@{
 
 public:
-
-    /**
-     * Returns Photo-metadata container with user-presentable information.
-     * These methods provide the reverse service: Not writing into the db, but reading from the db.
-     */
-    static void fillMetadataContainer(qlonglong imageid, ImageMetadataContainer* const container);
 
     /**
      * Helper method to return official property name by which
@@ -365,6 +355,12 @@ public:
      * @brief scanBalooInfo - retrieve tags, comments and rating from Baloo Desktop service.
      */
     void scanBalooInfo();
+
+private:
+
+    // Disable
+    ItemScanner(const ItemScanner&)            = delete;
+    ItemScanner& operator=(const ItemScanner&) = delete;
 
 private:
 

@@ -5,9 +5,9 @@
  *
  * Date        : 2010-03-09
  * Description : Local Contrast settings view.
- *               LDR ToneMapper <http://zynaddsubfx.sourceforge.net/other/tonemapping>
+ *               LDR ToneMapper zynaddsubfx.sourceforge.net/other/tonemapping
  *
- * Copyright (C) 2010-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2010-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -46,7 +46,7 @@ class DIGIKAM_EXPORT LocalContrastSettings : public QWidget
 public:
 
     explicit LocalContrastSettings(QWidget* const parent);
-    ~LocalContrastSettings();
+    ~LocalContrastSettings()                          override;
 
     LocalContrastContainer defaultSettings()    const;
     void resetToDefault();

@@ -6,7 +6,7 @@
  * Date        : 2008-11-24
  * Description : Batch Tool utils.
  *
- * Copyright (C) 2008-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2008-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -36,13 +36,9 @@ namespace Digikam
 {
 
 BatchToolSet::BatchToolSet()
-    : index(-1),
+    : index  (-1),
       version(0),
-      group(BatchTool::BaseTool)
-{
-}
-
-BatchToolSet::~BatchToolSet()
+      group  (BatchTool::BaseTool)
 {
 }
 
@@ -70,14 +66,6 @@ QDebug operator<<(QDebug dbg, const BatchToolSet& s)
 
 // ---------------------------------------------------------------------------------------------
 
-AssignedBatchTools::AssignedBatchTools()
-{
-}
-
-AssignedBatchTools::~AssignedBatchTools()
-{
-}
-
 QString AssignedBatchTools::targetSuffix(bool* const extSet) const
 {
     QString suffix;
@@ -85,6 +73,7 @@ QString AssignedBatchTools::targetSuffix(bool* const extSet) const
     foreach (const BatchToolSet& set, m_toolsList)
     {
         BatchTool* const tool = BatchToolsFactory::instance()->findTool(set.name, set.group);
+
         if (tool)
         {
             QString s = tool->outputSuffix();

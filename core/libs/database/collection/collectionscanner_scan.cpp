@@ -8,7 +8,7 @@
  *
  * Copyright (C) 2005-2006 by Tom Albers <tomalbers at kde dot nl>
  * Copyright (C) 2007-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -311,7 +311,7 @@ void CollectionScanner::partialScan(const QString& albumRoot, const QString& alb
         }
     }
 
-    scanForStaleAlbums(locationIdsToScan.toList());
+    scanForStaleAlbums(locationIdsToScan.values());
 
     if (!d->checkObserver())
     {
@@ -395,7 +395,7 @@ qlonglong CollectionScanner::scanFile(const QString& albumRoot, const QString& a
 
 void CollectionScanner::scanFile(const ItemInfo& info, FileScanMode mode)
 {
-    if (info.isNull())
+    if (info.isNull() || !info.isLocationAvailable())
     {
         return;
     }
@@ -497,21 +497,11 @@ void CollectionScanner::scanForStaleAlbums(const QList<int>& locationIdsToScan)
     QList<AlbumShortInfo> albumList = CoreDbAccess().db()->getAlbumShortInfos();
     QList<int> toBeDeleted;
 
-/*
-    // See bug #231598
-    QHash<int, CollectionLocation> albumRoots;
-
-    foreach (const CollectionLocation& location, locations)
-    {
-        albumRoots[location.id()] = location;
-    }
-*/
-
     QList<AlbumShortInfo>::const_iterator it3;
 
     for (it3 = albumList.constBegin() ; it3 != albumList.constEnd() ; ++it3)
     {
-        if (!locationIdsToScan.contains((*it3).albumRootId))
+        if (!locationIdsToScan.contains((*it3).albumRootId) || toBeDeleted.contains((*it3).id))
         {
             continue;
         }
@@ -542,8 +532,12 @@ void CollectionScanner::scanForStaleAlbums(const QList<int>& locationIdsToScan)
 
             if (!dirExist || d->ignoreDirectory.contains(fileInfo.fileName()))
             {
-                toBeDeleted      << (*it3).id;
-                d->scannedAlbums << (*it3).id;
+                // We have an ignored album, all sub-albums have to be ignored
+
+                QList<int> subAlbums = CoreDbAccess().db()->getAlbumAndSubalbumsForPath((*it3).albumRootId,
+                                                                                        (*it3).relativePath);
+                toBeDeleted      << subAlbums;
+                d->scannedAlbums << subAlbums;
             }
         }
     }
@@ -611,9 +605,7 @@ void CollectionScanner::scanForStaleAlbums(const QList<int>& locationIdsToScan)
 
 #endif
 
-                    // Make sure ignored directories are not used in renaming operations
-
-                    if (dirExist && d->ignoreDirectory.contains(fileInfo.fileName()))
+                    if (dirExist)
                     {
                         // Just set a new root/relativePath to the album. Further scanning will care for all cases or error.
 
@@ -678,7 +670,10 @@ void CollectionScanner::scanAlbum(const CollectionLocation& location, const QStr
                                             QDir::Name | QDir::DirsLast);
 
     const QString xmpExt(QLatin1String(".xmp"));
-    int counter = -1;
+
+    int counter          = -1;
+    bool updateAlbumDate = false;
+    QDate albumDate      = QFileInfo(dir.path()).lastModified().date();
 
     foreach (const QString& entry, list)
     {
@@ -701,9 +696,7 @@ void CollectionScanner::scanAlbum(const CollectionLocation& location, const QStr
         {
             // filter with name filter
 
-            QString suffix(info.suffix().toLower());
-
-            if (!d->nameFilters.contains(suffix))
+            if (!d->nameFilters.contains(info.suffix().toLower()))
             {
                 continue;
             }
@@ -716,8 +709,8 @@ void CollectionScanner::scanAlbum(const CollectionLocation& location, const QStr
 
                 itemIdSet.remove(scanInfos.at(index).id);
 
-                bool hasSidecar = (settings.useXMPSidecar4Reading           &&
-                                   (list.contains(info.fileName() + xmpExt) ||
+                bool hasSidecar = (settings.useXMPSidecar4Reading                  &&
+                                   (list.contains(info.fileName() + xmpExt)        ||
                                     list.contains(info.completeBaseName() + xmpExt)));
 
                 scanFileNormal(info, scanInfos.at(index), hasSidecar);
@@ -732,7 +725,23 @@ void CollectionScanner::scanAlbum(const CollectionLocation& location, const QStr
             {
                 //qCDebug(DIGIKAM_DATABASE_LOG) << "Adding item " << info.fileName();
 
-                scanNewFile(info, albumID);
+                // Read the creation date of each image to determine the oldest one
+
+                qlonglong imageId  = scanNewFile(info, albumID);
+
+                ItemInfo itemInfo(imageId);
+                QDate itemDate     = itemInfo.dateTime().date();
+
+                if (itemDate.isValid())
+                {
+                    // Change album date only if the item date is older.
+
+                    if (itemDate < albumDate)
+                    {
+                        albumDate       = itemDate;
+                        updateAlbumDate = true;
+                    }
+                }
 
                 // emit signals for scanned files with much higher granularity
 
@@ -773,6 +782,13 @@ void CollectionScanner::scanAlbum(const CollectionLocation& location, const QStr
         }
     }
 
+    if (updateAlbumDate)
+    {
+        // Write the new album date from the image information
+
+        CoreDbAccess().db()->setAlbumDate(albumID, albumDate);
+    }
+
     if (d->wantSignals && counter)
     {
         emit scannedFiles(counter);
@@ -782,7 +798,7 @@ void CollectionScanner::scanAlbum(const CollectionLocation& location, const QStr
 
     if (!itemIdSet.isEmpty())
     {
-        QList<qlonglong> ids = itemIdSet.toList();
+        QList<qlonglong> ids = itemIdSet.values();
         CoreDbOperationGroup group;
         CoreDbAccess().db()->removeItems(ids, QList<int>() << albumID);
         itemsWereRemoved(ids);
@@ -935,7 +951,7 @@ qlonglong CollectionScanner::scanNewFile(const QFileInfo& info, int albumId)
         }
         else
         {
-            // Establishing identity with the unique hsah
+            // Establishing identity with the unique hash
 
             scanner.newFile(albumId);
         }
@@ -1052,7 +1068,7 @@ void CollectionScanner::finishHistoryScanning()
 
     // stage 2
 
-    ids = d->needResolveHistorySet.toList();
+    ids = d->needResolveHistorySet.values();
     d->needResolveHistorySet.clear();
     historyScanningStage2(ids);
 
@@ -1063,7 +1079,7 @@ void CollectionScanner::finishHistoryScanning()
 
     // stage 3
 
-    ids = d->needTaggingHistorySet.toList();
+    ids = d->needTaggingHistorySet.values();
     d->needTaggingHistorySet.clear();
     historyScanningStage3(ids);
 }

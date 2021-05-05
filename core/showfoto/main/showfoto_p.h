@@ -6,7 +6,7 @@
  * Date        : 2004-11-22
  * Description : stand alone digiKam image editor GUI
  *
- * Copyright (C) 2004-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2004-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2006-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  * Copyright (C) 2013      by Mohamed_Anwer <m_dot_anwer at gmx dot com>
  *
@@ -52,16 +52,16 @@
 #include <QMessageBox>
 #include <QApplication>
 #include <QMimeType>
-#include <QTemporaryFile>
 #include <QSplitter>
 #include <QAction>
 #include <QUrl>
+#include <QScopedPointer>
 
 // KDE includes
 
 #include <kactioncollection.h>
 #include <klocalizedstring.h>
-#include "kconfiggroup.h"
+#include <kconfiggroup.h>
 #include <ksharedconfig.h>
 
 // Local includes
@@ -90,7 +90,6 @@
 #include "showfotosetup.h"
 #include "showfotosetupmisc.h"
 #include "setupicc.h"
-#include "slideshow.h"
 #include "statusprogressbar.h"
 #include "thememanager.h"
 #include "thumbnailsize.h"
@@ -112,23 +111,23 @@ class Q_DECL_HIDDEN ShowFoto::Private
 public:
 
     explicit Private()
-      : validIccPath(true),
-        itemsNb(0),
-        vSplitter(nullptr),
-        fileOpenAction(nullptr),
-        openFilesInFolderAction(nullptr),
-        mediaServerAction(nullptr),
-        first(nullptr),
-        model(nullptr),
-        dDHandler(nullptr),
-        filterModel(nullptr),
-        thumbLoadThread(nullptr),
-        thumbBar(nullptr),
-        thumbBarDock(nullptr),
-        normalDelegate(nullptr),
-        rightSideBar(nullptr),
-        splash(nullptr),
-        settings(nullptr)
+      : validIccPath            (true),
+        itemsNb                 (0),
+        vSplitter               (nullptr),
+        fileOpenAction          (nullptr),
+        openFilesInFolderAction (nullptr),
+        mediaServerAction       (nullptr),
+        first                   (nullptr),
+        model                   (nullptr),
+        dDHandler               (nullptr),
+        filterModel             (nullptr),
+        thumbLoadThread         (nullptr),
+        thumbBar                (nullptr),
+        thumbBarDock            (nullptr),
+        normalDelegate          (nullptr),
+        rightSideBar            (nullptr),
+        splash                  (nullptr),
+        settings                (nullptr)
     {
     }
 

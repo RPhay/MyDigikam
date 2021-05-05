@@ -25,8 +25,9 @@
 
 // Qt includes
 
-#include <QtTest>
+#include <QTest>
 #include <QFileInfo>
+#include <QScopedPointer>
 
 // Local includes
 
@@ -109,13 +110,13 @@ void TimeStampUpdateTest::cleanupTestCase()
  */
 void TimeStampUpdateTest::cleanup()
 {
-    DMetadata meta;
-    meta.setMetadataWritingMode(MetaEngine::WRITE_TO_FILE_ONLY);
-    meta.setUpdateFileTimeStamp(true);
-    meta.load(originalImageFile);
-    meta.removeExifTag("Exif.Image.Model");
-    QVERIFY2(meta.applyChanges(), "Exif.Image.Model is removed");
-    QVERIFY(meta.getExifTagString("Exif.Image.Model").isEmpty());
+    QScopedPointer<DMetadata> meta(new DMetadata);
+    meta->setMetadataWritingMode(MetaEngine::WRITE_TO_FILE_ONLY);
+    meta->setUpdateFileTimeStamp(true);
+    meta->load(originalImageFile);
+    meta->removeExifTag("Exif.Image.Model");
+    QVERIFY2(meta->applyChanges(), "Exif.Image.Model is removed");
+    QVERIFY(meta->getExifTagString("Exif.Image.Model").isEmpty());
 
     CollectionScanner().scanFile(originalImageFile, CollectionScanner::Rescan);
 
@@ -149,17 +150,17 @@ void TimeStampUpdateTest::testRescanImageIfModifiedSet2True()
     QVERIFY2(dbModel.at(0).toString().isEmpty(), "Exif.Image.Model should be empty");
 
     // Verify that Exif.Image.Model in image file is empty
-    DMetadata meta;
-    meta.setMetadataWritingMode(MetaEngine::WRITE_TO_FILE_ONLY);
-    meta.setUpdateFileTimeStamp(true);
-    meta.load(originalImageFile);
-    QString model = meta.getExifTagString("Exif.Image.Model");
+    QScopedPointer<DMetadata> meta(new DMetadata);
+    meta->setMetadataWritingMode(MetaEngine::WRITE_TO_FILE_ONLY);
+    meta->setUpdateFileTimeStamp(true);
+    meta->load(originalImageFile);
+    QString model = meta->getExifTagString("Exif.Image.Model");
     QVERIFY(model.isEmpty());
 
     // Change the metadata in image file
-    meta.setExifTagString("Exif.Image.Model", QLatin1String("TimeStampUpdateTestCamera"));
-    QVERIFY2(meta.applyChanges(), "Exif.Image.Model is added");
-    QVERIFY(meta.getExifTagString("Exif.Image.Model") == QLatin1String("TimeStampUpdateTestCamera"));
+    meta->setExifTagString("Exif.Image.Model", QLatin1String("TimeStampUpdateTestCamera"));
+    QVERIFY2(meta->applyChanges(), "Exif.Image.Model is added");
+    QVERIFY(meta->getExifTagString("Exif.Image.Model") == QLatin1String("TimeStampUpdateTestCamera"));
 
     // Simulate restart of Digikam
     // The scan should detect that image file has changed
@@ -195,17 +196,17 @@ void TimeStampUpdateTest::testRescanImageIfModifiedSet2False()
     QVERIFY2(dbModel.at(0).toString().isEmpty(), "Exif.Image.Model should be empty");
 
     // Verify that Exif.Image.Model in image file is empty
-    DMetadata meta;
-    meta.setMetadataWritingMode(MetaEngine::WRITE_TO_FILE_ONLY);
-    meta.setUpdateFileTimeStamp(true);
-    meta.load(originalImageFile);
-    QString model = meta.getExifTagString("Exif.Image.Model");
+    QScopedPointer<DMetadata> meta(new DMetadata);
+    meta->setMetadataWritingMode(MetaEngine::WRITE_TO_FILE_ONLY);
+    meta->setUpdateFileTimeStamp(true);
+    meta->load(originalImageFile);
+    QString model = meta->getExifTagString("Exif.Image.Model");
     QVERIFY(model.isEmpty());
 
     // Change the metadata in image file
-    meta.setExifTagString("Exif.Image.Model", QLatin1String("TimeStampUpdateTestCamera"));
-    QVERIFY2(meta.applyChanges(), "Exif.Image.Model is added");
-    QVERIFY(meta.getExifTagString("Exif.Image.Model") == QLatin1String("TimeStampUpdateTestCamera"));
+    meta->setExifTagString("Exif.Image.Model", QLatin1String("TimeStampUpdateTestCamera"));
+    QVERIFY2(meta->applyChanges(), "Exif.Image.Model is added");
+    QVERIFY(meta->getExifTagString("Exif.Image.Model") == QLatin1String("TimeStampUpdateTestCamera"));
 
     // Simulate restart of Digikam
     // The scan should detect that image file has changed

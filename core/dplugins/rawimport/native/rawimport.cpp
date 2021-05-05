@@ -6,7 +6,7 @@
  * Date        : 2008-08-20
  * Description : Raw import tool
  *
- * Copyright (C) 2008-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2008-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -52,7 +52,7 @@ class Q_DECL_HIDDEN RawImport::Private
 public:
 
     explicit Private()
-      : settingsBox(nullptr),
+      : settingsBox  (nullptr),
         previewWidget(nullptr)
     {
     }
@@ -65,7 +65,7 @@ public:
 
 RawImport::RawImport(const QUrl& url, QObject* const parent)
     : EditorToolThreaded(parent),
-      d(new Private)
+      d                 (new Private)
 {
     d->previewWidget = new RawPreview(url, nullptr);
     d->settingsBox   = new RawSettingsBox(url, nullptr);
@@ -141,7 +141,7 @@ DImg RawImport::postProcessedImage() const
 
 bool RawImport::hasPostProcessedImage() const
 {
-    return !demosaicingSettingsDirty() && !d->postProcessedImage.isNull();
+    return (!demosaicingSettingsDirty() && !d->postProcessedImage.isNull());
 }
 
 bool RawImport::demosaicingSettingsDirty() const
@@ -152,19 +152,23 @@ bool RawImport::demosaicingSettingsDirty() const
 void RawImport::slotUpdatePreview()
 {
     DRawDecoding settings = rawDecodingSettings();
+
     // NOTE: we will NOT use Half Size raw extraction here, because we cannot check effects of demosaicing options in this mode.
+
     d->previewWidget->setDecodingSettings(settings);
 }
 
 void RawImport::slotAbort()
 {
     // If preview loading, don't play with threaded filter interface.
+
     if (renderingMode() == EditorToolThreaded::NoneRendering)
     {
         d->previewWidget->cancelLoading();
         d->settingsBox->histogramBox()->histogram()->stopHistogramComputation();
         EditorToolIface::editorToolIface()->setToolStopProgress();
         setBusy(false);
+
         return;
     }
 
@@ -196,6 +200,7 @@ void RawImport::preparePreview()
 void RawImport::setPreviewImage()
 {
     // Preserve metadata from loaded image, and take post-processed image data
+
     d->postProcessedImage = d->previewWidget->demosaicedImage().copyMetaData();
     DImg data             = filter()->getTargetImage();
     d->postProcessedImage.putImageData(data.width(), data.height(), data.sixteenBit(), data.hasAlpha(),
@@ -226,17 +231,18 @@ void RawImport::slotScaleChanged()
 void RawImport::slotOk()
 {
     // NOTE: work around bug #211810
+
     if (d->settingsBox->curvesWidget()->isSixteenBits() != d->settingsBox->settings().rawPrm.sixteenBitsImage)
     {
         d->settingsBox->curvesWidget()->updateData(DImg(0, 0, d->settingsBox->settings().rawPrm.sixteenBitsImage));
     }
 
-    EditorTool::slotOk();
+    EditorTool::slotOk();       // clazy:exclude=skipped-base-method
 }
 
 void RawImport::slotCancel()
 {
-    EditorTool::slotCancel();
+    EditorTool::slotCancel();   // clazy:exclude=skipped-base-method
 }
 
 void RawImport::setBackgroundColor(const QColor& bg)

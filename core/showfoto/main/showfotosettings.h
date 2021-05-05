@@ -7,7 +7,7 @@
  * Description : Settings for Showfoto
  *
  * Copyright (C) 2013-2014 by Mohamed_Anwer <m_dot_anwer at gmx dot com>
- * Copyright (C) 2013-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2013-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -58,6 +58,12 @@ public:
 
     int getRightSideBarStyle() const;
     void setRightSideBarStyle(int style);
+
+    int getUpdateType() const;
+    void setUpdateType(int type);
+
+    bool getUpdateWithDebug() const;
+    void setUpdateWithDebug(bool dbg);
 
     QString getApplicationStyle() const;
     void setApplicationStyle(const QString& style);
@@ -134,12 +140,16 @@ public:
     void setShowPhotoMode(bool show);
 
     QFont getToolTipFont() const;
-    void setToolTipFont(QFont font);
+    void setToolTipFont(const QFont& font);
 
 private:
 
+    // Disable
     ShowfotoSettings();
-    ~ShowfotoSettings();
+    explicit ShowfotoSettings(QObject*) = delete;
+    ~ShowfotoSettings() override;
+
+private:
 
     void init();
 

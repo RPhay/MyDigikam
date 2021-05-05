@@ -121,8 +121,10 @@ void ItemAttributesWatch::fileMetadataChanged(const QUrl& url)
 void ItemAttributesWatch::slotImageFieldChanged(qlonglong imageId, int field)
 {
     // Translate signals
+
     // TODO: compress?
     // TODO!!: we have databaseaccess lock here as well. Make connection queued in one place (above!)
+
     switch (field)
     {
         case DatabaseAttributesWatch::ImageComment:

@@ -6,7 +6,7 @@
  * Date        : 2009-05-07
  * Description : Context menu for GPS list view.
  *
- * Copyright (C) 2010-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2010-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2009-2014 by Michael G. Hansen <mike at mghansen dot de>
  *
  * This program is free software; you can redistribute it
@@ -59,22 +59,22 @@ class Q_DECL_HIDDEN GPSItemListContextMenu::Private
 public:
 
     explicit Private()
-      : enabled(true),
-        actionBookmark(nullptr),
-        bookmarkOwner(nullptr),
-        actionCopy(nullptr),
-        actionPaste(nullptr),
-        actionPasteSwap(nullptr),
-        actionRemoveCoordinates(nullptr),
-        actionRemoveAltitude(nullptr),
-        actionRemoveUncertainty(nullptr),
-        actionRemoveSpeed(nullptr),
+      : enabled                     (true),
+        actionBookmark              (nullptr),
+        bookmarkOwner               (nullptr),
+        actionCopy                  (nullptr),
+        actionPaste                 (nullptr),
+        actionPasteSwap             (nullptr),
+        actionRemoveCoordinates     (nullptr),
+        actionRemoveAltitude        (nullptr),
+        actionRemoveUncertainty     (nullptr),
+        actionRemoveSpeed           (nullptr),
         actionLookupMissingAltitudes(nullptr),
-        imagesList(nullptr),
-        altitudeLookup(),
-        altitudeUndoCommand(nullptr),
-        altitudeRequestedCount(0),
-        altitudeReceivedCount(0)
+        imagesList                  (nullptr),
+        altitudeLookup              (),
+        altitudeUndoCommand         (nullptr),
+        altitudeRequestedCount      (0),
+        altitudeReceivedCount       (0)
     {
     }
 
@@ -450,7 +450,7 @@ void GPSItemListContextMenu::pasteActionTriggered(bool swap)
         }
     }
 
-    if ((!foundData)&&(mimedata->hasText()))
+    if (!foundData && mimedata->hasText())
     {
         const QString textdata         = mimedata->text();
         bool foundGeoUrl               = false;
@@ -469,15 +469,15 @@ void GPSItemListContextMenu::pasteActionTriggered(bool swap)
 
             if ((parts.size() == 3) || (parts.size() == 2))
             {
-                double ptLatitude  = 0.0;
+                double ptLongitude = 0.0;
                 double ptAltitude  = 0.0;
                 bool haveAltitude  = false;
                 bool okay          = true;
-                double ptLongitude = parts[0].toDouble(&okay);
+                double ptLatitude  = parts[0].toDouble(&okay);
 
                 if (okay)
                 {
-                    ptLatitude = parts[1].toDouble(&okay);
+                    ptLongitude = parts[1].toDouble(&okay);
                 }
 
                 if (okay && (parts.size() == 3))
@@ -492,7 +492,7 @@ void GPSItemListContextMenu::pasteActionTriggered(bool swap)
                 {
                     if (swap)
                     {
-                        std::swap(ptLongitude, ptLatitude);
+                        std::swap(ptLatitude, ptLongitude);
                     }
 
                     GeoCoordinates coordinates(ptLatitude, ptLongitude);
@@ -734,7 +734,7 @@ void GPSItemListContextMenu::slotLookupMissingAltitudes()
     connect(d->altitudeLookup, SIGNAL(signalDone()),
             this, SLOT(slotAltitudeLookupDone()));
 
-    emit signalSetUIEnabled(false, this, QLatin1String(SLOT(slotAltitudeLookupCancel())));
+    emit signalSetUIEnabled(false, this, QString::fromUtf8(SLOT(slotAltitudeLookupCancel())));
     emit signalProgressSetup(altitudeQueries.count(), i18n("Looking up altitudes"));
 
     d->altitudeUndoCommand    = new GPSUndoCommand();
@@ -777,7 +777,7 @@ void GPSItemListContextMenu::slotAltitudeLookupReady(const QList<int>& readyRequ
         d->altitudeReceivedCount++;
     }
 
-    signalProgressChanged(d->altitudeReceivedCount);
+    emit signalProgressChanged(d->altitudeReceivedCount);
 }
 
 void GPSItemListContextMenu::slotAltitudeLookupDone()

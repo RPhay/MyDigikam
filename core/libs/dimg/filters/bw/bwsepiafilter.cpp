@@ -6,7 +6,7 @@
  * Date        : 2005-03-06
  * Description : black and white image filter.
  *
- * Copyright (C) 2005-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2005-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2010      by Martin Klapetek <martin dot klapetek at gmail dot com>
  *
  * This program is free software; you can redistribute it
@@ -47,17 +47,17 @@ class Q_DECL_HIDDEN BWSepiaFilter::Private
 public:
 
     explicit Private()
-      : redAttn(0.0),
+      : redAttn  (0.0),
         greenAttn(0.0),
-        blueAttn(0.0),
-        redMult(0.0),
+        blueAttn (0.0),
+        redMult  (0.0),
         greenMult(0.0),
-        blueMult(0.0),
-        settings(false)
+        blueMult (0.0),
+        settings (false)
     {
     }
 
-    // Color filter attenuation in percents.
+    /// Color filter attenuation in percents.
     double           redAttn;
     double           greenAttn;
     double           blueAttn;
@@ -72,14 +72,14 @@ public:
 
 BWSepiaFilter::BWSepiaFilter(QObject* const parent)
     : DImgThreadedFilter(parent),
-      d(new Private)
+      d                 (new Private)
 {
     initFilter();
 }
 
 BWSepiaFilter::BWSepiaFilter(DImg* const orgImage, QObject* const parent, const BWSepiaContainer& settings)
     : DImgThreadedFilter(orgImage, parent, QLatin1String("BWSepiaFilter")),
-      d(new Private)
+      d                 (new Private)
 {
     d->settings = settings;
     initFilter();
@@ -142,7 +142,7 @@ void BWSepiaFilter::filterImage()
     }
 }
 
-DImg BWSepiaFilter::getThumbnailForEffect(DImg& img)
+DImg BWSepiaFilter::getThumbnailForEffect(const DImg& img)
 {
     postProgress(10);
     DImg thumb = img.copy();

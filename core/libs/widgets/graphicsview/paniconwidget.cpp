@@ -10,7 +10,7 @@
  * Copyright (C) 1997      by Tim D. Gilman (tdgilman at best dot org)
  * Copyright (C) 1998-2001 by Mirko Boehm (mirko at kde dot org)
  * Copyright (C) 2007      by John Layt <john at layt dot net>
- * Copyright (C) 2004-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2004-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -83,9 +83,10 @@ public:
 
 // -------------------------------------------------------------------
 
-class Q_DECL_HIDDEN PanIconFrame::Private::OutsideClickCatcher
-    : public QObject
+class Q_DECL_HIDDEN PanIconFrame::Private::OutsideClickCatcher : public QObject
 {
+    Q_OBJECT
+
 public:
 
     explicit OutsideClickCatcher(QObject* const parent = nullptr)
@@ -94,7 +95,7 @@ public:
     {
     }
 
-    ~OutsideClickCatcher()
+    ~OutsideClickCatcher() override
     {
     }
 
@@ -130,9 +131,9 @@ public:
 // -------------------------------------------------------------------
 
 PanIconFrame::Private::Private(PanIconFrame* const qq)
-    : q(qq),
-      result(0), // rejected
-      main(nullptr),
+    : q                  (qq),
+      result             (0), // rejected
+      main               (nullptr),
       outsideClickCatcher(new OutsideClickCatcher)
 {
     outsideClickCatcher->setPopupFrame(q);
@@ -147,7 +148,7 @@ PanIconFrame::Private::~Private()
 
 PanIconFrame::PanIconFrame(QWidget* const parent)
     : QFrame(parent, Qt::Popup),
-      d(new Private(this))
+      d     (new Private(this))
 {
     setFrameStyle(QFrame::Box | QFrame::Raised);
     setMidLineWidth(2);
@@ -271,18 +272,18 @@ class Q_DECL_HIDDEN PanIconWidget::Private
 public:
 
     explicit Private()
-      : moveSelection(false),
-        flicker(false),
-        width(0),
-        height(0),
-        zoomedOrgWidth(0),
-        zoomedOrgHeight(0),
-        orgWidth(0),
-        orgHeight(0),
-        xpos(0),
-        ypos(0),
-        zoomFactor(1.0),
-        timer(nullptr)
+      : moveSelection   (false),
+        flicker         (false),
+        width           (0),
+        height          (0),
+        zoomedOrgWidth  (0),
+        zoomedOrgHeight (0),
+        orgWidth        (0),
+        orgHeight       (0),
+        xpos            (0),
+        ypos            (0),
+        zoomFactor      (1.0),
+        timer           (nullptr)
     {
     }
 
@@ -311,7 +312,7 @@ public:
 
 PanIconWidget::PanIconWidget(QWidget* const parent)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     d->timer = new QTimer(this);
     d->timer->setInterval(800);
@@ -620,3 +621,5 @@ void PanIconWidget::slotFlickerTimer()
 }
 
 } // namespace Digikam
+
+#include "paniconwidget.moc"

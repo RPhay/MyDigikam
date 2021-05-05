@@ -7,7 +7,7 @@
  * Description : Exiv2 library interface.
  *               Embedded preview loading.
  *
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2006-2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  *
  * This program is free software; you can redistribute it
@@ -56,17 +56,17 @@ public:
     ~MetaEnginePreviews();
 
     /// Returns the pixel size of the original image, as read from the file (not the metadata).
-    QSize originalSize() const;
+    QSize originalSize()        const;
 
     /// Returns the mimeType of the original image, detected from the file's content.
-    QString originalMimeType() const;
+    QString originalMimeType()  const;
 
     /// Returns if there are any preview images available
     bool       isEmpty();
 
     /// Returns how many embedded previews are available
-    int        count();
-    int        size() { return count(); }
+    int        count()          const;
+    int        size()           const;
 
     /**
      * For each contained preview image, return the size
@@ -94,9 +94,11 @@ public:
 
 private:
 
-    // Hidden copy constructor and assignment operator.
-    MetaEnginePreviews(const MetaEnginePreviews&);
-    MetaEnginePreviews& operator=(const MetaEnginePreviews&);
+    // Disable
+    MetaEnginePreviews(const MetaEnginePreviews&)            = delete;
+    MetaEnginePreviews& operator=(const MetaEnginePreviews&) = delete;
+
+private:
 
     class Private;
     Private* const d;

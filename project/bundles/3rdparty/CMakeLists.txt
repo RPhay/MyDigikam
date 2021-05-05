@@ -1,6 +1,6 @@
 # Rules to build 3rd-party libraries for digiKam bundles.
 #
-# Copyright (c) 2015-2020 by Gilles Caulier  <caulier dot gilles at gmail dot com>
+# Copyright (c) 2015-2021 by Gilles Caulier  <caulier dot gilles at gmail dot com>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
@@ -8,7 +8,7 @@
 
 project(digikam-bundles)
 
-cmake_minimum_required(VERSION 2.8.6)
+cmake_minimum_required(VERSION 3.3.2)
 
 function(JoinListAsString VALUES GLUE OUTPUT)
     string(REPLACE ";" "${GLUE}" _TMP_STR "${VALUES}")
@@ -36,8 +36,8 @@ set(TOP_INST_DIR ${INSTALL_ROOT})
 set(EXTPREFIX "${TOP_INST_DIR}")
 set(CMAKE_PREFIX_PATH "${EXTPREFIX}")
 
-message( STATUS "CMAKE_GENERATOR: ${CMAKE_GENERATOR}")
-message( STATUS "CMAKE_CL_64: ${CMAKE_CL_64}")
+message(STATUS "CMAKE_GENERATOR: ${CMAKE_GENERATOR}")
+message(STATUS "CMAKE_CL_64:     ${CMAKE_CL_64}")
 
 set(GLOBAL_BUILD_TYPE RelWithDebInfo)
 set(GLOBAL_PROFILE ${GLOBAL_PROFILE} -DBUILD_TESTING=false)
@@ -53,7 +53,7 @@ function(GetKF5ApplicationMd5Sums
 
         # Extract MD5 sums of KF5 application directly from server.
         execute_process(COMMAND
-                        wget -q -O - -o /dev/null http://download.kde.org/stable/applications/${version}/src/${name}-${version}.tar.xz.mirrorlist
+                        wget -q -O - -o /dev/null http://download.kde.org/stable/release-service/${version}/src/${name}-${version}.tar.xz.mirrorlist
                         COMMAND
                         grep "MD5 Hash"
                         COMMAND
@@ -65,15 +65,11 @@ function(GetKF5ApplicationMd5Sums
                         OUTPUT_STRIP_TRAILING_WHITESPACE
         )
 
-        if(NOT ${wgetresult} MATCHES 0)
-            message(FATAL_ERROR "Cannot download MD5 sum for ${name}!")
-        endif()
-
     elseif(APPLE)
 
         # Extract MD5 sums of KF5 application directly from server.
         execute_process(COMMAND
-                            wget -q -O - -o /dev/null http://download.kde.org/stable/applications/${version}/src/${name}-${version}.tar.xz.mirrorlist
+                            wget -q -O - -o /dev/null http://download.kde.org/stable/release-service/${version}/src/${name}-${version}.tar.xz.mirrorlist
                         COMMAND
                             grep "MD5 Hash"
                         COMMAND
@@ -93,15 +89,11 @@ function(GetKF5ApplicationMd5Sums
                         OUTPUT_STRIP_TRAILING_WHITESPACE
         )
 
-        if(NOT ${wgetresult} MATCHES 0)
-            message(FATAL_ERROR "Cannot download MD5 sum for ${name}!")
-        endif()
-
     else() # Linux
 
         # Extract MD5 sums of KF5 application directly from server.
         execute_process(COMMAND
-                        wget -q -O - -o /dev/null http://download.kde.org/stable/applications/${version}/src/${name}-${version}.tar.xz.mirrorlist
+                        wget -q -O - -o /dev/null http://download.kde.org/stable/release-service/${version}/src/${name}-${version}.tar.xz.mirrorlist
                         COMMAND
                         grep "MD5 Hash"
                         COMMAND
@@ -112,10 +104,6 @@ function(GetKF5ApplicationMd5Sums
                         md5sm
                         OUTPUT_STRIP_TRAILING_WHITESPACE
         )
-
-        if(NOT ${wgetresult} MATCHES 0)
-            message(FATAL_ERROR "Cannot download MD5 sum for ${name}!")
-        endif()
 
     endif()
 
@@ -130,6 +118,7 @@ endfunction()
 
 # this list must be dependency-ordered
 
+add_subdirectory(ext_cmake)
 add_subdirectory(ext_jpeg)
 add_subdirectory(ext_jasper)
 add_subdirectory(ext_png)
@@ -153,8 +142,8 @@ add_subdirectory(ext_qtav)
 add_subdirectory(ext_kf5_frameworks)
 add_subdirectory(ext_marble)
 add_subdirectory(ext_libksane)
-add_subdirectory(ext_kcalcore)
 add_subdirectory(ext_ffmpeg)
 add_subdirectory(ext_drmingw)
 add_subdirectory(ext_imagemagick)
 add_subdirectory(ext_gmicqt)
+add_subdirectory(ext_mosaicwall)

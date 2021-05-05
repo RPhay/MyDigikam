@@ -6,7 +6,7 @@
  * Date        : 2004-02-25
  * Description : a tool to e-mailing images
  *
- * Copyright (C) 2004-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2004-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2010      by Andi Clemens <andi dot clemens at googlemail dot com>
  * Copyright (C) 2006      by Tom Albers <tomalbers at kde dot nl>
  * Copyright (C) 2006      by Michael Hoechstetter <michael dot hoechstetter at gmx dot de>
@@ -120,6 +120,7 @@ void MailProcess::firstStage()
         emit signalMessage(i18n("Cannot create a temporary directory"), true);
         slotCancel();
         emit signalDone(false);
+
         return;
     }
 
@@ -169,7 +170,10 @@ void MailProcess::slotCancel()
 
 void MailProcess::slotStartingResize(const QUrl& orgUrl)
 {
-    if (d->cancel) return;
+    if (d->cancel)
+    {
+        return;
+    }
 
     QString text = i18n("Resizing %1", orgUrl.fileName());
     emit signalMessage(text, false);
@@ -177,7 +181,10 @@ void MailProcess::slotStartingResize(const QUrl& orgUrl)
 
 void MailProcess::slotFinishedResize(const QUrl& orgUrl, const QUrl& emailUrl, int percent)
 {
-    if (d->cancel) return;
+    if (d->cancel)
+    {
+        return;
+    }
 
     emit signalProgress((int)(80.0*(percent/100.0)));
     qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << emailUrl;
@@ -190,7 +197,10 @@ void MailProcess::slotFinishedResize(const QUrl& orgUrl, const QUrl& emailUrl, i
 
 void MailProcess::slotFailedResize(const QUrl& orgUrl, const QString& error, int percent)
 {
-    if (d->cancel) return;
+    if (d->cancel)
+    {
+        return;
+    }
 
     emit signalProgress((int)(80.0*(percent/100.0)));
     QString text = i18n("Failed to resize %1: %2", orgUrl.fileName(), error);
@@ -201,11 +211,15 @@ void MailProcess::slotFailedResize(const QUrl& orgUrl, const QString& error, int
 
 void MailProcess::slotCompleteResize()
 {
-    if (d->cancel) return;
+    if (d->cancel)
+    {
+        return;
+    }
 
     if (!showFailedResizedImages())
     {
         slotCancel();
+
         return;
     }
 
@@ -214,15 +228,20 @@ void MailProcess::slotCompleteResize()
 
 void MailProcess::secondStage()
 {
-    if (d->cancel) return;
+    if (d->cancel)
+    {
+        return;
+    }
 
     // If the initial list of files contained only unsupported file formats,
     // and the user chose not to attach them without resizing, then there are
     // no files approved for sending.
+
     if (d->attachementFiles.isEmpty())
     {
         emit signalMessage(i18n("There are no files to send"), false);
         emit signalProgress(0);
+
         return;
     }
 
@@ -234,7 +253,10 @@ void MailProcess::secondStage()
 
 void MailProcess::buildPropertiesFile()
 {
-    if (d->cancel) return;
+    if (d->cancel)
+    {
+        return;
+    }
 
     if (d->iface && d->settings->addFileProperties)
     {
@@ -253,10 +275,14 @@ void MailProcess::buildPropertiesFile()
             QString emailFile = it.value().fileName();
 
             if (comments.isEmpty())
+            {
                 comments = i18n("no caption");
+            }
 
             if (tags.isEmpty())
+            {
                 tags = i18n("no keywords");
+            }
 
             propertiesText.append(i18n("file \"%1\":\nOriginal images: %2\n", emailFile, orgFile));
 
@@ -278,6 +304,7 @@ void MailProcess::buildPropertiesFile()
         {
             emit signalMessage(i18n("Image properties file cannot be opened"), true);
             qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "File open error:" << propertiesFile.fileName();
+
             return;
         }
 
@@ -286,6 +313,7 @@ void MailProcess::buildPropertiesFile()
         d->attachementFiles << QUrl::fromLocalFile(propertiesFile.fileName());
 
         qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Image properties file done" << propertiesFile.fileName();
+
         emit signalMessage(i18n("Image properties file done"), false);
     }
 }
@@ -329,11 +357,13 @@ bool MailProcess::showFailedResizedImages() const
 
                 break;
             }
+
             case QMessageBox::No:
             {
                 // Do nothing...
                 break;
             }
+
             case QMessageBox::Cancel:
             {
                 // Stop process...
@@ -509,7 +539,8 @@ bool MailProcess::invokeMailAgent()
                 {
                     QStringList args;
 
-                    for (QList<QUrl>::ConstIterator it = fileList.constBegin() ; it != fileList.constEnd() ; ++it)
+                    for (QList<QUrl>::ConstIterator it = fileList.constBegin() ;
+                         it != fileList.constEnd() ; ++it)
                     {
                         args.append(QLatin1String("--attach"));
                         args.append(QDir::toNativeSeparators((*it).toLocalFile()));
@@ -532,7 +563,7 @@ bool MailProcess::invokeMailAgent()
                 }
 
                 // More info about command lines options with Mozilla & co:
-                // http://www.mozilla.org/docs/command-line-args.html#Syntax_Rules
+                // www.mozilla.org/docs/command-line-args.html#Syntax_Rules
 
                 case MailSettings::NETSCAPE:
                 case MailSettings::THUNDERBIRD:
@@ -542,7 +573,8 @@ bool MailProcess::invokeMailAgent()
                     args.append(QLatin1String("-compose"));
                     QString tmp = QLatin1String("attachment='");
 
-                    for (QList<QUrl>::ConstIterator it = fileList.constBegin() ; it != fileList.constEnd() ; ++it)
+                    for (QList<QUrl>::ConstIterator it = fileList.constBegin() ;
+                         it != fileList.constEnd() ; ++it)
                     {
                         tmp.append(QLatin1String("file://"));
                         tmp.append(QDir::toNativeSeparators((*it).toLocalFile()));
@@ -605,6 +637,7 @@ void MailProcess::invokeMailAgentError(const QString& prog, const QStringList& a
     QString text = i18n("Failed to start \"%1\" program. Check your system.", prog);
     emit signalMessage(text, true);
     slotCleanUp();
+
     emit signalDone(false);
 }
 

@@ -7,7 +7,7 @@
  * Description : Face scan settings
  *
  * Copyright (C) 2010-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2012-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -29,7 +29,6 @@
 
 #include "album.h"
 #include "iteminfo.h"
-#include "recognitiondatabase.h"
 
 namespace Digikam
 {
@@ -66,6 +65,9 @@ public:
     /// Processing power
     bool                                    useFullCpu;
 
+    /// Use Yolo V3 model
+    bool                                    useYoloV3;
+
     /// Detection accuracy
     double                                  accuracy;
 
@@ -78,8 +80,6 @@ public:
     ScanTask                                task;
 
     AlreadyScannedHandling                  alreadyScannedHandling;
-
-    RecognitionDatabase::RecognizeAlgorithm recognizeAlgorithm;
 };
 
 } // namespace Digikam

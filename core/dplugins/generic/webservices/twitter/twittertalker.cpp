@@ -37,6 +37,7 @@
 #include <QPair>
 #include <QFileInfo>
 #include <QWidget>
+#include <QScopedPointer>
 #include <QSettings>
 #include <QMessageBox>
 #include <QApplication>
@@ -91,26 +92,25 @@ public:
 public:
 
     explicit Private()
+      : clientId        (QLatin1String("lkRgRsucipXsUEvKh0ECblreC")),
+        clientSecret    (QLatin1String("6EThTiPQHZTMo7F83iLHrfNO89fkDVvM9hVWaYH9D49xEOyMBe")),
+        authUrl         (QLatin1String("https://api.twitter.com/oauth/authenticate")),
+        requestTokenUrl (QLatin1String("https://api.twitter.com/oauth/request_token")),
+        accessTokenUrl  (QLatin1String("https://api.twitter.com/oauth/access_token")),
+/*
+        scope           (QLatin1String("User.Read Files.ReadWrite")),
+*/
+        redirectUrl     (QLatin1String("http://127.0.0.1:8000")),                            // krazy:exclude=insecurenet
+        uploadUrl       (QLatin1String("https://upload.twitter.com/1.1/media/upload.json")),
+        segmentIndex    (0),
+        parent          (nullptr),
+        netMngr         (nullptr),
+        reply           (nullptr),
+        state           (TW_USERNAME),
+        settings        (nullptr),
+        o1Twitter       (nullptr),
+        requestor       (nullptr)
     {
-        clientId        = QLatin1String("lkRgRsucipXsUEvKh0ECblreC");
-        clientSecret    = QLatin1String("6EThTiPQHZTMo7F83iLHrfNO89fkDVvM9hVWaYH9D49xEOyMBe");
-        //scope          = QLatin1String("User.Read Files.ReadWrite");
-        requestTokenUrl = QLatin1String("https://api.twitter.com/oauth/request_token");
-        authUrl         = QLatin1String("https://api.twitter.com/oauth/authenticate");
-        accessTokenUrl  = QLatin1String("https://api.twitter.com/oauth/access_token");
-        redirectUrl     = QLatin1String("http://127.0.0.1:8000");
-        uploadUrl       = QLatin1String("https://upload.twitter.com/1.1/media/upload.json");
-
-        segmentIndex    = 0;
-
-        state           = TW_USERNAME;
-
-        parent          = nullptr;
-        netMngr         = nullptr;
-        reply           = nullptr;
-        settings        = nullptr;
-        o1Twitter       = nullptr;
-        requestor       = nullptr;
     }
 
 public:
@@ -137,12 +137,10 @@ public:
 
     State                  state;
 
-    DMetadata              meta;
-
     QMap<QString, QString> urlParametersMap;
-
-    //QWebEngineView*        view;
-
+/*
+    QWebEngineView*        view;
+*/
     QSettings*             settings;
 
     O1Twitter*             o1Twitter;
@@ -212,7 +210,7 @@ void TwTalker::link()
     buffer.append(reply->readAll());
     QString response = fromLatin1(buffer);
 
-    QMap<QString, QString> headers;
+    QMultiMap<QString, QString> headers;
 
     // Discard the first line
     response = response.mid(response.indexOf('\n') + 1).trimmed();
@@ -223,7 +221,7 @@ void TwTalker::link()
         QString headerName = line.left(colon).trimmed();
         QString headerValue = line.mid(colon + 1).trimmed();
 
-        headers.insertMulti(headerName, headerValue);
+        headers.insert(headerName, headerValue);
     }
 
     QString oauthToken = headers[oauth_token];
@@ -270,7 +268,7 @@ void TwTalker::slotOpenBrowser(const QUrl& url)
     QDesktopServices::openUrl(url);
 }
 
-QMap<QString, QString> TwTalker::ParseUrlParameters(const QString &url)
+QMap<QString, QString> TwTalker::ParseUrlParameters(const QString& url)
 {
     QMap<QString, QString> urlParameters;
 
@@ -295,6 +293,7 @@ QMap<QString, QString> TwTalker::ParseUrlParameters(const QString &url)
 void TwTalker::slotLinkingFailed()
 {
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "LINK to Twitter fail";
+
     emit signalBusy(false);
 }
 
@@ -303,7 +302,9 @@ void TwTalker::slotLinkingSucceeded()
     if (!d->o1Twitter->linked())
     {
         qCDebug(DIGIKAM_WEBSERVICES_LOG) << "UNLINK to Twitter ok";
+
         emit signalBusy(false);
+
         return;
     }
 
@@ -313,6 +314,7 @@ void TwTalker::slotLinkingSucceeded()
     if (!extraTokens.isEmpty())
     {
         //emit extraTokensReady(extraTokens);
+
         qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Extra tokens in response:";
 
         foreach (const QString& key, extraTokens.keys())
@@ -358,8 +360,8 @@ bool TwTalker::addPhoto(const QString& imgPath,
 
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << imgFileInfo.suffix();
 
-    if (imgFileInfo.suffix() != QLatin1String("gif") && 
-        imgFileInfo.suffix() != QLatin1String("mp4"))
+    if ((imgFileInfo.suffix() != QLatin1String("gif")) &&
+        (imgFileInfo.suffix() != QLatin1String("mp4")))
     {
         QImage image     = PreviewLoadThread::loadHighQualitySynchronously(imgPath).copyQImage();
         qint64 imageSize = QFileInfo(imgPath).size();
@@ -372,22 +374,23 @@ bool TwTalker::addPhoto(const QString& imgPath,
             return false;
         }
 
-
         path = WSToolUtils::makeTemporaryDir("twitter").filePath(imgFileInfo.baseName().trimmed() + QLatin1String(".jpg"));
 
-        if (rescale && (image.width() > maxDim || image.height() > maxDim))
+        if (rescale && ((image.width() > maxDim) || (image.height() > maxDim)))
         {
             image = image.scaled(maxDim, maxDim, Qt::KeepAspectRatio, Qt::SmoothTransformation);
         }
 
         image.save(path, "JPEG", imageQuality);
 
-        if (d->meta.load(imgPath))
+        QScopedPointer<DMetadata> meta(new DMetadata);
+    
+        if (meta->load(imgPath))
         {
-            d->meta.setItemDimensions(image.size());
-            d->meta.setItemOrientation(DMetadata::ORIENTATION_NORMAL);
-            d->meta.setMetadataWritingMode((int)DMetadata::WRITE_TO_FILE_ONLY);
-            d->meta.save(path, true);
+            meta->setItemDimensions(image.size());
+            meta->setItemOrientation(DMetadata::ORIENTATION_NORMAL);
+            meta->setMetadataWritingMode((int)DMetadata::WRITE_TO_FILE_ONLY);
+            meta->save(path, true);
         }
     }
     else
@@ -463,9 +466,10 @@ bool TwTalker::addPhotoInit(const QString& imgPath)
      * Video must be <= 512MB
      */
 
-    if (imageFormat.indexOf(fileFormat) != -1)
+    if      (imageFormat.indexOf(fileFormat) != -1)
     {
         mediaType = "image/jpeg";
+
         if (fileFormat == QLatin1String("gif"))
         {
 
@@ -473,6 +477,7 @@ bool TwTalker::addPhotoInit(const QString& imgPath)
             {
                 emit signalBusy(false);
                 emit signalAddPhotoFailed(i18n("File too big to upload"));
+
                 return false;
             }
 
@@ -484,8 +489,10 @@ bool TwTalker::addPhotoInit(const QString& imgPath)
             {
                 emit signalBusy(false);
                 emit signalAddPhotoFailed(i18n("File too big to upload"));
+
                 return false;
             }
+
             mediaCategory = "TWEET_IMAGE";
         }
     }
@@ -557,6 +564,7 @@ bool TwTalker::addPhotoAppend(const QString& mediaId, int segmentIndex)
     d->state = Private::TW_UPLOADAPPEND;
 
     // Reset form for later uploads
+
     if (segmentIndex == d->segmentIndex)
     {
         form.reset();
@@ -614,7 +622,7 @@ void TwTalker::createTweet(const QString& mediaId)
     QList<O0RequestParameter> reqParams = QList<O0RequestParameter>();
     reqParams << O0RequestParameter(QByteArray("status"), QByteArray(""));
     reqParams << O0RequestParameter(QByteArray("media_ids"), mediaId.toUtf8());
-    QByteArray  postData = O1::createQueryParameters(reqParams);
+    QByteArray  postData                = O1::createQueryParameters(reqParams);
 
     QNetworkRequest request(url);
     request.setHeader(QNetworkRequest::ContentTypeHeader, QLatin1String(O2_MIME_TYPE_XFORM));
@@ -671,49 +679,57 @@ void TwTalker::slotFinished(QNetworkReply* reply)
 
     QByteArray buffer = reply->readAll();
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "status code: " << reply->attribute( QNetworkRequest::HttpStatusCodeAttribute ).toInt();
+    static int segmentIndex = 0;
 
     switch (d->state)
     {
-        static int segmentIndex = 0;
-
         case Private::TW_LISTFOLDERS:
             qCDebug(DIGIKAM_WEBSERVICES_LOG) << "In TW_LISTFOLDERS";
             parseResponseListFolders(buffer);
             break;
+
         case Private::TW_CREATEFOLDER:
             qCDebug(DIGIKAM_WEBSERVICES_LOG) << "In TW_CREATEFOLDER";
             parseResponseCreateFolder(buffer);
             break;
+
         case Private::TW_ADDPHOTO:
             qCDebug(DIGIKAM_WEBSERVICES_LOG) << "In TW_ADDPHOTO";
             parseResponseAddPhoto(buffer);
             break;
+
         case Private::TW_USERNAME:
             qCDebug(DIGIKAM_WEBSERVICES_LOG) << "In TW_USERNAME";
             parseResponseUserName(buffer);
             break;
+
         case Private::TW_CREATETWEET:
             qCDebug(DIGIKAM_WEBSERVICES_LOG) << "In TW_CREATETWEET";
             parseResponseCreateTweet(buffer);
             break;
+
         case Private::TW_UPLOADINIT:
             segmentIndex = 0;
             qCDebug(DIGIKAM_WEBSERVICES_LOG) << "In TW_UPLOADINIT";
             parseResponseAddPhotoInit(buffer);
             break;
+
         case Private::TW_UPLOADAPPEND:
             qCDebug(DIGIKAM_WEBSERVICES_LOG) << "In TW_UPLOADAPPEND (at index " << segmentIndex << ")";
             segmentIndex++;
             parseResponseAddPhotoAppend(buffer, segmentIndex);
             break;
+
         case Private::TW_UPLOADSTATUSCHECK:
             qCDebug(DIGIKAM_WEBSERVICES_LOG) << "In TW_UPLOADSTATUSCHECK";
             parseCheckUploadStatus(buffer);
             break;
+
         case Private::TW_UPLOADFINALIZE:
             qCDebug(DIGIKAM_WEBSERVICES_LOG) << "In TW_UPLOADFINALIZE";
             parseResponseAddPhotoFinalize(buffer);
             break;
+
         default:
             break;
     }
@@ -724,7 +740,7 @@ void TwTalker::slotFinished(QNetworkReply* reply)
 void TwTalker::parseResponseAddPhoto(const QByteArray& data)
 {
     QJsonParseError err;
-    QJsonDocument doc      = QJsonDocument::fromJson(data, &err);
+    QJsonDocument doc = QJsonDocument::fromJson(data, &err);
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "parseResponseAddPhoto: " << doc;
 
     if (err.error != QJsonParseError::NoError)
@@ -735,17 +751,18 @@ void TwTalker::parseResponseAddPhoto(const QByteArray& data)
     }
 
     QJsonObject jsonObject = doc.object();
-    QString mediaId = jsonObject[QLatin1String("media_id_string")].toString();
+    QString mediaId        = jsonObject[QLatin1String("media_id_string")].toString();
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "media id: " << mediaId;
 
     // We haven't emit signalAddPhotoSucceeded() here yet, since we need to update the status first
+
     createTweet(mediaId);
 }
 
 void TwTalker::parseResponseAddPhotoInit(const QByteArray& data)
 {
     QJsonParseError err;
-    QJsonDocument doc      = QJsonDocument::fromJson(data, &err);
+    QJsonDocument doc = QJsonDocument::fromJson(data, &err);
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "parseResponseAddPhotoInit: " << doc;
 
     if (err.error != QJsonParseError::NoError)
@@ -756,10 +773,11 @@ void TwTalker::parseResponseAddPhotoInit(const QByteArray& data)
     }
 
     QJsonObject jsonObject = doc.object();
-    d->mediaId = jsonObject[QLatin1String("media_id_string")].toString();
+    d->mediaId             = jsonObject[QLatin1String("media_id_string")].toString();
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "media id: " << d->mediaId;
 
     // We haven't emit signalAddPhotoSucceeded() here yet, since we need to update the status first
+
     addPhotoAppend(d->mediaId);
 }
 
@@ -786,17 +804,18 @@ void TwTalker::parseResponseAddPhotoAppend(const QByteArray& /*data*/, int segme
 void TwTalker::parseResponseAddPhotoFinalize(const QByteArray& data)
 {
     QJsonParseError err;
-    QJsonDocument doc      = QJsonDocument::fromJson(data, &err);
+    QJsonDocument doc = QJsonDocument::fromJson(data, &err);
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "parseResponseAddPhotoFinalize: " << doc;
 
     if (err.error != QJsonParseError::NoError)
     {
         emit signalBusy(false);
         emit signalAddPhotoFailed(i18n("Failed to upload photo"));
+
         return;
     }
 
-    QJsonObject jsonObject = doc.object();
+    QJsonObject jsonObject    = doc.object();
     QJsonValue processingInfo = jsonObject[QLatin1String("processing_info")];
 
     if (processingInfo != QJsonValue::Undefined)
@@ -806,13 +825,14 @@ void TwTalker::parseResponseAddPhotoFinalize(const QByteArray& data)
 
         if (state == QLatin1String("pending"))
         {
-            QTimer::singleShot(processingInfo.toObject()[QLatin1String("check_after_secs")].toInt()*1000 /*msec*/, 
+            QTimer::singleShot(processingInfo.toObject()[QLatin1String("check_after_secs")].toInt()*1000 /*msec*/,
                                this, SLOT(slotCheckUploadStatus()));
         }
     }
     else
     {
         // We haven't emit signalAddPhotoSucceeded() here yet, since we need to update the status first
+
         createTweet(d->mediaId);
     }
 }
@@ -820,7 +840,7 @@ void TwTalker::parseResponseAddPhotoFinalize(const QByteArray& data)
 void TwTalker::parseCheckUploadStatus(const QByteArray& data)
 {
     QJsonParseError err;
-    QJsonDocument doc      = QJsonDocument::fromJson(data, &err);
+    QJsonDocument doc = QJsonDocument::fromJson(data, &err);
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "parseCheckUploadStatus: " << doc;
 
     if (err.error != QJsonParseError::NoError)
@@ -830,11 +850,11 @@ void TwTalker::parseCheckUploadStatus(const QByteArray& data)
         return;
     }
 
-    QJsonObject jsonObject = doc.object();
+    QJsonObject jsonObject     = doc.object();
     QJsonObject processingInfo = jsonObject[QLatin1String("processing_info")].toObject();
-    QString state = processingInfo[QLatin1String("state")].toString();
+    QString state              = processingInfo[QLatin1String("state")].toString();
 
-    if (state == QLatin1String("in_progress"))
+    if      (state == QLatin1String("in_progress"))
     {
         QTimer::singleShot(processingInfo[QLatin1String("check_after_secs")].toInt()*1000 /*msec*/, this, SLOT(slotCheckUploadStatus()));
     }
@@ -843,15 +863,16 @@ void TwTalker::parseCheckUploadStatus(const QByteArray& data)
         QJsonObject error = processingInfo[QLatin1String("error")].toObject();
         emit signalBusy(false);
         emit signalAddPhotoFailed(i18n("Failed to upload photo\n"
-                                       "Code: %1, name: %2, message: %3", 
-                                       QString::number(error[QLatin1String("code")].toInt()), 
-                                       error[QLatin1String("name")].toString(), 
+                                       "Code: %1, name: %2, message: %3",
+                                       error[QLatin1String("code")].toInt(),
+                                       error[QLatin1String("name")].toString(),
                                        error[QLatin1String("message")].toString()));
         return;
     }
     else // succeeded
     {
         // We haven't emit signalAddPhotoSucceeded() here yet, since we need to update the status first
+
         createTweet(d->mediaId);
     }
 }
@@ -888,6 +909,7 @@ void TwTalker::parseResponseCreateTweet(const QByteArray& data)
     {
         emit signalBusy(false);
         emit signalAddPhotoFailed(i18n("Failed to create tweet for photo uploaded"));
+
         return;
     }
 
@@ -909,7 +931,9 @@ void TwTalker::parseResponseListFolders(const QByteArray& data)
     }
 
     QJsonObject jsonObject = doc.object();
+
     //qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Json: " << doc;
+
     QJsonArray jsonArray   = jsonObject[QLatin1String("value")].toArray();
 
     //qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Json response: " << jsonArray;
@@ -941,8 +965,8 @@ void TwTalker::parseResponseListFolders(const QByteArray& data)
 
 void TwTalker::parseResponseCreateFolder(const QByteArray& data)
 {
-    QJsonDocument doc      = QJsonDocument::fromJson(data);
-    QJsonObject jsonObject = doc.object();
+    QJsonDocument doc1      = QJsonDocument::fromJson(data);
+    QJsonObject jsonObject = doc1.object();
     bool fail              = jsonObject.contains(QLatin1String("error"));
 
     emit signalBusy(false);
@@ -950,8 +974,9 @@ void TwTalker::parseResponseCreateFolder(const QByteArray& data)
     if (fail)
     {
       QJsonParseError err;
-      QJsonDocument doc = QJsonDocument::fromJson(data, &err);
-      qCDebug(DIGIKAM_WEBSERVICES_LOG) << "parseResponseCreateFolder ERROR: " << doc;
+      QJsonDocument doc2 = QJsonDocument::fromJson(data, &err);
+      qCDebug(DIGIKAM_WEBSERVICES_LOG) << "parseResponseCreateFolder ERROR: " << doc2;
+
       emit signalCreateFolderFailed(jsonObject[QLatin1String("error_summary")].toString());
     }
     else

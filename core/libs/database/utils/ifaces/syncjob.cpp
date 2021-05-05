@@ -7,7 +7,7 @@
  * Description : synchronize Input/Output jobs.
  *
  * Copyright (C) 2006-2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -42,10 +42,10 @@ class Q_DECL_HIDDEN SyncJob::Private
 {
 public:
 
-    explicit Private() :
-        waitingLoop(nullptr),
-        thumbnail(nullptr),
-        album(nullptr)
+    explicit Private()
+      : waitingLoop(nullptr),
+        thumbnail  (nullptr),
+        album      (nullptr)
     {
     }
 
@@ -68,7 +68,6 @@ SyncJob::~SyncJob()
     delete d;
 }
 
-
 void SyncJob::enterWaitingLoop() const
 {
     d->waitingLoop->exec(QEventLoop::ExcludeUserInputEvents);
@@ -84,6 +83,7 @@ void SyncJob::quitWaitingLoop() const
 QPixmap SyncJob::getTagThumbnail(TAlbum* const album)
 {
     SyncJob sj;
+
     return sj.getTagThumbnailPriv(album);
 }
 
@@ -106,7 +106,14 @@ QPixmap SyncJob::getTagThumbnailPriv(TAlbum* const album) const
     {
         if (d->thumbnail->isNull())
         {
-            return loader->getStandardTagIcon(album);
+            if (album->hasProperty(TagPropertyName::person()))
+            {
+                return loader->getStandardFaceIcon(album);
+            }
+            else
+            {
+                return loader->getStandardTagIcon(album);
+            }
         }
     }
     else

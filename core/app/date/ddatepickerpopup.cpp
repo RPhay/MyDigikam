@@ -8,7 +8,7 @@
  *
  * Copyright (C) 2004      by Bram Schoenmakers <bramschoenmakers at kde dot nl>
  * Copyright (C) 2006      by Mikolaj Machowski <mikmach at wp dot pl>
- * Copyright (C) 2011-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2011-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -39,24 +39,27 @@ namespace Digikam
 
 class Q_DECL_HIDDEN DDatePickerAction : public QWidgetAction
 {
+    Q_OBJECT
+
 public:
 
     DDatePickerAction(DDatePicker* const widget, QObject* const parent)
-        : QWidgetAction(parent),
-          m_datePicker(widget),
+        : QWidgetAction   (parent),
+          m_datePicker    (widget),
           m_originalParent(widget->parentWidget())
     {
     }
 
 protected:
 
-    QWidget* createWidget(QWidget* const parent)
+    QWidget* createWidget(QWidget* const parent) override
     {
         m_datePicker->setParent(parent);
+
         return m_datePicker;
     }
 
-    void deleteWidget(QWidget* const widget)
+    void deleteWidget(QWidget* const widget) override
     {
         if (widget != m_datePicker)
         {
@@ -89,7 +92,7 @@ public:
 
 DDatePickerPopup::DDatePickerPopup(Items items, const QDate& date, QWidget* const parent)
     : QMenu(parent),
-      d(new Private)
+      d    (new Private)
 {
     d->items      = items;
     d->datePicker = new DDatePicker(this);
@@ -132,15 +135,15 @@ void DDatePickerPopup::buildMenu()
 
     if (d->items & Words)
     {
-        addAction(i18n("&Today"),       this, SLOT(slotToday()));
-        addAction(i18n("To&morrow"),    this, SLOT(slotTomorrow()));
-        addAction(i18n("Next &Week"),   this, SLOT(slotNextWeek()));
-        addAction(i18n("Next M&onth"),  this, SLOT(slotNextMonth()));
-        addAction(i18n("Y&esterday"),   this, SLOT(slotYesterday()));
-        addAction(i18n("Last &Monday"), this, SLOT(slotPrevMonday()));
-        addAction(i18n("Last &Friday"), this, SLOT(slotPrevFriday()));
-        addAction(i18n("Last &Week"),   this, SLOT(slotPrevWeek()));
-        addAction(i18n("Last M&onth"),  this, SLOT(slotPrevMonth()));
+        addAction(i18nc("@item: date menu", "&Today"),       this, SLOT(slotToday()));
+        addAction(i18nc("@item: date menu", "To&morrow"),    this, SLOT(slotTomorrow()));
+        addAction(i18nc("@item: date menu", "Next &Week"),   this, SLOT(slotNextWeek()));
+        addAction(i18nc("@item: date menu", "Next M&onth"),  this, SLOT(slotNextMonth()));
+        addAction(i18nc("@item: date menu", "Y&esterday"),   this, SLOT(slotYesterday()));
+        addAction(i18nc("@item: date menu", "Last &Monday"), this, SLOT(slotPrevMonday()));
+        addAction(i18nc("@item: date menu", "Last &Friday"), this, SLOT(slotPrevFriday()));
+        addAction(i18nc("@item: date menu", "Last &Week"),   this, SLOT(slotPrevWeek()));
+        addAction(i18nc("@item: date menu", "Last M&onth"),  this, SLOT(slotPrevMonth()));
 
         if (d->items & NoDate)
         {
@@ -150,7 +153,7 @@ void DDatePickerPopup::buildMenu()
 
     if (d->items & NoDate)
     {
-        addAction(i18n("No Date"), this, SLOT(slotNoDate()));
+        addAction(i18nc("@item: date menu", "No Date"), this, SLOT(slotNoDate()));
     }
 }
 
@@ -247,3 +250,5 @@ void DDatePickerPopup::slotPrevMonth()
 }
 
 } // namespace Digikam
+
+#include "ddatepickerpopup.moc"

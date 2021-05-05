@@ -7,7 +7,7 @@
  * Description : Structures for use in CoreDB
  *
  * Copyright (C) 2007-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2010-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2010-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C)      2005 by Renchi Raju <renchi dot raju at gmail dot com>
  *
  * This program is free software; you can redistribute it
@@ -187,6 +187,7 @@ public:
     static QLatin1String person();
     static QLatin1String unknownPerson();
     static QLatin1String unconfirmedPerson();
+    static QLatin1String ignoredPerson();
     static QLatin1String faceEngineName();
     static QLatin1String tagKeyboardShortcut();
     static QLatin1String faceEngineUuid();
@@ -201,6 +202,7 @@ public:
     static QLatin1String tagRegion();
     static QLatin1String autodetectedFace();
     static QLatin1String autodetectedPerson();
+    static QLatin1String ignoredFace();
     static QLatin1String faceToTrain();
 };
 

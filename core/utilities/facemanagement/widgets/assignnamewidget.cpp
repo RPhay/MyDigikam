@@ -8,7 +8,7 @@
  *
  * Copyright (C) 2010      by Aditya Bhatt <adityabhatt1991 at gmail dot com>
  * Copyright (C) 2010-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2012-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -30,7 +30,7 @@ namespace Digikam
 
 AssignNameWidget::AssignNameWidget(QWidget* const parent)
     : QFrame(parent),
-      d(new Private(this))
+      d     (new Private(this))
 {
     setObjectName(QLatin1String("assignNameWidget"));
     setVisualStyle(StyledFrame);
@@ -54,7 +54,7 @@ void AssignNameWidget::setModel(TagModel* const model,
 
     ApplicationSettings* const settings = ApplicationSettings::instance();
 
-    if (settings)
+    if      (settings)
     {
         if (filteredModel && settings->showOnlyPersonTagsInPeopleSidebar())
         {
@@ -108,6 +108,16 @@ AddTagsLineEdit* AssignNameWidget::lineEdit() const
 
 void AssignNameWidget::setMode(Mode mode)
 {
+    /**
+     * Reject tooltip should be updated even if the
+     * same mode is passed, because Unconfirmed and Unknown
+     * Faces have the same mode but different Tooltips.
+     */
+    if (mode == AssignNameWidget::UnconfirmedEditMode)
+    {
+        d->updateRejectButtonTooltip();
+    }
+
     if (mode == d->mode)
     {
         return;
@@ -175,8 +185,27 @@ AssignNameWidget::VisualStyle AssignNameWidget::visualStyle() const
 
 void AssignNameWidget::setUserData(const ItemInfo& info, const QVariant& faceIdentifier)
 {
-    d->info           = info;
-    d->faceIdentifier = faceIdentifier;
+    d->info            = info;
+    d->faceIdentifier  = faceIdentifier;
+
+    FaceTagsIface face = FaceTagsIface::fromVariant(faceIdentifier);
+
+    /**
+     * Ignored faces are drawn over with a different
+     * overlay, as Reject button should be disabled.
+     */
+    if      (face.type() == FaceTagsIface::ConfirmedName)
+    {
+        setMode(AssignNameWidget::ConfirmedMode);
+    }
+    else if (face.type() == FaceTagsIface::IgnoredName)
+    {
+        setMode(AssignNameWidget::IgnoredMode);
+    }
+    else
+    {
+        setMode(AssignNameWidget::UnconfirmedEditMode);
+    }
 }
 
 ItemInfo AssignNameWidget::info() const
@@ -193,7 +222,7 @@ void AssignNameWidget::setCurrentFace(const FaceTagsIface& face)
 {
     TAlbum* album = nullptr;
 
-    if (!face.isNull() && !face.isUnknownName())
+    if (!face.isNull() && !face.isUnknownName() && !face.isIgnoredName())
     {
         album = AlbumManager::instance()->findTAlbum(face.tagId());
     }
@@ -266,11 +295,15 @@ void AssignNameWidget::keyPressEvent(QKeyEvent* e)
     {
         case Qt::Key_Enter:
         case Qt::Key_Return:
+        {
             return;
+        }
 
         case Qt::Key_Escape:
+        {
             slotReject();
             return;
+        }
     }
 
     QWidget::keyPressEvent(e);

@@ -8,7 +8,7 @@
  * Acknowledge : based on the expoblending tool
  *
  * Copyright (C) 2011-2016 by Benjamin Girault <benjamin dot girault at gmail dot com>
- * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -48,7 +48,7 @@ class PanoIntroPage : public DWizardPage
 public:
 
     explicit PanoIntroPage(PanoManager* const mngr, QWizard* const dlg);
-    ~PanoIntroPage();
+    ~PanoIntroPage()        override;
 
     bool binariesFound();
 
@@ -57,13 +57,13 @@ private Q_SLOTS:
     void slotToggleGPano(int state);
     void slotChangeFileFormat(QAbstractButton* button);
     void slotBinariesChanged(bool found);
-
+/*
     // TODO HDR
-//     void slotShowFileFormat(int state);
-
+    void slotShowFileFormat(int state);
+*/
 private:
 
-    void initializePage();
+    void initializePage()   override;
 
 private:
 

@@ -36,7 +36,6 @@
 |   includes
 +---------------------------------------------------------------------*/
 #include "PltSyncMediaBrowser.h"
-#include <algorithm>
 
 NPT_SET_LOCAL_LOGGER("platinum.media.server.syncbrowser")
 
@@ -126,24 +125,6 @@ PLT_SyncMediaBrowser::Find(const char* ip, PLT_DeviceDataReference& device)
     return NPT_FAILURE;
 }
 
-static void OnResult(NPT_Result               res, 
-                     PLT_DeviceDataReference& device, 
-                     PLT_BrowseInfo*          info, 
-                     void*                    userdata)
-{
-  NPT_COMPILER_UNUSED(device);
-
-  if (!userdata) return;
-
-  PLT_BrowseDataReference* data = (PLT_BrowseDataReference*) userdata;
-  (*data)->res = res;
-  if (NPT_SUCCEEDED(res) && info) {
-      (*data)->info = *info;
-  }
-  (*data)->shared_var.SetValue(1);
-  delete data;
-}
-
 /*----------------------------------------------------------------------
 |   PLT_SyncMediaBrowser::OnBrowseResult
 +---------------------------------------------------------------------*/
@@ -153,63 +134,17 @@ PLT_SyncMediaBrowser::OnBrowseResult(NPT_Result               res,
                                      PLT_BrowseInfo*          info, 
                                      void*                    userdata)
 {
-  OnResult(res, device, info, userdata);
-}
+    NPT_COMPILER_UNUSED(device);
 
-/*----------------------------------------------------------------------
-|   PLT_SyncMediaBrowser::OnSearchResult
-+---------------------------------------------------------------------*/
-void
-PLT_SyncMediaBrowser::OnSearchResult(NPT_Result               res, 
-                                     PLT_DeviceDataReference& device, 
-                                     PLT_BrowseInfo*          info, 
-                                     void*                    userdata)
-{
-  OnResult(res, device, info, userdata);
-}
+    if (!userdata) return;
 
-/*----------------------------------------------------------------------
-|   PLT_SyncMediaBrowser::OnGetSearchCapabilitiesResult
-+---------------------------------------------------------------------*/
-void
-PLT_SyncMediaBrowser::OnGetSearchCapabilitiesResult(NPT_Result               res, 
-                                                    PLT_DeviceDataReference& device, 
-                                                    NPT_String               searchCapabilities, 
-                                                    void*                    userdata)
-{
-  NPT_COMPILER_UNUSED(device);
-
-  if (!userdata) return;
-
-  PLT_CapabilitiesDataReference* data = (PLT_CapabilitiesDataReference*) userdata;
-  (*data)->res = res;
-  if (NPT_SUCCEEDED(res)) {
-      (*data)->capabilities = searchCapabilities;
-  }
-  (*data)->shared_var.SetValue(1);
-  delete data;
-}
-
-/*----------------------------------------------------------------------
-|   PLT_SyncMediaBrowser::OnGetSortCapabilitiesResult
-+---------------------------------------------------------------------*/
-void
-PLT_SyncMediaBrowser::OnGetSortCapabilitiesResult(NPT_Result               res,
-                                                  PLT_DeviceDataReference& device,
-                                                  NPT_String               sortCapabilities,
-                                                  void*                    userdata)
-{
-  NPT_COMPILER_UNUSED(device);
-
-  if (!userdata) return;
-
-  PLT_CapabilitiesDataReference* data = (PLT_CapabilitiesDataReference*) userdata;
-  (*data)->res = res;
-  if (NPT_SUCCEEDED(res)) {
-      (*data)->capabilities = sortCapabilities;
-  }
-  (*data)->shared_var.SetValue(1);
-  delete data;
+    PLT_BrowseDataReference* data = (PLT_BrowseDataReference*) userdata;
+    (*data)->res = res;
+    if (NPT_SUCCEEDED(res) && info) {
+        (*data)->info = *info;
+    }
+    (*data)->shared_var.SetValue(1);
+    delete data;
 }
 
 /*----------------------------------------------------------------------
@@ -285,108 +220,10 @@ PLT_SyncMediaBrowser::BrowseSync(PLT_BrowseDataReference& browse_data,
         browse_metadata,
         filter,
         sort,
-        new PLT_BrowseDataReference(browse_data));		
+        new PLT_BrowseDataReference(browse_data));      
     NPT_CHECK_SEVERE(res);
 
     return WaitForResponse(browse_data->shared_var);
-}
-
-/*----------------------------------------------------------------------
-|   PLT_SyncMediaBrowser::SearchSync
-+---------------------------------------------------------------------*/
-NPT_Result 
-PLT_SyncMediaBrowser::SearchSync(PLT_BrowseDataReference& browse_data,
-                                 PLT_DeviceDataReference& device, 
-                                 const char*              container_id,
-                                 const char*              search_criteria,
-                                 NPT_Int32                index, 
-                                 NPT_Int32                count,
-                                 const char*              filter)
-{
-    NPT_Result res;
-
-    browse_data->shared_var.SetValue(0);
-    browse_data->info.si = index;
-
-    // send off the search packet.  Note that this will
-    // not block.  There is a call to WaitForResponse in order
-    // to block until the response comes back.
-    res = PLT_MediaBrowser::Search(device,
-        container_id,
-        search_criteria,
-        index,
-        count,
-        filter,
-        new PLT_BrowseDataReference(browse_data));
-    NPT_CHECK_SEVERE(res);
-
-    return WaitForResponse(browse_data->shared_var);
-}
-
-/*----------------------------------------------------------------------
-|   PLT_SyncMediaBrowser::GetSearchCapabilitiesSync
-+---------------------------------------------------------------------*/
-NPT_Result
-PLT_SyncMediaBrowser::GetSearchCapabilitiesSync(PLT_DeviceDataReference& device, 
-                                                NPT_String&              searchCapabilities)
-{
-    NPT_Result res;
-
-    PLT_CapabilitiesDataReference capabilities_data(new PLT_CapabilitiesData(), true);
-    capabilities_data->shared_var.SetValue(0);
-
-    // send of the GetSearchCapabilities packet. Note that this will
-    // not block. There is a call to WaitForResponse in order
-    // to block until the response comes back.
-    res = PLT_MediaBrowser::GetSearchCapabilities(device,
-        new PLT_CapabilitiesDataReference(capabilities_data));
-    NPT_CHECK_SEVERE(res);
-
-    res = WaitForResponse(capabilities_data->shared_var);
-    NPT_CHECK_LABEL_WARNING(res, done);
-
-    if (NPT_FAILED(capabilities_data->res)) {
-        res = capabilities_data->res;
-        NPT_CHECK_LABEL_WARNING(res, done);
-    }
-
-    searchCapabilities = capabilities_data->capabilities;
-
-done:
-    return res;
-}
-
-/*----------------------------------------------------------------------
-|   PLT_SyncMediaBrowser::GetSortCapabilitiesSync
-+---------------------------------------------------------------------*/
-NPT_Result
-PLT_SyncMediaBrowser::GetSortCapabilitiesSync(PLT_DeviceDataReference& device, 
-                                              NPT_String&              sortCapabilities)
-{
-    NPT_Result res;
-
-    PLT_CapabilitiesDataReference capabilities_data(new PLT_CapabilitiesData(), true);
-    capabilities_data->shared_var.SetValue(0);
-
-    // send of the GetSortCapabilities packet. Note that this will
-    // not block. There is a call to WaitForResponse in order
-    // to block until the response comes back.
-    res = PLT_MediaBrowser::GetSortCapabilities(device,
-        new PLT_CapabilitiesDataReference(capabilities_data));
-    NPT_CHECK_SEVERE(res);
-
-    res = WaitForResponse(capabilities_data->shared_var);
-    NPT_CHECK_LABEL_WARNING(res, done);
-
-    if (NPT_FAILED(capabilities_data->res)) {
-        res = capabilities_data->res;
-        NPT_CHECK_LABEL_WARNING(res, done);
-    }
-
-    sortCapabilities = capabilities_data->capabilities;
-
-done:
-    return res;
 }
 
 /*----------------------------------------------------------------------
@@ -398,11 +235,12 @@ PLT_SyncMediaBrowser::BrowseSync(PLT_DeviceDataReference&      device,
                                  PLT_MediaObjectListReference& list,
                                  bool                          metadata, /* = false */
                                  NPT_Int32                     start, /* = 0 */
-                                 NPT_Cardinal                  max_results /* = 0 */)
+                                 NPT_Cardinal                  max_results, /* = 0 */
+                                 const char*                   filter, /* = PLT_DEFAULT_FILTER */
+                                 const char*                   sort /* = "" */)
 {
     NPT_Result res = NPT_FAILURE;
     NPT_Int32  index = start;
-    NPT_UInt32 count = 0;
     
     // only cache metadata or if starting from 0 and asking for maximum
     bool cache = m_UseCache && (metadata || (start == 0 && max_results == 0));
@@ -413,19 +251,20 @@ PLT_SyncMediaBrowser::BrowseSync(PLT_DeviceDataReference&      device,
     // look into cache first
     if (cache && NPT_SUCCEEDED(m_Cache.Get(device->GetUUID(), object_id, list))) return NPT_SUCCESS;
 
-    do {	
+    do {    
         PLT_BrowseDataReference browse_data(new PLT_BrowseData());
 
         // send off the browse packet.  Note that this will
-        // not block.  There is a call to WaitForResponse in order
-        // to block until the response comes back.
+        // block until server responds or times out.
         res = BrowseSync(
             browse_data,
             device,
             (const char*)object_id,
             index,
-            metadata?1:200, // DLNA recommendations for browsing children is no more than 30 at a time
-            metadata);		
+            metadata?1:30, // DLNA recommendations for browsing children is no more than 30 at a time
+            metadata,
+            filter,
+            sort);
         NPT_CHECK_LABEL_WARNING(res, done);
         
         if (NPT_FAILED(browse_data->res)) {
@@ -434,21 +273,15 @@ PLT_SyncMediaBrowser::BrowseSync(PLT_DeviceDataReference&      device,
         }
 
         // server returned no more, bail now
-        if (browse_data->info.nr == 0)
+        if (browse_data->info.items->GetItemCount() == 0)
             break;
-
-        if (browse_data->info.nr != browse_data->info.items->GetItemCount()) {
-            NPT_LOG_WARNING_2("Server returned unexpected number of items (%d vs %d)",
-                              browse_data->info.nr, browse_data->info.items->GetItemCount());
-        }
-        count += std::max<NPT_UInt32>(browse_data->info.nr, browse_data->info.items->GetItemCount());
 
         if (list.IsNull()) {
             list = browse_data->info.items;
         } else {
             list->Add(*browse_data->info.items);
             // clear the list items so that the data inside is not
-            // cleaned up by PLT_MediaItemList dtor since we copied
+            // cleaned up by PLT_MediaItemList destructor since we copied
             // each pointer into the new list.
             browse_data->info.items->Clear();
         }
@@ -458,14 +291,14 @@ PLT_SyncMediaBrowser::BrowseSync(PLT_DeviceDataReference&      device,
         // available. In this case we have to continue browsing until
         // nothing is returned back by the server.
         // Unless we were told to stop after reaching a certain amount to avoid
-        // length delays
+        // lengthy delays.
         // (some servers may return a total matches out of whack at some point too)
-        if ((browse_data->info.tm && browse_data->info.tm <= count) ||
-            (max_results && count >= max_results))
+        if ((browse_data->info.tm && browse_data->info.tm <= list->GetItemCount()) ||
+            (max_results && list->GetItemCount() >= max_results))
             break;
 
         // ask for the next chunk of entries
-        index = count;
+        index = list->GetItemCount();
     } while(1);
 
 done:
@@ -477,84 +310,6 @@ done:
     // clear entire cache data for device if failed, the device could be gone
     if (NPT_FAILED(res) && cache) m_Cache.Clear(device->GetUUID());
     
-    return res;
-}
-
-/*----------------------------------------------------------------------
-|   PLT_SyncMediaBrowser::SearchSync
-+---------------------------------------------------------------------*/
-NPT_Result
-PLT_SyncMediaBrowser::SearchSync(PLT_DeviceDataReference&      device,
-                                 const char*                   container_id,
-                                 const char*                   search_criteria,
-                                 PLT_MediaObjectListReference& list,
-                                 NPT_Int32                     start, /* = 0 */
-                                 NPT_Cardinal                  max_results /* = 0 */)
-{
-    NPT_Result res = NPT_FAILURE;
-    NPT_Int32  index = start;
-    NPT_UInt32 count = 0;
-
-    // reset output params
-    list = NULL;
-
-    do {	
-        PLT_BrowseDataReference browse_data(new PLT_BrowseData(), true);
-
-        // send off the search packet.  Note that this will
-        // not block.  There is a call to WaitForResponse in order
-        // to block until the response comes back.
-        res = SearchSync(
-            browse_data,
-            device,
-            container_id,
-            search_criteria,
-            index,
-            200); // DLNA recommendations for browsing children is no more than 30 at a time
-
-        NPT_CHECK_LABEL_WARNING(res, done);
-        
-        if (NPT_FAILED(browse_data->res)) {
-            res = browse_data->res;
-            NPT_CHECK_LABEL_WARNING(res, done);
-        }
-
-        // server returned no more, bail now
-        if (browse_data->info.nr == 0)
-            break;
-
-        if (browse_data->info.nr != browse_data->info.items->GetItemCount()) {
-            NPT_LOG_WARNING_2("Server returned unexpected number of items (%d vs %d)",
-                              browse_data->info.nr, browse_data->info.items->GetItemCount());
-        }
-        count += std::max<NPT_UInt32>(browse_data->info.nr, browse_data->info.items->GetItemCount());
-
-        if (list.IsNull()) {
-            list = browse_data->info.items;
-        } else {
-            list->Add(*browse_data->info.items);
-            // clear the list items so that the data inside is not
-            // cleaned up by PLT_MediaItemList dtor since we copied
-            // each pointer into the new list.
-            browse_data->info.items->Clear();
-        }
-
-        // stop now if our list contains exactly what the server said it had.
-        // Note that the server could return 0 if it didn't know how many items were
-        // available. In this case we have to continue browsing until
-        // nothing is returned back by the server.
-        // Unless we were told to stop after reaching a certain amount to avoid
-        // length delays
-        // (some servers may return a total matches out of whack at some point too)
-        if ((browse_data->info.tm && browse_data->info.tm <= count) ||
-            (max_results && count >= max_results))
-            break;
-
-        // ask for the next chunk of entries
-        index = count;
-    } while(1);
-
-done:
     return res;
 }
 

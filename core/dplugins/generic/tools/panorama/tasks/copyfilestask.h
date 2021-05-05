@@ -30,7 +30,7 @@
 // Local includes
 
 #include "panotask.h"
-#include "metaengine.h"
+#include "dmetadata.h"
 
 using namespace Digikam;
 
@@ -48,11 +48,11 @@ public:
                            const PanoramaItemUrlsMap& urls,
                            bool sPTO,
                            bool GPlusMetadata);
-    ~CopyFilesTask();
+    ~CopyFilesTask() override;
 
 protected:
 
-    void run(ThreadWeaver::JobPointer self, ThreadWeaver::Thread *thread) override;
+    void run(ThreadWeaver::JobPointer self, ThreadWeaver::Thread* thread) override;
 
 private:
 
@@ -63,7 +63,12 @@ private:
     const bool                       savePTO;
     const bool                       addGPlusMetadata;
 
-    MetaEngine                       m_meta;
+private:
+
+    // Disable
+    CopyFilesTask() = delete;
+
+    Q_DISABLE_COPY(CopyFilesTask)
 };
 
 } // namespace DigikamGenericPanoramaPlugin

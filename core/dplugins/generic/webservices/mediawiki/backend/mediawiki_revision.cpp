@@ -6,7 +6,7 @@
  * Date        : 2011-03-22
  * Description : a Iface C++ interface
  *
- * Copyright (C) 2011-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2011-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2011      by Robin Bussenot <bussenot dot robin at gmail dot com>
  *
  * This program is free software; you can redistribute it
@@ -30,7 +30,7 @@
 namespace MediaWiki
 {
 
-class Q_DECL_HIDDEN Revision::RevisionPrivate
+class Q_DECL_HIDDEN Revision::Private
 {
 public:
 
@@ -47,7 +47,7 @@ public:
 };
 
 Revision::Revision()
-    : d(new RevisionPrivate())
+    : d(new Private())
 {
     d->minorRevision = false;
     d->revId         = -1;
@@ -61,33 +61,36 @@ Revision::~Revision()
 }
 
 Revision::Revision( const Revision& other)
-        : d(new RevisionPrivate(*(other.d)))
+    : d(new Private(*(other.d)))
 {
 }
 
-Revision& Revision::operator=(Revision other)
+Revision& Revision::operator=(const Revision& other)
 {
     *d = *other.d;
+
     return *this;
 }
 
 bool Revision::operator==(const Revision& other) const
 {
-    return timestamp()     == other.timestamp()     &&
-           user()          == other.user()          &&
-           comment()       == other.comment()       &&
-           content()       == other.content()       &&
-           size()          == other.size()          &&
-           minorRevision() == other.minorRevision() &&
-           parseTree()     == other.parseTree()     &&
-           parentId()      == other.parentId()      &&
-           rollback()      == other.rollback()      &&
-           revisionId()    == other.revisionId();
+    return (
+            (timestamp()     == other.timestamp())     &&
+            (user()          == other.user())          &&
+            (comment()       == other.comment())       &&
+            (content()       == other.content())       &&
+            (size()          == other.size())          &&
+            (minorRevision() == other.minorRevision()) &&
+            (parseTree()     == other.parseTree())     &&
+            (parentId()      == other.parentId())      &&
+            (rollback()      == other.rollback())      &&
+            (revisionId()    == other.revisionId())
+           );
 }
 
 void Revision::setRevisionId(int revisionId)
 {
-    d->revId=revisionId;
+    d->revId = revisionId;
 }
 
 int Revision::revisionId() const
@@ -97,7 +100,7 @@ int Revision::revisionId() const
 
 void Revision::setParentId(int parentId)
 {
-    d->parentId=parentId;
+    d->parentId = parentId;
 }
 
 int Revision::parentId() const
@@ -107,7 +110,7 @@ int Revision::parentId() const
 
 void Revision::setSize(int size)
 {
-    d->size=size;
+    d->size = size;
 }
 
 int Revision::size() const
@@ -117,7 +120,7 @@ int Revision::size() const
 
 void Revision::setMinorRevision(bool minorRevision)
 {
-    d->minorRevision=minorRevision;
+    d->minorRevision = minorRevision;
 }
 bool Revision::minorRevision() const
 {
@@ -161,12 +164,12 @@ QString Revision::content() const
 
 void Revision::setContent(const QString& content)
 {
-    d->content=content;
+    d->content = content;
 }
 
 void Revision::setParseTree(const QString& parseTree)
 {
-    d->parseTree=parseTree;
+    d->parseTree = parseTree;
 }
 
 QString Revision::parseTree() const
@@ -176,7 +179,7 @@ QString Revision::parseTree() const
 
 void Revision::setRollback(const QString& rollback)
 {
-    d->parseTree=rollback;
+    d->parseTree = rollback;
 }
 
 QString Revision::rollback() const

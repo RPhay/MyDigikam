@@ -351,9 +351,9 @@ ParseResults Parser::applyModifiers(const QString& parseString, ParseResults& re
                     settings.str2Modify        = str2Modify;
                     ParseResults modResults    = mod->parse(settings);
 
-                    if (!modResults.isEmpty() && modResults.values().length() == 1)
+                    if (!modResults.isEmpty() && (modResults.values().length() == 1))
                     {
-                        modResult = modResults.result(modResults.keys().first());
+                        modResult = modResults.result(modResults.keys().constFirst());
                     }
                 }
 

@@ -6,7 +6,7 @@
  * Date        : 2009-12-01
  * Description : Widget for displaying HTML in the backends
  *
- * Copyright (C) 2010-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2010-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2009-2011 by Michael G. Hansen <mike at mghansen dot de>
  * Copyright (C) 2015      by Mohamed_Anwer <m_dot_anwer at gmx dot com>
  *
@@ -264,7 +264,7 @@ bool HTMLWidget::eventFilter(QObject* object, QEvent* event)
         {
             QMouseEvent* const e = dynamic_cast<QMouseEvent*>(event);
 
-            if (s->currentMouseMode == MouseModeRegionSelection)
+            if (e && (s->currentMouseMode == MouseModeRegionSelection))
             {
                 if (!d->firstSelectionPoint.hasCoordinates())
                 {
@@ -330,7 +330,8 @@ bool HTMLWidget::eventFilter(QObject* object, QEvent* event)
         {
             QMouseEvent* const e = dynamic_cast<QMouseEvent*>(event);
 
-            if ((s->currentMouseMode == MouseModeRegionSelection) &&
+            if (e                                                 &&
+                (s->currentMouseMode == MouseModeRegionSelection) &&
                 d->firstSelectionPoint.hasCoordinates())
             {
                 runScript2Coordinates(QString::fromLatin1("kgeomapPixelToLatLng(%1, %2);")

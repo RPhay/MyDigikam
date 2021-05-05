@@ -7,7 +7,7 @@
  * Description : Thumbnails database interface.
  *
  * Copyright (C)      2009 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -75,7 +75,9 @@ QString ThumbsDb::getSetting(const QString& keyword)
     QMap<QString, QVariant> parameters;
     parameters.insert(QLatin1String(":keyword"), keyword);
     QList<QVariant> values;
+
     // TODO Should really check return status here
+
     BdEngineBackend::QueryState queryStateResult = d->db->execDBAction(d->db->getDBAction(QLatin1String("SelectThumbnailSetting")),
                                                                        parameters, &values);
 
@@ -95,7 +97,9 @@ QString ThumbsDb::getLegacySetting(const QString& keyword)
     QMap<QString, QVariant> parameters;
     parameters.insert(QLatin1String(":keyword"), keyword);
     QList<QVariant> values;
+
     // TODO Should really check return status here
+
     BdEngineBackend::QueryState queryStateResult = d->db->execDBAction(d->db->getDBAction(QLatin1String("SelectThumbnailLegacySetting")),
                                                                        parameters, &values);
 
@@ -167,6 +171,7 @@ ThumbsDbInfo ThumbsDb::findByFilePath(const QString& path, const QString& unique
     }
 
     // double check that thumbnail is not referenced by a different hash
+
     QList<QVariant> values;
     d->db->execSql(QLatin1String("SELECT uniqueHash FROM UniqueHashes WHERE thumbId=?;"),
                    info.id, &values);
@@ -265,6 +270,7 @@ BdEngineBackend::QueryState ThumbsDb::remove(int thumbId)
 BdEngineBackend::QueryState ThumbsDb::removeByUniqueHash(const QString& uniqueHash, qlonglong fileSize)
 {
     // UniqueHashes + FilePaths entries are removed by trigger
+
     QMap<QString, QVariant> parameters;
     parameters.insert(QLatin1String(":uniqueHash"), uniqueHash);
     parameters.insert(QLatin1String(":filesize"),   fileSize);
@@ -276,6 +282,7 @@ BdEngineBackend::QueryState ThumbsDb::removeByUniqueHash(const QString& uniqueHa
 BdEngineBackend::QueryState ThumbsDb::removeByFilePath(const QString& path)
 {
     // UniqueHashes + FilePaths entries are removed by trigger
+
     QMap<QString, QVariant> parameters;
     parameters.insert(QLatin1String(":path"), path);
 
@@ -286,6 +293,7 @@ BdEngineBackend::QueryState ThumbsDb::removeByFilePath(const QString& path)
 BdEngineBackend::QueryState ThumbsDb::removeByCustomIdentifier(const QString& id)
 {
     // UniqueHashes + FilePaths entries are removed by trigger
+
     QMap<QString, QVariant> parameters;
     parameters.insert(QLatin1String(":identifier"), id);
 
@@ -346,18 +354,24 @@ bool ThumbsDb::integrityCheck()
     switch (d->db->databaseType())
     {
         case BdEngineBackend::DbType::SQLite:
+
             // For SQLite the integrity check returns a single row with one string column "ok" on success and multiple rows on error.
-            return values.size() == 1 && values.first().toString().toLower().compare(QLatin1String("ok")) == 0;
+
+            return ((values.size() == 1) && (values.first().toString().toLower().compare(QLatin1String("ok")) == 0));
+
         case BdEngineBackend::DbType::MySQL:
+
             // For MySQL, for every checked table, the table name, operation (check), message type (status) and the message text (ok on success)
             // are returned. So we check if there are four elements and if yes, whether the fourth element is "ok".
-            //qCDebug(DIGIKAM_DATABASE_LOG) << "MySQL check returned " << values.size() << " rows";
+/*
+            qCDebug(DIGIKAM_DATABASE_LOG) << "MySQL check returned " << values.size() << " rows";
+*/
             if ((values.size() % 4) != 0)
             {
                 return false;
             }
 
-            for (QList<QVariant>::iterator it = values.begin() ; it != values.end() ;)
+            for (QList<QVariant>::iterator it = values.begin() ; it != values.end() ; )
             {
                 QString tableName   = (*it).toString();
                 ++it;
@@ -376,13 +390,20 @@ bool ThumbsDb::integrityCheck()
                 }
                 else
                 {
-                    //qCDebug(DIGIKAM_DATABASE_LOG) << "Passed integrity check for table " << tableName;
+/*
+                    qCDebug(DIGIKAM_DATABASE_LOG) << "Passed integrity check for table " << tableName;
+*/
                 }
             }
+
             // No error conditions. Db passed the integrity check.
+
             return true;
+
         default:
+        {
             return false;
+        }
     }
 }
 

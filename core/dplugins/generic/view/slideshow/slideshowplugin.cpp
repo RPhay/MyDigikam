@@ -6,7 +6,8 @@
  * Date        : 2018-07-30
  * Description : a plugin to render slideshow.
  *
- * Copyright (C) 2018-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2018-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2019-2020 by Minh Nghia Duong <minhnghiaduong997 at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -26,14 +27,23 @@
 
 #include <QPointer>
 #include <QMenu>
+#include <QDebug>
+#include <QString>
+#include <QApplication>
 
 // KDE includes
 
 #include <klocalizedstring.h>
+#include <kactioncollection.h>
+#include <kxmlguiwindow.h>
 
 // Local includes
 
-#include "slideshow.h"
+#include "metaenginesettings.h"
+#include "setupslideshow_dialog.h"
+#include "slideshowloader.h"
+
+using namespace Digikam;
 
 namespace DigikamGenericSlideShowPlugin
 {
@@ -71,13 +81,58 @@ QString SlideShowPlugin::details() const
 {
     return i18n("<p>This tool render a series of items as a simple slide-show.</p>"
                 "<p>Plenty of items properties can be displayed as overlay while running.</p>"
-                "<p>This tool can play album contents in recursive mode with children albums if any.</p>");
+                "<p>This tool can play album contents in recursive mode with children albums if any.</p>"
+                "<p><u>Usage:</u></p>"
+
+                "<table>"
+
+                    "<tr>"
+                        "<td colspan=\"2\"><nobr><center>"
+                            "<b><h1>Item Access</h1></b>"
+                        "</center></nobr></td>"
+                    "</tr>"
+
+                    "<tr><td>Previous Item:</td>"        "<td><i>Up</i> key</td></tr>"
+                    "<tr><td></td>"                      "<td><i>PgUp</i> key</td></tr>"
+                    "<tr><td></td>"                      "<td><i>Left</i> key</td></tr>"
+                    "<tr><td></td>"                      "<td>Mouse wheel up</td></tr>"
+                    "<tr><td></td>"                      "<td>Left mouse button</td></tr>"
+                    "<tr><td>Next Item:</td>"            "<td><i>Down</i> key</td></tr>"
+                    "<tr><td></td>"                      "<td><i>PgDown</i> key</td></tr>"
+                    "<tr><td></td>"                      "<td><i>Right</i> key</td></tr>"
+                    "<tr><td></td>"                      "<td>Mouse wheel down</td></tr>"
+                    "<tr><td></td>"                      "<td>Right mouse button</td></tr>"
+                    "<tr><td>Pause/Start:</td>"          "<td><i>Space</i> key</td></tr>"
+                    "<tr><td>Slideshow Settings:</td>"   "<td><i>F2</i> key</td></tr>"
+                    "<tr><td>Hide/Show Properties:</td>" "<td><i>F4</i> key</td></tr>"
+                    "<tr><td>Quit:</td>"                 "<td><i>Esc</i> key</td></tr>"
+
+                    "<tr>"
+                        "<td colspan=\"2\"><nobr><center>"
+                            "<b><h1>Item Properties</h1></b>"
+                        "</center></nobr></td>"
+                    "</tr>"
+
+                    "<tr><td>Change Tags:</td>"          "<td>Use Tags keyboard shortcuts</td></tr>"
+                    "<tr><td>Change Rating:</td>"        "<td>Use Rating keyboard shortcuts</td></tr>"
+                    "<tr><td>Change Color Label:</td>"   "<td>Use Color label keyboard shortcuts</td></tr>"
+                    "<tr><td>Change Pick Label:</td>"    "<td>Use Pick label keyboard shortcuts</td></tr>"
+
+                    "<tr>"
+                        "<td colspan=\"2\"><nobr><center>"
+                            "<b><h1>Others</h1></b>"
+                        "</center></nobr></td>"
+                    "</tr>"
+
+                    "<tr><td>Show this help:</td>"       "<td><i>F1</i> key</td></tr>"
+
+                "</table>");
 }
 
 QList<DPluginAuthor> SlideShowPlugin::authors() const
 {
     return QList<DPluginAuthor>()
-            << DPluginAuthor(QString::fromUtf8("Enrico Ros <eros dot kde at email dot it>"),
+            << DPluginAuthor(QString::fromUtf8("Enrico Ros"),
                              QString::fromUtf8("eros dot kde at email dot it"),
                              QString::fromUtf8("(C) 2004"))
             << DPluginAuthor(QString::fromUtf8("Renchi Raju"),
@@ -85,91 +140,220 @@ QList<DPluginAuthor> SlideShowPlugin::authors() const
                              QString::fromUtf8("(C) 2004-2005"))
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2005-2020"))
+                             QString::fromUtf8("(C) 2005-2021"))
+            << DPluginAuthor(QString::fromUtf8("Minh Nghia Duong"),
+                             QString::fromUtf8("minhnghiaduong997 at gmail dot com"),
+                             QString::fromUtf8("(C) 2019-2021"))
+            << DPluginAuthor(QString::fromUtf8("Phuoc Khanh Le"),
+                             QString::fromUtf8("phuockhanhnk94 at gmail dot com"),
+                             QString::fromUtf8("(C) 2021"))
+            << DPluginAuthor(QString::fromUtf8("Fady Khalaf"),
+                             QString::fromUtf8("fadykhalaf01 at gmail dot com"),
+                             QString::fromUtf8("(C) 2019"))
             ;
 }
-
 void SlideShowPlugin::setup(QObject* const parent)
 {
-    DPluginAction* const ac = new DPluginAction(parent);
+    DPluginAction* const ac     = new DPluginAction(parent);
     ac->setIcon(icon());
-    ac->setObjectName(QLatin1String("slideshow"));
+    ac->setText(i18nc("@action", "Slideshow"));
+    ac->setObjectName(QLatin1String("slideshow_plugin"));
     ac->setActionCategory(DPluginAction::GenericView);
 
-    DInfoInterface* const iface = infoIface(parent);
+    DInfoInterface* const iface = infoIface(ac);
 
-    if (iface && iface->supportAlbums())
+    if (iface && (parent->objectName() == QLatin1String("Digikam")))
     {
-        QMenu* const slideShowAction = new QMenu(i18n("Slideshow"), parent);
-        slideShowAction->setIcon(icon());
-        ac->setMenu(slideShowAction);
 
-        QAction* const slideShowAllAction = new QAction(i18n("All"), parent);
+        QMenu* const slideShowActions = new QMenu(i18n("Slideshow"));
+        slideShowActions->setIcon(icon());
+        ac->setMenu(slideShowActions);
+
+        // Action show all
+
+        QAction* const slideShowAllAction = new QAction(i18n("Play All"), ac);
         slideShowAllAction->setObjectName(QLatin1String("slideshow_all"));
-        slideShowAllAction->setShortcut(Qt::Key_F9);
-        slideShowAction->addAction(d->slideShowAllAction);
+        slideShowActions->addAction(slideShowAllAction);
 
         connect(slideShowAllAction, SIGNAL(triggered()),
                 this, SLOT(slotMenuSlideShowAll()));
 
-        QCation* const slideShowSelectionAction = new QAction(i18n("Selection"), parent);
+        // Action show selection
+
+        QAction* const slideShowSelectionAction = new QAction(i18n("Play Selection"), ac);
         slideShowSelectionAction->setObjectName(QLatin1String("slideshow_selected"));
-        slideShowSelectionAction->setShortcut(Qt::ALT + Qt::Key_F9);
-        slideShowAction->addAction(d->slideShowSelectionAction);
+        slideShowActions->addAction(slideShowSelectionAction);
 
         connect(slideShowSelectionAction, SIGNAL(triggered()),
                 this, SLOT(slotMenuSlideShowSelection()));
 
-        QAction* const slideShowRecursiveAction = new QAction(i18n("With All Sub-Albums"), parent);
+        // Action show recursive
+
+        QAction* const slideShowRecursiveAction = new QAction(i18n("Play With Sub-Albums"), ac);
         slideShowRecursiveAction->setObjectName(QLatin1String("slideshow_recursive"));
-        slideShowRecursiveAction->setShortcut(Qt::SHIFT + Qt::Key_F9);
-        slideShowAction->addAction(d->slideShowRecursiveAction);
+        slideShowActions->addAction(slideShowRecursiveAction);
 
         connect(slideShowRecursiveAction, SIGNAL(triggered()),
                 this, SLOT(slotMenuSlideShowRecursive()));
+
+        connect(ac, SIGNAL(triggered(bool)),
+                this, SLOT(slotShowManual()));
+
+        // See bug #425425: register all sub-actions to collection instance to be able to edit keyboard shorcuts
+
+        KXmlGuiWindow* const gui = dynamic_cast<KXmlGuiWindow*>(parent);
+
+        if (gui)
+        {
+            KActionCollection* const collection = gui->actionCollection();
+            collection->setShortcutsConfigurable(slideShowActions->menuAction(), false);
+
+            collection->addAction(slideShowAllAction->objectName(),       slideShowAllAction);
+            collection->addAction(slideShowSelectionAction->objectName(), slideShowSelectionAction);
+            collection->addAction(slideShowRecursiveAction->objectName(), slideShowRecursiveAction);
+
+            collection->setDefaultShortcut(slideShowAllAction,       Qt::Key_F9);
+            collection->setDefaultShortcut(slideShowSelectionAction, Qt::ALT + Qt::Key_F9);
+            collection->setDefaultShortcut(slideShowRecursiveAction, Qt::SHIFT + Qt::Key_F9);
+        }
     }
     else
     {
-        ac->setText(i18nc("@action", "Slideshow"));
         ac->setShortcut(Qt::Key_F9);
 
         connect(ac, SIGNAL(triggered(bool)),
-                this, SLOT(slotSlideShow()));
+                this, SLOT(slotMenuSlideShow()));
     }
 
     addAction(ac);
 }
 
-void SlideShowPlugin::slotSlideShow()
+void SlideShowPlugin::addConnectionSlideEnd(QObject* const obj)
 {
-    DInfoInterface* const iface = infoIface(sender());
+    Q_UNUSED(obj);
+}
+
+void SlideShowPlugin::slotMenuSlideShow()
+{
+    QUrl startFrom;
+    DPluginAction* const ac = dynamic_cast<DPluginAction*>(sender());
+
+    if (ac)
+    {
+        startFrom = ac->data().toUrl();
+        ac->setData(QVariant());
+    }
+
+    SlideShowSettings* const settings = new SlideShowSettings();
+    settings->iface                   = infoIface(ac);
+    settings->readFromConfig();
+    settings->exifRotate              = MetaEngineSettings::instance()->settings().exifRotate;
+    settings->fileList                = settings->iface->currentAlbumItems();
+
+    slideshow(settings, true, startFrom);
 }
 
 void SlideShowPlugin::slotMenuSlideShowAll()
 {
-    /*
-    DInfoInterface* const iface = infoIface(sender());
+    SlideShowSettings* const settings = new SlideShowSettings();
+    settings->iface                   = infoIface(sender()->parent());
+    settings->readFromConfig();
+    settings->fileList                = settings->iface->currentAlbumItems();
 
-    QPointer<PresentationMngr> mngr = new PresentationMngr(this);
-
-    foreach (const QUrl& url, iface->currentSelectedItems())
-    {
-        DItemInfo info(iface->itemInfo(url));
-        mngr->addFile(url, info.comment());
-        qApp->processEvents();
-    }
-
-    mngr->setPlugin(this);
-    mngr->showConfigDialog();
-    */
+    slideshow(settings);
 }
 
 void SlideShowPlugin::slotMenuSlideShowSelection()
 {
+    SlideShowSettings* const settings = new SlideShowSettings();
+    settings->iface                   = infoIface(sender()->parent());
+    settings->readFromConfig();
+    settings->fileList                = settings->iface->currentSelectedItems();
+
+    slideshow(settings);
 }
 
 void SlideShowPlugin::slotMenuSlideShowRecursive()
 {
+    DInfoInterface* const iface = infoIface(sender()->parent());
+
+    connect(iface, SIGNAL(signalAlbumItemsRecursiveCompleted(QList<QUrl>)),
+            this, SLOT(slotShowRecursive(QList<QUrl>)));
+
+    iface->parseAlbumItemsRecursive();
+}
+
+void SlideShowPlugin::slotShowRecursive(const QList<QUrl>& imageList)
+{
+    SlideShowSettings* const settings = new SlideShowSettings();
+    settings->iface                   = dynamic_cast<DInfoInterface*>(sender());
+    settings->readFromConfig();
+    settings->fileList                = imageList;
+
+    slideshow(settings);
+}
+
+void SlideShowPlugin::slotShowManual()
+{
+    DPluginAction* const ac = dynamic_cast<DPluginAction*>(sender());
+
+    if (!ac)
+    {
+        return;
+    }
+
+    QUrl startFrom(ac->data().toUrl());
+    ac->setData(QVariant());
+
+    SlideShowSettings* const settings = new SlideShowSettings();
+    settings->iface                   = infoIface(ac);
+    settings->readFromConfig();
+    settings->exifRotate              = MetaEngineSettings::instance()->settings().exifRotate;
+    settings->fileList                = settings->iface->currentAlbumItems();
+
+    slideshow(settings, !startFrom.isValid(), startFrom);
+}
+
+void SlideShowPlugin::slideshow(SlideShowSettings* const settings, bool autoPlayEnabled, const QUrl& startFrom)
+{
+    settings->autoPlayEnabled = autoPlayEnabled;
+    settings->plugin          = this;
+
+    // TODO: preview settings for digikam
+    //settings.previewSettings = ApplicationSettings::instance()->getPreviewSettings();
+
+    if (startFrom.isValid())
+    {
+        settings->imageUrl = startFrom;
+    }
+
+    SlideShowLoader* const slide = new SlideShowLoader(settings);
+    slide->setShortCutPrefixes(settings->iface->passShortcutActionsToWidget(slide));
+
+    if      (settings->imageUrl.isValid())
+    {
+        slide->setCurrentItem(settings->imageUrl);
+    }
+    else if (settings->startWithCurrent)
+    {
+        if (!settings->iface->currentSelectedItems().isEmpty())
+        {
+            slide->setCurrentItem(settings->iface->currentSelectedItems()[0]);
+        }
+        else
+        {
+            // no current selection, do nothing.
+            return;
+        }
+    }
+
+    connect(slide, SIGNAL(signalLastItemUrl(QUrl)),
+            settings->iface, SIGNAL(signalLastItemUrl(QUrl)));
+
+    connect(settings->iface, SIGNAL(signalShortcutPressed(QString,int)),
+            slide, SLOT(slotHandleShortcut(QString,int)));
+
+    slide->show();
 }
 
 } // namespace DigikamGenericSlideShowPlugin

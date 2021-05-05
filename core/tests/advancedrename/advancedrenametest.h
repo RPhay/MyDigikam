@@ -38,6 +38,13 @@ class AdvancedRenameTest : public QObject
 {
     Q_OBJECT
 
+public:
+
+    explicit AdvancedRenameTest(QObject* const parent = nullptr)
+        : QObject(parent)
+    {
+    }
+
 private Q_SLOTS:
 
     /*

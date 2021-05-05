@@ -7,7 +7,7 @@
  * Description : application settings interface
  *
  * Copyright (C) 2003-2004 by Renchi Raju <renchi dot raju at gmail dot com>
- * Copyright (C) 2003-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2003-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2007      by Arnd Baecker <arnd dot baecker at web dot de>
  * Copyright (C) 2014-2015 by Mohamed_Anwer <m_dot_anwer at gmx dot com>
  * Copyright (C) 2014      by Veaceslav Munteanu <veaceslav dot munteanu90 at gmail dot com>
@@ -49,7 +49,7 @@ ApplicationSettings* ApplicationSettings::instance()
 
 ApplicationSettings::ApplicationSettings()
     : QObject(),
-      d(new Private(this))
+      d      (new Private(this))
 {
     d->config = KSharedConfig::openConfig();
     d->init();
@@ -120,9 +120,11 @@ void ApplicationSettings::readSettings()
 
     d->thumbnailSize                     = group.readEntry(d->configDefaultIconSizeEntry,              (int)ThumbnailSize::Medium);
     d->treeThumbnailSize                 = group.readEntry(d->configDefaultTreeIconSizeEntry,          22);
+    d->treeThumbFaceSize                 = group.readEntry(d->configDefaultTreeFaceSizeEntry,          48);
     d->treeviewFont                      = group.readEntry(d->configTreeViewFontEntry,                 QFontDatabase::systemFont(QFontDatabase::GeneralFont));
     d->currentTheme                      = group.readEntry(d->configThemeEntry,                        ThemeManager::instance()->defaultThemeName());
 
+    d->updateType                        = group.readEntry(d->configUpdateType,                        0);
     d->sidebarTitleStyle                 = (DMultiTabBar::TextStyle)group.readEntry(d->configSidebarTitleStyleEntry,
                                                                                                        (int)DMultiTabBar::AllIconsText);
 
@@ -134,14 +136,14 @@ void ApplicationSettings::readSettings()
     d->recursiveTags                     = group.readEntry(d->configRecursiveTagsEntry,                true);
     d->allGroupsOpen                     = group.readEntry(d->configAllGroupsOpenEntry,                false);
 
-    d->iconShowName                      = group.readEntry(d->configIconShowNameEntry,                 false);
-    d->iconShowResolution                = group.readEntry(d->configIconShowResolutionEntry,           false);
-    d->iconShowAspectRatio               = group.readEntry(d->configIconShowAspectRatioEntry,          false);
+    d->iconShowName                      = group.readEntry(d->configIconShowNameEntry,                 true);
     d->iconShowSize                      = group.readEntry(d->configIconShowSizeEntry,                 false);
-    d->iconShowDate                      = group.readEntry(d->configIconShowDateEntry,                 false);
+    d->iconShowDate                      = group.readEntry(d->configIconShowDateEntry,                 true);
     d->iconShowModDate                   = group.readEntry(d->configIconShowModificationDateEntry,     false);
     d->iconShowTitle                     = group.readEntry(d->configIconShowTitleEntry,                true);
     d->iconShowComments                  = group.readEntry(d->configIconShowCommentsEntry,             true);
+    d->iconShowResolution                = group.readEntry(d->configIconShowResolutionEntry,           false);
+    d->iconShowAspectRatio               = group.readEntry(d->configIconShowAspectRatioEntry,          false);
     d->iconShowTags                      = group.readEntry(d->configIconShowTagsEntry,                 true);
     d->iconShowOverlays                  = group.readEntry(d->configIconShowOverlaysEntry,             true);
     d->iconShowFullscreen                = group.readEntry(d->configIconShowFullscreenEntry,           true);
@@ -191,7 +193,8 @@ void ApplicationSettings::readSettings()
     if (group.readEntry(d->configPreviewLoadFullItemSizeEntry, true))
     {
         d->previewSettings.quality = PreviewSettings::HighQualityPreview;
-        if (group.readEntry(d->configPreviewRawUseEmbeddedPreview, false))
+
+        if      (group.readEntry(d->configPreviewRawUseEmbeddedPreview, false))
         {
             d->previewSettings.rawLoading = PreviewSettings::RawPreviewFromEmbeddedPreview;
         }
@@ -225,28 +228,40 @@ void ApplicationSettings::readSettings()
     d->showPermanentDeleteDialog         = group.readEntry(d->configShowPermanentDeleteDialogEntry,                   true);
     d->sidebarApplyDirectly              = group.readEntry(d->configApplySidebarChangesDirectlyEntry,                 false);
 
-#ifdef Q_OS_OSX
+#ifdef Q_OS_MACOS
+
     d->useNativeFileDialog               = group.readEntry(d->configUseNativeFileDialogEntry,                         true);
+
 #else
+
     d->useNativeFileDialog               = group.readEntry(d->configUseNativeFileDialogEntry,                         false);
+
 #endif
 
     d->drawFramesToGrouped               = group.readEntry(d->configDrawFramesToGroupedEntry,                         true);
+    d->expandNewCurrentItem              = group.readEntry(d->configExpandNewCurrentItemEntry,                        true);
     d->scrollItemToCenter                = group.readEntry(d->configScrollItemToCenterEntry,                          false);
     d->showOnlyPersonTagsInPeopleSidebar = group.readEntry(d->configShowOnlyPersonTagsInPeopleSidebarEntry,           true);
     d->stringComparisonType              = (StringComparisonType) group.readEntry(d->configStringComparisonTypeEntry, (int) Natural);
 
-#ifdef HAVE_APPSTYLE_SUPPORT
-    QString applicationStyle             = qApp->style()->objectName();
+#ifdef Q_OS_WIN
 
-    if (applicationStyle.compare(QLatin1String("windowsvista"), Qt::CaseInsensitive) == 0)
-    {
-        applicationStyle                 = QLatin1String("Windows");
-    }
+    QString defaultStyle                 = QLatin1String("Fusion");
 
-    setApplicationStyle(group.readEntry(d->configApplicationStyleEntry, applicationStyle));
 #else
+
+    QString defaultStyle                 = qApp->style()->objectName();
+
+#endif
+
+#ifdef HAVE_APPSTYLE_SUPPORT
+
+    setApplicationStyle(group.readEntry(d->configApplicationStyleEntry, defaultStyle));
+
+#else
+
     setApplicationStyle(QLatin1String("Fusion"));
+
 #endif
 
     d->applicationIcon                   = group.readEntry(d->configIconThemeEntry,                                   QString());
@@ -280,6 +295,7 @@ void ApplicationSettings::readSettings()
 
     group                    = config->group(d->configGroupFaceDetection);
     d->faceDetectionAccuracy = group.readEntry(d->configFaceDetectionAccuracyEntry, double(0.7));
+    d->faceDetectionYoloV3   = group.readEntry(d->configFaceDetectionYoloV3Entry,   false);
 
     // ---------------------------------------------------------------------
 
@@ -295,8 +311,8 @@ void ApplicationSettings::readSettings()
 
     group = config->group(d->configGroupGrouping);
 
-    for (ApplicationSettings::OperationModes::key_iterator it = d->groupingOperateOnAll.keyBegin();
-         it != d->groupingOperateOnAll.keyEnd(); ++it)
+    for (ApplicationSettings::OperationModes::key_iterator it = d->groupingOperateOnAll.keyBegin() ;
+         it != d->groupingOperateOnAll.keyEnd() ; ++it)
     {
         d->groupingOperateOnAll.insert(*it, (ApplicationSettings::ApplyToEntireGroup)group.readEntry(
                                              d->configGroupingOperateOnAll.value(*it), (int)ApplicationSettings::Ask));
@@ -323,8 +339,9 @@ void ApplicationSettings::saveSettings()
     group.writeEntry(d->configImageSeparationSortOrderEntry,           (int)d->imageSeparationSortOrder);
 
     group.writeEntry(d->configItemLeftClickActionEntry,                (int)d->itemLeftClickAction);
-    group.writeEntry(d->configDefaultIconSizeEntry,                    QString::number(d->thumbnailSize));
-    group.writeEntry(d->configDefaultTreeIconSizeEntry,                QString::number(d->treeThumbnailSize));
+    group.writeEntry(d->configDefaultIconSizeEntry,                    (int)d->thumbnailSize);
+    group.writeEntry(d->configDefaultTreeIconSizeEntry,                (int)d->treeThumbnailSize);
+    group.writeEntry(d->configDefaultTreeFaceSizeEntry,                (int)d->treeThumbFaceSize);
     group.writeEntry(d->configTreeViewFontEntry,                       d->treeviewFont);
     group.writeEntry(d->configRatingFilterConditionEntry,              d->ratingFilterCond);
     group.writeEntry(d->configAlbumMonitoringEntry,                    d->albumMonitoring);
@@ -332,16 +349,17 @@ void ApplicationSettings::saveSettings()
     group.writeEntry(d->configRecursiveTagsEntry,                      d->recursiveTags);
     group.writeEntry(d->configAllGroupsOpenEntry,                      d->allGroupsOpen);
     group.writeEntry(d->configThemeEntry,                              d->currentTheme);
+    group.writeEntry(d->configUpdateType,                              d->updateType);
     group.writeEntry(d->configSidebarTitleStyleEntry,                  (int)d->sidebarTitleStyle);
 
     group.writeEntry(d->configIconShowNameEntry,                       d->iconShowName);
-    group.writeEntry(d->configIconShowResolutionEntry,                 d->iconShowResolution);
-    group.writeEntry(d->configIconShowAspectRatioEntry,                d->iconShowAspectRatio);
     group.writeEntry(d->configIconShowSizeEntry,                       d->iconShowSize);
     group.writeEntry(d->configIconShowDateEntry,                       d->iconShowDate);
     group.writeEntry(d->configIconShowModificationDateEntry,           d->iconShowModDate);
     group.writeEntry(d->configIconShowTitleEntry,                      d->iconShowTitle);
     group.writeEntry(d->configIconShowCommentsEntry,                   d->iconShowComments);
+    group.writeEntry(d->configIconShowResolutionEntry,                 d->iconShowResolution);
+    group.writeEntry(d->configIconShowAspectRatioEntry,                d->iconShowAspectRatio);
     group.writeEntry(d->configIconShowTagsEntry,                       d->iconShowTags);
     group.writeEntry(d->configIconShowOverlaysEntry,                   d->iconShowOverlays);
     group.writeEntry(d->configIconShowFullscreenEntry,                 d->iconShowFullscreen);
@@ -398,10 +416,12 @@ void ApplicationSettings::saveSettings()
                 group.writeEntry(d->configPreviewRawUseEmbeddedPreview, false);
                 group.writeEntry(d->configPreviewRawUseHalfSizeData,    false);
                 break;
+
             case PreviewSettings::RawPreviewFromEmbeddedPreview:
                 group.writeEntry(d->configPreviewRawUseEmbeddedPreview, true);
                 group.writeEntry(d->configPreviewRawUseHalfSizeData,    false);
                 break;
+
             case PreviewSettings::RawPreviewFromRawHalfSize:
                 group.writeEntry(d->configPreviewRawUseEmbeddedPreview, false);
                 group.writeEntry(d->configPreviewRawUseHalfSizeData,    true);
@@ -429,6 +449,7 @@ void ApplicationSettings::saveSettings()
     group.writeEntry(d->configApplySidebarChangesDirectlyEntry,        d->sidebarApplyDirectly);
     group.writeEntry(d->configUseNativeFileDialogEntry,                d->useNativeFileDialog);
     group.writeEntry(d->configDrawFramesToGroupedEntry,                d->drawFramesToGrouped);
+    group.writeEntry(d->configExpandNewCurrentItemEntry,               d->expandNewCurrentItem);
     group.writeEntry(d->configScrollItemToCenterEntry,                 d->scrollItemToCenter);
     group.writeEntry(d->configShowOnlyPersonTagsInPeopleSidebarEntry,  d->showOnlyPersonTagsInPeopleSidebar);
     group.writeEntry(d->configStringComparisonTypeEntry,               (int) d->stringComparisonType);
@@ -468,6 +489,7 @@ void ApplicationSettings::saveSettings()
     group = config->group(d->configGroupFaceDetection);
 
     group.writeEntry(d->configFaceDetectionAccuracyEntry,              d->faceDetectionAccuracy);
+    group.writeEntry(d->configFaceDetectionYoloV3Entry,                d->faceDetectionYoloV3);
 
     group = config->group(d->configGroupDuplicatesSearch);
 

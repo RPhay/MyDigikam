@@ -26,7 +26,7 @@
 
 // Qt includes
 
-#include <QtTest>
+#include <QTest>
 #include <QEventLoop>
 #include <QDir>
 
@@ -39,6 +39,10 @@ using namespace Digikam;
 class DImgFilterActionTest : public QObject
 {
     Q_OBJECT
+
+public:
+
+    explicit DImgFilterActionTest(QObject* const parent = nullptr);
 
 public:
 

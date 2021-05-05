@@ -6,7 +6,7 @@
  * Date        : 2006-04-04
  * Description : a tool to generate HTML image galleries
  *
- * Copyright (C) 2012-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -29,7 +29,7 @@
 namespace DigikamGenericHtmlGalleryPlugin
 {
 
-GalleryConfig::GalleryConfig()
+GalleryConfig::GalleryConfig(QObject* const)
     : KConfigSkeleton(QLatin1String("digikamrc"))
 {
     setCurrentGroup(QLatin1String("general"));
@@ -197,7 +197,7 @@ bool GalleryConfig::GalleryConfig::useOriginalImageAsFullImage() const
 
 void GalleryConfig::setFullResize(bool v)
 {
-    if (!isImmutable(QStringLiteral("fullResize")))
+    if (!isImmutable(QLatin1String("fullResize")))
         m_fullResize = v;
 }
 

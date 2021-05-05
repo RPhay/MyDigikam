@@ -6,7 +6,7 @@
  * Date        : 2013-08-19
  * Description : Image quality Settings Container.
  *
- * Copyright (C) 2013-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2013-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -32,40 +32,40 @@ namespace Digikam
 {
 
 ImageQualityContainer::ImageQualityContainer()
-    : enableSorter(false),
-      detectBlur(true),
-      detectNoise(true),
-      detectCompression(true),
-      detectExposure(true),
-      lowQRejected(true),
-      mediumQPending(true),
-      highQAccepted(true),
-      speed(1),
-      rejectedThreshold(10),
-      pendingThreshold(40),
-      acceptedThreshold(60),
-      blurWeight(100),
-      noiseWeight(100),
-      compressionWeight(100)
+    : enableSorter      (false),
+      detectBlur        (true),
+      detectNoise       (true),
+      detectCompression (true),
+      detectExposure    (true),
+      lowQRejected      (true),
+      mediumQPending    (true),
+      highQAccepted     (true),
+      speed             (1),
+      rejectedThreshold (10),
+      pendingThreshold  (40),
+      acceptedThreshold (60),
+      blurWeight        (100),
+      noiseWeight       (100),
+      compressionWeight (100)
 {
 }
 
 ImageQualityContainer::ImageQualityContainer(const ImageQualityContainer& other)
-    : enableSorter(other.enableSorter),
-      detectBlur(other.detectBlur),
-      detectNoise(other.detectNoise),
-      detectCompression(other.detectCompression),
-      detectExposure(other.detectExposure),
-      lowQRejected(other.lowQRejected),
-      mediumQPending(other.mediumQPending),
-      highQAccepted(other.highQAccepted),
-      speed(other.speed),
-      rejectedThreshold(other.rejectedThreshold),
-      pendingThreshold(other.pendingThreshold),
-      acceptedThreshold(other.acceptedThreshold),
-      blurWeight(other.blurWeight),
-      noiseWeight(other.noiseWeight),
-      compressionWeight(other.compressionWeight)
+    : enableSorter      (other.enableSorter),
+      detectBlur        (other.detectBlur),
+      detectNoise       (other.detectNoise),
+      detectCompression (other.detectCompression),
+      detectExposure    (other.detectExposure),
+      lowQRejected      (other.lowQRejected),
+      mediumQPending    (other.mediumQPending),
+      highQAccepted     (other.highQAccepted),
+      speed             (other.speed),
+      rejectedThreshold (other.rejectedThreshold),
+      pendingThreshold  (other.pendingThreshold),
+      acceptedThreshold (other.acceptedThreshold),
+      blurWeight        (other.blurWeight),
+      noiseWeight       (other.noiseWeight),
+      compressionWeight (other.compressionWeight)
 {
 }
 

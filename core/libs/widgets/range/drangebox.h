@@ -41,8 +41,8 @@ class DIGIKAM_EXPORT DIntRangeBox : public QWidget
 
 public:
 
-    explicit DIntRangeBox(QWidget* const parent=nullptr);
-    ~DIntRangeBox();
+    explicit DIntRangeBox(QWidget* const parent = nullptr);
+    ~DIntRangeBox() override;
 
     /**
      * This method sets the lower and upper threshold of possible interval minimum and maximum values.

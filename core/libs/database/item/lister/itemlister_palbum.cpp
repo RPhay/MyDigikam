@@ -7,7 +7,7 @@
  * Description : Listing information from database - PAlbum helpers.
  *
  * Copyright (C) 2007-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2007-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2007-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2015      by Mohamed_Anwer  <m_dot_anwer at gmx dot com>
  * Copyright (C) 2018      by Mario Frank    <mario dot frank at uni minus potsdam dot de>
  *
@@ -83,6 +83,7 @@ void ItemLister::listPAlbum(ItemListerReceiver* const receiver,
     if (d->recursive)
     {
         // SQLite allows no more than 999 parameters
+
         const int maxParams = CoreDbAccess().backend()->maximumBoundValues();
 
         for (int i = 0 ; i < albumIds.size() ; ++i)
@@ -129,7 +130,7 @@ void ItemLister::listPAlbum(ItemListerReceiver* const receiver,
         ++it;
         record.modificationDate  = (*it).toDateTime();
         ++it;
-        record.fileSize          = d->toInt32BitSafe(it);
+        record.fileSize          = (*it).toLongLong();
         ++it;
         width                    = (*it).toInt();
         ++it;

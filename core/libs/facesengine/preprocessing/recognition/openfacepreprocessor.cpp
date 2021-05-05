@@ -6,7 +6,8 @@
  * Date        : 2019-07-09
  * Description : Preprocessor for openface nn model
  *
- * Copyright (C) 2019 by Thanh Trung Dinh <dinhthanhtrung1996 at gmail dot com>
+ * Copyright (C) 2019      by Thanh Trung Dinh <dinhthanhtrung1996 at gmail dot com>
+ * Copyright (C) 2019-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -25,11 +26,11 @@
 
 // Qt includes
 
-#include <QString>
 #include <QFile>
+#include <QTime>
+#include <QString>
 #include <QDataStream>
 #include <QStandardPaths>
-#include <QTime>
 
 // Local includes
 
@@ -48,17 +49,17 @@ namespace Digikam
   * for matrix faceTemplate below.
   */
 static float FACE_TEMPLATE[3][2] = {
-                                       {18.639072, 16.249624},
-                                       {75.73048,  15.18443 },
-                                       {47.515285, 49.38637 }
+                                       {18.639072F, 16.249624F},
+                                       {75.73048F,  15.18443F },
+                                       {47.515285F, 49.38637F }
                                    };
 
 // ---------------------------------------------------------------------------------------------------
 
 OpenfacePreprocessor::OpenfacePreprocessor()
-    : outImageSize(cv::Size(96, 96)),
-      faceTemplate(cv::Mat(3, 2, CV_32F, &FACE_TEMPLATE)),
-      outerEyesNosePositions({36,45,33})
+    : outImageSize          (cv::Size(96, 96)),
+      faceTemplate          (cv::Mat(3, 2, CV_32F, &FACE_TEMPLATE)),
+      outerEyesNosePositions( {36, 45, 33} )
 {
 }
 
@@ -66,12 +67,11 @@ OpenfacePreprocessor::~OpenfacePreprocessor()
 {
 }
 
-void OpenfacePreprocessor::init()
+bool OpenfacePreprocessor::loadModels()
 {
-    // Load shapepredictor model for face alignment with 68 points of face landmark extraction
-
-    QString spdata = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
-                                            QLatin1String("digikam/facesengine/shapepredictor.dat"));
+    QString name   = QLatin1String("shapepredictor.dat");
+    QString spdata = QStandardPaths::locate(QStandardPaths::AppDataLocation,
+                                            QString::fromLatin1("facesengine/%1").arg(name));
     QFile model(spdata);
     RedEye::ShapePredictor* const temp = new RedEye::ShapePredictor();
 
@@ -87,14 +87,19 @@ void OpenfacePreprocessor::init()
     }
     else
     {
-        qCDebug(DIGIKAM_FACEDB_LOG) << "Error open file shapepredictor.dat" << endl;
         delete temp;
-        return;
+
+        qCCritical(DIGIKAM_FACEDB_LOG) << "Cannot found faces engine model" << name;
+        qCCritical(DIGIKAM_FACEDB_LOG) << "Faces recognition feature cannot be used!";
+
+        return false;
     }
 
     delete temp;
 
     qCDebug(DIGIKAM_FACEDB_LOG) << "Finish reading shape predictor file";
+
+    return true;
 }
 
 cv::Mat OpenfacePreprocessor::process(const cv::Mat& image)
@@ -119,14 +124,17 @@ cv::Mat OpenfacePreprocessor::process(const cv::Mat& image)
     }
 
     cv::Rect new_rect(0, 0, image.cols, image.rows);
-    cv::Mat landmarks(3,2, CV_32F);
+    cv::Mat landmarks(3, 2, CV_32F);
+
+    mutex.lock();
     FullObjectDetection object = sp(gray, new_rect);
+    mutex.unlock();
 
     for (size_t i = 0 ; i < outerEyesNosePositions.size() ; ++i)
     {
-        int index                 = outerEyesNosePositions[i];
-        landmarks.at<float>(i, 0) = object.part(index)[0];
-        landmarks.at<float>(i, 1) = object.part(index)[1];
+        int index                      = outerEyesNosePositions[i];
+        landmarks.at<float>((int)i, 0) = object.part(index)[0];
+        landmarks.at<float>((int)i, 1) = object.part(index)[1];
 /*
         qCDebug(DIGIKAM_FACESENGINE_LOG) << "index = " << index
                                          << ", landmarks: (" << landmarks.at<float>(i, 0)
@@ -135,6 +143,7 @@ cv::Mat OpenfacePreprocessor::process(const cv::Mat& image)
     }
 
     qCDebug(DIGIKAM_FACEDB_LOG) << "Full object detection and landmard computation finished";
+
     // qCDebug(DIGIKAM_FACEDB_LOG) << "Finish computing landmark in " << timer.restart() << " ms";
 
     cv::Mat affineTransformMatrix = cv::getAffineTransform(landmarks, faceTemplate);

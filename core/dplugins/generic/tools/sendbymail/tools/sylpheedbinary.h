@@ -6,7 +6,7 @@
  * Date        : 2017-07-04
  * Description : Autodetect sylpheed binary program
  *
- * Copyright (C) 2017-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2017-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -20,8 +20,8 @@
  *
  * ============================================================ */
 
-#ifndef SYLPHEED_BINARY_H
-#define SYLPHEED_BINARY_H
+#ifndef DIGIKAM_SYLPHEED_BINARY_H
+#define DIGIKAM_SYLPHEED_BINARY_H
 
 // Local includes
 
@@ -34,26 +34,14 @@ namespace DigikamGenericSendByMailPlugin
 
 class SylpheedBinary : public DBinaryIface
 {
+    Q_OBJECT
+
 public:
 
-    explicit SylpheedBinary()
-        : DBinaryIface(
-                       QLatin1String("sylpheed"),
-                       QLatin1String("Sylpheed"),
-                       QLatin1String("https://sylpheed.sraoss.jp/en/"),
-                       QLatin1String("SendByMail"),
-                       QStringList(QLatin1String("--version")),
-                       i18n("GTK based Mail Client.")
-                      )
-        {
-            setup();
-        }
-
-    ~SylpheedBinary()
-    {
-    }
+    explicit SylpheedBinary(QObject* const parent = nullptr);
+    ~SylpheedBinary() override;
 };
 
 } // namespace DigikamGenericSendByMailPlugin
 
-#endif // SYLPHEED_BINARY_H
+#endif // DIGIKAM_SYLPHEED_BINARY_H

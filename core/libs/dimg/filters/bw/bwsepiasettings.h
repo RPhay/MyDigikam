@@ -6,7 +6,7 @@
  * Date        : 2010-02-23
  * Description : black and white settings view.
  *
- * Copyright (C) 2010-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2010-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -46,7 +46,7 @@ class DIGIKAM_EXPORT BWSepiaSettings : public QWidget
 public:
 
     explicit BWSepiaSettings(QWidget* const parent, DImg* const img);
-    ~BWSepiaSettings();
+    ~BWSepiaSettings() override;
 
     BWSepiaContainer defaultSettings() const;
     void resetToDefault();

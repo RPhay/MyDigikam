@@ -7,7 +7,7 @@
  * Description : Core database searches XML queries manager
  *
  * Copyright (C) 2008-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2010-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2010-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -113,7 +113,8 @@ bool testRelation(T v1, T v2, Relation rel)
     return false;
 }
 
-/** General default values for groupOperator() and defaultFieldOperator()
+/**
+ * General default values for groupOperator() and defaultFieldOperator()
  */
 inline SearchXml::Operator standardGroupOperator()
 {

@@ -6,7 +6,7 @@
  * Date        : 2017-06-27
  * Description : a tool to create calendar.
  *
- * Copyright (C) 2017-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2017-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -51,15 +51,15 @@ CalIntroPage::CalIntroPage(QWizard* const dialog, const QString& title)
     desc->setWordWrap(true);
     desc->setOpenExternalLinks(true);
 
-    QString str = i18n("<qt>"
-                       "<p><h1><b>Welcome to Calendar Tool</b></h1></p>"
-                       "<p>This assistant will guide you to create "
-                       "and print a calendar with a selection of images taken "
-                       "from your collection.</p>");
+    QString str = QLatin1String("<qt>");
+    str.append(i18n("<p><h1><b>Welcome to Calendar Tool</b></h1></p>"
+                    "<p>This assistant will guide you to create "
+                    "and print a calendar with a selection of images taken "
+                    "from your collection.</p>"));
 
 #ifdef HAVE_KCALENDAR
 
-    str.append(i18n("<p>This tool will also permit to set specific dates "
+    str.append(i18n("<p>This tool will also allow to set specific dates "
                     "on your calendar using external data event files as "
                     "<a href='https://en.wikipedia.org/wiki/VCalendar'>vCalendar</a>, and "
                     "<a href='https://en.wikipedia.org/wiki/Icalendar'>iCalendar</a> formats.</p>"));

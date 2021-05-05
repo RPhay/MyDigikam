@@ -8,7 +8,7 @@
  *               image white balance
  *
  * Copyright (C) 2008-2009 by Guillaume Castagnino <casta at xwing dot info>
- * Copyright (C) 2005-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2005-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -35,7 +35,7 @@
 
 #include <klocalizedstring.h>
 #include <ksharedconfig.h>
-#include "kconfiggroup.h"
+#include <kconfiggroup.h>
 
 // Local includes
 
@@ -58,9 +58,9 @@ class Q_DECL_HIDDEN WhiteBalanceTool::Private
 public:
 
     explicit Private()
-      : settingsView(nullptr),
+      : settingsView (nullptr),
         previewWidget(nullptr),
-        gboxSettings(nullptr)
+        gboxSettings (nullptr)
     {
     }
 
@@ -82,7 +82,8 @@ const QString WhiteBalanceTool::Private::configHistogramScaleEntry(QLatin1String
 // --------------------------------------------------------
 
 WhiteBalanceTool::WhiteBalanceTool(QObject* const parent)
-    : EditorToolThreaded(parent), d(new Private)
+    : EditorToolThreaded(parent),
+      d                 (new Private)
 {
     setObjectName(QLatin1String("whitebalance"));
     setToolName(i18n("White Balance"));
@@ -142,7 +143,7 @@ void WhiteBalanceTool::slotPickerColorButtonActived()
 
 void WhiteBalanceTool::slotColorSelectedFromOriginal(const DColor& color)
 {
-    if ( d->settingsView->pickTemperatureIsOn() )
+    if ( d->settingsView->pickTemperatureIsChecked() )
     {
         WBContainer settings = d->settingsView->settings();
         DColor dc            = color;
@@ -151,7 +152,7 @@ void WhiteBalanceTool::slotColorSelectedFromOriginal(const DColor& color)
         WBFilter::autoWBAdjustementFromColor(tc, settings.temperature, settings.green);
         d->settingsView->setSettings(settings);
 
-        d->settingsView->setOnPickTemperature(false);
+        d->settingsView->setCheckedPickTemperature(false);
     }
     else
     {

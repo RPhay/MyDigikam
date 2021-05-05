@@ -47,7 +47,7 @@ class ODTalker : public QObject
 public:
 
     explicit ODTalker(QWidget* const parent);
-    ~ODTalker();
+    ~ODTalker() override;
 
 public:
 

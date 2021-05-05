@@ -40,23 +40,23 @@ class ConvertToHEIF : public BatchTool
 public:
 
     explicit ConvertToHEIF(QObject* const parent = nullptr);
-    ~ConvertToHEIF();
+    ~ConvertToHEIF()                                        override;
 
-    QString outputSuffix() const;
-    BatchToolSettings defaultSettings();
+    QString outputSuffix()                            const override;
+    BatchToolSettings defaultSettings()                     override;
 
-    BatchTool* clone(QObject* const parent=nullptr) const { return new ConvertToHEIF(parent); };
+    BatchTool* clone(QObject* const parent = nullptr) const override;
 
-    void registerSettingsWidget();
+    void registerSettingsWidget()                           override;
 
 private Q_SLOTS:
 
-    void slotSettingsChanged();
-    void slotAssignSettings2Widget();
+    void slotSettingsChanged()                              override;
+    void slotAssignSettings2Widget()                        override;
 
 private:
 
-    bool toolOperations();
+    bool toolOperations()                                   override;
 
 private:
 

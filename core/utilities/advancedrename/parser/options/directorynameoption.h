@@ -44,16 +44,18 @@ class DirectoryNameOption : public Option
 public:
 
     explicit DirectoryNameOption();
-    ~DirectoryNameOption() {};
+    ~DirectoryNameOption()                          override = default;
 
 protected:
 
-    virtual QString parseOperation(ParseSettings& settings);
+    QString parseOperation(ParseSettings& settings) override;
 
 private:
 
-    DirectoryNameOption(const DirectoryNameOption&);
-    DirectoryNameOption& operator=(const DirectoryNameOption&);
+    // Disable
+    DirectoryNameOption(QObject*)                              = delete;
+    DirectoryNameOption(const DirectoryNameOption&)            = delete;
+    DirectoryNameOption& operator=(const DirectoryNameOption&) = delete;
 };
 
 } // namespace Digikam

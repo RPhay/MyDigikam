@@ -1,9 +1,11 @@
 #
-# Copyright (c) 2010-2020 by Gilles Caulier, <caulier dot gilles at gmail dot com>
+# Copyright (c) 2010-2021 by Gilles Caulier, <caulier dot gilles at gmail dot com>
 # Copyright (c) 2015      by Veaceslav Munteanu, <veaceslav dot munteanu90 at gmail dot com>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
+
+APPLY_COMMON_POLICIES()
 
 include_directories($<TARGET_PROPERTY:Qt5::Gui,INTERFACE_INCLUDE_DIRECTORIES>
                     $<TARGET_PROPERTY:Qt5::Sql,INTERFACE_INCLUDE_DIRECTORIES>
@@ -26,62 +28,74 @@ if(Gphoto2_FOUND)
 endif()
 
 set(libimportuibackend_SRCS
-    backend/cameracontroller.cpp
-    backend/camerathumbsctrl.cpp
-#   backend/camerahistoryupdater.cpp
-    backend/dkcamera.cpp
-    backend/gpcamera.cpp
-    backend/camiteminfo.cpp
-    backend/umscamera.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/backend/cameracontroller.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/backend/camerathumbsctrl.cpp
+#   ${CMAKE_CURRENT_SOURCE_DIR}/backend/camerahistoryupdater.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/backend/dkcamera.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/backend/gpcamera.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/backend/camiteminfo.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/backend/umscamera.cpp
 
-    main/importsettings.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/main/importsettings.cpp
 )
 
 set(libimportui_SRCS
-    dialogs/camerafolderdialog.cpp
-    dialogs/camerainfodialog.cpp
-    dialogs/capturedlg.cpp
-    dialogs/cameramessagebox.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/dialogs/camerafolderdialog.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/dialogs/camerainfodialog.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/dialogs/capturedlg.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/dialogs/cameramessagebox.cpp
 
-    widgets/capturewidget.cpp
-    widgets/freespacewidget.cpp
-    widgets/renamecustomizer.cpp
-    widgets/albumcustomizer.cpp
-    widgets/advancedsettings.cpp
-    widgets/scriptingsettings.cpp
-    widgets/filter.cpp
-    widgets/importfiltercombobox.cpp
-    widgets/importcontextmenu.cpp
-    widgets/dngconvertsettings.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/capturewidget.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/freespacewidget.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/renamecustomizer.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/albumcustomizer.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/advancedsettings.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/scriptingsettings.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/filter.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/importfiltercombobox.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/importcontextmenu.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/dngconvertsettings.cpp
 
-    models/importimagemodel.cpp
-    models/importthumbnailmodel.cpp
-    models/importfiltermodel.cpp
-    models/camitemsortsettings.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/models/importimagemodel.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/models/importthumbnailmodel.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/models/importfiltermodel.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/models/camitemsortsettings.cpp
 
-    items/camerafolderitem.cpp
-    items/itemviewimportdelegate.cpp
-    items/importcategorydrawer.cpp
-    items/importdelegate.cpp
-    items/importtooltipfiller.cpp
-    items/importoverlays.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/items/camerafolderitem.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/items/itemviewimportdelegate.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/items/importcategorydrawer.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/items/importdelegate.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/items/importtooltipfiller.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/items/importoverlays.cpp
 
-    views/camerafolderview.cpp
-    views/cameranamehelper.cpp
-    views/freespacetooltip.cpp
-    views/importcategorizedview.cpp
-    views/importthumbnailbar.cpp
-    views/importpreviewview.cpp
-    views/importiconview.cpp
-    views/importiconview_p.cpp
-    views/importstackedview.cpp
-    views/importview.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/views/camerafolderview.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/views/cameranamehelper.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/views/freespacetooltip.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/views/importcategorizedview.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/views/importthumbnailbar.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/views/importpreviewview.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/views/importiconview.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/views/importiconview_p.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/views/importstackedview.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/views/importview.cpp
 
-    main/importui.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/main/importui.cpp
 )
 
-add_library(importuibackend_src OBJECT ${libimportuibackend_SRCS})
+# Used by digikamgui
+add_library(gui_importuibackend_obj OBJECT ${libimportuibackend_SRCS})
 
-add_library(importui_src OBJECT ${libimportui_SRCS})
+target_compile_definitions(gui_importuibackend_obj
+                           PRIVATE
+                           digikamgui_EXPORTS
+)
 
-install(FILES main/importui5.rc DESTINATION ${KXMLGUI_INSTALL_DIR}/digikam)
+# Used by digikamgui
+add_library(gui_importui_obj OBJECT ${libimportui_SRCS})
+
+target_compile_definitions(gui_importui_obj
+                           PRIVATE
+                           digikamgui_EXPORTS
+)
+
+install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/main/importui5.rc DESTINATION ${KXMLGUI_INSTALL_DIR}/digikam)

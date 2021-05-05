@@ -46,7 +46,7 @@ class DIGIKAM_DATABASE_EXPORT DBJobsThread : public ActionThreadBase
 public:
 
     explicit DBJobsThread(QObject* const parent);
-    ~DBJobsThread();
+    ~DBJobsThread() override;
 
     /**
      * @brief hasErrors: a method to check for jobs errors
@@ -95,7 +95,7 @@ class DIGIKAM_DATABASE_EXPORT AlbumsDBJobsThread : public DBJobsThread
 public:
 
     explicit AlbumsDBJobsThread(QObject* const parent);
-    ~AlbumsDBJobsThread();
+    ~AlbumsDBJobsThread() override;
 
     /**
      * @brief Starts PAlbums listing and scanning job(s)
@@ -118,7 +118,7 @@ class DIGIKAM_DATABASE_EXPORT TagsDBJobsThread : public DBJobsThread
 public:
 
     explicit TagsDBJobsThread(QObject* const parent);
-    ~TagsDBJobsThread();
+    ~TagsDBJobsThread() override;
 
     /**
      * @brief Starts tags listing and scanning job(s)
@@ -141,7 +141,7 @@ class DIGIKAM_DATABASE_EXPORT DatesDBJobsThread : public DBJobsThread
 public:
 
     explicit DatesDBJobsThread(QObject* const parent);
-    ~DatesDBJobsThread();
+    ~DatesDBJobsThread() override;
 
     /**
      * @brief Starts dates listing and scanning
@@ -151,7 +151,7 @@ public:
 
 Q_SIGNALS:
 
-    void foldersData(const QMap<QDateTime, int>&);
+    void foldersData(const QHash<QDateTime, int>&);
 };
 
 // ---------------------------------------------
@@ -163,7 +163,7 @@ class DIGIKAM_DATABASE_EXPORT SearchesDBJobsThread : public DBJobsThread
 public:
 
     explicit SearchesDBJobsThread(QObject* const parent);
-    ~SearchesDBJobsThread();
+    ~SearchesDBJobsThread() override;
 
     /**
      * @brief Starts searches listing and scanning
@@ -171,10 +171,21 @@ public:
      */
     void searchesListing(const SearchesDBJobInfo& info);
 
+public Q_SLOTS:
+
+    void slotImageProcessed();
+    void slotDuplicatesResults(const HaarIface::DuplicatesResultsMap&);
+
 Q_SIGNALS:
 
-    void processedSize(int number);
-    void totalSize(int number);
+    void signalProgress(int percentage);
+
+private:
+    HaarIface::DuplicatesResultsMap m_results;
+    QScopedPointer<HaarIface>       m_haarIface;
+    bool                            m_isAlbumUpdate;
+    int                             m_processedImages;
+    int                             m_totalImages2Scan;
 };
 
 // ---------------------------------------------
@@ -186,7 +197,7 @@ class DIGIKAM_DATABASE_EXPORT GPSDBJobsThread : public DBJobsThread
 public:
 
     explicit GPSDBJobsThread(QObject* const parent);
-    ~GPSDBJobsThread();
+    ~GPSDBJobsThread() override;
 
     /**
      * @brief Starts GPS listing and scanning

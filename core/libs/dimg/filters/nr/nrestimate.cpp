@@ -9,10 +9,10 @@
  *               described into "The Handbook of Astronomical Image Processing" book
  *               from Richard Berry and James Burnell, chapter 18.
  *               See this wiki page for details:
- *               http://community.kde.org/Digikam/SoK2012/AutoNR
+ *               community.kde.org/Digikam/SoK2012/AutoNR
  *
  * Copyright (C) 2012-2013 by Sayantan Datta <sayantan dot knz at gmail dot com>
- * Copyright (C) 2012-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -38,7 +38,7 @@
 
 #include "digikam_opencv.h"
 
-// Qt includes.
+// Qt includes
 
 #include <QTextStream>
 #include <QFile>
@@ -57,7 +57,7 @@ public:
 
     explicit Private()
       : clusterCount(30),
-        size(512)
+        size        (512)
     {
         for (int c = 0 ; c < 3 ; ++c)
         {
@@ -76,7 +76,7 @@ public:
 
 NREstimate::NREstimate(DImg* const img, QObject* const parent)
     : DImgThreadedAnalyser(parent, QLatin1String("NREstimate")),
-      d(new Private)
+      d                   (new Private)
 {
     // Use the Top/Left corner of 256x256 pixels to analys noise contents from image.
     // This will speed-up computation time with OpenCV
@@ -179,7 +179,7 @@ void NREstimate::startAnalyse()
 
     for (uint i = 0 ; runningFlag() && (i < d->clusterCount) ; ++i)
     {
-        //initializing the cluster count array
+        // initializing the cluster count array
 
         rowPosition[i] = 0;
     }
@@ -248,11 +248,11 @@ void NREstimate::startAnalyse()
         columnIndex = clusters->data.i[i];
         rowIndex    = rPosition[columnIndex];
 
-        //moving to the right row
+        // moving to the right row
 
         ptr         = reinterpret_cast<float*>(sd->data.ptr + rowIndex*(sd->step));
 
-        //moving to the right column
+        // moving to the right column
 
         for (int j = 0 ; runningFlag() && (j < columnIndex) ; ++j)
         {
@@ -330,7 +330,7 @@ void NREstimate::startAnalyse()
                 oms << *meanStorePtr++;
                 oms << "\t";
 
-                if ((i+1)%3 == 0)
+                if (((i + 1) % 3) == 0)
                 {
                     oms << "\n";
                 }
@@ -343,7 +343,7 @@ void NREstimate::startAnalyse()
                 oms << *stdStorePtr++;
                 oms << "\t";
 
-                if ((i+1)%3 == 0)
+                if (((i + 1) % 3) == 0)
                 {
                     oms << "\n";
                 }
@@ -457,14 +457,18 @@ void NREstimate::startAnalyse()
         {
             L = datasd[0] - 0.98;
         }
-        else if (datasd[0] >= 7 && datasd[0] < 8)
+
+        // cppcheck-suppress knownConditionTrueFalse
+        else if ((datasd[0] >= 7) && (datasd[0] < 8))
         {
             L = datasd[0] - 1.2;
         }
-        else if (datasd[0] >= 8 && datasd[0] < 9)
+
+        else if ((datasd[0] >= 8) && (datasd[0] < 9))
         {
             L = datasd[0] - 1.5;
         }
+
         else
         {
             L = datasd[0] - 1.7;
@@ -497,11 +501,11 @@ void NREstimate::startAnalyse()
         Cb = floorf(Cb * 100) / 100;
         Cr = floorf(Cr * 100) / 100;
 
-        if      ( L > 9 )
+        if      (L > 9)
         {
             LSoft = CrSoft = CbSoft = 0.8;
         }
-        else if ( L > 3)
+        else if (L > 3)
         {
             LSoft = CrSoft = CbSoft = 0.7;
         }

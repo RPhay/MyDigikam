@@ -27,6 +27,7 @@
 // Qt includes
 
 #include <QString>
+#include <QSet>
 
 // Local includes
 
@@ -142,51 +143,33 @@ class DIGIKAM_DATABASE_EXPORT SearchesDBJobInfo : public DBJobInfo
 {
 public:
 
-    explicit SearchesDBJobInfo();
+    explicit SearchesDBJobInfo(QList<int>&& searchIds);
+    SearchesDBJobInfo(QSet<qlonglong>&& imageIds, bool isAlbumUpdate);
 
-    void setDuplicatesJob();
-    bool isDuplicatesJob()          const;
+    bool isDuplicatesJob()            const;
+    bool isAlbumUpdate()              const;
 
-    void setAlbumUpdate();
-    bool isAlbumUpdate()            const;
-
-    void setSearchIds(QList<int> ids);
-    void setSearchId(int id);
-    QList<int> searchIds()          const;
+    const QList<int>& searchIds()     const;
+    const QSet<qlonglong>& imageIds() const;
 
     void setMinThreshold(double t);
-    double minThreshold()           const;
+    double minThreshold()             const;
 
     void setMaxThreshold(double t);
-    double maxThreshold()           const;
-
-    void setAlbumTagRelation(int type);
-    int albumTagRelation()          const;
+    double maxThreshold()             const;
 
     void setSearchResultRestriction(int type);
-    int searchResultRestriction()   const;
-
-    void setAlbumsIds(const QList<int>& albumsIds);
-    QList<int> albumsIds()          const;
-
-    void setImageIds(const QList<qlonglong>& imageIds);
-    QList<qlonglong> imageIds()     const;
-
-    void setTagsIds(const QList<int>& tagsIds);
-    QList<int> tagsIds()            const;
+    int searchResultRestriction()     const;
 
 public:
 
     bool             m_duplicates;
     bool             m_albumUpdate;
-    int              m_albumTagRelation;
     int              m_searchResultRestriction;
     QList<int>       m_searchIds;
+    QSet<qlonglong>  m_imageIds;
     double           m_minThreshold;
     double           m_maxThreshold;
-    QList<int>       m_albumsIds;
-    QList<qlonglong> m_imageIds;
-    QList<int>       m_tagsIds;
 };
 
 // ---------------------------------------------

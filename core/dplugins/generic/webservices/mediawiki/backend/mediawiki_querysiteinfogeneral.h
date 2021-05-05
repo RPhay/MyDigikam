@@ -6,7 +6,7 @@
  * Date        : 2011-03-22
  * Description : a Iface C++ interface
  *
- * Copyright (C) 2011-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2011-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2011      by Hormiere Guillaume <hormiere dot guillaume at gmail dot com>
  * Copyright (C) 2011      by Manuel Campomanes <campomanes dot manuel at gmail dot com>
  *
@@ -32,7 +32,6 @@
 
 // Local includes
 
-#include "digikam_export.h"
 #include "mediawiki_job.h"
 #include "mediawiki_generalinfo.h"
 
@@ -47,7 +46,7 @@ class QuerySiteInfoGeneralPrivate;
  *
  * Uses for fetch a generals information about the wiki.
  */
-class DIGIKAM_EXPORT QuerySiteInfoGeneral : public Job
+class QuerySiteInfoGeneral : public Job
 {
     Q_OBJECT
     Q_DECLARE_PRIVATE(QuerySiteInfoGeneral)
@@ -71,12 +70,12 @@ public:
     /**
      * @brief Destroys the QuerySiteInfoGeneral job.
      */
-    virtual ~QuerySiteInfoGeneral();
+    ~QuerySiteInfoGeneral() override;
 
     /**
      * @brief Starts the job asynchronously.
      */
-    void start() Q_DECL_OVERRIDE;
+    void start() override;
 
 Q_SIGNALS:
 

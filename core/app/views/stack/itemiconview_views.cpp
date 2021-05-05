@@ -7,7 +7,7 @@
  * Description : Item icon view interface - View methods.
  *
  * Copyright (C) 2002-2005 by Renchi Raju <renchi dot raju at gmail dot com>
- * Copyright (C) 2002-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2002-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2009-2011 by Johannes Wienke <languitar at semipol dot de>
  * Copyright (C) 2010-2011 by Andi Clemens <andi dot clemens at gmail dot com>
  * Copyright (C) 2011-2013 by Michael G. Hansen <mike at mghansen dot de>
@@ -51,16 +51,18 @@ void ItemIconView::connectIconViewFilter(FilterStatusBar* const filterbar)
 
 void ItemIconView::slotEscapePreview()
 {
-    if (viewMode() == StackedView::IconViewMode  ||
-        viewMode() == StackedView::MapWidgetMode ||
-        viewMode() == StackedView::TableViewMode ||
-        viewMode() == StackedView::WelcomePageMode)
+    if (
+        (viewMode() == StackedView::IconViewMode)  ||
+        (viewMode() == StackedView::MapWidgetMode) ||
+        (viewMode() == StackedView::TableViewMode) ||
+        (viewMode() == StackedView::WelcomePageMode)
+       )
     {
         return;
     }
 
-    // pass a null image info, because we want to fall back to the old
-    // view mode
+    // pass a null image info, because we want to fall back to the old view mode
+
     slotTogglePreviewMode(ItemInfo());
 }
 
@@ -82,9 +84,11 @@ void ItemIconView::slotIconView()
     }
 
     // and switch to icon view
+
     d->stackedview->setViewMode(StackedView::IconViewMode);
 
     // make sure the next/previous buttons are updated
+
     slotImageSelected();
 }
 
@@ -98,9 +102,9 @@ void ItemIconView::slotImagePreview()
  */
 void ItemIconView::slotTogglePreviewMode(const ItemInfo& info)
 {
-    if ((viewMode() == StackedView::IconViewMode   ||
-         viewMode() == StackedView::TableViewMode  ||
-         viewMode() == StackedView::MapWidgetMode) && !info.isNull())
+    if (((viewMode() == StackedView::IconViewMode)   ||
+         (viewMode() == StackedView::TableViewMode)  ||
+         (viewMode() == StackedView::MapWidgetMode)) && !info.isNull())
     {
         if (info.isLocationAvailable())
         {
@@ -119,16 +123,18 @@ void ItemIconView::slotTogglePreviewMode(const ItemInfo& info)
         {
             QModelIndex index = d->iconView->indexForInfo(info);
             d->iconView->showIndexNotification(index,
-                                               i18nc("@info", "<i>The storage location of this image<br/>is currently not available</i>"));
+                                               i18nc("@info: item icon view", "The storage location of this image\nis currently not available"));
         }
     }
     else
     {
         // go back to either AlbumViewMode or MapWidgetMode
+
         d->stackedview->setViewMode(d->lastViewMode);
     }
 
     // make sure the next/previous buttons are updated
+
     slotImageSelected();
 }
 
@@ -142,24 +148,30 @@ void ItemIconView::slotViewModeChanged()
             emit signalSwitchedToIconView();
             emit signalThumbSizeChanged(d->thumbSize);
             break;
+
         case StackedView::PreviewImageMode:
             emit signalSwitchedToPreview();
             slotZoomFactorChanged(d->stackedview->zoomFactor());
             break;
+
         case StackedView::WelcomePageMode:
             emit signalSwitchedToIconView();
             break;
+
         case StackedView::MediaPlayerMode:
             emit signalSwitchedToPreview();
             break;
+
         case StackedView::MapWidgetMode:
             emit signalSwitchedToMapView();
-            //TODO: connect map view's zoom buttons to main status bar zoom buttons
+            // TODO: connect map view's zoom buttons to main status bar zoom buttons
             break;
+
         case StackedView::TableViewMode:
             emit signalSwitchedToTableView();
             emit signalThumbSizeChanged(d->thumbSize);
             break;
+
         case StackedView::TrashViewMode:
             emit signalSwitchedToTrashView();
             break;
@@ -171,6 +183,7 @@ void ItemIconView::toggleShowBar(bool b)
     d->stackedview->thumbBarDock()->showThumbBar(b);
 
     // See bug #319876 : force to reload current view mode to set thumbbar visibility properly.
+
     d->stackedview->setViewMode(viewMode());
 }
 
@@ -184,6 +197,11 @@ void ItemIconView::slotSetupMetadataFilters(int tab)
     Setup::execMetadataFilters(this, tab);
 }
 
+void ItemIconView::slotSetupExifTool()
+{
+    Setup::execExifTool(this);
+}
+
 void ItemIconView::toggleFullScreen(bool set)
 {
     d->stackedview->imagePreviewView()->toggleFullScreen(set);
@@ -193,7 +211,7 @@ void ItemIconView::setToolsIconView(DCategorizedView* const view)
 {
     d->rightSideBar->appendTab(view,
                                QIcon::fromTheme(QLatin1String("document-edit")),
-                               i18n("Tools"));
+                               i18nc("@title: item icon view", "Tools"));
 }
 
 void ItemIconView::refreshView()
@@ -208,7 +226,7 @@ void ItemIconView::slotShowContextMenu(QContextMenuEvent* event,
 
     if (!album          ||
         album->isRoot() ||
-        (album->type() != Album::PHYSICAL && album->type() != Album::TAG))
+        ((album->type() != Album::PHYSICAL) && (album->type() != Album::TAG)))
     {
         return;
     }
@@ -219,9 +237,8 @@ void ItemIconView::slotShowContextMenu(QContextMenuEvent* event,
     cmHelper.addAction(QLatin1String("full_screen"));
     cmHelper.addAction(QLatin1String("options_show_menubar"));
     cmHelper.addSeparator();
-    // --------------------------------------------------------
     cmHelper.addStandardActionPaste(this, SLOT(slotImagePaste()));
-    // --------------------------------------------------------
+
     if (!extraGroupingActions.isEmpty())
     {
         cmHelper.addSeparator();
@@ -238,6 +255,7 @@ void ItemIconView::slotShowContextMenuOnInfo(QContextMenuEvent* event, const Ite
     QList<qlonglong> selectedImageIds = selectedInfoList(true, true).toImageIdList();
 
     // --------------------------------------------------------
+
     QMenu menu(this);
     ContextMenuHelper cmHelper(&menu);
     cmHelper.setItemFilterModel(imageFilterModel);
@@ -248,7 +266,7 @@ void ItemIconView::slotShowContextMenuOnInfo(QContextMenuEvent* event, const Ite
 
     // --------------------------------------------------------
 
-    QAction* const viewAction = new QAction(i18nc("View the selected image", "Preview"), this);
+    QAction* const viewAction = new QAction(i18nc("@action: View the selected image", "Preview"), this);
     viewAction->setIcon(QIcon::fromTheme(QLatin1String("view-preview")));
     viewAction->setEnabled(selectedImageIds.count() == 1);
     cmHelper.addAction(viewAction);

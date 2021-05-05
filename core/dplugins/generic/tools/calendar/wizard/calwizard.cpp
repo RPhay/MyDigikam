@@ -11,7 +11,7 @@
  * Copyright (C) 2007-2008 by Orgad Shaneh <orgads at gmail dot com>
  * Copyright (C) 2011      by Andi Clemens <andi dot clemens at googlemail dot com>
  * Copyright (C) 2012      by Angelo Naselli <anaselli at linux dot it>
- * Copyright (C) 2012-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -62,24 +62,26 @@ class Q_DECL_HIDDEN CalWizard::Private
 public:
 
     explicit Private()
-    {
-        iface         = nullptr;
-        introPage     = nullptr;
-        cSettings     = nullptr;
-        wTemplate     = nullptr;
-        wPrintLabel   = nullptr;
-        wFinish       = nullptr;
-        wTemplatePage = nullptr;
-        wPrintPage    = nullptr;
-        wFinishPage   = nullptr;
+      : iface         (nullptr),
+        introPage     (nullptr),
+        cSettings     (nullptr),
+        wTemplate     (nullptr),
+        wPrintLabel   (nullptr),
+        wFinish       (nullptr),
+        wTemplatePage (nullptr),
+        wPrintPage    (nullptr),
+        wFinishPage   (nullptr),
 
 #ifdef HAVE_KCALENDAR
-        wEvents       = nullptr;
-        wEventsPage   = nullptr;
+
+        wEvents       (nullptr),
+        wEventsPage   (nullptr),
+
 #endif
 
-        printer       = nullptr;
-        printThread   = nullptr;
+        printer       (nullptr),
+        printThread   (nullptr)
+    {
     }
 
     DInfoInterface*  iface;
@@ -97,8 +99,10 @@ public:
     DWizardPage*     wFinishPage;
 
 #ifdef HAVE_KCALENDAR
+
     QWidget*         wEvents;
     DWizardPage*     wEventsPage;
+
 #endif
 
     QPrinter*        printer;
@@ -127,11 +131,13 @@ CalWizard::CalWizard(QWidget* const parent, DInfoInterface* const iface)
     // ---------------------------------------------------------------
 
 #ifdef HAVE_KCALENDAR
+
     d->wEvents     = new QWidget(this);
     d->calEventsUI.setupUi(d->wEvents);
     d->wEventsPage = new DWizardPage(this, i18n("Choose events to show on the Calendar"));
     d->wEventsPage->setPageWidget(d->wEvents);
     d->wEventsPage->setLeftBottomPix(QIcon::fromTheme(QLatin1String("text-vcalendar")));
+
 #endif
 
     // ---------------------------------------------------------------
@@ -154,6 +160,7 @@ CalWizard::CalWizard(QWidget* const parent, DInfoInterface* const iface)
     // ---------------------------------------------------------------
 
 #ifdef HAVE_KCALENDAR
+
     d->calEventsUI.ohUrlRequester->setFileDlgFilter(i18n("%1|Calendar Data File", QLatin1String("*.ics")));
     d->calEventsUI.ohUrlRequester->setFileDlgTitle(i18n("Select Calendar Data File"));
     d->calEventsUI.ohUrlRequester->setFileDlgMode(QFileDialog::ExistingFile);
@@ -161,6 +168,7 @@ CalWizard::CalWizard(QWidget* const parent, DInfoInterface* const iface)
     d->calEventsUI.fhUrlRequester->setFileDlgFilter(i18n("%1|Calendar Data File", QLatin1String("*.ics")));
     d->calEventsUI.fhUrlRequester->setFileDlgTitle(i18n("Select Calendar Data File"));
     d->calEventsUI.fhUrlRequester->setFileDlgMode(QFileDialog::ExistingFile);
+
 #endif
 
     // ------------------------------------------
@@ -267,6 +275,7 @@ void CalWizard::slotPageSelected(int curr)
         CalParams& params = d->cSettings->params;
 
         // Orientation
+
         switch (params.imgPos)
         {
             case (CalParams::Top):
@@ -281,6 +290,7 @@ void CalWizard::slotPageSelected(int curr)
         qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "printing...";
 
         // PageSize
+
         d->printer->setPageSize(QPageSize(params.pageSize));
 
         QPrintDialog* const printDialog = new QPrintDialog(d->printer, this);
@@ -317,8 +327,10 @@ void CalWizard::print()
     d->cSettings->clearSpecial();
 
 #ifdef HAVE_KCALENDAR
+
     d->cSettings->loadSpecial(QUrl::fromLocalFile(d->calEventsUI.ohUrlRequester->lineEdit()->text()), Qt::red);
     d->cSettings->loadSpecial(QUrl::fromLocalFile(d->calEventsUI.fhUrlRequester->lineEdit()->text()), Qt::darkGreen);
+
 #endif
 
     d->printThread = new CalPrinter(d->printer, d->months, this);

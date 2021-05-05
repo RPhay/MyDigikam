@@ -29,7 +29,6 @@
 
 // Local includes
 
-#include "digikam_export.h"
 #include "dinfointerface.h"
 #include "wstooldialog.h"
 
@@ -43,14 +42,14 @@ namespace DigikamGenericTwitterPlugin
 
 class TwAlbum;
 
-class DIGIKAM_EXPORT TwWindow : public WSToolDialog
+class TwWindow : public WSToolDialog
 {
     Q_OBJECT
 
 public:
 
     explicit TwWindow(DInfoInterface* const iface, QWidget* const parent);
-    ~TwWindow();
+    ~TwWindow()                     override;
 
     void reactivate();
 
@@ -64,14 +63,16 @@ private:
     void uploadNextPhoto();
 
     void buttonStateChange(bool state);
-    void closeEvent(QCloseEvent*) override;
+    void closeEvent(QCloseEvent*)   override;
 
 private Q_SLOTS:
 
     void slotImageListChanged();
     void slotUserChangeRequest();
     void slotNewAlbumRequest();
-    //void slotReloadAlbumsRequest();
+/*
+    void slotReloadAlbumsRequest();
+*/
     void slotStartTransfer();
 
     void slotBusy(bool);

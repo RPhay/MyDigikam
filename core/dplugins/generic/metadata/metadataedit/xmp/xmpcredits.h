@@ -6,7 +6,7 @@
  * Date        : 2007-10-24
  * Description : XMP credits settings page.
  *
- * Copyright (C) 2007-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2007-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -38,10 +38,15 @@ class XMPCredits : public QWidget
 public:
 
     explicit XMPCredits(QWidget* const parent);
-    ~XMPCredits();
+    ~XMPCredits() override;
 
-    void applyMetadata(QByteArray& xmpData);
+    void applyMetadata(QByteArray& exifData, QByteArray& xmpData);
     void readMetadata(QByteArray& xmpData);
+
+    bool syncEXIFArtistIsChecked() const;
+    void setCheckedSyncEXIFArtist(bool c);
+
+    QString getXMPByLine()         const;
 
 Q_SIGNALS:
 

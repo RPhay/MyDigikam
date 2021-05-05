@@ -6,7 +6,7 @@
  * Date        : 2008-09-24
  * Description : DNG save settings widgets
  *
- * Copyright (C) 2008-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2008-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -40,8 +40,8 @@ class DIGIKAM_EXPORT DNGSettings : public QWidget
 
 public:
 
-    explicit DNGSettings(QWidget* const parent=nullptr);
-    ~DNGSettings();
+    explicit DNGSettings(QWidget* const parent = nullptr);
+    ~DNGSettings() override;
 
     void setCompressLossLess(bool b);
     bool compressLossLess()         const;

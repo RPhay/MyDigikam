@@ -6,7 +6,7 @@
  * Date        : 2017-06-27
  * Description : a tool to export items to web services.
  *
- * Copyright (C) 2017-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2017-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2018      by Thanh Trung Dinh <dinhthanhtrung1996 at gmail dot com>
  *
  * This program is free software; you can redistribute it
@@ -36,7 +36,7 @@
 // KDE includes
 
 #include <klocalizedstring.h>
-#include <kconfig.h>
+#include <ksharedconfig.h>
 #include <kconfiggroup.h>
 
 // Local includes
@@ -91,27 +91,27 @@ WSWizard::WSWizard(DInfoInterface* const iface, QWidget* const parent)
     setOptions(QWizard::NoBackButtonOnStartPage | QWizard::NoCancelButtonOnLastPage);
     setWindowTitle(i18n("Export to Web Services"));
 
-    d->iface             = iface;
-    d->settings          = new WSSettings(this);
+    d->iface                = iface;
+    d->settings             = new WSSettings(this);
 
-    d->wsAuth            = new WSAuthentication(this, d->iface);
+    d->wsAuth               = new WSAuthentication(this, d->iface);
 
-    KConfig config;
-    KConfigGroup group   = config.group("Web Services Dialog Settings");
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup group      = config->group("Web Services Dialog Settings");
     d->settings->readSettings(group);
 
-    d->introPage         = new WSIntroPage(this,    i18n("Welcome to Web Services Tool"));
-    d->authPage          = new WSAuthenticationWizard(this, i18n("Authentication dialog"));
-    d->albumsPage        = new WSAlbumsPage(this,   i18n("Albums Selection"));
-    d->imagesPage        = new WSImagesPage(this,   i18n("Images List"));
-    d->settingsPage      = new WSSettingsPage(this, i18n("Web Service Settings"));
-    d->finalPage         = new WSFinalPage(this,    i18n("Export by Web Service"));
+    d->introPage            = new WSIntroPage(this,    i18n("Welcome to Web Services Tool"));
+    d->authPage             = new WSAuthenticationWizard(this, i18n("Authentication dialog"));
+    d->albumsPage           = new WSAlbumsPage(this,   i18n("Albums Selection"));
+    d->imagesPage           = new WSImagesPage(this,   i18n("Images List"));
+    d->settingsPage         = new WSSettingsPage(this, i18n("Web Service Settings"));
+    d->finalPage            = new WSFinalPage(this,    i18n("Export by Web Service"));
 }
 
 WSWizard::~WSWizard()
 {
-    KConfig config;
-    KConfigGroup group = config.group("Web Services Dialog Settings");
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup group      = config->group("Web Services Dialog Settings");
     d->settings->writeSettings(group);
 
     delete d;

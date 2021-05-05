@@ -6,7 +6,7 @@
  * Date        : 2010-12-15
  * Description : Red Eyes auto correction settings container.
  *
- * Copyright (C) 2005-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2005-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2016      by Omar Amin <Omar dot moh dot amin at gmail dot com>
  *
  * This program is free software; you can redistribute it
@@ -50,7 +50,9 @@ public:
 
     void writeToFilterAction(FilterAction& action,
                              const QString& prefix = QString()) const;
-    static RedEyeCorrectionContainer fromFilterAction(const FilterAction& action, const QString& prefix = QString());
+
+    static RedEyeCorrectionContainer fromFilterAction(const FilterAction& action,
+                                                      const QString& prefix = QString());
 
 public:
 

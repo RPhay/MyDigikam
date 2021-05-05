@@ -6,7 +6,8 @@
  * Date        : 2013-05-13
  * Description : Table view column helpers: Audio/video properties
  *
- * Copyright (C) 2013 by Michael G. Hansen <mike at mghansen dot de>
+ * Copyright (C) 2017-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2013      by Michael G. Hansen <mike at mghansen dot de>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -45,12 +46,12 @@ public:
 
     enum SubColumn
     {
-        SubColumnAudioBitRate = 0,
+        SubColumnAudioBitRate     = 0,
         SubColumnAudioChannelType = 1,
-        SubColumnAudioCodec = 2,
-        SubColumnDuration = 3,
-        SubColumnFrameRate = 4,
-        SubColumnVideoCodec = 5
+        SubColumnAudioCodec       = 2,
+        SubColumnDuration         = 3,
+        SubColumnFrameRate        = 4,
+        SubColumnVideoCodec       = 5
     };
 
 public:
@@ -59,13 +60,13 @@ public:
                                         const TableViewColumnConfiguration& pConfiguration,
                                         const SubColumn pSubColumn,
                                         QObject* const parent = nullptr);
-    virtual ~ColumnAudioVideoProperties();
+    ~ColumnAudioVideoProperties() override;
 
-    virtual QString getTitle() const;
-    virtual ColumnFlags getColumnFlags() const;
-    virtual QVariant data(TableViewModel::Item* const item, const int role) const;
-    virtual ColumnCompareResult compare(TableViewModel::Item* const itemA, TableViewModel::Item* const itemB) const;
-    virtual void setConfiguration(const TableViewColumnConfiguration& newConfiguration);
+    QString getTitle()                                                                                const override;
+    ColumnFlags getColumnFlags()                                                                      const override;
+    QVariant data(TableViewModel::Item* const item, const int role)                                   const override;
+    ColumnCompareResult compare(TableViewModel::Item* const itemA, TableViewModel::Item* const itemB) const override;
+    void setConfiguration(const TableViewColumnConfiguration& newConfiguration) override;
 
     static TableViewColumnDescription getDescription();
     static QStringList getSubColumns();

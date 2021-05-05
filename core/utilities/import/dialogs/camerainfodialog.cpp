@@ -7,7 +7,7 @@
  * Description : a dialog to display camera information.
  *
  * Copyright (C) 2003-2005 by Renchi Raju <renchi dot raju at gmail dot com>
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -63,21 +63,21 @@ CameraInfoDialog::CameraInfoDialog(QWidget* const parent,
     QTextEdit* const summaryView = new QTextEdit(summary);
     summaryView->setWordWrapMode(QTextOption::WordWrap);
     summaryView->setReadOnly(true);
-    tab->insertTab(0, summaryView, QIcon::fromTheme(QLatin1String("dialog-information")), i18n("Device Summary"));
+    tab->insertTab(0, summaryView, QIcon::fromTheme(QLatin1String("dialog-information")), i18nc("@title", "Device Summary"));
 
     // ----------------------------------------------------------
 
     QTextEdit* const manualView  = new QTextEdit(manual);
     manualView->setWordWrapMode(QTextOption::WordWrap);
     manualView->setReadOnly(true);
-    tab->insertTab(1, manualView, QIcon::fromTheme(QLatin1String("help-contents")), i18n("Device Manual"));
+    tab->insertTab(1, manualView, QIcon::fromTheme(QLatin1String("help-contents")), i18nc("@title", "Device Manual"));
 
     // ----------------------------------------------------------
 
     QTextEdit* const aboutView   = new QTextEdit(about);
     aboutView->setWordWrapMode(QTextOption::WordWrap);
     aboutView->setReadOnly(true);
-    tab->insertTab(2, aboutView, QIcon::fromTheme(QLatin1String("camera-photo")), i18n("About Driver"));
+    tab->insertTab(2, aboutView, QIcon::fromTheme(QLatin1String("camera-photo")), i18nc("@title", "About Driver"));
 
     // ----------------------------------------------------------
 

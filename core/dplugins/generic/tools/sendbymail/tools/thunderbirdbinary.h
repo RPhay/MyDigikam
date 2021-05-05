@@ -6,7 +6,7 @@
  * Date        : 2017-07-04
  * Description : Autodetect thunderbird binary program
  *
- * Copyright (C) 2017-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2017-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -20,8 +20,8 @@
  *
  * ============================================================ */
 
-#ifndef THUNDERBIRD_BINARY_H
-#define THUNDERBIRD_BINARY_H
+#ifndef DIGIKAM_THUNDERBIRD_BINARY_H
+#define DIGIKAM_THUNDERBIRD_BINARY_H
 
 // Local includes
 
@@ -34,26 +34,14 @@ namespace DigikamGenericSendByMailPlugin
 
 class ThunderbirdBinary : public DBinaryIface
 {
+    Q_OBJECT
+
 public:
 
-    explicit ThunderbirdBinary()
-        : DBinaryIface(
-                       QLatin1String("thunderbird"),
-                       QLatin1String("Thunderbird"),
-                       QLatin1String("https://www.mozilla.org/en-US/thunderbird/"),
-                       QLatin1String("SendByMail"),
-                       QStringList(QLatin1String("-v")),
-                       i18n("Mozilla Foundation Mail Client.")
-                      )
-        {
-            setup();
-        }
-
-    ~ThunderbirdBinary()
-    {
-    }
+    explicit ThunderbirdBinary(QObject* const parent = nullptr);
+    ~ThunderbirdBinary() override;
 };
 
 } // namespace DigikamGenericSendByMailPlugin
 
-#endif // THUNDERBIRD_BINARY_H
+#endif // DIGIKAM_THUNDERBIRD_BINARY_H

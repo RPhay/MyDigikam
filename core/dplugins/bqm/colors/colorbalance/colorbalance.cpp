@@ -6,7 +6,7 @@
  * Date        : 2010-02-11
  * Description : Color Balance batch tool.
  *
- * Copyright (C) 2010-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2010-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -40,9 +40,9 @@ namespace DigikamBqmColorBalancePlugin
 {
 
 ColorBalance::ColorBalance(QObject* const parent)
-    : BatchTool(QLatin1String("ColorBalance"), ColorTool, parent)
+    : BatchTool(QLatin1String("ColorBalance"), ColorTool, parent),
+      m_settingsView(nullptr)
 {
-    m_settingsView = nullptr;
 
     setToolTitle(i18n("Color Balance"));
     setToolDescription(i18n("Adjust color balance."));
@@ -52,6 +52,12 @@ ColorBalance::ColorBalance(QObject* const parent)
 ColorBalance::~ColorBalance()
 {
 }
+
+BatchTool* ColorBalance::clone(QObject* const parent) const
+{
+    return new ColorBalance(parent);
+}
+
 
 void ColorBalance::registerSettingsWidget()
 {

@@ -27,6 +27,10 @@
 
 #include <QRectF>
 
+// Local includes
+
+#include "camiteminfo.h"
+
 namespace Digikam
 {
 
@@ -96,6 +100,7 @@ void CamItemSortSettings::setSortRole(SortRole role)
 void CamItemSortSettings::setSortOrder(SortOrder order)
 {
     sortOrder = order;
+    setCategorizationSortOrder(order);
 
     if (sortOrder == DefaultOrder)
     {
@@ -171,17 +176,22 @@ int CamItemSortSettings::compareCategories(const CamItemInfo& left, const CamIte
         case NoCategories:
         case CategoryByFolder:
         {
-            return naturalCompare(left.folder, right.folder, currentCategorizationSortOrder, categorizationCaseSensitivity, strTypeNatural);
+            return naturalCompare(left.folder, right.folder,
+                                  currentCategorizationSortOrder,
+                                  categorizationCaseSensitivity, strTypeNatural);
         }
 
         case CategoryByFormat:
         {
-            return naturalCompare(left.mime, right.mime, currentCategorizationSortOrder, categorizationCaseSensitivity, strTypeNatural);
+            return naturalCompare(left.mime, right.mime,
+                                  currentCategorizationSortOrder,
+                                  categorizationCaseSensitivity, strTypeNatural);
         }
 
         case CategoryByDate:
         {
-            return compareByOrder(left.ctime.date(), right.ctime.date(), currentCategorizationSortOrder);
+            return compareByOrder(left.ctime.date(), right.ctime.date(),
+                                  currentCategorizationSortOrder);
         }
 
         default:
@@ -368,7 +378,8 @@ bool CamItemSortSettings::lessThan(const QVariant& left, const QVariant& right) 
 
         default:
         {
-            return naturalCompare(left.toString(), right.toString(), currentSortOrder, sortCaseSensitivity, strTypeNatural);
+            return naturalCompare(left.toString(), right.toString(),
+                                  currentSortOrder, sortCaseSensitivity, strTypeNatural);
         }
     }
 }

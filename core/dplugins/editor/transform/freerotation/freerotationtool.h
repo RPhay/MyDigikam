@@ -7,7 +7,7 @@
  * Description : a digiKam image editor tool to process image
  *               free rotation.
  *
- * Copyright (C) 2004-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2004-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2009-2010 by Andi Clemens <andi dot clemens at gmail dot com>
  *
  * This program is free software; you can redistribute it
@@ -45,7 +45,7 @@ class FreeRotationTool : public EditorToolThreaded
 public:
 
     explicit FreeRotationTool(QObject* const parent);
-    ~FreeRotationTool();
+    ~FreeRotationTool()         override;
 
 public Q_SLOTS:
 
@@ -55,17 +55,17 @@ public Q_SLOTS:
 
 private Q_SLOTS:
 
-    void slotResetSettings();
+    void slotResetSettings()    override;
     void slotColorGuideChanged();
 
 private:
 
-    void readSettings();
-    void writeSettings();
-    void preparePreview();
-    void prepareFinal();
-    void setPreviewImage();
-    void setFinalImage();
+    void readSettings()         override;
+    void writeSettings()        override;
+    void preparePreview()       override;
+    void prepareFinal()         override;
+    void setPreviewImage()      override;
+    void setFinalImage()        override;
 
     QString centerString(const QString& str, int maxLength = -1)         const;
     QString repeatString(const QString& str, int times)                  const;

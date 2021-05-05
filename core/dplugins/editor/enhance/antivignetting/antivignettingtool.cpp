@@ -7,7 +7,7 @@
  * Description : a digiKam image tool to reduce
  *               vignetting on an image.
  *
- * Copyright (C) 2004-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2004-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2010      by Julien Narboux <julien at narboux dot fr>
  *
  * This program is free software; you can redistribute it
@@ -37,7 +37,7 @@
 
 // KDE includes
 
-#include "kconfiggroup.h"
+#include <kconfiggroup.h>
 #include <klocalizedstring.h>
 #include <ksharedconfig.h>
 
@@ -59,9 +59,9 @@ public:
 
     explicit Private()
       : configGroupName(QLatin1String("antivignetting Tool")),
-        settingsView(nullptr),
-        previewWidget(nullptr),
-        gboxSettings(nullptr)
+        settingsView   (nullptr),
+        previewWidget  (nullptr),
+        gboxSettings   (nullptr)
     {
     }
 
@@ -74,7 +74,7 @@ public:
 
 AntiVignettingTool::AntiVignettingTool(QObject* const parent)
     : EditorToolThreaded(parent),
-      d(new Private)
+      d                 (new Private)
 {
     setObjectName(QLatin1String("antivignetting"));
     setToolName(i18n("Vignetting Correction"));

@@ -33,13 +33,22 @@ namespace Digikam
 
 class DIGIKAM_EXPORT SharedLoadSaveThread : public ManagedLoadSaveThread
 {
+    Q_OBJECT
+
 public:
 
     explicit SharedLoadSaveThread(QObject* const parent = nullptr);
+    ~SharedLoadSaveThread() override;
 
     void load(const LoadingDescription& description,
               AccessMode mode,
               LoadingPolicy policy = LoadingPolicyAppend);
+
+private:
+
+    // Disable
+    SharedLoadSaveThread(const SharedLoadSaveThread&)            = delete;
+    SharedLoadSaveThread& operator=(const SharedLoadSaveThread&) = delete;
 };
 
 } // namespace Digikam

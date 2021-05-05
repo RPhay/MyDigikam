@@ -7,7 +7,7 @@
  * Description : a widget to draw stars rating
  *
  * Copyright (C) 2005      by Owen Hirst <n8rider@sbcglobal.net>
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -49,7 +49,7 @@ class DIGIKAM_EXPORT RatingWidget : public QWidget
 public:
 
     explicit RatingWidget(QWidget* const parent);
-    virtual ~RatingWidget();
+    ~RatingWidget() override;
 
     void setRating(int val);
     int  rating() const;
@@ -90,10 +90,10 @@ protected:
     void setupTimeLine();
     void applyFading(QPixmap& pix);
 
-    virtual void mousePressEvent(QMouseEvent*)      override;
-    virtual void mouseMoveEvent(QMouseEvent*)       override;
-    virtual void mouseReleaseEvent(QMouseEvent*)    override;
-    virtual void paintEvent(QPaintEvent*)           override;
+    void mousePressEvent(QMouseEvent*)      override;
+    void mouseMoveEvent(QMouseEvent*)       override;
+    void mouseReleaseEvent(QMouseEvent*)    override;
+    void paintEvent(QPaintEvent*)           override;
 
 protected Q_SLOTS:
 
@@ -118,7 +118,7 @@ class DIGIKAM_EXPORT RatingBox : public DVBox
 public:
 
     explicit RatingBox(QWidget* const parent);
-    virtual ~RatingBox();
+    ~RatingBox() override;
 
 Q_SIGNALS:
 
@@ -142,8 +142,8 @@ class DIGIKAM_EXPORT RatingMenuAction : public QMenu
 
 public:
 
-    explicit RatingMenuAction(QMenu* const parent=nullptr);
-    virtual ~RatingMenuAction();
+    explicit RatingMenuAction(QMenu* const parent = nullptr);
+    ~RatingMenuAction() override;
 
 Q_SIGNALS:
 

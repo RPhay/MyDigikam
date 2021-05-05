@@ -6,7 +6,7 @@
  * Date        : 2018-07-30
  * Description : a plugin to export to Rajce web-service.
  *
- * Copyright (C) 2018-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2018-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -53,7 +53,7 @@ void RajcePlugin::cleanUp()
 
 QString RajcePlugin::name() const
 {
-    return i18n("Rajce");
+    return i18nc("@title", "Rajce");
 }
 
 QString RajcePlugin::iid() const
@@ -68,13 +68,14 @@ QIcon RajcePlugin::icon() const
 
 QString RajcePlugin::description() const
 {
-    return i18n("A tool to export to Rajce web-service");
+    return i18nc("@info", "A tool to export to Rajce web-service");
 }
 
 QString RajcePlugin::details() const
 {
-    return i18n("<p>This tool permit to export items to Rajce web-service.</p>"
-                "<p>See Rajce web site for details: <a href='https://www.rajce.idnes.cz/'>https://www.rajce.idnes.cz/</a></p>");
+    return i18nc("@info", "This tool permit to export items to Rajce web-service.\n\n"
+                 "See Rajce web site for details: %1",
+                 QLatin1String("<a href='https://www.rajce.idnes.cz/'>https://www.rajce.idnes.cz/</a>"));
 }
 
 QList<DPluginAuthor> RajcePlugin::authors() const

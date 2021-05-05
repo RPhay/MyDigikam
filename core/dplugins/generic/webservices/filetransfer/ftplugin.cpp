@@ -6,7 +6,7 @@
  * Date        : 2018-07-30
  * Description : a plugin to export and import items with a remote location.
  *
- * Copyright (C) 2018-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2018-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -55,7 +55,7 @@ void FTPlugin::cleanUp()
 
 QString FTPlugin::name() const
 {
-    return i18n("FileTransfer");
+    return i18nc("@title", "File Transfer");
 }
 
 QString FTPlugin::iid() const
@@ -70,13 +70,13 @@ QIcon FTPlugin::icon() const
 
 QString FTPlugin::description() const
 {
-    return i18n("A tool to export and import items with a remote location");
+    return i18nc("@info", "A tool to export and import items with a remote location");
 }
 
 QString FTPlugin::details() const
 {
-    return i18n("<p>This tool permit to export and import items with a remote location.</p>"
-                "<p>Many protocols can be used, as FTP, SFTP, SAMBA, etc.</p>");
+    return i18nc("@info", "This tool permit to export and import items with a remote location.\n\n"
+                 "Many protocols can be used, as FTP, SFTP, SAMBA, etc.");
 }
 
 QList<DPluginAuthor> FTPlugin::authors() const
@@ -87,10 +87,10 @@ QList<DPluginAuthor> FTPlugin::authors() const
                              QString::fromUtf8("(C) 2009"))
             << DPluginAuthor(QString::fromUtf8("Maik Qualmann"),
                              QString::fromUtf8("metzpinguin at gmail dot com"),
-                             QString::fromUtf8("(C) 2017-2020"))
+                             QString::fromUtf8("(C) 2017-2021"))
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2010-2020"))
+                             QString::fromUtf8("(C) 2010-2021"))
             ;
 }
 

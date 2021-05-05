@@ -7,7 +7,7 @@
  * Description : Qt Model for Albums - drag and drop handling
  *
  * Copyright (C) 2005-2006 by Joern Ahrens <joern dot ahrens at kdemail dot net>
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2009-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  * Copyright (C) 2009      by Andi Clemens <andi dot clemens at gmail dot com>
  * Copyright (C) 2015      by Mohamed_Anwer <m_dot_anwer at gmx dot com>
@@ -61,7 +61,9 @@ AlbumModel* AlbumDragDropHandler::model() const
     return static_cast<AlbumModel*>(m_model);
 }
 
-bool AlbumDragDropHandler::dropEvent(QAbstractItemView* view, const QDropEvent* e, const QModelIndex& droppedOn)
+bool AlbumDragDropHandler::dropEvent(QAbstractItemView* view,
+                                     const QDropEvent* e,
+                                     const QModelIndex& droppedOn)
 {
     if (accepts(e, droppedOn) == Qt::IgnoreAction)
     {
@@ -93,12 +95,13 @@ bool AlbumDragDropHandler::dropEvent(QAbstractItemView* view, const QDropEvent* 
         }
 
         // TODO Copy?
+
         QMenu popMenu(view);
         QAction* const moveAction = popMenu.addAction(QIcon::fromTheme(QLatin1String("go-jump")), i18n("&Move Here"));
         popMenu.addSeparator();
         popMenu.addAction(QIcon::fromTheme(QLatin1String("dialog-cancel")), i18n("C&ancel"));
         popMenu.setMouseTracking(true);
-        QAction* const choice = popMenu.exec(QCursor::pos());
+        QAction* const choice     = popMenu.exec(QCursor::pos());
 
         if (choice == moveAction)
         {
@@ -154,7 +157,7 @@ bool AlbumDragDropHandler::dropEvent(QAbstractItemView* view, const QDropEvent* 
             else
             {
                 QMenu popMenu(view);
-                QAction* setAction = nullptr;
+                QAction* setAction    = nullptr;
 
                 if (imageIDs.count() == 1)
                 {
@@ -177,24 +180,23 @@ bool AlbumDragDropHandler::dropEvent(QAbstractItemView* view, const QDropEvent* 
             return true;
         }
 
-        // If shift key is pressed while dragging, move the drag object without
-        // displaying popup menu -> move
-
-        bool move         = false;
-        bool copy         = false;
+        bool ddMove       = false;
+        bool ddCopy       = false;
         bool setThumbnail = false;
 
-        if (e->keyboardModifiers() == Qt::ShiftModifier)
+        if      (e->keyboardModifiers() == Qt::ShiftModifier)
         {
-            move = true;
+            // If shift key is pressed while dragging, move the drag object without
+            // displaying popup menu -> move
+
+            ddMove = true;
         }
-
-        // If ctrl key is pressed while dragging, copy the drag object without
-        // displaying popup menu -> copy
-
         else if (e->keyboardModifiers() == Qt::ControlModifier)
         {
-            copy = true;
+            // If ctrl key is pressed while dragging, copy the drag object without
+            // displaying popup menu -> copy
+
+            ddCopy = true;
         }
         else
         {
@@ -211,17 +213,17 @@ bool AlbumDragDropHandler::dropEvent(QAbstractItemView* view, const QDropEvent* 
             popMenu.addSeparator();
             popMenu.addAction(QIcon::fromTheme(QLatin1String("dialog-cancel")), i18n("C&ancel"));
             popMenu.setMouseTracking(true);
-            QAction* const choice = popMenu.exec(QCursor::pos());
+            QAction* const choice     = popMenu.exec(QCursor::pos());
 
             if (choice)
             {
-                if (choice == moveAction)
+                if      (choice == moveAction)
                 {
-                    move = true;
+                    ddMove = true;
                 }
                 else if (choice == copyAction)
                 {
-                    copy = true;
+                    ddCopy = true;
                 }
                 else if (choice == thumbnailAction)
                 {
@@ -235,11 +237,11 @@ bool AlbumDragDropHandler::dropEvent(QAbstractItemView* view, const QDropEvent* 
             return false;
         }
 
-        if (move)
+        if      (ddMove)
         {
             DIO::move(extImgInfList, destAlbum);
         }
-        else if (copy)
+        else if (ddCopy)
         {
             DIO::copy(extImgInfList, destAlbum);
         }
@@ -266,11 +268,11 @@ bool AlbumDragDropHandler::dropEvent(QAbstractItemView* view, const QDropEvent* 
             popMenu.addSeparator();
             popMenu.addAction(QIcon::fromTheme(QLatin1String("dialog-cancel")), i18n("C&ancel"));
             popMenu.setMouseTracking(true);
-            QAction* const choice = popMenu.exec(QCursor::pos());
+            QAction* const choice         = popMenu.exec(QCursor::pos());
 
             if (choice && destAlbum)
             {
-                if (choice == downAction)
+                if      (choice == downAction)
                 {
                     ui->slotDownload(true, false, destAlbum);
                 }
@@ -287,23 +289,22 @@ bool AlbumDragDropHandler::dropEvent(QAbstractItemView* view, const QDropEvent* 
     else if (e->mimeData()->hasUrls())
     {
         QList<QUrl> srcURLs = e->mimeData()->urls();
-        bool move           = false;
-        bool copy           = false;
+        bool ddMove         = false;
+        bool ddCopy         = false;
 
-        // If shift key is pressed while dropping, move the drag object without
-        // displaying popup menu -> move
-
-        if (e->keyboardModifiers() == Qt::ShiftModifier)
+        if      (e->keyboardModifiers() == Qt::ShiftModifier)
         {
-            move = true;
+            // If shift key is pressed while dropping, move the drag object without
+            // displaying popup menu -> move
+
+            ddMove = true;
         }
-
-        // If ctrl key is pressed while dropping, copy the drag object without
-        // displaying popup menu -> copy
-
         else if (e->keyboardModifiers() == Qt::ControlModifier)
         {
-            copy = true;
+            // If ctrl key is pressed while dropping, copy the drag object without
+            // displaying popup menu -> copy
+
+            ddCopy = true;
         }
         else
         {
@@ -315,13 +316,13 @@ bool AlbumDragDropHandler::dropEvent(QAbstractItemView* view, const QDropEvent* 
             popMenu.setMouseTracking(true);
             QAction* const choice     = popMenu.exec(QCursor::pos());
 
-            if (choice == copyAction)
+            if      (choice == copyAction)
             {
-                copy = true;
+                ddCopy = true;
             }
             else if (choice == moveAction)
             {
-                move = true;
+                ddMove = true;
             }
         }
 
@@ -330,11 +331,11 @@ bool AlbumDragDropHandler::dropEvent(QAbstractItemView* view, const QDropEvent* 
             return false;
         }
 
-        if (move)
+        if      (ddMove)
         {
             DIO::move(srcURLs, destAlbum);
         }
-        else if (copy)
+        else if (ddCopy)
         {
             DIO::copy(srcURLs, destAlbum);
         }
@@ -356,12 +357,13 @@ Qt::DropAction AlbumDragDropHandler::accepts(const QDropEvent* e, const QModelIn
 
     // Dropping on root is not allowed and
     // Dropping on trash is not implemented yet
+
     if (destAlbum->isRoot() || destAlbum->isTrashAlbum())
     {
         return Qt::IgnoreAction;
     }
 
-    if (DAlbumDrag::canDecode(e->mimeData()))
+    if      (DAlbumDrag::canDecode(e->mimeData()))
     {
         QList<QUrl> urls;
         int         albumId = 0;
@@ -379,12 +381,14 @@ Qt::DropAction AlbumDragDropHandler::accepts(const QDropEvent* e, const QModelIn
         }
 
         // Dragging an item on itself makes no sense
+
         if (droppedAlbum == destAlbum)
         {
             return Qt::IgnoreAction;
         }
 
         // Dragging a parent on its child makes no sense
+
         if (droppedAlbum->isAncestorOf(destAlbum))
         {
             return Qt::IgnoreAction;
@@ -428,9 +432,9 @@ QMimeData* AlbumDragDropHandler::createMimeData(const QList<Album*>& albums)
 
     PAlbum* const palbum = dynamic_cast<PAlbum*>(albums.first());
 
-    // Root and Trash Albums are not dragable
+    // Root or album root and Trash Albums are not dragable
 
-    if (!palbum || palbum->isRoot() || palbum->isTrashAlbum())
+    if (!palbum || palbum->isRoot() || palbum->isAlbumRoot() || palbum->isTrashAlbum())
     {
         return nullptr;
     }

@@ -4,10 +4,10 @@
  * https://www.digikam.org
  *
  * Date        : 2015-08-12
- * Description : DMetadata Settings Container.
+ * Description : metadata Settings Container.
  *
  * Copyright (C) 2015      by Veaceslav Munteanu <veaceslav dot munteanu90 at gmail dot com>
- * Copyright (C) 2015-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2015-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -49,12 +49,17 @@ QString NamespaceEntry::DM_RATING_CONTAINER()
 
 QString NamespaceEntry::DM_COMMENT_CONTAINER()
 {
-    return QString::fromUtf8(I18N_NOOP("Comment"));
+    return QString::fromUtf8(I18N_NOOP("Caption"));
+}
+
+QString NamespaceEntry::DM_COLORLABEL_CONTAINER()
+{
+    return QString::fromUtf8(I18N_NOOP("Color label"));
 }
 
 // ------------------------------------------------------------
 
-bool dmcompare(NamespaceEntry& e1, NamespaceEntry e2)
+bool s_dmcompare(const NamespaceEntry& e1, const NamespaceEntry& e2)
 {
     return (e1.index < e2.index);
 }
@@ -107,12 +112,15 @@ public:
     bool                                  unifyReadWrite;
 };
 
+// -------------------------------------------------------------------------------------------------
+
 DMetadataSettingsContainer::DMetadataSettingsContainer()
     : d(new Private)
 {
     addMapping(NamespaceEntry::DM_TAG_CONTAINER());
     addMapping(NamespaceEntry::DM_RATING_CONTAINER());
     addMapping(NamespaceEntry::DM_COMMENT_CONTAINER());
+    addMapping(NamespaceEntry::DM_COLORLABEL_CONTAINER());
 }
 
 DMetadataSettingsContainer::DMetadataSettingsContainer(const DMetadataSettingsContainer& other)
@@ -178,6 +186,8 @@ void DMetadataSettingsContainer::readFromConfig(KConfigGroup& group)
     {
         defaultValues();
     }
+
+    d->unifyReadWrite = group.readEntry(QLatin1String("unifyReadWrite"), true);
 }
 
 void DMetadataSettingsContainer::writeToConfig(KConfigGroup& group) const
@@ -196,6 +206,7 @@ void DMetadataSettingsContainer::writeToConfig(KConfigGroup& group) const
         writeOneGroup(group, writeNameSpace.arg(str), getWriteMapping(str));
     }
 
+    group.writeEntry(QLatin1String("unifyReadWrite"), d->unifyReadWrite);
     group.sync();
 }
 
@@ -208,6 +219,7 @@ void DMetadataSettingsContainer::defaultValues()
     defaultTagValues();
     defaultRatingValues();
     defaultCommentValues();
+    defaultColorLabelValues();
 }
 
 void DMetadataSettingsContainer::addMapping(const QString& key)
@@ -216,12 +228,12 @@ void DMetadataSettingsContainer::addMapping(const QString& key)
     d->writeMappings[key] = QList<NamespaceEntry>();
 }
 
-QList<NamespaceEntry> &DMetadataSettingsContainer::getReadMapping(const QString& key) const
+QList<NamespaceEntry>& DMetadataSettingsContainer::getReadMapping(const QString& key) const
 {
     return d->readMappings[key];
 }
 
-QList<NamespaceEntry> &DMetadataSettingsContainer::getWriteMapping(const QString& key) const
+QList<NamespaceEntry>& DMetadataSettingsContainer::getWriteMapping(const QString& key) const
 {
     return d->writeMappings[key];
 }
@@ -294,7 +306,7 @@ void DMetadataSettingsContainer::defaultTagValues()
     NamespaceEntry tagNs7;
     tagNs7.namespaceName    = QLatin1String("Iptc.Application2.Keywords");
     tagNs7.tagPaths         = NamespaceEntry::TAGPATH;
-    tagNs7.separator        = QLatin1Char('.');
+    tagNs7.separator        = QLatin1Char(',');
     tagNs7.nsType           = NamespaceEntry::TAGS;
     tagNs7.index            = 6;
     tagNs7.subspace         = NamespaceEntry::IPTC;
@@ -352,14 +364,14 @@ void DMetadataSettingsContainer::defaultRatingValues()
     ratingNs3.subspace      = NamespaceEntry::XMP;
 
     NamespaceEntry ratingNs4;
-    ratingNs4.namespaceName = QLatin1String("Exif.Image.0x4746");
+    ratingNs4.namespaceName = QLatin1String("Exif.Image.Rating");
     ratingNs4.convertRatio  = defaultVal;
     ratingNs4.nsType        = NamespaceEntry::RATING;
     ratingNs4.index         = 3;
     ratingNs4.subspace      = NamespaceEntry::EXIF;
 
     NamespaceEntry ratingNs5;
-    ratingNs5.namespaceName = QLatin1String("Exif.Image.0x4749");
+    ratingNs5.namespaceName = QLatin1String("Exif.Image.RatingPercent");
     ratingNs5.convertRatio  = microsoftMappings;
     ratingNs5.nsType        = NamespaceEntry::RATING;
     ratingNs5.index         = 4;
@@ -448,11 +460,42 @@ void DMetadataSettingsContainer::defaultCommentValues()
         = QList<NamespaceEntry>(getReadMapping(NamespaceEntry::DM_COMMENT_CONTAINER()));
 }
 
+void DMetadataSettingsContainer::defaultColorLabelValues()
+{
+    NamespaceEntry commNs1;
+    commNs1.namespaceName   = QLatin1String("Xmp.digiKam.ColorLabel");
+    commNs1.nsType          = NamespaceEntry::COLORLABEL;
+    commNs1.specialOpts     = NamespaceEntry::NO_OPTS;
+    commNs1.index           = 0;
+    commNs1.subspace        = NamespaceEntry::XMP;
+
+    NamespaceEntry commNs2;
+    commNs2.namespaceName   = QLatin1String("Xmp.xmp.Label");
+    commNs2.nsType          = NamespaceEntry::COLORLABEL;
+    commNs2.specialOpts     = NamespaceEntry::NO_OPTS;
+    commNs2.index           = 1;
+    commNs2.subspace        = NamespaceEntry::XMP;
+
+    NamespaceEntry commNs3;
+    commNs3.namespaceName   = QLatin1String("Xmp.photoshop.Urgency");
+    commNs3.nsType          = NamespaceEntry::COLORLABEL;
+    commNs3.specialOpts     = NamespaceEntry::NO_OPTS;
+    commNs3.index           = 2;
+    commNs3.subspace        = NamespaceEntry::XMP;
+
+     getReadMapping(NamespaceEntry::DM_COLORLABEL_CONTAINER()) << commNs1
+                                                               << commNs2
+                                                               << commNs3;
+
+    d->writeMappings[NamespaceEntry::DM_COLORLABEL_CONTAINER()]
+        = QList<NamespaceEntry>(getReadMapping(NamespaceEntry::DM_COLORLABEL_CONTAINER()));
+}
+
 void DMetadataSettingsContainer::readOneGroup(KConfigGroup& group, const QString& name, QList<NamespaceEntry>& container)
 {
     KConfigGroup myItems = group.group(name);
 
-    for (QString element : myItems.groupList())
+    foreach (const QString& element, myItems.groupList())
     {
         KConfigGroup gr      = myItems.group(element);
         NamespaceEntry ns;
@@ -478,7 +521,7 @@ void DMetadataSettingsContainer::readOneGroup(KConfigGroup& group, const QString
         ns.isDisabled        = gr.readEntry(QLatin1String("isDisabled"), QVariant(false)).toBool();
         QString conversion   = gr.readEntry("convertRatio");
 
-        for (QString str : conversion.split(QLatin1String(",")))
+        foreach (const QString& str, conversion.split(QLatin1String(",")))
         {
             ns.convertRatio.append(str.toInt());
         }
@@ -486,7 +529,7 @@ void DMetadataSettingsContainer::readOneGroup(KConfigGroup& group, const QString
         container.append(ns);
     }
 
-    std::sort(container.begin(), container.end(), Digikam::dmcompare);
+    std::sort(container.begin(), container.end(), Digikam::s_dmcompare);
 }
 
 void DMetadataSettingsContainer::writeOneGroup(KConfigGroup& group, const QString& name, QList<NamespaceEntry>& container) const
@@ -494,7 +537,7 @@ void DMetadataSettingsContainer::writeOneGroup(KConfigGroup& group, const QStrin
     KConfigGroup namespacesGroup = group.group(name);
     int index                    = 0;
 
-    for (NamespaceEntry e : container)
+    foreach (const NamespaceEntry& e, container)
     {
         QString groupNumber = QString::fromLatin1("#%1")
                               .arg(index++, 4, 10, QLatin1Char('0'));

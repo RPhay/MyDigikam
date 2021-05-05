@@ -6,7 +6,7 @@
  * Date        : 2009-07-09
  * Description : Subjects panel.
  *
- * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -37,11 +37,11 @@ class SubjectEdit : public SubjectWidget
 public:
 
     explicit SubjectEdit(QWidget* const parent);
-    ~SubjectEdit();
+    ~SubjectEdit()        override;
 
 private Q_SLOTS:
 
-    void slotRefChanged();
+    void slotRefChanged() override;
 };
 
 } // namespace Digikam

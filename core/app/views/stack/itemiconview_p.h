@@ -7,7 +7,7 @@
  * Description : implementation of item icon view interface.
  *
  * Copyright (C) 2002-2005 by Renchi Raju <renchi dot raju at gmail dot com>
- * Copyright (C) 2002-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2002-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2009-2011 by Johannes Wienke <languitar at semipol dot de>
  * Copyright (C) 2010-2011 by Andi Clemens <andi dot clemens at gmail dot com>
  * Copyright (C) 2011-2013 by Michael G. Hansen <mike at mghansen dot de>
@@ -78,7 +78,6 @@
 #include "timelinesidebarwidget.h"
 #include "searchsidebarwidget.h"
 #include "fuzzysearchsidebarwidget.h"
-#include "gpssearchsidebarwidget.h"
 #include "labelssidebarwidget.h"
 #include "peoplesidebarwidget.h"
 #include "tagviewsidebarwidget.h"
@@ -91,8 +90,6 @@
 #include "scancontroller.h"
 #include "setup.h"
 #include "sidebar.h"
-#include "slideshow.h"
-#include "slideshowbuilder.h"
 #include "statusprogressbar.h"
 #include "tableview.h"
 #include "tagmodificationhelper.h"
@@ -105,12 +102,15 @@
 #include "contextmenuhelper.h"
 #include "albumlabelssearchhandler.h"
 #include "dnotificationwidget.h"
+#include "coredb.h"
+#include "coredbaccess.h"
 
 #ifdef HAVE_MEDIAPLAYER
 #   include "mediaplayerview.h"
 #endif //HAVE_MEDIAPLAYER
 
 #ifdef HAVE_MARBLE
+#include "gpssearchsidebarwidget.h"
 #   include "mapwidgetview.h"
 #endif // HAVE_MARBLE
 
@@ -122,47 +122,49 @@ class Q_DECL_HIDDEN ItemIconView::Private
 public:
 
     explicit Private()
-      : needDispatchSelection(false),
-        useAlbumHistory(false),
-        initialAlbumID(0),
-        thumbSize(ThumbnailSize::Medium),
-        dockArea(nullptr),
-        splitter(nullptr),
-        selectionTimer(nullptr),
-        thumbSizeTimer(nullptr),
-        albumFolderSideBar(nullptr),
-        tagViewSideBar(nullptr),
-        labelsSideBar(nullptr),
-        dateViewSideBar(nullptr),
-        timelineSideBar(nullptr),
-        searchSideBar(nullptr),
-        fuzzySearchSideBar(nullptr),
+      : needDispatchSelection   (false),
+        useAlbumHistory         (false),
+        initialAlbumID          (0),
+        thumbSize               (ThumbnailSize::Medium),
+        dockArea                (nullptr),
+        splitter                (nullptr),
+        selectionTimer          (nullptr),
+        thumbSizeTimer          (nullptr),
+        albumFolderSideBar      (nullptr),
+        tagViewSideBar          (nullptr),
+        labelsSideBar           (nullptr),
+        dateViewSideBar         (nullptr),
+        timelineSideBar         (nullptr),
+        searchSideBar           (nullptr),
+        fuzzySearchSideBar      (nullptr),
 
 #ifdef HAVE_MARBLE
-        gpsSearchSideBar(nullptr),
-        mapView(nullptr),
+
+        gpsSearchSideBar        (nullptr),
+        mapView                 (nullptr),
+
 #endif // HAVE_MARBLE
 
-        peopleSideBar(nullptr),
-        parent(nullptr),
-        iconView(nullptr),
-        tableView(nullptr),
-        trashView(nullptr),
-        utilities(nullptr),
-        albumManager(nullptr),
-        albumHistory(nullptr),
-        stackedview(nullptr),
-        lastViewMode(StackedView::IconViewMode),
-        albumModificationHelper(nullptr),
-        tagModificationHelper(nullptr),
+        peopleSideBar           (nullptr),
+        parent                  (nullptr),
+        iconView                (nullptr),
+        tableView               (nullptr),
+        trashView               (nullptr),
+        utilities               (nullptr),
+        albumManager            (nullptr),
+        albumHistory            (nullptr),
+        stackedview             (nullptr),
+        lastViewMode            (StackedView::IconViewMode),
+        albumModificationHelper (nullptr),
+        tagModificationHelper   (nullptr),
         searchModificationHelper(nullptr),
-        leftSideBar(nullptr),
-        rightSideBar(nullptr),
-        filterWidget(nullptr),
-        optionAlbumViewPrefix(QLatin1String("AlbumView")),
-        modelCollection(nullptr),
-        labelsSearchHandler(nullptr),
-        errorWidget(nullptr)
+        leftSideBar             (nullptr),
+        rightSideBar            (nullptr),
+        filterWidget            (nullptr),
+        optionAlbumViewPrefix   (QLatin1String("AlbumView")),
+        modelCollection         (nullptr),
+        labelsSearchHandler     (nullptr),
+        errorWidget             (nullptr)
     {
     }
 
@@ -182,8 +184,8 @@ public:
         {
             return i18n("Map Search");
         }
-        else if (title == SAlbum::getTemporaryTitle(DatabaseSearch::AdvancedSearch) ||
-                 title == SAlbum::getTemporaryTitle(DatabaseSearch::KeywordSearch))
+        else if ((title == SAlbum::getTemporaryTitle(DatabaseSearch::AdvancedSearch)) ||
+                 (title == SAlbum::getTemporaryTitle(DatabaseSearch::KeywordSearch)))
         {
             return i18n("Last Search");
         }
@@ -222,6 +224,7 @@ public:
     QTimer*                       thumbSizeTimer;
 
     // left side bar
+
     AlbumFolderViewSideBarWidget* albumFolderSideBar;
     TagViewSideBarWidget*         tagViewSideBar;
     LabelsSideBarWidget*          labelsSideBar;
@@ -231,8 +234,10 @@ public:
     FuzzySearchSideBarWidget*     fuzzySearchSideBar;
 
 #ifdef HAVE_MARBLE
+
     GPSSearchSideBarWidget*       gpsSearchSideBar;
     MapWidgetView*                mapView;
+
 #endif // HAVE_MARBLE
 
     PeopleSideBarWidget*          peopleSideBar;
@@ -263,7 +268,6 @@ public:
     AlbumLabelsSearchHandler*     labelsSearchHandler;
     DNotificationWidget*          errorWidget;
 };
-
 
 } // namespace Digikam
 

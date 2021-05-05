@@ -6,7 +6,7 @@
  * Date        : 2005-24-01
  * Description : pixels antialiasing filter
  *
- * Copyright (C) 2005-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2005-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -46,32 +46,32 @@ public:
 
 public:   // Public methods.
 
-    void pixelAntiAliasing(uchar* data,
+    void pixelAntiAliasing(uchar* const data,
                            int Width,
                            int Height,
                            double X,
                            double Y,
-                           uchar* A,
-                           uchar* R,
-                           uchar* G,
-                           uchar* B);
+                           uchar* const A,
+                           uchar* const R,
+                           uchar* const G,
+                           uchar* const B);
 
-    void pixelAntiAliasing16(unsigned short* data,
+    void pixelAntiAliasing16(unsigned short* const data,
                              int Width,
                              int Height,
                              double X,
                              double Y,
-                             unsigned short* A,
-                             unsigned short* R,
-                             unsigned short* G,
-                             unsigned short* B);
+                             unsigned short* const A,
+                             unsigned short* const R,
+                             unsigned short* const G,
+                             unsigned short* const B);
 
 private:
 
-    inline int setPositionAdjusted (int Width,
-                                    int Height,
-                                    int X,
-                                    int Y);
+    inline int setPositionAdjusted(int Width,
+                                   int Height,
+                                   int X,
+                                   int Y);
 };
 
 } // namespace Digikam

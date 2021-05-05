@@ -6,7 +6,8 @@
  * Date        : 2013-03-02
  * Description : Table view: Tree view subelement
  *
- * Copyright (C) 2013 by Michael G. Hansen <mike at mghansen dot de>
+ * Copyright (C) 2017-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2013      by Michael G. Hansen <mike at mghansen dot de>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -55,10 +56,10 @@ class Q_DECL_HIDDEN TableViewTreeView::Private
 public:
 
     explicit Private()
-      : headerContextMenuActiveColumn(-1),
-        actionHeaderContextMenuRemoveColumn(nullptr),
+      : headerContextMenuActiveColumn         (-1),
+        actionHeaderContextMenuRemoveColumn   (nullptr),
         actionHeaderContextMenuConfigureColumn(nullptr),
-        dragDropThumbnailSize()
+        dragDropThumbnailSize                 ()
     {
     }
 
@@ -72,8 +73,8 @@ public:
 
 TableViewTreeView::TableViewTreeView(TableViewShared* const tableViewShared, QWidget* const parent)
     : QTreeView(parent),
-      d(new Private()),
-      s(tableViewShared)
+      d        (new Private()),
+      s        (tableViewShared)
 {
     setModel(s->tableViewModel);
     setSelectionModel(s->tableViewSelectionModel);
@@ -87,9 +88,10 @@ TableViewTreeView::TableViewTreeView(TableViewShared* const tableViewShared, QWi
     setDragEnabled(true);
     setAcceptDrops(true);
     setWordWrap(true);
-//     viewport()->setAcceptDrops(true);
-
-    d->actionHeaderContextMenuRemoveColumn = new QAction(QIcon::fromTheme(QLatin1String("edit-table-delete-column")), i18n("Remove this column"), this);
+/*
+    viewport()->setAcceptDrops(true);
+*/
+    d->actionHeaderContextMenuRemoveColumn    = new QAction(QIcon::fromTheme(QLatin1String("edit-table-delete-column")), i18n("Remove this column"), this);
 
     connect(d->actionHeaderContextMenuRemoveColumn, SIGNAL(triggered(bool)),
             this, SLOT(slotHeaderContextMenuActionRemoveColumnTriggered()));
@@ -127,7 +129,7 @@ bool TableViewTreeView::eventFilter(QObject* watched, QEvent* event)
 
 void TableViewTreeView::addColumnDescriptionsToMenu(const QList<TableViewColumnDescription>& columnDescriptions, QMenu* const menu)
 {
-    for (int i = 0; i < columnDescriptions.count(); ++i)
+    for (int i = 0 ; i < columnDescriptions.count() ; ++i)
     {
         const TableViewColumnDescription& desc = columnDescriptions.at(i);
         QAction* const action                  = new QAction(desc.columnTitle, menu);
@@ -172,6 +174,7 @@ void TableViewTreeView::showHeaderContextMenu(QEvent* const event)
     menu->addSeparator();
 
     // add actions for all columns
+
     QList<TableViewColumnDescription> columnDescriptions = s->columnFactory->getColumnDescriptionList();
     addColumnDescriptionsToMenu(columnDescriptions, menu);
 
@@ -196,6 +199,7 @@ void TableViewTreeView::slotHeaderContextMenuAddColumn()
 
     // since the header column order is not the same as the model's column order, we need
     // to make sure the new column is moved directly behind the current column in the header:
+
     const int clickedVisualIndex   = header()->visualIndex(d->headerContextMenuActiveColumn);
     const int newColumnVisualIndex = header()->visualIndex(newColumnLogicalIndex);
     int newColumnVisualTargetIndex = clickedVisualIndex + 1;
@@ -203,6 +207,7 @@ void TableViewTreeView::slotHeaderContextMenuAddColumn()
     // If the column is inserted before the clicked column, we have to
     // subtract one from the target index because it looks like QHeaderView first removes
     // the column and then inserts it.
+
     if (newColumnVisualIndex < clickedVisualIndex)
     {
         newColumnVisualTargetIndex--;
@@ -216,6 +221,7 @@ void TableViewTreeView::slotHeaderContextMenuAddColumn()
     // Ensure that the newly created column is visible.
     // This is especially important if the new column is the last one,
     // because then it can be outside of the viewport.
+
     const QModelIndex topIndex = indexAt(QPoint(0, 0));
     const QModelIndex targetIndex = s->tableViewModel->index(topIndex.row(), newColumnLogicalIndex, topIndex.parent());
     scrollTo(targetIndex, EnsureVisible);
@@ -237,13 +243,14 @@ void TableViewTreeView::slotHeaderContextMenuConfigureColumn()
         return;
     }
 
-    const TableViewColumnConfiguration newConfiguration = configurationDialog->getNewConfiguration();
+    const TableViewColumnConfiguration newConfiguration     = configurationDialog->getNewConfiguration();
     s->tableViewModel->getColumnObject(d->headerContextMenuActiveColumn)->setConfiguration(newConfiguration);
 }
 
 AbstractItemDragDropHandler* TableViewTreeView::dragDropHandler() const
 {
     qCDebug(DIGIKAM_GENERAL_LOG)<<s->imageModel->dragDropHandler();
+
     return s->imageModel->dragDropHandler();
 }
 
@@ -254,6 +261,7 @@ QModelIndex TableViewTreeView::mapIndexForDragDrop(const QModelIndex& index) con
     // we have to convert it to an index of ItemModel.
 
     // map to ItemModel
+
     const QModelIndex imageModelIndex = s->tableViewModel->toItemModelIndex(index);
 
     return imageModelIndex;
@@ -262,39 +270,46 @@ QModelIndex TableViewTreeView::mapIndexForDragDrop(const QModelIndex& index) con
 QPixmap TableViewTreeView::pixmapForDrag(const QList< QModelIndex >& indexes) const
 {
     const QModelIndex& firstIndex = indexes.at(0);
-    const ItemInfo info          = s->tableViewModel->imageInfo(firstIndex);
+    const ItemInfo info           = s->tableViewModel->imageInfo(firstIndex);
     const QString path            = info.filePath();
 
     QPixmap thumbnailPixmap;
+
     /// @todo The first thumbnail load always fails. We have to add thumbnail pre-generation
     ///       like in ItemModel. Getting thumbnails from ItemModel does not help, because it
     ///       does not necessarily prepare them the same way.
     /// @todo Make a central drag-drop thumbnail generator?
+
     if (!s->thumbnailLoadThread->find(info.thumbnailIdentifier(), thumbnailPixmap, d->dragDropThumbnailSize.size()))
     {
         /// @todo better default pixmap?
+
         thumbnailPixmap.fill();
     }
 
     /// @todo Decorate the pixmap like the other drag-drop implementations?
     /// @todo Write number of images onto the pixmap
-    return thumbnailPixmap;
 
-//     const QModelIndex& firstIndex = indexes.at(0);
-//     const QModelIndex& imageModelIndex = s->sortModel->toItemModelIndex(firstIndex);
-//     ItemModel* const imageModel = s->imageFilterModel->sourceItemModel();
-//
-//     /// @todo Determine how other views choose the size
-//     const QSize thumbnailSize(60, 60);
-//
-//     imageModel->setData(imageModelIndex, qMax(thumbnailSize.width(), thumbnailSize.height()), ItemModel::ThumbnailRole);
-//     QVariant thumbnailData = imageModel->data(imageModelIndex, ItemModel::ThumbnailRole);
-//     imageModel->setData(imageModelIndex, QVariant(), ItemModel::ThumbnailRole);
-//
-//     QPixmap thumbnailPixmap = thumbnailData.value<QPixmap>();
-//
-//     /// @todo Write number of images onto the pixmap
-//     return thumbnailPixmap;
+    return thumbnailPixmap;
+/*
+    const QModelIndex& firstIndex      = indexes.at(0);
+    const QModelIndex& imageModelIndex = s->sortModel->toItemModelIndex(firstIndex);
+    ItemModel* const imageModel        = s->imageFilterModel->sourceItemModel();
+
+    /// @todo Determine how other views choose the size
+
+    const QSize thumbnailSize(60, 60);
+
+    imageModel->setData(imageModelIndex, qMax(thumbnailSize.width(), thumbnailSize.height()), ItemModel::ThumbnailRole);
+    QVariant thumbnailData  = imageModel->data(imageModelIndex, ItemModel::ThumbnailRole);
+    imageModel->setData(imageModelIndex, QVariant(), ItemModel::ThumbnailRole);
+
+    QPixmap thumbnailPixmap = thumbnailData.value<QPixmap>();
+
+    /// @todo Write number of images onto the pixmap
+
+    return thumbnailPixmap;
+*/
 }
 
 Album* TableViewTreeView::albumAt(const QPoint& pos) const
@@ -306,7 +321,9 @@ Album* TableViewTreeView::albumAt(const QPoint& pos) const
     if (albumModel)
     {
         if (!(albumModel->currentAlbums().isEmpty()))
-            return albumModel->currentAlbums().first();
+        {
+            return albumModel->currentAlbums().constFirst();
+        }
     }
 
     return nullptr;
@@ -316,9 +333,9 @@ void TableViewTreeView::wheelEvent(QWheelEvent* event)
 {
     if (event->modifiers() & Qt::ControlModifier)
     {
-        const int delta = event->delta();
+        const int delta = event->angleDelta().y();
 
-        if (delta > 0)
+        if      (delta > 0)
         {
             emit signalZoomInStep();
         }
@@ -328,6 +345,7 @@ void TableViewTreeView::wheelEvent(QWheelEvent* event)
         }
 
         event->accept();
+
         return;
     }
 
@@ -336,15 +354,20 @@ void TableViewTreeView::wheelEvent(QWheelEvent* event)
 
 bool TableViewTreeView::hasHiddenGroupedImages(const ItemInfo& info) const
 {
-        return (info.hasGroupedImages()
-            && (s->tableViewModel->groupingMode() == s->tableViewModel->GroupingMode::GroupingHideGrouped
-                || (s->tableViewModel->groupingMode() == s->tableViewModel->GroupingMode::GroupingShowSubItems
-                    && !s->treeView->isExpanded(s->tableViewModel->indexFromImageId(info.id(), 0)))));
+        return (
+                info.hasGroupedImages() &&
+                (
+                 (s->tableViewModel->groupingMode() == s->tableViewModel->GroupingMode::GroupingHideGrouped)    ||
+                  ((s->tableViewModel->groupingMode() == s->tableViewModel->GroupingMode::GroupingShowSubItems) &&
+                   (!s->treeView->isExpanded(s->tableViewModel->indexFromImageId(info.id(), 0)))
+                 )
+                )
+               );
 }
 
 void TableViewTreeView::slotModelGroupingModeChanged()
 {
-    setRootIsDecorated(s->tableViewModel->groupingMode()==TableViewModel::GroupingShowSubItems);
+    setRootIsDecorated(s->tableViewModel->groupingMode() == TableViewModel::GroupingShowSubItems);
 }
 
 } // namespace Digikam

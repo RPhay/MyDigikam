@@ -7,7 +7,7 @@
  * Description : Item icon view interface - Search methods.
  *
  * Copyright (C) 2002-2005 by Renchi Raju <renchi dot raju at gmail dot com>
- * Copyright (C) 2002-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2002-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2009-2011 by Johannes Wienke <languitar at semipol dot de>
  * Copyright (C) 2010-2011 by Andi Clemens <andi dot clemens at gmail dot com>
  * Copyright (C) 2011-2013 by Michael G. Hansen <mike at mghansen dot de>
@@ -44,12 +44,6 @@ void ItemIconView::slotNewAdvancedSearch()
     d->searchSideBar->newAdvancedSearch();
 }
 
-void ItemIconView::slotNewDuplicatesSearch(PAlbum* album)
-{
-    slotLeftSideBarActivate(d->fuzzySearchSideBar);
-    d->fuzzySearchSideBar->newDuplicatesSearch(album);
-}
-
 void ItemIconView::slotNewDuplicatesSearch(const QList<PAlbum*>& albums)
 {
     slotLeftSideBarActivate(d->fuzzySearchSideBar);
@@ -78,8 +72,10 @@ void ItemIconView::slotImageScanForFaces()
 {
     FaceScanSettings settings;
 
+    // TODO Faces engine : set K-nearest config
+
     settings.accuracy               = ApplicationSettings::instance()->getFaceDetectionAccuracy();
-    settings.recognizeAlgorithm     = RecognitionDatabase::RecognizeAlgorithm::DNN; // Default now change to DNN
+    settings.useYoloV3              = ApplicationSettings::instance()->getFaceDetectionYoloV3();
     settings.task                   = FaceScanSettings::DetectAndRecognize;
     settings.alreadyScannedHandling = FaceScanSettings::Rescan;
     settings.infos                  = selectedInfoList(ApplicationSettings::Tools);

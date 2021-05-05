@@ -9,7 +9,7 @@
  *
  * Copyright (C) 2016      by Omar Amin <Omar dot moh dot amin at gmail dot com>
  * Copyright (C) 2019      by Thanh Trung Dinh <dinhthanhtrung1996 at gmail dot com>
- * Copyright (C) 2016-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2016-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -26,6 +26,10 @@
 
 #include "matrixoperations.h"
 
+// Qt includes
+
+#include <QtGlobal>
+
 namespace Digikam
 {
 
@@ -34,14 +38,14 @@ namespace MatrixOperations
 
 std::vector<std::vector<float> > inv2(const std::vector<std::vector<float> >& mat)
 {
-    assert((mat.size() == 2) && (mat[0].size() == 2));
+    Q_ASSERT((mat.size() == 2) && (mat[0].size() == 2));
 
     std::vector<std::vector<float> > m(2,std::vector<float>(2, 0));
 
     float det = mat[0][0]*mat[1][1] -
                 mat[0][1]*mat[1][0];
 
-    assert(det != 0);
+    Q_ASSERT(det != 0);
 
     m[0][0] =  mat[1][1] / det;
     m[0][1] = -mat[0][1] / det;
@@ -54,8 +58,8 @@ std::vector<std::vector<float> > inv2(const std::vector<std::vector<float> >& ma
 std::vector<std::vector<float> > pinv(const std::vector<std::vector<float> >& mat)
 {
     std::vector<std::vector<float> > result(mat[0].size(), std::vector<float>(mat.size()));
-    cv::Mat B(mat[0].size(), mat.size()   , CV_32FC1);
-    cv::Mat A(mat.size()   , mat[0].size(), CV_32FC1);
+    cv::Mat B((int)mat[0].size(), (int)mat.size(),    CV_32FC1);
+    cv::Mat A((int)mat.size(),    (int)mat[0].size(), CV_32FC1);
 
     for (unsigned int i = 0 ; i < mat.size() ; ++i)
     {
@@ -115,7 +119,7 @@ void transpose(std::vector<std::vector<float> >& src,
 
 float trace(const std::vector<std::vector<float> >& src)
 {
-    float result = 0.0;
+    float result = 0.0F;
 
     for (unsigned int i = 0 ; i < src.size() ; ++i)
     {
@@ -136,39 +140,41 @@ bool svd3(std::vector<std::vector<float> >& a,
           std::vector<std::vector<float> >& v,
           std::vector<float >& rv1)
 {
-    const float one     = 1.0;
+    const float one     = 1.0F;
     const long max_iter = 300;
 
     // a is a square matrix
 
     // columns
-    const long n        = a.size();
+
+    const long n        = (long)a.size();
 
     // rows
-    const long m        = a.size();
+
+    const long m        = (long)a.size();
 
     const float eps     = std::numeric_limits<float>::epsilon();
     long nm             = 0;
     long l              = 0;
-    float g             = 0.0;
-    float scale         = 0.0;
-    float anorm         = 0.0;
+    float g             = 0.0F;
+    float scale         = 0.0F;
+    float anorm         = 0.0F;
     bool flag           = false;
-    float c             = 0.0;
-    float f             = 0.0;
-    float h             = 0.0;
-    float s             = 0.0;
-    float x             = 0.0;
-    float y             = 0.0;
-    float z             = 0.0;
+    float c             = 0.0F;
+    float f             = 0.0F;
+    float h             = 0.0F;
+    float s             = 0.0F;
+    float x             = 0.0F;
+    float y             = 0.0F;
+    float z             = 0.0F;
 
     for (long i = 0 ; i < n ; ++i)
     {
         l      = i + 1;
         rv1[i] = scale * g;
-        g      = 0.0;
-        s      = 0.0;
-        scale  = 0.0;
+        g      = 0.0F;
+        s      = 0.0F;
+        scale  = 0.0F;
 
         if (i < m)
         {
@@ -214,10 +220,10 @@ bool svd3(std::vector<std::vector<float> >& a,
             }
         }
 
-        w[i]  = scale *g;
-        g     = 0.0;
-        s     = 0.0;
-        scale = 0.0;
+        w[i]  = scale * g;
+        g     = 0.0F;
+        s     = 0.0F;
+        scale = 0.0F;
 
         if ((i < m) && (i < n-1))
         {
@@ -271,9 +277,9 @@ bool svd3(std::vector<std::vector<float> >& a,
 
     for (long i = n-1 ; i >= 0 ; --i)
     {
-        if (i < n-1)
+        if (i < (n-1))
         {
-            if (g != 0)
+            if (g != 0.0F)
             {
                 for (long j = l ; j < n ; ++j)
                 {
@@ -282,7 +288,7 @@ bool svd3(std::vector<std::vector<float> >& a,
 
                 for (long j = l ; j < n ; ++j)
                 {
-                    s = 0.0;
+                    s = 0.0F;
 
                     for (long k = l ; k < n ; ++k)
                     {
@@ -319,7 +325,7 @@ bool svd3(std::vector<std::vector<float> >& a,
 
         if (g != 0)
         {
-            g = 1.0 / g;
+            g = 1.0F / g;
 
             for (long j = l ; j < n ; ++j)
             {
@@ -364,13 +370,13 @@ bool svd3(std::vector<std::vector<float> >& a,
             {
                 nm = l - 1;
 
-                if (std::abs(rv1[l]) <= eps * anorm)
+                if (std::abs(rv1[l]) <= (eps * anorm))
                 {
                     flag = false;
                     break;
                 }
 
-                if (std::abs(w[nm]) <= eps * anorm)
+                if (std::abs(w[nm]) <= (eps * anorm))
                 {
                     break;
                 }
@@ -378,8 +384,8 @@ bool svd3(std::vector<std::vector<float> >& a,
 
             if (flag)
             {
-                c = 0.0;
-                s = 1.0;
+                c = 0.0F;
+                s = 1.0F;
 
                 for (long i = l ; i <= k ; ++i)
                 {
@@ -394,7 +400,7 @@ bool svd3(std::vector<std::vector<float> >& a,
                     g    = w[i];
                     h    = pythag(f, g);
                     w[i] = h;
-                    h    = 1.0 / h;
+                    h    = 1.0F / h;
                     c    = g * h;
                     s    = -f * h;
 
@@ -435,7 +441,7 @@ bool svd3(std::vector<std::vector<float> >& a,
             y  = w[nm];
             g  = rv1[nm];
             h  = rv1[k];
-            f  = ((y - z) * (y + z) + (g - h) * (g + h)) / (2.0 * h * y);
+            f  = ((y - z) * (y + z) + (g - h) * (g + h)) / (2.0F * h * y);
             g  = pythag(f, one);
             f  = ((x - z) * (x + z) + h * ((y / (f + signdlib(g, f))) - h)) / x;
             c  = s = 1.0;
@@ -469,7 +475,7 @@ bool svd3(std::vector<std::vector<float> >& a,
 
                 if (z != 0)
                 {
-                    z = 1.0 / z;
+                    z = 1.0F / z;
                     c = f * z;
                     s = h * z;
                 }
@@ -502,6 +508,7 @@ void svd(const std::vector<std::vector<float> >& m,
 {
 
     // initialization
+
     u.resize(2);
     w.resize(2);
     v.resize(2);
@@ -521,7 +528,7 @@ void svd(const std::vector<std::vector<float> >& m,
 
     std::vector<float> W(2);
     std::vector<float> rv1(2);
-    svd3(u,W,v,rv1);
+    svd3(u, W, v, rv1);
 
     // get w from W
 

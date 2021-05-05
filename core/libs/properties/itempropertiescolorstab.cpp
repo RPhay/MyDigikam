@@ -6,7 +6,7 @@
  * Date        : 2004-11-17
  * Description : a tab to display item colors information
  *
- * Copyright (C) 2004-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2004-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -78,23 +78,23 @@ public:
 public:
 
     explicit Private()
-      : minInterv(nullptr),
-        maxInterv(nullptr),
-        labelMeanValue(nullptr),
-        labelPixelsValue(nullptr),
-        labelStdDevValue(nullptr),
-        labelCountValue(nullptr),
-        labelMedianValue(nullptr),
+      : minInterv           (nullptr),
+        maxInterv           (nullptr),
+        labelMeanValue      (nullptr),
+        labelPixelsValue    (nullptr),
+        labelStdDevValue    (nullptr),
+        labelCountValue     (nullptr),
+        labelMedianValue    (nullptr),
         labelPercentileValue(nullptr),
-        labelColorDepth(nullptr),
-        labelAlphaChannel(nullptr),
-        labelImageRegion(nullptr),
-        iccProfileWidget(nullptr),
-        imageLoaderThread(nullptr),
-        histogramBox(nullptr),
-        redHistogram(nullptr),
-        greenHistogram(nullptr),
-        blueHistogram(nullptr)
+        labelColorDepth     (nullptr),
+        labelAlphaChannel   (nullptr),
+        labelImageRegion    (nullptr),
+        iccProfileWidget    (nullptr),
+        imageLoaderThread   (nullptr),
+        histogramBox        (nullptr),
+        redHistogram        (nullptr),
+        greenHistogram      (nullptr),
+        blueHistogram       (nullptr)
     {
     }
 
@@ -134,11 +134,11 @@ public:
 
 ItemPropertiesColorsTab::ItemPropertiesColorsTab(QWidget* const parent)
     : QTabWidget(parent),
-      d(new Private)
+      d         (new Private)
 {
     // Histogram tab area -----------------------------------------------------
 
-    QScrollArea* const sv = new QScrollArea(this);
+    QScrollArea* const sv        = new QScrollArea(this);
     sv->setFrameStyle(QFrame::NoFrame);
     sv->setWidgetResizable(true);
 
@@ -158,20 +158,20 @@ ItemPropertiesColorsTab::ItemPropertiesColorsTab(QWidget* const parent)
     // -------------------------------------------------------------
 
     QHBoxLayout* const hlay3 = new QHBoxLayout();
-    QLabel* const label3     = new QLabel(i18n("Range:"), histogramPage);
+    QLabel* const label3     = new QLabel(i18nc("@label: color properties", "Range:"), histogramPage);
     label3->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
 
     d->minInterv = new QSpinBox(histogramPage);
     d->minInterv->setRange(0, 255);
     d->minInterv->setSingleStep(1);
     d->minInterv->setValue(0);
-    d->minInterv->setWhatsThis( i18n("Select the minimal intensity "
+    d->minInterv->setWhatsThis(i18nc("@info: color properties", "Select the minimal intensity "
                                      "value of the histogram selection here."));
     d->maxInterv = new QSpinBox(histogramPage);
     d->minInterv->setRange(0, 255);
     d->minInterv->setSingleStep(1);
     d->maxInterv->setValue(255);
-    d->minInterv->setWhatsThis( i18n("Select the maximal intensity value "
+    d->minInterv->setWhatsThis(i18nc("@info: color properties", "Select the maximal intensity value "
                                      "of the histogram selection here."));
     hlay3->addWidget(label3);
     hlay3->addWidget(d->minInterv);
@@ -179,37 +179,37 @@ ItemPropertiesColorsTab::ItemPropertiesColorsTab(QWidget* const parent)
 
     // -------------------------------------------------------------
 
-    QGroupBox* const gbox        = new QGroupBox(i18n("Statistics"), histogramPage);
-    gbox->setWhatsThis(i18n("Here you can see the statistical results calculated from the "
-                            "selected histogram part. These values are available for all "
-                            "channels."));
-    QGridLayout* const grid      = new QGridLayout(gbox);
+    QGroupBox* const gbox         = new QGroupBox(i18nc("@title: color properties", "Statistics"), histogramPage);
+    gbox->setWhatsThis(i18nc("@info: color properties", "Here you can see the statistical results calculated from the "
+                             "selected histogram part. These values are available for all "
+                             "channels."));
+    QGridLayout* const grid       = new QGridLayout(gbox);
 
-    DTextLabelName* const label5 = new DTextLabelName(i18n("Pixels: "), gbox);
-    d->labelPixelsValue          = new DTextLabelValue(QString(), gbox);
+    DTextLabelName* const label5  = new DTextLabelName(i18nc("@label: color properties", "Pixels: "), gbox);
+    d->labelPixelsValue           = new DTextLabelValue(QString(), gbox);
 
-    DTextLabelName* const label7  = new DTextLabelName(i18n("Count: "), gbox);
+    DTextLabelName* const label7  = new DTextLabelName(i18nc("@label: color properties", "Count: "), gbox);
     d->labelCountValue            = new DTextLabelValue(QString(), gbox);
 
-    DTextLabelName* const label4  = new DTextLabelName(i18n("Mean: "), gbox);
+    DTextLabelName* const label4  = new DTextLabelName(i18nc("@label: color properties", "Mean: "), gbox);
     d->labelMeanValue             = new DTextLabelValue(QString(), gbox);
 
-    DTextLabelName* const label6  = new DTextLabelName(i18n("Std. deviation: "), gbox);
+    DTextLabelName* const label6  = new DTextLabelName(i18nc("@label: color properties", "Std. deviation: "), gbox);
     d->labelStdDevValue           = new DTextLabelValue(QString(), gbox);
 
-    DTextLabelName* const label8  = new DTextLabelName(i18n("Median: "), gbox);
+    DTextLabelName* const label8  = new DTextLabelName(i18nc("@label: color properties", "Median: "), gbox);
     d->labelMedianValue           = new DTextLabelValue(QString(), gbox);
 
-    DTextLabelName* const label9  = new DTextLabelName(i18n("Percentile: "), gbox);
+    DTextLabelName* const label9  = new DTextLabelName(i18nc("@label: color properties", "Percentile: "), gbox);
     d->labelPercentileValue       = new DTextLabelValue(QString(), gbox);
 
-    DTextLabelName* const label10 = new DTextLabelName(i18n("Color depth: "), gbox);
+    DTextLabelName* const label10 = new DTextLabelName(i18nc("@label: color properties", "Color depth: "), gbox);
     d->labelColorDepth            = new DTextLabelValue(QString(), gbox);
 
-    DTextLabelName* const label11 = new DTextLabelName(i18n("Alpha Channel: "), gbox);
+    DTextLabelName* const label11 = new DTextLabelName(i18nc("@label: color properties", "Alpha Channel: "), gbox);
     d->labelAlphaChannel          = new DTextLabelValue(QString(), gbox);
 
-    DTextLabelName* const label12 = new DTextLabelName(i18n("Source: "), gbox);
+    DTextLabelName* const label12 = new DTextLabelName(i18nc("@label: color properties", "Source: "), gbox);
     d->labelImageRegion           = new DTextLabelValue(QString(), gbox);
 
     const int spacing             = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
@@ -263,7 +263,7 @@ ItemPropertiesColorsTab::ItemPropertiesColorsTab(QWidget* const parent)
     topLayout->setContentsMargins(spacing, spacing, spacing, spacing);
     topLayout->setSpacing(spacing);
 
-    insertTab(Private::HISTOGRAM, sv, i18n("Histogram"));
+    insertTab(Private::HISTOGRAM, sv, i18nc("@title: color properties", "Histogram"));
 
     // ICC Profiles tab area ---------------------------------------
 
@@ -273,7 +273,7 @@ ItemPropertiesColorsTab::ItemPropertiesColorsTab(QWidget* const parent)
 
     d->iccProfileWidget    = new ICCProfileWidget(sv2->viewport());
     sv2->setWidget(d->iccProfileWidget);
-    insertTab(Private::ICCPROFILE, sv2, i18n("ICC profile"));
+    insertTab(Private::ICCPROFILE, sv2, i18nc("@title: color properties", "ICC profile"));
 
     // -------------------------------------------------------------
     // histogramBox connections
@@ -318,6 +318,7 @@ ItemPropertiesColorsTab::~ItemPropertiesColorsTab()
 {
     // If there is a currently histogram computation when dialog is closed,
     // stop it before the d->image data are deleted automatically!
+
     d->histogramBox->histogram()->stopHistogramComputation();
     d->redHistogram->stopHistogramComputation();
     d->greenHistogram->stopHistogramComputation();
@@ -358,7 +359,7 @@ void ItemPropertiesColorsTab::setData(const QUrl& url, const QRect& selectionAre
     // So filter here, before the stopHistogramComputation!
     // But do not filter if current path is null, as it would not disable the widget on first run.
 
-    if (!img && !d->currentFilePath.isNull() && url.toLocalFile() == d->currentFilePath)
+    if (!img && !d->currentFilePath.isNull() && (url.toLocalFile() == d->currentFilePath))
     {
         return;
     }
@@ -623,7 +624,7 @@ void ItemPropertiesColorsTab::slotMinValueChanged(int min)
 
     // make the one control "push" the other
 
-    if (min == d->maxInterv->value()+1)
+    if (min == (d->maxInterv->value() + 1))
     {
         d->maxInterv->setValue(min);
     }
@@ -638,7 +639,7 @@ void ItemPropertiesColorsTab::slotMinValueChanged(int min)
 
 void ItemPropertiesColorsTab::slotMaxValueChanged(int max)
 {
-    if (max == d->minInterv->value()-1)
+    if (max == (d->minInterv->value() - 1))
     {
         d->minInterv->setValue(max);
     }
@@ -686,13 +687,15 @@ void ItemPropertiesColorsTab::slotUpdateInterval(int min, int max)
 
 void ItemPropertiesColorsTab::slotUpdateIntervRange(int range)
 {
-    d->maxInterv->setMaximum( range );
+    d->maxInterv->setMaximum(range);
 }
 
 void ItemPropertiesColorsTab::updateInformation()
 {
-    d->labelColorDepth->setAdjustedText(d->image.sixteenBit() ? i18n("16 bits") : i18n("8 bits"));
-    d->labelAlphaChannel->setAdjustedText(d->image.hasAlpha() ? i18n("Yes")     : i18n("No"));
+    d->labelColorDepth->setAdjustedText(d->image.sixteenBit() ? i18nc("@label: color properties", "16 bits")
+                                                              : i18nc("@label: color properties", "8 bits"));
+    d->labelAlphaChannel->setAdjustedText(d->image.hasAlpha() ? i18nc("@label: color properties", "Yes")
+                                                              : i18nc("@label: color properties", "No"));
 }
 
 void ItemPropertiesColorsTab::updateStatistics()
@@ -733,13 +736,13 @@ void ItemPropertiesColorsTab::updateStatistics()
     double percentile = (pixels > 0 ? (100.0 * counts / pixels) : 0.0);
     d->labelPercentileValue->setAdjustedText(value.setNum(percentile, 'f', 1));
 
-    d->labelImageRegion->setAdjustedText((type == FullImageHistogram) ? i18n("Full Image")
-                                                                      : i18n("Image Region"));
+    d->labelImageRegion->setAdjustedText((type == FullImageHistogram) ? i18nc("@label: color properties", "Full Image")
+                                                                      : i18nc("@label: color properties", "Image Region"));
 }
 
 void ItemPropertiesColorsTab::getICCData()
 {
-    if (DImg::fileFormat(d->currentFilePath) == DImg::RAW)
+    if      (DImg::fileFormat(d->currentFilePath) == DImg::RAW)
     {
         d->iccProfileWidget->setUncalibratedColor();
     }

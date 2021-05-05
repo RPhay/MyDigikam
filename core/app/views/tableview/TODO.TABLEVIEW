@@ -16,7 +16,6 @@ Known issues
 Until release
 -------------
 - Add columns:
- - Color / pick label
  - Title, description: Default digikam title, description and language selections.
  - Exif info shown in the properties tab.
  - Folder name

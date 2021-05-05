@@ -6,7 +6,7 @@
  * Date        : 2017-01-24
  * Description : Web Service settings container.
  *
- * Copyright (C) 2017-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2017-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2018      by Thanh Trung Dinh <dinhthanhtrung1996 at gmail dot com>
  *
  * This program is free software; you can redistribute it
@@ -29,9 +29,8 @@
 
 // KDE includes
 
-#include <kconfig.h>
-#include <kconfiggroup.h>
 #include <klocalizedstring.h>
+#include <kconfiggroup.h>
 
 // Local includes
 
@@ -42,18 +41,18 @@ namespace Digikam
 {
 
 WSSettings::WSSettings(QObject* const parent)
-    : QObject(parent),
-      selMode(EXPORT),
-      addFileProperties(false),
-      imagesChangeProp(false),
-      removeMetadata(false),
-      imageCompression(75),
-      attLimitInMbytes(17),
-      webService(FLICKR),
-      userName(QString()),
-      currentAlbumId(QString()),
-      imageSize(1024),
-      imageFormat(JPEG)
+    : QObject           (parent),
+      selMode           (EXPORT),
+      addFileProperties (false),
+      imagesChangeProp  (false),
+      removeMetadata    (false),
+      imageCompression  (75),
+      attLimitInMbytes  (17),
+      webService        (FLICKR),
+      userName          (QString()),
+      currentAlbumId    (QString()),
+      imageSize         (1024),
+      imageFormat       (JPEG)
 {
     oauthSettings       = WSToolUtils::getOauthSettings(parent);
     oauthSettingsStore  = new O0SettingsStore(oauthSettings, QLatin1String(O2_ENCRYPTION_KEY), this);

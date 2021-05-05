@@ -6,7 +6,7 @@
  * Date        : 2010-02-11
  * Description : Color Balance settings view.
  *
- * Copyright (C) 2010-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2010-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -77,48 +77,48 @@ const QString CBSettings::Private::configBlueAdjustmentEntry(QLatin1String("Blue
 
 CBSettings::CBSettings(QWidget* const parent)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
-    const int spacing       = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
+    const int spacing          = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
 
-    QGridLayout* const grid = new QGridLayout(parent);
+    QGridLayout* const grid    = new QGridLayout(parent);
 
-    QLabel* const labelCyan = new QLabel(i18n("Cyan"));
+    QLabel* const labelCyan    = new QLabel(i18nc("@label: color", "Cyan"));
     labelCyan->setAlignment(Qt::AlignRight | Qt::AlignVCenter);
 
-    d->rInput               = new DIntNumInput();
+    d->rInput                  = new DIntNumInput();
     d->rInput->setRange(-100, 100, 1);
     d->rInput->setDefaultValue(0);
-    d->rInput->setWhatsThis(i18n("Set here the cyan/red color adjustment of the image."));
+    d->rInput->setWhatsThis(i18nc("@info", "Set here the cyan/red color adjustment of the image."));
 
-    QLabel* const labelRed     = new QLabel(i18n("Red"));
+    QLabel* const labelRed     = new QLabel(i18nc("@label: color", "Red"));
     labelRed->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
 
     // -------------------------------------------------------------
 
-    QLabel* const labelMagenta = new QLabel(i18n("Magenta"));
+    QLabel* const labelMagenta = new QLabel(i18nc("@label: color", "Magenta"));
     labelMagenta->setAlignment(Qt::AlignRight | Qt::AlignVCenter);
 
     d->gInput = new DIntNumInput();
     d->gInput->setRange(-100, 100, 1);
     d->gInput->setDefaultValue(0);
-    d->gInput->setWhatsThis(i18n("Set here the magenta/green color adjustment of the image."));
+    d->gInput->setWhatsThis(i18nc("@info", "Set here the magenta/green color adjustment of the image."));
 
-    QLabel* const labelGreen  = new QLabel(i18n("Green"));
+    QLabel* const labelGreen  = new QLabel(i18nc("@label: color", "Green"));
     labelGreen->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
 
     // -------------------------------------------------------------
 
-    QLabel* const labelYellow = new QLabel(i18n("Yellow"));
+    QLabel* const labelYellow = new QLabel(i18nc("@label: color", "Yellow"));
     labelYellow->setAlignment(Qt::AlignRight | Qt::AlignVCenter);
 
-    QLabel* const labelBlue   = new QLabel(i18n("Blue"));
+    QLabel* const labelBlue   = new QLabel(i18nc("@label: color", "Blue"));
     labelBlue->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
 
     d->bInput                 = new DIntNumInput();
     d->bInput->setRange(-100, 100, 1);
     d->bInput->setDefaultValue(0);
-    d->bInput->setWhatsThis(i18n("Set here the yellow/blue color adjustment of the image."));
+    d->bInput->setWhatsThis(i18nc("@info", "Set here the yellow/blue color adjustment of the image."));
 
     // -------------------------------------------------------------
 

@@ -6,7 +6,7 @@
  * Date        : 2009-11-21
  * Description : Central object for managing bookmarks
  *
- * Copyright (C) 2010-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2010-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2009-2010 by Michael G. Hansen <mike at mghansen dot de>
  *
  * This program is free software; you can redistribute it
@@ -49,7 +49,7 @@ class DIGIKAM_EXPORT GPSBookmarkOwner : public QObject
 public:
 
     GPSBookmarkOwner(GPSItemModel* const gpsItemModel, QWidget* const parent);
-    virtual ~GPSBookmarkOwner();
+    ~GPSBookmarkOwner() override;
 
     void changeAddBookmark(const bool state);
     void setPositionAndTitle(const GeoCoordinates& coordinates, const QString& title);

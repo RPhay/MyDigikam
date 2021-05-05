@@ -7,8 +7,9 @@
  * Description : a presentation tool.
  *
  * Copyright (C) 2008-2009 by Valerio Fuoglio <valerio dot fuoglio at gmail dot com>
- * Copyright (C) 2009      by Andi Clemens <andi dot clemens at googlemail dot com>
- * Copyright (C) 2012-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C)      2009 by Andi Clemens <andi dot clemens at googlemail dot com>
+ * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C)      2021 by Phuoc Khanh Le <phuockhanhnk94 at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -41,29 +42,33 @@ namespace DigikamGenericPresentationPlugin
 class PresentationContainer;
 class LoadingDescription;
 
-class PresentationMainPage : public QWidget, Ui::PresentationMainPage
+class PresentationMainPage : public QWidget,
+                             public Ui::PresentationMainPage
 {
     Q_OBJECT
 
 public:
 
-    explicit PresentationMainPage(QWidget* const parent, PresentationContainer* const sharedData);
-    ~PresentationMainPage();
+    explicit PresentationMainPage(QWidget* const parent,
+                                  PresentationContainer* const sharedData);
+    ~PresentationMainPage() override;
 
     void readSettings();
     void saveSettings();
     bool updateUrlList();
 
+    void removeImageFromList(const QUrl& url);
+
 Q_SIGNALS :
 
     void signalTotalTimeChanged(const QTime&);
-
 
 private Q_SLOTS:
 
     void slotOpenGLToggled();
     void slotEffectChanged();
     void slotDelayChanged(int);
+    void slotOffAutoDelay();
     void slotPrintCommentsToggled();
     void slotUseMillisecondsToggled();
     void slotThumbnail(const LoadingDescription&, const QPixmap&);

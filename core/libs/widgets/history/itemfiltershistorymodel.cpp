@@ -29,6 +29,7 @@
 #include <QPixmap>
 #include <QUrl>
 #include <QIcon>
+#include <QScopedPointer>
 
 // Local includes
 
@@ -45,7 +46,7 @@ class Q_DECL_HIDDEN ItemFiltersHistoryModel::Private
 public:
 
     explicit Private()
-        : rootItem(nullptr),
+        : rootItem       (nullptr),
           disabledEntries(0)
     {
     }
@@ -59,7 +60,7 @@ public:
 
 ItemFiltersHistoryModel::ItemFiltersHistoryModel(QObject* const parent, const QUrl& url)
     : QAbstractItemModel(parent),
-      d(new Private)
+      d                 (new Private)
 {
     if (!url.isEmpty())
     {
@@ -68,8 +69,8 @@ ItemFiltersHistoryModel::ItemFiltersHistoryModel(QObject* const parent, const QU
         d->rootItem = new ItemFiltersHistoryTreeItem(url.fileName());
         d->lastUrl  = url;
 
-        DMetadata metadata(url.toLocalFile());
-        QString xml     = metadata.getItemHistory();
+        QScopedPointer<DMetadata> metadata(new DMetadata(url.toLocalFile()));
+        QString xml     = metadata->getItemHistory();
         DImageHistory h = DImageHistory::fromXml(xml);
         setupModelData(h.entries(), d->rootItem);
     }
@@ -100,8 +101,8 @@ void ItemFiltersHistoryModel::setUrl(const QUrl& url)
 
         //qCDebug(DIGIKAM_WIDGETS_LOG) << "Updating model data with url" << rootData.first();
 
-        DMetadata metadata(url.toLocalFile());
-        setupModelData(DImageHistory::fromXml(metadata.getItemHistory()).entries(), d->rootItem);
+        QScopedPointer<DMetadata> metadata(new DMetadata(url.toLocalFile()));
+        setupModelData(DImageHistory::fromXml(metadata->getItemHistory()).entries(), d->rootItem);
     }
 /*
     else
@@ -155,7 +156,7 @@ Qt::ItemFlags ItemFiltersHistoryModel::flags(const QModelIndex& index) const
 {
     if (!index.isValid())
     {
-        return nullptr;
+        return Qt::NoItemFlags;
     }
 
     Qt::ItemFlags flags = Qt::ItemIsSelectable;
@@ -322,7 +323,7 @@ void ItemFiltersHistoryModel::removeEntry(const QModelIndex& index)
 
 bool ItemFiltersHistoryModel::removeRows(int row, int /*count*/, const QModelIndex& parent)
 {
-    if (!parent.isValid())
+    if (!parent.isValid() && (row < rowCount()))
     {
         beginResetModel();
         d->rootItem->removeChild(row);

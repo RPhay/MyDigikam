@@ -7,7 +7,7 @@
  * Description : a widget to perform month selection.
  *
  * Copyright (C) 2005      by Renchi Raju <renchi dot raju at gmail dot com>
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -48,20 +48,20 @@ class MonthWidget : public QWidget
 public:
 
     explicit MonthWidget(QWidget* const parent);
-    ~MonthWidget();
+    ~MonthWidget() override;
 
     void setItemModel(ItemFilterModel* const model);
 
     void setYearMonth(int year, int month);
-    QSize sizeHint() const               override;
+    QSize sizeHint() const                      override;
 
     void setActive(bool val);
 
 protected:
 
-    void resizeEvent(QResizeEvent* e)    override;
-    void paintEvent(QPaintEvent*)        override;
-    void mousePressEvent(QMouseEvent* e) override;
+    void resizeEvent(QResizeEvent* e)           override;
+    void paintEvent(QPaintEvent*)               override;
+    void mousePressEvent(QMouseEvent* e)        override;
 
 private:
 

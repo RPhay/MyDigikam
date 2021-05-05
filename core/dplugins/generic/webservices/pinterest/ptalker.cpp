@@ -40,6 +40,7 @@
 #include <QUrlQuery>
 #include <QHttpMultiPart>
 #include <QNetworkAccessManager>
+#include <QScopedPointer>
 
 // KDE includes
 
@@ -75,12 +76,12 @@ public:
 public:
 
     explicit Private()
-      : parent(nullptr),
-        netMngr(nullptr),
-        reply(nullptr),
+      : parent  (nullptr),
+        netMngr (nullptr),
+        reply   (nullptr),
         settings(nullptr),
-        state(P_USERNAME),
-        browser(nullptr)
+        state   (P_USERNAME),
+        browser (nullptr)
     {
         clientId     = QLatin1String("4983380570301022071");
         clientSecret = QLatin1String("2a698db679125930d922a2dfb897e16b668a67c6f614593636e83fc3d8d9b47d");
@@ -114,8 +115,6 @@ public:
     QSettings*             settings;
 
     State                  state;
-
-    DMetadata              meta;
 
     QMap<QString, QString> urlParametersMap;
 
@@ -322,8 +321,9 @@ void PTalker::listBoards(const QString& /*path*/)
 
     QNetworkRequest netRequest(url);
     netRequest.setRawHeader("Authorization", QString::fromLatin1("Bearer %1").arg(d->accessToken).toUtf8());
-    //netRequest.setHeader(QNetworkRequest::ContentTypeHeader, QLatin1String("application/json"));
-
+/*
+    netRequest.setHeader(QNetworkRequest::ContentTypeHeader, QLatin1String("application/json"));
+*/
     d->reply = d->netMngr->get(netRequest);
 
     d->state = Private::P_LISTBOARDS;
@@ -355,19 +355,21 @@ bool PTalker::addPin(const QString& imgPath,
     QString path = WSToolUtils::makeTemporaryDir("pinterest").filePath(QFileInfo(imgPath)
                                                  .baseName().trimmed() + QLatin1String(".jpg"));
 
-    if (rescale && (image.width() > maxDim || image.height() > maxDim))
+    if (rescale && ((image.width() > maxDim) || (image.height() > maxDim)))
     {
         image = image.scaled(maxDim, maxDim, Qt::KeepAspectRatio, Qt::SmoothTransformation);
     }
 
     image.save(path, "JPEG", imageQuality);
 
-    if (d->meta.load(imgPath))
+    QScopedPointer<DMetadata> meta(new DMetadata);
+
+    if (meta->load(imgPath))
     {
-        d->meta.setItemDimensions(image.size());
-        d->meta.setItemOrientation(DMetadata::ORIENTATION_NORMAL);
-        d->meta.setMetadataWritingMode((int)DMetadata::WRITE_TO_FILE_ONLY);
-        d->meta.save(path, true);
+        meta->setItemDimensions(image.size());
+        meta->setItemOrientation(DMetadata::ORIENTATION_NORMAL);
+        meta->setMetadataWritingMode((int)DMetadata::WRITE_TO_FILE_ONLY);
+        meta->save(path, true);
     }
 
     QString boardParam              = d->userName + QLatin1Char('/') + uploadBoard;
@@ -469,22 +471,27 @@ void PTalker::slotFinished(QNetworkReply* reply)
             qCDebug(DIGIKAM_WEBSERVICES_LOG) << "In P_LISTBOARDS";
             parseResponseListBoards(buffer);
             break;
+
         case Private::P_CREATEBOARD:
             qCDebug(DIGIKAM_WEBSERVICES_LOG) << "In P_CREATEBOARD";
             parseResponseCreateBoard(buffer);
             break;
+
         case Private::P_ADDPIN:
             qCDebug(DIGIKAM_WEBSERVICES_LOG) << "In P_ADDPIN";
             parseResponseAddPin(buffer);
             break;
+
         case Private::P_USERNAME:
             qCDebug(DIGIKAM_WEBSERVICES_LOG) << "In P_USERNAME";
             parseResponseUserName(buffer);
             break;
+
         case Private::P_ACCESSTOKEN:
             qCDebug(DIGIKAM_WEBSERVICES_LOG) << "In P_ACCESSTOKEN";
             parseResponseAccessToken(buffer);
             break;
+
         default:
             break;
     }
@@ -557,8 +564,6 @@ void PTalker::parseResponseListBoards(const QByteArray& data)
     QJsonArray jsonArray   = jsonObject[QLatin1String("data")].toArray();
 
     QList<QPair<QString, QString> > list;
-    QString boardID;
-    QString boardName;
 
     foreach (const QJsonValue& value, jsonArray)
     {
@@ -577,8 +582,8 @@ void PTalker::parseResponseListBoards(const QByteArray& data)
 
 void PTalker::parseResponseCreateBoard(const QByteArray& data)
 {
-    QJsonDocument doc      = QJsonDocument::fromJson(data);
-    QJsonObject jsonObject = doc.object();
+    QJsonDocument doc1     = QJsonDocument::fromJson(data);
+    QJsonObject jsonObject = doc1.object();
     bool fail              = jsonObject.contains(QLatin1String("error"));
 
     emit signalBusy(false);
@@ -586,7 +591,7 @@ void PTalker::parseResponseCreateBoard(const QByteArray& data)
     if (fail)
     {
         QJsonParseError err;
-        QJsonDocument doc = QJsonDocument::fromJson(data, &err);
+        QJsonDocument doc2 = QJsonDocument::fromJson(data, &err);
         emit signalCreateBoardFailed(jsonObject[QLatin1String("error_summary")].toString());
     }
     else

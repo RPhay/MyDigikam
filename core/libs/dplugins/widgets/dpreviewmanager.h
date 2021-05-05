@@ -6,7 +6,7 @@
  * Date        : 2009-12-23
  * Description : a widget to manage preview.
  *
- * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2012      by Benjamin Girault <benjamin dot girault at gmail dot com>
  *
  * This program is free software; you can redistribute it
@@ -55,13 +55,13 @@ public:
 public:
 
     explicit DPreviewManager(QWidget* const parent);
-    ~DPreviewManager();
+    ~DPreviewManager() override;
 
     bool load(const QUrl& file, bool fit = true);
     void setImage(const QImage& img, bool fit = true);
-    void setText(const QString& text, const QColor& color=Qt::white);
-    void setBusy(bool b, const QString& text=QString());
-    void setThumbnail(const QPixmap& preview=QPixmap());
+    void setText(const QString& text, const QColor& color = Qt::white);
+    void setBusy(bool b, const QString& text = QString());
+    void setThumbnail(const QPixmap& preview = QPixmap());
     void setButtonText(const QString& text);
     void setButtonVisible(bool b);
     void setSelectionAreaPossible(bool b);

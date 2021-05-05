@@ -6,7 +6,7 @@
  * Date        : 2004-01-02
  * Description : album category setup tab.
  *
- * Copyright (C) 2004-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2004-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -38,7 +38,7 @@ class SetupCategory : public QScrollArea
 public:
 
     explicit SetupCategory(QWidget* const parent = nullptr);
-    virtual ~SetupCategory();
+    ~SetupCategory() override;
 
     void applySettings();
     void readSettings();

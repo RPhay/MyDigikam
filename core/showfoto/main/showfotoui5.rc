@@ -1,9 +1,9 @@
 <!DOCTYPE kpartgui SYSTEM "kpartgui.dtd">
-<gui version="615" name="showfoto" translationDomain="digikam" >
+<gui version="703" name="showfoto" translationDomain="digikam" >
 
 <MenuBar>
 
-    <Menu name="file" ><text>&amp;File</text>
+    <Menu name="File" ><text>&amp;File</text>
         <Action name="showfoto_open_file" />
         <Action name="showfoto_open_folder" />
         <Separator/>
@@ -39,7 +39,6 @@
 
     <Menu name="View" ><text>&amp;View</text>
         <Action name="editorwindow_fullscreen" />
-        <Action name="editorwindow_slideshow" />
 
         <!-- _DPLUGINS_GENERIC_VIEW_ACTIONS_ -->
 
@@ -120,6 +119,7 @@
         <Action name="editorwindow_showthumbs" />
         <Separator/>
         <Action name="theme_menu" />
+        <Action name="switch_application_language" />
         <Action name="options_configure_keybinding" />
         <Action name="options_configure_toolbars" />
         <Action name="options_configure" />
@@ -127,9 +127,11 @@
 
     <Menu name="help" ><text>&amp;Help</text>
         <Action name="help_rawcameralist" />
+        <Action name="help_solidhardwarelist" />
         <Action name="help_librariesinfo" />
         <Separator/>
         <Action name="help_donatemoney" />
+        <Action name="help_onlineversioncheck" />
         <Action name="help_recipesbook" />
         <Action name="help_contribute" />
         <Action name="help_handbook" />
@@ -158,7 +160,7 @@
     <Action name="editorwindow_transform_crop" />
     <Separator/>
     <Action name="editorwindow_fullscreen" />
-    <Action name="editorwindow_slideshow" />
+    <Action name="slideshow_plugin" />
     <Merge />
     <WeakSeparator/>
     <Action name="logo_action" />

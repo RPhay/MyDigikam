@@ -6,7 +6,7 @@
  * Date        : 2017-06-27
  * Description : a tool to export items by email.
  *
- * Copyright (C) 2017-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2017-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -35,7 +35,7 @@
 // KDE includes
 
 #include <klocalizedstring.h>
-#include <kconfig.h>
+#include <ksharedconfig.h>
 #include <kconfiggroup.h>
 
 // Local includes
@@ -85,8 +85,8 @@ MailWizard::MailWizard(QWidget* const parent, DInfoInterface* const iface)
     d->iface             = iface;
     d->settings          = new MailSettings;
 
-    KConfig config;
-    KConfigGroup group   = config.group("Email Dialog Settings");
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup group      = config->group("Email Dialog Settings");
     d->settings->readSettings(group);
 
     d->introPage         = new MailIntroPage(this,    i18n("Welcome to Email Tool"));
@@ -98,8 +98,8 @@ MailWizard::MailWizard(QWidget* const parent, DInfoInterface* const iface)
 
 MailWizard::~MailWizard()
 {
-    KConfig config;
-    KConfigGroup group = config.group("Email Dialog Settings");
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup group      = config->group("Email Dialog Settings");
     d->settings->writeSettings(group);
 
     delete d;
@@ -123,7 +123,9 @@ MailSettings* MailWizard::settings() const
 bool MailWizard::validateCurrentPage()
 {
     if (!DWizardDlg::validateCurrentPage())
+    {
         return false;
+    }
 
     return true;
 }
@@ -133,12 +135,16 @@ int MailWizard::nextId() const
     if (d->settings->selMode == MailSettings::ALBUMS)
     {
         if (currentPage() == d->introPage)
+        {
             return d->albumsPage->id();
+        }
     }
     else
     {
         if (currentPage() == d->introPage)
+        {
             return d->imagesPage->id();
+        }
     }
 
     return DWizardDlg::nextId();

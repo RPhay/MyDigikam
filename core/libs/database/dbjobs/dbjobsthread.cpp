@@ -49,7 +49,7 @@ bool DBJobsThread::hasErrors()
     return !m_errorsList.isEmpty();
 }
 
-QList<QString> &DBJobsThread::errorsList()
+QList<QString>& DBJobsThread::errorsList()
 {
     return m_errorsList;
 }
@@ -160,8 +160,8 @@ void DatesDBJobsThread::datesListing(const DatesDBJobInfo& info)
 
     if (info.isFoldersJob())
     {
-        connect(j, SIGNAL(foldersData(QMap<QDateTime,int>)),
-                this, SIGNAL(foldersData(QMap<QDateTime,int>)));
+        connect(j, SIGNAL(foldersData(QHash<QDateTime,int>)),
+                this, SIGNAL(foldersData(QHash<QDateTime,int>)));
     }
     else
     {
@@ -212,7 +212,10 @@ void GPSDBJobsThread::GPSListing(const GPSDBJobInfo& info)
 // -------------------------------------------------
 
 SearchesDBJobsThread::SearchesDBJobsThread(QObject* const parent)
-    : DBJobsThread(parent)
+    : DBJobsThread(parent),
+      m_isAlbumUpdate(false),
+      m_processedImages(0),
+      m_totalImages2Scan(0)
 {
 }
 
@@ -222,28 +225,90 @@ SearchesDBJobsThread::~SearchesDBJobsThread()
 
 void SearchesDBJobsThread::searchesListing(const SearchesDBJobInfo& info)
 {
-    SearchesJob* const j = new SearchesJob(info);
-
-    connectFinishAndErrorSignals(j);
+    ActionJobCollection collection;
 
     if (info.isDuplicatesJob())
     {
-        connect(j, SIGNAL(totalSize(int)),
-                this, SIGNAL(totalSize(int)));
+        m_results.clear();
+        m_haarIface.reset(new HaarIface(info.imageIds()));
+        m_isAlbumUpdate    = info.isAlbumUpdate();
+        m_processedImages  = 0;
+        m_totalImages2Scan = info.imageIds().count();
 
-        connect(j, SIGNAL(processedSize(int)),
-                this, SIGNAL(processedSize(int)));
+        const int threadsCount         = (m_totalImages2Scan < 200) ? 1 : qMax(1, maximumNumberOfThreads());
+        const int images2ScanPerThread = m_totalImages2Scan / threadsCount;
+
+        QSet<qlonglong>::const_iterator begin = info.imageIds().cbegin();
+        QSet<qlonglong>::const_iterator end;
+
+        for (int i = 0; i < threadsCount; ++i)
+        {
+            // The last thread should read until the end of the list.
+
+            end = (i == threadsCount - 1) ? info.imageIds().cend() : begin + images2ScanPerThread;
+
+            SearchesJob* const job = new SearchesJob(info, begin, end, m_haarIface.get());
+
+            begin = end;
+
+            connect(job, &SearchesJob::signalDuplicatesResults,
+                    this, &SearchesDBJobsThread::slotDuplicatesResults);
+
+            connect(job, &SearchesJob::signalImageProcessed,
+                    this, &SearchesDBJobsThread::slotImageProcessed);
+
+            collection.insert(job, 0);
+        }
     }
     else
     {
-        connect(j, SIGNAL(data(QList<ItemListerRecord>)),
+        SearchesJob* const job = new SearchesJob(info);
+        connectFinishAndErrorSignals(job);
+
+        connect(job, SIGNAL(data(QList<ItemListerRecord>)),
                 this, SIGNAL(data(QList<ItemListerRecord>)));
+
+        collection.insert(job, 0);
     }
 
-    ActionJobCollection collection;
-    collection.insert(j, 0);
-
     appendJobs(collection);
+}
+
+void SearchesDBJobsThread::slotImageProcessed()
+{
+    emit signalProgress((++m_processedImages * 100) / m_totalImages2Scan);
+}
+
+void SearchesDBJobsThread::slotDuplicatesResults(const HaarIface::DuplicatesResultsMap& incoming)
+{
+    auto searchResults = [&](qlonglong imageId) -> HaarIface::DuplicatesResultsMap::iterator
+    {
+        for (auto it = m_results.begin(); it != m_results.end(); ++it)
+        {
+            if ((imageId == it.key()) || (it->second.contains(imageId)))
+            {
+                return it;
+            }
+        }
+        return m_results.end();
+    };
+
+    for (const auto referenceImage : incoming.keys())
+    {
+        if (searchResults(referenceImage) == m_results.end())
+        {
+            m_results.insert(referenceImage, incoming.value(referenceImage));
+        }
+    }
+
+    if (m_processedImages != m_totalImages2Scan)
+    {
+        return;
+    }
+
+    HaarIface::rebuildDuplicatesAlbums(m_results, m_isAlbumUpdate);
+
+    emit finished();
 }
 
 } // namespace Digikam

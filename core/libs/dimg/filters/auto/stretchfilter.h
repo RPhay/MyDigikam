@@ -6,7 +6,7 @@
  * Date        : 2005-24-01
  * Description : stretch contrast image filter.
  *
- * Copyright (C) 2005-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2005-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -37,12 +37,13 @@ class DImg;
 
 class DIGIKAM_EXPORT StretchFilter : public DImgThreadedFilter
 {
+    Q_OBJECT
 
 public:
 
     explicit StretchFilter(QObject* const parent = nullptr);
-    StretchFilter(DImg* const orgImage, const DImg* const refImage, QObject* const parent=nullptr);
-    virtual ~StretchFilter();
+    StretchFilter(DImg* const orgImage, const DImg* const refImage, QObject* const parent = nullptr);
+    ~StretchFilter()                                                          override;
 
     static QString          FilterIdentifier()
     {
@@ -61,12 +62,12 @@ public:
 
     static QString DisplayableName();
 
-    virtual QString         filterIdentifier()                          const override
+    QString         filterIdentifier()                                  const override
     {
         return FilterIdentifier();
     }
 
-    virtual FilterAction    filterAction()                                    override;
+    FilterAction    filterAction()                                            override;
 
     void                    readParameters(const FilterAction& action)        override;
 
@@ -77,12 +78,12 @@ private:
 
 private:
 
-    struct double_packet
+    struct Q_DECL_HIDDEN double_packet
     {
         double_packet()
-            : red(0.0),
+            : red  (0.0),
               green(0.0),
-              blue(0.0),
+              blue (0.0),
               alpha(0.0)
         {
         }
@@ -93,12 +94,12 @@ private:
         double alpha;
     };
 
-    struct int_packet
+    struct Q_DECL_HIDDEN int_packet
     {
        int_packet()
-            : red(0),
+            : red  (0),
               green(0),
-              blue(0),
+              blue (0),
               alpha(0)
         {
         }

@@ -6,7 +6,7 @@
  * Date        : 2011-03-22
  * Description : a Iface C++ interface
  *
- * Copyright (C) 2011-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2011-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2011      by Ludovic Delfau <ludovicdelfau at gmail dot com>
  * Copyright (C) 2011      by Paolo de Vathaire <paolo dot devathaire at gmail dot com>
  *
@@ -35,6 +35,11 @@ class Q_DECL_HIDDEN Image::Private
 {
 public:
 
+    Private()
+      : namespaceId(-1)
+    {
+    }
+
     qint64  namespaceId;
     QString title;
 };
@@ -42,7 +47,6 @@ public:
 Image::Image()
     : d(new Private())
 {
-    d->namespaceId = -1;
 }
 
 Image::Image(const Image& other)
@@ -55,16 +59,19 @@ Image::~Image()
     delete d;
 }
 
-Image& Image::operator=(Image other)
+Image& Image::operator=(const Image& other)
 {
     *d = *other.d;
+
     return *this;
 }
 
 bool Image::operator==(const Image& other) const
 {
-    return namespaceId() == other.namespaceId() &&
-           title()       == other.title();
+    return (
+            (namespaceId() == other.namespaceId()) &&
+            (title()       == other.title())
+           );
 }
 
 qint64 Image::namespaceId() const

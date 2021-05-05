@@ -45,7 +45,7 @@ class ItemAlbumModel : public ItemThumbnailModel
 public:
 
     explicit ItemAlbumModel(QObject* const parent = nullptr);
-    ~ItemAlbumModel();
+    ~ItemAlbumModel() override;
 
     QList<Album*> currentAlbums()       const;
 
@@ -99,12 +99,18 @@ protected Q_SLOTS:
 
     void incrementalRefresh();
 
-    virtual void slotImageChange(const ImageChangeset& changeset);
-    virtual void slotImageTagChange(const ImageTagChangeset& changeset);
+    void slotImageChange(const ImageChangeset& changeset) override;
+    void slotImageTagChange(const ImageTagChangeset& changeset) override;
 
 protected:
 
     void startListJob(const QList<Album*>& albums);
+
+private:
+
+    // Disable
+    ItemAlbumModel(const ItemAlbumModel&)            = delete;
+    ItemAlbumModel& operator=(const ItemAlbumModel&) = delete;
 
 private:
 

@@ -6,8 +6,8 @@
  * Date        : 2009-11-13
  * Description : a tool to blend bracketed images.
  *
- * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (C) 2015      by Benjamin Girault, <benjamin dot girault at gmail dot com>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2015      by Benjamin Girault <benjamin dot girault at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -36,7 +36,6 @@
 // KDE includes
 
 #include <klocalizedstring.h>
-#include <kconfig.h>
 #include <kconfiggroup.h>
 
 namespace DigikamGenericExpoBlendingPlugin
@@ -46,17 +45,17 @@ QString EnfuseSettings::asCommentString() const
 {
     QString ret;
 
-    ret.append(hardMask ? i18n("Hardmask: enabled") : i18n("Hardmask: disabled"));
+    ret.append(hardMask ? i18nc("@info", "Hardmask: enabled") : i18nc("@info", "Hardmask: disabled"));
     ret.append(QLatin1Char('\n'));
-    ret.append(ciecam02 ? i18n("CIECAM02: enabled") : i18n("CIECAM02: disabled"));
+    ret.append(ciecam02 ? i18nc("@info", "CIECAM02: enabled") : i18nc("@info", "CIECAM02: disabled"));
     ret.append(QLatin1Char('\n'));
-    ret.append(autoLevels ? i18n("Levels: auto") : i18n("Levels: %1", QString::number(levels)));
+    ret.append(autoLevels ? i18nc("@info", "Levels: auto")    : i18nc("@info", "Levels: <numid>%1</numid>", levels));
     ret.append(QLatin1Char('\n'));
-    ret.append(i18n("Exposure: <numid>%1</numid>",   exposure));
+    ret.append(i18nc("@info", "Exposure: <numid>%1</numid>",   exposure));
     ret.append(QLatin1Char('\n'));
-    ret.append(i18n("Saturation: <numid>%1</numid>", saturation));
+    ret.append(i18nc("@info", "Saturation: <numid>%1</numid>", saturation));
     ret.append(QLatin1Char('\n'));
-    ret.append(i18n("Contrast: <numid>%1</numid>",   contrast));
+    ret.append(i18nc("@info", "Contrast: <numid>%1</numid>",   contrast));
 
     return ret;
 }
@@ -70,7 +69,8 @@ QString EnfuseSettings::inputImagesList() const
         ret.append(url.fileName() + QLatin1String(" ; "));
     }
 
-    ret.truncate(ret.length()-3);
+    ret.truncate(ret.length() - 3);
+
     return ret;
 }
 
@@ -79,17 +79,17 @@ class Q_DECL_HIDDEN EnfuseSettingsWidget::Private
 public:
 
     explicit Private()
-      : autoLevelsCB(nullptr),
-        hardMaskCB(nullptr),
-        ciecam02CB(nullptr),
-        levelsLabel(nullptr),
-        exposureLabel(nullptr),
-        saturationLabel(nullptr),
-        contrastLabel(nullptr),
-        levelsInput(nullptr),
-        exposureInput(nullptr),
-        saturationInput(nullptr),
-        contrastInput(nullptr)
+      : autoLevelsCB    (nullptr),
+        hardMaskCB      (nullptr),
+        ciecam02CB      (nullptr),
+        levelsLabel     (nullptr),
+        exposureLabel   (nullptr),
+        saturationLabel (nullptr),
+        contrastLabel   (nullptr),
+        levelsInput     (nullptr),
+        exposureInput   (nullptr),
+        saturationInput (nullptr),
+        contrastInput   (nullptr)
     {
     }
 
@@ -113,7 +113,7 @@ public:
 
 EnfuseSettingsWidget::EnfuseSettingsWidget(QWidget* const parent)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     setAttribute(Qt::WA_DeleteOnClose);
 
@@ -257,6 +257,7 @@ EnfuseSettings EnfuseSettingsWidget::settings() const
     settings.saturation = d->saturationInput->value();
     settings.contrast   = d->contrastInput->value();
     settings.ciecam02   = d->ciecam02CB->isChecked();
+
     return settings;
 }
 

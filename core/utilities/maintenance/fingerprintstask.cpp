@@ -6,7 +6,7 @@
  * Date        : 2013-08-14
  * Description : Thread actions task for finger-prints generator.
  *
- * Copyright (C) 2013-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2013-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -60,7 +60,7 @@ FingerprintsTask::FingerprintsTask()
     : ActionJob(),
       d(new Private)
 {
-    QPixmap okPix = QIcon::fromTheme(QLatin1String("dialog-ok")).pixmap(22, 22);
+    QPixmap okPix = QIcon::fromTheme(QLatin1String("dialog-ok-apply")).pixmap(22, 22);
     d->okImage    = okPix.toImage();
 }
 
@@ -95,9 +95,11 @@ void FingerprintsTask::run()
 
         ItemInfo info(id);
 
-        if ((info.isVisible() && info.category() == DatabaseItem::Category::Image) &&
-            !m_cancel                                                              &&
-            (d->data->getRebuildAllFingerprints()                                  ||
+        if (info.isVisible()                                              &&
+            (info.category() == DatabaseItem::Category::Image)            &&
+            !info.filePath().isEmpty()                                    &&
+            !m_cancel                                                     &&
+            (d->data->getRebuildAllFingerprints()                         ||
              SimilarityDbAccess().db()->hasDirtyOrMissingFingerprint(info)))
         {
             qCDebug(DIGIKAM_GENERAL_LOG) << "Updating fingerprints for file:" << info.filePath();

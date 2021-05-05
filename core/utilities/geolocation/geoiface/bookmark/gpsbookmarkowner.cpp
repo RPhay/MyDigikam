@@ -6,7 +6,7 @@
  * Date        : 2009-11-21
  * Description : Central object for managing bookmarks
  *
- * Copyright (C) 2010-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2010-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2009-2010 by Michael G. Hansen <mike at mghansen dot de>
  *
  * This program is free software; you can redistribute it
@@ -73,7 +73,7 @@ GPSBookmarkOwner::GPSBookmarkOwner(GPSItemModel* const gpsItemModel, QWidget* co
 {
     d->parent = parent;
 
-    const QString bookmarksFileName = QStandardPaths::writableLocation(QStandardPaths::DataLocation) +
+    const QString bookmarksFileName = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) +
                                                                        QLatin1String("/geobookmarks.xml");
     d->bookmarkManager              = new BookmarksManager(bookmarksFileName, this);
     d->bookmarkManager->load();

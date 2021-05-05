@@ -6,7 +6,7 @@
  * Date        : 2004-07-21
  * Description : image histogram manipulation methods.
  *
- * Copyright (C) 2004-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2004-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -48,27 +48,28 @@ class Q_DECL_HIDDEN ImageHistogram::Private
 public:
 
     // NOTE : Using a structure instead a class is more faster
-    // (access with memset() and bytes manipulation).
+    // with bytes manipulation.
 
-    struct double_packet
+    struct Q_DECL_HIDDEN double_packet
     {
-        double value;
-        double red;
-        double green;
-        double blue;
-        double alpha;
+        double value = 0.0;
+        double red   = 0.0;
+        double green = 0.0;
+        double blue  = 0.0;
+        double alpha = 0.0;
     };
 
 public:
 
     explicit Private()
-      : histogram(nullptr),
-        valid(false),
+      : histogram    (nullptr),
+        valid        (false),
         histoSegments(0)
     {
     }
 
 public:
+
     /**
      * The histogram data.
      */
@@ -88,7 +89,7 @@ public:
 
 ImageHistogram::ImageHistogram(const DImg& img, QObject* const parent)
     : DynamicThread(parent),
-      d(new Private)
+      d            (new Private)
 {
     // A simple copy of reference must be enough instead a deep copy. See this BKO comment for details:
     // https://bugs.kde.org/show_bug.cgi?id=274555#c40
@@ -199,8 +200,6 @@ void ImageHistogram::calculate()
         emit calculationFinished(false);
         return;
     }
-
-    memset(d->histogram, 0, d->histoSegments * sizeof(struct Private::double_packet));
 
     if (isSixteenBit())         // 16 bits image.
     {

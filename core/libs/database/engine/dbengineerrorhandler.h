@@ -7,7 +7,7 @@
  * Description : Database engine low level error handler
  *
  * Copyright (C) 2009-2010 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2010-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2010-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -43,9 +43,15 @@ class DIGIKAM_EXPORT DbEngineErrorAnswer
 
 public:
 
-    virtual ~DbEngineErrorAnswer();
+    DbEngineErrorAnswer()                         = default;
+    virtual ~DbEngineErrorAnswer()                = default;
+
     virtual void connectionErrorContinueQueries() = 0;
     virtual void connectionErrorAbortQueries()    = 0;
+
+private:
+
+    Q_DISABLE_COPY(DbEngineErrorAnswer)
 };
 
 // -----------------------------------------------------------------
@@ -57,7 +63,7 @@ class DIGIKAM_EXPORT DbEngineErrorHandler : public QObject
 public:
 
     explicit DbEngineErrorHandler();
-    ~DbEngineErrorHandler();
+    ~DbEngineErrorHandler()                                     override;
 
 public Q_SLOTS:
 
@@ -73,7 +79,9 @@ public Q_SLOTS:
      *  or connectionErrorAbortQueries().
      *  The method is guaranteed to be invoked in the UI thread.
      */
-    virtual void connectionError(DbEngineErrorAnswer* answer, const QSqlError& error, const QString& query) = 0;
+    virtual void connectionError(DbEngineErrorAnswer* answer,
+                                 const QSqlError& error,
+                                 const QString& query)          = 0;
 
     /**
      *  In the situation of an error requiring user intervention or information,
@@ -84,7 +92,14 @@ public Q_SLOTS:
      *  or connectionErrorAbortQueries().
      *  The method is guaranteed to be invoked in the UI thread.
      */
-    virtual void consultUserForError(DbEngineErrorAnswer* answer, const QSqlError& error, const QString& query) = 0;
+    virtual void consultUserForError(DbEngineErrorAnswer* answer,
+                                     const QSqlError& error,
+                                     const QString& query)      = 0;
+
+private:
+
+    // Disable
+    DbEngineErrorHandler(QObject*) = delete;
 };
 
 } // namespace Digikam

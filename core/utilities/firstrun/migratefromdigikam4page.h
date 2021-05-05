@@ -38,14 +38,14 @@ class MigrateFromDigikam4Page : public DWizardPage
 public:
 
     explicit MigrateFromDigikam4Page(QWizard* const dlg);
-    ~MigrateFromDigikam4Page();
+    ~MigrateFromDigikam4Page() override;
 
     /**
      * Returns true if the user selected to do a migration
      */
     bool isMigrationChecked() const;
     void doMigration();
-    int  nextId()             const;
+    int  nextId()             const override;
 
     /**
      * Return true if migration data are available on the system

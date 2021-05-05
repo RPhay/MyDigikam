@@ -6,7 +6,7 @@
  * Date        : 2004-06-15
  * Description : Albums manager interface - Face Album helpers.
  *
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2006-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  * Copyright (C) 2015      by Mohamed_Anwer <m_dot_anwer at gmx dot com>
  *
@@ -108,7 +108,9 @@ void AlbumManager::slotPeopleJobData(const QMap<QString, QMap<int, int> >& faces
         }
     }
 
-    emit signalFaceCountsDirty(d->fAlbumsCount, d->uAlbumsCount);
+    emit signalFaceCountsDirty(d->fAlbumsCount, d->uAlbumsCount, d->toUpdatedFaces);
+
+    d->toUpdatedFaces.clear();
 }
 
 } // namespace Digikam

@@ -7,7 +7,7 @@
  * Description : DImg image loader interface
  *
  * Copyright (C) 2005      by Renchi Raju <renchi dot raju at gmail dot com>
- * Copyright (C) 2005-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2005-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -30,6 +30,10 @@
 #include <new>
 #include <cstddef>
 
+// Qt includes
+
+#include <QScopedPointer>
+
 // Local includes
 
 #include "digikam_debug.h"
@@ -42,7 +46,7 @@ namespace Digikam
 {
 
 DImgLoader::DImgLoader(DImg* const image)
-    : m_image(image),
+    : m_image    (image),
       m_loadFlags(LoadAll)
 {
 }
@@ -58,7 +62,7 @@ void DImgLoader::setLoadFlags(LoadFlags flags)
 
 bool DImgLoader::hasLoadedData() const
 {
-    return ((m_loadFlags & LoadImageData) && m_image->m_priv->data);
+    return ((m_loadFlags & (LoadImageData | LoadPreview)) && m_image->m_priv->data);
 }
 
 int DImgLoader::granularity(DImgLoaderObserver* const observer, int total, float progressSlice)
@@ -68,6 +72,7 @@ int DImgLoader::granularity(DImgLoaderObserver* const observer, int total, float
     // Progress slice is the part of 100% concerned with the current granularity
     // (E.g. in a loop only the values from 10% to 90% are used, then progressSlice is 0.8)
     // Current default is 1/20, that is progress info every 5%
+
     int granularity = 0;
 
     if (observer)
@@ -83,7 +88,7 @@ unsigned char*& DImgLoader::imageData()
     return m_image->m_priv->data;
 }
 
-unsigned int DImgLoader::imageNumBytes() const
+quint64 DImgLoader::imageNumBytes() const
 {
     return m_image->numBytes();
 }
@@ -140,8 +145,6 @@ void DImgLoader::imageSetAttribute(const QString& key, const QVariant& value)
 
 QMap<QString, QString>& DImgLoader::imageEmbeddedText() const
 {
-    QMutexLocker lock(&m_image->m_priv->mutex);
-
     return m_image->m_priv->embeddedText;
 }
 
@@ -172,6 +175,7 @@ qint64 DImgLoader::checkAllocation(qint64 fullSize)
 
     // Do extra check if allocating serious amounts of memory.
     // At the time of writing (2011), I consider 100 MB as "serious".
+
     if (fullSize > (qint64)(100 * 1024 * 1024))
     {
         KMemoryInfo memory = KMemoryInfo::currentInfo();
@@ -209,19 +213,19 @@ bool DImgLoader::readMetadata(const QString& filePath)
         return false;
     }
 
-    DMetadata metaDataFromFile;
+    QScopedPointer<DMetadata> metaDataFromFile(new DMetadata);
 
-    if (!metaDataFromFile.load(filePath))
+    if (!metaDataFromFile->load(filePath))
     {
         m_image->setMetadata(MetaEngineData());
         return false;
     }
 
-    m_image->setMetadata(metaDataFromFile.data());
+    m_image->setMetadata(metaDataFromFile->data());
 
     if (m_loadFlags & LoadImageHistory)
     {
-        DImageHistory history = DImageHistory::fromXml(metaDataFromFile.getItemHistory());
+        DImageHistory history = DImageHistory::fromXml(metaDataFromFile->getItemHistory());
         HistoryImageId id     = m_image->createHistoryImageId(filePath, HistoryImageId::Current);
         history << id;
 
@@ -234,15 +238,16 @@ bool DImgLoader::readMetadata(const QString& filePath)
 
 bool DImgLoader::saveMetadata(const QString& filePath)
 {
-    DMetadata metaDataToFile(filePath);
-    metaDataToFile.setData(m_image->getMetadata());
-    return metaDataToFile.applyChanges(true);
+    QScopedPointer<DMetadata> metaDataToFile(new DMetadata(filePath));
+    metaDataToFile->setData(m_image->getMetadata());
+
+    return metaDataToFile->applyChanges(true);
 }
 
 bool DImgLoader::checkExifWorkingColorSpace() const
 {
-    DMetadata metaData(m_image->getMetadata());
-    IccProfile profile = metaData.getIccProfile();
+    QScopedPointer<DMetadata> metaData(new DMetadata(m_image->getMetadata()));
+    IccProfile profile = metaData->getIccProfile();
 
     if (!profile.isNull())
     {
@@ -262,16 +267,16 @@ void DImgLoader::storeColorProfileInMetadata()
         return;
     }
 
-    DMetadata metaData(m_image->getMetadata());
-    metaData.setIccProfile(profile);
-    m_image->setMetadata(metaData.data());
+    QScopedPointer<DMetadata> metaData(new DMetadata(m_image->getMetadata()));
+    metaData->setIccProfile(profile);
+    m_image->setMetadata(metaData->data());
 }
 
 void DImgLoader::purgeExifWorkingColorSpace()
 {
-    DMetadata meta(m_image->getMetadata());
-    meta.removeExifColorSpace();
-    m_image->setMetadata(meta.data());
+    QScopedPointer<DMetadata> meta(new DMetadata(m_image->getMetadata()));
+    meta->removeExifColorSpace();
+    m_image->setMetadata(meta->data());
 }
 
 unsigned char* DImgLoader::new_failureTolerant(size_t unsecureSize)

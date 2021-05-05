@@ -7,7 +7,7 @@
  * Description : Exiv2 library interface.
  *               Internal private container.
  *
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2006-2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  *
  * This program is free software; you can redistribute it
@@ -32,7 +32,6 @@
 
 #include <cstdlib>
 #include <cstdio>
-#include <cassert>
 #include <cmath>
 #include <cfloat>
 #include <iostream>
@@ -50,7 +49,7 @@
 
 // Exiv2 includes -------------------------------------------------------
 
-// NOTE: All Exiv2 header must be stay there to not expose external source code to Exiv2 API
+// NOTE: All Exiv2 headers must be stay there to not expose external source code to Exiv2 API
 //       and reduce Exiv2 dependency to client code.
 
 #if defined(Q_CC_CLANG)
@@ -59,7 +58,7 @@
 #endif
 
 // The pragmas are required to be able to catch exceptions thrown by libexiv2:
-// See http://gcc.gnu.org/wiki/Visibility, the section about c++ exceptions.
+// See gcc.gnu.org/wiki/Visibility, the section about c++ exceptions.
 // They are needed for all libexiv2 versions that do not care about visibility.
 
 #ifdef Q_CC_GNU
@@ -94,9 +93,13 @@
 #   define AutoPtr UniquePtr
 #endif
 
+#if EXIV2_TEST_VERSION(0,27,4)
+#   include <exiv2/bmffimage.hpp>
+#endif
+
 // With exiv2 > 0.20.0, all makernote header files have been removed to increase binary compatibility.
-// See Exiv2 bugzilla entry http://dev.exiv2.org/issues/719
-// and wiki topic           http://dev.exiv2.org/boards/3/topics/583
+// See Exiv2 bugzilla entry dev.exiv2.org/issues/719
+// and wiki topic           dev.exiv2.org/boards/3/topics/583
 
 #ifdef Q_CC_GNU
 #   pragma GCC visibility pop
@@ -111,7 +114,8 @@
 namespace Digikam
 {
 
-extern QMutex s_metaEngineMutex;
+extern QMutex s_metaEngineMutex;            ///< Mutex to fix no re-entrancy from Exiv2.
+extern bool   s_metaEngineSupportBmff;      ///< Flag for Exiv2 Base Media File Format support.
 
 // --------------------------------------------------------------------------
 
@@ -120,7 +124,7 @@ class Q_DECL_HIDDEN MetaEngine::Private
 public:
 
     explicit Private();
-    virtual ~Private();
+    ~Private();
 
     void copyPrivateData(const Private* const other);
 
@@ -153,6 +157,8 @@ public:
     Exiv2::IptcData&       iptcMetadata();
     std::string&           itemComments();
 
+public:
+
 #ifdef _XMP_SUPPORT_
 
     const Exiv2::XmpData&  xmpMetadata()                                          const;
@@ -161,6 +167,13 @@ public:
     void loadSidecarData(Exiv2::Image::AutoPtr xmpsidecar);
 
 #endif
+
+public:
+
+    /**
+     * Helper method to decode IPTC tag string contents following characters encoding preset.
+     */
+    QString extractIptcTagString(const Exiv2::IptcData& iptcData, const Exiv2::Iptcdatum& iptcTag) const;
 
 public:
 
@@ -179,6 +192,7 @@ public:
 public:
 
     bool                                                  writeRawFiles;
+    bool                                                  writeDngFiles;
     bool                                                  updateFileTimeStamp;
 
     bool                                                  useXMPSidecar4Reading;

@@ -6,7 +6,7 @@
  * Date        : 2010-12-05
  * Description : Merges tiles into groups
  *
- * Copyright (C) 2010-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2010-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2010-2011 by Michael G. Hansen <mike at mghansen dot de>
  *
  * This program is free software; you can redistribute it
@@ -42,7 +42,7 @@ public:
 
     explicit TileGrouper(const QExplicitlySharedDataPointer<GeoIfaceSharedData>& sharedData,
                          QObject* const parent);
-    ~TileGrouper();
+    ~TileGrouper() override;
 
     void setClustersDirty();
     bool getClustersDirty() const;
@@ -56,7 +56,7 @@ private:
 private:
 
     class Private;
-    const QScopedPointer<Private> d;
+    const QScopedPointer<Private>                          d;
 
     const QExplicitlySharedDataPointer<GeoIfaceSharedData> s;
 };

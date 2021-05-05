@@ -1,13 +1,13 @@
 #!/bin/bash
 
-# Copyright (c) 2008-2020 by Gilles Caulier, <caulier dot gilles at gmail dot com>
+# Copyright (c) 2008-2021 by Gilles Caulier, <caulier dot gilles at gmail dot com>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
 #
-# Arguments : $1 : install path '/opt/digikam' (default).
+# Arguments : $1 : install path '/opt/digikam.org.x86_64' (default).
 #             $2 : build type   'Debug' to hack (default), 'Release' for production.
-#             $3 : target type  'x86_64' for OSX Lion (default), 'i386' for Snow Leopard.
+#             $3 : target type  'x86_64' for macOS Lion Intel and later (default), 'universal' for macOS BigSur Silicon and latter.
 #             $4 : Cmake extra configure options.
 
 # Halt and catch errors
@@ -18,11 +18,11 @@ trap 'echo "FAILED COMMAND: $PREVIOUS_COMMAND"' ERR
 INSTALL_PREFIX=$1
 
 if [ "$INSTALL_PREFIX" = "" ]; then
-    INSTALL_PREFIX="/opt/digikam"
-    BUNDLE_INSTALL_DIR="/Applications/KF5"
+    INSTALL_PREFIX="/opt/digikam.org.x86_64"
+    BUNDLE_INSTALL_DIR="/Applications/digiKam.org"
     BUNDLE_DATA_INSTALL_DIR="/Library/Application Support"
 else
-    BUNDLE_INSTALL_DIR="${INSTALL_PREFIX}/Applications/KF5"
+    BUNDLE_INSTALL_DIR="${INSTALL_PREFIX}/Applications/digiKam.org"
     BUNDLE_DATA_INSTALL_DIR="${INSTALL_PREFIX}/Library/Application Support"
 fi
 
@@ -65,6 +65,7 @@ cmake -G "$MAKEFILES_TYPE" . \
       -DCMAKE_INSTALL_PREFIX=${INSTALL_PREFIX}/ \
       -DCMAKE_OSX_ARCHITECTURES=${TARGET_TYPE} \
       -DBUILD_TESTING=ON \
+      -DBUILD_WITH_CCACHE=ON \
       -DDIGIKAMSC_CHECKOUT_PO=OFF \
       -DDIGIKAMSC_CHECKOUT_DOC=OFF \
       -DDIGIKAMSC_COMPILE_PO=OFF \

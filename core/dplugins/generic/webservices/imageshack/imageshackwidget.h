@@ -52,7 +52,7 @@ public:
                               ImageShackSession* const session,
                               DInfoInterface* const iface,
                               const QString& toolName);
-    ~ImageShackWidget();
+    ~ImageShackWidget() override;
 
 Q_SIGNALS:
 

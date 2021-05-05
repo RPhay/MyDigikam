@@ -7,7 +7,7 @@
  * Description : thumbnail bar for items - the delegate
  *
  * Copyright (C) 2010-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2010-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2010-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -46,26 +46,26 @@ class ItemThumbnailDelegate : public ItemDelegate
 public:
 
     explicit ItemThumbnailDelegate(ItemCategorizedView* const parent);
-    ~ItemThumbnailDelegate();
+    ~ItemThumbnailDelegate()                            override;
 
     void setFlow(QListView::Flow flow);
 
     /** Returns the minimum or maximum viewport size in the limiting dimension,
      *  width or height, depending on current flow.
      */
-    int maximumSize() const;
-    int minimumSize() const;
+    int maximumSize()                             const;
+    int minimumSize()                             const;
 
-    virtual void setDefaultViewOptions(const QStyleOptionViewItem& option);
-    virtual bool acceptsActivation(const QPoint& pos,
-                                   const QRect& visualRect,
-                                   const QModelIndex& index,
-                                   QRect* activationRect) const;
+    void setDefaultViewOptions(const QStyleOptionViewItem& option) override;
+    bool acceptsActivation(const QPoint& pos,
+                           const QRect& visualRect,
+                           const QModelIndex& index,
+                           QRect* activationRect) const override;
 
 protected:
 
-    virtual void updateContentWidth();
-    virtual void updateRects();
+    void updateContentWidth()                           override;
+    void updateRects()                                  override;
 
 private:
 

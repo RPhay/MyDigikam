@@ -7,7 +7,7 @@
  * Description : Scanning a single item - photo metadata helper.
  *
  * Copyright (C) 2007-2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2013-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2013-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -26,40 +26,6 @@
 
 namespace Digikam
 {
-
-void ItemScanner::fillMetadataContainer(qlonglong imageid, ImageMetadataContainer* const container)
-{
-    // read from database
-    QVariantList fields      = CoreDbAccess().db()->getImageMetadata(imageid);
-    // check we have at least one valid field
-    container->allFieldsNull = !hasValidField(fields);
-
-    if (container->allFieldsNull)
-    {
-        return;
-    }
-
-    // DMetadata does all translation work
-    QStringList strings = DMetadata::valuesToString(fields, allImageMetadataFields());
-
-    // associate with hard-coded variables
-    container->make                         = strings.at(0);
-    container->model                        = strings.at(1);
-    container->lens                         = strings.at(2);
-    container->aperture                     = strings.at(3);
-    container->focalLength                  = strings.at(4);
-    container->focalLength35                = strings.at(5);
-    container->exposureTime                 = strings.at(6);
-    container->exposureProgram              = strings.at(7);
-    container->exposureMode                 = strings.at(8);
-    container->sensitivity                  = strings.at(9);
-    container->flashMode                    = strings.at(10);
-    container->whiteBalance                 = strings.at(11);
-    container->whiteBalanceColorTemperature = strings.at(12);
-    container->meteringMode                 = strings.at(13);
-    container->subjectDistance              = strings.at(14);
-    container->subjectDistanceCategory      = strings.at(15);
-}
 
 QString ItemScanner::iptcCorePropertyName(MetadataInfo::Field field)
 {
@@ -166,7 +132,7 @@ QString ItemScanner::detectImageFormat() const
 
 void ItemScanner::scanImageMetadata()
 {
-    QVariantList metadataInfos = d->metadata.getMetadataFields(allImageMetadataFields());
+    QVariantList metadataInfos = d->metadata->getMetadataFields(allImageMetadataFields());
 
     if (hasValidField(metadataInfos))
     {
@@ -195,7 +161,7 @@ void ItemScanner::scanItemPosition()
            << MetadataInfo::PositionAccuracy
            << MetadataInfo::PositionDescription;
 
-    QVariantList metadataInfos = d->metadata.getMetadataFields(fields);
+    QVariantList metadataInfos = d->metadata->getMetadataFields(fields);
 
     if (hasValidField(metadataInfos))
     {
@@ -215,10 +181,10 @@ void ItemScanner::scanItemComments()
     fields << MetadataInfo::Headline
            << MetadataInfo::Title;
 
-    QVariantList metadataInfos = d->metadata.getMetadataFields(fields);
+    QVariantList metadataInfos = d->metadata->getMetadataFields(fields);
 
     // handles all possible fields, multi-language, author, date
-    CaptionsMap captions = d->metadata.getItemComments();
+    CaptionsMap captions = d->metadata->getItemComments();
 
     if (captions.isEmpty() && !hasValidField(metadataInfos))
     {
@@ -269,7 +235,7 @@ void ItemScanner::scanItemCopyright()
 {
     Template t;
 
-    if (!d->metadata.getCopyrightInformation(t))
+    if (!d->metadata->getCopyrightInformation(t))
     {
         return;
     }
@@ -295,7 +261,7 @@ void ItemScanner::scanIPTCCore()
            << MetadataInfo::IptcCoreScene
            << MetadataInfo::IptcCoreSubjectCode;
 
-    QVariantList metadataInfos = d->metadata.getMetadataFields(fields);
+    QVariantList metadataInfos = d->metadata->getMetadataFields(fields);
 
     if (!hasValidField(metadataInfos))
     {
@@ -345,7 +311,7 @@ void ItemScanner::scanTags()
 {
     // Check Keywords tag paths.
 
-    QVariant var         = d->metadata.getMetadataField(MetadataInfo::Keywords);
+    QVariant var         = d->metadata->getMetadataField(MetadataInfo::Keywords);
     QStringList keywords = var.toStringList();
     QStringList filteredKeywords;
 
@@ -378,11 +344,11 @@ void ItemScanner::scanTags()
 
     // Check Pick Label tag.
 
-    int pickId = d->metadata.getItemPickLabel();
+    int pickId = d->metadata->getItemPickLabel();
 
     if (pickId != -1)
     {
-        qCDebug(DIGIKAM_DATABASE_LOG) << "Pick Label found : " << pickId;
+        qCDebug(DIGIKAM_DATABASE_LOG) << "Pick Label found :" << pickId;
 
         int tagId = TagsCache::instance()->tagForPickLabel((PickLabel)pickId);
 
@@ -390,21 +356,21 @@ void ItemScanner::scanTags()
         {
             d->commit.tagIds << tagId;
             d->commit.hasPickTag = true;
-            qCDebug(DIGIKAM_DATABASE_LOG) << "Assigned Pick Label Tag  : " << tagId;
+            qCDebug(DIGIKAM_DATABASE_LOG) << "Assigned Pick Label Tag :" << tagId;
         }
         else
         {
-            qCDebug(DIGIKAM_DATABASE_LOG) << "Cannot find Pick Label Tag for : " << pickId;
+            qCDebug(DIGIKAM_DATABASE_LOG) << "Cannot find Pick Label Tag for :" << pickId;
         }
     }
 
     // Check Color Label tag.
 
-    int colorId = d->metadata.getItemColorLabel();
+    int colorId = d->metadata->getItemColorLabel();
 
     if (colorId != -1)
     {
-        qCDebug(DIGIKAM_DATABASE_LOG) << "Color Label found : " << colorId;
+        qCDebug(DIGIKAM_DATABASE_LOG) << "Color Label found :" << colorId;
 
         int tagId = TagsCache::instance()->tagForColorLabel((ColorLabel)colorId);
 
@@ -412,11 +378,11 @@ void ItemScanner::scanTags()
         {
             d->commit.tagIds << tagId;
             d->commit.hasColorTag = true;
-            qCDebug(DIGIKAM_DATABASE_LOG) << "Assigned Color Label Tag  : " << tagId;
+            qCDebug(DIGIKAM_DATABASE_LOG) << "Assigned Color Label Tag :" << tagId;
         }
         else
         {
-            qCDebug(DIGIKAM_DATABASE_LOG) << "Cannot find Color Label Tag for : " << colorId;
+            qCDebug(DIGIKAM_DATABASE_LOG) << "Cannot find Color Label Tag for :" << colorId;
         }
     }
 }
@@ -456,7 +422,7 @@ void ItemScanner::scanFaces()
 
     QMultiMap<QString, QVariant> metadataFacesMap;
 
-    if (!d->metadata.getItemFacesMap(metadataFacesMap))
+    if (!d->metadata->getItemFacesMap(metadataFacesMap))
     {
         return;
     }
@@ -478,6 +444,17 @@ void ItemScanner::commitFaces()
 
         if (!rectF.isValid())
         {
+            int tagId = FaceTags::getOrCreateTagForPerson(name);
+
+            if (tagId)
+            {
+                ItemInfo(d->scanInfo.id).setTag(tagId);
+            }
+            else
+            {
+                qCDebug(DIGIKAM_DATABASE_LOG) << "Failed to create a person tag for name" << name;
+            }
+
             continue;
         }
 
@@ -497,12 +474,14 @@ void ItemScanner::commitFaces()
         {
             int tagId = FaceTags::getOrCreateTagForPerson(name);
 
-            if (!tagId)
+            if (tagId)
+            {
+                editor.add(d->scanInfo.id, tagId, region, false);
+            }
+            else
             {
                 qCDebug(DIGIKAM_DATABASE_LOG) << "Failed to create a person tag for name" << name;
             }
-
-            editor.add(d->scanInfo.id, tagId, region, false);
         }
     }
 }

@@ -6,7 +6,7 @@
  * Date        : 2006-02-20
  * Description : a widget to display Standard Exif metadata
  *
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -27,6 +27,7 @@
 
 #include <QMap>
 #include <QFile>
+#include <QScopedPointer>
 
 // KDE includes
 
@@ -77,7 +78,7 @@ ExifWidget::~ExifWidget()
 
 QString ExifWidget::getMetadataTitle()
 {
-    return i18n("Standard EXIF Tags");
+    return i18n("Standard Exif Tags");
 }
 
 bool ExifWidget::loadFromURL(const QUrl& url)
@@ -91,16 +92,16 @@ bool ExifWidget::loadFromURL(const QUrl& url)
     }
     else
     {
-        DMetadata metadata(url.toLocalFile());
+        QScopedPointer<DMetadata> metadata(new DMetadata(url.toLocalFile()));
 
-        if (!metadata.hasExif())
+        if (!metadata->hasExif())
         {
             setMetadata();
             return false;
         }
         else
         {
-            setMetadata(metadata);
+            setMetadata(*metadata);
         }
     }
 
@@ -109,16 +110,16 @@ bool ExifWidget::loadFromURL(const QUrl& url)
 
 bool ExifWidget::decodeMetadata()
 {
-    DMetadata data = getMetadata();
+    QScopedPointer<DMetadata> data(new DMetadata(getMetadata()->data()));
 
-    if (!data.hasExif())
+    if (!data->hasExif())
     {
         return false;
     }
 
     // Update all metadata contents.
 
-    setMetadataMap(data.getExifTagsDataList(QStringList()));
+    setMetadataMap(data->getExifTagsDataList(QStringList()));
 
     return true;
 }
@@ -145,8 +146,8 @@ void ExifWidget::buildView()
 
 QString ExifWidget::getTagTitle(const QString& key)
 {
-    DMetadata metadataIface;
-    QString title = metadataIface.getExifTagTitle(key.toLatin1().constData());
+    QScopedPointer<DMetadata> metadataIface(new DMetadata);
+    QString title = metadataIface->getExifTagTitle(key.toLatin1().constData());
 
     if (title.isEmpty())
     {
@@ -158,8 +159,8 @@ QString ExifWidget::getTagTitle(const QString& key)
 
 QString ExifWidget::getTagDescription(const QString& key)
 {
-    DMetadata metadataIface;
-    QString desc = metadataIface.getExifTagDescription(key.toLatin1().constData());
+    QScopedPointer<DMetadata> metadataIface(new DMetadata);
+    QString desc = metadataIface->getExifTagDescription(key.toLatin1().constData());
 
     if (desc.isEmpty())
     {
@@ -174,7 +175,7 @@ void ExifWidget::slotSaveMetadataToFile()
     QUrl url = saveMetadataToFile(i18n("EXIF File to Save"),
                                   QString(QLatin1String("*.exif|") + i18n("EXIF binary Files (*.exif)")));
 
-    storeMetadataToFile(url, getMetadata().getExifEncoded());
+    storeMetadataToFile(url, getMetadata()->getExifEncoded());
 }
 
 } // namespace Digikam

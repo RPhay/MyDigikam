@@ -6,7 +6,7 @@
  * Date        : 2008-11-21
  * Description : Batch Queue Manager GUI
  *
- * Copyright (C) 2008-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2008-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -31,18 +31,53 @@
 #include <QLabel>
 #include <QString>
 #include <QAction>
+#include <QDir>
+#include <QFile>
+#include <QFileInfo>
+#include <QGridLayout>
+#include <QGroupBox>
+#include <QVBoxLayout>
+#include <QKeySequence>
+#include <QMenuBar>
+#include <QStatusBar>
+#include <QMenu>
+#include <QMessageBox>
+#include <QApplication>
+
+// KDE includes
+
+#include <klocalizedstring.h>
+#include <kactioncollection.h>
+#include <kconfiggroup.h>
+#include <ksharedconfig.h>
 
 // Local includes
 
+#include "drawdecoder.h"
+#include "digikam_debug.h"
+#include "actions.h"
+#include "album.h"
+#include "batchtoolsfactory.h"
 #include "actionthread.h"
-#include "assignedlist.h"
-#include "queuelist.h"
 #include "queuepool.h"
+#include "workflowmanager.h"
+#include "queuelist.h"
+#include "queuesettings.h"
 #include "queuesettingsview.h"
-#include "statusprogressbar.h"
-#include "sidebar.h"
+#include "assignedlist.h"
 #include "toolsettingsview.h"
 #include "toolsview.h"
+#include "componentsinfodlg.h"
+#include "digikamapp.h"
+#include "thememanager.h"
+#include "dimg.h"
+#include "dlogoaction.h"
+#include "albummanager.h"
+#include "imagewindow.h"
+#include "thumbnailsize.h"
+#include "sidebar.h"
+#include "dnotificationwrapper.h"
+#include "statusprogressbar.h"
 
 namespace Digikam
 {
@@ -55,40 +90,40 @@ class Q_DECL_HIDDEN QueueMgrWindow::Private
 public:
 
     explicit Private()
-        : busy(false),
-          processingAllQueues(false),
-          currentQueueToProcess(0),
-          statusLabel(nullptr),
-          clearQueueAction(nullptr),
-          removeItemsSelAction(nullptr),
-          removeItemsDoneAction(nullptr),
-          moveUpToolAction(nullptr),
-          moveDownToolAction(nullptr),
-          removeToolAction(nullptr),
-          clearToolsAction(nullptr),
-          runAction(nullptr),
-          runAllAction(nullptr),
-          stopAction(nullptr),
-          removeQueueAction(nullptr),
-          newQueueAction(nullptr),
-          saveQueueAction(nullptr),
-          donateMoneyAction(nullptr),
-          contributeAction(nullptr),
-          rawCameraListAction(nullptr),
-          topSplitter(nullptr),
-          bottomSplitter(nullptr),
-          verticalSplitter(nullptr),
-          batchToolsMgr(nullptr),
-          statusProgressBar(nullptr),
-          thread(nullptr),
-          toolsView(nullptr),
-          toolSettings(nullptr),
-          assignedList(nullptr),
-          queuePool(nullptr),
-          queueSettingsView(nullptr),
-          TOP_SPLITTER_CONFIG_KEY(QLatin1String("BqmTopSplitter")),
-          BOTTOM_SPLITTER_CONFIG_KEY(QLatin1String("BqmBottomSplitter")),
-          VERTICAL_SPLITTER_CONFIG_KEY(QLatin1String("BqmVerticalSplitter"))
+        : busy                          (false),
+          processingAllQueues           (false),
+          currentQueueToProcess         (0),
+          statusLabel                   (nullptr),
+          clearQueueAction              (nullptr),
+          removeItemsSelAction          (nullptr),
+          removeItemsDoneAction         (nullptr),
+          moveUpToolAction              (nullptr),
+          moveDownToolAction            (nullptr),
+          removeToolAction              (nullptr),
+          clearToolsAction              (nullptr),
+          runAction                     (nullptr),
+          runAllAction                  (nullptr),
+          stopAction                    (nullptr),
+          removeQueueAction             (nullptr),
+          newQueueAction                (nullptr),
+          saveQueueAction               (nullptr),
+          donateMoneyAction             (nullptr),
+          contributeAction              (nullptr),
+          rawCameraListAction           (nullptr),
+          topSplitter                   (nullptr),
+          bottomSplitter                (nullptr),
+          verticalSplitter              (nullptr),
+          batchToolsMgr                 (nullptr),
+          statusProgressBar             (nullptr),
+          thread                        (nullptr),
+          toolsView                     (nullptr),
+          toolSettings                  (nullptr),
+          assignedList                  (nullptr),
+          queuePool                     (nullptr),
+          queueSettingsView             (nullptr),
+          TOP_SPLITTER_CONFIG_KEY       (QLatin1String("BqmTopSplitter")),
+          BOTTOM_SPLITTER_CONFIG_KEY    (QLatin1String("BqmBottomSplitter")),
+          VERTICAL_SPLITTER_CONFIG_KEY  (QLatin1String("BqmVerticalSplitter"))
     {
     }
 

@@ -6,7 +6,7 @@
  * Date        : 2010-25-02
  * Description : Curves image filter
  *
- * Copyright (C) 2010-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2010-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2010      by Martin Klapetek <martin dot klapetek at gmail dot com>
  *
  * This program is free software; you can redistribute it
@@ -43,49 +43,50 @@ class DImg;
 
 class DIGIKAM_EXPORT CurvesFilter : public DImgThreadedFilter
 {
+    Q_OBJECT
 
 public:
 
     explicit CurvesFilter(QObject* const parent = nullptr);
     explicit CurvesFilter(DImg* const orgImage,
-                          QObject* const parent=nullptr,
-                          const CurvesContainer& settings=CurvesContainer());
+                          QObject* const parent = nullptr,
+                          const CurvesContainer& settings = CurvesContainer());
     explicit CurvesFilter(const CurvesContainer& settings,
-                           DImgThreadedFilter* const master,
+                          DImgThreadedFilter* const master,
                           const DImg& orgImage,
                           DImg& destImage,
-                          int progressBegin=0,
-                          int progressEnd=100);
-    virtual ~CurvesFilter();
+                          int progressBegin = 0,
+                          int progressEnd = 100);
+    ~CurvesFilter()                                                 override;
 
-    static QString          FilterIdentifier()
+    static QString FilterIdentifier()
     {
         return QLatin1String("digikam:CurvesFilter");
     }
 
-    static QString          DisplayableName();
+    static QString DisplayableName();
 
-    static QList<int>       SupportedVersions()
+    static QList<int> SupportedVersions()
     {
         return QList<int>() << 1;
     }
 
-    static int              CurrentVersion()
+    static int CurrentVersion()
     {
         return 1;
     }
 
-    virtual QString         filterIdentifier()                          const override
+    QString filterIdentifier()                               const override
     {
         return FilterIdentifier();
     }
 
-    virtual FilterAction    filterAction()                                    override;
-    void                    readParameters(const FilterAction& action)        override;
+    FilterAction filterAction()                                    override;
+    void readParameters(const FilterAction& action)                override;
 
 private:
 
-    void filterImage()                                                        override;
+    void filterImage()                                             override;
 
 private:
 

@@ -7,7 +7,7 @@
  * Description : Qt item model for database entries
  *
  * Copyright (C) 2009-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2012-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -95,7 +95,7 @@ public:
 public:
 
     explicit ItemModel(QObject* const parent = nullptr);
-    ~ItemModel();
+    ~ItemModel() override;
 
     /**
      * If a cache is kept, lookup by file path is fast,
@@ -221,6 +221,7 @@ public:
     bool hasImage(qlonglong id, const QVariant& extraValue)                                                 const;
 
     bool isEmpty()                                                                                          const;
+    int  itemCount()                                                                                        const;
 
     // Drag and Drop
     DECLARE_MODEL_DRAG_DROP_METHODS
@@ -253,11 +254,11 @@ public:
      */
     void setSendRemovalSignals(bool send);
 
-    virtual QVariant      data(const QModelIndex& index, int role = Qt::DisplayRole)                        const override;
-    virtual QVariant      headerData(int section, Qt::Orientation orientation, int role = Qt::DisplayRole)  const override;
-    virtual int           rowCount(const QModelIndex& parent = QModelIndex())                               const override;
-    virtual Qt::ItemFlags flags(const QModelIndex& index)                                                   const override;
-    virtual QModelIndex   index(int row, int column = 0, const QModelIndex& parent = QModelIndex())         const override;
+    QVariant      data(const QModelIndex& index, int role = Qt::DisplayRole)                        const override;
+    QVariant      headerData(int section, Qt::Orientation orientation, int role = Qt::DisplayRole)  const override;
+    int           rowCount(const QModelIndex& parent = QModelIndex())                               const override;
+    Qt::ItemFlags flags(const QModelIndex& index)                                                   const override;
+    QModelIndex   index(int row, int column = 0, const QModelIndex& parent = QModelIndex())         const override;
 
     /**
      * Retrieves the imageInfo object from the data() method of the given index.
@@ -388,6 +389,10 @@ public:
     class Private;
 
 private:
+
+    // Disable
+    ItemModel(const ItemModel&)            = delete;
+    ItemModel& operator=(const ItemModel&) = delete;
 
     Private* const d;
 };

@@ -27,7 +27,7 @@ namespace Digikam
 {
 
 TaggingAction::TaggingAction()
-    : m_type(NoAction),
+    : m_type (NoAction),
       m_tagId(-1)
 {
 }
@@ -39,8 +39,8 @@ TaggingAction::TaggingAction(int tagId)
 }
 
 TaggingAction::TaggingAction(const QString& name, int parentTagId)
-    : m_type(CreateNewTag),
-      m_tagId(parentTagId),
+    : m_type   (CreateNewTag),
+      m_tagId  (parentTagId),
       m_tagName(name)
 {
 }

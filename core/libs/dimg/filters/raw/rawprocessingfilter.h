@@ -46,6 +46,8 @@ class FilterAction;
  */
 class DIGIKAM_EXPORT RawProcessingFilter : public DImgThreadedFilter
 {
+    Q_OBJECT
+
 public:
 
     /**
@@ -73,7 +75,7 @@ public:
                         int progressEnd=100,
                         const QString& name=QString());
 
-    ~RawProcessingFilter();
+    ~RawProcessingFilter() override;
 
     /**
      * Set the raw decoding settings. The post processing is carried out here,
@@ -114,19 +116,19 @@ public:
 
     void                    readParameters(const FilterAction& action) override;
 
-    virtual QString         filterIdentifier()                   const override
+    QString         filterIdentifier()                   const override
     {
         return FilterIdentifier();
     }
 
-    virtual FilterAction    filterAction()                             override;
+    FilterAction    filterAction()                             override;
 
 protected:
 
     void postProgress(int);                                            // not virtual
     bool continueQuery()                                        const; // not virtual
 
-    virtual void filterImage()                                         override;
+    void filterImage()                                         override;
 
 protected:
 

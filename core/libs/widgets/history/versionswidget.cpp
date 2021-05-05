@@ -62,13 +62,13 @@ class Q_DECL_HIDDEN VersionsWidget::Private
 public:
 
     explicit Private()
-        : view(nullptr),
-          model(nullptr),
-          delegate(nullptr),
-          showHideOverlay(nullptr),
-          viewButtonGroup(nullptr),
-          listModeButton(nullptr),
-          treeModeButton(nullptr),
+        : view              (nullptr),
+          model             (nullptr),
+          delegate          (nullptr),
+          showHideOverlay   (nullptr),
+          viewButtonGroup   (nullptr),
+          listModeButton    (nullptr),
+          treeModeButton    (nullptr),
           combinedModeButton(nullptr)
     {
     }
@@ -91,7 +91,7 @@ const QString VersionsWidget::Private::configCurrentMode(QLatin1String("Version 
 
 VersionsWidget::VersionsWidget(QWidget* const parent)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     QGridLayout* const layout = new QGridLayout;
 

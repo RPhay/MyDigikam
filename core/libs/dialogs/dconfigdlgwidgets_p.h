@@ -6,7 +6,7 @@
  * Date        : 2009-11-03
  * Description : A dialog base class which can handle multiple pages.
  *
- * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2007      by Matthias Kretz <kretz at kde dot org>
  *
  * This program is free software; you can redistribute it
@@ -61,13 +61,13 @@ class Q_DECL_HIDDEN DConfigDlgTitle::Private
 public:
 
     explicit Private(DConfigDlgTitle* const parent)
-        : q(parent),
-          headerLayout(nullptr),
-          imageLabel(nullptr),
-          textLabel(nullptr),
-          commentLabel(nullptr),
+        : q              (parent),
+          headerLayout   (nullptr),
+          imageLabel     (nullptr),
+          textLabel      (nullptr),
+          commentLabel   (nullptr),
           autoHideTimeout(0),
-          messageType(InfoMessage)
+          messageType    (InfoMessage)
     {
     }
 
@@ -85,10 +85,10 @@ public:
 
         switch (messageType)
         {
-            //FIXME: we need the usability color styles to implement different
-            //       yet palette appropriate colours for the different use cases!
-            //       also .. should we include an icon here,
-            //       perhaps using the imageLabel?
+            // FIXME: we need the usability color styles to implement different
+            //        yet palette appropriate colours for the different use cases!
+            //        also .. should we include an icon here,
+            //        perhaps using the imageLabel?
 
             case InfoMessage:
             case WarningMessage:

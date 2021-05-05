@@ -46,7 +46,7 @@
 
 #include <klocalizedstring.h>
 #include <ksharedconfig.h>
-#include "kconfiggroup.h"
+#include <kconfiggroup.h>
 
 // Local includes
 
@@ -180,6 +180,7 @@ FilmTool::FilmTool(QObject* const parent)
     d->gboxSettings->setHistogramType(LRGBC);
 
     // we don't need to use the Gradient in this tool
+
     d->gboxSettings->histogramBox()->setGradientVisible(false);
     d->gboxSettings->histogramBox()->setChannel(ColorChannels);
 
@@ -253,10 +254,10 @@ FilmTool::FilmTool(QObject* const parent)
     d->autoButton->setIcon(QIcon::fromTheme(QLatin1String("system-run")));
     d->autoButton->setToolTip( i18n( "Adjust white point automatically." ) );
     d->autoButton->setWhatsThis(i18n("If you press this button, the white point is calculated "
-            "from the image data automatically. This function requires to have some residual "
-            "orange mask around the exposed area of the negative."));
+                                     "from the image data automatically. This function requires to have some residual "
+                                     "orange mask around the exposed area of the negative."));
 
-    QLabel* const space = new QLabel();
+    QLabel* const space   = new QLabel();
     space->setFixedWidth(d->gboxSettings->spacingHint());
 
     QHBoxLayout* const l3 = new QHBoxLayout();
@@ -298,10 +299,10 @@ FilmTool::FilmTool(QObject* const parent)
     grid->addWidget(d->colorBalanceInput, 7, 2, 1, 2, Qt::AlignRight);
 
     // TODO: fill in rest of settings elements
-
     //grid->setRowStretch(7, 10);
     //grid->setColumnStretch(2, 10);
     //grid->setColumnStretch(4, 10);
+
     grid->setContentsMargins(QMargins());
     grid->setSpacing(d->gboxSettings->spacingHint());
     d->gboxSettings->plainPage()->setLayout(grid);
@@ -406,6 +407,7 @@ void FilmTool::slotScaleChanged()
 void FilmTool::slotAdjustSliders()
 {
     // adjust all Levels sliders
+
     d->redInputLevels->setLeftValue(
             (double)d->levels->getLevelLowInputValue(RedChannel) / d->histoSegments);
     d->redInputLevels->setRightValue(
@@ -495,7 +497,9 @@ void FilmTool::slotColorSelectedFromTarget(const Digikam::DColor& color, const Q
 void FilmTool::slotPickerColorButtonActived(bool checked)
 {
     if (checked)
+    {
         d->previewWidget->setCapturePointMode(true);
+    }
 }
 
 void FilmTool::slotAutoWhitePoint()
@@ -523,11 +527,14 @@ void FilmTool::slotAutoWhitePoint()
                 break;
             }
         }
-
     }
 
-    DColor wp = DColor(high_input[RedChannel], high_input[GreenChannel],
-            high_input[BlueChannel], 0, sixteenBit);
+    DColor wp = DColor(high_input[RedChannel],
+                       high_input[GreenChannel],
+                       high_input[BlueChannel],
+                       0,
+                       sixteenBit);
+
     d->filmContainer.setWhitePoint(wp);
 
     setLevelsFromFilm();
@@ -570,7 +577,7 @@ void FilmTool::readSettings()
     d->gammaInput->setValue(gamma);
     gammaInputChanged(gamma);
 
-    double exposure = group.readEntry(d->configExposureEntry, 1.0);
+    double exposure   = group.readEntry(d->configExposureEntry, 1.0);
     d->exposureInput->setValue(exposure);
 
     d->filmContainer  = FilmContainer(cnType, gamma, d->originalImage->sixteenBit());
@@ -601,7 +608,7 @@ void FilmTool::readSettings()
     d->gboxSettings->histogramBox()->setChannel(ch);
 
     d->gboxSettings->histogramBox()->setScale((HistogramScale)group.readEntry(d->configHistogramScaleEntry,
-            (int)LogScaleHistogram));
+                                              (int)LogScaleHistogram));
 
     slotAdjustSliders();
     slotChannelChanged();
@@ -617,20 +624,20 @@ void FilmTool::writeSettings()
     group.writeEntry(d->configHistogramChannelEntry, (int)d->gboxSettings->histogramBox()->channel());
     group.writeEntry(d->configHistogramScaleEntry,   (int)d->gboxSettings->histogramBox()->scale());
 
-    double gamma = d->gammaInput->value();
+    double gamma    = d->gammaInput->value();
     group.writeEntry(d->configGammaInputEntry, gamma);
 
     double exposure = d->exposureInput->value();
     group.writeEntry(d->configExposureEntry, exposure);
 
-    int cnType = (int)d->filmContainer.cnType();
+    int cnType      = (int)d->filmContainer.cnType();
     group.writeEntry(d->configFilmProfileEntry, cnType);
 
     group.writeEntry(d->configFilmProfileName, d->cnType->currentItem()->text());
 
-    int red   = d->filmContainer.whitePoint().red();
-    int green = d->filmContainer.whitePoint().green();
-    int blue  = d->filmContainer.whitePoint().blue();
+    int red    = d->filmContainer.whitePoint().red();
+    int green  = d->filmContainer.whitePoint().green();
+    int blue   = d->filmContainer.whitePoint().blue();
 
     group.writeEntry(d->configWhitePointEntry.arg(1), sb ? red   : red   * 256);
     group.writeEntry(d->configWhitePointEntry.arg(2), sb ? green : green * 256);
@@ -673,17 +680,21 @@ void FilmTool::setFinalImage()
 
 bool FilmTool::eventFilter(QObject* obj, QEvent* ev)
 {
-    // swallow mouse evens for level sliders to make them immutable
-    if (obj == d->redInputLevels || obj == d->greenInputLevels || obj == d->blueInputLevels)
+    // Swallow mouse evens for level sliders to make them immutable
+
+    if ((obj == d->redInputLevels) || (obj == d->greenInputLevels) || (obj == d->blueInputLevels))
     {
-        if (ev->type() == QEvent::MouseButtonPress   ||
-            ev->type() == QEvent::MouseButtonRelease ||
-            ev->type() == QEvent::MouseMove          ||
-            ev->type() == QEvent::MouseButtonDblClick)
+        if ((ev->type() == QEvent::MouseButtonPress)   ||
+            (ev->type() == QEvent::MouseButtonRelease) ||
+            (ev->type() == QEvent::MouseMove)          ||
+            (ev->type() == QEvent::MouseButtonDblClick))
+        {
             return true;
+        }
     }
 
     // pass all other events to the parent class
+
     return EditorToolThreaded::eventFilter(obj, ev);
 }
 

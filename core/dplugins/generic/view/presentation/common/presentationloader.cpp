@@ -8,7 +8,7 @@
  *
  * Copyright (C) 2007-2009 by Valerio Fuoglio <valerio dot fuoglio at gmail dot com>
  * Copyright (C) 2009      by Andi Clemens <andi dot clemens at googlemail dot com>
- * Copyright (C) 2012-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -52,26 +52,30 @@ typedef QMap<QUrl, QImage> LoadedImages;
 
 class Q_DECL_HIDDEN LoadThread : public QThread
 {
+    Q_OBJECT
 
 public:
 
-    LoadThread(LoadedImages* const loadedImages, QMutex* const imageLock, const QUrl& path,
-               int width, int height)
+    LoadThread(LoadedImages* const loadedImages,
+               QMutex* const imageLock,
+               const QUrl& path,
+               int width,
+               int height)
+        : m_imageLock   (imageLock),
+          m_loadedImages(loadedImages),
+          m_path        (path),
+          m_swidth      (width),
+          m_sheight     (height)
     {
-        m_path         = path;
-        m_swidth       = width;
-        m_sheight      = height;
-        m_imageLock    = imageLock;
-        m_loadedImages = loadedImages;
     }
 
-    ~LoadThread()
+    ~LoadThread() override
     {
     }
 
 protected:
 
-    void run()
+    void run() override
     {
         QImage newImage;
 
@@ -109,6 +113,11 @@ protected:
 
 private:
 
+    // Disable
+    explicit LoadThread(QObject*);
+
+private:
+
     QMutex*       m_imageLock;
     LoadedImages* m_loadedImages;
     QUrl          m_path;
@@ -127,16 +136,16 @@ class Q_DECL_HIDDEN PresentationLoader::Private
 public:
 
     explicit Private()
+      : sharedData      (nullptr),
+        loadingThreads  (nullptr),
+        loadedImages    (nullptr),
+        imageLock       (nullptr),
+        threadLock      (nullptr),
+        cacheSize       (0),
+        currIndex       (0),
+        swidth          (0),
+        sheight         (0)
     {
-        sharedData     = nullptr;
-        loadingThreads = nullptr;
-        loadedImages   = nullptr;
-        imageLock      = nullptr;
-        threadLock     = nullptr;
-        cacheSize      = 0;
-        currIndex      = 0;
-        swidth         = 0;
-        sheight        = 0;
     }
 
     PresentationContainer* sharedData;
@@ -152,7 +161,9 @@ public:
     int                    sheight;
 };
 
-PresentationLoader::PresentationLoader(PresentationContainer* const sharedData, int width, int height,
+PresentationLoader::PresentationLoader(PresentationContainer* const sharedData,
+                                       int width,
+                                       int height,
                                        int beginAtIndex)
     : d(new Private)
 {
@@ -168,7 +179,7 @@ PresentationLoader::PresentationLoader(PresentationContainer* const sharedData, 
 
     QUrl filePath;
 
-    for (uint i = 0; i < uint(d->cacheSize / 2) && i < uint(d->sharedData->urlList.count()); ++i)
+    for (uint i = 0 ; (i < uint(d->cacheSize / 2)) && (i < uint(d->sharedData->urlList.count())) ; ++i)
     {
         filePath                    = d->sharedData->urlList[i];
         LoadThread* const newThread = new LoadThread(d->loadedImages, d->imageLock,
@@ -179,7 +190,7 @@ PresentationLoader::PresentationLoader(PresentationContainer* const sharedData, 
         d->threadLock->unlock();
     }
 
-    for (uint i = 0; i < (d->cacheSize % 2 == 0 ? (d->cacheSize % 2) : uint(d->cacheSize / 2) + 1); ++i)
+    for (uint i = 0 ; (i < (((d->cacheSize % 2) == 0) ? (d->cacheSize % 2) : uint(d->cacheSize / 2) + 1)) ; ++i)
     {
         int toLoad                  = (d->currIndex - i) % d->sharedData->urlList.count();
         filePath                    = d->sharedData->urlList[toLoad];
@@ -197,11 +208,14 @@ PresentationLoader::~PresentationLoader()
     d->threadLock->lock();
     LoadingThreads::Iterator it;
 
-    for (it = d->loadingThreads->begin(); it != d->loadingThreads->end(); ++it)
+    for (it = d->loadingThreads->begin() ; it != d->loadingThreads->end() ; ++it)
     {
         // better check for a valid pointer here
+
         if (it.value())
+        {
             it.value()->wait();
+        }
 
         delete it.value();
     }
@@ -226,14 +240,18 @@ void PresentationLoader::next()
     d->currIndex = (d->currIndex + 1) % d->sharedData->urlList.count();
 
     if (victim == newBorn)
+    {
         return;
+    }
 
     d->threadLock->lock();
 
     LoadThread* const oldThread = d->loadingThreads->value(d->sharedData->urlList[victim]);
 
     if (oldThread)
+    {
         oldThread->wait();
+    }
 
     delete oldThread;
 
@@ -263,7 +281,9 @@ void PresentationLoader::prev()
     d->currIndex = d->currIndex > 0 ? d->currIndex - 1 : d->sharedData->urlList.count() - 1;
 
     if (victim == newBorn)
+    {
         return;
+    }
 
     d->threadLock->lock();
     d->imageLock->lock();
@@ -271,7 +291,9 @@ void PresentationLoader::prev()
     LoadThread* const oldThread = d->loadingThreads->value(d->sharedData->urlList[victim]);
 
     if (oldThread)
+    {
         oldThread->wait();
+    }
 
     delete oldThread;
 
@@ -319,7 +341,9 @@ void PresentationLoader::checkIsIn(int index) const
     if (d->loadingThreads->contains(d->sharedData->urlList[index]))
     {
         if ((*d->loadingThreads)[d->sharedData->urlList[index]]->isRunning())
+        {
             (*d->loadingThreads)[d->sharedData->urlList[index]]->wait();
+        }
 
         d->threadLock->unlock();
     }
@@ -336,3 +360,5 @@ void PresentationLoader::checkIsIn(int index) const
 }
 
 } // namespace DigikamGenericPresentationPlugin
+
+#include "presentationloader.moc"

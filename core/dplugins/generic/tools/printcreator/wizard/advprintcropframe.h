@@ -8,7 +8,7 @@
  *
  * Copyright (C) 2002-2003 by Todd Shoemaker <todd at theshoemakers dot net>
  * Copyright (C) 2007-2012 by Angelo Naselli <anaselli at linux dot it>
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -43,7 +43,7 @@ class AdvPrintCropFrame : public QWidget
 public:
 
     explicit AdvPrintCropFrame(QWidget* const parent);
-    ~AdvPrintCropFrame();
+    ~AdvPrintCropFrame() override;
 
     void   init(AdvPrintPhoto* const photo,
                 int  woutlay,
@@ -58,11 +58,11 @@ public:
 
 protected:
 
-    virtual void paintEvent(QPaintEvent*)        override;
-    virtual void mousePressEvent(QMouseEvent*)   override;
-    virtual void mouseReleaseEvent(QMouseEvent*) override;
-    virtual void mouseMoveEvent(QMouseEvent*)    override;
-    virtual void keyReleaseEvent(QKeyEvent*)     override;
+    void paintEvent(QPaintEvent*)        override;
+    void mousePressEvent(QMouseEvent*)   override;
+    void mouseReleaseEvent(QMouseEvent*) override;
+    void mouseMoveEvent(QMouseEvent*)    override;
+    void keyReleaseEvent(QKeyEvent*)     override;
 
 private:
 

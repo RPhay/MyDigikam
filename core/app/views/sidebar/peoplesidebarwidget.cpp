@@ -7,7 +7,7 @@
  * Description : Side Bar Widget for People
  *
  * Copyright (C) 2009-2010 by Johannes Wienke <languitar at semipol dot de>
- * Copyright (C) 2010-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2010-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2012      by Andi Clemens <andi dot clemens at gmail dot com>
  * Copyright (C) 2014      by Mohamed_Anwer <m_dot_anwer at gmx dot com>
  * Copyright (C) 2010      by Aditya Bhatt <adityabhatt1991 at gmail dot com>
@@ -52,6 +52,7 @@
 #include "facescanwidget.h"
 #include "facesdetector.h"
 #include "dnotificationwidget.h"
+#include "applicationsettings.h"
 
 namespace Digikam
 {
@@ -61,11 +62,11 @@ class Q_DECL_HIDDEN PeopleSideBarWidget::Private
 public:
 
     explicit Private()
-      : rescanButton(nullptr),
+      : rescanButton            (nullptr),
         searchModificationHelper(nullptr),
-        settingsWdg(nullptr),
-        tagFolderView(nullptr),
-        tagSearchBar(nullptr)
+        settingsWdg             (nullptr),
+        tagFolderView           (nullptr),
+        tagSearchBar            (nullptr)
     {
     }
 
@@ -80,7 +81,7 @@ PeopleSideBarWidget::PeopleSideBarWidget(QWidget* const parent,
                                          TagModel* const model,
                                          SearchModificationHelper* const searchModificationHelper)
     : SidebarWidget(parent),
-      d(new Private)
+      d            (new Private)
 {
     setObjectName(QLatin1String("People Sidebar"));
     setProperty("Shortcut", Qt::CTRL + Qt::SHIFT + Qt::Key_F9);
@@ -97,10 +98,11 @@ PeopleSideBarWidget::PeopleSideBarWidget(QWidget* const parent,
     scrollArea->setWidget(mainView);
     scrollArea->setWidgetResizable(true);
 
+    model->setColumnHeader(getCaption());
+
     QVBoxLayout* const vlay     = new QVBoxLayout;
     d->tagFolderView            = new TagFolderView(this, model);
     d->tagFolderView->setConfigGroup(getConfigGroup());
-    d->tagFolderView->setExpandNewCurrentItem(true);
     d->tagFolderView->setAlbumManagerCurrentAlbum(true);
     d->tagFolderView->setShowDeleteFaceTagsAction(true);
 
@@ -150,6 +152,15 @@ void PeopleSideBarWidget::setActive(bool active)
     if (active)
     {
         d->tagFolderView->setCurrentAlbums(QList<Album*>() << d->tagFolderView->currentAlbum());
+
+        if (!ApplicationSettings::instance()->getHelpBoxNotificationSeen())
+        {
+            QString msg = i18n("Welcome to Face Management in digiKam. "
+                               "If this is your first time using this feature, please consider "
+                               "using the Help Box in the Bottom Left Side Panel.");
+            emit signalNotificationError(msg, DNotificationWidget::Information);
+            ApplicationSettings::instance()->setHelpBoxNotificationSeen(true);
+        }
     }
 }
 
@@ -167,6 +178,8 @@ void PeopleSideBarWidget::doSaveState()
 
 void PeopleSideBarWidget::applySettings()
 {
+    ApplicationSettings* const settings = ApplicationSettings::instance();
+    d->tagFolderView->setExpandNewCurrentItem(settings->getExpandNewCurrentItem());
 }
 
 void PeopleSideBarWidget::changeAlbumFromHistory(const QList<Album*>& album)
@@ -194,7 +207,7 @@ void PeopleSideBarWidget::slotScanForFaces()
     }
     else
     {
-        emit signalNofificationError(i18n("Face recognition is aborted, because "
+        emit signalNotificationError(i18n("Face recognition is aborted, because "
                                           "there are no identities to recognize. "
                                           "Please add new identities."),
                                      DNotificationWidget::Information);

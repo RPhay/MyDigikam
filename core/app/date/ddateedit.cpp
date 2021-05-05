@@ -7,7 +7,7 @@
  * Description : a combo box to list date.
  *               this widget come from libkdepim.
  *
- * Copyright (C) 2011-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2011-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2002      by Cornelius Schumacher <schumacher at kde dot org>
  * Copyright (C) 2003-2004 by Reinhold Kainhofer <reinhold at kainhofer dot com>
  * Copyright (C) 2004      by Tobias Koenig <tokoe at kde dot org>
@@ -53,20 +53,23 @@ namespace Digikam
 
 class Q_DECL_HIDDEN DateValidator : public QValidator
 {
+    Q_OBJECT
+
 public:
 
     DateValidator(const QStringList& keywords, const QString& dateFormat, QWidget* const parent)
-        : QValidator(parent),
-          mKeywords(keywords),
+        : QValidator (parent),
+          mKeywords  (keywords),
           mDateFormat(dateFormat)
     {
     }
 
-    virtual State validate(QString& str, int&) const
+    State validate(QString& str, int&) const override
     {
         int length = str.length();
 
         // empty string is intermediate so one can clear the edit line and start from scratch
+
         if (length <= 0)
         {
             return Intermediate;
@@ -102,10 +105,10 @@ class Q_DECL_HIDDEN DDateEdit::Private
 public:
 
     explicit Private()
-      : readOnly(false),
-        textChanged(false),
+      : readOnly             (false),
+        textChanged          (false),
         discardNextMousePress(false),
-        popup(nullptr)
+        popup                (nullptr)
     {
     }
 
@@ -123,10 +126,12 @@ public:
 
 DDateEdit::DDateEdit(QWidget* const parent, const QString& name)
     : QComboBox(parent),
-      d(new Private)
+      d        (new Private)
 {
     setObjectName(name);
+
     // need at least one entry for popup to work
+
     setMaxCount(1);
     setEditable(true);
 
@@ -161,6 +166,7 @@ DDateEdit::DDateEdit(QWidget* const parent, const QString& name)
             this, SLOT(dateSelected(QDate)));
 
     // handle keyword entry
+
     setupKeywords();
     lineEdit()->installEventFilter(this);
 
@@ -210,14 +216,16 @@ void DDateEdit::showPopup()
     if (QWidget* const widget = nativeParentWidget())
     {
         if (QWindow* const window = widget->windowHandle())
+        {
             screen = window->screen();
+        }
     }
 
     QRect desk          = screen->geometry();
     QPoint popupPoint   = mapToGlobal(QPoint(0, 0));
     int dateFrameHeight = d->popup->sizeHint().height();
 
-    if (popupPoint.y() + height() + dateFrameHeight > desk.bottom())
+    if ((popupPoint.y() + height() + dateFrameHeight) > desk.bottom())
     {
         popupPoint.setY(popupPoint.y() - dateFrameHeight);
     }
@@ -228,7 +236,7 @@ void DDateEdit::showPopup()
 
     int dateFrameWidth = d->popup->sizeHint().width();
 
-    if (popupPoint.x() + dateFrameWidth > desk.right())
+    if ((popupPoint.x() + dateFrameWidth) > desk.right())
     {
         popupPoint.setX(desk.right() - dateFrameWidth);
     }
@@ -257,10 +265,13 @@ void DDateEdit::showPopup()
     // The combo box is now shown pressed. Make it show not pressed again
     // by causing its (invisible) list box to emit a 'selected' signal.
     // First, ensure that the list box contains the date currently displayed.
+
     QDate date                  = parseDate();
     assignDate(date);
     updateView();
+
     // Now, simulate an Enter to unpress it
+
     QAbstractItemView* const lb = view();
 
     if (lb)
@@ -274,6 +285,7 @@ void DDateEdit::showPopup()
 void DDateEdit::dateSelected(const QDate& date)
 {
     // NOTE: use dynamic binding as this virtual method can be re-implemented in derived classes.
+
     if (this->assignDate(date))
     {
         updateView();
@@ -323,7 +335,7 @@ QDate DDateEdit::parseDate(bool* replaced) const
         (*replaced) = false;
     }
 
-    if (text.isEmpty())
+    if      (text.isEmpty())
     {
         result = QDate();
     }
@@ -343,7 +355,7 @@ QDate DDateEdit::parseDate(bool* replaced) const
              * which means the new day is already passed (so we need to find the
              * day in the next week).
              */
-            i -= 100;
+            i             -= 100;
             int currentDay = today.dayOfWeek();
 
             if (i >= currentDay)
@@ -377,7 +389,8 @@ bool DDateEdit::eventFilter(QObject* object, QEvent* event)
     {
         // We only process the focus out event if the text has changed
         // since we got focus
-        if ((event->type() == QEvent::FocusOut) && d->textChanged)
+
+        if      ((event->type() == QEvent::FocusOut) && d->textChanged)
         {
             lineEnterPressed();
             d->textChanged = false;
@@ -385,6 +398,7 @@ bool DDateEdit::eventFilter(QObject* object, QEvent* event)
         else if (event->type() == QEvent::KeyPress)
         {
             // Up and down arrow keys step the date
+
             QKeyEvent* const keyEvent = (QKeyEvent*)event;
 
             if (keyEvent->key() == Qt::Key_Return)
@@ -395,7 +409,7 @@ bool DDateEdit::eventFilter(QObject* object, QEvent* event)
 
             int step = 0;
 
-            if (keyEvent->key() == Qt::Key_Up)
+            if      (keyEvent->key() == Qt::Key_Up)
             {
                 step = 1;
             }
@@ -415,7 +429,9 @@ bool DDateEdit::eventFilter(QObject* object, QEvent* event)
                     if (assignDate(date))
                     {
                         updateView();
+
                         emit dateChanged(date);
+
                         return true;
                     }
                 }
@@ -425,6 +441,7 @@ bool DDateEdit::eventFilter(QObject* object, QEvent* event)
     else
     {
         // It's a date picker event
+
         switch (event->type())
         {
             case QEvent::MouseButtonDblClick:
@@ -440,14 +457,18 @@ bool DDateEdit::eventFilter(QObject* object, QEvent* event)
                     {
                         // The date picker is being closed by a click on the
                         // DDateEdit widget. Avoid popping it up again immediately.
+
                         d->discardNextMousePress = true;
                     }
                 }
 
                 break;
             }
+
             default:
+            {
                 break;
+            }
         }
     }
 
@@ -456,7 +477,7 @@ bool DDateEdit::eventFilter(QObject* object, QEvent* event)
 
 void DDateEdit::mousePressEvent(QMouseEvent* e)
 {
-    if (e->button() == Qt::LeftButton && d->discardNextMousePress)
+    if ((e->button() == Qt::LeftButton) && d->discardNextMousePress)
     {
         d->discardNextMousePress = false;
         return;
@@ -470,6 +491,7 @@ void DDateEdit::slotTextChanged(const QString&)
     QDate date = parseDate();
 
     // NOTE: use dynamic binding as this virtual method can be re-implemented in derived classes.
+
     if (this->assignDate(date))
     {
         emit dateChanged(date);
@@ -482,13 +504,14 @@ void DDateEdit::setupKeywords()
 {
     // Create the keyword list. This will be used to match against when the user
     // enters information.
-    d->keywordMap.insert(i18n("tomorrow"),   1);
-    d->keywordMap.insert(i18n("today"),      0);
-    d->keywordMap.insert(i18n("yesterday"), -1);
+
+    d->keywordMap.insert(i18nc("@item: date keyword", "tomorrow"),   1);
+    d->keywordMap.insert(i18nc("@item: date keyword", "today"),      0);
+    d->keywordMap.insert(i18nc("@item: date keyword", "yesterday"), -1);
 
     QString dayName;
 
-    for (int i = 1; i <= 7; ++i)
+    for (int i = 1 ; i <= 7 ; ++i)
     {
         dayName = QLocale().standaloneDayName(i, QLocale::LongFormat).toLower();
         d->keywordMap.insert(dayName, i + 100);
@@ -499,6 +522,7 @@ bool DDateEdit::assignDate(const QDate& date)
 {
     d->date        = date;
     d->textChanged = false;
+
     return true;
 }
 
@@ -513,6 +537,7 @@ void DDateEdit::updateView()
 
     // We do not want to generate a signal here,
     // since we explicitly setting the date
+
     bool blocked = signalsBlocked();
     blockSignals(true);
     removeItem(0);
@@ -521,3 +546,5 @@ void DDateEdit::updateView()
 }
 
 } // namespace Digikam
+
+#include "ddateedit.moc"

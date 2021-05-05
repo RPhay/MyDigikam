@@ -48,6 +48,7 @@ DImgPreviewItem::DImgPreviewItem(QGraphicsItem* const parent)
     : GraphicsDImgItem(*new DImgPreviewItemPrivate, parent)
 {
     Q_D(DImgPreviewItem);
+
     d->init(this);
 }
 
@@ -55,15 +56,16 @@ DImgPreviewItem::DImgPreviewItem(DImgPreviewItemPrivate& dd, QGraphicsItem* cons
     : GraphicsDImgItem(dd, parent)
 {
     Q_D(DImgPreviewItem);
+
     d->init(this);
 }
 
 DImgPreviewItem::DImgPreviewItemPrivate::DImgPreviewItemPrivate()
-    : state(DImgPreviewItem::NoImage),
-      exifRotate(false),
-      previewSize(1024),
-      previewThread(nullptr),
-      preloadThread(nullptr)
+    : state         (DImgPreviewItem::NoImage),
+      exifRotate    (false),
+      previewSize   (1024),
+      previewThread (nullptr),
+      preloadThread (nullptr)
 {
 }
 
@@ -88,13 +90,14 @@ void DImgPreviewItem::DImgPreviewItemPrivate::init(DImgPreviewItem* const q)
 
     LoadingCacheInterface::connectToSignalFileChanged(q, SLOT(slotFileChanged(QString)));
 
-    QObject::connect(IccSettings::instance(), SIGNAL(settingsChanged(ICCSettingsContainer,ICCSettingsContainer)),
+    QObject::connect(IccSettings::instance(), SIGNAL(signalICCSettingsChanged(ICCSettingsContainer,ICCSettingsContainer)),
                      q, SLOT(iccSettingsChanged(ICCSettingsContainer,ICCSettingsContainer)));
 }
 
 DImgPreviewItem::~DImgPreviewItem()
 {
     Q_D(DImgPreviewItem);
+
     delete d->previewThread;
     delete d->preloadThread;
 }
@@ -102,6 +105,7 @@ DImgPreviewItem::~DImgPreviewItem()
 void DImgPreviewItem::setDisplayingWidget(QWidget* const widget)
 {
     Q_D(DImgPreviewItem);
+
     d->previewThread->setDisplayingWidget(widget);
 }
 
@@ -129,7 +133,7 @@ void DImgPreviewItem::setPath(const QString& path, bool rePreview)
 {
     Q_D(DImgPreviewItem);
 
-    if (path == d->path && !rePreview)
+    if ((path == d->path) && !rePreview)
     {
         return;
     }
@@ -155,6 +159,7 @@ void DImgPreviewItem::setPath(const QString& path, bool rePreview)
 void DImgPreviewItem::setPreloadPaths(const QStringList& pathsToPreload)
 {
     Q_D(DImgPreviewItem);
+
     d->pathsToPreload = pathsToPreload;
     preloadNext();
 }
@@ -240,6 +245,7 @@ QString DImgPreviewItem::userLoadingHint() const
 void DImgPreviewItem::reload()
 {
     Q_D(DImgPreviewItem);
+
     QString path = d->path;
     d->path.clear();
     setPath(path);
@@ -263,7 +269,7 @@ void DImgPreviewItem::slotGotImagePreview(const LoadingDescription& description,
 {
     Q_D(DImgPreviewItem);
 
-    if (description.filePath != d->path || description.isThumbnail())
+    if ((description.filePath != d->path) || description.isThumbnail())
     {
         return;
     }

@@ -27,6 +27,7 @@
 
 #include <QDateTime>
 #include <QUrl>
+#include <QSignalSpy>
 
 // Local includes
 

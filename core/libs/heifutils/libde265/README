@@ -1,0 +1,4 @@
+https://github.com/strukturag/libde265
+version 1.0.5
+extra/win32cond.c renamed as extra/win32cond.cc
+de265 version definitions patched in ../CMakeLists.txt

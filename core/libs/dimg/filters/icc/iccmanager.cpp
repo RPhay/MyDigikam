@@ -7,7 +7,7 @@
  * Description : methods that implement color management tasks
  *
  * Copyright (C) 2005-2006 by F.J. Cruz <fj dot cruz at supercable dot es>
- * Copyright (C) 2005-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2005-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2009-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  *
  * This program is free software; you can redistribute it
@@ -44,8 +44,8 @@ public:
 
     explicit Private()
         : profileMismatch(false),
-          settings(ICCSettingsContainer()),
-          observer(nullptr)
+          settings       (ICCSettingsContainer()),
+          observer       (nullptr)
     {
     }
 
@@ -86,6 +86,7 @@ IccManager::IccManager(const DImg& image, const ICCSettingsContainer& settings)
     if (!d->embeddedProfile.isNull() && !d->embeddedProfile.open())
     {
         // Treat as missing profile
+
         d->embeddedProfile = IccProfile();
         qCWarning(DIGIKAM_DIMG_LOG) << "Encountered invalid embedded color profile in file"
                                     << d->image.attribute(QLatin1String("originalFilePath")).toString();
@@ -139,7 +140,7 @@ void IccManager::transformDefault()
         return;
     }
 
-    if (isUncalibratedColor())
+    if      (isUncalibratedColor())
     {
         transform(d->settings.defaultUncalibratedBehavior);
     }
@@ -170,14 +171,15 @@ bool IccManager::isProfileMismatch() const
 
 ICCSettingsContainer::Behavior IccManager::safestBestBehavior() const
 {
-    if (isUncalibratedColor())
+    if      (isUncalibratedColor())
     {
         return ICCSettingsContainer::InputToWorkspace;
     }
     else if (isMissingProfile())
     {
         // Assume sRGB (normal, untagged file) and stick with it
-        return ICCSettingsContainer::UseSRGB | ICCSettingsContainer::KeepProfile;
+
+        return (ICCSettingsContainer::UseSRGB | ICCSettingsContainer::KeepProfile);
     }
     else if (isProfileMismatch())
     {
@@ -201,9 +203,9 @@ void IccManager::transform(ICCSettingsContainer::Behavior behavior, const IccPro
         return;
     }
 
-    if (behavior == ICCSettingsContainer::AskUser)
+    if      (behavior == ICCSettingsContainer::AskUser)
     {
-        if (isUncalibratedColor())
+        if      (isUncalibratedColor())
         {
             d->image.setAttribute(QLatin1String("uncalibratedColorAskUser"), true);
         }
@@ -249,7 +251,7 @@ bool IccManager::needsPostLoadingManagement(const DImg& img)
 
 IccProfile IccManager::imageProfile(ICCSettingsContainer::Behavior behavior, const IccProfile& specifiedProfile)
 {
-    if (behavior & ICCSettingsContainer::UseEmbeddedProfile)
+    if      (behavior & ICCSettingsContainer::UseEmbeddedProfile)
     {
         return d->embeddedProfile;
     }
@@ -272,6 +274,7 @@ IccProfile IccManager::imageProfile(ICCSettingsContainer::Behavior behavior, con
     else if (behavior & ICCSettingsContainer::AutomaticColors)
     {
         qCDebug(DIGIKAM_DIMG_LOG) << "Let the RAW loader do automatic color conversion";
+
         return IccProfile();
     }
     else if (behavior & ICCSettingsContainer::DoNotInterpret)
@@ -280,6 +283,7 @@ IccProfile IccManager::imageProfile(ICCSettingsContainer::Behavior behavior, con
     }
 
     qCDebug(DIGIKAM_DIMG_LOG) << "No input profile: invalid Behavior flags" << (int)behavior;
+
     return IccProfile();
 }
 
@@ -292,6 +296,7 @@ void IccManager::getTransform(IccTransform& trans, ICCSettingsContainer::Behavio
     trans.setUseBlackPointCompensation(d->settings.useBPC);
 
     // Output
+
     if (behavior & ICCSettingsContainer::ConvertToWorkspace)
     {
         outputProfile = d->workspaceProfile;
@@ -303,7 +308,8 @@ void IccManager::getTransform(IccTransform& trans, ICCSettingsContainer::Behavio
     }
 
     // Assigning the _input_ profile, if necessary. If output profile is not null, it needs to be assigned later.
-    if (inputProfile != d->embeddedProfile && !(behavior & ICCSettingsContainer::LeaveFileUntagged))
+
+    if ((inputProfile != d->embeddedProfile) && !(behavior & ICCSettingsContainer::LeaveFileUntagged))
     {
         setIccProfile(inputProfile);
     }
@@ -326,9 +332,7 @@ void IccManager::setIccProfile(const IccProfile& profile)
     }
 }
 
-
 // -- Display -------------------------------------------------------------------------------------------
-
 
 void IccManager::transformForDisplay()
 {
@@ -362,8 +366,9 @@ void IccManager::transformForDisplay(const IccProfile& profile)
     if (isUncalibratedColor())
     {
         // set appropriate outputColorSpace in RawLoadingSettings
+
         qCDebug(DIGIKAM_DIMG_LOG) << "Do not use transformForDisplay for uncalibrated data "
-                 "but let the RAW loader do the conversion to sRGB";
+                                     "but let the RAW loader do the conversion to sRGB";
     }
 
     IccTransform trans = displayTransform(outputProfile);
@@ -416,15 +421,16 @@ IccTransform IccManager::displayTransform(const IccProfile& displayProfile)
     if (isUncalibratedColor())
     {
         // set appropriate outputColorSpace in RawLoadingSettings
+
         qCDebug(DIGIKAM_DIMG_LOG) << "Do not use transformForDisplay for uncalibrated data "
-                 "but let the RAW loader do the conversion to sRGB";
+                                     "but let the RAW loader do the conversion to sRGB";
     }
     else if (isMissingProfile())
     {
         ICCSettingsContainer::Behavior missingProfileBehavior = d->settings.defaultMissingProfileBehavior;
 
-        if (missingProfileBehavior == ICCSettingsContainer::AskUser ||
-            missingProfileBehavior == ICCSettingsContainer::SafestBestAction)
+        if ((missingProfileBehavior == ICCSettingsContainer::AskUser) ||
+            (missingProfileBehavior == ICCSettingsContainer::SafestBestAction))
         {
             missingProfileBehavior = safestBestBehavior();
         }
@@ -474,13 +480,13 @@ bool IccManager::isSRGB(const DImg& image)
 {
     if (image.isNull() || !IccSettings::instance()->isEnabled())
     {
-        return true;    // then, everything is sRGB
+        return true;                // then, everything is sRGB
     }
 
     IccProfile embeddedProfile = image.getIccProfile();
     IccProfile outputProfile   = IccProfile::sRGB();
 
-    if (embeddedProfile.isNull()) // assume sRGB
+    if (embeddedProfile.isNull())   // assume sRGB
     {
         return true;
     }
@@ -502,11 +508,12 @@ void IccManager::transformToSRGB()
         return;
     }
 
-    if (isUncalibratedColor())
+    if      (isUncalibratedColor())
     {
         // set appropriate outputColorSpace in RawLoadingSettings
+
         qCDebug(DIGIKAM_DIMG_LOG) << "Do not use transformForDisplay for uncalibrated data "
-                 "but let the RAW loader do the conversion to sRGB";
+                                     "but let the RAW loader do the conversion to sRGB";
     }
     else if (isMissingProfile())
     {
@@ -595,15 +602,17 @@ void IccManager::transformForOutput(const IccProfile& prof)
     IccProfile inputProfile;
     IccProfile outputProfile = prof;
 
-    if (isUncalibratedColor())
+    if      (isUncalibratedColor())
     {
         // set appropriate outputColorSpace in RawLoadingSettings
+
         qCDebug(DIGIKAM_DIMG_LOG) << "Do not use transformForOutput for uncalibrated data "
-                 "but let the RAW loader do the conversion to sRGB";
+                                     "but let the RAW loader do the conversion to sRGB";
     }
     else if (isMissingProfile())
     {
         inputProfile = IccProfile::sRGB();
+
         //TODO: honour options?
     }
     else

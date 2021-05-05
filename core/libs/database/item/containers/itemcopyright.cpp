@@ -7,7 +7,7 @@
  * Description : Access to copy-right info of an item in the database
  *
  * Copyright (C) 2008-2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -44,10 +44,13 @@ public:
 
     explicit ItemCopyrightCache(ItemCopyright* const obj)
         : object(obj),
+
           // read all properties
-          infos(CoreDbAccess().db()->getItemCopyright(obj->m_id, QString()))
+
+          infos (CoreDbAccess().db()->getItemCopyright(obj->m_id, QString()))
     {
           // set this as cache
+
           object->m_cache = this;
     }
 
@@ -58,7 +61,7 @@ public:
 
 private:
 
-    ItemCopyright* object;
+    ItemCopyright*       object;
 
 public:
 
@@ -68,19 +71,19 @@ public:
 // -------------------------------------------------------------------------------------------
 
 ItemCopyright::ItemCopyright(qlonglong imageid)
-    : m_id(imageid),
+    : m_id   (imageid),
       m_cache(nullptr)
 {
 }
 
 ItemCopyright::ItemCopyright()
-    : m_id(0),
+    : m_id   (0),
       m_cache(nullptr)
 {
 }
 
 ItemCopyright::ItemCopyright(const ItemCopyright& other)
-    : m_id(other.m_id),
+    : m_id   (other.m_id),
       m_cache(nullptr)
 {
     // the cache is only short-lived, to keep complexity low
@@ -477,6 +480,7 @@ void ItemCopyright::setLanguageProperty(const QString& property, const QString& 
 void ItemCopyright::removeProperties(const QString& property)
 {
     // if we have a cache, find out if anything need to be done at all
+
     if (m_cache && copyrightInfo(property).isNull())
     {
         return;
@@ -495,7 +499,7 @@ void ItemCopyright::removeLanguageProperty(const QString& property, const QStrin
     CoreDbAccess().db()->removeItemCopyrightProperties(m_id, property, languageCode);
 }
 
-int ItemCopyright::languageMatch(const QList<CopyrightInfo> infos, const QString& languageCode) const
+int ItemCopyright::languageMatch(const QList<CopyrightInfo>& infos, const QString& languageCode) const
 {
     QString langCode;
     QString fullCode = languageCode;
@@ -515,6 +519,7 @@ int ItemCopyright::languageMatch(const QList<CopyrightInfo> infos, const QString
     else
     {
         // en-us => en-
+
         langCode = languageCode.section(QLatin1Char('-'), 0, 0, QString::SectionIncludeTrailingSep);
     }
 
@@ -524,7 +529,7 @@ int ItemCopyright::languageMatch(const QList<CopyrightInfo> infos, const QString
     defaultCodeMatch = -1;
     firstMatch       = -1;
 
-    (void)firstMatch; // Remove clang warning.
+    (void)firstMatch;   // Remove clang warning.
 
     if (infos.isEmpty())
     {

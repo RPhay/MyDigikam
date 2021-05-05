@@ -8,7 +8,7 @@
  *
  * Copyright (C) 2010-2011 by Aditya Bhatt <adityabhatt1991 at gmail dot com>
  * Copyright (C) 2010-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2012-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -28,6 +28,7 @@
 // Qt includes
 
 #include <QImage>
+#include <QTimer>
 
 // Local includes
 
@@ -35,6 +36,7 @@
 #include "coredbaccess.h"
 #include "coredbconstants.h"
 #include "coredboperationgroup.h"
+#include "coredb.h"
 #include "dimg.h"
 #include "facetags.h"
 #include "iteminfo.h"
@@ -44,13 +46,15 @@
 #include "tagscache.h"
 #include "tagregion.h"
 #include "thumbnailloadthread.h"
+#include "albummanager.h"
 
 namespace Digikam
 {
 
 // --- Constructor / Destructor -------------------------------------------------------------------------------------
 
-FaceUtils::FaceUtils()
+FaceUtils::FaceUtils(QObject* const parent)
+    : QObject(parent)
 {
 }
 
@@ -72,7 +76,7 @@ bool FaceUtils::hasBeenScanned(const ItemInfo& info) const
 
 void FaceUtils::markAsScanned(qlonglong imageid, bool hasBeenScanned) const
 {
-    return markAsScanned(ItemInfo(imageid), hasBeenScanned);
+    markAsScanned(ItemInfo(imageid), hasBeenScanned);
 }
 
 void FaceUtils::markAsScanned(const ItemInfo& info, bool hasBeenScanned) const
@@ -91,7 +95,7 @@ void FaceUtils::markAsScanned(const ItemInfo& info, bool hasBeenScanned) const
 
 QList<FaceTagsIface> FaceUtils::toFaceTagsIfaces(qlonglong imageid,
                                                  const QList<QRectF>& detectedFaces,
-                                                 const QList<Identity> recognitionResults,
+                                                 const QList<Identity>& recognitionResults,
                                                  const QSize& fullSize) const
 {
     QList<FaceTagsIface> faces;
@@ -152,7 +156,7 @@ void FaceUtils::storeThumbnails(ThumbnailLoadThread* const thread,
 
 QList<FaceTagsIface> FaceUtils::writeUnconfirmedResults(qlonglong imageid,
                                                         const QList<QRectF>& detectedFaces,
-                                                        const QList<Identity> recognitionResults,
+                                                        const QList<Identity>& recognitionResults,
                                                         const QSize& fullSize)
 {
     // Build list of new entries
@@ -222,7 +226,7 @@ QList<FaceTagsIface> FaceUtils::writeUnconfirmedResults(qlonglong imageid,
                 {
                     FaceTagsIface& oldFace = overlappingEntries[j];
 
-                    if (oldFace.isUnknownName())
+                    if      (oldFace.isUnknownName())
                     {
                         // remove old face
                     }
@@ -282,10 +286,10 @@ QList<FaceTagsIface> FaceUtils::writeUnconfirmedResults(qlonglong imageid,
     return newFaces;
 }
 
-Identity FaceUtils::identityForTag(int tagId, RecognitionDatabase& db) const
+Identity FaceUtils::identityForTag(int tagId, FacialRecognitionWrapper& recognizer) const
 {
     QMap<QString, QString> attributes = FaceTags::identityAttributes(tagId);
-    Identity identity                 = db.findIdentity(attributes);
+    Identity identity                 = recognizer.findIdentity(attributes);
 
     if (!identity.isNull())
     {
@@ -294,7 +298,7 @@ Identity FaceUtils::identityForTag(int tagId, RecognitionDatabase& db) const
     }
 
     qCDebug(DIGIKAM_GENERAL_LOG) << "Adding new FacesEngine identity with attributes" << attributes;
-    identity                          = db.addIdentity(attributes);
+    identity                          = recognizer.addIdentity(attributes);
 
     FaceTags::applyTagIdentityMapping(tagId, identity.attributesMap());
 
@@ -308,22 +312,118 @@ int FaceUtils::tagForIdentity(const Identity& identity) const
 
 // --- Editing normal tags, reimplemented with FileActionMngr ---
 
-void FaceUtils::addNormalTag(qlonglong imageid, int tagId)
+void FaceUtils::addNormalTag(qlonglong imageId, int tagId)
 {
-    FileActionMngr::instance()->assignTag(ItemInfo(imageid), tagId);
+    FileActionMngr::instance()->assignTag(ItemInfo(imageId), tagId);
+
+    /**
+     * Implementation for automatic assigning of face as
+     * Tag Icon, if no icon exists currently.
+     * Utilising a QTimer to ensure that a new TAlbum
+     * is given time to be created, before assigning Icon.
+     */
+    QTimer::singleShot(200, this, [=]()
+        {
+            if (
+                !FaceTags::isTheIgnoredPerson(tagId)  &&
+                !FaceTags::isTheUnknownPerson(tagId)  &&
+                !FaceTags::isTheUnconfirmedPerson(tagId)
+               )
+            {
+                TAlbum* const album = AlbumManager::instance()->findTAlbum(tagId);
+
+                // If Icon is NULL, set the newly added Face as the Icon.
+
+                if (album && (album->iconId() == 0))
+                {
+                    QString err;
+
+                    if (!AlbumManager::instance()->updateTAlbumIcon(album, QString(),
+                                                                    imageId, err))
+                    {
+                        qCDebug(DIGIKAM_GENERAL_LOG) << err ;
+                    }
+                }
+            }
+        }
+    );
 }
 
 void FaceUtils::removeNormalTag(qlonglong imageId, int tagId)
 {
     FileActionMngr::instance()->removeTag(ItemInfo(imageId), tagId);
+
+    if (
+        !FaceTags::isTheIgnoredPerson(tagId)  &&
+        !FaceTags::isTheUnknownPerson(tagId)  &&
+        !FaceTags::isTheUnconfirmedPerson(tagId)
+       )
+    {
+        int count = CoreDbAccess().db()->getNumberOfImagesInTagProperties(tagId,
+                                         ImageTagPropertyName::tagRegion());
+
+        /**
+         * If the face just removed was the final face
+         * associated with that Tag, reset Tag Icon.
+         */
+        if (count == 0)
+        {
+            TAlbum* const album = AlbumManager::instance()->findTAlbum(tagId);
+
+            if (album && (album->iconId() != 0))
+            {
+                QString err;
+
+                if (!AlbumManager::instance()->updateTAlbumIcon(album, QString(),
+                                                                0, err))
+                {
+                    qCDebug(DIGIKAM_GENERAL_LOG) << err ;
+                }
+            }
+        }
+    }
 }
 
-void FaceUtils::removeNormalTags(qlonglong imageId, QList<int> tagIds)
+void FaceUtils::removeNormalTags(qlonglong imageId, const QList<int>& tagIds)
 {
     FileActionMngr::instance()->removeTags(ItemInfo(imageId), tagIds);
 }
 
 // --- Utilities ---
+
+QSize FaceUtils::rotateFaces(const ItemInfo& info,
+                             int newOrientation,
+                             int oldOrientation)
+{
+    /**
+     *  Get all faces from database and rotate them
+     */
+    QList<FaceTagsIface> facesList = databaseFaces(info.id());
+
+    if (facesList.isEmpty())
+    {
+        return QSize();
+    }
+
+    QSize newSize = info.dimensions();
+
+    foreach (const FaceTagsIface& dface, facesList)
+    {
+        QRect faceRect = dface.region().toRect();
+
+        TagRegion::reverseToOrientation(faceRect,
+                                        oldOrientation,
+                                        info.dimensions());
+
+        newSize = TagRegion::adjustToOrientation(faceRect,
+                                                 newOrientation,
+                                                 info.dimensions());
+
+        changeRegion(dface, TagRegion(faceRect));
+    }
+
+    return newSize;
+}
 
 int FaceUtils::faceRectDisplayMargin(const QRect& rect)
 {

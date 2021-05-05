@@ -6,7 +6,7 @@
  * Date        : 2004-12-01
  * Description : a widget to draw histogram curves
  *
- * Copyright (C) 2004-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2004-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -42,6 +42,7 @@
 #include <QFontMetrics>
 #include <QPaintEvent>
 #include <QMouseEvent>
+#include <QPainterPath>
 
 // KDE includes
 
@@ -92,7 +93,7 @@ public:
           scaleType(LinScaleHistogram),
           imageHistogram(nullptr),
           progressTimer(nullptr),
-          progressPix(DWorkingPixmap()),
+          progressPix(nullptr),
           curves(nullptr),
           histogramPainter(nullptr),
           q(q)
@@ -116,14 +117,13 @@ public:
 
     QTimer*                        progressTimer;
 
-    DWorkingPixmap                 progressPix;
+    DWorkingPixmap*                progressPix;
 
     DColor                         colorGuide;
 
     ImageCurves*                   curves;             // Curves data instance.
 
     HistogramPainter*              histogramPainter;
-
 
 private:
 
@@ -179,10 +179,10 @@ public:
     void renderLoadingAnimation()
     {
 
-        QPixmap anim(progressPix.frameAt(progressCount));
+        QPixmap anim(progressPix->frameAt(progressCount));
         ++progressCount;
 
-        if (progressCount >= progressPix.frameCount())
+        if (progressCount >= progressPix->frameCount())
         {
             progressCount = 0;
         }
@@ -377,6 +377,7 @@ CurvesWidget::~CurvesWidget()
 
 void CurvesWidget::setup(int w, int h, bool readOnly)
 {
+    d->progressPix      = new DWorkingPixmap(this);
     d->readOnlyMode     = readOnly;
     d->curves           = new ImageCurves(true);
     d->histogramPainter = new HistogramPainter(this);

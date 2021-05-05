@@ -44,6 +44,7 @@ namespace Digikam
 {
 
 class ItemTagPair;
+class ItemInfo;
 
 class DIGIKAM_DATABASE_EXPORT FaceTagsEditor
 {
@@ -57,26 +58,39 @@ public:
     /**
      * Returns the number of faces present in an image.
      */
-    int                  numberOfFaces(qlonglong imageid)                                   const;
+    int                  numberOfFaces(qlonglong imageid)                                       const;
 
     /**
      * Returns the number of faces a particular person has in the specified image
      */
-    int                  faceCountForPersonInImage(qlonglong imageid, int tagId)            const;
+    int                  faceCountForPersonInImage(qlonglong imageid, int tagId)                const;
 
     /**
      * Reads the FaceTagsIfaces for the given image id from the database
      */
-    QList<FaceTagsIface> databaseFaces(qlonglong imageid)                                   const;
-    QList<FaceTagsIface> unconfirmedFaceTagsIfaces(qlonglong imageid)                       const;
-    QList<FaceTagsIface> databaseFacesForTraining(qlonglong imageid)                        const;
-    QList<FaceTagsIface> confirmedFaceTagsIfaces(qlonglong imageid)                         const;
+    QList<FaceTagsIface> databaseFaces(qlonglong imageid)                                       const;
+
+    /**
+     * Returns list of Unconfirmed and Unknown faces in the Image.
+     * If you want just Unconfirmed Faces, @see unconfirmedNameFaceTagsIfaces
+     */
+    QList<FaceTagsIface> unconfirmedFaceTagsIfaces(qlonglong imageid)                           const;
+
+    /**
+     * Returns a list of UnconfirmedFaces in the Image.
+     * Different from @see unconfirmedFaceTagsIfaces
+     */
+    QList<FaceTagsIface> unconfirmedNameFaceTagsIfaces(qlonglong imageid)                       const;
+
+    QList<FaceTagsIface> databaseFacesForTraining(qlonglong imageid)                            const;
+    QList<FaceTagsIface> confirmedFaceTagsIfaces(qlonglong imageid)                             const;
+    QList<FaceTagsIface> ignoredFaceTagsIfaces(qlonglong imageid)                               const;
 
     /**
      * Returns a list of all tag rectangles for the image. Unlike findAndTagFaces, this does not take a DImg,
      * because it returns only a QRect, not a Face, so no need of cropping a face rectangle.
      */
-    QList<QRect>         getTagRects(qlonglong imageid)                                     const;
+    QList<QRect>         getTagRects(qlonglong imageid)                                         const;
 
     // --- Add / Confirm ---
 
@@ -96,6 +110,15 @@ public:
     FaceTagsIface changeSuggestedName(const FaceTagsIface& previousEntry, int unconfirmedNameTagId);
 
     /**
+     * Returns a Map of Tag Regions (in XML format) to Suggested Name (from Face Recognition)
+     * for the given image.
+     * This function makes read operations to the database, and hence can be inefficient when
+     * called repeatedly. A cached version is provided in ItemInfo, and should be preferred
+     * for intensive operations such as sorting, categorizing etc.
+     */
+    QMap<QString, QString> getSuggestedNames(qlonglong id)                                      const;
+
+    /**
      * Assign the name tag for given face entry.
      * Pass the tagId if it changed or was newly assigned (UnknownName).
      * Pass the new, corrected region if it changed.
@@ -104,12 +127,14 @@ public:
      * The confirmed tag will, if necessary, be converted to a person tag.
      * Returns the newly inserted entry.
      */
-    FaceTagsIface confirmName(const FaceTagsIface& face, int tagId = -1, const TagRegion& confirmedRegion = TagRegion());
+    FaceTagsIface confirmName(const FaceTagsIface& face, int tagId = -1,
+                              const TagRegion& confirmedRegion = TagRegion());
 
     /**
      * Returns the entry that would be added if the given face is confirmed.
      */
-    static FaceTagsIface confirmedEntry(const FaceTagsIface& face, int tagId = -1, const TagRegion& confirmedRegion = TagRegion());
+    static FaceTagsIface confirmedEntry(const FaceTagsIface& face, int tagId = -1,
+                                        const TagRegion& confirmedRegion = TagRegion());
 
     /**
      * Returns the entry that would be added if the given face is autodetected.
@@ -144,10 +169,15 @@ public:
      */
     FaceTagsIface        changeRegion(const FaceTagsIface& face, const TagRegion& newRegion);
 
+    /**
+     * Changes the tag of the given entry. Returns the face with the new Tag.
+     */
+    FaceTagsIface        changeTag(const FaceTagsIface& face, int newTagId, ItemInfo& info);
+
     // --- Utilities ---
 
-    QList<FaceTagsIface> databaseFaces(qlonglong imageId, FaceTagsIface::TypeFlags flags)   const;
-    QList<ItemTagPair>  faceItemTagPairs(qlonglong imageid, FaceTagsIface::TypeFlags flags) const;
+    QList<FaceTagsIface> databaseFaces(qlonglong imageId, FaceTagsIface::TypeFlags flags)       const;
+    QList<ItemTagPair>  faceItemTagPairs(qlonglong imageid, FaceTagsIface::TypeFlags flags)     const;
 
 protected:
 
@@ -156,9 +186,13 @@ protected:
 
     virtual void addNormalTag(qlonglong imageid, int tagId);
     virtual void removeNormalTag(qlonglong imageid, int tagId);
-    virtual void removeNormalTags(qlonglong imageid, QList<int> tagId);
+    virtual void removeNormalTags(qlonglong imageid, const QList<int>& tagId);
+
+private:
+
+    Q_DISABLE_COPY(FaceTagsEditor)
 };
 
-}  // Namespace Digikam
+} // namespace Digikam
 
 #endif // DIGIKAM_FACE_TAGS_EDITOR_H

@@ -7,7 +7,7 @@
  * Description : A combobox which also has an intermediate state.
  *
  * Copyright (C) 2009      by Pieter Edelman <pieter dot edelman at gmx dot net>
- * Copyright (C) 2010-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2010-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -49,7 +49,7 @@ public:
 
 WSComboBoxIntermediate::WSComboBoxIntermediate(QWidget* const parent, const QString& text)
     : QComboBox(parent),
-      d(new Private)
+      d        (new Private)
 {
     d->intermediateText = text.isNull() ? i18n("Various") : text;
 

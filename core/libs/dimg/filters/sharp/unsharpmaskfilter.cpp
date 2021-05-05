@@ -6,7 +6,7 @@
  * Date        : 2005-17-07
  * Description : A Sharpen threaded image filter.
  *
- * Copyright (C) 2005-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2005-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2009      by Matthias Welwarsky <matze at welwarsky dot de>
  * Copyright (C) 2010      by Martin Klapetek <martin dot klapetek at gmail dot com>
  * Copyright (C) 2002      by Daniel M. Duley <mosfet at kde dot org>
@@ -51,21 +51,25 @@ namespace Digikam
 
 UnsharpMaskFilter::UnsharpMaskFilter(QObject* const parent)
     : DImgThreadedFilter(parent),
-      m_radius(1),
-      m_amount(1.0),
-      m_threshold(0.05),
-      m_luma(false)
+      m_radius          (1),
+      m_amount          (1.0),
+      m_threshold       (0.05),
+      m_luma            (false)
 {
     initFilter();
 }
 
-UnsharpMaskFilter::UnsharpMaskFilter(DImg* const orgImage, QObject* const parent, double radius,
-                                     double amount, double threshold, bool luma)
+UnsharpMaskFilter::UnsharpMaskFilter(DImg* const orgImage,
+                                     QObject* const parent,
+                                     double radius,
+                                     double amount,
+                                     double threshold,
+                                     bool luma)
     : DImgThreadedFilter(orgImage, parent, QLatin1String("UnsharpMask")),
-      m_radius(radius),
-      m_amount(amount),
+      m_radius   (radius),
+      m_amount   (amount),
       m_threshold(threshold),
-      m_luma(luma)
+      m_luma     (luma)
 {
     initFilter();
 }
@@ -116,7 +120,6 @@ void UnsharpMaskFilter::unsharpMaskMultithreaded(uint start, uint stop, uint y)
 
             q.setHSL(hp, sp, CLAMP(lround(value), zero, quantum), m_destImage.sixteenBit());
             q.setAlpha(p.alpha());
-
         }
         else
         {
@@ -195,6 +198,7 @@ void UnsharpMaskFilter::filterImage()
         return;
     }
 
+    // cppcheck-suppress unusedScopedObject
     BlurFilter(this, m_orgImage, m_destImage, 0, 10, (int)(m_radius*10.0));
 
     QList<int> vals = multithreadedSteps(m_destImage.width());

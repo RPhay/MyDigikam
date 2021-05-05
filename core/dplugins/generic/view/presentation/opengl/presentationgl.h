@@ -6,10 +6,11 @@
  * Date        : 2004-01-19
  * Description : a presentation tool.
  *
- * Copyright (C) 2004      by Renchi Raju <renchi dot raju at gmail dot com>
+ * Copyright (C)      2004 by Renchi Raju <renchi dot raju at gmail dot com>
  * Copyright (C) 2006-2009 by Valerio Fuoglio <valerio.fuoglio@gmail.com>
- * Copyright (C) 2009      by Andi Clemens <andi dot clemens at googlemail dot com>
- * Copyright (C) 2012-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C)      2009 by Andi Clemens <andi dot clemens at googlemail dot com>
+ * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C)      2021 by Phuoc Khanh Le <phuockhanhnk94 at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -54,7 +55,7 @@ class PresentationGL : public QOpenGLWidget
 public:
 
     explicit PresentationGL(PresentationContainer* const sharedData);
-    ~PresentationGL();
+    ~PresentationGL()                  override;
 
     void registerEffects();
 
@@ -91,6 +92,8 @@ private:
     void          montage(QImage& top, QImage& bot);
     EffectMethod  getRandomEffect();
     void          showEndOfShow();
+    void          showOverlays();
+    void          hideOverlays();
     void          printFilename(QImage& layer);
     void          printProgress(QImage& layer);
     void          printComments(QImage& layer);
@@ -115,6 +118,11 @@ private Q_SLOTS:
     void slotPrev();
     void slotNext();
     void slotClose();
+
+private:
+
+    // Disable
+    explicit PresentationGL(QWidget*) = delete;
 
 private:
 

@@ -6,7 +6,7 @@
  * Date        : 2009-03-04
  * Description : a tool to adjust date time stamp of images
  *
- * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -23,23 +23,12 @@
 
 #include "timeadjust.h"
 
-// C ANSI includes
-
-extern "C"
-{
-#ifndef Q_CC_MSVC
-#   include <unistd.h>
-#   include <utime.h>
-#else
-#   include <sys/utime.h>
-#endif
-}
-
 // Qt includes
 
 #include <QLabel>
 #include <QWidget>
 #include <QFile>
+#include <QScopedPointer>
 
 // KDE includes
 
@@ -48,18 +37,18 @@ extern "C"
 // Local includes
 
 #include "dimg.h"
-#include "dlayoutbox.h"
 #include "dmetadata.h"
+#include "dlayoutbox.h"
+#include "dfileoperations.h"
 
 namespace DigikamBqmTimeAdjustPlugin
 {
 
 TimeAdjust::TimeAdjust(QObject* const parent)
-    : BatchTool(QLatin1String("TimeAdjust"), MetadataTool, parent)
+    : BatchTool(QLatin1String("TimeAdjust"), MetadataTool, parent),
+      m_taWidget      (nullptr),
+      m_changeSettings(true)
 {
-    m_taWidget       = nullptr;
-    m_changeSettings = true;
-
     setToolTitle(i18n("Time Adjust"));
     setToolDescription(i18n("Adjust Date Time Stamp of Image"));
     setToolIconName(QLatin1String("appointment-new"));
@@ -67,6 +56,11 @@ TimeAdjust::TimeAdjust(QObject* const parent)
 
 TimeAdjust::~TimeAdjust()
 {
+}
+
+BatchTool* TimeAdjust::clone(QObject* const parent) const
+{
+    return new TimeAdjust(parent);
 }
 
 void TimeAdjust::registerSettingsWidget()
@@ -177,15 +171,15 @@ void TimeAdjust::slotSettingsChanged()
 bool TimeAdjust::toolOperations()
 {
     bool metaLoadState = true;
-    DMetadata meta;
+    QScopedPointer<DMetadata> meta(new DMetadata);
 
     if (image().isNull())
     {
-        metaLoadState = meta.load(inputUrl().toLocalFile());
+        metaLoadState = meta->load(inputUrl().toLocalFile());
     }
     else
     {
-        meta.setData(image().getMetadata());
+        meta->setData(image().getMetadata());
     }
 
     TimeAdjustContainer prm;
@@ -228,40 +222,55 @@ bool TimeAdjust::toolOperations()
             switch (prm.metadataSource)
             {
                 case TimeAdjustContainer::EXIFIPTCXMP:
-                    orgDateTime = meta.getItemDateTime();
+                {
+                    orgDateTime = meta->getItemDateTime();
                     break;
+                }
 
                 case TimeAdjustContainer::EXIFCREATED:
-                    orgDateTime = QDateTime::fromString(meta.getExifTagString("Exif.Image.DateTime"),
+                {
+                    orgDateTime = QDateTime::fromString(meta->getExifTagString("Exif.Image.DateTime"),
                                                         exifDateTimeFormat);
                     break;
+                }
 
                 case TimeAdjustContainer::EXIFORIGINAL:
-                    orgDateTime = QDateTime::fromString(meta.getExifTagString("Exif.Photo.DateTimeOriginal"),
+                {
+                    orgDateTime = QDateTime::fromString(meta->getExifTagString("Exif.Photo.DateTimeOriginal"),
                                                         exifDateTimeFormat);
                     break;
+                }
 
                 case TimeAdjustContainer::EXIFDIGITIZED:
-                    orgDateTime = QDateTime::fromString(meta.getExifTagString("Exif.Photo.DateTimeDigitized"),
+                {
+                    orgDateTime = QDateTime::fromString(meta->getExifTagString("Exif.Photo.DateTimeDigitized"),
                                                         exifDateTimeFormat);
                     break;
+                }
 
                 case TimeAdjustContainer::IPTCCREATED:
-                    orgDateTime = QDateTime(QDate::fromString(meta.getIptcTagString("Iptc.Application2.DateCreated"),
+                {
+                    orgDateTime = QDateTime(QDate::fromString(meta->getIptcTagString("Iptc.Application2.DateCreated"),
                                                               Qt::ISODate),
-                                            QTime::fromString(meta.getIptcTagString("Iptc.Application2.TimeCreated"),
+                                            QTime::fromString(meta->getIptcTagString("Iptc.Application2.TimeCreated"),
                                                               Qt::ISODate));
                     break;
+                }
 
                 case TimeAdjustContainer::XMPCREATED:
-                    orgDateTime = QDateTime::fromString(meta.getXmpTagString("Xmp.xmp.CreateDate"),
+                {
+                    orgDateTime = QDateTime::fromString(meta->getXmpTagString("Xmp.xmp.CreateDate"),
                                                         xmpDateTimeFormat);
                     break;
+                }
 
                 default:
+                {
                     // orgDateTime stays invalid
                     break;
+                }
             };
+
             break;
         }
 
@@ -290,7 +299,7 @@ bool TimeAdjust::toolOperations()
         }
     }
 
-    if (!metaLoadState && prm.dateSource != TimeAdjustContainer::CUSTOMDATE)
+    if (!metaLoadState && (prm.dateSource != TimeAdjustContainer::CUSTOMDATE))
     {
         orgDateTime = imageInfo().modDateTime();
     }
@@ -307,133 +316,133 @@ bool TimeAdjust::toolOperations()
         if (prm.updEXIFModDate)
         {
             if (!prm.updIfAvailable ||
-                !meta.getExifTagString("Exif.Image.DateTime").isEmpty())
+                !meta->getExifTagString("Exif.Image.DateTime").isEmpty())
             {
-                meta.setExifTagString("Exif.Image.DateTime",
-                                      dt.toString(exifDateTimeFormat));
+                meta->setExifTagString("Exif.Image.DateTime",
+                                       dt.toString(exifDateTimeFormat));
             }
         }
 
         if (prm.updEXIFOriDate)
         {
             if (!prm.updIfAvailable ||
-                !meta.getExifTagString("Exif.Photo.DateTimeOriginal").isEmpty())
+                !meta->getExifTagString("Exif.Photo.DateTimeOriginal").isEmpty())
             {
-                meta.setExifTagString("Exif.Photo.DateTimeOriginal",
-                                      dt.toString(exifDateTimeFormat));
+                meta->setExifTagString("Exif.Photo.DateTimeOriginal",
+                                       dt.toString(exifDateTimeFormat));
             }
         }
 
         if (prm.updEXIFDigDate)
         {
             if (!prm.updIfAvailable ||
-                !meta.getExifTagString("Exif.Photo.DateTimeDigitized").isEmpty())
+                !meta->getExifTagString("Exif.Photo.DateTimeDigitized").isEmpty())
             {
-                meta.setExifTagString("Exif.Photo.DateTimeDigitized",
-                                      dt.toString(exifDateTimeFormat));
+                meta->setExifTagString("Exif.Photo.DateTimeDigitized",
+                                       dt.toString(exifDateTimeFormat));
             }
         }
 
         if (prm.updEXIFThmDate)
         {
             if (!prm.updIfAvailable ||
-                !meta.getExifTagString("Exif.Image.PreviewDateTime").isEmpty())
+                !meta->getExifTagString("Exif.Image.PreviewDateTime").isEmpty())
             {
-                meta.setExifTagString("Exif.Image.PreviewDateTime",
-                                      dt.toString(exifDateTimeFormat));
+                meta->setExifTagString("Exif.Image.PreviewDateTime",
+                                       dt.toString(exifDateTimeFormat));
             }
         }
 
         if (prm.updIPTCDate)
         {
             if (!prm.updIfAvailable ||
-                !meta.getIptcTagString("Iptc.Application2.DateCreated").isEmpty())
+                !meta->getIptcTagString("Iptc.Application2.DateCreated").isEmpty())
             {
-                meta.setIptcTagString("Iptc.Application2.DateCreated",
-                                      dt.date().toString(Qt::ISODate));
+                meta->setIptcTagString("Iptc.Application2.DateCreated",
+                                       dt.date().toString(Qt::ISODate));
             }
 
             if (!prm.updIfAvailable ||
-                !meta.getIptcTagString("Iptc.Application2.TimeCreated").isEmpty())
+                !meta->getIptcTagString("Iptc.Application2.TimeCreated").isEmpty())
             {
-                meta.setIptcTagString("Iptc.Application2.TimeCreated",
-                                      dt.time().toString(Qt::ISODate));
-            }
-        }
-
-        if (prm.updXMPDate && meta.supportXmp())
-        {
-            if (!prm.updIfAvailable ||
-                !meta.getXmpTagString("Xmp.exif.DateTimeOriginal").isEmpty())
-            {
-                meta.setXmpTagString("Xmp.exif.DateTimeOriginal",
-                                     dt.toString(xmpDateTimeFormat));
-            }
-
-            if (!prm.updIfAvailable ||
-                !meta.getXmpTagString("Xmp.photoshop.DateCreated").isEmpty())
-            {
-                meta.setXmpTagString("Xmp.photoshop.DateCreated",
-                                     dt.toString(xmpDateTimeFormat));
-            }
-
-            if (!prm.updIfAvailable ||
-                !meta.getXmpTagString("Xmp.tiff.DateTime").isEmpty())
-            {
-                meta.setXmpTagString("Xmp.tiff.DateTime",
-                                     dt.toString(xmpDateTimeFormat));
-            }
-
-            if (!prm.updIfAvailable ||
-                !meta.getXmpTagString("Xmp.xmp.CreateDate").isEmpty())
-            {
-                meta.setXmpTagString("Xmp.xmp.CreateDate",
-                                     dt.toString(xmpDateTimeFormat));
-            }
-
-            if (!prm.updIfAvailable ||
-                !meta.getXmpTagString("Xmp.xmp.MetadataDate").isEmpty())
-            {
-                meta.setXmpTagString("Xmp.xmp.MetadataDate",
-                                     dt.toString(xmpDateTimeFormat));
-            }
-
-            if (!prm.updIfAvailable ||
-                !meta.getXmpTagString("Xmp.xmp.ModifyDate").isEmpty())
-            {
-                meta.setXmpTagString("Xmp.xmp.ModifyDate",
-                                     dt.toString(xmpDateTimeFormat));
+                meta->setIptcTagString("Iptc.Application2.TimeCreated",
+                                       dt.time().toString(Qt::ISODate));
             }
         }
 
-        if (prm.updXMPVideo && meta.supportXmp())
+        if (prm.updXMPDate && meta->supportXmp())
         {
             if (!prm.updIfAvailable ||
-                !meta.getXmpTagString("Xmp.video.DateTimeOriginal").isEmpty())
+                !meta->getXmpTagString("Xmp.exif.DateTimeOriginal").isEmpty())
             {
-                meta.setXmpTagString("Xmp.video.DateTimeOriginal",
-                                     dt.toString(xmpDateTimeFormat));
+                meta->setXmpTagString("Xmp.exif.DateTimeOriginal",
+                                      dt.toString(xmpDateTimeFormat));
             }
 
             if (!prm.updIfAvailable ||
-                !meta.getXmpTagString("Xmp.video.DateTimeDigitized").isEmpty())
+                !meta->getXmpTagString("Xmp.photoshop.DateCreated").isEmpty())
             {
-                meta.setXmpTagString("Xmp.video.DateTimeDigitized",
-                                     dt.toString(xmpDateTimeFormat));
+                meta->setXmpTagString("Xmp.photoshop.DateCreated",
+                                      dt.toString(xmpDateTimeFormat));
             }
 
             if (!prm.updIfAvailable ||
-                !meta.getXmpTagString("Xmp.video.ModificationDate").isEmpty())
+                !meta->getXmpTagString("Xmp.tiff.DateTime").isEmpty())
             {
-                meta.setXmpTagString("Xmp.video.ModificationDate",
-                                     dt.toString(xmpDateTimeFormat));
+                meta->setXmpTagString("Xmp.tiff.DateTime",
+                                      dt.toString(xmpDateTimeFormat));
             }
 
             if (!prm.updIfAvailable ||
-                !meta.getXmpTagString("Xmp.video.DateUTC").isEmpty())
+                !meta->getXmpTagString("Xmp.xmp.CreateDate").isEmpty())
             {
-                meta.setXmpTagString("Xmp.video.DateUTC",
-                                     dt.toUTC().toString(xmpDateTimeFormat));
+                meta->setXmpTagString("Xmp.xmp.CreateDate",
+                                      dt.toString(xmpDateTimeFormat));
+            }
+
+            if (!prm.updIfAvailable ||
+                !meta->getXmpTagString("Xmp.xmp.MetadataDate").isEmpty())
+            {
+                meta->setXmpTagString("Xmp.xmp.MetadataDate",
+                                      dt.toString(xmpDateTimeFormat));
+            }
+
+            if (!prm.updIfAvailable ||
+                !meta->getXmpTagString("Xmp.xmp.ModifyDate").isEmpty())
+            {
+                meta->setXmpTagString("Xmp.xmp.ModifyDate",
+                                      dt.toString(xmpDateTimeFormat));
+            }
+        }
+
+        if (prm.updXMPVideo && meta->supportXmp())
+        {
+            if (!prm.updIfAvailable ||
+                !meta->getXmpTagString("Xmp.video.DateTimeOriginal").isEmpty())
+            {
+                meta->setXmpTagString("Xmp.video.DateTimeOriginal",
+                                      dt.toString(xmpDateTimeFormat));
+            }
+
+            if (!prm.updIfAvailable ||
+                !meta->getXmpTagString("Xmp.video.DateTimeDigitized").isEmpty())
+            {
+                meta->setXmpTagString("Xmp.video.DateTimeDigitized",
+                                      dt.toString(xmpDateTimeFormat));
+            }
+
+            if (!prm.updIfAvailable ||
+                !meta->getXmpTagString("Xmp.video.ModificationDate").isEmpty())
+            {
+                meta->setXmpTagString("Xmp.video.ModificationDate",
+                                      dt.toString(xmpDateTimeFormat));
+            }
+
+            if (!prm.updIfAvailable ||
+                !meta->getXmpTagString("Xmp.video.DateUTC").isEmpty())
+            {
+                meta->setXmpTagString("Xmp.video.DateUTC",
+                                      dt.toUTC().toString(xmpDateTimeFormat));
             }
         }
     }
@@ -447,14 +456,14 @@ bool TimeAdjust::toolOperations()
 
         if (ret && metadataChanged && metaLoadState)
         {
-            ret = meta.save(outputUrl().toLocalFile());
+            ret = meta->save(outputUrl().toLocalFile());
         }
     }
     else
     {
         if (metadataChanged)
         {
-            image().setMetadata(meta.data());
+            image().setMetadata(meta->data());
         }
 
         ret = savefromDImg();
@@ -462,27 +471,7 @@ bool TimeAdjust::toolOperations()
 
     if (ret && prm.updFileModDate)
     {
-        // Since QFileInfo does not support timestamp updates,
-        // we have to use the utime() system call.
-
-        int modtime;
-        QDateTime unixDate;
-        unixDate.setDate(QDate(1970, 1, 1));
-        unixDate.setTime(QTime(0, 0, 0, 0));
-
-        if (dt < unixDate)
-            modtime = -(dt.secsTo(unixDate) + (60 * 60));
-        else
-            modtime = dt.toTime_t();
-
-        struct utimbuf ut;
-        ut.modtime = modtime;
-        ut.actime  = QDateTime::currentDateTime().toTime_t();
-
-        if (::utime(QFile::encodeName(outputUrl().toLocalFile()).constData(), &ut) != 0)
-        {
-            ret = false;
-        }
+        ret = DFileOperations::setModificationTime(outputUrl().toLocalFile(), dt);
     }
 
     return ret;

@@ -6,7 +6,8 @@
  * Date        : 2013-02-12
  * Description : Table view column helpers
  *
- * Copyright (C) 2013 by Michael G. Hansen <mike at mghansen dot de>
+ * Copyright (C) 2017-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2013      by Michael G. Hansen <mike at mghansen dot de>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -108,11 +109,11 @@ public:
 
     typedef QList<TableViewColumnDescription> List;
 
-    QString                           columnId;
-    QString                           columnTitle;
-    QString                           columnIcon;
-    QHash<QString, QString>           columnSettings;
-    QList<TableViewColumnDescription> subColumns;
+    QString                                   columnId;
+    QString                                   columnTitle;
+    QString                                   columnIcon;
+    QHash<QString, QString>                   columnSettings;
+    QList<TableViewColumnDescription>         subColumns;
 
 public:
 
@@ -151,9 +152,10 @@ public:
         {
             const TableViewColumnDescription desc = leftToSearch.takeFirst();
 
-            if (desc.columnId==targetId)
+            if (desc.columnId == targetId)
             {
                 *resultDescription = desc;
+
                 return true;
             }
 
@@ -178,7 +180,7 @@ public:
     explicit TableViewColumnConfigurationWidget(TableViewShared* const sharedObject,
                                                 const TableViewColumnConfiguration& currentConfiguration,
                                                 QWidget* const parent = nullptr);
-    virtual ~TableViewColumnConfigurationWidget();
+    ~TableViewColumnConfigurationWidget() override;
 
     virtual TableViewColumnConfiguration getNewConfiguration() = 0;
 
@@ -203,18 +205,18 @@ public:
 
     enum ColumnFlag
     {
-        ColumnNoFlags = 0,
-        ColumnCustomPainting = 1,
-        ColumnCustomSorting = 2,
+        ColumnNoFlags                = 0,
+        ColumnCustomPainting         = 1,
+        ColumnCustomSorting          = 2,
         ColumnHasConfigurationWidget = 4
     };
     Q_DECLARE_FLAGS(ColumnFlags, ColumnFlag)
 
     enum ColumnCompareResult
     {
-        CmpEqual = 0,
-        CmpABiggerB = 1,
-        CmpALessB = 2
+        CmpEqual                     = 0,
+        CmpABiggerB                  = 1,
+        CmpALessB                    = 2
     };
 
 public:
@@ -222,31 +224,36 @@ public:
     explicit TableViewColumn(TableViewShared* const tableViewShared,
                              const TableViewColumnConfiguration& pConfiguration,
                              QObject* const parent = nullptr);
-    virtual ~TableViewColumn();
+    ~TableViewColumn() override;
 
-    virtual TableViewColumnConfiguration getConfiguration() const;
+public:
+
+    virtual TableViewColumnConfiguration getConfiguration()                                                             const;
     virtual void setConfiguration(const TableViewColumnConfiguration& newConfiguration);
-    virtual TableViewColumnConfigurationWidget* getConfigurationWidget(QWidget* const parentWidget) const;
-    virtual ColumnFlags getColumnFlags() const;
-    virtual QString getTitle() const = 0;
+    virtual TableViewColumnConfigurationWidget* getConfigurationWidget(QWidget* const parentWidget)                     const;
+    virtual ColumnFlags getColumnFlags()                                                                                const;
+    virtual QString getTitle()                                                                                          const = 0;
 
-    virtual QVariant data(TableViewModel::Item* const item, const int role) const;
-    virtual ColumnCompareResult compare(TableViewModel::Item* const itemA, TableViewModel::Item* const itemB) const;
-    virtual bool columnAffectedByChangeset(const ImageChangeset& imageChangeset) const;
-    virtual bool paint(QPainter* const painter, const QStyleOptionViewItem& option, TableViewModel::Item* const item) const;
-    virtual QSize sizeHint(const QStyleOptionViewItem& option, TableViewModel::Item* const item) const;
+    virtual QVariant data(TableViewModel::Item* const item, const int role)                                             const;
+    virtual ColumnCompareResult compare(TableViewModel::Item* const itemA, TableViewModel::Item* const itemB)           const;
+    virtual bool columnAffectedByChangeset(const ImageChangeset& imageChangeset)                                        const;
+    virtual bool paint(QPainter* const painter, const QStyleOptionViewItem& option, TableViewModel::Item* const item)   const;
+    virtual QSize sizeHint(const QStyleOptionViewItem& option, TableViewModel::Item* const item)                        const;
     virtual void updateThumbnailSize();
+
+public:
 
     static TableViewColumnDescription getDescription();
     static bool compareHelperBoolFailCheck(const bool okA, const bool okB, ColumnCompareResult* const result);
 
-    template<class MyType> static ColumnCompareResult compareHelper(const MyType& A, const MyType& B)
+    template<class MyType>
+    static ColumnCompareResult compareHelper(const MyType& A, const MyType& B)
     {
-        if (A==B)
+        if      (A == B)
         {
             return CmpEqual;
         }
-        else if (A>B)
+        else if (A > B)
         {
             return CmpABiggerB;
         }
@@ -254,23 +261,26 @@ public:
         return CmpALessB;
     }
 
-    template<typename columnClass> static bool getSubColumnIndex(const QString& subColumnId, typename columnClass::SubColumn* const subColumn)
+    template<typename columnClass>
+    static bool getSubColumnIndex(const QString& subColumnId, typename columnClass::SubColumn* const subColumn)
     {
         const int index = columnClass::getSubColumns().indexOf(subColumnId);
 
-        if (index<0)
+        if (index < 0)
         {
             return false;
         }
 
         *subColumn = typename columnClass::SubColumn(index);
+
         return true;
     }
 
-    template<typename columnClass> static bool CreateFromConfiguration(TableViewShared* const tableViewShared,
-                                                                       const TableViewColumnConfiguration& pConfiguration,
-                                                                       TableViewColumn** const pNewColumn,
-                                                                       QObject* const parent)
+    template<typename columnClass>
+    static bool CreateFromConfiguration(TableViewShared* const tableViewShared,
+                                        const TableViewColumnConfiguration& pConfiguration,
+                                        TableViewColumn** const pNewColumn,
+                                        QObject* const parent)
     {
         typename columnClass::SubColumn subColumn;
 
@@ -334,5 +344,3 @@ Q_DECLARE_METATYPE(Digikam::TableViewColumnDescription)
 Q_DECLARE_OPERATORS_FOR_FLAGS(Digikam::TableViewColumn::ColumnFlags)
 
 #endif // DIGIKAM_TABLE_VIEW_COLUMNFACTORY_H
-
-

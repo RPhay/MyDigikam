@@ -38,17 +38,25 @@ class DNNFaceDetectorSSD: public DNNFaceDetectorBase
 public:
 
     explicit DNNFaceDetectorSSD();
-    ~DNNFaceDetectorSSD();
+    ~DNNFaceDetectorSSD()                                         override;
 
-    virtual void detectFaces(const cv::Mat& inputImage,
-                             const cv::Size& paddedSize,
-                             std::vector<cv::Rect>& detectedBboxes) override;
+    bool loadModels();
+
+    void detectFaces(const cv::Mat& inputImage,
+                     const cv::Size& paddedSize,
+                     std::vector<cv::Rect>& detectedBboxes)       override;
 
 private:
 
     void postprocess(cv::Mat detectionMat,
                      const cv::Size& paddedSize,
-                     std::vector<cv::Rect>& detectedBboxes);
+                     std::vector<cv::Rect>& detectedBboxes) const;
+
+private:
+
+    // Disable
+    DNNFaceDetectorSSD(const DNNFaceDetectorSSD&)            = delete;
+    DNNFaceDetectorSSD& operator=(const DNNFaceDetectorSSD&) = delete;
 };
 
 } // namespace Digikam

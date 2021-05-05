@@ -6,7 +6,7 @@
  * Date        : 2008-08-20
  * Description : editor tool template class.
  *
- * Copyright (C) 2008-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2008-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -57,13 +57,13 @@ class Q_DECL_HIDDEN EditorTool::Private
 public:
 
     explicit Private()
-      : initPreview(false),
-        version(0),
-        view(nullptr),
-        timer(nullptr),
-        settings(nullptr),
-        category(FilterAction::ReproducibleFilter),
-        plugin(nullptr)
+      : initPreview (false),
+        version     (0),
+        view        (nullptr),
+        timer       (nullptr),
+        settings    (nullptr),
+        category    (FilterAction::ReproducibleFilter),
+        plugin      (nullptr)
     {
     }
 
@@ -93,7 +93,7 @@ const QString EditorTool::Private::configRestoreSettingsEntry(QLatin1String("Res
 
 EditorTool::EditorTool(QObject* const parent)
     : QObject(parent),
-      d(new Private)
+      d      (new Private)
 {
     d->timer = new QTimer(this);
 
@@ -421,10 +421,10 @@ class Q_DECL_HIDDEN EditorToolThreaded::Private
 public:
 
     explicit Private()
-      : delFilter(true),
+      : delFilter           (true),
         currentRenderingMode(EditorToolThreaded::NoneRendering),
-        threadedFilter(nullptr),
-        threadedAnalyser(nullptr)
+        threadedFilter      (nullptr),
+        threadedAnalyser    (nullptr)
     {
     }
 
@@ -440,7 +440,7 @@ public:
 
 EditorToolThreaded::EditorToolThreaded(QObject* const parent)
     : EditorTool(parent),
-      d(new Private)
+      d         (new Private)
 {
 }
 
@@ -610,7 +610,9 @@ void EditorToolThreaded::slotFilterFinished(bool success)
             }
 
             default:
+            {
                 break;
+            }
         }
     }
     else                   // Computation Failed !
@@ -626,7 +628,9 @@ void EditorToolThreaded::slotFilterFinished(bool success)
 
             case EditorToolThreaded::FinalRendering:
             default:
+            {
                 break;
+            }
         }
     }
 }

@@ -6,7 +6,7 @@
  * Date        : 2006-04-04
  * Description : a tool to generate HTML image galleries
  *
- * Copyright (C) 2012-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -42,13 +42,13 @@ class Q_DECL_HIDDEN HTMLSelectionPage::Private
 public:
 
     explicit Private(QWizard* const dialog)
-      : albumSupport(false),
-        albumSelector(nullptr),
-        imageList(nullptr),
-        stack(nullptr),
-        wizard(nullptr),
-        info(nullptr),
-        iface(nullptr)
+      : albumSupport    (false),
+        albumSelector   (nullptr),
+        imageList       (nullptr),
+        stack           (nullptr),
+        wizard          (nullptr),
+        info            (nullptr),
+        iface           (nullptr)
     {
         wizard = dynamic_cast<HTMLWizard*>(dialog);
 
@@ -61,7 +61,7 @@ public:
 
     bool             albumSupport;
     QWidget*         albumSelector;
-    DItemsList*     imageList;
+    DItemsList*      imageList;
     QStackedWidget*  stack;
     HTMLWizard*      wizard;
     GalleryInfo*     info;
@@ -70,7 +70,7 @@ public:
 
 HTMLSelectionPage::HTMLSelectionPage(QWizard* const dialog, const QString& title)
     : DWizardPage(dialog, title),
-      d(new Private(dialog))
+      d          (new Private(dialog))
 {
     setObjectName(QLatin1String("AlbumSelectorPage"));
 
@@ -148,7 +148,9 @@ bool HTMLSelectionPage::validatePage()
     else
     {
         if (d->imageList->imageUrls().isEmpty())
+        {
             return false;
+        }
 
         d->info->m_imageList = d->imageList->imageUrls();
     }
@@ -161,7 +163,9 @@ bool HTMLSelectionPage::isComplete() const
     if (d->stack->currentIndex() == GalleryInfo::ALBUMS)
     {
         if (!d->albumSupport)
+        {
             return false;
+        }
 
         return (!d->iface->albumChooserItems().isEmpty());
     }

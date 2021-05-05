@@ -6,7 +6,7 @@
  * Date        : 2009-12-01
  * Description : Google-Maps-backend for geolocation interface
  *
- * Copyright (C) 2010-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2010-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2009-2011 by Michael G. Hansen <mike at mghansen dot de>
  * Copyright (C) 2014      by Justus Schwartz <justus at gmx dot li>
  *
@@ -85,26 +85,26 @@ class Q_DECL_HIDDEN BackendGoogleMaps::Private
 public:
 
     explicit Private()
-      : htmlWidget(nullptr),
-        htmlWidgetWrapper(nullptr),
-        isReady(false),
-        mapTypeActionGroup(nullptr),
-        floatItemsActionGroup(nullptr),
-        showMapTypeControlAction(nullptr),
-        showNavigationControlAction(nullptr),
-        showScaleControlAction(nullptr),
-        cacheMapType(QLatin1String("ROADMAP")),
-        cacheShowMapTypeControl(true),
-        cacheShowNavigationControl(true),
-        cacheShowScaleControl(true),
-        cacheZoom(8),
-        cacheMaxZoom(0),
-        cacheMinZoom(0),
-        cacheCenter(52.0, 6.0),
-        cacheBounds(),
-        activeState(false),
-        widgetIsDocked(false),
-        trackChangeTracker()
+      : htmlWidget                  (nullptr),
+        htmlWidgetWrapper           (nullptr),
+        isReady                     (false),
+        mapTypeActionGroup          (nullptr),
+        floatItemsActionGroup       (nullptr),
+        showMapTypeControlAction    (nullptr),
+        showNavigationControlAction (nullptr),
+        showScaleControlAction      (nullptr),
+        cacheMapType                (QLatin1String("ROADMAP")),
+        cacheShowMapTypeControl     (true),
+        cacheShowNavigationControl  (true),
+        cacheShowScaleControl       (true),
+        cacheZoom                   (8),
+        cacheMaxZoom                (0),
+        cacheMinZoom                (0),
+        cacheCenter                 (52.0, 6.0),
+        cacheBounds                 (),
+        activeState                 (false),
+        widgetIsDocked              (false),
+        trackChangeTracker          ()
     {
     }
 
@@ -134,7 +134,7 @@ public:
 BackendGoogleMaps::BackendGoogleMaps(const QExplicitlySharedDataPointer<GeoIfaceSharedData>& sharedData,
                                      QObject* const parent)
     : MapBackend(sharedData, parent),
-      d(new Private())
+      d         (new Private())
 {
     createActions();
 }
@@ -1185,7 +1185,7 @@ void BackendGoogleMaps::setClusterPixmap(const int clusterId, const QPoint& cent
     clusterPixmap.save(&buffer, "PNG");
     buffer.close();
 
-    // http://www.faqs.org/rfcs/rfc2397.html
+    // www.faqs.org/rfcs/rfc2397.html
 
     const QString imageData = QString::fromLatin1("data:image/png;base64,%1").arg(QString::fromLatin1(bytes.toBase64()));
     d->htmlWidget->runScript(QString::fromLatin1("kgeomapSetClusterPixmap(%1,%5,%6,%2,%3,'%4');")
@@ -1207,7 +1207,7 @@ void BackendGoogleMaps::setMarkerPixmap(const int modelId, const int markerId,
     markerPixmap.save(&buffer, "PNG");
     buffer.close();
 
-    // http://www.faqs.org/rfcs/rfc2397.html
+    // www.faqs.org/rfcs/rfc2397.html
 
     const QString imageData = QString::fromLatin1("data:image/png;base64,%1").arg(QString::fromLatin1(bytes.toBase64()));
     d->htmlWidget->runScript(QString::fromLatin1("kgeomapSetMarkerPixmap(%7,%1,%5,%6,%2,%3,'%4');")
@@ -1460,7 +1460,7 @@ void BackendGoogleMaps::slotTrackManagerChanged()
     }
 }
 
-void BackendGoogleMaps::slotTracksChanged(const QList<TrackManager::TrackChanges> trackChanges)
+void BackendGoogleMaps::slotTracksChanged(const QList<TrackManager::TrackChanges>& trackChanges)
 {
     bool needToTrackChanges = !d->activeState;
 

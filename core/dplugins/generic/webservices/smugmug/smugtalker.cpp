@@ -7,7 +7,7 @@
  * Description : a tool to export images to Smugmug web service
  *
  * Copyright (C) 2008-2009 by Luka Renko <lure at kubuntu dot org>
- * Copyright (C) 2008-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2008-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2018      by Thanh Trung Dinh <dinhthanhtrung1996 at gmail dot com>
  *
  * This program is free software; you can redistribute it
@@ -92,37 +92,33 @@ public:
         SMUG_CREATEALBUM,
         SMUG_ADDPHOTO,
         SMUG_GETPHOTO
-        /*
-         * SMUG_LISTCATEGORIES,
-         * SMUG_LISTSUBCATEGORIES,
-         */
+/*
+        SMUG_LISTCATEGORIES,
+        SMUG_LISTSUBCATEGORIES,
+*/
     };
 
 public:
 
     explicit Private()
+      : parent(nullptr),
+        userAgent(QString::fromLatin1("digiKam/%1 (digikamdeveloper@gmail.com)").arg(digiKamVersion())),
+        apiURL(QLatin1String("https://api.smugmug.com%1")),
+        uploadUrl(QLatin1String("https://upload.smugmug.com/")),
+        requestTokenUrl(QLatin1String("https://api.smugmug.com/services/oauth/1.0a/getRequestToken")),
+        authUrl(QLatin1String("https://api.smugmug.com/services/oauth/1.0a/authorize")),
+        accessTokenUrl(QLatin1String("https://api.smugmug.com/services/oauth/1.0a/getAccessToken")),
+        apiVersion(QLatin1String("v2")),
+        apikey(QLatin1String("xKp43CXF8MHgjhgGdgdgfgc7cWjqQcck")),
+        clientSecret(QLatin1String("3CKcLcWx64Rm8HVRwX3bf4HCtJpnGrwnk9xSn4DK8wRhGLVsRBBFktD95W4HTRHD")),
+        iface(nullptr),
+        netMngr(nullptr),
+        reply(nullptr),
+        state(SMUG_LOGOUT),
+        settings(nullptr),
+        requestor(nullptr),
+        o1(nullptr)
     {
-        parent          = nullptr;
-
-        userAgent       = QString::fromLatin1("digiKam/%1 (digikamdeveloper@gmail.com)").arg(digiKamVersion());
-
-        apiVersion      = QLatin1String("v2");
-        apiURL          = QLatin1String("https://api.smugmug.com%1");
-        uploadUrl       = QLatin1String("https://upload.smugmug.com/");
-        requestTokenUrl = QLatin1String("https://api.smugmug.com/services/oauth/1.0a/getRequestToken");
-        authUrl         = QLatin1String("https://api.smugmug.com/services/oauth/1.0a/authorize");
-        accessTokenUrl  = QLatin1String("https://api.smugmug.com/services/oauth/1.0a/getAccessToken");
-
-        apikey          = QLatin1String("xKp43CXF8MHgjhgGdgdgfgc7cWjqQcck");
-        clientSecret    = QLatin1String("3CKcLcWx64Rm8HVRwX3bf4HCtJpnGrwnk9xSn4DK8wRhGLVsRBBFktD95W4HTRHD");
-        iface           = nullptr;
-        netMngr         = nullptr;
-        reply           = nullptr;
-        state           = SMUG_LOGOUT;
-
-        requestor       = nullptr;
-        o1              = nullptr;
-        settings        = nullptr;
     }
 
 public:
@@ -167,29 +163,35 @@ SmugTalker::SmugTalker(DInfoInterface* const iface, QWidget* const parent)
             this, SLOT(slotFinished(QNetworkReply*)));
 
     // Init
+
     d->o1 = new O1SmugMug(this, d->netMngr);
 
     // Config for authentication flow
+
     d->o1->setRequestTokenUrl(QUrl(d->requestTokenUrl));
     d->o1->setAuthorizeUrl(QUrl(d->authUrl));
     d->o1->setAccessTokenUrl(QUrl(d->accessTokenUrl));
     d->o1->setLocalPort(8000);
 
     // Application credentials
+
     d->o1->setClientId(d->apikey);
     d->o1->setClientSecret(d->clientSecret);
 
     // Set userAgent to work around error :
     // O1::onTokenRequestError: 201 "Error transferring requestTokenUrl() - server replied: Forbidden" "Bad bot"
+
     d->o1->setUserAgent(d->userAgent.toUtf8());
 
     // Setting to store oauth config
+
     d->settings                  = WSToolUtils::getOauthSettings(this);
     O0SettingsStore* const store = new O0SettingsStore(d->settings, QLatin1String(O2_ENCRYPTION_KEY), this);
     store->setGroupKey(QLatin1String("Smugmug"));
     d->o1->setStore(store);
 
     // Connect signaux slots
+
     connect(d->o1, SIGNAL(linkingFailed()),
             this, SLOT(slotLinkingFailed()));
 
@@ -207,19 +209,18 @@ SmugTalker::SmugTalker(DInfoInterface* const iface, QWidget* const parent)
 
 SmugTalker::~SmugTalker()
 {
-    /**
-     * We shouldn't logout without user's consent
-     *
-     * if (loggedIn())
-     * {
-     *    logout();
-     *
-     *    while (d->reply && d->reply->isRunning())
-     *    {
-     *        qApp->processEvents();
-     *    }
-     * }
-     */
+/*  We shouldn't logout without user's consent
+
+    if (loggedIn())
+    {
+        logout();
+
+        while (d->reply && d->reply->isRunning())
+        {
+            qApp->processEvents();
+        }
+    }
+*/
 
     if (d->reply)
         d->reply->abort();
@@ -227,7 +228,9 @@ SmugTalker::~SmugTalker()
     delete d;
 }
 
-//TODO: Porting to O2
+/**
+ * TODO: Porting to O2
+ */
 void SmugTalker::link()
 {
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "LINK to Smug ";
@@ -271,12 +274,15 @@ void SmugTalker::slotLinkingSucceeded()
         qCDebug(DIGIKAM_WEBSERVICES_LOG) << "UNLINK to Smug ok";
 
         // Remove user account
+
         removeUserAccount(d->user.nickName);
 
         // Clear user field
+
         d->user.clear();
 
         // Set state to SMUG_LOGOUT
+
         d->state = Private::SMUG_LOGOUT;
 
         emit signalBusy(false);
@@ -315,12 +321,15 @@ QString SmugTalker::createAlbumName(const QString& word)
     QString w(word);
 
     // First we remove space at beginning and end
+
     w = w.trimmed();
 
     // We replace all character "_" with space
+
     w = w.replace(QLatin1Char('_'), QLatin1Char(' '));
 
     // Then we replace first letter with its uppercase
+
     w.replace(0, 1, w[0].toUpper());
 
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << w;
@@ -333,9 +342,11 @@ QString SmugTalker::createAlbumUrl(const QString& name)
     QString n(name);
 
     // First we create a valid name
+
     n = createAlbumName(n);
 
     // Then we replace space with "-"
+
     QStringList words = n.split(QLatin1Char(' '));
     n = words.join(QLatin1Char('-'));
 
@@ -367,6 +378,7 @@ void SmugTalker::login()
     emit signalLoginProgress(1, 4, i18n("Logging in to SmugMug service..."));
 
     // Build authentication url
+
     O1SmugMug::AuthorizationUrlBuilder builder;
     builder.setAccess(O1SmugMug::AccessFull);
     builder.setPermissions(O1SmugMug::PermissionsModify);
@@ -490,9 +502,8 @@ void SmugTalker::listAlbumTmpl()
     d->state = Private::SMUG_LISTALBUMTEMPLATES;
 }
 
-/**
- * Categories deprecated in API v2
- *
+/* Categories deprecated in API v2
+
 void SmugTalker::listCategories()
 {
     if (d->reply)
@@ -564,6 +575,7 @@ void SmugTalker::createAlbum(const SmugAlbum& album)
      * Something must to be remembered here is that we HAVE TO start a name with upper case !!!
      * And url name with '-' instead of space
      */
+
     QByteArray data;
     data += "{\"Name\": \"";
     data += createAlbumName(album.title).toUtf8();
@@ -598,6 +610,7 @@ bool SmugTalker::addPhoto(const  QString& imgPath,
     QString imgName = QFileInfo(imgPath).fileName();
 
     // load temporary image to buffer
+
     QFile imgFile(imgPath);
 
     if (!imgFile.open(QIODevice::ReadOnly))
@@ -605,16 +618,21 @@ bool SmugTalker::addPhoto(const  QString& imgPath,
         emit signalBusy(false);
         return false;
     }
+
     QByteArray imgData = imgFile.readAll();
     imgFile.close();
 
     SmugMPForm form;
 
     if (!caption.isEmpty())
+    {
         form.addPair(QLatin1String("Caption"), caption);
+    }
 
     if (!form.addFile(imgName, imgPath))
+    {
         return false;
+    }
 
     form.finish();
 
@@ -636,6 +654,7 @@ bool SmugTalker::addPhoto(const  QString& imgPath,
     d->reply = d->requestor->post(netRequest, reqParams, form.formData());
 
     d->state = Private::SMUG_ADDPHOTO;
+
     return true;
 }
 
@@ -675,15 +694,19 @@ QString SmugTalker::errorToText(int errCode, const QString& errMsg) const
         case 0:
             transError = QString();
             break;
+
         case 1:
             transError = i18n("Login failed");
             break;
+
         case 4:
             transError = i18n("Invalid user/nick/password");
             break;
+
         case 18:
             transError = i18n("Invalid API key");
             break;
+
         default:
             transError = errMsg;
             break;
@@ -695,6 +718,7 @@ QString SmugTalker::errorToText(int errCode, const QString& errMsg) const
 void SmugTalker::slotFinished(QNetworkReply* reply)
 {
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "error code : " << reply->error() << "error text " << reply->errorString();
+
     if (reply != d->reply)
     {
         return;
@@ -704,7 +728,7 @@ void SmugTalker::slotFinished(QNetworkReply* reply)
 
     if (reply->error() != QNetworkReply::NoError)
     {
-        if (d->state == Private::SMUG_LOGIN)
+        if      (d->state == Private::SMUG_LOGIN)
         {
             d->sessionID.clear();
             d->user.clear();
@@ -736,39 +760,48 @@ void SmugTalker::slotFinished(QNetworkReply* reply)
 
     QByteArray buffer = reply->readAll();
 
-    switch(d->state)
+    switch (d->state)
     {
         case (Private::SMUG_LOGIN):
             parseResponseLogin(buffer);
             break;
+
         case (Private::SMUG_LISTALBUMS):
             parseResponseListAlbums(buffer);
             break;
+
         case (Private::SMUG_LISTPHOTOS):
             parseResponseListPhotos(buffer);
             break;
+
         case (Private::SMUG_LISTALBUMTEMPLATES):
             parseResponseListAlbumTmpl(buffer);
             break;
-        /*
-            case (Private::SMUG_LISTCATEGORIES):
-                parseResponseListCategories(buffer);
-                break;
-            case (Private::SMUG_LISTSUBCATEGORIES):
-                parseResponseListSubCategories(buffer);
-                break;
-        */
+/*
+        case (Private::SMUG_LISTCATEGORIES):
+            parseResponseListCategories(buffer);
+            break;
+
+        case (Private::SMUG_LISTSUBCATEGORIES):
+            parseResponseListSubCategories(buffer);
+            break;
+*/
         case (Private::SMUG_CREATEALBUM):
             parseResponseCreateAlbum(buffer);
             break;
+
         case (Private::SMUG_ADDPHOTO):
             parseResponseAddPhoto(buffer);
             break;
+
         case (Private::SMUG_GETPHOTO):
+
             // all we get is data of the image
+
             emit signalBusy(false);
             emit signalGetPhotoDone(0, QString(), buffer);
             break;
+
         default: // Private::SMUG_LOGIN
             break;
     }
@@ -816,9 +849,8 @@ void SmugTalker::parseResponseLogin(const QByteArray& data)
     emit signalLoginDone(0, QString());
 }
 
-/**
- * Not necessary anymore
- *
+/* Not necessary anymore
+
 void SmugTalker::parseResponseLogout(const QByteArray& data)
 {
     int errCode = -1;
@@ -836,11 +868,13 @@ void SmugTalker::parseResponseLogout(const QByteArray& data)
     for (QDomNode node = e.firstChild(); !node.isNull(); node = node.nextSibling())
     {
         if (!node.isElement())
+        {
             continue;
+        }
 
         e = node.toElement();
 
-        if (e.tagName() == QLatin1String("Logout"))
+        if      (e.tagName() == QLatin1String("Logout"))
         {
             errCode = 0;
         }
@@ -860,27 +894,28 @@ void SmugTalker::parseResponseLogout(const QByteArray& data)
 }
 */
 
+/**
+ * A multi-part put response (which we get now) looks like:
+ * <?xml version="1.0" encoding="utf-8"?>
+ * <rsp stat="ok">
+ *    <method>smugmug.images.upload</method>
+ *    <ImageID>884775096</ImageID>
+ *    <ImageKey>L7aq5</ImageKey>
+ *    <ImageURL>http://froody.smugmug.com/Other/Test/12372176_y7yNq#884775096_L7aq5</ImageURL>          // krazy:exclude=insecurenet
+ * </rsp>
+ *
+ * A simple put response (which we used to get) looks like:
+ * <?xml version="1.0" encoding="utf-8"?>
+ * <rsp stat="ok">
+ *    <method>smugmug.images.upload</method>
+ *    <Image id="884790545" Key="seeQa" URL="http://froody.smugmug.com/Other/Test/12372176_y7yNq#884790545_seeQa"/>     // krazy:exclude=insecurenet
+ * </rsp>
+ *
+ * Since all we care about is success or not, we can just check the rsp stat.
+ */
+
 void SmugTalker::parseResponseAddPhoto(const QByteArray& data)
 {
-    // A multi-part put response (which we get now) looks like:
-    // <?xml version="1.0" encoding="utf-8"?>
-    // <rsp stat="ok">
-    //   <method>smugmug.images.upload</method>
-    //   <ImageID>884775096</ImageID>
-    //   <ImageKey>L7aq5</ImageKey>
-    //   <ImageURL>http://froody.smugmug.com/Other/Test/12372176_y7yNq#884775096_L7aq5</ImageURL>
-    // </rsp>
-
-    // A simple put response (which we used to get) looks like:
-    // <?xml version="1.0" encoding="utf-8"?>
-    // <rsp stat="ok">
-    //   <method>smugmug.images.upload</method>
-    //   <Image id="884790545" Key="seeQa" URL="http://froody.smugmug.com/Other/Test/12372176_y7yNq#884790545_seeQa"/>
-    // </rsp>
-
-    // Since all we care about is success or not, we can just check the rsp
-    // stat.
-
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "parseResponseAddPhoto";
 
     QJsonParseError err;
@@ -1072,9 +1107,8 @@ void SmugTalker::parseResponseListAlbumTmpl(const QByteArray& data)
     emit signalListAlbumTmplDone(0, errorToText(0, QString()), albumTmplList);
 }
 
-/**
- * Categories are deprecated in API v2
- *
+/* Categories are deprecated in API v2
+
 void SmugTalker::parseResponseListCategories(const QByteArray& data)
 {
     int errCode = -1;
@@ -1082,7 +1116,9 @@ void SmugTalker::parseResponseListCategories(const QByteArray& data)
     QDomDocument doc(QLatin1String("categories.get"));
 
     if (!doc.setContent(data))
+    {
         return;
+    }
 
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Parse Categories response:" << endl << data;
 
@@ -1092,16 +1128,20 @@ void SmugTalker::parseResponseListCategories(const QByteArray& data)
     for (QDomNode node = e.firstChild(); !node.isNull(); node = node.nextSibling())
     {
         if (!node.isElement())
+        {
             continue;
+        }
 
         e = node.toElement();
 
-        if (e.tagName() == QLatin1String("Categories"))
+        if      (e.tagName() == QLatin1String("Categories"))
         {
             for (QDomNode nodeC = e.firstChild(); !nodeC.isNull(); nodeC = nodeC.nextSibling())
             {
                 if (!nodeC.isElement())
+                {
                     continue;
+                }
 
                 QDomElement e = nodeC.toElement();
 
@@ -1125,7 +1165,9 @@ void SmugTalker::parseResponseListCategories(const QByteArray& data)
     }
 
     if (errCode == 15)  // 15: empty list
+    {
         errCode = 0;
+    }
 
     emit signalBusy(false);
     emit signalListCategoriesDone(errCode, errorToText(errCode, errMsg), categoriesList);
@@ -1138,7 +1180,9 @@ void SmugTalker::parseResponseListSubCategories(const QByteArray& data)
     QDomDocument doc(QLatin1String("subcategories.get"));
 
     if (!doc.setContent(data))
+    {
         return;
+    }
 
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Parse SubCategories response:" << endl << data;
 
@@ -1148,16 +1192,20 @@ void SmugTalker::parseResponseListSubCategories(const QByteArray& data)
     for (QDomNode node = e.firstChild(); !node.isNull(); node = node.nextSibling())
     {
         if (!node.isElement())
+        {
             continue;
+        }
 
         e = node.toElement();
 
-        if (e.tagName() == QLatin1String("SubCategories"))
+        if      (e.tagName() == QLatin1String("SubCategories"))
         {
             for (QDomNode nodeC = e.firstChild(); !nodeC.isNull(); nodeC = nodeC.nextSibling())
             {
                 if (!nodeC.isElement())
+                {
                     continue;
+                }
 
                 e = nodeC.toElement();
 
@@ -1181,7 +1229,9 @@ void SmugTalker::parseResponseListSubCategories(const QByteArray& data)
     }
 
     if (errCode == 15)  // 15: empty list
+    {
         errCode = 0;
+    }
 
     emit signalBusy(false);
     emit signalListSubCategoriesDone(errCode, errorToText(errCode, errMsg), categoriesList);
@@ -1192,6 +1242,7 @@ QString SmugTalker::htmlToText(const QString& htmlText) const
 {
     QTextDocument txtDoc;
     txtDoc.setHtml(htmlText);
+
     return txtDoc.toPlainText();
 }
 

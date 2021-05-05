@@ -7,7 +7,7 @@
  * Description : Database Engine container to wrap data types
  *
  * Copyright (C) 2009-2010 by Holger Foerster <hamsi2k at freenet dot de>
- * Copyright (C) 2010-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2010-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -77,8 +77,8 @@ public:
 
 private:
 
-    // Hidden assignment operator.
-    DbEngineActionType& operator=(const DbEngineActionType&);
+    // Disable
+    DbEngineActionType& operator=(const DbEngineActionType&) = delete;
 
     class Private;
     Private* const d;

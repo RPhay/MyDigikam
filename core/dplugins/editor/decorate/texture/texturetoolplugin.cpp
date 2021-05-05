@@ -6,7 +6,7 @@
  * Date        : 2018-07-30
  * Description : image editor plugin to add texture
  *
- * Copyright (C) 2018-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2018-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -49,7 +49,7 @@ TextureToolPlugin::~TextureToolPlugin()
 
 QString TextureToolPlugin::name() const
 {
-    return i18n("Texture");
+    return i18nc("@title", "Texture");
 }
 
 QString TextureToolPlugin::iid() const
@@ -64,12 +64,12 @@ QIcon TextureToolPlugin::icon() const
 
 QString TextureToolPlugin::description() const
 {
-    return i18n("A tool to apply a texture over an image");
+    return i18nc("@info", "A tool to apply a texture over an image");
 }
 
 QString TextureToolPlugin::details() const
 {
-    return i18n("<p>This Image Editor tool can apply a texture over an image.</p>");
+    return i18nc("@info", "This Image Editor tool can apply a texture over an image.");
 }
 
 QList<DPluginAuthor> TextureToolPlugin::authors() const
@@ -80,7 +80,7 @@ QList<DPluginAuthor> TextureToolPlugin::authors() const
                              QString::fromUtf8("(C) 2006-2010"))
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2005-2020"))
+                             QString::fromUtf8("(C) 2005-2021"))
             ;
 }
 

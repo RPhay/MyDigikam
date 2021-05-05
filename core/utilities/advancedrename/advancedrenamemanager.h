@@ -42,7 +42,7 @@ class AdvancedRenameWidget;
 class Parser;
 class ParseSettings;
 
-class DIGIKAM_EXPORT AdvancedRenameManager : public QObject
+class DIGIKAM_GUI_EXPORT AdvancedRenameManager : public QObject
 {
     Q_OBJECT
 
@@ -72,7 +72,7 @@ public:
 
     AdvancedRenameManager();
     explicit AdvancedRenameManager(const QList<ParseSettings>& files);
-    virtual ~AdvancedRenameManager();
+    ~AdvancedRenameManager()                                                  override;
 
     void addFiles(const QList<ParseSettings>& files);
     void reset();
@@ -83,13 +83,13 @@ public:
     void parseFiles(const QString& parseString, const ParseSettings& settings);
 
     void setParserType(ParserType type);
-    Parser* getParser() const;
+    Parser* getParser()                                                 const;
 
     void setSortAction(SortAction action);
-    SortAction sortAction() const;
+    SortAction sortAction()                                             const;
 
     void setSortDirection(SortDirection direction);
-    SortDirection sortDirection() const;
+    SortDirection sortDirection()                                       const;
 
     void setStartIndex(int index);
 
@@ -98,10 +98,10 @@ public:
     int indexOfFile(const QString& filename);
     int indexOfFolder(const QString& filename);
     int indexOfFileGroup(const QString& filename);
-    QString newName(const QString& filename) const;
+    QString newName(const QString& filename)                            const;
 
-    QStringList            fileList() const;
-    QMap<QString, QString> newFileList() const;
+    QStringList            fileList()                                   const;
+    QMap<QString, QString> newFileList(bool checkFileSystem = false)    const;
 
 Q_SIGNALS:
 
@@ -109,19 +109,23 @@ Q_SIGNALS:
 
 private:
 
-    AdvancedRenameManager(const AdvancedRenameManager&);
-    AdvancedRenameManager& operator=(const AdvancedRenameManager&);
-
-    void addFile(const QString& filename) const;
-    void addFile(const QString& filename, const QDateTime& datetime) const;
+    void addFile(const QString& filename)                               const;
+    void addFile(const QString& filename, const QDateTime& datetime)    const;
     bool initialize();
     void initializeFileList();
     void resetState();
 
-    QString fileGroupKey(const QString& filename) const;
+    QString fileGroupKey(const QString& filename)                       const;
 
     void clearMappings();
     void clearAll();
+
+private:
+
+    // Disable
+    AdvancedRenameManager(QObject*)                                = delete;
+    AdvancedRenameManager(const AdvancedRenameManager&)            = delete;
+    AdvancedRenameManager& operator=(const AdvancedRenameManager&) = delete;
 
 private:
 

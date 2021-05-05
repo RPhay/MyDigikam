@@ -6,7 +6,7 @@
  * Date        : 2006-05-16
  * Description : A tool to edit geolocation
  *
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2010-2014 by Michael G. Hansen <mike at mghansen dot de>
  * Copyright (C) 2010      by Gabriel Voicu <ping dot gabi at gmail dot com>
  * Copyright (C) 2014      by Justus Schwartz <justus at gmx dot li>
@@ -40,7 +40,6 @@
 #include "geomodelhelper.h"
 #include "trackmanager.h"
 #include "gpsitemcontainer.h"
-#include "digikam_export.h"
 #include "dinfointerface.h"
 #include "mapwidget.h"
 #include "gpsundocommand.h"
@@ -52,20 +51,22 @@ using namespace Digikam;
 namespace DigikamGenericGeolocationEditPlugin
 {
 
-class DIGIKAM_EXPORT GeolocationEdit : public DPluginDialog
+class GeolocationEdit : public DPluginDialog
 {
     Q_OBJECT
 
 public:
 
     explicit GeolocationEdit(QWidget* const parent, DInfoInterface* const iface);
-    ~GeolocationEdit();
+    ~GeolocationEdit() override;
 
-    /* Populate items in dialog list based on url. To be used in case of non database as with Showfoto.
+    /**
+     * Populate items in dialog list based on url. To be used in case of non database as with Showfoto.
      */
     void setImages(const QList<QUrl>& images);
 
-    /* Populate items in dialog list based dedicated GPSItemContainer instances filled with DB info
+    /**
+     * Populate items in dialog list based dedicated GPSItemContainer instances filled with DB info
      */
     void setItems(const QList<GPSItemContainer*>& items);
 
@@ -75,7 +76,8 @@ Q_SIGNALS:
 
 protected:
 
-    void closeEvent(QCloseEvent* e) override;
+    void reject()                       override;
+    void closeEvent(QCloseEvent* e)     override;
     bool eventFilter(QObject*, QEvent*) override;
 
 private:
@@ -103,6 +105,7 @@ private Q_SLOTS:
     void slotCurrentTabChanged(int);
     void slotBookmarkVisibilityToggled();
     void slotLayoutChanged(int);
+    void slotTrackListChanged(const Digikam::GeoCoordinates& coordinate);
 
 private:
 

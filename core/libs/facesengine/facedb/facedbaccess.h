@@ -7,7 +7,7 @@
  * Description : Face database access wrapper.
  *
  * Copyright (C) 2007-2009 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2010-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2010-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -29,7 +29,6 @@
 
 #include "digikam_export.h"
 #include "dbengineparameters.h"
-#include "dbengineerrorhandler.h"
 #include "collectionscannerobserver.h"
 
 namespace Digikam
@@ -38,8 +37,9 @@ namespace Digikam
 class FaceDb;
 class FaceDbAccessStaticPriv;
 class FaceDbBackend;
+class DbEngineErrorHandler;
 
-class DIGIKAM_DATABASE_EXPORT FaceDbAccess
+class DIGIKAM_GUI_EXPORT FaceDbAccess
 {
 public:
 
@@ -74,6 +74,12 @@ private:
 
     explicit FaceDbAccess(bool);
 
+    // Disable
+    FaceDbAccess(const FaceDbAccess&)            = delete;
+    FaceDbAccess& operator=(const FaceDbAccess&) = delete;
+
+private:
+
     friend class FaceDbAccessUnlock;
     static FaceDbAccessStaticPriv* d;
 };
@@ -99,6 +105,12 @@ public:
 private:
 
     int count;
+
+private:
+
+    // Disable
+    FaceDbAccessUnlock(const FaceDbAccessUnlock&)            = delete;
+    FaceDbAccessUnlock& operator=(const FaceDbAccessUnlock&) = delete;
 };
 
 } // namespace Digikam

@@ -6,7 +6,7 @@
  * Date        : 2010-03-22
  * Description : A view to display a list of items with GPS info.
  *
- * Copyright (C) 2010-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2010-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2010      by Michael G. Hansen <mike at mghansen dot de>
  *
  * This program is free software; you can redistribute it
@@ -50,13 +50,13 @@ class Q_DECL_HIDDEN GPSItemList::Private
 public:
 
     explicit Private()
-      : editEnabled(true),
-        dragEnabled(false),
-        model(nullptr),
-        selectionModel(nullptr),
-        itemDelegate(nullptr),
-        imageSortProxyModel(nullptr),
-        dragDropHandler(nullptr)
+      : editEnabled         (true),
+        dragEnabled         (false),
+        model               (nullptr),
+        selectionModel      (nullptr),
+        itemDelegate        (nullptr),
+        imageSortProxyModel (nullptr),
+        dragDropHandler     (nullptr)
     {
     }
 
@@ -132,8 +132,8 @@ void GPSItemList::setModelAndSelectionModel(GPSItemModel* const model, QItemSele
     connect(d->model, SIGNAL(signalThumbnailForIndexAvailable(QPersistentModelIndex,QPixmap)),
             this, SLOT(slotThumbnailFromModel(QPersistentModelIndex,QPixmap)));
 
-    connect(this, SIGNAL(clicked(QModelIndex)),
-            this, SLOT(slotInternalTreeViewImageActivated(QModelIndex)));
+    connect(d->selectionModel, SIGNAL(currentChanged(QModelIndex,QModelIndex)),
+            this, SLOT(slotInternalTreeViewImageActivated(QModelIndex,QModelIndex)));
 
     if (d->imageSortProxyModel->mappedSelectionModel())
     {
@@ -189,11 +189,11 @@ void GPSItemList::wheelEvent(QWheelEvent* we)
 
     we->accept();
 
-    if (we->delta() > 0)
+    if      (we->angleDelta().y() > 0)
     {
         slotIncreaseThumbnailSize();
     }
-    else
+    else if (we->angleDelta().y() < 0)
     {
         slotDecreaseThumbnailSize();
     }
@@ -237,11 +237,12 @@ QItemSelectionModel* GPSItemList::getSelectionModel() const
     return d->selectionModel;
 }
 
-void GPSItemList::slotInternalTreeViewImageActivated(const QModelIndex& index)
+void GPSItemList::slotInternalTreeViewImageActivated(const QModelIndex& current,
+                                                     const QModelIndex& /*previous*/)
 {
-    qCDebug(DIGIKAM_GENERAL_LOG) << index << d->imageSortProxyModel->mapToSource(index);
+    // qCDebug(DIGIKAM_GENERAL_LOG) << current;
 
-    emit signalImageActivated(d->imageSortProxyModel->mapToSource(index));
+    emit signalImageActivated(current);
 }
 
 GPSItemSortProxyModel* GPSItemList::getSortProxyModel() const

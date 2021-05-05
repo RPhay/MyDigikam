@@ -39,16 +39,18 @@ public:
 
     Modifier(const QString& name, const QString& description);
     Modifier(const QString& name, const QString& description, const QString& icon);
-    virtual ~Modifier();
+    ~Modifier()                                     override;
 
 protected:
 
-    virtual QString parseOperation(ParseSettings& settings) override = 0;
+    QString parseOperation(ParseSettings& settings) override = 0;
 
 private:
 
-    Modifier(const Modifier&);
-    Modifier& operator=(const Modifier&);
+    // Disable
+    Modifier(QObject*)                   = delete;
+    Modifier(const Modifier&)            = delete;
+    Modifier& operator=(const Modifier&) = delete;
 
 private:
 

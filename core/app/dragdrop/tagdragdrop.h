@@ -6,7 +6,8 @@
  * Date        : 2009-11-21
  * Description : Qt Model for Tags - drag and drop handling
  *
- * Copyright (C) 2009 by Johannes Wienke <languitar at semipol dot de>
+ * Copyright (C) 2009      by Johannes Wienke <languitar at semipol dot de>
+ * Copyright (C) 2013-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -40,17 +41,17 @@ public:
 
     explicit TagDragDropHandler(TagModel* const model);
 
-    TagModel* model() const;
+    TagModel* model()       const;
 
-    virtual bool dropEvent(QAbstractItemView* view,
-                           const QDropEvent* e,
-                           const QModelIndex& droppedOn)         override;
+    bool dropEvent(QAbstractItemView* view,
+                   const QDropEvent* e,
+                   const QModelIndex& droppedOn)         override;
 
-    virtual Qt::DropAction accepts(const QDropEvent* e,
-                                   const QModelIndex& dropIndex) override;
+    Qt::DropAction accepts(const QDropEvent* e,
+                           const QModelIndex& dropIndex) override;
 
-    virtual QStringList mimeTypes() const                        override;
-    virtual QMimeData* createMimeData(const QList<Album*>&)      override;
+    QStringList mimeTypes() const                        override;
+    QMimeData* createMimeData(const QList<Album*>&)      override;
 
 Q_SIGNALS:
 

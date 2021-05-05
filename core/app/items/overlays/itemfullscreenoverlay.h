@@ -7,7 +7,7 @@
  * Description : fullscreen overlay
  *
  * Copyright (C)      2015 by Luca Carlon <carlon dot luca at gmail dot com>
- * Copyright (C) 2015-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2015-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -40,15 +40,17 @@ namespace Digikam
 
 class ItemFullScreenOverlayButton : public ItemViewHoverButton
 {
+    Q_OBJECT
+
 public:
 
     explicit ItemFullScreenOverlayButton(QAbstractItemView* const parentView);
-    virtual QSize sizeHint() const;
+    QSize sizeHint() const  override;
 
 protected:
 
-    virtual QIcon icon();
-    virtual void updateToolTip();
+    QIcon icon()            override;
+    void updateToolTip()    override;
 };
 
 // --------------------------------------------------------------------
@@ -60,7 +62,7 @@ class ItemFullScreenOverlay : public HoverButtonDelegateOverlay
 public:
 
     explicit ItemFullScreenOverlay(QObject* const parent);
-    virtual void setActive(bool active);
+    void setActive(bool active)                     override;
 
     static ItemFullScreenOverlay* instance(QObject* const parent);
 
@@ -70,11 +72,11 @@ Q_SIGNALS:
 
 protected:
 
-    virtual ItemViewHoverButton* createButton();
-    virtual void updateButton(const QModelIndex& index);
-    virtual bool checkIndex(const QModelIndex& index) const;
-    virtual void widgetEnterEvent();
-    virtual void widgetLeaveEvent();
+    ItemViewHoverButton* createButton()             override;
+    void updateButton(const QModelIndex& index)     override;
+    bool checkIndex(const QModelIndex& index) const override;
+    void widgetEnterEvent()                         override;
+    void widgetLeaveEvent()                         override;
 
 private Q_SLOTS:
 

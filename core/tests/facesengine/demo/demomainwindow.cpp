@@ -6,7 +6,7 @@
  * Date        : 2010-06-21
  * Description : GUI test program for FacesEngine
  *
- * Copyright (C) 2010-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2010-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C)      2010 by Alex Jironkin <alexjironkin at gmail dot com>
  * Copyright (C)      2010 by Aditya Bhatt <adityabhatt1991 at gmail dot com>
  *
@@ -37,7 +37,7 @@
 
 // Local includes
 
-#include "recognitiondatabase.h"
+#include "facialrecognition_wrapper.h"
 #include "facedetector.h"
 #include "demofaceitem.h"
 #include "dfiledialog.h"
@@ -55,26 +55,26 @@ class Q_DECL_HIDDEN MainWindow::Private
 public:
 
     explicit Private()
+      : ui            (nullptr),
+        myScene       (nullptr),
+        myView        (nullptr),
+        lastPhotoItem (nullptr),
+        detector      (nullptr),
+        scale         (0.0)
     {
-        ui            = nullptr;
-        myScene       = nullptr;
-        myView        = nullptr;
-        lastPhotoItem = nullptr;
-        detector      = nullptr;
-        scale         = 0.0;
     }
 
-    Ui::MainWindow*      ui;
-    QGraphicsScene*      myScene;
-    QGraphicsView*       myView;
-    QGraphicsPixmapItem* lastPhotoItem;
-    QList<FaceItem*>     faceitems;
+    Ui::MainWindow*          ui;
+    QGraphicsScene*          myScene;
+    QGraphicsView*           myView;
+    QGraphicsPixmapItem*     lastPhotoItem;
+    QList<FaceItem*>         faceitems;
 
-    RecognitionDatabase  database;
-    FaceDetector*        detector;
-    QImage               currentPhoto;
-    double               scale;
-    QString              lastFileOpenPath;
+    FacialRecognitionWrapper database;
+    FaceDetector*            detector;
+    QImage                   currentPhoto;
+    double                   scale;
+    QString                  lastFileOpenPath;
 };
 
 MainWindow::MainWindow(QWidget* const parent)
@@ -142,10 +142,15 @@ void MainWindow::changeEvent(QEvent* e)
     switch (e->type())
     {
         case QEvent::LanguageChange:
+        {
             d->ui->retranslateUi(this);
             break;
+        }
+
         default:
+        {
             break;
+        }
     }
 }
 
@@ -166,7 +171,9 @@ void MainWindow::slotOpenImage()
                                                 QString::fromLatin1("Image Files (*.png *.jpg *.bmp *.pgm)"));
 
     if (file.isEmpty())
+    {
         return;
+    }
 
     d->lastFileOpenPath = QFileInfo(file).absolutePath();
 
@@ -177,7 +184,7 @@ void MainWindow::slotOpenImage()
     d->currentPhoto.load(file);
     d->lastPhotoItem = new QGraphicsPixmapItem(QPixmap::fromImage(d->currentPhoto));
 
-    if (1.0 * d->ui->widget->width() / d->currentPhoto.width() < 1.0 * d->ui->widget->height() / d->currentPhoto.height())
+    if ((1.0 * d->ui->widget->width() / d->currentPhoto.width()) < (1.0 * d->ui->widget->height() / d->currentPhoto.height()))
     {
         d->scale = 1.0 * d->ui->widget->width() / d->currentPhoto.width();
     }
@@ -248,7 +255,11 @@ void MainWindow::slotRecognise()
     {
         QElapsedTimer timer;
         timer.start();
-        Identity identity = d->database.recognizeFace(d->currentPhoto.copy(item->originalRect()));
+
+        QImage* face      = new QImage();
+        *face             = d->currentPhoto.copy(item->originalRect());
+
+        Identity identity = d->database.recognizeFace(face);
         int elapsed       = timer.elapsed();
 
         qDebug() << "Recognition took " << elapsed << " for Face #" << i+1;
@@ -301,9 +312,12 @@ void MainWindow::slotUpdateDatabase()
                 qDebug() << "Found existing identity ID " << identity.id() << " from database for name " << name;
             }
 
-            d->database.train(identity, d->currentPhoto.copy(item->originalRect()), QString::fromLatin1("test application"));
+            QImage* face = new QImage();
+            *face        = d->currentPhoto.copy(item->originalRect());
 
-            int elapsed = timer.elapsed();
+            d->database.train(identity, face, QString::fromLatin1("test application"));
+
+            int elapsed  = timer.elapsed();
 
             qDebug() << "Training took " << elapsed << " for Face #" << i+1;
         }

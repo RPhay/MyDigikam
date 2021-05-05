@@ -7,7 +7,7 @@
  * Description : a presentation tool.
  *
  * Copyright (C) 2007-2009 by Valerio Fuoglio <valerio dot fuoglio at gmail dot com>
- * Copyright (C) 2012-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * Parts of this code are based on
  * smoothslidesaver by Carsten Weinhold <carsten dot weinhold at gmx dot de>
@@ -28,6 +28,8 @@
 #ifndef DIGIKAM_PRESENTATION_KB_PRIVATE_H
 #define DIGIKAM_PRESENTATION_KB_PRIVATE_H
 
+#include "presentationkb.h"
+
 // Local includes
 
 #include "digikam_config.h"
@@ -35,6 +37,12 @@
 #include "presentationcontainer.h"
 #include "kbimageloader.h"
 #include "kbeffect.h"
+
+// OpenGL headers is not included automatically with ARM targets
+
+#ifdef Q_PROCESSOR_ARM
+#   include <GL/gl.h>
+#endif
 
 #ifdef HAVE_MEDIAPLAYER
 #   include "presentationaudiowidget.h"
@@ -55,31 +63,33 @@ class Q_DECL_HIDDEN PresentationKB::Private
 public:
 
     explicit Private()
+      : deskX               (0),
+        deskY               (0),
+        deskWidth           (0),
+        deskHeight          (0),
+        endTexture          (nullptr),
+        imageLoadThread     (nullptr),
+        mouseMoveTimer      (nullptr),
+        timer               (nullptr),
+        haveImages          (true),
+        effect              (nullptr),
+        numKBEffectRepeated (0),
+        initialized         (false),
+        step                (0.0),
+        stepSameSpeed       (0.0),
+        endOfShow           (false),
+        showingEnd          (false),
+        delay               (0),
+        disableFadeInOut    (false),
+        disableCrossFade    (false),
+        enableSameSpeed     (false),
+        forceFrameRate      (0),
+        sharedData          (nullptr),
+        playbackWidget      (nullptr)
     {
-        zoomIn              = qrand() < RAND_MAX / 2;
-        effect              = nullptr;
-        initialized         = false;
-        haveImages          = true;
-        endOfShow           = false;
-        showingEnd          = false;
-        deskX               = 0;
-        deskY               = 0;
-        deskWidth           = 0;
-        deskHeight          = 0;
-        endTexture          = nullptr;
-        imageLoadThread     = nullptr;
-        mouseMoveTimer      = nullptr;
-        timer               = nullptr;
-        image[0]            = nullptr;
-        image[1]            = nullptr;
-        numKBEffectRepeated = 0;
-        step                = 0.0;
-        delay               = 0;
-        disableFadeInOut    = false;
-        disableCrossFade    = false;
-        forceFrameRate      = 0;
-        sharedData          = nullptr;
-        playbackWidget      = nullptr;
+        zoomIn   = (qrand() < (RAND_MAX / 2));
+        image[0] = nullptr;
+        image[1] = nullptr;
     }
 
     int                      deskX;
@@ -99,6 +109,7 @@ public:
     bool                     zoomIn;
     bool                     initialized;
     float                    step;
+    float                    stepSameSpeed;
 
     bool                     endOfShow;
     bool                     showingEnd;
@@ -106,6 +117,7 @@ public:
     int                      delay;
     bool                     disableFadeInOut;
     bool                     disableCrossFade;
+    bool                     enableSameSpeed;
     unsigned                 forceFrameRate;
 
     PresentationContainer*   sharedData;

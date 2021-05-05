@@ -6,7 +6,7 @@
  * Date        : 2004-08-02
  * Description : colors theme manager - private classes
  *
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2007      by Matthew Woehlke <mw_triad at users dot sourceforge dot net>
  *
  * This program is free software; you can redistribute it
@@ -330,7 +330,7 @@ public:
     /**
      * Destructor
      */
-    virtual ~SchemeManager();
+    ~SchemeManager() = default;
 
     /**
      * Standard assignment operator
@@ -348,17 +348,17 @@ public:
     /**
      * Retrieve the requested background brush.
      */
-    QBrush background(BackgroundRole = NormalBackground) const;
+    QBrush background(BackgroundRole = NormalBackground)    const;
 
     /**
      * Retrieve the requested foreground brush.
      */
-    QBrush foreground(ForegroundRole = NormalText) const;
+    QBrush foreground(ForegroundRole = NormalText)          const;
 
     /**
      * Retrieve the requested decoration brush.
      */
-    QBrush decoration(DecorationRole) const;
+    QBrush decoration(DecorationRole)                       const;
 
     /**
      * Retrieve the requested shade color, using
@@ -373,7 +373,7 @@ public:
      * Conversely, if the base color is very light, the 'light' shades will be
      * darker than the base color, with light() == mid().
      */
-    QColor shade(ShadeRole) const;
+    QColor shade(ShadeRole)                                 const;
 
     /**
      * Returns the contrast for borders.
@@ -438,7 +438,7 @@ public:
                                  BackgroundRole newRole = NormalBackground,
                                  QPalette::ColorRole color = QPalette::Base,
                                  ColorSet set = View,
-                                 KSharedConfigPtr config = KSharedConfigPtr());
+                                 const KSharedConfigPtr& config = KSharedConfigPtr());
 
     /**
      * Adjust a QPalette by replacing the specified QPalette::ColorRole with
@@ -453,7 +453,7 @@ public:
                                  ForegroundRole newRole = NormalText,
                                  QPalette::ColorRole color = QPalette::Text,
                                  ColorSet set = View,
-                                 KSharedConfigPtr config = KSharedConfigPtr());
+                                 const KSharedConfigPtr& config = KSharedConfigPtr());
 
     /**
      * Used to obtain the QPalette that will be used to set the application
@@ -483,7 +483,7 @@ public:
 public:
 
     const QString          defaultThemeName;
-    QMap<QString, QString> themeMap;            // map<theme name, theme config path>
+    QMap<QString, QString> themeMap;            ///< map<theme name, theme config path>
 
     QActionGroup*          themeMenuActionGroup;
     QMenu*                 themeMenuAction;

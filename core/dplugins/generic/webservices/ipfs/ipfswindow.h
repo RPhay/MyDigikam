@@ -6,8 +6,8 @@
  * Date        : 2012-02-12
  * Description : a tool to export images to IPFS web service
  *
- * Copyright (C) 2018 by Amar Lakshya <amar dot lakshya at xaviers dot edu dot in>
- * Copyright (C) 2018 by Caulier Gilles <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2018      by Amar Lakshya <amar dot lakshya at xaviers dot edu dot in>
+ * Copyright (C) 2018-2020 by Caulier Gilles <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -34,7 +34,6 @@
 #include "ipfsimageslist.h"
 #include "ipfstalker.h"
 #include "wstooldialog.h"
-#include "digikam_export.h"
 #include "dinfointerface.h"
 
 using namespace Digikam;
@@ -42,14 +41,14 @@ using namespace Digikam;
 namespace DigikamGenericIpfsPlugin
 {
 
-class DIGIKAM_EXPORT IpfsWindow : public WSToolDialog
+class IpfsWindow : public WSToolDialog
 {
     Q_OBJECT
 
 public:
 
     explicit IpfsWindow(DInfoInterface* const iface, QWidget* const parent = nullptr);
-    ~IpfsWindow();
+    ~IpfsWindow()                       override;
 
     void reactivate();
 
@@ -70,12 +69,12 @@ public Q_SLOTS:
     void apiProgress(unsigned int percent, const IpfsTalkerAction& action);
     void apiRequestPin(const QUrl& url);
     void apiSuccess(const IpfsTalkerResult& result);
-    void apiError(const QString &msg, const IpfsTalkerAction& action);
+    void apiError(const QString& msg, const IpfsTalkerAction& action);
     void apiBusy(bool busy);
 
 private:
 
-    void closeEvent(QCloseEvent* e) override;
+    void closeEvent(QCloseEvent* e)     override;
     void setContinueUpload(bool state);
     void readSettings();
     void saveSettings();

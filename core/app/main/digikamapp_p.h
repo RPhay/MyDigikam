@@ -6,7 +6,7 @@
  * Date        : 2007-31-01
  * Description : main digiKam interface implementation
  *
- * Copyright (C) 2007-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2007-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2014      by Mohamed_Anwer <m_dot_anwer at gmx dot com>
  *
  * This program is free software; you can redistribute it
@@ -32,6 +32,7 @@
 #include <QEventLoop>
 #include <QMap>
 #include <QPointer>
+#include <QScopedPointer>
 #include <QString>
 #include <QAction>
 #include <QMenu>
@@ -155,7 +156,7 @@ class Q_DECL_HIDDEN ProgressEntry
 public:
 
     explicit ProgressEntry()
-      : progress(0),
+      : progress (0),
         canCancel(false)
     {
     }
@@ -172,117 +173,115 @@ class Q_DECL_HIDDEN DigikamApp::Private
 public:
 
     explicit Private()
-      : autoShowZoomToolTip(false),
-        validIccPath(true),
-        cameraMenu(nullptr),
-        usbMediaMenu(nullptr),
-        cardReaderMenu(nullptr),
-        quickImportMenu(nullptr),
-        config(nullptr),
-        newAction(nullptr),
-        moveSelectionToAlbumAction(nullptr),
-        deleteAction(nullptr),
-        renameAction(nullptr),
-        imageDeletePermanentlyAction(nullptr),
+      : autoShowZoomToolTip                 (false),
+        validIccPath                        (true),
+        cameraMenu                          (nullptr),
+        usbMediaMenu                        (nullptr),
+        cardReaderMenu                      (nullptr),
+        quickImportMenu                     (nullptr),
+        config                              (nullptr),
+        newAction                           (nullptr),
+        moveSelectionToAlbumAction          (nullptr),
+        copySelectionToAction               (nullptr),
+        deleteAction                        (nullptr),
+        renameAction                        (nullptr),
+        imageDeletePermanentlyAction        (nullptr),
         imageDeletePermanentlyDirectlyAction(nullptr),
-        imageTrashDirectlyAction(nullptr),
-        backwardActionMenu(nullptr),
-        forwardActionMenu(nullptr),
-        addImagesAction(nullptr),
-        propsEditAction(nullptr),
-        addFoldersAction(nullptr),
-        openInFileManagerAction(nullptr),
-        refreshAction(nullptr),
-        writeAlbumMetadataAction(nullptr),
-        readAlbumMetadataAction(nullptr),
-        browseTagsAction(nullptr),
-        openTagMngrAction(nullptr),
-        newTagAction(nullptr),
-        deleteTagAction(nullptr),
-        editTagAction(nullptr),
-        assignTagAction(nullptr),
-        imageViewSelectionAction(nullptr),
-        imagePreviewAction(nullptr),
+        imageTrashDirectlyAction            (nullptr),
+        backwardActionMenu                  (nullptr),
+        forwardActionMenu                   (nullptr),
+        addImagesAction                     (nullptr),
+        propsEditAction                     (nullptr),
+        addFoldersAction                    (nullptr),
+        openInFileManagerAction             (nullptr),
+        refreshAction                       (nullptr),
+        writeAlbumMetadataAction            (nullptr),
+        readAlbumMetadataAction             (nullptr),
+        browseTagsAction                    (nullptr),
+        openTagMngrAction                   (nullptr),
+        newTagAction                        (nullptr),
+        deleteTagAction                     (nullptr),
+        editTagAction                       (nullptr),
+        assignTagAction                     (nullptr),
+        imageViewSelectionAction            (nullptr),
+        imagePreviewAction                  (nullptr),
 
 #ifdef HAVE_MARBLE
 
-        imageMapViewAction(nullptr),
+        imageMapViewAction                  (nullptr),
 
 #endif // HAVE_MARBLE
 
-        imageTableViewAction(nullptr),
-        imageIconViewAction(nullptr),
-        imageLightTableAction(nullptr),
-        imageAddLightTableAction(nullptr),
-        imageAddCurrentQueueAction(nullptr),
-        imageAddNewQueueAction(nullptr),
-        imageViewAction(nullptr),
-        imageWriteMetadataAction(nullptr),
-        imageReadMetadataAction(nullptr),
-        imageScanForFacesAction(nullptr),
-        imageFindSimilarAction(nullptr),
-        imageSetExifOrientation1Action(nullptr),
-        imageSetExifOrientation2Action(nullptr),
-        imageSetExifOrientation3Action(nullptr),
-        imageSetExifOrientation4Action(nullptr),
-        imageSetExifOrientation5Action(nullptr),
-        imageSetExifOrientation6Action(nullptr),
-        imageSetExifOrientation7Action(nullptr),
-        imageSetExifOrientation8Action(nullptr),
-        imageRenameAction(nullptr),
-        imageRotateActionMenu(nullptr),
-        imageFlipActionMenu(nullptr),
-        imageAutoExifActionMenu(nullptr),
-        imageDeleteAction(nullptr),
-        imageExifOrientationActionMenu(nullptr),
-        openWithAction(nullptr),
-        ieAction(nullptr),
-        ltAction(nullptr),
-        cutItemsAction(nullptr),
-        copyItemsAction(nullptr),
-        pasteItemsAction(nullptr),
-        selectAllAction(nullptr),
-        selectNoneAction(nullptr),
-        selectInvertAction(nullptr),
-        zoomPlusAction(nullptr),
-        zoomMinusAction(nullptr),
-        zoomFitToWindowAction(nullptr),
-        zoomTo100percents(nullptr),
-        imageSortAction(nullptr),
-        imageSortOrderAction(nullptr),
-        imageSeparationAction(nullptr),
-        imageSeparationSortOrderAction(nullptr),
-        albumSortAction(nullptr),
-        allGroupsOpenAction(nullptr),
-        recurseAlbumsAction(nullptr),
-        recurseTagsAction(nullptr),
-        showBarAction(nullptr),
-        viewCMViewAction(nullptr),
-        slideShowAction(nullptr),
-        slideShowAllAction(nullptr),
-        slideShowSelectionAction(nullptr),
-        slideShowRecursiveAction(nullptr),
-        bqmAction(nullptr),
-        maintenanceAction(nullptr),
-        qualityAction(nullptr),
-        advSearchAction(nullptr),
-        addCameraSeparatorAction(nullptr),
-        quitAction(nullptr),
-        tipAction(nullptr),
-        manualCameraActionGroup(nullptr),
-        solidCameraActionGroup(nullptr),
-        solidUsmActionGroup(nullptr),
-        exifOrientationActionGroup(nullptr),
-        eventLoop(nullptr),
-        metadataStatusBar(nullptr),
-        filterStatusBar(nullptr),
-        splashScreen(nullptr),
-        view(nullptr),
-        cameraList(nullptr),
-        tagsActionManager(nullptr),
-        zoomBar(nullptr),
-        statusLabel(nullptr),
-        modelCollection(nullptr)
+        imageTableViewAction                (nullptr),
+        imageIconViewAction                 (nullptr),
+        imageLightTableAction               (nullptr),
+        imageAddLightTableAction            (nullptr),
+        imageAddCurrentQueueAction          (nullptr),
+        imageAddNewQueueAction              (nullptr),
+        imageViewAction                     (nullptr),
+        imageWriteMetadataAction            (nullptr),
+        imageReadMetadataAction             (nullptr),
+        imageScanForFacesAction             (nullptr),
+        imageFindSimilarAction              (nullptr),
+        imageSetExifOrientation1Action      (nullptr),
+        imageSetExifOrientation2Action      (nullptr),
+        imageSetExifOrientation3Action      (nullptr),
+        imageSetExifOrientation4Action      (nullptr),
+        imageSetExifOrientation5Action      (nullptr),
+        imageSetExifOrientation6Action      (nullptr),
+        imageSetExifOrientation7Action      (nullptr),
+        imageSetExifOrientation8Action      (nullptr),
+        imageRenameAction                   (nullptr),
+        imageRotateActionMenu               (nullptr),
+        imageFlipActionMenu                 (nullptr),
+        imageAutoExifActionMenu             (nullptr),
+        imageDeleteAction                   (nullptr),
+        imageExifOrientationActionMenu      (nullptr),
+        openWithAction                      (nullptr),
+        ieAction                            (nullptr),
+        ltAction                            (nullptr),
+        cutItemsAction                      (nullptr),
+        copyItemsAction                     (nullptr),
+        pasteItemsAction                    (nullptr),
+        selectAllAction                     (nullptr),
+        selectNoneAction                    (nullptr),
+        selectInvertAction                  (nullptr),
+        zoomPlusAction                      (nullptr),
+        zoomMinusAction                     (nullptr),
+        zoomFitToWindowAction               (nullptr),
+        zoomTo100percents                   (nullptr),
+        imageSortAction                     (nullptr),
+        imageSortOrderAction                (nullptr),
+        imageSeparationAction               (nullptr),
+        imageSeparationSortOrderAction      (nullptr),
+        albumSortAction                     (nullptr),
+        allGroupsOpenAction                 (nullptr),
+        recurseAlbumsAction                 (nullptr),
+        recurseTagsAction                   (nullptr),
+        showBarAction                       (nullptr),
+        viewCMViewAction                    (nullptr),
+        bqmAction                           (nullptr),
+        maintenanceAction                   (nullptr),
+        scanNewItemsAction                  (nullptr),
+        qualityAction                       (nullptr),
+        advSearchAction                     (nullptr),
+        addCameraSeparatorAction            (nullptr),
+        quitAction                          (nullptr),
+        tipAction                           (nullptr),
+        manualCameraActionGroup             (nullptr),
+        solidCameraActionGroup              (nullptr),
+        solidUsmActionGroup                 (nullptr),
+        exifOrientationActionGroup          (nullptr),
+        eventLoop                           (nullptr),
+        metadataStatusBar                   (nullptr),
+        filterStatusBar                     (nullptr),
+        splashScreen                        (nullptr),
+        view                                (nullptr),
+        cameraList                          (nullptr),
+        tagsActionManager                   (nullptr),
+        zoomBar                             (nullptr),
+        statusLabel                         (nullptr),
+        modelCollection                     (nullptr)
     {
     }
 
@@ -300,6 +299,7 @@ public:
     /// Album Actions
     QAction*                            newAction;
     QAction*                            moveSelectionToAlbumAction;
+    QAction*                            copySelectionToAction;
     QAction*                            deleteAction;
     QAction*                            renameAction;
     QAction*                            imageDeletePermanentlyAction;
@@ -388,12 +388,9 @@ public:
     QAction*                            viewCMViewAction;
 
     /// Tools Actions
-    QMenu*                              slideShowAction;
-    QAction*                            slideShowAllAction;
-    QAction*                            slideShowSelectionAction;
-    QAction*                            slideShowRecursiveAction;
     QAction*                            bqmAction;
     QAction*                            maintenanceAction;
+    QAction*                            scanNewItemsAction;
     QAction*                            qualityAction;
     QAction*                            advSearchAction;
 

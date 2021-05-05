@@ -7,7 +7,7 @@
  * Description : Core database image properties synchronizer
  *
  * Copyright (C) 2007-2009 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -54,14 +54,14 @@ public:
 
 public:
 
-    explicit CoreDbWatch();
+    CoreDbWatch();
 
     void initializeRemote(DatabaseMode mode);
     void doAnyProcessing();
     void setDatabaseIdentifier(const QString& identifier);
     void setApplicationIdentifier(const QString& identifier);
 
-    // library-internal signal-trigger methods
+    /// library-internal signal-trigger methods
 
     void sendDatabaseChanged();
 
@@ -75,7 +75,9 @@ public:
 
 Q_SIGNALS:
 
-    /** Retrieve the CoreDbWatch object from CoreDbAccess::databaseWatch(). */
+    /**
+     * Retrieve the CoreDbWatch object from CoreDbAccess::databaseWatch().
+     */
 
     /**
      * This does not describe a change of the contents of a table;
@@ -98,18 +100,17 @@ Q_SIGNALS:
 
 protected:
 
-    ~CoreDbWatch();
+    ~CoreDbWatch() override;
 
 #ifdef HAVE_DBUS
 
 protected Q_SLOTS:
 
-
     // NOTE: The full qualification with "Digikam::" for the changeset types in the following
     // signals and slots are required to make moc pick them up.
     // If moc does not get the namespace in its literal, DBus connections will silently break.
 
-    // DBus slots, for internal use
+    /// DBus slots, for internal use
     void slotImageChangeDBus(const QString& databaseIdentifier,
                              const QString& applicationIdentifier,
                              const Digikam::ImageChangeset& changeset);
@@ -134,28 +135,28 @@ protected Q_SLOTS:
 
 Q_SIGNALS:
 
-    // DBus signals, for internal use
-    void imageChange(const QString& databaseIdentifier,
-                     const QString& applicationIdentifier,
-                     const Digikam::ImageChangeset& changeset);
-    void imageTagChange(const QString& databaseIdentifier,
-                        const QString& applicationIdentifier,
-                        const Digikam::ImageTagChangeset& changeset);
-    void collectionImageChange(const QString& databaseIdentifier,
+    /// DBus signals, for internal use
+    void signalImageChangeDBus(const QString& databaseIdentifier,
                                const QString& applicationIdentifier,
-                               const Digikam::CollectionImageChangeset& changeset);
-    void albumChange(const QString& databaseIdentifier,
-                     const QString& applicationIdentifier,
-                     const Digikam::AlbumChangeset& changeset);
-    void tagChange(const QString& databaseIdentifier,
-                   const QString& applicationIdentifier,
-                   const Digikam::TagChangeset& changeset);
-    void albumRootChange(const QString& databaseIdentifier,
-                         const QString& applicationIdentifier,
-                         const Digikam::AlbumRootChangeset& changeset);
-    void searchChange(const QString& databaseIdentifier,
-                      const QString& applicationIdentifier,
-                      const Digikam::SearchChangeset& changeset);
+                               const Digikam::ImageChangeset& changeset);
+    void signalImageTagChangeDBus(const QString& databaseIdentifier,
+                                  const QString& applicationIdentifier,
+                                  const Digikam::ImageTagChangeset& changeset);
+    void signalCollectionImageChangeDBus(const QString& databaseIdentifier,
+                                         const QString& applicationIdentifier,
+                                         const Digikam::CollectionImageChangeset& changeset);
+    void signalAlbumChangeDBus(const QString& databaseIdentifier,
+                               const QString& applicationIdentifier,
+                               const Digikam::AlbumChangeset& changeset);
+    void signalTagChangeDBus(const QString& databaseIdentifier,
+                             const QString& applicationIdentifier,
+                             const Digikam::TagChangeset& changeset);
+    void signalAlbumRootChangeDBus(const QString& databaseIdentifier,
+                                   const QString& applicationIdentifier,
+                                   const Digikam::AlbumRootChangeset& changeset);
+    void signalSearchChangeDBus(const QString& databaseIdentifier,
+                                const QString& applicationIdentifier,
+                                const Digikam::SearchChangeset& changeset);
 #endif
 
 public:
@@ -163,6 +164,9 @@ public:
     class Private;
 
 private:
+
+    // Disabled
+    explicit CoreDbWatch(QObject*) = delete;
 
     Private* const d;
 };
@@ -177,10 +181,10 @@ class DBusSignalListenerThread : public QThread
 
 public:
 
-    explicit DBusSignalListenerThread(CoreDbWatch* const q, CoreDbWatch::Private* const d);
-    ~DBusSignalListenerThread();
+    explicit DBusSignalListenerThread(CoreDbWatch* const qq, CoreDbWatch::Private* const dd);
+    ~DBusSignalListenerThread() override;
 
-    virtual void run() override;
+    void run()                  override;
 
 private:
 

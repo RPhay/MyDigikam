@@ -6,7 +6,7 @@
  * Date        : 2010-25-02
  * Description : Levels image filter
  *
- * Copyright (C) 2010-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2010-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2010      by Martin Klapetek <martin dot klapetek at gmail dot com>
  *
  * This program is free software; you can redistribute it
@@ -71,12 +71,13 @@ public:
 
 class DIGIKAM_EXPORT LevelsFilter : public DImgThreadedFilter
 {
+    Q_OBJECT
 
 public:
 
     explicit LevelsFilter(QObject* const parent = nullptr);
     explicit LevelsFilter(DImg* const orgImage,
-                          QObject* const parent=nullptr,
+                          QObject* const parent = nullptr,
                           const LevelsContainer& settings=LevelsContainer());
     explicit LevelsFilter(const LevelsContainer& settings,
                           DImgThreadedFilter* const master,
@@ -84,7 +85,7 @@ public:
                           DImg& destImage,
                           int progressBegin=0,
                           int progressEnd=100);
-    virtual ~LevelsFilter();
+    ~LevelsFilter() override;
 
     static QString          FilterIdentifier()
     {
@@ -103,12 +104,12 @@ public:
         return 1;
     }
 
-    virtual QString         filterIdentifier() const override
+    QString         filterIdentifier() const override
     {
         return FilterIdentifier();
     }
 
-    virtual FilterAction    filterAction() override;
+    FilterAction    filterAction() override;
     void                    readParameters(const FilterAction& action) override;
 
 private:

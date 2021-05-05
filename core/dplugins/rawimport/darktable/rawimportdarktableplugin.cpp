@@ -187,16 +187,18 @@ bool DarkTableRawImportPlugin::run(const QString& filePath, const DRawDecoding& 
 
     // --------
 
-    QString binary;
-
 #ifdef Q_OS_WIN
+
     QSettings settings(QLatin1String("HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\"
                                      "CurrentVersion\\App Paths\\darktable.exe"),
                                      QSettings::NativeFormat);
 
-    binary = settings.value(QLatin1String("Default"), QString()).toString();
+    QString binary = settings.value(QLatin1String("Default"), QString()).toString();
+
 #else
-    binary = QLatin1String("darktable");
+
+    QString binary = QLatin1String("darktable");
+
 #endif
 
     d->darktable->setProgram(binary);
@@ -253,7 +255,7 @@ void DarkTableRawImportPlugin::slotProcessFinished(int code, QProcess::ExitStatu
     if (d->decoded.isNull())
     {
         QString message = i18n("Error to import RAW image with DarkTable\nClose this dialog to load RAW image with native import tool");
-        QMessageBox::information(0, qApp->applicationName(), message);
+        QMessageBox::information(nullptr, qApp->applicationName(), message);
 
         qCDebug(DIGIKAM_GENERAL_LOG) << "Decoded image is null! Load with Native tool...";
         qCDebug(DIGIKAM_GENERAL_LOG) << d->props.filePath;

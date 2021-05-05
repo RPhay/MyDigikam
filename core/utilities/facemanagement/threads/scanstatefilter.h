@@ -38,6 +38,7 @@ class Q_DECL_HIDDEN ScanStateFilter : public DynamicThread
 public:
 
     ScanStateFilter(FacePipeline::FilterMode mode, FacePipeline::Private* const d);
+    ~ScanStateFilter() override;
 
     void process(const QList<ItemInfo>& infos);
     void process(const ItemInfo& info);
@@ -60,13 +61,19 @@ Q_SIGNALS:
 
 protected:
 
-    virtual void run();
+    void run() override;
 
 protected:
 
     QList<ItemInfo>                         toFilter;
     QList<FacePipelineExtendedPackage::Ptr> toSend;
     QList<ItemInfo>                         toBeSkipped;
+
+private:
+
+    // Disable
+    ScanStateFilter(const ScanStateFilter&)            = delete;
+    ScanStateFilter& operator=(const ScanStateFilter&) = delete;
 };
 
 } // namespace Digikam

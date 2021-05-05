@@ -26,11 +26,12 @@
 // Qt includes
 
 #include <QApplication>
-#include <QtTest>
+#include <QTest>
 #include <QFile>
 #include <QDir>
 #include <QFileInfo>
 #include <QUrl>
+#include <QThreadPool>
 
 // Local includes
 

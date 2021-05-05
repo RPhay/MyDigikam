@@ -7,7 +7,7 @@
  * Description : Dialog to prompt users about versioning
  *
  * Copyright (C) 2010-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2013-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2013-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -61,7 +61,7 @@ public:
 
 VersioningPromptUserSaveDialog::VersioningPromptUserSaveDialog(QWidget* const parent)
     : QDialog(parent),
-      d(new Private)
+      d      (new Private)
 {
     setWindowTitle(i18nc("@title:window", "Save?"));
 
@@ -101,8 +101,8 @@ VersioningPromptUserSaveDialog::VersioningPromptUserSaveDialog(QWidget* const pa
     QLabel* const question    = new QLabel;
     question->setTextFormat(Qt::RichText);
     question->setText(i18nc("@label",
-                            "<qt>The current image has been changed.<br/>"
-                            "Do you wish to save your changes?</qt>"));
+                            "The current image has been changed.\n"
+                            "Do you wish to save your changes?"));
     QLabel* const editIcon    = new QLabel;
     editIcon->setPixmap(QIcon::fromTheme(QLatin1String("document-edit")).pixmap(style()->pixelMetric(QStyle::PM_MessageBoxIconSize, nullptr, this)));
 

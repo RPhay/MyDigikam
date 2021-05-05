@@ -6,7 +6,7 @@
  * Date        : 2007-10-24
  * Description : XMP origin settings page.
  *
- * Copyright (C) 2007-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2007-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -140,7 +140,7 @@ XMPOrigin::XMPOrigin(QWidget* const parent)
     d->dateDigitalizedSel->setDisplayFormat(dateTimeFormat);
 
     d->setTodayDigitalizedBtn = new QPushButton();
-    d->setTodayDigitalizedBtn->setIcon(QIcon::fromTheme(QLatin1String("go-jump-today")));
+    d->setTodayDigitalizedBtn->setIcon(QIcon::fromTheme(QLatin1String("view-calendar")));
     d->setTodayDigitalizedBtn->setWhatsThis(i18n("Set digitization date to today"));
 
     d->dateDigitalizedSel->setWhatsThis(i18n("Set here the creation date of "
@@ -158,10 +158,10 @@ XMPOrigin::XMPOrigin(QWidget* const parent)
     d->dateCreatedSel     = new QDateTimeEdit(this);
     d->dateCreatedSel->setDisplayFormat(dateTimeFormat);
 
-    d->syncEXIFDateCheck  = new QCheckBox(i18n("Sync EXIF creation date"), this);
+    d->syncEXIFDateCheck  = new QCheckBox(i18n("Sync Exif creation date"), this);
 
     d->setTodayCreatedBtn = new QPushButton();
-    d->setTodayCreatedBtn->setIcon(QIcon::fromTheme(QLatin1String("go-jump-today")));
+    d->setTodayCreatedBtn->setIcon(QIcon::fromTheme(QLatin1String("view-calendar")));
     d->setTodayCreatedBtn->setWhatsThis(i18n("Set creation date to today"));
 
     d->dateCreatedSel->setWhatsThis(i18n("Set here the creation date of "
@@ -180,7 +180,7 @@ XMPOrigin::XMPOrigin(QWidget* const parent)
     d->dateVideoSel->setDisplayFormat(dateTimeFormat);
 
     d->setTodayVideoBtn = new QPushButton();
-    d->setTodayVideoBtn->setIcon(QIcon::fromTheme(QLatin1String("go-jump-today")));
+    d->setTodayVideoBtn->setIcon(QIcon::fromTheme(QLatin1String("view-calendar")));
     d->setTodayVideoBtn->setWhatsThis(i18n("Set video date to today"));
 
     d->dateVideoSel->setWhatsThis(i18n("Set here the video date of "
@@ -395,33 +395,33 @@ QDateTime XMPOrigin::getXMPCreationDate() const
 void XMPOrigin::readMetadata(QByteArray& xmpData)
 {
     blockSignals(true);
-    DMetadata meta;
-    meta.setXmp(xmpData);
+    QScopedPointer<DMetadata> meta(new DMetadata);
+    meta->setXmp(xmpData);
 
     QString     data;
     QStringList code, list;
     QDateTime   dateTime;
     QString     dateTimeStr;
 
-    dateTimeStr = meta.getXmpTagString("Xmp.photoshop.DateCreated", false);
+    dateTimeStr = meta->getXmpTagString("Xmp.photoshop.DateCreated", false);
 
     if (dateTimeStr.isEmpty())
-        dateTimeStr = meta.getXmpTagString("Xmp.xmp.CreateDate", false);
+        dateTimeStr = meta->getXmpTagString("Xmp.xmp.CreateDate", false);
 
     if (dateTimeStr.isEmpty())
-        dateTimeStr = meta.getXmpTagString("Xmp.xmp.ModifyDate", false);
+        dateTimeStr = meta->getXmpTagString("Xmp.xmp.ModifyDate", false);
 
     if (dateTimeStr.isEmpty())
-        dateTimeStr = meta.getXmpTagString("Xmp.exif.DateTimeOriginal", false);
+        dateTimeStr = meta->getXmpTagString("Xmp.exif.DateTimeOriginal", false);
 
     if (dateTimeStr.isEmpty())
-        dateTimeStr = meta.getXmpTagString("Xmp.tiff.DateTime", false);
+        dateTimeStr = meta->getXmpTagString("Xmp.tiff.DateTime", false);
 
     if (dateTimeStr.isEmpty())
-        dateTimeStr = meta.getXmpTagString("Xmp.xmp.ModifyDate", false);
+        dateTimeStr = meta->getXmpTagString("Xmp.xmp.ModifyDate", false);
 
     if (dateTimeStr.isEmpty())
-        dateTimeStr = meta.getXmpTagString("Xmp.xmp.MetadataDate", false);
+        dateTimeStr = meta->getXmpTagString("Xmp.xmp.MetadataDate", false);
 
     d->dateCreatedSel->setDateTime(QDateTime::currentDateTime());
     d->dateCreatedCheck->setChecked(false);
@@ -443,7 +443,7 @@ void XMPOrigin::readMetadata(QByteArray& xmpData)
     d->zoneCreatedSel->setEnabled(d->dateCreatedCheck->isChecked());
     d->syncEXIFDateCheck->setEnabled(d->dateCreatedCheck->isChecked());
 
-    dateTimeStr = meta.getXmpTagString("Xmp.exif.DateTimeDigitized", false);
+    dateTimeStr = meta->getXmpTagString("Xmp.exif.DateTimeDigitized", false);
 
     d->dateDigitalizedSel->setDateTime(QDateTime::currentDateTime());
     d->dateDigitalizedCheck->setChecked(false);
@@ -464,16 +464,16 @@ void XMPOrigin::readMetadata(QByteArray& xmpData)
     d->dateDigitalizedSel->setEnabled(d->dateDigitalizedCheck->isChecked());
     d->zoneDigitalizedSel->setEnabled(d->dateDigitalizedCheck->isChecked());
 
-    dateTimeStr = meta.getXmpTagString("Xmp.video.DateTimeOriginal", false);
+    dateTimeStr = meta->getXmpTagString("Xmp.video.DateTimeOriginal", false);
 
     if (dateTimeStr.isEmpty())
-        dateTimeStr = meta.getXmpTagString("Xmp.video.DateTimeDigitized", false);
+        dateTimeStr = meta->getXmpTagString("Xmp.video.DateTimeDigitized", false);
 
     if (dateTimeStr.isEmpty())
-        dateTimeStr = meta.getXmpTagString("Xmp.video.ModificationDate", false);
+        dateTimeStr = meta->getXmpTagString("Xmp.video.ModificationDate", false);
 
     if (dateTimeStr.isEmpty())
-        dateTimeStr = meta.getXmpTagString("Xmp.video.DateUTC", false);
+        dateTimeStr = meta->getXmpTagString("Xmp.video.DateUTC", false);
 
     d->dateVideoSel->setDateTime(QDateTime::currentDateTime());
     d->dateVideoCheck->setChecked(false);
@@ -496,7 +496,7 @@ void XMPOrigin::readMetadata(QByteArray& xmpData)
 
     d->cityEdit->clear();
     d->cityCheck->setChecked(false);
-    data = meta.getXmpTagString("Xmp.photoshop.City", false);
+    data = meta->getXmpTagString("Xmp.photoshop.City", false);
 
     if (!data.isNull())
     {
@@ -508,7 +508,7 @@ void XMPOrigin::readMetadata(QByteArray& xmpData)
 
     d->sublocationEdit->clear();
     d->sublocationCheck->setChecked(false);
-    data = meta.getXmpTagString("Xmp.iptc.Location", false);
+    data = meta->getXmpTagString("Xmp.iptc.Location", false);
 
     if (!data.isNull())
     {
@@ -520,7 +520,7 @@ void XMPOrigin::readMetadata(QByteArray& xmpData)
 
     d->provinceEdit->clear();
     d->provinceCheck->setChecked(false);
-    data = meta.getXmpTagString("Xmp.photoshop.State", false);
+    data = meta->getXmpTagString("Xmp.photoshop.State", false);
 
     if (!data.isNull())
     {
@@ -532,7 +532,7 @@ void XMPOrigin::readMetadata(QByteArray& xmpData)
 
     d->countryCB->setCurrentIndex(0);
     d->countryCheck->setChecked(false);
-    data = meta.getXmpTagString("Xmp.iptc.CountryCode", false);
+    data = meta->getXmpTagString("Xmp.iptc.CountryCode", false);
 
     if (!data.isNull())
     {
@@ -562,125 +562,125 @@ void XMPOrigin::readMetadata(QByteArray& xmpData)
 
 void XMPOrigin::applyMetadata(QByteArray& exifData, QByteArray& xmpData)
 {
-    DMetadata meta;
-    meta.setExif(exifData);
-    meta.setXmp(xmpData);
+    QScopedPointer<DMetadata> meta(new DMetadata);
+    meta->setExif(exifData);
+    meta->setXmp(xmpData);
 
     QString xmpDateTimeFormat = QLatin1String("yyyy-MM-ddThh:mm:ss");
 
     if (d->dateCreatedCheck->isChecked())
     {
-        meta.setXmpTagString("Xmp.photoshop.DateCreated",
+        meta->setXmpTagString("Xmp.photoshop.DateCreated",
                              getXMPCreationDate().toString(xmpDateTimeFormat) +
                              d->zoneCreatedSel->getTimeZone());
-        meta.setXmpTagString("Xmp.xmp.CreateDate",
+        meta->setXmpTagString("Xmp.xmp.CreateDate",
                              getXMPCreationDate().toString(xmpDateTimeFormat) +
                              d->zoneCreatedSel->getTimeZone());
-        meta.setXmpTagString("Xmp.exif.DateTimeOriginal",
+        meta->setXmpTagString("Xmp.exif.DateTimeOriginal",
                              getXMPCreationDate().toString(xmpDateTimeFormat) +
                              d->zoneCreatedSel->getTimeZone());
-        meta.setXmpTagString("Xmp.tiff.DateTime",
+        meta->setXmpTagString("Xmp.tiff.DateTime",
                              getXMPCreationDate().toString(xmpDateTimeFormat) +
                              d->zoneCreatedSel->getTimeZone());
-        meta.setXmpTagString("Xmp.xmp.ModifyDate",
+        meta->setXmpTagString("Xmp.xmp.ModifyDate",
                              getXMPCreationDate().toString(xmpDateTimeFormat) +
                              d->zoneCreatedSel->getTimeZone());
-        meta.setXmpTagString("Xmp.xmp.MetadataDate",
+        meta->setXmpTagString("Xmp.xmp.MetadataDate",
                              getXMPCreationDate().toString(xmpDateTimeFormat) +
                              d->zoneCreatedSel->getTimeZone());
 
         if (syncEXIFDateIsChecked())
         {
-            meta.setExifTagString("Exif.Image.DateTime",
+            meta->setExifTagString("Exif.Image.DateTime",
                                   getXMPCreationDate().toString(QLatin1String("yyyy:MM:dd hh:mm:ss")));
         }
     }
     else
     {
-        meta.removeXmpTag("Xmp.photoshop.DateCreated");
-        meta.removeXmpTag("Xmp.xmp.CreateDate");
-        meta.removeXmpTag("Xmp.exif.DateTimeOriginal");
-        meta.removeXmpTag("Xmp.tiff.DateTime");
-        meta.removeXmpTag("Xmp.xmp.ModifyDate");
-        meta.removeXmpTag("Xmp.xmp.MetadataDate");
+        meta->removeXmpTag("Xmp.photoshop.DateCreated");
+        meta->removeXmpTag("Xmp.xmp.CreateDate");
+        meta->removeXmpTag("Xmp.exif.DateTimeOriginal");
+        meta->removeXmpTag("Xmp.tiff.DateTime");
+        meta->removeXmpTag("Xmp.xmp.ModifyDate");
+        meta->removeXmpTag("Xmp.xmp.MetadataDate");
     }
 
     if (d->dateDigitalizedCheck->isChecked())
     {
-        meta.setXmpTagString("Xmp.exif.DateTimeDigitized",
+        meta->setXmpTagString("Xmp.exif.DateTimeDigitized",
                              d->dateDigitalizedSel->dateTime().toString(xmpDateTimeFormat) +
                              d->zoneDigitalizedSel->getTimeZone());
     }
     else
     {
-        meta.removeXmpTag("Xmp.exif.DateTimeDigitized");
+        meta->removeXmpTag("Xmp.exif.DateTimeDigitized");
     }
 
     if (d->dateVideoCheck->isChecked())
     {
-        meta.setXmpTagString("Xmp.video.DateTimeOriginal",
+        meta->setXmpTagString("Xmp.video.DateTimeOriginal",
                              d->dateVideoSel->dateTime().toString(xmpDateTimeFormat) +
                              d->zoneVideoSel->getTimeZone());
-        meta.setXmpTagString("Xmp.video.DateTimeDigitized",
+        meta->setXmpTagString("Xmp.video.DateTimeDigitized",
                              d->dateVideoSel->dateTime().toString(xmpDateTimeFormat) +
                              d->zoneVideoSel->getTimeZone());
-        meta.setXmpTagString("Xmp.video.ModificationDate",
+        meta->setXmpTagString("Xmp.video.ModificationDate",
                              d->dateVideoSel->dateTime().toString(xmpDateTimeFormat) +
                              d->zoneVideoSel->getTimeZone());
-        meta.setXmpTagString("Xmp.video.DateUTC",
+        meta->setXmpTagString("Xmp.video.DateUTC",
                              d->dateVideoSel->dateTime().toString(xmpDateTimeFormat) +
                              d->zoneVideoSel->getTimeZone());
     }
     else
     {
-        meta.removeXmpTag("Xmp.video.DateTimeOriginal");
-        meta.removeXmpTag("Xmp.video.DateTimeDigitized");
-        meta.removeXmpTag("Xmp.video.ModificationDate");
-        meta.removeXmpTag("Xmp.video.DateUTC");
+        meta->removeXmpTag("Xmp.video.DateTimeOriginal");
+        meta->removeXmpTag("Xmp.video.DateTimeDigitized");
+        meta->removeXmpTag("Xmp.video.ModificationDate");
+        meta->removeXmpTag("Xmp.video.DateUTC");
     }
 
     if (d->cityCheck->isChecked())
     {
-        meta.setXmpTagString("Xmp.photoshop.City", d->cityEdit->text());
+        meta->setXmpTagString("Xmp.photoshop.City", d->cityEdit->text());
     }
     else
     {
-        meta.removeXmpTag("Xmp.photoshop.City");
+        meta->removeXmpTag("Xmp.photoshop.City");
     }
 
     if (d->sublocationCheck->isChecked())
     {
-        meta.setXmpTagString("Xmp.iptc.Location", d->sublocationEdit->text());
+        meta->setXmpTagString("Xmp.iptc.Location", d->sublocationEdit->text());
     }
     else
     {
-        meta.removeXmpTag("Xmp.iptc.Location");
+        meta->removeXmpTag("Xmp.iptc.Location");
     }
 
     if (d->provinceCheck->isChecked())
     {
-        meta.setXmpTagString("Xmp.photoshop.State", d->provinceEdit->text());
+        meta->setXmpTagString("Xmp.photoshop.State", d->provinceEdit->text());
     }
     else
     {
-        meta.removeXmpTag("Xmp.photoshop.State");
+        meta->removeXmpTag("Xmp.photoshop.State");
     }
 
     if (d->countryCheck->isChecked())
     {
         QString countryName = d->countryCB->currentText().mid(6);
         QString countryCode = d->countryCB->currentText().left(3);
-        meta.setXmpTagString("Xmp.iptc.CountryCode", countryCode);
-        meta.setXmpTagString("Xmp.photoshop.Country", countryName);
+        meta->setXmpTagString("Xmp.iptc.CountryCode", countryCode);
+        meta->setXmpTagString("Xmp.photoshop.Country", countryName);
     }
     else if (d->countryCheck->isValid())
     {
-        meta.removeXmpTag("Xmp.iptc.CountryCode");
-        meta.removeXmpTag("Xmp.photoshop.Country");
+        meta->removeXmpTag("Xmp.iptc.CountryCode");
+        meta->removeXmpTag("Xmp.photoshop.Country");
     }
 
-    exifData = meta.getExifEncoded();
-    xmpData  = meta.getXmp();
+    exifData = meta->getExifEncoded();
+    xmpData  = meta->getXmp();
 }
 
 } // namespace DigikamGenericMetadataEditPlugin

@@ -6,7 +6,7 @@
  * Date        : 2004-08-25
  * Description : a tool to simulate Oil Painting
  *
- * Copyright (C) 2004-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2004-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2006-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  *
  * This program is free software; you can redistribute it
@@ -55,9 +55,9 @@ public:
 
     explicit Private()
       : brushSizeInput(nullptr),
-        smoothInput(nullptr),
-        previewWidget(nullptr),
-        gboxSettings(nullptr)
+        smoothInput   (nullptr),
+        previewWidget (nullptr),
+        gboxSettings  (nullptr)
     {
     }
 
@@ -80,7 +80,7 @@ const QString OilPaintTool::Private::configSmoothAdjustmentEntry(QLatin1String("
 
 OilPaintTool::OilPaintTool(QObject* const parent)
     : EditorToolThreaded(parent),
-      d(new Private)
+      d                 (new Private)
 {
     setObjectName(QLatin1String("oilpaint"));
 

@@ -37,10 +37,6 @@ CpCleanTask::CpCleanTask(const QString& workDirPath, const QUrl& input,
 {
 }
 
-CpCleanTask::~CpCleanTask()
-{
-}
-
 void CpCleanTask::run(ThreadWeaver::JobPointer, ThreadWeaver::Thread*)
 {
     cpCleanPtoUrl = tmpDir;
@@ -54,11 +50,13 @@ void CpCleanTask::run(ThreadWeaver::JobPointer, ThreadWeaver::Thread*)
     runProcess(args);
 
     // CPClean does not return an error code when something went wrong...
+
     QFile ptoOutput(cpCleanPtoUrl.toLocalFile());
+
     if (!ptoOutput.exists())
     {
         successFlag = false;
-        errString = getProcessError();
+        errString   = getProcessError();
     }
 
     printDebug(QLatin1String("cpclean"));

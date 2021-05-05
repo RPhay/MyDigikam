@@ -6,7 +6,7 @@
  * Date        : 2018-07-30
  * Description : image editor plugin to auto-crop an image.
  *
- * Copyright (C) 2018-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2018-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -49,7 +49,7 @@ AutoCropToolPlugin::~AutoCropToolPlugin()
 
 QString AutoCropToolPlugin::name() const
 {
-    return i18n("Auto-Crop");
+    return i18nc("@title", "Auto-Crop");
 }
 
 QString AutoCropToolPlugin::iid() const
@@ -64,13 +64,13 @@ QIcon AutoCropToolPlugin::icon() const
 
 QString AutoCropToolPlugin::description() const
 {
-    return i18n("A tool to auto-crop an image");
+    return i18nc("@info", "A tool to auto-crop an image");
 }
 
 QString AutoCropToolPlugin::details() const
 {
-    return i18n("<p>This Image Editor tool can crop automatically an image by detection of inner black border, "
-                "generated while panorama stitching for example.</p>");
+    return i18nc("@info", "This Image Editor tool can crop automatically an image by detection of inner black border, "
+                          "generated while panorama stitching for example.");
 }
 
 QList<DPluginAuthor> AutoCropToolPlugin::authors() const
@@ -81,7 +81,7 @@ QList<DPluginAuthor> AutoCropToolPlugin::authors() const
                              QString::fromUtf8("(C) 2013"))
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2013-2020"))
+                             QString::fromUtf8("(C) 2013-2021"))
             ;
 }
 
@@ -91,7 +91,7 @@ void AutoCropToolPlugin::setup(QObject* const parent)
     ac->setIcon(icon());
     ac->setText(i18nc("@action", "&Auto-Crop"));
     ac->setObjectName(QLatin1String("editorwindow_transform_autocrop"));
-    ac->setWhatsThis(i18n("This option can be used to crop automatically the image."));
+    ac->setWhatsThis(i18nc("@info", "This option can be used to crop automatically the image."));
     ac->setShortcut(Qt::CTRL + Qt::SHIFT + Qt::Key_X);
     ac->setActionCategory(DPluginAction::EditorTransform);
 

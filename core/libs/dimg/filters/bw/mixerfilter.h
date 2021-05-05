@@ -6,7 +6,7 @@
  * Date        : 2005-24-01
  * Description : Chanels mixer filter
  *
- * Copyright (C) 2005-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2005-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2010      by Martin Klapetek <martin dot klapetek at gmail dot com>
  *
  * This program is free software; you can redistribute it
@@ -42,20 +42,20 @@ class DIGIKAM_EXPORT MixerContainer
 public:
 
     explicit MixerContainer()
-      : bPreserveLum(true),
-        bMonochrome(false),
-        redRedGain(1.0),
-        redGreenGain(0.0),
-        redBlueGain(0.0),
-        greenRedGain(0.0),
-        greenGreenGain(1.0),
-        greenBlueGain(0.0),
-        blueRedGain(0.0),
-        blueGreenGain(0.0),
-        blueBlueGain(1.0),
-        blackRedGain(1.0),
-        blackGreenGain(0.0),
-        blackBlueGain(0.0)
+      : bPreserveLum    (true),
+        bMonochrome     (false),
+        redRedGain      (1.0),
+        redGreenGain    (0.0),
+        redBlueGain     (0.0),
+        greenRedGain    (0.0),
+        greenGreenGain  (1.0),
+        greenBlueGain   (0.0),
+        blueRedGain     (0.0),
+        blueGreenGain   (0.0),
+        blueBlueGain    (1.0),
+        blackRedGain    (1.0),
+        blackGreenGain  (0.0),
+        blackBlueGain   (0.0)
     {
     };
 
@@ -89,43 +89,44 @@ public:
 
 class DIGIKAM_EXPORT MixerFilter : public DImgThreadedFilter
 {
+    Q_OBJECT
 
 public:
 
     explicit MixerFilter(QObject* const parent = nullptr);
     explicit MixerFilter(DImg* const orgImage,
-                         QObject* const parent=nullptr,
-                         const MixerContainer& settings=MixerContainer());
-    virtual ~MixerFilter();
+                         QObject* const parent = nullptr,
+                         const MixerContainer& settings = MixerContainer());
+    ~MixerFilter()                                         override;
 
-    static QString          FilterIdentifier()
+    static QString FilterIdentifier()
     {
         return QLatin1String("digikam:MixerFilter");
     }
 
-    static QString          DisplayableName();
+    static QString DisplayableName();
 
-    static QList<int>       SupportedVersions()
+    static QList<int> SupportedVersions()
     {
         return QList<int>() << 1;
     }
 
-    static int              CurrentVersion()
+    static int CurrentVersion()
     {
         return 1;
     }
 
-    virtual QString         filterIdentifier()                          const override
+    QString filterIdentifier()                       const override
     {
         return FilterIdentifier();
     }
 
-    virtual FilterAction    filterAction()                                    override;
-    void                    readParameters(const FilterAction& action)        override;
+    FilterAction filterAction()                            override;
+    void readParameters(const FilterAction& action)        override;
 
 private:
 
-    void filterImage()                                                        override;
+    void filterImage()                                     override;
 
     inline double CalculateNorm(double RedGain, double GreenGain, double BlueGain, bool bPreserveLum);
 

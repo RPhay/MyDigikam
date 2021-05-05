@@ -41,18 +41,22 @@ class RuleDialog : public QDialog
 public:
 
     explicit RuleDialog(Rule* const parent);
-    virtual ~RuleDialog();
+    ~RuleDialog() override;
 
     void setSettingsWidget(QWidget* const settingsWidget);
 
 private:
 
-    RuleDialog(const RuleDialog&);
-    RuleDialog& operator=(const RuleDialog&);
-
     void setDialogTitle(const QString& title);
     void setDialogDescription(const QString& description);
     void setDialogIcon(const QPixmap& pixmap);
+
+private:
+
+    // Disable
+    explicit RuleDialog(QWidget*)            = delete;
+    RuleDialog(const RuleDialog&)            = delete;
+    RuleDialog& operator=(const RuleDialog&) = delete;
 
 private:
 

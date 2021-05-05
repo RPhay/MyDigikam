@@ -51,7 +51,7 @@ public:
 
 MyTreeWidget::MyTreeWidget(QWidget* const parent)
     : QTreeWidget(parent),
-      d(new Private())
+      d          (new Private())
 {
     setDragEnabled(true);
     setDragDropMode(QAbstractItemView::DragOnly);
@@ -70,17 +70,18 @@ void MyTreeWidget::startDrag(Qt::DropActions /*supportedActions*/)
     drag->exec(Qt::CopyAction);
 }
 
-QMimeData* MyTreeWidget::mimeData(const QList<QTreeWidgetItem*> items) const
+QMimeData* MyTreeWidget::mimeData(const QList<QTreeWidgetItem*> items) const        // clazy:exclude=function-args-by-ref
 {
     return QTreeWidget::mimeData(items);
 }
 
-QMimeData* MyTreeWidget::mimeData(const QModelIndexList itemsToDrag) const
+QMimeData* MyTreeWidget::mimeData(const QModelIndexList itemsToDrag) const          // clazy:exclude=function-args-by-ref
 {
     MyDragData* const mimeData = new MyDragData;
 
     // TODO: determine the indices of the items to drag!
-    for (int i = 0; i < itemsToDrag.count(); ++i)
+
+    for (int i = 0 ; i < itemsToDrag.count() ; ++i)
     {
         mimeData->draggedIndices << QPersistentModelIndex(itemsToDrag.at(i));
     }

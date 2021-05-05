@@ -8,7 +8,7 @@
  *
  * Copyright (C) 2008-2009 by Valerio Fuoglio <valerio dot fuoglio at gmail dot com>
  * Copyright (C) 2009      by Andi Clemens <andi dot clemens at googlemail dot com>
- * Copyright (C) 2012-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -36,7 +36,7 @@
 
 // KDE includes
 
-#include <kconfig.h>
+#include <ksharedconfig.h>
 #include <kconfiggroup.h>
 
 // Local includes
@@ -62,11 +62,11 @@ class Q_DECL_HIDDEN PresentationDlg::Private
 public:
 
     explicit Private()
+      : buttonBox   (nullptr),
+        startButton (nullptr),
+        tab         (nullptr),
+        sharedData  (nullptr)
     {
-        buttonBox   = nullptr;
-        startButton = nullptr;
-        tab         = nullptr;
-        sharedData  = nullptr;
     }
 
     QDialogButtonBox*      buttonBox;
@@ -75,22 +75,22 @@ public:
     PresentationContainer* sharedData;
 };
 
-PresentationDlg::PresentationDlg(QWidget* const parent, PresentationContainer* const sharedData)
+PresentationDlg::PresentationDlg(QWidget* const parent,
+                                 PresentationContainer* const sharedData)
     : DPluginDialog(parent, QLatin1String("Presentation Settings")),
-      d(new Private)
+      d            (new Private)
 {
-    setWindowTitle(i18n("Presentation"));
+    setWindowTitle(i18nc("@title", "Presentation"));
+    setModal(false);
 
-    d->sharedData  = sharedData;
+    d->sharedData = sharedData;
 
     m_buttons->addButton(QDialogButtonBox::Close);
     m_buttons->addButton(QDialogButtonBox::Ok);
-    m_buttons->button(QDialogButtonBox::Ok)->setText(i18n("Start"));
+    m_buttons->button(QDialogButtonBox::Ok)->setText(i18nc("@action: play presentation", "Start"));
     m_buttons->button(QDialogButtonBox::Ok)->setToolTip(i18nc("@info:tooltip", "Start Presentation"));
     m_buttons->button(QDialogButtonBox::Ok)->setIcon(QIcon::fromTheme(QLatin1String("media-playback-start")));
     m_buttons->button(QDialogButtonBox::Ok)->setDefault(true);
-
-    setModal(true);
 
     // --- Pages settings ---
 
@@ -99,24 +99,26 @@ PresentationDlg::PresentationDlg(QWidget* const parent, PresentationContainer* c
     d->sharedData->mainPage = new PresentationMainPage(this, d->sharedData);
     d->tab->addTab(d->sharedData->mainPage,
                    QIcon::fromTheme(QLatin1String("view-presentation")),
-                   i18n("Main Settings"));
+                   i18nc("@title: main settings for the presentation", "Main Settings"));
 
     d->sharedData->captionPage = new PresentationCaptionPage(this, d->sharedData);
     d->tab->addTab(d->sharedData->captionPage,
                    QIcon::fromTheme(QLatin1String("draw-freehand")),
-                   i18nc("captions for the slideshow", "Caption"));
+                   i18nc("@title: caption settings for the presentation", "Caption"));
 
 #ifdef HAVE_MEDIAPLAYER
+
     d->sharedData->soundtrackPage = new PresentationAudioPage(this, d->sharedData);
     d->tab->addTab(d->sharedData->soundtrackPage,
                    QIcon::fromTheme(QLatin1String("speaker")),
-                   i18n("Soundtrack"));
+                   i18nc("@title: soundtrack settings for the presentation", "Soundtrack"));
+
 #endif
 
     d->sharedData->advancedPage = new PresentationAdvPage(this, d->sharedData);
     d->tab->addTab(d->sharedData->advancedPage,
                    QIcon::fromTheme(QLatin1String("configure")),
-                   i18n("Advanced"));
+                   i18nc("@title: avanced presentation settings", "Advanced"));
 
     QVBoxLayout* const mainLayout = new QVBoxLayout(this);
     mainLayout->addWidget(d->tab);
@@ -141,8 +143,8 @@ PresentationDlg::~PresentationDlg ()
 
 void PresentationDlg::readSettings()
 {
-    KConfig config;
-    KConfigGroup grp = config.group(QLatin1String("Presentation Settings"));
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup grp        = config->group(QLatin1String("Presentation Settings"));
 
     d->sharedData->opengl            = grp.readEntry("OpenGL",                   false);
     d->sharedData->openGlFullScale   = grp.readEntry("OpenGLFullScale",          false);
@@ -160,6 +162,7 @@ void PresentationDlg::readSettings()
     d->sharedData->delayMsLineStep   = 100;
 
     // Comments tab settings
+
     QFont* const savedFont = new QFont();
     savedFont->setFamily(    grp.readEntry("Comments Font Family"));
     savedFont->setPointSize( grp.readEntry("Comments Font Size",        10));
@@ -179,14 +182,18 @@ void PresentationDlg::readSettings()
     d->sharedData->commentsLinesLength = grp.readEntry("Comments Lines Length", 72);
 
 #ifdef HAVE_MEDIAPLAYER
+
     // Soundtrack tab
+
     d->sharedData->soundtrackLoop             = grp.readEntry("Soundtrack Loop",                     false);
     d->sharedData->soundtrackPlay             = grp.readEntry("Soundtrack Auto Play",                false);
     d->sharedData->soundtrackPath             = QUrl::fromLocalFile(grp.readEntry("Soundtrack Path", ""));
     d->sharedData->soundtrackRememberPlaylist = grp.readEntry("Soundtrack Remember Playlist",        false);
+
 #endif
 
     // Advanced tab
+
     d->sharedData->useMilliseconds     = grp.readEntry("Use Milliseconds",      false);
     d->sharedData->enableMouseWheel    = grp.readEntry("Enable Mouse Wheel",    true);
 
@@ -199,9 +206,10 @@ void PresentationDlg::readSettings()
     if (d->sharedData->soundtrackRememberPlaylist)
     {
         QString groupName(QLatin1String("Presentation Settings") + QLatin1String(" Soundtrack "));
-        KConfigGroup soundGrp = config.group(groupName);
+        KConfigGroup soundGrp = config->group(groupName);
 
         // load and check playlist files, if valid, add to tracklist widget
+
         QList<QUrl> playlistFiles = soundGrp.readEntry("Tracks", QList<QUrl>());
 
         foreach (const QUrl& playlistFile, playlistFiles)
@@ -221,22 +229,27 @@ void PresentationDlg::readSettings()
     d->sharedData->advancedPage->readSettings();
 
 #ifdef HAVE_MEDIAPLAYER
+
     d->sharedData->soundtrackPage->readSettings();
+
 #endif
+
 }
 
 void PresentationDlg::saveSettings()
 {
-    KConfig config;
     d->sharedData->mainPage->saveSettings();
     d->sharedData->captionPage->saveSettings();
     d->sharedData->advancedPage->saveSettings();
 
 #ifdef HAVE_MEDIAPLAYER
+
     d->sharedData->soundtrackPage->saveSettings();
+
 #endif
 
-    KConfigGroup grp = config.group(QLatin1String("Presentation Settings"));
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup grp        = config->group(QLatin1String("Presentation Settings"));
     grp.writeEntry("OpenGL",                   d->sharedData->opengl);
     grp.writeEntry("OpenGLFullScale",          d->sharedData->openGlFullScale);
     grp.writeEntry("Delay",                    d->sharedData->delay);
@@ -249,7 +262,8 @@ void PresentationDlg::saveSettings()
     grp.writeEntry("Enable Mouse Wheel",       d->sharedData->enableMouseWheel);
 
     // Comments tab settings
-    QFont* commentsFont = d->sharedData->captionFont;
+
+    QFont* const commentsFont = d->sharedData->captionFont;
     grp.writeEntry("Comments Font Family",     commentsFont->family());
     grp.writeEntry("Comments Font Size",       commentsFont->pointSize());
     grp.writeEntry("Comments Font Bold",       commentsFont->bold());
@@ -267,14 +281,18 @@ void PresentationDlg::saveSettings()
     grp.writeEntry("Effect Name",              d->sharedData->effectName);
 
 #ifdef HAVE_MEDIAPLAYER
+
     // Soundtrack tab
+
     grp.writeEntry("Soundtrack Loop",              d->sharedData->soundtrackLoop);
     grp.writeEntry("Soundtrack Auto Play",         d->sharedData->soundtrackPlay);
     grp.writeEntry("Soundtrack Path",              d->sharedData->soundtrackPath.toLocalFile());
     grp.writeEntry("Soundtrack Remember Playlist", d->sharedData->soundtrackRememberPlaylist);
+
 #endif
 
     // Advanced settings
+
     grp.writeEntry("KB Disable FadeInOut", d->sharedData->kbDisableFadeInOut);
     grp.writeEntry("KB Disable Crossfade", d->sharedData->kbDisableCrossFade);
     grp.writeEntry("Enable Cache",         d->sharedData->enableCache);
@@ -284,14 +302,15 @@ void PresentationDlg::saveSettings()
 
     // only save tracks when option is set and tracklist is NOT empty, to prevent deletion
     // of older track entries
+
     if (d->sharedData->soundtrackRememberPlaylist && d->sharedData->soundtrackPlayListNeedsUpdate)
     {
         QString groupName(QLatin1String("Presentation Settings") + QLatin1String(" Soundtrack "));
-        KConfigGroup soundGrp = config.group(groupName);
+        KConfigGroup soundGrp = config->group(groupName);
         soundGrp.writeEntry("Tracks", d->sharedData->soundtrackUrls);
     }
 
-    config.sync();
+    config->sync();
 }
 
 void PresentationDlg::slotStartClicked()
@@ -299,7 +318,9 @@ void PresentationDlg::slotStartClicked()
     saveSettings();
 
     if (d->sharedData->mainPage->updateUrlList())
+    {
         emit buttonStartClicked();
+    }
 
     return;
 }

@@ -7,7 +7,7 @@
  * Description : Graphics View item for DImg
  *
  * Copyright (C) 2010-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2011-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2011-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -48,7 +48,7 @@ class DIGIKAM_EXPORT GraphicsDImgItem : public QGraphicsObject
 public:
 
     explicit GraphicsDImgItem(QGraphicsItem* const parent = nullptr);
-    virtual ~GraphicsDImgItem();
+    ~GraphicsDImgItem() override;
 
     /**
      * Sets the DImg to be drawn by this item.
@@ -63,8 +63,8 @@ public:
     void sizeHasChanged();
     void clearCache();
 
-    virtual QRectF boundingRect()                               const override;
-    virtual void paint(QPainter* painter,
+    QRectF boundingRect()                               const override;
+    void paint(QPainter* painter,
                        const QStyleOptionGraphicsItem* option,
                        QWidget* widget = nullptr)                     override;
 
@@ -96,6 +96,11 @@ protected:
 protected:
 
     Q_DECLARE_PRIVATE(GraphicsDImgItem)
+
+private:
+
+    // Disable
+    GraphicsDImgItem(QObject*);
 };
 
 } // namespace Digikam

@@ -6,7 +6,7 @@
  * Date        : 2010-02-17
  * Description : Icc profile settings view.
  *
- * Copyright (C) 2010-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2010-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -71,7 +71,7 @@ const QString IccProfilesSettings::Private::configRecentlyUsedProfilesEntry(QLat
 
 IccProfilesSettings::IccProfilesSettings(QWidget* const parent)
     : DVBox(parent),
-      d(new Private)
+      d    (new Private)
 {
     QLabel* const newProfileLabel  = new QLabel(i18n("Convert to:"), this);
     d->profilesBox                 = new IccProfilesComboBox(this);
@@ -154,6 +154,7 @@ void IccProfilesSettings::writeSettings(KConfigGroup& group)
 QStringList IccProfilesSettings::favoriteProfiles(KConfigGroup& group)
 {
     Private d;
+
     return group.readPathEntry(d.configRecentlyUsedProfilesEntry, QStringList());
 }
 

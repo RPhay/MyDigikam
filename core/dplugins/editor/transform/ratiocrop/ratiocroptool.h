@@ -8,7 +8,7 @@
  *
  * Copyright (C) 2007      by Jaromir Malenko <malenko at email dot cz>
  * Copyright (C) 2008      by Roberto Castagnola <roberto dot castagnola at gmail dot com>
- * Copyright (C) 2004-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2004-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -46,26 +46,26 @@ class RatioCropTool : public EditorTool
 public:
 
     explicit RatioCropTool(QObject* const parent);
-    ~RatioCropTool();
+    ~RatioCropTool()                            override;
 
 private:
 
-    void  readSettings();
-    void  writeSettings();
+    void  readSettings()                        override;
+    void  writeSettings()                       override;
 
-    void  finalRendering();
+    void  finalRendering()                      override;
     void  updateCropInfo();
     void  applyRatioChanges(int a);
     void  blockWidgetSignals(bool b);
     void  setRatioCBText(int orientation);
     void  setInputRange(const QRect& rect);
-    void  setBackgroundColor(const QColor& bg);
+    void  setBackgroundColor(const QColor& bg)  override;
     QRect getNormalizedRegion() const;
 
 private Q_SLOTS:
 
     void slotMaxAspectRatio();
-    void slotResetSettings();
+    void slotResetSettings()                    override;
 
     void slotCenterWidth();
     void slotCenterHeight();

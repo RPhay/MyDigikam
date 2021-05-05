@@ -34,8 +34,8 @@
 // KDE includes
 
 #include <klocalizedstring.h>
-#include <kconfig.h>
-#include <kwindowconfig.h>
+#include <ksharedconfig.h>
+#include <kconfiggroup.h>
 
 // Local includes
 
@@ -55,12 +55,12 @@ class Q_DECL_HIDDEN TwWindow::Private
 public:
 
     explicit Private()
+      : imagesCount(0),
+        imagesTotal(0),
+        widget     (nullptr),
+        albumDlg   (nullptr),
+        talker     (nullptr)
     {
-        imagesCount = 0;
-        imagesTotal = 0;
-        widget      = nullptr;
-        albumDlg    = nullptr;
-        talker      = nullptr;
     }
 
     unsigned int   imagesCount;
@@ -78,7 +78,7 @@ public:
 TwWindow::TwWindow(DInfoInterface* const iface,
                    QWidget* const /*parent*/)
     : WSToolDialog(nullptr, QLatin1String("Twitter Export Dialog")),
-      d(new Private)
+      d           (new Private)
 {
     d->widget      = new TwWidget(this, iface, QLatin1String("Twitter"));
 
@@ -101,10 +101,10 @@ TwWindow::TwWindow(DInfoInterface* const iface,
 
     connect(d->widget->getNewAlbmBtn(), SIGNAL(clicked()),
             this, SLOT(slotNewAlbumRequest()));
-
-    //connect(d->widget->getReloadBtn(), SIGNAL(clicked()),
-            //this, SLOT(slotReloadAlbumsRequest()));
-
+/*
+    connect(d->widget->getReloadBtn(), SIGNAL(clicked()),
+            this, SLOT(slotReloadAlbumsRequest()));
+*/
     connect(startButton(), SIGNAL(clicked()),
             this, SLOT(slotStartTransfer()));
 
@@ -160,9 +160,9 @@ TwWindow::~TwWindow()
 
 void TwWindow::readSettings()
 {
-    KConfig config;
-    KConfigGroup grp    = config.group("Twitter Settings");
-    d->currentAlbumName = grp.readEntry("Current Album", QString());
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup grp        = config->group("Twitter Settings");
+    d->currentAlbumName     = grp.readEntry("Current Album", QString());
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "readsettings:" << d->currentAlbumName;
 
     if (grp.readEntry("Resize", false))
@@ -178,28 +178,17 @@ void TwWindow::readSettings()
 
     d->widget->getDimensionSpB()->setValue(grp.readEntry("Maximum Width",  1600));
     d->widget->getImgQualitySpB()->setValue(grp.readEntry("Image Quality", 90));
-
-    KConfigGroup dialogGroup = config.group("Twitter Export Dialog");
-
-    winId();
-    KWindowConfig::restoreWindowSize(windowHandle(), dialogGroup);
-    resize(windowHandle()->size());
 }
 
 void TwWindow::writeSettings()
 {
-    KConfig config;
-    KConfigGroup grp = config.group("Twitter Settings");
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup grp        = config->group("Twitter Settings");
 
     grp.writeEntry("Current Album", d->currentAlbumName);
     grp.writeEntry("Resize",        d->widget->getResizeCheckBox()->isChecked());
     grp.writeEntry("Maximum Width", d->widget->getDimensionSpB()->value());
     grp.writeEntry("Image Quality", d->widget->getImgQualitySpB()->value());
-
-    KConfigGroup dialogGroup = config.group("Twitter Export Dialog");
-    KWindowConfig::saveWindowSize(windowHandle(), dialogGroup);
-
-    config.sync();
 }
 
 void TwWindow::reactivate()
@@ -243,8 +232,7 @@ void TwWindow::slotListAlbumsDone(const QList<QPair<QString,QString> >& list)
 
     for (int i = 0 ; i < list.size() ; ++i)
     {
-        d->widget->getAlbumsCoB()->addItem(
-            QIcon::fromTheme(QLatin1String("system-users")),
+        d->widget->getAlbumsCoB()->addItem(QIcon::fromTheme(QLatin1String("system-users")),
         list.value(i).second, list.value(i).first);
         qCDebug(DIGIKAM_WEBSERVICES_LOG) << "slotListAlbumsDone:" << list.value(i).second << " " << list.value(i).first;
         qCDebug(DIGIKAM_WEBSERVICES_LOG) << "slotListAlbumsDone:" <<d->currentAlbumName;
@@ -273,7 +261,7 @@ void TwWindow::slotStartTransfer()
     if (!(d->talker->authenticated()))
     {
         QPointer<QMessageBox> warn = new QMessageBox(QMessageBox::Warning,
-                         i18n("Warning"),
+                         i18nc("@title: window", "Warning"),
                          i18n("Authentication failed. Click \"Continue\" to authenticate."),
                          QMessageBox::Yes | QMessageBox::No);
 
@@ -311,8 +299,7 @@ void TwWindow::slotStartTransfer()
     d->widget->progressBar()->setValue(0);
     d->widget->progressBar()->show();
     d->widget->progressBar()->progressScheduled(i18n("Twitter export"), true, true);
-    d->widget->progressBar()->progressThumbnailChanged(
-        QIcon::fromTheme(QLatin1String("twitter")).pixmap(22, 22));
+    d->widget->progressBar()->progressThumbnailChanged(QIcon::fromTheme(QLatin1String("twitter")).pixmap(22, 22));
 
     uploadNextPhoto();
 }
@@ -368,6 +355,7 @@ void TwWindow::slotAddPhotoFailed(const QString& msg)
 void TwWindow::slotAddPhotoSucceeded()
 {
     // Remove photo uploaded from the list
+
     d->widget->imagesList()->removeItemByUrl(d->transferQueue.first());
     d->transferQueue.pop_front();
     d->imagesCount++;
@@ -390,7 +378,9 @@ void TwWindow::slotNewAlbumRequest()
         qCDebug(DIGIKAM_WEBSERVICES_LOG) << "slotNewAlbumRequest:" << newAlbum.title;
         d->currentAlbumName = d->widget->getAlbumsCoB()->itemData(d->widget->getAlbumsCoB()->currentIndex()).toString();
         QString temp = d->currentAlbumName + newAlbum.title;
-        //d->talker->createFolder(temp);
+/*
+        d->talker->createFolder(temp);
+*/
     }
 }
 
@@ -416,8 +406,10 @@ void TwWindow::slotSignalLinkingFailed()
 
 void TwWindow::slotSignalLinkingSucceeded()
 {
-    //d->talker->listFolders();
-    emit slotBusy(false);
+/*
+    d->talker->listFolders();
+*/
+    slotBusy(false);
 }
 
 void TwWindow::slotListAlbumsFailed(const QString& msg)
@@ -432,7 +424,9 @@ void TwWindow::slotCreateFolderFailed(const QString& msg)
 
 void TwWindow::slotCreateFolderSucceeded()
 {
-    //d->talker->listFolders();
+/*
+    d->talker->listFolders();
+*/
 }
 
 void TwWindow::slotTransferCancel()

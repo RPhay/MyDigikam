@@ -6,7 +6,7 @@
  * Date        : 2004-12-01
  * Description : image curves manipulation methods.
  *
- * Copyright (C) 2004-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2004-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -87,7 +87,7 @@ public:
     void fillFromOtherCurves(ImageCurves* const otherCurves);
 
 
-    /// Methods for to manipulate the curves data.
+    /// Methods to manipulate the curves data.
 
     void   curvesReset();
     void   curvesChannelReset(int channel);
@@ -97,7 +97,7 @@ public:
     void   curvesLutSetup(int nchannels);
     void   curvesLutProcess(uchar* const srcPR, uchar* const destPR, int w, int h);
 
-    /// Methods for to set manually the curves values.
+    /// Methods to set manually the curves values.
 
     void   setCurveValue(int channel, int bin, int val);
     void   setCurvePointX(int channel, int point, int x);
@@ -126,7 +126,7 @@ public:
     QPolygon getCurvePoints(int channel)                 const;
     QPolygon getCurveValues(int channel)                 const;
 
-    /// Note that bits depth must match
+    /// NOTE: bits depth must match
     void   setContainer(const CurvesContainer& container);
 
     /**
@@ -162,7 +162,7 @@ public:
      */
     bool setChannelFromBinary(int channel, const QByteArray& array);
 
-    /// Methods for to save/load the curves values to/from a Gimp curves text file.
+    /// Methods to save/load the curves values to/from a Gimp curves text file.
 
     bool saveCurvesToGimpCurvesFile(const QUrl& fileUrl) const;
     bool loadCurvesFromGimpCurvesFile(const QUrl& fileUrl);

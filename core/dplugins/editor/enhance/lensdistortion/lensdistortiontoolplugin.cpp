@@ -6,7 +6,7 @@
  * Date        : 2018-07-30
  * Description : image editor plugin to reduce lens distortions
  *
- * Copyright (C) 2018-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2018-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -49,7 +49,7 @@ LensDistortionToolPlugin::~LensDistortionToolPlugin()
 
 QString LensDistortionToolPlugin::name() const
 {
-    return i18n("Lens Distortion");
+    return i18nc("@title", "Lens Distortion");
 }
 
 QString LensDistortionToolPlugin::iid() const
@@ -64,12 +64,12 @@ QIcon LensDistortionToolPlugin::icon() const
 
 QString LensDistortionToolPlugin::description() const
 {
-    return i18n("A tool to adjust lens distortions");
+    return i18nc("@info", "A tool to adjust lens distortions");
 }
 
 QString LensDistortionToolPlugin::details() const
 {
-    return i18n("<p>This Image Editor tool can adjust lens distortions from an image.</p>");
+    return i18nc("@info", "This Image Editor tool can adjust lens distortions from an image.");
 }
 
 QList<DPluginAuthor> LensDistortionToolPlugin::authors() const
@@ -80,7 +80,7 @@ QList<DPluginAuthor> LensDistortionToolPlugin::authors() const
                              QString::fromUtf8("(C) 2006-2010"))
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2004-2020"))
+                             QString::fromUtf8("(C) 2004-2021"))
             ;
 }
 

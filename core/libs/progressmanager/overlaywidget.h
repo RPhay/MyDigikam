@@ -6,7 +6,7 @@
  * Date        : 2012-01-13
  * Description : progress manager
  *
- * Copyright (C) 2007-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2007-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2004      by David Faure <faure at kde dot org>
  *
  * This program is free software; you can redistribute it
@@ -50,7 +50,7 @@ class DIGIKAM_EXPORT OverlayWidget : public DHBox
 public:
 
     explicit OverlayWidget(QWidget* const alignWidget, QWidget* const parent, const QString& name = QString());
-    ~OverlayWidget();
+    ~OverlayWidget() override;
 
     QWidget* alignWidget() const;
     void     setAlignWidget(QWidget* const alignWidget);

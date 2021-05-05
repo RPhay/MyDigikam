@@ -6,7 +6,7 @@
  * Date        : 2009-02-04
  * Description : an unit-test to detect image quality level
  *
- * Copyright (C) 2011-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2011-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -35,6 +35,10 @@ class ImgQSortTest : public QObject
 {
     Q_OBJECT
 
+public:
+
+    explicit ImgQSortTest(QObject* const parent = nullptr);
+
 private:
 
     QDir imageDir() const;
@@ -46,7 +50,6 @@ private Q_SLOTS:
 
     void testParseTestImagesForExposureDetection();
     void testParseTestImagesForNoiseDetection();
-
     void testParseTestImagesForBlurDetection();
     void testParseTestImagesForCompressionDetection();
 };

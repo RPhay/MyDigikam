@@ -135,7 +135,7 @@ void NamespaceListView::slotMoveItemDown()
     QModelIndex index         = sel.first();
     QStandardItem* const root = model->invisibleRootItem();
 
-    if (index.row() == root->rowCount() - 1)
+    if (index.row() == (root->rowCount() - 1))
     {
         return;
     }

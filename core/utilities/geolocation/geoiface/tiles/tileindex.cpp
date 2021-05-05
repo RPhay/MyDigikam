@@ -6,7 +6,7 @@
  * Date        : 2009-12-01
  * Description : Tile index used in the tiling classes
  *
- * Copyright (C) 2010-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2010-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2009-2011 by Michael G. Hansen <mike at mghansen dot de>
  *
  * This program is free software; you can redistribute it
@@ -292,7 +292,6 @@ GeoCoordinates TileIndex::toCoordinates() const
 
     return GeoCoordinates(tileLatBL, tileLonBL);
 }
-
 
 GeoCoordinates TileIndex::toCoordinates(const CornerPosition ofCorner) const
 {

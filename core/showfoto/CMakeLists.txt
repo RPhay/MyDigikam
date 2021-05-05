@@ -1,58 +1,59 @@
 #
-# Copyright (c) 2010-2020 by Gilles Caulier, <caulier dot gilles at gmail dot com>
+# Copyright (c) 2010-2021 by Gilles Caulier, <caulier dot gilles at gmail dot com>
 # Copyright (c) 2015      by Veaceslav Munteanu, <veaceslav dot munteanu90 at gmail dot com>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
 
+APPLY_COMMON_POLICIES()
+
 # We need to include the setup dir for showfoto BEFORE the other include dirs,
 # otherwise the one from the "utilities" dir will be used
 include_directories(BEFORE
+                    $<TARGET_PROPERTY:Qt5::Network,INTERFACE_INCLUDE_DIRECTORIES>
+
                     ${CMAKE_CURRENT_SOURCE_DIR}/thumbbar
                     ${CMAKE_CURRENT_SOURCE_DIR}/setup
                     ${CMAKE_CURRENT_SOURCE_DIR}/main
 )
 
 set(showfoto_SRCS
-    setup/showfotosetuptooltip.cpp
-    setup/showfotosetupmisc.cpp
-    setup/showfotosetupmetadata.cpp
-    setup/showfotosetupraw.cpp
-    setup/showfotosetupplugins.cpp
-    setup/showfotosetup.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/setup/showfotosetuptooltip.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/setup/showfotosetupmisc.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/setup/showfotosetupmetadata.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/setup/showfotosetupraw.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/setup/showfotosetupplugins.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/setup/showfotosetup.cpp
 
-    thumbbar/showfotoiteminfo.cpp
-    thumbbar/showfotoimagemodel.cpp
-    thumbbar/showfotothumbnailmodel.cpp
-    thumbbar/showfotofiltermodel.cpp
-    thumbbar/showfotodragdrophandler.cpp
-    thumbbar/showfotokineticscroller.cpp
-    thumbbar/showfotoitemsortsettings.cpp
-    thumbbar/showfotocoordinatesoverlay.cpp
-    thumbbar/itemviewshowfotodelegate.cpp
-    thumbbar/showfotodelegate.cpp
-    thumbbar/showfototooltipfiller.cpp
-    thumbbar/showfotocategorizedview.cpp
-    thumbbar/showfotothumbnailbar.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/thumbbar/showfotoiteminfo.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/thumbbar/showfotoimagemodel.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/thumbbar/showfotothumbnailmodel.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/thumbbar/showfotofiltermodel.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/thumbbar/showfotodragdrophandler.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/thumbbar/showfotokineticscroller.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/thumbbar/showfotoitemsortsettings.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/thumbbar/showfotocoordinatesoverlay.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/thumbbar/itemviewshowfotodelegate.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/thumbbar/showfotodelegate.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/thumbbar/showfototooltipfiller.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/thumbbar/showfotocategorizedview.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/thumbbar/showfotothumbnailbar.cpp
 
-    main/showfotosettings.cpp
-    main/main.cpp
-    main/showfoto.cpp
-    main/showfoto_tools.cpp
-    main/showfoto_setup.cpp
-    main/showfoto_config.cpp
-    main/showfoto_import.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/main/showfotosettings.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/main/main.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/main/showfoto.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/main/showfoto_setup.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/main/showfoto_config.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/main/showfoto_import.cpp
 )
 
 file(GLOB ICONS_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/../data/icons/apps/*-apps-showfoto.png")
 ecm_add_app_icon(showfoto_SRCS ICONS ${ICONS_SRCS})
 
-add_executable(showfoto ${showfoto_SRCS}
-                        $<TARGET_OBJECTS:setupshowfoto_src>
-                        $<TARGET_OBJECTS:notificationmanager_src>
-)
+add_executable(showfoto ${showfoto_SRCS})
 
 add_dependencies(showfoto digikam-gitversion)
+add_dependencies(showfoto digikam-builddate)
 
 # To fill plist XML file for OSX #####################################################
 
@@ -65,47 +66,78 @@ configure_file(${CMAKE_CURRENT_SOURCE_DIR}/../cmake/templates/Info.plist.cmake.i
 set_target_properties(showfoto PROPERTIES MACOSX_BUNDLE_INFO_PLIST ${CMAKE_CURRENT_BINARY_DIR}/Info.plist)
 
 target_link_libraries(showfoto
-                      PRIVATE
-                      digikamcore
+
+                      PUBLIC
 
                       Qt5::Core
                       Qt5::Gui
                       Qt5::Xml
-                      Qt5::XmlPatterns
                       Qt5::Widgets
 
                       KF5::XmlGui
                       KF5::I18n
                       KF5::ConfigCore
                       KF5::Service
+
+                      digikamcore
 )
 
 if(KF5Notifications_FOUND)
-    target_link_libraries(showfoto PUBLIC KF5::Notifications)
+
+    target_link_libraries(showfoto
+                          PUBLIC
+                          KF5::Notifications
+    )
+
 endif()
 
 if(KF5NotifyConfig_FOUND)
-    target_link_libraries(showfoto PUBLIC KF5::NotifyConfig)
+
+    target_link_libraries(showfoto
+                          PUBLIC
+                          KF5::NotifyConfig
+    )
+
 endif()
 
 if(ImageMagick_Magick++_FOUND)
-    target_link_libraries(showfoto PUBLIC ${ImageMagick_LIBRARIES})
+
+    target_link_libraries(showfoto
+                          PUBLIC
+                          ${ImageMagick_LIBRARIES}
+    )
+
 endif()
 
 if(NOT WIN32)
+
     # To link under Solaris (see bug #274484)
-    target_link_libraries(showfoto PUBLIC ${MATH_LIBRARY})
+    target_link_libraries(showfoto
+                          PUBLIC
+                          ${MATH_LIBRARY}
+    )
+
 endif()
 
 if(CMAKE_SYSTEM_NAME STREQUAL FreeBSD)
-    target_link_libraries(showfoto PUBLIC ${KVM_LIBRARY})
+
+    target_link_libraries(showfoto
+                          PUBLIC
+                          ${KVM_LIBRARY}
+    )
+
 endif()
 
 if(APPLE)
-    target_link_libraries(showfoto PUBLIC /System/Library/Frameworks/AppKit.framework)
+
+    target_link_libraries(showfoto
+                          PUBLIC
+                          /System/Library/Frameworks/AppKit.framework
+    )
+
 endif()
 
-install(TARGETS  showfoto                          ${INSTALL_TARGETS_DEFAULT_ARGS})
-install(PROGRAMS main/org.kde.showfoto.desktop     DESTINATION ${XDG_APPS_INSTALL_DIR})
-install(FILES    main/org.kde.showfoto.appdata.xml DESTINATION ${KDE_INSTALL_METAINFODIR})
-install(FILES    main/showfotoui5.rc               DESTINATION ${KXMLGUI_INSTALL_DIR}/showfoto)
+install(TARGETS  showfoto                                                      ${INSTALL_TARGETS_DEFAULT_ARGS})
+install(PROGRAMS ${CMAKE_CURRENT_SOURCE_DIR}/main/org.kde.showfoto.desktop     DESTINATION ${XDG_APPS_INSTALL_DIR})
+install(FILES    ${CMAKE_CURRENT_SOURCE_DIR}/main/org.kde.showfoto.appdata.xml DESTINATION ${KDE_INSTALL_METAINFODIR})
+install(FILES    ${CMAKE_CURRENT_SOURCE_DIR}/main/showfotoui5.rc               DESTINATION ${KXMLGUI_INSTALL_DIR}/showfoto)

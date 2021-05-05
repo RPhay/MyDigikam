@@ -6,7 +6,7 @@
  * Date        : 2006-21-12
  * Description : a embedded view to show item preview widget.
  *
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2009-2012 by Andi Clemens <andi dot clemens at gmail dot com>
  * Copyright (C) 2010-2011 by Aditya Bhatt <adityabhatt1991 at gmail dot com>
  *
@@ -206,7 +206,7 @@ ItemPreviewView::ItemPreviewView(QWidget* const parent, Mode mode, Album* const 
             d->faceGroup, SLOT(rejectAll()));
 
     connect(d->fullscreenAction, SIGNAL(triggered()),
-            this, SIGNAL(signalSlideShowCurrent()));
+            this, SLOT(slotSlideShowCurrent()));
 
     // ------------------------------------------------------------
 
@@ -416,6 +416,23 @@ void ItemPreviewView::slotShowContextMenu(QGraphicsSceneContextMenuEvent* event)
             this, SIGNAL(signalGotoDateAndItem(ItemInfo)));
 
     cmHelper.exec(event->screenPos());
+}
+
+void ItemPreviewView::slotSlideShowCurrent()
+{
+    QList<DPluginAction*> actions = DPluginLoader::instance()->
+                                        pluginActions(QLatin1String("org.kde.digikam.plugin.generic.SlideShow"),
+                                        DigikamApp::instance());
+
+    if (actions.isEmpty())
+    {
+        return;
+    }
+
+    //Trigger SlideShow manual
+    actions[0]->setData(getItemInfo().fileUrl());
+
+    actions[0]->trigger();
 }
 
 void ItemPreviewView::slotAssignTag(int tagID)

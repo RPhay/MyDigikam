@@ -7,7 +7,7 @@
  * Description : Filter values for use with ItemFilterModel
  *
  * Copyright (C) 2009-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2011-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2011-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C)      2010 by Andi Clemens <andi dot clemens at gmail dot com>
  * Copyright (C)      2011 by Michael G. Hansen <mike at mghansen dot de>
  * Copyright (C)      2014 by Mohamed_Anwer <m_dot_anwer at gmx dot com>
@@ -241,7 +241,7 @@ private:
     bool                              m_isUnratedExcluded;
 
     /// --- Date filter ---
-    QMap<QDateTime, bool>             m_dayFilter;
+    QHash<QDateTime, bool>            m_dayFilter;
 
     /// --- Text filter ---
     SearchTextFilterSettings          m_textFilterSettings;

@@ -7,7 +7,7 @@
  * Description : Wavelets Noise Reduction threaded image filter.
  *               This filter work in YCrCb color space.
  *
- * Copyright (C) 2005-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2005-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2008      by Marco Rossini <marco dot rossini at gmx dot net>
  * Copyright (C) 2010      by Martin Klapetek <martin dot klapetek at gmail dot com>
  *
@@ -101,14 +101,14 @@ public:
 
 NRFilter::NRFilter(QObject* const parent)
     : DImgThreadedFilter(parent),
-      d(new Private)
+      d                 (new Private)
 {
     initFilter();
 }
 
 NRFilter::NRFilter(DImg* const orgImage, QObject* const parent, const NRContainer& settings)
     : DImgThreadedFilter(orgImage, parent, QLatin1String("NRFilter")),
-      d(new Private)
+      d                 (new Private)
 {
     d->settings = settings;
 

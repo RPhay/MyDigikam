@@ -28,6 +28,8 @@
 #include <QDir>
 #include <QIcon>
 #include <QLocale>
+#include <QPainter>
+#include <QApplication>
 
 // KDE includes
 
@@ -111,6 +113,7 @@ TagModel::TagModel(RootAlbumBehavior rootBehavior, QObject* const parent)
                                   rootBehavior, parent)
 {
     m_columnHeader = i18n("Tags");
+    m_faceTagModel = false;
     setupThumbnailLoading();
 
     setTagCount(NormalTagCount);
@@ -128,13 +131,13 @@ TAlbum* TagModel::albumForIndex(const QModelIndex& index) const
 
 QVariant TagModel::albumData(Album* a, int role) const
 {
-    if ((role == Qt::DisplayRole)                 &&
-        !a->isRoot()                              &&
-        m_unconfirmedFaceCount.contains(a->id())  &&
+    if ((role == Qt::DisplayRole)                    &&
+        !a->isRoot()                                 &&
+        m_unconfirmedFaceCount.contains(a->id())     &&
         (a->id() != FaceTags::unknownPersonTagId()))
     {
         QString res = AbstractCheckableAlbumModel::albumData(a, role).toString() +
-                QString::fromUtf8(" (%1 new)").arg(m_unconfirmedFaceCount.find(a->id()).value());
+                      i18ncp("@info: unconfirmed faces in album", " (%1 new)", " (%1 new)", m_unconfirmedFaceCount.value(a->id()));
 
         return res;
     }
@@ -144,10 +147,52 @@ QVariant TagModel::albumData(Album* a, int role) const
 
 QVariant TagModel::decorationRoleData(Album* album) const
 {
-    QPixmap pix = AlbumThumbnailLoader::instance()->getTagThumbnailDirectly(static_cast<TAlbum*>(album));
-    prepareAddExcludeDecoration(album, pix);
+    TAlbum* const tagAlbum = static_cast<TAlbum*>(album);
 
-    return pix;
+    if (m_faceTagModel || tagAlbum->hasProperty(TagPropertyName::person()))
+    {
+        QPixmap face = AlbumThumbnailLoader::instance()->getFaceThumbnailDirectly(tagAlbum);
+        int size     = m_faceTagModel ? ApplicationSettings::instance()->getTreeViewFaceSize()
+                                      : ApplicationSettings::instance()->getTreeViewIconSize();
+
+        double ratio = face.devicePixelRatio();
+        int rsize    = qRound((double)size * ratio);
+        face         = face.scaled(rsize, rsize, Qt::KeepAspectRatio,
+                                                 Qt::SmoothTransformation);
+
+        QPixmap pix(rsize, rsize);
+        pix.fill(Qt::transparent);
+        pix.setDevicePixelRatio(ratio);
+
+        QPainter p(&pix);
+        p.drawPixmap((rsize - face.width())  / 2,
+                     (rsize - face.height()) / 2, face);
+        p.end();
+
+        prepareAddExcludeDecoration(album, pix);
+
+        return pix;
+    }
+    else
+    {
+        QPixmap pix = AlbumThumbnailLoader::instance()->getTagThumbnailDirectly(tagAlbum);
+        prepareAddExcludeDecoration(album, pix);
+
+        return pix;
+    }
+}
+
+QVariant TagModel::fontRoleData(Album* a) const
+{
+    if (m_unconfirmedFaceCount.contains(a->id())  &&
+        (a->id() != FaceTags::unknownPersonTagId()))
+    {
+        QFont font;
+        font.setBold(true);
+        return font;
+    }
+
+    return QVariant();
 }
 
 Album* TagModel::albumForId(int id) const
@@ -170,14 +215,50 @@ void TagModel::setTagCount(TagCountMode mode)
     else
     {
         connect(AlbumManager::instance(), &AlbumManager::signalFaceCountsDirty,
-                [=](const QMap<int, int> &faceCount, const QMap<int, int>& unconfirmedFaceCount)
-        {
-            setCountMap(faceCount);
-            m_unconfirmedFaceCount = unconfirmedFaceCount;
-        });
+                this, [=](const QMap<int, int>& faceCount,
+                          const QMap<int, int>& uFaceCount,
+                          const QList<int>& toUpdatedFaces)
+            {
+                setCountMap(faceCount);
+                m_unconfirmedFaceCount = uFaceCount;
+
+                foreach (int id, toUpdatedFaces)
+                {
+                    Album* const album = albumForId(id);
+
+                    if (!album)
+                    {
+                        continue;
+                    }
+
+                    QModelIndex index = indexForAlbum(album);
+
+                    if (!index.isValid())
+                    {
+                        continue;
+                    }
+
+                    emit dataChanged(index, index);
+                }
+            }
+        );
+
+        m_faceTagModel = true;
 
         setCountMap(AlbumManager::instance()->getFaceCount());
     }
+}
+
+bool TagModel::setData(const QModelIndex& index, const QVariant& value, int role)
+{
+    TAlbum* const talbum = albumForIndex(index);
+
+    if (talbum && talbum->isInternalTag())
+    {
+        return false;
+    }
+
+    return AbstractCheckableAlbumModel::setData(index, value, role);
 }
 
 // ------------------------------------------------------------------
@@ -429,16 +510,19 @@ void DateAlbumModel::setYearMonthMap(const QMap<YearMonth, int>& yearMonthMap)
             }
 
             case DAlbum::Year:
-
+            {
                 // a year itself cannot contain images and therefore always has count 0
 
                 albumToCountMap.insert((*it)->id(), 0);
                 break;
+            }
 
             default:
+            {
                 qCDebug(DIGIKAM_GENERAL_LOG) << "Untreated DAlbum range " << dalbum->range();
                 albumToCountMap.insert((*it)->id(), 0);
                 break;
+            }
         }
 
         ++it;

@@ -1,6 +1,52 @@
-doc/digikam
-*.kate-swp
+
+# Ignore unit-test files
 tests/databases/*/*.db
+core/tests/facesengine/data/
+
+# Ignore packaging dirs
+doc/digikam
+/po/
+
+# Ignore local swap
+*.kate-swp
+*.swp
+
+# Ignore local config
+.vscode
+.kateconfig
+*.autosave
+*.config
+*.creator
+*.creator.user
+*.files
+*.includes
+.kdev_include_paths
 *.kde4
 *.kdev4
+.idea
+
+# Ignore local cache
+__pycache__
+.DS_Store
+.directory
+.gdb_history
+*.egg-info
+
+# Ignore build files
+build
+qtcreator-build
+build_dir
+.flatpak-builder
+compile_commands.json
+
+# Ignore temporary files
+*.orig
+*.rej
+*.trace
+CMakeLists.txt.user*
 *~
+GTAGS
+GPATH
+GRTAGS
+GSYMS
+BROWSE

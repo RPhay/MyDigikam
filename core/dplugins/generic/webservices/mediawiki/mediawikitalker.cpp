@@ -7,7 +7,7 @@
  * Description : a tool to export images to MediaWiki web service
  *
  * Copyright (C) 2011      by Alexandre Mendes <alex dot mendes1988 at gmail dot com>
- * Copyright (C) 2011-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2011-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2012      by Nathan Damie <nathan dot damie at gmail dot com>
  * Copyright (C) 2012      by Iliya Ivanov <ilko2002 at abv dot bg>
  * Copyright (C) 2012      by Peter Potrowl <peter dot potrowl at gmail dot com>
@@ -72,7 +72,7 @@ MediaWikiTalker::MediaWikiTalker(DInfoInterface* const iface,
                                  Iface* const MediaWiki,
                                  QObject* const parent)
     : KJob(parent),
-      d(new Private)
+      d   (new Private)
 {
     d->interface = iface;
     d->MediaWiki = MediaWiki;

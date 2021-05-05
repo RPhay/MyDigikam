@@ -32,7 +32,6 @@
 // Local includes
 
 #include "wstooldialog.h"
-#include "digikam_export.h"
 #include "dinfointerface.h"
 
 class QCloseEvent;
@@ -43,14 +42,14 @@ using namespace Digikam;
 namespace DigikamGenericPinterestPlugin
 {
 
-class DIGIKAM_EXPORT PWindow : public WSToolDialog
+class PWindow : public WSToolDialog
 {
     Q_OBJECT
 
 public:
 
     explicit PWindow(DInfoInterface* const iface, QWidget* const parent);
-    ~PWindow();
+    ~PWindow() override;
 
     void reactivate();
 

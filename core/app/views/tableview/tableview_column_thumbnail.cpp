@@ -6,7 +6,8 @@
  * Date        : 2013-02-25
  * Description : Table view column helpers: Thumbnail column
  *
- * Copyright (C) 2013 by Michael G. Hansen <mike at mghansen dot de>
+ * Copyright (C) 2017-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2013      by Michael G. Hansen <mike at mghansen dot de>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -101,6 +102,7 @@ QVariant ColumnThumbnail::data(TableViewModel::Item* const item, const int role)
     Q_UNUSED(role)
 
     // we do not return any data, but paint(...) something
+
     return QVariant();
 }
 
@@ -120,6 +122,7 @@ bool ColumnThumbnail::paint(QPainter* const painter, const QStyleOptionViewItem&
         int maxSize         = m_thumbnailSize;
 
         // When the image is rotated, swap width and height.
+
         if (info.orientation() > MetaEngine::ORIENTATION_VFLIP)
         {
             imageSize.transpose();
@@ -128,6 +131,7 @@ bool ColumnThumbnail::paint(QPainter* const painter, const QStyleOptionViewItem&
         if (imageSize.isValid() && (imageSize.width() > imageSize.height()))
         {
             // for landscape pictures, try to use all available horizontal space
+
             qreal scaleFactor = qreal(availableSize.height()) / qreal(imageSize.height());
             maxSize           = imageSize.width() * scaleFactor;
         }
@@ -136,9 +140,11 @@ bool ColumnThumbnail::paint(QPainter* const painter, const QStyleOptionViewItem&
         // The idea here is that for landscape images, we adjust the height to
         // to be as high as the row height as long as the width can stretch enough
         // because the column is wider than the thumbnail size.
+
         maxSize       = qMin(maxSize, availableSize.width());
 
         // However, digiKam limits the thumbnail size, so we also do that here
+
         maxSize       = qMin(maxSize, (int)ThumbnailSize::maxThumbsSize());
         double ratio  = qApp->devicePixelRatio();
         maxSize       = qRound((double)maxSize * ratio);
@@ -148,14 +154,16 @@ bool ColumnThumbnail::paint(QPainter* const painter, const QStyleOptionViewItem&
         if (s->thumbnailLoadThread->find(info.thumbnailIdentifier(), thumbnail, maxSize))
         {
             thumbnail.setDevicePixelRatio(ratio);
+
             /// @todo Is slotThumbnailLoaded still called when the thumbnail is found right away?
+
             QSize pixmapSize = (QSizeF(thumbnail.size()) / ratio).toSize();
             pixmapSize       = pixmapSize.boundedTo(availableSize);
             QSize alignSize  = option.rect.size();
 
             QPoint startPoint((alignSize.width()  - pixmapSize.width())  / 2,
                               (alignSize.height() - pixmapSize.height()) / 2);
-            startPoint            += option.rect.topLeft();
+            startPoint      += option.rect.topLeft();
 
             painter->drawPixmap(QRect(startPoint, pixmapSize), thumbnail,
                                 QRect(QPoint(0, 0), thumbnail.size()));
@@ -165,6 +173,7 @@ bool ColumnThumbnail::paint(QPainter* const painter, const QStyleOptionViewItem&
     }
 
     // we did not get to paint a thumbnail...
+
     return false;
 }
 
@@ -174,7 +183,9 @@ QSize ColumnThumbnail::sizeHint(const QStyleOptionViewItem& option, TableViewMod
     Q_UNUSED(item)
 
     /// @todo On portrait pictures, the borders are too close. There should be a gap. Is this setting okay?
+
     const int thumbnailSizeWithBorder = m_thumbnailSize+ThumbnailBorder;
+
     return QSize(thumbnailSizeWithBorder, thumbnailSizeWithBorder);
 }
 
@@ -186,6 +197,7 @@ void ColumnThumbnail::slotThumbnailLoaded(const LoadingDescription& loadingDescr
     }
 
     /// @todo Find a way to do this without the ItemFilterModel
+
     const QModelIndex imageModelIndex = s->imageModel->indexForPath(loadingDescription.filePath);
 
     if (!imageModelIndex.isValid())

@@ -6,7 +6,7 @@
  * Date        : 2005-17-07
  * Description : A Gaussian Blur threaded image filter.
  *
- * Copyright (C) 2005-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2005-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2009      by Andi Clemens <andi dot clemens at gmail dot com>
  * Copyright (C) 2010      by Martin Klapetek <martin dot klapetek at gmail dot com>
  *
@@ -47,7 +47,7 @@ class Q_DECL_HIDDEN BlurFilter::Private
 public:
 
     explicit Private()
-      : radius(3),
+      : radius        (3),
         globalProgress(0)
     {
     }
@@ -74,9 +74,16 @@ BlurFilter::BlurFilter(DImg* const orgImage, QObject* const parent, int radius)
 }
 
 BlurFilter::BlurFilter(DImgThreadedFilter* const parentFilter,
-                       const DImg& orgImage, const DImg& destImage,
-                       int progressBegin, int progressEnd, int radius)
-    : DImgThreadedFilter(parentFilter, orgImage, destImage, progressBegin, progressEnd,
+                       const DImg& orgImage,
+                       const DImg& destImage,
+                       int progressBegin,
+                       int progressEnd,
+                       int radius)
+    : DImgThreadedFilter(parentFilter,
+                         orgImage,
+                         destImage,
+                         progressBegin,
+                         progressEnd,
                          parentFilter->filterName() + QLatin1String(": GaussianBlur")),
       d(new Private)
 {
@@ -267,7 +274,9 @@ void BlurFilter::filterImage()
     }
 
     foreach (QFuture<void> t, tasks)
+    {
         t.waitForFinished();
+    }
 }
 
 FilterAction BlurFilter::filterAction()

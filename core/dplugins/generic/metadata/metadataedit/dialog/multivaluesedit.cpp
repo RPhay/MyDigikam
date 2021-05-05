@@ -6,7 +6,7 @@
  * Date        : 2007-10-08
  * Description : a widget to edit a tag with multiple fixed values.
  *
- * Copyright (C) 2007-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2007-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -50,13 +50,13 @@ class Q_DECL_HIDDEN MultiValuesEdit::Private
 public:
 
     explicit Private()
+      : addValueButton(nullptr),
+        delValueButton(nullptr),
+        repValueButton(nullptr),
+        valueBox      (nullptr),
+        valueCheck    (nullptr),
+        dataList      (nullptr)
     {
-        addValueButton = nullptr;
-        delValueButton = nullptr;
-        repValueButton = nullptr;
-        valueBox       = nullptr;
-        valueCheck     = nullptr;
-        dataList       = nullptr;
     }
 
     QStringList       oldValues;
@@ -74,7 +74,7 @@ public:
 
 MultiValuesEdit::MultiValuesEdit(QWidget* const parent, const QString& title, const QString& desc)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     QGridLayout* const grid = new QGridLayout(this);
 
@@ -171,7 +171,11 @@ MultiValuesEdit::~MultiValuesEdit()
 void MultiValuesEdit::slotDeleteValue()
 {
     QListWidgetItem* const item = d->valueBox->currentItem();
-    if (!item) return;
+
+    if (!item)
+    {
+        return;
+    }
 
     d->valueBox->takeItem(d->valueBox->row(item));
     delete item;
@@ -180,10 +184,16 @@ void MultiValuesEdit::slotDeleteValue()
 void MultiValuesEdit::slotReplaceValue()
 {
     QString newValue = d->dataList->itemHighlighted();
-    if (newValue.isEmpty()) return;
+
+    if (newValue.isEmpty())
+    {
+        return;
+    }
 
     if (!d->valueBox->selectedItems().isEmpty())
+    {
         d->valueBox->selectedItems()[0]->setText(newValue);
+    }
 }
 
 void MultiValuesEdit::slotSelectionChanged()
@@ -204,11 +214,15 @@ void MultiValuesEdit::slotSelectionChanged()
 void MultiValuesEdit::slotAddValue()
 {
     QString newValue = d->dataList->itemHighlighted();
-    if (newValue.isEmpty()) return;
+
+    if (newValue.isEmpty())
+    {
+        return;
+    }
 
     bool found = false;
 
-    for (int i = 0 ; i < d->valueBox->count(); ++i)
+    for (int i = 0 ; i < d->valueBox->count() ; ++i)
     {
         QListWidgetItem* const item = d->valueBox->item(i);
 
@@ -220,22 +234,26 @@ void MultiValuesEdit::slotAddValue()
     }
 
     if (!found)
+    {
         d->valueBox->insertItem(d->valueBox->count(), newValue);
+    }
 }
 
 void MultiValuesEdit::setData(const QStringList& data)
 {
     d->dataList->clear();
 
-    for (QStringList::const_iterator it = data.constBegin(); it != data.constEnd(); ++it )
+    for (QStringList::const_iterator it = data.constBegin() ; it != data.constEnd() ; ++it )
+    {
         d->dataList->addSqueezedItem(*it);
+    }
 }
 
 QStringList MultiValuesEdit::getData() const
 {
     QStringList data;
 
-    for (int i = 0 ; i < d->dataList->count(); ++i)
+    for (int i = 0 ; i < d->dataList->count() ; ++i)
     {
         data.append(d->dataList->item(i));
     }
@@ -270,7 +288,7 @@ bool MultiValuesEdit::getValues(QStringList& oldValues, QStringList& newValues)
     oldValues = d->oldValues;
     newValues.clear();
 
-    for (int i = 0 ; i < d->valueBox->count(); ++i)
+    for (int i = 0 ; i < d->valueBox->count() ; ++i)
     {
         QListWidgetItem* const item = d->valueBox->item(i);
         newValues.append(item->text());

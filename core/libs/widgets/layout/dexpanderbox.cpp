@@ -7,7 +7,7 @@
  * Description : A widget to host settings as expander box
  *
  * Copyright (C) 2008-2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2008-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2008-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C)      2010 by Manuel Viet <contact at 13zenrv dot fr>
  * Copyright (C) 2001      by Frerich Raabe <raabe at kde dot org>
  *
@@ -82,8 +82,8 @@ class Q_DECL_HIDDEN DAdjustableLabel::Private
 public:
 
     explicit Private()
+      : emode(Qt::ElideMiddle)
     {
-        emode = Qt::ElideMiddle;
     }
 
     QString           ajdText;
@@ -92,7 +92,7 @@ public:
 
 DAdjustableLabel::DAdjustableLabel(QWidget* const parent)
     : QLabel(parent),
-      d(new Private)
+      d     (new Private)
 {
     setSizePolicy(QSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed));
 }
@@ -130,9 +130,13 @@ QSize DAdjustableLabel::sizeHint() const
     int maxW     = screen->geometry().width() * 3 / 4;
 
 #if (QT_VERSION >= QT_VERSION_CHECK(5, 11, 0))
+
     int currentW = fm.horizontalAdvance(d->ajdText);
+
 #else
+
     int currentW = fm.width(d->ajdText);
+
 #endif
 
     return (QSize(currentW > maxW ? maxW : currentW, QLabel::sizeHint().height()));
@@ -177,10 +181,15 @@ void DAdjustableLabel::adjustTextToLabel()
 
     foreach (const QString& line, d->ajdText.split(QLatin1Char('\n')))
     {
+
 #if (QT_VERSION >= QT_VERSION_CHECK(5, 11, 0))
+
         int lineW = fm.horizontalAdvance(line);
+
 #else
+
         int lineW = fm.width(line);
+
 #endif
 
         if (lineW > lblW)
@@ -400,7 +409,8 @@ void DArrowClickLabel::paintEvent(QPaintEvent*)
         return; // don't draw arrows if we are too small
     }
 
-    unsigned int x = 0, y = 0;
+    unsigned int x = 0;
+    unsigned int y = 0;
 
     if      (m_arrowType == Qt::DownArrow)
     {
@@ -474,15 +484,15 @@ class Q_DECL_HIDDEN DLabelExpander::Private
 public:
 
     explicit Private()
-      : expandByDefault(true),
-        checkBox(nullptr),
-        pixmapLabel(nullptr),
-        containerWidget(nullptr),
-        grid(nullptr),
-        line(nullptr),
-        hbox(nullptr),
-        arrow(nullptr),
-        clickLabel(nullptr)
+      : expandByDefault (true),
+        checkBox        (nullptr),
+        pixmapLabel     (nullptr),
+        containerWidget (nullptr),
+        grid            (nullptr),
+        line            (nullptr),
+        hbox            (nullptr),
+        arrow           (nullptr),
+        clickLabel      (nullptr)
     {
     }
 
@@ -502,7 +512,7 @@ public:
 
 DLabelExpander::DLabelExpander(QWidget* const parent)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     const int spacing = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
 
@@ -673,6 +683,7 @@ bool DLabelExpander::eventFilter(QObject* obj, QEvent* ev)
     else
     {
         // pass the event on to the parent class
+
         return QWidget::eventFilter(obj, ev);
     }
 }
@@ -684,7 +695,7 @@ class Q_DECL_HIDDEN DExpanderBox::Private
 public:
 
     explicit Private(DExpanderBox* const box)
-      : vbox(nullptr),
+      : vbox  (nullptr),
         parent(box)
     {
     }
@@ -729,7 +740,7 @@ public:
 
 DExpanderBox::DExpanderBox(QWidget* const parent)
     : QScrollArea(parent),
-      d(new Private(this))
+      d          (new Private(this))
 {
     setFrameStyle(QFrame::NoFrame);
     setWidgetResizable(true);
@@ -1062,6 +1073,7 @@ void DExpanderBoxExclusive::slotItemExpanded(bool b)
             item++;
         }
     }
+
     emit signalItemExpanded(indexOf(exp), b);
 }
 

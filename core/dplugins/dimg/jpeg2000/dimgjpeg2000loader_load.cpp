@@ -6,7 +6,7 @@
  * Date        : 2006-06-14
  * Description : A JPEG-2000 IO file for DImg framework- load operations
  *
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -28,12 +28,13 @@
 #include <QFile>
 #include <QByteArray>
 #include <QTextStream>
+#include <QScopedPointer>
 
 // Local includes
 
-#include "digikam_config.h"
 #include "dimg.h"
 #include "digikam_debug.h"
+#include "digikam_config.h"
 #include "dimgloaderobserver.h"
 #include "dmetadata.h"
 
@@ -66,10 +67,19 @@ bool DImgJPEG2000Loader::load(const QString& filePath, DImgLoaderObserver* const
 {
     readMetadata(filePath);
 
-    FILE* const file = fopen(QFile::encodeName(filePath).constData(), "rb");
+#ifdef Q_OS_WIN
+
+    FILE* const file = _wfopen((const wchar_t*)filePath.utf16(), L"rb");
+
+#else
+
+    FILE* const file = fopen(filePath.toUtf8().constData(), "rb");
+
+#endif
 
     if (!file)
     {
+        qCWarning(DIGIKAM_DIMG_LOG_JP2K) << "Unable to open JPEG2000 file";
         loadingFailed();
 
         return false;
@@ -79,13 +89,13 @@ bool DImgJPEG2000Loader::load(const QString& filePath, DImgLoaderObserver* const
 
     if (fread(&header, 9, 1, file) != 1)
     {
-        fclose(file);
         loadingFailed();
+        fclose(file);
 
         return false;
     }
 
-    fclose(file);
+    rewind(file);
 
     unsigned char jp2ID[5] = { 0x6A, 0x50, 0x20, 0x20, 0x0D, };
     unsigned char jpcID[2] = { 0xFF, 0x4F };
@@ -96,6 +106,7 @@ bool DImgJPEG2000Loader::load(const QString& filePath, DImgLoaderObserver* const
         // not a jpeg2000 file
 
         loadingFailed();
+        fclose(file);
 
         return false;
     }
@@ -108,8 +119,10 @@ bool DImgJPEG2000Loader::load(const QString& filePath, DImgLoaderObserver* const
         // This is bad when scanning. See bugs 215458 and 195583.
         // FIXME: Use Exiv2 to extract this info
 
-        DMetadata metadata(filePath);
-        QSize size = metadata.getItemDimensions();
+        fclose(file);
+
+        QScopedPointer<DMetadata> metadata(new DMetadata(filePath));
+        QSize size = metadata->getItemDimensions();
 
         if (size.isValid())
         {
@@ -138,16 +151,18 @@ bool DImgJPEG2000Loader::load(const QString& filePath, DImgLoaderObserver* const
     {
         qCWarning(DIGIKAM_DIMG_LOG_JP2K) << "Unable to init JPEG2000 decoder";
         loadingFailed();
+        fclose(file);
 
         return false;
     }
 
-    jp2_stream = jas_stream_fopen(QFile::encodeName(filePath).constData(), "rb");
+    jp2_stream = jas_stream_freopen(filePath.toUtf8().constData(), "rb", file);
 
     if (jp2_stream == nullptr)
     {
         qCWarning(DIGIKAM_DIMG_LOG_JP2K) << "Unable to open JPEG2000 stream";
         loadingFailed();
+        fclose(file);
 
         return false;
     }
@@ -157,8 +172,8 @@ bool DImgJPEG2000Loader::load(const QString& filePath, DImgLoaderObserver* const
 
     if (jp2_image == nullptr)
     {
-        jas_stream_close(jp2_stream);
         qCWarning(DIGIKAM_DIMG_LOG_JP2K) << "Unable to decode JPEG2000 image";
+        jas_stream_close(jp2_stream);
         loadingFailed();
 
         return false;
@@ -188,8 +203,8 @@ bool DImgJPEG2000Loader::load(const QString& filePath, DImgLoaderObserver* const
 
             if ((components[0] < 0) || (components[1] < 0) || (components[2] < 0))
             {
-                jas_image_destroy(jp2_image);
                 qCWarning(DIGIKAM_DIMG_LOG_JP2K) << "Error parsing JPEG2000 image : Missing Image Channel";
+                jas_image_destroy(jp2_image);
                 loadingFailed();
 
                 return false;
@@ -215,8 +230,8 @@ bool DImgJPEG2000Loader::load(const QString& filePath, DImgLoaderObserver* const
             // cppcheck-suppress knownConditionTrueFalse
             if (components[0] < 0)
             {
-                jas_image_destroy(jp2_image);
                 qCWarning(DIGIKAM_DIMG_LOG_JP2K) << "Error parsing JP2000 image : Missing Image Channel";
+                jas_image_destroy(jp2_image);
                 loadingFailed();
 
                 return false;
@@ -236,8 +251,8 @@ bool DImgJPEG2000Loader::load(const QString& filePath, DImgLoaderObserver* const
             // cppcheck-suppress knownConditionTrueFalse
             if ((components[0] < 0) || (components[1] < 0) || (components[2] < 0))
             {
-                jas_image_destroy(jp2_image);
                 qCWarning(DIGIKAM_DIMG_LOG_JP2K) << "Error parsing JP2000 image : Missing Image Channel";
+                jas_image_destroy(jp2_image);
                 loadingFailed();
 
                 return false;
@@ -260,8 +275,8 @@ bool DImgJPEG2000Loader::load(const QString& filePath, DImgLoaderObserver* const
 
         default:
         {
-            jas_image_destroy(jp2_image);
             qCWarning(DIGIKAM_DIMG_LOG_JP2K) << "Error parsing JP2000 image : Colorspace Model Is Not Supported";
+            jas_image_destroy(jp2_image);
             loadingFailed();
 
             return false;
@@ -284,8 +299,8 @@ bool DImgJPEG2000Loader::load(const QString& filePath, DImgLoaderObserver* const
             (jas_image_cmpttly(jp2_image, components[i])  != 0)                        ||
             (jas_image_cmptsgnd(jp2_image, components[i]) != false))
         {
-            jas_image_destroy(jp2_image);
             qCWarning(DIGIKAM_DIMG_LOG_JP2K) << "Error parsing JPEG2000 image : Irregular Channel Geometry Not Supported";
+            jas_image_destroy(jp2_image);
             loadingFailed();
 
             return false;
@@ -309,8 +324,8 @@ bool DImgJPEG2000Loader::load(const QString& filePath, DImgLoaderObserver* const
 
         if (!pixels[i])
         {
-            jas_image_destroy(jp2_image);
             qCWarning(DIGIKAM_DIMG_LOG_JP2K) << "Error decoding JPEG2000 image data : Memory Allocation Failed";
+            jas_image_destroy(jp2_image);
             loadingFailed();
 
             return false;
@@ -526,7 +541,7 @@ bool DImgJPEG2000Loader::load(const QString& filePath, DImgLoaderObserver* const
                     return false;
                 }
 
-                observer->progressInfo(0.1 + (0.8 * (((float)y) / ((float)imageHeight()))));
+                observer->progressInfo(0.1F + (0.8F * (((float)y) / ((float)imageHeight()))));
             }
         }
     }
@@ -582,7 +597,7 @@ bool DImgJPEG2000Loader::load(const QString& filePath, DImgLoaderObserver* const
 
     if (observer)
     {
-        observer->progressInfo(1.0);
+        observer->progressInfo(1.0F);
     }
 
     imageData() = data.take();

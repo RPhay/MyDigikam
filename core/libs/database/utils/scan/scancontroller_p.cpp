@@ -7,7 +7,7 @@
  * Description : scan item controller - private containers.
  *
  * Copyright (C) 2005-2006 by Tom Albers <tomalbers at kde dot nl>
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2007-2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  *
  * This program is free software; you can redistribute it
@@ -42,27 +42,27 @@ bool SimpleCollectionScannerObserver::continueQuery()
 // ------------------------------------------------------------------------------
 
 ScanController::Private::Private()
-    : running(false),
-      needsInitialization(false),
-      needsCompleteScan(false),
-      needsUpdateUniqueHash(false),
-      idle(false),
-      scanSuspended(0),
-      deferFileScanning(false),
-      finishScanAllowed(true),
+    : running               (false),
+      needsInitialization   (false),
+      needsCompleteScan     (false),
+      needsUpdateUniqueHash (false),
+      idle                  (false),
+      scanSuspended         (0),
+      deferFileScanning     (false),
+      finishScanAllowed     (true),
       continueInitialization(false),
-      continueScan(false),
-      continuePartialScan(false),
-      fileWatchInstalled(false),
-      eventLoop(nullptr),
-      showTimer(nullptr),
-      relaxedTimer(nullptr),
-      externalTimer(nullptr),
-      hints(CollectionScanner::createHintContainer()),
-      progressDialog(nullptr),
-      advice(ScanController::Success),
-      needTotalFiles(false),
-      totalFilesToScan(0)
+      continueScan          (false),
+      continuePartialScan   (false),
+      fileWatchInstalled    (false),
+      eventLoop             (nullptr),
+      showTimer             (nullptr),
+      relaxedTimer          (nullptr),
+      externalTimer         (nullptr),
+      hints                 (CollectionScanner::createHintContainer()),
+      progressDialog        (nullptr),
+      advice                (ScanController::Success),
+      needTotalFiles        (false),
+      totalFilesToScan      (0)
 {
 }
 
@@ -155,9 +155,9 @@ void ScanControllerLoadingCacheFileWatch::slotImageChanged(const ImageChangeset&
         if ((changes & DatabaseFields::ModificationDate) || (changes & DatabaseFields::Orientation))
         {
             ItemInfo info(imageId);
-
-            //qCDebug(DIGIKAM_DATABASE_LOG) << imageId << info.filePath();
-
+/*
+            qCDebug(DIGIKAM_DATABASE_LOG) << imageId << info.filePath();
+*/
             notifyFileChanged(info.filePath());
         }
     }

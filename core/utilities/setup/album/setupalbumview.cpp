@@ -7,7 +7,7 @@
  * Description : album view configuration setup tab
  *
  * Copyright (C) 2003-2004 by Renchi Raju <renchi dot raju at gmail dot com>
- * Copyright (C) 2005-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2005-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -64,45 +64,43 @@ class Q_DECL_HIDDEN SetupAlbumView::Private
 public:
 
     explicit Private()
-      : useLargeThumbsOriginal(false),
-        useLargeThumbsShowedInfo(false),
-        iconTreeThumbLabel(nullptr),
-        iconShowNameBox(nullptr),
-        iconShowSizeBox(nullptr),
-        iconShowDateBox(nullptr),
-        iconShowModDateBox(nullptr),
-        iconShowResolutionBox(nullptr),
-        iconShowAspectRatioBox(nullptr),
-        iconShowTitleBox(nullptr),
-        iconShowCommentsBox(nullptr),
-        iconShowTagsBox(nullptr),
-        iconShowOverlaysBox(nullptr),
-        iconShowFullscreenBox(nullptr),
-        iconShowRatingBox(nullptr),
-        iconShowFormatBox(nullptr),
-        iconShowCoordinatesBox(nullptr),
-        previewFastPreview(nullptr),
-        previewFullView(nullptr),
-        previewRawMode(nullptr),
-        previewConvertToEightBit(nullptr),
-        previewShowIcons(nullptr),
+      : useLargeThumbsOriginal      (false),
+        useLargeThumbsShowedInfo    (false),
+        iconShowNameBox             (nullptr),
+        iconShowSizeBox             (nullptr),
+        iconShowDateBox             (nullptr),
+        iconShowModDateBox          (nullptr),
+        iconShowResolutionBox       (nullptr),
+        iconShowAspectRatioBox      (nullptr),
+        iconShowTitleBox            (nullptr),
+        iconShowCommentsBox         (nullptr),
+        iconShowTagsBox             (nullptr),
+        iconShowOverlaysBox         (nullptr),
+        iconShowFullscreenBox       (nullptr),
+        iconShowRatingBox           (nullptr),
+        iconShowFormatBox           (nullptr),
+        iconShowCoordinatesBox      (nullptr),
+        previewFastPreview          (nullptr),
+        previewFullView             (nullptr),
+        previewRawMode              (nullptr),
+        previewConvertToEightBit    (nullptr),
+        previewShowIcons            (nullptr),
         showFolderTreeViewItemsCount(nullptr),
-        largeThumbsBox(nullptr),
-        iconTreeThumbSize(nullptr),
-        leftClickActionComboBox(nullptr),
-        tab(nullptr),
-        iconViewFontSelect(nullptr),
-        treeViewFontSelect(nullptr),
-        fullScreenSettings(nullptr),
-        category(nullptr),
-        mimetype(nullptr)
+        largeThumbsBox              (nullptr),
+        iconTreeThumbSize           (nullptr),
+        iconTreeFaceSize            (nullptr),
+        leftClickActionComboBox     (nullptr),
+        tab                         (nullptr),
+        iconViewFontSelect          (nullptr),
+        treeViewFontSelect          (nullptr),
+        fullScreenSettings          (nullptr),
+        category                    (nullptr),
+        mimetype                    (nullptr)
     {
     }
 
     bool                useLargeThumbsOriginal;
     bool                useLargeThumbsShowedInfo;
-
-    QLabel*             iconTreeThumbLabel;
 
     QCheckBox*          iconShowNameBox;
     QCheckBox*          iconShowSizeBox;
@@ -127,6 +125,7 @@ public:
     QCheckBox*          largeThumbsBox;
 
     QComboBox*          iconTreeThumbSize;
+    QComboBox*          iconTreeFaceSize;
     QComboBox*          leftClickActionComboBox;
 
     QTabWidget*         tab;
@@ -142,7 +141,7 @@ public:
 
 SetupAlbumView::SetupAlbumView(QWidget* const parent)
     : QScrollArea(parent),
-      d(new Private)
+      d          (new Private)
 {
     d->tab                     = new QTabWidget(viewport());
     setWidget(d->tab);
@@ -210,8 +209,9 @@ SetupAlbumView::SetupAlbumView(QWidget* const parent)
 
     QLabel* leftClickLabel     = new QLabel(i18n("Thumbnail click action:"), iwpanel);
     d->leftClickActionComboBox = new QComboBox(iwpanel);
-    d->leftClickActionComboBox->addItem(i18n("Show preview"),       ApplicationSettings::ShowPreview);
-    d->leftClickActionComboBox->addItem(i18n("Start image editor"), ApplicationSettings::StartEditor);
+    d->leftClickActionComboBox->addItem(i18n("Show preview"),                  ApplicationSettings::ShowPreview);
+    d->leftClickActionComboBox->addItem(i18n("Start image editor"),            ApplicationSettings::StartEditor);
+    d->leftClickActionComboBox->addItem(i18n("Open With Default Application"), ApplicationSettings::OpenDefault);
     d->leftClickActionComboBox->setToolTip(i18n("Choose what should happen when you click on a thumbnail."));
 
     d->iconViewFontSelect      = new DFontSelect(i18n("Icon View font:"), iwpanel);
@@ -253,32 +253,45 @@ SetupAlbumView::SetupAlbumView(QWidget* const parent)
 
     // --------------------------------------------------------
 
-    QWidget* const fwpanel   = new QWidget(d->tab);
-    QGridLayout* const grid2 = new QGridLayout(fwpanel);
+    QWidget* const fwpanel           = new QWidget(d->tab);
+    QGridLayout* const grid2         = new QGridLayout(fwpanel);
 
-    d->iconTreeThumbLabel = new QLabel(i18n("Tree View icon size:"), fwpanel);
-    d->iconTreeThumbSize  = new QComboBox(fwpanel);
-    d->iconTreeThumbSize->addItem(QLatin1String("16"));
-    d->iconTreeThumbSize->addItem(QLatin1String("22"));
-    d->iconTreeThumbSize->addItem(QLatin1String("32"));
-    d->iconTreeThumbSize->addItem(QLatin1String("48"));
-    d->iconTreeThumbSize->addItem(QLatin1String("64"));
+    QLabel* const iconTreeThumbLabel = new QLabel(i18n("Tree View icon size:"), fwpanel);
+    d->iconTreeThumbSize             = new QComboBox(fwpanel);
+    d->iconTreeThumbSize->addItem(QLatin1String("16"), 16);
+    d->iconTreeThumbSize->addItem(QLatin1String("22"), 22);
+    d->iconTreeThumbSize->addItem(QLatin1String("32"), 32);
+    d->iconTreeThumbSize->addItem(QLatin1String("48"), 48);
+    d->iconTreeThumbSize->addItem(QLatin1String("64"), 64);
     d->iconTreeThumbSize->setToolTip(i18n("Set this option to configure the size in pixels of "
                                           "the Tree View icons in digiKam's sidebars."));
 
-    d->treeViewFontSelect = new DFontSelect(i18n("Tree View font:"), fwpanel);
+    QLabel* const iconTreeFaceLabel  = new QLabel(i18n("People Tree View icon size:"), fwpanel);
+    d->iconTreeFaceSize              = new QComboBox(fwpanel);
+    d->iconTreeFaceSize->addItem(QLatin1String("16"),   16);
+    d->iconTreeFaceSize->addItem(QLatin1String("22"),   22);
+    d->iconTreeFaceSize->addItem(QLatin1String("32"),   32);
+    d->iconTreeFaceSize->addItem(QLatin1String("48"),   48);
+    d->iconTreeFaceSize->addItem(QLatin1String("64"),   64);
+    d->iconTreeFaceSize->addItem(QLatin1String("128"), 128);
+    d->iconTreeFaceSize->setToolTip(i18n("Set this option to configure the size in pixels of "
+                                         "the Tree View icons in digiKam's people sidebar."));
+
+    d->treeViewFontSelect            = new DFontSelect(i18n("Tree View font:"), fwpanel);
     d->treeViewFontSelect->setToolTip(i18n("Select here the font used to display text in Tree Views."));
 
-    d->showFolderTreeViewItemsCount = new QCheckBox(i18n("Show a count of items in Tree Views"), fwpanel);
+    d->showFolderTreeViewItemsCount  = new QCheckBox(i18n("Show a count of items in Tree Views"), fwpanel);
     d->showFolderTreeViewItemsCount->setToolTip(i18n("Set this option to display along the album name the number of icon-view items inside."));
 
-    grid2->addWidget(d->iconTreeThumbLabel,           0, 0, 1, 1);
+    grid2->addWidget(iconTreeThumbLabel,              0, 0, 1, 1);
     grid2->addWidget(d->iconTreeThumbSize,            0, 1, 1, 1);
-    grid2->addWidget(d->treeViewFontSelect,           1, 0, 1, 2);
-    grid2->addWidget(d->showFolderTreeViewItemsCount, 2, 0, 1, 2);
+    grid2->addWidget(iconTreeFaceLabel,               1, 0, 1, 1);
+    grid2->addWidget(d->iconTreeFaceSize,             1, 1, 1, 1);
+    grid2->addWidget(d->treeViewFontSelect,           2, 0, 1, 2);
+    grid2->addWidget(d->showFolderTreeViewItemsCount, 3, 0, 1, 2);
     grid2->setContentsMargins(spacing, spacing, spacing, spacing);
     grid2->setSpacing(spacing);
-    grid2->setRowStretch(3, 10);
+    grid2->setRowStretch(4, 10);
 
     d->tab->insertTab(FolderView, fwpanel, i18nc("@title:tab", "Tree-Views"));
 
@@ -294,11 +307,11 @@ SetupAlbumView::SetupAlbumView(QWidget* const parent)
     QLabel* const rawPreviewLabel = new QLabel(i18nc("@label:listbox Mode of RAW preview decoding:",
                                                      "Raw images:"));
     d->previewRawMode             = new QComboBox;
-    d->previewRawMode->addItem(i18nc("@option:inlistbox Automatic choice of RAW image preview source",
+    d->previewRawMode->addItem(i18nc("@item Automatic choice of RAW image preview source",
                                      "Automatic"), PreviewSettings::RawPreviewAutomatic);
-    d->previewRawMode->addItem(i18nc("@option:inlistbox Embedded preview as RAW image preview source",
+    d->previewRawMode->addItem(i18nc("@item Embedded preview as RAW image preview source",
                                      "Embedded preview"), PreviewSettings::RawPreviewFromEmbeddedPreview);
-    d->previewRawMode->addItem(i18nc("@option:inlistbox Original, half-size data as RAW image preview source",
+    d->previewRawMode->addItem(i18nc("@item Original, half-size data as RAW image preview source",
                                      "Raw data in half size"), PreviewSettings::RawPreviewFromRawHalfSize);
 
     d->previewConvertToEightBit   = new QCheckBox(i18n("Preview image is converted to 8 bits for a faster viewing"), pwpanel);
@@ -376,7 +389,8 @@ void SetupAlbumView::applySettings()
         return;
     }
 
-    settings->setTreeViewIconSize(d->iconTreeThumbSize->currentText().toInt());
+    settings->setTreeViewIconSize(d->iconTreeThumbSize->currentData().toInt());
+    settings->setTreeViewFaceSize(d->iconTreeFaceSize->currentData().toInt());
     settings->setTreeViewFont(d->treeViewFontSelect->font());
     settings->setIconShowName(d->iconShowNameBox->isChecked());
     settings->setIconShowTags(d->iconShowTagsBox->isChecked());
@@ -394,8 +408,7 @@ void SetupAlbumView::applySettings()
     settings->setIconShowImageFormat(d->iconShowFormatBox->isChecked());
     settings->setIconViewFont(d->iconViewFontSelect->font());
 
-    settings->setItemLeftClickAction((ApplicationSettings::ItemLeftClickAction)
-                                     d->leftClickActionComboBox->currentIndex());
+    settings->setItemLeftClickAction(d->leftClickActionComboBox->currentIndex());
 
     PreviewSettings previewSettings;
     previewSettings.quality           = d->previewFastPreview->isChecked() ? PreviewSettings::FastPreview : PreviewSettings::HighQualityPreview;
@@ -430,26 +443,8 @@ void SetupAlbumView::readSettings()
         return;
     }
 
-    if      (settings->getTreeViewIconSize() == 16)
-    {
-        d->iconTreeThumbSize->setCurrentIndex(0);
-    }
-    else if (settings->getTreeViewIconSize() == 22)
-    {
-        d->iconTreeThumbSize->setCurrentIndex(1);
-    }
-    else if (settings->getTreeViewIconSize() == 32)
-    {
-        d->iconTreeThumbSize->setCurrentIndex(2);
-    }
-    else if (settings->getTreeViewIconSize() == 48)
-    {
-        d->iconTreeThumbSize->setCurrentIndex(3);
-    }
-    else
-    {
-        d->iconTreeThumbSize->setCurrentIndex(4);
-    }
+    d->iconTreeThumbSize->setCurrentIndex(d->iconTreeThumbSize->findData(settings->getTreeViewIconSize()));
+    d->iconTreeFaceSize->setCurrentIndex(d->iconTreeFaceSize->findData(settings->getTreeViewFaceSize()));
 
     d->treeViewFontSelect->setFont(settings->getTreeViewFont());
     d->iconShowNameBox->setChecked(settings->getIconShowName());
@@ -468,7 +463,7 @@ void SetupAlbumView::readSettings()
     d->iconShowFormatBox->setChecked(settings->getIconShowImageFormat());
     d->iconViewFontSelect->setFont(settings->getIconViewFont());
 
-    d->leftClickActionComboBox->setCurrentIndex((int)settings->getItemLeftClickAction());
+    d->leftClickActionComboBox->setCurrentIndex(settings->getItemLeftClickAction());
 
     PreviewSettings previewSettings = settings->getPreviewSettings();
 

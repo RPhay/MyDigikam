@@ -6,7 +6,7 @@
  * Date        : 2018-07-30
  * Description : a plugin to export to ImgUr web-service.
  *
- * Copyright (C) 2018-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2018-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -53,7 +53,7 @@ void ImgUrPlugin::cleanUp()
 
 QString ImgUrPlugin::name() const
 {
-    return i18n("ImgUr");
+    return i18nc("@title", "ImgUr");
 }
 
 QString ImgUrPlugin::iid() const
@@ -68,14 +68,15 @@ QIcon ImgUrPlugin::icon() const
 
 QString ImgUrPlugin::description() const
 {
-    return i18n("A tool to export to ImgUr web-service");
+    return i18nc("@info", "A tool to export to ImgUr web-service");
 }
 
 QString ImgUrPlugin::details() const
 {
-    return i18n("<p>This tool permit to export items to ImgUr web-service.</p>"
-                "<p>You can export items as anonymous or with an user account.</p>"
-                "<p>See ImgUr web site for details: <a href='https://imgur.com/'>https://imgur.com/</a></p>");
+    return i18nc("@info", "This tool permit to export items to ImgUr web-service.\n\n"
+                 "You can export items as anonymous or with an user account.\n\n"
+                 "See ImgUr web site for details: %1",
+                 QLatin1String("<a href='https://imgur.com/'>https://imgur.com/</a>"));
 }
 
 QList<DPluginAuthor> ImgUrPlugin::authors() const
@@ -89,10 +90,10 @@ QList<DPluginAuthor> ImgUrPlugin::authors() const
                              QString::fromUtf8("(C) 2014"))
             << DPluginAuthor(QString::fromUtf8("Maik Qualmann"),
                              QString::fromUtf8("metzpinguin at gmail dot com"),
-                             QString::fromUtf8("(C) 2017-2020"))
+                             QString::fromUtf8("(C) 2017-2021"))
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2012-2020"))
+                             QString::fromUtf8("(C) 2012-2021"))
             ;
 }
 

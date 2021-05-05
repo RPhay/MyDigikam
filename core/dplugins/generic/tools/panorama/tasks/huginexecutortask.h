@@ -40,7 +40,7 @@ public:
                                PanoramaFileType fileType,
                                const QString& huginExecutorPath,
                                bool preview);
-    ~HuginExecutorTask();
+    ~HuginExecutorTask() override;
 
 protected:
 
@@ -51,6 +51,13 @@ private:
     const QUrl&            ptoUrl;
     QUrl&                  panoUrl;
     const PanoramaFileType fileType;
+
+private:
+
+    // Disable
+    HuginExecutorTask() = delete;
+
+    Q_DISABLE_COPY(HuginExecutorTask)
 };
 
 } // namespace DigikamGenericPanoramaPlugin

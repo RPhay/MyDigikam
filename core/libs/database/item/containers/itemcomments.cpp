@@ -7,7 +7,7 @@
  * Description : Access to comments of an item in the database
  *
  * Copyright (C) 2007-2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -40,7 +40,7 @@ class Q_DECL_HIDDEN ItemComments::Private : public QSharedData
 public:
 
     explicit Private()
-      : id(-1),
+      : id    (-1),
         unique(ItemComments::UniquePerLanguage)
     {
     }
@@ -70,6 +70,7 @@ public:
                        DatabaseComment::Type type = DatabaseComment::Comment) const
     {
         // if you change the algorithm, please take a look at ItemCopyright as well
+
         fullCodeMatch    = -1;
         langCodeMatch    = -1;
         defaultCodeMatch = -1;
@@ -115,7 +116,7 @@ public:
         }
     }
 
-    void adjustStoredIndexes(QSet<int> &set, int removedIndex)
+    void adjustStoredIndexes(QSet<int>& set, int removedIndex)
     {
         QSet<int> newSet;
 
@@ -250,6 +251,7 @@ QString ItemComments::commentForLanguage(const QString& languageCode,
     int fullCodeMatch, langCodeMatch, defaultCodeMatch, firstMatch;
 
     // en-us => en-
+
     QString firstPart;
 
     if (languageCode == QLatin1String("x-default"))
@@ -387,6 +389,7 @@ void ItemComments::addComment(const QString& comment,
     QString author = author_;
 
     /// @todo This makes no sense - is another variable supposed to be used instead? - Michael Hansen
+
     if (author.isEmpty())
     {
         author = QString();
@@ -397,6 +400,7 @@ void ItemComments::addComment(const QString& comment,
         CommentInfo& info = d->infos[i];
 
         // some extra considerations on replacing
+
         if ((info.type == type) && (info.type == DatabaseComment::Comment) && (info.language == language))
         {
             if (!multipleCommentsPerLanguage || (info.author == author))
@@ -411,6 +415,7 @@ void ItemComments::addComment(const QString& comment,
 
         // simulate unique restrictions of db.
         // There is a problem that a NULL value is never unique, see #189080
+
         if ((info.type == type)         &&
             (info.language == language) &&
             ((info.author == author) || (info.author.isEmpty() && author.isEmpty())))
@@ -422,19 +427,19 @@ void ItemComments::addComment(const QString& comment,
         }
     }
 
-    return addCommentDirectly(comment, language, author, type, date);
+    addCommentDirectly(comment, language, author, type, date);
 }
 
 void ItemComments::addHeadline(const QString& headline, const QString& lang,
-                                const QString& author, const QDateTime& date)
+                               const QString& author, const QDateTime& date)
 {
-    return addComment(headline, lang, author, date, DatabaseComment::Headline);
+    addComment(headline, lang, author, date, DatabaseComment::Headline);
 }
 
 void ItemComments::addTitle(const QString& title, const QString& lang,
-                             const QString& author, const QDateTime& date)
+                            const QString& author, const QDateTime& date)
 {
-    return addComment(title, lang, author, date, DatabaseComment::Title);
+    addComment(title, lang, author, date, DatabaseComment::Title);
 }
 
 void ItemComments::replaceComments(const CaptionsMap& map, DatabaseComment::Type type)
@@ -453,6 +458,7 @@ void ItemComments::replaceComments(const CaptionsMap& map, DatabaseComment::Type
     }
 
     // remove all comments of this type that have not been touched above
+
     for (int i = 0 ; i < d->infos.size() /* changing! */ ; )
     {
         if (!d->dirtyIndices.contains(i) && !d->newIndices.contains(i) && (d->infos[i].type == type))
@@ -485,6 +491,7 @@ void ItemComments::replaceFrom(const ItemComments& source)
     }
 
     // remove all that have not been touched above
+
     for (int i = 0 ; i < d->infos.size() /* changing! */ ; )
     {
         if (!d->dirtyIndices.contains(i) && !d->newIndices.contains(i))

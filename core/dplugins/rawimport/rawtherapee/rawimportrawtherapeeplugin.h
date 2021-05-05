@@ -48,7 +48,7 @@ class RawTherapeeRawImportPlugin : public DPluginRawImport
 public:
 
     explicit RawTherapeeRawImportPlugin(QObject* const parent = nullptr);
-    ~RawTherapeeRawImportPlugin();
+    ~RawTherapeeRawImportPlugin()                              override;
 
     QString name()                                       const override;
     QString iid()                                        const override;

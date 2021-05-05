@@ -7,7 +7,7 @@
  * Description : a widget to display a welcome page
  *               on root album.
  *
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2009-2011 by Andi Clemens <andi dot clemens at gmail dot com>
  * Copyright (C) 2015      by Mohamed_Anwer <m_dot_anwer at gmx dot com>
  *
@@ -49,7 +49,9 @@
 
 namespace Digikam
 {
+
 #ifdef HAVE_QWEBENGINE
+
 class WelcomePageViewPage : public QWebEnginePage
 {
     Q_OBJECT
@@ -57,9 +59,9 @@ class WelcomePageViewPage : public QWebEnginePage
 public:
 
     explicit WelcomePageViewPage(QObject* const parent = nullptr);
-    virtual ~WelcomePageViewPage();
+    ~WelcomePageViewPage()                                                          override;
 
-    bool acceptNavigationRequest(const QUrl&, QWebEnginePage::NavigationType, bool);
+    bool acceptNavigationRequest(const QUrl&, QWebEnginePage::NavigationType, bool) override;
 
 Q_SIGNALS:
 
@@ -70,16 +72,20 @@ Q_SIGNALS:
 // -------------------------------------------------------------------
 
 class WelcomePageView : public QWebEngineView
+
 #else
+
 class WelcomePageView : public QWebView
+
 #endif
+
 {
     Q_OBJECT
 
 public:
 
     explicit WelcomePageView(QWidget* const parent);
-    ~WelcomePageView();
+    ~WelcomePageView()                                       override;
 
 private:
 

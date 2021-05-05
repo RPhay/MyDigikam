@@ -6,7 +6,7 @@
  * Date        : 2016-05-03
  * Description : DNG convert settings for camera interface.
  *
- * Copyright (C) 2011-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2011-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C)      2016 by Maik Qualmann <metzpinguin at gmail dot com>
  *
  * This program is free software; you can redistribute it
@@ -50,21 +50,22 @@ class Q_DECL_HIDDEN DNGConvertSettings::Private
 public:
 
     explicit Private()
-        : convertDng(nullptr),
-          dngSettings(nullptr)
+        : convertDng  (nullptr),
+          dngLink     (nullptr),
+          dngSettings (nullptr)
     {
     }
 
     QCheckBox*   convertDng;
-
+    QLabel*      dngLink;
     DNGSettings* dngSettings;
 };
 
 DNGConvertSettings::DNGConvertSettings(QWidget* const parent)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
-    const int spacing = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
+    const int spacing           = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
 
     QVBoxLayout* const mainVlay = new QVBoxLayout(this);
     QHBoxLayout* const convHlay = new QHBoxLayout(this);
@@ -72,15 +73,14 @@ DNGConvertSettings::DNGConvertSettings(QWidget* const parent)
     d->convertDng               = new QCheckBox(i18nc("@option:check", "Convert RAW images to"), this);
     d->dngSettings              = new DNGSettings(this);
 
-    QLabel* const dngLinkLabel  = new QLabel(this);
-    dngLinkLabel->setText(i18n("<p><a href='https://en.wikipedia.org/wiki/Digital_Negative_(file_format)'>"
-                               "DNG container</a></p>"));
-    dngLinkLabel->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
-    dngLinkLabel->setOpenExternalLinks(true);
-    dngLinkLabel->setWordWrap(false);
-
+    d->dngLink                  = new QLabel(this);
+    d->dngLink->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
+    d->dngLink->setOpenExternalLinks(true);
+    d->dngLink->setWordWrap(false);
+    d->dngLink->setText(QString::fromUtf8("<p><a href='https://en.wikipedia.org/wiki/Digital_Negative_(file_format)'>%1</a></p>")
+                        .arg(i18nc("@label", "DNG container")));
     convHlay->addWidget(d->convertDng);
-    convHlay->addWidget(dngLinkLabel);
+    convHlay->addWidget(d->dngLink);
     convHlay->addStretch(10);
     convHlay->setContentsMargins(spacing, spacing, spacing, spacing);
     convHlay->setSpacing(0);
@@ -90,9 +90,9 @@ DNGConvertSettings::DNGConvertSettings(QWidget* const parent)
     mainVlay->setContentsMargins(QMargins());
     mainVlay->setSpacing(0);
 
-    setWhatsThis(i18n("Set here all options to convert RAW images to DNG container automatically "
-                      "as they are downloaded."));
-    d->convertDng->setWhatsThis(i18n("Enable this option to convert RAW images to DNG container automatically."));
+    setWhatsThis(i18nc("@info", "Set here all options to convert RAW images to DNG container automatically "
+                                "as they are downloaded."));
+    d->convertDng->setWhatsThis(i18nc("@info", "Enable this option to convert RAW images to DNG container automatically."));
 
     setLayout(mainVlay);
 

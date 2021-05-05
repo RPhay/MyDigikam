@@ -6,7 +6,7 @@
  * Date        : 2005-07-18
  * Description : Free rotation threaded image filter.
  *
- * Copyright (C) 2004-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2004-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2009-2010 by Andi Clemens <andi dot clemens at gmail dot com>
  * Copyright (C) 2010      by Martin Klapetek <martin dot klapetek at gmail dot com>
  *
@@ -85,14 +85,15 @@ public:
 
 class DIGIKAM_EXPORT FreeRotationFilter : public DImgThreadedFilter
 {
+    Q_OBJECT
 
 public:
 
     explicit FreeRotationFilter(QObject* const parent = nullptr);
-    explicit FreeRotationFilter(DImg* const orgImage, QObject* const parent=nullptr,
+    explicit FreeRotationFilter(DImg* const orgImage, QObject* const parent = nullptr,
                                 const FreeRotationContainer& settings=FreeRotationContainer());
 
-    virtual ~FreeRotationFilter();
+    ~FreeRotationFilter() override;
 
     QSize getNewSize() const;
 
@@ -116,12 +117,12 @@ public:
         return 1;
     }
 
-    virtual QString         filterIdentifier()                          const override
+    QString         filterIdentifier()                          const override
     {
         return FilterIdentifier();
     }
 
-    virtual FilterAction    filterAction()                                    override;
+    FilterAction    filterAction()                                    override;
     void                    readParameters(const FilterAction& action)        override;
 
 private:

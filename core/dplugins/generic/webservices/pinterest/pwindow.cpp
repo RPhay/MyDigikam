@@ -34,8 +34,8 @@
 // KDE includes
 
 #include <klocalizedstring.h>
-#include <kconfig.h>
-#include <kwindowconfig.h>
+#include <ksharedconfig.h>
+#include <kconfiggroup.h>
 
 // Local includes
 
@@ -77,7 +77,7 @@ public:
 PWindow::PWindow(DInfoInterface* const iface,
                  QWidget* const /*parent*/)
     : WSToolDialog(nullptr, QLatin1String("Pinterest Export Dialog")),
-      d(new Private)
+      d           (new Private)
 {
     d->widget = new PWidget(this, iface, QLatin1String("Pinterest"));
 
@@ -159,9 +159,9 @@ PWindow::~PWindow()
 
 void PWindow::readSettings()
 {
-    KConfig config;
-    KConfigGroup grp    = config.group("Pinterest Settings");
-    d->currentAlbumName = grp.readEntry("Current Album",QString());
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup grp        = config->group("Pinterest Settings");
+    d->currentAlbumName     = grp.readEntry("Current Album",QString());
 
     if (grp.readEntry("Resize", false))
     {
@@ -176,28 +176,17 @@ void PWindow::readSettings()
 
     d->widget->getDimensionSpB()->setValue(grp.readEntry("Maximum Width",  1600));
     d->widget->getImgQualitySpB()->setValue(grp.readEntry("Image Quality", 90));
-
-    KConfigGroup dialogGroup = config.group("Pinterest Export Dialog");
-
-    winId();
-    KWindowConfig::restoreWindowSize(windowHandle(), dialogGroup);
-    resize(windowHandle()->size());
 }
 
 void PWindow::writeSettings()
 {
-    KConfig config;
-    KConfigGroup grp = config.group("Pinterest Settings");
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup grp        = config->group("Pinterest Settings");
 
     grp.writeEntry("Current Album", d->currentAlbumName);
     grp.writeEntry("Resize",        d->widget->getResizeCheckBox()->isChecked());
     grp.writeEntry("Maximum Width", d->widget->getDimensionSpB()->value());
     grp.writeEntry("Image Quality", d->widget->getImgQualitySpB()->value());
-
-    KConfigGroup dialogGroup = config.group("Pinterest Export Dialog");
-    KWindowConfig::saveWindowSize(windowHandle(), dialogGroup);
-
-    config.sync();
 }
 
 void PWindow::reactivate()
@@ -268,7 +257,7 @@ void PWindow::slotStartTransfer()
     if (!(d->talker->authenticated()))
     {
         QPointer<QMessageBox> warn = new QMessageBox(QMessageBox::Warning,
-            i18n("Warning"),
+            i18nc("@title: window", "Warning"),
             i18n("Authentication failed. Click \"Continue\" to authenticate."),
             QMessageBox::Yes | QMessageBox::No);
 

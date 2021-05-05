@@ -6,7 +6,7 @@
  * Date        : 2010-07-14
  * Description : Common internal data structures for geolocation interface
  *
- * Copyright (C) 2010-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2010-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2010-2014 by Michael G. Hansen <mike at mghansen dot de>
  *
  * This program is free software; you can redistribute it
@@ -430,6 +430,13 @@ void GeoIface_assert(const char* const condition, const char* const filename, co
         .arg(lineNumber);
 
     qCDebug(DIGIKAM_GEOIFACE_LOG) << debugString;
+}
+
+// ---------------------------------------------------
+
+int QPointSquareDistance(const QPoint& a, const QPoint& b)
+{
+    return (a.x() - b.x()) * (a.x() - b.x()) + (a.y() - b.y()) * (a.y() - b.y());
 }
 
 } // namespace Digikam

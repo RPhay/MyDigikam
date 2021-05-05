@@ -34,8 +34,8 @@
 // KDE includes
 
 #include <klocalizedstring.h>
-#include <kconfig.h>
-#include <kwindowconfig.h>
+#include <ksharedconfig.h>
+#include <kconfiggroup.h>
 
 // Local includes
 
@@ -77,7 +77,7 @@ public:
 ODWindow::ODWindow(DInfoInterface* const iface,
                    QWidget* const /*parent*/)
     : WSToolDialog(nullptr, QLatin1String("Onedrive Export Dialog")),
-      d(new Private)
+      d           (new Private)
 {
     d->widget = new ODWidget(this, iface, QLatin1String("Onedrive"));
 
@@ -85,10 +85,10 @@ ODWindow::ODWindow(DInfoInterface* const iface,
 
     setMainWidget(d->widget);
     setModal(false);
-    setWindowTitle(i18n("Export to Onedrive"));
+    setWindowTitle(i18nc("@title", "Export to Onedrive"));
 
-    startButton()->setText(i18n("Start Upload"));
-    startButton()->setToolTip(i18n("Start upload to Onedrive"));
+    startButton()->setText(i18nc("@action", "Start Upload"));
+    startButton()->setToolTip(i18nc("@info", "Start upload to Onedrive"));
 
     d->widget->setMinimumSize(700, 500);
 
@@ -159,9 +159,9 @@ ODWindow::~ODWindow()
 
 void ODWindow::readSettings()
 {
-    KConfig config;
-    KConfigGroup grp    = config.group("Onedrive Settings");
-    d->currentAlbumName = grp.readEntry("Current Album", QString());
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup grp        = config->group("Onedrive Settings");
+    d->currentAlbumName     = grp.readEntry("Current Album", QString());
 
     if (grp.readEntry("Resize", false))
     {
@@ -176,28 +176,17 @@ void ODWindow::readSettings()
 
     d->widget->getDimensionSpB()->setValue(grp.readEntry("Maximum Width",  1600));
     d->widget->getImgQualitySpB()->setValue(grp.readEntry("Image Quality", 90));
-
-    KConfigGroup dialogGroup = config.group("Onedrive Export Dialog");
-
-    winId();
-    KWindowConfig::restoreWindowSize(windowHandle(), dialogGroup);
-    resize(windowHandle()->size());
 }
 
 void ODWindow::writeSettings()
 {
-    KConfig config;
-    KConfigGroup grp = config.group("Onedrive Settings");
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup grp        = config->group("Onedrive Settings");
 
     grp.writeEntry("Current Album", d->currentAlbumName);
     grp.writeEntry("Resize",        d->widget->getResizeCheckBox()->isChecked());
     grp.writeEntry("Maximum Width", d->widget->getDimensionSpB()->value());
     grp.writeEntry("Image Quality", d->widget->getImgQualitySpB()->value());
-
-    KConfigGroup dialogGroup = config.group("Onedrive Export Dialog");
-    KWindowConfig::saveWindowSize(windowHandle(), dialogGroup);
-
-    config.sync();
 }
 
 void ODWindow::reactivate()
@@ -260,20 +249,20 @@ void ODWindow::slotStartTransfer()
 
     if (d->widget->imagesList()->imageUrls().isEmpty())
     {
-        QMessageBox::critical(this, i18nc("@title:window", "Error"),
-                              i18n("No image selected. Please select which images should be uploaded."));
+        QMessageBox::critical(this, i18nc("@title: window", "Error"),
+                              i18nc("@info", "No image selected. Please select which images should be uploaded."));
         return;
     }
 
     if (!(d->talker->authenticated()))
     {
         QPointer<QMessageBox> warn = new QMessageBox(QMessageBox::Warning,
-                         i18n("Warning"),
-                         i18n("Authentication failed. Click \"Continue\" to authenticate."),
+                         i18nc("@title: window", "Warning"),
+                         i18nc("@info", "Authentication failed. Click \"Continue\" to authenticate."),
                          QMessageBox::Yes | QMessageBox::No);
 
-        (warn->button(QMessageBox::Yes))->setText(i18n("Continue"));
-        (warn->button(QMessageBox::No))->setText(i18n("Cancel"));
+        (warn->button(QMessageBox::Yes))->setText(i18nc("@action", "Continue"));
+        (warn->button(QMessageBox::No))->setText(i18nc("@action", "Cancel"));
 
         if (warn->exec() == QMessageBox::Yes)
         {
@@ -301,11 +290,11 @@ void ODWindow::slotStartTransfer()
     d->imagesTotal = d->transferQueue.count();
     d->imagesCount = 0;
 
-    d->widget->progressBar()->setFormat(i18n("%v / %m"));
+    d->widget->progressBar()->setFormat(i18nc("@info: progress bar", "%v / %m"));
     d->widget->progressBar()->setMaximum(d->imagesTotal);
     d->widget->progressBar()->setValue(0);
     d->widget->progressBar()->show();
-    d->widget->progressBar()->progressScheduled(i18n("Onedrive export"), true, true);
+    d->widget->progressBar()->progressScheduled(i18nc("@info", "Onedrive export"), true, true);
     d->widget->progressBar()->progressThumbnailChanged(
         QIcon::fromTheme(QLatin1String("dk-onedrive")).pixmap(22, 22));
 
@@ -341,10 +330,10 @@ void ODWindow::uploadNextPhoto()
 
 void ODWindow::slotAddPhotoFailed(const QString& msg)
 {
-    if (QMessageBox::question(this, i18n("Uploading Failed"),
-                              i18n("Failed to upload photo to OneDrive."
-                                   "\n%1\n"
-                                   "Do you want to continue?", msg))
+    if (QMessageBox::question(this, i18nc("@title", "Uploading Failed"),
+                              i18nc("@info", "Failed to upload photo to OneDrive."
+                                    "\n%1\n"
+                                    "Do you want to continue?", msg))
         != QMessageBox::Yes)
     {
         d->transferQueue.clear();
@@ -363,6 +352,7 @@ void ODWindow::slotAddPhotoFailed(const QString& msg)
 void ODWindow::slotAddPhotoSucceeded()
 {
     // Remove photo uploaded from the list
+
     d->widget->imagesList()->removeItemByUrl(d->transferQueue.first());
     d->transferQueue.pop_front();
     d->imagesCount++;
@@ -398,8 +388,8 @@ void ODWindow::slotSignalLinkingFailed()
     slotSetUserName(QLatin1String(""));
     d->widget->getAlbumsCoB()->clear();
 
-    if (QMessageBox::question(this, i18n("Login Failed"),
-                              i18n("Authentication failed. Do you want to try again?"))
+    if (QMessageBox::question(this, i18nc("@title", "Login Failed"),
+                              i18nc("@info", "Authentication failed. Do you want to try again?"))
         == QMessageBox::Yes)
     {
         d->talker->link();
@@ -413,12 +403,12 @@ void ODWindow::slotSignalLinkingSucceeded()
 
 void ODWindow::slotListAlbumsFailed(const QString& msg)
 {
-    QMessageBox::critical(this, QString(), i18n("Onedrive call failed:\n%1", msg));
+    QMessageBox::critical(this, QString(), i18nc("@info", "Onedrive call failed:\n%1", msg));
 }
 
 void ODWindow::slotCreateFolderFailed(const QString& msg)
 {
-    QMessageBox::critical(this, QString(), i18n("Onedrive call failed:\n%1", msg));
+    QMessageBox::critical(this, QString(), i18nc("@info", "Onedrive call failed:\n%1", msg));
 }
 
 void ODWindow::slotCreateFolderSucceeded()

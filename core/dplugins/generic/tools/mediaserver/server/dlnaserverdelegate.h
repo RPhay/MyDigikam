@@ -7,7 +7,7 @@
  * Description : a media server to export collections through DLNA.
  *               Implementation inspired on Platinum File Media Server.
  *
- * Copyright (C) 2017-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2017-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -24,15 +24,32 @@
 #ifndef DIGIKAM_DLNA_SERVER_DELEGATE_H
 #define DIGIKAM_DLNA_SERVER_DELEGATE_H
 
+// Qt includes
+
+#include <QString>
+#include <QUrl>
+#include <QList>
+#include <QMap>
+#include <QImage>
+#include <QByteArray>
+#include <QBuffer>
+
+// Local includes
+
+#include "digikam_debug.h"
+#include "previewloadthread.h"
+#include "dimg.h"
+#include "drawdecoder.h"
+
+// Local includes
+
+#include "dmediaserver.h"
+
 // Platinum includes
 
 #include "Neptune.h"
 #include "PltMediaServer.h"
 #include "PltMediaCache.h"
-
-// Local includes
-
-#include "dmediaserver.h"
 
 namespace Digikam
 {
@@ -46,12 +63,12 @@ class DLNAMediaServerDelegate : public PLT_MediaServerDelegate
 {
 public:
 
-    // Constructor & destructor
+    /// Constructor and destructor
     explicit DLNAMediaServerDelegate(const char* url_root,
                                      bool use_cache = false);
     ~DLNAMediaServerDelegate() override;
 
-    // Class methods
+    /// Class methods
     static NPT_String BuildSafeResourceUri(const NPT_HttpUrl& base_uri,
                                            const char*        host,
                                            const char*        file_path);
@@ -60,7 +77,7 @@ public:
 
 protected:
 
-    // PLT_MediaServerDelegate methods
+    /// PLT_MediaServerDelegate methods
     NPT_Result OnBrowseMetadata(PLT_ActionReference&          action,
                                 const char*                   object_id,
                                 const char*                   filter,
@@ -90,13 +107,7 @@ protected:
                                   const NPT_HttpRequestContext& context,
                                   NPT_HttpResponse&             response)       override;
 
-    NPT_Result OnUpdateObject(PLT_ActionReference&            action,
-                              const char*                     object_id,
-                              NPT_Map<NPT_String,NPT_String>& current_vals,
-                              NPT_Map<NPT_String,NPT_String>& new_vals,
-                              const PLT_HttpRequestContext&   context)          override;
-
-    // Overridable methods
+    /// Overridable methods
     virtual NPT_Result ExtractResourcePath(const NPT_HttpUrl& url,
                                            NPT_String& file_path);
 
@@ -127,6 +138,10 @@ protected:
 
     class Private;
     Private* const d;
+
+private:
+
+    Q_DISABLE_COPY(DLNAMediaServerDelegate)
 };
 
 } // namespace Digikam

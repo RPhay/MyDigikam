@@ -60,7 +60,7 @@ public:
 
 TagMngrTreeView::TagMngrTreeView(TagsManager* const parent, TagModel* const model)
     : TagFolderView(parent, model),
-      d(new Private())
+      d            (new Private())
 {
     d->tagMngr = parent;
     setAlbumFilterModel(new TagsManagerFilterModel(this), albumFilterModel());

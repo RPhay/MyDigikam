@@ -45,11 +45,11 @@ QStringList makeTagString(const RGInfo& info,const QString& inputFormat,const QS
 
     while ((indexFBracket = returnedAddress.indexOf(QLatin1String("{"))) >= 0)
     {
-        int indexLBracket       = returnedAddress.indexOf(QLatin1String("}"));
-        QString humanTag        = returnedAddress.mid(indexFBracket + 1, indexLBracket-indexFBracket-1);
-        int indexFormatFBracket = auxReturnedFormat.indexOf(QLatin1String("{"));
-        auxReturnedFormat.replace(indexFormatFBracket - 1, humanTag.length() + 3, QLatin1String(""));
-        bool dataAdded          = false;
+        int indexLBracket        = returnedAddress.indexOf(QLatin1String("}"));
+        QString humanTag         = returnedAddress.mid(indexFBracket + 1, indexLBracket - indexFBracket - 1);
+        int indexFormatFBracket1 = auxReturnedFormat.indexOf(QLatin1String("{"));
+        auxReturnedFormat.replace(indexFormatFBracket1 - 1, humanTag.length() + 3, QLatin1String(""));
+        bool dataAdded           = false;
         QString result;
 
         if (backendName == QLatin1String("OSM"))
@@ -166,12 +166,12 @@ QStringList makeTagString(const RGInfo& info,const QString& inputFormat,const QS
             {
                 returnedAddress.replace(indexFBracket - 1, indexLBracket - indexFBracket + 2, QLatin1String(""));
 
-                int indexFormatFBracket = auxReturnedFormat.indexOf(QLatin1String("{"));
-                int indexFormatLBracket = auxReturnedFormat.indexOf(QLatin1String("}"));
-                auxReturnedFormat.replace(indexFormatFBracket - 1,
-                                          indexFormatLBracket - indexFormatFBracket + 2,
+                int indexFormatFBracket2 = auxReturnedFormat.indexOf(QLatin1String("{"));
+                int indexFormatLBracket  = auxReturnedFormat.indexOf(QLatin1String("}"));
+                auxReturnedFormat.replace(indexFormatFBracket2 - 1,
+                                          indexFormatLBracket - indexFormatFBracket2 + 2,
                                           QLatin1String(""));
-                dataAdded               = true;
+                dataAdded                = true;
             }
         }
 
@@ -213,12 +213,12 @@ QStringList makeTagString(const RGInfo& info,const QString& inputFormat,const QS
                                         indexLBracket - indexFBracket + 2,
                                         QLatin1String(""));
 
-                int indexFormatFBracket = auxReturnedFormat.indexOf(QLatin1String("{"));
-                int indexFormatLBracket = auxReturnedFormat.indexOf(QLatin1String("}"));
-                auxReturnedFormat.replace(indexFormatFBracket - 1,
-                                          indexFormatLBracket - indexFormatFBracket + 2,
+                int indexFormatFBracket3 = auxReturnedFormat.indexOf(QLatin1String("{"));
+                int indexFormatLBracket  = auxReturnedFormat.indexOf(QLatin1String("}"));
+                auxReturnedFormat.replace(indexFormatFBracket3 - 1,
+                                          indexFormatLBracket - indexFormatFBracket3 + 2,
                                           QLatin1String(""));
-                dataAdded               = true;
+                dataAdded                = true;
             }
         }
 
@@ -249,12 +249,12 @@ QStringList makeTagString(const RGInfo& info,const QString& inputFormat,const QS
                                         indexLBracket - indexFBracket + 2,
                                         QLatin1String(""));
 
-                int indexFormatFBracket = auxReturnedFormat.indexOf(QLatin1String("{"));
-                int indexFormatLBracket = auxReturnedFormat.indexOf(QLatin1String("}"));
-                auxReturnedFormat.replace(indexFormatFBracket - 1,
-                                          indexFormatLBracket - indexFormatFBracket + 2,
+                int indexFormatFBracket4 = auxReturnedFormat.indexOf(QLatin1String("{"));
+                int indexFormatLBracket  = auxReturnedFormat.indexOf(QLatin1String("}"));
+                auxReturnedFormat.replace(indexFormatFBracket4 - 1,
+                                          indexFormatLBracket - indexFormatFBracket4 + 2,
                                           QLatin1String(""));
-                dataAdded               = true;
+                dataAdded                = true;
             }
         }
 

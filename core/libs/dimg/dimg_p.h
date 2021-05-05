@@ -8,7 +8,7 @@
  *               Private data container.
  *
  * Copyright (C) 2005      by Renchi Raju <renchi dot raju at gmail dot com>
- * Copyright (C) 2005-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2005-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -62,6 +62,7 @@ extern "C"
 #include <QPixmap>
 #include <QSysInfo>
 #include <QUuid>
+#include <QScopedPointer>
 
 // KDE includes
 
@@ -125,14 +126,13 @@ class DIGIKAM_EXPORT DImg::Private : public QSharedData
 public:
 
     explicit Private()
-      : null(true),
-        alpha(false),
-        sixteenBit(false),
-        width(0),
-        height(0),
-        data(nullptr),
-        lanczos_func(nullptr),
-        mutex(QMutex::Recursive)
+      : null        (true),
+        alpha       (false),
+        sixteenBit  (false),
+        width       (0),
+        height      (0),
+        data        (nullptr),
+        lanczos_func(nullptr)
     {
     }
 
@@ -142,9 +142,34 @@ public:
         delete [] lanczos_func;
     }
 
-    static QList<DPluginDImg*> pluginsForFile(const QFileInfo& fileInfo, bool magic)
+public:
+
+    bool                    null;
+    bool                    alpha;
+    bool                    sixteenBit;
+
+    unsigned int            width;
+    unsigned int            height;
+
+    unsigned char*          data;
+    LANCZOS_DATA_TYPE*      lanczos_func;
+
+    MetaEngineData          metaData;
+    QMap<QString, QVariant> attributes;
+    QMap<QString, QString>  embeddedText;
+    IccProfile              iccProfile;
+    DImageHistory           imageHistory;
+};
+
+// ----------------------------------------------------------------------------
+
+class DIGIKAM_EXPORT DImgStaticPriv
+{
+public:
+
+    static DPluginDImg* pluginForFile(const QFileInfo& fileInfo, bool magic)
     {
-        QMap<int, DPluginDImg*> pluginMap;
+        QMultiMap<int, DPluginDImg*> pluginMap;
 
         foreach (DPlugin* const p, DPluginLoader::instance()->allPlugins())
         {
@@ -158,16 +183,21 @@ public:
                                           << "Priority:"  << prio
                                           << "Loader:"    << plug->loaderName();
  */
-                pluginMap.insertMulti(prio, plug);
+                pluginMap.insert(prio, plug);
             }
         }
 
-        return pluginMap.values();
+        if (pluginMap.isEmpty())
+        {
+            return nullptr;
+        }
+
+        return pluginMap.first();
     }
 
     static DPluginDImg* pluginForFormat(const QString& format)
     {
-        QMap<int, DPluginDImg*> pluginMap;
+        QMultiMap<int, DPluginDImg*> pluginMap;
 
         if (!format.isNull())
         {
@@ -178,7 +208,7 @@ public:
 
                 if (plug && ((prio = plug->canWrite(format)) > 0))
                 {
-                    pluginMap.insertMulti(prio, plug);
+                    pluginMap.insert(prio, plug);
                 }
             }
         }
@@ -227,6 +257,7 @@ public:
         }
 
         // In others cases, ImageMagick or QImage will be used to try to open file.
+
         return DImg::QIMAGE;
     }
 
@@ -245,26 +276,6 @@ public:
 
         return list;
     }
-
-public:
-
-    bool                    null;
-    bool                    alpha;
-    bool                    sixteenBit;
-
-    unsigned int            width;
-    unsigned int            height;
-
-    unsigned char*          data;
-    LANCZOS_DATA_TYPE*      lanczos_func;
-
-    QMutex                  mutex;
-
-    MetaEngineData          metaData;
-    QMap<QString, QVariant> attributes;
-    QMap<QString, QString>  embeddedText;
-    IccProfile              iccProfile;
-    DImageHistory           imageHistory;
 };
 
 } // namespace Digikam

@@ -7,7 +7,7 @@
  * Description : Integrated, multithread face detection / recognition
  *
  * Copyright (C) 2010-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2012-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -24,11 +24,6 @@
 
 #include "recognitionworker.h"
 
-// KDE includes
-
-#include <ksharedconfig.h>
-#include <kconfiggroup.h>
-
 // Local includes
 
 #include "digikam_debug.h"
@@ -36,9 +31,9 @@
 namespace Digikam
 {
 
-RecognitionWorker::RecognitionWorker(FacePipeline::Private* const d)
-    : imageRetriever(d),
-      d(d)
+RecognitionWorker::RecognitionWorker(FacePipeline::Private* const dd)
+    : imageRetriever(dd),
+      d             (dd)
 {
 }
 
@@ -47,17 +42,15 @@ RecognitionWorker::~RecognitionWorker()
     wait();    // protect database
 }
 
-void RecognitionWorker::activeFaceRecognizer(RecognitionDatabase::RecognizeAlgorithm algorithmType)
-{
-    database.activeFaceRecognizer(algorithmType);
-}
-
+/**
+ *TODO: investigate this method
+ */
 void RecognitionWorker::process(FacePipelineExtendedPackage::Ptr package)
 {
-    FaceUtils     utils;
-    QList<QImage> images;
+    FaceUtils      utils;
+    QList<QImage*> images;
 
-    if (package->processFlags & FacePipelinePackage::ProcessedByDetector)
+    if      (package->processFlags & FacePipelinePackage::ProcessedByDetector)
     {
         // assume we have an image
 
@@ -68,15 +61,17 @@ void RecognitionWorker::process(FacePipelineExtendedPackage::Ptr package)
         images = imageRetriever.getThumbnails(package->filePath, package->databaseFaces.toFaceTagsIfaceList());
     }
 
-    package->recognitionResults  = database.recognizeFaces(images);
+    // NOTE: cropped faces will be deleted by training provider
+
+    package->recognitionResults  = recognizer.recognizeFaces(images);
     package->processFlags       |= FacePipelinePackage::ProcessedByRecognizer;
 
     emit processed(package);
 }
 
-void RecognitionWorker::setThreshold(double threshold)
+void RecognitionWorker::setThreshold(double threshold, bool)
 {
-    database.setParameter(QLatin1String("threshold"), threshold);
+    recognizer.setParameter(QLatin1String("threshold"), threshold);
 }
 
 void RecognitionWorker::aboutToDeactivate()

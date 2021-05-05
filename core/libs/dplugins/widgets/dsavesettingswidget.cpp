@@ -6,7 +6,7 @@
  * Date        : 2006-09-13
  * Description : a widget to provide options to save image.
  *
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -43,10 +43,10 @@ class Q_DECL_HIDDEN DSaveSettingsWidget::Private
 public:
 
     explicit Private()
-      : formatLabel(nullptr),
-        grid(nullptr),
-        formatComboBox(nullptr),
-        conflictBox(nullptr)
+      : formatLabel     (nullptr),
+        grid            (nullptr),
+        formatComboBox  (nullptr),
+        conflictBox     (nullptr)
     {
     }
 
@@ -61,7 +61,7 @@ public:
 
 DSaveSettingsWidget::DSaveSettingsWidget(QWidget* const parent)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     setAttribute(Qt::WA_DeleteOnClose);
 
@@ -177,20 +177,28 @@ QString DSaveSettingsWidget::typeMime() const
     switch (fileFormat())
     {
         case OUTPUT_JPEG:
+        {
             mime = QLatin1String("image/jpeg");
             break;
+        }
 
         case OUTPUT_TIFF:
+        {
             mime = QLatin1String("image/tiff");
             break;
+        }
 
         case OUTPUT_PPM:
+        {
             mime = QLatin1String("image/ppm");
             break;
+        }
 
         case OUTPUT_PNG:
+        {
             mime = QLatin1String("image/png");
             break;
+        }
     }
 
     return mime;
@@ -203,20 +211,28 @@ QString DSaveSettingsWidget::extensionForFormat(DSaveSettingsWidget::OutputForma
     switch (format)
     {
         case OUTPUT_JPEG:
+        {
             ext = QLatin1String(".jpg");
             break;
+        }
 
         case OUTPUT_TIFF:
+        {
             ext = QLatin1String(".tif");
             break;
+        }
 
         case OUTPUT_PPM:
+        {
             ext = QLatin1String(".ppm");
             break;
+        }
 
         case OUTPUT_PNG:
+        {
             ext = QLatin1String(".png");
             break;
+        }
     }
 
     return ext;

@@ -46,6 +46,8 @@ namespace Digikam
 
 class Q_DECL_HIDDEN VersionsTreeView::ToolTip : public ItemViewToolTip
 {
+    Q_OBJECT
+
 public:
 
     enum Mode
@@ -59,7 +61,7 @@ public:
 
     explicit ToolTip(QAbstractItemView* const view)
         : ItemViewToolTip(view),
-          m_mode(InvalidMode)
+          m_mode         (InvalidMode)
     {
     }
 
@@ -72,7 +74,7 @@ public:
 
 protected:
 
-    virtual QString tipContents()
+    QString tipContents() override
     {
         switch (m_mode)
         {
@@ -106,11 +108,11 @@ protected:
 // --------------------------------------------------------------------------------------------------------------------------
 
 VersionsTreeView::VersionsTreeView(QWidget* const parent)
-    : QTreeView(parent),
-      m_delegate(nullptr),
+    : QTreeView        (parent),
+      m_delegate       (nullptr),
       m_dragDropHandler(nullptr),
-      m_showToolTip(false),
-      m_toolTip(nullptr)
+      m_showToolTip    (false),
+      m_toolTip        (nullptr)
 {
     m_delegate = new VersionsDelegate(this);
     setItemDelegate(m_delegate);
@@ -118,7 +120,7 @@ VersionsTreeView::VersionsTreeView(QWidget* const parent)
     setMouseTracking(true);
 }
 
-// All overlay management code in a sophisticated form can be studied in ItemCategorizedView
+/// NOTE: All overlay management code in a sophisticated form can be studied in ItemCategorizedView
 VersionsTreeView::~VersionsTreeView()
 {
     m_delegate->removeAllOverlays();
@@ -167,6 +169,7 @@ void VersionsTreeView::paintEvent(QPaintEvent* e)
 QModelIndex VersionsTreeView::moveCursor(CursorAction cursorAction, Qt::KeyboardModifiers modifiers)
 {
     // TODO: Need to find a solution to skip non-vertex items in CombinedTreeMode. Not easy.
+
     return QTreeView::moveCursor(cursorAction, modifiers);
 }
 
@@ -267,3 +270,5 @@ bool VersionsTreeView::viewportEvent(QEvent* event)
 }
 
 } // namespace Digikam
+
+#include "versionstreeview.moc"

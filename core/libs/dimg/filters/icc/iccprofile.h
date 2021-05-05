@@ -7,7 +7,7 @@
  * Description : a wrapper class for an ICC color profile
  *
  * Copyright (C) 2005-2006 by F.J. Cruz <fj dot cruz at supercable dot es>
- * Copyright (C) 2005-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2005-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2009-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  *
  * This program is free software; you can redistribute it
@@ -130,13 +130,13 @@ public:
     /**
      * Returns if the profile is opened.
      */
-    bool isOpen() const;
+    bool isOpen()       const;
 
     /**
      * Returns the filename that this profile was read from.
      * returns a null QString() if this profile was loaded from memory.
      */
-    QString filePath() const;
+    QString filePath()  const;
 
     /**
      * Reads the profile description. Opens the profile if necessary.
@@ -156,10 +156,12 @@ public:
      */
     bool writeToFile(const QString& filePath);
 
-    /// Access to the LCMS cmsHPROFILE handle
-    void* handle() const;
+    /**
+     * Access to the LCMS cmsHPROFILE handle.
+     */
+    void* handle()      const;
 
-    operator void*() const
+    operator void*()    const
     {
         return handle();
     }

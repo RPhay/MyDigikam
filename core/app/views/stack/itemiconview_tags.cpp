@@ -7,7 +7,7 @@
  * Description : Item icon view interface - Tag methods.
  *
  * Copyright (C) 2002-2005 by Renchi Raju <renchi dot raju at gmail dot com>
- * Copyright (C) 2002-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2002-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2009-2011 by Johannes Wienke <languitar at semipol dot de>
  * Copyright (C) 2010-2011 by Andi Clemens <andi dot clemens at gmail dot com>
  * Copyright (C) 2011-2013 by Michael G. Hansen <mike at mghansen dot de>
@@ -45,9 +45,13 @@ void ItemIconView::toggleTag(int tagID)
     foreach (const ItemInfo& info, selectedList)
     {
         if (info.tagIds().contains(tagID))
+        {
             tagToRemove.append(info);
+        }
         else
+        {
             tagToAssign.append(info);
+        }
     }
 
     FileActionMngr::instance()->assignTag(tagToAssign, tagID);
@@ -77,6 +81,44 @@ void ItemIconView::slotAssignTag(int tagID)
 void ItemIconView::slotRemoveTag(int tagID)
 {
     FileActionMngr::instance()->removeTags(selectedInfoList(ApplicationSettings::Metadata), QList<int>() << tagID);
+
+    /**
+     * Implementation for Automatic Icon Removal of
+     * Confirmed Tags.
+     * QTimer to ensure TagRemoval is complete.
+     */
+    if (!FaceTags::isTheIgnoredPerson(tagID)  &&
+        !FaceTags::isTheUnknownPerson(tagID)  &&
+        !FaceTags::isTheUnconfirmedPerson(tagID)
+       )
+    {
+        QTimer::singleShot(200, this, [=]()
+            {
+                int count = CoreDbAccess().db()->getNumberOfImagesInTagProperties(tagID,
+                                                                                  ImageTagPropertyName::tagRegion());
+
+                /**
+                 * If the face just removed was the final face
+                 * associated with that Tag, reset Tag Icon.
+                 */
+                if (count == 0)
+                {
+                    TAlbum* const album = AlbumManager::instance()->findTAlbum(tagID);
+
+                    if (album && (album->iconId() != 0))
+                    {
+                        QString err;
+
+                        if (!AlbumManager::instance()->updateTAlbumIcon(album, QString(),
+                                                                        0, err))
+                        {
+                            qCDebug(DIGIKAM_GENERAL_LOG) << err ;
+                        }
+                    }
+                }
+            }
+        );
+    }
 }
 
 
@@ -85,7 +127,9 @@ void ItemIconView::slotNewTag()
     QList<TAlbum*> talbums = AlbumManager::instance()->currentTAlbums();
 
     if (!talbums.isEmpty())
+    {
         d->tagModificationHelper->slotTagNew(talbums.first());
+    }
 }
 
 void ItemIconView::slotDeleteTag()
@@ -93,7 +137,9 @@ void ItemIconView::slotDeleteTag()
     QList<TAlbum*> talbums = AlbumManager::instance()->currentTAlbums();
 
     if (!talbums.isEmpty())
+    {
         d->tagModificationHelper->slotTagDelete(talbums.first());
+    }
 }
 
 void ItemIconView::slotEditTag()
@@ -101,7 +147,9 @@ void ItemIconView::slotEditTag()
     QList<TAlbum*> talbums = AlbumManager::instance()->currentTAlbums();
 
     if (!talbums.isEmpty())
+    {
         d->tagModificationHelper->slotTagEdit(talbums.first());
+    }
 }
 
 void ItemIconView::slotOpenTagsManager()
@@ -118,9 +166,10 @@ void ItemIconView::slotAssignTag()
     d->rightSideBar->imageDescEditTab()->setFocusToNewTagEdit();
 }
 
+/*
 void ItemIconView::slotRatingChanged(const QUrl& url, int rating)
 {
-    rating = qMin(RatingMax, qMax(RatingMin, rating));
+    rating        = qMin(RatingMax, qMax(RatingMin, rating));
     ItemInfo info = ItemInfo::fromUrl(url);
 
     if (!info.isNull())
@@ -156,10 +205,15 @@ void ItemIconView::slotToggleTag(const QUrl& url, int tagID)
     if (!info.isNull())
     {
         if (info.tagIds().contains(tagID))
+        {
             FileActionMngr::instance()->removeTag(info, tagID);
+        }
         else
+        {
             FileActionMngr::instance()->assignTag(info, tagID);
+        }
     }
 }
+*/
 
 } // namespace Digikam

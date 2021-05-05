@@ -7,7 +7,7 @@
  * Description : contextmenu helper class
  *
  * Copyright (C) 2009-2010 by Andi Clemens <andi dot clemens at gmail dot com>
- * Copyright (C) 2010-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2010-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -78,34 +78,13 @@ class TAlbum;
  * instead the one from the parent menu. This way signals from
  * special menus can be emitted and connected to the appropriate slots.
  */
-class DIGIKAM_EXPORT ContextMenuHelper : public QObject
+class DIGIKAM_GUI_EXPORT ContextMenuHelper : public QObject      // clazy:exclude=ctor-missing-parent-argument
 {
     Q_OBJECT
 
 public:
 
     typedef const QList<qlonglong> imageIds;
-
-Q_SIGNALS:
-
-    void signalSetThumbnail(const ItemInfo&);
-    void signalGotoAlbum(const ItemInfo&);
-    void signalGotoDate(const ItemInfo&);
-    void signalGotoTag(int);
-    void signalAssignTag(int);
-    void signalRemoveTag(int);
-    void signalAssignPickLabel(int);
-    void signalAssignColorLabel(int);
-    void signalAssignRating(int);
-    void signalAddToExistingQueue(int);
-    void signalAddNewTagFromABCMenu(const QString&);
-    void signalPopupTagsView();
-    void signalCreateGroup();
-    void signalCreateGroupByTime();
-    void signalCreateGroupByFilename();
-    void signalCreateGroupByTimelapse();
-    void signalUngroup();
-    void signalRemoveFromGroup();
 
 public:
 
@@ -116,8 +95,8 @@ public:
      * @param actionCollection the actionCollection that should be used. If not set, the standard
      * action from DigikamApp is used
      */
-    explicit ContextMenuHelper(QMenu* parent, KActionCollection* actionCollection = nullptr);
-    virtual ~ContextMenuHelper();
+    explicit ContextMenuHelper(QMenu* const parent, KActionCollection* const actionCollection = nullptr);   // clazy:exclude=ctor-missing-parent-argument
+    ~ContextMenuHelper() override;
 
     /**
      * Add an action from the actionCollection.
@@ -260,20 +239,20 @@ public:
      */
     void addActionNewTag(TagModificationHelper* helper, TAlbum* parentTag = nullptr);
     void addActionDeleteTag(TagModificationHelper* helper, TAlbum* tag);
-    void addActionDeleteTags(TagModificationHelper* helper, QList< TAlbum* > tags);
+    void addActionDeleteTags(TagModificationHelper* helper, const QList<TAlbum*>& tags);
     void addActionEditTag(TagModificationHelper* helper, TAlbum* tag);
 
     /**
      * Add action to delete tags from people sidebar.
      */
     void addActionDeleteFaceTag(TagModificationHelper* helper, TAlbum* tag);
-    void addActionDeleteFaceTags(TagModificationHelper* helper, QList< TAlbum* > tags);
+    void addActionDeleteFaceTags(TagModificationHelper* helper, const QList<TAlbum*>& tags);
 
     /**
      * Add action to set tags as face tags.
      */
     void addActionTagToFaceTag(TagModificationHelper* helper, TAlbum* tag);
-    void addActionTagsToFaceTags(TagModificationHelper* helper, QList< TAlbum* > tags);
+    void addActionTagsToFaceTags(TagModificationHelper* helper, const QList<TAlbum*>& tags);
 
     /**
      * Add actions to add, remove or edit a tag.
@@ -402,6 +381,27 @@ public:
      * @return the triggered action
      */
     QAction* exec(const QPoint& pos, QAction* at = nullptr);
+
+Q_SIGNALS:
+
+    void signalSetThumbnail(const ItemInfo&);
+    void signalGotoAlbum(const ItemInfo&);
+    void signalGotoDate(const ItemInfo&);
+    void signalGotoTag(int);
+    void signalAssignTag(int);
+    void signalRemoveTag(int);
+    void signalAssignPickLabel(int);
+    void signalAssignColorLabel(int);
+    void signalAssignRating(int);
+    void signalAddToExistingQueue(int);
+    void signalAddNewTagFromABCMenu(const QString&);
+    void signalPopupTagsView();
+    void signalCreateGroup();
+    void signalCreateGroupByTime();
+    void signalCreateGroupByFilename();
+    void signalCreateGroupByTimelapse();
+    void signalUngroup();
+    void signalRemoveFromGroup();
 
 private Q_SLOTS:
 

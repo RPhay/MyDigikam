@@ -51,7 +51,7 @@ class ItemInfo;
  * If an image is created from multiple source images (panorama etc.),
  * there will be one vertex per source image!
  */
-class HistoryVertexProperties
+class DIGIKAM_DATABASE_EXPORT HistoryVertexProperties
 {
 public:
 
@@ -88,7 +88,7 @@ QDebug operator<<(QDebug dbg, const HistoryImageId& id);
  * describes the actions necessary to create v2 from v2:
  * v1 -> actions[0] -> ... -> actions[n] = v2.
  */
-class HistoryEdgeProperties
+class DIGIKAM_DATABASE_EXPORT HistoryEdgeProperties
 {
 public:
 
@@ -101,8 +101,8 @@ typedef Graph<HistoryVertexProperties, HistoryEdgeProperties> HistoryGraph;
 
 // ------------------------------------------------------------------------------
 
-class ItemHistoryGraphData : public HistoryGraph,
-                             public QSharedData
+class DIGIKAM_DATABASE_EXPORT ItemHistoryGraphData : public HistoryGraph,       // clazy:exclude=copyable-polymorphic
+                                                     public QSharedData
 {
 public:
 

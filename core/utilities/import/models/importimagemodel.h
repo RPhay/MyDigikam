@@ -68,7 +68,7 @@ public:
 public:
 
     explicit ImportItemModel(QObject* const parent = nullptr);
-    ~ImportItemModel();
+    ~ImportItemModel() override;
 
     /// Used to set the camera controller, and connect with it.
     virtual void setCameraThumbsController(CameraThumbsCtrl* const controller);
@@ -165,11 +165,11 @@ public:
     static qlonglong   retrieveCamItemId(const QModelIndex& index);
 
     /// QAbstractListModel implementation
-    virtual int           rowCount(const QModelIndex& parent)                            const override;
-    virtual QVariant      data(const QModelIndex& index, int role)                       const override;
-    virtual QVariant      headerData(int section, Qt::Orientation orientation, int role) const override;
-    virtual Qt::ItemFlags flags(const QModelIndex& index)                                const override;
-    virtual QModelIndex   index(int row, int column, const QModelIndex& parent)          const override;
+    int           rowCount(const QModelIndex& parent)                            const override;
+    QVariant      data(const QModelIndex& index, int role)                       const override;
+    QVariant      headerData(int section, Qt::Orientation orientation, int role) const override;
+    Qt::ItemFlags flags(const QModelIndex& index)                                const override;
+    QModelIndex   index(int row, int column, const QModelIndex& parent)          const override;
 
     /// DragDrop methods
     DECLARE_MODEL_DRAG_DROP_METHODS
@@ -293,6 +293,12 @@ public:
 
     // NOTE: Declared public because it's used in ItemModelIncrementalUpdater class
     class Private;
+
+private:
+
+    // Disable
+    ImportItemModel(const ImportItemModel&)            = delete;
+    ImportItemModel& operator=(const ImportItemModel&) = delete;
 
 private:
 

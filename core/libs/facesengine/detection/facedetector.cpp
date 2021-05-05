@@ -6,7 +6,7 @@
  * Description : A convenience class for a standalone face detector
  *
  * Copyright (C)      2010 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2010-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2010-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -31,12 +31,7 @@
 // Local includes
 
 #include "digikam_debug.h"
-
-#ifdef USE_DNN_DETECTION_BACKEND
-#   include "opencvdnnfacedetector.h"
-#else
-#   include "opencvfacedetector.h"
-#endif
+#include "opencvdnnfacedetector.h"
 
 namespace Digikam
 {
@@ -46,43 +41,28 @@ class Q_DECL_HIDDEN FaceDetector::Private : public QSharedData
 public:
 
     explicit Private()
-        :
-
-#ifdef USE_DNN_DETECTION_BACKEND
-
-          m_dnnDetectorBackend(nullptr)
-
-#else
-
-          m_haarDetectorbackend(nullptr)
-
-#endif
-
+        : m_dnnDetectorBackend(nullptr)
     {
     }
 
     ~Private()
     {
-
-#ifdef USE_DNN_DETECTION_BACKEND
-
         delete m_dnnDetectorBackend;
-
-#else
-
-        delete m_haarDetectorbackend;
-
-#endif
-
     }
-
-#ifdef USE_DNN_DETECTION_BACKEND
 
     OpenCVDNNFaceDetector* backend()
     {
         if (!m_dnnDetectorBackend)
         {
-            m_dnnDetectorBackend = new OpenCVDNNFaceDetector(DetectorNNModel::SSDMOBILENET);
+            if (m_parameters.contains(QLatin1String("useyolov3")) &&
+                m_parameters.value(QLatin1String("useyolov3")).toBool())
+            {
+                m_dnnDetectorBackend = new OpenCVDNNFaceDetector(DetectorNNModel::YOLO);
+            }
+            else
+            {
+                m_dnnDetectorBackend = new OpenCVDNNFaceDetector(DetectorNNModel::SSDMOBILENET);
+            }
         }
 
         return m_dnnDetectorBackend;
@@ -93,31 +73,6 @@ public:
         return m_dnnDetectorBackend;
     }
 
-#else
-
-    OpenCVFaceDetector* backend()
-    {
-        if (!m_haarDetectorbackend)
-        {
-            QStringList cascadeDirs;
-            cascadeDirs << QString::fromUtf8(OPENCV_ROOT_PATH) + QLatin1String("/haarcascades");
-
-            qCDebug(DIGIKAM_FACESENGINE_LOG) << "Try to find OpenCV Haar Cascade files in this directory: " << cascadeDirs;
-
-            m_haarDetectorbackend = new OpenCVFaceDetector(cascadeDirs);
-            applyParameters();
-        }
-
-        return m_haarDetectorbackend;
-    }
-
-    const OpenCVFaceDetector* constBackend() const
-    {
-        return m_haarDetectorbackend;
-    }
-
-#endif
-
     void applyParameters()
     {
         if (!backend())
@@ -125,12 +80,9 @@ public:
             return;
         }
 
-#ifdef USE_DNN_DETECTION_BACKEND
+        // TODO Handle settings
 
-        // TODO
-
-#else
-
+/*
         for (QVariantMap::const_iterator it = m_parameters.constBegin() ;
              it != m_parameters.constEnd() ; ++it)
         {
@@ -151,9 +103,7 @@ public:
                 backend()->setSpecificity(1.0 - it.value().toDouble());
             }
         }
-
-#endif
-
+*/
     }
 
 public:
@@ -162,16 +112,7 @@ public:
 
 private:
 
-#ifdef USE_DNN_DETECTION_BACKEND
-
     OpenCVDNNFaceDetector* m_dnnDetectorBackend;
-
-#else
-
-    OpenCVFaceDetector*    m_haarDetectorbackend;
-
-#endif
-
 };
 
 // ---------------------------------------------------------------------------------
@@ -189,26 +130,18 @@ FaceDetector::FaceDetector(const FaceDetector& other)
 FaceDetector& FaceDetector::operator=(const FaceDetector& other)
 {
     d = other.d;
+
     return *this;
 }
 
 FaceDetector::~FaceDetector()
 {
+    // TODO: implement reference counter
 }
 
 QString FaceDetector::backendIdentifier() const
 {
-
-#ifdef USE_DNN_DETECTION_BACKEND
-
     return QLatin1String("Deep Neural Network");
-
-#else
-
-    return QLatin1String("Haar Cascades");
-
-#endif
-
 }
 
 QList<QRectF> FaceDetector::detectFaces(const QImage& image, const QSize& originalSize)
@@ -222,9 +155,6 @@ QList<QRectF> FaceDetector::detectFaces(const QImage& image, const QSize& origin
 
     try
     {
-
-#ifdef USE_DNN_DETECTION_BACKEND
-
         Q_UNUSED(originalSize);
 
         cv::Size paddedSize(0, 0);
@@ -233,25 +163,6 @@ QList<QRectF> FaceDetector::detectFaces(const QImage& image, const QSize& origin
         result                = toRelativeRects(absRects,
                                                 QSize(cvImage.cols - 2*paddedSize.width,
                                                       cvImage.rows - 2*paddedSize.height));
-
-#else
-
-        cv::Size cvOriginalSize;
-
-        if (originalSize.isValid())
-        {
-            cvOriginalSize = cv::Size(originalSize.width(), originalSize.height());
-        }
-        else
-        {
-            cvOriginalSize = cv::Size(image.width(), image.height());
-        }
-
-        cv::Mat cvImage       = d->backend()->prepareForDetection(image);
-        QList<QRect> absRects = d->backend()->detectFaces(cvImage, cvOriginalSize);
-        result                = toRelativeRects(absRects, QSize(cvImage.cols, cvImage.rows));
-
-#endif
 
         return result;
     }
@@ -278,9 +189,6 @@ QList<QRectF> FaceDetector::detectFaces(const DImg& image, const QSize& original
 
     try
     {
-
-#ifdef USE_DNN_DETECTION_BACKEND
-
         Q_UNUSED(originalSize);
 
         cv::Size paddedSize(0, 0);
@@ -289,26 +197,6 @@ QList<QRectF> FaceDetector::detectFaces(const DImg& image, const QSize& original
         result                = toRelativeRects(absRects,
                                                 QSize(cvImage.cols - 2*paddedSize.width,
                                                       cvImage.rows - 2*paddedSize.height));
-
-#else
-
-        cv::Size cvOriginalSize;
-
-        if (originalSize.isValid())
-        {
-            cvOriginalSize = cv::Size(originalSize.width(), originalSize.height());
-        }
-        else
-        {
-            cvOriginalSize = cv::Size(image.width(), image.height());
-        }
-
-        cv::Mat cvImage       = d->backend()->prepareForDetection(image);
-        QList<QRect> absRects = d->backend()->detectFaces(cvImage, cvOriginalSize);
-        result                = toRelativeRects(absRects, QSize(cvImage.cols, cvImage.rows));
-
-#endif
-
         return result;
     }
     catch (cv::Exception& e)
@@ -325,9 +213,6 @@ QList<QRectF> FaceDetector::detectFaces(const DImg& image, const QSize& original
 
 QList<QRectF> FaceDetector::detectFaces(const QString& imagePath)
 {
-
-#ifdef USE_DNN_DETECTION_BACKEND
-
     QList<QRectF> result;
 
     try
@@ -343,26 +228,12 @@ QList<QRectF> FaceDetector::detectFaces(const QString& imagePath)
     {
         qCCritical(DIGIKAM_FACESENGINE_LOG) << "cv::Exception:" << e.what();
     }
-    catch(...)
+    catch (...)
     {
         qCCritical(DIGIKAM_FACESENGINE_LOG) << "Default exception from OpenCV";
     }
 
     return result;
-
-#else
-
-    DImg img;
-
-    if (!img.load(imagePath))
-    {
-        return QList<QRectF>();
-    }
-
-    return detectFaces(img, img.size());
-
-#endif
-
 }
 
 void FaceDetector::setParameter(const QString& parameter, const QVariant& value)
@@ -390,16 +261,7 @@ int FaceDetector::recommendedImageSize(const QSize& availableSize) const
 {
     Q_UNUSED(availableSize);
 
-#ifdef USE_DNN_DETECTION_BACKEND
-
     return OpenCVDNNFaceDetector::recommendedImageSizeForDetection();
-
-#else
-
-    return OpenCVFaceDetector::recommendedImageSizeForDetection();
-
-#endif
-
 }
 
 // -- Static methods -------------------------------------------------------------

@@ -7,7 +7,7 @@
  * Description : test for implementation of ditemslist api
  *
  * Copyright (C) 2011-2012 by A Janardhan Reddy <annapareddyjanardhanreddy at gmail dot com>
- * Copyright (C) 2011-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2011-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -46,10 +46,12 @@ using namespace Digikam;
 
 class Q_DECL_HIDDEN Task : public ActionJob
 {
+    Q_OBJECT
+
 public:
 
-    Task()
-        : ActionJob()
+    Task(QObject* const parent = nullptr)
+        : ActionJob(parent)
     {
     }
 
@@ -58,7 +60,7 @@ public:
 
 protected:
 
-    void run()
+    void run() override
     {
         emit signalStarted();
 
@@ -202,9 +204,9 @@ public:
     ActionThread*     thread;
 };
 
-DItemsListTest::DItemsListTest(QObject* const /*parent*/)
-    : QDialog(),
-      d(new Private)
+DItemsListTest::DItemsListTest(QWidget* const parent)
+    : QDialog(parent),
+      d      (new Private)
 {
     setWindowTitle(QString::fromUtf8("Rotate Images to 180 Degrees"));
 
@@ -297,8 +299,11 @@ void DItemsListTest::slotFailed(const QUrl& url, const QString&)
 int main(int argc, char* argv[])
 {
     QApplication app(argc, argv);
-    DItemsListTest* const view = new DItemsListTest(&app);
+    DItemsListTest* const view = new DItemsListTest;
     view->show();
     app.exec();
+    delete view;
     return 0;
 }
+
+#include "ditemslisttest.moc"

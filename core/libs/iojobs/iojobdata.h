@@ -33,6 +33,7 @@
 // Local includes
 
 #include "digikam_export.h"
+#include "dtrashiteminfo.h"
 
 namespace Digikam
 {
@@ -40,7 +41,7 @@ namespace Digikam
 class PAlbum;
 class ItemInfo;
 
-class DIGIKAM_EXPORT IOJobData
+class DIGIKAM_GUI_EXPORT IOJobData
 {
 
 public:
@@ -51,12 +52,22 @@ public:
         CopyAlbum,
         CopyImage,
         CopyFiles,
+        CopyToExt,
         MoveAlbum,
         MoveImage,
         MoveFiles,
+        Restore,
         Rename,
         Delete,
-        Trash
+        Trash,
+        Empty
+    };
+
+    enum FileConflict
+    {
+        Continue = 0,
+        AutoRename,
+        Overwrite
     };
 
 public:
@@ -64,6 +75,10 @@ public:
     explicit IOJobData(int operation,
                        const QList<ItemInfo>& infos,
                        PAlbum* const dest = nullptr);
+
+    explicit IOJobData(int operation,
+                       const QList<ItemInfo>& infos,
+                       const QUrl& dest);
 
     explicit IOJobData(int operation,
                        const QList<QUrl>& urls,
@@ -82,39 +97,48 @@ public:
                        const QString& newName,
                        bool overwrite = false);
 
+    explicit IOJobData(int operation,
+                       const DTrashItemInfoList& infos);
+
     ~IOJobData();
 
-    void             setItemInfos(const QList<ItemInfo>& infos);
-    void             setSourceUrls(const QList<QUrl>& urls);
+    void               setItemInfos(const QList<ItemInfo>& infos);
+    void               setSourceUrls(const QList<QUrl>& urls);
 
-    void             setDestUrl(const QUrl& srcUrl,
-                                const QUrl& destUrl);
+    void               setDestUrl(const QUrl& srcUrl,
+                                  const QUrl& destUrl);
 
-    void             setProgressId(const QString& id);
+    void               setProgressId(const QString& id);
 
-    int              operation()                          const;
+    void               setFileConflict(int fc);
 
-    bool             overwrite()                          const;
+    int                operation()                          const;
 
-    PAlbum*          srcAlbum()                           const;
-    PAlbum*          destAlbum()                          const;
+    int                fileConflict()                       const;
 
-    QUrl             destUrl(const QUrl& srcUrl = QUrl()) const;
-    QUrl             getNextUrl()                         const;
+    PAlbum*            srcAlbum()                           const;
+    PAlbum*            destAlbum()                          const;
 
-    QString          getProgressId()                      const;
-    QDateTime        jobTime()                            const;
+    QUrl               destUrl(const QUrl& srcUrl = QUrl()) const;
+    QUrl               getNextUrl()                         const;
 
-    ItemInfo         findItemInfo(const QUrl& url)        const;
+    QString            getProgressId()                      const;
+    QDateTime          jobTime()                            const;
 
-    QList<QUrl>      sourceUrls()                         const;
-    QList<ItemInfo>  itemInfos()                          const;
+    ItemInfo           findItemInfo(const QUrl& url)        const;
+
+    QList<QUrl>        sourceUrls()                         const;
+    QList<ItemInfo>    itemInfos()                          const;
+
+    DTrashItemInfoList trashItems()                         const;
 
 private:
 
-    // Hidden copy constructor and assignment operator.
-    IOJobData(const IOJobData&);
-    IOJobData& operator=(const IOJobData&);
+    // Disable
+    IOJobData(const IOJobData&)            = delete;
+    IOJobData& operator=(const IOJobData&) = delete;
+
+private:
 
     class Private;
     Private* const d;

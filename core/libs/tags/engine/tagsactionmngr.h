@@ -6,7 +6,7 @@
  * Date        : 2011-01-24
  * Description : Tags Action Manager
  *
- * Copyright (C) 2011-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2011-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -44,7 +44,7 @@ class TagsActionMngr : public QObject
 public:
 
     explicit TagsActionMngr(QWidget* const parent);
-    ~TagsActionMngr();
+    ~TagsActionMngr() override;
 
     /**
      * Register all tag actions to collections managed with keyboard shortcuts.
@@ -73,7 +73,7 @@ public:
      * Updates the shortcut action for a tag. Call this when a shortcut was
      * added, removed or changed.
      */
-    void updateTagShortcut(int tagId, const QKeySequence& ks);
+    void updateTagShortcut(int tagId, const QKeySequence& ks, bool delAction = true);
 
     QString ratingShortcutPrefix()                  const;
     QString tagShortcutPrefix()                     const;
@@ -81,6 +81,10 @@ public:
     QString colorShortcutPrefix()                   const;
 
     static TagsActionMngr* defaultManager();
+
+Q_SIGNALS:
+
+    void signalShortcutPressed(const QString& shortcut, int val);
 
 private Q_SLOTS:
 
@@ -99,12 +103,10 @@ private Q_SLOTS:
      */
     void slotTagActionChanged();
 
-    void slotImageTagChanged(const ImageTagChangeset& changeset);
-
 private:
 
     bool createTagActionShortcut(int tagId);
-    bool removeTagActionShortcut(int tagId);
+    bool removeTagActionShortcut(int tagId, bool delAction = true);
 
     bool createRatingActionShortcut(KActionCollection* const ac, int rating);
     bool createPickLabelActionShortcut(KActionCollection* const ac, int pickId);

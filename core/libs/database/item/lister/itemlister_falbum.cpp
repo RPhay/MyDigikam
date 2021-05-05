@@ -7,7 +7,7 @@
  * Description : Listing information from database - FAlbum helpers.
  *
  * Copyright (C) 2007-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2007-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2007-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2015      by Mohamed_Anwer  <m_dot_anwer at gmx dot com>
  * Copyright (C) 2018      by Mario Frank    <mario dot frank at uni minus potsdam dot de>
  *
@@ -56,6 +56,7 @@ void ItemLister::listFaces(ItemListerReceiver* const receiver, int personId)
         QList<QString> nameList = pair.values(QLatin1String("face"));
 
         // push the image into the list every time a face with the name is found in the image
+
         int count = nameList.count(cache->tagName(personId));
 
         for (int i = 0 ; i < count ; ++i)
@@ -122,6 +123,7 @@ void ItemLister::listFromIdList(ItemListerReceiver* const receiver,
             }
 
             // append results to list
+
             values << access.backend()->readToList(query);
         }
     }
@@ -156,7 +158,7 @@ void ItemLister::listFromIdList(ItemListerReceiver* const receiver,
         ++it;
         record.modificationDate  = (*it).toDateTime();
         ++it;
-        record.fileSize          = d->toInt32BitSafe(it);
+        record.fileSize          = (*it).toLongLong();
         ++it;
         width                    = (*it).toInt();
         ++it;

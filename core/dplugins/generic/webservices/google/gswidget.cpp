@@ -7,7 +7,7 @@
  * Description : a tool to export items to Google web services
  *
  * Copyright (C) 2013      by Pankaj Kumar <me at panks dot me>
- * Copyright (C) 2013-2018 by Caulier Gilles <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2013-2020 by Caulier Gilles <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -49,10 +49,10 @@ GSWidget::GSWidget(QWidget* const parent,
                    DInfoInterface* const iface,
                    const GoogleService& service,
                    const QString& serviceName)
-    : WSSettingsWidget(parent, iface, serviceName)
+    : WSSettingsWidget(parent, iface, serviceName),
+      m_service       (service),
+      m_tagsBGrp      (nullptr)
 {
-    m_service                = service;
-    m_tagsBGrp               = nullptr;
     QGroupBox* const leafBox = new QGroupBox(QLatin1String(""), getSettingsBox());
 
     if (m_service == GoogleService::GPhotoExport)
@@ -89,14 +89,16 @@ GSWidget::GSWidget(QWidget* const parent,
             getOptionsBox()->hide();
             imagesList()->hide();
             leafBox->hide();
-            getSizeBox()->hide(); // (Trung) Hide this option temporary, until factorization 
+            getSizeBox()->hide(); // (Trung) Hide this option temporary, until factorization
             break;
+
         case GoogleService::GDrive:
             getOriginalCheckBox()->show();
             getUploadBox()->hide();
             getSizeBox()->hide();
             leafBox->hide();
             break;
+
         default:
             getOriginalCheckBox()->show();
             getUploadBox()->hide();

@@ -47,13 +47,13 @@ class ShowfotoSortFilterModel : public DCategorizedSortFilterProxyModel
 public:
 
     explicit ShowfotoSortFilterModel(QObject* const parent = nullptr);
-    ~ShowfotoSortFilterModel();
+    ~ShowfotoSortFilterModel() override;
 
     void setSourceShowfotoModel(ShowfotoItemModel* const sourceModel);
-    ShowfotoItemModel* sourceShowfotoModel() const;
+    ShowfotoItemModel* sourceShowfotoModel()                                                  const;
 
     void setSourceFilterModel(ShowfotoSortFilterModel* const sourceModel);
-    ShowfotoSortFilterModel* sourceFilterModel() const;
+    ShowfotoSortFilterModel* sourceFilterModel()                                              const;
 
     /**
      *Convenience methods mapped to ShowfotoItemModel.
@@ -63,30 +63,30 @@ public:
     QModelIndex mapFromSourceShowfotoModel(const QModelIndex& showfotoModelIndex)             const;
     QModelIndex mapFromDirectSourceToSourceShowfotoModel(const QModelIndex& sourceModelIndex) const;
 
-    QList<QModelIndex> mapListToSource(const QList<QModelIndex>& indexes)         const;
-    QList<QModelIndex> mapListFromSource(const QList<QModelIndex>& sourceIndexes) const;
+    QList<QModelIndex> mapListToSource(const QList<QModelIndex>& indexes)                     const;
+    QList<QModelIndex> mapListFromSource(const QList<QModelIndex>& sourceIndexes)             const;
 
-    ShowfotoItemInfo        showfotoItemInfo(const QModelIndex& index)           const;
-    qlonglong          showfotoItemId(const QModelIndex& index)                  const;
-    QList<ShowfotoItemInfo> showfotoItemInfos(const QList<QModelIndex>& indexes) const;
-    QList<qlonglong>   showfotoItemIds(const QList<QModelIndex>& indexes)        const;
+    ShowfotoItemInfo        showfotoItemInfo(const QModelIndex& index)                        const;
+    qlonglong          showfotoItemId(const QModelIndex& index)                               const;
+    QList<ShowfotoItemInfo> showfotoItemInfos(const QList<QModelIndex>& indexes)              const;
+    QList<qlonglong>   showfotoItemIds(const QList<QModelIndex>& indexes)                     const;
 
-    QModelIndex indexForUrl(const QUrl& fileUrl)                       const;
-    QModelIndex indexForShowfotoItemInfo(const ShowfotoItemInfo& info) const;
-    QModelIndex indexForShowfotoItemId(qlonglong id)                   const;
+    QModelIndex indexForUrl(const QUrl& fileUrl)                                              const;
+    QModelIndex indexForShowfotoItemInfo(const ShowfotoItemInfo& info)                        const;
+    QModelIndex indexForShowfotoItemId(qlonglong id)                                          const;
 
     /**
      * Returns a list of all showfoto infos, sorted according to this model.
      * If you do not need a sorted list, use ShowfotoItemModel's showfotoItemInfo() method.
      */
-    QList<ShowfotoItemInfo> showfotoItemInfosSorted() const;
+    QList<ShowfotoItemInfo> showfotoItemInfosSorted()                                         const;
 
     /// Returns this, any chained ShowfotoFilterModel, or 0.
-    virtual ShowfotoFilterModel* showfotoFilterModel() const;
+    virtual ShowfotoFilterModel* showfotoFilterModel()                                        const;
 
 protected:
 
-    virtual void setSourceModel(QAbstractItemModel* sourceModel);
+    void setSourceModel(QAbstractItemModel* sourceModel) override;
 
     /// Reimplement if needed. Called only when model shall be set as (direct) sourceModel.
     virtual void setDirectSourceShowfotoModel(ShowfotoItemModel* const sourceModel);
@@ -125,9 +125,9 @@ public:
 public:
 
     explicit ShowfotoFilterModel(QObject* const parent = nullptr);
-    ~ShowfotoFilterModel();
+    ~ShowfotoFilterModel() override;
 
-    ShowfotoItemSortSettings showfotoItemSortSettings() const;
+    ShowfotoItemSortSettings showfotoItemSortSettings()                 const;
 
     void setShowfotoItemSortSettings(const ShowfotoItemSortSettings& sorter);
 
@@ -138,8 +138,8 @@ public:
     bool isGroupOpen(qlonglong group) const;
     bool isAllGroupsOpen() const;
 */
-    virtual QVariant data(const QModelIndex& index, int role = Qt::DisplayRole) const override;
-    virtual ShowfotoFilterModel* showfotoFilterModel()                          const override;
+    QVariant data(const QModelIndex& index, int role = Qt::DisplayRole) const override;
+    ShowfotoFilterModel* showfotoFilterModel()                          const override;
 
 public Q_SLOTS:
 
@@ -184,13 +184,13 @@ protected:
 
 protected:
 
-    virtual void setDirectSourceShowfotoModel(ShowfotoItemModel* const sourceModel) override;
+    void setDirectSourceShowfotoModel(ShowfotoItemModel* const sourceModel) override;
 /*
     TODO
     virtual bool filterAcceptsRow(int source_row, const QModelIndex& source_parent) const;
 */
-    virtual int compareCategories(const QModelIndex& left, const QModelIndex& right) const override;
-    virtual bool subSortLessThan(const QModelIndex& left, const QModelIndex& right)  const override;
+    int compareCategories(const QModelIndex& left, const QModelIndex& right) const override;
+    bool subSortLessThan(const QModelIndex& left, const QModelIndex& right)  const override;
 
     /**
      * Reimplement to customize category sorting,
@@ -226,7 +226,7 @@ public:
 
 protected:
 
-    virtual bool filterAcceptsRow(int source_row, const QModelIndex& source_parent) const;
+    bool filterAcceptsRow(int source_row, const QModelIndex& source_parent) const override;
 };
 
 } // namespace ShowFoto

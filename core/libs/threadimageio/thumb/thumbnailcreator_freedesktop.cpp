@@ -7,7 +7,7 @@
  * Description : Loader for thumbnails - Freedesktop.org standard implementation
  *
  * Copyright (C) 2003-2005 by Renchi Raju <renchi dot raju at gmail dot com>
- * Copyright (C) 2003-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2003-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2006-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  *
  * This program is free software; you can redistribute it
@@ -35,11 +35,16 @@ ThumbnailInfo ThumbnailCreator::fileThumbnailInfo(const QString& path)
     QFileInfo fileInfo(path);
     info.isAccessible = fileInfo.exists();
     info.fileName     = fileInfo.fileName();
+    QString suffix    = fileInfo.suffix().toUpper();
 
     QMimeDatabase mimeDB;
     QString mimeType(mimeDB.mimeTypeForFile(path).name());
 
-    if      (mimeType.startsWith(QLatin1String("image/")))
+    if      (mimeType.startsWith(QLatin1String("image/")) ||
+             (suffix == QLatin1String("PGF"))             ||
+             (suffix == QLatin1String("KRA"))             ||
+             (suffix == QLatin1String("HEIC"))            ||
+             (suffix == QLatin1String("HEIF")))
     {
         info.mimeType = QLatin1String("image");
     }
@@ -80,17 +85,17 @@ ThumbnailImage ThumbnailCreator::loadFreedesktop(const ThumbnailInfo& info) cons
 
     if (!qimage.isNull())
     {
-        if ((qimage.text(QLatin1String("Thumb::MTime")) == QString::number(info.modificationDate.toTime_t())) &&
+        if ((qimage.text(QLatin1String("Thumb::MTime")) == QString::number(info.modificationDate.toSecsSinceEpoch())) &&
             (qimage.text(QLatin1String("Software"))     == d->digiKamFingerPrint))
         {
-            ThumbnailImage info;
-            info.qimage = qimage;
+            ThumbnailImage imgInfo;
+            imgInfo.qimage = qimage;
 
             // is stored rotated. Not needed to rotate.
 
-            info.exifOrientation = DMetadata::ORIENTATION_NORMAL;
+            imgInfo.exifOrientation = DMetadata::ORIENTATION_NORMAL;
 
-            return info;
+            return imgInfo;
         }
     }
 
@@ -123,7 +128,7 @@ void ThumbnailCreator::storeFreedesktop(const ThumbnailInfo& info, const Thumbna
     }
 
     qimage.setText(QLatin1String("Thumb::URI"),   uri);
-    qimage.setText(QLatin1String("Thumb::MTime"), QString::number(info.modificationDate.toTime_t()));
+    qimage.setText(QLatin1String("Thumb::MTime"), QString::number(info.modificationDate.toSecsSinceEpoch()));
     qimage.setText(QLatin1String("Software"),     d->digiKamFingerPrint);
 
     QTemporaryFile temp;
@@ -142,7 +147,7 @@ void ThumbnailCreator::storeFreedesktop(const ThumbnailInfo& info, const Thumbna
 
             // remove thumbPath file if it exist
 
-            if (tempFileName != thumbPath && QFile::exists(tempFileName) && QFile::exists(thumbPath))
+            if ((tempFileName != thumbPath) && QFile::exists(tempFileName) && QFile::exists(thumbPath))
             {
                 QFile::remove(thumbPath);
             }

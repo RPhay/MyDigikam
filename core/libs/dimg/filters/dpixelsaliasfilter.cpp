@@ -6,7 +6,7 @@
  * Date        : 2005-24-01
  * Description : pixels antialiasing filter
  *
- * Copyright (C) 2005-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2005-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2010      by Martin Klapetek <martin dot klapetek at gmail dot com>
  *
  * Original channel mixer algorithm copyrighted 2002 by
@@ -52,15 +52,15 @@ DPixelsAliasFilter::~DPixelsAliasFilter()
  * Function to perform pixel antialiasing with 8 bits/color/pixel images. This method is used to smooth target
  * image in transformation  method like free rotation or shear tool.
  */
-void DPixelsAliasFilter::pixelAntiAliasing(uchar* data,
-                                                int Width,
-                                                int Height,
-                                                double X,
-                                                double Y,
-                                                uchar* A,
-                                                uchar* R,
-                                                uchar* G,
-                                                uchar* B)
+void DPixelsAliasFilter::pixelAntiAliasing(uchar* const data,
+                                           int Width,
+                                           int Height,
+                                           double X,
+                                           double Y,
+                                           uchar* const A,
+                                           uchar* const R,
+                                           uchar* const G,
+                                           uchar* const B)
 {
     int nX, nY, j;
     double lfWeightX[2], lfWeightY[2], lfWeight;
@@ -115,15 +115,15 @@ void DPixelsAliasFilter::pixelAntiAliasing(uchar* data,
  * Function to perform pixel antialiasing with 16 bits/color/pixel images. This method is used to smooth target
  * image in transformation  method like free rotation or shear tool.
  */
-void DPixelsAliasFilter::pixelAntiAliasing16(unsigned short* data,
-                                                  int Width,
-                                                  int Height,
-                                                  double X,
-                                                  double Y,
-                                                  unsigned short* A,
-                                                  unsigned short* R,
-                                                  unsigned short* G,
-                                                  unsigned short* B)
+void DPixelsAliasFilter::pixelAntiAliasing16(unsigned short* const data,
+                                             int Width,
+                                             int Height,
+                                             double X,
+                                             double Y,
+                                             unsigned short* const A,
+                                             unsigned short* const R,
+                                             unsigned short* const G,
+                                             unsigned short* const B)
 {
     int nX, nY, j;
     double lfWeightX[2], lfWeightY[2], lfWeight;

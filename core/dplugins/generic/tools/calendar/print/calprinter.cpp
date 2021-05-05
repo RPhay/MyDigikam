@@ -7,7 +7,7 @@
  * Description : printer thread.
  *
  * Copyright (C) 2008      by Orgad Shaneh <orgads at gmail dot com>
- * Copyright (C) 2012-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -40,8 +40,8 @@ public:
 
     explicit Private()
       : cancelled(false),
-        printer(nullptr),
-        painter(nullptr)
+        printer  (nullptr),
+        painter  (nullptr)
     {
     }
 
@@ -54,10 +54,10 @@ public:
 };
 
 CalPrinter::CalPrinter(QPrinter* const printer,
-                       QMap<int, QUrl>& months,
+                       const QMap<int, QUrl>& months,
                        QObject* const parent)
     : QThread(parent),
-      d(new Private)
+      d      (new Private)
 {
     d->printer   = printer;
     d->painter   = new CalPainter(d->printer);
@@ -85,6 +85,7 @@ void CalPrinter::run()
     {
         emit pageChanged(currPage);
 
+        // cppcheck-suppress knownConditionTrueFalse
         if (currPage)
         {
             d->printer->newPage();
@@ -112,4 +113,4 @@ void CalPrinter::cancel()
     d->cancelled = true;
 }
 
-}  // Namespace Digikam
+} // namespace Digikam

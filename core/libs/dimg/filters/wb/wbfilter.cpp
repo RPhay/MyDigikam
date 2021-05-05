@@ -6,7 +6,7 @@
  * Date        : 2007-16-01
  * Description : white balance color correction.
  *
- * Copyright (C) 2007-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2007-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2008      by Guillaume Castagnino <casta at xwing dot info>
  * Copyright (C) 2010      by Martin Klapetek <martin dot klapetek at gmail dot com>
  *
@@ -48,12 +48,12 @@ class Q_DECL_HIDDEN WBFilter::Private
 public:
 
     explicit Private()
-      : BP(0),
-        WP(0),
+      : BP    (0),
+        WP    (0),
         rgbMax(0),
-        mr(1.0),
-        mg(1.0),
-        mb(1.0)
+        mr    (1.0),
+        mg    (1.0),
+        mb    (1.0)
     {
 
         for (int i = 0 ; i < 65536 ; ++i)
@@ -75,24 +75,30 @@ public:
 
 WBFilter::WBFilter(QObject* const parent)
     : DImgThreadedFilter(parent),
-      d(new Private)
+      d                 (new Private)
 {
     initFilter();
 }
 
-WBFilter::WBFilter(DImg* const orgImage, QObject* const parent, const WBContainer& settings)
+WBFilter::WBFilter(DImg* const orgImage,
+                   QObject* const parent,
+                   const WBContainer& settings)
     : DImgThreadedFilter(orgImage, parent, QLatin1String("WBFilter")),
-      m_settings(settings),
-      d(new Private)
+      m_settings        (settings),
+      d                 (new Private)
 {
     initFilter();
 }
 
-WBFilter::WBFilter(const WBContainer& settings, DImgThreadedFilter* const master,
-                   const DImg& orgImage, const DImg& destImage, int progressBegin, int progressEnd)
+WBFilter::WBFilter(const WBContainer& settings,
+                   DImgThreadedFilter* const master,
+                   const DImg& orgImage,
+                   const DImg& destImage,
+                   int progressBegin,
+                   int progressEnd)
     : DImgThreadedFilter(master, orgImage, destImage, progressBegin, progressEnd, QLatin1String("WBFilter")),
-      m_settings(settings),
-      d(new Private)
+      m_settings        (settings),
+      d                 (new Private)
 {
     filterImage();
 }
@@ -212,10 +218,10 @@ void WBFilter::autoExposureAdjustement(const DImg* const img, double& black, dou
     delete histogram;
 }
 
-void WBFilter::setRGBmult(double& temperature, double& green, double& mr, double& mg, double& mb)
+void WBFilter::setRGBmult(const double& temperature, const double& green, double& mr, double& mg, double& mb)
 {
     // Original implementation by Tanner Helland
-    // http://www.tannerhelland.com/4435/convert-temperature-rgb-algorithm-code/
+    // www.tannerhelland.com/4435/convert-temperature-rgb-algorithm-code/
 
     double temp = temperature / 100.0;
     double mx;
@@ -305,7 +311,7 @@ void WBFilter::setLUTv()
     {
         double x     = (double)(i - d->BP) / (d->WP - d->BP);
         d->curve[i]  = (i < d->BP) ? 0 : (d->rgbMax - 1) * pow((double)x, gamma);
-        d->curve[i] *= (1 - m_settings.dark * exp(-x * x / 0.002));
+        d->curve[i] *= (1 - m_settings.dark * exp(-x * x / 0.15));
         d->curve[i] /= (double)i;
     }
 }
@@ -315,6 +321,9 @@ void WBFilter::adjustWhiteBalance(uchar* const data, int width, int height, bool
     uint size = (uint)(width * height);
     uint j;
     int  progress;
+
+    qCDebug(DIGIKAM_DIMG_LOG) << "DImg data:" << data << "Size:"
+                              << size << "sixteen bit:" << sixteenBit;
 
     if (!sixteenBit)        // 8 bits image.
     {

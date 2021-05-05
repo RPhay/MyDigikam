@@ -6,7 +6,8 @@
  * Description : Face database interface to train identities.
  *
  * Copyright (C) 2012-2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2010-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2010-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C)      2020 by Nghia Duong <minhnghiaduong997 at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -38,30 +39,14 @@
 // Local includes
 
 #include "digikam_config.h"
+#include "digikam_opencv.h"
 #include "identity.h"
 #include "facedbbackend.h"
-#include "opencvmatdata.h"
 
 namespace Digikam
 {
 
-#ifdef USE_DNN_RECOGNITION_BACKEND
-
-class DNNFaceModel;
-
-#else
-
-class LBPHFaceModel;
-
-#endif
-
-/*
-NOTE: experimental and deprecated
-
-class EigenFaceModel;
-class FisherFaceModel;
-
-*/
+class KDTree;
 
 class FaceDb
 {
@@ -71,7 +56,7 @@ public:
     ~FaceDb();
 
     BdEngineBackend::QueryState setSetting(const QString& keyword, const QString& value);
-    QString setting(const QString& keyword) const;
+    QString setting(const QString& keyword)                                     const;
 
     /**
      * Returns true if the integrity of the database is preserved.
@@ -87,66 +72,115 @@ public:
 
     // --- Identity management (facedb_identity.cpp)
 
-    int  addIdentity()                      const;
-    int  getNumberOfIdentities()            const;
+    int  addIdentity()                                                          const;
+    int  getNumberOfIdentities()                                                const;
 
     void updateIdentity(const Identity& p);
     void deleteIdentity(int id);
     void deleteIdentity(const QString& uuid);
     void clearIdentities();
 
-    QList<Identity> identities()            const;
-    QList<int>      identityIds()           const;
-
-#ifdef USE_DNN_RECOGNITION_BACKEND
+    QList<Identity> identities()                                                const;
+    QList<int>      identityIds()                                               const;
 
 public:
 
     // --- OpenCV DNN
 
-    void updateDNNFaceModel(DNNFaceModel& model);
-    DNNFaceModel dnnFaceModel(bool debug)   const;
+    /**
+     * @brief insertFaceVector : insert a new face embedding to database
+     * @param faceEmbedding
+     * @param label
+     * @return id of newly inserted entry
+     */
+    int insertFaceVector(const cv::Mat& faceEmbedding,
+                         const int label,
+                         const QString& context)                                const;
+
+    /**
+     * @brief reconstructTree: reconstruct KD-Tree from data in the database
+     * @return
+     */
+    KDTree* reconstructTree()                                                   const;
+
+    /**
+     * @brief trainData: extract train data from database
+     * @return
+     */
+    cv::Ptr<cv::ml::TrainData> trainData()                                      const;
+
+    /**
+     * @brief insertToTreeDb : insert a new node to spatial database
+     * @param nodeID
+     * @param label
+     * @param faceEmbedding
+     * @return true if successed
+     */
+    bool insertToTreeDb(const int nodeID,
+                        const cv::Mat& faceEmbedding)                           const;
+
+    /**
+     * @brief getClosestNeighbors : return a list of closest neighbor, limited by maxNbNeighbors and sqRange
+     * @param subTree
+     * @param neighborList
+     * @param position
+     * @param sqRange
+     * @param cosThreshold
+     * @param maxNbNeighbors
+
+     * @return
+     */
+    QMap<double, QVector<int> > getClosestNeighborsTreeDb(const cv::Mat& position,
+                                                          float sqRange,
+                                                          float cosThreshold,
+                                                          int maxNbNeighbors)   const;
+
+    void clearTreeDb()                                                          const;
+
+    /**
+     * @brief clearDNNTraining : clear all trained data in the database
+     * @param context
+     */
     void clearDNNTraining(const QString& context = QString());
     void clearDNNTraining(const QList<int>& identities, const QString& context = QString());
 
-#else
+private:
 
-public:
+    void updateRangeTreeDb(int nodeId,
+                           cv::Mat& minRange,
+                           cv::Mat& maxRange,
+                           const cv::Mat& position)                             const;
+    int findParentTreeDb(const cv::Mat& nodePos,
+                         bool& leftChild,
+                         int& parentSplitAxis)                                  const;
 
-    // --- OpenCV LBPH
+    class DataNode;
 
-    void updateLBPHFaceModel(LBPHFaceModel& model);
-    LBPHFaceModel lbphFaceModel()           const;
-    void clearLBPHTraining(const QString& context = QString());
-    void clearLBPHTraining(const QList<int>& identities, const QString& context = QString());
+    /**
+     * @brief getClosestNeighborsTreeDb : return a list of closest neighbor from a sub tree, limited by maxNbNeighbors and sqRange
+     * @param subTree
+     * @param neighborList
+     * @param position
+     * @param sqRange
+     * @param cosThreshold
+     * @param maxNbNeighbors
 
-#endif
-
-/*
-NOTE: experimental and deprecated
-
-public:
-
-    // --- OpenCV EIGEN
-
-    void updateEIGENFaceModel(EigenFaceModel& model, const std::vector<cv::Mat>& images_rgb);
-    EigenFaceModel eigenFaceModel()         const;
-    void clearEIGENTraining(const QString& context = QString());
-    void clearEIGENTraining(const QList<int>& identities, const QString& context = QString());
-
-public:
-
-    // --- OpenCV FISHER
-
-    FisherFaceModel fisherFaceModel()       const;
-
-*/
+     * @return
+     */
+    double getClosestNeighborsTreeDb(const DataNode& subTree,
+                                     QMap<double, QVector<int> >& neighborList,
+                                     const cv::Mat& position,
+                                     float sqRange,
+                                     float cosThreshold,
+                                     int maxNbNeighbors)                        const;
 
 private:
 
-    // Hidden copy constructor and assignment operator.
-    FaceDb(const FaceDb&);
-    FaceDb& operator=(const FaceDb&);
+    // Disable
+    FaceDb(const FaceDb&)            = delete;
+    FaceDb& operator=(const FaceDb&) = delete;
+
+private:
 
     class Private;
     Private* const d;

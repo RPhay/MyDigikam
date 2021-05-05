@@ -7,7 +7,7 @@
  * Description : a widget to perform month selection.
  *
  * Copyright (C) 2005      by Renchi Raju <renchi dot raju at gmail dot com>
- * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2011      by Andi Clemens <andi dot clemens at gmail dot com>
  *
  * This program is free software; you can redistribute it
@@ -51,14 +51,16 @@ class Q_DECL_HIDDEN MonthWidget::Private
 {
 public:
 
-    struct Month
+    class Q_DECL_HIDDEN Month
     {
+    public:
+
         Month()
+          : active   (false),
+            selected (false),
+            day      (0),
+            numImages(0)
         {
-            active    = false;
-            selected  = false;
-            day       = 0;
-            numImages = 0;
         }
 
         bool active;
@@ -72,35 +74,35 @@ public:
 
     explicit Private()
       : active(true),
-        model(nullptr),
-        timer(nullptr),
-        year(0),
-        month(0),
-        width(0),
+        model (nullptr),
+        timer (nullptr),
+        year  (0),
+        month (0),
+        width (0),
         height(0),
-        currw(0),
-        currh(0)
+        currw (0),
+        currh (0)
     {
     }
 
-    bool              active;
+    bool             active;
 
     ItemFilterModel* model;
-    QTimer*           timer;
+    QTimer*          timer;
 
-    int               year;
-    int               month;
-    int               width;
-    int               height;
-    int               currw;
-    int               currh;
+    int              year;
+    int              month;
+    int              width;
+    int              height;
+    int              currw;
+    int              currh;
 
-    struct Month      days[42];
+    Month            days[42];
 };
 
 MonthWidget::MonthWidget(QWidget* const parent)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     init();
 
@@ -109,7 +111,7 @@ MonthWidget::MonthWidget(QWidget* const parent)
 
     setActive(false);
 
-    d->timer = new QTimer(this);
+    d->timer   = new QTimer(this);
     d->timer->setSingleShot(true);
     d->timer->setInterval(150);
 
@@ -242,7 +244,7 @@ void MonthWidget::paintEvent(QPaintEvent*)
 
                 if (!weekvisible)
                 {
-                    int weeknr = QDate(d->year, d->month, d->days[index].day).weekNumber();
+                    int weeknr  = QDate(d->year, d->month, d->days[index].day).weekNumber();
                     p.setPen(d->active ? Qt::black : Qt::gray);
                     p.setFont(fnBold);
                     p.fillRect(1, sy, d->currw-1, d->currh-1, QColor(210, 210, 210));
@@ -260,7 +262,7 @@ void MonthWidget::paintEvent(QPaintEvent*)
     p.setPen(d->active ? Qt::black : Qt::gray);
     p.setFont(fnBold);
 
-    sy = 2*d->currh;
+    sy = 2 * d->currh;
 
     for (int i = 1 ; i < 8 ; ++i)
     {
@@ -292,7 +294,8 @@ void MonthWidget::paintEvent(QPaintEvent*)
 
 void MonthWidget::mousePressEvent(QMouseEvent* e)
 {
-    int firstSelected = 0, lastSelected = 0;
+    int firstSelected = 0;
+    int lastSelected  = 0;
 
     if (e->modifiers() != Qt::ControlModifier)
     {
@@ -300,7 +303,7 @@ void MonthWidget::mousePressEvent(QMouseEvent* e)
         {
             if (d->days[i].selected)
             {
-                if (firstSelected==0)
+                if (firstSelected == 0)
                 {
                     firstSelected = i;
                 }
@@ -317,7 +320,8 @@ void MonthWidget::mousePressEvent(QMouseEvent* e)
     QRect r3(d->currw, d->currh*2, d->currw*7, d->currh);
 
     // Click on a weekday
-    if (r3.contains(e->pos()))
+
+    if      (r3.contains(e->pos()))
     {
         int j = (e->pos().x() - d->currw)/d->currw;
 
@@ -326,7 +330,9 @@ void MonthWidget::mousePressEvent(QMouseEvent* e)
             d->days[i*7+j].selected = !d->days[i*7+j].selected;
         }
     }
+
     // Click on a week
+
     else if (r1.contains(e->pos()))
     {
         int j = (e->pos().y() - 3*d->currh)/d->currh;
@@ -336,7 +342,9 @@ void MonthWidget::mousePressEvent(QMouseEvent* e)
             d->days[j*7+i].selected = !d->days[j*7+i].selected;
         }
     }
+
     // Click on a day.
+
     else if (r2.contains(e->pos()))
     {
         int i, j;
@@ -348,19 +356,23 @@ void MonthWidget::mousePressEvent(QMouseEvent* e)
             int endSelection = j*7+i;
 
             if (endSelection > firstSelected)
-                for (int i2=firstSelected ; i2 <= endSelection ; ++i2)
+            {
+                for (int i2 = firstSelected ; i2 <= endSelection ; ++i2)
                 {
                     d->days[i2].selected = true;
                 }
+            }
             else if (endSelection < firstSelected)
-                for (int i2=lastSelected ; i2 >= endSelection ; --i2)
+            {
+                for (int i2 = lastSelected ; i2 >= endSelection ; --i2)
                 {
                     d->days[i2].selected = true;
                 }
+            }
         }
         else
         {
-            d->days[j*7+i].selected = !d->days[j*7+i].selected;
+            d->days[j * 7 + i].selected = !d->days[j * 7 + i].selected;
         }
     }
 
@@ -368,7 +380,7 @@ void MonthWidget::mousePressEvent(QMouseEvent* e)
 
     for (int i = 0 ; i < 42 ; ++i)
     {
-        if (d->days[i].selected && d->days[i].day != -1)
+        if (d->days[i].selected && (d->days[i].day != -1))
         {
             filterDays.append(QDateTime(QDate(d->year, d->month, d->days[i].day), QTime()));
         }

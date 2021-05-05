@@ -6,7 +6,7 @@
  * Date        : 2008-11-21
  * Description : Batch Queue Manager items list.
  *
- * Copyright (C) 2008-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2008-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C)      2014 by Mohamed_Anwer <m_dot_anwer at gmx dot com>
  *
  * This program is free software; you can redistribute it
@@ -68,11 +68,11 @@ class Q_DECL_HIDDEN QueueListViewItem::Private
 public:
 
     explicit Private()
-      : isBusy(false),
-        done(false),
-        hasThumb(false),
+      : isBusy       (false),
+        done         (false),
+        hasThumb     (false),
         progressIndex(0),
-        view(nullptr)
+        view         (nullptr)
     {
     }
 
@@ -93,7 +93,7 @@ public:
 
 QueueListViewItem::QueueListViewItem(QueueListView* const view, const ItemInfo& info)
     : QTreeWidgetItem(view),
-      d(new Private)
+      d              (new Private)
 {
     d->view = view;
     setThumb(QIcon::fromTheme(QLatin1String("view-preview")).pixmap(48, QIcon::Disabled), false);
@@ -260,14 +260,14 @@ public:
 public:
 
     explicit Private()
-      : showTips(false),
-        iconSize(64),
-        toolTipTimer(nullptr),
-        progressTimer(nullptr),
-        thumbLoadThread(ThumbnailLoadThread::defaultThread()),
-        toolTip(nullptr),
-        toolTipItem(nullptr),
-        progressPix(DWorkingPixmap())
+      : showTips        (false),
+        iconSize        (64),
+        toolTipTimer    (nullptr),
+        progressTimer   (nullptr),
+        thumbLoadThread (ThumbnailLoadThread::defaultThread()),
+        toolTip         (nullptr),
+        toolTipItem     (nullptr),
+        progressPix     (nullptr)
     {
     }
 
@@ -288,16 +288,16 @@ public:
 
     QueueListViewItem*          toolTipItem;
 
-    DWorkingPixmap              progressPix;
+    DWorkingPixmap*             progressPix;
 };
 
 QueueListView::QueueListView(QWidget* const parent)
     : QTreeWidget(parent),
-      d(new Private)
+      d          (new Private)
 {
     setIconSize(QSize(d->iconSize, d->iconSize));
     setSelectionMode(QAbstractItemView::ExtendedSelection);
-    setWhatsThis(i18n("This is the list of images to batch process."));
+    setWhatsThis(i18nc("@info", "This is the list of images to batch process."));
 
     setAcceptDrops(true);
     viewport()->setAcceptDrops(true);
@@ -314,9 +314,9 @@ QueueListView::QueueListView(QWidget* const parent)
     setContextMenuPolicy(Qt::CustomContextMenu);
 
     QStringList titles;
-    titles.append(i18n("Thumbnail"));
-    titles.append(i18n("Original"));
-    titles.append(i18n("Target"));
+    titles.append(i18nc("@title: preview item",       "Thumbnail"));
+    titles.append(i18nc("@title: original item name", "Original"));
+    titles.append(i18nc("@title: targey item name",   "Target"));
     setHeaderLabels(titles);
     header()->setSectionResizeMode(0, QHeaderView::ResizeToContents);
     header()->setSectionResizeMode(1, QHeaderView::Stretch);
@@ -325,6 +325,7 @@ QueueListView::QueueListView(QWidget* const parent)
     d->toolTip       = new QueueToolTip(this);
     d->toolTipTimer  = new QTimer(this);
     d->progressTimer = new QTimer(this);
+    d->progressPix   = new DWorkingPixmap(this);
 
     // -----------------------------------------------------------
 
@@ -353,9 +354,9 @@ QueueListView::~QueueListView()
 
 QPixmap QueueListView::progressPixmapForIndex(int index) const
 {
-    if ((index >= 0) && (index < d->progressPix.frameCount()))
+    if ((index >= 0) && (index < d->progressPix->frameCount()))
     {
-        return (d->progressPix.frameAt(index));
+        return (d->progressPix->frameAt(index));
     }
 
     return QPixmap();
@@ -366,7 +367,7 @@ Qt::DropActions QueueListView::supportedDropActions() const
     return (Qt::CopyAction | Qt::MoveAction);
 }
 
-QMimeData* QueueListView::mimeData(const QList<QTreeWidgetItem*> items) const
+QMimeData* QueueListView::mimeData(const QList<QTreeWidgetItem*> items) const       // clazy:exclude=function-args-by-ref
 {
     QList<QUrl> urls;
     QList<int> albumIDs;
@@ -440,9 +441,9 @@ void QueueListView::dragMoveEvent(QDragMoveEvent* e)
     QList<qlonglong> imageIDs;
     QList<QUrl>      urls;
 
-    if (DItemDrag::decode(e->mimeData(), urls, albumIDs, imageIDs) ||
-        DAlbumDrag::decode(e->mimeData(), urls, albumID)           ||
-        DTagListDrag::canDecode(e->mimeData()))
+    if      (DItemDrag::decode(e->mimeData(), urls, albumIDs, imageIDs) ||
+             DAlbumDrag::decode(e->mimeData(), urls, albumID)           ||
+             DTagListDrag::canDecode(e->mimeData()))
     {
         if (DItemDrag::decode(e->mimeData(), urls, albumIDs, imageIDs))
         {
@@ -484,7 +485,7 @@ void QueueListView::dropEvent(QDropEvent* e)
     QList<qlonglong> imageIDs;
     QList<QUrl>      urls;
 
-    if (DItemDrag::decode(e->mimeData(), urls, albumIDs, imageIDs))
+    if      (DItemDrag::decode(e->mimeData(), urls, albumIDs, imageIDs))
     {
         ItemInfoList imageInfoList;
 
@@ -624,7 +625,7 @@ void QueueListView::mouseMoveEvent(QMouseEvent* e)
 {
     if (e->buttons() == Qt::NoButton)
     {
-        QueueListViewItem* item = dynamic_cast<QueueListViewItem*>(itemAt(e->pos()));
+        QueueListViewItem* const item = dynamic_cast<QueueListViewItem*>(itemAt(e->pos()));
 
         if (d->showTips)
         {
@@ -646,7 +647,7 @@ void QueueListView::mouseMoveEvent(QMouseEvent* e)
                 }
             }
 
-            if (item == d->toolTipItem && !acceptToolTip(e->pos()))
+            if ((item == d->toolTipItem) && !acceptToolTip(e->pos()))
             {
                 hideToolTip();
             }
@@ -1082,7 +1083,7 @@ void QueueListView::updateDestFileNames()
 
         manager.addFiles(files);
         manager.parseFiles(psettings);
-        renamingResults = manager.newFileList();
+        renamingResults = manager.newFileList(true);
     }
 
     AssignedBatchTools tools = assignedTools();

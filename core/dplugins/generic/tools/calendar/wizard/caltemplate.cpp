@@ -10,7 +10,7 @@
  * Copyright (C) 2007-2008 by Orgad Shaneh <orgads at gmail dot com>
  * Copyright (C) 2011      by Andi Clemens <andi dot clemens at googlemail dot com>
  * Copyright (C) 2012      by Angelo Naselli <anaselli at linux dot it>
- * Copyright (C) 2012-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -64,6 +64,7 @@ CalTemplate::CalTemplate(const QList<QUrl>& urlList, QWidget* const parent)
     CalSettings* const settings = CalSettings::instance();
 
     // set initial settings
+
     settings->setPaperSize(d->ui.paperSizeCombo->currentText());
     settings->setDrawLines(d->ui.drawLinesCheckBox->isChecked());
     settings->setRatio(d->ui.ratioSlider->value());
@@ -79,7 +80,9 @@ CalTemplate::CalTemplate(const QList<QUrl>& urlList, QWidget* const parent)
 
     QDate date        = CalSystem().date(currentYear, 1, 1);
     int months        = CalSystem().monthsInYear(date);
+
     // span the monthWidgets over 2 rows. inRow should usually be 6 or 7 (for 12 or 13 months)
+
     int inRow         = (months / 2) + ((months % 2) != 0);
     CalMonthWidget* w = nullptr;
 
@@ -161,21 +164,24 @@ void CalTemplate::yearChanged(int year)
         int i;
 
         // hide the last months that are not present on the current year
-        for (i = months; (i < CalSystem().monthsInYear(oldD)) && (i < d->wVector.count()); ++i)
+
+        for (i = months ; (i < CalSystem().monthsInYear(oldD)) && (i < d->wVector.count()) ; ++i)
         {
             d->wVector.at(i)->hide();
         }
 
         // span the monthWidgets over 2 rows. inRow should usually be 6 or 7 (for 12 or 13 months)
+
         int inRow = (months / 2) + ((months % 2) != 0);
 
         // remove all the monthWidgets, then readd the needed ones
-        for (i = 0; i < CalSystem().monthsInYear(oldD); ++i)
+
+        for (i = 0 ; i < CalSystem().monthsInYear(oldD) ; ++i)
         {
             d->ui.monthBoxLayout->removeWidget(d->wVector.at(i));
         }
 
-        for (i = 0; (i < months) && (i < d->wVector.count()); ++i)
+        for (i = 0 ; (i < months) && (i < d->wVector.count()) ; ++i)
         {
             d->ui.monthBoxLayout->addWidget(d->wVector.at(i), i / inRow, i % inRow);
 

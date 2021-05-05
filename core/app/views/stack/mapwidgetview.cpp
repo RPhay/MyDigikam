@@ -8,7 +8,7 @@
  *
  * Copyright (C) 2010         by Gabriel Voicu <ping dot gabi at gmail dot com>
  * Copyright (C) 2010         by Michael G. Hansen <mike at mghansen dot de>
- * Copyright (C) 2014-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2014-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -31,6 +31,7 @@
 #include <QItemSelectionModel>
 #include <QAbstractItemModel>
 #include <QPersistentModelIndex>
+#include <QScopedPointer>
 
 // KDE includes
 
@@ -69,16 +70,16 @@ class Q_DECL_HIDDEN MapWidgetView::Private
 public:
 
     explicit Private()
-       : vbox(nullptr),
-         mapWidget(nullptr),
-         imageFilterModel(nullptr),
-         imageModel(nullptr),
-         importFilterModel(nullptr),
-         importModel(nullptr),
-         selectionModel(nullptr),
-         mapViewModelHelper(nullptr),
-         gpsItemInfoSorter(nullptr),
-         application(MapWidgetView::ApplicationDigikam)
+       : vbox               (nullptr),
+         mapWidget          (nullptr),
+         imageFilterModel   (nullptr),
+         imageModel         (nullptr),
+         importFilterModel  (nullptr),
+         importModel        (nullptr),
+         selectionModel     (nullptr),
+         mapViewModelHelper (nullptr),
+         gpsItemInfoSorter  (nullptr),
+         application        (MapWidgetView::ApplicationDigikam)
     {
     }
 
@@ -98,15 +99,15 @@ public:
  * @brief Constructor
  * @param selectionModel digiKam's selection model
  * @param imageFilterModel digikam's filter model
- * @param parent Parent object
+ * @param parent the parent object
  */
 MapWidgetView::MapWidgetView(QItemSelectionModel* const selectionModel,
                              DCategorizedSortFilterProxyModel* const imageFilterModel,
                              QWidget* const parent,
                              const MapWidgetView::Application application)
-    : QWidget(parent),
+    : QWidget          (parent),
       StateSavingObject(this),
-      d(new Private())
+      d                (new Private())
 {
     d->application    = application;
     d->selectionModel = selectionModel;
@@ -323,9 +324,9 @@ bool MapViewModelHelper::itemCoordinates(const QModelIndex& index, GeoCoordinate
                 return false;
             }
 
-            const DMetadata meta(info.url().toLocalFile());
+            QScopedPointer<DMetadata> meta(new DMetadata(info.url().toLocalFile()));
             double          lat, lng;
-            const bool      haveCoordinates = meta.getGPSLatitudeNumber(&lat) && meta.getGPSLongitudeNumber(&lng);
+            const bool      haveCoordinates = meta->getGPSLatitudeNumber(&lat) && meta->getGPSLongitudeNumber(&lng);
 
             if (!haveCoordinates)
             {
@@ -335,7 +336,7 @@ bool MapViewModelHelper::itemCoordinates(const QModelIndex& index, GeoCoordinate
             GeoCoordinates tmpCoordinates(lat, lng);
 
             double     alt;
-            const bool haveAlt = meta.getGPSAltitude(&alt);
+            const bool haveAlt = meta->getGPSAltitude(&alt);
 
             if (haveAlt)
             {
@@ -472,9 +473,9 @@ QPersistentModelIndex MapViewModelHelper::bestRepresentativeIndexFromList(const 
 
             foreach (const CamItemInfo& imageInfo, imageInfoList)
             {
-                const DMetadata meta(imageInfo.url().toLocalFile());
+                QScopedPointer<DMetadata> meta(new DMetadata(imageInfo.url().toLocalFile()));
                 double          lat, lng;
-                const bool      hasCoordinates = meta.getGPSLatitudeNumber(&lat) && meta.getGPSLongitudeNumber(&lng);
+                const bool      hasCoordinates = meta->getGPSLatitudeNumber(&lat) && meta->getGPSLongitudeNumber(&lng);
 
                 if (!hasCoordinates)
                 {
@@ -484,7 +485,7 @@ QPersistentModelIndex MapViewModelHelper::bestRepresentativeIndexFromList(const 
                 GeoCoordinates coordinates(lat, lng);
 
                 double alt;
-                const bool haveAlt = meta.getGPSAltitude(&alt);
+                const bool haveAlt = meta->getGPSAltitude(&alt);
 
                 if (haveAlt)
                 {
@@ -493,20 +494,20 @@ QPersistentModelIndex MapViewModelHelper::bestRepresentativeIndexFromList(const 
 
                 GPSItemInfo gpsItemInfo;
                 gpsItemInfo.coordinates = coordinates;
-                gpsItemInfo.dateTime    = meta.getItemDateTime();
-                gpsItemInfo.rating      = meta.getItemRating();
+                gpsItemInfo.dateTime    = meta->getItemDateTime();
+                gpsItemInfo.rating      = meta->getItemRating();
                 gpsItemInfo.url         = imageInfo.url();
                 gpsItemInfoList << gpsItemInfo;
             }
 
-            if (gpsItemInfoList.size()!=indexList.size())
+            if (gpsItemInfoList.size() != indexList.size())
             {
                 // this is a problem, and unexpected
                 return indexList.first();
             }
 
             // now determine the best available index
-            bestIndex                     = indexList.first();
+            bestIndex                   = indexList.first();
             GPSItemInfo bestGPSItemInfo = gpsItemInfoList.first();
 
             for (int i = 1 ; i < gpsItemInfoList.count() ; ++i)

@@ -6,7 +6,7 @@
  * Date        : 2009-28-04
  * Description : first run assistant dialog
  *
- * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -38,21 +38,21 @@
 namespace Digikam
 {
 
-class DIGIKAM_EXPORT FirstRunDlg : public QWizard
+class DIGIKAM_GUI_EXPORT FirstRunDlg : public QWizard
 {
     Q_OBJECT
 
 public:
 
     explicit FirstRunDlg(QWidget* const parent = nullptr);
-    ~FirstRunDlg();
+    ~FirstRunDlg() override;
 
     QString firstAlbumPath() const;
     DbEngineParameters getDbEngineParameters() const;
 
 private:
 
-    bool validateCurrentPage();
+    bool validateCurrentPage() override;
 
 private Q_SLOTS:
 
