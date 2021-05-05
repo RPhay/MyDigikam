@@ -234,5 +234,6 @@ BUGFIXES:
 215 ==> 436571 - Tooltips for images don't show tags containing "<" correctly.
 216 ==> 436587 - Not translatable strings in Settings --> Edit Geolocation.
 217 ==> 214456 - Just after update, open digikam and just close.
-218 ==> 
+218 ==> 327087 - digiKam freezes, when adding tags.
+219 ==> 
 
