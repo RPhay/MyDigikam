@@ -286,6 +286,11 @@ for path in $OTHER_DIRS ; do
     cp -a "$INSTALL_PREFIX/$path" "$TEMPROOT/$dir/"
 done
 
+# See bug #436624: move mariadb share files at basedir
+mkdir -p "$INSTALL_PREFIX/lib/mariadb/share"
+mv "$INSTALL_PREFIX/share/mariadb/*" "$INSTALL_PREFIX/lib/mariadb/share"
+rm -rf "$INSTALL_PREFIX/share/mariadb/*"
+
 echo "---------- Copying data files..."
 
 # Special case with data dirs. QStandardPaths::GenericDataLocation was patched everywhere
