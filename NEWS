@@ -235,5 +235,16 @@ BUGFIXES:
 216 ==> 436587 - Not translatable strings in Settings --> Edit Geolocation.
 217 ==> 214456 - Just after update, open digikam and just close.
 218 ==> 327087 - digiKam freezes, when adding tags.
-219 ==> 
-
+219 ==> 300407 - Tags not written to files properly, old tags left over.
+220 ==> 310193 - digiKam crashes when a tag that is selected is deleted.
+221 ==> 215462 - digiKam crashed while tagging large collection of images.
+222 ==> 
+223 ==> 
+224 ==> 
+225 ==> 
+226 ==> 
+227 ==> 
+228 ==> 
+229 ==> 
+230 ==> 
+231 ==> 
