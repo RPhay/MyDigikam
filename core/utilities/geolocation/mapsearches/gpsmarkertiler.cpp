@@ -104,7 +104,6 @@ public:
           thumbnailLoadThread   (nullptr),
           thumbnailMap          (),
           rectList              (),
-          rectLevel             (),
           activeState           (true),
           imagesHash            (),
           imageFilterModel      (),
@@ -119,7 +118,6 @@ public:
     ThumbnailLoadThread*          thumbnailLoadThread;
     QHash<qlonglong, QVariant>    thumbnailMap;
     QList<QRectF>                 rectList;
-    QList<int>                    rectLevel;
     bool                          activeState;
     QHash<qlonglong, GPSItemInfo> imagesHash;
     ItemFilterModel*              imageFilterModel;
@@ -189,29 +187,40 @@ void GPSMarkerTiler::regenerateTiles()
  */
 void GPSMarkerTiler::prepareTiles(const GeoCoordinates& upperLeft, const GeoCoordinates& lowerRight, int level)
 {
+    const QRectF worldRect(-180,-90,360,180);
+
     qreal lat1 = upperLeft.lat();
     qreal lng1 = upperLeft.lon();
     qreal lat2 = lowerRight.lat();
     qreal lng2 = lowerRight.lon();
-    const QRectF requestedRect(lat1, lng1, lat2 - lat1, lng2 - lng1);
-
+    auto requestedRect = worldRect.intersected(QRectF(lat1, lng1, lat2 - lat1, lng2 - lng1));
     for (int i = 0 ; i < d->rectList.count() ; ++i)
     {
-        if (level != d->rectLevel.at(i))
-        {
-            continue;
-        }
-
-        qreal rectLat1, rectLng1, rectLat2, rectLng2;
-        const QRectF currentRect = d->rectList.at(i);
-        currentRect.getCoords(&rectLat1, &rectLng1, &rectLat2, &rectLng2);
-
-        // do nothing if this rectangle was already requested
-
+        // is there a rect that contains the requested one?
+        const QRectF& currentRect = d->rectList.at(i);
         if (currentRect.contains(requestedRect))
         {
             return;
         }
+        // and remove rects that are contained in the requested one
+        if (requestedRect.contains(currentRect))
+        {
+            std::swap(d->rectList[i], d->rectList.back());
+            d->rectList.removeLast();
+        }
+    }
+
+    // grow the rect a bit such that we don't have to request many small ones while panning
+    qreal marginW = requestedRect.width() * 0.05;
+    qreal marginH = requestedRect.height() * 0.05;
+    requestedRect = requestedRect.marginsAdded(QMarginsF(marginW, marginH, marginW, marginH));
+    requestedRect = worldRect.intersected(requestedRect);
+
+    for (int i = 0 ; i < d->rectList.count() ; ++i)
+    {
+        qreal rectLat1, rectLng1, rectLat2, rectLng2;
+        const QRectF currentRect = d->rectList.at(i);
+        currentRect.getCoords(&rectLat1, &rectLng1, &rectLat2, &rectLng2);
 
         if      (currentRect.contains(lat1, lng1))
         {
@@ -248,10 +257,7 @@ void GPSMarkerTiler::prepareTiles(const GeoCoordinates& upperLeft, const GeoCoor
     }
 
     const QRectF newRect(lat1, lng1, lat2 - lat1, lng2 - lng1);
-
-    d->rectList.append(newRect);
-
-    d->rectLevel.append(level);
+    d->rectList.append(requestedRect);
 
     qCDebug(DIGIKAM_GENERAL_LOG) << "Listing" << lat1 << lat2 << lng1 << lng2;
 
