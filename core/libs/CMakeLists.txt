@@ -6,8 +6,6 @@
 
 include(${CMAKE_SOURCE_DIR}/core/cmake/modules/DNGSdkRules.cmake)
 
-#---------------------------------
-
 add_subdirectory(dimg)
 add_subdirectory(dragdrop)
 add_subdirectory(metadataengine)

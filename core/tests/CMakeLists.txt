@@ -156,8 +156,15 @@ add_subdirectory(multithreading)
 add_subdirectory(rawengine)
 add_subdirectory(timestampupdate)
 add_subdirectory(webservices)
-add_subdirectory(dplugins)
-add_subdirectory(dngwriter)
+add_subdirectory(widgets)
+
+if(Marble_FOUND)
+    add_subdirectory(geolocation)               # Some unit-tests based on ModelTest
+endif()
+
+if(FLEX_FOUND AND BISON_FOUND AND KF5ThreadWeaver_FOUND)
+    add_subdirectory(panorama)
+endif()
 
 if(ENABLE_MEDIAPLAYER)
     add_subdirectory(video)

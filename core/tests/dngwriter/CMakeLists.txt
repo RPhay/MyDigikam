@@ -4,6 +4,8 @@
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
 
+APPLY_COMMON_POLICIES()
+
 include(${CMAKE_SOURCE_DIR}/core/cmake/modules/DNGSdkRules.cmake)
 
 # =======================================================
@@ -15,11 +17,12 @@ add_executable(dngvalidate ${dngvalidate_SRCS})
 ecm_mark_nongui_executable(dngvalidate)
 
 target_link_libraries(dngvalidate
+
+                      libdng
                       digikamcore
 
-                      ${EXPAT_LIBRARY}
-                      ${CMAKE_THREAD_LIBS_INIT}
-                     )
+                      ${COMMON_TEST_LINK}
+)
 
 # =======================================================
 # DNGINFO command line tool
@@ -30,6 +33,8 @@ add_executable(dnginfo ${dnginfo_SRCS})
 ecm_mark_nongui_executable(dnginfo)
 
 target_link_libraries(dnginfo
+
+                      libdng
                       digikamcore
 
                       ${COMMON_TEST_LINK}
