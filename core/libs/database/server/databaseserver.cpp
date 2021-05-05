@@ -520,7 +520,7 @@ DatabaseServerError DatabaseServer::startMysqlServer()
 
 #ifdef Q_OS_MACOS
 
-    mysqldCmdArgs << QDir::toNativeSeparators(QString::fromLatin1("--basedir=%1")
+    mysqldCmdArgs << QDir::toNativeSeparators(QString::fromLatin1("--basedir=%1/lib/mariadb/")
         .arg(macOSBundlePrefix()));
 
 #endif
