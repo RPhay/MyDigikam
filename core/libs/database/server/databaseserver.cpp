@@ -482,7 +482,7 @@ DatabaseServerError DatabaseServer::createMysqlFiles() const
 
 #ifdef Q_OS_MACOS
 
-        mysqlInitCmdArgs << QDir::toNativeSeparators(QString::fromLatin1("--basedir=%1")
+        mysqlInitCmdArgs << QDir::toNativeSeparators(QString::fromLatin1("--basedir=%1/lib/mariadb/")
             .arg(macOSBundlePrefix()));
 
 #endif
