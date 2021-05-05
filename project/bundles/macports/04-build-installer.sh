@@ -287,9 +287,9 @@ for path in $OTHER_DIRS ; do
 done
 
 # See bug #436624: move mariadb share files at basedir
-mkdir -p "$INSTALL_PREFIX/lib/mariadb/share"
-mv "$INSTALL_PREFIX/share/mariadb/*" "$INSTALL_PREFIX/lib/mariadb/share"
-rm -rf "$INSTALL_PREFIX/share/mariadb/*"
+mv "$TEMPROOT/share/mariadb" "$TEMPROOT/lib/mariadb/"
+mv "$TEMPROOT/lib/mariadb/mariadb" "$TEMPROOT/lib/mariadb/share"
+rm -rf "$TEMPROOT/share/mariadb"
 
 echo "---------- Copying data files..."
 
