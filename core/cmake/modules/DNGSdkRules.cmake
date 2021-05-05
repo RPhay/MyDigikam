@@ -12,6 +12,9 @@
 # NOTE: see bug #195735: do not enable Mac flags provided by Adobe.
 #       Sounds like all compile fine like under Linux.
 
+add_definitions(-DEnablePluginManager=0)
+add_definitions(-DXMP_StaticBuild=1)
+
 if(MSVC)
     add_definitions(
                     # XMP SDK
@@ -30,7 +33,6 @@ else()
                     # DNG SDK
                     -DqWinOS=0
                     -DqMacOS=0
-                    -DqDNGThreadSafe=1   # Thread safe support under Mac and Linux using pthread library
                     -DqDNGUseStdInt=1
                    )
 endif()
@@ -41,6 +43,12 @@ TEST_BIG_ENDIAN(IS_BIG_ENDIAN)
 
 if(NOT IS_BIG_ENDIAN)
     add_definitions(-DqDNGLittleEndian)
+endif()
+
+# Thread safe support under Mac and Linux using pthread library
+
+if(NOT MSVC)
+    add_definitions(-DqDNGThreadSafe)
 endif()
 
 # Mode definition for CLI tool.
