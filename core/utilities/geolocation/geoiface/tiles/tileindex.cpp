@@ -25,6 +25,16 @@
 #include "tileindex.h"
 #include "geoifacecommon.h"
 
+namespace {
+    static_assert (Digikam::TileIndex::Tiling==10,
+                   "the constants below expect 10x10 tile splits");
+    static_assert (Digikam::TileIndex::MaxLevel==9,
+                   "the constants below expect 10x10 tile splits with max level 9");
+    constexpr int64_t MaxLevelTileSplits = 10000000000LL;
+    constexpr double MaxLevelTileSplitsFactor = 1.0 / static_cast<double>(MaxLevelTileSplits);
+}
+
+
 namespace Digikam
 {
 
@@ -193,166 +203,57 @@ TileIndex TileIndex::fromCoordinates(const Digikam::GeoCoordinates& coordinate, 
         return TileIndex();
     }
 
-    qreal tileLatBL     = -90.0;
-    qreal tileLonBL     = -180.0;
-    qreal tileLatHeight = 180.0;
-    qreal tileLonWidth  = 360.0;
-
-    TileIndex resultIndex;
-
-    for (int l = 0 ; l <= getLevel ; ++l)
+    int64_t tileLat, tileLon;
     {
-        // how many tiles at this level?
+        // this is the ony place where rounding happens
+        tileLat = static_cast<int64_t>(((coordinate.lat() + 90.0) / 180.0) * MaxLevelTileSplits);
+        tileLon = static_cast<int64_t>(((coordinate.lon() + 180.0) / 360.0) * MaxLevelTileSplits);
+        // the very last tile includes it's upper bound
+        tileLat = std::min(tileLat, MaxLevelTileSplits-1);
+        tileLon = std::min(tileLon, MaxLevelTileSplits-1);
+        // guard against bogus input
+        tileLat = std::max(tileLat, static_cast<int64_t>(0));
+        tileLon = std::max(tileLon, static_cast<int64_t>(0));
+     }
 
-        const qreal latDivisor = TileIndex::Tiling;
-        const qreal lonDivisor = TileIndex::Tiling;
-
-        const qreal dLat       = tileLatHeight / latDivisor;
-        const qreal dLon       = tileLonWidth / lonDivisor;
-
-        int latIndex           = int( (coordinate.lat() - tileLatBL ) / dLat );
-        int lonIndex           = int( (coordinate.lon() - tileLonBL ) / dLon );
-
-        // protect against invalid indices due to rounding errors
-
-        bool haveRoundingErrors = false;
-
-        if (latIndex < 0)
-        {
-            haveRoundingErrors = true;
-            latIndex           = 0;
-        }
-
-        if (lonIndex < 0)
-        {
-            haveRoundingErrors = true;
-            lonIndex           = 0;
-        }
-
-        if (latIndex >= latDivisor)
-        {
-            haveRoundingErrors = true;
-            latIndex           = latDivisor-1;
-        }
-
-        if (lonIndex >= lonDivisor)
-        {
-            haveRoundingErrors = true;
-            lonIndex           = lonDivisor-1;
-        }
-
-        if (haveRoundingErrors)
-        {
-//             qCDebug(DIGIKAM_GEOIFACE_LOG) << QString::fromLatin1("Rounding errors at level %1!").arg(l);
-        }
-
-        resultIndex.appendLatLonIndex(latIndex, lonIndex);
-
-        // update the start position for the next tile:
-        // TODO: rounding errors
-
-        tileLatBL     += latIndex*dLat;
-        tileLonBL     += lonIndex*dLon;
-        tileLatHeight /= latDivisor;
-        tileLonWidth  /= lonDivisor;
+    // every calculation below is on integers so no rounding issues
+    TileIndex tileIndex;
+    for (int i = 0; i <= TileIndex::MaxLevel; ++i) {
+        tileIndex.m_indices[TileIndex::MaxLevel-i] = (tileLat % Tiling) * Tiling + tileLon % Tiling;
+        tileLat /= Tiling;
+        tileLon /= Tiling;
     }
-
-    return resultIndex;
+    tileIndex.m_indicesCount = getLevel + 1;
+    return tileIndex;
 }
 
 GeoCoordinates TileIndex::toCoordinates() const
 {
-    // TODO: safeguards against rounding errors!
-
-    qreal tileLatBL     = -90.0;
-    qreal tileLonBL     = -180.0;
-    qreal tileLatHeight = 180.0;
-    qreal tileLonWidth  = 360.0;
-
-    for (int l = 0 ; l < m_indicesCount ; ++l)
-    {
-        // how many tiles are at this level?
-
-        const qreal latDivisor = TileIndex::Tiling;
-        const qreal lonDivisor = TileIndex::Tiling;
-
-        const qreal dLat       = tileLatHeight / latDivisor;
-        const qreal dLon       = tileLonWidth  / lonDivisor;
-
-        const int latIndex     = indexLat(l);
-        const int lonIndex     = indexLon(l);
-
-        // update the start position for the next tile:
-
-        tileLatBL             += latIndex*dLat;
-        tileLonBL             += lonIndex*dLon;
-        tileLatHeight         /= latDivisor;
-        tileLonWidth          /= lonDivisor;
-    }
-
-    return GeoCoordinates(tileLatBL, tileLonBL);
+    return toCoordinates(CornerPosition::CornerSW);
 }
 
 GeoCoordinates TileIndex::toCoordinates(const CornerPosition ofCorner) const
 {
-    // TODO: safeguards against rounding errors!
-
-    qreal tileLatBL     = -90.0;
-    qreal tileLonBL     = -180.0;
-    qreal tileLatHeight = 180.0;
-    qreal tileLonWidth  = 360.0;
-
-    for (int l = 0 ; l < m_indicesCount ; ++l)
+    int64_t tileLat = 0;
+    int64_t tileLon = 0;
+    for (int l = 0 ; l <= MaxLevel ; ++l)
     {
-        // how many tiles are at this level?
-
-        const qreal latDivisor = TileIndex::Tiling;
-        const qreal lonDivisor = TileIndex::Tiling;
-
-        const qreal dLat       = tileLatHeight / latDivisor;
-        const qreal dLon       = tileLonWidth / lonDivisor;
-
-        const int latIndex     = indexLat(l);
-        const int lonIndex     = indexLon(l);
-
-        // update the start position for the next tile:
-
-        if ((l+1) >= m_indicesCount)
-        {
-            if      (ofCorner == CornerNW)
-            {
-                tileLatBL += latIndex*dLat;
-                tileLonBL += lonIndex*dLon;
-            }
-            else if (ofCorner == CornerSW)
-            {
-                tileLatBL += (latIndex+1)*dLat;
-                tileLonBL += lonIndex*dLon;
-            }
-            else if (ofCorner == CornerNE)
-            {
-                tileLatBL += latIndex*dLat;
-                tileLonBL += (lonIndex+1)*dLon;
-            }
-            else if (ofCorner == CornerSE)
-            {
-                tileLatBL += (latIndex+1)*dLat;
-                tileLonBL += (lonIndex+1)*dLon;
-            }
+        tileLat *= Tiling;
+        tileLon *= Tiling;
+        if (l < m_indicesCount) {
+            tileLat += indexLat(l);
+            tileLon += indexLon(l);
         }
-        else
-        {
-            // update the start position for the next tile:
-
-            tileLatBL += latIndex*dLat;
-            tileLonBL += lonIndex*dLon;
+        if (l + 1 == m_indicesCount && (ofCorner == CornerPosition::CornerNE || ofCorner == CornerPosition::CornerNW)) {
+            tileLat += 1;
         }
-
-        tileLatHeight /= latDivisor;
-        tileLonWidth  /= lonDivisor;
+        if (l + 1 == m_indicesCount && (ofCorner == CornerPosition::CornerNE || ofCorner == CornerPosition::CornerSE)) {
+            tileLon += 1;
+        }
     }
 
-    return GeoCoordinates(tileLatBL, tileLonBL);
+    return Digikam::GeoCoordinates((tileLat -  MaxLevelTileSplits / 2) * MaxLevelTileSplitsFactor * 180.0,
+                                   (tileLon -  MaxLevelTileSplits / 2) * MaxLevelTileSplitsFactor * 360.0);
 }
 
 } // namespace Digikam

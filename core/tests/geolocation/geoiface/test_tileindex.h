@@ -45,6 +45,9 @@ private Q_SLOTS:
     void testBasics();
     void testIntListInteraction();
     void testResizing();
+    void testFromCoordinates();
+    void testToCoordinates();
+    void testToCoordinatesCorners();
     void testMovable();
 };
 
