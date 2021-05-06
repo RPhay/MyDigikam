@@ -21,8 +21,7 @@ target_link_libraries(dngvalidate
 
                       ${EXPAT_LIBRARY}
                       ${CMAKE_THREAD_LIBS_INIT}
-                      ${TIFF_LIBRARIES}
-                      PNG::PNG
+                      PNG::PNG                          # For zlib
                       ${JPEG_LIBRARIES}
                      )
 
@@ -43,8 +42,7 @@ target_link_libraries(dnginfo
 
                       ${EXPAT_LIBRARY}
                       ${CMAKE_THREAD_LIBS_INIT}
-                      ${TIFF_LIBRARIES}
-                      PNG::PNG
+                      PNG::PNG                          # For zlib
                       ${JPEG_LIBRARIES}
                      )
 
@@ -69,6 +67,6 @@ target_link_libraries(raw2dng
                       ${EXPAT_LIBRARY}
                       ${CMAKE_THREAD_LIBS_INIT}
                       ${TIFF_LIBRARIES}
-                      PNG::PNG
+                      PNG::PNG                          # For zlib
                       ${JPEG_LIBRARIES}
                      )
