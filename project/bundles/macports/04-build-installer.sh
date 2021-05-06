@@ -582,7 +582,8 @@ done
 #################################################################################################
 # See bug #436624: move mariadb share files at basedir (this must be done after patch operations)
 
-rsync -a "$TEMPROOT/digikam.app/Contents/share/mariadb/" "$TEMPROOT/digikam.app/Contents/lib/mariadb/share/"
+rsync -a "$TEMPROOT/digikam.app/Contents/share/mariadb" "$TEMPROOT/digikam.app/Contents/lib/mariadb/share/"
+rm -fr "$TEMPROOT/digikam.app/Contents/share/mariadb"
 
 #################################################################################################
 # Build PKG file
