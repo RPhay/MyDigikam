@@ -237,7 +237,7 @@ BUGFIXES:
 218 ==> 327087 - digiKam freezes, when adding tags.
 219 ==> 300407 - Tags not written to files properly, old tags left over.
 220 ==> 310193 - digiKam crashes when a tag that is selected is deleted.
-221 ==> 215462 - digiKam crashed while tagging large collection of images.
+221 ==> 436624 - Error during internal server start.
 222 ==> 
 223 ==> 
 224 ==> 
