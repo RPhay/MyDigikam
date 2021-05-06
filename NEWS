@@ -238,8 +238,8 @@ BUGFIXES:
 219 ==> 300407 - Tags not written to files properly, old tags left over.
 220 ==> 310193 - digiKam crashes when a tag that is selected is deleted.
 221 ==> 215462 - digiKam crashed while tagging large collection of images.
-222 ==> 
-223 ==> 
+222 ==> 417027 - digiKam does not start.
+223 ==> 424619 - kbuildsycoca5 hangs / digikam also hangs - profile specific problem.
 224 ==> 
 225 ==> 
 226 ==> 
