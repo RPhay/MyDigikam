@@ -11,7 +11,7 @@ include(${CMAKE_SOURCE_DIR}/core/cmake/modules/DNGSdkRules.cmake)
 # =======================================================
 # DNGVALIDATE tool from DNG SDK
 
-set(dngvalidate_SRCS ${CMAKE_SOURCE_DIR}/core/libs/dngwriter/extra/dng-sdk/source/dng_validate.cpp)
+set(dngvalidate_SRCS ${CMAKE_SOURCE_DIR}/core/libs/dngwriter/extra/dng_sdk/dng_validate.cpp)
 
 add_executable(dngvalidate ${dngvalidate_SRCS})
 ecm_mark_nongui_executable(dngvalidate)
