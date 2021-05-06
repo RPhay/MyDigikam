@@ -286,6 +286,7 @@ for path in $OTHER_DIRS ; do
     cp -a "$INSTALL_PREFIX/$path" "$TEMPROOT/$dir/"
 done
 
+
 echo "---------- Copying data files..."
 
 # Special case with data dirs. QStandardPaths::GenericDataLocation was patched everywhere
@@ -577,6 +578,11 @@ for DIR in ${MARIADBDIRS[@]} ; do
     done
 
 done
+
+#################################################################################################
+# See bug #436624: move mariadb share files at basedir (this must be done after patch operations)
+
+rsync -a "$TEMPROOT/digikam.app/Contents/share/mariadb/" "$TEMPROOT/digikam.app/Contents/lib/mariadb/share/"
 
 #################################################################################################
 # Build PKG file
