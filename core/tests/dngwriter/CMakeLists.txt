@@ -15,6 +15,8 @@ add_executable(dngvalidate ${dngvalidate_SRCS})
 ecm_mark_nongui_executable(dngvalidate)
 
 target_link_libraries(dngvalidate
+
+                      libdng
                       digikamcore
 
                       ${EXPAT_LIBRARY}
@@ -30,6 +32,8 @@ add_executable(dnginfo ${dnginfo_SRCS})
 ecm_mark_nongui_executable(dnginfo)
 
 target_link_libraries(dnginfo
+
+                      libdng
                       digikamcore
 
                       ${COMMON_TEST_LINK}
@@ -50,6 +54,8 @@ add_executable(raw2dng
 ecm_mark_nongui_executable(raw2dng)
 
 target_link_libraries(raw2dng
+
+                      libdng
                       digikamcore
 
                       ${COMMON_TEST_LINK}

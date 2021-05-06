@@ -319,6 +319,13 @@ else()
 
 endif()
 
+# For unit tests.
+add_library(libdng STATIC
+            $<TARGET_OBJECTS:core_libdng_obj>
+            $<TARGET_OBJECTS:core_libxmp_obj>
+            $<TARGET_OBJECTS:core_libmd5_obj>
+)
+
 #------------------------------------------------------------------------------------
 
 set(libdngwriter_SRCS
