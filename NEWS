@@ -247,4 +247,12 @@ BUGFIXES:
 228 ==> 282287 - Nepomuk is crashing when i try to sync digikam metadata.
 229 ==> 349928 - Crash when re-writing metadata into picture files.
 230 ==> 359512 - BQM generate temp files like "xx.jpg2614" (Exiv2 relevant).
-231 ==> 
+231 ==> 273595 - Crash at showfoto startup.
+232 ==> 282921 - Opening an .jpeg file from within a Dolpin browser causes a crash.
+233 ==> 271455 - Showfoto crashes on startup.
+234 ==> 271414 - ShowFoto crashes, when loading a pic for the first time.
+235 ==> 269674 - Showfoto crashes when opening a folder with many jpegs.
+236 ==> 268889 - ShowFoto crashes when loading a pic.
+237 ==> 284889 - ShowPhoto crash at start.
+238 ==> 
+
