@@ -286,10 +286,6 @@ for path in $OTHER_DIRS ; do
     cp -a "$INSTALL_PREFIX/$path" "$TEMPROOT/$dir/"
 done
 
-# See bug #436624: move mariadb share files at basedir
-mv "$TEMPROOT/share/mariadb" "$TEMPROOT/lib/mariadb/"
-mv "$TEMPROOT/lib/mariadb/mariadb" "$TEMPROOT/lib/mariadb/share"
-rm -rf "$TEMPROOT/share/mariadb"
 
 echo "---------- Copying data files..."
 
@@ -582,6 +578,12 @@ for DIR in ${MARIADBDIRS[@]} ; do
     done
 
 done
+
+#################################################################################################
+# See bug #436624: move mariadb share files at basedir (this must be done after patch operations)
+
+rsync -a "$TEMPROOT/digikam.app/Contents/share/mariadb" "$TEMPROOT/digikam.app/Contents/lib/mariadb/share/"
+rm -fr "$TEMPROOT/digikam.app/Contents/share/mariadb"
 
 #################################################################################################
 # Build PKG file

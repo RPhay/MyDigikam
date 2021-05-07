@@ -167,12 +167,16 @@ cp -r /usr/lib64/ImageMagick*/modules*    ./usr/lib
 echo -e "------------- Copy I18n\n"
 
 # Qt translations files
+
 if [[ -e /usr/translations ]]; then
 
     echo -e "------------- Copy Qt translations files\n"
 
-    cp -r /usr/translations ./usr
+    cp -r /usr/translations ./usr/share/digikam
+    ln -s ./usr/share/digikam/translations ./usr/share/showfoto/translations
+
     # optimizations
+
     rm -rf ./usr/translations/assistant*    || true
     rm -rf ./usr/translations/designer*     || true
     rm -rf ./usr/translations/linguist*     || true
