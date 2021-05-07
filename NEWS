@@ -246,5 +246,5 @@ BUGFIXES:
 227 ==> 220875 - digiKam crashes on startup while scanning image metadata.
 228 ==> 282287 - Nepomuk is crashing when i try to sync digikam metadata.
 229 ==> 349928 - Crash when re-writing metadata into picture files.
-230 ==> 
+230 ==> 359512 - BQM generate temp files like "xx.jpg2614" (Exiv2 relevant).
 231 ==> 
