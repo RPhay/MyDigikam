@@ -244,7 +244,7 @@ BUGFIXES:
 225 ==> 320039 - EXIF will be lost if user tries to convert DNG to JPEG.
 226 ==> 255554 - No Color Profile Assigned When Generating ProPhoto TIF File From DNG.
 227 ==> 220875 - digiKam crashes on startup while scanning image metadata.
-228 ==> 
+228 ==> 282287 - Nepomuk is crashing when i try to sync digikam metadata.
 229 ==> 
 230 ==> 
 231 ==> 
