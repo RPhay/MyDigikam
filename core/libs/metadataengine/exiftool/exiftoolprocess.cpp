@@ -91,7 +91,15 @@ void ExifToolProcess::setProgram(const QString& etExePath, const QString& perlEx
             searchList << etExePath;
         }
 
-        d->etExePath = QStandardPaths::findExecutable(QLatin1String("exiftool"), searchList);
+        QString etProgram = QLatin1String("exiftool");
+
+#ifdef Q_OS_WIN
+
+        etProgram.append(QLatin1String(".exe"));
+
+#endif
+
+        d->etExePath = QStandardPaths::findExecutable(etProgram, searchList);
     }
     else
     {
@@ -118,6 +126,8 @@ void ExifToolProcess::start()
     }
 
     // Check if Exiftool program exists and have execution permissions
+
+    qCDebug(DIGIKAM_METAENGINE_LOG) << "Path to ExifTool:" << d->etExePath;
 
     if (!QFile::exists(d->etExePath) ||
         !(QFile::permissions(d->etExePath) & QFile::ExeUser))
