@@ -241,10 +241,10 @@ BUGFIXES:
 222 ==> 417027 - digiKam does not start.
 223 ==> 424619 - kbuildsycoca5 hangs / digikam also hangs - profile specific problem.
 224 ==> 436624 - Error during internal server start.
-225 ==> 
-226 ==> 
-227 ==> 
-228 ==> 
-229 ==> 
-230 ==> 
+225 ==> 320039 - EXIF will be lost if user tries to convert DNG to JPEG.
+226 ==> 255554 - No Color Profile Assigned When Generating ProPhoto TIF File From DNG.
+227 ==> 220875 - digiKam crashes on startup while scanning image metadata.
+228 ==> 282287 - Nepomuk is crashing when i try to sync digikam metadata.
+229 ==> 349928 - Crash when re-writing metadata into picture files.
+230 ==> 359512 - BQM generate temp files like "xx.jpg2614" (Exiv2 relevant).
 231 ==> 
