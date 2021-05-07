@@ -241,7 +241,7 @@ BUGFIXES:
 222 ==> 417027 - digiKam does not start.
 223 ==> 424619 - kbuildsycoca5 hangs / digikam also hangs - profile specific problem.
 224 ==> 436624 - Error during internal server start.
-225 ==> 
+225 ==> 320039 - EXIF will be lost if user tries to convert DNG to JPEG.
 226 ==> 
 227 ==> 
 228 ==> 
