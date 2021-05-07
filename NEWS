@@ -243,7 +243,7 @@ BUGFIXES:
 224 ==> 436624 - Error during internal server start.
 225 ==> 320039 - EXIF will be lost if user tries to convert DNG to JPEG.
 226 ==> 255554 - No Color Profile Assigned When Generating ProPhoto TIF File From DNG.
-227 ==> 
+227 ==> 220875 - digiKam crashes on startup while scanning image metadata.
 228 ==> 
 229 ==> 
 230 ==> 
