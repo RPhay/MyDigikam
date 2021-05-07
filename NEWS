@@ -242,7 +242,7 @@ BUGFIXES:
 223 ==> 424619 - kbuildsycoca5 hangs / digikam also hangs - profile specific problem.
 224 ==> 436624 - Error during internal server start.
 225 ==> 320039 - EXIF will be lost if user tries to convert DNG to JPEG.
-226 ==> 
+226 ==> 255554 - No Color Profile Assigned When Generating ProPhoto TIF File From DNG.
 227 ==> 
 228 ==> 
 229 ==> 
