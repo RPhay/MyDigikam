@@ -983,7 +983,6 @@ QString MetaEngine::Private::extractIptcTagString(const Exiv2::IptcData& iptcDat
         qCCritical(DIGIKAM_METAENGINE_LOG) << "Default exception from Exiv2";
     }
 
-
     return value;
 }
 
