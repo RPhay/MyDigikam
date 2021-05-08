@@ -33,6 +33,7 @@ else()
                     # DNG SDK
                     -DqWinOS=0
                     -DqMacOS=0
+                    -DqLinux=1
                     -DqDNGUseStdInt=1
                    )
 endif()
