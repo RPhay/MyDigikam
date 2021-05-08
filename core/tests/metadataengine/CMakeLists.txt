@@ -27,6 +27,17 @@ target_link_libraries(dmetadataloader_cli
                       ${COMMON_TEST_LINK}
 )
 
+set(dmetadatadiff_cli_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/dmetadatadiff_cli.cpp)
+add_executable(dmetadatadiff_cli ${dmetadatadiff_cli_SRCS})
+ecm_mark_nongui_executable(dmetadatadiff_cli)
+
+target_link_libraries(dmetadatadiff_cli
+
+                      digikamcore
+
+                      ${COMMON_TEST_LINK}
+)
+
 # ----------------------------------------------------------------------------------
 
 QT5_WRAP_CPP(MOC_files ${CMAKE_CURRENT_SOURCE_DIR}/abstractunittest.h)
