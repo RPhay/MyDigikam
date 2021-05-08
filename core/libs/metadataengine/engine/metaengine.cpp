@@ -279,6 +279,24 @@ bool MetaEngine::changedMetadata() const
 
 #endif
 
+        // Check comment difference
+
+        std::string orgCom = image->comment();
+        std::string newCom = d->itemComments();
+
+        if (newCom.empty())
+        {
+            qCDebug(DIGIKAM_METAENGINE_LOG) << "Comment Removed";
+        }
+
+        if (orgCom != newCom)
+        {
+            qCDebug(DIGIKAM_METAENGINE_LOG) << "Changed Comment"
+                                            << newCom.c_str()
+                                            << "old comment"
+                                            << orgCom.c_str();
+        }
+
         // Parse differences in Exif
 
         Exiv2::ExifData orgExif = image->exifData();
