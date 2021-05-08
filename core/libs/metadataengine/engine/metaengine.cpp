@@ -255,6 +255,186 @@ bool MetaEngine::loadFromData(const QByteArray& imgData)
     return false;
 }
 
+bool MetaEngine::changedMetadata() const
+{
+    QMutexLocker lock(&s_metaEngineMutex);
+
+    try
+    {
+        Exiv2::Image::AutoPtr image;
+
+        qCDebug(DIGIKAM_METAENGINE_LOG) << "List of changes to perform on:" << getFilePath();
+
+#if defined Q_OS_WIN && defined EXV_UNICODE_PATH
+
+        image = Exiv2::ImageFactory::open((const wchar_t*)getFilePath().utf16());
+
+#elif defined Q_OS_WIN
+
+        image = Exiv2::ImageFactory::open(QFile::encodeName(getFilePath()).constData());
+
+#else
+
+        image = Exiv2::ImageFactory::open(getFilePath().toUtf8().constData());
+
+#endif
+
+        // Check comment difference
+
+        std::string orgCom = image->comment();
+        std::string newCom = d->itemComments();
+
+        if (newCom.empty())
+        {
+            qCDebug(DIGIKAM_METAENGINE_LOG) << "Comment Removed";
+        }
+
+        if (orgCom != newCom)
+        {
+            qCDebug(DIGIKAM_METAENGINE_LOG) << "Changed Comment"
+                                            << newCom.c_str()
+                                            << "old comment"
+                                            << orgCom.c_str();
+        }
+
+        // Parse differences in Exif
+
+        Exiv2::ExifData orgExif = image->exifData();
+        Exiv2::ExifData newExif = d->exifMetadata();
+
+        for (Exiv2::ExifData::const_iterator it = newExif.begin() ; it != newExif.end() ; ++it)
+        {
+            Exiv2::ExifData::const_iterator it2 = orgExif.findKey(Exiv2::ExifKey(it->key()));
+
+            if (it2 == orgExif.end())
+            {
+                // Orignal Exif do not have the tag.
+
+                qCDebug(DIGIKAM_METAENGINE_LOG) << "New Exif tag" << it->key().c_str()
+                                                << "with value"   << it->toString().c_str();
+            }
+            else
+            {
+                // Original Exif has already the tag.
+
+                qCDebug(DIGIKAM_METAENGINE_LOG) << "Changed Exif tag" << it->key().c_str()
+                                                << "old value"        << it2->toString().c_str()
+                                                << "new value"        << it->toString().c_str();
+            }
+        }
+
+        // Check for removed tags.
+
+        for (Exiv2::ExifData::const_iterator it = orgExif.begin() ; it != orgExif.end() ; ++it)
+        {
+            Exiv2::ExifData::const_iterator it2 = newExif.findKey(Exiv2::ExifKey(it->key()));
+
+            if (it2 == newExif.end())
+            {
+                // New Exif do not have the tag.
+
+                qCDebug(DIGIKAM_METAENGINE_LOG) << "Removed Exif tag" << it->key().c_str();
+            }
+        }
+
+        // Parse differences in Iptc
+
+        Exiv2::IptcData orgIptc = image->iptcData();
+        Exiv2::IptcData newIptc = d->iptcMetadata();
+
+        for (Exiv2::IptcData::const_iterator it = newIptc.begin() ; it != newIptc.end() ; ++it)
+        {
+            Exiv2::IptcData::const_iterator it2 = orgIptc.findKey(Exiv2::IptcKey(it->key()));
+
+            if (it2 == orgIptc.end())
+            {
+                // Orignal Iptc do not have the tag.
+
+                qCDebug(DIGIKAM_METAENGINE_LOG) << "New Iptc tag" << it->key().c_str()
+                                                << "with value"   << it->toString().c_str();
+            }
+            else
+            {
+                // Original Iptc has already the tag.
+
+                qCDebug(DIGIKAM_METAENGINE_LOG) << "Changed Iptc tag" << it->key().c_str()
+                                                << "old value"        << it2->toString().c_str()
+                                                << "new value"        << it->toString().c_str();
+            }
+        }
+
+        // Check for removed tags.
+
+        for (Exiv2::IptcData::const_iterator it = orgIptc.begin() ; it != orgIptc.end() ; ++it)
+        {
+            Exiv2::IptcData::const_iterator it2 = newIptc.findKey(Exiv2::IptcKey(it->key()));
+
+            if (it2 == newIptc.end())
+            {
+                // New Iptc do not have the tag.
+
+                qCDebug(DIGIKAM_METAENGINE_LOG) << "Removed Iptc tag" << it->key().c_str();
+            }
+        }
+
+#ifdef _XMP_SUPPORT_
+
+        // Parse differences in Xmp
+
+        Exiv2::XmpData orgXmp = image->xmpData();
+        Exiv2::XmpData newXmp = d->xmpMetadata();
+
+        for (Exiv2::XmpData::const_iterator it = newXmp.begin() ; it != newXmp.end() ; ++it)
+        {
+            Exiv2::XmpData::const_iterator it2 = orgXmp.findKey(Exiv2::XmpKey(it->key()));
+
+            if (it2 == orgXmp.end())
+            {
+                // Orignal Xmp do not have the tag.
+
+                qCDebug(DIGIKAM_METAENGINE_LOG) << "New Xmp tag" << it->key().c_str()
+                                                << "with value"  << it->toString().c_str();
+            }
+            else
+            {
+                // Original Xmp has already the tag.
+
+                qCDebug(DIGIKAM_METAENGINE_LOG) << "Changed Xmp tag" << it->key().c_str()
+                                                << "old value"       << it2->toString().c_str()
+                                                << "new value"       << it->toString().c_str();
+            }
+        }
+
+        // Check for removed tags.
+
+        for (Exiv2::XmpData::const_iterator it = orgXmp.begin() ; it != orgXmp.end() ; ++it)
+        {
+            Exiv2::XmpData::const_iterator it2 = newXmp.findKey(Exiv2::XmpKey(it->key()));
+
+            if (it2 == newXmp.end())
+            {
+                // New Xmp do not have the tag.
+
+                qCDebug(DIGIKAM_METAENGINE_LOG) << "Removed Xmp tag" << it->key().c_str();
+            }
+        }
+
+#endif // _XMP_SUPPORT_
+
+        return true;
+    }
+    catch (Exiv2::AnyError& e)
+    {
+        d->printExiv2ExceptionError(QLatin1String("Cannot load metadata using Exiv2 "), e);
+    }
+    catch (...)
+    {
+        qCCritical(DIGIKAM_METAENGINE_LOG) << "Default exception from Exiv2";
+    }
+
+    return false;
+}
+
 bool MetaEngine::isEmpty() const
 {
     if (!hasComments() && !hasExif() && !hasIptc() && !hasXmp())

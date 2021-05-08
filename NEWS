@@ -247,4 +247,35 @@ BUGFIXES:
 228 ==> 282287 - Nepomuk is crashing when i try to sync digikam metadata.
 229 ==> 349928 - Crash when re-writing metadata into picture files.
 230 ==> 359512 - BQM generate temp files like "xx.jpg2614" (Exiv2 relevant).
-231 ==> 
+231 ==> 273595 - Crash at showfoto startup.
+232 ==> 282921 - Opening an .jpeg file from within a Dolpin browser causes a crash.
+233 ==> 271455 - Showfoto crashes on startup.
+234 ==> 271414 - ShowFoto crashes, when loading a pic for the first time.
+235 ==> 269674 - Showfoto crashes when opening a folder with many jpegs.
+236 ==> 268889 - ShowFoto crashes when loading a pic.
+237 ==> 284889 - ShowPhoto crash at start.
+238 ==> 426327 - Overriding Default Media Player Does Not Work.
+239 ==> 193238 - Advanced search in origin fields (Location, City, Country etc.).
+240 ==> 435987 - digiKam Not Reponding in Table view.
+241 ==> 329834 - Crash during miniature update.
+242 ==> 212740 - Group images by aspect ratio.
+243 ==> 152715 - Album independent search needed.
+244 ==> 149100 - Search box to filter the album list.
+245 ==> 330905 - Search in grouped pictures only show visible items.
+246 ==> 279953 - Couple jpg and raw files.
+247 ==> 249303 - Function for permitting to "stack" some photos.
+248 ==> 246920 - Display RAW+JPEG combined.
+249 ==> 224789 - Handle RAW and jpegs as one virtual image.
+250 ==> 188968 - JPEG+RAW joint renaming feature.
+251 ==> 164756 - working with JPEGs instead of RAWs.
+252 ==> 151228 - Whish: Skip / ingore RAW when corresponding JPG exists.
+253 ==> 147933 - WISH: link the keywords of images with same name but different extension img1245.jpg liked to img1245.dng.
+254 ==> 147886 - Managment of raw files (as duplicate of jpg files).
+255 ==> 147427 - Make digiKam know JPG file is from RAW.
+256 ==> 212108 - Double click and highlighting.
+257 ==> 273642 - Dates of selected images not used in new album when importing.
+258 ==> 236747 - rotating according to orientation tag doesn't work for canon files.
+259 ==> 217709 - Actually hide hidden Albums and specific Images.
+260 ==> 196583 - Ability to collapse album headers in the middle "view" panel.
+261 =+> 
+

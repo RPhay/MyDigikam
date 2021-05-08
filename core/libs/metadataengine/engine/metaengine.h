@@ -324,6 +324,11 @@ public:
      */
     bool updateFileTimeStamp() const;
 
+    /**
+     * List of changed tags compared to original file contents.
+     */
+    bool changedMetadata() const;
+
     //@}
 
     //-------------------------------------------------------------------
