@@ -254,5 +254,6 @@ BUGFIXES:
 235 ==> 269674 - Showfoto crashes when opening a folder with many jpegs.
 236 ==> 268889 - ShowFoto crashes when loading a pic.
 237 ==> 284889 - ShowPhoto crash at start.
-238 ==> 
+238 ==> 426327 - Overriding Default Media Player Does Not Work.
+239 ==> 
 
