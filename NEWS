@@ -272,6 +272,10 @@ BUGFIXES:
 253 ==> 147933 - WISH: link the keywords of images with same name but different extension img1245.jpg liked to img1245.dng.
 254 ==> 147886 - Managment of raw files (as duplicate of jpg files).
 255 ==> 147427 - Make digiKam know JPG file is from RAW.
-256 ==> 
-
+256 ==> 212108 - Double click and highlighting.
+257 ==> 273642 - Dates of selected images not used in new album when importing.
+258 ==> 236747 - rotating according to orientation tag doesn't work for canon files.
+259 ==> 217709 - Actually hide hidden Albums and specific Images.
+260 ==> 196583 - Ability to collapse album headers in the middle "view" panel.
+261 =+> 
 
