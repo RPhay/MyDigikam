@@ -1390,7 +1390,8 @@ void ImportUI::slotDownloadAndDeleteAll()
 
 void ImportUI::slotDownload(bool onlySelected, bool deleteAfter, Album* album)
 {
-    if (d->albumCustomizer->folderDateFormat() == AlbumCustomizer::CustomDateFormat &&
+    if (d->albumCustomizer->autoAlbumDateEnabled()                                    &&
+        (d->albumCustomizer->folderDateFormat() == AlbumCustomizer::CustomDateFormat) &&
         !d->albumCustomizer->customDateFormatIsValid())
     {
         QMessageBox::information(this, qApp->applicationName(),

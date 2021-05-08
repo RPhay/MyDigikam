@@ -277,5 +277,5 @@ BUGFIXES:
 258 ==> 236747 - rotating according to orientation tag doesn't work for canon files.
 259 ==> 217709 - Actually hide hidden Albums and specific Images.
 260 ==> 196583 - Ability to collapse album headers in the middle "view" panel.
-261 =+> 
-
+261 ==> 436758 - Question to date-format of import images.
+262 ==> 
