@@ -258,6 +258,7 @@ BUGFIXES:
 239 ==> 193238 - Advanced search in origin fields (Location, City, Country etc.).
 240 ==> 435987 - digiKam Not Reponding in Table view.
 241 ==> 329834 - Crash during miniature update.
-242 ==> 
-
-
+242 ==> 212740 - Group images by aspect ratio.
+243 ==> 152715 - Album independent search needed.
+244 ==> 149100 - Search box to filter the album list.
+245 ==> 
