@@ -70,6 +70,7 @@
 // Local includes
 
 #include "digikam_debug.h"
+#include "digikam_version.h"
 #include "dngwriterhost.h"
 #include "dfileoperations.h"
 #include "dmetadata.h"
