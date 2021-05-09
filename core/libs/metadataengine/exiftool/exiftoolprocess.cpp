@@ -82,31 +82,18 @@ void ExifToolProcess::setProgram(const QString& etExePath, const QString& perlEx
         return;
     }
 
-    if (etExePath.isEmpty() || QFileInfo(etExePath).isDir())
-    {
-        QStringList searchList;
-
-        if (!etExePath.isEmpty())
-        {
-            searchList << etExePath;
-        }
-
-        QString etProgram = QLatin1String("exiftool");
-
-#ifdef Q_OS_WIN
-
-        etProgram.append(QLatin1String(".exe"));
-
-#endif
-
-        d->etExePath = QStandardPaths::findExecutable(etProgram, searchList);
-    }
-    else
-    {
-        d->etExePath = etExePath;
-    }
-
+    d->etExePath   = etExePath;
     d->perlExePath = perlExePath;
+
+    if      (d->etExePath.isEmpty())
+    {
+        d->etExePath = exifToolBin();
+    }
+    else if (QFileInfo(d->etExePath).isDir())
+    {
+        d->etExePath.append(QLatin1Char('/'));
+        d->etExePath.append(exifToolBin());
+    }
 }
 
 QString ExifToolProcess::program() const
@@ -129,8 +116,11 @@ void ExifToolProcess::start()
 
     qCDebug(DIGIKAM_METAENGINE_LOG) << "Path to ExifTool:" << d->etExePath;
 
-    if (!QFile::exists(d->etExePath) ||
+    if (
+        (d->etExePath != exifToolBin())                    &&
+        (!QFile::exists(d->etExePath)                      ||
         !(QFile::permissions(d->etExePath) & QFile::ExeUser))
+       )
     {
         d->setProcessErrorAndEmit(QProcess::FailedToStart,
                                   QString::fromLatin1("ExifTool does not exists or exec permission is missing"));
@@ -143,7 +133,7 @@ void ExifToolProcess::start()
         !(QFile::permissions(d->perlExePath) & QFile::ExeUser)))
     {
         d->setProcessErrorAndEmit(QProcess::FailedToStart,
-                               QString::fromLatin1("Perl does not exists or exec permission is missing"));
+                                  QString::fromLatin1("Perl does not exists or exec permission is missing"));
         return;
     }
 
@@ -206,9 +196,22 @@ void ExifToolProcess::terminate()
         // Otherwise, close ExifTool using OS system call
         // (WM_CLOSE [Windows] or SIGTERM [Unix])
 
+        // Console applications on Windows that do not run an event loop,
+        // or whose event loop does not handle the WM_CLOSE message,
+        // can only be terminated by calling kill().
+
+#ifdef Q_OS_WIN
+
+        kill();
+
+#else
+
         qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifToolProcess::terminate(): closing ExifTool instance...";
 
         d->process->terminate();
+
+#endif
+
     }
 }
 
@@ -367,6 +370,21 @@ void ExifToolProcess::slotReadyReadStandardOutput()
 void ExifToolProcess::slotReadyReadStandardError()
 {
     d->readOutput(QProcess::StandardError);
+}
+
+QString ExifToolProcess::exifToolBin() const
+{
+
+#ifdef Q_OS_WIN
+
+    return QLatin1String("exiftool.exe");
+
+#else
+
+    return QLatin1String("exiftool");
+
+#endif
+
 }
 
 } // namespace Digikam

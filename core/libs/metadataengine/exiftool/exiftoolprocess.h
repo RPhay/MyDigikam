@@ -183,6 +183,10 @@ private Q_SLOTS:
 
 private:
 
+    QString exifToolBin()                               const;
+
+private:
+
     class Private;
     Private* const d;
 };
