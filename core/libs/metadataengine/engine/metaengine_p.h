@@ -46,6 +46,7 @@
 #include <QFileInfo>
 #include <QSharedData>
 #include <QMutexLocker>
+#include <QMimeDatabase>
 
 // Exiv2 includes -------------------------------------------------------
 
