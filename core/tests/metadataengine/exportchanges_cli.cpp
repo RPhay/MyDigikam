@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2012-10-23
- * Description : a command line tool to test list metadata differences
+ * Description : a command line tool to export metatada changes to EXV
  *
  * Copyright (C) 2012-2021 by Gilles Caulier, <caulier dot gilles at gmail dot com>
  *
@@ -25,7 +25,6 @@
 
 #include <QFileInfo>
 #include <QString>
-#include <QTextStream>
 #include <QApplication>
 #include <QDebug>
 
@@ -41,7 +40,7 @@ int main(int argc, char** argv)
 
     if (argc != 2)
     {
-        qDebug() << "dmetadatadiff_cli - CLI tool to check metadat difference with DMetadata";
+        qDebug() << "dmetadatadiff_cli - CLI tool to export metadata changes to EXV";
         qDebug() << "Usage: <image>";
         return -1;
     }
@@ -61,7 +60,9 @@ int main(int argc, char** argv)
 
     meta.setImageDateTime(QDateTime::currentDateTime(), true);
 
-    meta.changedMetadata();
+    QString     exvPath = input.baseName() + QLatin1String("_changes.exv");
+    QStringList removedTags;
+    meta.exportChanges(exvPath, removedTags);
 
     return 0;
 }
