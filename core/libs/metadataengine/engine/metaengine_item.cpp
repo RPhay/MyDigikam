@@ -1016,14 +1016,22 @@ bool MetaEngine::setImageDateTime(const QDateTime& dateTime, bool setDateTimeDig
         d->xmpMetadata().add(Exiv2::XmpKey("Xmp.xmp.CreateDate"),         xmpTxtVal.get());
         d->xmpMetadata().add(Exiv2::XmpKey("Xmp.xmp.MetadataDate"),       xmpTxtVal.get());
         d->xmpMetadata().add(Exiv2::XmpKey("Xmp.xmp.ModifyDate"),         xmpTxtVal.get());
-        d->xmpMetadata().add(Exiv2::XmpKey("Xmp.video.DateTimeOriginal"), xmpTxtVal.get());
-        d->xmpMetadata().add(Exiv2::XmpKey("Xmp.video.DateUTC"),          xmpTxtVal.get());
-        d->xmpMetadata().add(Exiv2::XmpKey("Xmp.video.ModificationDate"), xmpTxtVal.get());
 
         if (setDateTimeDigitized)
         {
             d->xmpMetadata().add(Exiv2::XmpKey("Xmp.exif.DateTimeDigitized"),  xmpTxtVal.get());
-            d->xmpMetadata().add(Exiv2::XmpKey("Xmp.video.DateTimeDigitized"), xmpTxtVal.get());
+        }
+
+        if (QMimeDatabase().mimeTypeForFile(getFilePath()).name().startsWith(QLatin1String("video/")))
+        {
+            d->xmpMetadata().add(Exiv2::XmpKey("Xmp.video.DateTimeOriginal"), xmpTxtVal.get());
+            d->xmpMetadata().add(Exiv2::XmpKey("Xmp.video.DateUTC"),          xmpTxtVal.get());
+            d->xmpMetadata().add(Exiv2::XmpKey("Xmp.video.ModificationDate"), xmpTxtVal.get());
+
+            if (setDateTimeDigitized)
+            {
+                d->xmpMetadata().add(Exiv2::XmpKey("Xmp.video.DateTimeDigitized"), xmpTxtVal.get());
+            }
         }
 
         // Tag not updated:

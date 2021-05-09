@@ -279,17 +279,23 @@ bool MetaEngine::changedMetadata() const
 
 #endif
 
-        // Check comment difference
+        image->readMetadata();
+
+        // --- Parse differences in comment
 
         std::string orgCom = image->comment();
         std::string newCom = d->itemComments();
 
-        if (newCom.empty())
+        if      (!orgCom.empty() && newCom.empty())
         {
             qCDebug(DIGIKAM_METAENGINE_LOG) << "Comment Removed";
         }
-
-        if (orgCom != newCom)
+        else if (orgCom.empty() && !newCom.empty())
+        {
+            qCDebug(DIGIKAM_METAENGINE_LOG) << "New Comment"
+                                            << newCom.c_str();
+        }
+        else if (orgCom != newCom)
         {
             qCDebug(DIGIKAM_METAENGINE_LOG) << "Changed Comment"
                                             << newCom.c_str()
@@ -297,7 +303,7 @@ bool MetaEngine::changedMetadata() const
                                             << orgCom.c_str();
         }
 
-        // Parse differences in Exif
+        // --- Parse differences in Exif
 
         Exiv2::ExifData orgExif = image->exifData();
         Exiv2::ExifData newExif = d->exifMetadata();
@@ -306,14 +312,14 @@ bool MetaEngine::changedMetadata() const
         {
             Exiv2::ExifData::const_iterator it2 = orgExif.findKey(Exiv2::ExifKey(it->key()));
 
-            if (it2 == orgExif.end())
+            if      (it2 == orgExif.end())
             {
                 // Orignal Exif do not have the tag.
 
                 qCDebug(DIGIKAM_METAENGINE_LOG) << "New Exif tag" << it->key().c_str()
                                                 << "with value"   << it->toString().c_str();
             }
-            else
+            else if (getExifTagData(it2->key().c_str()) != getExifTagData(it->key().c_str()))
             {
                 // Original Exif has already the tag.
 
@@ -323,7 +329,7 @@ bool MetaEngine::changedMetadata() const
             }
         }
 
-        // Check for removed tags.
+        // Check for removed Exif tags.
 
         for (Exiv2::ExifData::const_iterator it = orgExif.begin() ; it != orgExif.end() ; ++it)
         {
@@ -337,7 +343,7 @@ bool MetaEngine::changedMetadata() const
             }
         }
 
-        // Parse differences in Iptc
+        // --- Parse differences in Iptc
 
         Exiv2::IptcData orgIptc = image->iptcData();
         Exiv2::IptcData newIptc = d->iptcMetadata();
@@ -346,14 +352,14 @@ bool MetaEngine::changedMetadata() const
         {
             Exiv2::IptcData::const_iterator it2 = orgIptc.findKey(Exiv2::IptcKey(it->key()));
 
-            if (it2 == orgIptc.end())
+            if      (it2 == orgIptc.end())
             {
                 // Orignal Iptc do not have the tag.
 
                 qCDebug(DIGIKAM_METAENGINE_LOG) << "New Iptc tag" << it->key().c_str()
                                                 << "with value"   << it->toString().c_str();
             }
-            else
+            else if (getIptcTagData(it2->key().c_str()) != getIptcTagData(it->key().c_str()))
             {
                 // Original Iptc has already the tag.
 
@@ -363,7 +369,7 @@ bool MetaEngine::changedMetadata() const
             }
         }
 
-        // Check for removed tags.
+        // Check for removed Iptc tags.
 
         for (Exiv2::IptcData::const_iterator it = orgIptc.begin() ; it != orgIptc.end() ; ++it)
         {
@@ -379,7 +385,7 @@ bool MetaEngine::changedMetadata() const
 
 #ifdef _XMP_SUPPORT_
 
-        // Parse differences in Xmp
+        // --- Parse differences in Xmp
 
         Exiv2::XmpData orgXmp = image->xmpData();
         Exiv2::XmpData newXmp = d->xmpMetadata();
@@ -388,14 +394,14 @@ bool MetaEngine::changedMetadata() const
         {
             Exiv2::XmpData::const_iterator it2 = orgXmp.findKey(Exiv2::XmpKey(it->key()));
 
-            if (it2 == orgXmp.end())
+            if      (it2 == orgXmp.end())
             {
                 // Orignal Xmp do not have the tag.
 
                 qCDebug(DIGIKAM_METAENGINE_LOG) << "New Xmp tag" << it->key().c_str()
                                                 << "with value"  << it->toString().c_str();
             }
-            else
+            else if (getXmpTagVariant(it2->key().c_str()) != getXmpTagVariant(it->key().c_str()))
             {
                 // Original Xmp has already the tag.
 
@@ -405,7 +411,7 @@ bool MetaEngine::changedMetadata() const
             }
         }
 
-        // Check for removed tags.
+        // Check for removed Xmp tags.
 
         for (Exiv2::XmpData::const_iterator it = orgXmp.begin() ; it != orgXmp.end() ; ++it)
         {
