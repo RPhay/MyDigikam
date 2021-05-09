@@ -281,4 +281,13 @@ BUGFIXES:
 262 ==> 407034 - Editing an image in the Image editor adds a XMP video date field.
 263 ==> 407033 - Image Editor adds a XMP video tags.
 264 ==> 099809 - Crash when changing date from exif information.
-265 ==> 
+265 ==> 158989 - digiKam won't start: MakerTagInfo registry full (MetaEngine relevant).
+266 ==> 273765 - replacing pgf files with an open digikam lead to reproducible crash.
+267 ==> 339152 - Crash when adding XCF file to digiKam collection.
+268 ==> 131935 - digiKam crashed when selecting tags for photos (typo).
+269 ==> 145717 - digiKam SIGABRT while rotate image tool.
+270 ==> 149063 - Open tool menu crash.
+271 ==> 219512 - Segfault (SIGSEGV) when using any non-color changing tool.
+272 ==> 383855 - digiKam crash when stacking 5 images.
+273 ==> 
+274 ==> 
