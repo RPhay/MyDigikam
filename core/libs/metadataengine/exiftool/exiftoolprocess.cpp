@@ -82,31 +82,18 @@ void ExifToolProcess::setProgram(const QString& etExePath, const QString& perlEx
         return;
     }
 
-    if (etExePath.isEmpty() || QFileInfo(etExePath).isDir())
-    {
-        QStringList searchList;
-
-        if (!etExePath.isEmpty())
-        {
-            searchList << etExePath;
-        }
-
-        QString etProgram = QLatin1String("exiftool");
-
-#ifdef Q_OS_WIN
-
-        etProgram.append(QLatin1String(".exe"));
-
-#endif
-
-        d->etExePath = QStandardPaths::findExecutable(etProgram, searchList);
-    }
-    else
-    {
-        d->etExePath = etExePath;
-    }
-
+    d->etExePath   = etExePath;
     d->perlExePath = perlExePath;
+
+    if      (d->etExePath.isEmpty())
+    {
+        d->etExePath = exifToolBin();
+    }
+    else if (QFileInfo(d->etExePath).isDir())
+    {
+        d->etExePath.append(QLatin1Char('/'));
+        d->etExePath.append(exifToolBin());
+    }
 }
 
 QString ExifToolProcess::program() const
@@ -129,8 +116,9 @@ void ExifToolProcess::start()
 
     qCDebug(DIGIKAM_METAENGINE_LOG) << "Path to ExifTool:" << d->etExePath;
 
-    if (!QFile::exists(d->etExePath) ||
-        !(QFile::permissions(d->etExePath) & QFile::ExeUser))
+    if ((d->etExePath != exifToolBin()) &&
+        (!QFile::exists(d->etExePath)   ||
+        !(QFile::permissions(d->etExePath) & QFile::ExeUser)))
     {
         d->setProcessErrorAndEmit(QProcess::FailedToStart,
                                   QString::fromLatin1("ExifTool does not exists or exec permission is missing"));
@@ -367,6 +355,21 @@ void ExifToolProcess::slotReadyReadStandardOutput()
 void ExifToolProcess::slotReadyReadStandardError()
 {
     d->readOutput(QProcess::StandardError);
+}
+
+QString ExifToolProcess::exifToolBin() const
+{
+
+#ifdef Q_OS_WIN
+
+    return QLatin1String("exiftool.exe");
+
+#else
+
+    return QLatin1String("exiftool");
+
+#endif
+
 }
 
 } // namespace Digikam
