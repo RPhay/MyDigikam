@@ -196,9 +196,22 @@ void ExifToolProcess::terminate()
         // Otherwise, close ExifTool using OS system call
         // (WM_CLOSE [Windows] or SIGTERM [Unix])
 
+        // Console applications on Windows that do not run an event loop,
+        // or whose event loop does not handle the WM_CLOSE message,
+        // can only be terminated by calling kill().
+
+#ifdef Q_OS_WIN
+
+        kill();
+
+#else
+
         qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifToolProcess::terminate(): closing ExifTool instance...";
 
         d->process->terminate();
+
+#endif
+
     }
 }
 
