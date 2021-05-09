@@ -89,12 +89,26 @@ public:
 
 public:
 
+    //---------------------------------------------------------------------------------------------
+    /// Constructor, Destructor, and Configuration Accessors. See exiftoolparser.cpp for details.
+    //@{
+
     explicit ExifToolParser(QObject* const parent = nullptr);
     ~ExifToolParser();
 
     void setExifToolProgram(const QString& path);
 
+    QString      currentPath()        const;
+    ExifToolData currentData()        const;
+    QString      currentErrorString() const;
+
+    //@}
+
 public:
+
+    //---------------------------------------------------------------------------------------------
+    /// ExifTool Command Methods. See exiftoolparser_command.cpp for details.
+    //@{
 
     /**
      * Load all metadata with ExifTool from a file.
@@ -133,18 +147,13 @@ public:
      */
     bool translationsList();
 
-public:
-
-    QString      currentPath()        const;
-    ExifToolData currentData()        const;
-    QString      currentErrorString() const;
-
-    /// Public method for unit test purpose about ExifTool stream parsing.
-    void setOutputStream(int cmdAction,
-                         const QByteArray& cmdOutputChannel,
-                         const QByteArray& cmdErrorChannel);
+    //@}
 
 private Q_SLOTS:
+
+    //---------------------------------------------------------------------------------------------
+    /// ExifTool Output MAnagement Methods. See exiftoolparser_output.cpp for details
+    //@{
 
     void slotCmdCompleted(int cmdAction,
                           int execTime,
@@ -154,6 +163,16 @@ private Q_SLOTS:
     void slotErrorOccurred(int cmdAction, QProcess::ProcessError error);
 
     void slotFinished(int cmdAction, int exitCode, QProcess::ExitStatus exitStatus);
+
+public:
+
+    /// Unit-test method to check ExifTool stream parsing.
+    void setOutputStream(int cmdAction,
+                         const QByteArray& cmdOutputChannel,
+                         const QByteArray& cmdErrorChannel);
+    //@}
+
+private Q_SLOTS:
 
     void slotMetaEngineSettingsChanged();
 
