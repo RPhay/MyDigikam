@@ -152,6 +152,12 @@ void ExifToolParser::slotCmdCompleted(int cmdAction,
             break;
         }
 
+        case ExifToolProcess::APPLY_CHANGES_EXV:
+        {
+            // TODO: check ExifTool feedback.
+            break;
+        }
+
         case ExifToolProcess::READ_FORMATS:
         {
             // Remove first line

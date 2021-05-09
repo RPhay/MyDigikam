@@ -1,6 +1,6 @@
 #
 # Copyright (c) 2015,      by Veaceslav Munteanu, <veaceslav dot munteanu90 at gmail dot com>
-# Copyright (c) 2010-2020, by Gilles Caulier, <caulier dot gilles at gmail dot com>
+# Copyright (c) 2010-2021, by Gilles Caulier, <caulier dot gilles at gmail dot com>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
@@ -42,3 +42,4 @@ EXIFTOOL_BUILD_CLITEST(exiftoolparserout_cli.cpp)
 EXIFTOOL_BUILD_CLITEST(exiftoolwrite_cli.cpp)
 EXIFTOOL_BUILD_CLITEST(exiftoolformats_cli.cpp)
 EXIFTOOL_BUILD_CLITEST(exiftoollanguages_cli.cpp)
+EXIFTOOL_BUILD_CLITEST(exiftoolapplychanges_cli.cpp)

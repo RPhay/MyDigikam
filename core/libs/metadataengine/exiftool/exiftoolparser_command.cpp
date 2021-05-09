@@ -148,6 +148,38 @@ bool ExifToolParser::applyChanges(const QString& path, const ExifToolData& newTa
     return (d->startProcess(cmdArgs, ExifToolProcess::APPLY_CHANGES));
 }
 
+bool ExifToolParser::applyChanges(const QString& path, const QString& exvTempFile)
+{
+    if (exvTempFile.isEmpty())
+    {
+        qCWarning(DIGIKAM_METAENGINE_LOG) << "EXV constainer files to apply changes with ExifTool is empty";
+
+        return false;
+    }
+
+    QFileInfo fileInfo(path);
+
+    if (!fileInfo.exists())
+    {
+        return false;
+    }
+
+    if (!d->prepareProcess())
+    {
+        return false;
+    }
+
+    QByteArrayList cmdArgs;
+
+    cmdArgs << QByteArray("-TagsFromFile");
+    cmdArgs << d->filePathEncoding(exvTempFile);
+    cmdArgs << QByteArray("-all:all");
+    cmdArgs << d->filePathEncoding(fileInfo);
+    d->currentPath = fileInfo.path();
+
+    return (d->startProcess(cmdArgs, ExifToolProcess::APPLY_CHANGES_EXV));
+}
+
 bool ExifToolParser::readableFormats()
 {
     if (!d->prepareProcess())
