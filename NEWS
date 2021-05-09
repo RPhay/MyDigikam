@@ -278,4 +278,6 @@ BUGFIXES:
 259 ==> 217709 - Actually hide hidden Albums and specific Images.
 260 ==> 196583 - Ability to collapse album headers in the middle "view" panel.
 261 ==> 436758 - Question to date-format of import images.
-262 ==> 
+262 ==> 407034 - Editing an image in the Image editor adds a XMP video date field.
+263 ==> 407033 - Image Editor adds a XMP video tags.
+264 ==> 
