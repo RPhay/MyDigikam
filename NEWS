@@ -289,5 +289,5 @@ BUGFIXES:
 270 ==> 149063 - Open tool menu crash.
 271 ==> 219512 - Segfault (SIGSEGV) when using any non-color changing tool.
 272 ==> 383855 - digiKam crash when stacking 5 images.
-273 ==> 
+273 ==> 266660 - Crashed after successfully converting png image to jpg.
 274 ==> 
