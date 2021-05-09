@@ -116,9 +116,11 @@ void ExifToolProcess::start()
 
     qCDebug(DIGIKAM_METAENGINE_LOG) << "Path to ExifTool:" << d->etExePath;
 
-    if ((d->etExePath != exifToolBin()) &&
-        (!QFile::exists(d->etExePath)   ||
-        !(QFile::permissions(d->etExePath) & QFile::ExeUser)))
+    if (
+        (d->etExePath != exifToolBin())                    &&
+        (!QFile::exists(d->etExePath)                      ||
+        !(QFile::permissions(d->etExePath) & QFile::ExeUser))
+       )
     {
         d->setProcessErrorAndEmit(QProcess::FailedToStart,
                                   QString::fromLatin1("ExifTool does not exists or exec permission is missing"));
@@ -131,7 +133,7 @@ void ExifToolProcess::start()
         !(QFile::permissions(d->perlExePath) & QFile::ExeUser)))
     {
         d->setProcessErrorAndEmit(QProcess::FailedToStart,
-                               QString::fromLatin1("Perl does not exists or exec permission is missing"));
+                                  QString::fromLatin1("Perl does not exists or exec permission is missing"));
         return;
     }
 
