@@ -46,7 +46,7 @@ endif()
 #------------------------------------------------------------------------------------
 
 set(libxmp_SRCS
-    ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/source/Host_IO-POSIX.cpp
+#    ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/source/Host_IO-POSIX.cpp
 #    ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/source/Host_IO-Win.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/source/IOUtils.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/source/PerfUtils.cpp
@@ -157,6 +157,18 @@ set(libxmp_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/XMPFiles/source/FileHandlers/XDCAMSAM_Handler.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/XMPFiles/source/FileHandlers/XDCAM_Handler.cpp
 )
+
+if(MSVC)
+set(libxmp_SRCS
+    ${libxmp_SRCS}
+    ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/source/Host_IO-Win.cpp
+)
+else()
+set(libxmp_SRCS
+    ${libxmp_SRCS}
+    ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/source/Host_IO-POSIX.cpp
+)
+endif()
 
 # Used by digikamcore
 add_library(core_libxmp_obj OBJECT ${libxmp_SRCS})
