@@ -292,4 +292,10 @@ BUGFIXES:
 273 ==> 266660 - Crashed after successfully converting png image to jpg.
 274 ==> 435411 - Wrong language setup.
 275 ==> 435893 - There is only the default theme available.
-276 ==> 
+276 ==> 411780 - Rename with date while Importing CR2 from Camera produces wrong time.
+277 ==> 
+278 ==> 
+279 ==> 
+280 ==> 
+281 ==> 
+
