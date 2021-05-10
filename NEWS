@@ -290,4 +290,6 @@ BUGFIXES:
 271 ==> 219512 - Segfault (SIGSEGV) when using any non-color changing tool.
 272 ==> 383855 - digiKam crash when stacking 5 images.
 273 ==> 266660 - Crashed after successfully converting png image to jpg.
-274 ==> 
+274 ==> 435411 - Wrong language setup.
+275 ==> 435893 - There is only the default theme available.
+276 ==> 
