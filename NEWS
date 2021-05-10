@@ -313,7 +313,7 @@ BUGFIXES:
 293 ==> 384423 - core/libs/dngwriter/extra/dng_sdk/dng_string.cpp:2027: confused logic ?
 294 ==> 384422 - core/libs/dngwriter/extra/dng_sdk/dng_mosaic_info.cpp:637: bad if ?
 295 ==> 231038 - digiKam crashed while attempting to import photo collection (100GB) CR2 DNG JPG.
-296 ==> 
+296 ==> 192545 - FTBFS on mips.
 297 ==> 
 298 ==> 
 299 ==> 
