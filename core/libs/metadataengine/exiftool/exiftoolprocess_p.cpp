@@ -38,6 +38,7 @@ ExifToolProcess::Private::Private(ExifToolProcess* const q)
       cmdRunning          (0),
       cmdAction           (ExifToolProcess::LOAD_METADATA),
       writeChannelIsClosed(true),
+      exifToolHasFinished (true),
       processError        (QProcess::UnknownError)
 {
     outAwait[0] = false;
