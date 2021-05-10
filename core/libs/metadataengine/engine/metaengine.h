@@ -324,11 +324,6 @@ public:
      */
     bool updateFileTimeStamp() const;
 
-    /**
-     * List of changed tags compared to original file contents.
-     */
-    bool changedMetadata() const;
-
     //@}
 
     //-------------------------------------------------------------------
@@ -402,6 +397,14 @@ public:
      * have been saved into file.
      */
     bool applyChanges(bool setVersion = false) const;
+
+    /**
+     * List changed tags compared to original file contents and export result to
+     * a temporary EXV file container.
+     * 'exvTmpFile' is the path to the temporary EXV container to create.
+     * 'removedTags' is populated with the list of tags removed.
+     */
+    bool exportChanges(const QString& exvTmpFile, QStringList& removedTags) const;
 
     //@}
 

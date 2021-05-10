@@ -93,35 +93,11 @@ QString ExifToolParser::currentErrorString() const
     return d->proc->errorString();
 }
 
-void ExifToolParser::slotErrorOccurred(int cmdAction, QProcess::ProcessError error)
-{
-    qCWarning(DIGIKAM_METAENGINE_LOG) << "ExifTool process for action" << d->actionString(cmdAction)
-                                      << "exited with error:" << error;
-
-    d->manageEventLoop(cmdAction);
-}
-
-void ExifToolParser::slotFinished(int cmdAction, int exitCode, QProcess::ExitStatus exitStatus)
-{
-    qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool process for action" << d->actionString(cmdAction)
-                                    << "finished with code:" << exitCode
-                                    << "and status" << exitStatus;
-
-    d->manageEventLoop(cmdAction);
-}
-
 void ExifToolParser::slotMetaEngineSettingsChanged()
 {
     d->proc->setProgram(MetaEngineSettings::instance()->settings().exifToolPath);
 
     qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool path:" << d->proc->program();
-}
-
-void ExifToolParser::setOutputStream(int cmdAction,
-                                     const QByteArray& cmdOutputChannel,
-                                     const QByteArray& cmdErrorChannel)
-{
-    slotCmdCompleted(cmdAction, 0, cmdOutputChannel, cmdErrorChannel);
 }
 
 } // namespace Digikam

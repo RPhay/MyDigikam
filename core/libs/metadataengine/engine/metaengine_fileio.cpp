@@ -399,6 +399,202 @@ bool MetaEngine::applyChanges(bool setVersion) const
     return save(d->filePath, setVersion);
 }
 
+bool MetaEngine::exportChanges(const QString& exvTmpFile, QStringList& removedTags) const
+{
+    if (d->filePath.isEmpty())
+    {
+        qCDebug(DIGIKAM_METAENGINE_LOG) << "Failed to export changes: file path is empty!";
+        return false;
+    }
+
+    QMutexLocker lock(&s_metaEngineMutex);
+
+    try
+    {
+        Exiv2::Image::AutoPtr image;
+
+        qCDebug(DIGIKAM_METAENGINE_LOG) << "List of changes to perform on:" << getFilePath();
+
+#if defined Q_OS_WIN && defined EXV_UNICODE_PATH
+
+        image = Exiv2::ImageFactory::open((const wchar_t*)getFilePath().utf16());
+
+#elif defined Q_OS_WIN
+
+        image = Exiv2::ImageFactory::open(QFile::encodeName(getFilePath()).constData());
+
+#else
+
+        image = Exiv2::ImageFactory::open(getFilePath().toUtf8().constData());
+
+#endif
+
+        image->readMetadata();
+
+        // --- Parse differences in Exif
+
+        Exiv2::ExifData orgExif = image->exifData();
+        Exiv2::ExifData newExif = d->exifMetadata();
+        Exiv2::ExifData chgExif;
+
+        for (Exiv2::ExifData::const_iterator it = newExif.begin() ; it != newExif.end() ; ++it)
+        {
+            Exiv2::ExifData::const_iterator it2 = orgExif.findKey(Exiv2::ExifKey(it->key()));
+
+            if      (it2 == orgExif.end())
+            {
+                // Orignal Exif do not have the tag.
+
+                chgExif[it->key().c_str()] = newExif[it->key().c_str()];
+
+                qCDebug(DIGIKAM_METAENGINE_LOG) << "New Exif tag" << it->key().c_str()
+                                                << "with value"   << it->toString().c_str();
+            }
+            else if (getExifTagData(it2->key().c_str()) != getExifTagData(it->key().c_str()))
+            {
+                // Original Exif has already the tag.
+
+                chgExif[it->key().c_str()] = newExif[it->key().c_str()];
+
+                qCDebug(DIGIKAM_METAENGINE_LOG) << "Changed Exif tag" << it->key().c_str()
+                                                << "old value"        << it2->toString().c_str()
+                                                << "new value"        << it->toString().c_str();
+            }
+        }
+
+        // Check for removed Exif tags.
+
+        for (Exiv2::ExifData::const_iterator it = orgExif.begin() ; it != orgExif.end() ; ++it)
+        {
+            Exiv2::ExifData::const_iterator it2 = newExif.findKey(Exiv2::ExifKey(it->key()));
+
+            if (it2 == newExif.end())
+            {
+                // New Exif do not have the tag.
+
+                qCDebug(DIGIKAM_METAENGINE_LOG) << "Removed Exif tag" << it->key().c_str();
+                removedTags <<  QString::fromStdString(it->key());
+            }
+        }
+
+        // --- Parse differences in Iptc
+
+        Exiv2::IptcData orgIptc = image->iptcData();
+        Exiv2::IptcData newIptc = d->iptcMetadata();
+        Exiv2::IptcData chgIptc;
+
+        for (Exiv2::IptcData::const_iterator it = newIptc.begin() ; it != newIptc.end() ; ++it)
+        {
+            Exiv2::IptcData::const_iterator it2 = orgIptc.findKey(Exiv2::IptcKey(it->key()));
+
+            if      (it2 == orgIptc.end())
+            {
+                // Orignal Iptc do not have the tag.
+
+                chgIptc[it->key().c_str()] = newIptc[it->key().c_str()];
+
+                qCDebug(DIGIKAM_METAENGINE_LOG) << "New Iptc tag" << it->key().c_str()
+                                                << "with value"   << it->toString().c_str();
+            }
+            else if (getIptcTagData(it2->key().c_str()) != getIptcTagData(it->key().c_str()))
+            {
+                // Original Iptc has already the tag.
+
+                chgIptc[it->key().c_str()] = newIptc[it->key().c_str()];
+
+                qCDebug(DIGIKAM_METAENGINE_LOG) << "Changed Iptc tag" << it->key().c_str()
+                                                << "old value"        << it2->toString().c_str()
+                                                << "new value"        << it->toString().c_str();
+            }
+        }
+
+        // Check for removed Iptc tags.
+
+        for (Exiv2::IptcData::const_iterator it = orgIptc.begin() ; it != orgIptc.end() ; ++it)
+        {
+            Exiv2::IptcData::const_iterator it2 = newIptc.findKey(Exiv2::IptcKey(it->key()));
+
+            if (it2 == newIptc.end())
+            {
+                // New Iptc do not have the tag.
+
+                qCDebug(DIGIKAM_METAENGINE_LOG) << "Removed Iptc tag" << it->key().c_str();
+                removedTags <<  QString::fromStdString(it->key());
+            }
+        }
+
+#ifdef _XMP_SUPPORT_
+
+        // --- Parse differences in Xmp
+
+        Exiv2::XmpData orgXmp = image->xmpData();
+        Exiv2::XmpData newXmp = d->xmpMetadata();
+        Exiv2::XmpData chgXmp;
+
+        for (Exiv2::XmpData::const_iterator it = newXmp.begin() ; it != newXmp.end() ; ++it)
+        {
+            Exiv2::XmpData::const_iterator it2 = orgXmp.findKey(Exiv2::XmpKey(it->key()));
+
+            if      (it2 == orgXmp.end())
+            {
+                // Orignal Xmp do not have the tag.
+
+                chgXmp[it->key().c_str()] = newXmp[it->key().c_str()];
+
+                qCDebug(DIGIKAM_METAENGINE_LOG) << "New Xmp tag" << it->key().c_str()
+                                                << "with value"  << it->toString().c_str();
+            }
+            else if (getXmpTagVariant(it2->key().c_str()) != getXmpTagVariant(it->key().c_str()))
+            {
+                // Original Xmp has already the tag.
+
+                chgXmp[it->key().c_str()] = newXmp[it->key().c_str()];
+
+                qCDebug(DIGIKAM_METAENGINE_LOG) << "Changed Xmp tag" << it->key().c_str()
+                                                << "old value"       << it2->toString().c_str()
+                                                << "new value"       << it->toString().c_str();
+            }
+        }
+
+        // Check for removed Xmp tags.
+
+        for (Exiv2::XmpData::const_iterator it = orgXmp.begin() ; it != orgXmp.end() ; ++it)
+        {
+            Exiv2::XmpData::const_iterator it2 = newXmp.findKey(Exiv2::XmpKey(it->key()));
+
+            if (it2 == newXmp.end())
+            {
+                // New Xmp do not have the tag.
+
+                qCDebug(DIGIKAM_METAENGINE_LOG) << "Removed Xmp tag" << it->key().c_str();
+                removedTags <<  QString::fromStdString(it->key());
+            }
+        }
+
+#endif // _XMP_SUPPORT_
+
+        // Create target EXV container with list of changed tags.
+
+        Exiv2::Image::AutoPtr targetExv = Exiv2::ImageFactory::create(Exiv2::ImageType::exv, exvTmpFile.toStdString());
+        targetExv->setExifData(chgExif);
+        targetExv->setIptcData(chgIptc);
+        targetExv->setXmpData(chgXmp);
+        targetExv->writeMetadata();
+
+        return true;
+    }
+    catch (Exiv2::AnyError& e)
+    {
+        d->printExiv2ExceptionError(QLatin1String("Cannot export changes using Exiv2 "), e);
+    }
+    catch (...)
+    {
+        qCCritical(DIGIKAM_METAENGINE_LOG) << "Default exception from Exiv2";
+    }
+
+    return false;
+}
+
 } // namespace Digikam
 
 #if defined(Q_CC_CLANG)

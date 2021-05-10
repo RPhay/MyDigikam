@@ -3,10 +3,10 @@
  * This file is a part of digiKam project
  * https://www.digikam.org
  *
- * Date        : 2012-10-23
- * Description : a command line tool to test list metadata differences
+ * Date        : 2013-11-28
+ * Description : a command line tool to write metadata with ExifTool and EXV constainer
  *
- * Copyright (C) 2012-2021 by Gilles Caulier, <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -23,30 +23,33 @@
 
 // Qt includes
 
-#include <QFileInfo>
 #include <QString>
-#include <QTextStream>
-#include <QApplication>
+#include <QCoreApplication>
 #include <QDebug>
+#include <QVariant>
 
 // Local includes
 
 #include "dmetadata.h"
+#include "dpluginloader.h"
+#include "metaengine.h"
+#include "exiftoolparser.h"
 
 using namespace Digikam;
 
 int main(int argc, char** argv)
 {
-    QApplication app(argc, argv);
+    QCoreApplication app(argc, argv);
 
     if (argc != 2)
     {
-        qDebug() << "dmetadatadiff_cli - CLI tool to check metadat difference with DMetadata";
-        qDebug() << "Usage: <image>";
+        qDebug() << "exiftoolapplychanges_cli - CLI tool to write metadata with ExifTool in image using EXV constainer";
+        qDebug() << "Usage: <image to patch>";
         return -1;
     }
 
     MetaEngine::initializeExiv2();
+
 
     QFileInfo input(QString::fromUtf8(argv[1]));
 
@@ -61,8 +64,17 @@ int main(int argc, char** argv)
 
     meta.setImageDateTime(QDateTime::currentDateTime(), true);
 
-    meta.changedMetadata();
+    QString     exvPath = input.baseName() + QLatin1String("_changes.exv");
+    QStringList removedTags;
+    meta.exportChanges(exvPath, removedTags);
+
+    ExifToolParser* const parser = new ExifToolParser();
+
+    if (!parser->applyChanges(input.filePath(), exvPath))
+    {
+        qWarning() << "Cannot apply changes with ExifTool on" << input.filePath();
+        return -1;
+    }
 
     return 0;
 }
-

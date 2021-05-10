@@ -152,6 +152,12 @@ void ExifToolParser::slotCmdCompleted(int cmdAction,
             break;
         }
 
+        case ExifToolProcess::APPLY_CHANGES_EXV:
+        {
+            // TODO: check ExifTool feedback.
+            break;
+        }
+
         case ExifToolProcess::READ_FORMATS:
         {
             // Remove first line
@@ -231,6 +237,30 @@ void ExifToolParser::slotCmdCompleted(int cmdAction,
 
     qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool parsed command for action" << d->actionString(cmdAction);
     qCDebug(DIGIKAM_METAENGINE_LOG) << d->exifToolData.count() << "properties decoded";
+}
+
+void ExifToolParser::slotErrorOccurred(int cmdAction, QProcess::ProcessError error)
+{
+    qCWarning(DIGIKAM_METAENGINE_LOG) << "ExifTool process for action" << d->actionString(cmdAction)
+                                      << "exited with error:" << error;
+
+    d->manageEventLoop(cmdAction);
+}
+
+void ExifToolParser::slotFinished(int cmdAction, int exitCode, QProcess::ExitStatus exitStatus)
+{
+    qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool process for action" << d->actionString(cmdAction)
+                                    << "finished with code:" << exitCode
+                                    << "and status" << exitStatus;
+
+    d->manageEventLoop(cmdAction);
+}
+
+void ExifToolParser::setOutputStream(int cmdAction,
+                                     const QByteArray& cmdOutputChannel,
+                                     const QByteArray& cmdErrorChannel)
+{
+    slotCmdCompleted(cmdAction, 0, cmdOutputChannel, cmdErrorChannel);
 }
 
 } // namespace Digikam

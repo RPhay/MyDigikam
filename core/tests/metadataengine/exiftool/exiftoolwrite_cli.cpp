@@ -44,7 +44,7 @@ int main(int argc, char** argv)
     if (argc != 2)
     {
         qDebug() << "exiftoolwrite_cli - CLI tool to write metadata with ExifTool in image";
-        qDebug() << "Usage: <image to create>";
+        qDebug() << "Usage: <image to patch>";
         return -1;
     }
 
