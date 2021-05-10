@@ -164,12 +164,11 @@ int main(int argc, char* argv[])
     {
         QLocale locale;
 
-        qCDebug(DIGIKAM_GENERAL_LOG) << "Application locale:" << locale.name();
-
         bool ret = translator.load(locale, QLatin1String("qtbase"),
                                    QLatin1String("_"), transPath);
 
-        qCDebug(DIGIKAM_GENERAL_LOG) << "Loading translation:" << ret;
+        qCDebug(DIGIKAM_GENERAL_LOG) << "Locale:" << locale.name()
+                                     << "Loading:" << ret;
 
         if (ret)
         {
