@@ -293,9 +293,20 @@ BUGFIXES:
 274 ==> 435411 - Wrong language setup.
 275 ==> 435893 - There is only the default theme available.
 276 ==> 411780 - Rename with date while Importing CR2 from Camera produces wrong time.
-277 ==> 
-278 ==> 
-279 ==> 
-280 ==> 
-281 ==> 
+277 ==> 330302 - digiKam import crashed while importing from mass storage camera.
+278 ==> 336514 - Crashed while clicking on a folder.
+279 ==> 336869 - digiKam segfaults in inverse perspective adjustment.
+280 ==> 341424 - digiKam crashes when cancelling export.
+281 ==> 341529 - Crash Everytime on "advance slideshow" after a few seconds.
+282 ==> 342802 - Crashes in editor.
+283 ==> 343243 - Crashed while selecting 'Print Assistant'.
+284 ==> 344587 - digiKam crash while downloading photos from SDcard.
+285 ==> 345044 - digiKam crashes when closing editor.
+286 ==> 347054 - digiKam crash with database uses.
+287 ==> 347340 - digiKam crashes on advanced slideshow with selected pictures.
+288 ==> 356282 - digiKam stop to export photo.
+289 ==> 
+290 ==> 
+291 ==> 
+
 
