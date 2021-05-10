@@ -1168,7 +1168,7 @@ int DNGWriter::convert()
                         *negative.Get(),
                         &previewList,
                         dngVersion_SaveDefault,
-                        d->jpegLossLessCompression
+                        !d->jpegLossLessCompression
                        );
 
         // -----------------------------------------------------------------------------------------
