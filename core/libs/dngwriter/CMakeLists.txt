@@ -159,15 +159,15 @@ set(libxmp_SRCS
 )
 
 if(MSVC)
-set(libxmp_SRCS
-    ${libxmp_SRCS}
-    ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/source/Host_IO-Win.cpp
-)
+    set(libxmp_SRCS
+        ${libxmp_SRCS}
+        ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/source/Host_IO-Win.cpp
+    )
 else()
-set(libxmp_SRCS
-    ${libxmp_SRCS}
-    ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/source/Host_IO-POSIX.cpp
-)
+    set(libxmp_SRCS
+        ${libxmp_SRCS}
+        ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/source/Host_IO-POSIX.cpp
+    )
 endif()
 
 # Used by digikamcore
