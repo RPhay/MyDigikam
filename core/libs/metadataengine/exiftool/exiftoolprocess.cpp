@@ -180,7 +180,7 @@ void ExifToolProcess::start()
 
 void ExifToolProcess::terminate()
 {
-    if (d->process->state() == QProcess::Running)
+    if      (d->process->state() == QProcess::Running)
     {
         // If process is in running state, close ExifTool normally
 
@@ -190,8 +190,10 @@ void ExifToolProcess::terminate()
         d->process->write(QByteArray("-stay_open\nfalse\n"));
         d->process->closeWriteChannel();
         d->writeChannelIsClosed = true;
+
+        d->process->waitForFinished(5000);
     }
-    else
+    else if (d->process->state() == QProcess::Starting)
     {
         // Otherwise, close ExifTool using OS system call
         // (WM_CLOSE [Windows] or SIGTERM [Unix])
