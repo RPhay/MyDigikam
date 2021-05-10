@@ -10,6 +10,7 @@ General : Digital Scanner plugin is now available under Windows.
 General : Use last Exiv2 0.27.4 in all bundles with Base Media File metadata read and write support (HEIF, AVIF).
 General : Use last KF5 framework 5.80 in all bundles.
 General : Update internal Libraw from snapshot 20210504
+General : Update internal DNG SDK to last 1.5 and XMP SDK to last 5.7.0.
 Searches: Find duplicates items is now process in parallel using multi-cores.
 Plugins : New tool to export items to iNaturalist web service (https://www.inaturalist.org/).
 Plugins : SlideShow and Presentation tools now allow to move items to the trash.
@@ -307,6 +308,14 @@ BUGFIXES:
 288 ==> 356282 - digiKam stop to export photo.
 289 ==> 436299 - German Translation of Buttons.
 290 ==> 415605 - Full Screen toolbar item is shown in French while my config is in English.
-291 ==> 
-
-
+291 ==> 384427 - core/libs/dngwriter/extra/dng_sdk/dng_xmp.cpp: int / long mixup ?
+292 ==> 384426 - core/libs/dngwriter/extra/dng_sdk/dng_date_time.cpp: int / long mixup.
+293 ==> 384423 - core/libs/dngwriter/extra/dng_sdk/dng_string.cpp:2027: confused logic ?
+294 ==> 384422 - core/libs/dngwriter/extra/dng_sdk/dng_mosaic_info.cpp:637: bad if ?
+295 ==> 
+296 ==> 
+297 ==> 
+298 ==> 
+299 ==> 
+300 ==> 
+301 ==> 
