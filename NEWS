@@ -312,7 +312,7 @@ BUGFIXES:
 292 ==> 384426 - core/libs/dngwriter/extra/dng_sdk/dng_date_time.cpp: int / long mixup.
 293 ==> 384423 - core/libs/dngwriter/extra/dng_sdk/dng_string.cpp:2027: confused logic ?
 294 ==> 384422 - core/libs/dngwriter/extra/dng_sdk/dng_mosaic_info.cpp:637: bad if ?
-295 ==> 
+295 ==> 231038 - digiKam crashed while attempting to import photo collection (100GB) CR2 DNG JPG.
 296 ==> 
 297 ==> 
 298 ==> 
