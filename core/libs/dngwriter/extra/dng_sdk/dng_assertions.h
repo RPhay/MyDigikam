@@ -1,15 +1,10 @@
 /*****************************************************************************/
-// Copyright 2006-2007 Adobe Systems Incorporated
+// Copyright 2006-2019 Adobe Systems Incorporated
 // All Rights Reserved.
 //
 // NOTICE:  Adobe permits you to use, modify, and distribute this file in
 // accordance with the terms of the Adobe license agreement accompanying it.
 /*****************************************************************************/
-
-/* $Id: //mondo/dng_sdk_1_3/dng_sdk/source/dng_assertions.h#1 $ */
-/* $DateTime: 2009/06/22 05:04:49 $ */
-/* $Change: 578634 $ */
-/* $Author: tknoll $ */
 
 /** \file
  * Conditionally compiled assertion check support.
@@ -29,10 +24,11 @@
 
 #if qDNGDebug
 
-/// Platform specific function to display an assert.
+/// Platform-specific function to display an assert.
+
 void dng_show_message (const char *s);
 
-// Show a formatted error message.
+/// Show a formatted error message.
 
 void dng_show_message_f (const char *fmt, ...);
 
@@ -81,7 +77,7 @@ void dng_show_message_f (const char *fmt, ...);
 		if (!(condition))						\
 			{									\
 												\
-			dng_show_message (msg);				\
+			DNG_ASSERT(condition, msg);			\
 												\
 			ThrowProgramError (msg);			\
 												\
@@ -122,6 +118,7 @@ void dng_show_message_f (const char *fmt, ...);
 /// \param x String to display.
 
 #define DNG_REPORT(x) DNG_ASSERT (false, x)
+
 #endif
 
 /*****************************************************************************/

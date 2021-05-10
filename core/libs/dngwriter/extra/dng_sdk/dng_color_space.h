@@ -1,15 +1,10 @@
 /*****************************************************************************/
-// Copyright 2006 Adobe Systems Incorporated
+// Copyright 2006-2019 Adobe Systems Incorporated
 // All Rights Reserved.
 //
 // NOTICE:  Adobe permits you to use, modify, and distribute this file in
 // accordance with the terms of the Adobe license agreement accompanying it.
 /*****************************************************************************/
-
-/* $Id: //mondo/dng_sdk_1_3/dng_sdk/source/dng_color_space.h#1 $ */
-/* $DateTime: 2009/06/22 05:04:49 $ */
-/* $Change: 578634 $ */
-/* $Author: tknoll $ */
 
 /** \file
  *  Standard gamma functions and color spaces used within the DNG SDK.
@@ -31,15 +26,15 @@
 
 class dng_function_GammaEncode_sRGB: public dng_1d_function
 	{
-
+	
 	public:
-
+	
 		virtual real64 Evaluate (real64 x) const;
-
+			
 		virtual real64 EvaluateInverse (real64 y) const;
-
+	
 		static const dng_1d_function & Get ();
-
+	
 	};
 
 /*****************************************************************************/
@@ -48,72 +43,75 @@ class dng_function_GammaEncode_sRGB: public dng_1d_function
 
 class dng_function_GammaEncode_1_8: public dng_1d_function
 	{
-
+	
 	public:
-
+	
 		virtual real64 Evaluate (real64 x) const;
-
+			
 		virtual real64 EvaluateInverse (real64 y) const;
-
+	
 		static const dng_1d_function & Get ();
-
+	
 	};
-
+			
 /*****************************************************************************/
 
 /// \brief A dng_1d_function for gamma encoding with 2.2 gamma.
 
 class dng_function_GammaEncode_2_2: public dng_1d_function
 	{
-
+	
 	public:
-
+	
 		virtual real64 Evaluate (real64 x) const;
-
+			
 		virtual real64 EvaluateInverse (real64 y) const;
-
+	
 		static const dng_1d_function & Get ();
-
+	
 	};
-
+			
 /*****************************************************************************/
 
 /// \brief An abstract color space
 
 class dng_color_space
 	{
-
+	
 	protected:
-
+	
 		dng_matrix fMatrixToPCS;
-
+		
 		dng_matrix fMatrixFromPCS;
-
+		
 	public:
-
+	
 		virtual ~dng_color_space ();
-
-		/// Return a matrix which transforms source data in this color space into the Profile Connection Space.
+	
+		/// Return a matrix which transforms source data in this color space into the
+		/// Profile Connection Space.
 
 		const dng_matrix & MatrixToPCS () const
 			{
 			return fMatrixToPCS;
 			}
-
-		/// Return a matrix which transforms Profile Connection Space data into this color space.
+		
+		/// Return a matrix which transforms Profile Connection Space data into this
+		/// color space.
 
 		const dng_matrix & MatrixFromPCS () const
 			{
 			return fMatrixFromPCS;
 			}
 
-		/// Predicate which is true if this color space is monochrome (has only a single column)
+		/// Predicate which is true if this color space is monochrome (has only a
+		/// single column).
 
 		bool IsMonochrome () const
 			{
 			return fMatrixToPCS.Cols () == 1;
 			}
-
+		
 		/// Getter for the gamma function for this color space.
 
 		virtual const dng_1d_function & GammaFunction () const;
@@ -132,13 +130,14 @@ class dng_color_space
 			return GammaFunction ().Evaluate (x);
 			}
 
-		/// Map an input value through this color space's decoding gamma (inverse of the encoding gamma).
+		/// Map an input value through this color space's decoding gamma (inverse of
+		/// the encoding gamma).
 
 		real64 GammaDecode (real64 y) const
 			{
 			return GammaFunction ().EvaluateInverse (y);
 			}
-
+			
 		/// Getter for ICC profile, if this color space has one.
 		/// \param size Out parameter which receives size on return.
 		/// \param data Receives bytes of profile.
@@ -146,15 +145,15 @@ class dng_color_space
 
 		virtual bool ICCProfile (uint32 &size,
 								 const uint8 *&data) const;
-
+								 
 	protected:
-
+	
 		dng_color_space ();
-
+			
 		void SetMonochrome ();
-
+		
 		void SetMatrixToPCS (const dng_matrix_3by3 &M);
-
+		
 	};
 
 /*****************************************************************************/
@@ -163,11 +162,11 @@ class dng_color_space
 
 class dng_space_sRGB: public dng_color_space
 	{
-
+	
 	protected:
-
+	
 		dng_space_sRGB ();
-
+		
 	public:
 
 		/// Returns dng_function_GammaEncode_sRGB
@@ -182,7 +181,7 @@ class dng_space_sRGB: public dng_color_space
 		/// Static method for getting single global instance of this color space.
 
 		static const dng_color_space & Get ();
-
+	
 	};
 
 /*****************************************************************************/
@@ -191,14 +190,14 @@ class dng_space_sRGB: public dng_color_space
 
 class dng_space_AdobeRGB: public dng_color_space
 	{
-
+	
 	protected:
-
+	
 		dng_space_AdobeRGB ();
-
+		
 	public:
-
-		/// Returns dng_function_GammaEncode_1_8
+	
+		/// Returns dng_function_GammaEncode_2_2
 
 		virtual const dng_1d_function & GammaFunction () const;
 
@@ -206,11 +205,11 @@ class dng_space_AdobeRGB: public dng_color_space
 
 		virtual bool ICCProfile (uint32 &size,
 								 const uint8 *&data) const;
-
+		
 		/// Static method for getting single global instance of this color space.
 
 		static const dng_color_space & Get ();
-
+	
 	};
 
 /*****************************************************************************/
@@ -219,26 +218,26 @@ class dng_space_AdobeRGB: public dng_color_space
 
 class dng_space_ColorMatch: public dng_color_space
 	{
-
+	
 	protected:
-
+	
 		dng_space_ColorMatch ();
-
+		
 	public:
-
+	
 		/// Returns dng_function_GammaEncode_1_8
 
 		virtual const dng_1d_function & GammaFunction () const;
-
+		
 		/// Returns ColorMatch RGB ICC profile
 
 		virtual bool ICCProfile (uint32 &size,
 								 const uint8 *&data) const;
-
+		
 		/// Static method for getting single global instance of this color space.
 
 		static const dng_color_space & Get ();
-
+	
 	};
 
 /*****************************************************************************/
@@ -247,26 +246,26 @@ class dng_space_ColorMatch: public dng_color_space
 
 class dng_space_ProPhoto: public dng_color_space
 	{
-
+	
 	protected:
-
+	
 		dng_space_ProPhoto ();
-
+		
 	public:
-
+	
 		/// Returns dng_function_GammaEncode_1_8
 
 		virtual const dng_1d_function & GammaFunction () const;
-
+		
 		/// Returns ProPhoto RGB ICC profile
 
 		virtual bool ICCProfile (uint32 &size,
 								 const uint8 *&data) const;
-
+		
 		/// Static method for getting single global instance of this color space.
 
 		static const dng_color_space & Get ();
-
+	
 	};
 
 /*****************************************************************************/
@@ -275,26 +274,26 @@ class dng_space_ProPhoto: public dng_color_space
 
 class dng_space_GrayGamma18: public dng_color_space
 	{
-
+	
 	protected:
-
+	
 		dng_space_GrayGamma18 ();
-
+		
 	public:
-
+	
 		/// Returns dng_function_GammaEncode_1_8
 
 		virtual const dng_1d_function & GammaFunction () const;
-
+		
 		/// Returns simple grayscale gamma 1.8 ICC profile
 
 		virtual bool ICCProfile (uint32 &size,
 								 const uint8 *&data) const;
-
+		
 		/// Static method for getting single global instance of this color space.
 
 		static const dng_color_space & Get ();
-
+	
 	};
 
 /*****************************************************************************/
@@ -303,41 +302,41 @@ class dng_space_GrayGamma18: public dng_color_space
 
 class dng_space_GrayGamma22: public dng_color_space
 	{
-
+	
 	protected:
-
+	
 		dng_space_GrayGamma22 ();
-
+		
 	public:
 
 		/// Returns dng_function_GammaEncode_2_2
 
 		virtual const dng_1d_function & GammaFunction () const;
-
+		
 		/// Returns simple grayscale gamma 2.2 ICC profile
 
 		virtual bool ICCProfile (uint32 &size,
 								 const uint8 *&data) const;
-
+		
 		/// Static method for getting single global instance of this color space.
 
 		static const dng_color_space & Get ();
-
+	
 	};
 
 /*****************************************************************************/
 
 class dng_space_fakeRGB: public dng_color_space
 	{
-
+	
 	protected:
-
+	
 		dng_space_fakeRGB ();
-
+		
 	public:
 
 		static const dng_color_space & Get ();
-
+	
 	};
 
 /*****************************************************************************/

@@ -1,16 +1,9 @@
 /*****************************************************************************/
-// Copyright 2006 Adobe Systems Incorporated
+// Copyright 2006-2019 Adobe Systems Incorporated
 // All Rights Reserved.
 //
 // NOTICE:  Adobe permits you to use, modify, and distribute this file in
 // accordance with the terms of the Adobe license agreement accompanying it.
-/*****************************************************************************/
-
-/* $Id: //mondo/dng_sdk_1_3/dng_sdk/source/dng_tile_iterator.h#1 $ */
-/* $DateTime: 2009/06/22 05:04:49 $ */
-/* $Change: 578634 $ */
-/* $Author: tknoll $ */
-
 /*****************************************************************************/
 
 #ifndef __dng_tile_iterator__
@@ -23,54 +16,113 @@
 #include "dng_rect.h"
 #include "dng_types.h"
 
+#include <vector>
+
 /*****************************************************************************/
 
-class dng_tile_iterator
+class dng_base_tile_iterator
 	{
-
-	private:
-
-		dng_rect fArea;
-
-		int32 fTileWidth;
-		int32 fTileHeight;
-
-		int32 fTileTop;
-		int32 fTileLeft;
-
-		int32 fRowLeft;
-
-		int32 fLeftPage;
-		int32 fRightPage;
-
-		int32 fTopPage;
-		int32 fBottomPage;
-
-		int32 fHorizontalPage;
-		int32 fVerticalPage;
-
+		
 	public:
+        
+		virtual ~dng_base_tile_iterator ()
+			{
+			}
 
-		dng_tile_iterator (const dng_image &image,
-						   const dng_rect &area);
-
-		dng_tile_iterator (const dng_point &tileSize,
-						   const dng_rect &area);
-
-		dng_tile_iterator (const dng_rect &tile,
-						   const dng_rect &area);
-
-		bool GetOneTile (dng_rect &tile);
-
-	private:
-
-		void Initialize (const dng_rect &tile,
-						 const dng_rect &area);
-
+		virtual bool GetOneTile (dng_rect &tile) = 0;		
+		
 	};
 
 /*****************************************************************************/
 
-#endif
+class dng_tile_iterator: public dng_base_tile_iterator
+	{
+	
+	protected:
+	
+		dng_rect fArea;
+		
+		int32 fTileWidth;
+		int32 fTileHeight;
+		
+		int32 fTileTop;
+		int32 fTileLeft;
+		
+		int32 fRowLeft;
+		
+		int32 fLeftPage;
+		int32 fRightPage;
+		
+		int32 fTopPage;
+		int32 fBottomPage;
+		
+		int32 fHorizontalPage;
+		int32 fVerticalPage;
+		
+	public:
+	
+		dng_tile_iterator (const dng_image &image,
+						   const dng_rect &area);
+						   
+		dng_tile_iterator (const dng_point &tileSize,
+						   const dng_rect &area);
+						   
+		dng_tile_iterator (const dng_rect &tile,
+						   const dng_rect &area);
+						   
+		virtual ~dng_tile_iterator ()
+			{
+			}
 
+		virtual bool GetOneTile (dng_rect &tile);
+		
+	private:
+	
+		void Initialize (const dng_rect &tile,
+						 const dng_rect &area);
+	
+	};
+
+/*****************************************************************************/
+
+typedef dng_tile_iterator dng_tile_forward_iterator;
+
+/*****************************************************************************/
+
+class dng_tile_reverse_iterator: public dng_base_tile_iterator
+	{
+
+	public:
+
+		std::vector<dng_rect> fTiles;
+
+		size_t fIndex;
+
+	public:
+		
+		dng_tile_reverse_iterator (const dng_image &image,
+								   const dng_rect &area);
+						   
+		dng_tile_reverse_iterator (const dng_point &tileSize,
+								   const dng_rect &area);
+						   
+		dng_tile_reverse_iterator (const dng_rect &tile,
+								   const dng_rect &area);
+						   
+		virtual ~dng_tile_reverse_iterator ()
+			{
+			}
+
+		virtual bool GetOneTile (dng_rect &tile);
+		
+	private:
+	
+		void Initialize (dng_tile_iterator &iterator);
+	
+	};
+		
+/*****************************************************************************/
+
+#endif
+	
 /*****************************************************************************/

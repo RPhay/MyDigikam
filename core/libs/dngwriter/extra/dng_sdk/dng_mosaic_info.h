@@ -1,15 +1,10 @@
 /*****************************************************************************/
-// Copyright 2006-2007 Adobe Systems Incorporated
+// Copyright 2006-2019 Adobe Systems Incorporated
 // All Rights Reserved.
 //
 // NOTICE:  Adobe permits you to use, modify, and distribute this file in
 // accordance with the terms of the Adobe license agreement accompanying it.
 /*****************************************************************************/
-
-/* $Id: //mondo/dng_sdk_1_3/dng_sdk/source/dng_mosaic_info.h#1 $ */
-/* $DateTime: 2009/06/22 05:04:49 $ */
-/* $Change: 578634 $ */
-/* $Author: tknoll $ */
 
 /** \file
  * Support for descriptive information about color filter array patterns.
@@ -36,9 +31,9 @@
 
 class dng_mosaic_info
 	{
-
+	
 	public:
-
+	
 		/// Size of fCFAPattern.
 
 		dng_point fCFAPatternSize;
@@ -46,13 +41,13 @@ class dng_mosaic_info
 		/// CFA pattern from CFAPattern tag in the \ref spec_tiff_ep "TIFF/EP specification."
 
 		uint8 fCFAPattern [kMaxCFAPattern] [kMaxCFAPattern];
-
+		
 		/// Number of color planes in DNG input.
 
 		uint32 fColorPlanes;
-
+		
 		uint8 fCFAPlaneColor [kMaxColorPlanes];
-
+		
 		/// Value of CFALayout tag in the \ref spec_dng "DNG 1.3 specification."
 		/// CFALayout describes the spatial layout of the CFA. The currently defined values are:
 		///    - 1 = Rectangular (or square) layout.
@@ -66,7 +61,7 @@ class dng_mosaic_info
 		///    - 9 = Staggered layout H: even rows are offset down by 1/2 row, even columns are offset right by 1/2 column.
 
 		uint32 fCFALayout;
-
+		
 		/// Value of BayerGreeSplit tag in DNG file.
 		/// BayerGreenSplit only applies to CFA images using a Bayer pattern filter array. This tag
 		/// specifies, in arbitrary units, how closely the values of the green pixels in the blue/green rows
@@ -77,28 +72,28 @@ class dng_mosaic_info
 		/// 5000 (large divergence).
 
 		uint32 fBayerGreenSplit;
-
+		
 	protected:
-
+		
 		dng_point fSrcSize;
-
+		
 		dng_point fCroppedSize;
-
+		
 		real64 fAspectRatio;
-
+		
 	public:
 
 		dng_mosaic_info ();
-
+		
 		virtual ~dng_mosaic_info ();
-
+		
 		virtual void Parse (dng_host &host,
 						    dng_stream &stream,
 						    dng_info &info);
-
+						    
 		virtual void PostParse (dng_host &host,
 								dng_negative &negative);
-
+								
 		/// Returns whether the RAW data in this DNG file from a color filter array (mosaiced) source.
 		/// \retval true if this DNG file is from a color filter array (mosiaced) source.
 
@@ -106,7 +101,7 @@ class dng_mosaic_info
 			{
 			return fCFAPatternSize != dng_point (0, 0);
 			}
-
+			
 		/// Enable generating four-plane output from three-plane Bayer input.
 		/// Extra plane is a second version of the green channel. First green is produced
 		/// using green mosaic samples from one set of rows/columns (even/odd) and the second
@@ -118,7 +113,7 @@ class dng_mosaic_info
 		/// Returns scaling factor relative to input size needed to capture output data.
 		/// Staggered (or rotated) sensing arrays are produced to a larger output than the number of input samples.
 		/// This method indicates how much larger.
-		/// \retval a point with integer scaling factors for the horizontal and vertical dimensions.
+		/// \retval a point with integer scaling factors for the horizotal and vertical dimensions.
 
 		virtual dng_point FullScale () const;
 
@@ -138,7 +133,7 @@ class dng_mosaic_info
 		/// \retval Size of resulting demosaiced image.
 
 		virtual dng_point DstSize (const dng_point &downScale) const;
-
+								   
 		/// Demosaic interpolation of a single plane for non-downsampled case.
 		/// \param host dng_host to use for buffer allocation requests, user cancellation testing, and progress updates.
 		/// \param negative DNG negative of mosaiced data.
@@ -151,7 +146,7 @@ class dng_mosaic_info
 								  		 const dng_image &srcImage,
 								  		 dng_image &dstImage,
 								  		 uint32 srcPlane = 0) const;
-
+								  		 
 		/// Demosaic interpolation of a single plane for downsampled case.
 		/// \param host dng_host to use for buffer allocation requests, user cancellation testing, and progress updates.
 		/// \param negative DNG negative of mosaiced data.
@@ -180,14 +175,17 @@ class dng_mosaic_info
 								  const dng_image &srcImage,
 								  dng_image &dstImage,
 								  const dng_point &downScale,
-								  uint32 srcPlane = 0) const;
-
+								  uint32 srcPlane = 0,
+                                  dng_matrix *scaleTransforms = NULL) const;
+								  
+		virtual bool SupportsPreservedBlackLevels () const;
+								  
 	protected:
-
+	
 		virtual bool IsSafeDownScale (const dng_point &downScale) const;
 
 		uint32 SizeForDownScale (const dng_point &downScale) const;
-
+		
 		virtual bool ValidSizeDownScale (const dng_point &downScale,
 									     uint32 minSize) const;
 
@@ -196,5 +194,5 @@ class dng_mosaic_info
 /*****************************************************************************/
 
 #endif
-
+	
 /*****************************************************************************/

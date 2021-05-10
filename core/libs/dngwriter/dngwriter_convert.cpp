@@ -546,6 +546,7 @@ int DNGWriter::convert()
 
         qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Updating metadata to DNG Negative" ;
 
+        dng_date_time_info orgDateTimeInfo;
         dng_exif* const exif = negative->GetExif();
         exif->fModel.Set_ASCII(identify->model.toLatin1().constData());
         exif->fMake.Set_ASCII(identify->make.toLatin1().constData());
@@ -560,14 +561,14 @@ int DNGWriter::convert()
 
             // Time from original shot
 
-            dng_date_time_info dti;
-            dti.SetDateTime(d->dngDateTime(meta->getItemDateTime()));
-            exif->fDateTimeOriginal = dti;
+            orgDateTimeInfo.SetDateTime(d->dngDateTime(meta->getItemDateTime()));
+            exif->fDateTimeOriginal  = orgDateTimeInfo;
 
-            dti.SetDateTime(d->dngDateTime(meta->getDigitizationDateTime(true)));
-            exif->fDateTimeDigitized = dti;
+            dng_date_time_info digiDateTimeInfo;
+            digiDateTimeInfo.SetDateTime(d->dngDateTime(meta->getDigitizationDateTime(true)));
+            exif->fDateTimeDigitized = digiDateTimeInfo;
 
-            negative->UpdateDateTime(dti);
+            negative->UpdateDateTime(orgDateTimeInfo);
 
             // String Tags
 
@@ -962,7 +963,7 @@ int DNGWriter::convert()
                     negative->SetMakerNote(block);
                     negative->SetMakerNoteSafety(true);
                 }
-
+/*
                 long mknOffset       = 0;
                 QString mknByteOrder = meta->getExifTagString("Exif.MakerNote.ByteOrder");
 
@@ -983,6 +984,7 @@ int DNGWriter::convert()
                     streamPriv.Get(blockPriv->Buffer(), streamPriv.Length());
                     negative->SetPrivateData(blockPriv);
                 }
+*/
             }
         }
 
@@ -1098,7 +1100,7 @@ int DNGWriter::convert()
         negative->BuildStage3Image(host);
 
         negative->SynchronizeMetadata();
-        negative->RebuildIPTC(true, false);
+        negative->RebuildIPTC(true);
 
         if (d->cancel)
         {
@@ -1108,68 +1110,25 @@ int DNGWriter::convert()
         // -----------------------------------------------------------------------------------------
 
         dng_preview_list previewList;
+        dng_render negRender(host, *negative.Get());
+        dng_jpeg_preview* jpeg_preview = new dng_jpeg_preview();
 
         if (d->previewMode != DNGWriter::NONE)
         {
             qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: DNG preview image creation" ;
 
-            // Construct a preview image as TIFF format.
+            dng_jpeg_preview* jpeg_preview  = new dng_jpeg_preview();
+            jpeg_preview->fInfo.fApplicationName.Set_ASCII(QString::fromLatin1("digiKam").toLatin1().constData());
+            jpeg_preview->fInfo.fApplicationVersion.Set_ASCII(digiKamVersion().toLatin1().constData());
+            jpeg_preview->fInfo.fDateTime   = orgDateTimeInfo.Encode_ISO_8601();
+            jpeg_preview->fInfo.fColorSpace = previewColorSpace_sRGB;
 
-            AutoPtr<dng_image> tiffImage;
-            dng_render tiff_render(host, *negative);
-            tiff_render.SetFinalSpace(dng_space_sRGB::Get());
-            tiff_render.SetFinalPixelType(ttByte);
-            tiff_render.SetMaximumSize(d->previewMode == MEDIUM ? 1280 : width);
-            tiffImage.Reset(tiff_render.Render());
-
-            dng_image_writer tiff_writer;
-            AutoPtr<dng_memory_stream> dms(new dng_memory_stream(gDefaultDNGMemoryAllocator));
-
-            tiff_writer.WriteTIFF(host, *dms, *tiffImage.Get(), piRGB,
-                                  ccUncompressed, negative.Get(), &tiff_render.FinalSpace());
-
-            // Write TIFF preview image data to a temp JPEG file
-
-            std::vector<char> tiff_mem_buffer(dms->Length());
-            dms->SetReadPosition(0);
-            dms->Get(&tiff_mem_buffer.front(), (int)tiff_mem_buffer.size());
-            dms.Reset();
-
-            QImage pre_image;
-
-            if (!pre_image.loadFromData((uchar*)&tiff_mem_buffer.front(), (int)tiff_mem_buffer.size(), "TIFF"))
-            {
-                qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Cannot load TIFF preview data in memory. Aborted..." ;
-
-                return PROCESSFAILED;
-            }
-
-            QByteArray previewArray;
-            QBuffer previewBuffer(&previewArray);
-            previewBuffer.open(QIODevice::WriteOnly);
-
-            if (!pre_image.save(&previewBuffer, "JPEG", 90))
-            {
-                qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Cannot save buffer to write JPEG preview. Aborted..." ;
-
-                return PROCESSFAILED;
-            }
-
-            // Load JPEG preview file data in DNG preview container.
-
-            AutoPtr<dng_jpeg_preview> jpeg_preview;
-            jpeg_preview.Reset(new dng_jpeg_preview);
-            jpeg_preview->fPhotometricInterpretation = piYCbCr;
-            jpeg_preview->fYCbCrSubSampling          = dng_point(2, 2);
-            jpeg_preview->fPreviewSize.h             = pre_image.width();
-            jpeg_preview->fPreviewSize.v             = pre_image.height();
-            jpeg_preview->fCompressedData.Reset(host.Allocate(previewArray.size()));
-
-            QDataStream previewStream(previewArray);
-            previewStream.readRawData(jpeg_preview->fCompressedData->Buffer_char(), previewArray.size());
-
-            AutoPtr<dng_preview> pp(dynamic_cast<dng_preview*>(jpeg_preview.Release()));
-            previewList.Append(pp);
+            negRender.SetMaximumSize(d->previewMode == MEDIUM ? 1280 : width);
+            AutoPtr<dng_image> negImage(negRender.Render());
+            dng_image_writer jpegWriter;
+            jpegWriter.EncodeJPEGPreview(host, *negImage.Get(), *jpeg_preview, 5);
+            AutoPtr<dng_preview> jp(static_cast<dng_preview*>(jpeg_preview));
+            previewList.Append(jp);
         }
 
         if (d->cancel)
@@ -1181,12 +1140,16 @@ int DNGWriter::convert()
 
         qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: DNG thumbnail creation" ;
 
-        dng_image_preview thumbnail;
-        dng_render thumbnail_render(host, *negative);
-        thumbnail_render.SetFinalSpace(dng_space_sRGB::Get());
-        thumbnail_render.SetFinalPixelType(ttByte);
-        thumbnail_render.SetMaximumSize(256);
-        thumbnail.fImage.Reset(thumbnail_render.Render());
+        dng_image_preview* thumbnail         = new dng_image_preview();
+        thumbnail->fInfo.fApplicationName    = jpeg_preview->fInfo.fApplicationName;
+        thumbnail->fInfo.fApplicationVersion = jpeg_preview->fInfo.fApplicationVersion;
+        thumbnail->fInfo.fDateTime           = jpeg_preview->fInfo.fDateTime;
+        thumbnail->fInfo.fColorSpace         = jpeg_preview->fInfo.fColorSpace;
+
+        negRender.SetMaximumSize(256);
+        thumbnail->fImage.Reset(negRender.Render());
+        AutoPtr<dng_preview> tn(static_cast<dng_preview*>(thumbnail));
+        previewList.Append(tn);
 
         if (d->cancel)
         {
@@ -1200,9 +1163,13 @@ int DNGWriter::convert()
         dng_image_writer writer;
         dng_file_stream filestream(QFile::encodeName(dngFilePath).constData(), true);
 
-        writer.WriteDNG(host, filestream, *negative.Get(), thumbnail,
-                        d->jpegLossLessCompression ? ccJPEG : ccUncompressed,
-                        &previewList);
+        writer.WriteDNG(host,
+                        filestream,
+                        *negative.Get(),
+                        &previewList,
+                        dngVersion_SaveDefault,
+                        !d->jpegLossLessCompression
+                       );
 
         // -----------------------------------------------------------------------------------------
         // Metadata makernote cleanup using Exiv2 for some RAW file types
