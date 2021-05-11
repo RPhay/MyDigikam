@@ -52,10 +52,10 @@ class Q_DECL_HIDDEN DNGSettings::Private
 public:
 
     explicit Private()
-      : previewModeLabel(nullptr),
-        compressLossLess(nullptr),
+      : previewModeLabel     (nullptr),
+        compressLossLess     (nullptr),
         backupOriginalRawFile(nullptr),
-        previewModeCB(nullptr)
+        previewModeCB        (nullptr)
     {
     }
 
@@ -69,7 +69,7 @@ public:
 
 DNGSettings::DNGSettings(QWidget* const parent)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     setAttribute(Qt::WA_DeleteOnClose);
 

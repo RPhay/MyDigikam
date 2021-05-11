@@ -152,7 +152,8 @@ int DNGWriter::convert()
             bayerPattern = Private::Standard;
             filter       = 3;
         }
-        else if ((identify->filterPattern == QLatin1String("RGBGRGBGRGBGRGBG")) && (identifyMake->make == QLatin1String("FUJIFILM")))
+        else if ((identify->filterPattern      == QLatin1String("RGBGRGBGRGBGRGBG")) &&
+                 (identifyMake->make.toUpper() == QLatin1String("FUJIFILM")))
         {
             // Fuji layouts
 
@@ -160,7 +161,8 @@ int DNGWriter::convert()
             fujiRotate90 = false;
             filter       = 0;
         }
-        else if ((identify->filterPattern == QLatin1String("RBGGBRGGRBGGBRGG")) && (identifyMake->make == QLatin1String("FUJIFILM")))
+        else if ((identify->filterPattern      == QLatin1String("RBGGBRGGRBGGBRGG")) &&
+                 (identifyMake->make.toUpper() == QLatin1String("FUJIFILM")))
         {
             // Fuji layouts
 

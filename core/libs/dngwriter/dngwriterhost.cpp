@@ -29,9 +29,10 @@
 namespace Digikam
 {
 
-DNGWriterHost::DNGWriterHost(DNGWriter::Private* const priv, dng_memory_allocator* const allocator)
+DNGWriterHost::DNGWriterHost(DNGWriter::Private* const priv,
+                             dng_memory_allocator* const allocator)
     : dng_host(allocator),
-      m_priv(priv)
+      m_priv  (priv)
 {
 }
 
@@ -44,6 +45,7 @@ void DNGWriterHost::SniffForAbort()
     if (m_priv->cancel)
     {
         qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Canceled by user..." ;
+
         m_priv->cleanup();
         ThrowUserCanceled();
     }

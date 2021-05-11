@@ -40,6 +40,7 @@
  * ADOBE DNG CONVERTER: ftp.adobe.com/pub/adobe/photoshop/cameraraw/win/4.x
  * DNGCONVERT:          github.com/jmue/dngconvert
  * MOVIE2DNG:           elphel.svn.sourceforge.net/svnroot/elphel/tools/Movie2DNG
+ * RAW2DNG :            github.com/Fimagena/raw2dng
  */
 
 #include "dngwriter_p.h"
