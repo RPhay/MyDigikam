@@ -135,7 +135,7 @@ public:
      * Apply tag changes to a target file with ExifTool with a EXV container.
      * Tags can already exists in target file or new ones can be created.
      * 'path' is the target files to change.
-     * 'exvTempFile' is the list of changes embeded in EXV constainer.
+     * 'exvTempFile' is the list of changes embedded in EXV constainer.
      */
     bool applyChanges(const QString& path, const QString& exvTempFile);
 

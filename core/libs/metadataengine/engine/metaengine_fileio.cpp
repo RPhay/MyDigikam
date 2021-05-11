@@ -443,7 +443,7 @@ bool MetaEngine::exportChanges(const QString& exvTmpFile, QStringList& removedTa
 
             if      (it2 == orgExif.end())
             {
-                // Orignal Exif do not have the tag.
+                // Original Exif do not have the tag.
 
                 chgExif[it->key().c_str()] = newExif[it->key().c_str()];
 
@@ -489,7 +489,7 @@ bool MetaEngine::exportChanges(const QString& exvTmpFile, QStringList& removedTa
 
             if      (it2 == orgIptc.end())
             {
-                // Orignal Iptc do not have the tag.
+                // Original Iptc do not have the tag.
 
                 chgIptc[it->key().c_str()] = newIptc[it->key().c_str()];
 
@@ -537,7 +537,7 @@ bool MetaEngine::exportChanges(const QString& exvTmpFile, QStringList& removedTa
 
             if      (it2 == orgXmp.end())
             {
-                // Orignal Xmp do not have the tag.
+                // Original Xmp do not have the tag.
 
                 chgXmp[it->key().c_str()] = newXmp[it->key().c_str()];
 
