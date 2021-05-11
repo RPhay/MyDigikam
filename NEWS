@@ -316,6 +316,6 @@ BUGFIXES:
 296 ==> 192545 - FTBFS on mips.
 297 ==> 418645 - DNG files created with Adobe DNG Converter from Fuji S3 RAW files appear purple - Update to DNG SDK 1.5.
 298 ==> 370631 - Converting Sony STL-A58 ARW to DNG fails - Update to DNG SDK 1.5.
-299 ==> 
+299 ==> 330920 - Previews and thumbnails of DNG converted from Canon EOS350D CR2 have incorrect red colors - Update to DNG SDK 1.5.
 300 ==> 
 301 ==> 
