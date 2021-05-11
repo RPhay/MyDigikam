@@ -43,6 +43,7 @@
 #include "pgfutils.h"
 #include "digikam-lcms.h"
 #include "metaengine.h"
+#include "dngwriter.h"
 
 #ifdef HAVE_LENSFUN
 #   include "lensfuniface.h"
@@ -188,6 +189,9 @@ LibsInfoDlg::LibsInfoDlg(QWidget* const parent)
     list.insert(i18nc(CONTEXT, "LibCImg"),                     GreycstorationFilter::cimgVersionString());
     list.insert(i18nc(CONTEXT, "LibLCMS"),                     QString::number(LCMS_VERSION));
     list.insert(i18nc(CONTEXT, "LibPGF"),                      PGFUtils::libPGFVersion());
+
+    list.insert(i18nc(CONTEXT, "XMP SDK"),                     DNGWriter::xmpSdkVersion());
+    list.insert(i18nc(CONTEXT, "DNG SDK"),                     DNGWriter::dngSdkVersion());
 
 #ifdef HAVE_JASPER
     list.insert(i18nc(CONTEXT, "LibJasper"),                   QLatin1String(jas_getversion()));

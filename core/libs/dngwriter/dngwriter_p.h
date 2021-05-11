@@ -67,6 +67,10 @@
 #include "dng_xmp.h"
 #include "dng_xmp_sdk.h"
 
+// XMP SDK includes
+
+#include "XMP_Version.h"
+
 // Local includes
 
 #include "digikam_debug.h"

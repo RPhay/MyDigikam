@@ -86,6 +86,11 @@ public:
 
 public:
 
+    static QString xmpSdkVersion();
+    static QString dngSdkVersion();
+
+public:
+
     // Declared public for DNGWriterHost class.
     class Private;
 

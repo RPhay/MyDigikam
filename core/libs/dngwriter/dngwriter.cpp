@@ -130,4 +130,16 @@ QString DNGWriter::outputFile() const
     return d->outputFile;
 }
 
+QString DNGWriter::xmpSdkVersion()
+{
+    return QString::fromLatin1(XMPCORE_API_VERSION_STRING);
+}
+
+QString DNGWriter::dngSdkVersion()
+{
+    // NOTE: DNG SDK do not seem to have a version ID shared in header.
+
+    return QString::fromLatin1("1.5");
+}
+
 } // namespace Digikam
