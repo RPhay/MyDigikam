@@ -319,5 +319,6 @@ BUGFIXES:
 299 ==> 330920 - Previews and thumbnails of DNG converted from Canon EOS350D CR2 have incorrect red colors - Update to DNG SDK 1.5.
 300 ==> 429119 - Convert RAW Nikon NEF to DNG tool adds text to caption field.
 301 ==> 427350 - digiKam DNG Converter fails to correctly encode white balance or camera metadata for Canon R5 CR3.
-302 ==> 
+302 ==> 284934 - Allow to embed multiple JPEG in DNG Converter.
+303 ==> 
 
