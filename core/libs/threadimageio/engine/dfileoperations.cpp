@@ -577,19 +577,6 @@ bool DFileOperations::copyModificationTime(const QString& srcFile,
 bool DFileOperations::setModificationTime(const QString& srcFile,
                                           const QDateTime& dateTime)
 {
-    int modtime;
-    QDateTime unixDate;
-    unixDate.setDate(QDate(1970, 1, 1));
-    unixDate.setTime(QTime(0, 0, 0, 0));
-
-    if (dateTime < unixDate)
-    {
-        modtime = -(dateTime.secsTo(unixDate) + (60 * 60));
-    }
-    else
-    {
-        modtime = dateTime.toSecsSinceEpoch();
-    }
 
 #ifdef Q_OS_WIN64
 
@@ -613,7 +600,7 @@ bool DFileOperations::setModificationTime(const QString& srcFile,
 
     if (ret == 0)
     {
-        ut.modtime = modtime;
+        ut.modtime = dateTime.toSecsSinceEpoch();
         ut.actime  = st.st_atime;
 
 #ifdef Q_OS_WIN64
