@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2010-2020, Gilles Caulier, <caulier dot gilles at gmail dot com>
+# Copyright (c) 2010-2021, Gilles Caulier, <caulier dot gilles at gmail dot com>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
@@ -39,7 +39,7 @@ endif()
 add_definitions(-DUSE_LCMS2)
 
 # Flag to compile with DNG SDK for special DNG files decoding. See README.DNGSDK.txt
-#add_definitions(-DUSE_DNGSDK)
+add_definitions(-DUSE_DNGSDK)
 
 # Flag to debug LibRaw
 add_definitions(-DDCRAW_VERBOSE)
