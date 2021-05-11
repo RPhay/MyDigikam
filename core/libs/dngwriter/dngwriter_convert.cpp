@@ -320,7 +320,7 @@ int DNGWriter::convert()
 
         // -----------------------------------------------------------------------------------------
 
-        qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: DNG Negative structure creation" ;
+        qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: DNG Negative structure creation";
 
         AutoPtr<dng_negative> negative(host.Make_dng_negative());
 
@@ -331,6 +331,12 @@ int DNGWriter::convert()
         {
             negative->SetDefaultCropOrigin(8, 8);
             negative->SetDefaultCropSize(activeWidth - 16, activeHeight - 16);
+
+            if (bayerPattern == Private::Fuji)
+            {
+                qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Adjust DNG Negative to Fuji";
+                negative->SetFujiMosaic6x6(1);
+            }
         }
         else
         {
