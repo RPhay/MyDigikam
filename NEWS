@@ -314,7 +314,7 @@ BUGFIXES:
 294 ==> 384422 - core/libs/dngwriter/extra/dng_sdk/dng_mosaic_info.cpp:637: bad if ?
 295 ==> 231038 - digiKam crashed while attempting to import photo collection (100GB) CR2 DNG JPG.
 296 ==> 192545 - FTBFS on mips.
-297 ==> 
+297 ==> 418645 - DNG files created with Adobe DNG Converter from Fuji S3 RAW files appear purple - Update to DNG SDK 1.5.
 298 ==> 
 299 ==> 
 300 ==> 
