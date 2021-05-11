@@ -95,6 +95,7 @@ public:
         LinearRaw,
         Standard,
         Fuji,
+        Fuji6x6,
         FourColor
     };
 

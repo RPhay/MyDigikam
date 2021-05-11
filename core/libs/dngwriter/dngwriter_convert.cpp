@@ -170,6 +170,15 @@ int DNGWriter::convert()
             fujiRotate90 = true;
             filter       = 0;
         }
+        else if ((identify->filterPattern      == QLatin1String("GGGGBRGGGGRBGGGG")) &&
+                 (identifyMake->make.toUpper() == QLatin1String("FUJIFILM")))
+        {
+            // Fuji layouts
+
+            bayerPattern = Private::Fuji6x6;
+            fujiRotate90 = false;
+            filter       = 1;
+        }
         else if ((identify->rawColors == 3)                 &&
                  (identify->filterPattern.isEmpty())        &&
 /*
@@ -331,12 +340,6 @@ int DNGWriter::convert()
         {
             negative->SetDefaultCropOrigin(8, 8);
             negative->SetDefaultCropSize(activeWidth - 16, activeHeight - 16);
-
-            if (bayerPattern == Private::Fuji)
-            {
-                qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Adjust DNG Negative to Fuji";
-                negative->SetFujiMosaic6x6(1);
-            }
         }
         else
         {
@@ -405,6 +408,14 @@ int DNGWriter::convert()
                 // Fuji superCCD: https://en.wikipedia.org/wiki/Super_CCD
 
                 negative->SetFujiMosaic(filter);
+                break;
+
+            case Private::Fuji6x6:
+
+                // TODO: Fuji is special case. Need to setup different bayer rules here.
+                // It do not work in all settings. Need indeep investiguations.
+
+                negative->SetFujiMosaic6x6(filter);
                 break;
 
             case Private::FourColor:
