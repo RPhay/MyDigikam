@@ -315,7 +315,7 @@ BUGFIXES:
 295 ==> 231038 - digiKam crashed while attempting to import photo collection (100GB) CR2 DNG JPG.
 296 ==> 192545 - FTBFS on mips.
 297 ==> 418645 - DNG files created with Adobe DNG Converter from Fuji S3 RAW files appear purple - Update to DNG SDK 1.5.
-298 ==> 
+298 ==> 370631 - Converting Sony STL-A58 ARW to DNG fails - Update to DNG SDK 1.5.
 299 ==> 
 300 ==> 
 301 ==> 
