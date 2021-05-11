@@ -183,8 +183,8 @@ QDateTime TimeAdjustContainer::getDateTimeFromUrl(const QUrl& url) const
             }
 
             if (dateTime.isValid()               &&
-                (dateTime.date().year() >= 1900) &&
-                (dateTime.date().year() <= 2100))
+                (dateTime.date().year() >= 1800) &&
+                (dateTime.date().year() <= 2200))
             {
                 break;
             }

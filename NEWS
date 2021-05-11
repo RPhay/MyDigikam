@@ -320,5 +320,5 @@ BUGFIXES:
 300 ==> 429119 - Convert RAW Nikon NEF to DNG tool adds text to caption field.
 301 ==> 427350 - digiKam DNG Converter fails to correctly encode white balance or camera metadata for Canon R5 CR3.
 302 ==> 284934 - Allow to embed multiple JPEG in DNG Converter.
-303 ==> 
-
+303 ==> 436913 - File name timestamp not valid year 1892.
+304 ==> 
