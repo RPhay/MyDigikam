@@ -104,4 +104,39 @@ bool DNGWriter::Private::fujiRotate(QByteArray& rawData, DRawInfo& identify) con
     return true;
 }
 
+QString DNGWriter::Private::dngErrorCodeToString(int errorCode) const
+{
+    switch (errorCode)
+    {
+        default:
+        case 100000: return QLatin1String("Unknown error");
+
+        case 100003: return QLatin1String("Processing stopped by user (or host application) request");
+
+        case 100004: return QLatin1String("Necessary host functionality is not present");
+
+        case 100005: return QLatin1String("Out of memory");
+
+        case 100006: return QLatin1String("File format is not valid");
+
+        case 100007: return QLatin1String("Matrix has wrong shape, is badly conditioned, or similar problem");
+
+        case 100008: return QLatin1String("Could not open file");
+
+        case 100009: return QLatin1String("Error reading file");
+
+        case 100010: return QLatin1String("Error writing file");
+
+        case 100011: return QLatin1String("Unexpected end of file");
+
+        case 100012: return QLatin1String("File is damaged in some way");
+
+        case 100013: return QLatin1String("Image is too big to save as DNG");
+
+        case 100014: return QLatin1String("Image is too big to save as TIFF");
+
+        case 100015: return QLatin1String("DNG version is unsupported");
+    }
+}
+
 } // namespace Digikam

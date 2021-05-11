@@ -111,6 +111,8 @@ public:
 
     bool fujiRotate(QByteArray& rawData, DRawInfo& identify) const;
 
+    QString dngErrorCodeToString(int errorCode)              const;
+
 public:
 
     bool    cancel;

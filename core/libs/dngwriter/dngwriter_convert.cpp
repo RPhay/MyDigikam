@@ -1212,19 +1212,19 @@ int DNGWriter::convert()
     catch (const dng_exception& exception)
     {
         int ret = exception.ErrorCode();
-        qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: DNG SDK exception code (" << ret << ")" ;
+        qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: DNG SDK exception code (" << ret << "):" << d->dngErrorCodeToString(ret);
 
         return DNGSDKINTERNALERROR;
     }
 
     catch (...)
     {
-        qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: DNG SDK exception code unknow" ;
+        qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: DNG SDK exception code unknow";
 
         return DNGSDKINTERNALERROR;
     }
 
-    qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: DNG conversion complete..." ;
+    qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: DNG conversion complete...";
 
     return PROCESSCOMPLETE;
 }
