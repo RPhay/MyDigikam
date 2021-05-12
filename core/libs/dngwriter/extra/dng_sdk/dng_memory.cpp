@@ -179,6 +179,19 @@ dng_malloc_block::dng_malloc_block (uint32 logicalSize)
 
 	#if qLinux
 
+#ifdef __MINGW32__  // krazy:exclude=cpp
+
+	fMalloc = memalign (16, (size_t) PhysicalSize ());
+        
+	if (!fMalloc)
+		{
+            
+		ThrowMemoryFull ();
+            
+		}
+
+#else
+
 	// TO DO: Need to change this alignment for AVX support?
 
 	int err = ::posix_memalign ((void **) &fMalloc, 
@@ -191,6 +204,8 @@ dng_malloc_block::dng_malloc_block (uint32 logicalSize)
 		ThrowMemoryFull ();
 
 		}
+
+#endif
 
 	#elif qAndroid
         
