@@ -184,7 +184,7 @@ dng_malloc_block::dng_malloc_block (uint32 logicalSize)
 
 #ifdef __MINGW32__  // krazy:exclude=cpp
 
-	fMalloc = memalign (16, (size_t) PhysicalSize ());
+	fMalloc = malloc (PhysicalSize ());
         
 	if (!fMalloc)
 		{
