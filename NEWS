@@ -324,4 +324,5 @@ BUGFIXES:
 304 ==> 381967 - Some lens metadata lost in converting CR2 into DNG.
 305 ==> 436946 - Settings not permanent.
 306 ==> 436977 - Field "Options" too small.
-307 ==> 
+307 ==> 436979 - Empty regions.
+308 ==> 
