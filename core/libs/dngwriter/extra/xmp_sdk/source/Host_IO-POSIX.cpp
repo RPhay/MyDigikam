@@ -16,8 +16,10 @@
 
 #ifdef __MINGW32__  // krazy:exclude=cpp
 #   define _POSIX_THREAD_SAFE_FUNCTIONS
+#   define readdir_r readdir
 #endif
 
+#include <limits.h>
 #include <time.h>
 #include <errno.h>
 #include <fcntl.h>
