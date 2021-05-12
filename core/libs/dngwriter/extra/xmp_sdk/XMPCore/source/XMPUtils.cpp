@@ -16,9 +16,7 @@
 
 #include <map>
 
-#ifdef __MINGW32__  // krazy:exclude=cpp
-#   define _POSIX_THREAD_SAFE_FUNCTIONS
-#endif
+#define _POSIX_THREAD_SAFE_FUNCTIONS
 
 #include <time.h>
 #include <string.h>
