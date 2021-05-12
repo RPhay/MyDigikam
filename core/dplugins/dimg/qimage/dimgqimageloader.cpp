@@ -202,7 +202,7 @@ bool DImgQImageLoader::load(const QString& filePath, DImgLoaderObserver* const o
 
 #if (QT_VERSION >= QT_VERSION_CHECK(5, 14, 0))
 
-    if ((m_loadFlags & LoadICCData) && target.colorSpace().isValid())
+    if (m_loadFlags & LoadICCData)
     {
         QByteArray iccRawProfile(target.colorSpace().iccProfile());
 
