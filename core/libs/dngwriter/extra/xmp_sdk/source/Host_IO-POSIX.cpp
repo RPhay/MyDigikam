@@ -14,6 +14,10 @@
 
 #include <cstring>
 
+#ifdef __MINGW32__  // krazy:exclude=cpp
+#   define _POSIX_THREAD_SAFE_FUNCTIONS
+#endif
+
 #include <time.h>
 #include <errno.h>
 #include <fcntl.h>
@@ -39,9 +43,8 @@
 // ======================================   File operations   ======================================
 // =================================================================================================
 
-const int _xmp_negate_array_size_ = -1;
 // Make sure off_t is 64 bits and signed.
-static char check_off_t_size [ (sizeof(off_t) == 8) ? 1 : _xmp_negate_array_size_ ];
+static char check_off_t_size [ (sizeof(off_t) == 8) ? 1 : 0 ];
 // *** No std::numeric_limits?  static char check_off_t_sign [ std::numeric_limits<off_t>::is_signed ? -1 : 1 ];
 
 static bool HaveWriteAccess( const std::string & path );
