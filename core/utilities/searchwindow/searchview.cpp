@@ -398,12 +398,12 @@ void SearchView::setTheme()
         // set pixel size
 
         fontSizeLarger  = QString::number(f.pixelSize() + 2) + QLatin1String("px");
-        fontSizeSmaller = QString::number(f.pixelSize() - 2) + QLatin1String("px");
+        fontSizeSmaller = QString::number(f.pixelSize())     + QLatin1String("px");
     }
     else
     {
         fontSizeLarger  = QString::number(f.pointSizeF() + 2) + QLatin1String("pt");
-        fontSizeSmaller = QString::number(f.pointSizeF() - 2) + QLatin1String("pt");
+        fontSizeSmaller = QString::number(f.pointSizeF())     + QLatin1String("pt");
     }
 
     QString sheet =

@@ -323,4 +323,5 @@ BUGFIXES:
 303 ==> 436913 - File name timestamp not valid year 1892.
 304 ==> 381967 - Some lens metadata lost in converting CR2 into DNG.
 305 ==> 436946 - Settings not permanent.
-308 ==> 
+306 ==> 436977 - Field "Options" too small.
+307 ==> 
