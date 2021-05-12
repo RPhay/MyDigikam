@@ -4,7 +4,9 @@
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
 
-include(${CMAKE_SOURCE_DIR}/core/cmake/modules/DNGSdkRules.cmake)
+# NOTE: include this common rules on top level for DNGWriter and RawEngine.
+
+include(DNGSdkRules)
 
 add_subdirectory(dimg)
 add_subdirectory(dragdrop)

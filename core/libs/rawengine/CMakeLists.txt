@@ -6,7 +6,10 @@
 
 APPLY_COMMON_POLICIES()
 
+# NOTE: see the common definitions set on top level by DNGSdkRules.cmake
+
 # LibRaw use C++ exceptions
+
 kde_enable_exceptions()
 
 # -- General definitions rules ------------------------------------------------------------------------
@@ -36,28 +39,36 @@ if(NOT MSVC)
 endif()
 
 # We always use LCMS version 2
+
 add_definitions(-DUSE_LCMS2)
 
 # Flag to compile with DNG SDK for special DNG files decoding. See README.DNGSDK.txt
+
 add_definitions(-DUSE_DNGSDK)
 
 # Flag to debug LibRaw
+
 add_definitions(-DDCRAW_VERBOSE)
 
 # Flag used into LibRaw to be not thread-safe. Never use this mode.
 #add_definitions(-DLIBRAW_NOTHREADS)
 
 # Flags to enable extra codecs
+
 add_definitions(-DUSE_X3FTOOLS)
 add_definitions(-DUSE_6BY9RPI)
 
 if(WIN32)
+
     # We need native UTF-16 encoding path support
+
     add_definitions(-DLIBRAW_WIN32_UNICODEPATHS)
 
     # No need a Flag to export library symbols, as we use a static version for the unit tests.
+
     add_definitions(-DLIBRAW_WIN32_DLLDEFS)
     add_definitions(-DLIBRAW_NODLL)
+
 endif()
 
 include_directories(${CMAKE_BINARY_DIR}/core/libs/rawengine/libraw/
@@ -147,10 +158,13 @@ set(libraw_LIB_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/libraw/src/libraw_c_api.cpp
 file(GLOB_RECURSE libraw_headers ${CMAKE_CURRENT_SOURCE_DIR}/libraw/*.h)
 
 foreach(_file ${libraw_headers})
+
     set_property(SOURCE ${_file} PROPERTY SKIP_AUTOMOC ON)
+
 endforeach()
 
 # Used by digikamcore
+
 add_library(core_libraw_obj OBJECT ${libraw_LIB_SRCS})
 
 target_compile_definitions(core_libraw_obj
@@ -161,13 +175,19 @@ target_compile_definitions(core_libraw_obj
 # Disable compilation warnings from LibRaw. Just to be clear on the console.
 # Adjust flag for static lib and 64 bits computers using -fPIC for GCC compiler (Bug: #269903)
 # Use O4 GCC compilation option to prevent artifacts with OpenMP (Bug #305382)
+
 if(MSVC)
+
     target_compile_options(core_libraw_obj PRIVATE /w)
+
 else()
+
     target_compile_options(core_libraw_obj PRIVATE -w -O4)
+
 endif()
 
 # For unit tests.
+
 add_library(libraw STATIC
             $<TARGET_OBJECTS:core_libraw_obj>
 )
@@ -193,6 +213,7 @@ include_directories(
 )
 
 # Used by digikamcore
+
 add_library(core_rawengine_obj OBJECT ${librawengine_SRCS})
 
 target_compile_definitions(core_rawengine_obj

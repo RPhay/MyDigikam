@@ -1,10 +1,13 @@
 #
-# Copyright (c) 2010-2020, Gilles Caulier, <caulier dot gilles at gmail dot com>
+# Copyright (c) 2010-2021, Gilles Caulier, <caulier dot gilles at gmail dot com>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
 
+# NOTE: see the common definitions set on top level by DNGSdkRules.cmake
+
 # DNG SDK and XMP SDK use C++ exceptions
+
 kde_enable_exceptions()
 
 include_directories(
@@ -27,6 +30,7 @@ include_directories(
 set(libmd5_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/extra/md5/XMP_MD5.cpp)
 
 # Used by digikamcore
+
 add_library(core_libmd5_obj OBJECT ${libmd5_SRCS})
 
 target_compile_definitions(core_libmd5_obj
@@ -38,9 +42,13 @@ target_compile_definitions(core_libmd5_obj
 # Adjust flag for static lib and 64 bits computers using -fPIC for GCC compiler (bug: #269903)
 
 if(MSVC)
+
     target_compile_options(core_libmd5_obj PRIVATE /w)
+
 else()
+
     target_compile_options(core_libmd5_obj PRIVATE -w)
+
 endif()
 
 #------------------------------------------------------------------------------------
@@ -159,18 +167,23 @@ set(libxmp_SRCS
 )
 
 if(MSVC)
+
     set(libxmp_SRCS
         ${libxmp_SRCS}
         ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/source/Host_IO-Win.cpp
     )
+
 else()
+
     set(libxmp_SRCS
         ${libxmp_SRCS}
         ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/source/Host_IO-POSIX.cpp
     )
+
 endif()
 
 # Used by digikamcore
+
 add_library(core_libxmp_obj OBJECT ${libxmp_SRCS})
 
 target_compile_definitions(core_libxmp_obj
@@ -182,9 +195,13 @@ target_compile_definitions(core_libxmp_obj
 # Adjust flag for static lib and 64 bits computers using -fPIC for GCC compiler (bug: #269903)
 
 if(MSVC)
+
     target_compile_options(core_libxmp_obj PRIVATE /w)
+
 else()
+
     target_compile_options(core_libxmp_obj PRIVATE -w)
+
 endif()
 
 #------------------------------------------------------------------------------------
@@ -261,6 +278,7 @@ set(libdng_SRCS
 )
 
 # Used by digikamcore
+
 add_library(core_libdng_obj OBJECT ${libdng_SRCS})
 
 target_compile_definitions(core_libdng_obj
@@ -282,6 +300,7 @@ else()
 endif()
 
 # For unit tests.
+
 add_library(libdng STATIC
             $<TARGET_OBJECTS:core_libdng_obj>
             $<TARGET_OBJECTS:core_libxmp_obj>
@@ -299,6 +318,7 @@ set(libdngwriter_SRCS
 )
 
 # Used by digikamcore
+
 add_library(core_dngwriter_obj OBJECT ${libdngwriter_SRCS})
 
 target_compile_definitions(core_dngwriter_obj
