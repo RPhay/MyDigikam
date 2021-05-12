@@ -15,7 +15,15 @@
 
 add_definitions(-DEnablePluginManager=0)    # XMP SDK
 add_definitions(-DXMP_StaticBuild=1)        # XMP SDK
-add_definitions(-DqDNGXMPFiles=0)           # DNG SDK
+add_definitions(-DqDNGXMPFiles=0)           # DNG SDK: minimum XMP-set
+add_definitions(-DqDNGXMPDocOps=0)          # DNG SDK: minimum XMP-set
+add_definitions(-DqDNGDebug=0)              # DNG SDK: no debug code
+add_definitions(-DqDNGUseLibJPEG=1)         # DNG SDK: use libjpeg
+add_definitions(-DqDNGUseStdInt=1)          # DNG SDK: use standard definition of integer
+add_definitions(-DqDNGThreadSafe=1)         # DNG SDK: Use thread safety
+add_definitions(-DqDNGValidateTarget=1)     # DNG SDK: compilation of DNG validation CLI tool
+
+# Plateform definitions
 
 if(MSVC)
 
@@ -39,7 +47,6 @@ else()
                     -DqWinOS=0
                     -DqMacOS=0
                     -DqLinux=1
-                    -DqDNGUseStdInt=1
     )
 
 endif()
@@ -51,18 +58,6 @@ TEST_BIG_ENDIAN(IS_BIG_ENDIAN)
 
 if(NOT IS_BIG_ENDIAN)
 
-    add_definitions(-DqDNGLittleEndian)
+    add_definitions(-DqDNGLittleEndian=1)
 
 endif()
-
-# Thread safe support under Mac and Linux using pthread library
-
-if(NOT WIN32)
-
-    add_definitions(-DqDNGThreadSafe)
-
-endif()
-
-# Mode definition for CLI tool.
-
-add_definitions(-DqDNGValidateTarget)
