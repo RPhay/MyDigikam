@@ -54,14 +54,18 @@ endif()
 #------------------------------------------------------------------------------------
 
 set(libxmp_SRCS
-    ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/source/IOUtils.cpp
+
+# No nned extra IO supports for DNG SDK.
+
+#    ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/source/IOUtils.cpp
+#    ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/source/XIO.cpp
+#    ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/source/XMPFiles_IO.cpp
+
     ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/source/PerfUtils.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/source/SafeStringAPIs.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/source/UnicodeConversions.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/source/UnicodeInlines.incl_cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/source/XIO.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/source/XML_Node.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/source/XMPFiles_IO.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/source/XMP_LibUtils.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/source/XMP_ProgressTracker.cpp
 
@@ -167,21 +171,21 @@ set(libxmp_SRCS
 #    ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/XMPFiles/source/FileHandlers/XDCAM_Handler.cpp
 )
 
-if(MSVC)
-
-    set(libxmp_SRCS
-        ${libxmp_SRCS}
-        ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/source/Host_IO-Win.cpp
-    )
-
-else()
-
-    set(libxmp_SRCS
-        ${libxmp_SRCS}
-        ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/source/Host_IO-POSIX.cpp
-    )
-
-endif()
+#if(MSVC)
+#
+#    set(libxmp_SRCS
+#        ${libxmp_SRCS}
+#        ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/source/Host_IO-Win.cpp
+#    )
+#
+#else()
+#
+#    set(libxmp_SRCS
+#        ${libxmp_SRCS}
+#        ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/source/Host_IO-POSIX.cpp
+#    )
+#
+#endif()
 
 # Used by digikamcore
 
