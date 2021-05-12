@@ -26,7 +26,7 @@ if(MSVC)
                     # DNG SDK
                     -DqWinOS=1
                     -DqMacOS=0
-                    -DqDNGThreadSafe=0
+                    -DqLinux=0
     )
 
 else()
@@ -57,7 +57,7 @@ endif()
 
 # Thread safe support under Mac and Linux using pthread library
 
-if(NOT MSVC)
+if(NOT WIN32)
 
     add_definitions(-DqDNGThreadSafe)
 

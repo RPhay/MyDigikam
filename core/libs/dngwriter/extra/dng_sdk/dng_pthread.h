@@ -121,7 +121,7 @@ int dng_pthread_setspecific(dng_pthread_key_t key, const void *value);
 void *dng_pthread_getspecific(dng_pthread_key_t key);
 
 typedef struct dng_pthread_rwlock_impl *dng_pthread_rwlock_t;
-//typedef void *pthread_rwlockattr_t;
+typedef void *pthread_rwlockattr_t;
 
 int dng_pthread_rwlock_destroy(dng_pthread_rwlock_t * rwlock);
 int dng_pthread_rwlock_init(dng_pthread_rwlock_t * rwlock, const pthread_rwlockattr_t * attrs);
