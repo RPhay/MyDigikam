@@ -14,6 +14,7 @@
 
 #include <cstring>
 
+#include <time.h>
 #include <errno.h>
 #include <fcntl.h>
 #include <stdio.h>
@@ -38,8 +39,9 @@
 // ======================================   File operations   ======================================
 // =================================================================================================
 
+int _xmp_negate_array_size_ = -1;
 // Make sure off_t is 64 bits and signed.
-static char check_off_t_size [ (sizeof(off_t) == 8) ? 1 : -1 ];
+static char check_off_t_size [ (sizeof(off_t) == 8) ? 1 : _xmp_negate_array_size_ ];
 // *** No std::numeric_limits?  static char check_off_t_sign [ std::numeric_limits<off_t>::is_signed ? -1 : 1 ];
 
 static bool HaveWriteAccess( const std::string & path );
