@@ -165,8 +165,6 @@ int main(int argc, char* argv[])
 
     QCommandLineParser parser;
     KAboutData::setApplicationData(aboutData);
-    parser.addVersionOption();
-    parser.addHelpOption();
     aboutData.setupCommandLine(&parser);
     parser.addOption(QCommandLineOption(QStringList() << QLatin1String("download-from"),
                                         i18n("Open camera dialog at \"path\""),
@@ -186,19 +184,19 @@ int main(int argc, char* argv[])
     parser.process(app);
     aboutData.processCommandLine(&parser);
 
-    bool loadTranslation = isRunningInAppImageBundle();
-
 #if defined Q_OS_WIN || defined Q_OS_MACOS
 
-    loadTranslation      = true;
+    bool loadTranslation = true;
+
+#else
+
+    bool loadTranslation = isRunningInAppImageBundle();
 
 #endif
 
     QString transPath = QStandardPaths::locate(QStandardPaths::DataLocation,
                                                QLatin1String("translations"),
                                                QStandardPaths::LocateDirectory);
-
-    qCDebug(DIGIKAM_GENERAL_LOG) << "Qt translations path:" << transPath;
 
     QTranslator translator;
 
@@ -209,7 +207,8 @@ int main(int argc, char* argv[])
         bool ret = translator.load(locale, QLatin1String("qtbase"),
                                    QLatin1String("_"), transPath);
 
-        qCDebug(DIGIKAM_GENERAL_LOG) << "Locale:" << locale.name()
+        qCDebug(DIGIKAM_GENERAL_LOG) << "Qt translations path:" << transPath;
+        qCDebug(DIGIKAM_GENERAL_LOG) << "Locale:"  << locale.name()
                                      << "Loading:" << ret;
 
         if (ret)

@@ -1022,7 +1022,11 @@ bool MetaEngine::setImageDateTime(const QDateTime& dateTime, bool setDateTimeDig
             d->xmpMetadata().add(Exiv2::XmpKey("Xmp.exif.DateTimeDigitized"),  xmpTxtVal.get());
         }
 
-        if (QMimeDatabase().mimeTypeForFile(getFilePath()).name().startsWith(QLatin1String("video/")))
+        // We call this function from the FFmpeg parser and we don't have a filename yet.
+        // Check getFilePath() for empty.
+
+        if (getFilePath().isEmpty() ||
+            QMimeDatabase().mimeTypeForFile(getFilePath()).name().startsWith(QLatin1String("video/")))
         {
             d->xmpMetadata().add(Exiv2::XmpKey("Xmp.video.DateTimeOriginal"), xmpTxtVal.get());
             d->xmpMetadata().add(Exiv2::XmpKey("Xmp.video.DateUTC"),          xmpTxtVal.get());

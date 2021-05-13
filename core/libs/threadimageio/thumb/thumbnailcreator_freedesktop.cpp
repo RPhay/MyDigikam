@@ -31,6 +31,12 @@ namespace Digikam
 ThumbnailInfo ThumbnailCreator::fileThumbnailInfo(const QString& path)
 {
     ThumbnailInfo info;
+
+    if (path.isEmpty())
+    {
+        return info;
+    }
+
     info.filePath     = path;
     QFileInfo fileInfo(path);
     info.isAccessible = fileInfo.exists();
