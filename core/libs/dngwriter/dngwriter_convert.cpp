@@ -38,21 +38,21 @@ int DNGWriter::convert()
             return PROCESSFAILED;
         }
 
-        QFileInfo inputInfo(inputFile());
-        QString   dngFilePath = outputFile();
+        d->inputInfo        = QFileInfo(inputFile());
+        QString dngFilePath = outputFile();
 
         if (dngFilePath.isEmpty())
         {
-            dngFilePath = QString(inputInfo.completeBaseName() + QLatin1String(".dng"));
+            dngFilePath = QString(d->inputInfo.completeBaseName() + QLatin1String(".dng"));
         }
 
-        QFileInfo  outputInfo(dngFilePath);
+        d->outputInfo       = QFileInfo(dngFilePath);
         QScopedPointer<DRawInfo> identify(new DRawInfo);
         QScopedPointer<DRawInfo> identifyMake(new DRawInfo);
 
         // -----------------------------------------------------------------------------------------
 
-        qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Loading RAW data from " << inputInfo.fileName() ;
+        qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Loading RAW data from " << d->inputInfo.fileName() ;
 
         QPointer<DRawDecoder> rawProcessor(new DRawDecoder);
 
@@ -266,7 +266,7 @@ int DNGWriter::convert()
 /*
         // NOTE: code to hack RAW data extraction
 
-        QString   rawdataFilePath(inputInfo.completeBaseName() + QString(".dat"));
+        QString   rawdataFilePath(d->inputInfo.completeBaseName() + QString(".dat"));
         QFileInfo rawdataInfo(rawdataFilePath);
 
         QFile rawdataFile(rawdataFilePath);
@@ -349,7 +349,7 @@ int DNGWriter::convert()
         negative->SetActiveArea(activeArea);
         negative->SetModelName(identify->model.toLatin1().constData());
         negative->SetLocalName(QString::fromUtf8("%1 %2").arg(identify->make, identify->model).toLatin1().constData());
-        negative->SetOriginalRawFileName(inputInfo.fileName().toLatin1().constData());
+        negative->SetOriginalRawFileName(d->inputInfo.fileName().toLatin1().constData());
         negative->SetColorChannels(identify->rawColors);
 
         ColorKeyCode colorCodes[4] =
@@ -1008,7 +1008,7 @@ int DNGWriter::convert()
 
         if (d->backupOriginalRawFile)
         {
-            qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Backup Original RAW file (" << inputInfo.size() << " bytes)";
+            qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Backup Original RAW file (" << d->inputInfo.size() << " bytes)";
 
             QFileInfo originalFileInfo(inputFile());
 
@@ -1176,7 +1176,7 @@ int DNGWriter::convert()
 
         // -----------------------------------------------------------------------------------------
 
-        qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Creating DNG file " << outputInfo.fileName() ;
+        qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Creating DNG file " << d->outputInfo.fileName() ;
 
         dng_image_writer writer;
         dng_file_stream filestream(QFile::encodeName(dngFilePath).constData(), true);
@@ -1196,7 +1196,7 @@ int DNGWriter::convert()
 /*
         if (meta->load(dngFilePath))
         {
-            if (inputInfo.suffix().toUpper() == QLatin1String("ORF"))
+            if (d->inputInfo.suffix().toUpper() == QLatin1String("ORF"))
             {
                 qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: cleanup makernotes using Exiv2" ;
 

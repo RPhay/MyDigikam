@@ -127,6 +127,8 @@ public:
     QString    outputFile;
 
     QByteArray rawData;
+    QFileInfo  inputInfo;
+    QFileInfo  outputInfo;
 };
 
 } // namespace Digikam
