@@ -330,4 +330,5 @@ BUGFIXES:
 310 ==> 436795 - Database from uninstalled version of digiKam is unhelpfully persistant.
 311 ==> 424679 - Windows installer erroneously requires accepting the GPL.
 312 ==> 436532 - digiKam translation of "Behavior" not possible.
-313 ==> 
+313 ==> 403267 - digiKam is not reading tags from DNG images when sidecars are present.
+314 ==> 
