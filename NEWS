@@ -329,4 +329,5 @@ BUGFIXES:
 309 ==> 437038 - Unmark this face as Ignored - pressing will cause the ignored picture frame to disappear.
 310 ==> 436795 - Database from uninstalled version of digiKam is unhelpfully persistant.
 311 ==> 424679 - Windows installer erroneously requires accepting the GPL.
-312 ==> 
+312 ==> 436532 - digiKam translation of "Behavior" not possible.
+313 ==> 
