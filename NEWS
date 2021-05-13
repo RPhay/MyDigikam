@@ -328,5 +328,5 @@ BUGFIXES:
 308 ==> 435085 - Some DNG files created with Adobe DNG Converter cause program to abort - Update to DNG SDK 1.5.
 309 ==> 437038 - Unmark this face as Ignored - pressing will cause the ignored picture frame to disappear.
 310 ==> 436795 - Database from uninstalled version of digiKam is unhelpfully persistant.
-311 ==> 
-
+311 ==> 424679 - Windows installer erroneously requires accepting the GPL.
+312 ==> 
