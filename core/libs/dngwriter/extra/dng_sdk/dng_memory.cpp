@@ -12,7 +12,6 @@
 #include "dng_exceptions.h"
 
 #include <stdlib.h>
-#include <malloc.h>
 
 #ifdef _MSC_VER
 #include <Windows.h>
