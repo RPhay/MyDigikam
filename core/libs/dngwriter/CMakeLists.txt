@@ -19,7 +19,7 @@ include_directories(
 
     ${CMAKE_CURRENT_SOURCE_DIR}/extra/md5
     ${CMAKE_CURRENT_SOURCE_DIR}/extra/dng_sdk
-    ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/
+    ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk
     ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/source
     ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/public/include
     ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/XMPCore/source
@@ -55,12 +55,6 @@ endif()
 
 set(libxmp_SRCS
 
-# No nned extra IO supports for DNG SDK.
-
-#    ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/source/IOUtils.cpp
-#    ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/source/XIO.cpp
-#    ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/source/XMPFiles_IO.cpp
-
     ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/source/PerfUtils.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/source/SafeStringAPIs.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/source/UnicodeConversions.cpp
@@ -86,6 +80,13 @@ set(libxmp_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/XMPCore/source/XMPUtils.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/XMPCore/source/XMPUtils2.cpp
 
+# No nned extra IO supports for DNG SDK.
+
+#    ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/source/Host_IO-POSIX.cpp
+#    ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/source/IOUtils.cpp
+#    ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/source/XIO.cpp
+#    ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/source/XMPFiles_IO.cpp
+
 # No need extra file formats support. DNG SDK only needs XMP Core.
 
 #    ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/XMPFiles/source/HandlerRegistry.cpp
@@ -96,7 +97,6 @@ set(libxmp_SRCS
 #    ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/XMPFiles/source/NativeMetadataSupport/IMetadata.cpp
 #    ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/XMPFiles/source/NativeMetadataSupport/IReconcile.cpp
 #    ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/XMPFiles/source/NativeMetadataSupport/MetadataSet.cpp
-
 
 #    ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/XMPFiles/source/FormatSupport/AIFF/AIFFBehavior.cpp
 #    ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/XMPFiles/source/FormatSupport/AIFF/AIFFMetadata.cpp
@@ -170,22 +170,6 @@ set(libxmp_SRCS
 #    ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/XMPFiles/source/FileHandlers/XDCAMSAM_Handler.cpp
 #    ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/XMPFiles/source/FileHandlers/XDCAM_Handler.cpp
 )
-
-#if(MSVC)
-#
-#    set(libxmp_SRCS
-#        ${libxmp_SRCS}
-#        ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/source/Host_IO-Win.cpp
-#    )
-#
-#else()
-#
-#    set(libxmp_SRCS
-#        ${libxmp_SRCS}
-#        ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/source/Host_IO-POSIX.cpp
-#    )
-#
-#endif()
 
 # Used by digikamcore
 
