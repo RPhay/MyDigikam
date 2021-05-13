@@ -116,15 +116,17 @@ public:
 
 public:
 
-    bool    cancel;
-    bool    jpegLossLessCompression;
-    bool    updateFileDate;
-    bool    backupOriginalRawFile;
+    bool       cancel;
+    bool       jpegLossLessCompression;
+    bool       updateFileDate;
+    bool       backupOriginalRawFile;
 
-    int     previewMode;
+    int        previewMode;
 
-    QString inputFile;
-    QString outputFile;
+    QString    inputFile;
+    QString    outputFile;
+
+    QByteArray rawData;
 };
 
 } // namespace Digikam

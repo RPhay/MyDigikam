@@ -47,7 +47,6 @@ int DNGWriter::convert()
         }
 
         QFileInfo  outputInfo(dngFilePath);
-        QByteArray rawData;
         QScopedPointer<DRawInfo> identify(new DRawInfo);
         QScopedPointer<DRawInfo> identifyMake(new DRawInfo);
 
@@ -84,7 +83,7 @@ int DNGWriter::convert()
             outputWidth  = identifyMake->outputSize.width();
         }
 
-        if (!rawProcessor->extractRAWData(inputFile(), rawData, *identify, 0))
+        if (!rawProcessor->extractRAWData(inputFile(), d->rawData, *identify, 0))
         {
             qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Loading RAW data failed. Aborted..." ;
 
@@ -97,7 +96,7 @@ int DNGWriter::convert()
         }
 
         qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Raw data loaded:" ;
-        qCDebug(DIGIKAM_GENERAL_LOG) << "--- Data Size:     " << rawData.size() << " bytes";
+        qCDebug(DIGIKAM_GENERAL_LOG) << "--- Data Size:     " << d->rawData.size() << " bytes";
         qCDebug(DIGIKAM_GENERAL_LOG) << "--- Date:          " << identify->dateTime.toString(Qt::ISODate);
         qCDebug(DIGIKAM_GENERAL_LOG) << "--- Make:          " << identify->make;
         qCDebug(DIGIKAM_GENERAL_LOG) << "--- Model:         " << identify->model;
@@ -184,7 +183,7 @@ int DNGWriter::convert()
 /*
                  (identify->filterPattern == QString(""))   &&
 */
-                 ((uint32)rawData.size() == identify->outputSize.width() * identify->outputSize.height() * 3 * sizeof(uint16)))
+                 ((uint32)d->rawData.size() == identify->outputSize.width() * identify->outputSize.height() * 3 * sizeof(uint16)))
         {
             bayerPattern = Private::LinearRaw;
         }
@@ -236,7 +235,7 @@ int DNGWriter::convert()
 
         if (fujiRotate90)
         {
-            if (!d->fujiRotate(rawData, *identify))
+            if (!d->fujiRotate(d->rawData, *identify))
             {
                 qCDebug(DIGIKAM_GENERAL_LOG) << "Can not rotate fuji image. Aborted...";
 
@@ -279,7 +278,7 @@ int DNGWriter::convert()
         }
 
         QDataStream rawdataStream(&rawdataFile);
-        rawdataStream.writeRawData(rawData.data(), rawData.size());
+        rawdataStream.writeRawData(d->rawData.data(), d->rawData.size());
         rawdataFile.close();
 */
         // -----------------------------------------------------------------------------------------
@@ -319,7 +318,7 @@ int DNGWriter::convert()
         buffer.fPlaneStep  = 1;
         buffer.fPixelType  = ttShort;
         buffer.fPixelSize  = TagTypeSize(ttShort);
-        buffer.fData       = rawData.data();
+        buffer.fData       = d->rawData.data();
         image->Put(buffer);
 
         if (d->cancel)
