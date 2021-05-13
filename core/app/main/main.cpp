@@ -165,8 +165,6 @@ int main(int argc, char* argv[])
 
     QCommandLineParser parser;
     KAboutData::setApplicationData(aboutData);
-    parser.addVersionOption();
-    parser.addHelpOption();
     aboutData.setupCommandLine(&parser);
     parser.addOption(QCommandLineOption(QStringList() << QLatin1String("download-from"),
                                         i18n("Open camera dialog at \"path\""),
