@@ -42,12 +42,24 @@ namespace Digikam
 {
 
 DNGWriter::Private::Private()
+    : identify    (nullptr),
+      identifyMake(nullptr),
+      activeWidth (0),
+      activeHeight(0),
+      outputHeight(0),
+      outputWidth (0)
 {
     reset();
 }
 
 DNGWriter::Private::~Private()
 {
+}
+
+void DNGWriter::Private::clearMemory()
+{
+    delete identify;
+    delete identifyMake;
 }
 
 void DNGWriter::Private::reset()
@@ -80,11 +92,11 @@ dng_date_time DNGWriter::Private::dngDateTime(const QDateTime& qDT) const
     return dngDT;
 }
 
-bool DNGWriter::Private::fujiRotate(QByteArray& rawData, DRawInfo& identify) const
+bool DNGWriter::Private::fujiRotate()
 {
     QByteArray tmpData(rawData);
-    int height             = identify.outputSize.height();
-    int width              = identify.outputSize.width();
+    int height             = identify->outputSize.height();
+    int width              = identify->outputSize.width();
     unsigned short* tmp    = reinterpret_cast<unsigned short*>(tmpData.data());
     unsigned short* output = reinterpret_cast<unsigned short*>(rawData.data());
 
@@ -96,8 +108,8 @@ bool DNGWriter::Private::fujiRotate(QByteArray& rawData, DRawInfo& identify) con
         }
     }
 
-    identify.orientation = DRawInfo::ORIENTATION_Mirror90CCW;
-    identify.outputSize  = QSize(height, width);
+    identify->orientation = DRawInfo::ORIENTATION_Mirror90CCW;
+    identify->outputSize  = QSize(height, width);
 
     // TODO: rotate margins
 

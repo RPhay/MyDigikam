@@ -108,27 +108,37 @@ public:
 
     void          reset();
     void          cleanup();
-    dng_date_time dngDateTime(const QDateTime& qDT)          const;
+    void          clearMemory();
 
-    bool fujiRotate(QByteArray& rawData, DRawInfo& identify) const;
+    dng_date_time dngDateTime(const QDateTime& qDT)   const;
+    QString       dngErrorCodeToString(int errorCode) const;
 
-    QString dngErrorCodeToString(int errorCode)              const;
+    bool          fujiRotate();
 
 public:
 
-    bool       cancel;
-    bool       jpegLossLessCompression;
-    bool       updateFileDate;
-    bool       backupOriginalRawFile;
+    bool                     cancel;
+    bool                     jpegLossLessCompression;
+    bool                     updateFileDate;
+    bool                     backupOriginalRawFile;
 
-    int        previewMode;
+    DRawInfo*                identify;
+    DRawInfo*                identifyMake;
 
-    QString    inputFile;
-    QString    outputFile;
+    int                      previewMode;
+    int                      activeWidth;
+    int                      activeHeight;
+    int                      outputHeight;
+    int                      outputWidth;
 
-    QByteArray rawData;
-    QFileInfo  inputInfo;
-    QFileInfo  outputInfo;
+    dng_rect                 activeArea;
+
+    QString                  inputFile;
+    QString                  outputFile;
+    QString                  dngFilePath;
+    QByteArray               rawData;
+    QFileInfo                inputInfo;
+    QFileInfo                outputInfo;
 };
 
 } // namespace Digikam

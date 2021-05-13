@@ -50,7 +50,8 @@ public:
 
     enum ConvertError
     {
-        PROCESSCOMPLETE     =  0,
+        PROCESSCONTINUE     =  1,       ///< One stage done with no error.   
+        PROCESSCOMPLETE     =  0,       ///< All stages done.
         PROCESSFAILED       = -1,
         PROCESSCANCELED     = -2,
         FILENOTSUPPORTED    = -3,
@@ -99,6 +100,8 @@ private:
     // Disable
     DNGWriter(const DNGWriter&)            = delete;
     DNGWriter& operator=(const DNGWriter&) = delete;
+    
+    int extractRawStage();
 
 private:
 
