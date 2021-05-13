@@ -130,8 +130,13 @@ public:
     int                      activeHeight;
     int                      outputHeight;
     int                      outputWidth;
+    int                      width;
+    int                      height;
 
     dng_rect                 activeArea;
+
+    DNGBayerPattern          bayerPattern;
+    uint32                   filter;
 
     QString                  inputFile;
     QString                  outputFile;

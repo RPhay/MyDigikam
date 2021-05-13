@@ -102,6 +102,7 @@ private:
     DNGWriter& operator=(const DNGWriter&) = delete;
     
     int extractRawStage();
+    int mosaicIdentStage();
 
 private:
 

@@ -30,7 +30,7 @@ int DNGWriter::extractRawStage()
 {
     if (inputFile().isEmpty())
     {
-        qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: No input file to convert. Aborted..." ;
+        qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: No input file to convert. Aborted...";
         return PROCESS_FAILED;
     }
 
@@ -48,13 +48,13 @@ int DNGWriter::extractRawStage()
 
     // -----------------------------------------------------------------------------------------
 
-    qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Loading RAW data from " << d->inputInfo.fileName() ;
+    qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Loading RAW data from " << d->inputInfo.fileName();
 
     QPointer<DRawDecoder> rawProcessor(new DRawDecoder);
 
     if (!rawProcessor->rawFileIdentify(*d->identifyMake, inputFile()))
     {
-        qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Reading RAW file failed. Aborted..." ;
+        qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Reading RAW file failed. Aborted...";
         d->clearMemory();
 
         return PROCESS_FAILED;
@@ -75,7 +75,7 @@ int DNGWriter::extractRawStage()
 
     if (!rawProcessor->extractRAWData(inputFile(), d->rawData, *d->identify, 0))
     {
-        qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Loading RAW data failed. Aborted..." ;
+        qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Loading RAW data failed. Aborted...";
         d->clearMemory();
 
         return FILE_NOT_SUPPORTED;

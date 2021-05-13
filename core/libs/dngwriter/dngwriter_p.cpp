@@ -47,7 +47,11 @@ DNGWriter::Private::Private()
       activeWidth (0),
       activeHeight(0),
       outputHeight(0),
-      outputWidth (0)
+      outputWidth (0),
+      width       (0),
+      height      (0),
+      bayerPattern(Unknown),
+      filter      (0)
 {
     reset();
 }
