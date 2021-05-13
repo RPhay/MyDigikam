@@ -86,9 +86,9 @@ DNGSettings::DNGSettings(QWidget* const parent)
 
     d->previewModeLabel = new QLabel(i18n("JPEG Preview:"), this);
     d->previewModeCB    = new DComboBox(this);
-    d->previewModeCB->insertItem(DNGWriter::NONE,     i18nc("embedded preview type in dng file", "None"));
-    d->previewModeCB->insertItem(DNGWriter::MEDIUM,   i18nc("embedded preview type in dng file", "Medium"));
-    d->previewModeCB->insertItem(DNGWriter::FULLSIZE, i18nc("embedded preview type in dng file", "Full size"));
+    d->previewModeCB->insertItem(DNGWriter::NONE,      i18nc("embedded preview type in dng file", "None"));
+    d->previewModeCB->insertItem(DNGWriter::MEDIUM,    i18nc("embedded preview type in dng file", "Medium"));
+    d->previewModeCB->insertItem(DNGWriter::FULL_SIZE, i18nc("embedded preview type in dng file", "Full size"));
     d->previewModeCB->setDefaultIndex(DNGWriter::MEDIUM);
 
     settingsBoxLayout->addWidget(d->backupOriginalRawFile, 0, 0, 1, 1);

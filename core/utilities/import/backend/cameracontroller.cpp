@@ -756,7 +756,7 @@ void CameraController::executeCommand(CameraCommand* const cmd)
                     dngWriter.setCompressLossLess(compressDng);
                     dngWriter.setPreviewMode(previewMode);
 
-                    if (dngWriter.convert() != DNGWriter::PROCESSCOMPLETE)
+                    if (dngWriter.convert() != DNGWriter::PROCESS_COMPLETE)
                     {
                         qCDebug(DIGIKAM_IMPORTUI_LOG) << "Convert failed to DNG!";
 

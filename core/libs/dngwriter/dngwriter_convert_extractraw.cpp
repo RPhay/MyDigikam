@@ -31,7 +31,7 @@ int DNGWriter::extractRawStage()
     if (inputFile().isEmpty())
     {
         qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: No input file to convert. Aborted..." ;
-        return PROCESSFAILED;
+        return PROCESS_FAILED;
     }
 
     d->inputInfo    = QFileInfo(inputFile());
@@ -57,7 +57,7 @@ int DNGWriter::extractRawStage()
         qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Reading RAW file failed. Aborted..." ;
         d->clearMemory();
 
-        return PROCESSFAILED;
+        return PROCESS_FAILED;
     }
 
     // TODO: need to get correct default crop size to avoid artifacts at the borders
@@ -78,16 +78,16 @@ int DNGWriter::extractRawStage()
         qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Loading RAW data failed. Aborted..." ;
         d->clearMemory();
 
-        return FILENOTSUPPORTED;
+        return FILE_NOT_SUPPORTED;
     }
 
     if (d->cancel)
     {
         d->clearMemory();
-        return PROCESSCANCELED;
+        return PROCESS_CANCELED;
     }
 
-    return PROCESSCONTINUE;
+    return PROCESS_CONTINUE;
 }
 
 } // namespace Digikam

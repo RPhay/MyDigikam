@@ -35,7 +35,7 @@ int DNGWriter::convert()
     {
         ret = extractRawStage();
 
-        if (ret != PROCESSCONTINUE)
+        if (ret != PROCESS_CONTINUE)
         {
             return ret;
         }
@@ -141,7 +141,7 @@ int DNGWriter::convert()
                 qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Bayer mosaic not supported. Aborted..." ;
                 d->clearMemory();
 
-                return FILENOTSUPPORTED;
+                return FILE_NOT_SUPPORTED;
             }
 
             for (int i = 0 ; i < 16 ; ++i)
@@ -169,7 +169,7 @@ int DNGWriter::convert()
                     qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Bayer mosaic not supported. Aborted..." ;
                     d->clearMemory();
 
-                    return FILENOTSUPPORTED;
+                    return FILE_NOT_SUPPORTED;
                 }
             }
         }
@@ -178,7 +178,7 @@ int DNGWriter::convert()
             qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Bayer mosaic not supported. Aborted..." ;
             d->clearMemory();
 
-            return FILENOTSUPPORTED;
+            return FILE_NOT_SUPPORTED;
         }
 
         if (fujiRotate90)
@@ -188,7 +188,7 @@ int DNGWriter::convert()
                 qCDebug(DIGIKAM_GENERAL_LOG) << "Can not rotate fuji image. Aborted...";
                 d->clearMemory();
 
-                return PROCESSFAILED;
+                return PROCESS_FAILED;
             }
 
             int tmp         = d->outputWidth;
@@ -207,7 +207,7 @@ int DNGWriter::convert()
             qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Number of Raw color components not supported. Aborted..." ;
             d->clearMemory();
 
-            return PROCESSFAILED;
+            return PROCESS_FAILED;
         }
 
         int width  = d->identify->outputSize.width();
@@ -225,7 +225,7 @@ int DNGWriter::convert()
         {
             qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Cannot open file to write RAW data. Aborted..." ;
             d->clearMemory();
-            return PROCESSFAILED;
+            return PROCESS_FAILED;
         }
 
         QDataStream rawdataStream(&rawdataFile);
@@ -237,7 +237,7 @@ int DNGWriter::convert()
         if (d->cancel)
         {
             d->clearMemory();
-            return PROCESSCANCELED;
+            return PROCESS_CANCELED;
         }
 
         qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: DNG memory allocation and initialization" ;
@@ -256,7 +256,7 @@ int DNGWriter::convert()
         if (d->cancel)
         {
             d->clearMemory();
-            return PROCESSCANCELED;
+            return PROCESS_CANCELED;
         }
 
         // -----------------------------------------------------------------------------------------
@@ -277,7 +277,7 @@ int DNGWriter::convert()
         if (d->cancel)
         {
             d->clearMemory();
-            return PROCESSCANCELED;
+            return PROCESS_CANCELED;
         }
 
         // -----------------------------------------------------------------------------------------
@@ -461,7 +461,7 @@ int DNGWriter::convert()
                 {
                     qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: camera XYZ Matrix is null : camera not supported" ;
                     d->clearMemory();
-                    return FILENOTSUPPORTED;
+                    return FILE_NOT_SUPPORTED;
                 }
 
                 matrix = camXYZ;
@@ -489,7 +489,7 @@ int DNGWriter::convert()
                 {
                     qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: camera XYZ Matrix is null : camera not supported" ;
                     d->clearMemory();
-                    return FILENOTSUPPORTED;
+                    return FILE_NOT_SUPPORTED;
                 }
 
                 matrix = camXYZ;
@@ -514,7 +514,7 @@ int DNGWriter::convert()
         if (d->cancel)
         {
             d->clearMemory();
-            return PROCESSCANCELED;
+            return PROCESS_CANCELED;
         }
 
         // -----------------------------------------------------------------------------------------
@@ -976,7 +976,7 @@ int DNGWriter::convert()
                 qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Cannot open original RAW file to backup in DNG. Aborted...";
                 d->clearMemory();
 
-                return PROCESSFAILED;
+                return PROCESS_FAILED;
             }
 
             QDataStream originalDataStream(&originalFile);
@@ -998,7 +998,7 @@ int DNGWriter::convert()
                 qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Cannot open temporary file to write Zipped Raw data. Aborted...";
                 d->clearMemory();
 
-                return PROCESSFAILED;
+                return PROCESS_FAILED;
             }
 
             QDataStream compressedDataStream(&compressedFile);
@@ -1058,7 +1058,7 @@ int DNGWriter::convert()
         if (d->cancel)
         {
             d->clearMemory();
-            return PROCESSCANCELED;
+            return PROCESS_CANCELED;
         }
 
         // -----------------------------------------------------------------------------------------
@@ -1083,7 +1083,7 @@ int DNGWriter::convert()
         if (d->cancel)
         {
             d->clearMemory();
-            return PROCESSCANCELED;
+            return PROCESS_CANCELED;
         }
 
         // -----------------------------------------------------------------------------------------
@@ -1113,7 +1113,7 @@ int DNGWriter::convert()
         if (d->cancel)
         {
             d->clearMemory();
-            return PROCESSCANCELED;
+            return PROCESS_CANCELED;
         }
 
         // -----------------------------------------------------------------------------------------
@@ -1134,7 +1134,7 @@ int DNGWriter::convert()
         if (d->cancel)
         {
             d->clearMemory();
-            return PROCESSCANCELED;
+            return PROCESS_CANCELED;
         }
 
         // -----------------------------------------------------------------------------------------
@@ -1194,7 +1194,7 @@ int DNGWriter::convert()
         qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: DNG SDK exception code (" << ret << "):" << d->dngErrorCodeToString(ret);
         d->clearMemory();
 
-        return DNGSDKINTERNALERROR;
+        return DNG_SDK_INTERNAL_ERROR;
     }
 
     catch (...)
@@ -1202,13 +1202,13 @@ int DNGWriter::convert()
         qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: DNG SDK exception code unknow";
         d->clearMemory();
 
-        return DNGSDKINTERNALERROR;
+        return DNG_SDK_INTERNAL_ERROR;
     }
 
     qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: DNG conversion complete...";
     d->clearMemory();
 
-    return PROCESSCOMPLETE;
+    return PROCESS_COMPLETE;
 }
 
 } // namespace Digikam

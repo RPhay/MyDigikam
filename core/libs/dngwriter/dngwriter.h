@@ -43,19 +43,19 @@ public:
 
     enum JPEGPreview
     {
-        NONE = 0,
-        MEDIUM,
-        FULLSIZE
+        NONE = 0,                           ///< No preview will be generated.
+        MEDIUM,                             ///< A medium size preview will be generated.
+        FULL_SIZE                           ///< A full size preview  will be generated.
     };
 
     enum ConvertError
     {
-        PROCESSCONTINUE     =  1,       ///< One stage done with no error.   
-        PROCESSCOMPLETE     =  0,       ///< All stages done.
-        PROCESSFAILED       = -1,
-        PROCESSCANCELED     = -2,
-        FILENOTSUPPORTED    = -3,
-        DNGSDKINTERNALERROR = -4
+        PROCESS_CONTINUE       =  1,        ///< One stage done with no error.
+        PROCESS_COMPLETE       =  0,        ///< All stages done.
+        PROCESS_FAILED         = -1,        ///< A failure happen while processing.
+        PROCESS_CANCELED       = -2,        ///< User has canceled processing.
+        FILE_NOT_SUPPORTED     = -3,        ///< Raw file format is not supported by converter.
+        DNG_SDK_INTERNAL_ERROR = -4         ///< Adobe DNG SDK has generated an error while processing.
     };
 
 public:

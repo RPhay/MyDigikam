@@ -129,7 +129,7 @@ bool ConvertToDNG::toolOperations()
 
     int ret = m_dngProcessor.convert();
 
-    return (ret == DNGWriter::PROCESSCOMPLETE);
+    return (ret == DNGWriter::PROCESS_COMPLETE);
 }
 
 } // namespace DigikamBqmConvertToDngPlugin
