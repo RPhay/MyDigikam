@@ -289,23 +289,35 @@ bool DMetadata::removeItemFacesMap() const
 
     // Remove mwg-rs tags
 
-    setXmpTagString(qxmpTagName.toLatin1().constData(),
-                    QString(),
-                    MetaEngine::ArrayBagTag);
+    if (!getXmpTagString(qxmpTagName.toLatin1().constData()).isEmpty())
+    {
+        setXmpTagString(qxmpTagName.toLatin1().constData(),
+                        QString(),
+                        MetaEngine::ArrayBagTag);
+    }
 
-    setXmpTagString(qxmpStructName.toLatin1().constData(),
-                    QString(),
-                    MetaEngine::StructureTag);
+    if (!getXmpTagString(qxmpStructName.toLatin1().constData()).isEmpty())
+    {
+        setXmpTagString(qxmpStructName.toLatin1().constData(),
+                        QString(),
+                        MetaEngine::StructureTag);
+    }
 
     // Remove MP tags
 
-    setXmpTagString(winQxmpTagName.toLatin1().constData(),
-                    QString(),
-                    MetaEngine::ArrayBagTag);
+    if (!getXmpTagString(winQxmpTagName.toLatin1().constData()).isEmpty())
+    {
+        setXmpTagString(winQxmpTagName.toLatin1().constData(),
+                        QString(),
+                        MetaEngine::ArrayBagTag);
+    }
 
-    setXmpTagString(winQxmpStructName.toLatin1().constData(),
-                    QString(),
-                    MetaEngine::StructureTag);
+    if (!getXmpTagString(winQxmpStructName.toLatin1().constData()).isEmpty())
+    {
+        setXmpTagString(winQxmpStructName.toLatin1().constData(),
+                        QString(),
+                        MetaEngine::StructureTag);
+    }
 
     return true;
 }
