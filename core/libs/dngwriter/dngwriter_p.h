@@ -75,7 +75,6 @@
 
 #include "digikam_debug.h"
 #include "digikam_version.h"
-#include "dngwriterhost.h"
 #include "dfileoperations.h"
 #include "dmetadata.h"
 
@@ -83,6 +82,8 @@
 
 namespace Digikam
 {
+
+class DNGWriterHost;
 
 class Q_DECL_HIDDEN DNGWriter::Private
 {
@@ -101,7 +102,7 @@ public:
 
 public:
 
-    explicit Private();
+    explicit Private(DNGWriter* const dd);
     ~Private();
 
 public:
@@ -119,17 +120,28 @@ public:
      */
     int backupExtractedRAWData(const QFileInfo& inputInfo, const QByteArray& rawData);
 
+    int storeMetadata(DNGWriterHost& host,
+                      AutoPtr<dng_negative>& negative,
+                      DRawInfo* const indentify,
+                      DRawInfo* const indentifyMake);
+
 public:
 
-    bool    cancel;
-    bool    jpegLossLessCompression;
-    bool    updateFileDate;
-    bool    backupOriginalRawFile;
+    bool                cancel;
+    bool                jpegLossLessCompression;
+    bool                updateFileDate;
+    bool                backupOriginalRawFile;
 
-    int     previewMode;
+    int                 previewMode;
 
-    QString inputFile;
-    QString outputFile;
+    QString             inputFile;
+    QString             outputFile;
+
+    QDateTime           fileDate;
+
+    dng_date_time_info  orgDateTimeInfo;
+
+    DNGWriter*          parent;
 };
 
 } // namespace Digikam

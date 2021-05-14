@@ -49,7 +49,7 @@ namespace Digikam
 {
 
 DNGWriter::DNGWriter()
-    : d(new Private)
+    : d(new Private(this))
 {
     dng_xmp_sdk::InitializeSDK();
 }

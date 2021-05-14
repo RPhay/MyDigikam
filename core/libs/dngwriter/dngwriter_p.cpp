@@ -37,11 +37,13 @@
 // Local includes
 
 #include "dngwriter.h"
+#include "dngwriterhost.h"
 
 namespace Digikam
 {
 
-DNGWriter::Private::Private()
+DNGWriter::Private::Private(DNGWriter* const dd)
+    : parent(dd)
 {
     reset();
 }
