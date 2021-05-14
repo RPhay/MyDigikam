@@ -156,11 +156,18 @@ bool AlbumManager::setDatabase(const DbEngineParameters& params, bool priority, 
 
         if (!showDatabaseSetupPage(databaseError))
         {
-            QMessageBox::critical(qApp->activeWindow(), qApp->applicationName(),
-                                  i18n("<p>digiKam will attempt to start now, "
-                                       "but it will <b>not</b> be functional.</p>"));
+            if (params.isSQLite())
+            {
+                QMessageBox::critical(qApp->activeWindow(), qApp->applicationName(),
+                                      i18n("<p>digiKam will attempt to start now, "
+                                           "but it will <b>not</b> be functional.</p>"));
 
-            CoreDbAccess::setParameters(DbEngineParameters(), CoreDbAccess::DatabaseSlave);
+                CoreDbAccess::setParameters(DbEngineParameters(), CoreDbAccess::DatabaseSlave);
+
+                return true;
+            }
+
+            return false;
         }
 
         return true;
