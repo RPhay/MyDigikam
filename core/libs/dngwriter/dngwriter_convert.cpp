@@ -394,36 +394,43 @@ int DNGWriter::convert()
         switch (bayerPattern)
         {
             case Private::Standard:
-
+            {
                 // Standard bayer mosaicing. All work fine there.
                 // Bayer CCD mask: https://en.wikipedia.org/wiki/Bayer_filter
 
                 negative->SetBayerMosaic(filter);
                 break;
+            }
 
             case Private::Fuji:
-
+            {
                 // TODO: Fuji is special case. Need to setup different bayer rules here.
                 // It do not work in all settings. Need indeep investiguations.
                 // Fuji superCCD: https://en.wikipedia.org/wiki/Super_CCD
 
                 negative->SetFujiMosaic(filter);
                 break;
+            }
 
             case Private::Fuji6x6:
-
+            {
                 // TODO: Fuji is special case. Need to setup different bayer rules here.
                 // It do not work in all settings. Need indeep investiguations.
 
                 negative->SetFujiMosaic6x6(filter);
                 break;
+            }
 
             case Private::FourColor:
+            {
                 negative->SetQuadMosaic(filter);
                 break;
+            }
 
             default:
+            {
                 break;
+            }
         }
 
         negative->SetWhiteLevel(identify->whitePoint, 0);
@@ -454,24 +461,34 @@ int DNGWriter::convert()
         switch (identify->orientation)
         {
             case DRawInfo::ORIENTATION_180:
+            {
                 orientation = dng_orientation::Rotate180();
                 break;
+            }
 
             case DRawInfo::ORIENTATION_Mirror90CCW:
+            {
                 orientation = dng_orientation::Mirror90CCW();
                 break;
+            }
 
             case DRawInfo::ORIENTATION_90CCW:
+            {
                 orientation = dng_orientation::Rotate90CCW();
                 break;
+            }
 
             case DRawInfo::ORIENTATION_90CW:
+            {
                 orientation = dng_orientation::Rotate90CW();
                 break;
+            }
 
             default:   // ORIENTATION_NONE
+            {
                 orientation = dng_orientation::Normal();
                 break;
+            }
         }
 
         negative->SetBaseOrientation(orientation);
@@ -492,55 +509,55 @@ int DNGWriter::convert()
         switch (identify->rawColors)
         {
             case 3:
+            {
+                dng_matrix_3by3 camXYZ;
+                camXYZ[0][0] = identify->cameraXYZMatrix[0][0];
+                camXYZ[0][1] = identify->cameraXYZMatrix[0][1];
+                camXYZ[0][2] = identify->cameraXYZMatrix[0][2];
+                camXYZ[1][0] = identify->cameraXYZMatrix[1][0];
+                camXYZ[1][1] = identify->cameraXYZMatrix[1][1];
+                camXYZ[1][2] = identify->cameraXYZMatrix[1][2];
+                camXYZ[2][0] = identify->cameraXYZMatrix[2][0];
+                camXYZ[2][1] = identify->cameraXYZMatrix[2][1];
+                camXYZ[2][2] = identify->cameraXYZMatrix[2][2];
+
+                if (camXYZ.MaxEntry() == 0.0)
                 {
-                    dng_matrix_3by3 camXYZ;
-                    camXYZ[0][0] = identify->cameraXYZMatrix[0][0];
-                    camXYZ[0][1] = identify->cameraXYZMatrix[0][1];
-                    camXYZ[0][2] = identify->cameraXYZMatrix[0][2];
-                    camXYZ[1][0] = identify->cameraXYZMatrix[1][0];
-                    camXYZ[1][1] = identify->cameraXYZMatrix[1][1];
-                    camXYZ[1][2] = identify->cameraXYZMatrix[1][2];
-                    camXYZ[2][0] = identify->cameraXYZMatrix[2][0];
-                    camXYZ[2][1] = identify->cameraXYZMatrix[2][1];
-                    camXYZ[2][2] = identify->cameraXYZMatrix[2][2];
-
-                    if (camXYZ.MaxEntry() == 0.0)
-                    {
-                        qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: camera XYZ Matrix is null : camera not supported" ;
-                        return FILE_NOT_SUPPORTED;
-                    }
-
-                    matrix = camXYZ;
-
-                    break;
+                    qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: camera XYZ Matrix is null : camera not supported" ;
+                    return FILE_NOT_SUPPORTED;
                 }
+
+                matrix = camXYZ;
+
+                break;
+            }
 
             case 4:
+            {
+                dng_matrix_4by3 camXYZ;
+                camXYZ[0][0] = identify->cameraXYZMatrix[0][0];
+                camXYZ[0][1] = identify->cameraXYZMatrix[0][1];
+                camXYZ[0][2] = identify->cameraXYZMatrix[0][2];
+                camXYZ[1][0] = identify->cameraXYZMatrix[1][0];
+                camXYZ[1][1] = identify->cameraXYZMatrix[1][1];
+                camXYZ[1][2] = identify->cameraXYZMatrix[1][2];
+                camXYZ[2][0] = identify->cameraXYZMatrix[2][0];
+                camXYZ[2][1] = identify->cameraXYZMatrix[2][1];
+                camXYZ[2][2] = identify->cameraXYZMatrix[2][2];
+                camXYZ[3][0] = identify->cameraXYZMatrix[3][0];
+                camXYZ[3][1] = identify->cameraXYZMatrix[3][1];
+                camXYZ[3][2] = identify->cameraXYZMatrix[3][2];
+
+                if (camXYZ.MaxEntry() == 0.0)
                 {
-                    dng_matrix_4by3 camXYZ;
-                    camXYZ[0][0] = identify->cameraXYZMatrix[0][0];
-                    camXYZ[0][1] = identify->cameraXYZMatrix[0][1];
-                    camXYZ[0][2] = identify->cameraXYZMatrix[0][2];
-                    camXYZ[1][0] = identify->cameraXYZMatrix[1][0];
-                    camXYZ[1][1] = identify->cameraXYZMatrix[1][1];
-                    camXYZ[1][2] = identify->cameraXYZMatrix[1][2];
-                    camXYZ[2][0] = identify->cameraXYZMatrix[2][0];
-                    camXYZ[2][1] = identify->cameraXYZMatrix[2][1];
-                    camXYZ[2][2] = identify->cameraXYZMatrix[2][2];
-                    camXYZ[3][0] = identify->cameraXYZMatrix[3][0];
-                    camXYZ[3][1] = identify->cameraXYZMatrix[3][1];
-                    camXYZ[3][2] = identify->cameraXYZMatrix[3][2];
-
-                    if (camXYZ.MaxEntry() == 0.0)
-                    {
-                        qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: camera XYZ Matrix is null : camera not supported" ;
-                        return FILE_NOT_SUPPORTED;
-                    }
-
-                    matrix = camXYZ;
-
-                    break;
+                    qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: camera XYZ Matrix is null : camera not supported" ;
+                    return FILE_NOT_SUPPORTED;
                 }
+
+                matrix = camXYZ;
+
+                break;
+            }
         }
 
         prof->SetColorMatrix1((dng_matrix) matrix);
@@ -789,23 +806,33 @@ int DNGWriter::convert()
                 switch (val)
                 {
                     case 1:
+                    {
                         exif->fExposureProgram = 2;
                         break;
+                    }
 
                     case 2:
+                    {
                         exif->fExposureProgram = 4;
                         break;
+                    }
 
                     case 3:
+                    {
                         exif->fExposureProgram = 3;
                         break;
+                    }
 
                     case 4:
+                    {
                         exif->fExposureProgram = 1;
                         break;
+                    }
 
                     default:
+                    {
                         break;
+                    }
                 }
             }
 
@@ -814,27 +841,39 @@ int DNGWriter::convert()
                 switch (val)
                 {
                     case 1:
+                    {
                         exif->fMeteringMode = 3;
                         break;
+                    }
 
                     case 2:
+                    {
                         exif->fMeteringMode = 1;
                         break;
+                    }
 
                     case 3:
+                    {
                         exif->fMeteringMode = 5;
                         break;
+                    }
 
                     case 4:
+                    {
                         exif->fMeteringMode = 6;
                         break;
+                    }
 
                     case 5:
+                    {
                         exif->fMeteringMode = 2;
                         break;
+                    }
 
                     default:
+                    {
                         break;
+                    }
                 }
             }
 
@@ -844,6 +883,7 @@ int DNGWriter::convert()
             if (meta->getExifTagRational("Exif.CanonCs.Lens", num, den, 1))             exif->fLensInfo[0]              = dng_urational(num, canonLensUnits);
             if (meta->getExifTagRational("Exif.Canon.FocalLength", num, den, 1))        exif->fFocalLength              = dng_urational(num, canonLensUnits);
             long canonLensType = 65535;
+
             if (meta->getExifTagLong("Exif.CanonCs.LensType", canonLensType))           exif->fLensID.Set_ASCII((QString::fromUtf8("%1").arg(canonLensType)).toLatin1().constData());
             str = meta->getExifTagString("Exif.Canon.LensModel");
 
