@@ -109,7 +109,19 @@ int DNGWriter::convert()
 
         // -----------------------------------------------------------------------------------------
 
-        ret = d->storeMetadata(host, negative, identify.get(), identifyMake.get());
+        QScopedPointer<DMetadata> meta(new DMetadata);
+        d->exif = negative->GetExif();
+
+        ret = d->storeExif(host, negative, identify.get(), identifyMake.get(), meta.get());
+
+        if (ret != PROCESS_CONTINUE)
+        {
+            return ret;
+        }
+
+        // -----------------------------------------------------------------------------------------
+
+        ret = d->storeMakernote(host, negative, identify.get(), identifyMake.get(), meta.get());
 
         if (ret != PROCESS_CONTINUE)
         {

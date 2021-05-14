@@ -133,10 +133,17 @@ public:
     int createNegative(AutoPtr<dng_negative>& negative,
                        DRawInfo* const identify);
 
-    int storeMetadata(DNGWriterHost& host,
-                      AutoPtr<dng_negative>& negative,
-                      DRawInfo* const identify,
-                      DRawInfo* const identifyMake);
+    int storeExif(DNGWriterHost& host,
+                  AutoPtr<dng_negative>& negative,
+                  DRawInfo* const identify,
+                  DRawInfo* const identifyMake,
+                  DMetadata* const meta);
+
+    int storeMakernote(DNGWriterHost& host,
+                       AutoPtr<dng_negative>& negative,
+                       DRawInfo* const identify,
+                       DRawInfo* const identifyMake,
+                       DMetadata* const meta);
 
     int backupRaw(DNGWriterHost& host,
                   AutoPtr<dng_negative>& negative);
@@ -147,10 +154,11 @@ public:
 
 public:
 
-    DNGWriter*          parent;
+    DNGWriter*          parent;                     ///< Parent class instance.
     DNGBayerPattern     bayerPattern;
     uint32              filter;
 
+    bool                metaLoaded;                 ///< Set to true if metadata are properly loaded at Exif stage.
     bool                cancel;
     bool                jpegLossLessCompression;
     bool                updateFileDate;
@@ -175,6 +183,7 @@ public:
 
     dng_date_time_info  orgDateTimeInfo;
     dng_rect            activeArea;
+    dng_exif*           exif;                       ///< Instance to Exif DNG SDK container.
 };
 
 } // namespace Digikam

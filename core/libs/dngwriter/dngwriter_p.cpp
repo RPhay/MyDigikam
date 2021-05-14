@@ -46,12 +46,14 @@ DNGWriter::Private::Private(DNGWriter* const dd)
     : parent      (dd),
       bayerPattern(Unknown),
       filter      (0),
+      metaLoaded  (false),
       activeWidth (0),
       activeHeight(0),
       outputHeight(0),
       outputWidth (0),
       width       (0),
-      height      (0)
+      height      (0),
+      exif        (nullptr)
 {
     reset();
 }
