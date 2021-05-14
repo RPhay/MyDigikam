@@ -37,78 +37,15 @@ int DNGWriter::convert()
 
     try
     {
-        if (inputFile().isEmpty())
-        {
-            qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: No input file to convert. Aborted...";
-            return PROCESS_FAILED;
-        }
-
-        d->inputInfo    = QFileInfo(inputFile());
-        d->dngFilePath  = outputFile();
-
-        if (d->dngFilePath.isEmpty())
-        {
-            d->dngFilePath = QString(d->inputInfo.completeBaseName() + QLatin1String(".dng"));
-        }
-
-        d->outputInfo    = QFileInfo(d->dngFilePath);
         QScopedPointer<DRawInfo> identify(new DRawInfo);
         QScopedPointer<DRawInfo> identifyMake(new DRawInfo);
 
-        // -----------------------------------------------------------------------------------------
+        ret = d->importRaw(identify.get(), identifyMake.get());
 
-        qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Loading RAW data from " << d->inputInfo.fileName();
-
-        QPointer<DRawDecoder> rawProcessor(new DRawDecoder);
-
-        if (!rawProcessor->rawFileIdentify(*identifyMake.data(), inputFile()))
+        if (ret != PROCESS_CONTINUE)
         {
-            qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Reading RAW file failed. Aborted...";
-
-            return PROCESS_FAILED;
+            return ret;
         }
-
-        // TODO: need to get correct default crop size to avoid artifacts at the borders
-
-        if ((identifyMake->orientation == 5) || (identifyMake->orientation == 6))
-        {
-            d->outputHeight = identifyMake->outputSize.width();
-            d->outputWidth  = identifyMake->outputSize.height();
-        }
-        else
-        {
-            d->outputHeight = identifyMake->outputSize.height();
-            d->outputWidth  = identifyMake->outputSize.width();
-        }
-
-        if (!rawProcessor->extractRAWData(inputFile(), d->rawData, *identify, 0))
-        {
-            qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Loading RAW data failed. Aborted..." ;
-
-            return FILE_NOT_SUPPORTED;
-        }
-
-        if (d->cancel)
-        {
-            return PROCESS_CANCELED;
-        }
-
-        qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Raw data loaded:" ;
-        qCDebug(DIGIKAM_GENERAL_LOG) << "--- Data Size:     " << d->rawData.size() << " bytes";
-        qCDebug(DIGIKAM_GENERAL_LOG) << "--- Date:          " << identify->dateTime.toString(Qt::ISODate);
-        qCDebug(DIGIKAM_GENERAL_LOG) << "--- Make:          " << identify->make;
-        qCDebug(DIGIKAM_GENERAL_LOG) << "--- Model:         " << identify->model;
-        qCDebug(DIGIKAM_GENERAL_LOG) << "--- ImageSize:     " << identify->imageSize.width()  << "x" << identify->imageSize.height();
-        qCDebug(DIGIKAM_GENERAL_LOG) << "--- FullSize:      " << identify->fullSize.width()   << "x" << identify->fullSize.height();
-        qCDebug(DIGIKAM_GENERAL_LOG) << "--- OutputSize:    " << identify->outputSize.width() << "x" << identify->outputSize.height();
-        qCDebug(DIGIKAM_GENERAL_LOG) << "--- Orientation:   " << identify->orientation;
-        qCDebug(DIGIKAM_GENERAL_LOG) << "--- Top margin:    " << identify->topMargin;
-        qCDebug(DIGIKAM_GENERAL_LOG) << "--- Left margin:   " << identify->leftMargin;
-        qCDebug(DIGIKAM_GENERAL_LOG) << "--- Filter:        " << identify->filterPattern;
-        qCDebug(DIGIKAM_GENERAL_LOG) << "--- Colors:        " << identify->rawColors;
-        qCDebug(DIGIKAM_GENERAL_LOG) << "--- Black:         " << identify->blackPoint;
-        qCDebug(DIGIKAM_GENERAL_LOG) << "--- White:         " << identify->whitePoint;
-        qCDebug(DIGIKAM_GENERAL_LOG) << "--- CAM->XYZ:";
 
         // -----------------------------------------------------------------------------------------
 

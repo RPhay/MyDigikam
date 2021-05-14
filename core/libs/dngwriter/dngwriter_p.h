@@ -124,6 +124,9 @@ public:
 
     // DNG processing stages.
 
+    int importRaw(DRawInfo* const identify,
+                  DRawInfo* const identifyMake);
+
     int identMosaic(DRawInfo* const identify,
                     DRawInfo* const identifyMake);
 
