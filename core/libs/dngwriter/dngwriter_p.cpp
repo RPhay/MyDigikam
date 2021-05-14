@@ -139,4 +139,24 @@ QString DNGWriter::Private::dngErrorCodeToString(int errorCode) const
     }
 }
 
+int DNGWriter::Private::backupExtractedRAWData(const QFileInfo& inputInfo, const QByteArray& rawData)
+{
+    QString   rawdataFilePath(inputInfo.completeBaseName() + QLatin1String(".dat"));
+    QFileInfo rawdataInfo(rawdataFilePath);
+
+    QFile rawdataFile(rawdataFilePath);
+
+    if (!rawdataFile.open(QIODevice::WriteOnly))
+    {
+        qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Cannot open file to write RAW data. Aborted..." ;
+        return PROCESS_FAILED;
+    }
+
+    QDataStream rawdataStream(&rawdataFile);
+    rawdataStream.writeRawData(rawData.data(), rawData.size());
+    rawdataFile.close();
+
+    return PROCESS_CONTINUE;
+}
+
 } // namespace Digikam

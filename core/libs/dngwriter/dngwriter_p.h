@@ -114,6 +114,11 @@ public:
 
     QString dngErrorCodeToString(int errorCode)              const;
 
+    /**
+     * Code to hack RAW data extraction.
+     */
+    int backupExtractedRAWData(const QFileInfo& inputInfo, const QByteArray& rawData);
+
 public:
 
     bool    cancel;

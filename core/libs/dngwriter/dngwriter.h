@@ -50,6 +50,7 @@ public:
 
     enum ConvertError
     {
+        PROCESS_CONTINUE       =  1,        ///< Current stages is done.
         PROCESS_COMPLETE       =  0,        ///< All stages done.
         PROCESS_FAILED         = -1,        ///< A failure happen while processing.
         PROCESS_CANCELED       = -2,        ///< User has canceled processing.

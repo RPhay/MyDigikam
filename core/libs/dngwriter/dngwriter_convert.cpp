@@ -263,24 +263,8 @@ int DNGWriter::convert()
 
         int width  = identify->outputSize.width();
         int height = identify->outputSize.height();
-
 /*
-        // NOTE: code to hack RAW data extraction
-
-        QString   rawdataFilePath(inputInfo.completeBaseName() + QString(".dat"));
-        QFileInfo rawdataInfo(rawdataFilePath);
-
-        QFile rawdataFile(rawdataFilePath);
-
-        if (!rawdataFile.open(QIODevice::WriteOnly))
-        {
-            qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Cannot open file to write RAW data. Aborted..." ;
-            return PROCESS_FAILED;
-        }
-
-        QDataStream rawdataStream(&rawdataFile);
-        rawdataStream.writeRawData(rawData.data(), rawData.size());
-        rawdataFile.close();
+        backupExtractedRAWData(inputInfo, rawData);
 */
         // -----------------------------------------------------------------------------------------
 
