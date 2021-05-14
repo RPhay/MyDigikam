@@ -28,44 +28,282 @@ namespace Digikam
 
 int DNGWriter::convert()
 {
-    int ret;
     d->cancel = false;
 
     try
     {
-        ret = extractRawStage();
-
-        if (ret != PROCESS_CONTINUE)
+        if (inputFile().isEmpty())
         {
-            return ret;
+            qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: No input file to convert. Aborted..." ;
+            return PROCESS_FAILED;
         }
 
-        ret = mosaicIdentStage();
+        QFileInfo inputInfo(inputFile());
+        QString   dngFilePath = outputFile();
 
-        if (ret != PROCESS_CONTINUE)
+        if (dngFilePath.isEmpty())
         {
-            return ret;
+            dngFilePath = QString(inputInfo.completeBaseName() + QLatin1String(".dng"));
         }
 
-        qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: DNG memory allocation and initialization";
+        QFileInfo  outputInfo(dngFilePath);
+        QByteArray rawData;
+        QScopedPointer<DRawInfo> identify(new DRawInfo);
+        QScopedPointer<DRawInfo> identifyMake(new DRawInfo);
+
+        // -----------------------------------------------------------------------------------------
+
+        qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Loading RAW data from " << inputInfo.fileName() ;
+
+        QPointer<DRawDecoder> rawProcessor(new DRawDecoder);
+
+        if (!rawProcessor->rawFileIdentify(*identifyMake.data(), inputFile()))
+        {
+            qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Reading RAW file failed. Aborted..." ;
+
+            return PROCESS_FAILED;
+        }
+
+        dng_rect activeArea;
+
+        // TODO: need to get correct default crop size to avoid artifacts at the borders
+
+        int activeWidth  = 0;
+        int activeHeight = 0;
+        int outputHeight = 0;
+        int outputWidth  = 0;
+
+        if ((identifyMake->orientation == 5) || (identifyMake->orientation == 6))
+        {
+            outputHeight = identifyMake->outputSize.width();
+            outputWidth  = identifyMake->outputSize.height();
+        }
+        else
+        {
+            outputHeight = identifyMake->outputSize.height();
+            outputWidth  = identifyMake->outputSize.width();
+        }
+
+        if (!rawProcessor->extractRAWData(inputFile(), rawData, *identify, 0))
+        {
+            qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Loading RAW data failed. Aborted..." ;
+
+            return FILE_NOT_SUPPORTED;
+        }
+
+        if (d->cancel)
+        {
+            return PROCESS_CANCELED;
+        }
+
+        qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Raw data loaded:" ;
+        qCDebug(DIGIKAM_GENERAL_LOG) << "--- Data Size:     " << rawData.size() << " bytes";
+        qCDebug(DIGIKAM_GENERAL_LOG) << "--- Date:          " << identify->dateTime.toString(Qt::ISODate);
+        qCDebug(DIGIKAM_GENERAL_LOG) << "--- Make:          " << identify->make;
+        qCDebug(DIGIKAM_GENERAL_LOG) << "--- Model:         " << identify->model;
+        qCDebug(DIGIKAM_GENERAL_LOG) << "--- ImageSize:     " << identify->imageSize.width()  << "x" << identify->imageSize.height();
+        qCDebug(DIGIKAM_GENERAL_LOG) << "--- FullSize:      " << identify->fullSize.width()   << "x" << identify->fullSize.height();
+        qCDebug(DIGIKAM_GENERAL_LOG) << "--- OutputSize:    " << identify->outputSize.width() << "x" << identify->outputSize.height();
+        qCDebug(DIGIKAM_GENERAL_LOG) << "--- Orientation:   " << identify->orientation;
+        qCDebug(DIGIKAM_GENERAL_LOG) << "--- Top margin:    " << identify->topMargin;
+        qCDebug(DIGIKAM_GENERAL_LOG) << "--- Left margin:   " << identify->leftMargin;
+        qCDebug(DIGIKAM_GENERAL_LOG) << "--- Filter:        " << identify->filterPattern;
+        qCDebug(DIGIKAM_GENERAL_LOG) << "--- Colors:        " << identify->rawColors;
+        qCDebug(DIGIKAM_GENERAL_LOG) << "--- Black:         " << identify->blackPoint;
+        qCDebug(DIGIKAM_GENERAL_LOG) << "--- White:         " << identify->whitePoint;
+        qCDebug(DIGIKAM_GENERAL_LOG) << "--- CAM->XYZ:" ;
+
+        QString matrixVal;
+
+        for (int i = 0 ; i < 4 ; ++i)
+        {
+            qCDebug(DIGIKAM_GENERAL_LOG)
+                     << "                   "
+                     << QString().asprintf("%03.4f  %03.4f  %03.4f", identify->cameraXYZMatrix[i][0],
+                                                                     identify->cameraXYZMatrix[i][1],
+                                                                     identify->cameraXYZMatrix[i][2]);
+        }
+
+        // Check if CFA layout is supported by DNG SDK.
+
+        Private::DNGBayerPattern bayerPattern = Private::Unknown;
+        uint32 filter                         = 0;
+        bool fujiRotate90                     = false;
+
+        // Standard bayer layouts
+
+        if      (identify->filterPattern == QLatin1String("GRBGGRBGGRBGGRBG"))
+        {
+            bayerPattern = Private::Standard;
+            filter       = 0;
+        }
+        else if (identify->filterPattern == QLatin1String("RGGBRGGBRGGBRGGB"))
+        {
+            bayerPattern = Private::Standard;
+            filter       = 1;
+        }
+        else if (identify->filterPattern == QLatin1String("BGGRBGGRBGGRBGGR"))
+        {
+            bayerPattern = Private::Standard;
+            filter       = 2;
+        }
+        else if (identify->filterPattern == QLatin1String("GBRGGBRGGBRGGBRG"))
+        {
+            bayerPattern = Private::Standard;
+            filter       = 3;
+        }
+        else if ((identify->filterPattern      == QLatin1String("RGBGRGBGRGBGRGBG")) &&
+                 (identifyMake->make.toUpper() == QLatin1String("FUJIFILM")))
+        {
+            // Fuji layouts
+
+            bayerPattern = Private::Fuji;
+            fujiRotate90 = false;
+            filter       = 0;
+        }
+        else if ((identify->filterPattern      == QLatin1String("RBGGBRGGRBGGBRGG")) &&
+                 (identifyMake->make.toUpper() == QLatin1String("FUJIFILM")))
+        {
+            // Fuji layouts
+
+            bayerPattern = Private::Fuji;
+            fujiRotate90 = true;
+            filter       = 0;
+        }
+        else if ((identify->filterPattern      == QLatin1String("GGGGBRGGGGRBGGGG")) &&
+                 (identifyMake->make.toUpper() == QLatin1String("FUJIFILM")))
+        {
+            // Fuji layouts
+
+            bayerPattern = Private::Fuji6x6;
+            fujiRotate90 = false;
+            filter       = 1;
+        }
+        else if ((identify->rawColors == 3)                 &&
+                 (identify->filterPattern.isEmpty())        &&
+/*
+                 (identify->filterPattern == QString(""))   &&
+*/
+                 ((uint32)rawData.size() == identify->outputSize.width() * identify->outputSize.height() * 3 * sizeof(uint16)))
+        {
+            bayerPattern = Private::LinearRaw;
+        }
+        else if (identify->rawColors == 4)           // Four color sensors
+        {
+            bayerPattern = Private::FourColor;
+
+            if (identify->filterPattern.length() != 16)
+            {
+                qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Bayer mosaic not supported. Aborted..." ;
+
+                return FILE_NOT_SUPPORTED;
+            }
+
+            for (int i = 0 ; i < 16 ; ++i)
+            {
+                filter = filter >> 2;
+
+                if      (identify->filterPattern[i] == QLatin1Char('G'))
+                {
+                    filter |= 0x00000000;
+                }
+                else if (identify->filterPattern[i] == QLatin1Char('M'))
+                {
+                    filter |= 0x40000000;
+                }
+                else if (identify->filterPattern[i] == QLatin1Char('C'))
+                {
+                    filter |= 0x80000000;
+                }
+                else if (identify->filterPattern[i] == QLatin1Char('Y'))
+                {
+                    filter |= 0xC0000000;
+                }
+                else
+                {
+                    qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Bayer mosaic not supported. Aborted..." ;
+
+                    return FILE_NOT_SUPPORTED;
+                }
+            }
+        }
+        else
+        {
+            qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Bayer mosaic not supported. Aborted..." ;
+
+            return FILE_NOT_SUPPORTED;
+        }
+
+        if (fujiRotate90)
+        {
+            if (!d->fujiRotate(rawData, *identify))
+            {
+                qCDebug(DIGIKAM_GENERAL_LOG) << "Can not rotate fuji image. Aborted...";
+
+                return PROCESS_FAILED;
+            }
+
+            int tmp      = outputWidth;
+            outputWidth  = outputHeight;
+            outputHeight = tmp;
+        }
+
+        activeArea   = dng_rect(identify->outputSize.height(), identify->outputSize.width());
+        activeWidth  = identify->outputSize.width();
+        activeHeight = identify->outputSize.height();
+
+        // Check if number of Raw Color components is supported.
+
+        if ((identify->rawColors != 3) && (identify->rawColors != 4))
+        {
+            qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Number of Raw color components not supported. Aborted..." ;
+
+            return PROCESS_FAILED;
+        }
+
+        int width  = identify->outputSize.width();
+        int height = identify->outputSize.height();
+
+/*
+        // NOTE: code to hack RAW data extraction
+
+        QString   rawdataFilePath(inputInfo.completeBaseName() + QString(".dat"));
+        QFileInfo rawdataInfo(rawdataFilePath);
+
+        QFile rawdataFile(rawdataFilePath);
+
+        if (!rawdataFile.open(QIODevice::WriteOnly))
+        {
+            qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Cannot open file to write RAW data. Aborted..." ;
+            return PROCESS_FAILED;
+        }
+
+        QDataStream rawdataStream(&rawdataFile);
+        rawdataStream.writeRawData(rawData.data(), rawData.size());
+        rawdataFile.close();
+*/
+        // -----------------------------------------------------------------------------------------
+
+        if (d->cancel)
+        {
+            return PROCESS_CANCELED;
+        }
+
+        qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: DNG memory allocation and initialization" ;
 
         dng_memory_allocator memalloc(gDefaultDNGMemoryAllocator);
 
-        dng_rect rect(d->height, d->width);
+        dng_rect rect(height, width);
         DNGWriterHost host(d, &memalloc);
 
         host.SetSaveDNGVersion(dngVersion_SaveDefault);
         host.SetSaveLinearDNG(false);
         host.SetKeepOriginalFile(true);
 
-        AutoPtr<dng_image> image(new dng_simple_image(rect,
-                                                      (d->bayerPattern == Private::LinearRaw) ? 3 : 1,
-                                                      ttShort,
-                                                      memalloc));
+        AutoPtr<dng_image> image(new dng_simple_image(rect, (bayerPattern == Private::LinearRaw) ? 3 : 1, ttShort, memalloc));
 
         if (d->cancel)
         {
-            d->clearMemory();
             return PROCESS_CANCELED;
         }
 
@@ -75,18 +313,17 @@ int DNGWriter::convert()
 
         buffer.fArea       = rect;
         buffer.fPlane      = 0;
-        buffer.fPlanes     = (d->bayerPattern == Private::LinearRaw) ? 3 : 1;
-        buffer.fRowStep    = buffer.fPlanes * d->width;
+        buffer.fPlanes     = (bayerPattern == Private::LinearRaw) ? 3 : 1;
+        buffer.fRowStep    = buffer.fPlanes * width;
         buffer.fColStep    = buffer.fPlanes;
         buffer.fPlaneStep  = 1;
         buffer.fPixelType  = ttShort;
         buffer.fPixelSize  = TagTypeSize(ttShort);
-        buffer.fData       = d->rawData.data();
+        buffer.fData       = rawData.data();
         image->Put(buffer);
 
         if (d->cancel)
         {
-            d->clearMemory();
             return PROCESS_CANCELED;
         }
 
@@ -96,25 +333,25 @@ int DNGWriter::convert()
 
         AutoPtr<dng_negative> negative(host.Make_dng_negative());
 
-        negative->SetDefaultScale(dng_urational(d->outputWidth,  d->activeWidth),
-                                  dng_urational(d->outputHeight, d->activeHeight));
+        negative->SetDefaultScale(dng_urational(outputWidth,  activeWidth),
+                                  dng_urational(outputHeight, activeHeight));
 
-        if (d->bayerPattern != Private::LinearRaw)
+        if (bayerPattern != Private::LinearRaw)
         {
             negative->SetDefaultCropOrigin(8, 8);
-            negative->SetDefaultCropSize(d->activeWidth - 16, d->activeHeight - 16);
+            negative->SetDefaultCropSize(activeWidth - 16, activeHeight - 16);
         }
         else
         {
             negative->SetDefaultCropOrigin(0, 0);
-            negative->SetDefaultCropSize(d->activeWidth, d->activeHeight);
+            negative->SetDefaultCropSize(activeWidth, activeHeight);
         }
 
-        negative->SetActiveArea(d->activeArea);
-        negative->SetModelName(d->identify->model.toLatin1().constData());
-        negative->SetLocalName(QString::fromUtf8("%1 %2").arg(d->identify->make, d->identify->model).toLatin1().constData());
-        negative->SetOriginalRawFileName(d->inputInfo.fileName().toLatin1().constData());
-        negative->SetColorChannels(d->identify->rawColors);
+        negative->SetActiveArea(activeArea);
+        negative->SetModelName(identify->model.toLatin1().constData());
+        negative->SetLocalName(QString::fromUtf8("%1 %2").arg(identify->make, identify->model).toLatin1().constData());
+        negative->SetOriginalRawFileName(inputInfo.fileName().toLatin1().constData());
+        negative->SetColorChannels(identify->rawColors);
 
         ColorKeyCode colorCodes[4] =
         {
@@ -124,29 +361,29 @@ int DNGWriter::convert()
             colorKeyMaxEnum
         };
 
-        for (int i = 0 ; i < qMax(4, d->identify->colorKeys.length()) ; ++i)
+        for (int i = 0 ; i < qMax(4, identify->colorKeys.length()) ; ++i)
         {
-            if      (d->identify->colorKeys[i] == QLatin1Char('R'))
+            if      (identify->colorKeys[i] == QLatin1Char('R'))
             {
                 colorCodes[i] = colorKeyRed;
             }
-            else if (d->identify->colorKeys[i] == QLatin1Char('G'))
+            else if (identify->colorKeys[i] == QLatin1Char('G'))
             {
                 colorCodes[i] = colorKeyGreen;
             }
-            else if (d->identify->colorKeys[i] == QLatin1Char('B'))
+            else if (identify->colorKeys[i] == QLatin1Char('B'))
             {
                 colorCodes[i] = colorKeyBlue;
             }
-            else if (d->identify->colorKeys[i] == QLatin1Char('C'))
+            else if (identify->colorKeys[i] == QLatin1Char('C'))
             {
                 colorCodes[i] = colorKeyCyan;
             }
-            else if (d->identify->colorKeys[i] == QLatin1Char('M'))
+            else if (identify->colorKeys[i] == QLatin1Char('M'))
             {
                 colorCodes[i] = colorKeyMagenta;
             }
-            else if (d->identify->colorKeys[i] == QLatin1Char('Y'))
+            else if (identify->colorKeys[i] == QLatin1Char('Y'))
             {
                 colorCodes[i] = colorKeyYellow;
             }
@@ -154,65 +391,58 @@ int DNGWriter::convert()
 
         negative->SetColorKeys(colorCodes[0], colorCodes[1], colorCodes[2], colorCodes[3]);
 
-        switch (d->bayerPattern)
+        switch (bayerPattern)
         {
             case Private::Standard:
-            {
+
                 // Standard bayer mosaicing. All work fine there.
                 // Bayer CCD mask: https://en.wikipedia.org/wiki/Bayer_filter
 
-                negative->SetBayerMosaic(d->filter);
+                negative->SetBayerMosaic(filter);
                 break;
-            }
 
             case Private::Fuji:
-            {
+
                 // TODO: Fuji is special case. Need to setup different bayer rules here.
                 // It do not work in all settings. Need indeep investiguations.
                 // Fuji superCCD: https://en.wikipedia.org/wiki/Super_CCD
 
-                negative->SetFujiMosaic(d->filter);
+                negative->SetFujiMosaic(filter);
                 break;
-            }
 
             case Private::Fuji6x6:
-            {
+
                 // TODO: Fuji is special case. Need to setup different bayer rules here.
                 // It do not work in all settings. Need indeep investiguations.
 
-                negative->SetFujiMosaic6x6(d->filter);
+                negative->SetFujiMosaic6x6(filter);
                 break;
-            }
 
             case Private::FourColor:
-            {
-                negative->SetQuadMosaic(d->filter);
+                negative->SetQuadMosaic(filter);
                 break;
-            }
 
             default:
-            {
                 break;
-            }
         }
 
-        negative->SetWhiteLevel(d->identify->whitePoint, 0);
-        negative->SetWhiteLevel(d->identify->whitePoint, 1);
-        negative->SetWhiteLevel(d->identify->whitePoint, 2);
-        negative->SetWhiteLevel(d->identify->whitePoint, 3);
+        negative->SetWhiteLevel(identify->whitePoint, 0);
+        negative->SetWhiteLevel(identify->whitePoint, 1);
+        negative->SetWhiteLevel(identify->whitePoint, 2);
+        negative->SetWhiteLevel(identify->whitePoint, 3);
 
         const dng_mosaic_info* const mosaicinfo = negative->GetMosaicInfo();
 
         if ((mosaicinfo != nullptr) && (mosaicinfo->fCFAPatternSize == dng_point(2, 2)))
         {
-            negative->SetQuadBlacks(d->identify->blackPoint + d->identify->blackPointCh[0],
-                                    d->identify->blackPoint + d->identify->blackPointCh[1],
-                                    d->identify->blackPoint + d->identify->blackPointCh[2],
-                                    d->identify->blackPoint + d->identify->blackPointCh[3]);
+            negative->SetQuadBlacks(identify->blackPoint + identify->blackPointCh[0],
+                                    identify->blackPoint + identify->blackPointCh[1],
+                                    identify->blackPoint + identify->blackPointCh[2],
+                                    identify->blackPoint + identify->blackPointCh[3]);
         }
         else
         {
-            negative->SetBlackLevel(d->identify->blackPoint, 0);
+            negative->SetBlackLevel(identify->blackPoint, 0);
         }
 
         negative->SetBaselineExposure(0.0);
@@ -221,37 +451,27 @@ int DNGWriter::convert()
 
         dng_orientation orientation;
 
-        switch (d->identify->orientation)
+        switch (identify->orientation)
         {
             case DRawInfo::ORIENTATION_180:
-            {
                 orientation = dng_orientation::Rotate180();
                 break;
-            }
 
             case DRawInfo::ORIENTATION_Mirror90CCW:
-            {
                 orientation = dng_orientation::Mirror90CCW();
                 break;
-            }
 
             case DRawInfo::ORIENTATION_90CCW:
-            {
                 orientation = dng_orientation::Rotate90CCW();
                 break;
-            }
 
             case DRawInfo::ORIENTATION_90CW:
-            {
                 orientation = dng_orientation::Rotate90CW();
                 break;
-            }
 
             default:   // ORIENTATION_NONE
-            {
                 orientation = dng_orientation::Normal();
                 break;
-            }
         }
 
         negative->SetBaseOrientation(orientation);
@@ -263,95 +483,92 @@ int DNGWriter::convert()
         // -------------------------------------------------------------------------------
 
         AutoPtr<dng_camera_profile> prof(new dng_camera_profile);
-        prof->SetName(QString::fromUtf8("%1 %2").arg(d->identify->make, d->identify->model).toLatin1().constData());
+        prof->SetName(QString::fromUtf8("%1 %2").arg(identify->make, identify->model).toLatin1().constData());
 
         // Set Camera->XYZ Color matrix as profile.
 
         dng_matrix matrix;
 
-        switch (d->identify->rawColors)
+        switch (identify->rawColors)
         {
             case 3:
-            {
-                dng_matrix_3by3 camXYZ;
-                camXYZ[0][0] = d->identify->cameraXYZMatrix[0][0];
-                camXYZ[0][1] = d->identify->cameraXYZMatrix[0][1];
-                camXYZ[0][2] = d->identify->cameraXYZMatrix[0][2];
-                camXYZ[1][0] = d->identify->cameraXYZMatrix[1][0];
-                camXYZ[1][1] = d->identify->cameraXYZMatrix[1][1];
-                camXYZ[1][2] = d->identify->cameraXYZMatrix[1][2];
-                camXYZ[2][0] = d->identify->cameraXYZMatrix[2][0];
-                camXYZ[2][1] = d->identify->cameraXYZMatrix[2][1];
-                camXYZ[2][2] = d->identify->cameraXYZMatrix[2][2];
-
-                if (camXYZ.MaxEntry() == 0.0)
                 {
-                    qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: camera XYZ Matrix is null : camera not supported";
-                    d->clearMemory();
-                    return FILE_NOT_SUPPORTED;
+                    dng_matrix_3by3 camXYZ;
+                    camXYZ[0][0] = identify->cameraXYZMatrix[0][0];
+                    camXYZ[0][1] = identify->cameraXYZMatrix[0][1];
+                    camXYZ[0][2] = identify->cameraXYZMatrix[0][2];
+                    camXYZ[1][0] = identify->cameraXYZMatrix[1][0];
+                    camXYZ[1][1] = identify->cameraXYZMatrix[1][1];
+                    camXYZ[1][2] = identify->cameraXYZMatrix[1][2];
+                    camXYZ[2][0] = identify->cameraXYZMatrix[2][0];
+                    camXYZ[2][1] = identify->cameraXYZMatrix[2][1];
+                    camXYZ[2][2] = identify->cameraXYZMatrix[2][2];
+
+                    if (camXYZ.MaxEntry() == 0.0)
+                    {
+                        qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: camera XYZ Matrix is null : camera not supported" ;
+                        return FILE_NOT_SUPPORTED;
+                    }
+
+                    matrix = camXYZ;
+
+                    break;
                 }
-
-                matrix = camXYZ;
-
-                break;
-            }
 
             case 4:
-            {
-                dng_matrix_4by3 camXYZ;
-                camXYZ[0][0] = d->identify->cameraXYZMatrix[0][0];
-                camXYZ[0][1] = d->identify->cameraXYZMatrix[0][1];
-                camXYZ[0][2] = d->identify->cameraXYZMatrix[0][2];
-                camXYZ[1][0] = d->identify->cameraXYZMatrix[1][0];
-                camXYZ[1][1] = d->identify->cameraXYZMatrix[1][1];
-                camXYZ[1][2] = d->identify->cameraXYZMatrix[1][2];
-                camXYZ[2][0] = d->identify->cameraXYZMatrix[2][0];
-                camXYZ[2][1] = d->identify->cameraXYZMatrix[2][1];
-                camXYZ[2][2] = d->identify->cameraXYZMatrix[2][2];
-                camXYZ[3][0] = d->identify->cameraXYZMatrix[3][0];
-                camXYZ[3][1] = d->identify->cameraXYZMatrix[3][1];
-                camXYZ[3][2] = d->identify->cameraXYZMatrix[3][2];
-
-                if (camXYZ.MaxEntry() == 0.0)
                 {
-                    qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: camera XYZ Matrix is null : camera not supported";
-                    d->clearMemory();
-                    return FILE_NOT_SUPPORTED;
+                    dng_matrix_4by3 camXYZ;
+                    camXYZ[0][0] = identify->cameraXYZMatrix[0][0];
+                    camXYZ[0][1] = identify->cameraXYZMatrix[0][1];
+                    camXYZ[0][2] = identify->cameraXYZMatrix[0][2];
+                    camXYZ[1][0] = identify->cameraXYZMatrix[1][0];
+                    camXYZ[1][1] = identify->cameraXYZMatrix[1][1];
+                    camXYZ[1][2] = identify->cameraXYZMatrix[1][2];
+                    camXYZ[2][0] = identify->cameraXYZMatrix[2][0];
+                    camXYZ[2][1] = identify->cameraXYZMatrix[2][1];
+                    camXYZ[2][2] = identify->cameraXYZMatrix[2][2];
+                    camXYZ[3][0] = identify->cameraXYZMatrix[3][0];
+                    camXYZ[3][1] = identify->cameraXYZMatrix[3][1];
+                    camXYZ[3][2] = identify->cameraXYZMatrix[3][2];
+
+                    if (camXYZ.MaxEntry() == 0.0)
+                    {
+                        qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: camera XYZ Matrix is null : camera not supported" ;
+                        return FILE_NOT_SUPPORTED;
+                    }
+
+                    matrix = camXYZ;
+
+                    break;
                 }
-
-                matrix = camXYZ;
-
-                break;
-            }
         }
 
         prof->SetColorMatrix1((dng_matrix) matrix);
         prof->SetCalibrationIlluminant1(lsD65);
         negative->AddProfile(prof);
 
-        dng_vector camNeutral(d->identify->rawColors);
+        dng_vector camNeutral(identify->rawColors);
 
-        for (int i = 0 ; i < d->identify->rawColors ; ++i)
+        for (int i = 0 ; i < identify->rawColors ; ++i)
         {
-            camNeutral[i] = 1.0 / d->identify->cameraMult[i];
+            camNeutral[i] = 1.0 / identify->cameraMult[i];
         }
 
         negative->SetCameraNeutral(camNeutral);
 
         if (d->cancel)
         {
-            d->clearMemory();
             return PROCESS_CANCELED;
         }
 
         // -----------------------------------------------------------------------------------------
 
-        qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Updating metadata to DNG Negative";
+        qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Updating metadata to DNG Negative" ;
 
         dng_date_time_info orgDateTimeInfo;
         dng_exif* const exif = negative->GetExif();
-        exif->fModel.Set_ASCII(d->identify->model.toLatin1().constData());
-        exif->fMake.Set_ASCII(d->identify->make.toLatin1().constData());
+        exif->fModel.Set_ASCII(identify->model.toLatin1().constData());
+        exif->fMake.Set_ASCII(identify->make.toLatin1().constData());
 
         QString   str;
         QScopedPointer<DMetadata> meta(new DMetadata);
@@ -572,33 +789,23 @@ int DNGWriter::convert()
                 switch (val)
                 {
                     case 1:
-                    {
                         exif->fExposureProgram = 2;
                         break;
-                    }
 
                     case 2:
-                    {
                         exif->fExposureProgram = 4;
                         break;
-                    }
 
                     case 3:
-                    {
                         exif->fExposureProgram = 3;
                         break;
-                    }
 
                     case 4:
-                    {
                         exif->fExposureProgram = 1;
                         break;
-                    }
 
                     default:
-                    {
                         break;
-                    }
                 }
             }
 
@@ -607,39 +814,27 @@ int DNGWriter::convert()
                 switch (val)
                 {
                     case 1:
-                    {
                         exif->fMeteringMode = 3;
                         break;
-                    }
 
                     case 2:
-                    {
                         exif->fMeteringMode = 1;
                         break;
-                    }
 
                     case 3:
-                    {
                         exif->fMeteringMode = 5;
                         break;
-                    }
 
                     case 4:
-                    {
                         exif->fMeteringMode = 6;
                         break;
-                    }
 
                     case 5:
-                    {
                         exif->fMeteringMode = 2;
                         break;
-                    }
 
                     default:
-                    {
                         break;
-                    }
                 }
             }
 
@@ -649,7 +844,6 @@ int DNGWriter::convert()
             if (meta->getExifTagRational("Exif.CanonCs.Lens", num, den, 1))             exif->fLensInfo[0]              = dng_urational(num, canonLensUnits);
             if (meta->getExifTagRational("Exif.Canon.FocalLength", num, den, 1))        exif->fFocalLength              = dng_urational(num, canonLensUnits);
             long canonLensType = 65535;
-
             if (meta->getExifTagLong("Exif.CanonCs.LensType", canonLensType))           exif->fLensID.Set_ASCII((QString::fromUtf8("%1").arg(canonLensType)).toLatin1().constData());
             str = meta->getExifTagString("Exif.Canon.LensModel");
 
@@ -782,8 +976,8 @@ int DNGWriter::convert()
                 stream.SetReadPosition(0);
                 stream.Get(block->Buffer(), mkrnts.size());
 
-                if ((d->identifyMake->make != QLatin1String("Canon")) &&
-                    (d->identifyMake->make != QLatin1String("Panasonic")))
+                if ((identifyMake->make != QLatin1String("Canon")) &&
+                    (identifyMake->make != QLatin1String("Panasonic")))
                 {
                     negative->SetMakerNote(block);
                     negative->SetMakerNoteSafety(true);
@@ -815,7 +1009,7 @@ int DNGWriter::convert()
 
         if (d->backupOriginalRawFile)
         {
-            qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Backup Original RAW file (" << d->inputInfo.size() << " bytes)";
+            qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Backup Original RAW file (" << inputInfo.size() << " bytes)";
 
             QFileInfo originalFileInfo(inputFile());
 
@@ -824,7 +1018,6 @@ int DNGWriter::convert()
             if (!originalFile.open(QIODevice::ReadOnly))
             {
                 qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Cannot open original RAW file to backup in DNG. Aborted...";
-                d->clearMemory();
 
                 return PROCESS_FAILED;
             }
@@ -846,7 +1039,6 @@ int DNGWriter::convert()
             if (!compressedFile.open())
             {
                 qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Cannot open temporary file to write Zipped Raw data. Aborted...";
-                d->clearMemory();
 
                 return PROCESS_FAILED;
             }
@@ -907,13 +1099,12 @@ int DNGWriter::convert()
 
         if (d->cancel)
         {
-            d->clearMemory();
             return PROCESS_CANCELED;
         }
 
         // -----------------------------------------------------------------------------------------
 
-        qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Build DNG Negative";
+        qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Build DNG Negative" ;
 
         // Assign Raw image data.
 
@@ -932,7 +1123,6 @@ int DNGWriter::convert()
 
         if (d->cancel)
         {
-            d->clearMemory();
             return PROCESS_CANCELED;
         }
 
@@ -944,7 +1134,7 @@ int DNGWriter::convert()
 
         if (d->previewMode != DNGWriter::NONE)
         {
-            qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: DNG preview image creation";
+            qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: DNG preview image creation" ;
 
             dng_jpeg_preview* jpeg_preview  = new dng_jpeg_preview();
             jpeg_preview->fInfo.fApplicationName.Set_ASCII(QString::fromLatin1("digiKam").toLatin1().constData());
@@ -952,7 +1142,7 @@ int DNGWriter::convert()
             jpeg_preview->fInfo.fDateTime   = orgDateTimeInfo.Encode_ISO_8601();
             jpeg_preview->fInfo.fColorSpace = previewColorSpace_sRGB;
 
-            negRender.SetMaximumSize(d->previewMode == MEDIUM ? 1280 : d->width);
+            negRender.SetMaximumSize(d->previewMode == MEDIUM ? 1280 : width);
             AutoPtr<dng_image> negImage(negRender.Render());
             dng_image_writer jpegWriter;
             jpegWriter.EncodeJPEGPreview(host, *negImage.Get(), *jpeg_preview, 5);
@@ -962,13 +1152,12 @@ int DNGWriter::convert()
 
         if (d->cancel)
         {
-            d->clearMemory();
             return PROCESS_CANCELED;
         }
 
         // -----------------------------------------------------------------------------------------
 
-        qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: DNG thumbnail creation";
+        qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: DNG thumbnail creation" ;
 
         dng_image_preview* thumbnail         = new dng_image_preview();
         thumbnail->fInfo.fApplicationName    = jpeg_preview->fInfo.fApplicationName;
@@ -983,16 +1172,15 @@ int DNGWriter::convert()
 
         if (d->cancel)
         {
-            d->clearMemory();
             return PROCESS_CANCELED;
         }
 
         // -----------------------------------------------------------------------------------------
 
-        qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Creating DNG file " << d->outputInfo.fileName();
+        qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Creating DNG file " << outputInfo.fileName() ;
 
         dng_image_writer writer;
-        dng_file_stream filestream(QFile::encodeName(d->dngFilePath).constData(), true);
+        dng_file_stream filestream(QFile::encodeName(dngFilePath).constData(), true);
 
         writer.WriteDNG(host,
                         filestream,
@@ -1007,9 +1195,9 @@ int DNGWriter::convert()
         // See bug #204437 and #210371, and write XMP Sidecar if necessary
         // We disable writing to RAW files, see bug #381432
 /*
-        if (meta->load(d->dngFilePath))
+        if (meta->load(dngFilePath))
         {
-            if (d->inputInfo.suffix().toUpper() == QLatin1String("ORF"))
+            if (inputInfo.suffix().toUpper() == QLatin1String("ORF"))
             {
                 qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: cleanup makernotes using Exiv2" ;
 
@@ -1034,7 +1222,7 @@ int DNGWriter::convert()
 
             qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Setting modification date from meta data: " << date.toString();
 
-            DFileOperations::setModificationTime(d->dngFilePath, date);
+            DFileOperations::setModificationTime(dngFilePath, date);
         }
     }
 
@@ -1042,7 +1230,6 @@ int DNGWriter::convert()
     {
         int ret = exception.ErrorCode();
         qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: DNG SDK exception code (" << ret << "):" << d->dngErrorCodeToString(ret);
-        d->clearMemory();
 
         return DNG_SDK_INTERNAL_ERROR;
     }
@@ -1050,13 +1237,11 @@ int DNGWriter::convert()
     catch (...)
     {
         qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: DNG SDK exception code unknow";
-        d->clearMemory();
 
         return DNG_SDK_INTERNAL_ERROR;
     }
 
     qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: DNG conversion complete...";
-    d->clearMemory();
 
     return PROCESS_COMPLETE;
 }

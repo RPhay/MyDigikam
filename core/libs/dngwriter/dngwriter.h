@@ -50,7 +50,6 @@ public:
 
     enum ConvertError
     {
-        PROCESS_CONTINUE       =  1,        ///< One stage done with no error.
         PROCESS_COMPLETE       =  0,        ///< All stages done.
         PROCESS_FAILED         = -1,        ///< A failure happen while processing.
         PROCESS_CANCELED       = -2,        ///< User has canceled processing.
@@ -100,9 +99,6 @@ private:
     // Disable
     DNGWriter(const DNGWriter&)            = delete;
     DNGWriter& operator=(const DNGWriter&) = delete;
-    
-    int extractRawStage();
-    int mosaicIdentStage();
 
 private:
 
