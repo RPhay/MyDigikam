@@ -124,6 +124,9 @@ public:
 
     // DNG processing stages.
 
+    int identMosaic(DRawInfo* const identify,
+                    DRawInfo* const identifyMake);
+
     int createNegative(AutoPtr<dng_negative>& negative,
                        DRawInfo* const identify);
 
@@ -161,6 +164,7 @@ public:
     QString             inputFile;
     QString             outputFile;
     QString             dngFilePath;
+    QByteArray          rawData;
 
     QFileInfo           inputInfo;
     QFileInfo           outputInfo;

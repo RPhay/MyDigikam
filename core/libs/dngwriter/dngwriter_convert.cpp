@@ -52,7 +52,6 @@ int DNGWriter::convert()
         }
 
         d->outputInfo    = QFileInfo(d->dngFilePath);
-        QByteArray rawData;
         QScopedPointer<DRawInfo> identify(new DRawInfo);
         QScopedPointer<DRawInfo> identifyMake(new DRawInfo);
 
@@ -82,7 +81,7 @@ int DNGWriter::convert()
             d->outputWidth  = identifyMake->outputSize.width();
         }
 
-        if (!rawProcessor->extractRAWData(inputFile(), rawData, *identify, 0))
+        if (!rawProcessor->extractRAWData(inputFile(), d->rawData, *identify, 0))
         {
             qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Loading RAW data failed. Aborted..." ;
 
@@ -95,7 +94,7 @@ int DNGWriter::convert()
         }
 
         qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Raw data loaded:" ;
-        qCDebug(DIGIKAM_GENERAL_LOG) << "--- Data Size:     " << rawData.size() << " bytes";
+        qCDebug(DIGIKAM_GENERAL_LOG) << "--- Data Size:     " << d->rawData.size() << " bytes";
         qCDebug(DIGIKAM_GENERAL_LOG) << "--- Date:          " << identify->dateTime.toString(Qt::ISODate);
         qCDebug(DIGIKAM_GENERAL_LOG) << "--- Make:          " << identify->make;
         qCDebug(DIGIKAM_GENERAL_LOG) << "--- Model:         " << identify->model;
@@ -109,165 +108,18 @@ int DNGWriter::convert()
         qCDebug(DIGIKAM_GENERAL_LOG) << "--- Colors:        " << identify->rawColors;
         qCDebug(DIGIKAM_GENERAL_LOG) << "--- Black:         " << identify->blackPoint;
         qCDebug(DIGIKAM_GENERAL_LOG) << "--- White:         " << identify->whitePoint;
-        qCDebug(DIGIKAM_GENERAL_LOG) << "--- CAM->XYZ:" ;
+        qCDebug(DIGIKAM_GENERAL_LOG) << "--- CAM->XYZ:";
 
-        QString matrixVal;
-
-        for (int i = 0 ; i < 4 ; ++i)
-        {
-            qCDebug(DIGIKAM_GENERAL_LOG)
-                     << "                   "
-                     << QString().asprintf("%03.4f  %03.4f  %03.4f", identify->cameraXYZMatrix[i][0],
-                                                                     identify->cameraXYZMatrix[i][1],
-                                                                     identify->cameraXYZMatrix[i][2]);
-        }
-
-        // Check if CFA layout is supported by DNG SDK.
-
-        bool fujiRotate90 = false;
-
-        // Standard bayer layouts
-
-        if      (identify->filterPattern == QLatin1String("GRBGGRBGGRBGGRBG"))
-        {
-            d->bayerPattern = Private::Standard;
-            d->filter       = 0;
-        }
-        else if (identify->filterPattern == QLatin1String("RGGBRGGBRGGBRGGB"))
-        {
-            d->bayerPattern = Private::Standard;
-            d->filter       = 1;
-        }
-        else if (identify->filterPattern == QLatin1String("BGGRBGGRBGGRBGGR"))
-        {
-            d->bayerPattern = Private::Standard;
-            d->filter       = 2;
-        }
-        else if (identify->filterPattern == QLatin1String("GBRGGBRGGBRGGBRG"))
-        {
-            d->bayerPattern = Private::Standard;
-            d->filter       = 3;
-        }
-        else if ((identify->filterPattern      == QLatin1String("RGBGRGBGRGBGRGBG")) &&
-                 (identifyMake->make.toUpper() == QLatin1String("FUJIFILM")))
-        {
-            // Fuji layouts
-
-            d->bayerPattern = Private::Fuji;
-            fujiRotate90 = false;
-            d->filter       = 0;
-        }
-        else if ((identify->filterPattern      == QLatin1String("RBGGBRGGRBGGBRGG")) &&
-                 (identifyMake->make.toUpper() == QLatin1String("FUJIFILM")))
-        {
-            // Fuji layouts
-
-            d->bayerPattern = Private::Fuji;
-            fujiRotate90 = true;
-            d->filter       = 0;
-        }
-        else if ((identify->filterPattern      == QLatin1String("GGGGBRGGGGRBGGGG")) &&
-                 (identifyMake->make.toUpper() == QLatin1String("FUJIFILM")))
-        {
-            // Fuji layouts
-
-            d->bayerPattern = Private::Fuji6x6;
-            fujiRotate90 = false;
-            d->filter       = 1;
-        }
-        else if ((identify->rawColors == 3)                 &&
-                 (identify->filterPattern.isEmpty())        &&
-/*
-                 (identify->filterPattern == QString(""))   &&
-*/
-                 ((uint32)rawData.size() == identify->outputSize.width() * identify->outputSize.height() * 3 * sizeof(uint16)))
-        {
-            d->bayerPattern = Private::LinearRaw;
-        }
-        else if (identify->rawColors == 4)           // Four color sensors
-        {
-            d->bayerPattern = Private::FourColor;
-
-            if (identify->filterPattern.length() != 16)
-            {
-                qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Bayer mosaic not supported. Aborted..." ;
-
-                return FILE_NOT_SUPPORTED;
-            }
-
-            for (int i = 0 ; i < 16 ; ++i)
-            {
-                d->filter = d->filter >> 2;
-
-                if      (identify->filterPattern[i] == QLatin1Char('G'))
-                {
-                    d->filter |= 0x00000000;
-                }
-                else if (identify->filterPattern[i] == QLatin1Char('M'))
-                {
-                    d->filter |= 0x40000000;
-                }
-                else if (identify->filterPattern[i] == QLatin1Char('C'))
-                {
-                    d->filter |= 0x80000000;
-                }
-                else if (identify->filterPattern[i] == QLatin1Char('Y'))
-                {
-                    d->filter |= 0xC0000000;
-                }
-                else
-                {
-                    qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Bayer mosaic not supported. Aborted..." ;
-
-                    return FILE_NOT_SUPPORTED;
-                }
-            }
-        }
-        else
-        {
-            qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Bayer mosaic not supported. Aborted..." ;
-
-            return FILE_NOT_SUPPORTED;
-        }
-
-        if (fujiRotate90)
-        {
-            if (!d->fujiRotate(rawData, *identify))
-            {
-                qCDebug(DIGIKAM_GENERAL_LOG) << "Can not rotate fuji image. Aborted...";
-
-                return PROCESS_FAILED;
-            }
-
-            int tmp         = d->outputWidth;
-            d->outputWidth  = d->outputHeight;
-            d->outputHeight = tmp;
-        }
-
-        d->activeArea   = dng_rect(identify->outputSize.height(), identify->outputSize.width());
-        d->activeWidth  = identify->outputSize.width();
-        d->activeHeight = identify->outputSize.height();
-
-        // Check if number of Raw Color components is supported.
-
-        if ((identify->rawColors != 3) && (identify->rawColors != 4))
-        {
-            qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Number of Raw color components not supported. Aborted..." ;
-
-            return PROCESS_FAILED;
-        }
-
-        d->width  = identify->outputSize.width();
-        d->height = identify->outputSize.height();
-/*
-        debugExtractedRAWData(rawData);
-*/
         // -----------------------------------------------------------------------------------------
 
-        if (d->cancel)
+        ret = d->identMosaic(identify.get(), identifyMake.get());
+
+        if (ret != PROCESS_CONTINUE)
         {
-            return PROCESS_CANCELED;
+            return ret;
         }
+
+        // -----------------------------------------------------------------------------------------
 
         qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: DNG memory allocation and initialization" ;
 
@@ -299,7 +151,7 @@ int DNGWriter::convert()
         buffer.fPlaneStep  = 1;
         buffer.fPixelType  = ttShort;
         buffer.fPixelSize  = TagTypeSize(ttShort);
-        buffer.fData       = rawData.data();
+        buffer.fData       = d->rawData.data();
         image->Put(buffer);
 
         if (d->cancel)
