@@ -150,7 +150,6 @@ bool AlbumManager::setDatabase(const DbEngineParameters& params, bool priority, 
 
     if (!handler->checkDatabaseConnection())
     {
-
         databaseError = i18n("Failed to open the database.\n\n"
                              "You cannot use digiKam without a working database.\n"
                              "Please check the database settings in the next dialog.");
