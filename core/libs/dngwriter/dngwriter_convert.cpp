@@ -43,15 +43,15 @@ int DNGWriter::convert()
             return PROCESS_FAILED;
         }
 
-        d->inputInfo          = QFileInfo(inputFile());
-        QString   dngFilePath = outputFile();
+        d->inputInfo    = QFileInfo(inputFile());
+        d->dngFilePath  = outputFile();
 
-        if (dngFilePath.isEmpty())
+        if (d->dngFilePath.isEmpty())
         {
-            dngFilePath = QString(d->inputInfo.completeBaseName() + QLatin1String(".dng"));
+            d->dngFilePath = QString(d->inputInfo.completeBaseName() + QLatin1String(".dng"));
         }
 
-        QFileInfo  outputInfo(dngFilePath);
+        d->outputInfo    = QFileInfo(d->dngFilePath);
         QByteArray rawData;
         QScopedPointer<DRawInfo> identify(new DRawInfo);
         QScopedPointer<DRawInfo> identifyMake(new DRawInfo);
@@ -266,8 +266,8 @@ int DNGWriter::convert()
             return PROCESS_FAILED;
         }
 
-        int width  = identify->outputSize.width();
-        int height = identify->outputSize.height();
+        d->width  = identify->outputSize.width();
+        d->height = identify->outputSize.height();
 /*
         debugExtractedRAWData(rawData);
 */
@@ -282,7 +282,7 @@ int DNGWriter::convert()
 
         dng_memory_allocator memalloc(gDefaultDNGMemoryAllocator);
 
-        dng_rect rect(height, width);
+        dng_rect rect(d->height, d->width);
         DNGWriterHost host(d, &memalloc);
 
         host.SetSaveDNGVersion(dngVersion_SaveDefault);
@@ -303,7 +303,7 @@ int DNGWriter::convert()
         buffer.fArea       = rect;
         buffer.fPlane      = 0;
         buffer.fPlanes     = (bayerPattern == Private::LinearRaw) ? 3 : 1;
-        buffer.fRowStep    = buffer.fPlanes * width;
+        buffer.fRowStep    = buffer.fPlanes * d->width;
         buffer.fColStep    = buffer.fPlanes;
         buffer.fPlaneStep  = 1;
         buffer.fPixelType  = ttShort;
@@ -587,123 +587,11 @@ int DNGWriter::convert()
 
         // -----------------------------------------------------------------------------------------
 
-        qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Build DNG Negative" ;
+        ret = d->exportTarget(host, negative, image);
 
-        // Assign Raw image data.
-
-        negative->SetStage1Image(image);
-
-        // Compute linearized and range mapped image
-
-        negative->BuildStage2Image(host);
-
-        // Compute demosaiced image (used by preview and thumbnail)
-
-        negative->BuildStage3Image(host);
-
-        negative->SynchronizeMetadata();
-        negative->RebuildIPTC(true);
-
-        if (d->cancel)
+        if (ret != PROCESS_CONTINUE)
         {
-            return PROCESS_CANCELED;
-        }
-
-        // -----------------------------------------------------------------------------------------
-
-        dng_preview_list previewList;
-        dng_render negRender(host, *negative.Get());
-        dng_jpeg_preview* jpeg_preview = new dng_jpeg_preview();
-
-        if (d->previewMode != DNGWriter::NONE)
-        {
-            qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: DNG preview image creation" ;
-
-            dng_jpeg_preview* jpeg_preview  = new dng_jpeg_preview();
-            jpeg_preview->fInfo.fApplicationName.Set_ASCII(QString::fromLatin1("digiKam").toLatin1().constData());
-            jpeg_preview->fInfo.fApplicationVersion.Set_ASCII(digiKamVersion().toLatin1().constData());
-            jpeg_preview->fInfo.fDateTime   = d->orgDateTimeInfo.Encode_ISO_8601();
-            jpeg_preview->fInfo.fColorSpace = previewColorSpace_sRGB;
-
-            negRender.SetMaximumSize(d->previewMode == MEDIUM ? 1280 : width);
-            AutoPtr<dng_image> negImage(negRender.Render());
-            dng_image_writer jpegWriter;
-            jpegWriter.EncodeJPEGPreview(host, *negImage.Get(), *jpeg_preview, 5);
-            AutoPtr<dng_preview> jp(static_cast<dng_preview*>(jpeg_preview));
-            previewList.Append(jp);
-        }
-
-        if (d->cancel)
-        {
-            return PROCESS_CANCELED;
-        }
-
-        // -----------------------------------------------------------------------------------------
-
-        qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: DNG thumbnail creation" ;
-
-        dng_image_preview* thumbnail         = new dng_image_preview();
-        thumbnail->fInfo.fApplicationName    = jpeg_preview->fInfo.fApplicationName;
-        thumbnail->fInfo.fApplicationVersion = jpeg_preview->fInfo.fApplicationVersion;
-        thumbnail->fInfo.fDateTime           = jpeg_preview->fInfo.fDateTime;
-        thumbnail->fInfo.fColorSpace         = jpeg_preview->fInfo.fColorSpace;
-
-        negRender.SetMaximumSize(256);
-        thumbnail->fImage.Reset(negRender.Render());
-        AutoPtr<dng_preview> tn(static_cast<dng_preview*>(thumbnail));
-        previewList.Append(tn);
-
-        if (d->cancel)
-        {
-            return PROCESS_CANCELED;
-        }
-
-        // -----------------------------------------------------------------------------------------
-
-        qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Creating DNG file " << outputInfo.fileName() ;
-
-        dng_image_writer writer;
-        dng_file_stream filestream(QFile::encodeName(dngFilePath).constData(), true);
-
-        writer.WriteDNG(host,
-                        filestream,
-                        *negative.Get(),
-                        &previewList,
-                        dngVersion_SaveDefault,
-                        !d->jpegLossLessCompression
-                       );
-
-        // -----------------------------------------------------------------------------------------
-        // Metadata makernote cleanup using Exiv2 for some RAW file types
-        // See bug #204437 and #210371, and write XMP Sidecar if necessary
-        // We disable writing to RAW files, see bug #381432
-/*
-        if (meta->load(dngFilePath))
-        {
-            if (d->inputInfo.suffix().toUpper() == QLatin1String("ORF"))
-            {
-                qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: cleanup makernotes using Exiv2" ;
-
-                meta->setWriteDngFiles(true);
-                meta->removeExifTag("Exif.OlympusIp.BlackLevel");
-            }
-            else
-            {
-                // Don't touch DNG file and create XMP sidecar depending of host application settings.
-                meta->setWriteDngFiles(false);
-            }
-
-            meta->applyChanges();
-        }
-*/
-        // -----------------------------------------------------------------------------------------
-        // update modification time if desired
-
-        if (d->updateFileDate)
-        {
-            qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Setting modification date from meta data: " << d->fileDate.toString();
-
-            DFileOperations::setModificationTime(dngFilePath, d->fileDate);
+            return ret;
         }
     }
 

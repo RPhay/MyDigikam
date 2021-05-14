@@ -128,7 +128,13 @@ public:
     int backupRaw(DNGWriterHost& host,
                   AutoPtr<dng_negative>& negative);
 
+    int exportTarget(DNGWriterHost& host,
+                     AutoPtr<dng_negative>& negative,
+                     AutoPtr<dng_image>& image);
+
 public:
+
+    DNGWriter*          parent;
 
     bool                cancel;
     bool                jpegLossLessCompression;
@@ -136,16 +142,18 @@ public:
     bool                backupOriginalRawFile;
 
     int                 previewMode;
+    int                 width;
+    int                 height;
 
     QString             inputFile;
     QString             outputFile;
+    QString             dngFilePath;
 
     QFileInfo           inputInfo;
+    QFileInfo           outputInfo;
     QDateTime           fileDate;
 
     dng_date_time_info  orgDateTimeInfo;
-
-    DNGWriter*          parent;
 };
 
 } // namespace Digikam

@@ -43,7 +43,9 @@ namespace Digikam
 {
 
 DNGWriter::Private::Private(DNGWriter* const dd)
-    : parent(dd)
+    : parent(dd),
+      width (0),
+      height(0)
 {
     reset();
 }

@@ -306,6 +306,7 @@ set(libdngwriter_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/dngwriter_convert.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/dngwriter_metadata.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/dngwriter_backupraw.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/dngwriter_export.cpp
 )
 
 # Used by digikamcore
