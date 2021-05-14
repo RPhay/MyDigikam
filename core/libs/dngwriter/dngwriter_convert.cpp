@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2008-09-25
- * Description : a tool to convert RAW file to DNG
+ * Description : a tool to convert RAW file to DNG - Run Convertion stages.
  *
  * Copyright (C) 2008-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2010-2011 by Jens Mueller <tschenser at gmx dot de>
@@ -69,24 +69,17 @@ int DNGWriter::convert()
             return PROCESS_FAILED;
         }
 
-        dng_rect activeArea;
-
         // TODO: need to get correct default crop size to avoid artifacts at the borders
-
-        int activeWidth  = 0;
-        int activeHeight = 0;
-        int outputHeight = 0;
-        int outputWidth  = 0;
 
         if ((identifyMake->orientation == 5) || (identifyMake->orientation == 6))
         {
-            outputHeight = identifyMake->outputSize.width();
-            outputWidth  = identifyMake->outputSize.height();
+            d->outputHeight = identifyMake->outputSize.width();
+            d->outputWidth  = identifyMake->outputSize.height();
         }
         else
         {
-            outputHeight = identifyMake->outputSize.height();
-            outputWidth  = identifyMake->outputSize.width();
+            d->outputHeight = identifyMake->outputSize.height();
+            d->outputWidth  = identifyMake->outputSize.width();
         }
 
         if (!rawProcessor->extractRAWData(inputFile(), rawData, *identify, 0))
@@ -131,58 +124,56 @@ int DNGWriter::convert()
 
         // Check if CFA layout is supported by DNG SDK.
 
-        Private::DNGBayerPattern bayerPattern = Private::Unknown;
-        uint32 filter                         = 0;
-        bool fujiRotate90                     = false;
+        bool fujiRotate90 = false;
 
         // Standard bayer layouts
 
         if      (identify->filterPattern == QLatin1String("GRBGGRBGGRBGGRBG"))
         {
-            bayerPattern = Private::Standard;
-            filter       = 0;
+            d->bayerPattern = Private::Standard;
+            d->filter       = 0;
         }
         else if (identify->filterPattern == QLatin1String("RGGBRGGBRGGBRGGB"))
         {
-            bayerPattern = Private::Standard;
-            filter       = 1;
+            d->bayerPattern = Private::Standard;
+            d->filter       = 1;
         }
         else if (identify->filterPattern == QLatin1String("BGGRBGGRBGGRBGGR"))
         {
-            bayerPattern = Private::Standard;
-            filter       = 2;
+            d->bayerPattern = Private::Standard;
+            d->filter       = 2;
         }
         else if (identify->filterPattern == QLatin1String("GBRGGBRGGBRGGBRG"))
         {
-            bayerPattern = Private::Standard;
-            filter       = 3;
+            d->bayerPattern = Private::Standard;
+            d->filter       = 3;
         }
         else if ((identify->filterPattern      == QLatin1String("RGBGRGBGRGBGRGBG")) &&
                  (identifyMake->make.toUpper() == QLatin1String("FUJIFILM")))
         {
             // Fuji layouts
 
-            bayerPattern = Private::Fuji;
+            d->bayerPattern = Private::Fuji;
             fujiRotate90 = false;
-            filter       = 0;
+            d->filter       = 0;
         }
         else if ((identify->filterPattern      == QLatin1String("RBGGBRGGRBGGBRGG")) &&
                  (identifyMake->make.toUpper() == QLatin1String("FUJIFILM")))
         {
             // Fuji layouts
 
-            bayerPattern = Private::Fuji;
+            d->bayerPattern = Private::Fuji;
             fujiRotate90 = true;
-            filter       = 0;
+            d->filter       = 0;
         }
         else if ((identify->filterPattern      == QLatin1String("GGGGBRGGGGRBGGGG")) &&
                  (identifyMake->make.toUpper() == QLatin1String("FUJIFILM")))
         {
             // Fuji layouts
 
-            bayerPattern = Private::Fuji6x6;
+            d->bayerPattern = Private::Fuji6x6;
             fujiRotate90 = false;
-            filter       = 1;
+            d->filter       = 1;
         }
         else if ((identify->rawColors == 3)                 &&
                  (identify->filterPattern.isEmpty())        &&
@@ -191,11 +182,11 @@ int DNGWriter::convert()
 */
                  ((uint32)rawData.size() == identify->outputSize.width() * identify->outputSize.height() * 3 * sizeof(uint16)))
         {
-            bayerPattern = Private::LinearRaw;
+            d->bayerPattern = Private::LinearRaw;
         }
         else if (identify->rawColors == 4)           // Four color sensors
         {
-            bayerPattern = Private::FourColor;
+            d->bayerPattern = Private::FourColor;
 
             if (identify->filterPattern.length() != 16)
             {
@@ -206,23 +197,23 @@ int DNGWriter::convert()
 
             for (int i = 0 ; i < 16 ; ++i)
             {
-                filter = filter >> 2;
+                d->filter = d->filter >> 2;
 
                 if      (identify->filterPattern[i] == QLatin1Char('G'))
                 {
-                    filter |= 0x00000000;
+                    d->filter |= 0x00000000;
                 }
                 else if (identify->filterPattern[i] == QLatin1Char('M'))
                 {
-                    filter |= 0x40000000;
+                    d->filter |= 0x40000000;
                 }
                 else if (identify->filterPattern[i] == QLatin1Char('C'))
                 {
-                    filter |= 0x80000000;
+                    d->filter |= 0x80000000;
                 }
                 else if (identify->filterPattern[i] == QLatin1Char('Y'))
                 {
-                    filter |= 0xC0000000;
+                    d->filter |= 0xC0000000;
                 }
                 else
                 {
@@ -248,14 +239,14 @@ int DNGWriter::convert()
                 return PROCESS_FAILED;
             }
 
-            int tmp      = outputWidth;
-            outputWidth  = outputHeight;
-            outputHeight = tmp;
+            int tmp         = d->outputWidth;
+            d->outputWidth  = d->outputHeight;
+            d->outputHeight = tmp;
         }
 
-        activeArea   = dng_rect(identify->outputSize.height(), identify->outputSize.width());
-        activeWidth  = identify->outputSize.width();
-        activeHeight = identify->outputSize.height();
+        d->activeArea   = dng_rect(identify->outputSize.height(), identify->outputSize.width());
+        d->activeWidth  = identify->outputSize.width();
+        d->activeHeight = identify->outputSize.height();
 
         // Check if number of Raw Color components is supported.
 
@@ -289,7 +280,7 @@ int DNGWriter::convert()
         host.SetSaveLinearDNG(false);
         host.SetKeepOriginalFile(true);
 
-        AutoPtr<dng_image> image(new dng_simple_image(rect, (bayerPattern == Private::LinearRaw) ? 3 : 1, ttShort, memalloc));
+        AutoPtr<dng_image> image(new dng_simple_image(rect, (d->bayerPattern == Private::LinearRaw) ? 3 : 1, ttShort, memalloc));
 
         if (d->cancel)
         {
@@ -302,7 +293,7 @@ int DNGWriter::convert()
 
         buffer.fArea       = rect;
         buffer.fPlane      = 0;
-        buffer.fPlanes     = (bayerPattern == Private::LinearRaw) ? 3 : 1;
+        buffer.fPlanes     = (d->bayerPattern == Private::LinearRaw) ? 3 : 1;
         buffer.fRowStep    = buffer.fPlanes * d->width;
         buffer.fColStep    = buffer.fPlanes;
         buffer.fPlaneStep  = 1;
@@ -318,253 +309,13 @@ int DNGWriter::convert()
 
         // -----------------------------------------------------------------------------------------
 
-        qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: DNG Negative structure creation";
-
         AutoPtr<dng_negative> negative(host.Make_dng_negative());
 
-        negative->SetDefaultScale(dng_urational(outputWidth,  activeWidth),
-                                  dng_urational(outputHeight, activeHeight));
+        ret = d->createNegative(negative, identify.get());
 
-        if (bayerPattern != Private::LinearRaw)
+        if (ret != PROCESS_CONTINUE)
         {
-            negative->SetDefaultCropOrigin(8, 8);
-            negative->SetDefaultCropSize(activeWidth - 16, activeHeight - 16);
-        }
-        else
-        {
-            negative->SetDefaultCropOrigin(0, 0);
-            negative->SetDefaultCropSize(activeWidth, activeHeight);
-        }
-
-        negative->SetActiveArea(activeArea);
-        negative->SetModelName(identify->model.toLatin1().constData());
-        negative->SetLocalName(QString::fromUtf8("%1 %2").arg(identify->make, identify->model).toLatin1().constData());
-        negative->SetOriginalRawFileName(d->inputInfo.fileName().toLatin1().constData());
-        negative->SetColorChannels(identify->rawColors);
-
-        ColorKeyCode colorCodes[4] =
-        {
-            colorKeyMaxEnum,
-            colorKeyMaxEnum,
-            colorKeyMaxEnum,
-            colorKeyMaxEnum
-        };
-
-        for (int i = 0 ; i < qMax(4, identify->colorKeys.length()) ; ++i)
-        {
-            if      (identify->colorKeys[i] == QLatin1Char('R'))
-            {
-                colorCodes[i] = colorKeyRed;
-            }
-            else if (identify->colorKeys[i] == QLatin1Char('G'))
-            {
-                colorCodes[i] = colorKeyGreen;
-            }
-            else if (identify->colorKeys[i] == QLatin1Char('B'))
-            {
-                colorCodes[i] = colorKeyBlue;
-            }
-            else if (identify->colorKeys[i] == QLatin1Char('C'))
-            {
-                colorCodes[i] = colorKeyCyan;
-            }
-            else if (identify->colorKeys[i] == QLatin1Char('M'))
-            {
-                colorCodes[i] = colorKeyMagenta;
-            }
-            else if (identify->colorKeys[i] == QLatin1Char('Y'))
-            {
-                colorCodes[i] = colorKeyYellow;
-            }
-        }
-
-        negative->SetColorKeys(colorCodes[0], colorCodes[1], colorCodes[2], colorCodes[3]);
-
-        switch (bayerPattern)
-        {
-            case Private::Standard:
-            {
-                // Standard bayer mosaicing. All work fine there.
-                // Bayer CCD mask: https://en.wikipedia.org/wiki/Bayer_filter
-
-                negative->SetBayerMosaic(filter);
-                break;
-            }
-
-            case Private::Fuji:
-            {
-                // TODO: Fuji is special case. Need to setup different bayer rules here.
-                // It do not work in all settings. Need indeep investiguations.
-                // Fuji superCCD: https://en.wikipedia.org/wiki/Super_CCD
-
-                negative->SetFujiMosaic(filter);
-                break;
-            }
-
-            case Private::Fuji6x6:
-            {
-                // TODO: Fuji is special case. Need to setup different bayer rules here.
-                // It do not work in all settings. Need indeep investiguations.
-
-                negative->SetFujiMosaic6x6(filter);
-                break;
-            }
-
-            case Private::FourColor:
-            {
-                negative->SetQuadMosaic(filter);
-                break;
-            }
-
-            default:
-            {
-                break;
-            }
-        }
-
-        negative->SetWhiteLevel(identify->whitePoint, 0);
-        negative->SetWhiteLevel(identify->whitePoint, 1);
-        negative->SetWhiteLevel(identify->whitePoint, 2);
-        negative->SetWhiteLevel(identify->whitePoint, 3);
-
-        const dng_mosaic_info* const mosaicinfo = negative->GetMosaicInfo();
-
-        if ((mosaicinfo != nullptr) && (mosaicinfo->fCFAPatternSize == dng_point(2, 2)))
-        {
-            negative->SetQuadBlacks(identify->blackPoint + identify->blackPointCh[0],
-                                    identify->blackPoint + identify->blackPointCh[1],
-                                    identify->blackPoint + identify->blackPointCh[2],
-                                    identify->blackPoint + identify->blackPointCh[3]);
-        }
-        else
-        {
-            negative->SetBlackLevel(identify->blackPoint, 0);
-        }
-
-        negative->SetBaselineExposure(0.0);
-        negative->SetBaselineNoise(1.0);
-        negative->SetBaselineSharpness(1.0);
-
-        dng_orientation orientation;
-
-        switch (identify->orientation)
-        {
-            case DRawInfo::ORIENTATION_180:
-            {
-                orientation = dng_orientation::Rotate180();
-                break;
-            }
-
-            case DRawInfo::ORIENTATION_Mirror90CCW:
-            {
-                orientation = dng_orientation::Mirror90CCW();
-                break;
-            }
-
-            case DRawInfo::ORIENTATION_90CCW:
-            {
-                orientation = dng_orientation::Rotate90CCW();
-                break;
-            }
-
-            case DRawInfo::ORIENTATION_90CW:
-            {
-                orientation = dng_orientation::Rotate90CW();
-                break;
-            }
-
-            default:   // ORIENTATION_NONE
-            {
-                orientation = dng_orientation::Normal();
-                break;
-            }
-        }
-
-        negative->SetBaseOrientation(orientation);
-        negative->SetAntiAliasStrength(dng_urational(100, 100));
-        negative->SetLinearResponseLimit(1.0);
-        negative->SetShadowScale( dng_urational(1, 1) );
-        negative->SetAnalogBalance(dng_vector_3(1.0, 1.0, 1.0));
-
-        // -------------------------------------------------------------------------------
-
-        AutoPtr<dng_camera_profile> prof(new dng_camera_profile);
-        prof->SetName(QString::fromUtf8("%1 %2").arg(identify->make, identify->model).toLatin1().constData());
-
-        // Set Camera->XYZ Color matrix as profile.
-
-        dng_matrix matrix;
-
-        switch (identify->rawColors)
-        {
-            case 3:
-            {
-                dng_matrix_3by3 camXYZ;
-                camXYZ[0][0] = identify->cameraXYZMatrix[0][0];
-                camXYZ[0][1] = identify->cameraXYZMatrix[0][1];
-                camXYZ[0][2] = identify->cameraXYZMatrix[0][2];
-                camXYZ[1][0] = identify->cameraXYZMatrix[1][0];
-                camXYZ[1][1] = identify->cameraXYZMatrix[1][1];
-                camXYZ[1][2] = identify->cameraXYZMatrix[1][2];
-                camXYZ[2][0] = identify->cameraXYZMatrix[2][0];
-                camXYZ[2][1] = identify->cameraXYZMatrix[2][1];
-                camXYZ[2][2] = identify->cameraXYZMatrix[2][2];
-
-                if (camXYZ.MaxEntry() == 0.0)
-                {
-                    qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: camera XYZ Matrix is null : camera not supported" ;
-                    return FILE_NOT_SUPPORTED;
-                }
-
-                matrix = camXYZ;
-
-                break;
-            }
-
-            case 4:
-            {
-                dng_matrix_4by3 camXYZ;
-                camXYZ[0][0] = identify->cameraXYZMatrix[0][0];
-                camXYZ[0][1] = identify->cameraXYZMatrix[0][1];
-                camXYZ[0][2] = identify->cameraXYZMatrix[0][2];
-                camXYZ[1][0] = identify->cameraXYZMatrix[1][0];
-                camXYZ[1][1] = identify->cameraXYZMatrix[1][1];
-                camXYZ[1][2] = identify->cameraXYZMatrix[1][2];
-                camXYZ[2][0] = identify->cameraXYZMatrix[2][0];
-                camXYZ[2][1] = identify->cameraXYZMatrix[2][1];
-                camXYZ[2][2] = identify->cameraXYZMatrix[2][2];
-                camXYZ[3][0] = identify->cameraXYZMatrix[3][0];
-                camXYZ[3][1] = identify->cameraXYZMatrix[3][1];
-                camXYZ[3][2] = identify->cameraXYZMatrix[3][2];
-
-                if (camXYZ.MaxEntry() == 0.0)
-                {
-                    qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: camera XYZ Matrix is null : camera not supported" ;
-                    return FILE_NOT_SUPPORTED;
-                }
-
-                matrix = camXYZ;
-
-                break;
-            }
-        }
-
-        prof->SetColorMatrix1((dng_matrix) matrix);
-        prof->SetCalibrationIlluminant1(lsD65);
-        negative->AddProfile(prof);
-
-        dng_vector camNeutral(identify->rawColors);
-
-        for (int i = 0 ; i < identify->rawColors ; ++i)
-        {
-            camNeutral[i] = 1.0 / identify->cameraMult[i];
-        }
-
-        negative->SetCameraNeutral(camNeutral);
-
-        if (d->cancel)
-        {
-            return PROCESS_CANCELED;
+            return ret;
         }
 
         // -----------------------------------------------------------------------------------------

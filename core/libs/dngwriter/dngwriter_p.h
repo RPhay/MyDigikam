@@ -120,10 +120,17 @@ public:
      */
     int debugExtractedRAWData(const QByteArray& rawData);
 
+public:
+
+    // DNG processing stages.
+
+    int createNegative(AutoPtr<dng_negative>& negative,
+                       DRawInfo* const identify);
+
     int storeMetadata(DNGWriterHost& host,
                       AutoPtr<dng_negative>& negative,
-                      DRawInfo* const indentify,
-                      DRawInfo* const indentifyMake);
+                      DRawInfo* const identify,
+                      DRawInfo* const identifyMake);
 
     int backupRaw(DNGWriterHost& host,
                   AutoPtr<dng_negative>& negative);
@@ -135,6 +142,8 @@ public:
 public:
 
     DNGWriter*          parent;
+    DNGBayerPattern     bayerPattern;
+    uint32              filter;
 
     bool                cancel;
     bool                jpegLossLessCompression;
@@ -142,6 +151,10 @@ public:
     bool                backupOriginalRawFile;
 
     int                 previewMode;
+    int                 activeWidth;
+    int                 activeHeight;
+    int                 outputHeight;
+    int                 outputWidth;
     int                 width;
     int                 height;
 
@@ -154,6 +167,7 @@ public:
     QDateTime           fileDate;
 
     dng_date_time_info  orgDateTimeInfo;
+    dng_rect            activeArea;
 };
 
 } // namespace Digikam

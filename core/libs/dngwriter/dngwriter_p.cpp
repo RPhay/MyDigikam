@@ -43,9 +43,15 @@ namespace Digikam
 {
 
 DNGWriter::Private::Private(DNGWriter* const dd)
-    : parent(dd),
-      width (0),
-      height(0)
+    : parent      (dd),
+      bayerPattern(Unknown),
+      filter      (0),
+      activeWidth (0),
+      activeHeight(0),
+      outputHeight(0),
+      outputWidth (0),
+      width       (0),
+      height      (0)
 {
     reset();
 }

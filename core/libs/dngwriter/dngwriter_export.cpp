@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2008-09-25
- * Description : a tool to convert RAW file to DNG
+ * Description : a tool to convert RAW file to DNG - Export to target DNG.
  *
  * Copyright (C) 2008-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2010-2011 by Jens Mueller <tschenser at gmx dot de>
