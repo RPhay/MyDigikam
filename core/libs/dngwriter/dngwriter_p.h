@@ -118,12 +118,15 @@ public:
     /**
      * Code to hack RAW data extraction.
      */
-    int backupExtractedRAWData(const QFileInfo& inputInfo, const QByteArray& rawData);
+    int debugExtractedRAWData(const QByteArray& rawData);
 
     int storeMetadata(DNGWriterHost& host,
                       AutoPtr<dng_negative>& negative,
                       DRawInfo* const indentify,
                       DRawInfo* const indentifyMake);
+
+    int backupRaw(DNGWriterHost& host,
+                  AutoPtr<dng_negative>& negative);
 
 public:
 
@@ -137,6 +140,7 @@ public:
     QString             inputFile;
     QString             outputFile;
 
+    QFileInfo           inputInfo;
     QDateTime           fileDate;
 
     dng_date_time_info  orgDateTimeInfo;

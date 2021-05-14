@@ -39,16 +39,16 @@ int DNGWriter::convert()
     {
         if (inputFile().isEmpty())
         {
-            qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: No input file to convert. Aborted..." ;
+            qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: No input file to convert. Aborted...";
             return PROCESS_FAILED;
         }
 
-        QFileInfo inputInfo(inputFile());
+        d->inputInfo          = QFileInfo(inputFile());
         QString   dngFilePath = outputFile();
 
         if (dngFilePath.isEmpty())
         {
-            dngFilePath = QString(inputInfo.completeBaseName() + QLatin1String(".dng"));
+            dngFilePath = QString(d->inputInfo.completeBaseName() + QLatin1String(".dng"));
         }
 
         QFileInfo  outputInfo(dngFilePath);
@@ -58,13 +58,13 @@ int DNGWriter::convert()
 
         // -----------------------------------------------------------------------------------------
 
-        qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Loading RAW data from " << inputInfo.fileName() ;
+        qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Loading RAW data from " << d->inputInfo.fileName();
 
         QPointer<DRawDecoder> rawProcessor(new DRawDecoder);
 
         if (!rawProcessor->rawFileIdentify(*identifyMake.data(), inputFile()))
         {
-            qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Reading RAW file failed. Aborted..." ;
+            qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Reading RAW file failed. Aborted...";
 
             return PROCESS_FAILED;
         }
@@ -269,7 +269,7 @@ int DNGWriter::convert()
         int width  = identify->outputSize.width();
         int height = identify->outputSize.height();
 /*
-        backupExtractedRAWData(inputInfo, rawData);
+        debugExtractedRAWData(rawData);
 */
         // -----------------------------------------------------------------------------------------
 
@@ -339,7 +339,7 @@ int DNGWriter::convert()
         negative->SetActiveArea(activeArea);
         negative->SetModelName(identify->model.toLatin1().constData());
         negative->SetLocalName(QString::fromUtf8("%1 %2").arg(identify->make, identify->model).toLatin1().constData());
-        negative->SetOriginalRawFileName(inputInfo.fileName().toLatin1().constData());
+        negative->SetOriginalRawFileName(d->inputInfo.fileName().toLatin1().constData());
         negative->SetColorChannels(identify->rawColors);
 
         ColorKeyCode colorCodes[4] =
@@ -578,99 +578,11 @@ int DNGWriter::convert()
 
         // -----------------------------------------------------------------------------------------
 
-        if (d->backupOriginalRawFile)
+        ret = d->backupRaw(host, negative);
+
+        if (ret != PROCESS_CONTINUE)
         {
-            qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Backup Original RAW file (" << inputInfo.size() << " bytes)";
-
-            QFileInfo originalFileInfo(inputFile());
-
-            QFile originalFile(originalFileInfo.absoluteFilePath());
-
-            if (!originalFile.open(QIODevice::ReadOnly))
-            {
-                qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Cannot open original RAW file to backup in DNG. Aborted...";
-
-                return PROCESS_FAILED;
-            }
-
-            QDataStream originalDataStream(&originalFile);
-
-            quint32 forkLength = originalFileInfo.size();
-            quint32 forkBlocks = (quint32)floor((forkLength + 65535.0) / 65536.0);
-
-            QVector<quint32> offsets;
-            quint32 offset     = (2 + forkBlocks) * sizeof(quint32);
-            offsets.push_back(offset);
-
-            QByteArray originalDataBlock;
-            originalDataBlock.resize(CHUNK);
-
-            QTemporaryFile compressedFile;
-
-            if (!compressedFile.open())
-            {
-                qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Cannot open temporary file to write Zipped Raw data. Aborted...";
-
-                return PROCESS_FAILED;
-            }
-
-            QDataStream compressedDataStream(&compressedFile);
-
-            for (quint32 block = 0 ; block < forkBlocks ; ++block)
-            {
-                int originalBlockLength = originalDataStream.readRawData(originalDataBlock.data(), CHUNK);
-
-                QByteArray compressedDataBlock = qCompress((const uchar*)originalDataBlock.data(), originalBlockLength, -1);
-                compressedDataBlock.remove(0, 4); // removes qCompress own header
-                qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: compressed data block " << originalBlockLength << " -> " << compressedDataBlock.size();
-
-                offset += compressedDataBlock.size();
-                offsets.push_back(offset);
-
-                compressedDataStream.writeRawData(compressedDataBlock.data(), compressedDataBlock.size());
-            }
-
-            dng_memory_allocator memalloc2(gDefaultDNGMemoryAllocator);
-            dng_memory_stream tempDataStream(memalloc2);
-            tempDataStream.SetBigEndian(true);
-            tempDataStream.Put_uint32(forkLength);
-
-            for (qint32 idx = 0 ; idx < offsets.size() ; ++idx)
-            {
-                tempDataStream.Put_uint32(offsets[idx]);
-            }
-
-            QByteArray compressedData;
-            compressedData.resize(compressedFile.size());
-            compressedFile.seek(0);
-            compressedDataStream.readRawData(compressedData.data(), compressedData.size());
-            tempDataStream.Put(compressedData.data(), compressedData.size());
-
-            compressedFile.remove();
-            originalFile.close();
-
-            tempDataStream.Put_uint32(0);
-            tempDataStream.Put_uint32(0);
-            tempDataStream.Put_uint32(0);
-            tempDataStream.Put_uint32(0);
-            tempDataStream.Put_uint32(0);
-            tempDataStream.Put_uint32(0);
-            tempDataStream.Put_uint32(0);
-
-            AutoPtr<dng_memory_block> block(host.Allocate(tempDataStream.Length()));
-            tempDataStream.SetReadPosition(0);
-            tempDataStream.Get(block->Buffer(), tempDataStream.Length());
-
-            dng_md5_printer md5;
-            md5.Process(block->Buffer(), block->LogicalSize());
-            negative->SetOriginalRawFileData(block);
-            negative->SetOriginalRawFileDigest(md5.Result());
-            negative->ValidateOriginalRawFileDigest();
-        }
-
-        if (d->cancel)
-        {
-            return PROCESS_CANCELED;
+            return ret;
         }
 
         // -----------------------------------------------------------------------------------------
@@ -768,7 +680,7 @@ int DNGWriter::convert()
 /*
         if (meta->load(dngFilePath))
         {
-            if (inputInfo.suffix().toUpper() == QLatin1String("ORF"))
+            if (d->inputInfo.suffix().toUpper() == QLatin1String("ORF"))
             {
                 qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: cleanup makernotes using Exiv2" ;
 

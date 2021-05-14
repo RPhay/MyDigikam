@@ -503,6 +503,11 @@ int DNGWriter::Private::storeMetadata(DNGWriterHost& host,
         }
     }
 
+    if (cancel)
+    {
+        return PROCESS_CANCELED;
+    }
+
     return PROCESS_CONTINUE;
 }
 

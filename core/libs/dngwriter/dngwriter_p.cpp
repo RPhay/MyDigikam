@@ -141,7 +141,7 @@ QString DNGWriter::Private::dngErrorCodeToString(int errorCode) const
     }
 }
 
-int DNGWriter::Private::backupExtractedRAWData(const QFileInfo& inputInfo, const QByteArray& rawData)
+int DNGWriter::Private::debugExtractedRAWData(const QByteArray& rawData)
 {
     QString   rawdataFilePath(inputInfo.completeBaseName() + QLatin1String(".dat"));
     QFileInfo rawdataInfo(rawdataFilePath);
