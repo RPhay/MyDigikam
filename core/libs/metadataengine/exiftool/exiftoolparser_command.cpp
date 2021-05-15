@@ -152,7 +152,7 @@ bool ExifToolParser::applyChanges(const QString& path, const QString& exvTempFil
 {
     if (exvTempFile.isEmpty())
     {
-        qCWarning(DIGIKAM_METAENGINE_LOG) << "EXV constainer files to apply changes with ExifTool is empty";
+        qCWarning(DIGIKAM_METAENGINE_LOG) << "EXV container files to apply changes with ExifTool is empty";
 
         return false;
     }
