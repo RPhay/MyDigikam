@@ -233,4 +233,68 @@ bool ExifToolParser::translationsList()
     return (d->startProcess(cmdArgs, ExifToolProcess::TRANSLATIONS_LIST));
 }
 
+bool ExifToolParser::copyTags(const QString& src, const QString& dst, int copyOps)
+{
+    QFileInfo sfi(src);
+
+    if (!sfi.exists())
+    {
+        return false;
+    }
+
+    QFileInfo dfi(src);
+
+    if (!dfi.exists())
+    {
+        return false;
+    }
+
+    QByteArrayList copyCmds;
+
+    if (copyOps & ExifToolProcess::COPY_EXIF)
+    {
+        copyCmds << QByteArray("-exif");
+    }
+
+    if (copyOps & ExifToolProcess::COPY_MAKERNOTES)
+    {
+        copyCmds << QByteArray("-makernotes");
+    }
+
+    if (copyOps & ExifToolProcess::COPY_IPTC)
+    {
+        copyCmds << QByteArray("-iptc");
+    }
+
+    if (copyOps & ExifToolProcess::COPY_XMP)
+    {
+        copyCmds << QByteArray("-xmp");
+    }
+
+    if (copyOps & ExifToolProcess::COPY_ALL)
+    {
+        copyCmds << QByteArray("-all:all");
+    }
+
+    if (copyCmds.isEmpty())
+    {
+        return false;
+    }
+
+    if (!d->prepareProcess())
+    {
+        return false;
+    }
+
+    QByteArrayList cmdArgs;
+
+    cmdArgs << QByteArray("-TagsFromFile");
+    cmdArgs << d->filePathEncoding(src);
+    cmdArgs << copyCmds;
+    cmdArgs << d->filePathEncoding(dst);
+    d->currentPath = sfi.path();
+
+    return (d->startProcess(cmdArgs, ExifToolProcess::COPY_TAGS));
+}
+
 } // namespace Digikam

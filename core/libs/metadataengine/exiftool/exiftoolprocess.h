@@ -47,6 +47,9 @@ class DIGIKAM_EXPORT ExifToolProcess : public QObject
 
 public:
 
+    /**
+     * ExifTool actions to process.
+     */
     enum Action
     {
         LOAD_METADATA = 0,          ///< Load all metadata from a file with ExifTool.
@@ -55,8 +58,21 @@ public:
         APPLY_CHANGES_EXV,          ///< Apply tag changes in a file with ExifTool using an EXV container.
         READ_FORMATS,               ///< Return the list of readable ExifTool file formats.
         WRITE_FORMATS,              ///< Return the list of writable ExifTool file formats.
-        TRANSLATIONS_LIST,          ///< List of ExifTool languages avaialble for translations.
+        TRANSLATIONS_LIST,          ///< List of ExifTool languages available for translations.
+        COPY_TAGS,                  ///< Copy tags from one file to another one. See CopyTagsSource enum for details.
         NO_ACTION                   ///< Last value from this list.
+    };
+
+    /**
+     * Possible operations to combine with COPY_TAGS action.
+     */
+    enum CopyTagsSource
+    {
+        COPY_EXIF       = 0x01,     ///< Copy all Exif Tags from source file.
+        COPY_MAKERNOTES = 0x02,     ///< Copy all Makernotes tags from source file.
+        COPY_IPTC       = 0x04,     ///< Copy all Iptc tags from source file.
+        COPY_XMP        = 0x08,     ///< Copy all Xmp tags from source file.
+        COPY_ALL        = 0x0A      ///< Copy all tags from source file.
     };
 
 public:

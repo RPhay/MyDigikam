@@ -157,6 +157,13 @@ public:
      */
     bool translationsList();
 
+    /**
+     * Copy group of tags from one source file to a destination file, following copy operations defined by 'copyOps'.
+     * 'copyOps' is a OR combination of ExifToolProcess::CopyTagsSource values.
+     * 'dst' must be a writable file format supported by ExifTool.
+     */
+    bool copyTags(const QString& src, const QString& dst, int copyOps);
+
     //@}
 
 private Q_SLOTS:
