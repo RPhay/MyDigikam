@@ -52,7 +52,7 @@ public:
     void tileDeleteInternal(Tile* const tile)                                                             override;
     void prepareTiles(const GeoCoordinates& upperLeft, const GeoCoordinates& lowerRight, int level)       override;
     void regenerateTiles()                                                                                override;
-    Tile* getTile(const TileIndex& tileIndex, const bool stopIfEmpty = false)                             override;
+    Tile* getTile(const TileIndex& tileIndex, const bool stopIfEmpty)                                     override;
     int getTileMarkerCount(const TileIndex& tileIndex)                                                    override;
     int getTileSelectedCount(const TileIndex& tileIndex)                                                  override;
 

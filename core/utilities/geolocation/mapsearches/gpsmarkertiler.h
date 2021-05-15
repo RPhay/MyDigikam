@@ -74,7 +74,7 @@ public:
     virtual void tileDelete(Tile* const tile);
     void prepareTiles(const GeoCoordinates& upperLeft, const GeoCoordinates& lowerRight, int level) override;
     void regenerateTiles()                                                                          override;
-    AbstractMarkerTiler::Tile* getTile(const TileIndex& tileIndex, const bool stopIfEmpty = false)  override;
+    AbstractMarkerTiler::Tile* getTile(const TileIndex& tileIndex, const bool stopIfEmpty)          override;
     int getTileMarkerCount(const TileIndex& tileIndex)                                              override;
     int getTileSelectedCount(const TileIndex& tileIndex)                                            override;
 
