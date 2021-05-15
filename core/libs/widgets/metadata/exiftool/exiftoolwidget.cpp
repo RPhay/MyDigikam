@@ -52,6 +52,7 @@
 #include "exiftoollistviewgroup.h"
 #include "exiftoollistviewitem.h"
 #include "exiftoollistview.h"
+#include "exiftoolerrorview.h"
 #include "searchtextbar.h"
 #include "dfiledialog.h"
 
@@ -72,9 +73,8 @@ public:
 
     explicit Private()
         : metadataView    (nullptr),
-          errorView       (nullptr),
-          errorLbl        (nullptr),
           view            (nullptr),
+          errorView       (nullptr),
           searchBar       (nullptr),
           toolBtn         (nullptr),
           saveMetadata    (nullptr),
@@ -84,21 +84,20 @@ public:
     {
     }
 
-    QWidget*          metadataView;
-    QWidget*          errorView;
-    QLabel*           errorLbl;
-    ExifToolListView* view;
-    SearchTextBar*    searchBar;
+    QWidget*           metadataView;
+    ExifToolListView*  view;
+    ExifToolErrorView* errorView;
+    SearchTextBar*     searchBar;
 
-    QString           fileName;
+    QString            fileName;
 
-    QToolButton*      toolBtn;
+    QToolButton*       toolBtn;
 
-    QAction*          saveMetadata;
-    QAction*          printMetadata;
-    QAction*          copy2ClipBoard;
+    QAction*           saveMetadata;
+    QAction*           printMetadata;
+    QAction*           copy2ClipBoard;
 
-    QMenu*            optionsMenu;
+    QMenu*             optionsMenu;
 };
 
 ExifToolWidget::ExifToolWidget(QWidget* const parent)
@@ -139,26 +138,7 @@ ExifToolWidget::ExifToolWidget(QWidget* const parent)
 
     // ---
 
-    d->errorView             = new QWidget(this);
-    QGridLayout* const grid  = new QGridLayout(d->errorView);
-
-    d->errorLbl              = new QLabel(d->errorView);
-    d->errorLbl->setAlignment(Qt::AlignCenter);
-    d->errorLbl->setWordWrap(true);
-
-    QPushButton* const btn   = new QPushButton(d->errorView);
-    btn->setText(i18nc("@action: button", "Open Setup Dialog..."));
-
-    connect(btn, SIGNAL(clicked()),
-            this, SIGNAL(signalSetupExifTool()));
-
-    grid->addWidget(d->errorLbl, 1, 1, 1, 1);
-    grid->addWidget(btn,         2, 1, 1, 1);
-    grid->setColumnStretch(0, 10);
-    grid->setColumnStretch(2, 10);
-    grid->setContentsMargins(spacing, spacing, spacing, spacing);
-    grid->setRowStretch(0, 10);
-    grid->setRowStretch(3, 10);
+    d->errorView             = new ExifToolErrorView(this);
 
     insertWidget(Private::MetadataView, d->metadataView);
     insertWidget(Private::ErrorView,    d->errorView);
@@ -192,7 +172,7 @@ void ExifToolWidget::loadFromUrl(const QUrl& url)
     }
     else
     {
-        d->errorLbl->setText(i18nc("@info: error message",
+        d->errorView->setErrorText(i18nc("@info: error message",
                                    "Cannot load data\n"
                                    "from %1\n"
                                    "with ExifTool.\n\n"
@@ -206,6 +186,9 @@ void ExifToolWidget::loadFromUrl(const QUrl& url)
 
 void ExifToolWidget::setup()
 {
+    connect(d->errorView, SIGNAL(signalSetupExifTool()),
+            this, SIGNAL(signalSetupExifTool()));
+
     connect(d->copy2ClipBoard, SIGNAL(triggered(bool)),
             this, SLOT(slotCopy2Clipboard()));
 
