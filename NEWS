@@ -333,4 +333,5 @@ BUGFIXES:
 313 ==> 403267 - digiKam is not reading tags from DNG images when sidecars are present.
 314 ==> 437072 - digiKam does not start.
 315 ==> 426791 - Unable to change database location via GUI.
-316 ==> 
+316 ==> 437175 - Use media file timestamp when creating sidecar.
+317 ==> 
