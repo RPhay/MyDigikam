@@ -158,6 +158,12 @@ void ExifToolParser::slotCmdCompleted(int cmdAction,
             break;
         }
 
+        case ExifToolProcess::COPY_TAGS:
+        {
+            // TODO: check ExifTool feedback.
+            break;
+        }
+
         case ExifToolProcess::READ_FORMATS:
         {
             // Remove first line
