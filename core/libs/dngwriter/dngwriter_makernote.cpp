@@ -326,12 +326,19 @@ void DNGWriter::Private::backupMakernote(DNGWriterHost& host,
     // Original Markernote storage in Standard Exif tag.
 
     long mknOffset       = 0;
+    QString mknMake      = identifyMake->make.toUpper();
     QString mknByteOrder = meta->getExifTagString("Exif.MakerNote.ByteOrder");
     QByteArray mknData   = meta->getExifTagData("Exif.Photo.MakerNote");
     meta->getExifTagLong("Exif.MakerNote.Offset", mknOffset);
 
-    if (!mknData.isEmpty())
+    if (!mknData.isEmpty()                      &&
+        ((mknMake == QLatin1String("NIKON"))    ||
+         (mknMake == QLatin1String("OLYMPUS"))  ||
+         (mknMake == QLatin1String("FUJIFILM")))
+       )
     {
+        qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Makernote storage (" << mknData.size() << " bytes)" ;
+
         dng_memory_allocator memalloc1(gDefaultDNGMemoryAllocator);
         dng_memory_stream stream(memalloc1);
         stream.Put(mknData.constData(), mknData.size());
@@ -339,15 +346,8 @@ void DNGWriter::Private::backupMakernote(DNGWriterHost& host,
         stream.SetReadPosition(0);
         stream.Get(block->Buffer(), mknData.size());
 
-        if ((identifyMake->make != QLatin1String("Canon")) &&
-            (identifyMake->make != QLatin1String("Panasonic")))
-        {
-            qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Makernote storage (" << mknData.size() << " bytes)" ;
-
-            negative->SetMakerNote(block);
-            negative->SetMakerNoteSafety(true);
-        }
-
+        negative->SetMakerNoteSafety(true);
+        negative->SetMakerNote(block);
     }
 
     // Backup Makernote in DNG private tag.
