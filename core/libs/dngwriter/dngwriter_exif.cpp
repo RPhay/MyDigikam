@@ -39,16 +39,15 @@ int DNGWriter::Private::storeExif(DNGWriterHost& /*host*/,
     exif->fModel.Set_ASCII(identify->model.toLatin1().constData());
     exif->fMake.Set_ASCII(identify->make.toLatin1().constData());
 
-    QString str;
-
     metaLoaded = meta->load(parent->inputFile());
 
     if (metaLoaded)
     {
         qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Updating Exif metadata to DNG Negative" ;
 
-        long int   num, den;
-        long       val;
+        QString  str;
+        long int num, den;
+        long     val;
 
         fileDate                 = meta->getItemDateTime();
 

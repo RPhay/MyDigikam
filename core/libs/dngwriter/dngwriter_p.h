@@ -152,6 +152,21 @@ public:
                      AutoPtr<dng_negative>& negative,
                      AutoPtr<dng_image>& image);
 
+private:
+
+    void backportNikonMakerNote(DMetadata* const meta);
+    void backportCanonMakerNote(DMetadata* const meta);
+    void backportPentaxMakerNote(DMetadata* const meta);
+    void backportOlympusMakerNote(DMetadata* const meta);
+    void backportPanasonicMakerNote(DMetadata* const meta);
+    void backportSonyMakerNote(DMetadata* const meta);
+    void storeLensInformation();
+    void backupMakernote(DNGWriterHost& host,
+                         AutoPtr<dng_negative>& negative,
+                         DRawInfo* const identify,
+                         DRawInfo* const identifyMake,
+                         DMetadata* const meta);
+
 public:
 
     DNGWriter*          parent;                     ///< Parent class instance.
