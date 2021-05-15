@@ -323,7 +323,7 @@ void DNGWriter::Private::backupMakernote(DNGWriterHost& host,
                                          DRawInfo* const identifyMake,
                                          DMetadata* const meta)
 {
-    // Original Markernote storage.
+    // Original Markernote storage in Standard Exif tag.
 
     long mknOffset       = 0;
     QString mknByteOrder = meta->getExifTagString("Exif.MakerNote.ByteOrder");
@@ -349,6 +349,10 @@ void DNGWriter::Private::backupMakernote(DNGWriterHost& host,
         }
 
     }
+
+    // Backup Makernote in DNG private tag.
+    // NOTE: Exiv2 report a warning with CR2 conversion:
+    // Error: Directory Canon with 25665 entries considered invalid; not read.
 
     if (!mknData.isEmpty()      &&
         !mknByteOrder.isEmpty() &&
