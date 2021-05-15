@@ -337,7 +337,8 @@ void DNGWriter::Private::backupMakernote(DNGWriterHost& host,
          (mknMake == QLatin1String("FUJIFILM")))
        )
     {
-        qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Makernote storage (" << mknData.size() << " bytes)" ;
+        qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Makernote storage ("
+                                     << mknData.size() << " bytes)" ;
 
         dng_memory_allocator memalloc1(gDefaultDNGMemoryAllocator);
         dng_memory_stream stream(memalloc1);
