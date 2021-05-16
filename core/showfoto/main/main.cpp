@@ -29,6 +29,7 @@
 
 #include <QDir>
 #include <QFile>
+#include <QSettings>
 #include <QTranslator>
 #include <QMessageBox>
 #include <QApplication>
@@ -162,6 +163,22 @@ int main(int argc, char* argv[])
     if (loadTranslation && !transPath.isEmpty())
     {
         QLocale locale;
+
+        QString klanguagePath = QStandardPaths::writableLocation(QStandardPaths::GenericConfigLocation) +
+                                QLatin1Char('/') + QLatin1String("klanguageoverridesrc");
+
+        if (!klanguagePath.isEmpty())
+        {
+            QSettings settings(klanguagePath, QSettings::IniFormat);
+            settings.beginGroup(QLatin1String("Language"));
+            QString language = settings.value(qApp->applicationName(), QString()).toString();
+            settings.endGroup();
+
+            if (!language.isEmpty())
+            {
+                locale = QLocale(language);
+            }
+        }
 
         bool ret = translator.load(locale, QLatin1String("qtbase"),
                                    QLatin1String("_"), transPath);
