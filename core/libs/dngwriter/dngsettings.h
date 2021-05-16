@@ -54,9 +54,15 @@ public:
 
     void setDefaultSettings();
 
+public Q_SLOTS:
+
+    /// To handle changes from host application Setup dialog.
+    void slotSetupChanged();
+
 Q_SIGNALS:
 
     void signalSettingsChanged();
+    void signalSetupExifTool();
 
 private:
 

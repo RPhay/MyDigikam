@@ -112,28 +112,8 @@ void ExifToolProcess::start()
         return;
     }
 
-    // Check if Exiftool program exists and have execution permissions
-
-    qCDebug(DIGIKAM_METAENGINE_LOG) << "Path to ExifTool:" << d->etExePath;
-
-    if (
-        (d->etExePath != exifToolBin())                    &&
-        (!QFile::exists(d->etExePath)                      ||
-        !(QFile::permissions(d->etExePath) & QFile::ExeUser))
-       )
+    if (!checkExifToolProgram())
     {
-        d->setProcessErrorAndEmit(QProcess::FailedToStart,
-                                  QString::fromLatin1("ExifTool does not exists or exec permission is missing"));
-        return;
-    }
-
-    // If perl path is defined, check if Perl program exists and have execution permissions
-
-    if (!d->perlExePath.isEmpty() && (!QFile::exists(d->perlExePath) ||
-        !(QFile::permissions(d->perlExePath) & QFile::ExeUser)))
-    {
-        d->setProcessErrorAndEmit(QProcess::FailedToStart,
-                                  QString::fromLatin1("Perl does not exists or exec permission is missing"));
         return;
     }
 
@@ -386,6 +366,36 @@ QString ExifToolProcess::exifToolBin() const
 
 #endif
 
+}
+
+bool ExifToolProcess::checkExifToolProgram()
+{
+    // Check if Exiftool program exists and have execution permissions
+
+    qCDebug(DIGIKAM_METAENGINE_LOG) << "Path to ExifTool:" << d->etExePath;
+
+    if (
+        (d->etExePath != exifToolBin())                    &&
+        (!QFile::exists(d->etExePath)                      ||
+        !(QFile::permissions(d->etExePath) & QFile::ExeUser))
+       )
+    {
+        d->setProcessErrorAndEmit(QProcess::FailedToStart,
+                                  QString::fromLatin1("ExifTool does not exists or exec permission is missing"));
+        return false;
+    }
+
+    // If perl path is defined, check if Perl program exists and have execution permissions
+
+    if (!d->perlExePath.isEmpty() && (!QFile::exists(d->perlExePath) ||
+        !(QFile::permissions(d->perlExePath) & QFile::ExeUser)))
+    {
+        d->setProcessErrorAndEmit(QProcess::FailedToStart,
+                                  QString::fromLatin1("Perl does not exists or exec permission is missing"));
+        return false;
+    }
+
+    return true;
 }
 
 } // namespace Digikam

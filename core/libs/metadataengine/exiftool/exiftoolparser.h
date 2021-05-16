@@ -102,7 +102,10 @@ public:
     ExifToolData currentData()        const;
     QString      currentErrorString() const;
 
-    static bool exifToolAvailable();
+    /**
+     * Check the ExifTool program availability.
+     */
+    bool exifToolAvailable()          const;
 
     //@}
 

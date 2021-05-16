@@ -98,6 +98,8 @@ public:
 
     QString program() const;
 
+    bool checkExifToolProgram();
+
     /**
      * Starts exiftool in a new process.
      */
