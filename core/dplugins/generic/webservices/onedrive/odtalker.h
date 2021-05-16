@@ -66,6 +66,7 @@ public:
 Q_SIGNALS:
 
     void signalBusy(bool val);
+    void signalTransferCancel();
     void signalLinkingSucceeded();
     void signalLinkingFailed();
     void signalSetUserName(const QString& msg);

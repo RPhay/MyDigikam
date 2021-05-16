@@ -275,7 +275,7 @@ void ODTalker::createFolder(QString& path)
 
     QNetworkRequest netRequest(url);
     netRequest.setHeader(QNetworkRequest::ContentTypeHeader, QLatin1String("application/json"));
-    netRequest.setRawHeader("Authorization", QString::fromLatin1("bearer %1").arg(d->accessToken).toUtf8());
+    netRequest.setRawHeader("Authorization", QString::fromLatin1("Bearer %1").arg(d->accessToken).toUtf8());
 
     QByteArray postData = QString::fromUtf8("{\"name\": \"%1\",\"folder\": {}}").arg(name).toUtf8();
     d->reply = d->netMngr->post(netRequest, postData);
@@ -289,7 +289,7 @@ void ODTalker::getUserName()
     QUrl url(QLatin1String("https://graph.microsoft.com/v1.0/me"));
 
     QNetworkRequest netRequest(url);
-    netRequest.setRawHeader("Authorization", QString::fromLatin1("bearer %1").arg(d->accessToken).toUtf8());
+    netRequest.setRawHeader("Authorization", QString::fromLatin1("Bearer %1").arg(d->accessToken).toUtf8());
     netRequest.setHeader(QNetworkRequest::ContentTypeHeader, QLatin1String("application/json"));
 
     d->reply = d->netMngr->get(netRequest);
@@ -318,7 +318,7 @@ void ODTalker::listFolders(const QString& folder)
                                  "children?select=name,folder,path,parentReference").arg(nextFolder));
 
     QNetworkRequest netRequest(url);
-    netRequest.setRawHeader("Authorization", QString::fromLatin1("bearer %1").arg(d->accessToken).toUtf8());
+    netRequest.setRawHeader("Authorization", QString::fromLatin1("Bearer %1").arg(d->accessToken).toUtf8());
     netRequest.setHeader(QNetworkRequest::ContentTypeHeader, QLatin1String("application/json"));
 
     d->reply = d->netMngr->get(netRequest);
@@ -380,11 +380,11 @@ bool ODTalker::addPhoto(const QString& imgPath, const QString& uploadFolder, boo
     }
 
     QString uploadPath = uploadFolder + QUrl(imgPath).fileName();
-    QUrl url(QString::fromLatin1("https://graph.microsoft.com/v1.0/me/drive/root:/%1:/content").arg(uploadPath));
+    QUrl url(QString::fromLatin1("https://graph.microsoft.com/v1.0/me/drive/root:%1:/content").arg(uploadPath));
 
     QNetworkRequest netRequest(url);
     netRequest.setHeader(QNetworkRequest::ContentTypeHeader, QLatin1String("application/octet-stream"));
-    netRequest.setRawHeader("Authorization", QString::fromLatin1("bearer {%1}").arg(d->accessToken).toUtf8());
+    netRequest.setRawHeader("Authorization", QString::fromLatin1("Bearer %1").arg(d->accessToken).toUtf8());
 
     d->reply = d->netMngr->put(netRequest, form.formData());
 
@@ -406,7 +406,7 @@ void ODTalker::slotFinished(QNetworkReply* reply)
     {
         if (d->state != Private::OD_CREATEFOLDER)
         {
-            emit signalBusy(false);
+            emit signalTransferCancel();
             QMessageBox::critical(QApplication::activeWindow(),
                                   i18n("Error"), reply->errorString());
 
@@ -451,7 +451,6 @@ void ODTalker::parseResponseAddPhoto(const QByteArray& data)
     QJsonDocument doc      = QJsonDocument::fromJson(data);
     QJsonObject jsonObject = doc.object();
     bool success           = jsonObject.contains(QLatin1String("size"));
-    emit signalBusy(false);
 
     if (!success)
     {
@@ -514,7 +513,7 @@ void ODTalker::parseResponseListFolders(const QByteArray& data)
 
             path        = folderPath.section(QLatin1String("root:"), -1, -1) +
                                              QLatin1Char('/') + folderName;
-            path        = QUrl(path).toString(QUrl::FullyDecoded);
+            path        = QUrl(path).toString();
             listName    = path.section(QLatin1Char('/'), 1);
 
             d->folderList.append(qMakePair(path, listName));

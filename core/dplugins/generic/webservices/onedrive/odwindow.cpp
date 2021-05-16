@@ -113,6 +113,9 @@ ODWindow::ODWindow(DInfoInterface* const iface,
     connect(d->talker,SIGNAL(signalBusy(bool)),
             this,SLOT(slotBusy(bool)));
 
+    connect(d->talker,SIGNAL(signalTransferCancel()),
+            this,SLOT(slotTransferCancel()));
+
     connect(d->talker,SIGNAL(signalLinkingFailed()),
             this,SLOT(slotSignalLinkingFailed()));
 
@@ -204,18 +207,14 @@ void ODWindow::setItemsList(const QList<QUrl>& urls)
 
 void ODWindow::slotBusy(bool val)
 {
-    if (val)
-    {
-        setCursor(Qt::WaitCursor);
-        d->widget->getChangeUserBtn()->setEnabled(false);
-        buttonStateChange(false);
-    }
-    else
-    {
-        setCursor(Qt::ArrowCursor);
-        d->widget->getChangeUserBtn()->setEnabled(true);
-        buttonStateChange(true);
-    }
+    setCursor(val ? Qt::WaitCursor
+                  : Qt::ArrowCursor);
+
+    d->widget->imagesList()->enableControlButtons(!val);
+    d->widget->imagesList()->enableDragAndDrop(!val);
+    d->widget->getChangeUserBtn()->setEnabled(!val);
+    d->widget->getOptionsBox()->setEnabled(!val);
+    buttonStateChange(!val);
 }
 
 void ODWindow::slotSetUserName(const QString& msg)
@@ -307,19 +306,19 @@ void ODWindow::uploadNextPhoto()
 
     if (d->transferQueue.isEmpty())
     {
-        qCDebug(DIGIKAM_WEBSERVICES_LOG) << "empty";
         d->widget->progressBar()->progressCompleted();
+        slotBusy(false);
         return;
     }
 
     QString imgPath = d->transferQueue.first().toLocalFile();
-    QString temp = d->currentAlbumName + QLatin1Char('/');
+    QString temp    = d->currentAlbumName + QLatin1Char('/');
 
-    bool result = d->talker->addPhoto(imgPath,
-                                      temp,
-                                      d->widget->getResizeCheckBox()->isChecked(),
-                                      d->widget->getDimensionSpB()->value(),
-                                      d->widget->getImgQualitySpB()->value());
+    bool result     = d->talker->addPhoto(imgPath,
+                                          temp,
+                                          d->widget->getResizeCheckBox()->isChecked(),
+                                          d->widget->getDimensionSpB()->value(),
+                                          d->widget->getImgQualitySpB()->value());
 
     if (!result)
     {
@@ -336,8 +335,10 @@ void ODWindow::slotAddPhotoFailed(const QString& msg)
                                     "Do you want to continue?", msg))
         != QMessageBox::Yes)
     {
+        slotBusy(false);
         d->transferQueue.clear();
         d->widget->progressBar()->hide();
+        d->widget->progressBar()->progressCompleted();
     }
     else
     {
@@ -418,9 +419,10 @@ void ODWindow::slotCreateFolderSucceeded()
 
 void ODWindow::slotTransferCancel()
 {
+    d->talker->cancel();
     d->transferQueue.clear();
     d->widget->progressBar()->hide();
-    d->talker->cancel();
+    d->widget->progressBar()->progressCompleted();
 }
 
 void ODWindow::slotUserChangeRequest()

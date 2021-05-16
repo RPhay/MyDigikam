@@ -334,4 +334,5 @@ BUGFIXES:
 314 ==> 437072 - digiKam does not start.
 315 ==> 426791 - Unable to change database location via GUI.
 316 ==> 437175 - Use media file timestamp when creating sidecar.
-317 ==> 
+317 ==> 437103 - BadRequest when exporting to Onedrive.
+318 ==> 
