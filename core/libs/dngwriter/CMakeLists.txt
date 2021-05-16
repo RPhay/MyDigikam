@@ -53,6 +53,7 @@ endif()
 
 #------------------------------------------------------------------------------------
 
+# NOTE: minimum XMP SDK code to compile for DNG SDK. See extra/README for details.
 set(libxmp_SRCS
 
     ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/source/PerfUtils.cpp
@@ -79,96 +80,6 @@ set(libxmp_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/XMPCore/source/XMPUtils-FileInfo.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/XMPCore/source/XMPUtils.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/XMPCore/source/XMPUtils2.cpp
-
-# No nned extra IO supports for DNG SDK.
-
-#    ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/source/Host_IO-POSIX.cpp
-#    ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/source/IOUtils.cpp
-#    ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/source/XIO.cpp
-#    ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/source/XMPFiles_IO.cpp
-
-# No need extra file formats support. DNG SDK only needs XMP Core.
-
-#    ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/XMPFiles/source/HandlerRegistry.cpp
-#    ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/XMPFiles/source/WXMPFiles.cpp
-#    ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/XMPFiles/source/XMPFiles.cpp
-#    ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/XMPFiles/source/XMPFiles_Impl.cpp
-
-#    ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/XMPFiles/source/NativeMetadataSupport/IMetadata.cpp
-#    ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/XMPFiles/source/NativeMetadataSupport/IReconcile.cpp
-#    ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/XMPFiles/source/NativeMetadataSupport/MetadataSet.cpp
-
-#    ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/XMPFiles/source/FormatSupport/AIFF/AIFFBehavior.cpp
-#    ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/XMPFiles/source/FormatSupport/AIFF/AIFFMetadata.cpp
-#    ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/XMPFiles/source/FormatSupport/AIFF/AIFFReconcile.cpp
-#    ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/XMPFiles/source/FormatSupport/ASF_Support.cpp
-#    ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/XMPFiles/source/FormatSupport/ID3_Support.cpp
-#    ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/XMPFiles/source/FormatSupport/IFF/Chunk.cpp
-#    ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/XMPFiles/source/FormatSupport/IFF/ChunkController.cpp
-#    ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/XMPFiles/source/FormatSupport/IFF/ChunkPath.cpp
-#    ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/XMPFiles/source/FormatSupport/IFF/IChunkBehavior.cpp
-#    ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/XMPFiles/source/FormatSupport/IPTC_Support.cpp
-#    ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/XMPFiles/source/FormatSupport/ISOBaseMedia_Support.cpp
-#    ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/XMPFiles/source/FormatSupport/MOOV_Support.cpp
-#    ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/XMPFiles/source/FormatSupport/P2_Support.cpp
-#    ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/XMPFiles/source/FormatSupport/PNG_Support.cpp
-#    ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/XMPFiles/source/FormatSupport/PSIR_FileWriter.cpp
-#    ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/XMPFiles/source/FormatSupport/PSIR_MemoryReader.cpp
-#    ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/XMPFiles/source/FormatSupport/PackageFormat_Support.cpp
-#    ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/XMPFiles/source/FormatSupport/PostScript_Support.cpp
-#    ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/XMPFiles/source/FormatSupport/QuickTime_Support.cpp
-#    ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/XMPFiles/source/FormatSupport/RIFF.cpp
-#    ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/XMPFiles/source/FormatSupport/RIFF_Support.cpp
-#    ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/XMPFiles/source/FormatSupport/ReconcileIPTC.cpp
-#    ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/XMPFiles/source/FormatSupport/ReconcileLegacy.cpp
-#    ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/XMPFiles/source/FormatSupport/ReconcileTIFF.cpp
-#    ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/XMPFiles/source/FormatSupport/Reconcile_Impl.cpp
-#    ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/XMPFiles/source/FormatSupport/SVG_Adapter.cpp
-#    ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/XMPFiles/source/FormatSupport/SWF_Support.cpp
-#    ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/XMPFiles/source/FormatSupport/TIFF_FileWriter.cpp
-#    ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/XMPFiles/source/FormatSupport/TIFF_MemoryReader.cpp
-#    ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/XMPFiles/source/FormatSupport/TIFF_Support.cpp
-#    ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/XMPFiles/source/FormatSupport/TimeConversionUtils.cpp
-#    ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/XMPFiles/source/FormatSupport/WAVE/BEXTMetadata.cpp
-#    ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/XMPFiles/source/FormatSupport/WAVE/CartMetadata.cpp
-#    ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/XMPFiles/source/FormatSupport/WAVE/Cr8rMetadata.cpp
-#    ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/XMPFiles/source/FormatSupport/WAVE/DISPMetadata.cpp
-#    ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/XMPFiles/source/FormatSupport/WAVE/INFOMetadata.cpp
-#    ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/XMPFiles/source/FormatSupport/WAVE/PrmLMetadata.cpp
-#    ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/XMPFiles/source/FormatSupport/WAVE/WAVEBehavior.cpp
-#    ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/XMPFiles/source/FormatSupport/WAVE/WAVEReconcile.cpp
-#    ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/XMPFiles/source/FormatSupport/WAVE/iXMLMetadata.cpp
-#    ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/XMPFiles/source/FormatSupport/XDCAM_Support.cpp
-#    ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/XMPFiles/source/FormatSupport/XMPScanner.cpp
-
-#    ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/XMPFiles/source/FileHandlers/AIFF_Handler.cpp
-#    ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/XMPFiles/source/FileHandlers/ASF_Handler.cpp
-#    ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/XMPFiles/source/FileHandlers/AVCHD_Handler.cpp
-#    ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/XMPFiles/source/FileHandlers/Basic_Handler.cpp
-#    ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/XMPFiles/source/FileHandlers/FLV_Handler.cpp
-#    ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/XMPFiles/source/FileHandlers/GIF_Handler.cpp
-#    ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/XMPFiles/source/FileHandlers/InDesign_Handler.cpp
-#    ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/XMPFiles/source/FileHandlers/JPEG_Handler.cpp
-#    ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/XMPFiles/source/FileHandlers/MP3_Handler.cpp
-#    ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/XMPFiles/source/FileHandlers/MPEG2_Handler.cpp
-#    ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/XMPFiles/source/FileHandlers/MPEG4_Handler.cpp
-#    ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/XMPFiles/source/FileHandlers/P2_Handler.cpp
-#    ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/XMPFiles/source/FileHandlers/PNG_Handler.cpp
-#    ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/XMPFiles/source/FileHandlers/PSD_Handler.cpp
-#    ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/XMPFiles/source/FileHandlers/PostScript_Handler.cpp
-#    ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/XMPFiles/source/FileHandlers/RIFF_Handler.cpp
-#    ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/XMPFiles/source/FileHandlers/SVG_Handler.cpp
-#    ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/XMPFiles/source/FileHandlers/SWF_Handler.cpp
-#    ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/XMPFiles/source/FileHandlers/Scanner_Handler.cpp
-#    ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/XMPFiles/source/FileHandlers/SonyHDV_Handler.cpp
-#    ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/XMPFiles/source/FileHandlers/TIFF_Handler.cpp
-#    ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/XMPFiles/source/FileHandlers/Trivial_Handler.cpp
-#    ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/XMPFiles/source/FileHandlers/UCF_Handler.cpp
-#    ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/XMPFiles/source/FileHandlers/WAVE_Handler.cpp
-#    ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/XMPFiles/source/FileHandlers/XDCAMEX_Handler.cpp
-#    ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/XMPFiles/source/FileHandlers/XDCAMFAM_Handler.cpp
-#    ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/XMPFiles/source/FileHandlers/XDCAMSAM_Handler.cpp
-#    ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/XMPFiles/source/FileHandlers/XDCAM_Handler.cpp
 )
 
 # Used by digikamcore
