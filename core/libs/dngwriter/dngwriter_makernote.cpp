@@ -36,7 +36,7 @@ int DNGWriter::Private::storeMakernote(DNGWriterHost& host,
                                        DRawInfo* const identifyMake,
                                        DMetadata* const meta)
 {
-    if (metaLoaded)     // We only process Makernote storage is Metadat can be loaded at Exif stage.
+    if (metaLoaded)     // We only process Makernote storage if Metadata can be loaded at Exif stage.
     {
         qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Updating Makernote metadata to DNG Negative";
 

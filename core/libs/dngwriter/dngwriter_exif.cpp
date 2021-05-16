@@ -43,7 +43,7 @@ int DNGWriter::Private::storeExif(DNGWriterHost& /*host*/,
 
     if (metaLoaded)
     {
-        qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Updating Exif metadata to DNG Negative" ;
+        qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Updating Exif metadata to DNG Negative";
 
         QString  str;
         long int num, den;
