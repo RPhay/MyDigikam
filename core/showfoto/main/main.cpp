@@ -162,8 +162,6 @@ int main(int argc, char* argv[])
 
     if (loadTranslation && !transPath.isEmpty())
     {
-        QLocale locale;
-
         QString klanguagePath = QStandardPaths::writableLocation(QStandardPaths::GenericConfigLocation) +
                                 QLatin1Char('/') + QLatin1String("klanguageoverridesrc");
 
@@ -176,15 +174,15 @@ int main(int argc, char* argv[])
 
             if (!language.isEmpty())
             {
-                locale = QLocale(language);
+                QLocale::setDefault(language);
             }
         }
 
-        bool ret = translator.load(locale, QLatin1String("qtbase"),
+        bool ret = translator.load(QLocale(), QLatin1String("qtbase"),
                                    QLatin1String("_"), transPath);
 
         qCDebug(DIGIKAM_GENERAL_LOG) << "Qt translations path:" << transPath;
-        qCDebug(DIGIKAM_GENERAL_LOG) << "Locale:"  << locale.name()
+        qCDebug(DIGIKAM_GENERAL_LOG) << "Locale:"  << QLocale().name()
                                      << "Loading:" << ret;
 
         if (ret)
