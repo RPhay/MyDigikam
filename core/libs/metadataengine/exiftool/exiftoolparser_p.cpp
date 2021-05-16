@@ -131,6 +131,11 @@ QString ExifToolParser::Private::actionString(int cmdAction) const
             return QLatin1String("Translations List");
         }
 
+        case ExifToolProcess::COPY_TAGS:
+        {
+            return QLatin1String("Copy Tags");
+        }
+
         default: // ExifToolProcess::NO_ACTION
         {
             break;
@@ -142,7 +147,8 @@ QString ExifToolParser::Private::actionString(int cmdAction) const
 
 void ExifToolParser::Private::manageEventLoop(int cmdAction)
 {
-    if ((cmdAction >= ExifToolProcess::LOAD_METADATA) && (cmdAction < ExifToolProcess::NO_ACTION))
+    if ((cmdAction >= ExifToolProcess::LOAD_METADATA) &&
+        (cmdAction <  ExifToolProcess::NO_ACTION))
     {
         if (evLoops[cmdAction])
         {

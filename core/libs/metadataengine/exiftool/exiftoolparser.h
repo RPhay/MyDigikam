@@ -102,6 +102,8 @@ public:
     ExifToolData currentData()        const;
     QString      currentErrorString() const;
 
+    static bool exifToolAvailable();
+
     //@}
 
 public:
@@ -162,7 +164,7 @@ public:
      * 'copyOps' is a OR combination of ExifToolProcess::CopyTagsSource values.
      * 'dst' must be a writable file format supported by ExifTool.
      */
-    bool copyTags(const QString& src, const QString& dst, int copyOps);
+    bool copyTags(const QString& src, const QString& dst, unsigned char copyOps);
 
     //@}
 

@@ -43,7 +43,7 @@ int DNGWriter::Private::backupRaw(DNGWriterHost& host,
 
         if (!originalFile.open(QIODevice::ReadOnly))
         {
-            qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Cannot open original RAW file to backup in DNG. Aborted...";
+            qCCritical(DIGIKAM_GENERAL_LOG) << "DNGWriter: Cannot open original RAW file to backup in DNG. Aborted...";
 
             return PROCESS_FAILED;
         }
@@ -64,7 +64,7 @@ int DNGWriter::Private::backupRaw(DNGWriterHost& host,
 
         if (!compressedFile.open())
         {
-            qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Cannot open temporary file to write Zipped Raw data. Aborted...";
+            qCCritical(DIGIKAM_GENERAL_LOG) << "DNGWriter: Cannot open temporary file to write Zipped Raw data. Aborted...";
 
             return PROCESS_FAILED;
         }
@@ -76,7 +76,7 @@ int DNGWriter::Private::backupRaw(DNGWriterHost& host,
             int originalBlockLength = originalDataStream.readRawData(originalDataBlock.data(), CHUNK);
 
             QByteArray compressedDataBlock = qCompress((const uchar*)originalDataBlock.data(), originalBlockLength, -1);
-            compressedDataBlock.remove(0, 4); // removes qCompress own header
+            compressedDataBlock.remove(0, 4);   // removes qCompress own header
             qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: compressed data block " << originalBlockLength << " -> " << compressedDataBlock.size();
 
             offset += compressedDataBlock.size();

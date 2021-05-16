@@ -225,7 +225,7 @@ int DNGWriter::Private::createNegative(AutoPtr<dng_negative>& negative,
 
             if (camXYZ.MaxEntry() == 0.0)
             {
-                qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: camera XYZ Matrix is null : camera not supported";
+                qCCritical(DIGIKAM_GENERAL_LOG) << "DNGWriter: camera XYZ Matrix is null : camera not supported";
                 return FILE_NOT_SUPPORTED;
             }
 
@@ -252,7 +252,7 @@ int DNGWriter::Private::createNegative(AutoPtr<dng_negative>& negative,
 
             if (camXYZ.MaxEntry() == 0.0)
             {
-                qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: camera XYZ Matrix is null : camera not supported";
+                qCCritical(DIGIKAM_GENERAL_LOG) << "DNGWriter: camera XYZ Matrix is null : camera not supported";
                 return FILE_NOT_SUPPORTED;
             }
 

@@ -233,7 +233,7 @@ bool ExifToolParser::translationsList()
     return (d->startProcess(cmdArgs, ExifToolProcess::TRANSLATIONS_LIST));
 }
 
-bool ExifToolParser::copyTags(const QString& src, const QString& dst, int copyOps)
+bool ExifToolParser::copyTags(const QString& src, const QString& dst, unsigned char copyOps)
 {
     QFileInfo sfi(src);
 
@@ -250,6 +250,8 @@ bool ExifToolParser::copyTags(const QString& src, const QString& dst, int copyOp
     }
 
     QByteArrayList copyCmds;
+
+    qCDebug(DIGIKAM_METAENGINE_LOG) << "Copy Operations:" << copyOps << "(" << QString::fromLatin1("%1").arg(copyOps, 0, 2) << ")";
 
     if (copyOps & ExifToolProcess::COPY_EXIF)
     {
@@ -291,6 +293,7 @@ bool ExifToolParser::copyTags(const QString& src, const QString& dst, int copyOp
     cmdArgs << QByteArray("-TagsFromFile");
     cmdArgs << d->filePathEncoding(src);
     cmdArgs << copyCmds;
+    cmdArgs << QByteArray("-overwrite_original");
     cmdArgs << d->filePathEncoding(dst);
     d->currentPath = sfi.path();
 

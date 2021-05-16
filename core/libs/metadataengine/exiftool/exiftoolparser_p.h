@@ -36,6 +36,7 @@
 #include <QJsonArray>
 #include <QJsonObject>
 #include <QEventLoop>
+#include <QFileInfo>
 
 // KDE includes
 

@@ -100,4 +100,20 @@ void ExifToolParser::slotMetaEngineSettingsChanged()
     qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool path:" << d->proc->program();
 }
 
+bool ExifToolParser::exifToolAvailable()
+{
+    bool ret = false;
+
+    QFileInfo fi(MetaEngineSettings::instance()->settings().exifToolPath);
+
+    if (fi.exists() && fi.isExecutable())
+    {
+        ret = true;
+    }
+
+    qCDebug(DIGIKAM_METAENGINE_LOG) << "Check ExifTool availability:" << fi.filePath() << "==>" << ret;
+
+    return ret;
+}
+
 } // namespace Digikam

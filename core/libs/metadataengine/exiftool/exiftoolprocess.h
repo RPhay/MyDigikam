@@ -64,7 +64,7 @@ public:
     };
 
     /**
-     * Possible operations to combine with COPY_TAGS action.
+     * Possible operations to OR combine with COPY_TAGS action.
      */
     enum CopyTagsSource
     {
@@ -72,7 +72,7 @@ public:
         COPY_MAKERNOTES = 0x02,     ///< Copy all Makernotes tags from source file.
         COPY_IPTC       = 0x04,     ///< Copy all Iptc tags from source file.
         COPY_XMP        = 0x08,     ///< Copy all Xmp tags from source file.
-        COPY_ALL        = 0x0A      ///< Copy all tags from source file.
+        COPY_ALL        = 0x10      ///< Copy all tags from source file.
     };
 
 public:

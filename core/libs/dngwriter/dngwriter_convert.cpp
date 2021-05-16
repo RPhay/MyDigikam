@@ -145,19 +145,28 @@ int DNGWriter::convert()
         {
             return ret;
         }
+
+        // -----------------------------------------------------------------------------------------
+
+        ret = d->exifToolPostProcess();
+
+        if (ret != PROCESS_CONTINUE)
+        {
+            return ret;
+        }
     }
 
     catch (const dng_exception& exception)
     {
         int ret = exception.ErrorCode();
-        qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: DNG SDK exception code (" << ret << "):" << d->dngErrorCodeToString(ret);
+        qCWarning(DIGIKAM_GENERAL_LOG) << "DNGWriter: DNG SDK exception code (" << ret << "):" << d->dngErrorCodeToString(ret);
 
         return DNG_SDK_INTERNAL_ERROR;
     }
 
     catch (...)
     {
-        qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: DNG SDK exception code unknow";
+        qCWarning(DIGIKAM_GENERAL_LOG) << "DNGWriter: DNG SDK exception code unknow";
 
         return DNG_SDK_INTERNAL_ERROR;
     }

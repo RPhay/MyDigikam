@@ -22,6 +22,7 @@
 
 // Qt includes
 
+#include <QCoreApplication>
 #include <QDebug>
 
 // Local includes
@@ -30,15 +31,19 @@
 
 int main(int argc, char **argv)
 {
+    QCoreApplication app(argc, argv);
+
     if (argc != 2)
     {
         qDebug() << "raw2dng - RAW Camera Image to DNG Converter";
         qDebug() << "Usage: <rawfile>";
+
         return -1;
     }
 
     Digikam::DNGWriter dngProcessor;
     dngProcessor.setInputFile(QString::fromUtf8(argv[1]));
     int ret = dngProcessor.convert();
+
     return ret;
 }

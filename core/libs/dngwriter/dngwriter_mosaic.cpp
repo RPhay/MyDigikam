@@ -112,7 +112,7 @@ int DNGWriter::Private::identMosaic(DRawInfo* const identify,
 
         if (identify->filterPattern.length() != 16)
         {
-            qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Bayer mosaic not supported. Aborted..." ;
+            qCCritical(DIGIKAM_GENERAL_LOG) << "DNGWriter: Bayer mosaic not supported. Aborted...";
 
             return FILE_NOT_SUPPORTED;
         }
@@ -139,7 +139,7 @@ int DNGWriter::Private::identMosaic(DRawInfo* const identify,
             }
             else
             {
-                qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Bayer mosaic not supported. Aborted..." ;
+                qCCritical(DIGIKAM_GENERAL_LOG) << "DNGWriter: Bayer mosaic not supported. Aborted...";
 
                 return FILE_NOT_SUPPORTED;
             }
@@ -147,7 +147,7 @@ int DNGWriter::Private::identMosaic(DRawInfo* const identify,
     }
     else
     {
-        qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Bayer mosaic not supported. Aborted..." ;
+        qCCritical(DIGIKAM_GENERAL_LOG) << "DNGWriter: Bayer mosaic not supported. Aborted...";
 
         return FILE_NOT_SUPPORTED;
     }
@@ -156,7 +156,7 @@ int DNGWriter::Private::identMosaic(DRawInfo* const identify,
     {
         if (!fujiRotate(rawData, *identify))
         {
-            qCDebug(DIGIKAM_GENERAL_LOG) << "Can not rotate fuji image. Aborted...";
+            qCCritical(DIGIKAM_GENERAL_LOG) << "Can not rotate fuji image. Aborted...";
 
             return PROCESS_FAILED;
         }
@@ -174,7 +174,7 @@ int DNGWriter::Private::identMosaic(DRawInfo* const identify,
 
     if ((identify->rawColors != 3) && (identify->rawColors != 4))
     {
-        qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Number of Raw color components not supported. Aborted..." ;
+        qCCritical(DIGIKAM_GENERAL_LOG) << "DNGWriter: Number of Raw color components not supported. Aborted...";
 
         return PROCESS_FAILED;
     }

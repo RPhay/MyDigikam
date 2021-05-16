@@ -35,7 +35,7 @@ int DNGWriter::Private::importRaw(DRawInfo* const identify,
 {
     if (parent->inputFile().isEmpty())
     {
-        qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: No input file to convert. Aborted...";
+        qCCritical(DIGIKAM_GENERAL_LOG) << "DNGWriter: No input file to convert. Aborted...";
 
         return PROCESS_FAILED;
     }
@@ -58,7 +58,7 @@ int DNGWriter::Private::importRaw(DRawInfo* const identify,
 
     if (!rawProcessor->rawFileIdentify(*identifyMake, parent->inputFile()))
     {
-        qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Reading RAW file failed. Aborted...";
+        qCCritical(DIGIKAM_GENERAL_LOG) << "DNGWriter: Reading RAW file failed. Aborted...";
 
         return PROCESS_FAILED;
     }
@@ -78,7 +78,7 @@ int DNGWriter::Private::importRaw(DRawInfo* const identify,
 
     if (!rawProcessor->extractRAWData(parent->inputFile(), rawData, *identify, 0))
     {
-        qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Loading RAW data failed. Aborted..." ;
+        qCCritical(DIGIKAM_GENERAL_LOG) << "DNGWriter: Loading RAW data failed. Aborted...";
 
         return FILE_NOT_SUPPORTED;
     }

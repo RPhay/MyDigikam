@@ -77,6 +77,8 @@
 #include "digikam_version.h"
 #include "dfileoperations.h"
 #include "dmetadata.h"
+#include "exiftoolparser.h"
+#include "exiftoolprocess.h"
 
 #define CHUNK 65536
 
@@ -151,6 +153,8 @@ public:
     int exportTarget(DNGWriterHost& host,
                      AutoPtr<dng_negative>& negative,
                      AutoPtr<dng_image>& image);
+
+    int exifToolPostProcess();
 
 private:
 
