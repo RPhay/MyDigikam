@@ -29,6 +29,12 @@
 #include <QFile>
 #include <QScopedPointer>
 
+// DNG SDK includes
+
+#ifdef USE_DNGSDK
+#   include "dng_host.h"
+#endif
+
 // Local includes
 
 #include "digikam_debug.h"
@@ -552,6 +558,16 @@ bool DRawDecoder::Private::loadFromLibraw(const QString& filePath, QByteArray& i
     raw->imgdata.params.dcb_iterations = m_parent->m_decoderSettings.dcbIterations;
     raw->imgdata.params.dcb_enhance_fl = m_parent->m_decoderSettings.dcbEnhanceFl;
 
+#ifdef USE_DNGSDK
+
+    qCDebug(DIGIKAM_RAWENGINE_LOG) << "LibRaw: setup internal DNG SDK";
+
+    raw->imgdata.rawparams.use_dngsdk = LIBRAW_DNG_ALL;
+    dng_host* const dnghost           = new dng_host;
+    raw->set_dng_host(dnghost);
+
+#endif
+
     //-------------------------------------------------------------------------------------------
 
     setProgress(0.1);
@@ -575,6 +591,12 @@ bool DRawDecoder::Private::loadFromLibraw(const QString& filePath, QByteArray& i
         raw->recycle();
         delete raw;
 
+#ifdef USE_DNGSDK
+
+        delete dnghost;
+
+#endif
+
         return false;
     }
 
@@ -582,6 +604,12 @@ bool DRawDecoder::Private::loadFromLibraw(const QString& filePath, QByteArray& i
     {
         raw->recycle();
         delete raw;
+
+#ifdef USE_DNGSDK
+
+        delete dnghost;
+
+#endif
 
         return false;
     }
@@ -596,6 +624,12 @@ bool DRawDecoder::Private::loadFromLibraw(const QString& filePath, QByteArray& i
         raw->recycle();
         delete raw;
 
+#ifdef USE_DNGSDK
+
+        delete dnghost;
+
+#endif
+
         return false;
     }
 
@@ -603,6 +637,12 @@ bool DRawDecoder::Private::loadFromLibraw(const QString& filePath, QByteArray& i
     {
         raw->recycle();
         delete raw;
+
+#ifdef USE_DNGSDK
+
+        delete dnghost;
+
+#endif
 
         return false;
     }
@@ -634,6 +674,12 @@ bool DRawDecoder::Private::loadFromLibraw(const QString& filePath, QByteArray& i
         raw->recycle();
         delete raw;
 
+#ifdef USE_DNGSDK
+
+        delete dnghost;
+
+#endif
+
         return false;
     }
 
@@ -641,6 +687,12 @@ bool DRawDecoder::Private::loadFromLibraw(const QString& filePath, QByteArray& i
     {
         raw->recycle();
         delete raw;
+
+#ifdef USE_DNGSDK
+
+        delete dnghost;
+
+#endif
 
         return false;
     }
@@ -655,6 +707,12 @@ bool DRawDecoder::Private::loadFromLibraw(const QString& filePath, QByteArray& i
         raw->recycle();
         delete raw;
 
+#ifdef USE_DNGSDK
+
+        delete dnghost;
+
+#endif
+
         return false;
     }
 
@@ -665,6 +723,12 @@ bool DRawDecoder::Private::loadFromLibraw(const QString& filePath, QByteArray& i
         raw->dcraw_clear_mem(img);
         raw->recycle();
         delete raw;
+
+#ifdef USE_DNGSDK
+
+        delete dnghost;
+
+#endif
 
         return false;
     }
@@ -699,6 +763,12 @@ bool DRawDecoder::Private::loadFromLibraw(const QString& filePath, QByteArray& i
     raw->dcraw_clear_mem(img);
     raw->recycle();
     delete raw;
+
+#ifdef USE_DNGSDK
+
+    delete dnghost;
+
+#endif
 
     if (m_parent->m_cancel)
     {
@@ -767,6 +837,17 @@ bool DRawDecoder::Private::loadHalfPreview(QImage& image, LibRaw* const raw)
     raw->imgdata.params.use_auto_wb   = 1;         // Use automatic white balance.
     raw->imgdata.params.use_camera_wb = 1;         // Use camera white balance, if possible.
     raw->imgdata.params.half_size     = 1;         // Half-size color image (3x faster than -q).
+
+#ifdef USE_DNGSDK
+
+    qCDebug(DIGIKAM_RAWENGINE_LOG) << "LibRaw: setup internal DNG SDK";
+
+    raw->imgdata.rawparams.use_dngsdk = LIBRAW_DNG_ALL;
+    dng_host* const dnghost           = new dng_host;
+    raw->set_dng_host(dnghost);
+
+#endif
+
     QByteArray imgData;
 
     int ret = raw->unpack();
@@ -776,6 +857,12 @@ bool DRawDecoder::Private::loadHalfPreview(QImage& image, LibRaw* const raw)
         qCDebug(DIGIKAM_RAWENGINE_LOG) << "LibRaw: failed to run unpack: " << libraw_strerror(ret);
         raw->recycle();
         delete raw;
+
+#ifdef USE_DNGSDK
+
+        delete dnghost;
+
+#endif
 
         return false;
     }
@@ -788,6 +875,12 @@ bool DRawDecoder::Private::loadHalfPreview(QImage& image, LibRaw* const raw)
         raw->recycle();
         delete raw;
 
+#ifdef USE_DNGSDK
+
+        delete dnghost;
+
+#endif
+
         return false;
     }
 
@@ -799,6 +892,12 @@ bool DRawDecoder::Private::loadHalfPreview(QImage& image, LibRaw* const raw)
         raw->recycle();
         delete raw;
 
+#ifdef USE_DNGSDK
+
+        delete dnghost;
+
+#endif
+
         return false;
     }
 
@@ -809,6 +908,12 @@ bool DRawDecoder::Private::loadHalfPreview(QImage& image, LibRaw* const raw)
     raw->dcraw_clear_mem(halfImg);
     raw->recycle();
     delete raw;
+
+#ifdef USE_DNGSDK
+
+    delete dnghost;
+
+#endif
 
     if (imgData.isEmpty())
     {
