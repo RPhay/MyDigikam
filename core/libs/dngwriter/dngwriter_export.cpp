@@ -60,17 +60,16 @@ int DNGWriter::Private::exportTarget(DNGWriterHost& host,
 
     dng_preview_list previewList;
     dng_render negRender(host, *negative.Get());
-    dng_jpeg_preview* const jpeg_preview = new dng_jpeg_preview();
 
     if (previewMode != DNGWriter::NONE)
     {
         qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: DNG preview image creation";
 
-        dng_jpeg_preview* jpeg_preview  = new dng_jpeg_preview();
+        dng_jpeg_preview* const jpeg_preview = new dng_jpeg_preview();
         jpeg_preview->fInfo.fApplicationName.Set_ASCII(QString::fromLatin1("digiKam").toLatin1().constData());
         jpeg_preview->fInfo.fApplicationVersion.Set_ASCII(digiKamVersion().toLatin1().constData());
-        jpeg_preview->fInfo.fDateTime   = orgDateTimeInfo.Encode_ISO_8601();
-        jpeg_preview->fInfo.fColorSpace = previewColorSpace_sRGB;
+        jpeg_preview->fInfo.fDateTime        = orgDateTimeInfo.Encode_ISO_8601();
+        jpeg_preview->fInfo.fColorSpace      = previewColorSpace_sRGB;
 
         negRender.SetMaximumSize(previewMode == MEDIUM ? 1280 : width);
         AutoPtr<dng_image> negImage(negRender.Render());
@@ -89,11 +88,11 @@ int DNGWriter::Private::exportTarget(DNGWriterHost& host,
 
     qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: DNG thumbnail creation";
 
-    dng_image_preview* const thumbnail   = new dng_image_preview();
-    thumbnail->fInfo.fApplicationName    = jpeg_preview->fInfo.fApplicationName;
-    thumbnail->fInfo.fApplicationVersion = jpeg_preview->fInfo.fApplicationVersion;
-    thumbnail->fInfo.fDateTime           = jpeg_preview->fInfo.fDateTime;
-    thumbnail->fInfo.fColorSpace         = jpeg_preview->fInfo.fColorSpace;
+    dng_image_preview* const thumbnail = new dng_image_preview();
+    thumbnail->fInfo.fApplicationName.Set_ASCII(QString::fromLatin1("digiKam").toLatin1().constData());
+    thumbnail->fInfo.fApplicationVersion.Set_ASCII(digiKamVersion().toLatin1().constData());
+    thumbnail->fInfo.fDateTime         = orgDateTimeInfo.Encode_ISO_8601();
+    thumbnail->fInfo.fColorSpace       = previewColorSpace_sRGB;
 
     negRender.SetMaximumSize(256);
     thumbnail->fImage.Reset(negRender.Render());
