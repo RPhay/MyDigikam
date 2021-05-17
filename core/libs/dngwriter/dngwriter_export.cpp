@@ -60,7 +60,7 @@ int DNGWriter::Private::exportTarget(DNGWriterHost& host,
 
     dng_preview_list previewList;
     dng_render negRender(host, *negative.Get());
-    dng_jpeg_preview* jpeg_preview = new dng_jpeg_preview();
+    dng_jpeg_preview* const jpeg_preview = new dng_jpeg_preview();
 
     if (previewMode != DNGWriter::NONE)
     {
@@ -89,7 +89,7 @@ int DNGWriter::Private::exportTarget(DNGWriterHost& host,
 
     qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: DNG thumbnail creation";
 
-    dng_image_preview* thumbnail         = new dng_image_preview();
+    dng_image_preview* const thumbnail   = new dng_image_preview();
     thumbnail->fInfo.fApplicationName    = jpeg_preview->fInfo.fApplicationName;
     thumbnail->fInfo.fApplicationVersion = jpeg_preview->fInfo.fApplicationVersion;
     thumbnail->fInfo.fDateTime           = jpeg_preview->fInfo.fDateTime;

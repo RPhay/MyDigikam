@@ -38,6 +38,7 @@ int DNGWriter::Private::storeExif(DNGWriterHost& /*host*/,
 {
     exif->fModel.Set_ASCII(identify->model.toLatin1().constData());
     exif->fMake.Set_ASCII(identify->make.toLatin1().constData());
+    exif->fSoftware.Set_ASCII(QString::fromLatin1("digiKam %1").arg(digiKamVersion()).toLatin1().constData());
 
     metaLoaded = meta->load(parent->inputFile());
 
