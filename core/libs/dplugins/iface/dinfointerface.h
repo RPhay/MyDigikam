@@ -56,6 +56,7 @@ class DIGIKAM_EXPORT DInfoInterface : public QObject
 {
     Q_OBJECT
 
+
 public:
 
     typedef QMap<QString, QVariant> DInfoMap;       ///< Map of properties name and value.
@@ -150,6 +151,18 @@ public:
 
     /// Manipulate with item
     virtual void deleteImage(const QUrl& url);
+
+public:
+
+    enum SetupPage
+    {
+        ExifToolPage = 0
+    };
+
+    /// Open configuration dialog page.
+    virtual void openSetupPage(SetupPage page);
+
+    Q_SIGNAL void signalSetupChanged();
 };
 
 // -------------------------------------------------------------------------------------------------------------

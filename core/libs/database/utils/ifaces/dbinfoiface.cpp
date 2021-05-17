@@ -60,6 +60,7 @@
 #include "dio.h"
 #include "fileactionmngr.h"
 #include "tagsactionmngr.h"
+#include "setup.h"
 
 #ifdef HAVE_MARBLE
 #   include "itemgps.h"
@@ -569,7 +570,7 @@ void DBInfoIface::setItemInfo(const QUrl& url, const DInfoMap& map) const
 
     if (!keys.isEmpty())
     {
-        qCWarning(DIGIKAM_GENERAL_LOG) << "Keys not yet supported in DMetaInfoIface::setItemInfo():" << keys;
+        qCWarning(DIGIKAM_GENERAL_LOG) << "Keys not yet supported in DBInfoIface::setItemInfo():" << keys;
     }
 }
 
@@ -795,6 +796,24 @@ void DBInfoIface::deleteImage(const QUrl& url)
     ItemInfo info = ItemInfo::fromUrl(url);
 
     DIO::del(info, true);
+}
+
+void DBInfoIface::openSetupPage(SetupPage page)
+{
+    switch (page)
+    {
+        case ExifToolPage:
+        {
+            if (Setup::execExifTool(nullptr))
+            {
+                emit signalSetupChanged();
+            }
+        }
+
+        default:
+        {
+        }
+    }
 }
 
 } // namespace Digikam

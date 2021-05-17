@@ -29,17 +29,17 @@ int DNGWriter::Private::exifToolPostProcess()
 {
     qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Post-process metadata with ExifTool";
 
-    ExifToolParser etParser;
+    ExifToolParser* const parser = new ExifToolParser();
 
-    if (etParser.exifToolAvailable())
+    if (parser->exifToolAvailable())
     {
-        bool ret = etParser.copyTags(
+        bool ret = parser->copyTags(
                                      inputInfo.filePath(),
                                      dngFilePath,
                                      ExifToolProcess::COPY_MAKERNOTES |
                                      ExifToolProcess::COPY_IPTC       |
                                      ExifToolProcess::COPY_XMP
-                                    );
+                                   );
 
         if (!ret)
         {

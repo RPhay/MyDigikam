@@ -42,7 +42,7 @@ using namespace Digikam;
 
 bool exifToolParse(const QString& file)
 {
-    ExifToolParser* const parser = new ExifToolParser;
+    ExifToolParser* const parser = new ExifToolParser();
 
     // Read metadata from the file. Start ExifToolParser
 
@@ -52,7 +52,7 @@ bool exifToolParse(const QString& file)
         return false;
     }
 
-    QString path                    = parser->currentPath();
+    QString path                         = parser->currentPath();
     ExifToolParser::ExifToolData parsed  = parser->currentData();
 
     qDebug().noquote() << "Processing source file:" << path;

@@ -79,7 +79,7 @@ DigikamApp::DigikamApp()
         d->splashScreen->setMessage(i18n("Initializing..."));
     }
 
-    // ensure creation
+    // Ensure creation
 
     AlbumManager::instance();
     LoadingCacheInterface::initialize();

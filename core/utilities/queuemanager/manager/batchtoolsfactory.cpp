@@ -29,6 +29,7 @@
 #include "digikam_debug.h"
 #include "dpluginloader.h"
 #include "dpluginbqm.h"
+#include "dbinfoiface.h"
 
 namespace Digikam
 {
@@ -39,8 +40,11 @@ class Q_DECL_HIDDEN BatchToolsFactory::Private
 public:
 
     explicit Private()
+        : iface(nullptr)
     {
     }
+
+    DBInfoIface*   iface;
 
     BatchToolsList toolsList;
 };
@@ -66,6 +70,7 @@ BatchToolsFactory* BatchToolsFactory::instance()
 BatchToolsFactory::BatchToolsFactory()
     : d(new Private)
 {
+    d->iface                 = new DBInfoIface(this);
     DPluginLoader* const dpl = DPluginLoader::instance();
 
     foreach (DPlugin* const p, dpl->allPlugins())
@@ -95,6 +100,11 @@ BatchToolsFactory::~BatchToolsFactory()
 BatchToolsList BatchToolsFactory::toolsList() const
 {
     return d->toolsList;
+}
+
+DInfoInterface* BatchToolsFactory::infoIface() const
+{
+    return d->iface;
 }
 
 void BatchToolsFactory::registerTool(BatchTool* const tool)

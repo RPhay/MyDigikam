@@ -82,6 +82,8 @@ public:
 
     void        deleteImage(const QUrl& url)                                              override;
 
+    void        openSetupPage(SetupPage page)                                             override;
+
 #ifdef HAVE_MARBLE
 
     QList<GPSItemContainer*> currentGPSItems()                                      const override;

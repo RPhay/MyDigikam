@@ -36,6 +36,8 @@
 namespace Digikam
 {
 
+class DInfoInterface;
+
 class BatchToolsFactory : public QObject
 {
     Q_OBJECT
@@ -49,6 +51,7 @@ public:
     void           registerTool(BatchTool* const tool);
     BatchTool*     findTool(const QString& name, BatchTool::BatchToolGroup group) const;
     BatchToolsList toolsList()                                                    const;
+    DInfoInterface* infoIface()                                                   const;
 
 private:
 

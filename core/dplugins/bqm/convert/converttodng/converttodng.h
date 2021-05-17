@@ -56,7 +56,7 @@ private Q_SLOTS:
 
     void slotSettingsChanged()                              override;
     void slotAssignSettings2Widget()                        override;
-
+    void slotSetupExifTool();
 private:
 
     bool toolOperations()                                   override;

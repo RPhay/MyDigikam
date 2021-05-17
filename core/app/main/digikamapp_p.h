@@ -128,6 +128,7 @@
 #include "metadataedit.h"
 #include "dfiledialog.h"
 #include "dpluginloader.h"
+#include "exiftoolparser.h"
 
 #ifdef HAVE_MARBLE
 #   include "geolocationedit.h"

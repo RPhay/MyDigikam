@@ -40,6 +40,7 @@ set(showfoto_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/thumbbar/showfotothumbnailbar.cpp
 
     ${CMAKE_CURRENT_SOURCE_DIR}/main/showfotosettings.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/main/showfotoinfoiface.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/main/main.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/main/showfoto.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/main/showfoto_setup.cpp

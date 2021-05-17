@@ -31,6 +31,7 @@
 
 #include "digikam_version.h"
 #include "digikam_debug.h"
+#include "batchtoolsfactory.h"
 
 namespace Digikam
 {
@@ -48,7 +49,7 @@ public:
 
 DPluginBqm::DPluginBqm(QObject* const parent)
     : DPlugin(parent),
-      d(new Private)
+      d      (new Private)
 {
 }
 
@@ -100,6 +101,18 @@ void DPluginBqm::addTool(BatchTool* const t)
     t->setProperty("DPluginIId",      iid());
     t->setProperty("DPluginIfaceIId", ifaceIid());
     d->tools.append(t);
+}
+
+DInfoInterface* DPluginBqm::infoIface() const
+{
+    DInfoInterface* const iface = BatchToolsFactory::instance()->infoIface();
+
+    if (iface)
+    {
+        return iface;
+    }
+
+    return nullptr;
 }
 
 QStringList DPluginBqm::categories() const

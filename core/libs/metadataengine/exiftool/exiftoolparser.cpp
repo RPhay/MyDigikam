@@ -32,7 +32,7 @@ ExifToolParser::ExifToolParser(QObject* const parent)
 {
     // Create ExifTool parser instance.
 
-    d->proc      = new ExifToolProcess(this);
+    d->proc = new ExifToolProcess(this);
 
     for (int i = ExifToolProcess::LOAD_METADATA ; i < ExifToolProcess::NO_ACTION ; ++i)
     {

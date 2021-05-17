@@ -80,6 +80,7 @@ public:
 
     DInfoInterface* infoIface(DPluginAction* const)     override
     {
+        // Reimplemented in BatchToolsFactory
         return nullptr;
     };
 

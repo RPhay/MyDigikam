@@ -32,6 +32,11 @@
 
 #include <klocalizedstring.h>
 
+// Local includes
+
+#include "dinfointerface.h"
+#include "dpluginbqm.h"
+
 namespace DigikamBqmConvertToDngPlugin
 {
 
@@ -56,6 +61,9 @@ void ConvertToDNG::registerSettingsWidget()
 
     connect(DNGBox, SIGNAL(signalSettingsChanged()),
             this, SLOT(slotSettingsChanged()));
+
+    connect(DNGBox, SIGNAL(signalSetupExifTool()),
+            this, SLOT(slotSetupExifTool()));
 
     m_settingsWidget = DNGBox;
 
@@ -104,6 +112,24 @@ void ConvertToDNG::slotSettingsChanged()
     }
 }
 
+void ConvertToDNG::slotSetupExifTool()
+{
+    DInfoInterface* const iface = plugin()->infoIface();
+
+    if (iface)
+    {
+        DNGSettings* const DNGBox = dynamic_cast<DNGSettings*>(m_settingsWidget);
+
+        if (DNGBox)
+        {
+            connect(iface, SIGNAL(signalSetupChanged()),
+                    DNGBox, SLOT(slotSetupChanged()));
+        }
+
+        iface->openSetupPage(DInfoInterface::ExifToolPage);
+    }
+}
+
 QString ConvertToDNG::outputSuffix() const
 {
     return QLatin1String("dng");
@@ -118,7 +144,9 @@ void ConvertToDNG::cancel()
 bool ConvertToDNG::toolOperations()
 {
     if (!isRawFile(inputUrl()))
+    {
         return false;
+    }
 
     m_dngProcessor.reset();
     m_dngProcessor.setInputFile(inputUrl().toLocalFile());

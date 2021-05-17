@@ -172,7 +172,11 @@ bool DNGSettings::backupOriginalRawFile() const
 
 void DNGSettings::slotSetupChanged()
 {
-    d->errorView->setVisible(!ExifToolParser().exifToolAvailable());
+    ExifToolParser* const parser = new ExifToolParser();
+
+    d->errorView->setVisible(!parser->exifToolAvailable());
+
+    delete parser;
 }
 
 } // namespace Digikam

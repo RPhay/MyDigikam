@@ -100,6 +100,13 @@ protected:
 
     void addTool(BatchTool* const t);
 
+public:
+
+    /**
+     * Return the info interface instance.
+     */
+    DInfoInterface* infoIface() const;
+
 private:
 
     class Private;

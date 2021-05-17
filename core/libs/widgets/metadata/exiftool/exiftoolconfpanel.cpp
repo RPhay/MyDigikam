@@ -162,21 +162,21 @@ void ExifToolConfPanel::slotExifToolBinaryFound(bool found)
     }
 
     d->exifToolFormats->clear();
-    ExifToolParser parser;
-    parser.setExifToolProgram(exifToolDirectory());
+    ExifToolParser* const parser = new ExifToolParser();
+    parser->setExifToolProgram(exifToolDirectory());
     ExifToolParser::ExifToolData parsed;
     QStringList read;
     QStringList write;
 
-    if (parser.readableFormats())
+    if (parser->readableFormats())
     {
-        parsed = parser.currentData();
+        parsed = parser->currentData();
         read   = parsed.find(QLatin1String("READ_FORMATS")).value()[0].toStringList();
     }
 
-    if (parser.writableFormats())
+    if (parser->writableFormats())
     {
-        parsed = parser.currentData();
+        parsed = parser->currentData();
         write  = parsed.find(QLatin1String("WRITE_FORMATS")).value()[0].toStringList();
     }
 

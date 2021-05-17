@@ -922,7 +922,7 @@ void ShowFoto::slotOpenWith(QAction* action)
 
 DInfoInterface* ShowFoto::infoIface(DPluginAction* const)
 {
-    DMetaInfoIface* const iface = new DMetaInfoIface(this, d->thumbBar->urls());
+    ShowfotoInfoIface* const iface = new ShowfotoInfoIface(this, d->thumbBar->urls());
 
     qCDebug(DIGIKAM_GENERAL_LOG) << "ShowFoto::infoIface: nb of file" << d->thumbBar->urls().size();
 
