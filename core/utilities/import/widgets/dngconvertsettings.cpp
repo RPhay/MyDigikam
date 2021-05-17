@@ -41,6 +41,7 @@
 // Local includes
 
 #include "dngsettings.h"
+#include "setup.h"
 
 namespace Digikam
 {
@@ -103,6 +104,9 @@ DNGConvertSettings::DNGConvertSettings(QWidget* const parent)
 
     connect(d->convertDng, SIGNAL(toggled(bool)),
             this, SIGNAL(signalDownloadNameChanged()));
+
+    connect(d->dngSettings, SIGNAL(signalSetupExifTool()),
+            this, SLOT(slotSetupExifTool()));
 }
 
 DNGConvertSettings::~DNGConvertSettings()
@@ -134,6 +138,14 @@ void DNGConvertSettings::settings(DownloadSettings* const settings)
     settings->compressDng = d->dngSettings->compressLossLess();
     settings->previewMode = d->dngSettings->previewMode();
     settings->convertDng  = d->convertDng->isChecked();
+}
+
+void DNGConvertSettings::slotSetupExifTool()
+{
+    if (Setup::execExifTool(nullptr))
+    {
+        d->dngSettings->slotSetupChanged();
+    }
 }
 
 } // namespace Digikam

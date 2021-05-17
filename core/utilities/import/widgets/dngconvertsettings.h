@@ -56,6 +56,10 @@ Q_SIGNALS:
 
     void signalDownloadNameChanged();
 
+private Q_SLOTS:
+
+    void slotSetupExifTool();
+
 private:
 
     class Private;
