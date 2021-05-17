@@ -215,7 +215,7 @@ int main(int argc, char* argv[])
 
             if (!language.isEmpty())
             {
-                QLocale::setDefault(language);
+                QLocale::setDefault(language.split(QLatin1Char(':')).first());
             }
         }
 
