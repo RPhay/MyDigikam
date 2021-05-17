@@ -220,6 +220,7 @@ set(libdngwriter_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/dngwriter_negative.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/dngwriter_exif.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/dngwriter_makernote.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/dngwriter_xmp.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/dngwriter_backupraw.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/dngwriter_export.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/dngwriter_postprocess.cpp

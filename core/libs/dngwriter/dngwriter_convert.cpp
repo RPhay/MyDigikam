@@ -130,6 +130,15 @@ int DNGWriter::convert()
 
         // -----------------------------------------------------------------------------------------
 
+        ret = d->storeXmp(host, negative, identify.get(), identifyMake.get(), meta.get());
+
+        if (ret != PROCESS_CONTINUE)
+        {
+            return ret;
+        }
+
+        // -----------------------------------------------------------------------------------------
+
         ret = d->backupRaw(host, negative);
 
         if (ret != PROCESS_CONTINUE)

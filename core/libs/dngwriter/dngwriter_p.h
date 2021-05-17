@@ -147,6 +147,12 @@ public:
                        DRawInfo* const identifyMake,
                        DMetadata* const meta);
 
+    int storeXmp(DNGWriterHost& host,
+                 AutoPtr<dng_negative>& negative,
+                 DRawInfo* const identify,
+                 DRawInfo* const identifyMake,
+                 DMetadata* const meta);
+
     int backupRaw(DNGWriterHost& host,
                   AutoPtr<dng_negative>& negative);
 
