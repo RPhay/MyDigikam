@@ -22,8 +22,8 @@
  *
  * ============================================================ */
 
-#ifndef SHOWFOTO_META_INFO_IFACE_H
-#define SHOWFOTO_META_INFO_IFACE_H
+#ifndef SHOWFOTO_INFO_IFACE_H
+#define SHOWFOTO_INFO_IFACE_H
 
 // Local includes
 
@@ -40,12 +40,13 @@ class ShowfotoInfoIface : public DMetaInfoIface
 
 public:
 
-    explicit ShowfotoInfoIface(QObject* const, const QList<QUrl>&);
-    ~ShowfotoInfoIface()                                      override;
+    explicit ShowfotoInfoIface(QObject* const parent,
+                               const QList<QUrl>& lst);
+    ~ShowfotoInfoIface()               override;
 
-    void openSetupPage(SetupPage page)                        override;
+    void openSetupPage(SetupPage page) override;
 };
 
 } // namespace ShowFoto
 
-#endif // SHOWFOTO_META_INFO_IFACE_H
+#endif // SHOWFOTO_INFO_IFACE_H
