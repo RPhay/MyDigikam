@@ -98,7 +98,7 @@ DNGSettings::DNGSettings(QWidget* const parent)
 
     d->errorView        = new ExifToolErrorView(this);
     d->errorView->setErrorText(i18n("Warning: ExifTool is not available to post-process metadata. "
-                                    "Without ExifTool, DNG will not includes all RAW source properties."));
+                                    "Without ExifTool, DNG will not include all RAW source properties."));
 
     settingsBoxLayout->addWidget(d->backupOriginalRawFile, 0, 0, 1, 1);
     settingsBoxLayout->addWidget(d->compressLossLess,      1, 0, 1, 1);
