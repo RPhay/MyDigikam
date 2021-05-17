@@ -11,6 +11,8 @@ General : Use last Exiv2 0.27.4 in all bundles with Base Media File metadata rea
 General : Use last KF5 framework 5.80 in all bundles.
 General : Update internal Libraw from snapshot 20210504
 General : Update internal DNG SDK to last 1.5 and XMP SDK to last 5.7.0.
+General : DNGWriter now use ExifTool to post-process metadata.
+General : Internal Libraw use DNG SDK 1.5 to handle 8 bits DNG files.
 Searches: Find duplicates items is now process in parallel using multi-cores.
 Plugins : New tool to export items to iNaturalist web service (https://www.inaturalist.org/).
 Plugins : SlideShow and Presentation tools now allow to move items to the trash.
@@ -336,4 +338,5 @@ BUGFIXES:
 316 ==> 437175 - Use media file timestamp when creating sidecar.
 317 ==> 437103 - BadRequest when exporting to Onedrive.
 318 ==> 437209 - Menu bar and toolbar backgrounds don't respect selected digiKam colorscheme (and instead inherit from global colorscheme).
-319 ==> 
+319 ==> 431689 - Nokia 9 PureView DNG image demosaicing preview corruption.
+320 ==> 
