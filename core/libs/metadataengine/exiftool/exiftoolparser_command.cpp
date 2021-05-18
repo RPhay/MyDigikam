@@ -273,6 +273,11 @@ bool ExifToolParser::copyTags(const QString& src, const QString& dst, unsigned c
         copyCmds << QByteArray("-xmp");
     }
 
+    if (copyOps & ExifToolProcess::COPY_ICC)
+    {
+        copyCmds << QByteArray("-icc_profile");
+    }
+
     if (copyOps & ExifToolProcess::COPY_ALL)
     {
         copyCmds << QByteArray("-all:all");

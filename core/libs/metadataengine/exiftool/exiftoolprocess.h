@@ -72,7 +72,8 @@ public:
         COPY_MAKERNOTES = 0x02,     ///< Copy all Makernotes tags from source file.
         COPY_IPTC       = 0x04,     ///< Copy all Iptc tags from source file.
         COPY_XMP        = 0x08,     ///< Copy all Xmp tags from source file.
-        COPY_ALL        = 0x10      ///< Copy all tags from source file.
+        COPY_ICC        = 0x10,     ///< Copy ICC profile from source file.
+        COPY_ALL        = 0x20      ///< Copy all tags from source file.
     };
 
 public:
