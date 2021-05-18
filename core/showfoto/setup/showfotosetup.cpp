@@ -52,7 +52,7 @@
 namespace ShowFoto
 {
 
-class Q_DECL_HIDDEN Setup::Private
+class Q_DECL_HIDDEN ShowfotoSetup::Private
 {
 public:
 
@@ -85,11 +85,11 @@ public:
     DConfigDlgWdgItem*            page_plugins;
     DConfigDlgWdgItem*            page_misc;
 
-    SetupMetadata*                metadataPage;
-    SetupToolTip*                 toolTipPage;
-    SetupMisc*                    miscPage;
-    SetupRaw*                     rawPage;
-    SetupPlugins*                 pluginsPage;
+    ShowfotoSetupMetadata*        metadataPage;
+    ShowfotoSetupToolTip*                 toolTipPage;
+    ShowfotoSetupMisc*            miscPage;
+    ShowfotoSetupRaw*                     rawPage;
+    ShowfotoSetupPlugins*                 pluginsPage;
 
     Digikam::SetupEditorIface*    editorIfacePage;
     Digikam::SetupIOFiles*        iofilesPage;
@@ -97,10 +97,10 @@ public:
 
 public:
 
-    DConfigDlgWdgItem* pageItem(Setup::Page page) const;
+    DConfigDlgWdgItem* pageItem(ShowfotoSetup::Page page) const;
 };
 
-Setup::Setup(QWidget* const parent, Setup::Page page)
+ShowfotoSetup::ShowfotoSetup(QWidget* const parent, ShowfotoSetup::Page page)
     : DConfigDlg(parent),
       d         (new Private)
 {
@@ -116,19 +116,19 @@ Setup::Setup(QWidget* const parent, Setup::Page page)
                                    "<i>Customize editor window behavior</i></qt>"));
     d->page_editorIface->setIcon(QIcon::fromTheme(QLatin1String("document-edit")));
 
-    d->metadataPage   = new SetupMetadata();
+    d->metadataPage   = new ShowfotoSetupMetadata();
     d->page_metadata  = addPage(d->metadataPage, i18n("Metadata"));
     d->page_metadata->setHeader(i18n("<qt>Embedded Image Information Management<br/>"
                                      "<i>Setup relations between images and metadata</i></qt>"));
     d->page_metadata->setIcon(QIcon::fromTheme(QLatin1String("format-text-code"))); // krazy:exclude=iconnames
 
-    d->toolTipPage    = new SetupToolTip();
+    d->toolTipPage    = new ShowfotoSetupToolTip();
     d->page_tooltip   = addPage(d->toolTipPage, i18n("Tool Tip"));
     d->page_tooltip->setHeader(i18n("<qt>Thumbbar Items Tool-Tip Settings<br/>"
                                     "<i>Customize information in tool-tips</i></qt>"));
     d->page_tooltip->setIcon(QIcon::fromTheme(QLatin1String("dialog-information")));
 
-    d->rawPage        = new SetupRaw();
+    d->rawPage        = new ShowfotoSetupRaw();
     d->page_raw       = addPage(d->rawPage, i18n("RAW Decoding"));
     d->page_raw->setHeader(i18n("<qt>RAW Files Decoding Settings<br/>"
                                   "<i>Customize default RAW decoding settings</i></qt>"));
@@ -146,13 +146,13 @@ Setup::Setup(QWidget* const parent, Setup::Page page)
                                     "<i>Set default configuration used to save images</i></qt>"));
     d->page_iofiles->setIcon(QIcon::fromTheme(QLatin1String("document-save-all")));
 
-    d->pluginsPage  = new SetupPlugins();
+    d->pluginsPage  = new ShowfotoSetupPlugins();
     d->page_plugins = addPage(d->pluginsPage, i18n("Plugins"));
     d->page_plugins->setHeader(i18n("<qt>Main Interface Plug-in Settings<br/>"
                                     "<i>Set which plugins will be accessible from application</i></qt>"));
     d->page_plugins->setIcon(QIcon::fromTheme(QLatin1String("preferences-plugin")));
 
-    d->miscPage       = new SetupMisc(this);
+    d->miscPage       = new ShowfotoSetupMisc(this);
     d->page_misc      = addPage(d->miscPage, i18nc("@title: misc setup options page", "Miscellaneous"));
     d->page_misc->setHeader(i18n("<qt>Miscellaneous Settings<br/>"
                                  "<i>Customize behavior of the other parts of Showfoto</i></qt>"));
@@ -177,7 +177,7 @@ Setup::Setup(QWidget* const parent, Setup::Page page)
     }
 
     connect(buttonBox()->button(QDialogButtonBox::Ok),
-            &QPushButton::clicked, this, &Setup::slotOkClicked);
+            &QPushButton::clicked, this, &ShowfotoSetup::slotOkClicked);
 
     connect(buttonBox(), SIGNAL(helpRequested()),
             this, SLOT(slotHelp()));
@@ -199,7 +199,7 @@ Setup::Setup(QWidget* const parent, Setup::Page page)
     resize(windowHandle()->size());
 }
 
-Setup::~Setup()
+ShowfotoSetup::~ShowfotoSetup()
 {
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
     KConfigGroup group        = config->group(QLatin1String("Setup Dialog"));
@@ -209,12 +209,12 @@ Setup::~Setup()
     delete d;
 }
 
-void Setup::slotHelp()
+void ShowfotoSetup::slotHelp()
 {
     Digikam::DXmlGuiWindow::openHandbook();
 }
 
-void Setup::slotOkClicked()
+void ShowfotoSetup::slotOkClicked()
 {
     if (!d->miscPage->checkSettings())
     {
@@ -238,7 +238,7 @@ void Setup::slotOkClicked()
     accept();
 }
 
-void Setup::showPage(Setup::Page page)
+void ShowfotoSetup::showPage(ShowfotoSetup::Page page)
 {
     switch (page)
     {
@@ -276,7 +276,7 @@ void Setup::showPage(Setup::Page page)
     }
 }
 
-Setup::Page Setup::activePageIndex()
+ShowfotoSetup::Page ShowfotoSetup::activePageIndex()
 {
     DConfigDlgWdgItem* const cur = currentPage();
 
@@ -318,32 +318,32 @@ Setup::Page Setup::activePageIndex()
     return EditorPage;
 }
 
-DConfigDlgWdgItem* Setup::Private::pageItem(Setup::Page page) const
+DConfigDlgWdgItem* ShowfotoSetup::Private::pageItem(ShowfotoSetup::Page page) const
 {
     switch (page)
     {
-        case Setup::EditorPage:
+        case ShowfotoSetup::EditorPage:
             return page_editorIface;
 
-        case Setup::MetadataPage:
+        case ShowfotoSetup::MetadataPage:
             return page_metadata;
 
-        case Setup::ToolTipPage:
+        case ShowfotoSetup::ToolTipPage:
             return page_tooltip;
 
-        case Setup::RawPage:
+        case ShowfotoSetup::RawPage:
             return page_raw;
 
-        case Setup::IOFilesPage:
+        case ShowfotoSetup::IOFilesPage:
             return page_iofiles;
 
-        case Setup::ICCPage:
+        case ShowfotoSetup::ICCPage:
             return page_icc;
 
-        case Setup::PluginsPage:
+        case ShowfotoSetup::PluginsPage:
             return page_plugins;
 
-        case Setup::MiscellaneousPage:
+        case ShowfotoSetup::MiscellaneousPage:
             return page_misc;
 
         default:
@@ -351,14 +351,14 @@ DConfigDlgWdgItem* Setup::Private::pageItem(Setup::Page page) const
     }
 }
 
-bool Setup::execSinglePage(Page page)
+bool ShowfotoSetup::execSinglePage(Page page)
 {
     return (execSinglePage(nullptr, page));
 }
 
-bool Setup::execSinglePage(QWidget* const parent, Page page)
+bool ShowfotoSetup::execSinglePage(QWidget* const parent, Page page)
 {
-    QPointer<Setup> setup = new Setup(parent);
+    QPointer<ShowfotoSetup> setup = new ShowfotoSetup(parent);
     setup->showPage(page);
     setup->setFaceType(Plain);
 
@@ -368,9 +368,9 @@ bool Setup::execSinglePage(QWidget* const parent, Page page)
     return success;
 }
 
-bool Setup::execMetadataFilters(QWidget* const parent, int tab)
+bool ShowfotoSetup::execMetadataFilters(QWidget* const parent, int tab)
 {
-    QPointer<Setup> setup = new Setup(parent);
+    QPointer<ShowfotoSetup> setup = new ShowfotoSetup(parent);
     setup->showPage(MetadataPage);
     setup->setFaceType(Plain);
 
@@ -381,14 +381,14 @@ bool Setup::execMetadataFilters(QWidget* const parent, int tab)
         return false;
     }
 
-    SetupMetadata* const widget = dynamic_cast<SetupMetadata*>(cur->widget());
+    ShowfotoSetupMetadata* const widget = dynamic_cast<ShowfotoSetupMetadata*>(cur->widget());
 
     if (!widget)
     {
         return false;
     }
 
-    widget->setActiveTab((SetupMetadata::MetadataTab)tab);
+    widget->setActiveTab((ShowfotoSetupMetadata::MetadataTab)tab);
 
     bool success                = (setup->DConfigDlg::exec() == QDialog::Accepted);
     delete setup;
@@ -396,9 +396,9 @@ bool Setup::execMetadataFilters(QWidget* const parent, int tab)
     return success;
 }
 
-bool Setup::execExifTool(QWidget* const parent)
+bool ShowfotoSetup::execExifTool(QWidget* const parent)
 {
-    QPointer<Setup> setup        = new Setup(parent);
+    QPointer<ShowfotoSetup> setup        = new ShowfotoSetup(parent);
     setup->showPage(MetadataPage);
     setup->setFaceType(Plain);
 
@@ -409,14 +409,14 @@ bool Setup::execExifTool(QWidget* const parent)
         return false;
     }
 
-    SetupMetadata* const widget  = dynamic_cast<SetupMetadata*>(cur->widget());
+    ShowfotoSetupMetadata* const widget  = dynamic_cast<ShowfotoSetupMetadata*>(cur->widget());
 
     if (!widget)
     {
         return false;
     }
 
-    widget->setActiveTab(SetupMetadata::ExifTool);
+    widget->setActiveTab(ShowfotoSetupMetadata::ExifTool);
 
     bool success                 = (setup->DConfigDlg::exec() == QDialog::Accepted);
     delete setup;
@@ -424,7 +424,7 @@ bool Setup::execExifTool(QWidget* const parent)
     return success;
 }
 
-void Setup::onlineVersionCheck()
+void ShowfotoSetup::onlineVersionCheck()
 {
     Digikam::OnlineVersionDlg* const dlg = new Digikam::OnlineVersionDlg(qApp->activeWindow(),
                                                                          QLatin1String(digikam_version_short),
@@ -435,7 +435,7 @@ void Setup::onlineVersionCheck()
     connect(dlg, &OnlineVersionDlg::signalSetupUpdate,
             [=]()
         {
-            Setup::execSinglePage(nullptr, Setup::MiscellaneousPage);
+            ShowfotoSetup::execSinglePage(nullptr, ShowfotoSetup::MiscellaneousPage);
         }
     );
 

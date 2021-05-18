@@ -34,7 +34,7 @@
 namespace ShowFoto
 {
 
-class Q_DECL_HIDDEN SetupRaw::Private
+class Q_DECL_HIDDEN ShowfotoSetupRaw::Private
 {
 public:
 
@@ -48,9 +48,9 @@ public:
     Digikam::SetupRaw* raw;
 };
 
-SetupRaw::SetupRaw(QWidget* const parent)
+ShowfotoSetupRaw::ShowfotoSetupRaw(QWidget* const parent)
     : QScrollArea(parent),
-      d(new Private)
+      d          (new Private)
 {
     d->tab = new QTabWidget;
     d->raw = new Digikam::SetupRaw(d->tab);
@@ -61,17 +61,17 @@ SetupRaw::SetupRaw(QWidget* const parent)
     readSettings();
 }
 
-SetupRaw::~SetupRaw()
+ShowfotoSetupRaw::~ShowfotoSetupRaw()
 {
     delete d;
 }
 
-void SetupRaw::applySettings()
+void ShowfotoSetupRaw::applySettings()
 {
     d->raw->applySettings();
 }
 
-void SetupRaw::readSettings()
+void ShowfotoSetupRaw::readSettings()
 {
     d->raw->readSettings();
 }

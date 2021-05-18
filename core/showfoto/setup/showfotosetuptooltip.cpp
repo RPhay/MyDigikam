@@ -44,29 +44,29 @@
 namespace ShowFoto
 {
 
-class Q_DECL_HIDDEN SetupToolTip::Private
+class Q_DECL_HIDDEN ShowfotoSetupToolTip::Private
 {
 public:
 
     explicit Private()
-      : showFileDateBox(nullptr),
-        showFileNameBox(nullptr),
-        showFileSizeBox(nullptr),
-        showImageDimBox(nullptr),
-        showImageTypeBox(nullptr),
-        showPhotoDateBox(nullptr),
-        showPhotoExpoBox(nullptr),
+      : showFileDateBox  (nullptr),
+        showFileNameBox  (nullptr),
+        showFileSizeBox  (nullptr),
+        showImageDimBox  (nullptr),
+        showImageTypeBox (nullptr),
+        showPhotoDateBox (nullptr),
+        showPhotoExpoBox (nullptr),
         showPhotoFlashBox(nullptr),
         showPhotoFocalBox(nullptr),
-        showPhotoMakeBox(nullptr),
-        showPhotoLensBox(nullptr),
-        showPhotoModeBox(nullptr),
-        showPhotoWbBox(nullptr),
-        showToolTipsBox(nullptr),
-        fileSettingBox(nullptr),
-        photoSettingBox(nullptr),
-        fontSelect(nullptr),
-        settings(nullptr)
+        showPhotoMakeBox (nullptr),
+        showPhotoLensBox (nullptr),
+        showPhotoModeBox (nullptr),
+        showPhotoWbBox   (nullptr),
+        showToolTipsBox  (nullptr),
+        fileSettingBox   (nullptr),
+        photoSettingBox  (nullptr),
+        fontSelect       (nullptr),
+        settings         (nullptr)
     {
     }
 
@@ -94,8 +94,9 @@ public:
 
 // --------------------------------------------------------
 
-SetupToolTip::SetupToolTip(QWidget* const parent)
-    : QScrollArea(parent), d(new Private)
+ShowfotoSetupToolTip::ShowfotoSetupToolTip(QWidget* const parent)
+    : QScrollArea(parent),
+      d          (new Private)
 {
     QWidget* const panel      = new QWidget(viewport());
     setWidget(panel);
@@ -213,12 +214,12 @@ SetupToolTip::SetupToolTip(QWidget* const parent)
     // --------------------------------------------------------
 }
 
-SetupToolTip::~SetupToolTip()
+ShowfotoSetupToolTip::~ShowfotoSetupToolTip()
 {
     delete d;
 }
 
-void SetupToolTip::readSettings()
+void ShowfotoSetupToolTip::readSettings()
 {
     d->settings = ShowfotoSettings::instance();
 
@@ -244,7 +245,7 @@ void SetupToolTip::readSettings()
     d->photoSettingBox->setEnabled(d->settings->getShowToolTip());
 }
 
-void SetupToolTip::applySettings()
+void ShowfotoSetupToolTip::applySettings()
 {
     d->settings->setShowToolTip(d->showToolTipsBox->isChecked());
     d->settings->setToolTipFont(d->fontSelect->font());

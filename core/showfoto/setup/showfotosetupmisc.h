@@ -31,7 +31,7 @@
 namespace ShowFoto
 {
 
-class SetupMisc : public QScrollArea
+class ShowfotoSetupMisc : public QScrollArea
 {
     Q_OBJECT
 
@@ -53,8 +53,8 @@ public:
 
 public:
 
-    explicit SetupMisc(QWidget* const parent = nullptr);
-    ~SetupMisc() override;
+    explicit ShowfotoSetupMisc(QWidget* const parent = nullptr);
+    ~ShowfotoSetupMisc() override;
 
     bool checkSettings();
     void applySettings();

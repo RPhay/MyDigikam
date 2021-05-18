@@ -41,7 +41,7 @@
 namespace ShowFoto
 {
 
-class Q_DECL_HIDDEN SetupPlugins::Private
+class Q_DECL_HIDDEN ShowfotoSetupPlugins::Private
 {
 public:
 
@@ -60,7 +60,7 @@ public:
     Digikam::DPluginSetup* setupDImg;
 };
 
-SetupPlugins::SetupPlugins(QWidget* const parent)
+ShowfotoSetupPlugins::ShowfotoSetupPlugins(QWidget* const parent)
     : QScrollArea(parent),
       d          (new Private)
 {
@@ -87,12 +87,12 @@ SetupPlugins::SetupPlugins(QWidget* const parent)
     d->tab->insertTab(Loaders, d->setupDImg, i18nc("@title:tab loader plugins list", "Image Loaders"));
 }
 
-SetupPlugins::~SetupPlugins()
+ShowfotoSetupPlugins::~ShowfotoSetupPlugins()
 {
     delete d;
 }
 
-void SetupPlugins::applySettings()
+void ShowfotoSetupPlugins::applySettings()
 {
     d->setupGeneric->applySettings();
     d->setupEditor->applySettings();

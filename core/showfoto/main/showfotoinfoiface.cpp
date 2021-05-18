@@ -51,7 +51,7 @@ void ShowfotoInfoIface::openSetupPage(SetupPage page)
     {
         case ExifToolPage:
         {
-            if (Setup::execExifTool(nullptr))
+            if (ShowfotoSetup::execExifTool(nullptr))
             {
                 emit signalSetupChanged();
             }

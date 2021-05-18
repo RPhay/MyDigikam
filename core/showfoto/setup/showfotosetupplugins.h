@@ -31,7 +31,7 @@
 namespace ShowFoto
 {
 
-class SetupPlugins : public QScrollArea
+class ShowfotoSetupPlugins : public QScrollArea
 {
     Q_OBJECT
 
@@ -46,8 +46,8 @@ public:
 
 public:
 
-    explicit SetupPlugins(QWidget* const parent = nullptr);
-    ~SetupPlugins() override;
+    explicit ShowfotoSetupPlugins(QWidget* const parent = nullptr);
+    ~ShowfotoSetupPlugins() override;
 
     void applySettings();
 

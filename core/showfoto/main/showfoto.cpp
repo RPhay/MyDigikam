@@ -879,12 +879,12 @@ bool ShowFoto::saveNewVersionInFormat(const QString&)
 
 void ShowFoto::slotSetupMetadataFilters(int tab)
 {
-    Setup::execMetadataFilters(this, tab+1);
+    ShowfotoSetup::execMetadataFilters(this, tab+1);
 }
 
 void ShowFoto::slotSetupExifTool()
 {
-    Setup::execExifTool(this);
+    ShowfotoSetup::execExifTool(this);
 }
 
 void ShowFoto::slotAddedDropedItems(QDropEvent* e)
@@ -959,7 +959,7 @@ void ShowFoto::slotRemoveImageFromAlbum(const QUrl& url)
 
 void ShowFoto::slotOnlineVersionCheck()
 {
-    Setup::onlineVersionCheck();
+    ShowfotoSetup::onlineVersionCheck();
 }
 
 } // namespace ShowFoto

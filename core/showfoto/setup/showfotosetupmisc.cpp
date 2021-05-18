@@ -61,7 +61,7 @@ using namespace Digikam;
 namespace ShowFoto
 {
 
-class Q_DECL_HIDDEN SetupMisc::Private
+class Q_DECL_HIDDEN ShowfotoSetupMisc::Private
 {
 public:
 
@@ -119,7 +119,7 @@ public:
 
 // --------------------------------------------------------
 
-SetupMisc::SetupMisc(QWidget* const parent)
+ShowfotoSetupMisc::ShowfotoSetupMisc(QWidget* const parent)
     : QScrollArea(parent),
       d          (new Private)
 {
@@ -204,7 +204,7 @@ SetupMisc::SetupMisc(QWidget* const parent)
                 parent->close();
             }
 
-            Setup::onlineVersionCheck();
+            ShowfotoSetup::onlineVersionCheck();
         }
     );
 
@@ -329,12 +329,12 @@ SetupMisc::SetupMisc(QWidget* const parent)
     readSettings();
 }
 
-SetupMisc::~SetupMisc()
+ShowfotoSetupMisc::~ShowfotoSetupMisc()
 {
     delete d;
 }
 
-bool SetupMisc::checkSettings()
+bool ShowfotoSetupMisc::checkSettings()
 {
     // If check for new version use weekly pre-releases, warn end-user.
 
@@ -361,7 +361,7 @@ bool SetupMisc::checkSettings()
     return true;
 }
 
-void SetupMisc::readSettings()
+void ShowfotoSetupMisc::readSettings()
 {
     d->systemSettingsWidget->readSettings();
 
@@ -386,7 +386,7 @@ void SetupMisc::readSettings()
     d->applicationFont->setFont(d->settings->getApplicationFont());
 }
 
-void SetupMisc::applySettings()
+void ShowfotoSetupMisc::applySettings()
 {
     d->systemSettingsWidget->saveSettings();
 

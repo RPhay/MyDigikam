@@ -33,7 +33,7 @@ using namespace Digikam;
 namespace ShowFoto
 {
 
-class Setup : public DConfigDlg
+class ShowfotoSetup : public DConfigDlg
 {
     Q_OBJECT
 
@@ -57,8 +57,8 @@ public:
 
 public:
 
-    explicit Setup(QWidget* const parent = nullptr, Page page = LastPageUsed);
-    ~Setup() override;
+    explicit ShowfotoSetup(QWidget* const parent = nullptr, Page page = LastPageUsed);
+    ~ShowfotoSetup() override;
 
     static bool execMetadataFilters(QWidget* const parent, int tab);
 
@@ -78,8 +78,8 @@ private Q_SLOTS:
 
 private:
 
-    Setup::Page activePageIndex();
-    void showPage(Setup::Page page);
+    ShowfotoSetup::Page activePageIndex();
+    void showPage(ShowfotoSetup::Page page);
 
 private:
 

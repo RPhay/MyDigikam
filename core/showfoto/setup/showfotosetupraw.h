@@ -31,14 +31,14 @@
 namespace ShowFoto
 {
 
-class SetupRaw : public QScrollArea
+class ShowfotoSetupRaw : public QScrollArea
 {
     Q_OBJECT
 
 public:
 
-    explicit SetupRaw(QWidget* const parent = nullptr);
-    ~SetupRaw() override;
+    explicit ShowfotoSetupRaw(QWidget* const parent = nullptr);
+    ~ShowfotoSetupRaw() override;
 
     void applySettings();
 

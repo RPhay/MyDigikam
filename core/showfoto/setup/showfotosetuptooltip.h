@@ -31,14 +31,14 @@
 namespace ShowFoto
 {
 
-class SetupToolTip : public QScrollArea
+class ShowfotoSetupToolTip : public QScrollArea
 {
     Q_OBJECT
 
 public:
 
-    explicit SetupToolTip(QWidget* const parent = nullptr);
-    ~SetupToolTip() override;
+    explicit ShowfotoSetupToolTip(QWidget* const parent = nullptr);
+    ~ShowfotoSetupToolTip() override;
 
     void applySettings();
 

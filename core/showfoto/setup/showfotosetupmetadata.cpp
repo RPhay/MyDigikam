@@ -53,7 +53,7 @@
 namespace ShowFoto
 {
 
-class Q_DECL_HIDDEN SetupMetadata::Private
+class Q_DECL_HIDDEN ShowfotoSetupMetadata::Private
 {
 public:
 
@@ -75,7 +75,7 @@ public:
     Digikam::ExifToolConfPanel* exifToolView;
 };
 
-SetupMetadata::SetupMetadata(QWidget* const parent)
+ShowfotoSetupMetadata::ShowfotoSetupMetadata(QWidget* const parent)
     : QScrollArea(parent),
       d          (new Private)
 {
@@ -174,12 +174,12 @@ SetupMetadata::SetupMetadata(QWidget* const parent)
     readSettings();
 }
 
-SetupMetadata::~SetupMetadata()
+ShowfotoSetupMetadata::~ShowfotoSetupMetadata()
 {
     delete d;
 }
 
-void SetupMetadata::applySettings()
+void ShowfotoSetupMetadata::applySettings()
 {
     Digikam::MetaEngineSettings* const mSettings = Digikam::MetaEngineSettings::instance();
 
@@ -198,7 +198,7 @@ void SetupMetadata::applySettings()
     d->tagsCfgPanel->applySettings();
 }
 
-void SetupMetadata::readSettings()
+void ShowfotoSetupMetadata::readSettings()
 {
     Digikam::MetaEngineSettings* const mSettings = Digikam::MetaEngineSettings::instance();
 
@@ -214,7 +214,7 @@ void SetupMetadata::readSettings()
     d->exifToolView->setExifToolDirectory(set.exifToolPath);
 }
 
-void SetupMetadata::setActiveTab(MetadataTab tab)
+void ShowfotoSetupMetadata::setActiveTab(MetadataTab tab)
 {
     d->tab->setCurrentIndex(tab);
 }
