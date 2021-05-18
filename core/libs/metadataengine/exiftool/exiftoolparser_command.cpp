@@ -75,7 +75,7 @@ bool ExifToolParser::load(const QString& path)
 */
 
     cmdArgs << d->filePathEncoding(fileInfo);
-    d->currentPath = fileInfo.path();
+    d->currentPath = fileInfo.filePath();
 
     return (d->startProcess(cmdArgs, ExifToolProcess::LOAD_METADATA));
 }
@@ -103,7 +103,7 @@ bool ExifToolParser::loadChunk(const QString& path)
     cmdArgs << QByteArray("'-xmp:all<all'");
     cmdArgs << QByteArray("-o");
     cmdArgs << QByteArray("-.exv");
-    d->currentPath = fileInfo.path();
+    d->currentPath = fileInfo.filePath();
 
     return (d->startProcess(cmdArgs, ExifToolProcess::LOAD_CHUNKS));
 }
@@ -143,7 +143,7 @@ bool ExifToolParser::applyChanges(const QString& path, const ExifToolData& newTa
     }
 
     cmdArgs << d->filePathEncoding(fileInfo);
-    d->currentPath = fileInfo.path();
+    d->currentPath = fileInfo.filePath();
 
     return (d->startProcess(cmdArgs, ExifToolProcess::APPLY_CHANGES));
 }
@@ -175,7 +175,7 @@ bool ExifToolParser::applyChanges(const QString& path, const QString& exvTempFil
     cmdArgs << d->filePathEncoding(exvTempFile);
     cmdArgs << QByteArray("-all:all");
     cmdArgs << d->filePathEncoding(fileInfo);
-    d->currentPath = fileInfo.path();
+    d->currentPath = fileInfo.filePath();
 
     return (d->startProcess(cmdArgs, ExifToolProcess::APPLY_CHANGES_EXV));
 }
@@ -253,34 +253,36 @@ bool ExifToolParser::copyTags(const QString& src, const QString& dst, unsigned c
 
     qCDebug(DIGIKAM_METAENGINE_LOG) << "Copy Operations:" << copyOps << "(" << QString::fromLatin1("%1").arg(copyOps, 0, 2) << ")";
 
-    if (copyOps & ExifToolProcess::COPY_EXIF)
-    {
-        copyCmds << QByteArray("-exif");
-    }
-
-    if (copyOps & ExifToolProcess::COPY_MAKERNOTES)
-    {
-        copyCmds << QByteArray("-makernotes");
-    }
-
-    if (copyOps & ExifToolProcess::COPY_IPTC)
-    {
-        copyCmds << QByteArray("-iptc");
-    }
-
-    if (copyOps & ExifToolProcess::COPY_XMP)
-    {
-        copyCmds << QByteArray("-xmp");
-    }
-
-    if (copyOps & ExifToolProcess::COPY_ICC)
-    {
-        copyCmds << QByteArray("-icc_profile");
-    }
-
     if (copyOps & ExifToolProcess::COPY_ALL)
     {
         copyCmds << QByteArray("-all:all");
+    }
+    else
+    {
+        if (copyOps & ExifToolProcess::COPY_EXIF)
+        {
+            copyCmds << QByteArray("-exif");
+        }
+
+        if (copyOps & ExifToolProcess::COPY_MAKERNOTES)
+        {
+            copyCmds << QByteArray("-makernotes");
+        }
+
+        if (copyOps & ExifToolProcess::COPY_IPTC)
+        {
+            copyCmds << QByteArray("-iptc");
+        }
+
+        if (copyOps & ExifToolProcess::COPY_XMP)
+        {
+            copyCmds << QByteArray("-xmp");
+        }
+
+        if (copyOps & ExifToolProcess::COPY_ICC)
+        {
+            copyCmds << QByteArray("-icc_profile");
+        }
     }
 
     if (copyCmds.isEmpty())
@@ -300,7 +302,7 @@ bool ExifToolParser::copyTags(const QString& src, const QString& dst, unsigned c
     cmdArgs << copyCmds;
     cmdArgs << QByteArray("-overwrite_original");
     cmdArgs << d->filePathEncoding(dst);
-    d->currentPath = sfi.path();
+    d->currentPath = sfi.filePath();
 
     return (d->startProcess(cmdArgs, ExifToolProcess::COPY_TAGS));
 }
