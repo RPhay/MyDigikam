@@ -178,7 +178,7 @@ void ExifToolParser::slotCmdCompleted(int cmdAction,
 
             foreach (const QString& ln, lines)
             {
-                s = ln.simplified();
+                s            = ln.simplified();
                 QString ext  = s.section(QLatin1Char(' '), 0, 0);
                 QString desc = s.section(QLatin1Char(' '), 1, -1);
                 lst << ext << desc;
@@ -203,7 +203,7 @@ void ExifToolParser::slotCmdCompleted(int cmdAction,
 
             foreach (const QString& ln, lines)
             {
-                s = ln.simplified();
+                s            = ln.simplified();
                 QString ext  = s.section(QLatin1Char(' '), 0, 0);
                 QString desc = s.section(QLatin1Char(' '), 1, -1);
                 lst << ext << desc;
