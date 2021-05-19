@@ -233,7 +233,7 @@ bool ExifToolParser::translationsList()
     return (d->startProcess(cmdArgs, ExifToolProcess::TRANSLATIONS_LIST));
 }
 
-bool ExifToolParser::copyTags(const QString& src, const QString& dst, unsigned char copyOps)
+bool ExifToolParser::copyTags(const QString& src, const QString& dst, unsigned char copyOps, unsigned char writeModes)
 {
     QFileInfo sfi(src);
 
@@ -247,6 +247,23 @@ bool ExifToolParser::copyTags(const QString& src, const QString& dst, unsigned c
     if (!dfi.exists())
     {
         return false;
+    }
+
+    QByteArray wrtCmds;
+
+    if (writeModes & ExifToolProcess::WRITE_EXISTING_TAGS)
+    {
+        wrtCmds.append(QByteArray("w"));
+    }
+
+    if (writeModes & ExifToolProcess::CREATE_NEW_TAGS)
+    {
+        wrtCmds.append(QByteArray("c"));
+    }
+
+    if (writeModes & ExifToolProcess::CREATE_NEW_GROUPS)
+    {
+        wrtCmds.append(QByteArray("g"));
     }
 
     QByteArrayList copyCmds;
@@ -263,25 +280,45 @@ bool ExifToolParser::copyTags(const QString& src, const QString& dst, unsigned c
         {
             copyCmds << QByteArray("-exif");
         }
+        else
+        {
+            copyCmds << QByteArray("--exif");
+        }
 
         if (copyOps & ExifToolProcess::COPY_MAKERNOTES)
         {
             copyCmds << QByteArray("-makernotes");
+        }
+        else
+        {
+            copyCmds << QByteArray("--makernotes");
         }
 
         if (copyOps & ExifToolProcess::COPY_IPTC)
         {
             copyCmds << QByteArray("-iptc");
         }
+        else
+        {
+            copyCmds << QByteArray("--iptc");
+        }
 
         if (copyOps & ExifToolProcess::COPY_XMP)
         {
             copyCmds << QByteArray("-xmp");
         }
+        else
+        {
+            copyCmds << QByteArray("--xmp");
+        }
 
         if (copyOps & ExifToolProcess::COPY_ICC)
         {
             copyCmds << QByteArray("-icc_profile");
+        }
+        else
+        {
+            copyCmds << QByteArray("--icc_profile");
         }
     }
 
@@ -297,6 +334,7 @@ bool ExifToolParser::copyTags(const QString& src, const QString& dst, unsigned c
 
     QByteArrayList cmdArgs;
 
+    cmdArgs << QByteArray("-wm") << wrtCmds;
     cmdArgs << QByteArray("-TagsFromFile");
     cmdArgs << d->filePathEncoding(src);
     cmdArgs << copyCmds;

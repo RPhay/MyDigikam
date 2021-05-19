@@ -27,23 +27,40 @@ namespace Digikam
 
 int DNGWriter::Private::exifToolPostProcess()
 {
-    qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Post-process metadata with ExifTool";
-
     ExifToolParser* const parser = new ExifToolParser();
 
     if (parser->exifToolAvailable())
     {
+
+        qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Post-process Iptc and Xmp with ExifTool";
+
         bool ret = parser->copyTags(
                                      inputInfo.filePath(),
                                      dngFilePath,
-                                     ExifToolProcess::COPY_MAKERNOTES |
                                      ExifToolProcess::COPY_IPTC       |
-                                     ExifToolProcess::COPY_XMP
+                                     ExifToolProcess::COPY_XMP,
+                                     ExifToolProcess::CREATE_NEW_TAGS |
+                                     ExifToolProcess::CREATE_NEW_GROUPS
                                    );
 
         if (!ret)
         {
-            qCCritical(DIGIKAM_GENERAL_LOG) << "DNGWriter: Copy tags with ExifTool failed. Aborted...";
+            qCCritical(DIGIKAM_GENERAL_LOG) << "DNGWriter: Copy Iptc and Xmp tags with ExifTool failed. Aborted...";
+
+            return PROCESS_FAILED;
+        }
+
+        qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Post-process markernotes with ExifTool";
+
+        ret     = parser->copyTags(
+                                     inputInfo.filePath(),
+                                     dngFilePath,
+                                     ExifToolProcess::COPY_MAKERNOTES
+                                   );
+
+        if (!ret)
+        {
+            qCCritical(DIGIKAM_GENERAL_LOG) << "DNGWriter: Copy markernotes with ExifTool failed. Aborted...";
 
             return PROCESS_FAILED;
         }

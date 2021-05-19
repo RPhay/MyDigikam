@@ -37,11 +37,10 @@
 // Local includes
 
 #include "digikam_export.h"
+#include "exiftoolprocess.h"
 
 namespace Digikam
 {
-
-class ExifToolProcess;
 
 class DIGIKAM_EXPORT ExifToolParser : public QObject
 {
@@ -165,9 +164,12 @@ public:
     /**
      * Copy group of tags from one source file to a destination file, following copy operations defined by 'copyOps'.
      * 'copyOps' is a OR combination of ExifToolProcess::CopyTagsSource values.
+     * 'writeModes' is a OR combaniation of ExifToolProcess::WritingTagsMode values.
      * 'dst' must be a writable file format supported by ExifTool.
      */
-    bool copyTags(const QString& src, const QString& dst, unsigned char copyOps);
+    bool copyTags(const QString& src, const QString& dst,
+                  unsigned char copyOps,
+                  unsigned char writeModes = ExifToolProcess::All_MODES);
 
     //@}
 

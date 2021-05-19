@@ -45,7 +45,6 @@
 // Local includes
 
 #include "metaenginesettings.h"
-#include "exiftoolprocess.h"
 #include "digikam_config.h"
 #include "digikam_debug.h"
 

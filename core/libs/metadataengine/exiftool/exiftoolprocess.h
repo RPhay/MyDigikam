@@ -76,6 +76,17 @@ public:
         COPY_ALL        = 0x20      ///< Copy all tags from source file.
     };
 
+    /**
+     * Possible writing mode to OR combine with COPY_TAGS action.
+     */
+    enum WritingTagsMode
+    {
+        WRITE_EXISTING_TAGS = 0x01, ///< Overwrite existing tags.
+        CREATE_NEW_TAGS     = 0x02, ///< Create new tags.
+        CREATE_NEW_GROUPS   = 0x04, ///< Create new groups if necessary.
+        All_MODES           = WRITE_EXISTING_TAGS | CREATE_NEW_TAGS | CREATE_NEW_GROUPS
+    };
+
 public:
 
     /**
