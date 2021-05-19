@@ -31,7 +31,7 @@
 
 // Local includes
 
-#include "itemviewshowfotodelegate.h"
+#include "showfotoitemviewdelegate.h"
 #include "showfotothumbnailmodel.h"
 
 namespace ShowFoto
@@ -42,7 +42,7 @@ class ShowfotoThumbnailDelegatePrivate;
 class ShowfotoNormalDelegatePrivate;
 class ShowfotoFilterModel;
 
-class ShowfotoDelegate : public ItemViewShowfotoDelegate
+class ShowfotoDelegate : public ShowfotoItemViewDelegate
 {
     Q_OBJECT
 

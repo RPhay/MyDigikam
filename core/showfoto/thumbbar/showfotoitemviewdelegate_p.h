@@ -21,10 +21,10 @@
  *
  * ============================================================ */
 
-#ifndef ITEM_VIEW_SHOW_FOTO_DELEGATE_P_H
-#define ITEM_VIEW_SHOW_FOTO_DELEGATE_P_H
+#ifndef SHOW_FOTO_ITEM_VIEW_DELEGATE_P_H
+#define SHOW_FOTO_ITEM_VIEW_DELEGATE_P_H
 
-#include "itemviewshowfotodelegate.h"
+#include "showfotoitemviewdelegate.h"
 
 // Qt includes
 
@@ -52,16 +52,16 @@ using namespace Digikam;
 namespace ShowFoto
 {
 
-class ItemViewShowfotoDelegate;
+class ShowfotoItemViewDelegate;
 
-class Q_DECL_HIDDEN ItemViewShowfotoDelegatePrivate
+class Q_DECL_HIDDEN ShowfotoItemViewDelegatePrivate
 {
 public:
 
-    ItemViewShowfotoDelegatePrivate();
-    virtual ~ItemViewShowfotoDelegatePrivate() = default;
+    ShowfotoItemViewDelegatePrivate();
+    virtual ~ShowfotoItemViewDelegatePrivate() = default;
 
-    void init(ItemViewShowfotoDelegate* const _q);
+    void init(ShowfotoItemViewDelegate* const _q);
 
     /// Resets cached rects. Remember to reimplement in subclass for added rects.
     virtual void clearRects();
@@ -84,7 +84,7 @@ public:
 
     ThumbnailSize             thumbSize;
 
-    ItemViewShowfotoDelegate* q;
+    ShowfotoItemViewDelegate* q;
 
     QRect                     oneRowRegRect;
     QRect                     oneRowComRect;
@@ -96,9 +96,9 @@ public:
 
 private:
 
-    Q_DISABLE_COPY(ItemViewShowfotoDelegatePrivate)
+    Q_DISABLE_COPY(ShowfotoItemViewDelegatePrivate)
 };
 
 } // namespace ShowFoto
 
-#endif // ITEM_VIEW_SHOW_FOTO_DELEGATE_P_H
+#endif // SHOW_FOTO_ITEM_VIEW_DELEGATE_P_H

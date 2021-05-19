@@ -47,12 +47,12 @@
 #include "showfotoiteminfo.h"
 #include "showfotothumbnailmodel.h"
 #include "showfotosettings.h"
-#include "itemviewshowfotodelegate_p.h"
+#include "showfotoitemviewdelegate_p.h"
 
 namespace ShowFoto
 {
 
-class Q_DECL_HIDDEN ShowfotoDelegate::ShowfotoDelegatePrivate : public ItemViewShowfotoDelegatePrivate
+class Q_DECL_HIDDEN ShowfotoDelegate::ShowfotoDelegatePrivate : public ShowfotoItemViewDelegatePrivate
 {
 public:
 

@@ -21,12 +21,12 @@
  *
  * ============================================================ */
 
-#include "itemviewshowfotodelegate_p.h"
+#include "showfotoitemviewdelegate_p.h"
 
 namespace ShowFoto
 {
 
-ItemViewShowfotoDelegatePrivate::ItemViewShowfotoDelegatePrivate()
+ShowfotoItemViewDelegatePrivate::ShowfotoItemViewDelegatePrivate()
     : spacing   (0),
       thumbSize (ThumbnailSize(0)),
       q         (nullptr),
@@ -35,7 +35,7 @@ ItemViewShowfotoDelegatePrivate::ItemViewShowfotoDelegatePrivate()
 {
 }
 
-void ItemViewShowfotoDelegatePrivate::init(ItemViewShowfotoDelegate* const _q)
+void ShowfotoItemViewDelegatePrivate::init(ShowfotoItemViewDelegate* const _q)
 {
     q = _q;
 
@@ -43,45 +43,45 @@ void ItemViewShowfotoDelegatePrivate::init(ItemViewShowfotoDelegate* const _q)
                q, SLOT(slotThemeChanged()));
 }
 
-void ItemViewShowfotoDelegatePrivate::clearRects()
+void ShowfotoItemViewDelegatePrivate::clearRects()
 {
     gridSize   = QSize(0, 0);
     rect       = QRect(0, 0, 0, 0);
 }
 
-// ---- ItemViewShowfotoDelegate -----------------------------------------------
+// ---- ShowfotoItemViewDelegate -----------------------------------------------
 
-ItemViewShowfotoDelegate::ItemViewShowfotoDelegate(QObject* const parent)
+ShowfotoItemViewDelegate::ShowfotoItemViewDelegate(QObject* const parent)
     : DItemDelegate(parent),
-      d_ptr        (new ItemViewShowfotoDelegatePrivate)
+      d_ptr        (new ShowfotoItemViewDelegatePrivate)
 {
     d_ptr->init(this);
 }
 
-ItemViewShowfotoDelegate::ItemViewShowfotoDelegate(ItemViewShowfotoDelegatePrivate& dd, QObject* const parent)
+ShowfotoItemViewDelegate::ShowfotoItemViewDelegate(ShowfotoItemViewDelegatePrivate& dd, QObject* const parent)
     : DItemDelegate(parent),
       d_ptr        (&dd)
 {
     d_ptr->init(this);
 }
 
-ItemViewShowfotoDelegate::~ItemViewShowfotoDelegate()
+ShowfotoItemViewDelegate::~ShowfotoItemViewDelegate()
 {
-    Q_D(ItemViewShowfotoDelegate);
+    Q_D(ShowfotoItemViewDelegate);
     removeAllOverlays();
     delete d;
 }
 
-ThumbnailSize ItemViewShowfotoDelegate::thumbnailSize() const
+ThumbnailSize ShowfotoItemViewDelegate::thumbnailSize() const
 {
-    Q_D(const ItemViewShowfotoDelegate);
+    Q_D(const ShowfotoItemViewDelegate);
 
     return d->thumbSize;
 }
 
-void ItemViewShowfotoDelegate::setThumbnailSize(const ThumbnailSize& thumbSize)
+void ShowfotoItemViewDelegate::setThumbnailSize(const ThumbnailSize& thumbSize)
 {
-    Q_D(ItemViewShowfotoDelegate);
+    Q_D(ShowfotoItemViewDelegate);
 
     if (d->thumbSize != thumbSize)
     {
@@ -90,9 +90,9 @@ void ItemViewShowfotoDelegate::setThumbnailSize(const ThumbnailSize& thumbSize)
     }
 }
 
-void ItemViewShowfotoDelegate::setSpacing(int spacing)
+void ShowfotoItemViewDelegate::setSpacing(int spacing)
 {
-    Q_D(ItemViewShowfotoDelegate);
+    Q_D(ShowfotoItemViewDelegate);
 
     if (d->spacing == spacing)
     {
@@ -103,45 +103,45 @@ void ItemViewShowfotoDelegate::setSpacing(int spacing)
     invalidatePaintingCache();
 }
 
-int ItemViewShowfotoDelegate::spacing() const
+int ShowfotoItemViewDelegate::spacing() const
 {
-    Q_D(const ItemViewShowfotoDelegate);
+    Q_D(const ShowfotoItemViewDelegate);
 
     return d->spacing;
 }
 
-QRect ItemViewShowfotoDelegate::rect() const
+QRect ShowfotoItemViewDelegate::rect() const
 {
-    Q_D(const ItemViewShowfotoDelegate);
+    Q_D(const ShowfotoItemViewDelegate);
 
     return d->rect;
 }
 
-QRect ItemViewShowfotoDelegate::pixmapRect() const
+QRect ShowfotoItemViewDelegate::pixmapRect() const
 {
     return QRect();
 }
 
-QRect ItemViewShowfotoDelegate::imageInformationRect() const
+QRect ShowfotoItemViewDelegate::imageInformationRect() const
 {
     return QRect();
 }
 
-QSize ItemViewShowfotoDelegate::sizeHint(const QStyleOptionViewItem& /*option*/, const QModelIndex& /*index*/) const
+QSize ShowfotoItemViewDelegate::sizeHint(const QStyleOptionViewItem& /*option*/, const QModelIndex& /*index*/) const
 {
-    Q_D(const ItemViewShowfotoDelegate);
+    Q_D(const ShowfotoItemViewDelegate);
 
     return d->rect.size();
 }
 
-QSize ItemViewShowfotoDelegate::gridSize() const
+QSize ShowfotoItemViewDelegate::gridSize() const
 {
-    Q_D(const ItemViewShowfotoDelegate);
+    Q_D(const ShowfotoItemViewDelegate);
 
     return d->gridSize;
 }
 
-bool ItemViewShowfotoDelegate::acceptsToolTip(const QPoint&, const QRect& visualRect, const QModelIndex&, QRect* retRect) const
+bool ShowfotoItemViewDelegate::acceptsToolTip(const QPoint&, const QRect& visualRect, const QModelIndex&, QRect* retRect) const
 {
     if (retRect)
     {
@@ -151,7 +151,7 @@ bool ItemViewShowfotoDelegate::acceptsToolTip(const QPoint&, const QRect& visual
     return true;
 }
 
-bool ItemViewShowfotoDelegate::acceptsActivation(const QPoint& , const QRect& visualRect, const QModelIndex&, QRect* retRect) const
+bool ShowfotoItemViewDelegate::acceptsActivation(const QPoint& , const QRect& visualRect, const QModelIndex&, QRect* retRect) const
 {
     if (retRect)
     {
@@ -161,43 +161,43 @@ bool ItemViewShowfotoDelegate::acceptsActivation(const QPoint& , const QRect& vi
     return true;
 }
 
-QAbstractItemDelegate* ItemViewShowfotoDelegate::asDelegate()
+QAbstractItemDelegate* ShowfotoItemViewDelegate::asDelegate()
 {
     return this;
 }
 
-void ItemViewShowfotoDelegate::overlayDestroyed(QObject* o)
+void ShowfotoItemViewDelegate::overlayDestroyed(QObject* o)
 {
     ItemDelegateOverlayContainer::overlayDestroyed(o);
 }
 
-void ItemViewShowfotoDelegate::mouseMoved(QMouseEvent* e, const QRect& visualRect, const QModelIndex& index)
+void ShowfotoItemViewDelegate::mouseMoved(QMouseEvent* e, const QRect& visualRect, const QModelIndex& index)
 {
-    // 3-way indirection AbstractShowfotoItemDelegate -> ItemViewShowfotoDelegate -> ItemDelegateOverlayContainer
+    // 3-way indirection AbstractShowfotoItemDelegate -> ShowfotoItemViewDelegate -> ItemDelegateOverlayContainer
 
     ItemDelegateOverlayContainer::mouseMoved(e, visualRect, index);
 }
 
-void ItemViewShowfotoDelegate::setDefaultViewOptions(const QStyleOptionViewItem& option)
+void ShowfotoItemViewDelegate::setDefaultViewOptions(const QStyleOptionViewItem& option)
 {
-    Q_D(ItemViewShowfotoDelegate);
+    Q_D(ShowfotoItemViewDelegate);
     d->font = option.font;
     invalidatePaintingCache();
 }
 
-void ItemViewShowfotoDelegate::slotThemeChanged()
+void ShowfotoItemViewDelegate::slotThemeChanged()
 {
     invalidatePaintingCache();
 }
 
-void ItemViewShowfotoDelegate::slotSetupChanged()
+void ShowfotoItemViewDelegate::slotSetupChanged()
 {
     invalidatePaintingCache();
 }
 
-void ItemViewShowfotoDelegate::invalidatePaintingCache()
+void ShowfotoItemViewDelegate::invalidatePaintingCache()
 {
-    Q_D(ItemViewShowfotoDelegate);
+    Q_D(ShowfotoItemViewDelegate);
     QSize oldGridSize = d->gridSize;
     updateSizeRectsAndPixmaps();
 
@@ -212,7 +212,7 @@ void ItemViewShowfotoDelegate::invalidatePaintingCache()
     emit visualChange();
 }
 
-QRect ItemViewShowfotoDelegate::drawThumbnail(QPainter* p, const QRect& thumbRect, const QPixmap& background,
+QRect ShowfotoItemViewDelegate::drawThumbnail(QPainter* p, const QRect& thumbRect, const QPixmap& background,
                                               const QPixmap& thumbnail) const
 {
     p->drawPixmap(0, 0, background);
@@ -243,25 +243,25 @@ QRect ItemViewShowfotoDelegate::drawThumbnail(QPainter* p, const QRect& thumbRec
     return actualPixmapRect;
 }
 
-void ItemViewShowfotoDelegate::drawName(QPainter* p,const QRect& nameRect, const QString& name) const
+void ShowfotoItemViewDelegate::drawName(QPainter* p,const QRect& nameRect, const QString& name) const
 {
-    Q_D(const ItemViewShowfotoDelegate);
+    Q_D(const ShowfotoItemViewDelegate);
     p->setFont(d->fontReg);
     p->drawText(nameRect, Qt::AlignCenter, name);   //squeezedTextCached(p, nameRect.width(), name));
 }
 
-void ItemViewShowfotoDelegate::drawCreationDate(QPainter* p, const QRect& dateRect, const QDateTime& date) const
+void ShowfotoItemViewDelegate::drawCreationDate(QPainter* p, const QRect& dateRect, const QDateTime& date) const
 {
-    Q_D(const ItemViewShowfotoDelegate);
+    Q_D(const ShowfotoItemViewDelegate);
     p->setFont(d->fontXtra);
     QString str = dateToString(date);
     str         = i18nc("date of image creation", "created: %1", str);
     p->drawText(dateRect, Qt::AlignCenter, str);    //squeezedTextCached(p, dateRect.width(), str));
 }
 
-void ItemViewShowfotoDelegate::drawImageFormat(QPainter* p, const QRect& r, const QString& mime) const
+void ShowfotoItemViewDelegate::drawImageFormat(QPainter* p, const QRect& r, const QString& mime) const
 {
-    Q_D(const ItemViewShowfotoDelegate);
+    Q_D(const ShowfotoItemViewDelegate);
 
     if (!mime.isEmpty() && !r.isNull())
     {
@@ -289,7 +289,7 @@ void ItemViewShowfotoDelegate::drawImageFormat(QPainter* p, const QRect& r, cons
     }
 }
 
-void ItemViewShowfotoDelegate::drawGeolocationIndicator(QPainter* p, const QRect& r) const
+void ShowfotoItemViewDelegate::drawGeolocationIndicator(QPainter* p, const QRect& r) const
 {
     if (!r.isNull())
     {
@@ -301,9 +301,9 @@ void ItemViewShowfotoDelegate::drawGeolocationIndicator(QPainter* p, const QRect
     }
 }
 
-void ItemViewShowfotoDelegate::drawImageSize(QPainter* p, const QRect& dimsRect, const QSize& dims) const
+void ShowfotoItemViewDelegate::drawImageSize(QPainter* p, const QRect& dimsRect, const QSize& dims) const
 {
-    Q_D(const ItemViewShowfotoDelegate);
+    Q_D(const ShowfotoItemViewDelegate);
 
     if (dims.isValid())
     {
@@ -325,17 +325,17 @@ void ItemViewShowfotoDelegate::drawImageSize(QPainter* p, const QRect& dimsRect,
     }
 }
 
-void ItemViewShowfotoDelegate::drawFileSize(QPainter* p, const QRect& r, qlonglong bytes) const
+void ShowfotoItemViewDelegate::drawFileSize(QPainter* p, const QRect& r, qlonglong bytes) const
 {
-    Q_D(const ItemViewShowfotoDelegate);
+    Q_D(const ShowfotoItemViewDelegate);
     p->setFont(d->fontXtra);
     p->drawText(r, Qt::AlignCenter, ItemPropertiesTab::humanReadableBytesCount(bytes));
 }
 
-void ItemViewShowfotoDelegate::drawFocusRect(QPainter* p, const QStyleOptionViewItem& option,
+void ShowfotoItemViewDelegate::drawFocusRect(QPainter* p, const QStyleOptionViewItem& option,
                                              bool isSelected) const
 {
-    Q_D(const ItemViewShowfotoDelegate);
+    Q_D(const ShowfotoItemViewDelegate);
 
     if (option.state & QStyle::State_HasFocus) //?? is current item
     {
@@ -346,9 +346,9 @@ void ItemViewShowfotoDelegate::drawFocusRect(QPainter* p, const QStyleOptionView
     }
 }
 
-void ItemViewShowfotoDelegate::drawMouseOverRect(QPainter* p, const QStyleOptionViewItem& option) const
+void ShowfotoItemViewDelegate::drawMouseOverRect(QPainter* p, const QStyleOptionViewItem& option) const
 {
-    Q_D(const ItemViewShowfotoDelegate);
+    Q_D(const ShowfotoItemViewDelegate);
 
     if (option.state & QStyle::State_MouseOver)
     {
@@ -357,9 +357,9 @@ void ItemViewShowfotoDelegate::drawMouseOverRect(QPainter* p, const QStyleOption
     }
 }
 
-void ItemViewShowfotoDelegate::prepareFonts()
+void ShowfotoItemViewDelegate::prepareFonts()
 {
-    Q_D(ItemViewShowfotoDelegate);
+    Q_D(ShowfotoItemViewDelegate);
 
     d->fontReg  = d->font;
     d->fontCom  = d->font;
@@ -381,9 +381,9 @@ void ItemViewShowfotoDelegate::prepareFonts()
     }
 }
 
-void ItemViewShowfotoDelegate::prepareMetrics(int maxWidth)
+void ShowfotoItemViewDelegate::prepareMetrics(int maxWidth)
 {
-    Q_D(ItemViewShowfotoDelegate);
+    Q_D(ShowfotoItemViewDelegate);
 
     QFontMetrics fm(d->fontReg);
     d->oneRowRegRect = fm.boundingRect(0, 0, maxWidth, 0xFFFFFFFF,
@@ -399,9 +399,9 @@ void ItemViewShowfotoDelegate::prepareMetrics(int maxWidth)
                                         QLatin1String("XXXXXXXXX"));
 }
 
-void ItemViewShowfotoDelegate::prepareBackground()
+void ShowfotoItemViewDelegate::prepareBackground()
 {
-    Q_D(ItemViewShowfotoDelegate);
+    Q_D(ShowfotoItemViewDelegate);
 
     if (!d->rect.isValid())
     {

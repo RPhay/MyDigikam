@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef ITEM_VIEW_SHOW_FOTO_DELEGATE_H
-#define ITEM_VIEW_SHOW_FOTO_DELEGATE_H
+#ifndef SHOW_FOTO_ITEM_VIEW_DELEGATE_H
+#define SHOW_FOTO_ITEM_VIEW_DELEGATE_H
 
 // Local includes
 
@@ -37,17 +37,17 @@ namespace ShowFoto
 
 class ShowfotoFilterModel;
 class ShowfotoItemModel;
-class ItemViewShowfotoDelegatePrivate;
+class ShowfotoItemViewDelegatePrivate;
 
-class ItemViewShowfotoDelegate : public DItemDelegate,
+class ShowfotoItemViewDelegate : public DItemDelegate,
                                  public ItemDelegateOverlayContainer
 {
     Q_OBJECT
 
 public:
 
-    explicit ItemViewShowfotoDelegate(QObject* const parent = nullptr);
-    ~ItemViewShowfotoDelegate()                                                               override;
+    explicit ShowfotoItemViewDelegate(QObject* const parent = nullptr);
+    ~ShowfotoItemViewDelegate()                                                               override;
 
     ThumbnailSize thumbnailSize()                                                       const;
 
@@ -122,23 +122,23 @@ protected:
 
 protected:
 
-    ItemViewShowfotoDelegatePrivate* const d_ptr;
+    ShowfotoItemViewDelegatePrivate* const d_ptr;
 
 protected:
 
-    ItemViewShowfotoDelegate(ItemViewShowfotoDelegatePrivate& dd, QObject* const parent);
+    ShowfotoItemViewDelegate(ShowfotoItemViewDelegatePrivate& dd, QObject* const parent);
 
 private:
 
     // Disable.
-    ItemViewShowfotoDelegate(const ItemViewShowfotoDelegate&)            = delete;
-    ItemViewShowfotoDelegate& operator=(const ItemViewShowfotoDelegate&) = delete;
+    ShowfotoItemViewDelegate(const ShowfotoItemViewDelegate&)            = delete;
+    ShowfotoItemViewDelegate& operator=(const ShowfotoItemViewDelegate&) = delete;
 
 private:
 
-    Q_DECLARE_PRIVATE(ItemViewShowfotoDelegate)
+    Q_DECLARE_PRIVATE(ShowfotoItemViewDelegate)
 };
 
 } // namespace ShowFoto
 
-#endif // ITEM_VIEW_SHOW_FOTO_DELEGATE_H
+#endif // SHOW_FOTO_ITEM_VIEW_DELEGATE_H

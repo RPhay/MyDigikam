@@ -29,7 +29,7 @@ namespace ShowFoto
 
 void ShowfotoDelegate::ShowfotoDelegatePrivate::clearRects()
 {
-    ItemViewShowfotoDelegatePrivate::clearRects();
+    ShowfotoItemViewDelegatePrivate::clearRects();
     dateRect             = QRect(0, 0, 0, 0);
     pixmapRect           = QRect(0, 0, 0, 0);
     nameRect             = QRect(0, 0, 0, 0);
@@ -40,12 +40,12 @@ void ShowfotoDelegate::ShowfotoDelegatePrivate::clearRects()
 }
 
 ShowfotoDelegate::ShowfotoDelegate(QObject* const parent)
-    : ItemViewShowfotoDelegate(*new ShowfotoDelegatePrivate, parent)
+    : ShowfotoItemViewDelegate(*new ShowfotoDelegatePrivate, parent)
 {
 }
 
 ShowfotoDelegate::ShowfotoDelegate(ShowfotoDelegate::ShowfotoDelegatePrivate& dd, QObject* const parent)
-    : ItemViewShowfotoDelegate(dd, parent)
+    : ShowfotoItemViewDelegate(dd, parent)
 {
 }
 
@@ -117,7 +117,7 @@ void ShowfotoDelegate::setModel(QAbstractItemModel* model)
 
 void ShowfotoDelegate::setSpacing(int spacing)
 {
-    ItemViewShowfotoDelegate::setSpacing(spacing);
+    ShowfotoItemViewDelegate::setSpacing(spacing);
 }
 
 QRect ShowfotoDelegate::pixmapRect() const
@@ -303,13 +303,13 @@ bool ShowfotoDelegate::onActualPixmapRect(const QPoint& pos, const QRect& visual
 void ShowfotoDelegate::setDefaultViewOptions(const QStyleOptionViewItem& option)
 {
 
-    ItemViewShowfotoDelegate::setDefaultViewOptions(option);
+    ShowfotoItemViewDelegate::setDefaultViewOptions(option);
 }
 
 void ShowfotoDelegate::invalidatePaintingCache()
 {
 
-    ItemViewShowfotoDelegate::invalidatePaintingCache();
+    ShowfotoItemViewDelegate::invalidatePaintingCache();
 }
 
 void ShowfotoDelegate::updateContentWidth()
@@ -348,7 +348,7 @@ void ShowfotoDelegate::updateSizeRectsAndPixmaps()
 void ShowfotoDelegate::clearCaches()
 {
     Q_D(ShowfotoDelegate);
-    ItemViewShowfotoDelegate::clearCaches();
+    ShowfotoItemViewDelegate::clearCaches();
     d->actualPixmapRectCache.clear();
 }
 
@@ -514,7 +514,7 @@ bool ShowfotoThumbnailDelegate::acceptsActivation(const QPoint& pos, const QRect
 {
     // reuse implementation from grandparent
 
-    return ItemViewShowfotoDelegate::acceptsActivation(pos, visualRect, index, activationRect); // clazy:exclude=skipped-base-method
+    return ShowfotoItemViewDelegate::acceptsActivation(pos, visualRect, index, activationRect); // clazy:exclude=skipped-base-method
 }
 
 void ShowfotoThumbnailDelegate::updateContentWidth()

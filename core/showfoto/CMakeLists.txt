@@ -33,7 +33,7 @@ set(showfoto_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/thumbbar/showfotokineticscroller.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/thumbbar/showfotoitemsortsettings.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/thumbbar/showfotocoordinatesoverlay.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/thumbbar/itemviewshowfotodelegate.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/thumbbar/showfotoitemviewdelegate.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/thumbbar/showfotodelegate.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/thumbbar/showfototooltipfiller.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/thumbbar/showfotocategorizedview.cpp
@@ -41,11 +41,11 @@ set(showfoto_SRCS
 
     ${CMAKE_CURRENT_SOURCE_DIR}/main/showfotosettings.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/main/showfotoinfoiface.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/main/main.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/main/showfoto.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/main/showfoto_setup.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/main/showfoto_config.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/main/showfoto_import.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/main/main.cpp
 )
 
 file(GLOB ICONS_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/../data/icons/apps/*-apps-showfoto.png")

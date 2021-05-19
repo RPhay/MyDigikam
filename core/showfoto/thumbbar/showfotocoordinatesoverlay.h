@@ -33,7 +33,7 @@
 
 #include "itemviewhoverbutton.h"
 #include "itemdelegateoverlay.h"
-#include "itemviewshowfotodelegate.h"
+#include "showfotoitemviewdelegate.h"
 
 using namespace Digikam;
 
@@ -58,7 +58,7 @@ protected:
 class ShowfotoCoordinatesOverlay : public AbstractWidgetDelegateOverlay
 {
     Q_OBJECT
-    REQUIRE_DELEGATE(ItemViewShowfotoDelegate)
+    REQUIRE_DELEGATE(ShowfotoItemViewDelegate)
 
 public:
 
