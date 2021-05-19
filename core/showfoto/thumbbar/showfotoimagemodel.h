@@ -42,7 +42,8 @@ namespace ShowFoto
 
 typedef QPair<int, int> IntPair;
 
-class ShowfotoItemModel : public QAbstractListModel, public DragDropModelImplementation
+class ShowfotoItemModel : public QAbstractListModel,
+                          public DragDropModelImplementation
 {
     Q_OBJECT
 

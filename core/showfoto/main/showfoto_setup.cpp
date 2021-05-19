@@ -26,7 +26,7 @@
 namespace ShowFoto
 {
 
-void ShowFoto::setupActions()
+void Showfoto::setupActions()
 {
     Digikam::ThemeManager::instance()->setThemeMenuAction(new QMenu(i18n("&Themes"), this));
     setupStandardActions();
@@ -42,7 +42,7 @@ void ShowFoto::setupActions()
     actionCollection()->setDefaultShortcut(d->openFilesInFolderAction, Qt::CTRL + Qt::SHIFT + Qt::Key_O);
 
     connect(d->openFilesInFolderAction, &QAction::triggered,
-            this, &ShowFoto::slotOpenFolder);
+            this, &Showfoto::slotOpenFolder);
 
     actionCollection()->addAction(QLatin1String("showfoto_open_folder"), d->openFilesInFolderAction);
 
@@ -56,7 +56,7 @@ void ShowFoto::setupActions()
     createHelpActions(false);
 }
 
-void ShowFoto::setupConnections()
+void Showfoto::setupConnections()
 {
     setupStandardConnections();
 
@@ -69,11 +69,11 @@ void ShowFoto::setupConnections()
     connect(this, SIGNAL(signalSelectionChanged(QRect)),
             d->rightSideBar, SLOT(slotImageSelectionChanged(QRect)));
 
-    connect(this, &ShowFoto::signalOpenFolder,
-            this, &ShowFoto::slotOpenFolder);
+    connect(this, &Showfoto::signalOpenFolder,
+            this, &Showfoto::slotOpenFolder);
 
-    connect(this, &ShowFoto::signalOpenFile,
-            this, &ShowFoto::slotOpenFile);
+    connect(this, &Showfoto::signalOpenFile,
+            this, &Showfoto::slotOpenFile);
 
     connect(this, SIGNAL(signalInfoList(ShowfotoItemInfoList)),
             d->model, SLOT(reAddShowfotoItemInfos(ShowfotoItemInfoList)));
@@ -94,7 +94,7 @@ void ShowFoto::setupConnections()
             this, SLOT(slotDroppedUrls(QList<QUrl>,bool)));
 }
 
-void ShowFoto::setupUserArea()
+void Showfoto::setupUserArea()
 {
     KSharedConfig::Ptr config  = KSharedConfig::openConfig();
     KConfigGroup group         = config->group(configGroupName());
@@ -163,7 +163,7 @@ void ShowFoto::setupUserArea()
     setCentralWidget(widget);
 }
 
-void ShowFoto::slotContextMenu()
+void Showfoto::slotContextMenu()
 {
     if (m_contextMenu)
     {
@@ -173,12 +173,12 @@ void ShowFoto::slotContextMenu()
     }
 }
 
-void ShowFoto::addServicesMenu()
+void Showfoto::addServicesMenu()
 {
     addServicesMenuForUrl(d->thumbBar->currentUrl());
 }
 
-void ShowFoto::toggleNavigation(int index)
+void Showfoto::toggleNavigation(int index)
 {
     if (!m_actionEnabledState)
     {
@@ -213,7 +213,7 @@ void ShowFoto::toggleNavigation(int index)
     }
 }
 
-void ShowFoto::toggleActions(bool val)
+void Showfoto::toggleActions(bool val)
 {
     toggleStandardActions(val);
 }

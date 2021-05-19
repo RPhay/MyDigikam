@@ -40,14 +40,14 @@
 namespace ShowFoto
 {
 
-class ShowFoto : public Digikam::EditorWindow
+class Showfoto : public Digikam::EditorWindow
 {
     Q_OBJECT
 
 public:
 
-    explicit ShowFoto(const QList<QUrl>& urlList, QWidget* const parent = nullptr);
-    ~ShowFoto()                                             override;
+    explicit Showfoto(const QList<QUrl>& urlList, QWidget* const parent = nullptr);
+    ~Showfoto()                                             override;
 
 public:
 

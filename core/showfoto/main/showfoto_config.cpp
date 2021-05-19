@@ -26,17 +26,17 @@
 namespace ShowFoto
 {
 
-void ShowFoto::slotSetup()
+void Showfoto::slotSetup()
 {
     setup(false);
 }
 
-void ShowFoto::slotSetupICC()
+void Showfoto::slotSetupICC()
 {
     setup(true);
 }
 
-bool ShowFoto::setup(bool iccSetupPage)
+bool Showfoto::setup(bool iccSetupPage)
 {
     QPointer<ShowfotoSetup> setup = new ShowfotoSetup(this, iccSetupPage ? ShowfotoSetup::ICCPage : ShowfotoSetup::LastPageUsed);
 
@@ -61,7 +61,7 @@ bool ShowFoto::setup(bool iccSetupPage)
     return true;
 }
 
-void ShowFoto::readSettings()
+void Showfoto::readSettings()
 {
     d->settings        = ShowfotoSettings::instance();
 
@@ -83,7 +83,7 @@ void ShowFoto::readSettings()
     d->thumbBar->setToolTipEnabled(d->settings->getShowToolTip());
 }
 
-void ShowFoto::saveSettings()
+void Showfoto::saveSettings()
 {
     saveStandardSettings();
 
@@ -94,7 +94,7 @@ void ShowFoto::saveSettings()
     d->rightSideBar->saveState();
 }
 
-void ShowFoto::applySettings()
+void Showfoto::applySettings()
 {
     applyStandardSettings();
 

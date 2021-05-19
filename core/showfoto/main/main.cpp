@@ -246,7 +246,7 @@ int main(int argc, char* argv[])
 
 #endif
 
-    ShowFoto::ShowFoto* const w = new ShowFoto::ShowFoto(urlList);
+    ShowFoto::Showfoto* const w = new ShowFoto::Showfoto(urlList);
 
     // If application storage place in home directory to save customized XML settings files do not exist, create it,
     // else QFile will not able to create new files as well.

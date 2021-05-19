@@ -26,7 +26,7 @@
 namespace ShowFoto
 {
 
-void ShowFoto::slotImportedImagefromScanner(const QUrl& url)
+void Showfoto::slotImportedImagefromScanner(const QUrl& url)
 {
     openUrls(QList<QUrl>() << url);
 }

@@ -32,7 +32,7 @@
 namespace ShowFoto
 {
 
-ShowFoto::ShowFoto(const QList<QUrl>& urlList, QWidget* const)
+Showfoto::Showfoto(const QList<QUrl>& urlList, QWidget* const)
     : Digikam::EditorWindow(QLatin1String("Showfoto")),
       d                    (new Private)
 {
@@ -131,7 +131,7 @@ ShowFoto::ShowFoto(const QList<QUrl>& urlList, QWidget* const)
     slotDroppedUrls(urlList, false);
 }
 
-ShowFoto::~ShowFoto()
+Showfoto::~Showfoto()
 {
     delete m_canvas;
     m_canvas = nullptr;
@@ -148,7 +148,7 @@ ShowFoto::~ShowFoto()
     delete d;
 }
 
-bool ShowFoto::queryClose()
+bool Showfoto::queryClose()
 {
     // wait if a save operation is currently running
 
@@ -167,7 +167,7 @@ bool ShowFoto::queryClose()
     return true;
 }
 
-void ShowFoto::show()
+void Showfoto::show()
 {
     // Remove Splashscreen.
 
@@ -212,7 +212,7 @@ void ShowFoto::show()
     }
 }
 
-void ShowFoto::slotOpenFile()
+void Showfoto::slotOpenFile()
 {
     if (!d->thumbBar->currentInfo().isNull() && !promptUserSave(d->thumbBar->currentUrl()))
     {
@@ -245,7 +245,7 @@ void ShowFoto::slotOpenFile()
     }
 }
 
-void ShowFoto::slotOpenFolder()
+void Showfoto::slotOpenFolder()
 {
     if (!d->thumbBar->currentInfo().isNull() && !promptUserSave(d->thumbBar->currentUrl()))
     {
@@ -267,7 +267,7 @@ void ShowFoto::slotOpenFolder()
     }
 }
 
-void ShowFoto::openUrls(const QList<QUrl>& urls)
+void Showfoto::openUrls(const QList<QUrl>& urls)
 {
     if (urls.isEmpty())
     {
@@ -309,7 +309,7 @@ void ShowFoto::openUrls(const QList<QUrl>& urls)
     }
 }
 
-void ShowFoto::openFolder(const QUrl& url)
+void Showfoto::openFolder(const QUrl& url)
 {
     if (!url.isValid() || !url.isLocalFile())
     {
@@ -388,7 +388,7 @@ void ShowFoto::openFolder(const QUrl& url)
     QApplication::restoreOverrideCursor();
 }
 
-void ShowFoto::slotDroppedUrls(const QList<QUrl>& droppedUrls, bool dropped)
+void Showfoto::slotDroppedUrls(const QList<QUrl>& droppedUrls, bool dropped)
 {
     if (droppedUrls.isEmpty())
     {
@@ -469,7 +469,7 @@ void ShowFoto::slotDroppedUrls(const QList<QUrl>& droppedUrls, bool dropped)
     }
 }
 
-void ShowFoto::slotOpenUrl(const ShowfotoItemInfo& info)
+void Showfoto::slotOpenUrl(const ShowfotoItemInfo& info)
 {
     if (d->thumbBar->currentInfo().isNull())
     {
@@ -500,7 +500,7 @@ void ShowFoto::slotOpenUrl(const ShowfotoItemInfo& info)
     //TODO : add preload here like in ImageWindow::slotLoadCurrent() ???
 }
 
-void ShowFoto::slotShowfotoItemInfoActivated(const ShowfotoItemInfo& info)
+void Showfoto::slotShowfotoItemInfoActivated(const ShowfotoItemInfo& info)
 {
     if (!d->thumbBar->currentInfo().isNull() && !promptUserSave(d->currentLoadedUrl))
     {
@@ -512,17 +512,17 @@ void ShowFoto::slotShowfotoItemInfoActivated(const ShowfotoItemInfo& info)
     slotOpenUrl(info);
 }
 
-Digikam::ThumbBarDock* ShowFoto::thumbBar() const
+Digikam::ThumbBarDock* Showfoto::thumbBar() const
 {
     return d->thumbBarDock;
 }
 
-Digikam::Sidebar* ShowFoto::rightSideBar() const
+Digikam::Sidebar* Showfoto::rightSideBar() const
 {
     return (dynamic_cast<Digikam::Sidebar*>(d->rightSideBar));
 }
 
-void ShowFoto::slotChanged()
+void Showfoto::slotChanged()
 {
     QString mpixels;
     QSize dims(m_canvas->imageWidth(), m_canvas->imageHeight());
@@ -543,7 +543,7 @@ void ShowFoto::slotChanged()
     }
 }
 
-void ShowFoto::slotUpdateItemInfo()
+void Showfoto::slotUpdateItemInfo()
 {
     d->itemsNb = d->thumbBar->showfotoItemInfos().size();
     int index  = 0;
@@ -582,7 +582,7 @@ void ShowFoto::slotUpdateItemInfo()
     toggleNavigation(index);
 }
 
-void ShowFoto::slotFirst()
+void Showfoto::slotFirst()
 {
     if (!d->thumbBar->currentInfo().isNull() && !promptUserSave(d->thumbBar->currentUrl()))
     {
@@ -594,7 +594,7 @@ void ShowFoto::slotFirst()
     slotOpenUrl(d->thumbBar->showfotoItemInfos().first());
 }
 
-void ShowFoto::slotLast()
+void Showfoto::slotLast()
 {
     if (!d->thumbBar->currentInfo().isNull() && !promptUserSave(d->thumbBar->currentUrl()))
     {
@@ -606,7 +606,7 @@ void ShowFoto::slotLast()
     slotOpenUrl(d->thumbBar->showfotoItemInfos().last());
 }
 
-void ShowFoto::slotForward()
+void Showfoto::slotForward()
 {
     if (!d->thumbBar->currentInfo().isNull() && !promptUserSave(d->thumbBar->currentUrl()))
     {
@@ -622,7 +622,7 @@ void ShowFoto::slotForward()
     }
 }
 
-void ShowFoto::slotBackward()
+void Showfoto::slotBackward()
 {
     if (!d->thumbBar->currentInfo().isNull() && !promptUserSave(d->thumbBar->currentUrl()))
     {
@@ -638,7 +638,7 @@ void ShowFoto::slotBackward()
     }
 }
 
-void ShowFoto::slotPrepareToLoad()
+void Showfoto::slotPrepareToLoad()
 {
     Digikam::EditorWindow::slotPrepareToLoad();
 
@@ -648,7 +648,7 @@ void ShowFoto::slotPrepareToLoad()
     d->fileOpenAction->setEnabled(true);
 }
 
-void ShowFoto::slotLoadingStarted(const QString& filename)
+void Showfoto::slotLoadingStarted(const QString& filename)
 {
     Digikam::EditorWindow::slotLoadingStarted(filename);
 
@@ -658,7 +658,7 @@ void ShowFoto::slotLoadingStarted(const QString& filename)
     d->fileOpenAction->setEnabled(false);
 }
 
-void ShowFoto::slotLoadingFinished(const QString& filename, bool success)
+void Showfoto::slotLoadingFinished(const QString& filename, bool success)
 {
     Digikam::EditorWindow::slotLoadingFinished(filename, success);
 
@@ -668,7 +668,7 @@ void ShowFoto::slotLoadingFinished(const QString& filename, bool success)
     d->fileOpenAction->setEnabled(true);
 }
 
-void ShowFoto::slotSavingStarted(const QString& filename)
+void Showfoto::slotSavingStarted(const QString& filename)
 {
     Digikam::EditorWindow::slotSavingStarted(filename);
 
@@ -678,7 +678,7 @@ void ShowFoto::slotSavingStarted(const QString& filename)
     d->fileOpenAction->setEnabled(false);
 }
 
-void ShowFoto::moveFile()
+void Showfoto::moveFile()
 {
     /*
      * moveFile() -> moveLocalFile() ->  movingSaveFileFinished()
@@ -702,7 +702,7 @@ void ShowFoto::moveFile()
     }
 }
 
-void ShowFoto::finishSaving(bool success)
+void Showfoto::finishSaving(bool success)
 {
     Digikam::EditorWindow::finishSaving(success);
 
@@ -712,7 +712,7 @@ void ShowFoto::finishSaving(bool success)
     d->fileOpenAction->setEnabled(true);
 }
 
-void ShowFoto::saveIsComplete()
+void Showfoto::saveIsComplete()
 {
     Digikam::LoadingCacheInterface::putImage(m_savingContext.destinationURL.toLocalFile(), m_canvas->currentImage());
 /*
@@ -726,7 +726,7 @@ void ShowFoto::saveIsComplete()
     resetOrigin();
 }
 
-void ShowFoto::saveAsIsComplete()
+void Showfoto::saveAsIsComplete()
 {
     resetOriginSwitchFile();
 /*
@@ -757,11 +757,11 @@ void ShowFoto::saveAsIsComplete()
 */
 }
 
-void ShowFoto::saveVersionIsComplete()
+void Showfoto::saveVersionIsComplete()
 {
 }
 
-QUrl ShowFoto::saveDestinationUrl()
+QUrl Showfoto::saveDestinationUrl()
 {
     if (d->thumbBar->currentInfo().isNull())
     {
@@ -773,7 +773,7 @@ QUrl ShowFoto::saveDestinationUrl()
     return d->thumbBar->currentUrl();
 }
 
-bool ShowFoto::save()
+bool Showfoto::save()
 {
     if (d->thumbBar->currentInfo().isNull())
     {
@@ -787,7 +787,7 @@ bool ShowFoto::save()
     return true;
 }
 
-bool ShowFoto::saveAs()
+bool Showfoto::saveAs()
 {
     if (d->thumbBar->currentInfo().isNull())
     {
@@ -799,7 +799,7 @@ bool ShowFoto::saveAs()
     return (startingSaveAs(d->currentLoadedUrl));
 }
 
-void ShowFoto::slotDeleteCurrentItem()
+void Showfoto::slotDeleteCurrentItem()
 {
     QUrl urlCurrent(d->thumbBar->currentUrl());
 
@@ -847,7 +847,7 @@ void ShowFoto::slotDeleteCurrentItem()
     }
 }
 
-void ShowFoto::slotRevert()
+void Showfoto::slotRevert()
 {
     if (!promptUserSave(d->thumbBar->currentUrl()))
     {
@@ -857,37 +857,37 @@ void ShowFoto::slotRevert()
     m_canvas->slotRestore();
 }
 
-bool ShowFoto::saveNewVersion()
+bool Showfoto::saveNewVersion()
 {
     return false;
 }
 
-bool ShowFoto::saveCurrentVersion()
+bool Showfoto::saveCurrentVersion()
 {
     return false;
 }
 
-bool ShowFoto::saveNewVersionAs()
+bool Showfoto::saveNewVersionAs()
 {
     return false;
 }
 
-bool ShowFoto::saveNewVersionInFormat(const QString&)
+bool Showfoto::saveNewVersionInFormat(const QString&)
 {
     return false;
 }
 
-void ShowFoto::slotSetupMetadataFilters(int tab)
+void Showfoto::slotSetupMetadataFilters(int tab)
 {
     ShowfotoSetup::execMetadataFilters(this, tab+1);
 }
 
-void ShowFoto::slotSetupExifTool()
+void Showfoto::slotSetupExifTool()
 {
     ShowfotoSetup::execExifTool(this);
 }
 
-void ShowFoto::slotAddedDropedItems(QDropEvent* e)
+void Showfoto::slotAddedDropedItems(QDropEvent* e)
 {
     QList<QUrl> list = e->mimeData()->urls();
     QList<QUrl> urls;
@@ -910,21 +910,21 @@ void ShowFoto::slotAddedDropedItems(QDropEvent* e)
     }
 }
 
-void ShowFoto::slotFileWithDefaultApplication()
+void Showfoto::slotFileWithDefaultApplication()
 {
     Digikam::DFileOperations::openFilesWithDefaultApplication(QList<QUrl>() << d->thumbBar->currentUrl());
 }
 
-void ShowFoto::slotOpenWith(QAction* action)
+void Showfoto::slotOpenWith(QAction* action)
 {
     openWith(d->thumbBar->currentUrl(), action);
 }
 
-DInfoInterface* ShowFoto::infoIface(DPluginAction* const)
+DInfoInterface* Showfoto::infoIface(DPluginAction* const)
 {
     ShowfotoInfoIface* const iface = new ShowfotoInfoIface(this, d->thumbBar->urls());
 
-    qCDebug(DIGIKAM_GENERAL_LOG) << "ShowFoto::infoIface: nb of file" << d->thumbBar->urls().size();
+    qCDebug(DIGIKAM_GENERAL_LOG) << "Showfoto::infoIface: nb of file" << d->thumbBar->urls().size();
 
     connect(iface, SIGNAL(signalItemChanged(QUrl)),
             this, SLOT(slotChanged()));
@@ -938,7 +938,7 @@ DInfoInterface* ShowFoto::infoIface(DPluginAction* const)
     return iface;
 }
 
-void ShowFoto::slotRemoveImageFromAlbum(const QUrl& url)
+void Showfoto::slotRemoveImageFromAlbum(const QUrl& url)
 {
     d->thumbBar->setCurrentUrl(url);
 
@@ -957,7 +957,7 @@ void ShowFoto::slotRemoveImageFromAlbum(const QUrl& url)
     }
 }
 
-void ShowFoto::slotOnlineVersionCheck()
+void Showfoto::slotOnlineVersionCheck()
 {
     ShowfotoSetup::onlineVersionCheck();
 }
