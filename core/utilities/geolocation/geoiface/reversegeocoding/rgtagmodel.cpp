@@ -101,8 +101,8 @@ RGTagModel::RGTagModel(QAbstractItemModel* const externalTagModel, QObject* cons
     i18n("{Street}");
     i18n("{House number}");
     i18n("{Place}");
-    i18nc("Local administrative area 2", "{LAU2}");
     i18nc("Local administrative area 1", "{LAU1}");
+    i18nc("Local administrative area 2", "{LAU2}");
 
     connect(d->tagModel, SIGNAL(dataChanged(QModelIndex,QModelIndex)),
             this, SLOT(slotSourceDataChanged(QModelIndex,QModelIndex)));
@@ -569,7 +569,28 @@ QVariant RGTagModel::data(const QModelIndex& index, int role) const
     }
     else if ((treeBranch->type == TypeSpacer) && (role == Qt::DisplayRole))
     {
-        return i18n(treeBranch->data.toUtf8().constData());
+        QString context;
+        QString spacer = treeBranch->data;
+
+        if      (spacer == QLatin1String("{State}"))
+        {
+            context = QLatin1String("Part of a country");
+        }
+        else if (spacer == QLatin1String("{LAU1}"))
+        {
+            context = QLatin1String("Local administrative area 1");
+        }
+        else if (spacer == QLatin1String("{LAU2}"))
+        {
+            context = QLatin1String("Local administrative area 2");
+        }
+
+        if (context.isEmpty())
+        {
+            return i18n(spacer.toUtf8().constData());
+        }
+
+        return i18nc(context.toUtf8().constData(), spacer.toUtf8().constData());
     }
     else if ((treeBranch->type == TypeSpacer) && (role == Qt::ForegroundRole))
     {
