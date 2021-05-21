@@ -150,19 +150,19 @@ void ExifToolParser::slotCmdCompleted(int cmdAction,
 
         case ExifToolProcess::APPLY_CHANGES:
         {
-            // TODO: check ExifTool feedback.
+            printExifToolOutput(stdOut);
             break;
         }
 
         case ExifToolProcess::APPLY_CHANGES_EXV:
         {
-            // TODO: check ExifTool feedback.
+            printExifToolOutput(stdOut);
             break;
         }
 
         case ExifToolProcess::COPY_TAGS:
         {
-            // TODO: check ExifTool feedback.
+            printExifToolOutput(stdOut);
             break;
         }
 
