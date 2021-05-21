@@ -32,11 +32,13 @@ bool ExifToolParser::load(const QString& path)
 
     if (!fileInfo.exists())
     {
+        qCCritical(DIGIKAM_GENERAL_LOG) << "Cannot open source file to process with ExifTool...";
         return false;
     }
 
     if (!d->prepareProcess())
     {
+        qCCritical(DIGIKAM_GENERAL_LOG) << "Cannot prepare ExifTool process...";
         return false;
     }
 
@@ -86,11 +88,13 @@ bool ExifToolParser::loadChunk(const QString& path)
 
     if (!fileInfo.exists())
     {
+        qCCritical(DIGIKAM_GENERAL_LOG) << "Cannot open source file to process with ExifTool...";
         return false;
     }
 
     if (!d->prepareProcess())
     {
+        qCCritical(DIGIKAM_GENERAL_LOG) << "Cannot prepare ExifTool process...";
         return false;
     }
 
@@ -121,11 +125,13 @@ bool ExifToolParser::applyChanges(const QString& path, const ExifToolData& newTa
 
     if (!fileInfo.exists())
     {
+        qCCritical(DIGIKAM_GENERAL_LOG) << "Cannot open source file to process with ExifTool...";
         return false;
     }
 
     if (!d->prepareProcess())
     {
+        qCCritical(DIGIKAM_GENERAL_LOG) << "Cannot prepare ExifTool process...";
         return false;
     }
 
@@ -153,7 +159,6 @@ bool ExifToolParser::applyChanges(const QString& path, const QString& exvTempFil
     if (exvTempFile.isEmpty())
     {
         qCWarning(DIGIKAM_METAENGINE_LOG) << "EXV container files to apply changes with ExifTool is empty";
-
         return false;
     }
 
@@ -161,11 +166,13 @@ bool ExifToolParser::applyChanges(const QString& path, const QString& exvTempFil
 
     if (!fileInfo.exists())
     {
+        qCCritical(DIGIKAM_GENERAL_LOG) << "Cannot open source file to process with ExifTool...";
         return false;
     }
 
     if (!d->prepareProcess())
     {
+        qCCritical(DIGIKAM_GENERAL_LOG) << "Cannot prepare ExifTool process...";
         return false;
     }
 
@@ -184,6 +191,7 @@ bool ExifToolParser::readableFormats()
 {
     if (!d->prepareProcess())
     {
+        qCCritical(DIGIKAM_GENERAL_LOG) << "Cannot prepare ExifTool process...";
         return false;
     }
 
@@ -202,6 +210,7 @@ bool ExifToolParser::writableFormats()
 {
     if (!d->prepareProcess())
     {
+        qCCritical(DIGIKAM_GENERAL_LOG) << "Cannot prepare ExifTool process...";
         return false;
     }
 
@@ -220,6 +229,7 @@ bool ExifToolParser::translationsList()
 {
     if (!d->prepareProcess())
     {
+        qCCritical(DIGIKAM_GENERAL_LOG) << "Cannot prepare ExifTool process...";
         return false;
     }
 
@@ -241,6 +251,7 @@ bool ExifToolParser::copyTags(const QString& src, const QString& dst,
 
     if (!sfi.exists())
     {
+        qCCritical(DIGIKAM_GENERAL_LOG) << "Cannot open source file to process with ExifTool...";
         return false;
     }
 
@@ -248,6 +259,7 @@ bool ExifToolParser::copyTags(const QString& src, const QString& dst,
 
     if (!dfi.exists())
     {
+        qCCritical(DIGIKAM_GENERAL_LOG) << "Cannot open destination file to process with ExifTool...";
         return false;
     }
 
@@ -343,6 +355,7 @@ bool ExifToolParser::copyTags(const QString& src, const QString& dst,
 
     if (!d->prepareProcess())
     {
+        qCCritical(DIGIKAM_GENERAL_LOG) << "Cannot prepare ExifTool process...";
         return false;
     }
 
@@ -365,6 +378,7 @@ bool ExifToolParser::translateTags(const QString& path, unsigned char transOps)
 
     if (!fi.exists())
     {
+        qCCritical(DIGIKAM_GENERAL_LOG) << "Cannot open source file to process with ExifTool...";
         return false;
     }
 
@@ -378,39 +392,48 @@ bool ExifToolParser::translateTags(const QString& path, unsigned char transOps)
     if (!d->argsFile.open())
     {
         qCCritical(DIGIKAM_GENERAL_LOG) << "Cannot open temporary file to write ExifTool tags translate config file...";
-
         return false;
     }
 
     QTextStream out(&d->argsFile);
+    bool dirty = false;
 
     qCDebug(DIGIKAM_METAENGINE_LOG) << "Translate Tags:" << transOps << "(" << QString::fromLatin1("%1").arg(transOps, 0, 2) << ")";
 
     if (transOps & ExifToolProcess::TRANS_ALL_XMP)
     {
         out << QLatin1String("-xmp:all<all:all") << endl;
+        dirty = true;
     }
 
     if (transOps & ExifToolProcess::TRANS_ALL_IPTC)
     {
         out << QLatin1String("-iptc:all<all:all") << endl;
+        dirty = true;
     }
 
     if (transOps & ExifToolProcess::TRANS_ALL_EXIF)
     {
         out << QLatin1String("-exif:all<all:all") << endl;
+        dirty = true;
+    }
+
+    if (!dirty)
+    {
+        qCWarning(DIGIKAM_METAENGINE_LOG) << "Translate tags operations list is empty!";
+        return false;
     }
 
     // ---
 
     if (!d->prepareProcess())
     {
+        qCCritical(DIGIKAM_GENERAL_LOG) << "Cannot prepare ExifTool process...";
         return false;
     }
 
     QByteArrayList cmdArgs;
 
-    cmdArgs << d->filePathEncoding(path);
     cmdArgs << QByteArray("-@") << d->filePathEncoding(d->argsFile.fileName());
     cmdArgs << QByteArray("-overwrite_original");
     cmdArgs << d->filePathEncoding(path);
