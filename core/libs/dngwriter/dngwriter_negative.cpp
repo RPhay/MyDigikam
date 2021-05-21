@@ -40,11 +40,13 @@ int DNGWriter::Private::createNegative(AutoPtr<dng_negative>& negative,
 
     if (bayerPattern != Private::LinearRaw)
     {
+        qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Bayer Pattern Linear Raw";
         negative->SetDefaultCropOrigin(8, 8);
         negative->SetDefaultCropSize(activeWidth - 16, activeHeight - 16);
     }
     else
     {
+        qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Bayer Pattern Type:" << bayerPattern;
         negative->SetDefaultCropOrigin(0, 0);
         negative->SetDefaultCropSize(activeWidth, activeHeight);
     }
@@ -100,6 +102,7 @@ int DNGWriter::Private::createNegative(AutoPtr<dng_negative>& negative,
             // Standard bayer mosaicing. All work fine there.
             // Bayer CCD mask: https://en.wikipedia.org/wiki/Bayer_filter
 
+            qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Bayer Pattern Standard Mosaic";
             negative->SetBayerMosaic(filter);
             break;
         }
@@ -110,6 +113,7 @@ int DNGWriter::Private::createNegative(AutoPtr<dng_negative>& negative,
             // It do not work in all settings. Need indeep investiguations.
             // Fuji superCCD: https://en.wikipedia.org/wiki/Super_CCD
 
+            qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Bayer Pattern Fuji Mosaic";
             negative->SetFujiMosaic(filter);
             break;
         }
@@ -119,18 +123,21 @@ int DNGWriter::Private::createNegative(AutoPtr<dng_negative>& negative,
             // TODO: Fuji is special case. Need to setup different bayer rules here.
             // It do not work in all settings. Need indeep investiguations.
 
+            qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Bayer Pattern Fuji6x6 Mosaic";
             negative->SetFujiMosaic6x6(filter);
             break;
         }
 
         case Private::FourColor:
         {
+            qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Bayer Pattern 4 colors Mosaic";
             negative->SetQuadMosaic(filter);
             break;
         }
 
         default:
         {
+            qCWarning(DIGIKAM_GENERAL_LOG) << "DNGWriter: Bayer pattern not handled...";
             break;
         }
     }
@@ -142,7 +149,8 @@ int DNGWriter::Private::createNegative(AutoPtr<dng_negative>& negative,
 
     const dng_mosaic_info* const mosaicinfo = negative->GetMosaicInfo();
 
-    if ((mosaicinfo != nullptr) && (mosaicinfo->fCFAPatternSize == dng_point(2, 2)))
+    if ((mosaicinfo                  != nullptr) &&
+        (mosaicinfo->fCFAPatternSize == dng_point(2, 2)))
     {
         negative->SetQuadBlacks(identify->blackPoint + identify->blackPointCh[0],
                                 identify->blackPoint + identify->blackPointCh[1],
@@ -164,30 +172,35 @@ int DNGWriter::Private::createNegative(AutoPtr<dng_negative>& negative,
     {
         case DRawInfo::ORIENTATION_180:
         {
+            qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Mosaic orientation: rotate 180";
             orientation = dng_orientation::Rotate180();
             break;
         }
 
         case DRawInfo::ORIENTATION_Mirror90CCW:
         {
+            qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Mosaic orientation: mirror 90CCW";
             orientation = dng_orientation::Mirror90CCW();
             break;
         }
 
         case DRawInfo::ORIENTATION_90CCW:
         {
+            qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Mosaic orientation: rotate 90CCW";
             orientation = dng_orientation::Rotate90CCW();
             break;
         }
 
         case DRawInfo::ORIENTATION_90CW:
         {
+            qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Mosaic orientation: rotate 90CW";
             orientation = dng_orientation::Rotate90CW();
             break;
         }
 
         default:   // ORIENTATION_NONE
         {
+            qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Mosaic orientation: no rotation";
             orientation = dng_orientation::Normal();
             break;
         }
@@ -212,6 +225,8 @@ int DNGWriter::Private::createNegative(AutoPtr<dng_negative>& negative,
     {
         case 3:
         {
+            qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Mosaic Raw color components: 3";
+
             dng_matrix_3by3 camXYZ;
             camXYZ[0][0] = identify->cameraXYZMatrix[0][0];
             camXYZ[0][1] = identify->cameraXYZMatrix[0][1];
@@ -236,6 +251,8 @@ int DNGWriter::Private::createNegative(AutoPtr<dng_negative>& negative,
 
         case 4:
         {
+            qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Mosaic Raw color components: 3";
+
             dng_matrix_4by3 camXYZ;
             camXYZ[0][0] = identify->cameraXYZMatrix[0][0];
             camXYZ[0][1] = identify->cameraXYZMatrix[0][1];
@@ -259,6 +276,11 @@ int DNGWriter::Private::createNegative(AutoPtr<dng_negative>& negative,
             matrix = camXYZ;
 
             break;
+        }
+
+        default:
+        {
+            qCCritical(DIGIKAM_GENERAL_LOG) << "DNGWriter: Mosaic Raw color components not handled:" << identify->rawColors;
         }
     }
 

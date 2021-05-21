@@ -50,22 +50,22 @@ int DNGWriter::Private::identMosaic(DRawInfo* const identify,
 
     // Standard bayer layouts
 
-    if      (identify->filterPattern == QLatin1String("GRBGGRBGGRBGGRBG"))
+    if      (identify->filterPattern       == QLatin1String("GRBGGRBGGRBGGRBG"))
     {
         bayerPattern = Private::Standard;
         filter       = 0;
     }
-    else if (identify->filterPattern == QLatin1String("RGGBRGGBRGGBRGGB"))
+    else if (identify->filterPattern       == QLatin1String("RGGBRGGBRGGBRGGB"))
     {
         bayerPattern = Private::Standard;
         filter       = 1;
     }
-    else if (identify->filterPattern == QLatin1String("BGGRBGGRBGGRBGGR"))
+    else if (identify->filterPattern       == QLatin1String("BGGRBGGRBGGRBGGR"))
     {
         bayerPattern = Private::Standard;
         filter       = 2;
     }
-    else if (identify->filterPattern == QLatin1String("GBRGGBRGGBRGGBRG"))
+    else if (identify->filterPattern       == QLatin1String("GBRGGBRGGBRGGBRG"))
     {
         bayerPattern = Private::Standard;
         filter       = 3;
@@ -102,7 +102,7 @@ int DNGWriter::Private::identMosaic(DRawInfo* const identify,
 /*
              (identify->filterPattern == QString(""))   &&
 */
-             ((uint32)rawData.size() == identify->outputSize.width() * identify->outputSize.height() * 3 * sizeof(uint16)))
+             ((uint32)rawData.size() == (identify->outputSize.width() * identify->outputSize.height() * 3 * sizeof(uint16))))
     {
         bayerPattern = Private::LinearRaw;
     }
@@ -161,7 +161,7 @@ int DNGWriter::Private::identMosaic(DRawInfo* const identify,
             return PROCESS_FAILED;
         }
 
-        int tmp         = outputWidth;
+        int tmp      = outputWidth;
         outputWidth  = outputHeight;
         outputHeight = tmp;
     }
@@ -172,7 +172,8 @@ int DNGWriter::Private::identMosaic(DRawInfo* const identify,
 
     // Check if number of Raw Color components is supported.
 
-    if ((identify->rawColors != 3) && (identify->rawColors != 4))
+    if ((identify->rawColors != 3) &&
+        (identify->rawColors != 4))
     {
         qCCritical(DIGIKAM_GENERAL_LOG) << "DNGWriter: Number of Raw color components not supported. Aborted...";
 
