@@ -569,28 +569,7 @@ QVariant RGTagModel::data(const QModelIndex& index, int role) const
     }
     else if ((treeBranch->type == TypeSpacer) && (role == Qt::DisplayRole))
     {
-        QString context;
-        QString spacer = treeBranch->data;
-
-        if      (spacer == QLatin1String("{State}"))
-        {
-            context = QLatin1String("Part of a country");
-        }
-        else if (spacer == QLatin1String("{LAU1}"))
-        {
-            context = QLatin1String("Local administrative area 1");
-        }
-        else if (spacer == QLatin1String("{LAU2}"))
-        {
-            context = QLatin1String("Local administrative area 2");
-        }
-
-        if (context.isEmpty())
-        {
-            return i18n(spacer.toUtf8().constData());
-        }
-
-        return i18nc(context.toUtf8().constData(), spacer.toUtf8().constData());
+        return translateSpacer(treeBranch->data);
     }
     else if ((treeBranch->type == TypeSpacer) && (role == Qt::ForegroundRole))
     {
@@ -606,7 +585,7 @@ QVariant RGTagModel::data(const QModelIndex& index, int role) const
     }
     else if ((treeBranch->type == TypeNewChild) && (role == Qt::ToolTipRole))
     {
-        return i18n(treeBranch->help.toUtf8().constData());
+        return translateSpacer(treeBranch->help);
     }
 
     return QVariant();
@@ -1326,6 +1305,31 @@ Type RGTagModel::getTagType(const QModelIndex& index) const
     const TreeBranch* const treeBranch = branchFromIndex(index);
 
     return treeBranch->type;
+}
+
+QString RGTagModel::translateSpacer(const QString& text) const
+{
+    QString context;
+
+    if      (text == QLatin1String("{State}"))
+    {
+        context = QLatin1String("Part of a country");
+    }
+    else if (text == QLatin1String("{LAU1}"))
+    {
+        context = QLatin1String("Local administrative area 1");
+    }
+    else if (text == QLatin1String("{LAU2}"))
+    {
+        context = QLatin1String("Local administrative area 2");
+    }
+
+    if (context.isEmpty())
+    {
+        return i18n(text.toUtf8().constData());
+    }
+
+    return i18nc(context.toUtf8().constData(), text.toUtf8().constData());
 }
 
 } // namespace Digikam

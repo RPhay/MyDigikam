@@ -119,6 +119,10 @@ public Q_SLOTS:
 
 private:
 
+    QString translateSpacer(const QString& text)                                                    const;
+
+private:
+
     class Private;
     Private* const d;
 };
