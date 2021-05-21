@@ -81,6 +81,22 @@ int DNGWriter::Private::exifToolPostProcess()
 
             return PROCESS_FAILED;
         }
+
+        // ---
+
+        qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Populate Iptc with ExifTool";
+
+        ret      = parser->translateTags(
+                                          dngFilePath,
+                                          ExifToolProcess::TRANS_ALL_IPTC
+                                        );
+
+        if (!ret)
+        {
+            qCCritical(DIGIKAM_GENERAL_LOG) << "DNGWriter: Populate Iptc tags with ExifTool failed. Aborted...";
+
+            return PROCESS_FAILED;
+        }
     }
     else
     {
