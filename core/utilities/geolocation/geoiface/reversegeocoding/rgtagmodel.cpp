@@ -73,6 +73,10 @@ public:
     QList<QPersistentModelIndex> auxIndexList;
 
     QList<QList<TagData> >       savedSpacerList;
+
+    QString                      textState;
+    QString                      textLau1;
+    QString                      textLau2;
 };
 
 /**
@@ -88,21 +92,21 @@ RGTagModel::RGTagModel(QAbstractItemModel* const externalTagModel, QObject* cons
     d->rootTag       = new TreeBranch();
     d->rootTag->type = TypeChild;
 
-    i18n("{Country}");
-    i18nc("Part of a country", "{State}");
-    i18n("{State district}");
-    i18n("{County}");
-    i18n("{City}");
-    i18n("{City district}");
-    i18n("{Suburb}");
-    i18n("{Town}");
-    i18n("{Village}");
-    i18n("{Hamlet}");
-    i18n("{Street}");
-    i18n("{House number}");
-    i18n("{Place}");
-    i18nc("Local administrative area 1", "{LAU1}");
-    i18nc("Local administrative area 2", "{LAU2}");
+                   i18n("{Country}");
+    d->textState = i18nc("Part of a country", "{State}");
+                   i18n("{State district}");
+                   i18n("{County}");
+                   i18n("{City}");
+                   i18n("{City district}");
+                   i18n("{Suburb}");
+                   i18n("{Town}");
+                   i18n("{Village}");
+                   i18n("{Hamlet}");
+                   i18n("{Street}");
+                   i18n("{House number}");
+                   i18n("{Place}");
+    d->textLau1  = i18nc("Local administrative area 1", "{LAU1}");
+    d->textLau2  = i18nc("Local administrative area 2", "{LAU2}");
 
     connect(d->tagModel, SIGNAL(dataChanged(QModelIndex,QModelIndex)),
             this, SLOT(slotSourceDataChanged(QModelIndex,QModelIndex)));
@@ -1309,27 +1313,20 @@ Type RGTagModel::getTagType(const QModelIndex& index) const
 
 QString RGTagModel::translateSpacer(const QString& text) const
 {
-    QString context;
-
     if      (text == QLatin1String("{State}"))
     {
-        context = QLatin1String("Part of a country");
+        return d->textState;
     }
     else if (text == QLatin1String("{LAU1}"))
     {
-        context = QLatin1String("Local administrative area 1");
+        return d->textLau1;
     }
     else if (text == QLatin1String("{LAU2}"))
     {
-        context = QLatin1String("Local administrative area 2");
+        return d->textLau2;
     }
 
-    if (context.isEmpty())
-    {
-        return i18n(text.toUtf8().constData());
-    }
-
-    return i18nc(context.toUtf8().constData(), text.toUtf8().constData());
+    return i18n(text.toUtf8().constData());
 }
 
 } // namespace Digikam
