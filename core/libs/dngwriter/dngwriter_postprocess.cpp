@@ -31,7 +31,6 @@ int DNGWriter::Private::exifToolPostProcess()
 
     if (parser->exifToolAvailable())
     {
-
         qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Post-process Iptc and Xmp with ExifTool";
 
         bool ret = parser->copyTags(
@@ -50,6 +49,8 @@ int DNGWriter::Private::exifToolPostProcess()
             return PROCESS_FAILED;
         }
 
+        // ---
+
         qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Post-process markernotes with ExifTool";
 
         ret     = parser->copyTags(
@@ -61,6 +62,22 @@ int DNGWriter::Private::exifToolPostProcess()
         if (!ret)
         {
             qCCritical(DIGIKAM_GENERAL_LOG) << "DNGWriter: Copy markernotes with ExifTool failed. Aborted...";
+
+            return PROCESS_FAILED;
+        }
+
+        // ---
+
+        qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Populate Xmp with ExifTool";
+
+        ret      = parser->translateTags(
+                                          dngFilePath,
+                                          ExifToolProcess::TRANS_ALL_XMP
+                                        );
+
+        if (!ret)
+        {
+            qCCritical(DIGIKAM_GENERAL_LOG) << "DNGWriter: Populate Xmp tags with ExifTool failed. Aborted...";
 
             return PROCESS_FAILED;
         }

@@ -60,11 +60,12 @@ public:
         WRITE_FORMATS,              ///< Return the list of writable ExifTool file formats.
         TRANSLATIONS_LIST,          ///< List of ExifTool languages available for translations.
         COPY_TAGS,                  ///< Copy tags from one file to another one. See CopyTagsSource enum for details.
+        TRANS_TAGS,                 ///< Translate tags in file. See TranslateTagsOps enum for details.
         NO_ACTION                   ///< Last value from this list.
     };
 
     /**
-     * Possible operations to OR combine with COPY_TAGS action.
+     * Possible copying tags operations to OR combine with COPY_TAGS action.
      */
     enum CopyTagsSource
     {
@@ -73,18 +74,29 @@ public:
         COPY_IPTC       = 0x04,     ///< Copy all Iptc tags from source file.
         COPY_XMP        = 0x08,     ///< Copy all Xmp tags from source file.
         COPY_ICC        = 0x10,     ///< Copy ICC profile from source file.
-        COPY_ALL        = 0x20      ///< Copy all tags from source file.
+        COPY_ALL        = 0x20,     ///< Copy all tags from source file.
+        COPY_NONE       = 0x40      ///< No copy operation.
     };
 
     /**
-     * Possible writing mode to OR combine with COPY_TAGS action.
+     * Possible writing tags mode to OR combine with COPY_TAGS action.
      */
     enum WritingTagsMode
     {
         WRITE_EXISTING_TAGS = 0x01, ///< Overwrite existing tags.
         CREATE_NEW_TAGS     = 0x02, ///< Create new tags.
         CREATE_NEW_GROUPS   = 0x04, ///< Create new groups if necessary.
-        All_MODES           = WRITE_EXISTING_TAGS | CREATE_NEW_TAGS | CREATE_NEW_GROUPS
+        ALL_MODES           = WRITE_EXISTING_TAGS | CREATE_NEW_TAGS | CREATE_NEW_GROUPS
+    };
+
+    /**
+     * Possible translating tags operations to OR combine with COPY_TAGS action.
+     */
+    enum TranslateTagsOps
+    {
+        TRANS_ALL_XMP   = 0x01,     ///< Translate all existing Tags from source file to Xmp.
+        TRANS_ALL_IPTC  = 0x02,     ///< Translate all existing Tags from source file to Iptc.
+        TRANS_ALL_EXIF  = 0x04      ///< Translate all existing Tags from source file to Exif.
     };
 
 public:

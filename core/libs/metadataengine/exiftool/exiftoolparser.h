@@ -164,19 +164,26 @@ public:
     /**
      * Copy group of tags from one source file to a destination file, following copy operations defined by 'copyOps'.
      * 'copyOps' is a OR combination of ExifToolProcess::CopyTagsSource values.
+     * 'transOps' is a OR combination of ExifToolProcess::TranslateTagsOps values.
      * 'writeModes' is a OR combaniation of ExifToolProcess::WritingTagsMode values.
      * 'dst' must be a writable file format supported by ExifTool.
      */
     bool copyTags(const QString& src, const QString& dst,
                   unsigned char copyOps,
-                  unsigned char writeModes = ExifToolProcess::All_MODES);
+                  unsigned char writeModes = ExifToolProcess::ALL_MODES);
+
+    /**
+     * Translate group of tags in file.
+     * 'transOps' is a OR combination of ExifToolProcess::TranslateTagsOps values.
+     */
+    bool translateTags(const QString& path, unsigned char transOps);
 
     //@}
 
 private Q_SLOTS:
 
     //---------------------------------------------------------------------------------------------
-    /// ExifTool Output MAnagement Methods. See exiftoolparser_output.cpp for details
+    /// ExifTool Output Management Methods. See exiftoolparser_output.cpp for details
     //@{
 
     void slotCmdCompleted(int cmdAction,
@@ -194,6 +201,11 @@ public:
     void setOutputStream(int cmdAction,
                          const QByteArray& cmdOutputChannel,
                          const QByteArray& cmdErrorChannel);
+
+private:
+
+    void printExifToolOutput(const QByteArray& stdOut);
+
     //@}
 
 private Q_SLOTS:

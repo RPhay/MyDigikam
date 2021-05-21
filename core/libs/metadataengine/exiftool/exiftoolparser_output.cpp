@@ -26,6 +26,14 @@
 namespace Digikam
 {
 
+void ExifToolParser::printExifToolOutput(const QByteArray& stdOut)
+{
+    qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool output:";
+    qCDebug(DIGIKAM_METAENGINE_LOG) << "---";
+    qCDebug(DIGIKAM_METAENGINE_LOG).noquote() << stdOut;
+    qCDebug(DIGIKAM_METAENGINE_LOG) << "---";
+}
+
 void ExifToolParser::slotCmdCompleted(int cmdAction,
                                       int execTime,
                                       const QByteArray& stdOut,
@@ -33,12 +41,6 @@ void ExifToolParser::slotCmdCompleted(int cmdAction,
 {
     qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool complete command for action" << d->actionString(cmdAction)
                                     << "with elasped time (ms):" << execTime;
-/*
-    qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool output:";
-    qCDebug(DIGIKAM_METAENGINE_LOG) << "---";
-    qCDebug(DIGIKAM_METAENGINE_LOG).noquote() << stdOut;
-    qCDebug(DIGIKAM_METAENGINE_LOG) << "---";
-*/
 
     switch (cmdAction)
     {
@@ -161,6 +163,18 @@ void ExifToolParser::slotCmdCompleted(int cmdAction,
         case ExifToolProcess::COPY_TAGS:
         {
             // TODO: check ExifTool feedback.
+            break;
+        }
+
+        case ExifToolProcess::TRANS_TAGS:
+        {
+            printExifToolOutput(stdOut);
+
+            if (!d->argsFile.isOpen())
+            {
+                d->argsFile.remove();
+            }
+
             break;
         }
 

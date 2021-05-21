@@ -29,6 +29,12 @@ namespace Digikam
 ExifToolParser::Private::Private()
     : proc(nullptr)
 {
+    argsFile.setAutoRemove(false);
+}
+
+ExifToolParser::Private::~Private()
+{
+    argsFile.remove();
 }
 
 bool ExifToolParser::Private::prepareProcess()
@@ -134,6 +140,11 @@ QString ExifToolParser::Private::actionString(int cmdAction) const
         case ExifToolProcess::COPY_TAGS:
         {
             return QLatin1String("Copy Tags");
+        }
+
+        case ExifToolProcess::TRANS_TAGS:
+        {
+            return QLatin1String("Translate Tags");
         }
 
         default: // ExifToolProcess::NO_ACTION

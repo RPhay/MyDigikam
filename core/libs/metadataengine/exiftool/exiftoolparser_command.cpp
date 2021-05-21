@@ -233,7 +233,9 @@ bool ExifToolParser::translationsList()
     return (d->startProcess(cmdArgs, ExifToolProcess::TRANSLATIONS_LIST));
 }
 
-bool ExifToolParser::copyTags(const QString& src, const QString& dst, unsigned char copyOps, unsigned char writeModes)
+bool ExifToolParser::copyTags(const QString& src, const QString& dst,
+                              unsigned char copyOps,
+                              unsigned char writeModes)
 {
     QFileInfo sfi(src);
 
@@ -249,7 +251,11 @@ bool ExifToolParser::copyTags(const QString& src, const QString& dst, unsigned c
         return false;
     }
 
+    // ---
+
     QByteArray wrtCmds;
+
+    qCDebug(DIGIKAM_METAENGINE_LOG) << "Copy Tags Modes:" << writeModes << "(" << QString::fromLatin1("%1").arg(writeModes, 0, 2) << ")";
 
     if (writeModes & ExifToolProcess::WRITE_EXISTING_TAGS)
     {
@@ -266,66 +272,74 @@ bool ExifToolParser::copyTags(const QString& src, const QString& dst, unsigned c
         wrtCmds.append(QByteArray("g"));
     }
 
-    QByteArrayList copyCmds;
-
-    qCDebug(DIGIKAM_METAENGINE_LOG) << "Copy Operations:" << copyOps << "(" << QString::fromLatin1("%1").arg(copyOps, 0, 2) << ")";
-
-    if (copyOps & ExifToolProcess::COPY_ALL)
+    if (wrtCmds.isEmpty())
     {
-        copyCmds << QByteArray("-all:all");
-    }
-    else
-    {
-        if (copyOps & ExifToolProcess::COPY_EXIF)
-        {
-            copyCmds << QByteArray("-exif");
-        }
-        else
-        {
-            copyCmds << QByteArray("--exif");
-        }
-
-        if (copyOps & ExifToolProcess::COPY_MAKERNOTES)
-        {
-            copyCmds << QByteArray("-makernotes");
-        }
-        else
-        {
-            copyCmds << QByteArray("--makernotes");
-        }
-
-        if (copyOps & ExifToolProcess::COPY_IPTC)
-        {
-            copyCmds << QByteArray("-iptc");
-        }
-        else
-        {
-            copyCmds << QByteArray("--iptc");
-        }
-
-        if (copyOps & ExifToolProcess::COPY_XMP)
-        {
-            copyCmds << QByteArray("-xmp");
-        }
-        else
-        {
-            copyCmds << QByteArray("--xmp");
-        }
-
-        if (copyOps & ExifToolProcess::COPY_ICC)
-        {
-            copyCmds << QByteArray("-icc_profile");
-        }
-        else
-        {
-            copyCmds << QByteArray("--icc_profile");
-        }
-    }
-
-    if (copyCmds.isEmpty())
-    {
+        qCWarning(DIGIKAM_METAENGINE_LOG) << "Copy tags writing modes list is empty!";
         return false;
     }
+
+    // ---
+
+    QByteArrayList copyCmds;
+
+    qCDebug(DIGIKAM_METAENGINE_LOG) << "Copy Tags Operations:" << copyOps << "(" << QString::fromLatin1("%1").arg(copyOps, 0, 2) << ")";
+
+    if (!(copyOps & ExifToolProcess::COPY_NONE))
+    {
+        if (copyOps & ExifToolProcess::COPY_ALL)
+        {
+            copyCmds << QByteArray("-all:all");
+        }
+        else
+        {
+            if (copyOps & ExifToolProcess::COPY_EXIF)
+            {
+                copyCmds << QByteArray("-exif");
+            }
+            else
+            {
+                copyCmds << QByteArray("--exif");
+            }
+
+            if (copyOps & ExifToolProcess::COPY_MAKERNOTES)
+            {
+                copyCmds << QByteArray("-makernotes");
+            }
+            else
+            {
+                copyCmds << QByteArray("--makernotes");
+            }
+
+            if (copyOps & ExifToolProcess::COPY_IPTC)
+            {
+                copyCmds << QByteArray("-iptc");
+            }
+            else
+            {
+                copyCmds << QByteArray("--iptc");
+            }
+
+            if (copyOps & ExifToolProcess::COPY_XMP)
+            {
+                copyCmds << QByteArray("-xmp");
+            }
+            else
+            {
+                copyCmds << QByteArray("--xmp");
+            }
+
+            if (copyOps & ExifToolProcess::COPY_ICC)
+            {
+                copyCmds << QByteArray("-icc_profile");
+            }
+            else
+            {
+                copyCmds << QByteArray("--icc_profile");
+            }
+        }
+    }
+
+    // ---
 
     if (!d->prepareProcess())
     {
@@ -343,6 +357,66 @@ bool ExifToolParser::copyTags(const QString& src, const QString& dst, unsigned c
     d->currentPath = sfi.filePath();
 
     return (d->startProcess(cmdArgs, ExifToolProcess::COPY_TAGS));
+}
+
+bool ExifToolParser::translateTags(const QString& path, unsigned char transOps)
+{
+    QFileInfo fi(path);
+
+    if (!fi.exists())
+    {
+        return false;
+    }
+
+    // ---
+
+    if (!d->argsFile.isOpen())
+    {
+        d->argsFile.remove();
+    }
+
+    if (!d->argsFile.open())
+    {
+        qCCritical(DIGIKAM_GENERAL_LOG) << "Cannot open temporary file to write ExifTool tags translate config file...";
+
+        return false;
+    }
+
+    QTextStream out(&d->argsFile);
+
+    qCDebug(DIGIKAM_METAENGINE_LOG) << "Translate Tags:" << transOps << "(" << QString::fromLatin1("%1").arg(transOps, 0, 2) << ")";
+
+    if (transOps & ExifToolProcess::TRANS_ALL_XMP)
+    {
+        out << QLatin1String("-xmp:all<all:all") << endl;
+    }
+
+    if (transOps & ExifToolProcess::TRANS_ALL_IPTC)
+    {
+        out << QLatin1String("-iptc:all<all:all") << endl;
+    }
+
+    if (transOps & ExifToolProcess::TRANS_ALL_EXIF)
+    {
+        out << QLatin1String("-exif:all<all:all") << endl;
+    }
+
+    // ---
+
+    if (!d->prepareProcess())
+    {
+        return false;
+    }
+
+    QByteArrayList cmdArgs;
+
+    cmdArgs << d->filePathEncoding(path);
+    cmdArgs << QByteArray("-@") << d->filePathEncoding(d->argsFile.fileName());
+    cmdArgs << QByteArray("-overwrite_original");
+    cmdArgs << d->filePathEncoding(path);
+    d->currentPath = fi.filePath();
+
+    return (d->startProcess(cmdArgs, ExifToolProcess::TRANS_TAGS));
 }
 
 } // namespace Digikam
