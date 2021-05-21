@@ -126,7 +126,7 @@ SlideVideo::SlideVideo(QWidget* const parent)
 
     d->indicator      = new DHBox(this);
     d->slider         = new QSlider(Qt::Horizontal, d->indicator);
-    d->slider->setStyle(new SlideVideoStyle(d->slider->style()));
+    d->slider->setStyle(new SlideVideoStyle());
     d->slider->setRange(0, 0);
     d->slider->setAutoFillBackground(true);
     d->tlabel         = new QLabel(d->indicator);
