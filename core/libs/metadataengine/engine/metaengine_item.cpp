@@ -100,7 +100,7 @@ bool MetaEngine::setItemProgramId(const QString& program, const QString& version
     }
     catch (Exiv2::AnyError& e)
     {
-        d->printExiv2ExceptionError(QLatin1String("Cannot set Program identity into image using Exiv2 "), e);
+        d->printExiv2ExceptionError(QLatin1String("Cannot set Program identity into image with Exiv2:"), e);
     }
     catch (...)
     {
@@ -228,7 +228,7 @@ QSize MetaEngine::getItemDimensions() const
     }
     catch (Exiv2::AnyError& e)
     {
-        d->printExiv2ExceptionError(QLatin1String("Cannot parse image dimensions tag using Exiv2 "), e);
+        d->printExiv2ExceptionError(QLatin1String("Cannot parse image dimensions tag with Exiv2:"), e);
     }
     catch (...)
     {
@@ -268,7 +268,7 @@ bool MetaEngine::setItemDimensions(const QSize& size) const
     }
     catch (Exiv2::AnyError& e)
     {
-        d->printExiv2ExceptionError(QLatin1String("Cannot set image dimensions using Exiv2 "), e);
+        d->printExiv2ExceptionError(QLatin1String("Cannot set image dimensions with Exiv2:"), e);
     }
     catch (...)
     {
@@ -386,7 +386,7 @@ MetaEngine::ImageOrientation MetaEngine::getItemOrientation() const
     }
     catch (Exiv2::AnyError& e)
     {
-        d->printExiv2ExceptionError(QLatin1String("Cannot parse Exif Orientation tag using Exiv2 "), e);
+        d->printExiv2ExceptionError(QLatin1String("Cannot parse Exif Orientation tag with Exiv2:"), e);
     }
     catch (...)
     {
@@ -460,7 +460,7 @@ bool MetaEngine::setItemOrientation(ImageOrientation orientation) const
     }
     catch (Exiv2::AnyError& e)
     {
-        d->printExiv2ExceptionError(QLatin1String("Cannot set Exif Orientation tag using Exiv2 "), e);
+        d->printExiv2ExceptionError(QLatin1String("Cannot set Exif Orientation tag with Exiv2:"), e);
     }
     catch (...)
     {
@@ -598,7 +598,7 @@ bool MetaEngine::setItemColorWorkSpace(ImageColorWorkSpace workspace) const
     }
     catch (Exiv2::AnyError& e)
     {
-        d->printExiv2ExceptionError(QLatin1String("Cannot set Exif color workspace tag using Exiv2 "), e);
+        d->printExiv2ExceptionError(QLatin1String("Cannot set Exif color workspace tag with Exiv2:"), e);
     }
     catch (...)
     {
@@ -965,7 +965,7 @@ QDateTime MetaEngine::getItemDateTime() const
     }
     catch (Exiv2::AnyError& e)
     {
-        d->printExiv2ExceptionError(QLatin1String("Cannot parse Exif date & time tag using Exiv2 "), e);
+        d->printExiv2ExceptionError(QLatin1String("Cannot parse Exif date & time tag with Exiv2:"), e);
     }
     catch (...)
     {
@@ -1061,7 +1061,7 @@ bool MetaEngine::setImageDateTime(const QDateTime& dateTime, bool setDateTimeDig
     }
     catch (Exiv2::AnyError& e)
     {
-        d->printExiv2ExceptionError(QLatin1String("Cannot set Date & Time into image using Exiv2 "), e);
+        d->printExiv2ExceptionError(QLatin1String("Cannot set Date & Time into image with Exiv2:"), e);
     }
     catch (...)
     {
@@ -1211,7 +1211,7 @@ QDateTime MetaEngine::getDigitizationDateTime(bool fallbackToCreationTime) const
     }
     catch (Exiv2::AnyError& e)
     {
-        d->printExiv2ExceptionError(QLatin1String("Cannot parse Exif digitization date & time tag using Exiv2 "), e);
+        d->printExiv2ExceptionError(QLatin1String("Cannot parse Exif digitization date & time tag with Exiv2:"), e);
     }
     catch (...)
     {
@@ -1250,7 +1250,7 @@ bool MetaEngine::getItemPreview(QImage& preview) const
     }
     catch (Exiv2::AnyError& e)
     {
-        d->printExiv2ExceptionError(QLatin1String("Cannot get image preview using Exiv2 "), e);
+        d->printExiv2ExceptionError(QLatin1String("Cannot get image preview with Exiv2:"), e);
     }
     catch (...)
     {
@@ -1301,7 +1301,7 @@ bool MetaEngine::setItemPreview(const QImage& preview) const
     }
     catch (Exiv2::AnyError& e)
     {
-        d->printExiv2ExceptionError(QLatin1String("Cannot get image preview using Exiv2 "), e);
+        d->printExiv2ExceptionError(QLatin1String("Cannot get image preview with Exiv2:"), e);
     }
     catch (...)
     {

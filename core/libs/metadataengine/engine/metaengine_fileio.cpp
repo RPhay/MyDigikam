@@ -197,7 +197,7 @@ bool MetaEngine::load(const QString& filePath, Backend* backend)
     }
     catch (Exiv2::AnyError& e)
     {
-        d->printExiv2ExceptionError(QString::fromUtf8("Cannot load metadata from file %1").arg(getFilePath()), e);
+        d->printExiv2ExceptionError(QString::fromUtf8("Cannot load metadata from file with Exiv2 backend: %1").arg(getFilePath()), e);
     }
     catch (...)
     {
@@ -270,7 +270,7 @@ bool MetaEngine::loadFromSidecarAndMerge(const QString& filePath)
     }
     catch (Exiv2::AnyError& e)
     {
-        d->printExiv2ExceptionError(QString::fromUtf8("Cannot load XMP sidecar from file %1").arg(getFilePath()), e);
+        d->printExiv2ExceptionError(QString::fromUtf8("Cannot load XMP sidecar from file with Exiv2 backend: %1").arg(getFilePath()), e);
     }
     catch (...)
     {
@@ -585,7 +585,7 @@ bool MetaEngine::exportChanges(const QString& exvTmpFile, QStringList& removedTa
     }
     catch (Exiv2::AnyError& e)
     {
-        d->printExiv2ExceptionError(QLatin1String("Cannot export changes using Exiv2 "), e);
+        d->printExiv2ExceptionError(QLatin1String("Cannot export changes with Exiv2 backend: "), e);
     }
     catch (...)
     {

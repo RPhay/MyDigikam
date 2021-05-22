@@ -64,7 +64,7 @@ bool MetaEngine::canWriteIptc(const QString& filePath)
     }
     catch (Exiv2::AnyError& e)
     {
-        qCCritical(DIGIKAM_METAENGINE_LOG) << "Cannot check Iptc access mode using Exiv2 (Error #"
+        qCCritical(DIGIKAM_METAENGINE_LOG) << "Cannot check Iptc access mode with Exiv2:(Error #"
                                            << e.code() << ": " << QString::fromStdString(e.what()) << ")";
     }
     catch (...)
@@ -91,7 +91,7 @@ bool MetaEngine::clearIptc() const
     }
     catch (Exiv2::AnyError& e)
     {
-        d->printExiv2ExceptionError(QLatin1String("Cannot clear Iptc data using Exiv2 "), e);
+        d->printExiv2ExceptionError(QLatin1String("Cannot clear Iptc data with Exiv2:"), e);
     }
     catch (...)
     {
@@ -133,7 +133,7 @@ QByteArray MetaEngine::getIptc(bool addIrbHeader) const
             qCCritical(DIGIKAM_METAENGINE_LOG) << "From file " << d->filePath.toLatin1().constData();
         }
 
-        d->printExiv2ExceptionError(QLatin1String("Cannot get Iptc data using Exiv2 "), e);
+        d->printExiv2ExceptionError(QLatin1String("Cannot get Iptc data with Exiv2:"), e);
     }
     catch (...)
     {
@@ -162,7 +162,7 @@ bool MetaEngine::setIptc(const QByteArray& data) const
             qCCritical(DIGIKAM_METAENGINE_LOG) << "From file " << d->filePath.toLatin1().constData();
         }
 
-        d->printExiv2ExceptionError(QLatin1String("Cannot set Iptc data using Exiv2 "), e);
+        d->printExiv2ExceptionError(QLatin1String("Cannot set Iptc data with Exiv2:"), e);
     }
     catch (...)
     {
@@ -270,7 +270,7 @@ MetaEngine::MetaDataMap MetaEngine::getIptcTagsDataList(const QStringList& iptcK
     }
     catch (Exiv2::AnyError& e)
     {
-        d->printExiv2ExceptionError(QLatin1String("Cannot parse Iptc metadata using Exiv2 "), e);
+        d->printExiv2ExceptionError(QLatin1String("Cannot parse Iptc metadata with Exiv2:"), e);
     }
     catch (...)
     {
@@ -293,7 +293,7 @@ QString MetaEngine::getIptcTagTitle(const char* iptcTagName)
     }
     catch (Exiv2::AnyError& e)
     {
-        d->printExiv2ExceptionError(QLatin1String("Cannot get metadata tag title using Exiv2 "), e);
+        d->printExiv2ExceptionError(QLatin1String("Cannot get metadata tag title with Exiv2:"), e);
     }
     catch (...)
     {
@@ -316,7 +316,7 @@ QString MetaEngine::getIptcTagDescription(const char* iptcTagName)
     }
     catch (Exiv2::AnyError& e)
     {
-        d->printExiv2ExceptionError(QLatin1String("Cannot get metadata tag description using Exiv2 "), e);
+        d->printExiv2ExceptionError(QLatin1String("Cannot get metadata tag description with Exiv2:"), e);
     }
     catch (...)
     {
@@ -357,7 +357,7 @@ bool MetaEngine::removeIptcTag(const char* iptcTagName) const
     }
     catch (Exiv2::AnyError& e)
     {
-        d->printExiv2ExceptionError(QLatin1String("Cannot remove Iptc tag using Exiv2 "), e);
+        d->printExiv2ExceptionError(QLatin1String("Cannot remove Iptc tag with Exiv2:"), e);
     }
     catch (...)
     {
@@ -385,7 +385,7 @@ bool MetaEngine::setIptcTagData(const char* iptcTagName, const QByteArray& data)
     }
     catch (Exiv2::AnyError& e)
     {
-        d->printExiv2ExceptionError(QLatin1String("Cannot set Iptc tag data into image using Exiv2 "), e);
+        d->printExiv2ExceptionError(QLatin1String("Cannot set Iptc tag data into image with Exiv2:"), e);
     }
     catch (...)
     {
@@ -417,7 +417,7 @@ QByteArray MetaEngine::getIptcTagData(const char* iptcTagName) const
     }
     catch (Exiv2::AnyError& e)
     {
-        d->printExiv2ExceptionError(QString::fromLatin1("Cannot find Iptc key '%1' into image using Exiv2 ")
+        d->printExiv2ExceptionError(QString::fromLatin1("Cannot find Iptc key '%1' into image with Exiv2:")
                                     .arg(QLatin1String(iptcTagName)), e);
     }
     catch (...)
@@ -453,7 +453,7 @@ QString MetaEngine::getIptcTagString(const char* iptcTagName, bool escapeCR) con
     }
     catch (Exiv2::AnyError& e)
     {
-        d->printExiv2ExceptionError(QString::fromLatin1("Cannot find Iptc key '%1' into image using Exiv2 ")
+        d->printExiv2ExceptionError(QString::fromLatin1("Cannot find Iptc key '%1' into image with Exiv2:")
                                     .arg(QLatin1String(iptcTagName)), e);
     }
     catch (...)
@@ -480,7 +480,7 @@ bool MetaEngine::setIptcTagString(const char* iptcTagName, const QString& value)
     }
     catch (Exiv2::AnyError& e)
     {
-        d->printExiv2ExceptionError(QLatin1String("Cannot set Iptc tag string into image using Exiv2 "), e);
+        d->printExiv2ExceptionError(QLatin1String("Cannot set Iptc tag string into image with Exiv2:"), e);
     }
     catch (...)
     {
@@ -523,7 +523,7 @@ QStringList MetaEngine::getIptcTagsStringList(const char* iptcTagName, bool esca
     }
     catch (Exiv2::AnyError& e)
     {
-        d->printExiv2ExceptionError(QString::fromLatin1("Cannot find Iptc key '%1' into image using Exiv2 ")
+        d->printExiv2ExceptionError(QString::fromLatin1("Cannot find Iptc key '%1' into image with Exiv2:")
                                     .arg(QLatin1String(iptcTagName)), e);
     }
     catch (...)
@@ -596,7 +596,7 @@ bool MetaEngine::setIptcTagsStringList(const char* iptcTagName, int maxSize,
     }
     catch (Exiv2::AnyError& e)
     {
-        d->printExiv2ExceptionError(QString::fromLatin1("Cannot set Iptc key '%1' into image using Exiv2 ")
+        d->printExiv2ExceptionError(QString::fromLatin1("Cannot set Iptc key '%1' into image with Exiv2:")
                                     .arg(QLatin1String(iptcTagName)), e);
     }
     catch (...)
@@ -636,7 +636,7 @@ QStringList MetaEngine::getIptcKeywords() const
     }
     catch (Exiv2::AnyError& e)
     {
-        d->printExiv2ExceptionError(QLatin1String("Cannot get Iptc Keywords from image using Exiv2 "), e);
+        d->printExiv2ExceptionError(QLatin1String("Cannot get Iptc Keywords from image with Exiv2:"), e);
     }
     catch (...)
     {
@@ -705,7 +705,7 @@ bool MetaEngine::setIptcKeywords(const QStringList& oldKeywords, const QStringLi
     }
     catch (Exiv2::AnyError& e)
     {
-        d->printExiv2ExceptionError(QLatin1String("Cannot set Iptc Keywords into image using Exiv2 "), e);
+        d->printExiv2ExceptionError(QLatin1String("Cannot set Iptc Keywords into image with Exiv2:"), e);
     }
     catch (...)
     {
@@ -743,7 +743,7 @@ QStringList MetaEngine::getIptcSubjects() const
     }
     catch (Exiv2::AnyError& e)
     {
-        d->printExiv2ExceptionError(QLatin1String("Cannot get Iptc Subjects from image using Exiv2 "), e);
+        d->printExiv2ExceptionError(QLatin1String("Cannot get Iptc Subjects from image with Exiv2:"), e);
     }
     catch (...)
     {
@@ -806,7 +806,7 @@ bool MetaEngine::setIptcSubjects(const QStringList& oldSubjects, const QStringLi
     }
     catch (Exiv2::AnyError& e)
     {
-        d->printExiv2ExceptionError(QLatin1String("Cannot set Iptc Subjects into image using Exiv2 "), e);
+        d->printExiv2ExceptionError(QLatin1String("Cannot set Iptc Subjects into image with Exiv2:"), e);
     }
     catch (...)
     {
@@ -843,7 +843,7 @@ QStringList MetaEngine::getIptcSubCategories() const
     }
     catch (Exiv2::AnyError& e)
     {
-        d->printExiv2ExceptionError(QLatin1String("Cannot get Iptc Sub Categories from image using Exiv2 "), e);
+        d->printExiv2ExceptionError(QLatin1String("Cannot get Iptc Sub Categories from image with Exiv2:"), e);
     }
     catch (...)
     {
@@ -907,7 +907,7 @@ bool MetaEngine::setIptcSubCategories(const QStringList& oldSubCategories, const
     }
     catch (Exiv2::AnyError& e)
     {
-        d->printExiv2ExceptionError(QLatin1String("Cannot set Iptc Sub Categories into image using Exiv2 "), e);
+        d->printExiv2ExceptionError(QLatin1String("Cannot set Iptc Sub Categories into image with Exiv2:"), e);
     }
     catch (...)
     {
@@ -946,7 +946,7 @@ MetaEngine::TagsMap MetaEngine::getIptcTagsList() const
     }
     catch (Exiv2::AnyError& e)
     {
-        d->printExiv2ExceptionError(QLatin1String("Cannot get Iptc Tags list using Exiv2 "), e);
+        d->printExiv2ExceptionError(QLatin1String("Cannot get Iptc Tags list with Exiv2:"), e);
     }
     catch (...)
     {

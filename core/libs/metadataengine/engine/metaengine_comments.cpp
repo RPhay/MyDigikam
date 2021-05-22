@@ -63,7 +63,7 @@ bool MetaEngine::canWriteComment(const QString& filePath)
     }
     catch (Exiv2::AnyError& e)
     {
-        qCCritical(DIGIKAM_METAENGINE_LOG) << "Cannot check Comment access mode using Exiv2 (Error #"
+        qCCritical(DIGIKAM_METAENGINE_LOG) << "Cannot check Comment access mode with Exiv2 (Error #"
                                            << e.code() << ": " << QString::fromStdString(e.what()) << ")";
     }
     catch (...)

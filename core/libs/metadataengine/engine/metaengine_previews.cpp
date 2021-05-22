@@ -84,7 +84,7 @@ public:
         }
         catch (Exiv2::AnyError& e)
         {
-            MetaEngine::Private::printExiv2ExceptionError(QLatin1String("Cannot load preview data using Exiv2 "), e);
+            MetaEngine::Private::printExiv2ExceptionError(QLatin1String("Cannot load preview data with Exiv2:"), e);
         }
         catch (...)
         {
@@ -134,7 +134,7 @@ MetaEnginePreviews::MetaEnginePreviews(const QString& filePath)
     }
     catch (Exiv2::AnyError& e)
     {
-        MetaEngine::Private::printExiv2ExceptionError(QLatin1String("Cannot load metadata using Exiv2 "), e);
+        MetaEngine::Private::printExiv2ExceptionError(QLatin1String("Cannot load metadata with Exiv2:"), e);
     }
     catch (...)
     {
@@ -164,7 +164,7 @@ MetaEnginePreviews::MetaEnginePreviews(const QByteArray& imgData)
     }
     catch (Exiv2::AnyError& e)
     {
-        MetaEngine::Private::printExiv2ExceptionError(QLatin1String("Cannot load metadata using Exiv2 "), e);
+        MetaEngine::Private::printExiv2ExceptionError(QLatin1String("Cannot load metadata with Exiv2:"), e);
     }
     catch (...)
     {
@@ -282,7 +282,7 @@ QByteArray MetaEnginePreviews::data(int index)
     }
     catch (Exiv2::AnyError& e)
     {
-        MetaEngine::Private::printExiv2ExceptionError(QLatin1String("Cannot load metadata using Exiv2 "), e);
+        MetaEngine::Private::printExiv2ExceptionError(QLatin1String("Cannot load metadata with Exiv2:"), e);
 
         return QByteArray();
     }

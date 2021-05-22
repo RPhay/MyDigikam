@@ -142,7 +142,7 @@ bool MetaEngine::getGPSLatitudeNumber(double* const latitude) const
     }
     catch (Exiv2::AnyError& e)
     {
-        d->printExiv2ExceptionError(QLatin1String("Cannot get GPS tag using Exiv2 "), e);
+        d->printExiv2ExceptionError(QLatin1String("Cannot get GPS tag with Exiv2:"), e);
     }
     catch (...)
     {
@@ -233,7 +233,7 @@ bool MetaEngine::getGPSLongitudeNumber(double* const longitude) const
     }
     catch (Exiv2::AnyError& e)
     {
-        d->printExiv2ExceptionError(QLatin1String("Cannot get GPS tag using Exiv2 "), e);
+        d->printExiv2ExceptionError(QLatin1String("Cannot get GPS tag with Exiv2:"), e);
     }
     catch (...)
     {
@@ -320,7 +320,7 @@ bool MetaEngine::getGPSAltitude(double* const altitude) const
     }
     catch (Exiv2::AnyError& e)
     {
-        d->printExiv2ExceptionError(QLatin1String("Cannot get GPS tag using Exiv2 "), e);
+        d->printExiv2ExceptionError(QLatin1String("Cannot get GPS tag with Exiv2:"), e);
     }
     catch (...)
     {
@@ -385,7 +385,7 @@ bool MetaEngine::initializeGPSInfo()
     }
     catch (Exiv2::AnyError& e)
     {
-        d->printExiv2ExceptionError(QLatin1String("Cannot initialize GPS data using Exiv2 "), e);
+        d->printExiv2ExceptionError(QLatin1String("Cannot initialize GPS data with Exiv2:"), e);
     }
     catch (...)
     {
@@ -537,7 +537,7 @@ bool MetaEngine::setGPSInfo(const double* const altitude, const double latitude,
     }
     catch (Exiv2::AnyError& e)
     {
-        d->printExiv2ExceptionError(QLatin1String("Cannot set Exif GPS tag using Exiv2 "), e);
+        d->printExiv2ExceptionError(QLatin1String("Cannot set Exif GPS tag with Exiv2:"), e);
     }
     catch (...)
     {
@@ -637,7 +637,7 @@ bool MetaEngine::removeGPSInfo()
     }
     catch (Exiv2::AnyError& e)
     {
-        d->printExiv2ExceptionError(QLatin1String("Cannot remove Exif GPS tag using Exiv2 "), e);
+        d->printExiv2ExceptionError(QLatin1String("Cannot remove Exif GPS tag with Exiv2:"), e);
     }
     catch (...)
     {

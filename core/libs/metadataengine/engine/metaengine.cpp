@@ -245,7 +245,7 @@ bool MetaEngine::loadFromData(const QByteArray& imgData)
     }
     catch (Exiv2::AnyError& e)
     {
-        d->printExiv2ExceptionError(QLatin1String("Cannot load metadata using Exiv2 "), e);
+        d->printExiv2ExceptionError(QLatin1String("Cannot load metadata with Exiv2:"), e);
     }
     catch (...)
     {

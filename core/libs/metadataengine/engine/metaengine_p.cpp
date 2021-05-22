@@ -197,7 +197,7 @@ bool MetaEngine::Private::saveToXMPSidecar(const QFileInfo& finfo) const
     }
     catch (Exiv2::AnyError& e)
     {
-        printExiv2ExceptionError(QLatin1String("Cannot save metadata to XMP sidecar using Exiv2 "), e);
+        printExiv2ExceptionError(QLatin1String("Cannot save metadata to XMP sidecar with Exiv2 backend:"), e);
 
         return false;
     }
@@ -315,7 +315,7 @@ bool MetaEngine::Private::saveToFile(const QFileInfo& finfo) const
     }
     catch (Exiv2::AnyError& e)
     {
-        printExiv2ExceptionError(QLatin1String("Cannot save metadata to image using Exiv2 "), e);
+        printExiv2ExceptionError(QLatin1String("Cannot save metadata to image with Exiv2 backend:"), e);
 
         return false;
     }
@@ -529,7 +529,7 @@ bool MetaEngine::Private::saveOperations(const QFileInfo& finfo, Exiv2::Image::A
     }
     catch (Exiv2::AnyError& e)
     {
-        printExiv2ExceptionError(QLatin1String("Cannot save metadata using Exiv2 "), e);
+        printExiv2ExceptionError(QLatin1String("Cannot save metadata with Exiv2 backend:"), e);
     }
     catch (...)
     {
@@ -613,7 +613,7 @@ QString MetaEngine::Private::convertCommentValue(const Exiv2::Exifdatum& exifDat
     }
     catch (Exiv2::AnyError& e)
     {
-        printExiv2ExceptionError(QLatin1String("Cannot convert Comment using Exiv2 "), e);
+        printExiv2ExceptionError(QLatin1String("Cannot convert Comment with Exiv2:"), e);
     }
     catch (...)
     {
@@ -834,7 +834,7 @@ int MetaEngine::Private::getXMPTagsListFromPrefix(const QString& pf, MetaEngine:
     }
     catch (Exiv2::AnyError& e)
     {
-        printExiv2ExceptionError(QLatin1String("Cannot get Xmp tags list using Exiv2 "), e);
+        printExiv2ExceptionError(QLatin1String("Cannot get Xmp tags list using Exiv2:"), e);
     }
     catch (...)
     {
@@ -976,7 +976,7 @@ QString MetaEngine::Private::extractIptcTagString(const Exiv2::IptcData& iptcDat
     }
     catch (Exiv2::AnyError& e)
     {
-        printExiv2ExceptionError(QLatin1String("Cannot decode Iptc tag string with right encoding using Exiv2 "), e);
+        printExiv2ExceptionError(QLatin1String("Cannot decode Iptc tag string with right encoding using Exiv2:"), e);
     }
     catch (...)
     {
