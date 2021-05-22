@@ -56,7 +56,8 @@ public:
           rootBehavior      (AbstractAlbumModel::IncludeRootAlbum),
           removingAlbum     (0),
           itemDrag          (true),
-          itemDrop          (true)
+          itemDrop          (true),
+          isFaceTagModel    (false)
     {
     }
 
@@ -70,6 +71,7 @@ public:
 
     bool                                  itemDrag;
     bool                                  itemDrop;
+    bool                                  isFaceTagModel;
 };
 
 AbstractAlbumModel::AbstractAlbumModel(Album::Type albumType,
@@ -77,7 +79,6 @@ AbstractAlbumModel::AbstractAlbumModel(Album::Type albumType,
                                        RootAlbumBehavior rootBehavior,
                                        QObject* const parent)
     : QAbstractItemModel(parent),
-      m_isFaceTagModel  (false),
       d                 (new Private)
 {
     d->type         = albumType;
@@ -368,6 +369,11 @@ AlbumModelDragDropHandler* AbstractAlbumModel::dragDropHandler() const
     return d->dragDropHandler;
 }
 
+void AbstractAlbumModel::setFaceTagModel(bool enable)
+{
+    d->isFaceTagModel = enable;
+}
+
 QModelIndex AbstractAlbumModel::indexForAlbum(Album* a) const
 {
     if (!a)
@@ -435,7 +441,7 @@ Album::Type AbstractAlbumModel::albumType() const
 
 bool AbstractAlbumModel::isFaceTagModel() const
 {
-    return m_isFaceTagModel;
+    return d->isFaceTagModel;
 }
 
 QVariant AbstractAlbumModel::decorationRoleData(Album*) const

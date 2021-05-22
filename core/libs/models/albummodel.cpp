@@ -139,7 +139,8 @@ QVariant TagModel::albumData(Album* a, int role) const
         (a->id() != FaceTags::unknownPersonTagId()))
     {
         QString res = AbstractCheckableAlbumModel::albumData(a, role).toString() +
-                      i18ncp("@info: unconfirmed faces in album", " (%1 new)", " (%1 new)", m_unconfirmedFaceCount.value(a->id()));
+                      i18ncp("@info: unconfirmed faces in album", " (%1 new)", " (%1 new)",
+                             m_unconfirmedFaceCount.value(a->id()));
 
         return res;
     }
@@ -151,10 +152,10 @@ QVariant TagModel::decorationRoleData(Album* album) const
 {
     TAlbum* const tagAlbum = static_cast<TAlbum*>(album);
 
-    if (m_isFaceTagModel || tagAlbum->hasProperty(TagPropertyName::person()))
+    if (isFaceTagModel() || tagAlbum->hasProperty(TagPropertyName::person()))
     {
         QPixmap face = AlbumThumbnailLoader::instance()->getFaceThumbnailDirectly(tagAlbum);
-        int size     = m_isFaceTagModel ? ApplicationSettings::instance()->getTreeViewFaceSize()
+        int size     = isFaceTagModel() ? ApplicationSettings::instance()->getTreeViewFaceSize()
                                         : ApplicationSettings::instance()->getTreeViewIconSize();
 
         double ratio = face.devicePixelRatio();
@@ -237,8 +238,7 @@ void TagModel::activateFaceTagMode()
         }
     );
 
-    m_isFaceTagModel = true;
-
+    setFaceTagModel(true);
     setCountMap(AlbumManager::instance()->getFaceCount());
 }
 

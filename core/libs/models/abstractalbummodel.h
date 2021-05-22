@@ -179,6 +179,7 @@ protected:
      */
     void setEnableDrag(bool enable);
     void setEnableDrop(bool enable);
+    void setFaceTagModel(bool enable);
 
     /**
      * NOTE: these can be reimplemented in a subclass
@@ -223,10 +224,6 @@ protected Q_SLOTS:
     void slotAlbumsCleared();
     void slotAlbumIconChanged(Album* album);
     void slotAlbumRenamed(Album* album);
-
-protected:
-
-    bool m_isFaceTagModel;
 
 private:
 
