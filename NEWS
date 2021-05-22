@@ -340,4 +340,5 @@ BUGFIXES:
 318 ==> 437209 - Menu bar and toolbar backgrounds don't respect selected digiKam colorscheme (and instead inherit from global colorscheme).
 319 ==> 431689 - Nokia 9 PureView DNG image demosaicing preview corruption.
 320 ==> 437461 - Tag panel from left side-bar has people items unsorted.
-321 ==> 
+321 ==> 252763 - Align album titles next to album thumbnails.
+322 ==> 

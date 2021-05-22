@@ -73,7 +73,23 @@ QVariant AlbumModel::decorationRoleData(Album* album) const
 {
     // asynchronous signals are handled by parent class
 
-    QPixmap pix = AlbumThumbnailLoader::instance()->getAlbumThumbnailDirectly(static_cast<PAlbum*>(album));
+    QPixmap thumb = AlbumThumbnailLoader::instance()->getAlbumThumbnailDirectly(static_cast<PAlbum*>(album));
+    int size      = ApplicationSettings::instance()->getTreeViewIconSize();
+
+    double ratio  = thumb.devicePixelRatio();
+    int rsize     = qRound((double)size * ratio);
+    thumb         = thumb.scaled(rsize, rsize, Qt::KeepAspectRatio,
+                                               Qt::SmoothTransformation);
+
+    QPixmap pix(rsize, rsize);
+    pix.fill(Qt::transparent);
+    pix.setDevicePixelRatio(ratio);
+
+    QPainter p(&pix);
+    p.drawPixmap((rsize - thumb.width())  / 2,
+                 (rsize - thumb.height()) / 2, thumb);
+    p.end();
+
     prepareAddExcludeDecoration(album, pix);
 
     return pix;
