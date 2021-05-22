@@ -174,7 +174,7 @@ ItemIconView::ItemIconView(QWidget* const parent, DModelFactory* const modelColl
     // People Sidebar
 
     d->peopleSideBar       = new PeopleSideBarWidget(d->leftSideBar,
-                                                     d->modelCollection->getTagFacesModel(),
+                                                     d->modelCollection->getTagFaceModel(),
                                                      d->searchModificationHelper);
 
     connect(d->peopleSideBar, SIGNAL(requestFaceMode(bool)),

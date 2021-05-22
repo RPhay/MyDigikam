@@ -115,7 +115,10 @@ TagModel::TagModel(RootAlbumBehavior rootBehavior, QObject* const parent)
     m_columnHeader = i18n("Tags");
     setupThumbnailLoading();
 
-    setTagCount(NormalTagCount);
+    connect(AlbumManager::instance(), SIGNAL(signalTAlbumsDirty(QMap<int,int>)),
+            this, SLOT(setCountMap(QMap<int,int>)));
+
+    setCountMap(AlbumManager::instance()->getTAlbumsCount());
 }
 
 void TagModel::setColumnHeader(const QString& header)
@@ -200,53 +203,43 @@ Album* TagModel::albumForId(int id) const
     return AlbumManager::instance()->findTAlbum(id);
 }
 
-void TagModel::setTagCount(TagCountMode mode)
+void TagModel::activateFaceTagMode()
 {
     disconnect(AlbumManager::instance(), SIGNAL(signalTAlbumsDirty(QMap<int,int>)),
                this, SLOT(setCountMap(QMap<int,int>)));
 
-    if (mode == NormalTagCount)
-    {
-        connect(AlbumManager::instance(), SIGNAL(signalTAlbumsDirty(QMap<int,int>)),
-                this, SLOT(setCountMap(QMap<int,int>)));
+    connect(AlbumManager::instance(), &AlbumManager::signalFaceCountsDirty,
+            this, [=](const QMap<int, int>& faceCount,
+                      const QMap<int, int>& uFaceCount,
+                      const QList<int>& toUpdatedFaces)
+        {
+            setCountMap(faceCount);
+            m_unconfirmedFaceCount = uFaceCount;
 
-        setCountMap(AlbumManager::instance()->getTAlbumsCount());
-    }
-    else
-    {
-        connect(AlbumManager::instance(), &AlbumManager::signalFaceCountsDirty,
-                this, [=](const QMap<int, int>& faceCount,
-                          const QMap<int, int>& uFaceCount,
-                          const QList<int>& toUpdatedFaces)
+            foreach (int id, toUpdatedFaces)
             {
-                setCountMap(faceCount);
-                m_unconfirmedFaceCount = uFaceCount;
+                Album* const album = albumForId(id);
 
-                foreach (int id, toUpdatedFaces)
+                if (!album)
                 {
-                    Album* const album = albumForId(id);
-
-                    if (!album)
-                    {
-                        continue;
-                    }
-
-                    QModelIndex index = indexForAlbum(album);
-
-                    if (!index.isValid())
-                    {
-                        continue;
-                    }
-
-                    emit dataChanged(index, index);
+                    continue;
                 }
+
+                QModelIndex index = indexForAlbum(album);
+
+                if (!index.isValid())
+                {
+                    continue;
+                }
+
+                emit dataChanged(index, index);
             }
-        );
+        }
+    );
 
-        m_isFaceTagModel = true;
+    m_isFaceTagModel = true;
 
-        setCountMap(AlbumManager::instance()->getFaceCount());
-    }
+    setCountMap(AlbumManager::instance()->getFaceCount());
 }
 
 bool TagModel::setData(const QModelIndex& index, const QVariant& value, int role)

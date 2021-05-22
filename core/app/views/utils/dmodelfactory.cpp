@@ -41,20 +41,20 @@ class Q_DECL_HIDDEN DModelFactory::Private
 public:
 
     explicit Private()
-     :  albumModel       (nullptr),
-        tagModel         (nullptr),
+     :  tagModel         (nullptr),
+        tagFaceModel     (nullptr),
         tagFilterModel   (nullptr),
-        tagFacesModel    (nullptr),
+        albumModel       (nullptr),
         searchModel      (nullptr),
         dateAlbumModel   (nullptr),
         imageVersionModel(nullptr)
     {
     }
 
-    AlbumModel*        albumModel;
     TagModel*          tagModel;
+    TagModel*          tagFaceModel;
     TagModel*          tagFilterModel;
-    TagModel*          tagFacesModel;
+    AlbumModel*        albumModel;
     SearchModel*       searchModel;
     DateAlbumModel*    dateAlbumModel;
     ItemVersionsModel* imageVersionModel;
@@ -64,8 +64,8 @@ DModelFactory::DModelFactory()
     : d(new Private)
 {
     d->tagModel          = new TagModel(AbstractAlbumModel::IncludeRootAlbum);
-    d->tagFacesModel     = new TagModel(AbstractAlbumModel::IgnoreRootAlbum);
-    d->tagFacesModel->setTagCount(TagModel::FaceTagCount);
+    d->tagFaceModel      = new TagModel(AbstractAlbumModel::IgnoreRootAlbum);
+    d->tagFaceModel->activateFaceTagMode();
     d->tagFilterModel    = new TagModel(AbstractAlbumModel::IgnoreRootAlbum);
     d->tagFilterModel->setAddExcludeTristate(true);
 
@@ -85,7 +85,7 @@ DModelFactory::DModelFactory()
 DModelFactory::~DModelFactory()
 {
     delete d->tagModel;
-    delete d->tagFacesModel;
+    delete d->tagFaceModel;
     delete d->tagFilterModel;
 
     delete d->albumModel;
@@ -101,9 +101,9 @@ TagModel* DModelFactory::getTagModel() const
     return d->tagModel;
 }
 
-TagModel* DModelFactory::getTagFacesModel() const
+TagModel* DModelFactory::getTagFaceModel() const
 {
-    return d->tagFacesModel;
+    return d->tagFaceModel;
 }
 
 TagModel* DModelFactory::getTagFilterModel() const
