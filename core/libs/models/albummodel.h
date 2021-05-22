@@ -99,7 +99,6 @@ protected:
 
 private:
 
-    bool           m_faceTagModel;
     QMap<int, int> m_unconfirmedFaceCount;
 };
 

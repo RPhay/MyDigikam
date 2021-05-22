@@ -113,7 +113,6 @@ TagModel::TagModel(RootAlbumBehavior rootBehavior, QObject* const parent)
                                   rootBehavior, parent)
 {
     m_columnHeader = i18n("Tags");
-    m_faceTagModel = false;
     setupThumbnailLoading();
 
     setTagCount(NormalTagCount);
@@ -149,11 +148,11 @@ QVariant TagModel::decorationRoleData(Album* album) const
 {
     TAlbum* const tagAlbum = static_cast<TAlbum*>(album);
 
-    if (m_faceTagModel || tagAlbum->hasProperty(TagPropertyName::person()))
+    if (m_isFaceTagModel || tagAlbum->hasProperty(TagPropertyName::person()))
     {
         QPixmap face = AlbumThumbnailLoader::instance()->getFaceThumbnailDirectly(tagAlbum);
-        int size     = m_faceTagModel ? ApplicationSettings::instance()->getTreeViewFaceSize()
-                                      : ApplicationSettings::instance()->getTreeViewIconSize();
+        int size     = m_isFaceTagModel ? ApplicationSettings::instance()->getTreeViewFaceSize()
+                                        : ApplicationSettings::instance()->getTreeViewIconSize();
 
         double ratio = face.devicePixelRatio();
         int rsize    = qRound((double)size * ratio);
@@ -189,6 +188,7 @@ QVariant TagModel::fontRoleData(Album* a) const
     {
         QFont font;
         font.setBold(true);
+
         return font;
     }
 
@@ -243,7 +243,7 @@ void TagModel::setTagCount(TagCountMode mode)
             }
         );
 
-        m_faceTagModel = true;
+        m_isFaceTagModel = true;
 
         setCountMap(AlbumManager::instance()->getFaceCount());
     }

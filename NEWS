@@ -339,4 +339,5 @@ BUGFIXES:
 317 ==> 437103 - BadRequest when exporting to Onedrive.
 318 ==> 437209 - Menu bar and toolbar backgrounds don't respect selected digiKam colorscheme (and instead inherit from global colorscheme).
 319 ==> 431689 - Nokia 9 PureView DNG image demosaicing preview corruption.
-320 ==> 
+320 ==> 437461 - Tag panel from left side-bar has people items unsorted.
+321 ==> 

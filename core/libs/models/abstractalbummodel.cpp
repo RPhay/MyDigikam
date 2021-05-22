@@ -77,7 +77,8 @@ AbstractAlbumModel::AbstractAlbumModel(Album::Type albumType,
                                        RootAlbumBehavior rootBehavior,
                                        QObject* const parent)
     : QAbstractItemModel(parent),
-      d(new Private)
+      m_isFaceTagModel  (false),
+      d                 (new Private)
 {
     d->type         = albumType;
     d->rootAlbum    = rootAlbum;
@@ -430,6 +431,11 @@ AbstractAlbumModel::RootAlbumBehavior AbstractAlbumModel::rootAlbumBehavior() co
 Album::Type AbstractAlbumModel::albumType() const
 {
     return d->type;
+}
+
+bool AbstractAlbumModel::isFaceTagModel() const
+{
+    return m_isFaceTagModel;
 }
 
 QVariant AbstractAlbumModel::decorationRoleData(Album*) const

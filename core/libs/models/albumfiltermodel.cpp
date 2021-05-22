@@ -452,14 +452,18 @@ bool AlbumFilterModel::lessThan(const QModelIndex& left, const QModelIndex& righ
          * Unconfirmed Faces, according to the Unconfirmed
          * Face Count.
          */
-        QMap<int, int> unconfirmedFaceCount = AlbumManager::instance()->getUnconfirmedFaceCount();
-        int leftCount  = unconfirmedFaceCount.value(leftAlbum->id(),  0);
-        int rightCount = unconfirmedFaceCount.value(rightAlbum->id(), 0);
 
-        if ((leftCount != 0) || (rightCount != 0))
+        if (sourceAlbumModel() && sourceAlbumModel()->isFaceTagModel())
         {
-             return (sortOrder() == Qt::AscendingOrder) ? (leftCount > rightCount)
-                                                        : (leftCount < rightCount);
+            QMap<int, int> unconfirmedFaceCount = AlbumManager::instance()->getUnconfirmedFaceCount();
+            int leftFaceCount                   = unconfirmedFaceCount.value(leftAlbum->id(), 0);
+            int rightFaceCount                  = unconfirmedFaceCount.value(rightAlbum->id(), 0);
+
+            if ((leftFaceCount != 0) || (rightFaceCount != 0))
+            {
+                return (sortOrder() == Qt::AscendingOrder) ? (leftFaceCount > rightFaceCount)
+                                                           : (leftFaceCount < rightFaceCount);
+            }
         }
     }
 
