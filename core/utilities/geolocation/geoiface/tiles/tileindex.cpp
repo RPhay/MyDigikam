@@ -25,12 +25,15 @@
 #include "tileindex.h"
 #include "geoifacecommon.h"
 
-namespace {
-    static_assert (Digikam::TileIndex::Tiling==10,
+namespace
+{
+    static_assert (Digikam::TileIndex::Tiling == 10,
                    "the constants below expect 10x10 tile splits");
-    static_assert (Digikam::TileIndex::MaxLevel==9,
+
+    static_assert (Digikam::TileIndex::MaxLevel == 9,
                    "the constants below expect 10x10 tile splits with max level 9");
-    constexpr int64_t MaxLevelTileSplits = 10000000000LL;
+
+    constexpr int64_t MaxLevelTileSplits      = 10000000000LL;
     constexpr double MaxLevelTileSplitsFactor = 1.0 / static_cast<double>(MaxLevelTileSplits);
 }
 
@@ -218,12 +221,16 @@ TileIndex TileIndex::fromCoordinates(const Digikam::GeoCoordinates& coordinate, 
 
     // every calculation below is on integers so no rounding issues
     TileIndex tileIndex;
-    for (int i = 0; i <= TileIndex::MaxLevel; ++i) {
+
+    for (int i = 0 ; i <= TileIndex::MaxLevel ; ++i)
+    {
         tileIndex.m_indices[TileIndex::MaxLevel-i] = (tileLat % Tiling) * Tiling + tileLon % Tiling;
         tileLat /= Tiling;
         tileLon /= Tiling;
     }
+
     tileIndex.m_indicesCount = getLevel + 1;
+
     return tileIndex;
 }
 
@@ -236,18 +243,27 @@ GeoCoordinates TileIndex::toCoordinates(const CornerPosition ofCorner) const
 {
     int64_t tileLat = 0;
     int64_t tileLon = 0;
+
     for (int l = 0 ; l <= MaxLevel ; ++l)
     {
         tileLat *= Tiling;
         tileLon *= Tiling;
-        if (l < m_indicesCount) {
+
+        if (l < m_indicesCount)
+        {
             tileLat += indexLat(l);
             tileLon += indexLon(l);
         }
-        if (l + 1 == m_indicesCount && (ofCorner == CornerPosition::CornerNE || ofCorner == CornerPosition::CornerNW)) {
+        if ((l + 1 == m_indicesCount)               &&
+            ((ofCorner == CornerPosition::CornerNE) ||
+             (ofCorner == CornerPosition::CornerNW)))
+        {
             tileLat += 1;
         }
-        if (l + 1 == m_indicesCount && (ofCorner == CornerPosition::CornerNE || ofCorner == CornerPosition::CornerSE)) {
+        if ((l + 1 == m_indicesCount)               &&
+            ((ofCorner == CornerPosition::CornerNE) ||
+             (ofCorner == CornerPosition::CornerSE)))
+        {
             tileLon += 1;
         }
     }

@@ -189,20 +189,24 @@ void GPSMarkerTiler::prepareTiles(const GeoCoordinates& upperLeft, const GeoCoor
 {
     const QRectF worldRect(-180,-90,360,180);
 
-    qreal lat1 = upperLeft.lat();
-    qreal lng1 = upperLeft.lon();
-    qreal lat2 = lowerRight.lat();
-    qreal lng2 = lowerRight.lon();
+    qreal lat1         = upperLeft.lat();
+    qreal lng1         = upperLeft.lon();
+    qreal lat2         = lowerRight.lat();
+    qreal lng2         = lowerRight.lon();
     auto requestedRect = worldRect.intersected(QRectF(lat1, lng1, lat2 - lat1, lng2 - lng1));
+
     for (int i = 0 ; i < d->rectList.count() ; ++i)
     {
         // is there a rect that contains the requested one?
         const QRectF& currentRect = d->rectList.at(i);
+
         if (currentRect.contains(requestedRect))
         {
             return;
         }
+
         // and remove rects that are contained in the requested one
+
         if (requestedRect.contains(currentRect))
         {
             std::swap(d->rectList[i], d->rectList.back());
