@@ -72,7 +72,7 @@ public:
 
     TAlbum*      albumForIndex(const QModelIndex& index) const;
     void         setColumnHeader(const QString& header);
-    void         activateFaceTagMode();
+    void         activateFaceTagModel();
 
 protected:
 

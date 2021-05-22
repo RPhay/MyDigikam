@@ -65,7 +65,7 @@ DModelFactory::DModelFactory()
 {
     d->tagModel          = new TagModel(AbstractAlbumModel::IncludeRootAlbum);
     d->tagFaceModel      = new TagModel(AbstractAlbumModel::IgnoreRootAlbum);
-    d->tagFaceModel->activateFaceTagMode();
+    d->tagFaceModel->activateFaceTagModel();
     d->tagFilterModel    = new TagModel(AbstractAlbumModel::IgnoreRootAlbum);
     d->tagFilterModel->setAddExcludeTristate(true);
 

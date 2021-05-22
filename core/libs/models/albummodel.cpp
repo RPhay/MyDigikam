@@ -204,7 +204,7 @@ Album* TagModel::albumForId(int id) const
     return AlbumManager::instance()->findTAlbum(id);
 }
 
-void TagModel::activateFaceTagMode()
+void TagModel::activateFaceTagModel()
 {
     disconnect(AlbumManager::instance(), SIGNAL(signalTAlbumsDirty(QMap<int,int>)),
                this, SLOT(setCountMap(QMap<int,int>)));
