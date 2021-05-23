@@ -208,7 +208,7 @@ bool FCTask::imageResize(const QString& orgPath, const QString& destPath)
 
         if (d->settings.imageFormat == FCContainer::JPEG)
         {
-            destFile.append(QLatin1String(".jpeg"));
+            destFile.append(QLatin1String(".jpg"));
             deleteTargetFile(destFile);
 
             img.setAttribute(QLatin1String("quality"), d->settings.imageCompression);
