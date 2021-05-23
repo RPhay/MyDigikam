@@ -80,9 +80,8 @@ void FCTask::run()
         return;
     }
 
+    bool ok   = true;
     QUrl dest = d->settings.destUrl.adjusted(QUrl::StripTrailingSlash);
-
-    bool ok = true;
 
     if (d->settings.iface && d->settings.albumPath)
     {
