@@ -55,7 +55,6 @@ public:
 
 public Q_SLOTS:
 
-    void slotSelectFirstItem();
     void slotSetSelectedAlbums(const QList<PAlbum*>& albums);
     void slotSetSelectedAlbums(const QList<TAlbum*>& albums);
     void slotRemoveDuplicates();
@@ -66,6 +65,7 @@ private Q_SLOTS:
     void slotAlbumAdded(Album* a);
     void slotAlbumDeleted(Album* a);
     void slotSearchUpdated(SAlbum* a);
+    void slotSelectItemsTimer();
     void slotClear();
     void slotFindDuplicates();
     void slotUpdateDuplicates(const QList<SAlbum*>& sAlbumsToRebuild,

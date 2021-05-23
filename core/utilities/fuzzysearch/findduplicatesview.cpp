@@ -295,7 +295,7 @@ void FindDuplicatesView::setActive(bool val)
     d->active = val;
     slotCheckForValidSettings();
     d->removeDuplicatesBtn->setEnabled(false);
-    QTimer::singleShot(250, this, SLOT(slotSelectFirstItem()));
+    QTimer::singleShot(250, this, SLOT(slotSelectItemsTimer()));
 }
 
 void FindDuplicatesView::populateTreeView()
@@ -339,12 +339,6 @@ void FindDuplicatesView::populateTreeView()
     {
         QApplication::restoreOverrideCursor();
     }
-}
-
-void FindDuplicatesView::slotSelectFirstItem()
-{
-    d->listView->selectFirstItem();
-    slotDuplicatesAlbumActived();
 }
 
 QList<SAlbum*> FindDuplicatesView::currentFindDuplicatesAlbums() const
@@ -434,6 +428,16 @@ void FindDuplicatesView::slotSearchUpdated(SAlbum* a)
 
     slotAlbumDeleted(a);
     slotAlbumAdded(a);
+}
+
+void FindDuplicatesView::slotSelectItemsTimer()
+{
+    if (d->listView->selectedItems().isEmpty())
+    {
+        d->listView->selectFirstItem();
+    }
+
+    slotDuplicatesAlbumActived();
 }
 
 void FindDuplicatesView::slotClear()

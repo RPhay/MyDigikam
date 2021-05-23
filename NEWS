@@ -341,4 +341,5 @@ BUGFIXES:
 319 ==> 431689 - Nokia 9 PureView DNG image demosaicing preview corruption.
 320 ==> 437461 - Tag panel from left side-bar has people items unsorted.
 321 ==> 252763 - Align album titles next to album thumbnails.
-322 ==> 
+322 ==> 436671 - Similarity-Duplicates the active menu tab always moves to the first tab, no location memory.
+323 ==> 
