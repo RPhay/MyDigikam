@@ -347,4 +347,5 @@ BUGFIXES:
 325 ==> 437548 - In Table view Del removes Group Selected and second item to the trash.
 326 ==> 431497 - Unconfiremd Faces Counter has an Offset.
 327 ==> 437554 - Export to local Storage : Add an export with direct extension of the files in jpg (Not jpeg).
-328 ==> 
+328 ==> 436695 - [opensuse 15.2] unable to resize images (all types).
+329 ==> 
