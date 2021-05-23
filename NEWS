@@ -348,4 +348,6 @@ BUGFIXES:
 326 ==> 431497 - Unconfiremd Faces Counter has an Offset.
 327 ==> 437554 - Export to local Storage : Add an export with direct extension of the files in jpg (Not jpeg).
 328 ==> 436695 - [opensuse 15.2] unable to resize images (all types).
-329 ==> 
+329 ==> 427403 - Export multiple albums - Exported folder structure shall represent album structure.
+330 ==> 436120 - [Suggestion] Keep the tree structure in "Export to a local device".
+331 ==> 

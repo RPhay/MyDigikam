@@ -57,8 +57,10 @@ class Q_DECL_HIDDEN FCExportWidget::Private
 public:
 
     explicit Private()
-      : selector            (nullptr),
+      : iface               (nullptr),
+        selector            (nullptr),
         imageList           (nullptr),
+        albumPath           (nullptr),
         overwrite           (nullptr),
         targetButtonGroup   (nullptr),
         fileCopyButton      (nullptr),
@@ -73,30 +75,34 @@ public:
     {
     }
 
-    DFileSelector* selector;
-    DItemsList*    imageList;
-    QCheckBox*     overwrite;
+    DInfoInterface* iface;
+    DFileSelector*  selector;
+    DItemsList*     imageList;
+    QCheckBox*      albumPath;
+    QCheckBox*      overwrite;
 
-    QButtonGroup*  targetButtonGroup;
-    QRadioButton*  fileCopyButton;
-    QRadioButton*  symLinkButton;
-    QRadioButton*  relativeButton;
+    QButtonGroup*   targetButtonGroup;
+    QRadioButton*   fileCopyButton;
+    QRadioButton*   symLinkButton;
+    QRadioButton*   relativeButton;
 
-    QUrl           targetUrl;
+    QUrl            targetUrl;
 
-    QGroupBox*     imageChangeGroupBox;
-    QCheckBox*     changeImagesProp;
-    QCheckBox*     removeMetadataProp;
+    QGroupBox*      imageChangeGroupBox;
+    QCheckBox*      changeImagesProp;
+    QCheckBox*      removeMetadataProp;
 
-    QSpinBox*      imageCompression;
-    QSpinBox*      imageResize;
-    QComboBox*     imageFormat;
+    QSpinBox*       imageCompression;
+    QSpinBox*       imageResize;
+    QComboBox*      imageFormat;
 };
 
 FCExportWidget::FCExportWidget(DInfoInterface* const iface, QWidget* const parent)
     : QWidget(parent),
       d      (new Private)
 {
+    d->iface = iface;
+
     // setup local target selection
 
     const int spacing           = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
@@ -116,7 +122,13 @@ FCExportWidget::FCExportWidget(DInfoInterface* const iface, QWidget* const paren
     d->symLinkButton            = new QRadioButton(i18n("Create symlinks"), this);
     d->relativeButton           = new QRadioButton(i18n("Create relative symlinks"), this);
 
+    d->albumPath                = new QCheckBox(i18n("Use the album path of the items in the target"), this);
     d->overwrite                = new QCheckBox(i18n("Overwrite existing items in the target"), this);
+
+    if (!d->iface->supportAlbums())
+    {
+        d->albumPath->hide();
+    }
 
     d->targetButtonGroup->addButton(d->fileCopyButton, FCContainer::CopyFile);
     d->targetButtonGroup->addButton(d->symLinkButton,  FCContainer::FullSymLink);
@@ -202,7 +214,7 @@ FCExportWidget::FCExportWidget(DInfoInterface* const iface, QWidget* const paren
     // setup image list
     d->imageList = new DItemsList(this);
     d->imageList->setObjectName(QLatin1String("FCExport ImagesList"));
-    d->imageList->setIface(iface);
+    d->imageList->setIface(d->iface);
     d->imageList->loadImagesFromCurrentSelection();
     d->imageList->setAllowRAW(true);
     d->imageList->listView()->setWhatsThis(i18n("This is the list of items to copy "
@@ -216,6 +228,7 @@ FCExportWidget::FCExportWidget(DInfoInterface* const iface, QWidget* const paren
     layout->addWidget(d->fileCopyButton);
     layout->addWidget(d->symLinkButton);
     layout->addWidget(d->relativeButton);
+    layout->addWidget(d->albumPath);
     layout->addWidget(d->overwrite);
     layout->addWidget(d->imageList);
     layout->addWidget(d->changeImagesProp);
@@ -258,11 +271,13 @@ FCContainer FCExportWidget::getSettings() const
 {
     FCContainer settings;
 
+    settings.iface                 = d->iface;
     settings.destUrl               = d->targetUrl;
     settings.behavior              = d->targetButtonGroup->checkedId();
     settings.imageFormat           = d->imageFormat->currentIndex();
     settings.imageResize           = d->imageResize->value();
     settings.imageCompression      = d->imageCompression->value();
+    settings.albumPath             = d->albumPath->isChecked();
     settings.overwrite             = d->overwrite->isChecked();
     settings.removeMetadata        = d->removeMetadataProp->isChecked();
     settings.changeImageProperties = d->changeImagesProp->isChecked();
@@ -284,6 +299,7 @@ void FCExportWidget::setSettings(const FCContainer& settings)
     d->imageFormat->setCurrentIndex(settings.imageFormat);
     d->imageResize->setValue(settings.imageResize);
     d->imageCompression->setValue(settings.imageCompression);
+    d->albumPath->setChecked(settings.albumPath);
     d->overwrite->setChecked(settings.overwrite);
     d->removeMetadataProp->setChecked(settings.removeMetadata);
     d->changeImagesProp->setChecked(settings.changeImageProperties);

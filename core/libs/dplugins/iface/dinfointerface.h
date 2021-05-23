@@ -207,13 +207,14 @@ public:
 public:
 
     QString            name()                 const;
-    QString            comment()              const;
     QString            title()                const;
+    QString            comment()              const;
     QSize              dimensions()           const;
     QDateTime          dateTime()             const;
     QStringList        tagsPath()             const;
     QStringList        keywords()             const;
 
+    int                album()                const;
     int                orientation()          const;
     void               setOrientation(int);
     int                rating()               const;
@@ -268,6 +269,7 @@ public:
     QString caption()                         const;
     QDate   date()                            const;
     QString path()                            const;
+    QString albumPath()                       const;
 
 private:
 

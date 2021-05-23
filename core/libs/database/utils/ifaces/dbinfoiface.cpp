@@ -439,9 +439,10 @@ DBInfoIface::DInfoMap DBInfoIface::albumInfo(int gid) const
 
     if (p)
     {
-        map.insert(QLatin1String("caption"),  p->caption());
-        map.insert(QLatin1String("date"),     p->date());
-        map.insert(QLatin1String("path"),     p->folderPath());
+        map.insert(QLatin1String("caption"),   p->caption());
+        map.insert(QLatin1String("date"),      p->date());
+        map.insert(QLatin1String("path"),      p->folderPath());
+        map.insert(QLatin1String("albumpath"), p->albumPath());
     }
 
     return map;
@@ -457,6 +458,7 @@ DBInfoIface::DInfoMap DBInfoIface::itemInfo(const QUrl& url) const
     {
         map.insert(QLatin1String("name"),            info.name());
         map.insert(QLatin1String("title"),           info.title());
+        map.insert(QLatin1String("album"),           info.albumId());
         map.insert(QLatin1String("comment"),         info.comment());
         map.insert(QLatin1String("orientation"),     info.orientation());
         map.insert(QLatin1String("datetime"),        info.dateTime());

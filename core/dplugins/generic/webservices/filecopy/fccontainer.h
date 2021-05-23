@@ -28,6 +28,12 @@
 
 #include <QUrl>
 
+// Local includes
+
+#include "dinfointerface.h"
+
+using namespace Digikam;
+
 namespace DigikamGenericFileCopyPlugin
 {
 
@@ -56,9 +62,11 @@ public:
         imageFormat          (JPEG),
         imageResize          (1024),
         imageCompression     (75),
+        albumPath            (false),
         overwrite            (false),
         removeMetadata       (false),
-        changeImageProperties(false)
+        changeImageProperties(false),
+        iface                (nullptr)
     {
     };
 
@@ -68,16 +76,19 @@ public:
 
 public:
 
-    QUrl destUrl;
+    QUrl            destUrl;
 
-    int  behavior;
-    int  imageFormat;
-    int  imageResize;
-    int  imageCompression;
+    int             behavior;
+    int             imageFormat;
+    int             imageResize;
+    int             imageCompression;
 
-    bool overwrite;
-    bool removeMetadata;
-    bool changeImageProperties;
+    bool            albumPath;
+    bool            overwrite;
+    bool            removeMetadata;
+    bool            changeImageProperties;
+
+    DInfoInterface* iface;
 };
 
 } // namespace DigikamGenericFileCopyPlugin

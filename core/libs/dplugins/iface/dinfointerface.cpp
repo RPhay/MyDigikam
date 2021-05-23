@@ -238,6 +238,13 @@ QStringList DItemInfo::tagsPath() const
     return (!val.isNull() ? val.toStringList() : QStringList());
 }
 
+int DItemInfo::album() const
+{
+    QVariant val = parseInfoMap(QLatin1String("album"));
+
+    return (!val.isNull() ? val.toInt() : -1);
+}
+
 int DItemInfo::orientation() const
 {
     QVariant val = parseInfoMap(QLatin1String("orientation"));
@@ -466,6 +473,19 @@ QString DAlbumInfo::path() const
 {
     QString ret;
     DInfoInterface::DInfoMap::const_iterator it = m_info.find(QLatin1String("path"));
+
+    if (it != m_info.end())
+    {
+        ret = it.value().toString();
+    }
+
+    return ret;
+}
+
+QString DAlbumInfo::albumPath() const
+{
+    QString ret;
+    DInfoInterface::DInfoMap::const_iterator it = m_info.find(QLatin1String("albumpath"));
 
     if (it != m_info.end())
     {
