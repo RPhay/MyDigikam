@@ -342,4 +342,5 @@ BUGFIXES:
 320 ==> 437461 - Tag panel from left side-bar has people items unsorted.
 321 ==> 252763 - Align album titles next to album thumbnails.
 322 ==> 436671 - Similarity-Duplicates the active menu tab always moves to the first tab, no location memory.
-323 ==> 
+323 ==> 437534 - Grouped items are not visible in the Table view when the View / Show All Grouped Items As Open menu is selected.
+324 ==> 

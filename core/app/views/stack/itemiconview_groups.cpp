@@ -74,12 +74,12 @@ bool ItemIconView::selectedNeedGroupResolving(const ApplicationSettings::Operati
 
 void ItemIconView::setAllGroupsOpen(bool open)
 {
+    ApplicationSettings::instance()->setAllGroupsOpen(open);
+
     if (!d->iconView->getFaceMode())
     {
         d->iconView->imageFilterModel()->setAllGroupsOpen(open);
     }
-
-    ApplicationSettings::instance()->setAllGroupsOpen(open);
 }
 
 void ItemIconView::slotCreateGroupFromSelection()
