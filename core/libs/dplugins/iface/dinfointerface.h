@@ -214,7 +214,7 @@ public:
     QStringList        tagsPath()             const;
     QStringList        keywords()             const;
 
-    int                album()                const;
+    int                albumId()              const;
     int                orientation()          const;
     void               setOrientation(int);
     int                rating()               const;

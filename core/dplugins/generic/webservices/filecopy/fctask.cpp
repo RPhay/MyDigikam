@@ -87,7 +87,7 @@ void FCTask::run()
     {
         DInfoInterface::DInfoMap infoMap  = d->settings.iface->itemInfo(d->srcUrl);
         DItemInfo info(infoMap);
-        DInfoInterface::DInfoMap albumMap = d->settings.iface->albumInfo(info.album());
+        DInfoInterface::DInfoMap albumMap = d->settings.iface->albumInfo(info.albumId());
         DAlbumInfo album(albumMap);
 
         dest.setPath(dest.path() + album.albumPath());

@@ -238,9 +238,9 @@ QStringList DItemInfo::tagsPath() const
     return (!val.isNull() ? val.toStringList() : QStringList());
 }
 
-int DItemInfo::album() const
+int DItemInfo::albumId() const
 {
-    QVariant val = parseInfoMap(QLatin1String("album"));
+    QVariant val = parseInfoMap(QLatin1String("albumid"));
 
     return (!val.isNull() ? val.toInt() : -1);
 }

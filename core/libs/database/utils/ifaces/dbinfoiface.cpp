@@ -458,7 +458,7 @@ DBInfoIface::DInfoMap DBInfoIface::itemInfo(const QUrl& url) const
     {
         map.insert(QLatin1String("name"),            info.name());
         map.insert(QLatin1String("title"),           info.title());
-        map.insert(QLatin1String("album"),           info.albumId());
+        map.insert(QLatin1String("albumid"),         info.albumId());
         map.insert(QLatin1String("comment"),         info.comment());
         map.insert(QLatin1String("orientation"),     info.orientation());
         map.insert(QLatin1String("datetime"),        info.dateTime());

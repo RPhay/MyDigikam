@@ -58,15 +58,15 @@ public:
 public:
 
     FCContainer()
-      : behavior             (CopyFile),
+      : iface                (nullptr),
+        behavior             (CopyFile),
         imageFormat          (JPEG),
         imageResize          (1024),
         imageCompression     (75),
         albumPath            (false),
         overwrite            (false),
         removeMetadata       (false),
-        changeImageProperties(false),
-        iface                (nullptr)
+        changeImageProperties(false)
     {
     };
 
@@ -75,6 +75,9 @@ public:
     };
 
 public:
+
+
+    DInfoInterface* iface;
 
     QUrl            destUrl;
 
@@ -87,8 +90,6 @@ public:
     bool            overwrite;
     bool            removeMetadata;
     bool            changeImageProperties;
-
-    DInfoInterface* iface;
 };
 
 } // namespace DigikamGenericFileCopyPlugin
