@@ -392,7 +392,7 @@ PAlbum* AlbumManager::createPAlbum(PAlbum*        parent,
     url.setPath(url.path() + QLatin1Char('/') + name);
     QUrl fileUrl    = url.fileUrl();
 
-    bool ret = QDir().mkdir(fileUrl.toLocalFile());
+    bool ret        = QDir().mkpath(fileUrl.toLocalFile());
 
     if (!ret)
     {
