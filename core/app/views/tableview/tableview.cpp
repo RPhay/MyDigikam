@@ -302,7 +302,8 @@ bool TableView::selectedNeedGroupResolving(const ApplicationSettings::OperationT
 
 void TableView::slotDeleteSelected(const ItemViewUtilities::DeleteMode deleteMode)
 {
-    const ItemInfoList infoList = selectedItemInfos(true);
+    const bool allGroupsOpen    = ApplicationSettings::instance()->getAllGroupsOpen();
+    const ItemInfoList infoList = selectedItemInfos(!allGroupsOpen);
 
     /// @todo Update parameter naming for deleteImages
 
@@ -314,7 +315,8 @@ void TableView::slotDeleteSelected(const ItemViewUtilities::DeleteMode deleteMod
 
 void TableView::slotDeleteSelectedWithoutConfirmation(const ItemViewUtilities::DeleteMode deleteMode)
 {
-    const ItemInfoList infoList = selectedItemInfos(true);
+    const bool allGroupsOpen    = ApplicationSettings::instance()->getAllGroupsOpen();
+    const ItemInfoList infoList = selectedItemInfos(!allGroupsOpen);
 
     d->imageViewUtilities->deleteImagesDirectly(infoList, deleteMode);
     slotAwayFromSelection();
