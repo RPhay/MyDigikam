@@ -196,7 +196,7 @@ bool MediaWikiWindow::prepareImageForUpload(const QString& imgPath)
 
     if (!QDir(d->tmpDir).exists())
     {
-        QDir().mkdir(d->tmpDir);
+        QDir().mkpath(d->tmpDir);
     }
 
     // Get temporary file name

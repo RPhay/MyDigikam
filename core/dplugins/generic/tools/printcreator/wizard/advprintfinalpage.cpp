@@ -308,11 +308,9 @@ bool AdvPrintFinalPage::checkTempPath(const QString& tempPath) const
 {
     // does the temp path exist?
 
-    QDir tempDir(tempPath);
-
-    if (!tempDir.exists())
+    if (!QDir(tempPath).exists())
     {
-        if (!tempDir.mkdir(tempDir.path()))
+        if (!QDir().mkpath(tempPath))
         {
             d->progressView->addEntry(i18n("Unable to create a temporary folder. "
                                            "Please make sure you have proper permissions "

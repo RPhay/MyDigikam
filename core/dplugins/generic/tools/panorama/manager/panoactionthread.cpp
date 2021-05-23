@@ -121,7 +121,7 @@ void PanoActionThread::preProcessFiles(const QList<QUrl>& urlList,
                               QLatin1String("digiKam-panorama-tmp-XXXXXX");
 
     d->preprocessingTmpDir  = QSharedPointer<QTemporaryDir>(new QTemporaryDir(prefix));
-    QDir().mkdir(d->preprocessingTmpDir->path() + QLatin1String("/work"));
+    QDir().mkpath(d->preprocessingTmpDir->path() + QLatin1String("/work"));
     d->preprocessingTmpPath = d->preprocessingTmpDir->path() + QLatin1String("/work");
 
     QSharedPointer<Sequence> jobSeq(new Sequence());

@@ -93,7 +93,7 @@ void FCTask::run()
         dest.setPath(dest.path() + album.albumPath());
         dest = dest.adjusted(QUrl::StripTrailingSlash);
 
-        if (!QFileInfo::exists(dest.toLocalFile()))
+        if (!QDir(dest.toLocalFile()).exists())
         {
             ok = QDir().mkpath(dest.toLocalFile());
         }
