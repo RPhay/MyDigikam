@@ -377,7 +377,15 @@ bool AlbumManager::deleteTAlbum(TAlbum* album, QString& errMsg, bool askUser)
 
     if (album == d->rootTAlbum)
     {
-        errMsg = i18n("Cannot delete Root Tag");
+        errMsg = i18n("Cannot delete root tag");
+        return false;
+    }
+
+    if ((album->id() == FaceTags::unknownPersonTagId())   ||
+        (album->id() == FaceTags::ignoredPersonTagId())   ||
+        (album->id() == FaceTags::unconfirmedPersonTagId()))
+    {
+        errMsg = i18n("Cannot delete required face tag");
         return false;
     }
 
@@ -561,6 +569,14 @@ bool AlbumManager::mergeTAlbum(TAlbum* album, TAlbum* destAlbum, bool dialog, QS
     if (album == d->rootTAlbum || destAlbum == d->rootTAlbum)
     {
         errMsg = i18n("Cannot merge root tag");
+        return false;
+    }
+
+    if ((album->id() == FaceTags::unknownPersonTagId())   ||
+        (album->id() == FaceTags::ignoredPersonTagId())   ||
+        (album->id() == FaceTags::unconfirmedPersonTagId()))
+    {
+        errMsg = i18n("Cannot merge required face tag");
         return false;
     }
 
