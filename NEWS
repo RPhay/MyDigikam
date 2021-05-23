@@ -345,4 +345,5 @@ BUGFIXES:
 323 ==> 437534 - Grouped items are not visible in the Table view when the View / Show All Grouped Items As Open menu is selected.
 324 ==> 377632 - Problem with open grouped files.
 325 ==> 437548 - In Table view Del removes Group Selected and second item to the trash.
-326 ==> 
+326 ==> 431497 - Unconfiremd Faces Counter has an Offset.
+327 ==> 
