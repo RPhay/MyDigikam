@@ -63,6 +63,7 @@ public:
     QList<DPlugin*>       allPlugins;
     QStringList           blacklist;
     QStringList           whitelist;
+    QStringList           DKBlacklist;      ///< Showfoto specific plugins to ignore in digiKam.
 };
 
 } // namepace Digikam

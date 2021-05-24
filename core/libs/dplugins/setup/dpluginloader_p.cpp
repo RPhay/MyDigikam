@@ -32,6 +32,7 @@
 #include <QMessageBox>
 #include <QLibraryInfo>
 #include <QMetaProperty>
+#include <QFileInfo>
 
 // KDE includes
 
@@ -52,8 +53,9 @@ DPluginLoader::Private::Private()
 {
     // Do not load these plugins as they are not currently working.
 
-    blacklist << QLatin1String("Generic_FaceBook_Plugin");
-    blacklist << QLatin1String("Generic_IpFs_Plugin");
+    blacklist   << QLatin1String("Generic_FaceBook_Plugin");
+    blacklist   << QLatin1String("Generic_IpFs_Plugin");
+    DKBlacklist << QLatin1String("Generic_DNGConverter_Plugin");
 }
 
 DPluginLoader::Private::~Private()
@@ -180,6 +182,21 @@ void DPluginLoader::Private::loadPlugins()
         if (blacklist.contains(info.baseName()))
         {
             qCDebug(DIGIKAM_GENERAL_LOG) << "Ignoring blacklisted plugin" << info.filePath();
+            continue;
+        }
+
+        if ((qApp->applicationName() == QLatin1String("showfoto")) &&
+            (info.baseName().startsWith(QLatin1String("Bqm_"))))
+        {
+            qCDebug(DIGIKAM_GENERAL_LOG) << "Ignoring specific digiKam BQM plugin in Showfoto" << info.filePath();
+            continue;
+        }
+
+        if ((qApp->applicationName() == QLatin1String("digikam")) &&
+            (DKBlacklist.contains(info.baseName())))
+        {
+            qCDebug(DIGIKAM_GENERAL_LOG) << "Ignoring specific Showfoto plugin in digiKam" << info.filePath();
+
             continue;
         }
 /*

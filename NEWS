@@ -16,6 +16,7 @@ General : Internal Libraw use DNG SDK 1.5 to handle 8 bits DNG files.
 Searches: Find duplicates items is now process in parallel using multi-cores.
 Plugins : New tool to export items to iNaturalist web service (https://www.inaturalist.org/).
 Plugins : SlideShow and Presentation tools now allow to move items to the trash.
+Plugins : New tool to convert RAW to DNG for Showfoto.
 
 *****************************************************************************************************
 BUGFIXES:

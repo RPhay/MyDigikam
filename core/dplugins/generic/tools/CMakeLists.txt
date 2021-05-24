@@ -11,6 +11,7 @@ add_subdirectory(printcreator)
 add_subdirectory(jalbum)
 add_subdirectory(mediaserver)
 add_subdirectory(wallpaper)
+add_subdirectory(dngconverter)      # NOTE: for Showfoto only
 
 if(LibXml2_FOUND AND LibXslt_FOUND)
     add_subdirectory(htmlgallery)
