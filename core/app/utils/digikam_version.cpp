@@ -63,7 +63,7 @@ const QDateTime digiKamBuildDate()
 const QString additionalInformation()
 {
     QString gitVer       = QLatin1String(GITVERSION);
-    QString ret          = i18n("IRC: irc.freenode.net - #digikam\n"
+    QString ret          = i18n("IRC: irc.libera.chat - #digikam\n"
                                 "Feedback: digikam-user@kde.org\n\n"
                                 "Build date: %1 (target: %2)",
                                 QLocale().toString(digiKamBuildDate(), QLocale::ShortFormat),
@@ -71,7 +71,7 @@ const QString additionalInformation()
 
     if (!gitVer.isEmpty() && !gitVer.startsWith(QLatin1String("unknow")) && !gitVer.startsWith(QLatin1String("export")))
     {
-        ret = i18n("IRC: irc.freenode.net - #digikam\n"
+        ret = i18n("IRC: irc.libera.chat - #digikam\n"
                    "Feedback: digikam-user@kde.org\n\n"
                    "Build date: %1 (target: %2)\n"
                    "Rev.: %3",
