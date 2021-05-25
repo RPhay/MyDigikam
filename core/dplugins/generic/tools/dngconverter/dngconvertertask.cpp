@@ -50,7 +50,8 @@ public:
         compressLossLess     (true),
         updateFileDate       (false),
         cancel               (false),
-        previewMode          (DNGWriter::MEDIUM)
+        previewMode          (DNGWriter::MEDIUM),
+        action               (NONE)
     {
     }
 
@@ -141,7 +142,6 @@ void DNGConverterTask::run()
             ad1.starting = true;
             emit signalStarting(ad1);
 
-            int     ret  = DNGWriter::PROCESS_COMPLETE;
             QString destPath;
 
             QFileInfo fi(d->url.toLocalFile());
@@ -155,7 +155,7 @@ void DNGConverterTask::run()
             d->dngProcessor.setCompressLossLess(d->compressLossLess);
             d->dngProcessor.setUpdateFileDate(d->updateFileDate);
             d->dngProcessor.setPreviewMode(d->previewMode);
-            ret          = d->dngProcessor.convert();
+            int ret      = d->dngProcessor.convert();
 
             DNGConverterActionData ad2;
             ad2.action   = PROCESS;
