@@ -32,7 +32,6 @@
 #include <QFileInfo>
 #include <QGridLayout>
 #include <QPixmap>
-#include <QPushButton>
 #include <QTimer>
 #include <QTreeWidgetItemIterator>
 #include <QApplication>
