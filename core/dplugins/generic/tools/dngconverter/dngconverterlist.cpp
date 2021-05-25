@@ -55,14 +55,17 @@ DNGConverterList::~DNGConverterList()
 
 void DNGConverterList::slotAddImages(const QList<QUrl>& list)
 {
-    /* Replaces the KPImagesList::slotAddImages method, so that
-     * DNGConverterListViewItems can be added instead of ImagesListViewItems */
+    /**
+     * Replaces the DItemsList::slotAddImages method, so that
+     * DNGConverterListViewItems can be added instead of ImagesListViewItems
+     */
 
-    // Figure out which of the supplied URL's should actually be added and which
+    // Figure out which of the supplied Url's should actually be added and which
     // of them already exist.
+
     bool found = false;
 
-    for (QList<QUrl>::const_iterator it = list.constBegin(); it != list.constEnd(); ++it)
+    for (QList<QUrl>::const_iterator it = list.constBegin() ; it != list.constEnd() ; ++it)
     {
         QUrl imageUrl = *it;
         found         = false;
@@ -88,6 +91,7 @@ void DNGConverterList::slotAddImages(const QList<QUrl>& list)
 
     emit signalImageListChanged();
 }
+
 void DNGConverterList::slotRemoveItems()
 {
     bool find = false;
@@ -116,41 +120,56 @@ void DNGConverterList::slotRemoveItems()
 
 // ------------------------------------------------------------------------------------------------
 
+class DNGConverterListViewItem::Private
+{
+public:
+
+    Private()
+    {
+    }
+
+    QString destFileName;
+    QString identity;
+    QString status;
+};
+
 DNGConverterListViewItem::DNGConverterListViewItem(DItemsListView* const view, const QUrl& url)
-    : DItemsListViewItem(view, url)
+    : DItemsListViewItem(view, url),
+      d                 (new Private)
 {
 }
 
 DNGConverterListViewItem::~DNGConverterListViewItem()
 {
+    delete d;
 }
 
 void DNGConverterListViewItem::setDestFileName(const QString& str)
 {
-    m_destFileName = str;
-    setText(DNGConverterList::TARGETFILENAME, m_destFileName);
+    d->destFileName = str;
+    setText(DNGConverterList::TARGETFILENAME, d->destFileName);
 }
 
 QString DNGConverterListViewItem::destFileName() const
 {
-    return m_destFileName;
+    return d->destFileName;
 }
 
 void DNGConverterListViewItem::setIdentity(const QString& str)
 {
-    m_identity = str;
-    setText(DNGConverterList::IDENTIFICATION, m_identity);
+    d->identity = str;
+    setText(DNGConverterList::IDENTIFICATION, d->identity);
 }
 
 QString DNGConverterListViewItem::identity() const
 {
-    return m_identity;
+    return d->identity;
 }
 
 void DNGConverterListViewItem::setStatus(const QString& str)
 {
-    m_status = str;
-    setText(DNGConverterList::STATUS, m_status);
+    d->status = str;
+    setText(DNGConverterList::STATUS, d->status);
 }
 
 QString DNGConverterListViewItem::destPath() const

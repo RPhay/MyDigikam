@@ -86,9 +86,8 @@ public:
 
 private:
 
-    QString m_destFileName;
-    QString m_identity;
-    QString m_status;
+    class Private;
+    Private* const d;
 };
 
 } // namespace DigikamGenericDNGConverterPlugin
