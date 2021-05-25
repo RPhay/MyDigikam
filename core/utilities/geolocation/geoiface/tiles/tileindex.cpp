@@ -23,6 +23,9 @@
  * ============================================================ */
 
 #include "tileindex.h"
+
+// Local includes
+
 #include "geoifacecommon.h"
 
 namespace
@@ -33,7 +36,7 @@ namespace
     static_assert (Digikam::TileIndex::MaxLevel == 9,
                    "the constants below expect 10x10 tile splits with max level 9");
 
-    constexpr int64_t MaxLevelTileSplits      = 10000000000LL;
+    constexpr qint64 MaxLevelTileSplits       = 10000000000LL;
     constexpr double MaxLevelTileSplitsFactor = 1.0 / static_cast<double>(MaxLevelTileSplits);
 }
 
@@ -72,6 +75,7 @@ void TileIndex::clear()
 void TileIndex::appendLinearIndex(const int newIndex)
 {
     GEOIFACE_ASSERT(m_indicesCount + 1 <= MaxIndexCount);
+
     m_indices[m_indicesCount] = newIndex;
     m_indicesCount++;
 }
@@ -115,8 +119,10 @@ QPoint TileIndex::latLonIndex(const int getLevel) const
 void TileIndex::latLonIndex(const int getLevel, int* const latIndex, int* const lonIndex) const
 {
     GEOIFACE_ASSERT(getLevel <= level());
+
     *latIndex = indexLat(getLevel);
     *lonIndex = indexLon(getLevel);
+
     GEOIFACE_ASSERT(*latIndex < Tiling);
     GEOIFACE_ASSERT(*lonIndex < Tiling);
 }
@@ -169,6 +175,7 @@ bool TileIndex::indicesEqual(const TileIndex& a, const TileIndex& b, const int u
 TileIndex TileIndex::mid(const int first, const int len) const
 {
     GEOIFACE_ASSERT(first+(len-1) <= m_indicesCount);
+
     TileIndex result;
 
     for (int i = first ; i < first + len ; ++i)
@@ -182,6 +189,7 @@ TileIndex TileIndex::mid(const int first, const int len) const
 void TileIndex::oneUp()
 {
     GEOIFACE_ASSERT(m_indicesCount > 0);
+
     m_indicesCount--;
 }
 
@@ -206,20 +214,26 @@ TileIndex TileIndex::fromCoordinates(const Digikam::GeoCoordinates& coordinate, 
         return TileIndex();
     }
 
-    int64_t tileLat, tileLon;
+    qint64 tileLat, tileLon;
     {
         // this is the ony place where rounding happens
-        tileLat = static_cast<int64_t>(((coordinate.lat() + 90.0) / 180.0) * MaxLevelTileSplits);
-        tileLon = static_cast<int64_t>(((coordinate.lon() + 180.0) / 360.0) * MaxLevelTileSplits);
+
+        tileLat = static_cast<qint64>(((coordinate.lat() + 90.0)  / 180.0) * MaxLevelTileSplits);
+        tileLon = static_cast<qint64>(((coordinate.lon() + 180.0) / 360.0) * MaxLevelTileSplits);
+
         // the very last tile includes it's upper bound
+
         tileLat = std::min(tileLat, MaxLevelTileSplits-1);
         tileLon = std::min(tileLon, MaxLevelTileSplits-1);
+
         // guard against bogus input
-        tileLat = std::max(tileLat, static_cast<int64_t>(0));
-        tileLon = std::max(tileLon, static_cast<int64_t>(0));
+
+        tileLat = std::max(tileLat, static_cast<qint64>(0));
+        tileLon = std::max(tileLon, static_cast<qint64>(0));
      }
 
     // every calculation below is on integers so no rounding issues
+
     TileIndex tileIndex;
 
     for (int i = 0 ; i <= TileIndex::MaxLevel ; ++i)
@@ -241,8 +255,8 @@ GeoCoordinates TileIndex::toCoordinates() const
 
 GeoCoordinates TileIndex::toCoordinates(const CornerPosition ofCorner) const
 {
-    int64_t tileLat = 0;
-    int64_t tileLon = 0;
+    qint64 tileLat = 0;
+    qint64 tileLon = 0;
 
     for (int l = 0 ; l <= MaxLevel ; ++l)
     {
@@ -254,12 +268,14 @@ GeoCoordinates TileIndex::toCoordinates(const CornerPosition ofCorner) const
             tileLat += indexLat(l);
             tileLon += indexLon(l);
         }
+
         if ((l + 1 == m_indicesCount)               &&
             ((ofCorner == CornerPosition::CornerNE) ||
              (ofCorner == CornerPosition::CornerNW)))
         {
             tileLat += 1;
         }
+
         if ((l + 1 == m_indicesCount)               &&
             ((ofCorner == CornerPosition::CornerNE) ||
              (ofCorner == CornerPosition::CornerSE)))
