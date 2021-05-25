@@ -779,13 +779,18 @@ void GeolocationEdit::reject()
 
 void GeolocationEdit::closeEvent(QCloseEvent *e)
 {
-    if (!e) return;
+    if (!e)
+    {
+        return;
+    }
 
     // is the UI locked?
 
     if (!d->uiEnabled)
     {
         // please wait until we are done ...
+
+        e->ignore();
 
         return;
     }

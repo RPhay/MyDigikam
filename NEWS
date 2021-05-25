@@ -352,4 +352,5 @@ BUGFIXES:
 329 ==> 427403 - Export multiple albums - Exported folder structure shall represent album structure.
 330 ==> 436120 - [Suggestion] Keep the tree structure in "Export to a local device".
 331 ==> 437655 - Store fuzzy search without a name.
-332 ==> 
+332 ==> 437680 - Crash if Geolocation editor is closed while coordinates are still being updated.
+333 ==> 
