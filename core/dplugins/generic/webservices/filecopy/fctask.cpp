@@ -83,7 +83,7 @@ void FCTask::run()
     bool ok   = true;
     QUrl dest = d->settings.destUrl.adjusted(QUrl::StripTrailingSlash);
 
-    if (d->settings.iface && d->settings.albumPath)
+    if (d->settings.iface && d->settings.iface->supportAlbums() && d->settings.albumPath)
     {
         DInfoInterface::DInfoMap infoMap  = d->settings.iface->itemInfo(d->srcUrl);
         DItemInfo info(infoMap);
