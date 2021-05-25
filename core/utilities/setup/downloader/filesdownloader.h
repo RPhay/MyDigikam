@@ -109,6 +109,10 @@ private:
     FilesDownloader(const FilesDownloader&)            = delete;
     FilesDownloader& operator=(const FilesDownloader&) = delete;
 
+protected:
+
+    void showEvent(QShowEvent* event) override;
+
 private:
 
     class Private;
