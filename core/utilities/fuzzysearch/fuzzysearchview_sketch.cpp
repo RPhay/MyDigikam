@@ -254,12 +254,9 @@ void FuzzySearchView::slotCheckNameEditSketchConditions()
 {
     if (!d->sketchWidget->isClear())
     {
+        bool b = d->nameEditSketch->text().isEmpty();
         d->nameEditSketch->setEnabled(true);
-
-        if (!d->nameEditSketch->text().isEmpty())
-        {
-            d->saveBtnSketch->setEnabled(true);
-        }
+        d->saveBtnSketch->setEnabled(!b);
     }
     else
     {

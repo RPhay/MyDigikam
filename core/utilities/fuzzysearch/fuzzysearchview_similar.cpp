@@ -226,6 +226,8 @@ void FuzzySearchView::dropEvent(QDropEvent* e)
                 d->labelFile->setAdjustedText(urls.first().fileName());
                 d->labelFolder->setAdjustedText(urls.first().adjusted(QUrl::RemoveFilename).toLocalFile());
 
+                slotCheckNameEditImageConditions();
+
                 e->acceptProposedAction();
             }
         }
@@ -326,12 +328,9 @@ void FuzzySearchView::slotCheckNameEditImageConditions()
 {
     if (!d->imageInfo.isNull())
     {
+        bool b = d->nameEditImage->text().isEmpty();
         d->nameEditImage->setEnabled(true);
-
-        if (!d->nameEditImage->text().isEmpty())
-        {
-            d->saveBtnImage->setEnabled(true);
-        }
+        d->saveBtnImage->setEnabled(!b);
     }
     else
     {
