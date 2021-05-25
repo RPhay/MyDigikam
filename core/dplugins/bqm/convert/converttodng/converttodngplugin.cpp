@@ -88,6 +88,9 @@ QList<DPluginAuthor> ConvertToDngPlugin::authors() const
             << DPluginAuthor(QString::fromUtf8("Smit Mehta"),
                              QString::fromUtf8("smit dot meh at gmail dot com"),
                              QString::fromUtf8("(C) 2012"))
+            << DPluginAuthor(QString::fromUtf8("Maik Qualmann"),
+                             QString::fromUtf8("metzpinguin at gmail dot com"),
+                             QString::fromUtf8("(C) 2020-2021"))
             ;
 }
 
