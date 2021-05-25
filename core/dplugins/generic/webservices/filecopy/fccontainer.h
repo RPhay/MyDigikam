@@ -63,8 +63,8 @@ public:
         imageFormat          (JPEG),
         imageResize          (1024),
         imageCompression     (75),
-        albumPath            (false),
         overwrite            (false),
+        albumPath            (false),
         removeMetadata       (false),
         changeImageProperties(false)
     {
@@ -86,8 +86,8 @@ public:
     int             imageResize;
     int             imageCompression;
 
-    bool            albumPath;
     bool            overwrite;
+    bool            albumPath;
     bool            removeMetadata;
     bool            changeImageProperties;
 };

@@ -60,8 +60,8 @@ public:
       : iface               (nullptr),
         selector            (nullptr),
         imageList           (nullptr),
-        albumPath           (nullptr),
         overwrite           (nullptr),
+        albumPath           (nullptr),
         targetButtonGroup   (nullptr),
         fileCopyButton      (nullptr),
         symLinkButton       (nullptr),
@@ -78,8 +78,8 @@ public:
     DInfoInterface* iface;
     DFileSelector*  selector;
     DItemsList*     imageList;
-    QCheckBox*      albumPath;
     QCheckBox*      overwrite;
+    QCheckBox*      albumPath;
 
     QButtonGroup*   targetButtonGroup;
     QRadioButton*   fileCopyButton;
@@ -122,8 +122,8 @@ FCExportWidget::FCExportWidget(DInfoInterface* const iface, QWidget* const paren
     d->symLinkButton            = new QRadioButton(i18n("Create symlinks"), this);
     d->relativeButton           = new QRadioButton(i18n("Create relative symlinks"), this);
 
-    d->albumPath                = new QCheckBox(i18n("Use the album path of the items in the target"), this);
     d->overwrite                = new QCheckBox(i18n("Overwrite existing items in the target"), this);
+    d->albumPath                = new QCheckBox(i18n("Use the album path of the items in the target"), this);
 
     if (!d->iface->supportAlbums())
     {
@@ -228,8 +228,8 @@ FCExportWidget::FCExportWidget(DInfoInterface* const iface, QWidget* const paren
     layout->addWidget(d->fileCopyButton);
     layout->addWidget(d->symLinkButton);
     layout->addWidget(d->relativeButton);
-    layout->addWidget(d->albumPath);
     layout->addWidget(d->overwrite);
+    layout->addWidget(d->albumPath);
     layout->addWidget(d->imageList);
     layout->addWidget(d->changeImagesProp);
     layout->addWidget(d->imageChangeGroupBox);
@@ -277,8 +277,8 @@ FCContainer FCExportWidget::getSettings() const
     settings.imageFormat           = d->imageFormat->currentIndex();
     settings.imageResize           = d->imageResize->value();
     settings.imageCompression      = d->imageCompression->value();
-    settings.albumPath             = d->albumPath->isChecked();
     settings.overwrite             = d->overwrite->isChecked();
+    settings.albumPath             = d->albumPath->isChecked();
     settings.removeMetadata        = d->removeMetadataProp->isChecked();
     settings.changeImageProperties = d->changeImagesProp->isChecked();
 
@@ -299,8 +299,8 @@ void FCExportWidget::setSettings(const FCContainer& settings)
     d->imageFormat->setCurrentIndex(settings.imageFormat);
     d->imageResize->setValue(settings.imageResize);
     d->imageCompression->setValue(settings.imageCompression);
-    d->albumPath->setChecked(settings.albumPath);
     d->overwrite->setChecked(settings.overwrite);
+    d->albumPath->setChecked(settings.albumPath);
     d->removeMetadataProp->setChecked(settings.removeMetadata);
     d->changeImagesProp->setChecked(settings.changeImageProperties);
 }
