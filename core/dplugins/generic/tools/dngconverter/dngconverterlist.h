@@ -42,7 +42,9 @@ class DNGConverterList : public DItemsList
 
 public:
 
-    /* The different columns in a list. */
+    /**
+     * List the different columns in a list.
+     */
     enum FieldType
     {
         TARGETFILENAME = DItemsListView::User1,
@@ -57,11 +59,11 @@ public:
 
 public Q_SLOTS:
 
-    virtual void slotAddImages(const QList<QUrl>& list);
+    void slotAddImages(const QList<QUrl>& list) override;
 
 protected Q_SLOTS:
 
-    virtual void slotRemoveItems();
+    void slotRemoveItems()                      override;
 };
 
 // -------------------------------------------------------------------------
@@ -75,14 +77,14 @@ public:
     ~DNGConverterListViewItem();
 
     void setDestFileName(const QString& str);
-    QString destFileName() const;
+    QString destFileName()  const;
 
     void setIdentity(const QString& str);
-    QString identity() const;
+    QString identity()      const;
 
     void setStatus(const QString& str);
 
-    QString destPath() const;
+    QString destPath()      const;
 
 private:
 
