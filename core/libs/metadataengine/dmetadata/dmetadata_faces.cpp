@@ -123,9 +123,15 @@ bool DMetadata::getItemFacesMap(QMultiMap<QString, QVariant>& faces) const
             break;
         }
 
-        faces.insert(person, rect);
+        // Ignore the full size face region.
+        // See bug 437708 (Lumia 930 Windows Phone)
 
-        qCDebug(DIGIKAM_METAENGINE_LOG) << "Found new rect:" << person << rect;
+        if (rect != QRectF(0.0, 0.0, 1.0, 1.0))
+        {
+            faces.insert(person, rect);
+
+            qCDebug(DIGIKAM_METAENGINE_LOG) << "Found new rect:" << person << rect;
+        }
     }
 
     return !faces.isEmpty();
