@@ -69,9 +69,9 @@ QString DNGConverterPlugin::description() const
 QString DNGConverterPlugin::details() const
 {
     return i18nc("@info", "This Generic tool can convert RAW images data to DNG format.\n\n"
-                 "<p>The Digital Negative is a lossless RAW image format created by Adobe.\n\n"
-                 "<p>See details on this wikipedia entry about this format: %1",
-                 QLatin1String("<a href='https://en.wikipedia.org/wiki/Digital_Negative'>https://en.wikipedia.org/wiki/Digital_Negative</a>.</p>"));
+                 "The Digital Negative is a lossless RAW image format created by Adobe.\n\n"
+                 "See details on this wikipedia entry about this format: %1",
+                 QLatin1String("<a href='https://en.wikipedia.org/wiki/Digital_Negative'>https://en.wikipedia.org/wiki/Digital_Negative</a>"));
 }
 
 QList<DPluginAuthor> DNGConverterPlugin::authors() const
