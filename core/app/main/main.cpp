@@ -442,7 +442,7 @@ int main(int argc, char* argv[])
     digikam->restoreSession();
     digikam->show();
 
-    QPointer<FilesDownloader> floader = new FilesDownloader(digikam);
+    QPointer<FilesDownloader> floader = new FilesDownloader(qApp->activeWindow());
 
     if (!floader->checkDownloadFiles())
     {

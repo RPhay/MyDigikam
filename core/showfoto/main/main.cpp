@@ -265,7 +265,7 @@ int main(int argc, char* argv[])
 
     w->show();
 
-    QPointer<FilesDownloader> floader = new FilesDownloader(w);
+    QPointer<FilesDownloader> floader = new FilesDownloader(qApp->activeWindow());
 
     if (!floader->checkDownloadFiles())
     {

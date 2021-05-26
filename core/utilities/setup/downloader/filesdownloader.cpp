@@ -438,14 +438,6 @@ void FilesDownloader::slotDownloadProgress(qint64 bytesReceived, qint64 bytesTot
     d->progress->setValue(bytesReceived);
 }
 
-void FilesDownloader::showEvent(QShowEvent* event)
-{
-    QDialog::showEvent(event);
-
-    raise();
-    activateWindow();
-}
-
 //-----------------------------------------------------------------------------
 
 DownloadInfo::DownloadInfo()
