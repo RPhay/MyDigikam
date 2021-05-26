@@ -46,7 +46,6 @@ bool ExifToolParser::load(const QString& path)
 
     QByteArrayList cmdArgs;
     cmdArgs << QByteArray("-json");
-    cmdArgs << QByteArray("-binary");
     cmdArgs << QByteArray("-G:0:1:2:4:6");
     cmdArgs << QByteArray("-n");
     cmdArgs << QByteArray("-l");

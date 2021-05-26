@@ -126,9 +126,11 @@ void ExifToolParser::slotCmdCompleted(int cmdAction,
                 qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool json property:" << tagNameExifTool << data;
 */
 
-                if (data.startsWith(QLatin1String("base64:")))
+                if (data.startsWith(QLatin1String("(Binary data ")) && 
+                    data.endsWith(QLatin1String(", use -b option to extract)")))
                 {
-                    data = i18n("binary data...");
+                    data = data.section(QLatin1Char(','), 0, 0);
+                    data.remove(QLatin1Char('('));
                 }
 
                 d->exifToolData.insert(tagNameExifTool, QVariantList()
