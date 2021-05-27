@@ -41,12 +41,13 @@ int DNGWriter::Private::storeExif(DNGWriterHost& /*host*/,
     exif->fModel.Set_ASCII(identify->model.toLatin1().constData());
     exif->fMake.Set_ASCII(identify->make.toLatin1().constData());
     exif->fSoftware.Set_ASCII(QString::fromLatin1("digiKam %1").arg(digiKamVersion()).toLatin1().constData());
+    exif->fExifVersion = DNG_CHAR4('0', '2', '3', '0');
 
     // Self-Write CFAPattern (section G) manually from mosaic info container.
 
-    dng_mosaic_info* const mosaicInfo = m_negative->GetMosaicInfo();
+    const dng_mosaic_info* mosaicInfo = negative->GetMosaicInfo();
 
-    if (!mosaicinfo)
+    if (!mosaicInfo)
     {
         exif->fCFARepeatPatternCols = mosaicInfo->fCFAPatternSize.v;
         exif->fCFARepeatPatternRows = mosaicInfo->fCFAPatternSize.h;
