@@ -230,14 +230,14 @@ QImage ThumbnailCreator::load(const ThumbnailIdentifier& identifier, const QRect
 
     if (d->thumbnailStorage == ThumbnailDatabase)
     {
-        d->dbIdForReplacement = -1;    // just to prevent bugs
+        d->dbIdForReplacement = -1;    // Just to prevent bugs
     }
 
-    // get info about path
+    // Get info about path
 
     ThumbnailInfo info = makeThumbnailInfo(identifier, rect);
 
-    // load pregenerated thumbnail
+    // Load pregenerated thumbnail
 
     ThumbnailImage image;
 
@@ -252,7 +252,7 @@ QImage ThumbnailCreator::load(const ThumbnailIdentifier& identifier, const QRect
                     return QImage();
                 }
 
-                // otherwise, fall through and generate
+                // Otherwise, fall through and generate
             }
             else
             {
@@ -276,7 +276,7 @@ QImage ThumbnailCreator::load(const ThumbnailIdentifier& identifier, const QRect
         return QImage();
     }
 
-    // if pregenerated thumbnail is not available, generate
+    // If pre-generated thumbnail is not available, generate
 
     if (image.isNull())
     {
@@ -294,7 +294,7 @@ QImage ThumbnailCreator::load(const ThumbnailIdentifier& identifier, const QRect
 
                 case FreeDesktopStandard:
                 {
-                    // image is stored rotated
+                    // Image is stored rotated
 
                     if (d->exifRotate)
                     {
@@ -334,7 +334,7 @@ QImage ThumbnailCreator::load(const ThumbnailIdentifier& identifier, const QRect
 
     if (d->thumbnailStorage == ThumbnailDatabase)
     {
-        // image is stored, or created, unrotated, and is now rotated for display
+        // Image is stored, or created, unrotated, and is now rotated for display
         // detail thumbnails are stored readily rotated
 
         if ((d->exifRotate && rect.isNull()) || (info.mimeType == QLatin1String("video")))
@@ -455,7 +455,7 @@ void ThumbnailCreator::store(const QString& path, const QImage& i, const QRect& 
     {
         case ThumbnailDatabase:
         {
-            // we must call isInDatabase or loadFromDatabase before storeInDatabase for d->dbIdForReplacement!
+            // We must call isInDatabase or loadFromDatabase before storeInDatabase for d->dbIdForReplacement!
 
             if (!isInDatabase(info))
             {

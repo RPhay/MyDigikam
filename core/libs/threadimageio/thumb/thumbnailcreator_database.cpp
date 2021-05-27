@@ -197,7 +197,7 @@ ThumbsDbInfo ThumbnailCreator::loadThumbsDbInfo(const ThumbnailInfo& info) const
         }
     }
 
-    // store for use in storeInDatabase()
+    // Store for use in storeInDatabase()
 
     d->dbIdForReplacement = dbInfo.id;
 
@@ -213,7 +213,7 @@ bool ThumbnailCreator::isInDatabase(const ThumbnailInfo& info) const
         return false;
     }
 
-    // check modification date
+    // Check modification date
 
     if (dbInfo.modificationDate < info.modificationDate)
     {
@@ -233,7 +233,7 @@ ThumbnailImage ThumbnailCreator::loadFromDatabase(const ThumbnailInfo& info) con
         return ThumbnailImage();
     }
 
-    // check modification date
+    // Check modification date
 
     if (dbInfo.modificationDate < info.modificationDate)
     {

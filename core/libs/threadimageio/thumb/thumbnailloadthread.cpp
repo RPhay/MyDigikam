@@ -741,18 +741,26 @@ void ThumbnailImageCatcher::slotThumbnailLoaded(const LoadingDescription& descri
     switch (d->state)
     {
         case Private::Inactive:
+        {
             break;
+        }
 
         case Private::Accepting:
+        {
             d->intermediate << Private::CatcherResult(description, image);
             break;
+        }
 
         case Private::Waiting:
+        {
             d->harvest(description, image);
             break;
+        }
 
         case Private::Quitting:
+        {
             break;
+        }
     }
 }
 

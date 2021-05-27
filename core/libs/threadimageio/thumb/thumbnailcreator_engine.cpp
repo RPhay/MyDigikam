@@ -56,7 +56,7 @@ ThumbnailImage ThumbnailCreator::createThumbnail(const ThumbnailInfo& info, cons
     {
         qCDebug(DIGIKAM_GENERAL_LOG) << "Trying to get thumbnail with details for" << path;
 
-        // when taking a detail, we have to load the image full size
+        // When taking a detail, we have to load the image full size
 
         qimage     = loadImageDetail(info, *metadata, detailRect, &profile);
         fromDetail = !qimage.isNull();
@@ -93,7 +93,8 @@ ThumbnailImage ThumbnailCreator::createThumbnail(const ThumbnailInfo& info, cons
                     }
                     else
                     {
-                        // use jpegutils
+                        // Use jpegutils
+
                         JPEGUtils::loadJPEGScaled(qimage, path, d->storageSize());
                     }
 
@@ -103,14 +104,14 @@ ThumbnailImage ThumbnailCreator::createThumbnail(const ThumbnailInfo& info, cons
                          (ext == QLatin1String("TIFF")) ||
                          (ext == QLatin1String("TIF")))
                 {
-                    // use DImg load scaled mode
+                    // Use DImg load scaled mode
 
                     qimage       = loadWithDImgScaled(path, &profile);
                     failedAtDImg = qimage.isNull();
                 }
                 else if (ext == QLatin1String("PGF"))
                 {
-                    // use pgf library to extract reduced version
+                    // Use pgf library to extract reduced version
 
                     PGFUtils::loadPGFScaled(qimage, path, d->storageSize());
                     failedAtPGFScaled = qimage.isNull();
@@ -170,7 +171,8 @@ ThumbnailImage ThumbnailCreator::createThumbnail(const ThumbnailInfo& info, cons
 
             if (qimage.isNull() && !failedAtJPEGScaled)
             {
-                // use jpegutils
+                // Use jpegutils
+
                 JPEGUtils::loadJPEGScaled(qimage, path, d->storageSize());
             }
 
@@ -178,7 +180,8 @@ ThumbnailImage ThumbnailCreator::createThumbnail(const ThumbnailInfo& info, cons
 
             if (qimage.isNull() && !failedAtPGFScaled)
             {
-                // use pgfutils
+                // Use pgfutils
+
                 PGFUtils::loadPGFScaled(qimage, path, d->storageSize());
             }
         }
@@ -262,7 +265,7 @@ QImage ThumbnailCreator::loadImageDetail(const ThumbnailInfo& info,
 
     if (!previews.isEmpty())
     {
-        // discard if smaller than half preview
+        // Discard if smaller than half preview
 
         QImage qimage        = previews.image();
         int acceptableWidth  = lround(previews.originalSize().width()  * 0.5);
@@ -298,7 +301,7 @@ QImage ThumbnailCreator::loadImageDetail(const ThumbnailInfo& info,
 
     if (img.load(path, loadFlags, d->observer, d->fastRawSettings))
     {
-        // discard if smaller than half preview
+        // Discard if smaller than half preview
 
         unsigned int acceptableWidth  = lround(img.originalRatioSize().width()  * 0.5);
         unsigned int acceptableHeight = lround(img.originalRatioSize().height() * 0.5);
@@ -315,8 +318,8 @@ QImage ThumbnailCreator::loadImageDetail(const ThumbnailInfo& info,
     {
         qDebug(DIGIKAM_GENERAL_LOG) << "Try to get thumbnail from DImg scaled for" << path;
 
-        //TODO: scaledLoading if detailRect is large
-        //TODO: use code from PreviewTask, including cache storage
+        // TODO: scaledLoading if detailRect is large
+        // TODO: use code from PreviewTask, including cache storage
 
         if (!img.load(path, false, profile ? true : false, false, false, d->observer, d->fastRawSettings))
         {
@@ -435,7 +438,7 @@ QImage ThumbnailCreator::exifRotate(const QImage& thumb, int orientation) const
 
     QMatrix matrix = MetaEngineRotation::toMatrix((MetaEngine::ImageOrientation)orientation);
 
-    // transform accordingly
+    // Transform accordingly
 
     return thumb.transformed(matrix);
 }

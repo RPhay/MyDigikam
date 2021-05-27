@@ -71,14 +71,14 @@ namespace Digikam
 
 QString ThumbnailCreator::normalThumbnailDir()
 {
-    return  QStandardPaths::writableLocation(QStandardPaths::GenericCacheLocation) +
-            QLatin1String("/thumbnails/normal/");
+    return (QStandardPaths::writableLocation(QStandardPaths::GenericCacheLocation) +
+                                             QLatin1String("/thumbnails/normal/"));
 }
 
 QString ThumbnailCreator::largeThumbnailDir()
 {
-    return  QStandardPaths::writableLocation(QStandardPaths::GenericCacheLocation) +
-            QLatin1String("/thumbnails/large/");
+    return (QStandardPaths::writableLocation(QStandardPaths::GenericCacheLocation) +
+                                             QLatin1String("/thumbnails/large/"));
 }
 
 QString ThumbnailCreator::thumbnailPath(const QString& filePath, const QString& basePath)
