@@ -541,9 +541,9 @@ bool DRawDecoder::extractRAWData(const QString& filePath,
 
         unsigned short* output = reinterpret_cast<unsigned short*>(rawData.data());
 
-        for (uint row = 0 ; row < raw->imgdata.sizes.iheight ; ++row)
+        for (unsigned int row = 0 ; row < raw->imgdata.sizes.iheight ; ++row)
         {
-            for (uint col = 0 ; col < raw->imgdata.sizes.iwidth ; ++col)
+            for (unsigned int col = 0 ; col < raw->imgdata.sizes.iwidth ; ++col)
             {
                 *output = raw->imgdata.image[raw->imgdata.sizes.iwidth*row + col][raw->COLOR(row, col)];
                 output++;
