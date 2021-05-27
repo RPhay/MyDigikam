@@ -106,7 +106,7 @@ int DNGWriter::Private::exportTarget(DNGWriterHost& host,
 
     // -----------------------------------------------------------------------------------------
 
-    qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Creating DNG file " << outputInfo.fileName();
+    qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Creating DNG file" << outputInfo.fileName();
 
     dng_image_writer writer;
     dng_file_stream filestream(QFile::encodeName(dngFilePath).constData(), true);
@@ -149,7 +149,7 @@ int DNGWriter::Private::exportTarget(DNGWriterHost& host,
 
     if (updateFileDate)
     {
-        qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Setting modification date from meta data: " << fileDate.toString();
+        qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Setting modification date from meta data:" << fileDate.toString();
 
         DFileOperations::setModificationTime(dngFilePath, fileDate);
     }

@@ -99,9 +99,6 @@ int DNGWriter::Private::identMosaic(DRawInfo* const identify,
     }
     else if ((identify->rawColors == 3)                 &&
              (identify->filterPattern.isEmpty())        &&
-/*
-             (identify->filterPattern == QString(""))   &&
-*/
              ((uint32)rawData.size() == (identify->outputSize.width() * identify->outputSize.height() * 3 * sizeof(uint16))))
     {
         bayerPattern = Private::LinearRaw;

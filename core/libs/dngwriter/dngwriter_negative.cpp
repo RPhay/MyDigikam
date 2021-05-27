@@ -102,7 +102,6 @@ int DNGWriter::Private::createNegative(AutoPtr<dng_negative>& negative,
             // Standard bayer mosaicing. All work fine there.
             // Bayer CCD mask: https://en.wikipedia.org/wiki/Bayer_filter
 
-            qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Bayer Pattern Standard Mosaic";
             negative->SetBayerMosaic(filter);
             break;
         }
@@ -113,7 +112,6 @@ int DNGWriter::Private::createNegative(AutoPtr<dng_negative>& negative,
             // It do not work in all settings. Need indeep investiguations.
             // Fuji superCCD: https://en.wikipedia.org/wiki/Super_CCD
 
-            qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Bayer Pattern Fuji Mosaic";
             negative->SetFujiMosaic(filter);
             break;
         }
@@ -123,24 +121,23 @@ int DNGWriter::Private::createNegative(AutoPtr<dng_negative>& negative,
             // TODO: Fuji is special case. Need to setup different bayer rules here.
             // It do not work in all settings. Need indeep investiguations.
 
-            qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Bayer Pattern Fuji6x6 Mosaic";
             negative->SetFujiMosaic6x6(filter);
             break;
         }
 
         case Private::FourColor:
         {
-            qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Bayer Pattern 4 colors Mosaic";
             negative->SetQuadMosaic(filter);
             break;
         }
 
         default:
         {
-            qCWarning(DIGIKAM_GENERAL_LOG) << "DNGWriter: Bayer pattern not handled...";
             break;
         }
     }
+
+    qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter:" << dngBayerPatternToString(bayerPattern);
 
     negative->SetWhiteLevel(identify->whitePoint, 0);
     negative->SetWhiteLevel(identify->whitePoint, 1);

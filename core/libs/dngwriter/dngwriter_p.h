@@ -117,6 +117,8 @@ public:
 
     QString dngErrorCodeToString(int errorCode)              const;
 
+    QString dngBayerPatternToString(int pattern)             const;
+
     /**
      * Code to hack RAW data extraction.
      */

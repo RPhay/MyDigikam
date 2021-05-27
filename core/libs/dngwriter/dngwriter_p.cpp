@@ -151,6 +151,42 @@ QString DNGWriter::Private::dngErrorCodeToString(int errorCode) const
     }
 }
 
+QString DNGWriter::Private::dngBayerPatternToString(int pattern) const
+{
+    switch (pattern)
+    {
+        case LinearRaw:
+        {
+            return QLatin1String("Bayer Linear Raw Pattern Mosaic");
+        }
+
+        case Standard:
+        {
+            return QLatin1String("Bayer Standard Pattern Mosaic");
+        }
+
+        case Fuji:
+        {
+            return QLatin1String("Bayer Fuji Pattern Mosaic");
+        }
+
+        case Fuji6x6:
+        {
+            return QLatin1String("Bayer Fuji 6x6 Pattern Mosaic");
+        }
+
+        case FourColor:
+        {
+            return QLatin1String("Bayer Four Color Pattern Mosaic");
+        }
+
+        default:    // Unknown
+        {
+            return QLatin1String("Bayer Unknown Pattern Mosaic");
+        }
+    }
+}
+
 int DNGWriter::Private::debugExtractedRAWData(const QByteArray& rawData)
 {
     QString   rawdataFilePath(inputInfo.completeBaseName() + QLatin1String(".dat"));
