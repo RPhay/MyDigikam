@@ -36,9 +36,31 @@ int DNGWriter::Private::storeExif(DNGWriterHost& /*host*/,
                                   DRawInfo* const /*identifyMake*/,
                                   DMetadata* const meta)
 {
+    // Self-write text information.
+
     exif->fModel.Set_ASCII(identify->model.toLatin1().constData());
     exif->fMake.Set_ASCII(identify->make.toLatin1().constData());
     exif->fSoftware.Set_ASCII(QString::fromLatin1("digiKam %1").arg(digiKamVersion()).toLatin1().constData());
+
+    // Self-Write CFAPattern (section G) manually from mosaic info container.
+
+    dng_mosaic_info* const mosaicInfo = m_negative->GetMosaicInfo();
+
+    if (!mosaicinfo)
+    {
+        exif->fCFARepeatPatternCols = mosaicInfo->fCFAPatternSize.v;
+        exif->fCFARepeatPatternRows = mosaicInfo->fCFAPatternSize.h;
+
+        for (uint16 c = 0 ; c < exif->fCFARepeatPatternCols ; ++c)
+        {
+            for (uint16 r = 0 ; r < exif->fCFARepeatPatternRows ; ++r)
+            {
+                exif->fCFAPattern[r][c] = mosaicInfo->fCFAPattern[c][r];
+            }
+        }
+    }
+
+    // Write information with Exiv2
 
     metaLoaded = meta->load(parent->inputFile());
 
