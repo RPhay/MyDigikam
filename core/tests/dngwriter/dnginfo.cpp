@@ -4,9 +4,10 @@
  * https://www.digikam.org
  *
  * Date        : 2011-01-07
- * Description : a command line tool to extract embedded originals
+ * Description : a command line tool to extract info from a DNG file
  *
- * Copyright (C) 2011 by Jens Mueller <tschenser at gmx dot de>
+ * Copyright (C) 2011      by Jens Mueller <tschenser at gmx dot de>
+ * Copyright (C) 2008-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -29,11 +30,19 @@
 
 // DNG SDK includes
 
-#include "dng_file_stream.h"
 #include "dng_host.h"
+#include "dng_camera_profile.h"
+#include "dng_color_space.h"
+#include "dng_file_stream.h"
 #include "dng_image.h"
+#include "dng_image_writer.h"
 #include "dng_info.h"
 #include "dng_memory_stream.h"
+#include "dng_opcodes.h"
+#include "dng_opcode_list.h"
+#include "dng_parse_utils.h"
+#include "dng_string.h"
+#include "dng_render.h"
 #include "dng_xmp_sdk.h"
 
 // Local includes
@@ -45,16 +54,17 @@ int main(int argc, char** argv)
     try
     {
         bool extractOriginal = false;
+        bool extractIfd      = false;
 
         if (argc == 1)
         {
-            qDebug() <<
-                    "\n"
-                    "dnginfo - DNG information tool\n"
-                    "Usage: %s [options] dngfile\n"
-                    "Valid options:\n"
-                    "  -extractraw            extract embedded original\n" <<
-                    argv[0];
+            qDebug() << "\n"
+                        "dnginfo - DNG information tool\n"
+                        "Usage: %s [options] dngfile\n"
+                        "Valid options:\n"
+                        "  -extractraw            extract embedded original\n"
+                        "  -extractifd            extract IFD images\n"
+                    << argv[0];
 
             return -1;
         }
@@ -68,6 +78,11 @@ int main(int argc, char** argv)
             if (option == QLatin1String("extractraw"))
             {
                 extractOriginal = true;
+            }
+
+            if (option == QLatin1String("extractifd"))
+            {
+                extractIfd = true;
             }
         }
 
@@ -100,8 +115,112 @@ int main(int argc, char** argv)
             negative->Parse(host, stream, info);
             negative->PostParse(host, stream, info);
 
+            qDebug().noquote() << QString::fromLatin1("Model:           %1").arg(QString::fromLatin1(negative->ModelName().Get()));
+            dng_rect defaultCropArea = negative->DefaultCropArea();
+            dng_rect activeArea = negative->GetLinearizationInfo()->fActiveArea;
+            qDebug().noquote() << QString::fromLatin1("FinalImageSize:  %1 x %2").arg(negative->DefaultFinalWidth()).arg(negative->DefaultFinalHeight());
+            qDebug().noquote() << QString::fromLatin1("RawImageSize:    %1 x %2").arg(info.fIFD[info.fMainIndex]->fImageWidth).arg(info.fIFD[info.fMainIndex]->fImageLength);
+            qDebug().noquote() << QString::fromLatin1("ActiveArea:      %1, %2 : %3 x %4").arg(activeArea.t).arg(activeArea.l).arg(activeArea.W()).arg(activeArea.H());
+            qDebug().noquote() << QString::fromLatin1("DefaultCropArea: %1, %2 : %3 x %4").arg(defaultCropArea.t).arg(defaultCropArea.l).arg(defaultCropArea.W()).arg(defaultCropArea.H());
+            qDebug().noquote() << QString::fromLatin1("OriginalData:    %1 bytes").arg(negative->OriginalRawFileDataLength());
+            qDebug().noquote() << QString::fromLatin1("PrivateData:     %1 bytes").arg(negative->PrivateLength());
+            qDebug().noquote() << QString::fromLatin1("CameraProfiles:  %1").arg(negative->ProfileCount());
+
+            qDebug() << endl;
+
+            for (uint32 i = 0 ; i < negative->ProfileCount() ; ++i)
+            {
+                qDebug().noquote() << QString::fromLatin1("  Profile: %1").arg(i);
+                dng_camera_profile dcp = negative->ProfileByIndex(i);
+                qDebug().noquote() << QString::fromLatin1("    Name:      %1").arg(QString::fromLatin1(dcp.Name().Get()));
+                qDebug().noquote() << QString::fromLatin1("    Copyright: %1").arg(QString::fromLatin1(dcp.Copyright().Get()));
+            }
+
+            qDebug() << endl;
+
+            qDebug().noquote() << QString::fromLatin1("Opcodes(1):      %1").arg(info.fIFD[info.fMainIndex]->fOpcodeList1Count);
+            qDebug().noquote() << QString::fromLatin1("Opcodes(2):      %1").arg(info.fIFD[info.fMainIndex]->fOpcodeList2Count);
+            qDebug().noquote() << QString::fromLatin1("Opcodes(3):      %1").arg(info.fIFD[info.fMainIndex]->fOpcodeList3Count);
+            qDebug().noquote() << QString::fromLatin1("MainImage:       %1").arg(info.fMainIndex);
+            qDebug().noquote() << QString::fromLatin1("ChainedCount:    %1").arg(info.ChainedIFDCount());
+
+            qDebug() << endl;
+
+            for (uint32 ifdIdx = 0 ; ifdIdx < info.IFDCount() ; ++ifdIdx)
+            {
+                dng_ifd* const ifd = info.fIFD[ifdIdx];
+
+                qDebug().noquote() << QString::fromLatin1("IFD: %1").arg(ifdIdx);
+                qDebug().noquote() << QString::fromLatin1("  ImageWidth:    %1").arg(ifd->fImageWidth);
+                qDebug().noquote() << QString::fromLatin1("  ImageLength:   %1").arg(ifd->fImageLength);
+                qDebug().noquote() << QString::fromLatin1("  BitsPerSample:");
+
+                for (uint32 i = 0 ; i < ifd->fSamplesPerPixel ; ++i)
+                {
+                    qDebug().noquote() << QString::fromLatin1("     %1").arg(ifd->fBitsPerSample[i]);
+                }
+
+                qDebug() << endl;
+
+                qDebug().noquote() << QString::fromLatin1("  Compression:               %1").arg(QLatin1String(LookupCompression(ifd->fCompression)));
+                qDebug().noquote() << QString::fromLatin1("  PhotometricInterpretation: %1").arg(QLatin1String(LookupPhotometricInterpretation(ifd->fPhotometricInterpretation)));
+                qDebug().noquote() << QString::fromLatin1("  SamplesPerPixel:           %1").arg(ifd->fSamplesPerPixel);
+                qDebug().noquote() << QString::fromLatin1("  PlanarConfiguration:       %1").arg(ifd->fPlanarConfiguration);
+                qDebug().noquote() << QString::fromLatin1("  LinearizationTableCount:   %1").arg(ifd->fLinearizationTableCount);
+                qDebug().noquote() << QString::fromLatin1("  LinearizationTableType:    %1").arg(ifd->fLinearizationTableType);
+
+                qDebug() << endl;
+
+                if (extractIfd)
+                {
+                    if ((ifd->fPlanarConfiguration == pcInterleaved) &&
+                        (ifd->fCompression         == ccJPEG)        &&
+                        (ifd->fSamplesPerPixel     == 3)             &&
+                        (ifd->fBitsPerSample[0]    == 8)             &&
+                        (ifd->fBitsPerSample[1]    == 8)             &&
+                        (ifd->fBitsPerSample[2]    == 8)             &&
+                        (ifd->TilesAcross()        == 1)             &&
+                        (ifd->TilesDown()          == 1))
+                    {
+                        uint64 tileOffset    = ifd->fTileOffset[0];
+                        uint64 tileLength    = ifd->fTileByteCount[0];
+                        uint8* const pBuffer = new uint8[tileLength];
+                        stream.SetReadPosition(tileOffset);
+                        stream.Get(pBuffer, tileLength);
+
+                        QString outfn2 = QString::fromLatin1("%1-ifd%2.jpg")
+                            .arg(dngFileInfo.absoluteFilePath())
+                            .arg(ifdIdx);
+
+                        dng_file_stream streamOF2(outfn2.toLatin1().constData(), true);
+                        streamOF2.Put(pBuffer, tileLength);
+
+                        delete [] pBuffer;
+
+                        qDebug() << "Extracted IFD image as JPEG:" << outfn2;
+                    }
+                    else
+                    {
+                        AutoPtr<dng_image> image;
+
+                        image.Reset(host.Make_dng_image(ifd->Bounds(), ifd->fSamplesPerPixel, ifd->PixelType()));
+                        ifd->ReadImage(host, stream, *image.Get());
+
+                        QString outfn = QString::fromLatin1("%1-ifd%2.tif")
+                            .arg(dngFileInfo.absoluteFilePath())
+                            .arg(ifdIdx);
+
+                        dng_file_stream streamOF(outfn.toLatin1().constData(), true);
+
+                        dng_image_writer writer;
+                        writer.WriteTIFF(host, streamOF, *image.Get(), (image->Planes() >= 3) ? piRGB : piBlackIsZero, ccUncompressed);
+
+                        qDebug() << "Extracted IFD image as TIF:" << outfn;
+                    }
+                }
+            }
+
             QString originalFileName(QString::fromUtf8(negative->OriginalRawFileName().Get()));
-    //      dng_fingerprint originalDigest = negative->OriginalRawFileDigest();
             quint32 originalDataLength     = negative->OriginalRawFileDataLength();
             const void* originalData       = negative->OriginalRawFileData();
 
@@ -149,7 +268,9 @@ int main(int argc, char** argv)
                         forkLength -= uncompressedDataSize;
 
                         QByteArray originalDataBlock = qUncompress((const uchar*)compressedDataBlock.data(), compressedDataBlock.size());
-                        //qDebug() << "compressed data block " << compressedDataBlock.size() << " -> " << originalDataBlock.size();
+/*
+                        qDebug() << "compressed data block " << compressedDataBlock.size() << " -> " << originalDataBlock.size();
+*/
                         originalDataStream.writeRawData(originalDataBlock.data(), originalDataBlock.size());
                     }
 
@@ -157,7 +278,7 @@ int main(int argc, char** argv)
                 }
                 else
                 {
-                    qCritical() << "no embedded originals found\n";
+                    qWarning() << "No embedded originals RAW data found";
                 }
             }
         }
@@ -170,13 +291,15 @@ int main(int argc, char** argv)
     catch (const dng_exception& exception)
     {
         int ret = exception.ErrorCode();
-        qDebug() << "DNGWriter: DNG SDK exception code (" << ret << ")" ;
-        return -1;
+        qCritical() << "DNGWriter: DNG SDK exception code (" << ret << ")";
+
+        return (-1);
     }
 
     catch (...)
     {
-        qDebug() << "DNGWriter: DNG SDK exception code unknow" ;
-        return -1;
+        qCritical() << "DNGWriter: DNG SDK exception code unknow";
+
+        return (-1);
     }
 }
