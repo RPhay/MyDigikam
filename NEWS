@@ -355,4 +355,5 @@ BUGFIXES:
 332 ==> 437680 - Crash if Geolocation editor is closed while coordinates are still being updated.
 333 ==> 437682 - Strange activity - If a year (2007) with date subdirectories is selected from the Album.
 334 ==> 437708 - Face tag spanning entire image added for photos taken with Windows Phone.
-335 ==> 
+335 ==> 437750 - digiKam causes 20 exiftool (32) .exe to run in the Task Manager panel at the end of the day W10.
+336 ==> 
