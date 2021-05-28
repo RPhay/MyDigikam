@@ -40,7 +40,7 @@ int main(int argc, char** argv)
 
     // Create ExifTool parser instance.
 
-    ExifToolParser* const parser = new ExifToolParser();
+    ExifToolParser* const parser = new ExifToolParser(qApp);
     QString ext;
     QString desc;
     ExifToolParser::ExifToolData parsed;
@@ -52,7 +52,7 @@ int main(int argc, char** argv)
         lst    = parsed.find(QLatin1String("READ_FORMATS")).value()[0].toStringList();
         qDebug() << "Readable file formats:";
 
-        for (int i = 0 ; i < lst.size()  ; i += 2)
+        for (int i = 0 ; i < lst.size() ; i += 2)
         {
             ext  = lst[i];
             desc = lst[i + 1];
@@ -66,7 +66,7 @@ int main(int argc, char** argv)
         lst    = parsed.find(QLatin1String("WRITE_FORMATS")).value()[0].toStringList();
         qDebug() << "Writable file formats:";
 
-        for (int i = 0 ; i < lst.size()  ; i += 2)
+        for (int i = 0 ; i < lst.size() ; i += 2)
         {
             ext  = lst[i];
             desc = lst[i + 1];

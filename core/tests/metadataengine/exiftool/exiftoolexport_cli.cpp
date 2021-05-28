@@ -56,7 +56,7 @@ int main(int argc, char** argv)
 
     // Create ExifTool parser instance.
 
-    ExifToolParser* const parser  = new ExifToolParser();
+    ExifToolParser* const parser = new ExifToolParser(qApp);
 
     // Read metadata from the file. Start ExifToolParser
 

@@ -50,7 +50,6 @@ int main(int argc, char** argv)
 
     MetaEngine::initializeExiv2();
 
-
     QFileInfo input(QString::fromUtf8(argv[1]));
 
     DMetadata meta;
@@ -68,7 +67,7 @@ int main(int argc, char** argv)
     QStringList removedTags;
     meta.exportChanges(exvPath, removedTags);
 
-    ExifToolParser* const parser = new ExifToolParser();
+    ExifToolParser* const parser = new ExifToolParser(qApp);
 
     if (!parser->applyChanges(input.filePath(), exvPath))
     {

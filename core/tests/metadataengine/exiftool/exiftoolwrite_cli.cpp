@@ -58,7 +58,7 @@ int main(int argc, char** argv)
 
     // Create ExifTool parser instance.
 
-    ExifToolParser* const parser = new ExifToolParser();
+    ExifToolParser* const parser = new ExifToolParser(qApp);
 
     ExifToolParser::ExifToolData newTags;
     newTags.insert(QLatin1String("EXIF:ImageDescription"),

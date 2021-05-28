@@ -172,7 +172,7 @@ bool DNGSettings::backupOriginalRawFile() const
 
 void DNGSettings::slotSetupChanged()
 {
-    ExifToolParser* const parser = new ExifToolParser();
+    ExifToolParser* const parser = new ExifToolParser(this);
 
     d->errorView->setVisible(!parser->exifToolAvailable());
 

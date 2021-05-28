@@ -58,7 +58,7 @@ int main(int argc, char** argv)
 
     QByteArray stdout = input.readAll();
 
-    ExifToolParser* const parser = new ExifToolParser();
+    ExifToolParser* const parser = new ExifToolParser(qApp);
 
     parser->setOutputStream(ExifToolProcess::LOAD_METADATA,     // Command action ID
                             stdout,                             // Output channel

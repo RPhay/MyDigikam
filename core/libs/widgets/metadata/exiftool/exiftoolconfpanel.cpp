@@ -162,7 +162,7 @@ void ExifToolConfPanel::slotExifToolBinaryFound(bool found)
     }
 
     d->exifToolFormats->clear();
-    ExifToolParser* const parser = new ExifToolParser();
+    ExifToolParser* const parser = new ExifToolParser(this);
     parser->setExifToolProgram(exifToolDirectory());
     ExifToolParser::ExifToolData parsed;
     QStringList read;

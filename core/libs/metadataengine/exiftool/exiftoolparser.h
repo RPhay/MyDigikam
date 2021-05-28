@@ -92,7 +92,7 @@ public:
     /// Constructor, Destructor, and Configuration Accessors. See exiftoolparser.cpp for details.
     //@{
 
-    explicit ExifToolParser(QObject* const parent = nullptr);
+    explicit ExifToolParser(QObject* const parent);
     ~ExifToolParser();
 
     void setExifToolProgram(const QString& path);

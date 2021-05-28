@@ -104,7 +104,7 @@ public:
     /**
      * Constructs a ExifToolProcess object with the given parent.
      */
-    explicit ExifToolProcess(QObject* const parent = nullptr);
+    explicit ExifToolProcess(QObject* const parent);
 
     /**
      * Destructs the ExifToolProcess object, i.e., killing the process.
