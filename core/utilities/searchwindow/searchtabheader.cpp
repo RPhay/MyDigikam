@@ -455,6 +455,7 @@ void SearchTabHeader::editSearch(SAlbum* album)
     if      (album->isAdvancedSearch())
     {
         SearchWindow* window = searchWindow();
+        window->reset();
         window->readSearch(album->id(), album->query());
         window->show();
         window->raise();
