@@ -8,8 +8,6 @@ APPLY_COMMON_POLICIES()
 
 include_directories(
     $<TARGET_PROPERTY:Qt5::Widgets,INTERFACE_INCLUDE_DIRECTORIES>
-
-    $<TARGET_PROPERTY:KF5::I18n,INTERFACE_INCLUDE_DIRECTORIES>
 )
 
 set(calibrator_sources ${CMAKE_CURRENT_SOURCE_DIR}/calibrator.cpp)
