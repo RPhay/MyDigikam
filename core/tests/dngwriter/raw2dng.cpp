@@ -23,11 +23,11 @@
 // Qt includes
 
 #include <QCoreApplication>
-#include <QDebug>
 
 // Local includes
 
 #include "dngwriter.h"
+#include "digikam_debug.h"
 
 int main(int argc, char **argv)
 {
@@ -35,8 +35,8 @@ int main(int argc, char **argv)
 
     if (argc != 2)
     {
-        qDebug() << "raw2dng - RAW Camera Image to DNG Converter";
-        qDebug() << "Usage: <rawfile>";
+        qCDebug(DIGIKAM_TESTS_LOG) << "raw2dng - RAW Camera Image to DNG Converter";
+        qCDebug(DIGIKAM_TESTS_LOG) << "Usage: <rawfile>";
 
         return -1;
     }

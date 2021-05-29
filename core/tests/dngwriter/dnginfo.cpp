@@ -23,7 +23,6 @@
 
 // Qt includes
 
-#include <QDebug>
 #include <QCoreApplication>
 #include <QFile>
 #include <QFileInfo>
@@ -48,6 +47,8 @@
 
 // Local includes
 
+#include "digikam_debug.h"
+
 #define CHUNK 65536
 
 int main(int argc, char** argv)
@@ -61,7 +62,7 @@ int main(int argc, char** argv)
 
         if (argc == 1)
         {
-            qDebug() << "\n"
+            qCDebug(DIGIKAM_TESTS_LOG) << "\n"
                         "dnginfo - DNG information tool\n"
                         "Usage: %s [options] dngfile\n"
                         "Valid options:\n"
@@ -91,7 +92,7 @@ int main(int argc, char** argv)
 
         if (index == argc)
         {
-            qCritical() << "*** No file specified\n";
+            qCCritical(DIGIKAM_TESTS_LOG) << "*** No file specified\n";
             return 1;
         }
 
@@ -118,61 +119,61 @@ int main(int argc, char** argv)
             negative->Parse(host, stream, info);
             negative->PostParse(host, stream, info);
 
-            qDebug().noquote() << QString::fromLatin1("Model:           %1").arg(QString::fromLatin1(negative->ModelName().Get()));
+            qCDebug(DIGIKAM_TESTS_LOG).noquote() << QString::fromLatin1("Model:           %1").arg(QString::fromLatin1(negative->ModelName().Get()));
             dng_rect defaultCropArea = negative->DefaultCropArea();
             dng_rect activeArea = negative->GetLinearizationInfo()->fActiveArea;
-            qDebug().noquote() << QString::fromLatin1("FinalImageSize:  %1 x %2").arg(negative->DefaultFinalWidth()).arg(negative->DefaultFinalHeight());
-            qDebug().noquote() << QString::fromLatin1("RawImageSize:    %1 x %2").arg(info.fIFD[info.fMainIndex]->fImageWidth).arg(info.fIFD[info.fMainIndex]->fImageLength);
-            qDebug().noquote() << QString::fromLatin1("ActiveArea:      %1, %2 : %3 x %4").arg(activeArea.t).arg(activeArea.l).arg(activeArea.W()).arg(activeArea.H());
-            qDebug().noquote() << QString::fromLatin1("DefaultCropArea: %1, %2 : %3 x %4").arg(defaultCropArea.t).arg(defaultCropArea.l).arg(defaultCropArea.W()).arg(defaultCropArea.H());
-            qDebug().noquote() << QString::fromLatin1("OriginalData:    %1 bytes").arg(negative->OriginalRawFileDataLength());
-            qDebug().noquote() << QString::fromLatin1("PrivateData:     %1 bytes").arg(negative->PrivateLength());
-            qDebug().noquote() << QString::fromLatin1("CameraProfiles:  %1").arg(negative->ProfileCount());
+            qCDebug(DIGIKAM_TESTS_LOG).noquote() << QString::fromLatin1("FinalImageSize:  %1 x %2").arg(negative->DefaultFinalWidth()).arg(negative->DefaultFinalHeight());
+            qCDebug(DIGIKAM_TESTS_LOG).noquote() << QString::fromLatin1("RawImageSize:    %1 x %2").arg(info.fIFD[info.fMainIndex]->fImageWidth).arg(info.fIFD[info.fMainIndex]->fImageLength);
+            qCDebug(DIGIKAM_TESTS_LOG).noquote() << QString::fromLatin1("ActiveArea:      %1, %2 : %3 x %4").arg(activeArea.t).arg(activeArea.l).arg(activeArea.W()).arg(activeArea.H());
+            qCDebug(DIGIKAM_TESTS_LOG).noquote() << QString::fromLatin1("DefaultCropArea: %1, %2 : %3 x %4").arg(defaultCropArea.t).arg(defaultCropArea.l).arg(defaultCropArea.W()).arg(defaultCropArea.H());
+            qCDebug(DIGIKAM_TESTS_LOG).noquote() << QString::fromLatin1("OriginalData:    %1 bytes").arg(negative->OriginalRawFileDataLength());
+            qCDebug(DIGIKAM_TESTS_LOG).noquote() << QString::fromLatin1("PrivateData:     %1 bytes").arg(negative->PrivateLength());
+            qCDebug(DIGIKAM_TESTS_LOG).noquote() << QString::fromLatin1("CameraProfiles:  %1").arg(negative->ProfileCount());
 
-            qDebug() << endl;
+            qCDebug(DIGIKAM_TESTS_LOG) << endl;
 
             for (uint32 i = 0 ; i < negative->ProfileCount() ; ++i)
             {
-                qDebug().noquote() << QString::fromLatin1("  Profile: %1").arg(i);
+                qCDebug(DIGIKAM_TESTS_LOG).noquote() << QString::fromLatin1("  Profile: %1").arg(i);
                 dng_camera_profile dcp = negative->ProfileByIndex(i);
-                qDebug().noquote() << QString::fromLatin1("    Name:      %1").arg(QString::fromLatin1(dcp.Name().Get()));
-                qDebug().noquote() << QString::fromLatin1("    Copyright: %1").arg(QString::fromLatin1(dcp.Copyright().Get()));
+                qCDebug(DIGIKAM_TESTS_LOG).noquote() << QString::fromLatin1("    Name:      %1").arg(QString::fromLatin1(dcp.Name().Get()));
+                qCDebug(DIGIKAM_TESTS_LOG).noquote() << QString::fromLatin1("    Copyright: %1").arg(QString::fromLatin1(dcp.Copyright().Get()));
             }
 
-            qDebug() << endl;
+            qCDebug(DIGIKAM_TESTS_LOG) << endl;
 
-            qDebug().noquote() << QString::fromLatin1("Opcodes(1):      %1").arg(info.fIFD[info.fMainIndex]->fOpcodeList1Count);
-            qDebug().noquote() << QString::fromLatin1("Opcodes(2):      %1").arg(info.fIFD[info.fMainIndex]->fOpcodeList2Count);
-            qDebug().noquote() << QString::fromLatin1("Opcodes(3):      %1").arg(info.fIFD[info.fMainIndex]->fOpcodeList3Count);
-            qDebug().noquote() << QString::fromLatin1("MainImage:       %1").arg(info.fMainIndex);
-            qDebug().noquote() << QString::fromLatin1("ChainedCount:    %1").arg(info.ChainedIFDCount());
+            qCDebug(DIGIKAM_TESTS_LOG).noquote() << QString::fromLatin1("Opcodes(1):      %1").arg(info.fIFD[info.fMainIndex]->fOpcodeList1Count);
+            qCDebug(DIGIKAM_TESTS_LOG).noquote() << QString::fromLatin1("Opcodes(2):      %1").arg(info.fIFD[info.fMainIndex]->fOpcodeList2Count);
+            qCDebug(DIGIKAM_TESTS_LOG).noquote() << QString::fromLatin1("Opcodes(3):      %1").arg(info.fIFD[info.fMainIndex]->fOpcodeList3Count);
+            qCDebug(DIGIKAM_TESTS_LOG).noquote() << QString::fromLatin1("MainImage:       %1").arg(info.fMainIndex);
+            qCDebug(DIGIKAM_TESTS_LOG).noquote() << QString::fromLatin1("ChainedCount:    %1").arg(info.ChainedIFDCount());
 
-            qDebug() << endl;
+            qCDebug(DIGIKAM_TESTS_LOG) << endl;
 
             for (uint32 ifdIdx = 0 ; ifdIdx < info.IFDCount() ; ++ifdIdx)
             {
                 dng_ifd* const ifd = info.fIFD[ifdIdx];
 
-                qDebug().noquote() << QString::fromLatin1("IFD: %1").arg(ifdIdx);
-                qDebug().noquote() << QString::fromLatin1("  ImageWidth:    %1").arg(ifd->fImageWidth);
-                qDebug().noquote() << QString::fromLatin1("  ImageLength:   %1").arg(ifd->fImageLength);
-                qDebug().noquote() << QString::fromLatin1("  BitsPerSample:");
+                qCDebug(DIGIKAM_TESTS_LOG).noquote() << QString::fromLatin1("IFD: %1").arg(ifdIdx);
+                qCDebug(DIGIKAM_TESTS_LOG).noquote() << QString::fromLatin1("  ImageWidth:    %1").arg(ifd->fImageWidth);
+                qCDebug(DIGIKAM_TESTS_LOG).noquote() << QString::fromLatin1("  ImageLength:   %1").arg(ifd->fImageLength);
+                qCDebug(DIGIKAM_TESTS_LOG).noquote() << QString::fromLatin1("  BitsPerSample:");
 
                 for (uint32 i = 0 ; i < ifd->fSamplesPerPixel ; ++i)
                 {
-                    qDebug().noquote() << QString::fromLatin1("     %1").arg(ifd->fBitsPerSample[i]);
+                    qCDebug(DIGIKAM_TESTS_LOG).noquote() << QString::fromLatin1("     %1").arg(ifd->fBitsPerSample[i]);
                 }
 
-                qDebug() << endl;
+                qCDebug(DIGIKAM_TESTS_LOG) << endl;
 
-                qDebug().noquote() << QString::fromLatin1("  Compression:               %1").arg(QLatin1String(LookupCompression(ifd->fCompression)));
-                qDebug().noquote() << QString::fromLatin1("  PhotometricInterpretation: %1").arg(QLatin1String(LookupPhotometricInterpretation(ifd->fPhotometricInterpretation)));
-                qDebug().noquote() << QString::fromLatin1("  SamplesPerPixel:           %1").arg(ifd->fSamplesPerPixel);
-                qDebug().noquote() << QString::fromLatin1("  PlanarConfiguration:       %1").arg(ifd->fPlanarConfiguration);
-                qDebug().noquote() << QString::fromLatin1("  LinearizationTableCount:   %1").arg(ifd->fLinearizationTableCount);
-                qDebug().noquote() << QString::fromLatin1("  LinearizationTableType:    %1").arg(ifd->fLinearizationTableType);
+                qCDebug(DIGIKAM_TESTS_LOG).noquote() << QString::fromLatin1("  Compression:               %1").arg(QLatin1String(LookupCompression(ifd->fCompression)));
+                qCDebug(DIGIKAM_TESTS_LOG).noquote() << QString::fromLatin1("  PhotometricInterpretation: %1").arg(QLatin1String(LookupPhotometricInterpretation(ifd->fPhotometricInterpretation)));
+                qCDebug(DIGIKAM_TESTS_LOG).noquote() << QString::fromLatin1("  SamplesPerPixel:           %1").arg(ifd->fSamplesPerPixel);
+                qCDebug(DIGIKAM_TESTS_LOG).noquote() << QString::fromLatin1("  PlanarConfiguration:       %1").arg(ifd->fPlanarConfiguration);
+                qCDebug(DIGIKAM_TESTS_LOG).noquote() << QString::fromLatin1("  LinearizationTableCount:   %1").arg(ifd->fLinearizationTableCount);
+                qCDebug(DIGIKAM_TESTS_LOG).noquote() << QString::fromLatin1("  LinearizationTableType:    %1").arg(ifd->fLinearizationTableType);
 
-                qDebug() << endl;
+                qCDebug(DIGIKAM_TESTS_LOG) << endl;
 
                 if (extractIfd)
                 {
@@ -200,7 +201,7 @@ int main(int argc, char** argv)
 
                         delete [] pBuffer;
 
-                        qDebug() << "Extracted IFD image as JPEG:" << outfn2;
+                        qCDebug(DIGIKAM_TESTS_LOG) << "Extracted IFD image as JPEG:" << outfn2;
                     }
                     else
                     {
@@ -218,7 +219,7 @@ int main(int argc, char** argv)
                         dng_image_writer writer;
                         writer.WriteTIFF(host, streamOF, *image.Get(), (image->Planes() >= 3) ? piRGB : piBlackIsZero, ccUncompressed);
 
-                        qDebug() << "Extracted IFD image as TIF:" << outfn;
+                        qCDebug(DIGIKAM_TESTS_LOG) << "Extracted IFD image as TIF:" << outfn;
                     }
                 }
             }
@@ -247,11 +248,11 @@ int main(int argc, char** argv)
                     }
 
                     QFile originalFile(dngFileInfo.absolutePath() + QLatin1Char('/') + originalFileName);
-                    qDebug() << "extracting embedded original to " << dngFileInfo.fileName();
+                    qCDebug(DIGIKAM_TESTS_LOG) << "extracting embedded original to " << dngFileInfo.fileName();
 
                     if (!originalFile.open(QIODevice::WriteOnly))
                     {
-                        qDebug() << "Cannot open file. Aborted...";
+                        qCDebug(DIGIKAM_TESTS_LOG) << "Cannot open file. Aborted...";
                         return 1;
                     }
 
@@ -272,7 +273,7 @@ int main(int argc, char** argv)
 
                         QByteArray originalDataBlock = qUncompress((const uchar*)compressedDataBlock.data(), compressedDataBlock.size());
 /*
-                        qDebug() << "compressed data block " << compressedDataBlock.size() << " -> " << originalDataBlock.size();
+                        qCDebug(DIGIKAM_TESTS_LOG) << "compressed data block " << compressedDataBlock.size() << " -> " << originalDataBlock.size();
 */
                         originalDataStream.writeRawData(originalDataBlock.data(), originalDataBlock.size());
                     }
@@ -281,7 +282,7 @@ int main(int argc, char** argv)
                 }
                 else
                 {
-                    qWarning() << "No embedded originals RAW data found";
+                    qCWarning(DIGIKAM_TESTS_LOG) << "No embedded originals RAW data found";
                 }
             }
         }
@@ -294,14 +295,14 @@ int main(int argc, char** argv)
     catch (const dng_exception& exception)
     {
         int ret = exception.ErrorCode();
-        qCritical() << "DNGWriter: DNG SDK exception code (" << ret << ")";
+        qCCritical(DIGIKAM_TESTS_LOG) << "DNGWriter: DNG SDK exception code (" << ret << ")";
 
         return (-1);
     }
 
     catch (...)
     {
-        qCritical() << "DNGWriter: DNG SDK exception code unknow";
+        qCCritical(DIGIKAM_TESTS_LOG) << "DNGWriter: DNG SDK exception code unknow";
 
         return (-1);
     }
