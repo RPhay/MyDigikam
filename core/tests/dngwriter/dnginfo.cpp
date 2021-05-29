@@ -24,6 +24,7 @@
 // Qt includes
 
 #include <QDebug>
+#include <QCoreApplication>
 #include <QFile>
 #include <QFileInfo>
 #include <QDataStream>
@@ -53,6 +54,8 @@ int main(int argc, char** argv)
 {
     try
     {
+        QCoreApplication app(argc, argv);
+
         bool extractOriginal = false;
         bool extractIfd      = false;
 

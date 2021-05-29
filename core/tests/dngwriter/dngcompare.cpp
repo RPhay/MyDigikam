@@ -26,6 +26,11 @@
 #include <cmath>
 #include <limits>
 
+// Qt includes
+
+#include <QDebug>
+#include <QCoreApplication>
+
 // DNG SDK includes
 
 #include "dng_file_stream.h"
@@ -861,80 +866,99 @@ void compareNegative(dng_negative* const negative1, dng_negative* const negative
     }
 }
 
-int main(int argc, const char* argv [])
+int main(int argc, char** argv)
 {
-    if (argc == 1)
+    try
     {
-        fprintf(stderr,
-                "\n"
-                "dngcompare - DNG comparsion tool\n"
-                "Usage: %s [options] <dngfile1> <dngfile2>\n",
-                argv[0]);
+        QCoreApplication app(argc, argv);
 
-        return -1;
-    }
-
-    const char* fileName1 = argv[1];
-    const char* fileName2 = argv[2];
-
-    dng_xmp_sdk::InitializeSDK();
-
-    dng_file_stream stream1(fileName1);
-    dng_host host1;
-    host1.SetKeepOriginalFile(true);
-
-    dng_info info1;
-    AutoPtr<dng_negative> negative1;
-    {
-        info1.Parse(host1, stream1);
-        info1.PostParse(host1);
-
-        if (!info1.IsValidDNG())
+        if (argc == 1)
         {
-            return dng_error_bad_format;
+            qDebug() << "\n"
+                        "dngcompare - DNG comparison tool\n"
+                        "Usage: %s [options] <dngfile1> <dngfile2>\n"
+                     << argv[0];
+
+            return -1;
         }
 
-        negative1.Reset(host1.Make_dng_negative());
-        negative1->Parse(host1, stream1, info1);
-        negative1->PostParse(host1, stream1, info1);
-    }
+        char* const fileName1 = argv[1];
+        char* const fileName2 = argv[2];
 
-    dng_file_stream stream2(fileName2);
-    dng_host host2;
-    host2.SetKeepOriginalFile(true);
+        dng_xmp_sdk::InitializeSDK();
 
-    dng_info info2;
-    AutoPtr<dng_negative> negative2;
-    {
-        info2.Parse(host2, stream2);
-        info2.PostParse(host2);
+        dng_file_stream stream1(fileName1);
+        dng_host host1;
+        host1.SetKeepOriginalFile(true);
 
-        if (!info2.IsValidDNG())
+        dng_info info1;
+        AutoPtr<dng_negative> negative1;
         {
-            return dng_error_bad_format;
+            info1.Parse(host1, stream1);
+            info1.PostParse(host1);
+
+            if (!info1.IsValidDNG())
+            {
+                return dng_error_bad_format;
+            }
+
+            negative1.Reset(host1.Make_dng_negative());
+            negative1->Parse(host1, stream1, info1);
+            negative1->PostParse(host1, stream1, info1);
         }
 
-        negative2.Reset(host2.Make_dng_negative());
-        negative2->Parse(host2, stream2, info2);
-        negative2->PostParse(host2, stream2, info2);
+        dng_file_stream stream2(fileName2);
+        dng_host host2;
+        host2.SetKeepOriginalFile(true);
+
+        dng_info info2;
+        AutoPtr<dng_negative> negative2;
+        {
+            info2.Parse(host2, stream2);
+            info2.PostParse(host2);
+
+            if (!info2.IsValidDNG())
+            {
+                return dng_error_bad_format;
+            }
+
+            negative2.Reset(host2.Make_dng_negative());
+            negative2->Parse(host2, stream2, info2);
+            negative2->PostParse(host2, stream2, info2);
+        }
+
+        negative1->SynchronizeMetadata();
+        negative2->SynchronizeMetadata();
+
+        dng_exif* const exif1 = negative1->GetExif();
+        dng_exif* const exif2 = negative2->GetExif();
+
+        qDebug() << " Exif";
+        compareExif(exif1, exif2);
+
+        qDebug() << " Main Ifd";
+        compareIfd(info1.fIFD[info1.fMainIndex], info2.fIFD[info1.fMainIndex]);
+
+        qDebug() << " Negative";
+        compareNegative(negative1.Get(), negative2.Get());
+
+        dng_xmp_sdk::TerminateSDK();
+
+        return 0;
     }
 
-    negative1->SynchronizeMetadata();
-    negative2->SynchronizeMetadata();
+    catch (const dng_exception& exception)
+    {
+        int ret = exception.ErrorCode();
+        qCritical() << "DNGWriter: DNG SDK exception code (" << ret << ")";
 
-    dng_exif* const exif1 = negative1->GetExif();
-    dng_exif* const exif2 = negative2->GetExif();
+        return (-1);
+    }
 
-    printf(" Exif\n");
-    compareExif(exif1, exif2);
+    catch (...)
+    {
+        qCritical() << "DNGWriter: DNG SDK exception code unknow";
 
-    printf(" Main Ifd\n");
-    compareIfd(info1.fIFD[info1.fMainIndex], info2.fIFD[info1.fMainIndex]);
-
-    printf(" Negative\n");
-    compareNegative(negative1.Get(), negative2.Get());
-
-    dng_xmp_sdk::TerminateSDK();
-
-    return 0;
+        return (-1);
+    }
 }
