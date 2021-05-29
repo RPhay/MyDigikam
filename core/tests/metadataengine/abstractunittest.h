@@ -27,7 +27,6 @@
 // Qt includes
 
 #include <QObject>
-#include <QDebug>
 #include <QDir>
 #include <QTest>
 #include <QString>
@@ -35,6 +34,7 @@
 // Local includes
 
 #include "digikam_config.h"
+#include "digikam_debug.h"
 #include "dmetadata.h"
 #include "wstoolutils.h"
 
@@ -66,13 +66,13 @@ protected Q_SLOTS:
 
 #ifdef HAVE_IMAGE_MAGICK
 
-        qDebug() << "Init ImageMagick";
+        qCDebug(DIGIKAM_TESTS_LOG) << "Init ImageMagick";
         InitializeMagick(nullptr);
 
 #endif
 
         MetaEngine::initializeExiv2();
-        qDebug() << "Using Exiv2 Version:" << MetaEngine::Exiv2Version();
+        qCDebug(DIGIKAM_TESTS_LOG) << "Using Exiv2 Version:" << MetaEngine::Exiv2Version();
         m_tempPath = QString::fromLatin1(QTest::currentAppName());
         m_tempPath.replace(QLatin1String("./"), QString());
     }
@@ -93,7 +93,7 @@ protected Q_SLOTS:
 #ifdef HAVE_IMAGE_MAGICK
 #   if MagickLibVersion >= 0x693
 
-        qDebug() << "Terminate ImageMagick";
+        qCDebug(DIGIKAM_TESTS_LOG) << "Terminate ImageMagick";
         TerminateMagick();
 
 #   endif

@@ -48,12 +48,12 @@ void PatchPreviewTest::testExtractPreviewAndFixMetadata()
 
 void PatchPreviewTest::patchPreview(const QString& file, bool rescale, int maxDim, int imageQuality)
 {
-    qDebug() << "File to process:" << file;
+    qCDebug(DIGIKAM_TESTS_LOG) << "File to process:" << file;
 
     QString path = m_tempDir.filePath(QFileInfo(file).fileName().trimmed()) +
                    QLatin1String(".jpg");
 
-    qDebug() << "Temporary target file:" << path;
+    qCDebug(DIGIKAM_TESTS_LOG) << "Temporary target file:" << path;
 
     bool ret = !path.isNull();
     QVERIFY(ret);

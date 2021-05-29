@@ -27,11 +27,11 @@
 #include <QString>
 #include <QTextStream>
 #include <QApplication>
-#include <QDebug>
 
 // Local includes
 
 #include "dmetadata.h"
+#include "digikam_debug.h"
 
 using namespace Digikam;
 
@@ -41,7 +41,7 @@ void s_printMetadataMap(const DMetadata::MetaDataMap& map)
     QTextStream stream(&output);
     stream << endl;
 
-    qDebug() << "Found" << map.size() << "tags:" << endl;
+    qCDebug(DIGIKAM_TESTS_LOG) << "Found" << map.size() << "tags:" << endl;
 
     for (DMetadata::MetaDataMap::const_iterator it = map.constBegin() ;
          it != map.constEnd() ; ++it)
@@ -63,7 +63,7 @@ void s_printMetadataMap(const DMetadata::MetaDataMap& map)
         stream << tagName << " : " << tagVal << endl;
     }
 
-    qDebug().noquote() << output;
+    qCDebug(DIGIKAM_TESTS_LOG).noquote() << output;
 }
 
 int main(int argc, char** argv)
@@ -72,8 +72,8 @@ int main(int argc, char** argv)
 
     if (argc != 2)
     {
-        qDebug() << "dmetadataloader_cli - CLI tool to check DMetadata image loader";
-        qDebug() << "Usage: <image>";
+        qCDebug(DIGIKAM_TESTS_LOG) << "dmetadataloader_cli - CLI tool to check DMetadata image loader";
+        qCDebug(DIGIKAM_TESTS_LOG) << "Usage: <image>";
         return -1;
     }
 
@@ -86,29 +86,29 @@ int main(int argc, char** argv)
 
     if (!ret)
     {
-        qWarning() << "Cannot load" << meta.getFilePath();
+        qCWarning(DIGIKAM_TESTS_LOG) << "Cannot load" << meta.getFilePath();
         return -1;
     }
 
-    qDebug() << QString::fromUtf8("-- Exif metadata from %1 --").arg(meta.getFilePath());
+    qCDebug(DIGIKAM_TESTS_LOG) << QString::fromUtf8("-- Exif metadata from %1 --").arg(meta.getFilePath());
 
     DMetadata::MetaDataMap map = meta.getExifTagsDataList();
     s_printMetadataMap(map);
 
-    qDebug() << QString::fromUtf8("-- Iptc metadata from %1 --").arg(meta.getFilePath());
+    qCDebug(DIGIKAM_TESTS_LOG) << QString::fromUtf8("-- Iptc metadata from %1 --").arg(meta.getFilePath());
 
     map = meta.getIptcTagsDataList();
     s_printMetadataMap(map);
 
     if (meta.supportXmp())
     {
-        qDebug() << QString::fromUtf8("-- Xmp metadata from %1 --").arg(meta.getFilePath());
+        qCDebug(DIGIKAM_TESTS_LOG) << QString::fromUtf8("-- Xmp metadata from %1 --").arg(meta.getFilePath());
         map = meta.getXmpTagsDataList();
         s_printMetadataMap(map);
     }
     else
     {
-        qWarning() << "Exiv2 has no XMP support...";
+        qCWarning(DIGIKAM_TESTS_LOG) << "Exiv2 has no XMP support...";
     }
 
     return 0;

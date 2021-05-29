@@ -28,11 +28,11 @@
 #include <QTest>
 #include <QStringList>
 #include <QString>
-#include <QDebug>
 
 // Local includes
 
 #include "dmetadata.h"
+#include "digikam_debug.h"
 
 using namespace Digikam;
 
@@ -46,7 +46,7 @@ RatingReadWriteTest::RatingReadWriteTest(QObject* const parent)
 void RatingReadWriteTest::initTestCase()
 {
     MetaEngine::initializeExiv2();
-    qDebug() << "Using Exiv2 Version:" << MetaEngine::Exiv2Version();
+    qCDebug(DIGIKAM_TESTS_LOG) << "Using Exiv2 Version:" << MetaEngine::Exiv2Version();
 }
 
 void RatingReadWriteTest::cleanupTestCase()
@@ -61,7 +61,7 @@ void RatingReadWriteTest::testSimpleReadAfterWrite()
     dmeta->setFilePath(QLatin1String("random.org"));
     int rez = -1;
 
-    qDebug() << dmeta->supportXmp();
+    qCDebug(DIGIKAM_TESTS_LOG) << dmeta->supportXmp();
 
     for (int i = 0; i < 6; i++)
     {

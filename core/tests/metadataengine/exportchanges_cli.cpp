@@ -26,11 +26,11 @@
 #include <QFileInfo>
 #include <QString>
 #include <QApplication>
-#include <QDebug>
 
 // Local includes
 
 #include "dmetadata.h"
+#include "digikam_debug.h"
 
 using namespace Digikam;
 
@@ -40,8 +40,8 @@ int main(int argc, char** argv)
 
     if (argc != 2)
     {
-        qDebug() << "dmetadatadiff_cli - CLI tool to export metadata changes to EXV";
-        qDebug() << "Usage: <image>";
+        qCDebug(DIGIKAM_TESTS_LOG) << "dmetadatadiff_cli - CLI tool to export metadata changes to EXV";
+        qCDebug(DIGIKAM_TESTS_LOG) << "Usage: <image>";
         return -1;
     }
 
@@ -54,7 +54,7 @@ int main(int argc, char** argv)
 
     if (!ret)
     {
-        qWarning() << "Cannot load" << meta.getFilePath();
+        qCWarning(DIGIKAM_TESTS_LOG) << "Cannot load" << meta.getFilePath();
         return -1;
     }
 

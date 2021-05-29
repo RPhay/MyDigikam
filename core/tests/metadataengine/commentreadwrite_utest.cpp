@@ -32,6 +32,7 @@
 // Local includes
 
 #include "dmetadata.h"
+#include "digikam_debug.h"
 
 QTEST_GUILESS_MAIN(CommentReadWriteTest)
 
@@ -45,7 +46,7 @@ CommentReadWriteTest::CommentReadWriteTest(QObject* const parent)
 void CommentReadWriteTest::initTestCase()
 {
     MetaEngine::initializeExiv2();
-    qDebug() << "Using Exiv2 Version:" << MetaEngine::Exiv2Version();
+    qCDebug(DIGIKAM_TESTS_LOG) << "Using Exiv2 Version:" << MetaEngine::Exiv2Version();
 
     MetaEngine::AltLangMap authorsMap,  authorsMap2;
     MetaEngine::AltLangMap datesMap,    datesMap2;

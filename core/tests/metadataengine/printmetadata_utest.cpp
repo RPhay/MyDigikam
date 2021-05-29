@@ -40,7 +40,7 @@ void PrintMetadataTest::printMetadataMap(const DMetadata::MetaDataMap& map)
     QTextStream stream(&output);
     stream << endl;
 
-    qDebug() << "Found" << map.size() << "tags:" << endl;
+    qCDebug(DIGIKAM_TESTS_LOG) << "Found" << map.size() << "tags:" << endl;
 
     for (DMetadata::MetaDataMap::const_iterator it = map.constBegin() ;
          it != map.constEnd() ; ++it)
@@ -66,7 +66,7 @@ void PrintMetadataTest::printMetadataMap(const DMetadata::MetaDataMap& map)
         stream << tagName << " : " << tagVal << endl;
     }
 
-    qDebug().noquote() << output;
+    qCDebug(DIGIKAM_TESTS_LOG).noquote() << output;
 }
 
 void PrintMetadataTest::testPrintMetadata()
@@ -106,7 +106,7 @@ void PrintMetadataTest::printMetadata(const QString& filePath, bool exif, bool i
 
 void PrintMetadataTest::loadExif(const DMetadata& meta, bool expected)
 {
-    qDebug() << QString::fromUtf8("-- Exif metadata from %1 --").arg(meta.getFilePath());
+    qCDebug(DIGIKAM_TESTS_LOG) << QString::fromUtf8("-- Exif metadata from %1 --").arg(meta.getFilePath());
 
     DMetadata::MetaDataMap map = meta.getExifTagsDataList();
     QCOMPARE(!map.isEmpty(), expected);
@@ -116,7 +116,7 @@ void PrintMetadataTest::loadExif(const DMetadata& meta, bool expected)
 
 void PrintMetadataTest::loadIptc(const DMetadata& meta, bool expected)
 {
-    qDebug() << QString::fromUtf8("-- Iptc metadata from %1 --").arg(meta.getFilePath());
+    qCDebug(DIGIKAM_TESTS_LOG) << QString::fromUtf8("-- Iptc metadata from %1 --").arg(meta.getFilePath());
 
     DMetadata::MetaDataMap map = meta.getIptcTagsDataList();
     QCOMPARE(!map.isEmpty(), expected);
@@ -126,7 +126,7 @@ void PrintMetadataTest::loadIptc(const DMetadata& meta, bool expected)
 
 void PrintMetadataTest::loadXmp(const DMetadata& meta, bool expected)
 {
-    qDebug() << QString::fromUtf8("-- Xmp metadata from %1 --").arg(meta.getFilePath());
+    qCDebug(DIGIKAM_TESTS_LOG) << QString::fromUtf8("-- Xmp metadata from %1 --").arg(meta.getFilePath());
 
     if (meta.supportXmp())
     {

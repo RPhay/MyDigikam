@@ -25,11 +25,11 @@
 
 #include <QString>
 #include <QCoreApplication>
-#include <QDebug>
 #include <QVariant>
 
 // Local includes
 
+#include "digikam_debug.h"
 #include "exiftoolparser.h"
 
 using namespace Digikam;
@@ -50,11 +50,11 @@ int main(int argc, char** argv)
     {
         parsed = parser->currentData();
         lst    = parsed.find(QLatin1String("TRANSLATIONS_LIST")).value()[0].toStringList();
-        qDebug() << "Available translations:";
+        qCDebug(DIGIKAM_TESTS_LOG) << "Available translations:";
 
         for (int i = 0 ; i < lst.size() ; ++i)
         {
-            qDebug() << lst[i];
+            qCDebug(DIGIKAM_TESTS_LOG) << lst[i];
         }
     }
 

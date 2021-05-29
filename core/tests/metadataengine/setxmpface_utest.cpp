@@ -44,11 +44,11 @@ void SetXmpFaceTest::testSetXmpFace()
 
 void SetXmpFaceTest::setXmpFace(const QString& file)
 {
-    qDebug() << "File to process:          " << file;
+    qCDebug(DIGIKAM_TESTS_LOG) << "File to process:          " << file;
 
     QString filePath = m_tempDir.filePath(QFileInfo(file).fileName().trimmed());
 
-    qDebug() << "Temporary target file:    " << filePath;
+    qCDebug(DIGIKAM_TESTS_LOG) << "Temporary target file:    " << filePath;
 
     bool ret = !filePath.isNull();
     QVERIFY(ret);
@@ -63,7 +63,7 @@ void SetXmpFaceTest::setXmpFace(const QString& file)
     ret = meta->load(filePath);
     QVERIFY(ret);
 
-    qDebug() << "Add region with face tags in file...";
+    qCDebug(DIGIKAM_TESTS_LOG) << "Add region with face tags in file...";
 
     QMultiMap<QString, QVariant> faces;
 
@@ -81,7 +81,7 @@ void SetXmpFaceTest::setXmpFace(const QString& file)
     ret = meta->applyChanges();
     QVERIFY(ret);
 
-    qDebug() << "Check if face tags are well assigned in file...";
+    qCDebug(DIGIKAM_TESTS_LOG) << "Check if face tags are well assigned in file...";
 
     QScopedPointer<DMetadata> meta2(new DMetadata);
     ret = meta2->load(filePath);
@@ -99,7 +99,7 @@ void SetXmpFaceTest::setXmpFace(const QString& file)
     ret = meta2->applyChanges();
     QVERIFY(ret);
 
-    qDebug() << "Clear face tags from file...";
+    qCDebug(DIGIKAM_TESTS_LOG) << "Clear face tags from file...";
 
     QScopedPointer<DMetadata> meta3(new DMetadata);
     ret = meta3->load(filePath);
@@ -109,7 +109,7 @@ void SetXmpFaceTest::setXmpFace(const QString& file)
     ret = meta3->applyChanges();
     QVERIFY(ret);
 
-    qDebug() << "Check if face tags are well removed from file...";
+    qCDebug(DIGIKAM_TESTS_LOG) << "Check if face tags are well removed from file...";
 
     QScopedPointer<DMetadata> meta4(new DMetadata);
     ret = meta4->load(filePath);

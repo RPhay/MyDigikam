@@ -62,12 +62,12 @@ void UseXmpSidecarTest::testUseXmpSidecar()
 void UseXmpSidecarTest::useXmpSidecar(const QString& file,
                                       const MetaEngineSettingsContainer& settings)
 {
-    qDebug() << "File to process:          " << file;
+    qCDebug(DIGIKAM_TESTS_LOG) << "File to process:          " << file;
 
     QString path    = m_tempDir.filePath(QFileInfo(file).fileName().trimmed());
     QString pathXmp = path + QLatin1String(".xmp");
 
-    qDebug() << "Temporary target file:    " << path;
+    qCDebug(DIGIKAM_TESTS_LOG) << "Temporary target file:    " << path;
 
     bool ret = !path.isNull();
     QVERIFY(ret);
@@ -77,7 +77,7 @@ void UseXmpSidecarTest::useXmpSidecar(const QString& file,
     ret = target.copy(path);
     QVERIFY(ret);
 
-    qDebug() << "Temporary XMP target file:" << pathXmp;
+    qCDebug(DIGIKAM_TESTS_LOG) << "Temporary XMP target file:" << pathXmp;
 
     ret = !pathXmp.isNull();
     QVERIFY(ret);

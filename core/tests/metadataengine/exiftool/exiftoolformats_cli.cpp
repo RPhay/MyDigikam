@@ -25,11 +25,11 @@
 
 #include <QString>
 #include <QCoreApplication>
-#include <QDebug>
 #include <QVariant>
 
 // Local includes
 
+#include "digikam_debug.h"
 #include "exiftoolparser.h"
 
 using namespace Digikam;
@@ -50,13 +50,13 @@ int main(int argc, char** argv)
     {
         parsed = parser->currentData();
         lst    = parsed.find(QLatin1String("READ_FORMATS")).value()[0].toStringList();
-        qDebug() << "Readable file formats:";
+        qCDebug(DIGIKAM_TESTS_LOG) << "Readable file formats:";
 
         for (int i = 0 ; i < lst.size() ; i += 2)
         {
             ext  = lst[i];
             desc = lst[i + 1];
-            qDebug() << ext << desc;
+            qCDebug(DIGIKAM_TESTS_LOG) << ext << desc;
         }
     }
 
@@ -64,13 +64,13 @@ int main(int argc, char** argv)
     {
         parsed = parser->currentData();
         lst    = parsed.find(QLatin1String("WRITE_FORMATS")).value()[0].toStringList();
-        qDebug() << "Writable file formats:";
+        qCDebug(DIGIKAM_TESTS_LOG) << "Writable file formats:";
 
         for (int i = 0 ; i < lst.size() ; i += 2)
         {
             ext  = lst[i];
             desc = lst[i + 1];
-            qDebug() << ext << desc;
+            qCDebug(DIGIKAM_TESTS_LOG) << ext << desc;
         }
     }
 

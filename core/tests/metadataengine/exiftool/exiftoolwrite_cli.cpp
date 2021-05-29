@@ -25,12 +25,12 @@
 
 #include <QString>
 #include <QCoreApplication>
-#include <QDebug>
 #include <QVariant>
 
 // Local includes
 
 #include "dimg.h"
+#include "digikam_debug.h"
 #include "dpluginloader.h"
 #include "metaengine.h"
 #include "exiftoolparser.h"
@@ -43,8 +43,8 @@ int main(int argc, char** argv)
 
     if (argc != 2)
     {
-        qDebug() << "exiftoolwrite_cli - CLI tool to write metadata with ExifTool in image";
-        qDebug() << "Usage: <image to patch>";
+        qCDebug(DIGIKAM_TESTS_LOG) << "exiftoolwrite_cli - CLI tool to write metadata with ExifTool in image";
+        qCDebug(DIGIKAM_TESTS_LOG) << "Usage: <image to patch>";
         return -1;
     }
 

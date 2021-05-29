@@ -32,6 +32,7 @@
 // Local includes
 
 #include "dmetadata.h"
+#include "digikam_debug.h"
 
 using namespace Digikam;
 
@@ -45,7 +46,7 @@ TagsReadWriteTest::TagsReadWriteTest(QObject* const parent)
 void TagsReadWriteTest::initTestCase()
 {
     MetaEngine::initializeExiv2();
-    qDebug() << "Using Exiv2 Version:" << MetaEngine::Exiv2Version();
+    qCDebug(DIGIKAM_TESTS_LOG) << "Using Exiv2 Version:" << MetaEngine::Exiv2Version();
 
     this->tagSet1  << QLatin1String("/root/child1/child2")
                    << QLatin1String("/root/extra/child2/triple")

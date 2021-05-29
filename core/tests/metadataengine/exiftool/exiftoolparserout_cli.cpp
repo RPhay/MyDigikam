@@ -26,12 +26,12 @@
 #include <QString>
 #include <QByteArray>
 #include <QCoreApplication>
-#include <QDebug>
 #include <QFile>
 #include <QObject>
 
 // Local includes
 
+#include "digikam_debug.h"
 #include "exiftoolparser.h"
 #include "exiftoolprocess.h"
 
@@ -43,8 +43,8 @@ int main(int argc, char** argv)
 
     if (argc != 2)
     {
-        qDebug() << "exiftoolparserout_cli - CLI tool to check ExifTool stream parsing";
-        qDebug() << "Usage: <ExifTool input stream>";
+        qCDebug(DIGIKAM_TESTS_LOG) << "exiftoolparserout_cli - CLI tool to check ExifTool stream parsing";
+        qCDebug(DIGIKAM_TESTS_LOG) << "Usage: <ExifTool input stream>";
         return -1;
     }
 
@@ -52,7 +52,7 @@ int main(int argc, char** argv)
 
     if (!input.open(QIODevice::ReadOnly))
     {
-        qDebug() << "Cannot open ExifTool input stream to read...";
+        qCDebug(DIGIKAM_TESTS_LOG) << "Cannot open ExifTool input stream to read...";
         return false;
     }
 

@@ -71,10 +71,10 @@ void ApplyTagsTest::applyTags(const QString& file,
                               bool  expectedRead,
                               bool  expectedWrite)
 {
-    qDebug() << "File to process:" << file;
+    qCDebug(DIGIKAM_TESTS_LOG) << "File to process:" << file;
     QString path = m_tempDir.filePath(QFileInfo(file).fileName().trimmed());
 
-    qDebug() << "Temporary target file:" << path;
+    qCDebug(DIGIKAM_TESTS_LOG) << "Temporary target file:" << path;
 
     bool ret = !path.isNull();
     QVERIFY(ret);

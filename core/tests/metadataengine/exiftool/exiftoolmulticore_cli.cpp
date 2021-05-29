@@ -29,13 +29,13 @@
 #include <QStringList>
 #include <QTextStream>
 #include <QCoreApplication>
-#include <QDebug>
 #include <QVariant>
 #include <QObject>
 #include <QtConcurrent>   // krazy:exclude=includes
 
 // Local includes
 
+#include "digikam_debug.h"
 #include "exiftoolparser.h"
 
 using namespace Digikam;
@@ -48,7 +48,7 @@ bool exifToolParse(const QString& file)
 
     if (!parser->load(file))
     {
-        qWarning() << "Cannot process" << file;
+        qCWarning(DIGIKAM_TESTS_LOG) << "Cannot process" << file;
         delete parser;
 
         return false;
@@ -57,7 +57,7 @@ bool exifToolParse(const QString& file)
     QString path                         = parser->currentPath();
     ExifToolParser::ExifToolData parsed  = parser->currentData();
 
-    qDebug().noquote() << "Processing source file:" << path;
+    qCDebug(DIGIKAM_TESTS_LOG).noquote() << "Processing source file:" << path;
 
     // Print returned and sorted tags.
 
@@ -66,7 +66,7 @@ bool exifToolParse(const QString& file)
 
     if (!output.open(QIODevice::WriteOnly))
     {
-        qDebug() << "Cannot open ExifTool output file to write...";
+        qCDebug(DIGIKAM_TESTS_LOG) << "Cannot open ExifTool output file to write...";
         delete parser;
 
         return false;
@@ -121,7 +121,7 @@ bool exifToolParse(const QString& file)
 
     output.close();
 
-    qDebug().noquote() << "Processed source file:" << path;
+    qCDebug(DIGIKAM_TESTS_LOG).noquote() << "Processed source file:" << path;
     delete parser;
 
     return true;
@@ -133,8 +133,8 @@ int main(int argc, char** argv)
 
     if (argc != 2)
     {
-        qDebug() << "exiftooloutpu_cli - CLI tool to check ExifTool with multicore";
-        qDebug() << "Usage: <dir>";
+        qCDebug(DIGIKAM_TESTS_LOG) << "exiftooloutpu_cli - CLI tool to check ExifTool with multicore";
+        qCDebug(DIGIKAM_TESTS_LOG) << "Usage: <dir>";
 
         return -1;
     }
@@ -143,7 +143,7 @@ int main(int argc, char** argv)
     imageDir.setNameFilters(QStringList() << QLatin1String("*.jpg"));
     QStringList imageFiles = imageDir.entryList();
 
-    qDebug() << "ExifTool parsing images:" << imageFiles;
+    qCDebug(DIGIKAM_TESTS_LOG) << "ExifTool parsing images:" << imageFiles;
 
     QList <QFuture<void> > tasks;
 

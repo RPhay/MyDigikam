@@ -25,11 +25,11 @@
 
 #include <QString>
 #include <QCoreApplication>
-#include <QDebug>
 #include <QVariant>
 
 // Local includes
 
+#include "digikam_debug.h"
 #include "dmetadata.h"
 #include "dpluginloader.h"
 #include "metaengine.h"
@@ -43,8 +43,8 @@ int main(int argc, char** argv)
 
     if (argc != 2)
     {
-        qDebug() << "exiftoolapplychanges_cli - CLI tool to write metadata with ExifTool in image using EXV constainer";
-        qDebug() << "Usage: <image to patch>";
+        qCDebug(DIGIKAM_TESTS_LOG) << "exiftoolapplychanges_cli - CLI tool to write metadata with ExifTool in image using EXV constainer";
+        qCDebug(DIGIKAM_TESTS_LOG) << "Usage: <image to patch>";
         return -1;
     }
 
@@ -57,7 +57,7 @@ int main(int argc, char** argv)
 
     if (!ret)
     {
-        qWarning() << "Cannot load" << meta.getFilePath();
+        qCWarning(DIGIKAM_TESTS_LOG) << "Cannot load" << meta.getFilePath();
         return -1;
     }
 
@@ -71,7 +71,7 @@ int main(int argc, char** argv)
 
     if (!parser->applyChanges(input.filePath(), exvPath))
     {
-        qWarning() << "Cannot apply changes with ExifTool on" << input.filePath();
+        qCWarning(DIGIKAM_TESTS_LOG) << "Cannot apply changes with ExifTool on" << input.filePath();
         return -1;
     }
 

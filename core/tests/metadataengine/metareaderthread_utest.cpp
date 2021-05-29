@@ -26,7 +26,6 @@
 // Qt includes
 
 #include <QDirIterator>
-#include <QDebug>
 #include <QApplication>
 #include <QSignalSpy>
 #include <QScopedPointer>
@@ -35,6 +34,7 @@
 // Local includes
 
 #include "dmetadata.h"
+#include "digikam_debug.h"
 #include "metaengine_previews.h"
 #include "digikam_globals.h"
 
@@ -47,7 +47,7 @@ Mytask::Mytask(QObject* const parent)
 
 void Mytask::run()
 {
-    qDebug() << "Processing:" << url.path();
+    qCDebug(DIGIKAM_TESTS_LOG) << "Processing:" << url.path();
     bool processed = false;
 
     if (direction != MetaReaderThread::READ_PREVIEW_FROM_FILE)
@@ -112,7 +112,7 @@ void Mytask::run()
 
     emit signalStats(url, processed);
 
-    qDebug() << "Processed:" << url.path();
+    qCDebug(DIGIKAM_TESTS_LOG) << "Processed:" << url.path();
 
     emit signalDone();
 }
@@ -184,8 +184,8 @@ void MetaReaderThread::slotJobFinished()
 {
     ActionThreadBase::slotJobFinished();
 
-    qDebug() << "Pending items to process:" << pendingCount();
-    qDebug() << "Elaspsed time in seconds:" << m_timer.elapsed() / 1000.0;
+    qCDebug(DIGIKAM_TESTS_LOG) << "Pending items to process:" << pendingCount();
+    qCDebug(DIGIKAM_TESTS_LOG) << "Elaspsed time in seconds:" << m_timer.elapsed() / 1000.0;
 
     if (isEmpty())
     {
@@ -246,13 +246,13 @@ void MetaReaderThreadTest::testMetaReaderThread()
     // Template file can be found at core/tests/metadataengine/data/
 
     QSettings conf(QLatin1String("MetaReaderThreadTest"));
-    qDebug() << "Check custom configuration file" << conf.fileName();
+    qCDebug(DIGIKAM_TESTS_LOG) << "Check custom configuration file" << conf.fileName();
 
     if (!QFileInfo::exists(conf.fileName()))
     {
-        qDebug() << "Configuration file do not exists.";
-        qDebug() << "You can customize this unit-test to copy the template file from";
-        qDebug() << m_originalImageFolder << "in your home directory...";
+        qCDebug(DIGIKAM_TESTS_LOG) << "Configuration file do not exists.";
+        qCDebug(DIGIKAM_TESTS_LOG) << "You can customize this unit-test to copy the template file from";
+        qCDebug(DIGIKAM_TESTS_LOG) << m_originalImageFolder << "in your home directory...";
     }
     else
     {
@@ -262,7 +262,7 @@ void MetaReaderThreadTest::testMetaReaderThread()
 
         if (useConf)
         {
-            qDebug() << "We will use custom configuration file with this unit-test...";
+            qCDebug(DIGIKAM_TESTS_LOG) << "We will use custom configuration file with this unit-test...";
 
             threadsToUse        = conf.value(QLatin1String("ThreadsToUse"), 0).toInt();
             QString confFilters = conf.value(QLatin1String("Filters"), QString()).toString();
@@ -308,7 +308,7 @@ void MetaReaderThreadTest::runMetaReader(const QString& path,
                                          const MetaEngineSettingsContainer& settings,
                                          int threadsToUse)
 {
-    qDebug() << "-- Start to process" << path << "------------------------------";
+    qCDebug(DIGIKAM_TESTS_LOG) << "-- Start to process" << path << "------------------------------";
 
     QList<QUrl> list;
     QDirIterator it(path, mimeTypes,
@@ -323,7 +323,7 @@ void MetaReaderThreadTest::runMetaReader(const QString& path,
 
     if (list.isEmpty())
     {
-        qDebug() << "Files list to process is empty!";
+        qCDebug(DIGIKAM_TESTS_LOG) << "Files list to process is empty!";
         return;
     }
 
@@ -342,7 +342,7 @@ void MetaReaderThreadTest::runMetaReader(const QString& path,
 
     while (!spy.wait(1000));  // Time-out in milliseconds
 
-    qDebug() << endl << "Scan have been completed:"                                                    << endl
+    qCDebug(DIGIKAM_TESTS_LOG) << endl << "Scan have been completed:"                                                    << endl
              <<         "    Processing duration:" << thread->m_timer.elapsed() / 1000.0 << " seconds" << endl
              <<         "    Root path          :" << path                                             << endl
              <<         "    Number of files    :" << list.size()                                      << endl

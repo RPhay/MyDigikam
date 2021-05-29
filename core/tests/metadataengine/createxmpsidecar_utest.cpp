@@ -48,12 +48,12 @@ void CreateXmpSidecarTest::testCreateXmpSidecar()
 void CreateXmpSidecarTest::createXmpSidecar(const QString& file,
                                             const MetaEngineSettingsContainer& settings)
 {
-    qDebug() << "File to process:          " << file;
+    qCDebug(DIGIKAM_TESTS_LOG) << "File to process:          " << file;
 
     QString path    = m_tempDir.filePath(QFileInfo(file).fileName().trimmed());
     QString pathXmp = path + QLatin1String(".xmp");
 
-    qDebug() << "Temporary target file:    " << path;
+    qCDebug(DIGIKAM_TESTS_LOG) << "Temporary target file:    " << path;
 
     bool ret = !path.isNull();
     QVERIFY(ret);
@@ -66,7 +66,7 @@ void CreateXmpSidecarTest::createXmpSidecar(const QString& file,
 
     // Check if no xmp sidecar relevant is present.
 
-    qDebug() << "Temporary XMP target file to create:" << pathXmp;
+    qCDebug(DIGIKAM_TESTS_LOG) << "Temporary XMP target file to create:" << pathXmp;
 
     ret = !pathXmp.isNull();
     QVERIFY(ret);
@@ -86,7 +86,7 @@ void CreateXmpSidecarTest::createXmpSidecar(const QString& file,
     ret = sidecar.exists();
     QVERIFY(ret);
 
-    qDebug() << "Sidecar" << pathXmp << "size :" << sidecar.size();
+    qCDebug(DIGIKAM_TESTS_LOG) << "Sidecar" << pathXmp << "size :" << sidecar.size();
 
     // Check if xmp sidecar are created and can be loaded
     QScopedPointer<DMetadata> meta2(new DMetadata);

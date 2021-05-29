@@ -27,13 +27,13 @@
 #include <QStringList>
 #include <QTextStream>
 #include <QCoreApplication>
-#include <QDebug>
 #include <QVariant>
 #include <QObject>
 
 // Local includes
 
 #include "dimg.h"
+#include "digikam_debug.h"
 #include "dpluginloader.h"
 #include "metaengine.h"
 #include "exiftoolparser.h"
@@ -46,8 +46,8 @@ int main(int argc, char** argv)
 
     if (argc != 2)
     {
-        qDebug() << "exiftoolexport_cli - CLI tool to export ExifTool metadata from image";
-        qDebug() << "Usage: <image>";
+        qCDebug(DIGIKAM_TESTS_LOG) << "exiftoolexport_cli - CLI tool to export ExifTool metadata from image";
+        qCDebug(DIGIKAM_TESTS_LOG) << "Usage: <image>";
         return -1;
     }
 
@@ -62,19 +62,19 @@ int main(int argc, char** argv)
 
     if (!parser->loadChunk(QString::fromUtf8(argv[1])))
     {
-        qWarning() << "Metadata chunk cannot be loaded";
+        qCWarning(DIGIKAM_TESTS_LOG) << "Metadata chunk cannot be loaded";
         return -1;
     }
 
     ExifToolParser::ExifToolData chunk = parser->currentData();
 
-    qDebug() << "Metadata chunk loaded";
+    qCDebug(DIGIKAM_TESTS_LOG) << "Metadata chunk loaded";
 
     ExifToolParser::ExifToolData::iterator it = chunk.find(QLatin1String("EXV"));
 
     if (it == chunk.end())
     {
-        qWarning() << "Metadata chunk is empty";
+        qCWarning(DIGIKAM_TESTS_LOG) << "Metadata chunk is empty";
         return -1;
     }
 
@@ -86,7 +86,7 @@ int main(int argc, char** argv)
 
     if (!exv.isEmpty())
     {
-        qDebug() << "EXV chunk size" << exv.size();
+        qCDebug(DIGIKAM_TESTS_LOG) << "EXV chunk size" << exv.size();
         meta.loadFromData(exv);
     }
 
@@ -94,7 +94,7 @@ int main(int argc, char** argv)
 
     if (!ef.open(QIODevice::WriteOnly))
     {
-        qWarning() << "Cannot open target EXV file";
+        qCWarning(DIGIKAM_TESTS_LOG) << "Cannot open target EXV file";
         return -1;
     }
 

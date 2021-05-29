@@ -27,12 +27,12 @@
 #include <QStringList>
 #include <QTextStream>
 #include <QCoreApplication>
-#include <QDebug>
 #include <QVariant>
 #include <QObject>
 
 // Local includes
 
+#include "digikam_debug.h"
 #include "exiftoolparser.h"
 
 using namespace Digikam;
@@ -43,8 +43,8 @@ int main(int argc, char** argv)
 
     if (argc != 2)
     {
-        qDebug() << "exiftooloutput_cli - CLI tool to print ExifTool output without Exiv2 translation";
-        qDebug() << "Usage: <image>";
+        qCDebug(DIGIKAM_TESTS_LOG) << "exiftooloutput_cli - CLI tool to print ExifTool output without Exiv2 translation";
+        qCDebug(DIGIKAM_TESTS_LOG) << "Usage: <image>";
         return -1;
     }
 
@@ -62,7 +62,7 @@ int main(int argc, char** argv)
     QString path                        = parser->currentPath();
     ExifToolParser::ExifToolData parsed = parser->currentData();
 
-    qDebug().noquote() << "Source File:" << path;
+    qCDebug(DIGIKAM_TESTS_LOG).noquote() << "Source File:" << path;
 
     // Print returned and sorted tags.
 
@@ -112,7 +112,7 @@ int main(int argc, char** argv)
 
     stream << sep << endl;
 
-    qDebug().noquote() << output;
+    qCDebug(DIGIKAM_TESTS_LOG).noquote() << output;
 
     return 0;
 }

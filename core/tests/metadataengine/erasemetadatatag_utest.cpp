@@ -48,10 +48,10 @@ void EraseMetadataTagTest::eraseMetadataTag(const QString& file,
                                             const QString& metadataTag,
                                             const MetaEngineSettingsContainer& settings)
 {
-    qDebug() << "File to process:" << file;
+    qCDebug(DIGIKAM_TESTS_LOG) << "File to process:" << file;
     QString path = m_tempDir.filePath(QFileInfo(file).fileName().trimmed());
 
-    qDebug() << "Temporary target file:" << path;
+    qCDebug(DIGIKAM_TESTS_LOG) << "Temporary target file:" << path;
 
     bool ret = !path.isNull();
     QVERIFY(ret);
@@ -73,7 +73,7 @@ void EraseMetadataTagTest::eraseMetadataTag(const QString& file,
     {
         ba = meta->getExifTagData(metadataTag.toLatin1().data());
         QVERIFY(!ba.isNull());
-        qDebug() << metadataTag << "found (" << ba.size() << "bytes)";
+        qCDebug(DIGIKAM_TESTS_LOG) << metadataTag << "found (" << ba.size() << "bytes)";
 
         ret = meta->removeExifTag(metadataTag.toLatin1().data());
         QVERIFY(ret);
@@ -82,7 +82,7 @@ void EraseMetadataTagTest::eraseMetadataTag(const QString& file,
     {
         ba = meta->getIptcTagData(metadataTag.toLatin1().data());
         QVERIFY(!ba.isNull());
-        qDebug() << metadataTag << "found (" << ba.size() << "bytes)";
+        qCDebug(DIGIKAM_TESTS_LOG) << metadataTag << "found (" << ba.size() << "bytes)";
 
         ret = meta->removeIptcTag(metadataTag.toLatin1().data());
         QVERIFY(ret);
@@ -91,7 +91,7 @@ void EraseMetadataTagTest::eraseMetadataTag(const QString& file,
     {
         ba = meta->getXmpTagString(metadataTag.toLatin1().data()).toLatin1();
         QVERIFY(!ba.isNull());
-        qDebug() << metadataTag << "found (" << ba.size() << "bytes)";
+        qCDebug(DIGIKAM_TESTS_LOG) << metadataTag << "found (" << ba.size() << "bytes)";
 
         ret = meta->removeXmpTag(metadataTag.toLatin1().data());
         QVERIFY(ret);

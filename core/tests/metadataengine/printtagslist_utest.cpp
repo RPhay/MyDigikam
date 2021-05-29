@@ -40,7 +40,7 @@ void PrintTagsListTest::parseTagsList(const DMetadata::TagsMap& tags)
     QTextStream stream(&output);
     stream << endl;
 
-    qDebug() << "Found" << tags.size() << "tags:" << endl;
+    qCDebug(DIGIKAM_TESTS_LOG) << "Found" << tags.size() << "tags:" << endl;
 
     for (DMetadata::TagsMap::const_iterator it = tags.constBegin() ; it != tags.constEnd() ; ++it )
     {
@@ -62,14 +62,14 @@ void PrintTagsListTest::parseTagsList(const DMetadata::TagsMap& tags)
                << "    " << desc  << endl;
     }
 
-    qDebug().noquote() << output;
+    qCDebug(DIGIKAM_TESTS_LOG).noquote() << output;
 }
 
 void PrintTagsListTest::testPrintAllAvailableStdExifTags()
 {
     QScopedPointer<DMetadata> meta(new DMetadata);
 
-    qDebug() << "-- Standard Exif Tags -------------------------------------------------------------";
+    qCDebug(DIGIKAM_TESTS_LOG) << "-- Standard Exif Tags -------------------------------------------------------------";
 
     DMetadata::TagsMap exiftags = meta->getStdExifTagsList();
     QVERIFY(!exiftags.isEmpty());
@@ -81,7 +81,7 @@ void PrintTagsListTest::testPrintAllAvailableMakernotesTags()
 {
     QScopedPointer<DMetadata> meta(new DMetadata);
 
-    qDebug() << "-- Makernote Tags -----------------------------------------------------------------";
+    qCDebug(DIGIKAM_TESTS_LOG) << "-- Makernote Tags -----------------------------------------------------------------";
 
     DMetadata::TagsMap mntags = meta->getMakernoteTagsList();
 
@@ -94,7 +94,7 @@ void PrintTagsListTest::testPrintAllAvailableIptcTags()
 {
     QScopedPointer<DMetadata> meta(new DMetadata);
 
-    qDebug() << "-- Standard Iptc Tags -----------------------------------------------------------------";
+    qCDebug(DIGIKAM_TESTS_LOG) << "-- Standard Iptc Tags -----------------------------------------------------------------";
 
     DMetadata::TagsMap iptctags = meta->getIptcTagsList();
 
@@ -107,7 +107,7 @@ void PrintTagsListTest::testPrintAllAvailableXmpTags()
 {
     QScopedPointer<DMetadata> meta(new DMetadata);
 
-    qDebug() << "-- Standard Xmp Tags -----------------------------------------------------------------";
+    qCDebug(DIGIKAM_TESTS_LOG) << "-- Standard Xmp Tags -----------------------------------------------------------------";
 
     DMetadata::TagsMap xmptags = meta->getXmpTagsList();
 

@@ -103,84 +103,84 @@ void PrintItemInfoTest::printItemInfo(const QString& filePath,
 
 void PrintItemInfoTest::printComments(const DMetadata& meta, bool expected)
 {
-    qDebug() << QString::fromUtf8("-- Comments from %1 --------------------------").arg(meta.getFilePath());
+    qCDebug(DIGIKAM_TESTS_LOG) << QString::fromUtf8("-- Comments from %1 --------------------------").arg(meta.getFilePath());
 
     CaptionsMap map = meta.getItemComments();
     QCOMPARE(!map.isEmpty(), expected);
 
-    qDebug() << map;
+    qCDebug(DIGIKAM_TESTS_LOG) << map;
 }
 
 void PrintItemInfoTest::printTitles(const DMetadata& meta, bool expected)
 {
-    qDebug() << QString::fromUtf8("-- Titles from %1 --").arg(meta.getFilePath());
+    qCDebug(DIGIKAM_TESTS_LOG) << QString::fromUtf8("-- Titles from %1 --").arg(meta.getFilePath());
 
     CaptionsMap map = meta.getItemTitles();
     QCOMPARE(!map.isEmpty(), expected);
 
-    qDebug() << map;
+    qCDebug(DIGIKAM_TESTS_LOG) << map;
 }
 
 void PrintItemInfoTest::printIptcContact(const DMetadata& meta, bool expected)
 {
-    qDebug() << QString::fromUtf8("-- IptcContact from %1 --").arg(meta.getFilePath());
+    qCDebug(DIGIKAM_TESTS_LOG) << QString::fromUtf8("-- IptcContact from %1 --").arg(meta.getFilePath());
 
     IptcCoreContactInfo map = meta.getCreatorContactInfo();
     QCOMPARE(!map.isEmpty(), expected);
 
-    qDebug() << map;
+    qCDebug(DIGIKAM_TESTS_LOG) << map;
 }
 
 void PrintItemInfoTest::printIptcLocation(const DMetadata& meta, bool expected)
 {
-    qDebug() << QString::fromUtf8("-- IptcLocation from %1 --").arg(meta.getFilePath());
+    qCDebug(DIGIKAM_TESTS_LOG) << QString::fromUtf8("-- IptcLocation from %1 --").arg(meta.getFilePath());
 
     IptcCoreLocationInfo map = meta.getIptcCoreLocation();
     QCOMPARE(!map.isEmpty(), expected);
 
-    qDebug() << map;
+    qCDebug(DIGIKAM_TESTS_LOG) << map;
 }
 
 void PrintItemInfoTest::printIptcSubjects(const DMetadata& meta, bool expected)
 {
-    qDebug() << QString::fromUtf8("-- IptcSubjects from %1 --").arg(meta.getFilePath());
+    qCDebug(DIGIKAM_TESTS_LOG) << QString::fromUtf8("-- IptcSubjects from %1 --").arg(meta.getFilePath());
 
     QStringList map = meta.getIptcCoreSubjects();
     QCOMPARE(!map.isEmpty(), expected);
 
-    qDebug() << map;
+    qCDebug(DIGIKAM_TESTS_LOG) << map;
 }
 
 void PrintItemInfoTest::printPhotoInfo(const DMetadata& meta, bool expected)
 {
-    qDebug() << QString::fromUtf8("-- PhotoInfo from %1 --").arg(meta.getFilePath());
+    qCDebug(DIGIKAM_TESTS_LOG) << QString::fromUtf8("-- PhotoInfo from %1 --").arg(meta.getFilePath());
 
     PhotoInfoContainer map = meta.getPhotographInformation();
     QCOMPARE(!map.isEmpty(), expected);
 
-    qDebug() << map;
+    qCDebug(DIGIKAM_TESTS_LOG) << map;
 }
 
 void PrintItemInfoTest::printVideoInfo(const DMetadata& meta, bool expected)
 {
-    qDebug() << QString::fromUtf8("-- VideoInfo from %1 --").arg(meta.getFilePath());
+    qCDebug(DIGIKAM_TESTS_LOG) << QString::fromUtf8("-- VideoInfo from %1 --").arg(meta.getFilePath());
 
     VideoInfoContainer map = meta.getVideoInformation();
     QCOMPARE(!map.isEmpty(), expected);
 
-    qDebug() << map;
+    qCDebug(DIGIKAM_TESTS_LOG) << map;
 }
 
 void PrintItemInfoTest::printXmpKeywords(const DMetadata& meta, bool expected)
 {
-    qDebug() << QString::fromUtf8("-- XmpKeywords from %1 --").arg(meta.getFilePath());
+    qCDebug(DIGIKAM_TESTS_LOG) << QString::fromUtf8("-- XmpKeywords from %1 --").arg(meta.getFilePath());
 
     if (meta.supportXmp())
     {
         QStringList map = meta.getXmpKeywords();
         QCOMPARE(!map.isEmpty(), expected);
 
-        qDebug() << map;
+        qCDebug(DIGIKAM_TESTS_LOG) << map;
     }
     else
     {
@@ -190,14 +190,14 @@ void PrintItemInfoTest::printXmpKeywords(const DMetadata& meta, bool expected)
 
 void PrintItemInfoTest::printXmpSubjects(const DMetadata& meta, bool expected)
 {
-    qDebug() << QString::fromUtf8("-- XmpSubjects from %1 --").arg(meta.getFilePath());
+    qCDebug(DIGIKAM_TESTS_LOG) << QString::fromUtf8("-- XmpSubjects from %1 --").arg(meta.getFilePath());
 
     if (meta.supportXmp())
     {
         QStringList map = meta.getXmpSubjects();
         QCOMPARE(!map.isEmpty(), expected);
 
-        qDebug() << map;
+        qCDebug(DIGIKAM_TESTS_LOG) << map;
     }
     else
     {
@@ -207,14 +207,14 @@ void PrintItemInfoTest::printXmpSubjects(const DMetadata& meta, bool expected)
 
 void PrintItemInfoTest::printXmpSubCategories(const DMetadata& meta, bool expected)
 {
-    qDebug() << QString::fromUtf8("-- XmpSubCategories from %1 --").arg(meta.getFilePath());
+    qCDebug(DIGIKAM_TESTS_LOG) << QString::fromUtf8("-- XmpSubCategories from %1 --").arg(meta.getFilePath());
 
     if (meta.supportXmp())
     {
         QStringList map = meta.getXmpSubCategories();
         QCOMPARE(!map.isEmpty(), expected);
 
-        qDebug() << map;
+        qCDebug(DIGIKAM_TESTS_LOG) << map;
     }
     else
     {
