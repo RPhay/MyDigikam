@@ -25,6 +25,7 @@
 
 // Qt includes
 
+#include <QByteArray>
 #include <QString>
 #include <QStringList>
 #include <QFileInfo>
@@ -165,7 +166,7 @@ bool DMetadata::loadUsingImageMagick(const QString& filePath)
         // Prepare image info for IM isentification
 
         image_info          = CloneImageInfo((ImageInfo*)nullptr);
-        strcpy(image_info->filename, filePath.toLatin1().constData());
+        qstrncpy(image_info->filename, filePath.toLatin1().constData(), sizeof(image_info->filename));
         image_info->ping    = MagickTrue;
         image_info->verbose = MagickTrue;
         image_info->debug   = MagickTrue;
