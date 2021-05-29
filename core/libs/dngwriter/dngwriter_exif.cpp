@@ -47,7 +47,7 @@ int DNGWriter::Private::storeExif(DNGWriterHost& /*host*/,
 
     const dng_mosaic_info* mosaicInfo = negative->GetMosaicInfo();
 
-    if (!mosaicInfo)
+    if (mosaicInfo)
     {
         exif->fCFARepeatPatternCols = mosaicInfo->fCFAPatternSize.v;
         exif->fCFARepeatPatternRows = mosaicInfo->fCFAPatternSize.h;
