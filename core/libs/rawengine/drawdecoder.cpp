@@ -461,6 +461,7 @@ bool DRawDecoder::extractRAWData(const QString& filePath,
 
     raw->imgdata.params.output_bps  = 16;
     raw->imgdata.params.shot_select = shotSelect;
+    raw->imgdata.params.user_flip   = -1;
     ret                             = raw->unpack();
 
     if (ret != LIBRAW_SUCCESS)
