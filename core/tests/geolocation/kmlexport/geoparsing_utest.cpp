@@ -21,7 +21,7 @@
  *
  * ============================================================ */
 
-#include "test_geoparsing.h"
+#include "geoparsing_utest.h"
 
 // Qt includes
 

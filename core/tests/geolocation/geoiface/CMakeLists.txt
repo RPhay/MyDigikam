@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2010-2020, Gilles Caulier, <caulier dot gilles at gmail dot com>
+# Copyright (c) 2010-2021, Gilles Caulier, <caulier dot gilles at gmail dot com>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
@@ -113,11 +113,11 @@ ecm_add_tests(${CMAKE_CURRENT_SOURCE_DIR}/test_tracks.cpp
 
 # -- track loading application for timing tests ----------------------------------------------------
 
-set(loadtrack_sources ${CMAKE_CURRENT_SOURCE_DIR}/loadtrack.cpp)
+set(loadtrack_cli_sources ${CMAKE_CURRENT_SOURCE_DIR}/loadtrack_cli.cpp)
 
-add_executable(loadtrack ${loadtrack_sources})
+add_executable(loadtrack_cli ${loadtrack_cli_sources})
 
-target_link_libraries(loadtrack
+target_link_libraries(loadtrack_cli
 
                       digikamcore
 

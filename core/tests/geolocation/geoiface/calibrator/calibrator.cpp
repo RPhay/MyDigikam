@@ -41,10 +41,6 @@
 #include <QCommandLineParser>
 #include <QLineEdit>
 
-// KDE includes
-
-#include <klocalizedstring.h>
-
 // Local includes
 
 #include "digikam_debug.h"
@@ -170,25 +166,25 @@ Calibrator::Calibrator(QWidget* const parent)
 
     d->groupingMode                     = new QButtonGroup(this);
     d->groupingMode->setExclusive(true);
-    QRadioButton* const buttonGrouped   = new QRadioButton(i18n("Grouped"), this);
+    QRadioButton* const buttonGrouped   = new QRadioButton(QLatin1String("Grouped"), this);
     d->groupingMode->addButton(buttonGrouped, 0);
-    QRadioButton* const buttonUngrouped = new QRadioButton(i18n("Ungrouped"), this);
+    QRadioButton* const buttonUngrouped = new QRadioButton(QLatin1String("Ungrouped"), this);
     d->groupingMode->addButton(buttonUngrouped, 1);
     buttonGrouped->setChecked(true);
 
     d->sbLevel                 = new QSpinBox(this);
     d->sbLevel->setMinimum(1);
     d->sbLevel->setMaximum(TileIndex::MaxLevel);
-    QLabel* const labelsbLevel = new QLabel(i18nc("Tile level", "Level:"), this);
+    QLabel* const labelsbLevel = new QLabel(QLatin1String("Level:"), this);
     labelsbLevel->setBuddy(d->sbLevel);
 
     d->zoomDisplay                 = new QLineEdit(this);
     d->zoomDisplay->setReadOnly(true);
-    QLabel* const labelZoomDisplay = new QLabel(i18n("Zoom:"), this);
+    QLabel* const labelZoomDisplay = new QLabel(QLatin1String("Zoom:"), this);
     labelZoomDisplay->setBuddy(d->zoomDisplay);
 
     QHBoxLayout* const hboxLayout1 = new QHBoxLayout(this);
-    hboxLayout1->addWidget(new QLabel(i18n("Display mode:"), this));
+    hboxLayout1->addWidget(new QLabel(QLatin1String("Display mode:"), this));
     hboxLayout1->addWidget(buttonGrouped);
     hboxLayout1->addWidget(buttonUngrouped);
     hboxLayout1->addWidget(labelsbLevel);
@@ -199,9 +195,9 @@ Calibrator::Calibrator(QWidget* const parent)
     vboxLayout1->addLayout(hboxLayout1);
 
     QHBoxLayout* const hboxLayout2 = new QHBoxLayout(this);
-    QPushButton* const pbAddMap    = new QPushButton(i18n("Add Map Widget"), this);
+    QPushButton* const pbAddMap    = new QPushButton(QLatin1String("Add Map Widget"), this);
     hboxLayout2->addWidget(pbAddMap);
-    QPushButton* const pbRemoveMap = new QPushButton(i18n("Remove Map Widget"), this);
+    QPushButton* const pbRemoveMap = new QPushButton(QLatin1String("Remove Map Widget"), this);
     hboxLayout2->addWidget(pbRemoveMap);
     vboxLayout1->addLayout(hboxLayout2);
 
@@ -236,9 +232,9 @@ Calibrator::~Calibrator()
 
 void Calibrator::updateGroupingMode()
 {
-    const bool shouldBeGrouped = d->groupingMode->checkedId()==0;
+    const bool shouldBeGrouped = (d->groupingMode->checkedId() == 0);
 
-    for (int i = 0; i < d->extraWidgetHolders.count(); ++i)
+    for (int i = 0 ; i < d->extraWidgetHolders.count() ; ++i)
     {
         MapWidget* const mapWidget = d->extraWidgetHolders.at(i).second;
 
@@ -312,18 +308,18 @@ void Calibrator::updateMarkers()
         TileIndex markerIndex;
         markerIndex.appendLinearIndex(level0Index);
 
-        for (int level = 1; level < newLevel-2; level++)
+        for (int level = 1 ; level < newLevel-2 ; level++)
         {
             markerIndex.appendLinearIndex(followingIndex);
         }
 
         const int smallPart = followingIndex % Tiling;
 
-        for (int i = -1; i <= 1; ++i)
+        for (int i = -1 ; i <= 1 ; ++i)
         {
             if ((smallPart+i >= 0) && (smallPart+i < Tiling))
             {
-                for (int j = -1; j<=1; ++j)
+                for (int j = -1 ; j <= 1 ; ++j)
                 {
                     const int newLinIndex = followingIndex + i + j*Tiling;
 
@@ -333,7 +329,7 @@ void Calibrator::updateMarkers()
                         newIndex.appendLinearIndex(newLinIndex);
                         addMarkerAt(newIndex.toCoordinates());
 /*
-                         for (int corner = 1; corner<=4; ++corner)
+                         for (int corner = 1 ; corner <= 4 ; ++corner)
                          {
                              addMarkerAt(newIndex.toCoordinates(TileIndex::CornerPosition(corner)));
                          }
@@ -370,7 +366,7 @@ void Calibrator::slotAddMapWidget()
     boxLayout->addWidget(mapWidget);
     boxLayout->addWidget(mapWidget->getControlWidget());
 
-    QAction* const activateMapAction = new QAction(i18nc("Set the widget active", "Active"), mapWidget);
+    QAction* const activateMapAction = new QAction(QLatin1String("Active"), mapWidget);
     activateMapAction->setData(QVariant::fromValue<void*>(mapWidget));
     activateMapAction->setCheckable(true);
     QToolButton* const toolButton    = new QToolButton(mapWidget);
