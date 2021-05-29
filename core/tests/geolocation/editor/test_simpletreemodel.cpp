@@ -27,10 +27,10 @@
 // Qt includes
 
 #include <QUrl>
-#include <QDebug>
 
 // local includes
 
+#include "digikam_debug.h"
 #include "simpletreemodel.h"
 #include "modeltest.h"
 
@@ -105,8 +105,8 @@ void TestSimpleTreeModel::testModel1()
     if (treeModel->rowCount(topIndex) > 0)
     {
         QModelIndex childIndex = treeModel->index(0, 0, topIndex);
-        qDebug() << childIndex;
-        qDebug() << treeModel->parent(childIndex);
+        qCDebug(DIGIKAM_TESTS_LOG) << childIndex;
+        qCDebug(DIGIKAM_TESTS_LOG) << treeModel->parent(childIndex);
 
         Q_ASSERT(treeModel->parent(childIndex) == topIndex);
     }

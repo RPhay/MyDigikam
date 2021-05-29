@@ -26,15 +26,15 @@
 // Qt includes
 
 #include <QDropEvent>
-#include <QDebug>
 
 // Local includes
 
+#include "digikam_debug.h"
 #include "mytreewidget.h"
 
 MyDragDropHandler::MyDragDropHandler(QAbstractItemModel* const pModel, QObject* const parent)
     : GeoDragDropHandler(parent),
-      model(pModel)
+      model             (pModel)
 {
 }
 
@@ -54,7 +54,7 @@ bool MyDragDropHandler::dropEvent(const QDropEvent* e, const GeoCoordinates& dro
     if (!mimeData)
         return false;
 
-    qDebug() << mimeData->draggedIndices.count();
+    qCDebug(DIGIKAM_TESTS_LOG) << mimeData->draggedIndices.count();
 
     for (int i = 0 ; i < mimeData->draggedIndices.count() ; ++i)
     {

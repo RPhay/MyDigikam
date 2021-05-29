@@ -46,16 +46,15 @@
 #include <QPointer>
 #include <QScopedPointer>
 #include <QProgressBar>
-#include <QDebug>
 
 // KDE includes
 
 #include <kconfig.h>
 #include <kconfiggroup.h>
-#include <klocalizedstring.h>
 
 // geoiface includes
 
+#include "digikam_debug.h"
 #include "dmetadata.h"
 #include "lookupaltitude.h"
 #include "lookupfactory.h"
@@ -234,7 +233,7 @@ MainWindow::MainWindow(QCommandLineParser* const cmdLineArgs, QWidget* const par
 
     d->treeWidget = new MyTreeWidget(this);
     d->treeWidget->setColumnCount(2);
-    d->treeWidget->setHeaderLabels(QStringList() << i18n("Filename") << i18n("Coordinates"));
+    d->treeWidget->setHeaderLabels(QStringList() << QLatin1String("Filename") << QLatin1String("Coordinates"));
     d->treeWidget->setSelectionMode(QAbstractItemView::ExtendedSelection);
 
     d->displayMarkersModel    = d->treeWidget->model();
@@ -244,7 +243,7 @@ MainWindow::MainWindow(QCommandLineParser* const cmdLineArgs, QWidget* const par
     ItemMarkerTiler* const mm = new ItemMarkerTiler(d->markerModelHelper, this);
 
     resize(512, 512);
-    setWindowTitle(i18n("Geolocation Interface demo"));
+    setWindowTitle(QLatin1String("Geolocation Interface demo"));
     setWindowIcon(QIcon::fromTheme(QLatin1String("globe")));
     setObjectName(QLatin1String("DemoGeoLocationInterface" ));
 
@@ -287,7 +286,7 @@ MainWindow::MainWindow(QCommandLineParser* const cmdLineArgs, QWidget* const par
     vbox->addWidget(d->treeWidget);
 
     d->progressBar = new QProgressBar();
-    d->progressBar->setFormat(i18n("Loading images -"));
+    d->progressBar->setFormat(QLatin1String("Loading images -"));
 
     d->splitter->addWidget(dummyWidget);
 
@@ -400,7 +399,7 @@ MyImageData LoadImageData(const QUrl& urlToLoad)
 
 void MainWindow::slotFutureResultsReadyAt(int startIndex, int endIndex)
 {
-//     //qDebug()<<"future"<<startIndex<<endIndex;
+//     //qCDebug(DIGIKAM_TESTS_LOG)<<"future"<<startIndex<<endIndex;
 
     // determine the sender:
     QFutureWatcher<MyImageData>* const futureSender = reinterpret_cast<QFutureWatcher<MyImageData>*>(sender());
@@ -432,7 +431,7 @@ void MainWindow::slotFutureResultsReadyAt(int startIndex, int endIndex)
     for (int index = startIndex; index < endIndex; ++index)
     {
         MyImageData newData = d->imageLoadingRunningFutures.at(futureIndex).resultAt(index);
-//         //qDebug()<<"future"<<newData.url<<newData.coordinates.geoUrl();
+//         //qCDebug(DIGIKAM_TESTS_LOG)<<"future"<<newData.url<<newData.coordinates.geoUrl();
 
         d->imageLoadingBuncher << newData;
     }
@@ -446,7 +445,7 @@ void MainWindow::slotFutureResultsReadyAt(int startIndex, int endIndex)
     else
     {
         statusBar()->removeWidget(d->progressBar);
-        statusBar()->showMessage(i18np("%1 image has been loaded.", "%1 images have been loaded.", d->imageLoadingTotalCount), 3000);
+        statusBar()->showMessage(QLatin1String("%1 image(s) have been loaded.", d->imageLoadingTotalCount), 3000);
         d->imageLoadingCurrentCount = 0;
         d->imageLoadingTotalCount   = 0;
 
@@ -490,7 +489,7 @@ void MainWindow::slotScheduleImagesForLoading(const QList<QUrl>& imagesToSchedul
 
 void MainWindow::slotImageLoadingBunchReady()
 {
-    qDebug() << "slotImageLoadingBunchReady";
+    qCDebug(DIGIKAM_TESTS_LOG) << "slotImageLoadingBunchReady";
 
     for (int i = 0; i < d->imageLoadingBuncher.count(); ++i)
     {
@@ -544,13 +543,13 @@ void MainWindow::slotMarkersMoved(const QList<QPersistentModelIndex>& markerIndi
 
         /// @todo Check the return value?
         myAltitudeLookup->startLookup();
-        qDebug() << "Starting lookup for " << altitudeQueries.count() << " items!";
+        qCDebug(DIGIKAM_TESTS_LOG) << "Starting lookup for " << altitudeQueries.count() << " items!";
     }
 }
 
 void MainWindow::slotAltitudeRequestsReady(const QList<int>& readyRequests)
 {
-    qDebug() << readyRequests.count() << " items ready!";
+    qCDebug(DIGIKAM_TESTS_LOG) << readyRequests.count() << " items ready!";
     LookupAltitude* const myAltitudeLookup = qobject_cast<LookupAltitude*>(sender());
 
     if (!myAltitudeLookup)
@@ -589,7 +588,7 @@ void MainWindow::slotAltitudeLookupDone()
 
 void MainWindow::slotAddImages()
 {
-    const QList<QUrl> fileNames = DFileDialog::getOpenFileUrls(this, i18n("Add image files"), d->lastImageOpenDir, i18n("Images (*.jpg *.jpeg *.png *.tif *.tiff)"));
+    const QList<QUrl> fileNames = DFileDialog::getOpenFileUrls(this, QLatin1String("Add image files"), d->lastImageOpenDir, QLatin1String("Images (*.jpg *.jpeg *.png *.tif *.tiff)"));
 
     if (fileNames.isEmpty())
         return;
@@ -601,8 +600,8 @@ void MainWindow::slotAddImages()
 
 void MainWindow::createMenus()
 {
-    QMenu* const fileMenu         = menuBar()->addMenu(i18n("File"));
-    QAction* const addFilesAction = new QAction(i18n("Add images..."), fileMenu);
+    QMenu* const fileMenu         = menuBar()->addMenu(QLatin1String("File"));
+    QAction* const addFilesAction = new QAction(QLatin1String("Add images..."), fileMenu);
     fileMenu->addAction(addFilesAction);
 
     connect(addFilesAction, SIGNAL(triggered()),

@@ -24,17 +24,13 @@
 
 // Qt includes
 
-#include <QDebug>
 #include <QApplication>
 #include <QCommandLineParser>
 #include <QCommandLineOption>
 
-// KDE includes
-
-#include <klocalizedstring.h>
-
 // local includes
 
+#include "digikam_debug.h"
 #include "mainwindow.h"
 #include "digikam_version.h"
 
@@ -44,10 +40,10 @@ int main(int argc, char* argv[])
     QCommandLineParser parser;
     parser.addVersionOption();
     parser.addHelpOption();
-    parser.addOption(QCommandLineOption(QStringList() << QLatin1String("demopoints_single"), i18n("Add built-in demo points as single markers")));
-    parser.addOption(QCommandLineOption(QStringList() << QLatin1String("demopoints_group"),  i18n("Add built-in demo points as groupable markers")));
-    parser.addOption(QCommandLineOption(QStringList() << QLatin1String("single"),            i18n("Do not group the displayed images")));
-    parser.addPositionalArgument(QString::fromLatin1("images"), i18n("List of images"), QString::fromLatin1("[images...]"));
+    parser.addOption(QCommandLineOption(QStringList() << QLatin1String("demopoints_single"), QLatin1String("Add built-in demo points as single markers")));
+    parser.addOption(QCommandLineOption(QStringList() << QLatin1String("demopoints_group"),  QLatin1String("Add built-in demo points as groupable markers")));
+    parser.addOption(QCommandLineOption(QStringList() << QLatin1String("single"),            QLatin1String("Do not group the displayed images")));
+    parser.addPositionalArgument(QString::fromLatin1("images"), QLatin1String("List of images"), QString::fromLatin1("[images...]"));
     parser.process(app);
 
     // get the list of images to load on startup:
@@ -56,7 +52,7 @@ int main(int argc, char* argv[])
     foreach (const QString& file, parser.positionalArguments())
     {
         const QUrl argUrl = QUrl::fromLocalFile(file);
-        qDebug() << argUrl;
+        qCDebug(DIGIKAM_TESTS_LOG) << argUrl;
         imagesList << argUrl;
     }
 

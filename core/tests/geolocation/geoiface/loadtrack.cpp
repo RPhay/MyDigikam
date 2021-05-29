@@ -26,10 +26,10 @@
 #include <QDateTime>
 #include <QTextStream>
 #include <QCoreApplication>
-#include <QDebug>
 
 // Local includes
 
+#include "digikam_debug.h"
 #include "trackmanager.h"
 #include "trackreader.h"
 

@@ -26,10 +26,10 @@
 // Qt includes
 
 #include <QStandardItemModel>
-#include <QDebug>
 
 // Local includes
 
+#include "digikam_debug.h"
 #include "geoifacecommon.h"
 
 using namespace Digikam;
@@ -104,7 +104,7 @@ int CountMarkersInIterator(ItemMarkerTiler::NonEmptyIterator* const it)
         const TileIndex currentIndex = it->currentIndex();
         markerCount                 += it->model()->getTileMarkerCount(currentIndex);
         it->nextIndex();
-//         qDebug()<<currentIndex;
+//         qCDebug(DIGIKAM_TESTS_LOG)<<currentIndex;
     }
 
     return markerCount;

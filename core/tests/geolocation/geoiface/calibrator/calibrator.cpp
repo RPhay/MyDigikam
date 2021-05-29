@@ -39,7 +39,6 @@
 #include <QVBoxLayout>
 #include <QApplication>
 #include <QCommandLineParser>
-#include <QDebug>
 #include <QLineEdit>
 
 // KDE includes
@@ -48,6 +47,7 @@
 
 // Local includes
 
+#include "digikam_debug.h"
 #include "abstractmarkertiler.h"
 #include "itemmarkertiler.h"
 #include "mapwidget.h"
@@ -257,7 +257,7 @@ void Calibrator::updateGroupingMode()
 
 void Calibrator::addMarkerAt(const GeoCoordinates& coordinates)
 {
-    qDebug() << coordinates;
+    qCDebug(DIGIKAM_TESTS_LOG) << coordinates;
     QStandardItem* const item = new QStandardItem(coordinates.geoUrl());
     item->setData(QVariant::fromValue(coordinates), CoordinatesRole);
 
@@ -344,7 +344,7 @@ void Calibrator::updateMarkers()
         }
     }
 
-    qDebug()<<d->model->rowCount();
+    qCDebug(DIGIKAM_TESTS_LOG)<<d->model->rowCount();
 }
 
 void Calibrator::updateZoomView()

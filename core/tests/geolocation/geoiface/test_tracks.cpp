@@ -27,11 +27,11 @@
 
 #include <QDateTime>
 #include <QTest>
-#include <QDebug>
 #include <QSignalSpy>
 
 // Local includes
 
+#include "digikam_debug.h"
 #include "trackmanager.h"
 #include "trackreader.h"
 
@@ -184,7 +184,7 @@ void TestTracks::testSaxLoaderError()
         TrackReader::TrackReadResult fileData = TrackReader::loadTrackFile(testDataDir);
         QVERIFY(!fileData.isValid);
         QVERIFY(!fileData.loadError.isEmpty());
-        qDebug() << fileData.loadError;
+        qCDebug(DIGIKAM_TESTS_LOG) << fileData.loadError;
     }
 
     {
@@ -192,7 +192,7 @@ void TestTracks::testSaxLoaderError()
         TrackReader::TrackReadResult fileData = TrackReader::loadTrackFile(testDataDir);
         QVERIFY(!fileData.isValid);
         QVERIFY(!fileData.loadError.isEmpty());
-        qDebug() << fileData.loadError;
+        qCDebug(DIGIKAM_TESTS_LOG) << fileData.loadError;
     }
 
     {
@@ -200,6 +200,6 @@ void TestTracks::testSaxLoaderError()
         TrackReader::TrackReadResult fileData = TrackReader::loadTrackFile(testDataDir);
         QVERIFY(!fileData.isValid);
         QVERIFY(!fileData.loadError.isEmpty());
-        qDebug() << fileData.loadError;
+        qCDebug(DIGIKAM_TESTS_LOG) << fileData.loadError;
     }
 }
