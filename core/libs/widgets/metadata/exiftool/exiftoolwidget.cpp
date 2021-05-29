@@ -227,18 +227,23 @@ QString ExifToolWidget::metadataToText() const
 
             do
             {
-                item2 = dynamic_cast<QTreeWidgetItem*>(lvItem)->child(j);
+                item2 = dynamic_cast<QTreeWidgetItem*>(lvItem);
 
                 if (item2)
                 {
-                    ExifToolListViewItem* const lvItem2 = dynamic_cast<ExifToolListViewItem*>(item2);
+                    QTreeWidgetItem* const child = item2->child(j);
 
-                    if (lvItem2)
+                    if (child)
                     {
-                        textmetadata.append(lvItem2->text(0));
-                        textmetadata.append(QLatin1String(" : "));
-                        textmetadata.append(lvItem2->text(1));
-                        textmetadata.append(QLatin1Char('\n'));
+                        ExifToolListViewItem* const lvItem2 = dynamic_cast<ExifToolListViewItem*>(child);
+
+                        if (lvItem2)
+                        {
+                            textmetadata.append(lvItem2->text(0));
+                            textmetadata.append(QLatin1String(" : "));
+                            textmetadata.append(lvItem2->text(1));
+                            textmetadata.append(QLatin1Char('\n'));
+                        }
                     }
                 }
 
@@ -288,18 +293,23 @@ void ExifToolWidget::slotPrintMetadata()
 
             do
             {
-                item2 = dynamic_cast<QTreeWidgetItem*>(lvItem)->child(j);
+                item2 = dynamic_cast<QTreeWidgetItem*>(lvItem);
 
                 if (item2)
                 {
-                    ExifToolListViewItem* const lvItem2 = dynamic_cast<ExifToolListViewItem*>(item2);
+                    QTreeWidgetItem* const child = item2->child(j);
 
-                    if (lvItem2)
+                    if (child)
                     {
-                        textmetadata.append(lvItem2->text(0));
-                        textmetadata.append(QLatin1String(" : <i>"));
-                        textmetadata.append(lvItem2->text(1));
-                        textmetadata.append(QLatin1String("</i><br/>"));
+                        ExifToolListViewItem* const lvItem2 = dynamic_cast<ExifToolListViewItem*>(child);
+
+                        if (lvItem2)
+                        {
+                            textmetadata.append(lvItem2->text(0));
+                            textmetadata.append(QLatin1String(" : <i>"));
+                            textmetadata.append(lvItem2->text(1));
+                            textmetadata.append(QLatin1String("</i><br/>"));
+                        }
                     }
                 }
 
