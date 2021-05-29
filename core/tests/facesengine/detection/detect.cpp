@@ -30,7 +30,6 @@
 #include <QLabel>
 #include <QPixmap>
 #include <QWidget>
-#include <QDebug>
 #include <QElapsedTimer>
 #include <QRectF>
 #include <QList>
@@ -40,18 +39,19 @@
 
 // Local includes
 
+#include "digikam_debug.h"
 #include "facedetector.h"
 
 using namespace Digikam;
 
 void detectFaces(const QString& imagePath)
 {
-    qDebug() << "Loading " << imagePath;
+    qCDebug(DIGIKAM_TESTS_LOG) << "Loading " << imagePath;
     QImage img(imagePath);
     QImage imgScaled(img.scaled(416, 416, Qt::KeepAspectRatio));
 
     FaceDetector detector;
-    qDebug() << "Detecting faces";
+    qCDebug(DIGIKAM_TESTS_LOG) << "Detecting faces";
 
     QElapsedTimer timer;
     unsigned int elapsedDetection = 0;
@@ -60,19 +60,19 @@ void detectFaces(const QString& imagePath)
     QList<QRectF> faces = detector.detectFaces(imagePath);
     elapsedDetection = timer.elapsed();
 
-    qDebug() << "(Input CV) Found " << faces.size() << " faces, in " << elapsedDetection << "ms";
+    qCDebug(DIGIKAM_TESTS_LOG) << "(Input CV) Found " << faces.size() << " faces, in " << elapsedDetection << "ms";
 
     if (faces.isEmpty())
     {
-        qDebug() << "No faces found";
+        qCDebug(DIGIKAM_TESTS_LOG) << "No faces found";
         return;
     }
 
-    qDebug() << "Coordinates of detected faces : ";
+    qCDebug(DIGIKAM_TESTS_LOG) << "Coordinates of detected faces : ";
 
     foreach (const QRectF& r, faces)
     {
-        qDebug() << r;
+        qCDebug(DIGIKAM_TESTS_LOG) << r;
     }
 
     QWidget* const mainWidget = new QWidget;
@@ -117,7 +117,7 @@ int main(int argc, char** argv)
 {
     if (argc < 2)
     {
-        qDebug() << "Bad Arguments!!!\nUsage: " << argv[0] << " <image1> <image2> ...";
+        qCDebug(DIGIKAM_TESTS_LOG) << "Bad Arguments!!!\nUsage: " << argv[0] << " <image1> <image2> ...";
         return 0;
     }
 

@@ -31,12 +31,12 @@
 #include <QDir>
 #include <QImage>
 #include <QElapsedTimer>
-#include <QDebug>
 #include <QCommandLineParser>
 #include <QList>
 
 // Local includes
 
+#include "digikam_debug.h"
 #include "dimg.h"
 #include "facescansettings.h"
 #include "facedetector.h"
@@ -134,7 +134,7 @@ int prepareForTrain(QString datasetPath,
     QStringList subjects = testSet.entryList(QDir::Dirs | QDir::NoDotAndDotDot | QDir::NoSymLinks);
     int nbOfClusters     = subjects.size();
 
-    qDebug() << "Number of clusters to be defined" << nbOfClusters;
+    qCDebug(DIGIKAM_TESTS_LOG) << "Number of clusters to be defined" << nbOfClusters;
 
     for (int i = 1 ; i <= nbOfClusters ; ++i)
     {
@@ -156,7 +156,7 @@ int prepareForTrain(QString datasetPath,
         }
     }
 
-    qDebug() << "nbOfClusters (prepareForTrain) " << nbOfClusters;
+    qCDebug(DIGIKAM_TESTS_LOG) << "nbOfClusters (prepareForTrain) " << nbOfClusters;
 
     return nbOfClusters;
 }
@@ -165,7 +165,7 @@ QList<QRectF> processFaceDetection(const QString& imagePath, FaceDetector detect
 {
     QList<QRectF> detectedFaces = detector.detectFaces(imagePath);
 
-    qDebug() << "(Input CV) Found " << detectedFaces.size() << " faces";
+    qCDebug(DIGIKAM_TESTS_LOG) << "(Input CV) Found " << detectedFaces.size() << " faces";
 
     return detectedFaces;
 }
@@ -207,7 +207,7 @@ void createClustersFromClusterIndices(const std::vector<int>& clusteredIndices,
         clusters << std::vector<int>();
     }
 
-    qDebug() << "nbOfClusters " << clusters.size();
+    qCDebug(DIGIKAM_TESTS_LOG) << "nbOfClusters " << clusters.size();
 
     for (int i = 0 ; i < (int)clusteredIndices.size() ; ++i)
     {
@@ -246,7 +246,7 @@ void verifyClusteringResults(const std::vector<int>& clusteredIndices,
             }
         }
 
-        qDebug() << "testCluster " << i << " with group " << indice;
+        qCDebug(DIGIKAM_TESTS_LOG) << "testCluster " << i << " with group " << indice;
 
         std::vector<int> similarSet = clusters.at(indice);
 
@@ -301,12 +301,12 @@ int main(int argc, char* argv[])
 
     if      (parser.optionNames().empty())
     {
-        qWarning() << "No options!!!";
+        qCWarning(DIGIKAM_TESTS_LOG) << "No options!!!";
         optionErrors = true;
     }
     else if (!parser.isSet(QLatin1String("db")))
     {
-        qWarning() << "Missing database for test!!!";
+        qCWarning(DIGIKAM_TESTS_LOG) << "Missing database for test!!!";
         optionErrors = true;
     }
 
@@ -387,27 +387,27 @@ int main(int argc, char* argv[])
     // Display results
 
     unsigned nbUndetectedFaces = undetectedFaces.size();
-    qDebug() << "\n" << nbUndetectedFaces << " / " << dataset.size() + nbUndetectedFaces
+    qCDebug(DIGIKAM_TESTS_LOG) << "\n" << nbUndetectedFaces << " / " << dataset.size() + nbUndetectedFaces
              << " (" << float(nbUndetectedFaces) / (dataset.size() + nbUndetectedFaces) * 100 << "%)"
              << " faces cannot be detected";
 
     foreach (const QString& path, undetectedFaces)
     {
-        qDebug() << path;
+        qCDebug(DIGIKAM_TESTS_LOG) << path;
     }
 
     unsigned nbOfFalsePositiveCases = falsePositiveCases.size();
-    qDebug() << "\nFalse positive cases";
-    qDebug() << "\n" << nbOfFalsePositiveCases << " / " << dataset.size()
+    qCDebug(DIGIKAM_TESTS_LOG) << "\nFalse positive cases";
+    qCDebug(DIGIKAM_TESTS_LOG) << "\n" << nbOfFalsePositiveCases << " / " << dataset.size()
              << " (" << float(nbOfFalsePositiveCases*100) / dataset.size()<< "%)"
              << " faces were wrongly clustered";
 
     foreach (const QString& imagePath, falsePositiveCases)
     {
-        qDebug() << imagePath;
+        qCDebug(DIGIKAM_TESTS_LOG) << imagePath;
     }
 
-    qDebug() << "\n Time for clustering " << elapsedClustering << " ms";
+    qCDebug(DIGIKAM_TESTS_LOG) << "\n Time for clustering " << elapsedClustering << " ms";
 
     return 0;
 }

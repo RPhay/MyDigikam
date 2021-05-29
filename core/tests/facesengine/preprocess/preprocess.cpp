@@ -28,10 +28,10 @@
 #include <QLabel>
 #include <QImage>
 #include <QElapsedTimer>
-#include <QDebug>
 
 // Local includes
 
+#include "digikam_debug.h"
 #include "qtopencv.h"
 #include "tantriggspreprocessor.h"
 
@@ -139,7 +139,7 @@ int main(int argc, char** argv)
 {
     if (argc < 2)
     {
-        qDebug() << "Bad Arguments!!!\nUsage: " << argv[0] << " preprocess <image1> <image2> ... ";
+        qCDebug(DIGIKAM_TESTS_LOG) << "Bad Arguments!!!\nUsage: " << argv[0] << " preprocess <image1> <image2> ... ";
         return 0;
     }
 
@@ -156,13 +156,13 @@ int main(int argc, char** argv)
 
     foreach (const cv::Mat& image, images)
     {
-        qDebug() << "channels " << image.channels();
+        qCDebug(DIGIKAM_TESTS_LOG) << "channels " << image.channels();
         cv::Mat processed = preprocessor.preprocess(image);
         display.add(image, processed);
     }
 
     int elapsed = timer.elapsed();
-    qDebug() << "Preprocessing took " << elapsed << " for " << images.size() << " , "
+    qCDebug(DIGIKAM_TESTS_LOG) << "Preprocessing took " << elapsed << " for " << images.size() << " , "
              << ((float)elapsed/images.size()) << " per image";
 
     display.show();

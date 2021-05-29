@@ -40,11 +40,11 @@
 #include <QPainter>
 #include <QLineEdit>
 #include <QPushButton>
-#include <QDebug>
 #include <QHash>
 
 // Local includes
 
+#include "digikam_debug.h"
 #include "opencvdnnfacedetector.h"
 #include "facedetector.h"
 #include "dnnfaceextractor.h"
@@ -232,7 +232,7 @@ MainWindow::~MainWindow()
 void MainWindow::slotDetectFaces(const QListWidgetItem* imageItem)
 {
     QString imagePath = imageItem->text();
-    qDebug() << "Loading " << imagePath;
+    qCDebug(DIGIKAM_TESTS_LOG) << "Loading " << imagePath;
     QImage img(imagePath);
     QImage imgScaled(img.scaled(416, 416, Qt::KeepAspectRatio));
 
@@ -309,15 +309,15 @@ QList<QRectF> MainWindow::detectFaces(const QString& imagePath)
                                                               cvImage.rows - 2*paddedSize.height));
         elapsedDetection = timer.elapsed();
 
-        qDebug() << "(Input CV) Found " << absRects.size() << " faces, in " << elapsedDetection << "ms";
+        qCDebug(DIGIKAM_TESTS_LOG) << "(Input CV) Found " << absRects.size() << " faces, in " << elapsedDetection << "ms";
     }
     catch (cv::Exception& e)
     {
-        qWarning() << "cv::Exception:" << e.what();
+        qCWarning(DIGIKAM_TESTS_LOG) << "cv::Exception:" << e.what();
     }
     catch (...)
     {
-        qWarning() << "Default exception from OpenCV";
+        qCWarning(DIGIKAM_TESTS_LOG) << "Default exception from OpenCV";
     }
 
     return faces;
@@ -327,15 +327,15 @@ void MainWindow::extractFaces(const QImage& img, QImage& imgScaled, const QList<
 {
     if (faces.isEmpty())
     {
-        qWarning() << "No face detected";
+        qCWarning(DIGIKAM_TESTS_LOG) << "No face detected";
         return;
     }
 
-    qDebug() << "Coordinates of detected faces : ";
+    qCDebug(DIGIKAM_TESTS_LOG) << "Coordinates of detected faces : ";
 
     foreach (const QRectF& r, faces)
     {
-        qDebug() << r;
+        qCDebug(DIGIKAM_TESTS_LOG) << r;
     }
 
     QPainter painter(&imgScaled);
@@ -556,7 +556,7 @@ void MainWindow::slotIdentify(int /*index*/)
 
 void MainWindow::slotSaveIdentity()
 {
-    qDebug() << "assign identity" << m_imageLabel->text();
+    qCDebug(DIGIKAM_TESTS_LOG) << "assign identity" << m_imageLabel->text();
     m_currentIdenity.setAttribute(QLatin1String("fullName"), m_imageLabel->text());
 
     //m_recognizer->saveIdentity(m_currentIdenity, false);

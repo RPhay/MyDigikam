@@ -32,11 +32,11 @@
 #include <QString>
 #include <QGraphicsSimpleTextItem>
 #include <QGraphicsScene>
-#include <QDebug>
 #include <QTimer>
 
 // Local includes
 
+#include "digikam_debug.h"
 #include "demofancyrect.h"
 
 namespace FaceEngineDemo

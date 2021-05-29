@@ -27,7 +27,10 @@
 #include <QDir>
 #include <QImage>
 #include <QElapsedTimer>
-#include <QDebug>
+
+// Local includes
+
+#include "digikam_debug.h"
 
 QCommandLineParser* parseOptions(const QCoreApplication& app)
 {

@@ -32,11 +32,11 @@
 #include <QGraphicsView>
 #include <QGraphicsPixmapItem>
 #include <QElapsedTimer>
-#include <QDebug>
 #include <QStandardPaths>
 
 // Local includes
 
+#include "digikam_debug.h"
 #include "facialrecognition_wrapper.h"
 #include "facedetector.h"
 #include "demofaceitem.h"
@@ -179,7 +179,7 @@ void MainWindow::slotOpenImage()
 
     clearScene();
 
-    qDebug() << "Opened file " << file;
+    qCDebug(DIGIKAM_TESTS_LOG) << "Opened file " << file;
 
     d->currentPhoto.load(file);
     d->lastPhotoItem = new QGraphicsPixmapItem(QPixmap::fromImage(d->currentPhoto));
@@ -205,12 +205,12 @@ void MainWindow::slotDetectFaces()
 
     QList<QRectF> currentFaces = d->detector->detectFaces(d->currentPhoto);
 
-    qDebug() << "FacesEngine detected : " << currentFaces.size() << " faces.";
-    qDebug() << "Coordinates of detected faces : ";
+    qCDebug(DIGIKAM_TESTS_LOG) << "FacesEngine detected : " << currentFaces.size() << " faces.";
+    qCDebug(DIGIKAM_TESTS_LOG) << "Coordinates of detected faces : ";
 
     foreach (const QRectF& r, currentFaces)
     {
-        qDebug() << r;
+        qCDebug(DIGIKAM_TESTS_LOG) << r;
     }
 
     foreach (FaceItem* const item, d->faceitems)
@@ -224,7 +224,7 @@ void MainWindow::slotDetectFaces()
     {
         QRect face = d->detector->toAbsoluteRect(currentFaces[i], d->currentPhoto.size());
         d->faceitems.append(new FaceItem(nullptr, d->myScene, face, d->scale));
-        qDebug() << face;
+        qCDebug(DIGIKAM_TESTS_LOG) << face;
     }
 
     d->ui->recogniseBtn->setEnabled(true);
@@ -262,18 +262,18 @@ void MainWindow::slotRecognise()
         Identity identity = d->database.recognizeFace(face);
         int elapsed       = timer.elapsed();
 
-        qDebug() << "Recognition took " << elapsed << " for Face #" << i+1;
+        qCDebug(DIGIKAM_TESTS_LOG) << "Recognition took " << elapsed << " for Face #" << i+1;
 
         if (!identity.isNull())
         {
             item->suggest(identity.attribute(QString::fromLatin1("name")));
 
-            qDebug() << "Face #" << i+1 << " is closest to the person with ID " << identity.id()
+            qCDebug(DIGIKAM_TESTS_LOG) << "Face #" << i+1 << " is closest to the person with ID " << identity.id()
                      << " and name "<< identity.attribute(QString::fromLatin1("name"));
         }
         else
         {
-            qDebug() << "Face #" << i+1 << " : no Identity match from database.";
+            qCDebug(DIGIKAM_TESTS_LOG) << "Face #" << i+1 << " : no Identity match from database.";
         }
 
         i++;
@@ -296,7 +296,7 @@ void MainWindow::slotUpdateDatabase()
             timer.start();
 
             QString name = item->text();
-            qDebug() << "Face #" << i+1 << ": training name '" << name << "'";
+            qCDebug(DIGIKAM_TESTS_LOG) << "Face #" << i+1 << ": training name '" << name << "'";
 
             Identity identity = d->database.findIdentity(QString::fromLatin1("name"), name);
 
@@ -305,11 +305,11 @@ void MainWindow::slotUpdateDatabase()
                 QMap<QString, QString> attributes;
                 attributes[QString::fromLatin1("name")] = name;
                 identity                                = d->database.addIdentity(attributes);
-                qDebug() << "Adding new identity ID " << identity.id() << " to database for name " << name;
+                qCDebug(DIGIKAM_TESTS_LOG) << "Adding new identity ID " << identity.id() << " to database for name " << name;
             }
             else
             {
-                qDebug() << "Found existing identity ID " << identity.id() << " from database for name " << name;
+                qCDebug(DIGIKAM_TESTS_LOG) << "Found existing identity ID " << identity.id() << " from database for name " << name;
             }
 
             QImage* face = new QImage();
@@ -319,7 +319,7 @@ void MainWindow::slotUpdateDatabase()
 
             int elapsed  = timer.elapsed();
 
-            qDebug() << "Training took " << elapsed << " for Face #" << i+1;
+            qCDebug(DIGIKAM_TESTS_LOG) << "Training took " << elapsed << " for Face #" << i+1;
         }
 
         ++i;

@@ -37,10 +37,10 @@
 #include <QLabel>
 #include <QPen>
 #include <QPainter>
-#include <QDebug>
 
 // Local includes
 
+#include "digikam_debug.h"
 #include "opencvdnnfacedetector.h"
 #include "facedetector.h"
 
@@ -125,7 +125,7 @@ MainWindow::~MainWindow()
 void MainWindow::slotDetectFaces(const QListWidgetItem* imageItem)
 {
     QString imagePath = imageItem->text();
-    qDebug() << "Loading " << imagePath;
+    qCDebug(DIGIKAM_TESTS_LOG) << "Loading " << imagePath;
     QImage img(imagePath);
     QImage imgScaled(img.scaled(416, 416, Qt::KeepAspectRatio));
 
@@ -171,7 +171,7 @@ QList<QRectF> MainWindow::detectFaces(const QString& imagePath) const
 
     if (!img.data )
     {
-        qDebug() <<  "Open cv Could not open or find the image";
+        qCDebug(DIGIKAM_TESTS_LOG) <<  "Open cv Could not open or find the image";
     }
 */
     QList<QRectF> faces;
@@ -197,15 +197,15 @@ QList<QRectF> MainWindow::detectFaces(const QString& imagePath) const
 
         m_paddedImage->setPixmap(showCVMat(cvImage));
 
-        qDebug() << "(Input CV) Found " << absRects.size() << " faces, in " << elapsedDetection << "ms";
+        qCDebug(DIGIKAM_TESTS_LOG) << "(Input CV) Found " << absRects.size() << " faces, in " << elapsedDetection << "ms";
     }
     catch (cv::Exception& e)
     {
-        qWarning() << "cv::Exception:" << e.what();
+        qCWarning(DIGIKAM_TESTS_LOG) << "cv::Exception:" << e.what();
     }
     catch (...)
     {
-        qWarning() << "Default exception from OpenCV";
+        qCWarning(DIGIKAM_TESTS_LOG) << "Default exception from OpenCV";
     }
 
     return faces;
@@ -215,15 +215,15 @@ void MainWindow::extractFaces(const QImage& img, QImage& imgScaled, const QList<
 {
     if (faces.isEmpty())
     {
-        qWarning() << "No face detected";
+        qCWarning(DIGIKAM_TESTS_LOG) << "No face detected";
         return;
     }
 
-    qDebug() << "Coordinates of detected faces : ";
+    qCDebug(DIGIKAM_TESTS_LOG) << "Coordinates of detected faces : ";
 
     foreach (const QRectF& r, faces)
     {
-        qDebug() << r;
+        qCDebug(DIGIKAM_TESTS_LOG) << r;
     }
 
     QPainter painter(&imgScaled);

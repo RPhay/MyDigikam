@@ -28,13 +28,13 @@
 #include <QDir>
 #include <QImage>
 #include <QElapsedTimer>
-#include <QDebug>
 #include <QHash>
 #include <QJsonObject>
 #include <QJsonDocument>
 
 // Local includes
 
+#include "digikam_debug.h"
 #include "opencvdnnfacedetector.h"
 #include "facedetector.h"
 #include "dnnfaceextractor.h"
@@ -177,7 +177,7 @@ void Benchmark::registerTrainingSet()
 
     Identity newIdentity = m_recognizer->addIdentity(attributes);
 
-    qDebug() << "add new identity to database" << newIdentity.id();
+    qCDebug(DIGIKAM_TESTS_LOG) << "add new identity to database" << newIdentity.id();
 
     m_recognizer->train(newIdentity, m_trainSet.begin().value(), QLatin1String("train face classifier"));
 
@@ -193,7 +193,7 @@ void Benchmark::registerTrainingSet()
 
         Identity newIdentity = m_recognizer->addIdentity(attributes);
 
-        qDebug() << "add new identity to database" << newIdentity.id();
+        qCDebug(DIGIKAM_TESTS_LOG) << "add new identity to database" << newIdentity.id();
 
         m_recognizer->train(newIdentity, iter.value(), QLatin1String("train face classifier"));
 
@@ -202,12 +202,12 @@ void Benchmark::registerTrainingSet()
 
     unsigned int elapsedDetection = timer.elapsed();
 
-    qDebug() << "Registered <<  :" << m_trainSize
+    qCDebug(DIGIKAM_TESTS_LOG) << "Registered <<  :" << m_trainSize
              << "faces in training set";
 
     if (m_trainSize != 0)
     {
-        qDebug() << "with average" << float(elapsedDetection) / m_trainSize << "ms / face";
+        qCDebug(DIGIKAM_TESTS_LOG) << "with average" << float(elapsedDetection) / m_trainSize << "ms / face";
     }
 }
 
@@ -255,22 +255,22 @@ void Benchmark::verifyTestSet()
 
     if (m_testSize == 0)
     {
-        qWarning() << "test set is empty";
+        qCWarning(DIGIKAM_TESTS_LOG) << "test set is empty";
 
         return;
     }
 
     m_error = float(nbNotRecognize + nbWrongLabel)/m_testSize;
 
-    qDebug() << "nb Not Recognized :" << nbNotRecognize;
-    qDebug() << "nb Wrong Label :"    << nbWrongLabel;
+    qCDebug(DIGIKAM_TESTS_LOG) << "nb Not Recognized :" << nbNotRecognize;
+    qCDebug(DIGIKAM_TESTS_LOG) << "nb Wrong Label :"    << nbWrongLabel;
 
-    qDebug() << "Accuracy :" << (1 - m_error) * 100 << "%"
+    qCDebug(DIGIKAM_TESTS_LOG) << "Accuracy :" << (1 - m_error) * 100 << "%"
              << "on total"   << m_trainSize << "training faces, and"
                              << m_testSize << "test faces";
     if (m_testSize != 0)
     {
-        qDebug() << "(" << float(elapsedDetection) / m_testSize << "ms/face )";
+        qCDebug(DIGIKAM_TESTS_LOG) << "(" << float(elapsedDetection) / m_testSize << "ms/face )";
     }
 }
 
@@ -472,11 +472,11 @@ void Benchmark::splitData(const QDir& dataDir, float splitRatio)
 
     unsigned int elapsedDetection = timer.elapsed();
 
-    qDebug() << "Fetched dataset with" << nbData << "samples";
+    qCDebug(DIGIKAM_TESTS_LOG) << "Fetched dataset with" << nbData << "samples";
 
     if (nbData != 0)
     {
-        qDebug() << "with average" << float(elapsedDetection) / nbData << "ms/image.";
+        qCDebug(DIGIKAM_TESTS_LOG) << "with average" << float(elapsedDetection) / nbData << "ms/image.";
     }
 }
 
@@ -540,7 +540,7 @@ void Benchmark::saveData()
         }
     }
 
-    qDebug() << "Save face embedding in" << timer.elapsed() << "ms/face";
+    qCDebug(DIGIKAM_TESTS_LOG) << "Save face embedding in" << timer.elapsed() << "ms/face";
 
     QFile dataFile(dataDir.dirName() + QLatin1String(".json"));
 
@@ -587,7 +587,7 @@ void Benchmark::testWriteDb()
 */
     }
 
-    qDebug() << "write face embedding to spatial database with average" << timer.elapsed() /data.size() << "ms/faceEmbedding";
+    qCDebug(DIGIKAM_TESTS_LOG) << "write face embedding to spatial database with average" << timer.elapsed() /data.size() << "ms/faceEmbedding";
 }
 
 void Benchmark::verifyKNearestDb()
@@ -666,7 +666,7 @@ void Benchmark::verifyKNearestDb()
 
     if (data.size() != 0)
     {
-        qDebug() << "Accuracy"     << (float(nbCorrect) / data.size())*100
+        qCDebug(DIGIKAM_TESTS_LOG) << "Accuracy"     << (float(nbCorrect) / data.size())*100
                  << "with average" << timer.elapsed()   / data.size() 
                  << "ms/faceEmbedding";
     }

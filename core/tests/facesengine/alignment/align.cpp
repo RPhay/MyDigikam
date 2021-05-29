@@ -27,7 +27,6 @@
 #include <QDir>
 #include <QImage>
 #include <QElapsedTimer>
-#include <QDebug>
 #include <QLabel>
 #include <QGraphicsScene>
 
@@ -35,6 +34,7 @@
 
 #include "qtopencv.h"
 #include "funnelreal.h"
+#include "digikam_debug.h"
 
 using namespace Digikam;
 
@@ -126,7 +126,7 @@ int main(int argc, char** argv)
 {
     if (argc < 2)
     {
-        qDebug() << "Bad Arguments!!!\nUsage: " << argv[0] << " align <image1> <image2> ... ";
+        qCDebug(DIGIKAM_TESTS_LOG) << "Bad Arguments!!!\nUsage: " << argv[0] << " align <image1> <image2> ... ";
         return 0;
     }
 
@@ -139,7 +139,7 @@ int main(int argc, char** argv)
     timer.start();
 
     FunnelReal funnel;
-    qDebug() << "Setup of Aligner took " << timer.restart();
+    qCDebug(DIGIKAM_TESTS_LOG) << "Setup of Aligner took " << timer.restart();
 
     OpenCVSideBySideDisplay display(images.size());
 
@@ -150,7 +150,7 @@ int main(int argc, char** argv)
     }
 
     int elapsed = timer.elapsed();
-    qDebug() << "Alignment took " << elapsed << " for " << images.size() << " , "
+    qCDebug(DIGIKAM_TESTS_LOG) << "Alignment took " << elapsed << " for " << images.size() << " , "
              << ((float)elapsed/images.size()) << " per image";
 
     display.show();

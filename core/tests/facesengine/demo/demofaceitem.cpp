@@ -33,12 +33,12 @@
 #include <QTextDocument>
 #include <QGraphicsScene>
 #include <QColor>
-#include <QDebug>
 #include <QIcon>
 #include <qmath.h>
 
 // Local includes
 
+#include "digikam_debug.h"
 #include "demomarquee.h"
 #include "demofancyrect.h"
 
@@ -271,7 +271,7 @@ void FaceItem::update()
     QRectF r      = d->faceName->mapRectToScene(d->faceName->boundingRect());
     d->nameRect->setRect(r);
     QRect newRect = this->d->faceMarquee->mapRectToScene(d->faceMarquee->boundingRect()).toRect();
-    qDebug() << "Origscale is : " << d->origScale << " and scale is " << d->scale;
+    qCDebug(DIGIKAM_TESTS_LOG) << "Origscale is : " << d->origScale << " and scale is " << d->scale;
 
     QSize s(newRect.size());
     s.scale(newRect.width() * qSqrt(d->origScale), newRect.height() * qSqrt(d->origScale), Qt::KeepAspectRatio);
@@ -279,11 +279,11 @@ void FaceItem::update()
 /*
     newRect.setRect(x,y,w,h);
 */
-    qDebug() << "Orig before" << d->origRect;
+    qCDebug(DIGIKAM_TESTS_LOG) << "Orig before" << d->origRect;
 /*
     d->origRect = newRect;
 */
-    qDebug() << "Orig after" << d->origRect;
+    qCDebug(DIGIKAM_TESTS_LOG) << "Orig after" << d->origRect;
 }
 
 void FaceItem::setVisible(bool visible)
@@ -346,7 +346,7 @@ void FaceItem::reject()
 
 void FaceItem::suggest(const QString& name)
 {
-    qDebug() << "suggested name is " << name;
+    qCDebug(DIGIKAM_TESTS_LOG) << "suggested name is " << name;
     d->name = name;
     this->switchToSuggestionMode();
 }

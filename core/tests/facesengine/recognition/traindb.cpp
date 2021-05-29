@@ -28,10 +28,10 @@
 #include <QImage>
 #include <QThreadPool>
 #include <QRunnable>
-#include <QDebug>
 
 // Local includes
 
+#include "digikam_debug.h"
 #include "facialrecognition_wrapper.h"
 #include "coredbaccess.h"
 #include "dbengineparameters.h"
@@ -65,14 +65,14 @@ public:
         for (int i = number * secondMultiplier ; i < (number * secondMultiplier + secondMultiplier) ; ++i)
         {
             QString name                            = QString::fromLatin1("face%1").arg(i);
-            qDebug() << "Record Identity " << name << " to DB";
+            qCDebug(DIGIKAM_TESTS_LOG) << "Record Identity " << name << " to DB";
             QMap<QString, QString> attributes;
             attributes[QString::fromLatin1("name")] = name;
             identity                                = db.addIdentity(attributes);
             db.train(identity, image, QString::fromLatin1("test application"));
         }
 
-        qDebug() << "Trained group" << number;
+        qCDebug(DIGIKAM_TESTS_LOG) << "Trained group" << number;
 
         // Check records in database.
 
@@ -83,11 +83,11 @@ public:
 
             if (!identity.isNull())
             {
-                qDebug() << "Identity " << name << " is present in DB";
+                qCDebug(DIGIKAM_TESTS_LOG) << "Identity " << name << " is present in DB";
             }
             else
             {
-                qDebug() << "Identity " << name << " is absent in DB";
+                qCDebug(DIGIKAM_TESTS_LOG) << "Identity " << name << " is absent in DB";
             }
         }
     }
@@ -132,12 +132,12 @@ int main(int argc, char** argv)
     {
         foreach (const Identity& id, list)
         {
-            qDebug() << "Identity " << id.attribute(QString::fromLatin1("name")) << " recognized";
+            qCDebug(DIGIKAM_TESTS_LOG) << "Identity " << id.attribute(QString::fromLatin1("name")) << " recognized";
         }
     }
     else
     {
-        qDebug() << "No Identity recognized from DB";
+        qCDebug(DIGIKAM_TESTS_LOG) << "No Identity recognized from DB";
     }
 
     return 0;

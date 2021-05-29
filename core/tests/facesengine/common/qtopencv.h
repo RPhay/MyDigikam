@@ -27,13 +27,13 @@
 
 // Qt includes
 
-#include <QDebug>
 #include <QImage>
 #include <QPixmap>
 
 // Local includes
 
 #include "digikam_opencv.h"
+#include "digikam_debug.h"
 
 namespace QtOpenCV
 {
@@ -98,7 +98,7 @@ namespace QtOpenCV
 
             default:
             {
-                qWarning() << "ASM::cvMatToQImage() - cv::Mat image type not handled in switch:" << inMat.type();
+                qCWarning(DIGIKAM_TESTS_LOG) << "ASM::cvMatToQImage() - cv::Mat image type not handled in switch:" << inMat.type();
                 break;
             }
         }
@@ -142,7 +142,7 @@ namespace QtOpenCV
             {
                 if (!inCloneImageData)
                 {
-                    qWarning() << "ASM::QImageToCvMat() - Conversion requires cloning because we use a temporary QImage";
+                    qCWarning(DIGIKAM_TESTS_LOG) << "ASM::QImageToCvMat() - Conversion requires cloning because we use a temporary QImage";
                 }
 
                 QImage swapped;
@@ -179,7 +179,7 @@ namespace QtOpenCV
 
             default:
             {
-                qWarning() << "ASM::QImageToCvMat() - QImage format not handled in switch:" << inImage.format();
+                qCWarning(DIGIKAM_TESTS_LOG) << "ASM::QImageToCvMat() - QImage format not handled in switch:" << inImage.format();
                 break;
             }
         }
