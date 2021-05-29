@@ -21,7 +21,7 @@
  *
  * ============================================================ */
 
-#include "dimghistorytest.h"
+#include "dimghistory_utest.h"
 
 // Qt includes
 
@@ -30,10 +30,10 @@
 #include <QFileInfo>
 #include <QTime>
 #include <QTest>
-#include <QDebug>
 
 // Local includes
 
+#include "digikam_debug.h"
 #include "digikam_config.h"
 #include "editortooliface.h"
 #include "editorwindow.h"
@@ -128,11 +128,11 @@ void DImgHistoryTest::slotImageLoaded(const QString&, bool success)
 
     for (int i = 0 ; i < 3 ; ++i)
     {
-        qDebug() << i << h.entries().at(i).referredImages.size();
+        qCDebug(DIGIKAM_TESTS_LOG) << i << h.entries().at(i).referredImages.size();
 
         if (h.entries().at(i).referredImages.size())
         {
-            qDebug() << " " << i << h.entries().at(i).referredImages.first().m_type;
+            qCDebug(DIGIKAM_TESTS_LOG) << " " << i << h.entries().at(i).referredImages.first().m_type;
         }
     }
 
@@ -147,7 +147,7 @@ void DImgHistoryTest::slotImageSaved(const QString& fileName, bool success)
 
     DImg img(fileName);
     DImageHistory history = img.getItemHistory();
-    qDebug() << history.toXml();
+    qCDebug(DIGIKAM_TESTS_LOG) << history.toXml();
 
     QCOMPARE(history.size(), 3);
     QCOMPARE(history.entries().first().referredImages.size(), 1);

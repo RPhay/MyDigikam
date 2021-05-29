@@ -11,7 +11,6 @@ string(REPLACE "-fno-operator-names" "" CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
 
 include_directories(
     $<TARGET_PROPERTY:KF5::XmlGui,INTERFACE_INCLUDE_DIRECTORIES>
-    $<TARGET_PROPERTY:KF5::I18n,INTERFACE_INCLUDE_DIRECTORIES>
 
     $<TARGET_PROPERTY:Qt5::Test,INTERFACE_INCLUDE_DIRECTORIES>
     $<TARGET_PROPERTY:Qt5::Core,INTERFACE_INCLUDE_DIRECTORIES>
@@ -21,24 +20,11 @@ include_directories(
 
 #------------------------------------------------------------------------
 
-set(testdimgloader_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/testdimgloader.cpp)
-add_executable(testdimgloader ${testdimgloader_SRCS})
-ecm_mark_nongui_executable(testdimgloader)
+set(dimgloader_cli_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/dimgloader_cli.cpp)
+add_executable(dimgloader_cli ${dimgloader_cli_SRCS})
+ecm_mark_nongui_executable(dimgloader_cli)
 
-target_link_libraries(testdimgloader
-
-                      digikamcore
-
-                      ${COMMON_TEST_LINK}
-)
-
-#------------------------------------------------------------------------
-
-set(testequalizefilter_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/testequalizefilter.cpp)
-add_executable(testequalizefilter ${testequalizefilter_SRCS})
-ecm_mark_nongui_executable(testequalizefilter)
-
-target_link_libraries(testequalizefilter
+target_link_libraries(dimgloader_cli
 
                       digikamcore
 
@@ -47,11 +33,24 @@ target_link_libraries(testequalizefilter
 
 #------------------------------------------------------------------------
 
-set(testcolorbalancefilter_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/testcolorbalancefilter.cpp)
-add_executable(testcolorbalancefilter ${testcolorbalancefilter_SRCS})
-ecm_mark_nongui_executable(testcolorbalancefilter)
+set(equalizefilter_cli_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/equalizefilter_cli.cpp)
+add_executable(equalizefilter_cli ${equalizefilter_cli_SRCS})
+ecm_mark_nongui_executable(equalizefilter_cli)
 
-target_link_libraries(testcolorbalancefilter
+target_link_libraries(equalizefilter_cli
+
+                      digikamcore
+
+                      ${COMMON_TEST_LINK}
+)
+
+#------------------------------------------------------------------------
+
+set(colorbalancefilter_cli_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/colorbalancefilter_cli.cpp)
+add_executable(colorbalancefilter_cli ${colorbalancefilter_cli_SRCS})
+ecm_mark_nongui_executable(colorbalancefilter_cli)
+
+target_link_libraries(colorbalancefilter_cli
 
                       digikamcore
 
@@ -62,10 +61,10 @@ target_link_libraries(testcolorbalancefilter
 
 if(ImageMagick_Magick++_FOUND)
 
-    set(magickloader_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/magickloader.cpp)
-    add_executable(magickloader ${magickloader_SRCS})
+    set(magickloader_cli_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/magickloader_cli.cpp)
+    add_executable(magickloader_cli ${magickloader_cli_SRCS})
 
-    target_link_libraries(magickloader
+    target_link_libraries(magickloader_cli
 
                           digikamcore
 
@@ -76,7 +75,7 @@ endif()
 
 #------------------------------------------------------------------------
 
-ecm_add_tests(${CMAKE_CURRENT_SOURCE_DIR}/dimgfilteractiontest.cpp
+ecm_add_tests(${CMAKE_CURRENT_SOURCE_DIR}/dimgfilteraction_utest.cpp
 
               GUI
 
@@ -93,7 +92,7 @@ ecm_add_tests(${CMAKE_CURRENT_SOURCE_DIR}/dimgfilteractiontest.cpp
 
 #------------------------------------------------------------------------
 
-ecm_add_tests(${CMAKE_CURRENT_SOURCE_DIR}/dimgfreerotationtest.cpp
+ecm_add_tests(${CMAKE_CURRENT_SOURCE_DIR}/dimgfreerotation_utest.cpp
 
               GUI
 
@@ -110,9 +109,9 @@ ecm_add_tests(${CMAKE_CURRENT_SOURCE_DIR}/dimgfreerotationtest.cpp
 
 #------------------------------------------------------------------------
 
-add_library(libabstracthistory STATIC ${CMAKE_CURRENT_SOURCE_DIR}/dimgabstracthistorytest.cpp)
+add_library(libabstracthistory STATIC ${CMAKE_CURRENT_SOURCE_DIR}/dimgabstracthistory_utest.cpp)
 
-ecm_add_tests(${CMAKE_CURRENT_SOURCE_DIR}/dimghistorytest.cpp
+ecm_add_tests(${CMAKE_CURRENT_SOURCE_DIR}/dimghistory_utest.cpp
 
               GUI
 
@@ -135,7 +134,7 @@ ecm_add_tests(${CMAKE_CURRENT_SOURCE_DIR}/dimghistorytest.cpp
 
 if(NOT MSVC)
 
-    ecm_add_tests(${CMAKE_CURRENT_SOURCE_DIR}/dimghistorygraphtest.cpp
+    ecm_add_tests(${CMAKE_CURRENT_SOURCE_DIR}/dimghistorygraph_utest.cpp
 
                   NAME_PREFIX
 

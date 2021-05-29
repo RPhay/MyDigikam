@@ -21,7 +21,7 @@
  *
  * ============================================================ */
 
-#include "dimgfilteractiontest.h"
+#include "dimgfilteraction_utest.h"
 
 // Qt includes
 
@@ -30,10 +30,10 @@
 #include <QDialog>
 #include <QHBoxLayout>
 #include <QTest>
-#include <QDebug>
 
 // Local includes
 
+#include "digikam_debug.h"
 #include "metaengine.h"
 #include "dpluginloader.h"
 #include "dimagehistory.h"
@@ -62,7 +62,7 @@ void DImgFilterActionTest::testDRawDecoding()
     FilterAction action;
     params.writeToFilterAction(action);
 
-    qDebug() << action.parameters();
+    qCDebug(DIGIKAM_TESTS_LOG) << action.parameters();
 
     DRawDecoding params2 = DRawDecoding::fromFilterAction(action);
     QVERIFY(params == params2);
@@ -96,7 +96,7 @@ void DImgFilterActionTest::testActions()
 
         filter.setupFilter(original.copy());
         filter.startFilterDirectly();
-        qDebug() << filter.filterActions().size();
+        qCDebug(DIGIKAM_TESTS_LOG) << filter.filterActions().size();
 
         DImg img = filter.getTargetImage();
 

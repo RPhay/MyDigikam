@@ -21,26 +21,26 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DIMG_HISTORY_TEST_H
-#define DIGIKAM_DIMG_HISTORY_TEST_H
+#ifndef DIGIKAM_DIMG_HISTORY_GRAPH_UTEST_H
+#define DIGIKAM_DIMG_HISTORY_GRAPH_UTEST_H
 
 // Qt includes
 
 #include <QTest>
 #include <QEventLoop>
+#include <QDir>
 
 // Local includes
 
-#include "editorcore.h"
-#include "dimgabstracthistorytest.h"
+#include "dimgabstracthistory_utest.h"
 
-class DImgHistoryTest : public DImgAbstractHistoryTest
+class DImgHistoryGraphTest : public DImgAbstractHistoryTest
 {
     Q_OBJECT
 
 public:
 
-    explicit DImgHistoryTest(QObject* const parent = nullptr);
+    explicit DImgHistoryGraphTest(QObject* const parent = nullptr);
 
 public Q_SLOTS:
 
@@ -49,11 +49,23 @@ public Q_SLOTS:
 
 private Q_SLOTS:
 
-    void testXml();
-    void testDImg();
-
     void initTestCase();
     void cleanupTestCase();
+
+    void testGraph();
+    void testHistory();
+
+private:
+
+    void rescan();
+    void testEditing();
+
+private:
+
+    QDir             collectionDir;
+    QString          dbFile;
+    QStringList      readOnlyImages;
+    QList<qlonglong> ids;
 };
 
-#endif // DIGIKAM_DIMG_HISTORY_TEST_H
+#endif // DIGIKAM_DIMG_HISTORY_GRAPH_UTEST_H

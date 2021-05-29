@@ -21,7 +21,7 @@
  *
  * ============================================================ */
 
-#include "dimgfreerotationtest.h"
+#include "dimgfreerotation_utest.h"
 
 // C++ includes
 

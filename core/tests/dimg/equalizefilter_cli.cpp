@@ -3,10 +3,10 @@
  * This file is a part of digiKam project
  * https://www.digikam.org
  *
- * Date        : 2012-10-23
- * Description : a command line tool to test DImg image loader
+ * Date        : 2016-04-08
+ * Description : a command line tool to test DImg equalize filter
  *
- * Copyright (C) 2012-2021 by Gilles Caulier, <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2016-2021 by Gilles Caulier, <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -22,35 +22,30 @@
  * ============================================================ */
 
 #include <QFileInfo>
-#include <QApplication>
-#include <QDebug>
 
 // Local includes
 
+#include "digikam_debug.h"
 #include "metaengine.h"
+#include "equalizefilter.h"
 #include "dimg.h"
-#include "drawdecoding.h"
-#include "dpluginloader.h"
+#include "dimgthreadedfilter.h"
 
 using namespace Digikam;
 
 int main(int argc, char** argv)
 {
-    QApplication app(argc, argv);
-
     if (argc != 2)
     {
-        qDebug() << "testdimgloader - test DImg image loader";
-        qDebug() << "Usage: <image>";
+        qCDebug(DIGIKAM_TESTS_LOG) << "testequalizefilter - test DImg equalize algorithm";
+        qCDebug(DIGIKAM_TESTS_LOG) << "Usage: <image>";
         return -1;
     }
 
     MetaEngine::initializeExiv2();
 
-    DPluginLoader::instance()->init();
-
     QFileInfo input(QString::fromUtf8(argv[1]));
-    QString   outFilePath(input.baseName() + QLatin1String(".heic"));
+    QString   outFilePath(input.baseName() + QLatin1String(".out.png"));
 
     DRawDecoderSettings settings;
     settings.halfSizeColorImage    = false;
@@ -59,13 +54,10 @@ int main(int argc, char** argv)
     settings.RAWQuality            = DRawDecoderSettings::BILINEAR;
 
     DImg img(input.filePath(), nullptr, DRawDecoding(settings));
-
-    if (!img.isNull())
-    {
-        img.save(outFilePath, QLatin1String("heic"));
-    }
-
-    DPluginLoader::instance()->cleanUp();
+    EqualizeFilter filter(&img, &img);
+    filter.startFilterDirectly();
+    img.putImageData(filter.getTargetImage().bits());
+    img.save(outFilePath, QLatin1String("PNG"));
 
     return 0;
 }

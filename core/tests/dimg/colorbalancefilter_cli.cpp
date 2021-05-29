@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2016-04-08
- * Description : a command line tool to test DImg equalize filter
+ * Description : a command line tool to test DImg color balance filter
  *
  * Copyright (C) 2016-2021 by Gilles Caulier, <caulier dot gilles at gmail dot com>
  *
@@ -22,12 +22,12 @@
  * ============================================================ */
 
 #include <QFileInfo>
-#include <QDebug>
 
 // Local includes
 
+#include "digikam_debug.h"
 #include "metaengine.h"
-#include "equalizefilter.h"
+#include "cbfilter.h"
 #include "dimg.h"
 #include "dimgthreadedfilter.h"
 
@@ -37,8 +37,8 @@ int main(int argc, char** argv)
 {
     if (argc != 2)
     {
-        qDebug() << "testequalizefilter - test DImg equalize algorithm";
-        qDebug() << "Usage: <image>";
+        qCDebug(DIGIKAM_TESTS_LOG) << "testcolorbalancefilter - test DImg color balance algorithm";
+        qCDebug(DIGIKAM_TESTS_LOG) << "Usage: <image>";
         return -1;
     }
 
@@ -54,7 +54,9 @@ int main(int argc, char** argv)
     settings.RAWQuality            = DRawDecoderSettings::BILINEAR;
 
     DImg img(input.filePath(), nullptr, DRawDecoding(settings));
-    EqualizeFilter filter(&img, &img);
+    CBContainer prm;
+    prm.blue = -55.0;
+    CBFilter filter(&img, nullptr, prm);
     filter.startFilterDirectly();
     img.putImageData(filter.getTargetImage().bits());
     img.save(outFilePath, QLatin1String("PNG"));

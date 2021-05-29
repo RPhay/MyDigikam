@@ -21,7 +21,7 @@
  *
  * ============================================================ */
 
-#include "dimgabstracthistorytest.h"
+#include "dimgabstracthistory_utest.h"
 
 // Qt includes
 
@@ -30,10 +30,10 @@
 #include <QFileInfo>
 #include <QTime>
 #include <QTest>
-#include <QDebug>
 
 // Local includes
 
+#include "digikam_debug.h"
 #include "metaengine.h"
 #include "digikam_config.h"
 #include "bcgfilter.h"

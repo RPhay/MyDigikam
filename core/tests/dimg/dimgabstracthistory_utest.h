@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DIMG_ABSTRACT_HISTORY_TEST_H
-#define DIGIKAM_DIMG_ABSTRACT_HISTORY_TEST_H
+#ifndef DIGIKAM_DIMG_ABSTRACT_HISTORY_UTEST_H
+#define DIGIKAM_DIMG_ABSTRACT_HISTORY_UTEST_H
 
 // Qt includes
 
@@ -82,4 +82,4 @@ protected:
     QString     m_tempFile;
 };
 
-#endif // DIGIKAM_DIMG_ABSTRACT_HISTORY_TEST_H
+#endif // DIGIKAM_DIMG_ABSTRACT_HISTORY_UTEST_H

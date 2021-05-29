@@ -3,8 +3,8 @@
  * This file is a part of digiKam project
  * https://www.digikam.org
  *
- * Date        : 2010-11-13
- * Description : a test for applying FilterActions
+ * Date        : 2010-08-01
+ * Description : a test for the DImageHistory
  *
  * Copyright (C) 2010 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  *
@@ -21,43 +21,39 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DIMG_FILTER_ACTION_TEST_H
-#define DIGIKAM_DIMG_FILTER_ACTION_TEST_H
+#ifndef DIGIKAM_DIMG_HISTORY_UTEST_H
+#define DIGIKAM_DIMG_HISTORY_UTEST_H
 
 // Qt includes
 
 #include <QTest>
 #include <QEventLoop>
-#include <QDir>
 
 // Local includes
 
-#include "dimg.h"
+#include "editorcore.h"
+#include "dimgabstracthistory_utest.h"
 
-using namespace Digikam;
-
-class DImgFilterActionTest : public QObject
+class DImgHistoryTest : public DImgAbstractHistoryTest
 {
     Q_OBJECT
 
 public:
 
-    explicit DImgFilterActionTest(QObject* const parent = nullptr);
+    explicit DImgHistoryTest(QObject* const parent = nullptr);
 
-public:
+public Q_SLOTS:
 
-    QDir    imageDir();
-    QString originalImage();
-
-    void showDiff(const DImg& orig, const DImg& ref, const DImg& result, const DImg& diff);
+    void slotImageLoaded(const QString&, bool) override;
+    void slotImageSaved(const QString&, bool) override;
 
 private Q_SLOTS:
 
-    void testDRawDecoding();
-    void testActions();
+    void testXml();
+    void testDImg();
 
     void initTestCase();
     void cleanupTestCase();
 };
 
-#endif // DIGIKAM_DIMG_FILTER_ACTION_TEST_H
+#endif // DIGIKAM_DIMG_HISTORY_UTEST_H

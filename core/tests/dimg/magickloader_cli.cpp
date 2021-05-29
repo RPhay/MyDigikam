@@ -28,7 +28,6 @@
 #include <QDir>
 #include <QStringList>
 #include <QList>
-#include <QDebug>
 #include <QApplication>
 #include <QStandardPaths>
 #include <QFileDialog>
@@ -42,6 +41,10 @@
 #   include <magick/magick.h>
 #endif
 
+// Local includes
+
+#include "digikam_debug.h"
+
 using namespace Magick;
 using namespace MagickCore;
 
@@ -49,7 +52,7 @@ using namespace MagickCore;
  */
 /*Image* toImage(QImage* const qimage)
 {
-    qDebug() << "toImage:" << qimage->width() << qimage->height();
+    qCDebug(DIGIKAM_TESTS_LOG) << "toImage:" << qimage->width() << qimage->height();
 
     Image* const newImage = new Image(Magick::Geometry(qimage->width(), qimage->height()), Magick::ColorRGB(0.5, 0.2, 0.3));
     newImage->modifyImage();
@@ -84,26 +87,26 @@ using namespace MagickCore;
 
 bool loadWithImageMagick(const QString& path, QImage& qimg)
 {
-    qDebug() << "Try to load image with ImageMagick codecs";
+    qCDebug(DIGIKAM_TESTS_LOG) << "Try to load image with ImageMagick codecs";
 
     try
     {
         Magick::Image image;
         image.read(path.toUtf8().constData());
 
-        qDebug() << "IM toQImage     :" << image.columns() << image.rows();
-        qDebug() << "IM QuantumRange :" << QuantumRange;
+        qCDebug(DIGIKAM_TESTS_LOG) << "IM toQImage     :" << image.columns() << image.rows();
+        qCDebug(DIGIKAM_TESTS_LOG) << "IM QuantumRange :" << QuantumRange;
 
         Blob* const pixelBlob = new Blob;
         image.write(pixelBlob, "BGRA", 8);
-        qDebug() << "IM blob size    :" << pixelBlob->length();
+        qCDebug(DIGIKAM_TESTS_LOG) << "IM blob size    :" << pixelBlob->length();
 
         qimg = QImage((uchar*)pixelBlob->data(), image.columns(), image.rows(), QImage::Format_ARGB32);
 
 #if (QT_VERSION >= QT_VERSION_CHECK(5, 10, 0))
-        qDebug() << "QImage data size:" << qimg.sizeInBytes();
+        qCDebug(DIGIKAM_TESTS_LOG) << "QImage data size:" << qimg.sizeInBytes();
 #else
-        qDebug() << "QImage data size:" << qimg.byteCount();
+        qCDebug(DIGIKAM_TESTS_LOG) << "QImage data size:" << qimg.byteCount();
 #endif
 
         if (qimg.isNull())
@@ -113,7 +116,7 @@ bool loadWithImageMagick(const QString& path, QImage& qimg)
     }
     catch (Exception& error_)
     {
-        qWarning() << "Cannot load [" << path << "] due to ImageMagick exception:" << error_.what();
+        qCWarning(DIGIKAM_TESTS_LOG) << "Cannot load [" << path << "] due to ImageMagick exception:" << error_.what();
         qimg = QImage();
         return false;
     }
@@ -133,11 +136,11 @@ int main(int argc, char** argv)
 
     if (!inflst)
     {
-        qWarning() << "ImageMagick coders list is null!";
+        qCWarning(DIGIKAM_TESTS_LOG) << "ImageMagick coders list is null!";
         return -1;
     }
 
-    qDebug().noquote() << "Name             :: Module           :: Mime Type                    :: Mode  :: Version                      :: Description";
+    qCDebug(DIGIKAM_TESTS_LOG).noquote() << "Name             :: Module           :: Mime Type                    :: Mode  :: Version                      :: Description";
 
     for (uint i = 0 ; i < n ; ++i)
     {
@@ -168,7 +171,7 @@ int main(int argc, char** argv)
                 mod != QLatin1String("JP2")  &&
                 mime.startsWith(QLatin1String("image/")))
             {
-                qDebug().noquote()
+                qCDebug(DIGIKAM_TESTS_LOG).noquote()
                      << QString::fromLatin1("%1").arg(QLatin1String(inf->name),        16) << "::"
                      << QString::fromLatin1("%1").arg(mod,                             16) << "::"
                      << QString::fromLatin1("%1").arg(mime,                            28) << "::"
@@ -197,7 +200,7 @@ int main(int argc, char** argv)
         }
     }
 
-    qDebug() << "Files to load:" << list;
+    qCDebug(DIGIKAM_TESTS_LOG) << "Files to load:" << list;
 
     if (!list.isEmpty())
     {
@@ -214,7 +217,7 @@ int main(int argc, char** argv)
             }
             else
             {
-                qWarning() << "exit -1";
+                qCWarning(DIGIKAM_TESTS_LOG) << "exit -1";
                 MagickCoreTerminus();
                 return -1;
             }

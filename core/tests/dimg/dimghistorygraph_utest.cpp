@@ -21,7 +21,7 @@
  *
  * ============================================================ */
 
-#include "dimghistorygraphtest.h"
+#include "dimghistorygraph_utest.h"
 
 // Qt includes
 
@@ -30,12 +30,12 @@
 #include <QFileInfo>
 #include <QTime>
 #include <QTreeView>
-#include <QDebug>
 #include <QTest>
 #include <QUrl>
 
 // Local includes
 
+#include "digikam_debug.h"
 #include "coredb.h"
 #include "collectionlocation.h"
 #include "collectionmanager.h"
@@ -71,7 +71,7 @@ void DImgHistoryGraphTest::initTestCase()
 
     dbFile = tempFilePath(QLatin1String("database"));
 
-    qDebug() << "Using database path for test: " << dbFile;
+    qCDebug(DIGIKAM_TESTS_LOG) << "Using database path for test: " << dbFile;
 
     DbEngineParameters params(QLatin1String("QSQLITE"), dbFile, QLatin1String("QSQLITE"), dbFile);
     CoreDbAccess::setParameters(params, CoreDbAccess::MainApplication);
@@ -89,9 +89,9 @@ void DImgHistoryGraphTest::initTestCase()
 
     foreach (const AlbumShortInfo& album, albums)
     {
-        //qDebug() << album.relativePath << album.id;
-        //qDebug() << CollectionManager::instance()->albumRootPath(album.albumRootId);
-        //qDebug() << CoreDbAccess().db()->getItemURLsInAlbum(album.id);
+        //qCDebug(DIGIKAM_TESTS_LOG) << album.relativePath << album.id;
+        //qCDebug(DIGIKAM_TESTS_LOG) << CollectionManager::instance()->albumRootPath(album.albumRootId);
+        //qCDebug(DIGIKAM_TESTS_LOG) << CoreDbAccess().db()->getItemURLsInAlbum(album.id);
         readOnlyImages << CoreDbAccess().db()->getItemURLsInAlbum(album.id);
     }
 
@@ -113,7 +113,7 @@ void DImgHistoryGraphTest::cleanupTestCase()
     QDir dir(collectionDir.path());
     dir.removeRecursively();
 
-    qDebug() << "deleted test folder " << collectionDir.path();
+    qCDebug(DIGIKAM_TESTS_LOG) << "deleted test folder " << collectionDir.path();
 }
 
 void DImgHistoryGraphTest::rescan()
@@ -191,11 +191,11 @@ void DImgHistoryGraphTest::testEditing()
     std::sort(controlCloud.begin(), controlCloud.end());
 
     ItemHistoryGraph graph1 = ItemHistoryGraph::fromInfo(three);
-    qDebug() << graph1;
+    qCDebug(DIGIKAM_TESTS_LOG) << graph1;
     ItemHistoryGraph graph2 = ItemHistoryGraph::fromInfo(four);
-    qDebug() << graph2;
+    qCDebug(DIGIKAM_TESTS_LOG) << graph2;
     ItemHistoryGraph graph3 = ItemHistoryGraph::fromInfo(one);
-    qDebug() << graph3;
+    qCDebug(DIGIKAM_TESTS_LOG) << graph3;
 
     // all three must have the full cloud
 
@@ -214,7 +214,7 @@ void DImgHistoryGraphTest::testEditing()
     int currentVersionTag      = TagsCache::instance()->getOrCreateInternalTag(InternalTagName::currentVersion());
     int intermediateVersionTag = TagsCache::instance()->getOrCreateInternalTag(InternalTagName::intermediateVersion());
 
-    //qDebug() << orig.tagIds() << one.tagIds() << two.tagIds() << three.tagIds() << four.tagIds();
+    //qCDebug(DIGIKAM_TESTS_LOG) << orig.tagIds() << one.tagIds() << two.tagIds() << three.tagIds() << four.tagIds();
 
     QVERIFY(!orig.tagIds().contains(needResolvingTag));
     QVERIFY(!orig.tagIds().contains(needTaggingTag));
@@ -234,7 +234,7 @@ void DImgHistoryGraphTest::testEditing()
     // graph is prepared for display, vertex of removed file cleared
 
     QVERIFY(graph2.data().vertexCount() == 4);
-    qDebug() << graph2;
+    qCDebug(DIGIKAM_TESTS_LOG) << graph2;
 
     // Check that removal of current version leads to resetting of current version tag
 
@@ -243,7 +243,7 @@ void DImgHistoryGraphTest::testEditing()
     QFile fileFour(four.filePath());
     fileFour.remove();
     CollectionScanner().completeScan();
-    qDebug() << originalVersionTag << currentVersionTag << intermediateVersionTag<<  orig.tagIds() << one.tagIds();
+    qCDebug(DIGIKAM_TESTS_LOG) << originalVersionTag << currentVersionTag << intermediateVersionTag<<  orig.tagIds() << one.tagIds();
     QVERIFY(one.tagIds().contains(currentVersionTag));
     QVERIFY(!one.tagIds().contains(intermediateVersionTag));
 }
@@ -405,14 +405,14 @@ void DImgHistoryGraphTest::testGraph()
     ItemHistoryGraph graph;
     graph.addRelations(pairs);
 
-    qDebug() << "Initial graph:" << graph;
+    qCDebug(DIGIKAM_TESTS_LOG) << "Initial graph:" << graph;
 
     graph.reduceEdges();
 
-    qDebug() << "Transitive reduction:" << graph;
+    qCDebug(DIGIKAM_TESTS_LOG) << "Transitive reduction:" << graph;
 
     QList<IdPair> cloud = graph.relationCloud();
-    qDebug() << "Transitive closure:" << cloud;
+    qCDebug(DIGIKAM_TESTS_LOG) << "Transitive closure:" << cloud;
 
     QVERIFY(cloud.contains(IdPair(7,1)));
     QVERIFY(cloud.contains(IdPair(8,1)));
@@ -486,7 +486,7 @@ void DImgHistoryGraphTest::testGraph()
 void DImgHistoryGraphTest::slotImageLoaded(const QString& fileName, bool success)
 {
     QVERIFY(success);
-    qDebug() << "Loaded" << fileName;
+    qCDebug(DIGIKAM_TESTS_LOG) << "Loaded" << fileName;
     m_loop.quit();
 }
 
@@ -494,6 +494,6 @@ void DImgHistoryGraphTest::slotImageSaved(const QString& fileName, bool success)
 {
     QVERIFY(success);
     m_im->setLastSaved(fileName);
-    qDebug() << "Saved to" << fileName;
+    qCDebug(DIGIKAM_TESTS_LOG) << "Saved to" << fileName;
     m_loop.quit();
 }
