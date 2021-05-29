@@ -91,7 +91,13 @@ int main(int argc, char** argv)
     }
 
     QFile ef(QLatin1String("output.exv"));
-    ef.open(QIODevice::WriteOnly);
+
+    if (!ef.open(QIODevice::WriteOnly))
+    {
+        qWarning() << "Cannot open target EXV file";
+        return -1;
+    }
+
     ef.write(exv);
     ef.close();
 
