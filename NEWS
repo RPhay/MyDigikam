@@ -359,4 +359,5 @@ BUGFIXES:
 336 ==> 437714 - A search group of this or another search is added to existing searches when editing them.
 337 ==> 437769 - Search-Table view / After suspending - ERROR:directory_reader_win.cc(43).
 338 ==> 437813 - Exiftool.exe is preventing the installation.
-339 ==> 
+339 ==> 437657 - Size of dialog for database migration.
+340 ==> 
