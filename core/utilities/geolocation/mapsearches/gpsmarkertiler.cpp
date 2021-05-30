@@ -436,8 +436,8 @@ QVariant GPSMarkerTiler::bestRepresentativeIndexFromList(const QList<QVariant>& 
     {
         const QPair<TileIndex, int> currentIndex = indices.at(i).value<QPair<TileIndex, int> >();
 
-        GPSItemInfo currentMarkerInfo         = d->imagesHash.value(currentIndex.second);
-        GeoGroupState currentMarkerGroupState = getImageState(currentIndex.second);
+        GPSItemInfo currentMarkerInfo            = d->imagesHash.value(currentIndex.second);
+        GeoGroupState currentMarkerGroupState    = getImageState(currentIndex.second);
 
         if (GPSItemInfoSorter::fitsBetter(bestMarkerInfo,
                                           bestMarkerGroupState,
@@ -630,6 +630,7 @@ void GPSMarkerTiler::slotMapImagesJobResult()
     {
         return;
     }
+
     // QElapsedTimer elapsedTimer;
     // elapsedTimer.start();
 
@@ -641,6 +642,7 @@ void GPSMarkerTiler::slotMapImagesJobResult()
         {
             continue;
         }
+
         if (d->imagesHash.contains(currentItemInfo.id))
         {
             continue;
@@ -651,7 +653,10 @@ void GPSMarkerTiler::slotMapImagesJobResult()
         const TileIndex markerTileIndex = TileIndex::fromCoordinates(currentItemInfo.coordinates, TileIndex::MaxLevel);
         addMarkerToTileAndChildren(currentItemInfo.id, markerTileIndex);
     }
-    // qCDebug(DIGIKAM_GENERAL_LOG) << "added " << returnedItemInfo.count() << " markers in " << elapsedTimer.nsecsElapsed() / 1e9 << " seconds";
+
+    // qCDebug(DIGIKAM_GENERAL_LOG) << "added" << returnedItemInfo.count()
+    //                              << "markers in" << elapsedTimer.nsecsElapsed() / 1e9 << "seconds";
+
     emit signalTilesOrSelectionChanged();
 }
 
@@ -694,6 +699,7 @@ void GPSMarkerTiler::tileDelete(AbstractMarkerTiler::Tile* const tile)
 void GPSMarkerTiler::slotImageChange(const ImageChangeset& changeset)
 {
     const DatabaseFields::Set changes = changeset.changes();
+
     if (!((changes & DatabaseFields::LatitudeNumber)  ||
           (changes & DatabaseFields::LongitudeNumber) ||
           (changes & DatabaseFields::Altitude)))
@@ -707,7 +713,8 @@ void GPSMarkerTiler::slotImageChange(const ImageChangeset& changeset)
 
         if (!newItemInfo.hasCoordinates())
         {
-            if (d->imagesHash.contains(id)) {
+            if (d->imagesHash.contains(id))
+            {
                 // the image has no coordinates any more
                 // remove it from the tiles and the image list
 
@@ -737,7 +744,10 @@ void GPSMarkerTiler::slotImageChange(const ImageChangeset& changeset)
 
             const GPSItemInfo oldInfo           = d->imagesHash.value(id);
             const GeoCoordinates oldCoordinates = oldInfo.coordinates;
-            const GPSItemInfo currentItemInfo   = GPSItemInfo::fromIdCoordinatesRatingDateTime(id, newCoordinates, newItemInfo.rating(), newItemInfo.dateTime());
+            const GPSItemInfo currentItemInfo   = GPSItemInfo::fromIdCoordinatesRatingDateTime(id,
+                                                                                               newCoordinates,
+                                                                                               newItemInfo.rating(),
+                                                                                               newItemInfo.dateTime());
 
             d->imagesHash.insert(id, currentItemInfo);
 
@@ -754,7 +764,11 @@ void GPSMarkerTiler::slotImageChange(const ImageChangeset& changeset)
         {
             // the image is new, add it to the existing tiles
 
-            const GPSItemInfo currentItemInfo = GPSItemInfo::fromIdCoordinatesRatingDateTime(id, newCoordinates, newItemInfo.rating(), newItemInfo.dateTime());
+            const GPSItemInfo currentItemInfo = GPSItemInfo::fromIdCoordinatesRatingDateTime(id,
+                                                                                             newCoordinates,
+                                                                                             newItemInfo.rating(),
+                                                                                             newItemInfo.dateTime());
+
             d->imagesHash.insert(id, currentItemInfo);
 
             const TileIndex newMarkerTileIndex = TileIndex::fromCoordinates(currentItemInfo.coordinates, TileIndex::MaxLevel);
@@ -987,7 +1001,6 @@ void GPSMarkerTiler::removeMarkerFromTileAndChildren(const qlonglong imageId, co
 
     for (int level = 0 ; level <= markerTileIndex.level() ; ++level)
     {
-
         currentTile->imagesId.removeOne(imageId);
 
         if (currentTile->imagesId.isEmpty())
@@ -1017,9 +1030,8 @@ void GPSMarkerTiler::addMarkerToTileAndChildren(const qlonglong imageId, const T
 {
     MyTile* currentTile = static_cast<MyTile*>(rootTile());
 
-    for (int level = 0; level <= markerTileIndex.level() ; ++level)
+    for (int level = 0 ; level <= markerTileIndex.level() ; ++level)
     {
-
         currentTile->imagesId.append(imageId);
 
         if (currentTile->childrenEmpty())
