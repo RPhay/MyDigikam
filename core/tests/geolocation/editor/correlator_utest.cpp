@@ -21,7 +21,7 @@
  *
  * ============================================================ */
 
-#include "test_correlator.h"
+#include "correlator_utest.h"
 
 // Qt includes
 

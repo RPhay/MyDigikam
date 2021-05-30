@@ -3,11 +3,10 @@
  * This file is a part of digiKam project
  * https://www.digikam.org
  *
- * Date        : 2010-06-21
- * Description : Test for SimpleTreeModel.
+ * Date        : 2010-01-17
+ * Description : Test parsing gpx data.
  *
- * Copyright (C) 2010      by Michael G. Hansen <mike at mghansen dot de>
- * Copyright (C) 2017-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2010-2014 by Michael G. Hansen <mike at mghansen dot de>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -22,20 +21,20 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_TEST_SIMPLETREEMODEL_H
-#define DIGIKAM_TEST_SIMPLETREEMODEL_H
+#ifndef DIGIKAM_CORRELATOR_UTEST_H
+#define DIGIKAM_CORRELATOR_UTEST_H
 
 // Qt includes
 
 #include <QTest>
 
-class TestSimpleTreeModel : public QObject
+class TestGPXParsing : public QObject
 {
     Q_OBJECT
 
 public:
 
-    explicit TestSimpleTreeModel(QObject* const parent = nullptr)
+    explicit TestGPXParsing(QObject* const parent = nullptr)
         : QObject(parent)
     {
     }
@@ -43,8 +42,9 @@ public:
 private Q_SLOTS:
 
     void testNoOp();
-    void testModel1();
+    void testCorrelator1();
+    void testInterpolation();
+
 };
 
-#endif // DIGIKAM_TEST_SIMPLETREEMODEL_H
-
+#endif // DIGIKAM_CORRELATOR_UTEST_H

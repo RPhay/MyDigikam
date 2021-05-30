@@ -1,0 +1,6 @@
+List of unit-tests and command line tools listed by modules.
+
+File Naming Conventions:
+
+- Unit-Tests pattern:         *_utest.cpp/.h
+- Command line tools pattern: *_cli.cpp/.h

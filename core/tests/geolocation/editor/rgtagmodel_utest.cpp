@@ -22,7 +22,7 @@
  *
  * ============================================================ */
 
-#include "test_rgtagmodel.h"
+#include "rgtagmodel_utest.h"
 
 // Qt includes
 

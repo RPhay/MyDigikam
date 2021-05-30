@@ -3,8 +3,8 @@
  * This file is a part of digiKam project
  * https://www.digikam.org
  *
- * Date        : 2010-05-12
- * Description : Test parsing rg data.
+ * Date        : 2010-06-21
+ * Description : Test for RG tag model.
  *
  * Copyright (C) 2010 by Michael G. Hansen <mike at mghansen dot de>
  * Copyright (C) 2010 by Gabriel Voicu <ping dot gabi at gmail dot com>
@@ -22,20 +22,20 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_TEST_RGPARSING_H
-#define DIGIKAM_TEST_RGPARSING_H
+#ifndef DIGIKAM_RGTAGMODEL_UTEST_H
+#define DIGIKAM_RGTAGMODEL_UTEST_H
 
 // Qt includes
 
 #include <QTest>
 
-class TestRGParsing : public QObject
+class TestRGTagModel : public QObject
 {
     Q_OBJECT
 
 public:
 
-    explicit TestRGParsing(QObject* const parent = nullptr)
+    explicit TestRGTagModel(QObject* const parent = nullptr)
         : QObject(parent)
     {
     }
@@ -43,7 +43,12 @@ public:
 private Q_SLOTS:
 
     void testNoOp();
-    void testVerifyRG();
+    void testModelEmpty();
+
+    void testModel1();
+    void testModel2();
+    void testModel3();
+    void testModelSpacerTags();
 };
 
-#endif // DIGIKAM_TEST_RGPARSING_H
+#endif // DIGIKAM_RGTAGMODEL_UTEST_H

@@ -21,7 +21,7 @@
  *
  * ============================================================ */
 
-#include "test_gpsimageitem.h"
+#include "gpsimageitem_utest.h"
 
 // Qt includes
 

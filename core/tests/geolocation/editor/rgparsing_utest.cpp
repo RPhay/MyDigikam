@@ -22,7 +22,7 @@
  *
  * ============================================================ */
 
-#include "test_rgparsing.h"
+#include "rgparsing_utest.h"
 
 // Qt includes
 

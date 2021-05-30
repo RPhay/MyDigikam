@@ -22,7 +22,7 @@
  *
  * ============================================================ */
 
-#include "test_simpletreemodel.h"
+#include "simpletreemodel_utest.h"
 
 // Qt includes
 

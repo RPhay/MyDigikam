@@ -3,10 +3,11 @@
  * This file is a part of digiKam project
  * https://www.digikam.org
  *
- * Date        : 2010-06-28
- * Description : Test loading and saving of data in GPSItemContainer.
+ * Date        : 2010-05-12
+ * Description : Test parsing rg data.
  *
  * Copyright (C) 2010 by Michael G. Hansen <mike at mghansen dot de>
+ * Copyright (C) 2010 by Gabriel Voicu <ping dot gabi at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -21,32 +22,28 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_TEST_GPSIMAGEITEM_H
-#define DIGIKAM_TEST_GPSIMAGEITEM_H
+#ifndef DIGIKAM_RGPARSING_UTEST_H
+#define DIGIKAM_RGPARSING_UTEST_H
 
 // Qt includes
 
 #include <QTest>
 
-// local includes
-
-class TestGPSItemContainer : public QObject
+class TestRGParsing : public QObject
 {
     Q_OBJECT
 
 public:
 
-    explicit TestGPSItemContainer(QObject* const parent = nullptr)
+    explicit TestRGParsing(QObject* const parent = nullptr)
         : QObject(parent)
     {
     }
 
 private Q_SLOTS:
 
-    void initTestCase();
-    void cleanupTestCase();
     void testNoOp();
-    void testBasicLoading();
+    void testVerifyRG();
 };
 
-#endif // DIGIKAM_TEST_GPSIMAGEITEM_H
+#endif // DIGIKAM_RGPARSING_UTEST_H
