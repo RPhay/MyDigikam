@@ -21,7 +21,7 @@
  *
  * ============================================================ */
 
-#include "iojobstest.h"
+#include "iojobs_utest.h"
 
 // Qt includes
 
@@ -83,9 +83,9 @@ void IOJobsTest::copyAndMove()
     QFileInfo srcFi(src);
     QFileInfo dstFi(dst);
 
-    QUrl srcUrl           = QUrl::fromLocalFile(srcFi.absoluteFilePath());
-    QUrl dstUrl           = QUrl::fromLocalFile(dstFi.absoluteFilePath());
-    int operation         = (isMove ? IOJobData::MoveFiles : IOJobData::CopyFiles);
+    QUrl srcUrl              = QUrl::fromLocalFile(srcFi.absoluteFilePath());
+    QUrl dstUrl              = QUrl::fromLocalFile(dstFi.absoluteFilePath());
+    int operation            = (isMove ? IOJobData::MoveFiles : IOJobData::CopyFiles);
 
     IOJobData* const data    = new IOJobData(operation, QList<QUrl>() << srcUrl, dstUrl);
     CopyOrMoveJob* const job = new CopyOrMoveJob(data);
