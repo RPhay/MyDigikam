@@ -28,11 +28,11 @@
 
 #include <QFileInfo>
 #include <QImage>
-#include <QDebug>
 #include <QPointer>
 
 // Local includes
 
+#include "digikam_debug.h"
 #include "drawdecoder.h"
 
 class Q_DECL_HIDDEN Mytask : public ActionJob
@@ -99,7 +99,7 @@ protected:
 
         emit signalProgress(60);
 
-        qDebug() << "raw2png: Saving full RAW image to "
+        qCDebug(DIGIKAM_TESTS_LOG) << "raw2png: Saving full RAW image to "
                  << fullOutput.fileName() << " size ("
                  << image.width() << "x" << image.height()
                  << ")";
@@ -153,7 +153,7 @@ void RAWToPNGConverterThread::convertRAWtoPNG(const QList<QUrl>& list, const DRa
 
         collection.insert(job, priority);
 
-        qDebug() << "Appending file to process " << url;
+        qCDebug(DIGIKAM_TESTS_LOG) << "Appending file to process " << url;
     }
 
     appendJobs(collection);

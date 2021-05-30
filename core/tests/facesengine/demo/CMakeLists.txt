@@ -10,18 +10,18 @@ kde_enable_exceptions()
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR})
 
-set(facesenginedemo_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/demofaceengine.cpp
-                         ${CMAKE_CURRENT_SOURCE_DIR}/demomainwindow.cpp
-                         ${CMAKE_CURRENT_SOURCE_DIR}/demofaceitem.cpp
-                         ${CMAKE_CURRENT_SOURCE_DIR}/demobutton.cpp
-                         ${CMAKE_CURRENT_SOURCE_DIR}/demomarquee.cpp
-                         ${CMAKE_CURRENT_SOURCE_DIR}/demofancyrect.cpp
+set(facesenginedemo_gui_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/demofaceengine.cpp
+                             ${CMAKE_CURRENT_SOURCE_DIR}/demomainwindow.cpp
+                             ${CMAKE_CURRENT_SOURCE_DIR}/demofaceitem.cpp
+                             ${CMAKE_CURRENT_SOURCE_DIR}/demobutton.cpp
+                             ${CMAKE_CURRENT_SOURCE_DIR}/demomarquee.cpp
+                             ${CMAKE_CURRENT_SOURCE_DIR}/demofancyrect.cpp
 )
 
-qt5_wrap_ui(facesenginedemo_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/demomainwindow.ui)
-add_executable(facesenginedemo ${facesenginedemo_SRCS})
+qt5_wrap_ui(facesenginedemo_gui_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/demomainwindow.ui)
+add_executable(facesenginedemo_gui ${facesenginedemo_gui_SRCS})
 
-target_link_libraries(facesenginedemo
+target_link_libraries(facesenginedemo_gui
 
                       digikamcore
                       digikamgui
