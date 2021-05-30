@@ -65,6 +65,7 @@ public:
     QProcess*              databaseProcess;
 
     QString                internalDBName;
+    QString                mysqlAdminPath;
     QString                mysqldInitPath;
     QString                mysqldCmd;
     QString                dataDir;
@@ -98,6 +99,7 @@ DatabaseServer::DatabaseServer(const DbEngineParameters& params, DatabaseServerS
     qCDebug(DIGIKAM_DATABASESERVER_LOG) << "Internal Server data path:" << dataDir;
 
     d->internalDBName       = QLatin1String("digikam");
+    d->mysqlAdminPath       = d->params.internalServerMysqlAdminCmd;
     d->mysqldInitPath       = d->params.internalServerMysqlInitCmd;
     d->mysqldCmd            = d->params.internalServerMysqlServCmd;
     d->dataDir              = dataDir;
@@ -178,30 +180,23 @@ void DatabaseServer::stopDatabaseProcess()
         return;
     }
 
+    QStringList mysqlShutDownArgs;
+    mysqlShutDownArgs << QLatin1String("shutdown");
+
 #ifdef Q_OS_WIN
 
-    QProcess shutDownProcess;
-
-    // We use the same path as the server binary,
-    // mysqladmin.exe are located in the same folder under Windows.
-
-    QUrl mysqladminCmd = QUrl::fromLocalFile(d->mysqldCmd).adjusted(QUrl::RemoveFilename);
-    mysqladminCmd.setPath(mysqladminCmd.path() + QLatin1String("mysqladmin.exe"));
-    shutDownProcess.setProcessEnvironment(adjustedEnvironmentForAppImage());
-
-    shutDownProcess.start(mysqladminCmd.toLocalFile(), QStringList() << QLatin1String("shutdown")
-                                                                     << QLatin1String("--port=3307"));
-    shutDownProcess.waitForFinished();
-    d->databaseProcess->waitForFinished(10000);
-
-    if (d->databaseProcess->state() == QProcess::Running)
-    {
-        qCDebug(DIGIKAM_DATABASESERVER_LOG) << "Database process could not be terminated";
-    }
+    mysqlShutDownArgs << QLatin1String("--port=3307");
 
 #else
 
-    d->databaseProcess->terminate();
+    mysqlShutDownArgs << QString::fromLatin1("--socket=%1/mysql.socket").arg(d->miscDir);
+
+#endif
+
+    QProcess mysqlShutDownProcess;
+    mysqlShutDownProcess.setProcessEnvironment(adjustedEnvironmentForAppImage());
+    mysqlShutDownProcess.start(d->mysqlAdminPath, mysqlShutDownArgs);
+    mysqlShutDownProcess.waitForFinished();
 
     if ((d->databaseProcess->state() == QProcess::Running) && !d->databaseProcess->waitForFinished(30000))
     {
@@ -210,12 +205,10 @@ void DatabaseServer::stopDatabaseProcess()
         d->databaseProcess->waitForFinished();
     }
 
-#endif
-
     delete d->databaseProcess;
     d->databaseProcess      = nullptr;
-
     databaseServerStateEnum = stopped;
+
     wait();
 }
 
@@ -294,6 +287,15 @@ DatabaseServerError DatabaseServer::checkDatabaseDirs() const
 
         return DatabaseServerError(DatabaseServerError::StartError,
                                    i18n("No path to mysql initialization "
+                                        "command set in configuration file!."));
+    }
+
+    if (d->mysqlAdminPath.isEmpty())
+    {
+        qCDebug(DIGIKAM_DATABASESERVER_LOG) << "No path to mysql administration command set in configuration file!";
+
+        return DatabaseServerError(DatabaseServerError::StartError,
+                                   i18n("No path to mysql administration "
                                         "command set in configuration file!."));
     }
 

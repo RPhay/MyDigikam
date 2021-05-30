@@ -62,6 +62,7 @@ public:
                        const QString& _databaseNameFace = QString(),
                        const QString& _databaseNameSimilarity = QString(),
                        const QString& _internalServerDBPath = QString(),
+                       const QString& _internalServerMysqlAdminCmd = QString(),
                        const QString& _internalServerMysqlServCmd = QString(),
                        const QString& _internalServerMysqlInitCmd = QString()
                       );
@@ -182,6 +183,11 @@ public:
     static QString defaultMysqlServerCmd();
 
     /**
+     * Return the default Mysql server administration name (Internal server only).
+     */
+    static QString defaultMysqlAdminCmd();
+
+    /**
      * Return the default Mysql initialization command name (Internal server only).
      */
     static QString defaultMysqlInitCmd();
@@ -203,6 +209,7 @@ public:
     QString internalServerDBPath;
 
     /// Settings stored in config file and used only with internal server at runtime to start server instance or init database tables.
+    QString internalServerMysqlAdminCmd;
     QString internalServerMysqlServCmd;
     QString internalServerMysqlInitCmd;
 };

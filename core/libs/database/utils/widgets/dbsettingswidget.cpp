@@ -134,6 +134,7 @@ void DatabaseSettingsWidget::setupMainArea()
     d->dbBinariesWidget->header()->setSectionHidden(2, true);
 
     d->dbBinariesWidget->addBinary(d->mysqlInitBin);
+    d->dbBinariesWidget->addBinary(d->mysqlAdminBin);
     d->dbBinariesWidget->addBinary(d->mysqlServBin);
 
 #ifdef Q_OS_LINUX
@@ -677,6 +678,7 @@ void DatabaseSettingsWidget::setParametersFromSettings(const ApplicationSettings
     {
         d->dbPathEdit->setFileDlgPath(d->orgPrms.internalServerPath());
         d->dbType->setCurrentIndex(d->dbTypeMap[MysqlInternal]);
+        d->mysqlAdminBin.setup(QFileInfo(d->orgPrms.internalServerMysqlAdminCmd).absoluteFilePath());
         d->mysqlInitBin.setup(QFileInfo(d->orgPrms.internalServerMysqlInitCmd).absoluteFilePath());
         d->mysqlServBin.setup(QFileInfo(d->orgPrms.internalServerMysqlServCmd).absoluteFilePath());
         d->dbBinariesWidget->allBinariesFound();
@@ -720,8 +722,9 @@ DbEngineParameters DatabaseSettingsWidget::getDbEngineParameters() const
         {
             prm = DbEngineParameters::defaultParameters(databaseBackend());
             prm.setInternalServerPath(databasePath());
-            prm.internalServerMysqlInitCmd = d->mysqlInitBin.path();
-            prm.internalServerMysqlServCmd = d->mysqlServBin.path();
+            prm.internalServerMysqlAdminCmd = d->mysqlAdminBin.path();
+            prm.internalServerMysqlInitCmd  = d->mysqlInitBin.path();
+            prm.internalServerMysqlServCmd  = d->mysqlServBin.path();
             break;
         }
 

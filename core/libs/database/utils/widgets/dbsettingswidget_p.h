@@ -67,6 +67,7 @@
 #include "dbinarysearch.h"
 #include "dexpanderbox.h"
 #include "dlayoutbox.h"
+#include "mysqladminbinary.h"
 #include "mysqlinitbinary.h"
 #include "mysqlservbinary.h"
 #include "albummanager.h"
@@ -131,6 +132,7 @@ public:
     DBinarySearch*     dbBinariesWidget;
 
     MysqlInitBinary    mysqlInitBin;
+    MysqlAdminBinary   mysqlAdminBin;
     MysqlServBinary    mysqlServBin;
 
     DbEngineParameters orgPrms;

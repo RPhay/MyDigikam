@@ -107,8 +107,11 @@ bool AlbumManager::setDatabase(const DbEngineParameters& params, bool priority, 
 
     if      (params.internalServer && suggestedAlbumRoot.isEmpty())
     {
-        if (!QFileInfo::exists(params.internalServerMysqlServCmd) &&
-            QStandardPaths::findExecutable(params.internalServerMysqlServCmd).isEmpty())
+        if ((!QFileInfo::exists(params.internalServerMysqlServCmd)                         &&
+             QStandardPaths::findExecutable(params.internalServerMysqlServCmd).isEmpty())  ||
+            (!QFileInfo::exists(params.internalServerMysqlAdminCmd)                        &&
+             QStandardPaths::findExecutable(params.internalServerMysqlAdminCmd).isEmpty())
+           )
         {
             databaseError = i18n("The MySQL binary tools are not found, please "
                                  "set the correct location in the next dialog.");
