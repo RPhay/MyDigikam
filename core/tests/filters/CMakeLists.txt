@@ -12,17 +12,16 @@ include_directories(
     $<TARGET_PROPERTY:Qt5::Test,INTERFACE_INCLUDE_DIRECTORIES>
     $<TARGET_PROPERTY:Qt5::Core,INTERFACE_INCLUDE_DIRECTORIES>
 
-    $<TARGET_PROPERTY:KF5::I18n,INTERFACE_INCLUDE_DIRECTORIES>
     $<TARGET_PROPERTY:KF5::XmlGui,INTERFACE_INCLUDE_DIRECTORIES>
 )
 
 #------------------------------------------------------------------------
 
-set(testautocrop_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/testautocrop.cpp)
-add_executable(testautocrop ${testautocrop_SRCS})
-ecm_mark_nongui_executable(testautocrop)
+set(autocrop_cli_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/autocrop_cli.cpp)
+add_executable(autocrop_cli ${autocrop_cli_SRCS})
+ecm_mark_nongui_executable(autocrop_cli)
 
-target_link_libraries(testautocrop
+target_link_libraries(autocrop_cli
 
                       digikamcore
 
@@ -35,11 +34,11 @@ if(LensFun_FOUND)
 
     include_directories(${LENSFUN_INCLUDE_DIRS})
 
-    set(testlensfuniface_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/testlensfuniface.cpp)
-    add_executable(testlensfuniface ${testlensfuniface_SRCS})
-    ecm_mark_nongui_executable(testlensfuniface)
+    set(lensfuniface_cli_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/lensfuniface_cli.cpp)
+    add_executable(lensfuniface_cli ${lensfuniface_cli_SRCS})
+    ecm_mark_nongui_executable(lensfuniface_cli)
 
-    target_link_libraries(testlensfuniface
+    target_link_libraries(lensfuniface_cli
 
                           digikamcore
 
@@ -50,11 +49,11 @@ endif()
 
 #------------------------------------------------------------------------
 
-set(testnrestimate_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/testnrestimate.cpp)
-add_executable (testnrestimate ${testnrestimate_SRCS})
-ecm_mark_nongui_executable(testnrestimate)
+set(nrestimate_cli_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/nrestimate_cli.cpp)
+add_executable(nrestimate_cli ${nrestimate_cli_SRCS})
+ecm_mark_nongui_executable(nrestimate_cli)
 
-target_link_libraries(testnrestimate
+target_link_libraries(nrestimate_cli
 
                       digikamcore
                       digikamdatabase

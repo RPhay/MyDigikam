@@ -25,10 +25,10 @@
 #include <QFileInfo>
 #include <QString>
 #include <QRect>
-#include <QDebug>
 
 // Local includes
 
+#include "digikam_debug.h"
 #include "dimg.h"
 #include "drawdecoding.h"
 #include "autocrop.h"
@@ -41,8 +41,8 @@ int main(int argc, char** argv)
 {
     if (argc != 2)
     {
-        qDebug() << "testautocrop - test auto-crop transform";
-        qDebug() << "Usage: <image>";
+        qCDebug(DIGIKAM_TESTS_LOG) << "testautocrop - test auto-crop transform";
+        qCDebug(DIGIKAM_TESTS_LOG) << "Usage: <image>";
         return -1;
     }
 
@@ -63,7 +63,7 @@ int main(int argc, char** argv)
     ac.startFilterDirectly();
     QRect rect = ac.autoInnerCrop();
 
-    qDebug() << "Cropped image area: " << rect;
+    qCDebug(DIGIKAM_TESTS_LOG) << "Cropped image area: " << rect;
 
     img.crop(rect);
     img.save(outFilePath, QLatin1String("PNG"));

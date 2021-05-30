@@ -25,11 +25,11 @@
 
 #include <QString>
 #include <QFile>
-#include <QDebug>
 #include <QScopedPointer>
 
 // Local includes
 
+#include "digikam_debug.h"
 #include "lensfuniface.h"
 
 using namespace Digikam;
@@ -38,8 +38,8 @@ int main(int argc, char** argv)
 {
     if (argc != 2)
     {
-        qDebug() << "testlensfuniface - test to parse metadata dedicated to LensFun";
-        qDebug() << "Usage: <image>";
+        qCDebug(DIGIKAM_TESTS_LOG) << "testlensfuniface - test to parse metadata dedicated to LensFun";
+        qCDebug(DIGIKAM_TESTS_LOG) << "Usage: <image>";
         return -1;
     }
 
