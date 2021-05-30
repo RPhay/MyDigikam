@@ -74,7 +74,7 @@ public:
     virtual void tileDelete(Tile* const tile);
     void prepareTiles(const GeoCoordinates& upperLeft, const GeoCoordinates& lowerRight, int level) override;
     void regenerateTiles()                                                                          override;
-    AbstractMarkerTiler::Tile* getTile(const TileIndex& tileIndex, const bool stopIfEmpty = false)  override;
+    AbstractMarkerTiler::Tile* getTile(const TileIndex& tileIndex, const bool stopIfEmpty)          override;
     int getTileMarkerCount(const TileIndex& tileIndex)                                              override;
     int getTileSelectedCount(const TileIndex& tileIndex)                                            override;
 
@@ -115,14 +115,9 @@ private:
     QList<qlonglong> getTileMarkerIds(const TileIndex& tileIndex);
     GeoGroupState getImageState(const qlonglong imageId);
     void removeMarkerFromTileAndChildren(const qlonglong imageId,
-                                         const TileIndex& markerTileIndex,
-                                         MyTile* const startTile,
-                                         const int startTileLevel,
-                                         MyTile* const parentTile);
+                                         const TileIndex& markerTileIndex);
     void addMarkerToTileAndChildren(const qlonglong imageId,
-                                    const TileIndex& markerTileIndex,
-                                    MyTile* const startTile,
-                                    const int startTileLevel);
+                                    const TileIndex& markerTileIndex);
 
 private:
 

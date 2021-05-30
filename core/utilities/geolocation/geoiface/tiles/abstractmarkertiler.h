@@ -164,7 +164,7 @@ public:
     virtual void tileDeleteInternal(Tile* const tile);
     virtual void prepareTiles(const GeoCoordinates& upperLeft, const GeoCoordinates& lowerRight, int level) = 0;
     virtual void regenerateTiles()                                                                          = 0;
-    virtual Tile* getTile(const TileIndex& tileIndex, const bool stopIfEmpty = false)                       = 0;
+    virtual Tile* getTile(const TileIndex& tileIndex, const bool stopIfEmpty)                               = 0;
     virtual int getTileMarkerCount(const TileIndex& tileIndex)                                              = 0;
     virtual int getTileSelectedCount(const TileIndex& tileIndex)                                            = 0;
 
