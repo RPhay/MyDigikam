@@ -19,7 +19,7 @@ set(align_gui_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/align_gui.cpp
                    ${CMAKE_CURRENT_SOURCE_DIR}/funnelreal.cpp
 )
 
-add_executable(align_gui ${align_SRCS})
+add_executable(align_gui ${align_gui_SRCS})
 add_dependencies(align_gui extract_funnel_data)
 
 target_link_libraries(align_gui

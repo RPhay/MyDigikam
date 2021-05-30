@@ -14,8 +14,8 @@ add_custom_target(scriptlink_help ALL
 
 # -----------------------------------------------------------------------------
 
-set(convert_cli_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/convert_format_cli.cpp)
-add_executable(convert_format_cli ${convert_cli_SRCS})
+set(convert_format_cli_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/convert_format_cli.cpp)
+add_executable(convert_format_cli ${convert_format_cli_SRCS})
 
 target_link_libraries(convert_format_cli
 

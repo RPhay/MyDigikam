@@ -22,7 +22,7 @@
 
 // Qt includes
 
-#include <CoreQApplication>
+#include <QCoreApplication>
 #include <QCommandLineParser>
 #include <QDir>
 #include <QImage>
