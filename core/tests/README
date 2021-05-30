@@ -2,11 +2,11 @@ Unit-tests, command line tools, and GUI tools listed by modules.
 
 * File Naming Conventions:
 
-- Unit-Tests pattern:           *_utest.cpp/.h
-- Command line tools pattern:   *_cli.cpp/.h
-- Graphic user interface tools: *_gui.cpp/.h
+- Unit-Tests pattern:                   *_utest.cpp/.h
+- Command line tools pattern:           *_cli.cpp/.h
+- Graphic user interface tools pattern: *_gui.cpp/.h
 
 * All test implementations must uses DIGIKAM_TESTS_LOG QtDebug space defined in digikam_debug.h.
   To show debug traces on the console, turn on the env. variable QT_LOGGING_RULES with "digikam*=true".
 
-* No need to support transalations.
+* No need to support translations in this area.
