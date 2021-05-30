@@ -4,10 +4,10 @@ FlatPak KDE Applications Repository
 Bundle is processed daily by the continuous integration script used by KDE server.
 Bundle is deployed automatically on KDE Applications Flatpak testing repository.
 
-- Front page;      https://kde.org/applications/en/graphics/org.kde.digikam
+- Front page;      https://apps.kde.org/digikam/
 - Status;          https://binary-factory.kde.org/view/Flatpak/job/Digikam_x86_64_flatpak/
 - Configuration:   https://invent.kde.org/kde/flatpak-kde-applications/-/blob/master/org.kde.digikam.remoteapp  (hook)
-                   ./org.kde.digikam.json
+                   ./org.kde.digikam.json                                                                       (target)
 - Repository:      https://distribute.kde.org/kdeapps.flatpakrepo
 
 
