@@ -3,10 +3,10 @@
  * This file is a part of digiKam project
  * https://www.digikam.org
  *
- * Date        : 2011-01-12
- * Description : Test the TileIndex class
+ * Date        : 2010-01-17
+ * Description : Test parsing gpx data.
  *
- * Copyright (C) 2011 by Michael G. Hansen <mike at mghansen dot de>
+ * Copyright (C) 2010 by Michael G. Hansen <mike at mghansen dot de>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -21,20 +21,22 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_TEST_TILEINDEX_H
-#define DIGIKAM_TEST_TILEINDEX_H
+#ifndef DIGIKAM_TRACKS_UTEST_H
+#define DIGIKAM_TRACKS_UTEST_H
 
 // Qt includes
 
 #include <QTest>
 
-class TestTileIndex : public QObject
+// local includes
+
+class TestTracks : public QObject
 {
     Q_OBJECT
 
 public:
 
-    explicit TestTileIndex(QObject* const parent = nullptr)
+    explicit TestTracks(QObject* const parent = nullptr)
         : QObject(parent)
     {
     }
@@ -42,13 +44,11 @@ public:
 private Q_SLOTS:
 
     void testNoOp();
-    void testBasics();
-    void testIntListInteraction();
-    void testResizing();
-    void testFromCoordinates();
-    void testToCoordinates();
-    void testToCoordinatesCorners();
-    void testMovable();
+    void testQDateTimeParsing();
+    void testCustomDateTimeParsing();
+    void testSaxLoader();
+    void testSaxLoaderError();
+    void testFileLoading();
 };
 
-#endif // DIGIKAM_TEST_TILEINDEX_H
+#endif // DIGIKAM_TRACKS_UTEST_H

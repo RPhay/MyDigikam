@@ -21,7 +21,7 @@
  *
  * ============================================================ */
 
-#include "test_lookup_altitude_geonames.h"
+#include "lookup_altitude_geonames_utest.h"
 
 // Local includes
 

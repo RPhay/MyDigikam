@@ -21,12 +21,15 @@
  *
  * ============================================================ */
 
-// local includes
+#include "tileindex_utest.h"
 
-#include "test_tileindex.h"
-#include "tileindex.h"
+// C++ includes
 
 #include <cmath>
+
+// local includes
+
+#include "tileindex.h"
 
 using namespace Digikam;
 
@@ -110,6 +113,7 @@ void TestTileIndex::testFromCoordinates()
         // should this work?
         // QCOMPARE(TileIndex::fromCoordinates(tileIndex.toCoordinates(), level).toIntList(), QIntList{list});
     };
+
     QList<double> latSizes;
     QList<double> lonSizes;
     double latOne = -90;
@@ -146,6 +150,7 @@ void TestTileIndex::testToCoordinates()
         QCOMPARE(coordinates.lat(), lat);
         QCOMPARE(coordinates.lon(), lon);
     };
+
     comp({55,0,0,0,0}, 0, 0);
     comp({55,0,0,14,0}, std::pow(TileIndex::Tiling, -4.0) * 180.0, 4.0 * std::pow(TileIndex::Tiling, -4.0) * 360.0);
     comp({55,0,0,0,0,0,0,0,0,99}, 9.0 * std::pow(TileIndex::Tiling, -10.0) * 180.0, 9.0 * std::pow(TileIndex::Tiling, -10.0) * 360.0);
@@ -169,6 +174,7 @@ void TestTileIndex::testToCoordinatesCorners()
         QCOMPARE(tileIndex.toCoordinates(TileIndex::CornerSE).lat(), coordinates.lat());
         QCOMPARE(tileIndex.toCoordinates(TileIndex::CornerSE).lon(), coordinates.lon() + lonWidth);
     };
+
     comp({55,0,0,0,0});
     comp({55,0,0,0,0,0,0,0,0,99});
     comp({99,99,99,99,99,99,99,99,99,99});

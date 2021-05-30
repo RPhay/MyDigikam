@@ -21,7 +21,7 @@
  *
  * ============================================================ */
 
-#include "test_primitives.h"
+#include "primitives_utest.h"
 
 // local includes
 

@@ -21,7 +21,7 @@
  *
  * ============================================================ */
 
-#include "test_itemmarkertiler.h"
+#include "itemmarkertiler_utest.h"
 
 // Qt includes
 

@@ -21,7 +21,7 @@
  *
  * ============================================================ */
 
-#include "test_tracks.h"
+#include "tracks_utest.h"
 
 // Qt includes
 

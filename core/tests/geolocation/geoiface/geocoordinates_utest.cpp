@@ -21,9 +21,10 @@
  *
  * ============================================================ */
 
+#include "geocoordinates_utest.h"
+
 // Local includes
 
-#include "test_geocoordinates.h"
 #include "geocoordinates.h"
 
 using namespace Digikam;

@@ -3,10 +3,10 @@
  * This file is a part of digiKam project
  * https://www.digikam.org
  *
- * Date        : 2010-05-07
- * Description : Test for the geonames based altitude lookup class
+ * Date        : 2011-01-12
+ * Description : Test for the GeoCoordinates class
  *
- * Copyright (C) 2010-2011 by Michael G. Hansen <mike at mghansen dot de>
+ * Copyright (C) 2011 by Michael G. Hansen <mike at mghansen dot de>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -21,20 +21,20 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_TEST_LOOKUP_ALTITUDE_GEONAMES_H
-#define DIGIKAM_TEST_LOOKUP_ALTITUDE_GEONAMES_H
+#ifndef DIGIKAM_GEOCOORDINATES_UTEST_H
+#define DIGIKAM_GEOCOORDINATES_UTEST_H
 
 // Qt includes
 
 #include <QTest>
 
-class TestLookupAltitudeGeonames : public QObject
+class TestGeoCoordinates : public QObject
 {
     Q_OBJECT
 
 public:
 
-    explicit TestLookupAltitudeGeonames(QObject* const parent = nullptr)
+    explicit TestGeoCoordinates(QObject* const parent = nullptr)
         : QObject(parent)
     {
     }
@@ -42,7 +42,8 @@ public:
 private Q_SLOTS:
 
     void testNoOp();
-    void testSimpleLookup();
+    void testGeoCoordinates();
+    void testMovable();
 };
 
-#endif // DIGIKAM_TEST_LOOKUP_ALTITUDE_GEONAMES_H
+#endif // DIGIKAM_GEOCOORDINATES_UTEST_H
