@@ -24,21 +24,21 @@
 // Qt includes
 
 #include <QString>
-#include <QDebug>
 
 // Local includes
 
 #include "drawdecoder.h"
+#include "digikam_debug.h"
 
 using namespace Digikam;
 
 int main(int /*argc*/, char** /*argv*/)
 {
-    qDebug() << "Libraw version    : " << DRawDecoder::librawVersion();
-    qDebug() << "Use OpenMP        : " << DRawDecoder::librawUseGomp();
-    qDebug() << "Raw files list    : " << DRawDecoder::rawFilesList();
-    qDebug() << "Raw files version : " << DRawDecoder::rawFilesVersion();
-    qDebug() << "Supported camera  : " << DRawDecoder::supportedCamera();
+    qCDebug(DIGIKAM_TESTS_LOG) << "Libraw version    : " << DRawDecoder::librawVersion();
+    qCDebug(DIGIKAM_TESTS_LOG) << "Use OpenMP        : " << DRawDecoder::librawUseGomp();
+    qCDebug(DIGIKAM_TESTS_LOG) << "Raw files list    : " << DRawDecoder::rawFilesList();
+    qCDebug(DIGIKAM_TESTS_LOG) << "Raw files version : " << DRawDecoder::rawFilesVersion();
+    qCDebug(DIGIKAM_TESTS_LOG) << "Supported camera  : " << DRawDecoder::supportedCamera();
 
     return 0;
 }

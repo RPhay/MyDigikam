@@ -150,7 +150,7 @@ void DatabaseMigrationDialog::setupMainArea()
     d->cancelButton->setEnabled(false);
 
     QGroupBox* const progressBox       = new QGroupBox(i18n("Progress Information"), this);
-    QVBoxLayout* const vlay            = new QVBoxLayout(progressBox);
+    QGridLayout* const grid            = new QGridLayout(progressBox);
 
     d->progressBar                     = new QProgressBar(progressBox);
     d->progressBar->setTextVisible(true);
@@ -159,11 +159,17 @@ void DatabaseMigrationDialog::setupMainArea()
     d->progressBarSmallStep->setTextVisible(true);
 
     d->overallStepTitle                = new QLabel(i18n("Step Progress"), progressBox);
+    QLabel* const overallSteps         = new QLabel(i18n("Overall Progress"), progressBox);
 
-    vlay->addWidget(new QLabel(i18n("Overall Progress"), progressBox));
-    vlay->addWidget(d->progressBar);
-    vlay->addWidget(d->overallStepTitle);
-    vlay->addWidget(d->progressBarSmallStep);
+    grid->addWidget(d->overallStepTitle,     0, 0, 1, 1);
+    grid->addWidget(new QLabel(this),        0, 1, 1, 1);
+    grid->addWidget(overallSteps,            0, 2, 1, 1);
+    grid->addWidget(d->progressBarSmallStep, 1, 0, 1, 1);
+    grid->addWidget(new QLabel(this),        1, 1, 1, 1);
+    grid->addWidget(d->progressBar,          1, 2, 1, 1);
+    grid->setColumnStretch(0, 10);
+    grid->setColumnStretch(1, 2);
+    grid->setColumnStretch(2, 10);
 
     QWidget* const mainWidget = new QWidget;
     QGridLayout* const layout = new QGridLayout;

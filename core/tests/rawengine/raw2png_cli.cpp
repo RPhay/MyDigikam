@@ -26,12 +26,12 @@
 #include <QString>
 #include <QFile>
 #include <QFileInfo>
-#include <QDebug>
 #include <QPointer>
 #include <QScopedPointer>
 
 // Local includes
 
+#include "digikam_debug.h"
 #include "drawdecoder.h"
 #include "drawdecodersettings.h"
 
@@ -41,8 +41,8 @@ int main(int argc, char** argv)
 {
     if (argc != 2)
     {
-        qDebug() << "raw2png - RAW Camera Image to PNG Converter";
-        qDebug() << "Usage: <rawfile>";
+        qCDebug(DIGIKAM_TESTS_LOG) << "raw2png - RAW Camera Image to PNG Converter";
+        qCDebug(DIGIKAM_TESTS_LOG) << "Usage: <rawfile>";
         return -1;
     }
 
@@ -59,38 +59,38 @@ int main(int argc, char** argv)
 
     // -----------------------------------------------------------
 
-    qDebug() << "raw2png: Identify RAW image from " << input.fileName();
+    qCDebug(DIGIKAM_TESTS_LOG) << "raw2png: Identify RAW image from " << input.fileName();
 
     QPointer<DRawDecoder> rawProcessor(new DRawDecoder);
 
     if (!rawProcessor->rawFileIdentify(*identify, filePath))
     {
-        qDebug() << "raw2png: Identifying RAW image failed. Aborted...";
+        qCDebug(DIGIKAM_TESTS_LOG) << "raw2png: Identifying RAW image failed. Aborted...";
         return -1;
     }
 
     int width  = identify->imageSize.width();
     int height = identify->imageSize.height();
 
-    qDebug() << "raw2png: Raw image info:";
-    qDebug() << "--- Date:      " << identify->dateTime.toString(Qt::ISODate);
-    qDebug() << "--- Make:      " << identify->make;
-    qDebug() << "--- Model:     " << identify->model;
-    qDebug() << "--- Size:      " << width << "x" << height;
-    qDebug() << "--- Filter:    " << identify->filterPattern;
-    qDebug() << "--- Colors:    " << identify->rawColors;
+    qCDebug(DIGIKAM_TESTS_LOG) << "raw2png: Raw image info:";
+    qCDebug(DIGIKAM_TESTS_LOG) << "--- Date:      " << identify->dateTime.toString(Qt::ISODate);
+    qCDebug(DIGIKAM_TESTS_LOG) << "--- Make:      " << identify->make;
+    qCDebug(DIGIKAM_TESTS_LOG) << "--- Model:     " << identify->model;
+    qCDebug(DIGIKAM_TESTS_LOG) << "--- Size:      " << width << "x" << height;
+    qCDebug(DIGIKAM_TESTS_LOG) << "--- Filter:    " << identify->filterPattern;
+    qCDebug(DIGIKAM_TESTS_LOG) << "--- Colors:    " << identify->rawColors;
 
     // -----------------------------------------------------------
 
-    qDebug() << "raw2png: Loading RAW image preview";
+    qCDebug(DIGIKAM_TESTS_LOG) << "raw2png: Loading RAW image preview";
 
     if (!rawProcessor->loadRawPreview(image, filePath))
     {
-        qDebug() << "raw2png: Loading RAW image preview failed. Aborted...";
+        qCDebug(DIGIKAM_TESTS_LOG) << "raw2png: Loading RAW image preview failed. Aborted...";
         return -1;
     }
 
-    qDebug() << "raw2png: Saving preview image to "
+    qCDebug(DIGIKAM_TESTS_LOG) << "raw2png: Saving preview image to "
              << previewOutput.fileName() << " size ("
              << image.width() << "x" << image.height()
              << ")";
@@ -98,17 +98,17 @@ int main(int argc, char** argv)
 
     // -----------------------------------------------------------
 
-    qDebug() << "raw2png: Loading half RAW image";
+    qCDebug(DIGIKAM_TESTS_LOG) << "raw2png: Loading half RAW image";
 
     image = QImage();
 
     if (!rawProcessor->loadHalfPreview(image, filePath))
     {
-        qDebug() << "raw2png: Loading half RAW image failed. Aborted...";
+        qCDebug(DIGIKAM_TESTS_LOG) << "raw2png: Loading half RAW image failed. Aborted...";
         return -1;
     }
 
-    qDebug() << "raw2png: Saving half image to "
+    qCDebug(DIGIKAM_TESTS_LOG) << "raw2png: Saving half image to "
              << halfOutput.fileName() << " size ("
              << image.width() << "x" << image.height()
              << ")";
@@ -117,7 +117,7 @@ int main(int argc, char** argv)
 
     // -----------------------------------------------------------
 
-    qDebug() << "raw2png: Loading full RAW image";
+    qCDebug(DIGIKAM_TESTS_LOG) << "raw2png: Loading full RAW image";
 
     image = QImage();
     DRawDecoderSettings settings;
@@ -128,11 +128,11 @@ int main(int argc, char** argv)
 
     if (!rawProcessor->loadFullImage(image, filePath, settings))
     {
-        qDebug() << "raw2png: Loading full RAW image failed. Aborted...";
+        qCDebug(DIGIKAM_TESTS_LOG) << "raw2png: Loading full RAW image failed. Aborted...";
         return -1;
     }
 
-    qDebug() << "raw2png: Saving full RAW image to "
+    qCDebug(DIGIKAM_TESTS_LOG) << "raw2png: Saving full RAW image to "
              << fullOutput.fileName() << " size ("
              << image.width() << "x" << image.height()
              << ")";
