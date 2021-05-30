@@ -30,7 +30,6 @@
 #include <QTimer>
 #include <QTest>
 #include <QCommandLineParser>
-#include <QDebug>
 
 // KDE includes
 
@@ -38,6 +37,7 @@
 
 // Local includes
 
+#include "digikam_debug.h"
 #include "daboutdata.h"
 #include "albummanager.h"
 #include "coredbaccess.h"
@@ -57,8 +57,8 @@ int main(int argc, char** argv)
 
     if (argc != 2)
     {
-        qDebug() << "testdatabaseswitch - test database switch";
-        qDebug() << "Usage: <sqliteToMysql | mysqlToSqlite>";
+        qCDebug(DIGIKAM_TESTS_LOG) << "testdatabaseswitch - test database switch";
+        qCDebug(DIGIKAM_TESTS_LOG) << "Usage: <sqliteToMysql | mysqlToSqlite>";
         return -1;
     }
 
@@ -79,7 +79,7 @@ int main(int argc, char** argv)
 
     if (switchCondition == QLatin1String("sqliteToMysql"))
     {
-        qDebug() << "Setup sqlite Database...";
+        qCDebug(DIGIKAM_TESTS_LOG) << "Setup sqlite Database...";
 
         DbEngineParameters params;
 
@@ -89,25 +89,25 @@ int main(int argc, char** argv)
         params.setFaceDatabasePath(QDir::currentPath() + QLatin1String("/digikam-faces-test.db"));
         params.legacyAndDefaultChecks();
 
-        qDebug() << "Initializing database...";
+        qCDebug(DIGIKAM_TESTS_LOG) << "Initializing database...";
         bool b = AlbumManager::instance()->setDatabase(params, false, IMAGE_PATH);
 
-        qDebug() << "Database initialization done: " << b;
+        qCDebug(DIGIKAM_TESTS_LOG) << "Database initialization done: " << b;
 
         QTest::qWait(3000);
 
-         //qDebug() << "Shutting down database";
+         //qCDebug(DIGIKAM_TESTS_LOG) << "Shutting down database";
          //ScanController::instance()->shutDown();
          //AlbumManager::instance()->cleanUp();
 
-        qDebug() << "Cleaning DB now";
+        qCDebug(DIGIKAM_TESTS_LOG) << "Cleaning DB now";
         CoreDbAccess::cleanUpDatabase();
         ThumbsDbAccess::cleanUpDatabase();
         FaceDbAccess::cleanUpDatabase();
 
         // ------------------------------------------------------------------------------------
 
-        qDebug() << "Setup mysql Database...";
+        qCDebug(DIGIKAM_TESTS_LOG) << "Setup mysql Database...";
 
         params                            = DbEngineParameters();
         QString defaultAkDir              = DbEngineParameters::internalServerPrivatePath();
@@ -128,19 +128,19 @@ int main(int argc, char** argv)
 
         // ------------------------------------------------------------------------------------
 
-        qDebug() << "Initializing database...";
+        qCDebug(DIGIKAM_TESTS_LOG) << "Initializing database...";
         AlbumManager::instance()->changeDatabase(params);
 
-        qDebug() << "Database switch done";
+        qCDebug(DIGIKAM_TESTS_LOG) << "Database switch done";
 
         QTimer::singleShot(5000, &app, SLOT(quit()));
         app.exec();
 
-        qDebug() << "Shutting down database";
+        qCDebug(DIGIKAM_TESTS_LOG) << "Shutting down database";
         ScanController::instance()->shutDown();
         AlbumManager::instance()->cleanUp();
 
-        qDebug() << "Cleaning DB now";
+        qCDebug(DIGIKAM_TESTS_LOG) << "Cleaning DB now";
         CoreDbAccess::cleanUpDatabase();
         ThumbsDbAccess::cleanUpDatabase();
         FaceDbAccess::cleanUpDatabase();
@@ -150,7 +150,7 @@ int main(int argc, char** argv)
     {
         DbEngineParameters params;
 
-        qDebug() << "Setup mysql Database...";
+        qCDebug(DIGIKAM_TESTS_LOG) << "Setup mysql Database...";
 
         QString defaultAkDir              = DbEngineParameters::internalServerPrivatePath();
         QString miscDir                   = QDir(defaultAkDir).absoluteFilePath(QLatin1String("db_misc"));
@@ -170,26 +170,26 @@ int main(int argc, char** argv)
 
         // ------------------------------------------------------------------------------------
 
-        qDebug() << "Initializing database...";
+        qCDebug(DIGIKAM_TESTS_LOG) << "Initializing database...";
         AlbumManager::instance()->changeDatabase(params);
 
-        qDebug() << "Database switch done";
+        qCDebug(DIGIKAM_TESTS_LOG) << "Database switch done";
 
         QTimer::singleShot(5000, &app, SLOT(quit()));
         app.exec();
 
-        qDebug() << "Shutting down database";
+        qCDebug(DIGIKAM_TESTS_LOG) << "Shutting down database";
         ScanController::instance()->shutDown();
         AlbumManager::instance()->cleanUp();
 
-        qDebug() << "Cleaning DB now";
+        qCDebug(DIGIKAM_TESTS_LOG) << "Cleaning DB now";
         CoreDbAccess::cleanUpDatabase();
         ThumbsDbAccess::cleanUpDatabase();
         FaceDbAccess::cleanUpDatabase();
 
         // ------------------------------------------------------------------------------------
 
-        qDebug() << "Setup sqlite Database...";
+        qCDebug(DIGIKAM_TESTS_LOG) << "Setup sqlite Database...";
 
         params.databaseType = DbEngineParameters::SQLiteDatabaseType();
         params.setCoreDatabasePath(QDir::currentPath() + QLatin1String("/digikam-core-test.db"));
@@ -197,18 +197,18 @@ int main(int argc, char** argv)
         params.setFaceDatabasePath(QDir::currentPath() + QLatin1String("/digikam-faces-test.db"));
         params.legacyAndDefaultChecks();
 
-        qDebug() << "Initializing database...";
+        qCDebug(DIGIKAM_TESTS_LOG) << "Initializing database...";
         bool b = AlbumManager::instance()->setDatabase(params, false, IMAGE_PATH);
 
-        qDebug() << "Database initialization done: " << b;
+        qCDebug(DIGIKAM_TESTS_LOG) << "Database initialization done: " << b;
 
         QTest::qWait(3000);
 
-        //qDebug() << "Shutting down database";
+        //qCDebug(DIGIKAM_TESTS_LOG) << "Shutting down database";
         //ScanController::instance()->shutDown();
         //AlbumManager::instance()->cleanUp();
 
-        qDebug() << "Cleaning DB now";
+        qCDebug(DIGIKAM_TESTS_LOG) << "Cleaning DB now";
         CoreDbAccess::cleanUpDatabase();
         ThumbsDbAccess::cleanUpDatabase();
         FaceDbAccess::cleanUpDatabase();
