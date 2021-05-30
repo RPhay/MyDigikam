@@ -270,29 +270,30 @@ void DatabaseSettingsWidget::setupMainArea()
                                           d->dbNoticeBox);
     notice->setWordWrap(true);
 
-    d->sqlInit               = new QTextBrowser(d->dbNoticeBox);
+    d->sqlInit                  = new QTextBrowser(d->dbNoticeBox);
     d->sqlInit->setOpenExternalLinks(false);
     d->sqlInit->setOpenLinks(false);
     d->sqlInit->setReadOnly(false);
 
-    QLabel* const notice2    = new QLabel(i18n("<p>Note: with a Linux server, a database can be initialized following the commands below:</p>"
-                                               "<p># su</p>"
-                                               "<p># systemctl restart mysqld</p>"
-                                               "<p># mysql -u root</p>"
-                                               "<p>...</p>"
-                                               "<p>Enter SQL code to Mysql prompt in order to init digiKam databases with grant privileges (see behind)</p>"
-                                               "<p>...</p>"
-                                               "<p>quit</p>"
-                                               "<p>NOTE: If you have an enormous collection, you should start MySQL server with "
-                                               "mysql --max_allowed_packet=128M OR in my.ini or ~/.my.cnf, change the settings</p><p></p>"),
-                                          d->dbNoticeBox);
-    notice2->setWordWrap(true);
-    notice2->setSizePolicy(QSizePolicy::MinimumExpanding,
-                           QSizePolicy::MinimumExpanding);
+    QTextBrowser* const notice2 = new QTextBrowser(this);
+    notice2->setText(i18n("<p>Note: with a Linux server, a database can be initialized following the commands below:</p>"
+                           "<p># su</p>"
+                           "<p># systemctl restart mysqld</p>"
+                           "<p># mysql -u root</p>"
+                           "<p>...</p>"
+                           "<p>Enter SQL code to Mysql prompt in order to init digiKam databases with grant privileges (see behind)</p>"
+                           "<p>...</p>"
+                           "<p>quit</p>"
+                           "<p>NOTE: If you have an enormous collection, you should start MySQL server with "
+                           "mysql --max_allowed_packet=128M OR in my.ini or ~/.my.cnf, change the settings</p>"));
 
-    vlay2->addWidget(notice);
-    vlay2->addWidget(d->sqlInit);
-    vlay2->addWidget(notice2);
+    notice2->setOpenExternalLinks(false);
+    notice2->setOpenLinks(false);
+    notice2->setReadOnly(true);
+
+    vlay2->addWidget(notice,     0);
+    vlay2->addWidget(d->sqlInit, 10);
+    vlay2->addWidget(notice2,    20);
     vlay2->setContentsMargins(spacing, spacing, spacing, spacing);
     vlay2->setSpacing(spacing);
 
@@ -323,8 +324,6 @@ void DatabaseSettingsWidget::setupMainArea()
                                                "Look in <b>Requirements</b> tab for details.</p>"),
                                           d->dbDetailsBox);
     details->setWordWrap(true);
-    details->setSizePolicy(QSizePolicy::MinimumExpanding,
-                           QSizePolicy::MinimumExpanding);
 
     vlay3->addWidget(details);
     vlay3->setContentsMargins(spacing, spacing, spacing, spacing);
@@ -348,7 +347,6 @@ void DatabaseSettingsWidget::setupMainArea()
     layout->setContentsMargins(QMargins());
     layout->setSpacing(spacing);
     layout->addWidget(dbConfigBox);
-    layout->addStretch();
 
     // --------------------------------------------------------
 
