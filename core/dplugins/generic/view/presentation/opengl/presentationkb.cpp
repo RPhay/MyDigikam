@@ -681,10 +681,10 @@ QStringList PresentationKB::effectNames()
     return effects;
 }
 
-QMap<QString, QString> PresentationKB::effectNamesI18N()
+QMultiMap<QString, QString> PresentationKB::effectNamesI18N()
 {
-    QMap<QString, QString> effects;
-    effects[QLatin1String("Ken Burns")] = i18n("Ken Burns");
+    QMultiMap<QString, QString> effects;
+    effects.insert(QLatin1String("Ken Burns"), i18n("Ken Burns"));
 
     return effects;
 }

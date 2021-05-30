@@ -40,7 +40,7 @@
 
 #include <QList>
 #include <QKeyEvent>
-#include <QMap>
+#include <QMultiMap>
 #include <QMouseEvent>
 #include <QPair>
 #include <QString>
@@ -120,7 +120,7 @@ public:
     ~PresentationKB() override;
 
     static QStringList            effectNames();
-    static QMap<QString, QString> effectNamesI18N();
+    static QMultiMap<QString, QString> effectNamesI18N();
 
     bool checkOpenGL()                      const;
 

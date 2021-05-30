@@ -36,7 +36,7 @@
 #include <QOpenGLWidget>
 #include <QKeyEvent>
 #include <QList>
-#include <QMap>
+#include <QMultiMap>
 #include <QMouseEvent>
 #include <QPair>
 #include <QString>
@@ -60,7 +60,7 @@ public:
     void registerEffects();
 
     static QStringList effectNames();
-    static QMap<QString, QString> effectNamesI18N();
+    static QMultiMap<QString, QString> effectNamesI18N();
 
     bool checkOpenGL() const;
 
