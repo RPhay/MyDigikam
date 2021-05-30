@@ -198,7 +198,7 @@ void DatabaseServer::stopDatabaseProcess()
     mysqlShutDownProcess.start(d->mysqlAdminPath, mysqlShutDownArgs);
     mysqlShutDownProcess.waitForFinished();
 
-    if ((d->databaseProcess->state() == QProcess::Running) && !d->databaseProcess->waitForFinished(30000))
+    if ((d->databaseProcess->state() == QProcess::Running) && !d->databaseProcess->waitForFinished())
     {
         qCDebug(DIGIKAM_DATABASESERVER_LOG) << "Database process will be killed now";
         d->databaseProcess->kill();
