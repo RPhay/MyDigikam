@@ -23,13 +23,13 @@
 
 // Qt includes
 
-#include <QApplication>
+#include <QCoreApplication>
 #include <QTest>
-#include <QDebug>
 #include <QObject>
 
 // Local includes
 
+#include "digikam_debug.h"
 #include "onlineversiondwnl.h"
 #include "onlineversionchecker.h"
 
@@ -37,13 +37,13 @@ using namespace Digikam;
 
 int main(int argc, char* argv[])
 {
-    QApplication app(argc, argv);
+    QCoreApplication app(argc, argv);
 
     if (argc < 3)
     {
-        qDebug() << "onlinecheck <bool> <bool> - Check if new version is online";
-        qDebug() << "Usage: <bool> 0 for stable release only, 1 for pre-release.";
-        qDebug() << "       <bool> 0 without debug symbols, 1 with debug symbols.";
+        qCDebug(DIGIKAM_TESTS_LOG) << "onlinecheck <bool> <bool> - Check if new version is online";
+        qCDebug(DIGIKAM_TESTS_LOG) << "Usage: <bool> 0 for stable release only, 1 for pre-release.";
+        qCDebug(DIGIKAM_TESTS_LOG) << "       <bool> 0 without debug symbols, 1 with debug symbols.";
         return -1;
     }
 
@@ -51,8 +51,8 @@ int main(int argc, char* argv[])
     bool withDebug  = QString::fromLatin1(argv[2]).toInt();
     QString version;
 
-    qDebug() << "Check for pre-release     :" << preRelease;
-    qDebug() << "Version with debug symbols:" << withDebug;
+    qCDebug(DIGIKAM_TESTS_LOG) << "Check for pre-release     :" << preRelease;
+    qCDebug(DIGIKAM_TESTS_LOG) << "Version with debug symbols:" << withDebug;
 
     if (preRelease)
     {
@@ -66,7 +66,7 @@ int main(int argc, char* argv[])
 
         if (version.isEmpty())
         {
-            qWarning() << "Cannot get pre-release version!";
+            qCWarning(DIGIKAM_TESTS_LOG) << "Cannot get pre-release version!";
             return (-1);
         }
     }
@@ -83,7 +83,7 @@ int main(int argc, char* argv[])
         {
             if (btotal)
             {
-                qDebug() << "Downloaded" << brecv << "/" << btotal << "bytes" << "(" << brecv*100/btotal << "% )";
+                qCDebug(DIGIKAM_TESTS_LOG) << "Downloaded" << brecv << "/" << btotal << "bytes" << "(" << brecv*100/btotal << "% )";
             }
         }
     );

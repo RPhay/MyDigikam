@@ -7,30 +7,15 @@
 APPLY_COMMON_POLICIES()
 
 include_directories(
-    $<TARGET_PROPERTY:KF5::I18n,INTERFACE_INCLUDE_DIRECTORIES>
-
-    $<TARGET_PROPERTY:Qt5::Test,INTERFACE_INCLUDE_DIRECTORIES>
     $<TARGET_PROPERTY:Qt5::Core,INTERFACE_INCLUDE_DIRECTORIES>
     $<TARGET_PROPERTY:Qt5::Gui,INTERFACE_INCLUDE_DIRECTORIES>
     $<TARGET_PROPERTY:Qt5::Xml,INTERFACE_INCLUDE_DIRECTORIES>
 )
 
-set(browser_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/browser.cpp)
-add_executable(browser ${browser_SRCS})
+set(browser_gui_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/browser_gui.cpp)
+add_executable(browser_gui ${browser_gui_SRCS})
 
-target_link_libraries(browser
-
-                      digikamcore
-
-                      ${COMMON_TEST_LINK}
-)
-
-# -----------------------------------------------------------------
-
-set(onlinecheck_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/onlinecheck.cpp)
-add_executable(onlinecheck ${onlinecheck_SRCS})
-
-target_link_libraries(onlinecheck
+target_link_libraries(browser_gui
 
                       digikamcore
 
@@ -39,10 +24,10 @@ target_link_libraries(onlinecheck
 
 # -----------------------------------------------------------------
 
-set(onlinedownload_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/onlinedownload.cpp)
-add_executable(onlinedownload ${onlinedownload_SRCS})
+set(onlinecheck_gui_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/onlinecheck_gui.cpp)
+add_executable(onlinecheck_gui ${onlinecheck_gui_SRCS})
 
-target_link_libraries(onlinedownload
+target_link_libraries(onlinecheck_gui
 
                       digikamcore
 
@@ -51,10 +36,22 @@ target_link_libraries(onlinedownload
 
 # -----------------------------------------------------------------
 
-set(solidhardware_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/solidhardware.cpp)
-add_executable(solidhardware ${solidhardware_SRCS})
+set(onlinedownload_cli_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/onlinedownload_cli.cpp)
+add_executable(onlinedownload_cli ${onlinedownload_cli_SRCS})
 
-target_link_libraries(solidhardware
+target_link_libraries(onlinedownload_cli
+
+                      digikamcore
+
+                      ${COMMON_TEST_LINK}
+)
+
+# -----------------------------------------------------------------
+
+set(solidhardware_gui_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/solidhardware_gui.cpp)
+add_executable(solidhardware_gui ${solidhardware_gui_SRCS})
+
+target_link_libraries(solidhardware_gui
 
                       digikamcore
 

@@ -25,11 +25,11 @@
 
 #include <QApplication>
 #include <QUrl>
-#include <QDebug>
 
 // Local includes
 
 #include "webbrowserdlg.h"
+#include "digikam_debug.h"
 
 using namespace Digikam;
 
@@ -39,8 +39,8 @@ int main(int argc, char* argv[])
 
     if (argc == 1)
     {
-        qDebug() << "browser - web page url to show";
-        qDebug() << "Usage: url top open";
+        qCDebug(DIGIKAM_TESTS_LOG) << "browser - web page url to show";
+        qCDebug(DIGIKAM_TESTS_LOG) << "Usage: url top open";
         return -1;
     }
 
