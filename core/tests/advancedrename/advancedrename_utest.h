@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_ADVANCED_RENAME_TEST_H
-#define DIGIKAM_ADVANCED_RENAME_TEST_H
+#ifndef DIGIKAM_ADVANCED_RENAME_UTEST_H
+#define DIGIKAM_ADVANCED_RENAME_UTEST_H
 
 // Qt includes
 
@@ -133,4 +133,4 @@ private Q_SLOTS:
     void testEmptyParseString();
 };
 
-#endif // DIGIKAM_ADVANCED_RENAME_TEST_H
+#endif // DIGIKAM_ADVANCED_RENAME_UTEST_H

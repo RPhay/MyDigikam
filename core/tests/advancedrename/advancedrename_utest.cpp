@@ -22,7 +22,7 @@
  *
  * ============================================================ */
 
-#include "advancedrenametest.h"
+#include "advancedrename_utest.h"
 
 // C++ includes
 
@@ -33,6 +33,10 @@
 #include <QFileInfo>
 #include <QTest>
 #include <QDir>
+
+// Local includes
+
+#include "digikam_debug.h"
 
 using namespace Digikam;
 
@@ -200,7 +204,7 @@ void AdvancedRenameTest::testDirectoryNameToken_data()
     dir2.cdUp();
     QString digikamDir   = dir2up.right(dir2up.size() - dir2.path().size() -1) +
                            QLatin1Char('/');
-    qDebug() << "digikamDir: " << digikamDir;
+    qCDebug(DIGIKAM_TESTS_LOG) << "digikamDir: " << digikamDir;
 
     digikamDir.chop(1);
 

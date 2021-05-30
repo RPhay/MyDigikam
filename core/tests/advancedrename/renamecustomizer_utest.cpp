@@ -21,7 +21,7 @@
  *
  * ============================================================ */
 
-#include "renamecustomizertest.h"
+#include "renamecustomizer_utest.h"
 
 // Qt includes
 
@@ -35,6 +35,7 @@
 #include "defaultrenameparser.h"
 #include "parsesettings.h"
 #include "renamecustomizer.h"
+#include "digikam_debug.h"
 
 using namespace Digikam;
 

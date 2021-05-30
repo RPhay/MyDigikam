@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_RENAME_CUSTOMIZER_TEST_H
-#define DIGIKAM_RENAME_CUSTOMIZER_TEST_H
+#ifndef DIGIKAM_RENAME_CUSTOMIZER_UTEST_H
+#define DIGIKAM_RENAME_CUSTOMIZER_UTEST_H
 
 // Qt includes
 
@@ -55,4 +55,4 @@ private Q_SLOTS:
     void setUseDefault_case_lower_should_deliver_lowercase_filename();
 };
 
-#endif // DIGIKAM_RENAME_CUSTOMIZER_TEST_H
+#endif // DIGIKAM_RENAME_CUSTOMIZER_UTEST_H

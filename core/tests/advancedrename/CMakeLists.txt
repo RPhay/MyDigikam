@@ -11,14 +11,13 @@ include_directories(
     $<TARGET_PROPERTY:Qt5::Gui,INTERFACE_INCLUDE_DIRECTORIES>
     $<TARGET_PROPERTY:Qt5::Core,INTERFACE_INCLUDE_DIRECTORIES>
 
-    $<TARGET_PROPERTY:KF5::I18n,INTERFACE_INCLUDE_DIRECTORIES>
     $<TARGET_PROPERTY:KF5::XmlGui,INTERFACE_INCLUDE_DIRECTORIES>
     $<TARGET_PROPERTY:KF5::Solid,INTERFACE_INCLUDE_DIRECTORIES>
 )
 
 #------------------------------------------------------------------------
 
-ecm_add_tests(${CMAKE_CURRENT_SOURCE_DIR}/renamecustomizertest.cpp
+ecm_add_tests(${CMAKE_CURRENT_SOURCE_DIR}/renamecustomizer_utest.cpp
 
               NAME_PREFIX
 
@@ -34,7 +33,7 @@ ecm_add_tests(${CMAKE_CURRENT_SOURCE_DIR}/renamecustomizertest.cpp
 
 #------------------------------------------------------------------------
 
-ecm_add_tests(${CMAKE_CURRENT_SOURCE_DIR}/cameranamehelpertest.cpp
+ecm_add_tests(${CMAKE_CURRENT_SOURCE_DIR}/cameranamehelper_utest.cpp
 
               NAME_PREFIX
 
@@ -51,7 +50,7 @@ ecm_add_tests(${CMAKE_CURRENT_SOURCE_DIR}/cameranamehelpertest.cpp
 
 #------------------------------------------------------------------------
 
-ecm_add_tests(${CMAKE_CURRENT_SOURCE_DIR}/advancedrenametest.cpp
+ecm_add_tests(${CMAKE_CURRENT_SOURCE_DIR}/advancedrename_utest.cpp
 
               NAME_PREFIX
 

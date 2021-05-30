@@ -21,7 +21,7 @@
  *
  * ============================================================ */
 
-#include "cameranamehelpertest.h"
+#include "cameranamehelper_utest.h"
 
 // Qt includes
 
@@ -31,6 +31,7 @@
 
 #include "cameranamehelper.h"
 #include "digikam_config.h"
+#include "digikam_debug.h"
 
 using namespace Digikam;
 
