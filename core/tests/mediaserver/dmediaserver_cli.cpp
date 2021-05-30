@@ -75,7 +75,9 @@ int main(int argc, char* argv[])
     else
     {
         if (!DMediaServerMngr::instance()->load())
+        {
             return -1;
+        }
     }
 
     if (DMediaServerMngr::instance()->startMediaServer())
