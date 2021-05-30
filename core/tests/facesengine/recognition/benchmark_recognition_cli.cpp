@@ -23,7 +23,7 @@
 
 // Qt includes
 
-#include <QApplication>
+#include <QCoreApplication>
 #include <QCommandLineParser>
 #include <QDir>
 #include <QImage>
@@ -687,7 +687,7 @@ QCommandLineParser* parseOptions(const QCoreApplication& app)
 
 int main(int argc, char** argv)
 {
-    QApplication app(argc, argv);
+    QCoreApplication app(argc, argv);
 
     app.setApplicationName(QString::fromLatin1("digikam"));          // for DB init.
 
@@ -705,4 +705,4 @@ int main(int argc, char** argv)
     return 0;
 }
 
-#include "benchmark_recognition.moc"
+#include "benchmark_recognition_cli.moc"

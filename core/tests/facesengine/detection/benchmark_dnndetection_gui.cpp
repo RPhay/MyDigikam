@@ -379,4 +379,4 @@ int main(int argc, char* argv[])
     return app.exec();
 }
 
-#include "benchmark_dnndetection.moc"
+#include "benchmark_dnndetection_gui.moc"

@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2010-2020, Gilles Caulier, <caulier dot gilles at gmail dot com>
+# Copyright (c) 2010-2021, Gilles Caulier, <caulier dot gilles at gmail dot com>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
@@ -15,14 +15,14 @@ add_custom_target(extract_funnel_data ALL DEPENDS face-funnel.data)
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR})
 
-set(align_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/align.cpp
-               ${CMAKE_CURRENT_SOURCE_DIR}/funnelreal.cpp
+set(align_gui_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/align_gui.cpp
+                   ${CMAKE_CURRENT_SOURCE_DIR}/funnelreal.cpp
 )
 
-add_executable(align ${align_SRCS})
-add_dependencies(align extract_funnel_data)
+add_executable(align_gui ${align_SRCS})
+add_dependencies(align_gui extract_funnel_data)
 
-target_link_libraries(align
+target_link_libraries(align_gui
 
                       digikamcore
                       digikamgui

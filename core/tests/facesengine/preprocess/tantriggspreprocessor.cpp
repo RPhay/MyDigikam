@@ -31,9 +31,9 @@ namespace Digikam
 {
 
 TanTriggsPreprocessor::TanTriggsPreprocessor()
-    : alpha(0.1f),
-      tau(10.0f),
-      gamma(0.2f),
+    : alpha (0.1f),
+      tau   (10.0f),
+      gamma (0.2f),
       sigma0(1),
       sigma1(2)
 {

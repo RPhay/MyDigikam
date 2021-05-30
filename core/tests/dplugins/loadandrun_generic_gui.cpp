@@ -28,7 +28,6 @@
 #include <QCommandLineParser>
 #include <QUrl>
 #include <QIcon>
-#include <QDebug>
 #include <QLibraryInfo>
 
 // Local includes
@@ -37,6 +36,7 @@
 #include "dmetainfoiface.h"
 #include "dpluginloader.h"
 #include "dplugingeneric.h"
+#include "digikam_debug.h"
 
 using namespace Digikam;
 
@@ -44,9 +44,9 @@ int main(int argc, char* argv[])
 {
     QApplication app(argc, argv);
 
-    qDebug() << QLibraryInfo::location(QLibraryInfo::LibrariesPath);
-    qDebug() << QLibraryInfo::location(QLibraryInfo::LibraryExecutablesPath);
-    qDebug() << QLibraryInfo::location(QLibraryInfo::PluginsPath);
+    qCDebug(DIGIKAM_TESTS_LOG) << QLibraryInfo::location(QLibraryInfo::LibrariesPath);
+    qCDebug(DIGIKAM_TESTS_LOG) << QLibraryInfo::location(QLibraryInfo::LibraryExecutablesPath);
+    qCDebug(DIGIKAM_TESTS_LOG) << QLibraryInfo::location(QLibraryInfo::PluginsPath);
 
     QCommandLineParser parser;
     parser.addHelpOption();
@@ -83,11 +83,11 @@ int main(int argc, char* argv[])
 
             if (gene)
             {
-                qDebug() << "--------------------------------------------";
-                qDebug() << "IID    :" << p->iid();
-                qDebug() << "Name   :" << p->name();
-                qDebug() << "Version:" << p->version();
-                qDebug() << "Desc   :" << p->description();
+                qCDebug(DIGIKAM_TESTS_LOG) << "--------------------------------------------";
+                qCDebug(DIGIKAM_TESTS_LOG) << "IID    :" << p->iid();
+                qCDebug(DIGIKAM_TESTS_LOG) << "Name   :" << p->name();
+                qCDebug(DIGIKAM_TESTS_LOG) << "Version:" << p->version();
+                qCDebug(DIGIKAM_TESTS_LOG) << "Desc   :" << p->description();
 
                 QString authors;
 
@@ -97,7 +97,7 @@ int main(int argc, char* argv[])
                     authors.append(QLatin1String(" ; "));
                 }
 
-                qDebug() << "Authors:" << authors;
+                qCDebug(DIGIKAM_TESTS_LOG) << "Authors:" << authors;
 
                 QString actions;
 
@@ -107,7 +107,7 @@ int main(int argc, char* argv[])
                     actions.append(QLatin1String(" ; "));
                 }
 
-                qDebug() << "Actions:" << actions;
+                qCDebug(DIGIKAM_TESTS_LOG) << "Actions:" << actions;
             }
         }
 
@@ -124,8 +124,8 @@ int main(int argc, char* argv[])
         }
         else
         {
-            qDebug() << "Plugin action name to run is missing...";
-            qDebug() << "Use --help option for details.";
+            qCDebug(DIGIKAM_TESTS_LOG) << "Plugin action name to run is missing...";
+            qCDebug(DIGIKAM_TESTS_LOG) << "Use --help option for details.";
             return -1;
         }
 
@@ -153,7 +153,7 @@ int main(int argc, char* argv[])
                     }
                     else
                     {
-                        qDebug() << action << "action not found in plugin!";
+                        qCDebug(DIGIKAM_TESTS_LOG) << action << "action not found in plugin!";
 
                         QString actions;
 
@@ -163,7 +163,7 @@ int main(int argc, char* argv[])
                             actions.append(QLatin1String(" ; "));
                         }
 
-                        qDebug() << "Available Actions:" << actions;
+                        qCDebug(DIGIKAM_TESTS_LOG) << "Available Actions:" << actions;
                     }
 
                     break;
@@ -173,14 +173,14 @@ int main(int argc, char* argv[])
     }
     else
     {
-        qDebug() << "Command line option not recognized...";
-        qDebug() << "Use --help option for details.";
+        qCDebug(DIGIKAM_TESTS_LOG) << "Command line option not recognized...";
+        qCDebug(DIGIKAM_TESTS_LOG) << "Use --help option for details.";
         return -1;
     }
 
     if (!found)
     {
-        qDebug() << "Plugin not found!";
+        qCDebug(DIGIKAM_TESTS_LOG) << "Plugin not found!";
         return -1;
     }
 

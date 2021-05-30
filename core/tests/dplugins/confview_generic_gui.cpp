@@ -24,13 +24,13 @@
 // Qt Includes
 
 #include <QApplication>
-#include <QDebug>
 
 // Local includes
 
 #include "dpluginloader.h"
 #include "dpluginsetup.h"
 #include "dpluginconfviewgeneric.h"
+#include "digikam_debug.h"
 
 using namespace Digikam;
 

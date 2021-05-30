@@ -22,7 +22,7 @@
 
 // Qt includes
 
-#include <QApplication>
+#include <CoreQApplication>
 #include <QCommandLineParser>
 #include <QDir>
 #include <QImage>
@@ -45,13 +45,13 @@ QCommandLineParser* parseOptions(const QCoreApplication& app)
 
 int main(int argc, char** argv)
 {
-    QApplication app(argc, argv);
+    QCoreApplication app(argc, argv);
     QCommandLineParser* const parser = parseOptions(app);
 
     if (!parser->isSet(QLatin1String("source")) &&
         !parser->isSet(QLatin1String("destination")))
     {
-        qWarning("Folders are not set !!!");
+        qCWarning(DIGIKAM_TESTS_LOG) << "Folders are not set !!!";
 
         return 1;
     }
@@ -83,11 +83,11 @@ int main(int argc, char** argv)
         {
             QImage img(filesInfo[j].absoluteFilePath());
 
-            img.save(path               + 
-                     QLatin1String("/") + 
-                     subDir.dirName()   + 
-                     QLatin1String("_") + 
-                     QString::number(j) + 
+            img.save(path               +
+                     QLatin1String("/") +
+                     subDir.dirName()   +
+                     QLatin1String("_") +
+                     QString::number(j) +
                      QLatin1String(".png"),
                      "PNG");
         }

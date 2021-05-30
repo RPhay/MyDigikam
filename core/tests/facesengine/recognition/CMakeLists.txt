@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2010-2020, Gilles Caulier, <caulier dot gilles at gmail dot com>
+# Copyright (c) 2010-2021, Gilles Caulier, <caulier dot gilles at gmail dot com>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
@@ -16,10 +16,10 @@ add_custom_target(scriptlink_rec ALL
 
 # -----------------------------------------------------------------------------
 
-set(recognize_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/recognize.cpp)
-add_executable(recognize ${recognize_SRCS})
+set(recognize_cli_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/recognize_cli.cpp)
+add_executable(recognize_cli ${recognize_cli_SRCS})
 
-target_link_libraries(recognize
+target_link_libraries(recognize_cli
 
                       digikamcore
                       digikamgui
@@ -31,10 +31,10 @@ target_link_libraries(recognize
 
 # -----------------------------------------------------------------------------
 
-set(facerec_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/face_rec.cpp)
-add_executable(face_rec ${facerec_SRCS})
+set(facerec_cli_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/face_rec_cli.cpp)
+add_executable(face_rec_cli ${facerec_cli_SRCS})
 
-target_link_libraries(face_rec
+target_link_libraries(face_rec_cli
 
                       digikamcore
                       digikamgui
@@ -48,10 +48,10 @@ target_link_libraries(face_rec
 
 # NOTE:Port this tool to new API
 
-#set(facecluster_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/face_cluster.cpp)
-#add_executable(face_cluster ${facecluster_SRCS})
+#set(facecluster_cli_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/face_cluster_cli.cpp)
+#add_executable(face_cluster_cli ${facecluster_cli_SRCS})
 
-#target_link_libraries(face_cluster
+#target_link_libraries(face_cluster_cli
 
 #                      digikamcore
 #                      digikamgui
@@ -63,25 +63,10 @@ target_link_libraries(face_rec
 
 # -----------------------------------------------------------------------------
 
-set(benchmark_recognition_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/benchmark_recognition.cpp)
-add_executable(benchmark_recognition ${benchmark_recognition_SRCS})
+set(benchmark_recognition_cli_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/benchmark_recognition_cli.cpp)
+add_executable(benchmark_recognition_cli ${benchmark_recognition_cli_SRCS})
 
-target_link_libraries(benchmark_recognition
-
-                      digikamcore
-                      digikamgui
-                      digikamfacesengine
-                      digikamdatabase
-
-                      ${COMMON_TEST_LINK}
-)
-
-# -----------------------------------------------------------------------------
-
-set(gui_recognition_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/gui_recognition.cpp)
-add_executable(gui_recognition ${gui_recognition_SRCS})
-
-target_link_libraries(gui_recognition
+target_link_libraries(benchmark_recognition_cli
 
                       digikamcore
                       digikamgui
@@ -93,10 +78,25 @@ target_link_libraries(gui_recognition
 
 # -----------------------------------------------------------------------------
 
-set(traindb_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/traindb.cpp)
-add_executable(traindb ${traindb_SRCS})
+set(recognition_gui_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/recognition_gui.cpp)
+add_executable(recognition_gui ${recognition_gui_SRCS})
 
-target_link_libraries(traindb
+target_link_libraries(recognition_gui
+
+                      digikamcore
+                      digikamgui
+                      digikamfacesengine
+                      digikamdatabase
+
+                      ${COMMON_TEST_LINK}
+)
+
+# -----------------------------------------------------------------------------
+
+set(traindb_cli_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/traindb_cli.cpp)
+add_executable(traindb_cli ${traindb_cli_SRCS})
+
+target_link_libraries(traindb_cli
 
                       digikamcore
                       digikamgui

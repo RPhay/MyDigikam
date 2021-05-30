@@ -596,4 +596,4 @@ int main(int argc, char* argv[])
    return app.exec();
 }
 
-#include "gui_recognition.moc"
+#include "recognition_gui.moc"

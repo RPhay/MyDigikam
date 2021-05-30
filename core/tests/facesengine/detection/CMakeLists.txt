@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2010-2020, Gilles Caulier, <caulier dot gilles at gmail dot com>
+# Copyright (c) 2010-2021, Gilles Caulier, <caulier dot gilles at gmail dot com>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
@@ -16,10 +16,10 @@ add_custom_target(scriptlink_det ALL
 
 # -----------------------------------------------------------------------------
 
-set(detect_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/detect.cpp)
-add_executable(detect ${detect_SRCS})
+set(detect_gui_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/detect_gui.cpp)
+add_executable(detect_gui ${detect_gui_SRCS})
 
-target_link_libraries(detect
+target_link_libraries(detect_gui
 
                       digikamcore
                       digikamgui
@@ -31,10 +31,10 @@ target_link_libraries(detect
 
 # -----------------------------------------------------------------------------
 
-set(dnndetection_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/benchmark_dnndetection.cpp)
-add_executable(benchmark_dnndetection ${dnndetection_SRCS})
+set(dnndetection_gui_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/benchmark_dnndetection_gui.cpp)
+add_executable(benchmark_dnndetection_gui ${dnndetection_gui_SRCS})
 
-target_link_libraries(benchmark_dnndetection
+target_link_libraries(benchmark_dnndetection_gui
 
                       digikamcore
                       digikamgui

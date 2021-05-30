@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2010-2020, Gilles Caulier, <caulier dot gilles at gmail dot com>
+# Copyright (c) 2010-2021, Gilles Caulier, <caulier dot gilles at gmail dot com>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
@@ -14,10 +14,10 @@ add_custom_target(scriptlink_help ALL
 
 # -----------------------------------------------------------------------------
 
-set(convert_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/convert_format.cpp)
-add_executable(convert_format ${convert_SRCS})
+set(convert_cli_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/convert_format_cli.cpp)
+add_executable(convert_format_cli ${convert_cli_SRCS})
 
-target_link_libraries(convert_format
+target_link_libraries(convert_format_cli
 
                       digikamcore
                       digikamgui

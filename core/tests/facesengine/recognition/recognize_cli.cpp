@@ -28,7 +28,7 @@
 
 // Qt includes
 
-#include <QApplication>
+#include <QCoreApplication>
 #include <QDir>
 #include <QImage>
 #include <QElapsedTimer>
