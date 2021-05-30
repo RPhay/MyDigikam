@@ -172,7 +172,7 @@ void ExifToolParser::slotCmdCompleted(int cmdAction,
         {
             printExifToolOutput(stdOut);
 
-            if (!d->argsFile.isOpen())
+            if (!d->argsFile.isOpen() && d->argsFile.exists())
             {
                 d->argsFile.remove();
             }
