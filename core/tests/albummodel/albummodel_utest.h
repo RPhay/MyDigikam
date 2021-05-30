@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_ALBUM_MODEL_TEST_H
-#define DIGIKAM_ALBUM_MODEL_TEST_H
+#ifndef DIGIKAM_ALBUM_MODEL_UTEST_H
+#define DIGIKAM_ALBUM_MODEL_UTEST_H
 
 // Qt includes
 
@@ -109,4 +109,4 @@ private:
     QList<int>           addedIds;
 };
 
-#endif // DIGIKAM_ALBUM_MODEL_TEST_H
+#endif // DIGIKAM_ALBUM_MODEL_UTEST_H

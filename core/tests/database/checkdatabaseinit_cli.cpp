@@ -30,7 +30,6 @@
 #include <QTimer>
 #include <QTest>
 #include <QCommandLineParser>
-#include <QDebug>
 
 // KDE includes
 
@@ -38,6 +37,7 @@
 
 // Local includes
 
+#include "digikam_debug.h"
 #include "daboutdata.h"
 #include "albummanager.h"
 #include "coredbaccess.h"
@@ -57,8 +57,8 @@ int main(int argc, char** argv)
 
     if (argc != 2)
     {
-        qDebug() << "testdatabaseinit - test database initialization";
-        qDebug() << "Usage: <dbtype: sqlite | mysql>";
+        qCDebug(DIGIKAM_TESTS_LOG) << "testdatabaseinit - test database initialization";
+        qCDebug(DIGIKAM_TESTS_LOG) << "Usage: <dbtype: sqlite | mysql>";
         return -1;
     }
 
@@ -74,7 +74,7 @@ int main(int argc, char** argv)
     parser.process(app);
     aboutData.processCommandLine(&parser);
 
-    qDebug() << "Setup Database...";
+    qCDebug(DIGIKAM_TESTS_LOG) << "Setup Database...";
     DbEngineParameters params;
     QString dbtype = QLatin1String(argv[1]);
 
@@ -108,25 +108,25 @@ int main(int argc, char** argv)
     }
     else
     {
-        qDebug() << "Wrong database type to use: " << dbtype;
-        qDebug() << "Usage: <dbtype: sqlite | mysql>";
+        qCDebug(DIGIKAM_TESTS_LOG) << "Wrong database type to use: " << dbtype;
+        qCDebug(DIGIKAM_TESTS_LOG) << "Usage: <dbtype: sqlite | mysql>";
         return -1;
     }
 
     // ------------------------------------------------------------------------------------
 
-    qDebug() << "Initializing database...";
+    qCDebug(DIGIKAM_TESTS_LOG) << "Initializing database...";
     bool b = AlbumManager::instance()->setDatabase(params, false, IMAGE_PATH);
 
-    qDebug() << "Database initialization done: " << b;
+    qCDebug(DIGIKAM_TESTS_LOG) << "Database initialization done: " << b;
 
     QTest::qWait(3000);
 
-    qDebug() << "Shutting down database";
+    qCDebug(DIGIKAM_TESTS_LOG) << "Shutting down database";
     ScanController::instance()->shutDown();
     AlbumManager::instance()->cleanUp();
 
-    qDebug() << "Cleaning DB now";
+    qCDebug(DIGIKAM_TESTS_LOG) << "Cleaning DB now";
     CoreDbAccess::cleanUpDatabase();
     ThumbsDbAccess::cleanUpDatabase();
     FaceDbAccess::cleanUpDatabase();

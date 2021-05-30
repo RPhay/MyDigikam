@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DATABASE_FIELDS_TEST_H
-#define DIGIKAM_DATABASE_FIELDS_TEST_H
+#ifndef DIGIKAM_DATABASE_FIELDS_UTEST_H
+#define DIGIKAM_DATABASE_FIELDS_UTEST_H
 
 // Qt includes
 
@@ -53,4 +53,4 @@ private Q_SLOTS:
     void cleanupTestCase();
 };
 
-#endif // DIGIKAM_DATABASE_FIELDS_TEST_H
+#endif // DIGIKAM_DATABASE_FIELDS_UTEST_H

@@ -12,7 +12,6 @@ include_directories(
     $<TARGET_PROPERTY:Qt5::Sql,INTERFACE_INCLUDE_DIRECTORIES>
     $<TARGET_PROPERTY:Qt5::Core,INTERFACE_INCLUDE_DIRECTORIES>
 
-    $<TARGET_PROPERTY:KF5::I18n,INTERFACE_INCLUDE_DIRECTORIES>
     $<TARGET_PROPERTY:KF5::XmlGui,INTERFACE_INCLUDE_DIRECTORIES>
 )
 
@@ -22,22 +21,9 @@ endif()
 
 #------------------------------------------------------------------------
 
-add_executable(testdatabaseswitch ${CMAKE_CURRENT_SOURCE_DIR}/testdatabaseswitch.cpp)
+add_executable(checkdatabaseswitch_cli ${CMAKE_CURRENT_SOURCE_DIR}/checkdatabaseswitch_cli.cpp)
 
-target_link_libraries(testdatabaseswitch
-
-                      digikamcore
-                      digikamdatabase
-                      digikamgui
-
-                      ${COMMON_TEST_LINK}
-)
-
-#------------------------------------------------------------------------
-
-add_executable(testdatabaseinit ${CMAKE_CURRENT_SOURCE_DIR}/testdatabaseinit.cpp)
-
-target_link_libraries(testdatabaseinit
+target_link_libraries(checkdatabaseswitch_cli
 
                       digikamcore
                       digikamdatabase
@@ -48,7 +34,20 @@ target_link_libraries(testdatabaseinit
 
 #------------------------------------------------------------------------
 
-ecm_add_tests(${CMAKE_CURRENT_SOURCE_DIR}/databasefieldstest.cpp
+add_executable(checkdatabaseinit_cli ${CMAKE_CURRENT_SOURCE_DIR}/checkdatabaseinit_cli.cpp)
+
+target_link_libraries(checkdatabaseinit_cli
+
+                      digikamcore
+                      digikamdatabase
+                      digikamgui
+
+                      ${COMMON_TEST_LINK}
+)
+
+#------------------------------------------------------------------------
+
+ecm_add_tests(${CMAKE_CURRENT_SOURCE_DIR}/databasefields_utest.cpp
 
               NAME_PREFIX
 
@@ -67,9 +66,9 @@ ecm_add_tests(${CMAKE_CURRENT_SOURCE_DIR}/databasefieldstest.cpp
 
 #------------------------------------------------------------------------
 
-add_executable(databasetagstest ${CMAKE_CURRENT_SOURCE_DIR}/databasetagstest.cpp)
+add_executable(databasetags_utest ${CMAKE_CURRENT_SOURCE_DIR}/databasetags_utest.cpp)
 
-target_link_libraries(databasetagstest
+target_link_libraries(databasetags_utest
 
                       digikamcore
                       digikamdatabase
@@ -81,7 +80,7 @@ target_link_libraries(databasetagstest
 # NOTE: this unit test fail to work as the temporary collection creation cannot be done in /tmp.
 #       we need to port code to use QTest directory, as it done with metadataengine unit-tests.
 #
-#ecm_add_tests(${CMAKE_CURRENT_SOURCE_DIR}/databasetagstest.cpp
+#ecm_add_tests(${CMAKE_CURRENT_SOURCE_DIR}/databasetags_utest.cpp
 #
 #              NAME_PREFIX
 #

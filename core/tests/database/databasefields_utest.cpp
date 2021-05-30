@@ -21,7 +21,7 @@
  *
  * ============================================================ */
 
-#include "databasefieldstest.h"
+#include "databasefields_utest.h"
 
 // Qt includes
 
