@@ -20,8 +20,8 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_LOAD_SAVE_THREAD_TEST_H
-#define DIGIKAM_LOAD_SAVE_THREAD_TEST_H
+#ifndef DIGIKAM_LOAD_SAVE_THREAD_CLI_H
+#define DIGIKAM_LOAD_SAVE_THREAD_CLI_H
 
 // Qt includes
 
@@ -56,4 +56,4 @@ private:
     LoadSaveThread* m_thread;
 };
 
-#endif // DIGIKAM_LOAD_SAVE_THREAD_TEST_H
+#endif // DIGIKAM_LOAD_SAVE_THREAD_CLI_H

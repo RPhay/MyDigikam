@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_STATE_SAVING_OBJECT_TEST_H
-#define DIGIKAM_STATE_SAVING_OBJECT_TEST_H
+#ifndef DIGIKAM_STATE_SAVING_OBJECT_UTEST_H
+#define DIGIKAM_STATE_SAVING_OBJECT_UTEST_H
 
 // Qt includes
 
@@ -83,4 +83,4 @@ private:
     Private* const d;
 };
 
-#endif // DIGIKAM_STATE_SAVING_OBJECT_TEST_H
+#endif // DIGIKAM_STATE_SAVING_OBJECT_UTEST_H

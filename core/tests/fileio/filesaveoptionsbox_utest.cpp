@@ -20,7 +20,7 @@
  *
  * ============================================================ */
 
-#include "filesaveoptionsboxtest.h"
+#include "filesaveoptionsbox_utest.h"
 
 // Qt includes
 

@@ -20,8 +20,8 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_FILE_SAVE_OPTIONS_BOX_TEST_H
-#define DIGIKAM_FILE_SAVE_OPTIONS_BOX_TEST_H
+#ifndef DIGIKAM_FILE_SAVE_OPTIONS_BOX_UTEST_H
+#define DIGIKAM_FILE_SAVE_OPTIONS_BOX_UTEST_H
 
 // Qt includes
 
@@ -43,4 +43,4 @@ private Q_SLOTS:
     void testDiscoverFormatDefault();
 };
 
-#endif // DIGIKAM_FILE_SAVE_OPTIONS_BOX_TEST_H
+#endif // DIGIKAM_FILE_SAVE_OPTIONS_BOX_UTEST_H

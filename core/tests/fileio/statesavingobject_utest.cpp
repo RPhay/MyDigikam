@@ -24,7 +24,7 @@
 // Disable static analysis with clang as it report false positives.
 #ifndef __clang_analyzer__
 
-#include "statesavingobjecttest.h"
+#include "statesavingobject_utest.h"
 
 // Qt includes
 

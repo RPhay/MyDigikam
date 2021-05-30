@@ -20,15 +20,15 @@
  *
  * ============================================================ */
 
-#include "loadsavethreadtest.h"
+#include "loadsavethread_cli.h"
 
 // Qt includes
 
 #include <QFileInfo>
-#include <QDebug>
 
 // Local includes
 
+#include "digikam_debug.h"
 #include "metaengine.h"
 #include "dimg.h"
 #include "drawdecoding.h"
@@ -67,13 +67,13 @@ LoadSaveThreadTest::LoadSaveThreadTest(int& argc, char** argv)
 void LoadSaveThreadTest::slotLoadingProgress(const LoadingDescription& desc, float p)
 {
     QFileInfo fi(desc.filePath);
-    qDebug() << "Loading " << fi.baseName() << " : " << p << " %";
+    qCDebug(DIGIKAM_TESTS_LOG) << "Loading " << fi.baseName() << " : " << p << " %";
 }
 
 void LoadSaveThreadTest::slotImageLoaded(const LoadingDescription& desc, const DImg& img)
 {
     QFileInfo fi(desc.filePath);
-    qDebug() << "Image " << fi.baseName() << " loaded";
+    qCDebug(DIGIKAM_TESTS_LOG) << "Image " << fi.baseName() << " loaded";
 
     QString outFilePath(fi.baseName() + QString::fromUtf8(".out.png"));
     DImg image = img;
@@ -83,13 +83,13 @@ void LoadSaveThreadTest::slotImageLoaded(const LoadingDescription& desc, const D
 void LoadSaveThreadTest::slotSavingProgress(const QString& filePath, float p)
 {
     QFileInfo fi(filePath);
-    qDebug() << "Saving " << fi.baseName() << " : " << p << " %";
+    qCDebug(DIGIKAM_TESTS_LOG) << "Saving " << fi.baseName() << " : " << p << " %";
 }
 
 void LoadSaveThreadTest::slotImageSaved(const QString& filePath, bool b)
 {
     QFileInfo fi(filePath);
-    qDebug() << fi.baseName() << " saved : " << (b ? "ok" : "pb");
+    qCDebug(DIGIKAM_TESTS_LOG) << fi.baseName() << " saved : " << (b ? "ok" : "pb");
 
     exit();
 }
@@ -100,8 +100,8 @@ int main(int argc, char** argv)
 {
     if (argc != 2)
     {
-        qDebug() << "loadsavethreadtest - test DImg image loader with multithreading";
-        qDebug() << "Usage: <image>";
+        qCDebug(DIGIKAM_TESTS_LOG) << "loadsavethreadtest - test DImg image loader with multithreading";
+        qCDebug(DIGIKAM_TESTS_LOG) << "Usage: <image>";
         return -1;
     }
 

@@ -11,17 +11,16 @@ include_directories(
     $<TARGET_PROPERTY:Qt5::Core,INTERFACE_INCLUDE_DIRECTORIES>
     $<TARGET_PROPERTY:Qt5::Gui,INTERFACE_INCLUDE_DIRECTORIES>
 
-    $<TARGET_PROPERTY:KF5::I18n,INTERFACE_INCLUDE_DIRECTORIES>
     $<TARGET_PROPERTY:KF5::XmlGui,INTERFACE_INCLUDE_DIRECTORIES>
 )
 
 #------------------------------------------------------------------------
 
-set(pgfscaled_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/pgfscaled.cpp ${pgfutils_SRCS})
-add_executable(pgfscaled ${pgfscaled_SRCS})
-ecm_mark_nongui_executable(pgfscaled)
+set(pgfscaled_cli_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/pgfscaled_cli.cpp ${pgfutils_SRCS})
+add_executable(pgfscaled_cli ${pgfscaled_cli_SRCS})
+ecm_mark_nongui_executable(pgfscaled_cli)
 
-target_link_libraries(pgfscaled
+target_link_libraries(pgfscaled_cli
                       digikamcore
 
                       ${COMMON_TEST_LINK}
@@ -29,11 +28,11 @@ target_link_libraries(pgfscaled
 
 #------------------------------------------------------------------------
 
-set(qtpgftest_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/qtpgftest.cpp ${pgfutils_SRCS})
-add_executable(qtpgftest ${qtpgftest_SRCS})
-ecm_mark_nongui_executable(qtpgftest)
+set(qtpgftest_cli_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/qtpgftest_cli.cpp ${pgfutils_SRCS})
+add_executable(qtpgftest_cli ${qtpgftest_cli_SRCS})
+ecm_mark_nongui_executable(qtpgftest_cli)
 
-target_link_libraries(qtpgftest
+target_link_libraries(qtpgftest_cli
                       digikamcore
 
                       ${COMMON_TEST_LINK}
@@ -41,11 +40,11 @@ target_link_libraries(qtpgftest
 
 #------------------------------------------------------------------------
 
-set(loadpgfdata_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/loadpgfdata.cpp ${pgfutils_SRCS})
-add_executable(loadpgfdata ${loadpgfdata_SRCS})
-ecm_mark_nongui_executable(loadpgfdata)
+set(loadpgfdata_cli_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/loadpgfdata_cli.cpp ${pgfutils_SRCS})
+add_executable(loadpgfdata_cli ${loadpgfdata_cli_SRCS})
+ecm_mark_nongui_executable(loadpgfdata_cli)
 
-target_link_libraries(loadpgfdata
+target_link_libraries(loadpgfdata_cli
                       digikamcore
 
                       ${COMMON_TEST_LINK}
@@ -53,11 +52,11 @@ target_link_libraries(loadpgfdata
 
 #------------------------------------------------------------------------
 
-set(loadsavethreadtest_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/loadsavethreadtest.cpp)
-add_executable(loadsavethreadtest ${loadsavethreadtest_SRCS})
-ecm_mark_nongui_executable(loadsavethreadtest)
+set(loadsavethread_cli_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/loadsavethread_cli.cpp)
+add_executable(loadsavethread_cli ${loadsavethread_cli_SRCS})
+ecm_mark_nongui_executable(loadsavethread_cli)
 
-target_link_libraries(loadsavethreadtest
+target_link_libraries(loadsavethread_cli
                       digikamcore
 
                       ${COMMON_TEST_LINK}
@@ -65,7 +64,7 @@ target_link_libraries(loadsavethreadtest
 
 #------------------------------------------------------------------------
 
-ecm_add_tests(${CMAKE_CURRENT_SOURCE_DIR}/filesaveoptionsboxtest.cpp
+ecm_add_tests(${CMAKE_CURRENT_SOURCE_DIR}/filesaveoptionsbox_utest.cpp
 
               NAME_PREFIX
 
@@ -81,7 +80,7 @@ ecm_add_tests(${CMAKE_CURRENT_SOURCE_DIR}/filesaveoptionsboxtest.cpp
 
 #------------------------------------------------------------------------
 
-ecm_add_tests(${CMAKE_CURRENT_SOURCE_DIR}/statesavingobjecttest.cpp
+ecm_add_tests(${CMAKE_CURRENT_SOURCE_DIR}/statesavingobject_utest.cpp
 
               NAME_PREFIX
 
