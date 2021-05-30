@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2010-2020, Gilles Caulier, <caulier dot gilles at gmail dot com>
+# Copyright (c) 2010-2021, Gilles Caulier, <caulier dot gilles at gmail dot com>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
@@ -31,5 +31,5 @@ macro(DPLUGINS_BUILD_TOOL)
 
 endmacro()
 
-DPLUGINS_BUILD_TOOL(loadandrun_generic.cpp)
-DPLUGINS_BUILD_TOOL(confview_generic.cpp)
+DPLUGINS_BUILD_TOOL(loadandrun_generic_gui.cpp)
+DPLUGINS_BUILD_TOOL(confview_generic_gui.cpp)
