@@ -34,7 +34,10 @@ ExifToolParser::Private::Private()
 
 ExifToolParser::Private::~Private()
 {
-    argsFile.remove();
+    if (argsFile.exists())
+    {
+        argsFile.remove();
+    }
 }
 
 bool ExifToolParser::Private::prepareProcess()
