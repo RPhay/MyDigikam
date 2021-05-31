@@ -361,4 +361,5 @@ BUGFIXES:
 338 ==> 437813 - Exiftool.exe is preventing the installation.
 339 ==> 437657 - Size of dialog for database migration.
 340 ==> 437897 - Windows timestamp to metadata extraction for TIFFs changes when modifying files.
-341 ==> 
+341 ==> 397999 - Sort thumbs by date.. causes issues.
+342 ==> 
