@@ -360,4 +360,5 @@ BUGFIXES:
 337 ==> 437769 - Search-Table view / After suspending - ERROR:directory_reader_win.cc(43).
 338 ==> 437813 - Exiftool.exe is preventing the installation.
 339 ==> 437657 - Size of dialog for database migration.
-340 ==> 
+340 ==> 437897 - Windows timestamp to metadata extraction for TIFFs changes when modifying files.
+341 ==> 

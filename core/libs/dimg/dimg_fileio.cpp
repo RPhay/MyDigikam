@@ -342,24 +342,18 @@ QDateTime DImg::creationDateFromFilesystem(const QFileInfo& fileInfo) const
 #endif
 
     QDateTime mtime = fileInfo.lastModified();
-    bool cTimeValid = ctime.isValid();
-    bool mTimeValid = mtime.isValid();
 
-    if (!cTimeValid || !mTimeValid)
+    if (ctime.isValid())
     {
-        if      (cTimeValid)
-        {
-            return ctime;
-        }
-        else if (mTimeValid)
-        {
-            return mtime;
-        }
-
-        return QDateTime::currentDateTime();
+        return ctime;
     }
 
-    return qMin(ctime, mtime);
+    if (mtime.isValid())
+    {
+        return mtime;
+    }
+
+    return QDateTime::currentDateTime();
 }
 
 } // namespace Digikam
