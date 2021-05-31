@@ -470,7 +470,7 @@ public:
 
 private:
 
-    bool showDatabaseSetupPage(const QString& error);
+    bool showDatabaseSetupPage(const QString& error, bool priority, const QString& suggestedAlbumRoot);
     void insertPAlbum(PAlbum* album, PAlbum* parent);
     void removePAlbum(PAlbum* album);
 
