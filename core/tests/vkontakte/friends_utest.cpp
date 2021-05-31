@@ -21,33 +21,36 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_VKONTAKTE_TEST_FRIENDS_H
-#define DIGIKAM_VKONTAKTE_TEST_FRIENDS_H
+#include "friends_utest.h"
 
-// Qt includes
+// KDE includes
 
-#include <QObject>
+#include <qtest_kde.h>
 
 // Local includes
 
-#include "vktestbase.h"
+#include "vkontakte_friendlistjob.h"
 
-/**
- * What is tested here:
- *   class FriendListJob
- */
-class TestFriends : public VkTestBase
+using namespace Vkontakte;
+
+TestFriends::TestFriends()
+    : VkTestBase()
 {
-    Q_OBJECT
+}
 
-public:
+void TestFriends::initTestCase()
+{
+    authenticate(Vkontakte::AppPermissions::NoPermissions);
+}
 
-    TestFriends();
+void TestFriends::testFriendListJob()
+{
+    FriendListJob* const job = new FriendListJob(accessToken(), 1);
+    job->exec();
+    QVERIFY(!job->error());
 
-private Q_SLOTS:
+    // Make sure Pavel Durov has more than 200 friends
+    QVERIFY(job->list().size() > 200);
+}
 
-    void initTestCase();
-    void testFriendListJob();
-};
-
-#endif // DIGIKAM_VKONTAKTE_TEST_FRIENDS_H
+QTEST_KDEMAIN(TestFriends, GUI)

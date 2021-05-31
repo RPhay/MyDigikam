@@ -21,7 +21,7 @@
  *
  * ============================================================ */
 
-#include "test_loginproperties.h"
+#include "loginproperties_utest.h"
 
 // KDE includes
 

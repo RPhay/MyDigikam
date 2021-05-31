@@ -21,38 +21,33 @@
  *
  * ============================================================ */
 
-#include "test_frequentrequests.h"
+#ifndef DIGIKAM_VKONTAKTE_FRIENDS_UTEST_H
+#define DIGIKAM_VKONTAKTE_FRIENDS_UTEST_H
 
 // Qt includes
 
-#include <QTest>
+#include <QObject>
 
 // Local includes
 
-#include "vkontakte_userinfojob.h"
+#include "vktestbase.h"
 
-using namespace Vkontakte;
-
-TestFrequentRequests::TestFrequentRequests()
-    : VkTestBase()
+/**
+ * What is tested here:
+ *   class FriendListJob
+ */
+class TestFriends : public VkTestBase
 {
-}
+    Q_OBJECT
 
-void TestFrequentRequests::initTestCase()
-{
-    authenticate(Vkontakte::AppPermissions::NoPermissions);
-}
+public:
 
-void TestFrequentRequests::testUserInfoJob()
-{
-    // Send 20 requests without delays
+    TestFriends();
 
-    for (int i = 0 ; i < 20 ; ++i)
-    {
-        Vkontakte::UserInfoJob* const job = new Vkontakte::UserInfoJob(accessToken(), 1);
-        job->exec();
-        QVERIFY(!job->error());
-    }
-}
+private Q_SLOTS:
 
-QTEST_MAIN(TestFrequentRequests)
+    void initTestCase();
+    void testFriendListJob();
+};
+
+#endif // DIGIKAM_VKONTAKTE_FRIENDS_UTEST_H

@@ -21,12 +21,13 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_VKONTAKTE_TEST_DATABASE_H
-#define DIGIKAM_VKONTAKTE_TEST_DATABASE_H
+#ifndef DIGIKAM_VKONTAKTE_ALBUMS_UTEST_H
+#define DIGIKAM_VKONTAKTE_ALBUMS_UTEST_H
 
 // Qt includes
 
 #include <QObject>
+#include <QVector>
 
 // Local includes
 
@@ -34,21 +35,29 @@
 
 /**
  * What is tested here:
- *   class CidsNamesJob
+ *   class AlbumListJob
+ *   class CreateAlbumJob - tested in initTestCase()
+ *   class EditAlbumJob
+ *   class DeleteAlbumJob
  */
-class TestDatabaseMethods : public VkTestBase
+class TestAlbums : public VkTestBase
 {
     Q_OBJECT
 
 public:
 
-    TestDatabaseMethods();
+    TestAlbums();
 
 private Q_SLOTS:
 
     void initTestCase();
-    void testCountriesById();
-    void testCitiesById();
+    void testListJob();
+    void testEditJob();
+    void testDeleteJob();
+
+private:
+
+    QVector<int> m_albumIds;
 };
 
-#endif // DIGIKAM_VKONTAKTE_TEST_DATABASE_H
+#endif // DIGIKAM_VKONTAKTE_ALBUMS_UTEST_H

@@ -21,7 +21,7 @@
  *
  * ============================================================ */
 
-#include "test_userinfo.h"
+#include "userinfo_utest.h"
 
 // Qt includes
 

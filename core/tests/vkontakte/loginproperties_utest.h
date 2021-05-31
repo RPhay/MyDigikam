@@ -21,13 +21,12 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_VKONTAKTE_TEST_PHOTOS_H
-#define DIGIKAM_VKONTAKTE_TEST_PHOTOS_H
+#ifndef DIGIKAM_VKONTAKTE_LOGINPROPERTIES_UTEST_H
+#define DIGIKAM_VKONTAKTE_LOGINPROPERTIES_UTEST_H
 
 // Qt includes
 
 #include <QObject>
-#include <QVector>
 
 // Local includes
 
@@ -35,28 +34,22 @@
 
 /**
  * What is tested here:
- *   class UploadPhotosJob - tested in initTestCase()
- *   class PhotoListJob
- *   class PhotoJob - tested in testPhotoListJob()
+ *   class GetApplicationPermissionsJob
+ *   class GetVariableJob
  */
-class TestPhotos : public VkTestBase
+class TestLoginProperties : public VkTestBase
 {
     Q_OBJECT
 
 public:
 
-    TestPhotos();
+    TestLoginProperties();
 
 private Q_SLOTS:
 
     void initTestCase();
-    void testPhotoListJob();
-    void testUploadMultiple();
-
-private:
-
-    int m_albumId;
-    int m_photoId;
+    void testGetApplicationPermissionsJob();
+    void testGetVariableJob();
 };
 
-#endif // DIGIKAM_VKONTAKTE_TEST_PHOTOS_H
+#endif // DIGIKAM_VKONTAKTE_LOGINPROPERTIES_UTEST_H

@@ -21,49 +21,42 @@
  *
  * ============================================================ */
 
-#include "test_messages.h"
+#ifndef DIGIKAM_VKONTAKTE_PHOTOS_UTEST_H
+#define DIGIKAM_VKONTAKTE_PHOTOS_UTEST_H
 
-// KDE includes
+// Qt includes
 
-#include <qtest_kde.h>
+#include <QObject>
+#include <QVector>
 
 // Local includes
 
-#include "vkontakte_messageslistjob.h"
-#include "vkontakte_allmessageslistjob.h"
-#include "vkontakte_discussionslistjob.h"
+#include "vktestbase.h"
 
-using namespace Vkontakte;
-
-TestMessages::TestMessages()
-    : VkTestBase()
+/**
+ * What is tested here:
+ *   class UploadPhotosJob - tested in initTestCase()
+ *   class PhotoListJob
+ *   class PhotoJob - tested in testPhotoListJob()
+ */
+class TestPhotos : public VkTestBase
 {
-}
+    Q_OBJECT
 
-void TestMessages::initTestCase()
-{
-    authenticate(AppPermissions::Messages);
-}
+public:
 
-void TestMessages::testMessagesListJob()
-{
-    MessagesListJob* const job = new MessagesListJob(accessToken());
-    job->exec();
-    QVERIFY(!job->error());
-}
+    TestPhotos();
 
-void TestMessages::testAllMessagesListJob()
-{
-    AllMessagesListJob* const job = new AllMessagesListJob(accessToken());
-    job->exec();
-    QVERIFY(!job->error());
-}
+private Q_SLOTS:
 
-void TestMessages::testDiscussionsListJob()
-{
-    DiscussionsListJob* const job = new DiscussionsListJob(accessToken());
-    job->exec();
-    QVERIFY(!job->error());
-}
+    void initTestCase();
+    void testPhotoListJob();
+    void testUploadMultiple();
 
-QTEST_KDEMAIN(TestMessages, GUI)
+private:
+
+    int m_albumId;
+    int m_photoId;
+};
+
+#endif // DIGIKAM_VKONTAKTE_PHOTOS_UTEST_H

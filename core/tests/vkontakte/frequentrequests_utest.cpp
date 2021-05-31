@@ -21,43 +21,38 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_VKONTAKTE_TEST_NOTES_H
-#define DIGIKAM_VKONTAKTE_TEST_NOTES_H
+#include "frequentrequests_utest.h"
 
 // Qt includes
 
-#include <QObject>
-#include <QVector>
+#include <QTest>
 
 // Local includes
 
-#include "vktestbase.h"
+#include "vkontakte_userinfojob.h"
 
-/**
- * What is tested here:
- *   class NotesListJob
- *   class AllNotesListJob
- *   class NoteAddJob - tested in initTestCase()
- *   class NoteJob
- */
-class TestNotes : public VkTestBase
+using namespace Vkontakte;
+
+TestFrequentRequests::TestFrequentRequests()
+    : VkTestBase()
 {
-    Q_OBJECT
+}
 
-public:
+void TestFrequentRequests::initTestCase()
+{
+    authenticate(Vkontakte::AppPermissions::NoPermissions);
+}
 
-    TestNotes();
+void TestFrequentRequests::testUserInfoJob()
+{
+    // Send 20 requests without delays
 
-private Q_SLOTS:
+    for (int i = 0 ; i < 20 ; ++i)
+    {
+        Vkontakte::UserInfoJob* const job = new Vkontakte::UserInfoJob(accessToken(), 1);
+        job->exec();
+        QVERIFY(!job->error());
+    }
+}
 
-    void initTestCase();
-    void testNotesListJob();
-    void testAllNotesListJob();
-    void testNoteJob();
-
-private:
-
-    QVector<int> m_noteIds;
-};
-
-#endif // DIGIKAM_VKONTAKTE_TEST_NOTES_H
+QTEST_MAIN(TestFrequentRequests)

@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_VKONTAKTE_TEST_MESSAGES_H
-#define DIGIKAM_VKONTAKTE_TEST_MESSAGES_H
+#ifndef DIGIKAM_VKONTAKTE_NOTES_UTEST_H
+#define DIGIKAM_VKONTAKTE_NOTES_UTEST_H
 
 // Qt includes
 
@@ -35,24 +35,29 @@
 
 /**
  * What is tested here:
- *   class MessagesListJob
- *   class AllMessagesListJob
- *   class DiscussionsListJob
+ *   class NotesListJob
+ *   class AllNotesListJob
+ *   class NoteAddJob - tested in initTestCase()
+ *   class NoteJob
  */
-class TestMessages : public VkTestBase
+class TestNotes : public VkTestBase
 {
     Q_OBJECT
 
 public:
 
-    TestMessages();
+    TestNotes();
 
 private Q_SLOTS:
 
     void initTestCase();
-    void testMessagesListJob();
-    void testAllMessagesListJob();
-    void testDiscussionsListJob();
+    void testNotesListJob();
+    void testAllNotesListJob();
+    void testNoteJob();
+
+private:
+
+    QVector<int> m_noteIds;
 };
 
-#endif // DIGIKAM_VKONTAKTE_TEST_MESSAGES_H
+#endif // DIGIKAM_VKONTAKTE_NOTES_UTEST_H

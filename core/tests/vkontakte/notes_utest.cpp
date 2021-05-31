@@ -21,7 +21,7 @@
  *
  * ============================================================ */
 
-#include "test_notes.h"
+#include "notes_utest.h"
 
 // KDE includes
 

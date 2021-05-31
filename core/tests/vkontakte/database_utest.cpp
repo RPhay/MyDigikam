@@ -21,7 +21,7 @@
  *
  * ============================================================ */
 
-#include "test_database.h"
+#include "database_utest.h"
 
 // KDE includes
 

@@ -21,43 +21,49 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_VKONTAKTE_TEST_ALBUMS_H
-#define DIGIKAM_VKONTAKTE_TEST_ALBUMS_H
+#include "messages_utest.h"
 
-// Qt includes
+// KDE includes
 
-#include <QObject>
-#include <QVector>
+#include <qtest_kde.h>
 
 // Local includes
 
-#include "vktestbase.h"
+#include "vkontakte_messageslistjob.h"
+#include "vkontakte_allmessageslistjob.h"
+#include "vkontakte_discussionslistjob.h"
 
-/**
- * What is tested here:
- *   class AlbumListJob
- *   class CreateAlbumJob - tested in initTestCase()
- *   class EditAlbumJob
- *   class DeleteAlbumJob
- */
-class TestAlbums : public VkTestBase
+using namespace Vkontakte;
+
+TestMessages::TestMessages()
+    : VkTestBase()
 {
-    Q_OBJECT
+}
 
-public:
+void TestMessages::initTestCase()
+{
+    authenticate(AppPermissions::Messages);
+}
 
-    TestAlbums();
+void TestMessages::testMessagesListJob()
+{
+    MessagesListJob* const job = new MessagesListJob(accessToken());
+    job->exec();
+    QVERIFY(!job->error());
+}
 
-private Q_SLOTS:
+void TestMessages::testAllMessagesListJob()
+{
+    AllMessagesListJob* const job = new AllMessagesListJob(accessToken());
+    job->exec();
+    QVERIFY(!job->error());
+}
 
-    void initTestCase();
-    void testListJob();
-    void testEditJob();
-    void testDeleteJob();
+void TestMessages::testDiscussionsListJob()
+{
+    DiscussionsListJob* const job = new DiscussionsListJob(accessToken());
+    job->exec();
+    QVERIFY(!job->error());
+}
 
-private:
-
-    QVector<int> m_albumIds;
-};
-
-#endif // DIGIKAM_VKONTAKTE_TEST_ALBUMS_H
+QTEST_KDEMAIN(TestMessages, GUI)

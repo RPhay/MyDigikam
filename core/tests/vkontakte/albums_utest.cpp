@@ -21,7 +21,7 @@
  *
  * ============================================================ */
 
-#include "test_albums.h"
+#include "albums_utest.h"
 
 // Qt includes
 

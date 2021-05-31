@@ -21,12 +21,13 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_VKONTAKTE_TEST_USERINFO_H
-#define DIGIKAM_VKONTAKTE_TEST_USERINFO_H
+#ifndef DIGIKAM_VKONTAKTE_MESSAGES_UTEST_H
+#define DIGIKAM_VKONTAKTE_MESSAGES_UTEST_H
 
 // Qt includes
 
 #include <QObject>
+#include <QVector>
 
 // Local includes
 
@@ -34,21 +35,24 @@
 
 /**
  * What is tested here:
- *   class UserInfoJob
+ *   class MessagesListJob
+ *   class AllMessagesListJob
+ *   class DiscussionsListJob
  */
-class TestUserInfo : public VkTestBase
+class TestMessages : public VkTestBase
 {
     Q_OBJECT
 
 public:
 
-    TestUserInfo();
+    TestMessages();
 
 private Q_SLOTS:
 
     void initTestCase();
-    void testUserInfoJob();
-    void testSelfUserInfoJob();
+    void testMessagesListJob();
+    void testAllMessagesListJob();
+    void testDiscussionsListJob();
 };
 
-#endif // DIGIKAM_VKONTAKTE_TEST_USERINFO_H
+#endif // DIGIKAM_VKONTAKTE_MESSAGES_UTEST_H

@@ -21,7 +21,7 @@
  *
  * ============================================================ */
 
-#include "test_photos.h"
+#include "photos_utest.h"
 
 // Qt incudes
 

@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_VKONTAKTE_TEST_LOGINPROPERTIES_H
-#define DIGIKAM_VKONTAKTE_TEST_LOGINPROPERTIES_H
+#ifndef DIGIKAM_VKONTAKTE_USERINFO_UTEST_H
+#define DIGIKAM_VKONTAKTE_USERINFO_UTEST_H
 
 // Qt includes
 
@@ -34,22 +34,21 @@
 
 /**
  * What is tested here:
- *   class GetApplicationPermissionsJob
- *   class GetVariableJob
+ *   class UserInfoJob
  */
-class TestLoginProperties : public VkTestBase
+class TestUserInfo : public VkTestBase
 {
     Q_OBJECT
 
 public:
 
-    TestLoginProperties();
+    TestUserInfo();
 
 private Q_SLOTS:
 
     void initTestCase();
-    void testGetApplicationPermissionsJob();
-    void testGetVariableJob();
+    void testUserInfoJob();
+    void testSelfUserInfoJob();
 };
 
-#endif // DIGIKAM_VKONTAKTE_TEST_LOGINPROPERTIES_H
+#endif // DIGIKAM_VKONTAKTE_USERINFO_UTEST_H
