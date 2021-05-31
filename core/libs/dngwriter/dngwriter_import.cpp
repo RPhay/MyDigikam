@@ -76,7 +76,7 @@ int DNGWriter::Private::importRaw(DRawInfo* const identify,
         outputWidth  = identifyMake->outputSize.width();
     }
 
-    if (!rawProcessor->extractRAWData(parent->inputFile(), rawData, *identify, 0))
+    if (!rawProcessor->extractRAWData2(parent->inputFile(), rawData, *identify, 0))
     {
         qCCritical(DIGIKAM_GENERAL_LOG) << "DNGWriter: Loading RAW data failed. Aborted...";
 
@@ -99,6 +99,15 @@ int DNGWriter::Private::importRaw(DRawInfo* const identify,
     qCDebug(DIGIKAM_GENERAL_LOG) << "--- Black:         " << identify->blackPoint;
     qCDebug(DIGIKAM_GENERAL_LOG) << "--- White:         " << identify->whitePoint;
     qCDebug(DIGIKAM_GENERAL_LOG) << "--- CAM->XYZ:";
+
+    for (int i = 0 ; i < 4 ; ++i)
+    {
+        qCDebug(DIGIKAM_GENERAL_LOG)
+                 << "                   "
+                 << QString().asprintf("%03.4f  %03.4f  %03.4f", identify->cameraXYZMatrix[i][0],
+                                                                 identify->cameraXYZMatrix[i][1],
+                                                                 identify->cameraXYZMatrix[i][2]);
+    }
 
     if (cancel)
     {
