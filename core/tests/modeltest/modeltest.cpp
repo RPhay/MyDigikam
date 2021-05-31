@@ -41,18 +41,23 @@
 
 #include "modeltest.h"
 
+// Qt includes
+
 #include <QVariant>
-#include <QDebug>
 #include <QTest>
+
+// Local includes
+
+#include "digikam_debug.h"
 
 #undef Q_ASSERT
 #define Q_ASSERT  QVERIFY
 
 Q_DECLARE_METATYPE ( QModelIndex )
 
-/*!
-    Connect to all of the models signals.  Whenever anything happens recheck everything.
-*/
+/**
+ * Connect to all of the models signals.  Whenever anything happens recheck everything.
+ */
 ModelTest::ModelTest ( QAbstractItemModel* const _model, QObject* const parent )
     : QObject ( parent ),
       model ( _model ),
@@ -106,6 +111,7 @@ void ModelTest::runAllTests()
 {
     if ( fetchingMore )
         return;
+
     nonDestructiveBasicTest();
     rowCount();
     columnCount();
@@ -115,10 +121,10 @@ void ModelTest::runAllTests()
     data();
 }
 
-/*!
-    nonDestructiveBasicTest tries to call a number of the basic functions (not all)
-    to make sure the model doesn't outright segfault, testing the functions that makes sense.
-*/
+/**
+ * nonDestructiveBasicTest tries to call a number of the basic functions (not all)
+ * to make sure the model doesn't outright segfault, testing the functions that makes sense.
+ */
 void ModelTest::nonDestructiveBasicTest()
 {
     Q_ASSERT ( model->buddy ( QModelIndex() ) == QModelIndex() );
@@ -150,14 +156,13 @@ void ModelTest::nonDestructiveBasicTest()
     model->supportedDropActions();
 }
 
-/*!
-    Tests model's implementation of QAbstractItemModel::rowCount() and hasChildren()
-
-    Models that are dynamically populated are not as fully tested here.
+/**
+ * Tests model's implementation of QAbstractItemModel::rowCount() and hasChildren()
+ * Models that are dynamically populated are not as fully tested here.
  */
 void ModelTest::rowCount()
 {
-//     qDebug() << "rc";
+//     qCDebug(DIGIKAM_TESTS_LOG) << "rc";
     // check top row
     QModelIndex topIndex = model->index ( 0, 0, QModelIndex() );
     int rows = model->rowCount ( topIndex );
@@ -178,8 +183,8 @@ void ModelTest::rowCount()
     // but this catches the big mistakes
 }
 
-/*!
-    Tests model's implementation of QAbstractItemModel::columnCount() and hasChildren()
+/**
+ * Tests model's implementation of QAbstractItemModel::columnCount() and hasChildren()
  */
 void ModelTest::columnCount()
 {
@@ -196,12 +201,12 @@ void ModelTest::columnCount()
     // but this catches the big mistakes
 }
 
-/*!
-    Tests model's implementation of QAbstractItemModel::hasIndex()
+/**
+ * Tests model's implementation of QAbstractItemModel::hasIndex()
  */
 void ModelTest::hasIndex()
 {
-//     qDebug() << "hi";
+//     qCDebug(DIGIKAM_TESTS_LOG) << "hi";
     // Make sure that invalid values returns an invalid index
     Q_ASSERT ( model->hasIndex ( -2, -2 ) == false );
     Q_ASSERT ( model->hasIndex ( -2, 0 ) == false );
@@ -221,12 +226,12 @@ void ModelTest::hasIndex()
     // but this catches the big mistakes
 }
 
-/*!
-    Tests model's implementation of QAbstractItemModel::index()
+/**
+ * Tests model's implementation of QAbstractItemModel::index()
  */
 void ModelTest::index()
 {
-//     qDebug() << "i";
+//     qCDebug(DIGIKAM_TESTS_LOG) << "i";
     // Make sure that invalid values returns an invalid index
     Q_ASSERT ( model->index ( -2, -2 ) == QModelIndex() );
     Q_ASSERT ( model->index ( -2, 0 ) == QModelIndex() );
@@ -251,12 +256,12 @@ void ModelTest::index()
     // but this catches the big mistakes
 }
 
-/*!
-    Tests model's implementation of QAbstractItemModel::parent()
+/**
+ * Tests model's implementation of QAbstractItemModel::parent()
  */
 void ModelTest::parent()
 {
-//     qDebug() << "p";
+//     qCDebug(DIGIKAM_TESTS_LOG) << "p";
     // Make sure the model wont crash and will return an invalid QModelIndex
     // when asked for the parent of an invalid index.
     Q_ASSERT ( model->parent ( QModelIndex() ) == QModelIndex() );
@@ -296,19 +301,19 @@ void ModelTest::parent()
     checkChildren ( QModelIndex() );
 }
 
-/*!
-    Called from the parent() test.
-
-    A model that returns an index of parent X should also return X when asking
-    for the parent of the index.
-
-    This recursive function does pretty extensive testing on the whole model in an
-    effort to catch edge cases.
-
-    This function assumes that rowCount(), columnCount() and index() already work.
-    If they have a bug it will point it out, but the above tests should have already
-    found the basic bugs because it is easier to figure out the problem in
-    those tests then this one.
+/**
+ * Called from the parent() test.
+ *
+ * A model that returns an index of parent X should also return X when asking
+ * for the parent of the index.
+ *
+ * This recursive function does pretty extensive testing on the whole model in an
+ * effort to catch edge cases.
+ *
+ * This function assumes that rowCount(), columnCount() and index() already work.
+ * If they have a bug it will point it out, but the above tests should have already
+ * found the basic bugs because it is easier to figure out the problem in
+ * those tests then this one.
  */
 void ModelTest::checkChildren ( const QModelIndex& parent, int currentDepth )
 {
@@ -336,7 +341,7 @@ void ModelTest::checkChildren ( const QModelIndex& parent, int currentDepth )
     if ( rows > 0 )
         Q_ASSERT ( model->hasChildren ( parent ) == true );
 
-    //qDebug() << "parent:" << model->data(parent).toString() << "rows:" << rows
+    //qCDebug(DIGIKAM_TESTS_LOG) << "parent:" << model->data(parent).toString() << "rows:" << rows
     //         << "columns:" << columns << "parent column:" << parent.column();
 
     Q_ASSERT ( model->hasIndex ( rows + 1, 0, parent ) == false );
@@ -373,9 +378,9 @@ void ModelTest::checkChildren ( const QModelIndex& parent, int currentDepth )
             // If the next test fails here is some somewhat useful debug you play with.
 
             if (model->parent(index) != parent) {
-                qDebug() << r << c << currentDepth << model->data(index).toString()
+                qCDebug(DIGIKAM_TESTS_LOG) << r << c << currentDepth << model->data(index).toString()
                          << model->data(parent).toString();
-                qDebug() << index << parent << model->parent(index);
+                qCDebug(DIGIKAM_TESTS_LOG) << index << parent << model->parent(index);
 //                 And a view that you can even use to show the model.
 //                 QTreeView view;
 //                 view.setModel(model);
@@ -383,14 +388,14 @@ void ModelTest::checkChildren ( const QModelIndex& parent, int currentDepth )
             }
 
             // Check that we can get back our real parent.
-//             qDebug() << model->parent ( index ) << parent ;
+//             qCDebug(DIGIKAM_TESTS_LOG) << model->parent ( index ) << parent ;
             Q_ASSERT ( model->parent ( index ) == parent );
 
             // recursively go down the children
             if ( model->hasChildren ( index ) && currentDepth < 10 ) {
-                //qDebug() << r << c << "has children" << model->rowCount(index);
+                //qCDebug(DIGIKAM_TESTS_LOG) << r << c << "has children" << model->rowCount(index);
                 checkChildren ( index, ++currentDepth );
-            }/* else { if (currentDepth >= 10) qDebug() << "checked 10 deep"; };*/
+            }/* else { if (currentDepth >= 10) qCDebug(DIGIKAM_TESTS_LOG) << "checked 10 deep"; };*/
 
             // make sure that after testing the children that the index doesn't change.
             QModelIndex newerIndex = model->index ( r, c, parent );
@@ -399,8 +404,8 @@ void ModelTest::checkChildren ( const QModelIndex& parent, int currentDepth )
     }
 }
 
-/*!
-    Tests model's implementation of QAbstractItemModel::data()
+/**
+ * Tests model's implementation of QAbstractItemModel::data()
  */
 void ModelTest::data()
 {
@@ -470,17 +475,17 @@ void ModelTest::data()
     }
 }
 
-/*!
-    Store what is about to be inserted to make sure it actually happens
-
-    \sa rowsInserted()
+/**
+ * Store what is about to be inserted to make sure it actually happens
+ *
+ * \sa rowsInserted()
  */
 void ModelTest::rowsAboutToBeInserted ( const QModelIndex& parent, int start, int end )
 {
     Q_UNUSED(end);
-//    qDebug() << "rowsAboutToBeInserted" << "start=" << start << "end=" << end << "parent=" << model->data ( parent ).toString()
+//    qCDebug(DIGIKAM_TESTS_LOG) << "rowsAboutToBeInserted" << "start=" << start << "end=" << end << "parent=" << model->data ( parent ).toString()
 //    << "current count of parent=" << model->rowCount ( parent ); // << "display of last=" << model->data( model->index(start-1, 0, parent) );
-//     qDebug() << model->index(start-1, 0, parent) << model->data( model->index(start-1, 0, parent) );
+//     qCDebug(DIGIKAM_TESTS_LOG) << model->index(start-1, 0, parent) << model->data( model->index(start-1, 0, parent) );
     Changing c;
     c.parent = parent;
     c.oldSize = model->rowCount ( parent );
@@ -489,32 +494,32 @@ void ModelTest::rowsAboutToBeInserted ( const QModelIndex& parent, int start, in
     insert.push ( c );
 }
 
-/*!
-    Confirm that what was said was going to happen actually did
-
-    \sa rowsAboutToBeInserted()
+/**
+ * Confirm that what was said was going to happen actually did
+ *
+ * \sa rowsAboutToBeInserted()
  */
 void ModelTest::rowsInserted ( const QModelIndex& parent, int start, int end )
 {
     Changing c = insert.pop();
     Q_ASSERT ( c.parent == parent );
-//    qDebug() << "rowsInserted"  << "start=" << start << "end=" << end << "oldsize=" << c.oldSize
+//    qCDebug(DIGIKAM_TESTS_LOG) << "rowsInserted"  << "start=" << start << "end=" << end << "oldsize=" << c.oldSize
 //    << "parent=" << model->data ( parent ).toString() << "current rowcount of parent=" << model->rowCount ( parent );
 
 //    for (int ii=start; ii <= end; ii++)
 //    {
-//      qDebug() << "itemWasInserted:" << ii << model->data ( model->index ( ii, 0, parent ));
+//      qCDebug(DIGIKAM_TESTS_LOG) << "itemWasInserted:" << ii << model->data ( model->index ( ii, 0, parent ));
 //    }
-//    qDebug();
+//    qCDebug(DIGIKAM_TESTS_LOG);
 
     Q_ASSERT ( c.oldSize + ( end - start + 1 ) == model->rowCount ( parent ) );
     Q_ASSERT ( c.last == model->data ( model->index ( start - 1, 0, c.parent ) ) );
 
     if (c.next != model->data(model->index(end + 1, 0, c.parent))) {
-        qDebug() << start << end;
+        qCDebug(DIGIKAM_TESTS_LOG) << start << end;
         for (int i=0; i < model->rowCount(); ++i)
-            qDebug() << model->index(i, 0).data().toString();
-        qDebug() << c.next << model->data(model->index(end + 1, 0, c.parent));
+            qCDebug(DIGIKAM_TESTS_LOG) << model->index(i, 0).data().toString();
+        qCDebug(DIGIKAM_TESTS_LOG) << c.next << model->data(model->index(end + 1, 0, c.parent));
     }
 
     Q_ASSERT ( c.next == model->data ( model->index ( end + 1, 0, c.parent ) ) );
@@ -535,14 +540,14 @@ void ModelTest::layoutChanged()
     changing.clear();
 }
 
-/*!
-    Store what is about to be inserted to make sure it actually happens
-
-    \sa rowsRemoved()
+/**
+ * Store what is about to be inserted to make sure it actually happens
+ *
+ * \sa rowsRemoved()
  */
 void ModelTest::rowsAboutToBeRemoved ( const QModelIndex& parent, int start, int end )
 {
-qDebug() << "ratbr" << parent << start << end;
+    qCDebug(DIGIKAM_TESTS_LOG) << "ratbr" << parent << start << end;
     Changing c;
     c.parent = parent;
     c.oldSize = model->rowCount ( parent );
@@ -551,14 +556,14 @@ qDebug() << "ratbr" << parent << start << end;
     remove.push ( c );
 }
 
-/*!
-    Confirm that what was said was going to happen actually did
-
-    \sa rowsAboutToBeRemoved()
+/**
+ * Confirm that what was said was going to happen actually did
+ *
+ * \sa rowsAboutToBeRemoved()
  */
 void ModelTest::rowsRemoved ( const QModelIndex& parent, int start, int end )
 {
-  qDebug() << "rr" << parent << start << end;
+    qCDebug(DIGIKAM_TESTS_LOG) << "rr" << parent << start << end;
     Changing c = remove.pop();
     Q_ASSERT ( c.parent == parent );
     Q_ASSERT ( c.oldSize - ( end - start + 1 ) == model->rowCount ( parent ) );

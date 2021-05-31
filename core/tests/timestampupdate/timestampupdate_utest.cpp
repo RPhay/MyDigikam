@@ -21,7 +21,7 @@
  *
  * ============================================================ */
 
-#include "timestampupdatetest.h"
+#include "timestampupdate_utest.h"
 
 // Qt includes
 

@@ -21,7 +21,6 @@
  *
  * ============================================================ */
 
-#include <QDebug>
 #include <QPainterPath>
 
 // QtAv includes
@@ -42,33 +41,37 @@
 #   pragma clang diagnostic pop
 #endif
 
+// Local includes
+
+#include "digikam_debug.h"
+
 using namespace QtAV;
 
 int main(int /*argc*/, char** /*argv*/)
 {
-    qDebug() << "--- Available Video Decoder Codecs ---";
-    qDebug() << VideoDecoder::supportedCodecs();
+    qCDebug(DIGIKAM_TESTS_LOG) << "--- Available Video Decoder Codecs ---";
+    qCDebug(DIGIKAM_TESTS_LOG) << VideoDecoder::supportedCodecs();
 
-    qDebug() << "--- Available Audio Decoder Codecs ---";
-    qDebug() << AudioDecoder::supportedCodecs();
+    qCDebug(DIGIKAM_TESTS_LOG) << "--- Available Audio Decoder Codecs ---";
+    qCDebug(DIGIKAM_TESTS_LOG) << AudioDecoder::supportedCodecs();
 
-    qDebug() << "--- Available Video Encoder Codecs ---";
-    qDebug() << VideoEncoder::supportedCodecs();
+    qCDebug(DIGIKAM_TESTS_LOG) << "--- Available Video Encoder Codecs ---";
+    qCDebug(DIGIKAM_TESTS_LOG) << VideoEncoder::supportedCodecs();
 
-    qDebug() << "--- Available Audio Encoder Codecs ---";
-    qDebug() << AudioEncoder::supportedCodecs();
+    qCDebug(DIGIKAM_TESTS_LOG) << "--- Available Audio Encoder Codecs ---";
+    qCDebug(DIGIKAM_TESTS_LOG) << AudioEncoder::supportedCodecs();
 
-    qDebug() << "--- Available Media Formats ---";
-    qDebug() << AVMuxer::supportedFormats();
+    qCDebug(DIGIKAM_TESTS_LOG) << "--- Available Media Formats ---";
+    qCDebug(DIGIKAM_TESTS_LOG) << AVMuxer::supportedFormats();
 
-    qDebug() << "--- Available Media Extensions ---";
-    qDebug() << AVMuxer::supportedExtensions();
+    qCDebug(DIGIKAM_TESTS_LOG) << "--- Available Media Extensions ---";
+    qCDebug(DIGIKAM_TESTS_LOG) << AVMuxer::supportedExtensions();
 
-    qDebug() << "--- Available Video Filters ---";
-    qDebug() << LibAVFilter::videoFilters();
+    qCDebug(DIGIKAM_TESTS_LOG) << "--- Available Video Filters ---";
+    qCDebug(DIGIKAM_TESTS_LOG) << LibAVFilter::videoFilters();
 
-    qDebug() << "--- Available Audio Filters ---";
-    qDebug() << LibAVFilter::audioFilters();
+    qCDebug(DIGIKAM_TESTS_LOG) << "--- Available Audio Filters ---";
+    qCDebug(DIGIKAM_TESTS_LOG) << LibAVFilter::audioFilters();
 
     return 0;
 }

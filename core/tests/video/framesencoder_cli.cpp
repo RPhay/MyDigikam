@@ -22,11 +22,11 @@
  *
  * ============================================================ */
 
-#include <QDebug>
-#include <QApplication>
+#include <QCoreApplication>
 
 // Local includes
 
+#include "digikam_debug.h"
 #include "metaengine.h"
 #include "vidslidethread.h"
 
@@ -34,7 +34,7 @@ using namespace Digikam;
 
 int main(int argc, char** argv)
 {
-    QApplication app(argc, argv);
+    QCoreApplication app(argc, argv);
 
     // ---------------------------------------------
     // Get list of image files from CLI
@@ -44,15 +44,16 @@ int main(int argc, char** argv)
 
     if (argc > 1)
     {
-        for (int i = 1 ; i < argc ; i++)
+        for (int i = 1 ; i < argc ; ++i)
         {
             settings.inputImages << QUrl::fromLocalFile(QString::fromUtf8(argv[i]));
         }
     }
     else
     {
-        qDebug() << "framesencoder - images to encode as video stream";
-        qDebug() << "Usage: <list of image files>";
+        qCDebug(DIGIKAM_TESTS_LOG) << "framesencoder - images to encode as video stream";
+        qCDebug(DIGIKAM_TESTS_LOG) << "Usage: <list of image files>";
+
         return -1;
     }
 

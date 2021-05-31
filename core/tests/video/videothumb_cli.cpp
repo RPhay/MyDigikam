@@ -22,13 +22,13 @@
 
 // Qt includes
 
-#include <QApplication>
-#include <QDebug>
+#include <QCoreApplication>
 
 // Local includes
 
 #include "videothumbnailer.h"
 #include "videostripfilter.h"
+#include "digikam_debug.h"
 
 using namespace Digikam;
 
@@ -36,12 +36,12 @@ int main(int argc, char** argv)
 {
     if (argc <= 1)
     {
-        qDebug() << "videothumbtest - Load video files to extract thumbnails";
-        qDebug() << "Usage: <videofiles>";
+        qCDebug(DIGIKAM_TESTS_LOG) << "videothumbtest - Load video files to extract thumbnails";
+        qCDebug(DIGIKAM_TESTS_LOG) << "Usage: <videofiles>";
         return -1;
     }
 
-    QApplication app(argc, argv);
+    QCoreApplication app(argc, argv);
 
     for (int i = 1 ; i < argc ; i++)
     {
@@ -56,12 +56,12 @@ int main(int argc, char** argv)
 
         if (!image.isNull())
         {
-            qDebug() << "Extracted thumbnail from" << path << image.size();
+            qCDebug(DIGIKAM_TESTS_LOG) << "Extracted thumbnail from" << path << image.size();
             image.save(QString::fromUtf8("./%1.png").arg(path), "PNG");
         }
         else
         {
-           qDebug() << "Cannot extract thumbnail from" << path;
+           qCDebug(DIGIKAM_TESTS_LOG) << "Cannot extract thumbnail from" << path;
         }
     }
 

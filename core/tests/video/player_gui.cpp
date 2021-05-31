@@ -25,11 +25,11 @@
 
 #include <QApplication>
 #include <QUrl>
-#include <QDebug>
 
 // Local includes
 
 #include "vidplayerdlg.h"
+#include "digikam_debug.h"
 
 using namespace Digikam;
 
@@ -39,8 +39,9 @@ int main(int argc, char* argv[])
 
     if (argc == 1)
     {
-        qDebug() << "player - video file to play";
-        qDebug() << "Usage: video files";
+        qCDebug(DIGIKAM_TESTS_LOG) << "player - video file to play";
+        qCDebug(DIGIKAM_TESTS_LOG) << "Usage: video files";
+
         return -1;
     }
 

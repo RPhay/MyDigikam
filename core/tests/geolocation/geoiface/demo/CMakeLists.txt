@@ -14,7 +14,7 @@ include_directories(
     $<TARGET_PROPERTY:KF5::ConfigCore,INTERFACE_INCLUDE_DIRECTORIES>
 )
 
-set(geoiface_demo_SRCS
+set(geoiface_demo_gui_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/demo-main.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/myimageitem.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/mytreewidget.cpp
@@ -22,9 +22,9 @@ set(geoiface_demo_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/mainwindow.cpp
 )
 
-add_executable(geoiface_demo ${geoiface_demo_SRCS})
+add_executable(geoiface_demo_gui ${geoiface_demo_gui_SRCS})
 
-target_link_libraries(geoiface_demo
+target_link_libraries(geoiface_demo_gui
 
                       digikamcore
 

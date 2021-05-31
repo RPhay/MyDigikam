@@ -11,7 +11,6 @@ include_directories(
     $<TARGET_PROPERTY:Qt5::Test,INTERFACE_INCLUDE_DIRECTORIES>
     $<TARGET_PROPERTY:Qt5::Sql,INTERFACE_INCLUDE_DIRECTORIES>
 
-    $<TARGET_PROPERTY:KF5::I18n,INTERFACE_INCLUDE_DIRECTORIES>
     $<TARGET_PROPERTY:KF5::ConfigCore,INTERFACE_INCLUDE_DIRECTORIES>
 )
 
@@ -19,7 +18,7 @@ if(ENABLE_DBUS)
     include_directories($<TARGET_PROPERTY:Qt5::DBus,INTERFACE_INCLUDE_DIRECTORIES>)
 endif()
 
-ecm_add_tests(${CMAKE_CURRENT_SOURCE_DIR}/timestampupdatetest.cpp
+ecm_add_tests(${CMAKE_CURRENT_SOURCE_DIR}/timestampupdate_utest.cpp
 
               NAME_PREFIX
 

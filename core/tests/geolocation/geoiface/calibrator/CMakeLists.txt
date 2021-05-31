@@ -10,11 +10,11 @@ include_directories(
     $<TARGET_PROPERTY:Qt5::Widgets,INTERFACE_INCLUDE_DIRECTORIES>
 )
 
-set(calibrator_sources ${CMAKE_CURRENT_SOURCE_DIR}/calibrator.cpp)
+set(calibrator_sources_gui ${CMAKE_CURRENT_SOURCE_DIR}/calibrator.cpp)
 
-add_executable(geoiface_calibrator ${calibrator_sources})
+add_executable(geoiface_calibrator_gui ${calibrator_sources_gui})
 
-target_link_libraries(geoiface_calibrator
+target_link_libraries(geoiface_calibrator_gui
 
                       digikamcore
 
