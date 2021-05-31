@@ -23,9 +23,6 @@
  *
  * ============================================================ */
 
-#ifndef TEST_UPLOAD_H
-#define TEST_UPLOAD_H
-
 // Qt includes
 
 #include <QObject>
@@ -240,6 +237,4 @@ private:
 
 QTEST_MAIN(UploadTest)
 
-#include "uploadtest.moc"
-
-#endif // TEST_UPLOAD_H
+#include "upload_utest.moc"

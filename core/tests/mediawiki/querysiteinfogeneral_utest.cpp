@@ -197,4 +197,4 @@ private:
 
 QTEST_MAIN(QuerySiteInfoGeneralTest)
 
-#include "querysiteinfogeneraltest.moc"
+#include "querysiteinfogeneral_utest.moc"

@@ -625,4 +625,4 @@ private:
 
 QTEST_MAIN(LoginTest)
 
-#include "logintest.moc"
+#include "login_utest.moc"

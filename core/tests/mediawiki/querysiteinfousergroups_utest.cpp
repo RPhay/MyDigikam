@@ -270,4 +270,4 @@ private:
 
 QTEST_MAIN(QuerySiteinfoUsergroupsTest)
 
-#include "querysiteinfousergroupstest.moc"
+#include "querysiteinfousergroups_utest.moc"

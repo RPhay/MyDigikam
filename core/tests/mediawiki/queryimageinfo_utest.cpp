@@ -239,4 +239,4 @@ private:
 
 QTEST_MAIN(QueryImageinfoTest)
 
-#include "queryimageinfotest.moc"
+#include "queryimageinfo_utest.moc"

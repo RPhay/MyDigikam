@@ -233,4 +233,4 @@ private:
 
 QTEST_MAIN(QueryInfoTest)
 
-#include "queryinfotest.moc"
+#include "queryinfo_utest.moc"

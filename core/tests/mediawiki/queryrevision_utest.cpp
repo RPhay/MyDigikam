@@ -782,4 +782,4 @@ private:
 
 QTEST_MAIN(QueryRevisionTest)
 
-#include "queryrevisiontest.moc"
+#include "queryrevision_utest.moc"

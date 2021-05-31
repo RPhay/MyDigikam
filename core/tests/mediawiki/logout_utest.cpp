@@ -115,4 +115,4 @@ private:
 
 QTEST_MAIN(LogoutTest)
 
-#include "logouttest.moc"
+#include "logout_utest.moc"

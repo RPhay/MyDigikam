@@ -80,4 +80,4 @@ private Q_SLOTS:
 
 QTEST_MAIN(IfaceTest)
 
-#include "mediawikitest.moc"
+#include "mediawiki_utest.moc"

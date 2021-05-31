@@ -255,4 +255,4 @@ private:
 
 QTEST_MAIN(ParseTest)
 
-#include "parsetest.moc"
+#include "parse_utest.moc"

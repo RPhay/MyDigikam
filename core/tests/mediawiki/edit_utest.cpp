@@ -452,4 +452,4 @@ private:
 
 QTEST_MAIN(EditTest)
 
-#include "edittest.moc"
+#include "edit_utest.moc"
