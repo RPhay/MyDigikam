@@ -76,7 +76,7 @@ int DNGWriter::Private::importRaw(DRawInfo* const identify,
         outputWidth  = identifyMake->outputSize.width();
     }
 
-    if (!rawProcessor->extractRAWData2(parent->inputFile(), rawData, *identify, 0))
+    if (!rawProcessor->extractRAWData(parent->inputFile(), rawData, *identify, 0))
     {
         qCCritical(DIGIKAM_GENERAL_LOG) << "DNGWriter: Loading RAW data failed. Aborted...";
 
