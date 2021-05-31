@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DITEMS_LIST_TEST_H
-#define DIGIKAM_DITEMS_LIST_TEST_H
+#ifndef DIGIKAM_DITEMS_LIST_GUI_H
+#define DIGIKAM_DITEMS_LIST_GUI_H
 
 // Qt includes
 

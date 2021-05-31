@@ -21,7 +21,7 @@
  *
  * ============================================================ */
 
-#include "searchtextbartest.h"
+#include "searchtextbar_utest.h"
 
 // Qt includes
 

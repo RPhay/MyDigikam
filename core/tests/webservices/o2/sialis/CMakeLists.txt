@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2010-2020, Gilles Caulier, <caulier dot gilles at gmail dot com>
+# Copyright (c) 2010-2021, Gilles Caulier, <caulier dot gilles at gmail dot com>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
@@ -31,9 +31,10 @@ set(sialis_SRCS ${CMAKE_SOURCE_DIR}/core/libs/dplugins/webservices/o2/examples/s
 qt5_add_resources(QT_RESOURCES ${CMAKE_SOURCE_DIR}/core/libs/dplugins/webservices/o2/examples/sialis/main.qml
 )
 
-add_executable(sialis ${sialis_SRCS})
+add_executable(sialis_gui ${sialis_SRCS})
 
-target_link_libraries(sialis
+target_link_libraries(sialis_gui
+
                       digikamcore
 
                       ${COMMON_TEST_LINK}
@@ -42,14 +43,14 @@ target_link_libraries(sialis
                       Qt5::WebView
 )
 
-target_compile_definitions(sialis PRIVATE signals=Q_SIGNALS slots=Q_SLOTS)
+target_compile_definitions(sialis_gui PRIVATE signals=Q_SIGNALS slots=Q_SLOTS)
 
 if(MSVC)
 
-    target_compile_options(sialis PRIVATE /w)
+    target_compile_options(sialis_gui PRIVATE /w)
 
 else()
 
-    target_compile_options(sialis PRIVATE -w)
+    target_compile_options(sialis_gui PRIVATE -w)
 
 endif()

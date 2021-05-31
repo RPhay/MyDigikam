@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_SEARCH_TEXT_BAR_TEST_H
-#define DIGIKAM_SEARCH_TEXT_BAR_TEST_H
+#ifndef DIGIKAM_SEARCH_TEXT_BAR_UTEST_H
+#define DIGIKAM_SEARCH_TEXT_BAR_UTEST_H
 
 // Qt includes
 
@@ -32,7 +32,7 @@
 
 #include "searchtextbar.h"
 
-// What a hack... otherwise I can't use connect with SearchTextBar as argument
+// To use connect with SearchTextBar as argument
 using namespace Digikam;
 
 class SearchTextBarTest : public QObject
@@ -55,4 +55,4 @@ private:
     int                callCount;
 };
 
-#endif // DIGIKAM_SEARCH_TEXT_BAR_TEST_H
+#endif // DIGIKAM_SEARCH_TEXT_BAR_UTEST_H

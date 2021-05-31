@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2010-2020, Gilles Caulier, <caulier dot gilles at gmail dot com>
+# Copyright (c) 2010-2021, Gilles Caulier, <caulier dot gilles at gmail dot com>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
@@ -25,22 +25,22 @@ set(fbdemo_SRCS ${CMAKE_SOURCE_DIR}/core/libs/dplugins/webservices/o2/examples/f
                 ${CMAKE_SOURCE_DIR}/core/libs/dplugins/webservices/o2/examples/facebookdemo/main.cpp
 )
 
-add_executable(fbdemo ${fbdemo_SRCS})
+add_executable(fbdemo_gui ${fbdemo_SRCS})
 
-target_link_libraries(fbdemo
+target_link_libraries(fbdemo_gui
                       digikamcore
 
                       ${COMMON_TEST_LINK}
 )
 
-target_compile_definitions(fbdemo PRIVATE signals=Q_SIGNALS slots=Q_SLOTS)
+target_compile_definitions(fbdemo_gui PRIVATE signals=Q_SIGNALS slots=Q_SLOTS)
 
 if(MSVC)
 
-    target_compile_options(fbdemo PRIVATE /w)
+    target_compile_options(fbdemo_gui PRIVATE /w)
 
 else()
 
-    target_compile_options(fbdemo PRIVATE -w)
+    target_compile_options(fbdemo_gui PRIVATE -w)
 
 endif()

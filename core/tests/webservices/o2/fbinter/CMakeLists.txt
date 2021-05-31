@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2010-2020, Gilles Caulier, <caulier dot gilles at gmail dot com>
+# Copyright (c) 2010-2021, Gilles Caulier, <caulier dot gilles at gmail dot com>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
@@ -33,23 +33,24 @@ qt5_wrap_ui(fbinter_SRCS
             ${CMAKE_SOURCE_DIR}/core/libs/dplugins/webservices/o2/examples/facebookexternalinterceptordemo/webwindow.ui
 )
 
-add_executable(fbinter ${fbinter_SRCS})
+add_executable(fbinter_gui ${fbinter_SRCS})
 
-target_link_libraries(fbinter
+target_link_libraries(fbinter_gui
+
                       digikamcore
 
                       ${COMMON_TEST_LINK}
                       Qt5::WebEngineWidgets
 )
 
-target_compile_definitions(fbinter PRIVATE signals=Q_SIGNALS slots=Q_SLOTS)
+target_compile_definitions(fbinter_gui PRIVATE signals=Q_SIGNALS slots=Q_SLOTS)
 
 if(MSVC)
 
-    target_compile_options(fbinter PRIVATE /w)
+    target_compile_options(fbinter_gui PRIVATE /w)
 
 else()
 
-    target_compile_options(fbinter PRIVATE -w)
+    target_compile_options(fbinter_gui PRIVATE -w)
 
 endif()

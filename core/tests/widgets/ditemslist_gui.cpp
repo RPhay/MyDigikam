@@ -21,25 +21,21 @@
  *
  * ============================================================ */
 
-#include "ditemslisttest.h"
+#include "ditemslist_gui.h"
 
 // Qt includes
 
 #include <QGridLayout>
 #include <QProgressBar>
-#include <QDebug>
 #include <QVBoxLayout>
 #include <QDialogButtonBox>
 #include <QApplication>
 #include <QImage>
 #include <QTransform>
 
-// KDE includes
-
-#include <klocalizedstring.h>
-
 // Local includes
 
+#include "digikam_debug.h"
 #include "ditemslist.h"
 
 using namespace Digikam;
@@ -140,7 +136,7 @@ void ActionThread::rotate(const QList<QUrl>& list)
 
         collection.insert(job, 0);
 
-        qDebug() << "Appending file to process " << url;
+        qCDebug(DIGIKAM_TESTS_LOG) << "Appending file to process " << url;
     }
 
     appendJobs(collection);
@@ -237,7 +233,7 @@ DItemsListTest::DItemsListTest(QWidget* const parent)
     d->thread = new ActionThread(this);
 
     d->applyBtn = d->buttons->button(QDialogButtonBox::Apply);
-    d->applyBtn->setText(i18n("Rotate Items"));
+    d->applyBtn->setText(QLatin1String("Rotate Items"));
 
     connect(d->applyBtn, &QPushButton::clicked,
             this, &DItemsListTest::slotStart);
@@ -267,7 +263,7 @@ void DItemsListTest::slotStart()
     if (selectedImages.isEmpty())
         return;
 
-    qDebug() << selectedImages;
+    qCDebug(DIGIKAM_TESTS_LOG) << selectedImages;
     d->progressBar->setMaximum(selectedImages.count());
     d->progressBar->setValue(0);
     d->applyBtn->setEnabled(false);
@@ -306,4 +302,4 @@ int main(int argc, char* argv[])
     return 0;
 }
 
-#include "ditemslisttest.moc"
+#include "ditemslist_gui.moc"

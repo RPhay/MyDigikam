@@ -8,13 +8,11 @@ APPLY_COMMON_POLICIES()
 
 include_directories(
     $<TARGET_PROPERTY:Qt5::Test,INTERFACE_INCLUDE_DIRECTORIES>
-
-    $<TARGET_PROPERTY:KF5::I18n,INTERFACE_INCLUDE_DIRECTORIES>
 )
 
 ##################################################################
 
-ecm_add_tests(${CMAKE_CURRENT_SOURCE_DIR}/searchtextbartest.cpp
+ecm_add_tests(${CMAKE_CURRENT_SOURCE_DIR}/searchtextbar_utest.cpp
 
               NAME_PREFIX
 
@@ -29,9 +27,9 @@ ecm_add_tests(${CMAKE_CURRENT_SOURCE_DIR}/searchtextbartest.cpp
 
 ##################################################################
 
-add_executable(ditemslisttest ${CMAKE_CURRENT_SOURCE_DIR}/ditemslisttest.cpp)
+add_executable(ditemslist_gui ${CMAKE_CURRENT_SOURCE_DIR}/ditemslist_gui.cpp)
 
-target_link_libraries(ditemslisttest
+target_link_libraries(ditemslist_gui
 
                       digikamcore
 
