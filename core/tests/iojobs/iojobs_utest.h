@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_IO_JOBS_TEST_H
-#define DIGIKAM_IO_JOBS_TEST_H
+#ifndef DIGIKAM_IO_JOBS_UTEST_H
+#define DIGIKAM_IO_JOBS_UTEST_H
 
 // Qt includes
 
@@ -49,7 +49,6 @@ private Q_SLOTS:
 
     void permanentDel();
     void permanentDel_data();
-//    void rename();
 };
 
-#endif // DIGIKAM_IO_JOBS_TEST_H
+#endif // DIGIKAM_IO_JOBS_UTEST_H
