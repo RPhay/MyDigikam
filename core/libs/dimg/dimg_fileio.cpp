@@ -342,15 +342,21 @@ QDateTime DImg::creationDateFromFilesystem(const QFileInfo& fileInfo) const
 #endif
 
     QDateTime mtime = fileInfo.lastModified();
+    bool cTimeValid = ctime.isValid();
+    bool mTimeValid = mtime.isValid();
 
-    if (ctime.isNull())
+    if (!cTimeValid || !mTimeValid)
     {
-        return mtime;
-    }
+        if      (cTimeValid)
+        {
+            return ctime;
+        }
+        else if (mTimeValid)
+        {
+            return mtime;
+        }
 
-    if (mtime.isNull())
-    {
-        return ctime;
+        return QDateTime::currentDateTime();
     }
 
     return qMin(ctime, mtime);
