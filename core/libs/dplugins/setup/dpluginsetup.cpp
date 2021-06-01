@@ -77,7 +77,7 @@ public:
 
 DPluginSetup::DPluginSetup(QWidget* const parent)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     const int spacing         = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
 
@@ -137,9 +137,9 @@ void DPluginSetup::applySettings()
     d->pluginsList->apply();
 }
 
-void DPluginSetup::slotAboutPlugin(QTreeWidgetItem* item, int col)
+void DPluginSetup::slotAboutPlugin(QTreeWidgetItem* item, int)
 {
-    if (!item || (col == 0))
+    if (!item)
     {
         return;
     }
