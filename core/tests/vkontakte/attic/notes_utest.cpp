@@ -23,9 +23,9 @@
 
 #include "notes_utest.h"
 
-// KDE includes
+// Qt includes
 
-#include <qtest_kde.h>
+#include <QTest>
 
 // Local includes
 
@@ -101,4 +101,4 @@ void TestNotes::testNoteJob()
     QCOMPARE(note->title(), QString(NOTE1_NAME));
 }
 
-QTEST_KDEMAIN(TestNotes, GUI)
+QTEST_MAIN(TestNotes)

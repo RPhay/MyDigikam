@@ -26,13 +26,7 @@ function(add_vk_test name)
 
 endfunction()
 
-# add_vk_test(userinfo_utest)
-# add_vk_test(albums_utest)
-# add_vk_test(photos_utest)
-# add_vk_test(frequentrequests_utest)
-
-# add_vk_test(notes_utest)
-# add_vk_test(database_utest)
-# add_vk_test(loginproperties_utest)
-# add_vk_test(friends_utest)
-# add_vk_test(messages_utest)
+add_vk_test(userinfo_utest)
+add_vk_test(albums_utest)
+add_vk_test(photos_utest)
+add_vk_test(frequentrequests_utest)

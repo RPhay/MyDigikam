@@ -23,9 +23,9 @@
 
 #include "database_utest.h"
 
-// KDE includes
+// Qt includes
 
-#include <qtest_kde.h>
+#include <QTest>
 
 // Local includes
 
@@ -68,4 +68,4 @@ void TestDatabaseMethods::testCitiesById()
     QCOMPARE(names[4], QString::fromUtf8("Herzliya"));
 }
 
-QTEST_KDEMAIN(TestDatabaseMethods, GUI)
+QTEST_MAIN(TestDatabaseMethods)

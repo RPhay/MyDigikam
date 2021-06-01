@@ -23,9 +23,9 @@
 
 #include "loginproperties_utest.h"
 
-// KDE includes
+// Qt includes
 
-#include <qtest_kde.h>
+#include <QTest>
 
 // Local includes
 
@@ -92,4 +92,4 @@ void TestLoginProperties::testGetVariableJob()
     }
 }
 
-QTEST_KDEMAIN(TestLoginProperties, GUI)
+QTEST_MAIN(TestLoginProperties)

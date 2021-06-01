@@ -21,36 +21,49 @@
  *
  * ============================================================ */
 
-#include "friends_utest.h"
+#include "messages_utest.h"
 
-// KDE includes
+// Qt includes
 
-#include <qtest_kde.h>
+#include <QTest>
 
 // Local includes
 
-#include "vkontakte_friendlistjob.h"
+#include "vkontakte_messageslistjob.h"
+#include "vkontakte_allmessageslistjob.h"
+#include "vkontakte_discussionslistjob.h"
 
 using namespace Vkontakte;
 
-TestFriends::TestFriends()
+TestMessages::TestMessages()
     : VkTestBase()
 {
 }
 
-void TestFriends::initTestCase()
+void TestMessages::initTestCase()
 {
-    authenticate(Vkontakte::AppPermissions::NoPermissions);
+    authenticate(AppPermissions::Messages);
 }
 
-void TestFriends::testFriendListJob()
+void TestMessages::testMessagesListJob()
 {
-    FriendListJob* const job = new FriendListJob(accessToken(), 1);
+    MessagesListJob* const job = new MessagesListJob(accessToken());
     job->exec();
     QVERIFY(!job->error());
-
-    // Make sure Pavel Durov has more than 200 friends
-    QVERIFY(job->list().size() > 200);
 }
 
-QTEST_KDEMAIN(TestFriends, GUI)
+void TestMessages::testAllMessagesListJob()
+{
+    AllMessagesListJob* const job = new AllMessagesListJob(accessToken());
+    job->exec();
+    QVERIFY(!job->error());
+}
+
+void TestMessages::testDiscussionsListJob()
+{
+    DiscussionsListJob* const job = new DiscussionsListJob(accessToken());
+    job->exec();
+    QVERIFY(!job->error());
+}
+
+QTEST_MAIN(TestMessages)
