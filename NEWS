@@ -1,4 +1,4 @@
-digiKam 7.3.0 - Release date: 2021-xx-xx
+digiKam 7.3.0 - Release date: 2021-06-xx
 
 *****************************************************************************************************
 NEW FEATURES:
@@ -16,7 +16,7 @@ General : Internal Libraw use DNG SDK 1.5 to handle 8 bits DNG files.
 Searches: Find duplicates items is now process in parallel using multi-cores.
 Plugins : New tool to export items to iNaturalist web service (https://www.inaturalist.org/).
 Plugins : SlideShow and Presentation tools now allow to move items to the trash.
-Plugins : New tool to convert RAW to DNG for Showfoto.
+Plugins : New tool to convert RAW to DNG in batch for Showfoto.
 
 *****************************************************************************************************
 BUGFIXES:
@@ -361,5 +361,5 @@ BUGFIXES:
 338 ==> 437813 - Exiftool.exe is preventing the installation.
 339 ==> 437657 - Size of dialog for database migration.
 340 ==> 437897 - Windows timestamp to metadata extraction for TIFFs changes when modifying files.
-341 ==> 397999 - Sort thumbs by date.. causes issues.
+341 ==> 397999 - Sort thumbs by date. causes issues.
 342 ==> 
