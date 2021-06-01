@@ -259,21 +259,21 @@ int FaceTags::scannedForFacesTagId()
     return TagsCache::instance()->getOrCreateInternalTag(InternalTagName::scannedForFaces()); // no i18n
 }
 
-QMap<QString, QString> FaceTags::identityAttributes(int tagId)
+QMultiMap<QString, QString> FaceTags::identityAttributes(int tagId)
 {
-    QMap<QString, QString> attributes;
+    QMultiMap<QString, QString> attributes;
     QString uuid = TagsCache::instance()->propertyValue(tagId, TagPropertyName::faceEngineUuid());
 
     if (!uuid.isEmpty())
     {
-        attributes[QLatin1String("uuid")] = uuid;
+        attributes.insert(QLatin1String("uuid"), uuid);
     }
 
     QString fullName = TagsCache::instance()->propertyValue(tagId, TagPropertyName::person());
 
     if (!fullName.isEmpty())
     {
-        attributes[QLatin1String("fullName")] = fullName;
+        attributes.insert(QLatin1String("fullName"), fullName);
     }
 
     QString faceEngineName = TagsCache::instance()->propertyValue(tagId, TagPropertyName::person());
@@ -281,18 +281,18 @@ QMap<QString, QString> FaceTags::identityAttributes(int tagId)
 
     if (tagName != faceEngineName)
     {
-        attributes.insertMulti(QLatin1String("name"), faceEngineName);
-        attributes.insertMulti(QLatin1String("name"), tagName);
+        attributes.insert(QLatin1String("name"), faceEngineName);
+        attributes.insert(QLatin1String("name"), tagName);
     }
     else
     {
-        attributes[QLatin1String("name")] = tagName;
+        attributes.insert(QLatin1String("name"), tagName);
     }
 
     return attributes;
 }
 
-void FaceTags::applyTagIdentityMapping(int tagId, const QMap<QString, QString>& attributes)
+void FaceTags::applyTagIdentityMapping(int tagId, const QMultiMap<QString, QString>& attributes)
 {
     TagProperties props(tagId);
 
@@ -311,7 +311,7 @@ void FaceTags::applyTagIdentityMapping(int tagId, const QMap<QString, QString>& 
     props.setProperty(TagPropertyName::faceEngineUuid(), attributes.value(QLatin1String("uuid")));
 }
 
-int FaceTags::getOrCreateTagForIdentity(const QMap<QString, QString>& attributes)
+int FaceTags::getOrCreateTagForIdentity(const QMultiMap<QString, QString>& attributes)
 {
     // Attributes from FacesEngine's Identity object.
     // The text constants are defines in FacesEngine's API docs

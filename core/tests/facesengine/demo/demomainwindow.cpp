@@ -302,8 +302,8 @@ void MainWindow::slotUpdateDatabase()
 
             if (identity.isNull())
             {
-                QMap<QString, QString> attributes;
-                attributes[QString::fromLatin1("name")] = name;
+                QMultiMap<QString, QString> attributes;
+                attributes.insert(QString::fromLatin1("name"), name);
                 identity                                = d->database.addIdentity(attributes);
                 qCDebug(DIGIKAM_TESTS_LOG) << "Adding new identity ID " << identity.id() << " to database for name " << name;
             }

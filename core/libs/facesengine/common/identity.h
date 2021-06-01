@@ -26,7 +26,7 @@
 
 // Qt includes
 
-#include <QMap>
+#include <QMultiMap>
 #include <QString>
 #include <QExplicitlySharedDataPointer>
 
@@ -82,8 +82,8 @@ public:
     /**
      * Attributes map accessor.
      */
-    QMap<QString, QString> attributesMap() const;
-    void setAttributesMap(const QMap<QString, QString>& attributes);
+    QMultiMap<QString, QString> attributesMap() const;
+    void setAttributesMap(const QMultiMap<QString, QString>& attributes);
 
 private:
 

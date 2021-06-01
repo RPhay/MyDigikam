@@ -28,7 +28,7 @@
 // Qt includes
 
 #include <QList>
-#include <QMap>
+#include <QMultiMap>
 #include <QRect>
 #include <QString>
 
@@ -121,14 +121,14 @@ public:
      * Use attributes as used by FacesEngine to identify or create a person tag;
      * From the database, produce the identity attributes identifying the corresponding identity.
      */
-    static int            getOrCreateTagForIdentity(const QMap<QString, QString>& attributes);
-    static QMap<QString, QString> identityAttributes(int tagId);
+    static int            getOrCreateTagForIdentity(const QMultiMap<QString, QString>& attributes);
+    static QMultiMap<QString, QString> identityAttributes(int tagId);
 
     /**
      * Map an existing tag to a FacesEngine Identity.
      * Subsequently, the Identity can be retrieved via the identityAttributes().
      */
-    static void applyTagIdentityMapping(int tagId, const QMap<QString, QString>& attributes);
+    static void applyTagIdentityMapping(int tagId, const QMultiMap<QString, QString>& attributes);
 
     /**
      * Return a person's name for a tag

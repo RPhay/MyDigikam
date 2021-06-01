@@ -288,7 +288,7 @@ QList<FaceTagsIface> FaceUtils::writeUnconfirmedResults(qlonglong imageid,
 
 Identity FaceUtils::identityForTag(int tagId, FacialRecognitionWrapper& recognizer) const
 {
-    QMap<QString, QString> attributes = FaceTags::identityAttributes(tagId);
+    QMultiMap<QString, QString> attributes = FaceTags::identityAttributes(tagId);
     Identity identity                 = recognizer.findIdentity(attributes);
 
     if (!identity.isNull())

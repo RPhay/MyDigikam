@@ -38,7 +38,7 @@ public:
 public:
 
     int                    id;
-    QMap<QString, QString> attributes;
+    QMultiMap<QString, QString> attributes;
 };
 
 Identity::Identity()
@@ -89,15 +89,15 @@ QString Identity::attribute(const QString& att) const
 
 void Identity::setAttribute(const QString& att, const QString& val)
 {
-    d->attributes[att] = val;
+    d->attributes.insert(att, val);
 }
 
-QMap<QString, QString> Identity::attributesMap() const
+QMultiMap<QString, QString> Identity::attributesMap() const
 {
     return d->attributes;
 }
 
-void Identity::setAttributesMap(const QMap<QString, QString>& attributes)
+void Identity::setAttributesMap(const QMultiMap<QString, QString>& attributes)
 {
     d->attributes = attributes;
 }

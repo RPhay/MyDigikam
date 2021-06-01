@@ -188,8 +188,8 @@ void Benchmark::registerTrainingSet()
                                                    iter != m_trainSet.end();
                                                    ++iter)
     {
-        QMap<QString, QString> attributes;
-        attributes[QLatin1String("fullName")] = iter.key();
+        QMultiMap<QString, QString> attributes;
+        attributes.insert(QLatin1String("fullName"), iter.key());
 
         Identity newIdentity = m_recognizer->addIdentity(attributes);
 

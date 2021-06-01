@@ -35,7 +35,7 @@ bool FacialRecognitionWrapper::Private::identityContains(const Identity& identit
                                                          const QString&  attribute,
                                                          const QString&  value)
 {
-    const QMap<QString, QString> map          = identity.attributesMap();
+    const QMultiMap<QString, QString> map          = identity.attributesMap();
     QMap<QString, QString>::const_iterator it = map.constFind(attribute);
 
     for ( ; (it != map.constEnd()) && (it.key() == attribute) ; ++it)
@@ -67,7 +67,7 @@ Identity FacialRecognitionWrapper::Private::findByAttribute(const QString& attri
  * NOTE: Takes care that there may be multiple values of attribute in valueMap
  */
 Identity FacialRecognitionWrapper::Private::findByAttributes(const QString& attribute,
-                                                             const QMap<QString, QString>& valueMap) const
+                                                             const QMultiMap<QString, QString>& valueMap) const
 {
     QMap<QString, QString>::const_iterator it = valueMap.find(attribute);
 
@@ -123,7 +123,7 @@ Identity FacialRecognitionWrapper::findIdentity(const QString& attribute, const 
     return (d->findByAttribute(attribute, value));
 }
 
-Identity FacialRecognitionWrapper::findIdentity(const QMap<QString, QString>& attributes) const
+Identity FacialRecognitionWrapper::findIdentity(const QMultiMap<QString, QString>& attributes) const
 {
     if (!d || !d->dbAvailable || attributes.isEmpty())
     {
@@ -193,7 +193,7 @@ Identity FacialRecognitionWrapper::findIdentity(const QMap<QString, QString>& at
     return Identity();
 }
 
-Identity FacialRecognitionWrapper::addIdentity(const QMap<QString, QString>& attributes)
+Identity FacialRecognitionWrapper::addIdentity(const QMultiMap<QString, QString>& attributes)
 {
     if (!d || !d->dbAvailable)
     {
@@ -232,11 +232,11 @@ Identity FacialRecognitionWrapper::addIdentity(const QMap<QString, QString>& att
     return identity;
 }
 
-Identity FacialRecognitionWrapper::addIdentityDebug(const QMap<QString, QString>& attributes)
+Identity FacialRecognitionWrapper::addIdentityDebug(const QMultiMap<QString, QString>& attributes)
 {
     Identity identity;
     {
-        identity.setId(attributes[QLatin1String("name")].toInt());
+        identity.setId(attributes.value(QLatin1String("name")).toInt());
         identity.setAttributesMap(attributes);
         identity.setAttribute(QLatin1String("uuid"), QUuid::createUuid().toString());
     }
@@ -246,7 +246,7 @@ Identity FacialRecognitionWrapper::addIdentityDebug(const QMap<QString, QString>
     return identity;
 }
 
-void FacialRecognitionWrapper::addIdentityAttributes(int id, const QMap<QString, QString>& attributes)
+void FacialRecognitionWrapper::addIdentityAttributes(int id, const QMultiMap<QString, QString>& attributes)
 {
     if (!d || !d->dbAvailable)
     {
@@ -259,7 +259,7 @@ void FacialRecognitionWrapper::addIdentityAttributes(int id, const QMap<QString,
 
     if (it != d->identityCache.end())
     {
-        QMap<QString, QString> map = it->attributesMap();
+        QMultiMap<QString, QString> map = it->attributesMap();
         map.unite(attributes);
         it->setAttributesMap(map);
         FaceDbAccess().db()->updateIdentity(*it);
@@ -278,14 +278,14 @@ void FacialRecognitionWrapper::addIdentityAttribute(int id, const QString& attri
 
     if (it != d->identityCache.end())
     {
-        QMap<QString, QString> map = it->attributesMap();
-        map.insertMulti(attribute, value);
+        QMultiMap<QString, QString> map = it->attributesMap();
+        map.insert(attribute, value);
         it->setAttributesMap(map);
         FaceDbAccess().db()->updateIdentity(*it);
     }
 }
 
-void FacialRecognitionWrapper::setIdentityAttributes(int id, const QMap<QString, QString>& attributes)
+void FacialRecognitionWrapper::setIdentityAttributes(int id, const QMultiMap<QString, QString>& attributes)
 {
     if (!d || !d->dbAvailable)
     {

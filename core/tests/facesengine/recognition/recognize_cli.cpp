@@ -116,8 +116,8 @@ int main(int argc, char** argv)
         if (identity.isNull())
         {
             qCDebug(DIGIKAM_TESTS_LOG) << "Adding new identity to database for name " << name;
-            QMap<QString, QString> attributes;
-            attributes[QString::fromLatin1("name")] = name;
+            QMultiMap<QString, QString> attributes;
+            attributes.insert(QString::fromLatin1("name"), name);
             identity                                = recognizer.addIdentity(attributes);
         }
 
@@ -157,8 +157,8 @@ int main(int argc, char** argv)
 
         for (int i = 1 ; i <= OrlIdentities ; ++i)
         {
-            QMap<QString, QString> attributes;
-            attributes[QString::fromLatin1("name")] = QString::number(i);
+            QMultiMap<QString, QString> attributes;
+            attributes.insert(QString::fromLatin1("name"), QString::number(i));
             Identity identity                       = recognizer.findIdentity(attributes);
 
             if (identity.isNull())

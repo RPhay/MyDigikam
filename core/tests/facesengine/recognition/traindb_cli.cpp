@@ -66,8 +66,8 @@ public:
         {
             QString name                            = QString::fromLatin1("face%1").arg(i);
             qCDebug(DIGIKAM_TESTS_LOG) << "Record Identity " << name << " to DB";
-            QMap<QString, QString> attributes;
-            attributes[QString::fromLatin1("name")] = name;
+            QMultiMap<QString, QString> attributes;
+            attributes.insert(QString::fromLatin1("name"), name);
             identity                                = db.addIdentity(attributes);
             db.train(identity, image, QString::fromLatin1("test application"));
         }

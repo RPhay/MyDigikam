@@ -41,7 +41,7 @@ void FaceDb::updateIdentity(const Identity& p)
     d->db->execSql(QLatin1String("DELETE FROM IdentityAttributes WHERE id=?;"),
                    p.id());
 
-    const QMap<QString, QString> map = p.attributesMap();
+    const QMultiMap<QString, QString> map = p.attributesMap();
     QMap<QString, QString>::const_iterator it;
 
     for (it = map.constBegin() ; it != map.constEnd() ; ++it)

@@ -86,7 +86,7 @@ public:
                              const QString& value)                    const;
 
     Identity findByAttributes(const QString& attribute,
-                              const QMap<QString, QString>& valueMap) const;
+                              const QMultiMap<QString, QString>& valueMap) const;
 
 public:
 

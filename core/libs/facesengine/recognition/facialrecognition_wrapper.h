@@ -31,7 +31,7 @@
 #include <QExplicitlySharedDataPointer>
 #include <QImage>
 #include <QList>
-#include <QMap>
+#include <QMultiMap>
 #include <QVariant>
 
 // Local includes
@@ -101,26 +101,26 @@ public:
      * Secondly, all unknown attributes are used.
      * Returns a null Identity if no match is possible or the map is empty.
      */
-    Identity findIdentity(const QMap<QString, QString>& attributes)         const;
+    Identity findIdentity(const QMultiMap<QString, QString>& attributes)         const;
 
     /**
      * Adds a new identity with the specified attributes.
      * Please note that a UUID is automatically generated.
      */
-    Identity addIdentity(const QMap<QString, QString>& attributes);
+    Identity addIdentity(const QMultiMap<QString, QString>& attributes);
 
     /**
      * This is the debug version of addIdentity, so the identity is only added
      * to identityCache, but not into the recognition database.
      */
-    Identity addIdentityDebug(const QMap<QString, QString>& attributes);
+    Identity addIdentityDebug(const QMultiMap<QString, QString>& attributes);
 
     /**
      * Adds or sets, resp., the attributes of an identity.
      */
-    void addIdentityAttributes(int id, const QMap<QString, QString>& attributes);
+    void addIdentityAttributes(int id, const QMultiMap<QString, QString>& attributes);
     void addIdentityAttribute(int id, const QString& attribute, const QString& value);
-    void setIdentityAttributes(int id, const QMap<QString, QString>& attributes);
+    void setIdentityAttributes(int id, const QMultiMap<QString, QString>& attributes);
 
     /**
      * Deletes an identity from the database.
