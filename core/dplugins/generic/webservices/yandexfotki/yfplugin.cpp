@@ -73,7 +73,7 @@ QString YFPlugin::description() const
 
 QString YFPlugin::details() const
 {
-    return i18nc("@info", "This tool permit to export items to YandexFotki web-service.\n\n"
+    return i18nc("@info", "This tool allow to export items to YandexFotki web-service.\n\n"
                  "See YandexFotki web site for details: %1",
                  QLatin1String("<a href='https://fotki.yandex.ru/'>https://fotki.yandex.ru/</a>"));
 }

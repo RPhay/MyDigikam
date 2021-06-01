@@ -79,7 +79,7 @@ QString MediaServerPlugin::description() const
 
 QString MediaServerPlugin::details() const
 {
-    return i18n("<p>This tool permit to share items on the local network through a DLNA server.</p>"
+    return i18n("<p>This tool allow to share items on the local network through a DLNA server.</p>"
                 "<p>Items to share can be selected one by one or by group through a selection of albums.</p>"
                 "<p>Many kind of electronic devices can support DLNA, as tablets, cellulars, TV, etc.</p>");
 }

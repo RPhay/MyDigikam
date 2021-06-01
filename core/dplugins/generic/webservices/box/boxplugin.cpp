@@ -73,7 +73,7 @@ QString BoxPlugin::description() const
 
 QString BoxPlugin::details() const
 {
-    return i18nc("@info", "This tool permit to export items to Box web-service.\n\n"
+    return i18nc("@info", "This tool allow to export items to Box web-service.\n\n"
                 "See Box web site for details: %1", QLatin1String("<a href='https://box.com/'>https://box.com/</a>"));
 }
 

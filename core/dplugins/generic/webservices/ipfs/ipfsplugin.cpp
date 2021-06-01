@@ -73,7 +73,7 @@ QString IpfsPlugin::description() const
 
 QString IpfsPlugin::details() const
 {
-    return i18nc("@info", "This tool permit to export items to IPFS web-service.\n\n"
+    return i18nc("@info", "This tool allow to export items to IPFS web-service.\n\n"
                  "See IPFS web site for details: %1",
                  QLatin1String("<a href='https://ipfs.io/'>https://ipfs.io/</a>"));
 }

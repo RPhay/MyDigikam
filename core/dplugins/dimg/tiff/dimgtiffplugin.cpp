@@ -75,7 +75,7 @@ QString DImgTIFFPlugin::description() const
 
 QString DImgTIFFPlugin::details() const
 {
-    return i18n("<p>This plugin permit to load and save image using Libtiff codec.</p>"
+    return i18n("<p>This plugin allow to load and save image using Libtiff codec.</p>"
                 "<p>Tagged Image File Format, abbreviated TIFF or TIF, is a computer file format "
                 "for storing raster graphics images, popular among graphic artists, the publishing "
                 "industry, and photographers. TIFF is widely supported by scanning, faxing, "

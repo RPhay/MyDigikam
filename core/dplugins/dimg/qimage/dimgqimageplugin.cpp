@@ -72,7 +72,7 @@ QString DImgQImagePlugin::description() const
 
 QString DImgQImagePlugin::details() const
 {
-    return i18n("<p>This plugin permit to load and save image using QImage plugins from Qt Framework.</p>"
+    return i18n("<p>This plugin allow to load and save image using QImage plugins from Qt Framework.</p>"
                 "<p>See <a href='https://doc.qt.io/qt-5/qimage.html'>Qt Framework documentation</a> for details.</p>"
     );
 }

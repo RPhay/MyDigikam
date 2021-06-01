@@ -68,7 +68,7 @@ QString JAlbumPlugin::description() const
 
 QString JAlbumPlugin::details() const
 {
-    return i18n("<p>This tool permit to export items to jAlbum html gallery generator.</p>"
+    return i18n("<p>This tool allow to export items to jAlbum html gallery generator.</p>"
                 "<p>Items to process can be selected one by one or by group through a selection of albums.</p>"
                 "<p>jAlbum is themable with different templates and layout. See the jAlbum web-site for details: https://jalbum.net/.</p>");
 }

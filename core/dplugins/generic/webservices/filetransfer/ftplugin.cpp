@@ -75,7 +75,7 @@ QString FTPlugin::description() const
 
 QString FTPlugin::details() const
 {
-    return i18nc("@info", "This tool permit to export and import items with a remote location.\n\n"
+    return i18nc("@info", "This tool allow to export and import items with a remote location.\n\n"
                  "Many protocols can be used, as FTP, SFTP, SAMBA, etc.");
 }
 

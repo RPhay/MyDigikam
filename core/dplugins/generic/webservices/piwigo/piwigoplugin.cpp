@@ -73,7 +73,7 @@ QString PiwigoPlugin::description() const
 
 QString PiwigoPlugin::details() const
 {
-    return i18nc("@info", "This tool permit to export items to Piwigo web-service."
+    return i18nc("@info", "This tool allow to export items to Piwigo web-service."
                  "See Piwigo web site for details: %1",
                  QLatin1String("<a href='https://piwigo.org/'>https://piwigo.org/</a></p>"));
 }

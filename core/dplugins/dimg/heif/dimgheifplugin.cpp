@@ -94,7 +94,7 @@ QString DImgHEIFPlugin::details() const
 
 #endif
 
-    return i18n("<p>This plugin permit to load and save image using Libheif codec.</p>"
+    return i18n("<p>This plugin allow to load and save image using Libheif codec.</p>"
                 "<p>High Efficiency Image File Format (HEIF), also known as High Efficiency Image Coding (HEIC), "
                 "is a file format for individual images and image sequences. It was developed by the "
                 "Moving Picture Experts Group (MPEG) and it claims that twice as much information can be "

@@ -69,7 +69,7 @@ QString UnifiedPlugin::description() const
 
 QString UnifiedPlugin::details() const
 {
-    return i18nc("@info", "This tool permit to export items to many web-services.\n\n"
+    return i18nc("@info", "This tool allow to export items to many web-services.\n\n"
                  "This is a unified tool, grouping many tools in one.");
 }
 

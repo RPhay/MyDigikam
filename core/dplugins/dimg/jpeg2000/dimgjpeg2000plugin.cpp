@@ -75,7 +75,7 @@ QString DImgJPEG2000Plugin::description() const
 
 QString DImgJPEG2000Plugin::details() const
 {
-    return i18n("<p>This plugin permit to load and save image using Libjasper codec</p>"
+    return i18n("<p>This plugin allow to load and save image using Libjasper codec</p>"
                 "<p>The JPEG (Joint Photographic Experts Group) 2000 standard, finalized in 2001, "
                 "defines a image-coding scheme using state-of-the-art compression techniques based "
                 "on wavelet technology. Its architecture is useful for many diverse applications, "

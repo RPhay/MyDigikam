@@ -75,7 +75,7 @@ QString DImgPGFPlugin::description() const
 
 QString DImgPGFPlugin::details() const
 {
-    return i18n("<p>This plugin permit to load and save image using Libpgf codec.</p>"
+    return i18n("<p>This plugin allow to load and save image using Libpgf codec.</p>"
                 "<p>The Progressive Graphics File (PGF) is an efficient image file format, "
                 "that is based on a fast, discrete wavelet transform with progressive coding "
                 "features. PGF can be used for lossless and lossy compression. It's most suitable "

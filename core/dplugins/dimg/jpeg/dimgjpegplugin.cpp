@@ -75,7 +75,7 @@ QString DImgJPEGPlugin::description() const
 
 QString DImgJPEGPlugin::details() const
 {
-    return i18n("<p>This plugin permit to load and save image using Libjpeg codec.</p>"
+    return i18n("<p>This plugin allow to load and save image using Libjpeg codec.</p>"
                 "<p>Joint Photographic Experts Group (JPEG) is a commonly used method of lossy "
                 "compression for digital images, particularly for those images produced by "
                 "digital photography. The degree of compression can be adjusted, allowing "

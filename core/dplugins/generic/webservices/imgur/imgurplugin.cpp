@@ -73,7 +73,7 @@ QString ImgUrPlugin::description() const
 
 QString ImgUrPlugin::details() const
 {
-    return i18nc("@info", "This tool permit to export items to ImgUr web-service.\n\n"
+    return i18nc("@info", "This tool allow to export items to ImgUr web-service.\n\n"
                  "You can export items as anonymous or with an user account.\n\n"
                  "See ImgUr web site for details: %1",
                  QLatin1String("<a href='https://imgur.com/'>https://imgur.com/</a>"));

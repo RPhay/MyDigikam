@@ -74,7 +74,7 @@ QString FCPlugin::description() const
 
 QString FCPlugin::details() const
 {
-    return i18nc("@info", "This tool permit to export items to a local storage.");
+    return i18nc("@info", "This tool allow to export items to a local storage.");
 }
 
 QList<DPluginAuthor> FCPlugin::authors() const

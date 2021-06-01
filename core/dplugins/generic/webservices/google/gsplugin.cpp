@@ -75,7 +75,7 @@ QString GSPlugin::description() const
 
 QString GSPlugin::details() const
 {
-    return i18nc("@info", "This tool permit to export and import items with Google web-services.\n\n"
+    return i18nc("@info", "This tool allow to export and import items with Google web-services.\n\n"
                  "Google Photo and Google Drive web services are supported.\n\n"
                  "See Google web sites for details: %1",
                  QLatin1String("</ br><a href='https://photos.google.com'>https://photos.google.com</a></ br><a href='https://www.google.com/drive/'>https://www.google.com/drive/</a>"));
