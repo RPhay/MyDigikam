@@ -27,11 +27,11 @@
 
 #include <QDir>
 #include <QTest>
-#include <QDebug>
 #include <QUrl>
 
 // Local includes
 
+#include "digikam_debug.h"
 #include "albumfiltermodel.h"
 #include "albummanager.h"
 #include "albummodel.h"
@@ -88,7 +88,7 @@ void AlbumModelTest::initTestCase()
 
     QDir::temp().mkdir(tempSuffix);
 
-    qDebug() << "Using database path for test: " << dbPath;
+    qCDebug(DIGIKAM_TESTS_LOG) << "Using database path for test: " << dbPath;
 
     ApplicationSettings::instance()->setShowFolderTreeViewItemsCount(true);
 
@@ -115,13 +115,13 @@ void AlbumModelTest::initTestCase()
     AlbumManager::instance()->startScan();
 
     AlbumList all = AlbumManager::instance()->allPAlbums();
-    qDebug() << "PAlbum registered : " << all.size();
+    qCDebug(DIGIKAM_TESTS_LOG) << "PAlbum registered : " << all.size();
 
     foreach (Album* const a, all)
     {
         if (a)
         {
-            qDebug() << " ==> Id : " << a->id() << " , is root : " << a->isRoot() << " , title : " << a->title();
+            qCDebug(DIGIKAM_TESTS_LOG) << " ==> Id : " << a->id() << " , is root : " << a->isRoot() << " , title : " << a->title();
         }
     }
 
@@ -130,7 +130,7 @@ void AlbumModelTest::initTestCase()
 
 void AlbumModelTest::cleanupTestCase()
 {
-    qDebug() << "Start AlbumModelTest::cleanupTestCase()";
+    qCDebug(DIGIKAM_TESTS_LOG) << "Start AlbumModelTest::cleanupTestCase()";
 
     ScanController::instance()->shutDown();
     AlbumManager::instance()->cleanUp();
@@ -141,7 +141,7 @@ void AlbumModelTest::cleanupTestCase()
     QDir dir(dbPath);
     dir.removeRecursively();
 
-    qDebug() << "deleted test folder " << dbPath;
+    qCDebug(DIGIKAM_TESTS_LOG) << "deleted test folder " << dbPath;
 }
 
 // Qt test doesn't use exceptions, so using assertion macros in methods called
@@ -165,7 +165,7 @@ void AlbumModelTest::cleanupTestCase()
 
 void AlbumModelTest::init()
 {
-    qDebug() << "Start AlbumModelTest::init()";
+    qCDebug(DIGIKAM_TESTS_LOG) << "Start AlbumModelTest::init()";
 
     palbumCountMap.clear();
 
@@ -181,7 +181,7 @@ void AlbumModelTest::init()
     connect(startModel, SIGNAL(dataChanged(QModelIndex,QModelIndex)),
             this, SLOT(slotStartModelDataChanged(QModelIndex,QModelIndex)));
 
-    qDebug() << "Created startModel" << startModel;
+    qCDebug(DIGIKAM_TESTS_LOG) << "Created startModel" << startModel;
 
     // ensure that this model is empty in the beginning except for the root
     // album and the collection that include trash
@@ -226,11 +226,11 @@ void AlbumModelTest::init()
 
     safeCreatePAlbum(palbumRoot1, sameName, palbumChild0Root1);
 
-    qDebug() << "AlbumManager now knows these PAlbums:";
+    qCDebug(DIGIKAM_TESTS_LOG) << "AlbumManager now knows these PAlbums:";
 
     foreach (Album* const a, AlbumManager::instance()->allPAlbums())
     {
-        qDebug() << "\t" << a->title();
+        qCDebug(DIGIKAM_TESTS_LOG) << "\t" << a->title();
     }
 
     // tags
@@ -248,7 +248,7 @@ void AlbumModelTest::init()
 
     safeCreateTAlbum(talbumRoot1, sameName, talbumChild0Root1);
 
-    qDebug() << "created tags";
+    qCDebug(DIGIKAM_TESTS_LOG) << "created tags";
 
     // add some images for having date albums
 
@@ -256,7 +256,7 @@ void AlbumModelTest::init()
     imageDir.setNameFilters(QStringList() << QLatin1String("*.jpg"));
     QStringList imageFiles = imageDir.entryList();
 
-    qDebug() << "copying images " << imageFiles << " to "
+    qCDebug(DIGIKAM_TESTS_LOG) << "copying images " << imageFiles << " to "
              << palbumChild0Root0->fileUrl();
 
     foreach (const QString& imageFile, imageFiles)
@@ -274,7 +274,7 @@ void AlbumModelTest::init()
         ensureItemCounts();
     }
 
-    qDebug() << "date albums: " << AlbumManager::instance()->allDAlbums();
+    qCDebug(DIGIKAM_TESTS_LOG) << "date albums: " << AlbumManager::instance()->allDAlbums();
 
     // root + 2 years + 2 and 3 months per year + (1997 as test year for date ordering with 12 months) = 21
 
@@ -303,7 +303,7 @@ void AlbumModelTest::init()
 
 void AlbumModelTest::testStartAlbumModel()
 {
-    qDebug() << "Start AlbumModelTest::testStartAlbumModel()";
+    qCDebug(DIGIKAM_TESTS_LOG) << "Start AlbumModelTest::testStartAlbumModel()";
 
     // verify that the start album model got all these changes
 
@@ -339,9 +339,9 @@ void AlbumModelTest::ensureItemCounts()
             &dAlbumLoop, SLOT(quit()));
 
     AlbumManager::instance()->prepareItemCounts();
-    qDebug() << "Waiting for AlbumManager to create DAlbums...";
+    qCDebug(DIGIKAM_TESTS_LOG) << "Waiting for AlbumManager to create DAlbums...";
     dAlbumLoop.exec();
-    qDebug() << "DAlbums were created";
+    qCDebug(DIGIKAM_TESTS_LOG) << "DAlbums were created";
 
     while (palbumCountMap.size() < 8)
     {
@@ -350,15 +350,15 @@ void AlbumModelTest::ensureItemCounts()
         connect(AlbumManager::instance(), SIGNAL(signalPAlbumsDirty(QMap<int,int>)),
                 &pAlbumLoop, SLOT(quit()));
 
-        qDebug() << "Waiting for first PAlbum count map";
+        qCDebug(DIGIKAM_TESTS_LOG) << "Waiting for first PAlbum count map";
         pAlbumLoop.exec();
-        qDebug() << "Got new PAlbum count map";
+        qCDebug(DIGIKAM_TESTS_LOG) << "Got new PAlbum count map";
     }
 }
 
 void AlbumModelTest::slotStartModelRowsInserted(const QModelIndex& parent, int start, int end)
 {
-    qDebug() << "called, parent:" << parent << ", start:" << start << ", end:" << end;
+    qCDebug(DIGIKAM_TESTS_LOG) << "called, parent:" << parent << ", start:" << start << ", end:" << end;
 
     for (int row = start ; row <= end ; ++row)
     {
@@ -367,7 +367,7 @@ void AlbumModelTest::slotStartModelRowsInserted(const QModelIndex& parent, int s
         Album* album      = startModel->albumForIndex(child);
         const int id      = child.data(AbstractAlbumModel::AlbumIdRole).toInt();
         QVERIFY(album);
-        qDebug() << "added album with id"
+        qCDebug(DIGIKAM_TESTS_LOG) << "added album with id"
                  << id
                  << "and name" << album->title();
         addedIds << id;
@@ -382,7 +382,7 @@ void AlbumModelTest::slotStartModelDataChanged(const QModelIndex& topLeft, const
 
         if (!index.isValid())
         {
-            qDebug() << "Illegal index received";
+            qCDebug(DIGIKAM_TESTS_LOG) << "Illegal index received";
             continue;
         }
 
@@ -393,7 +393,7 @@ void AlbumModelTest::slotStartModelDataChanged(const QModelIndex& topLeft, const
             QString message = QLatin1String("Album id ") + QString::number(albumId) +
                               QLatin1String(" was changed before adding signal was received");
             QFAIL(message.toLatin1().constData());
-            qDebug() << message;
+            qCDebug(DIGIKAM_TESTS_LOG) << message;
         }
     }
 }
@@ -406,7 +406,7 @@ void AlbumModelTest::deletePAlbum(PAlbum* album)
 
 void AlbumModelTest::setLastPAlbumCountMap(const QMap<int, int> &map)
 {
-    qDebug() << "Receiving new count map "<< map;
+    qCDebug(DIGIKAM_TESTS_LOG) << "Receiving new count map "<< map;
     palbumCountMap = map;
 }
 
@@ -455,7 +455,7 @@ void AlbumModelTest::cleanup()
 
 void AlbumModelTest::testPAlbumModel()
 {
-    qDebug() << "Start AlbumModelTest::testPAlbumModel()";
+    qCDebug(DIGIKAM_TESTS_LOG) << "Start AlbumModelTest::testPAlbumModel()";
 
     AlbumModel* albumModel = new AlbumModel();
     ModelTest* test        = new ModelTest(albumModel, nullptr);
@@ -470,7 +470,7 @@ void AlbumModelTest::testPAlbumModel()
 
 void AlbumModelTest::testDisablePAlbumCount()
 {
-    qDebug() << "Start AlbumModelTest::testDisablePAlbumCount()";
+    qCDebug(DIGIKAM_TESTS_LOG) << "Start AlbumModelTest::testDisablePAlbumCount()";
 
     AlbumModel albumModel;
     albumModel.setCountMap(palbumCountMap);
@@ -532,7 +532,7 @@ void AlbumModelTest::testDisablePAlbumCount()
 
 void AlbumModelTest::testDAlbumModel()
 {
-    qDebug() << "Start AlbumModelTest::testDAlbumModel()";
+    qCDebug(DIGIKAM_TESTS_LOG) << "Start AlbumModelTest::testDAlbumModel()";
 
     DateAlbumModel* const albumModel = new DateAlbumModel();
     ensureItemCounts();
@@ -543,7 +543,7 @@ void AlbumModelTest::testDAlbumModel()
 
 void AlbumModelTest::testDAlbumContainsAlbums()
 {
-    qDebug() << "Start AlbumModelTest::testDAlbumContainsAlbums()";
+    qCDebug(DIGIKAM_TESTS_LOG) << "Start AlbumModelTest::testDAlbumContainsAlbums()";
 
     DateAlbumModel* const albumModel = new DateAlbumModel();
     ensureItemCounts();
@@ -555,7 +555,7 @@ void AlbumModelTest::testDAlbumContainsAlbums()
         DAlbum* const dAlbum = dynamic_cast<DAlbum*> (album);
         QVERIFY(dAlbum);
 
-        qDebug() << "checking album for date " << dAlbum->date() << ", range = " << dAlbum->range();
+        qCDebug(DIGIKAM_TESTS_LOG) << "checking album for date " << dAlbum->date() << ", range = " << dAlbum->range();
 
         QModelIndex index = albumModel->indexForAlbum(dAlbum);
 
@@ -606,7 +606,7 @@ void AlbumModelTest::testDAlbumContainsAlbums()
         }
         else
         {
-            qDebug() << "Unexpected album: " << dAlbum->title();
+            qCDebug(DIGIKAM_TESTS_LOG) << "Unexpected album: " << dAlbum->title();
             QFAIL("Unexpected album returned from model");
         }
     }
@@ -616,7 +616,7 @@ void AlbumModelTest::testDAlbumContainsAlbums()
 
 void AlbumModelTest::testDAlbumSorting()
 {
-    qDebug() << "Start AlbumModelTest::testDAlbumSorting()";
+    qCDebug(DIGIKAM_TESTS_LOG) << "Start AlbumModelTest::testDAlbumSorting()";
 
     DateAlbumModel dateAlbumModel;
     AlbumFilterModel albumModel;
@@ -679,13 +679,13 @@ void AlbumModelTest::testDAlbumSorting()
 
 void AlbumModelTest::testDAlbumCount()
 {
-    qDebug() << "Start AlbumModelTest::testDAlbumCount()";
+    qCDebug(DIGIKAM_TESTS_LOG) << "Start AlbumModelTest::testDAlbumCount()";
 
     DateAlbumModel* const albumModel = new DateAlbumModel();
     albumModel->setShowCount(true);
     ensureItemCounts();
 
-    qDebug() << "iterating over root indices";
+    qCDebug(DIGIKAM_TESTS_LOG) << "iterating over root indices";
 
     // check year albums
 
@@ -812,7 +812,7 @@ void AlbumModelTest::testDAlbumCount()
 
 void AlbumModelTest::testTAlbumModel()
 {
-    qDebug() << "Start AlbumModelTest::testTAlbumModel()";
+    qCDebug(DIGIKAM_TESTS_LOG) << "Start AlbumModelTest::testTAlbumModel()";
 
     TagModel* albumModel = new TagModel();
     ModelTest* test      = new ModelTest(albumModel, nullptr);
@@ -827,7 +827,7 @@ void AlbumModelTest::testTAlbumModel()
 
 void AlbumModelTest::testSAlbumModel()
 {
-    qDebug() << "Start AlbumModelTest::testSAlbumModel()";
+    qCDebug(DIGIKAM_TESTS_LOG) << "Start AlbumModelTest::testSAlbumModel()";
 
     SearchModel* const albumModel = new SearchModel();
     ModelTest* const test         = new ModelTest(albumModel, nullptr);

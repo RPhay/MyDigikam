@@ -30,11 +30,11 @@
 #include <QDir>
 #include <QUrl>
 #include <QMap>
-#include <QDebug>
 #include <QProgressDialog>
 
 // Local includes
 
+#include "digikam_debug.h"
 #include "dfiledialog.h"
 #include "dmediaservermngr.h"
 
@@ -93,7 +93,7 @@ int main(int argc, char* argv[])
     }
     else
     {
-        qDebug() << "Failed to start the Media Server...";
+        qCDebug(DIGIKAM_TESTS_LOG) << "Failed to start the Media Server...";
     }
 
     DMediaServerMngr::instance()->save();
