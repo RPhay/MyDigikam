@@ -129,8 +129,6 @@ public:
      */
     bool start();
 
-public Q_SLOTS:
-
     /**
      * Attempts to terminate the process.
      */
