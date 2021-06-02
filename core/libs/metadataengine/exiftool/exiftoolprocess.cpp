@@ -101,20 +101,18 @@ QString ExifToolProcess::program() const
     return d->etExePath;
 }
 
-void ExifToolProcess::start()
+bool ExifToolProcess::start()
 {
     // Check if ExifTool is starting or running
 
     if (d->process->state() != QProcess::NotRunning)
     {
-        qCWarning(DIGIKAM_METAENGINE_LOG) << "ExifToolProcess::start(): ExifTool is already running";
-
-        return;
+        return true;
     }
 
     if (!checkExifToolProgram())
     {
-        return;
+        return false;
     }
 
     // Prepare command for ExifTool
@@ -156,6 +154,8 @@ void ExifToolProcess::start()
     qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifToolProcess::start(): create new ExifTool instance:" << program << args;
 
     d->process->start(program, args, QProcess::ReadWrite);
+
+    return d->process->waitForStarted(1000);
 }
 
 void ExifToolProcess::terminate()
