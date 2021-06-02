@@ -144,7 +144,7 @@ public:
                 ptLongitude = parts[1].toDouble(&okay);
             }
 
-            if (okay&&(parts.size()==3))
+            if (okay && (parts.size() == 3))
             {
                 ptAltitude = parts[2].toDouble(&okay);
             }
