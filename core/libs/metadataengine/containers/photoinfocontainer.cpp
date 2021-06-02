@@ -30,15 +30,6 @@
 namespace Digikam
 {
 
-PhotoInfoContainer::PhotoInfoContainer()
-    : hasCoordinates(false)
-{
-}
-
-PhotoInfoContainer::~PhotoInfoContainer()
-{
-}
-
 bool PhotoInfoContainer::operator==(const PhotoInfoContainer& t) const
 {
     bool b1  = (make            == t.make);
