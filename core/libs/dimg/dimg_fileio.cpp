@@ -343,17 +343,17 @@ QDateTime DImg::creationDateFromFilesystem(const QFileInfo& fileInfo) const
 
     QDateTime mtime = fileInfo.lastModified();
 
-    if (ctime.isNull())
-    {
-        return mtime;
-    }
-
-    if (mtime.isNull())
+    if (ctime.isValid())
     {
         return ctime;
     }
 
-    return qMin(ctime, mtime);
+    if (mtime.isValid())
+    {
+        return mtime;
+    }
+
+    return QDateTime::currentDateTime();
 }
 
 } // namespace Digikam

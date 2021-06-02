@@ -4,7 +4,7 @@
 #
 # Once done this will be adjusted:
 #
-# OPENMP_FOUND     - openMP detection flag
+# OPENMP_FOUND     - OpenMP detection flag
 # OpenMP_CXX_FLAGS - flags to add to the CXX compiler for OpenMP support
 #
 # Copyright (c) 2010-2021 by Gilles Caulier, <caulier dot gilles at gmail dot com>

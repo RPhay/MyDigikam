@@ -24,6 +24,9 @@
  * ============================================================ */
 
 #include "digikam_debug.h"
+
+// Local includes
+
 #include "digikam_config.h"
 
 Q_LOGGING_CATEGORY(DIGIKAM_GENERAL_LOG,         "digikam.general",            QtInfoMsg)
@@ -37,6 +40,7 @@ Q_LOGGING_CATEGORY(DIGIKAM_METAENGINE_LOG,      "digikam.metaengine",         Qt
 Q_LOGGING_CATEGORY(DIGIKAM_RAWENGINE_LOG,       "digikam.rawengine",          QtInfoMsg)
 Q_LOGGING_CATEGORY(DIGIKAM_FACESENGINE_LOG,     "digikam.facesengine",        QtInfoMsg)
 Q_LOGGING_CATEGORY(DIGIKAM_GEOIFACE_LOG,        "digikam.geoiface",           QtInfoMsg)
+
 Q_LOGGING_CATEGORY(DIGIKAM_TESTS_LOG,           "digikam.tests",              QtInfoMsg)
 
 Q_LOGGING_CATEGORY(DIGIKAM_DPLUGIN_GENERIC_LOG, "digikam.dplugin.generic",    QtInfoMsg)
@@ -73,8 +77,13 @@ Q_LOGGING_CATEGORY(DIGIKAM_MEDIASRV_LOG_FATAL,  "digikam.mediaserver.fatal",  Qt
 
 void digikamSetDebugFilterRules()
 {
+
 #ifdef Q_OS_QIN
+
     // Under Windows, always turn on all debug traces.
+
     QLoggingCategory::setFilterRules(QLatin1String("digikam.*=true"));
+
 #endif
+
 }

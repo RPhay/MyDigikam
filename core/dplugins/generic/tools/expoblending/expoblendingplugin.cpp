@@ -76,7 +76,7 @@ QString ExpoBlendingPlugin::description() const
 
 QString ExpoBlendingPlugin::details() const
 {
-    return i18n("<p>This tool permit to blend bracketed images together to create pseudo HDR photo.</p>"
+    return i18n("<p>This tool allow to blend bracketed images together to create pseudo HDR photo.</p>"
                 "<p>To create high definition range image, you need to use images from same subject "
                 "taken with a tripod and exposed with different exposure settings.</p>"
                 "<p>To create image with better results, you can use RAW images instead JPEG, where "

@@ -127,9 +127,7 @@ public:
     /**
      * Starts exiftool in a new process.
      */
-    void start();
-
-public Q_SLOTS:
+    bool start();
 
     /**
      * Attempts to terminate the process.

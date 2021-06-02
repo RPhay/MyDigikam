@@ -68,7 +68,7 @@ QString HtmlGalleryPlugin::description() const
 
 QString HtmlGalleryPlugin::details() const
 {
-    return i18n("<p>This tool permit to back-process items (as resize) before to create W3C compliant html gallery.</p>"
+    return i18n("<p>This tool allow to back-process items (as resize) before to create W3C compliant html gallery.</p>"
                 "<p>Items to process can be selected one by one or by group through a selection of albums.</p>"
                 "<p>Themable HTML template with different layout can be used to assemble files on a gallery.</p>");
 }

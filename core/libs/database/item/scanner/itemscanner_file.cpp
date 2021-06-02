@@ -81,25 +81,30 @@ void ItemScanner::fillCommonContainer(qlonglong imageid, ImageCommonContainer* c
 QDateTime ItemScanner::creationDateFromFilesystem(const QFileInfo& info)
 {
     // creation date is not what it seems on Unix
+
 #if (QT_VERSION >= QT_VERSION_CHECK(5, 10, 0))
+
     QDateTime ctime = info.birthTime();
+
 #else
+
     QDateTime ctime = info.created();
+
 #endif
 
     QDateTime mtime = info.lastModified();
 
-    if (ctime.isNull())
-    {
-        return mtime;
-    }
-
-    if (mtime.isNull())
+    if (ctime.isValid())
     {
         return ctime;
     }
 
-    return qMin(ctime, mtime);
+    if (mtime.isValid())
+    {
+        return mtime;
+    }
+
+    return QDateTime::currentDateTime();
 }
 
 void ItemScanner::scanItemInformation()

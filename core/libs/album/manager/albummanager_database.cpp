@@ -107,11 +107,16 @@ bool AlbumManager::setDatabase(const DbEngineParameters& params, bool priority, 
 
     if      (params.internalServer && suggestedAlbumRoot.isEmpty())
     {
-        if ((!QFileInfo::exists(params.internalServerMysqlServCmd)                         &&
-             QStandardPaths::findExecutable(params.internalServerMysqlServCmd).isEmpty())  ||
-            (!QFileInfo::exists(params.internalServerMysqlAdminCmd)                        &&
-             QStandardPaths::findExecutable(params.internalServerMysqlAdminCmd).isEmpty())
-           )
+        if      (!QFileInfo::exists(params.internalServerPath()))
+        {
+            databaseError = i18n("The MySQL database directory are not found, please "
+                                 "set the correct location in the next dialog.");
+        }
+        else if ((!QFileInfo::exists(params.internalServerMysqlServCmd)                         &&
+                  QStandardPaths::findExecutable(params.internalServerMysqlServCmd).isEmpty())  ||
+                 (!QFileInfo::exists(params.internalServerMysqlAdminCmd)                        &&
+                  QStandardPaths::findExecutable(params.internalServerMysqlAdminCmd).isEmpty())
+                )
         {
             databaseError = i18n("The MySQL binary tools are not found, please "
                                  "set the correct location in the next dialog.");
@@ -128,7 +133,7 @@ bool AlbumManager::setDatabase(const DbEngineParameters& params, bool priority, 
 
     if (!databaseError.isEmpty())
     {
-        return showDatabaseSetupPage(databaseError);
+        return showDatabaseSetupPage(databaseError, priority, suggestedAlbumRoot);
     }
 
     if (params.internalServer)
@@ -140,7 +145,7 @@ bool AlbumManager::setDatabase(const DbEngineParameters& params, bool priority, 
             databaseError = i18n("An error occurred during the internal server start.\n\n"
                                  "Details:\n%1", result.getErrorText());
 
-            return showDatabaseSetupPage(databaseError);
+            return showDatabaseSetupPage(databaseError, priority, suggestedAlbumRoot);
         }
     }
 
@@ -157,7 +162,7 @@ bool AlbumManager::setDatabase(const DbEngineParameters& params, bool priority, 
                              "You cannot use digiKam without a working database.\n"
                              "Please check the database settings in the next dialog.");
 
-        if (!showDatabaseSetupPage(databaseError))
+        if (!showDatabaseSetupPage(databaseError, priority, suggestedAlbumRoot))
         {
             if (params.isSQLite())
             {
@@ -779,7 +784,7 @@ bool AlbumManager::copyToNewLocation(const QFileInfo& oldFile,
     return true;
 }
 
-bool AlbumManager::showDatabaseSetupPage(const QString& error)
+bool AlbumManager::showDatabaseSetupPage(const QString& error, bool priority, const QString& suggestedAlbumRoot)
 {
     QApplication::restoreOverrideCursor();
 
@@ -818,11 +823,10 @@ bool AlbumManager::showDatabaseSetupPage(const QString& error)
     DbEngineParameters dbParams = dbsettings->getDbEngineParameters();
     settings->setDbEngineParameters(dbParams);
     settings->saveSettings();
-    changeDatabase(dbParams);
 
     delete setup;
 
-    return true;
+    return setDatabase(dbParams, priority, suggestedAlbumRoot);
 }
 
 } // namespace Digikam

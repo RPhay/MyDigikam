@@ -73,11 +73,13 @@ Taxon::Taxon(int id,
     d->ancestors   = ancestors;
 }
 
-Taxon::Taxon() : d(new Private)
+Taxon::Taxon()
+    : d(new Private)
 {
 }
 
-Taxon::Taxon(const Taxon& other) : d(new Private)
+Taxon::Taxon(const Taxon& other)
+    : d(new Private)
 {
     *d = *other.d;
 }

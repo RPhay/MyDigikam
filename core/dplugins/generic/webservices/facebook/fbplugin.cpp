@@ -74,7 +74,7 @@ QString FbPlugin::description() const
 
 QString FbPlugin::details() const
 {
-    return i18n("<p>This tool permit to export items to Facebook web-service.</p>"
+    return i18n("<p>This tool allow to export items to Facebook web-service.</p>"
                 "<p>See Facebook web site for details: <a href='https://www.facebook.com/'>https://www.facebook.com/</a></p>");
 }
 

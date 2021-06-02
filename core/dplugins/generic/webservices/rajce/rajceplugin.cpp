@@ -73,7 +73,7 @@ QString RajcePlugin::description() const
 
 QString RajcePlugin::details() const
 {
-    return i18nc("@info", "This tool permit to export items to Rajce web-service.\n\n"
+    return i18nc("@info", "This tool allow to export items to Rajce web-service.\n\n"
                  "See Rajce web site for details: %1",
                  QLatin1String("<a href='https://www.rajce.idnes.cz/'>https://www.rajce.idnes.cz/</a>"));
 }

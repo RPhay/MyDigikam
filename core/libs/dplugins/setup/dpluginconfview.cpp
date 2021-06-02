@@ -63,7 +63,7 @@ public:
             setCheckState(0, m_plugin->shouldLoaded() ? Qt::Checked : Qt::Unchecked);
         }
 
-        setToolTip(0, m_plugin->details());
+        setToolTip(0, m_plugin->description());
 
         // Categories
 

@@ -73,7 +73,7 @@ QString VKontaktePlugin::description() const
 
 QString VKontaktePlugin::details() const
 {
-    return i18nc("@info", "This tool permit to export items to VKontakte web-service.\n\n"
+    return i18nc("@info", "This tool allow to export items to VKontakte web-service.\n\n"
                  "See VKontakte web site for details: %1",
                  QLatin1String("<a href='https://vk.com/'>https://vk.com/</a>"));
 }

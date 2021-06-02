@@ -68,7 +68,7 @@ QString MetadataEditPlugin::description() const
 
 QString MetadataEditPlugin::details() const
 {
-    return i18nc("@info", "This tool permit to changes plenty of metadata from items.\n\n"
+    return i18nc("@info", "This tool allow to changes plenty of metadata from items.\n\n"
                  "Most common Exif, Iptc, and Xmp tags used in photography are listed for editing with standardized values.\n\n"
                  "For photo agencies, pre-configured subjects can be used to describe the items contents based on Iptc reference codes.");
 }

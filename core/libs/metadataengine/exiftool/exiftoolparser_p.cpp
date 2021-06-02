@@ -47,9 +47,7 @@ bool ExifToolParser::Private::prepareProcess()
 
     // Start ExifToolProcess if necessary
 
-    proc->start();
-
-    if (!proc->waitForStarted(500))
+    if (!proc->start())
     {
         proc->kill();
         qCWarning(DIGIKAM_METAENGINE_LOG) << "ExifTool process cannot be started ("

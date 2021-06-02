@@ -42,8 +42,12 @@ class DIGIKAM_EXPORT PhotoInfoContainer
 
 public:
 
-    explicit PhotoInfoContainer();
-    ~PhotoInfoContainer();
+    PhotoInfoContainer()                          = default;
+    PhotoInfoContainer(const PhotoInfoContainer&) = default;
+    ~PhotoInfoContainer()                         = default;
+
+    PhotoInfoContainer& operator=(const PhotoInfoContainer&) = default;
+    PhotoInfoContainer& operator=(PhotoInfoContainer&&)      = default;
 
     bool isEmpty()                               const;
     bool isNull()                                const;
@@ -67,7 +71,7 @@ public:
 
     QDateTime dateTime;
 
-    bool      hasCoordinates;  ///< GPS info are present
+    bool      hasCoordinates = false;  ///< true if GPS info are present
 };
 
 DIGIKAM_EXPORT QDataStream& operator<<(QDataStream& ds, const PhotoInfoContainer& info);

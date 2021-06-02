@@ -73,7 +73,7 @@ QString FlickrPlugin::description() const
 
 QString FlickrPlugin::details() const
 {
-    return i18nc("@info", "This tool permit to export items to Flickr web-service.\n\n"
+    return i18nc("@info", "This tool allow to export items to Flickr web-service.\n\n"
                  "See Flickr web site for details: %1",
                  QLatin1String("<a href='https://www.flickr.com/'>https://www.flickr.com/</a>"));
 }

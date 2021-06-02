@@ -73,7 +73,7 @@ QString MediaWikiPlugin::description() const
 
 QString MediaWikiPlugin::details() const
 {
-    return i18nc("@info", "This tool permit to export items to MediaWiki web-service.\n\n"
+    return i18nc("@info", "This tool allow to export items to MediaWiki web-service.\n\n"
                  "See MediaWiki web site for details: %1",
                  QLatin1String("<a href='https://www.mediawiki.org/'>https://www.mediawiki.org/</a>"));
 }

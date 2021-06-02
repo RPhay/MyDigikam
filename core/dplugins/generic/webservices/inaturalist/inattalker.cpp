@@ -111,7 +111,7 @@ static QJsonObject parseJsonResponse(const QByteArray& data)
 
     if (err.error != QJsonParseError::NoError)
     {
-        qWarning() << "parseJsonResponse: Failed to parse json response:"
+        qCWarning(DIGIKAM_WEBSERVICES_LOG) << "parseJsonResponse: Failed to parse json response:"
                    << err.errorString();
 
         return QJsonObject();
@@ -119,7 +119,7 @@ static QJsonObject parseJsonResponse(const QByteArray& data)
 
     if (!doc.isObject())
     {
-        qWarning() << "parseJsonResponse: Json response is not an object!";
+        qCWarning(DIGIKAM_WEBSERVICES_LOG) << "parseJsonResponse: Json response is not an object!";
 
         return QJsonObject();
     }

@@ -101,20 +101,19 @@ QString ExifToolProcess::program() const
     return d->etExePath;
 }
 
-void ExifToolProcess::start()
+bool ExifToolProcess::start()
 {
     // Check if ExifTool is starting or running
 
-    if (d->process->state() != QProcess::NotRunning)
+    if (d->exifToolHasFinished                    ||
+        d->process->state() != QProcess::NotRunning)
     {
-        qCWarning(DIGIKAM_METAENGINE_LOG) << "ExifToolProcess::start(): ExifTool is already running";
-
-        return;
+        return true;
     }
 
     if (!checkExifToolProgram())
     {
-        return;
+        return false;
     }
 
     // Prepare command for ExifTool
@@ -156,6 +155,8 @@ void ExifToolProcess::start()
     qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifToolProcess::start(): create new ExifTool instance:" << program << args;
 
     d->process->start(program, args, QProcess::ReadWrite);
+
+    return d->process->waitForStarted(1000);
 }
 
 void ExifToolProcess::terminate()
@@ -170,35 +171,37 @@ void ExifToolProcess::terminate()
         d->process->write(QByteArray("-stay_open\nfalse\n"));
         d->process->closeWriteChannel();
         d->writeChannelIsClosed = true;
-        d->exifToolHasFinished  = d->process->waitForFinished(5000);
-    }
-    else if (!d->exifToolHasFinished)
-    {
-        // Otherwise, close ExifTool using OS system call
-        // (WM_CLOSE [Windows] or SIGTERM [Unix])
+        d->exifToolHasFinished  = true;
 
-        // Console applications on Windows that do not run an event loop,
-        // or whose event loop does not handle the WM_CLOSE message,
-        // can only be terminated by calling kill().
+        if (!d->process->waitForFinished(5000))
+        {
+            // Otherwise, close ExifTool using OS system call
+            // (WM_CLOSE [Windows] or SIGTERM [Unix])
+
+            // Console applications on Windows that do not run an event loop,
+            // or whose event loop does not handle the WM_CLOSE message,
+            // can only be terminated by calling kill().
 
 #ifdef Q_OS_WIN
 
-        kill();
+            kill();
 
 #else
 
-        qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifToolProcess::terminate(): closing ExifTool instance...";
+            qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifToolProcess::terminate(): closing ExifTool instance...";
 
-        d->process->terminate();
+            d->process->terminate();
 
 #endif
 
+        }
     }
 }
 
 void ExifToolProcess::kill()
 {
     qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifToolProcess::kill(): shutdown ExifTool instance...";
+
     d->process->kill();
 }
 

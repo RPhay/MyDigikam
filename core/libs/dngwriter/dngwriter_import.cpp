@@ -100,6 +100,15 @@ int DNGWriter::Private::importRaw(DRawInfo* const identify,
     qCDebug(DIGIKAM_GENERAL_LOG) << "--- White:         " << identify->whitePoint;
     qCDebug(DIGIKAM_GENERAL_LOG) << "--- CAM->XYZ:";
 
+    for (int i = 0 ; i < 4 ; ++i)
+    {
+        qCDebug(DIGIKAM_GENERAL_LOG)
+                 << "                   "
+                 << QString().asprintf("%03.4f  %03.4f  %03.4f", identify->cameraXYZMatrix[i][0],
+                                                                 identify->cameraXYZMatrix[i][1],
+                                                                 identify->cameraXYZMatrix[i][2]);
+    }
+
     if (cancel)
     {
         return PROCESS_CANCELED;

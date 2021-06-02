@@ -68,7 +68,7 @@ QString VideoSlideShowPlugin::description() const
 
 QString VideoSlideShowPlugin::details() const
 {
-    return i18n("<p>This tool permit to back-process image as frame to create video slide-show.</p>"
+    return i18n("<p>This tool allow to back-process image as frame to create video slide-show.</p>"
                 "<p>Items to process can be selected one by one or by group through a selection of albums.</p>"
                 "<p>Different visual effects can be applied to images to make transitions while to render target video.</p>");
 }

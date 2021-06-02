@@ -73,7 +73,7 @@ QString TwitterPlugin::description() const
 
 QString TwitterPlugin::details() const
 {
-    return i18nc("@info", "This tool permit to export items to Twitter web-service.\n\n"
+    return i18nc("@info", "This tool allow to export items to Twitter web-service.\n\n"
                  "See Twitter web site for details: %1",
                  QLatin1String("<a href='https://twitter.com/'>https://twitter.com/</a>"));
 }

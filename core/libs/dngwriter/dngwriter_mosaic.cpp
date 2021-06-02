@@ -33,17 +33,6 @@ namespace Digikam
 int DNGWriter::Private::identMosaic(DRawInfo* const identify,
                                     DRawInfo* const identifyMake)
 {
-    QString matrixVal;
-
-    for (int i = 0 ; i < 4 ; ++i)
-    {
-        qCDebug(DIGIKAM_GENERAL_LOG)
-                 << "                   "
-                 << QString().asprintf("%03.4f  %03.4f  %03.4f", identify->cameraXYZMatrix[i][0],
-                                                                 identify->cameraXYZMatrix[i][1],
-                                                                 identify->cameraXYZMatrix[i][2]);
-    }
-
     // Check if CFA layout is supported by DNG SDK.
 
     bool fujiRotate90 = false;

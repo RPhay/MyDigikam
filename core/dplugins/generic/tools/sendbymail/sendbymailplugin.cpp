@@ -68,7 +68,7 @@ QString SendByMailPlugin::description() const
 
 QString SendByMailPlugin::details() const
 {
-    return i18n("<p>This tool permit to back-process items (as resize) before to send by e-mail.</p>"
+    return i18n("<p>This tool allow to back-process items (as resize) before to send by e-mail.</p>"
                 "<p>Items to process can be selected one by one or by group through a selection of albums.</p>"
                 "<p>Different mail client application can be used to process files on the network.</p>");
 }

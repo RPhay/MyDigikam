@@ -84,7 +84,7 @@ QString DigitalScannerPlugin::description() const
 
 QString DigitalScannerPlugin::details() const
 {
-    return i18n("<p>This tool permit to acquire new images from a digital scanner.</p>"
+    return i18n("<p>This tool allow to acquire new images from a digital scanner.</p>"
                 "<p>Plenty of scanner devices are supported through the Sane library.</p>"
                 "<p>Target image can be post processed as crop and rotate.</p>");
 }

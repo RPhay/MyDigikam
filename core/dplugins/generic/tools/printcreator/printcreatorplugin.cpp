@@ -68,7 +68,7 @@ QString PrintCreatorPlugin::description() const
 
 QString PrintCreatorPlugin::details() const
 {
-    return i18n("<p>This tool permit to back-process items (as assemble) before to print.</p>"
+    return i18n("<p>This tool allow to back-process items (as assemble) before to print.</p>"
                 "<p>Items to process can be selected one by one or by group through a selection of albums.</p>"
                 "<p>Different pre-defined paper sizes and layouts can be used to process files.</p>");
 }

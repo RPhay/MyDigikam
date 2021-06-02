@@ -7,8 +7,6 @@
 APPLY_COMMON_POLICIES()
 
 include_directories(
-    $<TARGET_PROPERTY:KF5::I18n,INTERFACE_INCLUDE_DIRECTORIES>
-
     $<TARGET_PROPERTY:Qt5::Test,INTERFACE_INCLUDE_DIRECTORIES>
     $<TARGET_PROPERTY:Qt5::Core,INTERFACE_INCLUDE_DIRECTORIES>
     $<TARGET_PROPERTY:Qt5::Gui,INTERFACE_INCLUDE_DIRECTORIES>
@@ -17,22 +15,10 @@ include_directories(
 
 # -------------------------------------------------
 
-add_executable(framesencoder ${CMAKE_CURRENT_SOURCE_DIR}/framesencoder.cpp)
-ecm_mark_nongui_executable(framesencoder)
+add_executable(framesencoder_cli ${CMAKE_CURRENT_SOURCE_DIR}/framesencoder_cli.cpp)
+ecm_mark_nongui_executable(framesencoder_cli)
 
-target_link_libraries(framesencoder
-
-                      digikamcore
-
-                      ${COMMON_TEST_LINK}
-)
-
-# -------------------------------------------------
-
-add_executable(qtavcodecs ${CMAKE_CURRENT_SOURCE_DIR}/qtavcodecs.cpp)
-ecm_mark_nongui_executable(qtavcodecs)
-
-target_link_libraries(qtavcodecs
+target_link_libraries(framesencoder_cli
 
                       digikamcore
 
@@ -41,9 +27,10 @@ target_link_libraries(qtavcodecs
 
 # -------------------------------------------------
 
-add_executable(player ${CMAKE_CURRENT_SOURCE_DIR}/player.cpp)
+add_executable(qtavcodecs_cli ${CMAKE_CURRENT_SOURCE_DIR}/qtavcodecs_cli.cpp)
+ecm_mark_nongui_executable(qtavcodecs_cli)
 
-target_link_libraries(player
+target_link_libraries(qtavcodecs_cli
 
                       digikamcore
 
@@ -52,10 +39,21 @@ target_link_libraries(player
 
 # -------------------------------------------------
 
-add_executable(videothumbtest ${CMAKE_CURRENT_SOURCE_DIR}/videothumbtest.cpp)
-ecm_mark_nongui_executable(videothumbtest)
+add_executable(player_gui ${CMAKE_CURRENT_SOURCE_DIR}/player_gui.cpp)
 
-target_link_libraries(videothumbtest
+target_link_libraries(player_gui
+
+                      digikamcore
+
+                      ${COMMON_TEST_LINK}
+)
+
+# -------------------------------------------------
+
+add_executable(videothumb_cli ${CMAKE_CURRENT_SOURCE_DIR}/videothumb_cli.cpp)
+ecm_mark_nongui_executable(videothumb_cli)
+
+target_link_libraries(videothumb_cli
                       digikamcore
 
                       ${COMMON_TEST_LINK}
