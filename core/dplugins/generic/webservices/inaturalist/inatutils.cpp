@@ -33,6 +33,10 @@
 
 #include <klocalizedstring.h>
 
+// Local includes
+
+#include "digikam_debug.h"
+
 namespace DigikamGenericINatPlugin
 {
 
@@ -76,8 +80,13 @@ QHttpMultiPart* getMultiPart(const QList<Parameter>& parameters,
         imagePart.setHeader(QNetworkRequest::ContentDispositionHeader,
                             QVariant(imageForm.arg(imageName,
                                      fileInfo.baseName())));
-        QFile* file = new QFile(imagePath);
-        file->open(QIODevice::ReadOnly);
+        QFile* const file = new QFile(imagePath);
+
+        if (!file->open(QIODevice::ReadOnly))
+        {
+            qCWarning(DIGIKAM_WEBSERVICES_LOG) << "Cannot open file to read" << imagePath;
+        }
+
         imagePart.setBodyDevice(file);
         file->setParent(result);
         result->append(imagePart);
