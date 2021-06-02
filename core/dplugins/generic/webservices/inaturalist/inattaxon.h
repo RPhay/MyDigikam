@@ -86,6 +86,8 @@ public:
     bool   operator==(const Taxon&)   const;
     bool   operator!=(const Taxon&)   const;
 
+    Taxon& operator= (Taxon&&) = default;
+
 private:
 
     class Private;
