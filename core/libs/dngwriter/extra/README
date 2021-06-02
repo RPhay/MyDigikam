@@ -1,4 +1,6 @@
-Removed XMP SDK FILE-IO source files unused by DNG SDK;
+* XMP SDK repository: https://github.com/adobe/XMP-Toolkit-SDK
+
+* Removed XMP SDK FILE-IO source files unused by DNG SDK:
 
 xmp_sdk/XMPFiles/source/FileHandlers/AIFF_Handler.cpp
 xmp_sdk/XMPFiles/source/FileHandlers/AIFF_Handler.hpp
@@ -161,3 +163,7 @@ xmp_sdk/source/XIO.cpp
 xmp_sdk/source/XIO.hpp
 xmp_sdk/source/XMPFiles_IO.cpp
 xmp_sdk/source/XMPFiles_IO.hpp
+
+* MD5 source code come from the XMP SDK 3rd party.
+
+* DNG SDK tarball: https://helpx.adobe.com/fr/security/products/dng-sdk.html
