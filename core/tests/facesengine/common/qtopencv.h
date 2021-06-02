@@ -7,7 +7,8 @@
  * Description : Functions to convert between OpenCV's cv::Mat and Qt's QImage and QPixmap.
  *               https://asmaloney.com/2013/11/code/converting-between-cvmat-and-qimage-or-qpixmap
  *
- * Copyright (C) 2013 by Andy Maloney <asmaloney at gmail dot com>
+ * Copyright (C)      2013 by Andy Maloney <asmaloney at gmail dot com>
+ * Copyright (C) 2015-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -98,7 +99,7 @@ namespace QtOpenCV
 
             default:
             {
-                qCWarning(DIGIKAM_TESTS_LOG) << "ASM::cvMatToQImage() - cv::Mat image type not handled in switch:" << inMat.type();
+                qCWarning(DIGIKAM_TESTS_LOG) << "cvMatToQImage() - cv::Mat image type not handled in switch:" << inMat.type();
                 break;
             }
         }
@@ -142,7 +143,7 @@ namespace QtOpenCV
             {
                 if (!inCloneImageData)
                 {
-                    qCWarning(DIGIKAM_TESTS_LOG) << "ASM::QImageToCvMat() - Conversion requires cloning because we use a temporary QImage";
+                    qCWarning(DIGIKAM_TESTS_LOG) << "QImageToCvMat() - Conversion requires cloning because we use a temporary QImage";
                 }
 
                 QImage swapped;
@@ -179,7 +180,7 @@ namespace QtOpenCV
 
             default:
             {
-                qCWarning(DIGIKAM_TESTS_LOG) << "ASM::QImageToCvMat() - QImage format not handled in switch:" << inImage.format();
+                qCWarning(DIGIKAM_TESTS_LOG) << "QImageToCvMat() - QImage format not handled in switch:" << inImage.format();
                 break;
             }
         }
