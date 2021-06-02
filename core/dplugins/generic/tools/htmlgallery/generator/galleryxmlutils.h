@@ -47,7 +47,7 @@ class CWrapper
 public:
 
     CWrapper()
-        : m_ptr(0)
+        : m_ptr(nullptr)
     {
     }
 
@@ -138,7 +138,7 @@ public:
 
     explicit XMLElement(XMLWriter& writer,
                         const QString& element,
-                        const XMLAttributeList* attributeList=nullptr);
+                        const XMLAttributeList* attributeList = nullptr);
     ~XMLElement();
 
 private:

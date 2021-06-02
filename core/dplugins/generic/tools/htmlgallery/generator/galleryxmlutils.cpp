@@ -23,6 +23,10 @@
 
 #include "galleryxmlutils.h"
 
+// Local includes
+
+#include "digikam_debug.h"
+
 namespace DigikamGenericHtmlGalleryPlugin
 {
 
@@ -42,6 +46,7 @@ bool XMLWriter::open(const QString& name)
     if (rc < 0)
     {
         m_writer.assign(0);
+
         return false;
     }
 
@@ -57,7 +62,12 @@ XMLWriter::operator xmlTextWriterPtr() const
 
 void XMLWriter::writeElement(const char* element, const QString& value)
 {
-    xmlTextWriterWriteElement(m_writer, BAD_CAST element, BAD_CAST value.toUtf8().data());
+    int rc = xmlTextWriterWriteElement(m_writer, BAD_CAST element, BAD_CAST value.toUtf8().data());
+
+    if (rc < 0)
+    {
+        qCWarning(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Error while calling Libxml2::xmlTextWriterWriteElement()";
+    }
 }
 
 void XMLWriter::writeElement(const char* element, int value)
@@ -72,11 +82,15 @@ void XMLAttributeList::write(XMLWriter& writer) const
     Map::const_iterator it  = m_map.begin();
     Map::const_iterator end = m_map.end();
 
-    for (; it != end ; ++it)
+    for ( ; it != end ; ++it)
     {
-        xmlTextWriterWriteAttribute(writer,
-                                    BAD_CAST it.key().toLatin1().data(),
-                                    BAD_CAST it.value().toLatin1().data());
+        int rc = xmlTextWriterWriteAttribute(writer,
+                                             BAD_CAST it.key().toLatin1().data(),
+                                             BAD_CAST it.value().toLatin1().data());
+        if (rc < 0)
+        {
+            qCWarning(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Error while calling Libxml2::xmlTextWriterWriteAttribute()";
+        }
     }
 }
 
@@ -95,7 +109,12 @@ void XMLAttributeList::append(const QString& key, int value)
 XMLElement::XMLElement(XMLWriter& writer, const QString& element, const XMLAttributeList* attributeList)
     : m_writer(writer)
 {
-    xmlTextWriterStartElement(writer, BAD_CAST element.toLatin1().data());
+    int rc = xmlTextWriterStartElement(writer, BAD_CAST element.toLatin1().data());
+
+    if (rc < 0)
+    {
+        qCWarning(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Error while calling Libxml2::xmlTextWriterStartElement()";
+    }
 
     if (attributeList)
     {
