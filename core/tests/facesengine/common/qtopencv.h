@@ -5,6 +5,7 @@
  *
  * Date        : 2013-06-16
  * Description : Functions to convert between OpenCV's cv::Mat and Qt's QImage and QPixmap.
+ *               Partially inspired from:
  *               https://asmaloney.com/2013/11/code/converting-between-cvmat-and-qimage-or-qpixmap
  *
  * Copyright (C)      2013 by Andy Maloney <asmaloney at gmail dot com>
@@ -74,25 +75,11 @@ namespace QtOpenCV
 
             case CV_8UC1:
             {
-                static QVector<QRgb> sColorTable(256);
-
-                // Only create our color table the first time
-
-                if (sColorTable.isEmpty())
-                {
-                    for (int i = 0 ; i < 256 ; ++i)
-                    {
-                        sColorTable[i] = qRgb(i, i, i);
-                    }
-                }
-
                 QImage image(inMat.data,
-                             inMat.cols,
-                             inMat.rows,
-                             static_cast<int>(inMat.step),
-                             QImage::Format_Indexed8);
-
-                image.setColorTable(sColorTable);
+                          inMat.cols,
+                          inMat.rows,
+                          static_cast<int>(inMat.step),
+                          QImage::Format_Grayscale8);
 
                 return image;
             }
@@ -107,10 +94,14 @@ namespace QtOpenCV
         return QImage();
     }
 
+    // ----------------------------------------------------------------------------------
+
     inline QPixmap cvMatToQPixmap(const cv::Mat& inMat)
     {
         return QPixmap::fromImage(cvMatToQImage(inMat));
     }
+
+    // ----------------------------------------------------------------------------------
 
     /**
      * If inImage exists for the lifetime of the resulting cv::Mat, pass false to inCloneImageData to share inImage's
@@ -187,6 +178,9 @@ namespace QtOpenCV
 
         return cv::Mat();
     }
+
+
+    // ----------------------------------------------------------------------------------
 
     /**
      * If inPixmap exists for the lifetime of the resulting cv::Mat, pass false to inCloneImageData to share inPixmap's data
