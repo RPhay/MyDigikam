@@ -63,88 +63,6 @@ int DNGWriter::Private::importRaw(DRawInfo* const identify,
         return PROCESS_FAILED;
     }
 
-    // -----------------------------------------------------------------------------------------
-
-    if (identifyMake->make.toUpper() == QLatin1String("FUJIFILM"))
-    {
-        ExifToolParser* const parser = new ExifToolParser(nullptr);
-
-        if (parser->exifToolAvailable())
-        {
-            qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Pre-process metadata with ExifTool";
-
-            bool ret = parser->load(inputInfo.filePath());
-
-            if (!ret)
-            {
-                qCCritical(DIGIKAM_GENERAL_LOG) << "DNGWriter: Pre-process metadata with ExifTool failed. Aborted...";
-                delete parser;
-
-                return PROCESS_FAILED;
-            }
-
-            ExifToolParser::ExifToolData parsed       = parser->currentData();
-            ExifToolParser::ExifToolData::iterator it = parsed.find(QLatin1String("RAF.RAF2.Image.RawImageCropTopLeft"));
-
-            if (it != parsed.end())
-            {
-                QString data             = it.value()[0].toString();
-                identifyMake->topMargin  = data.section(QLatin1Char(' '), 0, 0).toInt();
-                identifyMake->leftMargin = data.section(QLatin1Char(' '), 1, 1).toInt();
-            }
-
-            it = parsed.find(QLatin1String("RAF.RAF2.Image.RawImageFullSize"));
-
-            if (it != parsed.end())
-            {
-                QString data             = it.value()[0].toString();
-                identifyMake->fullSize.setWidth(data.section(QLatin1Char(' '), 0, 0).toInt());
-                identifyMake->fullSize.setHeight(data.section(QLatin1Char(' '), 1, 1).toInt());
-            }
-
-            it = parsed.find(QLatin1String("RAF.RAF2.Image.RawImageCroppedSize"));
-
-            if (it != parsed.end())
-            {
-                QString data               = it.value()[0].toString();
-                int cWidth                 = data.section(QLatin1Char(' '), 0, 0).toInt();
-                int cHeight                = data.section(QLatin1Char(' '), 1, 1).toInt();
-                identifyMake->bottomMargin = identifyMake->fullSize.height() - identifyMake->topMargin  - cHeight;
-                identifyMake->rightMargin  = identifyMake->fullSize.width()  - identifyMake->leftMargin - cWidth;
-            }
-        }
-        else
-        {
-            qCWarning(DIGIKAM_GENERAL_LOG) << "DNGWriter: ExifTool is not available to pre-process metadata...";
-        }
-
-        delete parser;
-    }
-
-    // -----------------------------------------------------------------------------------------
-
-    qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Identification:";
-    qCDebug(DIGIKAM_GENERAL_LOG) << "--- Date:          " << identifyMake->dateTime.toString(Qt::ISODate);
-    qCDebug(DIGIKAM_GENERAL_LOG) << "--- Make:          " << identifyMake->make;
-    qCDebug(DIGIKAM_GENERAL_LOG) << "--- Model:         " << identifyMake->model;
-    qCDebug(DIGIKAM_GENERAL_LOG) << "--- ImageSize:     " << identifyMake->imageSize.width()  << "x" << identifyMake->imageSize.height();
-    qCDebug(DIGIKAM_GENERAL_LOG) << "--- FullSize:      " << identifyMake->fullSize.width()   << "x" << identifyMake->fullSize.height();
-    qCDebug(DIGIKAM_GENERAL_LOG) << "--- OutputSize:    " << identifyMake->outputSize.width() << "x" << identifyMake->outputSize.height();
-    qCDebug(DIGIKAM_GENERAL_LOG) << "--- Orientation:   " << identifyMake->orientation;
-    qCDebug(DIGIKAM_GENERAL_LOG) << "--- Top margin:    " << identifyMake->topMargin;
-    qCDebug(DIGIKAM_GENERAL_LOG) << "--- Left margin:   " << identifyMake->leftMargin;
-    qCDebug(DIGIKAM_GENERAL_LOG) << "--- Bottom margin: " << identifyMake->bottomMargin;
-    qCDebug(DIGIKAM_GENERAL_LOG) << "--- Right margin:  " << identifyMake->rightMargin;
-
-    if (identifyMake->cropArea == QRect(65535, 65535, 0, 0))
-    {
-        qCDebug(DIGIKAM_GENERAL_LOG) << "--- Crop Area:     " << "none";
-    }
-    else
-    {
-        qCDebug(DIGIKAM_GENERAL_LOG) << "--- Crop Area:     " << identifyMake->cropArea;
-    }
-
     // TODO: need to get correct default crop size to avoid artifacts at the borders
 
     if ((identifyMake->orientation == 5) || (identifyMake->orientation == 6))
@@ -158,15 +76,24 @@ int DNGWriter::Private::importRaw(DRawInfo* const identify,
         outputWidth  = identifyMake->outputSize.width();
     }
 
-    if (!rawProcessor->extractRAWDataUnprocessed(parent->inputFile(), rawData, *identify, 0))
+    if (!rawProcessor->extractRAWData(parent->inputFile(), rawData, *identify, 0))
     {
         qCCritical(DIGIKAM_GENERAL_LOG) << "DNGWriter: Loading RAW data failed. Aborted...";
 
         return FILE_NOT_SUPPORTED;
     }
 
-    qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Raw data loaded:";
-    qCDebug(DIGIKAM_GENERAL_LOG) << "--- Data Size:     " << rawData.size() << "bytes";
+    qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Raw data loaded:" ;
+    qCDebug(DIGIKAM_GENERAL_LOG) << "--- Data Size:     " << rawData.size() << " bytes";
+    qCDebug(DIGIKAM_GENERAL_LOG) << "--- Date:          " << identify->dateTime.toString(Qt::ISODate);
+    qCDebug(DIGIKAM_GENERAL_LOG) << "--- Make:          " << identify->make;
+    qCDebug(DIGIKAM_GENERAL_LOG) << "--- Model:         " << identify->model;
+    qCDebug(DIGIKAM_GENERAL_LOG) << "--- ImageSize:     " << identify->imageSize.width()  << "x" << identify->imageSize.height();
+    qCDebug(DIGIKAM_GENERAL_LOG) << "--- FullSize:      " << identify->fullSize.width()   << "x" << identify->fullSize.height();
+    qCDebug(DIGIKAM_GENERAL_LOG) << "--- OutputSize:    " << identify->outputSize.width() << "x" << identify->outputSize.height();
+    qCDebug(DIGIKAM_GENERAL_LOG) << "--- Orientation:   " << identify->orientation;
+    qCDebug(DIGIKAM_GENERAL_LOG) << "--- Top margin:    " << identify->topMargin;
+    qCDebug(DIGIKAM_GENERAL_LOG) << "--- Left margin:   " << identify->leftMargin;
     qCDebug(DIGIKAM_GENERAL_LOG) << "--- Filter:        " << identify->filterPattern;
     qCDebug(DIGIKAM_GENERAL_LOG) << "--- Colors:        " << identify->rawColors;
     qCDebug(DIGIKAM_GENERAL_LOG) << "--- Black:         " << identify->blackPoint;

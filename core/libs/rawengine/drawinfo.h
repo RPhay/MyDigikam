@@ -33,7 +33,6 @@
 #include <QString>
 #include <QDateTime>
 #include <QSize>
-#include <QRect>
 #include <QDebug>
 #include <QImage>
 
@@ -111,24 +110,14 @@ public:
     unsigned int     whitePoint;
 
     /**
-     * Top margin of full raw image.
+     * Top margin of raw image.
      */
     unsigned int     topMargin;
 
     /**
-     * Left margin of full raw image.
+     * Left margin of raw image.
      */
     unsigned int     leftMargin;
-
-    /**
-     * Bottom margin of full raw image.
-     */
-    unsigned int     bottomMargin;
-
-    /**
-     * Right margin of full raw image.
-     */
-    unsigned int     rightMargin;
 
     /**
      * The raw image orientation
@@ -339,11 +328,6 @@ public:
      * The output dimensions in pixels.
      */
     QSize            outputSize;
-
-    /**
-     * The crop area in full Raw image.
-     */
-    QRect            cropArea;
 
     /**
      * Xmp metadata container extracted from RAW file, if present.

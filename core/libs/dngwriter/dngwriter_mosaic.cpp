@@ -77,15 +77,6 @@ int DNGWriter::Private::identMosaic(DRawInfo* const identify,
         fujiRotate90 = true;
         filter       = 0;
     }
-    else if ((identify->filterPattern      == QLatin1String("RBGGGGBRGGGGRBGG")) &&
-             (identifyMake->make.toUpper() == QLatin1String("FUJIFILM")))
-    {
-        // Fuji layouts
-
-        bayerPattern = Private::Fuji6x6;
-        fujiRotate90 = false;
-        filter       = 0;
-    }
     else if ((identify->filterPattern      == QLatin1String("GGGGBRGGGGRBGGGG")) &&
              (identifyMake->make.toUpper() == QLatin1String("FUJIFILM")))
     {
@@ -97,7 +88,7 @@ int DNGWriter::Private::identMosaic(DRawInfo* const identify,
     }
     else if ((identify->rawColors == 3)                 &&
              (identify->filterPattern.isEmpty())        &&
-             ((uint32)rawData.size() == (identify->fullSize.width() * identify->fullSize.height() * 3 * sizeof(uint16))))
+             ((uint32)rawData.size() == (identify->outputSize.width() * identify->outputSize.height() * 3 * sizeof(uint16))))
     {
         bayerPattern = Private::LinearRaw;
     }
@@ -161,9 +152,9 @@ int DNGWriter::Private::identMosaic(DRawInfo* const identify,
         outputHeight = tmp;
     }
 
-    activeArea   = dng_rect(identify->fullSize.height(), identify->fullSize.width());
-    activeWidth  = identify->fullSize.width();
-    activeHeight = identify->fullSize.height();
+    activeArea   = dng_rect(identify->outputSize.height(), identify->outputSize.width());
+    activeWidth  = identify->outputSize.width();
+    activeHeight = identify->outputSize.height();
 
     // Check if number of Raw Color components is supported.
 
@@ -175,8 +166,8 @@ int DNGWriter::Private::identMosaic(DRawInfo* const identify,
         return PROCESS_FAILED;
     }
 
-    width  = identify->fullSize.width();
-    height = identify->fullSize.height();
+    width  = identify->outputSize.width();
+    height = identify->outputSize.height();
 /*
     debugExtractedRAWData(rawData);
 */
