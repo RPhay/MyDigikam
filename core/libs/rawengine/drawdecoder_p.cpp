@@ -166,12 +166,19 @@ void DRawDecoder::Private::fillIndentifyInfo(LibRaw* const raw, DRawInfo& identi
                                                                             raw->imgdata.other.parsed_gps.longitude[1],
                                                                             raw->imgdata.other.parsed_gps.longitude[2]);
     identify.altitude              = raw->imgdata.other.parsed_gps.altitude;
+
     identify.imageSize             = QSize(raw->imgdata.sizes.width,      raw->imgdata.sizes.height);
     identify.fullSize              = QSize(raw->imgdata.sizes.raw_width,  raw->imgdata.sizes.raw_height);
     identify.outputSize            = QSize(raw->imgdata.sizes.iwidth,     raw->imgdata.sizes.iheight);
     identify.thumbSize             = QSize(raw->imgdata.thumbnail.twidth, raw->imgdata.thumbnail.theight);
     identify.topMargin             = raw->imgdata.sizes.top_margin;
     identify.leftMargin            = raw->imgdata.sizes.left_margin;
+    identify.rightMargin           = raw->imgdata.sizes.raw_width  - raw->imgdata.sizes.width  - raw->imgdata.sizes.left_margin;
+    identify.bottomMargin          = raw->imgdata.sizes.raw_height - raw->imgdata.sizes.height - raw->imgdata.sizes.top_margin;
+
+    identify.cropArea              = QRect(raw->imgdata.sizes.raw_inset_crop.cleft,  raw->imgdata.sizes.raw_inset_crop.ctop,
+                                           raw->imgdata.sizes.raw_inset_crop.cwidth, raw->imgdata.sizes.raw_inset_crop.cheight);
+
     identify.hasIccProfile         = raw->imgdata.color.profile ? true : false;
     identify.isDecodable           = true;
     identify.pixelAspectRatio      = raw->imgdata.sizes.pixel_aspect;

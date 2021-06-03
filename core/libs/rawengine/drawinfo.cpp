@@ -71,6 +71,8 @@ DRawInfo::DRawInfo()
     serialNumber            = 0;
     topMargin               = 0;
     leftMargin              = 0;
+    bottomMargin            = 0;
+    rightMargin             = 0;
     orientation             = ORIENTATION_NONE;
 
     for (int x = 0 ; x < 3 ; ++x)

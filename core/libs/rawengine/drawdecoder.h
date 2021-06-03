@@ -172,7 +172,7 @@ public:
 public:
 
     /**
-     * Extract Raw image data undemosaiced and without post processing from 'filePath' picture file.
+     * Extract Raw image data undemosaiced from 'filePath' picture file.
      * This is a cancelable method which require a class instance to run because RAW pictures loading
      * can take a while.
      *
@@ -185,7 +185,23 @@ public:
     bool extractRAWData(const QString& filePath,
                         QByteArray& rawData,
                         DRawInfo& identify,
-                        unsigned int shotSelect=0);
+                        unsigned int shotSelect = 0);
+
+    /**
+     * Extract Raw image data undemosaiced and without post processing from 'filePath' picture file.
+     * This is a cancelable method which require a class instance to run because RAW pictures loading
+     * can take a while.
+     *
+     * This method return:
+     *
+     *     - A byte array container 'rawData' with raw data.
+     *     - All info about Raw image into 'identify' container.
+     *     - 'false' is returned if loading failed, else 'true'.
+     */
+    bool extractRAWDataUnprocessed(const QString& filePath,
+                                   QByteArray& rawData,
+                                   DRawInfo& identify,
+                                   unsigned int shotSelect = 0);
 
     /**
      * Extract a small size of decode RAW data from 'filePath' picture file using

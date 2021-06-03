@@ -47,11 +47,13 @@ int DNGWriter::Private::createNegative(AutoPtr<dng_negative>& negative,
     else
     {
         qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Bayer Pattern Type:" << bayerPattern;
-        negative->SetDefaultCropOrigin(0, 0);
-        negative->SetDefaultCropSize(activeWidth, activeHeight);
+        negative->SetDefaultCropOrigin(identify->leftMargin, identify->topMargin);
+        negative->SetDefaultCropSize(activeWidth  - identify->leftMargin - identify->rightMargin,
+                                     activeHeight - identify->topMargin  - identify->bottomMargin);
     }
 
     negative->SetActiveArea(activeArea);
+
     negative->SetModelName(identify->model.toLatin1().constData());
     negative->SetLocalName(QString::fromUtf8("%1 %2").arg(identify->make, identify->model).toLatin1().constData());
     negative->SetOriginalRawFileName(inputInfo.fileName().toLatin1().constData());
