@@ -238,7 +238,7 @@
     <p xml:lang="tr">Özellikler:</p>
     <p xml:lang="uk">Можливості:</p>
     <p xml:lang="x-test">xxFeatures:xx</p>
-    <p xml:lang="zh-CN">功能：</p>
+    <p xml:lang="zh-CN">程序功能：</p>
     <p xml:lang="zh-TW">功能：</p>
     <ul>
       <li>Organization of photos in albums and sub-albums (with tags and comments support)</li>
@@ -388,7 +388,7 @@
       <li xml:lang="tr">1100den fazla kamera cihazından içe aktarma</li>
       <li xml:lang="uk">можливість імпортування даних з понад 1100 цифрових фотоапаратів;</li>
       <li xml:lang="x-test">xxImport from more than 1100 digital camera devicesxx</li>
-      <li xml:lang="zh-CN">支持从 1100 多种数码相机设备导入照片</li>
+      <li xml:lang="zh-CN">支持从 1100 多款数码相机设备导入照片</li>
       <li xml:lang="zh-TW">能從超過 1100 個數位相機裝置匯入</li>
       <li>Support for more than 900 RAW format pictures</li>
       <li xml:lang="ca">Admet més de 900 formats d'imatge RAW</li>
@@ -558,7 +558,7 @@
       <caption xml:lang="sv">Digikams köhantering för bakgrundsbehandling</caption>
       <caption xml:lang="uk">Керування чергою пакетної обробки digiKam</caption>
       <caption xml:lang="x-test">xxdigiKam Batch Queue Managerxx</caption>
-      <caption xml:lang="zh-CN">digiKam 批处理队列管理器</caption>
+      <caption xml:lang="zh-CN">digiKam 批处理管理器</caption>
       <image>https://www.digikam.org/img/content/about/overview_bqm.png</image>
     </screenshot>
     <screenshot type="default">
@@ -607,7 +607,7 @@
       <caption xml:lang="sv">Digikams import från kamera</caption>
       <caption xml:lang="uk">Імпортування з камери у digiKam</caption>
       <caption xml:lang="x-test">xxdigiKam Import From Cameraxx</caption>
-      <caption xml:lang="zh-CN">digiKam 从相机导入</caption>
+      <caption xml:lang="zh-CN">digiKam 导入相机照片</caption>
       <image>https://www.digikam.org/img/content/about/overview_import.png</image>
     </screenshot>
     <screenshot type="default">
