@@ -339,7 +339,11 @@ void PresentationMainPage::loadEffectNamesGL()
 
     // Add Ken Burns effect
 
-    effectNames.unite(PresentationKB::effectNamesI18N());
+    QMap<QString, QString> effectNameKB = PresentationKB::effectNamesI18N();
+    for (it = effectNameKB.begin(); it != effectNameKB.end(); ++it)
+    {
+        effectNames.insert(it.key(), it.value());
+    }
 
     for (it = effectNames.begin() ; it != effectNames.end() ; ++it)
     {
