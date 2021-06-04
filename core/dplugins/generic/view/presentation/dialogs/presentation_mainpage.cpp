@@ -201,7 +201,7 @@ void PresentationMainPage::saveSettings()
     else
     {
         QMap<QString, QString> effects;
-        QMultiMap<QString, QString> effectNames;
+        QMap<QString, QString> effectNames;
         QMap<QString, QString>::ConstIterator it;
 
         // Load slideshowgl effects
@@ -330,7 +330,7 @@ void PresentationMainPage::loadEffectNamesGL()
     m_effectsComboBox->clear();
 
     QStringList effects;
-    QMultiMap<QString, QString> effectNames;
+    QMap<QString, QString> effectNames;
     QMap<QString, QString>::Iterator it;
 
     // Load slideshowgl effects
@@ -354,7 +354,7 @@ void PresentationMainPage::loadEffectNamesGL()
 
     for (int i = 0 ; i < m_effectsComboBox->count() ; ++i)
     {
-        if (effectNames.value(d->sharedData->effectNameGL) == m_effectsComboBox->itemText(i))
+        if (effectNames[d->sharedData->effectNameGL] == m_effectsComboBox->itemText(i))
         {
             m_effectsComboBox->setCurrentIndex(i);
             break;
