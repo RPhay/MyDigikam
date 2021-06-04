@@ -28,16 +28,16 @@
  * DNG review:          www.barrypearson.co.uk/articles/dng/index.htm
  * DNG intro:           www.adobe.com/digitalimag/pdfs/dng_primer.pdf
  *                      www.adobe.com/products/dng/pdfs/DNG_primer_manufacturers.pdf
- * DNG Specification:   www.adobe.com/products/dng/pdfs/dng_spec_1_2_0_0.pdf
+ * DNG Specification:   wwwimages.adobe.com/content/dam/Adobe/en/products/photoshop/pdfs/dng_spec_1.5.0.0.pdf
  * TIFF/EP Spec.:       www.map.tu.chiba-u.ac.jp/IEC/100/TA2/recdoc/N4378.pdf
  * DNG SDK reference:   www.thomasdideriksen.dk/misc/File%20Formats/dng_sdk_refman.pdf
- * DNG SDK tarball:     ftp.adobe.com/pub/adobe/dng/dng_sdk_1_2.zip
+ * DNG SDK tarball:     helpx.adobe.com/photoshop/digital-negative.html#dng_sdk_download
  * DNG users forum:     www.adobeforums.com/webx/.3bb5f0ec
  *
  * Applications using DNG SDK:
  * DNG4PS2:             dng4ps2.chat.ru/index_en.html
  * CORNERFIX:           sourceforge.net/projects/cornerfix
- * ADOBE DNG CONVERTER: ftp.adobe.com/pub/adobe/photoshop/cameraraw/win/4.x
+ * ADOBE DNG CONVERTER: helpx.adobe.com/photoshop/using/adobe-dng-converter.html
  * DNGCONVERT:          github.com/jmue/dngconvert
  * MOVIE2DNG:           elphel.svn.sourceforge.net/svnroot/elphel/tools/Movie2DNG
  * RAW2DNG :            github.com/Fimagena/raw2dng
@@ -140,7 +140,7 @@ QString DNGWriter::dngSdkVersion()
 {
     // NOTE: DNG SDK do not seem to have a version ID shared in header.
 
-    return QString::fromLatin1("1.5");
+    return QString::fromLatin1("1.5.1");
 }
 
 } // namespace Digikam
