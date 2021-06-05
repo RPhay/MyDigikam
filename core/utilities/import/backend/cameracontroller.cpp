@@ -994,46 +994,12 @@ void CameraController::slotCheckRename(const QString& folder, const QString& fil
                 stream >> str;
                 arguments << str;
             }
-            qCDebug(DIGIKAM_IMPORTUI_LOG) << "Arguments" << arguments;
-
-            // Find interpreter if the given script is actually a script and not a binary
-            QFile scriptFile(scriptName);
-            scriptFile.open(QIODevice::ReadOnly);
-            QString programName;
-            QTextStream readScript(&scriptFile);
-            while (readScript.readLineInto(&programName))
-            {
-                if (programName.startsWith(QLatin1String("#!")))
-                {
-                    programName = programName.mid(2);
-                    break;
-                }
-            }
-
-            // Check if program is a binary
-            bool isBinExec = false;
-            if (programName.isEmpty())
-            {
-                programName = scriptName;
-                isBinExec = true;
-            }
 
             // Start the process
             QProcess process;
             process.setProcessChannelMode(QProcess::SeparateChannels);
             process.setProcessEnvironment(adjustedEnvironmentForAppImage());
-
-            qCDebug(DIGIKAM_IMPORTUI_LOG) << "Running: " << programName << " " << scriptName << " " << arguments;
-            if (!isBinExec)
-            {
-                // Script running with correct interpreter
-                process.start(programName, QStringList() << scriptName << arguments);
-            }
-            else
-            {
-                // Binary running natively
-                process.start(programName, QStringList() << arguments);
-            }
+            process.start(scriptName, QStringList() << arguments);
 
             if (!process.waitForFinished(60000))
             {
