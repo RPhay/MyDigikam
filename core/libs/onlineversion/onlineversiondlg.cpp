@@ -644,7 +644,7 @@ void OnlineVersionDlg::slotRunInstaller()
     }
 
     close();
-    QTimer::singleShot(3000, qApp, SLOT(quit()));
+    QTimer::singleShot(3000, qApp, SLOT(closeAllWindows()));
 
 #endif
 
