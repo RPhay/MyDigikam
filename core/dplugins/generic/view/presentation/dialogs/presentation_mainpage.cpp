@@ -201,7 +201,7 @@ void PresentationMainPage::saveSettings()
     else
     {
         QMap<QString, QString> effects;
-        QMultiMap<QString, QString> effectNames;
+        QMap<QString, QString> effectNames;
         QMap<QString, QString>::ConstIterator it;
 
         // Load slideshowgl effects
@@ -330,7 +330,7 @@ void PresentationMainPage::loadEffectNamesGL()
     m_effectsComboBox->clear();
 
     QStringList effects;
-    QMultiMap<QString, QString> effectNames;
+    QMap<QString, QString> effectNames;
     QMap<QString, QString>::Iterator it;
 
     // Load slideshowgl effects
@@ -339,7 +339,11 @@ void PresentationMainPage::loadEffectNamesGL()
 
     // Add Ken Burns effect
 
-    effectNames.unite(PresentationKB::effectNamesI18N());
+    QMap<QString, QString> effectNameKB = PresentationKB::effectNamesI18N();
+    for (it = effectNameKB.begin(); it != effectNameKB.end(); ++it)
+    {
+        effectNames.insert(it.key(), it.value());
+    }
 
     for (it = effectNames.begin() ; it != effectNames.end() ; ++it)
     {
@@ -354,7 +358,7 @@ void PresentationMainPage::loadEffectNamesGL()
 
     for (int i = 0 ; i < m_effectsComboBox->count() ; ++i)
     {
-        if (effectNames.value(d->sharedData->effectNameGL) == m_effectsComboBox->itemText(i))
+        if (effectNames[d->sharedData->effectNameGL] == m_effectsComboBox->itemText(i))
         {
             m_effectsComboBox->setCurrentIndex(i);
             break;

@@ -567,20 +567,20 @@ QStringList PresentationGL::effectNames()
     return effects;
 }
 
-QMultiMap<QString, QString> PresentationGL::effectNamesI18N()
+QMap<QString, QString> PresentationGL::effectNamesI18N()
 {
-    QMultiMap<QString, QString> effects;
+    QMap<QString, QString> effects;
 
-    effects.insert(QLatin1String("None"),   i18nc("Filter Effect: No effect",     "None"));
-    effects.insert(QLatin1String("Bend"),   i18nc("Filter Effect: Bend",          "Bend"));
-    effects.insert(QLatin1String("Blend"),  i18nc("Filter Effect: Blend",         "Blend"));
-    effects.insert(QLatin1String("Cube"),   i18nc("Filter Effect: Cube",          "Cube"));
-    effects.insert(QLatin1String("Fade"),   i18nc("Filter Effect: Fade",          "Fade"));
-    effects.insert(QLatin1String("Flutter"),i18nc("Filter Effect: Flutter",       "Flutter"));
-    effects.insert(QLatin1String("In Out"), i18nc("Filter Effect: In Out",        "In Out"));
-    effects.insert(QLatin1String("Rotate"), i18nc("Filter Effect: Rotate",        "Rotate"));
-    effects.insert(QLatin1String("Slide"),  i18nc("Filter Effect: Slide",         "Slide"));
-    effects.insert(QLatin1String("Random"), i18nc("Filter Effect: Random effect", "Random"));
+    effects[QLatin1String("None")]    = i18nc("Filter Effect: No effect",     "None");
+    effects[QLatin1String("Bend")]    = i18nc("Filter Effect: Bend",          "Bend");
+    effects[QLatin1String("Blend")]   = i18nc("Filter Effect: Blend",         "Blend");
+    effects[QLatin1String("Cube")]    = i18nc("Filter Effect: Cube",          "Cube");
+    effects[QLatin1String("Fade")]    = i18nc("Filter Effect: Fade",          "Fade");
+    effects[QLatin1String("Flutter")] = i18nc("Filter Effect: Flutter",       "Flutter");
+    effects[QLatin1String("In Out")]  = i18nc("Filter Effect: In Out",        "In Out");
+    effects[QLatin1String("Rotate")]  = i18nc("Filter Effect: Rotate",        "Rotate");
+    effects[QLatin1String("Slide")]   = i18nc("Filter Effect: Slide",         "Slide");
+    effects[QLatin1String("Random")]  = i18nc("Filter Effect: Random effect", "Random");
 
     return effects;
 }
