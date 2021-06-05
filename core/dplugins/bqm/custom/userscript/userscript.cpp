@@ -256,9 +256,11 @@ bool UserScript::toolOperations()
 
     script.replace(QLatin1Char('\n'), QLatin1String(" & "));
 
+    process.setProgram(QLatin1String("cmd.exe"));
+
     process.setNativeArguments(QLatin1String("/C ") + script);
 
-    process.start(QLatin1String("cmd.exe"));
+    process.start();
 
 #endif // Q_OS_WIN
 
