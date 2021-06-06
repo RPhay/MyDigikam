@@ -113,7 +113,8 @@ void AssignNameWidget::setMode(Mode mode)
      * same mode is passed, because Unconfirmed and Unknown
      * Faces have the same mode but different Tooltips.
      */
-    if (mode == AssignNameWidget::UnconfirmedEditMode)
+    if ((d->layoutMode == Compact)                    &&
+        (mode == AssignNameWidget::UnconfirmedEditMode))
     {
         d->updateRejectButtonTooltip();
     }
@@ -282,6 +283,11 @@ void AssignNameWidget::slotActionSelected(const TaggingAction& action)
     }
 
     emit selected(action, d->info, d->faceIdentifier);
+}
+
+void AssignNameWidget::slotIgnoredClicked()
+{
+    emit ignoredClicked(d->info, d->faceIdentifier);
 }
 
 void AssignNameWidget::slotLabelClicked()
