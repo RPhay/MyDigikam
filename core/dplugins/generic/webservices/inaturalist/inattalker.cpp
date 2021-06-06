@@ -535,12 +535,12 @@ public:
     {
     }
 
-    void reportError(INatTalker& talker, int error,
+    void reportError(INatTalker&, int,
                      const QString& errorString) const override
     {
+        // A debug message suffices when an image for a taxon cannot be loaded.
         qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Url" << m_url << "error:"
                                          << errorString;
-        Request::reportError(talker, error, errorString);
     }
 
     void parseResponse(INatTalker& talker,
