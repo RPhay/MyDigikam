@@ -155,6 +155,9 @@ void AssignNameOverlay::setActive(bool active)
         connect(assignNameWidget(), SIGNAL(rejected(ItemInfo,QVariant)),
                 this, SLOT(slotRejected(ItemInfo,QVariant)));
 
+        connect(assignNameWidget(), SIGNAL(ignoredClicked(ItemInfo,QVariant)),
+                this, SLOT(slotUnconfirmed(ItemInfo,QVariant)));
+
         connect(assignNameWidget(), SIGNAL(selected(TaggingAction,ItemInfo,QVariant)),
                 this, SLOT(enterPersistentMode()));
 
@@ -164,10 +167,16 @@ void AssignNameOverlay::setActive(bool active)
         connect(assignNameWidget(), SIGNAL(rejected(ItemInfo,QVariant)),
                 this, SLOT(leavePersistentMode()));
 
+        connect(assignNameWidget(), SIGNAL(ignoredClicked(ItemInfo,QVariant)),
+                this, SLOT(leavePersistentMode()));
+
         connect(assignNameWidget(), SIGNAL(assigned(TaggingAction,ItemInfo,QVariant)),
                 this, SLOT(storeFocus()));
 
         connect(assignNameWidget(), SIGNAL(rejected(ItemInfo,QVariant)),
+                this, SLOT(storeFocus()));
+
+        connect(assignNameWidget(), SIGNAL(ignoredClicked(ItemInfo,QVariant)),
                 this, SLOT(storeFocus()));
 
 /*
@@ -339,6 +348,15 @@ void AssignNameOverlay::slotAssigned(const TaggingAction& action, const ItemInfo
         emit confirmFaces(affectedIndexes(index()), tagId);
     }
 
+    hide();
+}
+
+void AssignNameOverlay::slotUnconfirmed(const ItemInfo& info, const QVariant& faceIdentifier)
+{
+    Q_UNUSED(info);
+    Q_UNUSED(faceIdentifier);
+
+    emit unconfirmFaces(affectedIndexes(index()));
     hide();
 }
 

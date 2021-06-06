@@ -160,6 +160,11 @@ Q_SIGNALS:
     void rejected(const ItemInfo& info, const QVariant& faceIdentifier);
 
     /**
+     * In IgnoredMode, this signal is emitted when the user clicked on the label
+     */
+    void ignoredClicked(const ItemInfo& info, const QVariant& faceIdentifier);
+
+    /**
      * In ConfirmedMode, this signal is emitted when the user clicked on the label
      */
     void labelClicked(const ItemInfo& info, const QVariant& faceIdentifier);
@@ -182,6 +187,7 @@ protected Q_SLOTS:
     void slotReject();
     void slotActionActivated(const TaggingAction& action);
     void slotActionSelected(const TaggingAction& action);
+    void slotIgnoredClicked();
     void slotLabelClicked();
 
 private:

@@ -65,6 +65,8 @@ public:
 
     explicit Private(AssignNameWidget* const q);
 
+    bool         isValid()                                        const;
+
     void         updateModes();
     void         updateContents();
 
@@ -75,8 +77,6 @@ public:
      * This method is responsible for the Tooltip updates.
      */
     void         updateRejectButtonTooltip();
-
-    bool         isValid()                                        const;
 
 private:
 
@@ -115,6 +115,7 @@ public:
     QToolButton*               confirmButton;
     QToolButton*               rejectButton;
     DClickLabel*               clickLabel;
+    DClickLabel*               ignoredLabel;
 
     bool                       modelsGiven;
     TagModel*                  tagModel;
