@@ -55,7 +55,6 @@
 // KDE includes
 
 #include <klocalizedstring.h>
-#include <kactioncollection.h>
 
 // Local includes
 
@@ -652,9 +651,7 @@ void OnlineVersionDlg::slotRunInstaller()
 
     if (dApp)
     {
-        QList<QAction*> lst = dApp->actionCollection()->actions();
-
-        foreach (QAction* const act, lst)
+        foreach (QAction* const act, dApp->allActions())
         {
             if (act->menuRole() == QAction::QuitRole)
             {
@@ -669,6 +666,7 @@ void OnlineVersionDlg::slotRunInstaller()
     close();
 
     // Now close main window application after 3 secondes to wait Installer to start in background.
+    // See bug #437813.
 
     if (quit)
     {
