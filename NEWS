@@ -364,4 +364,5 @@ BUGFIXES:
 341 ==> 397999 - Sort thumbs by date. causes issues.
 342 ==> 437736 - digiKam 7.3 doesn't have a Translators tab in its About dialogue anymore.
 343 ==> 438093 - digiKam po file no longer has any information about translators.
-344 ==> 
+344 ==> 438120 - Geolocation data not being saved.
+345 ==> 
