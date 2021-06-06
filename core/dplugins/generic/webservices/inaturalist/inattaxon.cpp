@@ -36,7 +36,7 @@ public:
     Private()
         : id       (-1),
           parentId (-1),
-          rankLevel(-1)
+          rankLevel(-1.0)
     {
     }
 
@@ -44,7 +44,7 @@ public:
     int          parentId;
     QString      name;
     QString      rank;
-    int          rankLevel;
+    double       rankLevel;
     QString      commonName;
     QString      matchedTerm;
     QUrl         squareUrl;
@@ -55,7 +55,7 @@ Taxon::Taxon(int id,
              int parentId,
              const QString& name,
              const QString& rank,
-             int rankLevel,
+             double rankLevel,
              const QString& commonName,
              const QString& matchedTerm,
              const QUrl& squareUrl,
@@ -166,7 +166,7 @@ const QString& Taxon::rank() const
     return d->rank;
 }
 
-int Taxon::rankLevel() const
+double Taxon::rankLevel() const
 {
     return d->rankLevel;
 }

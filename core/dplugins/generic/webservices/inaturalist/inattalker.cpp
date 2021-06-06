@@ -131,7 +131,7 @@ static Taxon parseTaxon(const QJsonObject& taxon)
 {
     int id        = -1;
     int parentId  = -1;
-    int rankLevel = -1;
+    double rankLevel = -1.0;
     QString name;
     QString rank;
     QString commonName;
@@ -161,7 +161,7 @@ static Taxon parseTaxon(const QJsonObject& taxon)
 
     if (taxon.contains(RANK_LEVEL))
     {
-        rankLevel = taxon[RANK_LEVEL].toInt();
+        rankLevel = taxon[RANK_LEVEL].toDouble();
     }
 
     if      (taxon.contains(PREFERRED_COMMON_NAME))
