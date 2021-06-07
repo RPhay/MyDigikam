@@ -556,7 +556,7 @@ void AssignNameWidget::Private::updateContents()
 
     if (ignoredLabel)
     {
-        ignoredLabel->setText(i18nc("@label", "Ignored"));
+        ignoredLabel->setText(i18nc("List of detected faces that need not be recognized", "Ignored"));
     }
 }
 
