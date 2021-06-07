@@ -930,7 +930,7 @@ class Q_DECL_HIDDEN AbstractCheckableAlbumModel::Private
 public:
 
     explicit Private()
-        : extraFlags(nullptr),
+        : extraFlags(),
           rootIsCheckable(true),
           addExcludeTristate(false),
           staticVectorContainingCheckStateRole(1, Qt::CheckStateRole)
