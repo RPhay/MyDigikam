@@ -79,9 +79,9 @@ FilterAction IccTransformFilter::filterAction()
     FilterAction action(FilterIdentifier(), CurrentVersion());
     action.setDisplayableName(DisplayableName());
 
-    action.addParameter(QLatin1String("renderingIntent"), m_transform.intent());
-    action.addParameter(QLatin1String("blackPointCompensation"), m_transform.isUsingBlackPointCompensation());
-    action.addParameter(QLatin1String("inputProfileDescription"), m_transform.effectiveInputProfile().description());
+    action.addParameter(QLatin1String("renderingIntent"),          m_transform.intent());
+    action.addParameter(QLatin1String("blackPointCompensation"),   m_transform.isUsingBlackPointCompensation());
+    action.addParameter(QLatin1String("inputProfileDescription"),  m_transform.effectiveInputProfile().description());
     action.addParameter(QLatin1String("outputProfileDescription"), m_transform.outputProfile().description());
 
     return action;
