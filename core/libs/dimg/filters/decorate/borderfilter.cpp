@@ -549,24 +549,24 @@ FilterAction BorderFilter::filterAction()
     FilterAction action(FilterIdentifier(), CurrentVersion());
     action.setDisplayableName(DisplayableName());
 
-    action.setParameter(QLatin1String("borderPath"),            d->settings.borderPath);
-    action.setParameter(QLatin1String("borderPercent"),         d->settings.borderPercent);
-    action.setParameter(QLatin1String("borderType"),            d->settings.borderType);
-    action.setParameter(QLatin1String("borderWidth1"),          d->settings.borderWidth1);
-    action.setParameter(QLatin1String("borderWidth2"),          d->settings.borderWidth2);
-    action.setParameter(QLatin1String("borderWidth3"),          d->settings.borderWidth3);
-    action.setParameter(QLatin1String("borderWidth4"),          d->settings.borderWidth4);
-    action.setParameter(QLatin1String("preserveAspectRatio"),   d->settings.preserveAspectRatio);
-    action.setParameter(QLatin1String("orgHeight"),             d->settings.orgHeight);
-    action.setParameter(QLatin1String("orgWidth"),              d->settings.orgWidth);
+    action.addParameter(QLatin1String("borderPath"), d->settings.borderPath);
+    action.addParameter(QLatin1String("borderPercent"), d->settings.borderPercent);
+    action.addParameter(QLatin1String("borderType"), d->settings.borderType);
+    action.addParameter(QLatin1String("borderWidth1"), d->settings.borderWidth1);
+    action.addParameter(QLatin1String("borderWidth2"), d->settings.borderWidth2);
+    action.addParameter(QLatin1String("borderWidth3"), d->settings.borderWidth3);
+    action.addParameter(QLatin1String("borderWidth4"), d->settings.borderWidth4);
+    action.addParameter(QLatin1String("preserveAspectRatio"), d->settings.preserveAspectRatio);
+    action.addParameter(QLatin1String("orgHeight"), d->settings.orgHeight);
+    action.addParameter(QLatin1String("orgWidth"), d->settings.orgWidth);
 
-    action.setParameter(QLatin1String("solidColor"),            colorToString(d->settings.solidColor));
-    action.setParameter(QLatin1String("niepceBorderColor"),     colorToString(d->settings.niepceBorderColor));
-    action.setParameter(QLatin1String("niepceLineColor"),       colorToString(d->settings.niepceLineColor));
-    action.setParameter(QLatin1String("bevelUpperLeftColor"),   colorToString(d->settings.bevelUpperLeftColor));
-    action.setParameter(QLatin1String("bevelLowerRightColor"),  colorToString(d->settings.bevelLowerRightColor));
-    action.setParameter(QLatin1String("decorativeFirstColor"),  colorToString(d->settings.decorativeFirstColor));
-    action.setParameter(QLatin1String("decorativeSecondColor"), colorToString(d->settings.decorativeSecondColor));
+    action.addParameter(QLatin1String("solidColor"), colorToString(d->settings.solidColor));
+    action.addParameter(QLatin1String("niepceBorderColor"), colorToString(d->settings.niepceBorderColor));
+    action.addParameter(QLatin1String("niepceLineColor"), colorToString(d->settings.niepceLineColor));
+    action.addParameter(QLatin1String("bevelUpperLeftColor"), colorToString(d->settings.bevelUpperLeftColor));
+    action.addParameter(QLatin1String("bevelLowerRightColor"), colorToString(d->settings.bevelLowerRightColor));
+    action.addParameter(QLatin1String("decorativeFirstColor"), colorToString(d->settings.decorativeFirstColor));
+    action.addParameter(QLatin1String("decorativeSecondColor"), colorToString(d->settings.decorativeSecondColor));
 
     return action;
 }
