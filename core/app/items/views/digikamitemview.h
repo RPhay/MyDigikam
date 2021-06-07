@@ -83,9 +83,9 @@ public Q_SLOTS:
     void removeFaces(const QList<QModelIndex>& indexes);
 
     /**
-     * Ignored Face back to Unconfirmed face.
+     * Ignored Face back to Unknown face.
      */
-    void unconfirmFaces(const QList<QModelIndex>& indexes);
+    void unknownFaces(const QList<QModelIndex>& indexes);
 
     /**
      * This slot is connected to the reject signal of

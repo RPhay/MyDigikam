@@ -58,14 +58,14 @@ public:
 Q_SIGNALS:
 
     void confirmFaces(const QList<QModelIndex>& indexes, int tagId);
-    void unconfirmFaces(const QList<QModelIndex>& indexes);
+    void unknownFaces(const QList<QModelIndex>& indexes);
     void removeFaces(const QList<QModelIndex>& indexes);
 
 protected Q_SLOTS:
 
     void slotAssigned(const TaggingAction& action, const ItemInfo&, const QVariant& faceIdentifier);
-    void slotUnconfirmed(const ItemInfo&, const QVariant& faceIdentifier);
     void slotRejected(const ItemInfo&, const QVariant& faceIdentifier);
+    void slotUnknown(const ItemInfo&, const QVariant& faceIdentifier);
 
 protected:
 
