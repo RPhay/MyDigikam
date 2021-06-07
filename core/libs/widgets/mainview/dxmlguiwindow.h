@@ -151,6 +151,11 @@ public:
      */
     bool fullScreenIsActive() const;
 
+    /**
+     * Return all actions from internal collection.
+     */
+    QList<QAction*> allActions() const;
+
 public:
 
     /**

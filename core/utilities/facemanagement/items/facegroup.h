@@ -138,6 +138,7 @@ protected Q_SLOTS:
     void slotAssigned(const TaggingAction& action, const ItemInfo& info, const QVariant& faceIdentifier);
     void slotRejected(const ItemInfo& info, const QVariant& faceIdentifier);
     void slotLabelClicked(const ItemInfo& info, const QVariant& faceIdentifier);
+    void slotIgnoredClicked(const ItemInfo& info, const QVariant& faceIdentifier);
     void slotAddItemStarted(const QPointF& pos);
     void slotAddItemMoving(const QRectF& rect);
     void slotAddItemFinished(const QRectF& rect);

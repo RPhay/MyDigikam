@@ -27,6 +27,7 @@
 
 #include <QUrl>
 #include <QTimer>
+#include <QAction>
 #include <QList>
 #include <QFile>
 #include <QFont>
@@ -643,8 +644,16 @@ void OnlineVersionDlg::slotRunInstaller()
         return;
     }
 
+    // Close this dialog
+
     close();
-    QTimer::singleShot(3000, qApp, SLOT(quit()));
+
+    // Now close main window application after 3 secondes to wait Installer to start in background.
+    // See bug #437813.
+
+    qCDebug(DIGIKAM_GENERAL_LOG) << "Call to close all main windows";
+
+    QTimer::singleShot(3000, qApp, SLOT(closeAllWindows()));
 
 #endif
 

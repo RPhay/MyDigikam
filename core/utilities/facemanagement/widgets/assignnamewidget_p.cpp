@@ -182,13 +182,12 @@ void AssignNameWidget::Private::checkWidgets()
             if (!confirmButton)
             {
                 confirmButton = createToolButton(QIcon::fromTheme(QLatin1String("dialog-ok-apply")), i18nc("@action", "OK"));
+                confirmButton->setToolTip(i18nc("@info:tooltip", "Confirm that the selected person is shown here"));
 
                 if (mode == UnconfirmedEditMode)
                 {
                     confirmButton->setText(i18nc("@action", "Confirm"));
                 }
-
-                confirmButton->setToolTip(i18nc("@info:tooltip", "Confirm that the selected person is shown here"));
 
                 q->connect(confirmButton, SIGNAL(clicked()),
                            q, SLOT(slotConfirm()));
@@ -197,7 +196,7 @@ void AssignNameWidget::Private::checkWidgets()
             if (!rejectButton)
             {
                 rejectButton = createToolButton(QIcon::fromTheme(QLatin1String("list-remove")), i18nc("@action", "Remove"));
-                rejectButton->setToolTip(i18nc("@info:tooltip", "Reject this suggestion"));
+                rejectButton->setToolTip(i18nc("@info:tooltip", "Remove this face region"));
 
                 q->connect(rejectButton, SIGNAL(clicked()),
                            q, SLOT(slotReject()));
@@ -208,19 +207,33 @@ void AssignNameWidget::Private::checkWidgets()
 
         case IgnoredMode:
         {
-            if (!confirmButton)
+            if (layoutMode == Compact)
             {
-                confirmButton = createToolButton(QIcon::fromTheme(QLatin1String("dialog-ok-apply")), i18nc("@action", "OK"));
-                confirmButton->setToolTip(i18nc("@info:tooltip", "Unmark this face as Ignored"));
+                if (!confirmButton)
+                {
+                    confirmButton = createToolButton(QIcon::fromTheme(QLatin1String("edit-undo")), i18nc("@action", "OK"));
+                    confirmButton->setToolTip(i18nc("@info:tooltip", "Unmark this face as Ignored"));
 
-                q->connect(confirmButton, SIGNAL(clicked()),
-                           q, SLOT(slotReject()));
+                    q->connect(confirmButton, SIGNAL(clicked()),
+                               q, SLOT(slotIgnoredClicked()));
+                }
+
+                if (!rejectButton)
+                {
+                    rejectButton = createToolButton(QIcon::fromTheme(QLatin1String("list-remove")), i18nc("@action", "Remove"));
+                    rejectButton->setToolTip(i18nc("@info:tooltip", "Remove this face region"));
+
+                    q->connect(rejectButton, SIGNAL(clicked()),
+                               q, SLOT(slotReject()));
+                }
             }
-
-            if (!rejectButton)
+            else
             {
-                rejectButton = createToolButton(QIcon::fromTheme(QLatin1String("list-remove")), i18nc("@action", "Reject"));
-                rejectButton->setEnabled(false);
+                clickLabel = new DClickLabel;
+                clickLabel->setAlignment(Qt::AlignCenter);
+
+                connect(clickLabel, SIGNAL(activated()),
+                        q, SLOT(slotIgnoredClicked()));
             }
 
             break;
@@ -233,6 +246,7 @@ void AssignNameWidget::Private::checkWidgets()
 
             connect(clickLabel, SIGNAL(activated()),
                     q, SLOT(slotLabelClicked()));
+
             break;
         }
     }
@@ -334,12 +348,20 @@ void AssignNameWidget::Private::updateLayout()
 
         case IgnoredMode:
         {
-            layout->addWidget(confirmButton, 0, 0);
-            layout->addWidget(rejectButton,  0, 1);
+            if (layoutMode == Compact)
+            {
+                layout->addWidget(confirmButton, 0, 0);
+                layout->addWidget(rejectButton,  0, 1);
 
-            confirmButton->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Minimum);
-            rejectButton->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Minimum);
-            setToolButtonStyles(Qt::ToolButtonIconOnly);
+                confirmButton->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Minimum);
+                rejectButton->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Minimum);
+                setToolButtonStyles(Qt::ToolButtonIconOnly);
+                layoutAddTagsWidget(true, 0);
+            }
+            else
+            {
+                layout->addWidget(clickLabel, 0, 0);
+            }
 
             break;
         }
@@ -347,6 +369,7 @@ void AssignNameWidget::Private::updateLayout()
         case ConfirmedMode:
         {
             layout->addWidget(clickLabel, 0, 0);
+
             break;
         }
     }
@@ -448,7 +471,8 @@ void AssignNameWidget::Private::updateVisualStyle()
                     "  color: white; background-color: transparent; border: none; "
                     "}"
                 ).arg(styleSheetFontDescriptor(appFont))
-                 .arg((mode == ConfirmedMode) ? QLatin1String("8") : QLatin1String("4"))
+                 .arg(((mode == ConfirmedMode) || (mode == IgnoredMode)) ? QLatin1String("8")
+                                                                         : QLatin1String("4"))
             );
 
             break;
@@ -465,7 +489,7 @@ void AssignNameWidget::Private::updateVisualStyle()
 
                     "QFrame#assignNameWidget {"
                     "  background-color: "
-                    "    qradialgradient(cx:0, cy:0, fx:0, fy:0, radius: 1, stop:0 rgba(%2, %3, %4, 255), "
+                    "    qradialgradient(cx:0.5 cy:0.5, fx:0, fy:0, radius: 1, stop:0 rgba(%2, %3, %4, 255), "
                     "                    stop:0.8 rgba(%2, %3, %4, 200), stop:1 rgba(%2, %3, %4, 0));"
                     "  border: none; "
                     "  border-radius: 8px; "
@@ -507,7 +531,7 @@ void AssignNameWidget::Private::setAddTagsWidgetContents(T* const widget)
 
 void AssignNameWidget::Private::updateContents()
 {
-    if (!isValid() || (mode == AssignNameWidget::IgnoredMode))
+    if (!isValid())
     {
         return;
     }
@@ -523,13 +547,26 @@ void AssignNameWidget::Private::updateContents()
 
     if (clickLabel)
     {
-        clickLabel->setText(currentTag ? currentTag->title()
-                                       : QString());
+        if (mode != IgnoredMode)
+        {
+            clickLabel->setText(currentTag ? currentTag->title()
+                                           : QString());
+        }
+        else
+        {
+            int tagId = FaceTags::ignoredPersonTagId();
+            clickLabel->setText(FaceTags::faceNameForTag(tagId));
+        }
     }
 }
 
 void AssignNameWidget::Private::updateRejectButtonTooltip()
 {
+    if (!rejectButton)
+    {
+        return;
+    }
+
     FaceTagsIface face = FaceTagsIface::fromVariant(faceIdentifier);
 
     if      (face.type() == FaceTagsIface::UnknownName)

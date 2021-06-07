@@ -112,7 +112,7 @@ static QJsonObject parseJsonResponse(const QByteArray& data)
     if (err.error != QJsonParseError::NoError)
     {
         qCWarning(DIGIKAM_WEBSERVICES_LOG) << "parseJsonResponse: Failed to parse json response:"
-                   << err.errorString();
+                                           << err.errorString();
 
         return QJsonObject();
     }
@@ -129,9 +129,9 @@ static QJsonObject parseJsonResponse(const QByteArray& data)
 
 static Taxon parseTaxon(const QJsonObject& taxon)
 {
-    int id        = -1;
-    int parentId  = -1;
-    int rankLevel = -1;
+    int id           = -1;
+    int parentId     = -1;
+    double rankLevel = -1.0;
     QString name;
     QString rank;
     QString commonName;
@@ -161,7 +161,7 @@ static Taxon parseTaxon(const QJsonObject& taxon)
 
     if (taxon.contains(RANK_LEVEL))
     {
-        rankLevel = taxon[RANK_LEVEL].toInt();
+        rankLevel = taxon[RANK_LEVEL].toDouble();
     }
 
     if      (taxon.contains(PREFERRED_COMMON_NAME))
@@ -535,12 +535,13 @@ public:
     {
     }
 
-    void reportError(INatTalker& talker, int error,
+    void reportError(INatTalker&, int,
                      const QString& errorString) const override
     {
+        // A debug message suffices when an image for a taxon cannot be loaded.
+
         qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Url" << m_url << "error:"
                                          << errorString;
-        Request::reportError(talker, error, errorString);
     }
 
     void parseResponse(INatTalker& talker,
@@ -627,6 +628,7 @@ void INatTalker::taxonAutoCompletions(const QString& partialName)
     {
         qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Taxon auto-completions for"
                                          <<  partialName << "found in cache.";
+
         emit signalTaxonAutoCompletions(d->cachedAutoCompletions.
                                         value(partialName));
         return;
@@ -634,10 +636,10 @@ void INatTalker::taxonAutoCompletions(const QString& partialName)
 
     QUrl url(d->apiUrl + QLatin1String("taxa/autocomplete"));
     QUrlQuery query;
-    query.addQueryItem(QLatin1String("q"), partialName);
+    query.addQueryItem(QLatin1String("q"),         partialName);
     query.addQueryItem(QLatin1String("is_active"), QLatin1String("true"));
-    query.addQueryItem(QLatin1String("per_page"), QString::number(12));
-    query.addQueryItem(QLatin1String("locale"), locale.name());
+    query.addQueryItem(QLatin1String("per_page"),  QString::number(12));
+    query.addQueryItem(QLatin1String("locale"),    locale.name());
     url.setQuery(query.query());
 
     QNetworkRequest netRequest(url);
@@ -657,9 +659,9 @@ class NearbyPlacesRequest : public Request
 public:
 
     NearbyPlacesRequest(double latitude, double longitude, const QString& query)
-        : m_latitude(latitude),
+        : m_latitude (latitude),
           m_longitude(longitude),
-          m_query(query)
+          m_query    (query)
     {
     }
 
@@ -710,7 +712,7 @@ private:
         }
 
         Place(const QString& n, double ba)
-            : m_name(n),
+            : m_name    (n),
               m_bboxArea(ba)
         {
         }
@@ -737,10 +739,10 @@ void INatTalker::nearbyPlaces(double latitude, double longitude)
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Requesting nearby places for lat"
                                      << lat << "lon" << lng;
     QUrlQuery query;
-    query.addQueryItem(QLatin1String("nelat"), lat);
-    query.addQueryItem(QLatin1String("nelng"), lng);
-    query.addQueryItem(QLatin1String("swlat"), lat);
-    query.addQueryItem(QLatin1String("swlng"), lng);
+    query.addQueryItem(QLatin1String("nelat"),    lat);
+    query.addQueryItem(QLatin1String("nelng"),    lng);
+    query.addQueryItem(QLatin1String("swlat"),    lat);
+    query.addQueryItem(QLatin1String("swlng"),    lng);
     query.addQueryItem(QLatin1String("per_page"), QString::number(100));
     url.setQuery(query.query());
 
@@ -904,6 +906,7 @@ void INatTalker::closestObservation(uint taxon, double latitude,
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Requesting closest observation of"
                                      << taxon << "to" << latitude << longitude
                                      << "with radius" << radiusKm << "km.";
+
     QUrl url(d->apiUrl + QLatin1String("observations"));
 
     QUrlQuery query;
@@ -943,7 +946,6 @@ void INatTalker::closestObservation(uint taxon, double latitude,
                                                                                : origQuery));
 }
 
-
 /**
  *  get taxon suggestions for an image
  */
@@ -953,7 +955,8 @@ class ComputerVisionRequest : public Request
 public:
 
     ComputerVisionRequest(const QString& imgPath, const QString& tmpFile)
-        : m_imagePath(imgPath), m_tmpFilePath(tmpFile)
+        : m_imagePath  (imgPath),
+          m_tmpFilePath(tmpFile)
     {
     }
 
@@ -1244,8 +1247,7 @@ void INatTalker::uploadNextPhoto(const PhotoUploadRequest& request)
         }
     }
 
-    QHttpMultiPart* multiPart = getMultiPart(parameters, QLatin1String("file"),
-                                path);
+    QHttpMultiPart* multiPart  = getMultiPart(parameters, QLatin1String("file"), path);
     QUrl url(d->apiUrl + QLatin1String("observation_photos"));
     QNetworkRequest netRequest(url);
     netRequest.setRawHeader("Authorization", request.m_apiKey.toLatin1());

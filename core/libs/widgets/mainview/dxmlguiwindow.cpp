@@ -993,4 +993,9 @@ void DXmlGuiWindow::setupIconTheme()
     }
 }
 
+QList<QAction*> DXmlGuiWindow::allActions() const
+{
+    return (actionCollection()->actions());
+}
+
 } // namespace Digikam

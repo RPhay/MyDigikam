@@ -113,7 +113,8 @@ void AssignNameWidget::setMode(Mode mode)
      * same mode is passed, because Unconfirmed and Unknown
      * Faces have the same mode but different Tooltips.
      */
-    if (mode == AssignNameWidget::UnconfirmedEditMode)
+    if ((d->layoutMode == Compact)                    &&
+        (mode == AssignNameWidget::UnconfirmedEditMode))
     {
         d->updateRejectButtonTooltip();
     }
@@ -239,7 +240,7 @@ void AssignNameWidget::setCurrentTag(TAlbum* album)
 {
     if (d->currentTag == album)
     {
-        if (d->clickLabel)
+        if (d->clickLabel && (d->mode != IgnoredMode))
         {
             d->clickLabel->setText(d->currentTag ? d->currentTag->title()
                                                  : QString());
@@ -282,6 +283,11 @@ void AssignNameWidget::slotActionSelected(const TaggingAction& action)
     }
 
     emit selected(action, d->info, d->faceIdentifier);
+}
+
+void AssignNameWidget::slotIgnoredClicked()
+{
+    emit ignoredClicked(d->info, d->faceIdentifier);
 }
 
 void AssignNameWidget::slotLabelClicked()

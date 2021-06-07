@@ -76,11 +76,16 @@ public Q_SLOTS:
     void confirmFaces(const QList<QModelIndex>& indexes, int tagId);
 
     /**
-     * Removes the Face from the Database.
-     * You will have to run Facial Detection again,
+     * Removes the face from the database.
+     * You will have to run face detection again,
      * to recover the face.
      */
     void removeFaces(const QList<QModelIndex>& indexes);
+
+    /**
+     * Ignored Face back to Unknown face.
+     */
+    void unknownFaces(const QList<QModelIndex>& indexes);
 
     /**
      * This slot is connected to the reject signal of
@@ -90,7 +95,7 @@ public Q_SLOTS:
      * it will mark the face as Ignored.
      *
      * If reject is done on Unconfirmed suggestions,
-     * the Suggestion is rejected and the face is
+     * the suggestion is rejected and the face is
      * marked as Unknown.
      */
     void rejectFaces(const QList<QModelIndex>& indexes);

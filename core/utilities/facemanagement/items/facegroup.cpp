@@ -485,6 +485,17 @@ void FaceGroup::slotLabelClicked(const ItemInfo&, const QVariant& faceIdentifier
     }
 }
 
+void FaceGroup::slotIgnoredClicked(const ItemInfo&, const QVariant& faceIdentifier)
+{
+    QList<QVariant> faceList(faceIdentifier.toList());
+
+    if (faceList.size() == 5)
+    {
+        FaceItem* const item = d->items[faceList[4].toInt()];
+        item->switchMode(AssignNameWidget::UnconfirmedEditMode);
+    }
+}
+
 void FaceGroup::startAutoSuggest()
 {
     if (!d->autoSuggest)
