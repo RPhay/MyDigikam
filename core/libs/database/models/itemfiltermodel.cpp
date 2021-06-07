@@ -377,13 +377,10 @@ QVariant ItemFilterModel::data(const QModelIndex& index, int role) const
                 return i18nc("@item: filter model", "No face");
             }
 
-            if      (face.type() == FaceTagsIface::UnknownName)
+            if      ((face.type() == FaceTagsIface::UnknownName) ||
+                     (face.type() == FaceTagsIface::IgnoredName))
             {
-                return i18nc("@item: filter model", "Unknown");
-            }
-            else if (face.type() == FaceTagsIface::IgnoredName)
-            {
-                return i18nc("@item: filter model", "Ignored");
+                return FaceTags::faceNameForTag(face.tagId());
             }
             else if (face.type() == FaceTagsIface::ConfirmedName)
             {
