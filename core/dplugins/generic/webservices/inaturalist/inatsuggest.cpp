@@ -145,15 +145,16 @@ void SuggestTaxonCompletion::setTalker(INatTalker* const inatTalker)
     d->talker = inatTalker;
 
     connect(d->talker, SIGNAL(signalTaxonAutoCompletions(AutoCompletions)),
-            SLOT(slotTaxonAutoCompletions(AutoCompletions)));
+            this, SLOT(slotTaxonAutoCompletions(AutoCompletions)));
 
     connect(d->talker, SIGNAL(signalComputerVisionResults(ImageScores)),
-            SLOT(slotComputerVisionResults(ImageScores)));
+            this, SLOT(slotComputerVisionResults(ImageScores)));
 
-    connect(d->editor, SIGNAL(inFocus()), SLOT(slotInFocus()));
+    connect(d->editor, SIGNAL(inFocus()),
+            this, SLOT(slotInFocus()));
 
     connect(d->talker, SIGNAL(signalLoadUrlSucceeded(QUrl,QByteArray)),
-            SLOT(slotImageLoaded(QUrl,QByteArray)));
+            this, SLOT(slotImageLoaded(QUrl,QByteArray)));
 }
 
 void SuggestTaxonCompletion::slotInFocus()
@@ -252,7 +253,7 @@ void SuggestTaxonCompletion::showCompletion(const Completions& choices)
     d->popup->clear();
     d->popup->setIconSize(QSize(75, 75));
     d->fromVision = choices.m_fromVision;
-    int columns = choices.m_taxa.isEmpty() ? 1 : 2;
+    int columns   = choices.m_taxa.isEmpty() ? 1 : 2;
     d->popup->setColumnCount(columns);
     d->url2item.clear();
 
@@ -323,7 +324,7 @@ void SuggestTaxonCompletion::slotDoneCompletion()
         return;
     }
 
-    QTreeWidgetItem* item = d->popup->currentItem();
+    QTreeWidgetItem* const item = d->popup->currentItem();
 
     if (item)
     {
