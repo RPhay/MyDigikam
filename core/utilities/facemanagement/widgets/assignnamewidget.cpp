@@ -240,7 +240,7 @@ void AssignNameWidget::setCurrentTag(TAlbum* album)
 {
     if (d->currentTag == album)
     {
-        if (d->clickLabel)
+        if (d->clickLabel && (d->mode != IgnoredMode))
         {
             d->clickLabel->setText(d->currentTag ? d->currentTag->title()
                                                  : QString());

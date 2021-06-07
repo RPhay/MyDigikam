@@ -115,7 +115,6 @@ public:
     QToolButton*               confirmButton;
     QToolButton*               rejectButton;
     DClickLabel*               clickLabel;
-    DClickLabel*               ignoredLabel;
 
     bool                       modelsGiven;
     TagModel*                  tagModel;

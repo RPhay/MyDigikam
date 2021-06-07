@@ -38,7 +38,6 @@ AssignNameWidget::Private::Private(AssignNameWidget* const q)
       confirmButton   (nullptr),
       rejectButton    (nullptr),
       clickLabel      (nullptr),
-      ignoredLabel    (nullptr),
       modelsGiven     (false),
       tagModel        (nullptr),
       tagFilterModel  (nullptr),
@@ -86,9 +85,6 @@ void AssignNameWidget::Private::clearWidgets()
 
     delete clickLabel;
     clickLabel    = nullptr;
-
-    delete ignoredLabel;
-    ignoredLabel  = nullptr;
 }
 
 QToolButton* AssignNameWidget::Private::createToolButton(const QIcon& icon,
@@ -233,10 +229,10 @@ void AssignNameWidget::Private::checkWidgets()
             }
             else
             {
-                ignoredLabel = new DClickLabel;
-                ignoredLabel->setAlignment(Qt::AlignCenter);
+                clickLabel = new DClickLabel;
+                clickLabel->setAlignment(Qt::AlignCenter);
 
-                connect(ignoredLabel, SIGNAL(activated()),
+                connect(clickLabel, SIGNAL(activated()),
                         q, SLOT(slotIgnoredClicked()));
             }
 
@@ -364,7 +360,7 @@ void AssignNameWidget::Private::updateLayout()
             }
             else
             {
-                layout->addWidget(ignoredLabel, 0, 0);
+                layout->addWidget(clickLabel, 0, 0);
             }
 
             break;
@@ -551,13 +547,15 @@ void AssignNameWidget::Private::updateContents()
 
     if (clickLabel)
     {
-        clickLabel->setText(currentTag ? currentTag->title()
-                                       : QString());
-    }
-
-    if (ignoredLabel)
-    {
-        ignoredLabel->setText(i18nc("List of detected faces that need not be recognized", "Ignored"));
+        if (mode != IgnoredMode)
+        {
+            clickLabel->setText(currentTag ? currentTag->title()
+                                           : QString());
+        }
+        else
+        {
+            clickLabel->setText(i18nc("List of detected faces that need not be recognized", "Ignored"));
+        }
     }
 }
 
