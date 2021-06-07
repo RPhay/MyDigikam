@@ -79,10 +79,10 @@ FilterAction IccTransformFilter::filterAction()
     FilterAction action(FilterIdentifier(), CurrentVersion());
     action.setDisplayableName(DisplayableName());
 
-    action.setParameter(QLatin1String("renderingIntent"),          m_transform.intent());
-    action.setParameter(QLatin1String("blackPointCompensation"),   m_transform.isUsingBlackPointCompensation());
-    action.setParameter(QLatin1String("inputProfileDescription"),  m_transform.effectiveInputProfile().description());
-    action.setParameter(QLatin1String("outputProfileDescription"), m_transform.outputProfile().description());
+    action.addParameter(QLatin1String("renderingIntent"), m_transform.intent());
+    action.addParameter(QLatin1String("blackPointCompensation"), m_transform.isUsingBlackPointCompensation());
+    action.addParameter(QLatin1String("inputProfileDescription"), m_transform.effectiveInputProfile().description());
+    action.addParameter(QLatin1String("outputProfileDescription"), m_transform.outputProfile().description());
 
     return action;
 }
