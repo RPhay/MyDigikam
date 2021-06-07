@@ -161,9 +161,6 @@ public:
     }
 
     /// Sets parameter, removing all other values for the same key
-    void setParameter(const QString& key, const QVariant& value);
-
-    /// Adds a parameter, possibly keeping existing parameters with the same key.
     void addParameter(const QString& key, const QVariant& value);
 
     /// Removes all parameters for key
@@ -171,9 +168,6 @@ public:
 
     /// Clear all parameters
     void clearParameters();
-
-    /// Adds a set of parameters
-    void addParameters(const QHash<QString, QVariant>& params);
 
     /// Replaces parameters
     void setParameters(const QHash<QString, QVariant>& params);

@@ -142,19 +142,9 @@ QVariant& FilterAction::parameter(const QString& key)
     return m_params[key];
 }
 
-void FilterAction::setParameter(const QString& key, const QVariant& value)
-{
-    m_params.insert(key, value);
-}
-
 void FilterAction::addParameter(const QString& key, const QVariant& value)
 {
-    m_params.insertMulti(key, value);
-}
-
-void FilterAction::addParameters(const QHash<QString, QVariant>& params)
-{
-    m_params = m_params.unite(params);
+    m_params.insert(key, value);
 }
 
 void FilterAction::setParameters(const QHash<QString, QVariant>& params)
