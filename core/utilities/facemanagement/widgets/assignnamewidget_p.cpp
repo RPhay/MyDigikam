@@ -475,7 +475,8 @@ void AssignNameWidget::Private::updateVisualStyle()
                     "  color: white; background-color: transparent; border: none; "
                     "}"
                 ).arg(styleSheetFontDescriptor(appFont))
-                 .arg((mode == ConfirmedMode) ? QLatin1String("8") : QLatin1String("4"))
+                 .arg(((mode == ConfirmedMode) || (mode == IgnoredMode)) ? QLatin1String("8")
+                                                                         : QLatin1String("4"))
             );
 
             break;
