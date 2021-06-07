@@ -124,8 +124,7 @@ public:
     /**
      * Access parameters.
      * A parameters is a key -> value pair.
-     * Keys need not be unique, but you can decide to use unique keys.
-     * There are accessors for both contexts.
+     * Keys need to be unique.
      */
     bool                           hasParameters()                  const;
     const QHash<QString,QVariant>& parameters()                     const;
