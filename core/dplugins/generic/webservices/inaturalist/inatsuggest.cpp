@@ -293,7 +293,7 @@ void SuggestTaxonCompletion::showCompletion(const Completions& choices)
         auto item  = new QTreeWidgetItem(d->popup);
         QFont font = item->font(0);
         font.setBold(true);
-        item->setTextColor(0, QColor(Qt::red));
+        item->setForeground(0, QColor(Qt::red));
         item->setText(0, i18n("invalid name"));
         item->setFont(0, font);
     }
