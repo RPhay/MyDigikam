@@ -264,6 +264,7 @@ INatWindow::INatWindow(DInfoInterface* const iface,
             this, SLOT(slotMoreOptionsButton(bool)));
 
     d->apiTokenExpiresTimer.setSingleShot(true);
+
     connect(&d->apiTokenExpiresTimer, SIGNAL(timeout()),
             this, SLOT(slotApiTokenExpires()));
 
@@ -273,38 +274,40 @@ INatWindow::INatWindow(DInfoInterface* const iface,
 
     d->taxonPopup->setTalker(d->talker);
 
-    connect(d->talker, SIGNAL(signalBusy(bool)), SLOT(slotBusy(bool)));
+    connect(d->talker, SIGNAL(signalBusy(bool)),
+            this, SLOT(slotBusy(bool)));
 
     connect(d->talker, SIGNAL(signalLinkingSucceeded(QString,QString,QUrl)),
-            SLOT(slotLinkingSucceeded(QString,QString,QUrl)));
+            this, SLOT(slotLinkingSucceeded(QString,QString,QUrl)));
 
     connect(d->talker, SIGNAL(signalLinkingFailed(QString)),
-            SLOT(slotLinkingFailed(QString)));
+            this, SLOT(slotLinkingFailed(QString)));
 
     connect(d->talker, SIGNAL(signalLoadUrlSucceeded(QUrl,QByteArray)),
-            SLOT(slotLoadUrlSucceeded(QUrl,QByteArray)));
+            this, SLOT(slotLoadUrlSucceeded(QUrl,QByteArray)));
 
     connect(d->talker, SIGNAL(signalNearbyPlaces(QStringList)),
-            SLOT(slotNearbyPlaces(QStringList)));
+            this, SLOT(slotNearbyPlaces(QStringList)));
 
     connect(d->talker, SIGNAL(signalNearbyObservation(INatTalker::NearbyObservation)),
-            SLOT(slotNearbyObservation(INatTalker::NearbyObservation)));
+            this, SLOT(slotNearbyObservation(INatTalker::NearbyObservation)));
 
     connect(d->talker, SIGNAL(signalObservationCreated(INatTalker::PhotoUploadRequest)),
-            SLOT(slotObservationCreated(INatTalker::PhotoUploadRequest)));
+            this, SLOT(slotObservationCreated(INatTalker::PhotoUploadRequest)));
 
     connect(d->talker, SIGNAL(signalPhotoUploaded(INatTalker::PhotoUploadResult)),
-            SLOT(slotPhotoUploaded(INatTalker::PhotoUploadResult)));
+            this, SLOT(slotPhotoUploaded(INatTalker::PhotoUploadResult)));
 
     connect(d->talker, SIGNAL(signalObservationDeleted(int)),
-            SLOT(slotObservationDeleted(int)));
+            this, SLOT(slotObservationDeleted(int)));
 
     // -------------------------------------------------------------------------
 
     connect(d->changeUserButton, SIGNAL(clicked()),
-            SLOT(slotUserChangeRequest()));
+            this, SLOT(slotUserChangeRequest()));
 
-    connect(d->removeAccount, SIGNAL(clicked()), SLOT(slotRemoveAccount()));
+    connect(d->removeAccount, SIGNAL(clicked()),
+            this, SLOT(slotRemoveAccount()));
 
     // -------------------------------------------------------------------------
 
@@ -350,10 +353,12 @@ INatWindow::~INatWindow()
     delete d->authProgressDlg;
     delete d->talker;
     delete d->widget;
+
     if (d->xmpNameSpace)
     {
         DMetadata::unregisterXmpNameSpace(xmpNameSpaceURI);
     }
+
     delete d;
 }
 
@@ -450,7 +455,7 @@ void INatWindow::slotCancelClicked()
         d->inCancel = true;
         slotBusy(true);
         qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Cancel clicked; deleting "
-                                         "observation(s) being uploaded.";
+                                            "observation(s) being uploaded.";
         return;
     }
 
@@ -501,6 +506,7 @@ void INatWindow::writeSettings()
 {
     KSharedConfigPtr config = KSharedConfig::openConfig();
     QString groupName       = QString::fromLatin1("%1 %2 Export Settings").arg(d->serviceName, d->username);
+
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Group name is:" << groupName;
 
     if (QString::compare(QString::fromLatin1("%1 Export Settings").arg(d->serviceName), groupName) == 0)
@@ -773,10 +779,12 @@ void INatWindow::updateProgressBarMaximum(unsigned diff)
  */
 void INatWindow::slotUser1()
 {
-    if (d->imglst->imageUrls().isEmpty() || !d->latLonValid ||
-        d->inCancel ||
+    if (d->imglst->imageUrls().isEmpty()                          ||
+        !d->latLonValid                                           ||
+        d->inCancel                                               ||
         (d->imglst->imageUrls().count() > MAX_OBSERVATION_PHOTOS) ||
-        !d->observationDateTime.isValid() || !d->identification.isValid())
+        !d->observationDateTime.isValid()                         ||
+        !d->identification.isValid())
     {
         qCDebug(DIGIKAM_WEBSERVICES_LOG) << "NOT uploading observation.";
         return;
@@ -787,7 +795,7 @@ void INatWindow::slotUser1()
     // Create an observation.
 
     QString obsDateTime = d->observationDateTime.toString(Qt::ISODate) +
-                          QLatin1Char(' ') +
+                          QLatin1Char(' ')                             +
                           d->observationDateTime.timeZoneAbbreviation();
     QJsonObject params;
     params.insert(QLatin1String("observed_on_string"), QJsonValue(obsDateTime));
@@ -833,6 +841,7 @@ void INatWindow::slotUser1()
                                            d->imageQualitySpinBox->value());
     d->talker->createObservation(QJsonDocument(jsonObservation).toJson(),
                                  request);
+
     // Clear data, user can work on the next observation.
 
     d->imglst->listView()->clear();
@@ -846,6 +855,7 @@ void INatWindow::cancelUpload(const INatTalker::PhotoUploadRequest& request)
     updateProgressBarMaximum(1);
     updateProgressBarValue(request.m_images.count());
     d->talker->deleteObservation(request.m_observationId, request.m_apiKey);
+
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Upload canceled, deleting observation"
                                      << request.m_observationId;
 }
@@ -903,6 +913,7 @@ void INatWindow::slotPhotoUploaded(const INatTalker::PhotoUploadResult& result)
                 meta.registerXmpNameSpace(xmpNameSpaceURI, xmpNameSpacePrefix);
                 d->xmpNameSpace = true;
             }
+
             meta.setXmpTagString("Xmp.iNaturalist.observation",
                                  QString::number(request.m_observationId));
             meta.setXmpTagString("Xmp.iNaturalist.observationPhoto",
@@ -926,8 +937,8 @@ void INatWindow::slotPhotoUploaded(const INatTalker::PhotoUploadResult& result)
 
 void INatWindow::slotObservationDeleted(int observationId)
 {
-    qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Observation" << observationId <<
-                                     "deleted.";
+    qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Observation" << observationId
+                                     << "deleted.";
     updateProgressBarValue(1);
 
     if (!d->talker->stillUploading())
@@ -941,6 +952,7 @@ void INatWindow::slotNearbyPlaces(const QStringList& places)
 {
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Received" << places.count()
                                      << "nearby places.";
+
     QString selected = d->placesComboBox->currentText();
     d->placesComboBox->clear();
 
@@ -963,8 +975,10 @@ void INatWindow::slotNearbyObservation(const INatTalker::NearbyObservation&
     if (!nearbyObservation.isValid())
     {
         qCDebug(DIGIKAM_WEBSERVICES_LOG) << "No valid nearby observation.";
+
         d->closestKnownObservation->clear();
         d->closestKnownObservation->hide();
+
         return;
     }
 
@@ -988,6 +1002,7 @@ void INatWindow::slotNearbyObservation(const INatTalker::NearbyObservation&
                         i18n("observation") + QLatin1String("</a>"));
 
     QString obscured(QLatin1String(""));
+
     if (nearbyObservation.m_obscured)
     {
         obscured = QLatin1String("<em>") + i18nc("location", "obscured") +
@@ -1107,7 +1122,8 @@ void INatWindow::slotImageListChanged()
         item->setText(ItemLocation, gps);
     }
 
-    if ((d->latLonValid != latLonValid) || (d->latitude != latitude) ||
+    if ((d->latLonValid != latLonValid) ||
+        (d->latitude != latitude)       ||
         (d->longitude != longitude))
     {
         if (latLonValid)

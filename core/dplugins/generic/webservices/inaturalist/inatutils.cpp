@@ -59,7 +59,7 @@ QHttpMultiPart* getMultiPart(const QList<Parameter>& parameters,
     static const QString imageForm = QLatin1String("form-data; name=\"%1\"; "
                                                    "filename=\"%2\"");
 
-    QHttpMultiPart* const result = new QHttpMultiPart(QHttpMultiPart::FormDataType);
+    QHttpMultiPart* const result   = new QHttpMultiPart(QHttpMultiPart::FormDataType);
 
     for (auto param : parameters)
     {
@@ -100,7 +100,7 @@ QHttpMultiPart* getMultiPart(const QList<Parameter>& parameters,
  */
 static inline double deg2rad(double deg)
 {
-    return deg * M_PI / 180;
+    return (deg * M_PI / 180);
 }
 
 /**
@@ -253,7 +253,8 @@ QString localizedTaxonomicRank(const QString& rank)
 QString localizedLocation(double latitude, double longitude, int precision)
 {
     return (locale.toString(latitude, 'f', precision) +
-            QLatin1String(", ") + locale.toString(longitude, 'f', precision));
+            QLatin1String(", ")                       +
+            locale.toString(longitude, 'f', precision));
 }
 
 QString localizedDistance(double distMeters, char format, int precision)

@@ -257,7 +257,7 @@ void INatBrowserDlg::slotLoadingFinished(bool status)
 
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Url" << url << "loaded.";
 
-    if (status && (url == d->home.toString()))
+    if      (status && (url == d->home.toString()))
     {
 
 #ifdef HAVE_QWEBENGINE
@@ -277,7 +277,7 @@ void INatBrowserDlg::slotLoadingFinished(bool status)
 
     }
     else if (!d->username.isEmpty() &&
-             url == QLatin1String("https://www.inaturalist.org/users/sign_in"))
+             (url == QLatin1String("https://www.inaturalist.org/users/sign_in")))
     {
         QString script = QString(QLatin1String("document.getElementById(\"user_"
                                                "email\").value=\"%1\";")).
@@ -336,8 +336,11 @@ static QByteArray cookieKey(const QNetworkCookie& cookie)
 {
     static const char sep('\n');
 
-    return cookie.name() + sep + cookie.domain().toUtf8() +
-           sep + cookie.path().toUtf8();
+    return (cookie.name()            +
+            sep                      +
+            cookie.domain().toUtf8() +
+            sep                      +
+            cookie.path().toUtf8());
 }
 
 bool INatBrowserDlg::filterCookie(const QNetworkCookie& cookie,
