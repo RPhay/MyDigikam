@@ -554,7 +554,8 @@ void AssignNameWidget::Private::updateContents()
         }
         else
         {
-            clickLabel->setText(i18nc("List of detected faces that need not be recognized", "Ignored"));
+            int tagId = FaceTags::ignoredPersonTagId();
+            clickLabel->setText(FaceTags::faceNameForTag(tagId));
         }
     }
 }
