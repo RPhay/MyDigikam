@@ -366,5 +366,6 @@ BUGFIXES:
 343 ==> 438093 - digiKam po file no longer has any information about translators.
 344 ==> 438120 - Geolocation data not being saved.
 345 ==> 438134 - Unexpected behaviour of face overlay in preview window.
-346 ==> 
+346 ==> 438248 - W10 Sysinternals Process Monitor digikam Cannot create files digikam4.db-journal; digikam4.db-wal.
+347 ==> 
 
