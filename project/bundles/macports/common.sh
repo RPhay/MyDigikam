@@ -136,7 +136,7 @@ echo "Elaspsed time for script execution : $(($difftimelps / 3600 )) hours $((($
 
 ########################################################################
 # Set strings with detected MacOS info :
-#    $MAJOR_OSX_VERSION : detected MacOS major ID (as 10 or 11)
+#    $MAJOR_OSX_VERSION : detected MacOS major ID (as 10, 11, 12)
 #    $MINOR_OSX_VERSION : detected MacOS minor ID (as 7 for 10.7 or 10 for 10.10)
 #    $OSX_CODE_NAME     : detected MacOS code name
 OsxCodeName()
@@ -181,12 +181,11 @@ if   [[ $MAJOR_OSX_VERSION == "10" ]] ; then
         then OSX_CODE_NAME="Cheetah"
     fi
 
-elif [[ $MAJOR_OSX_VERSION == "11" ]] ; then
+elif [[ $MAJOR_OSX_VERSION == "11" ]]
+    then OSX_CODE_NAME="BigSur"
 
-    if   [[ $MINOR_OSX_VERSION == "0" ]]
-        then OSX_CODE_NAME="BigSur"
-    fi
-
+elif [[ $MAJOR_OSX_VERSION == "12" ]]
+    then OSX_CODE_NAME="Monterey"
 fi
 
 echo -e "---------- Detected OSX version $MAJOR_OSX_VERSION.$MINOR_OSX_VERSION and code name $OSX_CODE_NAME"
