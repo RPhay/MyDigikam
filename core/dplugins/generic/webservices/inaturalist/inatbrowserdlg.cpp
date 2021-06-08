@@ -94,8 +94,7 @@ class Q_DECL_HIDDEN INatBrowserDlg::Private
 public:
 
     explicit Private()
-        : home       (QLatin1String("https://www.inaturalist.org/users/"
-                                    "api_token")),
+        : home       (QLatin1String("https://www.inaturalist.org/users/api_token")),
           browser    (nullptr),
           toolbar    (nullptr),
           apiKeyFound(false)
@@ -139,10 +138,10 @@ INatBrowserDlg::INatBrowserDlg(const QString& username,
     cookieJar->deleteAllCookies();
 
     connect(cookieJar, SIGNAL(cookieAdded(QNetworkCookie)),
-            SLOT(slotCookieAdded(QNetworkCookie)));
+            this, SLOT(slotCookieAdded(QNetworkCookie)));
 
     connect(cookieJar, SIGNAL(cookieRemoved(QNetworkCookie)),
-            SLOT(slotCookieRemoved(QNetworkCookie)));
+            this, SLOT(slotCookieRemoved(QNetworkCookie)));
 
 #else
 
@@ -336,11 +335,13 @@ static QByteArray cookieKey(const QNetworkCookie& cookie)
 {
     static const char sep('\n');
 
-    return (cookie.name()            +
+    return (
+            cookie.name()            +
             sep                      +
             cookie.domain().toUtf8() +
             sep                      +
-            cookie.path().toUtf8());
+            cookie.path().toUtf8()
+           );
 }
 
 bool INatBrowserDlg::filterCookie(const QNetworkCookie& cookie,

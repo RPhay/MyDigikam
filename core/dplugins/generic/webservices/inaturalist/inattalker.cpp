@@ -392,7 +392,10 @@ int INatTalker::apiTokenExpiresIn() const
 
     uint time = (uint)(QDateTime::currentMSecsSinceEpoch() / 1000);
 
-    return ((d->apiTokenExpires <= time) ? -1 : (d->apiTokenExpires - time));
+    return (
+            (d->apiTokenExpires <= time) ? -1
+                                         : (d->apiTokenExpires - time)
+           );
 }
 
 /**
@@ -451,6 +454,7 @@ public:
             // save api token expiration
 
             talker.d->store->setValue(talker.d->keyExpires, QString::number(talker.d->apiTokenExpires));
+
             // save cookies
 
             QDateTime now(QDateTime::currentDateTime());
@@ -505,10 +509,10 @@ void INatTalker::userInfo(const QList<QNetworkCookie>& cookies)
 
     if (m_authProgressDlg)
     {
-        m_authProgressDlg->
-            setLabelText(QLatin1String("<font color=\"#74ac00\">") +
-                         i18n("iNaturalist") + QLatin1String("</font> ") +
-                         i18n("Login"));
+        m_authProgressDlg->setLabelText(QLatin1String("<font color=\"#74ac00\">") +
+                                        i18n("iNaturalist")                       +
+                                        QLatin1String("</font> ")                 +
+                                        i18n("Login"));
         m_authProgressDlg->setMaximum(2);
         m_authProgressDlg->setValue(1);
         m_authProgressDlg->show();
@@ -548,6 +552,7 @@ public:
                        const QByteArray& data) const override
     {
         talker.d->cachedLoadUrls.insert(m_url, data);
+
         emit talker.signalLoadUrlSucceeded(m_url, data);
     }
 

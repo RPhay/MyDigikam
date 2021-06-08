@@ -260,7 +260,9 @@ void SuggestTaxonCompletion::showCompletion(const Completions& choices)
     if (choices.m_commonAncestor.isValid())
     {
         const Taxon& taxon = choices.m_commonAncestor;
+
         Q_ASSERT(choices.m_fromVision);
+
         auto item          = new QTreeWidgetItem(d->popup);
         taxon2Item(taxon, item, i18n("We're pretty sure it's in this %1.",
                                      localizedTaxonomicRank(taxon.rank())));
@@ -425,6 +427,7 @@ void SuggestTaxonCompletion::slotComputerVisionResults(const ImageScores& scores
         if (score.getTaxon().ancestors().isEmpty())
         {
             Q_ASSERT(!completions.m_commonAncestor.isValid());
+
             completions.m_commonAncestor = score.getTaxon();
         }
         else
