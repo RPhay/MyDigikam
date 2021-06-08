@@ -98,7 +98,7 @@ void DImgFilterActionTest::testActions()
         filter.startFilterDirectly();
         qCDebug(DIGIKAM_TESTS_LOG) << filter.filterActions().size();
 
-        DImg img = filter.getTargetImage();
+        DImg img     = filter.getTargetImage();
 
         QVERIFY(ref.size() == img.size());
 
@@ -106,14 +106,16 @@ void DImgFilterActionTest::testActions()
         DImg diff(ref.width(), ref.height(), ref.sixteenBit());
         diff.fill(DColor(Qt::black));
 
-        for (uint x=0; x<ref.width(); ++x)
+        for (uint x = 0 ; x < ref.width() ; ++x)
         {
-            for (uint y=0; y<ref.height(); ++y)
+            for (uint y = 0 ; y < ref.height() ; ++y)
             {
                 DColor cref = ref.getPixelColor(x,y);
                 DColor cres = img.getPixelColor(x,y);
 
-                if (cref.red() != cres.red() || cref.green() != cres.green() || cref.blue() != cres.blue())
+                if ((cref.red()   != cres.red())   ||
+                    (cref.green() != cres.green()) ||
+                    (cref.blue()  != cres.blue()))
                 {
                     diff.setPixelColor(x,y, DColor(Qt::white));
                     isEqual = false;
@@ -151,6 +153,7 @@ void DImgFilterActionTest::showDiff(const DImg& orig, const DImg& ref,
 void DImgFilterActionTest::initTestCase()
 {
     // initialize Exiv2 before doing any multitasking
+
     MetaEngine::initializeExiv2();
     QDir dir(QFINDTESTDATA("../../dplugins/dimg"));
     qputenv("DK_PLUGIN_PATH", dir.canonicalPath().toUtf8());
@@ -165,6 +168,7 @@ void DImgFilterActionTest::cleanupTestCase()
 QString DImgFilterActionTest::originalImage()
 {
     // picture taken by me, downscaled to 100x66 and metadata stripped off
+
     return QString::fromUtf8("DSC00636.JPG");
 }
 

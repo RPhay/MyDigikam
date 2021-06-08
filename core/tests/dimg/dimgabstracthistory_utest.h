@@ -45,15 +45,15 @@ public:
 
     explicit DImgAbstractHistoryTest(QObject* const parent = nullptr);
 
-    HistoryImageId id1() const;
-    HistoryImageId id2() const;
-    HistoryImageId id3() const;
-    HistoryImageId id4() const;
+    HistoryImageId id1()                         const;
+    HistoryImageId id2()                         const;
+    HistoryImageId id3()                         const;
+    HistoryImageId id4()                         const;
 
-    FilterAction action1() const;
-    FilterAction action2() const;
+    FilterAction action1()                       const;
+    FilterAction action2()                       const;
 
-    DImageHistory history1() const;
+    DImageHistory history1()                     const;
 
     void applyFilters1();
     void applyFilters2();

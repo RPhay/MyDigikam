@@ -58,6 +58,7 @@ DImgAbstractHistoryTest::DImgAbstractHistoryTest(QObject* const parent)
 QString DImgAbstractHistoryTest::imagePath()
 {
     // NOTE: We will use same data dir than album model tests.
+
     return QFINDTESTDATA("../albummodel/data/");
 }
 
@@ -65,14 +66,15 @@ QDebug operator<<(QDebug dbg, const HistoryImageId& id)
 {
     dbg.nospace() << " { ";
     dbg.nospace() << id.m_uuid;
-    dbg.space() << id.m_type;
-    dbg.space() << id.m_fileName;
-    dbg.space() << id.m_filePath;
-    dbg.space() << id.m_creationDate;
-    dbg.space() << id.m_uniqueHash;
-    dbg.space() << id.m_fileSize;
-    dbg.space() << id.m_originalUUID;
+    dbg.space()   << id.m_type;
+    dbg.space()   << id.m_fileName;
+    dbg.space()   << id.m_filePath;
+    dbg.space()   << id.m_creationDate;
+    dbg.space()   << id.m_uniqueHash;
+    dbg.space()   << id.m_fileSize;
+    dbg.space()   << id.m_originalUUID;
     dbg.nospace() << " } ";
+
     return dbg;
 }
 
@@ -83,6 +85,7 @@ HistoryImageId DImgAbstractHistoryTest::id1() const
     id.setFileName(QLatin1String("file1.jpg"));
     id.setPathOnDisk(QLatin1String("/home/user/file1.jpg"));
     id.setUniqueHash(QLatin1String("cde567"), 987654);
+
     return id;
 }
 
@@ -93,6 +96,7 @@ HistoryImageId DImgAbstractHistoryTest::id2() const
     id.setFileName(QLatin1String("file2.jpg"));
     id.setPathOnDisk(QLatin1String("/home/user/file2.jpg"));
     id.setUniqueHash(QLatin1String("abc654"), 876549);
+
     return id;
 }
 
@@ -103,6 +107,7 @@ HistoryImageId DImgAbstractHistoryTest::id3() const
     id.setFileName(QLatin1String("file3.jpg"));
     id.setPathOnDisk(QLatin1String("/home/user/file3.jpg"));
     id.setUniqueHash(QLatin1String("c76543"), 765489);
+
     return id;
 }
 
@@ -113,6 +118,7 @@ HistoryImageId DImgAbstractHistoryTest::id4() const
     id.setFileName(QLatin1String("file4.jpg"));
     id.setPathOnDisk(QLatin1String("/home/user/file4.jpg"));
     id.setUniqueHash(QLatin1String("c96542"), 654987);
+
     return id;
 }
 
@@ -123,12 +129,14 @@ FilterAction DImgAbstractHistoryTest::action1() const
     fa.addParameter(QLatin1String("channel"), 1);
     fa.addParameter(QLatin1String("brightness"), 1);
     fa.addParameter(QLatin1String("gamma"), 1.2);
+
     return fa;
 }
 
 FilterAction DImgAbstractHistoryTest::action2() const
 {
     FilterAction fa(QLatin1String("digikam:SomeComplexFilter"), 1, FilterAction::ComplexFilter);
+
     return fa;
 }
 
@@ -191,12 +199,23 @@ void DImgAbstractHistoryTest::applyFilters4()
 
 QString DImgAbstractHistoryTest::tempFileName(const QString& purpose) const
 {
-    return QString::fromUtf8("digikamtests-") + QLatin1String(metaObject()->className()) + QLatin1Char('-') + purpose + QLatin1Char('-') + QTime::currentTime().toString();
+    return (
+            QString::fromUtf8("digikamtests-")       +
+            QLatin1String(metaObject()->className()) +
+            QLatin1Char('-')                         +
+            purpose                                  +
+            QLatin1Char('-')                         +
+            QTime::currentTime().toString()
+           );
 }
 
 QString DImgAbstractHistoryTest::tempFilePath(const QString& purpose) const
 {
-    return QDir::tempPath() + QLatin1Char('/') + tempFileName(purpose);
+    return (
+            QDir::tempPath() +
+            QLatin1Char('/') +
+            tempFileName(purpose)
+           );
 }
 
 void DImgAbstractHistoryTest::initBaseTestCase()
@@ -209,7 +228,7 @@ void DImgAbstractHistoryTest::initBaseTestCase()
     c.enableCM             = false;
     IccSettings::instance()->setSettings(c);
 
-    m_im = new EditorCore();
+    m_im                   = new EditorCore();
     EditorCore::setDefaultInstance(m_im);
 
     connect(m_im, SIGNAL(signalImageLoaded(QString,bool)),
@@ -224,6 +243,7 @@ void DImgAbstractHistoryTest::initBaseTestCase()
 void DImgAbstractHistoryTest::cleanupBaseTestCase()
 {
     delete m_im;
+
     QFile file(m_tempFile);
     file.remove();
 }

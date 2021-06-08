@@ -96,6 +96,7 @@ void DImgFreeRotationTest::testCalculateAngle_data()
             << -28.82;
 
     // point layout shouldn't matter
+
     QPoint p1(10, 20);
     QPoint p2(20, 10);
 
@@ -127,7 +128,7 @@ double DImgFreeRotationTest::myRound(double val, int accuracy)
 
     x *= tmp;
     x += 0.5;
-    x = floor(x);
+    x  = floor(x);
     x /= tmp;
 
     return x;

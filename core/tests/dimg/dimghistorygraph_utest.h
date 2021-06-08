@@ -45,7 +45,7 @@ public:
 public Q_SLOTS:
 
     void slotImageLoaded(const QString&, bool) override;
-    void slotImageSaved(const QString&, bool) override;
+    void slotImageSaved(const QString&, bool)  override;
 
 private Q_SLOTS:
 
