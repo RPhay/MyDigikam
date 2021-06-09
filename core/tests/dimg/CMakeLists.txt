@@ -92,6 +92,24 @@ ecm_add_tests(${CMAKE_CURRENT_SOURCE_DIR}/dimgfilteraction_utest.cpp
 
 #------------------------------------------------------------------------
 
+ecm_add_tests(${CMAKE_CURRENT_SOURCE_DIR}/dimgfilteractionkeys_utest.cpp
+
+        GUI
+
+        NAME_PREFIX
+
+        "digikam-"
+
+        LINK_LIBRARIES
+
+        digikamcore
+
+        ${COMMON_TEST_LINK}
+)
+        
+
+#------------------------------------------------------------------------
+
 ecm_add_tests(${CMAKE_CURRENT_SOURCE_DIR}/dimgfreerotation_utest.cpp
 
               GUI
