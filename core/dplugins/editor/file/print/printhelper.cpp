@@ -190,8 +190,8 @@ void PrintHelper::print(DImg& doc)
 
     if (optionsPage->autoRotation())
     {
-        printer.setOrientation(doc.size().width() <= doc.size().height() ? QPrinter::Portrait
-                                                                         : QPrinter::Landscape);
+        printer.setPageOrientation(doc.size().width() <= doc.size().height() ? QPageLayout::Portrait
+                                                                             : QPageLayout::Landscape);
     }
 
     QPainter painter(&printer);

@@ -279,11 +279,11 @@ void CalWizard::slotPageSelected(int curr)
         switch (params.imgPos)
         {
             case (CalParams::Top):
-                d->printer->setOrientation(QPrinter::Portrait);
+                d->printer->setPageOrientation(QPageLayout::Portrait);
                 break;
 
             default:
-                d->printer->setOrientation(QPrinter::Landscape);
+                d->printer->setPageOrientation(QPageLayout::Landscape);
                 break;
         }
 
