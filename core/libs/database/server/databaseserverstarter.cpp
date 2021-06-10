@@ -96,7 +96,7 @@ DatabaseServerError DatabaseServerStarter::startServerManagerProcess(const DbEng
     QSystemSemaphore sem(QLatin1String("DigikamDBSrvAccess"), 1, QSystemSemaphore::Open);
     sem.acquire();
 
-    result = d->internalServer->startDatabaseProcess();
+    result            = d->internalServer->startDatabaseProcess();
 
     if (result.getErrorType() != DatabaseServerError::NoErrors)
     {

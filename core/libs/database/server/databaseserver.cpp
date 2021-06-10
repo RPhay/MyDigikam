@@ -156,7 +156,7 @@ DatabaseServerError DatabaseServer::startDatabaseProcess()
                                     i18n("Database type is not supported."));
     }
 
-    if (error.getErrorType() == DatabaseServerError::StartError)
+    if     (error.getErrorType() == DatabaseServerError::StartError)
     {
         databaseServerStateEnum = notRunning;
     }
@@ -384,7 +384,7 @@ DatabaseServerError DatabaseServer::initMysqlConfig() const
         // our config file somehow ends up being world-writable on some systems for no
         // apparent reason nevertheless, so fix that
 
-        if (confUpdate)
+        if      (confUpdate)
         {
             const QFile::Permissions allowedPerms = actualFile.permissions() &
                                                     (QFile::ReadOwner | QFile::WriteOwner |
@@ -411,7 +411,8 @@ DatabaseServerError DatabaseServer::initMysqlConfig() const
                                     "<p>was not readable or the target file</p>"
                                     "<p>%2</p>"
                                     "<p>could not be written.</p>",
-                                    d->globalConfig, d->actualConfig);
+                                    d->globalConfig,
+                                    d->actualConfig);
 
             return DatabaseServerError(DatabaseServerError::StartError, errorMsg);
         }
@@ -478,18 +479,20 @@ DatabaseServerError DatabaseServer::createMysqlFiles() const
 
 #ifndef Q_OS_WIN
 
-        mysqlInitCmdArgs << QDir::toNativeSeparators(QString::fromLatin1("--defaults-file=%1").arg(d->globalConfig));
+        mysqlInitCmdArgs << QDir::toNativeSeparators(QString::fromLatin1("--defaults-file=%1")
+                                                     .arg(d->globalConfig));
 
 #endif
 
 #ifdef Q_OS_MACOS
 
         mysqlInitCmdArgs << QDir::toNativeSeparators(QString::fromLatin1("--basedir=%1/lib/mariadb/")
-            .arg(macOSBundlePrefix()));
+                                                     .arg(macOSBundlePrefix()));
 
 #endif
 
-        mysqlInitCmdArgs << QDir::toNativeSeparators(QString::fromLatin1("--datadir=%1").arg(d->dataDir));
+        mysqlInitCmdArgs << QDir::toNativeSeparators(QString::fromLatin1("--datadir=%1")
+                                                     .arg(d->dataDir));
 
         QProcess initProcess;
         initProcess.setProcessEnvironment(adjustedEnvironmentForAppImage());
@@ -523,7 +526,7 @@ DatabaseServerError DatabaseServer::startMysqlServer()
 #ifdef Q_OS_MACOS
 
     mysqldCmdArgs << QDir::toNativeSeparators(QString::fromLatin1("--basedir=%1/lib/mariadb/")
-        .arg(macOSBundlePrefix()));
+                                              .arg(macOSBundlePrefix()));
 
 #endif
 
