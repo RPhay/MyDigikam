@@ -47,7 +47,6 @@ private Q_SLOTS:
 
     void initTestCase();
     void cleanupTestCase();
-
     void testAllFilters();
 
 private:
@@ -55,4 +54,4 @@ private:
     bool hasUniqueKeys(const FilterAction& action);
 };
 
-#endif //DIGIKAM_DIMGFILTERACTIONKEYS_UTEST_H
+#endif // DIGIKAM_DIMGFILTERACTIONKEYS_UTEST_H

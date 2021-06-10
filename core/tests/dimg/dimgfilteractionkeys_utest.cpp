@@ -21,6 +21,8 @@
  *
  * ============================================================ */
 
+#include "dimgfilteractionkeys_utest.h"
+
 // Qt includes
 
 #include <QDir>
@@ -30,12 +32,10 @@
 
 // local includes
 
-#include "dimgfilteractionkeys_utest.h"
 #include "digikam_debug.h"
 #include "metaengine.h"
 #include "dpluginloader.h"
 #include "dimgthreadedfilter.h"
-
 
 QTEST_MAIN(DImgFilterActionKeysTest)
 
@@ -46,21 +46,23 @@ DImgFilterActionKeysTest::DImgFilterActionKeysTest(QObject* const parent)
 
 void DImgFilterActionKeysTest::testAllFilters()
 {
-    DImgFilterManager *filterManager = DImgFilterManager::instance();
-    QStringList identifiers = filterManager->supportedFilters();
-    foreach (QString identifier, identifiers)
+    DImgFilterManager* const filterManager = DImgFilterManager::instance();
+    QStringList identifiers                = filterManager->supportedFilters();
+
+    foreach (const QString& identifier, identifiers)
     {
         QList<int> versions = filterManager->supportedVersions(identifier);
 
         foreach (int version, versions)
         {
             auto filter = filterManager->createFilter(identifier, version);
+
             if (filter != nullptr)
             {
-              qCDebug(DIGIKAM_TESTS_LOG) << "Name: " << identifier;
-              qCDebug(DIGIKAM_TESTS_LOG)
-                  << "Version: " << version;
-              QVERIFY(hasUniqueKeys(filter->filterAction()));
+                qCDebug(DIGIKAM_TESTS_LOG) << "Name: " << identifier;
+                qCDebug(DIGIKAM_TESTS_LOG) << "Version: " << version;
+
+                QVERIFY(hasUniqueKeys(filter->filterAction()));
             }
         }
     }
@@ -83,11 +85,11 @@ bool DImgFilterActionKeysTest::hasUniqueKeys(const FilterAction &action)
 {
     QHash<QString, QVariant> params = action.parameters();
     QSet<QString> keys;
-    bool uniqueKeys = true;
+    bool uniqueKeys                 = true;
 
     QHash<QString, QVariant>::iterator it;
 
-    for (it = params.begin(); it != params.end(); ++it)
+    for (it = params.begin() ; it != params.end() ; ++it)
     {
         if (keys.contains(it.key()))
         {
