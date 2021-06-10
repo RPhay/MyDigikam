@@ -243,10 +243,11 @@ bool DWItemDelegateEventListener::eventFilter(QObject* watched, QEvent* event)
             {
                 QTabletEvent* const tabletEvent = static_cast<QTabletEvent*>(event);
                 QTabletEvent evt(event->type(), QPointF(viewport->mapFromGlobal(tabletEvent->globalPos())),
-                                    tabletEvent->globalPosF(), tabletEvent->device(),
+                                    tabletEvent->globalPosF(), tabletEvent->deviceType(),
                                     tabletEvent->pointerType(), tabletEvent->pressure(), tabletEvent->xTilt(),
                                     tabletEvent->yTilt(), tabletEvent->tangentialPressure(), tabletEvent->rotation(),
-                                    tabletEvent->z(), tabletEvent->modifiers(), tabletEvent->uniqueId());
+                                    tabletEvent->z(), tabletEvent->modifiers(), tabletEvent->uniqueId(),
+                                    tabletEvent->button(), tabletEvent->buttons());
                 QApplication::sendEvent(viewport, &evt);
                 break;
             }
