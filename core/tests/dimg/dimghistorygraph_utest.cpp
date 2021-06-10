@@ -69,7 +69,7 @@ void DImgHistoryGraphTest::initTestCase()
     collectionDir.cd(name);
     QVERIFY(collectionDir.exists());
 
-    dbFile = tempFilePath(QLatin1String("database"));
+    dbFile        = tempFilePath(QLatin1String("database"));
 
     qCDebug(DIGIKAM_TESTS_LOG) << "Using database path for test: " << dbFile;
 
@@ -92,6 +92,7 @@ void DImgHistoryGraphTest::initTestCase()
         //qCDebug(DIGIKAM_TESTS_LOG) << album.relativePath << album.id;
         //qCDebug(DIGIKAM_TESTS_LOG) << CollectionManager::instance()->albumRootPath(album.albumRootId);
         //qCDebug(DIGIKAM_TESTS_LOG) << CoreDbAccess().db()->getItemURLsInAlbum(album.id);
+
         readOnlyImages << CoreDbAccess().db()->getItemURLsInAlbum(album.id);
     }
 
@@ -171,11 +172,11 @@ void DImgHistoryGraphTest::testEditing()
 
     CollectionScanner().completeScan();
 
-    ItemInfo orig   = ItemInfo::fromLocalFile(readOnlyImages.first());
-    ItemInfo one    = ItemInfo::fromLocalFile(collectionDir.filePath(QLatin1String("1.jpg"))),
-              two   = ItemInfo::fromLocalFile(collectionDir.filePath(QLatin1String("2.jpg"))),
-              three = ItemInfo::fromLocalFile(collectionDir.filePath(QLatin1String("3.jpg"))),
-              four  = ItemInfo::fromLocalFile(collectionDir.filePath(QLatin1String("4.jpg")));
+    ItemInfo orig  = ItemInfo::fromLocalFile(readOnlyImages.first());
+    ItemInfo one   = ItemInfo::fromLocalFile(collectionDir.filePath(QLatin1String("1.jpg"))),
+             two   = ItemInfo::fromLocalFile(collectionDir.filePath(QLatin1String("2.jpg"))),
+             three = ItemInfo::fromLocalFile(collectionDir.filePath(QLatin1String("3.jpg"))),
+             four  = ItemInfo::fromLocalFile(collectionDir.filePath(QLatin1String("4.jpg")));
 
     typedef QPair<qlonglong, qlonglong> IdPair;
     QList<IdPair> controlCloud;
@@ -305,8 +306,6 @@ void DImgHistoryGraphTest::testGraph()
             16
             17
             18
-
-
     */
 
     QList<qlonglong> controlLeaves;
@@ -346,61 +345,61 @@ void DImgHistoryGraphTest::testGraph()
      * The transitive closure must additionally contain all pairs not marked,
      * and the pairs commented out.
      */
-    pairs << IdPair(2,1); //X
-    pairs << IdPair(3,1); //X
-    pairs << IdPair(4,1); //X
-    pairs << IdPair(5,1); //X
-    pairs << IdPair(6,1); //X
-    pairs << IdPair(7,1); //X
-    pairs << IdPair(8,1);
+    pairs << IdPair(2, 1); //X
+    pairs << IdPair(3, 1); //X
+    pairs << IdPair(4, 1); //X
+    pairs << IdPair(5, 1); //X
+    pairs << IdPair(6, 1); //X
+    pairs << IdPair(7, 1); //X
+    pairs << IdPair(8, 1);
     //pairs << IdPair(9,1);
-    pairs << IdPair(10,1);
-    pairs << IdPair(11,1);
-    pairs << IdPair(12,1);
-    pairs << IdPair(13,1);
-    pairs << IdPair(14,1);
-    pairs << IdPair(15,1);
-    pairs << IdPair(16,1);
-    pairs << IdPair(17,1);
-    pairs << IdPair(18,1);
+    pairs << IdPair(10, 1);
+    pairs << IdPair(11, 1);
+    pairs << IdPair(12, 1);
+    pairs << IdPair(13, 1);
+    pairs << IdPair(14, 1);
+    pairs << IdPair(15, 1);
+    pairs << IdPair(16, 1);
+    pairs << IdPair(17, 1);
+    pairs << IdPair(18, 1);
 
-    pairs << IdPair(22,4);
-    pairs << IdPair(23,4);
-    pairs << IdPair(24,4);
-    pairs << IdPair(14,5); //X
-    pairs << IdPair(15,6); //X
+    pairs << IdPair(22, 4);
+    pairs << IdPair(23, 4);
+    pairs << IdPair(24, 4);
+    pairs << IdPair(14, 5); //X
+    pairs << IdPair(15, 6); //X
 
-    //pairs << IdPair(19,1);
-    //pairs << IdPair(20,1);
-    //pairs << IdPair(21,1);
-    pairs << IdPair(22,1);
-    pairs << IdPair(23,1);
-    pairs << IdPair(24,1);
-    pairs << IdPair(8,2);  //X
-    pairs << IdPair(9,2);  //X
-    pairs << IdPair(10,2); //X
-    //pairs << IdPair(19,2);
-    //pairs << IdPair(20,2);
-    //pairs << IdPair(21,2);
-    pairs << IdPair(11,4); //X
-    pairs << IdPair(12,4); //X
-    pairs << IdPair(13,4); //X
+    //pairs << IdPair(19, 1);
+    //pairs << IdPair(20, 1);
+    //pairs << IdPair(21, 1);
+    pairs << IdPair(22, 1);
+    pairs << IdPair(23, 1);
+    pairs << IdPair(24, 1);
+    pairs << IdPair(8, 2);  //X
+    pairs << IdPair(9, 2);  //X
+    pairs << IdPair(10, 2); //X
+    //pairs << IdPair(19, 2);
+    //pairs << IdPair(20, 2);
+    //pairs << IdPair(21, 2);
+    pairs << IdPair(11, 4); //X
+    pairs << IdPair(12, 4); //X
+    pairs << IdPair(13, 4); //X
 
-    pairs << IdPair(16,7); //X
-    pairs << IdPair(17,7); //X
-    pairs << IdPair(18,7); //X
-    pairs << IdPair(19,9); //X
-    pairs << IdPair(20,9); //X
-    pairs << IdPair(21,9); //X
-    pairs << IdPair(22,12); //X
-    pairs << IdPair(23,12); //X
+    pairs << IdPair(16, 7); //X
+    pairs << IdPair(17, 7); //X
+    pairs << IdPair(18, 7); //X
+    pairs << IdPair(19, 9); //X
+    pairs << IdPair(20, 9); //X
+    pairs << IdPair(21, 9); //X
+    pairs << IdPair(22, 12); //X
+    pairs << IdPair(23, 12); //X
 
     // no more a polytree
-    pairs << IdPair(24,13); //X
-    pairs << IdPair(24,23); //X
-    pairs << IdPair(24,4);
-    pairs << IdPair(24,1);
-    pairs << IdPair(24,12);
+    pairs << IdPair(24, 13); //X
+    pairs << IdPair(24, 23); //X
+    pairs << IdPair(24, 4);
+    pairs << IdPair(24, 1);
+    pairs << IdPair(24, 12);
 
     ItemHistoryGraph graph;
     graph.addRelations(pairs);
@@ -414,9 +413,9 @@ void DImgHistoryGraphTest::testGraph()
     QList<IdPair> cloud = graph.relationCloud();
     qCDebug(DIGIKAM_TESTS_LOG) << "Transitive closure:" << cloud;
 
-    QVERIFY(cloud.contains(IdPair(7,1)));
-    QVERIFY(cloud.contains(IdPair(8,1)));
-    QVERIFY(cloud.contains(IdPair(9,1)));
+    QVERIFY(cloud.contains(IdPair(7, 1)));
+    QVERIFY(cloud.contains(IdPair(8, 1)));
+    QVERIFY(cloud.contains(IdPair(9, 1)));
 
 /*
     QBENCHMARK
@@ -433,9 +432,9 @@ void DImgHistoryGraphTest::testGraph()
 
     foreach (const HistoryGraph::Vertex& v, graph.data().vertices())
     {
-        HistoryVertexProperties props = graph.data().properties(v);
+        HistoryVertexProperties props        = graph.data().properties(v);
         idToVertex[props.infos.first().id()] = v;
-        vertexToId[v] = props.infos.first().id();
+        vertexToId[v]                        = props.infos.first().id();
     }
 
     QList<qlonglong> leaves = mapList(graph.data().leaves(), vertexToId);

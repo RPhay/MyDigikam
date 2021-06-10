@@ -40,6 +40,7 @@
 #include <QStyle>
 #include <QPointer>
 #include <QFile>
+#include <QTimer>
 #include <QStandardPaths>
 #include <QTextStream>
 
@@ -53,6 +54,7 @@
 #include "exiftoollistviewitem.h"
 #include "exiftoollistview.h"
 #include "exiftoolerrorview.h"
+#include "exiftoolloadingview.h"
 #include "searchtextbar.h"
 #include "dfiledialog.h"
 
@@ -65,7 +67,8 @@ public:
 
     enum ViewMode
     {
-        MetadataView = 0,
+        LoadingView = 0,
+        MetadataView,
         ErrorView
     };
 
@@ -73,6 +76,7 @@ public:
 
     explicit Private()
         : metadataView    (nullptr),
+          loadingView     (nullptr),
           view            (nullptr),
           errorView       (nullptr),
           searchBar       (nullptr),
@@ -80,24 +84,27 @@ public:
           saveMetadata    (nullptr),
           printMetadata   (nullptr),
           copy2ClipBoard  (nullptr),
-          optionsMenu     (nullptr)
+          optionsMenu     (nullptr),
+          preLoadingTimer (nullptr)
     {
     }
 
-    QWidget*           metadataView;
-    ExifToolListView*  view;
-    ExifToolErrorView* errorView;
-    SearchTextBar*     searchBar;
+    QWidget*             metadataView;
+    ExifToolLoadingView* loadingView;
+    ExifToolListView*    view;
+    ExifToolErrorView*   errorView;
+    SearchTextBar*       searchBar;
 
-    QString            fileName;
+    QString              fileName;
 
-    QToolButton*       toolBtn;
+    QToolButton*         toolBtn;
 
-    QAction*           saveMetadata;
-    QAction*           printMetadata;
-    QAction*           copy2ClipBoard;
+    QAction*             saveMetadata;
+    QAction*             printMetadata;
+    QAction*             copy2ClipBoard;
 
-    QMenu*             optionsMenu;
+    QMenu*               optionsMenu;
+    QTimer*              preLoadingTimer;   ///< To prevent flicker effect with loading view with short loading time.
 };
 
 ExifToolWidget::ExifToolWidget(QWidget* const parent)
@@ -119,11 +126,16 @@ ExifToolWidget::ExifToolWidget(QWidget* const parent)
     d->toolBtn->setPopupMode(QToolButton::InstantPopup);
     d->toolBtn->setWhatsThis(i18nc("@info: metadata view", "Run tool over metadata tags."));
 
-    QMenu* const toolMenu = new QMenu(d->toolBtn);
-    d->saveMetadata       = toolMenu->addAction(i18nc("@action:inmenu", "Save in file"));
-    d->printMetadata      = toolMenu->addAction(i18nc("@action:inmenu", "Print"));
-    d->copy2ClipBoard     = toolMenu->addAction(i18nc("@action:inmenu", "Copy to Clipboard"));
+    QMenu* const toolMenu    = new QMenu(d->toolBtn);
+    d->saveMetadata          = toolMenu->addAction(i18nc("@action:inmenu", "Save in file"));
+    d->printMetadata         = toolMenu->addAction(i18nc("@action:inmenu", "Print"));
+    d->copy2ClipBoard        = toolMenu->addAction(i18nc("@action:inmenu", "Copy to Clipboard"));
     d->toolBtn->setMenu(toolMenu);
+
+    d->preLoadingTimer       = new QTimer(this);
+    d->preLoadingTimer->setInterval(2000);
+    d->preLoadingTimer->setSingleShot(true);
+    d->loadingView           = new ExifToolLoadingView(this);
 
     d->view                  = new ExifToolListView(d->metadataView);
     d->searchBar             = new SearchTextBar(d->metadataView, QLatin1String("ExifToolSearchBar"));
@@ -140,6 +152,7 @@ ExifToolWidget::ExifToolWidget(QWidget* const parent)
 
     d->errorView             = new ExifToolErrorView(this);
 
+    insertWidget(Private::LoadingView,  d->loadingView);
     insertWidget(Private::MetadataView, d->metadataView);
     insertWidget(Private::ErrorView,    d->errorView);
 
@@ -155,6 +168,7 @@ ExifToolWidget::~ExifToolWidget()
 
 void ExifToolWidget::loadFromUrl(const QUrl& url)
 {
+    d->preLoadingTimer->start();
     d->fileName = url.fileName();
     bool ret    = d->view->loadFromUrl(url);
 
@@ -167,6 +181,7 @@ void ExifToolWidget::loadFromUrl(const QUrl& url)
             d->view->slotSearchTextChanged(settings);
         }
 
+        d->preLoadingTimer->stop();
         setCurrentIndex(Private::MetadataView);
         d->toolBtn->setEnabled(true);
     }
@@ -179,13 +194,26 @@ void ExifToolWidget::loadFromUrl(const QUrl& url)
                                    "%2",
                                    d->fileName,
                                    d->view->errorString()));
+
+        d->preLoadingTimer->stop();
         setCurrentIndex(Private::ErrorView);
         d->toolBtn->setEnabled(false);
     }
+
+    d->loadingView->setBusy(false);
+}
+
+void ExifToolWidget::slotPreLoadingTimerDone()
+{
+    setCurrentIndex(Private::LoadingView);
+    d->loadingView->setBusy(true);
 }
 
 void ExifToolWidget::setup()
 {
+    connect(d->preLoadingTimer, SIGNAL(timeout()),
+            this, SLOT(slotPreLoadingTimerDone()));
+
     connect(d->errorView, SIGNAL(signalSetupExifTool()),
             this, SIGNAL(signalSetupExifTool()));
 

@@ -64,8 +64,7 @@ public:
                        const QString& _internalServerDBPath = QString(),
                        const QString& _internalServerMysqlAdminCmd = QString(),
                        const QString& _internalServerMysqlServCmd = QString(),
-                       const QString& _internalServerMysqlInitCmd = QString()
-                      );
+                       const QString& _internalServerMysqlInitCmd = QString());
 
     DbEngineParameters();
 
@@ -73,21 +72,21 @@ public:
      * QUrl helpers.
      */
     explicit DbEngineParameters(const QUrl& url);
-    void insertInUrl(QUrl& url) const;
+    void insertInUrl(QUrl& url)                                 const;
     static void removeFromUrl(QUrl& url);
 
-    bool operator==(const DbEngineParameters& other) const;
-    bool operator!=(const DbEngineParameters& other) const;
+    bool operator==(const DbEngineParameters& other)            const;
+    bool operator!=(const DbEngineParameters& other)            const;
 
     /**
      * Performs basic checks that the parameters are not empty and have the information
      * required for the databaseType.
      */
-    bool    isValid()            const;
+    bool    isValid()                                           const;
 
-    bool    isSQLite()           const;
-    bool    isMySQL()            const;
-    QString SQLiteDatabaseFile() const;
+    bool    isSQLite()                                          const;
+    bool    isMySQL()                                           const;
+    QString SQLiteDatabaseFile()                                const;
 
     /**
      *  Returns the databaseType designating the said database.
@@ -100,7 +99,7 @@ public:
     /**
      * Creates a unique hash of the values stored in this object.
      */
-    QByteArray hash() const;
+    QByteArray hash()                                           const;
 
     /**
      * Return a set of default parameters for the given type. For Mysql, it return internal server configuration.
@@ -113,18 +112,20 @@ public:
      * or use the default value.
      */
     void readFromConfig(const QString& configGroup = QString());
-    void writeToConfig(const QString& configGroup = QString()) const;
+    void writeToConfig(const QString& configGroup = QString())  const;
 
     /**
      * NOTE: In case of SQLite, the database name typically is a file.
      * For non-SQLite, this simply handle the database name.
      */
-    QString getCoreDatabaseNameOrDir()   const;
-    QString getThumbsDatabaseNameOrDir() const;
-    QString getFaceDatabaseNameOrDir()   const;
-    QString getSimilarityDatabaseNameOrDir()   const;
+    QString getCoreDatabaseNameOrDir()                          const;
+    QString getThumbsDatabaseNameOrDir()                        const;
+    QString getFaceDatabaseNameOrDir()                          const;
+    QString getSimilarityDatabaseNameOrDir()                    const;
 
-    /// Use these methods if you set a file or a folder.
+    /**
+     * Use these methods if you set a file or a folder.
+     */
     void setCoreDatabasePath(const QString& folderOrFileOrName);
     void setThumbsDatabasePath(const QString& folderOrFileOrName);
     void setFaceDatabasePath(const QString& folderOrFileOrName);
@@ -144,22 +145,22 @@ public:
      * For Mysql internal server: manage the database path to store database files.
      */
     void    setInternalServerPath(const QString& path);
-    QString internalServerPath() const;
+    QString internalServerPath()                                const;
 
     /**
      * Replaces databaseName with databaseNameThumbnails.
      */
-    DbEngineParameters thumbnailParameters() const;
+    DbEngineParameters thumbnailParameters()                    const;
 
     /**
      * Replaces databaseName with databaseNameFace.
      */
-    DbEngineParameters faceParameters() const;
+    DbEngineParameters faceParameters()                         const;
 
     /**
      * Replaces databaseName with databaseNameFace.
      */
-    DbEngineParameters similarityParameters() const;
+    DbEngineParameters similarityParameters()                   const;
 
     void legacyAndDefaultChecks(const QString& suggestedPath = QString());
     void removeLegacyConfig();
@@ -208,7 +209,10 @@ public:
     QString databaseNameSimilarity;
     QString internalServerDBPath;
 
-    /// Settings stored in config file and used only with internal server at runtime to start server instance or init database tables.
+    /**
+     * Settings stored in config file and used only with internal server at runtime
+     * to start server instance or init database tables.
+     */
     QString internalServerMysqlAdminCmd;
     QString internalServerMysqlServCmd;
     QString internalServerMysqlInitCmd;

@@ -43,14 +43,16 @@ DWorkingPixmap::DWorkingPixmap(QObject* const parent)
     if (pix.isNull())
     {
         qCWarning(DIGIKAM_WIDGETS_LOG) << "Invalid pixmap specified.";
+
         return;
     }
 
     QSize size = QSize(pix.width(), pix.width());
 
-    if ((pix.width()) % size.width() || (pix.height() % size.height()))
+    if (((pix.width()) % size.width()) || (pix.height() % size.height()))
     {
         qCWarning(DIGIKAM_WIDGETS_LOG) << "Invalid framesize.";
+
         return;
     }
 
@@ -84,6 +86,7 @@ QSize DWorkingPixmap::frameSize() const
     if (isEmpty())
     {
         qCWarning(DIGIKAM_WIDGETS_LOG) << "No frame loaded.";
+
         return QSize();
     }
 
@@ -100,6 +103,7 @@ QPixmap DWorkingPixmap::frameAt(int index) const
     if (isEmpty())
     {
         qCWarning(DIGIKAM_WIDGETS_LOG) << "No frame loaded.";
+
         return QPixmap();
     }
 

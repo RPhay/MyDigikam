@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2021-04-18
- * Description : ExifTool metadata widget.
+ * Description : ExifTool loading view.
  *
  * Copyright (C) 2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
@@ -21,15 +21,13 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_EXIF_TOOL_WIDGET_H
-#define DIGIKAM_EXIF_TOOL_WIDGET_H
+#ifndef DIGIKAM_EXIF_TOOL_LOADING_VIEW_H
+#define DIGIKAM_EXIF_TOOL_LOADING_VIEW_H
 
 // Qt includes
 
 #include <QWidget>
-#include <QStackedWidget>
 #include <QString>
-#include <QUrl>
 
 // Local includes
 
@@ -38,35 +36,20 @@
 namespace Digikam
 {
 
-class DIGIKAM_EXPORT ExifToolWidget : public QStackedWidget
+class DIGIKAM_EXPORT ExifToolLoadingView : public QWidget
 {
     Q_OBJECT
 
 public:
 
-    explicit ExifToolWidget(QWidget* const parent);
-    ~ExifToolWidget() override;
+    explicit ExifToolLoadingView(QWidget* const parent);
+    ~ExifToolLoadingView() override;
 
-    void loadFromUrl(const QUrl& url);
-
-    QString getCurrentItemKey() const;
-    void    setCurrentItemByKey(const QString& itemKey);
-
-Q_SIGNALS:
-
-    void signalSetupExifTool();
+    void setBusy(bool b);
 
 private Q_SLOTS:
 
-    void slotPreLoadingTimerDone();
-    void slotCopy2Clipboard();
-    void slotPrintMetadata();
-    void slotSaveMetadataToFile();
-
-private:
-
-    void setup();
-    QString metadataToText() const;
+    void slotProgressTimerDone();
 
 private:
 
@@ -76,4 +59,4 @@ private:
 
 } // namespace Digikam
 
-#endif // DIGIKAM_EXIF_TOOL_WIDGET_H
+#endif // DIGIKAM_EXIF_TOOL_LOADING_VIEW_H
