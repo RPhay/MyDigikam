@@ -314,7 +314,7 @@ QString SearchView::write() const
 
 void SearchView::startAnimation()
 {
-    d->timeline->setCurveShape(QTimeLine::EaseInCurve);
+    d->timeline->setEasingCurve(QEasingCurve(QEasingCurve::InCurve));
     d->timeline->setDuration(500);
     d->timeline->setDirection(QTimeLine::Forward);
     d->timeline->start();
