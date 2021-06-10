@@ -55,20 +55,20 @@ static const char* configInternalDatabaseServerMysqlAdminCmd = "Internal Databas
 static const char* configInternalDatabaseServerMysqlServCmd  = "Internal Database Server Mysql Server Command";
 static const char* configInternalDatabaseServerMysqlInitCmd  = "Internal Database Server Mysql Init Command";
 static const char* configDatabaseType                        = "Database Type";
-static const char* configDatabaseName                        = "Database Name";              // For Sqlite the DB file path, for Mysql the DB name
-static const char* configDatabaseNameThumbnails              = "Database Name Thumbnails";   // For Sqlite the DB file path, for Mysql the DB name
-static const char* configDatabaseNameFace                    = "Database Name Face";         // For Sqlite the DB file path, for Mysql the DB name
-static const char* configDatabaseNameSimilarity              = "Database Name Similarity";   // For Sqlite the DB file path, for Mysql the DB name
+static const char* configDatabaseName                        = "Database Name";              ///< For Sqlite the DB file path, for Mysql the DB name
+static const char* configDatabaseNameThumbnails              = "Database Name Thumbnails";   ///< For Sqlite the DB file path, for Mysql the DB name
+static const char* configDatabaseNameFace                    = "Database Name Face";         ///< For Sqlite the DB file path, for Mysql the DB name
+static const char* configDatabaseNameSimilarity              = "Database Name Similarity";   ///< For Sqlite the DB file path, for Mysql the DB name
 static const char* configDatabaseHostName                    = "Database Hostname";
 static const char* configDatabasePort                        = "Database Port";
 static const char* configDatabaseUsername                    = "Database Username";
-static const char* configDatabasePassword                    = "Database Password";          // For compatbilitity. Use crypted version instead.
+static const char* configDatabasePassword                    = "Database Password";          ///< For compatbilitity. Use crypted version instead.
 static const char* configDatabaseEncryptedPassword           = "Database Encrypted Password";
 static const char* configDatabaseConnectOptions              = "Database Connectoptions";
-// Legacy for older versions.
+/// Legacy for older versions.
 static const char* configDatabaseFilePathEntry               = "Database File Path";
 static const char* configAlbumPathEntry                      = "Album Path";
-// Sqlite DB file names
+/// Sqlite DB file names
 static const char* digikam4db                                = "digikam4.db";
 static const char* thumbnails_digikamdb                      = "thumbnails-digikam.db";
 static const char* face_digikamdb                            = "recognition.db";
@@ -86,7 +86,7 @@ QString DbEngineParameters::internalServerPrivatePath()
 }
 
 DbEngineParameters::DbEngineParameters()
-    : port(-1),
+    : port          (-1),
       internalServer(false)
 {
 }
@@ -105,38 +105,37 @@ DbEngineParameters::DbEngineParameters(const QString& _type,
                                        const QString& _internalServerDBPath,
                                        const QString& _internalServerMysqlAdminCmd,
                                        const QString& _internalServerMysqlServCmd,
-                                       const QString& _internalServerMysqlInitCmd
-                                      )
-    : databaseType(_type),
-      databaseNameCore(_databaseNameCore),
-      connectOptions(_connectOptions),
-      hostName(_hostName),
-      port(_port),
-      internalServer(_internalServer),
-      userName(_userName),
-      password(_password),
-      databaseNameThumbnails(_databaseNameThumbnails),
-      databaseNameFace(_databaseNameFace),
-      databaseNameSimilarity(_databaseNameSimilarity),
-      internalServerDBPath(_internalServerDBPath),
-      internalServerMysqlAdminCmd(_internalServerMysqlAdminCmd),
-      internalServerMysqlServCmd(_internalServerMysqlServCmd),
-      internalServerMysqlInitCmd(_internalServerMysqlInitCmd)
+                                       const QString& _internalServerMysqlInitCmd)
+    : databaseType                  (_type),
+      databaseNameCore              (_databaseNameCore),
+      connectOptions                (_connectOptions),
+      hostName                      (_hostName),
+      port                          (_port),
+      internalServer                (_internalServer),
+      userName                      (_userName),
+      password                      (_password),
+      databaseNameThumbnails        (_databaseNameThumbnails),
+      databaseNameFace              (_databaseNameFace),
+      databaseNameSimilarity        (_databaseNameSimilarity),
+      internalServerDBPath          (_internalServerDBPath),
+      internalServerMysqlAdminCmd   (_internalServerMysqlAdminCmd),
+      internalServerMysqlServCmd    (_internalServerMysqlServCmd),
+      internalServerMysqlInitCmd    (_internalServerMysqlInitCmd)
 {
 }
 
 DbEngineParameters::DbEngineParameters(const QUrl& url)
-    : databaseType(QUrlQuery(url).queryItemValue(QLatin1String("databaseType"))),
-      databaseNameCore(QUrlQuery(url).queryItemValue(QLatin1String("databaseNameCore"))),
-      connectOptions(QUrlQuery(url).queryItemValue(QLatin1String("connectOptions"))),
-      hostName(QUrlQuery(url).queryItemValue(QLatin1String("hostName"))),
-      port(-1),
-      internalServer(false),
+    : databaseType          (QUrlQuery(url).queryItemValue(QLatin1String("databaseType"))),
+      databaseNameCore      (QUrlQuery(url).queryItemValue(QLatin1String("databaseNameCore"))),
+      connectOptions        (QUrlQuery(url).queryItemValue(QLatin1String("connectOptions"))),
+      hostName              (QUrlQuery(url).queryItemValue(QLatin1String("hostName"))),
+      port                  (-1),
+      internalServer        (false),
       databaseNameThumbnails(QUrlQuery(url).queryItemValue(QLatin1String("databaseNameThumbnails"))),
-      databaseNameFace(QUrlQuery(url).queryItemValue(QLatin1String("databaseNameFace"))),
+      databaseNameFace      (QUrlQuery(url).queryItemValue(QLatin1String("databaseNameFace"))),
       databaseNameSimilarity(QUrlQuery(url).queryItemValue(QLatin1String("databaseNameSimilarity")))
 {
-    QString queryPort = QUrlQuery(url).queryItemValue(QLatin1String("port"));
+    QString queryPort   = QUrlQuery(url).queryItemValue(QLatin1String("port"));
 
     if (!queryPort.isNull())
     {
@@ -152,7 +151,7 @@ DbEngineParameters::DbEngineParameters(const QUrl& url)
         internalServer = (queryServer == QLatin1String("true"));
     }
 
-    queryServer = QUrlQuery(url).queryItemValue(QLatin1String("internalServerPath"));
+    queryServer         = QUrlQuery(url).queryItemValue(QLatin1String("internalServerPath"));
 
     if (!queryServer.isNull())
     {
@@ -250,21 +249,23 @@ void DbEngineParameters::removeFromUrl(QUrl& url)
 
 bool DbEngineParameters::operator==(const DbEngineParameters& other) const
 {
-    return(databaseType                == other.databaseType                &&
-           databaseNameCore            == other.databaseNameCore            &&
-           databaseNameThumbnails      == other.databaseNameThumbnails      &&
-           databaseNameFace            == other.databaseNameFace            &&
-           databaseNameSimilarity      == other.databaseNameSimilarity      &&
-           connectOptions              == other.connectOptions              &&
-           hostName                    == other.hostName                    &&
-           port                        == other.port                        &&
-           internalServer              == other.internalServer              &&
-           internalServerDBPath        == other.internalServerDBPath        &&
-           internalServerMysqlAdminCmd == other.internalServerMysqlAdminCmd &&
-           internalServerMysqlServCmd  == other.internalServerMysqlServCmd  &&
-           internalServerMysqlInitCmd  == other.internalServerMysqlInitCmd  &&
-           userName                    == other.userName                    &&
-           password                    == other.password);
+    return (
+            (databaseType                == other.databaseType)                &&
+            (databaseNameCore            == other.databaseNameCore)            &&
+            (databaseNameThumbnails      == other.databaseNameThumbnails)      &&
+            (databaseNameFace            == other.databaseNameFace)            &&
+            (databaseNameSimilarity      == other.databaseNameSimilarity)      &&
+            (connectOptions              == other.connectOptions)              &&
+            (hostName                    == other.hostName)                    &&
+            (port                        == other.port)                        &&
+            (internalServer              == other.internalServer)              &&
+            (internalServerDBPath        == other.internalServerDBPath)        &&
+            (internalServerMysqlAdminCmd == other.internalServerMysqlAdminCmd) &&
+            (internalServerMysqlServCmd  == other.internalServerMysqlServCmd)  &&
+            (internalServerMysqlInitCmd  == other.internalServerMysqlInitCmd)  &&
+            (userName                    == other.userName)                    &&
+            (password                    == other.password)
+           );
 }
 
 bool DbEngineParameters::operator!=(const DbEngineParameters& other) const
@@ -336,6 +337,7 @@ DbEngineParameters DbEngineParameters::parametersFromConfig(const QString& confi
 {
     DbEngineParameters parameters;
     parameters.readFromConfig(configGroup);
+
     return parameters;
 }
 
@@ -355,7 +357,7 @@ void DbEngineParameters::readFromConfig(const QString& configGroup)
 
     databaseType = group.readEntry(configDatabaseType, QString());
 
-    if (isSQLite()) // see bug #267131
+    if (isSQLite())     // see bug #267131
     {
         databaseNameCore        = group.readPathEntry(configDatabaseName,                    QString());
         databaseNameThumbnails  = group.readPathEntry(configDatabaseNameThumbnails,          QString());
@@ -375,6 +377,7 @@ void DbEngineParameters::readFromConfig(const QString& configGroup)
     userName                    = group.readEntry(configDatabaseUsername,                    QString());
 
     // Non encrypted password for compatibility.
+
     password                    = group.readEntry(configDatabasePassword,                    QString());
 
     if (password.isEmpty())
@@ -383,7 +386,7 @@ void DbEngineParameters::readFromConfig(const QString& configGroup)
 
         if (!password.isEmpty())
         {
-            O0SimpleCrypt crypto(QCryptographicHash::hash(configDatabaseEncryptedPassword,  QCryptographicHash::Sha1).toULongLong());
+            O0SimpleCrypt crypto(QCryptographicHash::hash(configDatabaseEncryptedPassword,   QCryptographicHash::Sha1).toULongLong());
             password = crypto.decryptToString(password);
         }
     }
@@ -474,14 +477,13 @@ void DbEngineParameters::setSimilarityDatabasePath(const QString& folderOrFileOr
     }
 }
 
-
 QString DbEngineParameters::coreDatabaseFileSQLite(const QString& folderOrFile)
 {
     QFileInfo fileInfo(folderOrFile);
 
     if (fileInfo.isDir())
     {
-        return QDir::cleanPath(fileInfo.filePath() + QLatin1Char('/') + QLatin1String(digikam4db));
+        return (QDir::cleanPath(fileInfo.filePath() + QLatin1Char('/') + QLatin1String(digikam4db)));
     }
 
     return QDir::cleanPath(folderOrFile);
@@ -493,7 +495,7 @@ QString DbEngineParameters::thumbnailDatabaseFileSQLite(const QString& folderOrF
 
     if (fileInfo.isDir())
     {
-        return QDir::cleanPath(fileInfo.filePath() + QLatin1Char('/') + QLatin1String(thumbnails_digikamdb));
+        return (QDir::cleanPath(fileInfo.filePath() + QLatin1Char('/') + QLatin1String(thumbnails_digikamdb)));
     }
 
     return QDir::cleanPath(folderOrFile);
@@ -505,7 +507,7 @@ QString DbEngineParameters::faceDatabaseFileSQLite(const QString& folderOrFile)
 
     if (fileInfo.isDir())
     {
-        return QDir::cleanPath(fileInfo.filePath() + QLatin1Char('/') + QLatin1String(face_digikamdb));
+        return (QDir::cleanPath(fileInfo.filePath() + QLatin1Char('/') + QLatin1String(face_digikamdb)));
     }
 
     return QDir::cleanPath(folderOrFile);
@@ -517,12 +519,11 @@ QString DbEngineParameters::similarityDatabaseFileSQLite(const QString& folderOr
 
     if (fileInfo.isDir())
     {
-        return QDir::cleanPath(fileInfo.filePath() + QLatin1Char('/') + QLatin1String(similarity_digikamdb));
+        return (QDir::cleanPath(fileInfo.filePath() + QLatin1Char('/') + QLatin1String(similarity_digikamdb)));
     }
 
     return QDir::cleanPath(folderOrFile);
 }
-
 
 void DbEngineParameters::legacyAndDefaultChecks(const QString& suggestedPath)
 {
@@ -531,7 +532,7 @@ void DbEngineParameters::legacyAndDefaultChecks(const QString& suggestedPath)
     // Additional semantic checks for the database section.
     // If the internal server should be started, then the connection options must be reset
 
-    if (databaseType == QLatin1String("QMYSQL") && internalServer)
+    if ((databaseType == QLatin1String("QMYSQL")) && internalServer)
     {
         const QString miscDir      = internalServerPrivatePath() + QLatin1String("db_misc");
         databaseNameCore           = QLatin1String("digikam");
@@ -543,31 +544,39 @@ void DbEngineParameters::legacyAndDefaultChecks(const QString& suggestedPath)
         password.clear();
 
 #ifdef Q_OS_WIN
+
         hostName                   = QLatin1String("localhost");
         port                       = 3307;
         connectOptions.clear();
+
 #else
+
         hostName.clear();
         port                       = -1;
         connectOptions             = QString::fromLatin1("UNIX_SOCKET=%1/mysql.socket").arg(miscDir);
+
 #endif
+
     }
 
     if (databaseType.isEmpty())
     {
         // Empty 1.3 config: migration from older versions
+
         KConfigGroup group = config->group("Album Settings");
 
         QString databaseFilePath;
 
-        if (group.hasKey(configDatabaseFilePathEntry))
+        if      (group.hasKey(configDatabaseFilePathEntry))
         {
             // 1.0 - 1.2 style database file path?
+
             databaseFilePath = group.readEntry(configDatabaseFilePathEntry, QString());
         }
         else if (group.hasKey(configAlbumPathEntry))
         {
             // <= 0.9 style album path entry?
+
             databaseFilePath = group.readEntry(configAlbumPathEntry, QString());
         }
         else if (!suggestedPath.isNull())
@@ -638,7 +647,7 @@ void DbEngineParameters::writeToConfig(const QString& configGroup) const
     group.writeEntry(configInternalDatabaseServerMysqlServCmd,  internalServerMysqlServCmd);
     group.writeEntry(configInternalDatabaseServerMysqlInitCmd,  internalServerMysqlInitCmd);
 
-    group.deleteEntry(configDatabasePassword);// Remove non encrypted password
+    group.deleteEntry(configDatabasePassword);  // Remove non encrypted password
 }
 
 QString DbEngineParameters::getCoreDatabaseNameOrDir() const
@@ -687,6 +696,7 @@ QString DbEngineParameters::coreDatabaseDirectorySQLite(const QString& path)
     {
         QString chopped(path);
         chopped.chop(QString(QLatin1String(digikam4db)).length());
+
         return chopped;
     }
 
@@ -699,6 +709,7 @@ QString DbEngineParameters::thumbnailDatabaseDirectorySQLite(const QString& path
     {
         QString chopped(path);
         chopped.chop(QString(QLatin1String(thumbnails_digikamdb)).length());
+
         return chopped;
     }
 
@@ -711,6 +722,7 @@ QString DbEngineParameters::faceDatabaseDirectorySQLite(const QString& path)
     {
         QString chopped(path);
         chopped.chop(QString(QLatin1String(face_digikamdb)).length());
+
         return chopped;
     }
 
@@ -723,6 +735,7 @@ QString DbEngineParameters::similarityDatabaseDirectorySQLite(const QString& pat
     {
         QString chopped(path);
         chopped.chop(QString(QLatin1String(similarity_digikamdb)).length());
+
         return chopped;
     }
 
@@ -735,6 +748,7 @@ DbEngineParameters DbEngineParameters::defaultParameters(const QString& database
     DbEngineParameters parameters;
 
     // only the database name is needed
+
     DbEngineConfigSettings config          = DbEngineConfig::element(databaseType);
     parameters.databaseType                = databaseType;
     parameters.databaseNameCore            = config.databaseName;
@@ -749,11 +763,12 @@ DbEngineParameters DbEngineParameters::defaultParameters(const QString& database
     parameters.internalServerMysqlServCmd  = (databaseType == QLatin1String("QMYSQL")) ? defaultMysqlServerCmd()     : QString();
     parameters.internalServerMysqlInitCmd  = (databaseType == QLatin1String("QMYSQL")) ? defaultMysqlInitCmd()       : QString();
 
-    QString hostName                      = config.hostName;
-    QString port                          = config.port;
-    QString connectOptions                = config.connectOptions;
+    QString hostName                       = config.hostName;
+    QString port                           = config.port;
+    QString connectOptions                 = config.connectOptions;
 
 #ifdef Q_OS_WIN
+
     hostName.replace(QLatin1String("$$DBHOSTNAME$$"),      (databaseType == QLatin1String("QMYSQL"))
                                                            ? QLatin1String("localhost")
                                                            : QString());
@@ -763,7 +778,9 @@ DbEngineParameters DbEngineParameters::defaultParameters(const QString& database
                                                            : QLatin1String("-1"));
 
     connectOptions.replace(QLatin1String("$$DBOPTIONS$$"), QString());
+
 #else
+
     hostName.replace(QLatin1String("$$DBHOSTNAME$$"),      QString());
 
     port.replace(QLatin1String("$$DBPORT$$"),              QLatin1String("-1"));
@@ -787,6 +804,7 @@ DbEngineParameters DbEngineParameters::thumbnailParameters() const
 {
     DbEngineParameters params = *this;
     params.databaseNameCore   = databaseNameThumbnails;
+
     return params;
 }
 
@@ -794,6 +812,7 @@ DbEngineParameters DbEngineParameters::faceParameters() const
 {
     DbEngineParameters params = *this;
     params.databaseNameCore   = databaseNameFace;
+
     return params;
 }
 
@@ -801,17 +820,20 @@ DbEngineParameters DbEngineParameters::similarityParameters() const
 {
     DbEngineParameters params = *this;
     params.databaseNameCore   = databaseNameSimilarity;
+
     return params;
 }
 
 DbEngineParameters DbEngineParameters::parametersForSQLite(const QString& databaseFile)
 {
     // only the database name is needed
+
     DbEngineParameters params(QLatin1String("QSQLITE"), databaseFile);
     params.setCoreDatabasePath(databaseFile);
     params.setThumbsDatabasePath(params.getCoreDatabaseNameOrDir());
     params.setFaceDatabasePath(params.getCoreDatabaseNameOrDir());
     params.setSimilarityDatabasePath(params.getCoreDatabaseNameOrDir());
+
     return params;
 }
 
@@ -822,17 +844,17 @@ DbEngineParameters DbEngineParameters::parametersForSQLiteDefaultFile(const QStr
 
 QString DbEngineParameters::defaultMysqlServerCmd()
 {
-    return QLatin1String("mysqld"); // For Linux, Windows and OSX
+    return QLatin1String("mysqld");             // For Linux, Windows and OSX
 }
 
 QString DbEngineParameters::defaultMysqlAdminCmd()
 {
-    return QLatin1String("mysqladmin"); // For Linux, Windows and OSX
+    return QLatin1String("mysqladmin");         // For Linux, Windows and OSX
 }
 
 QString DbEngineParameters::defaultMysqlInitCmd()
 {
-    return QLatin1String("mysql_install_db"); // For Linux, Windows and OSX
+    return QLatin1String("mysql_install_db");   // For Linux, Windows and OSX
 }
 
 // --------------------------------

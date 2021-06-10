@@ -59,7 +59,7 @@ QString DatabaseServerError::getErrorText() const
 }
 void DatabaseServerError::setErrorText(const QString& errorText)
 {
-    m_ErrorText=errorText;
+    m_ErrorText = errorText;
 }
 
 } // namespace Digikam
