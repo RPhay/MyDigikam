@@ -58,24 +58,6 @@ namespace Digikam
 class Q_DECL_HIDDEN GPSMarkerTiler::MyTile : public Tile
 {
 public:
-
-    MyTile()
-        : Tile()
-    {
-    }
-
-    /**
-     * Note: MyTile is only deleted by GPSMarkerTiler::tileDelete.
-     * All subclasses of AbstractMarkerTiler have to reimplement tileDelete
-     * to delete their Tile subclasses.
-     * This was done in order not to have any virtual functions
-     * in Tile and its subclasses in order to save memory, since there
-     * can be a lot of tiles in a MarkerTiler.
-     */
-    ~MyTile()
-    {
-    }
-
     QList<qlonglong> imagesId;
 };
 
@@ -162,11 +144,6 @@ GPSMarkerTiler::GPSMarkerTiler(QObject* const parent,
  */
 GPSMarkerTiler::~GPSMarkerTiler()
 {
-    // WARNING: we have to call clear! By the time AbstractMarkerTiler calls clear,
-    // this object does not exist any more, and thus the tiles are not correctly destroyed!
-
-    clear();
-
     delete d;
 }
 
@@ -211,6 +188,8 @@ void GPSMarkerTiler::prepareTiles(const GeoCoordinates& upperLeft, const GeoCoor
         {
             std::swap(d->rectList[i], d->rectList.back());
             d->rectList.removeLast();
+            // we removed one entry. we have to subtract one from the index
+            --i;
         }
     }
 
@@ -688,11 +667,6 @@ AbstractMarkerTiler::Tile* GPSMarkerTiler::tileNew()
     return new MyTile();
 }
 
-void GPSMarkerTiler::tileDelete(AbstractMarkerTiler::Tile* const tile)
-{
-    delete static_cast<MyTile*>(tile);
-}
-
 /**
  * @brief Receives notifications from the database when images were changed and updates the tiler
  */
@@ -1012,7 +986,7 @@ void GPSMarkerTiler::removeMarkerFromTileAndChildren(const qlonglong imageId, co
 
             // this tile can be deleted
 
-            tileDeleteChild(currentParentTile, currentTile);
+            currentParentTile->deleteChild(currentTile);
             break;
         }
 

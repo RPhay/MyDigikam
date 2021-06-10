@@ -27,6 +27,7 @@
 // Qt includes
 
 #include <QPair>
+#include <QScopedPointer>
 
 // Local includes
 
@@ -40,14 +41,10 @@ class Q_DECL_HIDDEN AbstractMarkerTiler::Private
 {
 public:
 
-    explicit Private()
-        : rootTile(nullptr),
-          isDirty(true)
-    {
-    }
+    explicit Private() = default;
 
-    AbstractMarkerTiler::Tile* rootTile;
-    bool                       isDirty;
+    QScopedPointer<AbstractMarkerTiler::Tile>  rootTile;
+    bool                                       isDirty = true;
 };
 
 AbstractMarkerTiler::AbstractMarkerTiler(QObject* const parent)
@@ -58,10 +55,6 @@ AbstractMarkerTiler::AbstractMarkerTiler(QObject* const parent)
 
 AbstractMarkerTiler::~AbstractMarkerTiler()
 {
-    // delete all tiles
-
-    clear();
-
     delete d;
 }
 
@@ -72,7 +65,7 @@ AbstractMarkerTiler::Tile* AbstractMarkerTiler::rootTile()
         regenerateTiles();
     }
 
-    return d->rootTile;
+    return d->rootTile.get();
 }
 
 bool AbstractMarkerTiler::isDirty() const
@@ -93,12 +86,9 @@ void AbstractMarkerTiler::setDirty(const bool state)
     }
 }
 
-AbstractMarkerTiler::Tile* AbstractMarkerTiler::resetRootTile()
+void AbstractMarkerTiler::resetRootTile()
 {
-    tileDelete(d->rootTile);
-    d->rootTile = tileNew();
-
-    return d->rootTile;
+    d->rootTile.reset(tileNew());
 }
 
 void AbstractMarkerTiler::onIndicesClicked(const ClickInfo& clickInfo)
@@ -115,65 +105,9 @@ void AbstractMarkerTiler::onIndicesMoved(const TileIndex::List& tileIndicesList,
     Q_UNUSED(targetSnapIndex);
 }
 
-AbstractMarkerTiler::Tile* AbstractMarkerTiler::tileNew()
-{
-    return new Tile();
-}
-
-void AbstractMarkerTiler::tileDelete(AbstractMarkerTiler::Tile* const tile)
-{
-    tileDeleteChildren(tile);
-
-    // NOTE: use dynamic binding as this virtual method can be re-implemented in derived classes.
-
-    this->tileDeleteInternal(tile);
-}
-
-void AbstractMarkerTiler::tileDeleteInternal(AbstractMarkerTiler::Tile* const tile)
-{
-    delete tile;
-}
-
-void AbstractMarkerTiler::tileDeleteChildren(AbstractMarkerTiler::Tile* const tile)
-{
-    if (!tile)
-    {
-        return;
-    }
-
-    QVector<Tile*> tileChildren = tile->takeChildren();
-
-    foreach (Tile* tilec, tileChildren)
-    {
-        tileDelete(tilec);
-    }
-}
-
-void AbstractMarkerTiler::tileDeleteChild(AbstractMarkerTiler::Tile* const parentTile,
-                                          AbstractMarkerTiler::Tile* const childTile,
-                                          const int knownLinearIndex)
-{
-    int tileIndex = knownLinearIndex;
-
-    if (tileIndex < 0)
-    {
-        tileIndex = parentTile->indexOfChildTile(childTile);
-    }
-
-    parentTile->clearChild(tileIndex);
-
-    tileDelete(childTile);
-}
-
 AbstractMarkerTiler::TilerFlags AbstractMarkerTiler::tilerFlags() const
 {
     return FlagNull;
-}
-
-void AbstractMarkerTiler::clear()
-{
-    tileDelete(d->rootTile);
-    d->rootTile = nullptr;
 }
 
 // -------------------------------------------------------------------------
@@ -552,13 +486,17 @@ AbstractMarkerTiler* AbstractMarkerTiler::NonEmptyIterator::model() const
 
 // -------------------------------------------------------------------------
 
-AbstractMarkerTiler::Tile::Tile()
-    : children()
-{
-}
+AbstractMarkerTiler::Tile::Tile() = default;
 
 AbstractMarkerTiler::Tile::~Tile()
 {
+    for (auto* tile : children)
+    {
+        if (tile)
+        {
+            delete tile;
+        }
+    }
 }
 
 int AbstractMarkerTiler::Tile::maxChildCount()
@@ -576,44 +514,43 @@ AbstractMarkerTiler::Tile* AbstractMarkerTiler::Tile::getChild(const int linearI
     return children.at(linearIndex);
 }
 
-void AbstractMarkerTiler::Tile::addChild(const int linearIndex, Tile* const tilePointer)
+AbstractMarkerTiler::Tile* AbstractMarkerTiler::Tile::addChild(const int linearIndex, Tile* tilePointer)
 {
     if ((tilePointer == nullptr) && children.isEmpty())
     {
-        return;
+        return nullptr;
     }
 
     prepareForChildren();
 
+    GEOIFACE_ASSERT(!children[linearIndex]);
     children[linearIndex] = tilePointer;
+    return tilePointer;
 }
 
-void AbstractMarkerTiler::Tile::clearChild(const int linearIndex)
+
+void AbstractMarkerTiler::Tile::deleteChild(Tile* const childTile,
+                                            const int knownLinearIndex)
 {
     if (children.isEmpty())
     {
         return;
     }
 
-    children[linearIndex] = 0;
-}
+    int tileIndex = knownLinearIndex;
 
-int AbstractMarkerTiler::Tile::indexOfChildTile(Tile* const tile)
-{
-    return children.indexOf(tile);
+    if (tileIndex < 0)
+    {
+        tileIndex = std::distance(children.begin(), std::find(children.begin(), children.end(), childTile));
+    }
+
+    delete children[tileIndex];
+    children[tileIndex] = nullptr;
 }
 
 bool AbstractMarkerTiler::Tile::childrenEmpty() const
 {
-    return children.isEmpty();
-}
-
-QVector<AbstractMarkerTiler::Tile*> AbstractMarkerTiler::Tile::takeChildren()
-{
-    QVector<Tile*> childrenCopy = children;
-    children.clear();
-
-    return childrenCopy;
+    return children.empty();
 }
 
 void AbstractMarkerTiler::Tile::prepareForChildren()
@@ -623,7 +560,7 @@ void AbstractMarkerTiler::Tile::prepareForChildren()
         return;
     }
 
-    children = QVector<Tile*>(maxChildCount(), 0);
+    children = QVector<Tile*>(maxChildCount(), nullptr);
 }
 
 } // namespace Digikam

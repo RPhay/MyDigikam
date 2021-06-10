@@ -71,7 +71,6 @@ public:
     ~GPSMarkerTiler()                                                                               override;
 
     Tile* tileNew()                                                                                 override;
-    virtual void tileDelete(Tile* const tile);
     void prepareTiles(const GeoCoordinates& upperLeft, const GeoCoordinates& lowerRight, int level) override;
     void regenerateTiles()                                                                          override;
     AbstractMarkerTiler::Tile* getTile(const TileIndex& tileIndex, const bool stopIfEmpty)          override;

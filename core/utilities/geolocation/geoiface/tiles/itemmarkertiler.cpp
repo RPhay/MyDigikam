@@ -36,37 +36,17 @@ namespace Digikam
 class Q_DECL_HIDDEN ItemMarkerTiler::MyTile : public Tile
 {
 public:
-
-    MyTile()
-        : Tile         (),
-          markerIndices(),
-          selectedCount(0)
-    {
-    }
-
-    /**
-     * Note: MyTile is only deleted by ItemMarkerTiler::tileDelete.
-     * All subclasses of AbstractMarkerTiler have to reimplement tileDelete
-     * to delete their Tile subclasses.
-     * This was done in order not to have any virtual functions
-     * in Tile and its subclasses in order to save memory, since there
-     * can be a lot of tiles in a MarkerTiler.
-     */
-    virtual ~MyTile()
-    {
-    }
-
+    MyTile() = default;
     void removeMarkerIndexOrInvalidIndex(const QModelIndex& indexToRemove);
 
 public:
 
     QList<QPersistentModelIndex> markerIndices;
-    int                          selectedCount;
-
+    int                          selectedCount = 0;
 private:
 
-    MyTile(const MyTile&);
-    MyTile& operator=(const MyTile&);
+    MyTile(const MyTile&) = delete;
+    MyTile& operator=(const MyTile&) = delete;
 };
 
 void ItemMarkerTiler::MyTile::removeMarkerIndexOrInvalidIndex(const QModelIndex& indexToRemove)
@@ -129,11 +109,6 @@ ItemMarkerTiler::ItemMarkerTiler(GeoModelHelper* const modelHelper, QObject* con
 
 ItemMarkerTiler::~ItemMarkerTiler()
 {
-    // WARNING: we have to call clear! By the time AbstractMarkerTiler calls clear,
-    // this object does not exist any more, and thus the tiles are not correctly destroyed!
-
-    clear();
-
     delete d;
 }
 
@@ -439,7 +414,7 @@ void ItemMarkerTiler::removeMarkerIndexFromGrid(const QModelIndex& markerIndex, 
         }
 
         MyTile* const parentTile = tiles.at(l-1);
-        tileDeleteChild(parentTile, currentTile);
+        parentTile->deleteChild(currentTile);
     }
 }
 
@@ -818,11 +793,6 @@ void ItemMarkerTiler::setActive(const bool state)
 AbstractMarkerTiler::Tile* ItemMarkerTiler::tileNew()
 {
     return new MyTile();
-}
-
-void ItemMarkerTiler::tileDeleteInternal(AbstractMarkerTiler::Tile* const tile)
-{
-    delete static_cast<MyTile*>(tile);
 }
 
 AbstractMarkerTiler::TilerFlags ItemMarkerTiler::tilerFlags() const
