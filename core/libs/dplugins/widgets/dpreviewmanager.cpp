@@ -244,7 +244,7 @@ void DPreviewManager::setBusy(bool b, const QString& text)
 
     if (d->busy)
     {
-        setCursor( Qt::WaitCursor );
+        setCursor(Qt::WaitCursor);
         d->progressTimer->start(300);
         setText(text);
     }
