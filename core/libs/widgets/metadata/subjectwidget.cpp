@@ -305,7 +305,7 @@ SubjectWidget::SubjectWidget(QWidget* const parent, bool sizeLimited)
     connect(d->repSubjectButton, &QPushButton::clicked,
             this, &SubjectWidget::slotRepSubject);
 
-    connect(d->btnGroup, static_cast<void (QButtonGroup::*)(int)>(&QButtonGroup::buttonReleased),
+    connect(d->btnGroup, static_cast<void (QButtonGroup::*)(int)>(&QButtonGroup::idReleased),
             this, &SubjectWidget::slotEditOptionChanged);
 
     connect(d->refCB, static_cast<void (QComboBox::*)(int)>(&QComboBox::activated),
