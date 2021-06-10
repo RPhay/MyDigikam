@@ -254,9 +254,9 @@ QString DConfigDlgTitle::comment() const
     return d->commentLabel->text();
 }
 
-const QPixmap *DConfigDlgTitle::pixmap() const
+QPixmap DConfigDlgTitle::pixmap() const
 {
-    return d->imageLabel->pixmap();
+    return d->imageLabel->pixmap(Qt::ReturnByValue);
 }
 
 void DConfigDlgTitle::setBuddy(QWidget* const buddy)

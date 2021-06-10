@@ -606,7 +606,7 @@ void DLabelExpander::setIcon(const QIcon& icon)
 
 QIcon DLabelExpander::icon() const
 {
-    return QIcon(*d->pixmapLabel->pixmap());
+    return QIcon(d->pixmapLabel->pixmap(Qt::ReturnByValue));
 }
 
 void DLabelExpander::setWidget(QWidget* const widget)
