@@ -721,7 +721,7 @@ void GLViewerWidget::wheelEvent(QWheelEvent* e)
         case GLViewerWidget::Private::zoomImage:
         {
             setCursor(d->zoomCursor);
-            zoom(e->angleDelta().y(), e->pos(), d->zoomfactor_scrollwheel);
+            zoom(e->angleDelta().y(), e->position().toPoint(), d->zoomfactor_scrollwheel);
             break;
         }
 
