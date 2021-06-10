@@ -40,6 +40,7 @@
 #include <QStyle>
 #include <QPointer>
 #include <QFile>
+#include <QTimer>
 #include <QStandardPaths>
 #include <QTextStream>
 
@@ -83,7 +84,8 @@ public:
           saveMetadata    (nullptr),
           printMetadata   (nullptr),
           copy2ClipBoard  (nullptr),
-          optionsMenu     (nullptr)
+          optionsMenu     (nullptr),
+          preLoadingTimer (nullptr)
     {
     }
 
@@ -102,6 +104,7 @@ public:
     QAction*             copy2ClipBoard;
 
     QMenu*               optionsMenu;
+    QTimer*              preLoadingTimer;   ///< To prevent flicker effect with loading view with short loading time.
 };
 
 ExifToolWidget::ExifToolWidget(QWidget* const parent)
@@ -129,6 +132,9 @@ ExifToolWidget::ExifToolWidget(QWidget* const parent)
     d->copy2ClipBoard        = toolMenu->addAction(i18nc("@action:inmenu", "Copy to Clipboard"));
     d->toolBtn->setMenu(toolMenu);
 
+    d->preLoadingTimer       = new QTimer(this);
+    d->preLoadingTimer->setInterval(2000);
+    d->preLoadingTimer->setSingleShot(true);
     d->loadingView           = new ExifToolLoadingView(this);
 
     d->view                  = new ExifToolListView(d->metadataView);
@@ -162,9 +168,7 @@ ExifToolWidget::~ExifToolWidget()
 
 void ExifToolWidget::loadFromUrl(const QUrl& url)
 {
-    setCurrentIndex(Private::LoadingView);
-    d->loadingView->setBusy(true);
-
+    d->preLoadingTimer->start();
     d->fileName = url.fileName();
     bool ret    = d->view->loadFromUrl(url);
 
@@ -177,6 +181,7 @@ void ExifToolWidget::loadFromUrl(const QUrl& url)
             d->view->slotSearchTextChanged(settings);
         }
 
+        d->preLoadingTimer->stop();
         setCurrentIndex(Private::MetadataView);
         d->toolBtn->setEnabled(true);
     }
@@ -189,6 +194,8 @@ void ExifToolWidget::loadFromUrl(const QUrl& url)
                                    "%2",
                                    d->fileName,
                                    d->view->errorString()));
+
+        d->preLoadingTimer->stop();
         setCurrentIndex(Private::ErrorView);
         d->toolBtn->setEnabled(false);
     }
@@ -196,8 +203,17 @@ void ExifToolWidget::loadFromUrl(const QUrl& url)
     d->loadingView->setBusy(false);
 }
 
+void ExifToolWidget::slotPreLoadingTimerDone()
+{
+    setCurrentIndex(Private::LoadingView);
+    d->loadingView->setBusy(true);
+}
+
 void ExifToolWidget::setup()
 {
+    connect(d->preLoadingTimer, SIGNAL(timeout()),
+            this, SLOT(slotPreLoadingTimerDone()));
+
     connect(d->errorView, SIGNAL(signalSetupExifTool()),
             this, SIGNAL(signalSetupExifTool()));
 
