@@ -400,11 +400,11 @@ void GraphicsDImgView::wheelEvent(QWheelEvent* e)
 
         if      (e->angleDelta().y() < 0)
         {
-            d->layout->decreaseZoom(e->pos());
+            d->layout->decreaseZoom(e->position().toPoint());
         }
         else if (e->angleDelta().y() > 0)
         {
-            d->layout->increaseZoom(e->pos());
+            d->layout->increaseZoom(e->position().toPoint());
         }
 
         return;
