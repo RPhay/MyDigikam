@@ -31,6 +31,8 @@
 #include <QFileInfo>
 #include <QVBoxLayout>
 #include <QScopedPointer>
+#include <QtConcurrent>   // krazy:exclude=includes
+#include <QElapsedTimer>
 
 // KDE includes
 
@@ -223,12 +225,30 @@ void ItemPropertiesMetadataTab::setCurrentURL(const QUrl& url)
     d->makernoteWidget->setEnabled(true);
     d->iptcWidget->setEnabled(true);
     d->xmpWidget->setEnabled(true);
-    QScopedPointer<DMetadata> metadata(new DMetadata(url.toLocalFile()));
+
+    QScopedPointer<DMetadata> metadata(new DMetadata);
+    QFuture<void> task  = QtConcurrent::run(this,
+                                            &ItemPropertiesMetadataTab::dmetadataLoadThreaded,
+                                            url.toLocalFile(),
+                                            metadata.data());
+
+    task.waitForFinished();
 
     d->exifWidget->loadFromData(url.fileName(),      *metadata);
     d->makernoteWidget->loadFromData(url.fileName(), *metadata);
     d->iptcWidget->loadFromData(url.fileName(),      *metadata);
     d->xmpWidget->loadFromData(url.fileName(),       *metadata);
+}
+
+void ItemPropertiesMetadataTab::dmetadataLoadThreaded(const QString& file,
+                                                      DMetadata* const meta)
+{
+    QElapsedTimer execTimer;
+    execTimer.start();
+
+    bool ret = meta->load(file);
+
+    qCDebug(DIGIKAM_GENERAL_LOG) << "Metadata loading with Exiv2 took" << execTimer.elapsed() << "ms (" << ret << ")";
 }
 
 void ItemPropertiesMetadataTab::setCurrentData(DMetadata* const metaData, const QUrl& url)
