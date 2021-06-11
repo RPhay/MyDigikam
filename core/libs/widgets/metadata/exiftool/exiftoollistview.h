@@ -74,7 +74,9 @@ private:
     ExifToolListViewGroup* findGroup(const QString& group);
 
     void exifToolParseThreaded(const QString& file,
-                               volatile bool& ret);
+                               ExifToolParser::ExifToolData* const parsed,
+                               QString* const errorString,
+                               bool* const error);
 
 private:
 

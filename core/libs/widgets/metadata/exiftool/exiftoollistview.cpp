@@ -53,7 +53,6 @@ public:
     {
     }
 
-    ExifToolParser::ExifToolData  parsed;
     QString                       lastError;
     QString                       selectedItemKey;
     QStringList                   simplifiedTagsList;
@@ -83,22 +82,24 @@ ExifToolListView::~ExifToolListView()
 }
 
 void ExifToolListView::exifToolParseThreaded(const QString& file,
-                                             volatile bool& error)
+                                             ExifToolParser::ExifToolData* const parsed,
+                                             QString* const errorString,
+                                             bool* const error)
 {
     ExifToolParser* const parser = new ExifToolParser(nullptr);
 
     if (!parser->load(file))
     {
-        d->lastError = parser->currentErrorString();
-        error        = true;
+        *errorString = parser->currentErrorString();
+        *error       = true;
         delete parser;
 
         return;
     }
 
-    d->lastError.clear();
-    d->parsed = parser->currentData();
-    error     = false;
+    errorString->clear();
+    *parsed = parser->currentData();
+    *error  = false;
     delete parser;
 }
 
@@ -111,11 +112,18 @@ bool ExifToolListView::loadFromUrl(const QUrl& url)
         return true;
     }
 
-    volatile bool error = false;
+    bool error          = false;
+    ExifToolParser::ExifToolData parsed;
+
+    // Note; pass writable argument by pointer to QtConcurent::run()
+    // For details: https://stackoverflow.com/questions/25091518/qt-concurrent-run-pass-value-by-reference-but-the-memory-address-is-different
+
     QFuture<void> task  = QtConcurrent::run(this,
                                             &ExifToolListView::exifToolParseThreaded,
                                             url.toLocalFile(),
-                                            error);
+                                            &parsed,
+                                            &d->lastError,
+                                            &error);
 
     task.waitForFinished();
 
@@ -124,7 +132,7 @@ bool ExifToolListView::loadFromUrl(const QUrl& url)
         return false;
     }
 
-    setMetadata(d->parsed);
+    setMetadata(parsed);
 
     return true;
 }
