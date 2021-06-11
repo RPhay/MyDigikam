@@ -235,7 +235,7 @@ void AdvPrintPhotoPage::initializePage()
         d->wizard->setItemsList(d->settings->inputImages);
     }
 
-    initPhotoSizes(d->printer->paperSize(QPrinter::Millimeter));
+    initPhotoSizes(d->printer->pageLayout().pageSize().size(QPageSize::Millimeter));
 
     // restore photoSize
 
@@ -284,7 +284,7 @@ void AdvPrintPhotoPage::initializePage()
     slotOutputChanged(d->photoUi->m_printer_choice->itemHighlighted());
 
     d->photoUi->ListPhotoSizes->setIconSize(QSize(32, 32));
-    initPhotoSizes(d->printer->paperSize(QPrinter::Millimeter));
+    initPhotoSizes(d->printer->pageLayout().pageSize().size(QPageSize::Millimeter));
 }
 
 bool AdvPrintPhotoPage::validatePage()
@@ -349,7 +349,8 @@ void AdvPrintPhotoPage::slotOutputChanged(const QString& text)
     // default no margins
 
     d->printer->setFullPage(true);
-    d->printer->setPageMargins(0, 0, 0, 0, QPrinter::Millimeter);
+    QMarginsF margins(0, 0, 0, 0);
+    d->printer->setPageMargins(margins, QPageLayout::Millimeter);
 }
 
 void AdvPrintPhotoPage::slotXMLLoadElement(QXmlStreamReader& xmlReader)
@@ -468,7 +469,7 @@ void AdvPrintPhotoPage::slotXMLCustomElement(QXmlStreamWriter& xmlWriter)
 {
     xmlWriter.writeStartElement(QLatin1String("pa_layout"));
     xmlWriter.writeAttribute(QLatin1String("Printer"),   d->photoUi->m_printer_choice->itemHighlighted());
-    xmlWriter.writeAttribute(QLatin1String("PageSize"),  QString::fromUtf8("%1").arg(d->printer->paperSize()));
+    xmlWriter.writeAttribute(QLatin1String("PageSize"),  QString::fromUtf8("%1").arg(d->printer->pageLayout().pageSize().id()));
     xmlWriter.writeAttribute(QLatin1String("PhotoSize"), d->photoUi->ListPhotoSizes->currentItem()->text());
     xmlWriter.writeEndElement(); // pa_layout
 }
@@ -776,8 +777,8 @@ void AdvPrintPhotoPage::slotXMLCustomElement(QXmlStreamReader& xmlReader)
             if (!attr.isEmpty())
             {
                 qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << " found " << attr.toString();
-                QPrinter::PaperSize paperSize = (QPrinter::PaperSize)attr.toString().toInt(&ok);
-                d->printer->setPaperSize(paperSize);
+                QPageSize pageSize((QPageSize::PageSizeId)attr.toString().toInt(&ok));
+                d->printer->setPageSize(pageSize);
             }
 
             attr = attrs.value(QLatin1String("PhotoSize"));
@@ -796,7 +797,7 @@ void AdvPrintPhotoPage::slotXMLCustomElement(QXmlStreamReader& xmlReader)
 
     d->settings->currentPreviewPage = 0;
 
-    initPhotoSizes(d->printer->paperSize(QPrinter::Millimeter));
+    initPhotoSizes(d->printer->pageLayout().pageSize().size(QPageSize::Millimeter));
 
     QList<QListWidgetItem*> list    = d->photoUi->ListPhotoSizes->findItems(d->settings->savedPhotoSize,
                                                                             Qt::MatchExactly);
@@ -1127,14 +1128,16 @@ void AdvPrintPhotoPage::slotPageSetup()
         QPrinter* const printer = d->pageSetupDlg->printer();
 
         qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Dialog exit, new size "
-                                     << printer->paperSize(QPrinter::Millimeter)
+                                     << printer->pageLayout().pageSize().size(QPageSize::Millimeter)
                                      << " internal size "
-                                     << d->printer->paperSize(QPrinter::Millimeter);
+                                     << d->printer->pageLayout().pageSize().size(QPageSize::Millimeter);
 
         qreal left, top, right, bottom;
-        d->printer->getPageMargins(&left, &top,
-                                   &right, &bottom,
-                                   QPrinter::Millimeter);
+        auto margins = d->printer->pageLayout().margins(QPageLayout::Millimeter);
+        left         = margins.left();
+        top          = margins.top();
+        right        = margins.right();
+        bottom       = margins.bottom();
 
         qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Dialog exit, new margins: left "
                                      << left
@@ -1168,7 +1171,7 @@ void AdvPrintPhotoPage::slotPageSetup()
 
     // Fix the page size dialog and preview PhotoPage
 
-    initPhotoSizes(d->printer->paperSize(QPrinter::Millimeter));
+    initPhotoSizes(d->printer->pageLayout().pageSize().size(QPageSize::Millimeter));
 
     // restore photoSize
 

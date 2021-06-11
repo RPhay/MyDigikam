@@ -336,11 +336,11 @@ bool AdvPrintFinalPage::print()
         d->photoPage->printer()->setFullPage(true);
 
         qreal left, top, right, bottom;
-        d->photoPage->printer()->getPageMargins(&left,
-                                                &top,
-                                                &right,
-                                                &bottom,
-                                                QPrinter::Millimeter);
+        auto margins = d->photoPage->printer()->pageLayout().margins(QPageLayout::Millimeter);
+        left         = margins.left();
+        top          = margins.top();
+        right        = margins.right();
+        bottom       = margins.bottom();
 
         qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Margins before print dialog: left "
                                              << left
@@ -352,18 +352,18 @@ bool AdvPrintFinalPage::print()
                                              << bottom;
 
         qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "(1) paper page "
-                                             << d->photoPage->printer()->paperSize()
+                                             << d->photoPage->printer()->pageLayout().pageSize().id()
                                              << " size "
-                                             << d->photoPage->printer()->paperSize(QPrinter::Millimeter);
+                                             << d->photoPage->printer()->pageLayout().pageSize().size(QPageSize::Millimeter);
 
-        QPrinter::PaperSize paperSize = d->photoPage->printer()->paperSize();
+        auto pageSize = d->photoPage->printer()->pageLayout().pageSize().id();
         QPrintDialog* const dialog    = new QPrintDialog(d->photoPage->printer(), this);
         dialog->setWindowTitle(i18n("Print Creator"));
 
         qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "(2) paper page "
-                                             << dialog->printer()->paperSize()
+                                             << dialog->printer()->pageLayout().pageSize().id()
                                              << " size "
-                                             << dialog->printer()->paperSize(QPrinter::Millimeter);
+                                             << dialog->printer()->pageLayout().pageSize().size(QPageSize::Millimeter);
 
         if (dialog->exec() != QDialog::Accepted)
         {
@@ -371,23 +371,27 @@ bool AdvPrintFinalPage::print()
         }
 
         qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "(3) paper page "
-                                             << dialog->printer()->paperSize()
+                                             << dialog->printer()->pageLayout().pageSize().id()
                                              << " size "
-                                             << dialog->printer()->paperSize(QPrinter::Millimeter);
+                                             << dialog->printer()->pageLayout().pageSize().size(QPageSize::Millimeter);
 
         // Why paperSize changes if printer properties is not pressed?
 
-        if (paperSize != d->photoPage->printer()->paperSize())
+        if (pageSize != d->photoPage->printer()->pageLayout().pageSize().id())
         {
-            d->photoPage->printer()->setPaperSize(paperSize);
+            d->photoPage->printer()->setPageSize(QPageSize(pageSize));
         }
 
         qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "(4) paper page "
-                                             << dialog->printer()->paperSize()
+                                             << dialog->printer()->pageLayout().pageSize().id()
                                              << " size "
-                                             << dialog->printer()->paperSize(QPrinter::Millimeter);
+                                             << dialog->printer()->pageLayout().pageSize().size(QPageSize::Millimeter);
 
-        dialog->printer()->getPageMargins(&left, &top, &right, &bottom, QPrinter::Millimeter);
+        margins = dialog->printer()->pageLayout().margins(QPageLayout::Millimeter);
+        left    = margins.left();
+        top     = margins.top();
+        right   = margins.right();
+        bottom  = margins.bottom();
 
         qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Dialog exit, new margins: left "
                                              << left
