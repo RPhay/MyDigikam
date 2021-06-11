@@ -342,15 +342,15 @@ void MetaReaderThreadTest::runMetaReader(const QString& path,
 
     while (!spy.wait(1000));  // Time-out in milliseconds
 
-    qCDebug(DIGIKAM_TESTS_LOG) << endl << "Scan have been completed:"                                                    << endl
-             <<         "    Processing duration:" << thread->m_timer.elapsed() / 1000.0 << " seconds" << endl
-             <<         "    Root path          :" << path                                             << endl
-             <<         "    Number of files    :" << list.size()                                      << endl
-             <<         "    Number of threads  :" << thread->maximumNumberOfThreads()                 << endl
-             <<         "    Direction          :" << MetaReaderThread::directionToString(direction)   << endl
-             <<         "    Type-mimes         :" << mimeTypes.join(QLatin1Char(' '))                 << endl
-             <<         "    Engine settings    :" << settings                                         << endl
-             <<         "    Statistics         :" << thread->stats(mimeTypes)                         << endl;
+    qCDebug(DIGIKAM_TESTS_LOG) << Qt::endl << "Scan have been completed:"                                                    << Qt::endl
+             <<         "    Processing duration:" << thread->m_timer.elapsed() / 1000.0 << " seconds" << Qt::endl
+             <<         "    Root path          :" << path                                             << Qt::endl
+             <<         "    Number of files    :" << list.size()                                      << Qt::endl
+             <<         "    Number of threads  :" << thread->maximumNumberOfThreads()                 << Qt::endl
+             <<         "    Direction          :" << MetaReaderThread::directionToString(direction)   << Qt::endl
+             <<         "    Type-mimes         :" << mimeTypes.join(QLatin1Char(' '))                 << Qt::endl
+             <<         "    Engine settings    :" << settings                                         << Qt::endl
+             <<         "    Statistics         :" << thread->stats(mimeTypes)                         << Qt::endl;
 
     thread->cancel();
     delete thread;

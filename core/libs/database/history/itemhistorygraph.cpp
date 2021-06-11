@@ -886,11 +886,11 @@ QDebug operator<<(QDebug dbg, const ItemHistoryGraph& g)
     if (vertices.isEmpty())
     {
         vertices = g.data().vertices();
-        dbg << "Not-a-DAG-Graph with" << vertices.size() << "vertices:" << endl;
+        dbg << "Not-a-DAG-Graph with" << vertices.size() << "vertices:" << Qt::endl;;
     }
     else
     {
-        dbg << "Graph with" << vertices.size() << "vertices:" << endl;
+        dbg << "Graph with" << vertices.size() << "vertices:" << Qt::endl;;
     }
 
     foreach (const HistoryGraph::Vertex& target, vertices)
@@ -908,11 +908,11 @@ QDebug operator<<(QDebug dbg, const ItemHistoryGraph& g)
         {
             dbg.nospace() << QLatin1String("{ ")    + targetString + QLatin1String(" } ") +
                              QLatin1String("-> { ") + sourceVertexTexts.join(QLatin1String(" }, { ")) +
-                             QLatin1String(" }") << endl;
+                             QLatin1String(" }") << Qt::endl;;
         }
         else if (g.data().outDegree(target) == 0)
         {
-            dbg.nospace() << QLatin1String("Unconnected: { ") + targetString + QLatin1String(" }") << endl;
+            dbg.nospace() << QLatin1String("Unconnected: { ") + targetString + QLatin1String(" }") << Qt::endl;;
         }
     }
 

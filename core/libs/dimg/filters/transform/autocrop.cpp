@@ -468,19 +468,19 @@ QRect AutoCrop::spiralClockwiseTraversal(const QImage& source, int topCrop, int 
     qCDebug(DIGIKAM_DIMG_LOG) << "Enddownj  : " << enddownj;
     qCDebug(DIGIKAM_DIMG_LOG) << "Endlefti  : " << endlefti;
     qCDebug(DIGIKAM_DIMG_LOG) << "Endleftj  : " << endleftj;
-    qCDebug(DIGIKAM_DIMG_LOG) << "Done" << endl;
+    qCDebug(DIGIKAM_DIMG_LOG) << "Done" << Qt::endl;
 
     qCDebug(DIGIKAM_DIMG_LOG) << "Left   Margin   : " << leftmargin;
     qCDebug(DIGIKAM_DIMG_LOG) << "Right  Margin   : " << rightmargin;
     qCDebug(DIGIKAM_DIMG_LOG) << "Top    Margin   : " << topmargin;
     qCDebug(DIGIKAM_DIMG_LOG) << "Bottom Margin   : " << bottommargin;
-    qCDebug(DIGIKAM_DIMG_LOG) << "Done" << endl;
+    qCDebug(DIGIKAM_DIMG_LOG) << "Done" << Qt::endl;
 
     qCDebug(DIGIKAM_DIMG_LOG) << "Left Edge   : " << leftEdge;
     qCDebug(DIGIKAM_DIMG_LOG) << "Right Edge  : " << rightEdge;
     qCDebug(DIGIKAM_DIMG_LOG) << "Top Edge    : " << topEdge;
     qCDebug(DIGIKAM_DIMG_LOG) << "Bottom Edge : " << bottomEdge;
-    qCDebug(DIGIKAM_DIMG_LOG) << "Done" << endl;
+    qCDebug(DIGIKAM_DIMG_LOG) << "Done" << Qt::endl;
 
     if (bottomEdge)
     {

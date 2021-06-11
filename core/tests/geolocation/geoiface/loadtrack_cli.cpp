@@ -57,21 +57,21 @@ int main(int argc, char* argv[])
 
     if (argc < 2)
     {
-        qerr << QLatin1String("Need a filename as argument to load") << endl;
+        qerr << QLatin1String("Need a filename as argument to load") << Qt::endl;
         return 1;
     }
 
     const QString filename = QString::fromLatin1(argv[1]);
-    qerr << "Loading file: " << filename << endl;
+    qerr << "Loading file: " << filename << Qt::endl;
     const bool success     = testSaxLoader(filename);
 
     if (!success)
     {
-        qerr << "Loading failed" << endl;
+        qerr << "Loading failed" << Qt::endl;
         return 1;
     }
 
-    qerr << "Loaded successfully." << endl;
+    qerr << "Loaded successfully." << Qt::endl;
 
     return 0;
 }

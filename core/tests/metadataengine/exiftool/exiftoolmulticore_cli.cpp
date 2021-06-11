@@ -82,12 +82,12 @@ bool exifToolParse(const QString& file)
     // Header
 
     stream << sep
-           << endl
+           << Qt::endl
            << QString::fromLatin1("%1").arg(QLatin1String("ExifTool::group0.name"), section1) << " | "
            << QString::fromLatin1("%1").arg(QLatin1String("String Value"),          section2)
-           << endl
+           << Qt::endl
            << sep
-           << endl;
+           << Qt::endl;
 
     for (ExifToolParser::ExifToolData::const_iterator it = parsed.constBegin() ;
          it != parsed.constEnd() ; ++it)
@@ -114,10 +114,10 @@ bool exifToolParse(const QString& file)
 
     foreach (const QString& tag, tagsLst)
     {
-        stream << tag << endl;
+        stream << tag << Qt::endl;
     }
 
-    stream << sep << endl;
+    stream << sep << Qt::endl;
 
     output.close();
 

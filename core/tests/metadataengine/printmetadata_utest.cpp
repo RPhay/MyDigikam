@@ -38,9 +38,9 @@ void PrintMetadataTest::printMetadataMap(const DMetadata::MetaDataMap& map)
 {
     QString output;
     QTextStream stream(&output);
-    stream << endl;
+    stream << Qt::endl;
 
-    qCDebug(DIGIKAM_TESTS_LOG) << "Found" << map.size() << "tags:" << endl;
+    qCDebug(DIGIKAM_TESTS_LOG) << "Found" << map.size() << "tags:" << Qt::endl;
 
     for (DMetadata::MetaDataMap::const_iterator it = map.constBegin() ;
          it != map.constEnd() ; ++it)
@@ -63,7 +63,7 @@ void PrintMetadataTest::printMetadataMap(const DMetadata::MetaDataMap& map)
             tagVal.append(QString::fromLatin1("... (%1 bytes)").arg(value.length()));
         }
 
-        stream << tagName << " : " << tagVal << endl;
+        stream << tagName << " : " << tagVal << Qt::endl;
     }
 
     qCDebug(DIGIKAM_TESTS_LOG).noquote() << output;

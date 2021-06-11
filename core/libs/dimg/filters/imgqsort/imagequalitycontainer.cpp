@@ -140,22 +140,22 @@ void ImageQualityContainer::writeToConfig()
 
 QDebug operator<<(QDebug dbg, const ImageQualityContainer& s)
 {
-    dbg.nospace() << endl;
-    dbg.nospace() << "EnableSorter       :" << s.enableSorter       << endl;
-    dbg.nospace() << "DetectBlur         :" << s.detectBlur         << endl;
-    dbg.nospace() << "DetectNoise        :" << s.detectNoise        << endl;
-    dbg.nospace() << "DetectCompression  :" << s.detectCompression  << endl;
-    dbg.nospace() << "DetectExposure     :" << s.detectExposure     << endl;
-    dbg.nospace() << "LowQRejected       :" << s.lowQRejected       << endl;
-    dbg.nospace() << "MediumQPending     :" << s.mediumQPending     << endl;
-    dbg.nospace() << "HighQAccepted      :" << s.highQAccepted      << endl;
-    dbg.nospace() << "Speed              :" << s.speed              << endl;
-    dbg.nospace() << "Rejected Threshold :" << s.rejectedThreshold  << endl;
-    dbg.nospace() << "Pending Threshold  :" << s.pendingThreshold   << endl;
-    dbg.nospace() << "Accepted Threshold :" << s.acceptedThreshold  << endl;
-    dbg.nospace() << "Blur Weight        :" << s.blurWeight         << endl;
-    dbg.nospace() << "Noise Weight       :" << s.noiseWeight        << endl;
-    dbg.nospace() << "Compression Weight :" << s.compressionWeight  << endl;
+    dbg.nospace() << Qt::endl;
+    dbg.nospace() << "EnableSorter       :" << s.enableSorter       << Qt::endl;
+    dbg.nospace() << "DetectBlur         :" << s.detectBlur         << Qt::endl;
+    dbg.nospace() << "DetectNoise        :" << s.detectNoise        << Qt::endl;
+    dbg.nospace() << "DetectCompression  :" << s.detectCompression  << Qt::endl;
+    dbg.nospace() << "DetectExposure     :" << s.detectExposure     << Qt::endl;
+    dbg.nospace() << "LowQRejected       :" << s.lowQRejected       << Qt::endl;
+    dbg.nospace() << "MediumQPending     :" << s.mediumQPending     << Qt::endl;
+    dbg.nospace() << "HighQAccepted      :" << s.highQAccepted      << Qt::endl;
+    dbg.nospace() << "Speed              :" << s.speed              << Qt::endl;
+    dbg.nospace() << "Rejected Threshold :" << s.rejectedThreshold  << Qt::endl;
+    dbg.nospace() << "Pending Threshold  :" << s.pendingThreshold   << Qt::endl;
+    dbg.nospace() << "Accepted Threshold :" << s.acceptedThreshold  << Qt::endl;
+    dbg.nospace() << "Blur Weight        :" << s.blurWeight         << Qt::endl;
+    dbg.nospace() << "Noise Weight       :" << s.noiseWeight        << Qt::endl;
+    dbg.nospace() << "Compression Weight :" << s.compressionWeight  << Qt::endl;
 
     return dbg.space();
 }

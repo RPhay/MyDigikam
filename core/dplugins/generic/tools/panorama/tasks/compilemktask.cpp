@@ -58,7 +58,7 @@ void CompileMKTask::run(ThreadWeaver::JobPointer, ThreadWeaver::Thread*)
 
     qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "make command line: " << getCommandLine();
 
-    qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "make output:" << endl << output;
+    qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "make output:" << Qt::endl << output;
 }
 
 } // namespace DigikamGenericPanoramaPlugin

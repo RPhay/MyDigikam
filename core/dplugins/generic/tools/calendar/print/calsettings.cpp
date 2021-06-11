@@ -337,7 +337,7 @@ void CalSettings::loadSpecial(const QUrl& url, const QColor& color)
 
         foreach (const KCalCore::Event::Ptr event, list)
         {
-            qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << event->summary() << endl << "--------";
+            qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << event->summary() << Qt::endl << "--------";
             counter++;
 
             if (event->recurs())
