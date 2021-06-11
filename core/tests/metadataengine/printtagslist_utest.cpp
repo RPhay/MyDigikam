@@ -38,9 +38,9 @@ void PrintTagsListTest::parseTagsList(const DMetadata::TagsMap& tags)
 {
     QString output;
     QTextStream stream(&output);
-    stream << endl;
+    stream << Qt::endl;
 
-    qCDebug(DIGIKAM_TESTS_LOG) << "Found" << tags.size() << "tags:" << endl;
+    qCDebug(DIGIKAM_TESTS_LOG) << "Found" << tags.size() << "tags:" << Qt::endl;
 
     for (DMetadata::TagsMap::const_iterator it = tags.constBegin() ; it != tags.constEnd() ; ++it )
     {
@@ -56,10 +56,10 @@ void PrintTagsListTest::parseTagsList(const DMetadata::TagsMap& tags)
         QVERIFY(!title.isNull());
         QVERIFY(!desc.isNull());
 
-        stream << key << endl
-               << "    " << name  << endl
-               << "    " << title << endl
-               << "    " << desc  << endl;
+        stream << key << Qt::endl
+               << "    " << name  << Qt::endl
+               << "    " << title << Qt::endl
+               << "    " << desc  << Qt::endl;
     }
 
     qCDebug(DIGIKAM_TESTS_LOG).noquote() << output;
