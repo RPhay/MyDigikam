@@ -97,15 +97,15 @@ QDataStream& operator>>(QDataStream& ds, ShowfotoItemInfo& info)
 QDebug operator<<(QDebug dbg, const ShowfotoItemInfo& info)
 {
     dbg.nospace() << "ShowfotoItemInfo::size: "
-                  << info.size << endl;
+                  << info.size << Qt::endl;
     dbg.nospace() << "ShowfotoItemInfo::name: "
-                  << info.name << endl;
+                  << info.name << Qt::endl;
     dbg.nospace() << "ShowfotoitemInfo::folder: "
-                  << info.folder << endl;
+                  << info.folder << Qt::endl;
     dbg.nospace() << "ShowfotoItemInfo::mime: "
-                  << info.mime << endl;
+                  << info.mime << Qt::endl;
     dbg.nospace() << "ShowfotoItemInfo::id: "
-                  << info.id << endl << endl;
+                  << info.id << Qt::endl << Qt::endl;
 
     return dbg.space();
 }
