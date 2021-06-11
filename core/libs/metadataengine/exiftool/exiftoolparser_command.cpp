@@ -401,19 +401,19 @@ bool ExifToolParser::translateTags(const QString& path, unsigned char transOps)
 
     if (transOps & ExifToolProcess::TRANS_ALL_XMP)
     {
-        out << QLatin1String("-xmp:all<all:all") << endl;
+        out << QLatin1String("-xmp:all<all:all") << Qt::endl;
         dirty = true;
     }
 
     if (transOps & ExifToolProcess::TRANS_ALL_IPTC)
     {
-        out << QLatin1String("-iptc:all<all:all") << endl;
+        out << QLatin1String("-iptc:all<all:all") << Qt::endl;
         dirty = true;
     }
 
     if (transOps & ExifToolProcess::TRANS_ALL_EXIF)
     {
-        out << QLatin1String("-exif:all<all:all") << endl;
+        out << QLatin1String("-exif:all<all:all") << Qt::endl;
         dirty = true;
     }
 
