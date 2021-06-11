@@ -58,32 +58,32 @@ MaintenanceSettings::~MaintenanceSettings()
 //! qCDebug(DIGIKAM_GENERAL_LOG) stream operator. Writes property @a s to the debug output in a nicely formatted way.
 QDebug operator<<(QDebug dbg, const MaintenanceSettings& s)
 {
-    dbg.nospace() << endl;
-    dbg.nospace() << "wholeAlbums           : " << s.wholeAlbums << endl;
-    dbg.nospace() << "wholeTags             : " << s.wholeTags << endl;
-    dbg.nospace() << "Albums                : " << s.albums.count() << endl;
-    dbg.nospace() << "Tags                  : " << s.tags.count() << endl;
-    dbg.nospace() << "useMutiCoreCPU        : " << s.useMutiCoreCPU << endl;
-    dbg.nospace() << "newItems              : " << s.newItems << endl;
-    dbg.nospace() << "thumbnails            : " << s.thumbnails << endl;
-    dbg.nospace() << "scanThumbs            : " << s.scanThumbs << endl;
-    dbg.nospace() << "fingerPrints          : " << s.fingerPrints << endl;
-    dbg.nospace() << "scanFingerPrints      : " << s.scanFingerPrints << endl;
-    dbg.nospace() << "duplicates            : " << s.duplicates << endl;
-    dbg.nospace() << "minSimilarity         : " << s.minSimilarity << endl;
-    dbg.nospace() << "maxSimilarity         : " << s.maxSimilarity << endl;
-    dbg.nospace() << "duplicatesRestriction : " << s.duplicatesRestriction << endl;
-    dbg.nospace() << "faceManagement        : " << s.faceManagement << endl;
-    dbg.nospace() << "faceScannedHandling   : " << s.faceSettings.alreadyScannedHandling << endl;
-    dbg.nospace() << "qualitySort           : " << s.qualitySort << endl;
-    dbg.nospace() << "quality               : " << s.quality << endl;
-    dbg.nospace() << "qualityScanMode       : " << s.qualityScanMode << endl;
-    dbg.nospace() << "metadataSync          : " << s.metadataSync << endl;
-    dbg.nospace() << "syncDirection         : " << s.syncDirection << endl;
-    dbg.nospace() << "databaseCleanup       : " << s.databaseCleanup << endl;
-    dbg.nospace() << "cleanThumbDb          : " << s.cleanThumbDb << endl;
-    dbg.nospace() << "cleanFacesDb          : " << s.cleanFacesDb << endl;
-    dbg.nospace() << "shrinkDatabases       : " << s.shrinkDatabases << endl;
+    dbg.nospace() << Qt::endl;
+    dbg.nospace() << "wholeAlbums           : " << s.wholeAlbums << Qt::endl;
+    dbg.nospace() << "wholeTags             : " << s.wholeTags << Qt::endl;
+    dbg.nospace() << "Albums                : " << s.albums.count() << Qt::endl;
+    dbg.nospace() << "Tags                  : " << s.tags.count() << Qt::endl;
+    dbg.nospace() << "useMutiCoreCPU        : " << s.useMutiCoreCPU << Qt::endl;
+    dbg.nospace() << "newItems              : " << s.newItems << Qt::endl;
+    dbg.nospace() << "thumbnails            : " << s.thumbnails << Qt::endl;
+    dbg.nospace() << "scanThumbs            : " << s.scanThumbs << Qt::endl;
+    dbg.nospace() << "fingerPrints          : " << s.fingerPrints << Qt::endl;
+    dbg.nospace() << "scanFingerPrints      : " << s.scanFingerPrints << Qt::endl;
+    dbg.nospace() << "duplicates            : " << s.duplicates << Qt::endl;
+    dbg.nospace() << "minSimilarity         : " << s.minSimilarity << Qt::endl;
+    dbg.nospace() << "maxSimilarity         : " << s.maxSimilarity << Qt::endl;
+    dbg.nospace() << "duplicatesRestriction : " << s.duplicatesRestriction << Qt::endl;
+    dbg.nospace() << "faceManagement        : " << s.faceManagement << Qt::endl;
+    dbg.nospace() << "faceScannedHandling   : " << s.faceSettings.alreadyScannedHandling << Qt::endl;
+    dbg.nospace() << "qualitySort           : " << s.qualitySort << Qt::endl;
+    dbg.nospace() << "quality               : " << s.quality << Qt::endl;
+    dbg.nospace() << "qualityScanMode       : " << s.qualityScanMode << Qt::endl;
+    dbg.nospace() << "metadataSync          : " << s.metadataSync << Qt::endl;
+    dbg.nospace() << "syncDirection         : " << s.syncDirection << Qt::endl;
+    dbg.nospace() << "databaseCleanup       : " << s.databaseCleanup << Qt::endl;
+    dbg.nospace() << "cleanThumbDb          : " << s.cleanThumbDb << Qt::endl;
+    dbg.nospace() << "cleanFacesDb          : " << s.cleanFacesDb << Qt::endl;
+    dbg.nospace() << "shrinkDatabases       : " << s.shrinkDatabases << Qt::endl;
 
     return dbg.space();
 }
