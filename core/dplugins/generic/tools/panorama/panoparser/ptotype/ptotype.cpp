@@ -57,7 +57,7 @@ bool PTOType::createFile(const QString& filepath)
 
     if (project.previousComments.size() > 0)
     {
-        out << project.previousComments.join(QLatin1Char('\n')) << endl;
+        out << project.previousComments.join(QLatin1Char('\n')) << Qt::endl;
     }
 
     out << "p";
@@ -180,13 +180,13 @@ bool PTOType::createFile(const QString& filepath)
     }
 
     out << "\"";
-    out << project.unmatchedParameters.join(QLatin1Char(' ')) << endl;
+    out << project.unmatchedParameters.join(QLatin1Char(' ')) << Qt::endl;
 
     // Second, the stitcher line
 
     if (stitcher.previousComments.size() > 0)
     {
-        out << stitcher.previousComments.join(QLatin1Char('\n')) << endl;
+        out << stitcher.previousComments.join(QLatin1Char('\n')) << Qt::endl;
     }
 
     out << "m";
@@ -200,7 +200,7 @@ bool PTOType::createFile(const QString& filepath)
 
     out << " m" << stitcher.huberSigma;
     out << " p" << stitcher.photometricHuberSigma;
-    out << stitcher.unmatchedParameters.join(QLatin1Char(' ')) << endl;
+    out << stitcher.unmatchedParameters.join(QLatin1Char(' ')) << Qt::endl;
 
     // Third, the images
     // Note: the order is very important here
@@ -211,7 +211,7 @@ bool PTOType::createFile(const QString& filepath)
 
         if (image.previousComments.size() > 0)
         {
-            out << image.previousComments.join(QLatin1Char('\n')) << endl;
+            out << image.previousComments.join(QLatin1Char('\n')) << Qt::endl;
         }
 
         out << "i";
@@ -278,7 +278,7 @@ bool PTOType::createFile(const QString& filepath)
         out << " Vm" << image.vignettingMode;
         out << image.unmatchedParameters.join(QLatin1Char(' '));
         out << " n\"" << image.fileName << "\"";
-        out << endl;
+        out << Qt::endl;
     }
 
     // Fourth, the variable to optimize
@@ -291,7 +291,7 @@ bool PTOType::createFile(const QString& filepath)
         {
             if (optim.previousComments.size() > 0)
             {
-                out << optim.previousComments.join(QLatin1Char('\n')) << endl;
+                out << optim.previousComments.join(QLatin1Char('\n')) << Qt::endl;
             }
 
             out << "v ";
@@ -396,11 +396,11 @@ bool PTOType::createFile(const QString& filepath)
                     return false;
             }
 
-            out << id << endl;
+            out << id << Qt::endl;
         }
     }
 
-    out << "v" << endl;
+    out << "v" << Qt::endl;
 
     // Fifth, the masks
 
@@ -412,7 +412,7 @@ bool PTOType::createFile(const QString& filepath)
         {
             if (mask.previousComments.size() > 0)
             {
-                out << mask.previousComments.join(QLatin1Char('\n')) << endl;
+                out << mask.previousComments.join(QLatin1Char('\n')) << Qt::endl;
             }
 
             out << "k i" << id;
@@ -425,7 +425,7 @@ bool PTOType::createFile(const QString& filepath)
                 out << mask.hull[pid].x() << ' ' << mask.hull[pid].y();
             }
 
-            out << "\"" << endl;
+            out << "\"" << Qt::endl;
         }
     }
 
@@ -435,7 +435,7 @@ bool PTOType::createFile(const QString& filepath)
     {
         if (cp.previousComments.size() > 0)
         {
-            out << cp.previousComments.join(QLatin1Char('\n')) << endl;
+            out << cp.previousComments.join(QLatin1Char('\n')) << Qt::endl;
         }
 
         out << "c n" << cp.image1Id;
@@ -445,12 +445,12 @@ bool PTOType::createFile(const QString& filepath)
         out << " X" << cp.p2_x;
         out << " Y" << cp.p2_y;
         out << " t" << cp.type;
-        out << endl;
+        out << Qt::endl;
     }
 
     // Finally the ending comments
 
-    out << lastComments.join(QLatin1Char('\n')) << endl;
+    out << lastComments.join(QLatin1Char('\n')) << Qt::endl;
 
     file.close();
 

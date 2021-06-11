@@ -131,11 +131,11 @@ bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
 */
        )
     {
-        qCWarning(DIGIKAM_DIMG_LOG_TIFF) << "TIFF loader: Encountered invalid value in image." << endl
-                                         << " bits_per_sample   : " << bits_per_sample         << endl
-                                         << " samples_per_pixel : " << samples_per_pixel       << endl
-                                         << " rows_per_strip    : " << rows_per_strip          << endl
-                                         << " h                 : " << h                       << endl
+        qCWarning(DIGIKAM_DIMG_LOG_TIFF) << "TIFF loader: Encountered invalid value in image." << Qt::endl
+                                         << " bits_per_sample   : " << bits_per_sample         << Qt::endl
+                                         << " samples_per_pixel : " << samples_per_pixel       << Qt::endl
+                                         << " rows_per_strip    : " << rows_per_strip          << Qt::endl
+                                         << " h                 : " << h                       << Qt::endl
                                          << " Loading file      : " << filePath;
         TIFFClose(tif);
         loadingFailed();

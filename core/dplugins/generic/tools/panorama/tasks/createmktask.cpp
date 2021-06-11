@@ -81,7 +81,7 @@ void CreateMKTask::run(ThreadWeaver::JobPointer, ThreadWeaver::Thread*)
 
     qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "pto2mk command line: " << getCommandLine();
 
-    qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "pto2mk output:" << endl << output;
+    qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "pto2mk output:" << Qt::endl << output;
 }
 
 } // namespace DigikamGenericPanoramaPlugin
