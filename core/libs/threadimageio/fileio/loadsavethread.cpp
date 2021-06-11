@@ -329,10 +329,10 @@ int LoadSaveThread::exifOrientation(const QString& filePath,
         // C is the current orientation in the database.
         // A*B = C and B = A_inv * C
 
-        QMatrix A     = MetaEngineRotation::toMatrix((MetaEngine::ImageOrientation)exifOrientation);
-        QMatrix C     = MetaEngineRotation::toMatrix((MetaEngine::ImageOrientation)dbOrientation);
-        QMatrix A_inv = A.inverted();
-        QMatrix B     = A_inv * C;
+        QTransform A     = MetaEngineRotation::toTransform((MetaEngine::ImageOrientation)exifOrientation);
+        QTransform C     = MetaEngineRotation::toTransform((MetaEngine::ImageOrientation)dbOrientation);
+        QTransform A_inv = A.inverted();
+        QTransform B     = A_inv * C;
         MetaEngineRotation m(B.m11(), B.m12(), B.m21(), B.m22());
  
         return m.exifOrientation();

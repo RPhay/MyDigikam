@@ -332,14 +332,14 @@ MetaEngine::ImageOrientation MetaEngineRotation::exifOrientation() const
     return MetaEngine::ORIENTATION_UNSPECIFIED;
 }
 
-QMatrix MetaEngineRotation::toMatrix() const
+QTransform MetaEngineRotation::toTransform() const
 {
-    return toMatrix(exifOrientation());
+    return toTransform(exifOrientation());
 }
 
-QMatrix MetaEngineRotation::toMatrix(MetaEngine::ImageOrientation orientation)
+QTransform MetaEngineRotation::toTransform(MetaEngine::ImageOrientation orientation)
 {
-    QMatrix matrix;
+    QTransform matrix;
 
     switch (orientation)
     {

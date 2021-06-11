@@ -28,7 +28,7 @@
 
 // Qt includes
 
-#include <QMatrix>
+#include <QTransform>
 
 // Local includes
 
@@ -119,14 +119,14 @@ public:
     MetaEngine::ImageOrientation exifOrientation()  const;
 
     /**
-     * Returns a QMatrix representing this matrix
+     * Returns a QTransform representing this matrix
      */
-    QMatrix toMatrix()                              const;
+    QTransform toTransform()                              const;
 
     /**
-     * Returns a QMatrix for the given Exif orientation
+     * Returns a QTransform for the given Exif orientation
      */
-    static QMatrix toMatrix(MetaEngine::ImageOrientation orientation);
+    static QTransform toTransform(MetaEngine::ImageOrientation orientation);
 
 protected:
 

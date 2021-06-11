@@ -411,7 +411,7 @@ bool AdvPrintTask::paintOnePage(QPainter& p,
         {
             // rotate
 
-            QMatrix matrix;
+            QTransform matrix;
             matrix.rotate(photo->m_rotation);
             img = img.transformed(matrix);
         }

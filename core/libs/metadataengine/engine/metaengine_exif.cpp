@@ -1022,7 +1022,7 @@ QImage MetaEngine::getExifThumbnail(bool fixOrientation) const
 
 bool MetaEngine::rotateExifQImage(QImage& image, ImageOrientation orientation) const
 {
-    QMatrix matrix = MetaEngineRotation::toMatrix(orientation);
+    QTransform matrix = MetaEngineRotation::toTransform(orientation);
 
     if ((orientation != ORIENTATION_NORMAL) && (orientation != ORIENTATION_UNSPECIFIED))
     {

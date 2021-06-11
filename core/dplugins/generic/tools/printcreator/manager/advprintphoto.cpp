@@ -235,7 +235,7 @@ double AdvPrintPhoto::scaleHeight(double unitToInches)
     return (m_pAddInfo->m_printHeight * unitToInches);
 }
 
-QMatrix AdvPrintPhoto::updateCropRegion(int woutlay, int houtlay, bool autoRotate)
+QTransform AdvPrintPhoto::updateCropRegion(int woutlay, int houtlay, bool autoRotate)
 {
     QSize thmSize        = thumbnail().size();
     QRect imgRect        = QRect(0, 0, size().width(), size().height());
@@ -266,7 +266,7 @@ QMatrix AdvPrintPhoto::updateCropRegion(int woutlay, int houtlay, bool autoRotat
 
     // Rotate the image rectangle.
 
-    QMatrix matrix;
+    QTransform matrix;
     matrix.rotate(m_rotation);
     imgRect = matrix.mapToPolygon(imgRect).boundingRect();
     imgRect.translate((-1)*imgRect.x(), (-1)*imgRect.y());

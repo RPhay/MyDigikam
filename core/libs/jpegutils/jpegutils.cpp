@@ -544,7 +544,7 @@ bool JpegRotator::exifTransform(const MetaEngineRotation& matrix)
 
 void JpegRotator::updateMetadata(const QString& fileName, const MetaEngineRotation &matrix)
 {
-    QMatrix qmatrix = matrix.toMatrix();
+    QTransform qmatrix = matrix.toTransform();
     QRect r(QPoint(0, 0), m_originalSize);
     QSize newSize   = qmatrix.mapRect(r).size();
 

@@ -72,7 +72,7 @@ public:
     QRect          cropRegion;
     bool           drawRec;
 
-    QMatrix        matrix;
+    QTransform        matrix;
 };
 
 AdvPrintCropFrame::AdvPrintCropFrame(QWidget* const parent)

@@ -35,7 +35,7 @@
 #include <QIcon>
 #include <QList>
 #include <QSize>
-#include <QMatrix>
+#include <QTransform>
 
 // Local includes
 
@@ -126,7 +126,7 @@ public:
     int    height();
     QSize& size();
 
-    QMatrix updateCropRegion(int woutlay, int houtlay, bool autoRotate);
+    QTransform updateCropRegion(int woutlay, int houtlay, bool autoRotate);
 
     double scaleWidth(double unitToInches);
     double scaleHeight(double unitToInches);

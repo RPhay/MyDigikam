@@ -158,7 +158,7 @@ void GalleryElementFunctor::operator()(GalleryElement& element)
 
         if (element.m_orientation != DMetadata::ORIENTATION_UNSPECIFIED )
         {
-            QMatrix matrix = MetaEngineRotation::toMatrix(element.m_orientation);
+            QTransform matrix = MetaEngineRotation::toTransform(element.m_orientation);
             fullImage      = fullImage.transformed(matrix);
         }
     }

@@ -436,7 +436,7 @@ QImage ThumbnailCreator::exifRotate(const QImage& thumb, int orientation) const
         return thumb;
     }
 
-    QMatrix matrix = MetaEngineRotation::toMatrix((MetaEngine::ImageOrientation)orientation);
+    QTransform matrix = MetaEngineRotation::toTransform((MetaEngine::ImageOrientation)orientation);
 
     // Transform accordingly
 
