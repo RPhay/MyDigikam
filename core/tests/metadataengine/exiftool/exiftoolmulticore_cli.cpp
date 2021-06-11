@@ -40,7 +40,7 @@
 
 using namespace Digikam;
 
-bool exifToolParse(const QString& file)
+bool s_exifToolParseThreaded(const QString& file)
 {
     ExifToolParser* const parser = new ExifToolParser(nullptr);
 
@@ -149,7 +149,7 @@ int main(int argc, char** argv)
 
     foreach (const QString& imageFile, imageFiles)
     {
-        tasks.append(QtConcurrent::run(&exifToolParse,
+        tasks.append(QtConcurrent::run(&s_exifToolParseThreaded,
                                        imageDir.path() + QLatin1Char('/') + imageFile
                                       ));
     }

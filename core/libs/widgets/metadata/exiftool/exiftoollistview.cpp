@@ -29,6 +29,7 @@
 #include <QApplication>
 #include <QStringList>
 #include <QStyle>
+#include <QtConcurrent>   // krazy:exclude=includes
 
 // KDE includes
 
@@ -49,14 +50,13 @@ class Q_DECL_HIDDEN ExifToolListView::Private
 public:
 
     explicit Private()
-        : parser(nullptr)
     {
     }
 
-    QString         selectedItemKey;
-    QStringList     simplifiedTagsList;
-
-    ExifToolParser* parser;
+    ExifToolParser::ExifToolData  parsed;
+    QString                       lastError;
+    QString                       selectedItemKey;
+    QStringList                   simplifiedTagsList;
 };
 
 ExifToolListView::ExifToolListView(QWidget* const parent)
@@ -73,8 +73,6 @@ ExifToolListView::ExifToolListView(QWidget* const parent)
     setHeaderHidden(true);
     header()->setSectionResizeMode(QHeaderView::Stretch);
 
-    d->parser = new ExifToolParser(this);
-
     connect(this, SIGNAL(itemClicked(QTreeWidgetItem*,int)),
             this, SLOT(slotSelectionChanged(QTreeWidgetItem*,int)));
 }
@@ -82,6 +80,26 @@ ExifToolListView::ExifToolListView(QWidget* const parent)
 ExifToolListView::~ExifToolListView()
 {
     delete d;
+}
+
+void ExifToolListView::exifToolParseThreaded(const QString& file,
+                                             volatile bool& error)
+{
+    ExifToolParser* const parser = new ExifToolParser(nullptr);
+
+    if (!parser->load(file))
+    {
+        d->lastError = parser->currentErrorString();
+        error        = true;
+        delete parser;
+
+        return;
+    }
+
+    d->lastError.clear();
+    d->parsed = parser->currentData();
+    error     = false;
+    delete parser;
 }
 
 bool ExifToolListView::loadFromUrl(const QUrl& url)
@@ -93,19 +111,27 @@ bool ExifToolListView::loadFromUrl(const QUrl& url)
         return true;
     }
 
-    if (!d->parser->load(url.toLocalFile()))
+    volatile bool error = false;
+    QFuture<void> task  = QtConcurrent::run(this,
+                                            &ExifToolListView::exifToolParseThreaded,
+                                            url.toLocalFile(),
+                                            error);
+
+    task.waitForFinished();
+
+    if (error)
     {
         return false;
     }
 
-    setMetadata(d->parser->currentData());
+    setMetadata(d->parsed);
 
     return true;
 }
 
 QString ExifToolListView::errorString() const
 {
-    return d->parser->currentErrorString();
+    return d->lastError;
 }
 
 void ExifToolListView::setMetadata(const ExifToolParser::ExifToolData& map)
