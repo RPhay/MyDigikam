@@ -861,22 +861,22 @@ QString DbEngineParameters::defaultMysqlInitCmd()
 
 QDebug operator<<(QDebug dbg, const DbEngineParameters& p)
 {
-    dbg.nospace() << "Database Parameters:"                                                                  << endl;
-    dbg.nospace() << "   Type:                      " << p.databaseType                                      << endl;
-    dbg.nospace() << "   DB Core Name:              " << p.databaseNameCore                                  << endl;
-    dbg.nospace() << "   DB Thumbs Name:            " << p.databaseNameThumbnails                            << endl;
-    dbg.nospace() << "   DB Face Name:              " << p.databaseNameFace                                  << endl;
-    dbg.nospace() << "   DB Similarity Name:        " << p.databaseNameSimilarity                            << endl;
-    dbg.nospace() << "   Connect Options:           " << p.connectOptions                                    << endl;
-    dbg.nospace() << "   Host Name:                 " << p.hostName                                          << endl;
-    dbg.nospace() << "   Host port:                 " << p.port                                              << endl;
-    dbg.nospace() << "   Internal Server:           " << p.internalServer                                    << endl;
-    dbg.nospace() << "   Internal Server Path:      " << p.internalServerDBPath                              << endl;
-    dbg.nospace() << "   Internal Server Admin Cmd: " << p.internalServerMysqlAdminCmd                       << endl;
-    dbg.nospace() << "   Internal Server Serv Cmd:  " << p.internalServerMysqlServCmd                        << endl;
-    dbg.nospace() << "   Internal Server Init Cmd:  " << p.internalServerMysqlInitCmd                        << endl;
-    dbg.nospace() << "   Username:                  " << p.userName                                          << endl;
-    dbg.nospace() << "   Password:                  " << QString().fill(QLatin1Char('X'), p.password.size()) << endl;
+    dbg.nospace() << "Database Parameters:"                                                                  << Qt::endl;
+    dbg.nospace() << "   Type:                      " << p.databaseType                                      << Qt::endl;
+    dbg.nospace() << "   DB Core Name:              " << p.databaseNameCore                                  << Qt::endl;
+    dbg.nospace() << "   DB Thumbs Name:            " << p.databaseNameThumbnails                            << Qt::endl;
+    dbg.nospace() << "   DB Face Name:              " << p.databaseNameFace                                  << Qt::endl;
+    dbg.nospace() << "   DB Similarity Name:        " << p.databaseNameSimilarity                            << Qt::endl;
+    dbg.nospace() << "   Connect Options:           " << p.connectOptions                                    << Qt::endl;
+    dbg.nospace() << "   Host Name:                 " << p.hostName                                          << Qt::endl;
+    dbg.nospace() << "   Host port:                 " << p.port                                              << Qt::endl;
+    dbg.nospace() << "   Internal Server:           " << p.internalServer                                    << Qt::endl;
+    dbg.nospace() << "   Internal Server Path:      " << p.internalServerDBPath                              << Qt::endl;
+    dbg.nospace() << "   Internal Server Admin Cmd: " << p.internalServerMysqlAdminCmd                       << Qt::endl;
+    dbg.nospace() << "   Internal Server Serv Cmd:  " << p.internalServerMysqlServCmd                        << Qt::endl;
+    dbg.nospace() << "   Internal Server Init Cmd:  " << p.internalServerMysqlInitCmd                        << Qt::endl;
+    dbg.nospace() << "   Username:                  " << p.userName                                          << Qt::endl;
+    dbg.nospace() << "   Password:                  " << QString().fill(QLatin1Char('X'), p.password.size()) << Qt::endl;
 
     return dbg.space();
 }
