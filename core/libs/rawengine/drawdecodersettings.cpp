@@ -229,41 +229,41 @@ void DRawDecoderSettings::optimizeTimeLoading()
 
 QDebug operator<<(QDebug dbg, const DRawDecoderSettings& s)
 {
-    dbg.nospace() << endl;
-    dbg.nospace() << "-- RAW DECODING SETTINGS --------------------------------" << endl;
-    dbg.nospace() << "-- autoBrightness:          " << s.autoBrightness          << endl;
-    dbg.nospace() << "-- sixteenBitsImage:        " << s.sixteenBitsImage        << endl;
-    dbg.nospace() << "-- brightness:              " << s.brightness              << endl;
-    dbg.nospace() << "-- RAWQuality:              " << s.RAWQuality              << endl;
-    dbg.nospace() << "-- inputColorSpace:         " << s.inputColorSpace         << endl;
-    dbg.nospace() << "-- outputColorSpace:        " << s.outputColorSpace        << endl;
-    dbg.nospace() << "-- RGBInterpolate4Colors:   " << s.RGBInterpolate4Colors   << endl;
-    dbg.nospace() << "-- DontStretchPixels:       " << s.DontStretchPixels       << endl;
-    dbg.nospace() << "-- unclipColors:            " << s.unclipColors            << endl;
-    dbg.nospace() << "-- whiteBalance:            " << s.whiteBalance            << endl;
-    dbg.nospace() << "-- customWhiteBalance:      " << s.customWhiteBalance      << endl;
-    dbg.nospace() << "-- customWhiteBalanceGreen: " << s.customWhiteBalanceGreen << endl;
-    dbg.nospace() << "-- halfSizeColorImage:      " << s.halfSizeColorImage      << endl;
-    dbg.nospace() << "-- enableBlackPoint:        " << s.enableBlackPoint        << endl;
-    dbg.nospace() << "-- blackPoint:              " << s.blackPoint              << endl;
-    dbg.nospace() << "-- enableWhitePoint:        " << s.enableWhitePoint        << endl;
-    dbg.nospace() << "-- whitePoint:              " << s.whitePoint              << endl;
-    dbg.nospace() << "-- NoiseReductionType:      " << s.NRType                  << endl;
-    dbg.nospace() << "-- NoiseReductionThreshold: " << s.NRThreshold             << endl;
-    dbg.nospace() << "-- medianFilterPasses:      " << s.medianFilterPasses      << endl;
-    dbg.nospace() << "-- inputProfile:            " << s.inputProfile            << endl;
-    dbg.nospace() << "-- outputProfile:           " << s.outputProfile           << endl;
-    dbg.nospace() << "-- deadPixelMap:            " << s.deadPixelMap            << endl;
-    dbg.nospace() << "-- whiteBalanceArea:        " << s.whiteBalanceArea        << endl;
+    dbg.nospace() << Qt::endl;
+    dbg.nospace() << "-- RAW DECODING SETTINGS --------------------------------" << Qt::endl;
+    dbg.nospace() << "-- autoBrightness:          " << s.autoBrightness          << Qt::endl;
+    dbg.nospace() << "-- sixteenBitsImage:        " << s.sixteenBitsImage        << Qt::endl;
+    dbg.nospace() << "-- brightness:              " << s.brightness              << Qt::endl;
+    dbg.nospace() << "-- RAWQuality:              " << s.RAWQuality              << Qt::endl;
+    dbg.nospace() << "-- inputColorSpace:         " << s.inputColorSpace         << Qt::endl;
+    dbg.nospace() << "-- outputColorSpace:        " << s.outputColorSpace        << Qt::endl;
+    dbg.nospace() << "-- RGBInterpolate4Colors:   " << s.RGBInterpolate4Colors   << Qt::endl;
+    dbg.nospace() << "-- DontStretchPixels:       " << s.DontStretchPixels       << Qt::endl;
+    dbg.nospace() << "-- unclipColors:            " << s.unclipColors            << Qt::endl;
+    dbg.nospace() << "-- whiteBalance:            " << s.whiteBalance            << Qt::endl;
+    dbg.nospace() << "-- customWhiteBalance:      " << s.customWhiteBalance      << Qt::endl;
+    dbg.nospace() << "-- customWhiteBalanceGreen: " << s.customWhiteBalanceGreen << Qt::endl;
+    dbg.nospace() << "-- halfSizeColorImage:      " << s.halfSizeColorImage      << Qt::endl;
+    dbg.nospace() << "-- enableBlackPoint:        " << s.enableBlackPoint        << Qt::endl;
+    dbg.nospace() << "-- blackPoint:              " << s.blackPoint              << Qt::endl;
+    dbg.nospace() << "-- enableWhitePoint:        " << s.enableWhitePoint        << Qt::endl;
+    dbg.nospace() << "-- whitePoint:              " << s.whitePoint              << Qt::endl;
+    dbg.nospace() << "-- NoiseReductionType:      " << s.NRType                  << Qt::endl;
+    dbg.nospace() << "-- NoiseReductionThreshold: " << s.NRThreshold             << Qt::endl;
+    dbg.nospace() << "-- medianFilterPasses:      " << s.medianFilterPasses      << Qt::endl;
+    dbg.nospace() << "-- inputProfile:            " << s.inputProfile            << Qt::endl;
+    dbg.nospace() << "-- outputProfile:           " << s.outputProfile           << Qt::endl;
+    dbg.nospace() << "-- deadPixelMap:            " << s.deadPixelMap            << Qt::endl;
+    dbg.nospace() << "-- whiteBalanceArea:        " << s.whiteBalanceArea        << Qt::endl;
 
     //-- Extended demosaicing settings ----------------------------------------------------------
 
-    dbg.nospace() << "-- dcbIterations:           " << s.dcbIterations           << endl;
-    dbg.nospace() << "-- dcbEnhanceFl:            " << s.dcbEnhanceFl            << endl;
-    dbg.nospace() << "-- expoCorrection:          " << s.expoCorrection          << endl;
-    dbg.nospace() << "-- expoCorrectionShift:     " << s.expoCorrectionShift     << endl;
-    dbg.nospace() << "-- expoCorrectionHighlight: " << s.expoCorrectionHighlight << endl;
-    dbg.nospace() << "---------------------------------------------------------" << endl;
+    dbg.nospace() << "-- dcbIterations:           " << s.dcbIterations           << Qt::endl;
+    dbg.nospace() << "-- dcbEnhanceFl:            " << s.dcbEnhanceFl            << Qt::endl;
+    dbg.nospace() << "-- expoCorrection:          " << s.expoCorrection          << Qt::endl;
+    dbg.nospace() << "-- expoCorrectionShift:     " << s.expoCorrectionShift     << Qt::endl;
+    dbg.nospace() << "-- expoCorrectionHighlight: " << s.expoCorrectionHighlight << Qt::endl;
+    dbg.nospace() << "---------------------------------------------------------" << Qt::endl;
 
     return dbg.space();
 }
