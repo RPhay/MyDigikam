@@ -370,4 +370,5 @@ BUGFIXES:
 347 ==> 428964 - Crash updating fingerprints before checking similarities.
 348 ==> 427337 - Crash when rebuilding thumbnails or fingerprints.
 349 ==> 438465 - Question to Color Spaces.
-350 ==> 
+350 ==> 438344 - Questions to Add Border Tool.
+351 ==> 

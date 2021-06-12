@@ -334,24 +334,30 @@ void BorderFilter::pattern(DImg& src, DImg& dest, int borderWidth,
                            const DColor& firstColor, const DColor& secondColor,
                            int firstWidth, int secondWidth)
 {
-    // Original image with the first solid border around.
+    // Original image with the second solid border around.
 
     DImg tmp;
-    solid(src, tmp, firstColor, firstWidth);
+    solid(src, tmp, secondColor, secondWidth);
 
     // Border tiled image using pattern with second solid border around.
 
-    int width, height;
+    int width, height, destW, destH;
 
     if (d->settings.orgWidth > d->settings.orgHeight)
     {
-        height = tmp.height() + borderWidth * 2;
+        height = d->settings.orgHeight + borderWidth * 2;
         width  = (int)(height * d->orgRatio);
+
+        destH  = src.height() + borderWidth * 2;
+        destW  = (int)(destH * d->orgRatio);
     }
     else
     {
-        width  = tmp.width() + borderWidth * 2;
+        width  = d->settings.orgWidth + borderWidth * 2;
         height = (int)(width / d->orgRatio);
+
+        destW  = src.width() + borderWidth * 2;
+        destH  = (int)(destW / d->orgRatio);
     }
 
     DImg tmp2(width, height, tmp.sixteenBit(), tmp.hasAlpha());
@@ -373,7 +379,9 @@ void BorderFilter::pattern(DImg& src, DImg& dest, int borderWidth,
         }
     }
 
-    solid(tmp2, dest, secondColor, secondWidth);
+    tmp2 = tmp2.smoothScale(destW, destH);
+
+    solid(tmp2, dest, firstColor, firstWidth);
 
     // Merge both images to one.
 
