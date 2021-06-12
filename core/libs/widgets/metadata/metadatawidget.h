@@ -127,6 +127,10 @@ private Q_SLOTS:
 
 private:
 
+    void decodeMetadataThreaded(bool* const error);
+
+private:
+
     class Private;
     Private* const d;
 };
