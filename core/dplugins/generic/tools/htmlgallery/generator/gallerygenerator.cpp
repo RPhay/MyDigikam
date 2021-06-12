@@ -532,7 +532,7 @@ public:
         {
             // Forth case: both apos and quote :-(
 
-            const QStringList lst = txt.split(QLatin1Char(apos), QString::KeepEmptyParts);
+            const QStringList lst = txt.split(QLatin1Char(apos), Qt::KeepEmptyParts);
 
             QStringList::ConstIterator it  = lst.constBegin();
             QStringList::ConstIterator end = lst.constEnd();

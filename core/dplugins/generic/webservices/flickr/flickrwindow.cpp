@@ -683,7 +683,7 @@ void FlickrWindow::slotUser1()
             temp.is_friend             = lvItem->isFriends() ? 1 : 0;
             temp.safety_level          = lvItem->safetyLevel();
             temp.content_type          = lvItem->contentType();
-            QStringList tagsFromDialog = d->tagsLineEdit->text().split(QLatin1Char(','), QString::SkipEmptyParts);
+            QStringList tagsFromDialog = d->tagsLineEdit->text().split(QLatin1Char(','), Qt::SkipEmptyParts);
             QStringList tagsFromList   = lvItem->extraTags();
 
             QStringList           allTags;
