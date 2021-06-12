@@ -60,7 +60,7 @@ QString DirectoryNameOption::parseOperation(ParseSettings& settings)
         return result;
     }
 
-    QStringList folders = fi.absolutePath().split(QLatin1Char('/'), QString::SkipEmptyParts);
+    QStringList folders = fi.absolutePath().split(QLatin1Char('/'), Qt::SkipEmptyParts);
     int folderCount     = folders.count();
     const QRegExp& reg  = regExp();
     int matchedLength   = reg.cap(1).length();
