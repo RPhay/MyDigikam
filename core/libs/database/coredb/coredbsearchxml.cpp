@@ -830,7 +830,7 @@ QString SearchXmlWriter::keywordSearch(const QString& keyword)
 QStringList KeywordSearch::split(const QString& keywords)
 {
     // get groups with quotation marks
-    QStringList quotationMarkList = keywords.split(QLatin1Char('"'), QString::KeepEmptyParts);
+    QStringList quotationMarkList = keywords.split(QLatin1Char('"'), Qt::KeepEmptyParts);
 
     // split down to single words
     QStringList keywordList;
@@ -849,7 +849,7 @@ QStringList KeywordSearch::split(const QString& keywords)
         else
         {
             // not in quotation marks: split by whitespace
-            keywordList << group.split(QRegExp(QLatin1String("\\s+")), QString::SkipEmptyParts);
+            keywordList << group.split(QRegExp(QLatin1String("\\s+")), Qt::SkipEmptyParts);
         }
 
         ++quotationMarkCount;

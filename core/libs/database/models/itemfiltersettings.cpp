@@ -711,7 +711,7 @@ bool ItemFilterSettings::matches(const ItemInfo& info, bool* const foundText) co
             if ((expRatio.indexIn(m_textFilterSettings.text) > -1) && m_textFilterSettings.text.contains(QRegExp(QLatin1String(":\\d+"))))
             {
                 QString trimmedTextFilterSettingsText = m_textFilterSettings.text;
-                QStringList numberStringList          = trimmedTextFilterSettingsText.split(QLatin1Char(':'), QString::SkipEmptyParts);
+                QStringList numberStringList          = trimmedTextFilterSettingsText.split(QLatin1Char(':'), Qt::SkipEmptyParts);
 
                 if (numberStringList.length() == 2)
                 {

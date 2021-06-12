@@ -857,7 +857,7 @@ static QStringList cleanUserFilterString(const QString& filterString)
         sep = QChar(QLatin1Char(' '));
     }
 
-    QStringList sepList = filterString.split(sep, QString::SkipEmptyParts);
+    QStringList sepList = filterString.split(sep, Qt::SkipEmptyParts);
 
     foreach (const QString& f, sepList)
     {

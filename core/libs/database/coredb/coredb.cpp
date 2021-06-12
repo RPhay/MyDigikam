@@ -868,8 +868,8 @@ static QStringList joinMainAndUserFilterString(const QChar& sep, const QString& 
     QStringList filterList;
     QStringList userFilterList;
 
-    filterList     = filter.split(sep, QString::SkipEmptyParts);
-    userFilterList = userFilter.split(sep, QString::SkipEmptyParts);
+    filterList     = filter.split(sep, Qt::SkipEmptyParts);
+    userFilterList = userFilter.split(sep, Qt::SkipEmptyParts);
 
     foreach (const QString& userFormat, userFilterList)
     {

@@ -537,7 +537,7 @@ int TagsCache::tagForPath(const QString& tagPath) const
 {
     // split full tag "url" into list of single tag names
 
-    QStringList tagHierarchy = tagPath.split(QLatin1Char('/'), QString::SkipEmptyParts);
+    QStringList tagHierarchy = tagPath.split(QLatin1Char('/'), Qt::SkipEmptyParts);
 
     if (tagHierarchy.isEmpty())
     {
@@ -627,7 +627,7 @@ int TagsCache::createTag(const QString& tagPathToCreate)
 {
     // split full tag "url" into list of single tag names
 
-    QStringList tagHierarchy = tagPathToCreate.split(QLatin1Char('/'), QString::SkipEmptyParts);
+    QStringList tagHierarchy = tagPathToCreate.split(QLatin1Char('/'), Qt::SkipEmptyParts);
 
     if (tagHierarchy.isEmpty())
     {

@@ -362,7 +362,7 @@ int CoreDbUrl::tagId() const
 QList<int> CoreDbUrl::tagIds() const
 {
     QList<int>  ids;
-    QStringList stringIds = path().split(QLatin1Char('/'), QString::SkipEmptyParts);
+    QStringList stringIds = path().split(QLatin1Char('/'), Qt::SkipEmptyParts);
 
     for (int i=0; i<stringIds.count(); ++i)
     {

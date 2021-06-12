@@ -47,7 +47,7 @@ CoreDbNameFilter::CoreDbNameFilter(const QString& filter)
         sep = QLatin1Char(' ');
     }
 
-    QStringList list               = filter.split(sep, QString::SkipEmptyParts);
+    QStringList list               = filter.split(sep, Qt::SkipEmptyParts);
     QStringList::const_iterator it = list.constBegin();
 
     while ( it != list.constEnd() )
