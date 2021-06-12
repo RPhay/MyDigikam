@@ -55,7 +55,7 @@ bool DServiceMenu::runFiles(const QString& appCmd,
                             KService* const service)
 {
     QRegExp split(QLatin1String(" +(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)"));
-    QStringList cmdList = appCmd.split(split, QString::SkipEmptyParts);
+    QStringList cmdList = appCmd.split(split, Qt::SkipEmptyParts);
     QList<QUrl> urlList = urls;
 
     if (cmdList.isEmpty() || urlList.isEmpty())
@@ -92,7 +92,7 @@ bool DServiceMenu::runFiles(const QString& appCmd,
 
         if (service->terminal())
         {
-            termOpts = service->terminalOptions().split(split, QString::SkipEmptyParts);
+            termOpts = service->terminalOptions().split(split, Qt::SkipEmptyParts);
             term     = QStandardPaths::findExecutable(QLatin1String("konsole"));
 
             if (term.isEmpty())
@@ -129,7 +129,7 @@ bool DServiceMenu::runFiles(const QString& appCmd,
 
         if (exec.isEmpty() && cmd.contains(QLatin1Char('=')))
         {
-            QStringList envList = cmd.split(QLatin1Char('='), QString::SkipEmptyParts);
+            QStringList envList = cmd.split(QLatin1Char('='), Qt::SkipEmptyParts);
 
             if (envList.count() == 2)
             {
