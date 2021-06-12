@@ -371,4 +371,5 @@ BUGFIXES:
 348 ==> 427337 - Crash when rebuilding thumbnails or fingerprints.
 349 ==> 438465 - Question to Color Spaces.
 350 ==> 438344 - Questions to Add Border Tool.
-351 ==> 
+351 ==> 438466 - Image editor - Color Negative closes application.
+352 ==> 
