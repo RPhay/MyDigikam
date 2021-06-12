@@ -411,7 +411,7 @@ AlbumList TagEditDlg::createTAlbum(TAlbum* const mainRootAlbum, const QString& t
     // Check if new tags are include in a list of tags hierarchy separated by ','.
     // Ex: /Country/France/people,/City/France/Paris
 
-    const QStringList tagsHierarchies = tagStr.split(QLatin1Char(','), QString::SkipEmptyParts);
+    const QStringList tagsHierarchies = tagStr.split(QLatin1Char(','), Qt::SkipEmptyParts);
 
     if (tagsHierarchies.isEmpty())
     {
@@ -438,7 +438,7 @@ AlbumList TagEditDlg::createTAlbum(TAlbum* const mainRootAlbum, const QString& t
                 root = mainRootAlbum;
             }
 
-            QStringList tagsList = hierarchy.split(QLatin1Char('/'), QString::SkipEmptyParts);
+            QStringList tagsList = hierarchy.split(QLatin1Char('/'), Qt::SkipEmptyParts);
             qCDebug(DIGIKAM_GENERAL_LOG) << tagsList;
 
             if (!tagsList.isEmpty())

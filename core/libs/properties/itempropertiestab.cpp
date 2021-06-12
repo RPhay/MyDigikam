@@ -783,8 +783,8 @@ QStringList ItemPropertiesTab::shortenedTagPaths(const QStringList& tagPaths, QL
     {
         const QString& tagPath   = pair.first;
         QString shortenedPath    = tagPath;
-        QStringList currentPath  = tagPath.split(QLatin1Char('/'), QString::SkipEmptyParts);
-        QStringList previousPath = previous.split(QLatin1Char('/'), QString::SkipEmptyParts);
+        QStringList currentPath  = tagPath.split(QLatin1Char('/'), Qt::SkipEmptyParts);
+        QStringList previousPath = previous.split(QLatin1Char('/'), Qt::SkipEmptyParts);
         int depth;
 
         for (depth = 0 ; (depth < currentPath.size()) && (depth < previousPath.size()) ; ++depth)

@@ -526,7 +526,7 @@ static QColor stringToColor(const QString& s)
 
     if (regexp.exactMatch(s))
     {
-        QStringList colors = regexp.cap(1).split(QLatin1Char(','), QString::SkipEmptyParts);
+        QStringList colors = regexp.cap(1).split(QLatin1Char(','), Qt::SkipEmptyParts);
 
         if (colors.size() >= 3)
         {
