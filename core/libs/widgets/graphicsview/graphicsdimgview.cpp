@@ -349,7 +349,7 @@ void GraphicsDImgView::finishPanning()
 void GraphicsDImgView::scrollPointOnPoint(const QPointF& scenePos, const QPoint& viewportPos)
 {
     // This is inspired from QGraphicsView's centerOn()
-    QPointF viewPoint = matrix().map(scenePos);
+    QPointF viewPoint = transform().map(scenePos);
 
     if (horizontalScrollBar()->maximum())
     {
