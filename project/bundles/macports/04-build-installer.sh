@@ -340,7 +340,16 @@ for FILE in $FILES ; do
     rsync -R "./$FILE" "$TEMPROOT/digikam.app/Contents/Resources/"
 done
 
+# To support localized system menu entries from MacOS. See bug #432650.
+
+FILES=$(find "$TEMPROOT/digikam.app/Contents/Resources/locale" -type d -depth 1)
+
+for FILE in $FILES ; do
+    mkdir "$TEMPROOT/digikam.app/Contents/Resources/$FILE.lproj"
+done
+
 # Showfoto resources dir must be merged with digiKam.
+
 cp -a "$TEMPROOT/showfoto.app/Contents/Resources/" "$TEMPROOT/digikam.app/Contents/Resources/"
 rm -rf "$TEMPROOT/showfoto.app/Contents/Resources"
 
