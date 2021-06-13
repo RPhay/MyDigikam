@@ -1246,7 +1246,7 @@ MetaEngine::MetaDataMap MetaEngine::getExifTagsDataList(const QStringList& exifK
                 std::ostringstream os;
                 md->write(os, &exifData);
 
-                // Exif tag contents can be an translated strings, no only simple ascii.
+                // Exif tag contents can be a translated strings, not only simple ascii.
 
                 tagValue = QString::fromStdString(os.str());
             }
