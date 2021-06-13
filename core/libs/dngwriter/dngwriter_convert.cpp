@@ -167,8 +167,9 @@ int DNGWriter::convert()
 
     catch (const dng_exception& exception)
     {
-        int ret = exception.ErrorCode();
-        qCWarning(DIGIKAM_GENERAL_LOG) << "DNGWriter: DNG SDK exception code (" << ret << "):" << d->dngErrorCodeToString(ret);
+        int code = exception.ErrorCode();
+        qCWarning(DIGIKAM_GENERAL_LOG) << "DNGWriter: DNG SDK exception code (" << code
+                                       << "):" << d->dngErrorCodeToString(code);
 
         return DNG_SDK_INTERNAL_ERROR;
     }
