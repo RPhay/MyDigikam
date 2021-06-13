@@ -34,6 +34,10 @@
 #include <QTextCodec>
 #include <QBuffer>
 
+// KDE includes
+
+#include <klocalizedstring.h>
+
 // Local includes
 
 #include "metaengine_rotation.h"
@@ -1169,7 +1173,9 @@ bool MetaEngine::removeExifThumbnail() const
     return false;
 }
 
-MetaEngine::MetaDataMap MetaEngine::getExifTagsDataList(const QStringList& exifKeysFilter, bool invertSelection) const
+MetaEngine::MetaDataMap MetaEngine::getExifTagsDataList(const QStringList& exifKeysFilter,
+                                                        bool invertSelection,
+                                                        bool extractBinary) const
 {
     if (d->exifMetadata().empty())
     {
@@ -1188,8 +1194,8 @@ MetaEngine::MetaDataMap MetaEngine::getExifTagsDataList(const QStringList& exifK
         std::ostringstream os;
         QString            key;
         QString            tagValue;
-        double num         = 0.0;
-        double den         = 0.0;
+        double             num   = 0.0;
+        double             den   = 0.0;
 
         for (Exiv2::ExifData::const_iterator md = exifData.begin() ; md != exifData.end() ; ++md)
         {
@@ -1246,13 +1252,20 @@ MetaEngine::MetaDataMap MetaEngine::getExifTagsDataList(const QStringList& exifK
             }
             else
             {
-                os.str("");
-                os.clear();
-                md->write(os, &exifData);
+                if (!extractBinary && (md->typeId() == Exiv2::undefined))
+                {
+                    tagValue = i18nc("info", "Binary data %1 bytes", md->size());
+                }
+                else
+                {
+                    os.str("");
+                    os.clear();
+                    md->write(os, &exifData);
 
-                // Exif tag contents can be a translated strings, not only simple ascii.
+                    // Exif tag contents can be a translated strings, not only simple ascii.
 
-                tagValue = QString::fromStdString(os.str());
+                    tagValue = QString::fromStdString(os.str());
+                }
             }
 
             tagValue.replace(QLatin1Char('\n'), QLatin1String(" "));
