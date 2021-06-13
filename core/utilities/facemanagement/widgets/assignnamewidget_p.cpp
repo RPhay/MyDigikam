@@ -254,12 +254,12 @@ void AssignNameWidget::Private::checkWidgets()
 
 void AssignNameWidget::Private::layoutAddTagsWidget(bool exceedBounds, int minimumContentsLength)
 {
-    if (comboBox)
+    if      (comboBox)
     {
         comboBox->setMinimumContentsLength(minimumContentsLength);
         comboBox->lineEdit()->setAllowExceedBound(exceedBounds);
     }
-    else
+    else if (lineEdit)
     {
         lineEdit->setAllowExceedBound(exceedBounds);
     }
