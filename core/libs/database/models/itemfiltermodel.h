@@ -67,7 +67,7 @@ public:
 
     explicit ImageSortFilterModel(QObject* const parent = nullptr);
 
-    void        setSourceItemModel(ItemModel* const model);
+    void       setSourceItemModel(ItemModel* const model);
     ItemModel* sourceItemModel()                                                            const;
 
     void                  setSourceFilterModel(ImageSortFilterModel* const model);
@@ -77,8 +77,10 @@ public:
     QModelIndex mapFromSourceItemModel(const QModelIndex& imagemodel_index)                 const;
     QModelIndex mapFromDirectSourceToSourceItemModel(const QModelIndex& sourceModel_index)  const;
 
-    /// Convenience methods mapped to ItemModel.
-    /// Mentioned indexes returned come from the source image model.
+    /**
+     * Convenience methods mapped to ItemModel.
+     * Mentioned indexes returned come from the source image model.
+     */
     QList<QModelIndex> mapListToSource(const QList<QModelIndex>& indexes)                   const;
     QList<QModelIndex> mapListFromSource(const QList<QModelIndex>& sourceIndexes)           const;
 
@@ -97,15 +99,19 @@ public:
      */
     QList<ItemInfo> imageInfosSorted()                                                      const;
 
-    /// Returns this, any chained ItemFilterModel, or 0.
+    /**
+     * Returns this, any chained ItemFilterModel, or 0.
+     */
     virtual ItemFilterModel* imageFilterModel()                                             const;
 
 protected:
 
-    /// Reimplement if needed. Called only when model shall be set as (direct) sourceModel.
+    /**
+     * Reimplement if needed. Called only when model shall be set as (direct) sourceModel.
+     */
     virtual void setDirectSourceItemModel(ItemModel* const model);
 
-    // made protected
+    /// NOTE: made protected
     void setSourceModel(QAbstractItemModel* const model)                                   override;
 
 protected:
@@ -125,18 +131,25 @@ public:
     {
         /// Returns the current categorization mode
         CategorizationModeRole      = ItemModel::FilterModelRoles + 1,
+
         /// Returns the current sort order
         SortOrderRole               = ItemModel::FilterModelRoles + 2,
+
         /// Returns the number of items in the index category
         //CategoryCountRole         = ItemModel::FilterModelRoles + 3,
+
         /// Returns the id of the PAlbum of the index which is used for category
         CategoryAlbumIdRole         = ItemModel::FilterModelRoles + 3,
+
         /// Returns the format of the index which is used for category
         CategoryFormatRole          = ItemModel::FilterModelRoles + 4,
+
         /// Returns the date of the index which is used for category
         CategoryDateRole            = ItemModel::FilterModelRoles + 5,
+
         /// Returns the suggested name for the face in this index
         CategoryFaceRole            = ItemModel::FilterModelRoles + 6,
+
         /// Returns true if the given image is a group leader, and the group is opened
         GroupIsOpenRole             = ItemModel::FilterModelRoles + 7,
         ItemFilterModelPointerRole  = ItemModel::FilterModelRoles + 50
@@ -164,11 +177,15 @@ public:
     GroupItemFilterSettings   groupItemFilterSettings()                                     const;
     ItemSortSettings          imageSortSettings()                                           const;
 
-    // group is identified by the id of its group leader
+    /**
+     * group is identified by the id of its group leader
+     */
     bool isGroupOpen(qlonglong group)                                                       const;
     bool isAllGroupsOpen()                                                                  const;
 
-    /// Enables sending imageInfosAdded and imageInfosAboutToBeRemoved
+    /**
+     * Enables sending imageInfosAdded and imageInfosAboutToBeRemoved
+     */
     void setSendItemInfoSignals(bool sendSignals);
 
     QVariant data(const QModelIndex& index, int role = Qt::DisplayRole)             const override;
@@ -176,18 +193,23 @@ public:
 
 public Q_SLOTS:
 
-    /** Changes the current version image filter settings and refilters. */
+    /**
+     * Changes the current version image filter settings and refilters.
+     */
     void setVersionItemFilterSettings(const VersionItemFilterSettings& settings);
 
-    /** Changes the current version image filter settings and refilters. */
+    /**
+     * Changes the current version image filter settings and refilters.
+     */
     void setGroupItemFilterSettings(const GroupItemFilterSettings& settings);
 
-    /** Adjust the current ItemFilterSettings.
-     *  Equivalent to retrieving the current filter settings, adjusting the parameter
-     *  and calling setItemFilterSettings.
-     *  Provided for convenience.
-     *  It is encouraged to use setItemFilterSettings if you change more than one
-     *  parameter at a time.
+    /**
+     * Adjust the current ItemFilterSettings.
+     * Equivalent to retrieving the current filter settings, adjusting the parameter
+     * and calling setItemFilterSettings.
+     * Provided for convenience.
+     * It is encouraged to use setItemFilterSettings if you change more than one
+     * parameter at a time.
      */
     void setDayFilter(const QList<QDateTime>& days);
     void setTagFilter(const QList<int>& includedTags, const QList<int>& excludedTags,
@@ -213,36 +235,45 @@ public Q_SLOTS:
     void toggleGroupOpen(qlonglong group);
     void setAllGroupsOpen(bool open);
 
-    /** Changes the current image filter settings and refilters. */
+    /**
+     * Changes the current image filter settings and refilters.
+     */
     virtual void setItemFilterSettings(const ItemFilterSettings& settings);
 
-    /** Changes the current image sort settings and resorts. */
+    /**
+     * Changes the current image sort settings and resorts.
+     */
     virtual void setItemSortSettings(const ItemSortSettings& settings);
 
 Q_SIGNALS:
 
-    /// Signals that the set filter matches at least one index
+    /**
+     * Signals that the set filter matches at least one index
+     */
     void filterMatches(bool matches);
 
-    /** Signals that the set text filter matches at least one entry.
-        If no text filter is set, this signal is emitted
-        with 'false' when filterMatches() is emitted.
+    /**
+     * Signals that the set text filter matches at least one entry.
+     * If no text filter is set, this signal is emitted
+     * with 'false' when filterMatches() is emitted.
      */
     void filterMatchesForText(bool matchesByText);
 
-    /** Emitted when the filter settings have been changed
-        (the model may not yet have been updated)
+    /**
+     * Emitted when the filter settings have been changed
+     * (the model may not yet have been updated)
      */
     void filterSettingsChanged(const ItemFilterSettings& settings);
 
-    /** These signals need to be explicitly enabled with setSendItemInfoSignals()
+    /**
+     * These signals need to be explicitly enabled with setSendItemInfoSignals()
      */
     void imageInfosAdded(const QList<ItemInfo>& infos);
     void imageInfosAboutToBeRemoved(const QList<ItemInfo>& infos);
 
 public:
 
-    // Declared as public because of use in sub-classes.
+    /// NOTE: Declared as public because of use in sub-classes.
     class ItemFilterModelPrivate;
 
 protected:
@@ -262,11 +293,11 @@ protected:
 /*
     virtual int  categoryCount(const ItemInfo& info)                                        const;
 */
-    /** Reimplement to customize category sorting,
-     *  Return negative if category of left < category right,
-     *  Return 0 if left and right are in the same category, else return positive.
+    /**
+     * Reimplement to customize category sorting,
+     * Return negative if category of left < category right,
+     * Return 0 if left and right are in the same category, else return positive.
      */
-
     virtual int compareInfosCategories(const ItemInfo& left, const ItemInfo& right)          const;
 
     /**
@@ -278,11 +309,13 @@ protected:
                                        const FaceTagsIface& leftFace,
                                        const FaceTagsIface& rightFace)                       const;
 
-    /** Reimplement to customize sorting. Do not take categories into account here.
+    /**
+     * Reimplement to customize sorting. Do not take categories into account here.
      */
     virtual bool infosLessThan(const ItemInfo& left, const ItemInfo& right)                  const;
 
-    /** Returns a unique identifier for the category if info. The string need not be for user display.
+    /**
+     * Returns a unique identifier for the category if info. The string need not be for user display.
      */
     virtual QString categoryIdentifier(const ItemInfo& info, const FaceTagsIface& face)      const;
 

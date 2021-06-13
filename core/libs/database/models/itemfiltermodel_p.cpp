@@ -39,6 +39,7 @@ ItemFilterModel::ItemFilterModelPrivate::ItemFilterModelPrivate()
     : imageModel         (nullptr),
       version            (0),
       lastDiscardVersion (0),
+      lastFilteredVersion(0),
       sentOut            (0),
       sentOutForReAdd    (0),
       updateFilterTimer  (nullptr),
@@ -61,6 +62,7 @@ ItemFilterModel::ItemFilterModelPrivate::~ItemFilterModelPrivate()
     ++version;
     preparer->deactivate();
     filterer->deactivate();
+
     delete preparer;
     delete filterer;
 }
@@ -151,7 +153,7 @@ void ItemFilterModel::ItemFilterModelPrivate::infosToProcess(const QList<ItemInf
     QList<ItemInfo>::const_iterator it  = infos.constBegin(), end;
     QList<QVariant>::const_iterator xit = extraValues.constBegin(), xend;
     int index                           = 0;
-    QVector<ItemInfo>  infoVector;
+    QVector<ItemInfo> infoVector;
     QVector<QVariant> extraValueVector;
 
     while (it != infos.constEnd())
