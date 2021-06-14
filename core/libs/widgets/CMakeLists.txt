@@ -96,23 +96,26 @@ set(libgraphicsviewwidgets_SRCS
 )
 
 set(libmetadatawidgets_SRCS
-    ${CMAKE_CURRENT_SOURCE_DIR}/metadata/mdkeylistviewitem.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/metadata/metadatalistview.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/metadata/metadatalistviewitem.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/metadata/metadatawidget.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/metadata/metadataselector.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/metadata/metadatapanel.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/metadata/iptcwidget.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/metadata/exifwidget.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/metadata/makernotewidget.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/metadata/xmpwidget.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/metadata/ratingwidget.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/metadata/colorlabelwidget.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/metadata/picklabelwidget.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/metadata/altlangstredit.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/metadata/colorlabelwidget.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/metadata/countryselector.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/metadata/subjectwidget.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/metadata/exiv2/mdkeylistviewitem.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/metadata/exiv2/metadatalistview.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/metadata/exiv2/metadatalistviewitem.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/metadata/exiv2/metadatawidget.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/metadata/exiv2/iptcwidget.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/metadata/exiv2/exifwidget.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/metadata/exiv2/makernotewidget.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/metadata/exiv2/xmpwidget.cpp
+
+    ${CMAKE_CURRENT_SOURCE_DIR}/metadata/labels/ratingwidget.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/metadata/labels/colorlabelwidget.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/metadata/labels/picklabelwidget.cpp
+
+    ${CMAKE_CURRENT_SOURCE_DIR}/metadata/config/metadataselector.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/metadata/config/metadatapanel.cpp
+
+    ${CMAKE_CURRENT_SOURCE_DIR}/metadata/utils/altlangstredit.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/metadata/utils/countryselector.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/metadata/utils/subjectwidget.cpp
+
     ${CMAKE_CURRENT_SOURCE_DIR}/metadata/exiftool/exiftoollistviewgroup.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/metadata/exiftool/exiftoollistviewitem.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/metadata/exiftool/exiftoollistview.cpp
@@ -136,6 +139,7 @@ include_directories(
     $<TARGET_PROPERTY:Qt5::Core,INTERFACE_INCLUDE_DIRECTORIES>
     $<TARGET_PROPERTY:Qt5::Gui,INTERFACE_INCLUDE_DIRECTORIES>
     $<TARGET_PROPERTY:Qt5::Sql,INTERFACE_INCLUDE_DIRECTORIES>
+    $<TARGET_PROPERTY:Qt5::Concurrent,INTERFACE_INCLUDE_DIRECTORIES>
 
     $<TARGET_PROPERTY:KF5::I18n,INTERFACE_INCLUDE_DIRECTORIES>
     $<TARGET_PROPERTY:KF5::XmlGui,INTERFACE_INCLUDE_DIRECTORIES>

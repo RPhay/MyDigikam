@@ -367,5 +367,9 @@ BUGFIXES:
 344 ==> 438120 - Geolocation data not being saved.
 345 ==> 438134 - Unexpected behaviour of face overlay in preview window.
 346 ==> 438248 - W10 Sysinternals Process Monitor digikam Cannot create files digikam4.db-journal; digikam4.db-wal.
-347 ==> 
-
+347 ==> 428964 - Crash updating fingerprints before checking similarities.
+348 ==> 427337 - Crash when rebuilding thumbnails or fingerprints.
+349 ==> 438465 - Question to Color Spaces.
+350 ==> 438344 - Questions to Add Border Tool.
+351 ==> 438466 - Image editor - Color Negative closes application.
+352 ==> 

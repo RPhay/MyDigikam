@@ -350,25 +350,39 @@ QVariant ItemFilterModel::data(const QModelIndex& index, int role) const
         // Attention: This breaks should there ever be another filter model between this and the ItemModel
 
         case DCategorizedSortFilterProxyModel::CategoryDisplayRole:
+        {
             return categoryIdentifier(d->imageModel->imageInfoRef(mapToSource(index)), face);
+        }
 
         case CategorizationModeRole:
+        {
             return d->sorter.categorizationMode;
+        }
 
         case SortOrderRole:
+        {
             return d->sorter.sortRole;
+        }
 /*
         case CategoryCountRole:
+        {
             return categoryCount(d->imageModel->imageInfoRef(mapToSource(index)));
+        }
 */
         case CategoryAlbumIdRole:
+        {
             return d->imageModel->imageInfoRef(mapToSource(index)).albumId();
+        }
 
         case CategoryFormatRole:
+        {
             return d->imageModel->imageInfoRef(mapToSource(index)).format();
+        }
 
         case CategoryDateRole:
+        {
             return d->imageModel->imageInfoRef(mapToSource(index)).dateTime();
+        }
 
         case CategoryFaceRole:
         {
@@ -394,11 +408,15 @@ QVariant ItemFilterModel::data(const QModelIndex& index, int role) const
         }
 
         case GroupIsOpenRole:
+        {
             return (d->groupFilter.isAllOpen() ||
                     d->groupFilter.isOpen(d->imageModel->imageInfoRef(mapToSource(index)).id()));
+        }
 
         case ItemFilterModelPointerRole:
+        {
             return QVariant::fromValue(const_cast<ItemFilterModel*>(this));
+        }
     }
 
     return DCategorizedSortFilterProxyModel::data(index, role);
@@ -617,10 +635,14 @@ void ItemFilterModel::slotModelReset()
 
     {
         QMutexLocker lock(&d->mutex);
+
         // discard all packages on the way that are marked as send out for re-add
+
         d->lastDiscardVersion = d->version;
         d->sentOutForReAdd    = 0;
+
         // discard all packages on the way
+
         d->version++;
         d->sentOut            = 0;
 
@@ -1068,24 +1090,34 @@ QString ItemFilterModel::categoryIdentifier(const ItemInfo& i, const FaceTagsIfa
     }
 
     qlonglong groupedImageId = i.groupImageId();
-    ItemInfo info = groupedImageId == -1 ? i : ItemInfo(groupedImageId);
+    ItemInfo info = (groupedImageId == -1) ? i : ItemInfo(groupedImageId);
 
     switch (d->sorter.categorizationMode)
     {
         case ItemSortSettings::NoCategories:
+        {
             return QString();
+        }
 
         case ItemSortSettings::OneCategory:
+        {
             return QString();
+        }
 
         case ItemSortSettings::CategoryByAlbum:
+        {
             return fastNumberToString(info.albumId());
+        }
 
         case ItemSortSettings::CategoryByFormat:
+        {
             return info.format();
+        }
 
         case ItemSortSettings::CategoryByMonth:
+        {
             return info.dateTime().date().toString(QLatin1String("MMyyyy"));
+        }
 
         case ItemSortSettings::CategoryByFaces:
         {
@@ -1127,7 +1159,9 @@ QString ItemFilterModel::categoryIdentifier(const ItemInfo& i, const FaceTagsIfa
         }
 
         default:
+        {
             return QString();
+        }
     }
 }
 
@@ -1294,13 +1328,14 @@ void NoDuplicatesItemFilterModel::slotRowsAboutToBeRemoved(const QModelIndex& pa
         QModelIndex index = sourceModel()->index(i, 0, parent);
 
         // filtered out by us?
+
         if (!mapFromSource(index).isValid())
         {
             continue;
         }
 
         QModelIndex sourceIndex = mapFromDirectSourceToSourceItemModel(index);
-        qlonglong id = sourceItemModel()->imageId(sourceIndex);
+        qlonglong id            = sourceItemModel()->imageId(sourceIndex);
 
         if (sourceItemModel()->numberOfIndexesForImageId(id) > 1)
         {

@@ -60,7 +60,10 @@ public:
     {
     }
 
-    ItemFilterModelTodoPackage(const QVector<ItemInfo>& infos, const QVector<QVariant>& extraValues, int version, bool isForReAdd)
+    ItemFilterModelTodoPackage(const QVector<ItemInfo>& infos,
+                               const QVector<QVariant>& extraValues,
+                               int version,
+                               bool isForReAdd)
         : infos      (infos),
           extraValues(extraValues),
           version    (version),
@@ -165,6 +168,7 @@ Q_SIGNALS:
 private:
 
     // Disable
+
     explicit ItemFilterModelPrivate(QObject*) = delete;
 };
 

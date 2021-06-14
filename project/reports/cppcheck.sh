@@ -75,10 +75,10 @@ cppcheck -j$CPU_CORES \
          --suppress=class_X_Y \
          --suppress=ConfigurationNotChecked \
          --suppress=unmatchedSuppression \
+         --output-file=report.cppcheck.xml \
          $IGNORE_DIRS \
          $INCLUDE_DIRS \
-         ../../core \
-         2> report.cppcheck.xml
+         ../../core
 
 cppcheck-htmlreport --file=report.cppcheck.xml \
                     --report-dir=$REPORT_DIR \

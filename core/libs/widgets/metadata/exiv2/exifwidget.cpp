@@ -119,7 +119,9 @@ bool ExifWidget::decodeMetadata()
 
     // Update all metadata contents.
 
-    setMetadataMap(data->getExifTagsDataList(QStringList()));
+    setMetadataMap(data->getExifTagsDataList(QStringList(),
+                                             false,
+                                             false)); // Do not extract binary data which can introduce time latency in GUI.
 
     return true;
 }

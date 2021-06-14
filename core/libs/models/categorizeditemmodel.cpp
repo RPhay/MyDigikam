@@ -202,6 +202,11 @@ ActionItemModel::MenuCategoryMode ActionItemModel::mode() const
 
 QStandardItem* ActionItemModel::addAction(QAction* action, const QString& category, const QVariant& categorySorting)
 {
+    if (!action || action->menu())
+    {
+        return nullptr;
+    }
+
     QStandardItem* const item = addItem(QString(), category, categorySorting);
     item->setEditable(false);
     setPropertiesFromAction(item, action);

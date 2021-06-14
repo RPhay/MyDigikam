@@ -73,6 +73,11 @@ private:
     void setMetadata(const ExifToolParser::ExifToolData& map);
     ExifToolListViewGroup* findGroup(const QString& group);
 
+    void exifToolParseThreaded(const QString& file,
+                               ExifToolParser::ExifToolData* const parsed,
+                               QString* const errorString,
+                               bool* const error);
+
 private:
 
     class Private;

@@ -257,8 +257,7 @@ void EditorTool::slotInit()
     }
     else
     {
-        writeSettings();
-        readSettings();
+        slotResetSettings();
     }
 
     // Unlock signals from preview and settings widgets when init is done.

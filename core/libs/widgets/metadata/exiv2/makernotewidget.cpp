@@ -116,7 +116,9 @@ bool MakerNoteWidget::decodeMetadata()
 
     // Update all metadata contents.
 
-    setMetadataMap(data->getExifTagsDataList(m_keysFilter, true));
+    setMetadataMap(data->getExifTagsDataList(m_keysFilter,
+                                             true,
+                                             false)); // Do not extract binary data which can introduce time latency in GUI.
 
     return true;
 }

@@ -34,6 +34,10 @@
 #include <QTextCodec>
 #include <QBuffer>
 
+// KDE includes
+
+#include <klocalizedstring.h>
+
 // Local includes
 
 #include "metaengine_rotation.h"
@@ -1169,7 +1173,9 @@ bool MetaEngine::removeExifThumbnail() const
     return false;
 }
 
-MetaEngine::MetaDataMap MetaEngine::getExifTagsDataList(const QStringList& exifKeysFilter, bool invertSelection) const
+MetaEngine::MetaDataMap MetaEngine::getExifTagsDataList(const QStringList& exifKeysFilter,
+                                                        bool invertSelection,
+                                                        bool extractBinary) const
 {
     if (d->exifMetadata().empty())
     {
@@ -1183,16 +1189,19 @@ MetaEngine::MetaDataMap MetaEngine::getExifTagsDataList(const QStringList& exifK
         Exiv2::ExifData exifData = d->exifMetadata();
         exifData.sortByKey();
 
-        QString     ifDItemName;
-        MetaDataMap metaDataMap;
+        QString            ifDItemName;
+        MetaDataMap        metaDataMap;
+        std::ostringstream os;
+        QString            key;
+        QString            tagValue;
+        double             num   = 0.0;
+        double             den   = 0.0;
 
         for (Exiv2::ExifData::const_iterator md = exifData.begin() ; md != exifData.end() ; ++md)
         {
-            QString key = QLatin1String(md->key().c_str());
+            key = QLatin1String(md->key().c_str());
 
             // Decode the tag value with a user friendly output.
-
-            QString tagValue;
 
             if      (key == QLatin1String("Exif.Photo.UserComment"))
             {
@@ -1215,21 +1224,21 @@ MetaEngine::MetaDataMap MetaEngine::getExifTagsDataList(const QStringList& exifK
             {
                 // NOTE: special cases to render contents of these GPS info tags. See bug #435317.
 
-                double num = (*md).toRational().first;
-                double den = (*md).toRational().second;
+                num      = (*md).toRational().first;
+                den      = (*md).toRational().second;
 
-                tagValue   = (den == 0.0) ? QString::fromStdString(md->print())
-                                          : QString::fromLatin1("%1 deg").arg(num / den);
+                tagValue = (den == 0.0) ? QString::fromStdString(md->print())
+                                        : QString::fromLatin1("%1 deg").arg(num / den);
             }
             else if (key == QLatin1String("Exif.GPSInfo.GPSSpeed"))
             {
                 // NOTE: special cases to render contents of these GPS info tags. See bug #435317.
 
-                double num = (*md).toRational().first;
-                double den = (*md).toRational().second;
+                num      = (*md).toRational().first;
+                den      = (*md).toRational().second;
 
-                tagValue   = (den == 0.0) ? QString::fromStdString(md->print())
-                                          : tagValue = QString::number(num / den);
+                tagValue = (den == 0.0) ? QString::fromStdString(md->print())
+                                        : tagValue = QString::number(num / den);
             }
             else if (key == QLatin1String("Exif.Image.0x935c"))
             {
@@ -1243,12 +1252,20 @@ MetaEngine::MetaDataMap MetaEngine::getExifTagsDataList(const QStringList& exifK
             }
             else
             {
-                std::ostringstream os;
-                md->write(os, &exifData);
+                if (!extractBinary && (md->typeId() == Exiv2::undefined))
+                {
+                    tagValue = i18nc("info", "Binary data %1 bytes", md->size());
+                }
+                else
+                {
+                    os.str("");
+                    os.clear();
+                    md->write(os, &exifData);
 
-                // Exif tag contents can be an translated strings, no only simple ascii.
+                    // Exif tag contents can be a translated strings, not only simple ascii.
 
-                tagValue = QString::fromStdString(os.str());
+                    tagValue = QString::fromStdString(os.str());
+                }
             }
 
             tagValue.replace(QLatin1Char('\n'), QLatin1String(" "));

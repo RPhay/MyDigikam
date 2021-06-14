@@ -29,6 +29,7 @@
 #include <QApplication>
 #include <QStringList>
 #include <QStyle>
+#include <QtConcurrent>   // krazy:exclude=includes
 
 // KDE includes
 
@@ -49,14 +50,12 @@ class Q_DECL_HIDDEN ExifToolListView::Private
 public:
 
     explicit Private()
-        : parser(nullptr)
     {
     }
 
-    QString         selectedItemKey;
-    QStringList     simplifiedTagsList;
-
-    ExifToolParser* parser;
+    QString                       lastError;
+    QString                       selectedItemKey;
+    QStringList                   simplifiedTagsList;
 };
 
 ExifToolListView::ExifToolListView(QWidget* const parent)
@@ -73,8 +72,6 @@ ExifToolListView::ExifToolListView(QWidget* const parent)
     setHeaderHidden(true);
     header()->setSectionResizeMode(QHeaderView::Stretch);
 
-    d->parser = new ExifToolParser(this);
-
     connect(this, SIGNAL(itemClicked(QTreeWidgetItem*,int)),
             this, SLOT(slotSelectionChanged(QTreeWidgetItem*,int)));
 }
@@ -82,6 +79,28 @@ ExifToolListView::ExifToolListView(QWidget* const parent)
 ExifToolListView::~ExifToolListView()
 {
     delete d;
+}
+
+void ExifToolListView::exifToolParseThreaded(const QString& file,
+                                             ExifToolParser::ExifToolData* const parsed,
+                                             QString* const errorString,
+                                             bool* const error)
+{
+    ExifToolParser* const parser = new ExifToolParser(nullptr);
+
+    if (!parser->load(file))
+    {
+        *errorString = parser->currentErrorString();
+        *error       = true;
+        delete parser;
+
+        return;
+    }
+
+    errorString->clear();
+    *parsed = parser->currentData();
+    *error  = false;
+    delete parser;
 }
 
 bool ExifToolListView::loadFromUrl(const QUrl& url)
@@ -93,19 +112,34 @@ bool ExifToolListView::loadFromUrl(const QUrl& url)
         return true;
     }
 
-    if (!d->parser->load(url.toLocalFile()))
+    bool error          = false;
+    ExifToolParser::ExifToolData parsed;
+
+    // Note; pass writable argument by pointer to QtConcurent::run()
+    // For details: https://stackoverflow.com/questions/25091518/qt-concurrent-run-pass-value-by-reference-but-the-memory-address-is-different
+
+    QFuture<void> task  = QtConcurrent::run(this,
+                                            &ExifToolListView::exifToolParseThreaded,
+                                            url.toLocalFile(),
+                                            &parsed,
+                                            &d->lastError,
+                                            &error);
+
+    task.waitForFinished();
+
+    if (error)
     {
         return false;
     }
 
-    setMetadata(d->parser->currentData());
+    setMetadata(parsed);
 
     return true;
 }
 
 QString ExifToolListView::errorString() const
 {
-    return d->parser->currentErrorString();
+    return d->lastError;
 }
 
 void ExifToolListView::setMetadata(const ExifToolParser::ExifToolData& map)

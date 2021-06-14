@@ -741,9 +741,13 @@ public:
      *   if 'inverSelection' is false.
      * - not include "Iop", or "Thumbnail", or "Image", or "Photo" in the Exif tag keys
      * if 'inverSelection' is true.
+     * if 'extractBinary" is true, tags with undefined types of data are extracted (default),
+     * else contents is replaced by "Binary data ... bytes". Take a care as large binary data as
+     * origianl RAW data from DNG container can be huge and listing Exif tags from GUI can take a while.
      */
     MetaEngine::MetaDataMap getExifTagsDataList(const QStringList& exifKeysFilter = QStringList(),
-                                                bool invertSelection = false) const;
+                                                bool invertSelection = false,
+                                                bool extractBinary = true) const;
 
     //@}
 
