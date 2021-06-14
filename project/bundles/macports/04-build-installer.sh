@@ -345,7 +345,8 @@ done
 FILES=$(find "$TEMPROOT/digikam.app/Contents/Resources/locale" -type d -depth 1)
 
 for FILE in $FILES ; do
-    mkdir "$TEMPROOT/digikam.app/Contents/Resources/$FILE.lproj"
+    BASE=`basename $FILE`
+    mkdir "$TEMPROOT/digikam.app/Contents/Resources/$BASE.lproj"
 done
 
 # Showfoto resources dir must be merged with digiKam.
