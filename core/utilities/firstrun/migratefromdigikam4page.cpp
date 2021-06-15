@@ -61,8 +61,8 @@ public:
 
     explicit Private()
       : migrateBehavior(nullptr),
-        migrate(nullptr),
-        createnew(nullptr)
+        migrate        (nullptr),
+        createnew      (nullptr)
     {
     }
 
@@ -73,7 +73,7 @@ public:
 
 MigrateFromDigikam4Page::MigrateFromDigikam4Page(QWizard* const dlg)
     : DWizardPage(dlg, i18n("Migration from digiKam 4")),
-      d(new Private)
+      d          (new Private)
 {
     const int spacing        = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
     DVBox* const vbox        = new DVBox(this);
@@ -220,13 +220,18 @@ void MigrateFromDigikam4Page::doMigration()
 
         if (identifier.startsWith(QLatin1String("volumeid:?path=%2F")))
         {
-           QUrl url(identifier);
-           url.setQuery(url.query(QUrl::FullyDecoded), QUrl::DecodedMode);
-           qCDebug(DIGIKAM_GENERAL_LOG) << "Updating albumroot " << id << " from " << identifier << " to " << url.toString();
-           QSqlQuery uquery(QLatin1String("UPDATE albumroots SET identifier=? WHERE id=?"), databaseHandler);
-           uquery.bindValue(0, url.toString());
-           uquery.bindValue(1, id);
-           uquery.exec();
+            QUrl url(identifier);
+            url.setQuery(url.query(QUrl::FullyDecoded), QUrl::DecodedMode);
+            qCDebug(DIGIKAM_GENERAL_LOG) << "Updating albumroot " << id << " from " << identifier << " to " << url.toString();
+            QSqlQuery uquery(QLatin1String("UPDATE albumroots SET identifier=? WHERE id=?"), databaseHandler);
+            uquery.bindValue(0, url.toString());
+            uquery.bindValue(1, id);
+            bool ret = uquery.exec();
+
+            if (!ret)
+            {
+                qCDebug(DIGIKAM_GENERAL_LOG) << "Cannot query database for migration:" << databaseHandler.lastError().text();
+            }
         }
     }
 
@@ -259,6 +264,7 @@ int MigrateFromDigikam4Page::nextId() const
 
 bool MigrateFromDigikam4Page::checkForMigration()
 {
+
 #ifdef Q_OS_LINUX
 
     ::Kdelibs4Migration migration;

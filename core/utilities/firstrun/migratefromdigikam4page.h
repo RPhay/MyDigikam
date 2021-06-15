@@ -38,7 +38,7 @@ class MigrateFromDigikam4Page : public DWizardPage
 public:
 
     explicit MigrateFromDigikam4Page(QWizard* const dlg);
-    ~MigrateFromDigikam4Page() override;
+    ~MigrateFromDigikam4Page()      override;
 
     /**
      * Returns true if the user selected to do a migration
