@@ -1895,7 +1895,15 @@ QString EditorWindow::selectValidSavingFormat(const QUrl& targetUrl)
     supportedImageMimeTypes(QIODevice::WriteOnly, all);
     qCDebug(DIGIKAM_GENERAL_LOG) << "Qt Offered types: " << all;
 
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 14, 0))
+
     QStringList validTypes = all.split(QLatin1String("*."), Qt::SkipEmptyParts);
+
+#else
+
+    QStringList validTypes = all.split(QLatin1String("*."), QString::SkipEmptyParts);
+
+#endif
     validTypes.replaceInStrings(QLatin1String(" "), QString());
 
     qCDebug(DIGIKAM_GENERAL_LOG) << "Writable formats: " << validTypes;

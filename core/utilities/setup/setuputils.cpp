@@ -58,7 +58,16 @@ QStringList cleanUserFilterString(QString filterString,
 
     QStringList filterList;
 
-    foreach (const QString& filter, filterString.split(separator, Qt::SkipEmptyParts))
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 14, 0))
+
+    const auto list = filterString.split(separator, Qt::SkipEmptyParts);
+
+#else
+
+    const auto list = filterString.split(separator, QString::SkipEmptyParts);
+
+#endif
+    foreach (const QString& filter, list)
     {
         filterList << filter.trimmed();
     }

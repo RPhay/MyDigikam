@@ -216,7 +216,15 @@ void ImportFilterDlg::mimeCheckBoxClicked()
 void ImportFilterDlg::mimeButtonClicked()
 {
     QString text     = i18n("Select the MimeTypes you want for this filter.");
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 14, 0))
+
     QStringList list = d->mimeLabel->adjustedText().split(QLatin1Char(';'), Qt::SkipEmptyParts);
+
+#else
+
+    QStringList list = d->mimeLabel->adjustedText().split(QLatin1Char(';'), QString::SkipEmptyParts);
+
+#endif
     QPointer<KMimeTypeChooserDialog> dlg = new KMimeTypeChooserDialog(i18n("Select Mime Types"), text,
                                                                       list, QLatin1String("image"), this);
 
@@ -247,8 +255,17 @@ void ImportFilterDlg::getData(Filter* const filter)
 {
     filter->name       = d->filterName->text();
     filter->mimeFilter = d->mimeLabel->adjustedText();
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 14, 0))
+
     filter->fileFilter = d->fileNameEdit->text().split(QLatin1Char(';'), Qt::SkipEmptyParts);
     filter->pathFilter = d->pathEdit->text().split(QLatin1Char(';'), Qt::SkipEmptyParts);
+
+#else
+
+    filter->fileFilter = d->fileNameEdit->text().split(QLatin1Char(';'), QString::SkipEmptyParts);
+    filter->pathFilter = d->pathEdit->text().split(QLatin1Char(';'), QString::SkipEmptyParts);
+
+#endif
     filter->onlyNew    = d->newFilesCheckBox->isChecked();
 }
 
