@@ -57,7 +57,7 @@ namespace Digikam
 
 int CoreDbSchemaUpdater::schemaVersion()
 {
-    return 12;
+    return 13;
 }
 
 int CoreDbSchemaUpdater::filterSettingsVersion()
@@ -704,55 +704,72 @@ bool CoreDbSchemaUpdater::updateToVersion(int targetVersion)
     {
         case 6:
         {
-            // digiKam for database version 5 can work with version 6, though not using the new features
-            // Note: We do not upgrade the uniqueHash
+            // digiKam for database version 5 can work with version 6,
+            // though not using the new features.
+            // Note: We do not upgrade the uniqueHash.
 
             return performUpdateToVersion(QLatin1String("UpdateSchemaFromV5ToV6"), 6, 5);
         }
 
         case 7:
         {
-            // digiKam for database version 5 and 6 can work with version 7, though not using the support for video files.
+            // digiKam for database version 5 and 6 can work with version 7,
+            // though not using the support for video files.
 
             return performUpdateToVersion(QLatin1String("UpdateSchemaFromV6ToV7"), 7, 5);
 
-            // NOTE: If you add a new update step, please check the d->currentVersion at the bottom of updateV4toV7
-            // If the update already comes with createTables, createTriggers, we don't need the extra update here
+            // NOTE: If you add a new update step, please check the
+            // d->currentVersion at the bottom of updateV4toV7.
+            // If the update already comes with createTables,
+            // createTriggers, we don't need the extra update here.
         }
 
         case 8:
         {
-            // digiKam for database version 7 can work with version 8, now using COLLATE utf8_general_ci for MySQL.
+            // digiKam for database version 7 can work with version 8,
+            // now using COLLATE utf8_general_ci for MySQL.
 
             return performUpdateToVersion(QLatin1String("UpdateSchemaFromV7ToV9"), 8, 5);
         }
 
         case 9:
         {
-            // digiKam for database version 8 can work with version 9, now using COLLATE utf8_general_ci for MySQL.
+            // digiKam for database version 8 can work with version 9,
+            // now using COLLATE utf8_general_ci for MySQL.
 
             return performUpdateToVersion(QLatin1String("UpdateSchemaFromV7ToV9"), 9, 5);
         }
 
         case 10:
         {
-            // digiKam for database version 9 can work with version 10, remove ImageHaarMatrix table and add manualOrder column.
+            // digiKam for database version 9 can work with version 10,
+            // remove ImageHaarMatrix table and add manualOrder column.
 
             return performUpdateToVersion(QLatin1String("UpdateSchemaFromV9ToV10"), 10, 5);
         }
 
         case 11:
         {
-            // digiKam for database version 10 can work with version 11, add TagsTree table for MySQL.
+            // digiKam for database version 10 can work with version 11,
+            // add TagsTree table for MySQL.
 
             return performUpdateToVersion(QLatin1String("UpdateSchemaFromV10ToV11"), 11, 5);
         }
 
         case 12:
         {
-            // digiKam for database version 11 can work with version 12, fix TagsTree triggers for MySQL.
+            // digiKam for database version 11 can work with version 12,
+            // fix TagsTree triggers for MySQL.
 
             return performUpdateToVersion(QLatin1String("UpdateSchemaFromV11ToV12"), 12, 5);
+        }
+
+        case 13:
+        {
+            // digiKam for database version 12 can work with version 13,
+            // add index to the TagsTree table for MySQL.
+
+            return performUpdateToVersion(QLatin1String("UpdateSchemaFromV12ToV13"), 13, 5);
         }
 
         default:

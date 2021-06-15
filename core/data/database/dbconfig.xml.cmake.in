@@ -994,6 +994,10 @@
                 <!-- Nothing to do for SQLite -->
             </dbaction>
 
+            <dbaction name="UpdateSchemaFromV12ToV13" mode="transaction">
+                <!-- Nothing to do for SQLite -->
+            </dbaction>
+
             <dbaction name="UpdateThumbnailsDBSchemaFromV1ToV2" mode="transaction">
                 <statement mode="plain">CREATE TABLE CustomIdentifiers
                     (identifier TEXT,
@@ -1344,7 +1348,7 @@
                     );
 
                     IF IFNULL(@Index_cnt, 0) = 0 THEN
-                        set @index_sql = CONCAT( 
+                        set @index_sql = CONCAT(
                             CONVERT( 'ALTER TABLE ' USING latin1),
                             CONVERT( table_name_vc USING latin1),
                             CONVERT( ' ADD INDEX ' USING latin1),
@@ -1374,6 +1378,8 @@
                 <statement mode="plain">CALL create_index_if_not_exists('ImageTagProperties','imagetagproperties_index','imageid, tagid');</statement>
                 <statement mode="plain">CALL create_index_if_not_exists('ImageTagProperties','imagetagproperties_imageid_index','imageid');</statement>
                 <statement mode="plain">CALL create_index_if_not_exists('ImageTagProperties','imagetagproperties_tagid_index','tagid');</statement>
+                <statement mode="plain">CALL create_index_if_not_exists('TagsTree','tagstree_id_index','id');</statement>
+                <statement mode="plain">CALL create_index_if_not_exists('TagsTree','tagstree_pid_index','pid');</statement>
             </dbaction>
 
             <!-- Mysql Core Triggers -->
@@ -2614,6 +2620,42 @@
                         END IF;
                     END;
                 </statement>
+            </dbaction>
+
+            <dbaction name="UpdateSchemaFromV12ToV13" mode="transaction">
+                <statement mode="plain">
+                    DROP PROCEDURE IF EXISTS create_index_if_not_exists;
+                </statement>
+                <statement mode="plain">
+                    CREATE PROCEDURE create_index_if_not_exists(table_name_vc varchar(50), index_name_vc varchar(50), field_list_vc varchar(1024))
+                    BEGIN
+
+                    set @Index_cnt = (
+                        SELECT COUNT(1) cnt
+                        FROM INFORMATION_SCHEMA.STATISTICS
+                        WHERE CONVERT(DATABASE() USING latin1) = CONVERT(TABLE_SCHEMA USING latin1)
+                          AND CONVERT(table_name USING latin1) = CONVERT(table_name_vc USING latin1)
+                          AND CONVERT(index_name USING latin1) = CONVERT(index_name_vc USING latin1)
+                    );
+
+                    IF IFNULL(@Index_cnt, 0) = 0 THEN
+                        set @index_sql = CONCAT(
+                            CONVERT( 'ALTER TABLE ' USING latin1),
+                            CONVERT( table_name_vc USING latin1),
+                            CONVERT( ' ADD INDEX ' USING latin1),
+                            CONVERT( index_name_vc USING latin1),
+                            CONVERT( '(' USING latin1),
+                            CONVERT( field_list_vc USING latin1),
+                            CONVERT( ');' USING latin1)
+                        );
+                        PREPARE stmt FROM @index_sql;
+                        EXECUTE stmt;
+                        DEALLOCATE PREPARE stmt;
+                    END IF;
+                    END;
+                </statement>
+                <statement mode="plain">CALL create_index_if_not_exists('TagsTree','tagstree_id_index','id');</statement>
+                <statement mode="plain">CALL create_index_if_not_exists('TagsTree','tagstree_pid_index','pid');</statement>
             </dbaction>
 
             <dbaction name="UpdateThumbnailsDBSchemaFromV1ToV2" mode="transaction">
