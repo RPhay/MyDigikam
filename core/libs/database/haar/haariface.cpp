@@ -27,6 +27,8 @@
 
 #include "haariface_p.h"
 
+// C++ includes
+
 #include <functional>
 
 namespace Digikam
