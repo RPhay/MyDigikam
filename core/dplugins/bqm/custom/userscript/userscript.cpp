@@ -77,7 +77,7 @@ public:
 
 UserScript::UserScript(QObject* const parent)
     : BatchTool(QLatin1String("UserScript"), CustomTool, parent),
-      d(new Private)
+      d        (new Private)
 {
 }
 
@@ -136,6 +136,7 @@ BatchToolSettings UserScript::defaultSettings()
     BatchToolSettings settings;
     settings.insert(QLatin1String("Output filetype"), d->comboBox->defaultIndex());
     settings.insert(QLatin1String("Script"),          QString());
+
     return settings;
 }
 
@@ -174,19 +175,16 @@ QString UserScript::outputSuffix () const
         case Private::JPEG:
         {
             return QLatin1String("jpg");
-            break;
         }
 
         case Private::PNG:
         {
             return QLatin1String("png");
-            break;
         }
 
         case Private::TIFF:
         {
             return QLatin1String("tif");
-            break;
         }
 
         default:
@@ -207,6 +205,7 @@ bool UserScript::toolOperations()
     if (script.isEmpty())
     {
         setErrorDescription(i18n("User Script: No script."));
+
         return false;
     }
 
@@ -232,8 +231,8 @@ bool UserScript::toolOperations()
 
     QProcessEnvironment env = adjustedEnvironmentForAppImage();
 
-    QString tagPath = TagsCache::instance()->tagPaths(imageInfo().tagIds(), TagsCache::NoLeadingSlash,
-                                                      TagsCache::NoHiddenTags).join(QLatin1Char(';'));
+    QString tagPath         = TagsCache::instance()->tagPaths(imageInfo().tagIds(), TagsCache::NoLeadingSlash,
+                                                              TagsCache::NoHiddenTags).join(QLatin1Char(';'));
 
     // Populate env variables from metadata
 
@@ -266,22 +265,26 @@ bool UserScript::toolOperations()
     {
         setErrorDescription(i18n("User Script: Timeout from script."));
         process.kill();
+
         return false;
     }
 
     if      (process.exitCode() == -2)
     {
         setErrorDescription(i18n("User Script: Failed to start script."));
+
         return false;
     }
     else if (process.exitCode() == -1)
     {
         setErrorDescription(i18n("User Script: Script process crashed."));
+
         return false;
     }
     else if (process.exitCode() == 127)
     {
         setErrorDescription(i18n("User Script: Command not found."));
+
         return false;
     }
 
