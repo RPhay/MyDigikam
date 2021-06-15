@@ -345,7 +345,8 @@ done
 FILES=$(find "$TEMPROOT/digikam.app/Contents/Resources/locale" -type d -depth 1)
 
 for FILE in $FILES ; do
-    BASE=`basename $FILE`
+    BASE=$(basename $FILE)
+    echo "Create localized system menu entry for $BASE'
     mkdir "$TEMPROOT/digikam.app/Contents/Resources/$BASE.lproj"
 done
 
