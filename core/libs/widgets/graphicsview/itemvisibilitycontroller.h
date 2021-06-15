@@ -7,6 +7,7 @@
  * Description : Managing visibility state with animations
  *
  * Copyright (C) 2010-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
+ * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -43,7 +44,7 @@ class DIGIKAM_EXPORT ItemVisibilityController : public QObject
 {
     Q_OBJECT
     Q_PROPERTY(bool  shallBeShown READ shallBeShown WRITE setShallBeShown)
-    Q_PROPERTY(bool  visible READ isVisible WRITE setVisible)
+    Q_PROPERTY(bool  visible      READ isVisible    WRITE setVisible)
 
 public:
 
@@ -221,7 +222,7 @@ private:
 class DIGIKAM_EXPORT ItemVisibilityControllerPropertyObject : public QObject
 {
     Q_OBJECT
-    Q_PROPERTY(qreal opacity READ opacity WRITE setOpacity NOTIFY opacityChanged)
+    Q_PROPERTY(qreal opacity READ opacity   WRITE setOpacity NOTIFY opacityChanged)
     Q_PROPERTY(bool  visible READ isVisible WRITE setVisible NOTIFY visibleChanged)
 
 public:
@@ -248,7 +249,7 @@ Q_SIGNALS:
 protected:
 
     qreal m_opacity;
-    qreal m_visible;
+    bool  m_visible;
 };
 
 // ------------------------------------------------------------------------------------------
