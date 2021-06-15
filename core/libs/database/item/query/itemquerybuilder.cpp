@@ -456,7 +456,14 @@ bool ItemQueryBuilder::buildField(QString& sql, SearchXmlCachingReader& reader, 
 
         if (readerString.contains(QRegExp(QLatin1String("^\\d+:\\d+$"))))
         {
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 14, 0))
+
             QStringList ratioNum = readerString.split(QLatin1Char(':'), Qt::SkipEmptyParts);
+
+#else
+            QStringList ratioNum = readerString.split(QLatin1Char(':'), QString::SkipEmptyParts);
+
+#endif
             int num              = ratioNum.at(0).toInt();
             int denominator = ratioNum.at(1).toInt();
             query                = QString::fromUtf8("ABS((ImageInformation.width/CAST(ImageInformation.height AS DOUBLE)) - ?)  < 0.1");
@@ -510,7 +517,14 @@ bool ItemQueryBuilder::buildField(QString& sql, SearchXmlCachingReader& reader, 
 
                  if (value.contains(QLatin1Char(':')))
                  {
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 14, 0))
+
                      QStringList ratioNum = value.split(QLatin1Char(':'), Qt::SkipEmptyParts);
+
+#else
+                     QStringList ratioNum = value.split(QLatin1Char(':'), QString::SkipEmptyParts);
+
+#endif
                      int num              = ratioNum.at(0).toInt();
                      int denominator      = ratioNum.at(1).toInt();
                      ratioValues << (double)num/denominator;
@@ -1246,8 +1260,15 @@ QString ItemQueryBuilder::convertFromUrlToXml(const QUrl& url) const
     writer.writeAttribute(QLatin1String("convertedFrom09Url"), QLatin1String("true"));
     writer.writeGroup();
 
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 14, 0))
+
     QStringList strList = url.path().split(QLatin1Char(' '), Qt::SkipEmptyParts);
 
+#else
+
+    QStringList strList = url.path().split(QLatin1Char(' '), QString::SkipEmptyParts);
+
+#endif
     for (QStringList::const_iterator it = strList.constBegin() ; it != strList.constEnd() ; ++it)
     {
         bool ok;
@@ -1406,8 +1427,15 @@ QString ItemQueryBuilder::buildQueryFromUrl(const QUrl& url, QList<QVariant>* bo
 
     QString         sqlQuery;
     SubQueryBuilder subQuery;
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 14, 0))
+
     QStringList     strList = url.path().split(QLatin1Char(' '), Qt::SkipEmptyParts);
 
+#else
+
+    QStringList     strList = url.path().split(QLatin1Char(' '), QString::SkipEmptyParts);
+
+#endif
     for (QStringList::const_iterator it = strList.constBegin() ; it != strList.constEnd() ; ++it)
     {
         bool ok;
