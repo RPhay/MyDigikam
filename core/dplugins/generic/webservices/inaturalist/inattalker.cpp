@@ -197,10 +197,12 @@ static Taxon parseTaxon(const QJsonObject& taxon)
                  matchedTerm, squareUrl, ancestors);
 }
 
+// ------------------------------------------------------------------------------------------
+
 /**
  * A request consists in state and a function that is called with the response.
  */
-class Request
+class Q_DECL_HIDDEN Request
 {
 public:
 
@@ -421,14 +423,16 @@ void INatTalker::slotApiToken(const QString& apiToken,
     }
 }
 
+// ------------------------------------------------------------------------------------------
+
 /**
  * Get login, name, and icon of authorized user.
  */
-class UserRequest : public Request
+class Q_DECL_HIDDEN UserRequest : public Request
 {
 public:
 
-    UserRequest(const QList<QNetworkCookie>& cookies)
+    explicit UserRequest(const QList<QNetworkCookie>& cookies)
         : m_cookies(cookies)
     {
     }
@@ -527,10 +531,12 @@ void INatTalker::userInfo(const QList<QNetworkCookie>& cookies)
                               new UserRequest(cookies));
 }
 
+// ------------------------------------------------------------------------------------------
+
 /**
  * Load a URL and return result as QByteArry; used for images (icons).
  */
-class LoadUrlRequest : public Request
+class Q_DECL_HIDDEN LoadUrlRequest : public Request
 {
 public:
 
@@ -585,10 +591,12 @@ void INatTalker::loadUrl(const QUrl& imgUrl)
                               new LoadUrlRequest(imgUrl));
 }
 
+// ------------------------------------------------------------------------------------------
+
 /**
  *  taxon auto-completion
  */
-class AutoCompletionRequest : public Request
+class Q_DECL_HIDDEN AutoCompletionRequest : public Request
 {
 public:
 
@@ -655,10 +663,12 @@ void INatTalker::taxonAutoCompletions(const QString& partialName)
                               new AutoCompletionRequest(partialName));
 }
 
+// ------------------------------------------------------------------------------------------
+
 /**
  * get nearby places
  */
-class NearbyPlacesRequest : public Request
+class Q_DECL_HIDDEN NearbyPlacesRequest : public Request
 {
 
 public:
@@ -769,12 +779,14 @@ void INatTalker::nearbyPlaces(double latitude, double longitude)
                               new NearbyPlacesRequest(latitude, longitude, query.query()));
 }
 
+// ------------------------------------------------------------------------------------------
+
 /**
  * Find the closest observation; used as a sanity check for identifications:
  * when the closest known observation is hundreds of kilometers away, we
  * have likely misidentified the organism in our photo.
  */
-class NearbyObservationRequest : public Request
+class Q_DECL_HIDDEN NearbyObservationRequest : public Request
 {
 
 public:
@@ -951,10 +963,12 @@ void INatTalker::closestObservation(uint taxon, double latitude,
                                                                                : origQuery));
 }
 
+// ------------------------------------------------------------------------------------------
+
 /**
  *  get taxon suggestions for an image
  */
-class ComputerVisionRequest : public Request
+class Q_DECL_HIDDEN ComputerVisionRequest : public Request
 {
 
 public:
@@ -1134,11 +1148,13 @@ QString INatTalker::tmpFileName(const QString& path)
     }
 }
 
-class CreateObservationRequest : public Request
+// ------------------------------------------------------------------------------------------
+
+class Q_DECL_HIDDEN CreateObservationRequest : public Request
 {
 public:
 
-    CreateObservationRequest(const INatTalker::PhotoUploadRequest& req)
+    explicit CreateObservationRequest(const INatTalker::PhotoUploadRequest& req)
         : m_uploadRequest(req)
     {
     }
@@ -1178,7 +1194,9 @@ void INatTalker::createObservation(const QByteArray& parameters,
                               new CreateObservationRequest(upload));
 }
 
-class UploadPhotoRequest : public Request
+// ------------------------------------------------------------------------------------------
+
+class Q_DECL_HIDDEN UploadPhotoRequest : public Request
 {
 public:
 
@@ -1261,12 +1279,13 @@ void INatTalker::uploadNextPhoto(const PhotoUploadRequest& request)
     d->pendingRequests.insert(reply, new UploadPhotoRequest(request, tmpImage));
 }
 
+// ------------------------------------------------------------------------------------------
 
-class DeleteObservationRequest : public Request
+class Q_DECL_HIDDEN DeleteObservationRequest : public Request
 {
 public:
 
-    DeleteObservationRequest(int id)
+    explicit DeleteObservationRequest(int id)
         : m_observationId(id)
     {
     }
