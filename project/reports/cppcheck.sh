@@ -49,6 +49,8 @@ done
 cppcheck -j$CPU_CORES \
          -DQ_OS_LINUX \
          --verbose \
+         --std=c++14 \
+         --library=qt.cfg \
          --inline-suppr \
          --xml-version=2 \
          --platform=unix64 \
@@ -79,7 +81,7 @@ cppcheck -j$CPU_CORES \
          $IGNORE_DIRS \
          $INCLUDE_DIRS \
          ../../core
-
+exit
 cppcheck-htmlreport --file=report.cppcheck.xml \
                     --report-dir=$REPORT_DIR \
                     --source-dir=. \
