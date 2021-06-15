@@ -67,6 +67,7 @@
 #include "dmessagebox.h"
 #include "dexpanderbox.h"
 #include "dmetadata.h"
+#include "digikam_debug.h"
 
 #ifdef GPSSYNC_MODELTEST
 #   include <modeltest.h>
@@ -302,7 +303,7 @@ RGWidget::RGWidget(GPSItemModel* const imageModel, QItemSelectionModel* const se
     vBoxLayout->addWidget(d->LGridContainer);
     QGridLayout* const LGridLayout = new QGridLayout(d->LGridContainer);
 
-    d->xmpLoc = new QCheckBox( i18n("Write tags to XMP"), d->LGridContainer);
+    d->xmpLoc = new QCheckBox(i18n("Write tags to XMP"), d->LGridContainer);
 
     LGridLayout->addWidget(d->xmpLoc, 0, 0, 1, 3);
 
@@ -442,7 +443,7 @@ void RGWidget::slotButtonRGSelected()
     for (int i = 0 ; i < selectedItems.count() ; ++i)
     {
         const QPersistentModelIndex itemIndex = selectedItems.at(i);
-        GPSItemContainer* const selectedItem      = d->imageModel->itemFromIndex(itemIndex);
+        GPSItemContainer* const selectedItem  = d->imageModel->itemFromIndex(itemIndex);
         const GPSDataContainer gpsData        = selectedItem->gpsData();
 
         if (!gpsData.hasCoordinates())
@@ -758,6 +759,11 @@ void RGWidget::readSettingsFromGroup(const KConfigGroup* const group)
             else if (currentTagType == QLatin1String("OldChild"))
             {
                 currentTagData.tagType = TypeChild;
+            }
+            else
+            {
+                qCWarning(DIGIKAM_GENERAL_LOG) << "Unknown tag type" << currentTagType;
+                continue;
             }
 
             currentSpacerAddress.append(currentTagData);
