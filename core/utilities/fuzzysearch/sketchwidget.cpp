@@ -559,7 +559,21 @@ void SketchWidget::mouseMoveEvent(QMouseEvent* e)
 
 void SketchWidget::wheelEvent(QWheelEvent* e)
 {
-    if (rect().contains(e->position().toPoint().x(), e->position().toPoint().y()))
+    int x, y;
+
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 14, 0))
+
+    x = e->position().toPoint().x();
+    y = e->position().toPoint().y();
+
+#else
+
+    x = e->x();
+    y = e->y();
+
+#endif
+
+    if (rect().contains(x, y))
     {
         int size = d->penWidth;
         int decr = (e->modifiers() & Qt::SHIFT) ? 1 : 10;

@@ -228,9 +228,19 @@ bool DWItemDelegateEventListener::eventFilter(QObject* watched, QEvent* event)
             case QEvent::Wheel:
             {
                 QWheelEvent* const wheelEvent = static_cast<QWheelEvent*>(event);
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 12, 0))
+
                 QWheelEvent evt(wheelEvent->position(), wheelEvent->globalPosition(),wheelEvent->pixelDelta(),
                                  wheelEvent->angleDelta(), wheelEvent->buttons(), wheelEvent->modifiers(),
                                  wheelEvent->phase(), wheelEvent->inverted(), wheelEvent->source());
+
+#else
+
+                QWheelEvent evt(viewport->mapFromGlobal(wheelEvent->globalPos()),
+                                wheelEvent->angleDelta().y(), wheelEvent->buttons(), wheelEvent->modifiers(),
+                                wheelEvent->orientation());
+
+#endif
                 QApplication::sendEvent(viewport, &evt);
                 break;
             }

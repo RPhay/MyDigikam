@@ -721,7 +721,15 @@ void GLViewerWidget::wheelEvent(QWheelEvent* e)
         case GLViewerWidget::Private::zoomImage:
         {
             setCursor(d->zoomCursor);
+
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 14, 0))
+
             zoom(e->angleDelta().y(), e->position().toPoint(), d->zoomfactor_scrollwheel);
+
+#else
+            zoom(e->angleDelta().y(), e->pos(), d->zoomfactor_scrollwheel);
+
+#endif
             break;
         }
 

@@ -939,9 +939,16 @@ void ItemViewCategorized::wheelEvent(QWheelEvent* event)
 
     if (verticalScrollBarPolicy() == Qt::ScrollBarAlwaysOff && event->angleDelta().y() != 0)
     {
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 12, 0))
+
         QWheelEvent n(event->position(), event->globalPosition(), event->pixelDelta(),
                       event->angleDelta(), event->buttons(), event->modifiers(),
                       event->phase(), event->inverted(), event->source());
+#else
+        QWheelEvent n(event->pos(), event->globalPos(), event->angleDelta().y(),
+                      event->buttons(), event->modifiers(), Qt::Horizontal);
+
+#endif
         QApplication::sendEvent(horizontalScrollBar(), &n);
         event->setAccepted(n.isAccepted());
     }
