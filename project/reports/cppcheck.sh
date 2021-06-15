@@ -81,7 +81,7 @@ cppcheck -j$CPU_CORES \
          $IGNORE_DIRS \
          $INCLUDE_DIRS \
          ../../core
-exit
+
 cppcheck-htmlreport --file=report.cppcheck.xml \
                     --report-dir=$REPORT_DIR \
                     --source-dir=. \
