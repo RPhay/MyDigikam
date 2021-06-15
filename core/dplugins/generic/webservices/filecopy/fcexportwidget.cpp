@@ -149,7 +149,7 @@ FCExportWidget::FCExportWidget(DInfoInterface* const iface, QWidget* const paren
     d->imageChangeGroupBox          = new QGroupBox(i18n("Image Properties"), this);
 
     d->imageResize                  = new QSpinBox(d->imageChangeGroupBox);
-    d->imageResize->setRange(300, 4000);
+    d->imageResize->setRange(300, 6000);
     d->imageResize->setSingleStep(1);
     d->imageResize->setValue(1024);
     d->imageResize->setSuffix(i18n(" px"));

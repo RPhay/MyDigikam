@@ -193,7 +193,7 @@ bool FCTask::imageResize(const QString& orgPath, const QString& destPath)
         return false;
     }
 
-    DImg img = PreviewLoadThread::loadFastSynchronously(orgPath, d->settings.imageResize);
+    DImg img = PreviewLoadThread::loadHighQualitySynchronously(orgPath);
 
     if (img.isNull())
     {
