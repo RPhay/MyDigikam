@@ -109,9 +109,7 @@ void FTImportWidget::slotShowImportDialogClicked(bool checked)
     importDlg->setAcceptMode(QFileDialog::AcceptOpen);
     importDlg->setFileMode(QFileDialog::ExistingFiles);
 
-    importDlg->exec();
-
-    if (importDlg && !importDlg->selectedUrls().isEmpty())
+    if (importDlg->exec() == QDialog::Accepted)
     {
         d->imageList->slotAddImages(importDlg->selectedUrls());
     }
