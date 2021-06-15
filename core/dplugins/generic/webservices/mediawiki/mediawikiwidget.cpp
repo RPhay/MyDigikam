@@ -933,7 +933,14 @@ void MediaWikiWidget::slotApplyTitle()
         // If there is at least one #, replace it the correct number
         if (minLength > 0)
         {
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 14, 0))
+
             parts      = imageTitle.split(QLatin1Char('#'), Qt::KeepEmptyParts);
+
+#else
+            parts      = imageTitle.split(QLatin1Char('#'), QString::KeepEmptyParts);
+
+#endif
             imageTitle = parts.first().append(QLatin1Char('#')).append(parts.last());
             number     = QString::number(i + 1);
 

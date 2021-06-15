@@ -242,7 +242,15 @@ QString MediaWikiTalker::buildWikiText(const QMap<QString, QString>& info) const
 
     if (!info[QLatin1String("categories")].isEmpty())
     {
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 14, 0))
+
         categories = info[QLatin1String("categories")].split(QLatin1Char('\n'), Qt::SkipEmptyParts);
+
+#else
+
+        categories = info[QLatin1String("categories")].split(QLatin1Char('\n'), QString::SkipEmptyParts);
+
+#endif
 
         for (int i = 0 ; i < categories.size() ; ++i)
         {
@@ -252,8 +260,15 @@ QString MediaWikiTalker::buildWikiText(const QMap<QString, QString>& info) const
 
     if (!info[QLatin1String("genCategories")].isEmpty())
     {
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 14, 0))
+
         categories = info[QLatin1String("genCategories")].split(QLatin1Char('\n'), Qt::SkipEmptyParts);
 
+#else
+
+        categories = info[QLatin1String("genCategories")].split(QLatin1Char('\n'), QString::SkipEmptyParts);
+
+#endif
         for (int i = 0 ; i < categories.size() ; ++i)
         {
             text.append(QLatin1String("[[Category:")).append(categories[i]).append(QLatin1String("]]\n"));

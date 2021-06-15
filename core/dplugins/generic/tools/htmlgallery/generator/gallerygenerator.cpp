@@ -532,8 +532,15 @@ public:
         {
             // Forth case: both apos and quote :-(
 
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 14, 0))
+
             const QStringList lst = txt.split(QLatin1Char(apos), Qt::KeepEmptyParts);
 
+#else
+
+            const QStringList lst = txt.split(QLatin1Char(apos), QString::KeepEmptyParts);
+
+#endif
             QStringList::ConstIterator it  = lst.constBegin();
             QStringList::ConstIterator end = lst.constEnd();
             param                          = QLatin1String("concat(");

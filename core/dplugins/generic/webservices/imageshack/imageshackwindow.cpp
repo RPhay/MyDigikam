@@ -382,7 +382,15 @@ void ImageShackWindow::uploadNextItem()
     {
         QString str = d->widget->d->tagsFld->text();
         QStringList tagsList;
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 14, 0))
+
         tagsList = str.split(QRegExp(QLatin1String("\\W+")), Qt::SkipEmptyParts);
+
+#else
+
+        tagsList = str.split(QRegExp(QLatin1String("\\W+")), QString::SkipEmptyParts);
+
+#endif
         opts[QLatin1String("tags")] = tagsList.join(QLatin1Char(','));
     }
 

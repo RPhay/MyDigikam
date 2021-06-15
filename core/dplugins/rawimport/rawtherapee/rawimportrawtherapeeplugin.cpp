@@ -220,8 +220,15 @@ void RawTherapeeRawImportPlugin::slotProcessFinished(int code, QProcess::ExitSta
 void RawTherapeeRawImportPlugin::slotProcessReadyRead()
 {
     QByteArray data   = d->rawtherapee->readAllStandardError();
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 14, 0))
+
     QStringList lines = QString::fromUtf8(data).split(QLatin1Char('\n'), Qt::SkipEmptyParts);
 
+#else
+
+    QStringList lines = QString::fromUtf8(data).split(QLatin1Char('\n'), QString::SkipEmptyParts);
+
+#endif
     foreach (const QString& one, lines)
     {
         qCDebug(DIGIKAM_GENERAL_LOG) << "RawTherapee ::" << one;

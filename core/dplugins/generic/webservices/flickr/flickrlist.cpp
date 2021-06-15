@@ -562,7 +562,15 @@ void FlickrListViewItem::updateItemWidgets()
 
 QStringList FlickrListViewItem::extraTags() const
 {
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 14, 0))
+
     return d->tagLineEdit->text().split(QLatin1Char(','), Qt::SkipEmptyParts);
+
+#else
+
+    return d->tagLineEdit->text().split(QLatin1Char(','), QString::SkipEmptyParts);
+
+#endif
 }
 
 void FlickrListViewItem::toggled()
