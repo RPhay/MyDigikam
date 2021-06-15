@@ -378,9 +378,7 @@ void PresentationAudioPage::slotSoundFilesButtonAdd()
     dlg->setAcceptMode(QFileDialog::AcceptOpen);
     dlg->setFileMode(QFileDialog::ExistingFiles);
 
-    dlg->exec();
-
-    if (!dlg->selectedUrls().isEmpty())
+    if (dlg->exec() == QDialog::Accepted)
     {
         addItems(dlg->selectedUrls());
         updateFileList();
