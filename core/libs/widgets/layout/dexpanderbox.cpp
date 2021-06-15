@@ -606,7 +606,15 @@ void DLabelExpander::setIcon(const QIcon& icon)
 
 QIcon DLabelExpander::icon() const
 {
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 15, 0))
+
     return QIcon(d->pixmapLabel->pixmap(Qt::ReturnByValue));
+
+#else
+
+  return QIcon(*d->pixmapLabel->pixmap());
+
+#endif
 }
 
 void DLabelExpander::setWidget(QWidget* const widget)

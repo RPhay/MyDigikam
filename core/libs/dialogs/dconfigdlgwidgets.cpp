@@ -256,7 +256,15 @@ QString DConfigDlgTitle::comment() const
 
 QPixmap DConfigDlgTitle::pixmap() const
 {
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 15, 0))
+
     return d->imageLabel->pixmap(Qt::ReturnByValue);
+
+#else
+
+    return *d->imageLabel->pixmap();
+
+#endif
 }
 
 void DConfigDlgTitle::setBuddy(QWidget* const buddy)
