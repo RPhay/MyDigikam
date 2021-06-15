@@ -90,10 +90,6 @@ QVariant GPSItemModel::data(const QModelIndex& index, int role) const
 
 QModelIndex GPSItemModel::index(int row, int column, const QModelIndex& parent) const
 {
-    if (parent.isValid())
-    {
-        Q_ASSERT(parent.model() == this);
-    }
 /*
     qCDebug(DIGIKAM_GENERAL_LOG)<<row<<column<<parent;
 */
@@ -109,7 +105,9 @@ QModelIndex GPSItemModel::index(int row, int column, const QModelIndex& parent) 
          (row < 0)                  ||
          (row >= d->items.count())
        )
+    {
         return QModelIndex();
+    }
 
     return createIndex(row, column, (void*)nullptr);
 }
@@ -177,11 +175,6 @@ GPSItemContainer* GPSItemModel::itemFromIndex(const QModelIndex& index) const
 
 int GPSItemModel::rowCount(const QModelIndex& parent) const
 {
-    if (parent.isValid())
-    {
-        Q_ASSERT(parent.model() == this);
-    }
-
     if (parent.isValid())
     {
         return 0;

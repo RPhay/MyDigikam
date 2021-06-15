@@ -46,7 +46,7 @@ class DIGIKAM_EXPORT GPSItemModel : public QAbstractItemModel
 public:
 
     explicit GPSItemModel(QObject* const parent = nullptr);
-    ~GPSItemModel() override;
+    ~GPSItemModel()                                                                                       override;
 
     // own functions:
 
@@ -58,7 +58,7 @@ public:
 
     QPixmap getPixmapForIndex(const QPersistentModelIndex& itemIndex, const int size);
 
-    // QAbstractItemModel:
+    // QAbstractItemModel customizations:
 
     int columnCount(const QModelIndex& parent = QModelIndex())                                      const override;
     bool setData(const QModelIndex& index, const QVariant& value, int role)                               override;
