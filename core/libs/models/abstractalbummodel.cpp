@@ -929,6 +929,8 @@ class Q_DECL_HIDDEN AbstractCheckableAlbumModel::Private
 {
 public:
 
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 15, 0))
+
     explicit Private()
         : extraFlags(),
           rootIsCheckable(true),
@@ -937,6 +939,19 @@ public:
 
     {
     }
+
+#else
+
+    explicit Private()
+        : extraFlags(nullptr),
+          rootIsCheckable(true),
+          addExcludeTristate(false),
+          staticVectorContainingCheckStateRole(1, Qt::CheckStateRole)
+
+    {
+    }
+
+#endif
 
     Qt::ItemFlags                 extraFlags;
     bool                          rootIsCheckable;
