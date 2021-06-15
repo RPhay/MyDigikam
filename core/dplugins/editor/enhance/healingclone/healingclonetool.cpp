@@ -551,8 +551,8 @@ void HealingCloneTool::slotContinuePolygon()
         return;
     }
 
-    QPoint& start              = d->previousLassoPoint;
-    QPoint& end                = d->startLassoPoint;
+    const QPoint& start        = d->previousLassoPoint;
+    const QPoint& end          = d->startLassoPoint;
     std::vector<QPoint> points = interpolate(start, end);
     updateLasso(points);
 
