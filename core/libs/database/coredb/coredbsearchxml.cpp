@@ -1316,15 +1316,15 @@ QList<QString> SearchXmlCachingReader::valueToStringOrStringList()
         return QStringList;
     }
 
-    QList<QString> QStringList;
+    QList<QString> lst;
     QList<QVariant> varList = m_value.toList();
 
     foreach (const QVariant& var, varList)
     {
-        QStringList << var.toString();
+        lst << var.toString();
     }
 
-    return QStringList;
+    return lst;
 }
 
 } // namespace Digikam
