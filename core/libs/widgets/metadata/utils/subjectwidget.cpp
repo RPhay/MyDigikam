@@ -305,8 +305,17 @@ SubjectWidget::SubjectWidget(QWidget* const parent, bool sizeLimited)
     connect(d->repSubjectButton, &QPushButton::clicked,
             this, &SubjectWidget::slotRepSubject);
 
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 15, 0))
+
     connect(d->btnGroup, static_cast<void (QButtonGroup::*)(int)>(&QButtonGroup::idReleased),
             this, &SubjectWidget::slotEditOptionChanged);
+
+#else
+
+    connect(d->btnGroup, static_cast<void (QButtonGroup::*)(int)>(&QButtonGroup::buttonReleased),
+            this, &SubjectWidget::slotEditOptionChanged);
+
+#endif
 
     connect(d->refCB, static_cast<void (QComboBox::*)(int)>(&QComboBox::activated),
             this, &SubjectWidget::slotRefChanged);
