@@ -110,9 +110,12 @@ void AlbumManager::scanSAlbums()
     {
         emit signalAlbumAboutToBeDeleted(album);
         d->allAlbumsIdHash.remove(album->globalID());
+
         emit signalAlbumDeleted(album);
+
         quintptr deletedAlbum = reinterpret_cast<quintptr>(album);
         delete album;
+
         emit signalAlbumHasBeenDeleted(deletedAlbum);
     }
 
@@ -122,9 +125,12 @@ void AlbumManager::scanSAlbums()
     {
         SAlbum* const album                   = new SAlbum(info.name, info.id);
         album->setSearch(info.type, info.query);
+
         emit signalAlbumAboutToBeAdded(album, d->rootSAlbum, d->rootSAlbum->lastChild());
+
         album->setParent(d->rootSAlbum);
         d->allAlbumsIdHash[album->globalID()] = album;
+
         emit signalAlbumAdded(album);
     }
 }
@@ -148,7 +154,7 @@ SAlbum* AlbumManager::findSAlbum(const QString& name) const
     {
         if (album->title() == name)
         {
-            return dynamic_cast<SAlbum*>(album);
+            return (dynamic_cast<SAlbum*>(album));
         }
     }
 
@@ -162,14 +168,11 @@ QList<SAlbum*> AlbumManager::findSAlbumsBySearchType(int searchType) const
     for (Album* album = d->rootSAlbum->firstChild() ;
          album ; album = album->next())
     {
-        if (album)
-        {
-            SAlbum* const sAlbum = dynamic_cast<SAlbum*>(album);
+        SAlbum* const sAlbum = dynamic_cast<SAlbum*>(album);
 
-            if ((sAlbum) && (sAlbum->searchType() == searchType))
-            {
-                albums.append(sAlbum);
-            }
+        if ((sAlbum) && (sAlbum->searchType() == searchType))
+        {
+            albums.append(sAlbum);
         }
     }
 
@@ -205,6 +208,7 @@ SAlbum* AlbumManager::createSAlbum(const QString& name,
     album->setParent(d->rootSAlbum);
 
     d->allAlbumsIdHash.insert(album->globalID(), album);
+
     emit signalAlbumAdded(album);
 
     return album;
@@ -260,9 +264,12 @@ bool AlbumManager::deleteSAlbum(SAlbum* album)
     CoreDbAccess().db()->deleteSearch(album->id());
 
     d->allAlbumsIdHash.remove(album->globalID());
+
     emit signalAlbumDeleted(album);
+
     quintptr deletedAlbum = reinterpret_cast<quintptr>(album);
     delete album;
+
     emit signalAlbumHasBeenDeleted(deletedAlbum);
 
     return true;
