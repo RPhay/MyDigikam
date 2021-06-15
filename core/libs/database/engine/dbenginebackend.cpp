@@ -1755,7 +1755,12 @@ BdEngineBackend::QueryState BdEngineBackend::commitTransaction()
                 else
                 {
                     qCDebug(DIGIKAM_DBENGINE_LOG) << "Failed to commit transaction. Starting rollback.";
-                    db.rollback();
+                    bool ret = db.rollback();
+
+                    // No need to check feedback for database as driver must support transactions.
+                    // Also, in all cases the database error is checked outside this feedback.
+
+                    Q_UNUSED(ret);
 
                     if (lastError.type() == QSqlError::ConnectionError)
                     {
