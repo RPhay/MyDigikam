@@ -551,7 +551,15 @@ bool ItemQueryBuilder::buildField(QString& sql, SearchXmlCachingReader& reader, 
 
             if (value.contains(QLatin1Char(':')))
             {
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 14, 0))
+
                 QStringList ratioNum = value.split(QLatin1Char(':'), Qt::SkipEmptyParts);
+
+#else
+
+                QStringList ratioNum = value.split(QLatin1Char(':'), QString::SkipEmptyParts);
+
+#endif
                 int num              = ratioNum.at(0).toInt();
                 int denominator      = ratioNum.at(1).toInt();
                 *boundValues << (double)num/denominator;

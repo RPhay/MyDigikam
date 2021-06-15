@@ -81,8 +81,17 @@ QFileInfoList DPluginLoader::Private::pluginEntriesList() const
         qCWarning(DIGIKAM_GENERAL_LOG) << "DK_PLUGIN_PATH env.variable detected. "
                                           "We will use it to load plugin...";
 
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 14, 0))
+
         pathList << QString::fromUtf8(dkenv).split(QLatin1Char(';'),
                                                    Qt::SkipEmptyParts);
+
+#else
+
+        pathList << QString::fromUtf8(dkenv).split(QLatin1Char(';'),
+                                                   QString::SkipEmptyParts);
+
+#endif
     }
 
     qCDebug(DIGIKAM_GENERAL_LOG) << "Parsing plugins from" << pathList;

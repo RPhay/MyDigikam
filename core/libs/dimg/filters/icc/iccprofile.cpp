@@ -554,7 +554,15 @@ QStringList IccProfile::defaultSearchPaths()
 
     // XDG data dirs, including /usr/share/color/icc
 
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 14, 0))
+
     QStringList dataDirs = QString::fromLocal8Bit(qgetenv("XDG_DATA_DIRS")).split(QLatin1Char(':'), Qt::SkipEmptyParts);
+
+#else
+
+    QStringList dataDirs = QString::fromLocal8Bit(qgetenv("XDG_DATA_DIRS")).split(QLatin1Char(':'), QString::SkipEmptyParts);
+
+#endif
 
     if (!dataDirs.contains(QLatin1String("/usr/share")))
     {
