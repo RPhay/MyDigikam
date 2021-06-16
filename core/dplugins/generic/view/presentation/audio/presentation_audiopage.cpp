@@ -37,6 +37,7 @@
 #include "presentation_mainpage.h"
 #include "presentationcontainer.h"
 #include "digikam_debug.h"
+#include "digikam_globals.h"
 #include "dfiledialog.h"
 
 using namespace Digikam;
