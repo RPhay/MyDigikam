@@ -25,6 +25,7 @@
 // Local includes
 
 #include "digikam_debug.h"
+#include "digikam_globals.h"
 
 namespace DigikamGenericPanoramaPlugin
 {
@@ -58,7 +59,7 @@ void CompileMKTask::run(ThreadWeaver::JobPointer, ThreadWeaver::Thread*)
 
     qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "make command line: " << getCommandLine();
 
-    qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "make output:" << Qt::endl << output;
+    qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "make output:" << QT_ENDL << output;
 }
 
 } // namespace DigikamGenericPanoramaPlugin

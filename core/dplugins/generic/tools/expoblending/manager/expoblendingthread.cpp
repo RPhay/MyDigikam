@@ -496,7 +496,7 @@ void ExpoBlendingThread::run()
 
                 default:
                 {
-                    qCritical(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Unknown action specified" << Qt::endl;
+                    qCritical(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Unknown action specified" << QT_ENDL;
                     break;
                 }
             }

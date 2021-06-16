@@ -581,7 +581,7 @@ void PresentationAudioPage::slotSoundFilesButtonSave()
 
                 if (fUrl.isValid() && fUrl.isLocalFile())
                 {
-                    out << fUrl.toLocalFile() << Qt::endl;
+                    out << fUrl.toLocalFile() << QT_ENDL;
                 }
             }
 
