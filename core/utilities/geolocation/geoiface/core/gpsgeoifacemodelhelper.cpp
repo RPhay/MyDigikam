@@ -58,7 +58,7 @@ class Q_DECL_HIDDEN GPSGeoIfaceModelHelper::Private
 public:
 
     explicit Private()
-      : model(nullptr),
+      : model         (nullptr),
         selectionModel(nullptr)
     {
     }
@@ -72,7 +72,7 @@ GPSGeoIfaceModelHelper::GPSGeoIfaceModelHelper(GPSItemModel* const model,
                                                QItemSelectionModel* const selectionModel,
                                                QObject* const parent)
     : GeoModelHelper(parent),
-      d(new Private())
+      d             (new Private())
 {
     d->model          = model;
     d->selectionModel = selectionModel;
@@ -178,9 +178,9 @@ void GPSGeoIfaceModelHelper::onIndicesMoved(const QList<QPersistentModelIndex>& 
     {
         const QAbstractItemModel* const targetModel = targetSnapIndex.model();
 
-        for (int i = 0 ; i < d->ungroupedModelHelpers.count() ; ++i)
+        for (int j = 0 ; j < d->ungroupedModelHelpers.count() ; ++j)
         {
-            GeoModelHelper* const ungroupedHelper = d->ungroupedModelHelpers.at(i);
+            GeoModelHelper* const ungroupedHelper = d->ungroupedModelHelpers.at(j);
 
             if (ungroupedHelper->model() == targetModel)
             {
