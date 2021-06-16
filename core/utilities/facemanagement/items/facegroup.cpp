@@ -30,7 +30,7 @@ namespace Digikam
 
 FaceGroup::FaceGroup(GraphicsDImgView* const view)
     : QObject(view),
-      d(new Private(this))
+      d      (new Private(this))
 {
     d->view                 = view;
     d->visibilityController = new ItemVisibilityController(this);
@@ -62,17 +62,20 @@ void FaceGroup::itemStateChanged(int itemState)
         case DImgPreviewItem::NoImage:
         case DImgPreviewItem::Loading:
         case DImgPreviewItem::ImageLoadingFailed:
+        {
             d->visibilityController->hide();
             break;
+        }
 
         case DImgPreviewItem::ImageLoaded:
-
+        {
             if (d->state == FacesLoaded)
             {
                 d->visibilityController->show();
             }
 
             break;
+        }
     }
 }
 
@@ -127,7 +130,6 @@ bool FaceGroup::showOnHover() const
 {
     return d->showOnHover;
 }
-
 
 void FaceGroup::setVisible(bool visible)
 {
@@ -267,11 +269,11 @@ void FaceGroup::itemHoverMoveEvent(QGraphicsSceneHoverEvent* e)
 
             QList<QObject*> visible      = d->visibilityController->visibleItems(ItemVisibilityController::ExcludeFadingOut);
 
-            foreach (QGraphicsItem* const item, hItems)
+            foreach (QGraphicsItem* const item2, hItems)
             {
                 foreach (QObject* const parent, visible)
                 {
-                    if (static_cast<QGraphicsObject*>(parent)->isAncestorOf(item))
+                    if (static_cast<QGraphicsObject*>(parent)->isAncestorOf(item2))
                     {
                         return;
                     }
