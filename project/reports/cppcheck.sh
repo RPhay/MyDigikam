@@ -51,6 +51,9 @@ cppcheck -j$CPU_CORES \
          --verbose \
          --std=c++14 \
          --library=qt.cfg \
+         --library=opencv2.cfg \
+         --library=boost.cfg \
+         --library=kde.cfg \
          --inline-suppr \
          --xml-version=2 \
          --platform=unix64 \
