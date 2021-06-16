@@ -23,6 +23,10 @@
 
 #include "maintenancesettings.h"
 
+// Local includes
+
+#include "digikam_globals.h"
+
 namespace Digikam
 {
 
@@ -58,32 +62,32 @@ MaintenanceSettings::~MaintenanceSettings()
 //! qCDebug(DIGIKAM_GENERAL_LOG) stream operator. Writes property @a s to the debug output in a nicely formatted way.
 QDebug operator<<(QDebug dbg, const MaintenanceSettings& s)
 {
-    dbg.nospace() << Qt::endl;
-    dbg.nospace() << "wholeAlbums           : " << s.wholeAlbums << Qt::endl;
-    dbg.nospace() << "wholeTags             : " << s.wholeTags << Qt::endl;
-    dbg.nospace() << "Albums                : " << s.albums.count() << Qt::endl;
-    dbg.nospace() << "Tags                  : " << s.tags.count() << Qt::endl;
-    dbg.nospace() << "useMutiCoreCPU        : " << s.useMutiCoreCPU << Qt::endl;
-    dbg.nospace() << "newItems              : " << s.newItems << Qt::endl;
-    dbg.nospace() << "thumbnails            : " << s.thumbnails << Qt::endl;
-    dbg.nospace() << "scanThumbs            : " << s.scanThumbs << Qt::endl;
-    dbg.nospace() << "fingerPrints          : " << s.fingerPrints << Qt::endl;
-    dbg.nospace() << "scanFingerPrints      : " << s.scanFingerPrints << Qt::endl;
-    dbg.nospace() << "duplicates            : " << s.duplicates << Qt::endl;
-    dbg.nospace() << "minSimilarity         : " << s.minSimilarity << Qt::endl;
-    dbg.nospace() << "maxSimilarity         : " << s.maxSimilarity << Qt::endl;
-    dbg.nospace() << "duplicatesRestriction : " << s.duplicatesRestriction << Qt::endl;
-    dbg.nospace() << "faceManagement        : " << s.faceManagement << Qt::endl;
-    dbg.nospace() << "faceScannedHandling   : " << s.faceSettings.alreadyScannedHandling << Qt::endl;
-    dbg.nospace() << "qualitySort           : " << s.qualitySort << Qt::endl;
-    dbg.nospace() << "quality               : " << s.quality << Qt::endl;
-    dbg.nospace() << "qualityScanMode       : " << s.qualityScanMode << Qt::endl;
-    dbg.nospace() << "metadataSync          : " << s.metadataSync << Qt::endl;
-    dbg.nospace() << "syncDirection         : " << s.syncDirection << Qt::endl;
-    dbg.nospace() << "databaseCleanup       : " << s.databaseCleanup << Qt::endl;
-    dbg.nospace() << "cleanThumbDb          : " << s.cleanThumbDb << Qt::endl;
-    dbg.nospace() << "cleanFacesDb          : " << s.cleanFacesDb << Qt::endl;
-    dbg.nospace() << "shrinkDatabases       : " << s.shrinkDatabases << Qt::endl;
+    dbg.nospace() << QT_ENDL;
+    dbg.nospace() << "wholeAlbums           : " << s.wholeAlbums                         << QT_ENDL;
+    dbg.nospace() << "wholeTags             : " << s.wholeTags                           << QT_ENDL;
+    dbg.nospace() << "Albums                : " << s.albums.count()                      << QT_ENDL;
+    dbg.nospace() << "Tags                  : " << s.tags.count()                        << QT_ENDL;
+    dbg.nospace() << "useMutiCoreCPU        : " << s.useMutiCoreCPU                      << QT_ENDL;
+    dbg.nospace() << "newItems              : " << s.newItems                            << QT_ENDL;
+    dbg.nospace() << "thumbnails            : " << s.thumbnails                          << QT_ENDL;
+    dbg.nospace() << "scanThumbs            : " << s.scanThumbs                          << QT_ENDL;
+    dbg.nospace() << "fingerPrints          : " << s.fingerPrints                        << QT_ENDL;
+    dbg.nospace() << "scanFingerPrints      : " << s.scanFingerPrints                    << QT_ENDL;
+    dbg.nospace() << "duplicates            : " << s.duplicates                          << QT_ENDL;
+    dbg.nospace() << "minSimilarity         : " << s.minSimilarity                       << QT_ENDL;
+    dbg.nospace() << "maxSimilarity         : " << s.maxSimilarity                       << QT_ENDL;
+    dbg.nospace() << "duplicatesRestriction : " << s.duplicatesRestriction               << QT_ENDL;
+    dbg.nospace() << "faceManagement        : " << s.faceManagement                      << QT_ENDL;
+    dbg.nospace() << "faceScannedHandling   : " << s.faceSettings.alreadyScannedHandling << QT_ENDL;
+    dbg.nospace() << "qualitySort           : " << s.qualitySort                         << QT_ENDL;
+    dbg.nospace() << "quality               : " << s.quality                             << QT_ENDL;
+    dbg.nospace() << "qualityScanMode       : " << s.qualityScanMode                     << QT_ENDL;
+    dbg.nospace() << "metadataSync          : " << s.metadataSync                        << QT_ENDL;
+    dbg.nospace() << "syncDirection         : " << s.syncDirection                       << QT_ENDL;
+    dbg.nospace() << "databaseCleanup       : " << s.databaseCleanup                     << QT_ENDL;
+    dbg.nospace() << "cleanThumbDb          : " << s.cleanThumbDb                        << QT_ENDL;
+    dbg.nospace() << "cleanFacesDb          : " << s.cleanFacesDb                        << QT_ENDL;
+    dbg.nospace() << "shrinkDatabases       : " << s.shrinkDatabases                     << QT_ENDL;
 
     return dbg.space();
 }
