@@ -48,10 +48,10 @@ public:
 public:
 
     explicit FreeSpaceWidget(QWidget* const parent, int width);
-    ~FreeSpaceWidget() override;
+    ~FreeSpaceWidget()                                override;
 
     void          setEstimatedDSizeKb(unsigned long dSize);
-    unsigned long estimatedDSizeKb() const;
+    unsigned long estimatedDSizeKb()           const;
 
     bool          isValid()                    const;
     int           percentUsed()                const;
@@ -66,14 +66,15 @@ public:
     void setPath(const QString& path);
     void setPaths(const QStringList& paths);
     void addInformation(unsigned long kBSize,
-                        unsigned long kBUsed, unsigned long kBAvail,
+                        unsigned long kBUsed,
+                        unsigned long kBAvail,
                         const QString& mountPoint);
 
 protected:
 
-    void enterEvent(QEvent*)      override;
-    void leaveEvent(QEvent*)      override;
-    void paintEvent(QPaintEvent*) override;
+    void enterEvent(QEvent*)                          override;
+    void leaveEvent(QEvent*)                          override;
+    void paintEvent(QPaintEvent*)                     override;
     void updateToolTip();
 
 private Q_SLOTS:
