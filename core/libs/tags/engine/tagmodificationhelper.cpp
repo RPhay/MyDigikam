@@ -761,11 +761,11 @@ QSet<TAlbum*> TagModificationHelper::getFaceTags(QList<TAlbum*> tags)
 
             if (album)
             {
-                TAlbum* const tAlbum = dynamic_cast<TAlbum*>(album);
+                TAlbum* const tAlbum2 = dynamic_cast<TAlbum*>(album);
 
-                if (tAlbum && FaceTags::isPerson(tAlbum->id()))
+                if (tAlbum2 && FaceTags::isPerson(tAlbum2->id()))
                 {
-                    faceTags.insert(tAlbum);
+                    faceTags.insert(tAlbum2);
                 }
 
                 ++iter;
