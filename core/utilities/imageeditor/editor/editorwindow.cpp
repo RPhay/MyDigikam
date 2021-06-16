@@ -349,7 +349,11 @@ void EditorWindow::setupStandardActions()
     // connect simple undo action
 
     connect(m_undoAction, &QAction::triggered,
-            this, [this]() { m_canvas->slotUndo(1); });
+            this, [this]()
+        {
+             m_canvas->slotUndo(1);
+        }
+    );
 
     m_redoAction = new KToolBarPopupAction(QIcon::fromTheme(QLatin1String("edit-redo")), i18nc("@action", "Redo"), this);
     m_redoAction->setEnabled(false);
@@ -362,7 +366,11 @@ void EditorWindow::setupStandardActions()
     // connect simple redo action
 
     connect(m_redoAction, &QAction::triggered,
-            this, [this]() { m_canvas->slotRedo(1); });
+            this, [this]()
+        {
+            m_canvas->slotRedo(1);
+        }
+    );
 
     d->selectAllAction = new QAction(i18nc("@action: create a selection containing the full image", "Select All"), this);
     connect(d->selectAllAction, SIGNAL(triggered()), m_canvas, SLOT(slotSelectAll()));
@@ -403,18 +411,18 @@ void EditorWindow::setupStandardActions()
 
     // **********************************************************
 
-    QList<DPluginAction*> actions = DPluginLoader::instance()->pluginsActions(DPluginAction::Generic, this);
+    QList<DPluginAction*> gactions = DPluginLoader::instance()->pluginsActions(DPluginAction::Generic, this);
 
-    foreach (DPluginAction* const ac, actions)
+    foreach (DPluginAction* const gac, gactions)
     {
-        ac->setEnabled(false);
+        gac->setEnabled(false);
     }
 
-    QList<DPluginAction*> actions2 = DPluginLoader::instance()->pluginsActions(DPluginAction::Editor, this);
+    QList<DPluginAction*> eactions = DPluginLoader::instance()->pluginsActions(DPluginAction::Editor, this);
 
-    foreach (DPluginAction* const ac, actions2)
+    foreach (DPluginAction* const eac, eactions)
     {
-        ac->setEnabled(false);
+        eac->setEnabled(false);
     }
 
     // --------------------------------------------------------
@@ -623,7 +631,11 @@ void EditorWindow::slotAboutToShowUndoMenu()
         int id                = i + 1;
 
         connect(action, &QAction::triggered,
-                this, [this, id]() { m_canvas->slotUndo(id); });
+                this, [this, id]()
+            {
+                m_canvas->slotUndo(id);
+            }
+        );
     }
 }
 
@@ -638,7 +650,11 @@ void EditorWindow::slotAboutToShowRedoMenu()
         int id                = i + 1;
 
         connect(action, &QAction::triggered,
-                this, [this, id]() { m_canvas->slotRedo(id); });
+                this, [this, id]()
+            {
+                m_canvas->slotRedo(id);
+            }
+        );
     }
 }
 
@@ -678,8 +694,9 @@ void EditorWindow::slotZoomTo100Percents()
 
 void EditorWindow::slotZoomChanged(bool isMax, bool isMin, double zoom)
 {
-    //qCDebug(DIGIKAM_GENERAL_LOG) << "EditorWindow::slotZoomChanged";
-
+/*
+    qCDebug(DIGIKAM_GENERAL_LOG) << "EditorWindow::slotZoomChanged";
+*/
     d->zoomPlusAction->setEnabled(!isMax);
     d->zoomMinusAction->setEnabled(!isMin);
 
@@ -1086,11 +1103,11 @@ DImageHistory EditorWindow::resolvedImageHistory(const DImageHistory& history)
     DImageHistory r = history;
     QList<DImageHistory::Entry>::iterator it;
 
-    for (it = r.entries().begin(); it != r.entries().end(); ++it)
+    for (it = r.entries().begin() ; it != r.entries().end() ; ++it)
     {
         QList<HistoryImageId>::iterator hit;
 
-        for (hit = it->referredImages.begin(); hit != it->referredImages.end();)
+        for (hit = it->referredImages.begin() ; hit != it->referredImages.end() ; )
         {
             QFileInfo info(hit->m_filePath + QLatin1Char('/') + hit->m_fileName);
 
@@ -1183,7 +1200,7 @@ bool EditorWindow::promptUserSave(const QUrl& url, SaveAskMode mode, bool allowC
             switch (mode)
             {
                 case AskIfNeeded:
-
+                {
                     if (m_nonDestructive)
                     {
                         if (newVersion)
@@ -1199,7 +1216,7 @@ bool EditorWindow::promptUserSave(const QUrl& url, SaveAskMode mode, bool allowC
                     }
                     else
                     {
-                        if (m_canvas->isReadOnly())
+                        if      (m_canvas->isReadOnly())
                         {
                             saving = saveAs();
                         }
@@ -1210,9 +1227,10 @@ bool EditorWindow::promptUserSave(const QUrl& url, SaveAskMode mode, bool allowC
                     }
 
                     break;
+                }
 
                 case OverwriteWithoutAsking:
-
+                {
                     if (m_nonDestructive)
                     {
                         if (newVersion)
@@ -1239,9 +1257,10 @@ bool EditorWindow::promptUserSave(const QUrl& url, SaveAskMode mode, bool allowC
                     }
 
                     break;
+                }
 
                 case AlwaysSaveAs:
-
+                {
                     if (m_nonDestructive)
                     {
                         saving = saveNewVersion();
@@ -1252,6 +1271,7 @@ bool EditorWindow::promptUserSave(const QUrl& url, SaveAskMode mode, bool allowC
                     }
 
                     break;
+                }
             }
 
             // save and saveAs return false if they were canceled and did not enter saving at all
@@ -1264,6 +1284,7 @@ bool EditorWindow::promptUserSave(const QUrl& url, SaveAskMode mode, bool allowC
                 m_savingContext.synchronizingState = SavingContext::SynchronousSaving;
                 enterWaitingLoop();
                 m_savingContext.synchronizingState = SavingContext::NormalSaving;
+
                 return m_savingContext.synchronousSavingResult;
             }
             else
@@ -1529,7 +1550,8 @@ void EditorWindow::slotSavingStarted(const QString& /*filename*/)
 
     toggleActions(false);
 
-    m_nameLabel->setProgressBarMode(StatusProgressBar::CancelProgressBarMode, i18nc("@label: saving progress on status bar", "Saving:"));
+    m_nameLabel->setProgressBarMode(StatusProgressBar::CancelProgressBarMode,
+                                    i18nc("@label: saving progress on status bar", "Saving:"));
 }
 
 void EditorWindow::slotSavingFinished(const QString& filename, bool success)
@@ -1592,19 +1614,27 @@ void EditorWindow::movingSaveFileFinished(bool successful)
     switch (m_savingContext.executedOperation)
     {
         case SavingContext::SavingStateNone:
+        {
             break;
+        }
 
         case SavingContext::SavingStateSave:
+        {
             saveIsComplete();
             break;
+        }
 
         case SavingContext::SavingStateSaveAs:
+        {
             saveAsIsComplete();
             break;
+        }
 
         case SavingContext::SavingStateVersion:
+        {
             saveVersionIsComplete();
             break;
+        }
     }
 
     // Take all actions necessary to update information and re-enable sidebar
