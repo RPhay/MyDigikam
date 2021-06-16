@@ -48,6 +48,7 @@
 // Local includes
 
 #include "digikam_debug.h"
+#include "digikam_globals.h"
 
 #define CHUNK 65536
 
@@ -130,7 +131,7 @@ int main(int argc, char** argv)
             qCDebug(DIGIKAM_TESTS_LOG).noquote() << QString::fromLatin1("PrivateData:     %1 bytes").arg(negative->PrivateLength());
             qCDebug(DIGIKAM_TESTS_LOG).noquote() << QString::fromLatin1("CameraProfiles:  %1").arg(negative->ProfileCount());
 
-            qCDebug(DIGIKAM_TESTS_LOG) << Qt::endl;
+            qCDebug(DIGIKAM_TESTS_LOG) << QT_ENDL;
 
             for (uint32 i = 0 ; i < negative->ProfileCount() ; ++i)
             {
@@ -140,7 +141,7 @@ int main(int argc, char** argv)
                 qCDebug(DIGIKAM_TESTS_LOG).noquote() << QString::fromLatin1("    Copyright: %1").arg(QString::fromLatin1(dcp.Copyright().Get()));
             }
 
-            qCDebug(DIGIKAM_TESTS_LOG) << Qt::endl;
+            qCDebug(DIGIKAM_TESTS_LOG) << QT_ENDL;
 
             qCDebug(DIGIKAM_TESTS_LOG).noquote() << QString::fromLatin1("Opcodes(1):      %1").arg(info.fIFD[info.fMainIndex]->fOpcodeList1Count);
             qCDebug(DIGIKAM_TESTS_LOG).noquote() << QString::fromLatin1("Opcodes(2):      %1").arg(info.fIFD[info.fMainIndex]->fOpcodeList2Count);
@@ -148,7 +149,7 @@ int main(int argc, char** argv)
             qCDebug(DIGIKAM_TESTS_LOG).noquote() << QString::fromLatin1("MainImage:       %1").arg(info.fMainIndex);
             qCDebug(DIGIKAM_TESTS_LOG).noquote() << QString::fromLatin1("ChainedCount:    %1").arg(info.ChainedIFDCount());
 
-            qCDebug(DIGIKAM_TESTS_LOG) << Qt::endl;
+            qCDebug(DIGIKAM_TESTS_LOG) << QT_ENDL;
 
             for (uint32 ifdIdx = 0 ; ifdIdx < info.IFDCount() ; ++ifdIdx)
             {
@@ -164,7 +165,7 @@ int main(int argc, char** argv)
                     qCDebug(DIGIKAM_TESTS_LOG).noquote() << QString::fromLatin1("     %1").arg(ifd->fBitsPerSample[i]);
                 }
 
-                qCDebug(DIGIKAM_TESTS_LOG) << Qt::endl;
+                qCDebug(DIGIKAM_TESTS_LOG) << QT_ENDL;
 
                 qCDebug(DIGIKAM_TESTS_LOG).noquote() << QString::fromLatin1("  Compression:               %1").arg(QLatin1String(LookupCompression(ifd->fCompression)));
                 qCDebug(DIGIKAM_TESTS_LOG).noquote() << QString::fromLatin1("  PhotometricInterpretation: %1").arg(QLatin1String(LookupPhotometricInterpretation(ifd->fPhotometricInterpretation)));
@@ -173,7 +174,7 @@ int main(int argc, char** argv)
                 qCDebug(DIGIKAM_TESTS_LOG).noquote() << QString::fromLatin1("  LinearizationTableCount:   %1").arg(ifd->fLinearizationTableCount);
                 qCDebug(DIGIKAM_TESTS_LOG).noquote() << QString::fromLatin1("  LinearizationTableType:    %1").arg(ifd->fLinearizationTableType);
 
-                qCDebug(DIGIKAM_TESTS_LOG) << Qt::endl;
+                qCDebug(DIGIKAM_TESTS_LOG) << QT_ENDL;
 
                 if (extractIfd)
                 {

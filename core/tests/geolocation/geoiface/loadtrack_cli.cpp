@@ -30,6 +30,7 @@
 // Local includes
 
 #include "digikam_debug.h"
+#include "digikam_globals.h"
 #include "trackmanager.h"
 #include "trackreader.h"
 
@@ -57,21 +58,21 @@ int main(int argc, char* argv[])
 
     if (argc < 2)
     {
-        qerr << QLatin1String("Need a filename as argument to load") << Qt::endl;
+        qerr << QLatin1String("Need a filename as argument to load") << QT_ENDL;
         return 1;
     }
 
     const QString filename = QString::fromLatin1(argv[1]);
-    qerr << "Loading file: " << filename << Qt::endl;
+    qerr << "Loading file: " << filename << QT_ENDL;
     const bool success     = testSaxLoader(filename);
 
     if (!success)
     {
-        qerr << "Loading failed" << Qt::endl;
+        qerr << "Loading failed" << QT_ENDL;
         return 1;
     }
 
-    qerr << "Loaded successfully." << Qt::endl;
+    qerr << "Loaded successfully." << QT_ENDL;
 
     return 0;
 }

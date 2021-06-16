@@ -27,6 +27,10 @@
 
 #include <QTextStream>
 
+// Local includes
+
+#include "digikam_globals.h"
+
 QTEST_MAIN(PrintTagsListTest)
 
 PrintTagsListTest::PrintTagsListTest(QObject* const parent)
@@ -38,9 +42,9 @@ void PrintTagsListTest::parseTagsList(const DMetadata::TagsMap& tags)
 {
     QString output;
     QTextStream stream(&output);
-    stream << Qt::endl;
+    stream << QT_ENDL;
 
-    qCDebug(DIGIKAM_TESTS_LOG) << "Found" << tags.size() << "tags:" << Qt::endl;
+    qCDebug(DIGIKAM_TESTS_LOG) << "Found" << tags.size() << "tags:" << QT_ENDL;
 
     for (DMetadata::TagsMap::const_iterator it = tags.constBegin() ; it != tags.constEnd() ; ++it )
     {
@@ -56,10 +60,10 @@ void PrintTagsListTest::parseTagsList(const DMetadata::TagsMap& tags)
         QVERIFY(!title.isNull());
         QVERIFY(!desc.isNull());
 
-        stream << key << Qt::endl
-               << "    " << name  << Qt::endl
-               << "    " << title << Qt::endl
-               << "    " << desc  << Qt::endl;
+        stream << key << QT_ENDL
+               << "    " << name  << QT_ENDL
+               << "    " << title << QT_ENDL
+               << "    " << desc  << QT_ENDL;
     }
 
     qCDebug(DIGIKAM_TESTS_LOG).noquote() << output;
