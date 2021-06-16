@@ -114,20 +114,17 @@ bool Flip::toolOperations()
             case DImg::HORIZONTAL:
             {
                 return rotator.exifTransform(MetaEngineRotation::FlipHorizontal);
-                break;
             }
 
             case DImg::VERTICAL:
             {
                 return rotator.exifTransform(MetaEngineRotation::FlipVertical);
-                break;
             }
 
             default:
             {
                 qCDebug(DIGIKAM_DPLUGIN_BQM_LOG) << "Unknown flip action";
                 return false;
-                break;
             }
         }
     }
