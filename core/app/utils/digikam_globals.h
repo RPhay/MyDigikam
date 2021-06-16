@@ -54,6 +54,12 @@ class QKeySequence;
  */
 #define DEG2RAD 0.017453292519943
 
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 14, 0))
+     #define QT_ENDL Qt::endl
+#else
+     #define QT_ENDL endl
+#endif
+
 namespace Digikam
 {
 
