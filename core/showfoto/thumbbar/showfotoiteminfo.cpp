@@ -27,6 +27,10 @@
 
 #include <QDataStream>
 
+// Local includes
+
+#include "digikam_globals.h"
+
 namespace ShowFoto
 {
 
@@ -97,15 +101,15 @@ QDataStream& operator>>(QDataStream& ds, ShowfotoItemInfo& info)
 QDebug operator<<(QDebug dbg, const ShowfotoItemInfo& info)
 {
     dbg.nospace() << "ShowfotoItemInfo::size: "
-                  << info.size << Qt::endl;
+                  << info.size << QT_ENDL;
     dbg.nospace() << "ShowfotoItemInfo::name: "
-                  << info.name << Qt::endl;
+                  << info.name << QT_ENDL;
     dbg.nospace() << "ShowfotoitemInfo::folder: "
-                  << info.folder << Qt::endl;
+                  << info.folder << QT_ENDL;
     dbg.nospace() << "ShowfotoItemInfo::mime: "
-                  << info.mime << Qt::endl;
+                  << info.mime << QT_ENDL;
     dbg.nospace() << "ShowfotoItemInfo::id: "
-                  << info.id << Qt::endl << Qt::endl;
+                  << info.id << QT_ENDL << QT_ENDL;
 
     return dbg.space();
 }
