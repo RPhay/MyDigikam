@@ -28,6 +28,10 @@
 #include <kconfiggroup.h>
 #include <ksharedconfig.h>
 
+// Local includes
+
+#include "digikam_globals.h"
+
 namespace Digikam
 {
 
@@ -140,22 +144,22 @@ void ImageQualityContainer::writeToConfig()
 
 QDebug operator<<(QDebug dbg, const ImageQualityContainer& s)
 {
-    dbg.nospace() << Qt::endl;
-    dbg.nospace() << "EnableSorter       :" << s.enableSorter       << Qt::endl;
-    dbg.nospace() << "DetectBlur         :" << s.detectBlur         << Qt::endl;
-    dbg.nospace() << "DetectNoise        :" << s.detectNoise        << Qt::endl;
-    dbg.nospace() << "DetectCompression  :" << s.detectCompression  << Qt::endl;
-    dbg.nospace() << "DetectExposure     :" << s.detectExposure     << Qt::endl;
-    dbg.nospace() << "LowQRejected       :" << s.lowQRejected       << Qt::endl;
-    dbg.nospace() << "MediumQPending     :" << s.mediumQPending     << Qt::endl;
-    dbg.nospace() << "HighQAccepted      :" << s.highQAccepted      << Qt::endl;
-    dbg.nospace() << "Speed              :" << s.speed              << Qt::endl;
-    dbg.nospace() << "Rejected Threshold :" << s.rejectedThreshold  << Qt::endl;
-    dbg.nospace() << "Pending Threshold  :" << s.pendingThreshold   << Qt::endl;
-    dbg.nospace() << "Accepted Threshold :" << s.acceptedThreshold  << Qt::endl;
-    dbg.nospace() << "Blur Weight        :" << s.blurWeight         << Qt::endl;
-    dbg.nospace() << "Noise Weight       :" << s.noiseWeight        << Qt::endl;
-    dbg.nospace() << "Compression Weight :" << s.compressionWeight  << Qt::endl;
+    dbg.nospace() << QT_ENDL;
+    dbg.nospace() << "EnableSorter       :" << s.enableSorter       << QT_ENDL;
+    dbg.nospace() << "DetectBlur         :" << s.detectBlur         << QT_ENDL;
+    dbg.nospace() << "DetectNoise        :" << s.detectNoise        << QT_ENDL;
+    dbg.nospace() << "DetectCompression  :" << s.detectCompression  << QT_ENDL;
+    dbg.nospace() << "DetectExposure     :" << s.detectExposure     << QT_ENDL;
+    dbg.nospace() << "LowQRejected       :" << s.lowQRejected       << QT_ENDL;
+    dbg.nospace() << "MediumQPending     :" << s.mediumQPending     << QT_ENDL;
+    dbg.nospace() << "HighQAccepted      :" << s.highQAccepted      << QT_ENDL;
+    dbg.nospace() << "Speed              :" << s.speed              << QT_ENDL;
+    dbg.nospace() << "Rejected Threshold :" << s.rejectedThreshold  << QT_ENDL;
+    dbg.nospace() << "Pending Threshold  :" << s.pendingThreshold   << QT_ENDL;
+    dbg.nospace() << "Accepted Threshold :" << s.acceptedThreshold  << QT_ENDL;
+    dbg.nospace() << "Blur Weight        :" << s.blurWeight         << QT_ENDL;
+    dbg.nospace() << "Noise Weight       :" << s.noiseWeight        << QT_ENDL;
+    dbg.nospace() << "Compression Weight :" << s.compressionWeight  << QT_ENDL;
 
     return dbg.space();
 }
