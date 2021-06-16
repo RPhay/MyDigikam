@@ -47,7 +47,7 @@ public:
                            int vSpacing = 0);
     ~DynamicLayout()                              override;
 
-    void addItem(QLayoutItem* item)               override;
+    void addItem(QLayoutItem* layItem)            override;
 
     int  horizontalSpacing()                const;
     int  verticalSpacing()                  const;
