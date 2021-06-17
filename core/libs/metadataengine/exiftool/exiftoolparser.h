@@ -162,6 +162,12 @@ public:
     bool translationsList();
 
     /**
+     * Return the xurrent version of ExifTool.
+     * Use currentData() to get the container as QString.
+     */
+    bool version();
+
+    /**
      * Copy group of tags from one source file to a destination file, following copy operations defined by 'copyOps'.
      * 'copyOps' is a OR combination of ExifToolProcess::CopyTagsSource values.
      * 'transOps' is a OR combination of ExifToolProcess::TranslateTagsOps values.

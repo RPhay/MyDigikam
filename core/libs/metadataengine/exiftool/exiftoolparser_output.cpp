@@ -249,6 +249,19 @@ void ExifToolParser::slotCmdCompleted(int cmdAction,
             break;
         }
 
+        case ExifToolProcess::VERSION_STRING:
+        {
+            QString out       = QString::fromUtf8(stdOut);
+            QStringList lines = out.split(QLatin1Char('\n'), QString::SkipEmptyParts);
+
+            if (!lines.isEmpty())
+            {
+                d->exifToolData.insert(QLatin1String("VERSION_STRING"), QVariantList() << lines.first());
+            }
+
+            break;
+        }
+
         default:
         {
             break;

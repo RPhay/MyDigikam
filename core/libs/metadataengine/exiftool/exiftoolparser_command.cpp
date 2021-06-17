@@ -194,7 +194,7 @@ bool ExifToolParser::readableFormats()
         return false;
     }
 
-    // Build command (set metadata)
+    // Build command
 
     QByteArrayList cmdArgs;
     cmdArgs << QByteArray("-l");
@@ -213,7 +213,7 @@ bool ExifToolParser::writableFormats()
         return false;
     }
 
-    // Build command (set metadata)
+    // Build command
 
     QByteArrayList cmdArgs;
     cmdArgs << QByteArray("-l");
@@ -232,7 +232,7 @@ bool ExifToolParser::translationsList()
         return false;
     }
 
-    // Build command (set metadata)
+    // Build command
 
     QByteArrayList cmdArgs;
     cmdArgs << QByteArray("-lang");
@@ -240,6 +240,24 @@ bool ExifToolParser::translationsList()
     d->currentPath.clear();
 
     return (d->startProcess(cmdArgs, ExifToolProcess::TRANSLATIONS_LIST));
+}
+
+bool ExifToolParser::version()
+{
+    if (!d->prepareProcess())
+    {
+        qCCritical(DIGIKAM_GENERAL_LOG) << "Cannot prepare ExifTool process...";
+        return false;
+    }
+
+    // Build command
+
+    QByteArrayList cmdArgs;
+    cmdArgs << QByteArray("-ver");
+
+    d->currentPath.clear();
+
+    return (d->startProcess(cmdArgs, ExifToolProcess::VERSION_STRING));
 }
 
 bool ExifToolParser::copyTags(const QString& src, const QString& dst,
