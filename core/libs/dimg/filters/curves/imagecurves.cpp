@@ -1018,6 +1018,7 @@ void ImageCurves::setCurveValues(int channel, const QPolygon& vals)
                 //qCDebug(DIGIKAM_DIMG_LOG) << "8 to 16 bits curves transform";
 
                 // 8 to 16 bits.
+
                 ImageCurves curve8(false);
                 ImageCurves curve16(true);
 
@@ -1432,7 +1433,9 @@ bool ImageCurves::isLinear(int channel) const
 
 QByteArray ImageCurves::channelToBinary(int channel) const
 {
-    if (!d->curves || (channel < 0) || (channel >= NUM_CHANNELS))
+    if (!d->curves    ||
+        (channel < 0) ||
+        (channel >= NUM_CHANNELS))
     {
         return QByteArray();
     }
@@ -1455,10 +1458,10 @@ QByteArray ImageCurves::channelToBinary(int channel) const
         type = 2;
     }
 
-    s << (quint16)1;   // version
-    s << (quint8)type; // type
+    s << (quint16)1;                        // version
+    s << (quint8)type;                      // type
     s << (quint8)(isSixteenBits() ? 2 : 1); // bytes depth
-    s << (quint32)0;   // reserved
+    s << (quint32)0;                        // reserved
 
     if      (type == 0)
     {
@@ -1549,7 +1552,12 @@ bool ImageCurves::setChannelFromBinary(int channel, const QByteArray& data)
 
     s >> depth;
 
-    if (((depth == 1) && isSixteenBits()) || ((depth == 2) && !isSixteenBits()) || (depth <= 0) || (depth > 2))
+    if (
+        ((depth == 1) && isSixteenBits())  ||
+        ((depth == 2) && !isSixteenBits()) ||
+         (depth == 0)                      ||
+         (depth > 2)
+       )
     {
         return false;
     }
