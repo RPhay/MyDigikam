@@ -157,9 +157,9 @@ int main(int argc, char* argv[])
 
                         QString actions;
 
-                        foreach (DPluginAction* const ac, gene->actions(&iface))
+                        foreach (DPluginAction* const gac, gene->actions(&iface))
                         {
-                            actions.append(ac->toString());
+                            actions.append(gac->toString());
                             actions.append(QLatin1String(" ; "));
                         }
 
