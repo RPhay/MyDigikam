@@ -105,8 +105,10 @@ bool ExifToolProcess::start()
 {
     // Check if ExifTool is starting or running
 
-    if (d->exifToolHasFinished                    ||
-        d->process->state() != QProcess::NotRunning)
+    if (
+        d->exifToolHasFinished                    ||
+        (d->process->state() != QProcess::NotRunning)
+       )
     {
         return true;
     }
@@ -161,7 +163,7 @@ bool ExifToolProcess::start()
 
 void ExifToolProcess::terminate()
 {
-    if      (d->process->state() == QProcess::Running)
+    if (d->process->state() == QProcess::Running)
     {
         // If process is in running state, close ExifTool normally
 
@@ -252,9 +254,11 @@ bool ExifToolProcess::waitForFinished(int msecs) const
 
 int ExifToolProcess::command(const QByteArrayList& args, Action ac)
 {
-    if ((d->process->state() != QProcess::Running) ||
+    if (
+        (d->process->state() != QProcess::Running) ||
         d->writeChannelIsClosed                    ||
-        args.isEmpty())
+        args.isEmpty()
+       )
     {
         qCWarning(DIGIKAM_METAENGINE_LOG) << "ExifToolProcess::command(): cannot process command with ExifTool" << args;
 
@@ -291,10 +295,12 @@ int ExifToolProcess::command(const QByteArrayList& args, Action ac)
     cmdStr.append(QByteArray("-echo1\n{await") + cmdIdStr + QByteArray("}\n"));     // Echo text to stdout before processing is complete
     cmdStr.append(QByteArray("-echo2\n{await") + cmdIdStr + QByteArray("}\n"));     // Echo text to stderr before processing is complete
 
-    if (cmdStr.contains(QByteArray("-q"))               ||
+    if (
+        cmdStr.contains(QByteArray("-q"))               ||
         cmdStr.toLower().contains(QByteArray("-quiet")) ||
         cmdStr.contains(QByteArray("-T"))               ||
-        cmdStr.toLower().contains(QByteArray("-table")))
+        cmdStr.toLower().contains(QByteArray("-table"))
+       )
     {
         cmdStr.append(QByteArray("-echo3\n{ready}\n"));                 // Echo text to stdout after processing is complete
     }
@@ -390,8 +396,11 @@ bool ExifToolProcess::checkExifToolProgram()
 
     // If perl path is defined, check if Perl program exists and have execution permissions
 
-    if (!d->perlExePath.isEmpty() && (!QFile::exists(d->perlExePath) ||
-        !(QFile::permissions(d->perlExePath) & QFile::ExeUser)))
+    if (
+        !d->perlExePath.isEmpty()                            &&
+        (!QFile::exists(d->perlExePath)                      ||
+        !(QFile::permissions(d->perlExePath) & QFile::ExeUser))
+       )
     {
         d->setProcessErrorAndEmit(QProcess::FailedToStart,
                                   QString::fromLatin1("Perl does not exists or exec permission is missing"));
