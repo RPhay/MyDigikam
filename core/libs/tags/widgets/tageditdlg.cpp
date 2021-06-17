@@ -57,6 +57,7 @@
 #include "dxmlguiwindow.h"
 #include "dexpanderbox.h"
 #include "dlayoutbox.h"
+#include "digikam_globals.h"
 
 namespace Digikam
 {
@@ -411,15 +412,8 @@ AlbumList TagEditDlg::createTAlbum(TAlbum* const mainRootAlbum, const QString& t
     // Check if new tags are include in a list of tags hierarchy separated by ','.
     // Ex: /Country/France/people,/City/France/Paris
 
-#if (QT_VERSION >= QT_VERSION_CHECK(5, 14, 0))
+    const QStringList tagsHierarchies = tagStr.split(QLatin1Char(','), QT_SKIP_EMPTY_PARTS);
 
-    const QStringList tagsHierarchies = tagStr.split(QLatin1Char(','), Qt::SkipEmptyParts);
-
-#else
-
-    const QStringList tagsHierarchies = tagStr.split(QLatin1Char(','), QString::SkipEmptyParts);
-
-#endif
     if (tagsHierarchies.isEmpty())
     {
         return createdTagsList;
@@ -445,15 +439,7 @@ AlbumList TagEditDlg::createTAlbum(TAlbum* const mainRootAlbum, const QString& t
                 root = mainRootAlbum;
             }
 
-#if (QT_VERSION >= QT_VERSION_CHECK(5, 14, 0))
-
-            QStringList tagsList = hierarchy.split(QLatin1Char('/'), Qt::SkipEmptyParts);
-
-#else
-
-            QStringList tagsList = hierarchy.split(QLatin1Char('/'), QString::SkipEmptyParts);
-
-#endif
+            QStringList tagsList = hierarchy.split(QLatin1Char('/'), QT_SKIP_EMPTY_PARTS);
             qCDebug(DIGIKAM_GENERAL_LOG) << tagsList;
 
             if (!tagsList.isEmpty())

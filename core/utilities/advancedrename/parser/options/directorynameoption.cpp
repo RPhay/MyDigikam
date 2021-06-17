@@ -32,6 +32,10 @@
 
 #include <klocalizedstring.h>
 
+// Local includes
+
+#include "digikam_globals.h"
+
 namespace Digikam
 {
 
@@ -60,15 +64,7 @@ QString DirectoryNameOption::parseOperation(ParseSettings& settings)
         return result;
     }
 
-#if (QT_VERSION >= QT_VERSION_CHECK(5, 14, 0))
-
-    QStringList folders = fi.absolutePath().split(QLatin1Char('/'), Qt::SkipEmptyParts);
-
-#else
-
-    QStringList folders = fi.absolutePath().split(QLatin1Char('/'), QString::SkipEmptyParts);
-
-#endif
+    QStringList folders = fi.absolutePath().split(QLatin1Char('/'), QT_SKIP_EMPTY_PARTS);
     int folderCount     = folders.count();
     const QRegExp& reg  = regExp();
     int matchedLength   = reg.cap(1).length();

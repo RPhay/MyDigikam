@@ -43,6 +43,7 @@
 #include "subjectedit.h"
 #include "altlangstredit.h"
 #include "countryselector.h"
+#include "digikam_globals.h"
 
 namespace Digikam
 {
@@ -474,15 +475,7 @@ void TemplatePanel::setTemplate(const Template& t)
 Template TemplatePanel::getTemplate() const
 {
     Template t;
-#if (QT_VERSION >= QT_VERSION_CHECK(5, 14, 0))
-
-    t.setAuthors(d->authorsEdit->text().split(QLatin1Char(';'), Qt::SkipEmptyParts));
-
-#else
-
-    t.setAuthors(d->authorsEdit->text().split(QLatin1Char(';'), QString::SkipEmptyParts));
-
-#endif
+    t.setAuthors(d->authorsEdit->text().split(QLatin1Char(';'), QT_SKIP_EMPTY_PARTS));
     t.setAuthorsPosition(d->authorsPositionEdit->text());
     t.setCredit(d->creditEdit->text());
     t.setCopyright(d->copyrightEdit->values());

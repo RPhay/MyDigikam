@@ -63,6 +63,18 @@ class QKeySequence;
      #define QT_ENDL endl
 #endif
 
+/**
+ * Macro for Qt::KeepEmptyParts and Qt::SkipEmptyParts which were introduced in Qt 5.14.0
+ * to be used with QString::split()
+ */
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 14, 0))
+    #define QT_KEEP_EMPTY_PARTS Qt::KeepEmptyParts
+    #define QT_SKIP_EMPTY_PARTS Qt::SkipEmptyParts
+#else
+    #define QT_KEEP_EMPTY_PARTS QString::KeepEmptyParts
+    #define QT_SKIP_EMPTY_PARTS QString::SkipEmptyParts
+#endif
+
 namespace Digikam
 {
 

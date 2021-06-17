@@ -868,18 +868,8 @@ static QStringList joinMainAndUserFilterString(const QChar& sep, const QString& 
     QStringList filterList;
     QStringList userFilterList;
 
-#if (QT_VERSION >= QT_VERSION_CHECK(5, 14, 0))
-
-    filterList     = filter.split(sep, Qt::SkipEmptyParts);
-    userFilterList = userFilter.split(sep, Qt::SkipEmptyParts);
-
-#else
-
-    filterList     = filter.split(sep, QString::SkipEmptyParts);
-    userFilterList = userFilter.split(sep, QString::SkipEmptyParts);
-
-#endif
-
+    filterList     = filter.split(sep, QT_SKIP_EMPTY_PARTS);
+    userFilterList = userFilter.split(sep, QT_SKIP_EMPTY_PARTS);
 
     foreach (const QString& userFormat, userFilterList)
     {

@@ -24,6 +24,10 @@
 
 #include "coredbsearchxml.h"
 
+// Local includes
+
+#include "digikam_globals.h"
+
 namespace Digikam
 {
 
@@ -830,15 +834,8 @@ QString SearchXmlWriter::keywordSearch(const QString& keyword)
 QStringList KeywordSearch::split(const QString& keywords)
 {
     // get groups with quotation marks
-#if (QT_VERSION >= QT_VERSION_CHECK(5, 14, 0))
+    QStringList quotationMarkList = keywords.split(QLatin1Char('"'), QT_KEEP_EMPTY_PARTS);
 
-    QStringList quotationMarkList = keywords.split(QLatin1Char('"'), Qt::KeepEmptyParts);
-
-#else
-
-    QStringList quotationMarkList = keywords.split(QLatin1Char('"'), QString::KeepEmptyParts);
-
-#endif
     // split down to single words
     QStringList keywordList;
     int quotationMarkCount = (keywords.startsWith(QLatin1Char('"')) ? 1 : 0);
@@ -856,14 +853,7 @@ QStringList KeywordSearch::split(const QString& keywords)
         else
         {
             // not in quotation marks: split by whitespace
-#if (QT_VERSION >= QT_VERSION_CHECK(5, 14, 0))
-
-            keywordList << group.split(QRegExp(QLatin1String("\\s+")), Qt::SkipEmptyParts);
-
-#else
-            keywordList << group.split(QRegExp(QLatin1String("\\s+")), QString::SkipEmptyParts);
-
-#endif
+            keywordList << group.split(QRegExp(QLatin1String("\\s+")), QT_SKIP_EMPTY_PARTS);
         }
 
         ++quotationMarkCount;

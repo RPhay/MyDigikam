@@ -33,6 +33,7 @@
 #include "collectionmanager.h"
 #include "collectionlocation.h"
 #include "digikam_debug.h"
+#include "digikam_globals.h"
 
 namespace Digikam
 {
@@ -362,15 +363,8 @@ int CoreDbUrl::tagId() const
 QList<int> CoreDbUrl::tagIds() const
 {
     QList<int>  ids;
-#if (QT_VERSION >= QT_VERSION_CHECK(5, 14, 0))
+    QStringList stringIds = path().split(QLatin1Char('/'), QT_SKIP_EMPTY_PARTS);
 
-    QStringList stringIds = path().split(QLatin1Char('/'), Qt::SkipEmptyParts);
-
-#else
-
-    QStringList stringIds = path().split(QLatin1Char('/'), QString::SkipEmptyParts);
-
-#endif
     for (int i=0; i<stringIds.count(); ++i)
     {
         ids << stringIds.at(i).toInt();

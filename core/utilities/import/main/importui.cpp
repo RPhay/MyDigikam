@@ -2490,16 +2490,7 @@ bool ImportUI::createAutoAlbum(const QUrl& parentURL, const QString& sub,
 
     QUrl albumUrl(parentURL);
 
-#if (QT_VERSION >= QT_VERSION_CHECK(5, 14, 0))
-
-    const auto subList = sub.split(QLatin1Char('/'), Qt::SkipEmptyParts);
-
-#else
-
-    const auto subList = sub.split(QLatin1Char('/'), QString::SkipEmptyParts)
-
-#endif
-    foreach (const QString& folder, subList)
+    foreach (const QString& folder, sub.split(QLatin1Char('/'), QT_SKIP_EMPTY_PARTS))
     {
         albumUrl      = albumUrl.adjusted(QUrl::StripTrailingSlash);
         albumUrl.setPath(albumUrl.path() + QLatin1Char('/') + folder);

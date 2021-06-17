@@ -173,14 +173,7 @@ QStringList ItemExtendedProperties::readFakeListProperty(const QString& property
 {
     QString value = CoreDbAccess().db()->getImageProperty(m_id, property);
 
-#if (QT_VERSION >= QT_VERSION_CHECK(5, 14, 0))
-
-    return value.split(QLatin1Char(';'), Qt::SkipEmptyParts);
-
-#else
-    return value.split(QLatin1Char(';'), QString::SkipEmptyParts);
-
-#endif
+    return value.split(QLatin1Char(';'), QT_SKIP_EMPTY_PARTS);
 }
 
 void ItemExtendedProperties::setFakeListProperty(const QString& property, const QStringList& value)

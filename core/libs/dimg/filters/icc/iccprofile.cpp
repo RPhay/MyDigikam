@@ -517,7 +517,7 @@ QStringList IccProfile::defaultSearchPaths()
 
     // MacPorts installs for KDE, so we include the XDG data dirs, including /usr/share/color/icc
 
-    QStringList dataDirs = QString::fromLocal8Bit(qgetenv("XDG_DATA_DIRS")).split(QLatin1Char(':'), QString::SkipEmptyParts);
+    QStringList dataDirs = QString::fromLocal8Bit(qgetenv("XDG_DATA_DIRS")).split(QLatin1Char(':'), QT_SKIP_EMPTY_PARTS);
 
     if (!dataDirs.contains(QLatin1String("/opt/local/share")))
     {
@@ -554,15 +554,7 @@ QStringList IccProfile::defaultSearchPaths()
 
     // XDG data dirs, including /usr/share/color/icc
 
-#if (QT_VERSION >= QT_VERSION_CHECK(5, 14, 0))
-
-    QStringList dataDirs = QString::fromLocal8Bit(qgetenv("XDG_DATA_DIRS")).split(QLatin1Char(':'), Qt::SkipEmptyParts);
-
-#else
-
-    QStringList dataDirs = QString::fromLocal8Bit(qgetenv("XDG_DATA_DIRS")).split(QLatin1Char(':'), QString::SkipEmptyParts);
-
-#endif
+    QStringList dataDirs = QString::fromLocal8Bit(qgetenv("XDG_DATA_DIRS")).split(QLatin1Char(':'), QT_SKIP_EMPTY_PARTS);
 
     if (!dataDirs.contains(QLatin1String("/usr/share")))
     {
