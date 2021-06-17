@@ -355,7 +355,7 @@ DImg DImg::smoothScaleClipped(int dw, int dh, int clipx, int clipy, int clipw, i
     uint w = width();
     uint h = height();
 
-    if ((w <= 0) || (h <= 0))
+    if ((w == 0) || (h == 0))
     {
         return DImg();
     }
