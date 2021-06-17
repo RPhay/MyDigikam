@@ -131,11 +131,12 @@ BatchToolSettings Rotate::defaultSettings()
     BatchToolSettings settings;
     FreeRotationContainer defaultPrm = d->frSettings->defaultSettings();
 
-    settings.insert(QLatin1String("useExif"),   true);
-    settings.insert(QLatin1String("rotation"),  d->comboBox->defaultIndex());
-    settings.insert(QLatin1String("angle"),     defaultPrm.angle);
-    settings.insert(QLatin1String("antiAlias"), defaultPrm.antiAlias);
-    settings.insert(QLatin1String("autoCrop"),  defaultPrm.autoCrop);
+    settings.insert(QLatin1String("useExif"),         true);
+    settings.insert(QLatin1String("rotation"),        d->comboBox->defaultIndex());
+    settings.insert(QLatin1String("angle"),           defaultPrm.angle);
+    settings.insert(QLatin1String("antiAlias"),       defaultPrm.antiAlias);
+    settings.insert(QLatin1String("autoCrop"),        defaultPrm.autoCrop);
+    settings.insert(QLatin1String("backgroundColor"), defaultPrm.backgroundColor);
 
     return settings;
 }
@@ -145,9 +146,10 @@ void Rotate::slotAssignSettings2Widget()
     d->useExif->setChecked(settings()[QLatin1String("useExif")].toBool());
     d->comboBox->setCurrentIndex(settings()[QLatin1String("rotation")].toInt());
     FreeRotationContainer prm;
-    prm.angle     = settings()[QLatin1String("angle")].toDouble();
-    prm.antiAlias = settings()[QLatin1String("antiAlias")].toBool();
-    prm.autoCrop  = settings()[QLatin1String("autoCrop")].toInt();
+    prm.angle           = settings()[QLatin1String("angle")].toDouble();
+    prm.antiAlias       = settings()[QLatin1String("antiAlias")].toBool();
+    prm.autoCrop        = settings()[QLatin1String("autoCrop")].toInt();
+    prm.backgroundColor = settings()[QLatin1String("backgroundColor")].value<QColor>();
     d->frSettings->setSettings(prm);
 }
 
@@ -160,11 +162,12 @@ void Rotate::slotSettingsChanged()
     BatchToolSettings settings;
     FreeRotationContainer currentPrm = d->frSettings->settings();
 
-    settings.insert(QLatin1String("useExif"),   d->useExif->isChecked());
-    settings.insert(QLatin1String("rotation"),  d->comboBox->currentIndex());
-    settings.insert(QLatin1String("angle"),     currentPrm.angle);
-    settings.insert(QLatin1String("antiAlias"), currentPrm.antiAlias);
-    settings.insert(QLatin1String("autoCrop"),  currentPrm.autoCrop);
+    settings.insert(QLatin1String("useExif"),         d->useExif->isChecked());
+    settings.insert(QLatin1String("rotation"),        d->comboBox->currentIndex());
+    settings.insert(QLatin1String("angle"),           currentPrm.angle);
+    settings.insert(QLatin1String("antiAlias"),       currentPrm.antiAlias);
+    settings.insert(QLatin1String("autoCrop"),        currentPrm.autoCrop);
+    settings.insert(QLatin1String("backgroundColor"), currentPrm.backgroundColor);
 
     BatchTool::slotSettingsChanged(settings);
 }
@@ -172,11 +175,12 @@ void Rotate::slotSettingsChanged()
 bool Rotate::toolOperations()
 {
     FreeRotationContainer prm;
-    bool useExif  = settings()[QLatin1String("useExif")].toBool();
-    int rotation  = settings()[QLatin1String("rotation")].toInt();
-    prm.angle     = settings()[QLatin1String("angle")].toDouble();
-    prm.antiAlias = settings()[QLatin1String("antiAlias")].toBool();
-    prm.autoCrop  = settings()[QLatin1String("autoCrop")].toInt();
+    bool useExif        = settings()[QLatin1String("useExif")].toBool();
+    int rotation        = settings()[QLatin1String("rotation")].toInt();
+    prm.angle           = settings()[QLatin1String("angle")].toDouble();
+    prm.antiAlias       = settings()[QLatin1String("antiAlias")].toBool();
+    prm.autoCrop        = settings()[QLatin1String("autoCrop")].toInt();
+    prm.backgroundColor = settings()[QLatin1String("backgroundColor")].value<QColor>();
 
     // JPEG image : lossless method if non-custom rotation angle.
 
