@@ -40,10 +40,10 @@ class Q_DECL_HIDDEN ItemPositionPriv : public QSharedData
 public:
 
     ItemPositionPriv()
-      : empty(true),
+      : empty       (true),
         // NOTE: Do not initialize the QVariants here, they are expected to be null
-        imageId(-1),
-        dirtyFields(DatabaseFields::ItemPositionsNone)
+        imageId     (-1),
+        dirtyFields (DatabaseFields::ItemPositionsNone)
     {
     }
 
@@ -62,7 +62,7 @@ public:
         dirtyFields     = DatabaseFields::ItemPositionsNone;
     }
 
-    void init(CoreDbAccess& access, qlonglong imageId);
+    void init(const CoreDbAccess& access, qlonglong imageId);
 
 public:
 
@@ -85,7 +85,7 @@ public:
     DatabaseFields::ItemPositions  dirtyFields;
 };
 
-void ItemPositionPriv::init(CoreDbAccess& access, qlonglong id)
+void ItemPositionPriv::init(const CoreDbAccess& access, qlonglong id)
 {
     imageId = id;
 
