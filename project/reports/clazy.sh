@@ -120,7 +120,7 @@ python3 ./clazy_visualizer.py $REPORT_DIR/trace.log
 rm -f $REPORT_DIR/trace.log
 mv clazy.html $REPORT_DIR/index.html
 
-if [[ $1 != "--nowebupdate" ]]
+if [[ $1 != "--nowebupdate" ]] ; then
 
     # update www.digikam.org report section.
     updateReportToWebsite "clazy" $REPORT_DIR $TITLE $(parseGitBranch)

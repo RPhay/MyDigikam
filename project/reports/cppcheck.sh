@@ -92,7 +92,7 @@ cppcheck-htmlreport --file=report.cppcheck.xml \
                     --source-dir=. \
                     --title=$TITLE
 
-if [[ $1 != "--nowebupdate" ]]
+if [[ $1 != "--nowebupdate" ]] ; then
 
     # update www.digikam.org report section.
     updateReportToWebsite "cppcheck" $REPORT_DIR $TITLE $(parseGitBranch)
