@@ -98,7 +98,7 @@ private:
     void clone(DImg* const img, const QPoint& srcPoint, const QPoint& dstPoint);
     std::vector<QPoint> interpolate(const QPoint& start,const QPoint& end);
 
-    void updateLasso(std::vector<QPoint>& points);
+    void updateLasso(const std::vector<QPoint>& points);
     void initializeLassoFlags();
     void removeLassoPixels();
     void redrawLassoPixels();
