@@ -6,6 +6,8 @@
 # https://clang-analyzer.llvm.org/
 # Dependencies : clang static analyzer version >= 3.9.0.
 #
+# If '--nowebupdate' is passed as argument, static analyzer results are just created locally.
+#
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
 #
@@ -141,7 +143,11 @@ for DROP_ITEM in $KRAZY_FILTERS ; do
 
 done
 
-# update www.digikam.org report section.
-updateReportToWebsite "clang" $SCANBUILD_DIR $TITLE $(parseGitBranch)
+if [[ $1 != "--nowebupdate" ]]
+
+    # update www.digikam.org report section.
+    updateReportToWebsite "clang" $SCANBUILD_DIR $TITLE $(parseGitBranch)
+
+fi
 
 cd $ORIG_DIR

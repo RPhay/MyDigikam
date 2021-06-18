@@ -4,6 +4,8 @@
 #
 # Run Clang tidy lint static analyzer on whole digiKam source code.
 #
+# If '--nowebupdate' is passed as argument, static analyzer results are just created locally.
+#
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
 #
@@ -39,7 +41,11 @@ python3 ./clangtidy_visualizer.py $REPORT_DIR/clang-tidy.log
 #rm -f $REPORT_DIR/clang-tidy.log
 mv tidy.html $REPORT_DIR/index.html
 
-updateReportToWebsite "tidy" $REPORT_DIR $TITLE $(parseGitBranch)
+if [[ $1 != "--nowebupdate" ]]
+
+    updateReportToWebsite "tidy" $REPORT_DIR $TITLE $(parseGitBranch)
+
+fi
 
 cd $ORIG_DIR
 

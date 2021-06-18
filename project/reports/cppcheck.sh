@@ -6,6 +6,8 @@
 # http://cppcheck.sourceforge.net/
 # Dependencies : Python::pygments module to export report as HTML.
 #
+# If '--nowebupdate' is passed as argument, static analyzer results are just created locally.
+#
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
 #
@@ -90,8 +92,12 @@ cppcheck-htmlreport --file=report.cppcheck.xml \
                     --source-dir=. \
                     --title=$TITLE
 
-# update www.digikam.org report section.
-updateReportToWebsite "cppcheck" $REPORT_DIR $TITLE $(parseGitBranch)
+if [[ $1 != "--nowebupdate" ]]
+
+    # update www.digikam.org report section.
+    updateReportToWebsite "cppcheck" $REPORT_DIR $TITLE $(parseGitBranch)
+
+fi
 
 cd $ORIG_DIR
 
