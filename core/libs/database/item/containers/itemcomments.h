@@ -127,10 +127,7 @@ public:
      * as the default value, when you just want to have one string.
      * Optionally also returns the index with which you can access further information about the comment.
      */
-    QString defaultComment(Digikam::DatabaseComment::Type type = DatabaseComment::Comment)                      const
-    {
-        return defaultComment(nullptr, type);
-    }
+    QString defaultComment(DatabaseComment::Type type = DatabaseComment::Comment)                               const;
 
     QString defaultComment(int* const index, Digikam::DatabaseComment::Type type = DatabaseComment::Comment)    const;
 
@@ -151,10 +148,10 @@ public:
      * Access individual properties. Please ensure that the specified index is a valid index
      */
     DatabaseComment::Type type(int index)                                                                       const;
-    
+
     /// RFC 3066 notation, or "x-default"
     QString language(int index)                                                                                 const;
-    
+
     QString author(int index)                                                                                   const;
     QDateTime date(int index)                                                                                   const;
     QString comment(int index)                                                                                  const;
