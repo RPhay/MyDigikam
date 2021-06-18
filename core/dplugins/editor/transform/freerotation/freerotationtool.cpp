@@ -311,7 +311,6 @@ void FreeRotationTool::preparePreview()
     FreeRotationContainer settings = d->settingsView->settings();
     ImageIface* const iface        = d->previewWidget->imageIface();
     DImg preview                   = iface->preview();
-    settings.backgroundColor       = toolView()->backgroundRole();
     settings.orgW                  = iface->originalSize().width();
     settings.orgH                  = iface->originalSize().height();
     setFilter(new FreeRotationFilter(&preview, this, settings));
@@ -322,7 +321,6 @@ void FreeRotationTool::prepareFinal()
     ImageIface iface;
     FreeRotationContainer settings = d->settingsView->settings();
     DImg* const orgImage           = iface.original();
-    settings.backgroundColor       = Qt::black;
     settings.orgW                  = iface.originalSize().width();
     settings.orgH                  = iface.originalSize().height();
 

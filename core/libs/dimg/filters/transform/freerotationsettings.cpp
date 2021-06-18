@@ -42,9 +42,10 @@
 
 // Local includes
 
+#include "digikam_debug.h"
+#include "dcolorselector.h"
 #include "dexpanderbox.h"
 #include "dnuminput.h"
-#include "digikam_debug.h"
 #include "dcombobox.h"
 
 namespace Digikam
@@ -58,12 +59,14 @@ public:
       : antialiasInput(nullptr),
         angleInput(nullptr),
         fineAngleInput(nullptr),
-        autoCropCB(nullptr)
+        autoCropCB(nullptr),
+        backgroundColor(nullptr)
     {
     }
 
     static const QString configAutoCropTypeEntry;
     static const QString configAntiAliasingEntry;
+    static const QString configBackgroundColorEntry;
 
 public:
 
@@ -72,10 +75,12 @@ public:
     DIntNumInput*    angleInput;
     DDoubleNumInput* fineAngleInput;
     DComboBox*       autoCropCB;
+    DColorSelector*  backgroundColor;
 };
 
 const QString FreeRotationSettings::Private::configAutoCropTypeEntry(QLatin1String("Auto Crop Type"));
 const QString FreeRotationSettings::Private::configAntiAliasingEntry(QLatin1String("Anti Aliasing"));
+const QString FreeRotationSettings::Private::configBackgroundColorEntry(QLatin1String("Background Color"));
 
 // --------------------------------------------------------
 
@@ -118,15 +123,21 @@ FreeRotationSettings::FreeRotationSettings(QWidget* const parent)
     d->autoCropCB->setWhatsThis(i18n("Select the method to process image auto-cropping "
                                      "to remove black frames around a rotated image here."));
 
+    QLabel* const label6 = new QLabel(i18n("Background color:"));
+    d->backgroundColor   = new DColorSelector();
+    d->backgroundColor->setColor(Qt::black);
+
     // -------------------------------------------------------------
 
-    grid->addWidget(label3,            0, 0, 1, 1);
-    grid->addWidget(d->angleInput,     1, 0, 1, 2);
-    grid->addWidget(label4,            2, 0, 1, 1);
-    grid->addWidget(d->fineAngleInput, 3, 0, 1, 2);
-    grid->addWidget(d->antialiasInput, 4, 0, 1, -1);
-    grid->addWidget(label5,            5, 0, 1, 1);
-    grid->addWidget(d->autoCropCB,     5, 1, 1, 1);
+    grid->addWidget(label3,             0, 0, 1, 1);
+    grid->addWidget(d->angleInput,      1, 0, 1, 2);
+    grid->addWidget(label4,             2, 0, 1, 1);
+    grid->addWidget(d->fineAngleInput,  3, 0, 1, 2);
+    grid->addWidget(d->antialiasInput,  4, 0, 1, -1);
+    grid->addWidget(label5,             5, 0, 1, 1);
+    grid->addWidget(d->autoCropCB,      5, 1, 1, 1);
+    grid->addWidget(label6,             6, 0, 1, 1);
+    grid->addWidget(d->backgroundColor, 6, 1, 1, 1);
     grid->setContentsMargins(spacing, spacing, spacing, spacing);
     grid->setSpacing(spacing);
 
@@ -143,6 +154,9 @@ FreeRotationSettings::FreeRotationSettings(QWidget* const parent)
 
     connect(d->fineAngleInput, SIGNAL(valueChanged(double)),
             this, SIGNAL(signalSettingsChanged()));
+
+    connect(d->backgroundColor, SIGNAL(signalColorSelected(QColor)),
+            this, SIGNAL(signalSettingsChanged()));
 }
 
 FreeRotationSettings::~FreeRotationSettings()
@@ -153,9 +167,10 @@ FreeRotationSettings::~FreeRotationSettings()
 FreeRotationContainer FreeRotationSettings::settings() const
 {
     FreeRotationContainer prm;
-    prm.angle     = (double)d->angleInput->value() + d->fineAngleInput->value();
-    prm.antiAlias = d->antialiasInput->isChecked();
-    prm.autoCrop  = d->autoCropCB->currentIndex();
+    prm.angle           = (double)d->angleInput->value() + d->fineAngleInput->value();
+    prm.antiAlias       = d->antialiasInput->isChecked();
+    prm.autoCrop        = d->autoCropCB->currentIndex();
+    prm.backgroundColor = d->backgroundColor->color();
 
     return prm;
 }
@@ -168,6 +183,7 @@ void FreeRotationSettings::setSettings(const FreeRotationContainer& settings)
     d->fineAngleInput->setValue(settings.angle - (double)d->angleInput->value());
     d->antialiasInput->setChecked(settings.antiAlias);
     d->autoCropCB->setCurrentIndex(settings.autoCrop);
+    d->backgroundColor->setColor(settings.backgroundColor);
 
     blockSignals(false);
 }
@@ -175,27 +191,32 @@ void FreeRotationSettings::setSettings(const FreeRotationContainer& settings)
 void FreeRotationSettings::resetToDefault()
 {
     blockSignals(true);
+
     d->angleInput->slotReset();
     d->fineAngleInput->slotReset();
     d->antialiasInput->setChecked(true);
     d->autoCropCB->slotReset();
+    d->backgroundColor->setColor(Qt::black);
+
     blockSignals(false);
 }
 
 FreeRotationContainer FreeRotationSettings::defaultSettings() const
 {
     FreeRotationContainer prm;
-    prm.angle     = d->angleInput->defaultValue();
-    prm.antiAlias = true;
-    prm.autoCrop  = d->autoCropCB->defaultIndex();
+    prm.angle           = d->angleInput->defaultValue();
+    prm.antiAlias       = true;
+    prm.autoCrop        = d->autoCropCB->defaultIndex();
+    prm.backgroundColor = Qt::black;
 
     return prm;
 }
 
 void FreeRotationSettings::readSettings(KConfigGroup& group)
 {
-    d->autoCropCB->setCurrentIndex(group.readEntry(d->configAutoCropTypeEntry, d->autoCropCB->defaultIndex()));
-    d->antialiasInput->setChecked(group.readEntry(d->configAntiAliasingEntry, true));
+    d->autoCropCB->setCurrentIndex(group.readEntry(d->configAutoCropTypeEntry,  d->autoCropCB->defaultIndex()));
+    d->backgroundColor->setColor(group.readEntry(d->configBackgroundColorEntry, QColor(Qt::black)));
+    d->antialiasInput->setChecked(group.readEntry(d->configAntiAliasingEntry,   true));
     d->angleInput->slotReset();
     d->fineAngleInput->slotReset();
 }
@@ -203,8 +224,9 @@ void FreeRotationSettings::readSettings(KConfigGroup& group)
 void FreeRotationSettings::writeSettings(KConfigGroup& group)
 {
     FreeRotationContainer prm = settings();
-    group.writeEntry(d->configAutoCropTypeEntry, d->autoCropCB->currentIndex());
-    group.writeEntry(d->configAntiAliasingEntry, d->antialiasInput->isChecked());
+    group.writeEntry(d->configAutoCropTypeEntry,    d->autoCropCB->currentIndex());
+    group.writeEntry(d->configAntiAliasingEntry,    d->antialiasInput->isChecked());
+    group.writeEntry(d->configBackgroundColorEntry, d->backgroundColor->color());
 }
 
 } // namespace Digikam
