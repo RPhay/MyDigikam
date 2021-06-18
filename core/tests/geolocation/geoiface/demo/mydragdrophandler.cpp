@@ -61,7 +61,9 @@ bool MyDragDropHandler::dropEvent(const QDropEvent* e, const GeoCoordinates& dro
         const QPersistentModelIndex itemIndex = mimeData->draggedIndices.at(i);
 
         if (!itemIndex.isValid())
+        {
             continue;
+        }
 
         model->setData(itemIndex, QVariant::fromValue(dropCoordinates), RoleCoordinates);
     }

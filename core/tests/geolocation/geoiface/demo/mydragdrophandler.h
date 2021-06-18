@@ -43,7 +43,7 @@ class MyDragData : public QMimeData
 public:
 
     MyDragData()
-        : QMimeData(),
+        : QMimeData     (),
           draggedIndices()
     {
     }
@@ -58,11 +58,11 @@ class MyDragDropHandler : public GeoDragDropHandler
 public:
 
     explicit MyDragDropHandler(QAbstractItemModel* const pModel, QObject* const parent = nullptr);
-    ~MyDragDropHandler() override;
+    ~MyDragDropHandler()                                                                    override;
 
     Qt::DropAction accepts(const QDropEvent* e) override;
-    bool           dropEvent(const QDropEvent* e, const GeoCoordinates& dropCoordinates) override;
-    QMimeData*     createMimeData(const QList<QPersistentModelIndex>& modelIndices) override;
+    bool           dropEvent(const QDropEvent* e, const GeoCoordinates& dropCoordinates)    override;
+    QMimeData*     createMimeData(const QList<QPersistentModelIndex>& modelIndices)         override;
 
 private:
 
