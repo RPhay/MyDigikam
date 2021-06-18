@@ -52,12 +52,12 @@ public:
 
     explicit Private()
       : trackLoadFutureWatcher(nullptr),
-        trackLoadFuture(),
-        trackList(),
-        loadErrorFiles(),
-        nextTrackId(1),
-        nextTrackColor(0),
-        visibility(true)
+        trackLoadFuture       (),
+        trackList             (),
+        loadErrorFiles        (),
+        nextTrackId           (1),
+        nextTrackColor        (0),
+        visibility            (true)
     {
     }
 
@@ -74,7 +74,7 @@ public:
 
 TrackManager::TrackManager(QObject* const parent)
     : QObject(parent),
-      d(new Private)
+      d      (new Private)
 {
 }
 

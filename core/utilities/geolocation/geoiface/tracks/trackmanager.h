@@ -132,7 +132,7 @@ public:
 public:
 
     explicit TrackManager(QObject* const parent = nullptr);
-    ~TrackManager() override;
+    ~TrackManager()                                   override;
 
     void loadTrackFiles(const QList<QUrl>& urls);
     QList<QPair<QUrl, QString> > readLoadErrors();
@@ -153,7 +153,7 @@ Q_SIGNALS:
 
     void signalTrackFilesReadyAt(const int startIndex, const int endIndex);
     void signalAllTrackFilesReady();
-    void signalTracksChanged(const QList<TrackManager::TrackChanges> trackChanges);
+    void signalTracksChanged(const QList<TrackManager::TrackChanges>& trackChanges);
     void signalVisibilityChanged(const bool newValue);
 
 private Q_SLOTS:
