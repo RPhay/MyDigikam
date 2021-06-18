@@ -48,12 +48,12 @@ public:
 
 protected:
 
-/*
-    void mousePressEvent(QMouseEvent* event);
-    void mouseMoveEvent(QMouseEvent* event);
-*/
     void startDrag(Qt::DropActions supportedActions)               override;
+
+    // cppcheck-suppress passedByValue
     QMimeData* mimeData(const QList<QTreeWidgetItem*> items) const override;
+
+    // cppcheck-suppress passedByValue
     virtual QMimeData* mimeData(const QModelIndexList items) const;
 
 private:

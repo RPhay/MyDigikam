@@ -364,6 +364,7 @@ void ToolsListView::slotAssignTools()
     emit signalAssignTools(map);
 }
 
+// cppcheck-suppress passedByValue
 QMimeData* ToolsListView::mimeData(const QList<QTreeWidgetItem*> items) const       // clazy:exclude=function-args-by-ref
 {
     QMimeData* const mimeData   = new QMimeData();

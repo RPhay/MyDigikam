@@ -246,7 +246,7 @@ private:
                                                                      SketchType type);
 
     /**
-     * This function generates the scores for all images in database.
+     * This method is the core functionality: It assigns a score to every image in the database.
      * @param data The signature of the original image for score calculation.
      * @param type The type of the sketch, e.g. scanned.
      * @param searchResultRestriction restrictions to apply to the generated map, i.e. None (default), same album or different album.
@@ -263,7 +263,7 @@ private:
 
     double calculateScore(const Haar::SignatureData& querySig,
                           const Haar::SignatureData& targetSig,
-                          Haar::Weights& weights,
+                          const Haar::Weights& weights,
                           std::reference_wrapper<Haar::SignatureMap>* const queryMaps);
 
 private:

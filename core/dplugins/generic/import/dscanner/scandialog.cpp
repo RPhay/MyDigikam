@@ -159,7 +159,7 @@ void ScanDialog::slotSaveImage(QByteArray& ksane_data, int width, int height, in
 
     imageFileSaveDialog->exec();
 
-    if (!imageFileSaveDialog || imageFileSaveDialog->selectedUrls().isEmpty())
+    if (imageFileSaveDialog->selectedUrls().isEmpty())
     {
         delete imageFileSaveDialog;
 

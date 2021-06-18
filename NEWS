@@ -372,4 +372,7 @@ BUGFIXES:
 349 ==> 438465 - Question to Color Spaces.
 350 ==> 438344 - Questions to Add Border Tool.
 351 ==> 438466 - Image editor - Color Negative closes application.
-352 ==> 
+352 ==> 432650 - MacOS: digikam system menu not localizable.
+353 ==> 437606 - Freenode IRC has been taken over; advise to move the channel to libera.chat or oftc.
+354 ==> 354600 - Changing background colour after Free Rotation.
+355 ==> 

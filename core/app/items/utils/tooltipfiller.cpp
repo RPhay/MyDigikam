@@ -630,7 +630,6 @@ QString ToolTipFiller::albumTipContents(PAlbum* const album, int count)
                    cnt.breakString(str) + cnt.cellSpecEnd;
         }
 
-
         if (settings->getToolTipsShowAlbumPreview())
         {
             tip += cnt.cellSpecBeg + i18n("Preview:") + cnt.cellSpecMid +
@@ -670,19 +669,27 @@ QString ToolTipFiller::filterActionTipContents(const FilterAction& action)
     switch (action.category())
     {
         case FilterAction::ReproducibleFilter:
+        {
             reproducible = i18nc("Image filter reproducible: Yes", "Yes");
             break;
+        }
 
         case FilterAction::ComplexFilter:
+        {
             reproducible = i18nc("Image filter reproducible: Partially", "Partially");
             break;
+        }
 
         case FilterAction::DocumentedHistory:
+        {
             reproducible = i18nc("Image filter reproducible: No", "No");
             break;
+        }
 
         default:
+        {
             break;
+        }
     };
 
     tip += cnt.cellBeg + i18n("Reproducible:") + cnt.cellMid
@@ -713,11 +720,11 @@ QString ToolTipFiller::filterActionTipContents(const FilterAction& action)
         QList<QString> keys                    = params.keys();
         std::sort(keys.begin(), keys.end());
 
-        foreach (const QString& key, keys)
+        foreach (const QString& rootKey, keys)
         {
             QHash<QString, QVariant>::const_iterator it;
 
-            for (it = params.find(key) ; ((it != params.end()) && (it.key() == key)) ; ++it)
+            for (it = params.find(rootKey) ; ((it != params.end()) && (it.key() == rootKey)) ; ++it)
             {
                 if (it.key().isEmpty() || !it.value().isValid())
                 {

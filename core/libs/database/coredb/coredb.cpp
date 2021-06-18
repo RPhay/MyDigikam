@@ -639,7 +639,7 @@ QList<TagProperty> CoreDB::getTagProperties(int tagId) const
     {
         TagProperty property;
 
-        property.tagId = tagId;
+        property.tagId    = tagId;
 
         property.property = (*it).toString();
         ++it;
@@ -668,16 +668,16 @@ QList<TagProperty> CoreDB::getTagProperties(const QString& property) const
 
     for (QList<QVariant>::const_iterator it = values.constBegin() ; it != values.constEnd() ; )
     {
-        TagProperty property;
+        TagProperty prop;
 
-        property.tagId    = (*it).toInt();
+        prop.tagId    = (*it).toInt();
         ++it;
-        property.property = (*it).toString();
+        prop.property = (*it).toString();
         ++it;
-        property.value    = (*it).toString();
+        prop.value    = (*it).toString();
         ++it;
 
-        properties << property;
+        properties << prop;
     }
 
     return properties;
@@ -1605,7 +1605,9 @@ QVariantList CoreDB::getItemPosition(qlonglong imageID, DatabaseFields::ItemPosi
                    )
                 {
                     if (!values.at(i).isNull())
+                    {
                         values[i] = values.at(i).toDouble();
+                    }
                 }
             }
         }
@@ -2008,7 +2010,7 @@ QList<CopyrightInfo> CoreDB::getItemCopyright(qlonglong imageID, const QString& 
     for (QList<QVariant>::const_iterator it = values.constBegin() ; it != values.constEnd() ; )
     {
         CopyrightInfo info;
-        info.id = imageID;
+        info.id         = imageID;
 
         info.property   = (*it).toString();
         ++it;
@@ -2069,28 +2071,36 @@ void CoreDB::removeItemCopyrightProperties(qlonglong imageID, const QString& pro
     switch (removeBy)
     {
         case 0:
+        {
             d->db->execSql(QString::fromUtf8("DELETE FROM ImageCopyright "
                                              "WHERE imageid=?;"),
                            imageID);
             break;
+        }
 
         case 1:
+        {
             d->db->execSql(QString::fromUtf8("DELETE FROM ImageCopyright "
                                              "WHERE imageid=? AND property=?;"),
                            imageID, property);
             break;
+        }
 
         case 2:
+        {
             d->db->execSql(QString::fromUtf8("DELETE FROM ImageCopyright "
                                              "WHERE imageid=? AND property=? AND extraValue=?;"),
                            imageID, property, extraValue);
             break;
+        }
 
         case 3:
+        {
             d->db->execSql(QString::fromUtf8("DELETE FROM ImageCopyright "
                                              "WHERE imageid=? AND property=? AND extraValue=? AND value=?;"),
                            imageID, property, extraValue, value);
             break;
+        }
     }
 }
 
@@ -2404,7 +2414,7 @@ QList<QPair<qlonglong, qlonglong> > CoreDB::getRelationCloud(qlonglong imageId, 
         {
             subject = (*it).toLongLong();
             ++it;
-            object = (*it).toLongLong();
+            object  = (*it).toLongLong();
             ++it;
 
             pairs << qMakePair(subject, object);
@@ -2589,9 +2599,9 @@ QStringList CoreDB::getDirtyOrMissingFaceImageUrls() const
     {
         albumRootPath = CollectionManager::instance()->albumRootPath((*it).toInt());
         ++it;
-        relativePath = (*it).toString();
+        relativePath  = (*it).toString();
         ++it;
-        name = (*it).toString();
+        name          = (*it).toString();
         ++it;
 
         if (relativePath == QLatin1String("/"))
@@ -3495,7 +3505,7 @@ QList<int> CoreDB::getAlbumAndSubalbumsForPath(int albumRootId, const QString& r
 
     for (QList<QVariant>::const_iterator it = values.constBegin() ; it != values.constEnd() ; )
     {
-        id = (*it).toInt();
+        id                = (*it).toInt();
         ++it;
         albumRelativePath = (*it).toString();
         ++it;
@@ -3678,34 +3688,43 @@ QStringList CoreDB::getItemURLsInAlbum(int albumID, ItemSortOrder sortOrder) con
     switch (sortOrder)
     {
         case ByItemName:
+        {
             d->db->execDBAction(d->db->getDBAction(QString::fromUtf8("getItemURLsInAlbumByItemName")),
                                 bindingMap, &values);
             break;
+        }
 
         case ByItemPath:
-
+        {
             // Don't collate on the path - this is to maintain the same behavior
             // that happens when sort order is "By Path"
 
             d->db->execDBAction(d->db->getDBAction(QString::fromUtf8("getItemURLsInAlbumByItemPath")),
                                 bindingMap, &values);
             break;
+        }
 
         case ByItemDate:
+        {
             d->db->execDBAction(d->db->getDBAction(QString::fromUtf8("getItemURLsInAlbumByItemDate")),
                                 bindingMap, &values);
             break;
+        }
 
         case ByItemRating:
+        {
             d->db->execDBAction(d->db->getDBAction(QString::fromUtf8("getItemURLsInAlbumByItemRating")),
                                 bindingMap, &values);
             break;
+        }
 
         case NoItemSorting:
         default:
+        {
             d->db->execDBAction(d->db->getDBAction(QString::fromUtf8("getItemURLsInAlbumNoItemSorting")),
                                 bindingMap, &values);
             break;
+        }
     }
 
     QStringList urls;
@@ -3715,7 +3734,7 @@ QStringList CoreDB::getItemURLsInAlbum(int albumID, ItemSortOrder sortOrder) con
     {
         relativePath = (*it).toString();
         ++it;
-        name = (*it).toString();
+        name         = (*it).toString();
         ++it;
 
         if (relativePath == QLatin1String("/"))
@@ -3778,11 +3797,11 @@ QMap<qlonglong, QString> CoreDB::getItemIDsAndURLsInAlbum(int albumID) const
 
     for (QList<QVariant>::const_iterator it = values.constBegin() ; it != values.constEnd() ; )
     {
-        id = (*it).toLongLong();
+        id           = (*it).toLongLong();
         ++it;
         relativePath = (*it).toString();
         ++it;
-        name = (*it).toString();
+        name         = (*it).toString();
         ++it;
 
         if (relativePath == QLatin1String("/"))
@@ -4132,7 +4151,7 @@ void CoreDB::removeItemsPermanently(QList<qlonglong> itemIDs, const QList<int>& 
 
     foreach (const qlonglong& id, itemIDs)
     {
-        status << (int)DatabaseItem::Obsolete;
+        status   << (int)DatabaseItem::Obsolete;
         imageIds << id;
     }
 

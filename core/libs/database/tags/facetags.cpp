@@ -415,9 +415,9 @@ int FaceTags::personParentTag()
 
         QMultiMap<int, int> tiers;
 
-        foreach (int tagId, personTags)
+        foreach (int tid, personTags)
         {
-            tiers.insert(TagsCache::instance()->parentTags(tagId).size(), tagId);
+            tiers.insert(TagsCache::instance()->parentTags(tid).size(), tid);
         }
 
         QList<int> mosttoplevelTags = tiers.values(tiers.begin().key());

@@ -73,8 +73,8 @@ using namespace Digikam;
 
 MarkerModelHelper::MarkerModelHelper(QAbstractItemModel* const itemModel,
                                      QItemSelectionModel* const itemSelectionModel)
-    : GeoModelHelper(itemModel),
-      m_itemModel(itemModel),
+    : GeoModelHelper      (itemModel),
+      m_itemModel         (itemModel),
       m_itemSelectionModel(itemSelectionModel)
 {
     connect(itemModel, SIGNAL(dataChanged(QModelIndex,QModelIndex)),
@@ -99,10 +99,14 @@ bool MarkerModelHelper::itemCoordinates(const QModelIndex& index,
                                         GeoCoordinates* const coordinates) const
 {
     if (!index.data(RoleCoordinates).canConvert<GeoCoordinates>())
+    {
         return false;
+    }
 
     if (coordinates)
+    {
         *coordinates = index.data(RoleCoordinates).value<GeoCoordinates>();
+    }
 
     return true;
 }
@@ -135,7 +139,7 @@ public:
 // ----------------------------------------------------------------------
 
 MyTrackModelHelper::MyTrackModelHelper(QAbstractItemModel* const imageItemsModel)
-    : QObject(imageItemsModel),
+    : QObject    (imageItemsModel),
       m_itemModel(imageItemsModel)
 {
     connect(imageItemsModel, SIGNAL(dataChanged(QModelIndex,QModelIndex)),
@@ -159,7 +163,9 @@ void MyTrackModelHelper::slotTrackModelChanged()
         const QModelIndex currentIndex = m_itemModel->index(row, 0);
 
         if (!currentIndex.data(RoleCoordinates).canConvert<GeoCoordinates>())
+        {
             continue;
+        }
 
         const GeoCoordinates markerCoordinates = currentIndex.data(RoleCoordinates).value<GeoCoordinates>();
         TrackManager::TrackPoint trackPoint;
@@ -184,23 +190,23 @@ class Q_DECL_HIDDEN MainWindow::Private
 public:
 
     explicit Private()
-      : splitter(nullptr),
-        mapWidget(nullptr),
-        lookupAltitudeList(),
-        treeWidget(nullptr),
-        progressBar(nullptr),
-        imageLoadingRunningFutures(),
-        imageLoadingFutureWatchers(),
-        imageLoadingTotalCount(0),
-        imageLoadingCurrentCount(0),
-        imageLoadingBuncher(),
-        imageLoadingBunchTimer(nullptr),
-        cmdLineArgs(nullptr),
-        lastImageOpenDir(),
-        displayMarkersModel(nullptr),
-        selectionModel(nullptr),
-        markerModelHelper(nullptr),
-        trackModelHelper(nullptr)
+      : splitter                    (nullptr),
+        mapWidget                   (nullptr),
+        lookupAltitudeList          (),
+        treeWidget                  (nullptr),
+        progressBar                 (nullptr),
+        imageLoadingRunningFutures  (),
+        imageLoadingFutureWatchers  (),
+        imageLoadingTotalCount      (0),
+        imageLoadingCurrentCount    (0),
+        imageLoadingBuncher         (),
+        imageLoadingBunchTimer      (nullptr),
+        cmdLineArgs                 (nullptr),
+        lastImageOpenDir            (),
+        displayMarkersModel         (nullptr),
+        selectionModel              (nullptr),
+        markerModelHelper           (nullptr),
+        trackModelHelper            (nullptr)
     {
     }
 
@@ -226,9 +232,10 @@ public:
 
 MainWindow::MainWindow(QCommandLineParser* const cmdLineArgs, QWidget* const parent)
     : QMainWindow(parent),
-      d(new Private())
+      d          (new Private())
 {
     // initialize Exiv2 before doing any multitasking
+
     MetaEngine::initializeExiv2();
 
     d->treeWidget = new MyTreeWidget(this);
@@ -256,6 +263,7 @@ MainWindow::MainWindow(QCommandLineParser* const cmdLineArgs, QWidget* const par
             this, SLOT(slotImageLoadingBunchReady()));
 
     // create a status bar:
+
     statusBar();
     createMenus();
 
@@ -372,7 +380,9 @@ void MainWindow::saveSettings()
 void MainWindow::closeEvent(QCloseEvent* e)
 {
     if (!e)
+    {
         return;
+    }
 
     saveSettings();
     e->accept();
@@ -407,7 +417,9 @@ void MainWindow::slotFutureResultsReadyAt(int startIndex, int endIndex)
     GEOIFACE_ASSERT(futureSender != nullptr);
 
     if (futureSender == nullptr)
+    {
         return;
+    }
 
     int futureIndex = -1;
 
@@ -464,7 +476,9 @@ void MainWindow::slotFutureResultsReadyAt(int startIndex, int endIndex)
 void MainWindow::slotScheduleImagesForLoading(const QList<QUrl>& imagesToSchedule)
 {
     if (imagesToSchedule.isEmpty())
+    {
         return;
+    }
 
     if (d->imageLoadingTotalCount == 0)
     {
@@ -591,7 +605,9 @@ void MainWindow::slotAddImages()
     const QList<QUrl> fileNames = DFileDialog::getOpenFileUrls(this, QLatin1String("Add image files"), d->lastImageOpenDir, QLatin1String("Images (*.jpg *.jpeg *.png *.tif *.tiff)"));
 
     if (fileNames.isEmpty())
+    {
         return;
+    }
 
     d->lastImageOpenDir         = fileNames.first().resolved(QUrl(QLatin1String("../")));
 

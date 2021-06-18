@@ -334,6 +334,7 @@ QStringList AssignedListView::mimeTypes() const
     return types;
 }
 
+// cppcheck-suppress passedByValue
 QMimeData* AssignedListView::mimeData(const QList<QTreeWidgetItem*> items) const    // clazy:exclude=function-args-by-ref
 {
     QMimeData* const mimeData = new QMimeData();

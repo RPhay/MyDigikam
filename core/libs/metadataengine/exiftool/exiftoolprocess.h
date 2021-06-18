@@ -59,6 +59,7 @@ public:
         READ_FORMATS,               ///< Return the list of readable ExifTool file formats.
         WRITE_FORMATS,              ///< Return the list of writable ExifTool file formats.
         TRANSLATIONS_LIST,          ///< List of ExifTool languages available for translations.
+        VERSION_STRING,             ///< Return the ExifTool version as string.
         COPY_TAGS,                  ///< Copy tags from one file to another one. See CopyTagsSource enum for details.
         TRANS_TAGS,                 ///< Translate tags in file. See TranslateTagsOps enum for details.
         NO_ACTION                   ///< Last value from this list.

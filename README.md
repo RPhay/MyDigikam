@@ -76,7 +76,7 @@ If you want contribute to digiKam developments write an email to:
 
 digikam-devel@kde.org
 
-IRC channel from irc.freenode.org server: [#digikam](https://webchat.freenode.net/?channels=digikam)
+IRC channel from irc.libera.chat server: #digikam (or use [web chat](https://web.libera.chat/))
 
 # Bug reports
 

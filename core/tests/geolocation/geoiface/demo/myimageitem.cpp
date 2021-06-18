@@ -25,8 +25,8 @@
 
 MyImageItem::MyImageItem(const QUrl& url, const GeoCoordinates& itemCoordinates)
     : QTreeWidgetItem(),
-      coordinates(itemCoordinates),
-      imageUrl(url)
+      coordinates    (itemCoordinates),
+      imageUrl       (url)
 {
 }
 
@@ -45,13 +45,19 @@ QVariant MyImageItem::data(int column, int role) const
         switch (column)
         {
             case 0:
+            {
                 return imageUrl.fileName();
+            }
 
             case 1:
+            {
                 return coordinates.geoUrl();
+            }
 
             default:
+            {
                 return QVariant();
+            }
         }
     }
 

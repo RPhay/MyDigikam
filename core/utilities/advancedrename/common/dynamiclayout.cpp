@@ -82,19 +82,19 @@ DynamicLayout::~DynamicLayout()
     delete d;
 }
 
-void DynamicLayout::addItem(QLayoutItem* item)
+void DynamicLayout::addItem(QLayoutItem* layItem)
 {
     d->minItemWidth = 0;
-    d->itemList.append(item);
+    d->itemList.append(layItem);
 
     foreach (QLayoutItem* const item, d->itemList)
     {
-        QWidget* wid    = item->widget();
-        d->spaceX       = qMax<int>(wid->style()->layoutSpacing(QSizePolicy::PushButton, QSizePolicy::PushButton,
-                                                                Qt::Horizontal), d->spaceX);
-        d->spaceY       = qMax<int>(wid->style()->layoutSpacing(QSizePolicy::PushButton, QSizePolicy::PushButton,
-                                                                Qt::Vertical), d->spaceY);
-        d->minItemWidth = qMax<int>(wid->sizeHint().width(), d->minItemWidth);
+        QWidget* const wid = item->widget();
+        d->spaceX          = qMax<int>(wid->style()->layoutSpacing(QSizePolicy::PushButton, QSizePolicy::PushButton,
+                                                                   Qt::Horizontal), d->spaceX);
+        d->spaceY          = qMax<int>(wid->style()->layoutSpacing(QSizePolicy::PushButton, QSizePolicy::PushButton,
+                                                                   Qt::Vertical), d->spaceY);
+        d->minItemWidth    = qMax<int>(wid->sizeHint().width(), d->minItemWidth);
     }
 
     foreach (QLayoutItem* const item, d->itemList)

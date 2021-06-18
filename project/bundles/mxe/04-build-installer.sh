@@ -207,7 +207,7 @@ fi
 #################################################################################################
 # Install ExifTool binary.
 
-EXIFTOOL_VERSION="12.26"
+EXIFTOOL_VERSION="12.27"
 wget https://exiftool.org/exiftool-$EXIFTOOL_VERSION.zip -P $BUNDLEDIR
 unzip $BUNDLEDIR/exiftool-$EXIFTOOL_VERSION.zip -o -d $BUNDLEDIR
 mv "$BUNDLEDIR/exiftool(-k).exe" "$BUNDLEDIR/exiftool.exe"

@@ -45,7 +45,7 @@ public:
     {
     }
 
-    void init(CoreDbAccess& access, qlonglong imageId)
+    void init(const CoreDbAccess& access, qlonglong imageId)
     {
         id    = imageId;
         infos = access.db()->getItemComments(id);
@@ -184,12 +184,18 @@ ItemComments::~ItemComments()
 ItemComments& ItemComments::operator=(const ItemComments& other)
 {
     d = other.d;
+
     return *this;
 }
 
 bool ItemComments::isNull() const
 {
     return !d;
+}
+
+QString ItemComments::defaultComment(DatabaseComment::Type type) const
+{
+    return defaultComment(nullptr, type);
 }
 
 QString ItemComments::defaultComment(int* const index, DatabaseComment::Type type) const

@@ -52,31 +52,32 @@ public:
     explicit GPSGeoIfaceModelHelper(GPSItemModel* const model,
                                     QItemSelectionModel* const selectionModel,
                                     QObject* const parent = nullptr);
-    ~GPSGeoIfaceModelHelper() override;
+    ~GPSGeoIfaceModelHelper()                                                                             override;
 
     QAbstractItemModel*  model()                                                                    const override;
-    QItemSelectionModel* selectionModel() const override;
+    QItemSelectionModel* selectionModel()                                                           const override;
 
     bool itemCoordinates(const QModelIndex& index,
-                                 GeoCoordinates* const coordinates)                                         const override;
+                         GeoCoordinates* const coordinates)                                         const override;
 
     PropertyFlags modelFlags()                                                                      const override;
 
     QPixmap pixmapFromRepresentativeIndex(const QPersistentModelIndex& index,
-                                                  const QSize& size)                                              override;
+                                          const QSize& size)                                              override;
 
     QPersistentModelIndex bestRepresentativeIndexFromList(const QList<QPersistentModelIndex>& list,
-                                                                  const int sortKey)                              override;
+                                                          const int sortKey)                              override;
 
     void onIndicesMoved(const QList<QPersistentModelIndex>& movedMarkers,
-                                const GeoCoordinates& targetCoordinates,
-                                const QPersistentModelIndex& targetSnapIndex)                                     override;
+                        const GeoCoordinates& targetCoordinates,
+                        const QPersistentModelIndex& targetSnapIndex)                                     override;
 
     void addUngroupedModelHelper(GeoModelHelper* const newModelHelper);
 
 private Q_SLOTS:
 
-    void slotThumbnailFromModel(const QPersistentModelIndex& index, const QPixmap& pixmap);
+    void slotThumbnailFromModel(const QPersistentModelIndex& index,
+                                const QPixmap& pixmap);
 
 Q_SIGNALS:
 

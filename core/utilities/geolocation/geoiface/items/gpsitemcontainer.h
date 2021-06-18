@@ -50,11 +50,18 @@ enum Type
 
 typedef struct TagData
 {
+    TagData()
+        : tagType(TypeChild)
+    {
+    }
+
     QString tagName;
     QString tipName;
     Type    tagType;
 
 } TagData;
+
+// --------------------------------------------------------------------------
 
 class SaveProperties
 {
@@ -80,6 +87,8 @@ public:
     qreal longitude;
 };
 
+// --------------------------------------------------------------------------
+
 class GPSItemModel;
 class DMetadata;
 
@@ -87,21 +96,21 @@ class DIGIKAM_EXPORT GPSItemContainer
 {
 public:
 
-    static const int RoleCoordinates         = Qt::UserRole + 1;
+    static const int RoleCoordinates             = Qt::UserRole + 1;
 
-    static const int ColumnThumbnail         = 0;
-    static const int ColumnFilename          = 1;
-    static const int ColumnDateTime          = 2;
-    static const int ColumnLatitude          = 3;
-    static const int ColumnLongitude         = 4;
-    static const int ColumnAltitude          = 5;
-    static const int ColumnAccuracy          = 6;
-    static const int ColumnTags              = 7;
-    static const int ColumnStatus            = 8;
-    static const int ColumnDOP               = 9;
-    static const int ColumnFixType           = 10;
-    static const int ColumnNSatellites       = 11;
-    static const int ColumnSpeed             = 12;
+    static const int ColumnThumbnail             = 0;
+    static const int ColumnFilename              = 1;
+    static const int ColumnDateTime              = 2;
+    static const int ColumnLatitude              = 3;
+    static const int ColumnLongitude             = 4;
+    static const int ColumnAltitude              = 5;
+    static const int ColumnAccuracy              = 6;
+    static const int ColumnTags                  = 7;
+    static const int ColumnStatus                = 8;
+    static const int ColumnDOP                   = 9;
+    static const int ColumnFixType               = 10;
+    static const int ColumnNSatellites           = 11;
+    static const int ColumnSpeed                 = 12;
 
     static const int ColumnGPSItemContainerCount = 13;
 

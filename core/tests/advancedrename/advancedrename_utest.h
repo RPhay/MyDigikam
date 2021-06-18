@@ -47,7 +47,7 @@ public:
 
 private Q_SLOTS:
 
-    /*
+    /**
      * TOKEN TESTS
      */
     void testFileNameToken();
@@ -65,11 +65,12 @@ private Q_SLOTS:
     void testNumberToken();
     void testNumberToken_data();
 
-    /*
+    /**
      * MODIFIER TESTS
      */
-    //    void testUniqueModifier();
-
+/*
+    void testUniqueModifier();
+*/
     void testReplaceModifier();
     void testReplaceModifier_data();
 
@@ -91,7 +92,7 @@ private Q_SLOTS:
 
     void testUniqueModifier();
 
-    /*
+    /**
      * MANAGER TESTS
      */
     void addFiles_should_only_add_files();
@@ -122,12 +123,12 @@ private Q_SLOTS:
     void sortAction_name_desc();
     void sortAction_size_asc();
     void sortAction_size_desc();
-    /*
+/*
     void sortAction_date_asc();
     void sortAction_date_desc();
-    */
+*/
 
-    /*
+    /**
      * OTHER TESTS
      */
     void testEmptyParseString();

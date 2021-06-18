@@ -160,12 +160,12 @@ int main(int argc, char* argv[])
                                                QLatin1String("translations"),
                                                QStandardPaths::LocateDirectory);
 
-    QTranslator translator;
-
     if (loadTranslation && !transPath.isEmpty())
     {
         QString klanguagePath = QStandardPaths::writableLocation(QStandardPaths::GenericConfigLocation) +
                                 QLatin1Char('/') + QLatin1String("klanguageoverridesrc");
+
+        qCDebug(DIGIKAM_GENERAL_LOG) << "Qt translations path:" << transPath;
 
         if (!klanguagePath.isEmpty())
         {
@@ -180,16 +180,26 @@ int main(int argc, char* argv[])
             }
         }
 
-        bool ret = translator.load(QLocale(), QLatin1String("qtbase"),
-                                   QLatin1String("_"), transPath);
+        QStringList qtCatalogs;
+        qtCatalogs << QLatin1String("qt");
+        qtCatalogs << QLatin1String("qtbase");
+        qtCatalogs << QLatin1String("qt_help");
 
-        qCDebug(DIGIKAM_GENERAL_LOG) << "Qt translations path:" << transPath;
-        qCDebug(DIGIKAM_GENERAL_LOG) << "Locale:"  << QLocale().name()
-                                     << "Loading:" << ret;
-
-        if (ret)
+        foreach (const QString& catalog, qtCatalogs)
         {
-            app.installTranslator(&translator);
+            QTranslator* const translator = new QTranslator(&app);
+
+            if (translator->load(QLocale(), catalog, QLatin1String("_"), transPath))
+            {
+                qCDebug(DIGIKAM_GENERAL_LOG) << "Loaded locale:" << QLocale().name()
+                                             << "from catalog:"  << catalog;
+
+                app.installTranslator(translator);
+            }
+            else
+            {
+                delete translator;
+            }
         }
     }
 

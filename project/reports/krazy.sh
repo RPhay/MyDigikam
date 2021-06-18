@@ -8,6 +8,8 @@
 #  - Perl:Tie::IxHash and Perl:XML::LibXML modules at run-time.
 #  - Saxon 9HE java xml parser (saxon.jar) to export report as HTML [https://www.saxonica.com/download/java.xml].
 #
+# If '--nowebupdate' is passed as argument, static analyzer results are just created locally.
+#
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
 #
@@ -101,7 +103,11 @@ java -jar /opt/saxon/saxon9he.jar \
 
 cp ./krazy/style.css $REPORT_DIR/
 
-# update www.digikam.org report section.
-updateReportToWebsite "krazy" $REPORT_DIR $TITLE $(parseGitBranch)
+if [[ $1 != "--nowebupdate" ]]
+
+    # update www.digikam.org report section.
+    updateReportToWebsite "krazy" $REPORT_DIR $TITLE $(parseGitBranch)
+
+fi
 
 cd $ORIG_DIR

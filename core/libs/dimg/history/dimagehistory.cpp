@@ -73,8 +73,8 @@ DImageHistory::DImageHistory()
 }
 
 DImageHistory::DImageHistory(const DImageHistory& other)
+    : d(other.d)
 {
-    d = other.d;
 }
 
 DImageHistory::~DImageHistory()

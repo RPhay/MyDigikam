@@ -162,7 +162,9 @@ private:
     void hideToolTip();
     bool acceptToolTip(const QPoint& pos)                         const;
 
+    // cppcheck-suppress passedByValue
     QMimeData*      mimeData(const QList<QTreeWidgetItem*> items) const override;
+
     Qt::DropActions supportedDropActions()                        const override;
     void            startDrag(Qt::DropActions supportedActions)         override;
 

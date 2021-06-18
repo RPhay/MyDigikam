@@ -45,7 +45,9 @@ using namespace Digikam;
 namespace DigikamGenericPresentationPlugin
 {
 
-SoundtrackPreview::SoundtrackPreview(QWidget* const parent, const QList<QUrl>& urls, PresentationContainer* const sharedData)
+SoundtrackPreview::SoundtrackPreview(QWidget* const parent,
+                                     const QList<QUrl>& urls,
+                                     PresentationContainer* const sharedData)
     : QDialog(parent)
 {
     setModal(true);
@@ -138,38 +140,38 @@ PresentationAudioPage::PresentationAudioPage(QWidget* const parent,
 
     // --------------------------------------------------------
 
-    connect( m_SoundFilesListBox, SIGNAL(currentRowChanged(int)),
-             this, SLOT(slotSoundFilesSelected(int)) );
+    connect(m_SoundFilesListBox, SIGNAL(currentRowChanged(int)),
+            this, SLOT(slotSoundFilesSelected(int)));
 
-    connect( m_SoundFilesListBox, SIGNAL(signalAddedDropItems(QList<QUrl>)),
-             this, SLOT(slotAddDropItems(QList<QUrl>)));
+    connect(m_SoundFilesListBox, SIGNAL(signalAddedDropItems(QList<QUrl>)),
+            this, SLOT(slotAddDropItems(QList<QUrl>)));
 
-    connect( m_SoundFilesButtonAdd, SIGNAL(clicked()),
-             this, SLOT(slotSoundFilesButtonAdd()) );
+    connect(m_SoundFilesButtonAdd, SIGNAL(clicked()),
+            this, SLOT(slotSoundFilesButtonAdd()));
 
-    connect( m_SoundFilesButtonDelete, SIGNAL(clicked()),
-             this, SLOT(slotSoundFilesButtonDelete()) );
+    connect(m_SoundFilesButtonDelete, SIGNAL(clicked()),
+            this, SLOT(slotSoundFilesButtonDelete()));
 
-    connect( m_SoundFilesButtonUp, SIGNAL(clicked()),
-             this, SLOT(slotSoundFilesButtonUp()) );
+    connect(m_SoundFilesButtonUp, SIGNAL(clicked()),
+            this, SLOT(slotSoundFilesButtonUp()));
 
-    connect( m_SoundFilesButtonDown, SIGNAL(clicked()),
-             this, SLOT(slotSoundFilesButtonDown()) );
+    connect(m_SoundFilesButtonDown, SIGNAL(clicked()),
+            this, SLOT(slotSoundFilesButtonDown()));
 
-    connect( m_SoundFilesButtonLoad, SIGNAL(clicked()),
-             this, SLOT(slotSoundFilesButtonLoad()) );
+    connect(m_SoundFilesButtonLoad, SIGNAL(clicked()),
+            this, SLOT(slotSoundFilesButtonLoad()));
 
-    connect( m_SoundFilesButtonSave, SIGNAL(clicked()),
-             this, SLOT(slotSoundFilesButtonSave()) );
+    connect(m_SoundFilesButtonSave, SIGNAL(clicked()),
+            this, SLOT(slotSoundFilesButtonSave()));
 
-    connect( m_SoundFilesButtonReset, SIGNAL(clicked()),
-             this, SLOT(slotSoundFilesButtonReset()) );
+    connect(m_SoundFilesButtonReset, SIGNAL(clicked()),
+            this, SLOT(slotSoundFilesButtonReset()));
 
-    connect( m_previewButton, SIGNAL(clicked()),
-             this, SLOT(slotPreviewButtonClicked()));
+    connect(m_previewButton, SIGNAL(clicked()),
+            this, SLOT(slotPreviewButtonClicked()));
 
-    connect( d->sharedData->mainPage, SIGNAL(signalTotalTimeChanged(QTime)),
-             this, SLOT(slotImageTotalTimeChanged(QTime)));
+    connect(d->sharedData->mainPage, SIGNAL(signalTotalTimeChanged(QTime)),
+            this, SLOT(slotImageTotalTimeChanged(QTime)));
 }
 
 PresentationAudioPage::~PresentationAudioPage()
@@ -186,8 +188,8 @@ void PresentationAudioPage::readSettings()
     m_loopCheckBox->setChecked(d->sharedData->soundtrackLoop);
     m_playCheckBox->setChecked(d->sharedData->soundtrackPlay);
 
-    connect( d->sharedData->mainPage, SIGNAL(signalTotalTimeChanged(QTime)),
-             this, SLOT(slotImageTotalTimeChanged(QTime)) );
+    connect(d->sharedData->mainPage, SIGNAL(signalTotalTimeChanged(QTime)),
+            this, SLOT(slotImageTotalTimeChanged(QTime)));
 
     // if tracks are already set in d->sharedData, add them now
 
@@ -377,9 +379,7 @@ void PresentationAudioPage::slotSoundFilesButtonAdd()
     dlg->setAcceptMode(QFileDialog::AcceptOpen);
     dlg->setFileMode(QFileDialog::ExistingFiles);
 
-    dlg->exec();
-
-    if (dlg && !dlg->selectedUrls().isEmpty())
+    if (dlg->exec() == QDialog::Accepted)
     {
         addItems(dlg->selectedUrls());
         updateFileList();
@@ -390,12 +390,14 @@ void PresentationAudioPage::slotSoundFilesButtonAdd()
 
 void PresentationAudioPage::slotSoundFilesButtonDelete()
 {
-    int Index = m_SoundFilesListBox->currentRow();
+    int index = m_SoundFilesListBox->currentRow();
 
-    if (Index < 0)
+    if (index < 0)
+    {
         return;
+    }
 
-    PresentationAudioListItem* const pitem = static_cast<PresentationAudioListItem*>(m_SoundFilesListBox->takeItem(Index));
+    PresentationAudioListItem* const pitem = static_cast<PresentationAudioListItem*>(m_SoundFilesListBox->takeItem(index));
     d->urlList.removeAll(pitem->url());
     d->soundItems->remove(pitem->url());
     d->timeMutex->lock();
@@ -415,37 +417,37 @@ void PresentationAudioPage::slotSoundFilesButtonDelete()
 
 void PresentationAudioPage::slotSoundFilesButtonUp()
 {
-    int Cpt = 0;
+    int cpt = 0;
 
     for (int i = 0 ; i < m_SoundFilesListBox->count() ; ++i)
     {
         if (m_SoundFilesListBox->currentRow() == i)
         {
-            ++Cpt;
+            ++cpt;
         }
     }
 
-    if (Cpt == 0)
+    if (cpt == 0)
     {
         return;
     }
 
-    if (Cpt > 1)
+    if (cpt > 1)
     {
         QMessageBox::critical(this, QString(), i18n("You can only move image files up one at a time."));
         return;
     }
 
-    unsigned int Index = m_SoundFilesListBox->currentRow();
+    unsigned int index = m_SoundFilesListBox->currentRow();
 
-    if (Index == 0)
+    if (index == 0)
     {
         return;
     }
 
-    PresentationAudioListItem* const pitem = static_cast<PresentationAudioListItem*>(m_SoundFilesListBox->takeItem(Index));
+    PresentationAudioListItem* const pitem = static_cast<PresentationAudioListItem*>(m_SoundFilesListBox->takeItem(index));
 
-    m_SoundFilesListBox->insertItem(Index - 1, pitem);
+    m_SoundFilesListBox->insertItem(index - 1, pitem);
     m_SoundFilesListBox->setCurrentItem(pitem);
 
     updateFileList();
@@ -453,37 +455,37 @@ void PresentationAudioPage::slotSoundFilesButtonUp()
 
 void PresentationAudioPage::slotSoundFilesButtonDown()
 {
-    int Cpt = 0;
+    int cpt = 0;
 
     for (int i = 0 ; i < m_SoundFilesListBox->count() ; ++i)
     {
         if (m_SoundFilesListBox->currentRow() == i)
         {
-            ++Cpt;
+            ++cpt;
         }
     }
 
-    if (Cpt == 0)
+    if (cpt == 0)
     {
         return;
     }
 
-    if (Cpt > 1)
+    if (cpt > 1)
     {
         QMessageBox::critical(this, QString(), i18n("You can only move files down one at a time."));
         return;
     }
 
-    int Index = m_SoundFilesListBox->currentRow();
+    int index = m_SoundFilesListBox->currentRow();
 
-    if (Index == m_SoundFilesListBox->count())
+    if (index == m_SoundFilesListBox->count())
     {
         return;
     }
 
-    PresentationAudioListItem* const pitem = static_cast<PresentationAudioListItem*>(m_SoundFilesListBox->takeItem(Index));
+    PresentationAudioListItem* const pitem = static_cast<PresentationAudioListItem*>(m_SoundFilesListBox->takeItem(index));
 
-    m_SoundFilesListBox->insertItem(Index + 1, pitem);
+    m_SoundFilesListBox->insertItem(index + 1, pitem);
     m_SoundFilesListBox->setCurrentItem(pitem);
 
     updateFileList();
@@ -496,9 +498,7 @@ void PresentationAudioPage::slotSoundFilesButtonLoad()
     dlg->setAcceptMode(QFileDialog::AcceptOpen);
     dlg->setFileMode(QFileDialog::ExistingFile);
 
-    dlg->exec();
-
-    if (!dlg || dlg->selectedFiles().isEmpty())
+    if (dlg->exec() != QDialog::Accepted)
     {
         delete dlg;
 
@@ -556,9 +556,7 @@ void PresentationAudioPage::slotSoundFilesButtonSave()
     dlg->setAcceptMode(QFileDialog::AcceptSave);
     dlg->setFileMode(QFileDialog::AnyFile);
 
-    dlg->exec();
-
-    if (!dlg || dlg->selectedFiles().isEmpty())
+    if (dlg->exec() != QDialog::Accepted)
     {
         delete dlg;
 

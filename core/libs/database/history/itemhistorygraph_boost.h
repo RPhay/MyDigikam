@@ -966,7 +966,7 @@ public:
      */
     QList<Vertex> verticesDominatedBy(const Vertex& v,
                                       const Vertex& root,
-                                      const QList<Vertex> presortedVertices) const
+                                      const QList<Vertex>& presortedVertices) const
     {
         if (v.isNull() || isEmpty())
         {
@@ -979,13 +979,14 @@ public:
         QList<Vertex> dominatedTree = treeFromPredecessors(v, tree.predecessors);
 
         /// remove all vertices from the DFS of v that are not in the dominated tree
+
         QList<Vertex> orderedTree;
 
-        foreach (const Vertex& v, presortedVertices)
+        foreach (const Vertex& vv, presortedVertices)
         {
-            if (dominatedTree.contains(v))
+            if (dominatedTree.contains(vv))
             {
-                orderedTree << v;
+                orderedTree << vv;
             }
         }
 

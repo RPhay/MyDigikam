@@ -97,13 +97,13 @@ QString s_setXmpTagStringFromEntry(DMetadata* const meta,
             if (meta &&                     // Protection.
                 !xmpTags.isEmpty())         // If xmpTags is empty, we only return the matching value from the map.
             {
-                foreach (const QString& tag, xmpTags)
+                foreach (const QString& tag2, xmpTags)
                 {
                     // Only register the tag value if it doesn't exists yet.
 
-                    if (meta->getXmpTagString(tag.toLatin1().data()).isNull())
+                    if (meta->getXmpTagString(tag2.toLatin1().data()).isNull())
                     {
-                        meta->setXmpTagString(tag.toLatin1().data(), it.value());
+                        meta->setXmpTagString(tag2.toLatin1().data(), it.value());
                     }
                 }
             }
@@ -149,23 +149,31 @@ QString s_convertFFMpegFormatToXMP(int format)
     {
         case AV_SAMPLE_FMT_U8:
         case AV_SAMPLE_FMT_U8P:
+        {
             data = QLatin1String("8Int");
             break;
+        }
 
         case AV_SAMPLE_FMT_S16:
         case AV_SAMPLE_FMT_S16P:
+        {
             data = QLatin1String("16Int");
             break;
+        }
 
         case AV_SAMPLE_FMT_S32:
         case AV_SAMPLE_FMT_S32P:
+        {
             data = QLatin1String("32Int");
             break;
+        }
 
         case AV_SAMPLE_FMT_FLT:
         case AV_SAMPLE_FMT_FLTP:
+        {
             data = QLatin1String("32Float");
             break;
+        }
 
         case AV_SAMPLE_FMT_DBL:     // Not supported by XMP spec.
         case AV_SAMPLE_FMT_DBLP:    // Not supported by XMP spec.
@@ -174,8 +182,10 @@ QString s_convertFFMpegFormatToXMP(int format)
         case AV_SAMPLE_FMT_NONE:
         case AV_SAMPLE_FMT_NB:
         default:
+        {
             data = QLatin1String("Other");
             break;
+        }
 
         // NOTE: where are 'Compressed' and 'Packed' type from XMP spec into FFMPEG ?
     }
@@ -262,6 +272,7 @@ bool DMetadata::loadUsingFFmpeg(const QString& filePath)
         QString::number(fmt_ctx->nb_streams));
 
     // To only register one video, one audio stream, and one subtitle stream in XMP metadata.
+
     bool vstream = false;
     bool astream = false;
     bool sstream = false;

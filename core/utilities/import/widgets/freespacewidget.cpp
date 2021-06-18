@@ -179,15 +179,15 @@ void FreeSpaceWidget::addInformation(unsigned long kBSize,
                                      unsigned long kBUsed, unsigned long kBAvail,
                                      const QString& mountPoint)
 {
-    MountPointInfo info;
+    MountPointInfo inf;
 
-    info.mountPoint = mountPoint;
-    info.kBSize     = kBSize;
-    info.kBUsed     = kBUsed;
-    info.kBAvail    = kBAvail;
-    info.isValid    = (kBSize > 0);
+    inf.mountPoint = mountPoint;
+    inf.kBSize     = kBSize;
+    inf.kBUsed     = kBUsed;
+    inf.kBAvail    = kBAvail;
+    inf.isValid    = (kBSize > 0);
 
-    d->infos[mountPoint] = info;
+    d->infos[mountPoint] = inf;
 
     // update cumulative data
 

@@ -226,6 +226,7 @@ void WorkflowList::mouseDoubleClickEvent(QMouseEvent*)
     }
 }
 
+// cppcheck-suppress passedByValue
 QMimeData* WorkflowList::mimeData(const QList<QTreeWidgetItem*> items) const        // clazy:exclude=function-args-by-ref
 {
     QMimeData* const mimeData = new QMimeData();

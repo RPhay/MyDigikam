@@ -90,6 +90,8 @@ private:
 
     void        startDrag(Qt::DropActions supportedActions)         override;
     QStringList mimeTypes()                                   const override;
+
+    // cppcheck-suppress passedByValue
     QMimeData*  mimeData(const QList<QTreeWidgetItem*> items) const override;
 
     void mouseDoubleClickEvent(QMouseEvent*)                        override;

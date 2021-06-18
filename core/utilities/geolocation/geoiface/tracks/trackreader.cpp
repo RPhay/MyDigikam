@@ -44,7 +44,7 @@ class Q_DECL_HIDDEN TrackReader::Private
 public:
 
     explicit Private()
-        : fileData(nullptr),
+        : fileData             (nullptr),
           verifyFoundGPXElement(false)
     {
     }
@@ -59,7 +59,7 @@ public:
 
 TrackReader::TrackReader(TrackReadResult* const dataTarget)
     : QXmlDefaultHandler(),
-      d(new Private)
+      d                 (new Private)
 {
     d->fileData = dataTarget;
 }
@@ -89,7 +89,8 @@ QDateTime TrackReader::ParseTime(QString timeString)
     const int timeZonePlusPosition  = timeString.lastIndexOf(QLatin1Char('+'));
     const int timeZoneMinusPosition = timeString.lastIndexOf(QLatin1Char('-'));
 
-    if ( (timeZonePlusPosition == timeZoneSignPosition) || (timeZoneMinusPosition == timeZoneSignPosition) )
+    if ((timeZonePlusPosition  == timeZoneSignPosition)   ||
+        (timeZoneMinusPosition == timeZoneSignPosition))
     {
         const int timeZoneSign       = (timeZonePlusPosition == timeZoneSignPosition) ? +1 : -1;
 
@@ -238,7 +239,10 @@ bool TrackReader::endElement(const QString& namespaceURI, const QString& localNa
     return true;
 }
 
-bool TrackReader::startElement(const QString& namespaceURI, const QString& localName, const QString& qName, const QXmlAttributes& atts)
+bool TrackReader::startElement(const QString& namespaceURI,
+                               const QString& localName,
+                               const QString& qName,
+                               const QXmlAttributes& atts)
 {
     Q_UNUSED(qName)
 
@@ -326,6 +330,7 @@ TrackReader::TrackReadResult TrackReader::loadTrackFile(const QUrl& url)
     if (!parsedData.isValid)
     {
         parsedData.loadError = i18n("Parsing error: %1", trackReader.errorString());
+
         return parsedData;
     }
 

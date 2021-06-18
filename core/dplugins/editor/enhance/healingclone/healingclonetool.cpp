@@ -436,7 +436,7 @@ void HealingCloneTool::clone(DImg* const img,
     d->previewWidget->updateImage(*img);
 }
 
-void HealingCloneTool::updateLasso(std::vector<QPoint>& points)
+void HealingCloneTool::updateLasso(const std::vector<QPoint>& points)
 {
     uint radius              = 5;
     static uint colorCounter = 0;
@@ -551,8 +551,8 @@ void HealingCloneTool::slotContinuePolygon()
         return;
     }
 
-    QPoint& start              = d->previousLassoPoint;
-    QPoint& end                = d->startLassoPoint;
+    const QPoint& start        = d->previousLassoPoint;
+    const QPoint& end          = d->startLassoPoint;
     std::vector<QPoint> points = interpolate(start, end);
     updateLasso(points);
 
