@@ -70,11 +70,13 @@ void MyTreeWidget::startDrag(Qt::DropActions /*supportedActions*/)
     drag->exec(Qt::CopyAction);
 }
 
+// cppcheck-suppress passedByValue
 QMimeData* MyTreeWidget::mimeData(const QList<QTreeWidgetItem*> items) const        // clazy:exclude=function-args-by-ref
 {
     return QTreeWidget::mimeData(items);
 }
 
+// cppcheck-suppress passedByValue
 QMimeData* MyTreeWidget::mimeData(const QModelIndexList itemsToDrag) const          // clazy:exclude=function-args-by-ref
 {
     MyDragData* const mimeData = new MyDragData;
