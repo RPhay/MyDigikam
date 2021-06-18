@@ -117,6 +117,8 @@ private:
 
     Qt::DropActions supportedDropActions()                        const override;
     QStringList     mimeTypes()                                   const override;
+
+    // cppcheck-suppress passedByValue
     QMimeData*      mimeData(const QList<QTreeWidgetItem*> items) const override;
 
     void dragEnterEvent(QDragEnterEvent*)                               override;

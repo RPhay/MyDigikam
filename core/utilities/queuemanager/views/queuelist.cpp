@@ -367,6 +367,7 @@ Qt::DropActions QueueListView::supportedDropActions() const
     return (Qt::CopyAction | Qt::MoveAction);
 }
 
+// cppcheck-suppress passedByValue
 QMimeData* QueueListView::mimeData(const QList<QTreeWidgetItem*> items) const       // clazy:exclude=function-args-by-ref
 {
     QList<QUrl> urls;
