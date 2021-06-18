@@ -160,7 +160,7 @@ void AllMessagesListJob::jobFinished(KJob *kjob)
 
     if (m_jobs.size() == 0)
     {
-        qSort(d->list); // sort by message ID (which should be equivalent to sorting by date)
+        std::sort(d->list.begin(), d->list.end()); // sort by message ID (which should be equivalent to sorting by date)
         emitResult();
     }
 }
