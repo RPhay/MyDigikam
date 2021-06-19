@@ -1051,16 +1051,13 @@ void DItemsList::slotLoadItems()
             QList<QUrl> urls;
             urls.append(QUrl(url.toString()));
 
-            if (!urls.isEmpty())
-            {
-                //allow tools to append a new file
+            //allow tools to append a new file
 
-                slotAddImages(urls);
+            slotAddImages(urls);
 
-                // read tool Image custom attributes and children element
+            // read tool Image custom attributes and children element
 
-                emit signalXMLLoadImageElement(xmlReader);
-            }
+            emit signalXMLLoadImageElement(xmlReader);
         }
         else if (xmlReader.isStartElement() && (xmlReader.name() != QLatin1String("Images")))
         {
