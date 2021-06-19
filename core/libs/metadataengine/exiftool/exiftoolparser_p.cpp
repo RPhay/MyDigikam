@@ -148,6 +148,11 @@ QString ExifToolParser::Private::actionString(int cmdAction) const
             return QLatin1String("Translate Tags");
         }
 
+        case ExifToolProcess::VERSION_STRING:
+        {
+            return QLatin1String("Version String");
+        }
+
         default: // ExifToolProcess::NO_ACTION
         {
             break;
