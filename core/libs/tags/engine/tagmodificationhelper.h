@@ -230,7 +230,7 @@ private:
      * Returns all sub-tags of the given ones which have the person property.
      * This includes the root tags, if they have the property, too.
      */
-    QSet<TAlbum*> getFaceTags(const QList<TAlbum*> tags);
+    QSet<TAlbum*> getFaceTags(const QList<TAlbum*>& tags);
 
 private:
 

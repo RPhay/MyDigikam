@@ -734,7 +734,7 @@ QList<TAlbum*> TagModificationHelper::getFaceTags(TAlbum* rootTag)
     return getFaceTags(tags).values();
 }
 
-QSet<TAlbum*> TagModificationHelper::getFaceTags(const QList<TAlbum*> tags)
+QSet<TAlbum*> TagModificationHelper::getFaceTags(const QList<TAlbum*>& tags)
 {
     QSet<TAlbum*> faceTags;
 
