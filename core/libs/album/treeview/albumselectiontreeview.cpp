@@ -211,7 +211,7 @@ AlbumSelectionTreeView::AlbumSelectionTreeView(QWidget* const parent,
                                                AlbumModel* const model,
                                                AlbumModificationHelper* const albumModificationHelper)
     : AlbumTreeView(parent),
-      d(new Private)
+      d            (new Private)
 {
     setAlbumModel(model);
     d->albumModificationHelper = albumModificationHelper;
@@ -338,7 +338,7 @@ void AlbumSelectionTreeView::slotRebuildThumbs()
 
     // if physical album, schedule a collection scan of current album's path
 
-    if (album && album->type() == Album::PHYSICAL)
+    if (album->type() == Album::PHYSICAL)
     {
         NewItemsFinder* const tool2 = new NewItemsFinder(NewItemsFinder::ScheduleCollectionScan,
                                                          QStringList() << static_cast<PAlbum*>(album)->folderPath());
@@ -403,8 +403,8 @@ bool AlbumSelectionTreeView::viewportEvent(QEvent* event)
 
     // visualRect can be larger than viewport, intersect with viewport rect
 
-    option.rect                 &= viewport()->rect();
-    option.state                |= (index == currentIndex() ? QStyle::State_HasFocus : QStyle::State_None);
+    option.rect                &= viewport()->rect();
+    option.state               |= (index == currentIndex() ? QStyle::State_HasFocus : QStyle::State_None);
     d->toolTip->show(option, index);
 
     return true;
