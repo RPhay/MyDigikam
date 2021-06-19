@@ -81,7 +81,7 @@ public:
     SAlbum* createFuzzySearchFromSketch(const QString& name,
                                         SketchWidget* sketchWidget,
                                         unsigned int numberOfResults,
-                                        QList<int>& targetAlbums,
+                                        const QList<int>& targetAlbums,
                                         bool overwriteIfExisting = false);
 
     /**
@@ -92,7 +92,7 @@ public:
                                         const QString& filePath,
                                         float threshold,
                                         float maxThreshold,
-                                        QList<int>& targetAlbums,
+                                        const QList<int>& targetAlbums,
                                         bool overwriteIfExisting = false);
 
     /**
@@ -103,7 +103,7 @@ public:
                                        const ItemInfo& image,
                                        float threshold,
                                        float maxThreshold,
-                                       QList<int>& targetAlbums,
+                                       const QList<int>& targetAlbums,
                                        bool overwriteIfExisting = false);
 
 public Q_SLOTS:
@@ -153,7 +153,7 @@ public Q_SLOTS:
     void slotCreateFuzzySearchFromSketch(const QString& name,
                                          SketchWidget* sketchWidget,
                                          unsigned int numberOfResults,
-                                         QList<int>& targetAlbums,
+                                         const QList<int>& targetAlbums,
                                          bool overwriteIfExisting = false);
 
     /**
@@ -173,7 +173,7 @@ public Q_SLOTS:
                                         const ItemInfo& image,
                                         float threshold,
                                         float maxThreshold,
-                                        QList<int>& targetAlbums,
+                                        const QList<int>& targetAlbums,
                                         bool overwriteIfExisting = false);
 
     /**
@@ -194,7 +194,7 @@ public Q_SLOTS:
                                           const QString& filePath,
                                           float threshold,
                                           float maxThreshold,
-                                          QList<int>& targetAlbums,
+                                          const QList<int>& targetAlbums,
                                           bool overwriteIfExisting);
 
 private:

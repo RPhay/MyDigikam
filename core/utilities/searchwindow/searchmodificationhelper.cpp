@@ -62,7 +62,7 @@ public:
 
 SearchModificationHelper::SearchModificationHelper(QObject* const parent, QWidget* const dialogParent)
     : QObject(parent),
-      d(new Private)
+      d      (new Private)
 {
     d->dialogParent = dialogParent;
 }
@@ -221,7 +221,7 @@ SAlbum* SearchModificationHelper::slotCreateTimeLineSearch(const QString& desire
 SAlbum* SearchModificationHelper::createFuzzySearchFromSketch(const QString& proposedName,
                                                               SketchWidget* sketchWidget,
                                                               unsigned int numberOfResults,
-                                                              QList<int>& targetAlbums,
+                                                              const QList<int>& targetAlbums,
                                                               bool overwriteIfExisting)
 {
     if (sketchWidget->isClear())
@@ -272,17 +272,21 @@ SAlbum* SearchModificationHelper::createFuzzySearchFromSketch(const QString& pro
 void SearchModificationHelper::slotCreateFuzzySearchFromSketch(const QString& proposedName,
                                                                SketchWidget* sketchWidget,
                                                                unsigned int numberOfResults,
-                                                               QList<int>& targetAlbums,
+                                                               const QList<int>& targetAlbums,
                                                                bool overwriteIfExisting)
 {
-    createFuzzySearchFromSketch(proposedName, sketchWidget, numberOfResults, targetAlbums, overwriteIfExisting);
+    createFuzzySearchFromSketch(proposedName,
+                                sketchWidget,
+                                numberOfResults,
+                                targetAlbums,
+                                overwriteIfExisting);
 }
 
 SAlbum* SearchModificationHelper::createFuzzySearchFromDropped(const QString& proposedName,
                                                                const QString& filePath,
                                                                float threshold,
                                                                float maxThreshold,
-                                                               QList<int>& targetAlbums,
+                                                               const QList<int>& targetAlbums,
                                                                bool overwriteIfExisting)
 {
     QString name = proposedName;
@@ -329,17 +333,22 @@ void SearchModificationHelper::slotCreateFuzzySearchFromDropped(const QString& p
                                                                 const QString& filePath,
                                                                 float threshold,
                                                                 float maxThreshold,
-                                                                QList<int>& targetAlbums,
+                                                                const QList<int>& targetAlbums,
                                                                 bool overwriteIfExisting)
 {
-    createFuzzySearchFromDropped(proposedName, filePath, threshold, maxThreshold, targetAlbums, overwriteIfExisting);
+    createFuzzySearchFromDropped(proposedName,
+                                 filePath,
+                                 threshold,
+                                 maxThreshold,
+                                 targetAlbums,
+                                 overwriteIfExisting);
 }
 
 SAlbum* SearchModificationHelper::createFuzzySearchFromImage(const QString& proposedName,
                                                              const ItemInfo& image,
                                                              float threshold,
                                                              float maxThreshold,
-                                                             QList<int>& targetAlbums,
+                                                             const QList<int>& targetAlbums,
                                                              bool overwriteIfExisting)
 {
     if (image.isNull())
@@ -405,10 +414,15 @@ void SearchModificationHelper::slotCreateFuzzySearchFromImage(const QString& pro
                                                               const ItemInfo& image,
                                                               float threshold,
                                                               float maxThreshold,
-                                                              QList<int>& targetAlbums,
+                                                              const QList<int>& targetAlbums,
                                                               bool overwriteIfExisting)
 {
-    createFuzzySearchFromImage(proposedName, image, threshold, maxThreshold, targetAlbums, overwriteIfExisting);
+    createFuzzySearchFromImage(proposedName,
+                               image,
+                               threshold,
+                               maxThreshold,
+                               targetAlbums,
+                               overwriteIfExisting);
 }
 
 } // namespace Digikam
