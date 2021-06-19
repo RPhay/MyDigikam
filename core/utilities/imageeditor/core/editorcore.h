@@ -156,22 +156,22 @@ public:
      * Convert a DImg image to a pixmap for screen using color
      * managed view if necessary.
      */
-    QPixmap               convertToPixmap(DImg& img)  const;
+    QPixmap               convertToPixmap(const DImg& img)  const;
 
-    QString               getImageFileName()          const;
-    QString               getImageFilePath()          const;
-    QString               getImageFormat()            const;
-    QStringList           getUndoHistory()            const;
-    QStringList           getRedoHistory()            const;
-    UndoState             undoState()                 const;
-    int                   availableUndoSteps()        const;
-    int                   availableRedoSteps()        const;
-    IccProfile            getEmbeddedICC()            const;
-    MetaEngineData        getMetadata()               const;
-    DImageHistory         getItemHistory()            const;
-    DImageHistory         getInitialImageHistory()    const;
-    DImageHistory         getImageHistoryOfFullRedo() const;
-    DImageHistory         getResolvedInitialHistory() const;
+    QString               getImageFileName()                const;
+    QString               getImageFilePath()                const;
+    QString               getImageFormat()                  const;
+    QStringList           getUndoHistory()                  const;
+    QStringList           getRedoHistory()                  const;
+    UndoState             undoState()                       const;
+    int                   availableUndoSteps()              const;
+    int                   availableRedoSteps()              const;
+    IccProfile            getEmbeddedICC()                  const;
+    MetaEngineData        getMetadata()                     const;
+    DImageHistory         getItemHistory()                  const;
+    DImageHistory         getInitialImageHistory()          const;
+    DImageHistory         getImageHistoryOfFullRedo()       const;
+    DImageHistory         getResolvedInitialHistory()       const;
     void                  setResolvedInitialHistory(const DImageHistory& history);
 
 protected Q_SLOTS:
