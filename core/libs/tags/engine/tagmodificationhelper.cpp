@@ -193,7 +193,7 @@ void TagModificationHelper::slotTagEdit(TAlbum* t)
         return;
     }
 
-    if (tag && (tag->title() != title))
+    if (tag->title() != title)
     {
         QString errMsg;
 
@@ -214,7 +214,7 @@ void TagModificationHelper::slotTagEdit(TAlbum* t)
         }
     }
 
-    if (tag && (tag->icon() != icon))
+    if (tag->icon() != icon)
     {
         QString errMsg;
 
@@ -224,7 +224,7 @@ void TagModificationHelper::slotTagEdit(TAlbum* t)
         }
     }
 
-    if (tag && (tag->property(TagPropertyName::tagKeyboardShortcut()) != ks.toString()))
+    if (tag->property(TagPropertyName::tagKeyboardShortcut()) != ks.toString())
     {
         TagsActionMngr::defaultManager()->updateTagShortcut(tag->id(), ks);
     }
