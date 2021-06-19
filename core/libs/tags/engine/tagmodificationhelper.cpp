@@ -317,7 +317,7 @@ void TagModificationHelper::slotTagDelete()
     slotTagDelete(boundTag(sender()));
 }
 
-void TagModificationHelper::slotMultipleTagDel(QList<TAlbum*>& tags)
+void TagModificationHelper::slotMultipleTagDel(const QList<TAlbum*>& tags)
 {
     QString tagWithChildrens;
     QString tagWithoutImages;
@@ -326,7 +326,6 @@ void TagModificationHelper::slotMultipleTagDel(QList<TAlbum*>& tags)
 
     foreach (TAlbum* const t, tags)
     {
-
         if (!t || t->isRoot())
         {
             continue;
@@ -455,7 +454,7 @@ void TagModificationHelper::slotFaceTagDelete()
     slotFaceTagDelete(boundTag(sender()));
 }
 
-void TagModificationHelper::slotMultipleFaceTagDel(QList<TAlbum*>& tags)
+void TagModificationHelper::slotMultipleFaceTagDel(const QList<TAlbum*>& tags)
 {
     QString tagsWithChildren;
     QString tagsWithImages;
@@ -707,7 +706,7 @@ void TagModificationHelper::slotTagToFaceTag()
     slotTagToFaceTag(boundTag(sender()));
 }
 
-void TagModificationHelper::slotMultipleTagsToFaceTags(QList<TAlbum*>& tags)
+void TagModificationHelper::slotMultipleTagsToFaceTags(const QList<TAlbum*>& tags)
 {
     foreach (TAlbum* const selectedTag, tags)
     {
@@ -735,7 +734,7 @@ QList<TAlbum*> TagModificationHelper::getFaceTags(TAlbum* rootTag)
     return getFaceTags(tags).values();
 }
 
-QSet<TAlbum*> TagModificationHelper::getFaceTags(QList<TAlbum*> tags)
+QSet<TAlbum*> TagModificationHelper::getFaceTags(const QList<TAlbum*> tags)
 {
     QSet<TAlbum*> faceTags;
 
