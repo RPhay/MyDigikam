@@ -377,4 +377,5 @@ BUGFIXES:
 354 ==> 354600 - Changing background colour after Free Rotation.
 355 ==> 438855 - ShowFoto - DNG-Converter I.
 356 ==> 438856 - ShowFoto - DNG-Converter II.
-357 ==> 
+357 ==> 438878 - Ambiguous Shortcut window on startup.
+358 ==> 
