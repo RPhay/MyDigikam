@@ -53,7 +53,6 @@ public:
         ReplaceAllEntries,         ///< Remove entries for all languages and add one new entry
         ReplaceLanguageEntry,      ///< Only replace the entry with the given language
         AddEntryToExisting         ///< No constraints on adding the entry
-
     };
 
 public:

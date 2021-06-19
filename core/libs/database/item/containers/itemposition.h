@@ -58,7 +58,7 @@ public:
      * The information is read from the database.
      */
     explicit ItemPosition(qlonglong imageId);
-    ItemPosition(CoreDbAccess& access, qlonglong imageId);
+    ItemPosition(const CoreDbAccess& access, qlonglong imageId);
 
     ItemPosition(const ItemPosition& other);
     ~ItemPosition();
@@ -74,10 +74,11 @@ public:
      */
     bool isEmpty()               const;
 
-    /** Returns latitude/longitude in the format as described by
-     *  the XMP specification as "GPSCoordinate":
-     *  A Text value in the form ?DDD,MM,SSk? or ?DDD,MM.mmk?.
-     *  This provides lossless storage.
+    /**
+     * Returns latitude/longitude in the format as described by
+     * the XMP specification as "GPSCoordinate":
+     * A Text value in the form ?DDD,MM,SSk? or ?DDD,MM.mmk?.
+     * This provides lossless storage.
      */
     QString latitude()           const;
     QString longitude()          const;

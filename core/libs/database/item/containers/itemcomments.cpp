@@ -165,7 +165,7 @@ ItemComments::ItemComments(qlonglong imageid)
     d->init(access, imageid);
 }
 
-ItemComments::ItemComments(CoreDbAccess& access, qlonglong imageid)
+ItemComments::ItemComments(const CoreDbAccess& access, qlonglong imageid)
     : d(new Private)
 {
     d->init(access, imageid);
