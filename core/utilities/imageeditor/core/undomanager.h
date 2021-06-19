@@ -59,18 +59,18 @@ public:
 
     void clear(bool clearCache = true);
 
-    bool          anyMoreUndo()               const;
-    bool          anyMoreRedo()               const;
-    int           availableUndoSteps()        const;
-    int           availableRedoSteps()        const;
-    QStringList   getUndoHistory()            const;
-    QStringList   getRedoHistory()            const;
-    bool          isAtOrigin()                const;
-    void          setOrigin()                 const;
-    bool          hasChanges()                const;
+    bool          anyMoreUndo()                                 const;
+    bool          anyMoreRedo()                                 const;
+    int           availableUndoSteps()                          const;
+    int           availableRedoSteps()                          const;
+    QStringList   getUndoHistory()                              const;
+    QStringList   getRedoHistory()                              const;
+    bool          isAtOrigin()                                  const;
+    void          setOrigin()                                   const;
+    bool          hasChanges()                                  const;
 
     /// The history if all available redo steps are redone
-    DImageHistory getImageHistoryOfFullRedo() const;
+    DImageHistory getImageHistoryOfFullRedo()                   const;
 
     void clearPreviousOriginData();
 
@@ -82,7 +82,7 @@ private:
     void redoStep(bool execute, bool flyingRollback);
     void makeSnapshot(int index);
     void restoreSnapshot(int index, const UndoMetadataContainer& c);
-    void getSnapshot(int index, DImg* const img) const;
+    void getSnapshot(int index, DImg* const img)                const;
 
 private:
 

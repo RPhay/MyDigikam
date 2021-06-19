@@ -111,10 +111,7 @@ void UndoManager::addAction(UndoAction* const action)
         QVariant      originDataBeforeStep    = d->core->getImg()->fileOriginData();
         DImageHistory originHistoryBeforeStep = d->core->getResolvedInitialHistory();
 
-        if (action)
-        {
-            action->setFileOriginData(originDataBeforeStep, originHistoryBeforeStep);
-        }
+        action->setFileOriginData(originDataBeforeStep, originHistoryBeforeStep);
     }
 
     // if origin is at one of the redo action that are now invalid,
@@ -214,7 +211,7 @@ void UndoManager::undoStep(bool saveRedo, bool execute, bool flyingRollback)
     DImageHistory originHistoryAfterStep       = d->core->getResolvedInitialHistory();
     DImageHistory originHistoryBeforeStep;
 
-    int lastOrigin = 0;
+    int lastOrigin                             = 0;
 
     if (isAtOrigin())
     {
@@ -311,7 +308,6 @@ void UndoManager::undoStep(bool saveRedo, bool execute, bool flyingRollback)
     {
         d->origin--;
     }
-
 }
 
 void UndoManager::redoStep(bool execute, bool flyingRollback)
@@ -524,22 +520,22 @@ void UndoManager::clearRedoActions()
 
 bool UndoManager::anyMoreUndo() const
 {
-    return !d->undoActions.isEmpty();
+    return (!d->undoActions.isEmpty());
 }
 
 bool UndoManager::anyMoreRedo() const
 {
-    return !d->redoActions.isEmpty();
+    return (!d->redoActions.isEmpty());
 }
 
 int UndoManager::availableUndoSteps() const
 {
-    return d->undoActions.isEmpty();
+    return (d->undoActions.isEmpty());
 }
 
 int UndoManager::availableRedoSteps() const
 {
-    return d->redoActions.isEmpty();
+    return (d->redoActions.isEmpty());
 }
 
 QStringList UndoManager::getUndoHistory() const
