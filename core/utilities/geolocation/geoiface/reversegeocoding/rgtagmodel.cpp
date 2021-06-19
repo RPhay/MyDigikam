@@ -478,11 +478,11 @@ int RGTagModel::columnCount(const QModelIndex& parent) const
         return 1;
     }
 
-    if      (parentBranch && (parentBranch->type == TypeSpacer))
+    if      (parentBranch->type == TypeSpacer)
     {
         return 1;
     }
-    else if (parentBranch && (parentBranch->type == TypeNewChild))
+    else if (parentBranch->type == TypeNewChild)
     {
         return 1;
     }
@@ -1002,8 +1002,7 @@ void RGTagModel::readdTag(TreeBranch*& currentBranch,
                      currentAddressElementIndex + 1);
             return;
         }
-
-        if (!found1)
+        else
         {
             QModelIndex currentIndex;
 
