@@ -778,6 +778,7 @@ void ContextMenuHelper::addAlbumActions()
 {
     QList<QAction*> albumActions;
 
+    // cppcheck-suppress knownConditionTrueFalse ; Code is missing here?
     if (!albumActions.isEmpty())
     {
         d->parent->addActions(albumActions);
