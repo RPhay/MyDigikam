@@ -134,8 +134,13 @@ bool ExifToolProcess::start()
     args << QLatin1String("-stay_open");
     args << QLatin1String("true");
 
+    // See bug #438888
+
     args << QLatin1String("-charset");
     args << QLatin1String("FileName=UTF8");
+
+    args << QLatin1String("-charset");
+    args << QLatin1String("iptc=UTF8");
 
     //-- Other options
 
