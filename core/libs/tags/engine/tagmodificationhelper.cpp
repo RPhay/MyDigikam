@@ -748,27 +748,23 @@ QSet<TAlbum*> TagModificationHelper::getFaceTags(const QList<TAlbum*>& tags)
         AlbumPointer<TAlbum> tag(tAlbum);
         AlbumIterator iter(tag);
 
-        // Get all shild tags which have the person property.
+        // Get all child tags which have the person property.
 
         while (iter.current())
         {
-            Album* const album = iter.current();
+            Album* const album    = iter.current();
+            TAlbum* const tAlbum2 = dynamic_cast<TAlbum*>(album);
 
             // Make sure that no nullp pointer dereference is done.
-            // though while(iter.current()) already tests for  the current
+            // though while(iter.current()) already tests for the current
             // album being true, i.e. > 0 , i.e. non-null
 
-            if (album)
+            if (tAlbum2 && FaceTags::isPerson(tAlbum2->id()))
             {
-                TAlbum* const tAlbum2 = dynamic_cast<TAlbum*>(album);
-
-                if (tAlbum2 && FaceTags::isPerson(tAlbum2->id()))
-                {
-                    faceTags.insert(tAlbum2);
-                }
-
-                ++iter;
+                faceTags.insert(tAlbum2);
             }
+
+            ++iter;
         }
     }
 
