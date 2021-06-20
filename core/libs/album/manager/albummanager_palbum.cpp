@@ -569,21 +569,19 @@ void AlbumManager::removePAlbum(PAlbum* album)
     }
 
     // remove all children of this album
+
     Album* child        = album->firstChild();
     PAlbum* toBeRemoved = nullptr;
 
     while (child)
     {
         Album* next = child->next();
+
         toBeRemoved = static_cast<PAlbum*>(child);
+        removePAlbum(toBeRemoved);
+        toBeRemoved = nullptr;
 
-        if (toBeRemoved)
-        {
-            removePAlbum(toBeRemoved);
-            toBeRemoved = nullptr;
-        }
-
-        child = next;
+        child       = next;
     }
 
     emit signalAlbumAboutToBeDeleted(album);
