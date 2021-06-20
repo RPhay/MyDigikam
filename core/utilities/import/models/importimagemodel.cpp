@@ -1045,19 +1045,16 @@ QVariant ImportItemModel::data(const QModelIndex& index, int role) const
         case Qt::ToolTipRole:
         {
             return d->infos.at(index.row()).name;
-            break;
         }
 
         case ImportItemModelPointerRole:
         {
             return QVariant::fromValue(const_cast<ImportItemModel*>(this));
-            break;
         }
 
         case ImportItemModelInternalId:
         {
             return index.row();
-            break;
         }
     }
 
