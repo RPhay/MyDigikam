@@ -115,15 +115,11 @@ void AlbumManager::scanTAlbums()
         {
             TagInfo info;
             TAlbum* const album = static_cast<TAlbum*>(it2.current());
-
-            if (album)
-            {
-                info.id     = album->m_id;
-                info.pid    = album->m_pid;
-                info.name   = album->m_title;
-                info.icon   = album->m_icon;
-                info.iconId = album->m_iconId;
-            }
+            info.id             = album->m_id;
+            info.pid            = album->m_pid;
+            info.name           = album->m_title;
+            info.icon           = album->m_icon;
+            info.iconId         = album->m_iconId;
 
             tList.append(info);
             ++it2;
