@@ -94,7 +94,7 @@ QByteArray ExifToolParser::Private::filePathEncoding(const QFileInfo& fi) const
 
 #ifdef Q_OS_WIN
 
-    return (QDir::toNativeSeparators(fi.filePath()).toLocal8Bit());
+    return (QDir::toNativeSeparators(fi.filePath()).toUtf8());
 
 #else
 
