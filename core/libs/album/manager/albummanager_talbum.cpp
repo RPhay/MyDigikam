@@ -113,15 +113,19 @@ void AlbumManager::scanTAlbums()
 
         while (it2.current())
         {
-            TagInfo info;
-            TAlbum* const album = static_cast<TAlbum*>(it2.current());
-            info.id             = album->m_id;
-            info.pid            = album->m_pid;
-            info.name           = album->m_title;
-            info.icon           = album->m_icon;
-            info.iconId         = album->m_iconId;
+            TAlbum* const album = dynamic_cast<TAlbum*>(it2.current());
 
-            tList.append(info);
+            if (album)
+            {
+                TagInfo info;
+                info.id     = album->m_id;
+                info.pid    = album->m_pid;
+                info.name   = album->m_title;
+                info.icon   = album->m_icon;
+                info.iconId = album->m_iconId;
+                tList.append(info);
+            }
+
             ++it2;
         }
 
@@ -893,13 +897,16 @@ void AlbumManager::removeTAlbum(TAlbum* album)
 
     while (child)
     {
-        Album* next = child->next();
+        Album* const next = child->next();
+        toBeRemoved       = dynamic_cast<TAlbum*>(child);
 
-        toBeRemoved = static_cast<TAlbum*>(child);
-        removeTAlbum(toBeRemoved);
-        toBeRemoved = nullptr;
+        if (toBeRemoved)
+        {
+            removeTAlbum(toBeRemoved);
+            toBeRemoved = nullptr;
+        }
 
-        child       = next;
+        child             = next;
     }
 
     emit signalAlbumAboutToBeDeleted(album);
