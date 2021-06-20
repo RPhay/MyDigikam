@@ -181,7 +181,6 @@ public:
         d->albumModificationHelper->bindAlbum(d->rebuildThumbsAction, album);
         cmh.addImportMenu();
         cmh.addExportMenu();
-        cmh.addAlbumActions();
         cmh.addSeparator();
 
         // --------------------------------------------------------
