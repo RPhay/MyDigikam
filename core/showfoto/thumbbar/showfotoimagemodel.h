@@ -50,7 +50,9 @@ class ShowfotoItemModel : public QAbstractListModel,
 public:
     enum ShowfotoItemModelRoles
     {
-        /// An ShowfotoItemModel* pointer to this model
+        /**
+         * An ShowfotoItemModel* pointer to this model
+         */
         ShowfotoItemModelPointerRole = Qt::UserRole,
         ShowfotoItemModelInternalId  = Qt::UserRole + 1,
 
@@ -60,10 +62,14 @@ public:
          */
         ThumbnailRole                 = Qt::UserRole + 2,
 
-        /// Return (optional) extraData field
+        /**
+         * Return (optional) extraData field
+         */
         ExtraDataRole                 = Qt::UserRole + 3,
 
-        /// Returns the number of duplicate indexes for the same image id
+        /**
+         * Returns the number of duplicate indexes for the same image id
+         */
         ExtraDataDuplicateCount       = Qt::UserRole + 6,
 
         FilterModelRoles              = Qt::UserRole + 100
@@ -260,10 +266,14 @@ protected:
     void emitDataChangedForAll();
     void emitDataChangedForSelections(const QItemSelection& selection);
 
-    /// Called when the internal storage is cleared.
+    /**
+     * Called when the internal storage is cleared.
+     */
     virtual void showfotoItemInfosCleared() {};
 
-    /// Called before rowsAboutToBeRemoved
+    /**
+     * Called before rowsAboutToBeRemoved
+     */
     virtual void showfotoItemInfosAboutToBeRemoved(int /*begin*/, int /*end*/) {};
 
 private:

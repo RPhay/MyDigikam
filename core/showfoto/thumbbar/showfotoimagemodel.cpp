@@ -163,7 +163,7 @@ ShowfotoItemInfo ShowfotoItemModel::retrieveShowfotoItemInfo(const QModelIndex& 
     }
 
     ShowfotoItemModel* const model = index.data(ShowfotoItemModelPointerRole).value<ShowfotoItemModel*>();
-    int row                         = index.data(ShowfotoItemModelInternalId).toInt();
+    int row                        = index.data(ShowfotoItemModelInternalId).toInt();
 
     if (!model)
     {
@@ -206,13 +206,13 @@ QList<QModelIndex> ShowfotoItemModel::indexesForUrl(const QUrl& fileUrl) const
 
 ShowfotoItemInfo ShowfotoItemModel::showfotoItemInfo(const QUrl& fileUrl) const
 {
-        foreach (const ShowfotoItemInfo& info, d->infos)
+    foreach (const ShowfotoItemInfo& info, d->infos)
+    {
+        if (info.url == fileUrl)
         {
-            if (info.url == fileUrl)
-            {
-                return info;
-            }
+            return info;
         }
+    }
 
     return ShowfotoItemInfo();
 }
@@ -221,14 +221,13 @@ QList<ShowfotoItemInfo> ShowfotoItemModel::showfotoItemInfos(const QUrl& fileUrl
 {
     QList<ShowfotoItemInfo> infos;
 
-
-        foreach (const ShowfotoItemInfo& info, d->infos)
+    foreach (const ShowfotoItemInfo& info, d->infos)
+    {
+        if (info.url == fileUrl)
         {
-            if (info.url == fileUrl)
-            {
-                infos << info;
-            }
+            infos << info;
         }
+    }
 
     return infos;
 }
@@ -245,8 +244,7 @@ void ShowfotoItemModel::addShowfotoItemInfos(const QList<ShowfotoItemInfo>& info
         return;
     }
 
-        appendInfos(infos);
-
+    appendInfos(infos);
 }
 
 void ShowfotoItemModel::addShowfotoItemInfoSynchronously(const ShowfotoItemInfo& info)
@@ -400,7 +398,7 @@ static bool pairsContain(const List& list, T value)
         half   = n >> 1;
         middle = begin + half;
 
-        if ((middle->first <= value) && (middle->second >= value))
+        if      ((middle->first <= value) && (middle->second >= value))
         {
             return true;
         }
@@ -478,6 +476,7 @@ void ShowfotoItemModel::removeRowPairs(const QList<QPair<int, int> >& toRemove)
 
         if (d->sendRemovalSignals)
         {
+            // cppcheck-suppress knownEmptyContainer
             std::copy(d->infos.begin() + begin, d->infos.begin() + end, removedInfos.begin());
             emit itemInfosAboutToBeRemoved(removedInfos);
         }
@@ -489,7 +488,7 @@ void ShowfotoItemModel::removeRowPairs(const QList<QPair<int, int> >& toRemove)
 
         QMultiHash<qlonglong, int>::iterator it;
 
-        for (it = d->idHash.begin() ; it != d->idHash.end() ;)
+        for (it = d->idHash.begin() ; it != d->idHash.end() ; )
         {
             if (it.value() >= begin)
             {
@@ -600,8 +599,7 @@ Qt::ItemFlags ShowfotoItemModel::flags(const QModelIndex& index) const
     }
 
     Qt::ItemFlags f = Qt::ItemIsSelectable | Qt::ItemIsEnabled;
-
-    f |= dragDropFlags(index);
+    f              |= dragDropFlags(index);
 
     return f;
 }
@@ -636,16 +634,22 @@ QVariant ShowfotoItemModel::data(const QModelIndex& index, int role) const
     {
         case Qt::DisplayRole:
         case Qt::ToolTipRole:
+        {
             return d->infos.at(index.row()).name;
             break;
+        }
 
         case ShowfotoItemModelPointerRole:
+        {
             return QVariant::fromValue(const_cast<ShowfotoItemModel*>(this));
             break;
+        }
 
         case ShowfotoItemModelInternalId:
+        {
             return index.row();
             break;
+        }
     }
 
     return QVariant();

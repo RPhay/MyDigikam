@@ -57,7 +57,9 @@ public:
 
     enum ItemModelRoles
     {
-        /// An ItemModel* pointer to this model
+        /**
+         * An ItemModel* pointer to this model
+         */
         ItemModelPointerRole    = Qt::UserRole,
         ItemModelInternalId     = Qt::UserRole + 1,
 
@@ -67,13 +69,19 @@ public:
          */
         ThumbnailRole           = Qt::UserRole + 2,
 
-        /// Returns a QDateTime with the creation date
+        /**
+         * Returns a QDateTime with the creation date
+         */
         CreationDateRole        = Qt::UserRole + 3,
 
-        /// Return (optional) extraData field
+        /**
+         * Return (optional) extraData field
+         */
         ExtraDataRole           = Qt::UserRole + 5,
 
-        /// Returns the number of duplicate indexes for the same image id
+        /**
+         * Returns the number of duplicate indexes for the same image id
+         */
         ExtraDataDuplicateCount = Qt::UserRole + 6,
 
         /**
@@ -82,13 +90,19 @@ public:
          */
         LTLeftPanelRole         = Qt::UserRole + 50,
 
-        /// Returns position of item in Right Light Table preview.
+        /**
+         * Returns position of item in Right Light Table preview.
+         */
         LTRightPanelRole        = Qt::UserRole + 51,
 
-        /// For use by subclasses
+        /**
+         * For use by subclasses
+         */
         SubclassRoles           = Qt::UserRole + 100,
 
-        /// For use by filter models
+        /**
+         * For use by filter models
+         */
         FilterModelRoles        = Qt::UserRole + 500
     };
 
@@ -363,10 +377,14 @@ protected:
     void emitDataChangedForAll();
     void emitDataChangedForSelection(const QItemSelection& selection);
 
-    /// Called when the internal storage is cleared
+    /**
+     * Called when the internal storage is cleared
+     */
     virtual void imageInfosCleared() {};
 
-    /// Called before rowsAboutToBeRemoved
+    /**
+     * Called before rowsAboutToBeRemoved
+     */
     virtual void imageInfosAboutToBeRemoved(int /*begin*/, int /*end*/) {};
 
 protected Q_SLOTS:

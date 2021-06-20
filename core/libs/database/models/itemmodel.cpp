@@ -148,7 +148,7 @@ public:
 
 ItemModel::ItemModel(QObject* const parent)
     : QAbstractListModel(parent),
-      d(new Private)
+      d                 (new Private)
 {
     // --- NOTE: use dynamic binding as slotImageChange() is a virtual slot which can be re-implemented in derived classes.
     connect(CoreDbAccess::databaseWatch(), static_cast<void (CoreDbWatch::*)(const ImageChangeset&)>(&CoreDbWatch::imageChange),
@@ -718,7 +718,7 @@ void ItemModel::setPreprocessor(QObject* const preprocessor)
 
 void ItemModel::unsetPreprocessor(QObject* const preprocessor)
 {
-    if (preprocessor && d->preprocessor == preprocessor)
+    if (preprocessor && (d->preprocessor == preprocessor))
     {
         disconnect(this, SIGNAL(preprocess(QList<ItemInfo>,QList<QVariant>)),
                    nullptr, nullptr);
@@ -777,7 +777,7 @@ void ItemModel::appendInfosChecked(const QList<ItemInfo>& infos, const QList<QVa
         {
             if (!hasImage(infos[i], extraValues[i]))
             {
-                checkedInfos << infos[i];
+                checkedInfos       << infos[i];
                 checkedExtraValues << extraValues[i];
             }
         }
@@ -1061,18 +1061,19 @@ void ItemModel::removeRowPairs(const QList<QPair<int, int> >& toRemove)
 
     foreach (const IntPair& pair, toRemove)
     {
-        const int begin = pair.first - offset;
+        const int begin = pair.first  - offset;
         const int end   = pair.second - offset; // inclusive
         removedRows     = end - begin + 1;
 
         // when removing from the list, all subsequent indexes are affected
 
-        offset += removedRows;
+        offset         += removedRows;
 
         QList<ItemInfo> removedInfos;
 
         if (d->sendRemovalSignals)
         {
+            // cppcheck-suppress knownEmptyContainer
             std::copy(d->infos.begin() + begin, d->infos.begin() + end, removedInfos.begin());
             emit imageInfosAboutToBeRemoved(removedInfos);
         }
@@ -1147,7 +1148,7 @@ void ItemModel::removeRowPairs(const QList<QPair<int, int> >& toRemove)
 // ---------------------------------------------------------------------------------
 
 ItemModelIncrementalUpdater::ItemModelIncrementalUpdater(ItemModel::Private* d)
-    : oldIds(d->idHash),
+    : oldIds        (d->idHash),
       oldExtraValues(d->extraValues)
 {
 }
@@ -1282,7 +1283,7 @@ QList<QPair<int, int> > ItemModelIncrementalUpdater::toContiguousPairs(const QLi
     {
         const int& index = indices.at(i);
 
-        if (index == pair.second + 1)
+        if (index == (pair.second + 1))
         {
             pair.second = index;
             continue;
@@ -1311,19 +1312,27 @@ QVariant ItemModel::data(const QModelIndex& index, int role) const
     {
         case Qt::DisplayRole:
         case Qt::ToolTipRole:
+        {
             return d->infos.at(index.row()).name();
+        }
 
         case ItemModelPointerRole:
+        {
             return QVariant::fromValue(const_cast<ItemModel*>(this));
+        }
 
         case ItemModelInternalId:
+        {
             return index.row();
+        }
 
         case CreationDateRole:
+        {
             return d->infos.at(index.row()).dateTime();
+        }
 
         case ExtraDataRole:
-
+        {
             if (d->extraValueValid(index))
             {
                 return d->extraValues.at(index.row());
@@ -1332,6 +1341,7 @@ QVariant ItemModel::data(const QModelIndex& index, int role) const
             {
                 return QVariant();
             }
+        }
 
         case ExtraDataDuplicateCount:
         {
