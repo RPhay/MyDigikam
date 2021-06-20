@@ -606,13 +606,16 @@ void AlbumManager::removePAlbum(PAlbum* album)
 
     while (child)
     {
-        Album* next = child->next();
+        Album* const next = child->next();
+        toBeRemoved       = dynamic_cast<PAlbum*>(child);
 
-        toBeRemoved = static_cast<PAlbum*>(child);
-        removePAlbum(toBeRemoved);
-        toBeRemoved = nullptr;
+        if (toBeRemoved)
+        {
+            removePAlbum(toBeRemoved);
+            toBeRemoved = nullptr;
+        }
 
-        child       = next;
+        child             = next;
     }
 
     emit signalAlbumAboutToBeDeleted(album);
