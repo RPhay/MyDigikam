@@ -1483,6 +1483,7 @@ bool BackendMarble::eventFilter(QObject* object, QEvent* event)
 /*
                 s->inEditMode &&
 */
+                // cppcheck-suppress knownConditionTrueFalse
                 !doFilterEvent
                )
             {
