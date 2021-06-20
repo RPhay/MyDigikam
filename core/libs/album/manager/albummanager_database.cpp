@@ -817,7 +817,7 @@ bool AlbumManager::showDatabaseSetupPage(const QString& error, bool priority, co
     ApplicationSettings* const settings = ApplicationSettings::instance();
     dbsettings->setParametersFromSettings(settings);
 
-    if ((setup->exec() != QDialog::Accepted) || !setup)
+    if (setup->exec() != QDialog::Accepted)
     {
         delete setup;
 
