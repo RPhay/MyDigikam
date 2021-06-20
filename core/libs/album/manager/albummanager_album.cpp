@@ -36,9 +36,10 @@ void AlbumManager::setCurrentAlbums(const QList<Album*>& albums)
     }
 
     d->currentAlbums.clear();
+
     /**
      * Filter out the null pointers
-    */
+     */
     foreach (Album* const album, albums)
     {
         if (album)
@@ -46,6 +47,7 @@ void AlbumManager::setCurrentAlbums(const QList<Album*>& albums)
             d->currentAlbums << album;
         }
     }
+
     /**
      * Sort is needed to identify selection correctly, ex AlbumHistory
      */
@@ -62,6 +64,7 @@ AlbumList AlbumManager::currentAlbums() const
 void AlbumManager::clearCurrentAlbums()
 {
     d->currentAlbums.clear();
+
     emit signalAlbumCurrentChanged(d->currentAlbums);
 }
 
@@ -97,7 +100,6 @@ bool AlbumManager::isMovingAlbum(Album* album) const
 
 bool AlbumManager::hasDirectChildAlbumWithTitle(Album* parent, const QString& title)
 {
-
     Album* sibling = parent->firstChild();
 
     while (sibling)
@@ -111,7 +113,6 @@ bool AlbumManager::hasDirectChildAlbumWithTitle(Album* parent, const QString& ti
     }
 
     return false;
-
 }
 
 void AlbumManager::notifyAlbumDeletion(Album* album)
@@ -131,6 +132,7 @@ void AlbumManager::slotAlbumsJobResult()
         qCWarning(DIGIKAM_GENERAL_LOG) << "Failed to list albums";
 
         // Pop-up a message about the error.
+
         DNotificationWrapper(QString(), d->albumListJob->errorsList().first(),
                              nullptr, i18n("digiKam"));
     }
@@ -153,6 +155,7 @@ void AlbumManager::slotAlbumsJobData(const QMap<int, int>& albumsStatMap)
 void AlbumManager::updateAlbumPathHash()
 {
     // Update AlbumDict. basically clear it and rebuild from scratch
+
     d->albumPathHash.clear();
     AlbumIterator it(d->rootPAlbum);
     PAlbum* subAlbum = nullptr;
@@ -248,17 +251,20 @@ void AlbumManager::slotAlbumChange(const AlbumChangeset& changeset)
     {
         case AlbumChangeset::Added:
         case AlbumChangeset::Deleted:
-
+        {
             if (!d->scanPAlbumsTimer->isActive())
             {
                 d->scanPAlbumsTimer->start();
             }
 
             break;
+        }
 
         case AlbumChangeset::Renamed:
         case AlbumChangeset::PropertiesChanged:
+        {
             // mark for rescan
+
             d->changedPAlbums << changeset.albumId();
 
             if (!d->updatePAlbumsTimer->isActive())
@@ -267,9 +273,12 @@ void AlbumManager::slotAlbumChange(const AlbumChangeset& changeset)
             }
 
             break;
+        }
 
         case AlbumChangeset::Unknown:
+        {
             break;
+        }
     }
 }
 

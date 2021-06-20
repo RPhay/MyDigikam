@@ -38,7 +38,7 @@ bool AlbumManager::setDatabase(const DbEngineParameters& params, bool priority, 
     // This is to ensure that the setup does not overrule the command line.
     // TODO: there is a bug that setup is showing something different here.
 
-    if (priority)
+    if      (priority)
     {
         d->hasPriorizedDbPath = true;
     }
@@ -196,7 +196,9 @@ bool AlbumManager::setDatabase(const DbEngineParameters& params, bool priority, 
     switch (advice)
     {
         case ScanController::Success:
+        {
             break;
+        }
 
         case ScanController::ContinueWithoutDatabase:
         {
@@ -226,7 +228,9 @@ bool AlbumManager::setDatabase(const DbEngineParameters& params, bool priority, 
         }
 
         case ScanController::AbortImmediately:
+        {
             return false;
+        }
     }
 
     // -- Locale Checking ---------------------------------------------------------
@@ -409,7 +413,7 @@ bool AlbumManager::setDatabase(const DbEngineParameters& params, bool priority, 
 
         if (dialog->exec())
         {
-            if (migrateButton && migrateButton->isChecked())
+            if      (migrateButton && migrateButton->isChecked())
             {
                 CollectionManager::instance()->migrateToVolume(loc, migrateChoices->itemData(migrateChoices->currentIndex()).toString());
             }
@@ -511,7 +515,7 @@ void AlbumManager::checkDatabaseDirsAfterFirstRun(const QString& dbPath, const Q
 
             int result = msgBox->exec();
 
-            if (result == QMessageBox::Yes)
+            if      (result == QMessageBox::Yes)
             {
                 // CoreDbSchemaUpdater expects Album Path to point to the album root of the 0.9 db file.
                 // Restore this situation.
@@ -826,7 +830,7 @@ bool AlbumManager::showDatabaseSetupPage(const QString& error, bool priority, co
 
     delete setup;
 
-    return setDatabase(dbParams, priority, suggestedAlbumRoot);
+    return (setDatabase(dbParams, priority, suggestedAlbumRoot));
 }
 
 } // namespace Digikam

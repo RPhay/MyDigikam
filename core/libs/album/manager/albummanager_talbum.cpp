@@ -891,6 +891,7 @@ void AlbumManager::removeTAlbum(TAlbum* album)
     }
 
     // remove all children of this album
+
     Album* child        = album->firstChild();
     TAlbum* toBeRemoved = nullptr;
 
@@ -972,20 +973,23 @@ void AlbumManager::slotTagChange(const TagChangeset& changeset)
         case TagChangeset::Moved:
         case TagChangeset::Deleted:
         case TagChangeset::Reparented:
-
+        {
             if (!d->scanTAlbumsTimer->isActive())
             {
                 d->scanTAlbumsTimer->start();
             }
 
             break;
+        }
 
         case TagChangeset::Renamed:
         case TagChangeset::IconChanged:
+        {
             /**
              * @todo what happens here?
              */
             break;
+        }
 
         case TagChangeset::PropertiesChanged:
         {
@@ -1000,7 +1004,9 @@ void AlbumManager::slotTagChange(const TagChangeset& changeset)
         }
 
         case TagChangeset::Unknown:
+        {
             break;
+        }
     }
 }
 
@@ -1016,12 +1022,14 @@ void AlbumManager::slotImageTagChange(const ImageTagChangeset& changeset)
         case ImageTagChangeset::Added:
         case ImageTagChangeset::Removed:
         case ImageTagChangeset::RemovedAll:
+
         // Add properties changed.
         // Reason: in people sidebar, the images are not
         // connected with the ImageTag table but by
         // ImageTagProperties entries.
         // Thus, the count of entries in face tags are not
         // updated. This adoption should fix the problem.
+
         case ImageTagChangeset::PropertiesChanged:
         {
             foreach (int id, changeset.tags())
@@ -1041,7 +1049,9 @@ void AlbumManager::slotImageTagChange(const ImageTagChangeset& changeset)
         }
 
         default:
+        {
             break;
+        }
     }
 }
 
