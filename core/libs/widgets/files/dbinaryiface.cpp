@@ -125,7 +125,7 @@ bool DBinaryIface::versionIsRight() const
 
     QRegExp reg(QLatin1String("^(\\d*[.]\\d*)"));
 
-    // cppcheck-suppress ignoredReturnValue : dead code?
+    // cppcheck-suppress ignoredReturnValue ; dead code?
     version().indexOf(reg);
 
     float floatVersion = reg.capturedTexts().constFirst().toFloat();
@@ -144,7 +144,7 @@ bool DBinaryIface::versionIsRight(const float customVersion) const
 
     QRegExp reg(QLatin1String("^(\\d*[.]\\d*)"));
 
-    // cppcheck-suppress ignoredReturnValue : dead code?
+    // cppcheck-suppress ignoredReturnValue ; dead code?
     version().indexOf(reg);
 
     float floatVersion = reg.capturedTexts().constFirst().toFloat();
@@ -197,7 +197,7 @@ void DBinaryIface::setVersion(QString& version)
 {
     QRegExp versionRegExp(QLatin1String("\\d*(\\.\\d+)*"));
 
-    // cppcheck-suppress ignoredReturnValue : dead code?
+    // cppcheck-suppress ignoredReturnValue ; dead code?
     version.indexOf(versionRegExp);
 
     m_version = versionRegExp.capturedTexts().constFirst();
