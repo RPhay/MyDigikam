@@ -636,19 +636,16 @@ QVariant ShowfotoItemModel::data(const QModelIndex& index, int role) const
         case Qt::ToolTipRole:
         {
             return d->infos.at(index.row()).name;
-            break;
         }
 
         case ShowfotoItemModelPointerRole:
         {
             return QVariant::fromValue(const_cast<ShowfotoItemModel*>(this));
-            break;
         }
 
         case ShowfotoItemModelInternalId:
         {
             return index.row();
-            break;
         }
     }
 
