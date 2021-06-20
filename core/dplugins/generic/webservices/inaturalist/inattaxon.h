@@ -83,10 +83,8 @@ public:
     const QString&      matchedTerm() const;
 
     Taxon& operator= (const Taxon&);
-    bool   operator==(const Taxon&)   const;
     bool   operator!=(const Taxon&)   const;
-
-    Taxon& operator= (Taxon&&) = default;
+    bool   operator==(const Taxon&)   const;
 
 private:
 
