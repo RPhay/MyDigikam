@@ -894,15 +894,12 @@ void AlbumManager::removeTAlbum(TAlbum* album)
     while (child)
     {
         Album* next = child->next();
+
         toBeRemoved = static_cast<TAlbum*>(child);
+        removeTAlbum(toBeRemoved);
+        toBeRemoved = nullptr;
 
-        if (toBeRemoved)
-        {
-            removeTAlbum(toBeRemoved);
-            toBeRemoved = nullptr;
-        }
-
-        child = next;
+        child       = next;
     }
 
     emit signalAlbumAboutToBeDeleted(album);
