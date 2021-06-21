@@ -380,4 +380,5 @@ BUGFIXES:
 357 ==> 438878 - Ambiguous Shortcut window on startup.
 358 ==> 438888 - Exiftool - non ASCII characters.
 359 ==> 438961 - Searching images created on a given day of every month is not possible.
-360 ==> 
+360 ==> 439000 - Keyboard shortcut assigned.
+361 ==> 
