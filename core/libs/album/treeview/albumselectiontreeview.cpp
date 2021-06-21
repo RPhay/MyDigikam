@@ -232,18 +232,24 @@ AlbumSelectionTreeView::AlbumSelectionTreeView(QWidget* const parent,
     setAlbumModel(model);
     d->albumModificationHelper = albumModificationHelper;
     d->toolTip                 = new AlbumViewToolTip(this);
-    d->expandSelected          = new QAction(QIcon::fromTheme(QLatin1String("format-indent-more")),
+
+    d->expandSelected          = new QAction(QIcon::fromTheme(QLatin1String("expand-all")),
                                              i18n("Expand Selected Nodes"), this);
-    d->collapseSelected        = new QAction(QIcon::fromTheme(QLatin1String("format-indent-more")),
+
+    d->collapseSelected        = new QAction(QIcon::fromTheme(QLatin1String("collapse-all")),
                                              i18n("Collapse Selected Recursively"), this);
+
     d->findDuplAction          = new QAction(QIcon::fromTheme(QLatin1String("tools-wizard")),
-                                             i18n("Find Duplicates..."),  this);
+                                             i18n("Find Duplicates..."), this);
+
     d->scanFacesAction         = new QAction(QIcon::fromTheme(QLatin1String("list-add-user")),
-                                             i18n("Scan for Faces"),      this);
+                                             i18n("Scan for Faces"), this);
+
     d->repairHiddenAction      = new QAction(QIcon::fromTheme(QLatin1String("edit-group")),
                                              i18n("Repair hidden Items"), this);
+
     d->rebuildThumbsAction     = new QAction(QIcon::fromTheme(QLatin1String("view-refresh")),
-                                             i18n("Refresh"),             this);
+                                             i18n("Refresh"), this);
 
     connect(d->expandSelected, SIGNAL(triggered()),
             this, SLOT(slotExpandNode()));
