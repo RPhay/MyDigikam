@@ -31,19 +31,14 @@
 // Qt includes
 
 #include <QApplication>
-#include <QCheckBox>
-#include <QDoubleSpinBox>
 #include <QGridLayout>
-#include <QGroupBox>
-#include <QLabel>
-#include <QSortFilterProxyModel>
-#include <QSpinBox>
 #include <QTimeEdit>
-#include <QTreeView>
 #include <QComboBox>
 #include <QLineEdit>
-#include <QIcon>
+#include <QCheckBox>
+#include <QLabel>
 #include <QStyle>
+#include <QIcon>
 
 // KDE includes
 
