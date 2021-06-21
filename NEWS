@@ -381,4 +381,5 @@ BUGFIXES:
 358 ==> 438888 - Exiftool - non ASCII characters.
 359 ==> 438961 - Searching images created on a given day of every month is not possible.
 360 ==> 439000 - Keyboard shortcut assigned.
-361 ==> 
+361 ==> 326247 - Add a new button to expand or collapse all album tree-view items.
+362 ==> 

@@ -132,16 +132,6 @@ private Q_SLOTS:
 
     void slotTagNewFromABCMenu(const QString& personName);
 
-    /**
-     * @brief slotExpandNode - expands recursively selected nodes
-     */
-    void slotExpandNode();
-
-    /**
-     * @brief slotCollapseNode - collapse recursively selected nodes
-     */
-    void slotCollapseNode();
-
 private:
 
     class Private;

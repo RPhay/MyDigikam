@@ -99,6 +99,8 @@ public:
         scanFacesAction         (nullptr),
         repairHiddenAction      (nullptr),
         rebuildThumbsAction     (nullptr),
+        expandSelected          (nullptr),
+        collapseSelected        (nullptr),
         contextMenuElement      (nullptr)
     {
     }
@@ -114,6 +116,8 @@ public:
     QAction*                                  scanFacesAction;
     QAction*                                  repairHiddenAction;
     QAction*                                  rebuildThumbsAction;
+    QAction*                                  expandSelected;
+    QAction*                                  collapseSelected;
 
     class AlbumSelectionTreeViewContextMenuElement;
     AlbumSelectionTreeViewContextMenuElement* contextMenuElement;
@@ -152,10 +156,17 @@ public:
             cmh.addAction(QLatin1String("album_openinfilemanager"));
             cmh.addSeparator();
 
-        // --------------------------------------------------------
+            // --------------------------------------------------------
+
+            cmh.addAction(d->expandSelected);
+            cmh.addAction(d->collapseSelected);
+            cmh.addSeparator();
+
+            // --------------------------------------------------------
 
             cmh.addAction(d->rebuildThumbsAction);
             d->albumModificationHelper->bindAlbum(d->rebuildThumbsAction, album);
+
             return;
         }
 
@@ -169,6 +180,12 @@ public:
 
         cmh.addActionRenameAlbum(d->albumModificationHelper, album);
         cmh.addActionResetAlbumIcon(d->albumModificationHelper, album);
+        cmh.addSeparator();
+
+        // --------------------------------------------------------
+
+        cmh.addAction(d->expandSelected);
+        cmh.addAction(d->collapseSelected);
         cmh.addSeparator();
 
         // --------------------------------------------------------
@@ -215,10 +232,24 @@ AlbumSelectionTreeView::AlbumSelectionTreeView(QWidget* const parent,
     setAlbumModel(model);
     d->albumModificationHelper = albumModificationHelper;
     d->toolTip                 = new AlbumViewToolTip(this);
-    d->findDuplAction          = new QAction(QIcon::fromTheme(QLatin1String("tools-wizard")),  i18n("Find Duplicates..."),  this);
-    d->scanFacesAction         = new QAction(QIcon::fromTheme(QLatin1String("list-add-user")), i18n("Scan for Faces"),      this);
-    d->repairHiddenAction      = new QAction(QIcon::fromTheme(QLatin1String("edit-group")),    i18n("Repair hidden Items"), this);
-    d->rebuildThumbsAction     = new QAction(QIcon::fromTheme(QLatin1String("view-refresh")),  i18n("Refresh"),             this);
+    d->expandSelected          = new QAction(QIcon::fromTheme(QLatin1String("format-indent-more")),
+                                             i18n("Expand Selected Nodes"), this);
+    d->collapseSelected        = new QAction(QIcon::fromTheme(QLatin1String("format-indent-more")),
+                                             i18n("Collapse Selected Recursively"), this);
+    d->findDuplAction          = new QAction(QIcon::fromTheme(QLatin1String("tools-wizard")),
+                                             i18n("Find Duplicates..."),  this);
+    d->scanFacesAction         = new QAction(QIcon::fromTheme(QLatin1String("list-add-user")),
+                                             i18n("Scan for Faces"),      this);
+    d->repairHiddenAction      = new QAction(QIcon::fromTheme(QLatin1String("edit-group")),
+                                             i18n("Repair hidden Items"), this);
+    d->rebuildThumbsAction     = new QAction(QIcon::fromTheme(QLatin1String("view-refresh")),
+                                             i18n("Refresh"),             this);
+
+    connect(d->expandSelected, SIGNAL(triggered()),
+            this, SLOT(slotExpandNode()));
+
+    connect(d->collapseSelected, SIGNAL(triggered()),
+            this, SLOT(slotCollapseNode()));
 
     connect(d->findDuplAction, SIGNAL(triggered()),
             this, SLOT(slotFindDuplicates()));
