@@ -378,4 +378,5 @@ BUGFIXES:
 355 ==> 438855 - ShowFoto - DNG-Converter I.
 356 ==> 438856 - ShowFoto - DNG-Converter II.
 357 ==> 438878 - Ambiguous Shortcut window on startup.
-358 ==> 
+358 ==> 438888 - Exiftool - non ASCII characters.
+359 ==> 
