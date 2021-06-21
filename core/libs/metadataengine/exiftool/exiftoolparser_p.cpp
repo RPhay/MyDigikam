@@ -91,17 +91,7 @@ bool ExifToolParser::Private::startProcess(const QByteArrayList& cmdArgs, ExifTo
 
 QByteArray ExifToolParser::Private::filePathEncoding(const QFileInfo& fi) const
 {
-
-#ifdef Q_OS_WIN
-
     return (QDir::toNativeSeparators(fi.filePath()).toUtf8());
-
-#else
-
-    return (QDir::toNativeSeparators(fi.filePath()).toUtf8());
-
-#endif
-
 }
 
 QString ExifToolParser::Private::actionString(int cmdAction) const
