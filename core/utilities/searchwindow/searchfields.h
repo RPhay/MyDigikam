@@ -574,6 +574,10 @@ public:
     void setValueWidgetsVisible(bool visible) override;
     QList<QRect> valueWidgetRects() const override;
 
+protected Q_SLOTS:
+
+    void slotIndexChanged();
+
 protected:
 
     QLabel*    m_dayLabel;

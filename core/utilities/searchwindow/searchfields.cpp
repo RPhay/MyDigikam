@@ -3301,6 +3301,12 @@ void SearchFieldMonthDay::setupValueWidgets(QGridLayout* layout, int row, int co
     hbox->addWidget(m_dayLabel);
     hbox->addWidget(m_dayBox);
 
+    connect(m_monthBox, SIGNAL(currentIndexChanged(int)),
+            this, SLOT(slotIndexChanged()));
+
+    connect(m_dayBox, SIGNAL(currentIndexChanged(int)),
+            this, SLOT(slotIndexChanged()));
+
     layout->addLayout(hbox, row, column, 1, 3);
 }
 
@@ -3353,6 +3359,15 @@ QList<QRect> SearchFieldMonthDay::valueWidgetRects() const
     rects << m_dayBox->geometry();
 
     return rects;
+}
+
+void SearchFieldMonthDay::slotIndexChanged()
+{
+    int month  = m_monthBox->currentData().toInt();
+    int day    = m_dayBox->currentData().toInt();
+    bool valid = ((month > 0) || (day > 0));
+
+    setValidValueState(valid);
 }
 
 } // namespace Digikam
