@@ -128,16 +128,22 @@ void MakerNoteWidget::buildView()
     switch (getMode())
     {
         case CUSTOM:
+        {
             setIfdList(getMetadataMap(), getTagsFilter());
             break;
+        }
 
         case PHOTO:
+        {
             setIfdList(getMetadataMap(), QStringList() << QLatin1String("FULL"));
             break;
+        }
 
         default: // NONE
+        {
             setIfdList(getMetadataMap(), QStringList());
             break;
+        }
     }
 
     MetadataWidget::buildView();
