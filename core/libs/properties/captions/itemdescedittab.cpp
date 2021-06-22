@@ -1384,7 +1384,7 @@ void ItemDescEditTab::slotReloadForMetadataChange()
         foreach (const ItemInfo& info, d->currInfos)
         {
             if (d->metadataChangeIds.contains(info.id()))
-            {
+            {   // cppcheck-suppress useStlAlgorithm
                 setInfos(d->currInfos);
                 break;
             }

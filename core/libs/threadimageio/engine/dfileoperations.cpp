@@ -262,7 +262,7 @@ void DFileOperations::openInFileManager(const QList<QUrl>& urls)
     foreach (const QUrl& url, urls)
     {
         if (first != url.adjusted(QUrl::RemoveFilename))
-        {
+        {   // cppcheck-suppress useStlAlgorithm
             equal = false;
             break;
         }
@@ -410,7 +410,7 @@ bool DFileOperations::copyFolderRecursively(const QString& srcPath,
     foreach (const QFileInfo& fileInfo, srcDir.entryInfoList(QDir::Dirs | QDir::NoDotAndDotDot))
     {
         if (!copyFolderRecursively(fileInfo.filePath(), newCopyPath, itemId, cancel, false))
-        {
+        {   // cppcheck-suppress useStlAlgorithm
             return false;
         }
     }

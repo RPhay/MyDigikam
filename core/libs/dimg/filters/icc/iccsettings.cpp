@@ -174,7 +174,7 @@ bool IccSettings::monitorProfileFromSystem() const
         foreach (const IccProfile& profile, d->screenProfiles)
         {
             if (!profile.isNull())
-            {
+            {   // cppcheck-suppress useStlAlgorithm
                 return true;
             }
         }

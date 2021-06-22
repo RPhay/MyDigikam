@@ -184,7 +184,7 @@ ThumbsDbInfo ThumbsDb::findByFilePath(const QString& path, const QString& unique
     foreach (const QVariant& hash, values)
     {
         if (hash == uniqueHash)
-        {
+        {   // cppcheck-suppress useStlAlgorithm
             return info;
         }
     }

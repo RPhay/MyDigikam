@@ -803,7 +803,7 @@ bool ItemVisibilityController::hasVisibleItems(IncludeFadingOutMode mode) const
     foreach (AnimationControl* const child, d->childControls)
     {
         if (child->hasVisibleItems(mode))
-        {
+        {   // cppcheck-suppress useStlAlgorithm
             return true;
         }
     }

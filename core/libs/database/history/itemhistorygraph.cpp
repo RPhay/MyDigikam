@@ -67,7 +67,7 @@ bool HistoryVertexProperties::markedAs(HistoryImageId::Type type) const
     foreach (const HistoryImageId& ref, referredImages)
     {
         if (ref.m_type == type)
-        {
+        {   // cppcheck-suppress useStlAlgorithm
             return true;
         }
     }
@@ -85,7 +85,7 @@ bool HistoryVertexProperties::alwaysMarkedAs(HistoryImageId::Type type) const
     foreach (const HistoryImageId& ref, referredImages)
     {
         if (ref.m_type != type)
-        {
+        {   // cppcheck-suppress useStlAlgorithm
             return false;
         }
     }
@@ -108,7 +108,7 @@ bool HistoryVertexProperties::operator==(qlonglong id) const
     foreach (const ItemInfo& info, infos)
     {
         if (info.id() == id)
-        {
+        {   // cppcheck-suppress useStlAlgorithm
             return true;
         }
     }
@@ -126,7 +126,7 @@ bool HistoryVertexProperties::operator==(const HistoryImageId& other) const
     foreach (const HistoryImageId& id, referredImages)
     {
         if (ItemScanner::sameReferredImage(id, other))
-        {
+        {   // cppcheck-suppress useStlAlgorithm
 /*
             qCDebug(DIGIKAM_DATABASE_LOG) << id << "is the same as" << other;
 */

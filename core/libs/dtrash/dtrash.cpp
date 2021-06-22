@@ -112,7 +112,7 @@ bool DTrash::deleteDirRecursivley(const QString& dirToDelete, const QDateTime& d
     foreach (const QFileInfo& fileInfo, srcDir.entryInfoList(QDir::Files))
     {
         if (!deleteImage(fileInfo.filePath(), deleteTime))
-        {
+        {   // cppcheck-suppress useStlAlgorithm
             return false;
         }
     }
@@ -120,7 +120,7 @@ bool DTrash::deleteDirRecursivley(const QString& dirToDelete, const QDateTime& d
     foreach (const QFileInfo& fileInfo, srcDir.entryInfoList(QDir::Dirs | QDir::NoDotAndDotDot))
     {
         if (!deleteDirRecursivley(fileInfo.filePath(), deleteTime))
-        {
+        {   // cppcheck-suppress useStlAlgorithm
             return false;
         }
     }

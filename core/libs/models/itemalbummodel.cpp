@@ -597,7 +597,7 @@ void ItemAlbumModel::slotImageChange(const ImageChangeset& changeset)
                     // if one matching image id is found, trigger a refresh
 
                     if (hasImage(id))
-                    {
+                    {   // cppcheck-suppress useStlAlgorithm
                         scheduleIncrementalRefresh();
                         break;
                     }
@@ -725,7 +725,7 @@ void ItemAlbumModel::slotCollectionImageChange(const CollectionImageChangeset& c
                     // if one matching image id is found, trigger a refresh
 
                     if (hasImage(id))
-                    {
+                    {   // cppcheck-suppress useStlAlgorithm
                         doRefresh = true;
                         break;
                     }

@@ -299,7 +299,7 @@ void SearchGroup::read(SearchXmlCachingReader& reader)
             foreach (fieldGroup, m_fieldGroups)
             {
                 if ((field = fieldGroup->fieldForName(name)))
-                {
+                {   // cppcheck-suppress useStlAlgorithm
                     break;
                 }
             }

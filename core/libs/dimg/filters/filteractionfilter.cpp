@@ -109,7 +109,7 @@ bool FilterActionFilter::isReproducible() const
     {
         if (!action.isNull() &&
             (action.category() != FilterAction::ReproducibleFilter))
-        {
+        {   // cppcheck-suppress useStlAlgorithm
             return false;
         }
     }
@@ -124,7 +124,7 @@ bool FilterActionFilter::isComplexAction() const
         if (!action.isNull()                                        &&
             (action.category() != FilterAction::ReproducibleFilter) &&
             (action.category() != FilterAction::ComplexFilter))
-        {
+        {   // cppcheck-suppress useStlAlgorithm
             return false;
         }
     }
@@ -137,7 +137,7 @@ bool FilterActionFilter::isSupported() const
     foreach (const FilterAction& action, d->actions)
     {
         if (!action.isNull() && !DImgFilterManager::instance()->isSupported(action.identifier(), action.version()))
-        {
+        {   // cppcheck-suppress useStlAlgorithm
             return false;
         }
     }

@@ -797,7 +797,7 @@ bool TagPropertiesFilterModel::matches(Album* album) const
     foreach (const QString& prop, m_propertiesBlackList)
     {
         if (talbum->hasProperty(prop))
-        {
+        {   // cppcheck-suppress useStlAlgorithm
             return false;
         }
     }
@@ -805,7 +805,7 @@ bool TagPropertiesFilterModel::matches(Album* album) const
     foreach (const QString& prop, m_propertiesWhiteList)
     {
         if (!talbum->hasProperty(prop))
-        {
+        {   // cppcheck-suppress useStlAlgorithm
             return false;
         }
     }

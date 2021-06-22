@@ -274,7 +274,7 @@ void FaceGroup::itemHoverMoveEvent(QGraphicsSceneHoverEvent* e)
                 foreach (QObject* const parent, visible)
                 {
                     if (static_cast<QGraphicsObject*>(parent)->isAncestorOf(item2))
-                    {
+                    {   // cppcheck-suppress useStlAlgorithm
                         return;
                     }
                 }

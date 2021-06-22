@@ -421,7 +421,7 @@ bool ImportView::isSelected(const QUrl& url) const
     foreach (const QUrl& selected, urlsList)
     {
         if (url == selected)
-        {
+        {   // cppcheck-suppress useStlAlgorithm
             return true;
         }
     }

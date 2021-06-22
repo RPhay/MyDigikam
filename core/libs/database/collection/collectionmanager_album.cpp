@@ -115,7 +115,7 @@ bool CollectionManager::isAlbumRoot(const QString& filePath)
     foreach (AlbumRootLocation* const location, d->locations)
     {
         if (filePath == location->albumRootPath())
-        {
+        {   // cppcheck-suppress useStlAlgorithm
             return true;
         }
     }

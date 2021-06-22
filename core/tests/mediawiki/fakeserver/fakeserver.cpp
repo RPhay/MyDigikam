@@ -194,7 +194,7 @@ bool FakeServer::isAllScenarioDone() const
     foreach (const QString& scenario, m_scenarios)
     {
         if (!scenario.isEmpty())
-        {
+        {   // cppcheck-suppress useStlAlgorithm
             return false;
         }
     }

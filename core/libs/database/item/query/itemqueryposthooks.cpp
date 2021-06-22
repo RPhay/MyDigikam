@@ -53,7 +53,7 @@ bool ItemQueryPostHooks::checkPosition(double latitudeNumber, double longitudeNu
     foreach (ItemQueryPostHook* const hook, m_postHooks)
     {
         if (!hook->checkPosition(latitudeNumber, longitudeNumber))
-        {
+        {   // cppcheck-suppress useStlAlgorithm
             return false;
         }
     }

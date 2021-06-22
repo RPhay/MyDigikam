@@ -122,7 +122,7 @@ bool DImageHistory::isValid() const
             foreach (const HistoryImageId& id, e.referredImages)
             {
                 if (id.isValid() && !id.isCurrentFile())
-                {
+                {   // cppcheck-suppress useStlAlgorithm
                     return true;
                 }
             }
@@ -288,7 +288,7 @@ bool DImageHistory::hasActions() const
     foreach (const Entry& entry, d->entries)
     {
         if (!entry.action.isNull())
-        {
+        {   // cppcheck-suppress useStlAlgorithm
             return true;
         }
     }
@@ -323,7 +323,7 @@ bool DImageHistory::hasReferredImages() const
     foreach (const Entry& entry, d->entries)
     {
         if (!entry.referredImages.isEmpty())
-        {
+        {   // cppcheck-suppress useStlAlgorithm
             return true;
         }
     }
@@ -338,7 +338,7 @@ bool DImageHistory::hasReferredImageOfType(HistoryImageId::Type type) const
         foreach (const HistoryImageId& id, entry.referredImages)
         {
             if (id.m_type == type)
-            {
+            {   // cppcheck-suppress useStlAlgorithm
                 return true;
             }
         }

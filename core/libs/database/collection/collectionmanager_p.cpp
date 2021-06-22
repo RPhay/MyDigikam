@@ -520,7 +520,7 @@ bool CollectionManager::Private::checkIfExists(const QString& filePath, QList<Co
             foreach (const CollectionLocation& deletedLoc, assumeDeleted)
             {
                 if (deletedLoc.id() == location->id())
-                {
+                {   // cppcheck-suppress useStlAlgorithm
                     isDeleted = true;
                     break;
                 }

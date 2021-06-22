@@ -84,7 +84,7 @@ void DetectionBenchmarker::process(FacePipelineExtendedPackage::Ptr package)
             foreach (const FaceTagsIface& testedFace, testedFaces)
             {
                 if (trueFace.region().intersects(testedFace.region(), minOverlap))
-                {
+                {   // cppcheck-suppress useStlAlgorithm
                     matchedTrueFaces << trueFace;
                     unmatchedTrueFaces.removeOne(trueFace);
                     break;
@@ -97,7 +97,7 @@ void DetectionBenchmarker::process(FacePipelineExtendedPackage::Ptr package)
             foreach (const FaceTagsIface& trueFace, groundTruth)
             {
                 if (trueFace.region().intersects(testedFace.region(), minOverlap))
-                {
+                {   // cppcheck-suppress useStlAlgorithm
                     unmatchedTestedFaces.removeOne(testedFace);
                     break;
                 }
