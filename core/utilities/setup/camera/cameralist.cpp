@@ -267,7 +267,7 @@ CameraType* CameraList::find(const QString& title) const
     foreach (CameraType* const ctype, d->clist)
     {
         if (ctype->title() == title)
-        {
+        {   // cppcheck-suppress useStlAlgorithm
             return ctype;
         }
     }
@@ -302,7 +302,7 @@ CameraType* CameraList::autoDetect(bool& retry)
         // works only for usb cameras. so the port is always usb:
 
         if (ctype->model() == model)
-        {
+        {   // cppcheck-suppress useStlAlgorithm
             return ctype;
         }
     }

@@ -235,7 +235,7 @@ DPluginAction* DPluginLoader::pluginAction(const QString& actionName, QObject* c
             foreach (DPluginAction* const ac, gene->actions(parent))
             {
                 if (ac && (ac->objectName() == actionName))
-                {
+                {    // cppcheck-suppress useStlAlgorithm
                     return ac;
                 }
             }
@@ -248,7 +248,7 @@ DPluginAction* DPluginLoader::pluginAction(const QString& actionName, QObject* c
             foreach (DPluginAction* const ac, edit->actions(parent))
             {
                 if (ac && (ac->objectName() == actionName))
-                {
+                {   // cppcheck-suppress useStlAlgorithm
                     return ac;
                 }
             }

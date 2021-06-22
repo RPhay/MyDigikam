@@ -371,7 +371,7 @@ CopyrightInfo ItemCopyright::copyrightInfo(const QString& property) const
         foreach (const CopyrightInfo& info, m_cache->infos)
         {
             if (info.property == property)
-            {
+            {    // cppcheck-suppress useStlAlgorithm
                 return info;
             }
         }

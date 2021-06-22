@@ -388,7 +388,7 @@ CamItemInfo ImportItemModel::camItemInfo(const QUrl& fileUrl) const
         foreach (const CamItemInfo& info, d->infos)
         {
             if (info.url() == fileUrl)
-            {
+            {   // cppcheck-suppress useStlAlgorithm
                 return info;
             }
         }

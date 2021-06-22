@@ -196,7 +196,7 @@ QProgressBar* ProcessorDlg::findProgressBar(const QUrl& url) const
     foreach (QProgressBar* const b, bars)
     {
         if (b->objectName() == url.toLocalFile())
-        {
+        {   // cppcheck-suppress useStlAlgorithm
             return b;
         }
     }

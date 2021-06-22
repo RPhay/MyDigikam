@@ -321,7 +321,7 @@ SolidVolumeInfo CollectionManager::Private::findVolumeForLocation(const AlbumRoo
         foreach (const SolidVolumeInfo& volume, volumes)
         {
             if (volume.uuid.compare(queryItem, Qt::CaseInsensitive) == 0)
-            {
+            {    // cppcheck-suppress useStlAlgorithm
                 return volume;
             }
         }
@@ -411,7 +411,7 @@ SolidVolumeInfo CollectionManager::Private::findVolumeForLocation(const AlbumRoo
         foreach (const SolidVolumeInfo& volume, volumes)
         {
             if (volume.isMounted && (volume.path == queryItem))
-            {
+            {    // cppcheck-suppress useStlAlgorithm
                 return volume;
             }
         }

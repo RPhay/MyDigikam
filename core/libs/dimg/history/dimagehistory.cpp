@@ -382,7 +382,7 @@ HistoryImageId DImageHistory::currentReferredImage() const
         foreach (const HistoryImageId& id, entry.referredImages)
         {
             if (id.isCurrentFile())
-            {
+            {    // cppcheck-suppress useStlAlgorithm
                 return id;
             }
         }
@@ -398,7 +398,7 @@ HistoryImageId DImageHistory::originalReferredImage() const
         foreach (const HistoryImageId& id, entry.referredImages)
         {
             if (id.isOriginalFile())
-            {
+            {   // cppcheck-suppress useStlAlgorithm
                 return id;
             }
         }

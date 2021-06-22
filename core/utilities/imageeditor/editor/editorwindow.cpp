@@ -1770,7 +1770,7 @@ bool EditorWindow::showFileSaveDialog(const QUrl& initialUrl, QUrl& newURL)
     foreach (const QString& s, list)
     {
         if (s.contains(QString::fromLatin1("*.%1").arg(ext)))
-        {
+        {   // cppcheck-suppress useStlAlgorithm
             imageFileSaveDialog->selectNameFilter(s);
             break;
         }

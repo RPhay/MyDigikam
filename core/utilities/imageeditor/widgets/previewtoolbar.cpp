@@ -220,7 +220,7 @@ void PreviewToolBar::setCheckedAction(int id)
     foreach (QAction* const ac, d->actionsGroup->actions())
     {
         if (ac->data().toInt() == id)
-        {
+        {   // cppcheck-suppress useStlAlgorithm
             ac->setChecked(true);
             return;
         }
@@ -277,7 +277,7 @@ void PreviewToolBar::setPreviewModeMask(int mask)
             foreach (QAbstractButton* const btn, btns)
             {
                 if (btn && btn->isEnabled())
-                {
+                {   // cppcheck-suppress useStlAlgorithm
                     btn->setChecked(true);
                     setCheckedAction(d->previewButtons->id(btn));
 

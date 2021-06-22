@@ -893,7 +893,7 @@ void TagsPopupMenu::slotTagThumbnail(Album* album, const QPixmap& pix)
     foreach (QAction* const action, actionList)
     {
         if (action->data().toInt() == album->id())
-        {
+        {    // cppcheck-suppress useStlAlgorithm
             action->setIcon(pix);
 
             return;

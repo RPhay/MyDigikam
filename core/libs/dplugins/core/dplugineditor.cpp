@@ -141,7 +141,7 @@ DPluginAction* DPluginEditor::findActionByName(const QString& name, QObject* con
     foreach (DPluginAction* const ac, actions(parent))
     {
         if (ac && (ac->objectName() == name))
-        {
+        {    // cppcheck-suppress useStlAlgorithm
             return ac;
         }
     }

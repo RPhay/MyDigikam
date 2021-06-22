@@ -99,7 +99,7 @@ QVariant DateFormat::format(const QString& identifier)
     foreach (const DateFormatDescriptor& desc, m_map)
     {
         if (desc.first == identifier)
-        {
+        {   // cppcheck-suppress useStlAlgorithm
             return desc.second;
         }
     }

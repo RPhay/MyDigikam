@@ -469,7 +469,7 @@ bool MapWidget::setBackend(const QString& backendName)
     foreach (MapBackend* const backend, d->loadedBackends)
     {
         if (backend->backendName() == backendName)
-        {
+        {   // cppcheck-suppress useStlAlgorithm
             qCDebug(DIGIKAM_GEOIFACE_LOG) << QString::fromLatin1("setting backend %1").arg(backendName);
             d->currentBackend     = backend;
             d->currentBackendName = backendName;
@@ -980,7 +980,7 @@ void MapWidget::slotUpdateActionsEnabled()
     foreach (QAction* const action, mouseModeActions)
     {
         if (action->data().value<GeoMouseModes>() == s->currentMouseMode)
-        {
+        {   // cppcheck-suppress useStlAlgorithm
             action->setChecked(true);
             break;
         }

@@ -543,7 +543,7 @@ void ItemPropertiesSideBarDB::setImagePropertiesInformation(const QUrl& url)
     foreach (const ItemInfo& info, d->currentInfos)
     {
         if (info.fileUrl() == url)
-        {
+        {   // cppcheck-suppress useStlAlgorithm
             QString str;
             QString unavailable(QString::fromUtf8("<i>%1</i>").arg(i18nc("@info: item properties", "unavailable")));
             QFileInfo fileInfo(url.toLocalFile());

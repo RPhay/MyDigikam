@@ -106,7 +106,7 @@ ParseResults::ResultsKey ParseResults::keyAtPosition(int pos) const
     foreach (const ResultsKey& key, m_results.keys())
     {
         if (pos == key.first)
-        {
+        {   // cppcheck-suppress useStlAlgorithm
             return key;
         }
     }

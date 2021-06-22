@@ -201,7 +201,7 @@ TrackManager::Track TrackManager::getTrackById(const quint64 trackId) const
     foreach (const Track& track, d->trackList)
     {
         if (track.id == trackId)
-        {
+        {   // cppcheck-suppress useStlAlgorithm
             return track;
         }
     }

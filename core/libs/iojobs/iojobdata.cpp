@@ -275,7 +275,7 @@ ItemInfo IOJobData::findItemInfo(const QUrl& url) const
     foreach (const ItemInfo& info, d->itemInfosList)
     {
         if (info.fileUrl() == url)
-        {
+        {    // cppcheck-suppress useStlAlgorithm
             return info;
         }
     }

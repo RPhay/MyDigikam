@@ -88,7 +88,7 @@ BatchTool* DPluginBqm::findToolByName(const QString& name, QObject* const parent
     foreach (BatchTool* const t, tools(parent))
     {
         if (t && (t->objectName() == name))
-        {
+        {   // cppcheck-suppress useStlAlgorithm
             return t;
         }
     }

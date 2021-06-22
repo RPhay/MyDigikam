@@ -1424,7 +1424,7 @@ void SidebarSplitter::slotSplitterMoved(int pos, int index)
         foreach (Sidebar* const sidebar, d->sidebars)
         {
             if (w == sidebar->d->stack)
-            {
+            {    // cppcheck-suppress useStlAlgorithm
                 if (!sidebar->d->minimized)
                 {
                     sidebar->setTab(sidebar->d->activeTab, false);
@@ -1445,7 +1445,7 @@ void SidebarSplitter::slotSplitterMoved(int pos, int index)
         foreach (Sidebar* const sidebar, d->sidebars)
         {
             if (w == sidebar->d->stack)
-            {
+            {   // cppcheck-suppress useStlAlgorithm
                 if (!sidebar->d->minimized)
                 {
                     sidebar->setTab(sidebar->d->activeTab, false);

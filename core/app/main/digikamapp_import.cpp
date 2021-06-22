@@ -168,7 +168,7 @@ void DigikamApp::slotImportAddFolders()
     {
         if (pAlbum->albumRootPath().contains(url.toLocalFile()) ||
             url.toLocalFile().contains(pAlbum->albumRootPath()))
-        {
+        {   // cppcheck-suppress useStlAlgorithm
             QMessageBox::warning(this, qApp->applicationName(),
                                  i18n("The folder %1 is part of the album "
                                       "path and cannot be imported recursively!",

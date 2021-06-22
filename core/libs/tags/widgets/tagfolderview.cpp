@@ -336,7 +336,7 @@ void TagFolderView::setContexMenuItems(ContextMenuHelper& cmh, const QList<TAlbu
         foreach (TAlbum* const tag, albums)
         {
             if (!FaceTags::isPerson(tag->id()))
-            {
+            {   // cppcheck-suppress useStlAlgorithm
                 cmh.addSeparator();
                 cmh.addActionTagToFaceTag(tagModificationHelper(), tag);
                 break;

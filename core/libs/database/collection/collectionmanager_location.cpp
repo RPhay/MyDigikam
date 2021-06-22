@@ -720,7 +720,7 @@ CollectionLocation CollectionManager::locationForAlbumRootPath(const QString& al
     foreach (AlbumRootLocation* const location, d->locations)
     {
         if (location->albumRootPath() == albumRootPath)
-        {
+        {   // cppcheck-suppress useStlAlgorithm
             return *location;
         }
     }

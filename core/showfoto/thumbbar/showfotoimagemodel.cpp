@@ -209,7 +209,7 @@ ShowfotoItemInfo ShowfotoItemModel::showfotoItemInfo(const QUrl& fileUrl) const
         foreach (const ShowfotoItemInfo& info, d->infos)
         {
             if (info.url == fileUrl)
-            {
+            {   // cppcheck-suppress useStlAlgorithm
                 return info;
             }
         }

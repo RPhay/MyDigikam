@@ -55,7 +55,7 @@ Identity FacialRecognitionWrapper::Private::findByAttribute(const QString& attri
     foreach (const Identity& identity, identityCache)
     {
         if (identityContains(identity, attribute, value))
-        {
+        {   // cppcheck-suppress useStlAlgorithm
             return identity;
         }
     }
@@ -76,7 +76,7 @@ Identity FacialRecognitionWrapper::Private::findByAttributes(const QString& attr
         foreach (const Identity& identity, identityCache)
         {
             if (identityContains(identity, attribute, it.value()))
-            {
+            {   // cppcheck-suppress useStlAlgorithm
                 return identity;
             }
         }

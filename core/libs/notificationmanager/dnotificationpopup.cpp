@@ -286,7 +286,7 @@ public:
         foreach (const QScreen* screen, screens)
         {
             if (screen->geometry().contains(point))
-            {
+            {   // cppcheck-suppress useStlAlgorithm
                 return screen->geometry();
             }
         }

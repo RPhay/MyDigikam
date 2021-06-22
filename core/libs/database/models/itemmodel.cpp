@@ -463,7 +463,7 @@ ItemInfo ItemModel::imageInfo(const QString& filePath) const
         foreach (const ItemInfo& info, d->infos)
         {
             if (info.filePath() == filePath)
-            {
+            {    // cppcheck-suppress useStlAlgorithm
                 return info;
             }
         }

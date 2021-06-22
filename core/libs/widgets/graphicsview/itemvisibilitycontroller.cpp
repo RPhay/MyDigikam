@@ -552,7 +552,7 @@ AnimationControl* ItemVisibilityController::Private::findInChildren(QObject* con
     foreach (AnimationControl* const child, childControls)
     {
         if (child->hasItem(item))
-        {
+        {   // cppcheck-suppress useStlAlgorithm
             return child;
         }
     }

@@ -191,7 +191,7 @@ QString MetadataOption::parseMetadata(const QString& token, ParseSettings& setti
         foreach (const QString& key, dataMap.keys())
         {
             if (key.toLower().contains(keyword))
-            {
+            {   // cppcheck-suppress useStlAlgorithm
                 result = dataMap[key];
                 break;
             }

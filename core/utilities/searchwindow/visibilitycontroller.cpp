@@ -190,7 +190,7 @@ void VisibilityController::step()
         foreach (VisibilityObject* const o, d->objects)
         {
             if (!o->isVisible())
-            {
+            {   // cppcheck-suppress useStlAlgorithm
                 o->setVisible(true);
                 return;
             }
@@ -201,7 +201,7 @@ void VisibilityController::step()
         foreach (VisibilityObject* const o, d->objects)
         {
             if (o->isVisible())
-            {
+            {   // cppcheck-suppress useStlAlgorithm
                 o->setVisible(false);
                 return;
             }

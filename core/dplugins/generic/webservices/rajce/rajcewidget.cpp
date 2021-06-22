@@ -394,7 +394,7 @@ void RajceWidget::slotStartUpload()
     foreach (RajceAlbum a, d->talker->session().albums())
     {
         if (a.name == albumName)
-        {
+        { // cppcheck-suppress useStlAlgorithm
             album = a;
             break;
         }

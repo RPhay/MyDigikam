@@ -160,7 +160,7 @@ Workflow WorkflowManager::findByTitle(const QString& title) const
     foreach (const Workflow& q, d->qList)
     {
         if (q.title == title)
-        {
+        {    // cppcheck-suppress useStlAlgorithm
             return q;
         }
     }

@@ -542,7 +542,7 @@ Template TemplateManager::findByTitle(const QString& title) const
     foreach (const Template& t, d->pList)
     {
         if (t.templateTitle() == title)
-        {
+        {    // cppcheck-suppress useStlAlgorithm
             return t;
         }
     }
@@ -557,7 +557,7 @@ Template TemplateManager::findByContents(const Template& tref) const
     foreach (const Template& t, d->pList)
     {
         if (t == tref)
-        {
+        {   // cppcheck-suppress useStlAlgorithm
             return t;
         }
     }

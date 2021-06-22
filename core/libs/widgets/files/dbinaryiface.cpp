@@ -157,7 +157,7 @@ QString DBinaryIface::findHeader(const QStringList& output, const QString& heade
     foreach (const QString& s, output)
     {
         if (s.startsWith(header))
-        {
+        {   // cppcheck-suppress useStlAlgorithm
             return s;
         }
     }

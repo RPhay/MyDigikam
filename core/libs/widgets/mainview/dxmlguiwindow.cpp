@@ -726,7 +726,7 @@ KToolBar* DXmlGuiWindow::mainToolBar() const
     foreach (KToolBar* const toolbar, toolbars)
     {
         if (toolbar && (toolbar->objectName() == QLatin1String("mainToolBar")))
-        {
+        {   // cppcheck-suppress useStlAlgorithm
             mainToolbar = toolbar;
             break;
         }

@@ -812,7 +812,7 @@ QModelIndex ItemHistoryGraphModel::indexForInfo(const ItemInfo& info) const
     foreach (VertexItem* const item, d->vertexItems)
     {
         if (ItemModel::retrieveItemInfo(item->index) == info)
-        {
+        {    // cppcheck-suppress useStlAlgorithm
             return createIndex(item->parent->children.indexOf(item), 0, item);
         }
     }
