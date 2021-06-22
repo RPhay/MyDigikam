@@ -113,7 +113,7 @@ typedef unsigned long long UINT64;
 #define DllDef __declspec(dllimport)
 #endif
 #endif
-#else */
+#else*/
 #define DllDef
 //#endif
 
