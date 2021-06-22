@@ -130,7 +130,7 @@ public Q_SLOTS:
      *
      * @param tags the tags to be deleted, without root tag
      */
-    void slotMultipleTagDel(QList<TAlbum*>& tags);
+    void slotMultipleTagDel(const QList<TAlbum*>& tags);
 
     /**
      * must use bindMultipleTags and a QAction
@@ -156,7 +156,7 @@ public Q_SLOTS:
      *
      * @param tags face tags to be deleted.
      */
-    void slotMultipleFaceTagDel(QList<TAlbum*>& tags);
+    void slotMultipleFaceTagDel(const QList<TAlbum*>& tags);
 
     /**
      * must use bindMultipleTags and a QAction
@@ -180,7 +180,7 @@ public Q_SLOTS:
      *
      * @param tags the tags to mark.
      */
-    void slotMultipleTagsToFaceTags(QList<TAlbum*>& tags);
+    void slotMultipleTagsToFaceTags(const QList<TAlbum*>& tags);
 
     /**
      * must use bindMultipleTags and a QAction
@@ -230,7 +230,7 @@ private:
      * Returns all sub-tags of the given ones which have the person property.
      * This includes the root tags, if they have the property, too.
      */
-    QSet<TAlbum*> getFaceTags(QList<TAlbum*> tags);
+    QSet<TAlbum*> getFaceTags(const QList<TAlbum*>& tags);
 
 private:
 

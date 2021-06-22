@@ -129,13 +129,13 @@ DNGConverterDialog::DNGConverterDialog(QWidget* const parent, DInfoInterface* co
     d->progressBar->reset();
     d->progressBar->hide();
 
-    mainLayout->addWidget(d->listView,         0, 0, 4, 1);
+    mainLayout->addWidget(d->listView,         0, 0, 5, 1);
     mainLayout->addWidget(d->dngSettings,      0, 1, 1, 1);
     mainLayout->addWidget(line,                1, 1, 1, 1);
     mainLayout->addWidget(d->conflictSettings, 2, 1, 1, 1);
-    mainLayout->addWidget(d->progressBar,      1, 1, 1, 1);
+    mainLayout->addWidget(d->progressBar,      3, 1, 1, 1);
     mainLayout->setColumnStretch(0, 10);
-    mainLayout->setRowStretch(3, 10);
+    mainLayout->setRowStretch(4, 10);
     mainLayout->setContentsMargins(QMargins());
 
     // ---------------------------------------------------------------

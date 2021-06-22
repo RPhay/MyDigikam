@@ -841,7 +841,7 @@ QString EditorCore::getImageFormat() const
     return mimeType;
 }
 
-QPixmap EditorCore::convertToPixmap(DImg& img) const
+QPixmap EditorCore::convertToPixmap(const DImg& img) const
 {
     QPixmap pix;
 

@@ -90,7 +90,7 @@ public:
 
     /**
      * Constructor. Creates an ItemInfo object without any cached data initially.
-     * @param    ID       unique ID for this image
+     * @param ID the unique ID for this image
      */
     explicit ItemInfo(qlonglong ID);
 
@@ -224,8 +224,9 @@ public:
      */
     DatabaseItem::Category category()                                                   const;
 
-    /** Returns the image format / mimetype as a standardized
-     *  string (see project/documents/DBSCHEMA.ODS).
+    /**
+     * Returns the image format / mimetype as a standardized
+     * string (see project/documents/DBSCHEMA.ODS).
      */
     QString format()                                                                    const;
 
@@ -348,7 +349,6 @@ public:
      * Note: The image history retrieved here does typically include all
      * steps from the original to this image, but does not reference this image
      * itself.
-     *
      */
     DImageHistory imageHistory()                                                        const;
     void setItemHistory(const DImageHistory& history);
@@ -561,7 +561,8 @@ public:
 
     // -----------------------------------------------------------------------------
 
-    /** @name Operations with Labels
+    /**
+     * @name Operations with Labels
      */
 
     //@{
@@ -581,7 +582,8 @@ public:
      */
     int rating()                                                                        const;
 
-    /** Set the pick Label Id for the item (see PickLabel values from globals.h)
+    /**
+     * Set the pick Label Id for the item (see PickLabel values from globals.h)
      */
     void setPickLabel(int value);
 
@@ -601,7 +603,8 @@ public:
 
     // -----------------------------------------------------------------------------
 
-    /** @name Operations with Thumbnails
+    /**
+     * @name Operations with Thumbnails
      */
 
     //@{
@@ -619,7 +622,8 @@ public:
 
     // -----------------------------------------------------------------------------
 
-    /** @name Operations with Similarity
+    /**
+     * @name Operations with Similarity
      */
 
     //@{

@@ -169,7 +169,7 @@ public:
      * calls the above method, and changes the stored metadata in the DImg object.
      * @return Returns if the DImg object has been touched
      */
-    bool write(DImg& image,
+    bool write(const DImg& image,
                WriteComponent writeMode = WRITE_ALL,
                bool ignoreLazySync = false,
                const MetaEngineSettingsContainer& settings = MetaEngineSettings::instance()->settings());
@@ -190,7 +190,7 @@ public:
      * @param saveTags  - save switch
      * @return          - if tags were successfully set
      */
-    bool writeTags(DMetadata& metadata, bool saveTags);
+    bool writeTags(const DMetadata& metadata, bool saveTags);
 
     /**
      * @brief cleanupTags - remove duplicates and obsolete tags before setting metadata
@@ -276,7 +276,7 @@ protected:
 
 private:
 
-    bool writeFaceTagsMap(DMetadata& metadata, bool saveFaces);
+    bool writeFaceTagsMap(const DMetadata& metadata, bool saveFaces);
 
 private:
 

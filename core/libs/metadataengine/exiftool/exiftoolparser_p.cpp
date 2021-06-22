@@ -91,17 +91,7 @@ bool ExifToolParser::Private::startProcess(const QByteArrayList& cmdArgs, ExifTo
 
 QByteArray ExifToolParser::Private::filePathEncoding(const QFileInfo& fi) const
 {
-
-#ifdef Q_OS_WIN
-
-    return (QDir::toNativeSeparators(fi.filePath()).toLocal8Bit());
-
-#else
-
     return (QDir::toNativeSeparators(fi.filePath()).toUtf8());
-
-#endif
-
 }
 
 QString ExifToolParser::Private::actionString(int cmdAction) const
@@ -146,6 +136,11 @@ QString ExifToolParser::Private::actionString(int cmdAction) const
         case ExifToolProcess::TRANS_TAGS:
         {
             return QLatin1String("Translate Tags");
+        }
+
+        case ExifToolProcess::VERSION_STRING:
+        {
+            return QLatin1String("Version String");
         }
 
         default: // ExifToolProcess::NO_ACTION

@@ -219,13 +219,17 @@ template <class T> void MetadataHub::Private::loadSingleValue(const T& data, T& 
     switch (status)
     {
         case MetadataHub::MetadataInvalid:
+        {
             storage = data;
             status  = MetadataHub::MetadataAvailable;
             break;
+        }
 
         case MetadataHub::MetadataAvailable:
+        {
             qCDebug(DIGIKAM_GENERAL_LOG) << "You should not load more than one image info in metadatahub";
             break;
+        }
     }
 }
 
@@ -234,7 +238,10 @@ template <class T> void MetadataHub::Private::loadSingleValue(const T& data, T& 
 /**
  * safe method
  **/
-bool MetadataHub::writeToMetadata(const ItemInfo& info, WriteComponent writeMode, bool ignoreLazySync, const MetaEngineSettingsContainer &settings)
+bool MetadataHub::writeToMetadata(const ItemInfo& info,
+                                  WriteComponent writeMode,
+                                  bool ignoreLazySync,
+                                  const MetaEngineSettingsContainer &settings)
 {
     applyChangeNotifications();
 
@@ -267,7 +274,9 @@ bool MetadataHub::writeToMetadata(const ItemInfo& info, WriteComponent writeMode
     return false;
 }
 
-bool MetadataHub::write(DMetadata& metadata, WriteComponent writeMode, const MetaEngineSettingsContainer& settings)
+bool MetadataHub::write(DMetadata& metadata,
+                        WriteComponent writeMode,
+                        const MetaEngineSettingsContainer& settings)
 {
     applyChangeNotifications();
 
@@ -372,7 +381,10 @@ bool MetadataHub::write(DMetadata& metadata, WriteComponent writeMode, const Met
     return dirty;
 }
 
-bool MetadataHub::write(const QString& filePath, WriteComponent writeMode, bool ignoreLazySync, const MetaEngineSettingsContainer& settings)
+bool MetadataHub::write(const QString& filePath,
+                        WriteComponent writeMode,
+                        bool ignoreLazySync,
+                        const MetaEngineSettingsContainer& settings)
 {
     applyChangeNotifications();
 
@@ -407,7 +419,10 @@ bool MetadataHub::write(const QString& filePath, WriteComponent writeMode, bool 
     return false;
 }
 
-bool MetadataHub::write(DImg& image, WriteComponent writeMode, bool ignoreLazySync, const MetaEngineSettingsContainer& settings)
+bool MetadataHub::write(const DImg& image,
+                        WriteComponent writeMode,
+                        bool ignoreLazySync,
+                        const MetaEngineSettingsContainer& settings)
 {
     applyChangeNotifications();
 
@@ -446,7 +461,8 @@ bool MetadataHub::write(DImg& image, WriteComponent writeMode, bool ignoreLazySy
     return write(*metadata, writeMode, settings);
 }
 
-bool MetadataHub::writeTags(const QString& filePath, WriteComponent writeMode,
+bool MetadataHub::writeTags(const QString& filePath,
+                            WriteComponent writeMode,
                             const MetaEngineSettingsContainer& settings)
 {
     applyChangeNotifications();
@@ -481,7 +497,7 @@ bool MetadataHub::writeTags(const QString& filePath, WriteComponent writeMode,
     }
 }
 
-bool MetadataHub::writeTags(DMetadata& metadata, bool saveTags)
+bool MetadataHub::writeTags(const DMetadata& metadata, bool saveTags)
 {
     qCDebug(DIGIKAM_GENERAL_LOG) << "Writing tags";
 
@@ -554,7 +570,7 @@ bool MetadataHub::writeTags(DMetadata& metadata, bool saveTags)
     return dirty;
 }
 
-bool MetadataHub::writeFaceTagsMap(DMetadata& metadata, bool saveFaces)
+bool MetadataHub::writeFaceTagsMap(const DMetadata& metadata, bool saveFaces)
 {
     // add person tags to which no region is assigned to Microsoft Photo Region schema
 

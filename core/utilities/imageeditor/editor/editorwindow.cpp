@@ -1156,9 +1156,8 @@ bool EditorWindow::promptUserSave(const QUrl& url, SaveAskMode mode, bool allowC
                 else
                 {
                     QPointer<VersioningPromptUserSaveDialog> dialog = new VersioningPromptUserSaveDialog(this);
-                    dialog->exec();
 
-                    if (!dialog)
+                    if (dialog->exec() == QDialog::Rejected)
                     {
                         return false;
                     }

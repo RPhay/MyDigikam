@@ -116,7 +116,8 @@ private Q_SLOTS:
 
     // -----------------------------------------------------------------------------
 
-    /** @name Operations with database
+    /**
+     * @name Operations with database
      */
 
     //@{
@@ -163,14 +164,16 @@ private:
 
     // -----------------------------------------------------------------------------
 
-    /** @name Operations with collections
+    /**
+     * @name Operations with collections
      */
 
     //@{
 
 private:
 
-    /** Returns true if it added or removed an album.
+    /**
+     * Returns true if it added or removed an album.
      */
     bool handleCollectionStatusChange(const CollectionLocation& location, int oldStatus);
 
@@ -264,25 +267,30 @@ private Q_SLOTS:
 
 Q_SIGNALS:
 
-    /** Emitted when an album is about to be added to the given parent (0 if album is root)
-     *  after the item given by prev (prev is 0 if parent has no children yet).
+    /**
+     * Emitted when an album is about to be added to the given parent (0 if album is root)
+     * after the item given by prev (prev is 0 if parent has no children yet).
      */
     void signalAlbumAboutToBeAdded(Album* album, Album* parent, Album* prev);
 
-    /** Emitted when the album has been added.
+    /**
+     * Emitted when the album has been added.
      */
     void signalAlbumAdded(Album* album);
 
-    /** Emitted when the album is about to be deleted, but is still fully valid.
+    /**
+     * Emitted when the album is about to be deleted, but is still fully valid.
      */
     void signalAlbumAboutToBeDeleted(Album* album);
 
-    /** Emitted when the album is deleted, but the object can still be accessed.
+    /**
+     * Emitted when the album is deleted, but the object can still be accessed.
      */
     void signalAlbumDeleted(Album* album);
 
-    /** Emitted when the album is deleted, the object can no longer be accessed.
-     *  For identification purposes, the former album pointer is passed.
+    /**
+     * Emitted when the album is deleted, the object can no longer be accessed.
+     * For identification purposes, the former album pointer is passed.
      */
     void signalAlbumHasBeenDeleted(quintptr);
 
@@ -294,19 +302,22 @@ Q_SIGNALS:
     void signalAlbumRenamed(Album* album);
     void signalAlbumNewPath(Album* album);
 
-    /** Emittedd when an album is about to be moved. Signals for deleting and adding will be
-     *  sent afterwards, but the album object is guaranteed not to be deleted until after signalAlbumMoved.
+    /**
+     * Emittedd when an album is about to be moved. Signals for deleting and adding will be
+     * sent afterwards, but the album object is guaranteed not to be deleted until after signalAlbumMoved.
      */
     void signalAlbumAboutToBeMoved(Album* album);
 
-    /** Emitted when the album is moved to its new parent. After signalAlbumAboutToBeMoved,
-     *  all four signals for first deleting and then adding will have been sent.
+    /**
+     * Emitted when the album is moved to its new parent. After signalAlbumAboutToBeMoved,
+     * all four signals for first deleting and then adding will have been sent.
      */
     void signalAlbumMoved(Album* album);
     void signalAlbumsUpdated(int type);
 
-    /** Emitted when a change is done on available Albums.
-     *  Please note that affected albums may appear or disappear after this signal has been emitted.
+    /**
+     * Emitted when a change is done on available Albums.
+     * Please note that affected albums may appear or disappear after this signal has been emitted.
      */
     void signalShowOnlyAvailableAlbumsChanged(bool showsOnlyAvailableAlbums);
 
@@ -314,7 +325,8 @@ Q_SIGNALS:
 
     // -----------------------------------------------------------------------------
 
-    /** @name Operations on Date Album
+    /**
+     * @name Operations on Date Album
      */
 
     //@{
@@ -345,7 +357,7 @@ private Q_SLOTS:
     void slotDatesJobResult();
     void slotDatesJobData(const QHash<QDateTime, int>& datesStatMap);
 
-   /**
+    /**
      * Scan dates from the database and updates the DAlbums.
      */
     void scanDAlbumsScheduled();
@@ -361,7 +373,8 @@ Q_SIGNALS:
 
     // -----------------------------------------------------------------------------
 
-    /** @name Operations on Physical Album
+    /**
+     * @name Operations on Physical Album
      */
 
     //@{
@@ -492,7 +505,8 @@ Q_SIGNALS:
 
     // -----------------------------------------------------------------------------
 
-    /** @name Operations on Tag Album
+    /**
+     * @name Operations on Tag Album
      */
 
     //@{
@@ -701,7 +715,8 @@ Q_SIGNALS:
 
     // -----------------------------------------------------------------------------
 
-    /** @name Operations on Search Album
+    /**
+     * @name Operations on Search Album
      */
 
     //@{
@@ -790,7 +805,8 @@ Q_SIGNALS:
 
     // -----------------------------------------------------------------------------
 
-    /** @name Operations on Face Album
+    /**
+     * @name Operations on Face Album
      */
 
     //@{

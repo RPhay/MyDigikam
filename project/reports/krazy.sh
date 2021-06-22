@@ -103,7 +103,7 @@ java -jar /opt/saxon/saxon9he.jar \
 
 cp ./krazy/style.css $REPORT_DIR/
 
-if [[ $1 != "--nowebupdate" ]]
+if [[ $1 != "--nowebupdate" ]] ; then
 
     # update www.digikam.org report section.
     updateReportToWebsite "krazy" $REPORT_DIR $TITLE $(parseGitBranch)

@@ -47,18 +47,24 @@ bool AlbumManager::handleCollectionStatusChange(const CollectionLocation& locati
             switch (location.status())
             {
                 case CollectionLocation::LocationNull: // not possible
+                {
                     break;
+                }
 
                 case CollectionLocation::LocationHidden:
+                {
                     action = Remove;
                     break;
+                }
 
                 case CollectionLocation::LocationAvailable:
+                {
                     action = Add;
                     break;
+                }
 
                 case CollectionLocation::LocationUnavailable:
-
+                {
                     if (d->showOnlyAvailableAlbums)
                     {
                         action = Remove;
@@ -69,11 +75,15 @@ bool AlbumManager::handleCollectionStatusChange(const CollectionLocation& locati
                     }
 
                     break;
+                }
 
                 case CollectionLocation::LocationDeleted:
+                {
                     action = Remove;
                     break;
+                }
             }
+
             break;
         }
         case CollectionLocation::LocationAvailable:
@@ -83,30 +93,40 @@ bool AlbumManager::handleCollectionStatusChange(const CollectionLocation& locati
                 case CollectionLocation::LocationNull:
                 case CollectionLocation::LocationHidden:
                 case CollectionLocation::LocationDeleted:
+                {
                     action = Remove;
                     break;
+                }
 
                 case CollectionLocation::LocationUnavailable:
-
+                {
                     if (d->showOnlyAvailableAlbums)
                     {
                         action = Remove;
                     }
 
                     break;
+                }
 
                 case CollectionLocation::LocationAvailable: // not possible
+                {
                     break;
+                }
             }
+
             break;
         }
+
         case CollectionLocation::LocationDeleted: // not possible
+        {
             break;
+        }
     }
 
-    if (action == Add && !d->albumRootAlbumHash.value(location.id()))
+    if      ((action == Add) && !d->albumRootAlbumHash.value(location.id()))
     {
         // This is the only place where album root albums are added
+
         addAlbumRoot(location);
         return true;
     }
@@ -126,12 +146,14 @@ void AlbumManager::addAlbumRoot(const CollectionLocation& location)
     if (!album)
     {
         // Create a PAlbum for the Album Root.
+
         QString label = d->labelForAlbumRootAlbum(location);
         album         = new PAlbum(location.id(), label);
 
         qCDebug(DIGIKAM_GENERAL_LOG) << "Added root album called: " << album->title();
 
         // insert album root created into hash
+
         d->albumRootAlbumHash.insert(location.id(), album);
     }
 }
@@ -139,11 +161,13 @@ void AlbumManager::addAlbumRoot(const CollectionLocation& location)
 void AlbumManager::removeAlbumRoot(const CollectionLocation& location)
 {
     // retrieve and remove from hash
+
     PAlbum* const album = d->albumRootAlbumHash.take(location.id());
 
     if (album)
     {
         // delete album and all its children
+
         removePAlbum(album);
     }
 }
@@ -151,6 +175,7 @@ void AlbumManager::removeAlbumRoot(const CollectionLocation& location)
 void AlbumManager::slotCollectionLocationStatusChanged(const CollectionLocation& location, int oldStatus)
 {
     // not before initialization
+
     if (!d->rootPAlbum)
     {
         return;
@@ -159,6 +184,7 @@ void AlbumManager::slotCollectionLocationStatusChanged(const CollectionLocation&
     if (handleCollectionStatusChange(location, oldStatus))
     {
         // a change occurred. Possibly albums have appeared or disappeared
+
         if (!d->scanPAlbumsTimer->isActive())
         {
             d->scanPAlbumsTimer->start();
@@ -195,7 +221,7 @@ void AlbumManager::slotCollectionImageChange(const CollectionImageChangeset& cha
         case CollectionImageChangeset::Deleted:
         case CollectionImageChangeset::Removed:
         case CollectionImageChangeset::RemovedAll:
-
+        {
             if (!d->scanDAlbumsTimer->isActive())
             {
                 d->scanDAlbumsTimer->start();
@@ -207,9 +233,12 @@ void AlbumManager::slotCollectionImageChange(const CollectionImageChangeset& cha
             }
 
             break;
+        }
 
         default:
+        {
             break;
+        }
     }
 }
 

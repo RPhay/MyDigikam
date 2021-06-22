@@ -70,6 +70,7 @@ void AlbumManager::slotPeopleJobResult()
         qCWarning(DIGIKAM_GENERAL_LOG) << "Failed to list face tags";
 
         // Pop-up a message about the error.
+
         DNotificationWrapper(QString(), d->personListJob->errorsList().first(),
                              nullptr, i18n("digiKam"));
     }
@@ -85,11 +86,15 @@ void AlbumManager::slotPeopleJobData(const QMap<QString, QMap<int, int> >& faces
     }
 
     d->uAlbumsCount.clear();
-    //I think this is a bug
-    //Why autodetectedFace have all autodetected tags?
-    //They should be in autodetectedPerson
-    if (facesStatMap.contains(ImageTagPropertyName::autodetectedFace())) //autodetectedPerson
-        d->uAlbumsCount = *facesStatMap.find(ImageTagPropertyName::autodetectedFace()); //autodetectedPerson
+
+    // I think this is a bug
+    // Why autodetectedFace have all autodetected tags?
+    // They should be in autodetectedPerson
+
+    if (facesStatMap.contains(ImageTagPropertyName::autodetectedFace()))                // autodetectedPerson
+    {
+        d->uAlbumsCount = *facesStatMap.find(ImageTagPropertyName::autodetectedFace()); // autodetectedPerson
+    }
 
     d->fAlbumsCount.clear();
 

@@ -155,20 +155,12 @@ public:
     }
 };
 
-ContextMenuHelper::ContextMenuHelper(QMenu* const parent, KActionCollection* const actionCollection)
+ContextMenuHelper::ContextMenuHelper(QMenu* const parent)
     : QObject(parent),
       d      (new Private(this))
 {
-    d->parent = parent;
-
-    if (!actionCollection)
-    {
-        d->stdActionCollection = DigikamApp::instance()->actionCollection();
-    }
-    else
-    {
-        d->stdActionCollection = actionCollection;
-    }
+    d->parent              = parent;
+    d->stdActionCollection = DigikamApp::instance()->actionCollection();
 }
 
 ContextMenuHelper::~ContextMenuHelper()
@@ -772,16 +764,6 @@ void ContextMenuHelper::addExportMenu()
     }
 
     d->parent->addMenu(menuExport);
-}
-
-void ContextMenuHelper::addAlbumActions()
-{
-    QList<QAction*> albumActions;
-
-    if (!albumActions.isEmpty())
-    {
-        d->parent->addActions(albumActions);
-    }
 }
 
 void ContextMenuHelper::addGotoMenu(const imageIds& ids)

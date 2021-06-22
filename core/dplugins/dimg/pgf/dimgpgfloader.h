@@ -55,7 +55,9 @@ private:
 
     bool progressCallback(double percent, bool escapeAllowed);
 
-    static bool CallbackForLibPGF(double percent, bool escapeAllowed, void* data);
+    static bool CallbackForLibPGF(double percent,
+                                  bool escapeAllowed,
+                                  void* data);
 
 private:
 

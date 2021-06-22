@@ -41,7 +41,7 @@ python3 ./clangtidy_visualizer.py $REPORT_DIR/clang-tidy.log
 #rm -f $REPORT_DIR/clang-tidy.log
 mv tidy.html $REPORT_DIR/index.html
 
-if [[ $1 != "--nowebupdate" ]]
+if [[ $1 != "--nowebupdate" ]] ; then
 
     updateReportToWebsite "tidy" $REPORT_DIR $TITLE $(parseGitBranch)
 

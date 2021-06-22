@@ -41,13 +41,13 @@ class Q_DECL_HIDDEN ImportItemModel::Private
 public:
 
     explicit Private()
-      : controller(nullptr),
-        keepFileUrlCache(false),
-        refreshing(false),
-        reAdding(false),
-        incrementalRefreshRequested(false),
-        sendRemovalSignals(false),
-        incrementalUpdater(nullptr)
+      : controller                  (nullptr),
+        keepFileUrlCache            (false),
+        refreshing                  (false),
+        reAdding                    (false),
+        incrementalRefreshRequested (false),
+        sendRemovalSignals          (false),
+        incrementalUpdater          (nullptr)
     {
     }
 
@@ -108,7 +108,7 @@ public:
 
 ImportItemModel::ImportItemModel(QObject* const parent)
     : QAbstractListModel(parent),
-      d(new Private)
+      d                 (new Private)
 {
 }
 
@@ -648,12 +648,13 @@ void ImportItemModel::publiciseInfos(const CamItemInfoList& infos)
         // TODO move this to a separate thread, see CameraHistoryUpdater
         // TODO can we/do we want to differentiate at all between whether the status is unknown and not downloaded?
 
-        info.downloaded = CoreDbDownloadHistory::status(QString::fromUtf8(d->controller->cameraMD5ID()), info.name, info.size, info.ctime);
+        info.downloaded   = CoreDbDownloadHistory::status(QString::fromUtf8(d->controller->cameraMD5ID()),
+                                                          info.name, info.size, info.ctime);
 
         // TODO is this safe? if so, is there a need to store this inside idHash separately?
 
-        info.id      = i;
-        qlonglong id = info.id;
+        info.id           = i;
+        qlonglong id      = info.id;
         d->idHash.insert(id, i);
 
         if (d->keepFileUrlCache)
@@ -724,7 +725,7 @@ static bool pairsContain(const List& list, T value)
         int half   = (n >> 1);
         middle = begin + half;
 
-        if ((middle->first <= value) && (middle->second >= value))
+        if      ((middle->first <= value) && (middle->second >= value))
         {
             return true;
         }
@@ -833,6 +834,7 @@ void ImportItemModel::removeRowPairs(const QList<QPair<int, int> >& toRemove)
 
         if (d->sendRemovalSignals)
         {
+            // cppcheck-suppress knownEmptyContainer
             std::copy(d->infos.begin() + begin, d->infos.begin() + end, removedInfos.begin());
             emit itemInfosAboutToBeRemoved(removedInfos);
         }
@@ -959,7 +961,7 @@ QList<QPair<int, int> > ImportItemModelIncrementalUpdater::toContiguousPairs(con
     {
         const int& index = indices.at(i);
 
-        if (index == pair.second + 1)
+        if (index == (pair.second + 1))
         {
             pair.second = index;
             continue;
@@ -1041,16 +1043,19 @@ QVariant ImportItemModel::data(const QModelIndex& index, int role) const
     {
         case Qt::DisplayRole:
         case Qt::ToolTipRole:
+        {
             return d->infos.at(index.row()).name;
-            break;
+        }
 
         case ImportItemModelPointerRole:
+        {
             return QVariant::fromValue(const_cast<ImportItemModel*>(this));
-            break;
+        }
 
         case ImportItemModelInternalId:
+        {
             return index.row();
-            break;
+        }
     }
 
     return QVariant();

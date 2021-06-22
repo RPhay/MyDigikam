@@ -81,7 +81,9 @@ void DNGConverterList::slotAddImages(const QList<QUrl>& list)
             }
         }
 
-        if (!found && (DRawDecoder::isRawFile(imageUrl)))
+        if (!found                                                                       &&
+            (DRawDecoder::isRawFile(imageUrl))                                           &&
+            (QFileInfo(imageUrl.toLocalFile()).suffix().toUpper() != QLatin1String("DNG")))
         {
             new DNGConverterListViewItem(listView(), imageUrl);
         }

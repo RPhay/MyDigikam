@@ -35,6 +35,7 @@
 #include <QStyledItemDelegate>
 #include <QMouseEvent>
 #include <QScrollBar>
+#include <QQueue>
 #include <QTimer>
 #include <QDrag>
 #include <QMenu>

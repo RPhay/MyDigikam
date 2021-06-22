@@ -452,10 +452,7 @@ void FaceGroup::slotAssigned(const TaggingAction& action, const ItemInfo&, const
             return;
         }
 
-        if (tagId)
-        {
-            face = d->editPipeline.confirm(d->info, face, d->view->previewItem()->image(), tagId, currentRegion);
-        }
+        face = d->editPipeline.confirm(d->info, face, d->view->previewItem()->image(), tagId, currentRegion);
     }
 
     item->setFace(face);

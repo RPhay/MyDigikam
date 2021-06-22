@@ -87,8 +87,7 @@ public:
 
 void ItemPositionPriv::init(const CoreDbAccess& access, qlonglong id)
 {
-    imageId = id;
-
+    imageId             = id;
     QVariantList values = access.db()->getItemPosition(imageId);
 
     if (values.size() == 10)
@@ -120,7 +119,7 @@ ItemPosition::ItemPosition(qlonglong imageId)
     d->init(access, imageId);
 }
 
-ItemPosition::ItemPosition(CoreDbAccess& access, qlonglong imageId)
+ItemPosition::ItemPosition(const CoreDbAccess& access, qlonglong imageId)
     : d(new ItemPositionPriv)
 {
     d->init(access, imageId);

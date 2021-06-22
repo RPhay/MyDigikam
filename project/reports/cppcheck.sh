@@ -82,6 +82,7 @@ cppcheck -j$CPU_CORES \
          --suppress=class_X_Y \
          --suppress=ConfigurationNotChecked \
          --suppress=unmatchedSuppression \
+         --suppress=useStlAlgorithm \
          --output-file=report.cppcheck.xml \
          $IGNORE_DIRS \
          $INCLUDE_DIRS \
@@ -92,7 +93,7 @@ cppcheck-htmlreport --file=report.cppcheck.xml \
                     --source-dir=. \
                     --title=$TITLE
 
-if [[ $1 != "--nowebupdate" ]]
+if [[ $1 != "--nowebupdate" ]] ; then
 
     # update www.digikam.org report section.
     updateReportToWebsite "cppcheck" $REPORT_DIR $TITLE $(parseGitBranch)

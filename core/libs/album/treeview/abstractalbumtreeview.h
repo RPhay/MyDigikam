@@ -274,6 +274,16 @@ public Q_SLOTS:
      */
     void expandEverything(const QModelIndex& index);
 
+    /**
+     * @brief slotExpandNode - expands recursively selected nodes
+     */
+    void slotExpandNode();
+
+    /**
+     * @brief slotCollapseNode - collapse recursively selected nodes
+     */
+    void slotCollapseNode();
+
 Q_SIGNALS:
 
     /// Emitted when the currently selected album changes

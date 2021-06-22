@@ -1071,11 +1071,11 @@ void MapWidget::getColorInfos(const GeoGroupState groupState,
     {
         *labelText = QString::number(nMarkers);
     }
-    else if ((nMarkers >= 1000) && (nMarkers <= 1950))
+    else if ((nMarkers >= 1000) && (nMarkers <= 1950))      // cppcheck-suppress knownConditionTrueFalse
     {
         *labelText = QString::fromLatin1("%L1k").arg(qreal(nMarkers)/1000.0, 0, 'f', 1);
     }
-    else if ((nMarkers >= 1951) && (nMarkers < 19500))
+    else if ((nMarkers >= 1951) && (nMarkers < 19500))      // cppcheck-suppress knownConditionTrueFalse
     {
         *labelText = QString::fromLatin1("%L1k").arg(qreal(nMarkers)/1000.0, 0, 'f', 0);
     }

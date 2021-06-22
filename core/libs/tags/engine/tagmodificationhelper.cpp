@@ -193,7 +193,7 @@ void TagModificationHelper::slotTagEdit(TAlbum* t)
         return;
     }
 
-    if (tag && (tag->title() != title))
+    if (tag->title() != title)
     {
         QString errMsg;
 
@@ -214,7 +214,7 @@ void TagModificationHelper::slotTagEdit(TAlbum* t)
         }
     }
 
-    if (tag && (tag->icon() != icon))
+    if (tag->icon() != icon)
     {
         QString errMsg;
 
@@ -224,7 +224,7 @@ void TagModificationHelper::slotTagEdit(TAlbum* t)
         }
     }
 
-    if (tag && (tag->property(TagPropertyName::tagKeyboardShortcut()) != ks.toString()))
+    if (tag->property(TagPropertyName::tagKeyboardShortcut()) != ks.toString())
     {
         TagsActionMngr::defaultManager()->updateTagShortcut(tag->id(), ks);
     }
@@ -317,7 +317,7 @@ void TagModificationHelper::slotTagDelete()
     slotTagDelete(boundTag(sender()));
 }
 
-void TagModificationHelper::slotMultipleTagDel(QList<TAlbum*>& tags)
+void TagModificationHelper::slotMultipleTagDel(const QList<TAlbum*>& tags)
 {
     QString tagWithChildrens;
     QString tagWithoutImages;
@@ -326,7 +326,6 @@ void TagModificationHelper::slotMultipleTagDel(QList<TAlbum*>& tags)
 
     foreach (TAlbum* const t, tags)
     {
-
         if (!t || t->isRoot())
         {
             continue;
@@ -455,7 +454,7 @@ void TagModificationHelper::slotFaceTagDelete()
     slotFaceTagDelete(boundTag(sender()));
 }
 
-void TagModificationHelper::slotMultipleFaceTagDel(QList<TAlbum*>& tags)
+void TagModificationHelper::slotMultipleFaceTagDel(const QList<TAlbum*>& tags)
 {
     QString tagsWithChildren;
     QString tagsWithImages;
@@ -707,7 +706,7 @@ void TagModificationHelper::slotTagToFaceTag()
     slotTagToFaceTag(boundTag(sender()));
 }
 
-void TagModificationHelper::slotMultipleTagsToFaceTags(QList<TAlbum*>& tags)
+void TagModificationHelper::slotMultipleTagsToFaceTags(const QList<TAlbum*>& tags)
 {
     foreach (TAlbum* const selectedTag, tags)
     {
@@ -735,7 +734,7 @@ QList<TAlbum*> TagModificationHelper::getFaceTags(TAlbum* rootTag)
     return getFaceTags(tags).values();
 }
 
-QSet<TAlbum*> TagModificationHelper::getFaceTags(QList<TAlbum*> tags)
+QSet<TAlbum*> TagModificationHelper::getFaceTags(const QList<TAlbum*>& tags)
 {
     QSet<TAlbum*> faceTags;
 
@@ -749,27 +748,23 @@ QSet<TAlbum*> TagModificationHelper::getFaceTags(QList<TAlbum*> tags)
         AlbumPointer<TAlbum> tag(tAlbum);
         AlbumIterator iter(tag);
 
-        // Get all shild tags which have the person property.
+        // Get all child tags which have the person property.
 
         while (iter.current())
         {
-            Album* const album = iter.current();
+            Album* const album    = iter.current();
+            TAlbum* const tAlbum2 = dynamic_cast<TAlbum*>(album);
 
             // Make sure that no nullp pointer dereference is done.
-            // though while(iter.current()) already tests for  the current
+            // though while(iter.current()) already tests for the current
             // album being true, i.e. > 0 , i.e. non-null
 
-            if (album)
+            if (tAlbum2 && FaceTags::isPerson(tAlbum2->id()))
             {
-                TAlbum* const tAlbum2 = dynamic_cast<TAlbum*>(album);
-
-                if (tAlbum2 && FaceTags::isPerson(tAlbum2->id()))
-                {
-                    faceTags.insert(tAlbum2);
-                }
-
-                ++iter;
+                faceTags.insert(tAlbum2);
             }
+
+            ++iter;
         }
     }
 

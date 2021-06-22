@@ -55,7 +55,7 @@ TagDragDropHandler::TagDragDropHandler(TagModel* const model)
 
 TagModel* TagDragDropHandler::model() const
 {
-    return static_cast<TagModel*>(m_model);
+    return (static_cast<TagModel*>(m_model));
 }
 
 bool TagDragDropHandler::dropEvent(QAbstractItemView* view,
@@ -105,7 +105,7 @@ bool TagDragDropHandler::dropEvent(QAbstractItemView* view,
                 return false;
             }
 
-            if (choice == gotoAction)
+            if      (choice == gotoAction)
             {
                 TAlbum* newParentTag = nullptr;
 
@@ -283,7 +283,7 @@ Qt::DropAction TagDragDropHandler::accepts(const QDropEvent* e, const QModelInde
 {
     TAlbum* const destAlbum = model()->albumForIndex(dropIndex);
 
-    if (DTagListDrag::canDecode(e->mimeData()))
+    if      (DTagListDrag::canDecode(e->mimeData()))
     {
 /*
         int droppedId = 0;
@@ -334,7 +334,7 @@ Qt::DropAction TagDragDropHandler::accepts(const QDropEvent* e, const QModelInde
 
         // Dragging a parent on its child makes no sense
 
-        if (destAlbum && droppedAlbum && droppedAlbum->isAncestorOf(destAlbum))
+        if (droppedAlbum && droppedAlbum->isAncestorOf(destAlbum))
         {
             return Qt::IgnoreAction;
         }

@@ -66,10 +66,12 @@ public:
          *  is identical. Else returns a null QString.
          */
         ReturnMatchingLanguageOnly,
+
         /**
          * If no matching language as above is found, return the default language.
          */
         ReturnMatchingOrDefaultLanguage,
+
         /**
          * If no matching or default language is found, return the first comment.
          * Returns a null string only if no comment is available.
@@ -83,6 +85,7 @@ public:
          * Allow only one comment per language. Default setting.
          */
         UniquePerLanguage,
+
         /**
          * Allow multiple comments per language, each with a different author
          */
@@ -105,7 +108,7 @@ public:
      * Create a ItemComments object for the image with the specified id.
      * The existing CoreDbAccess object will be used to access the database.
      */
-    ItemComments(CoreDbAccess& access, qlonglong imageid);
+    ItemComments(const CoreDbAccess& access, qlonglong imageid);
 
     ItemComments(const ItemComments& other);
     ~ItemComments();
@@ -149,7 +152,9 @@ public:
      */
     DatabaseComment::Type type(int index)                                                                       const;
 
-    /// RFC 3066 notation, or "x-default"
+    /**
+     * RFC 3066 notation, or "x-default"
+     */
     QString language(int index)                                                                                 const;
 
     QString author(int index)                                                                                   const;

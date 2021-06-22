@@ -53,9 +53,9 @@ public:
     {
     }
 
-    QString                       lastError;
-    QString                       selectedItemKey;
-    QStringList                   simplifiedTagsList;
+    QString     lastError;
+    QString     selectedItemKey;
+    QStringList simplifiedTagsList;
 };
 
 ExifToolListView::ExifToolListView(QWidget* const parent)

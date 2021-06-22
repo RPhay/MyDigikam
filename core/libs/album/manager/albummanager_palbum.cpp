@@ -33,6 +33,7 @@ void AlbumManager::scanPAlbums()
     d->scanPAlbumsTimer->stop();
 
     // first insert all the current normal PAlbums into a map for quick lookup
+
     QHash<int, PAlbum*> oldAlbums;
     AlbumIterator it(d->rootPAlbum);
 
@@ -44,18 +45,23 @@ void AlbumManager::scanPAlbums()
     }
 
     // scan db and get a list of all albums
+
     QList<AlbumInfo> currentAlbums = CoreDbAccess().db()->scanAlbums();
 
     // sort by relative path so that parents are created before children
+
     std::sort(currentAlbums.begin(), currentAlbums.end());
 
     QList<AlbumInfo> newAlbums;
 
     // go through all the Albums and see which ones are already present
+
     foreach (const AlbumInfo& info, currentAlbums)
     {
         // check that location of album is available
-        if (d->showOnlyAvailableAlbums && !CollectionManager::instance()->locationForAlbumRootId(info.albumRootId).isAvailable())
+
+        if (d->showOnlyAvailableAlbums &&
+            !CollectionManager::instance()->locationForAlbumRootId(info.albumRootId).isAvailable())
         {
             continue;
         }
@@ -78,6 +84,7 @@ void AlbumManager::scanPAlbums()
     // The albums have to be removed with children being removed first,
     // removePAlbum takes care of that.
     // So we only feed it the albums from oldAlbums topmost in hierarchy.
+
     QSet<PAlbum*> topMostOldAlbums;
 
     foreach (PAlbum* const album, oldAlbums)
@@ -96,13 +103,16 @@ void AlbumManager::scanPAlbums()
     foreach (PAlbum* const album, topMostOldAlbums)
     {
         // recursively removes all children and the album
+
         removePAlbum(album);
     }
 
     // sort by relative path so that parents are created before children
+
     std::sort(newAlbums.begin(), newAlbums.end());
 
     // create all new albums
+
     foreach (const AlbumInfo& info, newAlbums)
     {
         if (info.relativePath.isEmpty())
@@ -129,13 +139,17 @@ void AlbumManager::scanPAlbums()
 
             // it has been created from the collection location
             // with album root id, parentPath "/" and a name, but no album id yet.
+
             album->m_id = info.id;
         }
         else
         {
             // last section, no slash
+
             QString name = info.relativePath.section(QLatin1Char('/'), -1, -1);
+
             // all but last sections, leading slash, no trailing slash
+
             QString parentPath = info.relativePath.section(QLatin1Char('/'), 0, -2);
 
             if (parentPath.isEmpty())
@@ -156,6 +170,7 @@ void AlbumManager::scanPAlbums()
             }
 
             // Create the new album
+
             album = new PAlbum(info.albumRootId, parentPath, name, info.id);
         }
 
@@ -169,6 +184,7 @@ void AlbumManager::scanPAlbums()
         if (album->isAlbumRoot())
         {
             // Inserting virtual Trash PAlbum for AlbumsRootAlbum using special constructor
+
             PAlbum* trashAlbum = new PAlbum(album->title(), album->id());
             insertPAlbum(trashAlbum, album);
         }
@@ -187,10 +203,12 @@ void AlbumManager::updateChangedPAlbums()
     d->updatePAlbumsTimer->stop();
 
     // scan db and get a list of all albums
+
     QList<AlbumInfo> currentAlbums = CoreDbAccess().db()->scanAlbums();
     bool needScanPAlbums           = false;
 
     // Find the AlbumInfo for each id in changedPAlbums
+
     foreach (int id, d->changedPAlbums)
     {
         foreach (const AlbumInfo& info, currentAlbums)
@@ -204,10 +222,12 @@ void AlbumManager::updateChangedPAlbums()
                 if (album)
                 {
                     // Renamed?
+
                     if (info.relativePath != QLatin1String("/"))
                     {
                         // Handle rename of album name
                         // last section, no slash
+
                         QString name       = info.relativePath.section(QLatin1Char('/'), -1, -1);
                         QString parentPath = info.relativePath;
                         parentPath.chop(name.length());
@@ -215,6 +235,7 @@ void AlbumManager::updateChangedPAlbums()
                         if (parentPath != album->m_parentPath || info.albumRootId != album->albumRootId())
                         {
                             // Handle actual move operations: trigger ScanPAlbums
+
                             needScanPAlbums = true;
                             removePAlbum(album);
                             break;
@@ -228,11 +249,13 @@ void AlbumManager::updateChangedPAlbums()
                     }
 
                     // Update caption, collection, date
+
                     album->m_caption  = info.caption;
                     album->m_category = info.category;
                     album->m_date     = info.date;
 
                     // Icon changed?
+
                     if (album->m_iconId != info.iconId)
                     {
                         album->m_iconId = info.iconId;
@@ -276,9 +299,13 @@ PAlbum* AlbumManager::currentPAlbum() const
      * iterate and cast each element
      */
     if (!d->currentAlbums.isEmpty())
+    {
         return dynamic_cast<PAlbum*>(d->currentAlbums.first());
+    }
     else
+    {
         return nullptr;
+    }
 }
 
 PAlbum* AlbumManager::findPAlbum(const QUrl& url) const
@@ -327,7 +354,7 @@ PAlbum* AlbumManager::createPAlbum(const CollectionLocation& location, const QSt
         return nullptr;
     }
 
-    PAlbum* album = d->albumRootAlbumHash.value(location.id());
+    PAlbum* const album = d->albumRootAlbumHash.value(location.id());
 
     if (!album)
     {
@@ -352,6 +379,7 @@ PAlbum* AlbumManager::createPAlbum(PAlbum*        parent,
     }
 
     // sanity checks
+
     if (name.isEmpty())
     {
         errMsg = i18n("Album name cannot be empty.");
@@ -374,11 +402,12 @@ PAlbum* AlbumManager::createPAlbum(PAlbum*        parent,
     int albumRootId   = parent->albumRootId();
 
     // first check if we have a sibling album with the same name
+
     PAlbum* child = static_cast<PAlbum*>(parent->firstChild());
 
     while (child)
     {
-        if (child->albumRootId() == albumRootId && child->albumPath() == albumPath)
+        if ((child->albumRootId() == albumRootId) && (child->albumPath() == albumPath))
         {
             errMsg = i18n("An existing album has the same name.");
             return nullptr;
@@ -455,6 +484,7 @@ bool AlbumManager::renamePAlbum(PAlbum* album, const QString& newName,
     }
 
     // first check if we have another sibling with the same name
+
     if (hasDirectChildAlbumWithTitle(album->m_parent, newName))
     {
         errMsg = i18n("Another album with the same name already exists.\n"
@@ -466,6 +496,7 @@ bool AlbumManager::renamePAlbum(PAlbum* album, const QString& newName,
 
     // We use a private shortcut around collection scanner noticing our changes,
     // we rename them directly. Faster.
+
     ScanController::instance()->suspendCollectionScan();
 
     QDir dir(album->albumRootPath() + album->m_parentPath);
@@ -569,13 +600,14 @@ void AlbumManager::removePAlbum(PAlbum* album)
     }
 
     // remove all children of this album
+
     Album* child        = album->firstChild();
     PAlbum* toBeRemoved = nullptr;
 
     while (child)
     {
-        Album* next = child->next();
-        toBeRemoved = static_cast<PAlbum*>(child);
+        Album* const next = child->next();
+        toBeRemoved       = dynamic_cast<PAlbum*>(child);
 
         if (toBeRemoved)
         {
@@ -583,7 +615,7 @@ void AlbumManager::removePAlbum(PAlbum* album)
             toBeRemoved = nullptr;
         }
 
-        child = next;
+        child             = next;
     }
 
     emit signalAlbumAboutToBeDeleted(album);

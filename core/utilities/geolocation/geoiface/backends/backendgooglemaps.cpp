@@ -748,6 +748,7 @@ void BackendGoogleMaps::slotHTMLEvents(const QStringList& events)
         emit signalClustersMoved(movedClusters, QPair<int, QModelIndex>(-1, QModelIndex()));
     }
 
+    // cppcheck-suppress knownConditionTrueFalse
     if (!movedMarkers.isEmpty())
     {
         qCDebug(DIGIKAM_GEOIFACE_LOG) << movedMarkers;
@@ -826,7 +827,7 @@ void BackendGoogleMaps::updateClusters()
 
     // re-transfer all markers to the javascript-part:
 
-    const bool canMoveItems = !s->showThumbnails &&
+    const bool canMoveItems = !s->showThumbnails      &&
                               s->modificationsAllowed &&
                               s->markerModel->tilerFlags().testFlag(AbstractMarkerTiler::FlagMovable);
 
@@ -1049,7 +1050,7 @@ int BackendGoogleMaps::getMarkerModelLevel()
     else if (currentZoom == 22) { tileLevel = 9; }
     else
     {
-        tileLevel = TileIndex::MaxLevel-1;
+        tileLevel = TileIndex::MaxLevel - 1;
     }
 
     GEOIFACE_ASSERT(tileLevel <= TileIndex::MaxLevel-1);
@@ -1223,8 +1224,7 @@ void BackendGoogleMaps::setMarkerPixmap(const int modelId, const int markerId,
 
 void BackendGoogleMaps::setMarkerPixmap(const int modelId, const int markerId,
                                         const QPoint& centerPoint, const QSize& iconSize,
-                                        const QUrl& iconUrl
-                                       )
+                                        const QUrl& iconUrl)
 {
     /// @todo Sort the parameters
 
@@ -1337,7 +1337,7 @@ void BackendGoogleMaps::setActive(const bool state)
                                                     : GeoIfaceInternalWidgetInfo::InternalWidgetUndocked;
 
             GMInternalWidgetInfo intInfo;
-            intInfo.htmlWidget = d->htmlWidget.data();
+            intInfo.htmlWidget  = d->htmlWidget.data();
             info.backendData.setValue(intInfo);
 
             GeoIfaceGlobalObject* const go = GeoIfaceGlobalObject::instance();

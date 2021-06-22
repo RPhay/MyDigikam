@@ -33,7 +33,7 @@ TaggingAction::TaggingAction()
 }
 
 TaggingAction::TaggingAction(int tagId)
-    : m_type(AssignTag),
+    : m_type (AssignTag),
       m_tagId(tagId)
 {
 }
@@ -47,9 +47,11 @@ TaggingAction::TaggingAction(const QString& name, int parentTagId)
 
 bool TaggingAction::operator==(const TaggingAction& other) const
 {
-    return (m_type    == other.m_type)    &&
-           (m_tagId   == other.m_tagId)   &&
-           (m_tagName == other.m_tagName);
+    return (
+            (m_type    == other.m_type)    &&
+            (m_tagId   == other.m_tagId)   &&
+            (m_tagName == other.m_tagName)
+           );
 }
 
 TaggingAction::Type TaggingAction::type() const

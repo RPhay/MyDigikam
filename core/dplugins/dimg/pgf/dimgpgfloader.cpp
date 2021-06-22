@@ -93,11 +93,11 @@ namespace Digikam
 {
 
 DImgPGFLoader::DImgPGFLoader(DImg* const image)
-    : DImgLoader(image)
+    : DImgLoader  (image),
+      m_sixteenBit(false),
+      m_hasAlpha  (false),
+      m_observer  (nullptr)
 {
-    m_hasAlpha   = false;
-    m_sixteenBit = false;
-    m_observer   = nullptr;
 }
 
 DImgPGFLoader::~DImgPGFLoader()
@@ -140,10 +140,7 @@ bool DImgPGFLoader::CallbackForLibPGF(double percent, bool escapeAllowed, void* 
     {
         DImgPGFLoader* const d = static_cast<DImgPGFLoader*>(data);
 
-        if (d)
-        {
-            return d->progressCallback(percent, escapeAllowed);
-        }
+        return (d->progressCallback(percent, escapeAllowed));
     }
 
     return false;

@@ -855,6 +855,74 @@ void AbstractAlbumTreeView::expandEverything(const QModelIndex& index)
     }
 }
 
+void AbstractAlbumTreeView::slotExpandNode()
+{
+    QItemSelectionModel* const model = selectionModel();
+    QModelIndexList selected         = model->selectedIndexes();
+
+    QQueue<QModelIndex> greyNodes;
+
+    foreach (const QModelIndex& index, selected)
+    {
+        greyNodes.append(index);
+        expand(index);
+    }
+
+    while (!greyNodes.isEmpty())
+    {
+        QModelIndex current = greyNodes.dequeue();
+
+        if (!current.isValid())
+        {
+            continue;
+        }
+
+        int it            = 0;
+        QModelIndex child = current.model()->index(it++, 0, current);
+
+        while (child.isValid())
+        {
+            expand(child);
+            greyNodes.enqueue(child);
+            child = current.model()->index(it++, 0, current);
+        }
+    }
+}
+
+void AbstractAlbumTreeView::slotCollapseNode()
+{
+    QItemSelectionModel* const model = selectionModel();
+    QModelIndexList selected         = model->selectedIndexes();
+
+    QQueue<QModelIndex> greyNodes;
+
+    foreach (const QModelIndex& index, selected)
+    {
+        greyNodes.append(index);
+        collapse(index);
+    }
+
+    while (!greyNodes.isEmpty())
+    {
+        QModelIndex current = greyNodes.dequeue();
+
+        if (!current.isValid())
+        {
+            continue;
+        }
+
+        int it              = 0;
+        QModelIndex child   = current.model()->index(it++, 0, current);
+
+        while (child.isValid())
+        {
+            collapse(child);
+            greyNodes.enqueue(child);
+            child = current.model()->index(it++, 0, current);
+        }
+    }
+}
+
 void AbstractAlbumTreeView::adaptColumnsOnDataChange(const QModelIndex& topLeft, const QModelIndex& bottomRight)
 {
     Q_UNUSED(topLeft);

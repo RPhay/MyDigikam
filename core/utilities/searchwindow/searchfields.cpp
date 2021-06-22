@@ -31,19 +31,14 @@
 // Qt includes
 
 #include <QApplication>
-#include <QCheckBox>
-#include <QDoubleSpinBox>
 #include <QGridLayout>
-#include <QGroupBox>
-#include <QLabel>
-#include <QSortFilterProxyModel>
-#include <QSpinBox>
 #include <QTimeEdit>
-#include <QTreeView>
 #include <QComboBox>
 #include <QLineEdit>
-#include <QIcon>
+#include <QCheckBox>
+#include <QLabel>
 #include <QStyle>
+#include <QIcon>
 
 // KDE includes
 
@@ -63,7 +58,6 @@
 #include "choicesearchutilities.h"
 #include "dimg.h"
 #include "dmetadata.h"
-#include "itemscanner.h"
 #include "ddateedit.h"
 #include "tagtreeview.h"
 #include "ratingsearchutilities.h"
@@ -2340,220 +2334,6 @@ QList<QRect> SearchFieldChoice::valueWidgetRects() const
     return rects;
 }
 
-/*
-class Q_DECL_HIDDEN SearchFieldChoice : public SearchField
-{
-    // Note: Someone added this space on purpose (Marcel?)
-    // It seems that automoc4 is not recognizing this macro to be in a comment
-    // block and therefore will fail when parsing this file. Adding a space to the
-    // macro name will fix this issue. When uncommenting this block again, make sure to
-    // fix the macro name of course.
-
-    Q_ OBJECT
-
-public:
-
-    SearchFieldChoice(SearchFieldGroup *parent);
-
-    virtual void read(SearchXmlCachingReader &reader);
-    virtual void write(SearchXmlWriter &writer);
-    virtual void reset();
-
-    void setChoice(const QMap<int, QString>& map);
-    void setAnyText(const QString& string);
-
-    virtual void setupValueWidgets(QGridLayout *layout, int row, int column);
-    virtual void setValueWidgetsVisible(bool visible);
-
-protected Q_SLOTS:
-
-    void slotClicked();
-    void slotUpdateLabel();
-
-protected:
-
-    void setValues(const QList<int>& values);
-    void setValues(int value, SearchXml::Relation relation);
-
-    QList<int> values() const;
-    QString valueText() const;
-
-    virtual void setupChoiceWidgets();
-
-protected:
-
-    QString                    m_anyText;
-    SqueezedClickLabel        *m_label;
-    QVBoxLayout               *m_vbox;
-    QMap<int, QString>         m_choiceMap;
-    QMap<QCheckBox*, int>      m_widgetMap;
-    VisibilityController      *m_controller;
-};
-
-SearchFieldChoice::SearchFieldChoice(SearchFieldGroup *parent)
-    : SearchField(parent), m_vbox(0)
-{
-    m_anyText = i18n("Any");
-    m_label = new SqueezedClickLabel;
-    m_label->setObjectName(QLatin1String("SearchFieldChoice_ClickLabel"));
-    m_controller = new VisibilityController(this);
-    m_controller->setContainerWidget(parent);
-}
-
-void SearchFieldChoice::setupValueWidgets(QGridLayout *layout, int row, int column)
-{
-    m_vbox = new QVBoxLayout;
-    layout->addLayout(m_vbox, row, column, 1, 3);
-
-    m_label->setElideMode(Qt::ElideRight);
-    m_vbox->addWidget(m_label);
-
-    connect(m_label, SIGNAL(activated()),
-            this, SLOT(slotClicked()));
-
-    setupChoiceWidgets();
-    slotUpdateLabel();
-}
-
-void SearchFieldChoice::slotClicked()
-{
-    m_controller->triggerVisibility();
-}
-
-void SearchFieldChoice::slotUpdateLabel()
-{
-    QString text = valueText();
-    if (text.isNull())
-        text = m_anyText;
-    m_label->setText(text);
-}
-
-void SearchFieldChoice::setValueWidgetsVisible(bool visible)
-{
-    m_label->setVisible(visible);
-    if (!visible)
-        m_controller->hide();
-}
-
-void SearchFieldChoice::setupChoiceWidgets()
-{
-    QGroupBox *groupbox = new QGroupBox;
-    m_vbox->addWidget(groupbox);
-    m_controller->addWidget(groupbox);
-    QVBoxLayout *vbox = new QVBoxLayout;
-
-    QMap<int, QString>::const_iterator it;
-    for (it = m_choiceMap.begin(); it != m_choiceMap.end(); ++it)
-    {
-        QCheckBox *box = new QCheckBox;
-        box->setText(it.value());
-        vbox->addWidget(box);
-        m_controller->addWidget(box);
-        m_widgetMap[box] = it.key();
-
-        connect(box, SIGNAL(stateChanged(int)),
-                this, SLOT(slotUpdateLabel()));
-    }
-
-    groupbox->setLayout(vbox);
-}
-
-QString SearchFieldChoice::valueText() const
-{
-    QStringList list;
-    QMap<QCheckBox*, int>::const_iterator it;
-    for (it = m_widgetMap.begin(); it != m_widgetMap.end(); ++it)
-    {
-        if (it.key()->isChecked())
-            list << it.key()->text();
-    }
-    if (list.isEmpty())
-        return QString();
-    else if (list.size() == 1)
-    {
-        return list.first();
-    }
-    else
-    {
-        return i18n("Either of: %1", list.join(", "));
-    }
-}
-
-void SearchFieldChoice::read(SearchXmlCachingReader& reader)
-{
-    SearchXml::Relation relation = reader.fieldRelation();
-    QList<int> values;
-    if (relation == SearchXml::OneOf)
-    {
-        setValues(reader.valueToIntList());
-    }
-    else
-    {
-        setValues(reader.valueToInt(), relation);
-    }
-}
-
-void SearchFieldChoice::write(SearchXmlWriter& writer)
-{
-    QList<int> v = values();
-    if (!v.isEmpty())
-    {
-        if (v.size() == 1)
-        {
-            writer.writeField(m_name, SearchXml::Equal);
-            writer.writeValue(v.first());
-            writer.finishField();
-        }
-        else
-        {
-            writer.writeField(m_name, SearchXml::OneOf);
-            writer.writeValue(v);
-            writer.finishField();
-        }
-    }
-}
-
-void SearchFieldChoice::reset()
-{
-    setValues(QList<int>());
-}
-
-void SearchFieldChoice::setChoice(const QMap<int, QString>& map)
-{
-    m_choiceMap = map;
-}
-
-void SearchFieldChoice::setValues(const QList<int>& values)
-{
-    QMap<QCheckBox*, int>::const_iterator it;
-    for (it = m_widgetMap.begin(); it != m_widgetMap.end(); ++it)
-    {
-        it.key()->setChecked(values.contains(it.value()));
-    }
-}
-
-void SearchFieldChoice::setValues(int value, SearchXml::Relation relation)
-{
-    QMap<QCheckBox*, int>::const_iterator it;
-    for (it = m_widgetMap.begin(); it != m_widgetMap.end(); ++it)
-    {
-        it.key()->setChecked(SearchXml::testRelation(it.value(), value, relation));
-    }
-}
-
-QList<int> SearchFieldChoice::values() const
-{
-    QList<int> list;
-    QMap<QCheckBox*, int>::const_iterator it;
-    for (it = m_widgetMap.begin(); it != m_widgetMap.end(); ++it)
-    {
-        if (it.key()->isChecked())
-            list << it.value();
-    }
-    return list;
-}
-*/
-
 // -------------------------------------------------------------------------
 
 SearchFieldAlbum::SearchFieldAlbum(QObject* const parent, Type type)
@@ -3281,7 +3061,6 @@ void SearchFieldMonthDay::setupValueWidgets(QGridLayout* layout, int row, int co
     m_dayLabel              = new QLabel(i18n("Day:"));
     m_dayBox                = new QComboBox;
     m_dayBox->setEditable(false);
-    m_dayBox->setEnabled(false);
 
     m_monthBox->addItem(i18n("Every Month"), 0);
 
@@ -3303,7 +3082,10 @@ void SearchFieldMonthDay::setupValueWidgets(QGridLayout* layout, int row, int co
     hbox->addWidget(m_dayBox);
 
     connect(m_monthBox, SIGNAL(currentIndexChanged(int)),
-            this, SLOT(slotIndexChanged(int)));
+            this, SLOT(slotIndexChanged()));
+
+    connect(m_dayBox, SIGNAL(currentIndexChanged(int)),
+            this, SLOT(slotIndexChanged()));
 
     layout->addLayout(hbox, row, column, 1, 3);
 }
@@ -3329,7 +3111,7 @@ void SearchFieldMonthDay::write(SearchXmlWriter& writer)
     int month = m_monthBox->currentData().toInt();
     int day   = m_dayBox->currentData().toInt();
 
-    if (month > 0)
+    if ((month > 0) || (day > 0))
     {
         writer.writeField(m_name, SearchXml::Equal);
         writer.writeValue(QList<int>() << month << day);
@@ -3359,16 +3141,13 @@ QList<QRect> SearchFieldMonthDay::valueWidgetRects() const
     return rects;
 }
 
-void SearchFieldMonthDay::slotIndexChanged(int index)
+void SearchFieldMonthDay::slotIndexChanged()
 {
-    bool valid = (index > 0);
-    setValidValueState(valid);
-    m_dayBox->setEnabled(valid);
+    int month  = m_monthBox->currentData().toInt();
+    int day    = m_dayBox->currentData().toInt();
+    bool valid = ((month > 0) || (day > 0));
 
-    if (!valid)
-    {
-        m_dayBox->setCurrentIndex(0);
-    }
+    setValidValueState(valid);
 }
 
 } // namespace Digikam

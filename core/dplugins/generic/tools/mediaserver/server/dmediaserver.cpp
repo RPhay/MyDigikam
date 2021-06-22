@@ -146,10 +146,10 @@ bool DMediaServer::init(int port)
 
     device->m_ModelName           = "digiKam";
     device->m_ModelNumber         = digikam_version;
-    device->m_ModelDescription    = DAboutData::digiKamSlogan().toUtf8().data();
-    device->m_ModelURL            = DAboutData::webProjectUrl().toString().toUtf8().data();
-    device->m_Manufacturer        = "digiKam.org";
-    device->m_ManufacturerURL     = DAboutData::webProjectUrl().toString().toUtf8().data();
+    device->m_ModelDescription    = NPT_String(DAboutData::digiKamSlogan().toUtf8().data());
+    device->m_ModelURL            = NPT_String(DAboutData::webProjectUrl().toString().toUtf8().data());
+    device->m_Manufacturer        = NPT_String("digiKam.org");
+    device->m_ManufacturerURL     = NPT_String(DAboutData::webProjectUrl().toString().toUtf8().data());
     device->SetDelegate(device);
 
     d->serverHolder->m_device     = device;

@@ -58,7 +58,7 @@ AlbumDragDropHandler::AlbumDragDropHandler(AlbumModel* const model)
 
 AlbumModel* AlbumDragDropHandler::model() const
 {
-    return static_cast<AlbumModel*>(m_model);
+    return (static_cast<AlbumModel*>(m_model));
 }
 
 bool AlbumDragDropHandler::dropEvent(QAbstractItemView* view,
@@ -270,7 +270,7 @@ bool AlbumDragDropHandler::dropEvent(QAbstractItemView* view,
             popMenu.setMouseTracking(true);
             QAction* const choice         = popMenu.exec(QCursor::pos());
 
-            if (choice && destAlbum)
+            if (choice)
             {
                 if      (choice == downAction)
                 {
@@ -324,11 +324,6 @@ bool AlbumDragDropHandler::dropEvent(QAbstractItemView* view,
             {
                 ddMove = true;
             }
-        }
-
-        if (!destAlbum)
-        {
-            return false;
         }
 
         if      (ddMove)

@@ -31,7 +31,9 @@ namespace Digikam
 
 Q_GLOBAL_STATIC(AlbumManagerCreator, creator)
 
-// A friend-class shortcut to circumvent accessing this from within the destructor
+/**
+ * A friend-class shortcut to circumvent accessing this from within the destructor
+ */
 AlbumManager* AlbumManager::internalInstance = nullptr;
 
 AlbumManager* AlbumManager::instance()
@@ -52,6 +54,7 @@ AlbumManager::AlbumManager()
     d->albumWatch    = new AlbumWatch(this);
 
     // these operations are pretty fast, no need for long queuing
+
     d->scanPAlbumsTimer = new QTimer(this);
     d->scanPAlbumsTimer->setInterval(150);
     d->scanPAlbumsTimer->setSingleShot(true);
@@ -81,6 +84,7 @@ AlbumManager::AlbumManager()
             this, SLOT(updateChangedPAlbums()));
 
     // this operation is much more expensive than the other scan methods
+
     d->scanDAlbumsTimer = new QTimer(this);
     d->scanDAlbumsTimer->setInterval(30 * 1000);
     d->scanDAlbumsTimer->setSingleShot(true);
@@ -89,6 +93,7 @@ AlbumManager::AlbumManager()
             this, SLOT(scanDAlbumsScheduled()));
 
     // moderately expensive
+
     d->albumItemCountTimer = new QTimer(this);
     d->albumItemCountTimer->setInterval(1000);
     d->albumItemCountTimer->setSingleShot(true);
@@ -97,6 +102,7 @@ AlbumManager::AlbumManager()
             this, SLOT(getAlbumItemsCount()));
 
     // more expensive
+
     d->tagItemCountTimer = new QTimer(this);
     d->tagItemCountTimer->setInterval(2500);
     d->tagItemCountTimer->setSingleShot(true);

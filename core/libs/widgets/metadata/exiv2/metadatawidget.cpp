@@ -473,17 +473,17 @@ void MetadataWidget::slotPrintMetadata()
 
 QUrl MetadataWidget::saveMetadataToFile(const QString& caption, const QString& fileFilter)
 {
-    QPointer<DFileDialog> fileSaveDialog = new DFileDialog(this, caption, QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation));
+    QPointer<DFileDialog> fileSaveDialog = new DFileDialog(this, caption,
+                                                           QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation));
     fileSaveDialog->setAcceptMode(QFileDialog::AcceptSave);
     fileSaveDialog->setFileMode(QFileDialog::AnyFile);
     fileSaveDialog->selectFile(d->fileName);
     fileSaveDialog->setNameFilter(fileFilter);
-
     fileSaveDialog->exec();
 
     // Check for cancel.
 
-    if (!fileSaveDialog || fileSaveDialog->selectedUrls().isEmpty())
+    if (fileSaveDialog->selectedUrls().isEmpty())
     {
         delete fileSaveDialog;
 

@@ -172,6 +172,8 @@ void DNGConverterTask::run()
             break;
         }
     }
+
+    emit signalDone();
 }
 
 void DNGConverterTask::slotCancel()

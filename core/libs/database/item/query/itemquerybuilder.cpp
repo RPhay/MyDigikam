@@ -929,27 +929,40 @@ bool ItemQueryBuilder::buildField(QString& sql, SearchXmlCachingReader& reader, 
 
             if (CoreDbAccess().backend()->databaseType() == BdEngineBackend::DbType::SQLite)
             {
-                if (values.at(1) > 0)
+                if      ((values.at(0) > 0) && (values.at(1) > 0))
                 {
                     sql += QString::fromUtf8(" (STRFTIME('%m%d', ImageInformation.creationDate) = ?) ");
                     QString date = QString::number(values.at(0)).rightJustified(2, QLatin1Char('0'));
                     date        += QString::number(values.at(1)).rightJustified(2, QLatin1Char('0'));
                     *boundValues << date;
                 }
-                else
+                else if (values.at(0) > 0)
                 {
                     sql += QString::fromUtf8(" (STRFTIME('%m', ImageInformation.creationDate) = ?) ");
                     *boundValues << QString::number(values.at(0)).rightJustified(2, QLatin1Char('0'));
                 }
+                else
+                {
+                    sql += QString::fromUtf8(" (STRFTIME('%d', ImageInformation.creationDate) = ?) ");
+                    *boundValues << QString::number(values.at(1)).rightJustified(2, QLatin1Char('0'));
+                }
             }
             else
             {
-                sql += QString::fromUtf8(" (MONTH(ImageInformation.creationDate) = ?");
-                *boundValues << values.at(0);
+                if (values.at(0) > 0)
+                {
+                    sql += QString::fromUtf8(" (MONTH(ImageInformation.creationDate) = ?");
+                    *boundValues << values.at(0);
+                }
 
-                if (values.at(1) > 0)
+                if      ((values.at(0) > 0) && (values.at(1) > 0))
                 {
                     sql += QString::fromUtf8(" AND DAY(ImageInformation.creationDate) = ?");
+                    *boundValues << values.at(1);
+                }
+                else if (values.at(1) > 0)
+                {
+                    sql += QString::fromUtf8(" (DAY(ImageInformation.creationDate) = ?");
                     *boundValues << values.at(1);
                 }
 

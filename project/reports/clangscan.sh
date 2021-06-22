@@ -143,7 +143,7 @@ for DROP_ITEM in $KRAZY_FILTERS ; do
 
 done
 
-if [[ $1 != "--nowebupdate" ]]
+if [[ $1 != "--nowebupdate" ]] ; then
 
     # update www.digikam.org report section.
     updateReportToWebsite "clang" $SCANBUILD_DIR $TITLE $(parseGitBranch)

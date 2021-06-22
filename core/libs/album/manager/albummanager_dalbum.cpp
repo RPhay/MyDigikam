@@ -172,11 +172,13 @@ void AlbumManager::slotDatesJobData(const QHash<QDateTime, int>& datesStatHash)
         if (mAlbumMap.contains(md))
         {
             // already there. remove Month album from map
+
             mAlbumMap.remove(md);
 
             if (yAlbumMap.contains(year))
             {
                 // already there. remove from map
+
                 yAlbumMap.remove(year);
             }
 
@@ -192,7 +194,7 @@ void AlbumManager::slotDatesJobData(const QHash<QDateTime, int>& datesStatHash)
         {
             DAlbum* const a = (DAlbum*)(*it5);
 
-            if (a->date() == QDate(year, 1, 1) && a->range() == DAlbum::Year)
+            if ((a->date() == QDate(year, 1, 1)) && (a->range() == DAlbum::Year))
             {
                 yAlbum = a;
                 break;
@@ -213,6 +215,7 @@ void AlbumManager::slotDatesJobData(const QHash<QDateTime, int>& datesStatHash)
         }
 
         // Create Month album
+
         DAlbum* const mAlbum = new DAlbum(md);
 
         emit signalAlbumAboutToBeAdded(mAlbum, yAlbum, yAlbum->lastChild());

@@ -96,6 +96,16 @@ Taxon& Taxon::operator=(const Taxon& other)
     return *this;
 }
 
+bool Taxon::operator!=(const Taxon& other) const
+{
+    return (d->id != other.d->id);
+}
+
+bool Taxon::operator==(const Taxon& other) const
+{
+    return (d->id == other.d->id);
+}
+
 int Taxon::id() const
 {
     return d->id;
@@ -194,16 +204,6 @@ const QList<Taxon>& Taxon::ancestors() const
 bool Taxon::isValid() const
 {
     return (d->id != -1);
-}
-
-bool Taxon::operator==(const Taxon& other) const
-{
-    return (d->id == other.d->id);
-}
-
-bool Taxon::operator!=(const Taxon& other) const
-{
-    return (d->id != other.d->id);
 }
 
 } // namespace DigikamGenericINatPlugin

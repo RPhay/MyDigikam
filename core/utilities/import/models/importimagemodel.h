@@ -47,7 +47,9 @@ public:
 
     enum ImportItemModelRoles
     {
-        /// An ImportItemModel* pointer to this model
+        /**
+         * An ImportItemModel* pointer to this model
+         */
         ImportItemModelPointerRole = Qt::UserRole,
         ImportItemModelInternalId  = Qt::UserRole + 1,
 
@@ -56,10 +58,14 @@ public:
          * Returns either a valid pixmap or a null QVariant.
          */
         ThumbnailRole               = Qt::UserRole + 2,
-        /// Return (optional) extraData field
+        /**
+         * Return (optional) extraData field
+         */
         ExtraDataRole               = Qt::UserRole + 3,
 
-        /// Returns the number of duplicate indexes for the same image id
+        /**
+         * Returns the number of duplicate indexes for the same image id
+         */
         ExtraDataDuplicateCount     = Qt::UserRole + 6,
 
         FilterModelRoles            = Qt::UserRole + 100
@@ -70,12 +76,14 @@ public:
     explicit ImportItemModel(QObject* const parent = nullptr);
     ~ImportItemModel() override;
 
-    /// Used to set the camera controller, and connect with it.
+    /**
+     * Used to set the camera controller, and connect with it.
+     */
     virtual void setCameraThumbsController(CameraThumbsCtrl* const controller);
 
     /**
      * If a cache is kept, lookup by file path is fast,
-     *  without a cache it is O(n). Default is false.
+     * without a cache it is O(n). Default is false.
      */
     void setKeepsFileUrlCache(bool keepCache);
     bool keepsFileUrlCache() const;
@@ -275,10 +283,14 @@ protected:
     void emitDataChangedForAll();
     void emitDataChangedForSelections(const QItemSelection& selection);
 
-    /// Called when the internal storage is cleared.
+    /**
+     * Called when the internal storage is cleared.
+     */
     virtual void camItemInfosCleared() {};
 
-    /// Called before rowsAboutToBeRemoved
+    /**
+     * Called before rowsAboutToBeRemoved
+     */
     virtual void itemInfosAboutToBeRemoved(int /*begin*/, int /*end*/) {};
 
 private:

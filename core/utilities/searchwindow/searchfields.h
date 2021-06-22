@@ -576,7 +576,7 @@ public:
 
 protected Q_SLOTS:
 
-    void slotIndexChanged(int);
+    void slotIndexChanged();
 
 protected:
 
