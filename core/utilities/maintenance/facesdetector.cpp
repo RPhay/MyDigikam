@@ -373,6 +373,7 @@ void FacesDetector::slotStart()
 
     foreach (int count, progressValueMap)
     {
+        // cppcheck-suppress useStlAlgorithm
         total += count;
     }
 

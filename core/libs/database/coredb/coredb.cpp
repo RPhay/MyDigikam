@@ -4086,6 +4086,7 @@ QDate CoreDB::getAlbumAverageDate(int albumID) const
 
     foreach (const QDate& date, dates)
     {
+        // cppcheck-suppress useStlAlgorithm
         julianDays += date.toJulianDay();
     }
 

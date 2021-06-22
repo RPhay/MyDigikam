@@ -750,6 +750,7 @@ QList<QObject*> ItemVisibilityController::items() const
 
     foreach (AnimationControl* const child, d->childControls)
     {
+        // cppcheck-suppress useStlAlgorithm
         items += child->m_items;
     }
 
@@ -769,6 +770,7 @@ QList<QObject*> ItemVisibilityController::visibleItems(IncludeFadingOutMode mode
     {
         if (child->hasVisibleItems(mode))
         {
+            // cppcheck-suppress useStlAlgorithm
             items += child->m_items;
         }
     }

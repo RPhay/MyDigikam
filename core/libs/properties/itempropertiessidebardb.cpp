@@ -690,6 +690,7 @@ void ItemPropertiesSideBarDB::setImageSelectionPropertiesInformation()
 
     foreach (const ItemInfo& info, d->currentInfos)
     {
+        // cppcheck-suppress useStlAlgorithm
         selectionFileSize += info.fileSize();
     }
 
@@ -703,6 +704,7 @@ void ItemPropertiesSideBarDB::setImageSelectionPropertiesInformation()
 
     foreach (const ItemInfo& info, d->allInfos)
     {
+        // cppcheck-suppress useStlAlgorithm
         totalFileSize += info.fileSize();
     }
 

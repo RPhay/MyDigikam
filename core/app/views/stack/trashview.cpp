@@ -222,6 +222,7 @@ void TrashView::slotUndoLastDeletedItems()
     {
         if (item.deletionTimestamp > lastDateTime)
         {
+            // cppcheck-suppress useStlAlgorithm
             lastDateTime = item.deletionTimestamp;
         }
     }

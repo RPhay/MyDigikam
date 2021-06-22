@@ -169,6 +169,7 @@ int ItemDelegateOverlay::numberOfAffectedIndexes(const QModelIndex& index) const
 
     foreach (const QItemSelectionRange& range, view()->selectionModel()->selection())
     {
+        // cppcheck-suppress useStlAlgorithm
         count += range.height();
     }
 

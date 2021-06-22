@@ -354,11 +354,13 @@ void ItemHistoryGraphData::applyProperties(Vertex& v,
 
     foreach (const ItemInfo& info, infos)
     {
+        // cppcheck-suppress useStlAlgorithm
         props += info;
     }
 
     foreach (const HistoryImageId& id, ids)
     {
+        // cppcheck-suppress useStlAlgorithm
         props += id;
     }
 }

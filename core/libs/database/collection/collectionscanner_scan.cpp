@@ -56,6 +56,7 @@ void CollectionScanner::completeScan()
 
         foreach (const CollectionLocation& location, allLocations)
         {
+            // cppcheck-suppress useStlAlgorithm
             count += countItemsInFolder(location.albumRootPath());
         }
 
@@ -170,6 +171,7 @@ void CollectionScanner::finishCompleteScan(const QStringList& albumPaths)
 
         foreach (const QString& path, sortedPaths)
         {
+            // cppcheck-suppress useStlAlgorithm
             count += countItemsInFolder(path);
         }
 

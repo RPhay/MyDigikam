@@ -176,6 +176,7 @@ void FilesDownloader::startDownload()
     {
         if (!downloadExists(info))
         {
+            // cppcheck-suppress useStlAlgorithm
             size += info.size;
         }
     }

@@ -393,6 +393,7 @@ void AlbumThumbnailLoader::addUrl(Album* const album, qlonglong id)
         {
             if (face.tagId() == album->id())
             {
+                // cppcheck-suppress useStlAlgorithm
                 faceRect = face.region().toRect();
             }
         }

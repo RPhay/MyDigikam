@@ -151,6 +151,7 @@ QList<QRect> SearchFieldGroup::areaOfMarkedFields() const
     {
         if (field->isVisible())
         {
+            // cppcheck-suppress useStlAlgorithm
             rects += field->widgetRects(SearchField::ValueWidgetRectsOnly);
         }
     }

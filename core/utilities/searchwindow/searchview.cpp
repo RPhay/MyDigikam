@@ -144,6 +144,7 @@ QList<QRect> AbstractSearchGroupContainer::startupAnimationAreaOfGroups() const
 
     foreach (SearchGroup* const group, m_groups)
     {
+        // cppcheck-suppress useStlAlgorithm
         list += group->startupAnimationArea();
     }
 

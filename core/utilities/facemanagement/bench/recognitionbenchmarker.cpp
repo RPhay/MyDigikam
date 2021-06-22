@@ -52,6 +52,7 @@ QString RecognitionBenchmarker::result() const
 
     foreach (const Statistics& stat, results)
     {
+        // cppcheck-suppress useStlAlgorithm
         totalImages += stat.knownFaces;
     }
 

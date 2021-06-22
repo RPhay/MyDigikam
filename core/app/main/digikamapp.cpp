@@ -566,11 +566,13 @@ void DigikamApp::slotImageSelected(const ItemInfoList& selection, const ItemInfo
 
     foreach (const ItemInfo& info, selection)
     {
+        // cppcheck-suppress useStlAlgorithm
         selectionFileSize += info.fileSize();
     }
 
     foreach (const ItemInfo& info, listAll)
     {
+        // cppcheck-suppress useStlAlgorithm
         listAllFileSize += info.fileSize();
     }
 
