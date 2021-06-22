@@ -9,7 +9,7 @@ General : Better support of MPO image format (Multiple Picture Object) inluding 
 General : Digital Scanner plugin is now available under Windows.
 General : Use last Exiv2 0.27.4 in all bundles with Base Media File metadata read and write support (HEIF, AVIF).
 General : Use last KF5 framework 5.80 in all bundles.
-General : Update internal Libraw from snapshot 20210504
+General : Update internal Libraw from snapshot 20210622
 General : Update internal DNG SDK to last 1.5 and XMP SDK to last 5.7.0.
 General : DNGWriter now use ExifTool to post-process metadata.
 General : Internal Libraw use DNG SDK 1.5 to handle 8 bits DNG files.
@@ -179,7 +179,7 @@ BUGFIXES:
 156 ==> 350931 - digiKam suddenly stops searching for new entries.
 157 ==> 140070 - Comment display field is only populated with JFIF comment, not EXIF comment.
 158 ==> 376930 - Cannot write metadata to TIFF files.
-159 ==> 214636 - updating tag to XMP/IPTC bug.
+159 ==> 214636 - Updating tag to XMP/IPTC bug.
 160 ==> 435803 - digiKam Not Responding when moving from Albums between Similarity and Search options.
 161 ==> 434072 - Crash at start of digiKam.
 162 ==> 436187 - Option to automatically delete images from card after import.
@@ -271,14 +271,14 @@ BUGFIXES:
 248 ==> 246920 - Display RAW+JPEG combined.
 249 ==> 224789 - Handle RAW and jpegs as one virtual image.
 250 ==> 188968 - JPEG+RAW joint renaming feature.
-251 ==> 164756 - working with JPEGs instead of RAWs.
+251 ==> 164756 - Working with JPEGs instead of RAWs.
 252 ==> 151228 - Whish: Skip / ingore RAW when corresponding JPG exists.
 253 ==> 147933 - WISH: link the keywords of images with same name but different extension img1245.jpg liked to img1245.dng.
 254 ==> 147886 - Managment of raw files (as duplicate of jpg files).
 255 ==> 147427 - Make digiKam know JPG file is from RAW.
 256 ==> 212108 - Double click and highlighting.
 257 ==> 273642 - Dates of selected images not used in new album when importing.
-258 ==> 236747 - rotating according to orientation tag doesn't work for canon files.
+258 ==> 236747 - Rotating according to orientation tag doesn't work for canon files.
 259 ==> 217709 - Actually hide hidden Albums and specific Images.
 260 ==> 196583 - Ability to collapse album headers in the middle "view" panel.
 261 ==> 436758 - Question to date-format of import images.
@@ -286,7 +286,7 @@ BUGFIXES:
 263 ==> 407033 - Image Editor adds a XMP video tags.
 264 ==> 099809 - Crash when changing date from exif information.
 265 ==> 158989 - digiKam won't start: MakerTagInfo registry full (MetaEngine relevant).
-266 ==> 273765 - replacing pgf files with an open digikam lead to reproducible crash.
+266 ==> 273765 - Replacing pgf files with an open digikam lead to reproducible crash.
 267 ==> 339152 - Crash when adding XCF file to digiKam collection.
 268 ==> 131935 - digiKam crashed when selecting tags for photos (typo).
 269 ==> 145717 - digiKam SIGABRT while rotate image tool.
