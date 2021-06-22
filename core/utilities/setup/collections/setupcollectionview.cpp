@@ -1051,7 +1051,7 @@ int SetupCollectionModel::rowCount(const QModelIndex& parent) const
     {
         if (!item.deleted && item.parentId == parentId)
         {
-            ++rowCount;
+            ++rowCount; // cppcheck-suppress useStlAlgorithm
         }
     }
 

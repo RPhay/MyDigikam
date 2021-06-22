@@ -231,7 +231,7 @@ int DPluginConfView::actived() const
     {
         if (item->checkState(0) == Qt::Checked)
         {
-            ++actived;
+            ++actived; // cppcheck-suppress useStlAlgorithm
         }
     }
 
@@ -246,7 +246,7 @@ int DPluginConfView::itemsVisible() const
     {
         if (!item->isHidden())
         {
-            ++visible;
+            ++visible; // cppcheck-suppress useStlAlgorithm
         }
     }
 
@@ -261,7 +261,7 @@ int DPluginConfView::itemsWithVisiblyProperty() const
     {
         if (!item->isHidden() && item->m_plugin->hasVisibilityProperty())
         {
-            ++vp;
+            ++vp; // cppcheck-suppress useStlAlgorithm
         }
     }
 

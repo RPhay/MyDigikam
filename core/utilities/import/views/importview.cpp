@@ -407,7 +407,7 @@ int ImportView::downloadedCamItemInfos() const
     {
         if (info.downloaded == CamItemInfo::DownloadedYes)
         {
-            ++numberOfDownloaded;
+            ++numberOfDownloaded; // cppcheck-suppress useStlAlgorithm
         }
     }
 

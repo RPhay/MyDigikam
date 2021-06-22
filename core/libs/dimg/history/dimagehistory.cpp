@@ -276,7 +276,7 @@ int DImageHistory::actionCount() const
     {
         if (!entry.action.isNull())
         {
-            ++count;
+            ++count;  // cppcheck-suppress useStlAlgorithm
         }
     }
 
