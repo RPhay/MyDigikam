@@ -42,10 +42,10 @@ void CollectionScanner::loadNameFilters()
 
     // three sets to find category of a file
 
-    d->imageFilterSet  = imageFilter.toSet();
-    d->audioFilterSet  = audioFilter.toSet();
-    d->videoFilterSet  = videoFilter.toSet();
-    d->ignoreDirectory = ignoreDirectory.toSet();
+    d->imageFilterSet  = QSet<QString>(imageFilter.begin(),     imageFilter.end());
+    d->audioFilterSet  = QSet<QString>(audioFilter.begin(),     audioFilter.end());
+    d->videoFilterSet  = QSet<QString>(videoFilter.begin(),     videoFilter.end());
+    d->ignoreDirectory = QSet<QString>(ignoreDirectory.begin(), ignoreDirectory.end());
 
     d->nameFilters     = d->imageFilterSet + d->audioFilterSet + d->videoFilterSet;
 }

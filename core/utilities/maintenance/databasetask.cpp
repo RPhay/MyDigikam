@@ -307,7 +307,8 @@ void DatabaseTask::run()
             // OR
             // The thumbnail is stale, i.e. no thumbs db table references it.
 
-            QSet<int> thumbIds = ThumbsDbAccess().db()->findAll().toSet();
+            const auto list = ThumbsDbAccess().db()->findAll();
+            QSet<int> thumbIds(list.begin(), list.end());
 
             FaceTagsEditor editor;
 

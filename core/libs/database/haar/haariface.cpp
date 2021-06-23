@@ -53,7 +53,7 @@ HaarIface::~HaarIface()
 
 void HaarIface::setAlbumRootsToSearch(const QList<int>& albumRootIds)
 {
-    setAlbumRootsToSearch(albumRootIds.toSet());
+    setAlbumRootsToSearch(QSet<int>(albumRootIds.begin(), albumRootIds.end()));
 }
 
 void HaarIface::setAlbumRootsToSearch(const QSet<int>& albumRootIds)
@@ -676,14 +676,16 @@ QSet<qlonglong> HaarIface::imagesFromAlbumsAndTags(const QList<int>& albums2Scan
 
     foreach (int albumId, albums2Scan)
     {
-        imagesFromAlbums.unite(CoreDbAccess().db()->getItemIDsInAlbum(albumId).toSet());
+        const auto list = CoreDbAccess().db()->getItemIDsInAlbum(albumId);
+        imagesFromAlbums.unite(QSet<qlonglong>(list.begin(), list.end()));
     }
 
     // Get all items DB id from all tags
 
     foreach (int albumId, tags2Scan)
     {
-        imagesFromTags.unite(CoreDbAccess().db()->getItemIDsInTag(albumId).toSet());
+        const auto list = CoreDbAccess().db()->getItemIDsInTag(albumId);
+        imagesFromTags.unite(QSet<qlonglong>(list.begin(), list.end()));
     }
 
     switch (relation)
@@ -811,7 +813,7 @@ HaarIface::DuplicatesResultsMap HaarIface::findDuplicates(const QSet<qlonglong>&
                 resultsMap.insert(*images2ScanIterator, qMakePair(bestMatches.first, duplicates));
 
                 resultsCandidates << *images2ScanIterator;
-                resultsCandidates.unite(duplicates.toSet());
+                resultsCandidates.unite(QSet<qlonglong>(duplicates.begin(), duplicates.end()));
             }
         }
 

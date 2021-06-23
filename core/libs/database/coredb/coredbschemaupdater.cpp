@@ -1157,18 +1157,21 @@ bool CoreDbSchemaUpdater::updateV4toV7()
     QStringList defaultItemFilter, defaultVideoFilter, defaultAudioFilter;
     defaultFilterSettings(defaultItemFilter, defaultVideoFilter, defaultAudioFilter);
 
-    QSet<QString> configItemFilter, configVideoFilter, configAudioFilter;
+    auto listFileFilter    = cleanUserFilterString(group.readEntry(QLatin1String("File Filter"),       QString()));
+    auto listRawFileFilter = cleanUserFilterString(group.readEntry(QLatin1String("Raw File Filter"),   QString()));
+    auto listMovieFilter   = cleanUserFilterString(group.readEntry(QLatin1String("Movie File Filter"), QString()));
+    auto listAudioFilter   = cleanUserFilterString(group.readEntry(QLatin1String("Audio File Filter"), QString()));
 
-    configItemFilter   = cleanUserFilterString(group.readEntry(QLatin1String("File Filter"),       QString())).toSet();
-    configItemFilter  += cleanUserFilterString(group.readEntry(QLatin1String("Raw File Filter"),   QString())).toSet();
-    configVideoFilter  = cleanUserFilterString(group.readEntry(QLatin1String("Movie File Filter"), QString())).toSet();
-    configAudioFilter  = cleanUserFilterString(group.readEntry(QLatin1String("Audio File Filter"), QString())).toSet();
+    QSet<QString> configItemFilter(listFileFilter.begin(), listFileFilter.end());
+    configItemFilter  += QSet<QString>(listRawFileFilter.begin(), listRawFileFilter.end());
+    QSet<QString> configVideoFilter(listMovieFilter.begin(), listMovieFilter.end());
+    QSet<QString> configAudioFilter(listAudioFilter.begin(), listAudioFilter.end());
 
     // remove those that are included in the default filter
 
-    configItemFilter.subtract(defaultItemFilter.toSet());
-    configVideoFilter.subtract(defaultVideoFilter.toSet());
-    configAudioFilter.subtract(defaultAudioFilter.toSet());
+    configItemFilter.subtract(QSet<QString>(defaultItemFilter.begin(), defaultItemFilter.end()));
+    configVideoFilter.subtract(QSet<QString>(defaultVideoFilter.begin(), defaultVideoFilter.end()));
+    configAudioFilter.subtract(QSet<QString>(defaultAudioFilter.begin(), defaultAudioFilter.end()));
 
     d->albumDB->setUserFilterSettings(configItemFilter.values(), configVideoFilter.values(), configAudioFilter.values());
     qCDebug(DIGIKAM_COREDB_LOG) << "Core database: set initial filter settings with user settings" << configItemFilter;

@@ -275,7 +275,7 @@ void AlbumManager::slotImagesDeleted(const QList<qlonglong>& imageIds)
     qCDebug(DIGIKAM_GENERAL_LOG) << "Got image deletion notification from ItemViewUtilities for " << imageIds.size() << " images.";
 
     QSet<SAlbum*> sAlbumsToUpdate;
-    QSet<qlonglong> deletedImages = imageIds.toSet();
+    QSet<qlonglong> deletedImages(imageIds.begin(), imageIds.end());
 
     QList<SAlbum*> sAlbums = findSAlbumsBySearchType(DatabaseSearch::DuplicatesSearch);
 
@@ -291,7 +291,8 @@ void AlbumManager::slotImagesDeleted(const QList<qlonglong>& imageIds)
         {
             if ((element == SearchXml::Field) && (reader.fieldName().compare(QLatin1String("imageid")) == 0))
             {
-                images = reader.valueToLongLongList().toSet();
+                const auto list = reader.valueToLongLongList();
+                images = QSet<qlonglong>(list.begin(), list.end());
             }
         }
 
