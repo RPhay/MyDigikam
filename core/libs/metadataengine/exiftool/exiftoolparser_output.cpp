@@ -39,8 +39,10 @@ void ExifToolParser::slotCmdCompleted(int cmdAction,
                                       const QByteArray& stdOut,
                                       const QByteArray& /*stdErr*/)
 {
-    qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool complete command for action" << d->actionString(cmdAction)
-                                    << "with elasped time (ms):" << execTime;
+    qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool complete command for action"
+                                    << d->actionString(cmdAction)
+                                    << "with elasped time (ms):"
+                                    << execTime;
 
     switch (cmdAction)
     {

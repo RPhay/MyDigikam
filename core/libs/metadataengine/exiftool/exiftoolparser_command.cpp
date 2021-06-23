@@ -284,7 +284,11 @@ bool ExifToolParser::copyTags(const QString& src, const QString& dst,
 
     QByteArray wrtCmds;
 
-    qCDebug(DIGIKAM_METAENGINE_LOG) << "Copy Tags Modes:" << writeModes << "(" << QString::fromLatin1("%1").arg(writeModes, 0, 2) << ")";
+    qCDebug(DIGIKAM_METAENGINE_LOG) << "Copy Tags Modes:"
+                                    << writeModes
+                                    << "("
+                                    << QString::fromLatin1("%1").arg(writeModes, 0, 2)
+                                    << ")";
 
     if (writeModes & ExifToolProcess::WRITE_EXISTING_TAGS)
     {
@@ -311,7 +315,11 @@ bool ExifToolParser::copyTags(const QString& src, const QString& dst,
 
     QByteArrayList copyCmds;
 
-    qCDebug(DIGIKAM_METAENGINE_LOG) << "Copy Tags Operations:" << copyOps << "(" << QString::fromLatin1("%1").arg(copyOps, 0, 2) << ")";
+    qCDebug(DIGIKAM_METAENGINE_LOG) << "Copy Tags Operations:"
+                                    << copyOps
+                                    << "("
+                                    << QString::fromLatin1("%1").arg(copyOps, 0, 2)
+                                    << ")";
 
     if (!(copyOps & ExifToolProcess::COPY_NONE))
     {
@@ -415,7 +423,11 @@ bool ExifToolParser::translateTags(const QString& path, unsigned char transOps)
     QTextStream out(&d->argsFile);
     bool dirty = false;
 
-    qCDebug(DIGIKAM_METAENGINE_LOG) << "Translate Tags:" << transOps << "(" << QString::fromLatin1("%1").arg(transOps, 0, 2) << ")";
+    qCDebug(DIGIKAM_METAENGINE_LOG) << "Translate Tags:"
+                                    << transOps
+                                    << "("
+                                    << QString::fromLatin1("%1").arg(transOps, 0, 2)
+                                    << ")";
 
     if (transOps & ExifToolProcess::TRANS_ALL_XMP)
     {

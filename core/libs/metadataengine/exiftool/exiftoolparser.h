@@ -130,16 +130,16 @@ public:
      * Apply tag changes to a target file with ExifTool with a list of tag properties.
      * Tags can already exists in target file or new ones can be created.
      * To remove a tag, pass an empty string as value.
-     * 'path' is the target files to change.
-     * 'newTags' is the list of tag properties.
+     * @param path is the target files to change.
+     * @param newTags is the list of tag properties.
      */
     bool applyChanges(const QString& path, const ExifToolData& newTags);
 
     /**
      * Apply tag changes to a target file with ExifTool with a EXV container.
      * Tags can already exists in target file or new ones can be created.
-     * 'path' is the target files to change.
-     * 'exvTempFile' is the list of changes embedded in EXV constainer.
+     * @param path is the target files to change.
+     * @param exvTempFile is the list of changes embedded in EXV constainer.
      */
     bool applyChanges(const QString& path, const QString& exvTempFile);
 
@@ -169,10 +169,10 @@ public:
 
     /**
      * Copy group of tags from one source file to a destination file, following copy operations defined by 'copyOps'.
-     * 'copyOps' is a OR combination of ExifToolProcess::CopyTagsSource values.
-     * 'transOps' is a OR combination of ExifToolProcess::TranslateTagsOps values.
-     * 'writeModes' is a OR combaniation of ExifToolProcess::WritingTagsMode values.
-     * 'dst' must be a writable file format supported by ExifTool.
+     * @param copyOps is a OR combination of ExifToolProcess::CopyTagsSource values.
+     * @param transOps is a OR combination of ExifToolProcess::TranslateTagsOps values.
+     * @param writeModes is a OR combaniation of ExifToolProcess::WritingTagsMode values.
+     * @param dst must be a writable file format supported by ExifTool.
      */
     bool copyTags(const QString& src, const QString& dst,
                   unsigned char copyOps,
@@ -180,7 +180,7 @@ public:
 
     /**
      * Translate group of tags in file.
-     * 'transOps' is a OR combination of ExifToolProcess::TranslateTagsOps values.
+     * @param transOps is a OR combination of ExifToolProcess::TranslateTagsOps values.
      */
     bool translateTags(const QString& path, unsigned char transOps);
 
