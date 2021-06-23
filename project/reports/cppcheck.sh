@@ -82,6 +82,7 @@ cppcheck -j$CPU_CORES \
          --suppress=class_X_Y \
          --suppress=ConfigurationNotChecked \
          --suppress=unmatchedSuppression \
+         --suppress=useStlAlgorithm \
          --output-file=report.cppcheck.xml \
          $IGNORE_DIRS \
          $INCLUDE_DIRS \
