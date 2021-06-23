@@ -252,7 +252,7 @@ void MetadataWidget::decodeMetadataThreaded(bool* const error)
     QElapsedTimer execTimer;
     execTimer.start();
 
-    *error = decodeMetadata();
+    *error = !decodeMetadata();
 
     qCDebug(DIGIKAM_GENERAL_LOG) << getMetadataTitle() << "decoding took"
                                  << execTimer.elapsed() << "ms (" << *error << ")";
