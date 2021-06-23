@@ -251,33 +251,28 @@ QString ExifToolWidget::metadataToText() const
             textmetadata.append(QLatin1String(" <<<\n\n"));
 
             int j                  = 0;
-            QTreeWidgetItem* item2 = nullptr;
+            QTreeWidgetItem* child = nullptr;
 
             do
             {
-                item2 = dynamic_cast<QTreeWidgetItem*>(lvItem);
+                child = lvItem->child(j);
 
-                if (item2)
+                if (child)
                 {
-                    QTreeWidgetItem* const child = item2->child(j);
+                    ExifToolListViewItem* const lvItem2 = dynamic_cast<ExifToolListViewItem*>(child);
 
-                    if (child)
+                    if (lvItem2)
                     {
-                        ExifToolListViewItem* const lvItem2 = dynamic_cast<ExifToolListViewItem*>(child);
-
-                        if (lvItem2)
-                        {
-                            textmetadata.append(lvItem2->text(0));
-                            textmetadata.append(QLatin1String(" : "));
-                            textmetadata.append(lvItem2->text(1));
-                            textmetadata.append(QLatin1Char('\n'));
-                        }
+                        textmetadata.append(lvItem2->text(0));
+                        textmetadata.append(QLatin1String(" : "));
+                        textmetadata.append(lvItem2->text(1));
+                        textmetadata.append(QLatin1Char('\n'));
                     }
                 }
 
                 ++j;
             }
-            while (item2);
+            while (child);
         }
 
         ++i;
@@ -317,33 +312,28 @@ void ExifToolWidget::slotPrintMetadata()
             textmetadata.append(QLatin1String("</b><br/><br/>"));
 
             int j                  = 0;
-            QTreeWidgetItem* item2 = nullptr;
+            QTreeWidgetItem* child = nullptr;
 
             do
             {
-                item2 = dynamic_cast<QTreeWidgetItem*>(lvItem);
+                child = lvItem->child(j);
 
-                if (item2)
+                if (child)
                 {
-                    QTreeWidgetItem* const child = item2->child(j);
+                    ExifToolListViewItem* const lvItem2 = dynamic_cast<ExifToolListViewItem*>(child);
 
-                    if (child)
+                    if (lvItem2)
                     {
-                        ExifToolListViewItem* const lvItem2 = dynamic_cast<ExifToolListViewItem*>(child);
-
-                        if (lvItem2)
-                        {
-                            textmetadata.append(lvItem2->text(0));
-                            textmetadata.append(QLatin1String(" : <i>"));
-                            textmetadata.append(lvItem2->text(1));
-                            textmetadata.append(QLatin1String("</i><br/>"));
-                        }
+                        textmetadata.append(lvItem2->text(0));
+                        textmetadata.append(QLatin1String(" : <i>"));
+                        textmetadata.append(lvItem2->text(1));
+                        textmetadata.append(QLatin1String("</i><br/>"));
                     }
                 }
 
                 ++j;
             }
-            while (item2);
+            while (child);
         }
 
         ++i;
