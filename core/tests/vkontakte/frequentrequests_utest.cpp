@@ -33,8 +33,8 @@
 
 using namespace Vkontakte;
 
-TestFrequentRequests::TestFrequentRequests()
-    : VkTestBase()
+TestFrequentRequests::TestFrequentRequests(QObject* const parent)
+    : VkTestBase(parent)
 {
 }
 

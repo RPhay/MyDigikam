@@ -45,7 +45,7 @@ class TestPhotos : public VkTestBase
 
 public:
 
-    TestPhotos();
+    explicit TestPhotos(QObject* const parent = nullptr);
 
 private Q_SLOTS:
 

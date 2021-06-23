@@ -42,7 +42,7 @@ class TestUserInfo : public VkTestBase
 
 public:
 
-    TestUserInfo();
+    explicit TestUserInfo(QObject* const parent = nullptr);
 
 private Q_SLOTS:
 

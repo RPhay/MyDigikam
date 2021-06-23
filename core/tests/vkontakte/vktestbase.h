@@ -44,7 +44,7 @@ class VkTestBase : public QObject
 
 public:
 
-    VkTestBase(QObject* const parent = nullptr);
+    explicit VkTestBase(QObject* const parent = nullptr);
     ~VkTestBase() override;
 
 protected:

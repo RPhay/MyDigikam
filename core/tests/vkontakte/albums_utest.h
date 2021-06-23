@@ -46,7 +46,7 @@ class TestAlbums : public VkTestBase
 
 public:
 
-    TestAlbums();
+    explicit TestAlbums(QObject* const parent = nullptr);
 
 private Q_SLOTS:
 

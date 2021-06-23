@@ -39,10 +39,10 @@
 
 using namespace Vkontakte;
 
-TestPhotos::TestPhotos()
-    : VkTestBase(),
-      m_albumId(-1),
-      m_photoId(-1)
+TestPhotos::TestPhotos(QObject* const parent)
+    : VkTestBase(parent),
+      m_albumId (-1),
+      m_photoId (-1)
 {
 }
 
