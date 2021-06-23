@@ -342,7 +342,7 @@ done
 
 # Move Qt translation data files at the right place in the bundle. See Bug #438701.
 
-mv "$TEMPROOT/digikam.app/Contents/libexec/qt5/translations" "$TEMPROOT/digikam.app/Contents/Resources/"
+mv -v $TEMPROOT/libexec/qt5/translations $TEMPROOT/digikam.app/Contents/Resources/
 
 # To support localized system menu entries from MacOS. See bug #432650.
 
