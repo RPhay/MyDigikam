@@ -44,6 +44,7 @@
 #include <QComboBox>
 #include <QLineEdit>
 #include <QDoubleSpinBox>
+#include <QRandomGenerator>
 
 // KDE includes
 
@@ -868,7 +869,7 @@ bool WaterMark::toolOperations()
             widthRatio  = (widthRatio > heightRatio) ? widthRatio : heightRatio;
             heightRatio = widthRatio;
 
-            qsrand(static_cast<quint64>(QTime::currentTime().msecsSinceStartOfDay()));
+            QRandomGenerator randomGenerator(static_cast<quint32>(QTime::currentTime().msecsSinceStartOfDay()));
 
             for (uint i = 0 ; i < image().width() ; i += spacingFactor * widthRatio * image().width())
             {
@@ -876,11 +877,11 @@ bool WaterMark::toolOperations()
                 {
                     int number = (denseRepetition) ? 2 : 3;
 
-                    if (qrand() % number == 0)
+                    if (randomGenerator.generate() % number == 0)
                     {
                         if (randomizeRotation)
                         {
-                            int x = qrand() % 4;
+                            int x = static_cast<int>(randomGenerator.generate()) % 4;
                             watermarkImage.rotate((DImg::ANGLE)x);
                         }
 
