@@ -384,5 +384,5 @@ BUGFIXES:
 361 ==> 326247 - Add a new button to expand or collapse all album tree-view items.
 362 ==> 438720 - BSOD when browsing photos.
 363 ==> 439059 - "exiftoollistviewgroup".
-364 ==> 
-
+364 ==> 439057 - Output helpers for ExifTool data (print, save, copy).
+365 ==> 
