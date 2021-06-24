@@ -105,10 +105,7 @@ bool ExifToolProcess::start()
 {
     // Check if ExifTool is starting or running
 
-    if (
-        d->exifToolHasFinished                    ||
-        (d->process->state() != QProcess::NotRunning)
-       )
+    if (d->process->state() != QProcess::NotRunning)
     {
         return true;
     }
@@ -181,7 +178,6 @@ void ExifToolProcess::terminate()
         d->process->write(QByteArray("-stay_open\nfalse\n"));
         d->process->closeWriteChannel();
         d->writeChannelIsClosed = true;
-        d->exifToolHasFinished  = true;
 
         if (!d->process->waitForFinished(5000))
         {

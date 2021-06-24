@@ -27,7 +27,8 @@ namespace Digikam
 {
 
 ExifToolParser::Private::Private()
-    : proc(nullptr)
+    : proc         (nullptr),
+      asynchronMode(false)
 {
     argsFile.setAutoRemove(false);
 }
@@ -75,15 +76,18 @@ bool ExifToolParser::Private::startProcess(const QByteArrayList& cmdArgs, ExifTo
 
     qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool" << actionString(cmdAction) << cmdArgs.join(QByteArray(" "));
 
-    evLoops[cmdAction]->exec(QEventLoop::ExcludeUserInputEvents);
+    if (!asynchronMode)
+    {
+        evLoops[cmdAction]->exec(QEventLoop::ExcludeUserInputEvents);
 
-    if (currentPath.isEmpty())
-    {
-        qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool complete" << actionString(cmdAction);
-    }
-    else
-    {
-        qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool complete" << actionString(cmdAction) << "for" << currentPath;
+        if (currentPath.isEmpty())
+        {
+            qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool complete" << actionString(cmdAction);
+        }
+        else
+        {
+            qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool complete" << actionString(cmdAction) << "for" << currentPath;
+        }
     }
 
     return true;
@@ -154,13 +158,20 @@ QString ExifToolParser::Private::actionString(int cmdAction) const
 
 void ExifToolParser::Private::manageEventLoop(int cmdAction)
 {
-    if ((cmdAction >= ExifToolProcess::LOAD_METADATA) &&
-        (cmdAction <  ExifToolProcess::NO_ACTION))
+    if (!asynchronMode)
     {
-        if (evLoops[cmdAction])
+        if ((cmdAction >= ExifToolProcess::LOAD_METADATA) &&
+            (cmdAction <  ExifToolProcess::NO_ACTION))
         {
-            evLoops[cmdAction]->quit();
+            if (evLoops[cmdAction])
+            {
+                evLoops[cmdAction]->quit();
+            }
         }
+    }
+    else
+    {
+        asynchronMode = false;
     }
 }
 

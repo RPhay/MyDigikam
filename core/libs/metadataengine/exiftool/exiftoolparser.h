@@ -118,7 +118,7 @@ public:
      * Load all metadata with ExifTool from a file.
      * Use currentData() to get the ExifTool map.
      */
-    bool load(const QString& path);
+    bool load(const QString& path, bool asynchron = false);
 
     /**
      * Load Exif, Iptc, and Xmp chunk as Exiv2 EXV bytearray from a file.
@@ -185,6 +185,10 @@ public:
     bool translateTags(const QString& path, unsigned char transOps);
 
     //@}
+
+Q_SIGNALS:
+
+    void signalExifToolDataAvailable();
 
 private Q_SLOTS:
 

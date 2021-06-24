@@ -90,7 +90,6 @@ public:
     QByteArray              outBuff[2];              ///< [0] StandardOutput | [1] ErrorOutput
 
     bool                    writeChannelIsClosed;
-    bool                    exifToolHasFinished;
 
     QProcess::ProcessError  processError;
     QString                 errorString;

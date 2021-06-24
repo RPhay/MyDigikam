@@ -272,6 +272,8 @@ void ExifToolParser::slotCmdCompleted(int cmdAction,
 
     d->manageEventLoop(cmdAction);
 
+    emit signalExifToolDataAvailable();
+
     qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool parsed command for action" << d->actionString(cmdAction);
     qCDebug(DIGIKAM_METAENGINE_LOG) << d->exifToolData.count() << "properties decoded";
 }
@@ -282,6 +284,8 @@ void ExifToolParser::slotErrorOccurred(int cmdAction, QProcess::ProcessError err
                                       << "exited with error:" << error;
 
     d->manageEventLoop(cmdAction);
+
+    emit signalExifToolDataAvailable();
 }
 
 void ExifToolParser::slotFinished(int cmdAction, int exitCode, QProcess::ExitStatus exitStatus)
@@ -291,6 +295,8 @@ void ExifToolParser::slotFinished(int cmdAction, int exitCode, QProcess::ExitSta
                                     << "and status" << exitStatus;
 
     d->manageEventLoop(cmdAction);
+
+    emit signalExifToolDataAvailable();
 }
 
 void ExifToolParser::setOutputStream(int cmdAction,

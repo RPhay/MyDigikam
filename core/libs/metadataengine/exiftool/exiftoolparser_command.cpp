@@ -26,7 +26,7 @@
 namespace Digikam
 {
 
-bool ExifToolParser::load(const QString& path)
+bool ExifToolParser::load(const QString& path, bool asynchron)
 {
     QFileInfo fileInfo(path);
 
@@ -76,7 +76,8 @@ bool ExifToolParser::load(const QString& path)
 */
 
     cmdArgs << d->filePathEncoding(fileInfo);
-    d->currentPath = fileInfo.filePath();
+    d->currentPath   = fileInfo.filePath();
+    d->asynchronMode = asynchron;
 
     return (d->startProcess(cmdArgs, ExifToolProcess::LOAD_METADATA));
 }

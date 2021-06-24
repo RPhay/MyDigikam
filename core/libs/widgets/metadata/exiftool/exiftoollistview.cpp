@@ -25,11 +25,10 @@
 
 // Qt includes
 
-#include <QHeaderView>
 #include <QApplication>
+#include <QHeaderView>
 #include <QStringList>
 #include <QStyle>
-#include <QtConcurrent>   // krazy:exclude=includes
 
 // KDE includes
 
@@ -50,27 +49,35 @@ class Q_DECL_HIDDEN ExifToolListView::Private
 public:
 
     explicit Private()
+      : parser(nullptr)
     {
     }
 
-    QString     lastError;
-    QString     selectedItemKey;
-    QStringList simplifiedTagsList;
+    QString         lastError;
+    QString         selectedItemKey;
+    QStringList     simplifiedTagsList;
+
+    ExifToolParser* parser;
 };
 
 ExifToolListView::ExifToolListView(QWidget* const parent)
     : QTreeWidget(parent),
       d          (new Private)
 {
+    setColumnCount(2);
+    setHeaderHidden(true);
     setSortingEnabled(true);
+    setAllColumnsShowFocus(true);
     sortByColumn(0, Qt::AscendingOrder);
     setSelectionMode(QAbstractItemView::SingleSelection);
-    setAllColumnsShowFocus(true);
-    setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
-    setColumnCount(2);
-    setIndentation(QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing));
-    setHeaderHidden(true);
     header()->setSectionResizeMode(QHeaderView::Stretch);
+    setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+    setIndentation(QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing));
+
+    d->parser = new ExifToolParser(this);
+
+    connect(d->parser, SIGNAL(signalExifToolDataAvailable()),
+            this, SLOT(slotExifToolDataAvailable()));
 
     connect(this, SIGNAL(itemClicked(QTreeWidgetItem*,int)),
             this, SLOT(slotSelectionChanged(QTreeWidgetItem*,int)));
@@ -79,28 +86,6 @@ ExifToolListView::ExifToolListView(QWidget* const parent)
 ExifToolListView::~ExifToolListView()
 {
     delete d;
-}
-
-void ExifToolListView::exifToolParseThreaded(const QString& file,
-                                             ExifToolParser::ExifToolData* const parsed,
-                                             QString* const errorString,
-                                             bool* const error)
-{
-    ExifToolParser* const parser = new ExifToolParser(nullptr);
-
-    if (!parser->load(file))
-    {
-        *errorString = parser->currentErrorString();
-        *error       = true;
-        delete parser;
-
-        return;
-    }
-
-    errorString->clear();
-    *parsed = parser->currentData();
-    *error  = false;
-    delete parser;
 }
 
 bool ExifToolListView::loadFromUrl(const QUrl& url)
@@ -112,27 +97,14 @@ bool ExifToolListView::loadFromUrl(const QUrl& url)
         return true;
     }
 
-    bool error          = false;
-    ExifToolParser::ExifToolData parsed;
-
-    // Note; pass writable argument by pointer to QtConcurent::run()
-    // For details: https://stackoverflow.com/questions/25091518/qt-concurrent-run-pass-value-by-reference-but-the-memory-address-is-different
-
-    QFuture<void> task  = QtConcurrent::run(this,
-                                            &ExifToolListView::exifToolParseThreaded,
-                                            url.toLocalFile(),
-                                            &parsed,
-                                            &d->lastError,
-                                            &error);
-
-    task.waitForFinished();
-
-    if (error)
+    if (!d->parser->load(url.toLocalFile(), true))
     {
+        d->lastError = d->parser->currentErrorString();
+
         return false;
     }
 
-    setMetadata(parsed);
+    d->lastError.clear();
 
     return true;
 }
@@ -140,6 +112,13 @@ bool ExifToolListView::loadFromUrl(const QUrl& url)
 QString ExifToolListView::errorString() const
 {
     return d->lastError;
+}
+
+void ExifToolListView::slotExifToolDataAvailable()
+{
+    d->lastError = d->parser->currentErrorString();
+
+    setMetadata(d->parser->currentData());
 }
 
 void ExifToolListView::setMetadata(const ExifToolParser::ExifToolData& map)
