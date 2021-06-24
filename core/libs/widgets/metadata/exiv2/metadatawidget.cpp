@@ -48,7 +48,6 @@
 #include <QMenu>
 #include <QApplication>
 #include <QStyle>
-#include <QtConcurrent>   // krazy:exclude=includes
 #include <QElapsedTimer>
 
 // KDE includes
@@ -247,17 +246,6 @@ void MetadataWidget::enabledToolButtons(bool b)
     d->toolBtn->setEnabled(b);
 }
 
-void MetadataWidget::decodeMetadataThreaded(bool* const error)
-{
-    QElapsedTimer execTimer;
-    execTimer.start();
-
-    *error = !decodeMetadata();
-
-    qCDebug(DIGIKAM_GENERAL_LOG) << getMetadataTitle() << "decoding took"
-                                 << execTimer.elapsed() << "ms (" << *error << ")";
-}
-
 bool MetadataWidget::setMetadata(const DMetadata& data)
 {
     if (d->metadata)
@@ -279,12 +267,13 @@ bool MetadataWidget::setMetadata(const DMetadata& data)
 
     // Try to decode current metadata.
 
-    bool error          = false;
-    QFuture<void> task  = QtConcurrent::run(this,
-                                            &MetadataWidget::decodeMetadataThreaded,
-                                            &error);
+    QElapsedTimer execTimer;
+    execTimer.start();
 
-    task.waitForFinished();
+    bool error = !decodeMetadata();
+
+    qCDebug(DIGIKAM_GENERAL_LOG) << getMetadataTitle() << "decoding took"
+                                 << execTimer.elapsed() << "ms (" << error << ")";
 
     enabledToolButtons(!error);
 
