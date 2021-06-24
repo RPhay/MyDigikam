@@ -27,8 +27,8 @@ namespace Digikam
 {
 
 ExifToolParser::Private::Private()
-    : proc         (nullptr),
-      asynchronMode(false)
+    : proc        (nullptr),
+      asyncLoading(false)
 {
     argsFile.setAutoRemove(false);
 }
@@ -76,7 +76,7 @@ bool ExifToolParser::Private::startProcess(const QByteArrayList& cmdArgs, ExifTo
 
     qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool" << actionString(cmdAction) << cmdArgs.join(QByteArray(" "));
 
-    if (!asynchronMode)
+    if (!asyncLoading)
     {
         evLoops[cmdAction]->exec(QEventLoop::ExcludeUserInputEvents);
 
@@ -158,7 +158,7 @@ QString ExifToolParser::Private::actionString(int cmdAction) const
 
 void ExifToolParser::Private::manageEventLoop(int cmdAction)
 {
-    if (!asynchronMode)
+    if (!asyncLoading)
     {
         if ((cmdAction >= ExifToolProcess::LOAD_METADATA) &&
             (cmdAction <  ExifToolProcess::NO_ACTION))
@@ -171,7 +171,7 @@ void ExifToolParser::Private::manageEventLoop(int cmdAction)
     }
     else
     {
-        asynchronMode = false;
+        asyncLoading = false;
     }
 }
 

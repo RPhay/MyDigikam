@@ -118,7 +118,7 @@ public:
      * Load all metadata with ExifTool from a file.
      * Use currentData() to get the ExifTool map.
      */
-    bool load(const QString& path, bool asynchron = false);
+    bool load(const QString& path, bool async = false);
 
     /**
      * Load Exif, Iptc, and Xmp chunk as Exiv2 EXV bytearray from a file.
