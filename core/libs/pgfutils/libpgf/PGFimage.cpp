@@ -680,6 +680,7 @@ UINT32 CPGFImage::ReadEncodedHeader(UINT8* target, UINT32 targetLen) const {
 /// Use this method after Read() if you want to read the same image several times, e.g. reading different ROIs.
 /// @param startOfData true: you want to read the same image several times. false: resets stream position to the initial position
 void CPGFImage::ResetStreamPos(bool startOfData) {
+	m_currentLevel = 0;
 	if (startOfData) {
 		ASSERT(m_decoder);
 		m_decoder->SetStreamPosToData();

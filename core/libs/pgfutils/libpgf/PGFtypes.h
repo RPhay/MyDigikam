@@ -35,24 +35,24 @@
 //	Codec versions
 //
 // Version 2:	modified data structure PGFHeader (backward compatibility assured)
-// Version 4:	DataT: INT32 instead of INT16, allows 31 bit per pixel and channel (backward compatibility assured)
+// Version 4:	DataT: INT32 instead of INT16, allows 30 bit per pixel and channel (backward compatibility assured)
 // Version 5:	ROI, new block-reordering scheme (backward compatibility assured)
 // Version 6:	modified data structure PGFPreHeader: hSize (header size) is now a UINT32 instead of a UINT16 (backward compatibility assured)
 // Version 7:	last two bytes in header are now used for extended version numbers; new data representation for bitmaps (backward compatibility assured)
 //
 //-------------------------------------------------------------------------------
 #define PGFMajorNumber		7
-#define PGFYear				19
-#define	PGFWeek				03
+#define PGFYear				21		// leading zeros are possible
+#define	PGFWeek				07		// leading zeros are possible
 
 #define PPCAT_NX(A, B) A ## B
 #define PPCAT(A, B) PPCAT_NX(A, B)
 #define STRINGIZE_NX(A) #A
 #define STRINGIZE(A) STRINGIZE_NX(A)
 
-//#define PGFCodecVersionID		0x071822
+//#define PGFCodecVersionID		0x072102
 #define PGFCodecVersionID PPCAT(PPCAT(PPCAT(0x0, PGFMajorNumber), PGFYear), PGFWeek)
-//#define PGFCodecVersion		"7.19.3"			///< Major number, Minor number: Year (2) Week (2)
+//#define PGFCodecVersion		"7.21.02"		///< Major number, Minor number: Year (2) Week (2)
 #define PGFCodecVersion STRINGIZE(PPCAT(PPCAT(PPCAT(PPCAT(PGFMajorNumber, .), PGFYear), .), PGFWeek))
 
 //-------------------------------------------------------------------------------
@@ -66,7 +66,7 @@
 #define ColorTableLen		256					///< size of color lookup table (clut)
 // version flags
 #define Version2			2					///< data structure PGFHeader of major version 2
-#define PGF32				4					///< 32 bit values are used -> allows at maximum 31 bits, otherwise 16 bit values are used -> allows at maximum 15 bits
+#define PGF32				4					///< 32 bit values are used -> allows at maximum 30 input bits, otherwise 16 bit values are used -> allows at maximum 14 input bits
 #define PGFROI				8					///< supports Regions Of Interest
 #define Version5			16					///< new coding scheme since major version 5
 #define Version6			32					///< hSize in PGFPreHeader uses 32 bits instead of 16 bits 
@@ -130,12 +130,7 @@ struct PGFPreHeader : PGFMagicVersion {
 /// @author C. Stamm
 /// @brief version number stored in header since major version 7 
 struct PGFVersionNumber {
-	PGFVersionNumber(UINT8 _major, UINT8 _year, UINT8 _week)
-#ifdef PGF_USE_BIG_ENDIAN
-	: week(_week), year(_year), major(_major) {}
-#else
-	: major(_major), year(_year), week(_week) {}
-#endif // PGF_USE_BIG_ENDIAN
+	PGFVersionNumber(UINT8 _major, UINT8 _year, UINT8 _week) : major(_major), year(_year), week(_week) {}
 
 #ifdef PGF_USE_BIG_ENDIAN
 	UINT16 week  : 6;	///< week number in a year
@@ -146,6 +141,7 @@ struct PGFVersionNumber {
 	UINT16 year  : 6;	///< year since 2000 (year 2001 = 1)
 	UINT16 week  : 6;	///< week number in a year
 #endif // PGF_USE_BIG_ENDIAN
+	// total: 2 Bytes
 };
 
 /////////////////////////////////////////////////////////////////////
