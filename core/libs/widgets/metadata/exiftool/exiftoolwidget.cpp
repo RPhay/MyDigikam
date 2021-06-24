@@ -291,57 +291,6 @@ void ExifToolWidget::slotCopy2Clipboard()
 
 void ExifToolWidget::slotPrintMetadata()
 {
-    QString textmetadata  = QLatin1String("<p>");
-    textmetadata.append(QString::fromUtf8("<p><big><big><b>%1 %2 (%3)</b></big></big>")
-                        .arg(i18nc("@title: print metadata", "File name:"))
-                        .arg(d->fileName)
-                        .arg(QLatin1String("ExifTool")));
-
-    int i                 = 0;
-    QTreeWidgetItem* item = nullptr;
-
-    do
-    {
-        item                                = d->view->topLevelItem(i);
-        ExifToolListViewGroup* const lvItem = dynamic_cast<ExifToolListViewGroup*>(item);
-
-        if (lvItem)
-        {
-            textmetadata.append(QLatin1String("<br/><br/><b>"));
-            textmetadata.append(lvItem->text(0));
-            textmetadata.append(QLatin1String("</b><br/><br/>"));
-
-            int j                  = 0;
-            QTreeWidgetItem* child = nullptr;
-
-            do
-            {
-                child = lvItem->child(j);
-
-                if (child)
-                {
-                    ExifToolListViewItem* const lvItem2 = dynamic_cast<ExifToolListViewItem*>(child);
-
-                    if (lvItem2)
-                    {
-                        textmetadata.append(lvItem2->text(0));
-                        textmetadata.append(QLatin1String(" : <i>"));
-                        textmetadata.append(lvItem2->text(1));
-                        textmetadata.append(QLatin1String("</i><br/>"));
-                    }
-                }
-
-                ++j;
-            }
-            while (child);
-        }
-
-        ++i;
-    }
-    while (item);
-
-    textmetadata.append(QLatin1String("</p>"));
-
     QPrinter printer;
     printer.setFullPage(true);
 
@@ -350,7 +299,7 @@ void ExifToolWidget::slotPrintMetadata()
     if (dialog->exec())
     {
         QTextDocument doc;
-        doc.setHtml(textmetadata);
+        doc.setPlainText(metadataToText());
         QFont font(QApplication::font());
         font.setPointSize(10);                // we define 10pt to be a nice base size for printing.
         doc.setDefaultFont(font);
