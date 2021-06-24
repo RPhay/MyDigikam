@@ -174,35 +174,36 @@ void ExifToolWidget::loadFromUrl(const QUrl& url)
     d->view->loadFromUrl(url);
 }
 
-void ExifToolWidget::slotLoadingReady()
+void ExifToolWidget::slotLoadingResult(bool ok)
 {
-    SearchTextSettings settings = d->searchBar->searchTextSettings();
+    d->preLoadingTimer->stop();
 
-    if (!settings.text.isEmpty())
+    if (ok)
     {
-        d->view->slotSearchTextChanged(settings);
+        SearchTextSettings settings = d->searchBar->searchTextSettings();
+
+        if (!settings.text.isEmpty())
+        {
+            d->view->slotSearchTextChanged(settings);
+        }
+
+        setCurrentIndex(Private::MetadataView);
+    }
+    else
+    {
+        d->errorView->setErrorText(i18nc("@info: error message",
+                                   "Cannot load data\n"
+                                   "from %1\n"
+                                   "with ExifTool.\n\n"
+                                   "%2",
+                                   d->fileName,
+                                   d->view->errorString()));
+
+        setCurrentIndex(Private::ErrorView);
     }
 
-    setCurrentIndex(Private::MetadataView);
     d->loadingView->setBusy(false);
-    d->toolBtn->setEnabled(true);
-    d->preLoadingTimer->stop();
-}
-
-void ExifToolWidget::slotLoadingError()
-{
-    d->errorView->setErrorText(i18nc("@info: error message",
-                                     "Cannot load data\n"
-                                     "from %1\n"
-                                     "with ExifTool.\n\n"
-                                     "%2",
-                                     d->fileName,
-                                     d->view->errorString()));
-
-    setCurrentIndex(Private::ErrorView);
-    d->loadingView->setBusy(false);
-    d->toolBtn->setEnabled(false);
-    d->preLoadingTimer->stop();
+    d->toolBtn->setEnabled(ok);
 }
 
 void ExifToolWidget::slotPreLoadingTimerDone()
@@ -213,11 +214,8 @@ void ExifToolWidget::slotPreLoadingTimerDone()
 
 void ExifToolWidget::setup()
 {
-    connect(d->view, SIGNAL(signalLoadingReady()),
-            this, SLOT(slotLoadingReady()));
-
-    connect(d->view, SIGNAL(signalLoadingError()),
-            this, SLOT(slotLoadingError()));
+    connect(d->view, SIGNAL(signalLoadingResult(bool)),
+            this, SLOT(slotLoadingResult(bool)));
 
     connect(d->preLoadingTimer, SIGNAL(timeout()),
             this, SLOT(slotPreLoadingTimerDone()));

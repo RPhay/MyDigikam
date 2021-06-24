@@ -58,8 +58,7 @@ Q_SIGNALS:
 
 private Q_SLOTS:
 
-    void slotLoadingReady();
-    void slotLoadingError();
+    void slotLoadingResult(bool ok);
     void slotPreLoadingTimerDone();
     void slotCopy2Clipboard();
     void slotPrintMetadata();
