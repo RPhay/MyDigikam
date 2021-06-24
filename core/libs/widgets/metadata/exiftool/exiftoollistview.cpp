@@ -88,7 +88,7 @@ ExifToolListView::~ExifToolListView()
     delete d;
 }
 
-bool ExifToolListView::loadFromUrl(const QUrl& url)
+void ExifToolListView::loadFromUrl(const QUrl& url)
 {
     clear();
 
@@ -96,19 +96,21 @@ bool ExifToolListView::loadFromUrl(const QUrl& url)
     {
         emit signalLoadingReady();
 
-        return true;
+        return;
     }
 
     if (!d->parser->load(url.toLocalFile(), true))
     {
         d->lastError = d->parser->currentErrorString();
 
-        return false;
+        emit signalLoadingError();
+
+        return;
     }
 
     d->lastError.clear();
 
-    return true;
+    return;
 }
 
 QString ExifToolListView::errorString() const

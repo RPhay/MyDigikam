@@ -50,7 +50,7 @@ public:
     explicit ExifToolListView(QWidget* const parent);
     ~ExifToolListView() override;
 
-    bool loadFromUrl(const QUrl& url);
+    void loadFromUrl(const QUrl& url);
     QString errorString() const;
 
     QString getCurrentItemKey() const;

@@ -168,13 +168,10 @@ ExifToolWidget::~ExifToolWidget()
 
 void ExifToolWidget::loadFromUrl(const QUrl& url)
 {
-    d->preLoadingTimer->start();
     d->fileName = url.fileName();
 
-    if (!d->view->loadFromUrl(url))
-    {
-        slotLoadingError();
-    }
+    d->preLoadingTimer->start();
+    d->view->loadFromUrl(url);
 }
 
 void ExifToolWidget::slotLoadingReady()
