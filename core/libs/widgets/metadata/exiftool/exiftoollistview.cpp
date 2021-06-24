@@ -94,6 +94,8 @@ bool ExifToolListView::loadFromUrl(const QUrl& url)
 
     if (!url.isValid())
     {
+        emit signalLoadingReady();
+
         return true;
     }
 
@@ -118,7 +120,16 @@ void ExifToolListView::slotExifToolDataAvailable()
 {
     d->lastError = d->parser->currentErrorString();
 
-    setMetadata(d->parser->currentData());
+    if (d->lastError.isEmpty())
+    {
+        setMetadata(d->parser->currentData());
+
+        emit signalLoadingReady();
+    }
+    else
+    {
+        emit signalLoadingError();
+    }
 }
 
 void ExifToolListView::setMetadata(const ExifToolParser::ExifToolData& map)

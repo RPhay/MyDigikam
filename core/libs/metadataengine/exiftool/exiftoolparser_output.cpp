@@ -59,6 +59,8 @@ void ExifToolParser::slotCmdCompleted(int cmdAction,
             {
                 d->manageEventLoop(cmdAction);
 
+                emit signalExifToolDataAvailable();
+
                 return;
             }
 

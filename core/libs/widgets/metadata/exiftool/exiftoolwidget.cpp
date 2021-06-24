@@ -170,37 +170,42 @@ void ExifToolWidget::loadFromUrl(const QUrl& url)
 {
     d->preLoadingTimer->start();
     d->fileName = url.fileName();
-    bool ret    = d->view->loadFromUrl(url);
 
-    if (ret)
+    if (!d->view->loadFromUrl(url))
     {
-        SearchTextSettings settings = d->searchBar->searchTextSettings();
-
-        if (!settings.text.isEmpty())
-        {
-            d->view->slotSearchTextChanged(settings);
-        }
-
-        d->preLoadingTimer->stop();
-        setCurrentIndex(Private::MetadataView);
-        d->toolBtn->setEnabled(true);
+        slotLoadingError();
     }
-    else
-    {
-        d->errorView->setErrorText(i18nc("@info: error message",
-                                   "Cannot load data\n"
-                                   "from %1\n"
-                                   "with ExifTool.\n\n"
-                                   "%2",
-                                   d->fileName,
-                                   d->view->errorString()));
+}
 
-        d->preLoadingTimer->stop();
-        setCurrentIndex(Private::ErrorView);
-        d->toolBtn->setEnabled(false);
+void ExifToolWidget::slotLoadingReady()
+{
+    SearchTextSettings settings = d->searchBar->searchTextSettings();
+
+    if (!settings.text.isEmpty())
+    {
+        d->view->slotSearchTextChanged(settings);
     }
 
+    setCurrentIndex(Private::MetadataView);
     d->loadingView->setBusy(false);
+    d->toolBtn->setEnabled(true);
+    d->preLoadingTimer->stop();
+}
+
+void ExifToolWidget::slotLoadingError()
+{
+    d->errorView->setErrorText(i18nc("@info: error message",
+                                     "Cannot load data\n"
+                                     "from %1\n"
+                                     "with ExifTool.\n\n"
+                                     "%2",
+                                     d->fileName,
+                                     d->view->errorString()));
+
+    setCurrentIndex(Private::ErrorView);
+    d->loadingView->setBusy(false);
+    d->toolBtn->setEnabled(false);
+    d->preLoadingTimer->stop();
 }
 
 void ExifToolWidget::slotPreLoadingTimerDone()
@@ -211,6 +216,12 @@ void ExifToolWidget::slotPreLoadingTimerDone()
 
 void ExifToolWidget::setup()
 {
+    connect(d->view, SIGNAL(signalLoadingReady()),
+            this, SLOT(slotLoadingReady()));
+
+    connect(d->view, SIGNAL(signalLoadingError()),
+            this, SLOT(slotLoadingError()));
+
     connect(d->preLoadingTimer, SIGNAL(timeout()),
             this, SLOT(slotPreLoadingTimerDone()));
 

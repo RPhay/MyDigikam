@@ -58,6 +58,8 @@ public:
 
 Q_SIGNALS:
 
+    void signalLoadingReady();
+    void signalLoadingError();
     void signalTextFilterMatch(bool);
 
 public Q_SLOTS:
