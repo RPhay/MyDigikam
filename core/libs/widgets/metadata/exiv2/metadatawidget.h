@@ -111,13 +111,15 @@ protected:
      */
     void setup();
 
+    QString metadataToText() const;
+
 protected:
 
     virtual void buildView();
     virtual void setMetadataEmpty();
 
-    virtual bool    decodeMetadata()   = 0;
-    virtual QString getMetadataTitle() = 0;
+    virtual bool    decodeMetadata()         = 0;
+    virtual QString getMetadataTitle() const = 0;
 
 private Q_SLOTS:
 

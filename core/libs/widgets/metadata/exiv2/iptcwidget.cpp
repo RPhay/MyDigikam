@@ -67,7 +67,7 @@ IptcWidget::~IptcWidget()
 {
 }
 
-QString IptcWidget::getMetadataTitle()
+QString IptcWidget::getMetadataTitle() const
 {
     return i18n("IPTC Records");
 }
