@@ -386,4 +386,5 @@ BUGFIXES:
 362 ==> 438720 - BSOD when browsing photos.
 363 ==> 439059 - "exiftoollistviewgroup".
 364 ==> 439057 - Output helpers for ExifTool data (print, save, copy).
-365 ==> 
+365 ==> 439161 - .insv (360-video) files not shown.
+366 ==> 
