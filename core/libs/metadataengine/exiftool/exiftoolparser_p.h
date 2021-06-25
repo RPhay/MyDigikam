@@ -77,7 +77,7 @@ public:
     ExifToolData                   exifToolData;    ///< Current ExifTool data (input or output depending of the called method.
     QTemporaryFile                 argsFile;        ///< Temporary file to store Exiftool arg config file.
 
-    bool                           asyncLoading;
+    int                            asyncLoading;
 
     QList<QMetaObject::Connection> hdls;            ///< Handles of signals/slots connections used to control streams with ExifTool process.
 };
