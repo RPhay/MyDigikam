@@ -164,7 +164,7 @@ void GPSMarkerTiler::regenerateTiles()
  */
 void GPSMarkerTiler::prepareTiles(const GeoCoordinates& upperLeft, const GeoCoordinates& lowerRight, int level)
 {
-    const QRectF worldRect(-180,-90,360,180);
+    const QRectF worldRect(-90,-180,180,360);
 
     qreal lat1         = upperLeft.lat();
     qreal lng1         = upperLeft.lon();
@@ -198,6 +198,7 @@ void GPSMarkerTiler::prepareTiles(const GeoCoordinates& upperLeft, const GeoCoor
     qreal marginH = requestedRect.height() * 0.05;
     requestedRect = requestedRect.marginsAdded(QMarginsF(marginW, marginH, marginW, marginH));
     requestedRect = worldRect.intersected(requestedRect);
+    requestedRect.getCoords(&lat1, &lng1, &lat2, &lng2);
 
     for (int i = 0 ; i < d->rectList.count() ; ++i)
     {
@@ -239,7 +240,7 @@ void GPSMarkerTiler::prepareTiles(const GeoCoordinates& upperLeft, const GeoCoor
         }
     }
 
-    const QRectF newRect(lat1, lng1, lat2 - lat1, lng2 - lng1);
+    requestedRect = QRectF(lat1, lng1, lat2 - lat1, lng2 - lng1);
     d->rectList.append(requestedRect);
 
     qCDebug(DIGIKAM_GENERAL_LOG) << "Listing" << lat1 << lat2 << lng1 << lng2;
