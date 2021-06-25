@@ -50,7 +50,8 @@ DIGIKAM_EXPORT bool readPGFImageData(const QByteArray& data,
                                      bool verbose=false);
 
 /**
- * QImage to PGF image data using memory stream. 'quality' argument set compression ratio:
+ * QImage to PGF image data using memory stream.
+ * @param quality set compression ratio:
  *  0    => lossless compression, as PNG.
  *  1    => Not loss less compression, wavelets based...
  *  2    => ...
@@ -67,7 +68,7 @@ DIGIKAM_EXPORT bool writePGFImageData(const QImage& image,
 
 /**
  * QImage to PGF image data using file stream.
- * Same arguments than writePGFImageData() excepted 'filePath'
+ * Uses same params than writePGFImageData() excepted 'filePath'
  * which is PGF target file path.
  */
 DIGIKAM_EXPORT bool writePGFImageFile(const QImage& image,

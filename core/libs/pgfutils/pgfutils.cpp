@@ -240,7 +240,9 @@ bool writePGFImageData(const QImage& image, QByteArray& data, int quality, bool 
         CPGFMemoryStream stream(rawSize);
 
         if (verbose)
+        {
             qCDebug(DIGIKAM_GENERAL_LOG) << "PGFUtils: PGF stream memory allocation in bytes: " << rawSize;
+        }
 
         UINT32 nWrittenBytes = 0;
         bool ret             = writePGFImageDataToStream(image, stream, quality, nWrittenBytes, verbose);
