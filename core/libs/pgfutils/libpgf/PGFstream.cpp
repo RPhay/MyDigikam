@@ -121,12 +121,14 @@ void CPGFMemoryStream::Write(int *count, void *buffPtr) {
 	} else if (m_allocated) {
 		// memory block is too small -> reallocate a deltaSize larger block
 		size_t offset = m_pos - m_buffer;
-		UINT8 *buf_tmp = (UINT8 *)realloc(m_buffer, m_size + deltaSize);
+        UINT8 *buf_tmp = new(std::nothrow) UINT8[m_size + deltaSize];
 		if (!buf_tmp) {
 			delete[] m_buffer;
 			m_buffer = 0;
 			ReturnWithError(InsufficientMemory);
 		} else {
+            memcpy(buf_tmp, m_buffer, m_size);
+            delete[] m_buffer;
 			m_buffer = buf_tmp;
 		}
 		m_size += deltaSize;
