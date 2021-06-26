@@ -55,7 +55,8 @@ bool DMetadata::load(const QString& filePath, Backend* backend)
 
     if (
         !mimeDB.mimeTypeForFile(filePath).name().startsWith(QLatin1String("video/")) &&
-        !mimeDB.mimeTypeForFile(filePath).name().startsWith(QLatin1String("audio/"))
+        !mimeDB.mimeTypeForFile(filePath).name().startsWith(QLatin1String("audio/")) &&
+        (QFileInfo(filePath).suffix().toUpper() != QLatin1String("INSV"))
        )
     {
         // Process images only with Exiv2 backend first, or libraw in second for RAW files, or with libheif, or at end with ImageMagick.
