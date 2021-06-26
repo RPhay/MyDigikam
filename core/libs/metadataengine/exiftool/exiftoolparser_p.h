@@ -38,6 +38,8 @@
 #include <QEventLoop>
 #include <QFileInfo>
 #include <QTemporaryFile>
+#include <QDomDocument>
+#include <QDomElement>
 
 // KDE includes
 

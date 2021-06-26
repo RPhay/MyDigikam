@@ -132,6 +132,11 @@ QString ExifToolParser::Private::actionString(int cmdAction) const
             return QLatin1String("Translations List");
         }
 
+        case ExifToolProcess::TAGS_DATABASE:
+        {
+            return QLatin1String("Tags Database");
+        }
+
         case ExifToolProcess::COPY_TAGS:
         {
             return QLatin1String("Copy Tags");

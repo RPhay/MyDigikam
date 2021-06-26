@@ -64,14 +64,14 @@ public:
      * value = the Exiv2 metadata container (QByteArray).
      *
      * With applyChanges() method, the container is used as argument to
-     * store tupple of ExifTool tag name as key and Tag value:
+     * store tupple of ExifTool tag name as key and tag value:
      * key   = ExifTool tag name            (QString).
      * value = ExifTool Tag value           (QString).
      *
      * With readableFormats() method, the container is used to get
      * a list of upper-case file format extensions supported by ExifTool for reading.
      * key   = "READ_FORMAT"                (QString).
-     * value = list of pairs (ext,desc)      (QStringList)
+     * value = list of pairs (ext,desc)     (QStringList)
      *
      * With writableFormats() method, the container is used to get
      * a list of upper-case file format extensions supported by ExifTool for writing.
@@ -83,6 +83,13 @@ public:
      * key   = "TRANSLATIONS_LIST"          (QString).
      * value = list of languages as strings
      *         (aka fr, en, de, es, etc.)   (QStringList).
+     *
+     * With tagsDatabase() method, the container is used as argument to
+     * store tupple of ExifTool tag name as key and tag description:
+     * key    = ExifTool tag name            (QString).
+     * values = ExifTool Tag description     (QString).
+     *          ExifTool Tag type            (QString).
+     *          ExifTool Tag writable        (QString).
      */
     typedef QHash<QString, QVariantList> ExifToolData;
 
@@ -156,10 +163,17 @@ public:
     bool writableFormats();
 
     /**
-     * Return a list of avaialble translations.
+     * Return a list of available translations.
      * Use currentData() to get the container as QStringList.
      */
     bool translationsList();
+
+    /**
+     * Return a list of all tags from ExifTool database.
+     * Use currentData() to get the container.
+     * Warning: This method get whole ExifTool database in XML format and take age.
+     */
+    bool tagsDatabase();
 
     /**
      * Return the xurrent version of ExifTool.

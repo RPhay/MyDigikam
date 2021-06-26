@@ -247,6 +247,24 @@ bool ExifToolParser::translationsList()
     return (d->startProcess(cmdArgs, ExifToolProcess::TRANSLATIONS_LIST));
 }
 
+bool ExifToolParser::tagsDatabase()
+{
+    if (!d->prepareProcess())
+    {
+        qCCritical(DIGIKAM_GENERAL_LOG) << "Cannot prepare ExifTool process...";
+        return false;
+    }
+
+    // Build command
+
+    QByteArrayList cmdArgs;
+    cmdArgs << QByteArray("-listx");
+
+    d->currentPath.clear();
+
+    return (d->startProcess(cmdArgs, ExifToolProcess::TAGS_DATABASE));
+}
+
 bool ExifToolParser::version()
 {
     if (!d->prepareProcess())
