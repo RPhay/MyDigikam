@@ -232,7 +232,7 @@ public:
     /**
      * Helper conversion method to translate unordered tags database hash-table to ordered map.
      */
-    MetaEngine::TagsMap tagsDbToOrderedMap(const ExifToolData& tagsDb);
+    static MetaEngine::TagsMap tagsDbToOrderedMap(const ExifToolData& tagsDb);
 
 private:
 

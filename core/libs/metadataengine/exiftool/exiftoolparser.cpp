@@ -126,7 +126,9 @@ MetaEngine::TagsMap ExifToolParser::tagsDbToOrderedMap(const ExifToolData& tagsD
             name = tag.section(QLatin1Char('.'), -1);
             desc = it.value()[0].toString();
 
-            map.insert(tag, QStringList() << name << QString() << desc);
+            map.insert(tag, QStringList() << name
+                                          << QString()  // title.
+                                          << desc);
         }
     }
 
