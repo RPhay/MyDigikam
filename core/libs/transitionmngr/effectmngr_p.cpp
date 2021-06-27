@@ -22,6 +22,10 @@
 
 #include "effectmngr_p.h"
 
+// Qt includes
+
+#include <QRandomGenerator>
+
 namespace Digikam
 {
 
@@ -41,8 +45,7 @@ EffectMngr::EffectType EffectMngr::Private::getRandomEffect() const
     QList<EffectMngr::EffectType> effs = eff_effectList.keys();
     effs.removeAt(effs.indexOf(EffectMngr::None));
 
-    int count = effs.count();
-    int i     = qrand() % count;
+    int i = QRandomGenerator::global()->bounded(effs.count());
 
     return effs[i];
 }

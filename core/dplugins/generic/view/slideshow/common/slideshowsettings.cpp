@@ -27,6 +27,7 @@
 // Qt includes
 
 #include <QFontDatabase>
+#include <QRandomGenerator>
 
 // KDE includes
 
@@ -171,14 +172,13 @@ void SlideShowSettings::suffleImages()
 
             // suffle
 
-            qsrand(QTime::currentTime().msec());
 
             QList<QUrl>::iterator it = fileList.begin();
             QList<QUrl>::iterator it1;
 
             for (uint i = 0 ; i < (uint)count() ; ++i)
             {
-                int inc = (int) (float(count()) * qrand() / (RAND_MAX + 1.0));
+                int inc = QRandomGenerator::global()->bounded(count());
 
                 it1     = fileList.begin();
                 it1    += inc;

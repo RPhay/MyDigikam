@@ -41,7 +41,6 @@ namespace Digikam
 EffectMngr::EffectMngr()
     : d(new Private)
 {
-    qsrand(static_cast<quint64>(QTime::currentTime().msecsSinceStartOfDay()));
 }
 
 EffectMngr::~EffectMngr()

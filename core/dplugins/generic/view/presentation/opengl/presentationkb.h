@@ -48,6 +48,7 @@
 #include <QTimer>
 #include <QOpenGLWidget>
 #include <QOpenGLTexture>
+#include <QRandomGenerator>
 
 namespace DigikamGenericPresentationPlugin
 {

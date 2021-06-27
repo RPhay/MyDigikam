@@ -32,6 +32,7 @@
 #include <QPainter>
 #include <QPainterPath>
 #include <QPolygon>
+#include <QRandomGenerator>
 
 // Local includes
 
@@ -83,6 +84,7 @@ public:
         eff_psy(0)
     {
         registerTransitions();
+        randomGenerator = QRandomGenerator::global();
     }
 
     ~Private()
@@ -183,6 +185,7 @@ private:
 
     QRgb   convertFromPremult(const QRgb& p)       const;
     QImage fastBlur(const QImage& img, int radius) const;
+    QRandomGenerator *randomGenerator;
 };
 
 } // namespace Digikam

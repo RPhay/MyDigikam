@@ -62,8 +62,7 @@ TransitionMngr::TransType TransitionMngr::Private::getRandomTransition() const
     QList<TransitionMngr::TransType> effs = eff_transList.keys();
     effs.removeAt(effs.indexOf(TransitionMngr::None));
 
-    int count = effs.count();
-    int i     = qrand() % count;
+    int i = randomGenerator->bounded(effs.count());
 
     return effs[i];
 }

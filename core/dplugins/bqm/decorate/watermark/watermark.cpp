@@ -869,7 +869,7 @@ bool WaterMark::toolOperations()
             widthRatio  = (widthRatio > heightRatio) ? widthRatio : heightRatio;
             heightRatio = widthRatio;
 
-            QRandomGenerator randomGenerator(static_cast<quint32>(QTime::currentTime().msecsSinceStartOfDay()));
+            auto randomGenerator = QRandomGenerator::global();
 
             for (uint i = 0 ; i < image().width() ; i += spacingFactor * widthRatio * image().width())
             {
@@ -877,11 +877,11 @@ bool WaterMark::toolOperations()
                 {
                     int number = (denseRepetition) ? 2 : 3;
 
-                    if (randomGenerator.generate() % number == 0)
+                    if (randomGenerator->bounded(number) == 0)
                     {
                         if (randomizeRotation)
                         {
-                            int x = static_cast<int>(randomGenerator.generate()) % 4;
+                            int x = randomGenerator->bounded(4);
                             watermarkImage.rotate((DImg::ANGLE)x);
                         }
 

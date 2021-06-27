@@ -31,7 +31,7 @@ int TransitionMngr::Private::transitionSweep(bool aInit)
     {
         // subtype: 0=sweep right to left, 1=sweep left to right
         //          2=sweep bottom to top, 3=sweep top to bottom
-        eff_subType = qrand() % 4;
+        eff_subType = randomGenerator->bounded(4);
         eff_w       = eff_outSize.width();
         eff_h       = eff_outSize.height();
         eff_dx      = (eff_subType == 1 ? 16 : -16);
@@ -195,7 +195,7 @@ int TransitionMngr::Private::transitionMultiCircleOut(bool aInit)
         eff_pa.setPoint(0, eff_w >> 1, eff_h >> 1);
         eff_pa.setPoint(3, eff_w >> 1, eff_h >> 1);
         eff_fy    = sqrt((double)eff_w * eff_w + eff_h * eff_h) / 2;
-        eff_i     = qrand() % 15 + 2;
+        eff_i     = randomGenerator->bounded(2, 17);
         eff_fd    = M_PI * 2 / eff_i;
         eff_alpha = eff_fd;
         eff_wait  = 10 * eff_i;

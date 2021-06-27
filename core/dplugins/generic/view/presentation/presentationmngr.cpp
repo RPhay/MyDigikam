@@ -39,6 +39,7 @@
 #include <QWindow>
 #include <QApplication>
 #include <QMessageBox>
+#include <QRandomGenerator>
 
 // KDE includes
 
@@ -113,14 +114,12 @@ void PresentationMngr::slotSlideShow()
 
     if (shuffle)
     {
-        qsrand(QTime::currentTime().msec());
-
         QList<QUrl>::iterator it = m_sharedData->urlList.begin();
         QList<QUrl>::iterator it1;
 
         for (uint i = 0 ; i < (uint) m_sharedData->urlList.size() ; ++i)
         {
-            int inc = (int) (float(m_sharedData->urlList.count()) * qrand() / (RAND_MAX + 1.0));
+            int inc = QRandomGenerator::global()->bounded(m_sharedData->urlList.count());
 
             it1  = m_sharedData->urlList.begin();
             it1 += inc;

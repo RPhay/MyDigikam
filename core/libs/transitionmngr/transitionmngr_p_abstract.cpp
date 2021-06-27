@@ -61,7 +61,7 @@ int TransitionMngr::Private::transitionMeltdown(bool aInit)
 
         eff_pdone = false;
 
-        if ((qrand() & 15) < 6)
+        if (randomGenerator->bounded(16U) < 6)
         {
             continue;
         }
@@ -117,9 +117,9 @@ int TransitionMngr::Private::transitionMosaic(bool aInit)
 
     QPainter bufferPainter(&eff_curFrame);
 
-    for (int x = 0 ; x < w ; x += (qrand() % margin) + dim)
+    for (int x = 0 ; x < w ; x += randomGenerator->bounded(dim, dim+margin))
     {
-        for (int y = 0 ; y < h ; y += (qrand() % margin) + dim)
+        for (int y = 0 ; y < h ; y += randomGenerator->bounded(dim, dim+margin))
         {
             if (eff_pixelMatrix[x][y] == true)
             {
@@ -168,16 +168,16 @@ int TransitionMngr::Private::transitionCubism(bool aInit)
     QPainterPath painterPath;
     QPainter bufferPainter(&eff_curFrame);
 
-    eff_x   = qrand() % eff_w;
-    eff_y   = qrand() % eff_h;
-    int r  = (qrand() % 100) + 100;
+    eff_x   = randomGenerator->bounded(eff_w);
+    eff_y   = randomGenerator->bounded(eff_h);
+    int r   = randomGenerator->bounded(100, 200);
     eff_px   = eff_x - r;
     eff_py   = eff_y - r;
     eff_psx  = r;
     eff_psy  = r;
 
     QTransform transform;
-    transform.rotate((qrand() % 20) - 10);
+    transform.rotate(randomGenerator->bounded(-10, 10));
     QRect rect(eff_px, eff_py, eff_psx, eff_psy);
     bufferPainter.setTransform(transform);
     bufferPainter.fillRect(rect, QBrush(eff_outImage));
@@ -206,9 +206,9 @@ int TransitionMngr::Private::transitionBlobs(bool aInit)
         return -1;
     }
 
-    eff_x    = qrand() % eff_w;
-    eff_y    = qrand() % eff_h;
-    r        = (qrand() % 200) + 50;
+    eff_x    = randomGenerator->bounded(eff_w);
+    eff_y    = randomGenerator->bounded(eff_h);
+    r        = randomGenerator->bounded(50, 250);
     eff_px   = eff_x - r;
     eff_py   = eff_y - r;
     eff_psx  = r;

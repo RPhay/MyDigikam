@@ -185,12 +185,12 @@ float KBViewTrans::yScaleCorrect() const
 
 double KBViewTrans::rnd() const
 {
-    return ((double)qrand() / (double)RAND_MAX);
+    return QRandomGenerator::global()->generateDouble();
 }
 
 double KBViewTrans::rndSign() const
 {
-    return ((qrand() < RAND_MAX / 2) ? 1.0 : -1.0);
+    return ((QRandomGenerator::global()->bounded(2U) == 0) ? 1.0 : -1.0);
 }
 
 // -------------------------------------------------------------------------
@@ -258,7 +258,6 @@ PresentationKB::PresentationKB(PresentationContainer* const sharedData)
 
     d->sharedData  = sharedData;
 
-    qsrand(QTime::currentTime().msec());
     readSettings();
 
     unsigned frameRate;

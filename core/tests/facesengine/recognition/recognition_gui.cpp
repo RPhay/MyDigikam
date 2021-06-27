@@ -41,6 +41,7 @@
 #include <QLineEdit>
 #include <QPushButton>
 #include <QHash>
+#include <QRandomGenerator>
 
 // Local includes
 
@@ -62,7 +63,6 @@ static QVector<QListWidgetItem*> splitData(const QDir& dataDir, float splitRatio
                                            QHash<QString, QVector<QImage> >& trainSet,
                                            QHash<QString, QVector<QImage> >& testSet)
 {
-    qsrand(QTime::currentTime().msec());
 
     QVector<QListWidgetItem*> imageItems;
 
@@ -84,7 +84,7 @@ static QVector<QListWidgetItem*> splitData(const QDir& dataDir, float splitRatio
 
         for (int j = 0 ; j < filesInfo.size() ; ++j)
         {
-            int inc = (int) (float(filesInfo.size()) * qrand() / (RAND_MAX + 1.0));
+            int inc = QRandomGenerator::global()->bounded(filesInfo.size());
 
             it1     = filesInfo.begin();
             it1    += inc;

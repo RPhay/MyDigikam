@@ -87,7 +87,7 @@ public:
         sharedData          (nullptr),
         playbackWidget      (nullptr)
     {
-        zoomIn   = (qrand() < (RAND_MAX / 2));
+        zoomIn   = (QRandomGenerator::global()->bounded(2U) == 0);
         image[0] = nullptr;
         image[1] = nullptr;
     }

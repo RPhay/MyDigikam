@@ -31,6 +31,7 @@
 #include <QHash>
 #include <QJsonObject>
 #include <QJsonDocument>
+#include <QRandomGenerator>
 
 // Local includes
 
@@ -366,8 +367,6 @@ void Benchmark::splitData(const QDir& dataDir, float splitRatio)
 {
     int nbData = 0;
 
-    qsrand(QTime::currentTime().msec());
-
     // Each subdirectory in data directory should match with a label
 
     QFileInfoList subDirs = dataDir.entryInfoList(QDir::NoDotAndDotDot | QDir::Dirs, QDir::Name);
@@ -390,7 +389,7 @@ void Benchmark::splitData(const QDir& dataDir, float splitRatio)
 
         for (int j = 0 ; j < filesInfo.size() ; ++j)
         {
-            int inc = (int) (float(filesInfo.size()) * qrand() / (RAND_MAX + 1.0));
+            int inc = QRandomGenerator::global()->bounded(filesInfo.size());
 
             it1     = filesInfo.begin();
             it1    += inc;

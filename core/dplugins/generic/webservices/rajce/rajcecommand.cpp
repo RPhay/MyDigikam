@@ -35,6 +35,7 @@
 #include <QXmlResultItems>
 #include <QFileInfo>
 #include <QUrl>
+#include <QRandomGenerator>
 
 // Local includes
 
@@ -530,8 +531,7 @@ QString AddPhotoCommand::additionalXml() const
     metadata[QLatin1String("KeywordSet")]            = QLatin1String("");
     metadata[QLatin1String("PeopleRegionSet")]       = QLatin1String("");
 
-    qsrand((uint)QTime::currentTime().msec());
-    QString id = QString::number(qrand());
+    QString id = QString::number(QRandomGenerator::global()->generate());
     QString ret(QLatin1String("  <objectInfo>\n    <Item id=\""));
     ret.append(id).append(QLatin1String("\">\n"));
 
