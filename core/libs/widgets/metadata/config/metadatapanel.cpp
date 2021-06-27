@@ -42,6 +42,7 @@
 #include "metaengine.h"
 #include "metadataselector.h"
 #include "dmetadata.h"
+#include "exiftoolparser.h"
 
 namespace Digikam
 {
@@ -174,12 +175,18 @@ public:
         exifViewerConfig    (nullptr),
         mknoteViewerConfig  (nullptr),
         iptcViewerConfig    (nullptr),
-        xmpViewerConfig     (nullptr)
+        xmpViewerConfig     (nullptr),
+        exifToolViewerConfig(nullptr)
     {
         setDefaultFilter(ExifHumanList,      defaultExifFilter);
         setDefaultFilter(MakerNoteHumanList, defaultMknoteFilter);
         setDefaultFilter(IptcHumanList,      defaultIptcFilter);
         setDefaultFilter(XmpHumanList,       defaultXmpFilter);
+
+        defaultExifToolFilter = defaultExifFilter   +
+                                defaultMknoteFilter +
+                                defaultIptcFilter   +
+                                defaultXmpFilter;
     };
 
     void setDefaultFilter(const char** const list, QStringList& filter)
@@ -198,11 +205,13 @@ public:
     QStringList           defaultMknoteFilter;
     QStringList           defaultIptcFilter;
     QStringList           defaultXmpFilter;
+    QStringList           defaultExifToolFilter;
 
     MetadataSelectorView* exifViewerConfig;
     MetadataSelectorView* mknoteViewerConfig;
     MetadataSelectorView* iptcViewerConfig;
     MetadataSelectorView* xmpViewerConfig;
+    MetadataSelectorView* exifToolViewerConfig;
 };
 
 MetadataPanel::MetadataPanel(QTabWidget* const tab)
@@ -213,21 +222,25 @@ MetadataPanel::MetadataPanel(QTabWidget* const tab)
 
     // --------------------------------------------------------
 
-    d->exifViewerConfig   = new MetadataSelectorView(d->tab);
+    d->exifViewerConfig     = new MetadataSelectorView(d->tab, MetadataSelectorView::Exiv2Backend);
     d->exifViewerConfig->setDefaultFilter(d->defaultExifFilter);
     d->tab->addTab(d->exifViewerConfig, i18n("EXIF viewer"));
 
-    d->mknoteViewerConfig = new MetadataSelectorView(d->tab);
+    d->mknoteViewerConfig   = new MetadataSelectorView(d->tab, MetadataSelectorView::Exiv2Backend);
     d->mknoteViewerConfig->setDefaultFilter(d->defaultMknoteFilter);
     d->tab->addTab(d->mknoteViewerConfig, i18n("Makernotes viewer"));
 
-    d->iptcViewerConfig   = new MetadataSelectorView(d->tab);
+    d->iptcViewerConfig     = new MetadataSelectorView(d->tab, MetadataSelectorView::Exiv2Backend);
     d->iptcViewerConfig->setDefaultFilter(d->defaultIptcFilter);
     d->tab->addTab(d->iptcViewerConfig, i18n("IPTC viewer"));
 
-    d->xmpViewerConfig    = new MetadataSelectorView(d->tab);
+    d->xmpViewerConfig      = new MetadataSelectorView(d->tab, MetadataSelectorView::Exiv2Backend);
     d->xmpViewerConfig->setDefaultFilter(d->defaultXmpFilter);
     d->tab->addTab(d->xmpViewerConfig, i18n("XMP viewer"));
+
+    d->exifToolViewerConfig = new MetadataSelectorView(d->tab, MetadataSelectorView::ExifToolBackend);
+    d->exifToolViewerConfig->setDefaultFilter(d->defaultExifToolFilter);
+    d->tab->addTab(d->exifToolViewerConfig, i18n("ExifTool viewer"));
 
     slotTabChanged(d->tab->currentIndex());
 
@@ -266,6 +279,12 @@ QStringList MetadataPanel::defaultXmpFilter()
     return d.defaultXmpFilter;
 }
 
+QStringList MetadataPanel::defaultExifToolFilter()
+{
+    Private d;
+    return d.defaultExifToolFilter;
+}
+
 void MetadataPanel::applySettings()
 {
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
@@ -289,6 +308,11 @@ void MetadataPanel::applySettings()
     if (d->xmpViewerConfig->itemsCount())
     {
         group.writeEntry("XMP Tags Filter", d->xmpViewerConfig->checkedTagsList());
+    }
+
+    if (d->exifToolViewerConfig->itemsCount())
+    {
+        group.writeEntry("EXIFTOOL Tags Filter", d->exifToolViewerConfig->checkedTagsList());
     }
 
     config->sync();
@@ -335,6 +359,22 @@ void MetadataPanel::slotTabChanged(int)
             d->xmpViewerConfig->setcheckedTagsList(group.readEntry("XMP Tags Filter", d->xmpViewerConfig->defaultFilter()));
         }
     }
+    else if (tab == d->exifToolViewerConfig)
+    {
+        if (!d->exifToolViewerConfig->itemsCount())
+        {
+            ExifToolParser* const parser = new ExifToolParser(this);
+            ExifToolParser::ExifToolData parsed;
+
+            if (parser->tagsDatabase())
+            {
+                parsed = parser->currentData();
+
+                d->exifToolViewerConfig->setTagsMap(parser->tagsDbToOrderedMap(parsed));
+                d->exifToolViewerConfig->setcheckedTagsList(group.readEntry("EXIFTOOL Tags Filter", d->exifToolViewerConfig->defaultFilter()));
+            }
+        }
+    }
 
     qApp->restoreOverrideCursor();
 }
@@ -347,6 +387,7 @@ QStringList MetadataPanel::getAllCheckedTags() const
             << d->iptcViewerConfig->checkedTagsList()
             << d->mknoteViewerConfig->checkedTagsList()
             << d->xmpViewerConfig->checkedTagsList()
+            << d->exifToolViewerConfig->checkedTagsList()
             ;
 
     return checkedTags;
@@ -360,6 +401,7 @@ QList<MetadataSelectorView*> MetadataPanel::viewers() const
             << d->iptcViewerConfig
             << d->mknoteViewerConfig
             << d->xmpViewerConfig
+            << d->exifToolViewerConfig
             ;
 
     return viewers;

@@ -54,7 +54,8 @@ public:
      *
      * With load() method, the container is used to get a map of
      * ExifTool tag name as key and tags properties as values:
-     * key    = ExifTool Tag name           (QString)
+     * key    = ExifTool Tag name           (QString - ExifTool Group 0.1.2.4.6)
+     *                                      See -G Exiftool option (https://exiftool.org/exiftool_pod.html#Input-output-text-formatting).
      * values = ExifTool Tag value          (QString).
      *          ExifTool Tag type           (QString).
      *          ExifTool Tag description    (QString).
@@ -189,7 +190,8 @@ public:
      * @param writeModes is a OR combaniation of ExifToolProcess::WritingTagsMode values.
      * @param dst must be a writable file format supported by ExifTool.
      */
-    bool copyTags(const QString& src, const QString& dst,
+    bool copyTags(const QString& src,
+                  const QString& dst,
                   unsigned char copyOps,
                   unsigned char writeModes = ExifToolProcess::ALL_MODES);
 

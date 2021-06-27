@@ -143,6 +143,19 @@ void ExifToolListView::setMetadata(const ExifToolParser::ExifToolData& map)
             continue;
         }
 
+        /** Key is format like this:
+         *
+         * EXIF.ExifIFD.Image.ExposureCompensation
+         * File.File.Other.FileType
+         * Composite.Composite.Time.SubSecModifyDate
+         * File.System.Time.FileInodeChangeDate
+         * File.System.Other.FileSize
+         * EXIF.GPS.Location.GPSLongitude
+         * ICC_Profile.ICC-header.Image.ProfileCreator
+         * EXIF.IFD1.Image.ThumbnailOffset
+         * JFIF.JFIF.Image.YResolution
+         * ICC_Profile.ICC_Profile.Image.GreenMatrixColumn
+         */
         QString key                   = it.key();
         QString value                 = it.value()[0].toString();
         QString desc                  = it.value()[2].toString();

@@ -60,6 +60,7 @@ public:
     static QStringList defaultMknoteFilter();
     static QStringList defaultIptcFilter();
     static QStringList defaultXmpFilter();
+    static QStringList defaultExifToolFilter();
 
 private Q_SLOTS:
 

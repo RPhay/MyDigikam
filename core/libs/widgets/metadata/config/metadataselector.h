@@ -40,6 +40,7 @@ namespace Digikam
 {
 
 class MdKeyListViewItem;
+class MetadataSelectorView;
 
 class DIGIKAM_EXPORT MetadataSelectorItem : public QTreeWidgetItem
 {
@@ -72,7 +73,7 @@ class DIGIKAM_EXPORT MetadataSelector : public QTreeWidget
 
 public:
 
-    explicit MetadataSelector(QWidget* const parent);
+    explicit MetadataSelector(MetadataSelectorView* const parent);
     ~MetadataSelector() override;
 
     void setTagsMap(const DMetadata::TagsMap& map);
@@ -82,6 +83,10 @@ public:
 
     void clearSelection();
     void selectAll()    override;
+
+private:
+
+    MetadataSelectorView* m_parent;
 };
 
 // ------------------------------------------------------------------------------------
@@ -101,9 +106,15 @@ public:
     };
     Q_DECLARE_FLAGS(ControlElements, ControlElement)
 
+    enum Backend
+    {
+        Exiv2Backend = 0,
+        ExifToolBackend
+    };
+
 public:
 
-    explicit MetadataSelectorView(QWidget* const parent);
+    explicit MetadataSelectorView(QWidget* const parent, Backend be);
     ~MetadataSelectorView()               override;
 
     int itemsCount()                const;
@@ -116,6 +127,8 @@ public:
     QStringList defaultFilter()     const;
 
     QStringList checkedTagsList()   const;
+
+    Backend backend()               const;
 
     void setControlElements(ControlElements controllerMask);
 

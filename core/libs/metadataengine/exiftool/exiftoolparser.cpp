@@ -119,6 +119,23 @@ MetaEngine::TagsMap ExifToolParser::tagsDbToOrderedMap(const ExifToolData& tagsD
 
     foreach (const QString& tag, keys)
     {
+        /**
+         * Tag are formated like this:
+         *
+         * EXIF.IFD0.Image.XResolution
+         * EXIF.IFD0.Image.YCbCrCoefficients
+         * EXIF.IFD0.Image.YCbCrPositioning
+         * EXIF.IFD0.Image.YCbCrSubSampling
+         * EXIF.IFD0.Image.YClipPathUnits
+         * EXIF.IFD0.Image.YPosition
+         * EXIF.IFD0.Image.YResolution
+         * FITS.FITS.Image.Author
+         * FITS.FITS.Image.Background
+         * FITS.FITS.Image.CreateDate
+         * FITS.FITS.Image.Instrument
+         * FITS.FITS.Image.Object
+         * FITS.FITS.Image.ObservationDate
+         */
         ExifToolParser::ExifToolData::const_iterator it = tagsDb.find(tag);
 
         if (it != tagsDb.constEnd())
