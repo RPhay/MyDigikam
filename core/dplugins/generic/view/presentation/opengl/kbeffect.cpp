@@ -26,6 +26,10 @@
 
 #include "kbeffect.h"
 
+// Qt includes
+
+#include <QRandomGenerator>
+
 // Local includes
 
 #include "presentationkb.h"
@@ -71,7 +75,7 @@ KBEffect::Type KBEffect::chooseKBEffect(KBEffect::Type oldType)
 
     do
     {
-        type = (qrand() < RAND_MAX / 2) ? KBEffect::Fade : KBEffect::Blend;
+        type = (QRandomGenerator::global()->bounded(2U) == 0) ? KBEffect::Fade : KBEffect::Blend;
     }
     while ((type == oldType) && (m_numKBEffectRepeated >= 1));
 

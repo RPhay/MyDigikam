@@ -41,6 +41,7 @@
 #include <QTest>
 #include <QFileInfo>
 #include <QStandardPaths>
+#include <QRandomGenerator>
 
 // Local includes
 
@@ -476,7 +477,7 @@ std::vector<float> FunnelReal::Private::computeTransform(const std::vector<std::
 
         for (int k = 0 ; k < numParams ; ++k)
         {
-            float dn = ((qrand()%160)-80)/100.0f;
+            float dn = QRandomGenerator::global()->bounded(-80, 80)/100.0f;
 
             if (k > 1)
             {

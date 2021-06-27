@@ -186,7 +186,8 @@ public:
 
 PresentationWidget::PresentationWidget(PresentationContainer* const sharedData)
     : QWidget(),
-      d      (new Private)
+      d      (new Private),
+      randomGenerator(QRandomGenerator::global())
 {
     setAttribute(Qt::WA_DeleteOnClose);
     setContextMenuPolicy(Qt::PreventContextMenu);
@@ -1128,8 +1129,7 @@ PresentationWidget::EffectMethod PresentationWidget::getRandomEffect()
     QStringList effs = d->Effects.keys();
     effs.removeAt(effs.indexOf(QLatin1String("None")));
 
-    int count        = effs.count();
-    int i            = qrand() % count;
+    int i            = randomGenerator->bounded(effs.count());
     QString key      = effs[i];
     d->effectName    = key;
 
@@ -1220,7 +1220,7 @@ int PresentationWidget::effectMeltdown(bool aInit)
 
         d->pdone = false;
 
-        if ((qrand() & 15) < 6)
+        if (randomGenerator->bounded(16U) < 6)
         {
             continue;
         }
@@ -1255,7 +1255,7 @@ int PresentationWidget::effectSweep(bool aInit)
         // subtype: 0=sweep right to left, 1=sweep left to right
         //          2=sweep bottom to top, 3=sweep top to bottom
 
-        d->subType = qrand() % 4;
+        d->subType = randomGenerator->bounded(4);
         d->w       = width();
         d->h       = height();
         d->dx      = (d->subType == 1 ? 16 : -16);
@@ -1360,9 +1360,9 @@ int PresentationWidget::effectMosaic(bool aInit)
 
     QPainter bufferPainter(&m_buffer);
 
-    for (int x = 0 ; x < w ; x += (qrand() % margin) + dim)
+    for (int x = 0 ; x < w ; x += randomGenerator->bounded(margin, margin+dim))
     {
-        for (int y = 0 ; y < h ; y += (qrand() % margin) + dim)
+        for (int y = 0 ; y < h ; y += randomGenerator->bounded(margin, margin+dim))
         {
             if (d->pixelMatrix[x][y] == true)
             {
@@ -1412,16 +1412,16 @@ int PresentationWidget::effectCubism(bool aInit)
     QPainterPath painterPath;
     QPainter bufferPainter(&m_buffer);
 
-    d->x   = qrand() % d->w;
-    d->y   = qrand() % d->h;
-    int r  = (qrand() % 100) + 100;
+    d->x   = randomGenerator->bounded(d->w);
+    d->y   = randomGenerator->bounded(d->h);
+    int r  = randomGenerator->bounded(100, 200);
     m_px   = d->x - r;
     m_py   = d->y - r;
     m_psx  = r;
     m_psy  = r;
 
     QTransform transform;
-    transform.rotate((qrand() % 20) - 10);
+    transform.rotate(randomGenerator->bounded(-10, 10));
     QRect rect(m_px, m_py, m_psx, m_psy);
     bufferPainter.setTransform(transform);
     bufferPainter.fillRect(rect, QBrush(d->currImage));
@@ -1576,7 +1576,7 @@ int PresentationWidget::effectMultiCircleOut(bool aInit)
         d->pa.setPoint(0, d->w >> 1, d->h >> 1);
         d->pa.setPoint(3, d->w >> 1, d->h >> 1);
         d->fy    = sqrt((double)d->w * d->w + d->h * d->h) / 2;
-        d->i     = qrand() % 15 + 2;
+        d->i     = randomGenerator->bounded(2, 17);
         d->fd    = M_PI * 2 / d->i;
         d->alpha = d->fd;
         d->wait  = 10 * d->i;
@@ -1752,9 +1752,9 @@ int PresentationWidget::effectBlobs(bool aInit)
         return -1;
     }
 
-    d->x   = qrand() % d->w;
-    d->y   = qrand() % d->h;
-    r      = (qrand() % 200) + 50;
+    d->x   = randomGenerator->bounded(d->w);
+    d->y   = randomGenerator->bounded(d->h);
+    r      = randomGenerator->bounded(50, 250);
     m_px   = d->x - r;
     m_py   = d->y - r;
     m_psx  = r;

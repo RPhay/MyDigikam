@@ -42,6 +42,7 @@
 #include <QString>
 #include <QStringList>
 #include <QWheelEvent>
+#include <QRandomGenerator>
 
 namespace DigikamGenericPresentationPlugin
 {
@@ -128,6 +129,7 @@ private:
 
     class Private;
     Private* const d;
+    QRandomGenerator *randomGenerator;
 };
 
 } // namespace DigikamGenericPresentationPlugin

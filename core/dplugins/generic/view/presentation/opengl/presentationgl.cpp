@@ -168,7 +168,8 @@ public:
 
 PresentationGL::PresentationGL(PresentationContainer* const sharedData)
     : QOpenGLWidget(),
-      d            (new Private)
+      d            (new Private),
+      randomGenerator(QRandomGenerator::global())
 {
     setAttribute(Qt::WA_DeleteOnClose);
     setContextMenuPolicy(Qt::PreventContextMenu);
@@ -592,7 +593,7 @@ PresentationGL::EffectMethod PresentationGL::getRandomEffect()
     tmpMap.remove(QLatin1String("None"));
     QStringList t = tmpMap.keys();
     int count     = t.count();
-    int i         = (int)((float)(count) * qrand() / (RAND_MAX + 1.0));
+    int i         = randomGenerator->bounded(count);
     QString key   = t[i];
 
     return tmpMap[key];
@@ -1199,7 +1200,7 @@ void PresentationGL::effectRotate()
 
     if (d->i == 0)
     {
-        d->dir = (int)((2.0 * qrand() / (RAND_MAX + 1.0)));
+        d->dir = randomGenerator->bounded(2);
     }
 
     int a     = (d->curr == 0) ? 1 : 0;
@@ -1268,7 +1269,7 @@ void PresentationGL::effectBend()
 
     if (d->i == 0)
     {
-        d->dir = (int)((2.0 * qrand() / (RAND_MAX + 1.0)));
+        d->dir = randomGenerator->bounded(2);
     }
 
     int a     = (d->curr == 0) ? 1 : 0;
@@ -1339,7 +1340,7 @@ void PresentationGL::effectInOut()
 
     if (d->i == 0)
     {
-        d->dir = 1 + (int) ((4.0 * qrand() / (RAND_MAX + 1.0)));
+        d->dir = randomGenerator->bounded(1, 5);
     }
 
     int a;
@@ -1403,7 +1404,7 @@ void PresentationGL::effectSlide()
 
     if (d->i == 0)
     {
-        d->dir = 1 + (int)((4.0 * qrand() / (RAND_MAX + 1.0)));
+        d->dir = randomGenerator->bounded(1, 5);
     }
 
     int a     = (d->curr == 0) ? 1 : 0;

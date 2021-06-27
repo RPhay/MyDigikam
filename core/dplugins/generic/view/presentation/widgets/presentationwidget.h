@@ -37,6 +37,7 @@
 #include <QString>
 #include <QStringList>
 #include <QWidget>
+#include <QRandomGenerator>
 
 class QKeyEvent;
 class QMouseEvent;
@@ -142,6 +143,7 @@ private:
 
     class Private;
     Private* const d;
+    QRandomGenerator *randomGenerator;
 };
 
 } // namespace DigikamGenericPresentationPlugin
