@@ -339,7 +339,7 @@ void MetadataPanel::slotTabChanged(int)
     qApp->restoreOverrideCursor();
 }
 
-QStringList MetadataPanel::getAllCheckedTags()
+QStringList MetadataPanel::getAllCheckedTags() const
 {
     QStringList checkedTags;
     checkedTags
@@ -352,7 +352,7 @@ QStringList MetadataPanel::getAllCheckedTags()
     return checkedTags;
 }
 
-QList<MetadataSelectorView*> MetadataPanel::viewers()
+QList<MetadataSelectorView*> MetadataPanel::viewers() const
 {
     QList<MetadataSelectorView*> viewers;
     viewers

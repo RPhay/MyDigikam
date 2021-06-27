@@ -51,8 +51,10 @@ public:
 
     void                         applySettings();
 
-    QStringList                  getAllCheckedTags();
-    QList<MetadataSelectorView*> viewers();
+    QStringList                  getAllCheckedTags()    const;
+    QList<MetadataSelectorView*> viewers()              const;
+
+public:
 
     static QStringList defaultExifFilter();
     static QStringList defaultMknoteFilter();

@@ -46,7 +46,8 @@ namespace Digikam
 
 MetadataSelectorItem::MetadataSelectorItem(MdKeyListViewItem* const parent,
                                            const QString& key,
-                                           const QString& title, const QString& desc)
+                                           const QString& title,
+                                           const QString& desc)
     : QTreeWidgetItem(parent),
       m_key          (key),
       m_parent       (parent)

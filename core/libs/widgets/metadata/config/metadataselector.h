@@ -45,7 +45,10 @@ class DIGIKAM_EXPORT MetadataSelectorItem : public QTreeWidgetItem
 {
 public:
 
-    MetadataSelectorItem(MdKeyListViewItem* const parent, const QString& key, const QString& title, const QString& desc);
+    MetadataSelectorItem(MdKeyListViewItem* const parent,
+                         const QString& key,
+                         const QString& title,
+                         const QString& desc);
     ~MetadataSelectorItem()    override;
 
     QString key()        const;

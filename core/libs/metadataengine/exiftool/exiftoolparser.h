@@ -86,10 +86,10 @@ public:
      *
      * With tagsDatabase() method, the container is used as argument to
      * store tupple of ExifTool tag name as key and tag description:
-     * key    = ExifTool tag name            (QString).
-     * values = ExifTool Tag description     (QString).
-     *          ExifTool Tag type            (QString).
-     *          ExifTool Tag writable        (QString).
+     * key    = ExifTool tag name           (QString).
+     * values = ExifTool Tag description    (QString).
+     *          ExifTool Tag type           (QString).
+     *          ExifTool Tag writable       (QString).
      */
     typedef QHash<QString, QVariantList> ExifToolData;
 
