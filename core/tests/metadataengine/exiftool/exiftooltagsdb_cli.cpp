@@ -65,15 +65,15 @@ int main(int argc, char** argv)
 
         // Header
 
-       stream << sep
-              << endl
-              << QString::fromLatin1("%1").arg(QLatin1String("Name"),        section1) << " | "
-              << QString::fromLatin1("%1").arg(QLatin1String("Type"),        section2) << " | "
-              << QString::fromLatin1("%1").arg(QLatin1String("Writable"),    section3) << " | "
-              << QString::fromLatin1("%1").arg(QLatin1String("Description"), section4)
-              << endl
-              << sep
-              << endl;
+        stream << sep
+               << endl
+               << QString::fromLatin1("%1").arg(QLatin1String("Name"),        section1) << " | "
+               << QString::fromLatin1("%1").arg(QLatin1String("Type"),        section2) << " | "
+               << QString::fromLatin1("%1").arg(QLatin1String("Writable"),    section3) << " | "
+               << QString::fromLatin1("%1").arg(QLatin1String("Description"), section4)
+               << endl
+               << sep
+               << endl;
 
         foreach (const QString& tag, keys)
         {

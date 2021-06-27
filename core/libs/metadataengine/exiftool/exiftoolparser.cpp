@@ -109,4 +109,28 @@ bool ExifToolParser::exifToolAvailable() const
     return ret;
 }
 
+MetaEngine::TagsMap ExifToolParser::tagsDbToOrderedMap(const ExifToolData& tagsDb)
+{
+    QString name;
+    QString desc;
+    MetaEngine::TagsMap map;
+    QStringList keys = tagsDb.keys();
+    keys.sort();
+
+    foreach (const QString& tag, keys)
+    {
+        ExifToolParser::ExifToolData::const_iterator it = tagsDb.find(tag);
+
+        if (it != tagsDb.constEnd())
+        {
+            name = tag.section(QLatin1Char('.'), -1);
+            desc = it.value()[0].toString();
+
+            map.insert(tag, QStringList() << name << QString() << desc);
+        }
+    }
+
+    return map;
+}
+
 } // namespace Digikam

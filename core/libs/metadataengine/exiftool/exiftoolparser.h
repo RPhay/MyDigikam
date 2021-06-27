@@ -38,6 +38,7 @@
 
 #include "digikam_export.h"
 #include "exiftoolprocess.h"
+#include "metaengine.h"
 
 namespace Digikam
 {
@@ -221,10 +222,17 @@ private Q_SLOTS:
 
 public:
 
-    /// Unit-test method to check ExifTool stream parsing.
+    /**
+     * Unit-test method to check ExifTool stream parsing.
+     */
     void setOutputStream(int cmdAction,
                          const QByteArray& cmdOutputChannel,
                          const QByteArray& cmdErrorChannel);
+
+    /**
+     * Helper conversion method to translate unordered tags database hash-table to ordered map.
+     */
+    MetaEngine::TagsMap tagsDbToOrderedMap(const ExifToolData& tagsDb);
 
 private:
 
