@@ -139,6 +139,8 @@ private:
     // Disable.
     MetadataSelectorView() = delete;
 
+private:
+
     class Private;
     Private* const d;
 };
