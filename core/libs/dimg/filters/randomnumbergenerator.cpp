@@ -7,6 +7,7 @@
  * Description : Generating random numbers
  *
  * Copyright (C) 2010-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
+ * Copyright (C) 2021      by Anjani Kumar <anjanik012 at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -23,40 +24,16 @@
 
 #include "randomnumbergenerator.h"
 
-// Boost includes
-
-// Pragma directives to reduce warnings from Boost header files.
-#if !defined(Q_OS_DARWIN) && defined(Q_CC_GNU)
-#   pragma GCC diagnostic push
-#   pragma GCC diagnostic ignored "-Wundef"
-#endif
-
-#if defined(Q_OS_DARWIN) && defined(Q_CC_CLANG)
-#   pragma clang diagnostic push
-#   pragma clang diagnostic ignored "-Wundef"
-#   pragma clang diagnostic ignored "-Wunnamed-type-template-args"
-#endif
-
-#include <boost/random/bernoulli_distribution.hpp>
-#include <boost/random/mersenne_twister.hpp>
-#include <boost/random/uniform_smallint.hpp>
-#include <boost/random/uniform_real.hpp>
-#include <boost/random/variate_generator.hpp>
-
-// Restore warnings
-#if !defined(Q_OS_DARWIN) && defined(Q_CC_GNU)
-#   pragma GCC diagnostic pop
-#endif
-
-#if defined(Q_OS_DARWIN) && defined(Q_CC_CLANG)
-#   pragma clang diagnostic pop
-#endif
-
 // Qt includes
 
 #include <QDateTime>
 #include <QFile>
 #include <QUuid>
+#include <QRandomGenerator>
+
+// C++ includes
+
+#include <random>
 
 // Local includes
 
@@ -108,34 +85,6 @@ NonDeterministicRandomData::NonDeterministicRandomData(int s)
 
         resize(s);
     }
-
-#if 0
-    /**
-     * Implementation with boost::random_device.
-     * Works on Windows only starting with boost 1.43,
-     * before, only urandom is supported, but for that,
-     * we have a easy code snippet already.
-     */
-    const int stepSize = sizeof(boost::random_device::result_type);
-    int steps          = s / stepSize;
-
-    if (s % stepSize)
-    {
-        ++steps;
-    }
-
-    resize(steps * stepSize);
-
-    boost::random_device device;
-    boost::random_device::result_type* ptr = reinterpret_cast<boost::random_device::result_type*>(data());
-
-    for (int i = 0 ; i < stepSize ; ++i)
-    {
-        *ptr++ = device();
-    }
-
-    resize(s);
-#endif
 }
 
 // ---------------------------------------------------------------------------------
@@ -159,7 +108,7 @@ public:
     }
 
     quint32        seed;
-    boost::mt19937 engine;
+    QRandomGenerator engine;
 };
 
 RandomNumberGenerator::RandomNumberGenerator()
@@ -221,26 +170,20 @@ quint32 RandomNumberGenerator::currentSeed() const
 
 int RandomNumberGenerator::number(int min, int max)
 {
-    boost::uniform_smallint<> distribution(min, max);
-    boost::variate_generator<boost::mt19937&, boost::uniform_smallint<> > generator(d->engine, distribution);
-
-    return generator();
+    std::uniform_int_distribution<int> dist(min, max);
+    return dist(d->engine);
 }
 
 double RandomNumberGenerator::number(double min, double max)
 {
-    boost::uniform_real<> distribution(min, max);
-    boost::variate_generator<boost::mt19937&, boost::uniform_real<> > generator(d->engine, distribution);
-
-    return generator();
+    std::uniform_real_distribution<double> dist(min, max);
+    return dist(d->engine);
 }
 
 bool RandomNumberGenerator::yesOrNo(double p)
 {
-    boost::bernoulli_distribution<> distribution(p);
-    boost::variate_generator<boost::mt19937&, boost::bernoulli_distribution<> > generator(d->engine, distribution);
-
-    return generator();
+    std::bernoulli_distribution dist(p);
+    return dist(d->engine);
 }
 
 } // namespace Digikam
