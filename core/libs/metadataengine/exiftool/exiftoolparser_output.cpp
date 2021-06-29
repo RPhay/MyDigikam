@@ -256,7 +256,7 @@ void ExifToolParser::slotCmdCompleted(int cmdAction,
         case ExifToolProcess::VERSION_STRING:
         {
             QString out       = QString::fromUtf8(stdOut);
-            QStringList lines = out.split(QLatin1Char('\n'), QString::SkipEmptyParts);
+            QStringList lines = out.split(QLatin1Char('\n'), QT_SKIP_EMPTY_PARTS);
 
             if (!lines.isEmpty())
             {
