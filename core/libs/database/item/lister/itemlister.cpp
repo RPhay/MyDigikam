@@ -26,6 +26,7 @@
  * ============================================================ */
 
 #include "itemlister_p.h"
+#include "digikam_globals.h"
 
 namespace Digikam
 {
@@ -97,8 +98,8 @@ void ItemLister::listDateRange(ItemListerReceiver* const receiver,
                                           "   AND ImageInformation.creationDate < ? "
                                           "   AND ImageInformation.creationDate >= ? "
                                           " ORDER BY Images.album;"),
-                                  QDateTime(endDate),
-                                  QDateTime(startDate),
+                                  startOfDay(endDate),
+                                  startOfDay(startDate),
                                   &values);
     }
 

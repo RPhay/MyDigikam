@@ -1413,14 +1413,14 @@ void SearchFieldRangeDate::write(SearchXmlWriter& writer)
 {
     if (m_firstDateEdit->date().isValid() && m_secondDateEdit->date().isValid())
     {
-        QDateTime firstDate(m_firstDateEdit->date());
+        QDateTime firstDate = startOfDay(m_firstDateEdit->date());
 
         if (m_type == DateTime)
         {
             firstDate.setTime(m_firstTimeEdit->time());
         }
 
-        QDateTime secondDate(m_secondDateEdit->date());
+        QDateTime secondDate = startOfDay(m_secondDateEdit->date());
 
         if (m_type == DateTime)
         {
@@ -1452,7 +1452,7 @@ void SearchFieldRangeDate::write(SearchXmlWriter& writer)
         if (date.isValid())
         {
             writer.writeField(m_name, SearchXml::GreaterThanOrEqual);
-            QDateTime dt(date);
+            QDateTime dt = startOfDay(date);
 
             if (m_type == DateTime)
             {
@@ -1468,7 +1468,7 @@ void SearchFieldRangeDate::write(SearchXmlWriter& writer)
         if (date.isValid())
         {
             writer.writeField(m_name, SearchXml::LessThan);
-            QDateTime dt(date);
+            QDateTime dt = startOfDay(date);
 
             if (m_type == DateTime)
             {

@@ -36,6 +36,7 @@
 #include <QStandardPaths>
 #include <QLibrary>
 #include <QSysInfo>
+#include <QDateTime>
 
 // KDE includes
 
@@ -350,6 +351,15 @@ QString toolButtonStyleSheet()
 QString macOSBundlePrefix()
 {
     return QString::fromUtf8("/Applications/digiKam.org/digikam.app/Contents/");
+}
+
+QDateTime startOfDay(const QDate &date)
+{
+#if QT_VERSION >= QT_VERSION_CHECK(5, 14, 0)
+    return date.startOfDay();
+#else
+    return QDateTime(date);
+#endif
 }
 
 } // namespace Digikam

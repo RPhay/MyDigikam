@@ -39,6 +39,8 @@ class QWidget;
 class QObject;
 class QShortcut;
 class QKeySequence;
+class QDate;
+class QDateTime;
 
 /**
  * Macros for image filters.
@@ -220,6 +222,11 @@ DIGIKAM_EXPORT QString toolButtonStyleSheet();
  * Prefix of macOS Bundle to access to internal Unix hierarchy.
  */
 DIGIKAM_EXPORT QString macOSBundlePrefix();
+
+/**
+ * This method returns QDateTime from with date set to parameter date and time set to start of the day.
+ */
+DIGIKAM_EXPORT QDateTime startOfDay(const QDate &);
 
 } // namespace Digikam
 

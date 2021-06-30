@@ -46,6 +46,7 @@
 // Local includes
 
 #include "thememanager.h"
+#include "digikam_globals.h"
 
 namespace Digikam
 {
@@ -492,7 +493,7 @@ DateRangeList TimeLineWidget::selectedDateRange(int& totalCount) const
             {
                 date = QDate(it3.key().first, 1, 1);
                 date = date.addDays(it3.key().second - 1);
-                sdt  = QDateTime(date);
+                sdt  = startOfDay(date);
                 edt  = sdt.addDays(1);
                 list.append(DateRange(sdt, edt));
                 totalCount += it3.value().first;
@@ -1492,7 +1493,7 @@ void TimeLineWidget::setDateTimeSelected(const QDateTime& dt, SelectionMode sele
 
         case Month:
         {
-            dts = QDateTime(QDate(year, month, 1));
+            dts = startOfDay(QDate(year, month, 1));
             dte = dts.addDays(dts.date().daysInMonth());
             setDaysRangeSelection(dts, dte, selected);
             updateMonthSelection(dts, dte);
@@ -1501,7 +1502,7 @@ void TimeLineWidget::setDateTimeSelected(const QDateTime& dt, SelectionMode sele
 
         case Year:
         {
-            dts = QDateTime(QDate(year, 1, 1));
+            dts = startOfDay(QDate(year, 1, 1));
             dte = dts.addDays(dts.date().daysInYear());
             setDaysRangeSelection(dts, dte, selected);
             updateYearSelection(dts, dte);
@@ -1547,7 +1548,7 @@ void TimeLineWidget::updateMonthSelection(const QDateTime& dts, const QDateTime&
     {
         year     = dt.date().year();
         month    = dt.date().month();
-        dtsMonth = QDateTime(QDate(year, month, 1));
+        dtsMonth = startOfDay(QDate(year, month, 1));
         dteMonth = dtsMonth.addDays(dtsMonth.date().daysInMonth());
         it       = d->monthStatMap.find(Private::YearRefPair(year, month));
 
@@ -1571,7 +1572,7 @@ void TimeLineWidget::updateYearSelection(const QDateTime& dts, const QDateTime& 
     do
     {
         year    = dt.date().year();
-        dtsYear = QDateTime(QDate(year, 1, 1));
+        dtsYear = startOfDay(QDate(year, 1, 1));
         dteYear = dtsYear.addDays(dtsYear.date().daysInYear());
         it      = d->yearStatMap.find(year);
 
@@ -1597,7 +1598,7 @@ void TimeLineWidget::updateAllSelection()
         {
             date = QDate(it.key().first, 1, 1);
             date = date.addDays(it.key().second - 1);
-            dts  = QDateTime(date);
+            dts  = startOfDay(date);
             dte  = dts.addDays(1);
             updateWeekSelection(dts, dte);
             updateMonthSelection(dts, dte);
@@ -2061,7 +2062,7 @@ QDateTime TimeLineWidget::firstDayOfWeek(int year, int weekNumber) const
     // first week of year OR last week of year-1 can be shared
     // between year-1 and year.
 
-    QDateTime d1(QDate(year - 1, 12, 1));
+    QDateTime d1 = startOfDay(QDate(year - 1, 12, 1));
     QDateTime dt = d1;
     int weekYear = dt.date().year();
     int weekNum  = 0;
