@@ -238,14 +238,21 @@ void SearchesDBJobsThread::searchesListing(const SearchesDBJobInfo& info)
         const int threadsCount         = (m_totalImages2Scan < 200) ? 1 : qMax(1, maximumNumberOfThreads());
         const int images2ScanPerThread = m_totalImages2Scan / threadsCount;
 
-        QSet<qlonglong>::const_iterator begin = info.imageIds().cbegin();
-        QSet<qlonglong>::const_iterator end;
+        QSet<qlonglong>::const_iterator begin = info.imageIds().constBegin();
+        QSet<qlonglong>::const_iterator end   = info.imageIds().constBegin();
 
         for (int i = 0; i < threadsCount; ++i)
         {
             // The last thread should read until the end of the list.
-
-            end = (i == threadsCount - 1) ? info.imageIds().cend() : begin + images2ScanPerThread;
+            if (i == threadsCount - 1)
+            {
+                end = info.imageIds().constEnd();
+            }
+            else
+            {
+                // TODO: port to std::advance https://en.cppreference.com/w/cpp/iterator/advance
+                for (int j = 0; end != info.imageIds().constEnd() && j < images2ScanPerThread; ++j, ++end);
+            }
 
             SearchesJob* const job = new SearchesJob(info, begin, end, m_haarIface.get());
 
