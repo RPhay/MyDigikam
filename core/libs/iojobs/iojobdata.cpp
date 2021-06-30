@@ -25,7 +25,11 @@
 
 // Qt includes
 
-#include <QMutex>
+#if QT_VERSION >= QT_VERSION_CHECK(5, 14, 0)
+    #include <QRecursiveMutex>
+#else
+    #include <QMutex>
+#endif
 #include <QMutexLocker>
 
 // Local includes
@@ -47,7 +51,11 @@ public:
         srcAlbum    (nullptr),
         destAlbum   (nullptr),
         jobTime     (QDateTime::currentDateTime()),
-        mutex       (QMutex::Recursive)
+#if QT_VERSION >= QT_VERSION_CHECK(5, 14, 0)
+        mutex()
+#else
+        mutex(QMutex::Recursive)
+#endif
     {
     }
 
@@ -67,7 +75,11 @@ public:
     QString            progressId;
     QDateTime          jobTime;
 
+#if QT_VERSION >= QT_VERSION_CHECK(5, 14, 0)
+    QRecursiveMutex    mutex;
+#else
     QMutex             mutex;
+#endif
 };
 
 IOJobData::IOJobData(int operation,

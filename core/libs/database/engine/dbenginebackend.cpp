@@ -48,7 +48,11 @@ namespace Digikam
 {
 
 DbEngineLocking::DbEngineLocking()
-    : mutex    (QMutex::Recursive),
+#if QT_VERSION >= QT_VERSION_CHECK(5, 14, 0)
+    : mutex(),
+#else
+    : mutex(QMutex::Recursive),
+#endif
       lockCount(0) // create a recursive mutex
 {
 }

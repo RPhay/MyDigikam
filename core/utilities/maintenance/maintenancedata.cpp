@@ -25,7 +25,11 @@
 
 // Qt includes
 
-#include <QMutex>
+#if QT_VERSION >= QT_VERSION_CHECK(5, 14, 0)
+    #include <QRecursiveMutex>
+#else
+    #include <QMutex>
+#endif
 
 // Local includes
 
@@ -40,7 +44,11 @@ public:
 
     explicit Private()
       : rebuildAllFingerprints(true),
+#if QT_VERSION >= QT_VERSION_CHECK(5, 14, 0)
+        mutex()
+#else
         mutex(QMutex::Recursive)
+#endif
     {
     }
 
@@ -53,7 +61,11 @@ public:
 
     bool                          rebuildAllFingerprints;
 
-    QMutex                        mutex;
+#if QT_VERSION >= QT_VERSION_CHECK(5, 14, 0)
+    QRecursiveMutex    mutex;
+#else
+    QMutex             mutex;
+#endif
 };
 
 MaintenanceData::MaintenanceData()
