@@ -104,8 +104,8 @@ void HotPixelFixer::readParameters(const FilterAction& action)
 {
     m_settings.filterMethod = (HotPixelContainer::InterpolationMethod)action.parameter(QLatin1String("interpolationMethod")).toInt();
 
-    const QHash<QString, QVariant> params = action.parameters();
-    for (QHash<QString, QVariant>::const_iterator i = params.begin(); i != params.end(); ++i)
+    const QHash<QString, QVariant> &params = action.parameters();
+    for (QHash<QString, QVariant>::const_iterator i = params.constBegin(); i != params.constEnd(); ++i)
     {
         const QString &key = i.key();
         if (key == QLatin1String("hotPixel"))
