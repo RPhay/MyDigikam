@@ -104,13 +104,17 @@ void HotPixelFixer::readParameters(const FilterAction& action)
 {
     m_settings.filterMethod = (HotPixelContainer::InterpolationMethod)action.parameter(QLatin1String("interpolationMethod")).toInt();
 
-    foreach (const QVariant& var, action.parameters().values(QLatin1String("hotPixel")))
+    const QHash<QString, QVariant> params = action.parameters();
+    for (QHash<QString, QVariant>::const_iterator i = params.begin(); i != params.end(); ++i)
     {
-        HotPixelProps hp;
-
-        if (hp.fromString(var.toString()))
+        const QString &key = i.key();
+        if (key == QLatin1String("hotPixel"))
         {
-            m_settings.hotPixelsList << hp;
+            HotPixelProps hp;
+            if (hp.fromString(i.value().toString()))
+            {
+                m_settings.hotPixelsList << hp;
+            }
         }
     }
 }
