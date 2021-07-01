@@ -27,9 +27,9 @@ add_subdirectory(onedrive)
 add_subdirectory(pinterest)
 add_subdirectory(piwigo)
 
-if(Qt5XmlPatterns_FOUND)
-    add_subdirectory(rajce)
-endif()
+#if(Qt5XmlPatterns_FOUND)
+#    add_subdirectory(rajce)
+#endif()
 
 add_subdirectory(smugmug)
 add_subdirectory(twitter)
