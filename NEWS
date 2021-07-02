@@ -388,4 +388,6 @@ BUGFIXES:
 364 ==> 439057 - Output helpers for ExifTool data (print, save, copy).
 365 ==> 439161 - .insv (360-video) files not shown.
 366 ==> 439231 - ExifTool and e.g. *.psd images.
-367 ==> 
+367 ==> 439409 - Video slideshow does not respect EXIF orientation flag.
+368 ==> 
+

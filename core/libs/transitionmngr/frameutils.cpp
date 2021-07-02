@@ -53,6 +53,7 @@ QImage FrameUtils::makeFramedImage(const QString& file, const QSize& outSize)
         settings.RAWQuality            = DRawDecoderSettings::BILINEAR;
 
         DImg dimg(file, nullptr, DRawDecoding(settings));
+        dimg.exifRotate(file);
         timg = dimg.copyQImage();
     }
 
