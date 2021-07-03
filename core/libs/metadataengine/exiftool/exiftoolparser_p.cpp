@@ -27,7 +27,8 @@ namespace Digikam
 {
 
 ExifToolParser::Private::Private()
-    : proc(nullptr)
+    : proc        (nullptr),
+      asyncLoading(ExifToolProcess::NO_ACTION)
 {
     argsFile.setAutoRemove(false);
 }
@@ -75,15 +76,18 @@ bool ExifToolParser::Private::startProcess(const QByteArrayList& cmdArgs, ExifTo
 
     qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool" << actionString(cmdAction) << cmdArgs.join(QByteArray(" "));
 
-    evLoops[cmdAction]->exec(QEventLoop::ExcludeUserInputEvents);
+    if (asyncLoading == ExifToolProcess::NO_ACTION)
+    {
+        evLoops[cmdAction]->exec(QEventLoop::ExcludeUserInputEvents);
 
-    if (currentPath.isEmpty())
-    {
-        qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool complete" << actionString(cmdAction);
-    }
-    else
-    {
-        qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool complete" << actionString(cmdAction) << "for" << currentPath;
+        if (currentPath.isEmpty())
+        {
+            qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool complete" << actionString(cmdAction);
+        }
+        else
+        {
+            qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool complete" << actionString(cmdAction) << "for" << currentPath;
+        }
     }
 
     return true;
@@ -128,6 +132,11 @@ QString ExifToolParser::Private::actionString(int cmdAction) const
             return QLatin1String("Translations List");
         }
 
+        case ExifToolProcess::TAGS_DATABASE:
+        {
+            return QLatin1String("Tags Database");
+        }
+
         case ExifToolProcess::COPY_TAGS:
         {
             return QLatin1String("Copy Tags");
@@ -154,12 +163,19 @@ QString ExifToolParser::Private::actionString(int cmdAction) const
 
 void ExifToolParser::Private::manageEventLoop(int cmdAction)
 {
-    if ((cmdAction >= ExifToolProcess::LOAD_METADATA) &&
-        (cmdAction <  ExifToolProcess::NO_ACTION))
+    if (asyncLoading == cmdAction)
     {
-        if (evLoops[cmdAction])
+        asyncLoading = ExifToolProcess::NO_ACTION;
+    }
+    else
+    {
+        if ((cmdAction >= ExifToolProcess::LOAD_METADATA) &&
+            (cmdAction <  ExifToolProcess::NO_ACTION))
         {
-            evLoops[cmdAction]->quit();
+            if (evLoops[cmdAction])
+            {
+                evLoops[cmdAction]->quit();
+            }
         }
     }
 }

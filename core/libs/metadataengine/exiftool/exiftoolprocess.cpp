@@ -105,10 +105,7 @@ bool ExifToolProcess::start()
 {
     // Check if ExifTool is starting or running
 
-    if (
-        d->exifToolHasFinished                    ||
-        (d->process->state() != QProcess::NotRunning)
-       )
+    if (d->process->state() != QProcess::NotRunning)
     {
         return true;
     }
@@ -134,18 +131,22 @@ bool ExifToolProcess::start()
     args << QLatin1String("-stay_open");
     args << QLatin1String("true");
 
-    // See bug #438888
-
-    args << QLatin1String("-charset");
-    args << QLatin1String("FileName=UTF8");
-
-    args << QLatin1String("-charset");
-    args << QLatin1String("iptc=UTF8");
-
     //-- Other options
 
     args << QLatin1String("-@");
     args << QLatin1String("-");
+
+    //-- Define common arguments
+
+    args << QLatin1String("-common_args");
+
+    //-- Use UTF-8 for file names
+
+    args << QLatin1String("-charset");
+    args << QLatin1String("filename=UTF8");
+
+    args << QLatin1String("-charset");
+    args << QLatin1String("iptc=UTF8");
 
     // Clear queue before start
 
@@ -181,7 +182,6 @@ void ExifToolProcess::terminate()
         d->process->write(QByteArray("-stay_open\nfalse\n"));
         d->process->closeWriteChannel();
         d->writeChannelIsClosed = true;
-        d->exifToolHasFinished  = true;
 
         if (!d->process->waitForFinished(5000))
         {

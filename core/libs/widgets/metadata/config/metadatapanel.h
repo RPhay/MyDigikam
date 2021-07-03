@@ -51,13 +51,16 @@ public:
 
     void                         applySettings();
 
-    QStringList                  getAllCheckedTags();
-    QList<MetadataSelectorView*> viewers();
+    QStringList                  getAllCheckedTags()    const;
+    QList<MetadataSelectorView*> viewers()              const;
+
+public:
 
     static QStringList defaultExifFilter();
     static QStringList defaultMknoteFilter();
     static QStringList defaultIptcFilter();
     static QStringList defaultXmpFilter();
+    static QStringList defaultExifToolFilter();
 
 private Q_SLOTS:
 

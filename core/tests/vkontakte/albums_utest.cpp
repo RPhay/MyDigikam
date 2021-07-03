@@ -39,8 +39,8 @@
 
 using namespace Vkontakte;
 
-TestAlbums::TestAlbums()
-    : VkTestBase()
+TestAlbums::TestAlbums(QObject* const parent)
+    : VkTestBase(parent)
 {
 }
 

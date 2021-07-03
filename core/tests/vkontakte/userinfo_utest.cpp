@@ -34,8 +34,8 @@
 
 using namespace Vkontakte;
 
-TestUserInfo::TestUserInfo()
-    : VkTestBase()
+TestUserInfo::TestUserInfo(QObject* const parent)
+    : VkTestBase(parent)
 {
 }
 
@@ -54,11 +54,11 @@ void TestUserInfo::testUserInfoJob()
     QCOMPARE(res.size(), 1);
 
     const UserInfo user = res.at(0);
-    QCOMPARE(user.userId(), 1);
+    QCOMPARE(user.userId(),    1);
     QCOMPARE(user.firstName(), QString::fromUtf8("Павел"));
-    QCOMPARE(user.lastName(), QString::fromUtf8("Дуров"));
-    QCOMPARE(user.nickName(), QString::fromUtf8(""));
-    QCOMPARE(user.sex(), 2);
+    QCOMPARE(user.lastName(),  QString::fromUtf8("Дуров"));
+    QCOMPARE(user.nickName(),  QString::fromUtf8(""));
+    QCOMPARE(user.sex(),       2);
 
     // TODO: verify that "online" status is received from server
 //     QCOMPARE(user.birthday(), QDate(1984, 10, 10));

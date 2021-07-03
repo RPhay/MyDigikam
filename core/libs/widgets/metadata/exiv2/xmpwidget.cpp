@@ -88,7 +88,7 @@ XmpWidget::~XmpWidget()
 {
 }
 
-QString XmpWidget::getMetadataTitle()
+QString XmpWidget::getMetadataTitle() const
 {
     return i18n("XMP Schema");
 }

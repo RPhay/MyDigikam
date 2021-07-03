@@ -42,7 +42,7 @@ class TestFrequentRequests : public VkTestBase
 
 public:
 
-    TestFrequentRequests();
+    explicit TestFrequentRequests(QObject* const parent = nullptr);
 
 private Q_SLOTS:
 

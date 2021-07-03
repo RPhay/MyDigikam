@@ -90,7 +90,6 @@ public:
     QByteArray              outBuff[2];              ///< [0] StandardOutput | [1] ErrorOutput
 
     bool                    writeChannelIsClosed;
-    bool                    exifToolHasFinished;
 
     QProcess::ProcessError  processError;
     QString                 errorString;
@@ -100,7 +99,7 @@ public:
     static const int        CMD_ID_MIN  = 1;
     static const int        CMD_ID_MAX  = 2000000000;
 
-    static int              s_nextCmdId;               ///< Unique identifier, even in a multi-instances or multi-thread environment
+    static int              s_nextCmdId;             ///< Unique identifier, even in a multi-instances or multi-thread environment
     static QMutex           s_cmdIdMutex;
 };
 

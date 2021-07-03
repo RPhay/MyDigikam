@@ -48,7 +48,6 @@
 #include <QMenu>
 #include <QApplication>
 #include <QStyle>
-#include <QtConcurrent>   // krazy:exclude=includes
 #include <QElapsedTimer>
 
 // KDE includes
@@ -247,17 +246,6 @@ void MetadataWidget::enabledToolButtons(bool b)
     d->toolBtn->setEnabled(b);
 }
 
-void MetadataWidget::decodeMetadataThreaded(bool* const error)
-{
-    QElapsedTimer execTimer;
-    execTimer.start();
-
-    *error = decodeMetadata();
-
-    qCDebug(DIGIKAM_GENERAL_LOG) << getMetadataTitle() << "decoding took"
-                                 << execTimer.elapsed() << "ms (" << *error << ")";
-}
-
 bool MetadataWidget::setMetadata(const DMetadata& data)
 {
     if (d->metadata)
@@ -279,12 +267,13 @@ bool MetadataWidget::setMetadata(const DMetadata& data)
 
     // Try to decode current metadata.
 
-    bool error          = false;
-    QFuture<void> task  = QtConcurrent::run(this,
-                                            &MetadataWidget::decodeMetadataThreaded,
-                                            &error);
+    QElapsedTimer execTimer;
+    execTimer.start();
 
-    task.waitForFinished();
+    bool error = !decodeMetadata();
+
+    qCDebug(DIGIKAM_GENERAL_LOG) << getMetadataTitle() << "decoding took"
+                                 << execTimer.elapsed() << "ms (" << error << ")";
 
     enabledToolButtons(!error);
 
@@ -348,7 +337,7 @@ void MetadataWidget::setIfdList(const DMetadata::MetaDataMap& ifds, const QStrin
     d->view->setIfdList(ifds, keysFilter, tagsFilter);
 }
 
-void MetadataWidget::slotCopy2Clipboard()
+QString MetadataWidget::metadataToText() const
 {
     QString textmetadata  = i18nc("@info: metadata clipboard", "File name: %1 (%2)", d->fileName, getMetadataTitle());
     int i                 = 0;
@@ -394,65 +383,18 @@ void MetadataWidget::slotCopy2Clipboard()
     }
     while (item);
 
+    return textmetadata;
+}
+
+void MetadataWidget::slotCopy2Clipboard()
+{
     QMimeData* const mimeData = new QMimeData();
-    mimeData->setText(textmetadata);
+    mimeData->setText(metadataToText());
     QApplication::clipboard()->setMimeData(mimeData, QClipboard::Clipboard);
 }
 
 void MetadataWidget::slotPrintMetadata()
 {
-    QString textmetadata = QLatin1String("<p>");
-
-    textmetadata.append(QString::fromUtf8("<p><big><big><b>%1 %2 (%3)</b></big></big>")
-                        .arg(i18nc("@title: print metadata", "File name:"))
-                        .arg(d->fileName)
-                        .arg(getMetadataTitle()));
-
-    int i                 = 0;
-    QTreeWidgetItem* item = nullptr;
-
-    do
-    {
-        item                            = d->view->topLevelItem(i);
-        MdKeyListViewItem* const lvItem = dynamic_cast<MdKeyListViewItem*>(item);
-
-        if (lvItem)
-        {
-            textmetadata.append(QLatin1String("<br/><br/><b>"));
-            textmetadata.append(lvItem->getDecryptedKey());
-            textmetadata.append(QLatin1String("</b><br/><br/>"));
-
-            int j                  = 0;
-            QTreeWidgetItem* item2 = nullptr;
-
-            do
-            {
-                item2 = dynamic_cast<QTreeWidgetItem*>(lvItem)->child(j);
-
-                if (item2)
-                {
-                    MetadataListViewItem* const lvItem2 = dynamic_cast<MetadataListViewItem*>(item2);
-
-                    if (lvItem2)
-                    {
-                        textmetadata.append(lvItem2->text(0));
-                        textmetadata.append(QLatin1String(" : <i>"));
-                        textmetadata.append(lvItem2->text(1));
-                        textmetadata.append(QLatin1String("</i><br/>"));
-                    }
-                }
-
-                ++j;
-            }
-            while (item2);
-        }
-
-        ++i;
-    }
-    while (item);
-
-    textmetadata.append(QLatin1String("</p>"));
-
     QPrinter printer;
     printer.setFullPage(true);
 
@@ -461,7 +403,7 @@ void MetadataWidget::slotPrintMetadata()
     if (dialog->exec())
     {
         QTextDocument doc;
-        doc.setHtml(textmetadata);
+        doc.setPlainText(metadataToText());
         QFont font(QApplication::font());
         font.setPointSize(10);                // we define 10pt to be a nice base size for printing.
         doc.setDefaultFont(font);

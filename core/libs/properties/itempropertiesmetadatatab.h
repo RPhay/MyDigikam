@@ -67,11 +67,6 @@ private Q_SLOTS:
 
 private:
 
-    void dmetadataLoadThreaded(const QString& file,
-                               DMetadata* const meta);
-
-private:
-
     class Private;
     Private* const d;
 };

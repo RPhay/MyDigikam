@@ -473,7 +473,7 @@ void CEncoder::WriteMacroBlock(CMacroBlock* block) {
 // Encode buffer of given size using bit plane coding.
 // A buffer contains bufferLen UINT32 values, thus, bufferSize bits per bit plane.
 // Following coding scheme is used: 
-//		Buffer		::= <nPlanes>(5 bits) foreach (plane i): Plane[i]  
+//		Buffer		::= <nPlanes>(5 bits) foreach(plane i): Plane[i]  
 //		Plane[i]	::= [ Sig1 | Sig2 ] [DWORD alignment] refBits
 //		Sig1		::= 1 <codeLen>(15 bits) codedSigAndSignBits 
 //		Sig2		::= 0 <sigLen>(15 bits) [Sign1 | Sign2 ] [DWORD alignment] sigBits 

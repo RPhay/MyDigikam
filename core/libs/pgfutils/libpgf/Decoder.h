@@ -34,6 +34,8 @@
 #include "Subband.h"
 #include "WaveletTransform.h"
 
+#include "digikam_export.h"
+
 /////////////////////////////////////////////////////////////////////
 // Constants
 #define BufferLen			(BufferSize/WordWidth)	///< number of words per buffer
@@ -43,7 +45,7 @@
 /// PGF decoder class.
 /// @author C. Stamm, R. Spuler
 /// @brief PGF decoder
-class CDecoder {
+class DIGIKAM_EXPORT CDecoder {
 	//////////////////////////////////////////////////////////////////////
 	/// PGF decoder macro block class.
 	/// @author C. Stamm, I. Bauersachs

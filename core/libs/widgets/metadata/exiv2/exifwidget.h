@@ -50,7 +50,7 @@ public:
     QString getTagDescription(const QString& key)   override;
     QString getTagTitle(const QString& key)         override;
 
-    QString getMetadataTitle()                      override;
+    QString getMetadataTitle() const                override;
 
 protected Q_SLOTS:
 

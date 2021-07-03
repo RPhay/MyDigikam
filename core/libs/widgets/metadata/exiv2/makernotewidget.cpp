@@ -73,7 +73,7 @@ MakerNoteWidget::~MakerNoteWidget()
 {
 }
 
-QString MakerNoteWidget::getMetadataTitle()
+QString MakerNoteWidget::getMetadataTitle() const
 {
     return i18n("MakerNote Exif Tags");
 }

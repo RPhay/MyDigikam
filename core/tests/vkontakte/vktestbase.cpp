@@ -79,6 +79,7 @@ void VkTestBase::authenticate(Vkontakte::AppPermissions::Value permissions)
     m_vkapi->startAuthentication(false);
 
     // Wait for any outcome of the authentication process, including failure
+
     QEventLoop loop;
 
     connect(m_vkapi, SIGNAL(authenticated()),

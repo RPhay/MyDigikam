@@ -50,7 +50,7 @@ public:
     explicit ExifToolListView(QWidget* const parent);
     ~ExifToolListView() override;
 
-    bool loadFromUrl(const QUrl& url);
+    void loadFromUrl(const QUrl& url);
     QString errorString() const;
 
     QString getCurrentItemKey() const;
@@ -59,6 +59,7 @@ public:
 Q_SIGNALS:
 
     void signalTextFilterMatch(bool);
+    void signalLoadingResult(bool ok);
 
 public Q_SLOTS:
 
@@ -66,17 +67,13 @@ public Q_SLOTS:
 
 private Q_SLOTS:
 
+    void slotExifToolDataAvailable();
     void slotSelectionChanged(QTreeWidgetItem*, int);
 
 private:
 
     void setMetadata(const ExifToolParser::ExifToolData& map);
     ExifToolListViewGroup* findGroup(const QString& group);
-
-    void exifToolParseThreaded(const QString& file,
-                               ExifToolParser::ExifToolData* const parsed,
-                               QString* const errorString,
-                               bool* const error);
 
 private:
 

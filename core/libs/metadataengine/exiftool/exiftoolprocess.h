@@ -52,17 +52,18 @@ public:
      */
     enum Action
     {
-        LOAD_METADATA = 0,          ///< Load all metadata from a file with ExifTool.
-        LOAD_CHUNKS,                ///< Load Exif, Iptc, and Xmp chunks from a file as byte-array for MetaEngine.
-        APPLY_CHANGES,              ///< Apply tag changes in a file with ExifTool.
-        APPLY_CHANGES_EXV,          ///< Apply tag changes in a file with ExifTool using an EXV container.
-        READ_FORMATS,               ///< Return the list of readable ExifTool file formats.
-        WRITE_FORMATS,              ///< Return the list of writable ExifTool file formats.
-        TRANSLATIONS_LIST,          ///< List of ExifTool languages available for translations.
-        VERSION_STRING,             ///< Return the ExifTool version as string.
-        COPY_TAGS,                  ///< Copy tags from one file to another one. See CopyTagsSource enum for details.
-        TRANS_TAGS,                 ///< Translate tags in file. See TranslateTagsOps enum for details.
-        NO_ACTION                   ///< Last value from this list.
+        LOAD_METADATA       = 0,                    ///< Load all metadata from a file with ExifTool.
+        LOAD_CHUNKS,                                ///< Load Exif, Iptc, and Xmp chunks from a file as byte-array for MetaEngine.
+        APPLY_CHANGES,                              ///< Apply tag changes in a file with ExifTool.
+        APPLY_CHANGES_EXV,                          ///< Apply tag changes in a file with ExifTool using an EXV container.
+        READ_FORMATS,                               ///< Return the list of readable ExifTool file formats.
+        WRITE_FORMATS,                              ///< Return the list of writable ExifTool file formats.
+        TRANSLATIONS_LIST,                          ///< List of ExifTool languages available for translations.
+        TAGS_DATABASE,                              ///< List of ExifTool tags from database.
+        VERSION_STRING,                             ///< Return the ExifTool version as string.
+        COPY_TAGS,                                  ///< Copy tags from one file to another one. See CopyTagsSource enum for details.
+        TRANS_TAGS,                                 ///< Translate tags in file. See TranslateTagsOps enum for details.
+        NO_ACTION                                   ///< Last value from this list. Do nothing.
     };
 
     /**
@@ -70,13 +71,13 @@ public:
      */
     enum CopyTagsSource
     {
-        COPY_EXIF       = 0x01,     ///< Copy all Exif Tags from source file.
-        COPY_MAKERNOTES = 0x02,     ///< Copy all Makernotes tags from source file.
-        COPY_IPTC       = 0x04,     ///< Copy all Iptc tags from source file.
-        COPY_XMP        = 0x08,     ///< Copy all Xmp tags from source file.
-        COPY_ICC        = 0x10,     ///< Copy ICC profile from source file.
-        COPY_ALL        = 0x20,     ///< Copy all tags from source file.
-        COPY_NONE       = 0x40      ///< No copy operation.
+        COPY_EXIF           = 0x01,                 ///< Copy all Exif Tags from source file.
+        COPY_MAKERNOTES     = 0x02,                 ///< Copy all Makernotes tags from source file.
+        COPY_IPTC           = 0x04,                 ///< Copy all Iptc tags from source file.
+        COPY_XMP            = 0x08,                 ///< Copy all Xmp tags from source file.
+        COPY_ICC            = 0x10,                 ///< Copy ICC profile from source file.
+        COPY_ALL            = 0x20,                 ///< Copy all tags from source file.
+        COPY_NONE           = 0x40                  ///< No copy operation.
     };
 
     /**
@@ -84,10 +85,12 @@ public:
      */
     enum WritingTagsMode
     {
-        WRITE_EXISTING_TAGS = 0x01, ///< Overwrite existing tags.
-        CREATE_NEW_TAGS     = 0x02, ///< Create new tags.
-        CREATE_NEW_GROUPS   = 0x04, ///< Create new groups if necessary.
-        ALL_MODES           = WRITE_EXISTING_TAGS | CREATE_NEW_TAGS | CREATE_NEW_GROUPS
+        WRITE_EXISTING_TAGS = 0x01,                 ///< Overwrite existing tags.
+        CREATE_NEW_TAGS     = 0x02,                 ///< Create new tags.
+        CREATE_NEW_GROUPS   = 0x04,                 ///< Create new groups if necessary.
+        ALL_MODES           = WRITE_EXISTING_TAGS |
+                              CREATE_NEW_TAGS     |
+                              CREATE_NEW_GROUPS
     };
 
     /**
@@ -95,9 +98,9 @@ public:
      */
     enum TranslateTagsOps
     {
-        TRANS_ALL_XMP   = 0x01,     ///< Translate all existing Tags from source file to Xmp.
-        TRANS_ALL_IPTC  = 0x02,     ///< Translate all existing Tags from source file to Iptc.
-        TRANS_ALL_EXIF  = 0x04      ///< Translate all existing Tags from source file to Exif.
+        TRANS_ALL_XMP       = 0x01,                 ///< Translate all existing Tags from source file to Xmp.
+        TRANS_ALL_IPTC      = 0x02,                 ///< Translate all existing Tags from source file to Iptc.
+        TRANS_ALL_EXIF      = 0x04                  ///< Translate all existing Tags from source file to Exif.
     };
 
 public:
@@ -145,12 +148,12 @@ public:
 public:
 
     /**
-     * Return true if ExifToolProcess is running (process state == Running)
+     * Returns true if ExifToolProcess is running (process state == Running)
      */
     bool                   isRunning()                  const;
 
     /**
-     * Return true if a command is running
+     * Returns true if a command is running
      */
     bool                   isBusy()                     const;
 
@@ -203,9 +206,15 @@ public:
 Q_SIGNALS:
 
     void signalStarted(int cmdAction);
-    void signalStateChanged(int cmdAction, QProcess::ProcessState newState);
-    void signalErrorOccurred(int cmdAction, QProcess::ProcessError error);
-    void signalFinished(int cmdAction,int exitCode,
+
+    void signalStateChanged(int cmdAction,
+                            QProcess::ProcessState newState);
+
+    void signalErrorOccurred(int cmdAction,
+                             QProcess::ProcessError error);
+
+    void signalFinished(int cmdAction,
+                        int exitCode,
                         QProcess::ExitStatus exitStatus);
 
     void signalCmdCompleted(int cmdAction,

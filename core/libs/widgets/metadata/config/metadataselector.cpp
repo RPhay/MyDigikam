@@ -46,7 +46,8 @@ namespace Digikam
 
 MetadataSelectorItem::MetadataSelectorItem(MdKeyListViewItem* const parent,
                                            const QString& key,
-                                           const QString& title, const QString& desc)
+                                           const QString& title,
+                                           const QString& desc)
     : QTreeWidgetItem(parent),
       m_key          (key),
       m_parent       (parent)
@@ -89,8 +90,9 @@ QString MetadataSelectorItem::mdKeyTitle() const
 
 // ------------------------------------------------------------------------------------
 
-MetadataSelector::MetadataSelector(QWidget* const parent)
-    : QTreeWidget(parent)
+MetadataSelector::MetadataSelector(MetadataSelectorView* const parent)
+    : QTreeWidget(parent),
+      m_parent   (parent)
 {
     setSelectionMode(QAbstractItemView::SingleSelection);
     setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
@@ -126,7 +128,14 @@ void MetadataSelector::setTagsMap(const DMetadata::TagsMap& map)
     {
         // Check if we have changed group.
 
-        currentIfDName = it.key().section(QLatin1Char('.'), 1, 1);
+        if (m_parent->backend() == MetadataSelectorView::Exiv2Backend)
+        {
+            currentIfDName = it.key().section(QLatin1Char('.'), 1, 1);
+        }
+        else
+        {
+            currentIfDName = it.key().section(QLatin1Char('.'), 0, 0);
+        }
 
         if (currentIfDName != ifDItemName)
         {
@@ -264,7 +273,8 @@ public:
         clearSelectionBtn  (nullptr),
         defaultSelectionBtn(nullptr),
         selector           (nullptr),
-        searchBar          (nullptr)
+        searchBar          (nullptr),
+        backend            (Exiv2Backend)
     {
     }
 
@@ -277,13 +287,15 @@ public:
     MetadataSelector* selector;
 
     SearchTextBar*    searchBar;
+    Backend           backend;
 };
 
-MetadataSelectorView::MetadataSelectorView(QWidget* const parent)
+MetadataSelectorView::MetadataSelectorView(QWidget* const parent, Backend be)
     : QWidget(parent),
       d      (new Private)
 {
-    const int spacing = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
+    d->backend              = be;
+    const int spacing       = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
 
     QGridLayout* const grid = new QGridLayout(this);
     d->selector             = new MetadataSelector(this);
@@ -345,6 +357,11 @@ QStringList MetadataSelectorView::defaultFilter() const
 int MetadataSelectorView::itemsCount() const
 {
     return d->selector->model()->rowCount();
+}
+
+MetadataSelectorView::Backend MetadataSelectorView::backend() const
+{
+    return d->backend;
 }
 
 QStringList MetadataSelectorView::checkedTagsList() const

@@ -109,4 +109,47 @@ bool ExifToolParser::exifToolAvailable() const
     return ret;
 }
 
+MetaEngine::TagsMap ExifToolParser::tagsDbToOrderedMap(const ExifToolData& tagsDb)
+{
+    QString name;
+    QString desc;
+    MetaEngine::TagsMap map;
+    QStringList keys = tagsDb.keys();
+    keys.sort();
+
+    foreach (const QString& tag, keys)
+    {
+        /**
+         * Tag are formated like this:
+         *
+         * EXIF.IFD0.Image.XResolution
+         * EXIF.IFD0.Image.YCbCrCoefficients
+         * EXIF.IFD0.Image.YCbCrPositioning
+         * EXIF.IFD0.Image.YCbCrSubSampling
+         * EXIF.IFD0.Image.YClipPathUnits
+         * EXIF.IFD0.Image.YPosition
+         * EXIF.IFD0.Image.YResolution
+         * FITS.FITS.Image.Author
+         * FITS.FITS.Image.Background
+         * FITS.FITS.Image.CreateDate
+         * FITS.FITS.Image.Instrument
+         * FITS.FITS.Image.Object
+         * FITS.FITS.Image.ObservationDate
+         */
+        ExifToolParser::ExifToolData::const_iterator it = tagsDb.find(tag);
+
+        if (it != tagsDb.constEnd())
+        {
+            name = tag.section(QLatin1Char('.'), -1);
+            desc = it.value()[0].toString();
+
+            map.insert(tag, QStringList() << name
+                                          << QString()  // title.
+                                          << desc);
+        }
+    }
+
+    return map;
+}
+
 } // namespace Digikam

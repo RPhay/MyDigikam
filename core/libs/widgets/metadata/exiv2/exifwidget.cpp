@@ -76,7 +76,7 @@ ExifWidget::~ExifWidget()
 {
 }
 
-QString ExifWidget::getMetadataTitle()
+QString ExifWidget::getMetadataTitle() const
 {
     return i18n("Standard Exif Tags");
 }

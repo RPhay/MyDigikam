@@ -168,11 +168,17 @@ ExifToolWidget::~ExifToolWidget()
 
 void ExifToolWidget::loadFromUrl(const QUrl& url)
 {
-    d->preLoadingTimer->start();
     d->fileName = url.fileName();
-    bool ret    = d->view->loadFromUrl(url);
 
-    if (ret)
+    d->preLoadingTimer->start();
+    d->view->loadFromUrl(url);
+}
+
+void ExifToolWidget::slotLoadingResult(bool ok)
+{
+    d->preLoadingTimer->stop();
+
+    if (ok)
     {
         SearchTextSettings settings = d->searchBar->searchTextSettings();
 
@@ -181,9 +187,7 @@ void ExifToolWidget::loadFromUrl(const QUrl& url)
             d->view->slotSearchTextChanged(settings);
         }
 
-        d->preLoadingTimer->stop();
         setCurrentIndex(Private::MetadataView);
-        d->toolBtn->setEnabled(true);
     }
     else
     {
@@ -195,12 +199,11 @@ void ExifToolWidget::loadFromUrl(const QUrl& url)
                                    d->fileName,
                                    d->view->errorString()));
 
-        d->preLoadingTimer->stop();
         setCurrentIndex(Private::ErrorView);
-        d->toolBtn->setEnabled(false);
     }
 
     d->loadingView->setBusy(false);
+    d->toolBtn->setEnabled(ok);
 }
 
 void ExifToolWidget::slotPreLoadingTimerDone()
@@ -211,6 +214,9 @@ void ExifToolWidget::slotPreLoadingTimerDone()
 
 void ExifToolWidget::setup()
 {
+    connect(d->view, SIGNAL(signalLoadingResult(bool)),
+            this, SLOT(slotLoadingResult(bool)));
+
     connect(d->preLoadingTimer, SIGNAL(timeout()),
             this, SLOT(slotPreLoadingTimerDone()));
 
@@ -251,33 +257,28 @@ QString ExifToolWidget::metadataToText() const
             textmetadata.append(QLatin1String(" <<<\n\n"));
 
             int j                  = 0;
-            QTreeWidgetItem* item2 = nullptr;
+            QTreeWidgetItem* child = nullptr;
 
             do
             {
-                item2 = dynamic_cast<QTreeWidgetItem*>(lvItem);
+                child = lvItem->child(j);
 
-                if (item2)
+                if (child)
                 {
-                    QTreeWidgetItem* const child = item2->child(j);
+                    ExifToolListViewItem* const lvItem2 = dynamic_cast<ExifToolListViewItem*>(child);
 
-                    if (child)
+                    if (lvItem2)
                     {
-                        ExifToolListViewItem* const lvItem2 = dynamic_cast<ExifToolListViewItem*>(child);
-
-                        if (lvItem2)
-                        {
-                            textmetadata.append(lvItem2->text(0));
-                            textmetadata.append(QLatin1String(" : "));
-                            textmetadata.append(lvItem2->text(1));
-                            textmetadata.append(QLatin1Char('\n'));
-                        }
+                        textmetadata.append(lvItem2->text(0));
+                        textmetadata.append(QLatin1String(" : "));
+                        textmetadata.append(lvItem2->text(1));
+                        textmetadata.append(QLatin1Char('\n'));
                     }
                 }
 
                 ++j;
             }
-            while (item2);
+            while (child);
         }
 
         ++i;
@@ -296,62 +297,6 @@ void ExifToolWidget::slotCopy2Clipboard()
 
 void ExifToolWidget::slotPrintMetadata()
 {
-    QString textmetadata  = QLatin1String("<p>");
-    textmetadata.append(QString::fromUtf8("<p><big><big><b>%1 %2 (%3)</b></big></big>")
-                        .arg(i18nc("@title: print metadata", "File name:"))
-                        .arg(d->fileName)
-                        .arg(QLatin1String("ExifTool")));
-
-    int i                 = 0;
-    QTreeWidgetItem* item = nullptr;
-
-    do
-    {
-        item                                = d->view->topLevelItem(i);
-        ExifToolListViewGroup* const lvItem = dynamic_cast<ExifToolListViewGroup*>(item);
-
-        if (lvItem)
-        {
-            textmetadata.append(QLatin1String("<br/><br/><b>"));
-            textmetadata.append(lvItem->text(0));
-            textmetadata.append(QLatin1String("</b><br/><br/>"));
-
-            int j                  = 0;
-            QTreeWidgetItem* item2 = nullptr;
-
-            do
-            {
-                item2 = dynamic_cast<QTreeWidgetItem*>(lvItem);
-
-                if (item2)
-                {
-                    QTreeWidgetItem* const child = item2->child(j);
-
-                    if (child)
-                    {
-                        ExifToolListViewItem* const lvItem2 = dynamic_cast<ExifToolListViewItem*>(child);
-
-                        if (lvItem2)
-                        {
-                            textmetadata.append(lvItem2->text(0));
-                            textmetadata.append(QLatin1String(" : <i>"));
-                            textmetadata.append(lvItem2->text(1));
-                            textmetadata.append(QLatin1String("</i><br/>"));
-                        }
-                    }
-                }
-
-                ++j;
-            }
-            while (item2);
-        }
-
-        ++i;
-    }
-    while (item);
-
-    textmetadata.append(QLatin1String("</p>"));
-
     QPrinter printer;
     printer.setFullPage(true);
 
@@ -360,7 +305,7 @@ void ExifToolWidget::slotPrintMetadata()
     if (dialog->exec())
     {
         QTextDocument doc;
-        doc.setHtml(textmetadata);
+        doc.setPlainText(metadataToText());
         QFont font(QApplication::font());
         font.setPointSize(10);                // we define 10pt to be a nice base size for printing.
         doc.setDefaultFont(font);
