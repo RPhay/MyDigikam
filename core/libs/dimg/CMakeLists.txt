@@ -244,7 +244,7 @@ include_directories(
 
 if(X11_FOUND)
 
-    include_directories($<TARGET_PROPERTY:Qt5::X11Extras,INTERFACE_INCLUDE_DIRECTORIES>)
+    include_directories(${Qt5Gui_PRIVATE_INCLUDE_DIRS})
 
 endif()
 

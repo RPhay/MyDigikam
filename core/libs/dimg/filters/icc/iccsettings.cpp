@@ -60,7 +60,8 @@
 #   include <climits>
 #   include <X11/Xlib.h>
 #   include <X11/Xatom.h>
-#   include <QX11Info>
+#   include <QtPlatformHeaders/qxcbscreenfunctions.h>
+#   include <qpa/qplatformnativeinterface.h>
 #endif // HAVE_X11
 
 #if defined(Q_CC_CLANG)
@@ -100,6 +101,17 @@ public:
     QHash<int, IccProfile> screenProfiles;
 
     const QString          configGroup;
+
+#ifdef HAVE_X11
+private:
+    // X11 helper functions.
+    // Imported from https://code.qt.io/cgit/qt/qtx11extras.git/tree/src/x11extras/qx11info_x11.cpp?h=5.15.2#n102
+    bool     isX11();
+    quint32  getAppRootWindow(int);
+    QScreen* findScreenForVirtualDesktop(int);
+    int      appScreen();
+    Display* display();
+#endif
 };
 
 // -----------------------------------------------------------------------------------------------
@@ -195,6 +207,81 @@ bool IccSettings::monitorProfileFromSystem() const
     return false;
 }
 
+#ifdef HAVE_X11
+
+bool IccSettings::Private::isX11()
+{
+    return QGuiApplication::platformName() == QLatin1String("xcb");
+}
+
+QScreen *IccSettings::Private::findScreenForVirtualDesktop(int virtualDesktopNumber)
+{
+    const auto screens = QGuiApplication::screens();
+    for (QScreen *screen : screens)
+    {
+        if (QXcbScreenFunctions::virtualDesktopNumber(screen) == virtualDesktopNumber)
+        {
+            return screen;
+        }
+    }
+    return nullptr;
+}
+
+quint32 IccSettings::Private::getAppRootWindow(int screen)
+{
+    if (!qApp)
+    {
+        return 0;
+    }
+    QPlatformNativeInterface *native = qApp->platformNativeInterface();
+    if (!native)
+    {
+        return 0;
+    }
+    QScreen *scr = screen == -1 ?  QGuiApplication::primaryScreen() : findScreenForVirtualDesktop(screen);
+    if (!scr)
+    {
+        return 0;
+    }
+    return static_cast<uint32_t>(reinterpret_cast<quintptr>(native->nativeResourceForScreen(QByteArrayLiteral("rootwindow"), scr)));
+}
+
+int IccSettings::Private::appScreen()
+{
+    if (!qApp)
+    {
+        return 0;
+    }
+    QPlatformNativeInterface *native = qApp->platformNativeInterface();
+
+    if (!native)
+    {
+        return 0;
+    }
+    return reinterpret_cast<qintptr>(native->nativeResourceForIntegration(QByteArrayLiteral("x11screen")));
+}
+
+Display *IccSettings::Private::display()
+{
+    if (!qApp)
+    {
+        return nullptr;
+    }
+
+    QPlatformNativeInterface *native = qApp->platformNativeInterface();
+
+    if (!native)
+    {
+        return nullptr;
+    }
+
+    void *display = native->nativeResourceForIntegration(QByteArray("display"));
+
+    return reinterpret_cast<Display *>(display);
+}
+
+#endif
+
 /*
  * From koffice/libs/pigment/colorprofiles/KoLcmsColorProfileContainer.cpp
  * Copyright (C) 2000 Matthias Elter <elter at kde dot org>
@@ -208,7 +295,7 @@ IccProfile IccSettings::Private::profileFromWindowSystem(QWidget* const widget)
 
 #ifdef HAVE_X11
 
-    if (!QX11Info::isPlatformX11())
+    if (!isX11())
     {
         qCDebug(DIGIKAM_DIMG_LOG) << "Desktop platform is not X11";
         return IccProfile();
@@ -259,12 +346,12 @@ IccProfile IccSettings::Private::profileFromWindowSystem(QWidget* const widget)
 
     if (screen->virtualSiblings().size() > 1)
     {
-        appRootWindow = QX11Info::appRootWindow(QX11Info::appScreen());
+        appRootWindow = getAppRootWindow(appScreen());
         atomName      = QString::fromLatin1("_ICC_PROFILE_%1").arg(screenNumber);
     }
     else
     {
-        appRootWindow = QX11Info::appRootWindow(screenNumber);
+        appRootWindow = getAppRootWindow(screenNumber);
         atomName      = QLatin1String("_ICC_PROFILE");
     }
 
@@ -274,10 +361,10 @@ IccProfile IccSettings::Private::profileFromWindowSystem(QWidget* const widget)
     unsigned long bytes_after;
     quint8*       str = nullptr;
 
-    static Atom icc_atom = XInternAtom(QX11Info::display(), atomName.toLatin1().constData(), True);
+    static Atom icc_atom = XInternAtom(display(), atomName.toLatin1().constData(), True);
 
     if ((icc_atom != None)                                                &&
-        (XGetWindowProperty(QX11Info::display(), appRootWindow, icc_atom,
+        (XGetWindowProperty(display(), appRootWindow, icc_atom,
                            0, INT_MAX, False, XA_CARDINAL,
                            &type, &format, &nitems, &bytes_after,
                            (unsigned char**)& str) == Success)            &&

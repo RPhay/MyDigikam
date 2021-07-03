@@ -275,7 +275,6 @@ endif()
 find_package(X11)
 
 if(X11_FOUND)
-    find_package(Qt5 ${QT_MIN_VERSION} NO_MODULE COMPONENTS X11Extras)
     set(HAVE_X11 TRUE)
 else()
     set(HAVE_X11 FALSE)
@@ -633,7 +632,6 @@ if(Boost_FOUND                          AND
    TIFF_FOUND                           AND
    Threads_FOUND                        AND
    (Qt5Test_FOUND OR NOT BUILD_TESTING) AND
-   (Qt5X11Extras_FOUND OR NOT HAVE_X11) AND
    (CMAKE_USE_PTHREADS_INIT OR CMAKE_USE_WIN32_THREADS_INIT)
   )
     message(STATUS " digiKam can be compiled.................. YES")

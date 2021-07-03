@@ -234,7 +234,6 @@ if(X11_FOUND)
 
     target_link_libraries(digikamcore
                           PRIVATE
-                          Qt5::X11Extras
                           ${X11_LIBRARIES}
     )
 
