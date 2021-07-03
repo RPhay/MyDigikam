@@ -112,8 +112,6 @@ public:
 
     QStringList                         tagList;
 
-    QMultiMap<QString, QVariant>        faceTagsList;
-
     DisjointMetadata::Status            dateTimeStatus;
     DisjointMetadata::Status            titlesStatus;
     DisjointMetadata::Status            commentsStatus;
@@ -577,7 +575,7 @@ bool DisjointMetadata::willWriteMetadata(DisjointMetadata::WriteMode writeMode, 
     bool saveColorLabel = (settings.saveColorLabel && d->colorLabelStatus == MetadataAvailable);
     bool saveRating     = (settings.saveRating     && d->ratingStatus     == MetadataAvailable);
     bool saveTemplate   = (settings.saveTemplate   && d->templateStatus   == MetadataAvailable);
-    bool saveTags       = settings.saveTags;
+    bool saveTags       = (settings.saveTags || settings.saveFaceTags);
 
     bool writeAllFields;
 
