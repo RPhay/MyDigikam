@@ -589,11 +589,11 @@ bool UMSCamera::cameraSummary(QString& summary)
                      "Port: \"%3\"\n"
                      "Path: \"%4\"\n"
                      "UUID: \"%5\"\n\n",
-                     title().toHtmlEscaped(),
-                     model().toHtmlEscaped(),
-                     port().toHtmlEscaped(),
-                     path().toHtmlEscaped(),
-                     uuid().toHtmlEscaped());
+                     title(),
+                     model(),
+                     port(),
+                     path(),
+                     uuid());
 
     summary += i18nc("@info List of supported device operations",
                      "Thumbnails: \"%1\"\n"

@@ -391,4 +391,5 @@ BUGFIXES:
 367 ==> 439409 - Video slideshow does not respect EXIF orientation flag.
 368 ==> 439404 - Writing of face tags should not depend on the tags settings.
 369 ==> 439436 - Problems with video-slideshow.
-370 ==> 
+370 ==> 439443 - Import - DeviceSettings.
+371 ==> 

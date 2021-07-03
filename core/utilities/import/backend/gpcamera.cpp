@@ -1544,10 +1544,10 @@ bool GPCamera::cameraSummary(QString& summary)
                      "Model: \"%2\"\n"
                      "Port: \"%3\"\n"
                      "Path: \"%4\"\n\n",
-                     title().toHtmlEscaped(),
-                     model().toHtmlEscaped(),
-                     port().toHtmlEscaped(),
-                     path().toHtmlEscaped());
+                     title(),
+                     model(),
+                     port(),
+                     path());
 
     summary += i18nc("@info List of supported device operations",
                      "Thumbnails: \"%1\"\n"
