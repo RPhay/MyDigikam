@@ -43,6 +43,9 @@ public:
                          const QString& key,
                          const QString& value,
                          const QString& desc);
+    ExifToolListViewItem(ExifToolListViewGroup* const parent,
+                         const QString& key);
+
     ~ExifToolListViewItem() override;
 
     QString getKey()         const;

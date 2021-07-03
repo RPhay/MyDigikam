@@ -134,6 +134,9 @@ ItemPropertiesMetadataTab::ItemPropertiesMetadataTab(QWidget* const parent)
 
     connect(d->xmpWidget, SIGNAL(signalSetupMetadataFilters()),
             this, SLOT(slotSetupMetadataFilters()));
+
+    connect(d->exifToolWidget, SIGNAL(signalSetupMetadataFilters()),
+            this, SLOT(slotSetupMetadataFilters()));
 }
 
 ItemPropertiesMetadataTab::~ItemPropertiesMetadataTab()
@@ -159,6 +162,10 @@ void ItemPropertiesMetadataTab::slotSetupMetadataFilters()
     {
         emit signalSetupMetadataFilters(Private::XMP);
     }
+    else if (sender() == d->exifToolWidget)
+    {
+        emit signalSetupMetadataFilters(Private::EXIFTOOL);
+    }
 }
 
 void ItemPropertiesMetadataTab::readSettings(const KConfigGroup& group)
@@ -169,6 +176,7 @@ void ItemPropertiesMetadataTab::readSettings(const KConfigGroup& group)
     d->makernoteWidget->setMode(group.readEntry("MAKERNOTE Level",                    (int)MakerNoteWidget::CUSTOM));
     d->iptcWidget->setMode(group.readEntry("IPTC Level",                              (int)IptcWidget::CUSTOM));
     d->xmpWidget->setMode(group.readEntry("XMP Level",                                (int)XmpWidget::CUSTOM));
+    d->exifToolWidget->setMode(group.readEntry("EXIFTOOL Level",                      (int)ExifToolWidget::CUSTOM));
     d->exifWidget->setCurrentItemByKey(group.readEntry("Current EXIF Item",           QString()));
     d->makernoteWidget->setCurrentItemByKey(group.readEntry("Current MAKERNOTE Item", QString()));
     d->iptcWidget->setCurrentItemByKey(group.readEntry("Current IPTC Item",           QString()));
@@ -185,6 +193,7 @@ void ItemPropertiesMetadataTab::loadFilters()
     d->makernoteWidget->setTagsFilter(grp2.readEntry("MAKERNOTE Tags Filter",       MetadataPanel::defaultMknoteFilter()));
     d->iptcWidget->setTagsFilter(grp2.readEntry("IPTC Tags Filter",                 MetadataPanel::defaultIptcFilter()));
     d->xmpWidget->setTagsFilter(grp2.readEntry("XMP Tags Filter",                   MetadataPanel::defaultXmpFilter()));
+    d->exifToolWidget->setTagsFilter(grp2.readEntry("EXIFTOOL Tags Filter",         MetadataPanel::defaultExifToolFilter()));
 }
 
 void ItemPropertiesMetadataTab::writeSettings(KConfigGroup& group)
@@ -194,6 +203,7 @@ void ItemPropertiesMetadataTab::writeSettings(KConfigGroup& group)
     group.writeEntry("MAKERNOTE Level",             d->makernoteWidget->getMode());
     group.writeEntry("IPTC Level",                  d->iptcWidget->getMode());
     group.writeEntry("XMP Level",                   d->xmpWidget->getMode());
+    group.writeEntry("EXIFTOOL Level",              d->exifToolWidget->getMode());
     group.writeEntry("Current EXIF Item",           d->exifWidget->getCurrentItemKey());
     group.writeEntry("Current MAKERNOTE Item",      d->makernoteWidget->getCurrentItemKey());
     group.writeEntry("Current IPTC Item",           d->iptcWidget->getCurrentItemKey());

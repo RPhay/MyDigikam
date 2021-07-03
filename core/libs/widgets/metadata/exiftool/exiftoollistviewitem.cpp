@@ -28,6 +28,10 @@
 #include <QHeaderView>
 #include <QFont>
 
+// KDE includes
+
+#include <klocalizedstring.h>
+
 // Local includes
 
 #include "ditemtooltip.h"
@@ -78,6 +82,26 @@ ExifToolListViewItem::ExifToolListViewItem(ExifToolListViewGroup* const parent,
 
     DToolTipStyleSheet cnt;
     setToolTip(1, QLatin1String("<qt><p>") + cnt.breakString(tagVal) + QLatin1String("</p></qt>"));
+}
+
+ExifToolListViewItem::ExifToolListViewItem(ExifToolListViewGroup* const parent,
+                                           const QString& key)
+    : QTreeWidgetItem(parent),
+      d              (new Private)
+{
+    d->key = key;
+
+    setChildIndicatorPolicy(QTreeWidgetItem::DontShowIndicator);
+
+    QString name = d->key.section(QLatin1Char('.'), -1);
+    setText(0, name);
+    setToolTip(0, name);
+
+    setDisabled(true);
+    setText(1, i18n("Unavailable"));
+    QFont fnt = font(1);
+    fnt.setItalic(true);
+    setFont(1, fnt);
 }
 
 ExifToolListViewItem::~ExifToolListViewItem()

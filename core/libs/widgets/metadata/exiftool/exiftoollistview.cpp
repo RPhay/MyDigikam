@@ -53,11 +53,12 @@ public:
     {
     }
 
-    QString         lastError;
-    QString         selectedItemKey;
-    QStringList     simplifiedTagsList;
+    QString                      lastError;
+    QString                      selectedItemKey;
+    QStringList                  simplifiedTagsList;
 
-    ExifToolParser* parser;
+    ExifToolParser*              parser;
+    ExifToolParser::ExifToolData map;
 };
 
 ExifToolListView::ExifToolListView(QWidget* const parent)
@@ -125,57 +126,6 @@ void ExifToolListView::slotExifToolDataAvailable()
     setMetadata(d->parser->currentData());
 
     emit signalLoadingResult(d->lastError.isEmpty());
-}
-
-void ExifToolListView::setMetadata(const ExifToolParser::ExifToolData& map)
-{
-    d->simplifiedTagsList.clear();
-    QString simplifiedTag;
-
-    for (ExifToolParser::ExifToolData::const_iterator it = map.constBegin() ;
-         it != map.constEnd() ; ++it)
-    {
-        QString grp                   = it.key().section(QLatin1Char('.'), 0, 0)
-                                                .replace(QLatin1Char('_'), QLatin1Char(' '));
-
-        if (grp == QLatin1String("ExifTool"))
-        {
-            continue;
-        }
-
-        /** Key is format like this:
-         *
-         * EXIF.ExifIFD.Image.ExposureCompensation
-         * File.File.Other.FileType
-         * Composite.Composite.Time.SubSecModifyDate
-         * File.System.Time.FileInodeChangeDate
-         * File.System.Other.FileSize
-         * EXIF.GPS.Location.GPSLongitude
-         * ICC_Profile.ICC-header.Image.ProfileCreator
-         * EXIF.IFD1.Image.ThumbnailOffset
-         * JFIF.JFIF.Image.YResolution
-         * ICC_Profile.ICC_Profile.Image.GreenMatrixColumn
-         */
-        QString key                   = it.key();
-        QString value                 = it.value()[0].toString();
-        QString desc                  = it.value()[2].toString();
-        ExifToolListViewGroup* igroup = findGroup(grp);
-        simplifiedTag                 = grp + QLatin1Char('.') + it.key().section(QLatin1Char('.'), -1);
-
-        if (!d->simplifiedTagsList.contains(simplifiedTag))
-        {
-            d->simplifiedTagsList.append(simplifiedTag);
-
-            if (!igroup)
-            {
-                igroup = new ExifToolListViewGroup(this, grp);
-            }
-
-            new ExifToolListViewItem(igroup, key, value, desc);
-        }
-    }
-
-    setCurrentItemByKey(d->selectedItemKey);
 }
 
 ExifToolListViewGroup* ExifToolListView::findGroup(const QString& group)
@@ -309,6 +259,288 @@ void ExifToolListView::slotSelectionChanged(QTreeWidgetItem* item, int)
                             "<b>Value: </b><p>%2</p>"
                             "<b>Description: </b><p>%3</p>",
                             tagTitle, tagValue, tagDesc));
+}
+
+void ExifToolListView::setMetadata(const ExifToolParser::ExifToolData& map)
+{
+    d->map = map;
+    d->simplifiedTagsList.clear();
+    QString simplifiedTag;
+
+    for (ExifToolParser::ExifToolData::const_iterator it = d->map.constBegin() ;
+         it != d->map.constEnd() ; ++it)
+    {
+        QString grp                   = it.key().section(QLatin1Char('.'), 0, 0)
+                                                .replace(QLatin1Char('_'), QLatin1Char(' '));
+
+        if (grp == QLatin1String("ExifTool"))
+        {
+            continue;
+        }
+
+        /** Key is format like this:
+         *
+         * EXIF.ExifIFD.Image.ExposureCompensation
+         * File.File.Other.FileType
+         * Composite.Composite.Time.SubSecModifyDate
+         * File.System.Time.FileInodeChangeDate
+         * File.System.Other.FileSize
+         * EXIF.GPS.Location.GPSLongitude
+         * ICC_Profile.ICC-header.Image.ProfileCreator
+         * EXIF.IFD1.Image.ThumbnailOffset
+         * JFIF.JFIF.Image.YResolution
+         * ICC_Profile.ICC_Profile.Image.GreenMatrixColumn
+         */
+        QString key                   = it.key();
+        QString value                 = it.value()[0].toString();
+        QString desc                  = it.value()[2].toString();
+        ExifToolListViewGroup* igroup = findGroup(grp);
+        simplifiedTag                 = grp + QLatin1Char('.') + it.key().section(QLatin1Char('.'), -1);
+
+        if (!d->simplifiedTagsList.contains(simplifiedTag))
+        {
+            d->simplifiedTagsList.append(simplifiedTag);
+
+            if (!igroup)
+            {
+                igroup = new ExifToolListViewGroup(this, grp);
+            }
+
+            new ExifToolListViewItem(igroup, key, value, desc);
+        }
+    }
+
+    setCurrentItemByKey(d->selectedItemKey);
+}
+
+void ExifToolListView::setGroupList(const QStringList& tagsFilter)
+{
+    clear();
+    d->simplifiedTagsList.clear();
+    QString simplifiedTag;
+
+    ExifToolListViewGroup* parentGroupItem = nullptr;
+    QStringList            filters         = tagsFilter;
+    QString                groupItemName;
+
+    for (ExifToolParser::ExifToolData::const_iterator it = d->map.constBegin() ; it != d->map.constEnd() ; ++it)
+    {
+        // We checking if we have changed of GroupName
+
+        QString currentGroupName = it.key().section(QLatin1Char('.'), 0, 0)
+                                           .replace(QLatin1Char('_'), QLatin1Char(' '));
+
+        if (currentGroupName == QLatin1String("ExifTool"))
+        {
+            continue;
+        }
+
+        ExifToolListViewGroup* parentGroupItem = findGroup(currentGroupName);
+        simplifiedTag                          = currentGroupName + QLatin1Char('.') + it.key().section(QLatin1Char('.'), -1);
+
+        if (!d->simplifiedTagsList.contains(simplifiedTag))
+        {
+            d->simplifiedTagsList.append(simplifiedTag);
+
+            if (!parentGroupItem)
+            {
+                parentGroupItem = new ExifToolListViewGroup(this, currentGroupName);
+            }
+
+            if      (tagsFilter.isEmpty())
+            {
+                new ExifToolListViewItem(parentGroupItem, it.key(), it.value()[0].toString(), it.value()[2].toString());
+            }
+            else
+            {
+                // We ignore all unknown tags if necessary.
+
+                if      (filters.contains(QLatin1String("FULL")))
+                {
+                    // We don't filter the output (Photo Mode)
+
+                    new ExifToolListViewItem(parentGroupItem, it.key(), it.value()[0].toString(), it.value()[2].toString());
+                }
+                else if (!filters.isEmpty())
+                {
+                    // We using the filter to make a more user friendly output (Custom Mode)
+
+                    // Filter is not a list of complete tag keys
+
+                    if      (!filters.at(0).contains(QLatin1Char('.')) && filters.contains(it.key().section(QLatin1Char('.'), -1)))
+                    {
+                        new ExifToolListViewItem(parentGroupItem, it.key(), it.value()[0].toString(), it.value()[2].toString());
+                        filters.removeAll(it.key());
+                    }
+                    else if (filters.contains(it.key()))
+                    {
+                        new ExifToolListViewItem(parentGroupItem, it.key(), it.value()[0].toString(), it.value()[2].toString());
+                        filters.removeAll(it.key());
+                    }
+                }
+            }
+        }
+    }
+
+    // Add not found tags from filter as grey items.
+
+    d->simplifiedTagsList.clear();
+
+    if (!filters.isEmpty()                       &&
+        (filters.at(0) != QLatin1String("FULL")) &&
+        filters.at(0).contains(QLatin1Char('.')))
+    {
+        foreach (const QString& key, filters)
+        {
+            QString grp                  = key.section(QLatin1Char('.'), 0, 0)
+                                              .replace(QLatin1Char('_'), QLatin1Char(' '));
+            simplifiedTag                = grp + QLatin1Char('.') + key.section(QLatin1Char('.'), -1);
+            ExifToolListViewGroup* pitem = findGroup(grp);
+
+            if (!d->simplifiedTagsList.contains(simplifiedTag))
+            {
+                d->simplifiedTagsList.append(simplifiedTag);
+
+                if (!pitem)
+                {
+                    pitem = new ExifToolListViewGroup(this, grp);
+                }
+
+                new ExifToolListViewItem(pitem, key);
+            }
+        }
+    }
+
+    setCurrentItemByKey(d->selectedItemKey);
+    update();
+}
+
+void ExifToolListView::setGroupList(const QStringList& keysFilter, const QStringList& tagsFilter)
+{
+    clear();
+
+    QStringList            filters         = tagsFilter;
+    uint                   subItems        = 0;
+    ExifToolListViewGroup* parentGroupItem = nullptr;
+
+    if (d->map.count() == 0)
+    {
+        return;
+    }
+
+    for (QStringList::const_iterator itKeysFilter = keysFilter.constBegin() ;
+         itKeysFilter != keysFilter.constEnd() ; ++itKeysFilter)
+    {
+        subItems        = 0;
+        parentGroupItem = new ExifToolListViewGroup(this, *itKeysFilter);
+
+        ExifToolParser::ExifToolData::const_iterator it = d->map.constEnd();
+
+        while (it != d->map.constBegin())
+        {
+            --it;
+
+            if (*itKeysFilter == it.key().section(QLatin1Char('.'), 0, 0)
+                                         .replace(QLatin1Char('_'), QLatin1Char(' ')))
+            {
+                if      (tagsFilter.isEmpty())
+                {
+                    new ExifToolListViewItem(parentGroupItem, it.key(), it.value()[0].toString(), it.value()[2].toString());
+                    ++subItems;
+                }
+                else
+                {
+                    // We ignore all unknown tags if necessary.
+
+                    if      (filters.contains(QLatin1String("FULL")))
+                    {
+                        // We don't filter the output (Photo Mode)
+
+                        new ExifToolListViewItem(parentGroupItem, it.key(), it.value()[0].toString(), it.value()[2].toString());
+                        ++subItems;
+                    }
+                    else if (!filters.isEmpty())
+                    {
+                        // We using the filter to make a more user friendly output (Custom Mode)
+
+                        // Filter is not a list of complete tag keys
+
+                        if      (!filters.at(0).contains(QLatin1Char('.')) &&
+                                 filters.contains(it.key().section(QLatin1Char('.'), -1)))
+                        {
+                            new ExifToolListViewItem(parentGroupItem, it.key(), it.value()[0].toString(), it.value()[2].toString());
+                            ++subItems;
+                            filters.removeAll(it.key());
+                        }
+                        else if (filters.contains(it.key()))
+                        {
+                            new ExifToolListViewItem(parentGroupItem, it.key(), it.value()[0].toString(), it.value()[2].toString());
+                            ++subItems;
+                            filters.removeAll(it.key());
+                        }
+/*                        else if (it.key().contains(QLatin1String("]/")))
+                        {
+                            // Special case to filter metadata tags in bag containers
+
+                            int propIndex = it.key().lastIndexOf(QLatin1Char(':'));
+                            int nameIndex = it.key().lastIndexOf(QLatin1Char('.'));
+
+                            if ((propIndex != -1) && (nameIndex != -1))
+                            {
+                                QString property  = it.key().mid(propIndex + 1);
+                                QString nameSpace = it.key().left(nameIndex + 1);
+
+                                if (filters.contains(nameSpace + property))
+                                {
+                                    QString tagTitle = m_parent->getTagTitle(it.key());
+                                    new MetadataListViewItem(parentifDItem, it.key(), tagTitle, it.value());
+                                    ++subItems;
+
+                                    if (it.key().contains(QLatin1String("[1]")))
+                                    {
+                                        filters.removeAll(nameSpace + property);
+                                    }
+                                }
+                            }
+                        }
+*/
+                    }
+                }
+            }
+        }
+
+        // We checking if the last IfD have any items. If no, we remove it.
+
+        if ((subItems == 0) && parentGroupItem)
+        {
+            delete parentGroupItem;
+        }
+    }
+
+    // Add not found tags from filter as grey items.
+
+    if (!filters.isEmpty() &&
+        (filters.at(0) != QLatin1String("FULL")) &&
+        filters.at(0).contains(QLatin1Char('.')))
+    {
+        foreach (const QString& key, filters)
+        {
+            ExifToolListViewGroup* pitem = findGroup(key);
+
+            if (!pitem)
+            {
+                QString grp = key.section(QLatin1Char('.'), 0, 0)
+                                 .replace(QLatin1Char('_'), QLatin1Char(' '));
+
+                pitem = new ExifToolListViewGroup(this, grp);
+            }
+
+            new ExifToolListViewItem(pitem, key);
+        }
+    }
+
+    setCurrentItemByKey(d->selectedItemKey);
+    update();
 }
 
 } // namespace Digikam
