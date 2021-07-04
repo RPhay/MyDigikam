@@ -110,8 +110,6 @@ void ExifToolListView::loadFromUrl(const QUrl& url)
     }
 
     d->lastError.clear();
-
-    return;
 }
 
 QString ExifToolListView::errorString() const
@@ -264,53 +262,6 @@ void ExifToolListView::slotSelectionChanged(QTreeWidgetItem* item, int)
 void ExifToolListView::setMetadata(const ExifToolParser::ExifToolData& map)
 {
     d->map = map;
-    d->simplifiedTagsList.clear();
-    QString simplifiedTag;
-
-    for (ExifToolParser::ExifToolData::const_iterator it = d->map.constBegin() ;
-         it != d->map.constEnd() ; ++it)
-    {
-        QString grp                   = it.key().section(QLatin1Char('.'), 0, 0)
-                                                .replace(QLatin1Char('_'), QLatin1Char(' '));
-
-        if (grp == QLatin1String("ExifTool"))
-        {
-            continue;
-        }
-
-        /** Key is format like this:
-         *
-         * EXIF.ExifIFD.Image.ExposureCompensation
-         * File.File.Other.FileType
-         * Composite.Composite.Time.SubSecModifyDate
-         * File.System.Time.FileInodeChangeDate
-         * File.System.Other.FileSize
-         * EXIF.GPS.Location.GPSLongitude
-         * ICC_Profile.ICC-header.Image.ProfileCreator
-         * EXIF.IFD1.Image.ThumbnailOffset
-         * JFIF.JFIF.Image.YResolution
-         * ICC_Profile.ICC_Profile.Image.GreenMatrixColumn
-         */
-        QString key                   = it.key();
-        QString value                 = it.value()[0].toString();
-        QString desc                  = it.value()[2].toString();
-        ExifToolListViewGroup* igroup = findGroup(grp);
-        simplifiedTag                 = grp + QLatin1Char('.') + it.key().section(QLatin1Char('.'), -1);
-
-        if (!d->simplifiedTagsList.contains(simplifiedTag))
-        {
-            d->simplifiedTagsList.append(simplifiedTag);
-
-            if (!igroup)
-            {
-                igroup = new ExifToolListViewGroup(this, grp);
-            }
-
-            new ExifToolListViewItem(igroup, key, value, desc);
-        }
-    }
-
-    setCurrentItemByKey(d->selectedItemKey);
 }
 
 void ExifToolListView::setGroupList(const QStringList& tagsFilter)
@@ -323,6 +274,19 @@ void ExifToolListView::setGroupList(const QStringList& tagsFilter)
     QStringList            filters         = tagsFilter;
     QString                groupItemName;
 
+    /** Key is formated like this:
+     *
+     * EXIF.ExifIFD.Image.ExposureCompensation
+     * File.File.Other.FileType
+     * Composite.Composite.Time.SubSecModifyDate
+     * File.System.Time.FileInodeChangeDate
+     * File.System.Other.FileSize
+     * EXIF.GPS.Location.GPSLongitude
+     * ICC_Profile.ICC-header.Image.ProfileCreator
+     * EXIF.IFD1.Image.ThumbnailOffset
+     * JFIF.JFIF.Image.YResolution
+     * ICC_Profile.ICC_Profile.Image.GreenMatrixColumn
+     */
     for (ExifToolParser::ExifToolData::const_iterator it = d->map.constBegin() ; it != d->map.constEnd() ; ++it)
     {
         // We checking if we have changed of GroupName

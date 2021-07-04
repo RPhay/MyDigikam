@@ -221,6 +221,7 @@ void ExifToolWidget::slotLoadingResult(bool ok)
 
     if (ok)
     {
+        buildView();
         SearchTextSettings settings = d->searchBar->searchTextSettings();
 
         if (!settings.text.isEmpty())
