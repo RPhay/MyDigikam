@@ -270,9 +270,8 @@ void ExifToolListView::setGroupList(const QStringList& tagsFilter, const QString
     d->simplifiedTagsList.clear();
     QString simplifiedTag;
 
-    ExifToolListViewGroup* parentGroupItem = nullptr;
-    QStringList            filters         = tagsFilter;
-    QString                groupItemName;
+    QStringList filters = tagsFilter;
+    QString groupItemName;
 
     /** Key is formated like this:
      *
@@ -287,7 +286,8 @@ void ExifToolListView::setGroupList(const QStringList& tagsFilter, const QString
      * JFIF.JFIF.Image.YResolution
      * ICC_Profile.ICC_Profile.Image.GreenMatrixColumn
      */
-    for (ExifToolParser::ExifToolData::const_iterator it = d->map.constBegin() ; it != d->map.constEnd() ; ++it)
+    for (ExifToolParser::ExifToolData::const_iterator it = d->map.constBegin() ;
+         it != d->map.constEnd() ; ++it)
     {
         // We checking if we have changed of GroupName
 
