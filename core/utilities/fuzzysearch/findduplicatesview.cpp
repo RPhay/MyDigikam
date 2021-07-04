@@ -538,7 +538,7 @@ void FindDuplicatesView::slotComplete()
     slotCheckForValidSettings();
     populateTreeView();
 
-    QTimer::singleShot(250, this, SLOT(slotSelectFirstItem()));
+    QTimer::singleShot(250, this, SLOT(slotSelectItemsTimer()));
 }
 
 void FindDuplicatesView::slotDuplicatesAlbumActived()
