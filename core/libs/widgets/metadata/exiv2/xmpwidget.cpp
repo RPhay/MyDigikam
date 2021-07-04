@@ -40,6 +40,9 @@
 namespace Digikam
 {
 
+namespace
+{
+
 static const char* StandardXmpEntryList[] =
 {
 
@@ -72,6 +75,8 @@ static const char* StandardXmpEntryList[] =
 
     "-1"
 };
+
+} // namespace
 
 XmpWidget::XmpWidget(QWidget* const parent, const QString& name)
     : MetadataWidget(parent, name)

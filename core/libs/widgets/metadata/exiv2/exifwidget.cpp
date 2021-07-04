@@ -56,7 +56,7 @@ static const char* StandardExifEntryList[] =
     "-1"
 };
 
-}
+} // namepsace
 
 namespace Digikam
 {

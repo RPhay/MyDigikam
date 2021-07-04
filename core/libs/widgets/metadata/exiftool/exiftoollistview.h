@@ -57,8 +57,8 @@ public:
     QString getCurrentItemKey() const;
     void    setCurrentItemByKey(const QString& itemKey);
 
-    void setGroupList(const QStringList& tagsFilter);
-    void setGroupList(const QStringList& keysFilter, const QStringList& tagsFilter);
+    void setGroupList(const QStringList& tagsFilter,
+                      const QStringList& keysFilter = QStringList());
 
 Q_SIGNALS:
 

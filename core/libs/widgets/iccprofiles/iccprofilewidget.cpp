@@ -45,6 +45,7 @@
 
 namespace
 {
+
 static const char* ICCHumanList[] =
 {
     "Icc.Header.ColorSpace",
@@ -64,7 +65,8 @@ static const char* ICCEntryList[] =
     "Header",
     "-1"
 };
-}
+
+} // namespace
 
 namespace Digikam
 {
@@ -215,6 +217,7 @@ bool ICCProfileWidget::setProfile(const IccProfile& profile)
         setMetadataEmpty();
         d->cieTongue->setProfileData();
         d->profile = IccProfile();
+
         return false;
     }
 
@@ -262,6 +265,7 @@ bool ICCProfileWidget::loadFromURL(const QUrl& url)
     {
         setProfile(IccProfile());
         d->cieTongue->setProfileData();
+
         return false;
     }
     else
@@ -272,6 +276,7 @@ bool ICCProfileWidget::loadFromURL(const QUrl& url)
         {
             setProfile(IccProfile());
             d->cieTongue->setProfileData();
+
             return false;
         }
     }
@@ -597,7 +602,8 @@ QString ICCProfileWidget::getTagTitle(const QString& key)
 void ICCProfileWidget::slotSaveMetadataToFile()
 {
     QUrl url = saveMetadataToFile(i18nc("@title: file open dialog", "ICC color profile File to Save"),
-                                  QString(QLatin1String("*.icc *.icm|") + i18nc("@info: file open filters", "ICC Files (*.icc; *.icm)")));
+                                  QString(QLatin1String("*.icc *.icm|") +
+                                  i18nc("@info: file open filters", "ICC Files (*.icc; *.icm)")));
     storeMetadataToFile(url, d->profile.data());
 }
 

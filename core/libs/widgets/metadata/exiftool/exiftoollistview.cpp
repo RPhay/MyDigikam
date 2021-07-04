@@ -264,7 +264,7 @@ void ExifToolListView::setMetadata(const ExifToolParser::ExifToolData& map)
     d->map = map;
 }
 
-void ExifToolListView::setGroupList(const QStringList& tagsFilter)
+void ExifToolListView::setGroupList(const QStringList& tagsFilter, const QStringList& keysFilter)
 {
     clear();
     d->simplifiedTagsList.clear();
@@ -296,6 +296,15 @@ void ExifToolListView::setGroupList(const QStringList& tagsFilter)
 
         if (currentGroupName == QLatin1String("ExifTool"))
         {
+            // Always ignore ExifTool errors or warnings.
+
+            continue;
+        }
+
+        if (!keysFilter.isEmpty() && !keysFilter.contains(currentGroupName))
+        {
+            // If group filters, always ignore not found entries.
+
             continue;
         }
 
@@ -372,134 +381,6 @@ void ExifToolListView::setGroupList(const QStringList& tagsFilter)
 
                 new ExifToolListViewItem(pitem, key);
             }
-        }
-    }
-
-    setCurrentItemByKey(d->selectedItemKey);
-    update();
-}
-
-void ExifToolListView::setGroupList(const QStringList& keysFilter, const QStringList& tagsFilter)
-{
-    clear();
-
-    QStringList            filters         = tagsFilter;
-    uint                   subItems        = 0;
-    ExifToolListViewGroup* parentGroupItem = nullptr;
-
-    if (d->map.count() == 0)
-    {
-        return;
-    }
-
-    for (QStringList::const_iterator itKeysFilter = keysFilter.constBegin() ;
-         itKeysFilter != keysFilter.constEnd() ; ++itKeysFilter)
-    {
-        subItems        = 0;
-        parentGroupItem = new ExifToolListViewGroup(this, *itKeysFilter);
-
-        ExifToolParser::ExifToolData::const_iterator it = d->map.constEnd();
-
-        while (it != d->map.constBegin())
-        {
-            --it;
-
-            if (*itKeysFilter == it.key().section(QLatin1Char('.'), 0, 0)
-                                         .replace(QLatin1Char('_'), QLatin1Char(' ')))
-            {
-                if      (tagsFilter.isEmpty())
-                {
-                    new ExifToolListViewItem(parentGroupItem, it.key(), it.value()[0].toString(), it.value()[2].toString());
-                    ++subItems;
-                }
-                else
-                {
-                    // We ignore all unknown tags if necessary.
-
-                    if      (filters.contains(QLatin1String("FULL")))
-                    {
-                        // We don't filter the output (Photo Mode)
-
-                        new ExifToolListViewItem(parentGroupItem, it.key(), it.value()[0].toString(), it.value()[2].toString());
-                        ++subItems;
-                    }
-                    else if (!filters.isEmpty())
-                    {
-                        // We using the filter to make a more user friendly output (Custom Mode)
-
-                        // Filter is not a list of complete tag keys
-
-                        if      (!filters.at(0).contains(QLatin1Char('.')) &&
-                                 filters.contains(it.key().section(QLatin1Char('.'), -1)))
-                        {
-                            new ExifToolListViewItem(parentGroupItem, it.key(), it.value()[0].toString(), it.value()[2].toString());
-                            ++subItems;
-                            filters.removeAll(it.key());
-                        }
-                        else if (filters.contains(it.key()))
-                        {
-                            new ExifToolListViewItem(parentGroupItem, it.key(), it.value()[0].toString(), it.value()[2].toString());
-                            ++subItems;
-                            filters.removeAll(it.key());
-                        }
-/*                        else if (it.key().contains(QLatin1String("]/")))
-                        {
-                            // Special case to filter metadata tags in bag containers
-
-                            int propIndex = it.key().lastIndexOf(QLatin1Char(':'));
-                            int nameIndex = it.key().lastIndexOf(QLatin1Char('.'));
-
-                            if ((propIndex != -1) && (nameIndex != -1))
-                            {
-                                QString property  = it.key().mid(propIndex + 1);
-                                QString nameSpace = it.key().left(nameIndex + 1);
-
-                                if (filters.contains(nameSpace + property))
-                                {
-                                    QString tagTitle = m_parent->getTagTitle(it.key());
-                                    new MetadataListViewItem(parentifDItem, it.key(), tagTitle, it.value());
-                                    ++subItems;
-
-                                    if (it.key().contains(QLatin1String("[1]")))
-                                    {
-                                        filters.removeAll(nameSpace + property);
-                                    }
-                                }
-                            }
-                        }
-*/
-                    }
-                }
-            }
-        }
-
-        // We checking if the last IfD have any items. If no, we remove it.
-
-        if ((subItems == 0) && parentGroupItem)
-        {
-            delete parentGroupItem;
-        }
-    }
-
-    // Add not found tags from filter as grey items.
-
-    if (!filters.isEmpty() &&
-        (filters.at(0) != QLatin1String("FULL")) &&
-        filters.at(0).contains(QLatin1Char('.')))
-    {
-        foreach (const QString& key, filters)
-        {
-            ExifToolListViewGroup* pitem = findGroup(key);
-
-            if (!pitem)
-            {
-                QString grp = key.section(QLatin1Char('.'), 0, 0)
-                                 .replace(QLatin1Char('_'), QLatin1Char(' '));
-
-                pitem = new ExifToolListViewGroup(this, grp);
-            }
-
-            new ExifToolListViewItem(pitem, key);
         }
     }
 

@@ -61,6 +61,27 @@
 namespace Digikam
 {
 
+namespace
+{
+
+/**
+ * Standard ExifTool entry list from the less important to the most important for photograph.
+ */
+static const char* StandardExifToolEntryList[] =
+{
+    "File",
+    "Composite",
+    "EXIF",
+    "IPTC",
+    "XMP",
+    "Makernotes",
+    "ICC Profile",
+    "JFIF",
+    "-1"
+};
+
+} // namespace
+
 class Q_DECL_HIDDEN ExifToolWidget::Private
 {
 public:
@@ -92,6 +113,10 @@ public:
           optionsMenu     (nullptr),
           preLoadingTimer (nullptr)
     {
+        for (int i = 0 ; QLatin1String(StandardExifToolEntryList[i]) != QLatin1String("-1") ; ++i)
+        {
+            keysFilter << QLatin1String(StandardExifToolEntryList[i]);
+        }
     }
 
     QAction*             noneAction;
@@ -111,6 +136,7 @@ public:
     QToolButton*         toolBtn;
 
     QStringList          tagsFilter;
+    QStringList          keysFilter;
 
     QAction*             saveMetadata;
     QAction*             printMetadata;
@@ -472,7 +498,7 @@ void ExifToolWidget::buildView()
 
         case PHOTO:
         {
-            d->view->setGroupList(QStringList() << QLatin1String("FULL"));
+            d->view->setGroupList(QStringList() << QLatin1String("FULL"), d->keysFilter);
             break;
         }
 

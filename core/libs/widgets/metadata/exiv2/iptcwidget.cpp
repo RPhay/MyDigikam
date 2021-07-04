@@ -47,7 +47,7 @@ static const char* StandardIptcEntryList[] =
     "-1"
 };
 
-}
+} // namespace
 
 namespace Digikam
 {
