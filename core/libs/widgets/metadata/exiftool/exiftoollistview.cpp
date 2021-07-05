@@ -382,6 +382,22 @@ void ExifToolListView::setGroupList(const QStringList& tagsFilter, const QString
                 new ExifToolListViewItem(pitem, key);
             }
         }
+
+        // Remove groups with no children.
+
+        QTreeWidgetItemIterator it(this);
+
+        while (*it)
+        {
+            ExifToolListViewGroup* const item = dynamic_cast<ExifToolListViewGroup*>(*it);
+
+            if (item && !item->childCount())
+            {
+                delete item;
+            }
+
+            ++it;
+        }
     }
 
     setCurrentItemByKey(d->selectedItemKey);
