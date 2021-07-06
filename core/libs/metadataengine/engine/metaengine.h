@@ -158,11 +158,6 @@ public:
     MetaEngine();
 
     /**
-     * Copy constructor.
-     */
-    MetaEngine(const MetaEngine& metadata);
-
-    /**
      * Constructor to load from parsed data.
      */
     explicit MetaEngine(const MetaEngineData& data);
@@ -176,11 +171,6 @@ public:
      * Standard destructor
      */
     virtual ~MetaEngine();
-
-    /**
-     * Create a copy of container
-     */
-    MetaEngine& operator=(const MetaEngine& metadata);
 
 public:
 
@@ -1319,6 +1309,17 @@ protected:
      * information in Exif and Iptc metadata
      */
     bool setProgramId() const;
+
+private:
+
+    // Disable copy constructor and operator to prevent potential slicing with this class, reported by Clazy static analyzer.
+    // https://github.com/KDE/clazy/blob/master/docs/checks/README-copyable-polymorphic.md
+    // This methods was implemented to be able to pass this class or a derived version to signals and slots. This is very
+    // Dangerous as virtual methods are present in this polymorphic class and is copyable.
+    // Instead to use this class in signals and slots, use MetaEngineData container.
+    // TODO: remove legacy implementations for these methods later if no side effect.
+    MetaEngine(const MetaEngine& metadata);
+    MetaEngine& operator=(const MetaEngine& metadata);
 
 private:
 
