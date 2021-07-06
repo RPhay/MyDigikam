@@ -81,14 +81,14 @@ AddTagsLineEdit::AddTagsLineEdit(QWidget* const parent)
             this, SLOT(slotTextEdited(QString)));
 
     connect(d->completer, QOverload<const TaggingAction&>::of(&TagCompleter::signalActivated),
-            [=](const TaggingAction& action)
+            this, [=](const TaggingAction& action)
             {
                 completerActivated(action);
             }
     );
 
     connect(d->completer, QOverload<const TaggingAction&>::of(&TagCompleter::signalHighlighted),
-            [=](const TaggingAction& action)
+            this, [=](const TaggingAction& action)
             {
                 completerHighlighted(action);
             }
