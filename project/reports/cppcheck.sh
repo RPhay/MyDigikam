@@ -81,7 +81,7 @@ cppcheck -j$CPU_CORES \
          --suppress=unknownMacro \
          --suppress=class_X_Y \
          --suppress=ConfigurationNotChecked \
-         --suppress=unmatchedSuppression \
+         --suppress=unmatchedSuppression:* \
          --suppress=useStlAlgorithm \
          --output-file=report.cppcheck.xml \
          $IGNORE_DIRS \
