@@ -108,8 +108,14 @@
 /* Define to 1 if changing application styles is supported */
 #cmakedefine HAVE_APPSTYLE_SUPPORT 1
 
-/* Define to 1 if system use QtWebEngine instead of QWebKit */
+/* Define to 1 if system use QtWebEngine */
 #cmakedefine HAVE_QWEBENGINE 1
+
+/* Define to 1 if system use QtWebKit */
+#cmakedefine HAVE_QWEBKIT 1
+
+/* Define to 1 if system has no QWeb */
+#cmakedefine HAVE_NOQWEB 1
 
 /* Define to 1 if system use QtXmlPatterns */
 #cmakedefine HAVE_QTXMLPATTERNS 1

@@ -15,7 +15,7 @@ message(STATUS "Check dependencies for ${PROJECT_NAME} version ${DIGIKAM_VERSION
 message(STATUS "")
 
 set(KF5_MIN_VERSION       "5.5.0")
-set(QT_MIN_VERSION        "5.9.0")
+#set(QT_MIN_VERSION        "5.9.0")
 set(EXIV2_MIN_VERSION     "0.27.0")
 set(OPENCV_MIN_VERSION    "3.3.0")
 set(LENSFUN_MIN_VERSION   "0.2.6.0")      # For Lens auto-correction plugin
@@ -33,7 +33,9 @@ option(ENABLE_AKONADICONTACTSUPPORT      "Build digiKam with KDE Mail Contacts s
 option(ENABLE_MEDIAPLAYER                "Build digiKam with Media Player support (default=OFF)"                              OFF)
 option(ENABLE_DBUS                       "Build digiKam with DBUS support (default=ON)"                                       ON)
 option(ENABLE_APPSTYLES                  "Build digiKam with support for changing the widget application style (default=OFF)" OFF)
-option(ENABLE_QWEBENGINE                 "Build digiKam with QWebEngine instead of QWebKit (default=ON)"                      ON)
+option(ENABLE_QWEBENGINE                 "Build digiKam with QWebEngine (default=OFF)"                                        OFF)
+option(ENABLE_QWEBKIT                    "Build digiKam with QWebKit (default=OFF)"                                           OFF)
+option(DISABLE_QWEB                      "Build digiKam without Web (default=ON)"                                             ON)
 
 # Mysql support options (experimental):
 option(ENABLE_MYSQLSUPPORT               "Build digiKam with MySQL dabatase support (default=ON)"                             ON)
@@ -52,7 +54,21 @@ endif()
 
 ############## Find Packages ###################
 
-find_package(Qt5 ${QT_MIN_VERSION} REQUIRED
+find_package(QT NAMES Qt6 Qt5 REQUIRED
+        NO_MODULE COMPONENTS
+        Core
+        Concurrent
+        Widgets
+        Gui
+        Sql
+        Xml
+        PrintSupport
+        Network
+        )
+
+message(STATUS "Qt Major Version found: ${QT_VERSION_MAJOR}")
+
+find_package(Qt${QT_VERSION_MAJOR} REQUIRED
              NO_MODULE COMPONENTS
              Core
              Concurrent
@@ -64,13 +80,19 @@ find_package(Qt5 ${QT_MIN_VERSION} REQUIRED
              Network
 )
 
-if(ENABLE_QWEBENGINE)
-    find_package(Qt5 ${QT_MIN_VERSION} REQUIRED NO_MODULE COMPONENTS WebEngineWidgets)
-else()
-    find_package(Qt5 ${QT_MIN_VERSION} REQUIRED NO_MODULE COMPONENTS WebKitWidgets)
-endif()
+if (Qt6_FOUND)
+    find_package(Qt${QT_VERSION_MAJOR} REQUIRED NO_MODULE COMPONENTS Core5Compat)
+endif ()
 
-find_package(Qt5 ${QT_MIN_VERSION}
+if (DISABLE_QWEB)
+
+elseif (ENABLE_QWEBENGINE)
+    find_package(Qt${QT_VERSION_MAJOR} REQUIRED NO_MODULE COMPONENTS WebEngineWidgets)
+elseif (ENABLE_QWEBKIT)
+    find_package(Qt${QT_VERSION_MAJOR} REQUIRED NO_MODULE COMPONENTS WebKitWidgets)
+endif ()
+
+find_package(Qt${QT_VERSION_MAJOR}
              OPTIONAL_COMPONENTS
              DBus
              OpenGL
@@ -78,7 +100,7 @@ find_package(Qt5 ${QT_MIN_VERSION}
 )
 
 if(ENABLE_DBUS)
-    if(NOT Qt5DBus_FOUND)
+    if(NOT Qt${QT_VERSION_MAJOR}DBus_FOUND)
         set(ENABLE_DBUS OFF)
     endif()
 endif()
@@ -86,16 +108,18 @@ endif()
 # Dependencies For unit tests and CLI test tools
 
 if(BUILD_TESTING)
-    find_package(Qt5 ${QT_MIN_VERSION} REQUIRED
+    find_package(Qt${QT_VERSION_MAJOR} REQUIRED
                  NO_MODULE COMPONENTS
                  Test
     )
 
-    find_package(Qt5 ${QT_MIN_VERSION}
-                 QUIET
-                 OPTIONAL_COMPONENTS
-                 Qml WebView  # Optional, for 'sialis' O2 library test tool.
-    )
+    if (NOT DISABLE_QWEB)
+        find_package(Qt${QT_VERSION_MAJOR}
+                     QUIET
+                     OPTIONAL_COMPONENTS
+                     Qml WebView  # Optional, for 'sialis' O2 library test tool.
+        )
+    endif()
 endif()
 
 find_package(KF5 ${KF5_MIN_VERSION} REQUIRED
@@ -290,12 +314,12 @@ endif()
 
 find_package(OpenGL)                               # For Presentation tool.
 
-message(STATUS "OpenGL found;               ${OPENGL_FOUND}")
-message(STATUS "OpenGL GLU extension found; ${OPENGL_GLU_FOUND}")
-message(STATUS "OpenGL Qt5 found;           ${Qt5OpenGL_FOUND}")
+message(STATUS "OpenGL found;                                 ${OPENGL_FOUND}")
+message(STATUS "OpenGL GLU extension found;                   ${OPENGL_GLU_FOUND}")
+message(STATUS "OpenGL Qt${QT_VERSION_MAJOR} found;           ${Qt${QT_VERSION_MAJOR}OpenGL_FOUND}")
 
 # decide if Presentation tool can be built with OpenGL
-if(OPENGL_FOUND AND OPENGL_GLU_FOUND AND Qt5OpenGL_FOUND)
+if(OPENGL_FOUND AND OPENGL_GLU_FOUND AND Qt${QT_VERSION_MAJOR}OpenGL_FOUND)
     set(HAVE_OPENGL TRUE)
 elseif()
     set(HAVE_OPENGL FALSE)
@@ -550,6 +574,8 @@ MACRO_BOOL_TO_01(ENABLE_MEDIAPLAYER           HAVE_MEDIAPLAYER)
 MACRO_BOOL_TO_01(ENABLE_DBUS                  HAVE_DBUS)
 MACRO_BOOL_TO_01(ENABLE_APPSTYLES             HAVE_APPSTYLE_SUPPORT)
 MACRO_BOOL_TO_01(ENABLE_QWEBENGINE            HAVE_QWEBENGINE)
+MACRO_BOOL_TO_01(ENABLE_QWEBKIT               HAVE_QWEBKIT)
+MACRO_BOOL_TO_01(DISABLE_QWEB                 HAVE_NOQWEB)
 MACRO_BOOL_TO_01(ENABLE_DRMINGW               HAVE_DRMINGW)
 MACRO_BOOL_TO_01(ImageMagick_Magick++_FOUND   HAVE_IMAGE_MAGICK)
 MACRO_BOOL_TO_01(X265_FOUND                   HAVE_X265)
@@ -586,7 +612,7 @@ PRINT_LIBRARY_STATUS("liblcms"       "https://github.com/mm2/Little-CMS"        
 PRINT_LIBRARY_STATUS("libopencv"     "https://opencv.org"                                "(version >= ${OPENCV_MIN_VERSION})" OpenCV_FOUND)
 PRINT_LIBRARY_STATUS("libpng"        "https://libpng.sourceforge.io/"                    "(version >= 1.2.7)"                 PNG_FOUND)
 PRINT_LIBRARY_STATUS("libpthread"    "https://www.gnu.org/software/hurd/libpthread.html" "(version >= 2.0.0)"                 CMAKE_USE_PTHREADS_INIT OR CMAKE_USE_WIN32_THREADS_INIT)
-PRINT_LIBRARY_STATUS("libqt"         "https://www.qt.io"                                 "(version >= ${QT_MIN_VERSION})"     Qt5_FOUND)
+PRINT_LIBRARY_STATUS("libqt"         "https://www.qt.io"                                 "(version >= ${QT_VERSION_MAJOR})"     Qt${QT_VERSION_MAJOR}_FOUND)
 PRINT_LIBRARY_STATUS("libtiff"       "https://gitlab.com/libtiff/libtiff/"               "(version >= 3.8.2)"                 TIFF_FOUND)
 
 # ==============================================================================
@@ -628,10 +654,10 @@ if(Boost_FOUND                          AND
    LCMS2_FOUND                          AND
    OpenCV_FOUND                         AND
    PNG_FOUND                            AND
-   Qt5_FOUND                            AND
+   Qt${QT_VERSION_MAJOR}_FOUND          AND
    TIFF_FOUND                           AND
    Threads_FOUND                        AND
-   (Qt5Test_FOUND OR NOT BUILD_TESTING) AND
+   (Qt${QT_VERSION_MAJOR}Test_FOUND OR NOT BUILD_TESTING) AND
    (CMAKE_USE_PTHREADS_INIT OR CMAKE_USE_WIN32_THREADS_INIT)
   )
     message(STATUS " digiKam can be compiled.................. YES")
