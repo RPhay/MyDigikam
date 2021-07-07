@@ -43,7 +43,9 @@ class DNGConverterTask : public ActionJob
 
 public:
 
-    explicit DNGConverterTask(QObject* const parent, const QUrl& url, const DNGConverterAction& action);
+    explicit DNGConverterTask(QObject* const parent,
+                              const QUrl& url,
+                              const DNGConverterAction& action);
     ~DNGConverterTask();
 
     void setBackupOriginalRawFile(bool b);
