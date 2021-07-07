@@ -222,6 +222,10 @@ public:
 
     virtual void parseResponse(INatTalker& talker,
                                const QByteArray& data) const = 0;
+
+private:
+
+    Q_DISABLE_COPY(Request)
 };
 
 // --------------------------------------------------------------------------------
@@ -565,6 +569,10 @@ public:
 private:
 
     QUrl m_url;
+
+private:
+
+    Q_DISABLE_COPY(LoadUrlRequest)
 };
 
 void INatTalker::loadUrl(const QUrl& imgUrl)
@@ -630,6 +638,10 @@ public:
 private:
 
     QString m_partialName;
+
+private:
+
+    Q_DISABLE_COPY(AutoCompletionRequest)
 };
 
 void INatTalker::taxonAutoCompletions(const QString& partialName)
@@ -743,6 +755,10 @@ private:
     double  m_latitude;
     double  m_longitude;
     QString m_query;
+
+private:
+
+    Q_DISABLE_COPY(NearbyPlacesRequest)
 };
 
 void INatTalker::nearbyPlaces(double latitude, double longitude)
@@ -833,13 +849,29 @@ public:
             }
             else
             {
-                INatTalker::NearbyObservation closestObscured(
-                    -1, 0.0, 0.0, MAX_DISTANGE_KM * 1000.0,
-                    true, m_taxon, m_latitude, m_longitude);
+                INatTalker::NearbyObservation closestObscured
+                (
+                    -1,
+                    0.0,
+                    0.0,
+                    MAX_DISTANGE_KM * 1000.0,
+                    true,
+                    m_taxon,
+                    m_latitude,
+                    m_longitude
+                );
 
-                INatTalker::NearbyObservation closestOpen(
-                    -1, 0.0, 0.0, MAX_DISTANGE_KM * 1000.0,
-                    false, m_taxon, m_latitude, m_longitude);
+                INatTalker::NearbyObservation closestOpen
+                (
+                    -1,
+                    0.0,
+                    0.0,
+                    MAX_DISTANGE_KM * 1000.0,
+                    false,
+                    m_taxon,
+                    m_latitude,
+                    m_longitude
+                );
 
                 QJsonArray results = json[RESULTS].toArray();
 
@@ -863,7 +895,7 @@ public:
                                                             latitude,
                                                             longitude);
 
-                    if (obscured)
+                    if      (obscured)
                     {
                         if (distanceMeters < closestObscured.m_distanceMeters)
                         {
@@ -914,6 +946,10 @@ private:
     double  m_longitude;
     double  m_radiusKm;
     QString m_query;
+
+private:
+
+    Q_DISABLE_COPY(NearbyObservationRequest)
 };
 
 void INatTalker::closestObservation(uint taxon, double latitude,
@@ -987,15 +1023,15 @@ public:
         }
     }
 
-    void parseScore(QJsonObject json, QList<ComputerVisionScore>& scores) const
+    void parseScore(const QJsonObject& json, QList<ComputerVisionScore>& scores) const
     {
         static const QString FREQUENCY_SCORE = QLatin1String("frequency_score");
         static const QString VISION_SCORE    = QLatin1String("vision_score");
         static const QString COMBINED_SCORE  = QLatin1String("combined_score");
 
-        double frequency_score = 0.0;
-        double vision_score    = 0.0;
-        double combined_score  = 0.0;
+        double frequency_score               = 0.0;
+        double vision_score                  = 0.0;
+        double combined_score                = 0.0;
         Taxon  taxon;
 
         if (json.contains(FREQUENCY_SCORE))
@@ -1052,6 +1088,10 @@ private:
 
     QString m_imagePath;
     QString m_tmpFilePath;
+
+private:
+
+    Q_DISABLE_COPY(ComputerVisionRequest)
 };
 
 void INatTalker::computerVision(const QUrl& localImage)
@@ -1176,6 +1216,10 @@ public:
 private:
 
     INatTalker::PhotoUploadRequest m_uploadRequest;
+
+private:
+
+    Q_DISABLE_COPY(CreateObservationRequest)
 };
 
 void INatTalker::createObservation(const QByteArray& parameters,
@@ -1233,6 +1277,10 @@ private:
 
     INatTalker::PhotoUploadRequest m_request;
     QString                        m_tmpImage;
+
+private:
+
+    Q_DISABLE_COPY(UploadPhotoRequest)
 };
 
 void INatTalker::uploadNextPhoto(const PhotoUploadRequest& request)
@@ -1298,6 +1346,10 @@ public:
 private:
 
     int m_observationId;
+
+private:
+
+    Q_DISABLE_COPY(DeleteObservationRequest)
 };
 
 /**
