@@ -66,6 +66,7 @@ public:
          * Write all available information
          */
         FullWrite,
+
         /**
          * Do a full write if and only if
          *     - metadata fields changed
@@ -76,6 +77,7 @@ public:
          * keywords to be written and only changes keywords.
          */
         FullWriteIfChanged,
+
         /**
          * Write only the changed parts.
          * Metadata fields which cannot be changed from MetadataHub (photographer ID etc.)
@@ -96,8 +98,10 @@ public:
 
     void load(const ItemInfo& info);
 
+    //@{
+
     /**
-     * Status
+     * Returnsthe metadata field Status.
      */
     Status dateTimeStatus()                                                 const;
     Status titlesStatus()                                                   const;
@@ -110,9 +114,13 @@ public:
     Status tagStatus(int albumId)                                           const;
     Status tagStatus(const QString& tagPath)                                const;
 
+    //@}
+
+    //@{
+
     /**
      * Returns if the metadata field has been changed
-     * with the corresponding set... method
+     * with the corresponding setter method.
      */
     bool dateTimeChanged()                                                  const;
     bool titlesChanged()                                                    const;
@@ -123,8 +131,13 @@ public:
     bool templateChanged()                                                  const;
     bool tagsChanged()                                                      const;
 
+    //@}
+
+    //@{
+
     /**
-     * Set dateTime to the given value, and the dateTime status to MetadataAvailable
+     * Set metadata field to the given value,
+     * and the metadata field status to the corresponding MetadataAvailable.
      */
     void setDateTime(const QDateTime& dateTime, Status status = MetadataAvailable);
     void setTitles(const CaptionsMap& titles, Status status = MetadataAvailable);
@@ -134,6 +147,8 @@ public:
     void setRating(int rating, Status status = MetadataAvailable);
     void setMetadataTemplate(const Template& t, Status status = MetadataAvailable);
     void setTag(int albumID, Status status = MetadataAvailable);
+
+    //@}
 
     /**
      * Returns the dateTime.
@@ -243,14 +258,15 @@ public:
      * @return Returns true if the info object has been changed
      */
     bool write(ItemInfo info, WriteMode writeMode = FullWrite);
+
     /**
      * With the currently applied changes, the given writeMode and settings,
      * returns if write(DMetadata), write(QString) or write(DImg) will actually
      * apply any changes.
      */
     bool willWriteMetadata(WriteMode writeMode,
-                           const MetaEngineSettingsContainer& settings = 
-                                MetaEngineSettings::instance()->settings()) const;
+                           const MetaEngineSettingsContainer& settings =
+                               MetaEngineSettings::instance()->settings()) const;
 
     /**
      * @brief changedFlags - used for selective metadata write. The result will be passed to metadatahub and it will
