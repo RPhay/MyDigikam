@@ -99,6 +99,7 @@ bool DMetadata::getItemTagsPath(QStringList& tagsPath,
                     {
                         if (entry.separator != QLatin1String("/"))
                         {
+                            tagsPath = tagsPath.replaceInStrings(QLatin1String("/"), QLatin1String("\\"));
                             tagsPath = tagsPath.replaceInStrings(entry.separator, QLatin1String("/"));
                         }
 

@@ -65,6 +65,8 @@ bool DMetadata::getItemFacesMap(QMultiMap<QString, QVariant>& faces) const
             break;
         }
 
+        person.replace(QLatin1Char('/'), QLatin1Char('\\'));
+
         // The WLPG tags have the format X.XX, Y.YY, W.WW, H.HH
         // That is, four decimal numbers ranging from 0-1.
         // The top left position is indicated by X.XX, Y.YY (as a
@@ -122,6 +124,8 @@ bool DMetadata::getItemFacesMap(QMultiMap<QString, QVariant>& faces) const
         {
             break;
         }
+
+        person.replace(QLatin1Char('/'), QLatin1Char('\\'));
 
         // Ignore the full size face region.
         // See bug 437708 (Lumia 930 Windows Phone)

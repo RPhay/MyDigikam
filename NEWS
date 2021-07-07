@@ -393,4 +393,5 @@ BUGFIXES:
 369 ==> 439436 - Problems with video-slideshow.
 370 ==> 439443 - Import - DeviceSettings.
 371 ==> 439486 - I need your help for German translation.
-372 ==> 
+372 ==> 439523 - People tags don´t allow slash "/". Only the text after the slash is displayed.
+373 ==> 
