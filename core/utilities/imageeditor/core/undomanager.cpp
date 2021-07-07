@@ -93,7 +93,7 @@ void UndoManager::addAction(UndoAction* const action)
 
     UndoAction* const lastAction               = d->undoActions.isEmpty() ? nullptr : d->undoActions.last();
 
-    d->undoActions << action;
+    d->undoActions.append(action);
 
     // action has already read the "history before step" from EditorCore in its constructor
 
@@ -324,7 +324,7 @@ void UndoManager::redoStep(bool execute, bool flyingRollback)
 
     if (execute)
     {
-        if (irreversible || flyingRollback)
+        if      (irreversible || flyingRollback)
         {
             restoreSnapshot(d->undoActions.size() + 1, dataAfterStep);
         }
