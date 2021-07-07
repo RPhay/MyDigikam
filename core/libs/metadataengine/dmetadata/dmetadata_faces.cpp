@@ -60,12 +60,12 @@ bool DMetadata::getItemFacesMap(QMultiMap<QString, QVariant>& faces) const
         QString person     = getXmpTagString(personPathTemplate.arg(i).toLatin1().constData(), false);
         QString rectString = getXmpTagString(rectPathTemplate.arg(i).toLatin1().constData(), false);
 
+        person.replace(QLatin1Char('/'), QLatin1Char('\\'));
+
         if (rectString.isEmpty() && person.isEmpty())
         {
             break;
         }
-
-        person.replace(QLatin1Char('/'), QLatin1Char('\\'));
 
         // The WLPG tags have the format X.XX, Y.YY, W.WW, H.HH
         // That is, four decimal numbers ranging from 0-1.
@@ -111,6 +111,8 @@ bool DMetadata::getItemFacesMap(QMultiMap<QString, QVariant>& faces) const
     {
         QString person = getXmpTagString(mwg_personPathTemplate.arg(i).toLatin1().constData(), false);
 
+        person.replace(QLatin1Char('/'), QLatin1Char('\\'));
+
         // x and y is the center point
 
         float x = getXmpTagString(mwg_rect_x_PathTemplate.arg(i).toLatin1().constData(), false).toFloat();
@@ -124,8 +126,6 @@ bool DMetadata::getItemFacesMap(QMultiMap<QString, QVariant>& faces) const
         {
             break;
         }
-
-        person.replace(QLatin1Char('/'), QLatin1Char('\\'));
 
         // Ignore the full size face region.
         // See bug 437708 (Lumia 930 Windows Phone)
