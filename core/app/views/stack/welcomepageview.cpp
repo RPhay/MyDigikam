@@ -32,6 +32,7 @@
 #include <QFileInfo>
 #include <QTimer>
 #include <QWidget>
+#include <QLabel>
 #include <QApplication>
 #include <QStandardPaths>
 
@@ -53,6 +54,8 @@
 
 namespace Digikam
 {
+
+#ifndef HAVE_NOQWEB
 
 #ifdef HAVE_QWEBENGINE
 
@@ -279,4 +282,12 @@ void WelcomePageView::slotThemeChanged()
     setHtml(content, QUrl::fromLocalFile(locationHtml));
 }
 
+#else
+
+WelcomePageView::WelcomePageView(QWidget *parent)
+: QLabel(QLatin1String("Dummy widget"), parent)
+{
+}
+
+#endif
 } // namespace Digikam

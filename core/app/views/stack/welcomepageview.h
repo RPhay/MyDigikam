@@ -34,12 +34,14 @@
 #include <QByteArray>
 #include <QString>
 #include <QUrl>
+#include <QWidget>
+#include <QLabel>
 
 #ifdef HAVE_QWEBENGINE
 #   include <QWebEngineView>
 #   include <QWebEnginePage>
 #   include <QWebEngineSettings>
-#else
+#elif defined HAVE_QWEBKIT
 #   include <qwebview.h>
 #endif
 
@@ -73,11 +75,9 @@ Q_SIGNALS:
 
 class WelcomePageView : public QWebEngineView
 
-#else
+#elif defined HAVE_QWEBKIT
 
 class WelcomePageView : public QWebView
-
-#endif
 
 {
     Q_OBJECT
@@ -98,6 +98,18 @@ private Q_SLOTS:
     void slotUrlOpen(const QUrl&);
     void slotThemeChanged();
 };
+
+#elif defined HAVE_NOQWEB
+
+class WelcomePageView : public QLabel {
+    Q_OBJECT
+
+public:
+    explicit WelcomePageView(QWidget *parent);
+    ~WelcomePageView()                                        override = default;
+};
+
+#endif
 
 } // namespace Digikam
 
