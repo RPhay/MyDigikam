@@ -21,9 +21,10 @@
  *
  * ============================================================ */
 #include "dnowebwidget.h"
+#include <klocalizedstring.h>
 
 DNoWebWidget::DNoWebWidget(QWidget *parent)
 : QLabel(parent)
 {
-    setText(QLatin1String("Warning: No WebEngine/Webkit was found. Web content cannot be loaded"));
+    setText(i18n("Warning: No WebEngine/Webkit was found. Web content cannot be loaded"));
 }
