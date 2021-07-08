@@ -32,8 +32,10 @@
 #   include <QWebEnginePage>
 #   include <QWebEngineProfile>
 #   include <QWebEngineCookieStore>
-#else
+#elif defined HAVE_QWEBKIT
 #   include <qwebview.h>
+#else
+#   include "dnowebwidget.h"
 #endif
 
 #include <QMessageBox>
@@ -54,6 +56,8 @@
 #include "digikam_debug.h"
 #include "vkontakte_util.h"
 
+using namespace Digikam;
+
 namespace Vkontakte
 {
 
@@ -69,9 +73,12 @@ public:
 
     QWebEngineView*                  webView;
 
-#else
+#elif defined HAVE_QWEBKIT
 
     QWebView*                        webView;
+
+#else
+    DNoWebWidget*                    webView;
 
 #endif
 
@@ -99,11 +106,14 @@ AuthenticationDialog::AuthenticationDialog(QWidget* const parent)
     d->webView = new QWebEngineView(this);
     d->webView->page()->profile()->cookieStore()->deleteAllCookies();
 
-#else
+#elif defined HAVE_QWEBKIT
 
     d->webView = new QWebView(this);
     d->webView->settings()->setAttribute(QWebSettings::LocalStorageEnabled, true);
     d->webView->page()->networkAccessManager()->setCookieJar(new QNetworkCookieJar());
+
+#else
+    d->webView = new DNoWebWidget(this);
 
 #endif
 
