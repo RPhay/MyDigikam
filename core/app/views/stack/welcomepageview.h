@@ -99,16 +99,6 @@ private Q_SLOTS:
     void slotThemeChanged();
 };
 
-#elif defined HAVE_NOQWEB
-
-class WelcomePageView : public QLabel {
-    Q_OBJECT
-
-public:
-    explicit WelcomePageView(QWidget *parent);
-    ~WelcomePageView()                                        override = default;
-};
-
 #endif
 
 } // namespace Digikam

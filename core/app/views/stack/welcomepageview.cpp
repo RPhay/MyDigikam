@@ -282,12 +282,5 @@ void WelcomePageView::slotThemeChanged()
     setHtml(content, QUrl::fromLocalFile(locationHtml));
 }
 
-#else
-
-WelcomePageView::WelcomePageView(QWidget *parent)
-: QLabel(QLatin1String("Dummy widget"), parent)
-{
-}
-
 #endif
 } // namespace Digikam

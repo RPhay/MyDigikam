@@ -20,3 +20,7 @@ add_subdirectory(facemanagement)
 if(${Marble_FOUND})
     add_subdirectory(geolocation)
 endif()
+
+if(DISABLE_QWEB)
+    add_subdirectory(nowebwidget)
+endif()
