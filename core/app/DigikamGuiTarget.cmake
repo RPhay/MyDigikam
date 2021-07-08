@@ -268,14 +268,14 @@ if(ENABLE_QWEBENGINE)
 
     target_link_libraries(digikamgui
                           PRIVATE
-                          Qt5::WebEngineWidgets
+                          Qt${QT_VERSION_MAJOR}::WebEngineWidgets
     )
 
-else()
+elseif(ENABLE_QWEBKIT)
 
     target_link_libraries(digikamgui
                           PRIVATE
-                          Qt5::WebKitWidgets
+                          Qt${QT_VERSION_MAJOR}::WebKitWidgets
     )
 
 endif()
