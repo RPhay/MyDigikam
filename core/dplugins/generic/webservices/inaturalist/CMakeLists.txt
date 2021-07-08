@@ -17,14 +17,13 @@ include_directories($<TARGET_PROPERTY:Qt5::Widgets,INTERFACE_INCLUDE_DIRECTORIES
 
 if(ENABLE_QWEBENGINE)
     include_directories($<TARGET_PROPERTY:Qt5::WebEngineWidgets,INTERFACE_INCLUDE_DIRECTORIES>)
-else()
+else(ENABLE_QWEBKIT)
     include_directories($<TARGET_PROPERTY:Qt5::WebKitWidgets,INTERFACE_INCLUDE_DIRECTORIES>)
 endif()
 
 # --------------------------------------------------------------------------------
 
 set(inatplugin_SRCS
-    ${CMAKE_CURRENT_SOURCE_DIR}/inatbrowserdlg.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/inatplugin.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/inatscore.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/inatsuggest.cpp
@@ -35,6 +34,13 @@ set(inatplugin_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/inatwindow.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/inatutils.cpp
 )
+
+if(ENABLE_QWEBENGINE OR ENABLE_QWEBKIT)
+    set(inatplugin_SRCS
+            ${inatplugin_SRCS}
+            ${CMAKE_CURRENT_SOURCE_DIR}/inatbrowserdlg.cpp
+            )
+endif()
 
 DIGIKAM_ADD_GENERIC_PLUGIN(NAME    iNaturalist
                            SOURCES ${inatplugin_SRCS}

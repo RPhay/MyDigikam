@@ -8,6 +8,7 @@ APPLY_COMMON_POLICIES()
 
 set(libnowebwidget_SRCS
         ${CMAKE_CURRENT_SOURCE_DIR}/dnowebwidget.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/dnowebdlg.cpp
         )
 
 include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Sql,INTERFACE_INCLUDE_DIRECTORIES>
