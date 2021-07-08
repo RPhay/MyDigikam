@@ -124,6 +124,8 @@ public:
     bool                                invalid;
 };
 
+// --------------------------------------------------------------------------------
+
 class Q_DECL_HIDDEN DisjointMetadata::Private : public DisjointMetadataDataFields
 {
 public:
@@ -139,17 +141,54 @@ public:
     {
     }
 
-    QMutex mutex;
-
 public:
 
     template <class T> void loadSingleValue(const T& data,
                                             T& storage,
                                             DisjointMetadata::Status& status);
-    void makeConnections(DisjointMetadata* q);
+    void makeConnections(DisjointMetadata* const q);
+
+public:
+
+    QMutex mutex;
 };
 
-void DisjointMetadata::Private::makeConnections(DisjointMetadata* q)
+template <class T> void DisjointMetadata::Private::loadSingleValue(const T& data,
+                                                                   T& storage,
+                                                                   DisjointMetadata::Status& status)
+{
+    switch (status)
+    {
+        case DisjointMetadata::MetadataInvalid:
+        {
+            storage = data;
+            status  = DisjointMetadata::MetadataAvailable;
+            break;
+        }
+
+        case DisjointMetadata::MetadataAvailable:
+        {
+            // we have two values. If they are equal, status is unchanged
+
+            if (data == storage)
+            {
+                break;
+            }
+
+            // they are not equal. We need to enter the disjoint state.
+
+            status = DisjointMetadata::MetadataDisjoint;
+            break;
+        }
+
+        case DisjointMetadata::MetadataDisjoint:
+        {
+            break;
+        }
+    }
+}
+
+void DisjointMetadata::Private::makeConnections(DisjointMetadata* const q)
 {
     QObject::connect(TagsCache::instance(), SIGNAL(tagDeleted(int)),
                      q, SLOT(slotTagDeleted(int)),
@@ -963,40 +1002,6 @@ QMap<int, DisjointMetadata::Status> DisjointMetadata::tags() const
     // DatabaseMode == ManagedTags is assumed
 
     return d->tags;
-}
-
-template <class T> void DisjointMetadata::Private::loadSingleValue(const T& data, T& storage,
-                                                                   DisjointMetadata::Status& status)
-{
-    switch (status)
-    {
-        case DisjointMetadata::MetadataInvalid:
-        {
-            storage = data;
-            status  = DisjointMetadata::MetadataAvailable;
-            break;
-        }
-
-        case DisjointMetadata::MetadataAvailable:
-        {
-            // we have two values. If they are equal, status is unchanged
-
-            if (data == storage)
-            {
-                break;
-            }
-
-            // they are not equal. We need to enter the disjoint state.
-
-            status = DisjointMetadata::MetadataDisjoint;
-            break;
-        }
-
-        case DisjointMetadata::MetadataDisjoint:
-        {
-            break;
-        }
-    }
 }
 
 } // namespace Digikam
