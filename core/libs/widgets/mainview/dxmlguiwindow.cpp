@@ -73,7 +73,11 @@
 #include "digikam_globals.h"
 #include "daboutdata.h"
 #include "dpluginloader.h"
-#include "webbrowserdlg.h"
+#if defined HAVE_QWEBENGINE || defined HAVE_QWEBKIT
+    #include "webbrowserdlg.h"
+#else
+    #include "dnowebdlg.h"
+#endif
 #include "solidhardwaredlg.h"
 
 namespace Digikam
@@ -823,7 +827,11 @@ void DXmlGuiWindow::openHandbook()
     QUrl url = QUrl(QString::fromUtf8("https://docs.kde.org/?application=%1&branch=trunk5")
                .arg(QApplication::applicationName()));
 
+#if defined HAVE_QWEBENGINE || defined HAVE_QWEBKIT
     WebBrowserDlg* const browser = new WebBrowserDlg(url, qApp->activeWindow());
+#else
+    DNoWebDialog* const browser = new DNoWebDialog(url, qApp->activeWindow());
+#endif
     browser->show();
 }
 
@@ -917,22 +925,39 @@ void DXmlGuiWindow::slotSolidHardwareList()
 
 void DXmlGuiWindow::slotDonateMoney()
 {
+
+#if defined HAVE_QWEBENGINE || defined HAVE_QWEBKIT
     WebBrowserDlg* const browser = new WebBrowserDlg(QUrl(QLatin1String("https://www.digikam.org/donate/")),
                                                      qApp->activeWindow());
+#else
+    DNoWebDialog* const browser = new DNoWebDialog(QUrl(QLatin1String("https://www.digikam.org/donate/")),
+                                                   qApp->activeWindow());
+#endif
     browser->show();
 }
 
 void DXmlGuiWindow::slotRecipesBook()
 {
+
+#if defined HAVE_QWEBENGINE || defined HAVE_QWEBKIT
     WebBrowserDlg* const browser = new WebBrowserDlg(QUrl(QLatin1String("https://www.digikam.org/recipes_book/")),
                                                      qApp->activeWindow());
+#else
+    DNoWebDialog* const browser = new DNoWebDialog(QUrl(QLatin1String("https://www.digikam.org/recipes_book/")),
+                                                   qApp->activeWindow());
+#endif
     browser->show();
 }
 
 void DXmlGuiWindow::slotContribute()
 {
+#if defined HAVE_QWEBENGINE || defined HAVE_QWEBKIT
     WebBrowserDlg* const browser = new WebBrowserDlg(QUrl(QLatin1String("https://www.digikam.org/contribute/")),
                                                      qApp->activeWindow());
+#else
+    DNoWebDialog* const browser = new DNoWebDialog(QUrl(QLatin1String("https://www.digikam.org/contribute/")),
+                                                   qApp->activeWindow());
+#endif
     browser->show();
 }
 
