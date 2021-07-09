@@ -47,6 +47,21 @@ namespace Digikam
  */
 class DisjointMetadataDataFields
 {
+
+public:
+
+    /**
+     * The status enum describes the result of joining several metadata sets.
+     * If only one set has been added, the status is always MetadataAvailable.
+     * If no set has been added, the status is always MetadataInvalid
+     */
+    enum Status
+    {
+        MetadataInvalid,   ///< Not yet filled with any value
+        MetadataAvailable, ///< Only one data set has been added, or a common value is available
+        MetadataDisjoint   ///< No common value is available. For rating and dates, the interval is available.
+    };
+
 public:
 
     DisjointMetadataDataFields()
@@ -66,57 +81,57 @@ public:
           rating            (-1),
           highestRating     (-1),
           count             (0),
-          dateTimeStatus    (DisjointMetadata::MetadataInvalid),
-          titlesStatus      (DisjointMetadata::MetadataInvalid),
-          commentsStatus    (DisjointMetadata::MetadataInvalid),
-          pickLabelStatus   (DisjointMetadata::MetadataInvalid),
-          colorLabelStatus  (DisjointMetadata::MetadataInvalid),
-          ratingStatus      (DisjointMetadata::MetadataInvalid),
-          templateStatus    (DisjointMetadata::MetadataInvalid),
+          dateTimeStatus    (MetadataInvalid),
+          titlesStatus      (MetadataInvalid),
+          commentsStatus    (MetadataInvalid),
+          pickLabelStatus   (MetadataInvalid),
+          colorLabelStatus  (MetadataInvalid),
+          ratingStatus      (MetadataInvalid),
+          templateStatus    (MetadataInvalid),
           invalid           (false)
     {
     }
 
-    bool                                dateTimeChanged;
-    bool                                titlesChanged;
-    bool                                commentsChanged;
-    bool                                pickLabelChanged;
-    bool                                colorLabelChanged;
-    bool                                ratingChanged;
-    bool                                templateChanged;
-    bool                                tagsChanged;
-    bool                                withoutTags;
+    bool              dateTimeChanged;
+    bool              titlesChanged;
+    bool              commentsChanged;
+    bool              pickLabelChanged;
+    bool              colorLabelChanged;
+    bool              ratingChanged;
+    bool              templateChanged;
+    bool              tagsChanged;
+    bool              withoutTags;
 
-    int                                 pickLabel;
-    int                                 highestPickLabel;
-    int                                 colorLabel;
-    int                                 highestColorLabel;
-    int                                 rating;
-    int                                 highestRating;
-    int                                 count;
+    int               pickLabel;
+    int               highestPickLabel;
+    int               colorLabel;
+    int               highestColorLabel;
+    int               rating;
+    int               highestRating;
+    int               count;
 
-    QDateTime                           dateTime;
-    QDateTime                           lastDateTime;
+    QDateTime         dateTime;
+    QDateTime         lastDateTime;
 
-    CaptionsMap                         titles;
-    CaptionsMap                         comments;
+    CaptionsMap       titles;
+    CaptionsMap       comments;
 
-    Template                            metadataTemplate;
+    Template          metadataTemplate;
 
-    QMap<int, DisjointMetadata::Status> tags;
+    QMap<int, Status> tags;
 
-    QStringList                         tagList;
+    QStringList       tagList;
 
-    DisjointMetadata::Status            dateTimeStatus;
-    DisjointMetadata::Status            titlesStatus;
-    DisjointMetadata::Status            commentsStatus;
-    DisjointMetadata::Status            pickLabelStatus;
-    DisjointMetadata::Status            colorLabelStatus;
-    DisjointMetadata::Status            ratingStatus;
-    DisjointMetadata::Status            templateStatus;
+    Status            dateTimeStatus;
+    Status            titlesStatus;
+    Status            commentsStatus;
+    Status            pickLabelStatus;
+    Status            colorLabelStatus;
+    Status            ratingStatus;
+    Status            templateStatus;
 
-    QList<int>                          tagIds;
-    bool                                invalid;
+    QList<int>        tagIds;
+    bool              invalid;
 };
 
 } // namespace Digikam

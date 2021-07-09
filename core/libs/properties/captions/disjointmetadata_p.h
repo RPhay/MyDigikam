@@ -33,7 +33,6 @@
 
 // Local includes
 
-#include "disjointmetadatadatafields.h"
 #include "templatemanager.h"
 #include "tagscache.h"
 #include "coredbaccess.h"
@@ -62,18 +61,18 @@ public:
     template <class T>
     void loadSingleValue(const T& data,
                          T& storage,
-                         DisjointMetadata::Status& status)
+                         DisjointMetadataDataFields::Status& status)
     {
         switch (status)
         {
-            case DisjointMetadata::MetadataInvalid:
+            case DisjointMetadataDataFields::MetadataInvalid:
             {
                 storage = data;
-                status  = DisjointMetadata::MetadataAvailable;
+                status  = DisjointMetadataDataFields::MetadataAvailable;
                 break;
             }
 
-            case DisjointMetadata::MetadataAvailable:
+            case DisjointMetadataDataFields::MetadataAvailable:
             {
                 // we have two values. If they are equal, status is unchanged
 
@@ -84,11 +83,11 @@ public:
 
                 // they are not equal. We need to enter the disjoint state.
 
-                status = DisjointMetadata::MetadataDisjoint;
+                status = DisjointMetadataDataFields::MetadataDisjoint;
                 break;
             }
 
-            case DisjointMetadata::MetadataDisjoint:
+            case DisjointMetadataDataFields::MetadataDisjoint:
             {
                 break;
             }

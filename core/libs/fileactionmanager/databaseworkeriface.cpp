@@ -74,11 +74,11 @@ void FileActionMngrDatabaseWorker::changeTags(const FileActionItemInfoList& info
             {
                 if (addOrRemove)
                 {
-                    hub.setTag(*tagIt, DisjointMetadata::MetadataAvailable);
+                    hub.setTag(*tagIt, DisjointMetadataDataFields::MetadataAvailable);
                 }
                 else
                 {
-                    hub.setTag(*tagIt, DisjointMetadata::MetadataInvalid);
+                    hub.setTag(*tagIt, DisjointMetadataDataFields::MetadataInvalid);
                 }
             }
 
