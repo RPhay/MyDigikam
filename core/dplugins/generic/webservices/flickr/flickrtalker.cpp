@@ -50,7 +50,11 @@
 #include "wstoolutils.h"
 #include "flickrmpform.h"
 #include "flickrwindow.h"
-#include "webbrowserdlg.h"
+#if defined HAVE_QWEBENGINE || defined HAVE_QWEBKIT
+    #include "webbrowserdlg.h"
+#else
+    #include "dnowebdlg.h"
+#endif
 #include "digikam_debug.h"
 #include "digikam_config.h"
 #include "digikam_version.h"
@@ -131,7 +135,11 @@ public:
     O0SettingsStore*       store;
     O1Requestor*           requestor;
 
-    WebBrowserDlg*         browser;
+#if defined HAVE_QWEBENGINE || defined HAVE_QWEBKIT
+    WebBrowserDlg*                  browser;
+#else
+    DNoWebDialog*                   browser;
+#endif
 };
 
 FlickrTalker::FlickrTalker(QWidget* const parent,
@@ -302,7 +310,11 @@ void FlickrTalker::slotOpenBrowser(const QUrl& url)
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Open Browser... (" << url << ")";
 
     delete d->browser;
+#if defined HAVE_QWEBENGINE || defined HAVE_QWEBKIT
     d->browser = new WebBrowserDlg(url, d->parent, true);
+#else
+    d->browser = new DNoWebDialog(url, d->parent, true);
+#endif
     d->browser->setModal(true);
 
     connect(d->browser, SIGNAL(urlChanged(QUrl)),
