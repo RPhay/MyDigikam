@@ -278,7 +278,7 @@ DatabaseServerError DatabaseServer::checkDatabaseDirs() const
 
         return DatabaseServerError(DatabaseServerError::StartError,
                                    i18n("No path to mysql server command set "
-                                        "in configuration file!"));
+                                        "in configuration file."));
     }
 
     if (d->mysqldInitPath.isEmpty())
@@ -287,7 +287,7 @@ DatabaseServerError DatabaseServer::checkDatabaseDirs() const
 
         return DatabaseServerError(DatabaseServerError::StartError,
                                    i18n("No path to mysql initialization "
-                                        "command set in configuration file!."));
+                                        "command set in configuration file."));
     }
 
     if (d->mysqlAdminPath.isEmpty())
@@ -296,7 +296,7 @@ DatabaseServerError DatabaseServer::checkDatabaseDirs() const
 
         return DatabaseServerError(DatabaseServerError::StartError,
                                    i18n("No path to mysql administration "
-                                        "command set in configuration file!."));
+                                        "command set in configuration file."));
     }
 
     if (!QFile::exists(d->dataDir) && !QDir().mkpath(d->dataDir))
