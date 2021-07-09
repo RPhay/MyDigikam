@@ -30,6 +30,11 @@ DisjointMetadata::Private::Private()
 {
 }
 
+DisjointMetadata::Private::Private(const DisjointMetadataDataFields& other)
+    : DisjointMetadataDataFields(other)
+{
+}
+
 DisjointMetadata::Private::Private(const Private& other)
     : DisjointMetadataDataFields(other)
 {

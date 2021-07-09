@@ -831,4 +831,22 @@ QMap<int, DisjointMetadataDataFields::Status> DisjointMetadata::tags() const
     return d->tags;
 }
 
+DisjointMetadataDataFields DisjointMetadata::dataFields() const
+{
+    DisjointMetadataDataFields data(*d);
+
+    return data;
+}
+
+void DisjointMetadata::setDataFields(const DisjointMetadataDataFields& data)
+{
+    if (d)
+    {
+        delete d;
+    }
+
+    d = new Private(data);
+    d->makeConnections(this);
+}
+
 } // namespace Digikam

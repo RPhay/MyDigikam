@@ -52,6 +52,7 @@ public:
 
     // use the automatic copy constructor
 
+    explicit Private(const DisjointMetadataDataFields& other);
     explicit Private(const Private& other);
 
 public:

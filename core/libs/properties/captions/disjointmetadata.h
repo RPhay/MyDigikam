@@ -78,10 +78,13 @@ public:
 public:
 
     DisjointMetadata();
-    DisjointMetadata(const DisjointMetadata& other);
     ~DisjointMetadata()                                                           override;
 
+    DisjointMetadata(const DisjointMetadata& other);
     DisjointMetadata& operator=(const DisjointMetadata& other);
+
+    DisjointMetadataDataFields dataFields()                                 const;
+    void setDataFields(const DisjointMetadataDataFields& data);
 
     void reset();
 
