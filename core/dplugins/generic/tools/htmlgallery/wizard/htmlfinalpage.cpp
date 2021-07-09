@@ -48,7 +48,11 @@
 #include "digikam_debug.h"
 #include "dprogresswdg.h"
 #include "dhistoryview.h"
-#include "webbrowserdlg.h"
+#if defined HAVE_QWEBENGINE || defined HAVE_QWEBKIT
+    #include "webbrowserdlg.h"
+#else
+    #include "dnowebdlg.h"
+#endif
 
 namespace DigikamGenericHtmlGalleryPlugin
 {
@@ -182,10 +186,17 @@ void HTMLFinalPage::slotProcess()
 
         case GalleryConfig::INTERNAL:
         {
+#if defined HAVE_QWEBENGINE || defined HAVE_QWEBKIT
             WebBrowserDlg* const browser = new WebBrowserDlg(url, this);
             browser->show();
             d->progressView->addEntry(i18n("Opening gallery with internal browser..."),
                                       DHistoryView::ProgressEntry);
+#else
+            DNoWebDialog* const dialog = new DNoWebDialog(url, this);
+            dialog->show();
+            d->progressView->addEntry(i18n("No WebEngine/WebKit found..."),
+                                      DHistoryView::ProgressEntry);
+#endif
             break;
         }
 
