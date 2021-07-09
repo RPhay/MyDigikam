@@ -45,4 +45,39 @@ void DNoWebWidget::setUrl(const QUrl &url)
 {
 }
 
+void DNoWebWidget::setSharedGeoIfaceObject(GeoIfaceSharedData *const sharedData)
+{
+}
+
+void DNoWebWidget::load(const QUrl &url)
+{
+}
+
+QVariant DNoWebWidget::runScript(const QString &scriptCode, bool async)
+{
+    return {};
+}
+
+bool DNoWebWidget::runScript2Coordinates(const QString &scriptCode, GeoCoordinates *const coordinates)
+{
+    return false;
+}
+
+void DNoWebWidget::setSelectionRectangle(const GeoCoordinates::Pair &searchCoordinates)
+{
+}
+
+void DNoWebWidget::removeSelectionRectangle()
+{
+}
+
+void DNoWebWidget::mouseModeChanged(const GeoMouseModes mouseMode)
+{
+}
+
+void DNoWebWidget::centerOn(const qreal west, const qreal north, const qreal east, const qreal south,
+                            const bool useSaneZoomLevel)
+{
+}
+
 }

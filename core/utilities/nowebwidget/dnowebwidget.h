@@ -26,7 +26,14 @@
 #ifndef DIGIKAM_DNOWEBWIDGET_H
 #define DIGIKAM_DNOWEBWIDGET_H
 
+// Qt includes
+
 #include <QLabel>
+
+// local includes
+
+#include "geocoordinates.h"
+#include "geoifacecommon.h"
 
 namespace Digikam
 {
@@ -42,6 +49,48 @@ public:
      */
     void setUrl(const QUrl &);
 
+    /*
+     * Dummy function to imitate HTMLWidget::setSharedGeoIfaceObject()
+     * */
+    void setSharedGeoIfaceObject(GeoIfaceSharedData* const sharedData);
+
+    /*
+     * Dummy function to imitate QWebEngineView::load()
+     * https://doc.qt.io/qt-5.15/qwebengineview.html#load
+     * */
+    void load(const QUrl &url);
+
+    /*
+     * Dummy function to imitate HTMLWidget::runScript()
+     * */
+    QVariant runScript(const QString& scriptCode, bool async = true);
+
+    /*
+     * Dummy function to imitate HTMLWidget::runScript2Coordinates()
+     * */
+    bool runScript2Coordinates(const QString& scriptCode, GeoCoordinates* const coordinates);
+
+    /*
+     * Dummy function to imitate HTMLWidget::setSelectionRectangle()
+     * */
+    void setSelectionRectangle(const GeoCoordinates::Pair& searchCoordinates);
+
+    /*
+     * Dummy function to imitate HTMLWidget::removeSelectionRectangle()
+     * */
+    void removeSelectionRectangle();
+
+    /*
+     * Dummy function to imitate HTMLWidget::mouseModeChanged()
+     * */
+    void mouseModeChanged(const GeoMouseModes mouseMode);
+
+    /*
+     * Dummy function to imitate HTMLWidget::centerOn()
+     * */
+    void centerOn(const qreal west, const qreal north, const qreal east, const qreal south,
+                  const bool useSaneZoomLevel = true);
+
  Q_SIGNALS:
 
     /*
@@ -52,6 +101,13 @@ public:
     void loadStarted();
     void loadFinished(bool);
     void loadProgress(int);
+
+    /*
+     * Dummy signals of HTMLWidget to be called in backendgooglemaps.cpp
+     * */
+    void signalHTMLEvents(const QStringList& events);
+    void signalJavaScriptReady();
+    void selectionHasBeenMade(const Digikam::GeoCoordinates::Pair& coordinatesRect);
 
 };
 }
