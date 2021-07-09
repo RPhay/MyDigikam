@@ -254,7 +254,7 @@ void FileActionMngr::applyMetadata(const QList<ItemInfo>& infos, const DisjointM
     d->applyMetadata(taskList, new DisjointMetadata(hub));
 }
 
-void FileActionMngr::applyMetadata(const QList<ItemInfo>& infos, DisjointMetadata* hub)
+void FileActionMngr::applyMetadata(const QList<ItemInfo>& infos, DisjointMetadata* const hub)
 {
 /*
     if (hub->parent())

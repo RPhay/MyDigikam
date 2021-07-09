@@ -46,15 +46,15 @@ class DatabaseWorkerInterface : public WorkerObject      // clazy:exclude=ctor-m
 
 public Q_SLOTS:
 
-    virtual void assignTags(const FileActionItemInfoList&, const QList<int>&)      {};
-    virtual void removeTags(const FileActionItemInfoList&, const QList<int>&)      {};
-    virtual void assignPickLabel(const FileActionItemInfoList&, int)               {};
-    virtual void assignColorLabel(const FileActionItemInfoList&, int)              {};
-    virtual void assignRating(const FileActionItemInfoList&, int)                  {};
-    virtual void editGroup(int, const ItemInfo&, const FileActionItemInfoList&)    {};
-    virtual void setExifOrientation(const FileActionItemInfoList&, int)            {};
-    virtual void applyMetadata(const FileActionItemInfoList&, DisjointMetadata*)   {};
-    virtual void copyAttributes(const FileActionItemInfoList&, const QStringList&) {};
+    virtual void assignTags(const FileActionItemInfoList&, const QList<int>&)          {};
+    virtual void removeTags(const FileActionItemInfoList&, const QList<int>&)          {};
+    virtual void assignPickLabel(const FileActionItemInfoList&, int)                   {};
+    virtual void assignColorLabel(const FileActionItemInfoList&, int)                  {};
+    virtual void assignRating(const FileActionItemInfoList&, int)                      {};
+    virtual void editGroup(int, const ItemInfo&, const FileActionItemInfoList&)        {};
+    virtual void setExifOrientation(const FileActionItemInfoList&, int)                {};
+    virtual void applyMetadata(const FileActionItemInfoList&, DisjointMetadata* const) {};
+    virtual void copyAttributes(const FileActionItemInfoList&, const QStringList&)     {};
 
 Q_SIGNALS:
 
@@ -85,7 +85,7 @@ public:
     void assignRating(const FileActionItemInfoList& infos, int rating)                         override;
     void editGroup(int groupAction, const ItemInfo& pick, const FileActionItemInfoList& infos) override;
     void setExifOrientation(const FileActionItemInfoList& infos, int orientation)              override;
-    void applyMetadata(const FileActionItemInfoList& infos, DisjointMetadata* hub)             override;
+    void applyMetadata(const FileActionItemInfoList& infos, DisjointMetadata* const hub)       override;
     void copyAttributes(const FileActionItemInfoList& infos, const QStringList& derivedPaths)  override;
 
 private:
