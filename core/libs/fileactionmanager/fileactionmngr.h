@@ -98,7 +98,7 @@ public Q_SLOTS:
     void applyMetadata(const QList<ItemInfo>& infos, const DisjointMetadata& hub);
 
     // ownership of the hub is passed, hub must be created without QObject parent
-    void applyMetadata(const QList<ItemInfo>& infos, DisjointMetadata* const hub);
+    void applyMetadata(const QList<ItemInfo>& infos, DisjointMetadata* hub);
 
     /**
      * Flip or rotate. Note: The NoTransformation action is interpreted as Exif auto-rotate

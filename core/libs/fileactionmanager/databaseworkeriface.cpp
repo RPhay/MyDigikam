@@ -333,7 +333,7 @@ void FileActionMngrDatabaseWorker::setExifOrientation(const FileActionItemInfoLi
 }
 
 void FileActionMngrDatabaseWorker::applyMetadata(const FileActionItemInfoList& infos,
-                                                 DisjointMetadata* const hub)
+                                                 DisjointMetadata* hub)
 {
     {
         CoreDbOperationGroup group;
