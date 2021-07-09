@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2021-07-08
- * Description : Dummy Widget if now Webkit is found.
+ * Description : Dummy Widget if no Webkit is found.
  *
  * Copyright (C) 2021 by Anjani Kumar <anjanik012 at gmail dot com>
  *
@@ -22,13 +22,23 @@
  * ============================================================ */
 
 #include "dnowebdlg.h"
+
+// KDE includes
+
 #include <klocalizedstring.h>
 
+namespace Digikam
+{
 DNoWebDialog::DNoWebDialog(QWidget *parent)
-: QMessageBox(parent)
+    : QMessageBox(parent)
 {
     setIcon(QMessageBox::Information);
     setText(i18n("Warning: No WebEngine/Webkit was found. Web content cannot be loaded"));
     setDefaultButton(QMessageBox::Ok);
     resize(400, 400);
+}
+
+DNoWebDialog::DNoWebDialog(const QUrl &url, QWidget *const parent, bool hideDeskBrowser)
+{
+}
 }

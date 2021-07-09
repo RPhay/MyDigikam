@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2021-07-08
- * Description : Dummy Widget if now Webkit is found.
+ * Description : Dummy Widget if no Webkit is found.
  *
  * Copyright (C) 2021 by Anjani Kumar <anjanik012 at gmail dot com>
  *
@@ -26,12 +26,21 @@
 
 #include <QMessageBox>
 
+namespace Digikam
+{
 class DNoWebDialog : public QMessageBox
 {
     Q_OBJECT
 public:
     explicit DNoWebDialog(QWidget *parent);
-};
 
+    DNoWebDialog(const QUrl &url, QWidget *const parent, bool hideDeskBrowser = false);
+
+Q_SIGNALS:
+
+    void urlChanged(const QUrl& url);
+    void closeView(bool val);
+};
+}
 
 #endif //DIGIKAM_DNOWEBDLG_H
