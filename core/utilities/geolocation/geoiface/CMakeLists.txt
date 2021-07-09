@@ -21,7 +21,7 @@ include_directories($<TARGET_PROPERTY:Qt5::Xml,INTERFACE_INCLUDE_DIRECTORIES>
 
 if(ENABLE_QWEBENGINE)
     include_directories($<TARGET_PROPERTY:Qt5::WebEngineWidgets,INTERFACE_INCLUDE_DIRECTORIES>)
-else()
+elseif(ENABLE_QWEBKIT)
     include_directories($<TARGET_PROPERTY:Qt5::WebKitWidgets,INTERFACE_INCLUDE_DIRECTORIES>)
 endif()
 
@@ -92,7 +92,7 @@ if(ENABLE_QWEBENGINE)
         ${libgeoiface_SRCS}
         ${CMAKE_CURRENT_SOURCE_DIR}/widgets/htmlwidget_qwebengine.cpp
        )
-else()
+elseif(ENABLE_QWEBKIT)
     set(libgeoiface_SRCS
         ${libgeoiface_SRCS}
         ${CMAKE_CURRENT_SOURCE_DIR}/widgets/htmlwidget.cpp
