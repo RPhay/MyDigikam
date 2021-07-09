@@ -54,7 +54,11 @@
 #include "odwindow.h"
 #include "oditem.h"
 #include "odmpform.h"
-#include "webbrowserdlg.h"
+#if defined HAVE_QWEBENGINE || defined HAVE_QWEBKIT
+    #include "webbrowserdlg.h"
+#else
+    #include "dnowebdlg.h"
+#endif
 #include "previewloadthread.h"
 
 namespace DigikamGenericOneDrivePlugin
@@ -118,7 +122,11 @@ public:
 
     QSettings*                      settings;
 
+#if defined HAVE_QWEBENGINE || defined HAVE_QWEBKIT
     WebBrowserDlg*                  browser;
+#else
+    DNoWebDialog*                   browser;
+#endif
 
     QList<QPair<QString, QString> > folderList;
     QList<QString>                  nextFolder;
@@ -166,7 +174,11 @@ void ODTalker::link()
     url.setQuery(query);
 
     delete d->browser;
+#if defined HAVE_QWEBENGINE || defined HAVE_QWEBKIT
     d->browser = new WebBrowserDlg(url, d->parent, true);
+#else
+    d->browser = new DNoWebDialog(url, d->parent, true);
+#endif
     d->browser->setModal(true);
 
     connect(d->browser, SIGNAL(urlChanged(QUrl)),
