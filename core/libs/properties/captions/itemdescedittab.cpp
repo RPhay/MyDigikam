@@ -545,7 +545,11 @@ void ItemDescEditTab::slotChangingItems()
     {
         // Open dialog via queued connection out-of-scope, see bug 302311
 
-        emit askToApplyChanges(d->currInfos, new DisjointMetadata(d->hub));
+        DisjointMetadata* const hub2 = new DisjointMetadata();
+        hub2->setDataFields(d->hub.dataFields());
+        
+        emit askToApplyChanges(d->currInfos, hub2);
+
         reset();
     }
     else
@@ -789,7 +793,7 @@ void ItemDescEditTab::setInfos(const ItemInfoList& infos)
 {
     if (infos.isEmpty())
     {
-        d->hub = DisjointMetadata();
+        d->hub.reset();
         d->captionsEdit->blockSignals(true);
         d->captionsEdit->reset();
         d->captionsEdit->blockSignals(false);
@@ -806,7 +810,7 @@ void ItemDescEditTab::setInfos(const ItemInfoList& infos)
     d->currInfos = infos;
     d->modified  = false;
     resetMetadataChangeInfo();
-    d->hub       = DisjointMetadata();
+    d->hub.reset();
     d->applyBtn->setEnabled(false);
     d->revertBtn->setEnabled(false);
 
