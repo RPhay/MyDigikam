@@ -134,7 +134,7 @@ LibsInfoDlg::LibsInfoDlg(QWidget* const parent)
 
 #ifdef HAVE_QWEBENGINE
     list.insert(i18nc(CONTEXT, "Qt WebEngine support"),        SUPPORTED_YES);
-#else
+#elif defined HAVE_QWEBKIT
     list.insert(i18nc(CONTEXT, "Qt Webkit support"),           SUPPORTED_YES);
 #endif
 
