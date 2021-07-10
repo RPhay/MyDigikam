@@ -39,7 +39,7 @@ public:
 
     IOFileSettings()
       : JPEGCompression    (75),
-        JPEGSubSampling    (1),    // Medium sub-sampling
+        JPEGSubSampling    (1),    ///< Medium sub-sampling
         PNGCompression     (9),
         TIFFCompression    (false),
         JPEG2000Compression(75),
