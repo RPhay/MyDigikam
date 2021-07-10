@@ -7,4 +7,5 @@ NEW FEATURES:
 *****************************************************************************************************
 BUGFIXES:
 
-001 ==> 
+001 ==> 439206 - Face thumbnails not generating properly for Fujifilm RAW files when sidecar files enabled.
+002 ==> 
