@@ -62,6 +62,11 @@ public:
 
     QList<QPersistentModelIndex> markerIndices;
     int                          selectedCount;
+
+private:
+
+    MyTile(const MyTile&);
+    MyTile& operator=(const MyTile&);
 };
 
 void ItemMarkerTiler::MyTile::removeMarkerIndexOrInvalidIndex(const QModelIndex& indexToRemove)
