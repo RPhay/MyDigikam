@@ -45,7 +45,7 @@
 
 #include "digikam_debug.h"
 
-// clazy:exclude@all=connect-non-signal
+// clazy:skip
 
 namespace Digikam
 {
