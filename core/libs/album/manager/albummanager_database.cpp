@@ -109,7 +109,7 @@ bool AlbumManager::setDatabase(const DbEngineParameters& params, bool priority, 
     {
         if      (!QFileInfo::exists(params.internalServerPath()))
         {
-            databaseError = i18n("The MySQL database directory are not found, please "
+            databaseError = i18n("The MySQL database directory was not found, please "
                                  "set the correct location in the next dialog.");
         }
         else if ((!QFileInfo::exists(params.internalServerMysqlServCmd)                         &&
@@ -118,7 +118,7 @@ bool AlbumManager::setDatabase(const DbEngineParameters& params, bool priority, 
                   QStandardPaths::findExecutable(params.internalServerMysqlAdminCmd).isEmpty())
                 )
         {
-            databaseError = i18n("The MySQL binary tools are not found, please "
+            databaseError = i18n("The MySQL binary tools was not found, please "
                                  "set the correct location in the next dialog.");
         }
     }
@@ -126,7 +126,7 @@ bool AlbumManager::setDatabase(const DbEngineParameters& params, bool priority, 
     {
         if (!QFileInfo::exists(params.databaseNameCore))
         {
-            databaseError = i18n("The SQLite core database are not found, please "
+            databaseError = i18n("The SQLite core database was not found, please "
                                  "set the correct location in the next dialog.");
         }
     }
