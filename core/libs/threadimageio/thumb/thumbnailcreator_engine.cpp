@@ -265,32 +265,33 @@ QImage ThumbnailCreator::loadImageDetail(const ThumbnailInfo& info,
 
     if (!previews.isEmpty())
     {
+        QSize orgSize;
+
+        if (metadata.getExifTagString("Exif.Image.Make").toUpper() == QLatin1String("FUJIFILM"))
+        {
+            QString sHeight = metadata.getExifTagString("Exif.Fujifilm.RawImageFullHeight");
+            QString sWidth  = metadata.getExifTagString("Exif.Fujifilm.RawImageFullWidth");
+
+            if (!sWidth.isEmpty() && !sHeight.isEmpty())
+            {
+                orgSize = QSize(sWidth.toInt(),
+                                sHeight.toInt());
+            }
+        }
+
+        if (!orgSize.isValid())
+        {
+            orgSize = previews.originalSize();
+        }
+
         // Discard if smaller than half preview
 
         QImage qimage        = previews.image();
-        int acceptableWidth  = lround(previews.originalSize().width()  * 0.5);
-        int acceptableHeight = lround(previews.originalSize().height() * 0.5);
+        int acceptableWidth  = lround(orgSize.width()  * 0.5);
+        int acceptableHeight = lround(orgSize.height() * 0.5);
 
         if (!qimage.isNull() && (previews.width() >= acceptableWidth) && (previews.height() >= acceptableHeight))
         {
-            QSize orgSize;
-
-            if (metadata.getExifTagString("Exif.Image.Make").toUpper() == QLatin1String("FUJIFILM"))
-            {
-                QString sHeight = metadata.getExifTagString("Exif.Fujifilm.RawImageFullHeight");
-                QString sWidth  = metadata.getExifTagString("Exif.Fujifilm.RawImageFullWidth");
-
-                if (!sWidth.isEmpty() && !sHeight.isEmpty())
-                {
-                    orgSize = QSize(sWidth.toInt(), sHeight.toInt());
-                }
-            }
-
-            if (!orgSize.isValid())
-            {
-                orgSize = previews.originalSize();
-            }
-
             qimage = exifRotate(qimage, exifOrientation(info, metadata, true, false));
 
             if (((qimage.width() < qimage.height()) && (orgSize.width() > orgSize.height())) ||
