@@ -40,9 +40,6 @@
 // Local includes
 
 #include "multistringsedit.h"
-#include "dmetadata.h"
-
-using namespace Digikam;
 
 namespace DigikamGenericMetadataEditPlugin
 {
@@ -236,17 +233,16 @@ void IPTCCredits::slotLineEditModified()
                        ledit);
 }
 
-void IPTCCredits::readMetadata(QByteArray& iptcData)
+void IPTCCredits::readMetadata(DMetadata& meta)
 {
     blockSignals(true);
-    QScopedPointer<DMetadata> meta(new DMetadata);
-    meta->setIptc(iptcData);
+
     QString     data;
     QStringList list;
 
     d->copyrightEdit->clear();
     d->copyrightCheck->setChecked(false);
-    data = meta->getIptcTagString("Iptc.Application2.Copyright", false);
+    data = meta.getIptcTagString("Iptc.Application2.Copyright", false);
 
     if (!data.isNull())
     {
@@ -256,15 +252,15 @@ void IPTCCredits::readMetadata(QByteArray& iptcData)
 
     d->copyrightEdit->setEnabled(d->copyrightCheck->isChecked());
 
-    list = meta->getIptcTagsStringList("Iptc.Application2.Byline", false);
+    list = meta.getIptcTagsStringList("Iptc.Application2.Byline", false);
     d->bylineEdit->setValues(list);
 
-    list = meta->getIptcTagsStringList("Iptc.Application2.BylineTitle", false);
+    list = meta.getIptcTagsStringList("Iptc.Application2.BylineTitle", false);
     d->bylineTitleEdit->setValues(list);
 
     d->creditEdit->clear();
     d->creditCheck->setChecked(false);
-    data = meta->getIptcTagString("Iptc.Application2.Credit", false);
+    data = meta.getIptcTagString("Iptc.Application2.Credit", false);
 
     if (!data.isNull())
     {
@@ -276,7 +272,7 @@ void IPTCCredits::readMetadata(QByteArray& iptcData)
 
     d->sourceEdit->clear();
     d->sourceCheck->setChecked(false);
-    data = meta->getIptcTagString("Iptc.Application2.Source", false);
+    data = meta.getIptcTagString("Iptc.Application2.Source", false);
 
     if (!data.isNull())
     {
@@ -286,49 +282,45 @@ void IPTCCredits::readMetadata(QByteArray& iptcData)
 
     d->sourceEdit->setEnabled(d->sourceCheck->isChecked());
 
-    list = meta->getIptcTagsStringList("Iptc.Application2.Contact", false);
+    list = meta.getIptcTagsStringList("Iptc.Application2.Contact", false);
     d->contactEdit->setValues(list);
 
     blockSignals(false);
 }
 
-void IPTCCredits::applyMetadata(QByteArray& iptcData)
+void IPTCCredits::applyMetadata(DMetadata& meta)
 {
     QStringList oldList, newList;
-    QScopedPointer<DMetadata> meta(new DMetadata);
-    meta->setIptc(iptcData);
 
     if (d->copyrightCheck->isChecked())
-        meta->setIptcTagString("Iptc.Application2.Copyright", d->copyrightEdit->text());
+        meta.setIptcTagString("Iptc.Application2.Copyright", d->copyrightEdit->text());
     else
-        meta->removeIptcTag("Iptc.Application2.Copyright");
+        meta.removeIptcTag("Iptc.Application2.Copyright");
 
     if (d->bylineEdit->getValues(oldList, newList))
-        meta->setIptcTagsStringList("Iptc.Application2.Byline", 32, oldList, newList);
+        meta.setIptcTagsStringList("Iptc.Application2.Byline", 32, oldList, newList);
     else
-        meta->removeIptcTag("Iptc.Application2.Byline");
+        meta.removeIptcTag("Iptc.Application2.Byline");
 
     if (d->bylineTitleEdit->getValues(oldList, newList))
-        meta->setIptcTagsStringList("Iptc.Application2.BylineTitle", 32, oldList, newList);
+        meta.setIptcTagsStringList("Iptc.Application2.BylineTitle", 32, oldList, newList);
     else
-        meta->removeIptcTag("Iptc.Application2.BylineTitle");
+        meta.removeIptcTag("Iptc.Application2.BylineTitle");
 
     if (d->creditCheck->isChecked())
-        meta->setIptcTagString("Iptc.Application2.Credit", d->creditEdit->text());
+        meta.setIptcTagString("Iptc.Application2.Credit", d->creditEdit->text());
     else
-        meta->removeIptcTag("Iptc.Application2.Credit");
+        meta.removeIptcTag("Iptc.Application2.Credit");
 
     if (d->sourceCheck->isChecked())
-        meta->setIptcTagString("Iptc.Application2.Source", d->sourceEdit->text());
+        meta.setIptcTagString("Iptc.Application2.Source", d->sourceEdit->text());
     else
-        meta->removeIptcTag("Iptc.Application2.Source");
+        meta.removeIptcTag("Iptc.Application2.Source");
 
     if (d->contactEdit->getValues(oldList, newList))
-        meta->setIptcTagsStringList("Iptc.Application2.Contact", 128, oldList, newList);
+        meta.setIptcTagsStringList("Iptc.Application2.Contact", 128, oldList, newList);
     else
-        meta->removeIptcTag("Iptc.Application2.Contact");
-
-    iptcData = meta->getIptc();
+        meta.removeIptcTag("Iptc.Application2.Contact");
 }
 
 } // namespace DigikamGenericMetadataEditPlugin

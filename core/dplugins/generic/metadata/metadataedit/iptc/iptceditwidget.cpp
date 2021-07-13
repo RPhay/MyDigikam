@@ -88,9 +88,6 @@ public:
     bool                  modified;
     bool                  isReadOnly;
 
-    QByteArray            exifData;
-    QByteArray            iptcData;
-
     DConfigDlgWdgItem*    page_content;
     DConfigDlgWdgItem*    page_properties;
     DConfigDlgWdgItem*    page_subjects;
@@ -241,17 +238,15 @@ void IPTCEditWidget::slotItemChanged()
     QScopedPointer<DMetadata> meta(new DMetadata);
     meta->load((*d->dlg->currentItem()).toLocalFile());
 
-    d->exifData = meta->getExifEncoded();
-    d->iptcData = meta->getIptc();
-    d->contentPage->readMetadata(d->iptcData);
-    d->originPage->readMetadata(d->iptcData);
-    d->creditsPage->readMetadata(d->iptcData);
-    d->subjectsPage->readMetadata(d->iptcData);
-    d->keywordsPage->readMetadata(d->iptcData);
-    d->categoriesPage->readMetadata(d->iptcData);
-    d->statusPage->readMetadata(d->iptcData);
-    d->propertiesPage->readMetadata(d->iptcData);
-    d->envelopePage->readMetadata(d->iptcData);
+    d->contentPage->readMetadata(*meta);
+    d->originPage->readMetadata(*meta);
+    d->creditsPage->readMetadata(*meta);
+    d->subjectsPage->readMetadata(*meta);
+    d->keywordsPage->readMetadata(*meta);
+    d->categoriesPage->readMetadata(*meta);
+    d->statusPage->readMetadata(*meta);
+    d->propertiesPage->readMetadata(*meta);
+    d->envelopePage->readMetadata(*meta);
 
     d->isReadOnly = !DMetadata::canWriteIptc((*d->dlg->currentItem()).toLocalFile());
     emit signalSetReadOnly(d->isReadOnly);
@@ -274,22 +269,17 @@ void IPTCEditWidget::apply()
         QScopedPointer<DMetadata> meta(new DMetadata);
         meta->load((*d->dlg->currentItem()).toLocalFile());
 
-        d->exifData = meta->getExifEncoded();
-        d->iptcData = meta->getIptc();
+        d->contentPage->applyMetadata(*meta);
+        d->originPage->applyMetadata(*meta);
+        d->creditsPage->applyMetadata(*meta);
+        d->subjectsPage->applyMetadata(*meta);
+        d->keywordsPage->applyMetadata(*meta);
+        d->categoriesPage->applyMetadata(*meta);
+        d->statusPage->applyMetadata(*meta);
+        d->propertiesPage->applyMetadata(*meta);
+        d->envelopePage->applyMetadata(*meta);
 
-        d->contentPage->applyMetadata(d->exifData, d->iptcData);
-        d->originPage->applyMetadata(d->exifData, d->iptcData);
-        d->creditsPage->applyMetadata(d->iptcData);
-        d->subjectsPage->applyMetadata(d->iptcData);
-        d->keywordsPage->applyMetadata(d->iptcData);
-        d->categoriesPage->applyMetadata(d->iptcData);
-        d->statusPage->applyMetadata(d->iptcData);
-        d->propertiesPage->applyMetadata(d->iptcData);
-        d->envelopePage->applyMetadata(d->iptcData);
-
-        meta->setExif(d->exifData);
-        meta->setIptc(d->iptcData);
-        meta->save((*d->dlg->currentItem()).toLocalFile());
+        meta->applyChanges();
 
         d->modified = false;
     }

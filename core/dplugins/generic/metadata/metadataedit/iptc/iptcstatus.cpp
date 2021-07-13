@@ -38,11 +38,8 @@
 
 // Local includes
 
-#include "dmetadata.h"
 #include "limitedtextedit.h"
 #include "dlayoutbox.h"
-
-using namespace Digikam;
 
 namespace DigikamGenericMetadataEditPlugin
 {
@@ -230,18 +227,16 @@ void IPTCStatus::slotLineEditModified()
                        ledit);
 }
 
-void IPTCStatus::readMetadata(QByteArray& iptcData)
+void IPTCStatus::readMetadata(DMetadata& meta)
 {
     blockSignals(true);
-    QScopedPointer<DMetadata> meta(new DMetadata);
-    meta->setIptc(iptcData);
 
     QString     data;
     QStringList list;
 
     d->objectNameEdit->clear();
     d->objectNameCheck->setChecked(false);
-    data = meta->getIptcTagString("Iptc.Application2.ObjectName", false);
+    data = meta.getIptcTagString("Iptc.Application2.ObjectName", false);
 
     if (!data.isNull())
     {
@@ -253,7 +248,7 @@ void IPTCStatus::readMetadata(QByteArray& iptcData)
 
     d->statusEdit->clear();
     d->statusCheck->setChecked(false);
-    data = meta->getIptcTagString("Iptc.Application2.EditStatus", false);
+    data = meta.getIptcTagString("Iptc.Application2.EditStatus", false);
 
     if (!data.isNull())
     {
@@ -265,7 +260,7 @@ void IPTCStatus::readMetadata(QByteArray& iptcData)
 
     d->jobIDEdit->clear();
     d->jobIDCheck->setChecked(false);
-    data = meta->getIptcTagString("Iptc.Application2.FixtureId", false);
+    data = meta.getIptcTagString("Iptc.Application2.FixtureId", false);
 
     if (!data.isNull())
     {
@@ -277,7 +272,7 @@ void IPTCStatus::readMetadata(QByteArray& iptcData)
 
     d->specialInstructionEdit->clear();
     d->specialInstructionCheck->setChecked(false);
-    data = meta->getIptcTagString("Iptc.Application2.SpecialInstructions", false);
+    data = meta.getIptcTagString("Iptc.Application2.SpecialInstructions", false);
 
     if (!data.isNull())
     {
@@ -291,32 +286,27 @@ void IPTCStatus::readMetadata(QByteArray& iptcData)
     blockSignals(false);
 }
 
-void IPTCStatus::applyMetadata(QByteArray& iptcData)
+void IPTCStatus::applyMetadata(DMetadata& meta)
 {
-    QScopedPointer<DMetadata> meta(new DMetadata);
-    meta->setIptc(iptcData);
-
     if (d->objectNameCheck->isChecked())
-        meta->setIptcTagString("Iptc.Application2.ObjectName", d->objectNameEdit->text());
+        meta.setIptcTagString("Iptc.Application2.ObjectName", d->objectNameEdit->text());
     else
-        meta->removeIptcTag("Iptc.Application2.ObjectName");
+        meta.removeIptcTag("Iptc.Application2.ObjectName");
 
     if (d->statusCheck->isChecked())
-        meta->setIptcTagString("Iptc.Application2.EditStatus", d->statusEdit->text());
+        meta.setIptcTagString("Iptc.Application2.EditStatus", d->statusEdit->text());
     else
-        meta->removeIptcTag("Iptc.Application2.EditStatus");
+        meta.removeIptcTag("Iptc.Application2.EditStatus");
 
     if (d->jobIDCheck->isChecked())
-        meta->setIptcTagString("Iptc.Application2.FixtureId", d->jobIDEdit->text());
+        meta.setIptcTagString("Iptc.Application2.FixtureId", d->jobIDEdit->text());
     else
-        meta->removeIptcTag("Iptc.Application2.FixtureId");
+        meta.removeIptcTag("Iptc.Application2.FixtureId");
 
     if (d->specialInstructionCheck->isChecked())
-        meta->setIptcTagString("Iptc.Application2.SpecialInstructions", d->specialInstructionEdit->toPlainText());
+        meta.setIptcTagString("Iptc.Application2.SpecialInstructions", d->specialInstructionEdit->toPlainText());
     else
-        meta->removeIptcTag("Iptc.Application2.SpecialInstructions");
-
-    iptcData = meta->getIptc();
+        meta.removeIptcTag("Iptc.Application2.SpecialInstructions");
 }
 
 } // namespace DigikamGenericMetadataEditPlugin

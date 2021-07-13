@@ -40,11 +40,8 @@
 
 #include "dlayoutbox.h"
 #include "multistringsedit.h"
-#include "dmetadata.h"
 #include "dexpanderbox.h"
 #include "limitedtextedit.h"
-
-using namespace Digikam;
 
 namespace DigikamGenericMetadataEditPlugin
 {
@@ -234,17 +231,16 @@ void IPTCContent::slotLineEditModified()
                        ledit);
 }
 
-void IPTCContent::readMetadata(QByteArray& iptcData)
+void IPTCContent::readMetadata(DMetadata& meta)
 {
     blockSignals(true);
-    QScopedPointer<DMetadata> meta(new DMetadata);
-    meta->setIptc(iptcData);
+
     QString     data;
     QStringList list;
 
     d->captionEdit->clear();
     d->captionCheck->setChecked(false);
-    data = meta->getIptcTagString("Iptc.Application2.Caption", false);
+    data = meta.getIptcTagString("Iptc.Application2.Caption", false);
     if (!data.isNull())
     {
         d->captionEdit->setPlainText(data);
@@ -255,12 +251,12 @@ void IPTCContent::readMetadata(QByteArray& iptcData)
     d->syncEXIFCommentCheck->setEnabled(d->captionCheck->isChecked());
     slotCaptionLeftCharacters();
 
-    list = meta->getIptcTagsStringList("Iptc.Application2.Writer", false);
+    list = meta.getIptcTagsStringList("Iptc.Application2.Writer", false);
     d->writerEdit->setValues(list);
 
     d->headlineEdit->clear();
     d->headlineCheck->setChecked(false);
-    data = meta->getIptcTagString("Iptc.Application2.Headline", false);
+    data = meta.getIptcTagString("Iptc.Application2.Headline", false);
     if (!data.isNull())
     {
         d->headlineEdit->setText(data);
@@ -271,40 +267,32 @@ void IPTCContent::readMetadata(QByteArray& iptcData)
     blockSignals(false);
 }
 
-void IPTCContent::applyMetadata(QByteArray& exifData, QByteArray& iptcData)
+void IPTCContent::applyMetadata(DMetadata& meta)
 {
-    QScopedPointer<DMetadata> meta(new DMetadata);
-    meta->setExif(exifData);
-    meta->setIptc(iptcData);
-
     if (d->captionCheck->isChecked())
     {
-        meta->setIptcTagString("Iptc.Application2.Caption", d->captionEdit->toPlainText());
+        meta.setIptcTagString("Iptc.Application2.Caption", d->captionEdit->toPlainText());
 
         if (syncEXIFCommentIsChecked())
-            meta->setExifComment(getIPTCCaption());
+            meta.setExifComment(getIPTCCaption());
 
         if (syncJFIFCommentIsChecked())
-            meta->setComments(getIPTCCaption().toUtf8());
+            meta.setComments(getIPTCCaption().toUtf8());
     }
     else
-        meta->removeIptcTag("Iptc.Application2.Caption");
+        meta.removeIptcTag("Iptc.Application2.Caption");
 
     QStringList oldList, newList;
 
     if (d->writerEdit->getValues(oldList, newList))
-        meta->setIptcTagsStringList("Iptc.Application2.Writer", 32, oldList, newList);
+        meta.setIptcTagsStringList("Iptc.Application2.Writer", 32, oldList, newList);
     else
-        meta->removeIptcTag("Iptc.Application2.Writer");
+        meta.removeIptcTag("Iptc.Application2.Writer");
 
     if (d->headlineCheck->isChecked())
-        meta->setIptcTagString("Iptc.Application2.Headline", d->headlineEdit->text());
+        meta.setIptcTagString("Iptc.Application2.Headline", d->headlineEdit->text());
     else
-        meta->removeIptcTag("Iptc.Application2.Headline");
-
-    exifData = meta->getExifEncoded();
-
-    iptcData = meta->getIptc();
+        meta.removeIptcTag("Iptc.Application2.Headline");
 }
 
 } // namespace DigikamGenericMetadataEditPlugin

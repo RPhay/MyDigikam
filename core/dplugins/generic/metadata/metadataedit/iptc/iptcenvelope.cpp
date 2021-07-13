@@ -46,10 +46,7 @@
 #include "metadatacheckbox.h"
 #include "timezonecombobox.h"
 #include "limitedtextedit.h"
-#include "dmetadata.h"
 #include "dlayoutbox.h"
-
-using namespace Digikam;
 
 namespace DigikamGenericMetadataEditPlugin
 {
@@ -463,11 +460,9 @@ void IPTCEnvelope::slotLineEditModified()
                        ledit);
 }
 
-void IPTCEnvelope::readMetadata(QByteArray& iptcData)
+void IPTCEnvelope::readMetadata(DMetadata& meta)
 {
     blockSignals(true);
-    QScopedPointer<DMetadata> meta(new DMetadata);
-    meta->setIptc(iptcData);
 
     QString     data, format, version;
     QStringList list;
@@ -477,7 +472,7 @@ void IPTCEnvelope::readMetadata(QByteArray& iptcData)
 
     d->destinationEdit->clear();
     d->destinationCheck->setChecked(false);
-    data = meta->getIptcTagString("Iptc.Envelope.Destination", false);
+    data = meta.getIptcTagString("Iptc.Envelope.Destination", false);
 
     if (!data.isNull())
     {
@@ -490,7 +485,7 @@ void IPTCEnvelope::readMetadata(QByteArray& iptcData)
 
     d->envelopeIDEdit->clear();
     d->envelopeIDCheck->setChecked(false);
-    data = meta->getIptcTagString("Iptc.Envelope.EnvelopeNumber", false);
+    data = meta.getIptcTagString("Iptc.Envelope.EnvelopeNumber", false);
 
     if (!data.isNull())
     {
@@ -502,7 +497,7 @@ void IPTCEnvelope::readMetadata(QByteArray& iptcData)
 
     d->serviceIDEdit->clear();
     d->serviceIDCheck->setChecked(false);
-    data = meta->getIptcTagString("Iptc.Envelope.ServiceId", false);
+    data = meta.getIptcTagString("Iptc.Envelope.ServiceId", false);
 
     if (!data.isNull())
     {
@@ -514,7 +509,7 @@ void IPTCEnvelope::readMetadata(QByteArray& iptcData)
 
     d->unoIDEdit->clear();
     d->unoIDCheck->setChecked(false);
-    data = meta->getIptcTagString("Iptc.Envelope.UNO", false);
+    data = meta.getIptcTagString("Iptc.Envelope.UNO", false);
 
     if (!data.isNull())
     {
@@ -526,7 +521,7 @@ void IPTCEnvelope::readMetadata(QByteArray& iptcData)
 
     d->productIDEdit->clear();
     d->productIDCheck->setChecked(false);
-    data = meta->getIptcTagString("Iptc.Envelope.ProductId", false);
+    data = meta.getIptcTagString("Iptc.Envelope.ProductId", false);
 
     if (!data.isNull())
     {
@@ -538,7 +533,7 @@ void IPTCEnvelope::readMetadata(QByteArray& iptcData)
 
     d->priorityCB->setCurrentIndex(0);
     d->priorityCheck->setChecked(false);
-    data = meta->getIptcTagString("Iptc.Envelope.EnvelopePriority", false);
+    data = meta.getIptcTagString("Iptc.Envelope.EnvelopePriority", false);
 
     if (!data.isNull())
     {
@@ -557,8 +552,8 @@ void IPTCEnvelope::readMetadata(QByteArray& iptcData)
 
     d->formatCB->setCurrentIndex(0);
     d->formatCheck->setChecked(false);
-    format  = meta->getIptcTagString("Iptc.Envelope.FileFormat", false);
-    version = meta->getIptcTagString("Iptc.Envelope.FileVersion", false);
+    format  = meta.getIptcTagString("Iptc.Envelope.FileFormat", false);
+    version = meta.getIptcTagString("Iptc.Envelope.FileVersion", false);
 
     if (!format.isNull())
     {
@@ -591,8 +586,8 @@ void IPTCEnvelope::readMetadata(QByteArray& iptcData)
 
     d->formatCB->setEnabled(d->formatCheck->isChecked());
 
-    dateStr = meta->getIptcTagString("Iptc.Envelope.DateSent", false);
-    timeStr = meta->getIptcTagString("Iptc.Envelope.TimeSent", false);
+    dateStr = meta.getIptcTagString("Iptc.Envelope.DateSent", false);
+    timeStr = meta.getIptcTagString("Iptc.Envelope.TimeSent", false);
 
     d->dateSentSel->setDate(QDate::currentDate());
     d->dateSentCheck->setChecked(false);
@@ -630,63 +625,60 @@ void IPTCEnvelope::readMetadata(QByteArray& iptcData)
     blockSignals(false);
 }
 
-void IPTCEnvelope::applyMetadata(QByteArray& iptcData)
+void IPTCEnvelope::applyMetadata(DMetadata& meta)
 {
-    QScopedPointer<DMetadata> meta(new DMetadata);
-    meta->setIptc(iptcData);
-
     if (d->destinationCheck->isChecked())
     {
-        meta->setIptcTagString("Iptc.Envelope.Destination", d->destinationEdit->toPlainText());
+        meta.setIptcTagString("Iptc.Envelope.Destination", d->destinationEdit->toPlainText());
     }
     else
     {
-        meta->removeIptcTag("Iptc.Envelope.Destination");
+        meta.removeIptcTag("Iptc.Envelope.Destination");
     }
 
     if (d->envelopeIDCheck->isChecked())
     {
-        meta->setIptcTagString("Iptc.Envelope.EnvelopeNumber", d->envelopeIDEdit->text());
+        meta.setIptcTagString("Iptc.Envelope.EnvelopeNumber", d->envelopeIDEdit->text());
     }
     else
     {
-        meta->removeIptcTag("Iptc.Envelope.EnvelopeNumber");
+        meta.removeIptcTag("Iptc.Envelope.EnvelopeNumber");
     }
 
     if (d->serviceIDCheck->isChecked())
     {
-        meta->setIptcTagString("Iptc.Envelope.ServiceId", d->serviceIDEdit->text());
+        meta.setIptcTagString("Iptc.Envelope.ServiceId", d->serviceIDEdit->text());
     }
     else
     {
-        meta->removeIptcTag("Iptc.Envelope.ServiceId");
+        meta.removeIptcTag("Iptc.Envelope.ServiceId");
     }
 
     if (d->unoIDCheck->isChecked())
     {
-        meta->setIptcTagString("Iptc.Envelope.UNO", d->unoIDEdit->text());
+        meta.setIptcTagString("Iptc.Envelope.UNO", d->unoIDEdit->text());
     }
     else
     {
-        meta->removeIptcTag("Iptc.Envelope.UNO");
+        meta.removeIptcTag("Iptc.Envelope.UNO");
     }
 
     if (d->productIDCheck->isChecked())
     {
-        meta->setIptcTagString("Iptc.Envelope.ProductId", d->productIDEdit->text());
+        meta.setIptcTagString("Iptc.Envelope.ProductId", d->productIDEdit->text());
     }
     else
     {
-        meta->removeIptcTag("Iptc.Envelope.ProductId");
+        meta.removeIptcTag("Iptc.Envelope.ProductId");
     }
 
     if (d->priorityCheck->isChecked())
     {
-        meta->setIptcTagString("Iptc.Envelope.EnvelopePriority", QString::number(d->priorityCB->currentIndex()));
+        meta.setIptcTagString("Iptc.Envelope.EnvelopePriority", QString::number(d->priorityCB->currentIndex()));
     }
     else if (d->priorityCheck->isValid())
     {
-        meta->removeIptcTag("Iptc.Envelope.EnvelopePriority");
+        meta.removeIptcTag("Iptc.Envelope.EnvelopePriority");
     }
 
     if (d->formatCheck->isChecked())
@@ -703,37 +695,35 @@ void IPTCEnvelope::applyMetadata(QByteArray& iptcData)
 
         QString format  = key.section(QLatin1Char('-'), 0, 0);
         QString version = key.section(QLatin1Char('-'), -1);
-        meta->setIptcTagString("Iptc.Envelope.FileFormat", format);
-        meta->setIptcTagString("Iptc.Envelope.FileVersion", version);
+        meta.setIptcTagString("Iptc.Envelope.FileFormat", format);
+        meta.setIptcTagString("Iptc.Envelope.FileVersion", version);
     }
     else if (d->priorityCheck->isValid())
     {
-        meta->removeIptcTag("Iptc.Envelope.FileFormat");
-        meta->removeIptcTag("Iptc.Envelope.FileVersion");
+        meta.removeIptcTag("Iptc.Envelope.FileFormat");
+        meta.removeIptcTag("Iptc.Envelope.FileVersion");
     }
 
     if (d->dateSentCheck->isChecked())
     {
-        meta->setIptcTagString("Iptc.Envelope.DateSent",
+        meta.setIptcTagString("Iptc.Envelope.DateSent",
                                     d->dateSentSel->date().toString(Qt::ISODate));
     }
     else
     {
-        meta->removeIptcTag("Iptc.Envelope.DateSent");
+        meta.removeIptcTag("Iptc.Envelope.DateSent");
     }
 
     if (d->timeSentCheck->isChecked())
     {
-        meta->setIptcTagString("Iptc.Envelope.TimeSent",
+        meta.setIptcTagString("Iptc.Envelope.TimeSent",
                                     d->timeSentSel->time().toString(Qt::ISODate) +
                                     d->zoneSentSel->getTimeZone());
     }
     else
     {
-        meta->removeIptcTag("Iptc.Envelope.TimeSent");
+        meta.removeIptcTag("Iptc.Envelope.TimeSent");
     }
-
-    iptcData = meta->getIptc();
 }
 
 } // namespace DigikamGenericMetadataEditPlugin
