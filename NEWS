@@ -9,4 +9,5 @@ BUGFIXES:
 
 001 ==> 439206 - Face thumbnails not generating properly for Fujifilm RAW files when sidecar files enabled.
 002 ==> 416744 - Changes are not saved after deleting face rectangle from picture.
-003 ==> 
+003 ==> 439785 - Edit Metadata resets Exif info upon selecting 'Apply'.
+004 ==> 

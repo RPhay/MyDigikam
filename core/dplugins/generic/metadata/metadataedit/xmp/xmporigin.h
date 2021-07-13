@@ -25,9 +25,14 @@
 
 // Qt includes
 
-#include <QDateTime>
 #include <QWidget>
-#include <QByteArray>
+#include <QDateTime>
+
+// Local includes
+
+#include "dmetadata.h"
+
+using namespace Digikam;
 
 namespace DigikamGenericMetadataEditPlugin
 {
@@ -41,8 +46,8 @@ public:
     explicit XMPOrigin(QWidget* const parent);
     ~XMPOrigin() override;
 
-    void applyMetadata(QByteArray& exifData, QByteArray& xmpData);
-    void readMetadata(QByteArray& xmpData);
+    void applyMetadata(DMetadata& meta);
+    void readMetadata(DMetadata& meta);
 
     bool syncEXIFDateIsChecked() const;
 

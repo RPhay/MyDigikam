@@ -86,9 +86,6 @@ public:
     bool                  modified;
     bool                  isReadOnly;
 
-    QByteArray            exifData;
-    QByteArray            xmpData;
-
     DConfigDlgWdgItem*    page_content;
     DConfigDlgWdgItem*    page_origin;
     DConfigDlgWdgItem*    page_subjects;
@@ -238,17 +235,14 @@ void XMPEditWidget::slotItemChanged()
     QScopedPointer<DMetadata> meta(new DMetadata);
     meta->load((*d->dlg->currentItem()).toLocalFile());
 
-    d->exifData = meta->getExifEncoded();
-    d->xmpData  = meta->getXmp();
-
-    d->contentPage->readMetadata(d->xmpData);
-    d->originPage->readMetadata(d->xmpData);
-    d->subjectsPage->readMetadata(d->xmpData);
-    d->keywordsPage->readMetadata(d->xmpData);
-    d->categoriesPage->readMetadata(d->xmpData);
-    d->creditsPage->readMetadata(d->xmpData);
-    d->statusPage->readMetadata(d->xmpData);
-    d->propertiesPage->readMetadata(d->xmpData);
+    d->contentPage->readMetadata(*meta);
+    d->originPage->readMetadata(*meta);
+    d->subjectsPage->readMetadata(*meta);
+    d->keywordsPage->readMetadata(*meta);
+    d->categoriesPage->readMetadata(*meta);
+    d->creditsPage->readMetadata(*meta);
+    d->statusPage->readMetadata(*meta);
+    d->propertiesPage->readMetadata(*meta);
 
     d->isReadOnly = (MetaEngineSettings::instance()->settings()
                         .metadataWritingMode == DMetadata::WRITE_TO_FILE_ONLY &&
@@ -273,21 +267,16 @@ void XMPEditWidget::apply()
         QScopedPointer<DMetadata> meta(new DMetadata);
         meta->load((*d->dlg->currentItem()).toLocalFile());
 
-        d->exifData = meta->getExifEncoded();
-        d->xmpData  = meta->getXmp();
+        d->contentPage->applyMetadata(*meta);
+        d->originPage->applyMetadata(*meta);
+        d->subjectsPage->applyMetadata(*meta);
+        d->keywordsPage->applyMetadata(*meta);
+        d->categoriesPage->applyMetadata(*meta);
+        d->creditsPage->applyMetadata(*meta);
+        d->statusPage->applyMetadata(*meta);
+        d->propertiesPage->applyMetadata(*meta);
 
-        d->contentPage->applyMetadata(d->exifData, d->xmpData);
-        d->originPage->applyMetadata(d->exifData, d->xmpData);
-        d->subjectsPage->applyMetadata(d->xmpData);
-        d->keywordsPage->applyMetadata(d->xmpData);
-        d->categoriesPage->applyMetadata(d->xmpData);
-        d->creditsPage->applyMetadata(d->exifData, d->xmpData);
-        d->statusPage->applyMetadata(d->xmpData);
-        d->propertiesPage->applyMetadata(d->xmpData);
-
-        meta->setExif(d->exifData);
-        meta->setXmp(d->xmpData);
-        meta->save((*d->dlg->currentItem()).toLocalFile());
+        meta->applyChanges();
 
         d->modified = false;
     }

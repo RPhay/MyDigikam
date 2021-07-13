@@ -46,10 +46,7 @@
 #include "metadatacheckbox.h"
 #include "multivaluesedit.h"
 #include "objectattributesedit.h"
-#include "dmetadata.h"
 #include "dexpanderbox.h"
-
-using namespace Digikam;
 
 namespace DigikamGenericMetadataEditPlugin
 {
@@ -324,11 +321,9 @@ XMPProperties::~XMPProperties()
     delete d;
 }
 
-void XMPProperties::readMetadata(QByteArray& xmpData)
+void XMPProperties::readMetadata(DMetadata& meta)
 {
     blockSignals(true);
-    QScopedPointer<DMetadata> meta(new DMetadata);
-    meta->setXmp(xmpData);
 
     int         val;
     QString     data;
@@ -338,7 +333,7 @@ void XMPProperties::readMetadata(QByteArray& xmpData)
 
     // ---------------------------------------------------------------
 
-    code = meta->getXmpTagStringBag("Xmp.dc.language", false);
+    code = meta.getXmpTagStringBag("Xmp.dc.language", false);
 
     for (QStringList::Iterator it = code.begin() ; it != code.end() ; ++it)
     {
@@ -366,7 +361,7 @@ void XMPProperties::readMetadata(QByteArray& xmpData)
 
     d->priorityCB->setCurrentIndex(0);
     d->priorityCheck->setChecked(false);
-    data = meta->getXmpTagString("Xmp.photoshop.Urgency", false);
+    data = meta.getXmpTagString("Xmp.photoshop.Urgency", false);
 
     if (!data.isNull())
     {
@@ -385,7 +380,7 @@ void XMPProperties::readMetadata(QByteArray& xmpData)
 
     // ---------------------------------------------------------------
 
-    code = meta->getXmpTagStringBag("Xmp.iptc.Scene", false);
+    code = meta.getXmpTagStringBag("Xmp.iptc.Scene", false);
 
     for (QStringList::Iterator it = code.begin() ; it != code.end() ; ++it)
     {
@@ -411,7 +406,7 @@ void XMPProperties::readMetadata(QByteArray& xmpData)
 
     // ---------------------------------------------------------------
 
-    code = meta->getXmpTagStringBag("Xmp.dc.type", false);
+    code = meta.getXmpTagStringBag("Xmp.dc.type", false);
 
     for (QStringList::Iterator it3 = code.begin() ; it3 != code.end() ; ++it3)
     {
@@ -440,7 +435,7 @@ void XMPProperties::readMetadata(QByteArray& xmpData)
     d->objectAttributeCB->setCurrentIndex(0);
     d->objectAttributeEdit->clear();
     d->objectAttributeCheck->setChecked(false);
-    data = meta->getXmpTagString("Xmp.iptc.IntellectualGenre", false);
+    data = meta.getXmpTagString("Xmp.iptc.IntellectualGenre", false);
 
     if (!data.isNull())
     {
@@ -470,7 +465,7 @@ void XMPProperties::readMetadata(QByteArray& xmpData)
 
     d->originalTransEdit->clear();
     d->originalTransCheck->setChecked(false);
-    data = meta->getXmpTagString("Xmp.photoshop.TransmissionReference", false);
+    data = meta.getXmpTagString("Xmp.photoshop.TransmissionReference", false);
 
     if (!data.isNull())
     {
@@ -485,11 +480,9 @@ void XMPProperties::readMetadata(QByteArray& xmpData)
     blockSignals(false);
 }
 
-void XMPProperties::applyMetadata(QByteArray& xmpData)
+void XMPProperties::applyMetadata(DMetadata& meta)
 {
     QStringList oldList, newList;
-    QScopedPointer<DMetadata> meta(new DMetadata);
-    meta->setXmp(xmpData);
 
     // ---------------------------------------------------------------
 
@@ -502,22 +495,22 @@ void XMPProperties::applyMetadata(QByteArray& xmpData)
             newCode.append((*it2).left(2));
         }
 
-        meta->setXmpTagStringBag("Xmp.dc.language", newCode);
+        meta.setXmpTagStringBag("Xmp.dc.language", newCode);
     }
     else
     {
-        meta->removeXmpTag("Xmp.dc.language");
+        meta.removeXmpTag("Xmp.dc.language");
     }
 
     // ---------------------------------------------------------------
 
     if      (d->priorityCheck->isChecked())
     {
-        meta->setXmpTagString("Xmp.photoshop.Urgency", QString::number(d->priorityCB->currentIndex()));
+        meta.setXmpTagString("Xmp.photoshop.Urgency", QString::number(d->priorityCB->currentIndex()));
     }
     else if (d->priorityCheck->isValid())
     {
-        meta->removeXmpTag("Xmp.photoshop.Urgency");
+        meta.removeXmpTag("Xmp.photoshop.Urgency");
     }
 
     // ---------------------------------------------------------------
@@ -531,22 +524,22 @@ void XMPProperties::applyMetadata(QByteArray& xmpData)
             newCode.append((*it2).left(6));
         }
 
-        meta->setXmpTagStringBag("Xmp.iptc.Scene", newCode);
+        meta.setXmpTagStringBag("Xmp.iptc.Scene", newCode);
     }
     else
     {
-        meta->removeXmpTag("Xmp.iptc.Scene");
+        meta.removeXmpTag("Xmp.iptc.Scene");
     }
 
     // ---------------------------------------------------------------
 
     if (d->objectTypeEdit->getValues(oldList, newList))
     {
-        meta->setXmpTagStringBag("Xmp.dc.type", newList);
+        meta.setXmpTagStringBag("Xmp.dc.type", newList);
     }
     else
     {
-        meta->removeXmpTag("Xmp.dc.type");
+        meta.removeXmpTag("Xmp.dc.type");
     }
 
     // ---------------------------------------------------------------
@@ -567,25 +560,23 @@ void XMPProperties::applyMetadata(QByteArray& xmpData)
                                    .section(QLatin1String(" - "), -1));
         }
 
-        meta->setXmpTagString("Xmp.iptc.IntellectualGenre", objectAttribute);
+        meta.setXmpTagString("Xmp.iptc.IntellectualGenre", objectAttribute);
     }
     else if (d->objectAttributeCheck->isValid())
     {
-        meta->removeXmpTag("Xmp.iptc.IntellectualGenre");
+        meta.removeXmpTag("Xmp.iptc.IntellectualGenre");
     }
 
     // ---------------------------------------------------------------
 
     if (d->originalTransCheck->isChecked())
     {
-        meta->setXmpTagString("Xmp.photoshop.TransmissionReference", d->originalTransEdit->text());
+        meta.setXmpTagString("Xmp.photoshop.TransmissionReference", d->originalTransEdit->text());
     }
     else
     {
-        meta->removeXmpTag("Xmp.photoshop.TransmissionReference");
+        meta.removeXmpTag("Xmp.photoshop.TransmissionReference");
     }
-
-    xmpData = meta->getXmp();
 }
 
 } // namespace DigikamGenericMetadataEditPlugin

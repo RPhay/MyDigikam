@@ -37,12 +37,6 @@
 
 #include <klocalizedstring.h>
 
-// Local includes
-
-#include "dmetadata.h"
-
-using namespace Digikam;
-
 namespace DigikamGenericMetadataEditPlugin
 {
 
@@ -261,18 +255,17 @@ void XMPCategories::slotAddCategory()
     }
 }
 
-void XMPCategories::readMetadata(QByteArray& xmpData)
+void XMPCategories::readMetadata(DMetadata& meta)
 {
     blockSignals(true);
-    QScopedPointer<DMetadata> meta(new DMetadata);
-    meta->setXmp(xmpData);
+
     QString data;
 
     // In first we handle all sub-categories.
 
     d->subCategoriesBox->clear();
     d->subCategoriesCheck->setChecked(false);
-    d->oldSubCategories = meta->getXmpSubCategories();
+    d->oldSubCategories = meta.getXmpSubCategories();
 
     if (!d->oldSubCategories.isEmpty())
     {
@@ -284,7 +277,7 @@ void XMPCategories::readMetadata(QByteArray& xmpData)
 
     d->categoryEdit->clear();
     d->categoryCheck->setChecked(false);
-    data = meta->getXmpTagString("Xmp.photoshop.Category", false);
+    data = meta.getXmpTagString("Xmp.photoshop.Category", false);
 
     if (!data.isNull())
     {
@@ -302,16 +295,14 @@ void XMPCategories::readMetadata(QByteArray& xmpData)
     blockSignals(false);
 }
 
-void XMPCategories::applyMetadata(QByteArray& xmpData)
+void XMPCategories::applyMetadata(DMetadata& meta)
 {
     QStringList newCategories;
-    QScopedPointer<DMetadata> meta(new DMetadata);
-    meta->setXmp(xmpData);
 
     if (d->categoryCheck->isChecked())
-        meta->setXmpTagString("Xmp.photoshop.Category", d->categoryEdit->text());
+        meta.setXmpTagString("Xmp.photoshop.Category", d->categoryEdit->text());
     else
-        meta->removeXmpTag("Xmp.photoshop.Category");
+        meta.removeXmpTag("Xmp.photoshop.Category");
 
     for (int i = 0 ; i < d->subCategoriesBox->count(); ++i)
     {
@@ -320,13 +311,11 @@ void XMPCategories::applyMetadata(QByteArray& xmpData)
     }
 
     // We remove in first all existing sub-categories.
-    meta->removeXmpTag("Xmp.photoshop.SupplementalCategories");
+    meta.removeXmpTag("Xmp.photoshop.SupplementalCategories");
 
     // And add new list if necessary.
     if (d->categoryCheck->isChecked() && d->subCategoriesCheck->isChecked())
-        meta->setXmpSubCategories(newCategories);
-
-    xmpData = meta->getXmp();
+        meta.setXmpSubCategories(newCategories);
 }
 
 } // namespace DigikamGenericMetadataEditPlugin
