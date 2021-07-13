@@ -12,7 +12,7 @@ ExternalProject_Add(ext_libgphoto2
     DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
 
     GIT_REPOSITORY https://github.com/gphoto/libgphoto2.git
-    GIT_TAG v2.5.26
+    GIT_TAG v2.5.27
 
     INSTALL_DIR ${EXTPREFIX_libgphoto2}
     CONFIGURE_COMMAND <SOURCE_DIR>/configure --prefix ${EXTPREFIX_libgphoto2}
