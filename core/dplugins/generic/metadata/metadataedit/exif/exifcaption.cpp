@@ -37,12 +37,6 @@
 
 #include <klocalizedstring.h>
 
-// Local includes
-
-#include "dmetadata.h"
-
-using namespace Digikam;
-
 namespace DigikamGenericMetadataEditPlugin
 {
 
@@ -279,16 +273,15 @@ void EXIFCaption::setCheckedSyncIPTCCaption(bool c)
     d->syncIPTCCaptionCheck->setChecked(c);
 }
 
-void EXIFCaption::readMetadata(QByteArray& exifData)
+void EXIFCaption::readMetadata(DMetadata& meta)
 {
     blockSignals(true);
-    QScopedPointer<DMetadata> meta(new DMetadata);
-    meta->setExif(exifData);
+
     QString data;
 
     d->documentNameEdit->clear();
     d->documentNameCheck->setChecked(false);
-    data = meta->getExifTagString("Exif.Image.DocumentName", false);
+    data = meta.getExifTagString("Exif.Image.DocumentName", false);
 
     if (!data.isNull())
     {
@@ -300,7 +293,7 @@ void EXIFCaption::readMetadata(QByteArray& exifData)
 
     d->imageDescEdit->clear();
     d->imageDescCheck->setChecked(false);
-    data = meta->getExifTagString("Exif.Image.ImageDescription", false);
+    data = meta.getExifTagString("Exif.Image.ImageDescription", false);
 
     if (!data.isNull())
     {
@@ -312,7 +305,7 @@ void EXIFCaption::readMetadata(QByteArray& exifData)
 
     d->artistEdit->clear();
     d->artistCheck->setChecked(false);
-    data = meta->getExifTagString("Exif.Image.Artist", false);
+    data = meta.getExifTagString("Exif.Image.Artist", false);
 
     if (!data.isNull())
     {
@@ -324,7 +317,7 @@ void EXIFCaption::readMetadata(QByteArray& exifData)
 
     d->copyrightEdit->clear();
     d->copyrightCheck->setChecked(false);
-    data = meta->getExifTagString("Exif.Image.Copyright", false);
+    data = meta.getExifTagString("Exif.Image.Copyright", false);
 
     if (!data.isNull())
     {
@@ -336,7 +329,7 @@ void EXIFCaption::readMetadata(QByteArray& exifData)
 
     d->userCommentEdit->clear();
     d->userCommentCheck->setChecked(false);
-    data = meta->getExifComment(false);
+    data = meta.getExifComment(false);
 
     if (!data.isNull())
     {
@@ -352,60 +345,51 @@ void EXIFCaption::readMetadata(QByteArray& exifData)
     blockSignals(false);
 }
 
-void EXIFCaption::applyMetadata(QByteArray& exifData, QByteArray& iptcData, QByteArray& xmpData)
+void EXIFCaption::applyMetadata(DMetadata& meta)
 {
-    QScopedPointer<DMetadata> meta(new DMetadata);
-    meta->setExif(exifData);
-    meta->setIptc(iptcData);
-    meta->setXmp(xmpData);
-
     if (d->documentNameCheck->isChecked())
-        meta->setExifTagString("Exif.Image.DocumentName", d->documentNameEdit->text());
+        meta.setExifTagString("Exif.Image.DocumentName", d->documentNameEdit->text());
     else
-        meta->removeExifTag("Exif.Image.DocumentName");
+        meta.removeExifTag("Exif.Image.DocumentName");
 
     if (d->imageDescCheck->isChecked())
-        meta->setExifTagString("Exif.Image.ImageDescription", d->imageDescEdit->text());
+        meta.setExifTagString("Exif.Image.ImageDescription", d->imageDescEdit->text());
     else
-        meta->removeExifTag("Exif.Image.ImageDescription");
+        meta.removeExifTag("Exif.Image.ImageDescription");
 
     if (d->artistCheck->isChecked())
-        meta->setExifTagString("Exif.Image.Artist", d->artistEdit->text());
+        meta.setExifTagString("Exif.Image.Artist", d->artistEdit->text());
     else
-        meta->removeExifTag("Exif.Image.Artist");
+        meta.removeExifTag("Exif.Image.Artist");
 
     if (d->copyrightCheck->isChecked())
-        meta->setExifTagString("Exif.Image.Copyright", d->copyrightEdit->text());
+        meta.setExifTagString("Exif.Image.Copyright", d->copyrightEdit->text());
     else
-        meta->removeExifTag("Exif.Image.Copyright");
+        meta.removeExifTag("Exif.Image.Copyright");
 
     if (d->userCommentCheck->isChecked())
     {
-        meta->setExifComment(d->userCommentEdit->toPlainText(), false);
+        meta.setExifComment(d->userCommentEdit->toPlainText(), false);
 
         if (syncJFIFCommentIsChecked())
-            meta->setComments(d->userCommentEdit->toPlainText().toUtf8());
+            meta.setComments(d->userCommentEdit->toPlainText().toUtf8());
 
-        if (meta->supportXmp() && syncXMPCaptionIsChecked())
+        if (meta.supportXmp() && syncXMPCaptionIsChecked())
         {
-            meta->setXmpTagStringLangAlt("Xmp.dc.description",
+            meta.setXmpTagStringLangAlt("Xmp.dc.description",
                                         d->userCommentEdit->toPlainText(),
                                         QString());
 
-            meta->setXmpTagStringLangAlt("Xmp.exif.UserComment",
+            meta.setXmpTagStringLangAlt("Xmp.exif.UserComment",
                                         d->userCommentEdit->toPlainText(),
                                         QString());
         }
 
         if (syncIPTCCaptionIsChecked())
-            meta->setIptcTagString("Iptc.Application2.Caption", d->userCommentEdit->toPlainText());
+            meta.setIptcTagString("Iptc.Application2.Caption", d->userCommentEdit->toPlainText());
     }
     else
-        meta->removeExifTag("Exif.Photo.UserComment");
-
-    exifData = meta->getExifEncoded();
-    iptcData = meta->getIptc();
-    xmpData  = meta->getXmp();
+        meta.removeExifTag("Exif.Photo.UserComment");
 }
 
 } // namespace DigikamGenericMetadataEditPlugin

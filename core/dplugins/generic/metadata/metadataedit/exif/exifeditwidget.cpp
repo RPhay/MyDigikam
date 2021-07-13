@@ -79,10 +79,6 @@ public:
     bool                modified;
     bool                isReadOnly;
 
-    QByteArray          exifData;
-    QByteArray          iptcData;
-    QByteArray          xmpData;
-
     DConfigDlgWdgItem*  page_caption;
     DConfigDlgWdgItem*  page_datetime;
     DConfigDlgWdgItem*  page_lens;
@@ -198,15 +194,12 @@ void EXIFEditWidget::slotItemChanged()
     QScopedPointer<DMetadata> meta(new DMetadata);
     meta->load((*d->dlg->currentItem()).toLocalFile());
 
-    d->exifData = meta->getExifEncoded();
-    d->iptcData = meta->getIptc();
-    d->xmpData  = meta->getXmp();
-    d->captionPage->readMetadata(d->exifData);
-    d->datetimePage->readMetadata(d->exifData);
-    d->lensPage->readMetadata(d->exifData);
-    d->devicePage->readMetadata(d->exifData);
-    d->lightPage->readMetadata(d->exifData);
-    d->adjustPage->readMetadata(d->exifData);
+    d->captionPage->readMetadata(*meta);
+    d->datetimePage->readMetadata(*meta);
+    d->lensPage->readMetadata(*meta);
+    d->devicePage->readMetadata(*meta);
+    d->lightPage->readMetadata(*meta);
+    d->adjustPage->readMetadata(*meta);
 
     d->isReadOnly = !DMetadata::canWriteExif((*d->dlg->currentItem()).toLocalFile());
     emit signalSetReadOnly(d->isReadOnly);
@@ -225,22 +218,14 @@ void EXIFEditWidget::apply()
         QScopedPointer<DMetadata> meta(new DMetadata);
         meta->load((*d->dlg->currentItem()).toLocalFile());
 
-        d->exifData = meta->getExifEncoded();
-        d->iptcData = meta->getIptc();
-        d->xmpData  = meta->getXmp();
+        d->captionPage->applyMetadata(*meta);
+        d->datetimePage->applyMetadata(*meta);
+        d->lensPage->applyMetadata(*meta);
+        d->devicePage->applyMetadata(*meta);
+        d->lightPage->applyMetadata(*meta);
+        d->adjustPage->applyMetadata(*meta);
 
-        d->captionPage->applyMetadata(d->exifData, d->iptcData, d->xmpData);
-        d->datetimePage->applyMetadata(d->exifData, d->iptcData, d->xmpData);
-
-        d->lensPage->applyMetadata(d->exifData);
-        d->devicePage->applyMetadata(d->exifData);
-        d->lightPage->applyMetadata(d->exifData);
-        d->adjustPage->applyMetadata(d->exifData);
-
-        meta->setExif(d->exifData);
-        meta->setIptc(d->iptcData);
-        meta->setXmp(d->xmpData);
-        meta->save((*d->dlg->currentItem()).toLocalFile());
+        meta->applyChanges();
 
         d->modified = false;
     }
