@@ -66,6 +66,7 @@ if(MSVC)
 endif()
 
 target_link_libraries(panoparser
+                      PRIVATE
                       digikamcore
 )
 
