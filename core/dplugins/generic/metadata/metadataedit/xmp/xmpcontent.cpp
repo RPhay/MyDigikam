@@ -50,16 +50,16 @@ class Q_DECL_HIDDEN XMPContent::Private
 public:
 
     explicit Private()
+      : headlineCheck         (nullptr),
+        syncJFIFCommentCheck  (nullptr),
+        syncEXIFCommentCheck  (nullptr),
+        syncEXIFCopyrightCheck(nullptr),
+        writerCheck           (nullptr),
+        headlineEdit          (nullptr),
+        writerEdit            (nullptr),
+        captionEdit           (nullptr),
+        copyrightEdit         (nullptr)
     {
-        writerCheck            = nullptr;
-        headlineCheck          = nullptr;
-        captionEdit            = nullptr;
-        writerEdit             = nullptr;
-        headlineEdit           = nullptr;
-        syncJFIFCommentCheck   = nullptr;
-        syncEXIFCommentCheck   = nullptr;
-        syncEXIFCopyrightCheck = nullptr;
-        copyrightEdit          = nullptr;
     }
 
     QCheckBox*          headlineCheck;
@@ -77,7 +77,7 @@ public:
 
 XMPContent::XMPContent(QWidget* const parent)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     const int spacing = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
 
@@ -153,7 +153,7 @@ XMPContent::XMPContent(QWidget* const parent)
 
     connect(d->copyrightEdit, SIGNAL(signalToggled(bool)),
             this, SIGNAL(signalModified()));
-    
+
     connect(d->copyrightEdit, SIGNAL(signalDefaultLanguageEnabled(bool)),
             this, SLOT(slotSyncCopyrightOptionsEnabled(bool)));
 

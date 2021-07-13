@@ -105,7 +105,9 @@ void XMPSubjects::applyMetadata(DMetadata& meta)
 
     // And add new list if necessary.
     if (m_subjectsCheck->isChecked())
+    {
         meta.setXmpSubjects(newSubjects);
+    }
 }
 
 } // namespace DigikamGenericMetadataEditPlugin

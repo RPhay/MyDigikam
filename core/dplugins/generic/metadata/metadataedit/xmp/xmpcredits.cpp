@@ -49,30 +49,30 @@ class Q_DECL_HIDDEN XMPCredits::Private
 public:
 
     explicit Private()
+      : syncEXIFArtistCheck(nullptr),
+        creatorTitleCheck  (nullptr),
+        creditCheck        (nullptr),
+        sourceCheck        (nullptr),
+        contactCheck       (nullptr),
+        emailCheck         (nullptr),
+        urlCheck           (nullptr),
+        phoneCheck         (nullptr),
+        addressCheck       (nullptr),
+        postalCodeCheck    (nullptr),
+        cityCheck          (nullptr),
+        countryCheck       (nullptr),
+        creatorTitleEdit   (nullptr),
+        creditEdit         (nullptr),
+        sourceEdit         (nullptr),
+        emailEdit          (nullptr),
+        urlEdit            (nullptr),
+        phoneEdit          (nullptr),
+        addressEdit        (nullptr),
+        postalCodeEdit     (nullptr),
+        cityEdit           (nullptr),
+        countryEdit        (nullptr),
+        creatorEdit        (nullptr)
     {
-        syncEXIFArtistCheck = nullptr;
-        creatorEdit         = nullptr;
-        creatorTitleEdit    = nullptr;
-        creditEdit          = nullptr;
-        sourceEdit          = nullptr;
-        emailEdit           = nullptr;
-        urlEdit             = nullptr;
-        phoneEdit           = nullptr;
-        addressEdit         = nullptr;
-        postalCodeEdit      = nullptr;
-        cityEdit            = nullptr;
-        countryEdit         = nullptr;
-        creatorTitleCheck   = nullptr;
-        creditCheck         = nullptr;
-        sourceCheck         = nullptr;
-        emailCheck          = nullptr;
-        urlCheck            = nullptr;
-        phoneCheck          = nullptr;
-        addressCheck        = nullptr;
-        postalCodeCheck     = nullptr;
-        cityCheck           = nullptr;
-        countryCheck        = nullptr;
-        contactCheck        = nullptr;
     }
 
     QCheckBox*        syncEXIFArtistCheck;
@@ -466,7 +466,9 @@ void XMPCredits::readMetadata(DMetadata& meta)
     data = meta.getXmpTagString("Xmp.iptc.CreatorContactInfo/Iptc4xmpCore:CiAdrCtry", false);
 
     if (data.isNull())
+    {
         data = meta.getXmpTagString("Xmp.iptc.CiAdrCtry", false);
+    }
 
     if (!data.isNull())
     {
@@ -497,7 +499,9 @@ void XMPCredits::readMetadata(DMetadata& meta)
     data = meta.getXmpTagString("Xmp.photoshop.Source", false);
 
     if (data.isNull())
+    {
         data = meta.getXmpTagString("Xmp.dc.source", false);
+    }
 
     if (!data.isNull())
     {

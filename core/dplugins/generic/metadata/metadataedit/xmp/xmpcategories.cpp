@@ -45,15 +45,15 @@ class Q_DECL_HIDDEN XMPCategories::Private
 public:
 
     explicit Private()
+      : addSubCategoryButton(nullptr),
+        delSubCategoryButton(nullptr),
+        repSubCategoryButton(nullptr),
+        subCategoriesCheck  (nullptr),
+        categoryCheck       (nullptr),
+        categoryEdit        (nullptr),
+        subCategoryEdit     (nullptr),
+        subCategoriesBox    (nullptr)
     {
-        addSubCategoryButton = nullptr;
-        delSubCategoryButton = nullptr;
-        repSubCategoryButton = nullptr;
-        subCategoriesBox     = nullptr;
-        subCategoriesCheck   = nullptr;
-        categoryCheck        = nullptr;
-        categoryEdit         = nullptr;
-        subCategoryEdit      = nullptr;
     }
 
     QStringList  oldSubCategories;
@@ -73,7 +73,7 @@ public:
 
 XMPCategories::XMPCategories(QWidget* const parent)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     QGridLayout* const grid = new QGridLayout(this);
 
@@ -197,7 +197,11 @@ void XMPCategories::enableWidgets(bool checked1, bool checked2)
 void XMPCategories::slotDelCategory()
 {
     QListWidgetItem* const item = d->subCategoriesBox->currentItem();
-    if (!item) return;
+
+    if (!item)
+    {
+        return;
+    }
 
     d->subCategoriesBox->takeItem(d->subCategoriesBox->row(item));
     delete item;
@@ -206,7 +210,11 @@ void XMPCategories::slotDelCategory()
 void XMPCategories::slotRepCategory()
 {
     QString newCategory = d->subCategoryEdit->text();
-    if (newCategory.isEmpty()) return;
+
+    if (newCategory.isEmpty())
+    {
+        return;
+    }
 
     if (!d->subCategoriesBox->selectedItems().isEmpty())
     {
@@ -237,7 +245,7 @@ void XMPCategories::slotAddCategory()
 
     bool found = false;
 
-    for (int i = 0 ; i < d->subCategoriesBox->count(); ++i)
+    for (int i = 0 ; i < d->subCategoriesBox->count() ; ++i)
     {
         QListWidgetItem* const item = d->subCategoriesBox->item(i);
 
@@ -300,22 +308,30 @@ void XMPCategories::applyMetadata(DMetadata& meta)
     QStringList newCategories;
 
     if (d->categoryCheck->isChecked())
+    {
         meta.setXmpTagString("Xmp.photoshop.Category", d->categoryEdit->text());
+    }
     else
+    {
         meta.removeXmpTag("Xmp.photoshop.Category");
+    }
 
-    for (int i = 0 ; i < d->subCategoriesBox->count(); ++i)
+    for (int i = 0 ; i < d->subCategoriesBox->count() ; ++i)
     {
         QListWidgetItem* const item = d->subCategoriesBox->item(i);
         newCategories.append(item->text());
     }
 
     // We remove in first all existing sub-categories.
+
     meta.removeXmpTag("Xmp.photoshop.SupplementalCategories");
 
     // And add new list if necessary.
+
     if (d->categoryCheck->isChecked() && d->subCategoriesCheck->isChecked())
+    {
         meta.setXmpSubCategories(newCategories);
+    }
 }
 
 } // namespace DigikamGenericMetadataEditPlugin

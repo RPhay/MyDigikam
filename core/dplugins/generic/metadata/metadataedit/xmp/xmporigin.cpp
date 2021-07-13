@@ -55,28 +55,28 @@ class Q_DECL_HIDDEN XMPOrigin::Private
 public:
 
     explicit Private()
+      : dateCreatedCheck      (nullptr),
+        dateDigitalizedCheck  (nullptr),
+        dateVideoCheck        (nullptr),
+        syncEXIFDateCheck     (nullptr),
+        cityCheck             (nullptr),
+        sublocationCheck      (nullptr),
+        provinceCheck         (nullptr),
+        setTodayCreatedBtn    (nullptr),
+        setTodayDigitalizedBtn(nullptr),
+        setTodayVideoBtn      (nullptr),
+        dateCreatedSel        (nullptr),
+        dateDigitalizedSel    (nullptr),
+        dateVideoSel          (nullptr),
+        zoneCreatedSel        (nullptr),
+        zoneDigitalizedSel    (nullptr),
+        zoneVideoSel          (nullptr),
+        cityEdit              (nullptr),
+        sublocationEdit       (nullptr),
+        provinceEdit          (nullptr),
+        countryCheck          (nullptr),
+        countryCB             (nullptr)
     {
-        cityEdit               = nullptr;
-        sublocationEdit        = nullptr;
-        provinceEdit           = nullptr;
-        cityCheck              = nullptr;
-        sublocationCheck       = nullptr;
-        provinceCheck          = nullptr;
-        countryCheck           = nullptr;
-        dateCreatedSel         = nullptr;
-        dateDigitalizedSel     = nullptr;
-        dateVideoSel           = nullptr;
-        zoneCreatedSel         = nullptr;
-        zoneDigitalizedSel     = nullptr;
-        zoneVideoSel           = nullptr;
-        dateCreatedCheck       = nullptr;
-        dateDigitalizedCheck   = nullptr;
-        dateVideoCheck         = nullptr;
-        syncEXIFDateCheck      = nullptr;
-        setTodayCreatedBtn     = nullptr;
-        setTodayDigitalizedBtn = nullptr;
-        setTodayVideoBtn       = nullptr;
-        countryCB              = nullptr;
     }
 
     QCheckBox*                     dateCreatedCheck;
@@ -110,7 +110,7 @@ public:
 
 XMPOrigin::XMPOrigin(QWidget* const parent)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     QGridLayout* const grid = new QGridLayout(this);
 
@@ -401,22 +401,34 @@ void XMPOrigin::readMetadata(DMetadata& meta)
     dateTimeStr = meta.getXmpTagString("Xmp.photoshop.DateCreated", false);
 
     if (dateTimeStr.isEmpty())
+    {
         dateTimeStr = meta.getXmpTagString("Xmp.xmp.CreateDate", false);
+    }
 
     if (dateTimeStr.isEmpty())
+    {
         dateTimeStr = meta.getXmpTagString("Xmp.xmp.ModifyDate", false);
+    }
 
     if (dateTimeStr.isEmpty())
+    {
         dateTimeStr = meta.getXmpTagString("Xmp.exif.DateTimeOriginal", false);
+    }
 
     if (dateTimeStr.isEmpty())
+    {
         dateTimeStr = meta.getXmpTagString("Xmp.tiff.DateTime", false);
+    }
 
     if (dateTimeStr.isEmpty())
+    {
         dateTimeStr = meta.getXmpTagString("Xmp.xmp.ModifyDate", false);
+    }
 
     if (dateTimeStr.isEmpty())
+    {
         dateTimeStr = meta.getXmpTagString("Xmp.xmp.MetadataDate", false);
+    }
 
     d->dateCreatedSel->setDateTime(QDateTime::currentDateTime());
     d->dateCreatedCheck->setChecked(false);
@@ -462,13 +474,19 @@ void XMPOrigin::readMetadata(DMetadata& meta)
     dateTimeStr = meta.getXmpTagString("Xmp.video.DateTimeOriginal", false);
 
     if (dateTimeStr.isEmpty())
+    {
         dateTimeStr = meta.getXmpTagString("Xmp.video.DateTimeDigitized", false);
+    }
 
     if (dateTimeStr.isEmpty())
+    {
         dateTimeStr = meta.getXmpTagString("Xmp.video.ModificationDate", false);
+    }
 
     if (dateTimeStr.isEmpty())
+    {
         dateTimeStr = meta.getXmpTagString("Xmp.video.DateUTC", false);
+    }
 
     d->dateVideoSel->setDateTime(QDateTime::currentDateTime());
     d->dateVideoCheck->setChecked(false);

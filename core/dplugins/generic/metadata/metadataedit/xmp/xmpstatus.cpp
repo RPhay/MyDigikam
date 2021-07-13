@@ -48,13 +48,13 @@ class Q_DECL_HIDDEN XMPStatus::Private
 public:
 
     explicit Private()
+      : nicknameCheck          (nullptr),
+        specialInstructionCheck(nullptr),
+        nicknameEdit           (nullptr),
+        specialInstructionEdit (nullptr),
+        identifiersEdit        (nullptr),
+        objectNameEdit         (nullptr)
     {
-        objectNameEdit          = nullptr;
-        specialInstructionEdit  = nullptr;
-        specialInstructionCheck = nullptr;
-        nicknameEdit            = nullptr;
-        nicknameCheck           = nullptr;
-        identifiersEdit         = nullptr;
     }
 
     QCheckBox*          nicknameCheck;
@@ -71,7 +71,7 @@ public:
 
 XMPStatus::XMPStatus(QWidget* const parent)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     QGridLayout* const grid  = new QGridLayout(this);
 
@@ -204,25 +204,41 @@ void XMPStatus::applyMetadata(DMetadata& meta)
 
     DMetadata::AltLangMap oldAltLangMap, newAltLangMap;
 
-    if (d->objectNameEdit->getValues(oldAltLangMap, newAltLangMap))
+    if      (d->objectNameEdit->getValues(oldAltLangMap, newAltLangMap))
+    {
         meta.setXmpTagStringListLangAlt("Xmp.dc.title", newAltLangMap);
+    }
     else if (d->objectNameEdit->isValid())
+    {
         meta.removeXmpTag("Xmp.dc.title");
+    }
 
     if (d->nicknameCheck->isChecked())
+    {
         meta.setXmpTagString("Xmp.xmp.Nickname", d->nicknameEdit->text());
+    }
     else
+    {
         meta.removeXmpTag("Xmp.xmp.Nickname");
+    }
 
     if (d->identifiersEdit->getValues(oldList, newList))
+    {
         meta.setXmpTagStringSeq("Xmp.xmp.Identifier", newList);
+    }
     else
+    {
         meta.removeXmpTag("Xmp.xmp.Identifier");
+    }
 
     if (d->specialInstructionCheck->isChecked())
+    {
         meta.setXmpTagString("Xmp.photoshop.Instructions", d->specialInstructionEdit->toPlainText());
+    }
     else
+    {
         meta.removeXmpTag("Xmp.photoshop.Instructions");
+    }
 }
 
 } // namespace DigikamGenericMetadataEditPlugin
