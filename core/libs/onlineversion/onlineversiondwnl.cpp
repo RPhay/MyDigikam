@@ -173,7 +173,7 @@ void OnlineVersionDwnl::startDownload(const QString& version)
 
 #endif
 
-        d->file       = QString::fromLatin1("digikam-%1-%2%3%4.%5")
+        d->file       = QString::fromLatin1("digiKam-%1-%2%3%4.%5")
                             .arg(version)
                             .arg(os)
                             .arg(arch)
