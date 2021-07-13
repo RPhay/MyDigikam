@@ -99,7 +99,6 @@ urpmi --auto \
       xz-devel \
       lz4-devel \
       inotify-tools-devel \
-      openssl-devel \
       cups-devel \
       imagemagick \
       openal-soft-devel \
@@ -149,7 +148,7 @@ urpmi --auto \
 echo -e "---------- Clean-up Old Packages\n"
 
 # Remove system based devel package to prevent conflict with new one.
-urpme --auto --force ${LIBSUFFIX}qt5core5 || true
+urpme --auto --force ${LIBSUFFIX}qt5core5 lib64openssl-devel || true
 
 #################################################################################################
 
@@ -178,7 +177,7 @@ if [ ! -d /opt/cmake ] ; then
 fi
 
 #################################################################################################
-
+if [ ] ; then
 cd $BUILDING_DIR
 
 rm -rf $BUILDING_DIR/* || true
@@ -191,7 +190,7 @@ cmake $ORIG_WD/../3rdparty \
 # Install new cmake recent version to /opt
 
 cmake --build . --config RelWithDebInfo --target ext_cmake        -- -j$CPU_CORES
-
+fi
 #################################################################################################
 
 cd $BUILDING_DIR
@@ -208,7 +207,7 @@ rm -rf $BUILDING_DIR/* || true
 # NOTE: The order to compile each component here is very important.
 
 #/opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_libicu        -- -j$CPU_CORES
-#/opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_openssl       -- -j$CPU_CORES
+/opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_openssl       -- -j$CPU_CORES
 
 /opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_qt            -- -j$CPU_CORES    # depend of tiff, png, jpeg
 
