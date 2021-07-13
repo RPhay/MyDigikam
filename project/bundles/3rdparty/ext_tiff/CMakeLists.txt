@@ -10,8 +10,10 @@ SET(EXTPREFIX_tiff "${EXTPREFIX}" )
 
 ExternalProject_Add(ext_tiff
     DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
-    URL https://gitlab.com/libtiff/libtiff/-/archive/Release-v4-1-0/libtiff-Release-v4-1-0.tar.bz2
-    URL_MD5 7de199c736c3469d94cbb6c1a267cff4
+
+    GIT_REPOSITORY https://gitlab.com/libtiff/libtiff.git
+
+    GIT_TAG v4.3.0
 
     CONFIGURE_COMMAND <SOURCE_DIR>/configure --prefix ${EXTPREFIX_tiff}
     UPDATE_COMMAND ""
