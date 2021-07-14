@@ -56,6 +56,7 @@ ExternalProject_Add(ext_qt
                   -qt-zlib
                   -qt-pcre
                   -qt-harfbuzz
+                  -qt-xcb
                   -skip qt3d                        # 3D core
                   -skip qtactiveqt                  # No need ActiveX support
                   -skip qtandroidextras             # For embeded devices only
