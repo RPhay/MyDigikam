@@ -43,9 +43,9 @@ class TrackListModel : public QAbstractItemModel
 public:
 
     explicit TrackListModel(TrackManager* const trackManager, QObject* const parent);
-    ~TrackListModel() override;
+    ~TrackListModel()                                                                                     override;
 
-    // QAbstractItemModel:
+    // QAbstractItemModel customization:
 
     int columnCount(const QModelIndex& parent = QModelIndex() )                                     const override;
     bool setData(const QModelIndex& index, const QVariant& value, int role)                               override;

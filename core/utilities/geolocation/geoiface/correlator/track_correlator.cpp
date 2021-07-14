@@ -49,7 +49,7 @@ public:
 TrackCorrelator::TrackCorrelator(TrackManager* const trackManager,
                                  QObject* const parent)
     : QObject(parent),
-      d(new Private())
+      d      (new Private())
 {
     d->trackManager = trackManager;
 

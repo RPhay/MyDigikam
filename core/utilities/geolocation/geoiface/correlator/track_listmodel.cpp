@@ -117,13 +117,19 @@ QVariant TrackListModel::data(const QModelIndex& index, int role) const
             switch (columnNumber)
             {
                 case ColumnFilename:
+                {
                     return track.url.fileName();
+                }
 
                 case ColumnNPoints:
+                {
                     return QString::number(track.points.count());
+                }
 
                 case ColumnVisible:
+                {
                     return QString();
+                }
             }
 
             break;
@@ -134,7 +140,9 @@ QVariant TrackListModel::data(const QModelIndex& index, int role) const
             switch (columnNumber)
             {
                 case ColumnVisible:
+                {
                     return track.color;
+                }
             }
 
             break;

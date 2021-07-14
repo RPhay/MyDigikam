@@ -136,7 +136,7 @@ GPSCorrelatorWidget::GPSCorrelatorWidget(QWidget* const parent,
                                          GPSItemModel* const imageModel,
                                          TrackManager* const trackManager)
     : QWidget(parent),
-      d(new Private())
+      d      (new Private())
 {
     d->imageModel      = imageModel;
     d->trackManager    = trackManager;
@@ -159,24 +159,24 @@ GPSCorrelatorWidget::GPSCorrelatorWidget(QWidget* const parent,
 
     d->gpxLoadFilesButton             = new QPushButton(i18n("Load GPX files..."), this);
 
-    d->gpxFileList          = new QTreeView(this);
+    d->gpxFileList                    = new QTreeView(this);
     d->gpxFileList->setModel(d->trackListModel);
     d->gpxFileList->setHeaderHidden(false);
     d->gpxFileList->setRootIsDecorated(false);
 
-    d->showTracksOnMap      = new QCheckBox(i18n("Show tracks on Map"), this);
+    d->showTracksOnMap                = new QCheckBox(i18n("Show tracks on Map"), this);
     d->showTracksOnMap->setWhatsThis(i18n("Set this option to show tracks on the Map"));
-    DLineWidget* const line = new DLineWidget(Qt::Horizontal, this);
+    DLineWidget* const line           = new DLineWidget(Qt::Horizontal, this);
 
     connect(d->showTracksOnMap, SIGNAL(stateChanged(int)),
             this, SLOT(slotShowTracksStateChanged(int)));
 
-    QWidget* const offsetWidget     = new QWidget(this);
-    QGridLayout* const offsetLayout = new QGridLayout(offsetWidget);
+    QWidget* const offsetWidget       = new QWidget(this);
+    QGridLayout* const offsetLayout   = new QGridLayout(offsetWidget);
 
-    QLabel* const timeZoneLabel     = new QLabel(i18n("Camera time zone:"), offsetWidget);
+    QLabel* const timeZoneLabel       = new QLabel(i18n("Camera time zone:"), offsetWidget);
 
-    d->timeZoneCB                   = new TimeZoneComboBox(offsetWidget);
+    d->timeZoneCB                     = new TimeZoneComboBox(offsetWidget);
     d->timeZoneCB->setWhatsThis(i18n("<p>Sets the time zone the camera was set to "
                                      "during photo shooting, so that the time stamps "
                                      "of the images can be converted to GMT to match "
@@ -184,8 +184,8 @@ GPSCorrelatorWidget::GPSCorrelatorWidget(QWidget* const parent,
                                      "<p>Note: positive offsets count eastwards from "
                                      "zero longitude (GMT), they are 'ahead of time'.</p>"));
 
-    QLabel* const offsetLabel       = new QLabel(i18n("Offset of pictures (hh:mm:ss):"),
-                                                      offsetWidget);
+    QLabel* const offsetLabel         = new QLabel(i18n("Offset of pictures (hh:mm:ss):"),
+                                                        offsetWidget);
     offsetLabel->setWhatsThis(i18n("Sets the offset between picture times "
                                    "and track times. E.g. to correct wrong "
                                    "camera clock or different time zone."));
@@ -212,7 +212,7 @@ GPSCorrelatorWidget::GPSCorrelatorWidget(QWidget* const parent,
     QWidget* const matchWidget     = new QWidget(this);
     QGridLayout* const matchLayout = new QGridLayout(matchWidget);
 
-    d->interpolateButton     = new QRadioButton(QLatin1String("Interpolate"), matchWidget);
+    d->interpolateButton     = new QRadioButton(i18n("Interpolate"), matchWidget);
     d->interpolateLimitLabel = new QLabel(i18n("Max. time gap (hh:mm:ss):"), matchWidget);
     d->interpolateLimitInput = new QTimeEdit(matchWidget);
     d->interpolateLimitInput->setDisplayFormat(QLatin1String("HH:mm:ss"));
@@ -223,7 +223,7 @@ GPSCorrelatorWidget::GPSCorrelatorWidget(QWidget* const parent,
                                                 "If the time difference exceeds "
                                                 "this setting, no match will be attempted."));
 
-    QRadioButton* directMatchButton = new QRadioButton(QLatin1String("Match directly"), matchWidget);
+    QRadioButton* directMatchButton = new QRadioButton(i18n("Match directly"), matchWidget);
     d->directMatchLimitLabel        = new QLabel(i18n("Max. time gap (hh:mm:ss):"), matchWidget);
     d->directMatchLimitInput        = new QTimeEdit(matchWidget);
     d->directMatchLimitInput->setDisplayFormat(QLatin1String("HH:mm:ss"));
@@ -284,7 +284,9 @@ void GPSCorrelatorWidget::slotLoadTrackFiles()
                                                                i18n("GPS Exchange Format (*.gpx)"));
 
     if (gpxFiles.isEmpty())
+    {
         return;
+    }
 
     d->gpxFileOpenLastDirectory = QFileInfo(gpxFiles.first()).path();
 
@@ -381,8 +383,8 @@ void GPSCorrelatorWidget::slotCorrelate()
         userOffset = (-1) * userOffset;
     }
 
-    options.secondsOffset  = userOffset;
-    options.timeZoneOffset = d->timeZoneCB->timeZoneOffset();
+    options.secondsOffset        = userOffset;
+    options.timeZoneOffset       = d->timeZoneCB->timeZoneOffset();
 
     options.interpolate          = d->interpolateButton->isChecked();
     options.interpolationDstTime = d->interpolateLimitInput->time().msecsSinceStartOfDay() / 1000;
