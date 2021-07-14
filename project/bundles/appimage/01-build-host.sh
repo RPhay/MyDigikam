@@ -192,6 +192,7 @@ rm -rf $BUILDING_DIR/* || true
 cmake $ORIG_WD/../3rdparty \
       -DCMAKE_INSTALL_PREFIX:PATH=/opt/cmake \
       -DINSTALL_ROOT=/opt/cmake \
+      -DENABLE_QT_VERSION=$DK_QTVERSION \
       -DEXTERNALS_DOWNLOAD_DIR=$DOWNLOAD_DIR
 
 # Install new cmake recent version to /opt
