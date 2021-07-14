@@ -85,9 +85,10 @@ ExternalProject_Add(ext_qt
                   -skip qtwebview                   # QML extension for QWebEngine
                   -skip qtwinextras                 # For Windows devices only
                   ${DROP_QTWEBENGINE_DEPS}
-                  OPENSSL_INCDIR="/opt/openssl/include/"
-                  OPENSSL_LIBDIR="/opt/openssl/lib/"
-                  OPENSSL_LIBS="-lssl -lcrypto"
+
+#                  OPENSSL_INCDIR="/opt/openssl/include/"
+#                  OPENSSL_LIBDIR="/opt/openssl/lib/"
+#                  OPENSSL_LIBS="-lssl -lcrypto"
 
     # Exemple of code to install only one Qt module for hacking purpose (aka qtbase here)
     #BUILD_COMMAND cd <SOURCE_DIR> && $(MAKE) module-qtbase

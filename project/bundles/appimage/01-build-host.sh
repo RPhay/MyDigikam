@@ -117,6 +117,7 @@ urpmi --auto \
       gphoto2-devel \
       sane-backends \
       jasper-devel \
+      ${LIBSUFFIX}openssl-devel \
       ${LIBSUFFIX}nss-devel \
       ${LIBSUFFIX}xkbcommon-devel \
       ${LIBSUFFIX}sane1-devel \
@@ -127,10 +128,6 @@ urpmi --auto \
       ${LIBSUFFIX}xcursor-devel \
       ${LIBSUFFIX}xcomposite-devel \
       ${LIBSUFFIX}xrender-devel \
-      ${LIBSUFFIX}mesagl1-devel \
-      ${LIBSUFFIX}mesaglu1-devel \
-      ${LIBSUFFIX}mesaegl1-devel \
-      ${LIBSUFFIX}mesaegl1 \
       ${LIBSUFFIX}ltdl-devel \
       ${LIBSUFFIX}glib2.0-devel \
       ${LIBSUFFIX}usb1.0-devel \
@@ -143,12 +140,22 @@ urpmi --auto \
       ${LIBSUFFIX}magick-devel \
       ${LIBSUFFIX}wayland-devel
 
+if [[ "$(DK_QTVERSION)" = "5.14" ]] ; then
+
+urpmi --auto \
+      ${LIBSUFFIX}mesagl1-devel \
+      ${LIBSUFFIX}mesaglu1-devel \
+      ${LIBSUFFIX}mesaegl1-devel \
+      ${LIBSUFFIX}mesaegl1
+
+fi
+
 #################################################################################################
 
 echo -e "---------- Clean-up Old Packages\n"
 
 # Remove system based devel package to prevent conflict with new one.
-urpme --auto --force ${LIBSUFFIX}qt5core5 lib64openssl-devel || true
+urpme --auto --force ${LIBSUFFIX}qt5core5 || true
 
 #################################################################################################
 
@@ -177,7 +184,7 @@ if [ ! -d /opt/cmake ] ; then
 fi
 
 #################################################################################################
-if [ ] ; then
+
 cd $BUILDING_DIR
 
 rm -rf $BUILDING_DIR/* || true
@@ -190,7 +197,7 @@ cmake $ORIG_WD/../3rdparty \
 # Install new cmake recent version to /opt
 
 cmake --build . --config RelWithDebInfo --target ext_cmake        -- -j$CPU_CORES
-fi
+
 #################################################################################################
 
 cd $BUILDING_DIR
@@ -201,13 +208,14 @@ rm -rf $BUILDING_DIR/* || true
       -DCMAKE_INSTALL_PREFIX:PATH=/usr \
       -DINSTALL_ROOT=/usr \
       -DEXTERNALS_DOWNLOAD_DIR=$DOWNLOAD_DIR \
+      -DENABLE_QT_VERSION=$DK_QTVERSION \
       -DENABLE_QTWEBENGINE=$DK_QTWEBENGINE
 
 # Low level libraries and Qt5 dependencies
 # NOTE: The order to compile each component here is very important.
 
 #/opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_libicu        -- -j$CPU_CORES
-/opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_openssl       -- -j$CPU_CORES
+#/opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_openssl       -- -j$CPU_CORES
 
 /opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_qt            -- -j$CPU_CORES    # depend of tiff, png, jpeg
 
