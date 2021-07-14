@@ -180,7 +180,7 @@ cmake $ORIG_WD/../3rdparty \
       -DCMAKE_INSTALL_PREFIX:PATH=/usr \
       -DINSTALL_ROOT=/usr \
       -DEXTERNALS_DOWNLOAD_DIR=$DOWNLOAD_DIR \
-      -DENABLE_QT_VERSION=$DK_QTVERSION \
+      -DENABLE_QTVERSION=$DK_QTVERSION \
       -DENABLE_QTWEBENGINE=$DK_QTWEBENGINE
 
 cmake --build . --config RelWithDebInfo --target ext_gmic_qt    -- -j$CPU_CORES

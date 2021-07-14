@@ -140,13 +140,24 @@ urpmi --auto \
       ${LIBSUFFIX}magick-devel \
       ${LIBSUFFIX}wayland-devel
 
-if [[ "$(DK_QTVERSION)" = "5.14" ]] ; then
+if [[ "$DK_QTVERSION" = "5.14" ]] ; then
 
 urpmi --auto \
       ${LIBSUFFIX}mesagl1-devel \
       ${LIBSUFFIX}mesaglu1-devel \
       ${LIBSUFFIX}mesaegl1-devel \
       ${LIBSUFFIX}mesaegl1
+
+fi
+
+if [[ "$DK_QTVERSION" = "5.15" ]] ; then
+
+urpmi --auto \
+      ${LIBSUFFIX}xcb-util-cursor-devel \
+      ${LIBSUFFIX}xcb-util-image-devel \
+      ${LIBSUFFIX}xcb-util-renderutil-devel \
+      ${LIBSUFFIX}xcb-util-wm-devel \
+      ${LIBSUFFIX}xcb-xrm-devel
 
 fi
 
@@ -192,7 +203,7 @@ rm -rf $BUILDING_DIR/* || true
 cmake $ORIG_WD/../3rdparty \
       -DCMAKE_INSTALL_PREFIX:PATH=/opt/cmake \
       -DINSTALL_ROOT=/opt/cmake \
-      -DENABLE_QT_VERSION=$DK_QTVERSION \
+      -DENABLE_QTVERSION=$DK_QTVERSION \
       -DEXTERNALS_DOWNLOAD_DIR=$DOWNLOAD_DIR
 
 # Install new cmake recent version to /opt
@@ -209,7 +220,7 @@ rm -rf $BUILDING_DIR/* || true
       -DCMAKE_INSTALL_PREFIX:PATH=/usr \
       -DINSTALL_ROOT=/usr \
       -DEXTERNALS_DOWNLOAD_DIR=$DOWNLOAD_DIR \
-      -DENABLE_QT_VERSION=$DK_QTVERSION \
+      -DENABLE_QTVERSION=$DK_QTVERSION \
       -DENABLE_QTWEBENGINE=$DK_QTWEBENGINE
 
 # Low level libraries and Qt5 dependencies
