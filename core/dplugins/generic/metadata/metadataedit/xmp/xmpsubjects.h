@@ -27,7 +27,6 @@
 // Qt includes
 
 #include <QWidget>
-#include <QByteArray>
 
 // Local includes
 
@@ -48,8 +47,8 @@ public:
     explicit XMPSubjects(QWidget* const parent);
     ~XMPSubjects() override;
 
-    void applyMetadata(QByteArray& xmpData);
-    void readMetadata(QByteArray& xmpData);
+    void applyMetadata(DMetadata& meta);
+    void readMetadata(DMetadata& meta);
 };
 
 } // namespace DigikamGenericMetadataEditPlugin

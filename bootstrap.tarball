@@ -8,13 +8,13 @@
 
 # Configuration to tune before to build tarball.
 
-TARBALL_VERSION="7.0.0"
+TARBALL_VERSION="7.3.0"
 
 # Location to host target files.
 TARBALL_DIR="$PWD/../digikam-$TARBALL_VERSION"
-TARBALL_FILE="digikam-$TARBALL_VERSION.tar.xz"
+TARBALL_FILE="digiKam-$TARBALL_VERSION.tar.xz"
 TARBALL_PATH="$PWD/../$TARBALL_FILE"
-TARBALL_CHECKSUMS="$PWD/../digikam-$TARBALL_VERSION.sum"
+TARBALL_CHECKSUMS="$PWD/../digiKam-$TARBALL_VERSION.sum"
 TARBALL_SHA256SUMS="$PWD/../sha256_release.sum"
 
 # sub-dir to build translations
