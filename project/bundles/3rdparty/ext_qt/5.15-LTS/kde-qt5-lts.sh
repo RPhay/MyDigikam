@@ -17,44 +17,15 @@ set -C
 
 git submodule update --init --progress
 
+# remove non Qt6 sub-modules
 rm -rf                  \
-    qt3d                \
-    qtactiveqt          \
-    qtandroidextras     \
     qtcanvas3d          \
-    qtcharts            \
-    qtconnectivity      \
-    qtdatavis3d         \
-    qtdoc               \
     qtdocgallery        \
     qtfeedback          \
-    qtgamepad           \
-    qtgraphicaleffects  \
-    qtlocation          \
-    qtlottie            \
-    qtmacextras         \
-    qtmultimedia        \
-    qtnetworkauth       \
     qtpim               \
-    qtpurchasing        \
     qtqa                \
-    qtquick3d           \
-    qtquickcontrols2    \
-    qtquicktimeline     \
-    qtremoteobjects     \
     qtrepotools         \
-    qtscript            \
-    qtscxml             \
-    qtsensors           \
-    qtserialbus         \
-    qtserialport        \
-    qtspeech            \
-    qtsystems           \
-    qtvirtualkeyboard   \
-    qtwebglplugin       \
-    qtwebsockets        \
-    qtwebview           \
-    qtwinextras
+    qtsystems
 
 QT_SUBDIRS=$(ls -F | grep / | grep qt)
 
