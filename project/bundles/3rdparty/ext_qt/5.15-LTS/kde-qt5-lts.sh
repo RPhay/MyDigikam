@@ -42,3 +42,16 @@ for SUBDIR in $QT_SUBDIRS ; do
 
 done
 
+# Remove .git sub directories
+
+GIT_SUBDIRS=$(find  . -name '.git')
+
+echo "Git internal sub-directories to remove: $GIT_SUBDIRS"
+
+for SUBDIR in $GIT_SUBDIRS ; do
+
+    echo "Removing $SUBDIR..."
+    rm -fr $SUBDIR
+
+done
+
