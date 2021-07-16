@@ -117,6 +117,7 @@ urpmi --auto \
       gphoto2-devel \
       sane-backends \
       jasper-devel \
+      nodejs-devel \
       ${LIBSUFFIX}openssl-devel \
       ${LIBSUFFIX}nss-devel \
       ${LIBSUFFIX}xkbcommon-devel \
@@ -142,31 +143,36 @@ urpmi --auto \
 
 if [[ "$DK_QTVERSION" = "5.14" ]] ; then
 
-urpmi --auto \
-      ${LIBSUFFIX}mesagl1-devel \
-      ${LIBSUFFIX}mesaglu1-devel \
-      ${LIBSUFFIX}mesaegl1-devel \
-      ${LIBSUFFIX}mesaegl1
+    urpmi --auto \
+          ${LIBSUFFIX}mesagl1-devel \
+          ${LIBSUFFIX}mesaglu1-devel \
+          ${LIBSUFFIX}mesaegl1-devel \
+          ${LIBSUFFIX}mesaegl1
+
+
+    echo -e "---------- Clean-up Old Packages\n"
+
+    # Remove system based devel package to prevent conflict with new one.
+    urpme --auto --force ${LIBSUFFIX}qt5core5 || true
 
 fi
 
-if [[ "$DK_QTVERSION" = "5.15" ]] ; then
+if [[ "$DK_QTVERSION" = "5.15" || "$DK_QTVERSION" = "5.15-LTS" ]] ; then
 
-urpmi --auto \
-      ${LIBSUFFIX}xcb-util-cursor-devel \
-      ${LIBSUFFIX}xcb-util-image-devel \
-      ${LIBSUFFIX}xcb-util-renderutil-devel \
-      ${LIBSUFFIX}xcb-util-wm-devel \
-      ${LIBSUFFIX}xcb-xrm-devel
+    urpmi --auto \
+          ${LIBSUFFIX}xcb-util-cursor-devel \
+          ${LIBSUFFIX}xcb-util-image-devel \
+          ${LIBSUFFIX}xcb-util-renderutil-devel \
+          ${LIBSUFFIX}xcb-util-wm-devel \
+          ${LIBSUFFIX}xcb-xrm-devel
+
+
+    echo -e "---------- Clean-up Old Packages\n"
+
+    # Remove system based devel package to prevent conflict with new one.
+    urpme --auto --force ${LIBSUFFIX}qt5core || true
 
 fi
-
-#################################################################################################
-
-echo -e "---------- Clean-up Old Packages\n"
-
-# Remove system based devel package to prevent conflict with new one.
-urpme --auto --force ${LIBSUFFIX}qt5core5 || true
 
 #################################################################################################
 
