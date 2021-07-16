@@ -11,13 +11,13 @@
 set -e
 set -C
 
-#git clone https://invent.kde.org/qt/qt/qt5.git kde-5.15-LTS
+#git clone --progress --verbose --branch kde/5.15 --single-branch https://invent.kde.org/qt/qt/qt5.git kde-5.15-LTS
 #cd kde-5.15-LTS
-#git checkout kde/5.15
 
 git submodule update --init --progress
 
-# remove non Qt6 sub-modules
+# Remove Qt6 sub-modules
+
 rm -rf                  \
     qtcanvas3d          \
     qtdocgallery        \
@@ -26,6 +26,8 @@ rm -rf                  \
     qtqa                \
     qtrepotools         \
     qtsystems
+
+# Switch sub-modules to kde/5.15 branches
 
 QT_SUBDIRS=$(ls -F | grep / | grep qt)
 
