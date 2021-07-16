@@ -43,7 +43,7 @@ DK_VERSION=master
 DK_DEBUG=0
 
 # Qt version to use in bundle. Possible values: 5.14, 5.15
-DK_QTVERSION="5.15"
+DK_QTVERSION="5.15-LTS"
 
 # Option to use QtWebEngine instead QtWebkit
 DK_QTWEBENGINE=1
@@ -52,6 +52,6 @@ DK_QTWEBENGINE=1
 DK_SIGN=0
 
 # Upload automatically bundle to files.kde.org (pre-release only).
-DK_UPLOAD=1
+DK_UPLOAD=0
 DK_UPLOADURL="digikam@deino.kde.org"
 DK_UPLOADDIR="/srv/archives/files/digikam/"

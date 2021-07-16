@@ -121,6 +121,7 @@ urpmi --auto \
       ${LIBSUFFIX}openssl-devel \
       ${LIBSUFFIX}nss-devel \
       ${LIBSUFFIX}xkbcommon-devel \
+      ${LIBSUFFIX}lib64xinerama-devel \
       ${LIBSUFFIX}sane1-devel \
       ${LIBSUFFIX}xcb-util1 \
       ${LIBSUFFIX}xi-devel \
