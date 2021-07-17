@@ -61,46 +61,52 @@ void ItemIconView::toggleTag(int tagID)
 void ItemIconView::slotAssignPickLabel(int pickId)
 {
     const ItemInfoList& itemInfos = selectedInfoList(ApplicationSettings::Metadata);
+    int applyPickId               = NoPickLabel;
 
-    if (itemInfos.count() == 1)
+    foreach (const ItemInfo& info, itemInfos)
     {
-        if (itemInfos.first().pickLabel() == pickId)
+        if (info.pickLabel() != pickId)
         {
-            pickId = NoPickLabel;
+            applyPickId = pickId;
+            break;
         }
     }
 
-    FileActionMngr::instance()->assignPickLabel(itemInfos, pickId);
+    FileActionMngr::instance()->assignPickLabel(itemInfos, applyPickId);
 }
 
 void ItemIconView::slotAssignColorLabel(int colorId)
 {
     const ItemInfoList& itemInfos = selectedInfoList(ApplicationSettings::Metadata);
+    int applyColorId              = NoColorLabel;
 
-    if (itemInfos.count() == 1)
+    foreach (const ItemInfo& info, itemInfos)
     {
-        if (itemInfos.first().colorLabel() == colorId)
+        if (info.colorLabel() != colorId)
         {
-            colorId = NoColorLabel;
+            applyColorId = colorId;
+            break;
         }
     }
 
-    FileActionMngr::instance()->assignColorLabel(itemInfos, colorId);
+    FileActionMngr::instance()->assignColorLabel(itemInfos, applyColorId);
 }
 
 void ItemIconView::slotAssignRating(int rating)
 {
     const ItemInfoList& itemInfos = selectedInfoList(ApplicationSettings::Metadata);
+    int applyRating               = NoRating;
 
-    if (itemInfos.count() == 1)
+    foreach (const ItemInfo& info, itemInfos)
     {
-        if (itemInfos.first().rating() == rating)
+        if (info.rating() != rating)
         {
-            rating = NoRating;
+            applyRating = rating;
+            break;
         }
     }
 
-    FileActionMngr::instance()->assignRating(itemInfos, rating);
+    FileActionMngr::instance()->assignRating(itemInfos, applyRating);
 }
 
 void ItemIconView::slotAssignTag(int tagID)
