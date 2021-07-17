@@ -8,7 +8,7 @@
 
 if (NOT MINGW AND NOT APPLE)
 
-    SET(EXTPREFIX_openssl "/opt/openssl")
+    SET(EXTPREFIX_openssl "${EXTPREFIX}/local/")
 
     ExternalProject_Add(ext_openssl
 

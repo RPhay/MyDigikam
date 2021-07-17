@@ -28,6 +28,9 @@ ExternalProject_Add(ext_qt
     PATCH_COMMAND ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/qt-appimage-support.patch
 #               && ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/qt-icu-hack.patch
 
+    CMAKE_ARGS -DOPENSSL_LIBS='-lssl -lcrypto -lpthread -pdl' -DOPENSSL_INCDIR='${EXTPREFIX}/local/openssl/include/' -DOPENSSL_LIBDIR='${EXTPREFIX}/local/lib'
+
+
     CONFIGURE_COMMAND <SOURCE_DIR>/configure
                   -prefix ${EXTPREFIX_qt}
                   -verbose
@@ -86,10 +89,6 @@ ExternalProject_Add(ext_qt
                   -skip qtwebview                   # QML extension for QWebEngine
                   -skip qtwinextras                 # For Windows devices only
                   ${DROP_QTWEBENGINE_DEPS}
-
-#                  OPENSSL_INCDIR="/opt/openssl/include/"
-#                  OPENSSL_LIBDIR="/opt/openssl/lib/"
-#                  OPENSSL_LIBS="-lssl -lcrypto"
 
     # Exemple of code to install only one Qt module for hacking purpose (aka qtbase here)
     #BUILD_COMMAND cd <SOURCE_DIR> && $(MAKE) module-qtbase
