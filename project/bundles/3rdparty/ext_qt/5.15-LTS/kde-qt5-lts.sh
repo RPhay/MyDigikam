@@ -14,7 +14,7 @@ set -C
 #git clone --progress --verbose --branch kde/5.15 --single-branch https://invent.kde.org/qt/qt/qt5.git kde-5.15-LTS
 #cd kde-5.15-LTS
 
-git submodule update --init --progress
+git submodule update --init --recursive --progress
 
 # Remove Qt6 sub-modules
 
@@ -37,11 +37,11 @@ for SUBDIR in $QT_SUBDIRS ; do
 
     echo "Branching $SUBDIR to kde/5.15..."
     cd $SUBDIR
-    git checkout kde/5.15
+    git checkout kde/5.15 || true
     cd ..
 
 done
-
+exit
 # Remove .git sub directories
 
 GIT_SUBDIRS=$(find  . -name '.git')
