@@ -53,6 +53,9 @@ DK_URL="http://download.kde.org/stable/digikam"
 # Location to build source code.
 DK_BUILDTEMP=~/dktemp
 
+# ExifTool Windows version to embed in the bundle.
+DK_EXIFTOOL_VERSION="12.29"
+
 # digiKam tag version from git. Official tarball do not include extra shared libraries.
 # The list of tags can be listed with this url: https://invent.kde.org/graphics/digikam/-/tags
 # If you want to package current implemntation from git, use "master" as tag.
