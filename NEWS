@@ -12,7 +12,7 @@ BUGFIXES:
 003 ==> 439785 - Edit Metadata resets Exif info upon selecting 'Apply'.
 004 ==> 439839 - GPS-Correlator - not translatabke strings.
 005 ==> 429338 - Context menus shown in wrong locations on Wayland.
-006 ==> 
+006 ==> 439970 - Action to toggle Pick tags/labels.
 007 ==> 
 008 ==> 
 009 ==> 

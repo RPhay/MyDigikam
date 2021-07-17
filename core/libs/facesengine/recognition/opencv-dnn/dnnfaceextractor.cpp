@@ -26,6 +26,7 @@
 
 // Qt includes
 
+#include <QUrl>
 #include <QMutex>
 #include <QString>
 #include <QDataStream>
