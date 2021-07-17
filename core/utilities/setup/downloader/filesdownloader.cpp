@@ -95,6 +95,18 @@ FilesDownloader::FilesDownloader(QWidget* const parent)
                              67740572
                             );
 
+    d->files << DownloadInfo(QLatin1String("facesengine/dnnface/"),
+                             QLatin1String("yolov3-face.cfg"),
+                             QLatin1String("f6563bd6923fd6500d2c2d6025f32ebdba916a85e5c9798351d916909f62aaf5"),
+                             8334
+                            );
+
+    d->files << DownloadInfo(QLatin1String("facesengine/dnnface/"),
+                             QLatin1String("yolov3-wider_16000.weights"),
+                             QLatin1String("a88f3b3882e3cce1e553a81d42beef6202cb9afc3db88e7944f9ffbcc369e7df"),
+                             246305388
+                            );
+
     if (qApp->applicationName() == QLatin1String("digikam"))
     {
         d->files << DownloadInfo(QLatin1String("facesengine/dnnface/"),
@@ -113,18 +125,6 @@ FilesDownloader::FilesDownloader(QWidget* const parent)
                                  QLatin1String("res10_300x300_ssd_iter_140000_fp16.caffemodel"),
                                  QLatin1String("510ffd2471bd81e3fcc88a5beb4eae4fb445ccf8333ebc54e7302b83f4158a76"),
                                  5351047
-                                );
-
-        d->files << DownloadInfo(QLatin1String("facesengine/dnnface/"),
-                                 QLatin1String("yolov3-face.cfg"),
-                                 QLatin1String("f6563bd6923fd6500d2c2d6025f32ebdba916a85e5c9798351d916909f62aaf5"),
-                                 8334
-                                );
-
-        d->files << DownloadInfo(QLatin1String("facesengine/dnnface/"),
-                                 QLatin1String("yolov3-wider_16000.weights"),
-                                 QLatin1String("a88f3b3882e3cce1e553a81d42beef6202cb9afc3db88e7944f9ffbcc369e7df"),
-                                 246305388
                                 );
     }
 }
@@ -168,9 +168,8 @@ void FilesDownloader::startDownload()
     d->buttons->button(QDialogButtonBox::Ok)->setText(i18n("Download"));
     d->buttons->button(QDialogButtonBox::Ok)->setIcon(QIcon::fromTheme(QLatin1String("edit-download")));
 
-    QString path              = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
-    path                      = QDir::toNativeSeparators(path + QLatin1String("/facesengine"));
-    qint64 size               = 0;
+    QString path = QDir::toNativeSeparators(getFacesEnginePath());
+    qint64 size  = 0;
 
     foreach (const DownloadInfo& info, d->files)
     {
@@ -323,8 +322,8 @@ void FilesDownloader::printDownloadInfo(const QUrl& url)
 
 bool FilesDownloader::downloadExists(const DownloadInfo& info) const
 {
-    QString path = QStandardPaths::locate(QStandardPaths::AppDataLocation,
-                                          QString::fromLatin1("facesengine/%1").arg(info.name));
+    QString path = getFacesEnginePath() +
+                   QString::fromLatin1("/%1").arg(info.name);
 
     return (!path.isEmpty() && (QFileInfo(path).size() == info.size));
 }
@@ -389,8 +388,7 @@ void FilesDownloader::slotDownloaded(QNetworkReply* reply)
         return;
     }
 
-    QString path = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
-    path        += QLatin1String("/facesengine");
+    QString path = getFacesEnginePath();
 
     if (!QFileInfo::exists(path))
     {
@@ -436,6 +434,15 @@ void FilesDownloader::slotDownloadProgress(qint64 bytesReceived, qint64 bytesTot
 
     d->progress->setMaximum(bytesTotal);
     d->progress->setValue(bytesReceived);
+}
+
+QString FilesDownloader::getFacesEnginePath() const
+{
+    QString appPath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
+    QUrl    appUrl  = QUrl::fromLocalFile(appPath).adjusted(QUrl::RemoveFilename);
+    appUrl.setPath(appUrl.path() + QLatin1String("digikam/facesengine"));
+
+    return appUrl.toLocalFile();
 }
 
 //-----------------------------------------------------------------------------
