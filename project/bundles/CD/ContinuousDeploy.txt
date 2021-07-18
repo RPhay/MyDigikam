@@ -20,7 +20,7 @@ Architecture and configuration to setup a continuous deployement computer.
 
   * Extension Pack installed (https://www.virtualbox.org/wiki/Downloads).
 
-  * 3 VMs: one running Mageia 6.1 to compile AppImage bundle
+  * 3 VMs: one running Mageia 7.1 to compile AppImage bundle
                Name: M6.
                8 cores.
                4Gb RAM.
@@ -49,7 +49,7 @@ Architecture and configuration to setup a continuous deployement computer.
 
 2/ Virtual Machines
 
-- Mageia 6.1: system is installed using AppImage procedure.
+- Mageia 7.1: system is installed using AppImage procedure.
   * @IP: 192.168.56.101.
   * Create a crontab task to update Appimage bundle:
       # update AppImage bundle all the days at 19h00
