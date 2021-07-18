@@ -58,6 +58,7 @@ namespace Digikam
 class Q_DECL_HIDDEN GPSMarkerTiler::MyTile : public Tile
 {
 public:
+
     QList<qlonglong> imagesId;
 };
 

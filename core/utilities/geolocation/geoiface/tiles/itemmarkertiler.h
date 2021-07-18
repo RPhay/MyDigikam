@@ -41,7 +41,9 @@ class GeoModelHelper;
 class DIGIKAM_EXPORT ItemMarkerTiler : public AbstractMarkerTiler
 {
     Q_OBJECT
+
 private:
+
     class MyTile;
 
 public:

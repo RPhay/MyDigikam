@@ -90,6 +90,7 @@ public:
 
 
     private:
+
         static int maxChildCount();
 
         void prepareForChildren();

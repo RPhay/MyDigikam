@@ -36,6 +36,7 @@ namespace Digikam
 class Q_DECL_HIDDEN ItemMarkerTiler::MyTile : public Tile
 {
 public:
+
     MyTile() = default;
     void removeMarkerIndexOrInvalidIndex(const QModelIndex& indexToRemove);
 
@@ -43,6 +44,7 @@ public:
 
     QList<QPersistentModelIndex> markerIndices;
     int                          selectedCount = 0;
+
 private:
 
     MyTile(const MyTile&) = delete;
@@ -214,7 +216,7 @@ void ItemMarkerTiler::slotSelectionChanged(const QItemSelection& selected, const
                 continue;
             }
 
-            for (int l = 0; l <= TileIndex::MaxLevel; ++l)
+            for (int l = 0 ; l <= TileIndex::MaxLevel ; ++l)
             {
                 const TileIndex tileIndex = TileIndex::fromCoordinates(coordinates, l);
                 MyTile* const myTile      = static_cast<MyTile*>(getTile(tileIndex, true));
@@ -238,7 +240,7 @@ void ItemMarkerTiler::slotSelectionChanged(const QItemSelection& selected, const
         }
     }
 
-    for (int i = 0; i < deselected.count(); ++i)
+    for (int i = 0 ; i < deselected.count() ; ++i)
     {
         const QItemSelectionRange selectionRange = deselected.at(i);
 
