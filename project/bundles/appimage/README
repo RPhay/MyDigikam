@@ -94,7 +94,7 @@ REQUIREMENTS
 COMPONENTS
 ----------
 There are 4 scripts to be run by the user. 2 first ones installs
-components on Mageia 6 and all dependencies, next one digiKam, and last one makes a
+components on Mageia 7 and all dependencies, next one digiKam, and last one makes a
 binary AppImage bundle for Linux.
 
 
@@ -104,7 +104,7 @@ All scripts should be run from within this directory.
 
 * 01-build-host.sh:
 
-This script downloads and configures all packages for Mageia 6 to compile digiKam, KF5, Qt5,
+This script downloads and configures all packages for Mageia 7 to compile digiKam, KF5, Qt5,
 and all other important low level libraries. When the system is ready, this script compile
 and install low level and Qt5 libraries.
 
