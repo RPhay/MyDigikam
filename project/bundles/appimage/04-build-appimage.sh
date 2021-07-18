@@ -63,7 +63,7 @@ cd $ORIG_WD/icon-rcc
 rm -f CMakeCache.txt > /dev/null
 rm -f *.rcc > /dev/null
 
-cmake -DCMAKE_INSTALL_PREFIX="/usr" \
+/opt/cmake/bin/cmake -DCMAKE_INSTALL_PREFIX="/usr" \
       -DCMAKE_BUILD_TYPE=debug \
       -DCMAKE_COLOR_MAKEFILE=ON \
       -Wno-dev \
