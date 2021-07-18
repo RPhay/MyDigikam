@@ -127,16 +127,24 @@ void ActionThread::slotUpdateItemInfo(const Digikam::ActionData& ad)
         ItemInfo source = ItemInfo::fromUrl(ad.fileUrl);
         ItemInfo info(scanner.scanFile(ad.destUrl.toLocalFile(), CollectionScanner::NormalScan));
 
+
         // Copy the digiKam attributes from original file to the new file
 
         CollectionScanner::copyFileProperties(source, info);
 
-        // Write digiKam metadata to the new file
+        if (!ad.noWrite)
+        {
+            // Write digiKam metadata to the new file
 
-        MetadataHub hub;
-        hub.load(info);
+            MetadataHub hub;
+            hub.load(info);
 
-        hub.write(info.filePath(), MetadataHub::WRITE_ALL, true);
+            hub.write(info.filePath(), MetadataHub::WRITE_ALL, true);
+        }
+        else
+        {
+            scanner.scanFile(info, CollectionScanner::Rescan);
+        }
     }
 
     emit signalFinished(ad);

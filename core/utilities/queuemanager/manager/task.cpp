@@ -114,13 +114,18 @@ void Task::removeTempFiles(const QList<QUrl>& tmpList)
     }
 }
 
-void Task::emitActionData(ActionData::ActionStatus st, const QString& mess, const QUrl& dest)
+void Task::emitActionData(ActionData::ActionStatus st,
+                          const QString& mess,
+                          const QUrl& dest,
+                          bool noWrite)
 {
     ActionData ad;
     ad.fileUrl = d->tools.m_itemUrl;
     ad.status  = st;
     ad.message = mess;
     ad.destUrl = dest;
+    ad.noWrite = noWrite;
+
     emit signalFinished(ad);
 }
 
@@ -150,6 +155,7 @@ void Task::run()
 
     ItemInfo source = ItemInfo::fromUrl(d->tools.m_itemUrl);
     bool timeAdjust = false;
+    bool rmMetadata = false;
 
     foreach (const BatchToolSet& set, d->tools.m_toolsList)
     {
@@ -168,7 +174,11 @@ void Task::run()
         d->tool->setToolTitle(tool->toolTitle());
         d->tool->setToolDescription(tool->toolDescription());
 
+        // Only true if it is also the last tool
+
         timeAdjust |= (set.name == QLatin1String("TimeAdjust"));
+        rmMetadata |= (set.name == QLatin1String("RemoveMetadata"));
+
         inUrl       = outUrl;
         index       = set.index + 1;
 
@@ -279,7 +289,8 @@ void Task::run()
                                              dest.toLocalFile(),
                                              timeAdjust))
         {
-            emitActionData(ActionData::BatchDone, i18n("Item processed successfully %1", renameMess), dest);
+            emitActionData(ActionData::BatchDone, i18n("Item processed successfully %1", renameMess),
+                           dest, (rmMetadata | timeAdjust));
         }
         else
         {
