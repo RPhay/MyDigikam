@@ -13,7 +13,7 @@ BUGFIXES:
 004 ==> 439839 - GPS-Correlator - not translatabke strings.
 005 ==> 429338 - Context menus shown in wrong locations on Wayland.
 006 ==> 439970 - Action to toggle Pick tags/labels.
-007 ==> 
+007 ==> 439976 - Converting CR3 into DNG via batch processing leads to loss of meta data (star rating is lost).
 008 ==> 
 009 ==> 
 010 ==> 

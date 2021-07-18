@@ -59,23 +59,6 @@ class Q_DECL_HIDDEN GPSMarkerTiler::MyTile : public Tile
 {
 public:
 
-    MyTile()
-        : Tile()
-    {
-    }
-
-    /**
-     * Note: MyTile is only deleted by GPSMarkerTiler::tileDelete.
-     * All subclasses of AbstractMarkerTiler have to reimplement tileDelete
-     * to delete their Tile subclasses.
-     * This was done in order not to have any virtual functions
-     * in Tile and its subclasses in order to save memory, since there
-     * can be a lot of tiles in a MarkerTiler.
-     */
-    ~MyTile()
-    {
-    }
-
     QList<qlonglong> imagesId;
 };
 
@@ -162,11 +145,6 @@ GPSMarkerTiler::GPSMarkerTiler(QObject* const parent,
  */
 GPSMarkerTiler::~GPSMarkerTiler()
 {
-    // WARNING: we have to call clear! By the time AbstractMarkerTiler calls clear,
-    // this object does not exist any more, and thus the tiles are not correctly destroyed!
-
-    clear();
-
     delete d;
 }
 
@@ -187,7 +165,7 @@ void GPSMarkerTiler::regenerateTiles()
  */
 void GPSMarkerTiler::prepareTiles(const GeoCoordinates& upperLeft, const GeoCoordinates& lowerRight, int level)
 {
-    const QRectF worldRect(-180,-90,360,180);
+    const QRectF worldRect(-90,-180,180,360);
 
     qreal lat1         = upperLeft.lat();
     qreal lng1         = upperLeft.lon();
@@ -211,6 +189,8 @@ void GPSMarkerTiler::prepareTiles(const GeoCoordinates& upperLeft, const GeoCoor
         {
             std::swap(d->rectList[i], d->rectList.back());
             d->rectList.removeLast();
+            // we removed one entry. we have to subtract one from the index
+            --i;
         }
     }
 
@@ -219,6 +199,7 @@ void GPSMarkerTiler::prepareTiles(const GeoCoordinates& upperLeft, const GeoCoor
     qreal marginH = requestedRect.height() * 0.05;
     requestedRect = requestedRect.marginsAdded(QMarginsF(marginW, marginH, marginW, marginH));
     requestedRect = worldRect.intersected(requestedRect);
+    requestedRect.getCoords(&lat1, &lng1, &lat2, &lng2);
 
     for (int i = 0 ; i < d->rectList.count() ; ++i)
     {
@@ -260,7 +241,7 @@ void GPSMarkerTiler::prepareTiles(const GeoCoordinates& upperLeft, const GeoCoor
         }
     }
 
-    const QRectF newRect(lat1, lng1, lat2 - lat1, lng2 - lng1);
+    requestedRect = QRectF(lat1, lng1, lat2 - lat1, lng2 - lng1);
     d->rectList.append(requestedRect);
 
     qCDebug(DIGIKAM_GENERAL_LOG) << "Listing" << lat1 << lat2 << lng1 << lng2;
@@ -688,11 +669,6 @@ AbstractMarkerTiler::Tile* GPSMarkerTiler::tileNew()
     return new MyTile();
 }
 
-void GPSMarkerTiler::tileDelete(AbstractMarkerTiler::Tile* const tile)
-{
-    delete static_cast<MyTile*>(tile);
-}
-
 /**
  * @brief Receives notifications from the database when images were changed and updates the tiler
  */
@@ -1012,7 +988,7 @@ void GPSMarkerTiler::removeMarkerFromTileAndChildren(const qlonglong imageId, co
 
             // this tile can be deleted
 
-            tileDeleteChild(currentParentTile, currentTile);
+            currentParentTile->deleteChild(currentTile);
             break;
         }
 
