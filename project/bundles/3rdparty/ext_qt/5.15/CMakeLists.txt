@@ -26,10 +26,12 @@ ExternalProject_Add(ext_qt
 
 
     PATCH_COMMAND ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/qt-appimage-support.patch
+               && ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/qt-appimage-openssl-linked.patch
 #               && ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/qt-icu-hack.patch
 
-    CMAKE_ARGS -DOPENSSL_LIBS='-lssl -lcrypto -lpthread -pdl' -DOPENSSL_INCDIR='${EXTPREFIX}/local/openssl/include/' -DOPENSSL_LIBDIR='${EXTPREFIX}/local/lib'
-
+    CMAKE_ARGS -DOPENSSL_LIBS='-l${EXTPREFIX}/local/lib/libssl.a -l${EXTPREFIX}/local/lib/libcrypto.a -lpthread -ldl'
+               -DOPENSSL_INCDIR='${EXTPREFIX}/local/include/openssl/'
+               -DOPENSSL_LIBDIR='${EXTPREFIX}/local/lib'
 
     CONFIGURE_COMMAND <SOURCE_DIR>/configure
                   -prefix ${EXTPREFIX_qt}
