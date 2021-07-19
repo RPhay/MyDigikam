@@ -1172,7 +1172,7 @@ void INatTalker::computerVision(const QUrl& localImage)
 
 QString INatTalker::tmpFileName(const QString& path)
 {
-    QString suffix(QLatin1String(""));
+    QString suffix;
 
     for ( ; ; )
     {
