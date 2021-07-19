@@ -3,6 +3,8 @@ digiKam 7.4.0 - Release date: 2021-xx-xx
 *****************************************************************************************************
 NEW FEATURES:
 
+Bundle : AppImage is now compiled under Mageia 7.1 instead 6.1 for a better binary compatibility with recent Linux.
+Bundle : AppImage use last Qt 5.15.2 and KF5 5.84 libraries.
 
 *****************************************************************************************************
 BUGFIXES:
