@@ -16,7 +16,7 @@ BUGFIXES:
 005 ==> 429338 - Context menus shown in wrong locations on Wayland.
 006 ==> 439970 - Action to toggle Pick tags/labels.
 007 ==> 439976 - Converting CR3 into DNG via batch processing leads to loss of meta data (star rating is lost).
-008 ==> 
+008 ==> 439913 - iNaturalist Export "Unknown Error" when click in Identification field.
 009 ==> 
 010 ==> 
 011 ==> 
