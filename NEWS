@@ -17,6 +17,6 @@ BUGFIXES:
 006 ==> 439970 - Action to toggle Pick tags/labels.
 007 ==> 439976 - Converting CR3 into DNG via batch processing leads to loss of meta data (star rating is lost).
 008 ==> 439913 - iNaturalist Export "Unknown Error" when click in Identification field.
-009 ==> 
+009 ==> 440030 - Database migration 7.2 -> 7.3 fails.
 010 ==> 
 011 ==> 
