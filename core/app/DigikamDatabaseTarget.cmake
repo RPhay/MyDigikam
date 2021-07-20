@@ -35,9 +35,9 @@ target_link_libraries(digikamdatabase
 
                       PRIVATE
 
-                      Qt5::Core
-                      Qt5::Gui
-                      Qt5::Sql
+                      Qt${QT_VERSION_MAJOR}::Core
+                      Qt${QT_VERSION_MAJOR}::Gui
+                      Qt${QT_VERSION_MAJOR}::Sql
 
                       KF5::ConfigCore
                       KF5::Solid
@@ -58,7 +58,7 @@ if(ENABLE_DBUS)
 
     target_link_libraries(digikamdatabase
                           PRIVATE
-                          Qt5::DBus
+                          Qt${QT_VERSION_MAJOR}::DBus
     )
 
 endif()

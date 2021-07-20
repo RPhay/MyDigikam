@@ -119,13 +119,13 @@ target_link_libraries(digikamcore
 
                       PRIVATE
 
-                      Qt5::Core
-                      Qt5::Gui
-                      Qt5::Xml
-                      Qt5::Widgets
-                      Qt5::Sql
-                      Qt5::PrintSupport
-                      Qt5::Concurrent
+                      Qt${QT_VERSION_MAJOR}::Core
+                      Qt${QT_VERSION_MAJOR}::Gui
+                      Qt${QT_VERSION_MAJOR}::Xml
+                      Qt${QT_VERSION_MAJOR}::Widgets
+                      Qt${QT_VERSION_MAJOR}::Sql
+                      Qt${QT_VERSION_MAJOR}::PrintSupport
+                      Qt${QT_VERSION_MAJOR}::Concurrent
 
                       KF5::Solid
                       KF5::WindowSystem
@@ -163,14 +163,14 @@ if(ENABLE_QWEBENGINE)
 
     target_link_libraries(digikamcore
                           PRIVATE
-                          Qt5::WebEngineWidgets
+                          Qt${QT_VERSION_MAJOR}::WebEngineWidgets
     )
 
-else()
+elseif(ENABLE_QWEBKIT)
 
     target_link_libraries(digikamcore
                           PRIVATE
-                          Qt5::WebKitWidgets
+                          Qt${QT_VERSION_MAJOR}::WebKitWidgets
     )
 
 endif()
@@ -179,7 +179,7 @@ if(ENABLE_DBUS)
 
     target_link_libraries(digikamcore
                           PRIVATE
-                          Qt5::DBus
+                          Qt${QT_VERSION_MAJOR}::DBus
     )
 
 endif()

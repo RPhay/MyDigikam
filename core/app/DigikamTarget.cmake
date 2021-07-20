@@ -34,10 +34,10 @@ target_link_libraries(digikam
 
                       PUBLIC
 
-                      Qt5::Core
-                      Qt5::Gui
-                      Qt5::Widgets
-                      Qt5::Sql
+                      Qt${QT_VERSION_MAJOR}::Core
+                      Qt${QT_VERSION_MAJOR}::Gui
+                      Qt${QT_VERSION_MAJOR}::Widgets
+                      Qt${QT_VERSION_MAJOR}::Sql
 
                       KF5::WindowSystem
                       KF5::I18n
@@ -54,7 +54,7 @@ if(ENABLE_DBUS)
 
     target_link_libraries(digikam
                           PUBLIC
-                          Qt5::DBus
+                          Qt${QT_VERSION_MAJOR}::DBus
     )
 
 endif()

@@ -8,7 +8,7 @@
 ### digiKam GUI object library ##################################################################################################
 
 if(ENABLE_DBUS)
-    qt5_add_dbus_adaptor(digikamadaptor_SRCS
+    qt_add_dbus_adaptor(digikamadaptor_SRCS
                          ${CMAKE_CURRENT_SOURCE_DIR}/main/org.kde.digikam.xml
                          ${CMAKE_CURRENT_SOURCE_DIR}/main/digikamapp.h
                          Digikam::DigikamApp)
@@ -238,11 +238,11 @@ target_link_libraries(digikamgui
 
                       PRIVATE
 
-                      Qt5::Core
-                      Qt5::Gui
-                      Qt5::Widgets
-                      Qt5::Sql
-                      Qt5::PrintSupport
+                      Qt${QT_VERSION_MAJOR}::Core
+                      Qt${QT_VERSION_MAJOR}::Gui
+                      Qt${QT_VERSION_MAJOR}::Widgets
+                      Qt${QT_VERSION_MAJOR}::Sql
+                      Qt${QT_VERSION_MAJOR}::PrintSupport
 
                       KF5::XmlGui
                       KF5::Solid
@@ -284,7 +284,7 @@ if(ENABLE_DBUS)
 
     target_link_libraries(digikamgui
                           PRIVATE
-                          Qt5::DBus
+                          Qt${QT_VERSION_MAJOR}::DBus
     )
 
 endif()
