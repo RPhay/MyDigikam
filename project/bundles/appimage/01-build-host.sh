@@ -168,6 +168,12 @@ echo -e "---------- Clean-up Old Packages\n"
 # Remove system based devel package to prevent conflict with new one.
 urpme --auto --force ${LIBSUFFIX}qt5core5 || true
 
+# Clean up previous openssl install
+
+rm -fr /usr/local/lib/libssl.a    || true
+rm -fr /usr/local/lib/libcrypto.a || true
+rm -fr /usr/local/include/openssl || true
+
 #################################################################################################
 
 echo -e "---------- Prepare Linux host to Compile Extra Dependencies\n"
@@ -234,6 +240,12 @@ rm -rf $BUILDING_DIR/* || true
 if [[ $DK_QTWEBENGINE = 0 ]] ; then
     /opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_qtwebkit  -- -j$CPU_CORES    # depend of Qt and libicu
 fi
+
+# Clean up previous openssl install
+
+rm -fr /usr/local/lib/libssl.a    || true
+rm -fr /usr/local/lib/libcrypto.a || true
+rm -fr /usr/local/include/openssl || true
 
 /opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_opencv        -- -j$CPU_CORES
 
