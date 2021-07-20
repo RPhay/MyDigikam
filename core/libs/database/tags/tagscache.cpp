@@ -535,14 +535,10 @@ QList<int> TagsCache::parentTags(int id) const
 
 int TagsCache::tagForPath(const QString& path) const
 {
-    if (path.isEmpty())
-    {
-        return 0;
-    }
-
     QString fullPath = path;
 
-    if (fullPath.at(0) == QLatin1Char('/')) {
+    if (fullPath.startsWith(QLatin1Char('/')))
+    {
         fullPath.remove(0, 1);
     }
 
@@ -565,9 +561,9 @@ int TagsCache::tagForPath(const QString& path) const
 
     QString const tagName = tagHierarchy.last();
 
-    int tagID = 0;
+    int tagID             = 0;
 
-    for (int const id: d->nameHash.values(tagName))
+    for (int const id : d->nameHash.values(tagName))
     {
         if (tagPath(id, NoLeadingSlash) == fullPath)
         {
