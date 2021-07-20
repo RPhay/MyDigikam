@@ -7,7 +7,7 @@ index 230c45c26f..242bdacada 100644
              android {
                  build_pass|single_android_abi: LIBS_PRIVATE += -lssl_$${QT_ARCH} -lcrypto_$${QT_ARCH}
 -            } else: QMAKE_USE_FOR_PRIVATE += openssl
-+            } else: LIBS_PRIVATE += /usr/local/lib/libssl.a /usr/local/lib/libcrypto.a
++            } else: LIBS_PRIVATE += /usr/local/lib/libssl.a /usr/local/lib/libcrypto.a -ldl -lpthread
          } else: \
              QMAKE_USE_FOR_PRIVATE += openssl/nolink
          win32 {
