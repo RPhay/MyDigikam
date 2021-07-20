@@ -52,7 +52,7 @@ rm -rf $BUILDING_DIR/* || true
       -DENABLE_QTWEBENGINE=$DK_QTWEBENGINE
 
 # NOTE: The order to compile each component here is very important.
-
+if [ ] ; then
 # core KF5 frameworks dependencies
 /opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_extra-cmake-modules -- -j$CPU_CORES
 /opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_kconfig             -- -j$CPU_CORES
@@ -62,6 +62,7 @@ rm -rf $BUILDING_DIR/* || true
 /opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_solid               -- -j$CPU_CORES
 /opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_threadweaver        -- -j$CPU_CORES
 /opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_karchive            -- -j$CPU_CORES
+fi
 /opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_kdbusaddons         -- -j$CPU_CORES
 /opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_ki18n               -- -j$CPU_CORES
 /opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_kcrash              -- -j$CPU_CORES
