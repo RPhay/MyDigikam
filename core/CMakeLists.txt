@@ -220,7 +220,9 @@ endif()
 # -- check Media player --------------------------------------------------------
 
 find_package(FFmpeg COMPONENTS AVCODEC AVDEVICE AVFILTER AVFORMAT AVUTIL SWSCALE)
-find_package(QtAV)
+if(${QT_VERSION_MAJOR} EQUAL 5)
+    find_package(QtAV)
+endif()
 
 if(ENABLE_MEDIAPLAYER)
 
@@ -279,7 +281,9 @@ find_package(BISON)                                # For Panorama tool.
 find_package(LibXslt)                              # For HTMLGallery tool.
 find_package(LibXml2)                              # For HTMLGallery tool.
 
-find_package(Marble)                               # For geolocation support.
+if(${QT_VERSION_MAJOR} EQUAL 5)
+    find_package(Marble)                           # For geolocation support.
+endif()
 
 find_package(PkgConfig)
 find_package(Jasper)                               # For JPEG 2000 support.
