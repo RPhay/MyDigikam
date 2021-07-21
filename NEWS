@@ -18,5 +18,5 @@ BUGFIXES:
 007 ==> 439976 - Converting CR3 into DNG via batch processing leads to loss of meta data (star rating is lost).
 008 ==> 439913 - iNaturalist Export "Unknown Error" when click in Identification field.
 009 ==> 440030 - Database migration 7.2 -> 7.3 fails.
-010 ==> 
+010 ==> 440015 - Metadata Template insists on putting in a country name.
 011 ==> 

@@ -182,6 +182,22 @@ SetupTemplate::~SetupTemplate()
 
 void SetupTemplate::applySettings()
 {
+    QString title = d->titleEdit->text();
+
+    if (!title.isEmpty())
+    {
+        TemplateListItem* const item = dynamic_cast<TemplateListItem*>(d->listView->currentItem());
+
+        if (item)
+        {
+            d->tview->apply();
+
+            Template t = d->tview->getTemplate();
+            t.setTemplateTitle(title);
+            item->setTemplate(t);
+        }
+    }
+
     d->listView->applySettings();
 
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
