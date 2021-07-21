@@ -7,8 +7,8 @@
 APPLY_COMMON_POLICIES()
 
 include_directories(${CMAKE_SOURCE_DIR}/core/libs/rawengine/libraw
-                    $<TARGET_PROPERTY:Qt5::Core,INTERFACE_INCLUDE_DIRECTORIES>
-                    $<TARGET_PROPERTY:Qt5::Gui,INTERFACE_INCLUDE_DIRECTORIES>
+                    $<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Core,INTERFACE_INCLUDE_DIRECTORIES>
+                    $<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Gui,INTERFACE_INCLUDE_DIRECTORIES>
 )
 
 set(raw2png_cli_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/raw2png_cli.cpp)

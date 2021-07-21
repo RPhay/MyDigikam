@@ -10,7 +10,7 @@ set(uploadsample_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/main.cpp
                       ${CMAKE_CURRENT_SOURCE_DIR}/mainwindow.cpp
 )
 
-qt5_wrap_ui(uploadsample_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/mainwindow.ui)
+qt_wrap_ui(uploadsample_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/mainwindow.ui)
 
 add_executable(uploadsample_gui
                ${uploadsample_SRCS}

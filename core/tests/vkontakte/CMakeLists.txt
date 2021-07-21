@@ -12,7 +12,7 @@ add_definitions(-DAUTOTESTS_DATA_DIR="${CMAKE_CURRENT_SOURCE_DIR}/data")
 add_definitions(-DAUTOTESTS_API_TOKEN_PATH="${CMAKE_CURRENT_SOURCE_DIR}/api-token.txt")
 
 add_library(testhelper STATIC vktestbase.cpp)
-target_link_libraries(testhelper Qt5::Core Qt5::Test)
+target_link_libraries(testhelper Qt${QT_VERSION_MAJOR}::Core Qt${QT_VERSION_MAJOR}::Test)
 
 function(add_vk_test name)
 
