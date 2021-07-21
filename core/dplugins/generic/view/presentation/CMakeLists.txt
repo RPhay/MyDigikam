@@ -27,7 +27,7 @@ if(HAVE_OPENGL)
     endif()
 
     include_directories(${CMAKE_CURRENT_SOURCE_DIR}/opengl)
-    include_directories($<TARGET_PROPERTY:Qt5::OpenGL,INTERFACE_INCLUDE_DIRECTORIES>)
+    include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::OpenGL,INTERFACE_INCLUDE_DIRECTORIES>)
 
 endif()
 
@@ -36,8 +36,8 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR}/dialogs
                     ${CMAKE_CURRENT_SOURCE_DIR}/common
 )
 
-include_directories($<TARGET_PROPERTY:Qt5::Widgets,INTERFACE_INCLUDE_DIRECTORIES>
-                    $<TARGET_PROPERTY:Qt5::Core,INTERFACE_INCLUDE_DIRECTORIES>
+include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Widgets,INTERFACE_INCLUDE_DIRECTORIES>
+                    $<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Core,INTERFACE_INCLUDE_DIRECTORIES>
 
                     $<TARGET_PROPERTY:KF5::ConfigCore,INTERFACE_INCLUDE_DIRECTORIES>
                     $<TARGET_PROPERTY:KF5::I18n,INTERFACE_INCLUDE_DIRECTORIES>
@@ -100,7 +100,7 @@ if(HAVE_OPENGL)
 
     DIGIKAM_ADD_GENERIC_PLUGIN(NAME    Presentation
                                SOURCES ${presentationplugin_SRCS}
-                               DEPENDS Qt5::OpenGL
+                               DEPENDS Qt${QT_VERSION_MAJOR}::OpenGL
                                        ${QTMEDIA_BACKEND}
                                        ${OPENGL_LIBRARIES}
     )
