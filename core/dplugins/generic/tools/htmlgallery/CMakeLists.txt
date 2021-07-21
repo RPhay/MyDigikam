@@ -8,9 +8,9 @@ APPLY_COMMON_POLICIES()
 
 include(MacroDPlugins)
 
-include_directories($<TARGET_PROPERTY:Qt5::Widgets,INTERFACE_INCLUDE_DIRECTORIES>
-                    $<TARGET_PROPERTY:Qt5::Core,INTERFACE_INCLUDE_DIRECTORIES>
-                    $<TARGET_PROPERTY:Qt5::Concurrent,INTERFACE_INCLUDE_DIRECTORIES>
+include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Widgets,INTERFACE_INCLUDE_DIRECTORIES>
+                    $<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Core,INTERFACE_INCLUDE_DIRECTORIES>
+                    $<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Concurrent,INTERFACE_INCLUDE_DIRECTORIES>
 
                     $<TARGET_PROPERTY:KF5::I18n,INTERFACE_INCLUDE_DIRECTORIES>
                     $<TARGET_PROPERTY:KF5::ConfigCore,INTERFACE_INCLUDE_DIRECTORIES>
@@ -56,7 +56,7 @@ DIGIKAM_ADD_GENERIC_PLUGIN(NAME    HtmlGallery
                            DEPENDS ${LIBXSLT_EXSLT_LIBRARIES}
                                    ${LIBXSLT_LIBRARIES}
                                    ${LIBXML2_LIBRARIES}
-                                   Qt5::Concurrent
+                                   Qt${QT_VERSION_MAJOR}::Concurrent
 )
 
 install(DIRECTORY themes DESTINATION ${DATA_INSTALL_DIR}/digikam/)
