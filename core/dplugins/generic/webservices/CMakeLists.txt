@@ -5,11 +5,11 @@
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
 
 if(ENABLE_QWEBENGINE)
-    include_directories($<TARGET_PROPERTY:Qt5::WebEngineWidgets,INTERFACE_INCLUDE_DIRECTORIES>)
-    SET(QWEB_BACKEND Qt5::WebEngineWidgets)
-else()
-    include_directories($<TARGET_PROPERTY:Qt5::WebKitWidgets,INTERFACE_INCLUDE_DIRECTORIES>)
-    SET(QWEB_BACKEND Qt5::WebKitWidgets)
+    include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::WebEngineWidgets,INTERFACE_INCLUDE_DIRECTORIES>)
+    SET(QWEB_BACKEND Qt${QT_VERSION_MAJOR}::WebEngineWidgets)
+elseif(ENABLE_QWEBKIT)
+    include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::WebKitWidgets,INTERFACE_INCLUDE_DIRECTORIES>)
+    SET(QWEB_BACKEND Qt${QT_VERSION_MAJOR}::WebKitWidgets)
 endif()
 
 add_subdirectory(box)
