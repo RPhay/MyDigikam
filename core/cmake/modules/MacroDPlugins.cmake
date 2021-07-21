@@ -61,11 +61,11 @@ macro(DIGIKAM_ADD_GENERIC_PLUGIN)
 
                           digikamcore
 
-                          Qt5::Core
-                          Qt5::Gui
-                          Qt5::Xml
-                          Qt5::Network
-                          Qt5::Widgets
+                          Qt${QT_VERSION_MAJOR}::Core
+                          Qt${QT_VERSION_MAJOR}::Gui
+                          Qt${QT_VERSION_MAJOR}::Xml
+                          Qt${QT_VERSION_MAJOR}::Network
+                          Qt${QT_VERSION_MAJOR}::Widgets
 
                           KF5::XmlGui
                           KF5::I18n
@@ -140,10 +140,10 @@ macro(DIGIKAM_ADD_EDITOR_PLUGIN)
 
                           digikamcore
 
-                          Qt5::Core
-                          Qt5::Gui
-                          Qt5::Xml
-                          Qt5::Widgets
+                          Qt${QT_VERSION_MAJOR}::Core
+                          Qt${QT_VERSION_MAJOR}::Gui
+                          Qt${QT_VERSION_MAJOR}::Xml
+                          Qt${QT_VERSION_MAJOR}::Widgets
 
                           KF5::XmlGui
                           KF5::I18n
@@ -220,11 +220,11 @@ macro(DIGIKAM_ADD_BQM_PLUGIN)
                           digikamdatabase
                           digikamgui
 
-                          Qt5::Core
-                          Qt5::Gui
-                          Qt5::Xml
-                          Qt5::Widgets
-                          Qt5::Sql
+                          Qt${QT_VERSION_MAJOR}::Core
+                          Qt${QT_VERSION_MAJOR}::Gui
+                          Qt${QT_VERSION_MAJOR}::Xml
+                          Qt${QT_VERSION_MAJOR}::Widgets
+                          Qt${QT_VERSION_MAJOR}::Sql
 
                           KF5::XmlGui
                           KF5::I18n
@@ -299,10 +299,10 @@ macro(DIGIKAM_ADD_RAWIMPORT_PLUGIN)
 
                           digikamcore
 
-                          Qt5::Core
-                          Qt5::Gui
-                          Qt5::Xml
-                          Qt5::Widgets
+                          Qt${QT_VERSION_MAJOR}::Core
+                          Qt${QT_VERSION_MAJOR}::Gui
+                          Qt${QT_VERSION_MAJOR}::Xml
+                          Qt${QT_VERSION_MAJOR}::Widgets
 
                           KF5::XmlGui
                           KF5::I18n
@@ -377,10 +377,10 @@ macro(DIGIKAM_ADD_DIMG_PLUGIN)
 
                           digikamcore
 
-                          Qt5::Core
-                          Qt5::Gui
-                          Qt5::Xml
-                          Qt5::Widgets
+                          Qt${QT_VERSION_MAJOR}::Core
+                          Qt${QT_VERSION_MAJOR}::Gui
+                          Qt${QT_VERSION_MAJOR}::Xml
+                          Qt${QT_VERSION_MAJOR}::Widgets
 
                           KF5::I18n
                           KF5::ConfigCore
