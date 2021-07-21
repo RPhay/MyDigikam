@@ -32,6 +32,10 @@
 #include <QDropEvent>
 #include <QMimeData>
 
+// Local includes
+
+#include "digikam_config.h"
+
 namespace Digikam
 {
 
@@ -262,11 +266,30 @@ void DragDropViewImplementation::dropEvent(QDropEvent* e)
     }
 }
 
+#ifdef Q_OS_WIN
+
+static const QString mimeTypeCutSelection(QLatin1String("Preferred DropEffect"));
+
+#else
+
 static const QString mimeTypeCutSelection(QLatin1String("application/x-kde-cutselection"));
+
+#endif
 
 void DragDropViewImplementation::encodeIsCutSelection(QMimeData* mime, bool cut)
 {
+
+#ifdef Q_OS_WIN
+
+    const QByteArray cutSelection = cut ? QByteArrayLiteral("\x02\x00")
+                                        : QByteArrayLiteral("\x01\x00");
+
+#else
+
     const QByteArray cutSelection = cut ? "1" : "0";
+
+#endif
+
     mime->setData(mimeTypeCutSelection, cutSelection);
 }
 
@@ -279,7 +302,16 @@ bool DragDropViewImplementation::decodeIsCutSelection(const QMimeData* mime)
         return false;
     }
 
+#ifdef Q_OS_WIN
+
+    return (a == QByteArrayLiteral("\x02\x00")); // true if "0x02, 0x00"
+
+#else
+
     return (a.at(0) == '1'); // true if 1
+
+#endif
+
 }
 
 } // namespace Digikam
