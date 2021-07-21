@@ -14,17 +14,17 @@ kde_enable_exceptions()
 
 if(ENABLE_QWEBENGINE)
 
-    set(_extra_deps ${_extra_deps} Qt5::WebEngineWidgets)
+    set(_extra_deps ${_extra_deps} Qt${QT_VERSION_MAJOR}::WebEngineWidgets)
 
-else()
+elseif(ENABLE_QWEBKIT)
 
-    set(_extra_deps ${_extra_deps} Qt5::WebKitWidgets)
+    set(_extra_deps ${_extra_deps} Qt${QT_VERSION_MAJOR}::WebKitWidgets)
 
 endif()
 
 if(ENABLE_DBUS)
 
-    set(_extra_deps ${_extra_deps} Qt5::DBus)
+    set(_extra_deps ${_extra_deps} Qt${QT_VERSION_MAJOR}::DBus)
 
 endif()
 
@@ -89,13 +89,13 @@ if(APPLE)
 
 endif()
 
-set(COMMON_TEST_LINK Qt5::Core
-                     Qt5::Gui
-                     Qt5::Xml
-                     Qt5::Widgets
-                     Qt5::Concurrent
-                     Qt5::Test
-                     Qt5::Sql
+set(COMMON_TEST_LINK Qt${QT_VERSION_MAJOR}::Core
+                     Qt${QT_VERSION_MAJOR}::Gui
+                     Qt${QT_VERSION_MAJOR}::Xml
+                     Qt${QT_VERSION_MAJOR}::Widgets
+                     Qt${QT_VERSION_MAJOR}::Concurrent
+                     Qt${QT_VERSION_MAJOR}::Test
+                     Qt${QT_VERSION_MAJOR}::Sql
 
                      KF5::XmlGui
                      KF5::I18n
@@ -130,8 +130,8 @@ add_library(libmodeltest STATIC
 
 target_link_libraries(libmodeltest
                       PRIVATE
-                      Qt5::Core
-                      Qt5::Test
+                      Qt${QT_VERSION_MAJOR}::Core
+                      Qt${QT_VERSION_MAJOR}::Test
 )
 
 # -------------------------------------------------------------------------------
