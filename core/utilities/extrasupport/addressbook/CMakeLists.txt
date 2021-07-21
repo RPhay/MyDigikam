@@ -8,8 +8,8 @@ APPLY_COMMON_POLICIES()
 
 set(akonadiiface_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/akonadiiface.cpp)
 
-include_directories($<TARGET_PROPERTY:Qt5::Widgets,INTERFACE_INCLUDE_DIRECTORIES>
-                    $<TARGET_PROPERTY:Qt5::Core,INTERFACE_INCLUDE_DIRECTORIES>
+include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Widgets,INTERFACE_INCLUDE_DIRECTORIES>
+                    $<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Core,INTERFACE_INCLUDE_DIRECTORIES>
 
                     $<TARGET_PROPERTY:KF5::I18n,INTERFACE_INCLUDE_DIRECTORIES>
 )
@@ -33,7 +33,7 @@ target_compile_definitions(core_akonadiiface_obj
 
 add_library(akonadiiface STATIC $<TARGET_OBJECTS:core_akonadiiface_obj>)
 
-target_link_libraries(akonadiiface PRIVATE Qt5::Core KF5::I18n)
+target_link_libraries(akonadiiface PRIVATE Qt${QT_VERSION_MAJOR}::Core KF5::I18n)
 
 if(KF5AkonadiContact_FOUND)
     target_include_directories(core_akonadiiface_obj PRIVATE $<TARGET_PROPERTY:KF5::AkonadiContact,INTERFACE_INCLUDE_DIRECTORIES>)
