@@ -14,6 +14,10 @@ include_directories(
     $<TARGET_PROPERTY:KF5::XmlGui,INTERFACE_INCLUDE_DIRECTORIES>
 )
 
+if (Qt6_FOUND)
+  include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Core5Compat,INTERFACE_INCLUDE_DIRECTORIES>)
+endif ()
+
 #------------------------------------------------------------------------
 
 set(pgfscaled_cli_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/pgfscaled_cli.cpp ${pgfutils_SRCS})
