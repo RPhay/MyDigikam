@@ -244,6 +244,12 @@ public:
     void setIconShowRating(bool val);
     bool getIconShowRating() const;
 
+    void setIconShowPickLabel(bool val);
+    bool getIconShowPickLabel() const;
+
+    void setIconShowColorLabel(bool val);
+    bool getIconShowColorLabel() const;
+
     void setIconShowImageFormat(bool val);
     bool getIconShowImageFormat() const;
 

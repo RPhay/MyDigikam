@@ -191,6 +191,26 @@ bool ApplicationSettings::getIconShowRating() const
     return d->iconShowRating;
 }
 
+void ApplicationSettings::setIconShowPickLabel(bool val)
+{
+    d->iconShowPickLabel = val;
+}
+
+bool ApplicationSettings::getIconShowPickLabel() const
+{
+    return d->iconShowPickLabel;
+}
+
+void ApplicationSettings::setIconShowColorLabel(bool val)
+{
+    d->iconShowColorLabel = val;
+}
+
+bool ApplicationSettings::getIconShowColorLabel() const
+{
+    return d->iconShowColorLabel;
+}
+
 void ApplicationSettings::setIconShowImageFormat(bool val)
 {
     d->iconShowImageFormat = val;

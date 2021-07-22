@@ -69,6 +69,8 @@ public:
         iconShowOverlaysBox         (nullptr),
         iconShowFullscreenBox       (nullptr),
         iconShowRatingBox           (nullptr),
+        iconShowPickLabelBox        (nullptr),
+        iconShowColorLabelBox       (nullptr),
         iconShowFormatBox           (nullptr),
         iconShowCoordinatesBox      (nullptr),
         previewFastPreview          (nullptr),
@@ -105,6 +107,8 @@ public:
     QCheckBox*          iconShowOverlaysBox;
     QCheckBox*          iconShowFullscreenBox;
     QCheckBox*          iconShowRatingBox;
+    QCheckBox*          iconShowPickLabelBox;
+    QCheckBox*          iconShowColorLabelBox;
     QCheckBox*          iconShowFormatBox;
     QCheckBox*          iconShowCoordinatesBox;
     QRadioButton*       previewFastPreview;
@@ -188,6 +192,14 @@ SetupAlbumView::SetupAlbumView(QWidget* const parent)
     d->iconShowRatingBox->setWhatsThis(i18n("Set this option to show the digiKam rating "
                                             "below the image thumbnail."));
 
+    d->iconShowPickLabelBox    = new QCheckBox(i18n("Show digiKam &pick label"), iwpanel);
+    d->iconShowPickLabelBox->setWhatsThis(i18n("Set this option to show the digiKam pick label "
+                                            "below the image thumbnail."));
+
+    d->iconShowColorLabelBox   = new QCheckBox(i18n("Show digiKam color &label"), iwpanel);
+    d->iconShowColorLabelBox->setWhatsThis(i18n("Set this option to show the digiKam color label "
+                                            "as a border around the thumbnail."));
+
     d->iconShowOverlaysBox     = new QCheckBox(i18n("Show rotation overlay buttons"), iwpanel);
     d->iconShowOverlaysBox->setWhatsThis(i18n("Set this option to show overlay buttons over "
                                               "the image thumbnail to be able to process left or right image rotation."));
@@ -225,22 +237,26 @@ SetupAlbumView::SetupAlbumView(QWidget* const parent)
     grid->addWidget(d->iconShowResolutionBox,    4, 0, 1, 1);
     grid->addWidget(d->iconShowAspectRatioBox,   5, 0, 1, 1);
     grid->addWidget(d->iconShowFormatBox,        6, 0, 1, 1);
+    grid->addWidget(d->iconShowCoordinatesBox,   7, 0, 1, 1);
 
     grid->addWidget(d->iconShowTitleBox,         0, 1, 1, 1);
     grid->addWidget(d->iconShowCommentsBox,      1, 1, 1, 1);
     grid->addWidget(d->iconShowTagsBox,          2, 1, 1, 1);
     grid->addWidget(d->iconShowRatingBox,        3, 1, 1, 1);
-    grid->addWidget(d->iconShowOverlaysBox,      4, 1, 1, 1);
-    grid->addWidget(d->iconShowFullscreenBox,    5, 1, 1, 1);
-    grid->addWidget(d->iconShowCoordinatesBox,   6, 1, 1, 1);
+    grid->addWidget(d->iconShowPickLabelBox,     4, 1, 1, 1);
+    grid->addWidget(d->iconShowColorLabelBox,    5, 1, 1, 1);
+    grid->addWidget(d->iconShowOverlaysBox,      6, 1, 1, 1);
+    grid->addWidget(d->iconShowFullscreenBox,    7, 1, 1, 1);
 
-    grid->addWidget(leftClickLabel,              7, 0, 1, 1);
-    grid->addWidget(d->leftClickActionComboBox,  7, 1, 1, 1);
-    grid->addWidget(d->iconViewFontSelect,       8, 0, 1, 2);
-    grid->addWidget(d->largeThumbsBox,           9, 0, 1, 2);
+    grid->addWidget(leftClickLabel,              9, 0, 1, 1);
+    grid->addWidget(d->leftClickActionComboBox,  9, 1, 1, 1);
+    grid->addWidget(d->iconViewFontSelect,       10, 0, 1, 2);
+    grid->addWidget(d->largeThumbsBox,           11, 0, 1, 2);
+
+    grid->setRowMinimumHeight(8, 10); // vertical space
     grid->setContentsMargins(spacing, spacing, spacing, spacing);
     grid->setSpacing(spacing);
-    grid->setRowStretch(10, 10);
+    grid->setRowStretch(13, 13);
 
     d->tab->insertTab(IconView, iwpanel, i18nc("@title:tab", "Icons"));
 
@@ -410,6 +426,8 @@ void SetupAlbumView::applySettings()
     settings->setIconShowFullscreen(d->iconShowFullscreenBox->isChecked());
     settings->setIconShowCoordinates(d->iconShowCoordinatesBox->isChecked());
     settings->setIconShowRating(d->iconShowRatingBox->isChecked());
+    settings->setIconShowPickLabel(d->iconShowPickLabelBox->isChecked());
+    settings->setIconShowColorLabel(d->iconShowColorLabelBox->isChecked());
     settings->setIconShowImageFormat(d->iconShowFormatBox->isChecked());
     settings->setIconViewFont(d->iconViewFontSelect->font());
 
@@ -465,6 +483,8 @@ void SetupAlbumView::readSettings()
     d->iconShowFullscreenBox->setChecked(settings->getIconShowFullscreen());
     d->iconShowCoordinatesBox->setChecked(settings->getIconShowCoordinates());
     d->iconShowRatingBox->setChecked(settings->getIconShowRating());
+    d->iconShowPickLabelBox->setChecked(settings->getIconShowPickLabel());
+    d->iconShowColorLabelBox->setChecked(settings->getIconShowColorLabel());
     d->iconShowFormatBox->setChecked(settings->getIconShowImageFormat());
     d->iconViewFontSelect->setFont(settings->getIconViewFont());
 

@@ -57,6 +57,8 @@ const QString ApplicationSettings::Private::configIconShowTitleEntry(QLatin1Stri
 const QString ApplicationSettings::Private::configIconShowCommentsEntry(QLatin1String("Icon Show Comments"));
 const QString ApplicationSettings::Private::configIconShowTagsEntry(QLatin1String("Icon Show Tags"));
 const QString ApplicationSettings::Private::configIconShowRatingEntry(QLatin1String("Icon Show Rating"));
+const QString ApplicationSettings::Private::configIconShowPickLabelEntry(QLatin1String("Icon Show Pick Label"));
+const QString ApplicationSettings::Private::configIconShowColorLabelEntry(QLatin1String("Icon Show Color Label"));
 const QString ApplicationSettings::Private::configIconShowImageFormatEntry(QLatin1String("Icon Show Image Format"));
 const QString ApplicationSettings::Private::configIconShowCoordinatesEntry(QLatin1String("Icon Show Coordinates"));
 const QString ApplicationSettings::Private::configIconShowAspectRatioEntry(QLatin1String("Icon Show Aspect Ratio"));
@@ -170,6 +172,8 @@ ApplicationSettings::Private::Private(ApplicationSettings* const qq)
       iconShowOverlays                      (false),
       iconShowFullscreen                    (false),
       iconShowRating                        (false),
+      iconShowPickLabel                     (false),
+      iconShowColorLabel                    (false),
       iconShowImageFormat                   (false),
       iconShowCoordinates                   (false),
       iconShowAspectRatio                   (false),
@@ -311,6 +315,8 @@ void ApplicationSettings::Private::init()
     iconShowOverlays                     = true;
     iconShowFullscreen                   = true;
     iconShowRating                       = true;
+    iconShowPickLabel                    = false;
+    iconShowColorLabel                   = true;
     iconShowImageFormat                  = true;
     iconShowCoordinates                  = true;
     iconviewFont                         = QFontDatabase::systemFont(QFontDatabase::GeneralFont);

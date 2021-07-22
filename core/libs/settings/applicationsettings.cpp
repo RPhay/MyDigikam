@@ -138,6 +138,8 @@ void ApplicationSettings::readSettings()
     d->iconShowOverlays                  = group.readEntry(d->configIconShowOverlaysEntry,             true);
     d->iconShowFullscreen                = group.readEntry(d->configIconShowFullscreenEntry,           true);
     d->iconShowRating                    = group.readEntry(d->configIconShowRatingEntry,               true);
+    d->iconShowPickLabel                 = group.readEntry(d->configIconShowPickLabelEntry,            true);
+    d->iconShowColorLabel                = group.readEntry(d->configIconShowColorLabelEntry,           true);
     d->iconShowImageFormat               = group.readEntry(d->configIconShowImageFormatEntry,          true);
     d->iconShowCoordinates               = group.readEntry(d->configIconShowCoordinatesEntry,          true);
     d->iconviewFont                      = group.readEntry(d->configIconViewFontEntry,                 QFontDatabase::systemFont(QFontDatabase::GeneralFont));
@@ -346,6 +348,8 @@ void ApplicationSettings::saveSettings()
     group.writeEntry(d->configIconShowOverlaysEntry,                   d->iconShowOverlays);
     group.writeEntry(d->configIconShowFullscreenEntry,                 d->iconShowFullscreen);
     group.writeEntry(d->configIconShowRatingEntry,                     d->iconShowRating);
+    group.writeEntry(d->configIconShowPickLabelEntry,                  d->iconShowPickLabel);
+    group.writeEntry(d->configIconShowColorLabelEntry,                 d->iconShowColorLabel);
     group.writeEntry(d->configIconShowImageFormatEntry,                d->iconShowImageFormat);
     group.writeEntry(d->configIconShowCoordinatesEntry,                d->iconShowCoordinates);
     group.writeEntry(d->configIconViewFontEntry,                       d->iconviewFont);

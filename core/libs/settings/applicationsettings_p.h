@@ -121,6 +121,8 @@ public:
     static const QString configIconShowOverlaysEntry;
     static const QString configIconShowFullscreenEntry;
     static const QString configIconShowRatingEntry;
+    static const QString configIconShowPickLabelEntry;
+    static const QString configIconShowColorLabelEntry;
     static const QString configIconShowImageFormatEntry;
     static const QString configIconShowCoordinatesEntry;
     static const QString configIconShowAspectRatioEntry;
@@ -221,6 +223,8 @@ public:
     bool                                         iconShowOverlays;
     bool                                         iconShowFullscreen;
     bool                                         iconShowRating;
+    bool                                         iconShowPickLabel;
+    bool                                         iconShowColorLabel;
     bool                                         iconShowImageFormat;
     bool                                         iconShowCoordinates;
     bool                                         iconShowAspectRatio;
