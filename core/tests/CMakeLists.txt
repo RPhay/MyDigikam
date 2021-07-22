@@ -119,6 +119,13 @@ set(COMMON_TEST_LINK Qt${QT_VERSION_MAJOR}::Core
                      ${_extra_deps}
 )
 
+if (Qt6_FOUND)
+    set(COMMON_TEST_LINK ${COMMON_TEST_LINK}
+                         Qt6::Core5Compat
+        )
+endif ()
+
+
 # -------------------------------------------------------------------------------
 # Common static library for uint-tests based on ModelTest
 
@@ -133,6 +140,14 @@ target_link_libraries(libmodeltest
                       Qt${QT_VERSION_MAJOR}::Core
                       Qt${QT_VERSION_MAJOR}::Test
 )
+
+if (Qt6_FOUND)
+    target_link_libraries(libmodeltest
+        PRIVATE
+        Qt6::Core5Compat
+        )
+endif ()
+
 
 # -------------------------------------------------------------------------------
 # Unit-tests and CLI tools

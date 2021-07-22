@@ -83,6 +83,14 @@ target_link_libraries(showfoto
                       digikamcore
 )
 
+if (Qt6_FOUND)
+    target_link_libraries(showfoto
+        PUBLIC
+        Qt6::Core5Compat
+        )
+endif ()
+
+
 if(KF5Notifications_FOUND)
 
     target_link_libraries(showfoto

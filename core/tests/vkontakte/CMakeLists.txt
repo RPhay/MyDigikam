@@ -14,6 +14,13 @@ add_definitions(-DAUTOTESTS_API_TOKEN_PATH="${CMAKE_CURRENT_SOURCE_DIR}/api-toke
 add_library(testhelper STATIC vktestbase.cpp)
 target_link_libraries(testhelper Qt${QT_VERSION_MAJOR}::Core Qt${QT_VERSION_MAJOR}::Test)
 
+if (Qt6_FOUND)
+    target_link_libraries(testhelper
+        PRIVATE
+        Qt6::Core5Compat
+        )
+endif ()
+
 function(add_vk_test name)
 
     ecm_add_test(${CMAKE_CURRENT_SOURCE_DIR}/${name}.cpp
