@@ -88,6 +88,11 @@ public:
 
         bool childrenEmpty() const;
 
+        /**
+         * @brief returns the next non empty child index or -1.
+         */
+        int nextNonEmptyIndex(int linearIndex) const;
+
 
     private:
 
@@ -98,6 +103,7 @@ public:
     private:
 
         QVector<Tile*> children;
+        QVector<int> nonEmptyIndices;
     };
 
 public:
