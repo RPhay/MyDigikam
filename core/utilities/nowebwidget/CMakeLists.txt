@@ -21,6 +21,10 @@ include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Sql,INTERFACE_INCLU
         $<TARGET_PROPERTY:KF5::XmlGui,INTERFACE_INCLUDE_DIRECTORIES>
         )
 
+
+if (Qt6_FOUND)
+  include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Core5Compat,INTERFACE_INCLUDE_DIRECTORIES>)
+endif ()
 add_library(gui_nowebwidget_obj OBJECT ${libnowebwidget_SRCS})
 
 target_compile_definitions(gui_nowebwidget_obj
