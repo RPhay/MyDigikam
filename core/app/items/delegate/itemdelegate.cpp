@@ -267,7 +267,10 @@ void ItemDelegate::paint(QPainter* p, const QStyleOptionViewItem& option, const 
     }
 
     // Draw Color Label rectangle
-    drawColorLabelRect(p, option, isSelected, info.colorLabel());
+    if (ApplicationSettings::instance()->getIconShowColorLabel())
+    {
+        drawColorLabelRect(p, option, isSelected, info.colorLabel());
+    }
 
     p->setPen(isSelected ? qApp->palette().color(QPalette::HighlightedText)
                          : qApp->palette().color(QPalette::Text));
