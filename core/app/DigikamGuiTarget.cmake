@@ -264,6 +264,13 @@ target_link_libraries(digikamgui
                       opencv_flann
 )
 
+if (Qt6_FOUND)
+    target_link_libraries(digikamgui
+        PRIVATE
+        Qt6::Core5Compat
+        )
+endif ()
+
 if(ENABLE_QWEBENGINE)
 
     target_link_libraries(digikamgui

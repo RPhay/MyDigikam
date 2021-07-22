@@ -76,6 +76,12 @@ macro(DIGIKAM_ADD_GENERIC_PLUGIN)
                           ${_extra_deps}
     )
 
+    if (Qt6_FOUND)
+        target_link_libraries(Generic_${_parse_results_NAME}_Plugin
+            PRIVATE
+            Qt6::Core5Compat
+            )
+    endif ()
     install(TARGETS Generic_${_parse_results_NAME}_Plugin
             DESTINATION ${PLUGIN_INSTALL_DIR}/digikam/generic
     )
@@ -154,6 +160,12 @@ macro(DIGIKAM_ADD_EDITOR_PLUGIN)
                           ${_extra_deps}
     )
 
+    if (Qt6_FOUND)
+        target_link_libraries(Editor_${_parse_results_NAME}_Plugin
+            PRIVATE
+            Qt6::Core5Compat
+            )
+    endif ()
     install(TARGETS Editor_${_parse_results_NAME}_Plugin
             DESTINATION ${PLUGIN_INSTALL_DIR}/digikam/editor
     )
@@ -235,6 +247,13 @@ macro(DIGIKAM_ADD_BQM_PLUGIN)
                           ${_extra_deps}
     )
 
+    if (Qt6_FOUND)
+        target_link_libraries(Bqm_${_parse_results_NAME}_Plugin
+            PRIVATE
+            Qt6::Core5Compat
+            )
+    endif ()
+
     install(TARGETS Bqm_${_parse_results_NAME}_Plugin
             DESTINATION ${PLUGIN_INSTALL_DIR}/digikam/bqm
     )
@@ -312,6 +331,12 @@ macro(DIGIKAM_ADD_RAWIMPORT_PLUGIN)
                           ${_parse_results_DEPENDS}
                           ${_extra_deps}
     )
+    if (Qt6_FOUND)
+        target_link_libraries(RawImport_${_parse_results_NAME}_Plugin
+            PRIVATE
+            Qt6::Core5Compat
+            )
+    endif ()
 
     install(TARGETS RawImport_${_parse_results_NAME}_Plugin
             DESTINATION ${PLUGIN_INSTALL_DIR}/digikam/rawimport
@@ -388,7 +413,12 @@ macro(DIGIKAM_ADD_DIMG_PLUGIN)
                           ${_parse_results_DEPENDS}
                           ${_extra_deps}
     )
-
+    if (Qt6_FOUND)
+        target_link_libraries(DImg_${_parse_results_NAME}_Plugin
+            PRIVATE
+            Qt6::Core5Compat
+            )
+    endif ()
     install(TARGETS DImg_${_parse_results_NAME}_Plugin
             DESTINATION ${PLUGIN_INSTALL_DIR}/digikam/dimg
     )

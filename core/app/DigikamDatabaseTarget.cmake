@@ -54,6 +54,13 @@ target_link_libraries(digikamdatabase
                       opencv_flann
 )
 
+if (Qt6_FOUND)
+    target_link_libraries(digikamdatabase
+        PRIVATE
+        Qt6::Core5Compat
+        )
+endif ()
+
 if(ENABLE_DBUS)
 
     target_link_libraries(digikamdatabase
