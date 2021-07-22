@@ -16,6 +16,10 @@ include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Gui,INTERFACE_INCLU
                     $<TARGET_PROPERTY:KF5::I18n,INTERFACE_INCLUDE_DIRECTORIES>
 )
 
+if (Qt6_FOUND)
+  include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Core5Compat,INTERFACE_INCLUDE_DIRECTORIES>)
+endif ()
+
 set(profileconversiontoolplugin_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/profileconversiontoolplugin.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/profileconversiontool.cpp
