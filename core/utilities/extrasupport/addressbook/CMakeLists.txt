@@ -14,6 +14,10 @@ include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Widgets,INTERFACE_I
                     $<TARGET_PROPERTY:KF5::I18n,INTERFACE_INCLUDE_DIRECTORIES>
 )
 
+if (Qt6_FOUND)
+    include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Core5Compat,INTERFACE_INCLUDE_DIRECTORIES>)
+endif ()
+
 if(KF5AkonadiContact_FOUND)
     include_directories(
         $<TARGET_PROPERTY:KF5::AkonadiCore,INTERFACE_INCLUDE_DIRECTORIES>
@@ -34,6 +38,14 @@ target_compile_definitions(core_akonadiiface_obj
 add_library(akonadiiface STATIC $<TARGET_OBJECTS:core_akonadiiface_obj>)
 
 target_link_libraries(akonadiiface PRIVATE Qt${QT_VERSION_MAJOR}::Core KF5::I18n)
+
+if (Qt6_FOUND)
+    target_link_libraries(akonadiiface
+        PRIVATE
+        Qt6::Core5Compat
+        )
+endif ()
+
 
 if(KF5AkonadiContact_FOUND)
     target_include_directories(core_akonadiiface_obj PRIVATE $<TARGET_PROPERTY:KF5::AkonadiContact,INTERFACE_INCLUDE_DIRECTORIES>)
