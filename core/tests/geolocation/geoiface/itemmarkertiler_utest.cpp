@@ -739,9 +739,10 @@ void TestItemMarkerTiler::testSelectionState1()
 
 void TestItemMarkerTiler::benchmarkIteratorWholeWorld()
 {
-    return;
 #if 0
-//     QBENCHMARK
+    return;
+#else
+    QBENCHMARK
     {
         QScopedPointer<QStandardItemModel> itemModel(new QStandardItemModel());
         ItemMarkerTiler mm(new MarkerModelHelper(itemModel.data(), 0));
