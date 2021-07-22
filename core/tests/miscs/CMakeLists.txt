@@ -12,6 +12,10 @@ include_directories(
     $<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Xml,INTERFACE_INCLUDE_DIRECTORIES>
 )
 
+if (Qt6_FOUND)
+  include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Core5Compat,INTERFACE_INCLUDE_DIRECTORIES>)
+endif ()
+
 set(browser_gui_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/browser_gui.cpp)
 add_executable(browser_gui ${browser_gui_SRCS})
 

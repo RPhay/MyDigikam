@@ -33,6 +33,10 @@ include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::PrintSupport,INTERF
                     $<TARGET_PROPERTY:KF5::Service,INTERFACE_INCLUDE_DIRECTORIES>
 )
 
+if (Qt6_FOUND)
+    include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Core5Compat,INTERFACE_INCLUDE_DIRECTORIES>)
+endif ()
+
 if(Gphoto2_FOUND)
     include_directories(${GPHOTO2_INCLUDE_DIRS})
 endif()

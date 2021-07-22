@@ -19,6 +19,10 @@ include_directories(
     $<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Core,INTERFACE_INCLUDE_DIRECTORIES>
 )
 
+if (Qt6_FOUND)
+  include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Core5Compat,INTERFACE_INCLUDE_DIRECTORIES>)
+endif ()
+
 # Used by digikamcore
 add_library(core_dthread_obj OBJECT ${libdthread_SRCS})
 

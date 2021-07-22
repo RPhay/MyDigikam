@@ -46,6 +46,10 @@ include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Sql,INTERFACE_INCLU
                     $<TARGET_PROPERTY:KF5::Solid,INTERFACE_INCLUDE_DIRECTORIES>
 )
 
+if (Qt6_FOUND)
+    include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Core5Compat,INTERFACE_INCLUDE_DIRECTORIES>)
+endif ()
+
 add_library(gui_queuemanager_obj OBJECT ${libqueuemanager_SRCS} ${libdlib_SRCS})
 
 # Used by digikamgui

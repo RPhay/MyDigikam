@@ -11,6 +11,10 @@ include_directories(${CMAKE_SOURCE_DIR}/core/libs/rawengine/libraw
                     $<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Gui,INTERFACE_INCLUDE_DIRECTORIES>
 )
 
+if (Qt6_FOUND)
+  include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Core5Compat,INTERFACE_INCLUDE_DIRECTORIES>)
+endif ()
+
 set(raw2png_cli_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/raw2png_cli.cpp)
 add_executable(raw2png_cli ${raw2png_cli_SRCS})
 target_link_libraries(raw2png_cli

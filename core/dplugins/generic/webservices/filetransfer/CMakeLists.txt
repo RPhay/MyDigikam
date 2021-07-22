@@ -18,6 +18,10 @@ include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Widgets,INTERFACE_I
                     $<TARGET_PROPERTY:KF5::KIOFileWidgets,INTERFACE_INCLUDE_DIRECTORIES>
 )
 
+if (Qt6_FOUND)
+  include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Core5Compat,INTERFACE_INCLUDE_DIRECTORIES>)
+endif ()
+
 set(filetransferplugin_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/ftexportwidget.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/ftexportwindow.cpp

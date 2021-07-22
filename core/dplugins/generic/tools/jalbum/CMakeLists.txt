@@ -19,6 +19,10 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR}/
                     $<TARGET_PROPERTY:KF5::ConfigCore,INTERFACE_INCLUDE_DIRECTORIES>
 )
 
+if (Qt6_FOUND)
+  include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Core5Compat,INTERFACE_INCLUDE_DIRECTORIES>)
+endif ()
+
 set(jalbumplugin_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/generator/jalbumsettings.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/generator/jalbumgenerator.cpp
