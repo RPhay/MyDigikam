@@ -9,6 +9,10 @@ APPLY_COMMON_POLICIES()
 
 include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Core,INTERFACE_INCLUDE_DIRECTORIES>)
 
+if (Qt6_FOUND)
+  include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Core5Compat,INTERFACE_INCLUDE_DIRECTORIES>)
+endif ()
+
 set(libkmemoryinfo_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/kmemoryinfo.cpp)
 
 # Used by digikamcore
