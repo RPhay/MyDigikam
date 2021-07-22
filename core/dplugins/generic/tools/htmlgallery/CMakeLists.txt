@@ -21,6 +21,10 @@ include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Widgets,INTERFACE_I
                     ${LIBXML2_INCLUDE_DIR}
 )
 
+if (Qt6_FOUND)
+  include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Core5Compat,INTERFACE_INCLUDE_DIRECTORIES>)
+endif ()
+
 add_definitions(${LIBXSLT_DEFINITIONS}
                 ${LIBXML2_DEFINITIONS}
 )
