@@ -281,8 +281,8 @@ void DragDropViewImplementation::encodeIsCutSelection(QMimeData* mime, bool cut)
 
 #ifdef Q_OS_WIN
 
-    const QByteArray cutSelection = cut ? QByteArrayLiteral("\x02\x00")
-                                        : QByteArrayLiteral("\x01\x00");
+    const QByteArray cutSelection = cut ? QByteArrayLiteral("\x02\x00\x00\x00")
+                                        : QByteArrayLiteral("\x01\x00\x00\x00");
 
 #else
 
@@ -304,7 +304,7 @@ bool DragDropViewImplementation::decodeIsCutSelection(const QMimeData* mime)
 
 #ifdef Q_OS_WIN
 
-    return (a == QByteArrayLiteral("\x02\x00")); // true if "0x02, 0x00"
+    return (a == QByteArrayLiteral("\x02\x00\x00\x00")); // true if "0x02"
 
 #else
 
