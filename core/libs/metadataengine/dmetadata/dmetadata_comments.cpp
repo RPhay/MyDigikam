@@ -217,17 +217,6 @@ bool DMetadata::setItemComments(const CaptionsMap& comments, const DMetadataSett
             return false;
         }
 
-        QString defaultAuthor  = comments.value(QLatin1String("x-default")).author;
-        removeXmpTag("Xmp.acdsee.author");
-
-        if (!defaultAuthor.isNull())
-        {
-            if (!setXmpTagString("Xmp.acdsee.author", defaultAuthor))
-            {
-                return false;
-            }
-        }
-
         if (!setXmpTagStringListLangAlt("Xmp.digiKam.CaptionsDateTimeStamps", comments.datesList()))
         {
             return false;
@@ -299,6 +288,20 @@ bool DMetadata::setItemComments(const CaptionsMap& comments, const DMetadataSett
                             if (!setXmpTagString(nameSpace, defaultComment))
                             {
                                 return false;
+                            }
+                        }
+
+                        if (entry.namespaceName == QLatin1String("Xmp.acdsee.notes"))
+                        {
+                            QString defaultAuthor = comments.value(QLatin1String("x-default")).author;
+                            removeXmpTag("Xmp.acdsee.author");
+
+                            if (!defaultAuthor.isNull())
+                            {
+                                if (!setXmpTagString("Xmp.acdsee.author", defaultAuthor))
+                                {
+                                    return false;
+                                }
                             }
                         }
 
