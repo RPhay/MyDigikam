@@ -149,8 +149,9 @@ public: // Comments helpers
     bool setItemComments(const CaptionsMap& comments,
                          const DMetadataSettingsContainer& settings = DMetadataSettings::instance()->settings())        const;
 
-    CaptionsMap getItemTitles()                                                                                         const;
-    bool setItemTitles(const CaptionsMap& title)                                                                        const;
+    CaptionsMap getItemTitles(const DMetadataSettingsContainer& settings = DMetadataSettings::instance()->settings())   const;
+    bool setItemTitles(const CaptionsMap& title,
+                       const DMetadataSettingsContainer& settings = DMetadataSettings::instance()->settings())          const;
 
     static MetaEngine::AltLangMap toAltLangMap(const QVariant& var);
 

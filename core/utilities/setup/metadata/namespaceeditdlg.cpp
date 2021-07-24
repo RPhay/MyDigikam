@@ -304,6 +304,12 @@ void NamespaceEditDlg::setupTagGui(NamespaceEntry& entry)
 
     d->specialOptsCombo->addItem(QLatin1String("NO_OPTS"), (int)NamespaceEntry::NO_OPTS);
 
+    if (entry.nsType == NamespaceEntry::TITLE)
+    {
+        d->specialOptsCombo->addItem(QLatin1String("COMMENT_ALTLANGLIST"), NamespaceEntry::COMMENT_ATLLANGLIST);
+        d->specialOptsCombo->addItem(QLatin1String("COMMENT_XMP"),         NamespaceEntry::COMMENT_XMP);
+    }
+
     if (entry.nsType == NamespaceEntry::COMMENT)
     {
         d->specialOptsCombo->addItem(QLatin1String("COMMENT_ALTLANG"),     NamespaceEntry::COMMENT_ALTLANG);
@@ -329,6 +335,12 @@ void NamespaceEditDlg::setupTagGui(NamespaceEntry& entry)
     d->altSpecialOptsCombo  = new QComboBox(d->page);
 
     d->altSpecialOptsCombo->addItem(QLatin1String("NO_OPTS"), (int)NamespaceEntry::NO_OPTS);
+
+    if (entry.nsType == NamespaceEntry::TITLE)
+    {
+        d->altSpecialOptsCombo->addItem(QLatin1String("COMMENT_ALTLANGLIST"), NamespaceEntry::COMMENT_ATLLANGLIST);
+        d->altSpecialOptsCombo->addItem(QLatin1String("COMMENT_XMP"),         NamespaceEntry::COMMENT_XMP);
+    }
 
     if (entry.nsType == NamespaceEntry::COMMENT)
     {
@@ -486,6 +498,16 @@ void NamespaceEditDlg::setType(NamespaceEntry::NamespaceType type)
             d->subspaceCombo->setItemData(1, 0, Qt::UserRole -1);
             break;
 
+        case NamespaceEntry::TITLE:
+            d->tagTipLabel->hide();
+            d->ratingTipLabel->hide();
+            d->isPath->hide();
+            d->isTagLabel->hide();
+            d->separatorLabel->hide();
+            d->nameSpaceSeparator->hide();
+            d->ratingMappings->hide();
+            break;
+
         case NamespaceEntry::RATING:
             d->tagTipLabel->hide();
             d->commentTipLabel->hide();
@@ -629,7 +651,10 @@ bool NamespaceEditDlg::validifyCheck(QString& errMsg)
 
             break;
 
-        case NamespaceEntry::RATING:
+       case NamespaceEntry::TITLE:
+            break;
+
+       case NamespaceEntry::RATING:
             break;
 
         case NamespaceEntry::COMMENT:

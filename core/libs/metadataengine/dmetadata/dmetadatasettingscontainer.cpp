@@ -42,6 +42,11 @@ QString NamespaceEntry::DM_TAG_CONTAINER()
     return QString::fromUtf8(I18N_NOOP("Tags"));
 }
 
+QString NamespaceEntry::DM_TITLE_CONTAINER()
+{
+    return QString::fromUtf8(I18N_NOOP("Title"));
+}
+
 QString NamespaceEntry::DM_RATING_CONTAINER()
 {
     return QString::fromUtf8(I18N_NOOP("Rating"));
@@ -118,6 +123,7 @@ DMetadataSettingsContainer::DMetadataSettingsContainer()
     : d(new Private)
 {
     addMapping(NamespaceEntry::DM_TAG_CONTAINER());
+    addMapping(NamespaceEntry::DM_TITLE_CONTAINER());
     addMapping(NamespaceEntry::DM_RATING_CONTAINER());
     addMapping(NamespaceEntry::DM_COMMENT_CONTAINER());
     addMapping(NamespaceEntry::DM_COLORLABEL_CONTAINER());
@@ -217,6 +223,7 @@ void DMetadataSettingsContainer::defaultValues()
     d->readMappings.clear();
 
     defaultTagValues();
+    defaultTitleValues();
     defaultRatingValues();
     defaultCommentValues();
     defaultColorLabelValues();
@@ -330,6 +337,37 @@ void DMetadataSettingsContainer::defaultTagValues()
 
     d->writeMappings[NamespaceEntry::DM_TAG_CONTAINER()]
         = QList<NamespaceEntry>(getReadMapping(NamespaceEntry::DM_TAG_CONTAINER()));
+}
+
+void DMetadataSettingsContainer::defaultTitleValues()
+{
+    NamespaceEntry titleNs1;
+    titleNs1.namespaceName   = QLatin1String("Xmp.dc.title");
+    titleNs1.nsType          = NamespaceEntry::TITLE;
+    titleNs1.specialOpts     = NamespaceEntry::COMMENT_ATLLANGLIST;
+    titleNs1.index           = 0;
+    titleNs1.subspace        = NamespaceEntry::XMP;
+
+    NamespaceEntry titleNs2;
+    titleNs2.namespaceName   = QLatin1String("Xmp.acdsee.caption");
+    titleNs2.nsType          = NamespaceEntry::TITLE;
+    titleNs2.specialOpts     = NamespaceEntry::COMMENT_XMP;
+    titleNs2.index           = 1;
+    titleNs2.subspace        = NamespaceEntry::XMP;
+
+    NamespaceEntry titleNs3;
+    titleNs3.namespaceName   = QLatin1String("Iptc.Application2.ObjectName");
+    titleNs3.nsType          = NamespaceEntry::TITLE;
+    titleNs3.specialOpts     = NamespaceEntry::NO_OPTS;
+    titleNs3.index           = 2;
+    titleNs3.subspace        = NamespaceEntry::IPTC;
+
+    getReadMapping(NamespaceEntry::DM_TITLE_CONTAINER()) << titleNs1
+                                                         << titleNs2
+                                                         << titleNs3;
+
+    d->writeMappings[NamespaceEntry::DM_TITLE_CONTAINER()]
+        = QList<NamespaceEntry>(getReadMapping(NamespaceEntry::DM_TITLE_CONTAINER()));
 }
 
 void DMetadataSettingsContainer::defaultRatingValues()
@@ -448,13 +486,13 @@ void DMetadataSettingsContainer::defaultCommentValues()
     commNs7.subspace        = NamespaceEntry::IPTC;
 
 
-     getReadMapping(NamespaceEntry::DM_COMMENT_CONTAINER()) << commNs1
-                                                            << commNs2
-                                                            << commNs3
-                                                            << commNs4
-                                                            << commNs5
-                                                            << commNs6
-                                                            << commNs7;
+    getReadMapping(NamespaceEntry::DM_COMMENT_CONTAINER()) << commNs1
+                                                           << commNs2
+                                                           << commNs3
+                                                           << commNs4
+                                                           << commNs5
+                                                           << commNs6
+                                                           << commNs7;
 
     d->writeMappings[NamespaceEntry::DM_COMMENT_CONTAINER()]
         = QList<NamespaceEntry>(getReadMapping(NamespaceEntry::DM_COMMENT_CONTAINER()));
