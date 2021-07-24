@@ -10,7 +10,6 @@ add_subdirectory(sendbymail)
 add_subdirectory(printcreator)
 add_subdirectory(jalbum)
 add_subdirectory(mediaserver)
-add_subdirectory(mjpegstream)
 add_subdirectory(wallpaper)
 add_subdirectory(dngconverter)      # NOTE: for Showfoto only
 
