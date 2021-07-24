@@ -250,15 +250,12 @@ bool DMetadata::setItemComments(const CaptionsMap& comments, const DMetadataSett
                     continue;
                 }
 
-                if (entry.namespaceName.contains(QLatin1String("Xmp.")))
-                {
-                    removeXmpTag(nameSpace);
-                }
-
                 switch (entry.specialOpts)
                 {
                     case NamespaceEntry::COMMENT_ALTLANG:
                     {
+                        removeXmpTag(nameSpace);
+
                         if (!defaultComment.isNull())
                         {
                             if (!setXmpTagStringLangAlt(nameSpace, defaultComment, QString()))
@@ -273,6 +270,8 @@ bool DMetadata::setItemComments(const CaptionsMap& comments, const DMetadataSett
 
                     case NamespaceEntry::COMMENT_ATLLANGLIST:
                     {
+                        // NOTE : setXmpTagStringListLangAlt remove xmp tag before to add new values
+
                         if (!setXmpTagStringListLangAlt(nameSpace, comments.toAltLangMap()))
                         {
                             return false;
@@ -283,6 +282,8 @@ bool DMetadata::setItemComments(const CaptionsMap& comments, const DMetadataSett
 
                     case NamespaceEntry::COMMENT_XMP:
                     {
+                        removeXmpTag(nameSpace);
+
                         if (!defaultComment.isNull())
                         {
                             if (!setXmpTagString(nameSpace, defaultComment))
@@ -503,11 +504,6 @@ bool DMetadata::setItemTitles(const CaptionsMap& titles, const DMetadataSettings
                 if (!supportXmp())
                 {
                     continue;
-                }
-
-                if (entry.namespaceName.contains(QLatin1String("Xmp.")))
-                {
-                    removeXmpTag(nameSpace);
                 }
 
                 switch (entry.specialOpts)
