@@ -19,4 +19,6 @@ BUGFIXES:
 008 ==> 439913 - iNaturalist Export "Unknown Error" when click in Identification field.
 009 ==> 440030 - Database migration 7.2 -> 7.3 fails.
 010 ==> 440015 - Metadata Template insists on putting in a country name.
-011 ==> 
+011 ==> 440127 - Program crashes using SEARCH or KEYWORD tabs - JPEG 2000 images relevant.
+012 ==> 
+
