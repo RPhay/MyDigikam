@@ -342,25 +342,25 @@ void DMetadataSettingsContainer::defaultTagValues()
 void DMetadataSettingsContainer::defaultTitleValues()
 {
     NamespaceEntry titleNs1;
-    titleNs1.namespaceName   = QLatin1String("Xmp.dc.title");
-    titleNs1.nsType          = NamespaceEntry::TITLE;
-    titleNs1.specialOpts     = NamespaceEntry::COMMENT_ATLLANGLIST;
-    titleNs1.index           = 0;
-    titleNs1.subspace        = NamespaceEntry::XMP;
+    titleNs1.namespaceName  = QLatin1String("Xmp.dc.title");
+    titleNs1.nsType         = NamespaceEntry::TITLE;
+    titleNs1.specialOpts    = NamespaceEntry::COMMENT_ATLLANGLIST;
+    titleNs1.index          = 0;
+    titleNs1.subspace       = NamespaceEntry::XMP;
 
     NamespaceEntry titleNs2;
-    titleNs2.namespaceName   = QLatin1String("Xmp.acdsee.caption");
-    titleNs2.nsType          = NamespaceEntry::TITLE;
-    titleNs2.specialOpts     = NamespaceEntry::COMMENT_XMP;
-    titleNs2.index           = 1;
-    titleNs2.subspace        = NamespaceEntry::XMP;
+    titleNs2.namespaceName  = QLatin1String("Xmp.acdsee.caption");
+    titleNs2.nsType         = NamespaceEntry::TITLE;
+    titleNs2.specialOpts    = NamespaceEntry::COMMENT_XMP;
+    titleNs2.index          = 1;
+    titleNs2.subspace       = NamespaceEntry::XMP;
 
     NamespaceEntry titleNs3;
-    titleNs3.namespaceName   = QLatin1String("Iptc.Application2.ObjectName");
-    titleNs3.nsType          = NamespaceEntry::TITLE;
-    titleNs3.specialOpts     = NamespaceEntry::NO_OPTS;
-    titleNs3.index           = 2;
-    titleNs3.subspace        = NamespaceEntry::IPTC;
+    titleNs3.namespaceName  = QLatin1String("Iptc.Application2.ObjectName");
+    titleNs3.nsType         = NamespaceEntry::TITLE;
+    titleNs3.specialOpts    = NamespaceEntry::NO_OPTS;
+    titleNs3.index          = 2;
+    titleNs3.subspace       = NamespaceEntry::IPTC;
 
     getReadMapping(NamespaceEntry::DM_TITLE_CONTAINER()) << titleNs1
                                                          << titleNs2
