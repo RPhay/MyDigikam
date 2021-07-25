@@ -29,6 +29,10 @@
 #include <QString>
 #include <QUrl>
 
+// Local includes
+
+#include "mjpegserver.h"
+
 class KConfigGroup;
 
 namespace DigikamGenericMjpegStreamPlugin
@@ -41,6 +45,8 @@ public:
 
     explicit MjpegStreamSettings();
     ~MjpegStreamSettings();
+
+    void setCollectionMap(const MjpegServerMap& map);
 
     /**
      * Read and write settings in config file between sessions.

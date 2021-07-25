@@ -46,6 +46,7 @@
 #include "dnotificationwrapper.h"
 #include "mjpegserver.h"
 #include "mjpegframethread.h"
+#include "mjpegstreamsettings.h"
 
 using namespace Digikam;
 
@@ -225,7 +226,9 @@ bool MjpegServerMngr::startMjpegServer()
     }
 
     d->thread = new MjpegFrameThread(this);
-    d->thread->createFrameJob(d->collectionMap);
+    MjpegStreamSettings set;
+    set.setCollectionMap(d->collectionMap);
+    d->thread->createFrameJob(set);
 
     connect(d->thread, SIGNAL(signalFrameChanged(QByteArray)),
             d->server, SLOT(slotWriteFrame(QByteArray)));

@@ -33,10 +33,11 @@
 #include <QImage>
 #include <QDateTime>
 
-// Libwestbox includes
+// Local includes
 
 #include "actionthread.h"
 #include "mjpegserver.h"
+#include "mjpegstreamsettings.h"
 
 using namespace Digikam;
 
@@ -52,7 +53,7 @@ public:
     explicit MjpegFrameThread(QObject* const parent);
     ~MjpegFrameThread() override;
 
-    void createFrameJob(const MjpegServerMap&);
+    void createFrameJob(const MjpegStreamSettings&);
 
 Q_SIGNALS:
 
@@ -130,33 +131,8 @@ public:
 
 public:
 
-    explicit MjpegFrameTask();
+    explicit MjpegFrameTask(const MjpegStreamSettings& set);
     ~MjpegFrameTask();
-
-    /**
-     * Handle JPEG quality settings.
-     * Compression: [ 1 (high) ... 100 (low) ].
-     * Default = 75 (normal and good quality compression).
-     */
-    bool setQuality(int qa);
-    int  quality() const;
-
-    /**
-     * Handle interval in seconds between images.
-     */
-    void setInterval(int inter);
-    int  interval() const;
-
-    /**
-     * Handle images stream list as loop.
-     */
-    void setLoop(bool b);
-    bool isLoop() const;
-
-    /**
-     * Setup the list of albums to share with MJPEG server.
-     */
-    void setCollectionMap(const MjpegServerMap&);
 
 public:
 
@@ -183,10 +159,7 @@ private:
 
 private:
 
-    bool        m_loop;          ///< Image stream as loop.
-    int         m_quality;       ///< Jpeg compression [1...100].
-    int         m_interval;      ///< Interval in seconds between inmages.
-    QList<QUrl> m_urlsList;      ///< Ordered list of list to stream.
+    MjpegStreamSettings m_set;
 };
 
 } // namespace DigikamGenericMjpegStreamPlugin

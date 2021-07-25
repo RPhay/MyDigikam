@@ -41,6 +41,16 @@ MjpegStreamSettings::~MjpegStreamSettings()
 {
 }
 
+void MjpegStreamSettings::setCollectionMap(const MjpegServerMap& map)
+{
+    m_urlsList.clear();
+
+    for (MjpegServerMap::const_iterator it = map.constBegin() ; it != map.constEnd() ; ++it)
+    {
+        m_urlsList.append(it.value());
+    }
+}
+
 void MjpegStreamSettings::readSettings(KConfigGroup& group)
 {
     m_port     = group.readEntry("MJPEGStreamPort",     8080);
