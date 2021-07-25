@@ -153,7 +153,9 @@ public:
     void setLoop(bool b);
     bool isLoop() const;
 
-    /// Setup the list of albums to share with MJPEG server.
+    /**
+     * Setup the list of albums to share with MJPEG server.
+     */
     void setCollectionMap(const MjpegServerMap&);
 
 public:
@@ -161,12 +163,12 @@ public:
     /**
      * Insert time-stamp OSD on frame.
      */
-    static void insertOSDToFrame(QImage& frame, const OSDProperties& osd = OSDProperties());
+    void insertOSDToFrame(QImage& frame, const OSDProperties& osd = OSDProperties());
 
     /**
      * Convert a QImage to a byte-aaray off JPEG data file.
      */
-    static QByteArray imageToJPEGArray(const QImage& frame, int quality);
+    QByteArray imageToJPEGArray(const QImage& frame);
 
 Q_SIGNALS:
 

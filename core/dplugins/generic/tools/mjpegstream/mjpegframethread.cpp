@@ -247,12 +247,12 @@ void MjpegFrameTask::insertOSDToFrame(QImage& frm, const OSDProperties& osd)
     }
 }
 
-QByteArray MjpegFrameTask::imageToJPEGArray(const QImage& frame, int quality)
+QByteArray MjpegFrameTask::imageToJPEGArray(const QImage& frame)
 {
     QByteArray outbuf;
     QBuffer buffer(&outbuf);
     buffer.open(QIODevice::WriteOnly);
-    frame.save(&buffer, "JPEG", quality);
+    frame.save(&buffer, "JPEG", m_quality);
 
     return outbuf;
 }
@@ -295,7 +295,7 @@ void MjpegFrameTask::run()
                 img = dimg.copyQImage();
 // FIXME                insertOSDToFrame(img, osd);
 
-                emit signalFrameChanged(imageToJPEGArray(img, m_quality));
+                emit signalFrameChanged(imageToJPEGArray(img));
 
                 QThread::sleep(m_interval);
             }
