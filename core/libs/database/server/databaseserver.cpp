@@ -73,6 +73,7 @@ public:
     QString                fileDataDir;
     QString                actualConfig;
     QString                globalConfig;
+    QString                dbVersion;
 };
 
 DatabaseServer::DatabaseServer(const DbEngineParameters& params, DatabaseServerStarter* const parent)
@@ -224,8 +225,6 @@ bool DatabaseServer::isRunning() const
 
 DatabaseServerError DatabaseServer::startMysqlDatabaseProcess()
 {
-    DatabaseServerError result;
-
     DatabaseServerError error = checkDatabaseDirs();
 
     if (error.getErrorType() != DatabaseServerError::NoErrors)
@@ -265,7 +264,14 @@ DatabaseServerError DatabaseServer::startMysqlDatabaseProcess()
 
     databaseServerStateEnum = running;
 
-    return result;
+    error = checkUpgradeMysqlDatabase();
+
+    if (error.getErrorType() != DatabaseServerError::NoErrors)
+    {
+        return error;
+    }
+
+    return error;
 }
 
 DatabaseServerError DatabaseServer::checkDatabaseDirs() const
@@ -677,9 +683,126 @@ DatabaseServerError DatabaseServer::initMysqlDatabase() const
 
             db.close();
         }
+        else
+        {
+            if (query.exec(QLatin1String("SELECT VERSION();")))
+            {
+                if (query.next() && (query.lastError().type() == QSqlError::NoError))
+                {
+
+                    QRegExp reg(QLatin1String("\\d+\\.\\d+\\.\\d+"));
+
+                    if (reg.indexIn(query.value(0).toString()) != -1)
+                    {
+                        d->dbVersion = reg.capturedTexts().first();
+
+                        qCDebug(DIGIKAM_DATABASESERVER_LOG) << "Database version:"
+                                                            << d->dbVersion;
+                    }
+                }
+            }
+        }
     }
 
     QSqlDatabase::removeDatabase(initCon);
+
+    return result;
+}
+
+DatabaseServerError DatabaseServer::checkUpgradeMysqlDatabase()
+{
+    DatabaseServerError result;
+
+    // Synthesize the server command line arguments
+
+    QStringList versionCmdArgs;
+    versionCmdArgs << QLatin1String("--version");
+
+    // Start the database server
+
+    QProcess* const versionProcess = new QProcess();
+    versionProcess->setProcessEnvironment(adjustedEnvironmentForAppImage());
+    versionProcess->start(d->mysqldCmd, versionCmdArgs);
+
+    if (!versionProcess->waitForFinished() || (versionProcess->exitCode() != 0))
+    {
+        QString errorMsg = processErrorLog(versionProcess,
+                                           i18n("Could not get mysql server version."));
+
+        delete versionProcess;
+
+        return DatabaseServerError(DatabaseServerError::StartError, errorMsg);
+    }
+
+    QString serverVersion;
+    QRegExp reg(QLatin1String("\\d+\\.\\d+\\.\\d+"));
+
+    if (reg.indexIn(QString::fromUtf8(versionProcess->readAllStandardOutput())) != -1)
+    {
+        serverVersion = reg.capturedTexts().first();
+
+        qCDebug(DIGIKAM_DATABASESERVER_LOG) << "MySQL server version:"
+                                            << serverVersion;
+    }
+
+    delete versionProcess;
+
+    if (serverVersion == d->dbVersion)
+    {
+        return result;
+    }
+
+    // Synthesize the mysql upgrade command line arguments
+
+    QStringList upgradeCmdArgs;
+
+#ifdef Q_OS_WIN
+
+    upgradeCmdArgs << QLatin1String("--port=3307");
+
+#else
+
+    upgradeCmdArgs << QString::fromLatin1("--socket=%1/mysql.socket").arg(d->miscDir);
+
+#endif
+
+    // Start the upgrade ptogram
+
+    QUrl upgradeUrl = QUrl::fromLocalFile(d->mysqlAdminPath).adjusted(QUrl::RemoveFilename);
+    upgradeUrl.setPath(upgradeUrl.path() + QLatin1String("mysql_upgrade"));
+
+    QProcess* const upgradeProcess = new QProcess();
+    upgradeProcess->setProcessEnvironment(adjustedEnvironmentForAppImage());
+    upgradeProcess->start(upgradeUrl.toLocalFile(), upgradeCmdArgs);
+
+    qCDebug(DIGIKAM_DATABASESERVER_LOG) << "Upgrade database:"
+                                        << upgradeProcess->program()
+                                        << upgradeProcess->arguments();
+
+    if (!upgradeProcess->waitForFinished() || (upgradeProcess->exitCode() != 0))
+    {
+        QString errorMsg = processErrorLog(upgradeProcess,
+                                           i18n("Could not upgrade database."));
+
+        delete upgradeProcess;
+
+        return DatabaseServerError(DatabaseServerError::StartError, errorMsg);
+    }
+
+    delete upgradeProcess;
+
+    // Restart the database server.
+
+    stopDatabaseProcess();
+
+    result = startMysqlServer();
+
+    if (result.getErrorType() != DatabaseServerError::NoErrors)
+    {
+        return result;
+    }
+
+    result = initMysqlDatabase();
 
     return result;
 }

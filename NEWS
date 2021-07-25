@@ -24,3 +24,5 @@ BUGFIXES:
 012 ==> 440192 - Add Advanced Metadata read/write options for title tags.
 013 ==> 440249 - digiKam collapse when Pixel XL image metadata tab is selected.
 014 ==> 440219 - Suggestion: Dynamic Albums.
+015 ==> 440212 - digiKam 7.3.0 fails to update the database schema from version 12 to version 13.
+016 ==> 

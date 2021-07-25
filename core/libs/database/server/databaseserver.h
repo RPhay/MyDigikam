@@ -128,6 +128,11 @@ private:
     DatabaseServerError initMysqlDatabase()                              const;
 
     /**
+     * Check for a mysql database upgrade.
+     */
+    DatabaseServerError checkUpgradeMysqlDatabase();
+
+    /**
      * Return the current user account name.
      */
     QString getcurrentAccountUserName()                                  const;
