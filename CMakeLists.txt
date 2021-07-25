@@ -70,6 +70,7 @@ set(CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/core/cmake/modules ${ECM_MODULE_PATH})
 
 # Cmake macros
 include(CMakePackageConfigHelpers)
+include(CMakeDependentOption)
 include(GenerateExportHeader)
 include(CheckFunctionExists)
 include(FeatureSummary)

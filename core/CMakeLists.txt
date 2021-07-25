@@ -34,8 +34,9 @@ option(ENABLE_MEDIAPLAYER                "Build digiKam with Media Player suppor
 option(ENABLE_DBUS                       "Build digiKam with DBUS support (default=ON)"                                       ON)
 option(ENABLE_APPSTYLES                  "Build digiKam with support for changing the widget application style (default=OFF)" OFF)
 option(ENABLE_QWEBENGINE                 "Build digiKam with QWebEngine (default=ON)"                                         ON)
-option(ENABLE_QWEBKIT                    "Build digiKam with QWebKit (default=OFF)"                                           OFF)
-option(DISABLE_QWEB                      "Build digiKam without Web (default=OFF)"                                            OFF)
+option(ENABLE_QWEBKIT                    "Build digiKam with Qt Webkit (default=OFF)                                          OFF")
+
+cmake_dependent_option(DISABLE_QWEB      "No Web Module" ON "NOT ENABLE_QWEBENGINE;NOT ENABLE_QWEBKIT" ON)
 
 # Mysql support options (experimental):
 option(ENABLE_MYSQLSUPPORT               "Build digiKam with MySQL dabatase support (default=ON)"                             ON)
