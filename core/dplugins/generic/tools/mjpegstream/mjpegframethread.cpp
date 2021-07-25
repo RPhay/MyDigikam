@@ -284,7 +284,7 @@ void MjpegFrameTask::run()
             osd.m_descAlign      = Qt::AlignCenter;
             osd.m_descBg         = Qt::black;
 
-            dimg = PreviewLoadThread::loadHighQualitySynchronously(url.toLocalFile());
+            dimg = PreviewLoadThread::loadSynchronously(url.toLocalFile(), PreviewSettings(), 1920);
 
             if (dimg.isNull())
             {
