@@ -27,8 +27,9 @@
 
 // Qt includes
 
-#include <QCoreApplication>
 #include <QStandardPaths>
+#include <QApplication>
+#include <QMessageBox>
 #include <QDateTime>
 #include <QFileInfo>
 #include <QFile>
@@ -36,6 +37,7 @@
 #include <QSqlQuery>
 #include <QSqlError>
 #include <QtGlobal>
+#include <QPointer>
 #include <QDir>
 
 // KDE includes
@@ -749,6 +751,26 @@ DatabaseServerError DatabaseServer::checkUpgradeMysqlDatabase()
     if (d->dbVersion.isEmpty()        ||
         serverVersion.isEmpty()       ||
         (serverVersion == d->dbVersion))
+    {
+        return result;
+    }
+
+    QApplication::restoreOverrideCursor();
+
+    QPointer<QMessageBox> msgBox = new QMessageBox(QMessageBox::Information,
+             qApp->applicationName(),
+             i18n("The database will now be upgraded from "
+                  "version %1 to the server version %2.",
+                  d->dbVersion, serverVersion),
+             QMessageBox::Ok | QMessageBox::Cancel,
+             qApp->activeWindow());
+
+    int msgResult = msgBox->exec();
+    delete msgBox;
+
+    QApplication::setOverrideCursor(Qt::WaitCursor);
+
+    if (msgResult == QMessageBox::Cancel)
     {
         return result;
     }
