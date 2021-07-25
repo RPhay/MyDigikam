@@ -5,6 +5,7 @@ NEW FEATURES:
 
 Bundle : AppImage is now compiled under Mageia 7.1 instead 6.1 for a better binary compatibility with recent Linux.
 Bundle : AppImage use last Qt 5.15.2 and KF5 5.84 libraries.
+Plugins: New tool to share items on the network with Motion JPEG stream server.
 
 *****************************************************************************************************
 BUGFIXES:
@@ -22,4 +23,4 @@ BUGFIXES:
 011 ==> 440127 - Program crashes using SEARCH or KEYWORD tabs - JPEG 2000 images relevant.
 012 ==> 440192 - Add Advanced Metadata read/write options for title tags.
 013 ==> 440249 - digiKam collapse when Pixel XL image metadata tab is selected.
-014 ==> 
+014 ==> 440219 - Suggestion: Dynamic Albums.
