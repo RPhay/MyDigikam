@@ -148,9 +148,6 @@ void MjpegFrameTask::insertOSDToFrame(QImage& frm, const OSDProperties& osd)
 
     if (osd.m_titleShowRelDate)
     {
-        // date must be provided by caller
-        // Julian TODO
-
         // jour = 24 * 60 * 60 * 1000 = 86 400 000
 
         int nbj   = osd.m_titleRelDate  / 86400000;

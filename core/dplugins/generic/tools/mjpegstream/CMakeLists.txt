@@ -22,6 +22,7 @@ set(libmjpegstream_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/mjpegserver.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/mjpegserver_p.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/mjpegservermngr.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/mjpegstreamsettings.cpp
 )
 
 # For Unit-tests and plugin
