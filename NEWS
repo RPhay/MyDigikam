@@ -21,4 +21,5 @@ BUGFIXES:
 010 ==> 440015 - Metadata Template insists on putting in a country name.
 011 ==> 440127 - Program crashes using SEARCH or KEYWORD tabs - JPEG 2000 images relevant.
 012 ==> 440192 - Add Advanced Metadata read/write options for title tags.
-013 ==> 
+013 ==> 440249 - digiKam collapse when Pixel XL image metadata tab is selected.
+014 ==> 
