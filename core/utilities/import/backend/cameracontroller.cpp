@@ -590,10 +590,12 @@ void CameraController::executeCommand(CameraCommand* const cmd)
             QScopedPointer<DMetadata> meta(new DMetadata);
 
             if (!d->camera->getMetadata(folder, file, *meta))
+            {
                 sendLogMsg(xi18n("Failed to get Metadata for <filename>%1</filename>", file),
                            DHistoryView::ErrorEntry, folder, file);
+            }
 
-            emit signalMetadata(folder, file, *meta);
+            emit signalMetadata(folder, file, meta.data()->data());
 
             break;
         }

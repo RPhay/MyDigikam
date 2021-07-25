@@ -95,10 +95,14 @@ public Q_SLOTS:
 
 Q_SIGNALS:
 
-    /// Emitted when the user activates an action (typically, by pressing return)
+    /**
+     * Emitted when the user activates an action (typically, by pressing return)
+     */
     void taggingActionActivated(const TaggingAction& action);
 
-    /// Emitted when an action is selected. This already happens if anything is typed.
+    /**
+     * Emitted when an action is selected. This already happens if anything is typed.
+     */
     void taggingActionSelected(const TaggingAction& action);
     void taggingActionFinished();
 

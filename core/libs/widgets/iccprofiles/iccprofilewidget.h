@@ -57,7 +57,7 @@ public:
     QString getTagDescription(const QString& key)         override;
     QString getTagTitle(const QString& key)               override;
 
-    QString getMetadataTitle() const                      override;
+    QString getMetadataTitle()                      const override;
 
     void    setLoadingFailed();
     void    setDataLoading();

@@ -54,15 +54,16 @@ cd $BUILDING_DIR
 
 rm -rf $BUILDING_DIR/* || true
 
-cmake $ORIG_WD/../3rdparty \
+/opt/cmake/bin/cmake $ORIG_WD/../3rdparty \
       -DCMAKE_INSTALL_PREFIX:PATH=/usr \
       -DINSTALL_ROOT=/usr \
       -DEXTERNALS_DOWNLOAD_DIR=$DOWNLOAD_DIR \
+      -DENABLE_QTVERSION=$DK_QTVERSION \
       -DENABLE_QTWEBENGINE=$DK_QTWEBENGINE
 
-cmake --build . --config RelWithDebInfo --target ext_exiv2         -- -j$CPU_CORES
-cmake --build . --config RelWithDebInfo --target ext_qtav          -- -j$CPU_CORES    # depend of qt and ffmpeg
-cmake --build . --config RelWithDebInfo --target ext_lensfun       -- -j$CPU_CORES
+/opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_exiv2         -- -j$CPU_CORES
+/opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_qtav          -- -j$CPU_CORES    # depend of qt and ffmpeg
+/opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_lensfun       -- -j$CPU_CORES
 
 #################################################################################################
 # Build digiKam in temporary directory and installation
@@ -114,7 +115,7 @@ fi
 echo -e "\n\n"
 echo "---------- Configure digiKam $DK_VERSION"
 
-cmake -G "Unix Makefiles" .. \
+/opt/cmake/bin/cmake -G "Unix Makefiles" .. \
       -DCMAKE_BUILD_TYPE=RelWithDebInfo \
       -DCMAKE_INSTALL_PREFIX=/usr \
       -DBUILD_TESTING=OFF \
@@ -175,14 +176,15 @@ cd $BUILDING_DIR
 
 rm -rf $BUILDING_DIR/* || true
 
-cmake $ORIG_WD/../3rdparty \
+/opt/cmake/bin/cmake $ORIG_WD/../3rdparty \
       -DCMAKE_INSTALL_PREFIX:PATH=/usr \
       -DINSTALL_ROOT=/usr \
       -DEXTERNALS_DOWNLOAD_DIR=$DOWNLOAD_DIR \
+      -DENABLE_QTVERSION=$DK_QTVERSION \
       -DENABLE_QTWEBENGINE=$DK_QTWEBENGINE
 
-cmake --build . --config RelWithDebInfo --target ext_gmic_qt    -- -j$CPU_CORES
-cmake --build . --config RelWithDebInfo --target ext_mosaicwall -- -j$CPU_CORES
+/opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_gmic_qt    -- -j$CPU_CORES
+/opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_mosaicwall -- -j$CPU_CORES
 
 #################################################################################################
 

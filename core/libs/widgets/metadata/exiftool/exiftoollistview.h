@@ -29,6 +29,7 @@
 #include <QTreeWidget>
 #include <QWidget>
 #include <QString>
+#include <QStringList>
 #include <QUrl>
 
 // Local includes
@@ -55,6 +56,9 @@ public:
 
     QString getCurrentItemKey() const;
     void    setCurrentItemByKey(const QString& itemKey);
+
+    void setGroupList(const QStringList& tagsFilter,
+                      const QStringList& keysFilter = QStringList());
 
 Q_SIGNALS:
 

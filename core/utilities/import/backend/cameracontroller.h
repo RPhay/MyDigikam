@@ -144,7 +144,7 @@ Q_SIGNALS:
                                const CamItemInfo& itemInfo);
     void signalMetadata(const QString& folder,
                         const QString& file,
-                        const DMetadata& exifData);
+                        const MetaEngineData& exifData);
 
     void signalInternalCheckRename(const QString& folder,
                                    const QString& file,

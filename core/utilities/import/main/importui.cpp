@@ -823,8 +823,8 @@ void ImportUI::setupCameraController(const QString& model, const QString& port, 
     connect(d->controller, SIGNAL(signalLocked(QString,QString,bool)),
             this, SLOT(slotLocked(QString,QString,bool)));
 
-    connect(d->controller, SIGNAL(signalMetadata(QString,QString,DMetadata)),
-            this, SLOT(slotMetadata(QString,QString,DMetadata)));
+    connect(d->controller, SIGNAL(signalMetadata(QString,QString,MetaEngineData)),
+            this, SLOT(slotMetadata(QString,QString,MetaEngineData)));
 
     connect(d->controller, SIGNAL(signalUploaded(CamItemInfo)),
             this, SLOT(slotUploaded(CamItemInfo)));
@@ -2309,13 +2309,15 @@ void ImportUI::slotDeleted(const QString& folder, const QString& file, bool stat
     refreshFreeSpace();
 }
 
-void ImportUI::slotMetadata(const QString& folder, const QString& file, const DMetadata& meta)
+void ImportUI::slotMetadata(const QString& folder, const QString& file, const MetaEngineData& data)
 {
     CamItemInfo info = d->view->camItemInfo(folder, file);
 
     if (!info.isNull())
     {
-        d->rightSideBar->itemChanged(info, meta);
+        QScopedPointer<DMetadata> meta(new DMetadata);
+        meta.data()->setData(data);
+        d->rightSideBar->itemChanged(info, *meta);
     }
 }
 

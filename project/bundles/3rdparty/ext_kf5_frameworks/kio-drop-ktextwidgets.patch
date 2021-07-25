@@ -12,7 +12,7 @@ index b195a3ef..c9b930cf 100644
  {
      Q_OBJECT
 diff --git a/src/core/slaveinterface.h b/src/core/slaveinterface.h
-index 62229199..5c4fa073 100644
+index 839b8a38..7acdafa6 100644
 --- a/src/core/slaveinterface.h
 +++ b/src/core/slaveinterface.h
 @@ -19,6 +19,8 @@
@@ -25,7 +25,7 @@ index 62229199..5c4fa073 100644
  {
  class Connection;
 diff --git a/src/filewidgets/kfilewidget.cpp b/src/filewidgets/kfilewidget.cpp
-index ab25e093..c31bd7ab 100644
+index fbbbf433..91ee5432 100644
 --- a/src/filewidgets/kfilewidget.cpp
 +++ b/src/filewidgets/kfilewidget.cpp
 @@ -260,12 +260,12 @@ public:
@@ -44,21 +44,19 @@ index ab25e093..c31bd7ab 100644
      QSlider *m_iconSizeSlider = nullptr;
      QAction *m_zoomOutAction = nullptr;
 diff --git a/src/kcms/kio/CMakeLists.txt b/src/kcms/kio/CMakeLists.txt
-index a45b6155..15b6f2ac 100644
+index 34291570..bcd58117 100644
 --- a/src/kcms/kio/CMakeLists.txt
 +++ b/src/kcms/kio/CMakeLists.txt
-@@ -1,7 +1,7 @@
- 
- add_subdirectory( uasproviders )
+@@ -1,5 +1,5 @@
  
 -find_package(KF5TextWidgets ${KF_DEP_VERSION} REQUIRED)
 +#find_package(KF5TextWidgets ${KF_DEP_VERSION} REQUIRED)
  
- ########### next target ###############
+ add_library(kcm_kio MODULE)
  
-@@ -50,7 +50,7 @@ target_link_libraries(kcm_kio
+@@ -29,7 +29,7 @@ target_link_libraries(kcm_kio
+     KF5::KIOCore
      KF5::KIOWidgets
-     KF5::IconThemes
      KF5::ItemViews   # KTreeWidgetSearchLine
 -    KF5::TextWidgets # KPluralHandlingSpinBox
 +#    KF5::TextWidgets # KPluralHandlingSpinBox
@@ -66,7 +64,7 @@ index a45b6155..15b6f2ac 100644
      KF5::I18n)
  
 diff --git a/src/kcms/kio/netpref.cpp b/src/kcms/kio/netpref.cpp
-index a7668e80..d98b290d 100644
+index acc194b4..2abce240 100644
 --- a/src/kcms/kio/netpref.cpp
 +++ b/src/kcms/kio/netpref.cpp
 @@ -12,7 +12,7 @@
@@ -157,6 +155,28 @@ index 6e1ff0a2..c97fb0d4 100644
  };
  
  #endif // NETPREF_H
+diff --git a/src/widgets/previewjob.cpp b/src/widgets/previewjob.cpp
+index f270b13d..a65a57d9 100644
+--- a/src/widgets/previewjob.cpp
++++ b/src/widgets/previewjob.cpp
+@@ -179,7 +179,7 @@ void PreviewJob::setDefaultDevicePixelRatio(int defaultDevicePixelRatio)
+ 
+ void PreviewJob::setDefaultDevicePixelRatio(qreal defaultDevicePixelRatio)
+ {
+-    s_defaultDevicePixelRatio = std::ceil(defaultDevicePixelRatio);
++    s_defaultDevicePixelRatio = ceil(defaultDevicePixelRatio);
+ }
+ 
+ #if KIOWIDGETS_BUILD_DEPRECATED_SINCE(4, 7)
+@@ -480,7 +480,7 @@ void KIO::PreviewJob::setDevicePixelRatio(int dpr)
+ 
+ void KIO::PreviewJob::setDevicePixelRatio(qreal dpr)
+ {
+-    d_func()->devicePixelRatio = std::ceil(dpr);
++    d_func()->devicePixelRatio = ceil(dpr);
+ }
+ 
+ void PreviewJob::setIgnoreMaximumSize(bool ignoreSize)
 diff --git a/src/widgets/renamedialog.cpp b/src/widgets/renamedialog.cpp
 index 58994c7c..3a88bc87 100644
 --- a/src/widgets/renamedialog.cpp

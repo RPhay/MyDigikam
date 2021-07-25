@@ -71,7 +71,7 @@ private Q_SLOTS:
 
     void slotSelectionChanged(QTreeWidgetItem*, int);
 
-private :
+private:
 
     MdKeyListViewItem* findMdKeyItem(const QString& key);
     void cleanUpMdKeyItem();

@@ -126,8 +126,8 @@ void CollectionScanner::copyFileProperties(const ItemInfo& source, const ItemInf
     // Rating, creation dates
 
     DatabaseFields::ItemInformation imageInfoFields = DatabaseFields::Rating       |
-                                                       DatabaseFields::CreationDate |
-                                                       DatabaseFields::DigitizationDate;
+                                                      DatabaseFields::CreationDate |
+                                                      DatabaseFields::DigitizationDate;
 
     QVariantList imageInfos = CoreDbAccess().db()->getItemInformation(source.id(), imageInfoFields);
 

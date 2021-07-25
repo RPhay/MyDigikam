@@ -71,9 +71,6 @@ no-qstring-insensitive-allocation,\
 no-qstring-ref,\
 no-function-args-by-value,\
 qt6-qhash-signature,\
-qt6-qlatin1stringchar-to-u,\
-qt6-qlatin1char-to-u,\
-qt6-qlatin1string-to-u,\
 missing-qobject-macro\
 "
 

@@ -26,7 +26,12 @@
 // Qt includes
 
 #include <QWidget>
-#include <QByteArray>
+
+// Local includes
+
+#include "dmetadata.h"
+
+using namespace Digikam;
 
 namespace DigikamGenericMetadataEditPlugin
 {
@@ -40,8 +45,8 @@ public:
     explicit IPTCStatus(QWidget* const parent);
     ~IPTCStatus() override;
 
-    void applyMetadata(QByteArray& iptcData);
-    void readMetadata(QByteArray& iptcData);
+    void applyMetadata(DMetadata& meta);
+    void readMetadata(DMetadata& meta);
 
 Q_SIGNALS:
 

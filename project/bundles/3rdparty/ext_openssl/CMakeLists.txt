@@ -8,11 +8,12 @@
 
 if (NOT MINGW AND NOT APPLE)
 
-    SET(EXTPREFIX_openssl "/opt/openssl")
+    SET(EXTPREFIX_openssl "${EXTPREFIX}/local/")
 
     ExternalProject_Add(ext_openssl
 
         GIT_REPOSITORY https://github.com/flagarde/openssl-cmake.git
+        GIT_TAG v2.1
 
         INSTALL_DIR ${EXTPREFIX_openssl}
 

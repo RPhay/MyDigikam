@@ -42,7 +42,7 @@ namespace
 {
 
 /**
- * Standard Exif Entry list from to less important to the most important for photograph.
+ * Standard Exif entry list from the less important to the most important for photograph.
  */
 static const char* StandardExifEntryList[] =
 {
@@ -56,7 +56,7 @@ static const char* StandardExifEntryList[] =
     "-1"
 };
 
-}
+} // namepsace
 
 namespace Digikam
 {

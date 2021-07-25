@@ -1,0 +1,380 @@
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2021-07-24
+ * Description : Media server manager
+ *
+ * Copyright (C) 2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * This program is free software; you can redistribute it
+ * and/or modify it under the terms of the GNU General
+ * Public License as published by the Free Software Foundation;
+ * either version 2, or (at your option)
+ * any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * ============================================================ */
+
+#include "mjpegservermngr.h"
+
+// Qt includes
+
+#include <QApplication>
+#include <QStringList>
+#include <QFile>
+#include <QDomDocument>
+#include <QDomElement>
+#include <QTextStream>
+#include <QTextCodec>
+#include <QStandardPaths>
+
+// KDE includes
+
+#include <klocalizedstring.h>
+#include <ksharedconfig.h>
+#include <kconfiggroup.h>
+
+// Local includes
+
+#include "digikam_debug.h"
+#include "dnotificationwrapper.h"
+#include "mjpegserver.h"
+#include "mjpegframethread.h"
+
+using namespace Digikam;
+
+namespace DigikamGenericMjpegStreamPlugin
+{
+
+class Q_DECL_HIDDEN MjpegServerMngrCreator
+{
+public:
+
+    MjpegServerMngr object;
+};
+
+Q_GLOBAL_STATIC(MjpegServerMngrCreator, creator)
+
+// ---------------------------------------------------------------------------------------------
+
+class Q_DECL_HIDDEN MjpegServerMngr::Private
+{
+public:
+
+    explicit Private()
+      : server(nullptr),
+        thread(nullptr)
+    {
+    }
+
+    /// Configuration XML file to store albums map to share in case of restoring between sessions.
+    QString              mapsConf;
+
+    /// Server instance pointer.
+    MjpegServer*         server;
+
+    /// Frames generateur thread
+    MjpegFrameThread*    thread;
+
+    /// The current albums collection to share.
+    MjpegServerMap       collectionMap;
+
+    static const QString configGroupName;
+    static const QString configStartServerOnStartupEntry;
+};
+
+const QString MjpegServerMngr::Private::configGroupName(QLatin1String("MJPEG Settings"));
+const QString MjpegServerMngr::Private::configStartServerOnStartupEntry(QLatin1String("Start MjpegServer At Startup"));
+
+MjpegServerMngr* MjpegServerMngr::instance()
+{
+    return &creator->object;
+}
+
+MjpegServerMngr::MjpegServerMngr()
+    : d(new Private)
+{
+    d->mapsConf = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) +
+                  QLatin1String("/mjpegserver.xml");
+}
+
+MjpegServerMngr::~MjpegServerMngr()
+{
+    delete d;
+}
+
+QString MjpegServerMngr::configGroupName() const
+{
+    return d->configGroupName;
+}
+
+QString MjpegServerMngr::configStartServerOnStartupEntry() const
+{
+    return d->configStartServerOnStartupEntry;
+}
+
+void MjpegServerMngr::cleanUp()
+{
+    if (d->server)
+    {
+        d->server->stop();
+        delete d->server;
+        d->server = nullptr;
+    }
+}
+
+bool MjpegServerMngr::loadAtStartup()
+{
+    KSharedConfig::Ptr config    = KSharedConfig::openConfig();
+    KConfigGroup dlnaConfigGroup = config->group(configGroupName());
+    bool startServerOnStartup    = dlnaConfigGroup.readEntry(configStartServerOnStartupEntry(), false);
+    bool result                  = true;
+
+    if (startServerOnStartup)
+    {
+        // Restore the old sharing configuration and start the server.
+
+        result &= load();
+        result &= startMjpegServer();
+
+        mjpegServerNotification(result);
+
+        return result;
+    }
+
+    return false;
+}
+
+void MjpegServerMngr::saveAtShutdown()
+{
+    KSharedConfig::Ptr config    = KSharedConfig::openConfig();
+    KConfigGroup dlnaConfigGroup = config->group(configGroupName());
+    bool startServerOnStartup    = dlnaConfigGroup.readEntry(configStartServerOnStartupEntry(), false);
+
+    if (startServerOnStartup)
+    {
+        // Save the current sharing configuration for the next session.
+
+        save();
+    }
+
+    cleanUp();
+}
+
+void MjpegServerMngr::mjpegServerNotification(bool started)
+{
+    DNotificationWrapper(QLatin1String("mjpegserverloadstartup"),
+                         started ? i18n("MJPEG Server have been started")
+                                 : i18n("MJPEG Server cannot be started!"),
+                         qApp->activeWindow(), qApp->applicationName());
+}
+
+void MjpegServerMngr::setItemsList(const QString& aname, const QList<QUrl>& urls)
+{
+    d->collectionMap.clear();
+    d->collectionMap.insert(aname, urls);
+}
+
+QList<QUrl> MjpegServerMngr::itemsList() const
+{
+    QList<QUrl> ret;
+
+    if (!d->collectionMap.isEmpty())
+    {
+        QList<QList<QUrl> > ulst = d->collectionMap.values();
+
+        foreach (const QList<QUrl>& urls, ulst)
+        {
+            ret << urls;
+        }
+    }
+
+    return ret;
+}
+
+void MjpegServerMngr::setCollectionMap(const MjpegServerMap& map)
+{
+    d->collectionMap = map;
+}
+
+MjpegServerMap MjpegServerMngr::collectionMap() const
+{
+    return d->collectionMap;
+}
+
+bool MjpegServerMngr::startMjpegServer()
+{
+    if (!d->server)
+    {
+        d->server = new MjpegServer();
+        d->server->setRate(1);
+        d->server->start();
+    }
+
+    if (d->collectionMap.isEmpty())
+    {
+        cleanUp();
+
+        return false;
+    }
+
+    d->thread = new MjpegFrameThread(this);
+    d->thread->createFrameJob(d->collectionMap);
+
+    connect(d->thread, SIGNAL(signalFrameChanged(QByteArray)),
+            d->server, SLOT(slotWriteFrame(QByteArray)));
+
+    d->thread->start();
+
+    return true;
+}
+
+bool MjpegServerMngr::isRunning() const
+{
+    return (d->server ? true : false);
+}
+
+int MjpegServerMngr::albumsShared() const
+{
+    if (d->collectionMap.isEmpty())
+    {
+        return 0;
+    }
+
+    return d->collectionMap.uniqueKeys().count();
+}
+
+int MjpegServerMngr::itemsShared() const
+{
+    return itemsList().count();
+}
+
+bool MjpegServerMngr::save()
+{
+    QDomDocument doc(QLatin1String("mjpegserverlist"));
+    doc.setContent(QString::fromUtf8("<!DOCTYPE XMLQueueList><mjpegserverlist version=\"1.0\" client=\"digikam\" encoding=\"UTF-8\"/>"));
+    QDomElement docElem = doc.documentElement();
+    auto end            = d->collectionMap.cend();
+
+    for (auto it = d->collectionMap.cbegin() ; it != end ; ++it)
+    {
+        QDomElement elm = doc.createElement(QLatin1String("album"));
+        elm.setAttribute(QLatin1String("title"), it.key());
+
+        // ----------------------
+
+        QDomElement data;
+
+        foreach (const QUrl& url, it.value())
+        {
+            data = doc.createElement(QLatin1String("path"));
+            data.setAttribute(QLatin1String("value"), url.toLocalFile());
+            elm.appendChild(data);
+        }
+
+        docElem.appendChild(elm);
+    }
+
+    QFile file(d->mapsConf);
+
+    if (!file.open(QIODevice::WriteOnly))
+    {
+        qCDebug(DIGIKAM_MEDIASRV_LOG) << "Cannot open XML file to store MjpegServer list";
+        qCDebug(DIGIKAM_MEDIASRV_LOG) << file.fileName();
+
+        return false;
+    }
+
+    QTextStream stream(&file);
+    stream.setCodec(QTextCodec::codecForName("UTF-8"));
+    stream.setAutoDetectUnicode(true);
+    stream << doc.toString(4);
+    file.close();
+
+    return true;
+}
+
+bool MjpegServerMngr::load()
+{
+    QFile file(d->mapsConf);
+
+    if (file.exists())
+    {
+        if (!file.open(QIODevice::ReadOnly))
+        {
+            qCDebug(DIGIKAM_MEDIASRV_LOG) << "Cannot open XML file to load MjpegServer list";
+
+            return false;
+        }
+
+        QDomDocument doc(QLatin1String("mjpegserverlist"));
+
+        if (!doc.setContent(&file))
+        {
+            qCDebug(DIGIKAM_MEDIASRV_LOG) << "Cannot load MjpegServer list XML file";
+            file.close();
+
+            return false;
+        }
+
+        QDomElement    docElem = doc.documentElement();
+        MjpegServerMap map;
+        QList<QUrl>    urls;
+        QString        album;
+
+        for (QDomNode n = docElem.firstChild() ; !n.isNull() ; n = n.nextSibling())
+        {
+            QDomElement e = n.toElement();
+
+            if (e.isNull())
+            {
+                continue;
+            }
+
+            if (e.tagName() != QLatin1String("album"))
+            {
+                continue;
+            }
+
+            album = e.attribute(QLatin1String("title"));
+            urls.clear();
+
+            for (QDomNode n2 = e.firstChild() ; !n2.isNull() ; n2 = n2.nextSibling())
+            {
+                QDomElement e2 = n2.toElement();
+
+                if (e2.isNull())
+                {
+                    continue;
+                }
+
+                QString name2  = e2.tagName();
+                QString val2   = e2.attribute(QLatin1String("value"));
+
+                if (name2 == QLatin1String("path"))
+                {
+                    urls << QUrl::fromLocalFile(val2);
+                }
+            }
+
+            map.insert(album, urls);
+        }
+
+        setCollectionMap(map);
+        file.close();
+
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+
+} // namespace DigikamGenericMjpegStreamPlugin

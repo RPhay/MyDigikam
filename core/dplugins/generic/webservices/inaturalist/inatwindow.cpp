@@ -991,8 +991,8 @@ void INatWindow::slotNearbyObservation(const INatTalker::NearbyObservation&
 
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Received nearby observation.";
 
-    QString red1(QLatin1String(""));
-    QString red2(QLatin1String(""));
+    QString red1;
+    QString red2;
 
     if (nearbyObservation.m_distanceMeters > d->closestObservationMaxSpB->value())
     {
@@ -1008,7 +1008,7 @@ void INatWindow::slotNearbyObservation(const INatTalker::NearbyObservation&
                         arg(nearbyObservation.m_observationId) +
                         i18n("observation") + QLatin1String("</a>"));
 
-    QString obscured(QLatin1String(""));
+    QString obscured;
 
     if (nearbyObservation.m_obscured)
     {

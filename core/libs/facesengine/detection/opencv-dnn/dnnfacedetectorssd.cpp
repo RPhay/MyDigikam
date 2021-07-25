@@ -26,6 +26,7 @@
 
 // Qt includes
 
+#include <QUrl>
 #include <QList>
 #include <QRect>
 #include <QString>
@@ -51,13 +52,15 @@ DNNFaceDetectorSSD::~DNNFaceDetectorSSD()
 
 bool DNNFaceDetectorSSD::loadModels()
 {
+    QString appPath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
+    QUrl    appUrl  = QUrl::fromLocalFile(appPath).adjusted(QUrl::RemoveFilename);
+    appUrl.setPath(appUrl.path() + QLatin1String("digikam/facesengine/"));
+
     QString model   = QLatin1String("deploy.prototxt");
     QString data    = QLatin1String("res10_300x300_ssd_iter_140000_fp16.caffemodel");
 
-    QString nnmodel = QStandardPaths::locate(QStandardPaths::AppDataLocation,
-                                             QString::fromLatin1("facesengine/%1").arg(model));
-    QString nndata  = QStandardPaths::locate(QStandardPaths::AppDataLocation,
-                                             QString::fromLatin1("facesengine/%1").arg(data));
+    QString nnmodel = appUrl.toLocalFile() + model;
+    QString nndata  = appUrl.toLocalFile() + data;
 
     if (!nnmodel.isEmpty() && !nndata.isEmpty())
     {

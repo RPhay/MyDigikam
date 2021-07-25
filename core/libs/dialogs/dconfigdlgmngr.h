@@ -65,6 +65,52 @@ class DIGIKAM_EXPORT DConfigDlgMngr : public QObject
 {
     Q_OBJECT
 
+public:
+
+    /**
+     * Constructor.
+     * @param parent Dialog widget to manage
+     * @param conf Object that contains settings
+     */
+    DConfigDlgMngr(QWidget* const parent, KConfigSkeleton* const conf);
+
+    /**
+     * Destructor.
+     */
+    ~DConfigDlgMngr()                                                      override;
+
+    /**
+     * Add additional widgets to manage
+     * @param widget Additional widget to manage, including all its children
+     */
+    void addWidget(QWidget* const widget);
+
+    /**
+     * Returns whether the current state of the known widgets are
+     * different from the state in the config object.
+     */
+    bool hasChanged()                                                const;
+
+    /**
+     * Returns whether the current state of the known widgets are
+     * the same as the default state in the config object.
+     */
+    bool isDefault()                                                 const;
+
+public:
+
+    /**
+     * Retrieve the map between widgets class names and the
+     * USER properties used for the configuration values.
+     */
+    static QHash<QString, QByteArray>* propertyMap();
+
+    /**
+     * Retrieve the map between widgets class names and signals that are listened
+     * to detect changes in the configuration values.
+     */
+    static QHash<QString, QByteArray>* changedMap();
+
 Q_SIGNALS:
 
     /**
@@ -90,52 +136,6 @@ Q_SIGNALS:
      * actually changed from the saved values.
      */
     void widgetModified();
-
-public:
-
-    /**
-     * Constructor.
-     * @param parent Dialog widget to manage
-     * @param conf Object that contains settings
-     */
-    DConfigDlgMngr(QWidget* const parent, KConfigSkeleton* const conf);
-
-    /**
-     * Destructor.
-     */
-    ~DConfigDlgMngr() override;
-
-    /**
-     * Add additional widgets to manage
-     * @param widget Additional widget to manage, including all its children
-     */
-    void addWidget(QWidget* const widget);
-
-    /**
-     * Returns whether the current state of the known widgets are
-     * different from the state in the config object.
-     */
-    bool hasChanged() const;
-
-    /**
-     * Returns whether the current state of the known widgets are
-     * the same as the default state in the config object.
-     */
-    bool isDefault()  const;
-
-public:
-
-    /**
-     * Retrieve the map between widgets class names and the
-     * USER properties used for the configuration values.
-     */
-    static QHash<QString, QByteArray>* propertyMap();
-
-    /**
-     * Retrieve the map between widgets class names and signals that are listened
-     * to detect changes in the configuration values.
-     */
-    static QHash<QString, QByteArray>* changedMap();
 
 public Q_SLOTS:
 
@@ -218,7 +218,7 @@ protected:
     /**
      * Retrieve a property
      */
-    QVariant property(QWidget* w) const;
+    QVariant property(QWidget* w)                                    const;
 
     /**
      * Setup secondary widget properties

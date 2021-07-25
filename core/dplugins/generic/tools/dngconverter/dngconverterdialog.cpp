@@ -81,21 +81,21 @@ public:
     {
     }
 
-    bool                        busy;
+    bool                      busy;
 
-    QStringList                 fileList;
+    QStringList               fileList;
 
-    DProgressWdg*               progressBar;
+    DProgressWdg*             progressBar;
 
-    DNGConverterList*           listView;
+    DNGConverterList*         listView;
 
-    DNGConverterActionThread*   thread;
+    DNGConverterActionThread* thread;
 
-    DNGSettings*                dngSettings;
+    DNGSettings*              dngSettings;
 
-    FileSaveConflictBox*        conflictSettings;
+    FileSaveConflictBox*      conflictSettings;
 
-    DInfoInterface*             iface;
+    DInfoInterface*           iface;
 };
 
 DNGConverterDialog::DNGConverterDialog(QWidget* const parent, DInfoInterface* const iface)
@@ -106,7 +106,7 @@ DNGConverterDialog::DNGConverterDialog(QWidget* const parent, DInfoInterface* co
     setMinimumSize(900, 500);
     setModal(true);
 
-    d->iface = iface;
+    d->iface                  = iface;
 
     m_buttons->addButton(QDialogButtonBox::Close);
     m_buttons->addButton(QDialogButtonBox::Ok);
@@ -244,9 +244,9 @@ void DNGConverterDialog::readSettings()
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
     KConfigGroup group        = config->group(QLatin1String("DNGConverter Settings"));
 
-    d->dngSettings->setBackupOriginalRawFile(group.readEntry("BackupOriginalRawFile",         false));
-    d->dngSettings->setCompressLossLess(group.readEntry("CompressLossLess",                   true));
-    d->dngSettings->setCompressLossLess(group.readEntry("PreviewMode",                        (int)(DNGWriter::MEDIUM)));
+    d->dngSettings->setBackupOriginalRawFile(group.readEntry("BackupOriginalRawFile", false));
+    d->dngSettings->setCompressLossLess(group.readEntry("CompressLossLess",           true));
+    d->dngSettings->setCompressLossLess(group.readEntry("PreviewMode",                (int)(DNGWriter::MEDIUM)));
     d->conflictSettings->readSettings(group);
 }
 
@@ -344,10 +344,9 @@ void DNGConverterDialog::slotIdentify()
                 item->setDestFileName(dest);
             }
         }
-
         else
         {
-            QString dest = fi.absolutePath() + QLatin1String("/") + fi.completeBaseName() + QLatin1String(".dng");
+            QString dest      = fi.absolutePath() + QLatin1String("/") + fi.completeBaseName() + QLatin1String(".dng");
             QFileInfo a(dest);
             bool fileNotFound = (a.exists());
 
@@ -528,7 +527,6 @@ void DNGConverterDialog::processingFailed(const QUrl& url, int result)
             status = i18n("Internal error");
             break;
         }
-
     }
 
     item->setStatus(status);

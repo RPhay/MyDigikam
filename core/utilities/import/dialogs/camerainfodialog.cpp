@@ -60,22 +60,25 @@ CameraInfoDialog::CameraInfoDialog(QWidget* const parent,
 
     // ----------------------------------------------------------
 
-    QTextEdit* const summaryView = new QTextEdit(summary);
+    QTextEdit* const summaryView = new QTextEdit(this);
     summaryView->setWordWrapMode(QTextOption::WordWrap);
+    summaryView->setPlainText(summary);
     summaryView->setReadOnly(true);
     tab->insertTab(0, summaryView, QIcon::fromTheme(QLatin1String("dialog-information")), i18nc("@title", "Device Summary"));
 
     // ----------------------------------------------------------
 
-    QTextEdit* const manualView  = new QTextEdit(manual);
+    QTextEdit* const manualView  = new QTextEdit(this);
     manualView->setWordWrapMode(QTextOption::WordWrap);
+    manualView->setPlainText(manual);
     manualView->setReadOnly(true);
     tab->insertTab(1, manualView, QIcon::fromTheme(QLatin1String("help-contents")), i18nc("@title", "Device Manual"));
 
     // ----------------------------------------------------------
 
-    QTextEdit* const aboutView   = new QTextEdit(about);
+    QTextEdit* const aboutView   = new QTextEdit(this);
     aboutView->setWordWrapMode(QTextOption::WordWrap);
+    aboutView->setPlainText(about);
     aboutView->setReadOnly(true);
     tab->insertTab(2, aboutView, QIcon::fromTheme(QLatin1String("camera-photo")), i18nc("@title", "About Driver"));
 

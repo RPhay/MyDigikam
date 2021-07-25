@@ -49,7 +49,7 @@ class Q_DECL_HIDDEN ExifToolProcess::Private
 {
 public:
 
-    class Command
+    class Q_DECL_HIDDEN Command
     {
     public:
 
@@ -75,7 +75,7 @@ public:
 
 public:
 
-    ExifToolProcess*        parent;
+    ExifToolProcess*        pp;
     QString                 etExePath;
     QString                 perlExePath;
     QProcess*               process;

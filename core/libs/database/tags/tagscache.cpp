@@ -30,6 +30,7 @@
 #include <QReadWriteLock>
 #include <QReadLocker>
 #include <QWriteLocker>
+#include <QStringList>
 #include <QMap>
 
 // Local includes
@@ -533,11 +534,17 @@ QList<int> TagsCache::parentTags(int id) const
     return ids;
 }
 
-int TagsCache::tagForPath(const QString& tagPath) const
+int TagsCache::tagForPath(const QString& path) const
 {
-    // split full tag "url" into list of single tag names
+    QString fullPath = path;
 
-    QStringList tagHierarchy = tagPath.split(QLatin1Char('/'), QT_SKIP_EMPTY_PARTS);
+    if (fullPath.startsWith(QLatin1Char('/')))
+    {
+        fullPath.remove(0, 1);
+    }
+
+    // split the path into its components
+    QStringList tagHierarchy = path.split(QLatin1Char('/'), QT_SKIP_EMPTY_PARTS);
 
     if (tagHierarchy.isEmpty())
     {
@@ -546,61 +553,21 @@ int TagsCache::tagForPath(const QString& tagPath) const
 
     d->checkNameHash();
 
-    // last entry in list is the actual tag name
-
-    int tagID       = 0;
-    QString tagName = tagHierarchy.last();
-    tagHierarchy.removeLast();
-    QList<TagShortInfo>::const_iterator tag, parentTag;
-
     QReadLocker locker(&d->lock);
 
-    // There might be multiple tags with the same name, but in different
-    // hierarchies. We must check them all until we find the correct hierarchy
+    // The last entry in the list is the leaf node tag name, we use this
+    // to lookup all the tag ids with that name, then find the one
+    // with a matching full path
 
-    foreach (int id, d->nameHash.values(tagName))
+    QString const tagName = tagHierarchy.last();
+
+    int tagID             = 0;
+
+    for (int const id : d->nameHash.values(tagName))
     {
-        tag = d->find(id);
-
-        if (tag == d->infos.constEnd())
+        if (tagPath(id, NoLeadingSlash) == fullPath)
         {
-            continue;    // error
-        }
-
-        int parentID = tag->pid;
-
-        // Check hierarchy, from bottom to top
-
-        bool foundParentTag                       = true;
-        QStringList::const_iterator parentTagName = tagHierarchy.constEnd();
-
-        while (foundParentTag && parentTagName != tagHierarchy.constBegin())
-        {
-            --parentTagName;
-
-            foundParentTag = false;
-            parentTag      = d->find(parentID);
-
-            // check if the parent is found and has the name we need
-
-            if ((parentTag != d->infos.constEnd()) &&
-                (parentTag->name == (*parentTagName)))
-            {
-                parentID       = parentTag->pid;
-                foundParentTag = true;
-            }
-
-            // If the parent matches, we continue with the grandparent.
-            // If the candidate's parent do not match,
-            // foundParentTag will be false, the while loop breaks.
-        }
-
-        // If we managed to traverse the full hierarchy,
-        // we have our tag.
-
-        if (foundParentTag)
-        {
-            tagID = tag->id;
+            tagID = id;
             break;
         }
     }

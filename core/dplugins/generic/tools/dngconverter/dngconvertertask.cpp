@@ -55,17 +55,17 @@ public:
     {
     }
 
-    bool                    backupOriginalRawFile;
-    bool                    compressLossLess;
-    bool                    updateFileDate;
-    bool                    cancel;
+    bool               backupOriginalRawFile;
+    bool               compressLossLess;
+    bool               updateFileDate;
+    bool               cancel;
 
-    int                     previewMode;
+    int                previewMode;
 
-    QUrl                    url;
-    DNGConverterAction      action;
+    QUrl               url;
+    DNGConverterAction action;
 
-    DNGWriter               dngProcessor;
+    DNGWriter          dngProcessor;
 };
 
 DNGConverterTask::DNGConverterTask(QObject* const parent, const QUrl& fileUrl, const DNGConverterAction& action)
@@ -126,10 +126,10 @@ void DNGConverterTask::run()
             }
 
             DNGConverterActionData ad;
-            ad.action  = d->action;
-            ad.fileUrl = d->url;
-            ad.message = identify;
-            ad.result  = DNGWriter::PROCESS_COMPLETE;
+            ad.action        = d->action;
+            ad.fileUrl       = d->url;
+            ad.message       = identify;
+            ad.result        = DNGWriter::PROCESS_COMPLETE;
             emit signalFinished(ad);
             break;
         }
@@ -146,7 +146,7 @@ void DNGConverterTask::run()
 
             QFileInfo fi(d->url.toLocalFile());
             destPath     = fi.absolutePath() + QLatin1String("/.digikam-dngconverter-tmp-") +
-                           QString::number(QDateTime::currentDateTime().toTime_t()) + QString(d->url.fileName());
+                           QString::number(QDateTime::currentDateTimeUtc().toTime_t()) + QString(d->url.fileName());
 
             d->dngProcessor.reset();
             d->dngProcessor.setInputFile(d->url.toLocalFile());

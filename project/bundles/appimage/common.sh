@@ -37,6 +37,22 @@ echo "CPU Cores to use : $CPU_CORES"
 }
 
 ########################################################################
+# Check Linux OS release ID
+CheckSystemReleaseID()
+{
+if   [[ $(grep -r "Mageia release 6" /etc/release) ]] ; then
+    OS_VERSION=6
+elif [[ $(grep -r "Mageia release 7" /etc/release) ]] ; then
+    OS_VERSION=7
+elif [[ $(grep -r "Mageia release 8" /etc/release) ]] ; then
+    OS_VERSION=8
+fi
+
+echo "Mageia Release : $OS_VERSION"
+
+}
+
+########################################################################
 # For time execution measurement ; startup
 StartScript()
 {

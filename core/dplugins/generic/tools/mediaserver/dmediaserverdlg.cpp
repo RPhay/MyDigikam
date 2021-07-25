@@ -172,7 +172,7 @@ DMediaServerDlg::DMediaServerDlg(QObject* const /*parent*/,
     QString txt;
 
     explanation->setText(i18nc("@info",
-                               "The media server permit to share items through the local network "
+                               "The media server allows to share items through the local network "
                                "using %1 standard and %2 protocol. "
                                "Many kind of electronic devices can support DLNA, as tablets, cellulars, TV, etc.\n\n"
                                "Note: depending of the network features and the configuration, "

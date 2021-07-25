@@ -92,7 +92,7 @@ protected:
 private:
 
     void reset();
-    void setTagState(TAlbum* const tag, DisjointMetadata::Status status);
+    void setTagState(TAlbum* const tag, DisjointMetadataDataFields::Status status);
 
     void setInfos(const ItemInfoList& infos);
     void setFocusToLastSelectedWidget();

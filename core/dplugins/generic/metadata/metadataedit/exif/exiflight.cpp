@@ -42,9 +42,6 @@
 // Local includes
 
 #include "metadatacheckbox.h"
-#include "dmetadata.h"
-
-using namespace Digikam;
 
 namespace DigikamGenericMetadataEditPlugin
 {
@@ -270,18 +267,17 @@ EXIFLight::~EXIFLight()
     delete d;
 }
 
-void EXIFLight::readMetadata(QByteArray& exifData)
+void EXIFLight::readMetadata(DMetadata& meta)
 {
     blockSignals(true);
-    QScopedPointer<DMetadata> meta(new DMetadata);
-    meta->setExif(exifData);
+
     long int num=1, den=1;
     long     val=0;
 
     d->lightSourceCB->setCurrentIndex(0);
     d->lightSourceCheck->setChecked(false);
 
-    if (meta->getExifTagLong("Exif.Photo.LightSource", val))
+    if (meta.getExifTagLong("Exif.Photo.LightSource", val))
     {
         if ((val>=0 && val <=4) || (val> 8 && val <16) || (val> 16 && val <25) || val == 255)
         {
@@ -306,7 +302,7 @@ void EXIFLight::readMetadata(QByteArray& exifData)
     d->flashModeCB->setCurrentIndex(0);
     d->flashModeCheck->setChecked(false);
 
-    if (meta->getExifTagLong("Exif.Photo.Flash", val))
+    if (meta.getExifTagLong("Exif.Photo.Flash", val))
     {
         int item = -1;
 
@@ -333,7 +329,7 @@ void EXIFLight::readMetadata(QByteArray& exifData)
     d->flashEnergyEdit->setValue(1.0);
     d->flashEnergyCheck->setChecked(false);
 
-    if (meta->getExifTagRational("Exif.Photo.FlashEnergy", num, den))
+    if (meta.getExifTagRational("Exif.Photo.FlashEnergy", num, den))
     {
         d->flashEnergyEdit->setValue((double)(num) / (double)(den));
         d->flashEnergyCheck->setChecked(true);
@@ -344,7 +340,7 @@ void EXIFLight::readMetadata(QByteArray& exifData)
     d->whiteBalanceCB->setCurrentIndex(0);
     d->whiteBalanceCheck->setChecked(false);
 
-    if (meta->getExifTagLong("Exif.Photo.WhiteBalance", val))
+    if (meta.getExifTagLong("Exif.Photo.WhiteBalance", val))
     {
         if (val>=0 && val<=1)
         {
@@ -362,10 +358,8 @@ void EXIFLight::readMetadata(QByteArray& exifData)
     blockSignals(false);
 }
 
-void EXIFLight::applyMetadata(QByteArray& exifData)
+void EXIFLight::applyMetadata(DMetadata& meta)
 {
-    QScopedPointer<DMetadata> meta(new DMetadata);
-    meta->setExif(exifData);
     long int num=1, den=1;
 
     if (d->lightSourceCheck->isChecked())
@@ -379,39 +373,37 @@ void EXIFLight::applyMetadata(QByteArray& exifData)
         else if (val == 20)
             val = 255;
 
-        meta->setExifTagLong("Exif.Photo.LightSource", val);
+        meta.setExifTagLong("Exif.Photo.LightSource", val);
     }
     else if (d->lightSourceCheck->isValid())
     {
-        meta->removeExifTag("Exif.Photo.LightSource");
+        meta.removeExifTag("Exif.Photo.LightSource");
     }
 
     if (d->flashModeCheck->isChecked())
     {
         long val = d->flashModeCB->currentIndex();
-        meta->setExifTagLong("Exif.Photo.Flash", d->flashModeMap[val].id());
+        meta.setExifTagLong("Exif.Photo.Flash", d->flashModeMap[val].id());
     }
     else if (d->flashModeCheck->isValid())
     {
-        meta->removeExifTag("Exif.Photo.Flash");
+        meta.removeExifTag("Exif.Photo.Flash");
     }
 
     if (d->flashEnergyCheck->isChecked())
     {
-        meta->convertToRational(d->flashEnergyEdit->value(), &num, &den, 1);
-        meta->setExifTagRational("Exif.Photo.FlashEnergy", num, den);
+        meta.convertToRational(d->flashEnergyEdit->value(), &num, &den, 1);
+        meta.setExifTagRational("Exif.Photo.FlashEnergy", num, den);
     }
     else
     {
-        meta->removeExifTag("Exif.Photo.FlashEnergy");
+        meta.removeExifTag("Exif.Photo.FlashEnergy");
     }
 
     if (d->whiteBalanceCheck->isChecked())
-        meta->setExifTagLong("Exif.Photo.WhiteBalance", d->whiteBalanceCB->currentIndex());
+        meta.setExifTagLong("Exif.Photo.WhiteBalance", d->whiteBalanceCB->currentIndex());
     else if (d->whiteBalanceCheck->isValid())
-        meta->removeExifTag("Exif.Photo.WhiteBalance");
-
-    exifData = meta->getExifEncoded();
+        meta.removeExifTag("Exif.Photo.WhiteBalance");
 }
 
 } // namespace DigikamGenericMetadataEditPlugin

@@ -144,6 +144,7 @@ LibsInfoDlg::LibsInfoDlg(QWidget* const parent)
     list.insert(i18nc(CONTEXT, "Rajce support"),               SUPPORTED_YES);
 #endif
 
+    list.insert(i18nc(CONTEXT, "Exiv2"),                       MetaEngine::Exiv2Version());
     list.insert(i18nc(CONTEXT, "Exiv2 supports XMP metadata"), MetaEngine::supportXmp() ?
                 SUPPORTED_YES : SUPPORTED_NO);
     list.insert(i18nc(CONTEXT, "Exiv2 supports Base Media"),   MetaEngine::supportBmff() ?

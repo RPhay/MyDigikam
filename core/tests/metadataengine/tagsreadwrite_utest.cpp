@@ -118,7 +118,7 @@ void TagsReadWriteTest::testWriteToDisabledNamespaces()
 
     secondNamespace = dmeta->getXmpTagStringBag("Xmp.lr.hierarchicalSubject", false);
 
-    secondNamespace = secondNamespace.replaceInStrings(QLatin1String("|"), QLatin1String("/"));
+    secondNamespace.replaceInStrings(QLatin1String("|"), QLatin1String("/"));
 
     QCOMPARE(secondNamespace, tagSet1);
 }
@@ -193,7 +193,7 @@ void TagsReadWriteTest::testTagSeparatorWrite()
     readResult = dmeta->getXmpTagStringBag("Xmp.lr.hierarchicalSubject", false);
 
     expected   = tagSet1;
-    expected   = expected.replaceInStrings(QLatin1String("/"), QLatin1String("|"));
+    expected.replaceInStrings(QLatin1String("/"), QLatin1String("|"));
 
     QCOMPARE(readResult, expected);
 }
@@ -223,7 +223,7 @@ void TagsReadWriteTest::testTagSeparatorRead()
              << tagNs3;
 
     toWrite   = tagSet1;
-    toWrite   = toWrite.replaceInStrings(QLatin1String("/"), QLatin1String("|"));
+    toWrite.replaceInStrings(QLatin1String("/"), QLatin1String("|"));
 
     dmeta->setXmpTagStringBag("Xmp.lr.hierarchicalSubject", toWrite);
 
@@ -261,7 +261,7 @@ void TagsReadWriteTest::testTagReadAlternativeNameSpace()
              << tagNs3;
 
     toWrite   = tagSet1;
-    toWrite   = toWrite.replaceInStrings(QLatin1String("/"), QLatin1String("|"));
+    toWrite.replaceInStrings(QLatin1String("/"), QLatin1String("|"));
 
     dmeta->setXmpTagStringSeq("Xmp.lr.HierarchicalSubject", toWrite);
 

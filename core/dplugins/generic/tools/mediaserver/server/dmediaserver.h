@@ -31,7 +31,7 @@
 #include <QMap>
 #include <QList>
 
-namespace Digikam
+namespace DigikamGenericMediaServerPlugin
 {
 
 /// A kind of map of albums with urls contents to share with DLNA media server.
@@ -67,6 +67,6 @@ private:
     Q_DISABLE_COPY(DMediaServer)
 };
 
-} // namespace Digikam
+} // namespace DigikamGenericMediaServerPlugin
 
 #endif // DIGIKAM_DMEDIA_SERVER_H

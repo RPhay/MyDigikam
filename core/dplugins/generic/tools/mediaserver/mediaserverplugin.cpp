@@ -43,7 +43,7 @@ MediaServerPlugin::MediaServerPlugin(QObject* const parent)
 {
     // Start the Media Server if necessary
 
-    Digikam::DMediaServerMngr::instance()->loadAtStartup();
+    DMediaServerMngr::instance()->loadAtStartup();
 }
 
 MediaServerPlugin::~MediaServerPlugin()
@@ -54,7 +54,7 @@ void MediaServerPlugin::cleanUp()
 {
     // Stop the Media Server if necessary
 
-    Digikam::DMediaServerMngr::instance()->saveAtShutdown();
+    DMediaServerMngr::instance()->saveAtShutdown();
 }
 
 QString MediaServerPlugin::name() const
@@ -79,7 +79,7 @@ QString MediaServerPlugin::description() const
 
 QString MediaServerPlugin::details() const
 {
-    return i18n("<p>This tool allow to share items on the local network through a DLNA server.</p>"
+    return i18n("<p>This tool allows users to share items on the local network through a DLNA server.</p>"
                 "<p>Items to share can be selected one by one or by group through a selection of albums.</p>"
                 "<p>Many kind of electronic devices can support DLNA, as tablets, cellulars, TV, etc.</p>");
 }

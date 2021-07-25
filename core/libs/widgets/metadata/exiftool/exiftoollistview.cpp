@@ -53,11 +53,12 @@ public:
     {
     }
 
-    QString         lastError;
-    QString         selectedItemKey;
-    QStringList     simplifiedTagsList;
+    QString                      lastError;
+    QString                      selectedItemKey;
+    QStringList                  simplifiedTagsList;
 
-    ExifToolParser* parser;
+    ExifToolParser*              parser;
+    ExifToolParser::ExifToolData map;
 };
 
 ExifToolListView::ExifToolListView(QWidget* const parent)
@@ -91,6 +92,7 @@ ExifToolListView::~ExifToolListView()
 void ExifToolListView::loadFromUrl(const QUrl& url)
 {
     clear();
+    d->map.clear();
 
     if (!url.isValid())
     {
@@ -109,8 +111,6 @@ void ExifToolListView::loadFromUrl(const QUrl& url)
     }
 
     d->lastError.clear();
-
-    return;
 }
 
 QString ExifToolListView::errorString() const
@@ -125,57 +125,6 @@ void ExifToolListView::slotExifToolDataAvailable()
     setMetadata(d->parser->currentData());
 
     emit signalLoadingResult(d->lastError.isEmpty());
-}
-
-void ExifToolListView::setMetadata(const ExifToolParser::ExifToolData& map)
-{
-    d->simplifiedTagsList.clear();
-    QString simplifiedTag;
-
-    for (ExifToolParser::ExifToolData::const_iterator it = map.constBegin() ;
-         it != map.constEnd() ; ++it)
-    {
-        QString grp                   = it.key().section(QLatin1Char('.'), 0, 0)
-                                                .replace(QLatin1Char('_'), QLatin1Char(' '));
-
-        if (grp == QLatin1String("ExifTool"))
-        {
-            continue;
-        }
-
-        /** Key is format like this:
-         *
-         * EXIF.ExifIFD.Image.ExposureCompensation
-         * File.File.Other.FileType
-         * Composite.Composite.Time.SubSecModifyDate
-         * File.System.Time.FileInodeChangeDate
-         * File.System.Other.FileSize
-         * EXIF.GPS.Location.GPSLongitude
-         * ICC_Profile.ICC-header.Image.ProfileCreator
-         * EXIF.IFD1.Image.ThumbnailOffset
-         * JFIF.JFIF.Image.YResolution
-         * ICC_Profile.ICC_Profile.Image.GreenMatrixColumn
-         */
-        QString key                   = it.key();
-        QString value                 = it.value()[0].toString();
-        QString desc                  = it.value()[2].toString();
-        ExifToolListViewGroup* igroup = findGroup(grp);
-        simplifiedTag                 = grp + QLatin1Char('.') + it.key().section(QLatin1Char('.'), -1);
-
-        if (!d->simplifiedTagsList.contains(simplifiedTag))
-        {
-            d->simplifiedTagsList.append(simplifiedTag);
-
-            if (!igroup)
-            {
-                igroup = new ExifToolListViewGroup(this, grp);
-            }
-
-            new ExifToolListViewItem(igroup, key, value, desc);
-        }
-    }
-
-    setCurrentItemByKey(d->selectedItemKey);
 }
 
 ExifToolListViewGroup* ExifToolListView::findGroup(const QString& group)
@@ -309,6 +258,151 @@ void ExifToolListView::slotSelectionChanged(QTreeWidgetItem* item, int)
                             "<b>Value: </b><p>%2</p>"
                             "<b>Description: </b><p>%3</p>",
                             tagTitle, tagValue, tagDesc));
+}
+
+void ExifToolListView::setMetadata(const ExifToolParser::ExifToolData& map)
+{
+    d->map = map;
+}
+
+void ExifToolListView::setGroupList(const QStringList& tagsFilter, const QStringList& keysFilter)
+{
+    clear();
+    d->simplifiedTagsList.clear();
+    QString simplifiedTag;
+
+    QStringList filters = tagsFilter;
+    QString groupItemName;
+
+    /** Key is formated like this:
+     *
+     * EXIF.ExifIFD.Image.ExposureCompensation
+     * File.File.Other.FileType
+     * Composite.Composite.Time.SubSecModifyDate
+     * File.System.Time.FileInodeChangeDate
+     * File.System.Other.FileSize
+     * EXIF.GPS.Location.GPSLongitude
+     * ICC_Profile.ICC-header.Image.ProfileCreator
+     * EXIF.IFD1.Image.ThumbnailOffset
+     * JFIF.JFIF.Image.YResolution
+     * ICC_Profile.ICC_Profile.Image.GreenMatrixColumn
+     */
+    for (ExifToolParser::ExifToolData::const_iterator it = d->map.constBegin() ;
+         it != d->map.constEnd() ; ++it)
+    {
+        // We checking if we have changed of GroupName
+
+        QString currentGroupName = it.key().section(QLatin1Char('.'), 0, 0)
+                                           .replace(QLatin1Char('_'), QLatin1Char(' '));
+
+        if (currentGroupName == QLatin1String("ExifTool"))
+        {
+            // Always ignore ExifTool errors or warnings.
+
+            continue;
+        }
+
+        if (!keysFilter.isEmpty() && !keysFilter.contains(currentGroupName))
+        {
+            // If group filters, always ignore not found entries.
+
+            continue;
+        }
+
+        ExifToolListViewGroup* parentGroupItem = findGroup(currentGroupName);
+        simplifiedTag                          = currentGroupName + QLatin1Char('.') + it.key().section(QLatin1Char('.'), -1);
+
+        if (!d->simplifiedTagsList.contains(simplifiedTag))
+        {
+            d->simplifiedTagsList.append(simplifiedTag);
+
+            if (!parentGroupItem)
+            {
+                parentGroupItem = new ExifToolListViewGroup(this, currentGroupName);
+            }
+
+            if      (tagsFilter.isEmpty())
+            {
+                new ExifToolListViewItem(parentGroupItem, it.key(), it.value()[0].toString(), it.value()[2].toString());
+            }
+            else
+            {
+                // We ignore all unknown tags if necessary.
+
+                if      (filters.contains(QLatin1String("FULL")))
+                {
+                    // We don't filter the output (Photo Mode)
+
+                    new ExifToolListViewItem(parentGroupItem, it.key(), it.value()[0].toString(), it.value()[2].toString());
+                }
+                else if (!filters.isEmpty())
+                {
+                    // We using the filter to make a more user friendly output (Custom Mode)
+
+                    // Filter is not a list of complete tag keys
+
+                    if      (!filters.at(0).contains(QLatin1Char('.')) && filters.contains(it.key().section(QLatin1Char('.'), -1)))
+                    {
+                        new ExifToolListViewItem(parentGroupItem, it.key(), it.value()[0].toString(), it.value()[2].toString());
+                        filters.removeAll(it.key());
+                    }
+                    else if (filters.contains(it.key()))
+                    {
+                        new ExifToolListViewItem(parentGroupItem, it.key(), it.value()[0].toString(), it.value()[2].toString());
+                        filters.removeAll(it.key());
+                    }
+                }
+            }
+        }
+    }
+
+    // Add not found tags from filter as grey items.
+
+    d->simplifiedTagsList.clear();
+
+    if (!filters.isEmpty()                       &&
+        (filters.at(0) != QLatin1String("FULL")) &&
+        filters.at(0).contains(QLatin1Char('.')))
+    {
+        foreach (const QString& key, filters)
+        {
+            QString grp                  = key.section(QLatin1Char('.'), 0, 0)
+                                              .replace(QLatin1Char('_'), QLatin1Char(' '));
+            simplifiedTag                = grp + QLatin1Char('.') + key.section(QLatin1Char('.'), -1);
+            ExifToolListViewGroup* pitem = findGroup(grp);
+
+            if (!d->simplifiedTagsList.contains(simplifiedTag))
+            {
+                d->simplifiedTagsList.append(simplifiedTag);
+
+                if (!pitem)
+                {
+                    pitem = new ExifToolListViewGroup(this, grp);
+                }
+
+                new ExifToolListViewItem(pitem, key);
+            }
+        }
+
+        // Remove groups with no children.
+
+        QTreeWidgetItemIterator it(this);
+
+        while (*it)
+        {
+            ExifToolListViewGroup* const item = dynamic_cast<ExifToolListViewGroup*>(*it);
+
+            if (item && !item->childCount())
+            {
+                delete item;
+            }
+
+            ++it;
+        }
+    }
+
+    setCurrentItemByKey(d->selectedItemKey);
+    update();
 }
 
 } // namespace Digikam

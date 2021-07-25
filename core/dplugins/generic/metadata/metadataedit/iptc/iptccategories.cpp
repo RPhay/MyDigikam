@@ -39,12 +39,6 @@
 
 #include <klocalizedstring.h>
 
-// Local includes
-
-#include "dmetadata.h"
-
-using namespace Digikam;
-
 namespace DigikamGenericMetadataEditPlugin
 {
 
@@ -277,18 +271,17 @@ void IPTCCategories::slotLineEditModified()
                        ledit);
 }
 
-void IPTCCategories::readMetadata(QByteArray& iptcData)
+void IPTCCategories::readMetadata(DMetadata& meta)
 {
     blockSignals(true);
-    QScopedPointer<DMetadata> meta(new DMetadata);
-    meta->setIptc(iptcData);
+
     QString data;
 
     // In first we handle all sub-categories.
 
     d->subCategoriesBox->clear();
     d->subCategoriesCheck->setChecked(false);
-    d->oldSubCategories = meta->getIptcSubCategories();
+    d->oldSubCategories = meta.getIptcSubCategories();
 
     if (!d->oldSubCategories.isEmpty())
     {
@@ -300,7 +293,7 @@ void IPTCCategories::readMetadata(QByteArray& iptcData)
 
     d->categoryEdit->clear();
     d->categoryCheck->setChecked(false);
-    data = meta->getIptcTagString("Iptc.Application2.Category", false);
+    data = meta.getIptcTagString("Iptc.Application2.Category", false);
 
     if (!data.isNull())
     {
@@ -318,16 +311,14 @@ void IPTCCategories::readMetadata(QByteArray& iptcData)
     blockSignals(false);
 }
 
-void IPTCCategories::applyMetadata(QByteArray& iptcData)
+void IPTCCategories::applyMetadata(DMetadata& meta)
 {
     QStringList newCategories;
-    QScopedPointer<DMetadata> meta(new DMetadata);
-    meta->setIptc(iptcData);
 
     if (d->categoryCheck->isChecked())
-        meta->setIptcTagString("Iptc.Application2.Category", d->categoryEdit->text());
+        meta.setIptcTagString("Iptc.Application2.Category", d->categoryEdit->text());
     else
-        meta->removeIptcTag("Iptc.Application2.Category");
+        meta.removeIptcTag("Iptc.Application2.Category");
 
     for (int i = 0 ; i < d->subCategoriesBox->count(); ++i)
     {
@@ -336,11 +327,9 @@ void IPTCCategories::applyMetadata(QByteArray& iptcData)
     }
 
     if (d->categoryCheck->isChecked() && d->subCategoriesCheck->isChecked())
-        meta->setIptcSubCategories(d->oldSubCategories, newCategories);
+        meta.setIptcSubCategories(d->oldSubCategories, newCategories);
     else
-        meta->setIptcSubCategories(d->oldSubCategories, QStringList());
-
-    iptcData = meta->getIptc();
+        meta.setIptcSubCategories(d->oldSubCategories, QStringList());
 }
 
 void IPTCCategories::slotCheckCategoryToggled(bool checked)

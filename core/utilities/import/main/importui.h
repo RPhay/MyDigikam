@@ -222,7 +222,7 @@ private Q_SLOTS:
     void slotSwitchedToIconView();
     void slotSwitchedToMapView();
 
-    void slotMetadata(const QString& folder, const QString& file, const DMetadata& meta);
+    void slotMetadata(const QString& folder, const QString& file, const MetaEngineData& meta);
 
     void setFilter(Filter*);
 

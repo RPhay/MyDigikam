@@ -173,6 +173,10 @@ void AdvancedMetadataTab::slotAddNewNamespace()
     {
         entry.nsType = NamespaceEntry::TAGS;
     }
+    else if (d->metadataType->currentData().toString() == NamespaceEntry::DM_TITLE_CONTAINER())
+    {
+        entry.nsType = NamespaceEntry::TITLE;
+    }
     else if (d->metadataType->currentData().toString() == NamespaceEntry::DM_RATING_CONTAINER())
     {
         entry.nsType = NamespaceEntry::RATING;

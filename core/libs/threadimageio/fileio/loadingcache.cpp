@@ -33,7 +33,7 @@
 #include "digikam_debug.h"
 #include "iccsettings.h"
 #include "kmemoryinfo.h"
-#include "dmetadata.h"
+#include "metaengine.h"
 #include "thumbnailsize.h"
 
 namespace Digikam
@@ -196,7 +196,7 @@ LoadingCache::LoadingCache()
 
     qRegisterMetaType<LoadingDescription>("LoadingDescription");
     qRegisterMetaType<DImg>("DImg");
-    qRegisterMetaType<DMetadata>("DMetadata");
+    qRegisterMetaType<MetaEngineData>("MetaEngineData");
 
     connect(IccSettings::instance(), SIGNAL(signalICCSettingsChanged(ICCSettingsContainer,ICCSettingsContainer)),
             this, SLOT(iccSettingsChanged(ICCSettingsContainer,ICCSettingsContainer)));

@@ -72,7 +72,7 @@ int main(int argc, char* argv[])
     }
     else
     {
-        version = QLatin1String("7.1.0");
+        version = QLatin1String("7.3.0");
     }
 
     OnlineVersionDwnl* const dwnl = new OnlineVersionDwnl(nullptr, preRelease, withDebug);

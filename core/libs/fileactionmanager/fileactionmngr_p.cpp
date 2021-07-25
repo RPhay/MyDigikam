@@ -80,7 +80,6 @@ FileActionMngr::Private::Private(FileActionMngr* const qq)
 
 void FileActionMngr::Private::connectToDatabaseWorker()
 {
-
     WorkerObject::connectAndSchedule(this, SIGNAL(signalAddTags(FileActionItemInfoList,QList<int>)),
                                      dbWorker, SLOT(assignTags(FileActionItemInfoList,QList<int>)));
 

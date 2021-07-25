@@ -36,12 +36,6 @@
 
 #include <klocalizedstring.h>
 
-// Local includes
-
-#include "dmetadata.h"
-
-using namespace Digikam;
-
 namespace DigikamGenericMetadataEditPlugin
 {
 
@@ -50,13 +44,13 @@ class Q_DECL_HIDDEN XMPKeywords::Private
 public:
 
     explicit Private()
+      : addKeywordButton(nullptr),
+        delKeywordButton(nullptr),
+        repKeywordButton(nullptr),
+        keywordsCheck   (nullptr),
+        keywordEdit     (nullptr),
+        keywordsBox     (nullptr)
     {
-        addKeywordButton = nullptr;
-        delKeywordButton = nullptr;
-        repKeywordButton = nullptr;
-        keywordsBox      = nullptr;
-        keywordsCheck    = nullptr;
-        keywordEdit      = nullptr;
     }
 
     QStringList  oldKeywords;
@@ -175,7 +169,11 @@ void XMPKeywords::slotDelKeyword()
 void XMPKeywords::slotRepKeyword()
 {
     QString newKeyword = d->keywordEdit->text();
-    if (newKeyword.isEmpty()) return;
+
+    if (newKeyword.isEmpty())
+    {
+        return;
+    }
 
     if (!d->keywordsBox->selectedItems().isEmpty())
     {
@@ -202,11 +200,15 @@ void XMPKeywords::slotKeywordSelectionChanged()
 void XMPKeywords::slotAddKeyword()
 {
     QString newKeyword = d->keywordEdit->text();
-    if (newKeyword.isEmpty()) return;
+
+    if (newKeyword.isEmpty())
+    {
+        return;
+    }
 
     bool found = false;
 
-    for (int i = 0 ; i < d->keywordsBox->count(); ++i)
+    for (int i = 0 ; i < d->keywordsBox->count() ; ++i)
     {
         QListWidgetItem* const item = d->keywordsBox->item(i);
 
@@ -224,12 +226,11 @@ void XMPKeywords::slotAddKeyword()
     }
 }
 
-void XMPKeywords::readMetadata(QByteArray& xmpData)
+void XMPKeywords::readMetadata(DMetadata& meta)
 {
     blockSignals(true);
-    QScopedPointer<DMetadata> meta(new DMetadata);
-    meta->setXmp(xmpData);
-    d->oldKeywords = meta->getXmpKeywords();
+
+    d->oldKeywords = meta.getXmpKeywords();
 
     d->keywordsBox->clear();
     d->keywordsCheck->setChecked(false);
@@ -248,26 +249,24 @@ void XMPKeywords::readMetadata(QByteArray& xmpData)
     blockSignals(false);
 }
 
-void XMPKeywords::applyMetadata(QByteArray& xmpData)
+void XMPKeywords::applyMetadata(DMetadata& meta)
 {
-    QScopedPointer<DMetadata> meta(new DMetadata);
-    meta->setXmp(xmpData);
     QStringList newKeywords;
 
-    for (int i = 0 ; i < d->keywordsBox->count(); ++i)
+    for (int i = 0 ; i < d->keywordsBox->count() ; ++i)
     {
         QListWidgetItem* const item = d->keywordsBox->item(i);
         newKeywords.append(item->text());
     }
 
     // We remove in first all existing keywords.
-    meta->removeXmpTag("Xmp.dc.subject");
+    meta.removeXmpTag("Xmp.dc.subject");
 
     // And add new list if necessary.
     if (d->keywordsCheck->isChecked())
-        meta->setXmpKeywords(newKeywords);
-
-    xmpData = meta->getXmp();
+    {
+        meta.setXmpKeywords(newKeywords);
+    }
 }
 
 } // namespace DigikamGenericMetadataEditPlugin

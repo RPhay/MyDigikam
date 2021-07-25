@@ -26,6 +26,7 @@
 
 // Qt includes
 
+#include <QUrl>
 #include <QFile>
 #include <QTime>
 #include <QString>
@@ -69,9 +70,13 @@ OpenfacePreprocessor::~OpenfacePreprocessor()
 
 bool OpenfacePreprocessor::loadModels()
 {
-    QString name   = QLatin1String("shapepredictor.dat");
-    QString spdata = QStandardPaths::locate(QStandardPaths::AppDataLocation,
-                                            QString::fromLatin1("facesengine/%1").arg(name));
+    QString appPath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
+    QUrl    appUrl  = QUrl::fromLocalFile(appPath).adjusted(QUrl::RemoveFilename);
+    appUrl.setPath(appUrl.path() + QLatin1String("digikam/facesengine/"));
+
+    QString name    = QLatin1String("shapepredictor.dat");
+    QString spdata  = appUrl.toLocalFile() + name;
+
     QFile model(spdata);
     RedEye::ShapePredictor* const temp = new RedEye::ShapePredictor();
 

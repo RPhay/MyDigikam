@@ -51,6 +51,11 @@ set(libmediawiki_SRCS
 # For unit-tests and plugin
 add_library(mediawikibackend STATIC ${libmediawiki_SRCS})
 
+target_link_libraries(mediawikibackend
+                      PRIVATE
+                      digikamcore
+)
+
 # --------------------------------------------------------------------------------
 
 set(mediawikiplugin_SRCS

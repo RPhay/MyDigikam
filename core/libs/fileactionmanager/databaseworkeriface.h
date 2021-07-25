@@ -46,15 +46,15 @@ class DatabaseWorkerInterface : public WorkerObject      // clazy:exclude=ctor-m
 
 public Q_SLOTS:
 
-    virtual void assignTags(const FileActionItemInfoList&, const QList<int>&)      {};
-    virtual void removeTags(const FileActionItemInfoList&, const QList<int>&)      {};
-    virtual void assignPickLabel(const FileActionItemInfoList&, int)               {};
-    virtual void assignColorLabel(const FileActionItemInfoList&, int)              {};
-    virtual void assignRating(const FileActionItemInfoList&, int)                  {};
-    virtual void editGroup(int, const ItemInfo&, const FileActionItemInfoList&)    {};
-    virtual void setExifOrientation(const FileActionItemInfoList&, int)            {};
-    virtual void applyMetadata(const FileActionItemInfoList&, DisjointMetadata*)   {};
-    virtual void copyAttributes(const FileActionItemInfoList&, const QStringList&) {};
+    virtual void assignTags(const FileActionItemInfoList&, const QList<int>&)          {};
+    virtual void removeTags(const FileActionItemInfoList&, const QList<int>&)          {};
+    virtual void assignPickLabel(const FileActionItemInfoList&, int)                   {};
+    virtual void assignColorLabel(const FileActionItemInfoList&, int)                  {};
+    virtual void assignRating(const FileActionItemInfoList&, int)                      {};
+    virtual void editGroup(int, const ItemInfo&, const FileActionItemInfoList&)        {};
+    virtual void setExifOrientation(const FileActionItemInfoList&, int)                {};
+    virtual void applyMetadata(const FileActionItemInfoList&, DisjointMetadata*)       {};
+    virtual void copyAttributes(const FileActionItemInfoList&, const QStringList&)     {};
 
 Q_SIGNALS:
 

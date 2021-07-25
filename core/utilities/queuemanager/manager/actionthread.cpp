@@ -29,6 +29,7 @@
 #include "digikam_debug.h"
 #include "digikam_config.h"
 #include "collectionscanner.h"
+#include "metadatahub.h"
 #include "task.h"
 
 namespace Digikam
@@ -124,16 +125,26 @@ void ActionThread::slotUpdateItemInfo(const Digikam::ActionData& ad)
     {
         CollectionScanner scanner;
         ItemInfo source = ItemInfo::fromUrl(ad.fileUrl);
-        qlonglong id    = scanner.scanFile(ad.destUrl.toLocalFile(), CollectionScanner::NormalScan);
-        ItemInfo info(id);
+        ItemInfo info(scanner.scanFile(ad.destUrl.toLocalFile(), CollectionScanner::NormalScan));
+
 
         // Copy the digiKam attributes from original file to the new file
 
         CollectionScanner::copyFileProperties(source, info);
 
-        // Read again new file that the database is up to date
+        if (!ad.noWrite)
+        {
+            // Write digiKam metadata to the new file
 
-        scanner.scanFile(info, CollectionScanner::Rescan);
+            MetadataHub hub;
+            hub.load(info);
+
+            hub.write(info.filePath(), MetadataHub::WRITE_ALL, true);
+        }
+        else
+        {
+            scanner.scanFile(info, CollectionScanner::Rescan);
+        }
     }
 
     emit signalFinished(ad);

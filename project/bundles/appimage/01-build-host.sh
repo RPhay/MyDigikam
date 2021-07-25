@@ -99,7 +99,6 @@ urpmi --auto \
       xz-devel \
       lz4-devel \
       inotify-tools-devel \
-      openssl-devel \
       cups-devel \
       imagemagick \
       openal-soft-devel \
@@ -118,8 +117,11 @@ urpmi --auto \
       gphoto2-devel \
       sane-backends \
       jasper-devel \
+      nodejs-devel \
+      ${LIBSUFFIX}openssl-devel \
       ${LIBSUFFIX}nss-devel \
       ${LIBSUFFIX}xkbcommon-devel \
+      ${LIBSUFFIX}xinerama-devel \
       ${LIBSUFFIX}sane1-devel \
       ${LIBSUFFIX}xcb-util1 \
       ${LIBSUFFIX}xi-devel \
@@ -128,10 +130,6 @@ urpmi --auto \
       ${LIBSUFFIX}xcursor-devel \
       ${LIBSUFFIX}xcomposite-devel \
       ${LIBSUFFIX}xrender-devel \
-      ${LIBSUFFIX}mesagl1-devel \
-      ${LIBSUFFIX}mesaglu1-devel \
-      ${LIBSUFFIX}mesaegl1-devel \
-      ${LIBSUFFIX}mesaegl1 \
       ${LIBSUFFIX}ltdl-devel \
       ${LIBSUFFIX}glib2.0-devel \
       ${LIBSUFFIX}usb1.0-devel \
@@ -144,12 +142,37 @@ urpmi --auto \
       ${LIBSUFFIX}magick-devel \
       ${LIBSUFFIX}wayland-devel
 
-#################################################################################################
+if [[ "$DK_QTVERSION" = "5.14" ]] ; then
+
+    urpmi --auto \
+          ${LIBSUFFIX}mesagl1-devel \
+          ${LIBSUFFIX}mesaglu1-devel \
+          ${LIBSUFFIX}mesaegl1-devel \
+          ${LIBSUFFIX}mesaegl1
+
+fi
+
+if [[ "$DK_QTVERSION" = "5.15" || "$DK_QTVERSION" = "5.15-LTS" ]] ; then
+
+    urpmi --auto \
+          ${LIBSUFFIX}xcb-util-cursor-devel \
+          ${LIBSUFFIX}xcb-util-image-devel \
+          ${LIBSUFFIX}xcb-util-renderutil-devel \
+          ${LIBSUFFIX}xcb-util-wm-devel \
+          ${LIBSUFFIX}xcb-xrm-devel
+
+fi
 
 echo -e "---------- Clean-up Old Packages\n"
 
 # Remove system based devel package to prevent conflict with new one.
 urpme --auto --force ${LIBSUFFIX}qt5core5 || true
+
+# Clean up previous openssl install
+
+rm -fr /usr/local/lib/libssl.a    || true
+rm -fr /usr/local/lib/libcrypto.a || true
+rm -fr /usr/local/include/openssl || true
 
 #################################################################################################
 
@@ -186,6 +209,7 @@ rm -rf $BUILDING_DIR/* || true
 cmake $ORIG_WD/../3rdparty \
       -DCMAKE_INSTALL_PREFIX:PATH=/opt/cmake \
       -DINSTALL_ROOT=/opt/cmake \
+      -DENABLE_QTVERSION=$DK_QTVERSION \
       -DEXTERNALS_DOWNLOAD_DIR=$DOWNLOAD_DIR
 
 # Install new cmake recent version to /opt
@@ -202,19 +226,26 @@ rm -rf $BUILDING_DIR/* || true
       -DCMAKE_INSTALL_PREFIX:PATH=/usr \
       -DINSTALL_ROOT=/usr \
       -DEXTERNALS_DOWNLOAD_DIR=$DOWNLOAD_DIR \
+      -DENABLE_QTVERSION=$DK_QTVERSION \
       -DENABLE_QTWEBENGINE=$DK_QTWEBENGINE
 
 # Low level libraries and Qt5 dependencies
 # NOTE: The order to compile each component here is very important.
 
 #/opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_libicu        -- -j$CPU_CORES
-#/opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_openssl       -- -j$CPU_CORES
+/opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_openssl       -- -j$CPU_CORES
 
 /opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_qt            -- -j$CPU_CORES    # depend of tiff, png, jpeg
 
 if [[ $DK_QTWEBENGINE = 0 ]] ; then
     /opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_qtwebkit  -- -j$CPU_CORES    # depend of Qt and libicu
 fi
+
+# Clean up previous openssl install
+
+rm -fr /usr/local/lib/libssl.a    || true
+rm -fr /usr/local/lib/libcrypto.a || true
+rm -fr /usr/local/include/openssl || true
 
 /opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_opencv        -- -j$CPU_CORES
 

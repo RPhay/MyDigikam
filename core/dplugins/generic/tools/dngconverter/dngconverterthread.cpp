@@ -50,10 +50,10 @@ public:
     {
     }
 
-    bool       backupOriginalRawFile;
-    bool       compressLossLess;
-    bool       updateFileDate;
-    int        previewMode;
+    bool backupOriginalRawFile;
+    bool compressLossLess;
+    bool updateFileDate;
+    int  previewMode;
 };
 
 DNGConverterActionThread::DNGConverterActionThread(QObject* const parent)
@@ -66,8 +66,11 @@ DNGConverterActionThread::DNGConverterActionThread(QObject* const parent)
 DNGConverterActionThread::~DNGConverterActionThread()
 {
     // cancel the thread
+
     cancel();
+
     // wait for the thread to finish
+
     wait();
 
     delete d;

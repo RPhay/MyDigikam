@@ -186,11 +186,11 @@ function(InstallKF5Component
 endfunction()
 
 if(MINGW)
-    set(KF5_VERSION 5.80) # we have Qt 5.14.2 available.
+    set(KF5_VERSION 5.84) # we have Qt 5.14.2 available.
 elseif(APPLE)
-    set(KF5_VERSION 5.80) # we have Qt 5.14.1 available.
+    set(KF5_VERSION 5.84) # we have Qt 5.14.1 available.
 else()
-    set(KF5_VERSION 5.80) # we have Qt 5.14.2 available.
+    set(KF5_VERSION 5.84) # we have Qt 5.14.2 available.
 endif()
 
 if(APPLE)
@@ -207,13 +207,13 @@ InstallKF5Component(solid               ${KF5_VERSION} ""                       
 InstallKF5Component(kcoreaddons         ${KF5_VERSION} ""                                                                   "")
 InstallKF5Component(threadweaver        ${KF5_VERSION} ""                                                                   "${MacosThreadWeaverPatch}")
 InstallKF5Component(kwindowsystem       ${KF5_VERSION} ""                                                                   "")
-InstallKF5Component(karchive            ${KF5_VERSION} ""                                                                   "")
+InstallKF5Component(karchive            ${KF5_VERSION} ""                                                                   "karchive-drop-zstd.patch")
 InstallKF5Component(kdbusaddons         ${KF5_VERSION} ""                                                                   "")
 InstallKF5Component(ki18n               ${KF5_VERSION} ""                                                                   "")
 InstallKF5Component(kcrash              ${KF5_VERSION} ""                                                                   "")
 InstallKF5Component(kcodecs             ${KF5_VERSION} ""                                                                   "")
 InstallKF5Component(kauth               ${KF5_VERSION} "${MacosKauthBackend}"                                               "")
-InstallKF5Component(kguiaddons          ${KF5_VERSION} ""                                                                   "")
+InstallKF5Component(kguiaddons          ${KF5_VERSION} ""                                                                   "kguiaddons-drop-wayland.patch")
 InstallKF5Component(kwidgetsaddons      ${KF5_VERSION} ""                                                                   "")
 InstallKF5Component(kitemviews          ${KF5_VERSION} ""                                                                   "")
 InstallKF5Component(kcompletion         ${KF5_VERSION} ""                                                                   "")

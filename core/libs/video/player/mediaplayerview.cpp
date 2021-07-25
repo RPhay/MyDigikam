@@ -501,9 +501,26 @@ void MediaPlayerView::slotImageCaptured(const QImage& image)
 
             if (meta->load(tempPath))
             {
-                DItemInfo dinfo(d->iface->itemInfo(d->currentItem));
+                QDateTime dateTime;
+                MetaEngine::ImageOrientation orientation = MetaEngine::ORIENTATION_NORMAL;
 
-                QDateTime dateTime = dinfo.dateTime();
+                if (d->iface)
+                {
+                    DItemInfo dinfo(d->iface->itemInfo(d->currentItem));
+
+                    dateTime    = dinfo.dateTime();
+                    orientation = (MetaEngine::ImageOrientation)dinfo.orientation();
+                }
+                else
+                {
+                    QScopedPointer<DMetadata> meta2(new DMetadata);
+
+                    if (meta2->load(d->currentItem.toLocalFile()))
+                    {
+                        dateTime    = meta2->getItemDateTime();
+                        orientation = meta2->getItemOrientation();
+                    }
+                }
 
                 if (dateTime.isValid())
                 {
@@ -514,11 +531,9 @@ void MediaPlayerView::slotImageCaptured(const QImage& image)
                     dateTime = QDateTime::currentDateTime();
                 }
 
-                MetaEngine::ImageOrientation orientation = MetaEngine::ORIENTATION_NORMAL;
-
-                if ((MetaEngine::ImageOrientation)dinfo.orientation() != MetaEngine::ORIENTATION_UNSPECIFIED)
+                if (orientation == MetaEngine::ORIENTATION_UNSPECIFIED)
                 {
-                    orientation = (MetaEngine::ImageOrientation)dinfo.orientation();
+                    orientation = MetaEngine::ORIENTATION_NORMAL;
                 }
 
                 meta->setImageDateTime(dateTime, true);
@@ -534,7 +549,10 @@ void MediaPlayerView::slotImageCaptured(const QImage& image)
 
             if (QFile::rename(tempPath, finalPath))
             {
-                d->iface->slotMetadataChangedForUrl(QUrl::fromLocalFile(finalPath));
+                if (d->iface)
+                {
+                    d->iface->slotMetadataChangedForUrl(QUrl::fromLocalFile(finalPath));
+                }
             }
             else
             {

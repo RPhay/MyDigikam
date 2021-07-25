@@ -1223,9 +1223,13 @@ MetaEngine::MetaDataMap MetaEngine::getExifTagsDataList(const QStringList& exifK
                      (key == QLatin1String("Exif.GPSInfo.GPSImgDirection")))
             {
                 // NOTE: special cases to render contents of these GPS info tags. See bug #435317.
+                // Check value byte size, otherwise Exiv2 crashes in the toRational() function.
 
-                num      = (*md).toRational().first;
-                den      = (*md).toRational().second;
+                if ((*md).size())
+                {
+                    num  = (*md).toRational().first;
+                    den  = (*md).toRational().second;
+                }
 
                 tagValue = (den == 0.0) ? QString::fromStdString(md->print())
                                         : QString::fromLatin1("%1 deg").arg(num / den);
@@ -1233,9 +1237,13 @@ MetaEngine::MetaDataMap MetaEngine::getExifTagsDataList(const QStringList& exifK
             else if (key == QLatin1String("Exif.GPSInfo.GPSSpeed"))
             {
                 // NOTE: special cases to render contents of these GPS info tags. See bug #435317.
+                // Check value byte size, otherwise Exiv2 crashes in the toRational() function.
 
-                num      = (*md).toRational().first;
-                den      = (*md).toRational().second;
+                if ((*md).size())
+                {
+                    num  = (*md).toRational().first;
+                    den  = (*md).toRational().second;
+                }
 
                 tagValue = (den == 0.0) ? QString::fromStdString(md->print())
                                         : tagValue = QString::number(num / den);

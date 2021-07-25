@@ -63,7 +63,7 @@ cd $ORIG_WD/icon-rcc
 rm -f CMakeCache.txt > /dev/null
 rm -f *.rcc > /dev/null
 
-cmake -DCMAKE_INSTALL_PREFIX="/usr" \
+/opt/cmake/bin/cmake -DCMAKE_INSTALL_PREFIX="/usr" \
       -DCMAKE_BUILD_TYPE=debug \
       -DCMAKE_COLOR_MAKEFILE=ON \
       -Wno-dev \
@@ -128,7 +128,11 @@ cp -r /usr/share/kservicetypes5           ./usr/share
 cp -r /usr/share/kxmlgui5                 ./usr/share
 cp -r /usr/share/kf5                      ./usr/share
 cp -r /usr/share/solid                    ./usr/share
-cp -r /usr/share/OpenCV                   ./usr/share
+
+# depending of OpenCV version installed, data directory is not the same.
+cp -r /usr/share/OpenCV                   ./usr/share  || true
+cp -r /usr/share/opencv4                  ./usr/share  || true
+
 cp -r /usr/share/dbus-1/interfaces/kf5*   ./usr/share/dbus-1/interfaces/
 cp -r /usr/share/dbus-1/services/*kde*    ./usr/share/dbus-1/services/
 cp -r /usr/${LIBSUFFIX}/libexec/kf5       ./usr/lib/libexec/
