@@ -39,6 +39,7 @@
 #include "dmediaservermngr.h"
 
 using namespace Digikam;
+using namespace DigikamGenericMediaServerPlugin;
 
 int main(int argc, char* argv[])
 {
