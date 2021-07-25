@@ -43,7 +43,7 @@ MediaServerPlugin::MediaServerPlugin(QObject* const parent)
 {
     // Start the Media Server if necessary
 
-    Digikam::DMediaServerMngr::instance()->loadAtStartup();
+    DMediaServerMngr::instance()->loadAtStartup();
 }
 
 MediaServerPlugin::~MediaServerPlugin()
@@ -54,7 +54,7 @@ void MediaServerPlugin::cleanUp()
 {
     // Stop the Media Server if necessary
 
-    Digikam::DMediaServerMngr::instance()->saveAtShutdown();
+    DMediaServerMngr::instance()->saveAtShutdown();
 }
 
 QString MediaServerPlugin::name() const

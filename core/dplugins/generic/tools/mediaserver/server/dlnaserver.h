@@ -48,7 +48,9 @@
 #include "Neptune.h"
 #include "PltMediaServer.h"
 
-namespace Digikam
+using namespace Digikam;
+
+namespace DigikamGenericMediaServerPlugin
 {
 
 /**
@@ -81,6 +83,6 @@ private:
     QByteArray iconData(const QImage& img, int size, QString& uri, int& depth) const;
 };
 
-} // namespace Digikam
+} // namespace DigikamGenericMediaServerPlugin
 
 #endif // DIGIKAM_DLNA_SERVER_H
