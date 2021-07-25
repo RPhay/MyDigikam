@@ -22,6 +22,7 @@
  * ============================================================ */
 
 // Qt includes
+#include "digikam_config.h"
 
 #include <QApplication>
 #include <QUrl>

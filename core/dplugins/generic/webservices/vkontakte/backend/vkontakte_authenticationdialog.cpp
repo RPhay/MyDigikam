@@ -56,7 +56,6 @@
 #include "digikam_debug.h"
 #include "vkontakte_util.h"
 
-using namespace Digikam;
 
 namespace Vkontakte
 {
@@ -78,7 +77,7 @@ public:
     QWebView*                        webView;
 
 #else
-    DNoWebWidget*                    webView;
+    Digikam::DNoWebWidget*           webView;
 
 #endif
 
@@ -113,7 +112,7 @@ AuthenticationDialog::AuthenticationDialog(QWidget* const parent)
     d->webView->page()->networkAccessManager()->setCookieJar(new QNetworkCookieJar());
 
 #else
-    d->webView = new DNoWebWidget(this);
+    d->webView = new Digikam::DNoWebWidget(this);
 
 #endif
 

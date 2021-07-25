@@ -113,7 +113,7 @@ public:
     {
     }
 
-#if defined HAVE_QWENENGINE || defined HAVE_QWEBKIT
+#if defined HAVE_QWEBENGINE || defined HAVE_QWEBKIT
     QPointer<HTMLWidget>                      htmlWidget;
 #else
     QPointer<DNoWebWidget>                    htmlWidget;
