@@ -61,7 +61,7 @@ Q_SIGNALS:
 
 // ---------------------------------------------------------------
 
-class MjpegFrame : public ActionJob
+class MjpegFrameTask : public ActionJob
 {
     Q_OBJECT
 
@@ -130,8 +130,8 @@ public:
 
 public:
 
-    explicit MjpegFrame();
-    ~MjpegFrame();
+    explicit MjpegFrameTask();
+    ~MjpegFrameTask();
 
     /**
      * Handle JPEG quality settings.
@@ -140,6 +140,18 @@ public:
      */
     bool setQuality(int qa);
     int  quality() const;
+
+    /**
+     * Handle interval in seconds between images.
+     */
+    void setInterval(int inter);
+    int  interval() const;
+
+    /**
+     * Handle images stream list as loop.
+     */
+    void setLoop(bool b);
+    bool isLoop() const;
 
     /// Setup the list of albums to share with MJPEG server.
     void setCollectionMap(const MjpegServerMap&);
@@ -169,7 +181,9 @@ private:
 
 private:
 
-    int            m_quality;       ///< jpeg compression [1...100].
+    bool           m_loop;          ///< Image stream as loop.
+    int            m_quality;       ///< Jpeg compression [1...100].
+    int            m_interval;      ///< Interval in seconds between inmages.
     QList<QUrl>    m_urlsList;      ///< Ordered list of list to stream.
     MjpegServerMap m_collectionMap; ///< The current albums collection to share.
 };

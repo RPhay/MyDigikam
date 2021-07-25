@@ -56,9 +56,11 @@ void MjpegFrameThread::createFrameJob(const MjpegServerMap& map)
 {
     ActionJobCollection collection;
 
-    MjpegFrame* const t = new MjpegFrame();
+    MjpegFrameTask* const t = new MjpegFrameTask();
     t->setCollectionMap(map);
     t->setQuality(75);
+    t->setInterval(5);
+    t->setLoop(true);
 
     connect(t, SIGNAL(signalFrameChanged(QByteArray)),
             this, SIGNAL(signalFrameChanged(QByteArray)));
@@ -70,17 +72,19 @@ void MjpegFrameThread::createFrameJob(const MjpegServerMap& map)
 
 // -----------------------------------------------------------
 
-MjpegFrame::MjpegFrame()
-    : ActionJob(nullptr),
-      m_quality(75)
+MjpegFrameTask::MjpegFrameTask()
+    : ActionJob (nullptr),
+      m_loop    (true),
+      m_quality (75),
+      m_interval(5)
 {
 }
 
-MjpegFrame::~MjpegFrame()
+MjpegFrameTask::~MjpegFrameTask()
 {
 }
 
-bool MjpegFrame::setQuality(int qa)
+bool MjpegFrameTask::setQuality(int qa)
 {
     if ((qa < 1) || (qa > 100))
     {
@@ -94,12 +98,32 @@ bool MjpegFrame::setQuality(int qa)
     return true;
 }
 
-int MjpegFrame::quality() const
+int MjpegFrameTask::quality() const
 {
     return m_quality;
 }
 
-void MjpegFrame::setCollectionMap(const MjpegServerMap& map)
+void MjpegFrameTask::setInterval(int inter)
+{
+    m_interval = inter;
+}
+
+int MjpegFrameTask::interval() const
+{
+    return m_interval;
+}
+
+void MjpegFrameTask::setLoop(bool b)
+{
+    m_loop = b;
+}
+
+bool MjpegFrameTask::isLoop() const
+{
+    return m_loop;
+}
+
+void MjpegFrameTask::setCollectionMap(const MjpegServerMap& map)
 {
     m_urlsList.clear();
 
@@ -109,7 +133,7 @@ void MjpegFrame::setCollectionMap(const MjpegServerMap& map)
     }
 }
 
-void MjpegFrame::insertOSDToFrame(QImage& frm, const OSDProperties& osd)
+void MjpegFrameTask::insertOSDToFrame(QImage& frm, const OSDProperties& osd)
 {
     // Title section
 
@@ -223,7 +247,7 @@ void MjpegFrame::insertOSDToFrame(QImage& frm, const OSDProperties& osd)
     }
 }
 
-QByteArray MjpegFrame::imageToJPEGArray(const QImage& frame, int quality)
+QByteArray MjpegFrameTask::imageToJPEGArray(const QImage& frame, int quality)
 {
     QByteArray outbuf;
     QBuffer buffer(&outbuf);
@@ -233,7 +257,7 @@ QByteArray MjpegFrame::imageToJPEGArray(const QImage& frame, int quality)
     return outbuf;
 }
 
-void MjpegFrame::run()
+void MjpegFrameTask::run()
 {
     OSDProperties osd;
     QImage img;
@@ -243,7 +267,12 @@ void MjpegFrame::run()
     {
         foreach (const QUrl& url, m_urlsList)
         {
-            qCDebug(DIGIKAM_GENERAL_LOG) << "MjpegFrame: Generate frame for" << url.toLocalFile();
+            if (m_cancel)
+            {
+                break;
+            }
+
+            qCDebug(DIGIKAM_GENERAL_LOG) << "MjpegStream: Generate frame for" << url.toLocalFile();
 
             osd.m_title          = url.fileName();
             osd.m_titlePos       = QPoint(280, 474);
@@ -259,19 +288,20 @@ void MjpegFrame::run()
 
             if (dimg.isNull())
             {
+                // TODO: generate error frame.
             }
             else
             {
                 img = dimg.copyQImage();
-                insertOSDToFrame(img, osd);
+// FIXME                insertOSDToFrame(img, osd);
 
                 emit signalFrameChanged(imageToJPEGArray(img, m_quality));
 
-                QThread::sleep(5);
+                QThread::sleep(m_interval);
             }
         }
     }
-    while (!m_cancel);
+    while (!m_cancel && m_loop);
 
     emit signalDone();
 }
