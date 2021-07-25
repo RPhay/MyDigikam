@@ -121,9 +121,12 @@ QString MjpegServerMngr::configStartServerOnStartupEntry() const
 
 void MjpegServerMngr::cleanUp()
 {
-    d->server->stop();
-    delete d->server;
-    d->server = nullptr;
+    if (d->server)
+    {
+        d->server->stop();
+        delete d->server;
+        d->server = nullptr;
+    }
 }
 
 bool MjpegServerMngr::loadAtStartup()
