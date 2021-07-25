@@ -1241,8 +1241,8 @@ MetaEngine::MetaDataMap MetaEngine::getExifTagsDataList(const QStringList& exifK
 
                 if ((*md).size())
                 {
-                    num = (*md).toRational().first;
-                    den = (*md).toRational().second;
+                    num  = (*md).toRational().first;
+                    den  = (*md).toRational().second;
                 }
 
                 tagValue = (den == 0.0) ? QString::fromStdString(md->print())
