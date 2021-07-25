@@ -20,5 +20,5 @@ BUGFIXES:
 009 ==> 440030 - Database migration 7.2 -> 7.3 fails.
 010 ==> 440015 - Metadata Template insists on putting in a country name.
 011 ==> 440127 - Program crashes using SEARCH or KEYWORD tabs - JPEG 2000 images relevant.
-012 ==> 
-
+012 ==> 440192 - Add Advanced Metadata read/write options for title tags.
+013 ==> 
