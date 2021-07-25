@@ -171,7 +171,7 @@ MjpegStreamDlg::MjpegStreamDlg(QObject* const /*parent*/,
     QString txt;
 
     explanation->setText(i18nc("@info",
-                               "The %1 server allows to share items through the local network using a web browser."
+                               "The %1 server allows to share items through the local network using a web browser.",
                                QLatin1String("<a href='https://en.wikipedia.org/wiki/Motion_JPEG'>Motion JPEG</a>")));
 
     grid->addWidget(d->startOnStartup, 1, 0, 1, 6);
