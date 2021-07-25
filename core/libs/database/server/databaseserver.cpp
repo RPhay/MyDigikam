@@ -689,7 +689,6 @@ DatabaseServerError DatabaseServer::initMysqlDatabase() const
             {
                 if (query.next() && (query.lastError().type() == QSqlError::NoError))
                 {
-
                     QRegExp reg(QLatin1String("\\d+\\.\\d+\\.\\d+"));
 
                     if (reg.indexIn(query.value(0).toString()) != -1)
@@ -747,7 +746,9 @@ DatabaseServerError DatabaseServer::checkUpgradeMysqlDatabase()
 
     delete versionProcess;
 
-    if (serverVersion == d->dbVersion)
+    if (d->dbVersion.isEmpty()        ||
+        serverVersion.isEmpty()       ||
+        (serverVersion == d->dbVersion))
     {
         return result;
     }
