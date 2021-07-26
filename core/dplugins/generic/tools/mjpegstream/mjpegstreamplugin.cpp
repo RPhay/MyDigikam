@@ -84,7 +84,10 @@ QString MjpegStreamPlugin::details() const
                 "<p>Motion JPEG is a video compression format in which each video frame or interlaced field of "
                 "a digital video sequence is compressed separately as a JPEG image. MJPEG streams is a standard "
                 "which allows network clients to be connected without additional module. Most major web browsers "
-                "and players support MJPEG stream.</p>");
+                "and players support MJPEG stream.</p>"
+                "<p>To access to stream from your browser, use http://address:port as url, with address the MJPEG address, "
+                "and port the MJPEG port set in config dialog. More than one computer can be connected to the MJPEG server "
+                "at the same time.");
 }
 
 QList<DPluginAuthor> MjpegStreamPlugin::authors() const
