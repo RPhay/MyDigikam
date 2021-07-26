@@ -46,7 +46,6 @@
 #include "dnotificationwrapper.h"
 #include "mjpegserver.h"
 #include "mjpegframethread.h"
-#include "mjpegstreamsettings.h"
 
 using namespace Digikam;
 
@@ -85,6 +84,8 @@ public:
 
     /// The current albums collection to share.
     MjpegServerMap       collectionMap;
+
+    MjpegStreamSettings  settings;
 
     static const QString configGroupName;
     static const QString configStartServerOnStartupEntry;
@@ -209,11 +210,21 @@ MjpegServerMap MjpegServerMngr::collectionMap() const
     return d->collectionMap;
 }
 
+void MjpegServerMngr::setSettings(const MjpegStreamSettings& set)
+{
+    d->settings = set;
+}
+
+MjpegStreamSettings MjpegServerMngr::settings() const
+{
+    return d->settings;
+}
+
 bool MjpegServerMngr::startMjpegServer()
 {
     if (!d->server)
     {
-        d->server = new MjpegServer();
+        d->server = new MjpegServer(QString(), d->settings.port);
         d->server->setRate(1);
         d->server->start();
     }
@@ -226,9 +237,8 @@ bool MjpegServerMngr::startMjpegServer()
     }
 
     d->thread = new MjpegFrameThread(this);
-    MjpegStreamSettings set;
-    set.setCollectionMap(d->collectionMap);
-    d->thread->createFrameJob(set);
+    d->settings.setCollectionMap(d->collectionMap);
+    d->thread->createFrameJob(d->settings);
 
     connect(d->thread, SIGNAL(signalFrameChanged(QByteArray)),
             d->server, SLOT(slotWriteFrame(QByteArray)));

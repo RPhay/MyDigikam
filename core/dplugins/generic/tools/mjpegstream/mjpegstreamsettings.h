@@ -56,11 +56,11 @@ public:
 
 public:
 
-    int            m_port;          ///< IP port to use with MJPEG Server.
-    bool           m_loop;          ///< Image stream as loop.
-    int            m_quality;       ///< Jpeg compression [1...100].
-    int            m_interval;      ///< Interval in seconds between inmages.
-    QList<QUrl>    m_urlsList;      ///< Ordered list of list to stream.
+    int            port;          ///< IP port to use with MJPEG Server.
+    bool           loop;          ///< Image stream as loop.
+    int            quality;       ///< Jpeg compression [1...100].
+    int            interval;      ///< Interval in seconds between inmages.
+    QList<QUrl>    urlsList;      ///< Ordered list of list to stream.
 };
 
 } // namespace DigikamGenericMjpegStreamPlugin

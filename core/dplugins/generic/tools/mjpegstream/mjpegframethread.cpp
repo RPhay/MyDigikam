@@ -197,7 +197,7 @@ QByteArray MjpegFrameTask::imageToJPEGArray(const QImage& frame)
     QByteArray outbuf;
     QBuffer buffer(&outbuf);
     buffer.open(QIODevice::WriteOnly);
-    frame.save(&buffer, "JPEG", m_set.m_quality);
+    frame.save(&buffer, "JPEG", m_set.quality);
 
     return outbuf;
 }
@@ -210,7 +210,7 @@ void MjpegFrameTask::run()
 
     do
     {
-        foreach (const QUrl& url, m_set.m_urlsList)
+        foreach (const QUrl& url, m_set.urlsList)
         {
             if (m_cancel)
             {
@@ -242,11 +242,11 @@ void MjpegFrameTask::run()
 
                 emit signalFrameChanged(imageToJPEGArray(img));
 
-                QThread::sleep(m_set.m_interval);
+                QThread::sleep(m_set.interval);
             }
         }
     }
-    while (!m_cancel && m_set.m_loop);
+    while (!m_cancel && m_set.loop);
 
     emit signalDone();
 }

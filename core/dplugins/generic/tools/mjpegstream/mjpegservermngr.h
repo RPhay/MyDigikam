@@ -35,6 +35,7 @@
 // Local includes
 
 #include "mjpegserver.h"
+#include "mjpegstreamsettings.h"
 
 namespace DigikamGenericMjpegStreamPlugin
 {
@@ -56,6 +57,12 @@ public:
 
     /// Return the current album map shared.
     MjpegServerMap collectionMap()           const;
+
+    /// Setup the MJPEGstream settings.
+    void setSettings(const MjpegStreamSettings& set);
+
+    /// Return the MJPEG stream settings.
+    MjpegStreamSettings settings()           const;
 
     /// Start the DLNA server and share the contents. Return true is all is on-line.
     bool startMjpegServer();

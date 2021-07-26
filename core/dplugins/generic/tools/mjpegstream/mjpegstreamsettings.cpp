@@ -30,10 +30,10 @@ namespace DigikamGenericMjpegStreamPlugin
 {
 
 MjpegStreamSettings::MjpegStreamSettings()
-    : m_port          (8080),
-      m_loop          (true),
-      m_quality       (75),
-      m_interval      (5)
+    : port    (8080),
+      loop    (true),
+      quality (75),
+      interval(5)
 {
 }
 
@@ -43,28 +43,28 @@ MjpegStreamSettings::~MjpegStreamSettings()
 
 void MjpegStreamSettings::setCollectionMap(const MjpegServerMap& map)
 {
-    m_urlsList.clear();
+    urlsList.clear();
 
     for (MjpegServerMap::const_iterator it = map.constBegin() ; it != map.constEnd() ; ++it)
     {
-        m_urlsList.append(it.value());
+        urlsList.append(it.value());
     }
 }
 
 void MjpegStreamSettings::readSettings(KConfigGroup& group)
 {
-    m_port     = group.readEntry("MJPEGStreamPort",     8080);
-    m_loop     = group.readEntry("MJPEGStreamLoop",     true);
-    m_quality  = group.readEntry("MJPEGStreamQuality",  75);
-    m_interval = group.readEntry("MJPEGStreamInterval", 5);
+    port     = group.readEntry("MJPEGStreamPort",     8080);
+    loop     = group.readEntry("MJPEGStreamLoop",     true);
+    quality  = group.readEntry("MJPEGStreamQuality",  75);
+    interval = group.readEntry("MJPEGStreamInterval", 5);
 }
 
 void MjpegStreamSettings::writeSettings(KConfigGroup& group)
 {
-    group.writeEntry("MJPEGStreamPort",     m_port);
-    group.writeEntry("MJPEGStreamLoop",     m_loop);
-    group.writeEntry("MJPEGStreamQuality",  m_quality);
-    group.writeEntry("MJPEGStreamInterval", m_interval);
+    group.writeEntry("MJPEGStreamPort",     port);
+    group.writeEntry("MJPEGStreamLoop",     loop);
+    group.writeEntry("MJPEGStreamQuality",  quality);
+    group.writeEntry("MJPEGStreamInterval", interval);
 }
 
 } // namespace DigikamGenericMjpegStreamPlugin
