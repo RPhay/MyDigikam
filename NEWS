@@ -25,4 +25,5 @@ BUGFIXES:
 013 ==> 440249 - digiKam collapse when Pixel XL image metadata tab is selected.
 014 ==> 440219 - Suggestion: Dynamic Albums.
 015 ==> 440212 - digiKam 7.3.0 fails to update the database schema from version 12 to version 13.
-016 ==> 
+016 ==> 440216 - digiKam is duplicating existing EXIF tags on metadata save.
+017 ==> 
