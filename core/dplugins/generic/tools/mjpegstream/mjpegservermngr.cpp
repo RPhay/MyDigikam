@@ -134,9 +134,9 @@ void MjpegServerMngr::cleanUp()
 bool MjpegServerMngr::loadAtStartup()
 {
     KSharedConfig::Ptr config    = KSharedConfig::openConfig();
-    KConfigGroup dlnaConfigGroup = config->group(configGroupName());
-    bool startServerOnStartup    = dlnaConfigGroup.readEntry(configStartServerOnStartupEntry(), false);
-    bool result                  = true;
+    KConfigGroup mjpegConfigGroup = config->group(configGroupName());
+    bool startServerOnStartup     = mjpegConfigGroup.readEntry(configStartServerOnStartupEntry(), false);
+    bool result                   = true;
 
     if (startServerOnStartup)
     {
@@ -155,9 +155,9 @@ bool MjpegServerMngr::loadAtStartup()
 
 void MjpegServerMngr::saveAtShutdown()
 {
-    KSharedConfig::Ptr config    = KSharedConfig::openConfig();
-    KConfigGroup dlnaConfigGroup = config->group(configGroupName());
-    bool startServerOnStartup    = dlnaConfigGroup.readEntry(configStartServerOnStartupEntry(), false);
+    KSharedConfig::Ptr config     = KSharedConfig::openConfig();
+    KConfigGroup mjpegConfigGroup = config->group(configGroupName());
+    bool startServerOnStartup     = mjpegConfigGroup.readEntry(configStartServerOnStartupEntry(), false);
 
     if (startServerOnStartup)
     {
