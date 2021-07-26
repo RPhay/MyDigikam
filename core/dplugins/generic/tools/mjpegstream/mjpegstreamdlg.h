@@ -60,6 +60,7 @@ private Q_SLOTS:
     void accept()                   override;
     void slotToggleMjpegServer();
     void slotSelectionChanged();
+    void slotSettingsChanged();
 
 private:
 

@@ -34,6 +34,7 @@
 #include <QStyle>
 #include <QIcon>
 #include <QCheckBox>
+#include <QSpinBox>
 
 // KDE includes
 
@@ -71,7 +72,9 @@ public:
         listView        (nullptr),
         iface           (nullptr),
         page            (nullptr),
-        buttons         (nullptr)
+        buttons         (nullptr),
+        portLbl         (nullptr),
+        srvPort         (nullptr)
     {
     }
 
@@ -90,6 +93,9 @@ public:
     DInfoInterface*     iface;
     QWidget*            page;
     QDialogButtonBox*   buttons;
+    QLabel*             portLbl;
+    QSpinBox*           srvPort;
+    MjpegStreamSettings settings;
 };
 
 MjpegStreamDlg::MjpegStreamDlg(QObject* const /*parent*/,
@@ -157,6 +163,12 @@ MjpegStreamDlg::MjpegStreamDlg(QObject* const /*parent*/,
     d->startOnStartup->setWhatsThis(i18nc("@info", "Set this option to turn-on the MJPEG server at application start-up automatically"));
     d->startOnStartup->setChecked(true);
 
+    d->portLbl                = new QLabel(i18nc("@label", "Server Port:"));
+    d->srvPort                = new QSpinBox(this);
+    d->srvPort->setRange(1025, 65535);
+    d->srvPort->setSingleStep(1);
+    d->srvPort->setValue(8080);
+
     d->srvButton              = new QPushButton(this);
     d->srvStatus              = new QLabel(this);
     d->progress               = new WorkingWidget(this);
@@ -178,13 +190,15 @@ MjpegStreamDlg::MjpegStreamDlg(QObject* const /*parent*/,
                                QLatin1String("<a href='https://en.wikipedia.org/wiki/Motion_JPEG'>Motion JPEG</a>")));
 
     grid->addWidget(d->startOnStartup, 1, 0, 1, 6);
-    grid->addWidget(d->srvButton,      2, 0, 1, 1);
-    grid->addWidget(d->srvStatus,      2, 1, 1, 1);
-    grid->addWidget(d->aStats,         2, 2, 1, 1);
-    grid->addWidget(d->separator,      2, 3, 1, 1);
-    grid->addWidget(d->iStats,         2, 4, 1, 1);
-    grid->addWidget(d->progress,       2, 5, 1, 1);
-    grid->addWidget(explanation,       3, 0, 1, 6);
+    grid->addWidget(d->portLbl,        2, 0, 1, 1);
+    grid->addWidget(d->srvPort,        2, 1, 1, 1);
+    grid->addWidget(d->srvButton,      3, 0, 1, 1);
+    grid->addWidget(d->srvStatus,      3, 1, 1, 1);
+    grid->addWidget(d->aStats,         3, 2, 1, 1);
+    grid->addWidget(d->separator,      3, 3, 1, 1);
+    grid->addWidget(d->iStats,         3, 4, 1, 1);
+    grid->addWidget(d->progress,       3, 5, 1, 1);
+    grid->addWidget(explanation,       4, 0, 1, 6);
     grid->setColumnStretch(1, 10);
     grid->setRowStretch(0, 10);
     grid->setSpacing(spacing);
@@ -199,6 +213,9 @@ MjpegStreamDlg::MjpegStreamDlg(QObject* const /*parent*/,
 
     connect(m_buttons->button(QDialogButtonBox::Ok), &QPushButton::clicked,
             this, &MjpegStreamDlg::accept);
+
+    connect(d->srvPort, SIGNAL(valueChanged(int)),
+            this, SLOT(slotSettingsChnaged()));
 
     // -------------------
 
@@ -247,6 +264,8 @@ void MjpegStreamDlg::readSettings()
     KConfigGroup group        = config->group(d->mngr->configGroupName());
 
     d->startOnStartup->setChecked(group.readEntry(d->mngr->configStartServerOnStartupEntry(), false));
+    d->settings.readSettings(group);
+    slotSettingsChanged();
 
     updateServerStatus();
 }
@@ -258,6 +277,7 @@ void MjpegStreamDlg::saveSettings()
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
     KConfigGroup group        = config->group(d->mngr->configGroupName());
     group.writeEntry(d->mngr->configStartServerOnStartupEntry(), d->startOnStartup->isChecked());
+    d->settings.writeSettings(group);
     config->sync();
 }
 
@@ -339,6 +359,8 @@ void MjpegStreamDlg::startMjpegServer()
         return;
     }
 
+    d->mngr->setSettings(d->settings);
+
     if (!d->mngr->startMjpegServer())
     {
         QMessageBox::warning(this, i18nc("@title", "Starting Media Server"),
@@ -352,6 +374,13 @@ void MjpegStreamDlg::startMjpegServer()
     updateServerStatus();
 }
 
+void MjpegStreamDlg::slotSettingsChanged()
+{
+    d->srvPort->blockSignals(true);
+    d->settings.port = d->srvPort->value();
+    d->srvPort->blockSignals(false);
+}
+
 void MjpegStreamDlg::slotSelectionChanged()
 {
     d->dirty = true;
@@ -359,15 +388,22 @@ void MjpegStreamDlg::slotSelectionChanged()
 
 void MjpegStreamDlg::slotToggleMjpegServer()
 {
+    bool b;
+
     if (!d->mngr->isRunning())
     {
+        b = true;
         startMjpegServer();
     }
     else
     {
+        b = false;
         d->mngr->cleanUp();
         updateServerStatus();
     }
+
+    d->portLbl->setDisabled(b);
+    d->srvPort->setDisabled(b);
 }
 
 } // namespace DigikamGenericMjpegStreamPlugin

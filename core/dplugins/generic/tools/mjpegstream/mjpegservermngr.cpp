@@ -123,6 +123,13 @@ QString MjpegServerMngr::configStartServerOnStartupEntry() const
 
 void MjpegServerMngr::cleanUp()
 {
+    if (d->thread)
+    {
+        d->thread->cancel();
+        delete d->thread;
+        d->thread = nullptr;
+    }
+
     if (d->server)
     {
         d->server->stop();
