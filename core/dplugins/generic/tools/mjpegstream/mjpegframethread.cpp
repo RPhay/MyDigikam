@@ -81,117 +81,6 @@ MjpegFrameTask::~MjpegFrameTask()
 {
 }
 
-void MjpegFrameTask::insertOSDToFrame(QImage& frm, const OSDProperties& osd)
-{
-    // Title section
-
-    QString mess = osd.m_title;
-
-    if (osd.m_titleShowDate)
-    {
-        // date must be provided by caller
-
-        mess.append(osd.m_titleDate.toString(QLatin1String("\ndd-MM-yyyy hh:mm:ss.zzz\n")));
-    }
-
-    if (osd.m_titleShowRelDate)
-    {
-        // jour = 24 * 60 * 60 * 1000 = 86 400 000
-
-        int nbj   = osd.m_titleRelDate  / 86400000;
-        int reste =  osd.m_titleRelDate  % 86400000;
-
-        // h = 60 * 60 * 1000 = 3600000
-
-        int nbh   = reste  / 3600000;
-        reste     = reste % 3600000;
-
-        // m =  60 * 1000 = 60000
-
-        int nbm   = reste  / 60000;
-        reste     = reste % 60000;
-
-        // s =  1000
-
-        int nbs   = reste  / 1000;
-        int nbms  = reste % 1000;
-        QString extraDateFormat = QString::number(nbj) +
-                                  QLatin1String(":")   +
-                                  QString::number(nbh) +
-                                  QLatin1String(":")   +
-                                  QString::number(nbm) +
-                                  QLatin1String(":")   +
-                                  QString::number(nbs) +
-                                  QLatin1String(":")   +
-                                  QString::number(nbms)+
-                                  QLatin1String(" ms");
-        mess.append(extraDateFormat);
-
-        //mess.append(QLatin1String(" ms"));
-    }
-
-    QPainter p(&frm);
-
-    QFontMetrics titleMt(osd.m_titleFnt);
-    p.setFont(osd.m_titleFnt);
-
-    QRect titleRect = titleMt.boundingRect(0, 0, frm.width(), frm.height(), 0, mess);
-    QRect bgTitleRect(osd.m_titlePos.x(),
-                      osd.m_titlePos.y() - titleRect.height() + 1,
-                      titleRect.width(),
-                      titleRect.height() + 3);
-
-    p.fillRect(bgTitleRect, osd.m_titleBg);
-
-    p.setPen(QPen(Qt::white));
-    p.drawText(bgTitleRect, osd.m_titleAlign, mess);
-
-    if (!osd.m_titleLogo.isNull())
-    {
-        p.drawImage(osd.m_titlePos.x(), osd.m_titlePos.y() + 5, osd.m_titleLogo);
-    }
-
-    // Description section
-
-    if (!osd.m_desc.isEmpty())
-    {
-        QFontMetrics descMt(osd.m_descFnt);
-        p.setFont(osd.m_descFnt);
-
-        QRect descRect = descMt.boundingRect(0, 0, frm.width(), frm.height(),
-                                             0, osd.m_desc);
-        QRect bgDescRect(osd.m_descPos.x(),
-                         osd.m_descPos.y() - descRect.height() + 1,
-                         descRect.width(),
-                         descRect.height() + 3);
-
-        p.fillRect(bgDescRect, osd.m_descBg);
-
-        p.setPen(QPen(Qt::white));
-        p.drawText(bgDescRect, osd.m_descAlign, osd.m_desc);
-    }
-
-    // Comment section
-
-    if (!osd.m_comment.isEmpty())
-    {
-        QFontMetrics commentMt(osd.m_commentFnt);
-        p.setFont(osd.m_commentFnt);
-
-        QRect commentRect = commentMt.boundingRect(0, 0, frm.width(), frm.height(),
-                                                   0, osd.m_comment);
-        QRect bgCommentRect(osd.m_commentPos.x(),
-                            osd.m_commentPos.y() - commentRect.height() + 1,
-                            commentRect.width(),
-                            commentRect.height() + 3);
-
-        p.fillRect(bgCommentRect, osd.m_commentBg);
-
-        p.setPen(QPen(Qt::white));
-        p.drawText(bgCommentRect, osd.m_commentAlign, osd.m_comment);
-    }
-}
-
 QByteArray MjpegFrameTask::imageToJPEGArray(const QImage& frame)
 {
     QByteArray outbuf;
@@ -204,7 +93,6 @@ QByteArray MjpegFrameTask::imageToJPEGArray(const QImage& frame)
 
 void MjpegFrameTask::run()
 {
-    OSDProperties osd;
     QImage img;
     DImg dimg;
 
@@ -219,16 +107,6 @@ void MjpegFrameTask::run()
 
             qCDebug(DIGIKAM_GENERAL_LOG) << "MjpegStream: Generate frame for" << url.toLocalFile();
 
-            osd.m_title          = url.fileName();
-            osd.m_titlePos       = QPoint(280, 474);
-            osd.m_titleFnt.setPixelSize(15);
-            osd.m_titleBg        = Qt::black;
-            osd.m_desc           = QLatin1String("digiKam");
-            osd.m_descPos        = QPoint(330, 90);
-            osd.m_descFnt.setPixelSize(26);
-            osd.m_descAlign      = Qt::AlignCenter;
-            osd.m_descBg         = Qt::black;
-
             dimg = PreviewLoadThread::loadSynchronously(url.toLocalFile(), PreviewSettings(), 1920);
 
             if (dimg.isNull())
@@ -238,7 +116,6 @@ void MjpegFrameTask::run()
             else
             {
                 img = dimg.copyQImage();
-// FIXME                insertOSDToFrame(img, osd);
 
                 emit signalFrameChanged(imageToJPEGArray(img));
 

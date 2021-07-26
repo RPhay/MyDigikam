@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2021-07-24
- * Description : a MJPEG frame generator.
+ * Description : MJPEG frame on screen display.
  *
  * Copyright (C) 2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
@@ -20,8 +20,8 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_MJPEG_FRAME_THREAD_H
-#define DIGIKAM_MJPEG_FRAME_THREAD_H
+#ifndef DIGIKAM_MJPEG_FRAME_OSD_H
+#define DIGIKAM_MJPEG_FRAME_OSD_H
 
 // Qt includes
 
@@ -33,67 +33,54 @@
 #include <QImage>
 #include <QDateTime>
 
-// Local includes
-
-#include "actionthread.h"
-#include "mjpegserver.h"
-#include "mjpegstreamsettings.h"
-
-using namespace Digikam;
-
 namespace DigikamGenericMjpegStreamPlugin
 {
 
-class MjpegFrameThread : public ActionThreadBase
+class MjpegFrameOsd
 {
-    Q_OBJECT
 
 public:
 
-    explicit MjpegFrameThread(QObject* const parent);
-    ~MjpegFrameThread() override;
-
-    void createFrameJob(const MjpegStreamSettings&);
-
-Q_SIGNALS:
-
-    void signalFrameChanged(const QByteArray&);
-};
-
-// ---------------------------------------------------------------
-
-class MjpegFrameTask : public ActionJob
-{
-    Q_OBJECT
+    MjpegFrameOsd();
+    ~MjpegFrameOsd();
 
 public:
 
-    explicit MjpegFrameTask(const MjpegStreamSettings& set);
-    ~MjpegFrameTask();
+    QString       m_title;
+    bool          m_titleShowDate;
+    QDateTime     m_titleDate;          ///< Local date to show
+    bool          m_titleShowRelDate;
+    quint64       m_titleRelDate;       ///< Relative date to show  get from chrono device
+    QPoint        m_titlePos;
+    QFont         m_titleFnt;
+    Qt::Alignment m_titleAlign;
+    QColor        m_titleBg;
+    QImage        m_titleLogo;
+
+    // -----
+
+    QString       m_desc;
+    QPoint        m_descPos;
+    QFont         m_descFnt;
+    Qt::Alignment m_descAlign;
+    QColor        m_descBg;
+
+    // -----
+
+    QString       m_comment;
+    QPoint        m_commentPos;
+    QFont         m_commentFnt;
+    Qt::Alignment m_commentAlign;
+    QColor        m_commentBg;
 
 public:
 
     /**
-     * Convert a QImage to a byte-aaray off JPEG data file.
+     * Insert OSD on frame.
      */
-    QByteArray imageToJPEGArray(const QImage& frame);
-
-Q_SIGNALS:
-
-    /**
-     * Emit JPEG frames from generator.
-     */
-    void signalFrameChanged(const QByteArray& frame);
-
-private:
-
-    void run();
-
-private:
-
-    MjpegStreamSettings m_set;
+    void insertOsdToFrame(QImage& frame, const MjpegFrameOsd& osd = MjpegFrameOsd());
 };
 
 } // namespace DigikamGenericMjpegStreamPlugin
 
-#endif // DIGIKAM_MJPEG_FRAME_THREAD_H
+#endif // DIGIKAM_MJPEG_FRAME_OSD_H

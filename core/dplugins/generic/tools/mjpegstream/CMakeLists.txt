@@ -19,6 +19,7 @@ include_directories($<TARGET_PROPERTY:Qt5::Widgets,INTERFACE_INCLUDE_DIRECTORIES
 
 set(libmjpegstream_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/mjpegframethread.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/mjpegframeosd.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/mjpegserver.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/mjpegserver_p.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/mjpegservermngr.cpp
