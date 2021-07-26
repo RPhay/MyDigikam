@@ -726,7 +726,7 @@ void AlbumManager::addFakeConnection()
         // workaround for the problem mariaDB >= 10.2 and QTBUG-63108
         // from a Qt minimum version of >= 5.9.2 we can remove this workaround
 
-        QSqlDatabase::addDatabase(QLatin1String("QMYSQL"), QLatin1String("FakeConnection"));
+        //QSqlDatabase::addDatabase(QLatin1String("QMYSQL"), QLatin1String("FakeConnection"));
         d->dbFakeConnection = true;
     }
 }
@@ -735,7 +735,7 @@ void AlbumManager::removeFakeConnection()
 {
     if (d->dbFakeConnection)
     {
-        QSqlDatabase::removeDatabase(QLatin1String("FakeConnection"));
+        //QSqlDatabase::removeDatabase(QLatin1String("FakeConnection"));
     }
 }
 
