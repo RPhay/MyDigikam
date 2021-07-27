@@ -26,6 +26,16 @@ if [[ "$OS_NAME" != "ubuntu" ]] ; then
 fi
 
 
+# for downloading package information from all configured sources.'
+
+sudo apt-get update
+sudo apt-get upgrade 
+
+# benefit from a higher version of certain software , update the key
+
+sudo apt-key adv --refresh-keys --keyserver keyserver.ubuntu.com
+sudo add-apt-repository "deb http://security.ubuntu.com/ubuntu xenial-security main"
+
 #Installing cmake
 sudo snap install cmake
 
