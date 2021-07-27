@@ -9,6 +9,23 @@
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
 #
 
+#Check OS name and version.
+
+OS_NAME=$(awk '/DISTRIB_ID=/' /etc/*-release | sed 's/DISTRIB_ID=//' | sed 's/\"//' | sed 's/\"//' | tr '[:upper:]' '[:lower:]')
+OS_ARCH=$(uname -m | sed 's/x86_//;s/i[3-6]86/32/')
+OS_VERSION=$(awk '/DISTRIB_RELEASE=/' /etc/*-release | sed 's/DISTRIB_RELEASE=//' | sed 's/[.]0/./')
+
+echo $OS_NAME
+echo $OS_ARCH
+echo $OS_VERSION
+
+
+if [[ "$OS_NAME" != "ubuntu" ]] ; then
+    echo "Not running Linux ubuntu..."
+    exit -1
+fi
+
+
 #Installing cmake
 sudo snap install cmake
 
