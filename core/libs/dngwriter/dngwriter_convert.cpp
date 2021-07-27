@@ -40,7 +40,7 @@ int DNGWriter::convert()
         QScopedPointer<DRawInfo> identify(new DRawInfo);
         QScopedPointer<DRawInfo> identifyMake(new DRawInfo);
 
-        ret = d->importRaw(identify.get(), identifyMake.get());
+        ret = d->importRaw(identify.data(), identifyMake.data());
 
         if (ret != PROCESS_CONTINUE)
         {
@@ -49,7 +49,7 @@ int DNGWriter::convert()
 
         // -----------------------------------------------------------------------------------------
 
-        ret = d->identMosaic(identify.get(), identifyMake.get());
+        ret = d->identMosaic(identify.data(), identifyMake.data());
 
         if (ret != PROCESS_CONTINUE)
         {
@@ -100,7 +100,7 @@ int DNGWriter::convert()
 
         AutoPtr<dng_negative> negative(host.Make_dng_negative());
 
-        ret = d->createNegative(negative, identify.get());
+        ret = d->createNegative(negative, identify.data());
 
         if (ret != PROCESS_CONTINUE)
         {
@@ -112,7 +112,7 @@ int DNGWriter::convert()
         QScopedPointer<DMetadata> meta(new DMetadata);
         d->exif = negative->GetExif();
 
-        ret = d->storeExif(host, negative, identify.get(), identifyMake.get(), meta.get());
+        ret = d->storeExif(host, negative, identify.data(), identifyMake.data(), meta.data());
 
         if (ret != PROCESS_CONTINUE)
         {
@@ -121,7 +121,7 @@ int DNGWriter::convert()
 
         // -----------------------------------------------------------------------------------------
 
-        ret = d->storeMakernote(host, negative, identify.get(), identifyMake.get(), meta.get());
+        ret = d->storeMakernote(host, negative, identify.data(), identifyMake.data(), meta.data());
 
         if (ret != PROCESS_CONTINUE)
         {
@@ -130,7 +130,7 @@ int DNGWriter::convert()
 
         // -----------------------------------------------------------------------------------------
 
-        ret = d->storeXmp(host, negative, identify.get(), identifyMake.get(), meta.get());
+        ret = d->storeXmp(host, negative, identify.data(), identifyMake.data(), meta.data());
 
         if (ret != PROCESS_CONTINUE)
         {
