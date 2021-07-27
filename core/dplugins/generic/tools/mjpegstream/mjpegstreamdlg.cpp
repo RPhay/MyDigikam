@@ -74,7 +74,9 @@ public:
         page            (nullptr),
         buttons         (nullptr),
         portLbl         (nullptr),
-        srvPort         (nullptr)
+        srvPort         (nullptr),
+        interLbl        (nullptr),
+        interval        (nullptr)
     {
     }
 
@@ -95,6 +97,8 @@ public:
     QDialogButtonBox*   buttons;
     QLabel*             portLbl;
     QSpinBox*           srvPort;
+    QLabel*             interLbl;
+    QSpinBox*           interval;
     MjpegStreamSettings settings;
 };
 
@@ -169,6 +173,12 @@ MjpegStreamDlg::MjpegStreamDlg(QObject* const /*parent*/,
     d->srvPort->setSingleStep(1);
     d->srvPort->setValue(8080);
 
+    d->interLbl               = new QLabel(i18nc("@label", "Interval (s):"));
+    d->interval               = new QSpinBox(this);
+    d->interval->setRange(1, 30);
+    d->interval->setSingleStep(1);
+    d->interval->setValue(5);
+
     d->srvButton              = new QPushButton(this);
     d->srvStatus              = new QLabel(this);
     d->progress               = new WorkingWidget(this);
@@ -194,6 +204,8 @@ MjpegStreamDlg::MjpegStreamDlg(QObject* const /*parent*/,
     grid->addWidget(d->startOnStartup, 1, 0, 1, 6);
     grid->addWidget(d->portLbl,        2, 0, 1, 1);
     grid->addWidget(d->srvPort,        2, 1, 1, 1);
+    grid->addWidget(d->interLbl,       2, 2, 1, 1);
+    grid->addWidget(d->interval,       2, 4, 1, 1);
     grid->addWidget(d->srvButton,      3, 0, 1, 1);
     grid->addWidget(d->srvStatus,      3, 1, 1, 1);
     grid->addWidget(d->aStats,         3, 2, 1, 1);
@@ -202,6 +214,7 @@ MjpegStreamDlg::MjpegStreamDlg(QObject* const /*parent*/,
     grid->addWidget(d->progress,       3, 5, 1, 1);
     grid->addWidget(explanation,       4, 0, 1, 6);
     grid->setColumnStretch(1, 10);
+    grid->setColumnStretch(5, 10);
     grid->setRowStretch(0, 10);
     grid->setSpacing(spacing);
 
@@ -217,6 +230,9 @@ MjpegStreamDlg::MjpegStreamDlg(QObject* const /*parent*/,
             this, &MjpegStreamDlg::accept);
 
     connect(d->srvPort, SIGNAL(valueChanged(int)),
+            this, SLOT(slotSettingsChnaged()));
+
+    connect(d->interval, SIGNAL(valueChanged(int)),
             this, SLOT(slotSettingsChnaged()));
 
     // -------------------
@@ -379,8 +395,11 @@ void MjpegStreamDlg::startMjpegServer()
 void MjpegStreamDlg::slotSettingsChanged()
 {
     d->srvPort->blockSignals(true);
-    d->settings.port = d->srvPort->value();
+    d->interval->blockSignals(true);
+    d->settings.port     = d->srvPort->value();
+    d->settings.interval = d->interval->value();
     d->srvPort->blockSignals(false);
+    d->interval->blockSignals(false);
 }
 
 void MjpegStreamDlg::slotSelectionChanged()
@@ -406,6 +425,8 @@ void MjpegStreamDlg::slotToggleMjpegServer()
 
     d->portLbl->setDisabled(b);
     d->srvPort->setDisabled(b);
+    d->interLbl->setDisabled(b);
+    d->interval->setDisabled(b);
 }
 
 } // namespace DigikamGenericMjpegStreamPlugin
