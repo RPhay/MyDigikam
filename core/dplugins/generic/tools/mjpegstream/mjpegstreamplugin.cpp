@@ -87,7 +87,7 @@ QString MjpegStreamPlugin::details() const
                 "and players support MJPEG stream.</p>"
                 "<p>To access to stream from your browser, use http://address:port as url, with address the MJPEG address, "
                 "and port the MJPEG port set in config dialog. More than one computer can be connected to the MJPEG server "
-                "at the same time.");
+                "at the same time.</p>");
 }
 
 QList<DPluginAuthor> MjpegStreamPlugin::authors() const
