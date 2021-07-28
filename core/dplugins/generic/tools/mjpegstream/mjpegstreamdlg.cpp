@@ -220,13 +220,13 @@ MjpegStreamDlg::MjpegStreamDlg(QObject* const /*parent*/,
     QString txt;
 
     explanation->setText(i18nc("@info",
-                               "The %1 server allows to share items through the local network using a web browser. "
-                               "Motion JPEG is a video compression format in which each video frame is compressed "
-                               "separately as a JPEG image. MJPEG streams is a standard which allows network clients to be "
-                               "connected without additional module. Most major web browsers and players support MJPEG stream. "
-                               "To access to stream from your browser, just use http://address:port as url, with address "
-                               "the MJPEG server IP, and port the server port set in this config dialog.",
-                               QLatin1String("<a href='https://en.wikipedia.org/wiki/Motion_JPEG'>Motion JPEG</a>")));
+        "The %1 server allows to share items through the local network using a web browser. "
+        "Motion JPEG is a video compression format in which each video frame is compressed "
+        "separately as a JPEG image. MJPEG streams is a standard which allows network clients to be "
+        "connected without additional module. Most major web browsers and players support MJPEG stream. "
+        "To access to stream from your browser, just use http://address:port as url, with address "       // krazy:exclude=insecurenet
+        "the MJPEG server IP, and port the server port set in this config dialog.",
+        QLatin1String("<a href='https://en.wikipedia.org/wiki/Motion_JPEG'>Motion JPEG</a>")));
 
 
     grid->addWidget(d->startOnStartup, 1, 0, 1, 6);

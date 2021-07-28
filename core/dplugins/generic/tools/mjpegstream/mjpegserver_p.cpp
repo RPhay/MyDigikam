@@ -25,7 +25,7 @@
 // Must be placed in first to not break Windows Compilation with WinSock API
 
 #ifdef Q_OS_WIN
-#   ifdef WIN32_LEAN_AND_MEAN           // krazy:exclude=cpp
+#   ifdef WIN32_LEAN_AND_MEAN        // krazy:exclude=cpp
 #       undef WIN32_LEAN_AND_MEAN
 #   endif
 #endif
@@ -44,7 +44,7 @@
 #include <QByteArray>
 #include <QString>
 #include <QBuffer>
-#include <QtConcurrent>
+#include <QtConcurrent>              // krazy:exclude=includes
 
 // Local includes
 

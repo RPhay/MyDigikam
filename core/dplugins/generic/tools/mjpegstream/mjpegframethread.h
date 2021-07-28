@@ -30,7 +30,6 @@
 #include <QColor>
 #include <QPoint>
 #include <QFont>
-#include <QImage>
 #include <QDateTime>
 
 // Local includes
