@@ -299,7 +299,7 @@ void GPSItemDetails::displayGPSDataContainer(const GPSDataContainer* const gpsDa
 
         if (haveNSatellites)
         {
-            /// @todo Is this enough for simple integers or do we have to use KLocale?
+            /// @todo Is this enough for simple integers or do we have to use QLocale?
             d->leNSatellites->setText(QString::number(gpsData->getNSatellites()));
         }
 

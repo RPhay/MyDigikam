@@ -405,11 +405,11 @@ void ItemPropertiesGPSTab::setGPSInfoList(const GPSItemInfo::List& list)
         }
         else
         {
-            d->altitude->setAdjustedText(QString::fromLatin1("%1 m").arg(QLocale().toString(coordinates.alt())));
+            d->altitude->setAdjustedText(QString::fromLatin1("%1 m").arg(QLocale().toString(coordinates.alt(), 'g', 7)));
         }
 
-        d->latitude->setAdjustedText(QLocale().toString(coordinates.lat()));
-        d->longitude->setAdjustedText(QLocale().toString(coordinates.lon()));
+        d->latitude->setAdjustedText(QLocale().toString(coordinates.lat(), 'g', 7));
+        d->longitude->setAdjustedText(QLocale().toString(coordinates.lon(), 'g', 7));
         d->date->setAdjustedText(QLocale().toString(info.dateTime, QLocale::ShortFormat));
     }
 
