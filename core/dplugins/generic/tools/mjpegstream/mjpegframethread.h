@@ -92,6 +92,7 @@ private:
 private:
 
     MjpegStreamSettings m_set;
+    QImage              m_broken;
 };
 
 } // namespace DigikamGenericMjpegStreamPlugin

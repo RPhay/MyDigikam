@@ -27,9 +27,7 @@
 #include <QString>
 #include <QBuffer>
 #include <QApplication>
-#include <QFontMetrics>
-#include <QPainter>
-#include <QDateTime>
+#include <QIcon>
 
 // Local includes
 
@@ -75,6 +73,7 @@ MjpegFrameTask::MjpegFrameTask(const MjpegStreamSettings& set)
     : ActionJob(nullptr),
       m_set    (set)
 {
+    m_broken = QIcon::fromTheme(QLatin1String("view-preview")).pixmap(1920).toImage();
 }
 
 MjpegFrameTask::~MjpegFrameTask()
@@ -107,11 +106,12 @@ void MjpegFrameTask::run()
 
             qCDebug(DIGIKAM_GENERAL_LOG) << "MjpegStream: Generate frame for" << url.toLocalFile();
 
-            dimg = PreviewLoadThread::loadSynchronously(url.toLocalFile(), PreviewSettings(), 1920);
+            dimg = PreviewLoadThread::loadSynchronously(url.toLocalFile(), PreviewSettings(PreviewSettings::FastPreview), 1920);
 
             if (dimg.isNull())
             {
-                // TODO: generate error frame.
+                // Generate an error frame.
+                img = m_broken;
             }
             else
             {
