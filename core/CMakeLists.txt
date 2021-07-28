@@ -36,7 +36,11 @@ option(ENABLE_APPSTYLES                  "Build digiKam with support for changin
 option(ENABLE_QWEBENGINE                 "Build digiKam with QWebEngine (default=ON)"                                         ON)
 option(ENABLE_QWEBKIT                    "Build digiKam with Qt Webkit (default=OFF)                                          OFF")
 
-cmake_dependent_option(DISABLE_QWEB      "No Web Module" ON "NOT ENABLE_QWEBENGINE;NOT ENABLE_QWEBKIT" ON)
+if(ENABLE_QWEBENGINE OR ENABLE_QWEBKIT)
+  option(DISABLE_QWEB "Disable Web content" OFF)
+else()
+  option(DISABLE_QWEB "Disable web content" ON)
+endif()
 
 # Mysql support options (experimental):
 option(ENABLE_MYSQLSUPPORT               "Build digiKam with MySQL dabatase support (default=ON)"                             ON)
