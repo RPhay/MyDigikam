@@ -21,12 +21,16 @@
  *
  * ============================================================ */
 
-#ifndef TAGSCACHETEST_H
-#define TAGSCACHETEST_H
+#ifndef DIGIKAM_TAGS_CACHE_UTEST_H
+#define DIGIKAM_TAGS_CACHE_UTEST_H
+
+// Qt includes
 
 #include <QObject>
 #include <QDebug>
 #include <QtTest>
+
+// Local includes
 
 #include "tagscache.h"
 
@@ -44,8 +48,6 @@ class TagsCacheTest : public QObject
 {
     Q_OBJECT
 
-public:
-
 private Q_SLOTS:
 
     void initTestCase();
@@ -58,9 +60,8 @@ private Q_SLOTS:
     void testRepeatedNames();
     void testDuplicateTop();
 
-private:
 
-    Digikam::TagsCache* tags_cache;
+private:
 
     // utilities
     int countTags();
@@ -69,6 +70,9 @@ private:
     void dumpTables();
     void dumpTags();
 
+private:
+
+    Digikam::TagsCache* tags_cache;
 };
 
-#endif /* TAGSCACHETEST_H */
+#endif // DIGIKAM_TAGS_CACHE_UTEST_H
