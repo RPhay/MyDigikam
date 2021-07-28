@@ -395,7 +395,7 @@ bool MjpegStreamDlg::setMjpegServerContents()
     return true;
 }
 
-void MjpegStreamDlg::startMjpegServer()
+bool MjpegStreamDlg::startMjpegServer()
 {
     if (d->dirty)
     {
@@ -404,7 +404,7 @@ void MjpegStreamDlg::startMjpegServer()
 
     if (!setMjpegServerContents())
     {
-        return;
+        return false;
     }
 
     d->mngr->setSettings(d->settings);
@@ -420,6 +420,8 @@ void MjpegStreamDlg::startMjpegServer()
     }
 
     updateServerStatus();
+
+    return true;
 }
 
 void MjpegStreamDlg::slotSettingsChanged()
@@ -445,16 +447,17 @@ void MjpegStreamDlg::slotSelectionChanged()
 
 void MjpegStreamDlg::slotToggleMjpegServer()
 {
-    bool b;
+    bool b = false;
 
     if (!d->mngr->isRunning())
     {
-        b = true;
-        startMjpegServer();
+        if (startMjpegServer())
+        {
+            b = true;
+        }
     }
     else
     {
-        b = false;
         d->mngr->cleanUp();
         updateServerStatus();
     }

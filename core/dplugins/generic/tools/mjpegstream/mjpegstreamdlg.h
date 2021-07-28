@@ -45,7 +45,7 @@ public:
 
     explicit MjpegStreamDlg(QObject* const parent,
                             DInfoInterface* const iface = nullptr);
-    ~MjpegStreamDlg()              override;
+    ~MjpegStreamDlg()               override;
 
 private:
 
@@ -53,7 +53,7 @@ private:
     void saveSettings();
     void updateServerStatus();
     bool setMjpegServerContents();
-    void startMjpegServer();
+    bool startMjpegServer();
 
 private Q_SLOTS:
 
