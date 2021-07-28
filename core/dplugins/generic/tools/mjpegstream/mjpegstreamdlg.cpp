@@ -73,10 +73,11 @@ public:
         iface           (nullptr),
         page            (nullptr),
         buttons         (nullptr),
-        portLbl         (nullptr),
+        streamSettings  (nullptr),
         srvPort         (nullptr),
-        interLbl        (nullptr),
-        interval        (nullptr)
+        delay           (nullptr),
+        quality         (nullptr),
+        streamLoop      (nullptr)
     {
     }
 
@@ -95,10 +96,11 @@ public:
     DInfoInterface*     iface;
     QWidget*            page;
     QDialogButtonBox*   buttons;
-    QLabel*             portLbl;
+    QWidget*            streamSettings;
     QSpinBox*           srvPort;
-    QLabel*             interLbl;
-    QSpinBox*           interval;
+    QSpinBox*           delay;
+    QSpinBox*           quality;
+    QCheckBox*          streamLoop;
     MjpegStreamSettings settings;
 };
 
@@ -167,24 +169,49 @@ MjpegStreamDlg::MjpegStreamDlg(QObject* const /*parent*/,
     d->startOnStartup->setWhatsThis(i18nc("@info", "Set this option to turn-on the MJPEG server at application start-up automatically"));
     d->startOnStartup->setChecked(true);
 
-    d->portLbl                = new QLabel(i18nc("@label", "Server Port:"));
-    d->srvPort                = new QSpinBox(this);
-    d->srvPort->setRange(1025, 65535);
-    d->srvPort->setSingleStep(1);
-    d->srvPort->setValue(8080);
-
-    d->interLbl               = new QLabel(i18nc("@label", "Interval (s):"));
-    d->interval               = new QSpinBox(this);
-    d->interval->setRange(1, 30);
-    d->interval->setSingleStep(1);
-    d->interval->setValue(5);
-
     d->srvButton              = new QPushButton(this);
     d->srvStatus              = new QLabel(this);
     d->progress               = new WorkingWidget(this);
     d->aStats                 = new QLabel(this);
     d->separator              = new QLabel(QLatin1String(" / "), this);
     d->iStats                 = new QLabel(this);
+
+    // ---
+
+    d->streamSettings         = new QWidget(this);
+    QGridLayout* const grid2  = new QGridLayout(d->streamSettings);
+
+    QLabel* const portLbl     = new QLabel(i18nc("@label", "Server Port:"), d->streamSettings);
+    d->srvPort                = new QSpinBox(d->streamSettings);
+    d->srvPort->setRange(1025, 65535);
+    d->srvPort->setSingleStep(1);
+    d->srvPort->setValue(8080);
+
+    QLabel* const delayLbl    = new QLabel(i18nc("@label", "Delay in seconds:"), d->streamSettings);
+    d->delay                  = new QSpinBox(d->streamSettings);
+    d->delay->setRange(1, 30);
+    d->delay->setSingleStep(1);
+    d->delay->setValue(5);
+
+    QLabel* const qualityLbl  = new QLabel(i18nc("@label", "JPEG Quality:"), d->streamSettings);
+    d->quality                = new QSpinBox(d->streamSettings);
+    d->quality->setRange(50, 100);
+    d->quality->setSingleStep(1);
+    d->quality->setValue(75);
+
+    d->streamLoop             = new QCheckBox(i18nc("@checkbox", "Stream In Loop"), d->streamSettings);
+    d->streamLoop->setChecked(true);
+
+    grid2->addWidget(portLbl,       0, 0, 1, 1);
+    grid2->addWidget(d->srvPort,    0, 1, 1, 1);
+    grid2->addWidget(delayLbl,      0, 3, 1, 1);
+    grid2->addWidget(d->delay,      0, 4, 1, 1);
+    grid2->addWidget(qualityLbl,    1, 0, 1, 1);
+    grid2->addWidget(d->quality,    1, 1, 1, 1);
+    grid2->addWidget(d->streamLoop, 1, 3, 1, 2);
+    grid2->setColumnStretch(2, 10);
+
+    // ---
 
     QLabel* const explanation = new QLabel(this);
     explanation->setOpenExternalLinks(true);
@@ -201,20 +228,17 @@ MjpegStreamDlg::MjpegStreamDlg(QObject* const /*parent*/,
                                "the MJPEG server IP, and port the server port set in this config dialog.",
                                QLatin1String("<a href='https://en.wikipedia.org/wiki/Motion_JPEG'>Motion JPEG</a>")));
 
+
     grid->addWidget(d->startOnStartup, 1, 0, 1, 6);
-    grid->addWidget(d->portLbl,        2, 0, 1, 1);
-    grid->addWidget(d->srvPort,        2, 1, 1, 1);
-    grid->addWidget(d->interLbl,       2, 2, 1, 1);
-    grid->addWidget(d->interval,       2, 4, 1, 1);
-    grid->addWidget(d->srvButton,      3, 0, 1, 1);
-    grid->addWidget(d->srvStatus,      3, 1, 1, 1);
-    grid->addWidget(d->aStats,         3, 2, 1, 1);
-    grid->addWidget(d->separator,      3, 3, 1, 1);
-    grid->addWidget(d->iStats,         3, 4, 1, 1);
-    grid->addWidget(d->progress,       3, 5, 1, 1);
+    grid->addWidget(d->srvButton,      2, 0, 1, 1);
+    grid->addWidget(d->srvStatus,      2, 1, 1, 1);
+    grid->addWidget(d->aStats,         2, 2, 1, 1);
+    grid->addWidget(d->separator,      2, 3, 1, 1);
+    grid->addWidget(d->iStats,         2, 4, 1, 1);
+    grid->addWidget(d->progress,       2, 5, 1, 1);
+    grid->addWidget(d->streamSettings, 3, 0, 1, 6);
     grid->addWidget(explanation,       4, 0, 1, 6);
     grid->setColumnStretch(1, 10);
-    grid->setColumnStretch(5, 10);
     grid->setRowStretch(0, 10);
     grid->setSpacing(spacing);
 
@@ -232,8 +256,14 @@ MjpegStreamDlg::MjpegStreamDlg(QObject* const /*parent*/,
     connect(d->srvPort, SIGNAL(valueChanged(int)),
             this, SLOT(slotSettingsChnaged()));
 
-    connect(d->interval, SIGNAL(valueChanged(int)),
+    connect(d->delay, SIGNAL(valueChanged(int)),
             this, SLOT(slotSettingsChnaged()));
+
+    connect(d->quality, SIGNAL(valueChanged(int)),
+            this, SLOT(slotSettingsChnaged()));
+
+    connect(d->streamLoop, SIGNAL(checked()),
+            this, SLOT(slotToggleMjpegServer()));
 
     // -------------------
 
@@ -395,11 +425,17 @@ void MjpegStreamDlg::startMjpegServer()
 void MjpegStreamDlg::slotSettingsChanged()
 {
     d->srvPort->blockSignals(true);
-    d->interval->blockSignals(true);
-    d->settings.port     = d->srvPort->value();
-    d->settings.interval = d->interval->value();
+    d->delay->blockSignals(true);
+    d->quality->blockSignals(true);
+    d->streamLoop->blockSignals(true);
+    d->settings.port    = d->srvPort->value();
+    d->settings.delay   = d->delay->value();
+    d->settings.quality = d->quality->value();
+    d->settings.loop    = d->streamLoop->isChecked();
     d->srvPort->blockSignals(false);
-    d->interval->blockSignals(false);
+    d->delay->blockSignals(false);
+    d->quality->blockSignals(false);
+    d->streamLoop->blockSignals(false);
 }
 
 void MjpegStreamDlg::slotSelectionChanged()
@@ -423,10 +459,7 @@ void MjpegStreamDlg::slotToggleMjpegServer()
         updateServerStatus();
     }
 
-    d->portLbl->setDisabled(b);
-    d->srvPort->setDisabled(b);
-    d->interLbl->setDisabled(b);
-    d->interval->setDisabled(b);
+    d->streamSettings->setDisabled(b);
 }
 
 } // namespace DigikamGenericMjpegStreamPlugin

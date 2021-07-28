@@ -119,7 +119,7 @@ void MjpegFrameTask::run()
 
                 emit signalFrameChanged(imageToJPEGArray(img));
 
-                QThread::sleep(m_set.interval);
+                QThread::sleep(m_set.delay);
             }
         }
     }
