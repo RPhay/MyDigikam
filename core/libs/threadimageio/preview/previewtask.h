@@ -45,7 +45,7 @@ public:
                                 const LoadingDescription& description);
     ~PreviewLoadingTask() override;
 
-    void execute() override;
+    void execute()        override;
 
 private:
 
