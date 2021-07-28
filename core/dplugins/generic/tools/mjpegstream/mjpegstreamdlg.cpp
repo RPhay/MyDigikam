@@ -199,7 +199,7 @@ MjpegStreamDlg::MjpegStreamDlg(QObject* const /*parent*/,
     d->quality->setSingleStep(1);
     d->quality->setValue(75);
 
-    d->streamLoop             = new QCheckBox(i18nc("@checkbox", "Stream In Loop"), d->streamSettings);
+    d->streamLoop             = new QCheckBox(i18nc("@option:check", "Stream In Loop"), d->streamSettings);
     d->streamLoop->setChecked(true);
 
     grid2->addWidget(portLbl,       0, 0, 1, 1);
