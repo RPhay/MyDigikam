@@ -254,16 +254,16 @@ MjpegStreamDlg::MjpegStreamDlg(QObject* const /*parent*/,
             this, &MjpegStreamDlg::accept);
 
     connect(d->srvPort, SIGNAL(valueChanged(int)),
-            this, SLOT(slotSettingsChnaged()));
+            this, SLOT(slotSettingsChanged()));
 
     connect(d->delay, SIGNAL(valueChanged(int)),
-            this, SLOT(slotSettingsChnaged()));
+            this, SLOT(slotSettingsChanged()));
 
     connect(d->quality, SIGNAL(valueChanged(int)),
-            this, SLOT(slotSettingsChnaged()));
+            this, SLOT(slotSettingsChanged()));
 
-    connect(d->streamLoop, SIGNAL(checked()),
-            this, SLOT(slotToggleMjpegServer()));
+    connect(d->streamLoop, SIGNAL(stateChanged(int)),
+            this, SLOT(slotSettingsChanged()));
 
     // -------------------
 
