@@ -266,7 +266,7 @@ TemplatePanel::TemplatePanel(QWidget* const parent)
 
     // --------------------------------------------------------
 
-    QLabel* const label11        = new QLabel(i18n("Province/State:"));
+    QLabel* const label11        = new QLabel(i18n("State/Province:"));
     d->locationProvinceStateEdit = new QLineEdit;
     d->locationProvinceStateEdit->setClearButtonEnabled(true);
     d->locationProvinceStateEdit->setPlaceholderText(i18n("Enter the province or state of contents here."));

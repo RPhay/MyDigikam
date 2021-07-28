@@ -183,7 +183,7 @@ TemplateViewer::TemplateViewer(QWidget* const parent)
     d->labelLocationCity          = new DTextBrowser(QString(), w2);
     d->locationSublocation        = new DTextLabelName(i18n("Sublocation:"), w2);
     d->labelLocationSublocation   = new DTextBrowser(QString(), w2);
-    d->locationProvinceState      = new DTextLabelName(i18n("Province/State:"), w2);
+    d->locationProvinceState      = new DTextLabelName(i18n("State/Province:"), w2);
     d->labelLocationProvinceState = new DTextBrowser(QString(), w2);
     d->locationCountry            = new DTextLabelName(i18n("Country:"), w2);
     d->labelLocationCountry       = new DTextBrowser(QString(), w2);
@@ -205,7 +205,7 @@ TemplateViewer::TemplateViewer(QWidget* const parent)
     d->labelContactPostalCode    = new DTextBrowser(QString(), w3);
     d->contactCity               = new DTextLabelName(i18n("City:"), w3);
     d->labelContactCity          = new DTextBrowser(QString(), w3);
-    d->contactProvinceState      = new DTextLabelName(i18n("Province/State:"), w3);
+    d->contactProvinceState      = new DTextLabelName(i18n("State/Province:"), w3);
     d->labelContactProvinceState = new DTextBrowser(QString(), w3);
     d->contactCountry            = new DTextLabelName(i18n("Country:"), w3);
     d->labelContactCountry       = new DTextBrowser(QString(), w3);
