@@ -31,27 +31,36 @@
 
 #include <QString>
 #include <QDebug>
-#include <QtTest>
 
 // Local includes
 
 #include "coredb.h"
 #include "coredbaccess.h"
 
+TagsCacheTest::TagsCacheTest(QObject* const parent)
+    : QObject  (parent),
+      tagsCache(nullptr)
+{
+}
+
+TagsCacheTest::~TagsCacheTest()
+{
+}
 
 void TagsCacheTest::initTestCase()
 {
     qDebug() << "initTestCase()";
+
     Digikam::DbEngineParameters db_params
-        (
-            QString::fromUtf8("QSQLITE"),      // databaseType
-            QString::fromUtf8(":memory:"),     // databaseNameCore
-            QString::fromUtf8("")              // connectOptions
-        );
+    (
+        QString::fromUtf8("QSQLITE"),      // databaseType
+        QString::fromUtf8(":memory:"),     // databaseNameCore
+        QString::fromUtf8("")              // connectOptions
+    );
 
     Digikam::CoreDbAccess::setParameters(db_params);
     QVERIFY(Digikam::CoreDbAccess::checkReadyForUse());
-    tags_cache = Digikam::TagsCache::instance();
+    tagsCache = Digikam::TagsCache::instance();
 }
 
 void TagsCacheTest::cleanupTestCase()
@@ -69,7 +78,7 @@ void TagsCacheTest::cleanup()
     auto coredb = Digikam::CoreDbAccess().db();
     auto tags   = coredb->getTagShortInfos();
 
-    for (auto tag: tags)
+    for (auto tag : tags)
     {
         coredb->deleteTag(tag.id);
     }
@@ -79,63 +88,65 @@ void TagsCacheTest::cleanup()
 
 void TagsCacheTest::testSimpleHierarchy()
 {
-    auto id = tags_cache->createTag(QLatin1String("Top/Middle/Bottom"));
+    auto id       = tagsCache->createTag(QLatin1String("Top/Middle/Bottom"));
 
     dumpTags();
     QCOMPARE(countTags(), 3);
 
-    auto bottom_id = tags_cache->tagForPath(QLatin1String("Top/Middle/Bottom"));
-    auto middle_id = tags_cache->parentTag(id);
-    auto top_id    = tags_cache->parentTag(middle_id);
+    auto bottomId = tagsCache->tagForPath(QLatin1String("Top/Middle/Bottom"));
+    auto middleId = tagsCache->parentTag(id);
+    auto topId    = tagsCache->parentTag(middleId);
 
-    QCOMPARE(id, bottom_id);
-    QVERIFY(bottom_id);
-    QVERIFY(middle_id);
-    QVERIFY(top_id);
-    QVERIFY(tags_cache->hasTag(bottom_id));
-    QVERIFY(tags_cache->hasTag(middle_id));
-    QVERIFY(tags_cache->hasTag(top_id));
-    QCOMPARE(tags_cache->tagName(id), QLatin1String("Bottom"));
-    QCOMPARE(tags_cache->tagName(middle_id), QLatin1String("Middle"));
-    QCOMPARE(tags_cache->tagName(top_id), QLatin1String("Top"));
+    QCOMPARE(id, bottomId);
+    QVERIFY(bottomId);
+    QVERIFY(middleId);
+    QVERIFY(topId);
+    QVERIFY(tagsCache->hasTag(bottomId));
+    QVERIFY(tagsCache->hasTag(middleId));
+    QVERIFY(tagsCache->hasTag(topId));
+    QCOMPARE(tagsCache->tagName(id),       QLatin1String("Bottom"));
+    QCOMPARE(tagsCache->tagName(middleId), QLatin1String("Middle"));
+    QCOMPARE(tagsCache->tagName(topId),    QLatin1String("Top"));
 
-    auto bottom_ids = tags_cache->tagsForName(QLatin1String("Bottom"));
+    auto bottomIds = tagsCache->tagsForName(QLatin1String("Bottom"));
 
-    QCOMPARE(bottom_ids.size(), 1);
-    QCOMPARE(bottom_ids[0], bottom_id);
+    QCOMPARE(bottomIds.size(), 1);
+    QCOMPARE(bottomIds[0], bottomId);
 }
 
 void TagsCacheTest::testComplexHierarchy()
 {
-    tags_cache->createTag(QLatin1String("Top/Middle"));
-    tags_cache->createTag(QLatin1String("Top/Middle/First"));
-    tags_cache->createTag(QLatin1String("Top/Middle/Second"));
-    tags_cache->createTag(QLatin1String("Super/Top"));
-    tags_cache->createTag(QLatin1String("Super/Top/First"));
-    tags_cache->createTag(QLatin1String("Super/Top/Second"));
-    tags_cache->createTag(QLatin1String("Super/Top/Third"));
-    tags_cache->createTag(QLatin1String("Mixed Up/Third/Second"));
-    tags_cache->createTag(QLatin1String("Mixed Up/Third/First"));
+    tagsCache->createTag(QLatin1String("Top/Middle"));
+    tagsCache->createTag(QLatin1String("Top/Middle/First"));
+    tagsCache->createTag(QLatin1String("Top/Middle/Second"));
+    tagsCache->createTag(QLatin1String("Super/Top"));
+    tagsCache->createTag(QLatin1String("Super/Top/First"));
+    tagsCache->createTag(QLatin1String("Super/Top/Second"));
+    tagsCache->createTag(QLatin1String("Super/Top/Third"));
+    tagsCache->createTag(QLatin1String("Mixed Up/Third/Second"));
+    tagsCache->createTag(QLatin1String("Mixed Up/Third/First"));
 
     QCOMPARE(countTags(), 13);
-    auto top_ids = tags_cache->tagsForName(QLatin1String("Top"));
+
+    auto top_ids   = tagsCache->tagsForName(QLatin1String("Top"));
     QCOMPARE(top_ids.size(), 2);
-    auto first_ids = tags_cache->tagsForName(QLatin1String("First"));
+
+    auto first_ids = tagsCache->tagsForName(QLatin1String("First"));
     QCOMPARE(first_ids.size(), 3);
 }
 
 void TagsCacheTest::testRepeatedNames()
 {
-    tags_cache->createTag(QLatin1String("Repeat Me/Repeat Me/Repeat Me/Repeat Me"));
+    tagsCache->createTag(QLatin1String("Repeat Me/Repeat Me/Repeat Me/Repeat Me"));
 
-    auto repeat_me_ids = tags_cache->tagsForName(QLatin1String("Repeat Me"));
-    QCOMPARE(repeat_me_ids.size(), 4);
+    auto repeatMeIds = tagsCache->tagsForName(QLatin1String("Repeat Me"));
+    QCOMPARE(repeatMeIds.size(), 4);
 
     // all ids should be unique
 
     std::set<int> set;
 
-    for (auto id: repeat_me_ids)
+    for (auto id : repeatMeIds)
     {
         auto result = set.insert(id);
         QVERIFY(result.second);
@@ -144,30 +155,30 @@ void TagsCacheTest::testRepeatedNames()
 
 void TagsCacheTest::testDuplicateTop()
 {
-    tags_cache->createTag(QLatin1String("Top/Middle/Bottom"));
-    tags_cache->createTag(QLatin1String("Super/Top/Middle/Bottom"));
-    tags_cache->createTag(QLatin1String("First/Super/Top"));
+    tagsCache->createTag(QLatin1String("Top/Middle/Bottom"));
+    tagsCache->createTag(QLatin1String("Super/Top/Middle/Bottom"));
+    tagsCache->createTag(QLatin1String("First/Super/Top"));
     dumpTags();
     QCOMPARE(countTags(), 10);
 
     // the single word 'Top' should match the top tag
 
-    auto id1 = tags_cache->tagForPath(QLatin1String("Top"));
+    auto id1 = tagsCache->tagForPath(QLatin1String("Top"));
     QVERIFY(id1);
-    QCOMPARE(tags_cache->tagPath(id1), QLatin1String("/Top"));
+    QCOMPARE(tagsCache->tagPath(id1), QLatin1String("/Top"));
 
     // and it doesn't matter if there's a leading slash
 
-    auto id2 = tags_cache->tagForPath(QLatin1String("/Top"));
+    auto id2 = tagsCache->tagForPath(QLatin1String("/Top"));
     QVERIFY(id2);
     QCOMPARE(id1, id2);
-    QCOMPARE(tags_cache->tagPath(id2), QLatin1String("/Top"));
+    QCOMPARE(tagsCache->tagPath(id2), QLatin1String("/Top"));
 
     // a more complex request
 
-    auto id3 = tags_cache->tagForPath(QLatin1String("Super/Top"));
+    auto id3 = tagsCache->tagForPath(QLatin1String("Super/Top"));
     QVERIFY(id3);
-    QCOMPARE(tags_cache->tagPath(id3), QLatin1String("/Super/Top"));
+    QCOMPARE(tagsCache->tagPath(id3), QLatin1String("/Super/Top"));
 }
 
 // utilities
@@ -176,6 +187,7 @@ int TagsCacheTest::countTags()
 {
     auto coredb = Digikam::CoreDbAccess().db();
     auto tags   = coredb->getTagShortInfos();
+
     return tags.size();
 }
 

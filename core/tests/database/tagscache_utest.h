@@ -27,7 +27,6 @@
 // Qt includes
 
 #include <QObject>
-#include <QDebug>
 #include <QtTest>
 
 // Local includes
@@ -43,10 +42,14 @@
  *
  * Uses a temporary in-memory sqlite database, and does not require a GUI.
  */
-
 class TagsCacheTest : public QObject
 {
     Q_OBJECT
+
+public:
+
+    TagsCacheTest(QObject* const parent = nullptr);
+    ~TagsCacheTest() override;
 
 private Q_SLOTS:
 
@@ -72,7 +75,7 @@ private:
 
 private:
 
-    Digikam::TagsCache* tags_cache;
+    Digikam::TagsCache* tagsCache;
 };
 
 #endif // DIGIKAM_TAGS_CACHE_UTEST_H
