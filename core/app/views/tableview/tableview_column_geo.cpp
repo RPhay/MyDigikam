@@ -177,8 +177,8 @@ QVariant ColumnGeoProperties::data(TableViewModel::Item* const item, const int r
                 return QString();
             }
 
-            return QString::fromUtf8("%1,%2").arg(QLocale().toString(info.latitudeNumber(),  'g', 7))
-                                             .arg(QLocale().toString(info.longitudeNumber(), 'g', 7));
+            return QString::fromUtf8("%1\n%2").arg(QLocale().toString(info.latitudeNumber(),  'g', 7))
+                                              .arg(QLocale().toString(info.longitudeNumber(), 'g', 7));
         }
 
         case SubColumnAltitude:

@@ -432,7 +432,7 @@ QVariant GPSItemContainer::data(const int column, const int role) const
             return QString();
         }
 
-        return QString::fromLatin1("%1").arg(QLocale().toString(m_gpsData.getCoordinates().lat()), 7);
+        return QLocale().toString(m_gpsData.getCoordinates().lat(), 'g', 7);
     }
     else if ((column == ColumnLongitude) && (role == Qt::DisplayRole))
     {
@@ -441,7 +441,7 @@ QVariant GPSItemContainer::data(const int column, const int role) const
             return QString();
         }
 
-        return QString::fromLatin1("%1").arg(QLocale().toString(m_gpsData.getCoordinates().lon()), 7);
+        return QLocale().toString(m_gpsData.getCoordinates().lon(), 'g', 7);
     }
     else if ((column == ColumnAltitude) && (role == Qt::DisplayRole))
     {
@@ -450,7 +450,7 @@ QVariant GPSItemContainer::data(const int column, const int role) const
             return QString();
         }
 
-        return QString::fromLatin1("%1").arg(m_gpsData.getCoordinates().alt(), 7);
+        return QLocale().toString(m_gpsData.getCoordinates().alt(), 'g', 7);
     }
     else if (column == ColumnAccuracy)
     {
@@ -529,7 +529,7 @@ QVariant GPSItemContainer::data(const int column, const int role) const
             return QString();
         }
 
-        return QString::number(m_gpsData.getSpeed());
+        return QLocale().toString(m_gpsData.getSpeed());
     }
     else if ((column == ColumnStatus) && (role == Qt::DisplayRole))
     {
