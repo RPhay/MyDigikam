@@ -111,16 +111,20 @@ void MjpegFrameTask::run()
             if (dimg.isNull())
             {
                 // Generate an error frame.
+
                 img = m_broken;
+                qCWarning(DIGIKAM_GENERAL_LOG) << "MjpegStream: Failed to load" << url.toLocalFile();
             }
             else
             {
+                // Generate real preview frame.
+
                 img = dimg.copyQImage();
-
-                emit signalFrameChanged(imageToJPEGArray(img));
-
-                QThread::sleep(m_set.delay);
             }
+
+            emit signalFrameChanged(imageToJPEGArray(img));
+
+            QThread::sleep(m_set.delay);
         }
     }
     while (!m_cancel && m_set.loop);
