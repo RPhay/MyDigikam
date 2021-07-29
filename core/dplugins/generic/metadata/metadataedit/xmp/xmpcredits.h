@@ -45,8 +45,8 @@ public:
     explicit XMPCredits(QWidget* const parent);
     ~XMPCredits() override;
 
-    void applyMetadata(DMetadata& meta);
-    void readMetadata(DMetadata& meta);
+    void applyMetadata(const DMetadata& meta);
+    void readMetadata(const DMetadata& meta);
 
     bool syncEXIFArtistIsChecked() const;
     void setCheckedSyncEXIFArtist(bool c);

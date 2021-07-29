@@ -46,8 +46,8 @@ public:
     explicit EXIFDateTime(QWidget* const parent);
     ~EXIFDateTime() override;
 
-    void applyMetadata(DMetadata& meta);
-    void readMetadata(DMetadata& meta);
+    void applyMetadata(const DMetadata& meta);
+    void readMetadata(const DMetadata& meta);
 
     bool syncXMPDateIsChecked() const;
     bool syncIPTCDateIsChecked() const;

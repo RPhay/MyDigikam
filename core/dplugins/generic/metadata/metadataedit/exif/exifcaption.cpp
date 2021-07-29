@@ -273,7 +273,7 @@ void EXIFCaption::setCheckedSyncIPTCCaption(bool c)
     d->syncIPTCCaptionCheck->setChecked(c);
 }
 
-void EXIFCaption::readMetadata(DMetadata& meta)
+void EXIFCaption::readMetadata(const DMetadata& meta)
 {
     blockSignals(true);
 
@@ -345,7 +345,7 @@ void EXIFCaption::readMetadata(DMetadata& meta)
     blockSignals(false);
 }
 
-void EXIFCaption::applyMetadata(DMetadata& meta)
+void EXIFCaption::applyMetadata(const DMetadata& meta)
 {
     if (d->documentNameCheck->isChecked())
         meta.setExifTagString("Exif.Image.DocumentName", d->documentNameEdit->text());

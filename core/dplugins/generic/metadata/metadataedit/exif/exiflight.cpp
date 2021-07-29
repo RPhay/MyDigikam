@@ -267,7 +267,7 @@ EXIFLight::~EXIFLight()
     delete d;
 }
 
-void EXIFLight::readMetadata(DMetadata& meta)
+void EXIFLight::readMetadata(const DMetadata& meta)
 {
     blockSignals(true);
 
@@ -358,7 +358,7 @@ void EXIFLight::readMetadata(DMetadata& meta)
     blockSignals(false);
 }
 
-void EXIFLight::applyMetadata(DMetadata& meta)
+void EXIFLight::applyMetadata(const DMetadata& meta)
 {
     long int num=1, den=1;
 

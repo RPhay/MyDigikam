@@ -263,7 +263,7 @@ void XMPCategories::slotAddCategory()
     }
 }
 
-void XMPCategories::readMetadata(DMetadata& meta)
+void XMPCategories::readMetadata(const DMetadata& meta)
 {
     blockSignals(true);
 
@@ -303,7 +303,7 @@ void XMPCategories::readMetadata(DMetadata& meta)
     blockSignals(false);
 }
 
-void XMPCategories::applyMetadata(DMetadata& meta)
+void XMPCategories::applyMetadata(const DMetadata& meta)
 {
     QStringList newCategories;
 

@@ -460,7 +460,7 @@ void IPTCEnvelope::slotLineEditModified()
                        ledit);
 }
 
-void IPTCEnvelope::readMetadata(DMetadata& meta)
+void IPTCEnvelope::readMetadata(const DMetadata& meta)
 {
     blockSignals(true);
 
@@ -625,7 +625,7 @@ void IPTCEnvelope::readMetadata(DMetadata& meta)
     blockSignals(false);
 }
 
-void IPTCEnvelope::applyMetadata(DMetadata& meta)
+void IPTCEnvelope::applyMetadata(const DMetadata& meta)
 {
     if (d->destinationCheck->isChecked())
     {

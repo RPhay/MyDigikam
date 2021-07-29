@@ -491,7 +491,7 @@ EXIFDevice::~EXIFDevice()
     delete d;
 }
 
-void EXIFDevice::readMetadata(DMetadata& meta)
+void EXIFDevice::readMetadata(const DMetadata& meta)
 {
     blockSignals(true);
 
@@ -737,7 +737,7 @@ void EXIFDevice::readMetadata(DMetadata& meta)
     blockSignals(false);
 }
 
-void EXIFDevice::applyMetadata(DMetadata& meta)
+void EXIFDevice::applyMetadata(const DMetadata& meta)
 {
     long int num=1, den=1;
 

@@ -227,7 +227,7 @@ void IPTCStatus::slotLineEditModified()
                        ledit);
 }
 
-void IPTCStatus::readMetadata(DMetadata& meta)
+void IPTCStatus::readMetadata(const DMetadata& meta)
 {
     blockSignals(true);
 
@@ -286,7 +286,7 @@ void IPTCStatus::readMetadata(DMetadata& meta)
     blockSignals(false);
 }
 
-void IPTCStatus::applyMetadata(DMetadata& meta)
+void IPTCStatus::applyMetadata(const DMetadata& meta)
 {
     if (d->objectNameCheck->isChecked())
         meta.setIptcTagString("Iptc.Application2.ObjectName", d->objectNameEdit->text());

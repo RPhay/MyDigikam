@@ -252,7 +252,7 @@ void IPTCKeywords::slotLineEditModified()
                        ledit);
 }
 
-void IPTCKeywords::readMetadata(DMetadata& meta)
+void IPTCKeywords::readMetadata(const DMetadata& meta)
 {
     blockSignals(true);
 
@@ -275,7 +275,7 @@ void IPTCKeywords::readMetadata(DMetadata& meta)
     blockSignals(false);
 }
 
-void IPTCKeywords::applyMetadata(DMetadata& meta)
+void IPTCKeywords::applyMetadata(const DMetadata& meta)
 {
     QStringList newKeywords;
 

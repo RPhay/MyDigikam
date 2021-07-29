@@ -108,12 +108,12 @@ IPTCSubjects::~IPTCSubjects()
 {
 }
 
-void IPTCSubjects::readMetadata(DMetadata& meta)
+void IPTCSubjects::readMetadata(const DMetadata& meta)
 {
     setSubjectsList(meta.getIptcSubjects());
 }
 
-void IPTCSubjects::applyMetadata(DMetadata& meta)
+void IPTCSubjects::applyMetadata(const DMetadata& meta)
 {
     QStringList newSubjects = subjectsList();
 

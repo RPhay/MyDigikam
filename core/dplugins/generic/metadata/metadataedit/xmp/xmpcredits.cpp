@@ -355,7 +355,7 @@ QString XMPCredits::getXMPByLine() const
     return (newv.join(QLatin1Char(';')));
 }
 
-void XMPCredits::readMetadata(DMetadata& meta)
+void XMPCredits::readMetadata(const DMetadata& meta)
 {
     blockSignals(true);
 
@@ -553,7 +553,7 @@ void XMPCredits::readMetadata(DMetadata& meta)
     blockSignals(false);
 }
 
-void XMPCredits::applyMetadata(DMetadata& meta)
+void XMPCredits::applyMetadata(const DMetadata& meta)
 {
     QStringList oldList, newList;
 

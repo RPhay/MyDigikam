@@ -223,7 +223,7 @@ void XMPContent::setCheckedSyncEXIFCopyright(bool c)
     d->syncEXIFCopyrightCheck->setChecked(c);
 }
 
-void XMPContent::readMetadata(DMetadata& meta)
+void XMPContent::readMetadata(const DMetadata& meta)
 {
     blockSignals(true);
 
@@ -278,7 +278,7 @@ void XMPContent::readMetadata(DMetadata& meta)
     blockSignals(false);
 }
 
-void XMPContent::applyMetadata(DMetadata& meta)
+void XMPContent::applyMetadata(const DMetadata& meta)
 {
     if (d->headlineCheck->isChecked())
     {

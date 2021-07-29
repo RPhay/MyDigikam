@@ -441,7 +441,7 @@ void IPTCOrigin::slotLineEditModified()
                        ledit);
 }
 
-void IPTCOrigin::readMetadata(DMetadata& meta)
+void IPTCOrigin::readMetadata(const DMetadata& meta)
 {
     blockSignals(true);
 
@@ -620,7 +620,7 @@ void IPTCOrigin::readMetadata(DMetadata& meta)
     blockSignals(false);
 }
 
-void IPTCOrigin::applyMetadata(DMetadata& meta)
+void IPTCOrigin::applyMetadata(const DMetadata& meta)
 {
     if (d->dateCreatedCheck->isChecked())
     {
