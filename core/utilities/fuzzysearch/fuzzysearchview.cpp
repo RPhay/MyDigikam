@@ -368,11 +368,11 @@ void FuzzySearchView::slotAlbumSelected(Album* album)
 
     SearchXmlReader reader(salbum->query());
     reader.readToFirstField();
-    QStringRef type               = reader.attributes().value(QLatin1String("type"));
-    QStringRef numResultsString   = reader.attributes().value(QLatin1String("numberofresults"));
-    QStringRef thresholdString    = reader.attributes().value(QLatin1String("threshold"));
-    QStringRef maxThresholdString = reader.attributes().value(QLatin1String("maxthreshold"));
-    QStringRef sketchTypeString   = reader.attributes().value(QLatin1String("sketchtype"));
+    QStringView type               = reader.attributes().value(QLatin1String("type"));
+    QStringView numResultsString   = reader.attributes().value(QLatin1String("numberofresults"));
+    QStringView thresholdString    = reader.attributes().value(QLatin1String("threshold"));
+    QStringView maxThresholdString = reader.attributes().value(QLatin1String("maxthreshold"));
+    QStringView sketchTypeString   = reader.attributes().value(QLatin1String("sketchtype"));
 
     if      (type == QLatin1String("imageid"))
     {

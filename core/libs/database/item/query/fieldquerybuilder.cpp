@@ -461,8 +461,8 @@ void FieldQueryBuilder::addPosition()
     {
         // First read attributes
 
-        QStringRef type           = reader.attributes().value(QLatin1String("type"));
-        QStringRef distanceString = reader.attributes().value(QLatin1String("distance"));
+        QStringView type           = reader.attributes().value(QLatin1String("type"));
+        QStringView distanceString = reader.attributes().value(QLatin1String("distance"));
 
         // Distance in meters
 
@@ -593,7 +593,7 @@ void FieldQueryBuilder::addPosition()
     {
         // First read attributes
 
-        QStringRef type = reader.attributes().value(QLatin1String("type"));
+        QStringView type = reader.attributes().value(QLatin1String("type"));
 
         // Search type, currently only "rectangle"
 

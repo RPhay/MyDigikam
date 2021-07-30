@@ -40,7 +40,7 @@
 #include <QFile>
 #include <QPointer>
 #include <QXmlStreamAttributes>
-#include <QStringRef>
+#include <QStringView>
 #include <QString>
 #include <QStandardPaths>
 #include <QIcon>
@@ -1040,7 +1040,7 @@ void DItemsList::slotLoadItems()
 
             // get value of each attribute from QXmlStreamAttributes
 
-            QStringRef url             = attrs.value(QLatin1String("url"));
+            QStringView url             = attrs.value(QLatin1String("url"));
 
             if (url.isEmpty())
             {

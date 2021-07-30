@@ -979,7 +979,7 @@ bool ItemQueryBuilder::buildField(QString& sql, SearchXmlCachingReader& reader, 
         if (relation == SearchXml::Equal || relation == SearchXml::InTree)
         {
             // First, read attributes
-            QStringRef tagAttribute = reader.attributes().value(QLatin1String("tagid"));
+            QStringView tagAttribute = reader.attributes().value(QLatin1String("tagid"));
             int tagId               = 0;
 
             if (!tagAttribute.isEmpty())

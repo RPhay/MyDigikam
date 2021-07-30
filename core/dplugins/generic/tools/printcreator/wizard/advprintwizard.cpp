@@ -34,7 +34,7 @@
 #include <QtGlobal>
 #include <QDomDocument>
 #include <QContextMenuEvent>
-#include <QStringRef>
+#include <QStringView>
 #include <QStandardPaths>
 #include <QMenu>
 #include <QIcon>

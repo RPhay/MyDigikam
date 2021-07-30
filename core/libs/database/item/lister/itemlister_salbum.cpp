@@ -184,11 +184,11 @@ void ItemLister::listHaarSearch(ItemListerReceiver* const receiver,
         return;
     }
 
-    QStringRef type                  = reader.attributes().value(QLatin1String("type"));
-    QStringRef numResultsString      = reader.attributes().value(QLatin1String("numberofresults"));
-    QStringRef thresholdString       = reader.attributes().value(QLatin1String("threshold"));
-    QStringRef maxThresholdString    = reader.attributes().value(QLatin1String("maxthreshold"));
-    QStringRef sketchTypeString      = reader.attributes().value(QLatin1String("sketchtype"));
+    QStringView type                  = reader.attributes().value(QLatin1String("type"));
+    QStringView numResultsString      = reader.attributes().value(QLatin1String("numberofresults"));
+    QStringView thresholdString       = reader.attributes().value(QLatin1String("threshold"));
+    QStringView maxThresholdString    = reader.attributes().value(QLatin1String("maxthreshold"));
+    QStringView sketchTypeString      = reader.attributes().value(QLatin1String("sketchtype"));
 
     double threshold                 = 0.9;
     double maxThreshold              = 1.0;

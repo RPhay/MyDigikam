@@ -383,7 +383,7 @@ void AdvPrintPhotoPage::slotXMLLoadElement(QXmlStreamReader& xmlReader)
 
                 // get value of each attribute from QXmlStreamAttributes
 
-                QStringRef attr                = attrs.value(QLatin1String("type"));
+                QStringView attr                = attrs.value(QLatin1String("type"));
                 bool ok;
 
                 if (!attr.isEmpty())
@@ -757,7 +757,7 @@ void AdvPrintPhotoPage::slotXMLCustomElement(QXmlStreamReader& xmlReader)
 
             // get value of each attribute from QXmlStreamAttributes
 
-            QStringRef attr            = attrs.value(QLatin1String("Printer"));
+            QStringView attr            = attrs.value(QLatin1String("Printer"));
 
             if (!attr.isEmpty())
             {

@@ -503,7 +503,7 @@ void GPSSearchView::slotAlbumSelected(Album* a)
 
     SearchXmlReader reader(salbum->query());
     reader.readToFirstField();
-    QStringRef type      = reader.attributes().value(QLatin1String("type"));
+    QStringView type      = reader.attributes().value(QLatin1String("type"));
 
     if (type == QLatin1String("rectangle"))
     {

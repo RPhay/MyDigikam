@@ -359,7 +359,7 @@ QList<QString> SearchXmlReader::valueToStringOrStringList()
 SearchXml::Operator SearchXmlReader::readOperator(const QString& attributeName,
                                                   SearchXml::Operator defaultOperator) const
 {
-    QStringRef op = attributes().value(attributeName);
+    QStringView op = attributes().value(attributeName);
 
     if      (op == QLatin1String("and"))
     {
@@ -384,7 +384,7 @@ SearchXml::Operator SearchXmlReader::readOperator(const QString& attributeName,
 SearchXml::Relation SearchXmlReader::readRelation(const QString& attributeName,
                                                   SearchXml::Relation defaultRelation) const
 {
-    QStringRef relation = attributes().value(attributeName);
+    QStringView relation = attributes().value(attributeName);
 
     if (relation == QLatin1String("equal"))
     {

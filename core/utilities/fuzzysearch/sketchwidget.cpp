@@ -412,8 +412,8 @@ void SketchWidget::addPath(QXmlStreamReader& reader)
 
     // Retrieve pen color and size
 
-    QStringRef size  = reader.attributes().value(QLatin1String("Size"));
-    QStringRef color = reader.attributes().value(QLatin1String("Color"));
+    QStringView size  = reader.attributes().value(QLatin1String("Size"));
+    QStringView color = reader.attributes().value(QLatin1String("Color"));
 
     if (!size.isEmpty())
     {
@@ -437,10 +437,10 @@ void SketchWidget::addPath(QXmlStreamReader& reader)
 
             if (reader.name() == QLatin1String("Line"))
             {
-                QStringRef x1 = reader.attributes().value(QLatin1String("x1"));
-                QStringRef y1 = reader.attributes().value(QLatin1String("y1"));
-                QStringRef x2 = reader.attributes().value(QLatin1String("x2"));
-                QStringRef y2 = reader.attributes().value(QLatin1String("y2"));
+                QStringView x1 = reader.attributes().value(QLatin1String("x1"));
+                QStringView y1 = reader.attributes().value(QLatin1String("y1"));
+                QStringView x2 = reader.attributes().value(QLatin1String("x2"));
+                QStringView y2 = reader.attributes().value(QLatin1String("y2"));
 
                 if (!x1.isEmpty() && !y1.isEmpty())
                 {

@@ -739,7 +739,7 @@ DImageHistory DImageHistory::fromXml(const QString& xml) //DImageHistory
             qCDebug(DIGIKAM_DIMG_LOG) << "Parsing filter tag";
 */
             FilterAction::Category c  = FilterAction::ComplexFilter;
-            QStringRef categoryString = stream.attributes().value(QLatin1String("filterCategory"));
+            QStringView categoryString = stream.attributes().value(QLatin1String("filterCategory"));
 
             if      (categoryString == QLatin1String("reproducible"))
             {
