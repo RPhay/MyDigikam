@@ -36,6 +36,7 @@
 #include <QPoint>
 #include <QPolygon>
 #include <QRegion>
+#include <QRegularExpression>
 
 // KDE includes
 
@@ -530,17 +531,17 @@ static QString colorToString(const QColor& c)
 
 static QColor stringToColor(const QString& s)
 {
-    QRegExp regexp(QLatin1String("(rgb|rgba)\\s*\\((.+)\\)\\s*"));
-
-    if (regexp.exactMatch(s))
+    QRegularExpression regexp(QRegularExpression::anchoredPattern(QLatin1String("(rgb|rgba)\\s*\\((.+)\\)\\s*")));
+    QRegularExpressionMatch match = regexp.match(s);
+    if (match.hasMatch())
     {
-        QStringList colors = regexp.cap(1).split(QLatin1Char(','), QT_SKIP_EMPTY_PARTS);
+        QStringList colors = match.captured(1).split(QLatin1Char(','), QT_SKIP_EMPTY_PARTS);
 
         if (colors.size() >= 3)
         {
             QColor c(colors.at(0).toInt(), colors.at(1).toInt(), colors.at(2).toInt());
 
-            if (regexp.cap(0) == QLatin1String("rgba") && colors.size() == 4)
+            if (match.captured(0) == QLatin1String("rgba") && colors.size() == 4)
             {
                 c.setAlpha(colors.at(4).toInt());
             }

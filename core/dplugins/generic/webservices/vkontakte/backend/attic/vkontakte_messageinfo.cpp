@@ -26,7 +26,7 @@
 
 // Qt includes
 
-#include <QRegExp>
+#include <QRegularExpression>
 
 namespace Vkontakte
 {
@@ -98,9 +98,8 @@ int MessageInfo::mid() const
 void MessageInfo::setTitle(const QString& title)
 {
     // vk.com puts "..." into the title when the subject is not specified
-    QRegExp rx("(Re(\\(\\d+\\))?: )?( ?)\\.\\.\\.( ?)");
-
-    if (!rx.exactMatch(title))
+    QRegularExpression rx(QRegularExpression::anchoredPattern("(Re(\\(\\d+\\))?: )?( ?)\\.\\.\\.( ?)"));
+    if (!rx.match(title).hasMatch())
     {
         d->title = title;
     }
@@ -114,7 +113,7 @@ QString MessageInfo::title() const
 QString MessageInfo::coreTitle() const
 {
     QString res = d->title;
-    res.remove(QRegExp("^Re(\\(\\d+\\))?: "));
+    res.remove(QRegularExpression("^Re(\\(\\d+\\))?: "));
 
     return res;
 }

@@ -32,7 +32,7 @@
 #include <QGridLayout>
 #include <QLabel>
 #include <QPointer>
-#include <QRegExp>
+#include <QRegularExpression>
 #include <QValidator>
 #include <QApplication>
 #include <QStyle>
@@ -158,8 +158,8 @@ AlbumPropsEdit::AlbumPropsEdit(PAlbum* const album, bool create)
     d->titleEdit->setClearButtonEnabled(true);
     titleLabel->setBuddy(d->titleEdit);
 
-    QRegExp titleRx(QLatin1String("[^/:]+"));
-    QValidator* const titleValidator = new QRegExpValidator(titleRx, this);
+    QRegularExpression titleRx(QLatin1String("[^/:]+"));
+    QValidator* const titleValidator = new QRegularExpressionValidator(titleRx, this);
     d->titleEdit->setValidator(titleValidator);
     d->titleEdit->setPlaceholderText(i18nc("@label: album properties", "Enter album title here..."));
 
@@ -416,8 +416,8 @@ bool AlbumPropsEdit::createNew(PAlbum* const parent, QString& title, QString& co
 
 void AlbumPropsEdit::slotTitleChanged(const QString& newtitle)
 {
-    QRegExp emptyTitle = QRegExp(QLatin1String("^\\s*$"));
-    bool enable        = (!emptyTitle.exactMatch(newtitle) && !newtitle.isEmpty());
+    QRegularExpression emptyTitle(QRegularExpression::anchoredPattern(QLatin1String("^\\s*$")));
+    bool enable      = (!emptyTitle.match(newtitle).hasMatch() && !newtitle.isEmpty());
     d->buttons->button(QDialogButtonBox::Ok)->setEnabled(enable);
 }
 

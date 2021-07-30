@@ -30,7 +30,7 @@
 
 #include <QByteArray>
 #include <QImage>
-#include <QRegExp>
+#include <QRegularExpression>
 #include <QXmlStreamReader>
 #include <QFileInfo>
 #include <QMessageBox>
@@ -510,7 +510,7 @@ void PiwigoTalker::parseResponseGetVersion(const QByteArray& data)
 {
     QXmlStreamReader ts(data);
     QString line;
-    QRegExp verrx(QLatin1String(".?(\\d+)\\.(\\d+).*"));
+    QRegularExpression verrx(QRegularExpression::anchoredPattern(QLatin1String(".?(\\d+)\\.(\\d+).*")));
 
     bool foundResponse = false;
 
@@ -528,10 +528,10 @@ void PiwigoTalker::parseResponseGetVersion(const QByteArray& data)
                 (ts.attributes().value(QLatin1String("stat")) == QLatin1String("ok")))
             {
                 QString v = ts.readElementText();
-
-                if (verrx.exactMatch(v))
+                QRegularExpressionMatch match = verrx.match(v);
+                if (match.hasMatch())
                 {
-                    QStringList qsl = verrx.capturedTexts();
+                    QStringList qsl = match.capturedTexts();
                     d->version      = qsl[1].toInt() * 100 + qsl[2].toInt();
                     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Version: " << d->version;
                     break;
@@ -662,13 +662,13 @@ void PiwigoTalker::parseResponseDoesPhotoExist(const QByteArray& data)
             // Originally, first versions of Piwigo 2.4.x returned an invalid XML as the element started with a digit
             // New versions are corrected (starting with _) : This code works with both versions
 
-            QRegExp md5rx(QLatin1String("_?([a-f0-9]+)>([0-9]+)</.+"));
-
+            QRegularExpression md5rx(QRegularExpression::anchoredPattern(QLatin1String("_?([a-f0-9]+)>([0-9]+)</.+")));
             ts.readNext();
+            QRegularExpressionMatch match = md5rx.match(QString::fromUtf8(data.mid(ts.characterOffset())));
 
-            if (md5rx.exactMatch(QString::fromUtf8(data.mid(ts.characterOffset()))))
+            if (match.hasMatch())
             {
-                QStringList qsl1 = md5rx.capturedTexts();
+                QStringList qsl1 = match.capturedTexts();
 
                 if (qsl1[1] == QLatin1String(d->md5sum.toHex()))
                 {

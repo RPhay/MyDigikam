@@ -48,6 +48,7 @@
 #include <QFileInfo>
 #include <QDirIterator>
 #include <qplatformdefs.h>
+#include <QRegularExpression>
 
 #ifdef HAVE_DBUS
 #   include <QDBusInterface>
@@ -168,13 +169,13 @@ QUrl DFileOperations::getUniqueFileUrl(const QUrl& orgUrl,
     int counter = 0;
     QUrl destUrl(orgUrl);
     QFileInfo fi(destUrl.toLocalFile());
-    QRegExp version(QLatin1String("(.+)_v(\\d+)"));
+    QRegularExpression version(QRegularExpression::anchoredPattern(QLatin1String("(.+)_v(\\d+)")));
     QString completeBaseName = fi.completeBaseName();
-
-    if (version.exactMatch(completeBaseName))
+    QRegularExpressionMatch match = version.match(completeBaseName);
+    if (match.hasMatch())
     {
-        completeBaseName = version.cap(1);
-        counter          = version.cap(2).toInt();
+        completeBaseName = match.captured(1);
+        counter          = match.captured(2).toInt();
     }
 
     if (fi.exists())
@@ -213,13 +214,14 @@ QUrl DFileOperations::getUniqueFolderUrl(const QUrl& orgUrl)
     int counter              = 0;
     QUrl destUrl(orgUrl);
     QFileInfo fi(destUrl.toLocalFile());
-    QRegExp version(QLatin1String("(.+)-(\\d+)"));
+    QRegularExpression version(QRegularExpression::anchoredPattern(QLatin1String("(.+)-(\\d+)")));
     QString completeFileName = fi.fileName();
+    QRegularExpressionMatch match = version.match(completeFileName);
 
-    if (version.exactMatch(completeFileName))
+    if (match.hasMatch())
     {
-        completeFileName = version.cap(1);
-        counter          = version.cap(2).toInt();
+        completeFileName = match.captured(1);
+        counter          = match.captured(2).toInt();
     }
 
     if (fi.exists())

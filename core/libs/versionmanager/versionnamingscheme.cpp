@@ -24,6 +24,10 @@
 
 #include "versionnamingscheme.h"
 
+// Qt includes
+
+#include <QRegularExpression>
+
 // KDE includes
 
 #include <kconfiggroup.h>
@@ -60,35 +64,35 @@ QString DefaultVersionNamingScheme::baseName(const QString& currentPath, const Q
 
     // DSC000636_v5-3.JPG: intermediate
 
-    QRegExp versionIntermediate(QLatin1String("(.+)_v(\\d+)-(\\d+)"));
-
-    if (versionIntermediate.exactMatch(completeBaseName))
+    QRegularExpression versionIntermediate(QRegularExpression::anchoredPattern(QLatin1String("(.+)_v(\\d+)-(\\d+)")));
+    QRegularExpressionMatch match = versionIntermediate.match(completeBaseName);
+    if (match.hasMatch())
     {
         if (counter)
         {
-            *counter = versionIntermediate.cap(2).toInt();
+            *counter = match.captured(2).toInt();
         }
 
         if (intermediateCounter)
         {
-            *intermediateCounter = versionIntermediate.cap(3).toInt();
+            *intermediateCounter = match.captured(3).toInt();
         }
 
-        return versionIntermediate.cap(1);
+        return match.captured(1);
     }
 
     // DSC000636_v5.JPG: version
 
-    QRegExp version(QLatin1String("(.+)_v(\\d+)"));
-
-    if (version.exactMatch(completeBaseName))
+    QRegularExpression version(QRegularExpression::anchoredPattern(QLatin1String("(.+)_v(\\d+)")));
+    QRegularExpressionMatch versionMatch = version.match(completeBaseName);
+    if (versionMatch.hasMatch())
     {
         if (counter)
         {
-            *counter = version.cap(2).toInt();
+            *counter = versionMatch.captured(2).toInt();
         }
 
-        return version.cap(1);
+        return versionMatch.captured(1);
     }
 
     // DSC000636.JPG: original file or different naming scheme

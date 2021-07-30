@@ -30,7 +30,7 @@
 
 #include <QString>
 #include <QList>
-#include <QRegExp>
+#include <QRegularExpression>
 
 // Local includes
 
@@ -58,7 +58,7 @@ public:
 
 protected:
 
-    QList<QRegExp> m_filterList;
+    QList<QRegularExpression> m_filterList;
 };
 
 } // namespace Digikam

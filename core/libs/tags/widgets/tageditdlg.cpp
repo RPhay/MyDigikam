@@ -36,6 +36,7 @@
 #include <QDialogButtonBox>
 #include <QVBoxLayout>
 #include <QPushButton>
+#include <QRegularExpression>
 
 // KDE includes
 
@@ -362,8 +363,8 @@ void TagEditDlg::slotTitleChanged(const QString& newtitle)
                                   "\"%1\"</b>", tagName));
     }
 
-    QRegExp emptyTitle = QRegExp(QLatin1String("^\\s*$"));
-    bool enable        = (!emptyTitle.exactMatch(newtitle) && !newtitle.isEmpty());
+    QRegularExpression emptyTitle(QRegularExpression::anchoredPattern(QLatin1String("^\\s*$")));
+    bool enable        = (!emptyTitle.match(newtitle).hasMatch() && !newtitle.isEmpty());
     d->buttons->button(QDialogButtonBox::Ok)->setEnabled(enable);
 }
 
