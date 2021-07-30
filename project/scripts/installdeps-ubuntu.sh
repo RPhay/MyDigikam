@@ -79,3 +79,65 @@ required_packages=("cmake"                   # To Compile   Source Code
                    "libexpat1-dev"           # XML parsing C library
                    "libexiv2-dev"            # Metadata manipulation library
                     )    
+
+
+for pkg in ${required_packages[@]}; do
+
+    sudo apt-get install -y ${pkg}
+    
+    current_version=$(dpkg-query --showformat='${Version}' --show ${pkg}) 
+
+    case "${pkg}" in 
+    "cmake") 
+        required_version=3.3.2
+        ;;
+    "extra-cmake-modules") 
+        required_version=5.5.0
+        ;;
+    "libqt5core5a")
+        required_version=5.9.0
+        ;;
+    "libkf5config-dev")
+        required_version=5.5.0
+        ;;
+    "libopencv-dev")
+        required_version=3.3.0
+        ;;
+    "libpthread-stubs0-dev")
+        required_version=2.0.0
+        ;;
+    "libtiff-dev")
+        required_version=4.0.0
+        ;;
+    "libpng-dev")
+        required_version=1.6.0
+        ;;
+    "libjpeg-dev")
+        required_version=6b
+        ;;
+    "libboost-all-dev")
+        required_version=1.55.0
+        ;;
+    "liblcms2-dev")
+        required_version=2.0.0
+        ;;
+    "libexpat1-dev")
+        required_version=2.1.0
+        ;;
+    "libexiv2-dev")
+        required_version=0.27.0
+        ;;
+    esac
+    
+    echo $current_version
+
+    if $(dpkg --compare-versions "$current_version" "lt" "$required_version"); then 
+            echo "less than $required_version";
+            echo "please upgrade newer version or another packages";
+    else 
+            echo "greater than $required_version ............. accepted";
+    fi  
+
+    echo "-------------------------------------------------------------------"
+done
+
