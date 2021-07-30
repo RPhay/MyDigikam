@@ -25,6 +25,8 @@ if [[ "$OS_NAME" != "ubuntu" ]] ; then
     exit -1
 fi
 
+echo "Check the list of dependencies in the online doc API : https://www.digikam.org/api/index.html#externaldeps"
+echo "-------------------------------------------------------------------"
 
 # for downloading package information from all configured sources.'
 
