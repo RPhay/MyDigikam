@@ -321,7 +321,7 @@ XMPProperties::~XMPProperties()
     delete d;
 }
 
-void XMPProperties::readMetadata(DMetadata& meta)
+void XMPProperties::readMetadata(const DMetadata& meta)
 {
     blockSignals(true);
 
@@ -480,7 +480,7 @@ void XMPProperties::readMetadata(DMetadata& meta)
     blockSignals(false);
 }
 
-void XMPProperties::applyMetadata(DMetadata& meta)
+void XMPProperties::applyMetadata(const DMetadata& meta)
 {
     QStringList oldList, newList;
 

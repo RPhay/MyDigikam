@@ -275,15 +275,15 @@ void GPSItemDetails::displayGPSDataContainer(const GPSDataContainer* const gpsDa
 
     if (gpsData->hasCoordinates())
     {
-        d->leLatitude->setText(QString::number(gpsData->getCoordinates().lat(), 'f', 12));
-        d->leLongitude->setText(QString::number(gpsData->getCoordinates().lon(), 'f', 12));
+        d->leLatitude->setText(QLocale().toString(gpsData->getCoordinates().lat(), 'f', 12));
+        d->leLongitude->setText(QLocale().toString(gpsData->getCoordinates().lon(), 'f', 12));
 
         const bool haveAltitude = gpsData->hasAltitude();
         d->cbAltitude->setChecked(haveAltitude);
 
         if (haveAltitude)
         {
-            d->leAltitude->setText(QString::number(gpsData->getCoordinates().alt(), 'f', 12));
+            d->leAltitude->setText(QLocale().toString(gpsData->getCoordinates().alt(), 'f', 12));
         }
 
         const bool haveSpeed = gpsData->hasSpeed();
@@ -291,7 +291,7 @@ void GPSItemDetails::displayGPSDataContainer(const GPSDataContainer* const gpsDa
 
         if (haveSpeed)
         {
-            d->leSpeed->setText(QString::number(gpsData->getSpeed(), 'f', 12));
+            d->leSpeed->setText(QLocale().toString(gpsData->getSpeed(), 'f', 12));
         }
 
         const bool haveNSatellites = gpsData->hasNSatellites();
@@ -299,7 +299,7 @@ void GPSItemDetails::displayGPSDataContainer(const GPSDataContainer* const gpsDa
 
         if (haveNSatellites)
         {
-            /// @todo Is this enough for simple integers or do we have to use KLocale?
+            /// @todo Is this enough for simple integers or do we have to use QLocale?
             d->leNSatellites->setText(QString::number(gpsData->getNSatellites()));
         }
 
@@ -402,19 +402,19 @@ void GPSItemDetails::slotApply()
 
     if (d->cbCoordinates->isChecked())
     {
-        const double lat = d->leLatitude->text().toDouble();
-        const double lon = d->leLongitude->text().toDouble();
+        const double lat = QLocale().toDouble(d->leLatitude->text());
+        const double lon = QLocale().toDouble(d->leLongitude->text());
         newData.setCoordinates(GeoCoordinates(lat, lon));
 
         if (d->cbAltitude->isChecked())
         {
-            const qreal alt = static_cast<qreal>(d->leAltitude->text().toDouble());
+            const qreal alt = static_cast<qreal>(QLocale().toDouble(d->leAltitude->text()));
             newData.setAltitude(alt);
         }
 
         if (d->cbSpeed->isChecked())
         {
-            const qreal speed = static_cast<qreal>(d->leSpeed->text().toDouble());
+            const qreal speed = static_cast<qreal>(QLocale().toDouble(d->leSpeed->text()));
             newData.setSpeed(speed);
         }
 
@@ -432,7 +432,7 @@ void GPSItemDetails::slotApply()
 
         if (d->cbDop->isChecked())
         {
-            const qreal dop = static_cast<qreal>(d->leDop->text().toDouble());
+            const qreal dop = static_cast<qreal>(QLocale().toDouble(d->leDop->text()));
             newData.setDop(dop);
         }
     }

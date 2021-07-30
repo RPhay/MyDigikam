@@ -389,7 +389,7 @@ QDateTime XMPOrigin::getXMPCreationDate() const
     return d->dateCreatedSel->dateTime();
 }
 
-void XMPOrigin::readMetadata(DMetadata& meta)
+void XMPOrigin::readMetadata(const DMetadata& meta)
 {
     blockSignals(true);
 
@@ -573,7 +573,7 @@ void XMPOrigin::readMetadata(DMetadata& meta)
     blockSignals(false);
 }
 
-void XMPOrigin::applyMetadata(DMetadata& meta)
+void XMPOrigin::applyMetadata(const DMetadata& meta)
 {
     QString xmpDateTimeFormat = QLatin1String("yyyy-MM-ddThh:mm:ss");
 

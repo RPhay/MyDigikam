@@ -232,7 +232,7 @@ EXIFAdjust::~EXIFAdjust()
     delete d;
 }
 
-void EXIFAdjust::readMetadata(DMetadata& meta)
+void EXIFAdjust::readMetadata(const DMetadata& meta)
 {
     blockSignals(true);
 
@@ -333,7 +333,7 @@ void EXIFAdjust::readMetadata(DMetadata& meta)
     blockSignals(false);
 }
 
-void EXIFAdjust::applyMetadata(DMetadata& meta)
+void EXIFAdjust::applyMetadata(const DMetadata& meta)
 {
     long int num=1, den=1;
 

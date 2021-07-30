@@ -33,7 +33,7 @@ MjpegStreamSettings::MjpegStreamSettings()
     : port    (8080),
       loop    (true),
       quality (75),
-      interval(5)
+      delay   (5)
 {
 }
 
@@ -56,7 +56,7 @@ void MjpegStreamSettings::readSettings(KConfigGroup& group)
     port     = group.readEntry("MJPEGStreamPort",     8080);
     loop     = group.readEntry("MJPEGStreamLoop",     true);
     quality  = group.readEntry("MJPEGStreamQuality",  75);
-    interval = group.readEntry("MJPEGStreamInterval", 5);
+    delay    = group.readEntry("MJPEGStreamDelay",    5);
 }
 
 void MjpegStreamSettings::writeSettings(KConfigGroup& group)
@@ -64,7 +64,7 @@ void MjpegStreamSettings::writeSettings(KConfigGroup& group)
     group.writeEntry("MJPEGStreamPort",     port);
     group.writeEntry("MJPEGStreamLoop",     loop);
     group.writeEntry("MJPEGStreamQuality",  quality);
-    group.writeEntry("MJPEGStreamInterval", interval);
+    group.writeEntry("MJPEGStreamDelay",    delay);
 }
 
 } // namespace DigikamGenericMjpegStreamPlugin

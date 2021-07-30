@@ -97,9 +97,9 @@ target_link_libraries(databasetags_utest
 #              ${COMMON_TEST_LINK}
 #)
 
-add_executable(tagscachetest ${CMAKE_CURRENT_SOURCE_DIR}/tagscachetest.cpp)
+add_executable(tagscache_utest ${CMAKE_CURRENT_SOURCE_DIR}/tagscache_utest.cpp)
 
-target_link_libraries(tagscachetest
+target_link_libraries(tagscache_utest
                       digikamcore
                       digikamdatabase
                       ${COMMON_TEST_LINK}

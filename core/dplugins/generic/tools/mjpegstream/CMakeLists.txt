@@ -44,6 +44,16 @@ target_link_libraries(mjpegstreambackend
                       digikamcore
 )
 
+if(WIN32)
+
+    target_link_libraries(mjpegstreambackend
+                          PRIVATE
+                          wsock32
+                          ws2_32
+    )
+
+endif()
+
 # ---------------------------------------------------------------------------------------------------
 
 set(mjpegstreamplugin_SRCS

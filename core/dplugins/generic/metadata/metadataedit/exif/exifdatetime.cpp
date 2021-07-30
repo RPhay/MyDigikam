@@ -350,7 +350,7 @@ QDateTime EXIFDateTime::getEXIFCreationDate() const
     return d->dateCreatedSel->dateTime();
 }
 
-void EXIFDateTime::readMetadata(DMetadata& meta)
+void EXIFDateTime::readMetadata(const DMetadata& meta)
 {
     blockSignals(true);
 
@@ -467,7 +467,7 @@ void EXIFDateTime::readMetadata(DMetadata& meta)
     blockSignals(false);
 }
 
-void EXIFDateTime::applyMetadata(DMetadata& meta)
+void EXIFDateTime::applyMetadata(const DMetadata& meta)
 {
     QString exifDateTimeFormat = QLatin1String("yyyy:MM:dd hh:mm:ss");
     QString xmpDateTimeFormat  = QLatin1String("yyyy-MM-ddThh:mm:ss");

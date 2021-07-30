@@ -226,7 +226,7 @@ void XMPKeywords::slotAddKeyword()
     }
 }
 
-void XMPKeywords::readMetadata(DMetadata& meta)
+void XMPKeywords::readMetadata(const DMetadata& meta)
 {
     blockSignals(true);
 
@@ -249,7 +249,7 @@ void XMPKeywords::readMetadata(DMetadata& meta)
     blockSignals(false);
 }
 
-void XMPKeywords::applyMetadata(DMetadata& meta)
+void XMPKeywords::applyMetadata(const DMetadata& meta)
 {
     QStringList newKeywords;
 

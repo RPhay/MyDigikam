@@ -45,8 +45,8 @@ public:
     explicit XMPContent(QWidget* const parent);
     ~XMPContent() override;
 
-    void applyMetadata(DMetadata& meta);
-    void readMetadata(DMetadata& meta);
+    void applyMetadata(const DMetadata& meta);
+    void readMetadata(const DMetadata& meta);
 
     bool syncJFIFCommentIsChecked()   const;
     bool syncEXIFCommentIsChecked()   const;

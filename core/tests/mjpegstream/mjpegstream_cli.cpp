@@ -3,10 +3,10 @@
  * This file is a part of digiKam project
  * https://www.digikam.org
  *
- * Date        : 2011-12-28
- * Description : stand alone test for DMediaServer
+ * Date        : 2021-07-29
+ * Description : stand alone test for MJPEG Server
  *
- * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -36,18 +36,18 @@
 
 #include "digikam_debug.h"
 #include "dfiledialog.h"
-#include "dmediaservermngr.h"
+#include "mjpegservermngr.h"
 #include "metaengine.h"
 #include "dpluginloader.h"
 
 using namespace Digikam;
-using namespace DigikamGenericMediaServerPlugin;
+using namespace DigikamGenericMjpegStreamPlugin;
 
 int main(int argc, char* argv[])
 {
     QApplication   app(argc, argv);
     QList<QUrl>    list;
-    MediaServerMap map;
+    MjpegServerMap map;
 
     MetaEngine::initializeExiv2();
     DPluginLoader::instance()->init();
@@ -76,11 +76,11 @@ int main(int argc, char* argv[])
     if (!list.isEmpty())
     {
         map.insert(QLatin1String("Test Collection"), list);
-        DMediaServerMngr::instance()->setCollectionMap(map);
+        MjpegServerMngr::instance()->setCollectionMap(map);
     }
     else
     {
-        if (!DMediaServerMngr::instance()->load())
+        if (!MjpegServerMngr::instance()->load())
         {
             DPluginLoader::instance()->cleanUp();
 
@@ -88,7 +88,7 @@ int main(int argc, char* argv[])
         }
     }
 
-    if (DMediaServerMngr::instance()->startMediaServer())
+    if (MjpegServerMngr::instance()->startMjpegServer())
     {
         QProgressDialog* const pdlg = new QProgressDialog(nullptr);
         pdlg->setLabelText(QLatin1String("Sharing files on the network"));
@@ -101,11 +101,11 @@ int main(int argc, char* argv[])
     }
     else
     {
-        qCDebug(DIGIKAM_TESTS_LOG) << "Failed to start the Media Server...";
+        qCDebug(DIGIKAM_TESTS_LOG) << "Failed to start the MJPEG Server...";
     }
 
-    DMediaServerMngr::instance()->save();
-    DMediaServerMngr::instance()->cleanUp();
+    MjpegServerMngr::instance()->save();
+    MjpegServerMngr::instance()->cleanUp();
 
     DPluginLoader::instance()->cleanUp();
 

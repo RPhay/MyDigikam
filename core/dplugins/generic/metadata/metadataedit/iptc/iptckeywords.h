@@ -45,8 +45,8 @@ public:
     explicit IPTCKeywords(QWidget* const parent);
     ~IPTCKeywords() override;
 
-    void applyMetadata(DMetadata& meta);
-    void readMetadata(DMetadata& meta);
+    void applyMetadata(const DMetadata& meta);
+    void readMetadata(const DMetadata& meta);
 
 Q_SIGNALS:
 

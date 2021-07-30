@@ -45,8 +45,8 @@ public:
     explicit EXIFCaption(QWidget* const parent);
     ~EXIFCaption() override;
 
-    void applyMetadata(DMetadata& meta);
-    void readMetadata(DMetadata& meta);
+    void applyMetadata(const DMetadata& meta);
+    void readMetadata(const DMetadata& meta);
 
     bool syncJFIFCommentIsChecked() const;
     bool syncXMPCaptionIsChecked() const;

@@ -60,6 +60,7 @@ public:
         addressCheck       (nullptr),
         postalCodeCheck    (nullptr),
         cityCheck          (nullptr),
+        regionCheck        (nullptr),
         countryCheck       (nullptr),
         creatorTitleEdit   (nullptr),
         creditEdit         (nullptr),
@@ -70,6 +71,7 @@ public:
         addressEdit        (nullptr),
         postalCodeEdit     (nullptr),
         cityEdit           (nullptr),
+        regionEdit         (nullptr),
         countryEdit        (nullptr),
         creatorEdit        (nullptr)
     {
@@ -86,6 +88,7 @@ public:
     QCheckBox*        addressCheck;
     QCheckBox*        postalCodeCheck;
     QCheckBox*        cityCheck;
+    QCheckBox*        regionCheck;
     QCheckBox*        countryCheck;
 
     QLineEdit*        creatorTitleEdit;
@@ -97,6 +100,7 @@ public:
     QLineEdit*        addressEdit;
     QLineEdit*        postalCodeEdit;
     QLineEdit*        cityEdit;
+    QLineEdit*        regionEdit;
     QLineEdit*        countryEdit;
 
     MultiStringsEdit* creatorEdit;
@@ -158,6 +162,11 @@ XMPCredits::XMPCredits(QWidget* const parent)
     d->cityEdit->setClearButtonEnabled(true);
     d->cityEdit->setWhatsThis(i18n("Set here the contact city."));
 
+    d->regionCheck = new QCheckBox(i18n("State/Province:"), contactBox);
+    d->regionEdit  = new QLineEdit(contactBox);
+    d->regionEdit->setClearButtonEnabled(true);
+    d->regionEdit->setWhatsThis(i18n("Set here the contact state/province."));
+
     d->countryCheck = new QCheckBox(i18n("Country:"), contactBox);
     d->countryEdit  = new QLineEdit(contactBox);
     d->countryEdit->setClearButtonEnabled(true);
@@ -175,8 +184,10 @@ XMPCredits::XMPCredits(QWidget* const parent)
     grid2->addWidget(d->postalCodeEdit,     4, 1, 1, 2);
     grid2->addWidget(d->cityCheck,          5, 0, 1, 1);
     grid2->addWidget(d->cityEdit,           5, 1, 1, 2);
-    grid2->addWidget(d->countryCheck,       6, 0, 1, 1);
-    grid2->addWidget(d->countryEdit,        6, 1, 1, 2);
+    grid2->addWidget(d->regionCheck,        6, 0, 1, 1);
+    grid2->addWidget(d->regionEdit,         6, 1, 1, 2);
+    grid2->addWidget(d->countryCheck,       7, 0, 1, 1);
+    grid2->addWidget(d->countryEdit,        7, 1, 1, 2);
     grid2->setColumnStretch(2, 10);
     grid2->setContentsMargins(spacing, spacing, spacing, spacing);
     grid2->setSpacing(spacing);
@@ -234,6 +245,9 @@ XMPCredits::XMPCredits(QWidget* const parent)
     connect(d->cityCheck, SIGNAL(toggled(bool)),
             d->cityEdit, SLOT(setEnabled(bool)));
 
+    connect(d->regionCheck, SIGNAL(toggled(bool)),
+            d->regionEdit, SLOT(setEnabled(bool)));
+
     connect(d->countryCheck, SIGNAL(toggled(bool)),
             d->countryEdit, SLOT(setEnabled(bool)));
 
@@ -269,6 +283,9 @@ XMPCredits::XMPCredits(QWidget* const parent)
     connect(d->cityCheck, SIGNAL(toggled(bool)),
             this, SIGNAL(signalModified()));
 
+    connect(d->regionCheck, SIGNAL(toggled(bool)),
+            this, SIGNAL(signalModified()));
+
     connect(d->countryCheck, SIGNAL(toggled(bool)),
             this, SIGNAL(signalModified()));
 
@@ -299,6 +316,9 @@ XMPCredits::XMPCredits(QWidget* const parent)
             this, SIGNAL(signalModified()));
 
     connect(d->cityEdit, SIGNAL(textChanged(QString)),
+            this, SIGNAL(signalModified()));
+
+    connect(d->regionEdit, SIGNAL(textChanged(QString)),
             this, SIGNAL(signalModified()));
 
     connect(d->countryEdit, SIGNAL(textChanged(QString)),
@@ -335,7 +355,7 @@ QString XMPCredits::getXMPByLine() const
     return (newv.join(QLatin1Char(';')));
 }
 
-void XMPCredits::readMetadata(DMetadata& meta)
+void XMPCredits::readMetadata(const DMetadata& meta)
 {
     blockSignals(true);
 
@@ -461,6 +481,25 @@ void XMPCredits::readMetadata(DMetadata& meta)
 
     // --------------------------------------------------------
 
+    d->regionEdit->clear();
+    d->regionCheck->setChecked(false);
+    data = meta.getXmpTagString("Xmp.iptc.CreatorContactInfo/Iptc4xmpCore:CiAdrRegion", false);
+
+    if (data.isNull())
+    {
+        data = meta.getXmpTagString("Xmp.iptc.CiAdrRegion", false);
+    }
+
+    if (!data.isNull())
+    {
+        d->regionEdit->setText(data);
+        d->regionCheck->setChecked(true);
+    }
+
+    d->regionEdit->setEnabled(d->regionCheck->isChecked());
+
+    // --------------------------------------------------------
+
     d->countryEdit->clear();
     d->countryCheck->setChecked(false);
     data = meta.getXmpTagString("Xmp.iptc.CreatorContactInfo/Iptc4xmpCore:CiAdrCtry", false);
@@ -514,7 +553,7 @@ void XMPCredits::readMetadata(DMetadata& meta)
     blockSignals(false);
 }
 
-void XMPCredits::applyMetadata(DMetadata& meta)
+void XMPCredits::applyMetadata(const DMetadata& meta)
 {
     QStringList oldList, newList;
 
@@ -608,6 +647,17 @@ void XMPCredits::applyMetadata(DMetadata& meta)
     {
         meta.removeXmpTag("Xmp.iptc.CiAdrCity");
         meta.removeXmpTag("Xmp.iptc.CreatorContactInfo/Iptc4xmpCore:CiAdrCity");
+    }
+
+    if (d->regionCheck->isChecked())
+    {
+        meta.setXmpTagString("Xmp.iptc.CreatorContactInfo/Iptc4xmpCore:CiAdrRegion", d->regionEdit->text());
+        meta.removeXmpTag("Xmp.iptc.CiAdrRegion");
+    }
+    else
+    {
+        meta.removeXmpTag("Xmp.iptc.CiAdrRegion");
+        meta.removeXmpTag("Xmp.iptc.CreatorContactInfo/Iptc4xmpCore:CiAdrRegion");
     }
 
     if (d->countryCheck->isChecked())

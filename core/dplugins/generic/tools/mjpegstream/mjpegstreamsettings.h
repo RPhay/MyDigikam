@@ -59,7 +59,7 @@ public:
     int            port;          ///< IP port to use with MJPEG Server.
     bool           loop;          ///< Image stream as loop.
     int            quality;       ///< Jpeg compression [1...100].
-    int            interval;      ///< Interval in seconds between inmages.
+    int            delay;         ///< Delay in seconds between inages.
     QList<QUrl>    urlsList;      ///< Ordered list of list to stream.
 };
 

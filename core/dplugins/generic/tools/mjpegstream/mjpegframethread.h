@@ -30,7 +30,6 @@
 #include <QColor>
 #include <QPoint>
 #include <QFont>
-#include <QImage>
 #include <QDateTime>
 
 // Local includes
@@ -92,6 +91,7 @@ private:
 private:
 
     MjpegStreamSettings m_set;
+    QImage              m_broken;
 };
 
 } // namespace DigikamGenericMjpegStreamPlugin

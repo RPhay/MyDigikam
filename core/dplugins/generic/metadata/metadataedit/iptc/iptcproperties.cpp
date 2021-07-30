@@ -456,7 +456,7 @@ void IPTCProperties::slotLineEditModified()
                        ledit);
 }
 
-void IPTCProperties::readMetadata(DMetadata& meta)
+void IPTCProperties::readMetadata(const DMetadata& meta)
 {
     blockSignals(true);
 
@@ -656,7 +656,7 @@ void IPTCProperties::readMetadata(DMetadata& meta)
     blockSignals(false);
 }
 
-void IPTCProperties::applyMetadata(DMetadata& meta)
+void IPTCProperties::applyMetadata(const DMetadata& meta)
 {
     if (d->dateReleasedCheck->isChecked())
     {

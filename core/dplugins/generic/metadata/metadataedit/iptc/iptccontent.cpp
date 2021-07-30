@@ -231,7 +231,7 @@ void IPTCContent::slotLineEditModified()
                        ledit);
 }
 
-void IPTCContent::readMetadata(DMetadata& meta)
+void IPTCContent::readMetadata(const DMetadata& meta)
 {
     blockSignals(true);
 
@@ -267,7 +267,7 @@ void IPTCContent::readMetadata(DMetadata& meta)
     blockSignals(false);
 }
 
-void IPTCContent::applyMetadata(DMetadata& meta)
+void IPTCContent::applyMetadata(const DMetadata& meta)
 {
     if (d->captionCheck->isChecked())
     {

@@ -271,7 +271,7 @@ void IPTCCategories::slotLineEditModified()
                        ledit);
 }
 
-void IPTCCategories::readMetadata(DMetadata& meta)
+void IPTCCategories::readMetadata(const DMetadata& meta)
 {
     blockSignals(true);
 
@@ -311,7 +311,7 @@ void IPTCCategories::readMetadata(DMetadata& meta)
     blockSignals(false);
 }
 
-void IPTCCategories::applyMetadata(DMetadata& meta)
+void IPTCCategories::applyMetadata(const DMetadata& meta)
 {
     QStringList newCategories;
 

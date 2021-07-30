@@ -268,7 +268,7 @@ EXIFLens::~EXIFLens()
     delete d;
 }
 
-void EXIFLens::readMetadata(DMetadata& meta)
+void EXIFLens::readMetadata(const DMetadata& meta)
 {
     blockSignals(true);
 
@@ -381,7 +381,7 @@ void EXIFLens::readMetadata(DMetadata& meta)
     blockSignals(false);
 }
 
-void EXIFLens::applyMetadata(DMetadata& meta)
+void EXIFLens::applyMetadata(const DMetadata& meta)
 {
     long int num=1, den=1;
 

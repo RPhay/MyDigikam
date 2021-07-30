@@ -21,12 +21,15 @@
  *
  * ============================================================ */
 
-#ifndef TAGSCACHETEST_H
-#define TAGSCACHETEST_H
+#ifndef DIGIKAM_TAGS_CACHE_UTEST_H
+#define DIGIKAM_TAGS_CACHE_UTEST_H
+
+// Qt includes
 
 #include <QObject>
-#include <QDebug>
 #include <QtTest>
+
+// Local includes
 
 #include "tagscache.h"
 
@@ -39,12 +42,14 @@
  *
  * Uses a temporary in-memory sqlite database, and does not require a GUI.
  */
-
 class TagsCacheTest : public QObject
 {
     Q_OBJECT
 
 public:
+
+    TagsCacheTest(QObject* const parent = nullptr);
+    ~TagsCacheTest() override;
 
 private Q_SLOTS:
 
@@ -58,9 +63,8 @@ private Q_SLOTS:
     void testRepeatedNames();
     void testDuplicateTop();
 
-private:
 
-    Digikam::TagsCache* tags_cache;
+private:
 
     // utilities
     int countTags();
@@ -69,6 +73,9 @@ private:
     void dumpTables();
     void dumpTags();
 
+private:
+
+    Digikam::TagsCache* tagsCache;
 };
 
-#endif /* TAGSCACHETEST_H */
+#endif // DIGIKAM_TAGS_CACHE_UTEST_H

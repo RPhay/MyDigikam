@@ -150,7 +150,7 @@ XMPStatus::~XMPStatus()
     delete d;
 }
 
-void XMPStatus::readMetadata(DMetadata& meta)
+void XMPStatus::readMetadata(const DMetadata& meta)
 {
     blockSignals(true);
 
@@ -198,7 +198,7 @@ void XMPStatus::readMetadata(DMetadata& meta)
     blockSignals(false);
 }
 
-void XMPStatus::applyMetadata(DMetadata& meta)
+void XMPStatus::applyMetadata(const DMetadata& meta)
 {
     QStringList oldList, newList;
 

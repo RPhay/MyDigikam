@@ -91,12 +91,12 @@ XMPSubjects::~XMPSubjects()
 {
 }
 
-void XMPSubjects::readMetadata(DMetadata& meta)
+void XMPSubjects::readMetadata(const DMetadata& meta)
 {
     setSubjectsList(meta.getXmpSubjects());
 }
 
-void XMPSubjects::applyMetadata(DMetadata& meta)
+void XMPSubjects::applyMetadata(const DMetadata& meta)
 {
     QStringList newSubjects = subjectsList();
 

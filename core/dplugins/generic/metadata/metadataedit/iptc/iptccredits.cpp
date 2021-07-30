@@ -233,7 +233,7 @@ void IPTCCredits::slotLineEditModified()
                        ledit);
 }
 
-void IPTCCredits::readMetadata(DMetadata& meta)
+void IPTCCredits::readMetadata(const DMetadata& meta)
 {
     blockSignals(true);
 
@@ -288,7 +288,7 @@ void IPTCCredits::readMetadata(DMetadata& meta)
     blockSignals(false);
 }
 
-void IPTCCredits::applyMetadata(DMetadata& meta)
+void IPTCCredits::applyMetadata(const DMetadata& meta)
 {
     QStringList oldList, newList;
 

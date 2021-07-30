@@ -25,7 +25,6 @@
 
 // Qt includes
 
-#include <QImage>
 #include <QByteArray>
 #include <QColor>
 #include <QPoint>
