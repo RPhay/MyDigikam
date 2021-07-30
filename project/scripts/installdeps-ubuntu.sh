@@ -3,7 +3,8 @@
 # Script to install dependencies under Ubuntu Linux to compile digiKam.
 # This script must be run as sudo
 #
-# Copyright (c) 2021 by Surya K M <suryakm_is20 dot rvitm@rvei dot edu dot in>
+# Copyright (c) 2021 by TRAN Quoc Hung <quochungtran1999 at gmail dot com         > 
+# Copyright (c) 2021 by Surya K M      <suryakm_is20 dot rvitm@rvei dot edu dot in>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
