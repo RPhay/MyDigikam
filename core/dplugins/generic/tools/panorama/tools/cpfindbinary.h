@@ -23,6 +23,10 @@
 #ifndef DIGIKAM_CPFIND_BINARY_H
 #define DIGIKAM_CPFIND_BINARY_H
 
+// Qt includes
+
+#include <QRegularExpression>
+
 // Local includes
 
 #include "dbinaryiface.h"
@@ -64,7 +68,7 @@ protected:
 
 private:
 
-    QRegExp headerRegExp;
+    QRegularExpression headerRegExp;
 };
 
 } // namespace DigikamGenericPanoramaPlugin

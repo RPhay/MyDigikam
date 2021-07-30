@@ -82,7 +82,7 @@ QString KmlExport::webifyFileName(const QString& fileName) const
 
     // Remove potentially troublesome chars
 
-    webFileName         = webFileName.replace(QRegExp(QLatin1String("[^-0-9a-z]+")), QLatin1String("_"));
+    webFileName         = webFileName.replace(QRegularExpression(QLatin1String("[^-0-9a-z]+")), QLatin1String("_"));
 
     return webFileName;
 }

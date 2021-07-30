@@ -37,12 +37,12 @@ bool CPFindBinary::parseHeader(const QString& output)
     foreach (const QString& line, lines)
     {
         qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << path() << " help header line: \n" << line;
-
-        if (line.contains(headerRegExp))
+        QRegularExpressionMatch regMatch = headerRegExp.match(line);
+        if (regMatch.hasMatch())
         {
-            m_version = headerRegExp.cap(2);
+            m_version = regMatch.captured(2);
 
-            if (!headerRegExp.cap(1).isEmpty())
+            if (!regMatch.captured(1).isEmpty())
             {
                 m_developmentVersion = true;
             }

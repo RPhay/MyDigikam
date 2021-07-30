@@ -43,8 +43,8 @@ XMPSubjects::XMPSubjects(QWidget* const parent)
     // - '*' (\x2A)
     // - ':' (\x3A)
     // - '?' (\x3F)
-    QRegExp subjectRx(QLatin1String("[^*:?]+$"));
-    QValidator* const subjectValidator = new QRegExpValidator(subjectRx, this);
+    QRegularExpression subjectRx(QLatin1String("[^*:?]+$"));
+    QValidator* const subjectValidator = new QRegularExpressionValidator(subjectRx, this);
 
     // --------------------------------------------------------
 

@@ -85,8 +85,8 @@ EXIFCaption::EXIFCaption(QWidget* const parent)
     QGridLayout* const grid = new QGridLayout(this);
 
     // EXIF only accept printable Ascii char.
-    QRegExp asciiRx(QLatin1String("[\x20-\x7F]+$"));
-    QValidator* const asciiValidator = new QRegExpValidator(asciiRx, this);
+    QRegularExpression asciiRx(QLatin1String("[\x20-\x7F]+$"));
+    QValidator* const asciiValidator = new QRegularExpressionValidator(asciiRx, this);
 
     // --------------------------------------------------------
 

@@ -656,7 +656,7 @@ QString GalleryGenerator::webifyFileName(const QString& fname)
 
     // Remove potentially troublesome chars
 
-    return fileName.replace(QRegExp(QLatin1String("[^-0-9a-z]+")), QLatin1String("_"));
+    return fileName.replace(QRegularExpression(QLatin1String("[^-0-9a-z]+")), QLatin1String("_"));
 }
 
 } // namespace DigikamGenericHtmlGalleryPlugin

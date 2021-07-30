@@ -30,7 +30,7 @@
 #include <QUrl>
 #include <QUrlQuery>
 #include <QXmlStreamReader>
-#include <QRegExp>
+#include <QRegularExpression>
 #include <QNetworkAccessManager>
 #include <QNetworkCookie>
 #include <QNetworkReply>
@@ -155,7 +155,7 @@ void QueryInfo::doWorkProcessReply()
         // Replace & in &amp;
 
         QString content = QString::fromUtf8(d->reply->readAll());
-        QRegExp regex(QStringLiteral("&(?!\\w+;)"));
+        QRegularExpression regex(QStringLiteral("&(?!\\w+;)"));
         content.replace(regex, QStringLiteral("&amp;"));
         QXmlStreamReader reader(content);
         QVector<Protection> protect;
