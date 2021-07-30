@@ -123,7 +123,7 @@ public:
 
         if (preset == None)
         {
-            tempDesc.remove(QRegExp(QLatin1String("\\(.*\\)")));
+            tempDesc.remove(QRegularExpression(QLatin1String("\\(.*\\)")));
         }
 
         return tempDesc;

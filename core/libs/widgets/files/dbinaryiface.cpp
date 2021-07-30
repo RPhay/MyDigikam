@@ -27,6 +27,7 @@
 
 #include <QProcess>
 #include <QMessageBox>
+#include <QRegularExpression>
 
 // KDE includes
 
@@ -123,12 +124,12 @@ bool DBinaryIface::versionIsRight() const
         return true;
     }
 
-    QRegExp reg(QLatin1String("^(\\d*[.]\\d*)"));
+    QRegularExpression reg(QLatin1String("^(\\d*[.]\\d*)"));
 
     // cppcheck-suppress ignoredReturnValue ; dead code?
-    version().indexOf(reg);
+    QRegularExpressionMatch match = reg.match(version());
 
-    float floatVersion = reg.capturedTexts().constFirst().toFloat();
+    float floatVersion = match.capturedTexts().constFirst().toFloat();
 
     return (!version().isNull() &&
             isFound()           &&
@@ -142,12 +143,12 @@ bool DBinaryIface::versionIsRight(const float customVersion) const
         return true;
     }
 
-    QRegExp reg(QLatin1String("^(\\d*[.]\\d*)"));
+    QRegularExpression reg(QLatin1String("^(\\d*[.]\\d*)"));
 
     // cppcheck-suppress ignoredReturnValue ; dead code?
-    version().indexOf(reg);
+    QRegularExpressionMatch match = reg.match(version());
 
-    float floatVersion = reg.capturedTexts().constFirst().toFloat();
+    float floatVersion = match.capturedTexts().constFirst().toFloat();
     qCDebug(DIGIKAM_GENERAL_LOG) << "Found (" << isFound()
                                  << ") :: Version : " << version()
                                  << "(" << floatVersion
@@ -195,12 +196,8 @@ bool DBinaryIface::parseHeader(const QString& output)
 
 void DBinaryIface::setVersion(QString& version)
 {
-    QRegExp versionRegExp(QLatin1String("\\d*(\\.\\d+)*"));
-
-    // cppcheck-suppress ignoredReturnValue ; dead code?
-    version.indexOf(versionRegExp);
-
-    m_version = versionRegExp.capturedTexts().constFirst();
+    QRegularExpression versionRegExp(QLatin1String("\\d*(\\.\\d+)*"));
+    m_version = versionRegExp.match(version).capturedTexts().constFirst();
 }
 
 void DBinaryIface::slotNavigateAndCheck()

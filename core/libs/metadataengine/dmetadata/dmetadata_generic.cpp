@@ -29,6 +29,7 @@
 
 #include <QLocale>
 #include <QScopedPointer>
+#include <QRegularExpression>
 
 // KDE includes
 
@@ -1034,7 +1035,7 @@ QString DMetadata::valueToString(const QVariant& value, MetadataInfo::Field fiel
 
             QStringList keys    = map.keys();
             QString spec2       = QLocale().name().toLower();
-            QRegExp exp(spec2.left(spec2.indexOf(QLatin1Char('_'))) + QLatin1Char('-'));
+            QRegularExpression exp(spec2.left(spec2.indexOf(QLatin1Char('_'))) + QLatin1Char('-'));
             QStringList matches = keys.filter(exp);
 
             if (!matches.isEmpty())

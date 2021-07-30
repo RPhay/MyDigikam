@@ -54,7 +54,7 @@ bool DServiceMenu::runFiles(const QString& appCmd,
                             const QList<QUrl>& urls,
                             KService* const service)
 {
-    QRegExp split(QLatin1String(" +(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)"));
+    QRegularExpression split(QLatin1String(" +(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)"));
     QStringList cmdList = appCmd.split(split, QT_SKIP_EMPTY_PARTS);
     QList<QUrl> urlList = urls;
 

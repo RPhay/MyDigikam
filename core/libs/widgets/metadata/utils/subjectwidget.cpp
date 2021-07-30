@@ -133,8 +133,8 @@ SubjectWidget::SubjectWidget(QWidget* const parent, bool sizeLimited)
 
     // Subject Reference Number only accept digit.
 
-    QRegExp refDigitRx(QLatin1String("^[0-9]{8}$"));
-    QValidator* const refValidator = new QRegExpValidator(refDigitRx, this);
+    QRegularExpression refDigitRx(QLatin1String("^[0-9]{8}$"));
+    QValidator* const refValidator = new QRegularExpressionValidator(refDigitRx, this);
 
     // --------------------------------------------------------
 

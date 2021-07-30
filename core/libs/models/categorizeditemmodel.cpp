@@ -77,7 +77,7 @@ static QString adjustedActionText(const QAction* const action)
 {
     QString text = action->text();
     text.remove(QLatin1Char('&'));
-    text.remove(QRegExp(QString::fromUtf8("[ \u00A0]?(\\.\\.\\.|…)$")));
+    text.remove(QRegularExpression(QString::fromUtf8("[ \u00A0]?(\\.\\.\\.|…)$")));
     int slashPos = -1;
 
     while ((slashPos = text.indexOf(QLatin1Char('/'), slashPos + 1)) != -1)

@@ -25,6 +25,7 @@
 #include <QStandardPaths>
 #include <QFile>
 #include <QDir>
+#include <QRegularExpression>
 
 // Local includes
 
@@ -369,7 +370,7 @@ LensFunIface::MetadataMatch LensFunIface::findFromMetadata(DMetadata* const meta
                 // "10.0 - 20.0 mm". This must be adapted like this : "10-20mm"
 
                 lensCutted = d->lensDescription;
-                lensCutted.replace(QRegExp(QLatin1String("\\.[0-9]")), QLatin1String("")); //krazy:exclude=doublequote_chars
+                lensCutted.replace(QRegularExpression(QLatin1String("\\.[0-9]")), QLatin1String("")); //krazy:exclude=doublequote_chars
                 lensCutted.replace(QLatin1String(" - "), QLatin1String("-"));
                 lensCutted.replace(QLatin1String(" mm"), QLatin1String("mn"));
                 lensList   = findLenses(d->usedCamera, lensCutted);

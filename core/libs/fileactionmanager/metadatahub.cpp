@@ -603,9 +603,9 @@ QStringList MetadataHub::cleanupTags(const QStringList& toClean)
             // digiKam_root_tag is present in some photos tagged with older
             // version of digiKam, must be removed
 
-            if (keyword.contains(QRegExp(QLatin1String("(_Digikam_root_tag_/|/_Digikam_root_tag_|_Digikam_root_tag_)"))))
+            if (keyword.contains(QRegularExpression(QLatin1String("(_Digikam_root_tag_/|/_Digikam_root_tag_|_Digikam_root_tag_)"))))
             {
-                keyword = keyword.replace(QRegExp(QLatin1String("(_Digikam_root_tag_/|/_Digikam_root_tag_|_Digikam_root_tag_)")),
+                keyword = keyword.replace(QRegularExpression(QLatin1String("(_Digikam_root_tag_/|/_Digikam_root_tag_|_Digikam_root_tag_)")),
                                           QLatin1String(""));
             }
 
