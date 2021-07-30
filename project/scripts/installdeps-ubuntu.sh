@@ -147,8 +147,7 @@ for pkg in ${required_packages[@]}; do
     echo "-------------------------------------------------------------------"
 done
 
-<<<<<<< HEAD
-=======
+
 
 # Install optional dependencies to Compile And Link Source Code
 
@@ -224,4 +223,3 @@ optional_packages=("ruby"
 #     sudo apt-get install -y ${pkg}
 #     echo "-------------------------------------------------------------------"
 # done      
->>>>>>> 78496f9251... comment the recommended version for optional deps
