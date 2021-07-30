@@ -141,3 +141,82 @@ for pkg in ${required_packages[@]}; do
     echo "-------------------------------------------------------------------"
 done
 
+<<<<<<< HEAD
+=======
+
+# Install optional dependencies to Compile And Link Source Code
+
+optional_packages=("ruby"
+                   "subversion"
+                   "valgrind"
+                   "lzip"
+                   "gzip"
+                   "unzip"
+                   "gperf"
+                   "intltool"
+                   "unrar"
+                   "scons"
+                   "icoutils"
+                   "gcc-mingw-w64"                   
+                   "python3-mako"
+                   "python3-pygments"
+                   "python3-bs4"
+                   "python3-soupsieve"
+                   "cppcheck"
+                   "clang"
+                   "doxygen"
+                   "kate"
+                   "ktexteditor-katepart"
+                   "ccache"
+                   "build-essential"
+                   "hugin"
+                   "bison"                              # >= 2.5.0
+                   "flex"                               # >= 2.5.0
+                   "wget"                              
+                   "coreutils"
+                   "dmg2img"
+                   "tesseract-ocr"
+                   "libeigen3-dev"                      # >= 3.2
+                   "liblensfun-dev"                     # >= 0.2.8
+                   "libmarble-dev"                      # >= 0.22
+                   "marble-data"                        # >= 5.0
+                   "libasan4"
+                   "libgomp1" 
+                   "llvm"
+                   "libclang-dev"                      
+                   "libqtav-dev"                        # >= 1.12.0
+                   "ffmpeg"                             # >= 3.3.x    
+                   "libgphoto2-dev"                     # >= 2.5
+                   "libsane-dev"                        # >= 5.0.0
+                   "libjasper-dev"                      # >= 1.900.1
+                   "libxslt-dev"                        # >= 1.1.0
+                   "libxml2-dev"                        # >= 2.7.0
+                   "libtiff-dev"                        # >= 4.0
+                   "liblqr-dev"                         # >= 0.4.2
+                   "fftw-dev" 
+                   "curl" 
+                   "libx265-dev"                        # >= 2.2 
+                   "libmagick++-dev"                    # >= 6.7.0    
+                   "libqt5x11extras5-dev"               # >= 5.9
+                   "libqt5test5"                        # >= 5.9
+                   "libqt5xml5"                         # >= 5.9    
+                   "libqt5xmlpatterns5-dev"             # >= 5.9
+                   "libqt5opengl5-dev"                  # >= 5.9
+                   "libkf5sane-dev"                     # >= 5.5.0    
+                   "libkf5threadweaver-dev"             # >= 5.5.0
+                   "libkf5kio-dev"                      # >= 5.5.0              
+                   "libkf5notifications-dev"            # >= 5.5.0
+                   "libkf5notifyconfig-dev"             # >= 5.5.0
+                   "libkf5filemetadata-dev"             # >= 5.5.0
+                   "libkf5calendarcore-dev"             # >= 5.5.0
+                   "libkf5akonadicontact-dev"           # >= 4.89.0
+                   "libkf5doctools-dev" 
+                    #TODO add new optinal packages
+                    )    
+    
+
+# for pkg in ${optional_packages[@]}; do
+#     sudo apt-get install -y ${pkg}
+#     echo "-------------------------------------------------------------------"
+# done      
+>>>>>>> 78496f9251... comment the recommended version for optional deps
