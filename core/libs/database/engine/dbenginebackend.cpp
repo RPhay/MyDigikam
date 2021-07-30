@@ -31,7 +31,7 @@
 #include <QFileInfo>
 #include <QHash>
 #include <QMap>
-#include <QRegExp>
+#include <QRegularExpression>
 #include <QSqlDatabase>
 #include <QSqlDriver>
 #include <QSqlError>
@@ -1218,12 +1218,13 @@ DbEngineSqlQuery BdEngineBackend::execQuery(const QString& sql, const QMap<QStri
 /*
         qCDebug(DIGIKAM_DBENGINE_LOG) << "Prepare statement [" << preparedString << "] with binding map [" << bindingMap << "]";
 */
-        QRegExp identifierRegExp(QLatin1String(":[A-Za-z0-9]+"));
+        QRegularExpression identifierRegExp(QLatin1String(":[A-Za-z0-9]+"));
         int pos = 0;
 
-        while ((pos = identifierRegExp.indexIn(preparedString, pos)) != -1)
+        while ((pos = preparedString.indexOf(identifierRegExp, pos)) != -1)
         {
-            QString namedPlaceholder = identifierRegExp.cap(0);
+            QRegularExpressionMatch regMatch = identifierRegExp.match(preparedString);
+            QString namedPlaceholder = regMatch.captured(0);
 
             if (!bindingMap.contains(namedPlaceholder))
             {
@@ -1340,7 +1341,7 @@ DbEngineSqlQuery BdEngineBackend::execQuery(const QString& sql, const QMap<QStri
                 replaceStr = QLatin1Char('?');
             }
 
-            preparedString = preparedString.replace(pos, identifierRegExp.matchedLength(), replaceStr);
+            preparedString = preparedString.replace(pos, regMatch.capturedLength(), replaceStr);
             pos            = 0; // reset pos
         }
     }

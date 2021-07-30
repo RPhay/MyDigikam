@@ -705,10 +705,10 @@ bool ItemFilterSettings::matches(const ItemInfo& info, bool* const foundText) co
 
         if (m_textFilterSettings.textFields & SearchTextFilterSettings::ImageAspectRatio)
         {
-            QRegExp expRatio (QLatin1String("^\\d+:\\d+$"));
-            QRegExp expFloat (QLatin1String("^\\d+(.\\d+)?$"));
+            QRegularExpression expRatio (QLatin1String("^\\d+:\\d+$"));
+            QRegularExpression expFloat (QLatin1String("^\\d+(.\\d+)?$"));
 
-            if ((expRatio.indexIn(m_textFilterSettings.text) > -1) && m_textFilterSettings.text.contains(QRegExp(QLatin1String(":\\d+"))))
+            if (m_textFilterSettings.text.contains(expRatio) && m_textFilterSettings.text.contains(QRegularExpression(QLatin1String(":\\d+"))))
             {
                 QString trimmedTextFilterSettingsText = m_textFilterSettings.text;
                 QStringList numberStringList          = trimmedTextFilterSettingsText.split(QLatin1Char(':'), QT_SKIP_EMPTY_PARTS);
@@ -729,7 +729,7 @@ bool ItemFilterSettings::matches(const ItemInfo& info, bool* const foundText) co
                     }
                 }
             }
-            else if (expFloat.indexIn(m_textFilterSettings.text) > -1)
+            else if (m_textFilterSettings.text.contains(expFloat))
             {
                 QString trimmedTextFilterSettingsText = m_textFilterSettings.text;
                 bool    canConverse                   = false;
@@ -754,17 +754,17 @@ bool ItemFilterSettings::matches(const ItemInfo& info, bool* const foundText) co
             int pixelSize = size.height()*size.width();
             QString text  = m_textFilterSettings.text;
 
-            if      (text.contains(QRegExp(QLatin1String("^>\\d{1,15}$"))) &&
+            if      (text.contains(QRegularExpression(QLatin1String("^>\\d{1,15}$"))) &&
                 (pixelSize > (text.remove(0, 1)).toInt()))
             {
                 textMatch = true;
             }
-            else if (text.contains(QRegExp(QLatin1String("^<\\d{1,15}$"))) &&
+            else if (text.contains(QRegularExpression(QLatin1String("^<\\d{1,15}$"))) &&
                      (pixelSize < (text.remove(0, 1)).toInt()))
             {
                 textMatch = true;
             }
-            else if (text.contains(QRegExp(QLatin1String("^\\d+$"))) &&
+            else if (text.contains(QRegularExpression(QLatin1String("^\\d+$"))) &&
                      (pixelSize == text.toInt()))
             {
                 textMatch = true;

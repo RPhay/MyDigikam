@@ -24,6 +24,10 @@
 
 #include "facetags.h"
 
+// Qt includes
+
+#include <QRegularExpression>
+
 // KDE includes
 
 #include <klocalizedstring.h>
@@ -70,7 +74,7 @@ QString FaceTagsHelper::tagPath(const QString& name, int parentId)
 {
     QString faceParentTagName = TagsCache::instance()->tagName(parentId);
 
-    if ((faceParentTagName).contains(QRegExp(QLatin1String("(_Digikam_root_tag_/|/_Digikam_root_tag_|_Digikam_root_tag_)"))))
+    if ((faceParentTagName).contains(QRegularExpression(QLatin1String("(_Digikam_root_tag_/|/_Digikam_root_tag_|_Digikam_root_tag_)"))))
     {
         return  QLatin1Char('/') + name;
     }

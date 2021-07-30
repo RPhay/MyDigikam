@@ -25,6 +25,10 @@
 
 #include "itemquerybuilder_p.h"
 
+// Qt includes
+
+#include <QRegularExpression>
+
 // Local includes
 
 #include "digikam_globals.h"
@@ -458,7 +462,7 @@ bool ItemQueryBuilder::buildField(QString& sql, SearchXmlCachingReader& reader, 
         QString query;
         QString readerString = (reader.valueToStringOrStringList()).at(0);
 
-        if (readerString.contains(QRegExp(QLatin1String("^\\d+:\\d+$"))))
+        if (readerString.contains(QRegularExpression(QLatin1String("^\\d+:\\d+$"))))
         {
             QStringList ratioNum = readerString.split(QLatin1Char(':'), QT_SKIP_EMPTY_PARTS);
             int num              = ratioNum.at(0).toInt();
@@ -467,7 +471,7 @@ bool ItemQueryBuilder::buildField(QString& sql, SearchXmlCachingReader& reader, 
             sql                 += QString::fromUtf8(" (") + query + QString::fromUtf8(") ");
             *boundValues << (double)num/denominator;
         }
-        else if (readerString.contains(QRegExp(QLatin1String("^\\d+(.\\d+)?$"))))
+        else if (readerString.contains(QRegularExpression(QLatin1String("^\\d+(.\\d+)?$"))))
         {
             query = QString::fromUtf8("ABS((ImageInformation.width/CAST(ImageInformation.height AS DOUBLE)) - ?)  < 0.1");
             sql  += QString::fromUtf8(" (") + query + QString::fromUtf8(") ");

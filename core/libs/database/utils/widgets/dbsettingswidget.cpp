@@ -207,8 +207,8 @@ void DatabaseSettingsWidget::setupMainArea()
 
     // Only accept printable Ascii char for database names.
 
-    QRegExp asciiRx(QLatin1String("[\x20-\x7F]+$"));
-    QValidator* const asciiValidator = new QRegExpValidator(asciiRx, this);
+    QRegularExpression asciiRx(QLatin1String("[\x20-\x7F]+$"));
+    QValidator* const asciiValidator = new QRegularExpressionValidator(asciiRx, this);
 
     QLabel* const dbNameCoreLabel                    = new QLabel(i18n("Core Db Name:"));
     d->dbNameCore                                    = new QLineEdit();

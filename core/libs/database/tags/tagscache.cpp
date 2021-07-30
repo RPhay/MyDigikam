@@ -32,6 +32,7 @@
 #include <QWriteLocker>
 #include <QStringList>
 #include <QMap>
+#include <QRegularExpression>
 
 // Local includes
 
@@ -402,7 +403,7 @@ QString TagsCache::tagPath(int id, LeadingSlashPolicy slashPolicy) const
         }
         else
         {
-            if ((it->name).contains(QRegExp(QLatin1String("(_Digikam_root_tag_/|/_Digikam_root_tag_|_Digikam_root_tag_)"))))
+            if ((it->name).contains(QRegularExpression(QLatin1String("(_Digikam_root_tag_/|/_Digikam_root_tag_|_Digikam_root_tag_)"))))
             {
                 continue;
             }

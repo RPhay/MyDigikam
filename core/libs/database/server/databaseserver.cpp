@@ -39,6 +39,7 @@
 #include <QtGlobal>
 #include <QPointer>
 #include <QDir>
+#include <QRegularExpression>
 
 // KDE includes
 
@@ -691,11 +692,12 @@ DatabaseServerError DatabaseServer::initMysqlDatabase() const
             {
                 if (query.next() && (query.lastError().type() == QSqlError::NoError))
                 {
-                    QRegExp reg(QLatin1String("\\d+\\.\\d+\\.\\d+"));
+                    QRegularExpression reg(QLatin1String("\\d+\\.\\d+\\.\\d+"));
+                    QRegularExpressionMatch regMatch = reg.match(query.value(0).toString());
 
-                    if (reg.indexIn(query.value(0).toString()) != -1)
+                    if (regMatch.hasMatch())
                     {
-                        d->dbVersion = reg.capturedTexts().first();
+                        d->dbVersion = regMatch.capturedTexts().first();
 
                         qCDebug(DIGIKAM_DATABASESERVER_LOG) << "Database version:"
                                                             << d->dbVersion;
@@ -736,11 +738,12 @@ DatabaseServerError DatabaseServer::checkUpgradeMysqlDatabase()
     }
 
     QString serverVersion;
-    QRegExp reg(QLatin1String("\\d+\\.\\d+\\.\\d+"));
+    QRegularExpression reg(QLatin1String("\\d+\\.\\d+\\.\\d+"));
+    QRegularExpressionMatch regMatch = reg.match(QString::fromUtf8(versionProcess->readAllStandardOutput()));
 
-    if (reg.indexIn(QString::fromUtf8(versionProcess->readAllStandardOutput())) != -1)
+    if (regMatch.hasMatch())
     {
-        serverVersion = reg.capturedTexts().first();
+        serverVersion = regMatch.capturedTexts().first();
 
         qCDebug(DIGIKAM_DATABASESERVER_LOG) << "MySQL server version:"
                                             << serverVersion;

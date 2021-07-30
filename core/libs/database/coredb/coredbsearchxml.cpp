@@ -24,6 +24,8 @@
 
 #include "coredbsearchxml.h"
 
+#include <QRegularExpression>
+
 // Local includes
 
 #include "digikam_globals.h"
@@ -853,7 +855,7 @@ QStringList KeywordSearch::split(const QString& keywords)
         else
         {
             // not in quotation marks: split by whitespace
-            keywordList << group.split(QRegExp(QLatin1String("\\s+")), QT_SKIP_EMPTY_PARTS);
+            keywordList << group.split(QRegularExpression(QLatin1String("\\s+")), QT_SKIP_EMPTY_PARTS);
         }
 
         ++quotationMarkCount;
