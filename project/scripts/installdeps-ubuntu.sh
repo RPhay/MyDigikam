@@ -49,6 +49,7 @@ echo "-------------------------------------------------------------------"
 
 required_packages=("cmake"                   # To Compile   Source Code
                    "extra-cmake-modules"     # To Compile   Source Code
+                   "build-essential"         # To Compile   Source Code   
 
                    "libqt5core5a"            # Qt 5 core module
                    "libqt5gui5"              # Qt 5 Gui module   
@@ -93,6 +94,9 @@ for pkg in ${required_packages[@]}; do
         ;;
     "extra-cmake-modules") 
         required_version=5.5.0
+        ;;
+    "build-essential") 
+        required_version=7.2.0
         ;;
     "libqt5core5a")
         required_version=5.9.0
@@ -168,7 +172,6 @@ optional_packages=("ruby"
                    "kate"
                    "ktexteditor-katepart"
                    "ccache"
-                   "build-essential"
                    "hugin"
                    "bison"                              # >= 2.5.0
                    "flex"                               # >= 2.5.0
