@@ -44,3 +44,38 @@ echo "-------------------------------------------------------------------"
                                    
 sudo apt-get install -y perl                       
 echo "-------------------------------------------------------------------"
+
+# Install required dependencies to Compile And Link Source Code
+
+required_packages=("cmake"                   # To Compile   Source Code
+                   "extra-cmake-modules"     # To Compile   Source Code
+
+                   "libqt5core5a"            # Qt 5 core module
+                   "libqt5gui5"              # Qt 5 Gui module   
+                   "libqt5widgets5"          # Qt 5 widget module
+                   "libqt5network5"          # Qt 5 network module
+                   "libqt5sql5"              # Qt 5 SQL module 
+                   "libqt5xml5"              # Qt 5 XML module 
+                   "libqt5concurrent5"       # Qt 5 Concurrent module 
+                   "libqt5printsupport5"     # Qt 5 PrintSupport module 
+                   "libqt5svg5"              # Qt 5 Svg module 
+                   "libqt5webengine5"        # Qt 5 webengine module 
+                   
+                   "libkf5config-dev"        # Configuration settings framework for Qt
+                   "libkf5xmlgui-dev"        # User configurable main windows
+                   "libkf5i18n-dev"          # Avanced internationalization framework  
+                   "libkf5windowsystem-dev"  # Development files for kwindowsystem
+                   "libkf5service-dev"       # Development files for kservice   
+                   "libkf5solid-dev"         # Qt library to query and control hardware
+                   "libkf5coreaddons-dev"    # Development files - KDE Frameworks 5 addons to QtCore
+
+                   "libopencv-dev"           # Development files for opencv   
+                   "libpthread-stubs0-dev"   # Development files for pthread
+                   "libtiff-dev"             # Tag image file format library  
+                   "libpng-dev"              # PNG library   
+                   "libjpeg-dev"             # JPEG library
+                   "libboost-all-dev"        # Boots C++ Libraries   
+                   "liblcms2-dev"            # Little CMS 2 color management library   
+                   "libexpat1-dev"           # XML parsing C library
+                   "libexiv2-dev"            # Metadata manipulation library
+                    )    
