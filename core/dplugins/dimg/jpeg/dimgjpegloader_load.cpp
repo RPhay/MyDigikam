@@ -71,27 +71,6 @@ bool DImgJPEGLoader::load(const QString& filePath, DImgLoaderObserver* const obs
         return false;
     }
 
-    unsigned char header[2];
-
-    if (fread(&header, 2, 1, file) != 1)
-    {
-        fclose(file);
-        loadingFailed();
-        return false;
-    }
-
-    unsigned char jpegID[] = { 0xFF, 0xD8 };
-
-    if (memcmp(header, jpegID, 2) != 0)
-    {
-        // not a jpeg file
-        fclose(file);
-        loadingFailed();
-        return false;
-    }
-
-    rewind(file);
-
     struct jpeg_decompress_struct cinfo;
     struct dimg_jpeg_error_mgr    jerr;
 
