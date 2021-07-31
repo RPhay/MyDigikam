@@ -56,9 +56,9 @@ CoreDbNameFilter::CoreDbNameFilter(const QString& filter)
 
     while ( it != list.constEnd() )
     {
-        QRegExp wildcard( (*it).trimmed() );
-        wildcard.setPatternSyntax(QRegExp::Wildcard);
-        wildcard.setCaseSensitivity(Qt::CaseInsensitive);
+        QString pattern = QRegularExpression::anchoredPattern((*it).trimmed());
+        QRegularExpression wildcard(QRegularExpression::wildcardToRegularExpression(pattern));
+        wildcard.setPatternOptions(QRegularExpression::CaseInsensitiveOption);
         m_filterList << wildcard;
         ++it;
     }
@@ -66,11 +66,11 @@ CoreDbNameFilter::CoreDbNameFilter(const QString& filter)
 
 bool CoreDbNameFilter::matches(const QString& name)
 {
-    QList<QRegExp>::const_iterator rit = m_filterList.constBegin();
+    QList<QRegularExpression>::const_iterator rit = m_filterList.constBegin();
 
     while ( rit != m_filterList.constEnd() )
     {
-        if ( (*rit).exactMatch(name) )
+        if ( (*rit).match(name).hasMatch() )
         {
             return true;
         }

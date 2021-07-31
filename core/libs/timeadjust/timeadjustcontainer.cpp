@@ -22,6 +22,10 @@
 
 #include "timeadjustcontainer.h"
 
+// Qt includes
+
+#include <QRegularExpression>
+
 namespace Digikam
 {
 
@@ -147,17 +151,18 @@ QDateTime TimeAdjustContainer::getDateTimeFromUrl(const QUrl& url) const
 
     for (int index = 0 ; index < regExpStrings.count() ; ++index)
     {
-        QRegExp dateRegExp(regExpStrings.at(index));
+        QRegularExpression dateRegExp(QRegularExpression::anchoredPattern(regExpStrings.at(index)));
+        QRegularExpressionMatch match = dateRegExp.match(url.fileName());
 
-        if (dateRegExp.exactMatch(url.fileName()))
+        if (match.hasMatch())
         {
-            QString dateString   = dateRegExp.cap(2);
+            QString dateString   = match.captured(2);
             QString format       = formatStrings.at(index).first;
             QString secondFormat = formatStrings.at(index).second;
 
             if (format.contains(QLatin1String("hhmm")))
             {
-                dateString.append(dateRegExp.cap(4));
+                dateString.append(match.captured(4));
             }
 
             dateString.remove(QLatin1Char('-'));

@@ -26,7 +26,7 @@
 
 // Qt includes
 
-#include <QRegExp>
+#include <QRegularExpression>
 
 namespace Digikam
 {
@@ -96,13 +96,14 @@ QString HotPixelProps::toString() const
 
 bool HotPixelProps::fromString(const QString& str)
 {
-    QRegExp exp(QLatin1String("(\\d+)-(\\d+)x(\\d+)-(\\d+)x(\\d+)"));
+    QRegularExpression exp(QRegularExpression::anchoredPattern(QLatin1String("(\\d+)-(\\d+)x(\\d+)-(\\d+)x(\\d+)")));
+    QRegularExpressionMatch match = exp.match(str);
 
-    if (exp.exactMatch(str))
+    if (match.hasMatch())
     {
-        luminosity = exp.cap(1).toInt();
-        rect       = QRect(exp.cap(2).toInt(), exp.cap(3).toInt(),
-                           exp.cap(4).toInt(), exp.cap(5).toInt());
+        luminosity = match.captured(1).toInt();
+        rect       = QRect(match.captured(2).toInt(), match.captured(3).toInt(),
+                           match.captured(4).toInt(), match.captured(5).toInt());
 
         return true;
     }
