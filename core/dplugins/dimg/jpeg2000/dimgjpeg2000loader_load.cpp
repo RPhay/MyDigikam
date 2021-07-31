@@ -85,32 +85,6 @@ bool DImgJPEG2000Loader::load(const QString& filePath, DImgLoaderObserver* const
         return false;
     }
 
-    unsigned char header[9];
-
-    if (fread(&header, 9, 1, file) != 1)
-    {
-        loadingFailed();
-        fclose(file);
-
-        return false;
-    }
-
-    rewind(file);
-
-    unsigned char jp2ID[5] = { 0x6A, 0x50, 0x20, 0x20, 0x0D, };
-    unsigned char jpcID[2] = { 0xFF, 0x4F };
-
-    if ((memcmp(&header[4], &jp2ID, 5) != 0) &&
-        (memcmp(&header,    &jpcID, 2) != 0))
-    {
-        // not a jpeg2000 file
-
-        loadingFailed();
-        fclose(file);
-
-        return false;
-    }
-
     imageSetAttribute(QLatin1String("format"), QLatin1String("JP2"));
 
     if (!(m_loadFlags & LoadImageData) && !(m_loadFlags & LoadICCData))
