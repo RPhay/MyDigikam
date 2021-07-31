@@ -26,6 +26,7 @@
 // Qt includes
 
 #include <QFileInfo>
+#include <QRegularExpression>
 
 // Local includes
 
@@ -109,8 +110,8 @@ void Parser::reset()
 
 bool Parser::parseStringIsValid(const QString& str)
 {
-    QRegExp invalidString(QLatin1String("^\\s*$"));
-    return (!str.isEmpty() && !invalidString.exactMatch(str));
+    QRegularExpression invalidString(QRegularExpression::anchoredPattern(QLatin1String("^\\s*$")));
+    return (!str.isEmpty() && !invalidString.match(str).hasMatch());
 }
 
 RulesList Parser::options() const
@@ -301,22 +302,22 @@ ParseResults Parser::applyModifiers(const QString& parseString, ParseResults& re
 
     foreach (Rule* const modifier, d->modifiers)
     {
-        QRegExp regExp = modifier->regExp();
-        int pos        = 0;
+        QRegularExpression regExp = modifier->regExp();
+        int pos                   = 0;
+        QRegularExpressionMatch match;
 
         while (pos > -1)
         {
-            pos = regExp.indexIn(parseString, pos);
-
+            pos = parseString.indexOf(regExp, pos, &match);
             if (pos > -1)
             {
-                ParseResults::ResultsKey   k(pos, regExp.matchedLength());
-                ParseResults::ResultsValue v(regExp.cap(0), QString());
+                ParseResults::ResultsKey   k(pos, match.capturedLength());
+                ParseResults::ResultsValue v(match.captured(0), QString());
 
                 modifierResults.addEntry(k, v);
                 modifierMap.insert(k, modifier);
 
-                pos += regExp.matchedLength();
+                pos += match.capturedLength();
             }
         }
     }

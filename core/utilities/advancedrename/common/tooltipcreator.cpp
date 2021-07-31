@@ -25,7 +25,7 @@
 
 // Qt includes
 
-#include <QRegExp>
+#include <QRegularExpression>
 #include <QPalette>
 #include <QApplication>
 #include <QIcon>
@@ -140,8 +140,8 @@ QString TooltipCreator::markOption(const QString& str)
 {
     QString result = str;
 
-    QRegExp optionsRegExp(QLatin1String("\\|\\|(.*)\\|\\|"));
-    optionsRegExp.setMinimal(true);
+    QRegularExpression optionsRegExp(QLatin1String("\\|\\|(.*)\\|\\|"));
+    optionsRegExp.setPatternOptions(QRegularExpression::InvertedGreedinessOption);
 
     result.replace(optionsRegExp, QString::fromUtf8("<i><font color=\"%1\">\\1</font></i>")
                    .arg(qApp->palette().color(QPalette::Link).name()));
