@@ -26,6 +26,7 @@
 // Qt includes
 
 #include <QFileInfo>
+#include <QRegularExpression>
 
 // KDE includes
 
@@ -69,8 +70,8 @@ FilePropertiesOption::FilePropertiesOption()
     regExpStr.append(QLatin1String("(\\.?)")).append(escapeToken(KEY_EXT));
     regExpStr.append(QLatin1Char(')'));
 
-    QRegExp reg(regExpStr);
-    reg.setMinimal(true);
+    QRegularExpression reg(regExpStr);
+    reg.setPatternOptions(QRegularExpression::InvertedGreedinessOption);
     setRegExp(reg);
 }
 
@@ -79,8 +80,8 @@ QString FilePropertiesOption::parseOperation(ParseSettings& settings)
     QString result;
     QFileInfo fi(settings.fileUrl.toLocalFile());
 
-    const QRegExp& reg   = regExp();
-    const QString& token = reg.cap(1);
+    const QRegularExpression& reg   = regExp();
+    const QString& token            = reg.match(settings.parseString).captured(1);
 
     if      (token == KEY_FILE)
     {

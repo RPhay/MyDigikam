@@ -29,6 +29,7 @@
 #include <QGroupBox>
 #include <QLabel>
 #include <QPointer>
+#include <QRegularExpression>
 
 // KDE includes
 
@@ -68,7 +69,7 @@ SequenceNumberOption::SequenceNumberOption()
     addToken(QLatin1String("#[||options||,||start||]"),          i18n("Sequence number (custom start)"));
     addToken(QLatin1String("#[||options||,||start||,||step||]"), i18n("Sequence number (custom start + step)"));
 
-    QRegExp reg(QLatin1String("(#+)(\\[(e?f?,?)?((-?\\d+)(,(-?\\d+))?)?\\])?"));
+    QRegularExpression reg(QLatin1String("(#+)(\\[(e?f?,?)?((-?\\d+)(,(-?\\d+))?)?\\])?"));
     setRegExp(reg);
 }
 
@@ -135,17 +136,18 @@ void SequenceNumberOption::slotTokenTriggered(const QString& token)
 QString SequenceNumberOption::parseOperation(ParseSettings& settings)
 {
     QString result;
-    const QRegExp& reg = regExp();
-    int slength        = 0;
-    int start          = 0;
-    int step           = 0;
-    int number         = 0;
-    int index          = 0;
+    const QRegularExpression& reg = regExp();
+    QRegularExpressionMatch match = reg.match(settings.parseString);
+    int slength                   = 0;
+    int start                     = 0;
+    int step                      = 0;
+    int number                    = 0;
+    int index                     = 0;
 
     if (settings.manager)
     {
-        bool extAware    = !reg.cap(3).isEmpty() && reg.cap(3).contains(QLatin1Char('e'));
-        bool folderAware = !reg.cap(3).isEmpty() && reg.cap(3).contains(QLatin1Char('f'));
+        bool extAware    = !match.captured(3).isEmpty() && match.captured(3).contains(QLatin1Char('e'));
+        bool folderAware = !match.captured(3).isEmpty() && match.captured(3).contains(QLatin1Char('f'));
 
         index = settings.manager->indexOfFile(settings.fileUrl.toLocalFile());
 
@@ -162,9 +164,9 @@ QString SequenceNumberOption::parseOperation(ParseSettings& settings)
 
     // --------------------------------------------------------
 
-    slength = reg.cap(1).length();
-    start   = reg.cap(5).isEmpty() ? settings.startIndex : reg.cap(5).toInt();
-    step    = reg.cap(7).isEmpty() ? 1 : reg.cap(7).toInt();
+    slength = match.captured(1).length();
+    start   = match.captured(5).isEmpty() ? settings.startIndex : match.captured(5).toInt();
+    step    = match.captured(7).isEmpty() ? 1 : match.captured(7).toInt();
 
     if (start < 1)
     {

@@ -29,6 +29,7 @@
 #include <QPointer>
 #include <QTimer>
 #include <QValidator>
+#include <QRegularExpression>
 
 // KDE includes
 
@@ -147,8 +148,8 @@ DateOptionDialog::DateOptionDialog(Rule* parent)
     ui->dateFormatLink->setTextInteractionFlags(Qt::LinksAccessibleByMouse | Qt::LinksAccessibleByKeyboard);
     ui->dateFormatLink->setText(getDateFormatLinkText());
 
-    QRegExp validRegExp(QLatin1String("[^/]+"));
-    QValidator* const validator = new QRegExpValidator(validRegExp, this);
+    QRegularExpression validRegExp(QLatin1String("[^/]+"));
+    QValidator* const validator = new QRegularExpressionValidator(validRegExp, this);
     ui->customFormatInput->setValidator(validator);
     ui->customFormatInput->setPlaceholderText(i18nc("@info", "Enter custom format"));
 
@@ -259,16 +260,17 @@ DateOption::DateOption()
     addToken(QLatin1String("[date:||key||]"),    i18nc("@item", "Date and time") + QLatin1String(" (||key|| = Standard|ISO|UnixTimeStamp|Text)"));
     addToken(QLatin1String("[date:||format||]"), i18nc("@item", "Date and time") + QLatin1String(" (") + getDateFormatLinkText() + QLatin1Char(')'));
 
-    QRegExp reg(QLatin1String("\\[date(:(.*))?\\]"));
-    reg.setMinimal(true);
+    QRegularExpression reg(QLatin1String("\\[date(:(.*))?\\]"));
+    reg.setPatternOptions(QRegularExpression::InvertedGreedinessOption);
     setRegExp(reg);
 }
 
 QString DateOption::parseOperation(ParseSettings& settings)
 {
-    const QRegExp& reg = regExp();
+    const QRegularExpression& reg = regExp();
+    QRegularExpressionMatch match = reg.match(settings.parseString);
 
-    QString token = reg.cap(2);
+    QString token = match.captured(2);
 
     // search for quoted token parameters (indicates custom formatting)
 

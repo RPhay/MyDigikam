@@ -83,8 +83,8 @@ DatabaseOption::DatabaseOption()
              QLatin1String("network-server-database"))
 {
     addToken(QLatin1String("[db:||key||]"), i18n("Add database information"));
-    QRegExp reg(QLatin1String("\\[db(:(.*))\\]"));
-    reg.setMinimal(true);
+    QRegularExpression reg(QLatin1String("\\[db(:(.*))\\]"));
+    reg.setPatternOptions(QRegularExpression::InvertedGreedinessOption);
     setRegExp(reg);
 
     registerKeysCollection();
@@ -148,8 +148,8 @@ void DatabaseOption::slotTokenTriggered(const QString& token)
 
 QString DatabaseOption::parseOperation(ParseSettings& settings)
 {
-    const QRegExp& reg = regExp();
-    QString keyword    = reg.cap(2);
+    const QRegularExpression& reg = regExp();
+    QString keyword               = reg.match(settings.parseString).captured(2);
 
     return parseDatabase(keyword, settings);
 }
