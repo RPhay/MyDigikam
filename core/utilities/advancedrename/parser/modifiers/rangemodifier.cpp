@@ -28,6 +28,7 @@
 #include <QCheckBox>
 #include <QGridLayout>
 #include <QPointer>
+#include <QRegularExpression>
 
 // KDE includes
 
@@ -75,8 +76,8 @@ RangeModifier::RangeModifier()
     addToken(QLatin1String("{range:||from||,||to||}"),
              i18n("Extract a specific range (if '||to||' is omitted, go to the end of string)"));
 
-    QRegExp reg(QLatin1String("\\{range(:(-?\\d+)(,((-1|\\d+))?)?)\\}"));
-    reg.setMinimal(true);
+    QRegularExpression reg(QLatin1String("\\{range(:(-?\\d+)(,((-1|\\d+))?)?)\\}"));
+    reg.setPatternOptions(QRegularExpression::InvertedGreedinessOption);
     setRegExp(reg);
 }
 
@@ -111,12 +112,13 @@ void RangeModifier::slotTokenTriggered(const QString& token)
 
 QString RangeModifier::parseOperation(ParseSettings& settings)
 {
-    const QRegExp& reg = regExp();
-    bool ok            = false;
+    const QRegularExpression& reg = regExp();
+    bool ok                       = false;
 
+    QRegularExpressionMatch match = reg.match(settings.parseString);
     // if the start parameter can not be extracted or is a negative value, set it to 1
 
-    int start = reg.cap(2).simplified().toInt(&ok);
+    int start = match.captured(2).simplified().toInt(&ok);
 
     if (!ok || start < 0)
     {
@@ -129,10 +131,10 @@ QString RangeModifier::parseOperation(ParseSettings& settings)
     ok = false;
     int stop;
 
-    if (!reg.cap(3).isEmpty())
+    if (!match.captured(3).isEmpty())
     {
         ok   = true;
-        stop = (reg.cap(4).isEmpty()) ? -1 : reg.cap(5).simplified().toInt(&ok);
+        stop = (match.captured(4).isEmpty()) ? -1 : match.captured(5).simplified().toInt(&ok);
     }
     else
     {
