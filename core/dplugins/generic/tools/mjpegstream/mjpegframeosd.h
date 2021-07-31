@@ -25,12 +25,16 @@
 
 // Qt includes
 
-#include <QByteArray>
+#include <QUrl>
 #include <QColor>
 #include <QPoint>
 #include <QFont>
 #include <QImage>
 #include <QDateTime>
+
+// Local includes
+
+#include "mjpegstreamsettings.h"
 
 namespace DigikamGenericMjpegStreamPlugin
 {
@@ -77,7 +81,9 @@ public:
     /**
      * Insert OSD on frame.
      */
-    void insertOsdToFrame(QImage& frame, const MjpegFrameOsd& osd = MjpegFrameOsd());
+    void insertOsdToFrame(QImage& frame,
+                          const QUrl& url,
+                          const MjpegStreamSettings& settings);
 };
 
 } // namespace DigikamGenericMjpegStreamPlugin

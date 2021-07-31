@@ -122,6 +122,8 @@ void MjpegFrameTask::run()
                 img = dimg.copyQImage();
             }
 
+            // TODO: apply OSD over frame.
+
             emit signalFrameChanged(imageToJPEGArray(img));
 
             QThread::sleep(m_set.delay);

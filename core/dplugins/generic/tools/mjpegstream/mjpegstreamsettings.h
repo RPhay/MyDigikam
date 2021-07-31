@@ -32,8 +32,11 @@
 // Local includes
 
 #include "mjpegserver.h"
+#include "dinfointerface.h"
 
 class KConfigGroup;
+
+using namespace Digikam;
 
 namespace DigikamGenericMjpegStreamPlugin
 {
@@ -56,11 +59,13 @@ public:
 
 public:
 
-    int            port;          ///< IP port to use with MJPEG Server.
-    bool           loop;          ///< Image stream as loop.
-    int            quality;       ///< Jpeg compression [1...100].
-    int            delay;         ///< Delay in seconds between inages.
-    QList<QUrl>    urlsList;      ///< Ordered list of list to stream.
+    int             port;          ///< IP port to use with MJPEG Server.
+    bool            loop;          ///< Image stream as loop.
+    int             quality;       ///< Jpeg compression [1...100].
+    int             delay;         ///< Delay in seconds between inages.
+    QList<QUrl>     urlsList;      ///< Ordered list of list to stream.
+
+    DInfoInterface* iface;         ///< Plugin host interface to handle item properties.
 };
 
 } // namespace DigikamGenericMjpegStreamPlugin

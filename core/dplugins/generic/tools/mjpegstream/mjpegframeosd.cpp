@@ -70,25 +70,29 @@ MjpegFrameOsd::~MjpegFrameOsd()
 {
 }
 
-void MjpegFrameOsd::insertOsdToFrame(QImage& frm, const MjpegFrameOsd& osd)
+void MjpegFrameOsd::insertOsdToFrame(QImage& frm,
+                                     const QUrl& /*url*/,
+                                     const MjpegStreamSettings& /*settings*/)
 {
+    // TODO: use settings.iface to populate items properties based on url.
+
     // Title section
 
-    QString mess = osd.m_title;
+    QString mess = m_title;
 
-    if (osd.m_titleShowDate)
+    if (m_titleShowDate)
     {
         // date must be provided by caller
 
-        mess.append(osd.m_titleDate.toString(QLatin1String("\ndd-MM-yyyy hh:mm:ss.zzz\n")));
+        mess.append(m_titleDate.toString(QLatin1String("\ndd-MM-yyyy hh:mm:ss.zzz\n")));
     }
 
-    if (osd.m_titleShowRelDate)
+    if (m_titleShowRelDate)
     {
         // jour = 24 * 60 * 60 * 1000 = 86 400 000
 
-        int nbj   = osd.m_titleRelDate  / 86400000;
-        int reste =  osd.m_titleRelDate  % 86400000;
+        int nbj   = m_titleRelDate  / 86400000;
+        int reste = m_titleRelDate  % 86400000;
 
         // h = 60 * 60 * 1000 = 3600000
 
@@ -121,63 +125,63 @@ void MjpegFrameOsd::insertOsdToFrame(QImage& frm, const MjpegFrameOsd& osd)
 
     QPainter p(&frm);
 
-    QFontMetrics titleMt(osd.m_titleFnt);
-    p.setFont(osd.m_titleFnt);
+    QFontMetrics titleMt(m_titleFnt);
+    p.setFont(m_titleFnt);
 
     QRect titleRect = titleMt.boundingRect(0, 0, frm.width(), frm.height(), 0, mess);
-    QRect bgTitleRect(osd.m_titlePos.x(),
-                      osd.m_titlePos.y() - titleRect.height() + 1,
+    QRect bgTitleRect(m_titlePos.x(),
+                      m_titlePos.y() - titleRect.height() + 1,
                       titleRect.width(),
                       titleRect.height() + 3);
 
-    p.fillRect(bgTitleRect, osd.m_titleBg);
+    p.fillRect(bgTitleRect, m_titleBg);
 
     p.setPen(QPen(Qt::white));
-    p.drawText(bgTitleRect, osd.m_titleAlign, mess);
+    p.drawText(bgTitleRect, m_titleAlign, mess);
 
-    if (!osd.m_titleLogo.isNull())
+    if (!m_titleLogo.isNull())
     {
-        p.drawImage(osd.m_titlePos.x(), osd.m_titlePos.y() + 5, osd.m_titleLogo);
+        p.drawImage(m_titlePos.x(), m_titlePos.y() + 5, m_titleLogo);
     }
 
     // Description section
 
-    if (!osd.m_desc.isEmpty())
+    if (!m_desc.isEmpty())
     {
-        QFontMetrics descMt(osd.m_descFnt);
-        p.setFont(osd.m_descFnt);
+        QFontMetrics descMt(m_descFnt);
+        p.setFont(m_descFnt);
 
         QRect descRect = descMt.boundingRect(0, 0, frm.width(), frm.height(),
-                                             0, osd.m_desc);
-        QRect bgDescRect(osd.m_descPos.x(),
-                         osd.m_descPos.y() - descRect.height() + 1,
+                                             0, m_desc);
+        QRect bgDescRect(m_descPos.x(),
+                         m_descPos.y() - descRect.height() + 1,
                          descRect.width(),
                          descRect.height() + 3);
 
-        p.fillRect(bgDescRect, osd.m_descBg);
+        p.fillRect(bgDescRect, m_descBg);
 
         p.setPen(QPen(Qt::white));
-        p.drawText(bgDescRect, osd.m_descAlign, osd.m_desc);
+        p.drawText(bgDescRect, m_descAlign, m_desc);
     }
 
     // Comment section
 
-    if (!osd.m_comment.isEmpty())
+    if (!m_comment.isEmpty())
     {
-        QFontMetrics commentMt(osd.m_commentFnt);
-        p.setFont(osd.m_commentFnt);
+        QFontMetrics commentMt(m_commentFnt);
+        p.setFont(m_commentFnt);
 
         QRect commentRect = commentMt.boundingRect(0, 0, frm.width(), frm.height(),
-                                                   0, osd.m_comment);
-        QRect bgCommentRect(osd.m_commentPos.x(),
-                            osd.m_commentPos.y() - commentRect.height() + 1,
+                                                   0, m_comment);
+        QRect bgCommentRect(m_commentPos.x(),
+                            m_commentPos.y() - commentRect.height() + 1,
                             commentRect.width(),
                             commentRect.height() + 3);
 
-        p.fillRect(bgCommentRect, osd.m_commentBg);
+        p.fillRect(bgCommentRect, m_commentBg);
 
         p.setPen(QPen(Qt::white));
-        p.drawText(bgCommentRect, osd.m_commentAlign, osd.m_comment);
+        p.drawText(bgCommentRect, m_commentAlign, m_comment);
     }
 }
 

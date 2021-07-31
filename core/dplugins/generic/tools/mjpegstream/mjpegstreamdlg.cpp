@@ -117,6 +117,7 @@ MjpegStreamDlg::MjpegStreamDlg(QObject* const /*parent*/,
     // The goal is not mix these settings with other export tools.
 
     d->iface->setObjectName(QLatin1String("SetupMjpegStreamIface"));
+    d->settings.iface        = iface;
 
     m_buttons->addButton(QDialogButtonBox::Cancel);
     m_buttons->addButton(QDialogButtonBox::Ok);

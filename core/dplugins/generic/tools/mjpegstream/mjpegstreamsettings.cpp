@@ -33,7 +33,8 @@ MjpegStreamSettings::MjpegStreamSettings()
     : port    (8080),
       loop    (true),
       quality (75),
-      delay   (5)
+      delay   (5),
+      iface   (nullptr)
 {
 }
 
