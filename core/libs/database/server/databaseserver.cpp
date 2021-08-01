@@ -75,7 +75,7 @@ public:
     QString                fileDataDir;
     QString                actualConfig;
     QString                globalConfig;
-    QString                dbVersion;
+    QStringList            dbVersion;
 };
 
 DatabaseServer::DatabaseServer(const DbEngineParameters& params, DatabaseServerStarter* const parent)
@@ -691,14 +691,14 @@ DatabaseServerError DatabaseServer::initMysqlDatabase() const
             {
                 if (query.next() && (query.lastError().type() == QSqlError::NoError))
                 {
-                    QRegExp reg(QLatin1String("\\d+\\.\\d+\\.\\d+"));
+                    QRegExp reg(QLatin1String("(\\d+)\\.(\\d+)\\.(\\d+)"));
 
                     if (reg.indexIn(query.value(0).toString()) != -1)
                     {
-                        d->dbVersion = reg.capturedTexts().first();
+                        d->dbVersion = reg.capturedTexts();
 
                         qCDebug(DIGIKAM_DATABASESERVER_LOG) << "Database version:"
-                                                            << d->dbVersion;
+                                                            << d->dbVersion.at(0);
                     }
                 }
             }
@@ -735,22 +735,25 @@ DatabaseServerError DatabaseServer::checkUpgradeMysqlDatabase()
         return DatabaseServerError(DatabaseServerError::StartError, errorMsg);
     }
 
-    QString serverVersion;
-    QRegExp reg(QLatin1String("\\d+\\.\\d+\\.\\d+"));
+    QStringList serverVersion;
+    QRegExp reg(QLatin1String("(\\d+)\\.(\\d+)\\.(\\d+)"));
 
     if (reg.indexIn(QString::fromUtf8(versionProcess->readAllStandardOutput())) != -1)
     {
-        serverVersion = reg.capturedTexts().first();
+        serverVersion = reg.capturedTexts();
 
         qCDebug(DIGIKAM_DATABASESERVER_LOG) << "MySQL server version:"
-                                            << serverVersion;
+                                            << serverVersion.at(0);
     }
 
     delete versionProcess;
 
-    if (d->dbVersion.isEmpty()        ||
-        serverVersion.isEmpty()       ||
-        (serverVersion == d->dbVersion))
+    if (
+        (d->dbVersion.size()  != 4)                   ||
+        (serverVersion.size() != 4)                   ||
+        ((serverVersion.at(1) == d->dbVersion.at(1))  &&
+         (serverVersion.at(2) == d->dbVersion.at(2)))
+       )
     {
         return result;
     }
@@ -761,7 +764,7 @@ DatabaseServerError DatabaseServer::checkUpgradeMysqlDatabase()
              qApp->applicationName(),
              i18n("The database will now be upgraded from "
                   "version %1 to the server version %2.",
-                  d->dbVersion, serverVersion),
+                  d->dbVersion.at(0), serverVersion.at(0)),
              QMessageBox::Ok | QMessageBox::Cancel,
              qApp->activeWindow());
 
