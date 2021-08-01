@@ -186,7 +186,7 @@ void AddTagsLineEdit::slotReturnPressed()
 
 void AddTagsLineEdit::slotEditingFinished()
 {
-    d->currentTaggingAction = TaggingAction();
+    //d->currentTaggingAction = TaggingAction();
 }
 
 void AddTagsLineEdit::slotTextEdited(const QString& text)
