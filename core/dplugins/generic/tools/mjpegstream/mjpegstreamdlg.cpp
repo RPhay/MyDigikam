@@ -34,7 +34,6 @@
 #include <QStyle>
 #include <QIcon>
 #include <QCheckBox>
-#include <QSpinBox>
 
 // KDE includes
 
@@ -46,6 +45,7 @@
 
 #include "dinfointerface.h"
 #include "ditemslist.h"
+#include "dnuminput.h"
 #include "dxmlguiwindow.h"
 #include "workingwidget.h"
 #include "mjpegservermngr.h"
@@ -97,9 +97,9 @@ public:
     QWidget*            page;
     QDialogButtonBox*   buttons;
     QWidget*            streamSettings;
-    QSpinBox*           srvPort;
-    QSpinBox*           delay;
-    QSpinBox*           quality;
+    DIntNumInput*       srvPort;
+    DIntNumInput*       delay;
+    DIntNumInput*       quality;
     QCheckBox*          streamLoop;
     MjpegStreamSettings settings;
 };
@@ -183,22 +183,22 @@ MjpegStreamDlg::MjpegStreamDlg(QObject* const /*parent*/,
     QGridLayout* const grid2  = new QGridLayout(d->streamSettings);
 
     QLabel* const portLbl     = new QLabel(i18nc("@label", "Server Port:"), d->streamSettings);
-    d->srvPort                = new QSpinBox(d->streamSettings);
-    d->srvPort->setRange(1025, 65535);
-    d->srvPort->setSingleStep(1);
-    d->srvPort->setValue(8080);
+    d->srvPort                = new DIntNumInput(d->streamSettings);
+    d->srvPort->setDefaultValue(8080);
+    d->srvPort->setRange(1025, 65535, 1);
+    d->srvPort->setWhatsThis(i18n("The MJPEG server IP port."));
 
     QLabel* const delayLbl    = new QLabel(i18nc("@label", "Delay in seconds:"), d->streamSettings);
-    d->delay                  = new QSpinBox(d->streamSettings);
-    d->delay->setRange(1, 30);
-    d->delay->setSingleStep(1);
-    d->delay->setValue(5);
+    d->delay                  = new DIntNumInput(d->streamSettings);
+    d->delay->setDefaultValue(5);
+    d->delay->setRange(1, 3600, 1);
+    d->delay->setWhatsThis(i18n("The delay, in seconds, between images."));
 
     QLabel* const qualityLbl  = new QLabel(i18nc("@label", "JPEG Quality:"), d->streamSettings);
-    d->quality                = new QSpinBox(d->streamSettings);
-    d->quality->setRange(50, 100);
-    d->quality->setSingleStep(1);
-    d->quality->setValue(75);
+    d->quality                = new DIntNumInput(d->streamSettings);
+    d->quality->setDefaultValue(75);
+    d->quality->setRange(50, 100, 1);
+    d->quality->setWhatsThis(i18n("The JPEG quality [50:lower - 100:higher]."));
 
     d->streamLoop             = new QCheckBox(i18nc("@option:check", "Stream In Loop"), d->streamSettings);
     d->streamLoop->setChecked(true);
@@ -210,7 +210,7 @@ MjpegStreamDlg::MjpegStreamDlg(QObject* const /*parent*/,
     grid2->addWidget(qualityLbl,    1, 0, 1, 1);
     grid2->addWidget(d->quality,    1, 1, 1, 1);
     grid2->addWidget(d->streamLoop, 1, 3, 1, 2);
-    grid2->setColumnStretch(2, 10);
+//    grid2->setColumnStretch(2, 2);
 
     // ---
 
@@ -314,6 +314,22 @@ void MjpegStreamDlg::readSettings()
 
     d->startOnStartup->setChecked(group.readEntry(d->mngr->configStartServerOnStartupEntry(), false));
     d->settings.readSettings(group);
+
+    d->srvPort->blockSignals(true);
+    d->delay->blockSignals(true);
+    d->quality->blockSignals(true);
+    d->streamLoop->blockSignals(true);
+
+    d->srvPort->setValue(d->settings.port);
+    d->delay->setValue(d->settings.delay);
+    d->quality->setValue(d->settings.quality);
+    d->streamLoop->setChecked(d->settings.loop);
+
+    d->srvPort->blockSignals(false);
+    d->delay->blockSignals(false);
+    d->quality->blockSignals(false);
+    d->streamLoop->blockSignals(false);
+
     slotSettingsChanged();
 
     updateServerStatus();
@@ -328,6 +344,14 @@ void MjpegStreamDlg::saveSettings()
     group.writeEntry(d->mngr->configStartServerOnStartupEntry(), d->startOnStartup->isChecked());
     d->settings.writeSettings(group);
     config->sync();
+}
+
+void MjpegStreamDlg::slotSettingsChanged()
+{
+    d->settings.port    = d->srvPort->value();
+    d->settings.delay   = d->delay->value();
+    d->settings.quality = d->quality->value();
+    d->settings.loop    = d->streamLoop->isChecked();
 }
 
 void MjpegStreamDlg::updateServerStatus()
@@ -423,22 +447,6 @@ bool MjpegStreamDlg::startMjpegServer()
     updateServerStatus();
 
     return true;
-}
-
-void MjpegStreamDlg::slotSettingsChanged()
-{
-    d->srvPort->blockSignals(true);
-    d->delay->blockSignals(true);
-    d->quality->blockSignals(true);
-    d->streamLoop->blockSignals(true);
-    d->settings.port    = d->srvPort->value();
-    d->settings.delay   = d->delay->value();
-    d->settings.quality = d->quality->value();
-    d->settings.loop    = d->streamLoop->isChecked();
-    d->srvPort->blockSignals(false);
-    d->delay->blockSignals(false);
-    d->quality->blockSignals(false);
-    d->streamLoop->blockSignals(false);
 }
 
 void MjpegStreamDlg::slotSelectionChanged()
