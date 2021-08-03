@@ -471,7 +471,9 @@ void FaceTagsEditor::removeFaceAndTag(ItemTagPair& pair, const FaceTagsIface& fa
     {
         removeNormalTag(face.imageId(), pair.tagId());
     }
-    else if (pair.hasProperty(FaceTagsIface::attributeForType(FaceTagsIface::ConfirmedName)))
+    else if (touchTags                                           &&
+             (face.type() != FaceTagsIface::FaceForTraining)     &&
+             pair.hasProperty(FaceTagsIface::attributeForType(FaceTagsIface::ConfirmedName)))
     {
         // The tag exists several times, we write it again
         // to trigger the writing of the metadata.
