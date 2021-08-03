@@ -92,16 +92,16 @@ enum ItemInformationField
     ColorLabel            = 1 << 9,
     PickLabel             = 1 << 10,
     ItemInformationAll   = Rating           |
-                            CreationDate     |
-                            DigitizationDate |
-                            Orientation      |
-                            Width            |
-                            Height           |
-                            Format           |
-                            ColorDepth       |
-                            ColorModel       |
-                            ColorLabel       |
-                            PickLabel,
+                           CreationDate     |
+                           DigitizationDate |
+                           Orientation      |
+                           Width            |
+                           Height           |
+                           Format           |
+                           ColorDepth       |
+                           ColorModel       |
+                           ColorLabel       |
+                           PickLabel,
     ItemInformationFirst = Rating,
     ItemInformationLast  = PickLabel
 };
