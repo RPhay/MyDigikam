@@ -34,4 +34,5 @@ BUGFIXES:
 022 ==> 440482 - Assigningment of facetags via a tagname, if the tagname is not unique.
 023 ==> 436586 - Voreinstellung in Settings --> Configure Language.
 024 ==> 440392 - No entry field for Province/State in "Edit XMP" "Credits" tab of Metadata Editor.
-025 ==> 
+025 ==> 440519 - Can‘t specify folder for face recognition.
+026 ==> 

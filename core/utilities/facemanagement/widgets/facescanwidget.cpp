@@ -343,13 +343,11 @@ void FaceScanWidget::setupConnections()
 void FaceScanWidget::slotPrepareForDetect(bool status)
 {
     d->alreadyScannedBox->setEnabled(status);
-    d->albumSelectors->setEnabled(status);
 }
 
 void FaceScanWidget::slotPrepareForRecognize(bool /*status*/)
 {
     d->alreadyScannedBox->setEnabled(false);
-    d->albumSelectors->setEnabled(false);
 }
 
 bool FaceScanWidget::settingsConflicted() const
@@ -392,8 +390,9 @@ FaceScanSettings FaceScanWidget::settings() const
     settings.alreadyScannedHandling = (FaceScanSettings::AlreadyScannedHandling)
                                       d->alreadyScannedBox->itemData(d->alreadyScannedBox->currentIndex()).toInt();
 
-    settings.accuracy               = double(d->accuracyInput->value()) / 100;
     settings.albums                 = d->albumSelectors->selectedAlbumsAndTags();
+    settings.accuracy               = double(d->accuracyInput->value()) / 100;
+    settings.wholeAlbums            = d->albumSelectors->wholeAlbumsChecked();
 
     if (d->settingsConflicted)
     {

@@ -232,7 +232,8 @@ FacesDetector::FacesDetector(const FaceScanSettings& settings, ProgressItem* con
     connect(this, SIGNAL(progressItemCanceled(ProgressItem*)),
             this, SLOT(slotCancel()));
 
-    if      (settings.task == FaceScanSettings::RecognizeMarkedFaces)
+    if      (settings.wholeAlbums &&
+             (settings.task == FaceScanSettings::RecognizeMarkedFaces))
     {
         d->idsTodoList = CoreDbAccess().db()->
             getImagesWithImageTagProperty(FaceTags::unknownPersonTagId(),

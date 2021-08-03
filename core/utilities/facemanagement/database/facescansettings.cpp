@@ -28,7 +28,8 @@ namespace Digikam
 {
 
 FaceScanSettings::FaceScanSettings()
-    : useFullCpu            (false),
+    : wholeAlbums           (false),
+      useFullCpu            (false),
       useYoloV3             (false),
       accuracy              (70),
       task                  (Detect),
