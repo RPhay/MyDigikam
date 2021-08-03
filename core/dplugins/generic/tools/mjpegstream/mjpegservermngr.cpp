@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2021-07-24
- * Description : Media server manager
+ * Description : MJPEG server manager
  *
  * Copyright (C) 2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
@@ -76,15 +76,16 @@ public:
     /// Configuration XML file to store albums map to share in case of restoring between sessions.
     QString              mapsConf;
 
-    /// Server instance pointer.
+    /// MJPEG Server instance pointer.
     MjpegServer*         server;
 
-    /// Frames generateur thread
+    /// Frames generateur thread.
     MjpegFrameThread*    thread;
 
     /// The current albums collection to share.
     MjpegServerMap       collectionMap;
 
+    /// The MJPEG stream settings.
     MjpegStreamSettings  settings;
 
     static const QString configGroupName;
@@ -140,7 +141,7 @@ void MjpegServerMngr::cleanUp()
 
 bool MjpegServerMngr::loadAtStartup()
 {
-    KSharedConfig::Ptr config    = KSharedConfig::openConfig();
+    KSharedConfig::Ptr config     = KSharedConfig::openConfig();
     KConfigGroup mjpegConfigGroup = config->group(configGroupName());
     bool startServerOnStartup     = mjpegConfigGroup.readEntry(configStartServerOnStartupEntry(), false);
     bool result                   = true;

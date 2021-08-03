@@ -41,7 +41,7 @@ namespace DigikamGenericMjpegStreamPlugin
 MjpegStreamPlugin::MjpegStreamPlugin(QObject* const parent)
     : DPluginGeneric(parent)
 {
-    // Start the Media Server if necessary
+    // Start the MJPEG Server if necessary
 
     MjpegServerMngr::instance()->loadAtStartup();
 }
@@ -52,7 +52,7 @@ MjpegStreamPlugin::~MjpegStreamPlugin()
 
 void MjpegStreamPlugin::cleanUp()
 {
-    // Stop the Media Server if necessary
+    // Stop the MJPEG Server if necessary
 
     MjpegServerMngr::instance()->saveAtShutdown();
 }

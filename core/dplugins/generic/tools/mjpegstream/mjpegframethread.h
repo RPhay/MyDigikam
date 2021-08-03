@@ -70,28 +70,26 @@ public:
     explicit MjpegFrameTask(const MjpegStreamSettings& set);
     ~MjpegFrameTask();
 
-public:
-
-    /**
-     * Convert a QImage to a byte-aaray off JPEG data file.
-     */
-    QByteArray imageToJPEGArray(const QImage& frame);
-
 Q_SIGNALS:
 
     /**
-     * Emit JPEG frames from generator.
+     * Output JPEG frames from generator thread (emitted to server thread).
      */
     void signalFrameChanged(const QByteArray& frame);
 
 private:
 
+    /**
+     * Helper monvert a QImage to a byte-aaray of JPEG data file.
+     */
+    QByteArray imageToJPEGArray(const QImage& frame);
+
     void run();
 
 private:
 
-    MjpegStreamSettings m_set;
-    QImage              m_broken;
+    MjpegStreamSettings m_set;          ///< The MJPEG stream settings.
+    QImage              m_broken;       ///< Image to push as frame if current item from list cannot be loaded.
 };
 
 } // namespace DigikamGenericMjpegStreamPlugin

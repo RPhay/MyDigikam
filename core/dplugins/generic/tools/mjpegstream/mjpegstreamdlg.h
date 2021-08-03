@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2021-07-21
- * Description : MJPEG Stream Server configuration dialog to share a single list of files
+ * Description : MJPEG Stream Server configuration dialog
  *
  * Copyright (C) 2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *

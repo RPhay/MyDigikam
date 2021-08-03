@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2021-07-24
- * Description : Media server manager
+ * Description : MJPEG server manager
  *
  * Copyright (C) 2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
@@ -46,56 +46,85 @@ class MjpegServerMngr : public QObject
 
 public:
 
-    /// Setup the list of items to share with the MJPEG server into a single album.
+    /**
+     * Setup the list of items to share with the MJPEG server into a single album.
+     */
     void setItemsList(const QString& aname, const QList<QUrl>& urls);
 
-    /// Return a flat list of items shared
+    /**
+     * Return a flat list of items shared.
+     */
     QList<QUrl> itemsList()                  const;
 
-    /// Setup the list of albums to share with MJPEG server.
+    /**
+     * Setup the list of albums to share with MJPEG server.
+     */
     void setCollectionMap(const MjpegServerMap&);
 
-    /// Return the current album map shared.
+    /**
+     * Return the current album map shared.
+     */
     MjpegServerMap collectionMap()           const;
 
-    /// Setup the MJPEGstream settings.
+    /**
+     * Setup the MJPEGstream settings.
+     */
     void setSettings(const MjpegStreamSettings& set);
 
-    /// Return the MJPEG stream settings.
+    /**
+     * Return the MJPEG stream settings.
+     */
     MjpegStreamSettings settings()           const;
 
-    /// Start the DLNA server and share the contents. Return true is all is on-line.
+    /**
+     * Start the DLNA server and share the contents. Return true is all is on-line.
+     */
     bool startMjpegServer();
 
-    /// Stop the DLNA server and clean-up.
+    /**
+     * Stop the DLNA server and clean-up.
+     */
     void cleanUp();
 
-    /// Low level methods to save and load from xml data file.
+    /**
+     * Low level methods to save and load from xml data file.
+     */
     bool save();
     bool load();
 
-    /// Wrapper to check if server configuration must be saved and restored between application sessions.
+    /**
+     * Wrapper to check if server configuration must be saved and restored between application sessions.
+     */
     bool loadAtStartup();
     void saveAtShutdown();
 
-    /// Return true if server is running in background.
+    /**
+     * Return true if server is running in background.
+     */
     bool isRunning()                         const;
 
-    /// Return some stats about total albums and total items shared on the network.
+    /**
+     * Return some stats about total albums and total items shared on the network.
+     */
     int  albumsShared()                      const;
     int  itemsShared()                       const;
 
-    /// Config properties methods.
-
+    /**
+     * Config properties methods.
+     */
     QString configGroupName()                 const;
     QString configStartServerOnStartupEntry() const;
 
-    /// Send a notification message if MediaServer have been started or not.
+    /**
+     * Send a notification message if MediaServer have been started or not.
+     */
     void mjpegServerNotification(bool started);
 
 public:
 
-    /// This manager is a singleton. Use this method to control the MJPEG server instance.
+    /**
+     * This manager is a singleton. Use this method to control the MJPEG server instance.
+     */
     static MjpegServerMngr* instance();
 
 private:

@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2021-07-24
- * Description : MJPEG SStream mngr configuration dialog to share a single list of files
+ * Description : MJPEG Stream configuration dialog
  *
  * Copyright (C) 2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
@@ -202,6 +202,7 @@ MjpegStreamDlg::MjpegStreamDlg(QObject* const /*parent*/,
 
     d->streamLoop             = new QCheckBox(i18nc("@option:check", "Stream In Loop"), d->streamSettings);
     d->streamLoop->setChecked(true);
+    d->streamLoop->setWhatsThis(i18n("The MJPEG stream will be played in loop instead once."));
 
     grid2->addWidget(portLbl,       0, 0, 1, 1);
     grid2->addWidget(d->srvPort,    0, 1, 1, 1);
@@ -210,7 +211,6 @@ MjpegStreamDlg::MjpegStreamDlg(QObject* const /*parent*/,
     grid2->addWidget(qualityLbl,    1, 0, 1, 1);
     grid2->addWidget(d->quality,    1, 1, 1, 1);
     grid2->addWidget(d->streamLoop, 1, 3, 1, 2);
-//    grid2->setColumnStretch(2, 2);
 
     // ---
 

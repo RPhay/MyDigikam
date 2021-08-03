@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2021-07-24
- * Description : MJPEG settings container.
+ * Description : MJPEG stram settings container.
  *
  * Copyright (C) 2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
@@ -49,6 +49,9 @@ public:
     explicit MjpegStreamSettings();
     ~MjpegStreamSettings();
 
+    /**
+     * Helper method to compute urlsList from a set of albms selected by end-users from GUI.
+     */
     void setCollectionMap(const MjpegServerMap& map);
 
     /**

@@ -74,7 +74,8 @@ void MjpegFrameOsd::insertOsdToFrame(QImage& frm,
                                      const QUrl& /*url*/,
                                      const MjpegStreamSettings& /*settings*/)
 {
-    // TODO: use settings.iface to populate items properties based on url.
+    // TODO: use settings.iface to populate items properties based on url,
+    // eg. album name, rating, tags, labels, date, etc.
 
     // Title section
 

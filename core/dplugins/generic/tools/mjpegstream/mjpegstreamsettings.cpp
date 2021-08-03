@@ -54,18 +54,18 @@ void MjpegStreamSettings::setCollectionMap(const MjpegServerMap& map)
 
 void MjpegStreamSettings::readSettings(KConfigGroup& group)
 {
-    port     = group.readEntry("MJPEGStreamPort",     8080);
-    loop     = group.readEntry("MJPEGStreamLoop",     true);
-    quality  = group.readEntry("MJPEGStreamQuality",  75);
-    delay    = group.readEntry("MJPEGStreamDelay",    5);
+    port    = group.readEntry("MJPEGStreamPort",     8080);
+    loop    = group.readEntry("MJPEGStreamLoop",     true);
+    quality = group.readEntry("MJPEGStreamQuality",  75);
+    delay   = group.readEntry("MJPEGStreamDelay",    5);
 }
 
 void MjpegStreamSettings::writeSettings(KConfigGroup& group)
 {
-    group.writeEntry("MJPEGStreamPort",     port);
-    group.writeEntry("MJPEGStreamLoop",     loop);
-    group.writeEntry("MJPEGStreamQuality",  quality);
-    group.writeEntry("MJPEGStreamDelay",    delay);
+    group.writeEntry("MJPEGStreamPort",    port);
+    group.writeEntry("MJPEGStreamLoop",    loop);
+    group.writeEntry("MJPEGStreamQuality", quality);
+    group.writeEntry("MJPEGStreamDelay",   delay);
 }
 
 } // namespace DigikamGenericMjpegStreamPlugin

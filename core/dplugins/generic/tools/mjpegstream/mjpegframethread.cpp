@@ -73,6 +73,10 @@ MjpegFrameTask::MjpegFrameTask(const MjpegStreamSettings& set)
     : ActionJob(nullptr),
       m_set    (set)
 {
+    /**
+     * NOTE: QIcon depend of X11 under Linux which is not re-rentrant.
+     * Load this image here in first from main thread.
+     */
     m_broken = QIcon::fromTheme(QLatin1String("view-preview")).pixmap(1920).toImage();
 }
 
