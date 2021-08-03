@@ -131,7 +131,7 @@ public:
 
 DMediaServer::DMediaServer(QObject* const parent)
     : QObject(parent),
-      d(new Private)
+      d      (new Private)
 {
     d->serverHolder = new CDeviceHostReferenceHolder();
     d->upnp         = new PLT_UPnP();

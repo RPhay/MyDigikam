@@ -745,7 +745,7 @@ NPT_Result DLNAMediaServerDelegate::ServeFile(const NPT_HttpRequest&        requ
     // prevent hackers from accessing files outside of our root
 
     if (
-        (file_path.Find("/..") >= 0)  ||
+        (file_path.Find("/..")  >= 0) ||
         (file_path.Find("\\..") >= 0) ||
         NPT_FAILED(NPT_File::GetInfo(file_path, &file_info))
        )

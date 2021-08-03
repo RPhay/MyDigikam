@@ -70,7 +70,7 @@ class Q_DECL_HIDDEN DMediaServerMngr::Private
 public:
 
     explicit Private()
-      : server(nullptr)
+        : server(nullptr)
     {
     }
 

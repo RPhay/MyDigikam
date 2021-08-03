@@ -49,13 +49,13 @@ public:
     void setItemsList(const QString& aname, const QList<QUrl>& urls);
 
     /// Return a flat list of items shared
-    QList<QUrl> itemsList()                  const;
+    QList<QUrl> itemsList()                   const;
 
     /// Setup the list of albums to share with DLNA server.
     void setCollectionMap(const MediaServerMap&);
 
     /// Return the current album map shared.
-    MediaServerMap collectionMap()           const;
+    MediaServerMap collectionMap()            const;
 
     /// Start the DLNA server and share the contents. Return true is all is on-line.
     bool startMediaServer();
@@ -72,11 +72,11 @@ public:
     void saveAtShutdown();
 
     /// Return true if server is running in background.
-    bool isRunning()                         const;
+    bool isRunning()                          const;
 
     /// Return some stats about total albums and total items shared on the network.
-    int  albumsShared()                      const;
-    int  itemsShared()                       const;
+    int  albumsShared()                       const;
+    int  itemsShared()                        const;
 
     /// Config properties methods.
 

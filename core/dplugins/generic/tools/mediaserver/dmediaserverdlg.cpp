@@ -58,7 +58,7 @@ class Q_DECL_HIDDEN DMediaServerDlg::Private
 public:
 
     explicit Private()
-      : dirty(false),
+      : dirty           (false),
         mngr            (DMediaServerMngr::instance()),
         srvButton       (nullptr),
         srvStatus       (nullptr),
@@ -96,7 +96,7 @@ public:
 DMediaServerDlg::DMediaServerDlg(QObject* const /*parent*/,
                                  DInfoInterface* const iface)
     : DPluginDialog(nullptr, DMediaServerMngr::instance()->configGroupName()),
-      d(new Private)
+      d            (new Private)
 {
     setWindowTitle(i18nc("@title:window", "Share Files with DLNA Media Server"));
 
