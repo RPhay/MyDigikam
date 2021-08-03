@@ -33,5 +33,5 @@ BUGFIXES:
 021 ==> 440197 - Not loading any JPG file but load & display DNG/TIFF.
 022 ==> 440482 - Assigningment of facetags via a tagname, if the tagname is not unique.
 023 ==> 436586 - Voreinstellung in Settings --> Configure Language.
-024 ==> 
-
+024 ==> 440392 - No entry field for Province/State in "Edit XMP" "Credits" tab of Metadata Editor.
+025 ==> 
