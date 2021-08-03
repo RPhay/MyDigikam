@@ -185,6 +185,8 @@ QStringList MetaEngineSettingsContainer::defaultExifToolSearchPaths() const
 #ifdef Q_OS_UNIX
 
     defPaths << QLatin1String("/usr/bin");
+    defPaths << QLatin1String("/usr/local/bin");
+    defPaths << QLatin1String("/bin");
 
 #endif
 
