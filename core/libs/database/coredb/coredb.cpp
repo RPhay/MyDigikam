@@ -1537,31 +1537,6 @@ QVariantList CoreDB::getVideoMetadata(qlonglong imageID, DatabaseFields::VideoMe
         query                 += QString::fromUtf8(" FROM VideoMetadata WHERE imageid=?;");
 
         d->db->execSql(query, imageID, &values);
-
-        // For some reason REAL values may come as QString QVariants. Convert here.
-
-        if (values.size() == fieldNames.size()        &&
-            ((fields & DatabaseFields::Aperture)      ||
-             (fields & DatabaseFields::FocalLength)   ||
-             (fields & DatabaseFields::FocalLength35) ||
-             (fields & DatabaseFields::ExposureTime)  ||
-             (fields & DatabaseFields::SubjectDistance))
-           )
-        {
-            for (int i = 0 ; i < values.size() ; ++i)
-            {
-                if (values.at(i).type() == QVariant::String             &&
-                    (fieldNames.at(i) == QLatin1String("aperture")      ||
-                     fieldNames.at(i) == QLatin1String("focalLength")   ||
-                     fieldNames.at(i) == QLatin1String("focalLength35") ||
-                     fieldNames.at(i) == QLatin1String("exposureTime")  ||
-                     fieldNames.at(i) == QLatin1String("subjectDistance"))
-                   )
-                {
-                    values[i] = values.at(i).toDouble();
-                }
-            }
-        }
     }
 
     return values;
