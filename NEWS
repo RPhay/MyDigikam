@@ -32,4 +32,6 @@ BUGFIXES:
 020 ==> 440365 - digiKam geolocation editor decimal separator broken in some locales.
 021 ==> 440197 - Not loading any JPG file but load & display DNG/TIFF.
 022 ==> 440482 - Assigningment of facetags via a tagname, if the tagname is not unique.
-023 ==> 
+023 ==> 436586 - Voreinstellung in Settings --> Configure Language.
+024 ==> 
+
