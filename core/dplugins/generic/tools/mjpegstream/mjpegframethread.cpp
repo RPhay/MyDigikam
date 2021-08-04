@@ -33,6 +33,7 @@
 
 #include "digikam_debug.h"
 #include "previewloadthread.h"
+#include "frameutils.h"
 
 namespace DigikamGenericMjpegStreamPlugin
 {
@@ -77,7 +78,7 @@ MjpegFrameTask::MjpegFrameTask(const MjpegStreamSettings& set)
      * NOTE: QIcon depend of X11 under Linux which is not re-rentrant.
      * Load this image here in first from main thread.
      */
-    m_broken = QIcon::fromTheme(QLatin1String("view-preview")).pixmap(1920).toImage();
+    m_broken = QIcon::fromTheme(QLatin1String("view-preview")).pixmap(m_set.outSize).toImage();
 }
 
 MjpegFrameTask::~MjpegFrameTask()
@@ -110,7 +111,7 @@ void MjpegFrameTask::run()
 
             qCDebug(DIGIKAM_GENERAL_LOG) << "MjpegStream: Generate frame for" << url.toLocalFile();
 
-            dimg = PreviewLoadThread::loadSynchronously(url.toLocalFile(), PreviewSettings(PreviewSettings::FastPreview), 1920);
+            dimg = PreviewLoadThread::loadHighQualitySynchronously(url.toLocalFile());
 
             if (dimg.isNull())
             {
@@ -125,6 +126,11 @@ void MjpegFrameTask::run()
 
                 img = dimg.copyQImage();
             }
+
+            // Resize output image to the wanted dimensions.
+
+            img = FrameUtils::makeScaledImage(img, m_set.outSize);
+
 
             // TODO: apply OSD over frame.
 

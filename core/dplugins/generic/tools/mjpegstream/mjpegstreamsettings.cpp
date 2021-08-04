@@ -34,6 +34,7 @@ MjpegStreamSettings::MjpegStreamSettings()
       loop    (true),
       quality (75),
       delay   (5),
+      outSize (QSize(1920, 1080)),      // Blue Ray
       iface   (nullptr)
 {
 }
