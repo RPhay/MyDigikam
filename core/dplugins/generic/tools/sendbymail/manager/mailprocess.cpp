@@ -32,7 +32,9 @@
 #include <QProcess>
 #include <QPointer>
 #include <QStringList>
+#if QT_VERSION < QT_VERSION_CHECK(6,0,0)
 #include <QTextCodec>
+#endif
 #include <QTextStream>
 #include <QApplication>
 #include <QMessageBox>
@@ -297,7 +299,10 @@ void MailProcess::buildPropertiesFile()
 
         QFile propertiesFile(d->settings->tempPath + i18n("properties.txt"));
         QTextStream stream(&propertiesFile);
+#if QT_VERSION < QT_VERSION_CHECK(6,0,0)
+        // In Qt5 only. Qt6 uses UTF-8 by default.
         stream.setCodec(QTextCodec::codecForName("UTF-8"));
+#endif
         stream.setAutoDetectUnicode(true);
 
         if (!propertiesFile.open(QIODevice::WriteOnly))

@@ -25,6 +25,14 @@
 
 #include "albummanager_p.h"
 
+// Qt includes
+
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
+    #include <QTextCodec>
+#else
+    #include <QStringConverter>
+#endif
+
 // KDE includes
 
 #include <kconfiggroup.h>
@@ -235,7 +243,11 @@ bool AlbumManager::setDatabase(const DbEngineParameters& params, bool priority, 
 
     // -- Locale Checking ---------------------------------------------------------
 
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     QString currLocale = QString::fromUtf8((QTextCodec::codecForLocale()->name()));
+#else
+    QString currLocale = QString::fromUtf8(QStringConverter::nameForEncoding(QStringConverter::System));
+#endif
     QString dbLocale   = CoreDbAccess().db()->getSetting(QLatin1String("Locale"));
 
     // guilty until proven innocent

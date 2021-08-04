@@ -588,6 +588,7 @@ QString MetaEngine::Private::convertCommentValue(const Exiv2::Exifdatum& exifDat
         }
         else if (charset == "\"Jis\"")
         {
+            // TODO: Depends on Qt Core5Compat module. Port to Qt6 Core when QStringConverter supports this codec.
             QTextCodec* const codec = QTextCodec::codecForName("JIS7");
 
             if (codec)

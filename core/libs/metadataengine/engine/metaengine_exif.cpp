@@ -299,6 +299,7 @@ bool MetaEngine::setExifComment(const QString& comment, bool writeDescription) c
 
             // Write as Unicode only when necessary.
 
+            // TODO: Depends on Qt Core5Compat module. Port to Qt6 Core when API available
             QTextCodec* const latin1Codec = QTextCodec::codecForName("iso8859-1");
 
             if (latin1Codec && latin1Codec->canEncode(comment))
