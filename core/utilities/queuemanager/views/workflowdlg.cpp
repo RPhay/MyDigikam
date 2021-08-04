@@ -29,7 +29,7 @@
 #include <QGridLayout>
 #include <QGroupBox>
 #include <QLabel>
-#include <QRegExp>
+#include <QRegularExpression>
 #include <QValidator>
 #include <QApplication>
 #include <QStyle>
@@ -101,8 +101,8 @@ WorkflowDlg::WorkflowDlg(const Workflow& wf, bool create)
 
     // --------------------------------------------------------
 
-    QRegExp           reg(QLatin1String("[^/]+"));
-    QValidator* const validator = new QRegExpValidator(reg, this);
+    QRegularExpression           reg(QLatin1String("[^/]+"));
+    QValidator* const validator = new QRegularExpressionValidator(reg, this);
 
     QLabel* const titleLabel    = new QLabel(page);
     titleLabel->setText(i18nc("@title: batch worklow name", "&Title:"));

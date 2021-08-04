@@ -27,7 +27,7 @@
 
 #include <QImageReader>
 #include <QPainter>
-#include <QRegExp>
+#include <QRegularExpression>
 #include <QTextStream>
 #include <QStandardPaths>
 #include <QApplication>

@@ -26,7 +26,7 @@
 
 #include <QDir>
 #include <QFutureWatcher>
-#include <QRegExp>
+#include <QRegularExpression>
 #include <QStringList>
 #include <QApplication>
 #include <QProcess>

@@ -42,7 +42,7 @@
 #include <QFile>
 #include <QFileInfo>
 #include <QDataStream>
-#include <QRegExp>
+#include <QRegularExpression>
 #include <QDir>
 
 // Local includes

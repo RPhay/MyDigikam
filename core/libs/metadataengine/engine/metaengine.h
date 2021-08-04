@@ -40,7 +40,7 @@
 #include <QSharedDataPointer>
 #include <QStringList>
 #include <QVariant>
-#include <QRegExp>
+#include <QRegularExpression>
 #include <QUrl>
 #include <QImage>
 
