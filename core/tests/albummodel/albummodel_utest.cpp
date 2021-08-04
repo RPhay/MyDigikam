@@ -476,32 +476,32 @@ void AlbumModelTest::testDisablePAlbumCount()
     albumModel.setCountMap(palbumCountMap);
     albumModel.setShowCount(true);
 
-    QRegExp countRegEx(QLatin1String(".+ \\(\\d+\\)"));
-    countRegEx.setMinimal(true);
-    QVERIFY(countRegEx.exactMatch(QLatin1String("test (10)")));
-    QVERIFY(countRegEx.exactMatch(QLatin1String("te st (10)")));
-    QVERIFY(countRegEx.exactMatch(QLatin1String("te st (0)")));
-    QVERIFY(!countRegEx.exactMatch(QLatin1String("te st ()")));
-    QVERIFY(!countRegEx.exactMatch(QLatin1String("te st")));
-    QVERIFY(!countRegEx.exactMatch(QLatin1String("te st (10) bla")));
+    QRegularExpression countRegEx(QRegularExpression::anchoredPattern(QLatin1String(".+ \\(\\d+\\)")));
+    countRegEx.setPatternOptions(QRegularExpression::InvertedGreedinessOption);
+    QVERIFY(countRegEx.match(QLatin1String("test (10)")).hasMatch());
+    QVERIFY(countRegEx.match(QLatin1String("te st (10)")).hasMatch());
+    QVERIFY(countRegEx.match(QLatin1String("te st (0)")).hasMatch());
+    QVERIFY(!countRegEx.match(QLatin1String("te st ()")).hasMatch());
+    QVERIFY(!countRegEx.match(QLatin1String("te st")).hasMatch());
+    QVERIFY(!countRegEx.match(QLatin1String("te st (10) bla")).hasMatch());
 
     // ensure that all albums except the root album have a count attached
 
     QModelIndex rootIndex = albumModel.index(0, 0, QModelIndex());
     QString rootTitle     = albumModel.data(rootIndex, Qt::DisplayRole).toString();
-    QVERIFY(!countRegEx.exactMatch(rootTitle));
+    QVERIFY(!countRegEx.match(rootTitle).hasMatch());
 
     for (int collectionRow = 0; collectionRow < albumModel.rowCount(rootIndex); ++collectionRow)
     {
         QModelIndex collectionIndex = albumModel.index(collectionRow, 0, rootIndex);
         QString collectionTitle = albumModel.data(collectionIndex, Qt::DisplayRole).toString();
-        QVERIFY2(countRegEx.exactMatch(collectionTitle), QString::fromUtf8("%1 matching error").arg(collectionTitle).toLatin1().constData());
+        QVERIFY2(countRegEx.match(collectionTitle).hasMatch(), QString::fromUtf8("%1 matching error").arg(collectionTitle).toLatin1().constData());
 
         for (int albumRow = 0; albumRow < albumModel.rowCount(collectionIndex); ++albumRow)
         {
             QModelIndex albumIndex = albumModel.index(albumRow, 0, collectionIndex);
             QString albumTitle     = albumModel.data(albumIndex, Qt::DisplayRole).toString();
-            QVERIFY2(countRegEx.exactMatch(albumTitle), QString::fromUtf8("%1 matching error").arg(albumTitle).toLatin1().constData());
+            QVERIFY2(countRegEx.match(albumTitle).hasMatch(), QString::fromUtf8("%1 matching error").arg(albumTitle).toLatin1().constData());
         }
 
     }
@@ -513,19 +513,19 @@ void AlbumModelTest::testDisablePAlbumCount()
     // ensure that no album has a count attached
 
     rootTitle = albumModel.data(rootIndex, Qt::DisplayRole).toString();
-    QVERIFY(!countRegEx.exactMatch(rootTitle));
+    QVERIFY(!countRegEx.match(rootTitle).hasMatch());
 
     for (int collectionRow = 0; collectionRow < albumModel.rowCount(rootIndex); ++collectionRow)
     {
         QModelIndex collectionIndex = albumModel.index(collectionRow, 0, rootIndex);
         QString collectionTitle     = albumModel.data(collectionIndex, Qt::DisplayRole).toString();
-        QVERIFY2(!countRegEx.exactMatch(collectionTitle), QString::fromUtf8("%1 matching error").arg(collectionTitle).toLatin1().constData());
+        QVERIFY2(!countRegEx.match(collectionTitle).hasMatch(), QString::fromUtf8("%1 matching error").arg(collectionTitle).toLatin1().constData());
 
         for (int albumRow = 0; albumRow < albumModel.rowCount(collectionIndex); ++albumRow)
         {
             QModelIndex albumIndex = albumModel.index(albumRow, 0, collectionIndex);
             QString albumTitle     = albumModel.data(albumIndex, Qt::DisplayRole).toString();
-            QVERIFY2(!countRegEx.exactMatch(albumTitle), QString::fromUtf8("%1 matching error").arg(albumTitle).toLatin1().constData());
+            QVERIFY2(!countRegEx.match(albumTitle).hasMatch(), QString::fromUtf8("%1 matching error").arg(albumTitle).toLatin1().constData());
         }
     }
 }
