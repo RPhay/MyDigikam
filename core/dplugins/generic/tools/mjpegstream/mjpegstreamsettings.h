@@ -67,7 +67,7 @@ public:
     int             quality;       ///< Jpeg compression [1...100].
     int             delay;         ///< Delay in seconds between inages.
     QList<QUrl>     urlsList;      ///< Ordered list of list to stream.
-    QSize           outSize;       ///< Output JPEG size.
+    int             outSize;       ///< Output JPEG size ID.
 
     DInfoInterface* iface;         ///< Plugin host interface to handle item properties.
 };

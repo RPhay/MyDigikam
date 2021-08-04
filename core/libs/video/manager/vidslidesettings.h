@@ -157,11 +157,11 @@ public:
     void  readSettings(KConfigGroup& group);
     void  writeSettings(KConfigGroup& group);
 
-    QSize   videoSize()      const;     ///< Return the current video size.
-    int     videoBitRate()   const;     ///< Return the current video bit rate.
-    qreal   videoFrameRate() const;     ///< Return the current video frame rate.
-    QString videoCodec()     const;     ///< Return the current video ffmpeg codec name.
-    QString videoFormat()    const;     ///< Return the current video format extension.
+    QSize   videoSize()             const;              ///< Return the current video size.
+    int     videoBitRate()          const;              ///< Return the current video bit rate.
+    qreal   videoFrameRate()        const;              ///< Return the current video frame rate.
+    QString videoCodec()            const;              ///< Return the current video ffmpeg codec name.
+    QString videoFormat()           const;              ///< Return the current video format extension.
 
     /**
      * Helper methods to fill combobox from GUI.
@@ -173,34 +173,36 @@ public:
     static QMap<VidFormat,  QString> videoFormatNames();
     static QMap<VidPlayer,  QString> videoPlayerNames();
 
+    static QSize videoSizeFromType(int type);           ///< Return the current size from a type of video.
+
 public:
 
-    Selection                         selMode;       ///< Items selection mode
+    Selection                         selMode;          ///< Items selection mode
 
     // -- Generator settings ------
 
-    QList<QUrl>                       inputImages;   ///< Images stream.
-    QList<QUrl>                       inputAudio;    ///< Soundtracks stream.
+    QList<QUrl>                       inputImages;      ///< Images stream.
+    QList<QUrl>                       inputAudio;       ///< Soundtracks stream.
 
-    TransitionMngr::TransType         transition;    ///< Transition type between images.
+    TransitionMngr::TransType         transition;       ///< Transition type between images.
 
-    int                               imgFrames;     ///< Amount of frames by image to encode in video (ex: 125 frames = 5 s at 25 img/s).
+    int                               imgFrames;        ///< Amount of frames by image to encode in video (ex: 125 frames = 5 s at 25 img/s).
 
-    int                               abitRate;      ///< Encoded Audio stream bit rate in bit/s.
-    VidBitRate                        vbitRate;      ///< Encoded Video stream bit rate in bit/s.
-    VidStd                            vStandard;     ///< Encoded Video standard => frame rate in img/s.
-    VidType                           vType;         ///< Encoded video type.
-    VidCodec                          vCodec;        ///< Encoded video codec.
-    VidFormat                         vFormat;       ///< Encoded video container format.
-    EffectMngr::EffectType            vEffect;       ///< Encoded video effect while displaying images.
+    int                               abitRate;         ///< Encoded Audio stream bit rate in bit/s.
+    VidBitRate                        vbitRate;         ///< Encoded Video stream bit rate in bit/s.
+    VidStd                            vStandard;        ///< Encoded Video standard => frame rate in img/s.
+    VidType                           vType;            ///< Encoded video type.
+    VidCodec                          vCodec;           ///< Encoded video codec.
+    VidFormat                         vFormat;          ///< Encoded video container format.
+    EffectMngr::EffectType            vEffect;          ///< Encoded video effect while displaying images.
 
-    FileSaveConflictBox::ConflictRule conflictRule;  ///< Rule to follow if video file already exists.
-    QUrl                              outputDir;     ///< Encoded video stream directory.
+    FileSaveConflictBox::ConflictRule conflictRule;     ///< Rule to follow if video file already exists.
+    QUrl                              outputDir;        ///< Encoded video stream directory.
 
     // ---------------------
 
-    QString                           outputVideo;   ///< Target video file encoded at end.
-    VidPlayer                         outputPlayer;  ///< Open video stream in player at end.
+    QString                           outputVideo;      ///< Target video file encoded at end.
+    VidPlayer                         outputPlayer;     ///< Open video stream in player at end.
 };
 
 } // namespace Digikam

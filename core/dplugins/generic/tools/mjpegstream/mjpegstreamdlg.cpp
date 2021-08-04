@@ -34,6 +34,7 @@
 #include <QStyle>
 #include <QIcon>
 #include <QCheckBox>
+#include <QComboBox>
 
 // KDE includes
 
@@ -49,6 +50,7 @@
 #include "dxmlguiwindow.h"
 #include "workingwidget.h"
 #include "mjpegservermngr.h"
+#include "vidslidesettings.h"
 
 namespace DigikamGenericMjpegStreamPlugin
 {
@@ -77,7 +79,8 @@ public:
         srvPort         (nullptr),
         delay           (nullptr),
         quality         (nullptr),
-        streamLoop      (nullptr)
+        streamLoop      (nullptr),
+        typeVal         (nullptr)
     {
     }
 
@@ -101,6 +104,7 @@ public:
     DIntNumInput*       delay;
     DIntNumInput*       quality;
     QCheckBox*          streamLoop;
+    QComboBox*          typeVal;
     MjpegStreamSettings settings;
 };
 
@@ -187,18 +191,42 @@ MjpegStreamDlg::MjpegStreamDlg(QObject* const /*parent*/,
     d->srvPort->setDefaultValue(8080);
     d->srvPort->setRange(1025, 65535, 1);
     d->srvPort->setWhatsThis(i18n("The MJPEG server IP port."));
+    portLbl->setBuddy(d->srvPort);
 
     QLabel* const delayLbl    = new QLabel(i18nc("@label", "Delay in seconds:"), d->streamSettings);
     d->delay                  = new DIntNumInput(d->streamSettings);
     d->delay->setDefaultValue(5);
     d->delay->setRange(1, 3600, 1);
     d->delay->setWhatsThis(i18n("The delay, in seconds, between images."));
+    delayLbl->setBuddy(d->delay);
 
     QLabel* const qualityLbl  = new QLabel(i18nc("@label", "JPEG Quality:"), d->streamSettings);
     d->quality                = new DIntNumInput(d->streamSettings);
     d->quality->setDefaultValue(75);
     d->quality->setRange(50, 100, 1);
     d->quality->setWhatsThis(i18n("The JPEG quality [50:lower - 100:higher]."));
+    qualityLbl->setBuddy(d->quality);
+
+    // ---
+
+    QLabel* const typeLabel   = new QLabel(d->streamSettings);
+    typeLabel->setWordWrap(false);
+    typeLabel->setText(i18nc("@label", "JPEG Size:"));
+    d->typeVal                = new QComboBox(d->streamSettings);
+    d->typeVal->setEditable(false);
+
+    QMap<VidSlideSettings::VidType, QString> map                = VidSlideSettings::videoTypeNames();
+    QMap<VidSlideSettings::VidType, QString>::const_iterator it = map.constBegin();
+
+    while (it != map.constEnd())
+    {
+        d->typeVal->addItem(it.value(), (int)it.key());
+        ++it;
+    }
+
+    typeLabel->setBuddy(d->typeVal);
+
+    // ---
 
     d->streamLoop             = new QCheckBox(i18nc("@option:check", "Stream In Loop"), d->streamSettings);
     d->streamLoop->setChecked(true);
@@ -210,7 +238,9 @@ MjpegStreamDlg::MjpegStreamDlg(QObject* const /*parent*/,
     grid2->addWidget(d->delay,      0, 4, 1, 1);
     grid2->addWidget(qualityLbl,    1, 0, 1, 1);
     grid2->addWidget(d->quality,    1, 1, 1, 1);
-    grid2->addWidget(d->streamLoop, 1, 3, 1, 2);
+    grid2->addWidget(typeLabel,     1, 3, 1, 1);
+    grid2->addWidget(d->typeVal,    1, 4, 1, 1);
+    grid2->addWidget(d->streamLoop, 2, 0, 1, 3);
 
     // ---
 
@@ -319,16 +349,19 @@ void MjpegStreamDlg::readSettings()
     d->delay->blockSignals(true);
     d->quality->blockSignals(true);
     d->streamLoop->blockSignals(true);
+    d->typeVal->blockSignals(true);
 
     d->srvPort->setValue(d->settings.port);
     d->delay->setValue(d->settings.delay);
     d->quality->setValue(d->settings.quality);
     d->streamLoop->setChecked(d->settings.loop);
+    d->typeVal->setCurrentIndex(d->settings.outSize);
 
     d->srvPort->blockSignals(false);
     d->delay->blockSignals(false);
     d->quality->blockSignals(false);
     d->streamLoop->blockSignals(false);
+    d->typeVal->blockSignals(false);
 
     slotSettingsChanged();
 
@@ -352,6 +385,7 @@ void MjpegStreamDlg::slotSettingsChanged()
     d->settings.delay   = d->delay->value();
     d->settings.quality = d->quality->value();
     d->settings.loop    = d->streamLoop->isChecked();
+    d->settings.outSize = d->typeVal->currentIndex();
 }
 
 void MjpegStreamDlg::updateServerStatus()

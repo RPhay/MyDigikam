@@ -26,6 +26,10 @@
 
 #include <kconfiggroup.h>
 
+// Local includes
+
+#include "vidslidesettings.h"
+
 namespace DigikamGenericMjpegStreamPlugin
 {
 
@@ -34,7 +38,7 @@ MjpegStreamSettings::MjpegStreamSettings()
       loop    (true),
       quality (75),
       delay   (5),
-      outSize (QSize(1920, 1080)),      // Blue Ray
+      outSize (VidSlideSettings::BLUERAY),
       iface   (nullptr)
 {
 }
@@ -59,6 +63,7 @@ void MjpegStreamSettings::readSettings(KConfigGroup& group)
     loop    = group.readEntry("MJPEGStreamLoop",     true);
     quality = group.readEntry("MJPEGStreamQuality",  75);
     delay   = group.readEntry("MJPEGStreamDelay",    5);
+    outSize = group.readEntry("MJPEGStreamOutSize",  (int)VidSlideSettings::BLUERAY);
 }
 
 void MjpegStreamSettings::writeSettings(KConfigGroup& group)
@@ -67,6 +72,7 @@ void MjpegStreamSettings::writeSettings(KConfigGroup& group)
     group.writeEntry("MJPEGStreamLoop",    loop);
     group.writeEntry("MJPEGStreamQuality", quality);
     group.writeEntry("MJPEGStreamDelay",   delay);
+    group.writeEntry("MJPEGStreamOutSize", outSize);
 }
 
 } // namespace DigikamGenericMjpegStreamPlugin

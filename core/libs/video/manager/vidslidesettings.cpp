@@ -104,9 +104,14 @@ void VidSlideSettings::writeSettings(KConfigGroup& group)
 
 QSize VidSlideSettings::videoSize() const
 {
+    return videoSizeFromType(vType);
+}
+
+QSize VidSlideSettings::videoSizeFromType(int type)
+{
     QSize s;
 
-    switch (vType)
+    switch (type)
     {
         case QVGA:
             s = QSize(320, 180);
