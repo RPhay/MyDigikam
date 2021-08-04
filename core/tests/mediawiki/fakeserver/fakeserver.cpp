@@ -32,6 +32,7 @@
 // Qt includes
 
 #include <QFile>
+#include <QRegularExpression>
 
 FakeServer::FakeServer(QObject* const parent)
     :  QThread       (parent),
@@ -71,7 +72,7 @@ void FakeServer::dataAvailable()
 
     if (m_clientSocket->canReadLine())
     {
-        QStringList token = QString::fromUtf8(m_clientSocket->readAll()).split(QRegExp(QStringLiteral("[ \r\n][ \r\n]*")));
+        QStringList token = QString::fromUtf8(m_clientSocket->readAll()).split(QRegularExpression(QStringLiteral("[ \r\n][ \r\n]*")));
 
         if (token.size() > 2)
         {
