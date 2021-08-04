@@ -273,9 +273,8 @@ void tryInitDrMingw()
 
     qCDebug(DIGIKAM_GENERAL_LOG) << "Loading DrMinGw run-time...";
 
-    QRegExp versionRegExp(QLatin1String("(\\d+[.]*\\d*)"));
-    QSysInfo::productVersion().indexOf(versionRegExp);
-    double version = versionRegExp.capturedTexts().constFirst().toDouble();
+    QRegularExpression versionRegExp(QLatin1String("(\\d+[.]*\\d*)"));
+    double version = versionRegExp.match(QSysInfo::productVersion()).capturedTexts().constFirst().toDouble();
 
     if  (
          ((version < 2000.0) && (version < 10.0)) ||
