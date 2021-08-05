@@ -36,4 +36,18 @@ BUGFIXES:
 024 ==> 440392 - No entry field for Province/State in "Edit XMP" "Credits" tab of Metadata Editor.
 025 ==> 440519 - Can‘t specify folder for face recognition.
 026 ==> 440555 - Clear/Rebuilding face training data force all DB metadata to be written to images again.
-027 ==> 
+027 ==> 410787 - Can't export to Google photo.
+028 ==> 
+029 ==> 
+030 ==> 
+031 ==> 
+032 ==> 
+033 ==> 
+034 ==> 
+035 ==> 
+036 ==> 
+037 ==> 
+038 ==> 
+039 ==> 
+040 ==> 
+
