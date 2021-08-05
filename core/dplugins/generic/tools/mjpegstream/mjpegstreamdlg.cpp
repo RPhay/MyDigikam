@@ -297,6 +297,9 @@ MjpegStreamDlg::MjpegStreamDlg(QObject* const /*parent*/,
     connect(d->streamLoop, SIGNAL(stateChanged(int)),
             this, SLOT(slotSettingsChanged()));
 
+    connect(d->typeVal, SIGNAL(currentIndexChanged(int)),
+            this, SLOT(slotSettingsChanged()));
+
     // -------------------
 
     readSettings();
