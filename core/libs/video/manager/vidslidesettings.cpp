@@ -191,6 +191,12 @@ QSize VidSlideSettings::videoSizeFromType(int type)
             break;
         }
 
+        case UHD8K:
+        {
+            s = QSize(7680, 4320);
+            break;
+        }
+
         default: // BLUERAY
         {
             s = QSize(1920, 1080);
@@ -433,6 +439,7 @@ QMap<VidSlideSettings::VidType, QString> VidSlideSettings::videoTypeNames()
     types[HDTV]    = i18nc("Video Type: HDTV",    "HDTV - 1280x720 - 16:9");
     types[BLUERAY] = i18nc("Video Type: BLUERAY", "BLUERAY - 1920x1080 - 16:9");
     types[UHD4K]   = i18nc("Video Type: UHD4K",   "UHD4K - 3840x2160 - 16:9");
+    types[UHD8K]   = i18nc("Video Type: UHD8K",   "UHD8K - 7680x4320 - 16:9");
 
     return types;
 }
