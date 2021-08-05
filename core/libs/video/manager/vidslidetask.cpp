@@ -68,8 +68,8 @@ public:
 
     explicit Private()
       : settings(nullptr),
-        astream(0),
-        adec(AudioDecoder::create("FFmpeg"))
+        astream (0),
+        adec    (AudioDecoder::create("FFmpeg"))
     {
     }
 
@@ -238,7 +238,7 @@ AudioFrame VidSlideTask::Private::nextAudioFrame(const AudioFormat& afmt)
 
 VidSlideTask::VidSlideTask(VidSlideSettings* const settings)
     : ActionJob(),
-      d(new Private)
+      d        (new Private)
 {
     d->settings = settings;
 
@@ -349,7 +349,7 @@ void VidSlideTask::run()
     effmngr.setOutputSize(osize);
     effmngr.setFrames(d->settings->imgFrames);
 
-    for (int i = 0 ; i < d->settings->inputImages.count()+1 && !m_cancel ; ++i)
+    for (int i = 0 ; i < (d->settings->inputImages.count() + 1 && !m_cancel) ; ++i)
     {
         if (i == 0)
         {

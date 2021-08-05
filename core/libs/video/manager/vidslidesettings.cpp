@@ -35,19 +35,19 @@ namespace Digikam
 {
 
 VidSlideSettings::VidSlideSettings()
-    : selMode(IMAGES),
-      transition(TransitionMngr::None),
-      imgFrames(125),
-      abitRate(64000),
-      vbitRate(VBR12),
-      vStandard(PAL),
-      vType(BLUERAY),
-      vCodec(X264),
-      vFormat(MP4),
-      vEffect(EffectMngr::None),
-      conflictRule(FileSaveConflictBox::OVERWRITE),
-      outputDir(QUrl::fromLocalFile(QStandardPaths::writableLocation(QStandardPaths::MoviesLocation))),
-      outputPlayer(INTERNAL)
+    : selMode       (IMAGES),
+      transition    (TransitionMngr::None),
+      imgFrames     (125),
+      abitRate      (64000),
+      vbitRate      (VBR12),
+      vStandard     (PAL),
+      vType         (BLUERAY),
+      vCodec        (X264),
+      vFormat       (MP4),
+      vEffect       (EffectMngr::None),
+      conflictRule  (FileSaveConflictBox::OVERWRITE),
+      outputDir     (QUrl::fromLocalFile(QStandardPaths::writableLocation(QStandardPaths::MoviesLocation))),
+      outputPlayer  (INTERNAL)
 {
 }
 
@@ -114,60 +114,88 @@ QSize VidSlideSettings::videoSizeFromType(int type)
     switch (type)
     {
         case QVGA:
+        {
             s = QSize(320, 180);
             break;
+        }
 
         case VCD1:
+        {
             s = QSize(352, 240);
             break;
+        }
 
         case VCD2:
+        {
             s = QSize(352, 288);
             break;
+        }
 
         case HVGA:
+        {
             s = QSize(480, 270);
             break;
+        }
 
         case SVCD1:
+        {
             s = QSize(480, 480);
             break;
+        }
 
         case SVCD2:
+        {
             s = QSize(480, 576);
             break;
+        }
 
         case VGA:
+        {
             s = QSize(640, 360);
             break;
+        }
 
         case DVD1:
+        {
             s = QSize(720, 480);
             break;
+        }
 
         case DVD2:
+        {
             s = QSize(720, 576);
             break;
+        }
 
         case WVGA:
+        {
             s = QSize(800, 450);
             break;
+        }
 
         case XVGA:
+        {
             s = QSize(1024, 576);
             break;
+        }
 
         case HDTV:
+        {
             s = QSize(1280, 720);
             break;
+        }
 
         case UHD4K:
+        {
             s = QSize(3840, 2160);
             break;
+        }
 
         default: // BLUERAY
+        {
             s = QSize(1920, 1080);
             break;
+        }
     }
 
     return s;
@@ -180,56 +208,82 @@ int VidSlideSettings::videoBitRate() const
     switch (vbitRate)
     {
         case VBR04:
+        {
             b = 400000;
             break;
+        }
 
         case VBR05:
+        {
             b = 500000;
             break;
+        }
 
         case VBR10:
+        {
             b = 1000000;
             break;
+        }
 
         case VBR15:
+        {
             b = 1500000;
             break;
+        }
 
         case VBR20:
+        {
             b = 2000000;
             break;
+        }
 
         case VBR25:
+        {
             b = 2500000;
             break;
+        }
 
         case VBR30:
+        {
             b = 3000000;
             break;
+        }
 
         case VBR40:
+        {
             b = 4000000;
             break;
+        }
 
         case VBR45:
+        {
             b = 4500000;
             break;
+        }
 
         case VBR50:
+        {
             b = 5000000;
             break;
+        }
 
         case VBR60:
+        {
             b = 6000000;
             break;
+        }
 
         case VBR80:
+        {
             b = 8000000;
             break;
+        }
 
         default: // VBR12
+        {
             b = 1200000;
             break;
+        }
     }
 
     return b;
@@ -242,12 +296,16 @@ qreal VidSlideSettings::videoFrameRate() const
     switch (vStandard)
     {
         case NTSC:
+        {
             fr = 29.97;
             break;
+        }
 
         default: // PAL
+        {
             fr = 25.0;
             break;
+        }
     }
 
     return fr;
@@ -260,44 +318,64 @@ QString VidSlideSettings::videoCodec() const
     switch (vCodec)
     {
         case MJPEG:
+        {
             cod = QLatin1String("mjpeg");
             break;
+        }
 
         case MPEG2:
+        {
             cod = QLatin1String("mpeg2video");
             break;
+        }
 
         case MPEG4:
+        {
             cod = QLatin1String("mpeg4");
             break;
+        }
 
         case WEBMVP8:
+        {
             cod = QLatin1String("libvpx");
             break;
+        }
 
         case FLASH:
+        {
             cod = QLatin1String("flv");
             break;
+        }
 
         case THEORA:
+        {
             cod = QLatin1String("libtheora");
             break;
+        }
 
         case WMV7:
+        {
             cod = QLatin1String("wm1");
             break;
+        }
 
         case WMV8:
+        {
             cod = QLatin1String("wm2");
             break;
+        }
 
         case WMV9:
+        {
             cod = QLatin1String("wm3");
             break;
+        }
 
         default: // X264
+        {
             cod = QLatin1String("libx264");
             break;
+        }
     }
 
     return cod;
@@ -310,20 +388,28 @@ QString VidSlideSettings::videoFormat() const
     switch (vFormat)
     {
         case AVI:
+        {
             frm = QLatin1String("avi");
             break;
+        }
 
         case MKV:
+        {
             frm = QLatin1String("mkv");
             break;
+        }
 
         case MPG:
+        {
             frm = QLatin1String("mpg");
             break;
+        }
 
         default: // MP4
+        {
             frm = QLatin1String("mp4");
             break;
+        }
     }
 
     return frm;
@@ -334,14 +420,14 @@ QMap<VidSlideSettings::VidType, QString> VidSlideSettings::videoTypeNames()
     QMap<VidType, QString> types;
 
     types[QVGA]    = i18nc("Video Type: QVGA",    "QVGA - 320x180 - 16:9");
-    types[VCD1]    = i18nc("Video Type: VCD",     "VCD - 352x240");
-    types[VCD2]    = i18nc("Video Type: VCD",     "VCD - 352x288");
+    types[VCD1]    = i18nc("Video Type: VCD",     "VCD - 352x240 - 7:5");
+    types[VCD2]    = i18nc("Video Type: VCD",     "VCD - 352x288 - 6:5");
     types[HVGA]    = i18nc("Video Type: HVGA",    "HVGA - 480x270 - 16:9");
-    types[SVCD1]   = i18nc("Video Type: SVCD",    "SVCD - 480x480");
-    types[SVCD2]   = i18nc("Video Type: SVCD",    "SVCD - 480x576");
+    types[SVCD1]   = i18nc("Video Type: SVCD",    "SVCD - 480x480 - 1:1");
+    types[SVCD2]   = i18nc("Video Type: SVCD",    "SVCD - 480x576 - 5:6");
     types[VGA]     = i18nc("Video Type: VGA",     "VGA - 640x360 - 16:9");
-    types[DVD1]    = i18nc("Video Type: DVD",     "DVD - 720x480");
-    types[DVD2]    = i18nc("Video Type: DVD",     "DVD - 720x576");
+    types[DVD1]    = i18nc("Video Type: DVD",     "DVD - 720x480 - 3:2");
+    types[DVD2]    = i18nc("Video Type: DVD",     "DVD - 720x576 - 5:4");
     types[WVGA]    = i18nc("Video Type: WVGA",    "WVGA - 800x450 - 16:9");
     types[XVGA]    = i18nc("Video Type: XVGA",    "XVGA - 1024x576 - 16:9");
     types[HDTV]    = i18nc("Video Type: HDTV",    "HDTV - 1280x720 - 16:9");
