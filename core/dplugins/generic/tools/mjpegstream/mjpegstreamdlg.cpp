@@ -34,7 +34,6 @@
 #include <QStyle>
 #include <QIcon>
 #include <QCheckBox>
-#include <QComboBox>
 
 // KDE includes
 
@@ -51,6 +50,7 @@
 #include "workingwidget.h"
 #include "mjpegservermngr.h"
 #include "vidslidesettings.h"
+#include "dcombobox.h"
 
 namespace DigikamGenericMjpegStreamPlugin
 {
@@ -104,7 +104,7 @@ public:
     DIntNumInput*       delay;
     DIntNumInput*       quality;
     QCheckBox*          streamLoop;
-    QComboBox*          typeVal;
+    DComboBox*          typeVal;
     MjpegStreamSettings settings;
 };
 
@@ -212,8 +212,8 @@ MjpegStreamDlg::MjpegStreamDlg(QObject* const /*parent*/,
     QLabel* const typeLabel   = new QLabel(d->streamSettings);
     typeLabel->setWordWrap(false);
     typeLabel->setText(i18nc("@label", "JPEG Size:"));
-    d->typeVal                = new QComboBox(d->streamSettings);
-    d->typeVal->setEditable(false);
+    d->typeVal                = new DComboBox(d->streamSettings);
+    d->typeVal->combo()->setEditable(false);
 
     QMap<VidSlideSettings::VidType, QString> map                = VidSlideSettings::videoTypeNames();
     QMap<VidSlideSettings::VidType, QString>::const_iterator it = map.constBegin();
@@ -224,6 +224,7 @@ MjpegStreamDlg::MjpegStreamDlg(QObject* const /*parent*/,
         ++it;
     }
 
+    d->typeVal->setDefaultIndex(VidSlideSettings::BLUERAY);
     typeLabel->setBuddy(d->typeVal);
 
     // ---
