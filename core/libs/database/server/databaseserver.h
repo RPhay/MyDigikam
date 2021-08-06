@@ -73,7 +73,7 @@ public:
     /**
      * Terminates the databaser server process.
      */
-    void stopDatabaseProcess();
+    void stopDatabaseProcess(int killTime = 30000);
 
     /**
      * Returns true if the server process is running.
@@ -128,9 +128,14 @@ private:
     DatabaseServerError initMysqlDatabase()                              const;
 
     /**
-     * Check for a mysql database upgrade.
+     * Check the mysql.err file for a database upgrade.
      */
-    DatabaseServerError checkUpgradeMysqlDatabase();
+    bool checkMysqlErrorFile();
+
+    /**
+     * Perform a mysql database upgrade.
+     */
+    DatabaseServerError upgradeMysqlDatabase();
 
     /**
      * Return the current user account name.
