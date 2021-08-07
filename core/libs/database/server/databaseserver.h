@@ -73,7 +73,7 @@ public:
     /**
      * Terminates the databaser server process.
      */
-    void stopDatabaseProcess(int killTime = 30000);
+    void stopDatabaseProcess();
 
     /**
      * Returns true if the server process is running.

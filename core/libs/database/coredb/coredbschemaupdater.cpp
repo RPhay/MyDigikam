@@ -458,9 +458,10 @@ bool CoreDbSchemaUpdater::makeUpdates()
 
             if (d->parameters.internalServer)
             {
-                errorMsg = i18n("Failed to update the database schema from version %1 to version %2.\n\n"
-                                "An upgrade to the current server version may be required, "
-                                "please restart digiKam.",
+                errorMsg = i18n("Failed to update the database schema from version %1 to version %2.\n"
+                                "The cause could be a missing upgrade of the database to the current "
+                                "server version. Now start digiKam again to perform a required "
+                                "upgrade of the database.",
                                 d->currentVersion.toInt(),
                                 targetVersion);
             }

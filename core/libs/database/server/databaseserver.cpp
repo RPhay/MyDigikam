@@ -175,7 +175,7 @@ DatabaseServerError DatabaseServer::startDatabaseProcess()
     return error;
 }
 
-void DatabaseServer::stopDatabaseProcess(int killTime)
+void DatabaseServer::stopDatabaseProcess()
 {
     if (!d->databaseProcess)
     {
@@ -183,6 +183,8 @@ void DatabaseServer::stopDatabaseProcess(int killTime)
     }
 
     QStringList mysqlShutDownArgs;
+    mysqlShutDownArgs << QLatin1String("-u");
+    mysqlShutDownArgs << QLatin1String("root");
     mysqlShutDownArgs << QLatin1String("shutdown");
 
 #ifdef Q_OS_WIN
@@ -200,7 +202,7 @@ void DatabaseServer::stopDatabaseProcess(int killTime)
     mysqlShutDownProcess.start(d->mysqlAdminPath, mysqlShutDownArgs);
     mysqlShutDownProcess.waitForFinished();
 
-    if ((d->databaseProcess->state() == QProcess::Running) && !d->databaseProcess->waitForFinished(killTime))
+    if ((d->databaseProcess->state() == QProcess::Running) && !d->databaseProcess->waitForFinished())
     {
         qCDebug(DIGIKAM_DATABASESERVER_LOG) << "Database process will be killed now";
         d->databaseProcess->kill();
@@ -256,15 +258,6 @@ DatabaseServerError DatabaseServer::startMysqlDatabaseProcess()
         return error;
     }
 
-    error = initMysqlDatabase();
-
-    if (error.getErrorType() != DatabaseServerError::NoErrors)
-    {
-        return error;
-    }
-
-    databaseServerStateEnum = running;
-
     if (needUpgrade)
     {
         error = upgradeMysqlDatabase();
@@ -274,6 +267,15 @@ DatabaseServerError DatabaseServer::startMysqlDatabaseProcess()
             return error;
         }
     }
+
+    error = initMysqlDatabase();
+
+    if (error.getErrorType() != DatabaseServerError::NoErrors)
+    {
+        return error;
+    }
+
+    databaseServerStateEnum = running;
 
     return error;
 }
@@ -704,8 +706,6 @@ DatabaseServerError DatabaseServer::initMysqlDatabase() const
 
 DatabaseServerError DatabaseServer::upgradeMysqlDatabase()
 {
-    DatabaseServerError result;
-
     QApplication::restoreOverrideCursor();
 
     QPointer<QMessageBox> msgBox = new QMessageBox(QMessageBox::Information,
@@ -722,7 +722,7 @@ DatabaseServerError DatabaseServer::upgradeMysqlDatabase()
 
     if (msgResult == QMessageBox::Cancel)
     {
-        return result;
+        return DatabaseServerError();
     }
 
     // Synthesize the mysql upgrade command line arguments
@@ -766,18 +766,9 @@ DatabaseServerError DatabaseServer::upgradeMysqlDatabase()
 
     // Restart the database server.
 
-    stopDatabaseProcess(5000);
+    stopDatabaseProcess();
 
-    result = startMysqlServer();
-
-    if (result.getErrorType() != DatabaseServerError::NoErrors)
-    {
-        return result;
-    }
-
-    result = initMysqlDatabase();
-
-    return result;
+    return startMysqlServer();
 }
 
 QString DatabaseServer::getcurrentAccountUserName() const
