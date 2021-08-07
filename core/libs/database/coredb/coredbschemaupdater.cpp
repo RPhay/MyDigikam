@@ -467,7 +467,7 @@ bool CoreDbSchemaUpdater::makeUpdates()
             }
             else
             {
-                errorMsg = i18n("Failed to update the database schema from version %1 to version %2. "
+                errorMsg = i18n("Failed to update the database schema from version %1 to version %2.\n"
                                 "Please read the error messages printed on the console and "
                                 "report this error as a bug at bugs.kde.org.",
                                 d->currentVersion.toInt(),
