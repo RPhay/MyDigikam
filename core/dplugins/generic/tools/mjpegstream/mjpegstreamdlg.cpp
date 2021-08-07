@@ -235,13 +235,13 @@ MjpegStreamDlg::MjpegStreamDlg(QObject* const /*parent*/,
 
     grid2->addWidget(portLbl,       0, 0, 1, 1);
     grid2->addWidget(d->srvPort,    0, 1, 1, 1);
-    grid2->addWidget(delayLbl,      0, 3, 1, 1);
-    grid2->addWidget(d->delay,      0, 4, 1, 1);
     grid2->addWidget(qualityLbl,    1, 0, 1, 1);
     grid2->addWidget(d->quality,    1, 1, 1, 1);
     grid2->addWidget(typeLabel,     1, 3, 1, 1);
     grid2->addWidget(d->typeVal,    1, 4, 1, 1);
-    grid2->addWidget(d->streamLoop, 2, 0, 1, 3);
+    grid2->addWidget(delayLbl,      2, 0, 1, 1);
+    grid2->addWidget(d->delay,      2, 1, 1, 1);
+    grid2->addWidget(d->streamLoop, 2, 3, 1, 2);
 
     // ---
 
