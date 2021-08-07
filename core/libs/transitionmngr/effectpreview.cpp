@@ -42,8 +42,8 @@ class Q_DECL_HIDDEN EffectPreview::Private
 public:
 
     explicit Private()
-      : mngr(nullptr),
-        curEffect(EffectMngr::None),
+      : mngr       (nullptr),
+        curEffect  (EffectMngr::None),
         previewSize(QSize(192, 144))
     {
     }
@@ -57,7 +57,7 @@ public:
 
 EffectPreview::EffectPreview(QWidget* const parent)
     : QLabel(parent),
-      d(new Private)
+      d     (new Private)
 {
     setFixedSize(d->previewSize);
     setContentsMargins(QMargins());

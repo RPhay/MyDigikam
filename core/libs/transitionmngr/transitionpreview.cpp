@@ -42,9 +42,9 @@ class Q_DECL_HIDDEN TransitionPreview::Private
 public:
 
     explicit Private()
-      : mngr(nullptr),
+      : mngr         (nullptr),
         curTransition(TransitionMngr::None),
-        previewSize(QSize(192, 144))
+        previewSize  (QSize(192, 144))
     {
     }
 
@@ -57,7 +57,7 @@ public:
 
 TransitionPreview::TransitionPreview(QWidget* const parent)
     : QLabel(parent),
-      d(new Private)
+      d     (new Private)
 {
     setFixedSize(d->previewSize);
     setContentsMargins(QMargins());
