@@ -149,9 +149,15 @@ QSize VidSlideSettings::videoSizeFromType(int type)
             break;
         }
 
+        case EGA:
+        {
+            s = QSize(640, 350);
+            break;
+        }
+
         case VGA:
         {
-            s = QSize(640, 360);
+            s = QSize(640, 480);
             break;
         }
 
@@ -170,6 +176,18 @@ QSize VidSlideSettings::videoSizeFromType(int type)
         case WVGA:
         {
             s = QSize(800, 450);
+            break;
+        }
+
+        case SVGA:
+        {
+            s = QSize(800, 600);
+            break;
+        }
+
+        case DVGA:
+        {
+            s = QSize(960, 640);
             break;
         }
 
@@ -277,10 +295,13 @@ QMap<VidSlideSettings::VidType, QString> VidSlideSettings::videoTypeNames()
     types[HVGA]    = i18nc("Video Type: HVGA",    "HVGA - 480x270 - 16:9");
     types[SVCD1]   = i18nc("Video Type: SVCD1",   "SVCD - 480x480 - 1:1");
     types[SVCD2]   = i18nc("Video Type: SVCD2",   "SVCD - 480x576 - 5:6");
-    types[VGA]     = i18nc("Video Type: VGA",     "VGA - 640x360 - 16:9");
+    types[EGA]     = i18nc("Video Type: EGA",     "EGA - 640x350 - 16:9");
+    types[VGA]     = i18nc("Video Type: VGA",     "VGA - 640x480 - 4:3");
     types[DVD1]    = i18nc("Video Type: DVD",     "DVD - 720x480 - 3:2");
     types[DVD2]    = i18nc("Video Type: DVD",     "DVD - 720x576 - 5:4");
     types[WVGA]    = i18nc("Video Type: WVGA",    "WVGA - 800x450 - 16:9");
+    types[SVGA]    = i18nc("Video Type: SVGA",    "SVGA - 800x600 - 4:3");
+    types[DVGA]    = i18nc("Video Type: DVGA",    "DVGA - 960x640 - 3:2");
     types[XVGA]    = i18nc("Video Type: XVGA",    "XVGA - 1024x576 - 16:9");
     types[HDTV]    = i18nc("Video Type: HDTV",    "HDTV - 1280x720 - 16:9");
     types[WXGA1]   = i18nc("Video Type: WXGA1",   "WXGA - 1280x768 - 5:3");
