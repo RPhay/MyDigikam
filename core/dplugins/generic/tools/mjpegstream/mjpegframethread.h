@@ -49,13 +49,22 @@ class MjpegFrameThread : public ActionThreadBase
 
 public:
 
+    /**
+     * Thread manager to fork MJPEg frame task to a separated core.
+     */
     explicit MjpegFrameThread(QObject* const parent);
     ~MjpegFrameThread() override;
 
+    /**
+     * Instanciate MJPEG frame task thread with right settings.
+     */
     void createFrameJob(const MjpegStreamSettings&);
 
 Q_SIGNALS:
 
+    /**
+     * Re-route signal from task to MJPEG server.
+     */
     void signalFrameChanged(const QByteArray&);
 };
 
@@ -67,6 +76,9 @@ class MjpegFrameTask : public ActionJob
 
 public:
 
+    /**
+     * Standard constructor using MJPEg stream settings.
+     */
     explicit MjpegFrameTask(const MjpegStreamSettings& set);
     ~MjpegFrameTask();
 
@@ -84,6 +96,10 @@ private:
      */
     QByteArray imageToJPEGArray(const QImage& frame);
 
+    /**
+     * Loop from separated thread to render periodicaly frames for MJPEG stream.
+     * Result is sent to signalFrameChanged().
+     */
     void run();
 
 private:
