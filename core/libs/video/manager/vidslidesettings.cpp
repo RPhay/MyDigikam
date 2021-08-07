@@ -287,15 +287,45 @@ QSize VidSlideSettings::videoSizeFromType(int type)
             break;
         }
 
+        case QSXGA:
+        {
+            s = QSize(2560, 2048);
+            break;
+        }
+
+        case QSXGAPLUS:
+        {
+            s = QSize(2800, 2100);
+            break;
+        }
+
         case WQXGAPLUS:
         {
             s = QSize(3200, 1800);
             break;
         }
 
+        case WQSXGA:
+        {
+            s = QSize(3200, 2048);
+            break;
+        }
+
+        case QUXGA:
+        {
+            s = QSize(3200, 2400);
+            break;
+        }
+
         case UHD4K:
         {
             s = QSize(3840, 2160);
+            break;
+        }
+
+        case WQUXGA:
+        {
+            s = QSize(3840, 2400);
             break;
         }
 
@@ -349,8 +379,13 @@ QMap<VidSlideSettings::VidType, QString> VidSlideSettings::videoTypeNames()
     types[UWFHD]     = i18nc("Video Type: UWFHD",     "UWFHD - 2560x1080 - 21:9");
     types[WQHD]      = i18nc("Video Type: WQHD",      "WQHD - 2560x1440 - 16:9");
     types[WQXGA]     = i18nc("Video Type: WQXGA",     "WQXGA - 2560x1600 - 8:5");
+    types[QSXGA]     = i18nc("Video Type: QSXGA",     "QSXGA - 2560x2048 - 5:4");
+    types[QSXGAPLUS] = i18nc("Video Type: QSXGAPLUS", "QSXGAPLUS - 2800x2100 - 4:3");
     types[WQXGAPLUS] = i18nc("Video Type: WQXGAPLUS", "WQXGAPLUS - 3200x1800 - 16:9");
+    types[WQSXGA]    = i18nc("Video Type: WQSXGA",    "WQSXGA - 3200x2048 - 25:16");
+    types[QUXGA]     = i18nc("Video Type: QUXGA",     "QUXGA - 3200x2400 - 4:3");
     types[UHD4K]     = i18nc("Video Type: UHD4K",     "UHD4K - 3840x2160 - 16:9");
+    types[WQUXGA]    = i18nc("Video Type: WQUXGA",    "WQUXGA - 3840x2400 - 8:5");
     types[UHD8K]     = i18nc("Video Type: UHD8K",     "UHD8K - 7680x4320 - 16:9");
 
     return types;
