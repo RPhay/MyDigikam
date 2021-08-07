@@ -40,8 +40,7 @@ static QRegularExpression REGEXP_CAMERA_NAME(
     QRegularExpression::CaseInsensitiveOption);
 
 static QRegularExpression REGEXP_MODES(
-    QRegularExpression::anchoredPattern(QLatin1String("^(ptp|normal|mtp)(\\s+mode)?$")),
-    QRegularExpression::CaseInsensitiveOption);
+    QRegularExpression::anchoredPattern(QLatin1String("(?i)^(ptp|normal|mtp)(\\s+mode)?$")));
 }
 
 namespace Digikam
