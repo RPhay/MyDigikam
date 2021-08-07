@@ -233,8 +233,6 @@ DatabaseServerError DatabaseServer::startMysqlDatabaseProcess()
         return error;
     }
 
-    bool needUpgrade = checkMysqlErrorFile();
-
     error = initMysqlConfig();
 
     if (error.getErrorType() != DatabaseServerError::NoErrors)
@@ -242,7 +240,7 @@ DatabaseServerError DatabaseServer::startMysqlDatabaseProcess()
         return error;
     }
 
-    removeMysqlLogs();
+    bool needUpgrade = checkAndRemoveMysqlLogs();
 
     error = createMysqlFiles();
 
@@ -446,12 +444,14 @@ DatabaseServerError DatabaseServer::initMysqlConfig() const
     return result;
 }
 
-void DatabaseServer::removeMysqlLogs() const
+bool DatabaseServer::checkAndRemoveMysqlLogs() const
 {
     // Move mysql error log file out of the way
 
     const QFileInfo errorLog(d->dataDir,
                              QLatin1String("mysql.err"));
+
+    bool needUpgrade = false;
 
     if (errorLog.exists())
     {
@@ -460,7 +460,11 @@ void DatabaseServer::removeMysqlLogs() const
 
         if (logFile.open(QFile::ReadOnly) && oldLogFile.open(QFile::Append))
         {
-            oldLogFile.write(logFile.readAll());
+            QByteArray run("run mysql_upgrade");
+            QByteArray ba = logFile.readAll();
+            needUpgrade   = ba.contains(run);
+
+            oldLogFile.write(ba);
             oldLogFile.close();
             logFile.close();
             logFile.remove();
@@ -475,6 +479,8 @@ void DatabaseServer::removeMysqlLogs() const
 
     QFile(QDir(d->dataDir).absoluteFilePath(QLatin1String("ib_logfile0"))).remove();
     QFile(QDir(d->dataDir).absoluteFilePath(QLatin1String("ib_logfile1"))).remove();
+
+    return needUpgrade;
 }
 
 DatabaseServerError DatabaseServer::createMysqlFiles() const
@@ -694,27 +700,6 @@ DatabaseServerError DatabaseServer::initMysqlDatabase() const
     QSqlDatabase::removeDatabase(initCon);
 
     return result;
-}
-
-bool DatabaseServer::checkMysqlErrorFile()
-{
-    bool needUpgrade = false;
-
-    QFile file(d->dataDir       +
-               QLatin1Char('/') +
-               QLatin1String("mysql.err"));
-
-    if (file.open(QIODevice::ReadOnly))
-    {
-        QByteArray ba = file.readAll();
-        file.close();
-        file.remove();
-
-        QString error = QLatin1String("run mysql_upgrade");
-        needUpgrade   = ba.contains(error.toLatin1());
-    }
-
-    return needUpgrade;
 }
 
 DatabaseServerError DatabaseServer::upgradeMysqlDatabase()
