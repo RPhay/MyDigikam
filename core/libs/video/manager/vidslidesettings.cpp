@@ -221,9 +221,33 @@ QSize VidSlideSettings::videoSizeFromType(int type)
             break;
         }
 
+        case SXGAPLUS:
+        {
+            s = QSize(1400, 1050);
+            break;
+        }
+
+        case WSXGA:
+        {
+            s = QSize(1440, 900);
+            break;
+        }
+
         case UXGA:
         {
             s = QSize(1600, 1200);
+            break;
+        }
+
+        case HDPLUS:
+        {
+            s = QSize(1600, 900);
+            break;
+        }
+
+        case WSXGAPLUS:
+        {
+            s = QSize(1680, 1050);
             break;
         }
 
@@ -239,15 +263,15 @@ QSize VidSlideSettings::videoSizeFromType(int type)
             break;
         }
 
-        case UWFHD:
-        {
-            s = QSize(2560, 1080);
-            break;
-        }
-
         case QXGA:
         {
             s = QSize(2048, 1536);
+            break;
+        }
+
+        case UWFHD:
+        {
+            s = QSize(2560, 1080);
             break;
         }
 
@@ -260,6 +284,12 @@ QSize VidSlideSettings::videoSizeFromType(int type)
         case WQXGA:
         {
             s = QSize(2560, 1600);
+            break;
+        }
+
+        case WQXGAPLUS:
+        {
+            s = QSize(3200, 1800);
             break;
         }
 
@@ -289,34 +319,39 @@ QMap<VidSlideSettings::VidType, QString> VidSlideSettings::videoTypeNames()
 {
     QMap<VidType, QString> types;
 
-    types[QVGA]    = i18nc("Video Type: QVGA",    "QVGA - 320x180 - 16:9");
-    types[VCD1]    = i18nc("Video Type: VCD",     "VCD - 352x240 - 7:5");
-    types[VCD2]    = i18nc("Video Type: VCD",     "VCD - 352x288 - 6:5");
-    types[HVGA]    = i18nc("Video Type: HVGA",    "HVGA - 480x270 - 16:9");
-    types[SVCD1]   = i18nc("Video Type: SVCD1",   "SVCD - 480x480 - 1:1");
-    types[SVCD2]   = i18nc("Video Type: SVCD2",   "SVCD - 480x576 - 5:6");
-    types[EGA]     = i18nc("Video Type: EGA",     "EGA - 640x350 - 16:9");
-    types[VGA]     = i18nc("Video Type: VGA",     "VGA - 640x480 - 4:3");
-    types[DVD1]    = i18nc("Video Type: DVD",     "DVD - 720x480 - 3:2");
-    types[DVD2]    = i18nc("Video Type: DVD",     "DVD - 720x576 - 5:4");
-    types[WVGA]    = i18nc("Video Type: WVGA",    "WVGA - 800x450 - 16:9");
-    types[SVGA]    = i18nc("Video Type: SVGA",    "SVGA - 800x600 - 4:3");
-    types[DVGA]    = i18nc("Video Type: DVGA",    "DVGA - 960x640 - 3:2");
-    types[XVGA]    = i18nc("Video Type: XVGA",    "XVGA - 1024x576 - 16:9");
-    types[HDTV]    = i18nc("Video Type: HDTV",    "HDTV - 1280x720 - 16:9");
-    types[WXGA1]   = i18nc("Video Type: WXGA1",   "WXGA - 1280x768 - 5:3");
-    types[WXGA2]   = i18nc("Video Type: WXGA2",   "WXGA - 1280x800 - 8:5");
-    types[SXGA]    = i18nc("Video Type: SXGA",    "SXGA - 1280x1024 - 5:4");
-    types[UXGA]    = i18nc("Video Type: UXGA",    "UXGA - 1600x1200 - 4:3");
-    types[BLUERAY] = i18nc("Video Type: BLUERAY", "BLUERAY - 1920x1080 - 16:9");
-    types[WUXGA]   = i18nc("Video Type: WUXGA",   "WUXGA - 1920x1200 - 8:5");
-    types[TXGA]    = i18nc("Video Type: TXGA",    "TXGA - 1920x1440 - 7:5");
-    types[UWFHD]   = i18nc("Video Type: UWFHD",   "UWFHD - 2560x1080 - 21:9");
-    types[QXGA]    = i18nc("Video Type: QXGA",    "QXGA - 2048x1536 - 4:3");
-    types[WQHD]    = i18nc("Video Type: WQHD",    "WQHD - 2560x1440 - 16:9");
-    types[WQXGA]   = i18nc("Video Type: WQXGA",   "WQXGA - 2560x1600 - 8:5");
-    types[UHD4K]   = i18nc("Video Type: UHD4K",   "UHD4K - 3840x2160 - 16:9");
-    types[UHD8K]   = i18nc("Video Type: UHD8K",   "UHD8K - 7680x4320 - 16:9");
+    types[QVGA]      = i18nc("Video Type: QVGA",      "QVGA - 320x180 - 16:9");
+    types[VCD1]      = i18nc("Video Type: VCD",       "VCD - 352x240 - 7:5");
+    types[VCD2]      = i18nc("Video Type: VCD",       "VCD - 352x288 - 6:5");
+    types[HVGA]      = i18nc("Video Type: HVGA",      "HVGA - 480x270 - 16:9");
+    types[SVCD1]     = i18nc("Video Type: SVCD1",     "SVCD - 480x480 - 1:1");
+    types[SVCD2]     = i18nc("Video Type: SVCD2",     "SVCD - 480x576 - 5:6");
+    types[EGA]       = i18nc("Video Type: EGA",       "EGA - 640x350 - 16:9");
+    types[VGA]       = i18nc("Video Type: VGA",       "VGA - 640x480 - 4:3");
+    types[DVD1]      = i18nc("Video Type: DVD",       "DVD - 720x480 - 3:2");
+    types[DVD2]      = i18nc("Video Type: DVD",       "DVD - 720x576 - 5:4");
+    types[WVGA]      = i18nc("Video Type: WVGA",      "WVGA - 800x450 - 16:9");
+    types[SVGA]      = i18nc("Video Type: SVGA",      "SVGA - 800x600 - 4:3");
+    types[DVGA]      = i18nc("Video Type: DVGA",      "DVGA - 960x640 - 3:2");
+    types[XVGA]      = i18nc("Video Type: XVGA",      "XVGA - 1024x576 - 16:9");
+    types[HDTV]      = i18nc("Video Type: HDTV",      "HDTV - 1280x720 - 16:9");
+    types[WXGA1]     = i18nc("Video Type: WXGA1",     "WXGA - 1280x768 - 5:3");
+    types[WXGA2]     = i18nc("Video Type: WXGA2",     "WXGA - 1280x800 - 8:5");
+    types[SXGA]      = i18nc("Video Type: SXGA",      "SXGA - 1280x1024 - 5:4");
+    types[SXGAPLUS]  = i18nc("Video Type: SXGAPLUS",  "SXGAPLUS - 1400x1050 - 4:3");
+    types[WSXGA]     = i18nc("Video Type: WSXGA",     "WSXGA - 1440x900 - 8:5");
+    types[HDPLUS]    = i18nc("Video Type: HDPLUS",    "HDPLUS - 1600x900 - 16:9");
+    types[WSXGAPLUS] = i18nc("Video Type: WSXGAPLUS", "WSXGAPLUS - 1680x1050 - 8:5");
+    types[UXGA]      = i18nc("Video Type: UXGA",      "UXGA - 1600x1200 - 4:3");
+    types[BLUERAY]   = i18nc("Video Type: BLUERAY",   "BLUERAY - 1920x1080 - 16:9");
+    types[WUXGA]     = i18nc("Video Type: WUXGA",     "WUXGA - 1920x1200 - 8:5");
+    types[TXGA]      = i18nc("Video Type: TXGA",      "TXGA - 1920x1440 - 7:5");
+    types[QXGA]      = i18nc("Video Type: QXGA",      "QXGA - 2048x1536 - 4:3");
+    types[UWFHD]     = i18nc("Video Type: UWFHD",     "UWFHD - 2560x1080 - 21:9");
+    types[WQHD]      = i18nc("Video Type: WQHD",      "WQHD - 2560x1440 - 16:9");
+    types[WQXGA]     = i18nc("Video Type: WQXGA",     "WQXGA - 2560x1600 - 8:5");
+    types[WQXGAPLUS] = i18nc("Video Type: WQXGAPLUS", "WQXGAPLUS - 3200x1800 - 16:9");
+    types[UHD4K]     = i18nc("Video Type: UHD4K",     "UHD4K - 3840x2160 - 16:9");
+    types[UHD8K]     = i18nc("Video Type: UHD8K",     "UHD8K - 7680x4320 - 16:9");
 
     return types;
 }
