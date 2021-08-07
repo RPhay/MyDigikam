@@ -73,7 +73,7 @@ public:
     /**
      * Terminates the databaser server process.
      */
-    void stopDatabaseProcess(int killTime = 30000);
+    void stopDatabaseProcess();
 
     /**
      * Returns true if the server process is running.
@@ -108,9 +108,9 @@ private:
     DatabaseServerError initMysqlConfig()                                const;
 
     /**
-     * Remove mysql error log files.
+     * Check and remove mysql error log files.
      */
-    void removeMysqlLogs()                                               const;
+    bool checkAndRemoveMysqlLogs()                                       const;
 
     /**
      * Creates initial Mysql database files for internal server.
@@ -126,11 +126,6 @@ private:
      * Creates or connects to database digikam in mysql.
      */
     DatabaseServerError initMysqlDatabase()                              const;
-
-    /**
-     * Check the mysql.err file for a database upgrade.
-     */
-    bool checkMysqlErrorFile();
 
     /**
      * Perform a mysql database upgrade.
