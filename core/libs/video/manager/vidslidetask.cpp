@@ -349,7 +349,7 @@ void VidSlideTask::run()
     effmngr.setOutputSize(osize);
     effmngr.setFrames(d->settings->imgFrames);
 
-    for (int i = 0 ; i < (d->settings->inputImages.count() + 1 && !m_cancel) ; ++i)
+    for (int i = 0 ; ((i < d->settings->inputImages.count() + 1) && !m_cancel) ; ++i)
     {
         if (i == 0)
         {
