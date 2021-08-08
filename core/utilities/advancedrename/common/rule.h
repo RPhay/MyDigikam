@@ -140,7 +140,7 @@ protected:
      * @param settings
      * @return
      */
-    virtual QString parseOperation(ParseSettings& settings) = 0;
+    virtual QString parseOperation(ParseSettings& settings, const QRegularExpressionMatch &match) = 0;
 
     /**
      * add a token to the parser, every parser should at least assign one token object

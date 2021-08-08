@@ -279,7 +279,7 @@ ParseResults Rule::parse(ParseSettings &settings)
 
         if (pos > -1)
         {
-            QString result = parseOperation(settings);
+            QString result = parseOperation(settings, match);
 
             ParseResults::ResultsKey   k(pos, match.captured(0).count());
             ParseResults::ResultsValue v(match.captured(0), result);
