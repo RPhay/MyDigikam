@@ -265,10 +265,8 @@ DateOption::DateOption()
     setRegExp(reg);
 }
 
-QString DateOption::parseOperation(ParseSettings& settings)
+QString DateOption::parseOperation(ParseSettings& settings, const QRegularExpressionMatch &match)
 {
-    const QRegularExpression& reg = regExp();
-    QRegularExpressionMatch match = reg.match(settings.parseString);
 
     QString token = match.captured(2);
 

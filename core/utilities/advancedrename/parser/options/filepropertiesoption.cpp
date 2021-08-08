@@ -75,13 +75,12 @@ FilePropertiesOption::FilePropertiesOption()
     setRegExp(reg);
 }
 
-QString FilePropertiesOption::parseOperation(ParseSettings& settings)
+QString FilePropertiesOption::parseOperation(ParseSettings& settings, const QRegularExpressionMatch &match)
 {
     QString result;
     QFileInfo fi(settings.fileUrl.toLocalFile());
 
-    const QRegularExpression& reg   = regExp();
-    const QString& token            = reg.match(settings.parseString).captured(1);
+    const QString& token            = match.captured(1);
 
     if      (token == KEY_FILE)
     {

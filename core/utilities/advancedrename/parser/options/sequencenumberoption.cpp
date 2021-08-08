@@ -133,11 +133,9 @@ void SequenceNumberOption::slotTokenTriggered(const QString& token)
     emit signalTokenTriggered(result);
 }
 
-QString SequenceNumberOption::parseOperation(ParseSettings& settings)
+QString SequenceNumberOption::parseOperation(ParseSettings& settings, const QRegularExpressionMatch &match)
 {
     QString result;
-    const QRegularExpression& reg = regExp();
-    QRegularExpressionMatch match = reg.match(settings.parseString);
     int slength                   = 0;
     int start                     = 0;
     int step                      = 0;

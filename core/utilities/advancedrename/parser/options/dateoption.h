@@ -143,7 +143,7 @@ public:
 
 protected:
 
-    QString parseOperation(ParseSettings& settings) override;
+    QString parseOperation(ParseSettings& settings, const QRegularExpressionMatch &match) override;
 
 private Q_SLOTS:
 

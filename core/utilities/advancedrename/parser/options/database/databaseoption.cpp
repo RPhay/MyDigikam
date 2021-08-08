@@ -146,10 +146,9 @@ void DatabaseOption::slotTokenTriggered(const QString& token)
     delete dlg;
 }
 
-QString DatabaseOption::parseOperation(ParseSettings& settings)
+QString DatabaseOption::parseOperation(ParseSettings& settings, const QRegularExpressionMatch &match)
 {
-    const QRegularExpression& reg = regExp();
-    QString keyword               = reg.match(settings.parseString).captured(2);
+    QString keyword               = match.captured(2);
 
     return parseDatabase(keyword, settings);
 }

@@ -53,7 +53,7 @@ CameraNameOption::CameraNameOption()
     setRegExp(reg);
 }
 
-QString CameraNameOption::parseOperation(ParseSettings& settings)
+QString CameraNameOption::parseOperation(ParseSettings& settings, const QRegularExpressionMatch &match)
 {
     QString result;
 
