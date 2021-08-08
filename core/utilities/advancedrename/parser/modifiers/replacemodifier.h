@@ -67,7 +67,7 @@ class ReplaceModifier : public Modifier
 public:
 
     explicit ReplaceModifier();
-    QString parseOperation(ParseSettings& settings) override;
+    QString parseOperation(ParseSettings& settings, const QRegularExpressionMatch &match) override;
 
 private Q_SLOTS:
 

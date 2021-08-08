@@ -47,7 +47,7 @@ TrimmedModifier::TrimmedModifier()
     setRegExp(reg);
 }
 
-QString TrimmedModifier::parseOperation(ParseSettings& settings)
+QString TrimmedModifier::parseOperation(ParseSettings& settings, const QRegularExpressionMatch &match)
 {
     return settings.str2Modify.simplified();
 }

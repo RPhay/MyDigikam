@@ -53,10 +53,9 @@ CaseModifier::CaseModifier()
     setRegExp(reg);
 }
 
-QString CaseModifier::parseOperation(ParseSettings& settings)
+QString CaseModifier::parseOperation(ParseSettings& settings, const QRegularExpressionMatch &match)
 {
-    const QRegularExpression& reg   = regExp();
-    const QString& token = reg.match(settings.parseString).captured(1);
+    const QString& token            = match.captured(1);
 
     if      (token == QLatin1String("firstupper"))
     {

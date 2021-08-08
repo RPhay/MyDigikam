@@ -62,7 +62,7 @@ class DefaultValueModifier : public Modifier
 public:
 
     explicit DefaultValueModifier();
-    QString parseOperation(ParseSettings& settings) override;
+    QString parseOperation(ParseSettings& settings, const QRegularExpressionMatch &match) override;
 
 private Q_SLOTS:
 

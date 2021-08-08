@@ -49,7 +49,7 @@ RemoveDoublesModifier::RemoveDoublesModifier()
     setRegExp(reg);
 }
 
-QString RemoveDoublesModifier::parseOperation(ParseSettings& settings)
+QString RemoveDoublesModifier::parseOperation(ParseSettings& settings, const QRegularExpressionMatch &match)
 {
     QString result    = settings.str2Modify;
 

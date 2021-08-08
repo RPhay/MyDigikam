@@ -53,12 +53,11 @@ UniqueModifier::UniqueModifier()
     setRegExp(reg);
 }
 
-QString UniqueModifier::parseOperation(ParseSettings& settings)
+QString UniqueModifier::parseOperation(ParseSettings& settings, const QRegularExpressionMatch &match)
 {
     ParseResults::ResultsKey key = settings.currentResultsKey;
     cache[key] << settings.str2Modify;
 
-    const QRegularExpression& reg = regExp();
 
     if (cache[key].count(settings.str2Modify) > 1)
     {
@@ -66,7 +65,7 @@ QString UniqueModifier::parseOperation(ParseSettings& settings)
         int index      = cache[key].count(settings.str2Modify) - 1;
 
         bool ok        = true;
-        int slength    = reg.match(settings.parseString).captured(2).toInt(&ok);
+        int slength    = match.captured(2).toInt(&ok);
         slength        = (slength == 0 || !ok) ? 1 : slength;
         result        += QString::fromUtf8("_%1").arg(index, slength, 10, QLatin1Char('0'));
 

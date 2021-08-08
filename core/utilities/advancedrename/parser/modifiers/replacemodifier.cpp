@@ -111,10 +111,8 @@ void ReplaceModifier::slotTokenTriggered(const QString& token)
     emit signalTokenTriggered(result);
 }
 
-QString ReplaceModifier::parseOperation(ParseSettings& settings)
+QString ReplaceModifier::parseOperation(ParseSettings& settings, const QRegularExpressionMatch &match)
 {
-    const QRegularExpression& reg  = regExp();
-    QRegularExpressionMatch match  = reg.match(settings.parseString);
     QString original               = match.captured(2);
     QString replacement            = match.captured(3);
     QString result                 = settings.str2Modify;

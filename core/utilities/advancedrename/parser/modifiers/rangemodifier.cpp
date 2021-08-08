@@ -110,12 +110,10 @@ void RangeModifier::slotTokenTriggered(const QString& token)
     emit signalTokenTriggered(result);
 }
 
-QString RangeModifier::parseOperation(ParseSettings& settings)
+QString RangeModifier::parseOperation(ParseSettings& settings, const QRegularExpressionMatch &match)
 {
-    const QRegularExpression& reg = regExp();
     bool ok                       = false;
 
-    QRegularExpressionMatch match = reg.match(settings.parseString);
     // if the start parameter can not be extracted or is a negative value, set it to 1
 
     int start = match.captured(2).simplified().toInt(&ok);
