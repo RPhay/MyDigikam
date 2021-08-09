@@ -204,21 +204,42 @@ void CollectionScanner::itemsWereRemoved(const QList<qlonglong>& removedIds)
     }
 }
 
-int CollectionScanner::countItemsInFolder(const QString& directory)
+int CollectionScanner::countItemsInFolder(const QString& path)
 {
-    int items = 0;
-
-    QDir dir(directory);
+    QDir dir(path);
 
     if (!dir.exists() || !dir.isReadable())
     {
         return 0;
     }
 
+    int items                   = 0;
+    CollectionLocation location = CollectionManager::instance()->locationForPath(path);
+
+    if (!location.isNull())
+    {
+        QString album = CollectionManager::instance()->album(path);
+        int albumID   = CoreDbAccess().db()->getAlbumForPath(location.id(), album, false);
+
+        if (albumID != -1)
+        {
+            items = CoreDbAccess().db()->getNumberOfImagesAndAlbums(albumID);
+
+            if (items > 0)
+            {
+                return items;
+            }
+        }
+    }
+
     QDirIterator it(dir.path(), QDir::Dirs    |
                                 QDir::Files   |
                                 QDir::NoDotAndDotDot,
                                 QDirIterator::Subdirectories);
+
+    // Also count the current folder
+
+    ++items;
 
     while (it.hasNext())
     {

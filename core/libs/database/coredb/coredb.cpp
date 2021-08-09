@@ -3217,6 +3217,39 @@ QVariantList CoreDB::getAllCreationDates() const
     return values;
 }
 
+int CoreDB::getNumberOfImagesAndAlbums(int albumID) const
+{
+    int number   = 0;
+    QVariantList values;
+
+    int rootId   = getAlbumRootId(albumID);
+    QString path = getAlbumRelativePath(albumID);
+    d->db->execSql(QString::fromUtf8("SELECT COUNT(*) FROM Images WHERE Images.album IN "
+                                     " (SELECT DISTINCT id FROM Albums "
+                                     "  WHERE albumRoot=? AND (relativePath=? OR relativePath LIKE ?));"),
+                   rootId, path, path == QLatin1String("/") ? QLatin1String("/%")
+                                                            : QString(path + QLatin1String("/%")), &values);
+
+    if (!values.isEmpty())
+    {
+        number += values.first().toInt();
+    }
+
+    values.clear();
+
+    d->db->execSql(QString::fromUtf8("SELECT DISTINCT COUNT(*) FROM Albums "
+                                     " WHERE albumRoot=? AND (relativePath=? OR relativePath LIKE ?);"),
+                   rootId, path, path == QLatin1String("/") ? QLatin1String("/%")
+                                                            : QString(path + QLatin1String("/%")), &values);
+
+    if (!values.isEmpty())
+    {
+        number += values.first().toInt();
+    }
+
+    return number;
+}
+
 QMap<int, int> CoreDB::getNumberOfImagesInAlbums() const
 {
     QList<QVariant> values, allAbumIDs;

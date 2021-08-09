@@ -239,7 +239,7 @@ protected:
     void resetDeleteRemovedSettings();
     bool checkDeleteRemoved();
     void loadNameFilters();
-    int  countItemsInFolder(const QString& directory);
+    int  countItemsInFolder(const QString& path);
     DatabaseItem::Category category(const QFileInfo& info);
 
     //@}

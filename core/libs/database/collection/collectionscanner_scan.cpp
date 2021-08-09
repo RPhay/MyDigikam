@@ -671,7 +671,7 @@ void CollectionScanner::scanAlbum(const CollectionLocation& location, const QStr
 
     const QString xmpExt(QLatin1String(".xmp"));
 
-    int counter          = -1;
+    int counter          = 0;
     bool updateAlbumDate = false;
     QDate albumDate      = QFileInfo(dir.path()).lastModified().date();
 
@@ -680,14 +680,6 @@ void CollectionScanner::scanAlbum(const CollectionLocation& location, const QStr
         if (!d->checkObserver())
         {
             return; // return directly, do not go to cleanup code after loop!
-        }
-
-        ++counter;
-
-        if (d->wantSignals && counter && (counter % 100 == 0))
-        {
-            emit scannedFiles(counter);
-            counter = 0;
         }
 
         QFileInfo info(dir, entry);
@@ -699,6 +691,14 @@ void CollectionScanner::scanAlbum(const CollectionLocation& location, const QStr
             if (!d->nameFilters.contains(info.suffix().toLower()))
             {
                 continue;
+            }
+
+            ++counter;
+
+            if (d->wantSignals && counter && (counter % 100 == 0))
+            {
+                emit scannedFiles(counter);
+                counter = 0;
             }
 
             int index = fileNameIndexHash.value(info.fileName(), -1);
@@ -723,14 +723,12 @@ void CollectionScanner::scanAlbum(const CollectionLocation& location, const QStr
             }
             else
             {
-                //qCDebug(DIGIKAM_DATABASE_LOG) << "Adding item " << info.fileName();
-
                 // Read the creation date of each image to determine the oldest one
 
-                qlonglong imageId  = scanNewFile(info, albumID);
+                qlonglong imageId = scanNewFile(info, albumID);
 
                 ItemInfo itemInfo(imageId);
-                QDate itemDate     = itemInfo.dateTime().date();
+                QDate itemDate    = itemInfo.dateTime().date();
 
                 if (itemDate.isValid())
                 {
