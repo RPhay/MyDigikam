@@ -28,6 +28,7 @@
 #include <QSet>
 #include <QString>
 #include <QStringList>
+#include <QRegularExpression>
 
 // KDE includes
 
@@ -43,12 +44,12 @@ RemoveDoublesModifier::RemoveDoublesModifier()
 {
     addToken(QLatin1String("{removedoubles}"), description());
 
-    QRegExp reg(QLatin1String("\\{removedoubles\\}"));
-    reg.setMinimal(true);
+    QRegularExpression reg(QLatin1String("\\{removedoubles\\}"));
+    reg.setPatternOptions(QRegularExpression::InvertedGreedinessOption);
     setRegExp(reg);
 }
 
-QString RemoveDoublesModifier::parseOperation(ParseSettings& settings)
+QString RemoveDoublesModifier::parseOperation(ParseSettings& settings, const QRegularExpressionMatch &match)
 {
     QString result    = settings.str2Modify;
 

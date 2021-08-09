@@ -27,6 +27,7 @@
 
 #include <QCheckBox>
 #include <QPointer>
+#include <QRegularExpression>
 
 // KDE includes
 
@@ -64,8 +65,8 @@ ReplaceModifier::ReplaceModifier()
     addToken(QLatin1String("{replace:\"||old||\", \"||new||\",||options||}"),
              i18n("Replace text (||options||: ||r|| = regular expression, ||i|| = ignore case)"));
 
-    QRegExp reg(QLatin1String("\\{replace(:\"(.*)\",\"(.*)\"(,(r|ri|ir|i))?)\\}"));
-    reg.setMinimal(true);
+    QRegularExpression reg(QLatin1String("\\{replace(:\"(.*)\",\"(.*)\"(,(r|ri|ir|i))?)\\}"));
+    reg.setPatternOptions(QRegularExpression::InvertedGreedinessOption);
     setRegExp(reg);
 }
 
@@ -110,18 +111,20 @@ void ReplaceModifier::slotTokenTriggered(const QString& token)
     emit signalTokenTriggered(result);
 }
 
-QString ReplaceModifier::parseOperation(ParseSettings& settings)
+QString ReplaceModifier::parseOperation(ParseSettings& settings, const QRegularExpressionMatch &match)
 {
-    const QRegExp& reg  = regExp();
-    QString original    = reg.cap(2);
-    QString replacement = reg.cap(3);
-    QString result      = settings.str2Modify;
-    QString options     = reg.cap(5);
+    QString original               = match.captured(2);
+    QString replacement            = match.captured(3);
+    QString result                 = settings.str2Modify;
+    QString options                = match.captured(5);
     Qt::CaseSensitivity caseType = (!options.isEmpty() && options.contains(QLatin1Char('i'))) ? Qt::CaseInsensitive
                                                                                               : Qt::CaseSensitive;
 
-    QRegExp ro(original);
-    ro.setCaseSensitivity(caseType);
+    QRegularExpression ro(original);
+    if (caseType == Qt::CaseInsensitive)
+    {
+        ro.setPatternOptions(QRegularExpression::CaseInsensitiveOption);
+    }
 
     if (!options.isEmpty() && options.contains(QLatin1Char('r')))
     {

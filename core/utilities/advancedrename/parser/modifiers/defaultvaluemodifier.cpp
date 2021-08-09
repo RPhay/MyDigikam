@@ -31,6 +31,7 @@
 #include <QLineEdit>
 #include <QApplication>
 #include <QStyle>
+#include <QRegularExpression>
 
 // KDE includes
 
@@ -80,8 +81,8 @@ DefaultValueModifier::DefaultValueModifier()
 {
     addToken(QLatin1String("{default:\"||value||\"}"), description());
 
-    QRegExp reg(QLatin1String("\\{default:\"(.+)\"\\}"));
-    reg.setMinimal(true);
+    QRegularExpression reg(QLatin1String("\\{default:\"(.+)\"\\}"));
+    reg.setPatternOptions(QRegularExpression::InvertedGreedinessOption);
     setRegExp(reg);
 }
 
@@ -108,16 +109,14 @@ void DefaultValueModifier::slotTokenTriggered(const QString& token)
     emit signalTokenTriggered(result);
 }
 
-QString DefaultValueModifier::parseOperation(ParseSettings& settings)
+QString DefaultValueModifier::parseOperation(ParseSettings& settings, const QRegularExpressionMatch &match)
 {
     if (!settings.str2Modify.isEmpty())
     {
         return settings.str2Modify;
     }
 
-    const QRegExp& reg = regExp();
-
-    QString defaultStr = reg.cap(1).isEmpty() ? QString() : reg.cap(1);
+    QString defaultStr = match.captured(1).isEmpty() ? QString() : match.captured(1);
 
     return defaultStr;
 }

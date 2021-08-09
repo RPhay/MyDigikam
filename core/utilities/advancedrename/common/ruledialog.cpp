@@ -29,7 +29,7 @@
 #include <QFrame>
 #include <QGridLayout>
 #include <QLabel>
-#include <QRegExp>
+#include <QRegularExpression>
 #include <QWidget>
 #include <QDialogButtonBox>
 #include <QVBoxLayout>
@@ -127,7 +127,7 @@ void RuleDialog::setDialogTitle(const QString& title)
     // remove ellipsis and "&&" from the string
 
     QString _title = title;
-    _title.remove(QRegExp(QLatin1String("\\.{3,}"))).replace(QLatin1String("&&"), QLatin1String("&"));
+    _title.remove(QRegularExpression(QLatin1String("\\.{3,}"))).replace(QLatin1String("&&"), QLatin1String("&"));
 
     d->dialogTitle->setText(QString::fromUtf8("<b>%1</b>").arg(_title));
     setWindowTitle(_title);

@@ -32,6 +32,7 @@
 #include <QApplication>
 #include <QStyle>
 #include <QScopedPointer>
+#include <QRegularExpression>
 
 // KDE includes
 
@@ -113,8 +114,8 @@ MetadataOption::MetadataOption()
 
     addToken(QLatin1String("[meta:||key||]"), description());
 
-    QRegExp reg(QLatin1String("\\[meta(:(.*))\\]"));
-    reg.setMinimal(true);
+    QRegularExpression reg(QLatin1String("\\[meta(:(.*))\\]"));
+    reg.setPatternOptions(QRegularExpression::InvertedGreedinessOption);
     setRegExp(reg);
 }
 
@@ -145,11 +146,10 @@ void MetadataOption::slotTokenTriggered(const QString& token)
     delete dlg;
 }
 
-QString MetadataOption::parseOperation(ParseSettings& settings)
+QString MetadataOption::parseOperation(ParseSettings& settings, const QRegularExpressionMatch &match)
 {
-    const QRegExp& reg = regExp();
-    QString keyword    = reg.cap(2);
-    QString result     = parseMetadata(keyword, settings);
+    QString keyword               = match.captured(2);
+    QString result                = parseMetadata(keyword, settings);
     return result;
 }
 

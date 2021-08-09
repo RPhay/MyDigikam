@@ -75,7 +75,7 @@ public:
      *
      * @return a const ref to the assigned regexp object
      */
-    QRegExp& regExp() const;
+    QRegularExpression& regExp() const;
 
     QString description() const;
     QPixmap icon(Rule::IconType type = Rule::Action) const;
@@ -140,7 +140,7 @@ protected:
      * @param settings
      * @return
      */
-    virtual QString parseOperation(ParseSettings& settings) = 0;
+    virtual QString parseOperation(ParseSettings& settings, const QRegularExpressionMatch &match) = 0;
 
     /**
      * add a token to the parser, every parser should at least assign one token object
@@ -151,7 +151,7 @@ protected:
      */
     bool addToken(const QString& id, const QString& description, const QString& actionName = QString());
 
-    void setRegExp(const QRegExp& regExp);
+    void setRegExp(const QRegularExpression& regExp);
     void setDescription(const QString& desc);
     void setIcon(const QString& pixmap);
 

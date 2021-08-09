@@ -23,6 +23,10 @@
 
 #include "trimmedmodifier.h"
 
+// Qt includes
+
+#include <QRegularExpression>
+
 // KDE includes
 
 #include <klocalizedstring.h>
@@ -38,12 +42,12 @@ TrimmedModifier::TrimmedModifier()
     QString token(QLatin1String("{trim}"));
     addToken(token, description());
 
-    QRegExp reg(escapeToken(token));
-    reg.setMinimal(true);
+    QRegularExpression reg(escapeToken(token));
+    reg.setPatternOptions(QRegularExpression::InvertedGreedinessOption);
     setRegExp(reg);
 }
 
-QString TrimmedModifier::parseOperation(ParseSettings& settings)
+QString TrimmedModifier::parseOperation(ParseSettings& settings, const QRegularExpressionMatch &match)
 {
     return settings.str2Modify.simplified();
 }

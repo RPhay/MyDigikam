@@ -26,6 +26,7 @@
 // Qt includes
 
 #include <QScopedPointer>
+#include <QRegularExpression>
 
 // KDE includes
 
@@ -47,12 +48,12 @@ CameraNameOption::CameraNameOption()
     QString token(QLatin1String("[cam]"));
     addToken(token, i18n("Camera name"));
 
-    QRegExp reg(escapeToken(token));
-    reg.setMinimal(true);
+    QRegularExpression reg(escapeToken(token));
+    reg.setPatternOptions(QRegularExpression::InvertedGreedinessOption);
     setRegExp(reg);
 }
 
-QString CameraNameOption::parseOperation(ParseSettings& settings)
+QString CameraNameOption::parseOperation(ParseSettings& settings, const QRegularExpressionMatch &match)
 {
     QString result;
 

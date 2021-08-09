@@ -24,6 +24,9 @@
 
 #include "uniquemodifier.h"
 
+// Qt includes
+#include <QRegularExpression>
+
 // KDE includes
 
 #include <klocalizedstring.h>
@@ -45,17 +48,16 @@ UniqueModifier::UniqueModifier()
     addToken(QLatin1String("{unique:||n||}"),
              i18n("Add a suffix number, ||n|| specifies the number of digits to use"));
 
-    QRegExp reg(QLatin1String("\\{unique(:(\\d+))?\\}"));
-    reg.setMinimal(true);
+    QRegularExpression reg(QLatin1String("\\{unique(:(\\d+))?\\}"));
+    reg.setPatternOptions(QRegularExpression::InvertedGreedinessOption);
     setRegExp(reg);
 }
 
-QString UniqueModifier::parseOperation(ParseSettings& settings)
+QString UniqueModifier::parseOperation(ParseSettings& settings, const QRegularExpressionMatch &match)
 {
     ParseResults::ResultsKey key = settings.currentResultsKey;
     cache[key] << settings.str2Modify;
 
-    const QRegExp& reg = regExp();
 
     if (cache[key].count(settings.str2Modify) > 1)
     {
@@ -63,7 +65,7 @@ QString UniqueModifier::parseOperation(ParseSettings& settings)
         int index      = cache[key].count(settings.str2Modify) - 1;
 
         bool ok        = true;
-        int slength    = reg.cap(2).toInt(&ok);
+        int slength    = match.captured(2).toInt(&ok);
         slength        = (slength == 0 || !ok) ? 1 : slength;
         result        += QString::fromUtf8("_%1").arg(index, slength, 10, QLatin1Char('0'));
 

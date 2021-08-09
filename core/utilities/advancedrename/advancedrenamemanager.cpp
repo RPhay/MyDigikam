@@ -33,6 +33,7 @@
 #include <QMap>
 #include <QFileInfo>
 #include <QStorageInfo>
+#include <QRegularExpression>
 
 // Local includes
 
@@ -518,7 +519,7 @@ QString AdvancedRenameManager::newName(const QString& filename) const
         }
     }
 
-    QRegExp regExp(regExpStr + QLatin1Char(']'));
+    QRegularExpression regExp(regExpStr + QLatin1Char(']'));
     newName.replace(regExp, QLatin1String("_"));
 
     return newName;

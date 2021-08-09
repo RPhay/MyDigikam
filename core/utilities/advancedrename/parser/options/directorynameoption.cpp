@@ -27,6 +27,7 @@
 
 #include <QFileInfo>
 #include <QString>
+#include <QRegularExpression>
 
 // KDE includes
 
@@ -49,12 +50,12 @@ DirectoryNameOption::DirectoryNameOption()
     addToken(QLatin1String("[dir.]"), i18n("Name of the parent directory, additional '.' characters move up "
                                            "in the directory hierarchy"));
 
-    QRegExp reg(QLatin1String("\\[dir(\\.*)\\]"));
-    reg.setMinimal(true);
+    QRegularExpression reg(QLatin1String("\\[dir(\\.*)\\]"));
+    reg.setPatternOptions(QRegularExpression::InvertedGreedinessOption);
     setRegExp(reg);
 }
 
-QString DirectoryNameOption::parseOperation(ParseSettings& settings)
+QString DirectoryNameOption::parseOperation(ParseSettings& settings, const QRegularExpressionMatch &match)
 {
     QString result;
     QFileInfo fi(settings.fileUrl.toLocalFile());
@@ -64,10 +65,9 @@ QString DirectoryNameOption::parseOperation(ParseSettings& settings)
         return result;
     }
 
-    QStringList folders = fi.absolutePath().split(QLatin1Char('/'), QT_SKIP_EMPTY_PARTS);
-    int folderCount     = folders.count();
-    const QRegExp& reg  = regExp();
-    int matchedLength   = reg.cap(1).length();
+    QStringList folders            = fi.absolutePath().split(QLatin1Char('/'), QT_SKIP_EMPTY_PARTS);
+    int folderCount                = folders.count();
+    int matchedLength              = match.captured(1).length();
 
     if (matchedLength == 0)
     {

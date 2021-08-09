@@ -50,12 +50,12 @@ void Highlighter::highlightBlock(const QString& text)
 {
     foreach (const HighlightingRule& rule, highlightingRules)
     {
-        QRegExp expression(rule.pattern);
-        int index = expression.indexIn(text);
-
+        QRegularExpression      expression(rule.pattern);
+        QRegularExpressionMatch match;
+        int index = text.indexOf(expression, 0, &match);
         while (index >= 0)
         {
-            int length = expression.matchedLength();
+            int length = match.capturedLength();
             setFormat(index, length, rule.format);
 
             switch (rule.type)
@@ -65,10 +65,10 @@ void Highlighter::highlightBlock(const QString& text)
                 {
                     // highlight parameters in options and modifiers
 
-                    if ((expression.captureCount() > 0) && !expression.cap(1).isEmpty())
+                    if ((expression.captureCount() > 0) && !match.captured(1).isEmpty())
                     {
-                        QString fullmatched  = expression.cap(0);
-                        QString parameters   = expression.cap(1);
+                        QString fullmatched  = match.captured(0);
+                        QString parameters   = match.captured(1);
 
                         if (parameters.startsWith(QLatin1Char(':')))
                         {
@@ -97,7 +97,7 @@ void Highlighter::highlightBlock(const QString& text)
                 }
             }
 
-            index = expression.indexIn(text, index + length);
+            index = text.indexOf(expression, index+length, &match);
         }
     }
 
@@ -115,15 +115,15 @@ void Highlighter::highlightBlock(const QString& text)
     // highlight quoted text in options and modifiers
 
     {
-        QRegExp expression(quotationRule.pattern);
-        int index = expression.indexIn(text);
-
+        QRegularExpression      expression(quotationRule.pattern);
+        QRegularExpressionMatch match;
+        int index = text.indexOf(expression, 0, &match);
         while (index >= 0)
         {
-            QString fullmatched = expression.cap(0);
-            int qlength         = expression.matchedLength();
+            QString fullmatched = match.captured(0);
+            int qlength         = match.capturedLength();
             setFormat(index, qlength, quotationFormat);
-            index               = expression.indexIn(text, index + qlength);
+            index = text.indexOf(expression, index + qlength, &match);
         }
     }
 }
@@ -143,10 +143,10 @@ void Highlighter::setupHighlightingGrammar()
 
     foreach (Rule* const option, parser->options())
     {
-        QRegExp r    = option->regExp();
-        rule.type    = OptionPattern;
-        rule.pattern = r;
-        rule.format  = optionFormat;
+        QRegularExpression r    = option->regExp();
+        rule.type               = OptionPattern;
+        rule.pattern            = r;
+        rule.format             = optionFormat;
         highlightingRules.append(rule);
     }
 
@@ -156,10 +156,10 @@ void Highlighter::setupHighlightingGrammar()
 
     foreach (Rule* const modifier, parser->modifiers())
     {
-        QRegExp r    = modifier->regExp();
-        rule.type    = ModifierPattern;
-        rule.pattern = r;
-        rule.format  = modifierFormat;
+        QRegularExpression r    = modifier->regExp();
+        rule.type               = ModifierPattern;
+        rule.pattern            = r;
+        rule.format             = modifierFormat;
         highlightingRules.append(rule);
     }
 
@@ -167,8 +167,8 @@ void Highlighter::setupHighlightingGrammar()
 
     quotationFormat.setForeground(QColor(0x50, 0x50, 0xff)); // light blue
     quotationFormat.setFontItalic(true);
-    quotationRule.pattern = QRegExp(QLatin1String("\".*\""));
-    quotationRule.pattern.setMinimal(true);
+    quotationRule.pattern = QRegularExpression(QLatin1String("\".*\""));
+    quotationRule.pattern.setPatternOptions(QRegularExpression::InvertedGreedinessOption);
     quotationRule.format  = quotationFormat;
     quotationRule.type    = QuotedTextPattern;
 

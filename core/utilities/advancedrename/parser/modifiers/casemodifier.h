@@ -38,7 +38,7 @@ class CaseModifier : public Modifier
 public:
 
     explicit CaseModifier();
-    QString parseOperation(ParseSettings& settings) override;
+    QString parseOperation(ParseSettings& settings, const QRegularExpressionMatch &match) override;
 
 private:
 

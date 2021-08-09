@@ -43,7 +43,7 @@ public:
 
 protected:
 
-    QString parseOperation(ParseSettings& settings) override = 0;
+    QString parseOperation(ParseSettings& settings, const QRegularExpressionMatch &match) override = 0;
 
 private:
 

@@ -28,7 +28,7 @@
 #include <QAction>
 #include <QMenu>
 #include <QPushButton>
-#include <QRegExp>
+#include <QRegularExpression>
 #include <QString>
 #include <QIcon>
 #include <QApplication>
@@ -46,13 +46,13 @@ public:
     {
     }
 
-    bool         useTokenMenu;
+    bool                    useTokenMenu;
 
-    QString      description;
-    QString      iconName;
-    QRegExp      regExp;
+    QString                 description;
+    QString                 iconName;
+    QRegularExpression      regExp;
 
-    TokenList    tokens;
+    TokenList               tokens;
 };
 
 Rule::Rule(const QString& name)
@@ -111,12 +111,12 @@ QString Rule::description() const
     return d->description;
 }
 
-QRegExp& Rule::regExp() const
+QRegularExpression& Rule::regExp() const
 {
     return d->regExp;
 }
 
-void Rule::setRegExp(const QRegExp& regExp)
+void Rule::setRegExp(const QRegularExpression& regExp)
 {
     d->regExp = regExp;
 }
@@ -240,7 +240,7 @@ void Rule::slotTokenTriggered(const QString& token)
 
 bool Rule::isValid() const
 {
-    return (!d->tokens.isEmpty() && !d->regExp.isEmpty() && d->regExp.isValid());
+    return (!d->tokens.isEmpty() && !d->regExp.pattern().isEmpty() && d->regExp.isValid());
 }
 
 void Rule::reset()
@@ -267,23 +267,24 @@ QString Rule::escapeToken(const QString& token)
 ParseResults Rule::parse(ParseSettings &settings)
 {
     ParseResults parsedResults;
-    const QRegExp& reg         = regExp();
-    const QString& parseString = settings.parseString;
+    const QRegularExpression& reg         = regExp();
+    const QString& parseString            = settings.parseString;
+    QRegularExpressionMatch                 match;
 
     int pos = 0;
 
     while (pos > -1)
     {
-        pos = reg.indexIn(parseString, pos);
+        pos = parseString.indexOf(reg, pos, &match);
 
         if (pos > -1)
         {
-            QString result = parseOperation(settings);
+            QString result = parseOperation(settings, match);
 
-            ParseResults::ResultsKey   k(pos, reg.cap(0).count());
-            ParseResults::ResultsValue v(reg.cap(0), result);
+            ParseResults::ResultsKey   k(pos, match.captured(0).count());
+            ParseResults::ResultsValue v(match.captured(0), result);
             parsedResults.addEntry(k, v);
-            pos           += reg.matchedLength();
+            pos           += match.capturedLength();
         }
     }
 

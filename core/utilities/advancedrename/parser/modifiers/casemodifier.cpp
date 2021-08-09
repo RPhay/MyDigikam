@@ -23,6 +23,10 @@
 
 #include "casemodifier.h"
 
+// Qt includes
+
+#include <QRegularExpression>
+
 // KDE includes
 
 #include <klocalizedstring.h>
@@ -44,15 +48,14 @@ CaseModifier::CaseModifier()
     addToken(QLatin1String("{firstupper}"), i18n("Convert the first letter of each word to uppercase"),
              i18n("First Letter of Each Word Uppercase"));
 
-    QRegExp reg(QLatin1String("\\{(firstupper|lower|upper)\\}"));
-    reg.setMinimal(true);
+    QRegularExpression reg(QLatin1String("\\{(firstupper|lower|upper)\\}"));
+    reg.setPatternOptions(QRegularExpression::InvertedGreedinessOption);
     setRegExp(reg);
 }
 
-QString CaseModifier::parseOperation(ParseSettings& settings)
+QString CaseModifier::parseOperation(ParseSettings& settings, const QRegularExpressionMatch &match)
 {
-    const QRegExp& reg   = regExp();
-    const QString& token = reg.cap(1);
+    const QString& token            = match.captured(1);
 
     if      (token == QLatin1String("firstupper"))
     {

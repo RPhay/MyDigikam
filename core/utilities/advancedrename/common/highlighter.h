@@ -27,6 +27,7 @@
 // Qt includes
 
 #include <QSyntaxHighlighter>
+#include <QRegularExpression>
 
 class QTextDocument;
 
@@ -68,9 +69,9 @@ private:
 
     struct HighlightingRule
     {
-        PatternType     type;
-        QRegExp         pattern;
-        QTextCharFormat format;
+        PatternType                type;
+        QRegularExpression         pattern;
+        QTextCharFormat            format;
     };
 
 private:
