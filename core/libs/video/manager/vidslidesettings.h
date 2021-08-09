@@ -207,7 +207,8 @@ public:
     static QMap<VidFormat,  QString> videoFormatNames();
     static QMap<VidPlayer,  QString> videoPlayerNames();
 
-    static QSize videoSizeFromType(int type);           ///< Return the current size from a type of video.
+    static QSize videoSizeFromType(VidType type);           ///< Return the current size from a type of video.
+    static bool isPureVideoFormat(VidType type);            ///< Return true if type is a pure video format. If false is returned type is screen format.
 
 public:
 

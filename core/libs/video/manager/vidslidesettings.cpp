@@ -107,7 +107,7 @@ QSize VidSlideSettings::videoSize() const
     return videoSizeFromType(vType);
 }
 
-QSize VidSlideSettings::videoSizeFromType(int type)
+QSize VidSlideSettings::videoSizeFromType(VidType type)
 {
     QSize s;
 
@@ -403,6 +403,31 @@ QSize VidSlideSettings::videoSizeFromType(int type)
     }
 
     return s;
+}
+
+bool VidSlideSettings::isPureVideoFormat(VidType type)
+{
+    switch (type)
+    {
+        case VCD1:
+        case VCD2:
+        case SVCD1:
+        case SVCD2:
+        case DVD1:
+        case DVD2:
+        case HDTV:
+        case BLUERAY:
+        case UHD4K:
+        case UHD8K:
+        {
+            return true;
+        }
+
+        default:
+        {
+            return false;
+        }
+    }
 }
 
 QMap<VidSlideSettings::VidType, QString> VidSlideSettings::videoTypeNames()

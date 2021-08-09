@@ -75,11 +75,13 @@ MjpegFrameTask::MjpegFrameTask(const MjpegStreamSettings& set)
     : ActionJob(nullptr),
       m_set    (set)
 {
+    VidSlideSettings::VidType type = (VidSlideSettings::VidType)m_set.outSize;
+
     /**
      * NOTE: QIcon depend of X11 under Linux which is not re-rentrant.
      * Load this image here in first from main thread.
      */
-    m_broken = QIcon::fromTheme(QLatin1String("view-preview")).pixmap(VidSlideSettings::videoSizeFromType(m_set.outSize)).toImage();
+    m_broken = QIcon::fromTheme(QLatin1String("view-preview")).pixmap(VidSlideSettings::videoSizeFromType(type)).toImage();
 }
 
 MjpegFrameTask::~MjpegFrameTask()
@@ -130,8 +132,8 @@ void MjpegFrameTask::run()
 
             // Resize output image to the wanted dimensions.
 
-            img = FrameUtils::makeScaledImage(img, VidSlideSettings::videoSizeFromType(m_set.outSize));
-
+            VidSlideSettings::VidType type = (VidSlideSettings::VidType)m_set.outSize;
+            img                            = FrameUtils::makeScaledImage(img, VidSlideSettings::videoSizeFromType(type));
 
             // TODO: apply OSD over frame.
 
