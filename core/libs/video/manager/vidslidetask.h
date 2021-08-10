@@ -37,7 +37,7 @@
 namespace Digikam
 {
 
-class VidSlideTask : public ActionJob
+class DIGIKAM_EXPORT VidSlideTask : public ActionJob
 {
     Q_OBJECT
 
