@@ -131,6 +131,18 @@ QSize VidSlideSettings::videoSizeFromType(VidType type)
             break;
         }
 
+        case CVD1:
+        {
+            s = QSize(352, 480);
+            break;
+        }
+
+        case CVD2:
+        {
+            s = QSize(352, 576);
+            break;
+        }
+
         case HVGA:
         {
             s = QSize(480, 270);
@@ -411,6 +423,8 @@ bool VidSlideSettings::isPureVideoFormat(VidType type)
     {
         case VCD1:
         case VCD2:
+        case CVD1:
+        case CVD2:
         case SVCD1:
         case SVCD2:
         case DVD1:
@@ -435,8 +449,10 @@ QMap<VidSlideSettings::VidType, QString> VidSlideSettings::videoTypeNames()
     QMap<VidType, QString> types;
 
     types[QVGA]      = i18nc("Video Type: QVGA",      "QVGA - 320x180 - 16:9");
-    types[VCD1]      = i18nc("Video Type: VCD",       "VCD - 352x240 - 7:5");
-    types[VCD2]      = i18nc("Video Type: VCD",       "VCD - 352x288 - 6:5");
+    types[VCD1]      = i18nc("Video Type: VCD1",      "VCD - 352x240 - 7:5");
+    types[VCD2]      = i18nc("Video Type: VCD2",      "VCD - 352x288 - 6:5");
+    types[CVD1]      = i18nc("Video Type: CVD1",      "CVD - 352x480 - 4:3");
+    types[CVD2]      = i18nc("Video Type: CVD2",      "CVD - 352x576 - 16:9");
     types[HVGA]      = i18nc("Video Type: HVGA",      "HVGA - 480x270 - 16:9");
     types[SVCD1]     = i18nc("Video Type: SVCD1",     "SVCD - 480x480 - 1:1");
     types[SVCD2]     = i18nc("Video Type: SVCD2",     "SVCD - 480x576 - 5:6");

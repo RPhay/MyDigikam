@@ -100,29 +100,31 @@ public:
     enum VidType
     {
         QVGA = 0,   ///< 320   x 180  - 16:9
-        VCD1,       ///< 352   x 240  - 7:5
-        VCD2,       ///< 352   x 288  - 6:5
+        VCD1,       ///< 352   x 240  - 7:5     - Pure Video
+        VCD2,       ///< 352   x 288  - 6:5     - Pure Video
+        CVD1,       ///< 352   x 480  - 4:3     - Pure Video
+        CVD2,       ///< 352   x 576  - 16:9    - Pure Video
         HVGA,       ///< 480   x 270  - 16:9
-        SVCD1,      ///< 480   x 480  - 1:1
-        SVCD2,      ///< 480   x 576  - 5:6
+        SVCD1,      ///< 480   x 480  - 1:1     - Pure Video
+        SVCD2,      ///< 480   x 576  - 5:6     - Pure Video
         EGA,        ///< 640   x 350  - 16:9
         VGA,        ///< 640   x 480  - 4:3
-        DVD1,       ///< 720   x 480  - 3:2
-        DVD2,       ///< 720   x 576  - 5:4
+        DVD1,       ///< 720   x 480  - 3:2     - Pure Video
+        DVD2,       ///< 720   x 576  - 5:4     - Pure Video
         WVGA,       ///< 800   x 450  - 16:9
         SVGA,       ///< 800   x 600  - 4:3
         DVGA,       ///< 960   x 640  - 3:2
         XVGA,       ///< 1024  x 576  - 16:9
-        HDTV,       ///< 1280  x 720  - 16:9
+        HDTV,       ///< 1280  x 720  - 16:9    - Pure Video
         WXGA1,      ///< 1280  x 768  - 5:3
         WXGA2,      ///< 1280  x 800  - 8:5
         SXGA,       ///< 1280  x 1024 - 5:4
         SXGAPLUS,   ///< 1400  x 1050 - 4:3
         WSXGA,      ///< 1440  x 900  - 8:5
-        HDPLUS,     ///< 1600  x 900  - 16:9
+        HDPLUS,     ///< 1600  x 900  - 16:9    - Pure Video
         UXGA,       ///< 1600  x 1200  - 4:3
         WSXGAPLUS,  ///< 1680  x 1050  - 8:5
-        BLUERAY,    ///< 1920  x 1080 - 19:9
+        BLUERAY,    ///< 1920  x 1080 - 19:9    - Pure Video
         WUXGA,      ///< 1920  x 1200 - 8:5
         TXGA,       ///< 1920  x 1440 - 7:5
         QXGA,       ///< 2048  x 1536 - 4:3
@@ -134,7 +136,7 @@ public:
         WQXGAPLUS,  ///< 3200  x 1800 - 16:9
         WQSXGA,     ///< 3200  x 2048 - 25:16
         QUXGA,      ///< 3200  x 2400 - 4:3
-        UHD4K,      ///< 3840  x 2160 - 19:9
+        UHD4K,      ///< 3840  x 2160 - 19:9    - Pure Video
         WQUXGA,     ///< 3840  x 2400 - 8:5
         HXGA,       ///< 4096  x 3072 - 4:3
         UHD5K,      ///< 5120  x 2880 - 16:9
@@ -143,7 +145,7 @@ public:
         UHD6K,      ///< 6016  x 3384 - 16:9
         WHSXGA,     ///< 6400  x 4096 - 25:16
         HUXGA,      ///< 6400  x 4800 - 4:3
-        UHD8K,      ///< 7680  x 4320 - 16:9
+        UHD8K,      ///< 7680  x 4320 - 16:9    - Pure Video
         WHUXGA,     ///< 7680  x 4800 - 8:5
         UW10K,      ///< 10240 x 4320 - 21:9
         UW16K       ///< 15360 x 8640 - 16:9
