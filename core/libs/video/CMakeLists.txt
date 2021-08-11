@@ -32,19 +32,23 @@ target_compile_definitions(core_videotoolscommon_obj
 
 # NOTE: this part depends of QtAv dependency
 
-set(libvideotools_SRCS
-    ${CMAKE_CURRENT_SOURCE_DIR}/manager/vidslidethread.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/manager/vidslidetask.cpp
+if(ENABLE_MEDIAPLAYER)
 
-    ${CMAKE_CURRENT_SOURCE_DIR}/player/vidplayerdlg.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/player/mediaplayerview.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/player/slidevideo.cpp
-)
+    set(libvideotools_SRCS
+        ${CMAKE_CURRENT_SOURCE_DIR}/manager/vidslidethread.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/manager/vidslidetask.cpp
 
-# Used by digikamcore
-add_library(core_videotools_obj OBJECT ${libvideotools_SRCS})
+        ${CMAKE_CURRENT_SOURCE_DIR}/player/vidplayerdlg.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/player/mediaplayerview.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/player/slidevideo.cpp
+    )
 
-target_compile_definitions(core_videotools_obj
-                           PRIVATE
-                           digikamcore_EXPORTS
-)
+    # Used by digikamcore
+    add_library(core_videotools_obj OBJECT ${libvideotools_SRCS})
+
+    target_compile_definitions(core_videotools_obj
+                               PRIVATE
+                               digikamcore_EXPORTS
+    )
+
+endif()
