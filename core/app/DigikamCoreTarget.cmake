@@ -50,6 +50,7 @@ set(DIGIKAMCORE_OBJECTS
 
             $<TARGET_OBJECTS:core_digikamdatabase_obj>
             $<TARGET_OBJECTS:core_digikamfacesengine_obj>
+            $<TARGET_OBJECTS:core_videotoolscommon_obj>
 )
 
 if(ENABLE_MEDIAPLAYER)

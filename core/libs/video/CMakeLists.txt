@@ -14,8 +14,25 @@ include_directories($<TARGET_PROPERTY:Qt5::Widgets,INTERFACE_INCLUDE_DIRECTORIES
                     $<TARGET_PROPERTY:KF5::Service,INTERFACE_INCLUDE_DIRECTORIES>
 )
 
-set(libvideotools_SRCS
+###
+
+set(libvideotoolscommon_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/manager/vidslidesettings.cpp
+)
+
+# Used by digikamcore
+add_library(core_videotoolscommon_obj OBJECT ${libvideotoolscommon_SRCS})
+
+target_compile_definitions(core_videotoolscommon_obj
+                           PRIVATE
+                           digikamcore_EXPORTS
+)
+
+###
+
+# NOTE: this part depends of QtAv dependency
+
+set(libvideotools_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/manager/vidslidethread.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/manager/vidslidetask.cpp
 
