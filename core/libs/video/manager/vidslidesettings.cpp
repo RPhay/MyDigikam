@@ -155,6 +155,24 @@ QSize VidSlideSettings::videoSizeFromType(VidType type)
             break;
         }
 
+        case SDTV1:
+        {
+            s = QSize(528, 480);
+            break;
+        }
+
+        case SDTV2:
+        {
+            s = QSize(544, 480);
+            break;
+        }
+
+        case EDTV1:
+        {
+            s = QSize(544, 576);
+            break;
+        }
+
         case SVCD2:
         {
             s = QSize(480, 576);
@@ -170,6 +188,18 @@ QSize VidSlideSettings::videoSizeFromType(VidType type)
         case VGA:
         {
             s = QSize(640, 480);
+            break;
+        }
+
+        case SDTV3:
+        {
+            s = QSize(704, 480);
+            break;
+        }
+
+        case EDTV2:
+        {
+            s = QSize(704, 576);
             break;
         }
 
@@ -426,7 +456,12 @@ bool VidSlideSettings::isPureVideoFormat(VidType type)
         case CVD1:
         case CVD2:
         case SVCD1:
+        case SDTV1:
+        case SDTV2:
+        case EDTV1:
         case SVCD2:
+        case SDTV3:
+        case EDTV2:
         case DVD1:
         case DVD2:
         case HDTV:
@@ -455,9 +490,14 @@ QMap<VidSlideSettings::VidType, QString> VidSlideSettings::videoTypeNames()
     types[CVD2]      = i18nc("Video Type: CVD2",      "CVD - 352x576 - 16:9");
     types[HVGA]      = i18nc("Video Type: HVGA",      "HVGA - 480x270 - 16:9");
     types[SVCD1]     = i18nc("Video Type: SVCD1",     "SVCD - 480x480 - 1:1");
+    types[SDTV1]     = i18nc("Video Type: SDTV1",     "SDTV - 528x480 - 11:10");
+    types[SDTV2]     = i18nc("Video Type: SDTV2",     "SDTV - 544x480 - 17:15");
+    types[EDTV1]     = i18nc("Video Type: EDTV1",     "EDTV - 544x576 - 17:18");
     types[SVCD2]     = i18nc("Video Type: SVCD2",     "SVCD - 480x576 - 5:6");
     types[EGA]       = i18nc("Video Type: EGA",       "EGA - 640x350 - 16:9");
     types[VGA]       = i18nc("Video Type: VGA",       "VGA - 640x480 - 4:3");
+    types[SDTV3]     = i18nc("Video Type: SDTV3",     "SDTV - 704x480 - 22:15");
+    types[EDTV2]     = i18nc("Video Type: EDTV2",     "EDTV - 704x576 - 11:9");
     types[DVD1]      = i18nc("Video Type: DVD",       "DVD - 720x480 - 3:2");
     types[DVD2]      = i18nc("Video Type: DVD",       "DVD - 720x576 - 5:4");
     types[WVGA]      = i18nc("Video Type: WVGA",      "WVGA - 800x450 - 16:9");

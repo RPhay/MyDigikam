@@ -102,13 +102,18 @@ public:
         QVGA = 0,   ///< 320   x 180  - 16:9
         VCD1,       ///< 352   x 240  - 7:5     - Pure Video
         VCD2,       ///< 352   x 288  - 6:5     - Pure Video
-        CVD1,       ///< 352   x 480  - 4:3     - Pure Video
-        CVD2,       ///< 352   x 576  - 16:9    - Pure Video
+        CVD1,       ///< 352   x 480  - 11:15   - Pure Video
+        CVD2,       ///< 352   x 576  - 11:18   - Pure Video
         HVGA,       ///< 480   x 270  - 16:9
         SVCD1,      ///< 480   x 480  - 1:1     - Pure Video
+        SDTV1,      ///< 528   x 480  - 11:10   - Pure Video
+        SDTV2,      ///< 544   x 480  - 17:15   - Pure Video
+        EDTV1,      ///< 544   x 576  - 17;18   - Pure Video
         SVCD2,      ///< 480   x 576  - 5:6     - Pure Video
         EGA,        ///< 640   x 350  - 16:9
         VGA,        ///< 640   x 480  - 4:3
+        SDTV3,      ///< 704   x 480  - 22:15   - Pure Video
+        EDTV2,      ///< 704   x 576  - 11;9    - Pure Video
         DVD1,       ///< 720   x 480  - 3:2     - Pure Video
         DVD2,       ///< 720   x 576  - 5:4     - Pure Video
         WVGA,       ///< 800   x 450  - 16:9
