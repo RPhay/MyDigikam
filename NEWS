@@ -37,7 +37,7 @@ BUGFIXES:
 025 ==> 440519 - Can‘t specify folder for face recognition.
 026 ==> 440555 - Clear/Rebuilding face training data force all DB metadata to be written to images again.
 027 ==> 410787 - Can't export to Google photo.
-028 ==> 
+028 ==> 440872 - digiKam dies at 'Checking the ICC repository...'
 029 ==> 
 030 ==> 
 031 ==> 
