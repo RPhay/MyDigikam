@@ -447,7 +447,7 @@ QSize VidSlideSettings::videoSizeFromType(VidType type)
     return s;
 }
 
-bool VidSlideSettings::isPureVideoFormat(VidType type)
+bool VidSlideSettings::isVideoTVFormat(VidType type)
 {
     switch (type)
     {

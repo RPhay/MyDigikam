@@ -143,7 +143,7 @@ VidSlideVideoPage::VidSlideVideoPage(QWizard* const dialog, const QString& title
 
     while (it != map.constEnd())
     {
-        if (VidSlideSettings::isPureVideoFormat(it.key()))
+        if (VidSlideSettings::isVideoTVFormat(it.key()))
         {
             d->typeVal->addItem(it.value(), (int)it.key());
         }

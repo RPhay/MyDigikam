@@ -99,61 +99,61 @@ public:
      */
     enum VidType
     {
-        QVGA = 0,   ///< 320   x 180  - 16:9
-        VCD1,       ///< 352   x 240  - 7:5     - Pure Video
-        VCD2,       ///< 352   x 288  - 6:5     - Pure Video
-        CVD1,       ///< 352   x 480  - 11:15   - Pure Video
-        CVD2,       ///< 352   x 576  - 11:18   - Pure Video
-        HVGA,       ///< 480   x 270  - 16:9
-        SVCD1,      ///< 480   x 480  - 1:1     - Pure Video
-        SDTV1,      ///< 528   x 480  - 11:10   - Pure Video
-        SDTV2,      ///< 544   x 480  - 17:15   - Pure Video
-        EDTV1,      ///< 544   x 576  - 17;18   - Pure Video
-        SVCD2,      ///< 480   x 576  - 5:6     - Pure Video
-        EGA,        ///< 640   x 350  - 16:9
-        VGA,        ///< 640   x 480  - 4:3
-        SDTV3,      ///< 704   x 480  - 22:15   - Pure Video
-        EDTV2,      ///< 704   x 576  - 11;9    - Pure Video
-        DVD1,       ///< 720   x 480  - 3:2     - Pure Video
-        DVD2,       ///< 720   x 576  - 5:4     - Pure Video
-        WVGA,       ///< 800   x 450  - 16:9
-        SVGA,       ///< 800   x 600  - 4:3
-        DVGA,       ///< 960   x 640  - 3:2
-        XVGA,       ///< 1024  x 576  - 16:9
-        HDTV,       ///< 1280  x 720  - 16:9    - Pure Video
-        WXGA1,      ///< 1280  x 768  - 5:3
-        WXGA2,      ///< 1280  x 800  - 8:5
-        SXGA,       ///< 1280  x 1024 - 5:4
-        SXGAPLUS,   ///< 1400  x 1050 - 4:3
-        WSXGA,      ///< 1440  x 900  - 8:5
-        HDPLUS,     ///< 1600  x 900  - 16:9    - Pure Video
-        UXGA,       ///< 1600  x 1200  - 4:3
-        WSXGAPLUS,  ///< 1680  x 1050  - 8:5
-        BLUERAY,    ///< 1920  x 1080 - 19:9    - Pure Video
-        WUXGA,      ///< 1920  x 1200 - 8:5
-        TXGA,       ///< 1920  x 1440 - 7:5
-        QXGA,       ///< 2048  x 1536 - 4:3
-        UWFHD,      ///< 2560  < 1080 - 21:9
-        WQHD,       ///< 2560  x 1440 - 16:9
-        WQXGA,      ///< 2560  x 1600 - 8:5
-        QSXGA,      ///< 2560  x 2048 - 5:4
-        QSXGAPLUS,  ///< 2800  x 2100 - 4:3
-        WQXGAPLUS,  ///< 3200  x 1800 - 16:9
-        WQSXGA,     ///< 3200  x 2048 - 25:16
-        QUXGA,      ///< 3200  x 2400 - 4:3
-        UHD4K,      ///< 3840  x 2160 - 19:9    - Pure Video
-        WQUXGA,     ///< 3840  x 2400 - 8:5
-        HXGA,       ///< 4096  x 3072 - 4:3
-        UHD5K,      ///< 5120  x 2880 - 16:9
-        WHXGA,      ///< 5120  x 3200 - 8:5
-        HSXGA,      ///< 5120  x 4096 - 5:4
-        UHD6K,      ///< 6016  x 3384 - 16:9
-        WHSXGA,     ///< 6400  x 4096 - 25:16
-        HUXGA,      ///< 6400  x 4800 - 4:3
-        UHD8K,      ///< 7680  x 4320 - 16:9    - Pure Video
-        WHUXGA,     ///< 7680  x 4800 - 8:5
-        UW10K,      ///< 10240 x 4320 - 21:9
-        UW16K       ///< 15360 x 8640 - 16:9
+        QVGA = 0,   ///< 320   x 180  - 16:9    - Computer Graphics
+        VCD1,       ///< 352   x 240  - 7:5     - Digital TV
+        VCD2,       ///< 352   x 288  - 6:5     - Digital TV
+        CVD1,       ///< 352   x 480  - 11:15   - Digital TV
+        CVD2,       ///< 352   x 576  - 11:18   - Digital TV
+        HVGA,       ///< 480   x 270  - 16:9    - Computer Graphics
+        SVCD1,      ///< 480   x 480  - 1:1     - Digital TV
+        SDTV1,      ///< 528   x 480  - 11:10   - Digital TV
+        SDTV2,      ///< 544   x 480  - 17:15   - Digital TV
+        EDTV1,      ///< 544   x 576  - 17;18   - Digital TV
+        SVCD2,      ///< 480   x 576  - 5:6     - Digital TV
+        EGA,        ///< 640   x 350  - 16:9    - Computer Graphics
+        VGA,        ///< 640   x 480  - 4:3     - Computer Graphics
+        SDTV3,      ///< 704   x 480  - 22:15   - Digital TV
+        EDTV2,      ///< 704   x 576  - 11;9    - Digital TV
+        DVD1,       ///< 720   x 480  - 3:2     - Digital TV
+        DVD2,       ///< 720   x 576  - 5:4     - Digital TV
+        WVGA,       ///< 800   x 450  - 16:9    - Computer Graphics
+        SVGA,       ///< 800   x 600  - 4:3     - Computer Graphics
+        DVGA,       ///< 960   x 640  - 3:2     - Computer Graphics
+        XVGA,       ///< 1024  x 576  - 16:9    - Computer Graphics
+        HDTV,       ///< 1280  x 720  - 16:9    - Digital TV
+        WXGA1,      ///< 1280  x 768  - 5:3     - Computer Graphics
+        WXGA2,      ///< 1280  x 800  - 8:5     - Computer Graphics
+        SXGA,       ///< 1280  x 1024 - 5:4     - Computer Graphics
+        SXGAPLUS,   ///< 1400  x 1050 - 4:3     - Computer Graphics
+        WSXGA,      ///< 1440  x 900  - 8:5     - Computer Graphics
+        HDPLUS,     ///< 1600  x 900  - 16:9    - Digital TV
+        UXGA,       ///< 1600  x 1200 - 4:3     - Computer Graphics
+        WSXGAPLUS,  ///< 1680  x 1050 - 8:5     - Computer Graphics
+        BLUERAY,    ///< 1920  x 1080 - 19:9    - Digital TV
+        WUXGA,      ///< 1920  x 1200 - 8:5     - Computer Graphics
+        TXGA,       ///< 1920  x 1440 - 7:5     - Computer Graphics
+        QXGA,       ///< 2048  x 1536 - 4:3     - Computer Graphics
+        UWFHD,      ///< 2560  < 1080 - 21:9    - Computer Graphics
+        WQHD,       ///< 2560  x 1440 - 16:9    - Computer Graphics
+        WQXGA,      ///< 2560  x 1600 - 8:5     - Computer Graphics
+        QSXGA,      ///< 2560  x 2048 - 5:4     - Computer Graphics
+        QSXGAPLUS,  ///< 2800  x 2100 - 4:3     - Computer Graphics
+        WQXGAPLUS,  ///< 3200  x 1800 - 16:9    - Computer Graphics
+        WQSXGA,     ///< 3200  x 2048 - 25:16   - Computer Graphics
+        QUXGA,      ///< 3200  x 2400 - 4:3     - Computer Graphics
+        UHD4K,      ///< 3840  x 2160 - 19:9    - Digital TV
+        WQUXGA,     ///< 3840  x 2400 - 8:5     - Computer Graphics
+        HXGA,       ///< 4096  x 3072 - 4:3     - Computer Graphics
+        UHD5K,      ///< 5120  x 2880 - 16:9    - Computer Graphics
+        WHXGA,      ///< 5120  x 3200 - 8:5     - Computer Graphics
+        HSXGA,      ///< 5120  x 4096 - 5:4     - Computer Graphics
+        UHD6K,      ///< 6016  x 3384 - 16:9    - Computer Graphics
+        WHSXGA,     ///< 6400  x 4096 - 25:16   - Computer Graphics
+        HUXGA,      ///< 6400  x 4800 - 4:3     - Computer Graphics
+        UHD8K,      ///< 7680  x 4320 - 16:9    - Digital TV
+        WHUXGA,     ///< 7680  x 4800 - 8:5     - Computer Graphics
+        UW10K,      ///< 10240 x 4320 - 21:9    - Computer Graphics
+        UW16K       ///< 15360 x 8640 - 16:9    - Computer Graphics
     };
 
     /**
@@ -214,8 +214,8 @@ public:
     static QMap<VidFormat,  QString> videoFormatNames();
     static QMap<VidPlayer,  QString> videoPlayerNames();
 
-    static QSize videoSizeFromType(VidType type);           ///< Return the current size from a type of video.
-    static bool isPureVideoFormat(VidType type);            ///< Return true if type is a pure video format. If false is returned type is screen format.
+    static QSize videoSizeFromType(VidType type);       ///< Return the current size from a type of video.
+    static bool isVideoTVFormat(VidType type);        ///< Return true if type is a video TV format. If false is returned type is computer graphics screen format.
 
 public:
 
