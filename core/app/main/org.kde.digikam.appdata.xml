@@ -15,6 +15,7 @@
   <name xml:lang="en-GB">digiKam</name>
   <name xml:lang="es">digiKam</name>
   <name xml:lang="et">digiKam</name>
+  <name xml:lang="eu">digiKam</name>
   <name xml:lang="fi">digiKam</name>
   <name xml:lang="fr">digiKam</name>
   <name xml:lang="gl">digiKam</name>
@@ -45,6 +46,7 @@
   <summary xml:lang="en-GB">Photo Management Program</summary>
   <summary xml:lang="es">Programa de gestión de fotos</summary>
   <summary xml:lang="et">Fotohalduse rakendus</summary>
+  <summary xml:lang="eu">Argazkiak kudeatzeko programa</summary>
   <summary xml:lang="fi">Valokuvahallintaohjelma</summary>
   <summary xml:lang="fr">Application de gestion de photos</summary>
   <summary xml:lang="gl">Xestor de álbums de fotos</summary>
@@ -219,6 +221,7 @@
     <p xml:lang="en-GB">Features:</p>
     <p xml:lang="es">Funciones:</p>
     <p xml:lang="et">Omadused:</p>
+    <p xml:lang="eu">Ezaugarriak:</p>
     <p xml:lang="fi">Ominaisuuksia:</p>
     <p xml:lang="fr">Fonctionnalités :</p>
     <p xml:lang="gl">Funcionalidades:</p>
@@ -339,6 +342,7 @@
       <li xml:lang="en-GB">Support for filtering and sorting albums</li>
       <li xml:lang="es">Implementación de filtrado y ordenación de álbumes</li>
       <li xml:lang="et">Albumite filtreerimise ja sortimise toetus</li>
+      <li xml:lang="eu">Albumak iragazi eta sailkatzeko euskarria du</li>
       <li xml:lang="fi">Albumien suodatuksen ja lajittelun tuki</li>
       <li xml:lang="fr">Prise en charge du filtrage et du tri des albums</li>
       <li xml:lang="gl">Permite filtrar e ordenar os álbums.</li>
@@ -370,6 +374,7 @@
       <li xml:lang="en-GB">Import from more than 1100 digital camera devices</li>
       <li xml:lang="es">Permite importar de más de 1100 cámaras digitales</li>
       <li xml:lang="et">Import enam kui 1100 digitaalkaamerast</li>
+      <li xml:lang="eu">1100 kamera digital gailu baino gehiagotatik inportatzea</li>
       <li xml:lang="fi">Tuontituki yli 1100 eri digikameralle</li>
       <li xml:lang="fr">Importe à partir de plus de 1100 appareils photos numériques</li>
       <li xml:lang="gl">Permite importar desde máis de 1100 dispositivos de cámara dixital.</li>
@@ -399,6 +404,7 @@
       <li xml:lang="en-GB">Support for more than 900 RAW format pictures</li>
       <li xml:lang="es">Permite imágenes en más de 900 formatos RAW</li>
       <li xml:lang="et">Enam kui 900 toorpildivormingu toetus</li>
+      <li xml:lang="eu">900 RAW formatuko irudi baino gehiagoren euskarria du</li>
       <li xml:lang="fi">Yli 900 RAW-kuvamuodon tuki</li>
       <li xml:lang="fr">Prise en charge de plus de 900 formats d'image RAW</li>
       <li xml:lang="gl">Compatíbel con imaxes en máis de 900 formatos en cru (RAW).</li>
@@ -427,6 +433,7 @@
       <li xml:lang="en-GB">Light Table to compare photo side by side</li>
       <li xml:lang="es">Mesa de luz para comparar fotos una junto a otra</li>
       <li xml:lang="et">Valguslaud fotode vahetuks võrdlemiseks</li>
+      <li xml:lang="eu">Argazkiak alboz-albo alderatzeko argi-mahaia</li>
       <li xml:lang="fi">Valotaulu kuvien vertailemiseksi rinnakkain</li>
       <li xml:lang="fr">Table lumineuse pour comparer des photos côte-à-côte</li>
       <li xml:lang="gl">Táboa de luz para comparar fotos unha ao lado da outra.</li>
@@ -454,6 +461,7 @@
       <li xml:lang="en-GB">Extended features using extra tools</li>
       <li xml:lang="es">Funciones extendidas mediante herramientas adicionales</li>
       <li xml:lang="et">Avarad võimalused lisatööriistade abil</li>
+      <li xml:lang="eu">Ezaugarri hedatuak tresna gehigarriak erabiliz</li>
       <li xml:lang="fi">Lisää ominaisuuksia lisätyökaluilla</li>
       <li xml:lang="fr">Fonctionnalités étendues par des outils externes</li>
       <li xml:lang="gl">Funcionalidades estendidas usando ferramentas adicionais.</li>
@@ -482,6 +490,7 @@
       <li xml:lang="en-GB">Share your photos using HTML or publishing them to remote web services</li>
       <li xml:lang="es">Compartir fotos usando HTML o publicándolas en servicios web remotos</li>
       <li xml:lang="et">Fotode jagamine HTML-i vahendusel või nende avaldamine veebiteenustes</li>
+      <li xml:lang="eu">Partekatu zure argazkiak HTML erabiliz edo urrutiko web zerbitzuetan argitaratuz</li>
       <li xml:lang="fi">Valokuvien jako HTML:ksi tai julkaisu etäverkkopalvelimiin</li>
       <li xml:lang="fr">Permet de partager vos photos avec des pages HTML ou de les publier sur des services web distants</li>
       <li xml:lang="gl">Permite compartir imaxes usando HTML ou publicándoas en servizos web remotos.</li>
@@ -510,6 +519,7 @@
       <li xml:lang="en-GB">Image editor included with advanced tools to fix photo quickly</li>
       <li xml:lang="es">Editor de imágenes incluido con herramientas avanzadas para corregir las fotos de forma rápida</li>
       <li xml:lang="et">Pildiredaktor võimsate tööriistadega fotode kiireks parandamiseks</li>
+      <li xml:lang="eu">Irudi-editorea barne, argazkia azkar konpontzeko tresna aurreratuekin</li>
       <li xml:lang="fi">Lisätyökaluissa kuvamuokkain kuvien pikakorjauksiin</li>
       <li xml:lang="fr">Éditeur d'images inclus, avec des fonctionnalités pour réparer rapidement une photo</li>
       <li xml:lang="gl">Inclúe un editor de imaxes con ferramentas avanzadas para arranxar fotos rapidamente.</li>
@@ -544,6 +554,7 @@
       <caption xml:lang="de">digiKam-Stapelverarbeitung</caption>
       <caption xml:lang="en-GB">digiKam Batch Queue Manager</caption>
       <caption xml:lang="es">Gestor de la cola de procesos por lotes de digiKam</caption>
+      <caption xml:lang="eu">digiKam sorta ilara kudeatzailea</caption>
       <caption xml:lang="fi">digiKam – Eräajon hallinta</caption>
       <caption xml:lang="fr">Gestionnaire de files de tâches de digiKam</caption>
       <caption xml:lang="id">Pengelola Antrean Seabrek digiKam</caption>
@@ -569,6 +580,7 @@
       <caption xml:lang="de">digiKam-Bildbearbeitung</caption>
       <caption xml:lang="en-GB">digiKam Image Editor</caption>
       <caption xml:lang="es">Editor de imágenes de digiKam</caption>
+      <caption xml:lang="eu">digiKam irudi-editorea</caption>
       <caption xml:lang="fi">digiKam – Kuvamuokkain</caption>
       <caption xml:lang="fr">Éditeur d'images de digiKam</caption>
       <caption xml:lang="id">Pengedit Citra digiKam</caption>
@@ -593,6 +605,7 @@
       <caption xml:lang="de">digiKam-Kameraimport</caption>
       <caption xml:lang="en-GB">digiKam Import From Camera</caption>
       <caption xml:lang="es">Importación de cámara de digiKam</caption>
+      <caption xml:lang="eu">digiKam kameratik inportatzea</caption>
       <caption xml:lang="fi">digiKam – Tuonti kamerasta</caption>
       <caption xml:lang="fr">Importation depuis un appareil photo de digiKam</caption>
       <caption xml:lang="id">Impor Dari Kamera digiKam</caption>
@@ -618,6 +631,7 @@
       <caption xml:lang="de">digikam-Leuchttisch</caption>
       <caption xml:lang="en-GB">digiKam Light Table</caption>
       <caption xml:lang="es">Mesa de luz de digiKam</caption>
+      <caption xml:lang="eu">digiKam argi-mahaia</caption>
       <caption xml:lang="fi">digiKam – Valotaulu</caption>
       <caption xml:lang="fr">Table lumineuse de digiKam</caption>
       <caption xml:lang="id">Tabel Light digiKam</caption>
@@ -643,6 +657,7 @@
       <caption xml:lang="de">digiKam-Stichwortansicht</caption>
       <caption xml:lang="en-GB">digiKam Tags View</caption>
       <caption xml:lang="es">Visor de etiquetas de digiKam</caption>
+      <caption xml:lang="eu">digiKam etiketa erakuslea</caption>
       <caption xml:lang="fi">digiKam – Luokitusnäkymä</caption>
       <caption xml:lang="fr">Afficheur des étiquettes de digiKam</caption>
       <caption xml:lang="id">Tampilan Tag digiKam</caption>
@@ -745,6 +760,7 @@
   <developer_name xml:lang="de">digiKam-Team</developer_name>
   <developer_name xml:lang="en-GB">digiKam Team</developer_name>
   <developer_name xml:lang="es">Equipo de digiKam</developer_name>
+  <developer_name xml:lang="eu">digiKam taldea</developer_name>
   <developer_name xml:lang="fi">digiKam-työryhmä</developer_name>
   <developer_name xml:lang="fr">L'équipe de digiKam</developer_name>
   <developer_name xml:lang="id">Tim digiKam</developer_name>
