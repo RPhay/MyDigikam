@@ -8,7 +8,9 @@ Notice to make release tarballs from GIT
 
 3/  Update the release info in top level CMakeLists.txt and commit to GIT.
 
-4/  Update NEWS file. If ChangeLog is a dry historical record of development,
+4/  Update the release info in appdata files for digiKam and Showfoto. Commit to GIT.
+
+5/  Update NEWS file. If ChangeLog is a dry historical record of development,
     NEWS should focus on the improvements and changes, summarize everything since
     last major release. Look in bugzilla for closed file summaries.
     Commit to GIT.
@@ -16,13 +18,13 @@ Notice to make release tarballs from GIT
     Note: after a stable release, the NEWS file is moved from the root directory to the project sub-directory
     with the release IDs as file-name suffix. The NEWS file from the root directory is cleaned for the next release.
 
-5/  Update ChangeLog file using git2cl script from root source code directory.
+6/  Update ChangeLog file using git2cl script from root source code directory.
 
     ./git2cl > ChangeLog
 
     Commit to GIT.
 
-6/  Tag Git vith the release version in this format: vX.Y.Z-suffix.
+7/  Tag Git vith the release version in this format: vX.Y.Z-suffix.
     Use these commands:
 
        git tag -a vX.Y.Z-suffix -m "Create version X.Y.Z-suffix"
@@ -33,7 +35,7 @@ Notice to make release tarballs from GIT
     Look with "git tag" command for exiting tags in git.
     These git tags will be used to make tarball and all bundles.
 
-7/  Edit the bootstrap.tarball and patch the value from TARBALL_VERSION.
+8/  Edit the bootstrap.tarball and patch the value from TARBALL_VERSION.
     Run the bootstrap.tarball script to release digiKam source tarball. This will include all translations
     files and the documentation. The script compiles all translations files to see if nothing is broken.
     At the end, if all is fine, the tarball properties must be displayed.
@@ -50,7 +52,7 @@ Notice to make release tarballs from GIT
 
     NOTE: project/scripts/signbundles.sh can batch sign all files in current directory.
 
-8/  Optional: upload tarball and signature to the "pre-release files repository".
+9/  Optional: upload tarball and signature to the "pre-release files repository".
 
     URL: ssh://digikam@milonia.kde.org/srv/archives/files/digikam/
 
@@ -58,7 +60,7 @@ Notice to make release tarballs from GIT
     Post a message on digikam-users@kde.org mailing list to have a feedback
     from packagers.
 
-9/  Upload tarball and signature to temporary FTP server at url
+10/ Upload tarball and signature to temporary FTP server at url
 
     ftp://upload.kde.org/incoming for the final publication.
 
@@ -77,10 +79,10 @@ Notice to make release tarballs from GIT
 
     Note: for beta release, destination is "unstable/digikam/"
 
-10/ Create bundles files with signatures for Linux, MacOS, and Windows. See README.BUNDLES for details.
+11/ Create bundles files with signatures for Linux, MacOS, and Windows. See README.BUNDLES for details.
     Use same worflow than source tarball.
 
-11/ Create a release announcement page on digikam.org web site.
+12/ Create a release announcement page on digikam.org web site.
 
     Web-site is hosted in a dedicated release repository: https://invent.kde.org/websites/digikam-org/
     Website repository use a staging branch named "dev" to review changes before to post contents officialy.
@@ -89,7 +91,7 @@ Notice to make release tarballs from GIT
 
     Don't forget to patch default download links with new stable releases files in data/release.yml.
 
-12/ Perform an official release announcement to these mailing-lists:
+13/ Perform an official release announcement to these mailing-lists:
 
     digikam-users@kde.org
     digikam-devel@kde.org
