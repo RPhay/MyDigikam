@@ -35,6 +35,12 @@ namespace
 {
 static const KLocalizedString STR_AUTO_DETECTED(ki18nc("in camera model string", "auto-detected"));
 
+/*
+ * The constructors used here are written after many experiments.
+ * REGEXP_MODES expression was failing to give exact match results if the pattern option
+ * InvertedGreedinessOption was set later in extractCameraNameToken function with QRegularExpression::setPatternOption()
+ * Maybe a bug in Qt.
+ * */
 static QRegularExpression REGEXP_CAMERA_NAME(
     QRegularExpression::anchoredPattern(QLatin1String("(.*)\\s*\\((.*)\\)\\s*")),
     QRegularExpression::InvertedGreedinessOption | QRegularExpression::CaseInsensitiveOption);
