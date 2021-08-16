@@ -188,23 +188,24 @@ MjpegStreamDlg::MjpegStreamDlg(QObject* const /*parent*/,
 
     // -------------------
 
+    d->tabView                    = new QTabWidget(this);
     const int spacing             = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
-    QWidget* const serverSettings = new QWidget(this);
+    QWidget* const serverSettings = new QWidget(d->tabView);
 
-    QLabel* const portLbl     = new QLabel(i18nc("@label", "Server Port:"), serverSettings);
-    d->srvPort                = new DIntNumInput(serverSettings);
+    QLabel* const portLbl         = new QLabel(i18nc("@label", "Server Port:"), serverSettings);
+    d->srvPort                    = new DIntNumInput(serverSettings);
     d->srvPort->setDefaultValue(8080);
     d->srvPort->setRange(1025, 65535, 1);
     d->srvPort->setWhatsThis(i18n("The MJPEG server IP port."));
     portLbl->setBuddy(d->srvPort);
 
-    d->startOnStartup         = new QCheckBox(i18nc("@option", "Start Server at Startup"));
+    d->startOnStartup             = new QCheckBox(i18nc("@option", "Start Server at Startup"));
     d->startOnStartup->setWhatsThis(i18nc("@info", "Set this option to turn-on the MJPEG server at application start-up automatically"));
     d->startOnStartup->setChecked(true);
 
     // ---
 
-    QLabel* const explanation = new QLabel(serverSettings);
+    QLabel* const explanation     = new QLabel(serverSettings);
     explanation->setOpenExternalLinks(true);
     explanation->setWordWrap(true);
     explanation->setFrameStyle(QFrame::Box | QFrame::Plain);
@@ -218,14 +219,14 @@ MjpegStreamDlg::MjpegStreamDlg(QObject* const /*parent*/,
         "the MJPEG server IP, and port the server port set in this config dialog.",
         QLatin1String("<a href='https://en.wikipedia.org/wiki/Motion_JPEG'>Motion JPEG</a>")));
 
-    d->srvButton              = new QPushButton(this);
-    d->srvStatus              = new QLabel(this);
-    d->progress               = new WorkingWidget(this);
-    d->aStats                 = new QLabel(this);
-    d->separator              = new QLabel(QLatin1String(" / "), this);
-    d->iStats                 = new QLabel(this);
+    d->srvButton                  = new QPushButton(this);
+    d->srvStatus                  = new QLabel(this);
+    d->progress                   = new WorkingWidget(this);
+    d->aStats                     = new QLabel(this);
+    d->separator                  = new QLabel(QLatin1String(" / "), this);
+    d->iStats                     = new QLabel(this);
 
-    QGridLayout* const grid3  = new QGridLayout(serverSettings);
+    QGridLayout* const grid3      = new QGridLayout(serverSettings);
     grid3->addWidget(portLbl,           0, 0, 1, 1);
     grid3->addWidget(d->srvPort,        0, 1, 1, 1);
     grid3->addWidget(d->startOnStartup, 0, 2, 1, 4);
@@ -238,12 +239,11 @@ MjpegStreamDlg::MjpegStreamDlg(QObject* const /*parent*/,
     grid3->addWidget(explanation,       2, 0, 1, 6);
     grid3->setSpacing(spacing);
 
-    d->tabView = new QTabWidget(this);
     d->tabView->insertTab(Private::Server, serverSettings, i18n("Server"));
 
     // ---
 
-    d->streamSettings         = new QWidget(this);
+    d->streamSettings         = new QWidget(d->tabView);
 
     QLabel* const delayLbl    = new QLabel(i18nc("@label", "Delay in seconds:"), d->streamSettings);
     d->delay                  = new DIntNumInput(d->streamSettings);
@@ -299,7 +299,7 @@ MjpegStreamDlg::MjpegStreamDlg(QObject* const /*parent*/,
 
     // ---
 
-    DVBox* const effectSettings = new DVBox(this);
+    DVBox* const effectSettings = new DVBox(d->tabView);
     effectSettings->setSpacing(spacing);
     QGroupBox* const effGrp     = new QGroupBox(i18n("Effect While Displaying Images"), effectSettings);
     QLabel* const effLabel      = new QLabel(effGrp);
@@ -320,14 +320,13 @@ MjpegStreamDlg::MjpegStreamDlg(QObject* const /*parent*/,
     d->effVal->setDefaultIndex(EffectMngr::None);
     effLabel->setBuddy(d->effVal);
 
-    QLabel* const effNote  = new QLabel(effGrp);
+    QLabel* const effNote      = new QLabel(effGrp);
     effNote->setWordWrap(true);
     effNote->setText(i18n("<i>An effect is an visual panning or zooming applied while an image "
-                          "is displayed. The effect duration will follow the number of frames used "
-                          "to render the image on video stream.</i>"));
+                          "is displayed in MJPEG stream.</i>"));
 
     d->effPreview              = new EffectPreview(effGrp);
-    d->effPreview->setImagesList(d->settings.urlsList);
+    d->effPreview->setImagesList(QList<QUrl>());
 
     QGridLayout* const effGrid = new QGridLayout(effGrp);
     effGrid->setSpacing(QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing));
@@ -473,6 +472,8 @@ void MjpegStreamDlg::slotSettingsChanged()
     d->settings.loop    = d->streamLoop->isChecked();
     d->settings.outSize = d->typeVal->currentIndex();
     d->settings.effect  = (EffectMngr::EffectType)d->effVal->currentIndex();
+    d->effPreview->stopPreview();
+    d->effPreview->startPreview((EffectMngr::EffectType)d->effVal->currentIndex());
 }
 
 void MjpegStreamDlg::updateServerStatus()

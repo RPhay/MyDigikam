@@ -28,6 +28,7 @@
 #include <QTimer>
 #include <QImage>
 #include <QPixmap>
+#include <QStandardPaths>
 
 // Local includes
 
@@ -89,9 +90,9 @@ void EffectPreview::setImagesList(const QList<QUrl>& images)
     }
     else
     {
-        QImage blank(d->previewSize, QImage::Format_ARGB32);
-        blank.fill(Qt::black);
-        d->mngr->setImage(blank);
+        QImage sample = QImage(QStandardPaths::locate(QStandardPaths::GenericDataLocation,
+                                                      QLatin1String("digikam/data/sample-aix.png")));
+        d->mngr->setImage(sample.scaled(QSize(1024, 768), Qt::KeepAspectRatio));
     }
 }
 
