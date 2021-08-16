@@ -450,6 +450,12 @@ void CoreDB::setAlbumDate(int albumID, const QDate& date)
     d->db->recordChangeset(AlbumChangeset(albumID, AlbumChangeset::PropertiesChanged));
 }
 
+void CoreDB::setAlbumModificationDate(int albumID, const QDateTime& modificationDate)
+{
+    d->db->execSql(QString::fromUtf8("UPDATE Albums SET modificationDate=? WHERE id=?;"),
+                   modificationDate, albumID);
+}
+
 void CoreDB::setAlbumIcon(int albumID, qlonglong iconID)
 {
     if (iconID == 0)
@@ -3215,6 +3221,45 @@ QVariantList CoreDB::getAllCreationDates() const
                    &values);
 
     return values;
+}
+
+QDateTime CoreDB::getAlbumModificationDate(int albumID) const
+{
+    QVariantList values;
+
+    d->db->execSql(QString::fromUtf8("SELECT modificationDate FROM Albums "
+                                     " WHERE id=?;"),
+                   albumID, &values);
+
+    if (values.isEmpty())
+    {
+        return QDateTime();
+    }
+
+    return values.first().toDateTime();
+}
+
+QMap<QString, QDateTime> CoreDB::getAlbumModificationMap(int albumRootId) const
+{
+    QList<QVariant> values;
+    QMap<QString, QDateTime> pathDateMap;
+
+    d->db->execSql(QString::fromUtf8("SELECT relativePath, modificationDate FROM Albums "
+                                     " WHERE albumRoot=?;"),
+                   albumRootId, &values);
+
+    for (QList<QVariant>::const_iterator it = values.constBegin() ; it != values.constEnd() ; )
+    {
+        QString relativePath = (*it).toString();
+        ++it;
+        QDateTime dateTime   = (*it).toDateTime();
+        ++it;
+
+        pathDateMap.insert(relativePath, dateTime);
+    }
+
+    return pathDateMap;
+
 }
 
 int CoreDB::getNumberOfImagesAndAlbums(int albumID) const

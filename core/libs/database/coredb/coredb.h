@@ -299,6 +299,13 @@ public:
     void setAlbumDate(int albumID, const QDate& date);
 
     /**
+     * Set the modification date time for the album.
+     * @param albumID  the id of the album
+     * @param dateTime the modification date time for the album
+     */
+    void setAlbumModificationDate(int albumID, const QDateTime& modificationDate);
+
+    /**
      * Set the icon for the album.
      * @param albumID the id of the album
      * @param iconID  the id of the icon file
@@ -347,7 +354,18 @@ public:
     int getNumberOfImagesAndAlbums(int albumID)                                                                     const;
 
     /**
-     * Returns a QMap<int,int> of album id -> count of items
+     * Returns the QDateTime of the album modification date.
+     * @param albumID the id of the album
+     */
+    QDateTime getAlbumModificationDate(int albumID)                                                                 const;
+
+    /**
+     * Returns a QMap with relative path and the album modification date.
+     * @param albumRootID id of the album root of the album
+     */
+    QMap<QString, QDateTime> getAlbumModificationMap(int albumRootId)                                               const;
+    /**
+     * Returns a QMap<int, int> of album id -> count of items
      * in the album
      */
     QMap<int, int> getNumberOfImagesInAlbums()                                                                      const;

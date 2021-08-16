@@ -30,6 +30,11 @@ namespace Digikam
 
 bool s_modificationDateEquals(const QDateTime& a, const QDateTime& b)
 {
+    if (!a.isValid() || !b.isValid())
+    {
+        return false;
+    }
+
     if (a != b)
     {
         // allow a "modify window" of one second.
