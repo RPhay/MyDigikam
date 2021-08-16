@@ -61,6 +61,16 @@ namespace DigikamGenericMjpegStreamPlugin
 
 class Q_DECL_HIDDEN MjpegStreamDlg::Private
 {
+
+public:
+
+    enum TabView
+    {
+        Server = 0,
+        Stream,
+        Effects
+    };
+
 public:
 
     explicit Private()
@@ -86,7 +96,8 @@ public:
         streamLoop      (nullptr),
         typeVal         (nullptr),
         effVal          (nullptr),
-        effPreview      (nullptr)
+        effPreview      (nullptr),
+        tabView         (nullptr)
     {
     }
 
@@ -113,6 +124,7 @@ public:
     DComboBox*          typeVal;
     DComboBox*          effVal;
     EffectPreview*      effPreview;
+    QTabWidget*         tabView;
     MjpegStreamSettings settings;
 };
 
@@ -216,18 +228,18 @@ MjpegStreamDlg::MjpegStreamDlg(QObject* const /*parent*/,
 
     grid3->addWidget(portLbl,           0, 0, 1, 1);
     grid3->addWidget(d->srvPort,        0, 1, 1, 1);
-    grid3->addWidget(d->startOnStartup, 0, 2, 1, 3);
+    grid3->addWidget(d->startOnStartup, 0, 2, 1, 4);
     grid3->addWidget(d->srvButton,      1, 0, 1, 1);
     grid3->addWidget(d->srvStatus,      1, 1, 1, 1);
     grid3->addWidget(d->aStats,         1, 2, 1, 1);
     grid3->addWidget(d->separator,      1, 3, 1, 1);
     grid3->addWidget(d->iStats,         1, 4, 1, 1);
     grid3->addWidget(d->progress,       1, 5, 1, 1);
-    grid3->addWidget(explanation,       2, 0, 1, 5);
+    grid3->addWidget(explanation,       2, 0, 1, 6);
     grid3->setSpacing(spacing);
 
-    QTabWidget* const tabView = new QTabWidget(this);
-    tabView->insertTab(0, serverSettings, i18n("Server"));
+    d->tabView = new QTabWidget(this);
+    d->tabView->insertTab(Private::Server, serverSettings, i18n("Server"));
 
     // ---
 
@@ -284,11 +296,12 @@ MjpegStreamDlg::MjpegStreamDlg(QObject* const /*parent*/,
     grid2->setColumnStretch(2, 10);
     grid2->setSpacing(spacing);
 
-    tabView->insertTab(1, d->streamSettings, i18n("Stream"));
+    d->tabView->insertTab(Private::Stream, d->streamSettings, i18n("Stream"));
 
     // ---
 
     DVBox* const effectSettings = new DVBox(this);
+    effectSettings->setSpacing(spacing);
     QGroupBox* const effGrp     = new QGroupBox(i18n("Effect While Displaying Images"), effectSettings);
     QLabel* const effLabel      = new QLabel(effGrp);
     effLabel->setWordWrap(false);
@@ -325,10 +338,13 @@ MjpegStreamDlg::MjpegStreamDlg(QObject* const /*parent*/,
     effGrid->addWidget(d->effPreview, 0, 2, 2, 1);
     effGrid->setColumnStretch(1, 10);
     effGrid->setRowStretch(1, 10);
+    effGrid->setSpacing(spacing);
 
-    tabView->insertTab(2, effectSettings, i18n("Effects"));
+    d->tabView->insertTab(Private::Effects, effectSettings, i18n("Effects"));
 
-    grid->addWidget(tabView, 1, 0, 1, 6);
+    // --------------------------------------------------------
+
+    grid->addWidget(d->tabView, 1, 0, 1, 6);
     grid->setColumnStretch(0, 10);
     grid->setRowStretch(0, 10);
     grid->setSpacing(spacing);
@@ -575,7 +591,9 @@ void MjpegStreamDlg::slotToggleMjpegServer()
         updateServerStatus();
     }
 
-    d->streamSettings->setDisabled(b);
+    d->tabView->setTabEnabled(Private::Stream, !b);
+    d->tabView->setTabEnabled(Private::Effects, !b);
+    d->srvPort->setDisabled(b);
 }
 
 } // namespace DigikamGenericMjpegStreamPlugin
