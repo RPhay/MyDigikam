@@ -137,9 +137,29 @@ void MjpegFrameTask::run()
 
             // TODO: apply OSD over frame.
 
-            emit signalFrameChanged(imageToJPEGArray(img));
+            // Apply effect on frame
 
-            QThread::sleep(m_set.delay);
+            int imgFrames = m_set.delay * 10;           // 10 img/s
+            EffectMngr effmngr;
+            effmngr.setOutputSize(VidSlideSettings::videoSizeFromType(type));
+            effmngr.setFrames(imgFrames);               // Ex: 30 frames at 10 img/s => 3 s of effect
+
+            int count  = 0;
+            int itmout = 0;
+            QImage qiimg;
+            effmngr.setImage(img);
+            effmngr.setEffect(m_set.effect);
+
+            do
+            {
+                qiimg = effmngr.currentFrame(itmout);
+                emit signalFrameChanged(imageToJPEGArray(qiimg));
+                count++;
+                QThread::msleep(100);
+            }
+            while ((count < imgFrames) && !m_cancel);
+
+//            QThread::sleep(m_set.delay);
         }
     }
     while (!m_cancel && m_set.loop);

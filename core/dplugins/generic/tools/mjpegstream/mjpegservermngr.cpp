@@ -233,7 +233,7 @@ bool MjpegServerMngr::startMjpegServer()
     if (!d->server)
     {
         d->server = new MjpegServer(QString(), d->settings.port);
-        d->server->setRate(1);
+        d->server->setRate(10);  // 10 images/s
         d->server->start();
     }
 

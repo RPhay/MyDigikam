@@ -34,6 +34,8 @@
 #include <QStyle>
 #include <QIcon>
 #include <QCheckBox>
+#include <QGroupBox>
+#include <QTabWidget>
 
 // KDE includes
 
@@ -46,10 +48,12 @@
 #include "dinfointerface.h"
 #include "ditemslist.h"
 #include "dnuminput.h"
+#include "dlayoutbox.h"
 #include "dxmlguiwindow.h"
 #include "workingwidget.h"
 #include "mjpegservermngr.h"
 #include "vidslidesettings.h"
+#include "effectpreview.h"
 #include "dcombobox.h"
 
 namespace DigikamGenericMjpegStreamPlugin
@@ -80,7 +84,9 @@ public:
         delay           (nullptr),
         quality         (nullptr),
         streamLoop      (nullptr),
-        typeVal         (nullptr)
+        typeVal         (nullptr),
+        effVal          (nullptr),
+        effPreview      (nullptr)
     {
     }
 
@@ -105,6 +111,8 @@ public:
     DIntNumInput*       quality;
     QCheckBox*          streamLoop;
     DComboBox*          typeVal;
+    DComboBox*          effVal;
+    EffectPreview*      effPreview;
     MjpegStreamSettings settings;
 };
 
@@ -168,11 +176,36 @@ MjpegStreamDlg::MjpegStreamDlg(QObject* const /*parent*/,
 
     // -------------------
 
-    const int spacing         = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
+    const int spacing             = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
+    QWidget* const serverSettings = new QWidget(this);
+    QGridLayout* const grid3      = new QGridLayout(serverSettings);
+
+    QLabel* const portLbl     = new QLabel(i18nc("@label", "Server Port:"), serverSettings);
+    d->srvPort                = new DIntNumInput(serverSettings);
+    d->srvPort->setDefaultValue(8080);
+    d->srvPort->setRange(1025, 65535, 1);
+    d->srvPort->setWhatsThis(i18n("The MJPEG server IP port."));
+    portLbl->setBuddy(d->srvPort);
 
     d->startOnStartup         = new QCheckBox(i18nc("@option", "Start Server at Startup"));
     d->startOnStartup->setWhatsThis(i18nc("@info", "Set this option to turn-on the MJPEG server at application start-up automatically"));
     d->startOnStartup->setChecked(true);
+
+    // ---
+
+    QLabel* const explanation = new QLabel(serverSettings);
+    explanation->setOpenExternalLinks(true);
+    explanation->setWordWrap(true);
+    explanation->setFrameStyle(QFrame::Box | QFrame::Plain);
+
+    explanation->setText(i18nc("@info",
+        "The %1 server allows to share items through the local network using a web browser. "
+        "Motion JPEG is a video compression format in which each video frame is compressed "
+        "separately as a JPEG image. MJPEG streams is a standard which allows network clients to be "
+        "connected without additional module. Most major web browsers and players support MJPEG stream. "
+        "To access to stream from your browser, just use http://address:port as url, with address "       // krazy:exclude=insecurenet
+        "the MJPEG server IP, and port the server port set in this config dialog.",
+        QLatin1String("<a href='https://en.wikipedia.org/wiki/Motion_JPEG'>Motion JPEG</a>")));
 
     d->srvButton              = new QPushButton(this);
     d->srvStatus              = new QLabel(this);
@@ -181,17 +214,25 @@ MjpegStreamDlg::MjpegStreamDlg(QObject* const /*parent*/,
     d->separator              = new QLabel(QLatin1String(" / "), this);
     d->iStats                 = new QLabel(this);
 
+    grid3->addWidget(portLbl,           0, 0, 1, 1);
+    grid3->addWidget(d->srvPort,        0, 1, 1, 1);
+    grid3->addWidget(d->startOnStartup, 0, 2, 1, 3);
+    grid3->addWidget(d->srvButton,      1, 0, 1, 1);
+    grid3->addWidget(d->srvStatus,      1, 1, 1, 1);
+    grid3->addWidget(d->aStats,         1, 2, 1, 1);
+    grid3->addWidget(d->separator,      1, 3, 1, 1);
+    grid3->addWidget(d->iStats,         1, 4, 1, 1);
+    grid3->addWidget(d->progress,       1, 5, 1, 1);
+    grid3->addWidget(explanation,       2, 0, 1, 5);
+    grid3->setSpacing(spacing);
+
+    QTabWidget* const tabView = new QTabWidget(this);
+    tabView->insertTab(0, serverSettings, i18n("Server"));
+
     // ---
 
     d->streamSettings         = new QWidget(this);
     QGridLayout* const grid2  = new QGridLayout(d->streamSettings);
-
-    QLabel* const portLbl     = new QLabel(i18nc("@label", "Server Port:"), d->streamSettings);
-    d->srvPort                = new DIntNumInput(d->streamSettings);
-    d->srvPort->setDefaultValue(8080);
-    d->srvPort->setRange(1025, 65535, 1);
-    d->srvPort->setWhatsThis(i18n("The MJPEG server IP port."));
-    portLbl->setBuddy(d->srvPort);
 
     QLabel* const delayLbl    = new QLabel(i18nc("@label", "Delay in seconds:"), d->streamSettings);
     d->delay                  = new DIntNumInput(d->streamSettings);
@@ -233,44 +274,62 @@ MjpegStreamDlg::MjpegStreamDlg(QObject* const /*parent*/,
     d->streamLoop->setChecked(true);
     d->streamLoop->setWhatsThis(i18n("The MJPEG stream will be played in loop instead once."));
 
-    grid2->addWidget(portLbl,       0, 0, 1, 1);
-    grid2->addWidget(d->srvPort,    0, 1, 1, 1);
-    grid2->addWidget(qualityLbl,    1, 0, 1, 1);
-    grid2->addWidget(d->quality,    1, 1, 1, 1);
-    grid2->addWidget(typeLabel,     1, 3, 1, 1);
-    grid2->addWidget(d->typeVal,    1, 4, 1, 1);
-    grid2->addWidget(delayLbl,      2, 0, 1, 1);
-    grid2->addWidget(d->delay,      2, 1, 1, 1);
-    grid2->addWidget(d->streamLoop, 2, 3, 1, 2);
+    grid2->addWidget(qualityLbl,    0, 0, 1, 1);
+    grid2->addWidget(d->quality,    0, 1, 1, 1);
+    grid2->addWidget(typeLabel,     0, 3, 1, 1);
+    grid2->addWidget(d->typeVal,    0, 4, 1, 1);
+    grid2->addWidget(delayLbl,      1, 0, 1, 1);
+    grid2->addWidget(d->delay,      1, 1, 1, 1);
+    grid2->addWidget(d->streamLoop, 1, 3, 1, 2);
+    grid2->setColumnStretch(2, 10);
+    grid2->setSpacing(spacing);
+
+    tabView->insertTab(1, d->streamSettings, i18n("Stream"));
 
     // ---
 
-    QLabel* const explanation = new QLabel(this);
-    explanation->setOpenExternalLinks(true);
-    explanation->setWordWrap(true);
-    explanation->setFrameStyle(QFrame::Box | QFrame::Plain);
-    QString txt;
+    DVBox* const effectSettings = new DVBox(this);
+    QGroupBox* const effGrp     = new QGroupBox(i18n("Effect While Displaying Images"), effectSettings);
+    QLabel* const effLabel      = new QLabel(effGrp);
+    effLabel->setWordWrap(false);
+    effLabel->setText(i18n("Type:"));
+    d->effVal                   = new DComboBox(effGrp);
+    d->effVal->combo()->setEditable(false);
 
-    explanation->setText(i18nc("@info",
-        "The %1 server allows to share items through the local network using a web browser. "
-        "Motion JPEG is a video compression format in which each video frame is compressed "
-        "separately as a JPEG image. MJPEG streams is a standard which allows network clients to be "
-        "connected without additional module. Most major web browsers and players support MJPEG stream. "
-        "To access to stream from your browser, just use http://address:port as url, with address "       // krazy:exclude=insecurenet
-        "the MJPEG server IP, and port the server port set in this config dialog.",
-        QLatin1String("<a href='https://en.wikipedia.org/wiki/Motion_JPEG'>Motion JPEG</a>")));
+    QMap<EffectMngr::EffectType, QString> map6                = EffectMngr::effectNames();
+    QMap<EffectMngr::EffectType, QString>::const_iterator it6 = map6.constBegin();
 
+    while (it6 != map6.constEnd())
+    {
+        d->effVal->insertItem((int)it6.key(), it6.value(), (int)it6.key());
+        ++it6;
+    }
 
-    grid->addWidget(d->startOnStartup, 1, 0, 1, 6);
-    grid->addWidget(d->srvButton,      2, 0, 1, 1);
-    grid->addWidget(d->srvStatus,      2, 1, 1, 1);
-    grid->addWidget(d->aStats,         2, 2, 1, 1);
-    grid->addWidget(d->separator,      2, 3, 1, 1);
-    grid->addWidget(d->iStats,         2, 4, 1, 1);
-    grid->addWidget(d->progress,       2, 5, 1, 1);
-    grid->addWidget(d->streamSettings, 3, 0, 1, 6);
-    grid->addWidget(explanation,       4, 0, 1, 6);
-    grid->setColumnStretch(1, 10);
+    d->effVal->setDefaultIndex(EffectMngr::None);
+    effLabel->setBuddy(d->effVal);
+
+    QLabel* const effNote  = new QLabel(effGrp);
+    effNote->setWordWrap(true);
+    effNote->setText(i18n("<i>An effect is an visual panning or zooming applied while an image "
+                          "is displayed. The effect duration will follow the number of frames used "
+                          "to render the image on video stream.</i>"));
+
+    d->effPreview              = new EffectPreview(effGrp);
+    d->effPreview->setImagesList(d->settings.urlsList);
+
+    QGridLayout* const effGrid = new QGridLayout(effGrp);
+    effGrid->setSpacing(QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing));
+    effGrid->addWidget(effLabel,      0, 0, 1, 1);
+    effGrid->addWidget(d->effVal,     0, 1, 1, 1);
+    effGrid->addWidget(effNote,       1, 0, 1, 2);
+    effGrid->addWidget(d->effPreview, 0, 2, 2, 1);
+    effGrid->setColumnStretch(1, 10);
+    effGrid->setRowStretch(1, 10);
+
+    tabView->insertTab(2, effectSettings, i18n("Effects"));
+
+    grid->addWidget(tabView, 1, 0, 1, 6);
+    grid->setColumnStretch(0, 10);
     grid->setRowStretch(0, 10);
     grid->setSpacing(spacing);
 
@@ -298,6 +357,9 @@ MjpegStreamDlg::MjpegStreamDlg(QObject* const /*parent*/,
             this, SLOT(slotSettingsChanged()));
 
     connect(d->typeVal, SIGNAL(currentIndexChanged(int)),
+            this, SLOT(slotSettingsChanged()));
+
+    connect(d->effVal, SIGNAL(currentIndexChanged(int)),
             this, SLOT(slotSettingsChanged()));
 
     // -------------------
@@ -354,18 +416,21 @@ void MjpegStreamDlg::readSettings()
     d->quality->blockSignals(true);
     d->streamLoop->blockSignals(true);
     d->typeVal->blockSignals(true);
+    d->effVal->blockSignals(true);
 
     d->srvPort->setValue(d->settings.port);
     d->delay->setValue(d->settings.delay);
     d->quality->setValue(d->settings.quality);
     d->streamLoop->setChecked(d->settings.loop);
     d->typeVal->setCurrentIndex(d->settings.outSize);
+    d->effVal->setCurrentIndex(d->settings.effect);
 
     d->srvPort->blockSignals(false);
     d->delay->blockSignals(false);
     d->quality->blockSignals(false);
     d->streamLoop->blockSignals(false);
     d->typeVal->blockSignals(false);
+    d->effVal->blockSignals(false);
 
     slotSettingsChanged();
 
@@ -390,6 +455,7 @@ void MjpegStreamDlg::slotSettingsChanged()
     d->settings.quality = d->quality->value();
     d->settings.loop    = d->streamLoop->isChecked();
     d->settings.outSize = d->typeVal->currentIndex();
+    d->settings.effect  = (EffectMngr::EffectType)d->effVal->currentIndex();
 }
 
 void MjpegStreamDlg::updateServerStatus()

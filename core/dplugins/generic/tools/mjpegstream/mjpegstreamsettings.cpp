@@ -39,6 +39,7 @@ MjpegStreamSettings::MjpegStreamSettings()
       quality (75),
       delay   (5),
       outSize (VidSlideSettings::BLUERAY),
+      effect  (EffectMngr::None),
       iface   (nullptr)
 {
 }
@@ -59,11 +60,12 @@ void MjpegStreamSettings::setCollectionMap(const MjpegServerMap& map)
 
 void MjpegStreamSettings::readSettings(KConfigGroup& group)
 {
-    port    = group.readEntry("MJPEGStreamPort",     8080);
-    loop    = group.readEntry("MJPEGStreamLoop",     true);
-    quality = group.readEntry("MJPEGStreamQuality",  75);
-    delay   = group.readEntry("MJPEGStreamDelay",    5);
-    outSize = group.readEntry("MJPEGStreamOutSize",  (int)VidSlideSettings::BLUERAY);
+    port    = group.readEntry("MJPEGStreamPort",                           8080);
+    loop    = group.readEntry("MJPEGStreamLoop",                           true);
+    quality = group.readEntry("MJPEGStreamQuality",                        75);
+    delay   = group.readEntry("MJPEGStreamDelay",                          5);
+    outSize = group.readEntry("MJPEGStreamOutSize",                        (int)VidSlideSettings::BLUERAY);
+    effect  = (EffectMngr::EffectType)group.readEntry("MJPEGStreamEffect", (int)EffectMngr::None);
 }
 
 void MjpegStreamSettings::writeSettings(KConfigGroup& group)
@@ -73,6 +75,7 @@ void MjpegStreamSettings::writeSettings(KConfigGroup& group)
     group.writeEntry("MJPEGStreamQuality", quality);
     group.writeEntry("MJPEGStreamDelay",   delay);
     group.writeEntry("MJPEGStreamOutSize", outSize);
+    group.writeEntry("MJPEGStreamEffect",  (int)effect);
 }
 
 } // namespace DigikamGenericMjpegStreamPlugin
