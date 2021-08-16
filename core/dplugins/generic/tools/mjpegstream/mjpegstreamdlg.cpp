@@ -155,13 +155,13 @@ MjpegStreamDlg::MjpegStreamDlg(QObject* const /*parent*/,
 
     // -------------------
 
-    QGridLayout* const grid = new QGridLayout(d->page);
-    d->albumSupport         = (d->iface && d->iface->supportAlbums());
+    d->albumSupport   = (d->iface && d->iface->supportAlbums());
+    QWidget* itemsSel = nullptr;
 
     if (d->albumSupport)
     {
         d->albumSelector = d->iface->albumChooser(this);
-        grid->addWidget(d->albumSelector, 0, 0, 1, 6);
+        itemsSel         = d->albumSelector;
 
         connect(d->iface, SIGNAL(signalAlbumChooserSelectionChanged()),
                 this, SLOT(slotSelectionChanged()));
@@ -180,7 +180,7 @@ MjpegStreamDlg::MjpegStreamDlg(QObject* const /*parent*/,
         // Replug the previous shared items list.
 
         d->listView->slotAddImages(d->mngr->itemsList());
-        grid->addWidget(d->listView, 0, 0, 1, 6);
+        itemsSel = d->listView;
 
         connect(d->listView, SIGNAL(signalImageListChanged()),
                 this, SLOT(slotSelectionChanged()));
@@ -190,7 +190,6 @@ MjpegStreamDlg::MjpegStreamDlg(QObject* const /*parent*/,
 
     const int spacing             = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
     QWidget* const serverSettings = new QWidget(this);
-    QGridLayout* const grid3      = new QGridLayout(serverSettings);
 
     QLabel* const portLbl     = new QLabel(i18nc("@label", "Server Port:"), serverSettings);
     d->srvPort                = new DIntNumInput(serverSettings);
@@ -226,6 +225,7 @@ MjpegStreamDlg::MjpegStreamDlg(QObject* const /*parent*/,
     d->separator              = new QLabel(QLatin1String(" / "), this);
     d->iStats                 = new QLabel(this);
 
+    QGridLayout* const grid3  = new QGridLayout(serverSettings);
     grid3->addWidget(portLbl,           0, 0, 1, 1);
     grid3->addWidget(d->srvPort,        0, 1, 1, 1);
     grid3->addWidget(d->startOnStartup, 0, 2, 1, 4);
@@ -244,7 +244,6 @@ MjpegStreamDlg::MjpegStreamDlg(QObject* const /*parent*/,
     // ---
 
     d->streamSettings         = new QWidget(this);
-    QGridLayout* const grid2  = new QGridLayout(d->streamSettings);
 
     QLabel* const delayLbl    = new QLabel(i18nc("@label", "Delay in seconds:"), d->streamSettings);
     d->delay                  = new DIntNumInput(d->streamSettings);
@@ -286,14 +285,14 @@ MjpegStreamDlg::MjpegStreamDlg(QObject* const /*parent*/,
     d->streamLoop->setChecked(true);
     d->streamLoop->setWhatsThis(i18n("The MJPEG stream will be played in loop instead once."));
 
+    QGridLayout* const grid2  = new QGridLayout(d->streamSettings);
     grid2->addWidget(qualityLbl,    0, 0, 1, 1);
     grid2->addWidget(d->quality,    0, 1, 1, 1);
-    grid2->addWidget(typeLabel,     0, 3, 1, 1);
-    grid2->addWidget(d->typeVal,    0, 4, 1, 1);
-    grid2->addWidget(delayLbl,      1, 0, 1, 1);
-    grid2->addWidget(d->delay,      1, 1, 1, 1);
-    grid2->addWidget(d->streamLoop, 1, 3, 1, 2);
-    grid2->setColumnStretch(2, 10);
+    grid2->addWidget(typeLabel,     1, 0, 1, 1);
+    grid2->addWidget(d->typeVal,    1, 1, 1, 1);
+    grid2->addWidget(delayLbl,      2, 0, 1, 1);
+    grid2->addWidget(d->delay,      2, 1, 1, 1);
+    grid2->addWidget(d->streamLoop, 3, 0, 1, 2);
     grid2->setSpacing(spacing);
 
     d->tabView->insertTab(Private::Stream, d->streamSettings, i18n("Stream"));
@@ -344,7 +343,9 @@ MjpegStreamDlg::MjpegStreamDlg(QObject* const /*parent*/,
 
     // --------------------------------------------------------
 
-    grid->addWidget(d->tabView, 1, 0, 1, 6);
+    QGridLayout* const grid = new QGridLayout(d->page);
+    grid->addWidget(itemsSel,   0, 0, 1, 1);
+    grid->addWidget(d->tabView, 1, 0, 1, 1);
     grid->setColumnStretch(0, 10);
     grid->setRowStretch(0, 10);
     grid->setSpacing(spacing);
