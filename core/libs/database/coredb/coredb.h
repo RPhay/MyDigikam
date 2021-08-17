@@ -349,9 +349,16 @@ public:
     QDate getAlbumAverageDate(int albumID)                                                                          const;
 
     /**
-     * Returns the number of items and albums in the album.
+     * Returns the number of all items and albums in the album.
+     * @param albumID the id of the album
      */
-    int getNumberOfImagesAndAlbums(int albumID)                                                                     const;
+    int getNumberOfAllItemsAndAlbums(int albumID)                                                                   const;
+
+    /**
+     * Returns the number of items in the album.
+     * @param albumID the id of the album
+     */
+    int getNumberOfItemsInAlbum(int albumID)                                                                        const;
 
     /**
      * Returns the QDateTime of the album modification date.
@@ -364,6 +371,7 @@ public:
      * @param albumRootID id of the album root of the album
      */
     QMap<QString, QDateTime> getAlbumModificationMap(int albumRootId)                                               const;
+
     /**
      * Returns a QMap<int, int> of album id -> count of items
      * in the album

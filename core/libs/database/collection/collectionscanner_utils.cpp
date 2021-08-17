@@ -223,7 +223,7 @@ int CollectionScanner::countItemsInFolder(const QString& path)
 
         if (albumID != -1)
         {
-            items = CoreDbAccess().db()->getNumberOfImagesAndAlbums(albumID);
+            items = CoreDbAccess().db()->getNumberOfAllItemsAndAlbums(albumID);
 
             if (items > 0)
             {

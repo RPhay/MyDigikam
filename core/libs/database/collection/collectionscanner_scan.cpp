@@ -468,14 +468,10 @@ void CollectionScanner::scanAlbumRoot(const CollectionLocation& location)
         {
             QDateTime modified = QFileInfo(location.albumRootPath() + it.key()).lastModified();
 
-            if (!s_modificationDateEquals(modified, it.value()))
-            {
-                scanAlbum(location, it.key(), false);
-            }
-            else
+            if (s_modificationDateEquals(modified, it.value()))
             {
                 int albumID = CoreDbAccess().db()->getAlbumForPath(location.id(), it.key(), false);
-                int counter = CoreDbAccess().db()->getItemNamesInAlbum(albumID).count();
+                int counter = CoreDbAccess().db()->getNumberOfItemsInAlbum(albumID);
 
                 d->scannedAlbums << albumID;
 
@@ -483,6 +479,10 @@ void CollectionScanner::scanAlbumRoot(const CollectionLocation& location)
                 {
                     emit scannedFiles(counter + 1);
                 }
+            }
+            else
+            {
+                scanAlbum(location, it.key(), false);
             }
         }
     }
