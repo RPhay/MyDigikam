@@ -42,7 +42,7 @@ BUGFIXES:
 030 ==> 440919 - SQlite - Mysql internal name-tag migrating error.
 031 ==> 399027 - Feature request: expand and collapse selected folders (albums).
 032 ==> 414148 - Database error on upgrade. digiKam now won't open.
-033 ==> 
+033 ==> 432529 - 7.1.0 - Crashing during Face Detection. 1 Million + Images.
 034 ==> 
 035 ==> 
 036 ==> 
