@@ -133,7 +133,7 @@ void MjpegFrameTask::run()
     QImage qtimg;
 
     VidSlideSettings::VidType type = (VidSlideSettings::VidType)m_set.outSize;
-    int imgFrames                  = m_set.delay * 10;           // 10 img/s
+    int imgFrames                  = m_set.delay * m_set.rate;
 
     TransitionMngr transmngr;
     transmngr.setOutputSize(VidSlideSettings::videoSizeFromType(type));
@@ -174,7 +174,7 @@ void MjpegFrameTask::run()
 
                 emit signalFrameChanged(imageToJPEGArray(qtimg));
 
-                QThread::msleep(100);                   // 100ms => 10 img/s
+                QThread::msleep((1 / m_set.rate) * 1000);
             }
             while ((ttmout != -1) && !m_cancel);
 
@@ -194,7 +194,7 @@ void MjpegFrameTask::run()
                 emit signalFrameChanged(imageToJPEGArray(qiimg));
 
                 count++;
-                QThread::msleep(100);                   // 100ms => 10 img/s
+                QThread::msleep((1 / m_set.rate) * 1000);
             }
             while ((count < imgFrames) && !m_cancel);
         }

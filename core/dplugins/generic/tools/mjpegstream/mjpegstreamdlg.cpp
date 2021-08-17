@@ -94,6 +94,7 @@ public:
         streamSettings  (nullptr),
         srvPort         (nullptr),
         delay           (nullptr),
+        rate            (nullptr),
         quality         (nullptr),
         streamLoop      (nullptr),
         typeVal         (nullptr),
@@ -123,6 +124,7 @@ public:
     QWidget*            streamSettings;
     DIntNumInput*       srvPort;
     DIntNumInput*       delay;
+    DIntNumInput*       rate;
     DIntNumInput*       quality;
     QCheckBox*          streamLoop;
     DComboBox*          typeVal;
@@ -258,6 +260,13 @@ MjpegStreamDlg::MjpegStreamDlg(QObject* const /*parent*/,
     d->delay->setWhatsThis(i18n("The delay, in seconds, between images."));
     delayLbl->setBuddy(d->delay);
 
+    QLabel* const rateLbl     = new QLabel(i18nc("@label", "Frames by second:"), d->streamSettings);
+    d->rate                   = new DIntNumInput(d->streamSettings);
+    d->rate->setDefaultValue(10);
+    d->rate->setRange(5, 24, 1);
+    d->rate->setWhatsThis(i18n("The number of frames by second to render the stream."));
+    rateLbl->setBuddy(d->rate);
+
     QLabel* const qualityLbl  = new QLabel(i18nc("@label", "JPEG Quality:"), d->streamSettings);
     d->quality                = new DIntNumInput(d->streamSettings);
     d->quality->setDefaultValue(75);
@@ -298,7 +307,9 @@ MjpegStreamDlg::MjpegStreamDlg(QObject* const /*parent*/,
     grid2->addWidget(d->typeVal,    1, 1, 1, 1);
     grid2->addWidget(delayLbl,      2, 0, 1, 1);
     grid2->addWidget(d->delay,      2, 1, 1, 1);
-    grid2->addWidget(d->streamLoop, 3, 0, 1, 2);
+    grid2->addWidget(rateLbl,       3, 0, 1, 1);
+    grid2->addWidget(d->rate,       3, 1, 1, 1);
+    grid2->addWidget(d->streamLoop, 4, 0, 1, 2);
 
     d->tabView->insertTab(Private::Stream, d->streamSettings, i18n("Stream"));
 
@@ -415,6 +426,9 @@ MjpegStreamDlg::MjpegStreamDlg(QObject* const /*parent*/,
     connect(d->delay, SIGNAL(valueChanged(int)),
             this, SLOT(slotSettingsChanged()));
 
+    connect(d->rate, SIGNAL(valueChanged(int)),
+            this, SLOT(slotSettingsChanged()));
+
     connect(d->quality, SIGNAL(valueChanged(int)),
             this, SLOT(slotSettingsChanged()));
 
@@ -481,6 +495,7 @@ void MjpegStreamDlg::readSettings()
 
     d->srvPort->blockSignals(true);
     d->delay->blockSignals(true);
+    d->rate->blockSignals(true);
     d->quality->blockSignals(true);
     d->streamLoop->blockSignals(true);
     d->typeVal->blockSignals(true);
@@ -489,6 +504,7 @@ void MjpegStreamDlg::readSettings()
 
     d->srvPort->setValue(d->settings.port);
     d->delay->setValue(d->settings.delay);
+    d->rate->setValue(d->settings.rate);
     d->quality->setValue(d->settings.quality);
     d->streamLoop->setChecked(d->settings.loop);
     d->typeVal->setCurrentIndex(d->settings.outSize);
@@ -497,6 +513,7 @@ void MjpegStreamDlg::readSettings()
 
     d->srvPort->blockSignals(false);
     d->delay->blockSignals(false);
+    d->rate->blockSignals(false);
     d->quality->blockSignals(false);
     d->streamLoop->blockSignals(false);
     d->typeVal->blockSignals(false);
@@ -523,6 +540,7 @@ void MjpegStreamDlg::slotSettingsChanged()
 {
     d->settings.port       = d->srvPort->value();
     d->settings.delay      = d->delay->value();
+    d->settings.rate       = d->rate->value();
     d->settings.quality    = d->quality->value();
     d->settings.loop       = d->streamLoop->isChecked();
     d->settings.outSize    = d->typeVal->currentIndex();

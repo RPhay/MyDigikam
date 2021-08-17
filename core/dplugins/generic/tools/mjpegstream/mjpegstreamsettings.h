@@ -70,6 +70,7 @@ public:
     int                         delay;              ///< Delay in seconds between inages.
     QList<QUrl>                 inputImages;        ///< Ordered list of images to stream.
     int                         outSize;            ///< Output JPEG size ID.
+    int                         rate;               ///< Number of frames by seconds.
     TransitionMngr::TransType   transition;         ///< Transition type between images.
     EffectMngr::EffectType      effect;             ///< Effect while displaying images.
 
