@@ -3262,7 +3262,7 @@ QMap<QString, QDateTime> CoreDB::getAlbumModificationMap(int albumRootId) const
 
 }
 
-int CoreDB::getNumberOfImagesAndAlbums(int albumID) const
+int CoreDB::getNumberOfAllItemsAndAlbums(int albumID) const
 {
     int number   = 0;
     QVariantList values;
@@ -3293,6 +3293,22 @@ int CoreDB::getNumberOfImagesAndAlbums(int albumID) const
     }
 
     return number;
+}
+
+int CoreDB::getNumberOfItemsInAlbum(int albumID) const
+{
+    QVariantList values;
+
+    d->db->execSql(QString::fromUtf8("SELECT COUNT(*) FROM Images "
+                                     "WHERE album=?;"),
+                   albumID, &values);
+
+    if (values.isEmpty())
+    {
+        return 0;
+    }
+
+    return values.first().toInt();
 }
 
 QMap<int, int> CoreDB::getNumberOfImagesInAlbums() const

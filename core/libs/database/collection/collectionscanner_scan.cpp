@@ -460,7 +460,7 @@ void CollectionScanner::scanAlbumRoot(const CollectionLocation& location)
 
     if (pathDateMap.isEmpty())
     {
-        scanAlbum(location, QLatin1String("/"), false);
+        scanAlbum(location, QLatin1String("/"));
     }
     else
     {
@@ -468,14 +468,10 @@ void CollectionScanner::scanAlbumRoot(const CollectionLocation& location)
         {
             QDateTime modified = QFileInfo(location.albumRootPath() + it.key()).lastModified();
 
-            if (!s_modificationDateEquals(modified, it.value()))
-            {
-                scanAlbum(location, it.key(), false);
-            }
-            else
+            if (s_modificationDateEquals(modified, it.value()))
             {
                 int albumID = CoreDbAccess().db()->getAlbumForPath(location.id(), it.key(), false);
-                int counter = CoreDbAccess().db()->getItemNamesInAlbum(albumID).count();
+                int counter = CoreDbAccess().db()->getNumberOfItemsInAlbum(albumID);
 
                 d->scannedAlbums << albumID;
 
@@ -483,6 +479,10 @@ void CollectionScanner::scanAlbumRoot(const CollectionLocation& location)
                 {
                     emit scannedFiles(counter + 1);
                 }
+            }
+            else
+            {
+                scanAlbum(location, it.key(), true);
             }
         }
     }
@@ -646,7 +646,7 @@ void CollectionScanner::scanForStaleAlbums(const QList<int>& locationIdsToScan)
     }
 }
 
-void CollectionScanner::scanAlbum(const CollectionLocation& location, const QString& album, bool ignoreDate)
+void CollectionScanner::scanAlbum(const CollectionLocation& location, const QString& album, bool checkDate)
 {
     // + Adds album if it does not yet exist in the db.
     // + Recursively scans subalbums of album.
@@ -670,7 +670,7 @@ void CollectionScanner::scanAlbum(const CollectionLocation& location, const QStr
     int albumID                          = checkAlbum(location, album);
     QDateTime albumDateTime              = QFileInfo(dir.path()).lastModified();
 
-    if (!ignoreDate &&
+    if (checkDate &&
         s_modificationDateEquals(albumDateTime, CoreDbAccess().db()->getAlbumModificationDate(albumID)))
     {
         // mark album as scanned
@@ -813,7 +813,7 @@ void CollectionScanner::scanAlbum(const CollectionLocation& location, const QStr
                 subAlbum += QLatin1Char('/');
             }
 
-            scanAlbum(location, subAlbum + info.fileName(), ignoreDate);
+            scanAlbum(location, subAlbum + info.fileName(), checkDate);
         }
     }
 

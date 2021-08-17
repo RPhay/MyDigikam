@@ -111,10 +111,10 @@
                     albumRoot INTEGER NOT NULL,
                     relativePath TEXT NOT NULL,
                     date DATE,
-                    modificationDate DATETIME,
                     caption TEXT,
                     collection TEXT,
                     icon INTEGER,
+                    modificationDate DATETIME,
                     UNIQUE(albumRoot, relativePath));
                 </statement>
                 <statement mode="plain">CREATE TABLE Images
@@ -699,11 +699,11 @@
 
             <!-- Note Albums with an icon set are setup after population of the Images table. -->
             <dbaction name="Migrate_Read_Albums"><statement mode="query">
-                SELECT id, albumRoot, relativePath, date, modificationDate, caption, collection FROM Albums
+                SELECT id, albumRoot, relativePath, date, caption, collection, modificationDate FROM Albums
                 WHERE  albumRoot IN (SELECT id FROM AlbumRoots);
             </statement></dbaction>
             <dbaction name="Migrate_Write_Albums"><statement mode="query">
-                INSERT OR IGNORE INTO Albums (id, albumRoot, relativePath, date, modificationDate, caption, collection, icon) VALUES (:id, :albumRoot, :relativePath, :date, :modificationDate, :caption, :collection, NULL);
+                INSERT OR IGNORE INTO Albums (id, albumRoot, relativePath, date, caption, collection, icon, modificationDate) VALUES (:id, :albumRoot, :relativePath, :date, :caption, :collection, NULL, :modificationDate);
             </statement></dbaction>
 
             <!-- Populate the Albums icon where set. -->
@@ -1000,7 +1000,7 @@
             </dbaction>
 
             <dbaction name="UpdateSchemaFromV13ToV14" mode="transaction">
-                <statement mode="plain">ALTER TABLE Albums ADD modificationDate DATETIME AFTER date;</statement>
+                <statement mode="plain">ALTER TABLE Albums ADD modificationDate DATETIME;</statement>
             </dbaction>
 
             <dbaction name="UpdateThumbnailsDBSchemaFromV1ToV2" mode="transaction">
@@ -1138,10 +1138,10 @@
                     albumRoot INTEGER NOT NULL,
                     relativePath LONGTEXT CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
                     date DATE,
-                    modificationDate DATETIME,
                     caption LONGTEXT CHARACTER SET utf8 COLLATE utf8_general_ci,
                     collection LONGTEXT CHARACTER SET utf8 COLLATE utf8_general_ci,
                     icon BIGINT,
+                    modificationDate DATETIME,
                     CONSTRAINT Albums_AlbumRoots FOREIGN KEY (albumRoot) REFERENCES AlbumRoots (id) ON DELETE CASCADE ON UPDATE CASCADE,
                     UNIQUE(albumRoot, relativePath(255)))
                     ENGINE InnoDB;
@@ -1872,11 +1872,11 @@
 
             <!-- Note Albums with an icon set are setup after population of the Images table. -->
             <dbaction name="Migrate_Read_Albums"><statement mode="query">
-                SELECT id, albumRoot, relativePath, date, modificationDate, caption, collection FROM Albums
+                SELECT id, albumRoot, relativePath, date, caption, collection, modificationDate FROM Albums
                 WHERE  albumRoot IN (SELECT id FROM AlbumRoots);
             </statement></dbaction>
             <dbaction name="Migrate_Write_Albums" mode="transaction"><statement mode="query">
-                INSERT IGNORE INTO Albums (id, albumRoot, relativePath, date, modificationDate, caption, collection, icon) VALUES (:id, :albumRoot, :relativePath, :date, :modificationDate, :caption, :collection, NULL);
+                INSERT IGNORE INTO Albums (id, albumRoot, relativePath, date, caption, collection, icon, modificationDate) VALUES (:id, :albumRoot, :relativePath, :date, :caption, :collection, NULL, :modificationDate);
             </statement></dbaction>
 
             <!-- Populate the Albums icon where set. -->
@@ -2665,7 +2665,7 @@
             </dbaction>
 
             <dbaction name="UpdateSchemaFromV13ToV14" mode="transaction">
-                <statement mode="plain">ALTER TABLE Albums ADD modificationDate DATETIME AFTER date;</statement>
+                <statement mode="plain">ALTER TABLE Albums ADD modificationDate DATETIME;</statement>
             </dbaction>
 
             <dbaction name="UpdateThumbnailsDBSchemaFromV1ToV2" mode="transaction">
