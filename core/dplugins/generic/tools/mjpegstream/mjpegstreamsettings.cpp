@@ -34,13 +34,14 @@ namespace DigikamGenericMjpegStreamPlugin
 {
 
 MjpegStreamSettings::MjpegStreamSettings()
-    : port    (8080),
-      loop    (true),
-      quality (75),
-      delay   (5),
-      outSize (VidSlideSettings::BLUERAY),
-      effect  (EffectMngr::None),
-      iface   (nullptr)
+    : port      (8080),
+      loop      (true),
+      quality   (75),
+      delay     (5),
+      outSize   (VidSlideSettings::BLUERAY),
+      transition(TransitionMngr::None),
+      effect    (EffectMngr::None),
+      iface     (nullptr)
 {
 }
 
@@ -50,11 +51,11 @@ MjpegStreamSettings::~MjpegStreamSettings()
 
 void MjpegStreamSettings::setCollectionMap(const MjpegServerMap& map)
 {
-    urlsList.clear();
+    inputImages.clear();
 
     for (MjpegServerMap::const_iterator it = map.constBegin() ; it != map.constEnd() ; ++it)
     {
-        urlsList.append(it.value());
+        inputImages.append(it.value());
     }
 }
 

@@ -94,7 +94,12 @@ private:
     /**
      * Helper monvert a QImage to a byte-aaray of JPEG data file.
      */
-    QByteArray imageToJPEGArray(const QImage& frame);
+    QByteArray imageToJPEGArray(const QImage& frame) const;
+
+    /**
+     * Load image from Preview cache from path with desired output size.
+     */
+    QImage loadImageFromPreviewCache(const QString& path) const;
 
     /**
      * Loop from separated thread to render periodicaly frames for MJPEG stream.

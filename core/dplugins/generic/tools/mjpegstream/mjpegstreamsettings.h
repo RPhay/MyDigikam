@@ -34,6 +34,7 @@
 #include "mjpegserver.h"
 #include "dinfointerface.h"
 #include "effectmngr.h"
+#include "transitionmngr.h"
 
 class KConfigGroup;
 
@@ -63,15 +64,16 @@ public:
 
 public:
 
-    int                    port;               ///< IP port to use with MJPEG Server.
-    bool                   loop;               ///< Image stream as loop.
-    int                    quality;            ///< Jpeg compression [1...100].
-    int                    delay;              ///< Delay in seconds between inages.
-    QList<QUrl>            urlsList;           ///< Ordered list of list to stream.
-    int                    outSize;            ///< Output JPEG size ID.
-    EffectMngr::EffectType effect;             ///< Effect while displaying images.
+    int                         port;               ///< IP port to use with MJPEG Server.
+    bool                        loop;               ///< Image stream as loop.
+    int                         quality;            ///< Jpeg compression [1...100].
+    int                         delay;              ///< Delay in seconds between inages.
+    QList<QUrl>                 inputImages;        ///< Ordered list of images to stream.
+    int                         outSize;            ///< Output JPEG size ID.
+    TransitionMngr::TransType   transition;         ///< Transition type between images.
+    EffectMngr::EffectType      effect;             ///< Effect while displaying images.
 
-    DInfoInterface*        iface;              ///< Plugin host interface to handle item properties.
+    DInfoInterface*             iface;              ///< Plugin host interface to handle item properties.
 };
 
 } // namespace DigikamGenericMjpegStreamPlugin

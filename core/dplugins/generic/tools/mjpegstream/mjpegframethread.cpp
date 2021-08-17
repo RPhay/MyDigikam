@@ -88,7 +88,7 @@ MjpegFrameTask::~MjpegFrameTask()
 {
 }
 
-QByteArray MjpegFrameTask::imageToJPEGArray(const QImage& frame)
+QByteArray MjpegFrameTask::imageToJPEGArray(const QImage& frame) const
 {
     QByteArray outbuf;
     QBuffer buffer(&outbuf);
@@ -98,68 +98,105 @@ QByteArray MjpegFrameTask::imageToJPEGArray(const QImage& frame)
     return outbuf;
 }
 
+QImage MjpegFrameTask::loadImageFromPreviewCache(const QString& path) const
+{
+    QImage qimg;
+    qCDebug(DIGIKAM_GENERAL_LOG) << "MjpegStream: Generate frame for" << path;
+
+    DImg dimg = PreviewLoadThread::loadHighQualitySynchronously(path);
+
+    if (dimg.isNull())
+    {
+        // Generate an error frame.
+
+        qimg = m_broken;
+        qCWarning(DIGIKAM_GENERAL_LOG) << "MjpegStream: Failed to load" << path;
+    }
+    else
+    {
+        // Generate real preview frame.
+
+        qimg = dimg.copyQImage();
+    }
+
+    // Resize output image to the wanted dimensions.
+
+    VidSlideSettings::VidType type = (VidSlideSettings::VidType)m_set.outSize;
+    qimg                           = FrameUtils::makeScaledImage(qimg, VidSlideSettings::videoSizeFromType(type));
+
+    return qimg;
+}
+
 void MjpegFrameTask::run()
 {
-    QImage img;
-    DImg dimg;
+    QImage qiimg;
+    QImage qtimg;
+
+    VidSlideSettings::VidType type = (VidSlideSettings::VidType)m_set.outSize;
+    int imgFrames                  = m_set.delay * 10;           // 10 img/s
+
+    TransitionMngr transmngr;
+    transmngr.setOutputSize(VidSlideSettings::videoSizeFromType(type));
+
+    EffectMngr effmngr;
+    effmngr.setOutputSize(VidSlideSettings::videoSizeFromType(type));
+    effmngr.setFrames(imgFrames);               // Ex: 30 frames at 10 img/s => 3 s of effect
 
     do
     {
-        foreach (const QUrl& url, m_set.urlsList)
+        for (int i = 0 ; ((i < m_set.inputImages.count() + 1) && !m_cancel) ; ++i)
         {
-            if (m_cancel)
+            if (i == 0)
             {
-                break;
+                qiimg = FrameUtils::makeFramedImage(QString(), VidSlideSettings::videoSizeFromType(type));
             }
 
-            qCDebug(DIGIKAM_GENERAL_LOG) << "MjpegStream: Generate frame for" << url.toLocalFile();
+            QString ofile;
 
-            dimg = PreviewLoadThread::loadHighQualitySynchronously(url.toLocalFile());
-
-            if (dimg.isNull())
+            if (i < m_set.inputImages.count())
             {
-                // Generate an error frame.
-
-                img = m_broken;
-                qCWarning(DIGIKAM_GENERAL_LOG) << "MjpegStream: Failed to load" << url.toLocalFile();
-            }
-            else
-            {
-                // Generate real preview frame.
-
-                img = dimg.copyQImage();
+                ofile = m_set.inputImages[i].toLocalFile();
             }
 
-            // Resize output image to the wanted dimensions.
+            QImage qoimg = loadImageFromPreviewCache(ofile);
 
-            VidSlideSettings::VidType type = (VidSlideSettings::VidType)m_set.outSize;
-            img                            = FrameUtils::makeScaledImage(img, VidSlideSettings::videoSizeFromType(type));
+            // Apply transition between images
+
+            transmngr.setInImage(qiimg);
+            transmngr.setOutImage(qoimg);
+            transmngr.setTransition(m_set.transition);
+
+            int ttmout = 0;
+
+            do
+            {
+                qtimg = transmngr.currentFrame(ttmout);
+
+                emit signalFrameChanged(imageToJPEGArray(qtimg));
+
+                QThread::msleep(100);                   // 100ms => 10 img/s
+            }
+            while ((ttmout != -1) && !m_cancel);
 
             // TODO: apply OSD over frame.
 
             // Apply effect on frame
 
-            int imgFrames = m_set.delay * 10;           // 10 img/s
-            EffectMngr effmngr;
-            effmngr.setOutputSize(VidSlideSettings::videoSizeFromType(type));
-            effmngr.setFrames(imgFrames);               // Ex: 30 frames at 10 img/s => 3 s of effect
-
             int count  = 0;
             int itmout = 0;
-            QImage qiimg;
-            effmngr.setImage(img);
+            effmngr.setImage(qoimg);
             effmngr.setEffect(m_set.effect);
 
             do
             {
                 qiimg = effmngr.currentFrame(itmout);
+
                 emit signalFrameChanged(imageToJPEGArray(qiimg));
+
                 count++;
-                QThread::msleep(100);
+                QThread::msleep(100);                   // 100ms => 10 img/s
             }
             while ((count < imgFrames) && !m_cancel);
-
-//            QThread::sleep(m_set.delay);
         }
     }
     while (!m_cancel && m_set.loop);
