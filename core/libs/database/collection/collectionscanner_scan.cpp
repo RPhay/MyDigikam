@@ -460,7 +460,7 @@ void CollectionScanner::scanAlbumRoot(const CollectionLocation& location)
 
     if (pathDateMap.isEmpty())
     {
-        scanAlbum(location, QLatin1String("/"), false);
+        scanAlbum(location, QLatin1String("/"));
     }
     else
     {
@@ -482,7 +482,7 @@ void CollectionScanner::scanAlbumRoot(const CollectionLocation& location)
             }
             else
             {
-                scanAlbum(location, it.key(), false);
+                scanAlbum(location, it.key(), true);
             }
         }
     }
@@ -646,7 +646,7 @@ void CollectionScanner::scanForStaleAlbums(const QList<int>& locationIdsToScan)
     }
 }
 
-void CollectionScanner::scanAlbum(const CollectionLocation& location, const QString& album, bool ignoreDate)
+void CollectionScanner::scanAlbum(const CollectionLocation& location, const QString& album, bool checkDate)
 {
     // + Adds album if it does not yet exist in the db.
     // + Recursively scans subalbums of album.
@@ -670,7 +670,7 @@ void CollectionScanner::scanAlbum(const CollectionLocation& location, const QStr
     int albumID                          = checkAlbum(location, album);
     QDateTime albumDateTime              = QFileInfo(dir.path()).lastModified();
 
-    if (!ignoreDate &&
+    if (checkDate &&
         s_modificationDateEquals(albumDateTime, CoreDbAccess().db()->getAlbumModificationDate(albumID)))
     {
         // mark album as scanned
@@ -813,7 +813,7 @@ void CollectionScanner::scanAlbum(const CollectionLocation& location, const QStr
                 subAlbum += QLatin1Char('/');
             }
 
-            scanAlbum(location, subAlbum + info.fileName(), ignoreDate);
+            scanAlbum(location, subAlbum + info.fileName(), checkDate);
         }
     }
 
