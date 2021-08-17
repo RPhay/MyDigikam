@@ -53,6 +53,7 @@
 #include "workingwidget.h"
 #include "mjpegservermngr.h"
 #include "vidslidesettings.h"
+#include "transitionpreview.h"
 #include "effectpreview.h"
 #include "dcombobox.h"
 
@@ -68,7 +69,8 @@ public:
     {
         Server = 0,
         Stream,
-        Effects
+        Transition,
+        Effect
     };
 
 public:
@@ -97,6 +99,8 @@ public:
         typeVal         (nullptr),
         effVal          (nullptr),
         effPreview      (nullptr),
+        transVal        (nullptr),
+        transPreview    (nullptr),
         tabView         (nullptr)
     {
     }
@@ -124,6 +128,8 @@ public:
     DComboBox*          typeVal;
     DComboBox*          effVal;
     EffectPreview*      effPreview;
+    DComboBox*          transVal;
+    TransitionPreview*  transPreview;
     QTabWidget*         tabView;
     MjpegStreamSettings settings;
 };
@@ -299,13 +305,54 @@ MjpegStreamDlg::MjpegStreamDlg(QObject* const /*parent*/,
 
     // ---
 
-    DVBox* const effectSettings = new DVBox(d->tabView);
-    effectSettings->setSpacing(spacing);
-    QGroupBox* const effGrp     = new QGroupBox(i18n("Effect While Displaying Images"), effectSettings);
-    QLabel* const effLabel      = new QLabel(effGrp);
+    QWidget* const transitionSettings = new QWidget(d->tabView);
+
+    QLabel* const transLabel          = new QLabel(transitionSettings);
+    transLabel->setWordWrap(false);
+    transLabel->setText(i18n("Type:"));
+    d->transVal                       = new DComboBox(transitionSettings);
+    d->transVal->combo()->setEditable(false);
+
+    QMap<TransitionMngr::TransType, QString> map4                = TransitionMngr::transitionNames();
+    QMap<TransitionMngr::TransType, QString>::const_iterator it4 = map4.constBegin();
+
+    while (it4 != map4.constEnd())
+    {
+        d->transVal->addItem(it4.value(), (int)it4.key());
+        ++it4;
+    }
+
+    d->transVal->setDefaultIndex(TransitionMngr::None);
+    transLabel->setBuddy(d->transVal);
+
+    QLabel* const transNote  = new QLabel(transitionSettings);
+    transNote->setWordWrap(true);
+    transNote->setText(i18n("<i>A transition is an visual effect applied between two images. "
+                            "For some effects, the duration can depend of random values and "
+                            "can change while the stream.</i>"));
+
+    d->transPreview              = new TransitionPreview(transitionSettings);
+    d->transPreview->setImagesList(QList<QUrl>());
+
+    QGridLayout* const transGrid = new QGridLayout(transitionSettings);
+    transGrid->setSpacing(spacing);
+    transGrid->addWidget(transLabel,      0, 0, 1, 1);
+    transGrid->addWidget(d->transVal,     0, 1, 1, 1);
+    transGrid->addWidget(transNote,       1, 0, 1, 2);
+    transGrid->addWidget(d->transPreview, 0, 2, 2, 1);
+    transGrid->setColumnStretch(1, 10);
+    transGrid->setRowStretch(1, 10);
+
+    d->tabView->insertTab(Private::Transition, transitionSettings, i18n("Transition"));
+
+    // ---
+
+    QWidget* const effectSettings = new QWidget(d->tabView);
+
+    QLabel* const effLabel        = new QLabel(effectSettings);
     effLabel->setWordWrap(false);
     effLabel->setText(i18n("Type:"));
-    d->effVal                   = new DComboBox(effGrp);
+    d->effVal                     = new DComboBox(effectSettings);
     d->effVal->combo()->setEditable(false);
 
     QMap<EffectMngr::EffectType, QString> map6                = EffectMngr::effectNames();
@@ -320,16 +367,16 @@ MjpegStreamDlg::MjpegStreamDlg(QObject* const /*parent*/,
     d->effVal->setDefaultIndex(EffectMngr::None);
     effLabel->setBuddy(d->effVal);
 
-    QLabel* const effNote      = new QLabel(effGrp);
+    QLabel* const effNote      = new QLabel(effectSettings);
     effNote->setWordWrap(true);
     effNote->setText(i18n("<i>An effect is an visual panning or zooming applied while an image "
                           "is displayed in MJPEG stream.</i>"));
 
-    d->effPreview              = new EffectPreview(effGrp);
+    d->effPreview              = new EffectPreview(effectSettings);
     d->effPreview->setImagesList(QList<QUrl>());
 
-    QGridLayout* const effGrid = new QGridLayout(effGrp);
-    effGrid->setSpacing(QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing));
+    QGridLayout* const effGrid = new QGridLayout(effectSettings);
+    effGrid->setSpacing(spacing);
     effGrid->addWidget(effLabel,      0, 0, 1, 1);
     effGrid->addWidget(d->effVal,     0, 1, 1, 1);
     effGrid->addWidget(effNote,       1, 0, 1, 2);
@@ -338,7 +385,7 @@ MjpegStreamDlg::MjpegStreamDlg(QObject* const /*parent*/,
     effGrid->setRowStretch(1, 10);
     effGrid->setSpacing(spacing);
 
-    d->tabView->insertTab(Private::Effects, effectSettings, i18n("Effects"));
+    d->tabView->insertTab(Private::Effect, effectSettings, i18n("Effect"));
 
     // --------------------------------------------------------
 
@@ -376,6 +423,9 @@ MjpegStreamDlg::MjpegStreamDlg(QObject* const /*parent*/,
             this, SLOT(slotSettingsChanged()));
 
     connect(d->effVal, SIGNAL(currentIndexChanged(int)),
+            this, SLOT(slotSettingsChanged()));
+
+    connect(d->transVal, SIGNAL(currentIndexChanged(int)),
             this, SLOT(slotSettingsChanged()));
 
     // -------------------
@@ -433,6 +483,7 @@ void MjpegStreamDlg::readSettings()
     d->streamLoop->blockSignals(true);
     d->typeVal->blockSignals(true);
     d->effVal->blockSignals(true);
+    d->transVal->blockSignals(true);
 
     d->srvPort->setValue(d->settings.port);
     d->delay->setValue(d->settings.delay);
@@ -440,6 +491,7 @@ void MjpegStreamDlg::readSettings()
     d->streamLoop->setChecked(d->settings.loop);
     d->typeVal->setCurrentIndex(d->settings.outSize);
     d->effVal->setCurrentIndex(d->settings.effect);
+    d->transVal->setCurrentIndex(d->settings.transition);
 
     d->srvPort->blockSignals(false);
     d->delay->blockSignals(false);
@@ -447,6 +499,7 @@ void MjpegStreamDlg::readSettings()
     d->streamLoop->blockSignals(false);
     d->typeVal->blockSignals(false);
     d->effVal->blockSignals(false);
+    d->transVal->blockSignals(false);
 
     slotSettingsChanged();
 
@@ -466,14 +519,17 @@ void MjpegStreamDlg::saveSettings()
 
 void MjpegStreamDlg::slotSettingsChanged()
 {
-    d->settings.port    = d->srvPort->value();
-    d->settings.delay   = d->delay->value();
-    d->settings.quality = d->quality->value();
-    d->settings.loop    = d->streamLoop->isChecked();
-    d->settings.outSize = d->typeVal->currentIndex();
-    d->settings.effect  = (EffectMngr::EffectType)d->effVal->currentIndex();
+    d->settings.port       = d->srvPort->value();
+    d->settings.delay      = d->delay->value();
+    d->settings.quality    = d->quality->value();
+    d->settings.loop       = d->streamLoop->isChecked();
+    d->settings.outSize    = d->typeVal->currentIndex();
+    d->settings.effect     = (EffectMngr::EffectType)d->effVal->currentIndex();
+    d->settings.transition = (TransitionMngr::TransType)d->transVal->currentIndex();
     d->effPreview->stopPreview();
     d->effPreview->startPreview((EffectMngr::EffectType)d->effVal->currentIndex());
+    d->transPreview->stopPreview();
+    d->transPreview->startPreview((TransitionMngr::TransType)d->transVal->currentIndex());
 }
 
 void MjpegStreamDlg::updateServerStatus()
@@ -593,8 +649,9 @@ void MjpegStreamDlg::slotToggleMjpegServer()
         updateServerStatus();
     }
 
-    d->tabView->setTabEnabled(Private::Stream, !b);
-    d->tabView->setTabEnabled(Private::Effects, !b);
+    d->tabView->setTabEnabled(Private::Stream,     !b);
+    d->tabView->setTabEnabled(Private::Effect,     !b);
+    d->tabView->setTabEnabled(Private::Transition, !b);
     d->srvPort->setDisabled(b);
 }
 

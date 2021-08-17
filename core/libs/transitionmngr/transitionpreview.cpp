@@ -28,6 +28,7 @@
 #include <QTimer>
 #include <QImage>
 #include <QPixmap>
+#include <QStandardPaths>
 
 // Local includes
 
@@ -97,6 +98,16 @@ void TransitionPreview::setImagesList(const QList<QUrl>& images)
             blank.fill(Qt::black);
             d->mngr->setOutImage(blank);
         }
+    }
+    else
+    {
+        QImage sample = QImage(QStandardPaths::locate(QStandardPaths::GenericDataLocation,
+                                                      QLatin1String("digikam/data/sample-aix.png")));
+        d->mngr->setInImage(sample.scaled(QSize(1024, 768), Qt::KeepAspectRatio));
+
+        QImage blank(d->previewSize, QImage::Format_ARGB32);
+        blank.fill(Qt::black);
+        d->mngr->setOutImage(blank);
     }
 }
 
