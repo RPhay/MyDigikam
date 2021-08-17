@@ -299,7 +299,6 @@ MjpegStreamDlg::MjpegStreamDlg(QObject* const /*parent*/,
     grid2->addWidget(delayLbl,      2, 0, 1, 1);
     grid2->addWidget(d->delay,      2, 1, 1, 1);
     grid2->addWidget(d->streamLoop, 3, 0, 1, 2);
-    grid2->setSpacing(spacing);
 
     d->tabView->insertTab(Private::Stream, d->streamSettings, i18n("Stream"));
 
@@ -389,12 +388,15 @@ MjpegStreamDlg::MjpegStreamDlg(QObject* const /*parent*/,
 
     // --------------------------------------------------------
 
-    QGridLayout* const grid = new QGridLayout(d->page);
-    grid->addWidget(itemsSel,   0, 0, 1, 1);
-    grid->addWidget(d->tabView, 1, 0, 1, 1);
-    grid->setColumnStretch(0, 10);
-    grid->setRowStretch(0, 10);
-    grid->setSpacing(spacing);
+    QVBoxLayout* const vlay   = new QVBoxLayout(d->page);
+    vlay->addWidget(itemsSel);
+    vlay->addWidget(d->tabView);
+    vlay->setStretchFactor(itemsSel, 10);
+    vlay->setStretchFactor(d->tabView, 1);
+    vlay->setSpacing(spacing);
+
+    d->tabView->setSizePolicy(QSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum));
+
 
     // --------------------------------------------------------
 
