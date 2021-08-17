@@ -40,7 +40,7 @@ BUGFIXES:
 028 ==> 440872 - digiKam dies at 'Checking the ICC repository...'
 029 ==> 440968 - digiKam can't find albums at start due to database problems.
 030 ==> 440919 - SQlite - Mysql internal name-tag migrating error.
-031 ==> 
+031 ==> 399027 - Feature request: expand and collapse selected folders (albums).
 032 ==> 
 033 ==> 
 034 ==> 
