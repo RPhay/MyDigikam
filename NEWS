@@ -39,7 +39,7 @@ BUGFIXES:
 027 ==> 410787 - Can't export to Google photo.
 028 ==> 440872 - digiKam dies at 'Checking the ICC repository...'
 029 ==> 440968 - digiKam can't find albums at start due to database problems.
-030 ==> 
+030 ==> 440919 - SQlite - Mysql internal name-tag migrating error.
 031 ==> 
 032 ==> 
 033 ==> 

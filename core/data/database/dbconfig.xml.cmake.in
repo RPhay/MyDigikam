@@ -711,7 +711,7 @@
                 SELECT id, icon FROM Albums WHERE icon IS NOT NULL AND icon != 0;
             </statement></dbaction>
             <dbaction name="Migrate_Write_AlbumsExtra"><statement mode="query">
-                UPDATE OR IGNORE Albums set icon = :icon WHERE id = :id;
+                UPDATE OR IGNORE Albums SET icon = :icon WHERE id = :id;
             </statement></dbaction>
 
             <dbaction name="Migrate_Read_Images"><statement mode="query">
@@ -786,10 +786,18 @@
             </statement></dbaction>
 
             <dbaction name="Migrate_Read_Tags"><statement mode="query">
-                SELECT id, pid, name, CASE WHEN icon = 0 THEN NULL ELSE icon END AS icon, iconkde FROM Tags WHERE id != 0;
+                SELECT id, pid, name, iconkde FROM Tags WHERE id != 0;
             </statement></dbaction>
             <dbaction name="Migrate_Write_Tags"><statement mode="query">
-                INSERT OR REPLACE INTO Tags (id, pid, name, icon, iconkde) VALUES (:id, :pid, :name, :icon, :iconkde);
+                INSERT OR REPLACE INTO Tags (id, pid, name, icon, iconkde) VALUES (:id, :pid, :name, NULL, :iconkde);
+            </statement></dbaction>
+
+            <!-- Populate the Tags icon where set. -->
+            <dbaction name="Migrate_Read_TagsExtra"><statement mode="query">
+                SELECT id, icon FROM Tags WHERE icon IS NOT NULL AND icon != 0;
+            </statement></dbaction>
+            <dbaction name="Migrate_Write_TagsExtra"><statement mode="query">
+                UPDATE OR IGNORE Tags SET icon = :icon WHERE id = :id;
             </statement></dbaction>
 
             <dbaction name="Migrate_Read_TagsTree"></dbaction>
@@ -1884,7 +1892,7 @@
                 SELECT id, icon FROM Albums WHERE icon IS NOT NULL AND icon != 0;
             </statement></dbaction>
             <dbaction name="Migrate_Write_AlbumsExtra" mode="transaction"><statement mode="query">
-                UPDATE IGNORE Albums set icon = :icon WHERE id = :id;
+                UPDATE IGNORE Albums SET icon = :icon WHERE id = :id;
             </statement></dbaction>
 
             <dbaction name="Migrate_Read_Images"><statement mode="query">
@@ -1959,15 +1967,23 @@
             </statement></dbaction>
 
             <dbaction name="Migrate_Read_Tags"><statement mode="query">
-                SELECT id, pid, name, CASE WHEN icon = 0 THEN NULL ELSE icon END AS icon, iconkde FROM Tags WHERE id != 0;
+                SELECT id, pid, name, iconkde FROM Tags WHERE id != 0;
             </statement></dbaction>
             <dbaction name="Migrate_Write_Tags" mode="transaction">
                 <statement mode="plain">SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO';</statement>
                 <statement mode="query">
-                    REPLACE INTO Tags (id, pid, name, icon, iconkde) VALUES (:id, :pid, :name, :icon, :iconkde);
+                    REPLACE INTO Tags (id, pid, name, icon, iconkde) VALUES (:id, :pid, :name, NULL, :iconkde);
                 </statement>
                 <statement mode="plain">SET SQL_MODE=@OLD_SQL_MODE;</statement>
             </dbaction>
+
+            <!-- Populate the Tags icon where set. -->
+            <dbaction name="Migrate_Read_TagsExtra"><statement mode="query">
+                SELECT id, icon FROM Tags WHERE icon IS NOT NULL AND icon != 0;
+            </statement></dbaction>
+            <dbaction name="Migrate_Write_TagsExtra"><statement mode="query">
+                UPDATE IGNORE Tags SET icon = :icon WHERE id = :id;
+            </statement></dbaction>
 
             <dbaction name="Migrate_Read_TagsTree"></dbaction>
             <dbaction name="Migrate_Write_TagsTree"></dbaction>

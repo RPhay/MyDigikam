@@ -99,6 +99,8 @@ void CoreDbCopyManager::copyDatabases(const DbEngineParameters& fromDBParameters
         << QLatin1String("ImageComments")
         << QLatin1String("ImageCopyright")
         << QLatin1String("Tags")
+        // Virtual table used to allow population of Tags.icon after Images migration
+        << QLatin1String("TagsExtra")
         << QLatin1String("TagsTree")
         << QLatin1String("TagProperties")
         << QLatin1String("ImageTagProperties")
