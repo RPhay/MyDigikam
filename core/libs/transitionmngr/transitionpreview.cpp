@@ -103,7 +103,7 @@ void TransitionPreview::setImagesList(const QList<QUrl>& images)
     {
         QImage sample = QImage(QStandardPaths::locate(QStandardPaths::GenericDataLocation,
                                                       QLatin1String("digikam/data/sample-aix.png")));
-        d->mngr->setInImage(sample.scaled(QSize(1024, 768), Qt::KeepAspectRatio));
+        d->mngr->setInImage(sample);
 
         QImage blank(d->previewSize, QImage::Format_ARGB32);
         blank.fill(Qt::black);
