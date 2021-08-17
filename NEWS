@@ -41,7 +41,7 @@ BUGFIXES:
 029 ==> 440968 - digiKam can't find albums at start due to database problems.
 030 ==> 440919 - SQlite - Mysql internal name-tag migrating error.
 031 ==> 399027 - Feature request: expand and collapse selected folders (albums).
-032 ==> 
+032 ==> 414148 - Database error on upgrade. digiKam now won't open.
 033 ==> 
 034 ==> 
 035 ==> 
