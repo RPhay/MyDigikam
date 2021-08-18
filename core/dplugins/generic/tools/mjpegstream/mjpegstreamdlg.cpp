@@ -540,9 +540,9 @@ void MjpegStreamDlg::slotSettingsChanged()
     d->settings.effect     = (EffectMngr::EffectType)d->effVal->currentIndex();
     d->settings.transition = (TransitionMngr::TransType)d->transVal->currentIndex();
     d->effPreview->stopPreview();
-    d->effPreview->startPreview((EffectMngr::EffectType)d->effVal->currentIndex());
+    d->effPreview->startPreview(d->settings.effect);
     d->transPreview->stopPreview();
-    d->transPreview->startPreview((TransitionMngr::TransType)d->transVal->currentIndex());
+    d->transPreview->startPreview(d->settings.transition);
 }
 
 void MjpegStreamDlg::updateServerStatus()

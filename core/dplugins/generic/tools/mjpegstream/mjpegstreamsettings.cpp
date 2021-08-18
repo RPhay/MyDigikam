@@ -62,24 +62,26 @@ void MjpegStreamSettings::setCollectionMap(const MjpegServerMap& map)
 
 void MjpegStreamSettings::readSettings(KConfigGroup& group)
 {
-    port    = group.readEntry("MJPEGStreamPort",                           8080);
-    loop    = group.readEntry("MJPEGStreamLoop",                           true);
-    quality = group.readEntry("MJPEGStreamQuality",                        75);
-    delay   = group.readEntry("MJPEGStreamDelay",                          5);
-    rate    = group.readEntry("MJPEGStreamRate",                           10);
-    outSize = group.readEntry("MJPEGStreamOutSize",                        (int)VidSlideSettings::BLUERAY);
-    effect  = (EffectMngr::EffectType)group.readEntry("MJPEGStreamEffect", (int)EffectMngr::None);
+    port       = group.readEntry("MJPEGStreamPort",                                  8080);
+    loop       = group.readEntry("MJPEGStreamLoop",                                  true);
+    quality    = group.readEntry("MJPEGStreamQuality",                               75);
+    delay      = group.readEntry("MJPEGStreamDelay",                                 5);
+    rate       = group.readEntry("MJPEGStreamRate",                                  10);
+    outSize    = group.readEntry("MJPEGStreamOutSize",                               (int)VidSlideSettings::BLUERAY);
+    effect     = (EffectMngr::EffectType)group.readEntry("MJPEGStreamEffect",        (int)EffectMngr::None);
+    transition = (TransitionMngr::TransType)group.readEntry("MJPEGStreamTransition", (int)TransitionMngr::None);
 }
 
 void MjpegStreamSettings::writeSettings(KConfigGroup& group)
 {
-    group.writeEntry("MJPEGStreamPort",    port);
-    group.writeEntry("MJPEGStreamLoop",    loop);
-    group.writeEntry("MJPEGStreamQuality", quality);
-    group.writeEntry("MJPEGStreamRate",   rate);
-    group.writeEntry("MJPEGStreamDelay",   delay);
-    group.writeEntry("MJPEGStreamOutSize", outSize);
-    group.writeEntry("MJPEGStreamEffect",  (int)effect);
+    group.writeEntry("MJPEGStreamPort",       port);
+    group.writeEntry("MJPEGStreamLoop",       loop);
+    group.writeEntry("MJPEGStreamQuality",    quality);
+    group.writeEntry("MJPEGStreamRate",       rate);
+    group.writeEntry("MJPEGStreamDelay",      delay);
+    group.writeEntry("MJPEGStreamOutSize",    outSize);
+    group.writeEntry("MJPEGStreamEffect",     (int)effect);
+    group.writeEntry("MJPEGStreamTransition", (int)transition);
 }
 
 } // namespace DigikamGenericMjpegStreamPlugin
