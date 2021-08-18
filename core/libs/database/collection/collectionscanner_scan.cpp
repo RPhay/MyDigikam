@@ -644,10 +644,7 @@ void CollectionScanner::scanForStaleAlbums(const QList<int>& locationIdsToScan)
 
 #ifdef Q_OS_WIN
 
-                    if (dirExist                                               &&
-                        !(*it3).relativePath.endsWith(QLatin1Char('/'))        &&
-                        !s_modificationDateEquals(fileInfo.lastModified(),
-                                                  CoreDbAccess().db()->getAlbumModificationDate((*it3).id)))
+                    if (dirExist && !it.key().relativePath.endsWith(QLatin1Char('/')))
                     {
                         QDir dir(fileInfo.dir());
                         dirExist = dir.entryList(QDir::Dirs |
