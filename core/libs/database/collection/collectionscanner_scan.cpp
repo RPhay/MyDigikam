@@ -734,7 +734,10 @@ void CollectionScanner::scanAlbum(const CollectionLocation& location, const QStr
                                             QDir::NoDotAndDotDot,
                                             QDir::Name | QDir::DirsLast);
 
-    CoreDbAccess().db()->setAlbumModificationDate(albumID, albumDateTime);
+    if (!d->deferredFileScanning)
+    {
+        CoreDbAccess().db()->setAlbumModificationDate(albumID, albumDateTime);
+    }
 
     int counter          = 0;
     bool updateAlbumDate = false;
