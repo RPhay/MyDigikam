@@ -466,7 +466,17 @@ void CollectionScanner::scanAlbumRoot(const CollectionLocation& location)
     {
         for (it = pathDateMap.constBegin() ; it != pathDateMap.constEnd() ; ++it)
         {
-            QDateTime modified = QFileInfo(location.albumRootPath() + it.key()).lastModified();
+            QDateTime modified;
+            QString   folder(location.albumRootPath() + it.key());
+
+            if (d->albumDateCache.contains(folder))
+            {
+                modified = d->albumDateCache.value(folder);
+            }
+            else
+            {
+                modified = QFileInfo(folder).lastModified();
+            }
 
             if (s_modificationDateEquals(modified, it.value()))
             {
@@ -514,11 +524,25 @@ void CollectionScanner::scanForStaleAlbums(const QList<int>& locationIdsToScan)
 
     QList<AlbumShortInfo> albumList = CoreDbAccess().db()->getAlbumShortInfos();
     QList<int> toBeDeleted;
+    int counter = 0;
+
+    if (d->wantSignals && d->needTotalFiles)
+    {
+        emit totalFilesToScan(albumList.count());
+    }
 
     QList<AlbumShortInfo>::const_iterator it3;
 
     for (it3 = albumList.constBegin() ; it3 != albumList.constEnd() ; ++it3)
     {
+        ++counter;
+
+        if (d->wantSignals && counter && (counter % 2 == 0))
+        {
+            emit scannedFiles(counter);
+            counter = 0;
+        }
+
         if (!locationIdsToScan.contains((*it3).albumRootId) || toBeDeleted.contains((*it3).id))
         {
             continue;
@@ -535,7 +559,10 @@ void CollectionScanner::scanForStaleAlbums(const QList<int>& locationIdsToScan)
 
 #ifdef Q_OS_WIN
 
-            if (dirExist && !(*it3).relativePath.endsWith(QLatin1Char('/')))
+            if (dirExist                                               &&
+                !(*it3).relativePath.endsWith(QLatin1Char('/'))        &&
+                !s_modificationDateEquals(fileInfo.lastModified(),
+                                          CoreDbAccess().db()->getAlbumModificationDate((*it3).id)))
             {
                 QDir dir(fileInfo.dir());
                 dirExist = dir.entryList(QDir::Dirs |
@@ -556,6 +583,10 @@ void CollectionScanner::scanForStaleAlbums(const QList<int>& locationIdsToScan)
                                                                                         (*it3).relativePath);
                 toBeDeleted      << subAlbums;
                 d->scannedAlbums << subAlbums;
+            }
+            else
+            {
+                d->albumDateCache.insert(fileInfo.filePath(), fileInfo.lastModified());
             }
         }
     }
@@ -613,7 +644,10 @@ void CollectionScanner::scanForStaleAlbums(const QList<int>& locationIdsToScan)
 
 #ifdef Q_OS_WIN
 
-                    if (dirExist && !it.key().relativePath.endsWith(QLatin1Char('/')))
+                    if (dirExist                                               &&
+                        !(*it3).relativePath.endsWith(QLatin1Char('/'))        &&
+                        !s_modificationDateEquals(fileInfo.lastModified(),
+                                                  CoreDbAccess().db()->getAlbumModificationDate((*it3).id)))
                     {
                         QDir dir(fileInfo.dir());
                         dirExist = dir.entryList(QDir::Dirs |

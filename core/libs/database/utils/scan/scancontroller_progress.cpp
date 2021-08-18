@@ -35,7 +35,7 @@ void ScanController::slotTotalFilesToScan(int count)
         d->progressDialog->incrementMaximum(count);
     }
 
-    d->totalFilesToScan = count;
+    d->totalFilesToScan += count;
     emit totalFilesToScan(d->totalFilesToScan);
 }
 
