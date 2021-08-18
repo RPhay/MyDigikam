@@ -189,7 +189,7 @@ MjpegStreamDlg::MjpegStreamDlg(QObject* const /*parent*/,
     d->srvPort                    = new DIntNumInput(serverSettings);
     d->srvPort->setDefaultValue(8080);
     d->srvPort->setRange(1025, 65535, 1);
-    d->srvPort->setWhatsThis(i18n("The MJPEG server IP port."));
+    d->srvPort->setWhatsThis(i18nc("@info", "The MJPEG server IP port."));
     portLbl->setBuddy(d->srvPort);
 
     d->startOnStartup             = new QCheckBox(i18nc("@option", "Start Server at Startup"));
@@ -232,7 +232,7 @@ MjpegStreamDlg::MjpegStreamDlg(QObject* const /*parent*/,
     grid3->addWidget(explanation,       2, 0, 1, 6);
     grid3->setSpacing(spacing);
 
-    d->tabView->insertTab(Private::Server, serverSettings, i18n("Server"));
+    d->tabView->insertTab(Private::Server, serverSettings, i18nc("@title", "Server"));
 
     // ---
 
@@ -242,7 +242,9 @@ MjpegStreamDlg::MjpegStreamDlg(QObject* const /*parent*/,
     d->quality                = new DIntNumInput(d->streamSettings);
     d->quality->setDefaultValue(75);
     d->quality->setRange(50, 100, 1);
-    d->quality->setWhatsThis(i18n("The JPEG quality [50:lower - 100:higher]."));
+    d->quality->setWhatsThis(i18nc("@info", "The JPEG quality [50:lower - 100:higher]."
+                                            "Warning: better quality require more network bandwith"));
+
     qualityLbl->setBuddy(d->quality);
 
     // ---
@@ -263,6 +265,8 @@ MjpegStreamDlg::MjpegStreamDlg(QObject* const /*parent*/,
     }
 
     d->typeVal->setDefaultIndex(VidSlideSettings::BLUERAY);
+    d->typeVal->setWhatsThis(i18nc("@info", "The JPEG image size in pixels, using standard screen resolutions."
+                                            "Warning: larger size require more network bandwith"));
     typeLabel->setBuddy(d->typeVal);
 
     // ---
@@ -271,19 +275,20 @@ MjpegStreamDlg::MjpegStreamDlg(QObject* const /*parent*/,
     d->delay                  = new DIntNumInput(d->streamSettings);
     d->delay->setDefaultValue(5);
     d->delay->setRange(1, 3600, 1);
-    d->delay->setWhatsThis(i18n("The delay in seconds between images."));
+    d->delay->setWhatsThis(i18nc("@info", "The delay in seconds between images."));
     delayLbl->setBuddy(d->delay);
 
     QLabel* const rateLbl     = new QLabel(i18nc("@label", "Frames by Second:"), d->streamSettings);
     d->rate                   = new DIntNumInput(d->streamSettings);
     d->rate->setDefaultValue(10);
     d->rate->setRange(5, 24, 1);
-    d->rate->setWhatsThis(i18n("The number of frames by second to render the stream."));
+    d->rate->setWhatsThis(i18nc("@info", "The number of frames by second to render the stream."
+                                         "Warning: larger rate require more network bandwith"));
     rateLbl->setBuddy(d->rate);
 
     d->streamLoop             = new QCheckBox(i18nc("@option:check", "Stream in Loop"), d->streamSettings);
     d->streamLoop->setChecked(true);
-    d->streamLoop->setWhatsThis(i18n("The MJPEG stream will be played in loop instead once."));
+    d->streamLoop->setWhatsThis(i18nc("@info", "The MJPEG stream will be played in loop instead once."));
 
     QGridLayout* const grid2  = new QGridLayout(d->streamSettings);
     grid2->addWidget(qualityLbl,    0, 0, 1, 1);
@@ -296,7 +301,7 @@ MjpegStreamDlg::MjpegStreamDlg(QObject* const /*parent*/,
     grid2->addWidget(d->rate,       3, 1, 1, 1);
     grid2->addWidget(d->streamLoop, 4, 0, 1, 2);
 
-    d->tabView->insertTab(Private::Stream, d->streamSettings, i18n("Stream"));
+    d->tabView->insertTab(Private::Stream, d->streamSettings, i18nc("@title", "Stream"));
 
     // ---
 
@@ -304,7 +309,7 @@ MjpegStreamDlg::MjpegStreamDlg(QObject* const /*parent*/,
 
     QLabel* const transLabel          = new QLabel(transitionSettings);
     transLabel->setWordWrap(false);
-    transLabel->setText(i18n("Type:"));
+    transLabel->setText(i18nc("@label", "Type:"));
     d->transVal                       = new DComboBox(transitionSettings);
     d->transVal->combo()->setEditable(false);
 
@@ -322,9 +327,9 @@ MjpegStreamDlg::MjpegStreamDlg(QObject* const /*parent*/,
 
     QLabel* const transNote  = new QLabel(transitionSettings);
     transNote->setWordWrap(true);
-    transNote->setText(i18n("<i>A transition is an visual effect applied between two images. "
-                            "For some effects, the duration can depend of random values and "
-                            "can change while the stream.</i>"));
+    transNote->setText(i18nc("@label", "A transition is an visual effect applied between two images. "
+                                       "For some effects, the duration can depend of random values and "
+                                       "can change while the stream."));
 
     d->transPreview              = new TransitionPreview(transitionSettings);
     d->transPreview->setImagesList(QList<QUrl>());
@@ -338,7 +343,7 @@ MjpegStreamDlg::MjpegStreamDlg(QObject* const /*parent*/,
     transGrid->setColumnStretch(1, 10);
     transGrid->setRowStretch(1, 10);
 
-    d->tabView->insertTab(Private::Transition, transitionSettings, i18n("Transition"));
+    d->tabView->insertTab(Private::Transition, transitionSettings, i18nc("@title", "Transition"));
 
     // ---
 
@@ -346,7 +351,7 @@ MjpegStreamDlg::MjpegStreamDlg(QObject* const /*parent*/,
 
     QLabel* const effLabel        = new QLabel(effectSettings);
     effLabel->setWordWrap(false);
-    effLabel->setText(i18n("Type:"));
+    effLabel->setText(i18nc("@label", "Type:"));
     d->effVal                     = new DComboBox(effectSettings);
     d->effVal->combo()->setEditable(false);
 
@@ -364,8 +369,8 @@ MjpegStreamDlg::MjpegStreamDlg(QObject* const /*parent*/,
 
     QLabel* const effNote      = new QLabel(effectSettings);
     effNote->setWordWrap(true);
-    effNote->setText(i18n("<i>An effect is an visual panning or zooming applied while an image "
-                          "is displayed in MJPEG stream.</i>"));
+    effNote->setText(i18nc("@label", "An effect is an visual panning or zooming applied while an image "
+                                     "is displayed in MJPEG stream."));
 
     d->effPreview              = new EffectPreview(effectSettings);
     d->effPreview->setImagesList(QList<QUrl>());
@@ -380,7 +385,7 @@ MjpegStreamDlg::MjpegStreamDlg(QObject* const /*parent*/,
     effGrid->setRowStretch(1, 10);
     effGrid->setSpacing(spacing);
 
-    d->tabView->insertTab(Private::Effect, effectSettings, i18n("Effect"));
+    d->tabView->insertTab(Private::Effect, effectSettings, i18nc("@title", "Effect"));
 
     // --------------------------------------------------------
 
@@ -396,8 +401,6 @@ MjpegStreamDlg::MjpegStreamDlg(QObject* const /*parent*/,
     vlay->setStretchFactor(d->tabView, 1);
     vlay->setSpacing(spacing);
     setLayout(vlay);
-
-//    d->tabView->setSizePolicy(QSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum));
 
     // --------------------------------------------------------
 
