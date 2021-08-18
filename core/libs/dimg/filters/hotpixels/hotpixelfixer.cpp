@@ -33,7 +33,7 @@
 
 #include <QList>
 #include <QColor>
-#include <QRegExp>
+#include <QRegularExpression>
 #include <QStringList>
 
 // KDE includes

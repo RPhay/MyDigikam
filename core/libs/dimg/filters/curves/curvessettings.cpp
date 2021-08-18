@@ -33,7 +33,7 @@
 #include <QGroupBox>
 #include <QHBoxLayout>
 #include <QLabel>
-#include <QRegExp>
+#include <QRegularExpression>
 #include <QTextStream>
 #include <QToolButton>
 #include <QVBoxLayout>

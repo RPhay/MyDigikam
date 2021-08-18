@@ -25,7 +25,7 @@
 
 // Qt includes
 
-#include <QRegExp>
+#include <QRegularExpression>
 
 // KDE includes
 
@@ -35,8 +35,19 @@ namespace
 {
 static const KLocalizedString STR_AUTO_DETECTED(ki18nc("in camera model string", "auto-detected"));
 
-static QRegExp REGEXP_CAMERA_NAME(QLatin1String("^(.*)\\s*\\((.*)\\)\\s*$"), Qt::CaseInsensitive);
-static QRegExp REGEXP_MODES(QLatin1String("^(ptp|normal|mtp)(\\s+mode)?$"), Qt::CaseInsensitive);
+/*
+ * The constructors used here are written after many experiments.
+ * REGEXP_MODES expression was failing to give exact match results if the pattern option
+ * InvertedGreedinessOption was set later in extractCameraNameToken function with QRegularExpression::setPatternOption()
+ * Maybe a bug in Qt.
+ * */
+static QRegularExpression REGEXP_CAMERA_NAME(
+    QRegularExpression::anchoredPattern(QLatin1String("(.*)\\s*\\((.*)\\)\\s*")),
+    QRegularExpression::InvertedGreedinessOption | QRegularExpression::CaseInsensitiveOption);
+
+static QRegularExpression REGEXP_MODES(
+    QRegularExpression::anchoredPattern(QLatin1String("(ptp|normal|mtp)(\\s+mode)?")),
+    QRegularExpression::InvertedGreedinessOption | QRegularExpression::CaseInsensitiveOption);
 }
 
 namespace Digikam
@@ -102,16 +113,15 @@ QString CameraNameHelper::parseAndFormatCameraName(const QString& cameraName,
 
 QString CameraNameHelper::extractCameraNameToken(const QString& cameraName, Token tokenID)
 {
-    static QRegExp REGEXP_AUTODETECTED(QString::fromUtf8("(%1|, %1)").arg(STR_AUTO_DETECTED.toString()));
+    static QRegularExpression REGEXP_AUTODETECTED(QString::fromUtf8("(%1|, %1)").arg(STR_AUTO_DETECTED.toString()));
+    REGEXP_AUTODETECTED.setPatternOptions(QRegularExpression::InvertedGreedinessOption);
 
-    REGEXP_CAMERA_NAME.setMinimal(true);
-    REGEXP_MODES.setMinimal(true);
-    REGEXP_AUTODETECTED.setMinimal(true);
+    QRegularExpressionMatch expMatch = REGEXP_CAMERA_NAME.match(cameraName.simplified());
 
-    if (REGEXP_CAMERA_NAME.exactMatch(cameraName.simplified()))
+    if (expMatch.hasMatch())
     {
-        QString vendorProduct  = REGEXP_CAMERA_NAME.cap(1).simplified();
-        QString tmpMode        = REGEXP_CAMERA_NAME.cap(2).simplified();
+        QString vendorProduct  = expMatch.captured(1).simplified();
+        QString tmpMode        = expMatch.captured(2).simplified();
         QString clearedTmpMode = tmpMode;
         QString mode;
         clearedTmpMode.remove(REGEXP_AUTODETECTED);
@@ -122,7 +132,7 @@ QString CameraNameHelper::extractCameraNameToken(const QString& cameraName, Toke
         }
         else
         {
-            mode = REGEXP_MODES.exactMatch(clearedTmpMode) ? clearedTmpMode
+            mode = REGEXP_MODES.match(clearedTmpMode).hasMatch() ? clearedTmpMode
                                                            : QLatin1String("");
         }
 
@@ -168,12 +178,14 @@ bool CameraNameHelper::sameDevices(const QString& deviceA, const QString& device
 
     // is the extracted mode known and equal?
 
-    QString modeA       = extractCameraNameToken(deviceA, Mode);
-    QString modeB       = extractCameraNameToken(deviceB, Mode);
-    bool isModeAValid   = REGEXP_MODES.exactMatch(modeA);
-    modeA               = isModeAValid ? REGEXP_MODES.cap(1).simplified().toLower() : QLatin1String("");
-    bool isModeBValid   = REGEXP_MODES.exactMatch(modeB);
-    modeB               = isModeBValid ? REGEXP_MODES.cap(1).simplified().toLower() : QLatin1String("");
+    QString modeA                 = extractCameraNameToken(deviceA, Mode);
+    QString modeB                 = extractCameraNameToken(deviceB, Mode);
+    QRegularExpressionMatch match = REGEXP_MODES.match(modeA);
+    bool isModeAValid             = match.hasMatch();
+    modeA                         = isModeAValid ? match.captured(1).simplified().toLower() : QLatin1String("");
+    match                         = REGEXP_MODES.match(modeB);
+    bool isModeBValid             = match.hasMatch();
+    modeB                         = isModeBValid ? match.captured(1).simplified().toLower() : QLatin1String("");
 
     if ((isModeAValid != isModeBValid) || (modeA != modeB))
     {

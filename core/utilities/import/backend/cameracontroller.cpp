@@ -35,7 +35,7 @@
 #include <QVariant>
 #include <QImage>
 #include <QFile>
-#include <QRegExp>
+#include <QRegularExpression>
 #include <QFileInfo>
 #include <QUrl>
 #include <QDir>
@@ -147,11 +147,12 @@ CameraController::CameraController(QWidget* const parent,
         if (xport.startsWith(QLatin1String("usb:")))
         {
             qCDebug(DIGIKAM_IMPORTUI_LOG) << "xport " << xport;
-            QRegExp x = QRegExp(QLatin1String("(usb:[0-9,]*)"));
+            QRegularExpression x(QLatin1String("(usb:[0-9,]*)"));
+            QRegularExpressionMatch match = x.match(xport);
 
-            if (x.indexIn(xport) != -1)
+            if (match.hasMatch())
             {
-                QString usbport = x.cap(1);
+                QString usbport = match.captured(1);
                 qCDebug(DIGIKAM_IMPORTUI_LOG) << "USB " << xport << " " << usbport;
 
                 //if ((xport == usbport) || ((count == 1) && (xport == "usb:")))

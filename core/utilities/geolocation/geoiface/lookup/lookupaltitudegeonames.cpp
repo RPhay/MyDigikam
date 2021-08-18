@@ -28,6 +28,7 @@
 
 #include <QNetworkAccessManager>
 #include <QUrlQuery>
+#include <QRegularExpression>
 
 // KDE includes
 
@@ -233,7 +234,7 @@ void LookupAltitudeGeonames::slotFinished(QNetworkReply* reply)
     }
 
     QByteArray data                            = reply->readAll();
-    const QStringList altitudes                = QString::fromLatin1(data).split(QRegExp(QLatin1String("\\s+")));
+    const QStringList altitudes                = QString::fromLatin1(data).split(QRegularExpression(QLatin1String("\\s+")));
     const MergedRequests& currentMergedRequest = d->mergedRequests.at(d->currentMergedRequestIndex);
     QIntList readyRequests;
 
