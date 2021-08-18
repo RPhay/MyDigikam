@@ -55,6 +55,12 @@ private:
     bool setMjpegServerContents();
     bool startMjpegServer();
 
+    QWidget* setupItemsView();
+    void setupServerView();
+    void setupStreamView();
+    void setupTransitionView();
+    void setupEffectView();
+
 private Q_SLOTS:
 
     void accept()                   override;

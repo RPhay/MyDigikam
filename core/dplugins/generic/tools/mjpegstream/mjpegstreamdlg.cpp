@@ -85,6 +85,7 @@ public:
         separator       (nullptr),
         iStats          (nullptr),
         startOnStartup  (nullptr),
+        spacing         (0),
         albumSupport    (false),
         albumSelector   (nullptr),
         listView        (nullptr),
@@ -113,6 +114,7 @@ public:
     QLabel*             separator;
     QLabel*             iStats;
     QCheckBox*          startOnStartup;
+    int                 spacing;
     bool                albumSupport;
     QWidget*            albumSelector;
     DItemsList*         listView;
@@ -139,6 +141,8 @@ MjpegStreamDlg::MjpegStreamDlg(QObject* const /*parent*/,
 {
     setWindowTitle(i18nc("@title:window", "Share Files with MJPEG Stream Server"));
     setModal(false);
+    d->spacing               = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
+    d->tabView               = new QTabWidget(this);
 
     // NOTE: We overwrite the default albums chooser object name for load save check items state between sessions.
     // The goal is not mix these settings with other export tools.
@@ -146,8 +150,49 @@ MjpegStreamDlg::MjpegStreamDlg(QObject* const /*parent*/,
     d->settings.iface        = iface;
     d->settings.iface->setObjectName(QLatin1String("SetupMjpegStreamIface"));
 
-    // -------------------
+    // ---
 
+    QWidget* const itemsSel  = setupItemsView();
+    setupServerView();
+    setupStreamView();
+    setupTransitionView();
+    setupEffectView();
+
+    // ---
+
+    m_buttons->addButton(QDialogButtonBox::Cancel);
+    m_buttons->addButton(QDialogButtonBox::Ok);
+    m_buttons->button(QDialogButtonBox::Ok)->setDefault(true);
+
+    QVBoxLayout* const vlay = new QVBoxLayout(this);
+    vlay->addWidget(itemsSel);
+    vlay->addWidget(d->tabView);
+    vlay->addWidget(m_buttons);
+    vlay->setStretchFactor(itemsSel, 10);
+    vlay->setStretchFactor(d->tabView, 1);
+    vlay->setSpacing(d->spacing);
+    setLayout(vlay);
+
+    // ---
+
+    connect(m_buttons->button(QDialogButtonBox::Cancel), &QPushButton::clicked,
+            this, &MjpegStreamDlg::reject);
+
+    connect(m_buttons->button(QDialogButtonBox::Ok), &QPushButton::clicked,
+            this, &MjpegStreamDlg::accept);
+
+    // ---
+
+    readSettings();
+}
+
+MjpegStreamDlg::~MjpegStreamDlg()
+{
+    delete d;
+}
+
+QWidget* MjpegStreamDlg::setupItemsView()
+{
     d->albumSupport   = (d->settings.iface && d->settings.iface->supportAlbums());
     QWidget* itemsSel = nullptr;
 
@@ -179,10 +224,11 @@ MjpegStreamDlg::MjpegStreamDlg(QObject* const /*parent*/,
                 this, SLOT(slotSelectionChanged()));
     }
 
-    // -------------------
+    return itemsSel;
+}
 
-    d->tabView                    = new QTabWidget(this);
-    const int spacing             = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
+void MjpegStreamDlg::setupServerView()
+{
     QWidget* const serverSettings = new QWidget(d->tabView);
 
     QLabel* const portLbl         = new QLabel(i18nc("@label", "Server Port:"), serverSettings);
@@ -230,12 +276,19 @@ MjpegStreamDlg::MjpegStreamDlg(QObject* const /*parent*/,
     grid3->addWidget(d->iStats,         1, 4, 1, 1);
     grid3->addWidget(d->progress,       1, 5, 1, 1);
     grid3->addWidget(explanation,       2, 0, 1, 6);
-    grid3->setSpacing(spacing);
+    grid3->setSpacing(d->spacing);
 
     d->tabView->insertTab(Private::Server, serverSettings, i18nc("@title", "Server"));
 
-    // ---
+    connect(d->srvButton, SIGNAL(clicked()),
+            this, SLOT(slotToggleMjpegServer()));
 
+    connect(d->srvPort, SIGNAL(valueChanged(int)),
+            this, SLOT(slotSettingsChanged()));
+}
+
+void MjpegStreamDlg::setupStreamView()
+{
     d->streamSettings         = new QWidget(d->tabView);
 
     QLabel* const qualityLbl  = new QLabel(i18nc("@label", "JPEG Quality:"), d->streamSettings);
@@ -300,11 +353,28 @@ MjpegStreamDlg::MjpegStreamDlg(QObject* const /*parent*/,
     grid2->addWidget(rateLbl,       3, 0, 1, 1);
     grid2->addWidget(d->rate,       3, 1, 1, 1);
     grid2->addWidget(d->streamLoop, 4, 0, 1, 2);
+    grid2->setSpacing(d->spacing);
 
     d->tabView->insertTab(Private::Stream, d->streamSettings, i18nc("@title", "Stream"));
 
-    // ---
+    connect(d->delay, SIGNAL(valueChanged(int)),
+            this, SLOT(slotSettingsChanged()));
 
+    connect(d->rate, SIGNAL(valueChanged(int)),
+            this, SLOT(slotSettingsChanged()));
+
+    connect(d->quality, SIGNAL(valueChanged(int)),
+            this, SLOT(slotSettingsChanged()));
+
+    connect(d->streamLoop, SIGNAL(stateChanged(int)),
+            this, SLOT(slotSettingsChanged()));
+
+    connect(d->typeVal, SIGNAL(currentIndexChanged(int)),
+            this, SLOT(slotSettingsChanged()));
+}
+
+void MjpegStreamDlg::setupTransitionView()
+{
     QWidget* const transitionSettings = new QWidget(d->tabView);
 
     QLabel* const transLabel          = new QLabel(transitionSettings);
@@ -335,7 +405,7 @@ MjpegStreamDlg::MjpegStreamDlg(QObject* const /*parent*/,
     d->transPreview->setImagesList(QList<QUrl>());
 
     QGridLayout* const transGrid = new QGridLayout(transitionSettings);
-    transGrid->setSpacing(spacing);
+    transGrid->setSpacing(d->spacing);
     transGrid->addWidget(transLabel,      0, 0, 1, 1);
     transGrid->addWidget(d->transVal,     0, 1, 1, 1);
     transGrid->addWidget(transNote,       1, 0, 1, 2);
@@ -345,8 +415,12 @@ MjpegStreamDlg::MjpegStreamDlg(QObject* const /*parent*/,
 
     d->tabView->insertTab(Private::Transition, transitionSettings, i18nc("@title", "Transition"));
 
-    // ---
+    connect(d->transVal, SIGNAL(currentIndexChanged(int)),
+            this, SLOT(slotSettingsChanged()));
+}
 
+void MjpegStreamDlg::setupEffectView()
+{
     QWidget* const effectSettings = new QWidget(d->tabView);
 
     QLabel* const effLabel        = new QLabel(effectSettings);
@@ -376,75 +450,18 @@ MjpegStreamDlg::MjpegStreamDlg(QObject* const /*parent*/,
     d->effPreview->setImagesList(QList<QUrl>());
 
     QGridLayout* const effGrid = new QGridLayout(effectSettings);
-    effGrid->setSpacing(spacing);
+    effGrid->setSpacing(d->spacing);
     effGrid->addWidget(effLabel,      0, 0, 1, 1);
     effGrid->addWidget(d->effVal,     0, 1, 1, 1);
     effGrid->addWidget(effNote,       1, 0, 1, 2);
     effGrid->addWidget(d->effPreview, 0, 2, 2, 1);
     effGrid->setColumnStretch(1, 10);
     effGrid->setRowStretch(1, 10);
-    effGrid->setSpacing(spacing);
 
     d->tabView->insertTab(Private::Effect, effectSettings, i18nc("@title", "Effect"));
 
-    // --------------------------------------------------------
-
-    m_buttons->addButton(QDialogButtonBox::Cancel);
-    m_buttons->addButton(QDialogButtonBox::Ok);
-    m_buttons->button(QDialogButtonBox::Ok)->setDefault(true);
-
-    QVBoxLayout* const vlay = new QVBoxLayout(this);
-    vlay->addWidget(itemsSel);
-    vlay->addWidget(d->tabView);
-    vlay->addWidget(m_buttons);
-    vlay->setStretchFactor(itemsSel, 10);
-    vlay->setStretchFactor(d->tabView, 1);
-    vlay->setSpacing(spacing);
-    setLayout(vlay);
-
-    // --------------------------------------------------------
-
-    connect(d->srvButton, SIGNAL(clicked()),
-            this, SLOT(slotToggleMjpegServer()));
-
-    connect(m_buttons->button(QDialogButtonBox::Cancel), &QPushButton::clicked,
-            this, &MjpegStreamDlg::reject);
-
-    connect(m_buttons->button(QDialogButtonBox::Ok), &QPushButton::clicked,
-            this, &MjpegStreamDlg::accept);
-
-    connect(d->srvPort, SIGNAL(valueChanged(int)),
-            this, SLOT(slotSettingsChanged()));
-
-    connect(d->delay, SIGNAL(valueChanged(int)),
-            this, SLOT(slotSettingsChanged()));
-
-    connect(d->rate, SIGNAL(valueChanged(int)),
-            this, SLOT(slotSettingsChanged()));
-
-    connect(d->quality, SIGNAL(valueChanged(int)),
-            this, SLOT(slotSettingsChanged()));
-
-    connect(d->streamLoop, SIGNAL(stateChanged(int)),
-            this, SLOT(slotSettingsChanged()));
-
-    connect(d->typeVal, SIGNAL(currentIndexChanged(int)),
-            this, SLOT(slotSettingsChanged()));
-
     connect(d->effVal, SIGNAL(currentIndexChanged(int)),
             this, SLOT(slotSettingsChanged()));
-
-    connect(d->transVal, SIGNAL(currentIndexChanged(int)),
-            this, SLOT(slotSettingsChanged()));
-
-    // -------------------
-
-    readSettings();
-}
-
-MjpegStreamDlg::~MjpegStreamDlg()
-{
-    delete d;
 }
 
 void MjpegStreamDlg::accept()
