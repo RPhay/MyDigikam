@@ -253,20 +253,6 @@ MjpegStreamDlg::MjpegStreamDlg(QObject* const /*parent*/,
 
     d->streamSettings         = new QWidget(d->tabView);
 
-    QLabel* const delayLbl    = new QLabel(i18nc("@label", "Delay in seconds:"), d->streamSettings);
-    d->delay                  = new DIntNumInput(d->streamSettings);
-    d->delay->setDefaultValue(5);
-    d->delay->setRange(1, 3600, 1);
-    d->delay->setWhatsThis(i18n("The delay, in seconds, between images."));
-    delayLbl->setBuddy(d->delay);
-
-    QLabel* const rateLbl     = new QLabel(i18nc("@label", "Frames by second:"), d->streamSettings);
-    d->rate                   = new DIntNumInput(d->streamSettings);
-    d->rate->setDefaultValue(10);
-    d->rate->setRange(5, 24, 1);
-    d->rate->setWhatsThis(i18n("The number of frames by second to render the stream."));
-    rateLbl->setBuddy(d->rate);
-
     QLabel* const qualityLbl  = new QLabel(i18nc("@label", "JPEG Quality:"), d->streamSettings);
     d->quality                = new DIntNumInput(d->streamSettings);
     d->quality->setDefaultValue(75);
@@ -296,7 +282,21 @@ MjpegStreamDlg::MjpegStreamDlg(QObject* const /*parent*/,
 
     // ---
 
-    d->streamLoop             = new QCheckBox(i18nc("@option:check", "Stream In Loop"), d->streamSettings);
+    QLabel* const delayLbl    = new QLabel(i18nc("@label", "Delay in Seconds:"), d->streamSettings);
+    d->delay                  = new DIntNumInput(d->streamSettings);
+    d->delay->setDefaultValue(5);
+    d->delay->setRange(1, 3600, 1);
+    d->delay->setWhatsThis(i18n("The delay in seconds between images."));
+    delayLbl->setBuddy(d->delay);
+
+    QLabel* const rateLbl     = new QLabel(i18nc("@label", "Frames by Second:"), d->streamSettings);
+    d->rate                   = new DIntNumInput(d->streamSettings);
+    d->rate->setDefaultValue(10);
+    d->rate->setRange(5, 24, 1);
+    d->rate->setWhatsThis(i18n("The number of frames by second to render the stream."));
+    rateLbl->setBuddy(d->rate);
+
+    d->streamLoop             = new QCheckBox(i18nc("@option:check", "Stream in Loop"), d->streamSettings);
     d->streamLoop->setChecked(true);
     d->streamLoop->setWhatsThis(i18n("The MJPEG stream will be played in loop instead once."));
 
