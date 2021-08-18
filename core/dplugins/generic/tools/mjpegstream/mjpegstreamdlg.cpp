@@ -88,8 +88,6 @@ public:
         albumSupport    (false),
         albumSelector   (nullptr),
         listView        (nullptr),
-        iface           (nullptr),
-        page            (nullptr),
         buttons         (nullptr),
         streamSettings  (nullptr),
         srvPort         (nullptr),
@@ -118,8 +116,6 @@ public:
     bool                albumSupport;
     QWidget*            albumSelector;
     DItemsList*         listView;
-    DInfoInterface*     iface;
-    QWidget*            page;
     QDialogButtonBox*   buttons;
     QWidget*            streamSettings;
     DIntNumInput*       srvPort;
@@ -142,44 +138,33 @@ MjpegStreamDlg::MjpegStreamDlg(QObject* const /*parent*/,
       d            (new Private)
 {
     setWindowTitle(i18nc("@title:window", "Share Files with MJPEG Stream Server"));
-
-    d->iface                 = iface;
+    setModal(false);
 
     // NOTE: We overwrite the default albums chooser object name for load save check items state between sessions.
     // The goal is not mix these settings with other export tools.
 
-    d->iface->setObjectName(QLatin1String("SetupMjpegStreamIface"));
     d->settings.iface        = iface;
-
-    m_buttons->addButton(QDialogButtonBox::Cancel);
-    m_buttons->addButton(QDialogButtonBox::Ok);
-    m_buttons->button(QDialogButtonBox::Ok)->setDefault(true);
-    d->page                  = new QWidget(this);
-    QVBoxLayout* const vbx   = new QVBoxLayout(this);
-    vbx->addWidget(d->page);
-    vbx->addWidget(m_buttons);
-    setLayout(vbx);
-    setModal(false);
+    d->settings.iface->setObjectName(QLatin1String("SetupMjpegStreamIface"));
 
     // -------------------
 
-    d->albumSupport   = (d->iface && d->iface->supportAlbums());
+    d->albumSupport   = (d->settings.iface && d->settings.iface->supportAlbums());
     QWidget* itemsSel = nullptr;
 
     if (d->albumSupport)
     {
-        d->albumSelector = d->iface->albumChooser(this);
+        d->albumSelector = d->settings.iface->albumChooser(this);
         itemsSel         = d->albumSelector;
 
-        connect(d->iface, SIGNAL(signalAlbumChooserSelectionChanged()),
+        connect(d->settings.iface, SIGNAL(signalAlbumChooserSelectionChanged()),
                 this, SLOT(slotSelectionChanged()));
     }
     else
     {
-        d->listView = new DItemsList(d->page);
+        d->listView = new DItemsList(this);
         d->listView->setObjectName(QLatin1String("MjpegStream ImagesList"));
         d->listView->setControlButtonsPlacement(DItemsList::ControlButtonsRight);
-        d->listView->setIface(d->iface);
+        d->listView->setIface(d->settings.iface);
 
         // Add all items currently loaded in application.
 
@@ -188,7 +173,7 @@ MjpegStreamDlg::MjpegStreamDlg(QObject* const /*parent*/,
         // Replug the previous shared items list.
 
         d->listView->slotAddImages(d->mngr->itemsList());
-        itemsSel = d->listView;
+        itemsSel    = d->listView;
 
         connect(d->listView, SIGNAL(signalImageListChanged()),
                 this, SLOT(slotSelectionChanged()));
@@ -227,12 +212,12 @@ MjpegStreamDlg::MjpegStreamDlg(QObject* const /*parent*/,
         "the MJPEG server IP, and port the server port set in this config dialog.",
         QLatin1String("<a href='https://en.wikipedia.org/wiki/Motion_JPEG'>Motion JPEG</a>")));
 
-    d->srvButton                  = new QPushButton(this);
-    d->srvStatus                  = new QLabel(this);
-    d->progress                   = new WorkingWidget(this);
-    d->aStats                     = new QLabel(this);
-    d->separator                  = new QLabel(QLatin1String(" / "), this);
-    d->iStats                     = new QLabel(this);
+    d->srvButton                  = new QPushButton(serverSettings);
+    d->srvStatus                  = new QLabel(serverSettings);
+    d->progress                   = new WorkingWidget(serverSettings);
+    d->aStats                     = new QLabel(serverSettings);
+    d->separator                  = new QLabel(QLatin1String(" / "), serverSettings);
+    d->iStats                     = new QLabel(serverSettings);
 
     QGridLayout* const grid3      = new QGridLayout(serverSettings);
     grid3->addWidget(portLbl,           0, 0, 1, 1);
@@ -399,15 +384,20 @@ MjpegStreamDlg::MjpegStreamDlg(QObject* const /*parent*/,
 
     // --------------------------------------------------------
 
-    QVBoxLayout* const vlay   = new QVBoxLayout(d->page);
+    m_buttons->addButton(QDialogButtonBox::Cancel);
+    m_buttons->addButton(QDialogButtonBox::Ok);
+    m_buttons->button(QDialogButtonBox::Ok)->setDefault(true);
+
+    QVBoxLayout* const vlay = new QVBoxLayout(this);
     vlay->addWidget(itemsSel);
     vlay->addWidget(d->tabView);
+    vlay->addWidget(m_buttons);
     vlay->setStretchFactor(itemsSel, 10);
     vlay->setStretchFactor(d->tabView, 1);
     vlay->setSpacing(spacing);
+    setLayout(vlay);
 
-    d->tabView->setSizePolicy(QSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum));
-
+//    d->tabView->setSizePolicy(QSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum));
 
     // --------------------------------------------------------
 
@@ -462,7 +452,7 @@ void MjpegStreamDlg::accept()
 
         if (d->albumSupport)
         {
-            empty = d->iface->albumChooserItems().isEmpty();
+            empty = d->settings.iface->albumChooserItems().isEmpty();
         }
         else
         {
@@ -582,13 +572,13 @@ bool MjpegStreamDlg::setMjpegServerContents()
 {
     if (d->albumSupport)
     {
-        DInfoInterface::DAlbumIDs albums = d->iface->albumChooserItems();
+        DInfoInterface::DAlbumIDs albums = d->settings.iface->albumChooserItems();
         MjpegServerMap map;
 
         foreach (int id, albums)
         {
-            DAlbumInfo anf(d->iface->albumInfo(id));
-            map.insert(anf.title(), d->iface->albumItems(id));
+            DAlbumInfo anf(d->settings.iface->albumInfo(id));
+            map.insert(anf.title(), d->settings.iface->albumItems(id));
         }
 
         if (map.isEmpty())
