@@ -210,8 +210,6 @@ void ScanController::slotStartScanningAlbum(const QString& albumRoot, const QStr
 {
     Q_UNUSED(albumRoot);
 
-    d->totalFilesToScan = 0;
-
     if (d->progressDialog)
     {
         d->progressDialog->addedAction(d->albumPixmap(), QLatin1Char(' ') + album);
@@ -220,8 +218,6 @@ void ScanController::slotStartScanningAlbum(const QString& albumRoot, const QStr
 
 void ScanController::slotStartScanningAlbumRoot(const QString& albumRoot)
 {
-    d->totalFilesToScan = 0;
-
     if (d->progressDialog)
     {
         d->progressDialog->addedAction(d->rootPixmap(), albumRoot);
@@ -230,9 +226,7 @@ void ScanController::slotStartScanningAlbumRoot(const QString& albumRoot)
 
 void ScanController::slotStartScanningForStaleAlbums()
 {
-    d->totalFilesToScan = 0;
-
-    QString message     = i18n("Scanning for removed albums...");
+    QString message = i18n("Scanning for removed albums...");
 
     if (d->progressDialog)
     {
@@ -242,9 +236,7 @@ void ScanController::slotStartScanningForStaleAlbums()
 
 void ScanController::slotStartScanningAlbumRoots()
 {
-    d->totalFilesToScan = 0;
-
-    QString message     = i18n("Scanning images in individual albums...");
+    QString message = i18n("Scanning images in individual albums...");
 
     if (d->progressDialog)
     {
