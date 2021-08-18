@@ -225,6 +225,8 @@ endif()
 # -- check Media player --------------------------------------------------------
 
 find_package(FFmpeg COMPONENTS AVCODEC AVDEVICE AVFILTER AVFORMAT AVUTIL SWSCALE)
+
+# TODO: Remove this condition when QtAV supports Qt6 as well
 if(${QT_VERSION_MAJOR} EQUAL 5)
     find_package(QtAV)
 endif()
@@ -286,6 +288,7 @@ find_package(BISON)                                # For Panorama tool.
 find_package(LibXslt)                              # For HTMLGallery tool.
 find_package(LibXml2)                              # For HTMLGallery tool.
 
+# TODO: Remove this condition when Marble supports Qt6 as well
 if(${QT_VERSION_MAJOR} EQUAL 5)
     find_package(Marble)                           # For geolocation support.
 endif()
