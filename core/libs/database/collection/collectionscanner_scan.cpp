@@ -537,7 +537,7 @@ void CollectionScanner::scanForStaleAlbums(const QList<int>& locationIdsToScan)
     {
         ++counter;
 
-        if (d->wantSignals && counter && (counter % 2 == 0))
+        if (d->wantSignals && counter && (counter % 10 == 0))
         {
             emit scannedFiles(counter);
             counter = 0;
