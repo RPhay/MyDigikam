@@ -67,6 +67,7 @@ private Q_SLOTS:
     void slotToggleMjpegServer();
     void slotSelectionChanged();
     void slotSettingsChanged();
+    void slotOpenPreview();
 
 private:
 

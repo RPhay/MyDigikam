@@ -36,6 +36,7 @@
 #include <QCheckBox>
 #include <QGroupBox>
 #include <QTabWidget>
+#include <QDesktopServices>
 
 // KDE includes
 
@@ -80,6 +81,7 @@ public:
         mngr            (MjpegServerMngr::instance()),
         srvButton       (nullptr),
         srvStatus       (nullptr),
+        srvPreview      (nullptr),
         progress        (nullptr),
         aStats          (nullptr),
         separator       (nullptr),
@@ -109,6 +111,7 @@ public:
     MjpegServerMngr*    mngr;
     QPushButton*        srvButton;
     QLabel*             srvStatus;
+    QPushButton*        srvPreview;
     WorkingWidget*      progress;
     QLabel*             aStats;
     QLabel*             separator;
@@ -260,22 +263,25 @@ void MjpegStreamDlg::setupServerView()
 
     d->srvButton                  = new QPushButton(serverSettings);
     d->srvStatus                  = new QLabel(serverSettings);
-    d->progress                   = new WorkingWidget(serverSettings);
     d->aStats                     = new QLabel(serverSettings);
     d->separator                  = new QLabel(QLatin1String(" / "), serverSettings);
     d->iStats                     = new QLabel(serverSettings);
+    d->progress                   = new WorkingWidget(serverSettings);
+    d->srvPreview                 = new QPushButton(i18nc("@action: button", "Preview..."), serverSettings);
+    d->srvPreview->setWhatsThis(i18nc("@info", "Press this button to preview the stream on your computer with your browser."));
 
     QGridLayout* const grid3      = new QGridLayout(serverSettings);
     grid3->addWidget(portLbl,           0, 0, 1, 1);
     grid3->addWidget(d->srvPort,        0, 1, 1, 1);
-    grid3->addWidget(d->startOnStartup, 0, 2, 1, 4);
+    grid3->addWidget(d->startOnStartup, 0, 2, 1, 5);
     grid3->addWidget(d->srvButton,      1, 0, 1, 1);
     grid3->addWidget(d->srvStatus,      1, 1, 1, 1);
     grid3->addWidget(d->aStats,         1, 2, 1, 1);
     grid3->addWidget(d->separator,      1, 3, 1, 1);
     grid3->addWidget(d->iStats,         1, 4, 1, 1);
     grid3->addWidget(d->progress,       1, 5, 1, 1);
-    grid3->addWidget(explanation,       2, 0, 1, 6);
+    grid3->addWidget(d->srvPreview,     1, 6, 1, 1);
+    grid3->addWidget(explanation,       2, 0, 1, 7);
     grid3->setSpacing(d->spacing);
 
     d->tabView->insertTab(Private::Server, serverSettings, i18nc("@title", "Server"));
@@ -285,6 +291,9 @@ void MjpegStreamDlg::setupServerView()
 
     connect(d->srvPort, SIGNAL(valueChanged(int)),
             this, SLOT(slotSettingsChanged()));
+
+    connect(d->srvPreview, SIGNAL(clicked()),
+            this, SLOT(slotOpenPreview()));
 }
 
 void MjpegStreamDlg::setupStreamView()
@@ -574,6 +583,7 @@ void MjpegStreamDlg::updateServerStatus()
         d->srvButton->setIcon(QIcon::fromTheme(QLatin1String("media-playback-stop")));
         d->progress->toggleTimer(true);
         d->progress->setVisible(true);
+        d->srvPreview->setVisible(true);
     }
     else
     {
@@ -585,6 +595,7 @@ void MjpegStreamDlg::updateServerStatus()
         d->srvButton->setIcon(QIcon::fromTheme(QLatin1String("media-playback-start")));
         d->progress->toggleTimer(false);
         d->progress->setVisible(false);
+        d->srvPreview->setVisible(false);
     }
 }
 
@@ -683,6 +694,12 @@ void MjpegStreamDlg::slotToggleMjpegServer()
     d->tabView->setTabEnabled(Private::Effect,     !b);
     d->tabView->setTabEnabled(Private::Transition, !b);
     d->srvPort->setDisabled(b);
+}
+
+void MjpegStreamDlg::slotOpenPreview()
+{
+    QDesktopServices::openUrl(QUrl(QString::fromLatin1("http://localhost:%1")       // krazy:exclude=insecurenet
+                                   .arg(d->settings.port)));
 }
 
 } // namespace DigikamGenericMjpegStreamPlugin
