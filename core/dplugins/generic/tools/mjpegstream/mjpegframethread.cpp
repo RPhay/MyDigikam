@@ -145,18 +145,19 @@ void MjpegFrameTask::run()
     EffectMngr effmngr;
     effmngr.setOutputSize(VidSlideSettings::videoSizeFromType(type));
     effmngr.setFrames(imgFrames);               // Ex: 30 frames at 10 img/s => 3 s of effect
+    bool loop = false;
 
     do
     {
         // To stream in loop forever.
 
-        for (int i = 0 ; ((i < m_set.inputImages.count() + 1) && !m_cancel) ; ++i)
+        for (int i = 0 ; ((i < m_set.inputImages.count()) && !m_cancel) ; ++i)
         {
             // One loop strem all items one by one from the ordered list
 
-            if (i == 0)
+            if ((i == 0) && !loop)
             {
-                // If we use transition, the first item must be merged from a black image.
+                // If we use transition, the first item at the first loop must be merged from a black image.
 
                 qiimg = FrameUtils::makeFramedImage(QString(), VidSlideSettings::videoSizeFromType(type));
             }
@@ -216,6 +217,8 @@ void MjpegFrameTask::run()
                 QThread::msleep(lround(1000.0 / m_set.rate));
             }
             while ((count < imgFrames) && !m_cancel);
+
+            loop = true;        // At least one loop is done.
         }
     }
     while (!m_cancel && m_set.loop);
