@@ -3262,9 +3262,10 @@ QMap<QString, QDateTime> CoreDB::getAlbumModificationMap(int albumRootId) const
 
 }
 
-int CoreDB::getNumberOfAllItemsAndAlbums(int albumID) const
+QPair<int, int> CoreDB::getNumberOfAllItemsAndAlbums(int albumID) const
 {
-    int number   = 0;
+    int items  = 0;
+    int albums = 0;
     QVariantList values;
 
     int rootId   = getAlbumRootId(albumID);
@@ -3277,7 +3278,7 @@ int CoreDB::getNumberOfAllItemsAndAlbums(int albumID) const
 
     if (!values.isEmpty())
     {
-        number += values.first().toInt();
+        items = values.first().toInt();
     }
 
     values.clear();
@@ -3289,10 +3290,10 @@ int CoreDB::getNumberOfAllItemsAndAlbums(int albumID) const
 
     if (!values.isEmpty())
     {
-        number += values.first().toInt();
+        albums = values.first().toInt();
     }
 
-    return number;
+    return qMakePair(items, albums);
 }
 
 int CoreDB::getNumberOfItemsInAlbum(int albumID) const

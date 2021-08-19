@@ -349,10 +349,11 @@ public:
     QDate getAlbumAverageDate(int albumID)                                                                          const;
 
     /**
-     * Returns the number of all items and albums in the album.
+     * Returns the QPair<int, int> of all items (first)
+     * and albums (second) as a counter in the album.
      * @param albumID the id of the album
      */
-    int getNumberOfAllItemsAndAlbums(int albumID)                                                                   const;
+    QPair<int, int> getNumberOfAllItemsAndAlbums(int albumID)                                                       const;
 
     /**
      * Returns the number of items in the album.

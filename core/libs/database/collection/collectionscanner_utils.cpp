@@ -213,7 +213,6 @@ int CollectionScanner::countItemsInFolder(const QString& path)
         return 0;
     }
 
-    int items                   = 0;
     CollectionLocation location = CollectionManager::instance()->locationForPath(path);
 
     if (!location.isNull())
@@ -223,23 +222,24 @@ int CollectionScanner::countItemsInFolder(const QString& path)
 
         if (albumID != -1)
         {
-            items = CoreDbAccess().db()->getNumberOfAllItemsAndAlbums(albumID);
+            QPair<int, int> numberPair = CoreDbAccess().db()->
+                                         getNumberOfAllItemsAndAlbums(albumID);
 
-            if (items > 0)
+            if (numberPair.first)
             {
-                return items;
+                return (numberPair.first + numberPair.second);
             }
         }
     }
+
+    // Also count the current folder
+
+    int items = 1;
 
     QDirIterator it(dir.path(), QDir::Dirs    |
                                 QDir::Files   |
                                 QDir::NoDotAndDotDot,
                                 QDirIterator::Subdirectories);
-
-    // Also count the current folder
-
-    ++items;
 
     while (it.hasNext())
     {
