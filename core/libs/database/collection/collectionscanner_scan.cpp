@@ -537,7 +537,7 @@ void CollectionScanner::scanForStaleAlbums(const QList<int>& locationIdsToScan)
     {
         ++counter;
 
-        if (d->wantSignals && counter && (counter % 2 == 0))
+        if (d->wantSignals && counter && (counter % 10 == 0))
         {
             emit scannedFiles(counter);
             counter = 0;
@@ -644,10 +644,7 @@ void CollectionScanner::scanForStaleAlbums(const QList<int>& locationIdsToScan)
 
 #ifdef Q_OS_WIN
 
-                    if (dirExist                                               &&
-                        !(*it3).relativePath.endsWith(QLatin1Char('/'))        &&
-                        !s_modificationDateEquals(fileInfo.lastModified(),
-                                                  CoreDbAccess().db()->getAlbumModificationDate((*it3).id)))
+                    if (dirExist && !it.key().relativePath.endsWith(QLatin1Char('/')))
                     {
                         QDir dir(fileInfo.dir());
                         dirExist = dir.entryList(QDir::Dirs |
@@ -737,7 +734,10 @@ void CollectionScanner::scanAlbum(const CollectionLocation& location, const QStr
                                             QDir::NoDotAndDotDot,
                                             QDir::Name | QDir::DirsLast);
 
-    CoreDbAccess().db()->setAlbumModificationDate(albumID, albumDateTime);
+    if (!d->deferredFileScanning)
+    {
+        CoreDbAccess().db()->setAlbumModificationDate(albumID, albumDateTime);
+    }
 
     int counter          = 0;
     bool updateAlbumDate = false;
