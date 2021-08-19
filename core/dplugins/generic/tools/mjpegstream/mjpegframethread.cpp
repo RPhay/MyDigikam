@@ -133,11 +133,13 @@ QImage MjpegFrameTask::loadImageFromPreviewCache(const QString& path) const
 
 void MjpegFrameTask::run()
 {
-    QImage qiimg;
-    QImage qtimg;
+    QImage qiimg;   // Current image in stream.
+    QImage qtimg;   // Current transition image.
+    QImage qoimg;   // Next image in stream.
 
     VidSlideSettings::VidType type = (VidSlideSettings::VidType)m_set.outSize;
     int imgFrames                  = m_set.delay * m_set.rate;
+    bool oneLoopDone               = false;
 
     TransitionMngr transmngr;
     transmngr.setOutputSize(VidSlideSettings::videoSizeFromType(type));
@@ -145,7 +147,6 @@ void MjpegFrameTask::run()
     EffectMngr effmngr;
     effmngr.setOutputSize(VidSlideSettings::videoSizeFromType(type));
     effmngr.setFrames(imgFrames);               // Ex: 30 frames at 10 img/s => 3 s of effect
-    bool loop = false;
 
     do
     {
@@ -155,7 +156,7 @@ void MjpegFrameTask::run()
         {
             // One loop strem all items one by one from the ordered list
 
-            if ((i == 0) && !loop)
+            if ((i == 0) && !oneLoopDone)
             {
                 // If we use transition, the first item at the first loop must be merged from a black image.
 
@@ -171,7 +172,7 @@ void MjpegFrameTask::run()
                 ofile = m_set.inputImages[i].toLocalFile();
             }
 
-            QImage qoimg = loadImageFromPreviewCache(ofile);
+            qoimg      = loadImageFromPreviewCache(ofile);
 
             // Apply transition between images
 
@@ -218,7 +219,7 @@ void MjpegFrameTask::run()
             }
             while ((count < imgFrames) && !m_cancel);
 
-            loop = true;        // At least one loop is done.
+            oneLoopDone = true;        // At least one loop is done.
         }
     }
     while (!m_cancel && m_set.loop);
