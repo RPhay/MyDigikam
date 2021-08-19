@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2021-07-21
- * Description : MJPEG Stream Server configuration dialog
+ * Description : MJPEG Stream Server configuration dialog - Private container
  *
  * Copyright (C) 2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *

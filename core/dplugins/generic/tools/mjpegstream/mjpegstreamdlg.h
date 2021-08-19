@@ -49,11 +49,30 @@ public:
 
 private:
 
+    // Settings methods - mjpegstreamdlg_settings.cpp
+
     void readSettings();
     void saveSettings();
+
+private Q_SLOTS:
+
+    void slotSettingsChanged();
+
+private:
+
+    // Server methods - mjpegstreamdlg_server.cpp
+
     void updateServerStatus();
     bool setMjpegServerContents();
     bool startMjpegServer();
+
+private Q_SLOTS:
+
+    void slotToggleMjpegServer();
+
+private:
+
+    // Views methods - mjpegstreamdlg_views.cpp
 
     QWidget* setupItemsView();
     void setupServerView();
@@ -64,9 +83,7 @@ private:
 private Q_SLOTS:
 
     void accept()                   override;
-    void slotToggleMjpegServer();
     void slotSelectionChanged();
-    void slotSettingsChanged();
     void slotOpenPreview();
 
 private:
