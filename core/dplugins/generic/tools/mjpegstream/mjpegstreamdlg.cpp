@@ -304,8 +304,8 @@ void MjpegStreamDlg::setupStreamView()
     d->quality                = new DIntNumInput(d->streamSettings);
     d->quality->setDefaultValue(75);
     d->quality->setRange(50, 100, 1);
-    d->quality->setWhatsThis(i18nc("@info", "The JPEG quality [50:lower - 100:higher]."
-                                            "Warning: better quality require more network bandwith"));
+    d->quality->setWhatsThis(i18nc("@info", "The JPEG quality [50:lower - 100:higher]. "
+                                            "Warning: better quality require more network bandwidth"));
 
     qualityLbl->setBuddy(d->quality);
 
@@ -327,8 +327,8 @@ void MjpegStreamDlg::setupStreamView()
     }
 
     d->typeVal->setDefaultIndex(VidSlideSettings::BLUERAY);
-    d->typeVal->setWhatsThis(i18nc("@info", "The JPEG image size in pixels, using standard screen resolutions."
-                                            "Warning: larger size require more network bandwith"));
+    d->typeVal->setWhatsThis(i18nc("@info", "The JPEG image size in pixels, using standard screen resolutions. "
+                                            "Warning: larger size require more network bandwidth"));
     typeLabel->setBuddy(d->typeVal);
 
     // ---
@@ -344,8 +344,8 @@ void MjpegStreamDlg::setupStreamView()
     d->rate                   = new DIntNumInput(d->streamSettings);
     d->rate->setDefaultValue(10);
     d->rate->setRange(5, 24, 1);
-    d->rate->setWhatsThis(i18nc("@info", "The number of frames by second to render the stream."
-                                         "Warning: larger rate require more network bandwith"));
+    d->rate->setWhatsThis(i18nc("@info", "The number of frames by second to render the stream. "
+                                         "Warning: larger rate require more network bandwidth"));
     rateLbl->setBuddy(d->rate);
 
     d->streamLoop             = new QCheckBox(i18nc("@option:check", "Stream in Loop"), d->streamSettings);
