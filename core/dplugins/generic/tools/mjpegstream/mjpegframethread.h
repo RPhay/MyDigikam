@@ -111,6 +111,7 @@ private:
 
     MjpegStreamSettings m_set;          ///< The MJPEG stream settings.
     QImage              m_broken;       ///< Image to push as frame if current item from list cannot be loaded.
+    QImage              m_theend;       ///< Image to push as frame when stream is complete.
 };
 
 } // namespace DigikamGenericMjpegStreamPlugin

@@ -86,6 +86,7 @@ MjpegFrameTask::MjpegFrameTask(const MjpegStreamSettings& set)
      * Load this image here in first from main thread.
      */
     m_broken = QIcon::fromTheme(QLatin1String("view-preview")).pixmap(VidSlideSettings::videoSizeFromType(type)).toImage();
+    m_theend = QIcon::fromTheme(QLatin1String("window-close")).pixmap(VidSlideSettings::videoSizeFromType(type)).toImage();
 }
 
 MjpegFrameTask::~MjpegFrameTask()
@@ -223,6 +224,9 @@ void MjpegFrameTask::run()
         }
     }
     while (!m_cancel && m_set.loop);
+
+    emit signalFrameChanged(imageToJPEGArray(m_theend));
+    qCDebug(DIGIKAM_GENERAL_LOG) << "MjpegStream: end of stream";
 
     emit signalDone();
 }
