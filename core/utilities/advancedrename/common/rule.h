@@ -57,18 +57,19 @@ public:
     ~Rule() override;
 
     /**
+     * TODO: This is probably not needed anymore. Find out.
      * returns the currently assigned regExp object. Note that it is returned as a const ref, meaning
      * that if you use it in your custom parse operation, the main parse method has already searched for the pattern
-     * and filled in the results of this search, so that you can use QRegExp::cap() immediately, you don't have to search
-     * on your own.
+     * and filled in the results of this search, so that you can use QRegularExpressionMatch::captured() immediately,
+     * you don't have to search on your own.
      *
      * For example when implementing the Option::parseOperation() method, get the regExp object with
      *
-     *      const QRegExp& reg = regExp();
+     *      const QRegularExpression& reg = regExp();
      *
      * and immediately fetch possible matches with
      *
-     *      const QString& param1 = reg.cap(1);
+     *      const QString& param1 = reg.captured(1);
      *
      * @see Option
      * @see Modifier
@@ -137,7 +138,8 @@ protected:
 
     /**
      * TODO: describe me
-     * @param settings
+     * @param settings contains settings
+     * @param match result of the regular expression match done in Option::parse()
      * @return
      */
     virtual QString parseOperation(ParseSettings& settings, const QRegularExpressionMatch &match) = 0;
