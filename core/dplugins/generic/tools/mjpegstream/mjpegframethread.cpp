@@ -75,22 +75,37 @@ void MjpegFrameThread::createFrameJob(const MjpegStreamSettings& set)
 
 // -----------------------------------------------------------
 
-MjpegFrameTask::MjpegFrameTask(const MjpegStreamSettings& set)
-    : ActionJob(nullptr),
-      m_set    (set)
+class Q_DECL_HIDDEN MjpegFrameTask::Private
 {
-    VidSlideSettings::VidType type = (VidSlideSettings::VidType)m_set.outSize;
+public:
 
-    /**
-     * NOTE: QIcon depend of X11 under Linux which is not re-rentrant.
-     * Load this image here in first from main thread.
-     */
-    m_broken = QIcon::fromTheme(QLatin1String("view-preview")).pixmap(VidSlideSettings::videoSizeFromType(type)).toImage();
-    m_theend = QIcon::fromTheme(QLatin1String("window-close")).pixmap(VidSlideSettings::videoSizeFromType(type)).toImage();
+    explicit Private(const MjpegStreamSettings& set)
+        : settings(set)
+    {
+        VidSlideSettings::VidType type = (VidSlideSettings::VidType)settings.outSize;
+
+        /**
+         * NOTE: QIcon depend of X11 under Linux which is not re-rentrant.
+         * Load this image here in first from main thread.
+         */
+        brokenImg = QIcon::fromTheme(QLatin1String("view-preview")).pixmap(VidSlideSettings::videoSizeFromType(type)).toImage();
+        endImg    = QIcon::fromTheme(QLatin1String("window-close")).pixmap(VidSlideSettings::videoSizeFromType(type)).toImage();
+    }
+
+    MjpegStreamSettings settings;     ///< The MJPEG stream settings.
+    QImage              brokenImg;    ///< Image to push as frame if current item from list cannot be loaded.
+    QImage              endImg;       ///< Image to push as frame when stream is complete.
+};
+
+MjpegFrameTask::MjpegFrameTask(const MjpegStreamSettings& settings)
+    : ActionJob(nullptr),
+      d        (new Private(settings))
+{
 }
 
 MjpegFrameTask::~MjpegFrameTask()
 {
+    delete d;
 }
 
 QByteArray MjpegFrameTask::imageToJPEGArray(const QImage& frame) const
@@ -98,7 +113,7 @@ QByteArray MjpegFrameTask::imageToJPEGArray(const QImage& frame) const
     QByteArray outbuf;
     QBuffer buffer(&outbuf);
     buffer.open(QIODevice::WriteOnly);
-    frame.save(&buffer, "JPEG", m_set.quality);
+    frame.save(&buffer, "JPEG", d->settings.quality);
 
     return outbuf;
 }
@@ -114,7 +129,7 @@ QImage MjpegFrameTask::loadImageFromPreviewCache(const QString& path) const
     {
         // Generate an error frame.
 
-        qimg = m_broken;
+        qimg = d->brokenImg;
         qCWarning(DIGIKAM_GENERAL_LOG) << "MjpegStream: Failed to load" << path;
     }
     else
@@ -126,7 +141,7 @@ QImage MjpegFrameTask::loadImageFromPreviewCache(const QString& path) const
 
     // Resize output image to the wanted dimensions.
 
-    VidSlideSettings::VidType type = (VidSlideSettings::VidType)m_set.outSize;
+    VidSlideSettings::VidType type = (VidSlideSettings::VidType)d->settings.outSize;
     qimg                           = FrameUtils::makeScaledImage(qimg, VidSlideSettings::videoSizeFromType(type));
 
     return qimg;
@@ -138,8 +153,8 @@ void MjpegFrameTask::run()
     QImage qtimg;   // Current transition image.
     QImage qoimg;   // Next image in stream.
 
-    VidSlideSettings::VidType type = (VidSlideSettings::VidType)m_set.outSize;
-    int imgFrames                  = m_set.delay * m_set.rate;
+    VidSlideSettings::VidType type = (VidSlideSettings::VidType)d->settings.outSize;
+    int imgFrames                  = d->settings.delay * d->settings.rate;
     bool oneLoopDone               = false;
 
     TransitionMngr transmngr;
@@ -153,7 +168,7 @@ void MjpegFrameTask::run()
     {
         // To stream in loop forever.
 
-        for (int i = 0 ; ((i < m_set.inputImages.count()) && !m_cancel) ; ++i)
+        for (int i = 0 ; ((i < d->settings.inputImages.count()) && !m_cancel) ; ++i)
         {
             // One loop strem all items one by one from the ordered list
 
@@ -166,11 +181,11 @@ void MjpegFrameTask::run()
 
             QString ofile;
 
-            if (i < m_set.inputImages.count())
+            if (i < d->settings.inputImages.count())
             {
                 // The current item to pass to the next stage from a transition
 
-                ofile = m_set.inputImages[i].toLocalFile();
+                ofile = d->settings.inputImages[i].toLocalFile();
             }
 
             qoimg      = loadImageFromPreviewCache(ofile);
@@ -179,7 +194,7 @@ void MjpegFrameTask::run()
 
             transmngr.setInImage(qiimg);
             transmngr.setOutImage(qoimg);
-            transmngr.setTransition(m_set.transition);
+            transmngr.setTransition(d->settings.transition);
 
             int ttmout = 0;
 
@@ -191,7 +206,7 @@ void MjpegFrameTask::run()
 
                 emit signalFrameChanged(imageToJPEGArray(qtimg));
 
-                QThread::msleep(lround(1000.0 / m_set.rate));
+                QThread::msleep(lround(1000.0 / d->settings.rate));
             }
             while ((ttmout != -1) && !m_cancel);
 
@@ -204,7 +219,7 @@ void MjpegFrameTask::run()
             int count  = 0;
             int itmout = 0;
             effmngr.setImage(qoimg);
-            effmngr.setEffect(m_set.effect);
+            effmngr.setEffect(d->settings.effect);
 
             do
             {
@@ -216,16 +231,16 @@ void MjpegFrameTask::run()
 
                 count++;
 
-                QThread::msleep(lround(1000.0 / m_set.rate));
+                QThread::msleep(lround(1000.0 / d->settings.rate));
             }
             while ((count < imgFrames) && !m_cancel);
 
             oneLoopDone = true;        // At least one loop is done.
         }
     }
-    while (!m_cancel && m_set.loop);
+    while (!m_cancel && d->settings.loop);
 
-    emit signalFrameChanged(imageToJPEGArray(m_theend));
+    emit signalFrameChanged(imageToJPEGArray(d->endImg));
     qCDebug(DIGIKAM_GENERAL_LOG) << "MjpegStream: end of stream";
 
     emit signalDone();
