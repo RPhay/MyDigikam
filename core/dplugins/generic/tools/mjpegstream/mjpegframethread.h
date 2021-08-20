@@ -50,7 +50,7 @@ public:
     ~MjpegFrameThread() override;
 
     /**
-     * Instanciate MJPEG frame task thread with right settings.
+     * Instantiate MJPEG frame task thread with right settings.
      */
     void createFrameJob(const MjpegStreamSettings&);
 
