@@ -20,16 +20,22 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_MJPEG_FRAME_THREAD_H
-#define DIGIKAM_MJPEG_FRAME_THREAD_H
+#ifndef DIGIKAM_MJPEG_FRAME_TASK_H
+#define DIGIKAM_MJPEG_FRAME_TASK_H
 
 // Qt includes
 
+#include <QImage>
 #include <QByteArray>
+#include <QColor>
+#include <QPoint>
+#include <QFont>
+#include <QDateTime>
 
 // Local includes
 
 #include "actionthread.h"
+#include "mjpegserver.h"
 #include "mjpegstreamsettings.h"
 
 using namespace Digikam;
@@ -37,31 +43,49 @@ using namespace Digikam;
 namespace DigikamGenericMjpegStreamPlugin
 {
 
-class MjpegFrameThread : public ActionThreadBase
+class MjpegFrameTask : public ActionJob
 {
     Q_OBJECT
 
 public:
 
     /**
-     * Thread manager to fork MJPEg frame task to a separated core.
+     * Standard constructor using MJPEg stream settings.
      */
-    explicit MjpegFrameThread(QObject* const parent);
-    ~MjpegFrameThread() override;
-
-    /**
-     * Instanciate MJPEG frame task thread with right settings.
-     */
-    void createFrameJob(const MjpegStreamSettings&);
+    explicit MjpegFrameTask(const MjpegStreamSettings& set);
+    ~MjpegFrameTask();
 
 Q_SIGNALS:
 
     /**
-     * Re-route signal from task to MJPEG server.
+     * Output JPEG frames from generator thread (emitted to server thread).
      */
-    void signalFrameChanged(const QByteArray&);
+    void signalFrameChanged(const QByteArray& frame);
+
+private:
+
+    /**
+     * Helper monvert a QImage to a byte-aaray of JPEG data file.
+     */
+    QByteArray imageToJPEGArray(const QImage& frame) const;
+
+    /**
+     * Load image from Preview cache from path with desired output size.
+     */
+    QImage loadImageFromPreviewCache(const QString& path) const;
+
+    /**
+     * Loop from separated thread to render periodicaly frames for MJPEG stream.
+     * Result is sent to signalFrameChanged().
+     */
+    void run();
+
+private:
+
+    class Private;
+    Private* const d;
 };
 
 } // namespace DigikamGenericMjpegStreamPlugin
 
-#endif // DIGIKAM_MJPEG_FRAME_THREAD_H
+#endif // DIGIKAM_MJPEG_FRAME_TASK_H
