@@ -27,7 +27,7 @@
 // Qt includes
 
 #include <QObject>
-#include <QtTest>
+#include <QTest>
 
 // Local includes
 
