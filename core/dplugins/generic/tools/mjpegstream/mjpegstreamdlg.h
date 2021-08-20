@@ -41,15 +41,27 @@ class MjpegStreamDlg : public DPluginDialog
 {
     Q_OBJECT
 
+//@{
+// Base methods - mjgpegstreamdlg.cpp
+
 public:
 
-    explicit MjpegStreamDlg(QObject* const parent,
-                            DInfoInterface* const iface = nullptr);
+    explicit MjpegStreamDlg(QObject* const parent, DInfoInterface* const iface = nullptr);
     ~MjpegStreamDlg()               override;
+
+private Q_SLOTS:
+
+    void accept()                   override;
+    void slotSelectionChanged();
+    void slotOpenPreview();
+
+//@}
+
+//@{
+// Settings methods - mjpegstreamdlg_settings.cpp
 
 private:
 
-    // Settings methods - mjpegstreamdlg_settings.cpp
 
     void readSettings();
     void saveSettings();
@@ -58,9 +70,13 @@ private Q_SLOTS:
 
     void slotSettingsChanged();
 
+//@}
+
+//@{
+// Server methods - mjpegstreamdlg_server.cpp
+
 private:
 
-    // Server methods - mjpegstreamdlg_server.cpp
 
     void updateServerStatus();
     bool setMjpegServerContents();
@@ -70,9 +86,13 @@ private Q_SLOTS:
 
     void slotToggleMjpegServer();
 
+//@}
+
+//@{
+// Views methods - mjpegstreamdlg_views.cpp
+
 private:
 
-    // Views methods - mjpegstreamdlg_views.cpp
 
     QWidget* setupItemsView();
     void setupServerView();
@@ -80,11 +100,7 @@ private:
     void setupTransitionView();
     void setupEffectView();
 
-private Q_SLOTS:
-
-    void accept()                   override;
-    void slotSelectionChanged();
-    void slotOpenPreview();
+//@}
 
 private:
 

@@ -59,7 +59,7 @@ MjpegStreamDlg::MjpegStreamDlg(QObject* const /*parent*/,
     vlay->addWidget(itemsSel);
     vlay->addWidget(d->tabView);
     vlay->addWidget(m_buttons);
-    vlay->setStretchFactor(itemsSel, 10);
+    vlay->setStretchFactor(itemsSel,   10);
     vlay->setStretchFactor(d->tabView, 1);
     vlay->setSpacing(d->spacing);
     setLayout(vlay);
@@ -99,7 +99,7 @@ void MjpegStreamDlg::accept()
 
         if (!empty)
         {
-            int rc = QMessageBox::question(this, i18nc("@title", "Media Server Contents"),
+            int rc = QMessageBox::question(this, i18nc("@title", "MJPEG Server Contents"),
                                            i18nc("@info", "The items list to share has changed. "
                                                  "Do you want to start now the MJPEG server with this contents?"));
             if (rc == QMessageBox::Yes)

@@ -50,9 +50,9 @@ class MjpegFrameTask : public ActionJob
 public:
 
     /**
-     * Standard constructor using MJPEg stream settings.
+     * Standard constructor using MJPEG stream settings.
      */
-    explicit MjpegFrameTask(const MjpegStreamSettings& set);
+    explicit MjpegFrameTask(const MjpegStreamSettings& settings);
     ~MjpegFrameTask();
 
 Q_SIGNALS:
@@ -75,8 +75,9 @@ private:
     QImage loadImageFromPreviewCache(const QString& path) const;
 
     /**
-     * Loop from separated thread to render periodicaly frames for MJPEG stream.
-     * Result is sent to signalFrameChanged().
+     * Loop from separated main thread to render periodicaly frames for MJPEG stream.
+     * This include transition between images and effect to render items.
+     * Results are sent by signalFrameChanged().
      */
     void run();
 
