@@ -988,7 +988,11 @@ void GPSMarkerTiler::removeMarkerFromTileAndChildren(const qlonglong imageId, co
 
             // this tile can be deleted
 
-            currentParentTile->deleteChild(currentTile);
+            if (currentParentTile)
+            {
+                currentParentTile->deleteChild(currentTile);
+            }
+
             break;
         }
 
