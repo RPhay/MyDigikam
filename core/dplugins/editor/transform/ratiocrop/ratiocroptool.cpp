@@ -265,7 +265,8 @@ RatioCropTool::RatioCropTool(QObject* const parent)
     d->resLabel              = new QLabel(cropInfo);
     d->resLabel->setAlignment(Qt::AlignRight | Qt::AlignVCenter);
 
-    const int spacing = d->gboxSettings->spacingHint();
+    const int spacing  = d->gboxSettings->spacingHint();
+    const int iconSize = QApplication::style()->pixelMetric(QStyle::PM_SmallIconSize);
 
     grid3->addWidget(d->histogramBox, 0, 0, 1, 3);
     grid3->addWidget(resolution,      1, 0, 1, 1);
@@ -273,7 +274,7 @@ RatioCropTool::RatioCropTool(QObject* const parent)
     grid3->setContentsMargins(spacing, spacing, spacing, spacing);
     grid3->setSpacing(spacing);
 
-    d->expbox->addItem(cropInfo, QIcon::fromTheme(QLatin1String("help-about")).pixmap(QApplication::style()->pixelMetric(QStyle::PM_SmallIconSize)),
+    d->expbox->addItem(cropInfo, QIcon::fromTheme(QLatin1String("help-about")).pixmap(iconSize),
                        i18n("Crop Information"), QLatin1String("CropInformation"), true);
 
     // -------------------------------------------------------------
@@ -380,7 +381,8 @@ RatioCropTool::RatioCropTool(QObject* const parent)
     d->widthInput->setDefaultValue(800);
 
     d->centerWidth = new QToolButton(cropSelection);
-    d->centerWidth->setIcon(QPixmap(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("digikam/data/centerwidth.png"))));
+    d->centerWidth->setIcon(QPixmap(QStandardPaths::locate(QStandardPaths::GenericDataLocation,
+                                                           QLatin1String("digikam/data/centerwidth.png"))));
     d->centerWidth->setWhatsThis(i18n("Set width position to center."));
 
     d->heightInput = new DIntNumInput(cropSelection);
@@ -391,7 +393,8 @@ RatioCropTool::RatioCropTool(QObject* const parent)
     d->heightInput->setDefaultValue(600);
 
     d->centerHeight = new QToolButton(cropSelection);
-    d->centerHeight->setIcon(QPixmap(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("digikam/data/centerheight.png"))));
+    d->centerHeight->setIcon(QPixmap(QStandardPaths::locate(QStandardPaths::GenericDataLocation,
+                                                            QLatin1String("digikam/data/centerheight.png"))));
     d->centerHeight->setWhatsThis(i18n("Set height position to center."));
 
     // -------------------------------------------------------------
@@ -417,7 +420,7 @@ RatioCropTool::RatioCropTool(QObject* const parent)
     mainLayout->setContentsMargins(spacing, spacing, spacing, spacing);
     mainLayout->setSpacing(spacing);
 
-    d->expbox->addItem(cropSelection, QIcon::fromTheme(QLatin1String("transform-crop-and-resize")).pixmap(QApplication::style()->pixelMetric(QStyle::PM_SmallIconSize)),
+    d->expbox->addItem(cropSelection, QIcon::fromTheme(QLatin1String("transform-crop-and-resize")).pixmap(iconSize),
                        i18n("Crop Settings"), QLatin1String("CropSelection"), true);
 
     // -------------------------------------------------------------
@@ -480,7 +483,7 @@ RatioCropTool::RatioCropTool(QObject* const parent)
     grid2->setContentsMargins(spacing, spacing, spacing, spacing);
     grid2->setSpacing(spacing);
 
-    d->expbox->addItem(compositionGuide, QIcon::fromTheme(QLatin1String("tools-wizard")).pixmap(QApplication::style()->pixelMetric(QStyle::PM_SmallIconSize)),
+    d->expbox->addItem(compositionGuide, QIcon::fromTheme(QLatin1String("tools-wizard")).pixmap(iconSize),
                        i18n("Composition Guides"), QLatin1String("CompositionGuide"), true);
 
     d->expbox->addStretch();
