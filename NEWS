@@ -44,10 +44,8 @@ BUGFIXES:
 032 ==> 414148 - Database error on upgrade. digiKam now won't open.
 033 ==> 432529 - 7.1.0 - Crashing during Face Detection. 1 Million + Images.
 034 ==> 441114 - Show Pictures of Sub-Folders too.
-035 ==> 441335 - Images in editor look very different from jpg preview.
-036 ==> 441280 - Confirming face in preview removes other face regions.
-037 ==> 441316 - Aspect-ratio cropping does not show a frame to select the crop.
-038 ==> 
+035 ==> 441280 - Confirming face in preview removes other face regions.
+036 ==> 441316 - Aspect-ratio cropping does not show a frame to select the crop.
+037 ==> 
 039 ==> 
 040 ==> 
-
