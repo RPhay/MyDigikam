@@ -45,7 +45,7 @@ BUGFIXES:
 033 ==> 432529 - 7.1.0 - Crashing during Face Detection. 1 Million + Images.
 034 ==> 441114 - Show Pictures of Sub-Folders too.
 035 ==> 441335 - Images in editor look very different from jpg preview.
-036 ==> 
+036 ==> 441280 - Confirming face in preview removes other face regions.
 037 ==> 
 038 ==> 
 039 ==> 
