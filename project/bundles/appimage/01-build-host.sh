@@ -66,6 +66,7 @@ urpmi --auto \
       fuse \
       automake \
       cmake \
+      ninja \
       ccache \
       gcc-c++ \
       patch \
@@ -232,7 +233,7 @@ rm -rf $BUILDING_DIR/* || true
 # Low level libraries and Qt5 dependencies
 # NOTE: The order to compile each component here is very important.
 
-#/opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_libicu        -- -j$CPU_CORES
+/opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_libicu        -- -j$CPU_CORES
 /opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_openssl       -- -j$CPU_CORES
 
 /opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_qt            -- -j$CPU_CORES    # depend of tiff, png, jpeg
