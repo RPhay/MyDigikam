@@ -747,6 +747,12 @@ void RatioCropTool::writeSettings()
 void RatioCropTool::slotResetSettings()
 {
     d->ratioCropWidget->resetSelection();
+
+    setInputRange(d->ratioCropWidget->getRegionSelection());
+    d->ratioCropWidget->setIsDrawingSelection(true);
+
+    slotGuideTypeChanged(d->guideLinesCB->currentIndex());
+    updateCropInfo();
 }
 
 void RatioCropTool::slotMaxAspectRatio()

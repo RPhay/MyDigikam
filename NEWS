@@ -46,7 +46,7 @@ BUGFIXES:
 034 ==> 441114 - Show Pictures of Sub-Folders too.
 035 ==> 441335 - Images in editor look very different from jpg preview.
 036 ==> 441280 - Confirming face in preview removes other face regions.
-037 ==> 
+037 ==> 441316 - Aspect-ratio cropping does not show a frame to select the crop.
 038 ==> 
 039 ==> 
 040 ==> 
