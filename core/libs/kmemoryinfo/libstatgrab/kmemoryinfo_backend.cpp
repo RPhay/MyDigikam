@@ -828,7 +828,11 @@ int get_swap_stats(Digikam::KMemoryInfo::KMemoryInfoData* const data)
     data->usedSwap  = data->totalSwap - data->freeSwap;
 
     return 1;
-#endif
+#endif // Q_OS_WIN
+
+#ifdef Q_OS_MACOS
+    return -2;
+#endif // Q_OS_MACOS
 
     return -1;
 }
