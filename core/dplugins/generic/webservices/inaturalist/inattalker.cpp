@@ -1159,7 +1159,10 @@ void INatTalker::computerVision(const QUrl& localImage)
 
     parameters << Parameter(QLatin1String("locale"), locale.name());
 
-    QHttpMultiPart* const multiPart = getMultiPart(parameters, QLatin1String("image"), path);
+    QHttpMultiPart* const multiPart = getMultiPart(parameters,
+                                                   QLatin1String("image"),
+                                                   QFileInfo(path).fileName(),
+                                                   path);
 
     QUrl url(d->apiUrl + QLatin1String("computervision/score_image"));
     QNetworkRequest netRequest(url);
@@ -1314,11 +1317,14 @@ void INatTalker::uploadNextPhoto(const PhotoUploadRequest& request)
             }
 
             image.save(tmpImage, "JPEG", request.m_quality);
-            path = tmpImage;
         }
     }
 
-    QHttpMultiPart* multiPart  = getMultiPart(parameters, QLatin1String("file"), path);
+    QHttpMultiPart* multiPart  = getMultiPart(parameters,
+                                              QLatin1String("file"),
+                                              QFileInfo(path).fileName(),
+                                              tmpImage.isEmpty() ? path
+                                                                 : tmpImage);
     QUrl url(d->apiUrl + QLatin1String("observation_photos"));
     QNetworkRequest netRequest(url);
     netRequest.setRawHeader("Authorization", request.m_apiKey.toLatin1());

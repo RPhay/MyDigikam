@@ -53,7 +53,9 @@ const double meterInMiles = 0.00062137;
 // Functions
 
 QHttpMultiPart* getMultiPart(const QList<Parameter>& parameters,
-                             const QString& imageName, const QString& imagePath)
+                             const QString& imageName,
+                             const QString& imageNameArg,
+                             const QString& imagePath)
 {
     static const QString paramForm = QLatin1String("form-data; name=\"%1\"");
     static const QString imageForm = QLatin1String("form-data; name=\"%1\"; "
@@ -70,27 +72,23 @@ QHttpMultiPart* getMultiPart(const QList<Parameter>& parameters,
         result->append(part);
     }
 
-    if (!imageName.isEmpty() && !imagePath.isEmpty())
+    QHttpPart imagePart;
+    QFileInfo fileInfo(imagePath);
+    imagePart.setHeader(QNetworkRequest::ContentTypeHeader,
+                        QVariant(QString(QLatin1String("image/%1")).
+                                 arg(fileInfo.suffix().toLower())));
+    imagePart.setHeader(QNetworkRequest::ContentDispositionHeader,
+                        QVariant(imageForm.arg(imageName, imageNameArg)));
+    QFile* const file = new QFile(imagePath);
+
+    if (!file->open(QIODevice::ReadOnly))
     {
-        QHttpPart imagePart;
-        QFileInfo fileInfo(imagePath);
-        imagePart.setHeader(QNetworkRequest::ContentTypeHeader,
-                            QVariant(QString(QLatin1String("image/%1")).
-                                     arg(fileInfo.suffix().toLower())));
-        imagePart.setHeader(QNetworkRequest::ContentDispositionHeader,
-                            QVariant(imageForm.arg(imageName,
-                                     fileInfo.baseName())));
-        QFile* const file = new QFile(imagePath);
-
-        if (!file->open(QIODevice::ReadOnly))
-        {
-            qCWarning(DIGIKAM_WEBSERVICES_LOG) << "Cannot open file to read" << imagePath;
-        }
-
-        imagePart.setBodyDevice(file);
-        file->setParent(result);
-        result->append(imagePart);
+        qCWarning(DIGIKAM_WEBSERVICES_LOG) << "Cannot open file to read" << imagePath;
     }
+
+    imagePart.setBodyDevice(file);
+    file->setParent(result);
+    result->append(imagePart);
 
     return result;
 }
