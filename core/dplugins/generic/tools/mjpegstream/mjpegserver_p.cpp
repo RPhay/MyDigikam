@@ -280,12 +280,12 @@ void MjpegServer::Private::clientWriteMultithreaded(int client, const QByteArray
 
     // Write header
 
-    writeInSocket(client, head.toLatin1());
+    (void)writeInSocket(client, head.toLatin1());
 
     // Write image data
 
-    writeInSocket(client, data);
-    writeInSocket(client, QByteArray("\r\n\r\n"));
+    (void)writeInSocket(client, data);
+    (void)writeInSocket(client, QByteArray("\r\n\r\n"));
 }
 
 } // namespace DigikamGenericMjpegStreamPlugin
