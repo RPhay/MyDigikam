@@ -838,11 +838,12 @@ void INatWindow::slotUser1()
                                            isChecked(),
                                            d->resizeCheckBox->isChecked(),
                                            d->dimensionSpinBox->value(),
-                                           d->imageQualitySpinBox->value());
+                                           d->imageQualitySpinBox->value(),
+                                           d->username);
     d->talker->createObservation(QJsonDocument(jsonObservation).toJson(),
                                  request);
 
-    // Clear data, user can work on the next observation.
+    // Clear data, user can start working on the next observation right away.
 
     d->imglst->listView()->clear();
     slotTaxonDeselected();

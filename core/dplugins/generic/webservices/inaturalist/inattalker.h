@@ -71,6 +71,7 @@ public:
     {
         PhotoUploadRequest()
             : m_observationId(-1),
+              m_totalImages  (0),
               m_updateIds    (false),
               m_rescale      (false),
               m_maxDim       (-1),
@@ -82,9 +83,11 @@ public:
                            bool updId,
                            bool resize,
                            int mxDim,
-                           int q)
+                           int q, const QString& userName)
             : m_observationId(-1),
+              m_totalImages  (imgs.count()),
               m_images       (imgs),
+              m_user         (userName),
               m_updateIds    (updId),
               m_rescale      (resize),
               m_maxDim       (mxDim),
@@ -93,8 +96,10 @@ public:
         }
 
         int         m_observationId;
+        int         m_totalImages;
         QList<QUrl> m_images;
         QString     m_apiKey;
+        QString     m_user;
         bool        m_updateIds;
         bool        m_rescale;
         int         m_maxDim;
@@ -213,7 +218,7 @@ public:
     /**
      * Download an image from iNaturalist servers.
      */
-    void    loadUrl(const QUrl& url);
+    void    loadUrl(const QUrl& url, int retries = 0);
 
     /**
      * Obtain auto completions for taxa from iNaturalist servers.
@@ -248,14 +253,28 @@ public:
     void    createObservation(const QByteArray&, const PhotoUploadRequest&);
 
     /**
+     * Check whether an iNaturalist observation has been created. Called
+     * upon timeout in createObservation().
+     */
+    void    verifyCreateObservation(const QByteArray&,
+                                    const PhotoUploadRequest&,
+                                    int page, int retries);
+
+    /**
      * Delete an observation; called when canceling uploads.
      */
-    void    deleteObservation(int id, const QString& apiKey);
+    void    deleteObservation(int id, const QString& apiKey, int retries = 0);
 
     /**
      * Upload another photo to previously created observation.
      */
     void    uploadNextPhoto(const PhotoUploadRequest&);
+
+    /**
+     * Check whether an observation photo has been uploaded. Called
+     * upon timeout in uploadNextPhoto().
+     */
+    void    verifyUploadNextPhoto(const PhotoUploadRequest&, int retries);
 
 public:
 
@@ -286,6 +305,7 @@ private Q_SLOTS:
 
     void slotApiToken(const QString&, const QList<QNetworkCookie>&);
     void slotFinished(QNetworkReply* reply);
+    void slotTimeout();
 
 private:
 
