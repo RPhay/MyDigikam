@@ -117,7 +117,8 @@ INatWidget::INatWidget(QWidget* const parent,
 
     QLabel* const placeLabel                = new QLabel(i18n("Place:"), idBox);
     d->placesComboBox                       = new QComboBox(idBox);
-    d->placesComboBox->setEditable(false);
+    d->placesComboBox->setInsertPolicy(QComboBox::NoInsert);
+    d->placesComboBox->setEditable(true);
     d->moreOptionsButton                    = new QPushButton(i18n("More options"), idBox);
     d->moreOptionsButton->setCheckable(true);
     d->moreOptionsButton->setChecked(false);
