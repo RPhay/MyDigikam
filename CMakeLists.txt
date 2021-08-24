@@ -4,7 +4,7 @@
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
 
-set(CMAKE_MIN_VERSION   "3.3.2")
+set(CMAKE_MIN_VERSION   "3.16")
 set(ECM_MIN_VERSION     "5.5.0")
 
 cmake_minimum_required(VERSION ${CMAKE_MIN_VERSION})
