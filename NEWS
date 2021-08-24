@@ -50,12 +50,12 @@ BUGFIXES:
 039 ==> 440588 - Metadata is not saved in 7.3.0.
 040 ==> 440590 - digiKam 7.3.0 fails to start: cannot process schema initialization.
 041 ==> 440955 - Entering tag and chosing second selects first tag instead.
-042 ==> 
-043 ==> 
-044 ==> 
-045 ==> 
-046 ==> 
-047 ==> 
+042 ==> 439490 - Ambiguous Shortcuts -- There are two actions (Open Command Bar, Add Images ...) that want to use the same shortcut (Ctrl+Alt+I).
+043 ==> 439495 - Launch digiKam and message dialogue appears "Ambiguou... digiKam".
+044 ==> 440229 - Ambiguous Shortcuts warning popups.
+045 ==> 441231 - There are two actions (Open Command Bar, Add Images...) that want to use the same shortcut (Ctrl+Alt+I).
+046 ==> 439527 - digiKam crash when inventory psd 16 bit file.
+047 ==> 440132 - digiKam crashes scanning for new items.
 048 ==> 
 049 ==> 
 050 ==> 
