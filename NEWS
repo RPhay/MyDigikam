@@ -46,6 +46,18 @@ BUGFIXES:
 034 ==> 441114 - Show Pictures of Sub-Folders too.
 035 ==> 441280 - Confirming face in preview removes other face regions.
 036 ==> 441316 - Aspect-ratio cropping does not show a frame to select the crop.
-037 ==> 
-039 ==> 
-040 ==> 
+037 ==> 439395 - Conflicting shortcuts on fresh install.
+039 ==> 440588 - Metadata is not saved in 7.3.0.
+040 ==> 440590 - digiKam 7.3.0 fails to start: cannot process schema initialization.
+041 ==> 440955 - Entering tag and chosing second selects first tag instead.
+042 ==> 439490 - Ambiguous Shortcuts -- There are two actions (Open Command Bar, Add Images ...) that want to use the same shortcut (Ctrl+Alt+I).
+043 ==> 439495 - Launch digiKam and message dialogue appears "Ambiguou... digiKam".
+044 ==> 440229 - Ambiguous Shortcuts warning popups.
+045 ==> 441231 - There are two actions (Open Command Bar, Add Images...) that want to use the same shortcut (Ctrl+Alt+I).
+046 ==> 439527 - digiKam crash when inventory psd 16 bit file.
+047 ==> 440132 - digiKam crashes scanning for new items.
+048 ==> 347018 - Add collapsable albums to the tag view.
+049 ==> 438794 - Feature request: collapse all.
+050 ==> 268059 - Showfoto is unable to display TIF file in non RGB color space.
+051 ==> 
+
