@@ -46,6 +46,18 @@ BUGFIXES:
 034 ==> 441114 - Show Pictures of Sub-Folders too.
 035 ==> 441280 - Confirming face in preview removes other face regions.
 036 ==> 441316 - Aspect-ratio cropping does not show a frame to select the crop.
-037 ==> 
-039 ==> 
-040 ==> 
+037 ==> 439395 - Conflicting shortcuts on fresh install.
+039 ==> 440588 - Metadata is not saved in 7.3.0.
+040 ==> 440590 - digiKam 7.3.0 fails to start: cannot process schema initialization.
+041 ==> 440955 - Entering tag and chosing second selects first tag instead.
+042 ==> 
+043 ==> 
+044 ==> 
+045 ==> 
+046 ==> 
+047 ==> 
+048 ==> 
+049 ==> 
+050 ==> 
+051 ==> 
+
