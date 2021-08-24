@@ -58,6 +58,6 @@ BUGFIXES:
 047 ==> 440132 - digiKam crashes scanning for new items.
 048 ==> 347018 - Add collapsable albums to the tag view.
 049 ==> 438794 - Feature request: collapse all.
-050 ==> 
+050 ==> 268059 - Showfoto is unable to display TIF file in non RGB color space.
 051 ==> 
 
