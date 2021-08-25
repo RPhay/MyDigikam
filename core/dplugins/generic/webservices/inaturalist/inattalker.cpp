@@ -1611,10 +1611,10 @@ public:
             else if (noPhotos + m_request.m_images.count() ==
                      m_request.m_totalImages + 1)
             {
-                INatTalker::PhotoUploadResult result(m_request,
-                                                     lastObservationPhotoId,
-                                                     lastPhotoId);
-                emit talker.signalPhotoUploaded(result);
+                INatTalker::PhotoUploadResult uploadResult(m_request,
+                                                       lastObservationPhotoId,
+                                                       lastPhotoId);
+                emit talker.signalPhotoUploaded(uploadResult);
             }
         }
         else
