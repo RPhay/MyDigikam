@@ -71,17 +71,17 @@ BUGFIXES:
 060 ==> 317606 - SCAN : When adding 1444 pics to an registered directory, it takes time for ever.
 061 ==> 317658 - black white batch conversion delivers a black image.
 062 ==> 441521 - Where to find package called digikam-doc?
-063 ==> 
-064 ==> 
-065 ==> 
-066 ==> 
-067 ==> 
-068 ==> 
-069 ==> 
-070 ==> 
-071 ==> 
-072 ==> 
-073 ==> 
+063 ==> 317940 - Autorotation after import doesn't work.
+064 ==> 319026 - Organize tags works badly in long lists.
+065 ==> 319605 - Crashes while starting up.
+066 ==> 319655 - digiKam "starting-up-crashing-loop".
+067 ==> 319690 - digiKam crashes at startup after configuration.
+068 ==> 319745 - digiKam crashes after using the space bar in image editor to jump to next image.
+069 ==> 335293 - digiKam crashed on initial startup.
+070 ==> 328827 - digiKam keeps on crashin at start-up.
+071 ==> 319762 - Starting up crashes.
+072 ==> 325609 - Crashes on Startup - prev. crash while creating DB.
+073 ==> 329829 - digiKam crashes on first run.
 074 ==> 
 075 ==> 
 076 ==> 
@@ -90,3 +90,23 @@ BUGFIXES:
 079 ==> 
 080 ==> 
 081 ==> 
+082 ==> 
+083 ==> 
+084 ==> 
+085 ==> 
+086 ==> 
+087 ==> 
+088 ==> 
+089 ==> 
+090 ==> 
+091 ==> 
+092 ==> 
+093 ==> 
+094 ==> 
+095 ==> 
+096 ==> 
+097 ==> 
+098 ==> 
+099 ==> 
+100 ==> 
+101 ==> 
