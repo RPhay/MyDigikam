@@ -82,18 +82,18 @@ BUGFIXES:
 071 ==> 319762 - Starting up crashes.
 072 ==> 325609 - Crashes on Startup - prev. crash while creating DB.
 073 ==> 329829 - digiKam crashes on first run.
-074 ==> 
-075 ==> 
-076 ==> 
-077 ==> 
-078 ==> 
-079 ==> 
-080 ==> 
-081 ==> 
-082 ==> 
-083 ==> 
-084 ==> 
-085 ==> 
+074 ==> 319859 - Import curves settings in Batch Q.
+075 ==> 295724 - Crash after save of edited picture.
+076 ==> 306162 - Crash after selecting another image.
+077 ==> 317670 - Crash after turning image, save and going to the next image.
+078 ==> 303174 - digiKam crashed when saving image changes.
+079 ==> 307398 - digiKam crashes in image editing modus when I save an edited image.
+080 ==> 290889 - Always crash.
+081 ==> 319948 - Crash after saving modified picture.
+082 ==> 315709 - Crash in Edit mode when using space bar.
+083 ==> 287700 - Bug after saving.
+084 ==> 298953 - digiKam crashes during saving photo.
+085 ==> 289389 - digiKam crash upon saving changes to images.
 086 ==> 
 087 ==> 
 088 ==> 
