@@ -66,6 +66,7 @@
 #include "itemtagpair.h"
 #include "albummanager.h"
 #include "facegroup.h"
+#include "focuspointgroup.h"
 
 namespace Digikam
 {
@@ -90,6 +91,9 @@ public:
         peopleToggleAction(nullptr),
         addPersonAction(nullptr),
         forgetFacesAction(nullptr),
+        focusPointGroup(nullptr),
+        addFocusPointAction(nullptr),
+        showFocusPointAction(nullptr),
         fullscreenAction(nullptr),
         currAlbum(nullptr)
     {
@@ -115,7 +119,11 @@ public:
     QAction*               peopleToggleAction;
     QAction*               addPersonAction;
     QAction*               forgetFacesAction;
-
+    
+    FocusPointGroup*       focusPointGroup;
+    QAction*               addFocusPointAction;
+    QAction*               showFocusPointAction;
+    
     QAction*               fullscreenAction;
 
     Album*                 currAlbum;
@@ -133,6 +141,8 @@ ItemPreviewView::ItemPreviewView(QWidget* const parent, Mode mode, Album* const 
     d->faceGroup = new FaceGroup(this);
     d->faceGroup->setShowOnHover(true);
     d->item->setFaceGroup(d->faceGroup);
+
+    d->focusPointGroup = new FocusPointGroup(this);
 
     connect(d->item, SIGNAL(loaded()),
             this, SLOT(imageLoaded()));
@@ -163,9 +173,15 @@ ItemPreviewView::ItemPreviewView(QWidget* const parent, Mode mode, Album* const 
     d->rotRightAction      = new QAction(QIcon::fromTheme(QLatin1String("object-rotate-right")),  i18nc("@info:tooltip", "Rotate Right"), this);
 
     d->addPersonAction     = new QAction(QIcon::fromTheme(QLatin1String("list-add-user")),        i18n("Add a Face Tag"),                 this);
+
     d->forgetFacesAction   = new QAction(QIcon::fromTheme(QLatin1String("list-remove-user")),     i18n("Clear all faces on this image"),  this);
     d->peopleToggleAction  = new QAction(QIcon::fromTheme(QLatin1String("im-user")),              i18n("Show Face Tags"),                 this);
+
+    d->addFocusPointAction = new QAction(QIcon::fromTheme(QLatin1String("list-add-user")),        i18n("Add a focus point"),              this);
+    d->showFocusPointAction = new QAction(QIcon::fromTheme(QLatin1String("im-user")),             i18n("Show focus points"),              this); 
+
     d->peopleToggleAction->setCheckable(true);
+    d->showFocusPointAction->setCheckable(true);
 
     d->fullscreenAction    = new QAction(QIcon::fromTheme(QLatin1String("media-playback-start")), i18n("Show Fullscreen"),                this);
     d->toolBar             = new QToolBar(this);
@@ -205,6 +221,12 @@ ItemPreviewView::ItemPreviewView(QWidget* const parent, Mode mode, Album* const 
     connect(d->forgetFacesAction, SIGNAL(triggered()),
             d->faceGroup, SLOT(rejectAll()));
 
+    connect(d->addFocusPointAction, SIGNAL(triggered()),
+            d->focusPointGroup, SLOT(addPoint()));
+    
+    connect(d->showFocusPointAction, SIGNAL(toggled(bool)),
+            d->focusPointGroup, SLOT(setVisible(bool)));
+
     connect(d->fullscreenAction, SIGNAL(triggered()),
             this, SLOT(slotSlideShowCurrent()));
 
@@ -231,6 +253,7 @@ ItemPreviewView::ItemPreviewView(QWidget* const parent, Mode mode, Album* const 
 ItemPreviewView::~ItemPreviewView()
 {
     delete d->item;
+    delete d->focusPointGroup;
     delete d;
 }
 
@@ -245,6 +268,9 @@ void ItemPreviewView::imageLoaded()
     d->rotLeftAction->setEnabled(true);
     d->rotRightAction->setEnabled(true);
     d->faceGroup->setInfo(d->item->imageInfo());
+
+    d->focusPointGroup->setInfo(d->item->imageInfo());
+    d->addFocusPointAction->setEnabled(d->focusPointGroup->isAllowedToAddFocusPoint());
 }
 
 void ItemPreviewView::imageLoadingFailed()
@@ -253,6 +279,8 @@ void ItemPreviewView::imageLoadingFailed()
     d->rotLeftAction->setEnabled(false);
     d->rotRightAction->setEnabled(false);
     d->faceGroup->setInfo(ItemInfo());
+    d->focusPointGroup->setInfo(ItemInfo());
+
 }
 
 void ItemPreviewView::setItemInfo(const ItemInfo& info, const ItemInfo& previous, const ItemInfo& next)
@@ -307,6 +335,7 @@ void ItemPreviewView::showEvent(QShowEvent* e)
 {
     GraphicsDImgView::showEvent(e);
     d->faceGroup->setVisible(d->peopleToggleAction->isChecked());
+    d->focusPointGroup->setVisible(d->showFocusPointAction->isChecked());
 }
 
 void ItemPreviewView::slotShowContextMenu(QGraphicsSceneContextMenuEvent* event)
@@ -347,6 +376,13 @@ void ItemPreviewView::slotShowContextMenu(QGraphicsSceneContextMenuEvent* event)
     cmHelper.addAction(d->peopleToggleAction, true);
     cmHelper.addAction(d->addPersonAction,    true);
     cmHelper.addAction(d->forgetFacesAction,  true);
+    cmHelper.addSeparator();
+
+    // -------------------------------------------------------
+
+    cmHelper.addAction(QLatin1String("image_add_af_point"));
+    cmHelper.addAction(d->addFocusPointAction,  true);
+    cmHelper.addAction(d->showFocusPointAction, true);
     cmHelper.addSeparator();
 
     // --------------------------------------------------------

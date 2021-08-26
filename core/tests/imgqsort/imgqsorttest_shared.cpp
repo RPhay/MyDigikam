@@ -26,131 +26,130 @@
 // Qt includes
 
 #include <QStringList>
-#include <QDebug>
+#include <QObject>
+#include <QDir>
+#include <QMultiMap>
+#include <QTest>
 
 // Local includes
 
 #include "dimg.h"
 #include "previewloadthread.h"
 #include "imagequalityparser.h"
+#include "digikam_debug.h"
+#include "digikam_globals.h"
+#include "imagequalitycontainer.h"
+#include "dpluginloader.h"
 
-using namespace Digikam;
 
-QMultiMap<int, QString> ImgQSortTest_ParseTestImages(DetectionType type, const QFileInfoList& list)
+namespace Digikam
 {
-    QString               tname;
+
+ImageQualityContainer ImgQSortTest_ArrangeSettings (DetectionType type)
+{
+    qCDebug(DIGIKAM_TESTS_LOG) << "Process images for detection type "<<type;
+
+    qCInfo(DIGIKAM_TESTS_LOG)  << "Detection type (0:Blur, 1:Noise, 2:Compression, 3:Exposure, 4: General)";
+
     ImageQualityContainer settings;
+
+    settings.detectBlur         = false;
+    settings.detectNoise        = false;
+    settings.detectCompression  = false;
+    settings.detectExposure     = false;
 
     switch (type)
     {
-        case DetectNoise:
-            tname                       = QLatin1String("Noise");
-            settings.enableSorter       = true;
-            settings.detectBlur         = false;
+        case DETECTNOISE:
             settings.detectNoise        = true;
-            settings.detectCompression  = false;
-            settings.detectExposure     = false;
-            settings.lowQRejected       = true;
-            settings.mediumQPending     = true;
-            settings.highQAccepted      = true;
-            settings.rejectedThreshold  = 10;
-            settings.pendingThreshold   = 40;
-            settings.acceptedThreshold  = 60;
-            settings.blurWeight         = 100;
-            settings.noiseWeight        = 100;
-            settings.compressionWeight  = 100;
-            settings.speed              = 1;
             break;
 
-        case DetectCompression:
-            tname                       = QLatin1String("Compression");
-            settings.enableSorter       = true;
-            settings.detectBlur         = false;
-            settings.detectNoise        = false;
+        case DETECTCOMPRESSION:
             settings.detectCompression  = true;
-            settings.detectExposure     = false;
-            settings.lowQRejected       = true;
-            settings.mediumQPending     = true;
-            settings.highQAccepted      = true;
-            settings.rejectedThreshold  = 10;
-            settings.pendingThreshold   = 40;
-            settings.acceptedThreshold  = 60;
-            settings.blurWeight         = 100;
-            settings.noiseWeight        = 100;
-            settings.compressionWeight  = 100;
-            settings.speed              = 1;
             break;
 
-        case DetectExposure:
-            tname                       = QLatin1String("Exposure");
-            settings.enableSorter       = true;
-            settings.detectBlur         = false;
-            settings.detectNoise        = false;
-            settings.detectCompression  = false;
+        case DETECTEXPOSURE:
             settings.detectExposure     = true;
-            settings.lowQRejected       = true;
-            settings.mediumQPending     = true;
-            settings.highQAccepted      = true;
-            settings.rejectedThreshold  = 10;
-            settings.pendingThreshold   = 40;
-            settings.acceptedThreshold  = 60;
-            settings.blurWeight         = 100;
-            settings.noiseWeight        = 100;
-            settings.compressionWeight  = 100;
-            settings.speed              = 1;
+            break;
+        
+        case DETECTBLUR:
+            settings.detectBlur         = true;
             break;
 
         default:
-            tname                       = QLatin1String("Blur");
-            settings.enableSorter       = true;
             settings.detectBlur         = true;
-            settings.detectNoise        = false;
-            settings.detectCompression  = false;
-            settings.detectExposure     = false;
-            settings.lowQRejected       = true;
-            settings.mediumQPending     = true;
-            settings.highQAccepted      = true;
-            settings.rejectedThreshold  = 10;
-            settings.pendingThreshold   = 40;
-            settings.acceptedThreshold  = 60;
-            settings.blurWeight         = 100;
-            settings.noiseWeight        = 100;
-            settings.compressionWeight  = 100;
-            settings.speed              = 1;
+            settings.detectCompression  = true;
+            settings.detectNoise        = true;
+            settings.detectExposure     = true;
             break;
     }
 
-    qDebug() << "Quality Detection Settings:" << settings;
-    qDebug() << "Process images for" << tname << "detection (" << list.size() << ")";
+    return settings;
+}
 
-    QMultiMap<int, QString> results;
+ImageQualityContainer ImgQSortTest_ArrangeCustomSettings (const CustomDetection& customSetting)
+{
+    qCInfo(DIGIKAM_TESTS_LOG)  << "Detection type activate Blur "<< customSetting.detectBlur
+                               << "Noise "      << customSetting.detectNoise
+                               << "Compression "<< customSetting.detectCompression
+                               << "Exposure "   << customSetting.detectExposure;
+
+    ImageQualityContainer settings;
+
+    settings.detectBlur         = customSetting.detectBlur;
+    settings.detectCompression  = customSetting.detectCompression;
+    settings.detectNoise        = customSetting.detectNoise;
+    settings.detectExposure     = customSetting.detectExposure;
+
+    return settings;
+}
+
+QHash<QString, int> ImgQSortTest_ParseTestImagesCore(const ImageQualityContainer& settings, const QFileInfoList& list)
+{
+    qCDebug(DIGIKAM_TESTS_LOG) << "Quality Detection Settings:" << settings;
+
+    QHash<QString, int> results;
 
     foreach (const QFileInfo& inf, list)
     {
         QString path = inf.filePath();
-        qDebug() << path;
-
+        qCDebug(DIGIKAM_TESTS_LOG) << path;
+        
         DImg dimg    = PreviewLoadThread::loadFastSynchronously(path, 1024);
 
         if (dimg.isNull())
         {
-            qDebug() << path << "File cannot be loaded...";
+            qCDebug(DIGIKAM_TESTS_LOG) << path << "File cannot be loaded...";
         }
-
+        
         PickLabel pick;
         ImageQualityParser parser(dimg, settings, &pick);
         parser.startAnalyse();
-
-        qDebug() << "==>" << tname << "quality result is" << pick;
-        results.insert(pick, path);
+        results.insert( path.split(QLatin1String("/")).last(), pick);
     }
 
-    qInfo() << tname << "Quality Results (0:None, 1:Rejected, 2:Pending, 3:Accepted):";
+    qCInfo(DIGIKAM_TESTS_LOG) << "Quality Results (0:None, 1:Rejected, 2:Pending, 3:Accepted):";
 
-    for (QMap<int, QString>::const_iterator it = results.constBegin() ; it != results.constEnd() ; ++it)
+    for (const auto& image_name: results.keys()) 
     {
-        qInfo() << "==>" << it.value() << ":" << it.key();
+        qCInfo(DIGIKAM_TESTS_LOG) << "==>" << image_name << ":" << results.value(image_name);
     }
 
     return results;
+}
+
+QHash<QString, int> ImgQSortTest_ParseTestImagesDefautDetection(DetectionType type, const QFileInfoList& list)
+{
+    ImageQualityContainer settings = ImgQSortTest_ArrangeSettings(type);
+
+    return ImgQSortTest_ParseTestImagesCore(settings, list);
+}
+
+QHash<QString, int> ImgQSortTest_ParseTestImagesCustomDetection(const CustomDetection& customSetting, const QFileInfoList& list)
+{
+    ImageQualityContainer settings = ImgQSortTest_ArrangeCustomSettings(customSetting);
+
+    return ImgQSortTest_ParseTestImagesCore(settings, list);
+}
+
 }

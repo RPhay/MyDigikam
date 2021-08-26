@@ -163,6 +163,8 @@ public:
      */
     void addStandardActionItemDelete(QObject* recv, const char* slot, int quantity = 1);
 
+    void addIQSAction(QObject* recv, const char* slot);
+
     /**
      * Add the lighttable action to the menu.
      *

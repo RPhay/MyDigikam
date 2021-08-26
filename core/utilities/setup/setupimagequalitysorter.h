@@ -29,6 +29,10 @@
 
 #include <QScrollArea>
 
+// Locals includes 
+
+#include "imagequalitycontainer.h"
+
 namespace Digikam
 {
 
@@ -42,6 +46,8 @@ public:
     ~SetupImageQualitySorter() override;
 
     void applySettings();
+    ImageQualityContainer getImageQualityContainer();
+
 
 private:
 

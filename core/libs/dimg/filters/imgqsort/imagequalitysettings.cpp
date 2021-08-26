@@ -291,4 +291,13 @@ void ImageQualitySettings::readSettings()
     d->optionsView->setEnabled(imq.enableSorter);
 }
 
+ImageQualityContainer ImageQualitySettings::getImageQualityContainer()
+{
+    ImageQualityContainer imq;
+    
+    imq.readFromConfig();
+
+    return imq;
+}
+
 } // namespace Digikam

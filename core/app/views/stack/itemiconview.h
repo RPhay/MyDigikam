@@ -134,6 +134,19 @@ private Q_SLOTS:
     //@{
     /// Side-bars handling methods - itemiconview_sidebars.cpp
 
+    // ----------------------------------------------------------------------------------------
+
+    //@{
+    /// Tools methods (Editor, BQM, Light Table) - itemiconview_tools.cpp.
+
+public Q_SLOTS:
+
+    void slotImageQualitySorter();
+
+    //@}
+
+    // ----------------------------------------------------------------------------------------
+
 public:
 
     QList<SidebarWidget*> leftSidebarWidgets()                                     const;

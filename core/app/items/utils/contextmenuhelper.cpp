@@ -1258,6 +1258,17 @@ void ContextMenuHelper::addStandardActionItemDelete(QObject* recv, const char* s
     addAction(trashAction);
 }
 
+void ContextMenuHelper::addIQSAction(QObject* recv, const char* slot)
+{
+    QAction* const IQSAction = new QAction(QIcon::fromTheme(QLatin1String("")),
+                                           i18ncp("@action:inmenu Pluralized",
+                                                    "Image Quality Sort", "Image Quality Sort",1), d->parent);
+    connect(IQSAction, SIGNAL(triggered()),
+            recv, slot);
+
+    addAction(IQSAction);
+}
+
 QAction* ContextMenuHelper::exec(const QPoint& pos, QAction* at)
 {
     QAction* const choice = d->parent->exec(pos, at);

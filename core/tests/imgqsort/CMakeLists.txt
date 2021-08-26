@@ -34,14 +34,18 @@ macro(IMGQSORT_BUILD_STANDALONE)
 
 endmacro()
 
-IMGQSORT_BUILD_STANDALONE(detectblur.cpp)
-IMGQSORT_BUILD_STANDALONE(detectcompression.cpp)
-IMGQSORT_BUILD_STANDALONE(detectnoise.cpp)
-IMGQSORT_BUILD_STANDALONE(detectexposure.cpp)
+
+IMGQSORT_BUILD_STANDALONE(detectblur_cli.cpp)
+IMGQSORT_BUILD_STANDALONE(detectnoise_cli.cpp)
+IMGQSORT_BUILD_STANDALONE(detectexposure_cli.cpp)
+IMGQSORT_BUILD_STANDALONE(detectcompression_cli.cpp)
+IMGQSORT_BUILD_STANDALONE(detectgeneral_cli.cpp)
 
 # --------------------------------------------------------------
 
-add_library(libimgqsorttest STATIC imgqsorttest_shared.cpp)
+QT5_WRAP_CPP(MOC_files ${CMAKE_CURRENT_SOURCE_DIR}/imgqsorttest.h)
+
+add_library(libimgqsorttest STATIC imgqsorttest_shared.cpp ${MOC_files})
 target_link_libraries(libimgqsorttest ${COMMON_TEST_LINK})
 
 macro(IMGQSORT_BUILD_UNITTEST)
@@ -51,7 +55,7 @@ macro(IMGQSORT_BUILD_UNITTEST)
     list(GET _temp 0 _target)
 
     set(${_target}_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/${_filename})
-
+    
     ecm_add_tests(${${_target}_SRCS}
 
                   NAME_PREFIX
@@ -68,4 +72,8 @@ macro(IMGQSORT_BUILD_UNITTEST)
 
 endmacro()
 
-IMGQSORT_BUILD_UNITTEST(imgqsorttest.cpp)
+IMGQSORT_BUILD_UNITTEST(detectgeneral_utest.cpp)
+IMGQSORT_BUILD_UNITTEST(detectnoise_utest.cpp)
+IMGQSORT_BUILD_UNITTEST(detectblur_utest.cpp)
+IMGQSORT_BUILD_UNITTEST(detectexposure_utest.cpp)
+IMGQSORT_BUILD_UNITTEST(detectcompression_utest.cpp)

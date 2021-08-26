@@ -29,15 +29,39 @@
 #include <QMultiMap>
 #include <QString>
 #include <QFileInfoList>
+#include <QObject>
+#include <QDir>
+#include <QMultiMap>
+#include <QTest>
 
+// Local includes
+
+#include "digikam_debug.h"
+#include "digikam_globals.h"
+
+namespace Digikam
+{
+    
 enum DetectionType
 {
-    DetectBlur = 0,
-    DetectNoise,
-    DetectCompression,
-    DetectExposure
+    DETECTBLUR = 0,
+    DETECTNOISE,
+    DETECTCOMPRESSION,
+    DETECTEXPOSURE,
+    DETECTIONGENERAL
 };
 
-QMultiMap<int, QString> ImgQSortTest_ParseTestImages(DetectionType type, const QFileInfoList& list);
+struct CustomDetection 
+{
+    bool detectBlur;
+    bool detectNoise;
+    bool detectExposure;
+    bool detectCompression;
+};
 
+QHash<QString, int> ImgQSortTest_ParseTestImagesDefautDetection(DetectionType type, const QFileInfoList& list); 
+
+QHash<QString, int> ImgQSortTest_ParseTestImagesCustomDetection(const CustomDetection& customSetting, const QFileInfoList& list);
+
+}
 #endif // DIGIKAM_IMGQSORT_TEST_SHARED_H

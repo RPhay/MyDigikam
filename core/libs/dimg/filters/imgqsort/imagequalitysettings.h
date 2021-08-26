@@ -32,6 +32,7 @@
 // Local includes
 
 #include "digikam_export.h"
+#include "imagequalitycontainer.h"
 
 namespace Digikam
 {
@@ -47,6 +48,8 @@ public:
 
     void applySettings();
     void readSettings();
+    ImageQualityContainer getImageQualityContainer();
+
 
 private:
 

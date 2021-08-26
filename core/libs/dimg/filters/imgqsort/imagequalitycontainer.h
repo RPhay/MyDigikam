@@ -70,6 +70,7 @@ public:
     int  blurWeight;            ///< Item blur level.
     int  noiseWeight;           ///< Item noise level.
     int  compressionWeight;     ///< Item compression level.
+    int  exposureWeight;
 };
 
 //! qDebug() stream operator. Writes property @a s to the debug output in a nicely formatted way.

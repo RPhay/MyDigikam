@@ -46,7 +46,8 @@ ImageQualityContainer::ImageQualityContainer()
       acceptedThreshold (60),
       blurWeight        (100),
       noiseWeight       (100),
-      compressionWeight (100)
+      compressionWeight (100),
+      exposureWeight    (100)
 {
 }
 
@@ -65,7 +66,8 @@ ImageQualityContainer::ImageQualityContainer(const ImageQualityContainer& other)
       acceptedThreshold (other.acceptedThreshold),
       blurWeight        (other.blurWeight),
       noiseWeight       (other.noiseWeight),
-      compressionWeight (other.compressionWeight)
+      compressionWeight (other.compressionWeight),
+      exposureWeight    (other.exposureWeight)
 {
 }
 
@@ -85,6 +87,7 @@ ImageQualityContainer& ImageQualityContainer::operator=(const ImageQualityContai
     blurWeight         = other.blurWeight;
     noiseWeight        = other.noiseWeight;
     compressionWeight  = other.compressionWeight;
+    exposureWeight     = other.exposureWeight;
     speed              = other.speed;
 
     return *this;
@@ -114,6 +117,7 @@ void ImageQualityContainer::readFromConfig()
     blurWeight                = group.readEntry("Blur Weight",        100);
     noiseWeight               = group.readEntry("Noise Weight",       100);
     compressionWeight         = group.readEntry("Compression Weight", 100);
+    exposureWeight            = group.readEntry("Exposure Weight",    100);
 }
 
 void ImageQualityContainer::writeToConfig()
@@ -136,6 +140,7 @@ void ImageQualityContainer::writeToConfig()
     group.writeEntry("Blur Weight",         blurWeight);
     group.writeEntry("Noise Weight",        noiseWeight);
     group.writeEntry("Compression Weight",  compressionWeight);
+    group.writeEntry("Exposure Weight",     exposureWeight);
 }
 
 QDebug operator<<(QDebug dbg, const ImageQualityContainer& s)
@@ -156,6 +161,7 @@ QDebug operator<<(QDebug dbg, const ImageQualityContainer& s)
     dbg.nospace() << "Blur Weight        :" << s.blurWeight         << endl;
     dbg.nospace() << "Noise Weight       :" << s.noiseWeight        << endl;
     dbg.nospace() << "Compression Weight :" << s.compressionWeight  << endl;
+    dbg.nospace() << "Exposure Weight    :" << s.exposureWeight     << endl;  
 
     return dbg.space();
 }

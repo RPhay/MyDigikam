@@ -47,6 +47,7 @@
 #include "nrfilter.h"
 #include "nrestimate.h"
 #include "exposurecontainer.h"
+#include "imagequalitycalculator.h"
 
 // To switch on/off log trace file.
 // #define TRACE 1
@@ -72,6 +73,7 @@ public:
         acceptedThreshold(0.0),
         pendingThreshold (0.0),
         rejectedThreshold(0.0),
+        calculator       (nullptr),
         label            (nullptr),
         running          (true)
     {
@@ -79,6 +81,8 @@ public:
         {
             fimg[c] = nullptr;
         }
+
+        calculator = new ImageQualityCalculator();
 
     }
 
@@ -109,6 +113,8 @@ public:
     double                rejectedThreshold;
 
     QString               path;              ///< Path to host result file
+
+    ImageQualityCalculator*  calculator;
 
     PickLabel*            label;
 
