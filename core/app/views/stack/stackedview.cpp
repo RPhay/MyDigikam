@@ -28,7 +28,6 @@
 
 // Qt includes
 
-#include <QSplitter>
 #include <QWidget>
 
 // KDE includes
@@ -75,7 +74,6 @@ public:
       : needUpdateBar   (false),
         syncingSelection(false),
         dockArea        (nullptr),
-        splitter        (nullptr),
         imageIconView   (nullptr),
         thumbBar        (nullptr),
         imagePreviewView(nullptr),
@@ -103,7 +101,6 @@ public:
     bool              syncingSelection;
 
     QMainWindow*      dockArea;
-    QSplitter*        splitter;
 
     DigikamItemView*  imageIconView;
     ItemThumbnailBar* thumbBar;
