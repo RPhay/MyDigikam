@@ -38,8 +38,8 @@ const int CoordinatesRole = Qt::UserRole + 0;
 
 MarkerModelHelper::MarkerModelHelper(QAbstractItemModel* const itemModel,
                                      QItemSelectionModel* const itemSelectionModel)
-    : GeoModelHelper(itemModel),
-      m_itemModel(itemModel),
+    : GeoModelHelper      (itemModel),
+      m_itemModel         (itemModel),
       m_itemSelectionModel(itemSelectionModel)
 {
     connect(itemModel, SIGNAL(dataChanged(QModelIndex,QModelIndex)),
@@ -72,10 +72,14 @@ bool MarkerModelHelper::itemCoordinates(const QModelIndex& index,
                                         GeoCoordinates* const coordinates) const
 {
     if (!index.data(CoordinatesRole).canConvert<GeoCoordinates>())
+    {
         return false;
+    }
 
     if (coordinates)
+    {
         *coordinates = index.data(CoordinatesRole).value<GeoCoordinates>();
+    }
 
     return true;
 }
@@ -133,6 +137,7 @@ void TestItemMarkerTiler::testAddMarkers1()
     const int maxLevel = TileIndex::MaxLevel;
 
     // there should be no tiles in the model yet:
+
     for (int l = 0 ; l <= maxLevel ; ++l)
     {
         QVERIFY(mm.getTile(TileIndex::fromCoordinates(coord_50_60, l), true) == nullptr);
@@ -141,6 +146,7 @@ void TestItemMarkerTiler::testAddMarkers1()
     itemModel->appendRow(MakeItemAt(coord_50_60));
 
     // now there should be tiles with one marker:
+
     for (int l = 0 ; l <= maxLevel ; ++l)
     {
         const TileIndex tileIndex           = TileIndex::fromCoordinates(coord_50_60, l);
@@ -158,6 +164,7 @@ void TestItemMarkerTiler::testAddMarkers1()
     itemModel->appendRow(MakeItemAt(coord_50_60));
 
     // now there should be tiles with two markers:
+
     for (int l = 0 ; l <= maxLevel ; ++l)
     {
         const TileIndex tileIndex           = TileIndex::fromCoordinates(coord_50_60, l);
@@ -184,6 +191,7 @@ void TestItemMarkerTiler::testRemoveMarkers2()
     itemModel->appendRow(item2);
 
     // now there should be tiles with two markers:
+
     for (int l = 0 ; l <= maxLevel ; ++l)
     {
         const TileIndex tileIndex           = TileIndex::fromCoordinates(coord_50_60, l);
@@ -198,6 +206,7 @@ void TestItemMarkerTiler::testRemoveMarkers2()
     }
 
     // remove one item:
+
     qDeleteAll(itemModel->takeRow(itemModel->indexFromItem(item2).row()));
 
     for (int l = 0 ; l <= maxLevel ; ++l)
@@ -222,6 +231,7 @@ void TestItemMarkerTiler::testMoveMarkers1()
     const int fillLevel = maxLevel - 2;
 
     // add a marker to the model and create tiles up to a certain level:
+
     QStandardItem* const item1     = MakeItemAt(coord_1_2);
     itemModel->appendRow(item1);
     const QModelIndex markerIndex1 = itemModel->indexFromItem(item1);
@@ -243,17 +253,20 @@ void TestItemMarkerTiler::testMoveMarkers1()
     }
 
     // now move marker 1:
+
     itemModel->setData(markerIndex1, QVariant::fromValue(coord_50_60), CoordinatesRole);
 
     for (int l = 0 ; l <= fillLevel ; ++l)
     {
         // make sure the marker can not be found at the old position any more
+
         TileIndex tileIndex = TileIndex::fromCoordinates(coord_1_2, l);
         QVERIFY(mm.getTile(tileIndex, true) == nullptr);
         QCOMPARE(mm.getTileMarkerCount(tileIndex), 0);
         QVERIFY(mm.getTile(tileIndex, true) == nullptr);
 
         // find it at the new position:
+
         tileIndex                           = TileIndex::fromCoordinates(coord_50_60, l);
         ItemMarkerTiler::Tile* const myTile = mm.getTile(tileIndex, true);
 
@@ -277,6 +290,7 @@ void TestItemMarkerTiler::testMoveMarkers2()
     const int fillLevel = maxLevel - 2;
 
     // add markers to the model and create tiles up to a certain level:
+
     QStandardItem* const item1     = MakeItemAt(coord_1_2);
     itemModel->appendRow(item1);
     const QModelIndex markerIndex1 = itemModel->indexFromItem(item1);
@@ -317,18 +331,22 @@ void TestItemMarkerTiler::testMoveMarkers2()
     }
 
     // now move marker 1:
+
     itemModel->setData(markerIndex1, QVariant::fromValue(coord_50_60), CoordinatesRole);
 
     // make sure the item model was also updated:
+
     QVERIFY(item1->data(CoordinatesRole).value<GeoCoordinates>() == coord_50_60);
 
     for (int l = 0 ; l <= fillLevel ; ++l)
     {
         // make sure there is only one marker left at the old position:
+
         TileIndex tileIndex = TileIndex::fromCoordinates(coord_1_2, l);
         QVERIFY(mm.getTileMarkerCount(tileIndex) == 1);
 
         // find it at the new position:
+
         tileIndex                           = TileIndex::fromCoordinates(coord_50_60, l);
         ItemMarkerTiler::Tile* const myTile = mm.getTile(tileIndex, true);
 
@@ -379,6 +397,7 @@ void TestItemMarkerTiler::testIteratorWholeWorld()
     for (int l = 0 ; l <= maxLevel ; ++l)
     {
         // iterate over the whole world:
+
         ItemMarkerTiler::NonEmptyIterator it(&mm, l);
         QVERIFY( CountMarkersInIterator(&it) == 2 );
     }
@@ -397,6 +416,7 @@ void TestItemMarkerTiler::testIteratorPartial1()
     {
         {
             // iterate over a part which should be empty:
+
             GeoCoordinates::PairList boundsList;
             boundsList << GeoCoordinates::makePair(-10.0, -10.0, -5.0, -5.0);
             ItemMarkerTiler::NonEmptyIterator it(&mm, l, boundsList);
@@ -405,12 +425,14 @@ void TestItemMarkerTiler::testIteratorPartial1()
 
         {
             // iterate over a part which should contain one marker:
+
             GeoCoordinates::PairList boundsList;
             boundsList << GeoCoordinates::makePair(-10.0, -10.0, 5.0, 5.0);
             ItemMarkerTiler::NonEmptyIterator it(&mm, l, boundsList);
             QVERIFY( CountMarkersInIterator(&it) == 1 );
 
             // iterate over a part which should contain one marker:
+
             GeoCoordinates::PairList boundsList1;
             boundsList1 << GeoCoordinates::makePair(1.0, 2.0, 5.0, 5.0);
             ItemMarkerTiler::NonEmptyIterator it1(&mm, l, boundsList1);
@@ -424,6 +446,7 @@ void TestItemMarkerTiler::testIteratorPartial1()
 
         {
             // iterate over a part which should contain two markers:
+
             GeoCoordinates::PairList boundsList;
             boundsList << GeoCoordinates::makePair(0.0, 0.0, 60.0, 60.0);
             ItemMarkerTiler::NonEmptyIterator it(&mm, l, boundsList);
@@ -432,6 +455,7 @@ void TestItemMarkerTiler::testIteratorPartial1()
 
         {
             // iterate over two parts which should contain two markers:
+
             GeoCoordinates::PairList boundsList;
             boundsList << GeoCoordinates::makePair(0.0, 0.0, 5.0, 5.0);
             boundsList << GeoCoordinates::makePair(49.0, 59.0, 51.0, 61.0);
@@ -445,6 +469,7 @@ void TestItemMarkerTiler::testIteratorPartial1()
     itemModel->appendRow(MakeItemAt(coord_2_2));
     {
         // at level 1, the iterator should find only one marker:
+
         GeoCoordinates::PairList boundsList;
         boundsList << GeoCoordinates::makePair(0.0, 0.0, 1.0, 2.0);
         ItemMarkerTiler::NonEmptyIterator it(&mm, 1, boundsList);
@@ -498,16 +523,19 @@ void TestItemMarkerTiler::testRemoveMarkers1()
     for (int l = 0 ; l <= maxLevel ; ++l)
     {
         // iterate over the whole world:
+
         ItemMarkerTiler::NonEmptyIterator it(&mm, l);
         QCOMPARE(CountMarkersInIterator(&it), 2);
     }
 
     // first make sure that comparison of indices still works
+
     const QPersistentModelIndex index1 = itemModel->indexFromItem(item1);
     const QPersistentModelIndex index2 = itemModel->indexFromItem(item1);
     QCOMPARE(index1, index2);
 
     // now remove items:
+
     QCOMPARE(itemModel->takeRow(itemModel->indexFromItem(item1).row()).count(), 1);
     delete item1;
     QCOMPARE(itemModel->rowCount(), 1);
@@ -515,6 +543,7 @@ void TestItemMarkerTiler::testRemoveMarkers1()
     for (int l = 0 ; l <= maxLevel ; ++l)
     {
         // iterate over the whole world:
+
         ItemMarkerTiler::NonEmptyIterator it(&mm, l);
         QCOMPARE(CountMarkersInIterator(&it), 1);
     }
@@ -534,6 +563,7 @@ void TestItemMarkerTiler::testPreExistingMarkers()
     for (int l = 0; l <= maxLevel; ++l)
     {
         // iterate over the whole world:
+
         ItemMarkerTiler::NonEmptyIterator it(&mm, l);
         QVERIFY( CountMarkersInIterator(&it) == 1 );
     }
@@ -555,6 +585,7 @@ void TestItemMarkerTiler::testSelectionState1()
     // verify the selection state of the tiles:
     // make sure we do not create tiles all the way down,
     // because we want to test whether the state is okay in newly created tiles
+
     const int preMaxLevel = maxLevel -2;
 
     for (int l = 0 ; l <= preMaxLevel ; ++l)
@@ -574,6 +605,7 @@ void TestItemMarkerTiler::testSelectionState1()
     selectionModel->select(item1Index, QItemSelectionModel::Select);
 
     // verify the selection state of the tiles:
+
     for (int l = 0 ; l <= maxLevel ; ++l)
     {
         const TileIndex tileIndex           = TileIndex::fromCoordinates(coord_50_60, l);
@@ -590,6 +622,7 @@ void TestItemMarkerTiler::testSelectionState1()
     }
 
     // add an unselected item and make sure the tilecount is still correct
+
     QStandardItem* const item2             = MakeItemAt(coord_50_60);
     item2->setSelectable(true);
     itemModel->appendRow(item2);
@@ -628,10 +661,12 @@ void TestItemMarkerTiler::testSelectionState1()
     }
 
     // now remove the selected item:
+
     QCOMPARE(itemModel->takeRow(item2Index.row()).count(), 1);
     delete item2;
 
     // verify the selection state of the tiles:
+
     for (int l = 0 ; l <= maxLevel ; ++l)
     {
         const TileIndex tileIndex           = TileIndex::fromCoordinates(coord_50_60, l);
@@ -648,6 +683,7 @@ void TestItemMarkerTiler::testSelectionState1()
     }
 
     // add a selected item and then move it:
+
     QStandardItem* const item3             = MakeItemAt(coord_1_2);
     item3->setSelectable(true);
     itemModel->appendRow(item3);
@@ -739,16 +775,21 @@ void TestItemMarkerTiler::testSelectionState1()
 
 void TestItemMarkerTiler::benchmarkIteratorWholeWorld()
 {
-  /* without non-empty child lists
-RESULT : TestItemMarkerTiler::benchmarkIteratorWholeWorld():
-     4,470 msecs per iteration (total: 4,470, iterations: 1)
-     after adding lists:
-RESULT : TestItemMarkerTiler::benchmarkIteratorWholeWorld():
-     712 msecs per iteration (total: 712, iterations: 1)
-  */
+/*
+ * without non-empty child lists
+ *   RESULT : TestItemMarkerTiler::benchmarkIteratorWholeWorld():
+ *            4,470 msecs per iteration (total: 4,470, iterations: 1)
+ *            after adding lists:
+ *   RESULT : TestItemMarkerTiler::benchmarkIteratorWholeWorld():
+ *            712 msecs per iteration (total: 712, iterations: 1)
+ */
+
 #if 0
+
     return;
+
 #else
+
     QBENCHMARK
     {
         QScopedPointer<QStandardItemModel> itemModel(new QStandardItemModel());
@@ -774,16 +815,19 @@ RESULT : TestItemMarkerTiler::benchmarkIteratorWholeWorld():
 
 //         QBENCHMARK
         {
-            const int l=maxLevel;
+            const int l = maxLevel;
 //             for (int l = 0; l <= maxLevel; ++l)
             {
                 // iterate over the whole world:
+
                 ItemMarkerTiler::NonEmptyIterator it(&mm, l);
-                CountMarkersInIterator(&it);
+                (void)CountMarkersInIterator(&it);
             }
         }
     }
+
 #endif
+
 }
 
 QTEST_GUILESS_MAIN(TestItemMarkerTiler)
