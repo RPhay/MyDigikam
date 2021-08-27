@@ -24,6 +24,10 @@
 
 #include "tilegrouper.h"
 
+// Qt includes
+
+#include <QElapsedTimer>
+
 // C++ includes
 
 #include <cmath>
@@ -121,7 +125,7 @@ void TileGrouper::updateClusters()
 /*
     const QSize ClusterDefaultSize   = QSize(2*ClusterRadius, 2*ClusterRadius);
 */
-    const int ClusterGridSizeScreen  = 4*ClusterRadius;
+    const int ClusterGridSizeScreen  = 4 * ClusterRadius;
 /*
     const QSize ClusterMaxPixmapSize = QSize(ClusterGridSizeScreen, ClusterGridSizeScreen);
 */
@@ -171,6 +175,9 @@ void TileGrouper::updateClusters()
         s->markerModel->prepareTiles(mapBounds.at(i).first, mapBounds.at(i).second, markerLevel);
     }
 
+    QElapsedTimer elapsedTimer;
+    elapsedTimer.start();
+
     for (AbstractMarkerTiler::NonEmptyIterator tileIterator(s->markerModel, markerLevel, mapBounds) ;
          !tileIterator.atEnd() ; tileIterator.nextIndex())
     {
@@ -198,9 +205,16 @@ void TileGrouper::updateClusters()
         const int linearIndex        = tilePoint.x() + tilePoint.y()*gridWidth;
         pixelNonEmptyTileIndexGrid[linearIndex] << tileIndex;
         pixelCountGrid[linearIndex] += s->markerModel->getTileMarkerCount(tileIndex);
-
-//         qCDebug(DIGIKAM_GEOIFACE_LOG) << QString::fromLatin1("pixel at: %1, %2 (%3): %4 markers").arg(tilePoint.x()).arg(tilePoint.y()).arg(linearIndex).arg(pixelCountGrid[linearIndex]);
+/*
+        qCDebug(DIGIKAM_GEOIFACE_LOG) << QString::fromLatin1("pixel at: %1, %2 (%3): %4 markers")
+                                         .arg(tilePoint.x())
+                                         .arg(tilePoint.y()).arg(linearIndex)
+                                         .arg(pixelCountGrid[linearIndex]);
+*/
     }
+
+    qCDebug(DIGIKAM_GEOIFACE_LOG) << "iterating over " << debugCountNonEmptyTiles
+                                  << " took " << elapsedTimer.nsecsElapsed() / 1e9 << " seconds";
 
     /// @todo Cleanup this list every ... iterations in the next loop, too
 

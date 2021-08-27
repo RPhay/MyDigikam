@@ -739,9 +739,17 @@ void TestItemMarkerTiler::testSelectionState1()
 
 void TestItemMarkerTiler::benchmarkIteratorWholeWorld()
 {
-    return;
+  /* without non-empty child lists
+RESULT : TestItemMarkerTiler::benchmarkIteratorWholeWorld():
+     4,470 msecs per iteration (total: 4,470, iterations: 1)
+     after adding lists:
+RESULT : TestItemMarkerTiler::benchmarkIteratorWholeWorld():
+     712 msecs per iteration (total: 712, iterations: 1)
+  */
 #if 0
-//     QBENCHMARK
+    return;
+#else
+    QBENCHMARK
     {
         QScopedPointer<QStandardItemModel> itemModel(new QStandardItemModel());
         ItemMarkerTiler mm(new MarkerModelHelper(itemModel.data(), 0));
