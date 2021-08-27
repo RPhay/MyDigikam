@@ -6,6 +6,7 @@ NEW FEATURES:
 Bundle : AppImage is now compiled under Mageia 7.1 instead 6.1 for a better binary compatibility with recent Linux.
 Bundle : AppImage use last Qt 5.15.2 and KF5 5.84 libraries.
 Plugins: New tool to share items on the network with a Motion JPEG stream server.
+General: Update internal Libraw to snapshot 20210827.
 
 *****************************************************************************************************
 BUGFIXES:
