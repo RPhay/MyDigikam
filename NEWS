@@ -117,16 +117,16 @@ BUGFIXES:
 106 ==> 327969 - New pictures are no more recognized while trying to import them from an automatically detected USB storage device.
 108 ==> 329135 - digiKam crashes while editing tag information.
 109 ==> 315497 - digiKam crashes when inserting tags.
-110 ==> 
-111 ==> 
-112 ==> 
-113 ==> 
-114 ==> 
-115 ==> 
-116 ==> 
-117 ==> 
-118 ==> 
-119 ==> 
+110 ==> 439207 - FR: Make Background of transparent png configurable.
+111 ==> 398252 - Langage configuration should be in settings not in help.
+112 ==> 343263 - While attempting a Galley Export to Smug Mug error: Smug Mug call failed: invalid method.
+113 ==> 342489 - digiKam crashes when tagging photos
+114 ==> 342426 - Lookup of missing altitude values fails.
+115 ==> 342150 - Unify google service authentication.
+116 ==> 338511 - After batch-resizing the "start"-button is missing.
+117 ==> 336268 - Crash of "Stich images into a panorama"
+118 ==> 335574 - Crash when opening an image in the viewer.
+119 ==> 333790 - digiKam crashes in sqlite backend.
 120 ==> 
 121 ==> 
 122 ==> 
