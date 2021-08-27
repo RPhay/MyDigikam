@@ -79,6 +79,9 @@ cppcheck -j$CPU_CORES \
          --suppress=unusedVariable \
          --suppress=unusedStructMember \
          --suppress=unknownMacro \
+         --suppress=qrandCalled \
+         --suppress=qsrandCalled \
+         --suppress=qsortCalled \
          --suppress=class_X_Y \
          --suppress=ConfigurationNotChecked \
          --suppress=unmatchedSuppression:* \
