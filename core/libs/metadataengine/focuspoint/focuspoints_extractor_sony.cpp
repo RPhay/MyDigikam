@@ -3,10 +3,11 @@
  * This file is a part of digiKam project
  * https://www.digikam.org
  *
- * Date        :
+ * Date        : 28/08/2021
  * Description : Extraction of focus points by exiftool data
  *
- * Copyright (C) 2020-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2021 by Phuoc Khanh Le <phuockhanhnk94 at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -23,11 +24,9 @@
 
 #include "focuspoints_extractor.h"
 
-// Qt includes
-
-#include <QDebug>
-
 // Local includes
+
+#include "digikam_debug.h"
 
 namespace Digikam
 {
@@ -48,7 +47,7 @@ FocusPoint create_af_point(float imageWidth, float imageHeight,
                       FocusPoint::TypePoint::SelectedInFocus);
 }
 
-}
+} // namespace SonyInternal
 
 // Main function to extract af point
 FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_sony() const
@@ -58,21 +57,23 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_sony() cons
     QStringList af_info = findValue(TagNameRoot,QLatin1String("FocusLocation")).toString()
                                                                                .split(QLatin1String(" "));
 
-    if (af_info.isEmpty())
+    if (af_info.size() < 5)
     {
         return getAFPoints_default();
     }
 
     // Get size image
-    float imageWidth  = af_info[0].toFloat();
-    float imageHeight = af_info[1].toFloat();
+
+    float imageWidth    = af_info[0].toFloat();
+    float imageHeight   = af_info[1].toFloat();
 
     // Get size of af points
 
-    float afPointWidth = imageWidth * RATIO_POINT_IMAGE;
+    float afPointWidth  = imageWidth * RATIO_POINT_IMAGE;
     float afPointHeight = imageHeight * RATIO_POINT_IMAGE;
 
     // Get coordinate of af points
+
     float af_x_position = af_info[3].toFloat();
     float af_y_position = af_info[4].toFloat();
 
@@ -81,4 +82,4 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_sony() cons
                                                       af_x_position, af_y_position)};
 }
 
-}
+} // namespace Digikam
