@@ -43,12 +43,12 @@ public:
 
     explicit MarkerModelHelper(QAbstractItemModel* const itemModel,
                                QItemSelectionModel* const itemSelectionModel);
-    ~MarkerModelHelper() override;
+    ~MarkerModelHelper()                                          override;
 
-    QAbstractItemModel*  model()          const override;
-    QItemSelectionModel* selectionModel() const override;
+    QAbstractItemModel*  model()                            const override;
+    QItemSelectionModel* selectionModel()                   const override;
     bool itemCoordinates(const QModelIndex& index,
-                                 GeoCoordinates* const coordinates) const override;
+                         GeoCoordinates* const coordinates) const override;
 
 private Q_SLOTS:
 

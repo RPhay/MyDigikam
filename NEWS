@@ -6,6 +6,7 @@ NEW FEATURES:
 Bundle : AppImage is now compiled under Mageia 7.1 instead 6.1 for a better binary compatibility with recent Linux.
 Bundle : AppImage use last Qt 5.15.2 and KF5 5.84 libraries.
 Plugins: New tool to share items on the network with a Motion JPEG stream server.
+General: Update internal Libraw to snapshot 20210827.
 
 *****************************************************************************************************
 BUGFIXES:
@@ -82,31 +83,80 @@ BUGFIXES:
 071 ==> 319762 - Starting up crashes.
 072 ==> 325609 - Crashes on Startup - prev. crash while creating DB.
 073 ==> 329829 - digiKam crashes on first run.
-074 ==> 
-075 ==> 
-076 ==> 
-077 ==> 
-078 ==> 
-079 ==> 
-080 ==> 
-081 ==> 
-082 ==> 
-083 ==> 
-084 ==> 
-085 ==> 
-086 ==> 
-087 ==> 
-088 ==> 
-089 ==> 
-090 ==> 
-091 ==> 
-092 ==> 
-093 ==> 
-094 ==> 
-095 ==> 
-096 ==> 
-097 ==> 
-098 ==> 
-099 ==> 
-100 ==> 
-101 ==> 
+074 ==> 319859 - Import curves settings in Batch Q.
+075 ==> 295724 - Crash after save of edited picture.
+076 ==> 306162 - Crash after selecting another image.
+077 ==> 317670 - Crash after turning image, save and going to the next image.
+078 ==> 303174 - digiKam crashed when saving image changes.
+079 ==> 307398 - digiKam crashes in image editing modus when I save an edited image.
+080 ==> 290889 - Always crash.
+081 ==> 319948 - Crash after saving modified picture.
+082 ==> 315709 - Crash in Edit mode when using space bar.
+083 ==> 287700 - Bug after saving.
+084 ==> 298953 - digiKam crashes during saving photo.
+085 ==> 289389 - digiKam crash upon saving changes to images.
+086 ==> 323633 - digiKam crashes at startup.
+087 ==> 320325 - digiKam crashed when rotating photo in album view.
+088 ==> 308507 - digiKam crashes when browsing images.
+089 ==> 338056 - Autocrop RAW Image crashes.
+090 ==> 326357 - digiKam crashes at start up.
+091 ==> 314152 - Crash after deleting unassinged tag.
+092 ==> 310950 - digiKam Crashed when deleting tag.
+093 ==> 317545 - digiKam se cierra al editar tags.
+094 ==> 312372 - Crash while deleting all tags known to digiKam.
+095 ==> 321342 - digiKam crashes when deleting a tag.
+096 ==> 333523 - digiKam crashes when automatic lensdingens is used.
+097 ==> 321517 - Similar to 319383.
+098 ==> 322539 - Auto rename does not work when importing pictures.
+099 ==> 324350 - Segmentation Fault when starting.
+100 ==> 324183 - digiKam: Crash when importing Database.
+101 ==> 322556 - digiKam Crash with open Suse 12.3.
+102 ==> 322557 - Export to Rajce.net crashes when pressing close.
+103 ==> 324515 - digiKam crash at start.
+104 ==> 325925 - Importer: Sorting order is not remembered.
+105 ==> 281758 - Images on camera always marked as new if imported via autodetected camera.
+106 ==> 327969 - New pictures are no more recognized while trying to import them from an automatically detected USB storage device.
+108 ==> 329135 - digiKam crashes while editing tag information.
+109 ==> 315497 - digiKam crashes when inserting tags.
+110 ==> 439207 - FR: Make Background of transparent png configurable.
+111 ==> 398252 - Langage configuration should be in settings not in help.
+112 ==> 343263 - While attempting a Galley Export to Smug Mug error: Smug Mug call failed: invalid method.
+113 ==> 342489 - digiKam crashes when tagging photos
+114 ==> 342426 - Lookup of missing altitude values fails.
+115 ==> 342150 - Unify google service authentication.
+116 ==> 338511 - After batch-resizing the "start"-button is missing.
+117 ==> 336268 - Crash of "Stich images into a panorama"
+118 ==> 335574 - Crash when opening an image in the viewer.
+119 ==> 333790 - digiKam crashes in sqlite backend.
+120 ==> 441598 - There are two actions that use the same shortcut Ctrl + Alt + I.
+121 ==> 441600 - Attempting to look at configuration causes crash.
+122 ==> 
+123 ==> 
+124 ==> 
+125 ==> 
+126 ==> 
+127 ==> 
+128 ==> 
+129 ==> 
+130 ==> 
+131 ==> 
+132 ==> 
+133 ==> 
+134 ==> 
+135 ==> 
+136 ==> 
+137 ==> 
+138 ==> 
+139 ==> 
+140 ==> 
+141 ==> 
+142 ==> 
+143 ==> 
+144 ==> 
+145 ==> 
+146 ==> 
+147 ==> 
+148 ==> 
+149 ==> 
+150 ==> 
+151 ==> 
