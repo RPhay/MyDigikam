@@ -80,6 +80,13 @@ Q_SIGNALS:
     void signalURLChanged(const QUrl& url);
     void signalSavingDialogProgress(float value);
 
+protected:
+
+    void showEvent(QShowEvent*)                                         override;
+    void dropEvent(QDropEvent* e)                                       override;
+    void closeEvent(QCloseEvent* e)                                     override;
+    void dragMoveEvent(QDragMoveEvent* e)                               override;
+
 private:
 
     // Disable
@@ -87,11 +94,6 @@ private:
     ImageWindow(QWidget*);
 
     void loadIndex(const QModelIndex& index);
-
-    void closeEvent(QCloseEvent* e)                                     override;
-    void showEvent(QShowEvent*)                                         override;
-    void dragMoveEvent(QDragMoveEvent* e)                               override;
-    void dropEvent(QDropEvent* e)                                       override;
 
     bool save()                                                         override;
     bool saveAs()                                                       override;

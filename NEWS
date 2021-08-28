@@ -130,7 +130,7 @@ BUGFIXES:
 119 ==> 333790 - digiKam crashes in sqlite backend.
 120 ==> 441598 - There are two actions that use the same shortcut Ctrl + Alt + I.
 121 ==> 441600 - Attempting to look at configuration causes crash.
-122 ==> 
+122 ==> 441631 - Close changed image: cancel does not cancel.
 123 ==> 
 124 ==> 
 125 ==> 
