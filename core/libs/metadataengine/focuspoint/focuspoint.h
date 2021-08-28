@@ -3,10 +3,11 @@
  * This file is a part of digiKam project
  * https://www.digikam.org
  *
- * Date        :
- * Description : focus points
+ * Date        : 28/08/2021
+ * Description : Extraction of focus points by exiftool data
  *
- * Copyright (C) 2020-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2021 by Phuoc Khanh Le <phuockhanhnk94 at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -20,7 +21,6 @@
  * GNU General Public License for more details.
  *
  * ============================================================ */
-
 
 #ifndef DIGIKAM_FOCUSPOINT_H
 #define DIGIKAM_FOCUSPOINT_H
@@ -36,7 +36,6 @@
 
 #include "digikam_export.h"
 
-
 namespace Digikam
 {
 
@@ -44,7 +43,7 @@ class DIGIKAM_EXPORT FocusPoint
 {
 public:
 
-    enum class TypePoint
+    enum TypePoint
     {
         Inactive            = 0,
         Infocus             = 1,
@@ -57,10 +56,10 @@ public:
     FocusPoint();
     FocusPoint(float x_position, float y_position, float width, float height, TypePoint type);
     FocusPoint(float x_position, float y_position, float width, float height);
-    FocusPoint(QRectF rectF);
+    FocusPoint(const QRectF& rectF);
     ~FocusPoint();
 
-    void setType(TypePoint type)                            ;
+    void setType(TypePoint type);
     TypePoint getType()                                     const;
     QRect getRectBySize(const QSize& size)                  const;
 
@@ -70,6 +69,7 @@ public:
     QSizeF  getSize()                                       const;
 
 private:
+
     float       x_position;
     float       y_position;
     float       width;
@@ -89,12 +89,12 @@ inline FocusPoint::TypePoint operator&(FocusPoint::TypePoint type1, FocusPoint::
 
 inline FocusPoint::TypePoint& operator|=(FocusPoint::TypePoint& type1, FocusPoint::TypePoint type2)
 {
-    return type1 = type1 | type2;
+    return (type1 = type1 | type2);
 }
 
 inline FocusPoint::TypePoint& operator&=(FocusPoint::TypePoint& type1, FocusPoint::TypePoint type2)
 {
-    return type1 = type1 & type2;
+    return (type1 = type1 & type2);
 }
 
 } // namespace Digikam
