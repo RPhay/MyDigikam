@@ -11,14 +11,14 @@
 | as published by the Free Software Foundation; either version 2
 | of the License, or (at your option) any later version.
 |
-| OEMs, ISVs, VARs and other distributors that combine and 
+| OEMs, ISVs, VARs and other distributors that combine and
 | distribute commercially licensed software with Platinum software
 | and do not wish to distribute the source code for the commercially
 | licensed software under version 2, or (at your option) any later
 | version, of the GNU General Public License (the "GPL") must enter
 | into a commercial license agreement with Plutinosoft, LLC.
 | licensing@plutinosoft.com
-|  
+|
 | This program is distributed in the hope that it will be useful,
 | but WITHOUT ANY WARRANTY; without even the implied warranty of
 | MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
@@ -26,7 +26,7 @@
 |
 | You should have received a copy of the GNU General Public License
 | along with this program; see the file LICENSE.txt. If not, write to
-| the Free Software Foundation, Inc., 
+| the Free Software Foundation, Inc.,
 | 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 | http://www.gnu.org/licenses/gpl-2.0.html
 |
@@ -71,7 +71,7 @@ class PLT_SsdpPacketListener
 {
 public:
     virtual ~PLT_SsdpPacketListener() {}
-    virtual NPT_Result OnSsdpPacket(const NPT_HttpRequest&        request, 
+    virtual NPT_Result OnSsdpPacket(const NPT_HttpRequest&        request,
                                     const NPT_HttpRequestContext& context) = 0;
 };
 
@@ -79,14 +79,14 @@ public:
 |   PLT_SsdpSearchResponseListener class
 +---------------------------------------------------------------------*/
 /**
- The PLT_SsdpSearchResponseListener class is an interface for handling SSDP M-SEARCH 
+ The PLT_SsdpSearchResponseListener class is an interface for handling SSDP M-SEARCH
  responses.
  */
 class PLT_SsdpSearchResponseListener
 {
 public:
     virtual ~PLT_SsdpSearchResponseListener() {}
-    virtual NPT_Result ProcessSsdpSearchResponse(NPT_Result                    res,  
+    virtual NPT_Result ProcessSsdpSearchResponse(NPT_Result                    res,
                                                  const NPT_HttpRequestContext& context,
                                                  NPT_HttpResponse*             response) = 0;
 };
@@ -100,18 +100,18 @@ public:
 class PLT_SsdpSender
 {
 public:
-    static NPT_Result SendSsdp(NPT_HttpRequest&   request, 
+    static NPT_Result SendSsdp(NPT_HttpRequest&   request,
                                const char*        usn,
                                const char*        nt,
                                NPT_UdpSocket&     socket,
                                bool               notify,
                                const NPT_SocketAddress* addr = NULL);
-     
+
     static NPT_Result SendSsdp(NPT_HttpResponse&  response,
                                const char*        usn,
                                const char*        nt,
                                NPT_UdpSocket&     socket,
-                               bool               notify, 
+                               bool               notify,
                                const NPT_SocketAddress* addr = NULL);
 
 private:
@@ -132,12 +132,12 @@ private:
 class PLT_SsdpDeviceSearchResponseInterfaceIterator
 {
 public:
-    PLT_SsdpDeviceSearchResponseInterfaceIterator(PLT_DeviceHost*   device, 
+    PLT_SsdpDeviceSearchResponseInterfaceIterator(PLT_DeviceHost*   device,
                                                   NPT_SocketAddress remote_addr,
                                                   const char*       st) :
         m_Device(device), m_RemoteAddr(remote_addr), m_ST(st)  {}
     virtual ~PLT_SsdpDeviceSearchResponseInterfaceIterator() {}
-      
+
     NPT_Result operator()(NPT_NetworkInterface*& if_addr) const;
 
 private:
@@ -156,9 +156,9 @@ private:
 class PLT_SsdpDeviceSearchResponseTask : public PLT_ThreadTask
 {
 public:
-    PLT_SsdpDeviceSearchResponseTask(PLT_DeviceHost*   device, 
+    PLT_SsdpDeviceSearchResponseTask(PLT_DeviceHost*   device,
                                      NPT_SocketAddress remote_addr,
-                                     const char*       st) : 
+                                     const char*       st) :
         m_Device(device), m_RemoteAddr(remote_addr), m_ST(st) {}
 
 protected:
@@ -166,7 +166,7 @@ protected:
 
     // PLT_ThreadTask methods
     virtual void DoRun();
-    
+
 protected:
     PLT_DeviceHost*     m_Device;
     NPT_SocketAddress   m_RemoteAddr;
@@ -177,15 +177,15 @@ protected:
 |   PLT_SsdpAnnounceInterfaceIterator class
 +---------------------------------------------------------------------*/
 /**
- The PLT_SsdpAnnounceInterfaceIterator class is used to send SSDP announcements 
- given a list of network interaces. 
+ The PLT_SsdpAnnounceInterfaceIterator class is used to send SSDP announcements
+ given a list of network interaces.
  */
 class PLT_SsdpAnnounceInterfaceIterator
 {
 public:
     PLT_SsdpAnnounceInterfaceIterator(PLT_DeviceHost* device, PLT_SsdpAnnounceType type, bool broadcast = false) :
         m_Device(device), m_Type(type), m_Broadcast(broadcast) {}
-      
+
     NPT_Result operator()(NPT_NetworkInterface*& if_addr) const;
 
 private:
@@ -197,8 +197,8 @@ private:
 /*----------------------------------------------------------------------
 |   PLT_SsdpInitMulticastIterator class
 +---------------------------------------------------------------------*/
-/** 
- The PLT_SsdpInitMulticastIterator class is used to join a multicast group 
+/**
+ The PLT_SsdpInitMulticastIterator class is used to join a multicast group
  given a list of IP addresses.
  */
 class PLT_SsdpInitMulticastIterator
@@ -230,11 +230,11 @@ private:
 class PLT_SsdpDeviceAnnounceTask : public PLT_ThreadTask
 {
 public:
-    PLT_SsdpDeviceAnnounceTask(PLT_DeviceHost*  device, 
+    PLT_SsdpDeviceAnnounceTask(PLT_DeviceHost*  device,
                                NPT_TimeInterval repeat,
                                bool             is_byebye_first = false,
-                               bool             extra_broadcast = false) : 
-        m_Device(device), 
+                               bool             extra_broadcast = false) :
+        m_Device(device),
         m_Repeat(repeat),
         m_IsByeByeFirst(is_byebye_first),
         m_ExtraBroadcast(extra_broadcast) {}
@@ -280,13 +280,13 @@ private:
 |   PLT_SsdpPacketListenerIterator class
 +---------------------------------------------------------------------*/
 /**
- The PLT_SsdpPacketListenerIterator class iterates through a list of 
+ The PLT_SsdpPacketListenerIterator class iterates through a list of
  PLT_SsdpPacketListener instances to notify of a new SSDP incoming packet.
  */
 class PLT_SsdpPacketListenerIterator
 {
 public:
-    PLT_SsdpPacketListenerIterator(NPT_HttpRequest&              request, 
+    PLT_SsdpPacketListenerIterator(NPT_HttpRequest&              request,
                                    const NPT_HttpRequestContext& context) :
       m_Request(request), m_Context(context) {}
 
@@ -303,14 +303,14 @@ private:
 |   PLT_SsdpListenTask class
 +---------------------------------------------------------------------*/
 /**
- The PLT_SsdpListenTask class is used to listen for incoming SSDP packets and 
- keep track of a list of PLT_SsdpPacketListener listeners to notify when a new 
+ The PLT_SsdpListenTask class is used to listen for incoming SSDP packets and
+ keep track of a list of PLT_SsdpPacketListener listeners to notify when a new
  SSDP packet has arrived.
  */
 class PLT_SsdpListenTask : public PLT_HttpServerSocketTask
 {
 public:
-    PLT_SsdpListenTask(NPT_Socket* socket) : 
+    PLT_SsdpListenTask(NPT_Socket* socket) :
         PLT_HttpServerSocketTask(socket, true) {
         // Change read time out for UDP because iPhone 3.0 seems to hang
         // after reading everything from the socket even though
@@ -331,7 +331,7 @@ public:
         m_Listeners.Remove(listener);
         return NPT_SUCCESS;
     }
-    
+
     // PLT_Task methods
     void DoAbort();
 
@@ -341,7 +341,7 @@ protected:
     // PLT_HttpServerSocketTask methods
     NPT_Result GetInputStream(NPT_InputStreamReference& stream);
     NPT_Result GetInfo(NPT_SocketInfo& info);
-    NPT_Result SetupResponse(NPT_HttpRequest&              request, 
+    NPT_Result SetupResponse(NPT_HttpRequest&              request,
                              const NPT_HttpRequestContext& context,
                              NPT_HttpResponse&             response);
 
@@ -362,7 +362,7 @@ class PLT_SsdpSearchTask : public PLT_ThreadTask
 {
 public:
     PLT_SsdpSearchTask(NPT_UdpSocket*                  socket,
-                       PLT_SsdpSearchResponseListener* listener, 
+                       PLT_SsdpSearchResponseListener* listener,
                        NPT_HttpRequest*                request,
                        NPT_TimeInterval                frequency = NPT_TimeInterval(0.)); // pass 0 for one time
 
@@ -373,8 +373,8 @@ protected:
     virtual void DoAbort();
     virtual void DoRun();
 
-    virtual NPT_Result ProcessResponse(NPT_Result                    res, 
-                                       const NPT_HttpRequest&        request,  
+    virtual NPT_Result ProcessResponse(NPT_Result                    res,
+                                       const NPT_HttpRequest&        request,
                                        const NPT_HttpRequestContext& context,
                                        NPT_HttpResponse*             response);
 

@@ -62,9 +62,9 @@ void dng_local_string::SetDefaultText (const dng_string &s)
 void dng_local_string::AddTranslation (const dng_string &language,
                                        const dng_string &translation)
     {
-    
+
     dng_string safeLanguage (language);
-    
+
     safeLanguage.Truncate (255);
 
     fDictionary.push_back (dictionary_entry (safeLanguage,
@@ -76,13 +76,13 @@ void dng_local_string::AddTranslation (const dng_string &language,
 
 void dng_local_string::Set (const char *s)
 	{
-	
+
 	dng_string defaultText;
-	
+
 	defaultText.Set (s);
-	
+
 	*this = dng_local_string (defaultText);
-	
+
 	}
 
 /*****************************************************************************/
@@ -171,21 +171,21 @@ bool dng_local_string::operator== (const dng_local_string &s) const
     return true;
 
     }
-			
+
 /*****************************************************************************/
 
 void dng_local_string::Truncate (uint32 maxBytes)
     {
-    
+
     fDefaultText.Truncate (maxBytes);
-    
+
     for (uint32 index = 0; index < TranslationCount (); index++)
         {
-        
+
         fDictionary [index] . fTranslation . Truncate (maxBytes);
 
         }
-    
+
     }
-			
+
 /*****************************************************************************/

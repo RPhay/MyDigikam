@@ -110,7 +110,7 @@ protected Q_SLOTS:
 
     void itemStateChanged(int);
     void slotAlbumsUpdated(int type);
-    
+
     void slotAddItemStarted(const QPointF& pos);
     void slotAddItemMoving(const QRectF& rect);
     void slotAddItemFinished(const QRectF& rect);

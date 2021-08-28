@@ -621,7 +621,7 @@ void PresentationKB::readSettings()
     if (d->forceFrameRate > 120)
     {
         d->forceFrameRate = 120;
-    } 
+    }
 }
 
 void PresentationKB::endOfShow()

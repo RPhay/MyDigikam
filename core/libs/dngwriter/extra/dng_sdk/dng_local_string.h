@@ -61,7 +61,7 @@ class dng_local_string
 
         void AddTranslation (const dng_string &language,
                              const dng_string &translation);
-		
+
 		void Set (const char *s);
 
         const dng_string & DefaultText () const
@@ -95,25 +95,25 @@ class dng_local_string
             {
             return DefaultText ().IsEmpty ();
             }
-		
+
 		bool NotEmpty () const
 			{
 			return !IsEmpty ();
 			}
 
 		bool operator== (const dng_local_string &s) const;
-		
+
 		bool operator!= (const dng_local_string &s) const
 			{
 			return !(*this == s);
 			}
-        
+
         void Truncate (uint32 maxBytes);
-			
+
     };
 
 /*****************************************************************************/
 
 #endif
-	
+
 /*****************************************************************************/

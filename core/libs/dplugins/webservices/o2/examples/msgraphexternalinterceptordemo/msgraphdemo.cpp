@@ -27,7 +27,7 @@ MsgraphDemo::MsgraphDemo(QObject *parent) :
     o2Msgraph_->setUseExternalWebInterceptor(true);
     o2Msgraph_->setLocalhostPolicy(MSGRAPH_REDIRECT_URI);
     o2Msgraph_->setScope(MSGRAPH_SCOPE);
-    
+
 
     // Create a store object for writing the received tokens
     O0SettingsStore *store = new O0SettingsStore(O2_ENCRYPTION_KEY);

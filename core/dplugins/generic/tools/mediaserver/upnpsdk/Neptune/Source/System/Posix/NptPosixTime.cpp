@@ -45,7 +45,7 @@ static int gmtime_r(time_t* time, struct tm* _tm)
 
 #if defined(NPT_CONFIG_HAVE_LOCALTIME) && !defined(NPT_CONFIG_HAVE_LOCALTIME_R)
 static int localtime_r(time_t* time, struct tm* _tm)
-{   
+{
     struct tm* _local = localtime(time);
 
 #if defined(_WIN32_WCE)
@@ -70,7 +70,7 @@ NPT_DateTime::GetLocalTimeZone()
     NPT_SetMemory(&tm_local, 0, sizeof(tm_local));
     time_t epoch = 0;
     localtime_r(&epoch, &tm_local);
-    
+
     return (NPT_Int32)(tm_local.tm_gmtoff/60);
 }
 #else
@@ -81,7 +81,7 @@ NPT_Int32
 NPT_DateTime::GetLocalTimeZone()
 {
     time_t epoch = 0;
-    
+
     struct tm tm_gmt;
     NPT_SetMemory(&tm_gmt, 0, sizeof(tm_gmt));
     gmtime_r(&epoch, &tm_gmt);
@@ -89,10 +89,10 @@ NPT_DateTime::GetLocalTimeZone()
     struct tm tm_local;
     NPT_SetMemory(&tm_local, 0, sizeof(tm_local));
     localtime_r(&epoch, &tm_local);
-    
+
     time_t time_gmt   = mktime(&tm_gmt);
     time_t time_local = mktime(&tm_local);
-    
+
     return (NPT_Int32)((time_local-time_gmt)/60);
 }
 #endif

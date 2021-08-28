@@ -3,8 +3,8 @@
  * This file is a part of digiKam project
  * https://www.digikam.org
  *
- * Date        : 
- * Description : focus points 
+ * Date        :
+ * Description : focus points
  *
  * Copyright (C) 2020-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
@@ -25,7 +25,7 @@
 #ifndef DIGIKAM_FOCUSPOINT_H
 #define DIGIKAM_FOCUSPOINT_H
 
-// Qt includes 
+// Qt includes
 
 #include <QObject>
 #include <QVariant>
@@ -37,7 +37,7 @@
 #include "digikam_export.h"
 
 
-namespace Digikam 
+namespace Digikam
 {
 
 class DIGIKAM_EXPORT FocusPoint

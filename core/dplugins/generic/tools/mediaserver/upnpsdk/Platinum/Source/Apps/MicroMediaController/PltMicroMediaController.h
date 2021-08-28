@@ -11,14 +11,14 @@
 | as published by the Free Software Foundation; either version 2
 | of the License, or (at your option) any later version.
 |
-| OEMs, ISVs, VARs and other distributors that combine and 
+| OEMs, ISVs, VARs and other distributors that combine and
 | distribute commercially licensed software with Platinum software
 | and do not wish to distribute the source code for the commercially
 | licensed software under version 2, or (at your option) any later
 | version, of the GNU General Public License (the "GPL") must enter
 | into a commercial license agreement with Plutinosoft, LLC.
 | licensing@plutinosoft.com
-| 
+|
 | This program is distributed in the hope that it will be useful,
 | but WITHOUT ANY WARRANTY; without even the implied warranty of
 | MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
@@ -26,7 +26,7 @@
 |
 | You should have received a copy of the GNU General Public License
 | along with this program; see the file LICENSE.txt. If not, write to
-| the Free Software Foundation, Inc., 
+| the Free Software Foundation, Inc.,
 | 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 | http://www.gnu.org/licenses/gpl-2.0.html
 |
@@ -88,15 +88,15 @@ public:
     // PLT_MediaControllerDelegate methods
     bool OnMRAdded(PLT_DeviceDataReference& device);
     void OnMRRemoved(PLT_DeviceDataReference& device);
-    void OnMRStateVariablesChanged(PLT_Service* /* service */, 
+    void OnMRStateVariablesChanged(PLT_Service* /* service */,
                                    NPT_List<PLT_StateVariable*>* /* vars */);
-    
+
     // PLT_HttpClientTask method
     NPT_Result ProcessResponse(NPT_Result                    res,
                                const NPT_HttpRequest&        request,
                                const NPT_HttpRequestContext& context,
                                NPT_HttpResponse*             response);
-    
+
 private:
     const char* ChooseIDFromTable(PLT_StringMap& table);
     void        PopDirectoryStackToRoot(void);
@@ -135,39 +135,39 @@ private:
     NPT_Lock<PLT_DeviceMap> m_MediaServers;
     NPT_Lock<PLT_DeviceMap> m_MediaRenderers;
 
-    /* Currently selected media server as well as 
-     * a lock.  If you ever want to hold both the m_CurMediaRendererLock lock and the 
+    /* Currently selected media server as well as
+     * a lock.  If you ever want to hold both the m_CurMediaRendererLock lock and the
      * m_CurMediaServerLock lock, make sure you grab the server lock first.
      */
     PLT_DeviceDataReference m_CurMediaServer;
     NPT_Mutex               m_CurMediaServerLock;
 
-    /* Currently selected media renderer as well as 
-     * a lock.  If you ever want to hold both the m_CurMediaRendererLock lock and the 
+    /* Currently selected media renderer as well as
+     * a lock.  If you ever want to hold both the m_CurMediaRendererLock lock and the
      * m_CurMediaServerLock lock, make sure you grab the server lock first.
      */
     PLT_DeviceDataReference m_CurMediaRenderer;
     NPT_Mutex               m_CurMediaRendererLock;
 
-    /* Most recent results from a browse request.  The results come back in a 
-     * callback instead of being returned to the calling function, so this 
-     * variable is necessary in order to give the results back to the calling 
+    /* Most recent results from a browse request.  The results come back in a
+     * callback instead of being returned to the calling function, so this
+     * variable is necessary in order to give the results back to the calling
      * function.
      */
     PLT_MediaObjectListReference m_MostRecentBrowseResults;
 
-    /* When browsing through the tree on a media server, this is the stack 
-     * symbolizing the current position in the tree.  The contents of the 
+    /* When browsing through the tree on a media server, this is the stack
+     * symbolizing the current position in the tree.  The contents of the
      * stack are the object ID's of the nodes.  Note that the object id: "0" should
      * always be at the bottom of the stack.
      */
     NPT_Stack<NPT_String> m_CurBrowseDirectoryStack;
 
     /* Semaphore on which to block when waiting for a response from over
-     * the network 
+     * the network
      */
     NPT_SharedVariable m_CallbackResponseSemaphore;
-    
+
     /* Task Manager managing download tasks */
     PLT_TaskManager m_DownloadTaskManager;
 };

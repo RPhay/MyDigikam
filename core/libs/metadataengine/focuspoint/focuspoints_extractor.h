@@ -3,7 +3,7 @@
  * This file is a part of digiKam project
  * https://www.digikam.org
  *
- * Date        : 
+ * Date        :
  * Description : Extraction of focus points by exiftool data
  *
  * Copyright (C) 2020-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
@@ -25,7 +25,7 @@
 #ifndef DIGIKAM_FOCUSPOINTS_EXTRACTOR_H
 #define DIGIKAM_FOCUSPOINTS_EXTRACTOR_H
 
-// Qt includes 
+// Qt includes
 
 #include <QObject>
 #include <QVariant>
@@ -38,7 +38,7 @@
 #include "focuspoint.h"
 
 
-namespace Digikam 
+namespace Digikam
 {
 
 class DIGIKAM_EXPORT FocusPointsExtractor : public QObject
@@ -48,11 +48,11 @@ class DIGIKAM_EXPORT FocusPointsExtractor : public QObject
 public:
 
     /**
-     * A list used to store focus points of a image extracted from meta data 
-     * 
+     * A list used to store focus points of a image extracted from meta data
+     *
      * With extract() function, an exiftool parser is used to read data from
      * metadata and lists all focus points. Each focus point is defined by their
-     * relative centers coordinate and relative size. Each point has own 
+     * relative centers coordinate and relative size. Each point has own
      * type (Inactive, Infocus, Selected, SelectedInFocus)
      */
     using ListAFPoints = QList<FocusPoint>;
@@ -67,17 +67,17 @@ public:
     ListAFPoints get_af_points();
     ListAFPoints get_af_points(FocusPoint::TypePoint type);
     bool isAFPointsReadOnly()               const;
-        
+
 private:
-    
+
     QVariant findValue(const QString& tagName,bool isList = false) const;
     QVariant findValue(const QString& tagNameRoot, const QString& key,bool isList = false) const;
     QVariant findValueFirstMatch(const QStringList& listTagNames,bool isList = false) const;
     QVariant findValueFirstMatch(const QString& tagNameRoot,const QStringList& keys, bool isList= false) const;
     void setAFPointsReadOnly(bool readOnly) const;
-        
+
     ListAFPoints findAFPoints()             const;
-    
+
     ListAFPoints getAFPoints_default()      const;
     ListAFPoints getAFPoints_canon()        const;
     ListAFPoints getAFPoints_nikon()        const;

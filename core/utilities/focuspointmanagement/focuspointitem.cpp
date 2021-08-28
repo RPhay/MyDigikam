@@ -24,7 +24,7 @@ FocusPointItem::FocusPointItem(QGraphicsItem* const parent)
 
 FocusPointItem::~FocusPointItem()
 {
-    
+
 }
 
 void FocusPointItem::setPoint(const FocusPoint& point)

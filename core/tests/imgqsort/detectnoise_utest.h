@@ -55,8 +55,8 @@ private Q_SLOTS:
     void testParseTestImagesForVariousTypeNoiseFailCase();
 };
 
-DataTestCases const dataTestCases = 
-    {   
+DataTestCases const dataTestCases =
+    {
         {QLatin1String("noiseDetection"), PairImageQuality(QLatin1String("test_noised_1.jpg"),3)},
         {QLatin1String("noiseDetection"), PairImageQuality(QLatin1String("test_noised_2.jpg"),3)},
         {QLatin1String("noiseDetection"), PairImageQuality(QLatin1String("test_noised_5.jpg"),2)},
@@ -71,7 +71,7 @@ DataTestCases const dataTestCases =
         {QLatin1String("variousTypesNoise"), PairImageQuality(QLatin1String("noise_bird_gaussian.png"),1)},
         {QLatin1String("variousTypesNoise"), PairImageQuality(QLatin1String("noise_bird_rayleigh.png"),1)},
         {QLatin1String("variousTypesNoise"), PairImageQuality(QLatin1String("noise_bird_speckle.png"),1)},
-        
+
         {QLatin1String("variousTypesNoiseFailCase"), PairImageQuality(QLatin1String("noise_bird_salt_pepper.png"),1)},
         {QLatin1String("variousTypesNoiseFailCase"), PairImageQuality(QLatin1String("noise_bird_bandpass.png"),1)},
     };

@@ -32,7 +32,7 @@
 #include <QFuture>
 #include <QtConcurrent>
 
-// Local includes 
+// Local includes
 
 #include "noise_detector.h"
 #include "exposure_detector.h"
@@ -81,11 +81,11 @@ void ImageQualityParser::startAnalyse()
     std::unique_ptr<NoiseDetector> noiseDetector;
     std::unique_ptr<CompressionDetector> compressionDetector;
     std::unique_ptr<ExposureDetector> exposureDetector;
- 
+
     ImageQualityThreadPool pool(this, d->calculator);
 
     if (d->running && d->imq.detectBlur)
-    {        
+    {
         blurDetector = std::unique_ptr<BlurDetector>(new BlurDetector(d->image));
 
         pool.addDetector(cvImage, d->imq.blurWeight, blurDetector.get());

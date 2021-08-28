@@ -47,14 +47,14 @@ NPT_SET_LOCAL_LOGGER("neptune.file")
 /*----------------------------------------------------------------------
 |   NPT_FilePath::BaseName
 +---------------------------------------------------------------------*/
-NPT_String 
+NPT_String
 NPT_FilePath::BaseName(const char* path, bool with_extension /* = true */)
 {
     NPT_String result = path;
     int separator = result.ReverseFind(Separator);
     if (separator >= 0) {
         result = path+separator+NPT_StringLength(Separator);
-    } 
+    }
 
     if (!with_extension) {
         int dot = result.ReverseFind('.');
@@ -69,7 +69,7 @@ NPT_FilePath::BaseName(const char* path, bool with_extension /* = true */)
 /*----------------------------------------------------------------------
 |   NPT_FilePath::DirName
 +---------------------------------------------------------------------*/
-NPT_String 
+NPT_String
 NPT_FilePath::DirName(const char* path)
 {
     NPT_String result = path;
@@ -82,7 +82,7 @@ NPT_FilePath::DirName(const char* path)
         }
     } else {
         result.SetLength(0);
-    } 
+    }
 
     return result;
 }
@@ -90,7 +90,7 @@ NPT_FilePath::DirName(const char* path)
 /*----------------------------------------------------------------------
 |   NPT_FilePath::FileExtension
 +---------------------------------------------------------------------*/
-NPT_String 
+NPT_String
 NPT_FilePath::FileExtension(const char* path)
 {
     NPT_String result = path;
@@ -107,7 +107,7 @@ NPT_FilePath::FileExtension(const char* path)
 /*----------------------------------------------------------------------
 |   NPT_FilePath::Create
 +---------------------------------------------------------------------*/
-NPT_String 
+NPT_String
 NPT_FilePath::Create(const char* directory, const char* basename)
 {
     if (!directory || NPT_StringLength(directory) == 0) return basename;
@@ -161,7 +161,7 @@ NPT_File::CreateDir(const char* path, bool create_intermediate_dirs)
     if (NPT_FAILED(result) && result != NPT_ERROR_FILE_ALREADY_EXISTS) {
         return result;
     }
-    
+
     return NPT_SUCCESS;
 }
 
@@ -169,14 +169,14 @@ NPT_File::CreateDir(const char* path, bool create_intermediate_dirs)
 /*----------------------------------------------------------------------
 |   NPT_File::RemoveDir
 +---------------------------------------------------------------------*/
-NPT_Result 
+NPT_Result
 NPT_File::RemoveDir(const char* path, bool force_if_not_empty)
 {
     NPT_String root_path = path;
 
     // normalize path separators
     root_path.Replace((NPT_FilePath::Separator[0] == '/')?'\\':'/', NPT_FilePath::Separator);
-    
+
     // remove superfluous delimiters at the end
     root_path.TrimRight(NPT_FilePath::Separator);
 
@@ -205,7 +205,7 @@ NPT_File::Load(const char* path, NPT_DataBuffer& buffer, NPT_FileInterface::Open
     NPT_File file(path);
     NPT_Result result = file.Open(mode);
     if (NPT_FAILED(result)) return result;
-    
+
     // load the file
     result = file.Load(buffer);
 
@@ -230,7 +230,7 @@ NPT_File::Load(const char* path, NPT_String& data, NPT_FileInterface::OpenMode m
     NPT_File file(path);
     NPT_Result result = file.Open(mode);
     if (NPT_FAILED(result)) return result;
-    
+
     // load the file
     result = file.Load(buffer);
 
@@ -329,14 +329,14 @@ NPT_File::GetSize(NPT_LargeSize& size)
 {
     // default value
     size = 0;
-    
+
     // get the file info
     NPT_FileInfo info;
     NPT_Result result = GetInfo(info);
     if (NPT_FAILED(result)) {
         return result;
     }
-    
+
     switch (info.m_Type) {
         case NPT_FileInfo::FILE_TYPE_DIRECTORY: {
             NPT_List<NPT_String> entries;
@@ -344,23 +344,23 @@ NPT_File::GetSize(NPT_LargeSize& size)
             size = entries.GetItemCount();
             break;
         }
-        
+
         case NPT_FileInfo::FILE_TYPE_REGULAR:
         case NPT_FileInfo::FILE_TYPE_OTHER:
             size = info.m_Size;
             return NPT_SUCCESS;
-            
+
         default:
             break;
-    } 
-    
+    }
+
     return NPT_SUCCESS;
 }
 
 /*----------------------------------------------------------------------
 |   NPT_File::GetSize
 +---------------------------------------------------------------------*/
-NPT_Result        
+NPT_Result
 NPT_File::GetSize(const char* path, NPT_LargeSize& size)
 {
     NPT_File file(path);
@@ -370,7 +370,7 @@ NPT_File::GetSize(const char* path, NPT_LargeSize& size)
 /*----------------------------------------------------------------------
 |   NPT_File::Remove
 +---------------------------------------------------------------------*/
-NPT_Result 
+NPT_Result
 NPT_File::Remove(const char* path, bool recurse /* = false */)
 {
     NPT_FileInfo info;
@@ -401,7 +401,7 @@ NPT_File::Rename(const char* path)
 /*----------------------------------------------------------------------
 |   NPT_File::ListDir
 +---------------------------------------------------------------------*/
-NPT_Result        
+NPT_Result
 NPT_File::ListDir(NPT_List<NPT_String>& entries)
 {
     entries.Clear();

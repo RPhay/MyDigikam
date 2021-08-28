@@ -11,14 +11,14 @@
 | as published by the Free Software Foundation; either version 2
 | of the License, or (at your option) any later version.
 |
-| OEMs, ISVs, VARs and other distributors that combine and 
+| OEMs, ISVs, VARs and other distributors that combine and
 | distribute commercially licensed software with Platinum software
 | and do not wish to distribute the source code for the commercially
 | licensed software under version 2, or (at your option) any later
 | version, of the GNU General Public License (the "GPL") must enter
 | into a commercial license agreement with Plutinosoft, LLC.
 | licensing@plutinosoft.com
-|  
+|
 | This program is distributed in the hope that it will be useful,
 | but WITHOUT ANY WARRANTY; without even the implied warranty of
 | MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
@@ -26,7 +26,7 @@
 |
 | You should have received a copy of the GNU General Public License
 | along with this program; see the file LICENSE.txt. If not, write to
-| the Free Software Foundation, Inc., 
+| the Free Software Foundation, Inc.,
 | 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 | http://www.gnu.org/licenses/gpl-2.0.html
 |
@@ -67,7 +67,7 @@ PLT_HttpClientSocketTask::~PLT_HttpClientSocketTask()
 /*----------------------------------------------------------------------
 |   PLT_HttpClientSocketTask::SetHttpClientConfig
 +---------------------------------------------------------------------*/
-NPT_Result 
+NPT_Result
 PLT_HttpClientSocketTask::SetHttpClientConfig(const NPT_HttpClient::Config& config)
 {
     return m_Client.SetConfig(config);
@@ -118,7 +118,7 @@ PLT_HttpClientSocketTask::DoRun()
         // pop next request or wait for one for 100ms
         while (NPT_SUCCEEDED(GetNextRequest(request, 100))) {
             response = NULL;
-            
+
             if (IsAborting(0)) goto abort;
 
             // send request
@@ -146,7 +146,7 @@ PLT_HttpClientSocketTask::DoRun()
         }
 
     } while (m_WaitForever && !IsAborting(0));
-    
+
 abort:
     if (request) delete request;
     if (response) delete response;
@@ -155,11 +155,11 @@ abort:
 /*----------------------------------------------------------------------
 |   PLT_HttpClientSocketTask::ProcessResponse
 +---------------------------------------------------------------------*/
-NPT_Result 
-PLT_HttpClientSocketTask::ProcessResponse(NPT_Result                    res, 
-                                          const NPT_HttpRequest&        request,  
-                                          const NPT_HttpRequestContext& context, 
-                                          NPT_HttpResponse*             response) 
+NPT_Result
+PLT_HttpClientSocketTask::ProcessResponse(NPT_Result                    res,
+                                          const NPT_HttpRequest&        request,
+                                          const NPT_HttpRequestContext& context,
+                                          NPT_HttpResponse*             response)
 {
     NPT_COMPILER_UNUSED(request);
     NPT_COMPILER_UNUSED(context);
@@ -172,18 +172,18 @@ PLT_HttpClientSocketTask::ProcessResponse(NPT_Result                    res,
     // check if there's a body to read
     NPT_HttpEntity* entity;
     NPT_InputStreamReference body;
-    if (!(entity = response->GetEntity()) || 
+    if (!(entity = response->GetEntity()) ||
         NPT_FAILED(entity->GetInputStream(body)) ||
         body.IsNull()) {
         return NPT_SUCCESS;
     }
 
-    // dump body into ether  
+    // dump body into ether
     // (if no content-length specified, read until disconnected)
     NPT_NullOutputStream output;
-    NPT_CHECK_SEVERE(NPT_StreamToStreamCopy(*body, 
+    NPT_CHECK_SEVERE(NPT_StreamToStreamCopy(*body,
                                             output,
-                                            0, 
+                                            0,
                                             entity->GetContentLength()));
 
     return NPT_SUCCESS;

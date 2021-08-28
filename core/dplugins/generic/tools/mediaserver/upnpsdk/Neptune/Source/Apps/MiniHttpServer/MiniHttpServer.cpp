@@ -29,7 +29,7 @@ MiniServer(const char* root, unsigned int port, bool verbose)
 
     for (;;) {
         if (verbose) NPT_Console::Output("waiting for connection...\n");
-        NPT_Result result = server.WaitForNewClient(input, 
+        NPT_Result result = server.WaitForNewClient(input,
                                                     output,
                                                     &context);
         if (verbose) NPT_Console::OutputF("WaitForNewClient returned %d (%s)\n", result, NPT_ResultText(result));
@@ -37,10 +37,10 @@ MiniServer(const char* root, unsigned int port, bool verbose)
 
         result = server.RespondToClient(input, output, context);
         if (verbose) NPT_Console::OutputF("RespondToClient returned %d (%s)\n", result, NPT_ResultText(result));
-        
+
         input = NULL;
         output = NULL;
-    } 
+    }
 
     //delete file_handler;
 }
@@ -54,7 +54,7 @@ main(int /*argc*/, char** argv)
     NPT_String   file_root;
     unsigned int port    = 8000;
     bool         verbose = false;
-    
+
     while (const char* arg = *++argv) {
         if (NPT_StringsEqual(arg, "--help") ||
             NPT_StringsEqual(arg, "-h")) {
@@ -78,15 +78,15 @@ main(int /*argc*/, char** argv)
             verbose = true;
         }
     }
-    
+
     if (file_root.GetLength() == 0) {
         NPT_File::GetWorkingDir(file_root);
     }
-    
+
     if (verbose) {
         NPT_Console::OutputF("Starting server on port %d, root=%s\n", port, file_root.GetChars());
     }
     MiniServer(file_root, port, verbose);
-    
+
     return 0;
 }

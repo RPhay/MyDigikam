@@ -198,12 +198,12 @@ public:
 
 private:
 
-	RDF_Parser() { 
+	RDF_Parser() {
 
 		errorCallback = NULL;
 
 	};	// Hidden on purpose.
-	
+
 	XMPMeta::ErrorCallbackInfo * errorCallback;
 
 	XMP_Node * AddChildNode ( XMP_Node * xmpParent, const XML_Node & xmlNode, const XMP_StringPtr value, bool isTopLevel );
@@ -211,7 +211,7 @@ private:
 	XMP_Node * AddQualifierNode ( XMP_Node * xmpParent, const XMP_VarString & name, const XMP_VarString & value );
 
 	XMP_Node * AddQualifierNode ( XMP_Node * xmpParent, const XML_Node & attr );
-	
+
 	void FixupQualifiedNode ( XMP_Node * xmpParent );
 
 };
@@ -238,7 +238,7 @@ enum {
 	kRDFTerm_aboutEach			= 10,	// Start of oldTerms.
 	kRDFTerm_aboutEachPrefix	= 11,
 	kRDFTerm_bagID				= 12,	// End of oldTerms.
-	
+
 	kRDFTerm_FirstCore          = kRDFTerm_RDF,
 	kRDFTerm_LastCore           = kRDFTerm_datatype,
 	kRDFTerm_FirstSyntax        = kRDFTerm_FirstCore,	// ! Yes, the syntax terms include the core terms.
@@ -452,13 +452,13 @@ IsNumberedArrayItemName ( const std::string & name )
 
 XMP_Node * RDF_Parser::AddChildNode ( XMP_Node * xmpParent, const XML_Node & xmlNode, const XMP_StringPtr value, bool isTopLevel )
 {
-	
+
 	if ( xmlNode.ns.empty() ) {
 		XMP_Error error ( kXMPErr_BadRDF, "XML namespace required for all elements and attributes" );
 		this->errorCallback->NotifyClient ( kXMPErrSev_Recoverable, error );
 		return 0;
 	}
-		
+
 	bool isArrayParent = (xmpParent->options & kXMP_PropValueIsArray) !=0;
 	bool isArrayItem   = (xmlNode.name == "rdf:li");
 	bool isValueNode   = (xmlNode.name == "rdf:value");
@@ -473,15 +473,15 @@ XMP_Node * RDF_Parser::AddChildNode ( XMP_Node * xmpParent, const XML_Node & xml
 		if ( schemaNode->options & kXMP_NewImplicitNode ) schemaNode->options ^= kXMP_NewImplicitNode;	// Clear the implicit node bit.
 			// *** Should use "opt &= ~flag" (no conditional), need runtime check for proper 32 bit code.
 		xmpParent = schemaNode;
-		
+
 		// If this is an alias set the isAlias flag in the node and the hasAliases flag in the tree.
 		if ( sRegisteredAliasMap->find ( xmlNode.name ) != sRegisteredAliasMap->end() ) {
 			childOptions |= kXMP_PropIsAlias;
 			schemaNode->parent->options |= kXMP_PropHasAliases;
 		}
-		
+
 	}
-	
+
 	// Check use of rdf:li and rdf:_n names. Must be done before calling FindChildNode!
 	if ( isArrayItem ) {
 
@@ -525,7 +525,7 @@ XMP_Node * RDF_Parser::AddChildNode ( XMP_Node * xmpParent, const XML_Node & xml
 		}
 		xmpParent->options |= kRDF_HasValueElem;
 	}
-	
+
 	// Add the new child to the XMP parent node.
 	XMP_Node * newChild = new XMP_Node ( xmpParent, childName, value, childOptions );
 	if ( (! isValueNode) || xmpParent->children.empty() ) {
@@ -533,7 +533,7 @@ XMP_Node * RDF_Parser::AddChildNode ( XMP_Node * xmpParent, const XML_Node & xml
 	} else {
 		 xmpParent->children.insert ( xmpParent->children.begin(), newChild );
 	}
-	
+
 	return newChild;
 
 }	// RDF_Parser::AddChildNode
@@ -544,7 +544,7 @@ XMP_Node * RDF_Parser::AddChildNode ( XMP_Node * xmpParent, const XML_Node & xml
 
 XMP_Node * RDF_Parser::AddQualifierNode ( XMP_Node * xmpParent, const XMP_VarString & name, const XMP_VarString & value )
 {
-	
+
 	const bool isLang = (name == "xml:lang");
 	const bool isType = (name == "rdf:type");
 
@@ -590,7 +590,7 @@ XMP_Node * RDF_Parser::AddQualifierNode ( XMP_Node * xmpParent, const XML_Node &
 		this->errorCallback->NotifyClient ( kXMPErrSev_Recoverable, error );
 		return 0;
 	}
-	
+
 	return this->AddQualifierNode ( xmpParent, attr.name, attr.value );
 
 }	// RDF_Parser::AddQualifierNode
@@ -603,7 +603,7 @@ XMP_Node * RDF_Parser::AddQualifierNode ( XMP_Node * xmpParent, const XML_Node &
 // rdf:value node must be the first child, the other children are qualifiers. The form, value, and
 // children of the rdf:value node are the real ones. The rdf:value node's qualifiers must be added
 // to the others.
-	
+
 void RDF_Parser::FixupQualifiedNode ( XMP_Node * xmpParent )
 {
 	size_t qualNum, qualLim;
@@ -613,15 +613,15 @@ void RDF_Parser::FixupQualifiedNode ( XMP_Node * xmpParent )
 
 	XMP_Node * valueNode = xmpParent->children[0];
 	XMP_Enforce ( valueNode->name == "rdf:value" );
-	
+
 	xmpParent->qualifiers.reserve ( xmpParent->qualifiers.size() + xmpParent->children.size() + valueNode->qualifiers.size() );
-	
+
 	// Move the qualifiers on the value node to the parent. Make sure an xml:lang qualifier stays at
 	// the front.
-	
+
 	qualNum = 0;
 	qualLim = valueNode->qualifiers.size();
-	
+
 	if ( valueNode->options & kXMP_PropHasLang ) {
 
 		if ( xmpParent->options & kXMP_PropHasLang ) {
@@ -632,7 +632,7 @@ void RDF_Parser::FixupQualifiedNode ( XMP_Node * xmpParent )
 		}
 
 		XMP_Node * langQual = valueNode->qualifiers[0];
-		
+
 		XMP_Assert ( langQual->name == "xml:lang" );
 		langQual->parent = xmpParent;
 		xmpParent->options |= kXMP_PropHasLang;
@@ -648,7 +648,7 @@ void RDF_Parser::FixupQualifiedNode ( XMP_Node * xmpParent )
 		qualNum = 1;	// Start the remaining copy after the xml:lang qualifier.
 
 	}
-	
+
 	for ( ; qualNum != qualLim; ++qualNum ) {
 
 		XMP_Node * currQual = valueNode->qualifiers[qualNum];
@@ -666,66 +666,66 @@ void RDF_Parser::FixupQualifiedNode ( XMP_Node * xmpParent )
 		valueNode->qualifiers[qualNum] = 0;	// We just moved it to the parent.
 
 	}
-	
+
 	valueNode->qualifiers.clear();	// ! There should be nothing but null pointers.
-	
+
 	// Change the parent's other children into qualifiers. This loop starts at 1, child 0 is the
 	// rdf:value node. Put xml:lang at the front, append all others.
-	
+
 	for ( childNum = 1, childLim = xmpParent->children.size(); childNum != childLim; ++childNum ) {
 
 		XMP_Node * currQual = xmpParent->children[childNum];
 		bool isLang = (currQual->name == "xml:lang");
-		
+
 		if ( FindQualifierNode ( xmpParent, currQual->name.c_str(), kXMP_ExistingOnly ) != 0 ) {
 			XMP_Error error ( kXMPErr_BadXMP, "Duplicate qualifier" );
 			this->errorCallback->NotifyClient ( kXMPErrSev_Recoverable, error );
 			delete currQual;
 
 		} else {
-		
+
 			currQual->options |= kXMP_PropIsQualifier;
 			currQual->parent = xmpParent;
-	
+
 			if ( isLang ) {
 				xmpParent->options |= kXMP_PropHasLang;
 			} else if ( currQual->name == "rdf:type" ) {
 				xmpParent->options |= kXMP_PropHasType;
 			}
-	
+
 			if ( (! isLang) || xmpParent->qualifiers.empty() ) {
 				xmpParent->qualifiers.push_back ( currQual );
 			} else {
 				xmpParent->qualifiers.insert ( xmpParent->qualifiers.begin(), currQual );
 			}
-			
+
 		}
-		
+
 		xmpParent->children[childNum] = 0;	// We just moved it to the qualifers, or ignored it.
 
 	}
-	
+
 	if ( ! xmpParent->qualifiers.empty() ) xmpParent->options |= kXMP_PropHasQualifiers;
-	
+
 	// Move the options and value last, other checks need the parent's original options. Move the
 	// value node's children to be the parent's children. Delete the now useless value node.
-	
+
 	XMP_Assert ( xmpParent->options & (kXMP_PropValueIsStruct | kRDF_HasValueElem) );
 	xmpParent->options &= ~ (kXMP_PropValueIsStruct | kRDF_HasValueElem);
 	xmpParent->options |= valueNode->options;
-	
+
 	xmpParent->value.swap ( valueNode->value );
 
 	xmpParent->children[0] = 0;	// ! Remove the value node itself before the swap.
 	xmpParent->children.swap ( valueNode->children );
-	
+
 	for ( childNum = 0, childLim = xmpParent->children.size(); childNum != childLim; ++childNum ) {
 		XMP_Node * currChild = xmpParent->children[childNum];
 		currChild->parent = xmpParent;
 	}
 
 	delete valueNode;
-	
+
 }	// RDF_Parser::FixupQualifiedNode
 
 // =================================================================================================
@@ -761,7 +761,7 @@ void RDF_Parser::RDF ( XMP_Node * xmpTree, const XML_Node & xmlNode )
 void RDF_Parser::NodeElementList ( XMP_Node * xmpParent, const XML_Node & xmlParent, bool isTopLevel )
 {
 	XMP_Assert ( isTopLevel );
-	
+
 	XML_cNodePos currChild = xmlParent.content.begin();	// *** Change these loops to the indexed pattern.
 	XML_cNodePos endChild  = xmlParent.content.end();
 
@@ -961,7 +961,7 @@ void RDF_Parser::PropertyElement ( XMP_Node * xmpParent, const XML_Node & xmlNod
 		this->errorCallback->NotifyClient ( kXMPErrSev_Recoverable, error );
 		return;
 	}
-	
+
 	if ( xmlNode.attrs.size() > 3 ) {
 
 		// Only an emptyPropertyElt can have more than 3 attributes.
@@ -1010,24 +1010,24 @@ void RDF_Parser::PropertyElement ( XMP_Node * xmpParent, const XML_Node & xmlNod
 				this->EmptyPropertyElement ( xmpParent, xmlNode, isTopLevel );
 
 			} else {
-			
+
 				XML_cNodePos currChild = xmlNode.content.begin();
 				XML_cNodePos endChild  = xmlNode.content.end();
 
 				for ( ; currChild != endChild; ++currChild ) {
 					if ( (*currChild)->kind != kCDataNode ) break;
 				}
-				
+
 				if ( currChild == endChild ) {
 					this->LiteralPropertyElement ( xmpParent, xmlNode, isTopLevel );
 				} else {
 					this->ResourcePropertyElement ( xmpParent, xmlNode, isTopLevel );
 				}
-			
+
 			}
 
 		}
-		
+
 	}
 
 }	// RDF_Parser::PropertyElement
@@ -1047,10 +1047,10 @@ void RDF_Parser::PropertyElement ( XMP_Node * xmpParent, const XML_Node & xmlNod
 void RDF_Parser::ResourcePropertyElement ( XMP_Node * xmpParent, const XML_Node & xmlNode, bool isTopLevel )
 {
 	if ( isTopLevel && (xmlNode.name == "iX:changes") ) return;	// Strip old "punchcard" chaff.
-	
+
 	XMP_Node * newCompound = this->AddChildNode ( xmpParent, xmlNode, "", isTopLevel );
 	if ( newCompound == 0 ) return;	// Ignore lower level errors.
-	
+
 	XML_cNodePos currAttr = xmlNode.attrs.begin();
 	XML_cNodePos endAttr  = xmlNode.attrs.end();
 
@@ -1066,7 +1066,7 @@ void RDF_Parser::ResourcePropertyElement ( XMP_Node * xmpParent, const XML_Node 
 			continue;
 		}
 	}
-	
+
 	XML_cNodePos currChild = xmlNode.content.begin();
 	XML_cNodePos endChild  = xmlNode.content.end();
 
@@ -1139,7 +1139,7 @@ void RDF_Parser::LiteralPropertyElement ( XMP_Node * xmpParent, const XML_Node &
 {
 	XMP_Node * newChild = this->AddChildNode ( xmpParent, xmlNode, "", isTopLevel );
 	if ( newChild == 0 ) return;	// Ignore lower level errors.
-	
+
 	XML_cNodePos currAttr = xmlNode.attrs.begin();
 	XML_cNodePos endAttr  = xmlNode.attrs.end();
 
@@ -1155,7 +1155,7 @@ void RDF_Parser::LiteralPropertyElement ( XMP_Node * xmpParent, const XML_Node &
 			continue;
 		}
 	}
-	
+
 	XML_cNodePos currChild = xmlNode.content.begin();
 	XML_cNodePos endChild  = xmlNode.content.end();
 	size_t textSize = 0;
@@ -1168,7 +1168,7 @@ void RDF_Parser::LiteralPropertyElement ( XMP_Node * xmpParent, const XML_Node &
 			this->errorCallback->NotifyClient ( kXMPErrSev_Recoverable, error );
 		}
 	}
-	
+
 	newChild->value.reserve ( textSize );
 
 	for ( currChild = xmlNode.content.begin(); currChild != endChild; ++currChild ) {
@@ -1188,7 +1188,7 @@ void RDF_Parser::LiteralPropertyElement ( XMP_Node * xmpParent, const XML_Node &
 
 void RDF_Parser::ParseTypeLiteralPropertyElement ( XMP_Node * xmpParent, const XML_Node & xmlNode, bool isTopLevel )
 {
-	IgnoreParam(xmpParent); IgnoreParam(xmlNode); IgnoreParam(isTopLevel); 
+	IgnoreParam(xmpParent); IgnoreParam(xmlNode); IgnoreParam(isTopLevel);
 	XMP_Error error ( kXMPErr_BadXMP, "ParseTypeLiteral property element not allowed" );
 	this->errorCallback->NotifyClient ( kXMPErrSev_Recoverable, error );
 
@@ -1211,7 +1211,7 @@ void RDF_Parser::ParseTypeResourcePropertyElement ( XMP_Node * xmpParent, const 
 	XMP_Node * newStruct = this->AddChildNode ( xmpParent, xmlNode, "", isTopLevel );
 	if ( newStruct == 0 ) return;	// Ignore lower level errors.
 	newStruct->options  |= kXMP_PropValueIsStruct;
-	
+
 	XML_cNodePos currAttr = xmlNode.attrs.begin();
 	XML_cNodePos endAttr  = xmlNode.attrs.end();
 
@@ -1233,7 +1233,7 @@ void RDF_Parser::ParseTypeResourcePropertyElement ( XMP_Node * xmpParent, const 
 	this->PropertyElementList ( newStruct, xmlNode, kNotTopLevel );
 
 	if ( newStruct->options & kRDF_HasValueElem ) this->FixupQualifiedNode ( newStruct );
-	
+
 	// *** Need to look for arrays using rdf:Description and rdf:type.
 
 }	// RDF_Parser::ParseTypeResourcePropertyElement
@@ -1249,7 +1249,7 @@ void RDF_Parser::ParseTypeResourcePropertyElement ( XMP_Node * xmpParent, const 
 
 void RDF_Parser::ParseTypeCollectionPropertyElement ( XMP_Node * xmpParent, const XML_Node & xmlNode, bool isTopLevel )
 {
-	IgnoreParam(xmpParent); IgnoreParam(xmlNode); IgnoreParam(isTopLevel); 
+	IgnoreParam(xmpParent); IgnoreParam(xmlNode); IgnoreParam(isTopLevel);
 	XMP_Error error ( kXMPErr_BadXMP, "ParseTypeCollection property element not allowed" );
 	this->errorCallback->NotifyClient ( kXMPErrSev_Recoverable, error );
 
@@ -1266,7 +1266,7 @@ void RDF_Parser::ParseTypeCollectionPropertyElement ( XMP_Node * xmpParent, cons
 
 void RDF_Parser::ParseTypeOtherPropertyElement ( XMP_Node * xmpParent, const XML_Node & xmlNode, bool isTopLevel )
 {
-	IgnoreParam(xmpParent); IgnoreParam(xmlNode); IgnoreParam(isTopLevel); 
+	IgnoreParam(xmpParent); IgnoreParam(xmlNode); IgnoreParam(isTopLevel);
 	XMP_Error error ( kXMPErr_BadXMP, "ParseTypeOther property element not allowed" );
 	this->errorCallback->NotifyClient ( kXMPErrSev_Recoverable, error );
 
@@ -1281,9 +1281,9 @@ void RDF_Parser::ParseTypeOtherPropertyElement ( XMP_Node * xmpParent, const XML
 //						attributes == set ( idAttr?, ( resourceAttr | nodeIdAttr )?, propertyAttr* ) )
 //		end-element()
 //
-//	<ns:Prop1/>  <!-- a simple property with an empty value --> 
-//	<ns:Prop2 rdf:resource="http://www.adobe.com/"/> <!-- a URI value --> 
-//	<ns:Prop3 rdf:value="..." ns:Qual="..."/> <!-- a simple qualified property --> 
+//	<ns:Prop1/>  <!-- a simple property with an empty value -->
+//	<ns:Prop2 rdf:resource="http://www.adobe.com/"/> <!-- a URI value -->
+//	<ns:Prop3 rdf:value="..." ns:Qual="..."/> <!-- a simple qualified property -->
 //	<ns:Prop4 ns:Field1="..." ns:Field2="..."/> <!-- a struct with simple fields -->
 //
 // An emptyPropertyElt is an element with no contained content, just a possibly empty set of
@@ -1295,15 +1295,15 @@ void RDF_Parser::ParseTypeOtherPropertyElement ( XMP_Node * xmpParent, const XML
 // It is an error to use both rdf:value and rdf:resource - that can lead to invalid  RDF in the
 // verbose form written using a literalPropertyElt.
 //
-// The XMP mapping for an emptyPropertyElt is a bit different from generic RDF, partly for 
-// design reasons and partly for historical reasons. The XMP mapping rules are: 
+// The XMP mapping for an emptyPropertyElt is a bit different from generic RDF, partly for
+// design reasons and partly for historical reasons. The XMP mapping rules are:
 //	1. If there is an rdf:value attribute then this is a simple property with a text value.
 //		All other attributes are qualifiers.
-//	2. If there is an rdf:resource attribute then this is a simple property with a URI value. 
+//	2. If there is an rdf:resource attribute then this is a simple property with a URI value.
 //		All other attributes are qualifiers.
-//	3. If there are no attributes other than xml:lang, rdf:ID, or rdf:nodeID then this is a simple 
-//		property with an empty value. 
-//	4. Otherwise this is a struct, the attributes other than xml:lang, rdf:ID, or rdf:nodeID are fields. 
+//	3. If there are no attributes other than xml:lang, rdf:ID, or rdf:nodeID then this is a simple
+//		property with an empty value.
+//	4. Otherwise this is a struct, the attributes other than xml:lang, rdf:ID, or rdf:nodeID are fields.
 
 void RDF_Parser::EmptyPropertyElement ( XMP_Node * xmpParent, const XML_Node & xmlNode, bool isTopLevel )
 {
@@ -1311,17 +1311,17 @@ void RDF_Parser::EmptyPropertyElement ( XMP_Node * xmpParent, const XML_Node & x
 	bool hasResourceAttr  = false;
 	bool hasNodeIDAttr    = false;
 	bool hasValueAttr     = false;
-	
+
 	const XML_Node * valueNode = 0;	// ! Can come from rdf:value or rdf:resource.
-	
+
 	if ( ! xmlNode.content.empty() ) {
 		XMP_Error error ( kXMPErr_BadRDF, "Nested content not allowed with rdf:resource or property attributes" );
 		this->errorCallback->NotifyClient ( kXMPErrSev_Recoverable, error );
 		return;
 	}
-	
+
 	// First figure out what XMP this maps to and remember the XML node for a simple value.
-	
+
 	XML_cNodePos currAttr = xmlNode.attrs.begin();
 	XML_cNodePos endAttr  = xmlNode.attrs.end();
 
@@ -1378,21 +1378,21 @@ void RDF_Parser::EmptyPropertyElement ( XMP_Node * xmpParent, const XML_Node & x
 					XMP_Error error ( kXMPErr_BadRDF, "Unrecognized attribute of empty property element" );
 					this->errorCallback->NotifyClient ( kXMPErrSev_Recoverable, error );
 				}
-				
+
 				return;
 
 		}
 
 	}
-	
+
 	// Create the right kind of child node and visit the attributes again to add the fields or qualifiers.
 	// ! Because of implementation vagaries, the xmpParent is the tree root for top level properties.
 	// ! The schema is found, created if necessary, by AddChildNode.
-	
+
 	XMP_Node * childNode = this->AddChildNode ( xmpParent, xmlNode, "", isTopLevel );
 	if ( childNode == 0 ) return;	// Ignore lower level errors.
 	bool childIsStruct = false;
-	
+
 	if ( hasValueAttr | hasResourceAttr ) {
 		childNode->value = valueNode->value;
 		if ( ! hasValueAttr ) childNode->options |= kXMP_PropValueIsURI;	// ! Might have both rdf:value and rdf:resource.
@@ -1400,7 +1400,7 @@ void RDF_Parser::EmptyPropertyElement ( XMP_Node * xmpParent, const XML_Node & x
 		childNode->options |= kXMP_PropValueIsStruct;
 		childIsStruct = true;
 	}
-		
+
 	currAttr = xmlNode.attrs.begin();
 	endAttr  = xmlNode.attrs.end();
 
@@ -1414,7 +1414,7 @@ void RDF_Parser::EmptyPropertyElement ( XMP_Node * xmpParent, const XML_Node & x
 			case kRDFTerm_ID       :
 			case kRDFTerm_nodeID   :
 				break;	// Ignore all rdf:ID and rdf:nodeID attributes.
-				
+
 			case kRDFTerm_resource :
 				this->AddQualifierNode ( childNode, **currAttr );
 				break;
@@ -1449,9 +1449,9 @@ void RDF_Parser::EmptyPropertyElement ( XMP_Node * xmpParent, const XML_Node & x
 void XMPMeta::ProcessRDF ( const XML_Node & rdfNode, XMP_OptionBits options )
 {
 	IgnoreParam(options);
-	
+
 	RDF_Parser parser ( &this->errorCallback );
-	
+
 	parser.RDF ( &this->tree, rdfNode );
 
 }	// XMPMeta::ProcessRDF

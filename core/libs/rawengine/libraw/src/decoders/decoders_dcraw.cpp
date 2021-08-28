@@ -1606,7 +1606,7 @@ void LibRaw::samsung_load_raw()
         if (idest < maxpixels &&
             isrc <
                 maxpixels) // less than zero is handled by unsigned conversion
-          RAW(row, col + c) = (i > 0 ? ((signed)ph1_bits(i) << (32 - i) >> (32 - i)) : 0) + 			                
+          RAW(row, col + c) = (i > 0 ? ((signed)ph1_bits(i) << (32 - i) >> (32 - i)) : 0) +
             (dir ? RAW(row + (~c | -2), col + c) : col ? RAW(row, col + (c | -2)) : 128);
         else
           derror();

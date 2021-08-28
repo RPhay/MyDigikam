@@ -222,15 +222,15 @@ void CharcoalFilter::convolveImageMultithreaded(uint start, uint stop, double* n
 
             for (mcy = 0 ; runningFlag() && (mcy < kernelWidth) ; ++mcy, ++sy)
             {
-                my = (sy < 0) ? 0 
-                              : (sy > ((int) height - 1)) ? height - 1 
+                my = (sy < 0) ? 0
+                              : (sy > ((int) height - 1)) ? height - 1
                                                           : sy;
                 sx = x + (-kernelWidth / 2);
 
                 for (mcx = 0 ; runningFlag() && (mcx < kernelWidth) ; ++mcx, ++sx)
                 {
-                    mx     = (sx < 0) ? 0 
-                                      : (sx > ((int) width - 1)) ? width - 1 
+                    mx     = (sx < 0) ? 0
+                                      : (sx > ((int) width - 1)) ? width - 1
                                                                  : sx;
                     DColor color(sdata + mx * sdepth + (width * my * sdepth), sixteenBit);
                     red   += (*k) * (color.red()   * 257.0);
@@ -241,20 +241,20 @@ void CharcoalFilter::convolveImageMultithreaded(uint start, uint stop, double* n
                 }
             }
 
-            red   = (red < 0.0)   ? 0.0 
-                                  : (red > maxClamp)   ? maxClamp 
+            red   = (red < 0.0)   ? 0.0
+                                  : (red > maxClamp)   ? maxClamp
                                                        : red + 0.5;
 
-            green = (green < 0.0) ? 0.0 
-                                  : (green > maxClamp) ? maxClamp 
+            green = (green < 0.0) ? 0.0
+                                  : (green > maxClamp) ? maxClamp
                                                        : green + 0.5;
 
-            blue  = (blue < 0.0)  ? 0.0 
-                                  : (blue > maxClamp)  ? maxClamp 
+            blue  = (blue < 0.0)  ? 0.0
+                                  : (blue > maxClamp)  ? maxClamp
                                                        : blue + 0.5;
 
-            alpha = (alpha < 0.0) ? 0.0 
-                                  : (alpha > maxClamp) ? maxClamp 
+            alpha = (alpha < 0.0) ? 0.0
+                                  : (alpha > maxClamp) ? maxClamp
                                                        : alpha + 0.5;
 
             DColor color((int)(red  / 257UL), (int)(green / 257UL),

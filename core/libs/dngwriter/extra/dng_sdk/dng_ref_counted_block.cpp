@@ -15,11 +15,11 @@
 /*****************************************************************************/
 
 dng_ref_counted_block::dng_ref_counted_block ()
-	
+
 	:	fBuffer (NULL)
-	
+
 	{
-	
+
 	}
 
 /*****************************************************************************/
@@ -27,52 +27,52 @@ dng_ref_counted_block::dng_ref_counted_block ()
 dng_ref_counted_block::dng_ref_counted_block (uint32 size)
 
 	:	fBuffer (NULL)
-	
+
 	{
-	
+
 	Allocate (size);
-	
+
 	}
 
 /*****************************************************************************/
 
 dng_ref_counted_block::~dng_ref_counted_block ()
 	{
-	
+
 	Clear ();
-	
+
 	}
-				
+
 /*****************************************************************************/
 
 void dng_ref_counted_block::Allocate (uint32 size)
 	{
-	
+
 	Clear ();
-	
+
 	if (size)
 		{
-		
+
 		fBuffer = malloc (size + sizeof (header));
-		
+
 		if (!fBuffer)
 			{
-			
+
 			ThrowMemoryFull ();
-						 
+
 			}
-		
+
 		new (fBuffer) header (size);
 
 		}
-	
+
 	}
-				
+
 /*****************************************************************************/
 
 void dng_ref_counted_block::Clear ()
 	{
-	
+
 	if (fBuffer)
 		{
 
@@ -81,29 +81,29 @@ void dng_ref_counted_block::Clear ()
 		header *blockHeader = (struct header *)fBuffer;
 
 			{
-		
+
 			dng_lock_std_mutex lock (blockHeader->fMutex);
 
 			if (--blockHeader->fRefCount == 0)
 				doFree = true;
-                
+
 			}
 
 		if (doFree)
 			{
-				
+
 			blockHeader->~header ();
 
 			free (fBuffer);
 
 			}
-		
+
 		fBuffer = NULL;
-		
+
 		}
-		
+
 	}
-				
+
 /*****************************************************************************/
 
 dng_ref_counted_block::dng_ref_counted_block (const dng_ref_counted_block &data)
@@ -113,7 +113,7 @@ dng_ref_counted_block::dng_ref_counted_block (const dng_ref_counted_block &data)
 	{
 
 	header *blockHeader = (struct header *) data.fBuffer;
-    
+
     if (blockHeader)
         {
 
@@ -122,11 +122,11 @@ dng_ref_counted_block::dng_ref_counted_block (const dng_ref_counted_block &data)
         blockHeader->fRefCount++;
 
         fBuffer = blockHeader;
-        
+
         }
 
 	}
-		
+
 /*****************************************************************************/
 
 dng_ref_counted_block & dng_ref_counted_block::operator= (const dng_ref_counted_block &data)
@@ -134,11 +134,11 @@ dng_ref_counted_block & dng_ref_counted_block::operator= (const dng_ref_counted_
 
 	if (this != &data)
 		{
-        
+
 		Clear ();
 
 		header *blockHeader = (struct header *) data.fBuffer;
-        
+
         if (blockHeader)
             {
 
@@ -147,7 +147,7 @@ dng_ref_counted_block & dng_ref_counted_block::operator= (const dng_ref_counted_
             blockHeader->fRefCount++;
 
             fBuffer = blockHeader;
-            
+
             }
 
 		}
@@ -167,7 +167,7 @@ void dng_ref_counted_block::EnsureWriteable ()
 		header *possiblySharedHeader = (header *) fBuffer;
 
 			{
-			
+
 			dng_lock_std_mutex lock (possiblySharedHeader->fMutex);
 
 			if (possiblySharedHeader->fRefCount > 1)
@@ -188,7 +188,7 @@ void dng_ref_counted_block::EnsureWriteable ()
 			}
 
 		}
-        
+
 	}
 
 /*****************************************************************************/

@@ -11,13 +11,13 @@
 | as published by the Free Software Foundation; either version 2
 | of the License, or (at your option) any later version.
 |
-| OEMs, ISVs, VARs and other distributors that combine and 
+| OEMs, ISVs, VARs and other distributors that combine and
 | distribute commercially licensed software with Platinum software
 | and do not wish to distribute the source code for the commercially
 | licensed software under version 2, or (at your option) any later
 | version, of the GNU General Public License (the "GPL") must enter
 | into a commercial license agreement with Plutinosoft, LLC.
-| 
+|
 | This program is distributed in the hope that it will be useful,
 | but WITHOUT ANY WARRANTY; without even the implied warranty of
 | MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
@@ -25,19 +25,19 @@
 |
 | You should have received a copy of the GNU General Public License
 | along with this program; see the file LICENSE.txt. If not, write to
-| the Free Software Foundation, Inc., 
+| the Free Software Foundation, Inc.,
 | 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 | http://www.gnu.org/licenses/gpl-2.0.html
 |
 ****************************************************************/
 #pragma once
 
-namespace msclr { 
+namespace msclr {
 namespace interop {
 
 // -------------------------- NPT_IpAddress -------
 
-template<> 
+template<>
 inline String^ marshal_as<String^, NPT_IpAddress> (const NPT_IpAddress& from)
 {
     return gcnew String(from.ToString());
@@ -45,7 +45,7 @@ inline String^ marshal_as<String^, NPT_IpAddress> (const NPT_IpAddress& from)
 
 // -------------------------- NPT_HttpUrl -------
 
-template<> 
+template<>
 inline Uri^ marshal_as<Uri^, NPT_HttpUrl> (const NPT_HttpUrl& from)
 {
     if (!from.IsValid())
@@ -56,7 +56,7 @@ inline Uri^ marshal_as<Uri^, NPT_HttpUrl> (const NPT_HttpUrl& from)
 
 // -------------------------- NPT_String -------
 
-template<> 
+template<>
 inline Uri^ marshal_as<Uri^, NPT_String> (const NPT_String& from)
 {
     if (from.IsEmpty())
@@ -65,7 +65,7 @@ inline Uri^ marshal_as<Uri^, NPT_String> (const NPT_String& from)
     return gcnew Uri(gcnew String(from));
 }
 
-template<> 
+template<>
 inline String^ marshal_as<String^, NPT_String> (const NPT_String& from)
 {
     return gcnew String(from);
@@ -73,7 +73,7 @@ inline String^ marshal_as<String^, NPT_String> (const NPT_String& from)
 
 // -------------------------- PLT_ProtocolInfo -------
 
-template<> 
+template<>
 inline String^ marshal_as<String^, PLT_ProtocolInfo> (const PLT_ProtocolInfo& from)
 {
     return gcnew String(from.ToString());
@@ -81,7 +81,7 @@ inline String^ marshal_as<String^, PLT_ProtocolInfo> (const PLT_ProtocolInfo& fr
 
 // -------------------------- NPT_TimeInterval -------
 
-template<> 
+template<>
 inline TimeSpan marshal_as<TimeSpan, NPT_TimeInterval> (const NPT_TimeInterval& from)
 {
     return TimeSpan(from.ToSeconds() * TimeSpan::TicksPerSecond);

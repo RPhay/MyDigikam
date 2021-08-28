@@ -30,51 +30,51 @@
 
 class dng_iptc
 	{
-	
+
 	public:
-	
+
 		dng_string fTitle;
 
 		int32 fUrgency;
-		
+
 		dng_string fCategory;
-		
+
 		dng_string_list fSupplementalCategories;
-		
+
 		dng_string_list fKeywords;
-		
+
 		dng_string fInstructions;
-		
+
 		dng_date_time_info fDateTimeCreated;
-		
+
 		dng_date_time_info fDigitalCreationDateTime;
-		
+
 		dng_string_list fAuthors;
-		
+
 		dng_string fAuthorsPosition;
-		
+
 		dng_string fCity;
 		dng_string fState;
 		dng_string fCountry;
 		dng_string fCountryCode;
-		
+
 		dng_string fLocation;
-		
+
 		dng_string fTransmissionReference;
-		
+
 		dng_string fHeadline;
-		
+
 		dng_string fCredit;
-		
+
 		dng_string fSource;
-		
+
 		dng_string fCopyrightNotice;
-		
+
 		dng_string fDescription;
 		dng_string fDescriptionWriter;
-		
+
 	protected:
-		
+
 		enum DataSet
 			{
 			kRecordVersionSet					= 0,
@@ -103,24 +103,24 @@ class dng_iptc
 			kCaptionSet							= 120,
 			kCaptionWriterSet					= 122
 			};
-			
+
 		enum CharSet
 			{
 			kCharSetUnknown						= 0,
 			kCharSetUTF8						= 1
 			};
-	
+
 	public:
-	
+
 		dng_iptc ();
-		
+
 		virtual ~dng_iptc ();
 
 		/// Test if IPTC metadata exists.
 		/// \retval true if no IPTC metadata exists for this DNG.
 
 		bool IsEmpty () const;
-		
+
 		/// Test if IPTC metadata exists.
 		/// \retval true if IPTC metadata exists for this DNG.
 
@@ -141,27 +141,27 @@ class dng_iptc
 		/// Serialize IPTC data to a memory block.
 		/// \param allocator Memory allocator used to acquire memory block.
 		/// \param padForTIFF Forces length of block to be a multiple of four bytes in accordance with TIFF standard.
-		/// \retval Memory block 
+		/// \retval Memory block
 
 		dng_memory_block * Spool (dng_memory_allocator &allocator,
 								  bool padForTIFF);
-					
+
 	protected:
-	
+
 		void ParseString (dng_stream &stream,
 						  dng_string &s,
 						  CharSet charSet);
-		
+
 		void SpoolString (dng_stream &stream,
 						  const dng_string &s,
 						  uint8 dataSet,
 						  uint32 maxChars,
 						  CharSet charSet);
-						  
+
 	};
 
 /*****************************************************************************/
 
 #endif
-	
+
 /*****************************************************************************/

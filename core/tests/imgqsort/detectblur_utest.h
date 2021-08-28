@@ -55,7 +55,7 @@ private Q_SLOTS:
     void testParseTestImagesForBlurDetection_FailCase();
 };
 
-DataTestCases const dataTestCases = 
+DataTestCases const dataTestCases =
     {
         {QLatin1String("blurDetection"), PairImageQuality(QLatin1String("test_blurred_1.jpg"),2)},
         {QLatin1String("blurDetection"), PairImageQuality(QLatin1String("test_blurred_2.jpg"),2)},

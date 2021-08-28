@@ -30,13 +30,13 @@ class NPT_PosixDynamicLibrary : public NPT_DynamicLibraryInterface
 {
 public:
     // constructor and destructor
-    NPT_PosixDynamicLibrary(void* library, const char* name) : 
+    NPT_PosixDynamicLibrary(void* library, const char* name) :
         m_Library(library), m_Name(name) {}
-    
+
     // NPT_DynamicLibraryInterface methods
     virtual NPT_Result FindSymbol(const char* name, void*& symbol);
     virtual NPT_Result Unload();
-    
+
 private:
     // members
     void*      m_Library;
@@ -46,14 +46,14 @@ private:
 /*----------------------------------------------------------------------
 |   NPT_DynamicLibrary::Load
 +---------------------------------------------------------------------*/
-NPT_Result 
+NPT_Result
 NPT_DynamicLibrary::Load(const char* name, NPT_Flags flags, NPT_DynamicLibrary*& library)
 {
     if (name == NULL) return NPT_ERROR_INVALID_PARAMETERS;
-    
+
     // default return value
     library = NULL;
-    
+
     // compute the mode
     int mode = RTLD_LOCAL;
     if (flags & NPT_DYANMIC_LIBRARY_LOAD_FLAG_NOW) {
@@ -72,24 +72,24 @@ NPT_DynamicLibrary::Load(const char* name, NPT_Flags flags, NPT_DynamicLibrary*&
 #endif
         return NPT_FAILURE;
     }
-    
+
     // instantiate the object
     NPT_LOG_FINE_1("library %s loaded", name);
     library = new NPT_DynamicLibrary(new NPT_PosixDynamicLibrary(handle, name));
-    
+
     return NPT_SUCCESS;
 }
-    
+
 /*----------------------------------------------------------------------
 |   NPT_PosixDynamicLibrary::FindSymbol
 +---------------------------------------------------------------------*/
-NPT_Result 
+NPT_Result
 NPT_PosixDynamicLibrary::FindSymbol(const char* name, void*& symbol)
 {
     if (name == NULL) return NPT_ERROR_INVALID_PARAMETERS;
     symbol = NULL;
     if (m_Library == NULL) return NPT_ERROR_NO_SUCH_ITEM;
-    
+
     NPT_LOG_FINE_1("finding symbol %s", name);
     symbol = dlsym(m_Library, name);
     return symbol?NPT_SUCCESS:NPT_ERROR_NO_SUCH_ITEM;

@@ -40,7 +40,7 @@ using namespace AdobeXMPCore;
 // CloneSubtree
 // ============
 
-void 
+void
 CloneIXMPSubtree(const spcINode & origRoot, const spINode & cloneParent, bool skipEmpty /* = false */)
 {
 	spINode clonedRoot = origRoot->Clone(skipEmpty, true);
@@ -155,7 +155,7 @@ CompareSubtrees(spcINode leftNode, spcINode rightNode)
 					return false;
 				}
 			}
-			
+
 		}
 
 
@@ -301,14 +301,14 @@ const bool mergeCompound, const bool replaceOld, const bool deleteEmpty)
 
 	XMP_VarString sourceName = sourceNode->GetName()->c_str();
 	XMP_VarString sourceNamespace = sourceNode->GetNameSpace()->c_str();
-	
+
 	XMP_VarString destName = destParent->GetName()->c_str();
 	XMP_VarString destNamespace = destParent->GetNameSpace()->c_str();
 	if (sourceName.find("UserComment") != XMP_VarString::npos) {
 		int y = 1;
 		y++;
 	}
-	// Need clone non empty only 
+	// Need clone non empty only
 	// to do lang alt append
 	// to do lang alt
 	size_t destPos = 0;
@@ -316,15 +316,15 @@ const bool mergeCompound, const bool replaceOld, const bool deleteEmpty)
 
 	bool valueIsEmpty = false;
 	XMP_OptionBits sourceNodeOptions = XMPUtils::GetIXMPOptions(sourceNode);
-	
+
 	if (sourceNode->GetNodeType() == INode::kNTSimple) {
 		valueIsEmpty = sourceNode->ConvertToSimpleNode()->GetValue()->empty();
 	}
 	else {
-		
+
 		valueIsEmpty = XMPUtils::GetNodeChildCount(sourceNode) == 0;
 	}
-	
+
 
 	if (valueIsEmpty) {
 		if (sourceNode && deleteEmpty) {
@@ -454,14 +454,14 @@ const bool mergeCompound, const bool replaceOld, const bool deleteEmpty)
 				}
 				else {
 
-					
+
 					spcISimpleNode firstQualifier = sourceItem->GetSimpleQualifier( xmlNameSpace.c_str(), xmlNameSpace.size(), "lang", AdobeXMPCommon::npos );
 					if ((!XMP_LitMatch(firstQualifier->GetValue()->c_str(), "x-default")) || !XMPUtils::GetNodeChildCount(destNode)) {
-						
+
 						CloneIXMPSubtree(sourceItem, destNode, true);
 					}
 					else {
-						
+
 						spINode destItem = AdobeXMPCore_Int::ISimpleNode_I::CreateSimpleNode( sourceItem->GetNameSpace(), sourceItem->GetName(), sourceItemValue );
 						destNode->ConvertToArrayNode()->InsertNodeAtIndex(destItem, 1);
 					}
@@ -473,7 +473,7 @@ const bool mergeCompound, const bool replaceOld, const bool deleteEmpty)
 		}
 
 	}
-	
+
 	else if (sourceForm & kXMP_PropValueIsArray)  {
 		auto sourceNodeChildIter = XMPUtils::GetNodeChildIterator(sourceNode);
 		for (; sourceNodeChildIter; sourceNodeChildIter = sourceNodeChildIter->Next()) {
@@ -494,7 +494,7 @@ const bool mergeCompound, const bool replaceOld, const bool deleteEmpty)
 			if (foundIndex == arrayChildCount + 1) {
 
 				CloneIXMPSubtree(sourceItem, destNode, true);
-				
+
 			}
 
 		}
@@ -515,14 +515,14 @@ XMPUtils::ApplyTemplate_v2( XMPMeta *	      workingXMPBasePtr,
 {
 	XMPMeta2 * workingXMP = dynamic_cast<XMPMeta2 *>(workingXMPBasePtr);
 	if (!workingXMPBasePtr) return;
-	const XMPMeta2 & templateXMP = dynamic_cast<const XMPMeta2 &> (templateXMPBasePtr); 
+	const XMPMeta2 & templateXMP = dynamic_cast<const XMPMeta2 &> (templateXMPBasePtr);
 	bool doClear = XMP_OptionIsSet(actions, kXMPTemplate_ClearUnnamedProperties);
 	bool doAdd = XMP_OptionIsSet(actions, kXMPTemplate_AddNewProperties);
 	bool doReplace = XMP_OptionIsSet(actions, kXMPTemplate_ReplaceExistingProperties);
 
 	bool deleteEmpty = XMP_OptionIsSet(actions, kXMPTemplate_ReplaceWithDeleteEmpty);
 	doReplace |= deleteEmpty;	// Delete-empty implies Replace.
-	deleteEmpty &= (!doClear);	// Clear implies not delete-empty, but keep the implicit Replace. 
+	deleteEmpty &= (!doClear);	// Clear implies not delete-empty, but keep the implicit Replace.
 
 	bool doAll = XMP_OptionIsSet(actions, kXMPTemplate_IncludeInternalProperties);
 
@@ -555,7 +555,7 @@ XMPUtils::ApplyTemplate_v2( XMPMeta *	      workingXMPBasePtr,
 
 		auto templateTopPropIter = XMPUtils::GetNodeChildIterator(templateXMP.mDOM);
 		for (; templateTopPropIter; templateTopPropIter = templateTopPropIter->Next()) {
-			spcINode currentTemplateTopProp = templateTopPropIter->GetNode();	
+			spcINode currentTemplateTopProp = templateTopPropIter->GetNode();
 			XMP_VarString currNameSpace = defaultMap->GetPrefix(currentTemplateTopProp->GetNameSpace())->c_str();
 			XMP_VarString nodeFullName = currNameSpace + ":" + currentTemplateTopProp->GetName()->c_str();
 			XMP_ExpandedXPath	expPath;
@@ -579,7 +579,7 @@ XMPUtils::ApplyTemplate_v2( XMPMeta *	      workingXMPBasePtr,
 
 void CloneContents(spINode sourceNode, spINode &destNode) {
 
-	
+
 	if (sourceNode->GetNodeType() == INode::kNTSimple) {
 
 		spISimpleNode sourceSimpleNode = sourceNode->ConvertToSimpleNode();
@@ -603,7 +603,7 @@ void CloneContents(spINode sourceNode, spINode &destNode) {
 	else {
 
 		spIStructureNode arraySourceNode = sourceNode->ConvertToStructureNode();
-		
+
 		spIStructureNode destArrayNode = destNode->ConvertToStructureNode();
 		for (auto childIter = arraySourceNode->Iterator(); childIter; childIter = childIter->Next()) {
 
@@ -761,7 +761,7 @@ XMP_OptionBits	 options)
 
 		// *** Could use a CloneTree util here and maybe elsewhere.
 		//destNode = sourceNode->Clone();
-		
+
 		if (sourceNode->GetNodeType() == INode::kNTSimple) {
 
 			spISimpleNode sourceSimpleNode = sourceNode->ConvertToSimpleNode();
@@ -770,7 +770,7 @@ XMP_OptionBits	 options)
 			destNodeCopy = destSimpleNode;
 		}
 		else if (sourceNode->GetNodeType() == INode::kNTArray)
-		{	
+		{
 			spIArrayNode arraySourceNode = sourceNode->ConvertToArrayNode();
 			spIArrayNode destArrayNode = AdobeXMPCore_Int::IArrayNode_I::CreateArrayNode(destNode->GetNameSpace(), destNode->GetName(), arraySourceNode->GetArrayForm());
 			destNodeCopy = destArrayNode;
@@ -781,7 +781,7 @@ XMP_OptionBits	 options)
 			}
 
 			destNodeCopy = destArrayNode;
-			
+
 		}
 		else {
 
@@ -807,7 +807,7 @@ XMP_OptionBits	 options)
 				destNodeCopy->InsertQualifier(clonedQual);
 			}
 		}
-		
+
 		dest->mDOM->ReplaceNode(destNodeCopy);
 	}
 
@@ -843,7 +843,7 @@ XMPUtils::RemoveProperties_v2(XMPMeta *		xmpMetaPtr,
 		if (*schemaNS == 0) XMP_Throw("Property name requires schema namespace", kXMPErr_BadParam);
 
 		XMP_ExpandedXPath expPath;
-		
+
 		ExpandXPath(schemaNS, propName, &expPath);
 		XMP_Index propIndex = 0;
 		spINode propNode;

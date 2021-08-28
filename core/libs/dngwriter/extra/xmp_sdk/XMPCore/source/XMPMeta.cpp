@@ -71,7 +71,7 @@ using namespace std;
 			virtual void * APICALL reallocate( void * ptr, AdobeXMPCommon::sizet size ) __NOTHROW__ {
 				return NULL;
 			}
-			
+
 			virtual ~InternalClientAllocator(){}
 
 		};
@@ -777,7 +777,7 @@ XMPMeta::Initialize()
 	#if ENABLE_CPP_DOM_MODEL
 		try {
 			AdobeXMPCore_Int::InitializeXMPCommonFramework();
-	
+
 		} catch ( ... ) {
 			return false;
 		}
@@ -787,7 +787,7 @@ XMPMeta::Initialize()
 		// Explicitly setting sUseNewCoreAPIs as false (default value)
 		sUseNewCoreAPIs = false;
 	#endif
-	
+
 	xdefaultName = new XMP_VarString ( "x-default" );
 
 	sRegisteredNamespaces = new XMP_NamespaceTable;
@@ -1271,7 +1271,7 @@ XMPMeta::SetObjectOptions ( XMP_OptionBits options )
 {
 	void * p; p = &options;	// Avoid unused param warnings.
 	XMP_Throw ( "Unimplemented method XMPMeta::SetObjectOptions", kXMPErr_Unimplemented );
-		
+
 
 }	// SetObjectOptions
 
@@ -1442,13 +1442,13 @@ XMPMeta::SetErrorCallback ( XMPMeta_ErrorCallbackWrapper wrapperProc,
 							XMP_Uns32 limit )
 {
 	XMP_Assert ( wrapperProc != 0 );	// Must always be set by the glue;
-	
+
 	this->errorCallback.Clear();
 	this->errorCallback.wrapperProc = wrapperProc;
 	this->errorCallback.clientProc = clientProc;
 	this->errorCallback.context = context;
 	this->errorCallback.limit = limit;
-	
+
 }	// SetErrorCallback
 
 // -------------------------------------------------------------------------------------------------

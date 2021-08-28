@@ -111,7 +111,7 @@ void ImgQSortTestGeneral::testParseTestImagesForSunImage()
     for (const auto& test_case : results.keys())
     {
         QVERIFY(results.value(test_case));
-    }   
+    }
 }
 
 void ImgQSortTestGeneral::testParseTestImagesForGeneral_failCase()

@@ -25,7 +25,7 @@
 #ifndef DIGIKAM_IMAGE_QUALITY_CALCULATOR_H
 #define DIGIKAM_IMAGE_QUALITY_CALCULATOR_H
 
-// Local includes 
+// Local includes
 
 #include "digikam_globals.h"
 
@@ -45,7 +45,7 @@ public:
     {
         QString detetionType;
         float weight;
-        float score;    
+        float score;
     };
 
 public:
@@ -68,6 +68,6 @@ private:
     Private* const d;
 };
 
-} 
+}
 
 #endif // DIGIKAM_IMAGE_QUALITY_CALCULATOR_H

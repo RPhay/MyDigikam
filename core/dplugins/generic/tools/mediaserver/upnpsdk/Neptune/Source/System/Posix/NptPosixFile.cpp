@@ -45,8 +45,8 @@
 extern int NPT_stat_utf8(const char* path, NPT_stat_struct* info);
 extern char* NPT_getcwd_utf8(char* path, unsigned int path_size);
 #define getcwd NPT_getcwd_utf8
-#define S_ISDIR(_m) (((_m)&_S_IFMT) == _S_IFDIR) 
-#define S_ISREG(_m) (((_m)&_S_IFMT) == _S_IFREG) 
+#define S_ISDIR(_m) (((_m)&_S_IFMT) == _S_IFDIR)
+#define S_ISREG(_m) (((_m)&_S_IFMT) == _S_IFREG)
 #define S_IWUSR _S_IWRITE
 #endif
 
@@ -94,12 +94,12 @@ NPT_Result
 NPT_File::CreateDir(const char* path)
 {
     int result;
-    
+
     result = mkdir(path, 0755);
     if (result != 0) {
         return MapErrno(errno);
     }
-    
+
     return NPT_SUCCESS;
 }
 
@@ -111,7 +111,7 @@ NPT_File::RemoveFile(const char* path)
 {
     int result = unlink(path);
     if (result != 0) return MapErrno(errno);
-    
+
     return NPT_SUCCESS;
 }
 
@@ -123,7 +123,7 @@ NPT_File::RemoveDir(const char* path)
 {
     int result = rmdir(path);
     if (result != 0) return MapErrno(errno);
-    
+
     return NPT_SUCCESS;
 }
 
@@ -142,22 +142,22 @@ NPT_File::Rename(const char* from_path, const char* to_path)
 /*----------------------------------------------------------------------
 |   NPT_File::ListDir
 +---------------------------------------------------------------------*/
-NPT_Result 
-NPT_File::ListDir(const char*           path, 
-                  NPT_List<NPT_String>& entries, 
-                  NPT_Ordinal           start /* = 0 */, 
+NPT_Result
+NPT_File::ListDir(const char*           path,
+                  NPT_List<NPT_String>& entries,
+                  NPT_Ordinal           start /* = 0 */,
                   NPT_Cardinal          max   /* = 0 */)
 {
     // default return value
     entries.Clear();
-    
+
     // check the arguments
     if (path == NULL) return NPT_ERROR_INVALID_PARAMETERS;
-    
+
     // list the entries
     DIR *directory = opendir(path);
     if (directory == NULL) return NPT_ERROR_NO_SUCH_ITEM;
-    
+
     NPT_Cardinal count = 0;
     for (;;) {
         struct dirent* entry_pointer = NULL;
@@ -173,16 +173,16 @@ NPT_File::ListDir(const char*           path,
         if (entry_pointer->d_name[0] == '\0') continue;
 
         // ignore . and ..
-        if (entry_pointer->d_name[0] == '.' && 
+        if (entry_pointer->d_name[0] == '.' &&
             entry_pointer->d_name[1] == '\0') {
             continue;
         }
-        if (entry_pointer->d_name[0] == '.' && 
+        if (entry_pointer->d_name[0] == '.' &&
             entry_pointer->d_name[1] == '.' &&
             entry_pointer->d_name[2] == '\0') {
             continue;
-        }        
-        
+        }
+
         // continue if we still have some items to skip
         if (start > 0) {
             --start;
@@ -193,9 +193,9 @@ NPT_File::ListDir(const char*           path,
         // stop when we have reached the maximum requested
         if (max && ++count == max) break;
     }
-    
+
     closedir(directory);
-    
+
     return NPT_SUCCESS;
 }
 #endif
@@ -210,7 +210,7 @@ NPT_File::GetWorkingDir(NPT_String& path)
     char* dir = getcwd(buffer, 1024+1);
     if (dir == NULL) return MapErrno(errno);
     path = dir;
-    
+
     return NPT_SUCCESS;
 }
 
@@ -222,7 +222,7 @@ NPT_File::GetInfo(const char* path, NPT_FileInfo* info)
 {
     // default value
     if (info) NPT_SetMemory(info, 0, sizeof(*info));
-    
+
 #if defined(_WIN32) || defined(_XBOX)
     // On Windows, stat will fail if a dir ends with a separator
     NPT_String _path = path;
@@ -239,7 +239,7 @@ NPT_File::GetInfo(const char* path, NPT_FileInfo* info)
     NPT_stat_struct stat_buffer;
     int result = NPT_stat(_path, &stat_buffer);
     if (result != 0) return MapErrno(errno);
-    
+
     // setup the returned fields
     if (info) {
         info->m_Size = stat_buffer.st_size;
@@ -263,6 +263,6 @@ NPT_File::GetInfo(const char* path, NPT_FileInfo* info)
 #endif
         info->m_ModificationTime.SetSeconds(stat_buffer.st_mtime);
     }
-    
+
     return NPT_SUCCESS;
 }

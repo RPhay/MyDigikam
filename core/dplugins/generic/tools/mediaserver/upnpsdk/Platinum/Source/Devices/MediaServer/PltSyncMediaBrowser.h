@@ -11,14 +11,14 @@
 | as published by the Free Software Foundation; either version 2
 | of the License, or (at your option) any later version.
 |
-| OEMs, ISVs, VARs and other distributors that combine and 
+| OEMs, ISVs, VARs and other distributors that combine and
 | distribute commercially licensed software with Platinum software
 | and do not wish to distribute the source code for the commercially
 | licensed software under version 2, or (at your option) any later
 | version, of the GNU General Public License (the "GPL") must enter
 | into a commercial license agreement with Plutinosoft, LLC.
 | licensing@plutinosoft.com
-|  
+|
 | This program is distributed in the hope that it will be useful,
 | but WITHOUT ANY WARRANTY; without even the implied warranty of
 | MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
@@ -26,7 +26,7 @@
 |
 | You should have received a copy of the GNU General Public License
 | along with this program; see the file LICENSE.txt. If not, write to
-| the Free Software Foundation, Inc., 
+| the Free Software Foundation, Inc.,
 | 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 | http://www.gnu.org/licenses/gpl-2.0.html
 |
@@ -68,8 +68,8 @@ class PLT_MediaContainerChangesListener
 {
 public:
     virtual ~PLT_MediaContainerChangesListener() {}
-    virtual void OnContainerChanged(PLT_DeviceDataReference& device, 
-                                    const char*              item_id, 
+    virtual void OnContainerChanged(PLT_DeviceDataReference& device,
+                                    const char*              item_id,
                                     const char*              update_id) = 0;
 };
 
@@ -80,8 +80,8 @@ class PLT_SyncMediaBrowser : public PLT_MediaBrowser,
                              public PLT_MediaBrowserDelegate
 {
 public:
-    PLT_SyncMediaBrowser(PLT_CtrlPointReference&            ctrlPoint, 
-                         bool                               use_cache = false, 
+    PLT_SyncMediaBrowser(PLT_CtrlPointReference&            ctrlPoint,
+                         bool                               use_cache = false,
                          PLT_MediaContainerChangesListener* listener = NULL);
     virtual ~PLT_SyncMediaBrowser();
 
@@ -90,19 +90,19 @@ public:
     virtual NPT_Result OnDeviceRemoved(PLT_DeviceDataReference& device);
 
     // PLT_MediaBrowserDelegate methods
-    virtual void OnMSStateVariablesChanged(PLT_Service*                  service, 
+    virtual void OnMSStateVariablesChanged(PLT_Service*                  service,
                                            NPT_List<PLT_StateVariable*>* vars);
-    virtual void OnBrowseResult(NPT_Result               res, 
-                                PLT_DeviceDataReference& device, 
-                                PLT_BrowseInfo*          info, 
+    virtual void OnBrowseResult(NPT_Result               res,
+                                PLT_DeviceDataReference& device,
+                                PLT_BrowseInfo*          info,
                                 void*                    userdata);
 
     // methods
     void       SetContainerListener(PLT_MediaContainerChangesListener* listener) {
         m_ContainerListener = listener;
     }
-    NPT_Result BrowseSync(PLT_DeviceDataReference&      device, 
-                          const char*                   id, 
+    NPT_Result BrowseSync(PLT_DeviceDataReference&      device,
+                          const char*                   id,
                           PLT_MediaObjectListReference& list,
                           bool                          metadata = false,
                           NPT_Int32                     start = 0,
@@ -115,9 +115,9 @@ public:
 
 protected:
     NPT_Result BrowseSync(PLT_BrowseDataReference& browse_data,
-                          PLT_DeviceDataReference& device, 
+                          PLT_DeviceDataReference& device,
                           const char*              object_id,
-                          NPT_Int32                index, 
+                          NPT_Int32                index,
                           NPT_Int32                count,
                           bool                     browse_metadata = false,
                           const char*              filter = PLT_DEFAULT_FILTER,

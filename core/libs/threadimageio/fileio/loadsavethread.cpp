@@ -334,7 +334,7 @@ int LoadSaveThread::exifOrientation(const QString& filePath,
         QMatrix A_inv = A.inverted();
         QMatrix B     = A_inv * C;
         MetaEngineRotation m(B.m11(), B.m12(), B.m21(), B.m22());
- 
+
         return m.exifOrientation();
     }
 

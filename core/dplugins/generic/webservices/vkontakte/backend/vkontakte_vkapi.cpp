@@ -74,7 +74,7 @@ void VkApi::setInitialAccessToken(const QString& accessToken)
 {
     // Does nothing if m_accessToken is already set, because this function
     // is only for parameter initialization from a configuration file.
-    
+
     if (d->accessToken.isEmpty())
     {
         d->accessToken = accessToken;

@@ -621,7 +621,7 @@ static XMP_Bool matchhere ( XMP_StringPtr regexp, XMP_StringPtr text ) {
 				return matchhere ( regexp+2, text+1 );
 			else
 				return false;
-		}	
+		}
 		else if ( regexp[1] == 'W' ) {
 			if ( matchUpperCase(text) )
 				return matchhere ( regexp+2, text+1 );

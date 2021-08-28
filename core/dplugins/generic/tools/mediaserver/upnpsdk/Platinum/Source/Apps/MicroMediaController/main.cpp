@@ -11,14 +11,14 @@
 | as published by the Free Software Foundation; either version 2
 | of the License, or (at your option) any later version.
 |
-| OEMs, ISVs, VARs and other distributors that combine and 
+| OEMs, ISVs, VARs and other distributors that combine and
 | distribute commercially licensed software with Platinum software
 | and do not wish to distribute the source code for the commercially
 | licensed software under version 2, or (at your option) any later
 | version, of the GNU General Public License (the "GPL") must enter
 | into a commercial license agreement with Plutinosoft, LLC.
 | licensing@plutinosoft.com
-| 
+|
 | This program is distributed in the hope that it will be useful,
 | but WITHOUT ANY WARRANTY; without even the implied warranty of
 | MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
@@ -26,7 +26,7 @@
 |
 | You should have received a copy of the GNU General Public License
 | along with this program; see the file LICENSE.txt. If not, write to
-| the Free Software Foundation, Inc., 
+| the Free Software Foundation, Inc.,
 | 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 | http://www.gnu.org/licenses/gpl-2.0.html
 |
@@ -71,7 +71,7 @@ int main(void)
 #ifdef HAS_SERVER
     // create device
     PLT_DeviceHostReference server(
-        new PLT_FileMediaServer("/Users/sylvain/Documents/AudioFileTests", 
+        new PLT_FileMediaServer("/Users/sylvain/Documents/AudioFileTests",
                                 "Platinum UPnP Media Server"));
 
     server->m_ModelDescription = "Platinum File Media Server";
@@ -114,19 +114,19 @@ int main(void)
     ctrlPoint->IgnoreUUID(xbox->GetUUID());
 
     // xbox issues a search for the content directory service
-    // 10 secs after announcing itself to make sure 
+    // 10 secs after announcing itself to make sure
     // it got detected and inspected first
 
     ctrlPoint->Search(
-        NPT_HttpUrl("239.255.255.250", 1900, "*"), 
+        NPT_HttpUrl("239.255.255.250", 1900, "*"),
         "urn:schemas-microsoft-com:service:MSContentDirectory:1", 2, NPT_TimeInterval(10.), NPT_TimeInterval(10.));
     ctrlPoint->Search(
-        NPT_HttpUrl("239.255.255.250", 1900, "*"), 
+        NPT_HttpUrl("239.255.255.250", 1900, "*"),
         "urn:schemas-upnp-org:service:ContentDirectory:1", 2, NPT_TimeInterval(10.), NPT_TimeInterval(10.));
-    
+
 #endif
 
-    // start to process commands 
+    // start to process commands
     controller.ProcessCommandLoop();
 
     // stop everything

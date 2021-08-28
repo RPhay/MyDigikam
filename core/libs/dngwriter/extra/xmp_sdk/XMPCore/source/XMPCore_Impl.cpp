@@ -84,7 +84,7 @@ WXMP_Result 		void_wResult;
 		XMP_DeleteProc   sXMP_MemFree  = free;
 		#define malloc(size) (*sXMP_MemAlloc) ( size )
 		#define free(addr)   (*sXMP_MemFree) ( addr )
-		
+
 		void * operator new ( size_t len ) throw ( std::bad_alloc )
 		{
 			void * mem = (*sXMP_MemAlloc) ( len );
@@ -96,29 +96,29 @@ WXMP_Result 		void_wResult;
             void * mem = (*sXMP_MemAlloc) ( len );
             return mem;
         }
-		
+
 		void * operator new[] ( size_t len ) throw ( std::bad_alloc )
 		{
 			void * mem = (*sXMP_MemAlloc) ( len );
 			if ( (mem == 0) && (len != 0) ) throw std::bad_alloc();
 			return mem;
 		}
-		
+
 		void operator delete ( void * ptr ) throw()
 		{
 			if ( ptr != 0 ) (*sXMP_MemFree) ( ptr );
 		}
-		
+
 		void operator delete ( void * ptr, const std::nothrow_t & nothrow ) throw ()
 		{
 			return operator delete( ptr );
 		}
-		
+
 		void operator delete[] ( void * ptr ) throw()
 		{
 			if ( ptr != 0 ) (*sXMP_MemFree) ( ptr );
 		}
-	
+
 #endif
 
 
@@ -143,7 +143,7 @@ VerifyXPathRoot	( XMP_StringPtr			schemaURI,
 				  XMP_ExpandedXPath *	expandedXPath )
 {
 	// Do some basic checks on the URI and name. Try to lookup the URI. See if the name is qualified.
-	
+
 	XMP_Assert ( (schemaURI != 0) && (propName != 0) && (*propName != 0) );
 	XMP_Assert ( (expandedXPath != 0) && (expandedXPath->empty()) );
 
@@ -167,15 +167,15 @@ VerifyXPathRoot	( XMP_StringPtr			schemaURI,
 	VerifySimpleXMLName ( propName, colonPos );	// Verify the part before any colon.
 
 	// Verify the various URI and prefix combinations. Initialize the expanded XPath.
-	
+
 	if ( *colonPos == 0 ) {
-	
+
 		// The propName is unqualified, use the schemaURI and associated prefix.
-		
+
 		expandedXPath->push_back ( XPathStepInfo ( schemaURI, kXMP_SchemaNode ) );
 		expandedXPath->push_back ( XPathStepInfo ( schemaPrefix, 0 ) );
 		(*expandedXPath)[kRootPropStep].step += propName;
-	
+
 	} else {
 
 		// The propName is qualified. Make sure the prefix is legit. Use the associated URI and qualified name.
@@ -188,7 +188,7 @@ VerifyXPathRoot	( XMP_StringPtr			schemaURI,
 
 		expandedXPath->push_back ( XPathStepInfo ( schemaURI, kXMP_SchemaNode ) );
 		expandedXPath->push_back ( XPathStepInfo ( propName, 0 ) );
-	
+
 	}
 
 }	// VerifyXPathRoot
@@ -231,7 +231,7 @@ FindIndexedItem ( XMP_Node * arrayNode, const XMP_VarString & indexStep, bool cr
 	size_t    chLim = indexStep.size() - 1;
 
 	XMP_Assert ( (chLim >= 2) && (indexStep[0] == '[') && (indexStep[chLim] == ']') );
-	
+
 	for ( size_t chNum = 1; chNum != chLim; ++chNum ) {
 		XMP_Assert ( ('0' <= indexStep[chNum]) && (indexStep[chNum] <= '9') );
 		index = (index * 10) + (indexStep[chNum] - '0');
@@ -251,7 +251,7 @@ FindIndexedItem ( XMP_Node * arrayNode, const XMP_VarString & indexStep, bool cr
 	// ! Don't throw here for a too large index. SetProperty will throw, GetProperty will not.
 	if ( index >= (XMP_Index)arrayNode->children.size() ) index = -1;
 	return index;
-	
+
 }	// FindIndexedItem
 
 // -------------------------------------------------------------------------------------------------
@@ -271,29 +271,29 @@ SplitNameAndValue ( const XMP_VarString & selStep, XMP_VarString * nameStr, XMP_
 {
 	XMP_StringPtr partBegin = selStep.c_str();
 	XMP_StringPtr partEnd;
-	
+
 	const XMP_StringPtr valueEnd = partBegin + (selStep.size() - 2);
 	const char          quote    = *valueEnd;
-	
+
 	XMP_Assert ( (*partBegin == '[') && (*(valueEnd+1) == ']') );
 	XMP_Assert ( (selStep.size() >= 6) && ((quote == '"') || (quote == '\'')) );
 
 	// Extract the name part.
-	
+
 	++partBegin;	// Skip the opening '['.
 	if ( *partBegin == '?' ) ++partBegin;
 	for ( partEnd = partBegin+1; *partEnd != '='; ++partEnd ) {};
-	
+
 	nameStr->assign ( partBegin, (partEnd - partBegin) );
-	
+
 	// Extract the value part, reducing doubled quotes.
-	
+
 	XMP_Assert ( *(partEnd+1) == quote );
-	
+
 	partBegin = partEnd + 2;
 	valueStr->erase();
 	valueStr->reserve ( valueEnd - partBegin );	// Maximum length, don't optimize doubled quotes.
-	
+
 	for ( partEnd = partBegin; partEnd < valueEnd; ++partEnd ) {
 		if ( (*partEnd == quote) && (*(partEnd+1) == quote) ) {
 			++partEnd;
@@ -318,13 +318,13 @@ static XMP_Index
 LookupQualSelector ( XMP_Node * arrayNode, const XMP_VarString & qualName, XMP_VarString & qualValue )
 {
 	size_t index;
-		
+
 	if ( qualName == "xml:lang" ) {
-	
+
 		// *** Should check that the value is legit RFC 1766/3066.
 		NormalizeLangValue ( &qualValue );
 		index = LookupLangItem ( arrayNode, qualValue ) ;
-	
+
 	} else {
 
 		size_t itemLim;
@@ -332,7 +332,7 @@ LookupQualSelector ( XMP_Node * arrayNode, const XMP_VarString & qualName, XMP_V
 
 			const XMP_Node * currItem = arrayNode->children[index];
 			XMP_Assert ( currItem->parent == arrayNode );
-			
+
 			size_t q, qualLim;
 			for ( q = 0, qualLim = currItem->qualifiers.size(); q != qualLim; ++q ) {
 				const XMP_Node * currQual = currItem->qualifiers[q];
@@ -346,9 +346,9 @@ LookupQualSelector ( XMP_Node * arrayNode, const XMP_VarString & qualName, XMP_V
 		if ( index == itemLim ) index = -1;
 
 	}
-	
+
 	return static_cast<XMP_Index>( index );
-	
+
 }	// LookupQualSelector
 
 // -------------------------------------------------------------------------------------------------
@@ -377,7 +377,7 @@ FollowXPathStep	( XMP_Node *	   parentNode,
 	const XPathStepInfo & nextStep = fullPath[stepNum];
 	XMP_Index      index    = 0;
 	XMP_OptionBits stepKind = nextStep.options & kXMP_StepKindMask;
-	
+
 	XMP_Assert ( (kXMP_StructFieldStep <= stepKind) && (stepKind <= kXMP_FieldSelectorStep) );
 
 	if ( stepKind == kXMP_StructFieldStep ) {
@@ -385,20 +385,20 @@ FollowXPathStep	( XMP_Node *	   parentNode,
 		nextNode = FindChildNode ( parentNode, nextStep.step.c_str(), createNodes, ptrPos );
 
 	} else if ( stepKind == kXMP_QualifierStep ) {
-	
+
 		XMP_StringPtr qualStep = nextStep.step.c_str();
 		XMP_Assert ( *qualStep == '?' );
 		++qualStep;
 		nextNode = FindQualifierNode ( parentNode, qualStep, createNodes, ptrPos );
 
 	} else {
-	
+
 		// This is an array indexing step. First get the index, then get the node.
 
 		if ( ! (parentNode->options & kXMP_PropValueIsArray) ) {
 			XMP_Throw ( "Indexing applied to non-array", kXMPErr_BadXPath );
 		}
-		
+
 		if ( stepKind == kXMP_ArrayIndexStep ) {
 			index = FindIndexedItem ( parentNode, nextStep.step, createNodes );
 		} else if ( stepKind == kXMP_ArrayLastStep ) {
@@ -414,15 +414,15 @@ FollowXPathStep	( XMP_Node *	   parentNode,
 		} else {
 			XMP_Throw ( "Unknown array indexing step in FollowXPathStep", kXMPErr_InternalFailure );
 		}
-		
+
 		if ( (0 <= index) && (index <= (XMP_Index)parentNode->children.size()) ) nextNode = parentNode->children[index];
 
 		if ( (index == -1) && createNodes && aliasedArrayItem && (stepKind == kXMP_QualSelectorStep) ) {
-		
+
 			// An ugly special case without an obvious better place to be. We have an alias to the
 			// x-default item of an alt-text array. A simple reference via SetProperty must create
 			// the x-default item if it does not yet exist.
-			
+
 			XMP_Assert ( parentNode->options & kXMP_PropArrayIsAltText );
 			XMP_Assert ( (stepNum == 2) && (nextStep.step == "[?xml:lang=\"x-default\"]") );
 
@@ -441,19 +441,19 @@ FollowXPathStep	( XMP_Node *	   parentNode,
 			index = 0;	// ! C-style index! The x-default item is always first.
 
 		}
-		
+
 		if ( (nextNode != 0) && (ptrPos != 0) ) *ptrPos = parentNode->children.begin() + index;
-	
+
 	}
 
 	if ( (nextNode != 0) && (nextNode->options & kXMP_NewImplicitNode) ) {
 		nextNode->options |= (nextStep.options & kXMP_PropArrayFormMask);
 	}
-	
+
 	XMP_Assert ( (ptrPos == 0) || (nextNode == 0) || (nextNode == **ptrPos) );
 	XMP_Assert ( (nextNode != 0) || (! createNodes) );
 	return nextNode;
-	
+
 }	// FollowXPathStep
 
 // -------------------------------------------------------------------------------------------------
@@ -544,19 +544,19 @@ VerifySetOptions ( XMP_OptionBits options, XMP_StringPtr propValue )
 	if ( options & kXMP_PropArrayIsAltText )   options |= kXMP_PropArrayIsAlternate;
 	if ( options & kXMP_PropArrayIsAlternate ) options |= kXMP_PropArrayIsOrdered;
 	if ( options & kXMP_PropArrayIsOrdered )   options |= kXMP_PropValueIsArray;
-	
+
 	if ( options & ~kXMP_AllSetOptionsMask ) {
 		XMP_Throw ( "Unrecognized option flags", kXMPErr_BadOptions );
 	}
-	
+
 	if ( (options & kXMP_PropValueIsStruct) && (options & kXMP_PropValueIsArray) ) {
 		XMP_Throw ( "IsStruct and IsArray options are mutually exclusive", kXMPErr_BadOptions );
 	}
-	
+
 	if ( (options & kXMP_PropValueOptionsMask) && (options & kXMP_PropCompositeMask) ) {
 		XMP_Throw ( "Structs and arrays can't have \"value\" options", kXMPErr_BadOptions );
 	}
-	
+
 	if ( (propValue != 0) && (options & kXMP_PropCompositeMask) ) {
 		XMP_Throw ( "Structs and arrays can't have string values", kXMPErr_BadOptions );
 	}
@@ -640,37 +640,37 @@ ExpandXPath	( XMP_StringPtr			schemaNS,
 			  XMP_ExpandedXPath *	expandedXPath )
 {
 	XMP_Assert ( (schemaNS != 0) && (propPath != 0) && (*propPath != 0) && (expandedXPath != 0) );
-	
+
 	XMP_StringPtr	stepBegin, stepEnd;
 	XMP_StringPtr	qualName = 0 , nameEnd = 0;
 	XMP_VarString	currStep;
-		
+
 	size_t resCount = 2;	// Guess at the number of steps. At least 2, plus 1 for each '/' or '['.
 	for ( stepEnd = propPath; *stepEnd != 0; ++stepEnd ) {
 		if ( (*stepEnd == '/') || (*stepEnd == '[') ) ++resCount;
 	}
-	
+
 	expandedXPath->clear();
 	expandedXPath->reserve ( resCount );
-	
+
 	// -------------------------------------------------------------------------------------------
 	// Pull out the first component and do some special processing on it: add the schema namespace
 	// prefix and see if it is an alias. The start must be a qualName.
-	
+
 	stepBegin = propPath;
 	stepEnd = stepBegin;
 	while ( (*stepEnd != 0) && (*stepEnd != '/') && (*stepEnd != '[') && (*stepEnd != '*') ) ++stepEnd;
 	if ( stepEnd == stepBegin ) XMP_Throw ( "Empty initial XPath step", kXMPErr_BadXPath );
 	currStep.assign ( stepBegin, (stepEnd - stepBegin) );
-	
+
 	VerifyXPathRoot ( schemaNS, currStep.c_str(), expandedXPath );
 
-	XMP_OptionBits stepFlags = kXMP_StructFieldStep;	
+	XMP_OptionBits stepFlags = kXMP_StructFieldStep;
 	if ( sRegisteredAliasMap->find ( (*expandedXPath)[kRootPropStep].step ) != sRegisteredAliasMap->end() ) {
 		stepFlags |= kXMP_StepIsAlias;
 	}
 	(*expandedXPath)[kRootPropStep].options |= stepFlags;
-		
+
 	// -----------------------------------------------------
 	// Now continue to process the rest of the XPath string.
 
@@ -685,19 +685,19 @@ ExpandXPath	( XMP_StringPtr			schemaNS,
 		stepEnd = stepBegin;
 
 		if ( *stepBegin != '[' ) {
-		
+
 			// A struct field or qualifier.
 			qualName = stepBegin;
 			while ( (*stepEnd != 0) && (*stepEnd != '/') && (*stepEnd != '[') && (*stepEnd != '*') ) ++stepEnd;
 			nameEnd = stepEnd;
 			stepFlags = kXMP_StructFieldStep;	// ! Touch up later, also changing '@' to '?'.
-			
+
 		} else {
-		
+
 			// One of the array forms.
-		
+
 			++stepEnd;	// Look at the character after the leading '['.
-			
+
 			if ( ('0' <= *stepEnd) && (*stepEnd <= '9') ) {
 
 				// A numeric (decimal integer) array index.
@@ -708,7 +708,7 @@ ExpandXPath	( XMP_StringPtr			schemaNS,
 			} else {
 
 				// Could be "[last()]" or one of the selector forms. Find the ']' or '='.
-				
+
 				while ( (*stepEnd != 0) && (*stepEnd != ']') && (*stepEnd != '=') ) ++stepEnd;
 				if ( *stepEnd == 0 ) XMP_Throw ( "Missing ']' or '=' for array index", kXMPErr_BadXPath );
 
@@ -741,7 +741,7 @@ ExpandXPath	( XMP_StringPtr			schemaNS,
 						XMP_Throw ( "No terminating quote for array selector", kXMPErr_BadXPath );
 					}
 					++stepEnd;	// Absorb the trailing quote.
-					
+
 					stepFlags = kXMP_FieldSelectorStep;	// ! Touch up later, also changing '@' to '?'.
 
 				}
@@ -750,7 +750,7 @@ ExpandXPath	( XMP_StringPtr			schemaNS,
 
 			if ( *stepEnd != ']' ) XMP_Throw ( "Missing ']' for array index", kXMPErr_BadXPath );
 			++stepEnd;
-			
+
 		}
 
 		if ( stepEnd == stepBegin ) XMP_Throw ( "Empty XPath step", kXMPErr_BadXPath );
@@ -807,9 +807,9 @@ FindSchemaNode	( XMP_Node *		xmpTree,
 				  void * privateData/* = NULL*/ )
 {
 	XMP_Node * schemaNode = 0;
-	
+
 	XMP_Assert ( xmpTree->parent == 0 );
-	
+
 	for ( size_t schemaNum = 0, schemaLim = xmpTree->children.size(); schemaNum != schemaLim; ++schemaNum ) {
 		XMP_Node * currSchema = xmpTree->children[schemaNum];
 		XMP_Assert ( currSchema->parent == xmpTree );
@@ -819,7 +819,7 @@ FindSchemaNode	( XMP_Node *		xmpTree,
 			break;
 		}
 	}
-	
+
 	if ( (schemaNode == 0) && createNodes ) {
 
 		schemaNode = new XMP_Node ( xmpTree, nsURI, (kXMP_SchemaNode | kXMP_NewImplicitNode) );
@@ -849,11 +849,11 @@ FindSchemaNode	( XMP_Node *		xmpTree,
 		#endif
 
 	}
-	
+
 	XMP_Assert ( (ptrPos == 0) || (schemaNode == 0) || (schemaNode == **ptrPos) );
 	XMP_Assert ( (schemaNode != 0) || (! createNodes) );
 	return schemaNode;
-	
+
 }	// FindSchemaNode
 
 // =================================================================================================
@@ -884,7 +884,7 @@ FindChildNode	( XMP_Node *		parent,
 		}
 		parent->options |= kXMP_PropValueIsStruct;
 	}
-	
+
 	for ( size_t childNum = 0, childLim = parent->children.size(); childNum != childLim; ++childNum ) {
 		XMP_Node * currChild = parent->children[childNum];
 		XMP_Assert ( currChild->parent == parent );
@@ -894,17 +894,17 @@ FindChildNode	( XMP_Node *		parent,
 			break;
 		}
 	}
-	
+
 	if ( (childNode == 0) && createNodes ) {
 		childNode = new XMP_Node ( parent, childName, kXMP_NewImplicitNode );
 		parent->children.push_back ( childNode );
 		if ( ptrPos != 0 ) *ptrPos = parent->children.end() - 1;
 	}
-	
+
 	XMP_Assert ( (ptrPos == 0) || (childNode == 0) || (childNode == **ptrPos) );
 	XMP_Assert ( (childNode != 0) || (! createNodes) );
 	return childNode;
-	
+
 }	// FindChildNode
 
 // =================================================================================================
@@ -924,9 +924,9 @@ FindQualifierNode	( XMP_Node *		parent,
 					  XMP_NodePtrPos *	ptrPos /* = 0 */ )	// *** Require ptrPos internally & remove checks?
 {
 	XMP_Node * qualNode = 0;
-	
+
 	XMP_Assert ( *qualName != '?' );
-	
+
 	for ( size_t qualNum = 0, qualLim = parent->qualifiers.size(); qualNum != qualLim; ++qualNum ) {
 		XMP_Node * currQual = parent->qualifiers[qualNum];
 		XMP_Assert ( currQual->parent == parent );
@@ -936,7 +936,7 @@ FindQualifierNode	( XMP_Node *		parent,
 			break;
 		}
 	}
-	
+
 	if ( (qualNode == 0) && createNodes ) {
 
 		qualNode = new XMP_Node ( parent, qualName, (kXMP_PropIsQualifier | kXMP_NewImplicitNode) );
@@ -951,7 +951,7 @@ FindQualifierNode	( XMP_Node *		parent,
 		} else if ( isType ) {
 			parent->options |= kXMP_PropHasType;
 		}
-		
+
 		if ( parent->qualifiers.empty() || (! isSpecial) ) {
 			parent->qualifiers.push_back ( qualNode );
 			if ( ptrPos != 0 ) *ptrPos = parent->qualifiers.end() - 1;
@@ -963,11 +963,11 @@ FindQualifierNode	( XMP_Node *		parent,
 		}
 
 	}
-	
+
 	XMP_Assert ( (ptrPos == 0) || (qualNode == 0) || (qualNode == **ptrPos) );
 	XMP_Assert ( (qualNode != 0) || (! createNodes) );
 	return qualNode;
-	
+
 }	// FindQualifierNode
 
 // =================================================================================================
@@ -982,7 +982,7 @@ XMP_Index
 LookupFieldSelector ( const XMP_Node * arrayNode, XMP_StringPtr fieldName, XMP_StringPtr fieldValue )
 {
 	size_t index, itemLim;
-	
+
 	for ( index = 0, itemLim = arrayNode->children.size(); index != itemLim; ++index ) {
 
 		const XMP_Node * currItem = arrayNode->children[index];
@@ -1002,10 +1002,10 @@ LookupFieldSelector ( const XMP_Node * arrayNode, XMP_StringPtr fieldName, XMP_S
 		if ( f != fieldLim ) break;	// Exit child loop, found an item with a matching qualifier.
 
 	}
-	
+
 	if ( index == itemLim ) index = -1;
 	return static_cast<XMP_Index>( index );
-	
+
 }	// LookupFieldSelector
 
 // =================================================================================================
@@ -1023,17 +1023,17 @@ LookupLangItem ( const XMP_Node * arrayNode, XMP_VarString & lang )
 
 	size_t index   = 0;
 	size_t itemLim = arrayNode->children.size();
-	
+
 	for ( ; index != itemLim; ++index ) {
 		const XMP_Node * currItem = arrayNode->children[index];
 		XMP_Assert ( currItem->parent == arrayNode );
 		if ( currItem->qualifiers.empty() || (currItem->qualifiers[0]->name != "xml:lang") ) continue;
 		if ( currItem->qualifiers[0]->value == lang ) break;
 	}
-	
+
 	if ( index == itemLim ) index = -1;
 	return static_cast<XMP_Index>( index );
-	
+
 }	// LookupLangItem
 
 // =================================================================================================
@@ -1055,22 +1055,22 @@ FindNode ( XMP_Node *		xmpTree,
 	XMP_NodePtrPos currPos;
 	XMP_NodePtrPos newSubPos;	// Root of implicitly created subtree. Valid only if leaf is new.
 	bool           leafIsNew = false;
-	
+
 	XMP_Assert ( (leafOptions == 0) || createNodes );
 
 	if ( expandedXPath.empty() ) XMP_Throw ( "Empty XPath", kXMPErr_BadXPath );
-	
+
 	size_t stepNum = 1;	// By default start calling FollowXPathStep for the top level property step.
 	size_t stepLim = expandedXPath.size();
-	
+
 	// The start of processing deals with the schema node and top level alias. If the top level step
 	// is not an alias, lookup the expanded path's schema URI. Otherwise, lookup the expanded path
 	// for the actual. While tempting, don't substitute the actual's path into the local one, don't
 	// risk messing with the caller's use of that. Also don't call FindNode recursively, we need to
 	// keep track of the root of the implicitly created subtree as we move down the path.
-	
+
 	if ( ! (expandedXPath[kRootPropStep].options & kXMP_StepIsAlias) ) {
-		
+
 		currNode = FindSchemaNode ( xmpTree, expandedXPath[kSchemaStep].step.c_str(), createNodes, &currPos );
 		if ( currNode == 0 ) return 0;
 
@@ -1086,7 +1086,7 @@ FindNode ( XMP_Node *		xmpTree,
 
 		XMP_AliasMapPos aliasPos = sRegisteredAliasMap->find ( expandedXPath[kRootPropStep].step );
 		XMP_Assert ( aliasPos != sRegisteredAliasMap->end() );
-		
+
 		currNode = FindSchemaNode ( xmpTree, aliasPos->second[kSchemaStep].step.c_str(), createNodes, &currPos );
 		if ( currNode == 0 ) goto EXIT;
 		if ( currNode->options & kXMP_NewImplicitNode ) {
@@ -1103,12 +1103,12 @@ FindNode ( XMP_Node *		xmpTree,
 			if ( ! leafIsNew ) newSubPos = currPos;	// Save the top most implicit node.
 			leafIsNew = true;	// If any parent is new, the leaf will be new also.
 		}
-		
+
 		XMP_OptionBits arrayForm = aliasPos->second[kRootPropStep].options & kXMP_PropArrayFormMask;
 		XMP_Assert ( (arrayForm == 0) || (arrayForm & kXMP_PropValueIsArray) );
 		XMP_Assert ( (arrayForm == 0) ? (aliasPos->second.size() == 2) : (aliasPos->second.size() == 3) );
-		
-		if ( arrayForm != 0 ) { 
+
+		if ( arrayForm != 0 ) {
 			currNode = FollowXPathStep ( currNode, aliasPos->second, 2, createNodes, &currPos, true );
 			if ( currNode == 0 ) goto EXIT;
 			if ( currNode->options & kXMP_NewImplicitNode ) {
@@ -1118,13 +1118,13 @@ FindNode ( XMP_Node *		xmpTree,
 				leafIsNew = true;	// If any parent is new, the leaf will be new also.
 			}
 		}
-		
+
 	}
-	
+
 	// Now follow the remaining steps of the original XPath.
-	
+
 	// *** ??? Change all the num/lim loops back to num<lim? Probably safer.
-	
+
 	try {
 		for ( ; stepNum < stepLim; ++stepNum ) {
 			currNode = FollowXPathStep ( currNode, expandedXPath, stepNum, createNodes, &currPos );
@@ -1140,7 +1140,7 @@ FindNode ( XMP_Node *		xmpTree,
 		if ( leafIsNew ) DeleteSubtree ( newSubPos );
 		throw;
 	}
-	
+
 	// Done. Delete the implicitly created subtree if the eventual node was not found.
 
 EXIT:
@@ -1158,7 +1158,7 @@ EXIT:
 
 	if ( (currNode != 0) && (ptrPos != 0) ) *ptrPos = currPos;
 	return currNode;
-	
+
 }	// FindNode
 
 // =================================================================================================
@@ -1189,7 +1189,7 @@ CloneOffspring ( const XMP_Node * origParent, XMP_Node * cloneParent, bool skipE
 		}
 
 	}
-	
+
 	if ( childCount > 0 ) {
 
 		cloneParent->children.reserve ( childCount );
@@ -1208,7 +1208,7 @@ CloneOffspring ( const XMP_Node * origParent, XMP_Node * cloneParent, bool skipE
 		}
 
 	}
-	
+
 }	// CloneOffspring
 
 // =================================================================================================
@@ -1229,7 +1229,7 @@ CloneSubtree ( const XMP_Node * origRoot, XMP_Node * cloneParent, bool skipEmpty
 			}
 		}
 	#endif
-	
+
 	XMP_Node * cloneRoot = new XMP_Node ( cloneParent, origRoot->name, origRoot->value, origRoot->options );
 	CloneOffspring ( origRoot, cloneRoot, skipEmpty ) ;
 
@@ -1241,7 +1241,7 @@ CloneSubtree ( const XMP_Node * origRoot, XMP_Node * cloneParent, bool skipEmpty
 
 	cloneParent->children.push_back ( cloneRoot );
 	return cloneRoot;
-	
+
 }	// CloneSubtree
 
 // =================================================================================================
@@ -1264,14 +1264,14 @@ CompareSubtrees ( const XMP_Node & leftNode, const XMP_Node & rightNode )
 	     (leftNode.options != rightNode.options) ||
 	     (leftNode.children.size() != rightNode.children.size()) ||
 	     (leftNode.qualifiers.size() != rightNode.qualifiers.size()) ) return false;
-	
+
 	// Compare the qualifiers, allowing them to be out of order.
 	for ( size_t qualNum = 0, qualLim = leftNode.qualifiers.size(); qualNum != qualLim; ++qualNum ) {
 		const XMP_Node * leftQual  = leftNode.qualifiers[qualNum];
 		const XMP_Node * rightQual = FindConstQualifier ( &rightNode, leftQual->name.c_str() );
 		if ( (rightQual == 0) || (! CompareSubtrees ( *leftQual, *rightQual )) ) return false;
 	}
-	
+
 	if ( (leftNode.parent == 0) || (leftNode.options & (kXMP_SchemaNode | kXMP_PropValueIsStruct)) ) {
 
 		// The parent node is a tree root, a schema, or a struct.
@@ -1304,9 +1304,9 @@ CompareSubtrees ( const XMP_Node & leftNode, const XMP_Node & rightNode )
 		}
 
 	}
-	
+
 	return true;
-	
+
 }	// CompareSubtrees
 
 // =================================================================================================
@@ -1354,14 +1354,14 @@ NormalizeLangValue ( XMP_VarString * value )
 	char * tagEnd;
 
 	// Find and process the primary subtag.
-	
+
 	tagStart = (char*) value->c_str();
 	for ( tagEnd = tagStart; (*tagEnd != 0) && (*tagEnd != '-'); ++tagEnd ) {
 		if ( ('A' <= *tagEnd) && (*tagEnd <= 'Z') ) *tagEnd += 0x20;
 	}
-	
+
 	// Find and process the secondary subtag.
-	
+
 	tagStart = tagEnd;
 	if ( *tagStart == '-' ) ++tagStart;
 	for ( tagEnd = tagStart; (*tagEnd != 0) && (*tagEnd != '-'); ++tagEnd ) {
@@ -1372,9 +1372,9 @@ NormalizeLangValue ( XMP_VarString * value )
 		++tagStart;
 		if ( ('a' <= *tagStart) && (*tagStart <= 'z') ) *tagStart -= 0x20;
 	}
-	
+
 	// Find and process the remaining subtags.
-	
+
 	while ( true ) {
 		tagStart = tagEnd;
 		if ( *tagStart == '-' ) ++tagStart;
@@ -1383,7 +1383,7 @@ NormalizeLangValue ( XMP_VarString * value )
 			if ( ('A' <= *tagEnd) && (*tagEnd <= 'Z') ) *tagEnd += 0x20;
 		}
 	}
-	
+
 }	// NormalizeLangValue
 
 // =================================================================================================
@@ -1398,13 +1398,13 @@ void
 NormalizeLangArray ( XMP_Node * array )
 {
 	XMP_Assert ( XMP_ArrayIsAltText(array->options) );
-	
+
 	size_t itemNum;
 	size_t itemLim = array->children.size();
 	bool   hasDefault = false;
-	
+
 	for ( itemNum = 0; itemNum < itemLim; ++itemNum ) {
-	
+
 		if ( array->children[itemNum]->qualifiers.empty() ||
 			 (array->children[itemNum]->qualifiers[0]->name != "xml:lang") ) {
 			XMP_Throw ( "AltText array items must have an xml:lang qualifier", kXMPErr_BadXMP );
@@ -1428,7 +1428,7 @@ NormalizeLangArray ( XMP_Node * array )
 		if ( itemLim == 2 ) array->children[1]->value = array->children[0]->value;
 
 	}
-	
+
 }	// NormalizeLangArray
 
 // =================================================================================================
@@ -1443,12 +1443,12 @@ DetectAltText ( XMP_Node * xmpParent )
 	XMP_Assert ( XMP_ArrayIsAlternate(xmpParent->options) );
 
 	size_t itemNum, itemLim;
-	
+
 	for ( itemNum = 0, itemLim = xmpParent->children.size(); itemNum < itemLim; ++itemNum ) {
 		XMP_OptionBits currOptions = xmpParent->children[itemNum]->options;
 		if ( (currOptions & kXMP_PropCompositeMask) || (! (currOptions & kXMP_PropHasLang)) ) break;
 	}
-	
+
 	if ( (itemLim != 0) && (itemNum == itemLim) ) {
 		xmpParent->options |= kXMP_PropArrayIsAltText;
 		NormalizeLangArray ( xmpParent );

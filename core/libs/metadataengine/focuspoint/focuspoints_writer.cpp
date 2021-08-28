@@ -3,7 +3,7 @@
  * This file is a part of digiKam project
  * https://www.digikam.org
  *
- * Date        : 
+ * Date        :
  * Description : Writer of focus points to exiftool data
  *
  * Copyright (C) 2020-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
@@ -39,12 +39,12 @@ namespace Digikam
 class Q_DECL_HIDDEN FocusPointsWriter::Private
 {
 public:
-    explicit Private() 
+    explicit Private()
       : exifTool(nullptr),
         path(QString())
-        
+
     {};
-    
+
     ExifToolParser*                 exifTool;
     QString                         path;
 };

@@ -34,7 +34,7 @@ NPT_GetSystemLogConfig(NPT_String& config)
 {
     char android_npt_config[PROP_VALUE_MAX];
     android_npt_config[0] = 0;
-    int prop_len = android_property_get("persist.neptune_log_config", 
+    int prop_len = android_property_get("persist.neptune_log_config",
                                          android_npt_config);
     if (prop_len > 0) {
         config = android_npt_config;

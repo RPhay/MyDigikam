@@ -66,9 +66,9 @@ protected:
     QHash<QString, bool> testParseTestImages(const QString& testcase_name, Function ParseTestFunc, Parameter parameter)
     {
         QStringList imageNames;
-        
+
         QList<PairImageQuality> dataTest = getDataTestCases().values(testcase_name);
-        
+
         for (const auto& image_refQuality : dataTest)
         {
             imageNames << image_refQuality.first;
@@ -87,7 +87,7 @@ protected:
 
         return results_test;
     }
-    
+
     DataTestCases getDataTestCases() const
     {
         return m_dataTestCases;

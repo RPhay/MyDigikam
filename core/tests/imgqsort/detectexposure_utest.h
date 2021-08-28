@@ -60,8 +60,8 @@ private Q_SLOTS:
 using PairImageQuality = QPair<QString, int>;
 using DataTestCases = QMultiMap<QString, PairImageQuality> ;
 
-DataTestCases const dataTestCases = 
-    {   
+DataTestCases const dataTestCases =
+    {
         {QLatin1String("exposureBacklight"), PairImageQuality(QLatin1String("exposure_backlight_1.jpg"),1)},
         {QLatin1String("exposureBacklight"), PairImageQuality(QLatin1String("exposure_backlight_2.jpg"),1)},
         {QLatin1String("exposureBacklight"), PairImageQuality(QLatin1String("exposure_backlight_3.jpg"),1)},

@@ -11,14 +11,14 @@
 | as published by the Free Software Foundation; either version 2
 | of the License, or (at your option) any later version.
 |
-| OEMs, ISVs, VARs and other distributors that combine and 
+| OEMs, ISVs, VARs and other distributors that combine and
 | distribute commercially licensed software with Platinum software
 | and do not wish to distribute the source code for the commercially
 | licensed software under version 2, or (at your option) any later
 | version, of the GNU General Public License (the "GPL") must enter
 | into a commercial license agreement with Plutinosoft, LLC.
 | licensing@plutinosoft.com
-| 
+|
 | This program is distributed in the hope that it will be useful,
 | but WITHOUT ANY WARRANTY; without even the implied warranty of
 | MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
@@ -26,7 +26,7 @@
 |
 | You should have received a copy of the GNU General Public License
 | along with this program; see the file LICENSE.txt. If not, write to
-| the Free Software Foundation, Inc., 
+| the Free Software Foundation, Inc.,
 | 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 | http://www.gnu.org/licenses/gpl-2.0.html
 |
@@ -80,7 +80,7 @@ CMediaCrawler::SplitObjectId(const NPT_String& object_id, NPT_String& server_uui
 
     if (object_id.GetLength() > 1) {
         if (object_id[1] != '/') return NPT_ERROR_INVALID_FORMAT;
-    
+
         server_uuid = object_id.SubString(2);
 
         // look for next delimiter
@@ -111,7 +111,7 @@ CMediaCrawler::FormatObjectId(const NPT_String& server_uuid, const NPT_String& s
 |   PLT_MediaServer::OnBrowse
 +---------------------------------------------------------------------*/
 NPT_Result
-CMediaCrawler::OnBrowse(PLT_ActionReference&          action, 
+CMediaCrawler::OnBrowse(PLT_ActionReference&          action,
                         const PLT_HttpRequestContext& context)
 {
     NPT_Result res;
@@ -204,15 +204,15 @@ CMediaCrawler::OnBrowseRoot(PLT_ActionReference& action)
         NPT_String filter;
 
         NPT_CHECK_SEVERE(action->GetArgumentValue("StartingIndex", startingInd));
-        NPT_CHECK_SEVERE(action->GetArgumentValue("RequestedCount", reqCount));   
+        NPT_CHECK_SEVERE(action->GetArgumentValue("RequestedCount", reqCount));
         NPT_CHECK_SEVERE(action->GetArgumentValue("Filter", filter));
 
         NPT_Int32 start_index, req_count;
         if (NPT_FAILED(startingInd.ToInteger(start_index)) ||
             NPT_FAILED(reqCount.ToInteger(req_count))) {
             return NPT_FAILURE;
-        }   
-                    
+        }
+
         NPT_Int32 cur_index = 0;
         NPT_Int32 num_returned = 0;
         NPT_Int32 total_matches = 0;
@@ -243,7 +243,7 @@ CMediaCrawler::OnBrowseRoot(PLT_ActionReference& action)
                     num_returned++;
                 }
                 cur_index++;
-                total_matches++;  
+                total_matches++;
 
                 ++entry;
             }
@@ -264,9 +264,9 @@ CMediaCrawler::OnBrowseRoot(PLT_ActionReference& action)
 |   CMediaCrawler::OnBrowseDevice
 +---------------------------------------------------------------------*/
 NPT_Result
-CMediaCrawler::OnBrowseDevice(PLT_ActionReference&          action, 
-                              const char*                   server_uuid, 
-                              const char*                   server_object_id, 
+CMediaCrawler::OnBrowseDevice(PLT_ActionReference&          action,
+                              const char*                   server_uuid,
+                              const char*                   server_object_id,
                               const NPT_HttpRequestContext& context)
 {
     NPT_Result res;
@@ -288,7 +288,7 @@ CMediaCrawler::OnBrowseDevice(PLT_ActionReference&          action,
 
     NPT_CHECK_SEVERE(action->GetArgumentValue("BrowseFlag", browseFlagValue));
     NPT_CHECK_SEVERE(action->GetArgumentValue("StartingIndex", startingInd));
-    NPT_CHECK_SEVERE(action->GetArgumentValue("RequestedCount", reqCount));   
+    NPT_CHECK_SEVERE(action->GetArgumentValue("RequestedCount", reqCount));
     NPT_CHECK_SEVERE(action->GetArgumentValue("Filter", filter));
     NPT_CHECK_SEVERE(action->GetArgumentValue("SortCriteria", sort));
 
@@ -296,7 +296,7 @@ CMediaCrawler::OnBrowseDevice(PLT_ActionReference&          action,
     if (NPT_FAILED(startingInd.ToInteger(start_index)) ||
         NPT_FAILED(reqCount.ToInteger(req_count))) {
         return NPT_FAILURE;
-    } 
+    }
 
     // create a container for our result
     // this will be filled in by OnBrowseResponse
@@ -313,7 +313,7 @@ CMediaCrawler::OnBrowseDevice(PLT_ActionReference&          action,
         (browseFlagValue == "BrowseMetadata")?1:0,
         filter,
         sort,
-        new CMediaCrawlerBrowseInfoReference(browse_info));     
+        new CMediaCrawlerBrowseInfoReference(browse_info));
     NPT_CHECK_SEVERE(res);
 
     // wait 10 secs for response
@@ -324,14 +324,14 @@ CMediaCrawler::OnBrowseDevice(PLT_ActionReference&          action,
     if (NPT_FAILED(browse_info->res)) {
         action->SetError(browse_info->code, "");
         return NPT_FAILURE;
-    }    
-   
+    }
+
     action->SetArgumentValue("Result", UpdateDidl(server_uuid, browse_info->didl, &context.GetLocalAddress()));
     action->SetArgumentValue("NumberReturned", browse_info->nr);
     action->SetArgumentValue("TotalMatches", browse_info->tm);
     action->SetArgumentValue("UpdateId", browse_info->uid);
     action->SetArgumentValue("ObjectID", FormatObjectId(server_uuid, browse_info->object_id));
-    
+
     return NPT_SUCCESS;
 }
 
@@ -339,9 +339,9 @@ CMediaCrawler::OnBrowseDevice(PLT_ActionReference&          action,
 |   CMediaCrawler::OnBrowseResponse
 +---------------------------------------------------------------------*/
 NPT_Result
-CMediaCrawler::OnBrowseResponse(NPT_Result               res, 
-                                PLT_DeviceDataReference& device, 
-                                PLT_ActionReference&     action, 
+CMediaCrawler::OnBrowseResponse(NPT_Result               res,
+                                PLT_DeviceDataReference& device,
+                                PLT_ActionReference&     action,
                                 void*                    userdata)
 {
     NPT_COMPILER_UNUSED(device);
@@ -367,11 +367,11 @@ CMediaCrawler::OnBrowseResponse(NPT_Result               res,
     if (NPT_FAILED(action->GetArgumentValue("Result", (*info)->didl))) {
         goto bad_action;
     }
-    
+
     if (NPT_FAILED((*info)->res) || action->GetErrorCode() != 0) {
         goto bad_action;
     }
-    
+
     goto done;
 
 bad_action:
@@ -388,8 +388,8 @@ done:
 |   CMediaCrawler::UpdateDidl
 +---------------------------------------------------------------------*/
 NPT_String
-CMediaCrawler::UpdateDidl(const char*              server_uuid, 
-                          const NPT_String&        didl, 
+CMediaCrawler::UpdateDidl(const char*              server_uuid,
+                          const NPT_String&        didl,
                           const NPT_SocketAddress* req_local_address /* = NULL */)
 {
     NPT_String     new_didl;
@@ -443,9 +443,9 @@ CMediaCrawler::UpdateDidl(const char*              server_uuid,
                 const NPT_String*   url;
                 if (NPT_SUCCEEDED(PLT_XmlHelper::GetAttribute(resource, "protocolInfo", attribute_prot)) && (url = resource->GetText())) {
                     // special case for Windows Media Connect
-                    // When a browse is done on the same machine, WMC uses localhost 
-                    // instead of the IP for all resources urls which means we cannot advertise that 
-                    // since it would be useless for a remote device 
+                    // When a browse is done on the same machine, WMC uses localhost
+                    // instead of the IP for all resources urls which means we cannot advertise that
+                    // since it would be useless for a remote device
                     // so we try to replace it with the right IP address by looking at which interface we received the
                     // initial browse request on to make sure the remote device will be able to access the modified resource
                     // urls (in case the local PC has more than 1 NICs)
@@ -488,8 +488,8 @@ cleanup:
 /*----------------------------------------------------------------------
 |   CMediaCrawler::ProcessFileRequest
 +---------------------------------------------------------------------*/
-NPT_Result 
-CMediaCrawler::ProcessFileRequest(NPT_HttpRequest&              request, 
+NPT_Result
+CMediaCrawler::ProcessFileRequest(NPT_HttpRequest&              request,
                                   const NPT_HttpRequestContext& context,
                                   NPT_HttpResponse&             response)
 {
@@ -504,7 +504,7 @@ CMediaCrawler::ProcessFileRequest(NPT_HttpRequest&              request,
 
     // add the user agent header, some stupid media servers like YME needs it
     if (!request.GetHeaders().GetHeader(NPT_HTTP_HEADER_USER_AGENT)) {
-        request.GetHeaders().SetHeader(NPT_HTTP_HEADER_USER_AGENT, 
+        request.GetHeaders().SetHeader(NPT_HTTP_HEADER_USER_AGENT,
             "Platinum/" PLT_PLATINUM_SDK_VERSION_STRING);
     }
 
@@ -527,7 +527,7 @@ CMediaCrawler::ProcessFileRequest(NPT_HttpRequest&              request,
                 ++headers;
             }
             response.SetEntity(new NPT_HttpEntity(response.GetHeaders()));
-            
+
             // update inputstream
             NPT_HttpEntity* out_entity;
             if ((out_entity = out_response->GetEntity()) != NULL) {
@@ -551,8 +551,8 @@ CMediaCrawler::ProcessFileRequest(NPT_HttpRequest&              request,
 /*----------------------------------------------------------------------
 |   CMediaCrawler::AddStreamHandler
 +---------------------------------------------------------------------*/
-NPT_Result 
-CMediaCrawler::AddStreamHandler(CStreamHandler* handler) 
+NPT_Result
+CMediaCrawler::AddStreamHandler(CStreamHandler* handler)
 {
     // make sure we don't have a metadatahandler registered for the same extension
     //    PLT_StreamHandler* prev_handler;

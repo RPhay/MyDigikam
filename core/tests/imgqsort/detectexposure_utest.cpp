@@ -64,7 +64,7 @@ void ImgQSortTestDetecteExposure::testParseTestImagesForExposureDetection_backli
     {
         QVERIFY(results.value(test_case));
     }
-} 
+}
 
 void ImgQSortTestDetecteExposure::testParseTestImagesForExposureDetection_sun()
 {
@@ -75,4 +75,4 @@ void ImgQSortTestDetecteExposure::testParseTestImagesForExposureDetection_sun()
     {
         QVERIFY(results.value(test_case));
     }
-} 
+}

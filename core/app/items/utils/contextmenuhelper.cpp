@@ -1114,7 +1114,7 @@ QList<QAction*> ContextMenuHelper::groupMenuActions(const imageIds& ids)
     else
     {
         QAction* const closeAction = new QAction(i18nc("@action:inmenu", "Group Selected Here"), this);
-        connect(closeAction, SIGNAL(triggered()), 
+        connect(closeAction, SIGNAL(triggered()),
                 this, SIGNAL(signalCreateGroup()));
         actions << closeAction;
 

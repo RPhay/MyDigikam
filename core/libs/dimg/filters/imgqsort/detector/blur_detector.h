@@ -3,12 +3,12 @@
  * This file is a part of digiKam project
  * https://www.digikam.org
  *
- * Date        : 
+ * Date        :
  * Description : Image Quality Parser - blur detection
  *
  * Copyright (C) 2013-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
- * References  : 
+ * References  :
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -38,7 +38,7 @@ namespace Digikam
 class BlurDetector : public DetectorDistortion
 {
     Q_OBJECT
-    
+
 public:
 
     explicit BlurDetector(const DImg& image);

@@ -3,7 +3,7 @@
  * This file is a part of digiKam project
  * https://www.digikam.org
  *
- * Date        : 
+ * Date        :
  * Description : Extraction of focus points by exiftool data
  *
  * Copyright (C) 2020-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
@@ -37,13 +37,13 @@ namespace Digikam
 class Q_DECL_HIDDEN FocusPointsExtractor::Private
 {
 public:
-    explicit Private() 
+    explicit Private()
       : exifToolAvailable(false),
         afPointsReadOnly(true)
     {}
 
     ListAFPoints                    af_points;
-    
+
     bool                            exifToolAvailable;
 
     ExifToolParser::ExifToolData    metadata;
@@ -74,7 +74,7 @@ FocusPointsExtractor::~FocusPointsExtractor()
 QVariant FocusPointsExtractor::findValue(const QString& tagName,bool isList) const
 {
     QVariantList result = d->metadata.value(tagName);
-    
+
     if (result.empty())
     {
         return QVariant();
@@ -99,7 +99,7 @@ QVariant FocusPointsExtractor::findValueFirstMatch(const QStringList& listTagNam
     for (const QString& tagName : listTagNames)
     {
         QVariant tmp = findValue(tagName,isList);
-        
+
         if (!tmp.isNull())
         {
             return tmp;
@@ -113,7 +113,7 @@ QVariant FocusPointsExtractor::findValueFirstMatch(const QString& tagNameRoot,co
     for (const QString& key : keys)
     {
         QVariant tmp = findValue(tagNameRoot,key,isList);
-        
+
         if (!tmp.isNull())
         {
             return tmp;
@@ -136,7 +136,7 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::findAFPoints() const
         model = model.split(QLatin1String(" "))[0].toUpper();
 
         if (model == QLatin1String("CANON"))
-        {   
+        {
             return getAFPoints_canon();
         }
         if (model == QLatin1String("NIKON"))
@@ -152,7 +152,7 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::findAFPoints() const
             return getAFPoints_sony();
         }
     }
-    
+
     return getAFPoints_default();
 }
 

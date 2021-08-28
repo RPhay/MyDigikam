@@ -54,11 +54,11 @@ class NPT_GenericQueue
 
     // methods
     virtual           ~NPT_GenericQueue() {}
-    virtual NPT_Result Push(NPT_QueueItem* item, 
-                           NPT_Timeout     timeout = NPT_TIMEOUT_INFINITE) = 0; 
-    virtual NPT_Result Pop(NPT_QueueItem*& item, 
+    virtual NPT_Result Push(NPT_QueueItem* item,
                            NPT_Timeout     timeout = NPT_TIMEOUT_INFINITE) = 0;
-    virtual NPT_Result Peek(NPT_QueueItem*& item, 
+    virtual NPT_Result Pop(NPT_QueueItem*& item,
+                           NPT_Timeout     timeout = NPT_TIMEOUT_INFINITE) = 0;
+    virtual NPT_Result Peek(NPT_QueueItem*& item,
                            NPT_Timeout     timeout = NPT_TIMEOUT_INFINITE) = 0;
  protected:
     // methods

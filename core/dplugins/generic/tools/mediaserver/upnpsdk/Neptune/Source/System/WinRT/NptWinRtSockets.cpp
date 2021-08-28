@@ -70,8 +70,8 @@ public:
 	virtual ~NPT_WinRtSocketInputStream();
 
     // NPT_InputStream methods
-    NPT_Result Read(void*     buffer, 
-                    NPT_Size  bytes_to_read, 
+    NPT_Result Read(void*     buffer,
+                    NPT_Size  bytes_to_read,
                     NPT_Size* bytes_read);
     NPT_Result Seek(NPT_Position offset);
     NPT_Result Tell(NPT_Position& where);
@@ -83,7 +83,7 @@ private:
 	IInputStream^ m_InputStream;
 	DataReader^   m_Reader;
 	HANDLE        m_WaitEvent;
-	NPT_Timeout   m_Timeout; 
+	NPT_Timeout   m_Timeout;
 };
 
 /*----------------------------------------------------------------------
@@ -97,8 +97,8 @@ public:
 	virtual ~NPT_WinRtSocketOutputStream();
 
     // NPT_OutputStream methods
-    NPT_Result Write(const void* buffer, 
-                     NPT_Size    bytes_to_write, 
+    NPT_Result Write(const void* buffer,
+                     NPT_Size    bytes_to_write,
                      NPT_Size*   bytes_written);
     NPT_Result Seek(NPT_Position offset);
     NPT_Result Tell(NPT_Position& where);
@@ -115,7 +115,7 @@ private:
 /*----------------------------------------------------------------------
 |   StringFromUTF8
 +---------------------------------------------------------------------*/
-static String^ 
+static String^
 StringFromUTF8(const char* utf)
 {
 	unsigned int utf_len = NPT_StringLength(utf);
@@ -195,8 +195,8 @@ TranslateHResult(HResult result)
 |   WaitForAsyncAction
 +---------------------------------------------------------------------*/
 static NPT_Result
-WaitForAsyncAction(IAsyncAction^ action, 
-                   HANDLE        wait_event, 
+WaitForAsyncAction(IAsyncAction^ action,
+                   HANDLE        wait_event,
 				   DWORD         timeout = INFINITE)
 {
 	NPT_Result result = NPT_ERROR_INTERNAL;
@@ -242,7 +242,7 @@ WaitForAsyncAction(IAsyncAction^ action,
 |   WaitForAsyncOperation
 +---------------------------------------------------------------------*/
 static NPT_Result
-WaitForAsyncOperation(IAsyncOperation<unsigned int>^ operation, 
+WaitForAsyncOperation(IAsyncOperation<unsigned int>^ operation,
                       HANDLE                         wait_event,
 					  unsigned int&                  return_value,
 					  DWORD                          timeout = INFINITE)
@@ -253,7 +253,7 @@ WaitForAsyncOperation(IAsyncOperation<unsigned int>^ operation,
 	return_value = 0;
 	ResetEvent(wait_event);
 
-	operation->Completed = ref new AsyncOperationCompletedHandler<unsigned int> 
+	operation->Completed = ref new AsyncOperationCompletedHandler<unsigned int>
 		([&](IAsyncOperation<unsigned int>^ operation_, AsyncStatus status) {
 		switch (status) {
 			case AsyncStatus::Canceled:
@@ -292,7 +292,7 @@ WaitForAsyncOperation(IAsyncOperation<unsigned int>^ operation,
 /*----------------------------------------------------------------------
 |   NPT_WinRtSocketInputStream::NPT_WinRtSocketInputStream
 +---------------------------------------------------------------------*/
-NPT_WinRtSocketInputStream::NPT_WinRtSocketInputStream(StreamSocket^ socket, 
+NPT_WinRtSocketInputStream::NPT_WinRtSocketInputStream(StreamSocket^ socket,
 													   NPT_Timeout   timeout) :
     m_Socket(socket),
 	m_Timeout(timeout)
@@ -316,8 +316,8 @@ NPT_WinRtSocketInputStream::~NPT_WinRtSocketInputStream()
 |   NPT_WinRtSocketInputStream::Read
 +---------------------------------------------------------------------*/
 NPT_Result
-NPT_WinRtSocketInputStream::Read(void*     buffer, 
-                                 NPT_Size  bytes_to_read, 
+NPT_WinRtSocketInputStream::Read(void*     buffer,
+                                 NPT_Size  bytes_to_read,
                                  NPT_Size* bytes_read)
 {
 	// init and shortcut
@@ -326,7 +326,7 @@ NPT_WinRtSocketInputStream::Read(void*     buffer,
 
 	NPT_LOG_FINER_1("reading %d bytes", bytes_to_read);
 	auto operation = m_Reader->LoadAsync(bytes_to_read);
-	
+
 	unsigned int return_value = 0;
 	NPT_Result result = WaitForAsyncOperation(operation, m_WaitEvent, return_value, m_Timeout);
 
@@ -349,7 +349,7 @@ NPT_WinRtSocketInputStream::Read(void*     buffer,
 /*----------------------------------------------------------------------
 |   NPT_WinRtSocketInputStream::Seek
 +---------------------------------------------------------------------*/
-NPT_Result 
+NPT_Result
 NPT_WinRtSocketInputStream::Seek(NPT_Position offset)
 {
 	return NPT_ERROR_NOT_SUPPORTED;
@@ -358,7 +358,7 @@ NPT_WinRtSocketInputStream::Seek(NPT_Position offset)
 /*----------------------------------------------------------------------
 |   NPT_WinRtSocketInputStream::Tell
 +---------------------------------------------------------------------*/
-NPT_Result 
+NPT_Result
 NPT_WinRtSocketInputStream::Tell(NPT_Position& where)
 {
 	where = 0;
@@ -368,7 +368,7 @@ NPT_WinRtSocketInputStream::Tell(NPT_Position& where)
 /*----------------------------------------------------------------------
 |   NPT_WinRtSocketInputStream::GetSize
 +---------------------------------------------------------------------*/
-NPT_Result 
+NPT_Result
 NPT_WinRtSocketInputStream::GetSize(NPT_LargeSize& size)
 {
 	size = 0;
@@ -378,7 +378,7 @@ NPT_WinRtSocketInputStream::GetSize(NPT_LargeSize& size)
 /*----------------------------------------------------------------------
 |   NPT_WinRtSocketInputStream::GetAvailable
 +---------------------------------------------------------------------*/
-NPT_Result 
+NPT_Result
 NPT_WinRtSocketInputStream::GetAvailable(NPT_LargeSize& available)
 {
 	available = 0;
@@ -410,9 +410,9 @@ NPT_WinRtSocketOutputStream::~NPT_WinRtSocketOutputStream()
 /*----------------------------------------------------------------------
 |   NPT_WinRtSocketOutputStream::Write
 +---------------------------------------------------------------------*/
-NPT_Result 
-NPT_WinRtSocketOutputStream::Write(const void* buffer, 
-                                   NPT_Size    bytes_to_write, 
+NPT_Result
+NPT_WinRtSocketOutputStream::Write(const void* buffer,
+                                   NPT_Size    bytes_to_write,
                                    NPT_Size*   bytes_written)
 {
 	NPT_LOG_FINER_1("writing %d bytes", bytes_to_write);
@@ -422,7 +422,7 @@ NPT_WinRtSocketOutputStream::Write(const void* buffer,
 	m_Writer->WriteBytes(bytes);
 	auto operation = m_Writer->StoreAsync();
 	unsigned int return_value = 0;
-	
+
 	NPT_Result result = WaitForAsyncOperation(operation, m_WaitEvent, return_value, m_Timeout);
 	if (bytes_written) *bytes_written = return_value;
 
@@ -432,7 +432,7 @@ NPT_WinRtSocketOutputStream::Write(const void* buffer,
 /*----------------------------------------------------------------------
 |   NPT_WinRtSocketOutputStream::Seek
 +---------------------------------------------------------------------*/
-NPT_Result 
+NPT_Result
 NPT_WinRtSocketOutputStream::Seek(NPT_Position offset)
 {
 	return NPT_ERROR_NOT_SUPPORTED;
@@ -441,7 +441,7 @@ NPT_WinRtSocketOutputStream::Seek(NPT_Position offset)
 /*----------------------------------------------------------------------
 |   NPT_WinRtSocketOutputStream::Tell
 +---------------------------------------------------------------------*/
-NPT_Result 
+NPT_Result
 NPT_WinRtSocketOutputStream::Tell(NPT_Position& where)
 {
 	where = 0;
@@ -451,7 +451,7 @@ NPT_WinRtSocketOutputStream::Tell(NPT_Position& where)
 /*----------------------------------------------------------------------
 |   NPT_WinRtSocketOutputStream
 +---------------------------------------------------------------------*/
-NPT_Result 
+NPT_Result
 NPT_WinRtSocketOutputStream::Flush()
 {
 	return NPT_SUCCESS;
@@ -479,7 +479,7 @@ NPT_WinRtTcpClientSocket::~NPT_WinRtTcpClientSocket()
 /*----------------------------------------------------------------------
 |   NPT_WinRtTcpClientSocket::Bind
 +---------------------------------------------------------------------*/
-NPT_Result 
+NPT_Result
 NPT_WinRtTcpClientSocket::Bind(const NPT_SocketAddress& address, bool reuse_address)
 {
 	return NPT_ERROR_NOT_IMPLEMENTED;
@@ -488,7 +488,7 @@ NPT_WinRtTcpClientSocket::Bind(const NPT_SocketAddress& address, bool reuse_addr
 /*----------------------------------------------------------------------
 |   NPT_WinRtTcpClientSocket::Connect
 +---------------------------------------------------------------------*/
-NPT_Result 
+NPT_Result
 NPT_WinRtTcpClientSocket::Connect(const NPT_SocketAddress& address, NPT_Timeout timeout)
 {
 	try {
@@ -509,14 +509,14 @@ NPT_WinRtTcpClientSocket::Connect(const NPT_SocketAddress& address, NPT_Timeout 
 		return result;
 	} catch (Exception^ e) {
 		NPT_LOG_FINE("exception caught");
-		return NPT_FAILURE; 
+		return NPT_FAILURE;
 	}
 }
 
 /*----------------------------------------------------------------------
 |   NPT_WinRtTcpClientSocket::GetInputStream
 +---------------------------------------------------------------------*/
-NPT_Result 
+NPT_Result
 NPT_WinRtTcpClientSocket::GetInputStream(NPT_InputStreamReference& stream)
 {
 	stream = new NPT_WinRtSocketInputStream(m_Socket, m_ReadTimeout);
@@ -526,7 +526,7 @@ NPT_WinRtTcpClientSocket::GetInputStream(NPT_InputStreamReference& stream)
 /*----------------------------------------------------------------------
 |   NPT_WinRtTcpClientSocket::GetOutputStream
 +---------------------------------------------------------------------*/
-NPT_Result 
+NPT_Result
 NPT_WinRtTcpClientSocket::GetOutputStream(NPT_OutputStreamReference& stream)
 {
 	stream = new NPT_WinRtSocketOutputStream(m_Socket, m_WriteTimeout);
@@ -536,7 +536,7 @@ NPT_WinRtTcpClientSocket::GetOutputStream(NPT_OutputStreamReference& stream)
 /*----------------------------------------------------------------------
 |   NPT_WinRtTcpClientSocket::GetInfo
 +---------------------------------------------------------------------*/
-NPT_Result 
+NPT_Result
 NPT_WinRtTcpClientSocket::GetInfo(NPT_SocketInfo& info)
 {
 	return NPT_SUCCESS;
@@ -545,7 +545,7 @@ NPT_WinRtTcpClientSocket::GetInfo(NPT_SocketInfo& info)
 /*----------------------------------------------------------------------
 |   NPT_WinRtTcpClientSocket::SetReadTimeout
 +---------------------------------------------------------------------*/
-NPT_Result 
+NPT_Result
 NPT_WinRtTcpClientSocket::SetReadTimeout(NPT_Timeout timeout)
 {
 	m_ReadTimeout = timeout;
@@ -555,7 +555,7 @@ NPT_WinRtTcpClientSocket::SetReadTimeout(NPT_Timeout timeout)
 /*----------------------------------------------------------------------
 |   NPT_WinRtTcpClientSocket::SetWriteTimeout
 +---------------------------------------------------------------------*/
-NPT_Result 
+NPT_Result
 NPT_WinRtTcpClientSocket::SetWriteTimeout(NPT_Timeout timeout)
 {
 	m_WriteTimeout = timeout;
@@ -565,7 +565,7 @@ NPT_WinRtTcpClientSocket::SetWriteTimeout(NPT_Timeout timeout)
 /*----------------------------------------------------------------------
 |   NPT_WinRtTcpClientSocket::Cancel
 +---------------------------------------------------------------------*/
-NPT_Result 
+NPT_Result
 NPT_WinRtTcpClientSocket::Cancel(bool shutdown)
 {
 	return NPT_SUCCESS;

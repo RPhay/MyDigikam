@@ -198,7 +198,7 @@ int main(int ac, char *av[])
         output_jpeg = 1;
         if(av[i][2] != 0)
         jpgqual = atoi(av[i]+2);
-      } 
+      }
 #endif
       continue;
     }

@@ -60,7 +60,7 @@ static const char * kReplaceLatin1[128] =
 		// The bytes 0x81, 0x8D, 0x8F, 0x90, and 0x9D are formally undefined by Windows 1252, but
 		// their conversion API maps them to U+0081, etc. These are in XML's RestrictedChar set, so
 		// we map them to a space.
-		
+
 		"\xE2\x82\xAC", " ",            "\xE2\x80\x9A", "\xC6\x92",		// 0x80 .. 0x83
 		"\xE2\x80\x9E", "\xE2\x80\xA6", "\xE2\x80\xA0", "\xE2\x80\xA1",	// 0x84 .. 0x87
 		"\xCB\x86",     "\xE2\x80\xB0", "\xC5\xA0",     "\xE2\x80\xB9",	// 0x88 .. 0x8B
@@ -73,7 +73,7 @@ static const char * kReplaceLatin1[128] =
 
 		// These are the UTF-8 forms of the official Latin-1 characters in the range 0xA0..0xFF. Not
 		// too surprisingly these map to U+00A0, etc. Which is the Unicode Latin Supplement range.
-		
+
 		"\xC2\xA0", "\xC2\xA1", "\xC2\xA2", "\xC2\xA3", "\xC2\xA4", "\xC2\xA5", "\xC2\xA6", "\xC2\xA7",	// 0xA0 .. 0xA7
 		"\xC2\xA8", "\xC2\xA9", "\xC2\xAA", "\xC2\xAB", "\xC2\xAC", "\xC2\xAD", "\xC2\xAE", "\xC2\xAF",	// 0xA8 .. 0xAF
 
@@ -131,13 +131,13 @@ static const XML_Node * PickBestRoot ( const XML_Node & xmlParent, XMP_OptionBit
 			if ( childNode->name == "rdf:RDF" ) return childNode;
 		}
 	}
-	
+
 	// Recurse into the content.
 	for ( size_t childNum = 0, childLim = xmlParent.content.size(); childNum < childLim; ++childNum ) {
 		const XML_Node * foundRoot = PickBestRoot ( *xmlParent.content[childNum], options );
 		if ( foundRoot != 0 ) return foundRoot;
 	}
-	
+
 	return 0;
 
 }	// PickBestRoot
@@ -156,18 +156,18 @@ static const XML_Node * PickBestRoot ( const XML_Node & xmlParent, XMP_OptionBit
 static const XML_Node * FindRootNode ( const XMLParserAdapter & xmlParser, XMP_OptionBits options )
 {
 	const XML_Node * rootNode = xmlParser.rootNode;
-	
+
 	if ( xmlParser.rootCount > 1 ) rootNode = PickBestRoot ( xmlParser.tree, options );
 	if ( rootNode == 0 ) return 0;
 
 		XMP_Assert ( rootNode->name == "rdf:RDF" );
-	
+
 		if ( (options & kXMP_RequireXMPMeta) &&
 		     ((rootNode->parent == 0) ||
 		      ((rootNode->parent->name != "x:xmpmeta") && (rootNode->parent->name != "x:xapmeta"))) ) return 0;
-		
+
 	return rootNode;
-	
+
 }	// FindRootNode
 
 // -------------------------------------------------------------------------------------------------
@@ -185,13 +185,13 @@ NormalizeDCArrays ( XMP_Node * xmpTree )
 {
 	XMP_Node * dcSchema = FindSchemaNode ( xmpTree, kXMP_NS_DC, kXMP_ExistingOnly );
 	if ( dcSchema == 0 ) return;
-	
+
 	for ( size_t propNum = 0, propLimit = dcSchema->children.size(); propNum < propLimit; ++propNum ) {
 		XMP_Node *     currProp  = dcSchema->children[propNum];
 		XMP_OptionBits arrayForm = 0;
-		
+
 		if ( ! XMP_PropIsSimple ( currProp->options ) ) continue;	// Nothing to do if not simple.
-		
+
 		if ( (currProp->name == "dc:creator" )     ||	// See if it is supposed to be an array.
 		     (currProp->name == "dc:date" ) ) {			// *** Think about an array of char* and a loop.
 			arrayForm = kXMP_PropArrayIsOrdered;
@@ -210,21 +210,21 @@ NormalizeDCArrays ( XMP_Node * xmpTree )
 			arrayForm = kXMP_PropValueIsArray;
 		}
 		if ( arrayForm == 0 ) continue;	// Nothing to do if it isn't supposed to be an array.
-		
+
 		arrayForm = VerifySetOptions ( arrayForm, 0 );	// Set the implicit array bits.
 		XMP_Node * newArray = new XMP_Node ( dcSchema, currProp->name.c_str(), arrayForm );
 		dcSchema->children[propNum] = newArray;
-		
+
 		if ( currProp->value.empty() ) {	// Don't add an empty item, leave the array empty.
-		
+
 			delete ( currProp );
-		
+
 		} else {
-		
+
 			newArray->children.push_back ( currProp );
 			currProp->parent = newArray;
 			currProp->name = kXMP_ArrayItemName;
-			
+
 			if ( XMP_ArrayIsAltText ( arrayForm ) && (! (currProp->options & kXMP_PropHasLang)) ) {
 				XMP_Node * newLang = new XMP_Node ( currProp, "xml:lang", "x-default", kXMP_PropIsQualifier );
 				currProp->options |= (kXMP_PropHasQualifiers | kXMP_PropHasLang);
@@ -234,11 +234,11 @@ NormalizeDCArrays ( XMP_Node * xmpTree )
 					currProp->qualifiers.insert ( currProp->qualifiers.begin(), newLang );
 				}
 			}
-		
+
 		}
 
 	}
-	
+
 }	// NormalizeDCArrays
 
 
@@ -274,19 +274,19 @@ CompareAliasedSubtrees ( XMP_Node * aliasNode, XMP_Node * baseNode,
 			errorCallback.NotifyClient ( kXMPErrSev_OperationFatal, error );
 		}
 	}
-	
+
 	for ( size_t childNum = 0, childLim = aliasNode->children.size(); childNum < childLim; ++childNum ) {
 		XMP_Node * aliasChild = aliasNode->children[childNum];
 		XMP_Node * baseChild  = baseNode->children[childNum];
 		CompareAliasedSubtrees ( aliasChild, baseChild, errorCallback, false );
 	}
-	
+
 	for ( size_t qualNum = 0, qualLim = aliasNode->qualifiers.size(); qualNum < qualLim; ++qualNum ) {
 		XMP_Node * aliasQual = aliasNode->qualifiers[qualNum];
 		XMP_Node * baseQual  = baseNode->qualifiers[qualNum];
 		CompareAliasedSubtrees ( aliasQual, baseQual, errorCallback, false );
 	}
-	
+
 }	// CompareAliasedSubtrees
 
 
@@ -354,18 +354,18 @@ MoveExplicitAliases ( XMP_Node * tree, XMP_OptionBits parseOptions, XMPMeta::Err
 {
 	tree->options ^= kXMP_PropHasAliases;
 	const bool strictAliasing = ((parseOptions & kXMP_StrictAliasing) != 0);
-	
+
 	// Visit all of the top level nodes looking for aliases. If there is no base, transplant the
-	// alias subtree. If there is a base and strict aliasing is on, make sure the alias and base 
+	// alias subtree. If there is a base and strict aliasing is on, make sure the alias and base
 	// subtrees match.
-	
+
 	// ! Use "while" loops not "for" loops since both the schema and property loops can remove the
 	// ! current item from the vector being traversed. And don't increment the counter for a delete.
-	
+
 	size_t schemaNum = 0;
 	while ( schemaNum < tree->children.size() ) {
 		XMP_Node * currSchema = tree->children[schemaNum];
-		
+
 		size_t propNum = 0;
 		while ( propNum < currSchema->children.size() ) {
 			XMP_Node * currProp = currSchema->children[propNum];
@@ -387,7 +387,7 @@ MoveExplicitAliases ( XMP_Node * tree, XMP_OptionBits parseOptions, XMPMeta::Err
 			XMP_Node * baseNode = FindChildNode ( baseSchema, basePath[kRootPropStep].step.c_str(), kXMP_ExistingOnly );
 
 			if ( baseNode == 0 ) {
-			
+
 				if ( basePath.size() == 2 ) {
 					// A top-to-top alias, transplant the property.
 					TransplantNamedAlias ( currSchema, propNum, baseSchema, basePath[kRootPropStep].step );
@@ -397,20 +397,20 @@ MoveExplicitAliases ( XMP_Node * tree, XMP_OptionBits parseOptions, XMPMeta::Err
 					baseSchema->children.push_back ( baseNode );
 					TransplantArrayItemAlias ( currSchema, propNum, baseNode, errorCallback );
 				}
-			
+
 			} else if ( basePath.size() == 2 ) {
-			
+
 				// The base node does exist and this is a top-to-top alias. Check for conflicts if
 				// strict aliasing is on. Remove and delete the alias subtree.
 				if ( strictAliasing ) CompareAliasedSubtrees ( currProp, baseNode, errorCallback );
 				currSchema->children.erase ( currSchema->children.begin() + propNum );
 				delete currProp;
-			
+
 			} else {
-			
+
 				// This is an alias to an array item and the array exists. Look for the aliased item.
 				// Then transplant or check & delete as appropriate.
-				
+
 				XMP_Node * itemNode = 0;
 				if ( arrayOptions & kXMP_PropArrayIsAltText ) {
 					XMP_Index xdIndex = LookupLangItem ( baseNode, *xdefaultName );
@@ -418,7 +418,7 @@ MoveExplicitAliases ( XMP_Node * tree, XMP_OptionBits parseOptions, XMPMeta::Err
 				} else if ( ! baseNode->children.empty() ) {
 					itemNode = baseNode->children[0];
 				}
-				
+
 				if ( itemNode == 0 ) {
 					TransplantArrayItemAlias ( currSchema, propNum, baseNode, errorCallback );
 				} else {
@@ -430,7 +430,7 @@ MoveExplicitAliases ( XMP_Node * tree, XMP_OptionBits parseOptions, XMPMeta::Err
 			}
 
 		}	// Property loop
-		
+
 		// Increment the counter or remove an empty schema node.
 		if ( currSchema->children.size() > 0 ) {
 			++schemaNum;
@@ -438,9 +438,9 @@ MoveExplicitAliases ( XMP_Node * tree, XMP_OptionBits parseOptions, XMPMeta::Err
 			delete tree->children[schemaNum];	// ! Delete the schema node itself.
 			tree->children.erase ( tree->children.begin() + schemaNum );
 		}
-		
+
 	}	// Schema loop
-	
+
 }	// MoveExplicitAliases
 
 
@@ -458,7 +458,7 @@ FixGPSTimeStamp ( XMP_Node * exifSchema, XMP_Node * gpsDateTime )
 		return;	// Don't let a bad date stop other things.
 	}
 	if ( (binGPSStamp.year != 0) || (binGPSStamp.month != 0) || (binGPSStamp.day != 0) ) return;
-	
+
 	XMP_Node * otherDate = FindChildNode ( exifSchema, "exif:DateTimeOriginal", kXMP_ExistingOnly );
 	if ( otherDate == 0 ) otherDate = FindChildNode ( exifSchema, "exif:DateTimeDigitized", kXMP_ExistingOnly );
 	if ( otherDate == 0 ) return;
@@ -469,7 +469,7 @@ FixGPSTimeStamp ( XMP_Node * exifSchema, XMP_Node * gpsDateTime )
 	} catch ( ... ) {
 		return;	// Don't let a bad date stop other things.
 	}
-	
+
 	binGPSStamp.year  = binOtherDate.year;
 	binGPSStamp.month = binOtherDate.month;
 	binGPSStamp.day   = binOtherDate.day;
@@ -507,61 +507,61 @@ MigrateAudioCopyright ( XMPMeta * xmp, XMP_Node * dmCopyright )
 {
 
 	try {
-	
+
 		std::string & dmValue = dmCopyright->value;
 		static const char * kDoubleLF = "\xA\xA";
-		
+
 		XMP_Node * dcSchema = FindSchemaNode ( &xmp->tree, kXMP_NS_DC, kXMP_CreateNodes );
 		XMP_Node * dcRightsArray = FindChildNode ( dcSchema, "dc:rights", kXMP_ExistingOnly );
-		
+
 		if ( (dcRightsArray == 0) || dcRightsArray->children.empty() ) {
-		
+
 			// 1. No dc:rights array, create from double linefeed and xmpDM:copyright.
 			dmValue.insert ( 0, kDoubleLF );
 			xmp->SetLocalizedText ( kXMP_NS_DC, "rights", "", "x-default",  dmValue.c_str(), 0 );
-		
+
 		} else {
 
 			std::string xdefaultStr ( "x-default" );
-			
+
 			XMP_Index xdIndex = LookupLangItem ( dcRightsArray, xdefaultStr );
-			
+
 			if ( xdIndex < 0 ) {
 				// 2. No x-default item, create from the first item.
 				XMP_StringPtr firstValue = dcRightsArray->children[0]->value.c_str();
 				xmp->SetLocalizedText ( kXMP_NS_DC, "rights", "", "x-default",  firstValue, 0 );
 				xdIndex = LookupLangItem ( dcRightsArray, xdefaultStr );
 			}
-						
+
 			// 3. Look for a double linefeed in the x-default value.
 			XMP_Assert ( xdIndex == 0 );
 			std::string & defaultValue = dcRightsArray->children[xdIndex]->value;
 			XMP_Index lfPos = static_cast<XMP_Index>( defaultValue.find ( kDoubleLF ));
-			
+
 			if ( lfPos < 0 ) {
-			
+
 				// 3A. No double LF, compare whole values.
 				if ( dmValue != defaultValue ) {
 					// 3A2. Append the xmpDM:copyright to the x-default item.
 					defaultValue += kDoubleLF;
 					defaultValue += dmValue;
 				}
-			
+
 			} else {
-			
+
 				// 3B. Has double LF, compare the tail.
 				if ( defaultValue.compare ( lfPos+2, std::string::npos, dmValue ) != 0 ) {
 					// 3B2. Replace the x-default tail.
 					defaultValue.replace ( lfPos+2, std::string::npos, dmValue );
 				}
-			
+
 			}
 
 		}
-		
+
 		// 4. Get rid of the xmpDM:copyright.
 		xmp->DeleteProperty ( kXMP_NS_DM, "copyright" );
-	
+
 	} catch ( ... ) {
 		// Don't let failures (like a bad dc:rights form) stop other cleanup.
 	}
@@ -581,15 +581,15 @@ RepairAltText ( XMP_Node & tree, XMP_StringPtr schemaNS, XMP_StringPtr arrayName
 {
 	XMP_Node * schemaNode = FindSchemaNode ( &tree, schemaNS, kXMP_ExistingOnly );
 	if ( schemaNode == 0 ) return;
-	
+
 	XMP_Node * arrayNode = FindChildNode ( schemaNode, arrayName, kXMP_ExistingOnly );
 	if ( (arrayNode == 0) || XMP_ArrayIsAltText ( arrayNode->options ) ) return;	// Already OK.
-	
+
 	if ( ! XMP_PropIsArray ( arrayNode->options ) ) return;	// ! Not even an array, leave it alone.
 	// *** Should probably change simple values to LangAlt with 'x-default' item.
-	
+
 	arrayNode->options |= (kXMP_PropArrayIsOrdered | kXMP_PropArrayIsAlternate | kXMP_PropArrayIsAltText);
-	
+
 	for ( int i = static_cast<int>( arrayNode->children.size()-1 ); i >= 0; --i ) {	// ! Need a signed index type.
 
 		XMP_Node * currChild = arrayNode->children[i];
@@ -601,7 +601,7 @@ RepairAltText ( XMP_Node & tree, XMP_StringPtr schemaNS, XMP_StringPtr arrayName
 			arrayNode->children.erase ( arrayNode->children.begin() + i );
 
 		} else if ( ! XMP_PropHasLang ( currChild->options ) ) {
-		
+
 			if ( currChild->value.empty() ) {
 
 				// Delete empty valued children that have no xml:lang.
@@ -636,7 +636,7 @@ void
 TouchUpDataModel ( XMPMeta * xmp, XMPMeta::ErrorCallbackInfo & errorCallback )
 {
 	XMP_Node & tree = xmp->tree;
-	
+
 	// Do special case touch ups for certain schema.
 
 	XMP_Node * currSchema = 0;
@@ -647,7 +647,7 @@ TouchUpDataModel ( XMPMeta * xmp, XMPMeta::ErrorCallbackInfo & errorCallback )
 		// Do a special case fix for exif:GPSTimeStamp.
 		XMP_Node * gpsDateTime = FindChildNode ( currSchema, "exif:GPSTimeStamp", kXMP_ExistingOnly );
 		if ( gpsDateTime != 0 ) FixGPSTimeStamp ( currSchema, gpsDateTime );
-	
+
 		// *** Should probably have RepairAltText change simple values to LangAlt with 'x-default' item.
 		// *** For now just do this for exif:UserComment, the one case we know about, late in cycle fix.
 		XMP_Node * userComment = FindChildNode ( currSchema, "exif:UserComment", kXMP_ExistingOnly );
@@ -684,22 +684,22 @@ TouchUpDataModel ( XMPMeta * xmp, XMPMeta::ErrorCallbackInfo & errorCallback )
 			dcSubject->options &= keepMask;	// Make sure any ordered array bits are clear.
 		}
 	}
-	
+
 	// Fix any broken AltText arrays that we know about.
-	
+
 	RepairAltText ( tree, kXMP_NS_DC, "dc:description" );	// ! Note inclusion of prefixes for direct node lookup!
 	RepairAltText ( tree, kXMP_NS_DC, "dc:rights" );
 	RepairAltText ( tree, kXMP_NS_DC, "dc:title" );
 	RepairAltText ( tree, kXMP_NS_XMP_Rights, "xmpRights:UsageTerms" );
 	RepairAltText ( tree, kXMP_NS_EXIF, "exif:UserComment" );
-	
+
 	// Tweak old XMP: Move an instance ID from rdf:about to the xmpMM:InstanceID property. An old
 	// instance ID usually looks like "uuid:bac965c4-9d87-11d9-9a30-000d936b79c4", plus InDesign
 	// 3.0 wrote them like "bac965c4-9d87-11d9-9a30-000d936b79c4". If the name looks like a UUID
 	// simply move it to xmpMM:InstanceID, don't worry about any existing xmpMM:InstanceID. Both
 	// will only be present when a newer file with the xmpMM:InstanceID property is updated by an
 	// old app that uses rdf:about.
-	
+
 	if ( ! tree.name.empty() ) {
 
 		bool nameIsUUID = false;
@@ -726,7 +726,7 @@ TouchUpDataModel ( XMPMeta * xmp, XMPMeta::ErrorCallbackInfo & errorCallback )
 			}
 
 		}
-		
+
 		if ( nameIsUUID ) {
 
 			XMP_ExpandedXPath expPath;
@@ -781,11 +781,11 @@ static XMP_OptionBits
 DetermineInputEncoding ( const XMP_Uns8 * buffer, size_t length )
 {
 	if ( length < 2 ) return kXMP_EncodeUTF8;
-	
+
 	XMP_Uns8 * uniChar = (XMP_Uns8*)buffer;	// ! Make sure comparisons are unsigned.
-	
+
 	if ( uniChar[0] == 0 ) {
-	
+
 		// These cases are:
 		//   00 nn -- -- - Big endian UTF-16
 		//   00 00 00 nn - Big endian UTF-32
@@ -793,9 +793,9 @@ DetermineInputEncoding ( const XMP_Uns8 * buffer, size_t length )
 
 		if ( (length < 4) || (uniChar[1] != 0) ) return kXMP_EncodeUTF16Big;
 		return kXMP_EncodeUTF32Big;
-		
+
 	} else if ( uniChar[0] < 0x80 ) {
-	
+
 		// These cases are:
 		//   nn mm -- -- - UTF-8, includes EF BB BF case
 		//   nn 00 00 00 - Little endian UTF-32
@@ -806,7 +806,7 @@ DetermineInputEncoding ( const XMP_Uns8 * buffer, size_t length )
 		return kXMP_EncodeUTF32Little;
 
 	} else {
-	
+
 		// These cases are:
 		//   EF BB BF -- - UTF-8
 		//   FE FF -- -- - Big endian UTF-16
@@ -819,7 +819,7 @@ DetermineInputEncoding ( const XMP_Uns8 * buffer, size_t length )
 		return kXMP_EncodeUTF32Little;
 
 	}
-		
+
 }	// DetermineInputEncoding
 
 
@@ -840,19 +840,19 @@ CountUTF8 ( const XMP_Uns8 * charStart, const XMP_Uns8 * bufEnd )
 	XMP_Assert ( charStart < bufEnd );		// Catch this in debug builds.
 	if ( charStart >= bufEnd ) return 0;	// Don't run-on in release builds.
 	if ( (*charStart & 0xC0) != 0xC0 ) return 0;	// Must have at least 2 high bits set.
-	
+
 	int byteCount = 2;
 	XMP_Uns8 firstByte = *charStart;
 	for ( firstByte = firstByte << 2; (firstByte & 0x80) != 0; firstByte = firstByte << 1 ) ++byteCount;
-	
+
 	if ( (charStart + byteCount) > bufEnd ) return -byteCount;
 
 	for ( int i = 1; i < byteCount; ++i ) {
 		if ( (charStart[i] & 0xC0) != 0x80 ) return 0;
 	}
-	
+
 	return byteCount;
-	
+
 }	// CountUTF8
 
 
@@ -870,15 +870,15 @@ CountControlEscape ( const XMP_Uns8 * escStart, const XMP_Uns8 * bufEnd )
 	XMP_Assert ( escStart < bufEnd );	// Catch this in debug builds.
 	if ( escStart >= bufEnd ) return 0;	// Don't run-on in release builds.
 	XMP_Assert ( *escStart == '&' );
-	
+
 	size_t tailLen = bufEnd - escStart;
 	if ( tailLen < 5 ) return -1;	// Don't need a more thorough check, we'll catch it on the next pass.
-	
+
 	if ( strncmp ( (char*)escStart, "&#x", 3 ) != 0 ) return 0;
-	
+
 	XMP_Uns8 escValue = 0;
 	const XMP_Uns8 * escPos = escStart + 3;
-	
+
 	if ( ('0' <= *escPos) && (*escPos <= '9') ) {
 		escValue = *escPos - '0';
 		++escPos;
@@ -889,7 +889,7 @@ CountControlEscape ( const XMP_Uns8 * escStart, const XMP_Uns8 * bufEnd )
 		escValue = *escPos - 'a' + 10;
 		++escPos;
 	}
-	
+
 	if ( ('0' <= *escPos) && (*escPos <= '9') ) {
 		escValue = (escValue << 4) + (*escPos - '0');
 		++escPos;
@@ -900,17 +900,17 @@ CountControlEscape ( const XMP_Uns8 * escStart, const XMP_Uns8 * bufEnd )
 		escValue = (escValue << 4) + (*escPos - 'a' + 10);
 		++escPos;
 	}
-	
+
 	if ( escPos == bufEnd ) return -1;	// Partial escape.
 	if ( *escPos != ';' ) return 0;
-	
+
 	size_t escLen = escPos - escStart + 1;
 	if ( escLen < 5 ) return 0;	// ! Catch "&#x;".
-	
+
 	if ( (escValue == kTab) || (escValue == kLF) || (escValue == kCR) ) return 0;	// An allowed escape.
-	
+
 	return static_cast<int>(escLen);	// Found a full "prohibited" numeric escape.
-	
+
 }	// CountControlEscape
 
 
@@ -947,16 +947,16 @@ ProcessUTF8Portion ( XMLParserAdapter * xmlParser,
 					 bool				last )
 {
 	const XMP_Uns8 * bufEnd = buffer + length;
-	
+
 	const XMP_Uns8 * spanStart = buffer;
 	const XMP_Uns8 * spanEnd;
-		
+
 	for ( spanEnd = spanStart; spanEnd < bufEnd; ++spanEnd ) {
 
 		if ( (0x20 <= *spanEnd) && (*spanEnd <= 0x7E) && (*spanEnd != '&') ) continue;	// A regular ASCII character.
 
 		if ( *spanEnd >= 0x80 ) {
-		
+
 			// See if this is a multi-byte UTF-8 sequence, or a Latin-1 character to replace.
 
 			int uniLen = CountUTF8 ( spanEnd, bufEnd );
@@ -981,7 +981,7 @@ ProcessUTF8Portion ( XMLParserAdapter * xmlParser,
 				spanStart = spanEnd + 1;	// ! The loop increment will do "spanEnd = spanStart".
 
 			}
-		
+
 		} else if ( (*spanEnd < 0x20) || (*spanEnd == 0x7F) ) {
 
 			// Replace ASCII controls other than tab, LF, and CR with a space.
@@ -991,14 +991,14 @@ ProcessUTF8Portion ( XMLParserAdapter * xmlParser,
 			xmlParser->ParseBuffer ( spanStart, (spanEnd - spanStart), false );
 			xmlParser->ParseBuffer ( " ", 1, false );
 			spanStart = spanEnd + 1;	// ! The loop increment will do "spanEnd = spanStart".
-		
+
 		} else {
-		
+
 			// See if this is a numeric escape sequence for a prohibited ASCII control.
-			
+
 			XMP_Assert ( *spanEnd == '&' );
 			int escLen = CountControlEscape ( spanEnd, bufEnd );
-			
+
 			if ( escLen < 0 ) {
 
 				// Have a partial numeric escape in this buffer, wait for more input.
@@ -1017,14 +1017,14 @@ ProcessUTF8Portion ( XMLParserAdapter * xmlParser,
 			}
 
 		}
-		
+
 	}
-	
+
 	XMP_Assert ( spanEnd == bufEnd );
 
 	if ( spanStart < bufEnd ) xmlParser->ParseBuffer ( spanStart, (spanEnd - spanStart), false );
 	if ( last ) xmlParser->ParseBuffer ( " ", 1, true );
-	
+
 	return length;
 
 }	// ProcessUTF8Portion
@@ -1044,7 +1044,7 @@ bool XMPMeta::ProcessXMLBuffer ( XMP_StringPtr buffer, XMP_StringLen xmpSize, bo
 	// order to handle the edge case of single byte buffers.
 
 	XMLParserAdapter & parser = *this->xmlParser;
-		
+
 	if ( parser.charEncoding == XMP_OptionBits(-1) ) {
 
 		if ( (parser.pendingCount == 0) && (xmpSize >= kXMLPendingInputMax) ) {
@@ -1053,7 +1053,7 @@ bool XMPMeta::ProcessXMLBuffer ( XMP_StringPtr buffer, XMP_StringLen xmpSize, bo
 			parser.charEncoding = DetermineInputEncoding ( (XMP_Uns8*)buffer, xmpSize );
 
 		} else {
-		
+
 			// Try to fill the pendingInput buffer before calling DetermineInputEncoding.
 
 			size_t pendingOverlap = kXMLPendingInputMax - parser.pendingCount;
@@ -1066,28 +1066,28 @@ bool XMPMeta::ProcessXMLBuffer ( XMP_StringPtr buffer, XMP_StringLen xmpSize, bo
 
 			if ( (! lastClientCall) && (parser.pendingCount < kXMLPendingInputMax) ) return false;	// Wait for the next buffer.
 			parser.charEncoding = DetermineInputEncoding ( parser.pendingInput, parser.pendingCount );
-			
+
 			#if Trace_ParsingHackery
 				fprintf ( stderr, "XMP Character encoding is %d\n", parser.charEncoding );
 			#endif
-		
+
 		}
 
 	}
-	
+
 	// We have the character encoding. Process UTF-16 and UTF-32 as is. UTF-8 needs special
 	// handling to take care of things like ISO Latin-1 or unescaped ASCII controls.
 
 	XMP_Assert ( parser.charEncoding != XMP_OptionBits(-1) );
 
 	if ( parser.charEncoding != kXMP_EncodeUTF8 ) {
-	
+
 		if ( parser.pendingCount > 0 ) {
 			// Might have pendingInput from the above portion to determine the character encoding.
 			parser.ParseBuffer ( parser.pendingInput, parser.pendingCount, false );
 		}
 		parser.ParseBuffer ( buffer, xmpSize, lastClientCall );
-		
+
 	} else {
 
 		#if Trace_ParsingHackery
@@ -1099,17 +1099,17 @@ bool XMPMeta::ProcessXMLBuffer ( XMP_StringPtr buffer, XMP_StringLen xmpSize, bo
 		// This is done by scanning the input for byte sequences that are not valid UTF-8,
 		// assuming they are Latin-1 characters in the range 0x80..0xFF. This requires saving a
 		// pending input buffer to handle partial UTF-8 sequences at the end of a buffer.
-		
+
 		while ( parser.pendingCount > 0 ) {
-		
+
 			// We've got some leftover input, process it first then continue with the current
 			// buffer. Try to fill the pendingInput buffer before parsing further. We use a loop
 			// for wierd edge cases like a 2 byte input buffer, using 1 byte for pendingInput,
 			// then having a partial UTF-8 end and need to absorb more.
-			
+
 			size_t pendingOverlap = kXMLPendingInputMax - parser.pendingCount;
 			if ( pendingOverlap > xmpSize ) pendingOverlap = xmpSize;
-			
+
 			memcpy ( &parser.pendingInput[parser.pendingCount], buffer, pendingOverlap );	// AUDIT: Count is safe.
 			parser.pendingCount += pendingOverlap;
 			buffer += pendingOverlap;
@@ -1122,7 +1122,7 @@ bool XMPMeta::ProcessXMLBuffer ( XMP_StringPtr buffer, XMP_StringLen xmpSize, bo
 			#if Trace_ParsingHackery
 				fprintf ( stderr, "   ProcessUTF8Portion handled %d pending bytes\n", bytesDone );
 			#endif
-			
+
 			if ( bytesDone == parser.pendingCount ) {
 
 				// Done with all of the pending input, move on to the current buffer.
@@ -1153,9 +1153,9 @@ bool XMPMeta::ProcessXMLBuffer ( XMP_StringPtr buffer, XMP_StringLen xmpSize, bo
 				return false;	// Wait for the next buffer.
 
 			}
-		
+
 		}
-		
+
 		// Done with the pending input, process the current buffer.
 
 		size_t bytesDone = ProcessUTF8Portion ( xmlParser, (XMP_Uns8*)buffer, xmpSize, lastClientCall );
@@ -1163,7 +1163,7 @@ bool XMPMeta::ProcessXMLBuffer ( XMP_StringPtr buffer, XMP_StringLen xmpSize, bo
 		#if Trace_ParsingHackery
 			fprintf ( stderr, "   ProcessUTF8Portion handled %d additional bytes\n", bytesDone );
 		#endif
-		
+
 		if ( bytesDone < xmpSize ) {
 
 			XMP_Assert ( ! lastClientCall );
@@ -1177,7 +1177,7 @@ bool XMPMeta::ProcessXMLBuffer ( XMP_StringPtr buffer, XMP_StringLen xmpSize, bo
 		}
 
 	}
-	
+
 	return true;	// This buffer has been processed.
 
 }	// ProcessXMLBuffer
@@ -1189,7 +1189,7 @@ bool XMPMeta::ProcessXMLBuffer ( XMP_StringPtr buffer, XMP_StringLen xmpSize, bo
 
 void XMPMeta::ProcessXMLTree ( XMP_OptionBits options )
 {
-		
+
 	#if XMP_DebugBuild && DumpXMLParseTree
 		if ( this->xmlParser->parseLog == 0 ) this->xmlParser->parseLog = stdout;
 		DumpXMLTree ( this->xmlParser->parseLog, this->xmlParser->tree, 0 );
@@ -1204,7 +1204,7 @@ void XMPMeta::ProcessXMLTree ( XMP_OptionBits options )
 		NormalizeDCArrays ( &this->tree );
 		if ( this->tree.options & kXMP_PropHasAliases ) MoveExplicitAliases ( &this->tree, options, this->errorCallback );
 		TouchUpDataModel ( this, this->errorCallback );
-		
+
 		// Delete empty schema nodes. Do this last, other cleanup can make empty schema.
 		size_t schemaNum = 0;
 		while ( schemaNum < this->tree.children.size() ) {
@@ -1216,7 +1216,7 @@ void XMPMeta::ProcessXMLTree ( XMP_OptionBits options )
 				this->tree.children.erase ( this->tree.children.begin() + schemaNum );
 			}
 		}
-		
+
 	}
 
 }	// ProcessXMLTree
@@ -1245,27 +1245,27 @@ XMPMeta::ParseFromBuffer ( XMP_StringPtr  buffer,
 {
 	if ( (buffer == 0) && (xmpSize != 0) ) XMP_Throw ( "Null parse buffer", kXMPErr_BadParam );
 	if (xmpSize == kXMP_UseNullTermination) xmpSize = static_cast<XMP_Index>(strnlen_safe(buffer, Max_XMP_Uns32));
-	
+
 	const bool lastClientCall = ((options & kXMP_ParseMoreBuffers) == 0);	// *** Could use FlagIsSet & FlagIsClear macros.
-	
+
 	if ( this->xmlParser == 0 ) {
 		this->tree.ClearNode();	// Make sure the target XMP object is totally empty.
 		if ( (xmpSize == 0) && lastClientCall ) return;	// Tolerate empty parse. Expat complains if there are no XML elements.
 		this->xmlParser = XMP_NewExpatAdapter ( ExpatAdapter::kUseGlobalNamespaces );
 		this->xmlParser->SetErrorCallback ( &this->errorCallback );
 	}
-	
+
 	try {	// Cleanup the tree and xmlParser if anything fails.
-	
+
 		bool done = this->ProcessXMLBuffer ( buffer, xmpSize, lastClientCall );
 		if ( ! done ) return;	// Wait for the next buffer.
-		
+
 		if ( lastClientCall ) {
 			this->ProcessXMLTree ( options );
 			delete this->xmlParser;
 			this->xmlParser = 0;
 		}
-		
+
 	} catch ( ... ) {
 
 		delete this->xmlParser;
@@ -1273,7 +1273,7 @@ XMPMeta::ParseFromBuffer ( XMP_StringPtr  buffer,
 		throw;
 
 	}
-	
+
 }	// ParseFromBuffer
 
 // =================================================================================================

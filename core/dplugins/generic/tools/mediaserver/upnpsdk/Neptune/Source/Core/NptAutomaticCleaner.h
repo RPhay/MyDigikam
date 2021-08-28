@@ -47,24 +47,24 @@ public:
     public:
         virtual ~Singleton() {}
     };
-    
+
     static NPT_AutomaticCleaner* GetInstance();
-    
+
     // destructor
     ~NPT_AutomaticCleaner();
-    
+
     // methods
     NPT_Result Register(Singleton* singleton);
     NPT_Result RegisterTlsContext(Singleton* singleton);
     NPT_Result RegisterHttpConnectionManager(Singleton* singleton);
-    
+
 private:
     // class members
     static NPT_AutomaticCleaner Instance;
-    
+
     // constructor
     NPT_AutomaticCleaner();
-    
+
     // members
     NPT_List<Singleton*> m_Singletons;
     Singleton* m_TlsContext;

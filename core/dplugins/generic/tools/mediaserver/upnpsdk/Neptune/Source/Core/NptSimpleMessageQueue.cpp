@@ -46,7 +46,7 @@ NPT_SET_LOCAL_LOGGER("neptune.message-queue")
 +---------------------------------------------------------------------*/
 struct NPT_SimpleMessageCapsule
 {
-    NPT_SimpleMessageCapsule(NPT_Message* message, 
+    NPT_SimpleMessageCapsule(NPT_Message* message,
                              NPT_MessageHandler* handler);
     ~NPT_SimpleMessageCapsule();
     NPT_Message*        m_Message;
@@ -59,7 +59,7 @@ struct NPT_SimpleMessageCapsule
 +---------------------------------------------------------------------*/
 NPT_SimpleMessageCapsule::NPT_SimpleMessageCapsule(NPT_Message* message,
                                                    NPT_MessageHandler* handler) :
-    m_Message(message), 
+    m_Message(message),
     m_Handler(handler),
     m_Proxy(NPT_DYNAMIC_CAST(NPT_MessageHandlerProxy, handler))
 {
@@ -94,7 +94,7 @@ NPT_SimpleMessageQueue::~NPT_SimpleMessageQueue()
 |   NPT_SimpleMessageQueue::QueueMessage
 +---------------------------------------------------------------------*/
 NPT_Result
-NPT_SimpleMessageQueue::QueueMessage(NPT_Message*        message, 
+NPT_SimpleMessageQueue::QueueMessage(NPT_Message*        message,
                                      NPT_MessageHandler* handler)
 {
     // push the message on the queue, with the handler reference
@@ -111,7 +111,7 @@ NPT_Result
 NPT_SimpleMessageQueue::PumpMessage(NPT_Timeout timeout /* = NPT_TIMEOUT_INFINITE */)
 {
     NPT_SimpleMessageCapsule* capsule;
-    
+
     NPT_LOG_FINEST_1("popping message from queue, timeout=%d", timeout);
     NPT_Result result = m_Queue.Pop(capsule, timeout);
     if (NPT_SUCCEEDED(result) && capsule) {

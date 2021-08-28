@@ -26,7 +26,7 @@
 
 #include "focuspointgroup.h"
 
-// Local includes 
+// Local includes
 #include "focuspointitem.h"
 
 

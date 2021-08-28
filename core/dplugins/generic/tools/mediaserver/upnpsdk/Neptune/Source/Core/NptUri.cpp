@@ -244,7 +244,7 @@ NPT_Uri::PercentEncode(const char* str, const char* chars, bool encode_percents)
             encoded += c;
         }
     }
-    
+
     return encoded;
 }
 
@@ -285,7 +285,7 @@ NPT_Uri::PercentDecode(const char* str)
 
 /*----------------------------------------------------------------------
 |   NPT_UrlQuery::NPT_UrlQuery
-+---------------------------------------------------------------------*/ 
++---------------------------------------------------------------------*/
 NPT_UrlQuery::NPT_UrlQuery(const char* query)
 {
     Parse(query);
@@ -293,17 +293,17 @@ NPT_UrlQuery::NPT_UrlQuery(const char* query)
 
 /*----------------------------------------------------------------------
 |   NPT_UrlQuery::UrlEncode
-+---------------------------------------------------------------------*/ 
++---------------------------------------------------------------------*/
 NPT_String
 NPT_UrlQuery::UrlEncode(const char* str, bool encode_percents)
 {
     NPT_String encoded = NPT_Uri::PercentEncode(
-        str, 
+        str,
         ";/?:@&=+$,"    /* reserved as defined in RFC 2396 */
         "\"#<>\\^`{|}", /* other unsafe chars              */
         encode_percents);
     encoded.Replace(' ','+');
-    
+
     return encoded;
 }
 
@@ -321,7 +321,7 @@ NPT_UrlQuery::UrlDecode(const char* str)
 /*----------------------------------------------------------------------
 |   NPT_UrlQuery::Field::Field
 +---------------------------------------------------------------------*/
-NPT_UrlQuery::Field::Field(const char* name, const char* value, bool encoded) 
+NPT_UrlQuery::Field::Field(const char* name, const char* value, bool encoded)
 {
     if (encoded) {
         m_Name = name;
@@ -335,7 +335,7 @@ NPT_UrlQuery::Field::Field(const char* name, const char* value, bool encoded)
 /*----------------------------------------------------------------------
 |   NPT_UrlQuery::ToString
 +---------------------------------------------------------------------*/
-NPT_String 
+NPT_String
 NPT_UrlQuery::ToString()
 {
     NPT_String encoded;
@@ -357,7 +357,7 @@ NPT_UrlQuery::ToString()
 /*----------------------------------------------------------------------
 |   NPT_UrlQuery::Parse
 +---------------------------------------------------------------------*/
-NPT_Result 
+NPT_Result
 NPT_UrlQuery::Parse(const char* query)
 {
     const char* cursor = query;
@@ -366,7 +366,7 @@ NPT_UrlQuery::Parse(const char* query)
     bool        in_name = true;
     do {
         if (*cursor == '\0' || *cursor == '&') {
-            AddField(name, value, true);   
+            AddField(name, value, true);
             name.SetLength(0);
             value.SetLength(0);
             in_name = true;
@@ -380,14 +380,14 @@ NPT_UrlQuery::Parse(const char* query)
             }
         }
     } while (*cursor++);
-    
+
     return NPT_SUCCESS;
 }
 
 /*----------------------------------------------------------------------
 |   NPT_UrlQuery::AddField
 +---------------------------------------------------------------------*/
-NPT_Result 
+NPT_Result
 NPT_UrlQuery::AddField(const char* name, const char* value, bool encoded)
 {
     return m_Fields.Add(Field(name, value, encoded));
@@ -426,7 +426,7 @@ NPT_UrlQuery::SetField(const char* name, const char* value, bool encoded)
 /*----------------------------------------------------------------------
 |   NPT_UrlQuery::GetField
 +---------------------------------------------------------------------*/
-const char* 
+const char*
 NPT_UrlQuery::GetField(const char* name)
 {
     NPT_String ename = UrlEncode(name);
@@ -470,7 +470,7 @@ NPT_Url::NPT_Url() :
 /*----------------------------------------------------------------------
 |   NPT_Url::NPT_Url
 +---------------------------------------------------------------------*/
-NPT_Url::NPT_Url(const char* url, NPT_UInt16 default_port) : 
+NPT_Url::NPT_Url(const char* url, NPT_UInt16 default_port) :
     m_HostIsIpv6Address(false),
     m_Port(NPT_URL_INVALID_PORT),
     m_HasQuery(false),
@@ -494,7 +494,7 @@ NPT_Url::Parse(const char* url, NPT_UInt16 default_port)
     // set the uri scheme
     NPT_Result result = SetSchemeFromUri(url);
     if (NPT_FAILED(result)) return result;
-    
+
     // set the default port
     if (default_port) {
         m_Port = default_port;
@@ -505,7 +505,7 @@ NPT_Url::Parse(const char* url, NPT_UInt16 default_port)
             default:                                                   break;
         }
     }
-    
+
     // move to the scheme-specific part
     url += m_Scheme.GetLength()+1;
 
@@ -540,7 +540,7 @@ NPT_Url::Parse(const char* url, NPT_UInt16 default_port)
                 state = NPT_URL_PARSER_STATE_HOST;
             }
             break;
-            
+
           case NPT_URL_PARSER_STATE_HOST:
             if (c == '[' && url == mark+1) {
                 // start of an IPv6 address
@@ -596,7 +596,7 @@ NPT_Url::Parse(const char* url, NPT_UInt16 default_port)
 
     // if we get here, the path is implicit
     m_Path = "/";
-    
+
     return NPT_SUCCESS;
 }
 
@@ -604,8 +604,8 @@ NPT_Url::Parse(const char* url, NPT_UInt16 default_port)
 |   NPT_Url::NPT_Url
 +---------------------------------------------------------------------*/
 NPT_Url::NPT_Url(const char* scheme,
-                 const char* host, 
-                 NPT_UInt16  port, 
+                 const char* host,
+                 NPT_UInt16  port,
                  const char* path,
                  const char* query,
                  const char* fragment) :
@@ -625,7 +625,7 @@ NPT_Url::NPT_Url(const char* scheme,
         m_HostIsIpv6Address = true;
         m_Host = m_Host.SubString(1, m_Host.GetLength()-2);
     }
-}    
+}
 
 /*----------------------------------------------------------------------
 |   NPT_Url::Reset
@@ -654,7 +654,7 @@ NPT_Url::IsValid() const
         case SCHEME_ID_HTTPS:
             return m_Port != NPT_URL_INVALID_PORT && !m_Host.IsEmpty();
             break;
-            
+
         default:
             return !m_Scheme.IsEmpty();
     }
@@ -663,7 +663,7 @@ NPT_Url::IsValid() const
 /*----------------------------------------------------------------------
 |   NPT_Url::SetHost
 +---------------------------------------------------------------------*/
-NPT_Result 
+NPT_Result
 NPT_Url::SetHost(const char* host)
 {
     const char* port;
@@ -698,14 +698,14 @@ NPT_Url::SetHost(const char* host)
             return NPT_ERROR_INVALID_SYNTAX;
         }
     }
-    
+
     return NPT_SUCCESS;
 }
 
 /*----------------------------------------------------------------------
 |   NPT_Url::SetPort
 +---------------------------------------------------------------------*/
-NPT_Result 
+NPT_Result
 NPT_Url::SetPort(NPT_UInt16 port)
 {
     m_Port = port;
@@ -715,15 +715,15 @@ NPT_Url::SetPort(NPT_UInt16 port)
 /*----------------------------------------------------------------------
 |   NPT_Url::SetPath
 +---------------------------------------------------------------------*/
-NPT_Result 
+NPT_Result
 NPT_Url::SetPath(const char* path, bool encoded)
 {
     if (encoded) {
         m_Path = path;
     } else {
-        m_Path = PercentEncode(path, PathCharsToEncode);    
+        m_Path = PercentEncode(path, PathCharsToEncode);
     }
-    
+
     return NPT_SUCCESS;
 }
 
@@ -746,10 +746,10 @@ NPT_Url::ParsePathPlus(const char* path_plus)
 #ifdef _WIN32
     // Skip the leading '/' if there is an absolute path starting with
     // a drive letter on Windows.
-    if (path_plus[0] == '/' && 
+    if (path_plus[0] == '/' &&
         ((path_plus[1] >= 'a' && path_plus[1] <= 'z') ||
          (path_plus[1] >= 'A' && path_plus[1] <= 'Z')) &&
-        path_plus[2] == ':') 
+        path_plus[2] == ':')
     {
         ++path_plus;
     }
@@ -792,7 +792,7 @@ NPT_Url::ParsePathPlus(const char* path_plus)
             }
             break;
 
-          default: 
+          default:
             break;
         }
     } while (c);
@@ -803,7 +803,7 @@ NPT_Url::ParsePathPlus(const char* path_plus)
 /*----------------------------------------------------------------------
 |   NPT_Url::SetQuery
 +---------------------------------------------------------------------*/
-NPT_Result 
+NPT_Result
 NPT_Url::SetQuery(const char* query, bool encoded)
 {
     if (encoded) {
@@ -819,7 +819,7 @@ NPT_Url::SetQuery(const char* query, bool encoded)
 /*----------------------------------------------------------------------
 |   NPT_Url::SetFragment
 +---------------------------------------------------------------------*/
-NPT_Result 
+NPT_Result
 NPT_Url::SetFragment(const char* fragment, bool encoded)
 {
     if (encoded) {
@@ -851,7 +851,7 @@ NPT_Url::ToRequestString(bool with_fragment) const
       	// prepend a '/' if the path starts with the drive letter on Windows
       	if (((m_Path[0] >= 'a' && m_Path[0] <= 'z') ||
       		 (m_Path[0] >= 'A' && m_Path[0] <= 'Z')) &&
-      	    m_Path[1] == ':') 
+      	    m_Path[1] == ':')
       	{
       		result += "/";
       	}
@@ -882,7 +882,7 @@ NPT_Url::ToStringWithDefaultPort(NPT_UInt16 default_port, bool with_fragment) co
     if (m_HostIsIpv6Address) {
         length += 2;
     }
-    
+
     result.Reserve(length);
     result += m_Scheme;
     result += "://";

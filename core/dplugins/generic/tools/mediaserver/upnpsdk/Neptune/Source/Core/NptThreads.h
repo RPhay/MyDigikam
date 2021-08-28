@@ -98,9 +98,9 @@ class NPT_AutoLock
         m_Mutex.Lock();
     }
     ~NPT_AutoLock() {
-        m_Mutex.Unlock(); 
+        m_Mutex.Unlock();
     }
-        
+
  private:
     // members
     NPT_Mutex& m_Mutex;
@@ -109,7 +109,7 @@ class NPT_AutoLock
 /*----------------------------------------------------------------------
 |   NPT_Lock
 +---------------------------------------------------------------------*/
-template <typename T> 
+template <typename T>
 class NPT_Lock : public T,
                  public NPT_Mutex
 {
@@ -124,7 +124,7 @@ public:
     static NPT_Mutex& GetInstance() {
         return Instance;
     }
-    
+
 private:
     static NPT_Mutex Instance;
 };
@@ -152,17 +152,17 @@ class NPT_SharedVariable : public NPT_SharedVariableInterface
     // methods
                NPT_SharedVariable(int value = 0);
               ~NPT_SharedVariable() { delete m_Delegate; }
-    void SetValue(int value) { 
-        m_Delegate->SetValue(value); 
+    void SetValue(int value) {
+        m_Delegate->SetValue(value);
     }
-    int GetValue() { 
-        return m_Delegate->GetValue(); 
+    int GetValue() {
+        return m_Delegate->GetValue();
     }
-    NPT_Result WaitUntilEquals(int value, NPT_Timeout timeout = NPT_TIMEOUT_INFINITE) { 
-        return m_Delegate->WaitUntilEquals(value, timeout); 
+    NPT_Result WaitUntilEquals(int value, NPT_Timeout timeout = NPT_TIMEOUT_INFINITE) {
+        return m_Delegate->WaitUntilEquals(value, timeout);
     }
-    NPT_Result WaitWhileEquals(int value, NPT_Timeout timeout = NPT_TIMEOUT_INFINITE) { 
-        return m_Delegate->WaitWhileEquals(value, timeout); 
+    NPT_Result WaitWhileEquals(int value, NPT_Timeout timeout = NPT_TIMEOUT_INFINITE) {
+        return m_Delegate->WaitWhileEquals(value, timeout);
     }
 
  private:
@@ -209,7 +209,7 @@ class NPT_AtomicVariable : public NPT_AtomicVariableInterface
 class NPT_Runnable
 {
 public:
-    virtual ~NPT_Runnable() {}  
+    virtual ~NPT_Runnable() {}
     virtual void Run() = 0;
 };
 
@@ -223,7 +223,7 @@ class NPT_ThreadInterface: public NPT_Runnable, public NPT_Interruptible
     virtual           ~NPT_ThreadInterface() {}
     virtual NPT_Result Start() = 0;
     virtual NPT_Result Wait(NPT_Timeout timeout = NPT_TIMEOUT_INFINITE) = 0;
-    virtual NPT_Result SetPriority(int /*priority*/) { return NPT_SUCCESS; } 
+    virtual NPT_Result SetPriority(int /*priority*/) { return NPT_SUCCESS; }
     virtual NPT_Result CancelBlockerSocket() = 0;
     virtual NPT_Result GetPriority(int& priority) = 0;
 };
@@ -251,15 +251,15 @@ class NPT_Thread : public NPT_ThreadInterface
     NPT_Result CancelBlockerSocket() { return m_Delegate->CancelBlockerSocket(); }
 
     // NPT_ThreadInterface methods
-    NPT_Result Start() { 
-        return m_Delegate->Start(); 
-    } 
-    NPT_Result Wait(NPT_Timeout timeout = NPT_TIMEOUT_INFINITE)  { 
-        return m_Delegate->Wait(timeout);  
+    NPT_Result Start() {
+        return m_Delegate->Start();
+    }
+    NPT_Result Wait(NPT_Timeout timeout = NPT_TIMEOUT_INFINITE)  {
+        return m_Delegate->Wait(timeout);
     }
     NPT_Result SetPriority(int priority) {
         return m_Delegate->SetPriority(priority);
-    }    
+    }
     NPT_Result GetPriority(int& priority) {
         return m_Delegate->GetPriority(priority);
     }

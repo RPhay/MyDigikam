@@ -11,14 +11,14 @@
 | as published by the Free Software Foundation; either version 2
 | of the License, or (at your option) any later version.
 |
-| OEMs, ISVs, VARs and other distributors that combine and 
+| OEMs, ISVs, VARs and other distributors that combine and
 | distribute commercially licensed software with Platinum software
 | and do not wish to distribute the source code for the commercially
 | licensed software under version 2, or (at your option) any later
 | version, of the GNU General Public License (the "GPL") must enter
 | into a commercial license agreement with Plutinosoft, LLC.
 | licensing@plutinosoft.com
-| 
+|
 | This program is distributed in the hope that it will be useful,
 | but WITHOUT ANY WARRANTY; without even the implied warranty of
 | MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
@@ -26,7 +26,7 @@
 |
 | You should have received a copy of the GNU General Public License
 | along with this program; see the file LICENSE.txt. If not, write to
-| the Free Software Foundation, Inc., 
+| the Free Software Foundation, Inc.,
 | 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 | http://www.gnu.org/licenses/gpl-2.0.html
 |
@@ -53,7 +53,7 @@ PLT_MicroMediaController::PLT_MicroMediaController(PLT_CtrlPointReference& ctrlP
     PLT_MediaController(ctrlPoint)
 {
     // create the stack that will be the directory where the
-    // user is currently browsing. 
+    // user is currently browsing.
     // push the root directory onto the directory stack.
     m_CurBrowseDirectoryStack.Push("0");
 
@@ -91,14 +91,14 @@ static void strchomp(char* str)
 /*----------------------------------------------------------------------
 |   PLT_MicroMediaController::ChooseIDFromTable
 +---------------------------------------------------------------------*/
-/* 
+/*
  * Presents a list to the user, allows the user to choose one item.
  *
  * Parameters:
  *      PLT_StringMap: A map that contains the set of items from
  *                        which the user should choose.  The key should be a unique ID,
- *                       and the value should be a string describing the item. 
- *       returns a NPT_String with the unique ID. 
+ *                       and the value should be a string describing the item.
+ *       returns a NPT_String with the unique ID.
  */
 const char*
 PLT_MicroMediaController::ChooseIDFromTable(PLT_StringMap& table)
@@ -107,7 +107,7 @@ PLT_MicroMediaController::ChooseIDFromTable(PLT_StringMap& table)
 
     NPT_List<PLT_StringMapEntry*> entries = table.GetEntries();
     if (entries.GetItemCount() == 0) {
-        printf("None available\n"); 
+        printf("None available\n");
     } else {
         // display the list of entries
         NPT_List<PLT_StringMapEntry*>::Iterator entry = entries.GetFirstItem();
@@ -131,7 +131,7 @@ PLT_MicroMediaController::ChooseIDFromTable(PLT_StringMap& table)
                 printf("Please choose one of the above, or 0 for none\n");
                 watchdog--;
                 index = 0;
-            } else {    
+            } else {
                 watchdog = 0;
             }
         }
@@ -166,17 +166,17 @@ PLT_MicroMediaController::PopDirectoryStackToRoot(void)
 /*----------------------------------------------------------------------
 |   PLT_MicroMediaController::OnMSAdded
 +---------------------------------------------------------------------*/
-bool 
-PLT_MicroMediaController::OnMSAdded(PLT_DeviceDataReference& device) 
-{     
+bool
+PLT_MicroMediaController::OnMSAdded(PLT_DeviceDataReference& device)
+{
     // Issue special action upon discovering MediaConnect server
     PLT_Service* service;
     if (NPT_SUCCEEDED(device->FindServiceByType("urn:microsoft.com:service:X_MS_MediaReceiverRegistrar:*", service))) {
         PLT_ActionReference action;
         PLT_SyncMediaBrowser::m_CtrlPoint->CreateAction(
-            device, 
-            "urn:microsoft.com:service:X_MS_MediaReceiverRegistrar:1", 
-            "IsAuthorized", 
+            device,
+            "urn:microsoft.com:service:X_MS_MediaReceiverRegistrar:1",
+            "IsAuthorized",
             action);
         if (!action.IsNull()) {
             action->SetArgumentValue("DeviceID", "");
@@ -184,9 +184,9 @@ PLT_MicroMediaController::OnMSAdded(PLT_DeviceDataReference& device)
         }
 
         PLT_SyncMediaBrowser::m_CtrlPoint->CreateAction(
-            device, 
-            "urn:microsoft.com:service:X_MS_MediaReceiverRegistrar:1", 
-            "IsValidated", 
+            device,
+            "urn:microsoft.com:service:X_MS_MediaReceiverRegistrar:1",
+            "IsValidated",
             action);
         if (!action.IsNull()) {
             action->SetArgumentValue("DeviceID", "");
@@ -194,7 +194,7 @@ PLT_MicroMediaController::OnMSAdded(PLT_DeviceDataReference& device)
         }
     }
 
-    return true; 
+    return true;
 }
 
 /*----------------------------------------------------------------------
@@ -211,7 +211,7 @@ PLT_MicroMediaController::OnMRAdded(PLT_DeviceDataReference& device)
         NPT_AutoLock lock(m_MediaRenderers);
         m_MediaRenderers.Put(uuid, device);
     }
-    
+
     return true;
 }
 
@@ -296,7 +296,7 @@ PLT_MicroMediaController::DoBrowse(const char* object_id, /* = NULL */
 {
     NPT_Result res = NPT_FAILURE;
     PLT_DeviceDataReference device;
-    
+
     GetCurMediaServer(device);
     if (!device.IsNull()) {
         NPT_String cur_object_id;
@@ -304,10 +304,10 @@ PLT_MicroMediaController::DoBrowse(const char* object_id, /* = NULL */
 
         // send off the browse packet and block
         res = BrowseSync(
-            device, 
-            object_id?object_id:(const char*)cur_object_id, 
-            m_MostRecentBrowseResults, 
-            metadata);      
+            device,
+            object_id?object_id:(const char*)cur_object_id,
+            m_MostRecentBrowseResults,
+            metadata);
     }
 
     return res;
@@ -354,7 +354,7 @@ PLT_MicroMediaController::ChooseDevice(const NPT_Lock<PLT_DeviceMap>& deviceList
     NPT_String               chosenUUID;
     NPT_AutoLock             lock(m_MediaServers);
 
-    // create a map with the device UDN -> device Name 
+    // create a map with the device UDN -> device Name
     const NPT_List<PLT_DeviceMapEntry*>& entries = deviceList.GetEntries();
     NPT_List<PLT_DeviceMapEntry*>::Iterator entry = entries.GetFirstItem();
     while (entry) {
@@ -377,7 +377,7 @@ PLT_MicroMediaController::ChooseDevice(const NPT_Lock<PLT_DeviceMap>& deviceList
 /*----------------------------------------------------------------------
 |   PLT_MicroMediaController::HandleCmd_setms
 +---------------------------------------------------------------------*/
-void 
+void
 PLT_MicroMediaController::HandleCmd_setms()
 {
     NPT_AutoLock lock(m_CurMediaServerLock);
@@ -389,7 +389,7 @@ PLT_MicroMediaController::HandleCmd_setms()
 /*----------------------------------------------------------------------
 |   PLT_MicroMediaController::HandleCmd_setmr
 +---------------------------------------------------------------------*/
-void 
+void
 PLT_MicroMediaController::HandleCmd_setmr()
 {
     NPT_AutoLock lock(m_CurMediaRendererLock);
@@ -495,10 +495,10 @@ PLT_MicroMediaController::HandleCmd_download()
     NPT_String              object_id;
     PLT_StringMap           tracks;
     PLT_DeviceDataReference device;
-    
+
     // issue a browse
     DoBrowse();
-    
+
     if (!m_MostRecentBrowseResults.IsNull()) {
         // create a map item id -> item title
         NPT_List<PLT_MediaObject*>::Iterator item = m_MostRecentBrowseResults->GetFirstItem();
@@ -508,19 +508,19 @@ PLT_MicroMediaController::HandleCmd_download()
             }
             ++item;
         }
-        
+
         // let the user choose which one
         object_id = ChooseIDFromTable(tracks);
-        
+
         if (object_id.GetLength()) {
             // issue a browse with metadata
             DoBrowse(object_id, true);
-            
+
             // look back for the PLT_MediaItem in the results
             PLT_MediaObject* track = NULL;
             if (!m_MostRecentBrowseResults.IsNull() &&
                 NPT_SUCCEEDED(NPT_ContainerFind(*m_MostRecentBrowseResults, PLT_MediaItemIDFinder(object_id), track))) {
-                
+
                 if (track->m_Resources.GetItemCount() > 0) {
                     printf("\tResource[0].uri: %s\n", track->m_Resources[0].m_Uri.GetChars());
                     printf("\n");
@@ -530,16 +530,16 @@ PLT_MicroMediaController::HandleCmd_download()
                         NPT_String filename = NPT_FilePath::BaseName(url.GetPath(true).GetChars(), false);
                         NPT_String extension = NPT_FilePath::FileExtension(url.GetPath(true).GetChars());
                         printf("Downloading %s%s\n", filename.GetChars(), extension.GetChars());
-                        
+
                         for (int i=0; i<3; i++) {
                             NPT_String filepath = NPT_String::Format("%s_%d%s", filename.GetChars(), i, extension.GetChars());
-                            
+
                             // Open file for writing
                             NPT_File file(filepath);
                             file.Open(NPT_FILE_OPEN_MODE_WRITE | NPT_FILE_OPEN_MODE_CREATE | NPT_FILE_OPEN_MODE_TRUNCATE);
                             NPT_OutputStreamReference output;
                             file.GetOutputStream(output);
-                            
+
                             // trigger 3 download
                             PLT_Downloader* downloader = new PLT_Downloader(url, output);
                             NPT_TimeInterval delay(5.);
@@ -553,7 +553,7 @@ PLT_MicroMediaController::HandleCmd_download()
                 printf("Couldn't find the track\n");
             }
         }
-        
+
         m_MostRecentBrowseResults = NULL;
     }
 }
@@ -678,8 +678,8 @@ PLT_MicroMediaController::HandleCmd_open()
                         }
 
                         // invoke the setUri
-                        printf("Issuing SetAVTransportURI with url=%s & didl=%s", 
-                            (const char*)track->m_Resources[resource_index].m_Uri, 
+                        printf("Issuing SetAVTransportURI with url=%s & didl=%s",
+                            (const char*)track->m_Resources[resource_index].m_Uri,
                             (const char*)track->m_Didl);
                         SetAVTransportURI(device, 0, track->m_Resources[resource_index].m_Uri, track->m_Didl, NULL);
                     } else {
@@ -725,7 +725,7 @@ PLT_MicroMediaController::HandleCmd_seek(const char* command)
 
         args.Erase(args.GetFirstItem());
         target = NPT_String::Join(args, " ");
-        
+
         Seek(device, 0, (target.Find(":")!=-1)?"REL_TIME":"X_DLNA_REL_BYTE", target, NULL);
     }
 }
@@ -809,7 +809,7 @@ PLT_MicroMediaController::HandleCmd_help()
 /*----------------------------------------------------------------------
 |   PLT_MicroMediaController::ProcessCommandLoop
 +---------------------------------------------------------------------*/
-void 
+void
 PLT_MicroMediaController::ProcessCommandLoop()
 {
     char command[2048];

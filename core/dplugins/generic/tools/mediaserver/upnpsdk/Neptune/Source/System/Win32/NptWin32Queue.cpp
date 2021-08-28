@@ -46,7 +46,7 @@ public:
     // methods
                NPT_Win32Queue(NPT_Cardinal max_items);
               ~NPT_Win32Queue();
-    NPT_Result Push(NPT_QueueItem* item, NPT_Timeout timeout); 
+    NPT_Result Push(NPT_QueueItem* item, NPT_Timeout timeout);
     NPT_Result Pop(NPT_QueueItem*& item, NPT_Timeout timeout);
     NPT_Result Peek(NPT_QueueItem*& item, NPT_Timeout timeout);
 
@@ -73,7 +73,7 @@ private:
 /*----------------------------------------------------------------------
 |   NPT_Win32Queue::NPT_Win32Queue
 +---------------------------------------------------------------------*/
-NPT_Win32Queue::NPT_Win32Queue(NPT_Cardinal max_items) : 
+NPT_Win32Queue::NPT_Win32Queue(NPT_Cardinal max_items) :
     m_MaxItems(max_items)
 {
 #if !defined(WINAPI_FAMILY) || WINAPI_FAMILY == WINAPI_FAMILY_DESKTOP_APP
@@ -146,7 +146,7 @@ NPT_Win32Queue::Pop(NPT_QueueItem*& item, NPT_Timeout timeout)
 {
     // default value
     item = NULL;
-    
+
     // lock the mutex that protects the list
     NPT_CHECK(m_Mutex.Lock());
 
@@ -171,7 +171,7 @@ NPT_Win32Queue::Pop(NPT_QueueItem*& item, NPT_Timeout timeout)
     } else {
         result = m_Items.PopHead(item);
     }
-    
+
     if (m_MaxItems && (result == NPT_SUCCESS)) {
         // wake up the threads waiting to push
         m_CanPushCondition->Signal();
@@ -179,7 +179,7 @@ NPT_Win32Queue::Pop(NPT_QueueItem*& item, NPT_Timeout timeout)
 
     // unlock the mutex
     m_Mutex.Unlock();
- 
+
     return result;
 }
 
@@ -191,7 +191,7 @@ NPT_Win32Queue::Peek(NPT_QueueItem*& item, NPT_Timeout timeout)
 {
     // default value
     item = NULL;
-    
+
     // lock the mutex that protects the list
     NPT_CHECK(m_Mutex.Lock());
 

@@ -3,7 +3,7 @@
  * This file is a part of digiKam project
  * https://www.digikam.org
  *
- * Date        : 
+ * Date        :
  * Description : Extraction of focus points by exiftool data
  *
  * Copyright (C) 2020-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
@@ -36,10 +36,10 @@ namespace Digikam
 namespace NikonInternal
 {
 
-FocusPoint create_af_point(float imageWidth, float imageHeight, 
-                           float afPointWidth, float afPointHeight, 
+FocusPoint create_af_point(float imageWidth, float imageHeight,
+                           float afPointWidth, float afPointHeight,
                            float af_x_position, float af_y_position)
-{    
+{
     return FocusPoint(af_x_position / imageWidth,
                       af_y_position / imageHeight,
                       afPointWidth  / imageWidth,
@@ -64,7 +64,7 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_nikon() con
 
     // Get image size
     QVariant imageWidth, imageHeight;
-    
+
     imageWidth = findValueFirstMatch(QStringList()
                                     <<QLatin1String("MakerNotes.Nikon.Camera.AFImageWidth")
                                     <<QLatin1String("EXIF.ExifIFD.Image.ExifImageWidth")
@@ -78,17 +78,17 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_nikon() con
     {
         return getAFPoints_default();
     }
-    
+
     // Get size of point
     QVariant afPointWidth = findValue(TagNameRoot,QLatin1String("AFAreaWidth"));
     QVariant afPointHeight = findValue(TagNameRoot,QLatin1String("AFAreaHeight"));
 
-    
+
     if ((afPointWidth.isNull()) || (afPointHeight.isNull()))
     {
         return getAFPoints_default();
     }
-        
+
 
     // Get coordinate of af points
     QVariant af_x_position = findValue(TagNameRoot,QLatin1String("AFAreaXPosition")) ;

@@ -384,7 +384,7 @@ bool TwTalker::addPhoto(const QString& imgPath,
         image.save(path, "JPEG", imageQuality);
 
         QScopedPointer<DMetadata> meta(new DMetadata);
-    
+
         if (meta->load(imgPath))
         {
             meta->setItemDimensions(image.size());

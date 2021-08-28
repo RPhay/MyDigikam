@@ -50,8 +50,8 @@ const int NPT_ARRAY_INITIAL_MAX_SIZE = 128; // bytes
 /*----------------------------------------------------------------------
 |   NPT_Array
 +---------------------------------------------------------------------*/
-template <typename T> 
-class NPT_Array 
+template <typename T>
+class NPT_Array
 {
 public:
     // types
@@ -90,16 +90,16 @@ public:
     // template list operations
     // keep these template members defined here because MSV6 does not let
     // us define them later
-    template <typename X> 
+    template <typename X>
     NPT_Result Apply(const X& function) const
-    {                                  
+    {
         for (unsigned int i=0; i<m_ItemCount; i++) function(m_Items[i]);
         return NPT_SUCCESS;
     }
 
     template <typename X, typename P>
     NPT_Result ApplyUntil(const X& function, const P& predicate, bool* match = NULL) const
-    {                                  
+    {
         for (unsigned int i=0; i<m_ItemCount; i++) {
             NPT_Result return_value;
             if (predicate(function(m_Items[i]), return_value)) {
@@ -111,7 +111,7 @@ public:
         return NPT_SUCCESS;
     }
 
-    template <typename X> 
+    template <typename X>
     T* Find(const X& predicate, NPT_Ordinal n=0, NPT_Ordinal* pos = NULL) const
     {
         if (pos) *pos = -1;
@@ -174,7 +174,7 @@ inline
 NPT_Array<T>::NPT_Array(NPT_Cardinal count, const T& item) :
     m_Capacity(0),
     m_ItemCount(count),
-    m_Items(0)    
+    m_Items(0)
 {
     Reserve(count);
     for (NPT_Ordinal i=0; i<count; i++) {
@@ -190,7 +190,7 @@ inline
 NPT_Array<T>::NPT_Array(const T* items, NPT_Cardinal item_count) :
     m_Capacity(0),
     m_ItemCount(item_count),
-    m_Items(0)    
+    m_Items(0)
 {
     Reserve(item_count);
     for (NPT_Ordinal i=0; i<item_count; i++) {
@@ -257,12 +257,12 @@ NPT_Array<T>::Clear()
 +---------------------------------------------------------------------*/
 template <typename T>
 T*
-NPT_Array<T>::Allocate(NPT_Cardinal count, NPT_Cardinal& allocated) 
+NPT_Array<T>::Allocate(NPT_Cardinal count, NPT_Cardinal& allocated)
 {
     if (m_Capacity) {
         allocated = 2*m_Capacity;
     } else {
-        // start with just enough elements to fill 
+        // start with just enough elements to fill
         // NPT_ARRAY_INITIAL_MAX_SIZE worth of memory
         allocated = NPT_ARRAY_INITIAL_MAX_SIZE/sizeof(T);
         if (allocated == 0) allocated = 1;

@@ -3,7 +3,7 @@
  * This file is a part of digiKam project
  * https://www.digikam.org
  *
- * Date        : 
+ * Date        :
  * Description : Writer of focus points to exiftool data
  *
  * Copyright (C) 2020-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
@@ -25,7 +25,7 @@
 #ifndef DIGIKAM_FOCUSPOINTS_WRITER_H
 #define DIGIKAM_FOCUSPOINTS_WRITER_H
 
-// Qt includes 
+// Qt includes
 
 #include <QObject>
 #include <QVariant>
@@ -37,7 +37,7 @@
 #include "focuspoint.h"
 
 
-namespace Digikam 
+namespace Digikam
 {
 
 class DIGIKAM_EXPORT FocusPointsWriter : public QObject
@@ -53,7 +53,7 @@ public:
 
     void writeFocusPoint(const FocusPoint& point);
     void writeFocusPoint(const QRectF& rectF);
-    
+
 private:
 
     class Private;

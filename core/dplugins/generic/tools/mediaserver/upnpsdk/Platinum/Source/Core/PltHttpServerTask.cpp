@@ -11,14 +11,14 @@
 | as published by the Free Software Foundation; either version 2
 | of the License, or (at your option) any later version.
 |
-| OEMs, ISVs, VARs and other distributors that combine and 
+| OEMs, ISVs, VARs and other distributors that combine and
 | distribute commercially licensed software with Platinum software
 | and do not wish to distribute the source code for the commercially
 | licensed software under version 2, or (at your option) any later
 | version, of the GNU General Public License (the "GPL") must enter
 | into a commercial license agreement with Plutinosoft, LLC.
 | licensing@plutinosoft.com
-|  
+|
 | This program is distributed in the hope that it will be useful,
 | but WITHOUT ANY WARRANTY; without even the implied warranty of
 | MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
@@ -26,7 +26,7 @@
 |
 | You should have received a copy of the GNU General Public License
 | along with this program; see the file LICENSE.txt. If not, write to
-| the Free Software Foundation, Inc., 
+| the Free Software Foundation, Inc.,
 | 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 | http://www.gnu.org/licenses/gpl-2.0.html
 |
@@ -52,12 +52,12 @@ const char* const PLT_HTTP_DEFAULT_500_HTML = "<html><head><title>500 Internal E
 /*----------------------------------------------------------------------
 |   PLT_HttpServerSocketTask::PLT_HttpServerSocketTask
 +---------------------------------------------------------------------*/
-PLT_HttpServerSocketTask::PLT_HttpServerSocketTask(NPT_Socket* socket, 
+PLT_HttpServerSocketTask::PLT_HttpServerSocketTask(NPT_Socket* socket,
                                                    bool        stay_alive_forever) :
     m_Socket(socket),
     m_StayAliveForever(stay_alive_forever)
 {
-    // needed for PS3 that is some case will request data every 35 secs and 
+    // needed for PS3 that is some case will request data every 35 secs and
     // won't like it if server disconnected too early
     m_Socket->SetReadTimeout(60000);
     m_Socket->SetWriteTimeout(600000);
@@ -66,7 +66,7 @@ PLT_HttpServerSocketTask::PLT_HttpServerSocketTask(NPT_Socket* socket,
 /*----------------------------------------------------------------------
 |   PLT_HttpServerSocketTask::~PLT_HttpServerSocketTask
 +---------------------------------------------------------------------*/
-PLT_HttpServerSocketTask::~PLT_HttpServerSocketTask() 
+PLT_HttpServerSocketTask::~PLT_HttpServerSocketTask()
 {
     if (m_Socket) {
         m_Socket->Cancel();
@@ -101,12 +101,12 @@ PLT_HttpServerSocketTask::DoRun()
 
         // wait for a request
         res = Read(buffered_input_stream, request, &context);
-        if (NPT_FAILED(res) || (request == NULL)) 
+        if (NPT_FAILED(res) || (request == NULL))
             goto cleanup;
-        
+
         // process request and setup response
         res = RespondToClient(*request, context, response);
-        if (NPT_FAILED(res) || (response == NULL)) 
+        if (NPT_FAILED(res) || (response == NULL))
             goto cleanup;
 
         // check if client requested keep-alive
@@ -155,13 +155,13 @@ PLT_HttpServerSocketTask::GetInfo(NPT_SocketInfo& info)
 |   PLT_HttpServerSocketTask::Read
 +---------------------------------------------------------------------*/
 NPT_Result
-PLT_HttpServerSocketTask::Read(NPT_BufferedInputStreamReference& buffered_input_stream, 
+PLT_HttpServerSocketTask::Read(NPT_BufferedInputStreamReference& buffered_input_stream,
                                NPT_HttpRequest*&                 request,
-                               NPT_HttpRequestContext*           context) 
+                               NPT_HttpRequestContext*           context)
 {
     NPT_SocketInfo info;
     GetInfo(info);
-    
+
     // update context with socket info if needed
     if (context) {
         context->SetLocalAddress(info.local_address);
@@ -179,8 +179,8 @@ PLT_HttpServerSocketTask::Read(NPT_BufferedInputStreamReference& buffered_input_
         if (res != NPT_ERROR_TIMEOUT && res != NPT_ERROR_EOS) NPT_CHECK_WARNING(res);
         return res;
     }
-    
-    // update context with socket info again 
+
+    // update context with socket info again
     // to refresh the remote address in case it was a non connected udp socket
     GetInfo(info);
     if (context) {
@@ -189,7 +189,7 @@ PLT_HttpServerSocketTask::Read(NPT_BufferedInputStreamReference& buffered_input_
     }
 
     // return right away if no body is expected
-    if (request->GetMethod() == NPT_HTTP_METHOD_GET || 
+    if (request->GetMethod() == NPT_HTTP_METHOD_GET ||
         request->GetMethod() == NPT_HTTP_METHOD_HEAD) {
         return NPT_SUCCESS;
     }
@@ -207,16 +207,16 @@ PLT_HttpServerSocketTask::Read(NPT_BufferedInputStreamReference& buffered_input_
     // check for chunked Transfer-Encoding
     if (request_entity->GetTransferEncoding() == "chunked") {
         NPT_CHECK_SEVERE(NPT_StreamToStreamCopy(
-            *NPT_InputStreamReference(new NPT_HttpChunkedInputStream(buffered_input_stream)).AsPointer(), 
+            *NPT_InputStreamReference(new NPT_HttpChunkedInputStream(buffered_input_stream)).AsPointer(),
             *body_stream));
 
         request_entity->SetTransferEncoding(NULL);
     } else if (request_entity->GetContentLength()) {
         // a request with a body must always have a content length if not chunked
         NPT_CHECK_SEVERE(NPT_StreamToStreamCopy(
-            *buffered_input_stream.AsPointer(), 
-            *body_stream, 
-            0, 
+            *buffered_input_stream.AsPointer(),
+            *body_stream,
+            0,
             request_entity->GetContentLength()));
     } else {
         request->SetEntity(NULL);
@@ -231,16 +231,16 @@ PLT_HttpServerSocketTask::Read(NPT_BufferedInputStreamReference& buffered_input_
 /*----------------------------------------------------------------------
 |   PLT_HttpServerSocketTask::RespondToClient
 +---------------------------------------------------------------------*/
-NPT_Result 
-PLT_HttpServerSocketTask::RespondToClient(NPT_HttpRequest&              request, 
+NPT_Result
+PLT_HttpServerSocketTask::RespondToClient(NPT_HttpRequest&              request,
                                           const NPT_HttpRequestContext& context,
                                           NPT_HttpResponse*&            response)
 {
     NPT_Result result   = NPT_ERROR_NO_SUCH_ITEM;
-    
+
     // reset output params first
     response = NULL;
-    
+
     // prepare the response body
     NPT_HttpEntity* body = new NPT_HttpEntity();
     response = new NPT_HttpResponse(200, "OK", NPT_HTTP_PROTOCOL_1_1);
@@ -267,7 +267,7 @@ PLT_HttpServerSocketTask::RespondToClient(NPT_HttpRequest&              request,
         body->SetContentType("text/html");
         response->SetStatus(500, "Internal Error");
     }
-    
+
     return NPT_SUCCESS;
 }
 
@@ -303,13 +303,13 @@ PLT_HttpServerSocketTask::SendResponseHeaders(NPT_HttpResponse* response,
         if (!content_encoding.IsEmpty()) {
             headers.SetHeader(NPT_HTTP_HEADER_CONTENT_ENCODING, content_encoding);
         }
-        
+
         // transfer encoding
         const NPT_String& transfer_encoding = entity->GetTransferEncoding();
         if (!transfer_encoding.IsEmpty()) {
             headers.SetHeader(NPT_HTTP_HEADER_TRANSFER_ENCODING, transfer_encoding);
         }
-        
+
     } else if (!headers.GetHeader(NPT_HTTP_HEADER_CONTENT_LENGTH)) {
         // force content length to 0 if there is no message body
         // (necessary for 1.1 or 1.0 with keep-alive connections)
@@ -394,9 +394,9 @@ PLT_HttpServerSocketTask::SendResponseBody(NPT_HttpResponse* response,
 |   PLT_HttpServerSocketTask::Write
 +---------------------------------------------------------------------*/
 NPT_Result
-PLT_HttpServerSocketTask::Write(NPT_HttpResponse* response, 
-                                bool&             keep_alive, 
-                                bool              headers_only /* = false */) 
+PLT_HttpServerSocketTask::Write(NPT_HttpResponse* response,
+                                bool&             keep_alive,
+                                bool              headers_only /* = false */)
 {
     // get the socket output stream
     NPT_OutputStreamReference output_stream;
@@ -409,7 +409,7 @@ PLT_HttpServerSocketTask::Write(NPT_HttpResponse* response,
     if (!headers_only) {
         NPT_CHECK_WARNING(SendResponseBody(response, *output_stream));
     }
-    
+
     // flush
     output_stream->Flush();
 
@@ -419,8 +419,8 @@ PLT_HttpServerSocketTask::Write(NPT_HttpResponse* response,
 /*----------------------------------------------------------------------
 |   PLT_HttpListenTask::DoRun
 +---------------------------------------------------------------------*/
-void 
-PLT_HttpListenTask::DoRun() 
+void
+PLT_HttpListenTask::DoRun()
 {
     while (!IsAborting(0)) {
         NPT_Socket* client = NULL;
@@ -428,10 +428,10 @@ PLT_HttpListenTask::DoRun()
         if (NPT_FAILED(result)) {
             // cleanup just in case
             if (client) delete client;
-            
+
             // normal error
             if (result == NPT_ERROR_TIMEOUT) continue;
-            
+
             // exit on other errors ?
             NPT_LOG_WARNING_2("PLT_HttpListenTask exiting with %d (%s)", result, NPT_ResultText(result));
             break;

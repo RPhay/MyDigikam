@@ -24,7 +24,7 @@
 
 #include "imagequalitycalculator.h"
 
-// Local includes 
+// Local includes
 
 // Qt includes
 
@@ -65,7 +65,7 @@ ImageQualityCalculator::~ImageQualityCalculator()
 void ImageQualityCalculator::addDetectionResult(const QString& name, const float score, const float weight) const
 {
     ResultDetection result;
-    
+
     result.detetionType = name;
     result.weight       = weight;
     result.score        = score;
@@ -94,7 +94,7 @@ float ImageQualityCalculator::calculateQuality() const
     {
         return -1;
     }
-    
+
     adjustWeightByQualityLevel();
 
     normalizeWeight();
@@ -120,7 +120,7 @@ void ImageQualityCalculator::adjustWeightByQualityLevel() const
     {
         if (result.score > d->threshold_punish)
         {
-            result.weight *= d->weight_punish;  
+            result.weight *= d->weight_punish;
         }
     }
 }

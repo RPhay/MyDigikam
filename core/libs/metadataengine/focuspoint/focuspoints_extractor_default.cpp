@@ -3,7 +3,7 @@
  * This file is a part of digiKam project
  * https://www.digikam.org
  *
- * Date        : 
+ * Date        :
  * Description : Extraction of focus points by exiftool data
  *
  * Copyright (C) 2020-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
@@ -36,10 +36,10 @@ namespace Digikam
 namespace
 {
 
-FocusPoint create_af_point(float afPointWidth, float afPointHeight, 
+FocusPoint create_af_point(float afPointWidth, float afPointHeight,
                            float af_x_position, float af_y_position)
-{    
-    return FocusPoint(af_x_position, af_y_position, 
+{
+    return FocusPoint(af_x_position, af_y_position,
                       afPointWidth, afPointHeight,
                       FocusPoint::TypePoint::SelectedInFocus);;
 }
@@ -50,13 +50,13 @@ FocusPoint create_af_point(float afPointWidth, float afPointHeight,
 FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_default() const
 {
     setAFPointsReadOnly(false);
-    
+
     QString TagNameRoot = QLatin1String("XMP.XMP-mwg-rs.Image");
 
     QString desc = findValue(TagNameRoot, QLatin1String("RegionDescription")).toString();
 
     if (!desc.startsWith(QLatin1String("digikam")))
-    {   
+    {
         return ListAFPoints();
     }
 

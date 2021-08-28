@@ -274,7 +274,7 @@ void OnlineVersionChecker::slotDownloadFinished(QNetworkReply* reply)
 
         // Tow possibles places exists where to find the date in file name.
 
-        // Check 1 - the fila name include a pre release suffix as -beta or -rc 
+        // Check 1 - the fila name include a pre release suffix as -beta or -rc
 
         QString dtStr      = sections[3];
         QDateTime onlineDt = QDateTime::fromString(dtStr, QLatin1String("yyyyMMddTHHmmss"));

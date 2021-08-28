@@ -35,7 +35,7 @@
 /*----------------------------------------------------------------------
 |   NPT_AutoreleasePoolInterface
 +---------------------------------------------------------------------*/
-class NPT_AutoreleasePoolInterface 
+class NPT_AutoreleasePoolInterface
 {
 public:
     virtual ~NPT_AutoreleasePoolInterface() {}
@@ -44,7 +44,7 @@ public:
 /*----------------------------------------------------------------------
 |   NPT_AutoreleasePool
 +---------------------------------------------------------------------*/
-class NPT_AutoreleasePool : public NPT_AutoreleasePoolInterface 
+class NPT_AutoreleasePool : public NPT_AutoreleasePoolInterface
 {
 public:
     NPT_AutoreleasePool();

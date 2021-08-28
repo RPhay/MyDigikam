@@ -3,7 +3,7 @@
  * This file is a part of digiKam project
  * https://www.digikam.org
  *
- * Date        : 
+ * Date        :
  * Description : Extraction of focus points by exiftool data
  *
  * Copyright (C) 2020-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
@@ -40,7 +40,7 @@ namespace PanasonicInternal
 
 FocusPoint create_af_point(float af_x_position, float af_y_position,
                                                  float afPointWidth,  float afPointHeight)
-{    
+{
     return FocusPoint(af_x_position, af_y_position,
                       afPointWidth  * RATIO_POINT_IMAGE,
                       afPointHeight * RATIO_POINT_IMAGE,
@@ -77,9 +77,9 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_panasonic()
 
     float afPointWidth = imageWidth.toFloat() * RATIO_POINT_IMAGE;
     float afPointHeight = imageHeight.toFloat() * RATIO_POINT_IMAGE;
-    
+
     // Add point
-    
+
     return ListAFPoints{PanasonicInternal::create_af_point(af_x_position, af_y_position,
                                                            afPointWidth, afPointHeight)};
 

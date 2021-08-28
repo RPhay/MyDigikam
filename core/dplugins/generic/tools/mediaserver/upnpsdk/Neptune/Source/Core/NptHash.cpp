@@ -50,7 +50,7 @@ NPT_Fnv1aHash32(const NPT_UInt8* data, NPT_Size data_size, NPT_UInt32 hash_init)
 {
     const NPT_UInt8* data_end = data + data_size;
     NPT_UInt32       hash_value = hash_init;
-    
+
     while (data < data_end) {
         hash_value ^= (NPT_UInt32)*data++;
 
@@ -72,7 +72,7 @@ NPT_UInt32
 NPT_Fnv1aHashStr32(const char* data, NPT_UInt32 hash_init)
 {
     NPT_UInt32 hash_value = hash_init;
-    
+
     while (*data) {
         hash_value ^= (NPT_UInt32)*data++;
 
@@ -98,9 +98,9 @@ const NPT_UInt64 NPT_FNV_64_PRIME = 0x100000001b3ULL;
 NPT_UInt64
 NPT_Fnv1aHash64(const NPT_UInt8* data, NPT_Size data_size, NPT_UInt64 hash_init)
 {
-    const NPT_UInt8* data_end = data + data_size;	
+    const NPT_UInt8* data_end = data + data_size;
     NPT_UInt64       hash_value = hash_init;
-    
+
     while (data < data_end) {
         hash_value ^= (NPT_UInt64)*data++;
 
@@ -122,7 +122,7 @@ NPT_UInt64
 NPT_Fnv1aHashStr64(const char* data, NPT_UInt64 hash_init)
 {
     NPT_UInt64 hash_value = hash_init;
-    
+
     while (*data) {
         hash_value ^= (NPT_UInt64)*data++;
 

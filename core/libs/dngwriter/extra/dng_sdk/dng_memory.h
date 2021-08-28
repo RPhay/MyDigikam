@@ -43,26 +43,26 @@
 
 class dng_memory_data: private dng_uncopyable
 	{
-	
+
 	private:
-	
+
 		char *fBuffer;
-		
+
 	public:
-	
+
 		/// Construct an empty memory buffer using malloc.
 		/// \exception dng_memory_full with fErrorCode equal to dng_error_memory.
 
 		dng_memory_data ();
-		
+
 		/// Construct memory buffer of size bytes using malloc.
 		/// \param size Number of bytes of memory needed.
 		/// \exception dng_memory_full with fErrorCode equal to dng_error_memory.
 
 		dng_memory_data (uint32 size);
-		
+
 		dng_memory_data (const dng_safe_uint32 &size);
-		
+
 		/// Note: This constructor is for internal use only and should not be
 		/// considered part of the DNG SDK API.
 		///
@@ -71,7 +71,7 @@ class dng_memory_data: private dng_uncopyable
 		/// \param elementSize Size of each element.
 		/// \exception dng_memory_full with fErrorCode equal to dng_error_memory.
 
-		dng_memory_data (uint32 count, 
+		dng_memory_data (uint32 count,
 						 std::size_t elementSize);
 
 		/// Release memory buffer using free.
@@ -95,17 +95,17 @@ class dng_memory_data: private dng_uncopyable
 		/// \param elementSize Size of each element.
 		/// \exception dng_memory_full with fErrorCode equal to dng_error_memory.
 
-		void Allocate (uint32 count, 
+		void Allocate (uint32 count,
 					   std::size_t elementSize);
 
-		void Allocate (const dng_safe_uint32 &count, 
+		void Allocate (const dng_safe_uint32 &count,
 					   std::size_t elementSize);
 
 		/// Release any allocated memory using free. Object is still valid and
 		/// Allocate can be called again.
-		
+
 		void Clear ();
-		
+
 		/// Return pointer to allocated memory as a void *..
 		/// \retval void * valid for as many bytes as were allocated.
 
@@ -113,7 +113,7 @@ class dng_memory_data: private dng_uncopyable
 			{
 			return fBuffer;
 			}
-		
+
 		/// Return pointer to allocated memory as a const void *.
 		/// \retval const void * valid for as many bytes as were allocated.
 
@@ -121,7 +121,7 @@ class dng_memory_data: private dng_uncopyable
 			{
 			return fBuffer;
 			}
-		
+
 		/// Return pointer to allocated memory as a char *.
 		/// \retval char * valid for as many bytes as were allocated.
 
@@ -129,7 +129,7 @@ class dng_memory_data: private dng_uncopyable
 			{
 			return (char *) Buffer ();
 			}
-			
+
 		/// Return pointer to allocated memory as a const char *.
 		/// \retval const char * valid for as many bytes as were allocated.
 
@@ -137,7 +137,7 @@ class dng_memory_data: private dng_uncopyable
 			{
 			return (const char *) Buffer ();
 			}
-			
+
 		/// Return pointer to allocated memory as a uint8 *.
 		/// \retval uint8 * valid for as many bytes as were allocated.
 
@@ -145,7 +145,7 @@ class dng_memory_data: private dng_uncopyable
 			{
 			return (uint8 *) Buffer ();
 			}
-			
+
 		/// Return pointer to allocated memory as a const uint8 *.
 		/// \retval const uint8 * valid for as many bytes as were allocated.
 
@@ -153,7 +153,7 @@ class dng_memory_data: private dng_uncopyable
 			{
 			return (const uint8 *) Buffer ();
 			}
-	
+
 		/// Return pointer to allocated memory as a uint16 *.
 		/// \retval uint16 * valid for as many bytes as were allocated.
 
@@ -161,7 +161,7 @@ class dng_memory_data: private dng_uncopyable
 			{
 			return (uint16 *) Buffer ();
 			}
-			
+
 		/// Return pointer to allocated memory as a const uint16 *.
 		/// \retval const uint16 * valid for as many bytes as were allocated.
 
@@ -169,7 +169,7 @@ class dng_memory_data: private dng_uncopyable
 			{
 			return (const uint16 *) Buffer ();
 			}
-	
+
 		/// Return pointer to allocated memory as a int16 *.
 		/// \retval int16 * valid for as many bytes as were allocated.
 
@@ -177,7 +177,7 @@ class dng_memory_data: private dng_uncopyable
 			{
 			return (int16 *) Buffer ();
 			}
-			
+
 		/// Return pointer to allocated memory as a const int16 *.
 		/// \retval const int16 * valid for as many bytes as were allocated.
 
@@ -185,7 +185,7 @@ class dng_memory_data: private dng_uncopyable
 			{
 			return (const int16 *) Buffer ();
 			}
-	
+
 		/// Return pointer to allocated memory as a uint32 *.
 		/// \retval uint32 * valid for as many bytes as were allocated.
 
@@ -193,7 +193,7 @@ class dng_memory_data: private dng_uncopyable
 			{
 			return (uint32 *) Buffer ();
 			}
-			
+
 		/// Return pointer to allocated memory as a uint32 *.
 		/// \retval uint32 * valid for as many bytes as were allocated.
 
@@ -201,7 +201,7 @@ class dng_memory_data: private dng_uncopyable
 			{
 			return (const uint32 *) Buffer ();
 			}
-	
+
 		/// Return pointer to allocated memory as a const int32 *.
 		/// \retval const int32 * valid for as many bytes as were allocated.
 
@@ -209,7 +209,7 @@ class dng_memory_data: private dng_uncopyable
 			{
 			return (int32 *) Buffer ();
 			}
-			
+
 		/// Return pointer to allocated memory as a const int32 *.
 		/// \retval const int32 * valid for as many bytes as were allocated.
 
@@ -217,7 +217,7 @@ class dng_memory_data: private dng_uncopyable
 			{
 			return (const int32 *) Buffer ();
 			}
-	
+
 		/// Return pointer to allocated memory as a uint64 *.
 		/// \retval uint64 * valid for as many bytes as were allocated.
 
@@ -225,7 +225,7 @@ class dng_memory_data: private dng_uncopyable
 			{
 			return (uint64 *) Buffer ();
 			}
-			
+
 		/// Return pointer to allocated memory as a uint64 *.
 		/// \retval uint64 * valid for as many bytes as were allocated.
 
@@ -233,7 +233,7 @@ class dng_memory_data: private dng_uncopyable
 			{
 			return (const uint64 *) Buffer ();
 			}
-	
+
 		/// Return pointer to allocated memory as a const int64 *.
 		/// \retval const int64 * valid for as many bytes as were allocated.
 
@@ -241,7 +241,7 @@ class dng_memory_data: private dng_uncopyable
 			{
 			return (int64 *) Buffer ();
 			}
-			
+
 		/// Return pointer to allocated memory as a const int64 *.
 		/// \retval const int64 * valid for as many bytes as were allocated.
 
@@ -249,7 +249,7 @@ class dng_memory_data: private dng_uncopyable
 			{
 			return (const int64 *) Buffer ();
 			}
-	
+
 		/// Return pointer to allocated memory as a real32 *.
 		/// \retval real32 * valid for as many bytes as were allocated.
 
@@ -257,7 +257,7 @@ class dng_memory_data: private dng_uncopyable
 			{
 			return (real32 *) Buffer ();
 			}
-			
+
 		/// Return pointer to allocated memory as a const real32 *.
 		/// \retval const real32 * valid for as many bytes as were allocated.
 
@@ -265,7 +265,7 @@ class dng_memory_data: private dng_uncopyable
 			{
 			return (const real32 *) Buffer ();
 			}
-			
+
 		/// Return pointer to allocated memory as a real64 *.
 		/// \retval real64 * valid for as many bytes as were allocated.
 
@@ -273,7 +273,7 @@ class dng_memory_data: private dng_uncopyable
 			{
 			return (real64 *) Buffer ();
 			}
-			
+
 		/// Return pointer to allocated memory as a const real64 *.
 		/// \retval const real64 * valid for as many bytes as were allocated.
 
@@ -281,9 +281,9 @@ class dng_memory_data: private dng_uncopyable
 			{
 			return (const real64 *) Buffer ();
 			}
-			
+
 	};
-	
+
 /*****************************************************************************/
 
 /// \brief Class to provide resource acquisition is instantiation discipline for
@@ -293,24 +293,24 @@ class dng_memory_data: private dng_uncopyable
 
 class dng_memory_block: private dng_uncopyable
 	{
-	
+
 	private:
-	
+
 		uint32 fLogicalSize;
-		
+
 		char *fBuffer;
-		
+
 	protected:
-	
+
 		dng_memory_block (uint32 logicalSize)
 			:	fLogicalSize (logicalSize)
 			,	fBuffer (NULL)
 			{
 			}
-		
+
 		uint32 PhysicalSize ()
 			{
-			
+
 			// This size is padded for TWO reasons! The first is allow
 			// alignment to 16-byte boundaries if the allocator does not do
 			// that already. The second, which is very important, so to
@@ -320,7 +320,7 @@ class dng_memory_block: private dng_uncopyable
 			// understand this and removed this padding. I'm undoing this
 			// removal and restoring this padding, since removing it might
 			// lead to memory access crashes in some cases.
-			// 
+			//
 			// Please do NOT change the following padding unless you are very
 			// sure what you are doing.
 
@@ -342,20 +342,20 @@ class dng_memory_block: private dng_uncopyable
 			#endif	// qDNGAVXSupport
 
 			}
-		
+
 		void SetBuffer (void *p)
 			{
 			fBuffer = (char *) DNG_ALIGN_SIMD (p);
 			}
-		
+
 	public:
-	
+
 		virtual ~dng_memory_block ()
 			{
 			}
 
 		dng_memory_block * Clone (dng_memory_allocator &allocator) const;
-	
+
 		/// Getter for available size, in bytes, of memory block.
 		/// \retval size in bytes of available memory in memory block.
 
@@ -371,7 +371,7 @@ class dng_memory_block: private dng_uncopyable
 			{
 			return fBuffer;
 			}
-		
+
 		/// Return pointer to allocated memory as a const void *.
 		/// \retval const void * valid for as many bytes as were allocated.
 
@@ -379,7 +379,7 @@ class dng_memory_block: private dng_uncopyable
 			{
 			return fBuffer;
 			}
-		
+
 		/// Return pointer to allocated memory as a char *.
 		/// \retval char * valid for as many bytes as were allocated.
 
@@ -387,7 +387,7 @@ class dng_memory_block: private dng_uncopyable
 			{
 			return (char *) Buffer ();
 			}
-			
+
 		/// Return pointer to allocated memory as a const char *.
 		/// \retval const char * valid for as many bytes as were allocated.
 
@@ -395,7 +395,7 @@ class dng_memory_block: private dng_uncopyable
 			{
 			return (const char *) Buffer ();
 			}
-			
+
 		/// Return pointer to allocated memory as a uint8 *.
 		/// \retval uint8 * valid for as many bytes as were allocated.
 
@@ -403,7 +403,7 @@ class dng_memory_block: private dng_uncopyable
 			{
 			return (uint8 *) Buffer ();
 			}
-			
+
 		/// Return pointer to allocated memory as a const uint8 *.
 		/// \retval const uint8 * valid for as many bytes as were allocated.
 
@@ -411,7 +411,7 @@ class dng_memory_block: private dng_uncopyable
 			{
 			return (const uint8 *) Buffer ();
 			}
-	
+
 		/// Return pointer to allocated memory as a uint16 *.
 		/// \retval uint16 * valid for as many bytes as were allocated.
 
@@ -419,7 +419,7 @@ class dng_memory_block: private dng_uncopyable
 			{
 			return (uint16 *) Buffer ();
 			}
-			
+
 		/// Return pointer to allocated memory as a const uint16 *.
 		/// \retval const uint16 * valid for as many bytes as were allocated.
 
@@ -427,7 +427,7 @@ class dng_memory_block: private dng_uncopyable
 			{
 			return (const uint16 *) Buffer ();
 			}
-	
+
 		/// Return pointer to allocated memory as a int16 *.
 		/// \retval int16 * valid for as many bytes as were allocated.
 
@@ -435,7 +435,7 @@ class dng_memory_block: private dng_uncopyable
 			{
 			return (int16 *) Buffer ();
 			}
-			
+
 		/// Return pointer to allocated memory as a const int16 *.
 		/// \retval const int16 * valid for as many bytes as were allocated.
 
@@ -443,7 +443,7 @@ class dng_memory_block: private dng_uncopyable
 			{
 			return (const int16 *) Buffer ();
 			}
-	
+
 		/// Return pointer to allocated memory as a uint32 *.
 		/// \retval uint32 * valid for as many bytes as were allocated.
 
@@ -451,7 +451,7 @@ class dng_memory_block: private dng_uncopyable
 			{
 			return (uint32 *) Buffer ();
 			}
-			
+
 		/// Return pointer to allocated memory as a const uint32 *.
 		/// \retval const uint32 * valid for as many bytes as were allocated.
 
@@ -459,7 +459,7 @@ class dng_memory_block: private dng_uncopyable
 			{
 			return (const uint32 *) Buffer ();
 			}
-	
+
 		/// Return pointer to allocated memory as a int32 *.
 		/// \retval int32 * valid for as many bytes as were allocated.
 
@@ -467,7 +467,7 @@ class dng_memory_block: private dng_uncopyable
 			{
 			return (int32 *) Buffer ();
 			}
-			
+
 		/// Return pointer to allocated memory as a const int32 *.
 		/// \retval const int32 * valid for as many bytes as were allocated.
 
@@ -475,7 +475,7 @@ class dng_memory_block: private dng_uncopyable
 			{
 			return (const int32 *) Buffer ();
 			}
-	
+
 		/// Return pointer to allocated memory as a real32 *.
 		/// \retval real32 * valid for as many bytes as were allocated.
 
@@ -483,7 +483,7 @@ class dng_memory_block: private dng_uncopyable
 			{
 			return (real32 *) Buffer ();
 			}
-			
+
 		/// Return pointer to allocated memory as a const real32 *.
 		/// \retval const real32 * valid for as many bytes as were allocated.
 
@@ -491,7 +491,7 @@ class dng_memory_block: private dng_uncopyable
 			{
 			return (const real32 *) Buffer ();
 			}
-			
+
 		/// Return pointer to allocated memory as a real64 *.
 		/// \retval real64 * valid for as many bytes as were allocated.
 
@@ -499,7 +499,7 @@ class dng_memory_block: private dng_uncopyable
 			{
 			return (real64 *) Buffer ();
 			}
-			
+
 		/// Return pointer to allocated memory as a const real64 *.
 		/// \retval const real64 * valid for as many bytes as were allocated.
 
@@ -516,13 +516,13 @@ class dng_memory_block: private dng_uncopyable
 
 class dng_memory_allocator
 	{
-	
+
 	public:
-	
-		virtual ~dng_memory_allocator () 
+
+		virtual ~dng_memory_allocator ()
 			{
 			}
-				
+
 		/// Allocate a dng_memory block.
 		/// \param size Number of bytes in memory block.
 		/// \retval A dng_memory_block with at least size bytes of valid storage.
@@ -541,35 +541,35 @@ class dng_memory_allocator
 
 		/// Free the specified block of memory previously allocated with Malloc.
 		/// Default implementation uses standard library 'free' routine.
-	
+
 		virtual void Free (void *ptr);
-	
+
 	};
 
 /*****************************************************************************/
 
 class dng_malloc_block : public dng_memory_block
 	{
-	
+
 	private:
-	
+
 		void *fMalloc;
-	
+
 	public:
-	
+
 		dng_malloc_block (uint32 logicalSize);
-		
+
 		virtual ~dng_malloc_block ();
-		
+
 	};
-	
+
 /*****************************************************************************/
 
-/// \brief Default memory allocator used if NULL is passed in for allocator 
+/// \brief Default memory allocator used if NULL is passed in for allocator
 /// when constructing a dng_host.
 ///
 /// Uses new and delete for memory block object and malloc/free for underlying
-/// buffer. 
+/// buffer.
 
 extern dng_memory_allocator gDefaultDNGMemoryAllocator;
 
@@ -582,11 +582,11 @@ extern dng_memory_allocator gDefaultDNGMemoryAllocator;
 template <typename T>
 class dng_std_allocator
 	{
-	
+
 	public:
 
 		typedef T value_type;
-		
+
 		#if defined(_MSC_VER) && _MSC_VER >= 1900
 
 		// Default implementations of default constructor and copy
@@ -597,21 +597,21 @@ class dng_std_allocator
 		// dng_std_allocator (const dng_std_allocator &) = default;
 
 		template<class U> dng_std_allocator (const dng_std_allocator<U> &) {}
-		
+
 		#endif
 
 		T * allocate (size_t n)
 			{
 			const size_t size = SafeSizetMult (n, sizeof (T));
 			T *retval = static_cast<T *> (malloc (size));
-			if (!retval) 
+			if (!retval)
 				{
 				ThrowMemoryFull ();
 				}
 			return retval;
 			}
-		
-		void deallocate (T *ptr, 
+
+		void deallocate (T *ptr,
 						 size_t /* n */)
 			{
 			free (ptr);
@@ -641,12 +641,12 @@ bool operator!= (const dng_std_allocator<T> & /* a1 */,
 // original implementation without using custom allocator
 #define dng_std_vector std::vector
 #else
-// preferred implementation using custom allocator, requires C++11 
+// preferred implementation using custom allocator, requires C++11
 template <class T> using dng_std_vector = std::vector<T, dng_std_allocator<T> >;
 #endif
 
 /*****************************************************************************/
 
 #endif
-	
+
 /*****************************************************************************/

@@ -158,7 +158,7 @@ NPT_DataBuffer::SetBuffer(NPT_Byte* buffer, NPT_Size buffer_size)
     m_Buffer = buffer;
     m_BufferSize = buffer_size;
     m_DataSize = 0;
-    
+
     return NPT_SUCCESS;
 }
 
@@ -200,7 +200,7 @@ NPT_DataBuffer::SetDataSize(NPT_Size size)
         // the buffer is too small, we need to reallocate it
         if (m_BufferIsLocal) {
             NPT_CHECK(ReallocateBuffer(size));
-        } else { 
+        } else {
             // we cannot reallocate an external buffer
             return NPT_ERROR_NOT_SUPPORTED;
         }

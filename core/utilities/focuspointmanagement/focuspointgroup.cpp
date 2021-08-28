@@ -177,7 +177,7 @@ void FocusPointGroup::load()
     }
 
     QList<FocusPoint> points = FocusPointsExtractor(this, d->info.filePath()).get_af_points();
-    
+
     d->visibilityController->clear();
 
     if (!points.isEmpty())

@@ -11,14 +11,14 @@
 | as published by the Free Software Foundation; either version 2
 | of the License, or (at your option) any later version.
 |
-| OEMs, ISVs, VARs and other distributors that combine and 
+| OEMs, ISVs, VARs and other distributors that combine and
 | distribute commercially licensed software with Platinum software
 | and do not wish to distribute the source code for the commercially
 | licensed software under version 2, or (at your option) any later
 | version, of the GNU General Public License (the "GPL") must enter
 | into a commercial license agreement with Plutinosoft, LLC.
 | licensing@plutinosoft.com
-|  
+|
 | This program is distributed in the hope that it will be useful,
 | but WITHOUT ANY WARRANTY; without even the implied warranty of
 | MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
@@ -26,7 +26,7 @@
 |
 | You should have received a copy of the GNU General Public License
 | along with this program; see the file LICENSE.txt. If not, write to
-| the Free Software Foundation, Inc., 
+| the Free Software Foundation, Inc.,
 | 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 | http://www.gnu.org/licenses/gpl-2.0.html
 |
@@ -136,10 +136,10 @@ extern const char* didl_namespace_dlna;
 class PLT_Didl
 {
 public:
-    static NPT_Result  ToDidl(PLT_MediaObject&  object, 
-                              const NPT_String& filter, 
+    static NPT_Result  ToDidl(PLT_MediaObject&  object,
+                              const NPT_String& filter,
                               NPT_String&       didl);
-    static NPT_Result  FromDidl(const char* didl, 
+    static NPT_Result  FromDidl(const char* didl,
                                 PLT_MediaObjectListReference& objects);
     static void        AppendXmlEscape(NPT_String& out, const char* in);
     static void        AppendXmlUnEscape(NPT_String& out, const char* in);

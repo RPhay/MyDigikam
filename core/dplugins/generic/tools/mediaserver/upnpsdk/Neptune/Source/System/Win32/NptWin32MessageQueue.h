@@ -36,9 +36,9 @@ public:
     NPT_Result HandleMessage(NPT_Message* message, NPT_MessageHandler* handler);
 
 private:
-    static LRESULT CALLBACK WindowProcedure(HWND   window, 
+    static LRESULT CALLBACK WindowProcedure(HWND   window,
                                             UINT   message,
-                                            WPARAM wparam, 
+                                            WPARAM wparam,
                                             LPARAM lparam);
     HWND        m_WindowHandle;
     TCHAR       m_ClassName[16];

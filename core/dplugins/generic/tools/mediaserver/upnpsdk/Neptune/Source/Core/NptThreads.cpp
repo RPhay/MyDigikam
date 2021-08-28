@@ -52,7 +52,7 @@ NPT_ThreadCallbackSlot::NPT_ThreadCallbackSlot() :
 /*----------------------------------------------------------------------
 |   NPT_ThreadCallbackSlot::Shutdown
 +---------------------------------------------------------------------*/
-NPT_Result 
+NPT_Result
 NPT_ThreadCallbackSlot::Shutdown()
 {
     // protect against concurrent access
@@ -72,7 +72,7 @@ NPT_ThreadCallbackSlot::Shutdown()
 /*----------------------------------------------------------------------
 |   NPT_ThreadCallbackSlot::SetNotificationHelper
 +---------------------------------------------------------------------*/
-NPT_Result 
+NPT_Result
 NPT_ThreadCallbackSlot::SetNotificationHelper(NotificationHelper* helper)
 {
     m_NotificationHelper = helper;
@@ -82,7 +82,7 @@ NPT_ThreadCallbackSlot::SetNotificationHelper(NotificationHelper* helper)
 /*----------------------------------------------------------------------
 |   NPT_ThreadCallbackSlot::ReceiveCallback
 +---------------------------------------------------------------------*/
-NPT_Result 
+NPT_Result
 NPT_ThreadCallbackSlot::ReceiveCallback(NPT_ThreadCallbackReceiver& receiver,
                                         NPT_Timeout                 timeout)
 {
@@ -123,7 +123,7 @@ NPT_ThreadCallbackSlot::ReceiveCallback(NPT_ThreadCallbackReceiver& receiver,
 /*----------------------------------------------------------------------
 |   NPT_ThreadCallbackSlot::SendCallback
 +---------------------------------------------------------------------*/
-NPT_Result 
+NPT_Result
 NPT_ThreadCallbackSlot::SendCallback(void* args)
 {
     // protect against concurrent access
@@ -142,7 +142,7 @@ NPT_ThreadCallbackSlot::SendCallback(void* args)
     m_CallbackArgs = args;
     //NPT_Debug("NPT_ThreadCallbackSlot::SendCallback - signalling\n");
     m_Pending.SetValue(1);
-    
+
     // call the helper before we wait
     if (m_NotificationHelper) {
         m_NotificationHelper->Notify();

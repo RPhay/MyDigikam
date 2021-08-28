@@ -75,7 +75,7 @@ public:
     virtual ~NPT_SerialPortInterface() {}
 
     // methods
-    virtual NPT_Result Open(unsigned int              speed, 
+    virtual NPT_Result Open(unsigned int              speed,
                             NPT_SerialPortStopBits    stop_bits,
                             NPT_SerialPortFlowControl flow_control,
                             NPT_SerialPortParity      parity) = 0;
@@ -95,7 +95,7 @@ public:
    ~NPT_SerialPort() { delete m_Delegate; }
 
     // NPT_SerialPortInterface methods
-    NPT_Result Open(unsigned int              speed, 
+    NPT_Result Open(unsigned int              speed,
                     NPT_SerialPortStopBits    stop_bits = NPT_SERIAL_PORT_STOP_BITS_1,
                     NPT_SerialPortFlowControl flow_control = NPT_SERIAL_PORT_FLOW_CONTROL_NONE,
                     NPT_SerialPortParity      parity = NPT_SERIAL_PORT_PARITY_NONE) {
@@ -116,4 +116,4 @@ protected:
     NPT_SerialPortInterface* m_Delegate;
 };
 
-#endif // _NPT_SERIAL_PORT_H_ 
+#endif // _NPT_SERIAL_PORT_H_

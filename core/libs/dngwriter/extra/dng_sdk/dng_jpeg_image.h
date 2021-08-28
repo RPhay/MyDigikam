@@ -23,23 +23,23 @@ typedef AutoPtr<dng_memory_block> dng_jpeg_image_tile_ptr;
 
 class dng_jpeg_image
 	{
-	
+
 	public:
-	
+
 		dng_point fImageSize;
-		
+
 		dng_point fTileSize;
-		
+
 		bool fUsesStrips;
-		
+
 		AutoPtr<dng_memory_block> fJPEGTables;
-		
+
 		AutoArray<dng_jpeg_image_tile_ptr> fJPEGData;
-		
+
 	public:
-	
+
 		dng_jpeg_image ();
-		
+
 		uint32 TilesAcross () const
 			{
 			if (fTileSize.h)
@@ -51,7 +51,7 @@ class dng_jpeg_image
 				return 0;
 				}
 			}
-		
+
 		uint32 TilesDown () const
 			{
 			if (fTileSize.v)
@@ -63,23 +63,23 @@ class dng_jpeg_image
 				return 0;
 				}
 			}
-			
+
 		uint32 TileCount () const
 			{
 			return TilesAcross () * TilesDown ();
 			}
-		
+
 		void Encode (dng_host &host,
 					 const dng_negative &negative,
 					 dng_image_writer &writer,
 					 const dng_image &image);
-					 
+
 		dng_fingerprint FindDigest (dng_host &host) const;
-			
+
 	};
 
 /*****************************************************************************/
 
 #endif
-	
+
 /*****************************************************************************/

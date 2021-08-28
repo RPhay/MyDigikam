@@ -667,7 +667,7 @@ void Benchmark::verifyKNearestDb()
     if (data.size() != 0)
     {
         qCDebug(DIGIKAM_TESTS_LOG) << "Accuracy"     << (float(nbCorrect) / data.size())*100
-                 << "with average" << timer.elapsed()   / data.size() 
+                 << "with average" << timer.elapsed()   / data.size()
                  << "ms/faceEmbedding";
     }
 }

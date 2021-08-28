@@ -41,7 +41,7 @@
 
 namespace Digikam
 {
-    
+
 enum DetectionType
 {
     DETECTBLUR = 0,
@@ -51,7 +51,7 @@ enum DetectionType
     DETECTIONGENERAL
 };
 
-struct CustomDetection 
+struct CustomDetection
 {
     bool detectBlur;
     bool detectNoise;
@@ -59,7 +59,7 @@ struct CustomDetection
     bool detectCompression;
 };
 
-QHash<QString, int> ImgQSortTest_ParseTestImagesDefautDetection(DetectionType type, const QFileInfoList& list); 
+QHash<QString, int> ImgQSortTest_ParseTestImagesDefautDetection(DetectionType type, const QFileInfoList& list);
 
 QHash<QString, int> ImgQSortTest_ParseTestImagesCustomDetection(const CustomDetection& customSetting, const QFileInfoList& list);
 

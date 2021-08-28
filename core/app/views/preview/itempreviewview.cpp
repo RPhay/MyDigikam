@@ -119,11 +119,11 @@ public:
     QAction*               peopleToggleAction;
     QAction*               addPersonAction;
     QAction*               forgetFacesAction;
-    
+
     FocusPointGroup*       focusPointGroup;
     QAction*               addFocusPointAction;
     QAction*               showFocusPointAction;
-    
+
     QAction*               fullscreenAction;
 
     Album*                 currAlbum;
@@ -178,7 +178,7 @@ ItemPreviewView::ItemPreviewView(QWidget* const parent, Mode mode, Album* const 
     d->peopleToggleAction  = new QAction(QIcon::fromTheme(QLatin1String("im-user")),              i18n("Show Face Tags"),                 this);
 
     d->addFocusPointAction = new QAction(QIcon::fromTheme(QLatin1String("list-add-user")),        i18n("Add a focus point"),              this);
-    d->showFocusPointAction = new QAction(QIcon::fromTheme(QLatin1String("im-user")),             i18n("Show focus points"),              this); 
+    d->showFocusPointAction = new QAction(QIcon::fromTheme(QLatin1String("im-user")),             i18n("Show focus points"),              this);
 
     d->peopleToggleAction->setCheckable(true);
     d->showFocusPointAction->setCheckable(true);
@@ -223,7 +223,7 @@ ItemPreviewView::ItemPreviewView(QWidget* const parent, Mode mode, Album* const 
 
     connect(d->addFocusPointAction, SIGNAL(triggered()),
             d->focusPointGroup, SLOT(addPoint()));
-    
+
     connect(d->showFocusPointAction, SIGNAL(toggled(bool)),
             d->focusPointGroup, SLOT(setVisible(bool)));
 

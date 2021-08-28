@@ -85,7 +85,7 @@ GetContentType(const NPT_String& filename)
     if (last_dot > 0) {
         NPT_String extension = filename.GetChars()+last_dot+1;
         extension.MakeLowercase();
-        
+
         NPT_String* mime_type;
         if (NPT_SUCCEEDED(FileTypeMap.Get(extension, mime_type))) {
             return mime_type->GetChars();
@@ -108,7 +108,7 @@ public:
         m_FileRoot(file_root) {}
 
     // NPT_HttpRequestHandler methods
-    virtual NPT_Result SetupResponse(NPT_HttpRequest&              request, 
+    virtual NPT_Result SetupResponse(NPT_HttpRequest&              request,
                                      const NPT_HttpRequestContext& context,
                                      NPT_HttpResponse&             response);
 
@@ -121,7 +121,7 @@ private:
 |   ZipRequestHandler::SetupResponse
 +---------------------------------------------------------------------*/
 NPT_Result
-ZipRequestHandler::SetupResponse(NPT_HttpRequest&              request, 
+ZipRequestHandler::SetupResponse(NPT_HttpRequest&              request,
                                  const NPT_HttpRequestContext& /*context*/,
                                  NPT_HttpResponse&             response)
 {
@@ -142,7 +142,7 @@ ZipRequestHandler::SetupResponse(NPT_HttpRequest&              request,
     if (request.GetProtocol() == NPT_HTTP_PROTOCOL_1_1) {
         response.SetProtocol(NPT_HTTP_PROTOCOL_1_1);
     }
-    
+
     // default status
     response.SetStatus(404, "Not Found");
 
@@ -153,7 +153,7 @@ ZipRequestHandler::SetupResponse(NPT_HttpRequest&              request,
 
     // compute the path relative to the URL root
     NPT_String relative_path = NPT_Url::PercentDecode(request.GetUrl().GetPath().GetChars()+m_UrlRoot.GetLength());
-    
+
     // check that there is no '..' in the path, for security reasons
     if (relative_path.Find("..") >= 0) {
         NPT_LOG_INFO(".. in path is not supported");
@@ -165,7 +165,7 @@ ZipRequestHandler::SetupResponse(NPT_HttpRequest&              request,
         return NPT_SUCCESS;
     }
     NPT_List<NPT_String> path_parts = relative_path.Split("/");
-    
+
     // walk down the path until we find a file
     NPT_String path = m_FileRoot;
     NPT_String subpath;
@@ -199,12 +199,12 @@ ZipRequestHandler::SetupResponse(NPT_HttpRequest&              request,
         }
     }
     NPT_LOG_FINE_3("is_zip=%d, path=%s, subpath=%s", (int)is_zip, path.GetChars(), subpath.GetChars());
-    
+
     // return now if no anchor was found
     if (!anchor_found) {
         return NPT_SUCCESS;
     }
-    
+
     // deal with regular files
     if (!is_zip) {
         if (subpath.IsEmpty()) {
@@ -223,7 +223,7 @@ ZipRequestHandler::SetupResponse(NPT_HttpRequest&              request,
         }
         return NPT_SUCCESS;
     }
-    
+
     // load the zip file
     NPT_File file(path);
     NPT_Result result = file.Open(NPT_FILE_OPEN_MODE_READ);
@@ -239,7 +239,7 @@ ZipRequestHandler::SetupResponse(NPT_HttpRequest&              request,
         NPT_LOG_WARNING_1("failed to parse zip file (%d)", result);
         return result;
     }
-    
+
     // look for the entry in the zip file
     for (unsigned int i=0; i<zip_file->GetEntries().GetItemCount(); i++) {
         NPT_ZipFile::Entry& entry = zip_file->GetEntries()[i];
@@ -259,7 +259,7 @@ ZipRequestHandler::SetupResponse(NPT_HttpRequest&              request,
             break;
         }
     }
-    
+
     delete zip_file;
     return NPT_SUCCESS;
 }
@@ -276,18 +276,18 @@ public:
         RUNNING,
         DEAD
     } State;
-    
+
     // constructor
     ZipHttpWorker(unsigned int id, ZipHttpServer* server) :
         m_Id(id),
         m_Server(server),
         m_State(IDLE),
         m_Verbose(false) {}
-    
+
     // NPT_Runnable methods
     virtual void Run();
     NPT_Result Respond();
-    
+
     // members
     unsigned int              m_Id;
     ZipHttpServer*            m_Server;
@@ -307,10 +307,10 @@ public:
                   const char*  url_root,
                   unsigned int port,
                   unsigned int threads);
-    
+
     void Loop();
     void OnWorkerDone(ZipHttpWorker* worker);
-    
+
 private:
     NPT_Mutex                m_Lock;
     unsigned int             m_Threads;
@@ -333,12 +333,12 @@ ZipHttpServer::ZipHttpServer(const char*  file_root,
 {
     m_Handler = new ZipRequestHandler(url_root, file_root);
     AddRequestHandler(m_Handler, url_root, true);
-    
+
     for (unsigned int i=0; i<threads; i++) {
         ZipHttpWorker* worker = new ZipHttpWorker(i, this);
         m_Workers.Add(worker);
         m_ReadyWorkers.Add(worker);
-        
+
         // start threads unless we're single threaded
         if (threads > 1) {
             worker->Start();
@@ -360,7 +360,7 @@ ZipHttpServer::Loop()
         NPT_LOG_FINEST("waiting for a worker");
         m_AllWorkersBusy.WaitUntilEquals(0);
         NPT_LOG_FINEST("got a worker");
-        
+
         // pick a worker
         m_Lock.Lock();
         ZipHttpWorker* worker = NULL;
@@ -369,11 +369,11 @@ ZipHttpServer::Loop()
             m_AllWorkersBusy.SetValue(1);
         }
         m_Lock.Unlock();
-        
+
         NPT_Result result = WaitForNewClient(worker->m_InputStream, worker->m_OutputStream, &worker->m_Context);
         if (NPT_FAILED(result)) {
             NPT_LOG_WARNING_1("WaitForNewClient returned %d", result);
-            
+
             // wait a bit before continuing
             NPT_System::Sleep(NPT_TimeInterval(1.0));
         }
@@ -414,20 +414,20 @@ ZipHttpWorker::Run(void)
         // wait while we're idle
         NPT_LOG_FINER_1("worker %d waiting for work", m_Id);
         m_State.WaitWhileEquals(IDLE);
-        
+
         NPT_LOG_FINER_1("worker %d woke up", m_Id);
 
         if (m_State.GetValue() == DEAD) {
             NPT_LOG_FINE_1("worker %d exiting", m_Id);
             return;
         }
-        
+
         // respond to the client
         Respond();
-        
+
         // update our state
         m_State.SetValue(IDLE);
-        
+
         // notify the server
         m_Server->OnWorkerDone(this);
     }
@@ -444,7 +444,7 @@ ZipHttpWorker::Respond()
     NPT_Result result = m_Server->RespondToClient(m_InputStream, m_OutputStream, m_Context);
 
     NPT_LOG_FINER_2("worker %d responded to request (%d)", m_Id, result);
-    
+
     m_InputStream  = NULL;
     m_OutputStream = NULL;
 
@@ -462,7 +462,7 @@ main(int /*argc*/, char** argv)
     unsigned int port    = 8000;
     unsigned int threads = 5;
     bool         verbose = false;
-    
+
     while (const char* arg = *++argv) {
         if (NPT_StringsEqual(arg, "--help") ||
             NPT_StringsEqual(arg, "-h")) {
@@ -506,29 +506,29 @@ main(int /*argc*/, char** argv)
         fprintf(stderr, "ERROR: --threads must be between 1 and 20");
         return 1;
     }
-    
+
     // ensure the URL root start with a /
     if (!url_root.StartsWith("/")) {
         url_root = "/"+url_root;
     }
-    
+
     // initialize the file type map
     for (unsigned int i=0; i<NPT_ARRAY_SIZE(DefaultFileTypeMap); i++) {
         FileTypeMap[DefaultFileTypeMap[i].extension] =DefaultFileTypeMap[i].mime_type;
     }
-    
+
     if (file_root.GetLength() == 0) {
         NPT_File::GetWorkingDir(file_root);
     }
-    
+
     if (verbose) {
         NPT_Console::OutputF("Starting server on port %d, file-root=%s, url-root=%s, threads=%d\n",
                              port, file_root.GetChars(), url_root.GetChars(), threads);
     }
-    
+
     ZipHttpServer* server = new ZipHttpServer(file_root, url_root, port, threads);
     server->Loop();
     delete server;
-    
+
     return 0;
 }

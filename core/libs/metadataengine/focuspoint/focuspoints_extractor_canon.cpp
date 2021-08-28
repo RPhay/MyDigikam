@@ -3,7 +3,7 @@
  * This file is a part of digiKam project
  * https://www.digikam.org
  *
- * Date        : 
+ * Date        :
  * Description : Extraction of focus points by exiftool data
  *
  * Copyright (C) 2020-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
@@ -65,15 +65,15 @@ void set_point_type(FocusPoint& point,
     }
 }
 
-FocusPoint create_af_point(float imageWidth, float imageHeight, 
-                                                 float afPointWidth, float afPointHeight, 
+FocusPoint create_af_point(float imageWidth, float imageHeight,
+                                                 float afPointWidth, float afPointHeight,
                                                  float af_x_position, float af_y_position,
                                                  QStringList af_selected, QStringList af_infocus,
                                                  int yDirection, int index)
-{    
+{
     FocusPoint point;
 
-    set_point_position(point, imageWidth, imageHeight, 
+    set_point_position(point, imageWidth, imageHeight,
                        af_x_position, af_y_position, yDirection);
 
     set_point_size(point, imageWidth, imageHeight, afPointWidth, afPointHeight);
@@ -90,11 +90,11 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_canon() con
 {
     QString TagNameRoot = QLatin1String("MakerNotes.Canon.Camera");
 
-    // Get size image 
+    // Get size image
     QString model = findValue(QLatin1String("EXIF.IFD0.Camera.Make")).toString();
-    
+
     QVariant imageWidth, imageHeight;
-    
+
     if (model.toLower() == QLatin1String("canon eos 5d"))
     {
         imageWidth = findValueFirstMatch(QStringList()
@@ -117,23 +117,23 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_canon() con
                                         <<QLatin1String("EXIF.ExifIFD.Image.ExifImageHeight")
                                         );
     }
-    
+
     if (imageWidth.isNull() || imageHeight.isNull())
     {
         return getAFPoints_default();
     }
-    
+
     // Get size of af points
     QVariant afPointWidth = findValue(TagNameRoot,QLatin1String("AFAreaWidth"));
     QVariant afPointHeight = findValue(TagNameRoot,QLatin1String("AFAreaHeight"));
     QStringList afPointWidths = findValue(TagNameRoot,QLatin1String("AFAreaWidths"), true).toStringList();
     QStringList afPointHeights = findValue(TagNameRoot,QLatin1String("AFAreaHeights"), true).toStringList();
-    
-    if (((afPointWidth.isNull()) || (afPointHeight.isNull())) && 
+
+    if (((afPointWidth.isNull()) || (afPointHeight.isNull())) &&
         ((afPointWidths.isEmpty()) || (afPointHeights.isEmpty())))
     {
         return getAFPoints_default();
-    }   
+    }
 
     // Get coordinate of af points
     QStringList af_x_positions = findValue(TagNameRoot,QLatin1String("AFAreaXPositions"), true).toStringList() ;
@@ -162,12 +162,12 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_canon() con
     for (int i=0; i < af_x_positions.count(); i++)
     {
         float afPointWidthUsed = (afPointWidths.isEmpty()) ?  afPointWidth.toFloat() : afPointWidths[i].toFloat();
-        
+
         float afPointHeightUsed = (afPointWidths.isEmpty()) ?  afPointHeight.toFloat() : afPointWidths[i].toFloat();
 
-        FocusPoint point = CanonInternal::create_af_point(imageWidth.toFloat(), imageHeight.toFloat(), 
+        FocusPoint point = CanonInternal::create_af_point(imageWidth.toFloat(), imageHeight.toFloat(),
                                                           afPointWidthUsed, afPointHeightUsed,
-                                                          af_x_positions[i].toFloat(), af_y_positions[i].toFloat(), 
+                                                          af_x_positions[i].toFloat(), af_y_positions[i].toFloat(),
                                                           af_selected, af_infocus,
                                                           yDirection, i);
         points.append(point);

@@ -183,7 +183,7 @@ int main(int ac, char *av[])
 
     RawProcessor->recycle(); // just for show this call
   }
-  
+
   delete RawProcessor;
   return 0;
 }

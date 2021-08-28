@@ -69,9 +69,9 @@ class NPT_Polymorphic
 public:
     // destructor
     virtual ~NPT_Polymorphic() {}
-     
+
     // methods
-    virtual NPT_Result GetInterface(const NPT_InterfaceId& id, 
+    virtual NPT_Result GetInterface(const NPT_InterfaceId& id,
                                     NPT_Interface*&        iface) = 0;
 };
 
@@ -96,17 +96,17 @@ class NPT_Configurable
 public:
     // destructor
     virtual ~NPT_Configurable() {}
-     
+
     // methods
-    virtual NPT_Result SetProperty(const char* /*name*/, 
-                                   const char* /*value*/) { 
+    virtual NPT_Result SetProperty(const char* /*name*/,
+                                   const char* /*value*/) {
         return NPT_ERROR_NO_SUCH_PROPERTY;
     }
-    virtual NPT_Result SetProperty(const char* /*name*/, 
-                                   int         /*value*/) { 
+    virtual NPT_Result SetProperty(const char* /*name*/,
+                                   int         /*value*/) {
         return NPT_ERROR_NO_SUCH_PROPERTY;
     }
-    virtual NPT_Result GetProperty(const char*        /*name*/, 
+    virtual NPT_Result GetProperty(const char*        /*name*/,
                                    NPT_PropertyValue& /*value*/) {
         return NPT_ERROR_NO_SUCH_PROPERTY;
     }

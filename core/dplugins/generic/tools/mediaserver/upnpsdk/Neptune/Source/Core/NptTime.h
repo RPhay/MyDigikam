@@ -69,7 +69,7 @@ class NPT_TimeStamp
     void SetMicros(NPT_Int64 micros)     { m_NanoSeconds = micros  * 1000;       }
     void SetMillis(NPT_Int64 millis)     { m_NanoSeconds = millis  * 1000000;    }
     void SetSeconds(NPT_Int64 seconds)   { m_NanoSeconds = seconds * 1000000000; }
-        
+
     // conversion
     operator double() const               { return (double)m_NanoSeconds/1E9; }
     void FromNanos(NPT_Int64 nanoseconds) { m_NanoSeconds = nanoseconds;      }
@@ -77,7 +77,7 @@ class NPT_TimeStamp
     NPT_Int64 ToMicros() const            { return m_NanoSeconds/1000;        }
     NPT_Int64 ToMillis() const            { return m_NanoSeconds/1000000;     }
     NPT_Int64 ToSeconds() const           { return m_NanoSeconds/1000000000;  }
-    
+
 private:
     // members
     NPT_Int64 m_NanoSeconds;
@@ -86,9 +86,9 @@ private:
 /*----------------------------------------------------------------------
 |   operator+
 +---------------------------------------------------------------------*/
-inline 
-NPT_TimeStamp 
-operator+(const NPT_TimeStamp& t1, const NPT_TimeStamp& t2) 
+inline
+NPT_TimeStamp
+operator+(const NPT_TimeStamp& t1, const NPT_TimeStamp& t2)
 {
     NPT_TimeStamp t = t1;
     return t += t2;
@@ -97,9 +97,9 @@ operator+(const NPT_TimeStamp& t1, const NPT_TimeStamp& t2)
 /*----------------------------------------------------------------------
 |   operator-
 +---------------------------------------------------------------------*/
-inline 
-NPT_TimeStamp 
-operator-(const NPT_TimeStamp& t1, const NPT_TimeStamp& t2) 
+inline
+NPT_TimeStamp
+operator-(const NPT_TimeStamp& t1, const NPT_TimeStamp& t2)
 {
     NPT_TimeStamp t = t1;
     return t -= t2;
@@ -122,26 +122,26 @@ public:
         FORMAT_RFC_1123,  // RFC 822 updated by RFC 1123
         FORMAT_RFC_1036   // RFC 850 updated by RFC 1036
     };
-    
+
     enum FormatFlags {
         FLAG_EMIT_FRACTION      = 1,
         FLAG_EXTENDED_PRECISION = 2
     };
-    
+
     // class methods
     NPT_Int32 GetLocalTimeZone();
-    
+
     // constructors
     NPT_DateTime();
     NPT_DateTime(const NPT_TimeStamp& timestamp, bool local=false);
-    
+
     // methods
     NPT_Result ChangeTimeZone(NPT_Int32 timezone);
     NPT_Result FromTimeStamp(const NPT_TimeStamp& timestamp, bool local=false);
     NPT_Result ToTimeStamp(NPT_TimeStamp& timestamp) const;
     NPT_Result FromString(const char* date, Format format = FORMAT_ANSI);
     NPT_String ToString(Format format = FORMAT_ANSI, NPT_Flags flags=0) const;
-    
+
     // members
     NPT_Int32 m_Year;        // year
     NPT_Int32 m_Month;       // month of the year (1-12)

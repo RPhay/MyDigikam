@@ -51,7 +51,7 @@ typedef struct
 
 typedef lr_jpg_source_mgr *lr_jpg_src_ptr;
 
-#define LR_JPEG_INPUT_BUF_SIZE 16384 
+#define LR_JPEG_INPUT_BUF_SIZE 16384
 
 static void f_init_source(j_decompress_ptr cinfo)
 {
@@ -628,7 +628,7 @@ char *LibRaw_bigfile_datastream::gets(char *str, int sz)
 int LibRaw_bigfile_datastream::scanf_one(const char *fmt, void *val)
 {
   LR_BF_CHK();
-  return 
+  return
 #ifndef WIN32SECURECALLS
                    fscanf(f, fmt, val)
 #else

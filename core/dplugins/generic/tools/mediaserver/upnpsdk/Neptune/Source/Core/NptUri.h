@@ -95,7 +95,7 @@ public:
     // class methods
     static NPT_String UrlEncode(const char* str, bool encode_percents=true);
     static NPT_String UrlDecode(const char* str);
-    
+
     // types
     struct Field {
         Field(const char* name, const char* value, bool encoded);
@@ -133,7 +133,7 @@ public:
      * parsing or setting some of its fields.
      */
     NPT_Url();
-    
+
     /**
      * Construct a URL by parsing an input string in its fully encoded form.
      * If an error occurs during parsing (such as an invalid syntax), the
@@ -143,7 +143,7 @@ public:
      * @param default_port The default port number, or 0 if not specified
      */
     NPT_Url(const char* url, NPT_UInt16  default_port = 0);
-    
+
     /**
      * Construct a URL from its components. When constructing a URL from
      * components, the components are assumed to be passed in their non-encoded
@@ -157,8 +157,8 @@ public:
      * @param fragment The fragment, if any, or NULL
      */
     NPT_Url(const char* scheme,
-            const char* host, 
-            NPT_UInt16  port, 
+            const char* host,
+            NPT_UInt16  port,
             const char* path,
             const char* query = NULL,
             const char* fragment = NULL);
@@ -170,19 +170,19 @@ public:
      * @param default port The defautl port number, or 0 if not specified
      */
     NPT_Result Parse(const char* url, NPT_UInt16  default_port = 0);
-    
+
     /**
      * Parse just the path plus optional query and fragment from a fully encoded form.
      *
      * @param path_plus The URL path plus optional query and fragment
      */
     NPT_Result ParsePathPlus(const char* path_plus);
-    
+
     /**
      * Returns the host part of the URL, in its encoded form
      */
     const NPT_String& GetHost() const { return m_Host;     }
-    
+
     /**
      * Returns the port number of the URL.
      */
@@ -192,7 +192,7 @@ public:
      * Returns the path part of the URL, in its encoded form
      */
     const NPT_String& GetPath() const { return m_Path; }
-    
+
     /**
      * Returns the path part of the URL, in its encoded or decoded form
      */
@@ -202,12 +202,12 @@ public:
      * Returns the query part of the URL, in its encoded form
      */
     const NPT_String& GetQuery() const { return m_Query; }
-    
+
     /**
      * Returns the fragment part of the URL, in its encoded form
      */
     const NPT_String& GetFragment() const { return m_Fragment; }
-    
+
     /**
      * Returns whether the URL is valid or not. Invalid URLs are uninitialized or
      * not fully initialized URLs.
@@ -215,18 +215,18 @@ public:
      * @return true if the URL is valid, false if it is not.
      */
     virtual bool IsValid() const;
-    
+
     /**
      * Resets a URL to an uninitialized state.
      */
     void Reset();
-    
+
     /**
      * Returns whether the URL has a query part or not.
      *
      * @return true if the URL has a query part, false if it does not.
      */
-    bool HasQuery() const { return m_HasQuery; } 
+    bool HasQuery() const { return m_HasQuery; }
 
     /**
      * Returns whether the URL has a fragment part or not.
@@ -241,14 +241,14 @@ public:
      * @param host The host part of the URL (enclose with [ and ] for IPv6 addresses)
      */
     NPT_Result SetHost(const char* host);
-    
+
     /**
      * Sets the port number of the URL.
      *
      * @param port The port number of the URL
      */
     NPT_Result SetPort(NPT_UInt16 port);
-    
+
     /**
      * Sets the path part of the URL.
      *
@@ -258,32 +258,32 @@ public:
      * automatically encoded.
      */
     NPT_Result SetPath(const char* path, bool encoded=false);
-    
+
     /**
      * Sets the query part of the URL.
-     * 
+     *
      * @param query The query part of the URL
      * @param encoded Boolean flag indicating whether the query parameter is
      * already encoded or not. If it is not already encoded, it will be
      * automatically encoded.
-     */     
+     */
     NPT_Result SetQuery(const char* query, bool encoded=false);
 
     /**
      * Sets the fragment part of the URL.
-     * 
+     *
      * @param query The fragment part of the URL
      * @param encoded Boolean flag indicating whether the fragment parameter is
      * already encoded or not. If it is not already encoded, it will be
      * automatically encoded.
-     */     
+     */
     NPT_Result SetFragment(const char* fragment, bool encoded=false);
 
     /**
-     * Return the string representation of the URL in a way that can be used in 
+     * Return the string representation of the URL in a way that can be used in
      * an HTTP request (i.e just the portion of the URL starting with the path)
      *
-     * @param with_fragment Boolean flag specifiying whether the fragment part of 
+     * @param with_fragment Boolean flag specifiying whether the fragment part of
      * the URL should be included in the returned string or not.
      */
     virtual NPT_String ToRequestString(bool with_fragment = false) const;
@@ -292,9 +292,9 @@ public:
      * Return the string representation of the URL.
      *
      * @param default_port default port number for the scheme. If the port number of
-     * the URL is not equal to the default port, then port number is explicitely 
-     * included in the string representation of the URL. 
-     * @param with_fragment Boolean flag specifiying whether the fragment part of 
+     * the URL is not equal to the default port, then port number is explicitely
+     * included in the string representation of the URL.
+     * @param with_fragment Boolean flag specifiying whether the fragment part of
      * the URL should be included in the returned string or not.
      */
     virtual NPT_String ToStringWithDefaultPort(NPT_UInt16 default_port, bool with_fragment = true) const;
@@ -302,7 +302,7 @@ public:
     /**
      * Return the string representation of the URL.
      *
-     * @param with_fragment Boolean flag specifiying whether the fragment part of 
+     * @param with_fragment Boolean flag specifiying whether the fragment part of
      * the URL should be included in the returned string or not.
      */
     virtual NPT_String ToString(bool with_fragment = true) const;

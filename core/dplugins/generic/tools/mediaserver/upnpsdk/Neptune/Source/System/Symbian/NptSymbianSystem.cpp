@@ -91,7 +91,7 @@ NPT_System::SleepUntil(const NPT_TimeStamp& when)
 /*----------------------------------------------------------------------
 |   NPT_System::SetRandomSeed
 +---------------------------------------------------------------------*/
-NPT_Result  
+NPT_Result
 NPT_System::SetRandomSeed(unsigned int seed)
 {
     NPT_System_RandomGeneratorSeed = seed;
@@ -101,13 +101,13 @@ NPT_System::SetRandomSeed(unsigned int seed)
 /*----------------------------------------------------------------------
 |   NPT_System::NPT_System
 +---------------------------------------------------------------------*/
-NPT_UInt32 
+NPT_UInt32
 NPT_System::GetRandomInteger()
 {
     if (!NPT_System_RandomGeneratorSeed) {
         TTime time;
         time.HomeTime();
-        
+
         NPT_System::SetRandomSeed(time.Int64());
     }
 

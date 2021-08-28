@@ -3,14 +3,14 @@
  * This file is a part of digiKam project
  * https://www.digikam.org
  *
- * Date        : 
+ * Date        :
  * Description : Image Quality Parser - Noise detection
  *
  * Copyright (C) 2013-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * References  : http://www.arpnjournals.org/jeas/research_papers/rp_2016/jeas_1216_5505.pdf
- * 
- * 
+ *
+ *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
  * Public License as published by the Free Software Foundation;
@@ -126,7 +126,7 @@ cv::Mat CompressionDetector::checkEdgesBlock(const cv::Mat& gray_image, int bloc
     for (int i = 2; i < blockSize - 1; i ++)
     {
         cv::Mat a = (accessGrayImageAt(i) - accessGrayImageAt(i + 1)) - (accessGrayImageAt(i - 1) - accessGrayImageAt(i));
-        
+
         cv::Mat b = (accessGrayImageAt(i) - accessGrayImageAt(i + 1)) - (accessGrayImageAt(i + 1) - accessGrayImageAt(i - 2));
 
         accessResAt(i) = (a >= d->threshold_edges_block) & (b >= d->threshold_edges_block);
@@ -144,7 +144,7 @@ cv::Mat CompressionDetector::detectMonoColorRegion(const cv::Mat& image) const
     cv::Mat mat_subtraction = cv::abs(image - median_image);
 
     std::vector<cv::Mat> rgbChannels(3);
-    
+
     cv::split(mat_subtraction, rgbChannels);
 
     cv::Mat res = rgbChannels[0] + rgbChannels[1] + rgbChannels[2];

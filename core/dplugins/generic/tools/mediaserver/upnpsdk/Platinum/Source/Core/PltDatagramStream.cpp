@@ -11,14 +11,14 @@
 | as published by the Free Software Foundation; either version 2
 | of the License, or (at your option) any later version.
 |
-| OEMs, ISVs, VARs and other distributors that combine and 
+| OEMs, ISVs, VARs and other distributors that combine and
 | distribute commercially licensed software with Platinum software
 | and do not wish to distribute the source code for the commercially
 | licensed software under version 2, or (at your option) any later
 | version, of the GNU General Public License (the "GPL") must enter
 | into a commercial license agreement with Plutinosoft, LLC.
 | licensing@plutinosoft.com
-|  
+|
 | This program is distributed in the hope that it will be useful,
 | but WITHOUT ANY WARRANTY; without even the implied warranty of
 | MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
@@ -26,7 +26,7 @@
 |
 | You should have received a copy of the GNU General Public License
 | along with this program; see the file LICENSE.txt. If not, write to
-| the Free Software Foundation, Inc., 
+| the Free Software Foundation, Inc.,
 | 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 | http://www.gnu.org/licenses/gpl-2.0.html
 |
@@ -44,7 +44,7 @@ NPT_SET_LOCAL_LOGGER("platinum.inputdatagramstream")
 |   PLT_InputDatagramStream::PLT_InputDatagramStream
 +---------------------------------------------------------------------*/
 PLT_InputDatagramStream::PLT_InputDatagramStream(NPT_UdpSocket* socket,
-                                                 NPT_Size       buffer_size) : 
+                                                 NPT_Size       buffer_size) :
     m_Socket(socket),
     m_BufferOffset(0)
 {
@@ -61,9 +61,9 @@ PLT_InputDatagramStream::~PLT_InputDatagramStream()
 /*----------------------------------------------------------------------
 |   PLT_InputDatagramStream::Read
 +---------------------------------------------------------------------*/
-NPT_Result 
-PLT_InputDatagramStream::Read(void*     buffer, 
-                              NPT_Size  bytes_to_read, 
+NPT_Result
+PLT_InputDatagramStream::Read(void*     buffer,
+                              NPT_Size  bytes_to_read,
                               NPT_Size* bytes_read /*= 0*/)
 {
     NPT_Result res = NPT_SUCCESS;
@@ -71,28 +71,28 @@ PLT_InputDatagramStream::Read(void*     buffer,
     if (bytes_read) *bytes_read = 0;
 
     // always try to read from socket if needed even if bytes_to_read is 0
-    if (m_Buffer.GetDataSize() == 0) {        
+    if (m_Buffer.GetDataSize() == 0) {
         // read data into it now
         NPT_SocketAddress addr;
         res = m_Socket->Receive(m_Buffer, &addr);
-        
+
         // update info
         m_Socket->GetInfo(m_Info);
         m_Info.remote_address = addr;
 
         NPT_LOG_FINER_1("PLT_InputDatagramStream received %d", m_Buffer.GetDataSize());
     }
-        
+
     if (bytes_to_read == 0) return res;
-    
+
     if (NPT_SUCCEEDED(res)) {
         NPT_Size available = m_Buffer.GetDataSize()-(NPT_Size)m_BufferOffset;
         NPT_Size _bytes_to_read = bytes_to_read<available?bytes_to_read:available;
         NPT_CopyMemory(buffer, m_Buffer.UseData()+m_BufferOffset, _bytes_to_read);
         m_BufferOffset += _bytes_to_read;
-        
+
         if (bytes_read) *bytes_read = _bytes_to_read;
-        
+
         // read buffer entirety, reset for next time
         if (m_BufferOffset == m_Buffer.GetDataSize()) {
             m_BufferOffset = 0;
@@ -108,7 +108,7 @@ PLT_InputDatagramStream::Read(void*     buffer,
 /*----------------------------------------------------------------------
 |   PLT_OutputDatagramStream::GetInfo
 +---------------------------------------------------------------------*/
-NPT_Result 
+NPT_Result
 PLT_InputDatagramStream::GetInfo(NPT_SocketInfo& info)
 {
     info = m_Info;
@@ -118,9 +118,9 @@ PLT_InputDatagramStream::GetInfo(NPT_SocketInfo& info)
 /*----------------------------------------------------------------------
 |   PLT_OutputDatagramStream::PLT_OutputDatagramStream
 +---------------------------------------------------------------------*/
-PLT_OutputDatagramStream::PLT_OutputDatagramStream(NPT_UdpSocket*   socket, 
-                                                   NPT_Size         size, 
-                                                   const NPT_SocketAddress* address) : 
+PLT_OutputDatagramStream::PLT_OutputDatagramStream(NPT_UdpSocket*   socket,
+                                                   NPT_Size         size,
+                                                   const NPT_SocketAddress* address) :
     m_Socket(socket),
     m_Address(address?new NPT_SocketAddress(address->GetIpAddress(), address->GetPort()):NULL)
 {
@@ -138,7 +138,7 @@ PLT_OutputDatagramStream::~PLT_OutputDatagramStream()
 /*----------------------------------------------------------------------
 |   PLT_OutputDatagramStream::Write
 +---------------------------------------------------------------------*/
-NPT_Result 
+NPT_Result
 PLT_OutputDatagramStream::Write(const void* buffer, NPT_Size bytes_to_write, NPT_Size* bytes_written /* = NULL */)
 {
     // calculate if we need to increase the buffer
@@ -157,7 +157,7 @@ PLT_OutputDatagramStream::Write(const void* buffer, NPT_Size bytes_to_write, NPT
 /*----------------------------------------------------------------------
 |   PLT_OutputDatagramStream::Flush
 +---------------------------------------------------------------------*/
-NPT_Result 
+NPT_Result
 PLT_OutputDatagramStream::Flush()
 {
     // send buffer now

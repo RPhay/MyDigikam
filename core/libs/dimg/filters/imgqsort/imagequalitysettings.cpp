@@ -294,7 +294,7 @@ void ImageQualitySettings::readSettings()
 ImageQualityContainer ImageQualitySettings::getImageQualityContainer()
 {
     ImageQualityContainer imq;
-    
+
     imq.readFromConfig();
 
     return imq;

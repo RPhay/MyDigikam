@@ -547,7 +547,7 @@ void ItemDescEditTab::slotChangingItems()
 
         DisjointMetadata* const hub2 = new DisjointMetadata();
         hub2->setDataFields(d->hub.dataFields());
-        
+
         emit askToApplyChanges(d->currInfos, hub2);
 
         reset();

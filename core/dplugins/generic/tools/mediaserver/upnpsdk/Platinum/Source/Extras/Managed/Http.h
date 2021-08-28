@@ -11,13 +11,13 @@
 | as published by the Free Software Foundation; either version 2
 | of the License, or (at your option) any later version.
 |
-| OEMs, ISVs, VARs and other distributors that combine and 
+| OEMs, ISVs, VARs and other distributors that combine and
 | distribute commercially licensed software with Platinum software
 | and do not wish to distribute the source code for the commercially
 | licensed software under version 2, or (at your option) any later
 | version, of the GNU General Public License (the "GPL") must enter
 | into a commercial license agreement with Plutinosoft, LLC.
-| 
+|
 | This program is distributed in the hope that it will be useful,
 | but WITHOUT ANY WARRANTY; without even the implied warranty of
 | MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
@@ -25,7 +25,7 @@
 |
 | You should have received a copy of the GNU General Public License
 | along with this program; see the file LICENSE.txt. If not, write to
-| the Free Software Foundation, Inc., 
+| the Free Software Foundation, Inc.,
 | 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 | http://www.gnu.org/licenses/gpl-2.0.html
 |
@@ -74,7 +74,7 @@ public:
 public:
 
     // properties
-    virtual property Uri^ URI 
+    virtual property Uri^ URI
     {
         Uri^ get()
         {
@@ -84,13 +84,13 @@ public:
 
 internal:
 
-    // Note: Because a NPT_HttpRequest cannot do a deep copy, 
+    // Note: Because a NPT_HttpRequest cannot do a deep copy,
     // this only refers to the original native object
     HttpRequest(NPT_HttpRequest& native) :
         m_pHandle(&native)
     {
     }
-            
+
 public:
 
     ~HttpRequest()
@@ -149,13 +149,13 @@ public:
 
 internal:
 
-    // Note: Because a NPT_HttpResponse cannot do a deep copy, 
+    // Note: Because a NPT_HttpResponse cannot do a deep copy,
     // this only refers to the original native object
     HttpResponse(NPT_HttpResponse& native) :
         m_pHandle(&native)
     {
     }
-         
+
 public:
 
     ~HttpResponse()
@@ -204,7 +204,7 @@ public:
         UInt32  port;
     };
 
-    virtual property SocketAddress^ LocalAddress 
+    virtual property SocketAddress^ LocalAddress
     {
         SocketAddress^ get()
         {
@@ -215,9 +215,9 @@ public:
         }
     }
 
-    virtual property SocketAddress^ RemoteAddress 
+    virtual property SocketAddress^ RemoteAddress
     {
-        SocketAddress^ get() 
+        SocketAddress^ get()
         {
             SocketAddress^ local = gcnew SocketAddress;
             local->ip = marshal_as<String^>(Handle.GetRemoteAddress().GetIpAddress().ToString());
@@ -245,7 +245,7 @@ private:
 
     static DeviceSignature ParseDeviceSignature(PLT_DeviceSignature signature)
     {
-        switch (signature) 
+        switch (signature)
         {
         case PLT_DEVICE_XBOX:
             return DeviceSignature::XBox;
@@ -265,7 +265,7 @@ internal:
         ManagedWrapper<PLT_HttpRequestContext>(native)
     {
     }
-            
+
     ~HttpRequestContext()
     {
         // clean-up managed

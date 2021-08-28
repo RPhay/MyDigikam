@@ -11,14 +11,14 @@
 | as published by the Free Software Foundation; either version 2
 | of the License, or (at your option) any later version.
 |
-| OEMs, ISVs, VARs and other distributors that combine and 
+| OEMs, ISVs, VARs and other distributors that combine and
 | distribute commercially licensed software with Platinum software
 | and do not wish to distribute the source code for the commercially
 | licensed software under version 2, or (at your option) any later
 | version, of the GNU General Public License (the "GPL") must enter
 | into a commercial license agreement with Plutinosoft, LLC.
 | licensing@plutinosoft.com
-|  
+|
 | This program is distributed in the hope that it will be useful,
 | but WITHOUT ANY WARRANTY; without even the implied warranty of
 | MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
@@ -26,7 +26,7 @@
 |
 | You should have received a copy of the GNU General Public License
 | along with this program; see the file LICENSE.txt. If not, write to
-| the Free Software Foundation, Inc., 
+| the Free Software Foundation, Inc.,
 | 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 | http://www.gnu.org/licenses/gpl-2.0.html
 |
@@ -59,7 +59,7 @@ PLT_StreamPump::~PLT_StreamPump()
 |    PLT_StreamPump::PushData
 +----------------------------------------------------------------------*/
 NPT_Result
-PLT_StreamPump::PushData(NPT_OutputStream& output, 
+PLT_StreamPump::PushData(NPT_OutputStream& output,
                          NPT_Size&         bytes_written)
 {
     NPT_Result res = NPT_ERROR_WOULD_BLOCK;
@@ -91,7 +91,7 @@ PLT_StreamPump::PushData(NPT_OutputStream& output,
 |    PLT_StreamPump::PullData
 +----------------------------------------------------------------------*/
 NPT_Result
-PLT_StreamPump::PullData(NPT_InputStream& input, 
+PLT_StreamPump::PullData(NPT_InputStream& input,
                          NPT_Size         max_bytes_to_read)
 {
     NPT_Result res = NPT_ERROR_WOULD_BLOCK;
@@ -109,7 +109,7 @@ PLT_StreamPump::PullData(NPT_InputStream& input,
 
         byte_space = m_RingBuffer->GetContiguousSpace();
         nb_to_read = (max_bytes_to_read<byte_space)?max_bytes_to_read:byte_space;
-        // if we filled our contiguous space, and we wrapped, check if there is more to read 
+        // if we filled our contiguous space, and we wrapped, check if there is more to read
         if (NPT_SUCCEEDED(res) && (nb_to_read > 0)) {
             res = input.Read(m_RingBuffer->GetWritePointer(), nb_to_read, &count);
             m_RingBuffer->MoveIn(count);
@@ -124,7 +124,7 @@ PLT_StreamPump::PullData(NPT_InputStream& input,
 |   PLT_PipeInputStreamPump::PLT_PipeInputStreamPump
 +---------------------------------------------------------------------*/
 PLT_PipeInputStreamPump::PLT_PipeInputStreamPump(NPT_OutputStreamReference& output,
-                                                 NPT_Size                   size) : 
+                                                 NPT_Size                   size) :
     PLT_StreamPump(size),
     m_Output(output),
     m_LastRes(NPT_SUCCESS)
@@ -141,9 +141,9 @@ PLT_PipeInputStreamPump::~PLT_PipeInputStreamPump()
 /*----------------------------------------------------------------------
 |   PLT_PipeInputStreamPump::Receive
 +---------------------------------------------------------------------*/
-NPT_Result 
-PLT_PipeInputStreamPump::Receive(NPT_InputStream& input, 
-                                 NPT_Size         max_bytes_to_read, 
+NPT_Result
+PLT_PipeInputStreamPump::Receive(NPT_InputStream& input,
+                                 NPT_Size         max_bytes_to_read,
                                  NPT_Size*        bytes_read)
 {
     NPT_Size count;
@@ -155,12 +155,12 @@ PLT_PipeInputStreamPump::Receive(NPT_InputStream& input,
         NPT_Size available = m_RingBuffer->GetAvailable();
         if (available < max_bytes_to_read) {
             m_LastRes = PullData(input, max_bytes_to_read-available);
-        }    
+        }
     } else if (!m_RingBuffer->GetAvailable()) {
         // if the buffer is now empty, return the input last error
         return m_LastRes;
     }
-    
+
     // write as much as we can on the output stream
     res = PushData(*m_Output, count);
 
@@ -174,7 +174,7 @@ PLT_PipeInputStreamPump::Receive(NPT_InputStream& input,
 +---------------------------------------------------------------------*/
 PLT_PipeOutputStreamPump::PLT_PipeOutputStreamPump(NPT_InputStreamReference& input,
                                                    NPT_Size                  size /* 65535 */,
-                                                   NPT_Size                  max_bytes_to_read /* = 0 */) : 
+                                                   NPT_Size                  max_bytes_to_read /* = 0 */) :
     PLT_StreamPump(size),
     m_Input(input),
     m_MaxBytesToRead(max_bytes_to_read),
@@ -192,7 +192,7 @@ PLT_PipeOutputStreamPump::~PLT_PipeOutputStreamPump()
 /*----------------------------------------------------------------------
 |   PLT_PipeOutputStreamPump::Transmit
 +---------------------------------------------------------------------*/
-NPT_Result 
+NPT_Result
 PLT_PipeOutputStreamPump::Transmit(NPT_OutputStream& output)
 {
     NPT_Size count;
@@ -210,11 +210,11 @@ PLT_PipeOutputStreamPump::Transmit(NPT_OutputStream& output)
 
             // any data to read
             if (max_to_read) {
-                m_LastRes = PullData(*m_Input, max_to_read);   
+                m_LastRes = PullData(*m_Input, max_to_read);
             } else {
                 m_LastRes = NPT_ERROR_EOS;
             }
-        }    
+        }
     } else if (!m_RingBuffer->GetAvailable()) {
         // if the buffer is now empty, return the input last error
         return m_LastRes;

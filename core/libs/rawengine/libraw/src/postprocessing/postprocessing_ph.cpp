@@ -2,7 +2,7 @@
  * Copyright 2019-2021 LibRaw LLC (info@libraw.org)
  *
  Placehoder functions to build LibRaw w/o postprocessing tools
- 
+
  LibRaw is free software; you can redistribute it and/or modify
  it under the terms of the one of two licenses as you choose:
 

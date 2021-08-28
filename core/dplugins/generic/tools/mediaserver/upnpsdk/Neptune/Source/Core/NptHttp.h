@@ -127,8 +127,8 @@ class NPT_HttpUrl : public NPT_Url {
 public:
     // constructors
     NPT_HttpUrl() {}
-    NPT_HttpUrl(const char* host, 
-                NPT_UInt16  port, 
+    NPT_HttpUrl(const char* host,
+                NPT_UInt16  port,
                 const char* path,
                 const char* query = NULL,
                 const char* fragment = NULL);
@@ -244,18 +244,18 @@ public:
     virtual ~NPT_HttpMessage();
 
     // methods
-    const NPT_String& GetProtocol() const { 
-        return m_Protocol; 
+    const NPT_String& GetProtocol() const {
+        return m_Protocol;
     }
     NPT_Result SetProtocol(const char* protocol) {
         m_Protocol = protocol;
         return NPT_SUCCESS;
     }
-    NPT_HttpHeaders& GetHeaders() { 
-        return m_Headers;  
+    NPT_HttpHeaders& GetHeaders() {
+        return m_Headers;
     }
-    const NPT_HttpHeaders& GetHeaders() const { 
-        return m_Headers;  
+    const NPT_HttpHeaders& GetHeaders() const {
+        return m_Headers;
     }
     NPT_Result SetEntity(NPT_HttpEntity* entity);
     NPT_HttpEntity* GetEntity() {
@@ -282,7 +282,7 @@ protected:
 class NPT_HttpRequest : public NPT_HttpMessage {
 public:
     // class methods
-    static NPT_Result Parse(NPT_BufferedInputStream& stream, 
+    static NPT_Result Parse(NPT_BufferedInputStream& stream,
                             const NPT_SocketAddress* endpoint,
                             NPT_HttpRequest*&        request);
 
@@ -302,7 +302,7 @@ public:
     NPT_Result         SetUrl(const NPT_HttpUrl& url);
     const NPT_String&  GetMethod() const { return m_Method; }
     virtual NPT_Result Emit(NPT_OutputStream& stream, bool use_proxy=false) const;
-    
+
 protected:
     // members
     NPT_HttpUrl m_Url;
@@ -315,7 +315,7 @@ protected:
 class NPT_HttpResponse : public NPT_HttpMessage {
 public:
     // class methods
-    static NPT_Result Parse(NPT_BufferedInputStream& stream, 
+    static NPT_Result Parse(NPT_BufferedInputStream& stream,
                             NPT_HttpResponse*&       response);
 
     // constructors and destructor
@@ -349,7 +349,7 @@ public:
     NPT_HttpProxyAddress(const char* hostname, NPT_UInt16 port) :
         m_HostName(hostname), m_Port(port) {}
 
-    const NPT_String& GetHostName() const { return m_HostName; } 
+    const NPT_String& GetHostName() const { return m_HostName; }
     void              SetHostName(const char* hostname) { m_HostName = hostname; }
     NPT_UInt16        GetPort() const { return m_Port; }
     void              SetPort(NPT_UInt16 port) { m_Port = port; }
@@ -368,11 +368,11 @@ public:
     // class methods
     static NPT_HttpProxySelector* GetDefault();
     static NPT_HttpProxySelector* GetSystemSelector();
-    
+
     // methods
     virtual ~NPT_HttpProxySelector() {};
     virtual NPT_Result GetProxyForUrl(const NPT_HttpUrl& url, NPT_HttpProxyAddress& proxy) = 0;
-    
+
 private:
     // class members
     static NPT_HttpProxySelector* m_SystemDefault;
@@ -398,7 +398,7 @@ public:
         NPT_Cardinal m_MaxRedirects;
         NPT_String   m_UserAgent;
     };
-    
+
     class Connection {
     public:
         virtual ~Connection() {}
@@ -410,7 +410,7 @@ public:
         virtual NPT_Result                 Recycle()             { delete this; return NPT_SUCCESS; }
         virtual NPT_Result                 Abort()               { return NPT_ERROR_NOT_IMPLEMENTED; }
     };
-    
+
     class Connector {
     public:
         virtual ~Connector() {}
@@ -420,7 +420,7 @@ public:
                                    const NPT_HttpProxyAddress* proxy,
                                    bool                        reuse, // whether we can reuse a connection or not
                                    Connection*&                connection) = 0;
-        
+
     protected:
         NPT_Result TrackConnection(NPT_HttpClient& client,
                                    Connection*     connection) { return client.TrackConnection(connection); }
@@ -428,7 +428,7 @@ public:
     };
 
     // class methods
-    static NPT_Result WriteRequest(NPT_OutputStream& output_stream, 
+    static NPT_Result WriteRequest(NPT_OutputStream& output_stream,
                                    NPT_HttpRequest&  request,
                                    bool              should_persist,
                                    bool			     use_proxy = false);
@@ -439,11 +439,11 @@ public:
                                    NPT_Reference<Connection>* cref = NULL);
 
     /**
-     * @param connector Pointer to a connector instance, or NULL to use 
+     * @param connector Pointer to a connector instance, or NULL to use
      * the default (TCP) connector.
      * @param transfer_ownership Boolean flag. If true, the NPT_HttpClient object
-     * becomes the owner of the passed Connector and will delete it when it is 
-     * itself deleted. If false, the caller keeps the ownership of the connector. 
+     * becomes the owner of the passed Connector and will delete it when it is
+     * itself deleted. If false, the caller keeps the ownership of the connector.
      * This flag is ignored if the connector parameter is NULL.
      */
     NPT_HttpClient(Connector* connector = NULL, bool transfer_ownership = true);
@@ -457,7 +457,7 @@ public:
     NPT_Result Abort();
     const Config& GetConfig() const { return m_Config; }
     NPT_Result SetConfig(const Config& config);
-    NPT_Result SetProxy(const char* http_proxy_hostname, 
+    NPT_Result SetProxy(const char* http_proxy_hostname,
                         NPT_UInt16  http_proxy_port,
                         const char* https_proxy_hostname = NULL,
                         NPT_UInt16  https_proxy_port = 0);
@@ -468,7 +468,7 @@ public:
                            NPT_Timeout name_resolver_timeout);
     NPT_Result SetUserAgent(const char* user_agent);
     NPT_Result SetOptions(NPT_Flags options, bool on);
-    
+
 protected:
     // methods
     NPT_Result TrackConnection(Connection* connection);
@@ -495,8 +495,8 @@ class NPT_HttpConnectionManager : public NPT_Thread,
 public:
     // singleton management
     static NPT_HttpConnectionManager* GetInstance();
-    
-    class Connection : public NPT_HttpClient::Connection 
+
+    class Connection : public NPT_HttpClient::Connection
     {
     public:
         Connection(NPT_HttpConnectionManager& manager,
@@ -504,7 +504,7 @@ public:
                    NPT_InputStreamReference   input_stream,
                    NPT_OutputStreamReference  output_stream);
         virtual ~Connection();
-                   
+
         // NPT_HttpClient::Connection methods
         virtual NPT_InputStreamReference&  GetInputStream()      { return m_InputStream;           }
         virtual NPT_OutputStreamReference& GetOutputStream()     { return m_OutputStream;          }
@@ -522,31 +522,31 @@ public:
         NPT_InputStreamReference   m_InputStream;
         NPT_OutputStreamReference  m_OutputStream;
     };
-    
+
     // destructor
     ~NPT_HttpConnectionManager();
-    
+
     // methods
     Connection* FindConnection(NPT_SocketAddress& address);
     NPT_Result  Recycle(Connection* connection);
     NPT_Result  Track(NPT_HttpClient* client, NPT_HttpClient::Connection* connection);
     NPT_Result  AbortConnections(NPT_HttpClient* client);
-    
+
     // class methods
     static NPT_Result  Untrack(NPT_HttpClient::Connection* connection);
-    
+
 private:
     typedef NPT_List<NPT_HttpClient::Connection*> ConnectionList;
-    
+
     // class members
     static NPT_HttpConnectionManager* Instance;
-    
+
     // constructor
     NPT_HttpConnectionManager();
-    
+
     // NPT_Thread methods
     void Run();
-    
+
     // methods
     NPT_Result      UntrackConnection(NPT_HttpClient::Connection* connection);
     NPT_Result      Cleanup();
@@ -570,7 +570,7 @@ public:
     NPT_HttpRequestContext() {}
     NPT_HttpRequestContext(const NPT_SocketAddress* local_address,
                            const NPT_SocketAddress* remote_address);
-                  
+
     // methods
     const NPT_SocketAddress& GetLocalAddress()  const { return m_LocalAddress;  }
     const NPT_SocketAddress& GetRemoteAddress() const { return m_RemoteAddress; }
@@ -580,7 +580,7 @@ public:
     void SetRemoteAddress(const NPT_SocketAddress& address) {
         m_RemoteAddress = address;
     }
-    
+
 private:
     // members
     NPT_SocketAddress m_LocalAddress;
@@ -590,7 +590,7 @@ private:
 /*----------------------------------------------------------------------
 |   NPT_HttpRequestHandler
 +---------------------------------------------------------------------*/
-class NPT_HttpRequestHandler 
+class NPT_HttpRequestHandler
 {
 public:
     NPT_IMPLEMENT_DYNAMIC_CAST(NPT_HttpRequestHandler)
@@ -602,7 +602,7 @@ public:
     virtual NPT_Result SetupResponse(NPT_HttpRequest&              request,
                                      const NPT_HttpRequestContext& context,
                                      NPT_HttpResponse&             response) = 0;
-                                     
+
     /**
      * Override this method if you want to write the body yourself.
      * The default implementation will simply write out the entity's
@@ -611,9 +611,9 @@ public:
     virtual NPT_Result SendResponseBody(const NPT_HttpRequestContext& context,
                                         NPT_HttpResponse&             response,
                                         NPT_OutputStream&             output);
-    
+
     /**
-     * A notification method called by the server upon completing the 
+     * A notification method called by the server upon completing the
      * processing of a request.
      */
     virtual void Completed(NPT_Result /*result*/) {}
@@ -626,7 +626,7 @@ class NPT_HttpStaticRequestHandler : public NPT_HttpRequestHandler
 {
 public:
     // constructors
-    NPT_HttpStaticRequestHandler(const char* document, 
+    NPT_HttpStaticRequestHandler(const char* document,
                                  const char* mime_type = "text/html",
                                  bool        copy = true);
     NPT_HttpStaticRequestHandler(const void* data,
@@ -635,7 +635,7 @@ public:
                                  bool        copy = true);
 
     // NPT_HttpRequestHandler methods
-    virtual NPT_Result SetupResponse(NPT_HttpRequest&              request, 
+    virtual NPT_Result SetupResponse(NPT_HttpRequest&              request,
                                      const NPT_HttpRequestContext& context,
                                      NPT_HttpResponse&             response);
 
@@ -665,13 +665,13 @@ public:
                                const char* auto_index = NULL);
 
     // NPT_HttpRequestHandler methods
-    virtual NPT_Result SetupResponse(NPT_HttpRequest&              request, 
+    virtual NPT_Result SetupResponse(NPT_HttpRequest&              request,
                                      const NPT_HttpRequestContext& context,
                                      NPT_HttpResponse&             response);
-    
+
     // class methods
     static const char* GetDefaultContentType(const char* extension);
-    
+
     // accessors
     NPT_Map<NPT_String,NPT_String>& GetFileTypeMap() { return m_FileTypeMap; }
     void SetDefaultMimeType(const char* mime_type) {
@@ -680,7 +680,7 @@ public:
     void SetUseDefaultFileTypeMap(bool use_default) {
         m_UseDefaultFileTypeMap = use_default;
     }
-    
+
     static NPT_Result SetupResponseBody(NPT_HttpResponse&         response,
                                         NPT_InputStreamReference& stream,
                                         const NPT_String*         range_spec = NULL);
@@ -715,7 +715,7 @@ public:
 
     // constructors and destructor
     NPT_HttpServer(NPT_UInt16 listen_port = NPT_HTTP_DEFAULT_PORT, bool cancellable = false);
-    NPT_HttpServer(NPT_IpAddress listen_address, 
+    NPT_HttpServer(NPT_IpAddress listen_address,
                    NPT_UInt16    listen_port = NPT_HTTP_DEFAULT_PORT,
                    bool          cancellable = false);
     virtual ~NPT_HttpServer();
@@ -734,20 +734,20 @@ public:
     NPT_Result Loop(bool cancellable_sockets=true);
     NPT_UInt16 GetPort() { return m_BoundPort; }
     void Terminate();
-    
+
     /**
      * Add a request handler. By default the ownership of the handler is NOT transfered to this object,
      * so the caller is responsible for the lifetime management of the handler object.
      */
-    virtual NPT_Result AddRequestHandler(NPT_HttpRequestHandler* handler, 
-                                         const char*             path, 
+    virtual NPT_Result AddRequestHandler(NPT_HttpRequestHandler* handler,
+                                         const char*             path,
                                          bool                    include_children = false,
                                          bool                    transfer_ownership = false);
     virtual NPT_HttpRequestHandler* FindRequestHandler(NPT_HttpRequest& request);
     virtual NPT_List<NPT_HttpRequestHandler*> FindRequestHandlers(NPT_HttpRequest& request);
 
     /**
-     * Parse the request from a new client, form a response, and send it back. 
+     * Parse the request from a new client, form a response, and send it back.
      */
     virtual NPT_Result RespondToClient(NPT_InputStreamReference&     input,
                                        NPT_OutputStreamReference&    output,
@@ -824,8 +824,8 @@ public:
     virtual ~NPT_HttpChunkedInputStream();
 
     // NPT_InputStream methods
-    NPT_Result Read(void*     buffer, 
-                    NPT_Size  bytes_to_read, 
+    NPT_Result Read(void*     buffer,
+                    NPT_Size  bytes_to_read,
                     NPT_Size* bytes_read = NULL);
     NPT_Result Seek(NPT_Position offset);
     NPT_Result Tell(NPT_Position& offset);
@@ -850,8 +850,8 @@ public:
     virtual ~NPT_HttpChunkedOutputStream();
 
     // NPT_OutputStream methods
-    NPT_Result Write(const void* buffer, 
-                     NPT_Size    bytes_to_write, 
+    NPT_Result Write(const void* buffer,
+                     NPT_Size    bytes_to_write,
                      NPT_Size*   bytes_written = NULL);
     NPT_Result Seek(NPT_Position /*offset*/) { return NPT_ERROR_NOT_SUPPORTED;}
     NPT_Result Tell(NPT_Position& offset)    { return m_Stream.Tell(offset);  }

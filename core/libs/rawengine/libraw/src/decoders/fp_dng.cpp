@@ -275,7 +275,7 @@ static unsigned static_get4(LibRaw_abstract_datastream *stream, short _order)
 }
 
 
-void tile_stripe_data_t::init(tiff_ifd_t *ifd, const libraw_image_sizes_t& sizes, 
+void tile_stripe_data_t::init(tiff_ifd_t *ifd, const libraw_image_sizes_t& sizes,
     const unpacker_data_t& unpacker_data, short _order, LibRaw_abstract_datastream *stream)
 {
     tiled = (unpacker_data.tile_width <= sizes.raw_width) && (unpacker_data.tile_length <= sizes.raw_height);
@@ -337,7 +337,7 @@ void LibRaw::deflate_dng_load_raw()
   float max = 0.f;
 
   if (ifd->samples != 1 && ifd->samples != 3 && ifd->samples != 4)
-    throw LIBRAW_EXCEPTION_DECODE_RAW; 
+    throw LIBRAW_EXCEPTION_DECODE_RAW;
 
   if (libraw_internal_data.unpacker_data.tiff_samples != ifd->samples)
     throw LIBRAW_EXCEPTION_DECODE_RAW; // Wrong IFD
@@ -414,7 +414,7 @@ void LibRaw::deflate_dng_load_raw()
         }
       }
     }
-  
+
   imgdata.color.fmaximum = max;
 
   // Set fields according to data format
@@ -594,7 +594,7 @@ void LibRaw::uncompressed_fp_dng_load_raw()
     float *float_raw_image = 0;
 
     if (ifd->samples != 1 && ifd->samples != 3 && ifd->samples != 4)
-        throw LIBRAW_EXCEPTION_DECODE_RAW; 
+        throw LIBRAW_EXCEPTION_DECODE_RAW;
 
     if(imgdata.idata.filters && ifd->samples > 1)
       throw LIBRAW_EXCEPTION_DECODE_RAW;
@@ -679,5 +679,5 @@ void LibRaw::uncompressed_fp_dng_load_raw()
     }
 
     if (imgdata.rawparams.options & LIBRAW_RAWOPTIONS_CONVERTFLOAT_TO_INT)
-        convertFloatToInt();  
+        convertFloatToInt();
 }

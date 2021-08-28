@@ -46,7 +46,7 @@ NPT_System::GetCurrentTimeStamp(NPT_TimeStamp& now)
     int result = sys_time_get_current_time(&sec, &nsec);
     if (result != CELL_OK){
         now.m_Seconds     = 0;
-        now.m_NanoSeconds = 0;   
+        now.m_NanoSeconds = 0;
         return NPT_FAILURE;
     }
 
@@ -88,7 +88,7 @@ NPT_System::SleepUntil(const NPT_TimeStamp& when)
 /*----------------------------------------------------------------------
 |   NPT_System::SetRandomSeed
 +---------------------------------------------------------------------*/
-NPT_Result  
+NPT_Result
 NPT_System::SetRandomSeed(unsigned int seed)
 {
     srand(seed);
@@ -98,7 +98,7 @@ NPT_System::SetRandomSeed(unsigned int seed)
 /*----------------------------------------------------------------------
 |   NPT_System::GetRandomInteger
 +---------------------------------------------------------------------*/
-NPT_Integer 
+NPT_Integer
 NPT_System::GetRandomInteger()
 {
     static bool seeded = false;

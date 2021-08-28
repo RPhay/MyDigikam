@@ -22,24 +22,24 @@ WebWindow::WebWindow(QSize inWindowSize, QUrl inLoginURL, QString inRedirectURLS
 
     mWebView = new QWebEngineView(this);
     mWebView->settings()->setAttribute(QWebEngineSettings::JavascriptCanOpenWindows, true);
-	
+
     mWebEngineProfile = new QWebEngineProfile();
-	
+
     mWebEnginePage = new WebEnginePage(mWebEngineProfile, inRedirectURLString);
     QObject::connect(mWebEnginePage, SIGNAL(callbackCatched(const QString &)), this, SLOT(onCallbackCatched(const QString &)));
-	
+
 	mWebView->setPage(mWebEnginePage);
-	
+
     QRect rect_map = QRect(1, 1, width() - 2, height() - 2);
     mWebView->setGeometry(rect_map);
     mWebView->setObjectName("webView");
-	
+
 	mWebView->page()->profile()->setPersistentCookiesPolicy(QWebEngineProfile::NoPersistentCookies);
 	if(!inLoginURL.isEmpty())
 	{
     	mWebView->page()->profile()->cookieStore()->deleteAllCookies();
     }
-	
+
 	// Load the URL
     mWebView->setUrl(inLoginURL);
 }
@@ -53,7 +53,7 @@ WebWindow::~WebWindow()
 
     mWebView->close();
     delete mWebView;
-	
+
     delete ui;
 }
 
@@ -75,7 +75,7 @@ void WebWindow::onCallbackCatchedSafe()
 		QUrl getTokenUrl(mCatchedOAuthURL);
 		QUrlQuery query(getTokenUrl);
 		QList< QPair<QString, QString> > tokens = query.queryItems();
-		
+
 		QMultiMap<QString, QString> queryParams;
 		QPair<QString, QString> tokenPair;
 		foreach (tokenPair, tokens) {
@@ -83,7 +83,7 @@ void WebWindow::onCallbackCatchedSafe()
 			QString value = QUrl::fromPercentEncoding(QByteArray().append(tokenPair.second.trimmed().toLatin1()));
 			queryParams.insert(key, value);
 		}
-		
+
 		resultStr = queryParams.value("code", "");
 		close();
 	}

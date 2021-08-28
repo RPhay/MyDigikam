@@ -24,7 +24,7 @@ const unsigned int STATS_WINDOW_SIZE = 100;
 static void
 PrintUsageAndExit(void)
 {
-    fprintf(stderr, 
+    fprintf(stderr,
             "NetBench [options] <url>\n"
             "\n"
             "  Options:\n"
@@ -57,15 +57,15 @@ public:
             m_Client.SetConnector(m_Connector);
         }
     }
-    
+
     ~Worker() {
         delete m_Connector;
     }
-    
+
     void Run() {
         // get the document
         NPT_HttpRequest request(m_Url, NPT_HTTP_METHOD_GET);
-        
+
         while (!m_ShouldStop) {
             NPT_HttpResponse* response = NULL;
 
@@ -85,12 +85,12 @@ public:
                     continue;
                 }
             }
-        
+
             ++m_Iterations;
             delete response;
         }
     }
-    
+
     NPT_HttpUrl                m_Url;
     NPT_HttpClient             m_Client;
     NPT_HttpClient::Connector* m_Connector;
@@ -124,7 +124,7 @@ main(int argc, char** argv)
     unsigned int threads           = 1;
     unsigned int max_requests      = 0;
     unsigned int max_time          = 0;
-    
+
     // parse command line
     ++argv;
     const char* arg;
@@ -155,7 +155,7 @@ main(int argc, char** argv)
             return 1;
         }
     }
-   
+
     // load a client cert if needed
     NPT_TlsContext* tls_context = NULL;
 #if defined(NPT_CONFIG_ENABLE_TLS)
@@ -186,7 +186,7 @@ main(int argc, char** argv)
 
     NPT_TimeStamp start_time;
     NPT_System::GetCurrentTimeStamp(start_time);
-    
+
     struct {
         unsigned int  request_count;
         unsigned int  failure_count;
@@ -207,7 +207,7 @@ main(int argc, char** argv)
         stats[cursor].timestamp     = now;
         stats[cursor].request_count = total_requests;
         stats[cursor].failure_count = total_failures;
-        
+
         int newest = cursor;
         int oldest = (cursor+1)%STATS_WINDOW_SIZE;
         if (loop < STATS_WINDOW_SIZE) {
@@ -223,7 +223,7 @@ main(int argc, char** argv)
         fflush(stdout);
 
         cursor = (cursor+1)%STATS_WINDOW_SIZE;
-        
+
         if (max_time && (now-start_time).ToSeconds() >= max_time) {
             break;
         }
@@ -240,14 +240,14 @@ main(int argc, char** argv)
     for (unsigned int i=0; i<threads; i++) {
         workers[i]->m_ShouldStop = true;
     }
-    
+
     for (unsigned int i=0; i<threads; i++) {
         workers[i]->Wait();
         delete workers[i];
     }
-    
+
     delete tls_context;
-    
+
     return 0;
 }
 

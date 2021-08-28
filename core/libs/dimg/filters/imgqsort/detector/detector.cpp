@@ -3,12 +3,12 @@
  * This file is a part of digiKam project
  * https://www.digikam.org
  *
- * Date        : 
+ * Date        :
  * Description : Image Quality Parser - blur detection
  *
  * Copyright (C) 2013-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
- * References  : 
+ * References  :
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -42,7 +42,7 @@ DetectorDistortion::DetectorDistortion(QObject* const parent)
 {
 }
 
-// Maybe this function will move to read_image() of imagequalityparser 
+// Maybe this function will move to read_image() of imagequalityparser
 // in case all detector of IQS use cv::Mat
 cv::Mat DetectorDistortion::prepareForDetection(const DImg& inputImage)
 {
@@ -52,9 +52,9 @@ cv::Mat DetectorDistortion::prepareForDetection(const DImg& inputImage)
     }
 
     cv::Mat cvImage;
-    
+
     int type               = inputImage.sixteenBit() ? CV_16UC4 : CV_8UC4;
-    
+
     cv::Mat cvImageWrapper = cv::Mat(inputImage.height(), inputImage.width(), type, inputImage.bits());
 
     cv::cvtColor(cvImageWrapper, cvImage, cv::COLOR_RGBA2BGR);

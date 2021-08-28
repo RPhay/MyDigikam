@@ -30,16 +30,16 @@
 
 class dng_ref_counted_block
 	{
-	
+
 	private:
-	
+
 		struct header
 			{
 
 			dng_std_mutex fMutex;
 
 			uint32 fRefCount;
-				
+
 			uint32 fSize;
 
 			header (uint32 size)
@@ -56,20 +56,20 @@ class dng_ref_counted_block
 			};
 
 		void *fBuffer;
-		
+
 	public:
-	
+
 		/// Construct an empty memory buffer using malloc.
 		/// \exception dng_memory_full with fErrorCode equal to dng_error_memory.
 
 		dng_ref_counted_block ();
-		
+
 		/// Construct memory buffer of size bytes using malloc.
 		/// \param size Number of bytes of memory needed.
 		/// \exception dng_memory_full with fErrorCode equal to dng_error_memory.
 
 		dng_ref_counted_block (uint32 size);
-		
+
 		/// Release memory buffer using free.
 
 		~dng_ref_counted_block ();
@@ -77,9 +77,9 @@ class dng_ref_counted_block
 		/// Copy constructore, which takes a reference to data and does not copy the block.
 
 		dng_ref_counted_block (const dng_ref_counted_block &data);
-		
+
 		/// Assignment operatore takes a reference to right hand side and does not copy the data.
-		
+
 		dng_ref_counted_block & operator= (const dng_ref_counted_block &data);
 
 		/// Clear existing memory buffer and allocate new memory of size bytes.
@@ -90,9 +90,9 @@ class dng_ref_counted_block
 
 		/// Release any allocated memory using free. Object is still valid and
 		/// Allocate can be called again.
-		
+
 		void Clear ();
-		
+
 		/// If there is only one reference, do nothing, otherwise copy the data into a new block and return an object with that block as the data.
 
 		void EnsureWriteable ();
@@ -109,7 +109,7 @@ class dng_ref_counted_block
 			{
 			return fBuffer ? (void *) ((char *) fBuffer + sizeof (header)) : NULL;
 			}
-		
+
 		/// Return pointer to allocated memory as a const void *.
 		/// \retval const void * valid for as many bytes as were allocated.
 
@@ -117,7 +117,7 @@ class dng_ref_counted_block
 			{
 			return fBuffer ? (const void *) ((char *) fBuffer + sizeof (header)) : NULL;
 			}
-		
+
 		/// Return pointer to allocated memory as a char *.
 		/// \retval char * valid for as many bytes as were allocated.
 
@@ -125,7 +125,7 @@ class dng_ref_counted_block
 			{
 			return (char *) Buffer ();
 			}
-			
+
 		/// Return pointer to allocated memory as a const char *.
 		/// \retval const char * valid for as many bytes as were allocated.
 
@@ -133,7 +133,7 @@ class dng_ref_counted_block
 			{
 			return (const char *) Buffer ();
 			}
-			
+
 		/// Return pointer to allocated memory as a uint8 *.
 		/// \retval uint8 * valid for as many bytes as were allocated.
 
@@ -141,7 +141,7 @@ class dng_ref_counted_block
 			{
 			return (uint8 *) Buffer ();
 			}
-			
+
 		/// Return pointer to allocated memory as a const uint8 *.
 		/// \retval const uint8 * valid for as many bytes as were allocated.
 
@@ -149,7 +149,7 @@ class dng_ref_counted_block
 			{
 			return (const uint8 *) Buffer ();
 			}
-	
+
 		/// Return pointer to allocated memory as a uint16 *.
 		/// \retval uint16 * valid for as many bytes as were allocated.
 
@@ -157,7 +157,7 @@ class dng_ref_counted_block
 			{
 			return (uint16 *) Buffer ();
 			}
-			
+
 		/// Return pointer to allocated memory as a const uint16 *.
 		/// \retval const uint16 * valid for as many bytes as were allocated.
 
@@ -165,7 +165,7 @@ class dng_ref_counted_block
 			{
 			return (const uint16 *) Buffer ();
 			}
-	
+
 		/// Return pointer to allocated memory as a int16 *.
 		/// \retval int16 * valid for as many bytes as were allocated.
 
@@ -173,7 +173,7 @@ class dng_ref_counted_block
 			{
 			return (int16 *) Buffer ();
 			}
-			
+
 		/// Return pointer to allocated memory as a const int16 *.
 		/// \retval const int16 * valid for as many bytes as were allocated.
 
@@ -181,7 +181,7 @@ class dng_ref_counted_block
 			{
 			return (const int16 *) Buffer ();
 			}
-	
+
 		/// Return pointer to allocated memory as a uint32 *.
 		/// \retval uint32 * valid for as many bytes as were allocated.
 
@@ -189,7 +189,7 @@ class dng_ref_counted_block
 			{
 			return (uint32 *) Buffer ();
 			}
-			
+
 		/// Return pointer to allocated memory as a uint32 *.
 		/// \retval uint32 * valid for as many bytes as were allocated.
 
@@ -197,7 +197,7 @@ class dng_ref_counted_block
 			{
 			return (const uint32 *) Buffer ();
 			}
-	
+
 		/// Return pointer to allocated memory as a const int32 *.
 		/// \retval const int32 * valid for as many bytes as were allocated.
 
@@ -205,7 +205,7 @@ class dng_ref_counted_block
 			{
 			return (int32 *) Buffer ();
 			}
-			
+
 		/// Return pointer to allocated memory as a const int32 *.
 		/// \retval const int32 * valid for as many bytes as were allocated.
 
@@ -213,7 +213,7 @@ class dng_ref_counted_block
 			{
 			return (const int32 *) Buffer ();
 			}
-	
+
 		/// Return pointer to allocated memory as a uint64 *.
 		/// \retval uint64 * valid for as many bytes as were allocated.
 
@@ -221,7 +221,7 @@ class dng_ref_counted_block
 			{
 			return (uint64 *) Buffer ();
 			}
-			
+
 		/// Return pointer to allocated memory as a uint64 *.
 		/// \retval uint64 * valid for as many bytes as were allocated.
 
@@ -229,7 +229,7 @@ class dng_ref_counted_block
 			{
 			return (const uint64 *) Buffer ();
 			}
-	
+
 		/// Return pointer to allocated memory as a const int64 *.
 		/// \retval const int64 * valid for as many bytes as were allocated.
 
@@ -237,7 +237,7 @@ class dng_ref_counted_block
 			{
 			return (int64 *) Buffer ();
 			}
-			
+
 		/// Return pointer to allocated memory as a const int64 *.
 		/// \retval const int64 * valid for as many bytes as were allocated.
 
@@ -245,7 +245,7 @@ class dng_ref_counted_block
 			{
 			return (const int64 *) Buffer ();
 			}
-	
+
 		/// Return pointer to allocated memory as a real32 *.
 		/// \retval real32 * valid for as many bytes as were allocated.
 
@@ -253,7 +253,7 @@ class dng_ref_counted_block
 			{
 			return (real32 *) Buffer ();
 			}
-			
+
 		/// Return pointer to allocated memory as a const real32 *.
 		/// \retval const real32 * valid for as many bytes as were allocated.
 
@@ -261,7 +261,7 @@ class dng_ref_counted_block
 			{
 			return (const real32 *) Buffer ();
 			}
-			
+
 		/// Return pointer to allocated memory as a real64 *.
 		/// \retval real64 * valid for as many bytes as were allocated.
 
@@ -269,7 +269,7 @@ class dng_ref_counted_block
 			{
 			return (real64 *) Buffer ();
 			}
-			
+
 		/// Return pointer to allocated memory as a const real64 *.
 		/// \retval const real64 * valid for as many bytes as were allocated.
 
@@ -277,11 +277,11 @@ class dng_ref_counted_block
 			{
 			return (const real64 *) Buffer ();
 			}
-			
+
 	};
 
 /*****************************************************************************/
 
 #endif
-	
+
 /*****************************************************************************/

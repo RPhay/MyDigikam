@@ -23,7 +23,7 @@
 #pragma warning(disable : 4786)
 
 /* Not supporting Win98, check WINVER if this is still needed
- 
+
 // Nothing in this file requires Unicode,
 // However, CreateSemaphore has a path parameter
 // (which is NULL always in this code) and thus
@@ -66,7 +66,7 @@
 #if WINVER >= 0x0600 // Vista introduces a real condition variable support
 #define qDNGUseConditionVariable 1
 #else
-#define qDNGUseConditionVariable 0    
+#define qDNGUseConditionVariable 0
 #endif
 #endif
 
@@ -74,7 +74,7 @@
 
 #if !qDNGUseConditionVariable
 namespace {
-    
+
 	struct waiter {
 		struct waiter *prev;
 		struct waiter *next;
@@ -104,22 +104,22 @@ private:
 struct dng_pthread_cond_impl
 {
 	dng_pthread_mutex_impl lock;		// Mutual exclusion on next two variables
-    
+
 #if qDNGUseConditionVariable
     // so much simpler, but Vista+ only
     CONDITION_VARIABLE     cond;
-     
+
     dng_pthread_cond_impl()  { InitializeConditionVariable(&cond); }
     ~dng_pthread_cond_impl() { } // no delete listed
 
 #else
-    
+
     waiter *head_waiter;			// List of threads waiting on this condition
-	waiter *tail_waiter;			// Used to get FIFO, rather than LIFO, behavior for pthread_cond_signal 
+	waiter *tail_waiter;			// Used to get FIFO, rather than LIFO, behavior for pthread_cond_signal
 	unsigned int broadcast_generation;	// Used as sort of a separator on broadcasts
 										// saves having to walk the waiters list setting
 										// each one's "chosen_by_signal" flag while the condition is locked
-    
+
 	dng_pthread_cond_impl() : head_waiter(NULL), tail_waiter(NULL), broadcast_generation(0) { }
 	~dng_pthread_cond_impl() { }
 #endif
@@ -157,11 +157,11 @@ namespace
 		ScopedLock(const ScopedLock &) { }
 	};
 
-    
+
 #if !qDNGUseConditionalVariable
     // DONE: avoid this serialization lock
     //   do allocation at init, and then just assert ?
-    
+
 	dng_pthread_mutex_impl validationLock;
 
 	void ValidateMutex(dng_pthread_mutex_t *mutex)
@@ -186,7 +186,7 @@ namespace
 			dng_pthread_cond_init(cond, NULL);
 	}
 #endif
-    
+
 	DWORD thread_wait_sema_TLS_index;
 	bool thread_wait_sema_inited = false;
 	dng_pthread_once_t once_thread_TLS = DNG_PTHREAD_ONCE_INIT;
@@ -258,7 +258,7 @@ namespace
 		delete args_ptr;
 
 		GetThreadSemaphore();
-		
+
 		void *result = args.func(args.arg);
 
 		{
@@ -626,7 +626,7 @@ static int cond_wait_internal(dng_pthread_cond_t *cond, dng_pthread_mutex_t *mut
 	return result;
 
 #else
-    
+
 	dng_pthread_cond_impl &real_cond = **cond;
 	dng_pthread_mutex_impl &real_mutex = **mutex;
 
@@ -712,7 +712,7 @@ int dng_pthread_cond_wait(dng_pthread_cond_t *cond, dng_pthread_mutex_t *mutex)
 {
 	ValidateCond(cond);
 
-	return cond_wait_internal(cond, mutex, INFINITE);	
+	return cond_wait_internal(cond, mutex, INFINITE);
 }
 
 /*****************************************************************************/
@@ -720,9 +720,9 @@ int dng_pthread_cond_wait(dng_pthread_cond_t *cond, dng_pthread_mutex_t *mutex)
 int dng_pthread_cond_timedwait(dng_pthread_cond_t *cond, dng_pthread_mutex_t *mutex, struct dng_timespec *latest_time)
 {
 	ValidateCond(cond);
-	
+
 	struct dng_timespec sys_timespec;
-	
+
 #if defined(_MSC_VER) && _MSC_VER >= 1900
 
 	struct timespec temp;
@@ -741,11 +741,11 @@ int dng_pthread_cond_timedwait(dng_pthread_cond_t *cond, dng_pthread_mutex_t *mu
 	__int64 lock_time = (__int64)latest_time->tv_sec * 1000000000 + latest_time->tv_nsec;
 
 	int wait_millisecs = (int)((lock_time - sys_time + 500000) / 1000000);
-	
+
 	if (wait_millisecs < 0)
 		wait_millisecs = 0;
 
-	return cond_wait_internal(cond, mutex, wait_millisecs);	
+	return cond_wait_internal(cond, mutex, wait_millisecs);
 }
 
 /*****************************************************************************/
@@ -755,12 +755,12 @@ int dng_pthread_cond_signal(dng_pthread_cond_t *cond)
 	ValidateCond(cond);
 
 #if qDNGUseConditionVariable
-    
+
     WakeConditionVariable(&(*cond)->cond);
     return 0;
-    
+
 #else
- 
+
 	waiter *first;
 	dng_pthread_cond_impl &real_cond = **cond;
 
@@ -795,10 +795,10 @@ int dng_pthread_cond_broadcast(dng_pthread_cond_t *cond)
 	ValidateCond(cond);
 
 #if qDNGUseConditionVariable
-    
+
     WakeAllConditionVariable(&(*cond)->cond);
     return 0;
-    
+
 #else
 
 	waiter *first;
@@ -902,25 +902,25 @@ namespace {
 }
 
 #endif
-    
+
 struct dng_pthread_rwlock_impl
 {
-    
-		
+
+
 #if qDNGUseConditionVariable
     SRWLOCK rwlock;
     bool fWriteLockExclusive;
-    
+
     dng_pthread_rwlock_impl ()  { InitializeSRWLock(&rwlock); }
-    ~dng_pthread_rwlock_impl () { } // no delete listed 
-    
-    
+    ~dng_pthread_rwlock_impl () { } // no delete listed
+
+
 #else
     dng_pthread_mutex_impl mutex;
 
     rw_waiter *head_waiter;
 	rw_waiter *tail_waiter;
-	
+
 	unsigned long readers_active;
 	unsigned long writers_waiting;
 	bool writer_active;
@@ -955,13 +955,13 @@ struct dng_pthread_rwlock_impl
 		::ReleaseSemaphore(semaphore, 1, NULL);
 	}
 #endif
-    
+
     // Non copyable
 private:
 	dng_pthread_rwlock_impl &operator=(const dng_pthread_rwlock_impl &) { }
 	dng_pthread_rwlock_impl(const dng_pthread_rwlock_impl &) { }
 
-    
+
 };
 
 /*****************************************************************************/
@@ -997,7 +997,7 @@ int dng_pthread_rwlock_destroy(dng_pthread_rwlock_t *rwlock)
 			return -1; // EBUSY
 	}
 #endif
-    
+
 	delete *rwlock;
 	*rwlock = NULL;
 	return 0;
@@ -1011,21 +1011,21 @@ int dng_pthread_rwlock_destroy(dng_pthread_rwlock_t *rwlock)
 	DNG_ASSERT (!real_rwlock.writer_active || real_rwlock.readers_active == 0, "dng_pthread_rwlock_t logic error")
 
 #endif
-    
+
 /*****************************************************************************/
 
 int dng_pthread_rwlock_rdlock(dng_pthread_rwlock_t *rwlock)
 {
 #if qDNGUseConditionVariable
     // Note: Aquire cannot be called resursively from same thread, once aquired or deadlock will occur
-    
+
     AcquireSRWLockShared(&(*rwlock)->rwlock);
     (*rwlock)->fWriteLockExclusive = false;
-    
+
 	return 0;
 
 #else
-    
+
 	dng_pthread_rwlock_impl &real_rwlock = **rwlock;
 
 	struct rw_waiter this_wait;
@@ -1075,13 +1075,13 @@ int dng_pthread_rwlock_rdlock(dng_pthread_rwlock_t *rwlock)
 int dng_pthread_rwlock_tryrdlock(dng_pthread_rwlock_t *rwlock)
 {
 #if qDNGUseConditionVariable
-    
+
      if (TryAcquireSRWLockExclusive(&(*rwlock)->rwlock) == 0)
          return 0;
-    
+
     (*rwlock)->fWriteLockExclusive = false;
     return -1;
-    
+
 #else
 	dng_pthread_rwlock_impl &real_rwlock = **rwlock;
 
@@ -1104,13 +1104,13 @@ int dng_pthread_rwlock_tryrdlock(dng_pthread_rwlock_t *rwlock)
 int dng_pthread_rwlock_trywrlock(dng_pthread_rwlock_t *rwlock)
 {
 #if qDNGUseConditionVariable
-    
+
     if (TryAcquireSRWLockShared(&(*rwlock)->rwlock) == 0)
         return 0;
-    
+
     (*rwlock)->fWriteLockExclusive = true;
     return -1;
-    
+
 #else
 	dng_pthread_rwlock_impl &real_rwlock = **rwlock;
 
@@ -1135,12 +1135,12 @@ int dng_pthread_rwlock_trywrlock(dng_pthread_rwlock_t *rwlock)
 int dng_pthread_rwlock_unlock(dng_pthread_rwlock_t *rwlock)
 	{
 #if qDNGUseConditionVariable
-        
-    if ((*rwlock)->fWriteLockExclusive) 
+
+    if ((*rwlock)->fWriteLockExclusive)
         ReleaseSRWLockExclusive(&(*rwlock)->rwlock);
     else
         ReleaseSRWLockShared(&(*rwlock)->rwlock);
-        
+
 	return 0;
 
 #else
@@ -1186,7 +1186,7 @@ int dng_pthread_rwlock_unlock(dng_pthread_rwlock_t *rwlock)
 int dng_pthread_rwlock_wrlock(dng_pthread_rwlock_t *rwlock)
 	{
 #if qDNGUseConditionVariable
-        
+
      AcquireSRWLockExclusive(&(*rwlock)->rwlock);
      (*rwlock)->fWriteLockExclusive = true;
 
@@ -1264,10 +1264,10 @@ void dng_pthread_terminate()
 
 int dng_pthread_now (struct timespec *now)
 	{
-	
+
 	if (now == NULL)
 		return -1; // EINVAL
-		
+
 	#if qWinOS
 
 	FILETIME ft;
@@ -1276,16 +1276,16 @@ int dng_pthread_now (struct timespec *now)
 	__int64 sys_time = ((__int64)ft.dwHighDateTime << 32) + ft.dwLowDateTime;
 
 	#define SecsFrom1601To1970 11644473600
-	
+
 	sys_time -= SecsFrom1601To1970 * 10000000LL;
-	
+
 	sys_time *= 100;	// Convert from 100ns to 1ns units
 
 	now->tv_sec  = (long)(sys_time / 1000000000);
 	now->tv_nsec = (long)(sys_time % 1000000000);
-	
+
 	#else
-	
+
 	struct timeval tv;
 
 	if (gettimeofday (&tv, NULL) != 0)
@@ -1297,7 +1297,7 @@ int dng_pthread_now (struct timespec *now)
 	#endif
 
 	return 0;
-	
+
 	}
 
 /*****************************************************************************/

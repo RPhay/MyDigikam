@@ -16,7 +16,7 @@
 
 #import "PltUPnPObject.h"
 
-// define 
+// define
 #if !defined(_PLATINUM_H_)
 typedef class PLT_HttpRequestContext PLT_HttpRequestContext;
 typedef class NPT_HttpResponse NPT_HttpResponse;

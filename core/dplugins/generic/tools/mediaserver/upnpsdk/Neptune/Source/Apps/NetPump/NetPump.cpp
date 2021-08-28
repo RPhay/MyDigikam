@@ -108,7 +108,7 @@ static struct {
 static void
 PrintUsageAndExit(void)
 {
-    fprintf(stderr, 
+    fprintf(stderr,
             "usage: NetPump [options] <input endpoint> <output endpoint>, \n"
             "where each endpoint is:\n"
             "    udp [client <hostname> <port>]|[server <port> [-r]]\n"
@@ -134,7 +134,7 @@ PrintUsageAndExit(void)
 |       GetEndPointStreams
 +---------------------------------------------------------------------*/
 static NPT_Result
-GetEndPointStreams(EndPoint*                  endpoint, 
+GetEndPointStreams(EndPoint*                  endpoint,
                    NPT_InputStreamReference*  input_stream,
                    NPT_OutputStreamReference* output_stream)
 {
@@ -144,9 +144,9 @@ GetEndPointStreams(EndPoint*                  endpoint,
 
     switch (endpoint->type) {
       case ENDPOINT_TYPE_MULTICAST_SERVER:
-      case ENDPOINT_TYPE_UDP_SERVER: 
+      case ENDPOINT_TYPE_UDP_SERVER:
         break; // not used with streams
-        
+
       case ENDPOINT_TYPE_UDP_CLIENT:
         {
             NPT_UdpSocket sender;
@@ -173,7 +173,7 @@ GetEndPointStreams(EndPoint*                  endpoint,
             if (output_stream) {
                 NPT_CHECK(sender.GetOutputStream(*output_stream));
             }
-                        
+
             return NPT_SUCCESS;
         }
         break;
@@ -184,7 +184,7 @@ GetEndPointStreams(EndPoint*                  endpoint,
 
             // info
             if (Options.verbose) {
-                printf("connecting to %s on port %d\n", 
+                printf("connecting to %s on port %d\n",
                         endpoint->info.tcp_client.hostname,
                         endpoint->info.tcp_client.port);
             }
@@ -199,7 +199,7 @@ GetEndPointStreams(EndPoint*                  endpoint,
 
             // info
             if (Options.verbose) {
-                printf("connected\n"); 
+                printf("connected\n");
             }
 
             // get the streams
@@ -209,7 +209,7 @@ GetEndPointStreams(EndPoint*                  endpoint,
             if (output_stream) {
                 NPT_CHECK(client.GetOutputStream(*output_stream));
             }
-            
+
             return NPT_SUCCESS;
         }
         break;
@@ -254,7 +254,7 @@ GetEndPointStreams(EndPoint*                  endpoint,
 
             // info
             if (Options.verbose) {
-                printf("waiting for client on port %d %s\n", 
+                printf("waiting for client on port %d %s\n",
                         endpoint->info.tcp_server.port,
                         endpoint->info.tcp_server.reuse_addr?"":"(reuse_addr=false)");
             }
@@ -289,10 +289,10 @@ GetEndPointStreams(EndPoint*                  endpoint,
             // create a file object
             NPT_File file(endpoint->info.file.name);
             if (endpoint->direction == ENDPOINT_DIRECTION_IN) {
-                NPT_CHECK(file.Open(NPT_FILE_OPEN_MODE_READ | 
+                NPT_CHECK(file.Open(NPT_FILE_OPEN_MODE_READ |
                                     NPT_FILE_OPEN_MODE_UNBUFFERED));
             } else {
-                NPT_CHECK(file.Open(NPT_FILE_OPEN_MODE_WRITE | 
+                NPT_CHECK(file.Open(NPT_FILE_OPEN_MODE_WRITE |
                                     NPT_FILE_OPEN_MODE_CREATE|
                                     NPT_FILE_OPEN_MODE_UNBUFFERED));
             }
@@ -347,13 +347,13 @@ GetEndPointUdpSocket(EndPoint* endpoint, NPT_UdpSocket*& udp_socket)
 
             // info
             if (Options.verbose) {
-                printf("listening on port %d %s\n", 
+                printf("listening on port %d %s\n",
                        endpoint->info.udp_server.port,
                        endpoint->info.udp_server.reuse_addr?"":"(reuse_addr=false)");
             }
 
             // listen on port, any addr
-            return udp_socket->Bind(NPT_SocketAddress(NPT_IpAddress::Any, endpoint->info.udp_server.port), 
+            return udp_socket->Bind(NPT_SocketAddress(NPT_IpAddress::Any, endpoint->info.udp_server.port),
                                     endpoint->info.udp_server.reuse_addr);
         }
         break;
@@ -365,7 +365,7 @@ GetEndPointUdpSocket(EndPoint* endpoint, NPT_UdpSocket*& udp_socket)
 
             // info
             if (Options.verbose) {
-                printf("listening on port %d %s\n", 
+                printf("listening on port %d %s\n",
                        endpoint->info.multicast_server.port,
                        endpoint->info.multicast_server.reuse_addr?"":"(reuse_addr=false)");
             }
@@ -427,9 +427,9 @@ main(int argc, char** argv)
     while ((arg = *argv++)) {
         if (current_endpoint == NULL) {
             printf("ERROR: unexpected argument (%s)\n", arg);
-            exit(1);    
+            exit(1);
         }
-                 
+
         if (NPT_StringsEqual(arg, "--packet-size")) {
             packet_size = (unsigned int)strtoul(*argv++, NULL, 10);
             if (packet_size == 0 || packet_size > PUMP_MAX_PACKET_SIZE) {
@@ -468,7 +468,7 @@ main(int argc, char** argv)
                         current_endpoint->type = ENDPOINT_TYPE_UDP_CLIENT;
                         current_endpoint->info.udp_client.hostname = argv[1];
                         current_endpoint->info.udp_client.port = (int)strtoul(argv[2], NULL, 10);
-                        argv += 3;                        
+                        argv += 3;
                     } else {
                         printf("ERROR: missing argument for 'udp client'\n");
                         exit(1);
@@ -489,7 +489,7 @@ main(int argc, char** argv)
                         current_endpoint->type = ENDPOINT_TYPE_MULTICAST_SERVER;
                         current_endpoint->info.multicast_server.groupname = argv[1];
                         current_endpoint->info.multicast_server.port = (int)strtoul(argv[2], NULL, 10);
-                        argv += 3;                        
+                        argv += 3;
                     } else {
                         printf("ERROR: missing argument for 'multicast server'\n");
                         exit(1);
@@ -510,7 +510,7 @@ main(int argc, char** argv)
                         current_endpoint->info.multicast_client.groupname = argv[1];
                         current_endpoint->info.multicast_client.port = (int)strtoul(argv[2], NULL, 10);
                         current_endpoint->info.multicast_client.ttl = (int)strtoul(argv[3], NULL, 10);
-                        argv += 4;                        
+                        argv += 4;
                     } else {
                         printf("ERROR: missing argument for 'multicast client'\n");
                         exit(1);
@@ -537,7 +537,7 @@ main(int argc, char** argv)
                         current_endpoint->type = ENDPOINT_TYPE_TCP_CLIENT;
                         current_endpoint->info.tcp_client.hostname = argv[1];
                         current_endpoint->info.tcp_client.port = (int)strtoul(argv[2], NULL, 10);
-                        argv += 3;                        
+                        argv += 3;
                     } else {
                         printf("ERROR: missing argument for 'tcp client'\n");
                         exit(1);
@@ -568,7 +568,7 @@ main(int argc, char** argv)
                 if (NPT_FAILED(NPT_ParseInteger(*argv++, speed))) {
                     printf("ERROR: invalid speed for 'serial' endpoint\n");
                     exit(1);
-                } 
+                }
                 current_endpoint->info.serial_port.speed = (unsigned int)speed;
             } else {
                 printf("ERROR: missing argument for 'serial' endpoint\n");
@@ -646,12 +646,12 @@ main(int argc, char** argv)
             exit(1);
         }
 
-        // stream loop 
+        // stream loop
         do {
             NPT_Size bytes_read;
             NPT_Size bytes_written;
 
-            // send 
+            // send
             result = in->Read(buffer, packet_size, &bytes_read);
             if (Options.show_progress) {
                 printf("[%d]\r", (int)total);
@@ -673,7 +673,7 @@ main(int argc, char** argv)
         printf("[%d] *******************\n", result);
         exit(1);
     }
-    
+
     delete[] buffer;
     return 0;
 }

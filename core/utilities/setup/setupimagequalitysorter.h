@@ -29,7 +29,7 @@
 
 #include <QScrollArea>
 
-// Locals includes 
+// Locals includes
 
 #include "imagequalitycontainer.h"
 

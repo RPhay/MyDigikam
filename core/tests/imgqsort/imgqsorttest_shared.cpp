@@ -71,7 +71,7 @@ ImageQualityContainer ImgQSortTest_ArrangeSettings (DetectionType type)
         case DETECTEXPOSURE:
             settings.detectExposure     = true;
             break;
-        
+
         case DETECTBLUR:
             settings.detectBlur         = true;
             break;
@@ -114,14 +114,14 @@ QHash<QString, int> ImgQSortTest_ParseTestImagesCore(const ImageQualityContainer
     {
         QString path = inf.filePath();
         qCDebug(DIGIKAM_TESTS_LOG) << path;
-        
+
         DImg dimg    = PreviewLoadThread::loadFastSynchronously(path, 1024);
 
         if (dimg.isNull())
         {
             qCDebug(DIGIKAM_TESTS_LOG) << path << "File cannot be loaded...";
         }
-        
+
         PickLabel pick;
         ImageQualityParser parser(dimg, settings, &pick);
         parser.startAnalyse();
@@ -130,7 +130,7 @@ QHash<QString, int> ImgQSortTest_ParseTestImagesCore(const ImageQualityContainer
 
     qCInfo(DIGIKAM_TESTS_LOG) << "Quality Results (0:None, 1:Rejected, 2:Pending, 3:Accepted):";
 
-    for (const auto& image_name: results.keys()) 
+    for (const auto& image_name: results.keys())
     {
         qCInfo(DIGIKAM_TESTS_LOG) << "==>" << image_name << ":" << results.value(image_name);
     }

@@ -26,7 +26,7 @@ typedef std::lock_guard<std::mutex>	 dng_lock_std_mutex;
 typedef std::unique_lock<std::mutex> dng_unique_lock;
 
 // We should try to phase out use of dng_mutex over time.
-// 
+//
 // Note that dng_mutex differs from dng_std_mutex (std::mutex) in that
 // dng_mutex supports recursive locking (hierarchical mutex).
 
@@ -34,9 +34,9 @@ typedef std::unique_lock<std::mutex> dng_unique_lock;
 
 class dng_mutex: private dng_uncopyable
 	{
-	
+
 	public:
-	
+
 		enum
 			{
 			kDNGMutexLevelLeaf   = 0x70000000u,
@@ -51,15 +51,15 @@ class dng_mutex: private dng_uncopyable
 		void Lock ();
 
 		void Unlock ();
-		
+
 		const char *MutexName () const;
 
 	protected:
-	
+
 		#if qDNGThreadSafe
-	
+
 		pthread_mutex_t fPthreadMutex;
-	
+
 		const uint32 fMutexLevel;
 
 		uint32 fRecursiveLockCount;
@@ -69,54 +69,54 @@ class dng_mutex: private dng_uncopyable
 		const char * const fMutexName;
 
 		friend class dng_condition;
-		
+
 		#endif
 
 	};
-		
+
 /*****************************************************************************/
 
 class dng_lock_mutex: private dng_uncopyable
 	{
-	
+
 	private:
-	
+
 		dng_mutex *fMutex;
-	
+
 	public:
-	
+
 		dng_lock_mutex (dng_mutex *mutex);
-        
+
 		dng_lock_mutex (dng_mutex &mutex);
-			
+
 		~dng_lock_mutex ();
-			
+
 	};
-	
+
 /*****************************************************************************/
 
 class dng_unlock_mutex: private dng_uncopyable
 	{
-	
+
 	private:
-	
+
 		dng_mutex *fMutex;
-	
+
 	public:
-	
+
 		dng_unlock_mutex (dng_mutex *mutex);
-        
+
 		dng_unlock_mutex (dng_mutex &mutex);
-			
+
 		~dng_unlock_mutex ();
-			
+
 	};
 
 /*****************************************************************************/
 
 class dng_condition: private dng_uncopyable
 	{
-	
+
 	public:
 
 		dng_condition ();
@@ -126,12 +126,12 @@ class dng_condition: private dng_uncopyable
 		bool Wait (dng_mutex &mutex, double timeoutSecs = -1.0);
 
 		void Signal ();
-		
+
 		void Broadcast ();
 
 	protected:
-	
-	
+
+
 #if qDNGThreadSafe
 		pthread_cond_t fPthreadCondition;
 #endif // qDNGThreadSafe
@@ -141,5 +141,5 @@ class dng_condition: private dng_uncopyable
 /*****************************************************************************/
 
 #endif
-	
+
 /*****************************************************************************/

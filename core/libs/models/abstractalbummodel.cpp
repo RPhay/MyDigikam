@@ -999,7 +999,7 @@ void AbstractCheckableAlbumModel::setTristate(bool isTristate)
 {
     if (isTristate)
     {
-        d->extraFlags |= 
+        d->extraFlags |=
 
 #if (QT_VERSION >= QT_VERSION_CHECK(5, 12, 0))
 

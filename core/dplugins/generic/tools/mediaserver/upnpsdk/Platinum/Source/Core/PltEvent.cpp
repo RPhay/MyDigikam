@@ -11,14 +11,14 @@
 | as published by the Free Software Foundation; either version 2
 | of the License, or (at your option) any later version.
 |
-| OEMs, ISVs, VARs and other distributors that combine and 
+| OEMs, ISVs, VARs and other distributors that combine and
 | distribute commercially licensed software with Platinum software
 | and do not wish to distribute the source code for the commercially
 | licensed software under version 2, or (at your option) any later
 | version, of the GNU General Public License (the "GPL") must enter
 | into a commercial license agreement with Plutinosoft, LLC.
 | licensing@plutinosoft.com
-|  
+|
 | This program is distributed in the hope that it will be useful,
 | but WITHOUT ANY WARRANTY; without even the implied warranty of
 | MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
@@ -26,7 +26,7 @@
 |
 | You should have received a copy of the GNU General Public License
 | along with this program; see the file LICENSE.txt. If not, write to
-| the Free Software Foundation, Inc., 
+| the Free Software Foundation, Inc.,
 | 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 | http://www.gnu.org/licenses/gpl-2.0.html
 |
@@ -59,7 +59,7 @@ PLT_EventNotification::Parse(const NPT_HttpRequest&        request,
 
     PLT_EventNotification *notification = new PLT_EventNotification();
     notification->m_RequestUrl = request.GetUrl();
-    
+
     const NPT_String* sid = PLT_UPnPMessageHelper::GetSID(request);
     const NPT_String* nt  = PLT_UPnPMessageHelper::GetNT(request);
     const NPT_String* nts = PLT_UPnPMessageHelper::GetNTS(request);
@@ -104,9 +104,9 @@ bad_request:
 PLT_EventSubscriber::PLT_EventSubscriber(PLT_TaskManagerReference task_manager,
                                          PLT_Service*             service,
                                          const char*              sid,
-                                         NPT_Timeout              timeout_secs /* = -1 */) : 
-    m_TaskManager(task_manager), 
-    m_Service(service), 
+                                         NPT_Timeout              timeout_secs /* = -1 */) :
+    m_TaskManager(task_manager),
+    m_Service(service),
     m_EventKey(0),
     m_SubscriberTask(NULL),
     m_SID(sid)
@@ -118,7 +118,7 @@ PLT_EventSubscriber::PLT_EventSubscriber(PLT_TaskManagerReference task_manager,
 /*----------------------------------------------------------------------
 |   PLT_EventSubscriber::~PLT_EventSubscriber
 +---------------------------------------------------------------------*/
-PLT_EventSubscriber::~PLT_EventSubscriber() 
+PLT_EventSubscriber::~PLT_EventSubscriber()
 {
     NPT_LOG_FINE_1("Deleting subscriber (%s)", m_SID.GetChars());
     if (m_SubscriberTask) {
@@ -131,7 +131,7 @@ PLT_EventSubscriber::~PLT_EventSubscriber()
 |   PLT_EventSubscriber::GetService
 +---------------------------------------------------------------------*/
 PLT_Service*
-PLT_EventSubscriber::GetService() 
+PLT_EventSubscriber::GetService()
 {
     return m_Service;
 }
@@ -140,7 +140,7 @@ PLT_EventSubscriber::GetService()
 |   PLT_EventSubscriber::GetEventKey
 +---------------------------------------------------------------------*/
 NPT_Ordinal
-PLT_EventSubscriber::GetEventKey() 
+PLT_EventSubscriber::GetEventKey()
 {
     return m_EventKey;
 }
@@ -149,7 +149,7 @@ PLT_EventSubscriber::GetEventKey()
 |   PLT_EventSubscriber::SetEventKey
 +---------------------------------------------------------------------*/
 NPT_Result
-PLT_EventSubscriber::SetEventKey(NPT_Ordinal value) 
+PLT_EventSubscriber::SetEventKey(NPT_Ordinal value)
 {
     m_EventKey = value;
     return NPT_SUCCESS;
@@ -159,7 +159,7 @@ PLT_EventSubscriber::SetEventKey(NPT_Ordinal value)
 |   PLT_EventSubscriber::GetLocalIf
 +---------------------------------------------------------------------*/
 NPT_SocketAddress
-PLT_EventSubscriber::GetLocalIf() 
+PLT_EventSubscriber::GetLocalIf()
 {
     return m_LocalIf;
 }
@@ -168,7 +168,7 @@ PLT_EventSubscriber::GetLocalIf()
 |   PLT_EventSubscriber::SetLocalIf
 +---------------------------------------------------------------------*/
 NPT_Result
-PLT_EventSubscriber::SetLocalIf(NPT_SocketAddress value) 
+PLT_EventSubscriber::SetLocalIf(NPT_SocketAddress value)
 {
     m_LocalIf = value;
     return NPT_SUCCESS;
@@ -188,7 +188,7 @@ PLT_EventSubscriber::GetExpirationTime()
 |   PLT_EventSubscriber::SetExpirationTime
 +---------------------------------------------------------------------*/
 NPT_Result
-PLT_EventSubscriber::SetTimeout(NPT_Timeout seconds) 
+PLT_EventSubscriber::SetTimeout(NPT_Timeout seconds)
 {
     NPT_LOG_FINE_2("subscriber (%s) expiring in %d seconds",
         m_SID.GetChars(),
@@ -196,7 +196,7 @@ PLT_EventSubscriber::SetTimeout(NPT_Timeout seconds)
 
     // -1 means infinite but we default to 300 secs
     if (seconds == -1) seconds = 300;
-    
+
     NPT_System::GetCurrentTimeStamp(m_ExpirationTime);
     m_ExpirationTime += NPT_TimeInterval((double)seconds);
 
@@ -207,11 +207,11 @@ PLT_EventSubscriber::SetTimeout(NPT_Timeout seconds)
 |   PLT_EventSubscriber::FindCallbackURL
 +---------------------------------------------------------------------*/
 NPT_Result
-PLT_EventSubscriber::FindCallbackURL(const char* callback_url) 
+PLT_EventSubscriber::FindCallbackURL(const char* callback_url)
 {
     NPT_String res;
-    return NPT_ContainerFind(m_CallbackURLs, 
-                             NPT_StringFinder(callback_url), 
+    return NPT_ContainerFind(m_CallbackURLs,
+                             NPT_StringFinder(callback_url),
                              res);
 }
 
@@ -219,12 +219,12 @@ PLT_EventSubscriber::FindCallbackURL(const char* callback_url)
 |   PLT_EventSubscriber::AddCallbackURL
 +---------------------------------------------------------------------*/
 NPT_Result
-PLT_EventSubscriber::AddCallbackURL(const char* callback_url) 
+PLT_EventSubscriber::AddCallbackURL(const char* callback_url)
 {
     NPT_CHECK_POINTER_FATAL(callback_url);
 
-    NPT_LOG_FINE_2("Adding callback \"%s\" to subscriber %s", 
-        callback_url, 
+    NPT_LOG_FINE_2("Adding callback \"%s\" to subscriber %s",
+        callback_url,
         m_SID.GetChars());
     return m_CallbackURLs.Add(callback_url);
 }
@@ -239,7 +239,7 @@ PLT_EventSubscriber::Notify(NPT_List<PLT_StateVariable*>& vars)
     bool foundVars = false;
     NPT_Reference<NPT_XmlElementNode> propertyset(new NPT_XmlElementNode("e", "propertyset"));
     NPT_CHECK_SEVERE(propertyset->SetNamespaceUri(
-        "e", 
+        "e",
         "urn:schemas-upnp-org:event-1-0"));
 
     NPT_List<PLT_StateVariable*>::Iterator var = vars.GetFirstItem();
@@ -248,7 +248,7 @@ PLT_EventSubscriber::Notify(NPT_List<PLT_StateVariable*>& vars)
             NPT_XmlElementNode* property = new NPT_XmlElementNode("e", "property");
             NPT_CHECK_FATAL(propertyset->AddChild(property));
             NPT_CHECK_FATAL(PLT_XmlHelper::AddChildText(property,
-                                                        (*var)->GetName(), 
+                                                        (*var)->GetName(),
                                                         (*var)->GetValue()));
             foundVars = true;
         }
@@ -273,7 +273,7 @@ PLT_EventSubscriber::Notify(NPT_List<PLT_StateVariable*>& vars)
         NPT_CHECK_FATAL(NPT_FAILURE);
     }
     // format request
-    NPT_HttpRequest* request = 
+    NPT_HttpRequest* request =
         new NPT_HttpRequest(url,
                             "NOTIFY",
                             NPT_HTTP_PROTOCOL_1_1);
@@ -296,32 +296,32 @@ PLT_EventSubscriber::Notify(NPT_List<PLT_StateVariable*>& vars)
         // a notification failed to be received so it can be removed
         // from the list of subscribers inside the device host
         NPT_Reference<PLT_HttpClientSocketTask> task(new PLT_HttpClientSocketTask(request, true));
-        
+
         // short connection time out in case subscriber is not alive
         NPT_HttpClient::Config config;
         config.m_ConnectionTimeout = 2000;
         task->SetHttpClientConfig(config);
-        
+
         // add initial delay to make sure ctrlpoint receives response to subscription
         // before our first NOTIFY. Also make sure task is not auto-destroy
         // since we want to destroy it manually when the subscriber goes away.
         NPT_TimeInterval delay(0.05f);
         NPT_CHECK_FATAL(m_TaskManager->StartTask(task.AsPointer(), NULL /*&delay*/, false));
-        
+
         // Task successfully started, keep around for future notifications
         m_SubscriberTask = task.AsPointer();
         task.Detach();
     } else {
         m_SubscriberTask->AddRequest(request);
     }
-     
+
     return NPT_SUCCESS;
 }
 
 /*----------------------------------------------------------------------
 |   PLT_EventSubscriberFinderByService::operator()
 +---------------------------------------------------------------------*/
-bool 
+bool
 PLT_EventSubscriberFinderByService::operator()(PLT_EventSubscriberReference const & eventSub) const
 {
     return (m_Service == eventSub->GetService());

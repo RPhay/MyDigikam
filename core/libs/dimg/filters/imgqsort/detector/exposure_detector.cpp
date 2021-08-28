@@ -3,14 +3,14 @@
  * This file is a part of digiKam project
  * https://www.digikam.org
  *
- * Date        : 
+ * Date        :
  * Description : Image Quality Parser - Noise detection
  *
  * Copyright (C) 2013-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * References  : https://cse.buffalo.edu/~siweilyu/papers/ijcv14.pdf
- * 
- * 
+ *
+ *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
  * Public License as published by the Free Software Foundation;
@@ -59,7 +59,7 @@ public:
 
     int weight_over_exposure;
     int weight_demi_over_exposure;
-    
+
     int weight_under_exposure;
     int weight_demi_under_exposure;
 
@@ -79,7 +79,7 @@ ExposureDetector::~ExposureDetector()
 float ExposureDetector::detect(const cv::Mat& image) const
 {
     float overexposed = percent_overexposed(image);
-    
+
     float underexposed = percent_underexposed(image);
 
     return std::max(overexposed, underexposed);
@@ -93,7 +93,7 @@ float ExposureDetector::percent_overexposed(const cv::Mat& image) const
 
     int normal_pixel = image.total() - over_exposed_pixel - demi_over_exposed_pixel;
 
-    return static_cast<float>(static_cast<float>(over_exposed_pixel * d->weight_over_exposure + demi_over_exposed_pixel * d->weight_demi_over_exposure) / 
+    return static_cast<float>(static_cast<float>(over_exposed_pixel * d->weight_over_exposure + demi_over_exposed_pixel * d->weight_demi_over_exposure) /
                               static_cast<float>(normal_pixel + over_exposed_pixel * d->weight_over_exposure + demi_over_exposed_pixel * d->weight_demi_over_exposure));
 }
 
@@ -105,7 +105,7 @@ float ExposureDetector::percent_underexposed(const cv::Mat& image) const
 
     int normal_pixel = image.total() - under_exposed_pixel - demi_under_exposed_pixel;
 
-    return static_cast<float>(static_cast<float>(under_exposed_pixel * d->weight_under_exposure + demi_under_exposed_pixel * d->weight_demi_under_exposure) / 
+    return static_cast<float>(static_cast<float>(under_exposed_pixel * d->weight_under_exposure + demi_under_exposed_pixel * d->weight_demi_under_exposure) /
                               static_cast<float>(normal_pixel + under_exposed_pixel * d->weight_under_exposure + demi_under_exposed_pixel * d->weight_demi_under_exposure));
 }
 

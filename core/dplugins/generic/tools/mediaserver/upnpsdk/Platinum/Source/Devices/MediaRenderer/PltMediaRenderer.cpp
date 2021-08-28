@@ -11,14 +11,14 @@
 | as published by the Free Software Foundation; either version 2
 | of the License, or (at your option) any later version.
 |
-| OEMs, ISVs, VARs and other distributors that combine and 
+| OEMs, ISVs, VARs and other distributors that combine and
 | distribute commercially licensed software with Platinum software
 | and do not wish to distribute the source code for the commercially
 | licensed software under version 2, or (at your option) any later
 | version, of the GNU General Public License (the "GPL") must enter
 | into a commercial license agreement with Plutinosoft, LLC.
 | licensing@plutinosoft.com
-| 
+|
 | This program is distributed in the hope that it will be useful,
 | but WITHOUT ANY WARRANTY; without even the implied warranty of
 | MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
@@ -26,7 +26,7 @@
 |
 | You should have received a copy of the GNU General Public License
 | along with this program; see the file LICENSE.txt. If not, write to
-| the Free Software Foundation, Inc., 
+| the Free Software Foundation, Inc.,
 | 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 | http://www.gnu.org/licenses/gpl-2.0.html
 |
@@ -51,17 +51,17 @@ extern NPT_UInt8 RDR_RenderingControlSCPD[];
 /*----------------------------------------------------------------------
 |   PLT_MediaRenderer::PLT_MediaRenderer
 +---------------------------------------------------------------------*/
-PLT_MediaRenderer::PLT_MediaRenderer(const char*  friendly_name, 
-                                     bool         show_ip     /* = false */, 
-                                     const char*  uuid        /* = NULL */, 
+PLT_MediaRenderer::PLT_MediaRenderer(const char*  friendly_name,
+                                     bool         show_ip     /* = false */,
+                                     const char*  uuid        /* = NULL */,
                                      unsigned int port        /* = 0 */,
-                                     bool         port_rebind /* = false */) :  
-    PLT_DeviceHost("/", 
-                   uuid, 
-                   "urn:schemas-upnp-org:device:MediaRenderer:1", 
-                   friendly_name, 
-                   show_ip, 
-                   port, 
+                                     bool         port_rebind /* = false */) :
+    PLT_DeviceHost("/",
+                   uuid,
+                   "urn:schemas-upnp-org:device:MediaRenderer:1",
+                   friendly_name,
+                   show_ip,
+                   port,
                    port_rebind),
     m_Delegate(NULL)
 {
@@ -90,7 +90,7 @@ PLT_MediaRenderer::SetupServices()
         /* AVTransport */
         service = new PLT_Service(
             this,
-            "urn:schemas-upnp-org:service:AVTransport:1", 
+            "urn:schemas-upnp-org:service:AVTransport:1",
             "urn:upnp-org:serviceId:AVTransport",
             "AVTransport",
             "urn:schemas-upnp-org:metadata-1-0/AVT/");
@@ -98,7 +98,7 @@ PLT_MediaRenderer::SetupServices()
         NPT_CHECK_FATAL(AddService(service.AsPointer()));
 
         service->SetStateVariableRate("LastChange", NPT_TimeInterval(0.2f));
-        service->SetStateVariable("A_ARG_TYPE_InstanceID", "0"); 
+        service->SetStateVariable("A_ARG_TYPE_InstanceID", "0");
 
         // GetCurrentTransportActions
         service->SetStateVariable("CurrentTransportActions", "Play,Pause,Stop,Seek,Next,Previous");
@@ -124,7 +124,7 @@ PLT_MediaRenderer::SetupServices()
         service->SetStateVariable("CurrentTrackDuration", "00:00:00");
         service->SetStateVariable("CurrentTrackMetadata", "");
         service->SetStateVariable("CurrentTrackURI", "");
-        service->SetStateVariable("RelativeTimePosition", "00:00:00"); 
+        service->SetStateVariable("RelativeTimePosition", "00:00:00");
         service->SetStateVariable("AbsoluteTimePosition", "00:00:00");
         service->SetStateVariable("RelativeCounterPosition", "2147483647"); // means NOT_IMPLEMENTED
         service->SetStateVariable("AbsoluteCounterPosition", "2147483647"); // means NOT_IMPLEMENTED
@@ -148,7 +148,7 @@ PLT_MediaRenderer::SetupServices()
         // GetTransportSettings
         service->SetStateVariable("CurrentPlayMode", "NORMAL");
         service->SetStateVariable("CurrentRecordQualityMode", "NOT_IMPLEMENTED");
-        
+
         service.Detach();
         service = NULL;
     }
@@ -157,7 +157,7 @@ PLT_MediaRenderer::SetupServices()
         /* ConnectionManager */
         service = new PLT_Service(
             this,
-            "urn:schemas-upnp-org:service:ConnectionManager:1", 
+            "urn:schemas-upnp-org:service:ConnectionManager:1",
             "urn:upnp-org:serviceId:ConnectionManager",
             "ConnectionManager");
         NPT_CHECK_FATAL(service->SetSCPDXML((const char*) RDR_ConnectionManagerSCPD));
@@ -168,7 +168,7 @@ PLT_MediaRenderer::SetupServices()
         // put all supported mime types here instead
         service->SetStateVariable("SinkProtocolInfo", "http-get:*:video/x-ms-wmv:DLNA.ORG_PN=WMVMED_PRO,http-get:*:video/x-ms-asf:DLNA.ORG_PN=MPEG4_P2_ASF_SP_G726,http-get:*:video/x-ms-wmv:DLNA.ORG_PN=WMVMED_FULL,http-get:*:image/jpeg:DLNA.ORG_PN=JPEG_MED,http-get:*:video/x-ms-wmv:DLNA.ORG_PN=WMVMED_BASE,http-get:*:audio/L16;rate=44100;channels=1:DLNA.ORG_PN=LPCM,http-get:*:video/mpeg:DLNA.ORG_PN=MPEG_PS_PAL,http-get:*:video/mpeg:DLNA.ORG_PN=MPEG_PS_NTSC,http-get:*:video/x-ms-wmv:DLNA.ORG_PN=WMVHIGH_PRO,http-get:*:audio/L16;rate=44100;channels=2:DLNA.ORG_PN=LPCM,http-get:*:image/jpeg:DLNA.ORG_PN=JPEG_SM,http-get:*:video/x-ms-asf:DLNA.ORG_PN=VC1_ASF_AP_L1_WMA,http-get:*:audio/x-ms-wma:DLNA.ORG_PN=WMDRM_WMABASE,http-get:*:video/x-ms-wmv:DLNA.ORG_PN=WMVHIGH_FULL,http-get:*:audio/x-ms-wma:DLNA.ORG_PN=WMAFULL,http-get:*:audio/x-ms-wma:DLNA.ORG_PN=WMABASE,http-get:*:video/x-ms-wmv:DLNA.ORG_PN=WMVSPLL_BASE,http-get:*:video/mpeg:DLNA.ORG_PN=MPEG_PS_NTSC_XAC3,http-get:*:video/x-ms-wmv:DLNA.ORG_PN=WMDRM_WMVSPLL_BASE,http-get:*:video/x-ms-wmv:DLNA.ORG_PN=WMVSPML_BASE,http-get:*:video/x-ms-asf:DLNA.ORG_PN=MPEG4_P2_ASF_ASP_L5_SO_G726,http-get:*:image/jpeg:DLNA.ORG_PN=JPEG_LRG,http-get:*:audio/mpeg:DLNA.ORG_PN=MP3,http-get:*:video/mpeg:DLNA.ORG_PN=MPEG_PS_PAL_XAC3,http-get:*:audio/x-ms-wma:DLNA.ORG_PN=WMAPRO,http-get:*:video/mpeg:DLNA.ORG_PN=MPEG1,http-get:*:image/jpeg:DLNA.ORG_PN=JPEG_TN,http-get:*:video/x-ms-asf:DLNA.ORG_PN=MPEG4_P2_ASF_ASP_L4_SO_G726,http-get:*:audio/L16;rate=48000;channels=2:DLNA.ORG_PN=LPCM,http-get:*:audio/mpeg:DLNA.ORG_PN=MP3X,http-get:*:video/x-ms-wmv:DLNA.ORG_PN=WMVSPML_MP3,http-get:*:video/x-ms-wmv:*");
         service->SetStateVariable("SourceProtocolInfo", "");
-        
+
         service.Detach();
         service = NULL;
     }
@@ -177,7 +177,7 @@ PLT_MediaRenderer::SetupServices()
         /* RenderingControl */
         service = new PLT_Service(
             this,
-            "urn:schemas-upnp-org:service:RenderingControl:1", 
+            "urn:schemas-upnp-org:service:RenderingControl:1",
             "urn:upnp-org:serviceId:RenderingControl",
             "RenderingControl",
             "urn:schemas-upnp-org:metadata-1-0/RCS/");
@@ -194,7 +194,7 @@ PLT_MediaRenderer::SetupServices()
         service->SetStateVariableExtraAttribute("VolumeDB", "Channel", "Master");
 
         service->SetStateVariable("PresetNameList", "FactoryDefaults");
-        
+
         service.Detach();
         service = NULL;
     }
@@ -206,7 +206,7 @@ PLT_MediaRenderer::SetupServices()
 |   PLT_MediaRenderer::OnAction
 +---------------------------------------------------------------------*/
 NPT_Result
-PLT_MediaRenderer::OnAction(PLT_ActionReference&          action, 
+PLT_MediaRenderer::OnAction(PLT_ActionReference&          action,
                             const PLT_HttpRequestContext& context)
 {
     NPT_COMPILER_UNUSED(context);
@@ -294,7 +294,7 @@ PLT_MediaRenderer::OnGetCurrentConnectionInfo(PLT_ActionReference& action)
     if (m_Delegate) {
         return m_Delegate->OnGetCurrentConnectionInfo(action);
     }
-    
+
     if (NPT_FAILED(action->VerifyArgumentValue("ConnectionID", "0"))) {
         action->SetError(706,"No Such Connection.");
         return NPT_FAILURE;
@@ -406,14 +406,14 @@ PLT_MediaRenderer::OnSetAVTransportURI(PLT_ActionReference& action)
     if (m_Delegate) {
         return m_Delegate->OnSetAVTransportURI(action);
     }
-    
+
     // default implementation is using state variable
     NPT_String uri;
     NPT_CHECK_WARNING(action->GetArgumentValue("CurrentURI", uri));
 
     NPT_String metadata;
     NPT_CHECK_WARNING(action->GetArgumentValue("CurrentURIMetaData", metadata));
-    
+
     PLT_Service* serviceAVT;
     NPT_CHECK_WARNING(FindServiceByType("urn:schemas-upnp-org:service:AVTransport:1", serviceAVT));
 

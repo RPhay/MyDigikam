@@ -70,7 +70,7 @@ void GLViewerTimer::at(const QString& s)
 
     qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "stopwatch:" << s
                                          << ": " << d->meantime
-                                         << " ms    overall: " 
+                                         << " ms    overall: "
                                          << d->timer.elapsed() << " ms";
 }
 

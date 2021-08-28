@@ -36,29 +36,29 @@
 
 class dng_info: private dng_uncopyable
 	{
-	
+
 	public:
-	
+
 		uint64 fTIFFBlockOffset;
-		
+
 		uint64 fTIFFBlockOriginalOffset;
-	
+
 		bool fBigEndian;
-		
+
 		uint32 fMagic;
-		
+
 		AutoPtr<dng_exif> fExif;
-	
+
 		AutoPtr<dng_shared> fShared;
-		
+
 		int32 fMainIndex;
-		
+
 		int32 fMaskIndex;
-  
+
         int32 fDepthIndex;
-			
+
         int32 fEnhancedIndex;
-        
+
         std::vector <dng_ifd *> fIFD;
 
         std::vector <dng_ifd *> fChainedIFD;
@@ -66,13 +66,13 @@ class dng_info: private dng_uncopyable
         std::vector <std::vector <dng_ifd *> > fChainedSubIFD;
 
 	protected:
-	
+
 		uint32 fMakerNoteNextIFD;
-		
+
 	public:
-	
+
 		dng_info ();
-		
+
 		virtual ~dng_info ();
 
         /// Returns the number of parsed SubIFDs (including the main IFD).
@@ -114,9 +114,9 @@ class dng_info: private dng_uncopyable
 		/// \retval true if stream provided a valid DNG.
 
 		virtual bool IsValidDNG ();
-		
+
 	protected:
-		
+
 		virtual void ValidateMagic ();
 
 		virtual void ParseTag (dng_host &host,
@@ -160,20 +160,20 @@ class dng_info: private dng_uncopyable
 							   		 int64 offsetDelta,
 							   		 uint64 minOffset,
 							   		 uint64 maxOffset);
-							   		 
+
 		virtual void ParseSonyPrivateData (dng_host &host,
 										   dng_stream &stream,
 										   uint64 count,
 										   uint64 oldOffset,
 										   uint64 newOffset);
-							   		 
+
 		virtual void ParseDNGPrivateData (dng_host &host,
 										  dng_stream &stream);
 
 	};
-	
+
 /*****************************************************************************/
 
 #endif
-	
+
 /*****************************************************************************/

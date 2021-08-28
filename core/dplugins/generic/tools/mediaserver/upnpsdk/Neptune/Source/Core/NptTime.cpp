@@ -38,8 +38,8 @@
 /*----------------------------------------------------------------------
 |   constants
 +---------------------------------------------------------------------*/
-const char* const NPT_TIME_DAYS_SHORT[] = {"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}; 
-const char* const NPT_TIME_DAYS_LONG[]  = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"}; 
+const char* const NPT_TIME_DAYS_SHORT[] = {"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"};
+const char* const NPT_TIME_DAYS_LONG[]  = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
 const char* const NPT_TIME_MONTHS[]     = {"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"};
 
 static const NPT_Int32 NPT_TIME_MONTH_DAY[]      = {-1, 30, 58, 89, 119, 150, 180, 211, 242, 272, 303, 333, 364 };
@@ -54,7 +54,7 @@ const NPT_Int32 NPT_SECONDS_PER_YEAR = (365L * NPT_SECONDS_PER_DAY);
 /*----------------------------------------------------------------------
 |   macros
 +---------------------------------------------------------------------*/
-#define NPT_TIME_YEAR_IS_LEAP(_y) ((((_y)%4 == 0) && ((_y)%100 != 0)) || ((_y)%400 == 0)) 
+#define NPT_TIME_YEAR_IS_LEAP(_y) ((((_y)%4 == 0) && ((_y)%100 != 0)) || ((_y)%400 == 0))
 #define NPT_TIME_CHECK_BOUNDS(_var, _low, _high) do {                                       \
     if (((_var)<(_low)) || ((_var)>(_high))) {                                              \
         return NPT_ERROR_OUT_OF_RANGE;                                                      \
@@ -106,7 +106,7 @@ MatchString(const char* string, const char* const* list, unsigned int list_lengt
     for (unsigned int i=0; i<list_length; i++) {
         if (NPT_StringsEqual(string, list[i])) return i;
     }
-    
+
     return -1;
 }
 
@@ -118,7 +118,7 @@ ElapsedLeapYearsSince1900(NPT_UInt32 year)
 {
     if (year < 1901) return 0;
     NPT_UInt32 years_since_1900 = year-1-1900; // not including the current year
-    return  years_since_1900/4   - 
+    return  years_since_1900/4   -
             years_since_1900/100 +
            (years_since_1900+300)/400;
 }
@@ -134,11 +134,11 @@ ElapsedDaysSince1900(const NPT_DateTime& date)
 
     // adjust for leap years after february
     if (NPT_TIME_YEAR_IS_LEAP(date.m_Year) && (date.m_Month > 2)) ++day_count;
-    
+
     // compute the total number of elapsed days
     NPT_UInt32 leap_year_count = ElapsedLeapYearsSince1900(date.m_Year);
     day_count += (date.m_Year-1900)*365 + leap_year_count;
-    
+
     return day_count;
 }
 
@@ -192,25 +192,25 @@ NPT_DateTime::FromTimeStamp(const NPT_TimeStamp& ts, bool local)
 {
     // number of seconds from the epoch (positive or negative)
     NPT_Int64 seconds = ts.ToSeconds();
-    
+
     // check the range (we only allow up to 31 bits of negative range for seconds
     // in order to have the same lower bound as the 32-bit gmtime() function)
     if (seconds < 0 && (NPT_Int32)seconds != seconds) return NPT_ERROR_OUT_OF_RANGE;
-    
+
     // adjust for the timezone if necessary
     NPT_Int32 timezone = 0;
     if (local) {
         timezone = GetLocalTimeZone();
         seconds += timezone*60;
     }
-    
+
     // adjust to the number of seconds since 1900
-    seconds += (NPT_Int64)NPT_SECONDS_PER_YEAR*70 + 
+    seconds += (NPT_Int64)NPT_SECONDS_PER_YEAR*70 +
                (NPT_Int64)(17*NPT_SECONDS_PER_DAY); // 17 leap year between 1900 and 1970
-        
+
     // compute the years since 1900, not adjusting for leap years
     NPT_UInt32 years_since_1900 = (NPT_UInt32)(seconds/NPT_SECONDS_PER_YEAR);
-    
+
     // compute the number of seconds elapsed in the current year
     seconds -= (NPT_Int64)years_since_1900 * NPT_SECONDS_PER_YEAR;
 
@@ -263,7 +263,7 @@ NPT_DateTime::FromTimeStamp(const NPT_TimeStamp& ts, bool local)
     } else {
         m_TimeZone = 0;
     }
-    
+
     return NPT_SUCCESS;
 }
 
@@ -281,7 +281,7 @@ CheckDate(const NPT_DateTime& date)
     NPT_TIME_CHECK_BOUNDS(date.m_Seconds,     0, 59);
     NPT_TIME_CHECK_BOUNDS(date.m_NanoSeconds, 0, 999999999);
     NPT_TIME_CHECK_BOUNDS(date.m_TimeZone,   -12*60, 12*60);
-    
+
     return NPT_SUCCESS;
 }
 
@@ -293,7 +293,7 @@ NPT_DateTime::ToTimeStamp(NPT_TimeStamp& timestamp) const
 {
     // default value
     timestamp.SetNanos(0);
-    
+
     // check bounds
     NPT_Result result = CheckDate(*this);
     if (NPT_FAILED(result)) return result;
@@ -302,14 +302,14 @@ NPT_DateTime::ToTimeStamp(NPT_TimeStamp& timestamp) const
     NPT_UInt32 days = ElapsedDaysSince1900(*this);
 
     // compute the number of nanoseconds
-    NPT_Int64 seconds = (NPT_Int64)days      * (24*60*60) + 
+    NPT_Int64 seconds = (NPT_Int64)days      * (24*60*60) +
                         (NPT_Int64)m_Hours   * (60*60) +
-                        (NPT_Int64)m_Minutes * (60) + 
+                        (NPT_Int64)m_Minutes * (60) +
                         (NPT_Int64)m_Seconds;
     seconds -= (NPT_Int64)m_TimeZone*60;
 
     // adjust to the number of seconds since 1900
-    seconds -= (NPT_Int64)NPT_SECONDS_PER_YEAR*70 + 
+    seconds -= (NPT_Int64)NPT_SECONDS_PER_YEAR*70 +
         (NPT_Int64)(17*NPT_SECONDS_PER_DAY); // 17 leap year between 1900 and 1970
 
     timestamp.FromNanos(seconds * 1000000000 + m_NanoSeconds);
@@ -339,9 +339,9 @@ NPT_String
 NPT_DateTime::ToString(Format format, NPT_Flags flags) const
 {
     NPT_String result;
-    
+
     if (NPT_FAILED(CheckDate(*this))) return result;
-    
+
     switch (format) {
         case FORMAT_W3C:
             AppendNumber(result, m_Year, 4);
@@ -381,14 +381,14 @@ NPT_DateTime::ToString(Format format, NPT_Flags flags) const
                 result += 'Z';
             }
             break;
-            
+
         case FORMAT_ANSI: {
             // compute the number of days elapsed since 1900
             NPT_UInt32 days = ElapsedDaysSince1900(*this);
-            
+
             // format the result
             result.SetLength(24);
-            NPT_FormatString(result.UseChars(), result.GetLength()+1, 
+            NPT_FormatString(result.UseChars(), result.GetLength()+1,
                              "%.3s %.3s%3d %.2d:%.2d:%.2d %d",
                              NPT_TIME_DAYS_SHORT[(days+1)%7],
                              NPT_TIME_MONTHS[m_Month-1],
@@ -399,7 +399,7 @@ NPT_DateTime::ToString(Format format, NPT_Flags flags) const
                              m_Year);
             break;
         }
-            
+
         case FORMAT_RFC_1036:
         case FORMAT_RFC_1123: {
             // compute the number of days elapsed since 1900
@@ -455,28 +455,28 @@ NPT_Result
 NPT_DateTime::FromString(const char* date, Format format)
 {
     if (date == NULL || date[0] == '\0') return NPT_ERROR_INVALID_PARAMETERS;
-    
+
     // create a local copy to work with
     NPT_String workspace(date);
     char* input = workspace.UseChars();
     NPT_Size input_size = workspace.GetLength();
-    
+
     switch (format) {
       case FORMAT_W3C: {
         if (input_size < 17 && input_size != 10) return NPT_ERROR_INVALID_SYNTAX;
 
         // check separators
-        if (input[4] != '-' || 
+        if (input[4] != '-' ||
             input[7] != '-') {
             return NPT_ERROR_INVALID_SYNTAX;
         }
-         
+
         // replace separators with terminators
         input[4] = input[7] = '\0';
-        
+
         bool no_seconds = true;
         if (input_size > 10) {
-            if (input[10] != 'T' || 
+            if (input[10] != 'T' ||
                 input[13] != ':') {
                 return NPT_ERROR_INVALID_SYNTAX;
             }
@@ -489,8 +489,8 @@ NPT_DateTime::FromString(const char* date, Format format)
                 m_Seconds = 0;
             }
         }
-          
-    
+
+
         // parse CCYY-MM-DD fields
         if (NPT_FAILED(NPT_ParseInteger(input,    m_Year,    false)) ||
             NPT_FAILED(NPT_ParseInteger(input+5,  m_Month,   false)) ||
@@ -517,7 +517,7 @@ NPT_DateTime::FromString(const char* date, Format format)
                 if (input[input_size-6] == '-') m_TimeZone = -m_TimeZone;
                 input[input_size-6] = '\0';
             }
-            
+
             // parse fields
             if (NPT_FAILED(NPT_ParseInteger(input+11, m_Hours,   false)) ||
                 NPT_FAILED(NPT_ParseInteger(input+14, m_Minutes, false))) {
@@ -550,8 +550,8 @@ NPT_DateTime::FromString(const char* date, Format format)
         }
         break;
       }
-    
-      case FORMAT_RFC_1036: 
+
+      case FORMAT_RFC_1036:
       case FORMAT_RFC_1123: {
         if (input_size < 26) return NPT_ERROR_INVALID_SYNTAX;
         // look for the weekday and separtor
@@ -563,7 +563,7 @@ NPT_DateTime::FromString(const char* date, Format format)
         if (*input == '\0' || *wday == ',') return NPT_ERROR_INVALID_SYNTAX;
         *input++ = '\0';
         --input_size;
-        
+
         // look for the timezone
         char* timezone = input+input_size-1;
         unsigned int timezone_size = 0;
@@ -574,7 +574,7 @@ NPT_DateTime::FromString(const char* date, Format format)
         }
         if (input_size == 0) return NPT_ERROR_INVALID_SYNTAX;
         *timezone++ = '\0';
-        
+
         // check separators
         if (input_size < 20) return NPT_ERROR_INVALID_SYNTAX;
         unsigned int yl = input_size-18;
@@ -588,15 +588,15 @@ NPT_DateTime::FromString(const char* date, Format format)
             sep = ' ';
             wday_index = MatchString(wday, NPT_TIME_DAYS_SHORT, 7);
         }
-        if (input[0]     != ' ' || 
-            input[3]     != sep || 
+        if (input[0]     != ' ' ||
+            input[3]     != sep ||
             input[7]     != sep ||
             input[8+yl]  != ' ' ||
             input[11+yl] != ':' ||
             input[14+yl] != ':') {
             return NPT_ERROR_INVALID_SYNTAX;
         }
-        input[3] = input[7] = input[8+yl] = input[11+yl] = input[14+yl] = '\0';            
+        input[3] = input[7] = input[8+yl] = input[11+yl] = input[14+yl] = '\0';
 
         // parse fields
         m_Month = 1+MatchString(input+4, NPT_TIME_MONTHS, 12);
@@ -607,10 +607,10 @@ NPT_DateTime::FromString(const char* date, Format format)
             NPT_FAILED(NPT_ParseInteger(input+15+yl, m_Seconds, false))) {
             return NPT_ERROR_INVALID_SYNTAX;
         }
-        
+
         // adjust short year lengths
         if (yl == 2) m_Year += 1900;
-        
+
         // parse the timezone
         if (NPT_StringsEqual(timezone, "GMT") ||
             NPT_StringsEqual(timezone, "UT")  ||
@@ -633,7 +633,7 @@ NPT_DateTime::FromString(const char* date, Format format)
             if (timezone[0] >= 'A' && timezone[0] <= 'I') {
                 m_TimeZone = -60*(1+timezone[0]-'A');
             } else if (timezone[0] >= 'K' && timezone[0] <= 'M') {
-                m_TimeZone = -60*(timezone[0]-'A');            
+                m_TimeZone = -60*(timezone[0]-'A');
             } else if (timezone[0] >= 'N' && timezone[0] <= 'Y') {
                 m_TimeZone = 60*(1+timezone[0]-'N');
             } else {
@@ -659,33 +659,33 @@ NPT_DateTime::FromString(const char* date, Format format)
         } else {
             return NPT_ERROR_INVALID_SYNTAX;
         }
-        
+
         // compute the number of days elapsed since 1900
         NPT_UInt32 days = ElapsedDaysSince1900(*this);
         if ((int)((days+1)%7) != wday_index) {
             return NPT_ERROR_INVALID_PARAMETERS;
         }
-        
+
         m_NanoSeconds = 0;
 
         break;
       }
-    
+
       case FORMAT_ANSI: {
         if (input_size != 24) return NPT_ERROR_INVALID_SYNTAX;
 
         // check separators
-        if (input[3]  != ' ' || 
-            input[7]  != ' ' || 
-            input[10] != ' ' || 
-            input[13] != ':' || 
+        if (input[3]  != ' ' ||
+            input[7]  != ' ' ||
+            input[10] != ' ' ||
+            input[13] != ':' ||
             input[16] != ':' ||
             input[19] != ' ') {
             return NPT_ERROR_INVALID_SYNTAX;
         }
         input[3] = input[7] = input[10] = input[13] = input[16] = input[19] = '\0';
         if (input[8] == ' ') input[8] = '0';
-                
+
         m_Month = 1+MatchString(input+4, NPT_TIME_MONTHS, 12);
         if (NPT_FAILED(NPT_ParseInteger(input+8,  m_Day,     false)) ||
             NPT_FAILED(NPT_ParseInteger(input+11, m_Hours,   false)) ||
@@ -700,15 +700,15 @@ NPT_DateTime::FromString(const char* date, Format format)
         if ((int)((days+1)%7) != MatchString(input, NPT_TIME_DAYS_SHORT, 7)) {
             return NPT_ERROR_INVALID_PARAMETERS;
         }
-        
+
         m_TimeZone    = 0;
         m_NanoSeconds = 0;
         break;
       }
-    
+
       default:
         return NPT_ERROR_INVALID_PARAMETERS;
     }
-    
+
     return CheckDate(*this);
 }

@@ -11,14 +11,14 @@
 | as published by the Free Software Foundation; either version 2
 | of the License, or (at your option) any later version.
 |
-| OEMs, ISVs, VARs and other distributors that combine and 
+| OEMs, ISVs, VARs and other distributors that combine and
 | distribute commercially licensed software with Platinum software
 | and do not wish to distribute the source code for the commercially
 | licensed software under version 2, or (at your option) any later
 | version, of the GNU General Public License (the "GPL") must enter
 | into a commercial license agreement with Plutinosoft, LLC.
 | licensing@plutinosoft.com
-|  
+|
 | This program is distributed in the hope that it will be useful,
 | but WITHOUT ANY WARRANTY; without even the implied warranty of
 | MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
@@ -26,7 +26,7 @@
 |
 | You should have received a copy of the GNU General Public License
 | along with this program; see the file LICENSE.txt. If not, write to
-| the Free Software Foundation, Inc., 
+| the Free Software Foundation, Inc.,
 | 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 | http://www.gnu.org/licenses/gpl-2.0.html
 |
@@ -74,7 +74,7 @@ static const char PLT_DLNAHexCharsToValidate[]        = PLT_FIELD_NUM "ABCDEFabc
 static const char PLT_DLNAOTherNameCharsToValidate[]  = PLT_FIELD_ALPHA PLT_FIELD_NUM;
 static const char PLT_DLNAOTherValueCharsToValidate[] = PLT_FIELD_ALPHA PLT_FIELD_NUM "_-+,";
 
-static const PLT_HttpFileRequestHandler_DefaultDlnaExtMapEntry 
+static const PLT_HttpFileRequestHandler_DefaultDlnaExtMapEntry
 PLT_HttpFileRequestHandler_DefaultDlnaMap[] = {
     {"image/gif",      "DLNA.ORG_PN=GIF_LRG"},
     {"image/jpeg",     "DLNA.ORG_PN=JPEG_LRG"},
@@ -102,7 +102,7 @@ PLT_HttpFileRequestHandler_DefaultDlnaMap[] = {
     {"video/x-flv",    "DLNA.ORG_OP=01;DLNA.ORG_CI=0"},
 };
 
-static const PLT_HttpFileRequestHandler_DefaultDlnaExtMapEntry 
+static const PLT_HttpFileRequestHandler_DefaultDlnaExtMapEntry
 PLT_HttpFileRequestHandler_360DlnaMap[] = {
     {"video/quicktime","DLNA.ORG_OP=01;DLNA.ORG_CI=0;DLNA.ORG_FLAGS=01500000000000000000000000000000"},
     {"video/mp4",      "DLNA.ORG_OP=01;DLNA.ORG_CI=0;DLNA.ORG_FLAGS=01500000000000000000000000000000"},
@@ -112,12 +112,12 @@ PLT_HttpFileRequestHandler_360DlnaMap[] = {
     {"audio/x-ms-wma", "DLNA.ORG_PN=WMABASE;DLNA.ORG_OP=01;DLNA.ORG_CI=0"}
 };
 
-static const PLT_HttpFileRequestHandler_DefaultDlnaExtMapEntry 
+static const PLT_HttpFileRequestHandler_DefaultDlnaExtMapEntry
 PLT_HttpFileRequestHandler_SonosDlnaMap[] = {
     {"audio/wav",      "*"}
 };
 
-static const PLT_HttpFileRequestHandler_DefaultDlnaExtMapEntry 
+static const PLT_HttpFileRequestHandler_DefaultDlnaExtMapEntry
 PLT_HttpFileRequestHandler_PS3DlnaMap[] = {
     {"image/jpg",  "DLNA.ORG_OP=01"},
     {"image/png",  "DLNA.ORG_OP=01"}
@@ -171,19 +171,19 @@ PLT_ProtocolInfo::PLT_ProtocolInfo(const char* protocol,
 NPT_Result
 PLT_ProtocolInfo::SetProtocolInfo(const char* protocol_info)
 {
-    if (!protocol_info || protocol_info[0] == '\0') 
+    if (!protocol_info || protocol_info[0] == '\0')
         return NPT_ERROR_INVALID_PARAMETERS;
-    
+
     NPT_List<NPT_String> parts = NPT_String(protocol_info).Split(":");
-    if (parts.GetItemCount() != 4) 
+    if (parts.GetItemCount() != 4)
         return NPT_ERROR_INVALID_SYNTAX;
-    
+
     NPT_List<NPT_String>::Iterator part = parts.GetFirstItem();
     m_Protocol    = *part++;
     m_Mask        = *part++;
     m_ContentType = *part++;
     m_Extra       = *part;
-    
+
     return ValidateExtra();
 }
 
@@ -194,10 +194,10 @@ NPT_Result
 PLT_ProtocolInfo::ParseExtra(NPT_List<FieldEntry>& entries)
 {
     if (m_Extra == "*") return NPT_SUCCESS;
-    
+
     // remove extra characters which could cause parsing errors
     m_Extra.Trim(";");
-    
+
     NPT_List<NPT_String> fields = m_Extra.Split(";");
     NPT_List<NPT_String>::Iterator field = fields.GetFirstItem();
     if (!field) NPT_CHECK_SEVERE(NPT_ERROR_INVALID_SYNTAX);
@@ -216,13 +216,13 @@ PLT_ProtocolInfo::ParseExtra(NPT_List<FieldEntry>& entries)
 |   PLT_ProtocolInfo::ValidateField
 +---------------------------------------------------------------------*/
 NPT_Result
-PLT_ProtocolInfo::ValidateField(const char*  val, 
-                                const char*  valid_chars, 
+PLT_ProtocolInfo::ValidateField(const char*  val,
+                                const char*  valid_chars,
                                 NPT_Cardinal num_chars /* = 0 */)
 {
-    if (!valid_chars || !val || val[0] == '\0') 
+    if (!valid_chars || !val || val[0] == '\0')
         return NPT_ERROR_INVALID_PARAMETERS;
-    
+
     // shortcut
     if (num_chars && NPT_StringLength(val) != num_chars)
         return NPT_ERROR_INVALID_SYNTAX;
@@ -255,7 +255,7 @@ PLT_ProtocolInfo::ValidateExtra()
         NPT_List<FieldEntry> entries;
         NPT_CHECK(ParseExtra(entries));
 
-        NPT_List<FieldEntry>::Iterator entry = 
+        NPT_List<FieldEntry>::Iterator entry =
             entries.GetFirstItem();
 
         // parse other optional fields
@@ -266,9 +266,9 @@ PLT_ProtocolInfo::ValidateExtra()
                 if (state > PLT_PROTINFO_PARSER_STATE_START) {
                     NPT_CHECK_LABEL_SEVERE(NPT_ERROR_INVALID_SYNTAX, failure);
                 }
-                
+
                 NPT_CHECK_LABEL_SEVERE(ValidateField(
-                    entry->m_Value, 
+                    entry->m_Value,
                     PLT_DLNAPNCharsToValidate), failure);
 
                 m_DLNA_PN = entry->m_Value;
@@ -282,8 +282,8 @@ PLT_ProtocolInfo::ValidateExtra()
 
                 // validate value
                 NPT_CHECK_LABEL_SEVERE(ValidateField(
-                    entry->m_Value, 
-                    PLT_DLNAFlagCharsToValidate, 
+                    entry->m_Value,
+                    PLT_DLNAFlagCharsToValidate,
                     2), failure);
 
                 m_DLNA_OP = entry->m_Value;
@@ -297,7 +297,7 @@ PLT_ProtocolInfo::ValidateExtra()
 
                 // validate value
                 NPT_CHECK_LABEL_SEVERE(ValidateField(
-                    entry->m_Value, 
+                    entry->m_Value,
                     PLT_DLNAPSCharsToValidate), failure);
 
                 m_DLNA_PS = entry->m_Value;
@@ -311,8 +311,8 @@ PLT_ProtocolInfo::ValidateExtra()
 
                 // validate value
                 NPT_CHECK_LABEL_SEVERE(ValidateField(
-                    entry->m_Value, 
-                    PLT_DLNAFlagCharsToValidate, 
+                    entry->m_Value,
+                    PLT_DLNAFlagCharsToValidate,
                     1), failure);
 
                 m_DLNA_CI = entry->m_Value;
@@ -326,8 +326,8 @@ PLT_ProtocolInfo::ValidateExtra()
 
                 // validate value
                 NPT_CHECK_LABEL_SEVERE(ValidateField(
-                    entry->m_Value, 
-                    PLT_DLNAHexCharsToValidate, 
+                    entry->m_Value,
+                    PLT_DLNAHexCharsToValidate,
                     32), failure);
 
                 m_DLNA_FLAGS = entry->m_Value;
@@ -335,13 +335,13 @@ PLT_ProtocolInfo::ValidateExtra()
                 continue;
             } else if (entry->m_Key == "DLNA.ORG_MAXSP") {
                 // maxsp-param only allowed after flags-param
-                if (state > PLT_PROTINFO_PARSER_STATE_FLAGS) { 
+                if (state > PLT_PROTINFO_PARSER_STATE_FLAGS) {
                     NPT_CHECK_LABEL_SEVERE(NPT_ERROR_INVALID_SYNTAX, failure);
                 }
 
                 // validate value
                 NPT_CHECK_LABEL_SEVERE(ValidateField(
-                    entry->m_Value, 
+                    entry->m_Value,
                     PLT_FIELD_NUM "."), failure);
 
                 m_DLNA_MAXSP = entry->m_Value;
@@ -360,25 +360,25 @@ PLT_ProtocolInfo::ValidateExtra()
 
                 // validate key
                 if (NPT_FAILED(ValidateField(
-                    entry->m_Key.GetChars()+index, 
+                    entry->m_Key.GetChars()+index,
                     PLT_DLNAOTherNameCharsToValidate))) {
                         NPT_LOG_WARNING_2("Invalid protocolinfo 4th field other param: %s=%s",
-                            (const char*)entry->m_Key, 
+                            (const char*)entry->m_Key,
                             (const char*)entry->m_Value);
                     continue;
                 }
 
                 // validate value
                 if (NPT_FAILED(ValidateField(
-                        entry->m_Value, 
+                        entry->m_Value,
                         PLT_DLNAOTherValueCharsToValidate))) {
-                
+
                     NPT_LOG_WARNING_2("Invalid protocolinfo 4th field other param: %s=%s",
-                        (const char*)entry->m_Key, 
+                        (const char*)entry->m_Key,
                         (const char*)entry->m_Value);
                     continue;
                 }
-                
+
                 m_DLNA_OTHER.Add(*entry);
                 continue;
             }
@@ -387,7 +387,7 @@ PLT_ProtocolInfo::ValidateExtra()
 
     m_Valid = true;
     return NPT_SUCCESS;
-    
+
 failure:
     NPT_LOG_WARNING_1("Failure to parse Protocol Info Extras:%s", m_Extra.GetChars());
     return NPT_FAILURE;
@@ -460,7 +460,7 @@ PLT_ProtocolInfo::Match(const PLT_ProtocolInfo& other) const
     if (m_Protocol != '*' &&
         other.GetProtocol() != '*' &&
         m_Protocol != other.GetProtocol()) return false;
-        
+
     if (m_Mask != '*' &&
         other.GetMask() != '*' &&
         m_Mask != other.GetMask()) return false;
@@ -480,7 +480,7 @@ PLT_ProtocolInfo::Match(const PLT_ProtocolInfo& other) const
 /*----------------------------------------------------------------------
 |   PLT_ProtocolInfo::GetMimeTypeFromProtocolInfo
 +---------------------------------------------------------------------*/
-NPT_String  
+NPT_String
 PLT_ProtocolInfo::GetMimeTypeFromProtocolInfo(const char* protocol_info)
 {
     /*NPT_String info = protocol_info;
@@ -495,23 +495,23 @@ PLT_ProtocolInfo::GetMimeTypeFromProtocolInfo(const char* protocol_info)
 /*----------------------------------------------------------------------
 |   PLT_ProtocolInfo::GetDlnaExtension
 +---------------------------------------------------------------------*/
-const char* 
+const char*
 PLT_ProtocolInfo::GetDlnaExtension(const char*                   mime_type,
                                    const PLT_HttpRequestContext* context /* = NULL */)
 {
-    return GetDlnaExtension(mime_type, 
+    return GetDlnaExtension(mime_type,
                             context?PLT_HttpHelper::GetDeviceSignature(context->GetRequest()):PLT_DEVICE_UNKNOWN);
 }
 
 /*----------------------------------------------------------------------
 |   PLT_ProtocolInfo::GetDlnaExtension
 +---------------------------------------------------------------------*/
-const char* 
+const char*
 PLT_ProtocolInfo::GetDlnaExtension(const char*         mime_type,
                                    PLT_DeviceSignature signature /* = PLT_DEVICE_UNKNOWN */)
 {
     NPT_String _mime_type = mime_type;
-    
+
     if (signature != PLT_DEVICE_UNKNOWN) {
         // look for special case for 360
         if (signature == PLT_DEVICE_XBOX_360 || signature == PLT_DEVICE_XBOX_ONE || signature == PLT_DEVICE_WMP) {
@@ -532,7 +532,7 @@ PLT_ProtocolInfo::GetDlnaExtension(const char*         mime_type,
                     return PLT_HttpFileRequestHandler_PS3DlnaMap[i].dlna_ext;
                 }
             }
-            
+
             return "DLNA.ORG_OP=01"; // Should we try default dlna instead?
         }
     }
@@ -550,7 +550,7 @@ PLT_ProtocolInfo::GetDlnaExtension(const char*         mime_type,
 |   PLT_ProtocolInfo::GetProtocolInfoFromMimeType
 +---------------------------------------------------------------------*/
 PLT_ProtocolInfo
-PLT_ProtocolInfo::GetProtocolInfoFromMimeType(const char*         mime_type, 
+PLT_ProtocolInfo::GetProtocolInfoFromMimeType(const char*         mime_type,
                                               bool                with_dlna_extension /* = true */,
                                               PLT_DeviceSignature signature /* = PLT_DEVICE_UNKNOWN */)
 {
@@ -563,12 +563,12 @@ PLT_ProtocolInfo::GetProtocolInfoFromMimeType(const char*         mime_type,
 |   PLT_ProtocolInfo::GetProtocolInfoFromMimeType
 +---------------------------------------------------------------------*/
 PLT_ProtocolInfo
-PLT_ProtocolInfo::GetProtocolInfoFromMimeType(const char*                   mime_type, 
+PLT_ProtocolInfo::GetProtocolInfoFromMimeType(const char*                   mime_type,
                                               bool                          with_dlna_extension /* = true */,
                                               const PLT_HttpRequestContext* context /* = NULL */)
 {
-    return GetProtocolInfoFromMimeType(mime_type, 
-                                       with_dlna_extension, 
+    return GetProtocolInfoFromMimeType(mime_type,
+                                       with_dlna_extension,
                                        context?PLT_HttpHelper::GetDeviceSignature(context->GetRequest()):PLT_DEVICE_UNKNOWN);
 }
 
@@ -576,23 +576,23 @@ PLT_ProtocolInfo::GetProtocolInfoFromMimeType(const char*                   mime
 |   PLT_ProtocolInfo::GetProtocolInfo
 +---------------------------------------------------------------------*/
 PLT_ProtocolInfo
-PLT_ProtocolInfo::GetProtocolInfo(const char*         filename, 
+PLT_ProtocolInfo::GetProtocolInfo(const char*         filename,
                                   bool                with_dlna_extension /* = true */,
                                   PLT_DeviceSignature signature /* = PLT_DEVICE_UNKNOWN */)
 {
-    return GetProtocolInfoFromMimeType(PLT_MimeType::GetMimeType(filename, signature), 
-                                       with_dlna_extension, 
+    return GetProtocolInfoFromMimeType(PLT_MimeType::GetMimeType(filename, signature),
+                                       with_dlna_extension,
                                        signature);
 }
 /*----------------------------------------------------------------------
 |   PLT_ProtocolInfo::GetProtocolInfo
 +---------------------------------------------------------------------*/
 PLT_ProtocolInfo
-PLT_ProtocolInfo::GetProtocolInfo(const char*                   filename, 
+PLT_ProtocolInfo::GetProtocolInfo(const char*                   filename,
                                   bool                          with_dlna_extension /* = true */,
                                   const PLT_HttpRequestContext* context /* = NULL */)
 {
-    return GetProtocolInfoFromMimeType(PLT_MimeType::GetMimeType(filename, context), 
-                                       with_dlna_extension, 
+    return GetProtocolInfoFromMimeType(PLT_MimeType::GetMimeType(filename, context),
+                                       with_dlna_extension,
                                        context);
 }

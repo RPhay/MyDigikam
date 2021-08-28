@@ -53,7 +53,7 @@ namespace Digikam
  *        in the sort model. Subclassing DragDropModelImplementation would not
  *        work there, because we want to re-use ItemDragDropHandler.
  */
-class TableViewTreeView : public QTreeView, 
+class TableViewTreeView : public QTreeView,
                           public DragDropViewImplementation,
                           public GroupingViewImplementation
 {

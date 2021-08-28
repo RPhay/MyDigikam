@@ -11,14 +11,14 @@
 | as published by the Free Software Foundation; either version 2
 | of the License, or (at your option) any later version.
 |
-| OEMs, ISVs, VARs and other distributors that combine and 
+| OEMs, ISVs, VARs and other distributors that combine and
 | distribute commercially licensed software with Platinum software
 | and do not wish to distribute the source code for the commercially
 | licensed software under version 2, or (at your option) any later
 | version, of the GNU General Public License (the "GPL") must enter
 | into a commercial license agreement with Plutinosoft, LLC.
 | licensing@plutinosoft.com
-|  
+|
 | This program is distributed in the hope that it will be useful,
 | but WITHOUT ANY WARRANTY; without even the implied warranty of
 | MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
@@ -26,7 +26,7 @@
 |
 | You should have received a copy of the GNU General Public License
 | along with this program; see the file LICENSE.txt. If not, write to
-| the Free Software Foundation, Inc., 
+| the Free Software Foundation, Inc.,
 | 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 | http://www.gnu.org/licenses/gpl-2.0.html
 |
@@ -57,14 +57,14 @@ typedef NPT_List<PLT_DeviceDataReference> PLT_DeviceDataReferenceList;
 /*----------------------------------------------------------------------
 |   PLT_DeviceIcon class
 +---------------------------------------------------------------------*/
-/** 
+/**
  The PLT_DeviceIcon class represents a given instance of a UPnP device icon.
  */
 class PLT_DeviceIcon
 {
 public:
-    PLT_DeviceIcon(const char* mimetype = "", 
-                   NPT_Int32   width = 0, 
+    PLT_DeviceIcon(const char* mimetype = "",
+                   NPT_Int32   width = 0,
                    NPT_Int32   height = 0,
                    NPT_Int32   depth = 0,
                    const char* urlpath = "") :
@@ -74,7 +74,7 @@ public:
         m_Depth(depth),
         m_UrlPath(urlpath) {}
     virtual ~PLT_DeviceIcon() {}
-   
+
     NPT_String  m_MimeType;
     NPT_Int32   m_Width;
     NPT_Int32   m_Height;
@@ -87,14 +87,14 @@ public:
 +---------------------------------------------------------------------*/
 /**
  The PLT_DeviceData class holds information about a device being advertised or
- found by a control point. It maintains a list of services and 
+ found by a control point. It maintains a list of services and
  embedded devices if any.
  */
 class PLT_DeviceData
 {
 public:
     PLT_DeviceData(
-        NPT_HttpUrl      description_url = NPT_HttpUrl(NULL, 0, "/description.xml"), 
+        NPT_HttpUrl      description_url = NPT_HttpUrl(NULL, 0, "/description.xml"),
         const char*      uuid = "",
         NPT_TimeInterval lease_time = *PLT_Constants::GetInstance().GetDefaultDeviceLease(),
         const char*      device_type = "",
@@ -107,7 +107,7 @@ public:
     virtual NPT_HttpUrl NormalizeURL(const NPT_String& url);
     virtual NPT_Result  GetDescription(NPT_XmlElementNode* parent, NPT_XmlElementNode** device = NULL);
     virtual NPT_String  GetIconUrl(const char* mimetype = NULL, NPT_Int32 maxsize = 0, NPT_Int32 maxdepth = 0);
-    
+
     bool                    IsRoot()              { return m_ParentUUID.IsEmpty();   }
     const NPT_TimeInterval& GetLeaseTime()        const { return m_LeaseTime;        }
     const NPT_String&       GetUUID()             const { return m_UUID;             }
@@ -134,7 +134,7 @@ public:
     NPT_Result RemoveEmbeddedDevice(PLT_DeviceDataReference& device);
     NPT_Result AddService(PLT_Service* service);
     NPT_Result RemoveService(PLT_Service* service);
-    
+
     /* BOOTID UPnP 1/1 */
     void SetBootId(NPT_UInt32 bootId);
     void SetNextBootId(NPT_UInt32 nextBootId);
@@ -144,10 +144,10 @@ public:
 
 protected:
     virtual ~PLT_DeviceData();
-    
+
     virtual void       Cleanup();
     virtual NPT_Result OnAddExtraInfo(NPT_XmlElementNode* /*device_node*/) { return NPT_SUCCESS; }
-    
+
 
 private:
     /* called by PLT_CtrlPoint when an existing device location is updated */
@@ -156,15 +156,15 @@ private:
     NPT_Result    SetURLBase(NPT_HttpUrl& url_base);
     NPT_TimeStamp GetLeaseTimeLastUpdate();
     void          UpdateConfigId();
-    
+
     /* class methods */
     static NPT_Result SetDescription(PLT_DeviceDataReference&      root_device,
                                      NPT_TimeInterval              leasetime,
                                      NPT_HttpUrl                   description_url,
-                                     const char*                   description, 
+                                     const char*                   description,
                                      const NPT_HttpRequestContext& context);
     static NPT_Result SetDescriptionDevice(PLT_DeviceDataReference&      device,
-                                           NPT_XmlElementNode*           device_node, 
+                                           NPT_XmlElementNode*           device_node,
                                            const NPT_HttpRequestContext& context);
 
 public:
@@ -202,9 +202,9 @@ protected:
 
     /* IP address of interface used when retrieving device description.
        We need the info for the control point subscription callback */
-    NPT_IpAddress                      m_LocalIfaceIp; 
+    NPT_IpAddress                      m_LocalIfaceIp;
     NPT_String                         m_Representation;
-    
+
 private:
     NPT_UInt32                         m_BootId;
     NPT_UInt32                         m_NextBootId;
@@ -238,7 +238,7 @@ private:
 |   PLT_DeviceDataFinderByType
 +---------------------------------------------------------------------*/
 /**
- The PLT_DeviceDataFinderByType class returns a PLT_DeviceData instance 
+ The PLT_DeviceDataFinderByType class returns a PLT_DeviceData instance
  given a device type.
  */
 class PLT_DeviceDataFinderByType

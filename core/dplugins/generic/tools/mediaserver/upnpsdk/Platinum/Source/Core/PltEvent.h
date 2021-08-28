@@ -11,14 +11,14 @@
 | as published by the Free Software Foundation; either version 2
 | of the License, or (at your option) any later version.
 |
-| OEMs, ISVs, VARs and other distributors that combine and 
+| OEMs, ISVs, VARs and other distributors that combine and
 | distribute commercially licensed software with Platinum software
 | and do not wish to distribute the source code for the commercially
 | licensed software under version 2, or (at your option) any later
 | version, of the GNU General Public License (the "GPL") must enter
 | into a commercial license agreement with Plutinosoft, LLC.
 | licensing@plutinosoft.com
-|  
+|
 | This program is distributed in the hope that it will be useful,
 | but WITHOUT ANY WARRANTY; without even the implied warranty of
 | MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
@@ -26,7 +26,7 @@
 |
 | You should have received a copy of the GNU General Public License
 | along with this program; see the file LICENSE.txt. If not, write to
-| the Free Software Foundation, Inc., 
+| the Free Software Foundation, Inc.,
 | 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 | http://www.gnu.org/licenses/gpl-2.0.html
 |
@@ -59,7 +59,7 @@ class PLT_CtrlPoint;
 +---------------------------------------------------------------------*/
 /**
  The PLT_EventNotification class represents an event notification for a given
- service to a given subscriber 
+ service to a given subscriber
  */
 class PLT_EventNotification
 {
@@ -76,7 +76,7 @@ public:
     NPT_String                    m_SID;
     NPT_Ordinal                   m_EventKey;
     NPT_String                    m_XmlBody;
-    
+
 protected:
     PLT_EventNotification() : m_EventKey(0) {}
 };
@@ -108,7 +108,7 @@ public:
     NPT_Result        FindCallbackURL(const char* callback_url);
     NPT_Result        AddCallbackURL(const char* callback_url);
     NPT_Result        Notify(NPT_List<PLT_StateVariable*>& vars);
-    
+
 protected:
     //members
     PLT_TaskManagerReference  m_TaskManager;
@@ -149,14 +149,14 @@ private:
 |   PLT_EventSubscriberFinderByCallbackURL
 +---------------------------------------------------------------------*/
 /**
- The PLT_EventSubscriberFinderByCallbackURL class returns an instance of a 
+ The PLT_EventSubscriberFinderByCallbackURL class returns an instance of a
  PLT_EventSubscriber given its subscriber callback url.
  */
 class PLT_EventSubscriberFinderByCallbackURL
 {
 public:
     // methods
-    PLT_EventSubscriberFinderByCallbackURL(const char* callback_url) : 
+    PLT_EventSubscriberFinderByCallbackURL(const char* callback_url) :
       m_CallbackURL(callback_url) {}
 
     bool operator()(PLT_EventSubscriberReference const & sub) const {
@@ -172,7 +172,7 @@ private:
 |   PLT_EventSubscriberFinderByService
 +---------------------------------------------------------------------*/
 /**
- The PLT_EventSubscriberFinderByService class returns an instance of a 
+ The PLT_EventSubscriberFinderByService class returns an instance of a
  PLT_EventSubscriber given a UPnP service.
  */
 class PLT_EventSubscriberFinderByService

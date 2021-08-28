@@ -35,28 +35,28 @@ class dng_1d_table: private dng_uncopyable
 		/// Constant denoting minimum size of table.
 
 		static const uint32 kMinTableSize = 512;
-	
+
 	private:
-	
+
 		/// Constant denoting default size of table.
 
 		static const uint32 kDefaultTableSize = 4096;
-			
+
 	protected:
-	
+
 		AutoPtr<dng_memory_block> fBuffer;
-		
+
 		real32 *fTable;
 
 		const uint32 fTableCount;
-	
+
 	public:
 
 		/// Table constructor. count must be a power of two
 		/// and at least kMinTableSize.
-	
+
 		explicit dng_1d_table (uint32 count = kDefaultTableSize);
-			
+
 		virtual ~dng_1d_table ();
 
 		/// Number of table entries.
@@ -82,45 +82,45 @@ class dng_1d_table: private dng_uncopyable
 
 		real32 Interpolate (real32 x) const
 			{
-			
+
 			real32 y = x * (real32) fTableCount;
-			
+
 			int32 index = (int32) y;
 
 			// Enable vectorization by using DNG_ASSERT instead of DNG_REQUIRE
 			DNG_ASSERT(!(index < 0 || index >(int32) fTableCount), "dng_1d_table::Interpolate parameter out of range");
-			
+
 			real32 z = (real32) index;
-						
+
 			real32 fract = y - z;
-			
+
 			return fTable [index	] * (1.0f - fract) +
 				   fTable [index + 1] * (		fract);
-			
+
 			}
-			
+
 		/// Direct access function for table data.
-			
+
 		const real32 * Table () const
 			{
 			return fTable;
 			}
-			
+
 		/// Expand the table to a 16-bit to 16-bit table.
-		
+
 		void Expand16 (uint16 *table16) const;
-			
+
 	private:
-	
+
 		void SubDivide (const dng_1d_function &function,
 						uint32 lower,
 						uint32 upper,
 						real32 maxDelta);
-	
+
 	};
 
 /*****************************************************************************/
 
 #endif
-	
+
 /*****************************************************************************/

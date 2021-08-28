@@ -881,7 +881,7 @@ typedef unsigned long long UINT64;
     int no_interpolation;
   } libraw_output_params_t;
 
-  typedef struct  
+  typedef struct
   {
       /* Raw speed */
       int use_rawspeed;

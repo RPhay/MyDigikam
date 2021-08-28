@@ -8,10 +8,10 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface MediaServerCocoaTest_AppDelegate : NSObject 
+@interface MediaServerCocoaTest_AppDelegate : NSObject
 {
     NSWindow *window;
-    
+
     NSPersistentStoreCoordinator *persistentStoreCoordinator;
     NSManagedObjectModel         *managedObjectModel;
     NSManagedObjectContext       *managedObjectContext;

@@ -41,7 +41,7 @@ class dng_big_table
         dng_fingerprint fFingerprint;
 
         dng_big_table_cache * fCache;
-        
+
         bool fIsMissing;
 
     protected:
@@ -55,12 +55,12 @@ class dng_big_table
     public:
 
         virtual ~dng_big_table ();
-        
+
         bool IsMissing () const
             {
             return fIsMissing;
             }
-        
+
         void SetMissing ()
             {
             fIsMissing = true;
@@ -73,13 +73,13 @@ class dng_big_table
         bool DecodeFromBinary (const uint8 * compressedData,
                                uint32 compressedSize,
                                dng_memory_allocator &allocator);
-        
+
         bool DecodeFromString (const dng_string &block1,
                                dng_memory_allocator &allocator);
-        
+
         dng_memory_block * EncodeAsBinary (dng_memory_allocator &allocator,
                                            uint32 &compressedSize) const;
-        
+
         dng_memory_block * EncodeAsString (dng_memory_allocator &allocator) const;
 
         bool ExtractFromCache (const dng_fingerprint &fingerprint);
@@ -87,7 +87,7 @@ class dng_big_table
         bool ReadTableFromXMP (const dng_xmp &xmp,
 							   const char *ns,
                                const dng_fingerprint &fingerprint);
-        
+
         bool ReadFromXMP (const dng_xmp &xmp,
                           const char *ns,
                           const char *path,
@@ -113,23 +113,23 @@ class dng_big_table
 
 class dng_big_table_storage
     {
-    
+
     public:
-        
+
         dng_big_table_storage ();
-        
+
         virtual ~dng_big_table_storage ();
-        
+
         virtual bool ReadTable (dng_big_table &table,
                                 const dng_fingerprint &fingerprint,
                                 dng_memory_allocator &allocator);
-    
+
         virtual bool WriteTable (const dng_big_table &table,
                                  const dng_fingerprint &fingerprint,
                                  dng_memory_allocator &allocator);
-        
+
         virtual void MissingTable (const dng_fingerprint &fingerprint);
-    
+
     };
 
 /*****************************************************************************/
@@ -143,18 +143,18 @@ class dng_look_table : public dng_big_table
 
         enum
             {
-            
+
             // Tables are are allowed to trade off resolution
             // between dimensions, but need to keep total
             // samples below this limit.  This results in
             // 216K memory footprint (12 byte per sample)
             // which is similar in size to the RGB table
             // size limit.
-            
+
             kMaxTotalSamples = 36 * 32 * 16,
-            
+
             // Also each must be within their own limits.
-            
+
             kMaxHueSamples = 360,
             kMaxSatSamples = 256,
             kMaxValSamples = 256
@@ -175,20 +175,20 @@ class dng_look_table : public dng_big_table
             {
 
             // 3-D hue/sat table to apply a "look".
-            
+
             dng_hue_sat_map fMap;
 
             // Value (V of HSV) encoding for look table.
 
             uint32 fEncoding;
-            
+
             // Minimum and maximum scale amounts supported by table.
 
             real64 fMinAmount;
             real64 fMaxAmount;
 
 			// Does this table have only monochrome output (when amount is 1.0)?
-			
+
 			bool fMonochrome;
 
             // Constructor to set defaults.
@@ -203,32 +203,32 @@ class dng_look_table : public dng_big_table
 
                 {
                 }
-				
+
 			// Compute monchrome flag.
-			
+
 			void ComputeMonochrome ()
 				{
-				
+
 				fMonochrome = true;
-				
+
 				uint32 count = fMap.DeltasCount ();
 
 				dng_hue_sat_map::HSBModify * deltas = fMap.GetDeltas ();
-				
+
 				for (uint32 index = 0; index < count; index++)
 					{
 
 					if (deltas [index] . fSatScale != 0.0f)
 						{
-						
+
 						fMonochrome = false;
-						
+
 						return;
-						
+
 						}
-					
+
 					}
-				
+
 				}
 
             };
@@ -285,11 +285,11 @@ class dng_look_table : public dng_big_table
             fData.fMinAmount = Pin_real64 (0.0,
 										   Round_int32 (minAmount * 100.0) * 0.01,
 										   1.0);
-				
+
             fData.fMaxAmount = Pin_real64 (1.0,
 										   Round_int32 (maxAmount * 100.0) * 0.01,
 										   2.0);
-			
+
 			fAmount = Pin_real64 (fData.fMinAmount, fAmount, fData.fMaxAmount);
 
             RecomputeFingerprint ();
@@ -321,7 +321,7 @@ class dng_look_table : public dng_big_table
             {
             return fData.fEncoding;
             }
-		
+
 		bool Monochrome () const
 			{
 			return IsValid () && fAmount == 1.0 && fData.fMonochrome;
@@ -353,7 +353,7 @@ class dng_rgb_table : public dng_big_table
 
             kMinDivisions3D = 2,
             kMaxDivisions3D = 32,
-            
+
             kMaxDivisions3D_InMemory = 128
 
             };
@@ -411,12 +411,12 @@ class dng_rgb_table : public dng_big_table
             uint32 fDimensions;
 
             // Number of samples per side of table.
-            
+
             uint32 fDivisions;
 
             // Sample data.  16-bit unsigned encoding.
             // Right zero padded to 64 bits per sample (i.e. RGB0).
-            
+
             dng_ref_counted_block fSamples;
 
             // Color primaries for table.
@@ -437,7 +437,7 @@ class dng_rgb_table : public dng_big_table
             real64 fMaxAmount;
 
 			// Does this table have only monochrome output (when amount is 1.0)?
-			
+
 			bool fMonochrome;
 
             // Constructor to set defaults.
@@ -458,52 +458,52 @@ class dng_rgb_table : public dng_big_table
                 }
 
 			// Compute monchrome flag.
-			
+
 			void ComputeMonochrome ()
 				{
-				
+
 				if (fPrimaries != primaries_ProPhoto &&
 					fGamut     != gamut_clip)
 					{
-					
+
 					fMonochrome = false;
-					
+
 					return;
-					
+
 					}
-					
+
 				if (fDimensions != 3)
 					{
-					
+
 					fMonochrome = false;
-					
+
 					return;
-					
+
 					}
-				
+
 				fMonochrome = true;
-				
+
 				uint32 count = fDivisions * fDivisions * fDivisions;
 
 				const uint16 * sample = fSamples.Buffer_uint16 ();
-				
+
 				for (uint32 index = 0; index < count; index++)
 					{
-					
+
 					if (sample [0] != sample [1] ||
 					    sample [0] != sample [2])
 						{
 
 						fMonochrome = false;
-						
+
 						return;
-						
+
 						}
-						
+
 					sample += 4;
-					
+
 					}
-					
+
 				}
 
             };
@@ -603,11 +603,11 @@ class dng_rgb_table : public dng_big_table
             fData.fMinAmount = Pin_real64 (0.0,
 										   Round_int32 (minAmount * 100.0) * 0.01,
 										   1.0);
-				
+
             fData.fMaxAmount = Pin_real64 (1.0,
 										   Round_int32 (maxAmount * 100.0) * 0.01,
 										   2.0);
-			
+
 			fAmount = Pin_real64 (fData.fMinAmount, fAmount, fData.fMaxAmount);
 
             RecomputeFingerprint ();
@@ -666,5 +666,5 @@ class dng_rgb_table : public dng_big_table
 /*****************************************************************************/
 
 #endif
-	
+
 /*****************************************************************************/

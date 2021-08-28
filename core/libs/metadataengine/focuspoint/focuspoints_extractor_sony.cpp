@@ -3,7 +3,7 @@
  * This file is a part of digiKam project
  * https://www.digikam.org
  *
- * Date        : 
+ * Date        :
  * Description : Extraction of focus points by exiftool data
  *
  * Copyright (C) 2020-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
@@ -38,10 +38,10 @@ const float RATIO_POINT_IMAGE = 120; // this is a guess
 namespace SonyInternal
 {
 
-FocusPoint create_af_point(float imageWidth, float imageHeight, 
-                                                 float afPointWidth, float afPointHeight, 
+FocusPoint create_af_point(float imageWidth, float imageHeight,
+                                                 float afPointWidth, float afPointHeight,
                                                  float af_x_position, float af_y_position)
-{    
+{
     return FocusPoint(af_x_position / imageWidth,
                       af_y_position / imageHeight,
                       afPointWidth, afPointHeight,

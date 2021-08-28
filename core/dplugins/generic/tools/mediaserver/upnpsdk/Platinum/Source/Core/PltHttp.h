@@ -11,14 +11,14 @@
 | as published by the Free Software Foundation; either version 2
 | of the License, or (at your option) any later version.
 |
-| OEMs, ISVs, VARs and other distributors that combine and 
+| OEMs, ISVs, VARs and other distributors that combine and
 | distribute commercially licensed software with Platinum software
 | and do not wish to distribute the source code for the commercially
 | licensed software under version 2, or (at your option) any later
 | version, of the GNU General Public License (the "GPL") must enter
 | into a commercial license agreement with Plutinosoft, LLC.
 | licensing@plutinosoft.com
-|  
+|
 | This program is distributed in the hope that it will be useful,
 | but WITHOUT ANY WARRANTY; without even the implied warranty of
 | MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
@@ -26,7 +26,7 @@
 |
 | You should have received a copy of the GNU General Public License
 | along with this program; see the file LICENSE.txt. If not, write to
-| the Free Software Foundation, Inc., 
+| the Free Software Foundation, Inc.,
 | 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 | http://www.gnu.org/licenses/gpl-2.0.html
 |
@@ -75,7 +75,7 @@ typedef enum {
 |   PLT_HttpHelper
 +---------------------------------------------------------------------*/
 /**
- The PLT_HttpHelper class is a set of utility functions for manipulating 
+ The PLT_HttpHelper class is a set of utility functions for manipulating
  HTTP headers, entities and messages.
  */
 class PLT_HttpHelper {
@@ -103,7 +103,7 @@ public:
 /*----------------------------------------------------------------------
 |   PLT_HttpRequestContext
 +---------------------------------------------------------------------*/
-/** 
+/**
  The PLT_HttpRequestContext class holds information about the request sent, the
  local & remote ip addresses and ports associated with a connection. It is used
  mostly when processing a HTTP response.
@@ -111,16 +111,16 @@ public:
 class PLT_HttpRequestContext : public NPT_HttpRequestContext {
 public:
     // constructors and destructor
-    PLT_HttpRequestContext(const NPT_HttpRequest& request) : 
+    PLT_HttpRequestContext(const NPT_HttpRequest& request) :
         m_Request(request) {}
     PLT_HttpRequestContext(const NPT_HttpRequest& request, const NPT_HttpRequestContext& context) :
         NPT_HttpRequestContext(&context.GetLocalAddress(), &context.GetRemoteAddress()),
         m_Request(request) {}
     virtual ~PLT_HttpRequestContext() {}
-    
+
     const NPT_HttpRequest& GetRequest() const { return m_Request; }
     PLT_DeviceSignature GetDeviceSignature() { return PLT_HttpHelper::GetDeviceSignature(m_Request); }
-    
+
 private:
     const NPT_HttpRequest& m_Request;
 };
@@ -196,12 +196,12 @@ do { \
 class PLT_HttpRequestHandler : public NPT_HttpRequestHandler
 {
 public:
-    PLT_HttpRequestHandler(NPT_HttpRequestHandler* delegate) : 
+    PLT_HttpRequestHandler(NPT_HttpRequestHandler* delegate) :
         m_Delegate(delegate) {}
     virtual ~PLT_HttpRequestHandler() {}
 
     // NPT_HttpRequestHandler methods
-    NPT_Result SetupResponse(NPT_HttpRequest&              request, 
+    NPT_Result SetupResponse(NPT_HttpRequest&              request,
                              const NPT_HttpRequestContext& context,
                              NPT_HttpResponse&             response) {
         return m_Delegate->SetupResponse(request, context, response);

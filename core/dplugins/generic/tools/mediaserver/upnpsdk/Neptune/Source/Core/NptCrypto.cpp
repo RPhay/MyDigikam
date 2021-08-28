@@ -31,7 +31,7 @@
 
 /*
  Portions of this code are based on the code of LibTomCrypt
- that was released into public domain by Tom St Denis. 
+ that was released into public domain by Tom St Denis.
 */
 
 /*----------------------------------------------------------------------
@@ -382,7 +382,7 @@ static inline void STORE32H(NPT_UInt32 x, NPT_UInt8* p)
 /*----------------------------------------------------------------------
 |   NPT_AesBlockCipher
 +---------------------------------------------------------------------*/
-class NPT_AesBlockCipher : public NPT_BlockCipher 
+class NPT_AesBlockCipher : public NPT_BlockCipher
 {
 public:
     NPT_AesBlockCipher(const NPT_UInt8* key,
@@ -424,15 +424,15 @@ public:
 /*----------------------------------------------------------------------
 |   NPT_AesBlockCipher::NPT_AesBlockCipher
 +---------------------------------------------------------------------*/
-NPT_AesBlockCipher::NPT_AesBlockCipher(const NPT_UInt8* key, 
+NPT_AesBlockCipher::NPT_AesBlockCipher(const NPT_UInt8* key,
                                        NPT_Size         key_size)
 {
     unsigned int i, j;
     NPT_UInt32 temp;
     NPT_UInt32 *rrk;
-  
+
     m_RoundCount = 10 + ((key_size/8)-2)*2;
-        
+
     /* setup the forward key */
     i  = 0;
     NPT_UInt32* rk = m_eK;
@@ -454,12 +454,12 @@ NPT_AesBlockCipher::NPT_AesBlockCipher(const NPT_UInt8* key,
             rk += 4;
         }
     } else if (key_size == 24) {
-        j = 52;   
+        j = 52;
         rk[4] = LOAD32H(key + 16);
         rk[5] = LOAD32H(key + 20);
         for (;;) {
         #ifdef _MSC_VER
-            temp = m_eK[rk - m_eK + 5]; 
+            temp = m_eK[rk - m_eK + 5];
         #else
             temp = rk[5];
         #endif
@@ -503,8 +503,8 @@ NPT_AesBlockCipher::NPT_AesBlockCipher(const NPT_UInt8* key,
 
     /* setup the inverse key now */
     rk   = m_dK;
-    rrk  = m_eK + j - 4; 
-    
+    rrk  = m_eK + j - 4;
+
     /* apply the inverse MixColumn transform to all round keys but the first and the last: */
     /* copy first */
     *rk++ = *rrk++;
@@ -512,7 +512,7 @@ NPT_AesBlockCipher::NPT_AesBlockCipher(const NPT_UInt8* key,
     *rk++ = *rrk++;
     *rk   = *rrk;
     rk -= 3; rrk -= 3;
-    
+
     for (i = 1; i < m_RoundCount; i++) {
         rrk -= 4;
         rk  += 4;
@@ -544,7 +544,7 @@ NPT_AesBlockEncrypter::ProcessBlock(const NPT_UInt8* pt, NPT_UInt8* ct)
     NPT_UInt32 s0, s1, s2, s3, t0, t1, t2, t3;
     int Nr = m_RoundCount;
     NPT_UInt32* rk = m_eK;
-    
+
     /*
      * map byte array block to cipher state
      * and add initial round key:
@@ -580,7 +580,7 @@ NPT_AesBlockEncrypter::ProcessBlock(const NPT_UInt8* pt, NPT_UInt8* ct)
             Te2(NPT_BYTE(s1, 1)) ^
             Te3(NPT_BYTE(s2, 0)) ^
             rk[3];
-        if (r == Nr-2) { 
+        if (r == Nr-2) {
            break;
         }
         s0 = t0; s1 = t1; s2 = t2; s3 = t3;
@@ -616,7 +616,7 @@ NPT_AesBlockEncrypter::ProcessBlock(const NPT_UInt8* pt, NPT_UInt8* ct)
         (Te4_3[NPT_BYTE(t3, 3)]) ^
         (Te4_2[NPT_BYTE(t0, 2)]) ^
         (Te4_1[NPT_BYTE(t1, 1)]) ^
-        (Te4_0[NPT_BYTE(t2, 0)]) ^ 
+        (Te4_0[NPT_BYTE(t2, 0)]) ^
         rk[3];
     STORE32H(s3, ct+12);
 
@@ -630,7 +630,7 @@ NPT_Result
 NPT_AesBlockDecrypter::ProcessBlock(const NPT_UInt8* ct, NPT_UInt8* pt)
 {
     NPT_UInt32 s0, s1, s2, s3, t0, t1, t2, t3;
-    
+
     int Nr = m_RoundCount;
     NPT_UInt32* rk = m_dK;
 
@@ -670,7 +670,7 @@ NPT_AesBlockDecrypter::ProcessBlock(const NPT_UInt8* ct, NPT_UInt8* pt)
             Td3(NPT_BYTE(s0, 0)) ^
             rk[3];
         if (r == Nr-2) {
-           break; 
+           break;
         }
         s0 = t0; s1 = t1; s2 = t2; s3 = t3;
     }
@@ -715,8 +715,8 @@ NPT_AesBlockDecrypter::ProcessBlock(const NPT_UInt8* ct, NPT_UInt8* pt)
 /*----------------------------------------------------------------------
 |   NPT_BlockCipher::Create
 +---------------------------------------------------------------------*/
-NPT_Result 
-NPT_BlockCipher::Create(Algorithm         algorithm, 
+NPT_Result
+NPT_BlockCipher::Create(Algorithm         algorithm,
                         Direction         direction,
                         const NPT_UInt8*  key,
                         NPT_Size          key_size,
@@ -724,34 +724,34 @@ NPT_BlockCipher::Create(Algorithm         algorithm,
 {
     cipher = NULL;
     switch (algorithm) {
-        case AES_128: 
+        case AES_128:
             if (key == NULL || key_size != 16) return NPT_ERROR_INVALID_PARAMETERS;
             switch (direction) {
-                case ENCRYPT: 
+                case ENCRYPT:
                     cipher = new NPT_AesBlockEncrypter(key, 16);
                     return NPT_SUCCESS;
-                    
+
                 case DECRYPT:
                     cipher = new NPT_AesBlockDecrypter(key, 16);
                     return NPT_SUCCESS;
-            
+
                 default:
                     return NPT_ERROR_INVALID_PARAMETERS;
             }
         default:
             return NPT_ERROR_NOT_SUPPORTED;
-    } 
+    }
 }
 
 /*----------------------------------------------------------------------
 |   NPT_BlockCipher::ProcessCbc
 +---------------------------------------------------------------------*/
-NPT_Result 
+NPT_Result
 NPT_BlockCipher::ProcessCbc(const NPT_UInt8* input, NPT_Size input_size, const NPT_UInt8* iv, NPT_DataBuffer& output)
 {
     // this version only supports block sizes of 16
     if (GetBlockSize() != 16) return NPT_ERROR_NOT_SUPPORTED;
-    
+
     // decrypt or encrypt depending on the direction of the cipher
     NPT_UInt8 chain[16];
     if (iv) {
@@ -769,7 +769,7 @@ NPT_BlockCipher::ProcessCbc(const NPT_UInt8* input, NPT_Size input_size, const N
         for (unsigned int x=0; x<padding_size; x++) {
             plaintext[input_size+x] = padding_size;
         }
-        
+
         // process all blocks
         unsigned int block_count = (input_size+padding_size)/16;
         output.SetDataSize(block_count*16);
@@ -779,11 +779,11 @@ NPT_BlockCipher::ProcessCbc(const NPT_UInt8* input, NPT_Size input_size, const N
             for (unsigned int y=0; y<16; y++) {
                 plaintext[y] ^= chain[y];
             }
-            
+
             // encrypt the block
             NPT_Result result = ProcessBlock(plaintext, ciphertext);
             if (NPT_FAILED(result)) return result;
-            
+
             // chain and move forward to the next block
             NPT_CopyMemory(chain, ciphertext, 16);
             plaintext  += 16;
@@ -792,7 +792,7 @@ NPT_BlockCipher::ProcessCbc(const NPT_UInt8* input, NPT_Size input_size, const N
     } else {
         // check that we have an integral number of blocks
         if (input_size%16) return NPT_ERROR_INVALID_PARAMETERS;
-        
+
         // process all blocks
         unsigned int block_count = input_size/16;
         output.SetBufferSize(block_count*16);
@@ -802,18 +802,18 @@ NPT_BlockCipher::ProcessCbc(const NPT_UInt8* input, NPT_Size input_size, const N
             // decrypt block
             NPT_Result result = ProcessBlock(ciphertext, plaintext);
             if (NPT_FAILED(result)) return result;
-            
+
             // xor with the chaining block
             for (unsigned int y=0; y<16; y++) {
                 plaintext[y] ^= chain[y];
             }
-            
+
             // chain and move forward to the next block
             NPT_CopyMemory(chain, ciphertext, 16);
             plaintext  += 16;
             ciphertext += 16;
         }
-        
+
         // padding
         plaintext -= 16;
         unsigned int padding_size = plaintext[15];
@@ -827,7 +827,7 @@ NPT_BlockCipher::ProcessCbc(const NPT_UInt8* input, NPT_Size input_size, const N
         }
         output.SetDataSize(block_count*16 - padding_size);
     }
-    
+
     return NPT_SUCCESS;
 }
 

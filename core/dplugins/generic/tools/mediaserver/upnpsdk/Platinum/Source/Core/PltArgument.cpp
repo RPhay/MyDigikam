@@ -11,14 +11,14 @@
 | as published by the Free Software Foundation; either version 2
 | of the License, or (at your option) any later version.
 |
-| OEMs, ISVs, VARs and other distributors that combine and 
+| OEMs, ISVs, VARs and other distributors that combine and
 | distribute commercially licensed software with Platinum software
 | and do not wish to distribute the source code for the commercially
 | licensed software under version 2, or (at your option) any later
 | version, of the GNU General Public License (the "GPL") must enter
 | into a commercial license agreement with Plutinosoft, LLC.
 | licensing@plutinosoft.com
-|  
+|
 | This program is distributed in the hope that it will be useful,
 | but WITHOUT ANY WARRANTY; without even the implied warranty of
 | MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
@@ -26,7 +26,7 @@
 |
 | You should have received a copy of the GNU General Public License
 | along with this program; see the file LICENSE.txt. If not, write to
-| the Free Software Foundation, Inc., 
+| the Free Software Foundation, Inc.,
 | 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 | http://www.gnu.org/licenses/gpl-2.0.html
 |
@@ -45,10 +45,10 @@ NPT_SET_LOCAL_LOGGER("platinum.core.argument")
 /*----------------------------------------------------------------------
 |   PLT_ArgumentDesc::PLT_ArgumentDesc
 +---------------------------------------------------------------------*/
-PLT_ArgumentDesc::PLT_ArgumentDesc(const char*        name, 
+PLT_ArgumentDesc::PLT_ArgumentDesc(const char*        name,
                                    NPT_Ordinal        position,
                                    const char*        direction,
-                                   PLT_StateVariable* variable, 
+                                   PLT_StateVariable* variable,
                                    bool               has_ret) :
     m_Name(name),
     m_Position(position),
@@ -73,7 +73,7 @@ PLT_ArgumentDesc::GetSCPDXML(NPT_XmlElementNode* node)
     if (m_HasReturnValue) {
         NPT_CHECK_SEVERE(argument->AddChild(new NPT_XmlElementNode("retval")));
     }
-    
+
     return NPT_SUCCESS;
 }
 
@@ -81,9 +81,9 @@ PLT_ArgumentDesc::GetSCPDXML(NPT_XmlElementNode* node)
 |   PLT_Argument::CreateArgument
 +---------------------------------------------------------------------*/
 NPT_Result
-PLT_Argument::CreateArgument(PLT_ActionDesc& action_desc, 
-                             const char*     name, 
-                             const char*     value, 
+PLT_Argument::CreateArgument(PLT_ActionDesc& action_desc,
+                             const char*     name,
+                             const char*     value,
                              PLT_Argument*&  arg)
 {
     // reset output params first
@@ -91,8 +91,8 @@ PLT_Argument::CreateArgument(PLT_ActionDesc& action_desc,
 
     PLT_ArgumentDesc* arg_desc = action_desc.GetArgumentDesc(name);
     if (!arg_desc) {
-        NPT_LOG_WARNING_2("Invalid argument %s for action %s", 
-            name, 
+        NPT_LOG_WARNING_2("Invalid argument %s for action %s",
+            name,
             (const char*)action_desc.GetName());
         return NPT_ERROR_NO_SUCH_NAME;
     }
@@ -102,9 +102,9 @@ PLT_Argument::CreateArgument(PLT_ActionDesc& action_desc,
     if (NPT_FAILED(res = new_arg->SetValue(value))) {
         delete new_arg;
 
-        NPT_LOG_WARNING_3("Invalid value of %s for argument %s of action %s", 
+        NPT_LOG_WARNING_3("Invalid value of %s for argument %s of action %s",
             value,
-            name, 
+            name,
             (const char*)action_desc.GetName());
         return res;
     }
@@ -126,7 +126,7 @@ PLT_Argument::PLT_Argument(PLT_ArgumentDesc& arg_desc) :
 |   PLT_Argument::SetValue
 +---------------------------------------------------------------------*/
 NPT_Result
-PLT_Argument::SetValue(const char* value) 
+PLT_Argument::SetValue(const char* value)
 {
     NPT_CHECK_SEVERE(ValidateValue(value));
 
@@ -138,7 +138,7 @@ PLT_Argument::SetValue(const char* value)
 |   PLT_Argument::GetValue
 +---------------------------------------------------------------------*/
 const NPT_String&
-PLT_Argument::GetValue() 
+PLT_Argument::GetValue()
 {
     return m_Value;
 }
@@ -152,5 +152,5 @@ PLT_Argument::ValidateValue(const char* value)
     if (m_ArgDesc.GetRelatedStateVariable()) {
         return m_ArgDesc.GetRelatedStateVariable()->ValidateValue(value);
     }
-    return NPT_SUCCESS;    
+    return NPT_SUCCESS;
 }

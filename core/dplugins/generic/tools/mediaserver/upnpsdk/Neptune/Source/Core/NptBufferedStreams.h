@@ -61,18 +61,18 @@ public:
     virtual NPT_Result ReadLine(NPT_String& line,
                                 NPT_Size    max_chars = 4096,
                                 bool        break_on_cr = false);
-    virtual NPT_Result ReadLine(char*     buffer, 
+    virtual NPT_Result ReadLine(char*     buffer,
                                 NPT_Size  buffer_size,
                                 NPT_Size* chars_read = NULL,
                                 bool      break_on_cr = false);
     virtual NPT_Result SetBufferSize(NPT_Size size, bool force = false);
-    virtual NPT_Result Peek(void*     buffer, 
-                            NPT_Size  bytes_to_read, 
+    virtual NPT_Result Peek(void*     buffer,
+                            NPT_Size  bytes_to_read,
                             NPT_Size* bytes_read);
-                              
+
     // NPT_InputStream methods
-    NPT_Result Read(void*     buffer, 
-                    NPT_Size  bytes_to_read, 
+    NPT_Result Read(void*     buffer,
+                    NPT_Size  bytes_to_read,
                     NPT_Size* bytes_read = NULL);
     NPT_Result Seek(NPT_Position offset);
     NPT_Result Tell(NPT_Position& offset);

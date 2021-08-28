@@ -159,7 +159,7 @@ typedef struct __XMPFiles__ *       XMPFilesRef;
 /// loop termination.
 
 /// \typedef XMP_OptionBits
-/// \brief The type for a collection of 32 flag bits. 
+/// \brief The type for a collection of 32 flag bits.
 ///	@details Individual flags are defined as enum value bit
 ///  masks; see \c #kXMP_PropValueIsURI and following. A number of macros provide common set or set
 ///  operations, such as \c XMP_PropIsSimple. For other tests use an expression like <code>options &
@@ -184,7 +184,7 @@ typedef XMP_Uns32    XMP_OptionBits; // Used as 32 individual bits.
 #define kXMP_TrueStr  "True"  // Serialized XMP spellings, not for the type bool.
 #define kXMP_FalseStr "False"
 
-///@brief Type for yes/no/maybe answers. The values are picked to allow Boolean-like usage. The yes 
+///@brief Type for yes/no/maybe answers. The values are picked to allow Boolean-like usage. The yes
 ///values are true (non-zero), the no value is false (zero).
 enum {
 	/// The part or parts have definitely changed.
@@ -666,7 +666,7 @@ enum {
 
 #define kXMP_SchemaNode ((XMP_OptionBits)0x80000000UL)
 
-/// @brief Option bit flags for the \c TXMPMeta property setting functions. 
+/// @brief Option bit flags for the \c TXMPMeta property setting functions.
 /// @details These option bits are shared with the accessor functions:
 ///   \li \c #kXMP_PropValueIsURI
 ///   \li \c #kXMP_PropValueIsStruct
@@ -736,8 +736,8 @@ enum {
     kXMP_OmitAllFormatting   = 0x0800UL,
 
     /// Omit the x:xmpmeta element surrounding the rdf:RDF element.
-	kXMP_OmitXMPMetaElement  = 0x1000UL,    
-	
+	kXMP_OmitXMPMetaElement  = 0x1000UL,
+
 	/// Include a rdf Hash and Merged flag in x:xmpmeta element.
 	kXMP_IncludeRDFHash      = 0x2000UL,
 
@@ -1167,7 +1167,7 @@ enum {
 
 	/// Force use of the given handler (format), do not even verify the format.
     kXMPFiles_ForceGivenHandler     = 0x00000008,
-	
+
 	/// Be strict about only attempting to use the designated file handler, no fallback to other handlers.
     kXMPFiles_OpenStrictly          = 0x00000010,
 
@@ -1475,7 +1475,7 @@ typedef XMP_Int32 XMP_Status;
 
 // -------------------------------------------------------------------------------------------------
 /// @brief The signature of a client-defined callback for text output from XMP Toolkit debugging
-/// operations. 
+/// operations.
 /// @details The callback is invoked one or more times for each line of output. The end of a line
 /// is signaled by a '\\n' character at the end of the buffer. Formatting newlines are never present
 /// in the middle of a buffer, but values of properties might contain any UTF-8 characters.

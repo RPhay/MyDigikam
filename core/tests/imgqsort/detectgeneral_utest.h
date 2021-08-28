@@ -56,8 +56,8 @@ private Q_SLOTS:
 
 };
 
-DataTestCases const dataTestCases = 
-    {   
+DataTestCases const dataTestCases =
+    {
         {QLatin1String("badImage"), PairImageQuality(QLatin1String("general_bad_image_1.jpg"),1)},
         {QLatin1String("badImage"), PairImageQuality(QLatin1String("general_bad_image_3.jpg"),1)},
         {QLatin1String("badImage"), PairImageQuality(QLatin1String("general_bad_image_5.jpg"),1)},

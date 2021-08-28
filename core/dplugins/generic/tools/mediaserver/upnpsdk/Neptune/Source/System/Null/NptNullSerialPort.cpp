@@ -20,7 +20,7 @@ class NPT_NullSerialPort: public NPT_SerialPortInterface
 {
 public:
     // NPT_SerialPortInterface methods
-    NPT_Result Open(unsigned int              speed, 
+    NPT_Result Open(unsigned int              speed,
                     NPT_SerialPortStopBits    stop_bits = NPT_SERIAL_PORT_STOP_BITS_1,
                     NPT_SerialPortFlowControl flow_control = NPT_SERIAL_PORT_FLOW_CONTROL_NONE,
                     NPT_SerialPortParity      parity = NPT_SERIAL_PORT_PARITY_NONE);
@@ -33,7 +33,7 @@ public:
 |   NPT_NullSerialPort::Open
 +---------------------------------------------------------------------*/
 NPT_Result
-NPT_NullSerialPort::Open(unsigned int              /* speed        */, 
+NPT_NullSerialPort::Open(unsigned int              /* speed        */,
                          NPT_SerialPortStopBits    /* stop_bits    */,
                          NPT_SerialPortFlowControl /* flow_control */,
                          NPT_SerialPortParity      /* parity       */)
@@ -53,7 +53,7 @@ NPT_NullSerialPort::Close()
 /*----------------------------------------------------------------------
 |   NPT_NullSerialPort::GetInputStream
 +---------------------------------------------------------------------*/
-NPT_Result 
+NPT_Result
 NPT_NullSerialPort::GetInputStream(NPT_InputStreamReference& stream)
 {
     // default value
@@ -65,7 +65,7 @@ NPT_NullSerialPort::GetInputStream(NPT_InputStreamReference& stream)
 /*----------------------------------------------------------------------
 |   NPT_NullSerialPort::GetOutputStream
 +---------------------------------------------------------------------*/
-NPT_Result 
+NPT_Result
 NPT_NullSerialPort::GetOutputStream(NPT_OutputStreamReference& stream)
 {
     // default value

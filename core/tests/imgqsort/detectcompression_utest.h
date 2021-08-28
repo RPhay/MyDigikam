@@ -36,7 +36,7 @@
 namespace Digikam
 
 {
-    
+
 class ImgQSortTestDetectCompression : public ImgQSortTest
 {
     Q_OBJECT
@@ -54,8 +54,8 @@ private Q_SLOTS:
 
 };
 
-DataTestCases const dataTestCases = 
-    {   
+DataTestCases const dataTestCases =
+    {
         {QLatin1String("compressionDetection"), PairImageQuality(QLatin1String("test_compressed_2.jpg"),2)},
         {QLatin1String("compressionDetection"), PairImageQuality(QLatin1String("test_compressed_4.jpg"),2)},
         {QLatin1String("compressionDetection"), PairImageQuality(QLatin1String("test_compressed_9.jpg"),3)},

@@ -11,14 +11,14 @@
 | as published by the Free Software Foundation; either version 2
 | of the License, or (at your option) any later version.
 |
-| OEMs, ISVs, VARs and other distributors that combine and 
+| OEMs, ISVs, VARs and other distributors that combine and
 | distribute commercially licensed software with Platinum software
 | and do not wish to distribute the source code for the commercially
 | licensed software under version 2, or (at your option) any later
 | version, of the GNU General Public License (the "GPL") must enter
 | into a commercial license agreement with Plutinosoft, LLC.
 | licensing@plutinosoft.com
-|  
+|
 | This program is distributed in the hope that it will be useful,
 | but WITHOUT ANY WARRANTY; without even the implied warranty of
 | MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
@@ -26,7 +26,7 @@
 |
 | You should have received a copy of the GNU General Public License
 | along with this program; see the file LICENSE.txt. If not, write to
-| the Free Software Foundation, Inc., 
+| the Free Software Foundation, Inc.,
 | 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 | http://www.gnu.org/licenses/gpl-2.0.html
 |
@@ -43,7 +43,7 @@ NPT_SET_LOCAL_LOGGER("platinum.core.framestream")
 |   PLT_InputFrameStream::PLT_InputFrameStream
 +---------------------------------------------------------------------*/
 PLT_InputFrameStream::PLT_InputFrameStream(NPT_Reference<PLT_FrameBuffer>& frame_buffer,
-                                           const char*                     boundary) : 
+                                           const char*                     boundary) :
     m_FrameBuffer(frame_buffer),
     m_LastFrameIndex(0),
     m_Boundary(boundary),
@@ -63,9 +63,9 @@ PLT_InputFrameStream::~PLT_InputFrameStream()
 /*----------------------------------------------------------------------
 |   PLT_InputFrameStream::GetAvailable
 +---------------------------------------------------------------------*/
-NPT_Result 
-PLT_InputFrameStream::GetAvailable(NPT_LargeSize& available) 
-{ 
+NPT_Result
+PLT_InputFrameStream::GetAvailable(NPT_LargeSize& available)
+{
     NPT_CHECK_WARNING(m_Part.GetAvailable(available));
 
     if (available == 0 && !m_Eos) {
@@ -79,12 +79,12 @@ PLT_InputFrameStream::GetAvailable(NPT_LargeSize& available)
 /*----------------------------------------------------------------------
 |   PLT_InputFrameStream::FillBuffer
 +---------------------------------------------------------------------*/
-NPT_Result 
+NPT_Result
 PLT_InputFrameStream::FillBuffer()
 {
     // reset memorystream
     m_Part.SetDataSize(0);
-    
+
     // fetch next frame
     NPT_DataBuffer frame;
     NPT_Result result = m_FrameBuffer->GetNextFrame(m_LastFrameIndex, frame);
@@ -108,9 +108,9 @@ PLT_InputFrameStream::FillBuffer()
 /*----------------------------------------------------------------------
 |   PLT_InputFrameStream::Read
 +---------------------------------------------------------------------*/
-NPT_Result 
-PLT_InputFrameStream::Read(void*     buffer, 
-                           NPT_Size  bytes_to_read, 
+NPT_Result
+PLT_InputFrameStream::Read(void*     buffer,
+                           NPT_Size  bytes_to_read,
                            NPT_Size* bytes_read /*= 0*/)
 {
 

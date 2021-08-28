@@ -79,7 +79,7 @@ public:
         IPV4,
         IPV6
     } Type;
-    
+
     // class members
     static const NPT_IpAddress Any;
     static const NPT_IpAddress Loopback;
@@ -94,9 +94,9 @@ public:
     // accessors
     Type       GetType()    const { return m_Type;    }
     NPT_UInt32 GetScopeId() const { return m_ScopeId; }
-    
+
     // methods
-    NPT_Result       ResolveName(const char* name, 
+    NPT_Result       ResolveName(const char* name,
                                  NPT_Timeout timeout = NPT_TIMEOUT_INFINITE);
     NPT_Result       Parse(const char* name);
     NPT_Result       Set(unsigned long address);
@@ -106,7 +106,7 @@ public:
     unsigned long    AsLong() const;
     NPT_String       ToString() const;
     NPT_String       ToUrlHost() const;
-    
+
     // address properties
     bool IsUnspecified()  const;
     bool IsLooppack()     const;
@@ -116,10 +116,10 @@ public:
     bool IsSiteLocal()    const;
     bool IsUniqueLocal()  const;
     bool IsMulticast()    const;
-    
+
     // operators
     bool             operator==(const NPT_IpAddress& other) const;
-    
+
     // FIXME: temporary
     NPT_String       m_HostName;
 
@@ -144,13 +144,13 @@ public:
         TYPE_PPP,
         TYPE_IEEE_802_11
     } Type;
-    
+
     // constructors and destructor
     NPT_MacAddress() : m_Type(TYPE_UNKNOWN), m_Length(0) {}
     NPT_MacAddress(Type           type,
-                   const unsigned char* addr, 
+                   const unsigned char* addr,
                    unsigned int   length);
-    
+
     // methods
     void                 SetAddress(Type type, const unsigned char* addr,
                                     unsigned int length);
@@ -158,7 +158,7 @@ public:
     const unsigned char* GetAddress() const { return m_Address; }
     unsigned int         GetLength() const  { return m_Length; }
     NPT_String           ToString() const;
-    
+
 private:
     // members
     Type          m_Type;
@@ -195,7 +195,7 @@ public:
     const NPT_IpAddress& GetNetMask() const {
         return m_NetMask;
     }
-    
+
     bool IsAddressInNetwork(const NPT_IpAddress& address) {
         if (m_PrimaryAddress.AsLong() == address.AsLong()) return true;
         if (m_NetMask.AsLong() == 0) return false;
@@ -236,15 +236,15 @@ public:
         return m_MacAddress;
     }
     void SetMacAddress(NPT_MacAddress::Type type,
-                       const unsigned char* addr, 
+                       const unsigned char* addr,
                        unsigned int         length) {
         m_MacAddress.SetAddress(type, addr, length);
     }
     NPT_Flags GetFlags() const { return m_Flags; }
     const NPT_List<NPT_NetworkInterfaceAddress>& GetAddresses() const {
         return m_Addresses;
-    }    
-    
+    }
+
     bool IsAddressInNetwork(const NPT_IpAddress& address) {
         NPT_List<NPT_NetworkInterfaceAddress>::Iterator iter = m_Addresses.GetFirstItem();
         while (iter) {
@@ -253,7 +253,7 @@ public:
         }
         return false;
     }
-    
+
 private:
     // members
     NPT_String                            m_Name;
@@ -269,7 +269,7 @@ class NPT_NetworkNameResolver
 {
 public:
     // class methods
-    static NPT_Result Resolve(const char*              name, 
+    static NPT_Result Resolve(const char*              name,
                               NPT_List<NPT_IpAddress>& addresses,
                               NPT_Timeout              timeout = NPT_TIMEOUT_INFINITE);
 };

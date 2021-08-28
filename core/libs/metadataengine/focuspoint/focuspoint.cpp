@@ -30,8 +30,8 @@ FocusPoint::FocusPoint(float x_position, float y_position, float width, float he
 FocusPoint::FocusPoint(QRectF rectF)
 {
     this->x_position = rectF.topLeft().x() + rectF.width() * 0.5;
-    this->y_position = rectF.topLeft().y() + rectF.height() * 0.5; 
-    this->width      = rectF.width(); 
+    this->y_position = rectF.topLeft().y() + rectF.height() * 0.5;
+    this->width      = rectF.width();
     this->height     = rectF.height();
 }
 

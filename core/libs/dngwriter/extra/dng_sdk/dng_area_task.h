@@ -47,23 +47,23 @@ class dng_area_task_progress: private dng_uncopyable
 
 class dng_area_task
 	{
-	
+
 	protected:
 
 		uint32 fMaxThreads;
-	
+
 		uint32 fMinTaskArea;
-		
+
 		dng_point fUnitCell;
-		
+
 		dng_point fMaxTileSize;
 
 		dng_string fName;
-	
+
 	public:
-	
+
 		explicit dng_area_task (const char *name = "unnamed dng_area_task");
-		
+
 		virtual ~dng_area_task ();
 
 		const char * Name () const
@@ -134,7 +134,7 @@ class dng_area_task
 		/// size for all constraints of the partitionerr to be met.
 
 		virtual dng_rect RepeatingTile1 () const;
-		
+
 		/// Getter for RepeatingTile2.
 		/// RepeatingTile1, RepeatingTile2, and RepeatingTile3 are used to
 		/// establish a set of 0 to 3 tile patterns for which the resulting
@@ -160,7 +160,7 @@ class dng_area_task
 		/// numbered RepeatingTile patterns are only used if all lower ones are
 		/// non-empty. A RepeatingTile pattern must be a multiple of UnitCell in
 		/// size for all constraints of the partitionerr to be met.
-		
+
 		virtual dng_rect RepeatingTile3 () const;
 
 		/// Task startup method called before any processing is done on partitions.
@@ -198,7 +198,7 @@ class dng_area_task
 		virtual void Process (uint32 threadIndex,
 							  const dng_rect &tile,
 							  dng_abort_sniffer *sniffer) = 0;
-		
+
 		/// Task computation finalization and teardown method. Called after all
 		/// resources have completed processing. Can be overridden to accumulate
 		/// results and free resources allocated in Start.
@@ -282,5 +282,5 @@ class dng_area_task
 /*****************************************************************************/
 
 #endif
-	
+
 /*****************************************************************************/

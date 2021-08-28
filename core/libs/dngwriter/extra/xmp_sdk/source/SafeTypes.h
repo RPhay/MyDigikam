@@ -37,7 +37,7 @@
    +------------+------+--------------+--------------+
    |  SafeInt16 |  16  | SafeMAXInt16 | SafeMINInt16 |
    +------------+------+--------------+--------------+
-   |  SafeUns16 |  16  | SafeMAXUns16 | SafeMINUns16 | 
+   |  SafeUns16 |  16  | SafeMAXUns16 | SafeMINUns16 |
    +------------+------+--------------+--------------+
    |  SafeInt32 |  32  | SafeMAXInt32 | SafeMINInt32 |
    +------------+------+--------------+--------------+
@@ -60,7 +60,7 @@
 
 #if SAFE_INT_TYPES
 
-/*	Application / component specific definition for safe integer types goes here. 
+/*	Application / component specific definition for safe integer types goes here.
 	Here is a sample usage:
  */
 
@@ -91,8 +91,8 @@
 
 
 #else
-/*	If the Safe Types are not derived from any specialized types, 
-	they will be derived from the platform specific types. 
+/*	If the Safe Types are not derived from any specialized types,
+	they will be derived from the platform specific types.
  */
 
 #ifdef _MSC_VER /* Windows VisualC */
@@ -121,8 +121,8 @@ typedef uint64_t	SafeUns64;
 
 #endif /* Windows VisualC */
 
-/*	If SafeMathThrow and SafeMathException are not derived from any specialized definitions, 
-	the std exceptions will be used 
+/*	If SafeMathThrow and SafeMathException are not derived from any specialized definitions,
+	the std exceptions will be used
  */
 
 #ifdef __cplusplus
@@ -136,8 +136,8 @@ typedef uint64_t	SafeUns64;
 
 #endif
 
-/* Warning: 
-		In case of signed char, the Microsoft VC++ compiler shows a strange behavior. By default, it type cast the "signed char" to "signed int" 
+/* Warning:
+		In case of signed char, the Microsoft VC++ compiler shows a strange behavior. By default, it type cast the "signed char" to "signed int"
 		during function call.
 
 		So you must type cast the "signed char" to "char" or "__int8" (on MS VC++ Compiler) in function calls.
@@ -170,7 +170,7 @@ typedef uint64_t	SafeUns64;
 #define SafeMINUns64	0
 
 // values for quick and dirty check of unsigned 64 bit overflow.
-// They represent SafeMAXUns64 +- 4096 to assure that our 
+// They represent SafeMAXUns64 +- 4096 to assure that our
 // tests account for precision loss in conversion to doubles
 // with a 53 bit mantissa.
 

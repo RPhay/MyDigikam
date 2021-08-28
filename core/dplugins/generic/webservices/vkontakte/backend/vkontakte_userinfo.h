@@ -55,7 +55,7 @@ public:
     /**
      * @brief Returns integer user ID at VK.
      *
-     * UserInfoJob (the "users.get" method) always returns this, regardless of 
+     * UserInfoJob (the "users.get" method) always returns this, regardless of
      * the requested additional fields.
      *
      * Returns -1 for uninitialized object or on server error.
@@ -65,7 +65,7 @@ public:
     /**
      * @brief Returns user's first name in the default language.
      *
-     * UserInfoJob (the "users.get" method) always returns this, regardless of 
+     * UserInfoJob (the "users.get" method) always returns this, regardless of
      * the requested additional fields.
      *
      * Returns empty string for uninitialized object or on server error.
@@ -75,7 +75,7 @@ public:
     /**
      * @brief Returns user's last name in the default language.
      *
-     * UserInfoJob (the "users.get" method) always returns this, regardless of 
+     * UserInfoJob (the "users.get" method) always returns this, regardless of
      * the requested additional fields.
      *
      * Returns empty string for uninitialized object or on server error.

@@ -3,7 +3,7 @@
  * This file is a part of digiKam project
  * https://www.digikam.org
  *
- * Date        : 
+ * Date        :
  * Description : Image Quality Parser - noise detection
  *
  * Copyright (C) 2013-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
@@ -35,10 +35,10 @@
 namespace Digikam
 {
 
-class CompressionDetector : public DetectorDistortion 
+class CompressionDetector : public DetectorDistortion
 {
     Q_OBJECT
-    
+
 public:
 
     explicit CompressionDetector();
@@ -53,7 +53,7 @@ private:
     cv::Mat detectMonoColorRegion(const cv::Mat& image)     const;
 
     float normalize(const float number);
-    
+
 private:
 
     class Private;

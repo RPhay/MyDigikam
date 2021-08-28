@@ -11,14 +11,14 @@
 | as published by the Free Software Foundation; either version 2
 | of the License, or (at your option) any later version.
 |
-| OEMs, ISVs, VARs and other distributors that combine and 
+| OEMs, ISVs, VARs and other distributors that combine and
 | distribute commercially licensed software with Platinum software
 | and do not wish to distribute the source code for the commercially
 | licensed software under version 2, or (at your option) any later
 | version, of the GNU General Public License (the "GPL") must enter
 | into a commercial license agreement with Plutinosoft, LLC.
 | licensing@plutinosoft.com
-|  
+|
 | This program is distributed in the hope that it will be useful,
 | but WITHOUT ANY WARRANTY; without even the implied warranty of
 | MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
@@ -26,7 +26,7 @@
 |
 | You should have received a copy of the GNU General Public License
 | along with this program; see the file LICENSE.txt. If not, write to
-| the Free Software Foundation, Inc., 
+| the Free Software Foundation, Inc.,
 | 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 | http://www.gnu.org/licenses/gpl-2.0.html
 |
@@ -93,12 +93,12 @@ public:
     virtual ~PLT_UPnP_DeviceStartIterator() {}
 
     NPT_Result operator()(PLT_DeviceHostReference& device_host) const {
-        
+
         // We should always increment the boot id on restart
         // so it is used in place of boot id during initial announcement
         device_host->SetBootId(device_host->GenerateNextBootId());
         device_host->SetNextBootId(0);
-        
+
         NPT_CHECK_SEVERE(device_host->Start(m_ListenTask));
         return NPT_SUCCESS;
     }
@@ -136,7 +136,7 @@ PLT_UPnP::PLT_UPnP() :
     m_IgnoreLocalUUIDs(true)
 {
 }
-    
+
 /*----------------------------------------------------------------------
 |   PLT_UPnP::~PLT_UPnP
 +---------------------------------------------------------------------*/
@@ -159,15 +159,15 @@ PLT_UPnP::Start()
     NPT_AutoLock lock(m_Lock);
 
     if (m_Started) NPT_CHECK_WARNING(NPT_ERROR_INVALID_STATE);
-    
+
     NPT_List<NPT_IpAddress> ips;
     PLT_UPnPMessageHelper::GetIPAddresses(ips);
-    
+
     /* Create multicast socket and bind on 1900. If other apps didn't
        play nicely by setting the REUSE_ADDR flag, this could fail */
     NPT_Reference<NPT_UdpMulticastSocket> socket(new NPT_UdpMulticastSocket(NPT_SOCKET_FLAG_CANCELLABLE));
     NPT_CHECK_SEVERE(socket->Bind(NPT_SocketAddress(NPT_IpAddress::Any, 1900), true));
-    
+
     /* Join multicast group for every ip we found */
     NPT_CHECK_SEVERE(ips.ApplyUntil(PLT_SsdpInitMulticastIterator(socket.AsPointer()),
                                     NPT_UntilResultNotEquals(NPT_SUCCESS)));
@@ -222,9 +222,9 @@ PLT_UPnP::AddDevice(PLT_DeviceHostReference& device)
 
     // tell all our controllers to ignore this device
     if (m_IgnoreLocalUUIDs) {
-        for (NPT_List<PLT_CtrlPointReference>::Iterator iter = 
-                 m_CtrlPoints.GetFirstItem(); 
-             iter; 
+        for (NPT_List<PLT_CtrlPointReference>::Iterator iter =
+                 m_CtrlPoints.GetFirstItem();
+             iter;
              iter++) {
             (*iter)->IgnoreUUID(device->GetUUID());
         }
@@ -264,9 +264,9 @@ PLT_UPnP::AddCtrlPoint(PLT_CtrlPointReference& ctrl_point)
 
     // tell the control point to ignore our own running devices
     if (m_IgnoreLocalUUIDs) {
-        for (NPT_List<PLT_DeviceHostReference>::Iterator iter = 
-                 m_Devices.GetFirstItem(); 
-             iter; 
+        for (NPT_List<PLT_DeviceHostReference>::Iterator iter =
+                 m_Devices.GetFirstItem();
+             iter;
              iter++) {
             ctrl_point->IgnoreUUID((*iter)->GetUUID());
         }

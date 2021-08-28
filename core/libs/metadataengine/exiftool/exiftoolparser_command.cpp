@@ -52,7 +52,7 @@ bool ExifToolParser::load(const QString& path, bool async)
 /*
     TODO: better i18n support from ExifTool.
     ExifTool Translations are limited to few languages, and passing a non supported code to ExifTool
-    returns an error. So we needs a mechanism to get the complete list of cuurent i18n code supported, 
+    returns an error. So we needs a mechanism to get the complete list of cuurent i18n code supported,
     typically "exiftool -lang".
 
     // Forward GUI language code to get translated string from ExifTool (typically tags descriptions)

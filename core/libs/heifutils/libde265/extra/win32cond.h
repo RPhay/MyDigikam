@@ -3,7 +3,7 @@
 
 /**
  * pthread_cond API for Win32
- * 
+ *
  * ACE(TM), TAO(TM), CIAO(TM), DAnCE>(TM), and CoSMIC(TM) (henceforth
  * referred to as "DOC software") are copyrighted by Douglas C. Schmidt
  * and his research group at Washington University, University of California,
@@ -16,7 +16,7 @@
  * copy and distribute modified versions of this software. You must, however,
  * include this copyright statement along with any code built using DOC
  * software that you release.
- * 
+ *
  * No copyright statement needs to be provided if you just ship binary
  * executables of your software products.
  *
@@ -36,12 +36,12 @@ typedef struct
 
   HANDLE sema_;
   // Semaphore used to queue up threads waiting for the condition to
-  // become signaled. 
+  // become signaled.
 
   HANDLE waiters_done_;
   // An auto-reset event used by the broadcast/signal thread to wait
   // for all the waiting thread(s) to wake up and be released from the
-  // semaphore. 
+  // semaphore.
 
   size_t was_broadcast_;
   // Keeps track of whether we were broadcasting or signaling.  This

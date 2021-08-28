@@ -113,7 +113,7 @@ int LibRaw::parseCR3(unsigned long long oAtomList,
       "\x85\xc0\xb6\x87\x82\x0f\x11\xe0\x81\x11\xf4\xce\x46\x2b\x6a\x48";
   const unsigned char UIID_CanonPreview[17] = "\xea\xf4\x2b\x5e\x1c\x98\x4b\x88\xb9\xfb\xb7\xdc\x40\x6e\x4d\x16";
   const unsigned char UUID_XMP[17] = "\xbe\x7a\xcf\xcb\x97\xa9\x42\xe8\x9c\x71\x99\x94\x91\xe3\xaf\xac";
-  
+
   /*
   AtomType = 0 - unknown: "unk."
   AtomType = 1 - container atom: "cont"
@@ -300,7 +300,7 @@ int LibRaw::parseCR3(unsigned long long oAtomList,
 		{
 			// read next 48 bytes, check for 'PRVW'
 			unsigned char xdata[32];
-			fread(xdata, 32, 1, ifp);	
+			fread(xdata, 32, 1, ifp);
 			if (!memcmp(xdata + 12, "PRVW", 4))
 			{
 				thumb_length = szAtom - 56;

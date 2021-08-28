@@ -11,13 +11,13 @@
 | as published by the Free Software Foundation; either version 2
 | of the License, or (at your option) any later version.
 |
-| OEMs, ISVs, VARs and other distributors that combine and 
+| OEMs, ISVs, VARs and other distributors that combine and
 | distribute commercially licensed software with Platinum software
 | and do not wish to distribute the source code for the commercially
 | licensed software under version 2, or (at your option) any later
 | version, of the GNU General Public License (the "GPL") must enter
 | into a commercial license agreement with Plutinosoft, LLC.
-| 
+|
 | This program is distributed in the hope that it will be useful,
 | but WITHOUT ANY WARRANTY; without even the implied warranty of
 | MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
@@ -25,7 +25,7 @@
 |
 | You should have received a copy of the GNU General Public License
 | along with this program; see the file LICENSE.txt. If not, write to
-| the Free Software Foundation, Inc., 
+| the Free Software Foundation, Inc.,
 | 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 | http://www.gnu.org/licenses/gpl-2.0.html
 |
@@ -60,7 +60,7 @@ static struct {
 /*----------------------------------------------------------------------
 |   PLT_SsdpProxy::PLT_SsdpProxy
 +---------------------------------------------------------------------*/
-PLT_SsdpProxy::PLT_SsdpProxy() : 
+PLT_SsdpProxy::PLT_SsdpProxy() :
     m_UnicastListener(NULL)
 {
 
@@ -77,7 +77,7 @@ PLT_SsdpProxy::~PLT_SsdpProxy()
 /*----------------------------------------------------------------------
 |   PLT_SsdpProxy::Start
 +---------------------------------------------------------------------*/
-NPT_Result 
+NPT_Result
 PLT_SsdpProxy::Start(NPT_UInt32 port)
 {
     /* create a SSDP multicast listener task */
@@ -102,12 +102,12 @@ PLT_SsdpProxy::Start(NPT_UInt32 port)
 /*----------------------------------------------------------------------
 |   CopyRequest
 +---------------------------------------------------------------------*/
-static NPT_HttpRequest* 
+static NPT_HttpRequest*
 CopyRequest(const NPT_HttpUrl& url, NPT_HttpRequest* request)
 {
     NPT_HttpRequest* new_request = new NPT_HttpRequest(
-        url, 
-        request->GetMethod(), 
+        url,
+        request->GetMethod(),
         request->GetProtocol());
     NPT_List<NPT_HttpHeader*>::Iterator headers = request->GetHeaders().GetHeaders().GetFirstItem();
     while (headers) {
@@ -121,14 +121,14 @@ CopyRequest(const NPT_HttpUrl& url, NPT_HttpRequest* request)
 /*----------------------------------------------------------------------
 |   PLT_SsdpProxy::OnSsdpPacket
 +---------------------------------------------------------------------*/
-NPT_Result 
-PLT_SsdpProxy::OnSsdpPacket(NPT_HttpRequest&              request, 
-                            const NPT_HttpRequestContext& context) 
+NPT_Result
+PLT_SsdpProxy::OnSsdpPacket(NPT_HttpRequest&              request,
+                            const NPT_HttpRequestContext& context)
 {
     NPT_COMPILER_UNUSED(context);
 
     // is it a forward message ?
-    if (request.GetHeaders().GetHeader("X_SsdpProxy")) 
+    if (request.GetHeaders().GetHeader("X_SsdpProxy"))
         return NPT_SUCCESS;
 
     request.GetHeaders().AddHeader("X_SsdpProxy", "forwarded");
@@ -153,7 +153,7 @@ PLT_SsdpProxy::OnSsdpPacket(NPT_HttpRequest&              request,
         for (net_if_addr = (*net_if)->GetAddresses().GetFirstItem(); net_if_addr; net_if_addr++) {
             // copy request
             NPT_HttpRequest* new_request = CopyRequest(
-                NPT_HttpUrl((*net_if_addr).GetBroadcastAddress().ToString(), 1900, request.GetUrl().GetPath()), 
+                NPT_HttpUrl((*net_if_addr).GetBroadcastAddress().ToString(), 1900, request.GetUrl().GetPath()),
                 &request);
 
             // create search task to send request in broadcast
@@ -162,7 +162,7 @@ PLT_SsdpProxy::OnSsdpPacket(NPT_HttpRequest&              request,
                 new NPT_UdpSocket(),
                 new_request,
                 10000,
-                context.GetRemoteAddress()); 
+                context.GetRemoteAddress());
             StartTask(task);
         }
     }
@@ -171,7 +171,7 @@ PLT_SsdpProxy::OnSsdpPacket(NPT_HttpRequest&              request,
 
     // send special broadcast message for xbox
     NPT_HttpRequest* new_request = CopyRequest(
-        NPT_HttpUrl("255.255.255.255", 1900, request.GetUrl().GetPath()), 
+        NPT_HttpUrl("255.255.255.255", 1900, request.GetUrl().GetPath()),
         &request);
 
     // create search task to send request in broadcast
@@ -180,7 +180,7 @@ PLT_SsdpProxy::OnSsdpPacket(NPT_HttpRequest&              request,
         new NPT_UdpSocket(),
         new_request,
         10000,
-        context.GetRemoteAddress()); 
+        context.GetRemoteAddress());
     StartTask(task);
     return NPT_SUCCESS;
 }
@@ -188,12 +188,12 @@ PLT_SsdpProxy::OnSsdpPacket(NPT_HttpRequest&              request,
 /*----------------------------------------------------------------------
 |   PLT_SsdpProxy::OnUnicastSsdpPacket
 +---------------------------------------------------------------------*/
-NPT_Result 
-PLT_SsdpProxy::OnUnicastSsdpPacket(NPT_HttpRequest&              request, 
-                                   const NPT_HttpRequestContext& context) 
+NPT_Result
+PLT_SsdpProxy::OnUnicastSsdpPacket(NPT_HttpRequest&              request,
+                                   const NPT_HttpRequestContext& context)
 {
     // is it a forward message ?
-    if (request.GetHeaders().GetHeader("X_SsdpProxy")) 
+    if (request.GetHeaders().GetHeader("X_SsdpProxy"))
         return NPT_SUCCESS;
 
     request.GetHeaders().AddHeader("X_SsdpProxy", "forwarded");
@@ -210,7 +210,7 @@ PLT_SsdpProxy::OnUnicastSsdpPacket(NPT_HttpRequest&              request,
         //      (*net_if)->GetFlags() & NPT_NETWORK_INTERFACE_FLAG_LOOPBACK) {
         if ((*net_if)->GetFlags() & NPT_NETWORK_INTERFACE_FLAG_LOOPBACK) {
             continue;
-        }       
+        }
 
         for (net_if_addr = (*net_if)->GetAddresses().GetFirstItem(); net_if_addr; net_if_addr++) {
             // by using the netmask on each interface, we can figure out if the remote IP address
@@ -219,7 +219,7 @@ PLT_SsdpProxy::OnUnicastSsdpPacket(NPT_HttpRequest&              request,
             // that would not be reachable from the remote which sends this packet in the first place
             int i=0;
             while (i<4) {
-                if ((context.GetRemoteAddress().GetIpAddress().AsBytes()[i] & (*net_if_addr).GetNetMask().AsBytes()[i]) != 
+                if ((context.GetRemoteAddress().GetIpAddress().AsBytes()[i] & (*net_if_addr).GetNetMask().AsBytes()[i]) !=
                     ((*net_if_addr).GetPrimaryAddress().AsBytes()[i] & (*net_if_addr).GetNetMask().AsBytes()[i])) {
                     break;
                 }
@@ -242,7 +242,7 @@ PLT_SsdpProxy::OnUnicastSsdpPacket(NPT_HttpRequest&              request,
             // a work around is to send a unicast request!
             // copy request and change host header
             NPT_HttpRequest* unicast_request = CopyRequest(
-                NPT_HttpUrl((*net_if_addr).GetPrimaryAddress().ToString(), 1900, request.GetUrl().GetPath()), 
+                NPT_HttpUrl((*net_if_addr).GetPrimaryAddress().ToString(), 1900, request.GetUrl().GetPath()),
                 &request);
 
             // create unicast socket
@@ -253,13 +253,13 @@ PLT_SsdpProxy::OnUnicastSsdpPacket(NPT_HttpRequest&              request,
                 unicast_socket,
                 unicast_request,
                 10000,
-                context.GetRemoteAddress()); 
+                context.GetRemoteAddress());
             StartTask(uncast_task);
 
             // multicast
             // simply redirect request to 239.255.255.250
             NPT_HttpRequest* new_request = CopyRequest(
-                NPT_HttpUrl("239.255.255.250", 1900, request.GetUrl().GetPath()), 
+                NPT_HttpUrl("239.255.255.250", 1900, request.GetUrl().GetPath()),
                 &request);
 
             // create multicast socket
@@ -273,7 +273,7 @@ PLT_SsdpProxy::OnUnicastSsdpPacket(NPT_HttpRequest&              request,
                 socket,
                 new_request,
                 10000,
-                context.GetRemoteAddress()); 
+                context.GetRemoteAddress());
             StartTask(task);
         }
     }
@@ -286,9 +286,9 @@ PLT_SsdpProxy::OnUnicastSsdpPacket(NPT_HttpRequest&              request,
 /*----------------------------------------------------------------------
 |   PLT_SsdpUnicastListener::OnSsdpPacket
 +---------------------------------------------------------------------*/
-NPT_Result 
-PLT_SsdpUnicastListener::OnSsdpPacket(NPT_HttpRequest&              request, 
-                                      const NPT_HttpRequestContext& context) 
+NPT_Result
+PLT_SsdpUnicastListener::OnSsdpPacket(NPT_HttpRequest&              request,
+                                      const NPT_HttpRequestContext& context)
 {
     return m_Proxy->OnUnicastSsdpPacket(request, context);
 }
@@ -297,20 +297,20 @@ PLT_SsdpUnicastListener::OnSsdpPacket(NPT_HttpRequest&              request,
 |   PLT_SsdpProxyForwardTask::PLT_SsdpProxyForwardTask
 +---------------------------------------------------------------------*/
 PLT_SsdpProxyForwardTask::PLT_SsdpProxyForwardTask(NPT_UdpSocket*           socket,
-                                                   NPT_HttpRequest*         request, 
+                                                   NPT_HttpRequest*         request,
                                                    NPT_Timeout              timeout,
-                                                   const NPT_SocketAddress& forward_address) : 
+                                                   const NPT_SocketAddress& forward_address) :
     PLT_SsdpSearchTask(socket, NULL, request, timeout, false),
-    m_ForwardAddress(forward_address) 
+    m_ForwardAddress(forward_address)
 {
 }
 
 /*----------------------------------------------------------------------
 |   PLT_SsdpProxyForwardTask::ProcessResponse
 +---------------------------------------------------------------------*/
-NPT_Result 
-PLT_SsdpProxyForwardTask::ProcessResponse(NPT_Result                    res, 
-                                          NPT_HttpRequest*              request, 
+NPT_Result
+PLT_SsdpProxyForwardTask::ProcessResponse(NPT_Result                    res,
+                                          NPT_HttpRequest*              request,
                                           const NPT_HttpRequestContext& context,
                                           NPT_HttpResponse*             response)
 {
@@ -319,7 +319,7 @@ PLT_SsdpProxyForwardTask::ProcessResponse(NPT_Result                    res,
 
     if (NPT_FAILED(res) || response == NULL) return NPT_FAILURE;
 
-    // use a memory stream to write the response 
+    // use a memory stream to write the response
     NPT_MemoryStream stream;
     NPT_CHECK_SEVERE(response->Emit(stream));
 
@@ -372,14 +372,14 @@ ParseCommandLine(char** args)
 /*----------------------------------------------------------------------
 |   main
 +---------------------------------------------------------------------*/
-int 
+int
 main(int argc, char** argv)
 {
     NPT_COMPILER_UNUSED(argc);
 
     //PLT_SetLogLevel(4);
-    PLT_SsdpProxy proxy;    
-    
+    PLT_SsdpProxy proxy;
+
     /* parse command line */
     ParseCommandLine(argv);
 

@@ -81,42 +81,42 @@ void OptimizeOrder (void *&dPtr,
 
 class dng_pixel_buffer
 	{
-	
+
 	public:
-	
+
 		// Area this buffer holds.
-	
+
 		dng_rect fArea;
-		
+
 		// Range of planes this buffer holds.
-		
+
 		uint32 fPlane;
 		uint32 fPlanes;
-		
+
 		// Steps between pixels.
-		
+
 		int32 fRowStep;
 		int32 fColStep;
 		int32 fPlaneStep;
-		
+
 		// Basic pixel type (TIFF tag type code).
-	
+
 		uint32 fPixelType;
-		
+
 		// Size of pixel type in bytes.
-		
+
 		uint32 fPixelSize;
-		
+
 		// Pointer to buffer's data.
-		
+
 		void *fData;
-		
+
 		// Do we have write-access to this data?
-		
+
 		bool fDirty;
-		
+
 	private:
-	
+
 		void * InternalPixel (int32 row,
 							  int32 col,
 					  	      uint32 plane = 0) const
@@ -134,7 +134,7 @@ class dng_pixel_buffer
 				{
 				ThrowProgramError ("Out-of-range pixel access");
 				}
-			
+
 			// Compute offset of pixel.
 			const int64 rowOffset = SafeInt64Mult(fRowStep,
 				static_cast<int64> (row) - static_cast<int64> (fArea.t));
@@ -144,20 +144,20 @@ class dng_pixel_buffer
 				static_cast<int64> (plane - fPlane));
 			const int64 offset = SafeInt64Mult(static_cast<int64>(fPixelSize),
 				SafeInt64Add(SafeInt64Add(rowOffset, colOffset), planeOffset));
-			
+
 			// Add offset to buffer base address.
 			return static_cast<void *> (static_cast<uint8 *> (fData) + offset);
 
             #else
 
 			#if qDNG64Bit
-			
+
 			return (void *)
 				   (((uint8 *) fData) + (int64) fPixelSize *
 					(fRowStep	* (int64) (row	 - fArea.t) +
 					 fColStep	* (int64) (col	 - fArea.l) +
 					 fPlaneStep * (int64) (plane - fPlane )));
-			
+
 			#else
 
 			return (void *)
@@ -171,17 +171,17 @@ class dng_pixel_buffer
             #endif
 
 			}
-			
+
 		#if qDebugPixelType
-			
+
 		void CheckPixelType (uint32 pixelType) const;
-		
+
 		#endif
-		
+
 	public:
-	
+
 		dng_pixel_buffer ();
-		
+
 		/// Note: This constructor is for internal use only and should not be
 		/// considered part of the DNG SDK API.
 		///
@@ -200,19 +200,19 @@ class dng_pixel_buffer
 		///		   dng_tag_values.h)
 		/// \param data Pointer to the pixel data
 
-		dng_pixel_buffer (const dng_rect &area, 
-						  uint32 plane, 
+		dng_pixel_buffer (const dng_rect &area,
+						  uint32 plane,
 						  uint32 planes,
-						  uint32 pixelType, 
+						  uint32 pixelType,
 						  uint32 planarConfiguration,
 						  void *data);
-		
+
 		dng_pixel_buffer (const dng_pixel_buffer &buffer);
-		
+
 		dng_pixel_buffer & operator= (const dng_pixel_buffer &buffer);
 
 		virtual ~dng_pixel_buffer ();
-		
+
 		/// Get the range of pixel values.
 		/// \retval Range of value a pixel can take. (Meaning [0, max] for unsigned case. Signed case is biased so [-32768, max - 32768].)
 
@@ -241,7 +241,7 @@ class dng_pixel_buffer
 			{
 			return fRowStep;
 			}
-			
+
 		/// Step, in pixels not bytes, between planes of data in buffer.
 		/// \retval plane step in pixels. May be negative.
 
@@ -260,11 +260,11 @@ class dng_pixel_buffer
 					  			 int32 col,
 					  			 uint32 plane = 0) const
 			{
-			
+
 			return InternalPixel (row, col, plane);
-					 
+
 			}
-			
+
 		/// Get a writable untyped (void *) pointer to pixel data starting at a specific pixel in the buffer.
 		/// \param row Start row for buffer pointer.
 		/// \param col Start column for buffer pointer.
@@ -275,11 +275,11 @@ class dng_pixel_buffer
 					  	   int32 col,
 					  	   uint32 plane = 0)
 			{
-			
+
 			DNG_ASSERT (fDirty, "Dirty access to const pixel buffer");
-			
+
 			return InternalPixel (row, col, plane);
-			
+
 			}
 
 		/// Get read-only uint8 * to pixel data starting at a specific pixel in the buffer.
@@ -287,29 +287,29 @@ class dng_pixel_buffer
 		/// \param col Start column for buffer pointer.
 		/// \param plane Start plane for buffer pointer.
 		/// \retval Pointer to pixel data as uint8 *.
-			
+
 		const uint8 * ConstPixel_uint8 (int32 row,
 										int32 col,
 										uint32 plane = 0) const
 			{
-			
+
 			ASSERT_PIXEL_TYPE (ttByte);
 
 			return (const uint8 *) ConstPixel (row, col, plane);
-			
+
 			}
 
 		const uint8 * ConstPixel_uint8_overrideType (int32 row,
 										int32 col,
 										uint32 plane = 0) const
 			{
-			
+
 			// No type check
 
 			return (const uint8 *) ConstPixel (row, col, plane);
-			
+
 			}
-			
+
 		/// Get a writable uint8 * to pixel data starting at a specific pixel in the buffer.
 		/// \param row Start row for buffer pointer.
 		/// \param col Start column for buffer pointer.
@@ -320,24 +320,24 @@ class dng_pixel_buffer
 								  int32 col,
 								  uint32 plane = 0)
 			{
-			
+
 			ASSERT_PIXEL_TYPE (ttByte);
 
 			return (uint8 *) DirtyPixel (row, col, plane);
-			
+
 			}
 
 		uint8 * DirtyPixel_uint8_overrideType (int32 row,
 								  int32 col,
 								  uint32 plane = 0)
 			{
-			
+
 			// No type check
 
 			return (uint8 *) DirtyPixel (row, col, plane);
-			
+
 			}
-			
+
 		/// Get read-only int8 * to pixel data starting at a specific pixel in the buffer.
 		/// \param row Start row for buffer pointer.
 		/// \param col Start column for buffer pointer.
@@ -348,13 +348,13 @@ class dng_pixel_buffer
 									  int32 col,
 									  uint32 plane = 0) const
 			{
-			
+
 			ASSERT_PIXEL_TYPE (ttSByte);
 
 			return (const int8 *) ConstPixel (row, col, plane);
-			
+
 			}
-			
+
 		/// Get a writable int8 * to pixel data starting at a specific pixel in the buffer.
 		/// \param row Start row for buffer pointer.
 		/// \param col Start column for buffer pointer.
@@ -365,13 +365,13 @@ class dng_pixel_buffer
 								int32 col,
 								uint32 plane = 0)
 			{
-			
+
 			ASSERT_PIXEL_TYPE (ttSByte);
 
 			return (int8 *) DirtyPixel (row, col, plane);
-			
+
 			}
-			
+
 		/// Get read-only uint16 * to pixel data starting at a specific pixel in the buffer.
 		/// \param row Start row for buffer pointer.
 		/// \param col Start column for buffer pointer.
@@ -382,13 +382,13 @@ class dng_pixel_buffer
 										  int32 col,
 										  uint32 plane = 0) const
 			{
-			
+
 			ASSERT_PIXEL_TYPE (ttShort);
 
 			return (const uint16 *) ConstPixel (row, col, plane);
-			
+
 			}
-			
+
 		/// Get a writable uint16 * to pixel data starting at a specific pixel in the buffer.
 		/// \param row Start row for buffer pointer.
 		/// \param col Start column for buffer pointer.
@@ -399,13 +399,13 @@ class dng_pixel_buffer
 								    int32 col,
 								    uint32 plane = 0)
 			{
-			
+
 			ASSERT_PIXEL_TYPE (ttShort);
 
 			return (uint16 *) DirtyPixel (row, col, plane);
-			
+
 			}
-			
+
 		/// Get read-only int16 * to pixel data starting at a specific pixel in the buffer.
 		/// \param row Start row for buffer pointer.
 		/// \param col Start column for buffer pointer.
@@ -416,13 +416,13 @@ class dng_pixel_buffer
 										int32 col,
 										uint32 plane = 0) const
 			{
-			
+
 			ASSERT_PIXEL_TYPE (ttSShort);
 
 			return (const int16 *) ConstPixel (row, col, plane);
-			
+
 			}
-			
+
 		/// Get a writable int16 * to pixel data starting at a specific pixel in the buffer.
 		/// \param row Start row for buffer pointer.
 		/// \param col Start column for buffer pointer.
@@ -433,11 +433,11 @@ class dng_pixel_buffer
 								  int32 col,
 								  uint32 plane = 0)
 			{
-			
+
 			ASSERT_PIXEL_TYPE (ttSShort);
 
 			return (int16 *) DirtyPixel (row, col, plane);
-			
+
 			}
 
 		/// Get read-only uint32 * to pixel data starting at a specific pixel in the buffer.
@@ -450,13 +450,13 @@ class dng_pixel_buffer
 										  int32 col,
 										  uint32 plane = 0) const
 			{
-			
+
 			ASSERT_PIXEL_TYPE (ttLong);
 
 			return (const uint32 *) ConstPixel (row, col, plane);
-			
+
 			}
-			
+
 		/// Get a writable uint32 * to pixel data starting at a specific pixel in the buffer.
 		/// \param row Start row for buffer pointer.
 		/// \param col Start column for buffer pointer.
@@ -467,13 +467,13 @@ class dng_pixel_buffer
 								    int32 col,
 								    uint32 plane = 0)
 			{
-			
+
 			ASSERT_PIXEL_TYPE (ttLong);
 
 			return (uint32 *) DirtyPixel (row, col, plane);
-			
+
 			}
-			
+
 		/// Get read-only int32 * to pixel data starting at a specific pixel in the buffer.
 		/// \param row Start row for buffer pointer.
 		/// \param col Start column for buffer pointer.
@@ -484,13 +484,13 @@ class dng_pixel_buffer
 										int32 col,
 										uint32 plane = 0) const
 			{
-			
+
 			ASSERT_PIXEL_TYPE (ttSLong);
 
 			return (const int32 *) ConstPixel (row, col, plane);
-			
+
 			}
-			
+
 		/// Get a writable int32 * to pixel data starting at a specific pixel in the buffer.
 		/// \param row Start row for buffer pointer.
 		/// \param col Start column for buffer pointer.
@@ -501,11 +501,11 @@ class dng_pixel_buffer
 								  int32 col,
 								  uint32 plane = 0)
 			{
-			
+
 			ASSERT_PIXEL_TYPE (ttSLong);
 
 			return (int32 *) DirtyPixel (row, col, plane);
-			
+
 			}
 
 		/// Get read-only real32 * to pixel data starting at a specific pixel in the buffer.
@@ -518,13 +518,13 @@ class dng_pixel_buffer
 										  int32 col,
 										  uint32 plane = 0) const
 			{
-			
+
 			ASSERT_PIXEL_TYPE (ttFloat);
 
 			return (const real32 *) ConstPixel (row, col, plane);
-			
+
 			}
-			
+
 		/// Get a writable real32 * to pixel data starting at a specific pixel in the buffer.
 		/// \param row Start row for buffer pointer.
 		/// \param col Start column for buffer pointer.
@@ -535,13 +535,13 @@ class dng_pixel_buffer
 									int32 col,
 									uint32 plane = 0)
 			{
-			
+
 			ASSERT_PIXEL_TYPE (ttFloat);
 
 			return (real32 *) DirtyPixel (row, col, plane);
-			
+
 			}
-		
+
 		/// Initialize a rectangular area of pixel buffer to a constant.
 		/// \param area Rectangle of pixel buffer to set.
 		/// \param plane Plane to start filling on.
@@ -552,7 +552,7 @@ class dng_pixel_buffer
 					      uint32 plane,
 					      uint32 planes,
 					      uint32 value);
-		
+
 		/// Initialize a rectangular area of pixel buffer to a constant unsigned 8-bit value.
 		/// \param area Rectangle of pixel buffer to set.
 		/// \param plane Plane to start filling on.
@@ -564,13 +564,13 @@ class dng_pixel_buffer
 								uint32 planes,
 								uint8 value)
 			{
-			
+
 			DNG_ASSERT (fPixelType == ttByte, "Mismatched pixel type");
-			
+
 			SetConstant (area, plane, planes, (uint32) value);
-			
+
 			}
-		
+
 		/// Initialize a rectangular area of pixel buffer to a constant unsigned 16-bit value.
 		/// \param area Rectangle of pixel buffer to set.
 		/// \param plane Plane to start filling on.
@@ -582,13 +582,13 @@ class dng_pixel_buffer
 								 uint32 planes,
 								 uint16 value)
 			{
-			
+
 			DNG_ASSERT (fPixelType == ttShort, "Mismatched pixel type");
-			
+
 			SetConstant (area, plane, planes, (uint32) value);
-			
+
 			}
-		
+
 		/// Initialize a rectangular area of pixel buffer to a constant signed 16-bit value.
 		/// \param area Rectangle of pixel buffer to set.
 		/// \param plane Plane to start filling on.
@@ -600,13 +600,13 @@ class dng_pixel_buffer
 								uint32 planes,
 								int16 value)
 			{
-			
+
 			DNG_ASSERT (fPixelType == ttSShort, "Mismatched pixel type");
-			
+
 			SetConstant (area, plane, planes, (uint32) (uint16) value);
-			
+
 			}
-		
+
 		/// Initialize a rectangular area of pixel buffer to a constant unsigned 32-bit value.
 		/// \param area Rectangle of pixel buffer to set.
 		/// \param plane Plane to start filling on.
@@ -618,13 +618,13 @@ class dng_pixel_buffer
 								 uint32 planes,
 								 uint32 value)
 			{
-			
+
 			DNG_ASSERT (fPixelType == ttLong, "Mismatched pixel type");
-			
+
 			SetConstant (area, plane, planes, value);
-			
+
 			}
-		
+
 		/// Initialize a rectangular area of pixel buffer to a constant real 32-bit value.
 		/// \param area Rectangle of pixel buffer to set.
 		/// \param plane Plane to start filling on.
@@ -636,19 +636,19 @@ class dng_pixel_buffer
 								 uint32 planes,
 								 real32 value)
 			{
-			
+
 			DNG_ASSERT (fPixelType == ttFloat, "Mismatched pixel type");
-			
+
 			union
 				{
 				uint32 i;
 				real32 f;
 				} x;
-				
+
 			x.f = value;
-			
+
 			SetConstant (area, plane, planes, x.i);
-			
+
 			}
 
 		/// Initialize a rectangular area of pixel buffer to zeros.
@@ -659,7 +659,7 @@ class dng_pixel_buffer
 		void SetZero (const dng_rect &area,
 					  uint32 plane,
 					  uint32 planes);
-		
+
 		/// Copy image data from an area of one pixel buffer to same area of another.
 		/// \param src Buffer to copy from.
 		/// \param area Rectangle of pixel buffer to copy.
@@ -672,7 +672,7 @@ class dng_pixel_buffer
 					   uint32 srcPlane,
 					   uint32 dstPlane,
 					   uint32 planes);
-					   
+
 		/// Copy image data from an area of one pixel buffer to same area of another.
 		/// \param src Buffer to copy from.
 		/// \param area Rectangle of pixel buffer to copy.
@@ -684,11 +684,11 @@ class dng_pixel_buffer
 					   uint32 plane,
 					   uint32 planes)
 			{
-			
+
 			CopyArea (src, area, plane, plane, planes);
-			
+
 			}
-					   
+
 		/// Calculate the offset phase of destination rectangle relative to source rectangle.
 		/// Phase is based on a 0,0 origin and the notion of repeating srcArea across dstArea.
 		/// It is the number of pixels into srcArea to start repeating from when tiling dstArea.
@@ -704,9 +704,9 @@ class dng_pixel_buffer
 
 		void RepeatArea (const dng_rect &srcArea,
 						 const dng_rect &dstArea);
-						 
+
 		/// Replicates a sub-area of a buffer to fill the entire buffer.
-		
+
 		void RepeatSubArea (const dng_rect subArea,
 						    uint32 repeatV = 1,
 						    uint32 repeatH = 1);
@@ -715,22 +715,22 @@ class dng_pixel_buffer
 		/// \param shift Number of bits by which to right shift each pixel value.
 
 		void ShiftRight (uint32 shift);
-		
+
 		/// Change metadata so pixels are iterated in opposite horizontal order.
 		/// This operation does not require movement of actual pixel data.
 
 		void FlipH ();
-		
+
 		/// Change metadata so pixels are iterated in opposite vertical order.
 		/// This operation does not require movement of actual pixel data.
 
 		void FlipV ();
-		
+
 		/// Change metadata so pixels are iterated in opposite plane order.
 		/// This operation does not require movement of actual pixel data.
 
 		void FlipZ ();	// Flip planes
-		
+
 		/// Return true if the contents of an area of the pixel buffer area are the same as those of another.
 		/// \param rhs Buffer to compare against.
 		/// \param area Rectangle of pixel buffer to test.
@@ -760,5 +760,5 @@ class dng_pixel_buffer
 /*****************************************************************************/
 
 #endif
-	
+
 /*****************************************************************************/

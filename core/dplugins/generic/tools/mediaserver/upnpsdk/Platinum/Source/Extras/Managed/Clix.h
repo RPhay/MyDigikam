@@ -11,16 +11,16 @@
 // Updated version including several improvements suggested by Neil Hunt
 // ------------------------------------------------------------------------------------------- //
 #pragma once
- 
+
 #include <string>
 #include <vcclr.h>
- 
+
 // CLI extensions namespace
 namespace clix {
- 
+
   /// <summary>Encoding types for strings</summary>
   enum Encoding {
-     
+
     /// <summary>ANSI encoding</summary>
     /// <remarks>
     ///   This is the default encoding you've most likely been using all around in C++. ANSI
@@ -55,7 +55,7 @@ namespace clix {
      efficiency due to compile-time evaluation of the required conversion path.
   */
   namespace detail {
-     
+
     // Get C++ string type for specified encoding
     template<Encoding encoding> struct StringTypeSelecter;
     template<> struct StringTypeSelecter<E_ANSI> { typedef std::string Type; };
@@ -92,7 +92,7 @@ namespace clix {
         // Constructs a std::[w]string in case someone gave us a char * to choke on
         return marshalCxxString<encoding, SourceType>(string);
       }
-      
+
       template<Encoding encoding, typename SourceType>
       static System::String ^marshalCxxString(
         const typename StringTypeSelecter<encoding>::Type &cxxString
@@ -157,7 +157,7 @@ namespace clix {
         pin_ptr<const wchar_t> pinnedChars(::PtrToStringChars(string));
         return std::wstring(pinnedChars, string->Length);
       }
- 
+
       private:
         // Converts a string based on the selected encoding
         template<Encoding encoding> static array<unsigned char> ^encode(System::String ^string);
@@ -174,7 +174,7 @@ namespace clix {
     };
 
   } // namespace detail
-     
+
   // ----------------------------------------------------------------------------------------- //
   // clix::marshalString()
   // ----------------------------------------------------------------------------------------- //
@@ -191,12 +191,12 @@ namespace clix {
     typename detail::StringTypeSelecter<encoding>::Type,
     System::String ^
   >::Result marshalString(SourceType string) {
-   
+
     // Pass on the call to our nifty template routines
     return detail::StringMarshaler<
       detail::IsManagedString<SourceType>::Result ? detail::CxxFromNet : detail::NetFromCxx
     >::marshal<encoding, SourceType>(string);
-   
+
   }
 
 } // namespace clix

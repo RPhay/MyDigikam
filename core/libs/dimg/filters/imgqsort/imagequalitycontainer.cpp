@@ -161,7 +161,7 @@ QDebug operator<<(QDebug dbg, const ImageQualityContainer& s)
     dbg.nospace() << "Blur Weight        :" << s.blurWeight         << endl;
     dbg.nospace() << "Noise Weight       :" << s.noiseWeight        << endl;
     dbg.nospace() << "Compression Weight :" << s.compressionWeight  << endl;
-    dbg.nospace() << "Exposure Weight    :" << s.exposureWeight     << endl;  
+    dbg.nospace() << "Exposure Weight    :" << s.exposureWeight     << endl;
 
     return dbg.space();
 }

@@ -3,12 +3,12 @@
  * This file is a part of digiKam project
  * https://www.digikam.org
  *
- * Date        : 
+ * Date        :
  * Description : Image Quality Parser - blur detection
  *
  * Copyright (C) 2013-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
- * References  : 
+ * References  :
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -34,7 +34,7 @@ namespace Digikam
 {
 
 ImageQualityThread::ImageQualityThread(QObject* const parent ,DetectorDistortion* detector,
-                                       const cv::Mat& image, ImageQualityCalculator* calculator, 
+                                       const cv::Mat& image, ImageQualityCalculator* calculator,
                                        float weight_quality)
   : QThread(parent)
 {
@@ -54,7 +54,7 @@ void ImageQualityThread::run()
 
 ImageQualityThreadPool::ImageQualityThreadPool(QObject* const parent , ImageQualityCalculator* calculator)
     : QObject(parent), m_calculator(calculator)
-{   
+{
 }
 
 ImageQualityThreadPool::~ImageQualityThreadPool()
@@ -70,13 +70,13 @@ ImageQualityThreadPool::~ImageQualityThreadPool()
 
 void ImageQualityThreadPool::addDetector(const cv::Mat& image, float weight_quality, DetectorDistortion* detector)
 {
-    ImageQualityThread* thread = new ImageQualityThread(this, detector, image, 
+    ImageQualityThread* thread = new ImageQualityThread(this, detector, image,
                                                         m_calculator, weight_quality);
-                
+
     connect(thread, &QThread::finished, thread, &QObject::deleteLater);
-    
+
     m_threads.push_back(thread);
-}  
+}
 
 void ImageQualityThreadPool::start()
 {

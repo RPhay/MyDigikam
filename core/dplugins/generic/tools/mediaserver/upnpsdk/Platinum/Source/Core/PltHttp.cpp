@@ -11,14 +11,14 @@
 | as published by the Free Software Foundation; either version 2
 | of the License, or (at your option) any later version.
 |
-| OEMs, ISVs, VARs and other distributors that combine and 
+| OEMs, ISVs, VARs and other distributors that combine and
 | distribute commercially licensed software with Platinum software
 | and do not wish to distribute the source code for the commercially
 | licensed software under version 2, or (at your option) any later
 | version, of the GNU General Public License (the "GPL") must enter
 | into a commercial license agreement with Plutinosoft, LLC.
 | licensing@plutinosoft.com
-|  
+|
 | This program is distributed in the hope that it will be useful,
 | but WITHOUT ANY WARRANTY; without even the implied warranty of
 | MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
@@ -26,7 +26,7 @@
 |
 | You should have received a copy of the GNU General Public License
 | along with this program; see the file LICENSE.txt. If not, write to
-| the Free Software Foundation, Inc., 
+| the Free Software Foundation, Inc.,
 | 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 | http://www.gnu.org/licenses/gpl-2.0.html
 |
@@ -75,13 +75,13 @@ class NPT_HttpHeaderLogger
 {
 public:
     // methods
-    NPT_HttpHeaderLogger(NPT_LoggerReference& logger, int level) : 
+    NPT_HttpHeaderLogger(NPT_LoggerReference& logger, int level) :
       m_Logger(logger), m_Level(level) {}
     NPT_Result operator()(NPT_HttpHeader*& header) const {
         NPT_COMPILER_UNUSED(header);
 
-        NPT_LOG_L2(m_Logger, m_Level, "%s: %s", 
-            (const char*)header->GetName(), 
+        NPT_LOG_L2(m_Logger, m_Level, "%s: %s",
+            (const char*)header->GetName(),
             (const char*)header->GetValue());
         return NPT_SUCCESS;
     }
@@ -95,12 +95,12 @@ public:
 |   PLT_HttpHelper::GetContentType
 +---------------------------------------------------------------------*/
 NPT_Result
-PLT_HttpHelper::GetContentType(const NPT_HttpMessage& message, 
-                               NPT_String&            type) 
-{ 
+PLT_HttpHelper::GetContentType(const NPT_HttpMessage& message,
+                               NPT_String&            type)
+{
     type = "";
 
-    const NPT_String* val = 
+    const NPT_String* val =
         message.GetHeaders().GetHeaderValue(NPT_HTTP_HEADER_CONTENT_TYPE);
     NPT_CHECK_POINTER(val);
 
@@ -112,12 +112,12 @@ PLT_HttpHelper::GetContentType(const NPT_HttpMessage& message,
 |   PLT_HttpHelper::GetContentLength
 +---------------------------------------------------------------------*/
 NPT_Result
-PLT_HttpHelper::GetContentLength(const NPT_HttpMessage& message, 
-                                 NPT_LargeSize&         len) 
-{ 
+PLT_HttpHelper::GetContentLength(const NPT_HttpMessage& message,
+                                 NPT_LargeSize&         len)
+{
     len = 0;
 
-    const NPT_String* val = 
+    const NPT_String* val =
         message.GetHeaders().GetHeaderValue(NPT_HTTP_HEADER_CONTENT_LENGTH);
     NPT_CHECK_POINTER(val);
 
@@ -128,8 +128,8 @@ PLT_HttpHelper::GetContentLength(const NPT_HttpMessage& message,
 |   PLT_HttpHelper::SetBody
 +---------------------------------------------------------------------*/
 NPT_Result
-PLT_HttpHelper::SetBody(NPT_HttpMessage& message, 
-                        NPT_String&      text, 
+PLT_HttpHelper::SetBody(NPT_HttpMessage& message,
+                        NPT_String&      text,
                         NPT_HttpEntity** entity /* = NULL */)
 {
     return SetBody(message, (const char*)text, text.GetLength(), entity);
@@ -139,8 +139,8 @@ PLT_HttpHelper::SetBody(NPT_HttpMessage& message,
 |   PLT_HttpHelper::SetBody
 +---------------------------------------------------------------------*/
 NPT_Result
-PLT_HttpHelper::SetBody(NPT_HttpMessage& message, 
-                        const char*      text, 
+PLT_HttpHelper::SetBody(NPT_HttpMessage& message,
+                        const char*      text,
                         NPT_HttpEntity** entity /* = NULL */)
 {
     return SetBody(message, (const char*)text, NPT_StringLength(text), entity);
@@ -150,9 +150,9 @@ PLT_HttpHelper::SetBody(NPT_HttpMessage& message,
 |   NPT_HttpMessage::SetBody
 +---------------------------------------------------------------------*/
 NPT_Result
-PLT_HttpHelper::SetBody(NPT_HttpMessage& message, 
-                        const void*      body, 
-                        NPT_LargeSize    len, 
+PLT_HttpHelper::SetBody(NPT_HttpMessage& message,
+                        const void*      body,
+                        NPT_LargeSize    len,
                         NPT_HttpEntity** entity /* = NULL */)
 {
     if (len == 0) return NPT_SUCCESS;
@@ -169,7 +169,7 @@ PLT_HttpHelper::SetBody(NPT_HttpMessage& message,
 |   NPT_HttpMessage::SetBody
 +---------------------------------------------------------------------*/
 NPT_Result
-PLT_HttpHelper::SetBody(NPT_HttpMessage&         message, 
+PLT_HttpHelper::SetBody(NPT_HttpMessage&         message,
                         NPT_InputStreamReference stream,
                         NPT_HttpEntity**         entity /* = NULL */)
 {
@@ -189,25 +189,25 @@ PLT_HttpHelper::SetBody(NPT_HttpMessage&         message,
 /*----------------------------------------------------------------------
 |   PLT_HttpHelper::GetBody
 +---------------------------------------------------------------------*/
-NPT_Result 
-PLT_HttpHelper::GetBody(const NPT_HttpMessage& message, NPT_String& body) 
+NPT_Result
+PLT_HttpHelper::GetBody(const NPT_HttpMessage& message, NPT_String& body)
 {
     NPT_Result res;
     NPT_InputStreamReference stream;
 
     // get stream
     NPT_HttpEntity* entity = message.GetEntity();
-    if (!entity || 
-        NPT_FAILED(entity->GetInputStream(stream)) || 
+    if (!entity ||
+        NPT_FAILED(entity->GetInputStream(stream)) ||
         stream.IsNull()) {
         return NPT_FAILURE;
     }
 
     // extract body
     NPT_StringOutputStream* output_stream = new NPT_StringOutputStream(&body);
-    res = NPT_StreamToStreamCopy(*stream, 
-                                 *output_stream, 
-                                 0, 
+    res = NPT_StreamToStreamCopy(*stream,
+                                 *output_stream,
+                                 0,
                                  entity->GetContentLength());
     delete output_stream;
     return res;
@@ -217,8 +217,8 @@ PLT_HttpHelper::GetBody(const NPT_HttpMessage& message, NPT_String& body)
 |   PLT_HttpHelper::ParseBody
 +---------------------------------------------------------------------*/
 NPT_Result
-PLT_HttpHelper::ParseBody(const NPT_HttpMessage& message, 
-                          NPT_XmlElementNode*&   tree) 
+PLT_HttpHelper::ParseBody(const NPT_HttpMessage& message,
+                          NPT_XmlElementNode*&   tree)
 {
     // reset tree
     tree = NULL;
@@ -234,17 +234,17 @@ PLT_HttpHelper::ParseBody(const NPT_HttpMessage& message,
 |   PLT_HttpHelper::IsConnectionKeepAlive
 +---------------------------------------------------------------------*/
 bool
-PLT_HttpHelper::IsConnectionKeepAlive(NPT_HttpMessage& message) 
+PLT_HttpHelper::IsConnectionKeepAlive(NPT_HttpMessage& message)
 {
-    const NPT_String* connection = 
+    const NPT_String* connection =
         message.GetHeaders().GetHeaderValue(NPT_HTTP_HEADER_CONNECTION);
 
     // the DLNA says that all HTTP 1.0 requests should be closed immediately by the server
     NPT_String protocol = message.GetProtocol();
     if (protocol.Compare(NPT_HTTP_PROTOCOL_1_0, true) == 0) return false;
-    
-    // all HTTP 1.1 requests without a Connection header 
-    // or with a keep-alive Connection header should be kept alive if possible 
+
+    // all HTTP 1.1 requests without a Connection header
+    // or with a keep-alive Connection header should be kept alive if possible
     return (!connection || connection->Compare("keep-alive", true) == 0);
 }
 
@@ -256,16 +256,16 @@ PLT_HttpHelper::IsBodyStreamSeekable(NPT_HttpMessage& message)
 {
     NPT_HttpEntity* entity = message.GetEntity();
     NPT_InputStreamReference stream;
-    
-    if (!entity || 
-        NPT_FAILED(entity->GetInputStream(stream)) || 
+
+    if (!entity ||
+        NPT_FAILED(entity->GetInputStream(stream)) ||
         stream.IsNull()) {
         return true;
     }
 
     // try to get current position and seek there
     NPT_Position position;
-    if (NPT_FAILED(stream->Tell(position)) || 
+    if (NPT_FAILED(stream->Tell(position)) ||
         NPT_FAILED(stream->Seek(position))) {
         return false;
     }
@@ -277,11 +277,11 @@ PLT_HttpHelper::IsBodyStreamSeekable(NPT_HttpMessage& message)
 |   PLT_HttpHelper::GetHost
 +---------------------------------------------------------------------*/
 NPT_Result
-PLT_HttpHelper::GetHost(const NPT_HttpRequest& request, NPT_String& value)    
-{ 
+PLT_HttpHelper::GetHost(const NPT_HttpRequest& request, NPT_String& value)
+{
     value = "";
 
-    const NPT_String* val = 
+    const NPT_String* val =
         request.GetHeaders().GetHeaderValue(NPT_HTTP_HEADER_HOST);
     NPT_CHECK_POINTER(val);
 
@@ -292,10 +292,10 @@ PLT_HttpHelper::GetHost(const NPT_HttpRequest& request, NPT_String& value)
 /*----------------------------------------------------------------------
 |   PLT_HttpHelper::SetHost
 +---------------------------------------------------------------------*/
-void         
+void
 PLT_HttpHelper::SetHost(NPT_HttpRequest& request, const char* host)
-{ 
-    request.GetHeaders().SetHeader(NPT_HTTP_HEADER_HOST, host); 
+{
+    request.GetHeaders().SetHeader(NPT_HTTP_HEADER_HOST, host);
 }
 
 /*----------------------------------------------------------------------
@@ -319,7 +319,7 @@ PLT_HttpHelper::GetDeviceSignature(const NPT_HttpRequest& request)
         return PLT_DEVICE_WMP;
     } else if (agent && (agent->Find("Sonos", 0, true) >= 0)) {
         return PLT_DEVICE_SONOS;
-    } else if ((agent && agent->Find("PLAYSTATION 3", 0, true) >= 0) || 
+    } else if ((agent && agent->Find("PLAYSTATION 3", 0, true) >= 0) ||
                (hdr && hdr->Find("PLAYSTATION 3", 0, true) >= 0)) {
         return PLT_DEVICE_PS3;
     } else if (agent && agent->Find("Windows", 0, true) >= 0) {
@@ -338,15 +338,15 @@ PLT_HttpHelper::GetDeviceSignature(const NPT_HttpRequest& request)
 /*----------------------------------------------------------------------
 |   PLT_HttpHelper::SetBasicAuthorization
 +---------------------------------------------------------------------*/
-void         
-PLT_HttpHelper::SetBasicAuthorization(NPT_HttpRequest& request, 
-                                      const char*      username, 
+void
+PLT_HttpHelper::SetBasicAuthorization(NPT_HttpRequest& request,
+                                      const char*      username,
                                       const char*      password)
-{ 
+{
     NPT_String encoded;
     NPT_String cred =  NPT_String(username) + ":" + password;
 
     NPT_Base64::Encode((const NPT_Byte *)cred.GetChars(), cred.GetLength(), encoded);
-    request.GetHeaders().SetHeader(NPT_HTTP_HEADER_AUTHORIZATION, NPT_String("Basic " + encoded)); 
+    request.GetHeaders().SetHeader(NPT_HTTP_HEADER_AUTHORIZATION, NPT_String("Basic " + encoded));
 }
 

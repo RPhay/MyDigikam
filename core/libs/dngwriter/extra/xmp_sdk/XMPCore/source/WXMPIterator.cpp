@@ -44,7 +44,7 @@ WXMPIterator_PropCTor_1 ( XMPMetaRef     xmpRef,
 
 		const XMPMeta & xmpObj = WtoXMPMeta_Ref ( xmpRef );
 		XMP_AutoLock metaLock ( &xmpObj.lock, kXMP_ReadLock );
-		
+
 		XMPIterator * iter = NULL;
 		if (!iter) {
 
@@ -131,7 +131,7 @@ WXMPIterator_Next_1 ( XMPIteratorRef   xmpObjRef,
 		XMP_StringLen pathLen = 0;
 		XMP_StringPtr valuePtr = 0;
 		XMP_StringLen valueLen = 0;
-		
+
 		if ( propOptions == 0 ) propOptions = &voidOptionBits;
 
 		XMP_Assert( thiz->info.xmpObj != NULL );
@@ -139,7 +139,7 @@ WXMPIterator_Next_1 ( XMPIteratorRef   xmpObjRef,
 
 		XMP_Bool found = thiz->Next ( &schemaPtr, &schemaLen, &pathPtr, &pathLen, &valuePtr, &valueLen, propOptions );
 		wResult->int32Result = found;
-		
+
 		if ( found ) {
 			if ( schemaNS != 0 ) (*SetClientString) ( schemaNS, schemaPtr, schemaLen );
 			if ( propPath != 0 ) (*SetClientString) ( propPath, pathPtr, pathLen );

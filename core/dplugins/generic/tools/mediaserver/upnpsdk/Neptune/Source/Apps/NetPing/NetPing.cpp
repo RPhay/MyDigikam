@@ -48,7 +48,7 @@ static struct {
 static void
 PrintUsageAndExit(void)
 {
-    fprintf(stderr, 
+    fprintf(stderr,
             "usage: NetPing udp|tcp <hostname> <port>\n");
     exit(1);
 }
@@ -96,7 +96,7 @@ UdpPing(const char* hostname, int port)
     sender.Send(packet, &destination_address);
     //NPT_SocketInfo socket_info;
     //sender.GetInfo(socket_info);
-    //NPT_Debug("sent from %s:%d to %s:%d\n", 
+    //NPT_Debug("sent from %s:%d to %s:%d\n",
     //    socket_info.local_address.GetIpAddress().ToString().GetChars(),
     //    socket_info.local_address.GetPort(),
     //    socket_info.remote_address.GetIpAddress().ToString().GetChars(),
@@ -111,7 +111,7 @@ UdpPing(const char* hostname, int port)
         return;
     }
     sender.GetInfo(socket_info);
-    printf("RESPONSE: %d bytes from %s:%d\n", 
+    printf("RESPONSE: %d bytes from %s:%d\n",
            response.GetDataSize(),
            socket_info.remote_address.GetIpAddress().ToString().GetChars(),
            socket_info.remote_address.GetPort());
@@ -138,7 +138,7 @@ TcpPing(const char* hostname, int port)
         fprintf(stderr, "ERROR: failed to resolve name\n");
         return;
     }
-    
+
     // connect to server
     result = sender.Connect(NPT_SocketAddress(ip_address, port));
     if (NPT_FAILED(result)) {

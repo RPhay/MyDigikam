@@ -70,7 +70,7 @@ public:
 class NPT_LogHandler {
 public:
     typedef void(*CustomHandlerExternalFunction)(const NPT_LogRecord* record);
-    
+
     // class methods
     static NPT_Result SetCustomHandlerFunction(CustomHandlerExternalFunction function);
     static NPT_Result Create(const char*      logger_name,
@@ -88,11 +88,11 @@ public:
     // methods
     NPT_Logger(const char* name, NPT_LogManager& manager);
     ~NPT_Logger();
-    void Log(int          level, 
+    void Log(int          level,
              const char*  source_file,
              unsigned int source_line,
              const char*  source_function,
-             const char*  msg, 
+             const char*  msg,
                           ...)
 #ifdef __GNUC__
         __attribute__ ((format (printf, 6, 7)))
@@ -215,12 +215,12 @@ NPT_Result NPT_GetSystemLogConfig(NPT_String& config);
 |   constants
 +---------------------------------------------------------------------*/
 #define NPT_LOG_LEVEL_FATAL   700
-#define NPT_LOG_LEVEL_SEVERE  600 
+#define NPT_LOG_LEVEL_SEVERE  600
 #define NPT_LOG_LEVEL_WARNING 500
 #define NPT_LOG_LEVEL_INFO    400
 #define NPT_LOG_LEVEL_FINE    300
 #define NPT_LOG_LEVEL_FINER   200
-#define NPT_LOG_LEVEL_FINEST  100 
+#define NPT_LOG_LEVEL_FINEST  100
 
 #define NPT_LOG_LEVEL_OFF     32767
 #define NPT_LOG_LEVEL_ALL     0

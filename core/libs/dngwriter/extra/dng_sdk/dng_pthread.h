@@ -131,7 +131,7 @@ int dng_pthread_rwlock_tryrdlock(dng_pthread_rwlock_t * rwlock);
 int dng_pthread_rwlock_trywrlock(dng_pthread_rwlock_t * rwlock);
 int dng_pthread_rwlock_unlock(dng_pthread_rwlock_t * rwlock);
 int dng_pthread_rwlock_wrlock(dng_pthread_rwlock_t * rwlock);
-    
+
 // dng_pthread may maintain per-thread global state. This routine frees that global state.
 // there is no need to call this for threads created by dng_pthread and one can call
 // dng_pthread routines of a thread after dng_pthread_disassociate as the global state will

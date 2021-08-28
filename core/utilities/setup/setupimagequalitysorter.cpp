@@ -73,7 +73,7 @@ void SetupImageQualitySorter::readSettings()
 
 ImageQualityContainer SetupImageQualitySorter::getImageQualityContainer()
 {
-    return d->settingsWidget->getImageQualityContainer();    
+    return d->settingsWidget->getImageQualityContainer();
 }
 
 } // namespace Digikam

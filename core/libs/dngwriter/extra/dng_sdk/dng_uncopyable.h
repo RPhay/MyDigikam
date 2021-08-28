@@ -27,15 +27,15 @@ class dng_uncopyable
 			}
 
 	private:
-		
+
 		dng_uncopyable (const dng_uncopyable &);
-		
+
 		dng_uncopyable & operator= (const dng_uncopyable &);
-		
+
 	};
 
 /*****************************************************************************/
 
 #endif	// __dng_uncopyable__
-	
+
 /*****************************************************************************/
