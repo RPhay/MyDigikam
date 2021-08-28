@@ -3,13 +3,11 @@
  * This file is a part of digiKam project
  * https://www.digikam.org
  *
- * Date        :
+ * Date        : 28/08/2021
  * Description : Image Quality Parser - Abtrait class for detector
  *
- * Copyright (C) 2013-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (C) 2021-2022 by Phuoc Khanh Le <phuockhanhnk94 at gmail dot com>
- *
- * References  :
+ * Copyright (C) 2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2021 by Phuoc Khanh Le <phuockhanhnk94 at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -46,8 +44,10 @@ class ImageQualityThread : public QThread
     Q_OBJECT
 public:
 
-    explicit ImageQualityThread(QObject* const parent ,DetectorDistortion* detector,
-                                const cv::Mat& image, ImageQualityCalculator* calculator,
+    explicit ImageQualityThread(QObject* const parent,
+                                DetectorDistortion* const detector,
+                                const cv::Mat& image,
+                                ImageQualityCalculator* const calculator,
                                 float weight_quality);
     ~ImageQualityThread() = default;
 
@@ -63,27 +63,27 @@ private:
     float                   m_weight;
 };
 
-
+// -------------------------------------------------------------------------------------------
 
 class ImageQualityThreadPool: public QObject
 {
     Q_OBJECT
 public:
 
-    explicit ImageQualityThreadPool(QObject* const parent , ImageQualityCalculator* calculator);
+    explicit ImageQualityThreadPool(QObject* const parent , ImageQualityCalculator* const calculator);
     ~ImageQualityThreadPool();
 
 public:
 
-    void addDetector(const cv::Mat& image, float weight_quality, DetectorDistortion* detector);
+    void addDetector(const cv::Mat& image, float weight_quality, DetectorDistortion* const detector);
 
     void start();
     void end();
 
 private:
 
-    ImageQualityCalculator*     m_calculator;
-    QList<ImageQualityThread*>  m_threads;
+    ImageQualityCalculator*    m_calculator;
+    QList<ImageQualityThread*> m_threads;
 };
 
 } // namespace Digikam

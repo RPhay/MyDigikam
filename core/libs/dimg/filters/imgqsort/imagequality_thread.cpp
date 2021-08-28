@@ -3,12 +3,11 @@
  * This file is a part of digiKam project
  * https://www.digikam.org
  *
- * Date        :
- * Description : Image Quality Parser - blur detection
+ * Date        : 28/08/2021
+ * Description : Image Quality Parser - Abtrait class for detector
  *
- * Copyright (C) 2013-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
- *
- * References  :
+ * Copyright (C) 2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2021 by Phuoc Khanh Le <phuockhanhnk94 at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -33,15 +32,17 @@
 namespace Digikam
 {
 
-ImageQualityThread::ImageQualityThread(QObject* const parent ,DetectorDistortion* detector,
-                                       const cv::Mat& image, ImageQualityCalculator* calculator,
+ImageQualityThread::ImageQualityThread(QObject* const parent,
+                                       DetectorDistortion* const detector,
+                                       const cv::Mat& image,
+                                       ImageQualityCalculator* const calculator,
                                        float weight_quality)
-  : QThread(parent)
+  : QThread     (parent),
+    m_detector  (detector),
+    m_calculator(calculator),
+    m_image     (image),
+    m_weight    (weight_quality)
 {
-    m_image = image;
-    m_detector = detector;
-    m_calculator = calculator;
-    m_weight = weight_quality;
 }
 
 void ImageQualityThread::run()
@@ -52,8 +53,10 @@ void ImageQualityThread::run()
 
 //--------------------------------------------------------------------------
 
-ImageQualityThreadPool::ImageQualityThreadPool(QObject* const parent , ImageQualityCalculator* calculator)
-    : QObject(parent), m_calculator(calculator)
+ImageQualityThreadPool::ImageQualityThreadPool(QObject* const parent,
+                                               ImageQualityCalculator* const calculator)
+    : QObject(parent),
+      m_calculator(calculator)
 {
 }
 
@@ -61,19 +64,22 @@ ImageQualityThreadPool::~ImageQualityThreadPool()
 {
     end();
 
-    for(auto& thread : m_threads)
+    for (auto& thread : m_threads)
     {
         delete thread;
     }
 }
 
 
-void ImageQualityThreadPool::addDetector(const cv::Mat& image, float weight_quality, DetectorDistortion* detector)
+void ImageQualityThreadPool::addDetector(const cv::Mat& image,
+                                         float weight_quality,
+                                         DetectorDistortion* const detector)
 {
     ImageQualityThread* thread = new ImageQualityThread(this, detector, image,
                                                         m_calculator, weight_quality);
 
-    connect(thread, &QThread::finished, thread, &QObject::deleteLater);
+    connect(thread, &QThread::finished,
+            thread, &QObject::deleteLater);
 
     m_threads.push_back(thread);
 }
@@ -95,4 +101,4 @@ void ImageQualityThreadPool::end()
     }
 }
 
-}
+} // namespace Digikam
