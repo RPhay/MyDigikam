@@ -24,8 +24,8 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DETECTOR_DISTORTION_H
-#define DIGIKAM_DETECTOR_DISTORTION_H
+#ifndef DIGIKAM_DETECTOR_H
+#define DIGIKAM_DETECTOR_H
 
 // Qt includes
 
@@ -53,9 +53,8 @@ public:
 public:
 
     static cv::Mat prepareForDetection(const DImg& inputImage);
-
 };
 
 } // namespace Digikam
 
-#endif // DIGIKAM_DETECTOR_DISTORTION_H
+#endif // DIGIKAM_DETECTOR_H

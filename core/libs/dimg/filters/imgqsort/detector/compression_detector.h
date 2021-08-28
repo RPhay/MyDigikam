@@ -3,12 +3,11 @@
  * This file is a part of digiKam project
  * https://www.digikam.org
  *
- * Date        :
- * Description : Image Quality Parser - noise detection
+ * Date        : 28/08/2021
+ * Description : Image Quality Parser - Compression detection
  *
- * Copyright (C) 2013-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
- *
- * References  : http://www.arpnjournals.org/jeas/research_papers/rp_2016/jeas_1216_5505.pdf
+ * Copyright (C) 2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2021 by Phuoc Khanh Le <phuockhanhnk94 at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -44,12 +43,14 @@ public:
     explicit CompressionDetector();
     ~CompressionDetector();
 
-    float detect(const cv::Mat& image)             const override;
+    float detect(const cv::Mat& image)                      const override;
 
 private:
 
     template <typename Function>
-    cv::Mat checkEdgesBlock(const cv::Mat& gray_image, int blockSize, Function accessEdges) const;
+    cv::Mat checkEdgesBlock(const cv::Mat& gray_image,
+                            int blockSize,
+                            Function accessEdges)           const;
     cv::Mat detectMonoColorRegion(const cv::Mat& image)     const;
 
     float normalize(const float number);
