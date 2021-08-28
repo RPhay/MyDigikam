@@ -56,7 +56,7 @@ public:
     FocusPoint();
     FocusPoint(float x_position, float y_position, float width, float height, TypePoint type);
     FocusPoint(float x_position, float y_position, float width, float height);
-    FocusPoint(const QRectF& rectF);
+    explicit FocusPoint(const QRectF& rectF);
     ~FocusPoint();
 
     void setType(TypePoint type);
