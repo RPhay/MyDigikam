@@ -102,26 +102,26 @@ ImageQualitySettings::ImageQualitySettings(QWidget* const parent)
 {
     QVBoxLayout* const layout = new QVBoxLayout(this);
 
-    d->enableSorter = new QCheckBox(i18n("Enable Image Quality Sorting (Experimental)"), this);
+    d->enableSorter         = new QCheckBox(i18n("Enable Image Quality Sorting (Experimental)"), this);
     d->enableSorter->setWhatsThis(i18n("Enable this option to assign automatically Pick Labels based on image quality."));
 
-    d->optionsView  = new DVBox(this);
+    d->optionsView          = new DVBox(this);
 
     layout->addWidget(d->enableSorter);
     layout->addWidget(d->optionsView);
 
     // ------------------------------------------------------------------------------
 
-    d->detectBlur        = new QCheckBox(i18n("Detect Blur"), d->optionsView);
+    d->detectBlur           = new QCheckBox(i18n("Detect Blur"), d->optionsView);
     d->detectBlur->setWhatsThis(i18n("Detect the amount of blur in the images passed to it"));
 
-    d->detectNoise       = new QCheckBox(i18n("Detect Noise"), d->optionsView);
+    d->detectNoise          = new QCheckBox(i18n("Detect Noise"), d->optionsView);
     d->detectNoise->setWhatsThis(i18n("Detect the amount of noise in the images passed to it"));
 
-    d->detectCompression = new QCheckBox(i18n("Detect Compression"), d->optionsView);
+    d->detectCompression    = new QCheckBox(i18n("Detect Compression"), d->optionsView);
     d->detectCompression->setWhatsThis(i18n("Detect the amount of compression in the images passed to it"));
 
-    d->detectExposure    = new QCheckBox(i18n("Detect Under and Over Exposure"), d->optionsView);
+    d->detectExposure       = new QCheckBox(i18n("Detect Under and Over Exposure"), d->optionsView);
     d->detectExposure->setWhatsThis(i18n("Detect if the images are under-exposed or over-exposed"));
 
     // ------------------------------------------------------------------------------
@@ -182,7 +182,7 @@ ImageQualitySettings::ImageQualitySettings(QWidget* const parent)
     d->setRejectedThreshold->setRange(1, 100, 1);
     d->setRejectedThreshold->setWhatsThis(i18n("Threshold below which all pictures are assigned Rejected Label"));
 
-    QLabel* const lbl3 = new QLabel(i18n("Pending threshold:"), settings);
+    QLabel* const lbl3      = new QLabel(i18n("Pending threshold:"), settings);
     lbl3->setAlignment(Qt::AlignLeft | Qt::AlignTop);
     d->setPendingThreshold  = new DIntNumInput(settings);
     d->setPendingThreshold->setDefaultValue(5);
@@ -291,7 +291,7 @@ void ImageQualitySettings::readSettings()
     d->optionsView->setEnabled(imq.enableSorter);
 }
 
-ImageQualityContainer ImageQualitySettings::getImageQualityContainer()
+ImageQualityContainer ImageQualitySettings::getImageQualityContainer() const
 {
     ImageQualityContainer imq;
 

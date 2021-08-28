@@ -48,8 +48,7 @@ public:
 
     void applySettings();
     void readSettings();
-    ImageQualityContainer getImageQualityContainer();
-
+    ImageQualityContainer getImageQualityContainer() const;
 
 private:
 

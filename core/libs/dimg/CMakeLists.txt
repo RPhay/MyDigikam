@@ -141,8 +141,7 @@ set(libdimgfilters_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/filters/imgqsort/imagequalitysettings.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/filters/imgqsort/imagequalityparser.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/filters/imgqsort/imagequalitycalculator.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/filters/imgqsort/imagequality_thread.cpp
-
+    ${CMAKE_CURRENT_SOURCE_DIR}/filters/imgqsort/imagequalitythread.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/filters/imgqsort/detector/blur_detector.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/filters/imgqsort/detector/noise_detector.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/filters/imgqsort/detector/exposure_detector.cpp

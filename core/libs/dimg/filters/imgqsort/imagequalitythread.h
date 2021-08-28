@@ -42,6 +42,7 @@ namespace Digikam
 class ImageQualityThread : public QThread
 {
     Q_OBJECT
+
 public:
 
     explicit ImageQualityThread(QObject* const parent,
@@ -68,14 +69,18 @@ private:
 class ImageQualityThreadPool: public QObject
 {
     Q_OBJECT
+
 public:
 
-    explicit ImageQualityThreadPool(QObject* const parent , ImageQualityCalculator* const calculator);
+    explicit ImageQualityThreadPool(QObject* const parent,
+                                    ImageQualityCalculator* const calculator);
     ~ImageQualityThreadPool();
 
 public:
 
-    void addDetector(const cv::Mat& image, float weight_quality, DetectorDistortion* const detector);
+    void addDetector(const cv::Mat& image,
+                     float weight_quality,
+                     DetectorDistortion* const detector);
 
     void start();
     void end();

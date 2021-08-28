@@ -22,12 +22,7 @@
  *
  * ============================================================ */
 
-#include "imagequality_thread.h"
-
-// Qt includes
-
-
-// Local includes
+#include "imagequalitythread.h"
 
 namespace Digikam
 {
@@ -37,11 +32,11 @@ ImageQualityThread::ImageQualityThread(QObject* const parent,
                                        const cv::Mat& image,
                                        ImageQualityCalculator* const calculator,
                                        float weight_quality)
-  : QThread     (parent),
-    m_detector  (detector),
-    m_calculator(calculator),
-    m_image     (image),
-    m_weight    (weight_quality)
+    : QThread     (parent),
+      m_detector  (detector),
+      m_calculator(calculator),
+      m_image     (image),
+      m_weight    (weight_quality)
 {
 }
 
@@ -75,8 +70,10 @@ void ImageQualityThreadPool::addDetector(const cv::Mat& image,
                                          float weight_quality,
                                          DetectorDistortion* const detector)
 {
-    ImageQualityThread* thread = new ImageQualityThread(this, detector, image,
-                                                        m_calculator, weight_quality);
+    ImageQualityThread* const thread = new ImageQualityThread(this,
+                                                              detector, image,
+                                                              m_calculator,
+                                                              weight_quality);
 
     connect(thread, &QThread::finished,
             thread, &QObject::deleteLater);
@@ -94,7 +91,7 @@ void ImageQualityThreadPool::start()
 
 void ImageQualityThreadPool::end()
 {
-    for(auto& thread : m_threads)
+    for (auto& thread : m_threads)
     {
         thread->quit();
         thread->wait();

@@ -24,6 +24,11 @@
 
 #include "imagequalityparser_p.h"
 
+// C++ includes
+
+#include <thread>
+#include <memory>
+
 // Qt includes
 
 #include <QScopedPointer>
@@ -38,11 +43,7 @@
 #include "exposure_detector.h"
 #include "compression_detector.h"
 #include "blur_detector.h"
-
-#include <thread>
-#include <memory>
-
-#include "imagequality_thread.h"
+#include "imagequalitythread.h"
 
 namespace Digikam
 {
@@ -66,11 +67,11 @@ ImageQualityParser::~ImageQualityParser()
 void ImageQualityParser::startAnalyse()
 {
 
-    float finalQuality          = -1.0;
+    float finalQuality = -1.0;
 
     // const DetectorDistortion detector(d->image);
 
-    cv::Mat cvImage = DetectorDistortion::prepareForDetection(d->image);
+    cv::Mat cvImage    = DetectorDistortion::prepareForDetection(d->image);
 
     cv::Mat grayImage;
 
@@ -169,8 +170,8 @@ void ImageQualityParser::startAnalyse()
         {
             *d->label = RejectedLabel;
         }
-        else if (((int)finalQuality >   d->imq.rejectedThreshold) &&
-                 ((int)finalQuality <=  d->imq.acceptedThreshold))
+        else if (((int)finalQuality >  d->imq.rejectedThreshold) &&
+                 ((int)finalQuality <= d->imq.acceptedThreshold))
         {
             *d->label = PendingLabel;
         }

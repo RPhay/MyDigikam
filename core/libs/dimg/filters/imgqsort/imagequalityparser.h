@@ -31,9 +31,7 @@
 #include "digikam_export.h"
 #include "digikam_globals.h"
 #include "imagequalitycontainer.h"
-
 #include "digikam_opencv.h"
-
 
 namespace Digikam
 {
@@ -44,7 +42,8 @@ class DIGIKAM_EXPORT ImageQualityParser : public QObject
 
 public:
 
-    /** Standard constructor with picklabel container to fill at end of analyze.
+    /**
+     * Standard constructor with picklabel container to fill at end of analyze.
      */
     explicit ImageQualityParser(const DImg& image,
                                 const ImageQualityContainer& settings,
