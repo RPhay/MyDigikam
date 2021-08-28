@@ -7,7 +7,7 @@
  * Description : Image Quality Calculor
  *
  * Copyright (C) 2013-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (C) 2013-2021 by Phuoc Khanh Le <phuockhanhnk94 at gmail dot com>
+ * Copyright (C) 2021      by Phuoc Khanh Le <phuockhanhnk94 at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -53,14 +53,20 @@ public:
     explicit ImageQualityCalculator();
     ~ImageQualityCalculator();
 
-    float calculateQuality()  const;
-    void addDetectionResult(const QString& name, const float score, const float weight) const;
+    float calculateQuality()                    const;
+    void addDetectionResult(const QString& name,
+                            const float score,
+                            const float weight) const;
 
 private:
 
-    void normalizeWeight() const;
-    void adjustWeightByQualityLevel() const;
-    int numberDetectors() const;
+    void normalizeWeight()                      const;
+    void adjustWeightByQualityLevel()           const;
+    int  numberDetectors()                      const;
+
+    // Disable
+    ImageQualityCalculator(const ImageQualityCalculator&)            = delete;
+    ImageQualityCalculator& operator=(const ImageQualityCalculator&) = delete;
 
 private:
 
@@ -68,6 +74,6 @@ private:
     Private* const d;
 };
 
-}
+} // namespace Digikam
 
 #endif // DIGIKAM_IMAGE_QUALITY_CALCULATOR_H
