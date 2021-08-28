@@ -218,7 +218,6 @@ void DXmlGuiWindow::closeEvent(QCloseEvent* e)
     }
 
     KXmlGuiWindow::closeEvent(e);
-    e->accept();
 }
 
 void DXmlGuiWindow::setFullScreenOptions(int options)
