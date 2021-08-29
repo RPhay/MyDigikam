@@ -83,3 +83,4 @@ METADATAENGINE_TESTS_BUILD(tagsreadwrite_utest.cpp)
 METADATAENGINE_TESTS_BUILD(usexmpsidecar_utest.cpp)
 
 add_subdirectory(exiftool)
+add_subdirectory(focuspoint)
