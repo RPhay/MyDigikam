@@ -3,10 +3,11 @@
  * This file is a part of digiKam project
  * https://www.digikam.org
  *
- * Date        : 2010-09-17
+ * Date        : 28/08/2021
  * Description : Managing of focus point items on a GraphicsDImgView
  *
- * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2021 by Phuoc Khanh Le <phuockhanhnk94 at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -27,8 +28,8 @@
 #include "focuspointgroup.h"
 
 // Local includes
-#include "focuspointitem.h"
 
+#include "focuspointitem.h"
 
 namespace Digikam
 {
@@ -42,6 +43,7 @@ enum FocusPointGroupState
 
 class Q_DECL_HIDDEN FocusPointGroup::Private
 {
+
 public:
 
     explicit Private(FocusPointGroup* const q);
@@ -63,9 +65,9 @@ public:
     FocusPointGroupState        state;
     ItemVisibilityController*   visibilityController;
 
-    FocusPointGroup* const     q;
+    FocusPointGroup* const      q;
 };
 
-}
+} // namespace Digikam
 
-#endif //DIGIKAM_FOCUSPOINT_GROUP_P_H
+#endif // DIGIKAM_FOCUSPOINT_GROUP_P_H

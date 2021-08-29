@@ -1,21 +1,13 @@
-#ifndef DIGIKAM_FOCUSPOINT_ITEM_H
-#define DIGIKAM_FOCUSPOINT_ITEM_H
-
-// Qt includes
-
-#include <QObject>
-#include <QGraphicsWidget>
-
-// Local includes
 /* ============================================================
  *
  * This file is a part of digiKam project
  * https://www.digikam.org
  *
- * Date        : 2010-09-17
- * Description : Focus point tag region item
+ * Date        : 28/08/2021
+ * Description : Managing of focus point items on a GraphicsDImgView
  *
- * Copyright (C) 2010-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
+ * Copyright (C) 2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2021 by Phuoc Khanh Le <phuockhanhnk94 at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -30,10 +22,19 @@
  *
  * ============================================================ */
 
+#ifndef DIGIKAM_FOCUSPOINT_ITEM_H
+#define DIGIKAM_FOCUSPOINT_ITEM_H
+
+// Qt includes
+
+#include <QObject>
+#include <QLabel>
+#include <QGraphicsWidget>
+
+// Local includes
+
 #include "regionframeitem.h"
 #include "focuspoint.h"
-
-#include <QLabel>
 
 namespace Digikam
 {
@@ -55,12 +56,13 @@ public:
 
 protected:
 
-    FocusPoint          m_point;
-    QColor              m_color;
-    QLabel*             m_widgetName;
-    float               m_width;
+    FocusPoint m_point;
+    QColor     m_color;
+    QLabel*    m_widgetName;
+    float      m_width;
 
 protected:
+
     void paint(QPainter* painter, const QStyleOptionGraphicsItem*, QWidget*);
 
 private:

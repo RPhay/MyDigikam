@@ -3,10 +3,11 @@
  * This file is a part of digiKam project
  * https://www.digikam.org
  *
- * Date        : 2010-09-17
+ * Date        : 28/08/2021
  * Description : Managing of focus point items on a GraphicsDImgView
  *
- * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2021 by Phuoc Khanh Le <phuockhanhnk94 at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -109,7 +110,7 @@ void FocusPointGroup::setVisible(bool visible)
 {
     d->visibilityController->setShallBeShown(visible);
 
-    if(visible)
+    if (visible)
     {
         clear();
         load();
@@ -338,9 +339,9 @@ void FocusPointGroup::cancelAddItem()
 bool FocusPointGroup::isAllowedToAddFocusPoint() const
 {
     FocusPointsExtractor extractor(nullptr, d->info.filePath());
+
     return !extractor.isAFPointsReadOnly();
 }
-
 
 } // namespace Digikam
 
