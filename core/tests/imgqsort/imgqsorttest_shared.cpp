@@ -87,7 +87,7 @@ ImageQualityContainer ImgQSortTest_ArrangeSettings (DetectionType type)
     return settings;
 }
 
-ImageQualityContainer ImgQSortTest_ArrangeCustomSettings (const CustomDetection& customSetting)
+ImageQualityContainer ImgQSortTest_ArrangeCustomSettings(const CustomDetection& customSetting)
 {
     qCInfo(DIGIKAM_TESTS_LOG)  << "Detection type activate Blur "<< customSetting.detectBlur
                                << "Noise "      << customSetting.detectNoise
@@ -152,4 +152,4 @@ QHash<QString, int> ImgQSortTest_ParseTestImagesCustomDetection(const CustomDete
     return ImgQSortTest_ParseTestImagesCore(settings, list);
 }
 
-}
+} // namespace Digikam

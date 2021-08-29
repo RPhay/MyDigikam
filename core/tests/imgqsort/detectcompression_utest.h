@@ -3,10 +3,11 @@
  * This file is a part of digiKam project
  * https://www.digikam.org
  *
- * Date        : 2009-02-04
+ * Date        : 28/08/2021
  * Description : an unit-test to detect image quality level
  *
- * Copyright (C) 2011-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2021 by Phuoc Khanh Le <phuockhanhnk94 at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -21,8 +22,8 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_IMGQSORT_TEST_DETECT_COMPRESSION_H
-#define DIGIKAM_IMGQSORT_TEST_DETECT_COMPRESSION_H
+#ifndef DIGIKAM_DETECT_COMPRESSION_UTEST_H
+#define DIGIKAM_DETECT_COMPRESSION_UTEST_H
 
 // Qt includes
 
@@ -34,7 +35,6 @@
 #include "imgqsorttest.h"
 
 namespace Digikam
-
 {
 
 class ImgQSortTestDetectCompression : public ImgQSortTest
@@ -45,24 +45,21 @@ public:
 
     explicit ImgQSortTestDetectCompression(QObject* const parent = nullptr);
 
-private:
-
 private Q_SLOTS:
 
     void testParseTestImagesForCompressionDetection();
     void testParseTestImagesForCompressionDetection_failCase();
-
 };
 
 DataTestCases const dataTestCases =
-    {
-        {QLatin1String("compressionDetection"), PairImageQuality(QLatin1String("test_compressed_2.jpg"),2)},
-        {QLatin1String("compressionDetection"), PairImageQuality(QLatin1String("test_compressed_4.jpg"),2)},
-        {QLatin1String("compressionDetection"), PairImageQuality(QLatin1String("test_compressed_9.jpg"),3)},
+{
+    {QLatin1String("compressionDetection"),          PairImageQuality(QLatin1String("test_compressed_2.jpg"),2)},
+    {QLatin1String("compressionDetection"),          PairImageQuality(QLatin1String("test_compressed_4.jpg"),2)},
+    {QLatin1String("compressionDetection"),          PairImageQuality(QLatin1String("test_compressed_9.jpg"),3)},
 
-        {QLatin1String("compressionDetection_failCase"), PairImageQuality(QLatin1String("test_compressed_1.jpg"),1)}, //False case : Pending instead of Accepted
-    };
+    {QLatin1String("compressionDetection_failCase"), PairImageQuality(QLatin1String("test_compressed_1.jpg"),1)}, //False case : Pending instead of Accepted
+};
 
-}
+} // namespace Digikam
 
-#endif // DIGIKAM_IMGQSORT_TEST_DETECT_COMPRESSION_H
+#endif // DIGIKAM_DETECT_COMPRESSION_UTEST_H

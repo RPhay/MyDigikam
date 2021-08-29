@@ -344,4 +344,3 @@ bool FocusPointGroup::isAllowedToAddFocusPoint() const
 }
 
 } // namespace Digikam
-

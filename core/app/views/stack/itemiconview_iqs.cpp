@@ -56,4 +56,4 @@ void ItemIconView::slotImageQualitySorter()
             thread, &QObject::deleteLater);
 }
 
-}
+} // namespace Digikam
