@@ -46,8 +46,8 @@ public:
     {
     };
 
-    ExifToolParser*                 exifTool;
-    QString                         path;
+    ExifToolParser* exifTool;
+    QString         path;
 };
 
 FocusPointsWriter::FocusPointsWriter(QObject* const parent, const QString& path)
@@ -101,9 +101,12 @@ void FocusPointsWriter::writeFocusPoint(const FocusPoint& point)
 
 void FocusPointsWriter::writeFocusPoint(const QRectF& rectF)
 {
-    FocusPoint point{static_cast<float> (rectF.topLeft().x() + 0.5 * rectF.width()),
-                     static_cast<float> (rectF.topLeft().y() + 0.5 * rectF.height()),
-                     static_cast<float> (rectF.width()), static_cast<float>(rectF.height())};
+    FocusPoint point
+    {
+        static_cast<float> (rectF.topLeft().x() + 0.5 * rectF.width()),
+        static_cast<float> (rectF.topLeft().y() + 0.5 * rectF.height()),
+        static_cast<float> (rectF.width()), static_cast<float>(rectF.height())
+    };
 
     writeFocusPoint(point);
 }

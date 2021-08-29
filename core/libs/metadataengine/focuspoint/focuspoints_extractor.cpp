@@ -39,7 +39,7 @@ public:
 
     explicit Private()
         : exifToolAvailable(false),
-          afPointsReadOnly(true)
+          afPointsReadOnly (true)
     {
     }
 
@@ -53,7 +53,7 @@ FocusPointsExtractor::FocusPointsExtractor(QObject* const parent,const QString& 
     : QObject(parent),
       d      (new Private)
 {
-    QScopedPointer<ExifToolParser> const exiftool (new ExifToolParser(this));
+    QScopedPointer<ExifToolParser> const exiftool(new ExifToolParser(this));
 
     exiftool->load(image_path);
 
@@ -67,7 +67,7 @@ FocusPointsExtractor::~FocusPointsExtractor()
     delete d;
 }
 
-QVariant FocusPointsExtractor::findValue(const QString& tagName,bool isList) const
+QVariant FocusPointsExtractor::findValue(const QString& tagName, bool isList) const
 {
     QVariantList result = d->metadata.value(tagName);
 
@@ -91,7 +91,7 @@ QVariant FocusPointsExtractor::findValue(const QString& tagNameRoot, const QStri
     return findValue(tagNameRoot + QLatin1String(".") + key,isList);
 }
 
-QVariant FocusPointsExtractor::findValueFirstMatch(const QStringList& listTagNames,bool isList) const
+QVariant FocusPointsExtractor::findValueFirstMatch(const QStringList& listTagNames, bool isList) const
 {
     for (const QString& tagName : listTagNames)
     {
@@ -106,7 +106,7 @@ QVariant FocusPointsExtractor::findValueFirstMatch(const QStringList& listTagNam
     return QVariant();
 }
 
-QVariant FocusPointsExtractor::findValueFirstMatch(const QString& tagNameRoot,const QStringList& keys, bool isList) const
+QVariant FocusPointsExtractor::findValueFirstMatch(const QString& tagNameRoot, const QStringList& keys, bool isList) const
 {
     for (const QString& key : keys)
     {

@@ -35,12 +35,16 @@ namespace Digikam
 namespace
 {
 
-FocusPoint create_af_point(float afPointWidth, float afPointHeight,
-                           float af_x_position, float af_y_position)
+FocusPoint create_af_point(float afPointWidth,
+                           float afPointHeight,
+                           float af_x_position,
+                           float af_y_position)
 {
-    return FocusPoint(af_x_position, af_y_position,
-                      afPointWidth, afPointHeight,
-                      FocusPoint::TypePoint::SelectedInFocus);;
+    return FocusPoint(af_x_position,
+                      af_y_position,
+                      afPointWidth,
+                      afPointHeight,
+                      FocusPoint::TypePoint::SelectedInFocus);
 }
 
 } // namespace
@@ -75,8 +79,16 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_default() c
         return ListAFPoints();
     }
 
-    return ListAFPoints{create_af_point(afPointWidth.toFloat(), afPointHeight.toFloat(),
-                                        af_x_position.toFloat(), af_y_position.toFloat())};
+    return
+    (
+        ListAFPoints
+        {
+            create_af_point(afPointWidth.toFloat(),
+                            afPointHeight.toFloat(),
+                            af_x_position.toFloat(),
+                            af_y_position.toFloat())
+        }
+    );
 }
 
 } // namespace Digikam

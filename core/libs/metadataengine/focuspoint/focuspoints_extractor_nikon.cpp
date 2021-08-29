@@ -35,9 +35,12 @@ namespace Digikam
 namespace NikonInternal
 {
 
-FocusPoint create_af_point(float imageWidth, float imageHeight,
-                           float afPointWidth, float afPointHeight,
-                           float af_x_position, float af_y_position)
+FocusPoint create_af_point(float imageWidth,
+                           float imageHeight,
+                           float afPointWidth,
+                           float afPointHeight,
+                           float af_x_position,
+                           float af_y_position)
 {
     return FocusPoint(af_x_position / imageWidth,
                       af_y_position / imageHeight,
@@ -72,9 +75,9 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_nikon() con
                                     );
 
     imageHeight = findValueFirstMatch(QStringList()
-                                     << QLatin1String("MakerNotes.Nikon.Camera.AFImageHeight")
-                                     << QLatin1String("EXIF.ExifIFD.Image.ExifImageHeight")
-                                    );
+                                      << QLatin1String("MakerNotes.Nikon.Camera.AFImageHeight")
+                                      << QLatin1String("EXIF.ExifIFD.Image.ExifImageHeight")
+                                     );
 
     if (imageWidth.isNull() || imageHeight.isNull())
     {
@@ -83,8 +86,8 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_nikon() con
 
     // Get size of point
 
-    QVariant afPointWidth  = findValue(TagNameRoot,QLatin1String("AFAreaWidth"));
-    QVariant afPointHeight = findValue(TagNameRoot,QLatin1String("AFAreaHeight"));
+    QVariant afPointWidth  = findValue(TagNameRoot, QLatin1String("AFAreaWidth"));
+    QVariant afPointHeight = findValue(TagNameRoot, QLatin1String("AFAreaHeight"));
 
     if ((afPointWidth.isNull()) || (afPointHeight.isNull()))
     {
@@ -93,17 +96,26 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_nikon() con
 
     // Get coordinate of af points
 
-    QVariant af_x_position = findValue(TagNameRoot,QLatin1String("AFAreaXPosition")) ;
-    QVariant af_y_position = findValue(TagNameRoot,QLatin1String("AFAreaYPosition")) ;
+    QVariant af_x_position = findValue(TagNameRoot, QLatin1String("AFAreaXPosition"));
+    QVariant af_y_position = findValue(TagNameRoot, QLatin1String("AFAreaYPosition"));
 
     if (af_x_position.isNull() || af_y_position.isNull())
     {
         return getAFPoints_default();
     }
 
-    return ListAFPoints{NikonInternal::create_af_point(imageWidth.toFloat(), imageHeight.toFloat(),
-                                                       afPointWidth.toFloat(), afPointHeight.toFloat(),
-                                                       af_x_position.toFloat(), af_y_position.toFloat())};
+    return
+    (
+        ListAFPoints
+        {
+            NikonInternal::create_af_point(imageWidth.toFloat(),
+                                           imageHeight.toFloat(),
+                                           afPointWidth.toFloat(),
+                                           afPointHeight.toFloat(),
+                                           af_x_position.toFloat(),
+                                           af_y_position.toFloat())
+        }
+    );
 }
 
 } // namspace Digikam

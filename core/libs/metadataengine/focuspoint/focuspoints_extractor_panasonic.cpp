@@ -42,7 +42,8 @@ FocusPoint create_af_point(float af_x_position,
                            float afPointWidth,
                            float afPointHeight)
 {
-    return FocusPoint(af_x_position, af_y_position,
+    return FocusPoint(af_x_position,
+                      af_y_position,
                       afPointWidth  * RATIO_POINT_IMAGE,
                       afPointHeight * RATIO_POINT_IMAGE,
                       FocusPoint::TypePoint::SelectedInFocus);
@@ -83,8 +84,16 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_panasonic()
 
     // Add point
 
-    return ListAFPoints{PanasonicInternal::create_af_point(af_x_position, af_y_position,
-                                                           afPointWidth, afPointHeight)};
+    return
+    (
+        ListAFPoints
+        {
+            PanasonicInternal::create_af_point(af_x_position,
+                                               af_y_position,
+                                               afPointWidth,
+                                               afPointHeight)
+        }
+    );
 }
 
 } // namespace Digikam

@@ -45,10 +45,10 @@ public:
 
     enum TypePoint
     {
-        Inactive            = 0,
-        Infocus             = 1,
-        Selected            = 2,
-        SelectedInFocus     = 3
+        Inactive        = 0,
+        Infocus         = 1,
+        Selected        = 2,
+        SelectedInFocus = 3
     };
 
 public:
@@ -70,21 +70,21 @@ public:
 
 private:
 
-    float       x_position;
-    float       y_position;
-    float       width;
-    float       height;
-    TypePoint   type;
+    float     x_position;
+    float     y_position;
+    float     width;
+    float     height;
+    TypePoint type;
 };
 
 inline FocusPoint::TypePoint operator|(FocusPoint::TypePoint type1, FocusPoint::TypePoint type2)
 {
-    return static_cast<FocusPoint::TypePoint>(static_cast<int>(type1) | static_cast<int>(type2) );
+    return static_cast<FocusPoint::TypePoint>(static_cast<int>(type1) | static_cast<int>(type2));
 }
 
 inline FocusPoint::TypePoint operator&(FocusPoint::TypePoint type1, FocusPoint::TypePoint type2)
 {
-    return static_cast<FocusPoint::TypePoint>(static_cast<int>(type1) & static_cast<int>(type2) );
+    return static_cast<FocusPoint::TypePoint>(static_cast<int>(type1) & static_cast<int>(type2));
 }
 
 inline FocusPoint::TypePoint& operator|=(FocusPoint::TypePoint& type1, FocusPoint::TypePoint type2)
