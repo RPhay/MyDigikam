@@ -45,7 +45,7 @@ function updateReportToWebsite()
 
     git checkout -b dev remotes/origin/dev
 
-    git rm -r $WEBSITE_DIR/static/reports/$1/$4/*
+    git rm -r $WEBSITE_DIR/static/reports/$1/$4/* || true
     mkdir -p $WEBSITE_DIR/static/reports/$1/$4
     cp -r $2/* $WEBSITE_DIR/static/reports/$1/$4/
 
