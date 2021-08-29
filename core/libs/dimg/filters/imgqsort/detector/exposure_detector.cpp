@@ -39,7 +39,9 @@ namespace Digikam
 
 class Q_DECL_HIDDEN ExposureDetector::Private
 {
+
 public:
+
     explicit Private()
       : threshold_overexposed       (245),
         threshold_demi_overexposed  (235),

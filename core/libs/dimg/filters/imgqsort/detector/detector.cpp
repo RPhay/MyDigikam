@@ -38,7 +38,7 @@ namespace Digikam
 {
 
 DetectorDistortion::DetectorDistortion(QObject* const parent)
-  : QObject(parent)
+    : QObject(parent)
 {
 }
 

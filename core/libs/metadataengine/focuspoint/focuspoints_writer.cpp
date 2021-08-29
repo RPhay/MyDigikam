@@ -3,10 +3,11 @@
  * This file is a part of digiKam project
  * https://www.digikam.org
  *
- * Date        :
+ * Date        : 28/08/2021
  * Description : Writer of focus points to exiftool data
  *
- * Copyright (C) 2020-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2021 by Phuoc Khanh Le <phuockhanhnk94 at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -23,15 +24,15 @@
 
 #include "focuspoints_writer.h"
 
-// Local includes
-
-#include "exiftoolparser.h"
-
 // Qt includes
 
 #include <QStringList>
 #include <QScopedPointer>
-#include <QDebug>
+
+// Local includes
+
+#include "exiftoolparser.h"
+#include "digikam_debug.h"
 
 namespace Digikam
 {
@@ -39,25 +40,23 @@ namespace Digikam
 class Q_DECL_HIDDEN FocusPointsWriter::Private
 {
 public:
-    explicit Private()
-      : exifTool(nullptr),
-        path(QString())
 
-    {};
+    explicit Private()
+      : exifTool(nullptr)
+    {
+    };
 
     ExifToolParser*                 exifTool;
     QString                         path;
 };
 
 FocusPointsWriter::FocusPointsWriter(QObject* const parent, const QString& path)
-  : QObject(parent),
-    d(new Private)
+    : QObject(parent),
+      d      (new Private)
 {
     d->exifTool = new ExifToolParser(this);
-
     d->exifTool->load(path);
-
-    d->path = path;
+    d->path     = path;
 }
 
 FocusPointsWriter::~FocusPointsWriter()
@@ -109,4 +108,4 @@ void FocusPointsWriter::writeFocusPoint(const QRectF& rectF)
     writeFocusPoint(point);
 }
 
-}
+} // namespace Digikam

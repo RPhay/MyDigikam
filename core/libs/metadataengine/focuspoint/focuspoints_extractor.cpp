@@ -3,10 +3,11 @@
  * This file is a part of digiKam project
  * https://www.digikam.org
  *
- * Date        :
+ * Date        : 28/08/2021
  * Description : Extraction of focus points by exiftool data
  *
- * Copyright (C) 2020-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2021 by Phuoc Khanh Le <phuockhanhnk94 at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -23,47 +24,42 @@
 
 #include "focuspoints_extractor.h"
 
-// Qt includes
-
-#include <QDebug>
-
 // Local includes
 
 #include "exiftoolparser.h"
+#include "digikam_debug.h"
 
 namespace Digikam
 {
 
 class Q_DECL_HIDDEN FocusPointsExtractor::Private
 {
+
 public:
+
     explicit Private()
-      : exifToolAvailable(false),
-        afPointsReadOnly(true)
-    {}
+        : exifToolAvailable(false),
+          afPointsReadOnly(true)
+    {
+    }
 
     ListAFPoints                    af_points;
-
     bool                            exifToolAvailable;
-
     ExifToolParser::ExifToolData    metadata;
-
     bool                            afPointsReadOnly;
 };
 
 FocusPointsExtractor::FocusPointsExtractor(QObject* const parent,const QString& image_path)
-    :  QObject(parent),
-       d(new Private)
+    : QObject(parent),
+      d      (new Private)
 {
     QScopedPointer<ExifToolParser> const exiftool (new ExifToolParser(this));
 
     exiftool->load(image_path);
 
     d->exifToolAvailable = exiftool->exifToolAvailable();
-
-    d->metadata = exiftool->currentData();
-
-    d->af_points = findAFPoints();
+    d->metadata          = exiftool->currentData();
+    d->af_points         = findAFPoints();
 }
 
 FocusPointsExtractor::~FocusPointsExtractor()
@@ -79,6 +75,7 @@ QVariant FocusPointsExtractor::findValue(const QString& tagName,bool isList) con
     {
         return QVariant();
     }
+
     if (isList)
     {
         return result[0].toString().split(QLatin1String(" "));
@@ -105,6 +102,7 @@ QVariant FocusPointsExtractor::findValueFirstMatch(const QStringList& listTagNam
             return tmp;
         }
     }
+
     return QVariant();
 }
 
@@ -119,6 +117,7 @@ QVariant FocusPointsExtractor::findValueFirstMatch(const QString& tagNameRoot,co
             return tmp;
         }
     }
+
     return QVariant();
 }
 
@@ -139,14 +138,17 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::findAFPoints() const
         {
             return getAFPoints_canon();
         }
+
         if (model == QLatin1String("NIKON"))
         {
             return getAFPoints_nikon();
         }
+
         if (model == QLatin1String("PANASONIC"))
         {
             return getAFPoints_panasonic();
         }
+
         if (model == QLatin1String("SONY"))
         {
             return getAFPoints_sony();
@@ -159,6 +161,7 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::findAFPoints() const
 FocusPointsExtractor::ListAFPoints FocusPointsExtractor::get_af_points(FocusPoint::TypePoint type)
 {
     ListAFPoints points;
+
     for (const auto point : d->af_points)
     {
         if (type == FocusPoint::TypePoint::Inactive)
@@ -176,6 +179,7 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::get_af_points(FocusPoin
             }
         }
     }
+
     return points;
 }
 
@@ -187,6 +191,7 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::get_af_points()
 bool FocusPointsExtractor::isAFPointsReadOnly() const
 {
     findAFPoints();
+
     return d->afPointsReadOnly;
 }
 
@@ -195,4 +200,4 @@ void FocusPointsExtractor::setAFPointsReadOnly(bool readOnly) const
     d->afPointsReadOnly = readOnly;
 }
 
-}
+} // namespace Digikam

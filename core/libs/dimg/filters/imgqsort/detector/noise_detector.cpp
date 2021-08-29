@@ -47,10 +47,10 @@ NoiseDetector::Mat3D initFiltersHaar()
 
     float mat_base[SIZE_FILTER][SIZE_FILTER] =
         {
-            {   0.5,            0.5,           0.5,            0.5           },
-            {   0.5,            0.5,          -0.5,           -0.5           },
-            {   0.7071,        -0.7071,        0.0,            0.0           },
-            {   0.0,            0.0,           0.7071,        -0.7071        }
+            {   0.5F,            0.5F,           0.5F,            0.5F           },
+            {   0.5F,            0.5F,          -0.5F,           -0.5F           },
+            {   0.7071F,        -0.7071F,        0.0F,            0.0F           },
+            {   0.0F,            0.0F,           0.7071F,        -0.7071F        }
         };
 
     cv::Mat mat_base_opencv = cv::Mat(SIZE_FILTER, SIZE_FILTER, CV_32FC1, &mat_base);
@@ -70,7 +70,9 @@ const NoiseDetector::Mat3D NoiseDetector::filtersHaar = initFiltersHaar();
 
 class Q_DECL_HIDDEN NoiseDetector::Private
 {
+
 public:
+
     explicit Private()
       : size_filter (4),
         alpha       (18.0),
@@ -82,7 +84,6 @@ public:
 
     float alpha;
     float beta;
-
 };
 
 // Main noise detection
@@ -109,7 +110,7 @@ float NoiseDetector::detect(const cv::Mat& image) const
 
     // Calculate variance and kurtosis
 
-    cv::Mat variance, kurtosis ;
+    cv::Mat variance, kurtosis;
 
     calculate_variance_kurtosis(channels, variance, kurtosis);
 
@@ -123,7 +124,6 @@ float NoiseDetector::detect(const cv::Mat& image) const
 NoiseDetector::Mat3D NoiseDetector::decompose_by_filter(const cv::Mat& image, const Mat3D& filters) const
 {
     Mat3D filtersUsed = filters.mid(1); // do not use first filter
-
     Mat3D channels;
 
     channels.reserve(filtersUsed.size());
@@ -194,8 +194,7 @@ cv::Mat NoiseDetector::raw_moment(const NoiseDetector::Mat3D& mat, int order) co
 
 cv::Mat NoiseDetector::pow_mat(const cv::Mat& mat, float order) const
 {
-    cv::Mat res = cv::Mat(mat.size().width, mat.size().height, CV_32FC1 );
-
+    cv::Mat res = cv::Mat(mat.size().width, mat.size().height, CV_32FC1);
     cv::pow(mat, order, res);
 
     return res;
@@ -204,16 +203,17 @@ cv::Mat NoiseDetector::pow_mat(const cv::Mat& mat, float order) const
 float NoiseDetector::mean_mat(const cv::Mat& mat) const
 {
     cv::Scalar mean,std;
-
     cv::meanStdDev(mat,mean,std);
 
     return mean[0];
 }
 
-// Normalize result to interval [0 - 1]
+/**
+ * Normalize result to interval [0 - 1]
+ */
 float NoiseDetector::normalize(const float number) const
 {
-    return 1.0 / (1.0 + qExp(-(number - d->alpha)/d->beta ));
+    return 1.0 / (1.0 + qExp(-(number - d->alpha)/d->beta));
 }
 
 } // namespace Digikam

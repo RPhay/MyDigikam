@@ -37,13 +37,17 @@ const float RATIO_POINT_IMAGE = 120; // this is a guess
 namespace SonyInternal
 {
 
-FocusPoint create_af_point(float imageWidth, float imageHeight,
-                                                 float afPointWidth, float afPointHeight,
-                                                 float af_x_position, float af_y_position)
+FocusPoint create_af_point(float imageWidth,
+                           float imageHeight,
+                           float afPointWidth,
+                           float afPointHeight,
+                           float af_x_position,
+                           float af_y_position)
 {
     return FocusPoint(af_x_position / imageWidth,
                       af_y_position / imageHeight,
-                      afPointWidth, afPointHeight,
+                      afPointWidth,
+                      afPointHeight,
                       FocusPoint::TypePoint::SelectedInFocus);
 }
 
@@ -54,8 +58,10 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_sony() cons
 {
     QString TagNameRoot = QLatin1String("MakerNotes.Sony.Camera");
 
-    QStringList af_info = findValue(TagNameRoot,QLatin1String("FocusLocation")).toString()
-                                                                               .split(QLatin1String(" "));
+    QStringList af_info = findValue(TagNameRoot, QLatin1String("FocusLocation")).toString()
+                                                                                .split(QLatin1String(" "));
+
+    qCDebug(DIGIKAM_DIMG_LOG) << "Sony Makernotes Foucus Location:" << af_info;
 
     if (af_info.size() < 5)
     {
@@ -69,7 +75,7 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_sony() cons
 
     // Get size of af points
 
-    float afPointWidth  = imageWidth * RATIO_POINT_IMAGE;
+    float afPointWidth  = imageWidth  * RATIO_POINT_IMAGE;
     float afPointHeight = imageHeight * RATIO_POINT_IMAGE;
 
     // Get coordinate of af points
@@ -77,9 +83,12 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_sony() cons
     float af_x_position = af_info[3].toFloat();
     float af_y_position = af_info[4].toFloat();
 
-    return ListAFPoints{SonyInternal::create_af_point(imageWidth, imageHeight,
-                                                      afPointWidth, afPointHeight,
-                                                      af_x_position, af_y_position)};
+    return ListAFPoints{SonyInternal::create_af_point(imageWidth,
+                                                      imageHeight,
+                                                      afPointWidth,
+                                                      afPointHeight,
+                                                      af_x_position,
+                                                      af_y_position)};
 }
 
 } // namespace Digikam

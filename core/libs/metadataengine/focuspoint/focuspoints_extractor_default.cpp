@@ -3,11 +3,12 @@
  * This file is a part of digiKam project
  * https://www.digikam.org
  *
- * Date        :
+ * Date        : 28/08/2021
  * Description : Extraction of focus points by exiftool data
  *
- * Copyright (C) 2020-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
- *
+ * Copyright (C) 2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2021 by Phuoc Khanh Le <phuockhanhnk94 at gmail dot com>
+
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
  * Public License as published by the Free Software Foundation;
@@ -23,11 +24,9 @@
 
 #include "focuspoints_extractor.h"
 
-// Qt includes
-
-#include <QDebug>
-
 // Local includes
+
+#include "digikam_debug.h"
 
 namespace Digikam
 {
@@ -44,16 +43,16 @@ FocusPoint create_af_point(float afPointWidth, float afPointHeight,
                       FocusPoint::TypePoint::SelectedInFocus);;
 }
 
-}
+} // namespace
 
 // Main function to extract af point
 FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_default() const
 {
     setAFPointsReadOnly(false);
 
-    QString TagNameRoot = QLatin1String("XMP.XMP-mwg-rs.Image");
+    QString TagNameRoot    = QLatin1String("XMP.XMP-mwg-rs.Image");
 
-    QString desc = findValue(TagNameRoot, QLatin1String("RegionDescription")).toString();
+    QString desc           = findValue(TagNameRoot, QLatin1String("RegionDescription")).toString();
 
     if (!desc.startsWith(QLatin1String("digikam")))
     {
@@ -68,7 +67,7 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_default() c
         return ListAFPoints();
     }
 
-    QVariant afPointWidth = findValue(TagNameRoot,  QLatin1String("RegionAreaW"));
+    QVariant afPointWidth  = findValue(TagNameRoot, QLatin1String("RegionAreaW"));
     QVariant afPointHeight = findValue(TagNameRoot, QLatin1String("RegionAreaH"));
 
     if (afPointWidth.isNull() || afPointHeight.isNull())
@@ -80,4 +79,4 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_default() c
                                         af_x_position.toFloat(), af_y_position.toFloat())};
 }
 
-}
+} // namespace Digikam

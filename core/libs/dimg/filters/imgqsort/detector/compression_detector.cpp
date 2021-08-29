@@ -116,7 +116,7 @@ float CompressionDetector::detect(const cv::Mat& image) const
 template <typename Function>
 cv::Mat CompressionDetector::checkEdgesBlock(const cv::Mat& gray_image, int blockSize, Function accessEdges) const
 {
-    cv::Mat res            = cv::Mat::zeros(gray_image.size(),CV_8UC1 );
+    cv::Mat res            = cv::Mat::zeros(gray_image.size(), CV_8UC1);
 
     auto accessGrayImageAt = accessEdges(gray_image);
     auto accessResAt       = accessEdges(res);
@@ -142,7 +142,7 @@ cv::Mat CompressionDetector::detectMonoColorRegion(const cv::Mat& image) const
 
     cv::Mat res             = rgbChannels[0] + rgbChannels[1] + rgbChannels[2];
 
-    cv::threshold(res,res,d->threshold_mono_color,1,cv::THRESH_BINARY_INV);
+    cv::threshold(res, res, d->threshold_mono_color, 1, cv::THRESH_BINARY_INV);
 
     return res;
 }
