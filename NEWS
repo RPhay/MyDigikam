@@ -131,7 +131,7 @@ BUGFIXES:
 120 ==> 441598 - There are two actions that use the same shortcut Ctrl + Alt + I.
 121 ==> 441600 - Attempting to look at configuration causes crash.
 122 ==> 441631 - Close changed image: cancel does not cancel.
-123 ==> 
+123 ==> 427071 - Importing pictures with faces tagged by picasa results in error "missing identities".
 124 ==> 
 125 ==> 
 126 ==> 
