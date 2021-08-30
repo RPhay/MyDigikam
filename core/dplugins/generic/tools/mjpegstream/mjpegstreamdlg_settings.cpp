@@ -7,6 +7,7 @@
  * Description : MJPEG Stream configuration dialog - Settings methods
  *
  * Copyright (C) 2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2021 by Quoc Hưng Tran <quochungtran1999 at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -53,7 +54,6 @@ void MjpegStreamDlg::readSettings()
     d->showRating->blockSignals(true);
     d->showTitle->blockSignals(true);
     d->osdFont->blockSignals(true);
-
 
     d->srvPort->setValue(d->settings.port);
     d->delay->setValue(d->settings.delay);
@@ -115,19 +115,14 @@ void MjpegStreamDlg::saveSettings()
 
 void MjpegStreamDlg::slotSettingsChanged()
 {
-    d->settings.port       = d->srvPort->value();
-    d->settings.delay      = d->delay->value();
-    d->settings.rate       = d->rate->value();
-    d->settings.quality    = d->quality->value();
-    d->settings.loop       = d->streamLoop->isChecked();
-    d->settings.outSize    = d->typeVal->currentIndex();
-    d->settings.effect     = (EffectMngr::EffectType)d->effVal->currentIndex();
-    d->settings.transition = (TransitionMngr::TransType)d->transVal->currentIndex();
-    d->effPreview->stopPreview();
-    d->effPreview->startPreview(d->settings.effect);
-    d->transPreview->stopPreview();
-    d->transPreview->startPreview(d->settings.transition);
-
+    d->settings.port                  = d->srvPort->value();
+    d->settings.delay                 = d->delay->value();
+    d->settings.rate                  = d->rate->value();
+    d->settings.quality               = d->quality->value();
+    d->settings.loop                  = d->streamLoop->isChecked();
+    d->settings.outSize               = d->typeVal->currentIndex();
+    d->settings.effect                = (EffectMngr::EffectType)d->effVal->currentIndex();
+    d->settings.transition            = (TransitionMngr::TransType)d->transVal->currentIndex();
     d->settings.printName             = d->showName->isChecked();
     d->settings.printDate             = d->showDate->isChecked();
     d->settings.printApertureFocal    = d->showApertureFocal->isChecked();
@@ -140,6 +135,11 @@ void MjpegStreamDlg::slotSettingsChanged()
     d->settings.printTags             = d->showTags->isChecked();
     d->settings.printRating           = d->showRating->isChecked();
     d->settings.osdFont               = d->osdFont->font();
+
+    d->effPreview->stopPreview();
+    d->effPreview->startPreview(d->settings.effect);
+    d->transPreview->stopPreview();
+    d->transPreview->startPreview(d->settings.transition);
 }
 
 } // namespace DigikamGenericMjpegStreamPlugin

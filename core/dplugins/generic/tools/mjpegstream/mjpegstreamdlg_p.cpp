@@ -7,6 +7,7 @@
  * Description : MJPEG Stream Server configuration dialog - Private container
  *
  * Copyright (C) 2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2021 by Quoc Hưng Tran <quochungtran1999 at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -26,34 +27,33 @@ namespace DigikamGenericMjpegStreamPlugin
 {
 
 MjpegStreamDlg::Private::Private()
-    : dirty           (false),
-      mngr            (MjpegServerMngr::instance()),
-      srvButton       (nullptr),
-      srvStatus       (nullptr),
-      srvPreview      (nullptr),
-      progress        (nullptr),
-      aStats          (nullptr),
-      separator       (nullptr),
-      iStats          (nullptr),
-      startOnStartup  (nullptr),
-      spacing         (0),
-      albumSupport    (false),
-      albumSelector   (nullptr),
-      listView        (nullptr),
-      buttons         (nullptr),
-      streamSettings  (nullptr),
-      srvPort         (nullptr),
-      delay           (nullptr),
-      rate            (nullptr),
-      quality         (nullptr),
-      streamLoop      (nullptr),
-      typeVal         (nullptr),
-      effVal          (nullptr),
-      effPreview      (nullptr),
-      transVal        (nullptr),
-      transPreview    (nullptr),
-      tabView         (nullptr),
-
+    : dirty               (false),
+      mngr                (MjpegServerMngr::instance()),
+      srvButton           (nullptr),
+      srvStatus           (nullptr),
+      srvPreview          (nullptr),
+      progress            (nullptr),
+      aStats              (nullptr),
+      separator           (nullptr),
+      iStats              (nullptr),
+      startOnStartup      (nullptr),
+      spacing             (0),
+      albumSupport        (false),
+      albumSelector       (nullptr),
+      listView            (nullptr),
+      buttons             (nullptr),
+      streamSettings      (nullptr),
+      srvPort             (nullptr),
+      delay               (nullptr),
+      rate                (nullptr),
+      quality             (nullptr),
+      streamLoop          (nullptr),
+      typeVal             (nullptr),
+      effVal              (nullptr),
+      effPreview          (nullptr),
+      transVal            (nullptr),
+      transPreview        (nullptr),
+      tabView             (nullptr),
       showName            (nullptr),
       showDate            (nullptr),
       showApertureFocal   (nullptr),
@@ -66,7 +66,6 @@ MjpegStreamDlg::Private::Private()
       showRating          (nullptr),
       showCapIfNoTitle    (nullptr),
       osdFont             (nullptr)
-
 {
 }
 

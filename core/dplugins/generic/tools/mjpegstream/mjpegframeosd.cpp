@@ -7,6 +7,7 @@
  * Description : MJPEG frame on screen display.
  *
  * Copyright (C) 2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2021 by Quoc Hưng Tran <quochungtran1999 at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -31,11 +32,14 @@
 #include <QPainter>
 #include <QDateTime>
 
+// KDE includes
+
+#include <klocalizedstring.h>
+
 // Local includes
 
 #include "digikam_debug.h"
 #include "itempropertiestab.h"
-#include <klocalizedstring.h>
 
 namespace DigikamGenericMjpegStreamPlugin
 {
@@ -72,8 +76,10 @@ void MjpegFrameOsd::PopulateOSD(QImage& frm,
                                 const QUrl& url,
                                 const MjpegStreamSettings& settings)
 {
-    DInfoInterface::DInfoMap info = settings.iface->itemInfo(url);       // First stage is to get the information map from host application.
-    DItemInfo item(info);   
+    // First stage is to get the information map from host application.
+
+    DInfoInterface::DInfoMap info = settings.iface->itemInfo(url);
+    DItemInfo item(info);
 
     QString comment  = item.comment();
     QString title    = item.title();
@@ -81,7 +87,7 @@ void MjpegFrameOsd::PopulateOSD(QImage& frm,
     int rating       = item.rating();
 
     QString str;
-    
+
     m_descFnt = settings.osdFont;
 
     // Display tag names.
@@ -99,7 +105,7 @@ void MjpegFrameOsd::PopulateOSD(QImage& frm,
 
         if (!title.isEmpty())
         {
-            str     += title;   
+            str     += title;
             m_desc.append(QString::fromLatin1("\n%1").arg(str));
         }
     }
@@ -123,7 +129,7 @@ void MjpegFrameOsd::PopulateOSD(QImage& frm,
     {
         str.clear();
         QString name = url.fileName();
-        
+
         if (!name.isEmpty())
         {
             str += name;
@@ -169,7 +175,7 @@ void MjpegFrameOsd::PopulateOSD(QImage& frm,
             ItemPropertiesTab::shortenedModelInfo(model);
             str += model;
         }
-        
+
         if (!str.isEmpty())
         {
             m_desc.append(QString::fromLatin1("\n%1").arg(str));
@@ -214,7 +220,7 @@ void MjpegFrameOsd::PopulateOSD(QImage& frm,
 
             str += i18n("%1 ISO", sensitivity);
         }
-        
+
         if (!str.isEmpty())
         {
             m_desc.append(QString::fromLatin1("\n%1").arg(str));
@@ -279,7 +285,7 @@ void MjpegFrameOsd::PopulateOSD(QImage& frm,
 
         if (dateTime.isValid())
         {
-            // str = QLocale().toString(dateTime, QLocale::ShortFormat);   
+            // str = QLocale().toString(dateTime, QLocale::ShortFormat);
             m_descDate = dateTime;
         }
     }
@@ -299,7 +305,7 @@ void MjpegFrameOsd::printTags(QStringList& tags)
 {
     tags.sort();
 
-    QString str = tags.join(QLatin1String(", "));  
+    QString str = tags.join(QLatin1String(", "));
 
     if (!str.isEmpty())
     {
@@ -384,7 +390,7 @@ void MjpegFrameOsd::insertOsdToFrame(QImage& frm,
                                      const QUrl& url,
                                      const MjpegStreamSettings& settings)
 {
-    // TODO: use settings.iface to populate items properties based on url,
+    // Populate items properties based on url,
     // eg. album name, rating, tags, labels, date, etc.
 
     PopulateOSD(frm, url, settings);
@@ -460,12 +466,10 @@ void MjpegFrameOsd::insertOsdToFrame(QImage& frm,
     m_desc.clear();
 }
 
-void MjpegFrameOsd::insertMessageOsdToFrame(QImage &frm, 
+void MjpegFrameOsd::insertMessageOsdToFrame(QImage &frm,
                                             const QSize& JPEGsize,
                                             const QString& mess)
 {
-    // m_erreur = QLatin1String("End of stream");
-
     QString message = mess;
     QPainter p(&frm);
 
@@ -484,7 +488,7 @@ void MjpegFrameOsd::insertMessageOsdToFrame(QImage &frm,
     p.setFont(m_messFnt);
 
     QRect messRect = messMt.boundingRect(0, 0, frm.width(), frm.height(), 0, message);
-    
+
     // print message in the middle of frame
 
     QRect bgErreurRect(m_messPos.x(),
@@ -495,7 +499,7 @@ void MjpegFrameOsd::insertMessageOsdToFrame(QImage &frm,
     p.fillRect(bgErreurRect, m_messBg);
 
     p.setPen(QPen(Qt::white));
-    p.drawText(bgErreurRect, m_messAlign, message);    
+    p.drawText(bgErreurRect, m_messAlign, message);
 }
 
 } // namespace DigikamGenericMjpegStreamPlugin

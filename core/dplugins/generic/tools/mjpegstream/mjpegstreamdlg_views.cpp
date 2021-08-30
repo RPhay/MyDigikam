@@ -7,6 +7,7 @@
  * Description : MJPEG Stream configuration dialog - Views methods
  *
  * Copyright (C) 2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2021 by Quoc Hưng Tran <quochungtran1999 at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -306,38 +307,38 @@ void MjpegStreamDlg::setupEffectView()
 
 void MjpegStreamDlg::setupOSDView()
 {
-    QWidget* const OSDSettings = new QWidget(d->tabView);   
+    QWidget* const OSDSettings = new QWidget(d->tabView);
 
     d->showName               = new QCheckBox(i18n("Show image file name"), OSDSettings);
     d->showName->setWhatsThis(i18n("Show the image file name at the bottom of the screen."));
-    
+
     d->showDate               = new QCheckBox(i18n("Show image creation date"), OSDSettings);
     d->showDate->setWhatsThis(i18n("Show the image creation time/date at the bottom of the screen."));
-    
+
     d->showApertureFocal      = new QCheckBox(i18n("Show camera aperture and focal length"), OSDSettings);
     d->showApertureFocal->setWhatsThis(i18n("Show the camera aperture and focal length at the bottom of the screen."));
-    
+
     d->showExpoSensitivity    = new QCheckBox(i18n("Show camera exposure and sensitivity"), OSDSettings);
     d->showExpoSensitivity->setWhatsThis(i18n("Show the camera exposure and sensitivity at the bottom of the screen."));
-    
+
     d->showMakeModel          = new QCheckBox(i18n("Show camera make and model"), OSDSettings);
     d->showMakeModel->setWhatsThis(i18n("Show the camera make and model at the bottom of the screen."));
-    
+
     d->showLensModel          = new QCheckBox(i18n("Show camera lens model"), OSDSettings);
     d->showLensModel->setWhatsThis(i18n("Show the camera lens model at the bottom of the screen."));
-    
+
     d->showComment            = new QCheckBox(i18n("Show image caption"), OSDSettings);
     d->showComment->setWhatsThis(i18n("Show the image caption at the bottom of the screen."));
-    
+
     d->showTitle              = new QCheckBox(i18n("Show image title"), OSDSettings);
     d->showTitle->setWhatsThis(i18n("Show the image title at the bottom of the screen."));
-    
+
     d->showCapIfNoTitle       = new QCheckBox(i18n("Show image caption if it has not title"), OSDSettings);
     d->showCapIfNoTitle->setWhatsThis(i18n("Show the image caption at the bottom of the screen if no titles existed."));
 
     d->showRating             = new QCheckBox(i18n("Show image rating"), OSDSettings);
     d->showRating->setWhatsThis(i18n("Show the digiKam image rating at the bottom of the screen."));
-    
+
     d->showTags               = new QCheckBox(i18n("Show image tags"), OSDSettings);
     d->showTags->setWhatsThis(i18n("Show the digiKam image tag names at the bottom of the screen."));
 
@@ -358,30 +359,30 @@ void MjpegStreamDlg::setupOSDView()
     grid->addWidget(d->showTags,             6, 0, 1, 1);
     grid->addWidget(d->osdFont,              7, 0, 1, 2);
 
-    
+
     d->tabView->insertTab(Private::OSD, OSDSettings, i18nc("@title", "OSD"));
-    
+
     connect(d->showName, SIGNAL(stateChanged(int)),
             this, SLOT(slotSettingsChanged()));
-        
+
     connect(d->showApertureFocal, SIGNAL(stateChanged(int)),
             this, SLOT(slotSettingsChanged()));
-    
+
     connect(d->showDate, SIGNAL(stateChanged(int)),
             this, SLOT(slotSettingsChanged()));
-                
+
     connect(d->showMakeModel, SIGNAL(stateChanged(int)),
             this, SLOT(slotSettingsChanged()));
-                
+
     connect(d->showExpoSensitivity, SIGNAL(stateChanged(int)),
             this, SLOT(slotSettingsChanged()));
-                
+
     connect(d->showLensModel, SIGNAL(stateChanged(int)),
             this, SLOT(slotSettingsChanged()));
-       
+
     connect(d->showComment, SIGNAL(stateChanged(int)),
             this, SLOT(slotSettingsChanged()));
-                
+
    // Disable and uncheck the "Show captions if no title" checkbox if the "Show comment" checkbox enabled
 
     connect(d->showComment, SIGNAL(stateChanged(int)),
@@ -389,13 +390,13 @@ void MjpegStreamDlg::setupOSDView()
 
     connect(d->showComment, SIGNAL(toggled(bool)),
             d->showCapIfNoTitle, SLOT(setDisabled(bool)));
-                
+
     connect(d->showTitle, SIGNAL(stateChanged(int)),
-            this, SLOT(slotSettingsChanged()));    
-                
+            this, SLOT(slotSettingsChanged()));
+
     connect(d->showCapIfNoTitle, SIGNAL(stateChanged(int)),
             this, SLOT(slotSettingsChanged()));
-                
+
     connect(d->showTags, SIGNAL(stateChanged(int)),
             this, SLOT(slotSettingsChanged()));
 
@@ -405,6 +406,5 @@ void MjpegStreamDlg::setupOSDView()
     connect(d->osdFont, SIGNAL(signalFontChanged()),
             this, SLOT(slotSettingsChanged()));
 }
-
 
 } // namespace DigikamGenericMjpegStreamPlugin

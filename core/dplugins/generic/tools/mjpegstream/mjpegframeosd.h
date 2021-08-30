@@ -7,6 +7,7 @@
  * Description : MJPEG frame on screen display.
  *
  * Copyright (C) 2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2021 by Quoc Hưng Tran <quochungtran1999 at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -61,7 +62,7 @@ public:
     QImage        m_descLogo;
 
     // -----
-    
+
     QPoint        m_messPos;
     QFont         m_messFnt;
     Qt::Alignment m_messAlign;
@@ -75,7 +76,7 @@ public:
     void insertOsdToFrame(QImage& frame,
                           const QUrl& url,
                           const MjpegStreamSettings& settings);
-    
+
     /**
      * Populate OSD items properties base on Url
      */
@@ -84,19 +85,19 @@ public:
                      const MjpegStreamSettings& settings);
 
     /**
-     * print comments 
+     * print comments
      */
     void printComments(const QString& comments);
 
     /**
-     * print tags 
+     * print tags
      */
     void printTags(QStringList& tags);
-    
+
     /**
      * Insert message OSD on broken frame or end frame
      */
-    void insertMessageOsdToFrame(QImage &frame, 
+    void insertMessageOsdToFrame(QImage &frame,
                                  const QSize& JPEGsize,
                                  const QString& mess);
 };
