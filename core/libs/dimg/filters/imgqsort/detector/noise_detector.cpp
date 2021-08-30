@@ -75,8 +75,8 @@ public:
 
     explicit Private()
       : size_filter (4),
-        alpha       (18.0),
-        beta        (7.0)
+        alpha       (18.0F),
+        beta        (7.0F)
     {
     }
 
@@ -102,7 +102,7 @@ float NoiseDetector::detect(const cv::Mat& image) const
 {
     cv::Mat image_float = image;
 
-    image_float.convertTo(image_float,CV_32F);
+    image_float.convertTo(image_float, CV_32F);
 
     // Decompose to channels
 
@@ -132,7 +132,7 @@ NoiseDetector::Mat3D NoiseDetector::decompose_by_filter(const cv::Mat& image, co
     {
         cv::Mat tmp = cv::Mat(image.size().width, image.size().height, CV_32FC1);
 
-        cv::filter2D(image, tmp, -1, filter, cv::Point(-1,-1), 0.0, cv::BORDER_REPLICATE);
+        cv::filter2D(image, tmp, -1, filter, cv::Point(-1, -1), 0.0, cv::BORDER_REPLICATE);
 
         channels.push_back(tmp);
     }
@@ -151,9 +151,9 @@ void NoiseDetector::calculate_variance_kurtosis(const Mat3D& channels, cv::Mat& 
 
     // Calculate variance and kurtosis projection
 
-    variance = mu2 - pow_mat(mu1,2);
+    variance = mu2 - pow_mat(mu1, 2);
 
-    kurtosis = (mu4 - 4.0*mu1.mul(mu3) + 6.0*pow_mat(mu1,2).mul(mu2) - 3.0*pow_mat(mu1,4)) / pow_mat(variance,2)-3.0;
+    kurtosis = (mu4 - 4.0 * mu1.mul(mu3) + 6.0 * pow_mat(mu1,2).mul(mu2) - 3.0 * pow_mat(mu1,4)) / pow_mat(variance, 2) - 3.0;
 
     cv::threshold(kurtosis,kurtosis,0, 0, cv::THRESH_TOZERO);
 }
@@ -213,7 +213,7 @@ float NoiseDetector::mean_mat(const cv::Mat& mat) const
  */
 float NoiseDetector::normalize(const float number) const
 {
-    return 1.0 / (1.0 + qExp(-(number - d->alpha)/d->beta));
+    return 1.0 / (1.0 + qExp(-(number - d->alpha) / d->beta));
 }
 
 } // namespace Digikam

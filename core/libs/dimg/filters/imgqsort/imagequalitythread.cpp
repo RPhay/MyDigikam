@@ -50,7 +50,7 @@ void ImageQualityThread::run()
 
 ImageQualityThreadPool::ImageQualityThreadPool(QObject* const parent,
                                                ImageQualityCalculator* const calculator)
-    : QObject(parent),
+    : QObject     (parent),
       m_calculator(calculator)
 {
 }
@@ -71,7 +71,8 @@ void ImageQualityThreadPool::addDetector(const cv::Mat& image,
                                          DetectorDistortion* const detector)
 {
     ImageQualityThread* const thread = new ImageQualityThread(this,
-                                                              detector, image,
+                                                              detector,
+                                                              image,
                                                               m_calculator,
                                                               weight_quality);
 

@@ -220,9 +220,9 @@ bool BlurDetector::isMotionBlur(const cv::Mat& frag) const
 
         for (const auto line : lines)
         {
-            float theta = (line[2] == line[0]) ? 0 : qAtan((line[3] - line[1]) / (line[2] - line[0]));
-            theta       = (theta < 0) ? theta + CV_PI : theta;
-            theta       = (theta < CV_PI/20) ?  CV_PI - theta : theta;
+            float theta = (line[2] == line[0]) ? 0              : qAtan((line[3] - line[1]) / (line[2] - line[0]));
+            theta       = (theta < 0)          ? theta + CV_PI  : theta;
+            theta       = (theta < CV_PI/20)   ?  CV_PI - theta : theta;
 
             list_theta.push_back(theta);
         }
@@ -246,7 +246,7 @@ bool BlurDetector::haveFocusRegion(const DImg& image) const
 
     d->af_points = extractor->get_af_points(FocusPoint::TypePoint::Selected);
 
-    return !d->af_points.isEmpty();
+    return (!d->af_points.isEmpty());
 }
 
 cv::Mat BlurDetector::getWeightMap(const cv::Mat& image) const
@@ -299,8 +299,10 @@ cv::Mat BlurDetector::detectBackgroundRegion(const cv::Mat& image)    const
     {
         for (int j = 0 ; j < nb_parts_col ; ++j)
         {
-            cv::Rect rect{j * d->part_size_mono_color, i * d->part_size_mono_color,
-                          d->part_size_mono_color, d->part_size_mono_color};
+            cv::Rect rect{j * d->part_size_mono_color,
+                          i * d->part_size_mono_color,
+                          d->part_size_mono_color,
+                          d->part_size_mono_color};
 
             cv::Mat subImg = image(rect);
 
