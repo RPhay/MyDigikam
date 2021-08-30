@@ -132,7 +132,7 @@ BUGFIXES:
 121 ==> 441600 - Attempting to look at configuration causes crash.
 122 ==> 441631 - Close changed image: cancel does not cancel.
 123 ==> 427071 - Importing pictures with faces tagged by picasa results in error "missing identities".
-124 ==> 
+124 ==> 441708 - Raw files imported and converted to dng lacks thumbnails (shows as TV static).
 125 ==> 
 126 ==> 
 127 ==> 
