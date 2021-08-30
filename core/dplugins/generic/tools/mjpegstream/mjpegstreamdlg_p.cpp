@@ -52,7 +52,21 @@ MjpegStreamDlg::Private::Private()
       effPreview      (nullptr),
       transVal        (nullptr),
       transPreview    (nullptr),
-      tabView         (nullptr)
+      tabView         (nullptr),
+
+      showName            (nullptr),
+      showDate            (nullptr),
+      showApertureFocal   (nullptr),
+      showExpoSensitivity (nullptr),
+      showMakeModel       (nullptr),
+      showLensModel       (nullptr),
+      showComment         (nullptr),
+      showTitle           (nullptr),
+      showTags            (nullptr),
+      showRating          (nullptr),
+      showCapIfNoTitle    (nullptr),
+      osdFont             (nullptr)
+
 {
 }
 

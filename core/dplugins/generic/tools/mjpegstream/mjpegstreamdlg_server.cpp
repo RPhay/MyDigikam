@@ -147,6 +147,8 @@ void MjpegStreamDlg::slotToggleMjpegServer()
     d->tabView->setTabEnabled(Private::Stream,     !b);
     d->tabView->setTabEnabled(Private::Effect,     !b);
     d->tabView->setTabEnabled(Private::Transition, !b);
+    d->tabView->setTabEnabled(Private::OSD,        !b);
+
     d->srvPort->setDisabled(b);
 }
 

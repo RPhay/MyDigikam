@@ -81,6 +81,7 @@ private:
     void updateServerStatus();
     bool setMjpegServerContents();
     bool startMjpegServer();
+    void setupOSDView();
 
 private Q_SLOTS:
 

@@ -59,6 +59,7 @@
 #include "transitionpreview.h"
 #include "effectpreview.h"
 #include "dcombobox.h"
+#include "dfontselect.h"
 
 namespace DigikamGenericMjpegStreamPlugin
 {
@@ -73,7 +74,8 @@ public:
         Server = 0,
         Stream,
         Transition,
-        Effect
+        Effect,
+        OSD
     };
 
 public:
@@ -110,6 +112,20 @@ public:
     DComboBox*          transVal;
     TransitionPreview*  transPreview;
     QTabWidget*         tabView;
+
+    QCheckBox*         showName;
+    QCheckBox*         showDate;
+    QCheckBox*         showApertureFocal;
+    QCheckBox*         showExpoSensitivity;
+    QCheckBox*         showMakeModel;
+    QCheckBox*         showLensModel;
+    QCheckBox*         showComment;
+    QCheckBox*         showTitle;
+    QCheckBox*         showTags;
+    QCheckBox*         showRating;
+    QCheckBox*         showCapIfNoTitle;
+    DFontSelect*       osdFont; 
+
     MjpegStreamSettings settings;
 };
 

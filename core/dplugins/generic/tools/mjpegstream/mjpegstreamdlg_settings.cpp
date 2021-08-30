@@ -41,6 +41,19 @@ void MjpegStreamDlg::readSettings()
     d->typeVal->blockSignals(true);
     d->effVal->blockSignals(true);
     d->transVal->blockSignals(true);
+    d->showDate->blockSignals(true);
+    d->showApertureFocal->blockSignals(true);
+    d->showCapIfNoTitle->blockSignals(true);
+    d->showComment->blockSignals(true);
+    d->showExpoSensitivity->blockSignals(true);
+    d->showLensModel->blockSignals(true);
+    d->showMakeModel->blockSignals(true);
+    d->showName->blockSignals(true);
+    d->showTags->blockSignals(true);
+    d->showRating->blockSignals(true);
+    d->showTitle->blockSignals(true);
+    d->osdFont->blockSignals(true);
+
 
     d->srvPort->setValue(d->settings.port);
     d->delay->setValue(d->settings.delay);
@@ -50,6 +63,18 @@ void MjpegStreamDlg::readSettings()
     d->typeVal->setCurrentIndex(d->settings.outSize);
     d->effVal->setCurrentIndex(d->settings.effect);
     d->transVal->setCurrentIndex(d->settings.transition);
+    d->showDate->setChecked(d->settings.printDate);
+    d->showApertureFocal->setChecked(d->settings.printApertureFocal);
+    d->showCapIfNoTitle->setChecked(d->settings.printCapIfNoTitle);
+    d->showComment->setChecked(d->settings.printComment);
+    d->showExpoSensitivity->setChecked(d->settings.printExpoSensitivity);
+    d->showLensModel->setChecked(d->settings.printLensModel);
+    d->showMakeModel->setChecked(d->settings.printMakeModel);
+    d->showName->setChecked(d->settings.printName);
+    d->showTags->setChecked(d->settings.printTags);
+    d->showRating->setChecked(d->settings.printRating);
+    d->showTitle->setChecked(d->settings.printTitle);
+    d->osdFont->setFont(d->settings.osdFont);
 
     d->srvPort->blockSignals(false);
     d->delay->blockSignals(false);
@@ -59,6 +84,18 @@ void MjpegStreamDlg::readSettings()
     d->typeVal->blockSignals(false);
     d->effVal->blockSignals(false);
     d->transVal->blockSignals(false);
+    d->showDate->blockSignals(false);
+    d->showApertureFocal->blockSignals(false);
+    d->showCapIfNoTitle->blockSignals(false);
+    d->showComment->blockSignals(false);
+    d->showExpoSensitivity->blockSignals(false);
+    d->showLensModel->blockSignals(false);
+    d->showMakeModel->blockSignals(false);
+    d->showName->blockSignals(false);
+    d->showTags->blockSignals(false);
+    d->showRating->blockSignals(false);
+    d->showTitle->blockSignals(false);
+    d->osdFont->blockSignals(false);
 
     slotSettingsChanged();
 

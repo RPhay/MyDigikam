@@ -48,6 +48,7 @@ MjpegStreamDlg::MjpegStreamDlg(QObject* const /*parent*/,
     setupStreamView();
     setupTransitionView();
     setupEffectView();
+    setupOSDView();
 
     // ---
 
