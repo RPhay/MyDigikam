@@ -61,18 +61,18 @@ using DataTestCases    = QMultiMap<QString, PairImageQuality>;
 
 DataTestCases const dataTestCases =
 {
-    {QLatin1String("exposureBacklight"), PairImageQuality(QLatin1String("exposure_backlight_1.jpg"),1)},
-    {QLatin1String("exposureBacklight"), PairImageQuality(QLatin1String("exposure_backlight_2.jpg"),1)},
-    {QLatin1String("exposureBacklight"), PairImageQuality(QLatin1String("exposure_backlight_3.jpg"),1)},
+    {QLatin1String("exposureBacklight"), PairImageQuality(QLatin1String("exposure_backlight_1.jpg"), 1)},
+    {QLatin1String("exposureBacklight"), PairImageQuality(QLatin1String("exposure_backlight_2.jpg"), 1)},
+    {QLatin1String("exposureBacklight"), PairImageQuality(QLatin1String("exposure_backlight_3.jpg"), 1)},
 
-    {QLatin1String("exposureSun"),       PairImageQuality(QLatin1String("exposure_sun_1.jpg"),2)},
-    {QLatin1String("exposureSun"),       PairImageQuality(QLatin1String("exposure_sun_2.jpg"),2)},
-    {QLatin1String("exposureSun"),       PairImageQuality(QLatin1String("exposure_sun_3.jpg"),1)},
+    {QLatin1String("exposureSun"),       PairImageQuality(QLatin1String("exposure_sun_1.jpg"), 2)},
+    {QLatin1String("exposureSun"),       PairImageQuality(QLatin1String("exposure_sun_2.jpg"), 2)},
+    {QLatin1String("exposureSun"),       PairImageQuality(QLatin1String("exposure_sun_3.jpg"), 1)},
 
-    {QLatin1String("exposureDetection"), PairImageQuality(QLatin1String("test_overexposed_5.jpg"),2)},
-    {QLatin1String("exposureDetection"), PairImageQuality(QLatin1String("test_overexposed_9.jpg"),1)},
-    {QLatin1String("exposureDetection"), PairImageQuality(QLatin1String("test_underexposed_1.jpg"),1)},
-    {QLatin1String("exposureDetection"), PairImageQuality(QLatin1String("test_underexposed_5.jpg"),2)},
+    {QLatin1String("exposureDetection"), PairImageQuality(QLatin1String("test_overexposed_5.jpg"), 2)},
+    {QLatin1String("exposureDetection"), PairImageQuality(QLatin1String("test_overexposed_9.jpg"), 1)},
+    {QLatin1String("exposureDetection"), PairImageQuality(QLatin1String("test_underexposed_1.jpg"), 1)},
+    {QLatin1String("exposureDetection"), PairImageQuality(QLatin1String("test_underexposed_5.jpg"), 2)},
 
 };
 

@@ -22,8 +22,8 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_IMGQSORT_TEST_DETECT_BLUR_H
-#define DIGIKAM_IMGQSORT_TEST_DETECT_BLUR_H
+#ifndef DIGIKAM_IMGQSORT_DETECT_BLUR_UTEST_H
+#define DIGIKAM_IMGQSORT_DETECT_BLUR_UTEST_H
 
 // Qt includes
 
@@ -57,30 +57,30 @@ private Q_SLOTS:
 
 DataTestCases const dataTestCases =
 {
-    {QLatin1String("blurDetection"),            PairImageQuality(QLatin1String("test_blurred_1.jpg"),2)},
-    {QLatin1String("blurDetection"),            PairImageQuality(QLatin1String("test_blurred_2.jpg"),2)},
-    {QLatin1String("blurDetection"),            PairImageQuality(QLatin1String("test_blurred_5.jpg"),1)},
-    {QLatin1String("blurDetection"),            PairImageQuality(QLatin1String("test_blurred_9.jpg"),1)},
+    {QLatin1String("blurDetection"),            PairImageQuality(QLatin1String("test_blurred_1.jpg"), 2)},
+    {QLatin1String("blurDetection"),            PairImageQuality(QLatin1String("test_blurred_2.jpg"), 2)},
+    {QLatin1String("blurDetection"),            PairImageQuality(QLatin1String("test_blurred_5.jpg"), 1)},
+    {QLatin1String("blurDetection"),            PairImageQuality(QLatin1String("test_blurred_9.jpg"), 1)},
 
-    {QLatin1String("sharpImage"),               PairImageQuality(QLatin1String("blur_rock_1.jpg"),3)},
-    {QLatin1String("sharpImage"),               PairImageQuality(QLatin1String("blur_tree_1.jpg"),3)},
-    {QLatin1String("sharpImage"),               PairImageQuality(QLatin1String("blur_street_1.jpg"),3)},
+    {QLatin1String("sharpImage"),               PairImageQuality(QLatin1String("blur_rock_1.jpg"), 3)},
+    {QLatin1String("sharpImage"),               PairImageQuality(QLatin1String("blur_tree_1.jpg"), 3)},
+    {QLatin1String("sharpImage"),               PairImageQuality(QLatin1String("blur_street_1.jpg"), 3)},
 
-    {QLatin1String("motionBlurImage"),          PairImageQuality(QLatin1String("blur_sky_2.jpg"),2)},
-    {QLatin1String("motionBlurImage"),          PairImageQuality(QLatin1String("blur_rock_2.jpg"),2)},
-    {QLatin1String("motionBlurImage"),          PairImageQuality(QLatin1String("blur_tree_2.jpg"),2)},
-    {QLatin1String("motionBlurImage"),          PairImageQuality(QLatin1String("blur_street_2.jpg"),2)},
+    {QLatin1String("motionBlurImage"),          PairImageQuality(QLatin1String("blur_sky_2.jpg"), 2)},
+    {QLatin1String("motionBlurImage"),          PairImageQuality(QLatin1String("blur_rock_2.jpg"), 2)},
+    {QLatin1String("motionBlurImage"),          PairImageQuality(QLatin1String("blur_tree_2.jpg"), 2)},
+    {QLatin1String("motionBlurImage"),          PairImageQuality(QLatin1String("blur_street_2.jpg"), 2)},
 
-    {QLatin1String("defocusImage"),             PairImageQuality(QLatin1String("blur_sky_3.jpg"),1)},
-    {QLatin1String("defocusImage"),             PairImageQuality(QLatin1String("blur_street_3.jpg"),1)},
+    {QLatin1String("defocusImage"),             PairImageQuality(QLatin1String("blur_sky_3.jpg"), 1)},
+    {QLatin1String("defocusImage"),             PairImageQuality(QLatin1String("blur_street_3.jpg"), 1)},
 
-    {QLatin1String("blurBackGroundImage"),      PairImageQuality(QLatin1String("blur_blurbackground_1.jpg"),3)},
-    {QLatin1String("blurBackGroundImage"),      PairImageQuality(QLatin1String("blur_blurbackground_2.jpg"),3)},
-    {QLatin1String("blurBackGroundImage"),      PairImageQuality(QLatin1String("blur_blurbackground_3.jpg"),3)},
+    {QLatin1String("blurBackGroundImage"),      PairImageQuality(QLatin1String("blur_blurbackground_1.jpg"), 3)},
+    {QLatin1String("blurBackGroundImage"),      PairImageQuality(QLatin1String("blur_blurbackground_2.jpg"), 3)},
+    {QLatin1String("blurBackGroundImage"),      PairImageQuality(QLatin1String("blur_blurbackground_3.jpg"), 3)},
 
-    {QLatin1String("blurDetectionFailTest"),    PairImageQuality(QLatin1String("blur_rock_3.jpg"),1)}, //False case : Pending instead of Rejected
-    {QLatin1String("blurDetectionFailTest"),    PairImageQuality(QLatin1String("blur_tree_3.jpg"),1)}, //False case : Pending instead of Rejected
-    {QLatin1String("blurDetectionFailTest"),    PairImageQuality(QLatin1String("blur_sky_1.jpg"),3)},  //False case : Pending instead of Accepted
+    {QLatin1String("blurDetectionFailTest"),    PairImageQuality(QLatin1String("blur_rock_3.jpg"), 1)}, // False case : Pending instead of Rejected
+    {QLatin1String("blurDetectionFailTest"),    PairImageQuality(QLatin1String("blur_tree_3.jpg"), 1)}, // False case : Pending instead of Rejected
+    {QLatin1String("blurDetectionFailTest"),    PairImageQuality(QLatin1String("blur_sky_1.jpg"), 3)},  // False case : Pending instead of Accepted
 };
 
-#endif // DIGIKAM_IMGQSORT_TEST_DETECT_BLUR_H
+#endif // DIGIKAM_IMGQSORT_DETECT_BLUR_UTEST_H

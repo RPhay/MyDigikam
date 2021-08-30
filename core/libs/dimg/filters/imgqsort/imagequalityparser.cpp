@@ -35,7 +35,7 @@
 #include <QThread>
 #include <QThreadPool>
 #include <QFuture>
-#include <QtConcurrent>
+#include <QtConcurrent>>              // krazy:exclude=includes
 
 // Local includes
 
@@ -76,6 +76,7 @@ void ImageQualityParser::startAnalyse()
     cv::Mat grayImage;
 
     cv::cvtColor(cvImage, grayImage, cv::COLOR_BGR2GRAY);
+
     //-----------------------------------------------------------------------------
 
     std::unique_ptr<BlurDetector> blurDetector;

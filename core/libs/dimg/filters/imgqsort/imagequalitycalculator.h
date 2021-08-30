@@ -44,8 +44,8 @@ public:
     struct ResultDetection
     {
         QString detetionType;
-        float weight;
-        float score;
+        float   weight;
+        float   score;
     };
 
 public:

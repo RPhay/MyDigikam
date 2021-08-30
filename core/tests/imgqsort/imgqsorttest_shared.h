@@ -32,7 +32,6 @@
 #include <QFileInfoList>
 #include <QObject>
 #include <QDir>
-#include <QMultiMap>
 #include <QTest>
 
 // Local includes
