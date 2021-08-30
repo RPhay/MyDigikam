@@ -399,7 +399,7 @@ void MjpegStreamDlg::setupOSDView()
     connect(d->showTags, SIGNAL(stateChanged(int)),
             this, SLOT(slotSettingsChanged()));
 
-    connect(d->showTags, SIGNAL(stateChanged(int)),
+    connect(d->showRating, SIGNAL(stateChanged(int)),
             this, SLOT(slotSettingsChanged()));
 
     connect(d->osdFont, SIGNAL(signalFontChanged()),

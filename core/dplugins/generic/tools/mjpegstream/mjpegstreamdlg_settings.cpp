@@ -127,6 +127,19 @@ void MjpegStreamDlg::slotSettingsChanged()
     d->effPreview->startPreview(d->settings.effect);
     d->transPreview->stopPreview();
     d->transPreview->startPreview(d->settings.transition);
+
+    d->settings.printName             = d->showName->isChecked();
+    d->settings.printDate             = d->showDate->isChecked();
+    d->settings.printApertureFocal    = d->showApertureFocal->isChecked();
+    d->settings.printExpoSensitivity  = d->showExpoSensitivity->isChecked();
+    d->settings.printMakeModel        = d->showMakeModel->isChecked();
+    d->settings.printLensModel        = d->showLensModel->isChecked();
+    d->settings.printComment          = d->showComment->isChecked();
+    d->settings.printTitle            = d->showTitle->isChecked();
+    d->settings.printCapIfNoTitle     = d->showCapIfNoTitle->isChecked();
+    d->settings.printTags             = d->showTags->isChecked();
+    d->settings.printRating           = d->showRating->isChecked();
+    d->settings.osdFont               = d->osdFont->font();
 }
 
 } // namespace DigikamGenericMjpegStreamPlugin
