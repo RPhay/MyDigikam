@@ -69,8 +69,8 @@ MjpegFrameOsd::~MjpegFrameOsd()
 }
 
 void MjpegFrameOsd::PopulateOSD(QImage& frm,
-                               const QUrl& url,
-                               const MjpegStreamSettings& settings)
+                                const QUrl& url,
+                                const MjpegStreamSettings& settings)
 {
     DInfoInterface::DInfoMap info = settings.iface->itemInfo(url);       // First stage is to get the information map from host application.
     DItemInfo item(info);   

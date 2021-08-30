@@ -76,14 +76,26 @@ public:
                           const QUrl& url,
                           const MjpegStreamSettings& settings);
     
+    /**
+     * Populate OSD items properties base on Url
+     */
     void PopulateOSD(QImage& frame,
-                    const QUrl& url,
-                    const MjpegStreamSettings& settings);
+                     const QUrl& url,
+                     const MjpegStreamSettings& settings);
 
+    /**
+     * print comments 
+     */
     void printComments(const QString& comments);
 
+    /**
+     * print tags 
+     */
     void printTags(QStringList& tags);
-
+    
+    /**
+     * Insert message OSD on broken frame or end frame
+     */
     void insertMessageOsdToFrame(QImage &frame, 
                                  const QSize& JPEGsize,
                                  const QString& mess);
