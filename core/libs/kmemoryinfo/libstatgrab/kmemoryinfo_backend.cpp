@@ -536,8 +536,8 @@ int get_mem_stats(Digikam::KMemoryInfo::KMemoryInfoData* const data)
         return 0;
     }
 
-    data->freeRam  = vmt.t_free * (u_int64_t)page_size);
-    data->totalRam = vmt.t_avm * (u_int64_t)page_size);
+    data->freeRam  = vmt.t_free * (u_int64_t)page_size;
+    data->totalRam = vmt.t_avm * (u_int64_t)page_size;
     data->usedRam  = data->totalRam - data->freeRam;
     data->cacheRam = 0;
 
