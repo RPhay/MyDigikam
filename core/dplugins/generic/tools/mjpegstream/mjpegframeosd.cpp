@@ -59,7 +59,7 @@ MjpegFrameOsd::MjpegFrameOsd()
     m_descFnt.setPixelSize(8);
     m_descFnt.setBold(true);
     m_messFnt.setStyleHint(QFont::Monospace);
-    m_descFnt.setPixelSize(8);
+    m_messFnt.setPixelSize(8);
     m_messFnt.setBold(true);
 
 }
@@ -444,7 +444,7 @@ void MjpegFrameOsd::insertOsdToFrame(QImage& frm,
 
     QRect descRect = descMt.boundingRect(0, 0, frm.width(), frm.height(), 0, mess);
     QRect bgdescRect(m_descPos.x(),
-                     m_descPos.y() - descRect.height() + 1,
+                     m_descPos.y(),
                      descRect.width(),
                      descRect.height() + 3);
 

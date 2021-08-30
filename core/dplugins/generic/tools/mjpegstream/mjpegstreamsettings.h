@@ -28,6 +28,7 @@
 #include <QList>
 #include <QString>
 #include <QUrl>
+#include <QFont>
 
 // Local includes
 
