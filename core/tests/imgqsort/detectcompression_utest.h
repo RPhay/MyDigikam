@@ -53,11 +53,11 @@ private Q_SLOTS:
 
 DataTestCases const dataTestCases =
 {
-    {QLatin1String("compressionDetection"),          PairImageQuality(QLatin1String("test_compressed_2.jpg"),2)},
-    {QLatin1String("compressionDetection"),          PairImageQuality(QLatin1String("test_compressed_4.jpg"),2)},
-    {QLatin1String("compressionDetection"),          PairImageQuality(QLatin1String("test_compressed_9.jpg"),3)},
+    {QLatin1String("compressionDetection"),          PairImageQuality(QLatin1String("test_compressed_2.jpg"), 2)},
+    {QLatin1String("compressionDetection"),          PairImageQuality(QLatin1String("test_compressed_4.jpg"), 2)},
+    {QLatin1String("compressionDetection"),          PairImageQuality(QLatin1String("test_compressed_9.jpg"), 3)},
 
-    {QLatin1String("compressionDetection_failCase"), PairImageQuality(QLatin1String("test_compressed_1.jpg"),1)}, //False case : Pending instead of Accepted
+    {QLatin1String("compressionDetection_failCase"), PairImageQuality(QLatin1String("test_compressed_1.jpg"), 1)}, //False case : Pending instead of Accepted
 };
 
 } // namespace Digikam
