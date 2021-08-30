@@ -398,7 +398,7 @@ void MjpegFrameOsd::insertOsdToFrame(QImage& frm,
     {
         // date must be provided by caller
 
-        mess.append(m_descDate.toString(QLatin1String("\ndd-MM-yyyy hh:mm:ss.zzz\n")));
+        mess.append(m_descDate.toString(QLatin1String("\ndd-MM-yyyy hh:mm:ss.zzz")));
     }
 
     if (m_descShowRelDate)
