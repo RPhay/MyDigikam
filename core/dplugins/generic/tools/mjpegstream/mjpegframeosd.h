@@ -49,32 +49,23 @@ public:
 
 public:
 
-    QString       m_title;
-    bool          m_titleShowDate;
-    QDateTime     m_titleDate;          ///< Local date to show
-    bool          m_titleShowRelDate;
-    quint64       m_titleRelDate;       ///< Relative date to show  get from chrono device
-    QPoint        m_titlePos;
-    QFont         m_titleFnt;
-    Qt::Alignment m_titleAlign;
-    QColor        m_titleBg;
-    QImage        m_titleLogo;
-
-    // -----
-
     QString       m_desc;
+    bool          m_descShowDate;
+    QDateTime     m_descDate;          ///< Local date to show
+    bool          m_descShowRelDate;
+    quint64       m_descRelDate;       ///< Relative date to show  get from chrono device
     QPoint        m_descPos;
     QFont         m_descFnt;
     Qt::Alignment m_descAlign;
     QColor        m_descBg;
+    QImage        m_descLogo;
 
     // -----
-
-    QString       m_comment;
-    QPoint        m_commentPos;
-    QFont         m_commentFnt;
-    Qt::Alignment m_commentAlign;
-    QColor        m_commentBg;
+    
+    QPoint        m_messPos;
+    QFont         m_messFnt;
+    Qt::Alignment m_messAlign;
+    QColor        m_messBg;
 
 public:
 
