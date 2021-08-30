@@ -461,4 +461,42 @@ void MjpegFrameOsd::insertOsdToFrame(QImage& frm,
     m_desc.clear();
 }
 
+void MjpegFrameOsd::insertMessageOsdToFrame(QImage &frm, 
+                                            const QSize& JPEGsize,
+                                            const QString& mess)
+{
+    // m_erreur = QLatin1String("End of stream");
+
+    QString message = mess;
+    QPainter p(&frm);
+
+    if (JPEGsize.width() <= 480 && JPEGsize.height() <= 480)
+    {
+        m_messFnt.setPixelSize(18);
+    }
+    else
+    {
+        m_messFnt.setPixelSize(60);
+    }
+
+    //---
+
+    QFontMetrics messMt(m_messFnt);
+    p.setFont(m_messFnt);
+
+    QRect messRect = messMt.boundingRect(0, 0, frm.width(), frm.height(), 0, message);
+    
+    // print message in the middle of frame
+
+    QRect bgErreurRect(m_messPos.x(),
+                       m_messPos.y(),
+                       messRect.width(),
+                       messRect.height() + 3);
+
+    p.fillRect(bgErreurRect, m_messBg);
+
+    p.setPen(QPen(Qt::white));
+    p.drawText(bgErreurRect, m_messAlign, message);    
+}
+
 } // namespace DigikamGenericMjpegStreamPlugin

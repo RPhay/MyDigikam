@@ -84,6 +84,9 @@ public:
 
     void printTags(QStringList& tags);
 
+    void insertMessageOsdToFrame(QImage &frame, 
+                                 const QSize& JPEGsize,
+                                 const QString& mess);
 };
 
 } // namespace DigikamGenericMjpegStreamPlugin
