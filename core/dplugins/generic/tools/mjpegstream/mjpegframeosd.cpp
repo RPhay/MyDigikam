@@ -83,7 +83,6 @@ void MjpegFrameOsd::PopulateOSD(QImage& frm,
     QString str;
     
     m_descFnt = settings.osdFont;
-    // qDebug() << m_descFnt;
 
     // Display tag names.
 
