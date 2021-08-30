@@ -75,6 +75,15 @@ public:
     void insertOsdToFrame(QImage& frame,
                           const QUrl& url,
                           const MjpegStreamSettings& settings);
+    
+    void PopulateOSD(QImage& frame,
+                    const QUrl& url,
+                    const MjpegStreamSettings& settings);
+
+    void printComments(const QString& comments);
+
+    void printTags(QStringList& tags);
+
 };
 
 } // namespace DigikamGenericMjpegStreamPlugin
