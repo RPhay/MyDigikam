@@ -45,21 +45,16 @@ class MjpegFrameOsd
 
 public:
 
-    MjpegFrameOsd();
+    explicit MjpegFrameOsd();
     ~MjpegFrameOsd();
 
 public:
 
     QString       m_desc;
-    bool          m_descShowDate;
-    QDateTime     m_descDate;          ///< Local date to show
-    bool          m_descShowRelDate;
-    quint64       m_descRelDate;       ///< Relative date to show  get from chrono device
     QPoint        m_descPos;
     QFont         m_descFnt;
     Qt::Alignment m_descAlign;
     QColor        m_descBg;
-    QImage        m_descLogo;
 
     // -----
 

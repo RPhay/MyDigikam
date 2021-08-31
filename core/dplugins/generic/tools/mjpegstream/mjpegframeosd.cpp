@@ -46,18 +46,14 @@ namespace DigikamGenericMjpegStreamPlugin
 
 MjpegFrameOsd::MjpegFrameOsd()
   : m_desc           (QLatin1String("")),
-    m_descShowDate   (true),
-    m_descShowRelDate(false),
-    m_descRelDate    (0),
-    m_descPos        (QPoint(0,0)),
+    m_descPos        (QPoint(0, 0)),
     m_descFnt        (QFont(QLatin1String("Monospace"))),
     m_descAlign      (Qt::AlignLeft),
     m_descBg         (Qt::darkGray),
-
-    m_messPos       (QPoint(0, 0)),
-    m_messFnt       (QFont(QLatin1String("Monospace"))),
-    m_messAlign     (Qt::AlignLeft),
-    m_messBg        (Qt::darkGray)
+    m_messPos        (QPoint(0, 0)),
+    m_messFnt        (QFont(QLatin1String("Monospace"))),
+    m_messAlign      (Qt::AlignLeft),
+    m_messBg         (Qt::darkGray)
 {
     m_descFnt.setStyleHint(QFont::Monospace);
     m_descFnt.setPixelSize(8);
@@ -65,7 +61,6 @@ MjpegFrameOsd::MjpegFrameOsd()
     m_messFnt.setStyleHint(QFont::Monospace);
     m_messFnt.setPixelSize(8);
     m_messFnt.setBold(true);
-
 }
 
 MjpegFrameOsd::~MjpegFrameOsd()
@@ -81,14 +76,13 @@ void MjpegFrameOsd::PopulateOSD(QImage& frm,
     DInfoInterface::DInfoMap info = settings.iface->itemInfo(url);
     DItemInfo item(info);
 
-    QString comment  = item.comment();
-    QString title    = item.title();
-    QStringList tags = item.keywords();
-    int rating       = item.rating();
+    QString comment               = item.comment();
+    QString title                 = item.title();
+    QStringList tags              = item.keywords();
+    int rating                    = item.rating();
+    m_descFnt                     = settings.osdFont;
 
     QString str;
-
-    m_descFnt = settings.osdFont;
 
     // Display tag names.
 
@@ -132,7 +126,7 @@ void MjpegFrameOsd::PopulateOSD(QImage& frm,
 
         if (!name.isEmpty())
         {
-            str += name;
+            str     += name;
             m_desc.append(QString::fromLatin1("\n%1").arg(str));
         }
     }
@@ -162,7 +156,7 @@ void MjpegFrameOsd::PopulateOSD(QImage& frm,
         if (!make.isEmpty())
         {
             ItemPropertiesTab::shortenedMakeInfo(make);
-            str = make;
+            str      = make;
         }
 
         if (!model.isEmpty())
@@ -173,7 +167,7 @@ void MjpegFrameOsd::PopulateOSD(QImage& frm,
             }
 
             ItemPropertiesTab::shortenedModelInfo(model);
-            str += model;
+            str     += model;
         }
 
         if (!str.isEmpty())
@@ -192,7 +186,7 @@ void MjpegFrameOsd::PopulateOSD(QImage& frm,
 
         if (!lens.isEmpty())
         {
-            str += lens;
+            str     += lens;
             m_desc.append(QString::fromLatin1("\n%1").arg(str));
         }
     }
@@ -285,8 +279,8 @@ void MjpegFrameOsd::PopulateOSD(QImage& frm,
 
         if (dateTime.isValid())
         {
-            // str = QLocale().toString(dateTime, QLocale::ShortFormat);
-            m_descDate = dateTime;
+            str = QLocale().toString(dateTime, QLocale::ShortFormat);
+            m_desc.append(QString::fromLatin1("\n%1").arg(str));
         }
     }
 
@@ -382,9 +376,7 @@ void MjpegFrameOsd::printComments(const QString& comments)
     {
         m_desc.append(QString::fromLatin1("\n%1").arg(commentsByLines.at(i)));
     }
-
 }
-
 
 void MjpegFrameOsd::insertOsdToFrame(QImage& frm,
                                      const QUrl& url,
@@ -395,59 +387,12 @@ void MjpegFrameOsd::insertOsdToFrame(QImage& frm,
 
     PopulateOSD(frm, url, settings);
 
-    // Description section
-
-    QString mess = m_desc;
-
-    if (m_descShowDate)
-    {
-        // date must be provided by caller
-
-        mess.append(m_descDate.toString(QLatin1String("\ndd-MM-yyyy hh:mm:ss.zzz")));
-    }
-
-    if (m_descShowRelDate)
-    {
-        // jour = 24 * 60 * 60 * 1000 = 86 400 000
-
-        int nbj   = m_descRelDate  / 86400000;
-        int reste = m_descRelDate  % 86400000;
-
-        // h = 60 * 60 * 1000 = 3600000
-
-        int nbh   = reste  / 3600000;
-        reste     = reste % 3600000;
-
-        // m =  60 * 1000 = 60000
-
-        int nbm   = reste  / 60000;
-        reste     = reste % 60000;
-
-        // s =  1000
-
-        int nbs   = reste  / 1000;
-        int nbms  = reste % 1000;
-        QString extraDateFormat = QString::number(nbj) +
-                                  QLatin1String(":")   +
-                                  QString::number(nbh) +
-                                  QLatin1String(":")   +
-                                  QString::number(nbm) +
-                                  QLatin1String(":")   +
-                                  QString::number(nbs) +
-                                  QLatin1String(":")   +
-                                  QString::number(nbms)+
-                                  QLatin1String(" ms");
-        mess.append(extraDateFormat);
-
-        //mess.append(QLatin1String(" ms"));
-    }
-
     QPainter p(&frm);
 
     QFontMetrics descMt(m_descFnt);
     p.setFont(m_descFnt);
 
-    QRect descRect = descMt.boundingRect(0, 0, frm.width(), frm.height(), 0, mess);
+    QRect descRect = descMt.boundingRect(0, 0, frm.width(), frm.height(), 0, m_desc);
     QRect bgdescRect(m_descPos.x(),
                      m_descPos.y(),
                      descRect.width(),
@@ -456,24 +401,19 @@ void MjpegFrameOsd::insertOsdToFrame(QImage& frm,
     p.fillRect(bgdescRect, m_descBg);
 
     p.setPen(QPen(Qt::white));
-    p.drawText(bgdescRect, m_descAlign, mess);
-
-    if (!m_descLogo.isNull())
-    {
-        p.drawImage(m_descPos.x(), m_descPos.y() + 5, m_descLogo);
-    }
+    p.drawText(bgdescRect, m_descAlign, m_desc);
 
     m_desc.clear();
 }
 
-void MjpegFrameOsd::insertMessageOsdToFrame(QImage &frm,
+void MjpegFrameOsd::insertMessageOsdToFrame(QImage& frm,
                                             const QSize& JPEGsize,
                                             const QString& mess)
 {
     QString message = mess;
     QPainter p(&frm);
 
-    if (JPEGsize.width() <= 480 && JPEGsize.height() <= 480)
+    if ((JPEGsize.width() <= 480) && (JPEGsize.height() <= 480))
     {
         m_messFnt.setPixelSize(18);
     }
