@@ -650,7 +650,7 @@ void DigikamItemView::rename()
         if (!newNamesList.isEmpty())
         {
             QPointer<AdvancedRenameProcessDialog> dlg2 = new AdvancedRenameProcessDialog(newNamesList, this);
-            dlg2->exec();
+            (void)dlg2->exec();
 
             imageFilterModel()->invalidate();
             urls = dlg2->failedUrls();
