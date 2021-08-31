@@ -406,4 +406,9 @@ void MjpegStreamDlg::setupOSDView()
             this, SLOT(slotSettingsChanged()));
 }
 
+void MjpegStreamDlg::slotSetUnchecked(int)
+{
+    d->showCapIfNoTitle->setCheckState(Qt::Unchecked);
+}
+
 } // namespace DigikamGenericMjpegStreamPlugin

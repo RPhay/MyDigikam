@@ -77,7 +77,6 @@ private Q_SLOTS:
 
 private:
 
-
     void updateServerStatus();
     bool setMjpegServerContents();
     bool startMjpegServer();
@@ -94,12 +93,15 @@ private Q_SLOTS:
 
 private:
 
-
     QWidget* setupItemsView();
     void setupServerView();
     void setupStreamView();
     void setupTransitionView();
     void setupEffectView();
+
+private Q_SLOTS:
+
+    void slotSetUnchecked(int);
 
 //@}
 
