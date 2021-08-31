@@ -138,7 +138,7 @@ void DigikamApp::slotMaintenanceDone()
 void DigikamApp::slotDatabaseMigration()
 {
     DatabaseMigrationDialog dlg(this);
-    dlg.exec();
+    (void)dlg.exec();
 }
 
 } // namespace Digikam
