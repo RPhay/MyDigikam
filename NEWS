@@ -135,8 +135,8 @@ BUGFIXES:
 124 ==> 441708 - Raw files imported and converted to dng lacks thumbnails (shows as TV static).
 125 ==> 441791 - I'd love an option to inherit tag icon.
 126 ==> 441697 - Windows - latest digikam pre-release build on 15.08.2021 - your software is up-to-date.
-127 ==> 
-128 ==> 
+127 ==> 440689 - Current appimage does not start on KDE Neon Linux (Ubuntu 20.04 based).
+128 ==> 440908 - digiKam weekly snapshot (x86-64.appimage) opening error msgs.
 129 ==> 
 130 ==> 
 131 ==> 
