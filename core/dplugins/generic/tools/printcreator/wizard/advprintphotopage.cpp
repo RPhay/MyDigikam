@@ -263,8 +263,6 @@ void AdvPrintPhotoPage::initializePage()
 
     // create our photo sizes list
 
-    d->wizard->previewPhotos();
-
     int gid = d->photoUi->m_printer_choice->findText(d->settings->outputName(AdvPrintSettings::GIMP));
 
     if (d->settings->gimpPath.isEmpty())
@@ -285,6 +283,8 @@ void AdvPrintPhotoPage::initializePage()
 
     d->photoUi->ListPhotoSizes->setIconSize(QSize(32, 32));
     initPhotoSizes(d->printer->paperSize(QPrinter::Millimeter));
+
+    d->wizard->previewPhotos();
 }
 
 bool AdvPrintPhotoPage::validatePage()
