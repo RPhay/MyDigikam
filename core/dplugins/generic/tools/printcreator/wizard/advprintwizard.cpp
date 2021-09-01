@@ -272,8 +272,6 @@ void AdvPrintWizard::previewPhotos()
         return;
     }
 
-    d->previewThread->cancel();
-
     // get the selected layout
 
     int photoCount             = d->settings->photos.count();
@@ -313,24 +311,22 @@ void AdvPrintWizard::previewPhotos()
         // preview the first page.
         // find the first page of photos
 
-        int count   = 0;
-        int page    = 0;
-        int current = 0;
+        int page        = 0;
+        int count       = 0;
+        int current     = 0;
+        int currentPage = 0;
 
         for (QList<AdvPrintPhoto*>::iterator it = d->settings->photos.begin() ;
             it != d->settings->photos.end() ; ++it)
         {
             AdvPrintPhoto* const photo = static_cast<AdvPrintPhoto*>(*it);
 
-            if (page == d->settings->currentPreviewPage)
-            {
-                photo->m_cropRegion.setRect(-1, -1, -1, -1);
-                photo->m_rotation  = 0;
-                QRect* const curr2 = s->m_layouts.at(count + 1);
-                photo->updateCropRegion(curr2->width(),
-                                        curr2->height(),
-                                        s->m_autoRotate);
-            }
+            photo->m_cropRegion.setRect(-1, -1, -1, -1);
+            photo->m_rotation  = 0;
+            QRect* const curr2 = s->m_layouts.at(count + 1);
+            photo->updateCropRegion(curr2->width(),
+                                    curr2->height(),
+                                    s->m_autoRotate);
 
             count++;
 
@@ -338,7 +334,7 @@ void AdvPrintWizard::previewPhotos()
             {
                 if (page == d->settings->currentPreviewPage)
                 {
-                    break;
+                    currentPage = current;
                 }
 
                 page++;
@@ -352,7 +348,7 @@ void AdvPrintWizard::previewPhotos()
         AdvPrintSettings* const pwSettings = new AdvPrintSettings;
         pwSettings->photos                 = d->settings->photos;
         pwSettings->outputLayouts          = s;
-        pwSettings->currentPreviewPage     = current;
+        pwSettings->currentPreviewPage     = currentPage;
         pwSettings->disableCrop            = d->cropPage->ui()->m_disableCrop->isChecked();
 
         d->previewThread->preview(pwSettings, d->photoPage->ui()->BmpFirstPagePreview->size());
