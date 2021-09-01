@@ -56,13 +56,6 @@ public:
     Qt::Alignment m_descAlign;
     QColor        m_descBg;
 
-    // -----
-
-    QPoint        m_messPos;
-    QFont         m_messFnt;
-    Qt::Alignment m_messAlign;
-    QColor        m_messBg;
-
 public:
 
     /**

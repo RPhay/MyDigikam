@@ -45,22 +45,15 @@ namespace DigikamGenericMjpegStreamPlugin
 {
 
 MjpegFrameOsd::MjpegFrameOsd()
-  : m_desc           (QLatin1String("")),
-    m_descPos        (QPoint(0, 0)),
-    m_descFnt        (QFont(QLatin1String("Monospace"))),
-    m_descAlign      (Qt::AlignLeft),
-    m_descBg         (Qt::darkGray),
-    m_messPos        (QPoint(0, 0)),
-    m_messFnt        (QFont(QLatin1String("Monospace"))),
-    m_messAlign      (Qt::AlignLeft),
-    m_messBg         (Qt::darkGray)
+  : m_desc     (QLatin1String("")),
+    m_descPos  (QPoint(10, 10)),
+    m_descFnt  (QFont(QLatin1String("Monospace"))),
+    m_descAlign(Qt::AlignLeft),
+    m_descBg   (Qt::darkGray)
 {
     m_descFnt.setStyleHint(QFont::Monospace);
     m_descFnt.setPixelSize(8);
     m_descFnt.setBold(true);
-    m_messFnt.setStyleHint(QFont::Monospace);
-    m_messFnt.setPixelSize(8);
-    m_messFnt.setBold(true);
 }
 
 MjpegFrameOsd::~MjpegFrameOsd()
@@ -83,6 +76,34 @@ void MjpegFrameOsd::PopulateOSD(QImage& frm,
     m_descFnt                     = settings.osdFont;
 
     QString str;
+
+    // Display image File Name.
+
+    if (settings.printName)
+    {
+        str.clear();
+        QString name = url.fileName();
+
+        if (!name.isEmpty())
+        {
+            str     += name;
+            m_desc.append(QString::fromLatin1("\n%1").arg(str));
+        }
+    }
+
+    // Display Creation Date.
+
+    if (settings.printDate)
+    {
+        str.clear();
+        QDateTime dateTime = item.dateTime();
+
+        if (dateTime.isValid())
+        {
+            str = QLocale().toString(dateTime, QLocale::ShortFormat);
+            m_desc.append(QString::fromLatin1("\n%1").arg(str));
+        }
+    }
 
     // Display tag names.
 
@@ -114,20 +135,6 @@ void MjpegFrameOsd::PopulateOSD(QImage& frm,
         {
             str     += comment;
             printComments(str);
-        }
-    }
-
-    // Display image File Name.
-
-    if (settings.printName)
-    {
-        str.clear();
-        QString name = url.fileName();
-
-        if (!name.isEmpty())
-        {
-            str     += name;
-            m_desc.append(QString::fromLatin1("\n%1").arg(str));
         }
     }
 
@@ -271,18 +278,6 @@ void MjpegFrameOsd::PopulateOSD(QImage& frm,
         }
     }
 
-    // Display Creation Date.
-
-    if (settings.printDate)
-    {
-        QDateTime dateTime = item.dateTime();
-
-        if (dateTime.isValid())
-        {
-            str = QLocale().toString(dateTime, QLocale::ShortFormat);
-            m_desc.append(QString::fromLatin1("\n%1").arg(str));
-        }
-    }
 
     // Display rating
 
@@ -293,6 +288,8 @@ void MjpegFrameOsd::PopulateOSD(QImage& frm,
             m_desc.append(QString::fromLatin1("\n%1/5").arg(rating));
         }
     }
+
+    m_desc.append(QString::fromLatin1("\n"));
 }
 
 void MjpegFrameOsd::printTags(QStringList& tags)
@@ -410,36 +407,43 @@ void MjpegFrameOsd::insertMessageOsdToFrame(QImage& frm,
                                             const QSize& JPEGsize,
                                             const QString& mess)
 {
-    QString message = mess;
-    QPainter p(&frm);
+    QPoint messPos          = QPoint(10, 10);
+    Qt::Alignment messAlign = Qt::AlignLeft;
+    QColor messBg           = Qt::darkGray;
+    QFont messFnt           = QFont(QLatin1String("Monospace"));
+
+    messFnt.setStyleHint(QFont::Monospace);
+    messFnt.setBold(true);
 
     if ((JPEGsize.width() <= 480) && (JPEGsize.height() <= 480))
     {
-        m_messFnt.setPixelSize(18);
+        messFnt.setPixelSize(18);
     }
     else
     {
-        m_messFnt.setPixelSize(60);
+        messFnt.setPixelSize(60);
     }
 
     //---
 
-    QFontMetrics messMt(m_messFnt);
-    p.setFont(m_messFnt);
+    QPainter p(&frm);
+    p.setFont(messFnt);
 
-    QRect messRect = messMt.boundingRect(0, 0, frm.width(), frm.height(), 0, message);
+    QFontMetrics messMt(messFnt);
+
+    QRect messRect = messMt.boundingRect(0, 0, frm.width(), frm.height(), 0, mess);
 
     // print message in the middle of frame
 
-    QRect bgErreurRect(m_messPos.x(),
-                       m_messPos.y(),
+    QRect bgErreurRect(messPos.x(),
+                       messPos.y(),
                        messRect.width(),
                        messRect.height() + 3);
 
-    p.fillRect(bgErreurRect, m_messBg);
+    p.fillRect(bgErreurRect, messBg);
 
     p.setPen(QPen(Qt::white));
-    p.drawText(bgErreurRect, m_messAlign, message);
+    p.drawText(bgErreurRect, messAlign, mess);
 }
 
 } // namespace DigikamGenericMjpegStreamPlugin
