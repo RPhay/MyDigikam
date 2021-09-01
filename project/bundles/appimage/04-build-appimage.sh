@@ -343,15 +343,6 @@ libjack.so.0 \
 libm.so.6 \
 libmvec.so.1 \
 libnsl.so.1 \
-libnss_compat.so.2 \
-libnss_db.so.2 \
-libnss_dns.so.2 \
-libnss_files.so.2 \
-libnss_hesiod.so.2 \
-libnss_nisplus.so.2 \
-libnss_nis.so.2 \
-libnss3.so \
-libnssutil3.so \
 libp11-kit.so.0 \
 libpangocairo-1.0.so.0 \
 libpthread.so.0 \
