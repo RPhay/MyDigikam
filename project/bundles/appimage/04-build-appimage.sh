@@ -314,6 +314,7 @@ echo -e "---------- Clean-up Bundle Directory Contents\n"
 # This list is taken from linuxdeplotqt
 # [https://github.com/probonopd/linuxdeployqt/blob/master/tools/linuxdeployqt/excludelist.h]
 # NOTE: libglapi is included explicity in Krita exclude list.
+# NOTE: with the transition from Mageia6 to 7 to build AppImage libnss* must be included in the bundle (see bug #440689)
 EXCLUDE_FILES="\
 ld-linux.so.2 \
 ld-linux-x86-64.so.2 \
