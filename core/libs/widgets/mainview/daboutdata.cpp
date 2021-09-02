@@ -156,6 +156,12 @@ void DAboutData::authorsRegistration(KAboutData& aboutData)
 
     // -- Students ---------------------------------------------------------------
 
+    aboutData.addCredit ( ki18n("Phuoc Khanh LE").toString(),
+                          ki18n("Rewrite Image Quality Sorter algorithms and Photo Focus Information Extraction, "
+                                "Slideshow and Presentation tools improvement").toString(),
+                          QLatin1String("phuockhanhnk94 at gmail dot com "),
+                          QLatin1String("https://www.linkedin.com/in/phuoc-khanh-le-476448169/")
+                        );
 
     aboutData.addCredit ( ki18n("Minh Nghĩa Duong").toString(),
                           ki18n("Clustering support and improvement for Face Engine, "
