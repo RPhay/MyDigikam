@@ -342,7 +342,7 @@ void MjpegStreamDlg::setupOSDView()
     d->showTags                = new QCheckBox(i18nc("@option:check", "Show image tags"), OSDSettings);
     d->showTags->setWhatsThis(i18nc("@info", "Show the digiKam image tag names at the bottom of the screen."));
 
-    d->osdFont                 = new DFontSelect(i18nc("@option:label", "On Screen Display Font:"), OSDSettings);
+    d->osdFont                 = new DFontSelect(i18nc("@option", "On Screen Display Font:"), OSDSettings);
     d->osdFont->setToolTip(i18nc("@info", "Select here the font used to display text in the MJPEG."));
 
     QGridLayout* const grid    = new QGridLayout(OSDSettings);
