@@ -66,6 +66,9 @@ void Showfoto::setupConnections()
     connect(d->thumbBar, SIGNAL(showfotoItemInfoActivated(ShowfotoItemInfo)),
             this, SLOT(slotShowfotoItemInfoActivated(ShowfotoItemInfo)));
 
+    connect(d->folderView, SIGNAL(signalItemDoubleClicked(QString)),
+            this, SLOT(slotOpenFolderFromPath(QString)));
+
     connect(this, SIGNAL(signalSelectionChanged(QRect)),
             d->rightSideBar, SLOT(slotImageSelectionChanged(QRect)));
 

@@ -91,6 +91,7 @@ private Q_SLOTS:
 
     void slotOpenFile();
     void slotOpenFolder();
+    void slotOpenFolderFromPath(const QString& path);
     void slotOpenUrl(const ShowfotoItemInfo& info);
     void slotDroppedUrls(const QList<QUrl>& droppedUrls,
                          bool dropped);

@@ -28,6 +28,7 @@
 
 #include <QPixmap>
 #include <QWidget>
+#include <QModelIndex>
 
 // Local includes
 
@@ -60,6 +61,14 @@ public:
 public Q_SLOTS:
 
     void setCurrentPath(const QString& path);
+
+private Q_SLOTS:
+
+    void slotItemDoubleClicked(const QModelIndex& index);
+
+Q_SIGNALS:
+
+    void signalItemDoubleClicked(const QString& path);
 
 private:
 

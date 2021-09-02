@@ -74,8 +74,8 @@ ShowfotoFolderViewSideBarWidget::ShowfotoFolderViewSideBarWidget(QWidget* const 
     d->fsmodel->setRootPath(QDir::rootPath());
 
     QString filter;
-    QStringList mimeTypes = supportedImageMimeTypes(QIODevice::ReadOnly, filter);
-    QString patterns      = filter.toLower();
+    QStringList mimeTypes      = supportedImageMimeTypes(QIODevice::ReadOnly, filter);
+    QString patterns           = filter.toLower();
     patterns.append(QLatin1Char(' '));
     patterns.append(filter.toUpper());
     d->fsmodel->setNameFilters(patterns.split(QLatin1Char(' ')));
@@ -84,14 +84,29 @@ ShowfotoFolderViewSideBarWidget::ShowfotoFolderViewSideBarWidget(QWidget* const 
     d->fstree->setObjectName(QLatin1String("ShowfotoFolderView"));
     d->fstree->setModel(d->fsmodel);
     d->fstree->setRootIndex(d->fsmodel->index(QDir::rootPath()));
+    d->fstree->resizeColumnToContents(1);
+    d->fstree->setAlternatingRowColors(true);
 
     layout->addWidget(d->fstree);
     layout->setContentsMargins(0, 0, spacing, 0);
+
+    connect(d->fstree, SIGNAL(doubleClicked(QModelIndex)),
+            this, SLOT(slotItemDoubleClicked(QModelIndex)));
 }
 
 ShowfotoFolderViewSideBarWidget::~ShowfotoFolderViewSideBarWidget()
 {
     delete d;
+}
+
+void ShowfotoFolderViewSideBarWidget::slotItemDoubleClicked(const QModelIndex&)
+{
+    emit signalItemDoubleClicked(currentPath());
+}
+
+QString ShowfotoFolderViewSideBarWidget::currentPath() const
+{
+    return d->fsmodel->filePath(d->fstree->currentIndex());
 }
 
 void ShowfotoFolderViewSideBarWidget::setActive(bool active)
@@ -119,10 +134,6 @@ void ShowfotoFolderViewSideBarWidget::applySettings()
 //    d->albumFolderView->setExpandNewCurrentItem(settings->getExpandNewCurrentItem());
 }
 
-QString ShowfotoFolderViewSideBarWidget::currentPath() const
-{
-    return QString();
-}
 
 void ShowfotoFolderViewSideBarWidget::setCurrentPath(const QString& path)
 {

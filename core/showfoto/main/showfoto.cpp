@@ -267,6 +267,16 @@ void Showfoto::slotOpenFolder()
     }
 }
 
+void Showfoto::slotOpenFolderFromPath(const QString& path)
+{
+    qCDebug(DIGIKAM_SHOWFOTO_LOG) << "Open folder from path =" << path;
+
+    slotDroppedUrls(QList<QUrl>() << QUrl::fromLocalFile(QFileInfo(path).absolutePath()), false);
+
+    d->thumbBar->setCurrentUrl(QUrl::fromLocalFile(path));
+    slotOpenUrl(d->thumbBar->currentInfo());
+}
+
 void Showfoto::openUrls(const QList<QUrl>& urls)
 {
     if (urls.isEmpty())
@@ -322,10 +332,9 @@ void Showfoto::openFolder(const QUrl& url)
 
     QString filter;
     QStringList mimeTypes = supportedImageMimeTypes(QIODevice::ReadOnly, filter);
-
-    QString patterns = filter.toLower();
-    patterns.append (QLatin1Char(' '));
-    patterns.append (filter.toUpper());
+    QString patterns      = filter.toLower();
+    patterns.append(QLatin1Char(' '));
+    patterns.append(filter.toUpper());
 
     qCDebug(DIGIKAM_SHOWFOTO_LOG) << "patterns=" << patterns;
 
