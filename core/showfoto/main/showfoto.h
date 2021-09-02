@@ -55,11 +55,9 @@ public:
 
     virtual void show();
 
-protected:
+private:
 
     bool queryClose()                                       override;
-
-private:
 
     bool save()                                             override;
     bool saveAs()                                           override;

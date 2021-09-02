@@ -494,7 +494,7 @@ void Showfoto::slotOpenUrl(const ShowfotoItemInfo& info)
     }
 
     d->currentLoadedUrl = info.url;
-
+    d->folderView->setCurrentPath(localFile);
     m_canvas->load(localFile, m_IOFileSettings);
 
     //TODO : add preload here like in ImageWindow::slotLoadCurrent() ???

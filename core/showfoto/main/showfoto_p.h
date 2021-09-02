@@ -97,12 +97,14 @@
 #include "showfotodelegate.h"
 #include "showfotothumbnailmodel.h"
 #include "showfotocategorizedview.h"
+#include "showfotofolderviewsidebarwidget.h"
 #include "showfotosettings.h"
 #include "showfotoinfoiface.h"
 #include "dexpanderbox.h"
 #include "dfiledialog.h"
 #include "dpluginloader.h"
 #include "exiftoolparser.h"
+#include "sidebarwidget.h"
 
 namespace ShowFoto
 {
@@ -126,35 +128,39 @@ public:
         thumbBar                (nullptr),
         thumbBarDock            (nullptr),
         normalDelegate          (nullptr),
+        leftSideBar             (nullptr),
         rightSideBar            (nullptr),
         splash                  (nullptr),
-        settings                (nullptr)
+        settings                (nullptr),
+        folderView              (nullptr)
     {
     }
 
-    bool                             validIccPath;
+    bool                              validIccPath;
 
-    int                              itemsNb;
+    int                               itemsNb;
 
-    QSplitter*                       vSplitter;
-    QAction*                         fileOpenAction;
-    QUrl                             currentLoadedUrl;
-    QUrl                             lastOpenedDirectory;
-    QAction*                         openFilesInFolderAction;
-    QAction*                         mediaServerAction;
-    QAction*                         first;
+    QSplitter*                        vSplitter;
+    QAction*                          fileOpenAction;
+    QUrl                              currentLoadedUrl;
+    QUrl                              lastOpenedDirectory;
+    QAction*                          openFilesInFolderAction;
+    QAction*                          mediaServerAction;
+    QAction*                          first;
 
-    ShowfotoItemInfoList             infoList;
-    ShowfotoThumbnailModel*          model;
-    ShowfotoDragDropHandler*         dDHandler;
-    ShowfotoFilterModel*             filterModel;
-    Digikam::ThumbnailLoadThread*    thumbLoadThread;
-    ShowfotoThumbnailBar*            thumbBar;
-    Digikam::ThumbBarDock*           thumbBarDock;
-    ShowfotoNormalDelegate*          normalDelegate;
-    Digikam::ItemPropertiesSideBar*  rightSideBar;
-    Digikam::DSplashScreen*          splash;
-    ShowfotoSettings*                settings;
+    ShowfotoItemInfoList              infoList;
+    ShowfotoThumbnailModel*           model;
+    ShowfotoDragDropHandler*          dDHandler;
+    ShowfotoFilterModel*              filterModel;
+    Digikam::ThumbnailLoadThread*     thumbLoadThread;
+    ShowfotoThumbnailBar*             thumbBar;
+    Digikam::ThumbBarDock*            thumbBarDock;
+    ShowfotoNormalDelegate*           normalDelegate;
+    Digikam::Sidebar*                 leftSideBar;
+    Digikam::ItemPropertiesSideBar*   rightSideBar;
+    Digikam::DSplashScreen*           splash;
+    ShowfotoSettings*                 settings;
+    ShowfotoFolderViewSideBarWidget*  folderView;
 };
 
 } // namespace ShowFoto
