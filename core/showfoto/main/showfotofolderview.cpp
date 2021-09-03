@@ -31,6 +31,7 @@
 #include <QVBoxLayout>
 #include <QFileSystemModel>
 #include <QTreeView>
+#include <QHeaderView>
 
 // KDE includes
 
@@ -68,9 +69,8 @@ ShowfotoFolderView::ShowfotoFolderView(QWidget* const parent)
     setObjectName(QLatin1String("ShowfotoFolderView Sidebar"));
 
     const int spacing          = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
-    QVBoxLayout* const layout  = new QVBoxLayout(this);
 
-    d->fsmodel                 = new QFileSystemModel;
+    d->fsmodel                 = new QFileSystemModel(this);
     d->fsmodel->setRootPath(QDir::rootPath());
 
     QString filter;
@@ -86,7 +86,15 @@ ShowfotoFolderView::ShowfotoFolderView(QWidget* const parent)
     d->fstree->setRootIndex(d->fsmodel->index(QDir::rootPath()));
     d->fstree->resizeColumnToContents(1);
     d->fstree->setAlternatingRowColors(true);
+    d->fstree->setExpandsOnDoubleClick(false);
 
+    QHeaderView* const header  = d->fstree->header();
+    header->setSectionHidden(1, true);
+    header->setSectionHidden(2, true);
+    header->setSectionHidden(3, true);
+    header->setSectionHidden(4, true);
+
+    QVBoxLayout* const layout  = new QVBoxLayout(this);
     layout->addWidget(d->fstree);
     layout->setContentsMargins(0, 0, spacing, 0);
 
