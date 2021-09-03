@@ -76,6 +76,7 @@ void Showfoto::readSettings()
 
     d->lastOpenedDirectory = QUrl::fromLocalFile(defaultDir);
 
+    d->leftSideBar->loadState();
     d->rightSideBar->loadState();
 
     Digikam::ThemeManager::instance()->setCurrentTheme(d->settings->getCurrentTheme());
@@ -92,6 +93,7 @@ void Showfoto::saveSettings()
     d->settings->syncConfig();
 
     d->rightSideBar->saveState();
+    d->leftSideBar->saveState();
 }
 
 void Showfoto::applySettings()
@@ -102,6 +104,8 @@ void Showfoto::applySettings()
 
     d->rightSideBar->setStyle(d->settings->getRightSideBarStyle() == 0 ?
                               DMultiTabBar::ActiveIconText : DMultiTabBar::AllIconsText);
+    d->leftSideBar->setStyle(d->settings->getRightSideBarStyle() == 0 ?
+                             DMultiTabBar::ActiveIconText : DMultiTabBar::AllIconsText);
 
     QString currentStyle = qApp->style()->objectName();
     QString newStyle     = d->settings->getApplicationStyle();

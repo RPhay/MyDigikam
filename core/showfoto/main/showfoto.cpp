@@ -120,6 +120,7 @@ Showfoto::Showfoto(const QList<QUrl>& urlList, QWidget* const)
     applySettings();
     setAutoSaveSettings(configGroupName(), true);
 
+    d->leftSideBar->loadState();
     d->rightSideBar->loadState();
 
     //--------------------------------------------------
