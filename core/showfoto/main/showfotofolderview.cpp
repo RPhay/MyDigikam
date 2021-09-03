@@ -33,6 +33,7 @@
 #include <QFileInfo>
 #include <QTreeView>
 #include <QHeaderView>
+#include <QDir>
 
 // KDE includes
 
@@ -114,6 +115,9 @@ ShowfotoFolderView::ShowfotoFolderView(QWidget* const parent)
     connect(d->fsbar, SIGNAL(signalGoHome()),
             this, SLOT(slotGoHome()));
 
+    connect(d->fsbar, SIGNAL(signalGoUp()),
+            this, SLOT(slotGoUp()));
+
     connect(d->fsbar, SIGNAL(signalCustomPathChanged(QString)),
             this, SLOT(slotCustomPathChanged(QString)));
 }
@@ -151,6 +155,13 @@ void ShowfotoFolderView::slotCustomPathChanged(const QString& path)
 void ShowfotoFolderView::slotGoHome()
 {
     setCurrentPath(QDir::homePath());
+}
+
+void ShowfotoFolderView::slotGoUp()
+{
+    QDir dir(QFileInfo(currentPath()).absolutePath());
+    dir.cdUp();
+    setCurrentPath(dir.absolutePath());
 }
 
 QString ShowfotoFolderView::currentPath() const

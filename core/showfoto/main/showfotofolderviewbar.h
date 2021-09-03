@@ -27,7 +27,6 @@
 // Qt includes
 
 #include <QWidget>
-#include <QKeyEvent>
 
 // Local includes
 
@@ -65,6 +64,7 @@ Q_SIGNALS:
 
     void signalFolderViewModeChanged(int);
     void signalGoHome();
+    void signalGoUp();
     void signalCustomPathChanged(const QString&);
 
 private Q_SLOTS:

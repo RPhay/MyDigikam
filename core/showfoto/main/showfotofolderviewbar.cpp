@@ -49,6 +49,7 @@ public:
     explicit Private()
       : simplifiedBtn(nullptr),
         detailledBtn (nullptr),
+        upBtn        (nullptr),
         homeBtn      (nullptr),
         btnsBox      (nullptr),
         pathEdit     (nullptr)
@@ -57,6 +58,7 @@ public:
 
     QToolButton*  simplifiedBtn;
     QToolButton*  detailledBtn;
+    QToolButton*  upBtn;
     QToolButton*  homeBtn;
     QButtonGroup* btnsBox;
     QLineEdit*    pathEdit;
@@ -91,6 +93,16 @@ ShowfotoFolderViewBar::ShowfotoFolderViewBar(QWidget* const parent)
 
     connect(d->btnsBox, SIGNAL(buttonReleased(int)),
             this, SIGNAL(signalFolderViewModeChanged(int)));
+
+    d->upBtn       = new QToolButton(this);
+    d->upBtn->setCheckable(false);
+    d->upBtn->setFocusPolicy(Qt::NoFocus);
+    d->upBtn->setIconSize(QSize(22, 22));
+    d->upBtn->setIcon(QIcon::fromTheme(QLatin1String("go-up")));
+    d->upBtn->setToolTip(i18nc("@info", "Go up in folder-view hierarchy"));
+
+    connect(d->upBtn, SIGNAL(clicked()),
+            this, SIGNAL(signalGoUp()));
 
     d->homeBtn       = new QToolButton(this);
     d->homeBtn->setCheckable(false);
