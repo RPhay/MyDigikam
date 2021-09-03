@@ -39,7 +39,7 @@ set(showfoto_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/thumbbar/showfotocategorizedview.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/thumbbar/showfotothumbnailbar.cpp
 
-    ${CMAKE_CURRENT_SOURCE_DIR}/main/showfotofolderviewsidebarwidget.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/main/showfotofolderview.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/main/showfotosettings.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/main/showfotoinfoiface.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/main/showfoto.cpp

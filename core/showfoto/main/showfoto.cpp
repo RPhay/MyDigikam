@@ -271,10 +271,31 @@ void Showfoto::slotOpenFolderFromPath(const QString& path)
 {
     qCDebug(DIGIKAM_SHOWFOTO_LOG) << "Open folder from path =" << path;
 
-    slotDroppedUrls(QList<QUrl>() << QUrl::fromLocalFile(QFileInfo(path).absolutePath()), false);
+    QFileInfo inf(path);
+    d->infoList.clear();
 
-    d->thumbBar->setCurrentUrl(QUrl::fromLocalFile(path));
-    slotOpenUrl(d->thumbBar->currentInfo());
+    if      (inf.isFile())
+    {
+        slotDroppedUrls(QList<QUrl>() << QUrl::fromLocalFile(inf.absolutePath()), false);
+        d->thumbBar->setCurrentUrl(QUrl::fromLocalFile(path));
+        slotOpenUrl(d->thumbBar->currentInfo());
+    }
+    else if (inf.isDir())
+    {
+        QString dpath(path.endsWith(QLatin1Char('/')) ? path : path + QLatin1Char('/'));
+        slotDroppedUrls(QList<QUrl>() << QUrl::fromLocalFile(dpath), false);
+        QList<QUrl> urls = d->thumbBar->urls();
+
+        if (!urls.isEmpty())
+        {
+            d->thumbBar->setCurrentUrl(urls.first());
+            slotOpenUrl(d->thumbBar->currentInfo());
+        }
+    }
+    else
+    {
+        return;
+    }
 }
 
 void Showfoto::openUrls(const QList<QUrl>& urls)

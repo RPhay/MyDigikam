@@ -21,7 +21,7 @@
  *
  * ============================================================ */
 
-#include "showfotofolderviewsidebarwidget.h"
+#include "showfotofolderview.h"
 
 // Qt includes
 
@@ -46,7 +46,7 @@
 namespace ShowFoto
 {
 
-class Q_DECL_HIDDEN ShowfotoFolderViewSideBarWidget::Private
+class Q_DECL_HIDDEN ShowfotoFolderView::Private
 {
 public:
 
@@ -60,7 +60,7 @@ public:
     QTreeView*        fstree;
 };
 
-ShowfotoFolderViewSideBarWidget::ShowfotoFolderViewSideBarWidget(QWidget* const parent)
+ShowfotoFolderView::ShowfotoFolderView(QWidget* const parent)
     : QWidget          (parent),
       StateSavingObject(this),
       d                (new Private)
@@ -94,22 +94,22 @@ ShowfotoFolderViewSideBarWidget::ShowfotoFolderViewSideBarWidget(QWidget* const 
             this, SLOT(slotItemDoubleClicked(QModelIndex)));
 }
 
-ShowfotoFolderViewSideBarWidget::~ShowfotoFolderViewSideBarWidget()
+ShowfotoFolderView::~ShowfotoFolderView()
 {
     delete d;
 }
 
-void ShowfotoFolderViewSideBarWidget::slotItemDoubleClicked(const QModelIndex&)
+void ShowfotoFolderView::slotItemDoubleClicked(const QModelIndex&)
 {
     emit signalItemDoubleClicked(currentPath());
 }
 
-QString ShowfotoFolderViewSideBarWidget::currentPath() const
+QString ShowfotoFolderView::currentPath() const
 {
     return d->fsmodel->filePath(d->fstree->currentIndex());
 }
 
-void ShowfotoFolderViewSideBarWidget::setActive(bool active)
+void ShowfotoFolderView::setActive(bool active)
 {
     if (active)
     {
@@ -117,17 +117,17 @@ void ShowfotoFolderViewSideBarWidget::setActive(bool active)
     }
 }
 
-void ShowfotoFolderViewSideBarWidget::doLoadState()
+void ShowfotoFolderView::doLoadState()
 {
 //    d->albumFolderView->loadState();
 }
 
-void ShowfotoFolderViewSideBarWidget::doSaveState()
+void ShowfotoFolderView::doSaveState()
 {
 //    d->albumFolderView->saveState();
 }
 
-void ShowfotoFolderViewSideBarWidget::applySettings()
+void ShowfotoFolderView::applySettings()
 {
     ShowfotoSettings* const settings = ShowfotoSettings::instance();
 //    d->albumFolderView->setEnableToolTips(settings->getShowAlbumToolTips());
@@ -135,17 +135,17 @@ void ShowfotoFolderViewSideBarWidget::applySettings()
 }
 
 
-void ShowfotoFolderViewSideBarWidget::setCurrentPath(const QString& path)
+void ShowfotoFolderView::setCurrentPath(const QString& path)
 {
     d->fstree->setCurrentIndex(d->fsmodel->index(path));
 }
 
-const QIcon ShowfotoFolderViewSideBarWidget::getIcon()
+const QIcon ShowfotoFolderView::getIcon()
 {
     return QIcon::fromTheme(QLatin1String("document-open-folder"));
 }
 
-const QString ShowfotoFolderViewSideBarWidget::getCaption()
+const QString ShowfotoFolderView::getCaption()
 {
     return i18nc("@title: file system tree", "Folders");
 }
