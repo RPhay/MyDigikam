@@ -48,12 +48,14 @@ public:
     explicit Private()
       : simplifiedBtn(nullptr),
         detailledBtn (nullptr),
+        homeBtn      (nullptr),
         btnsBox      (nullptr)
     {
     }
 
     QToolButton*  simplifiedBtn;
     QToolButton*  detailledBtn;
+    QToolButton*  homeBtn;
     QButtonGroup* btnsBox;
 };
 
@@ -86,6 +88,17 @@ ShowfotoFolderViewBar::ShowfotoFolderViewBar(QWidget* const parent)
 
     connect(d->btnsBox, SIGNAL(buttonReleased(int)),
             this, SIGNAL(signalFolderViewModeChanged(int)));
+
+    d->homeBtn       = new QToolButton(this);
+    d->homeBtn->setCheckable(false);
+    d->homeBtn->setFocusPolicy(Qt::NoFocus);
+    d->homeBtn->setIconSize(QSize(22, 22));
+    d->homeBtn->setIcon(QIcon::fromTheme(QLatin1String("go-home")));
+    d->homeBtn->setToolTip(i18nc("@info", "Back to home directory"));
+
+    connect(d->homeBtn, SIGNAL(clicked()),
+            this, SIGNAL(signalGoHome()));
+
 
     QWidget* const space = new QWidget(this);
     setStretchFactor(space, 10);

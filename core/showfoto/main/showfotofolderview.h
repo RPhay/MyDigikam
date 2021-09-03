@@ -66,6 +66,7 @@ public Q_SLOTS:
 private Q_SLOTS:
 
     void slotItemDoubleClicked(const QModelIndex& index);
+    void slotGoHome();
 
 Q_SIGNALS:
 

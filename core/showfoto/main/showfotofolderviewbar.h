@@ -62,6 +62,7 @@ public:
 Q_SIGNALS:
 
     void signalFolderViewModeChanged(int);
+    void signalGoHome();
 
 private:
 

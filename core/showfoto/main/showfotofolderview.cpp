@@ -109,6 +109,9 @@ ShowfotoFolderView::ShowfotoFolderView(QWidget* const parent)
 
     connect(d->fsbar, SIGNAL(signalFolderViewModeChanged(int)),
             this, SLOT(slotFolderViewModeChanged(int)));
+
+    connect(d->fsbar, SIGNAL(signalGoHome()),
+            this, SLOT(slotGoHome()));
 }
 
 ShowfotoFolderView::~ShowfotoFolderView()
@@ -130,6 +133,11 @@ void ShowfotoFolderView::slotFolderViewModeChanged(int mode)
 void ShowfotoFolderView::slotItemDoubleClicked(const QModelIndex&)
 {
     emit signalCurrentPathChanged(currentPath());
+}
+
+void ShowfotoFolderView::slotGoHome()
+{
+    setCurrentPath(QDir::homePath());
 }
 
 QString ShowfotoFolderView::currentPath() const
