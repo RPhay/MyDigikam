@@ -61,6 +61,7 @@ public:
 public Q_SLOTS:
 
     void setCurrentPath(const QString& path);
+    void slotFolderViewModeChanged(int mode);
 
 private Q_SLOTS:
 
@@ -68,7 +69,7 @@ private Q_SLOTS:
 
 Q_SIGNALS:
 
-    void signalItemDoubleClicked(const QString& path);
+    void signalCurrentPathChanged(const QString& path);
 
 private:
 

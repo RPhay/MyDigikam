@@ -121,6 +121,7 @@ Showfoto::Showfoto(const QList<QUrl>& urlList, QWidget* const)
     setAutoSaveSettings(configGroupName(), true);
 
     d->leftSideBar->loadState();
+    d->folderView->loadState();
     d->rightSideBar->loadState();
 
     //--------------------------------------------------

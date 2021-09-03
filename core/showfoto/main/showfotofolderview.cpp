@@ -43,6 +43,7 @@
 #include "digikam_debug.h"
 #include "digikam_globals.h"
 #include "showfotosettings.h"
+#include "showfotofolderviewbar.h"
 
 namespace ShowFoto
 {
@@ -52,14 +53,22 @@ class Q_DECL_HIDDEN ShowfotoFolderView::Private
 public:
 
     explicit Private()
-      : fsmodel        (nullptr),
-        fstree         (nullptr)
+      : fsmodel         (nullptr),
+        fstree          (nullptr),
+        fsbar           (nullptr)
     {
     }
 
-    QFileSystemModel* fsmodel;
-    QTreeView*        fstree;
+    static const QString   configFolderViewModeEntry;
+    static const QString   configLastPathEntry;
+
+    QFileSystemModel*      fsmodel;
+    QTreeView*             fstree;
+    ShowfotoFolderViewBar* fsbar;
 };
+
+const QString ShowfotoFolderView::Private::configFolderViewModeEntry(QLatin1String("Folder View Mode"));
+const QString ShowfotoFolderView::Private::configLastPathEntry(QLatin1String("Last Path"));
 
 ShowfotoFolderView::ShowfotoFolderView(QWidget* const parent)
     : QWidget          (parent),
@@ -69,6 +78,8 @@ ShowfotoFolderView::ShowfotoFolderView(QWidget* const parent)
     setObjectName(QLatin1String("ShowfotoFolderView Sidebar"));
 
     const int spacing          = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
+
+    d->fsbar                   = new ShowfotoFolderViewBar(this);
 
     d->fsmodel                 = new QFileSystemModel(this);
     d->fsmodel->setRootPath(QDir::rootPath());
@@ -88,18 +99,16 @@ ShowfotoFolderView::ShowfotoFolderView(QWidget* const parent)
     d->fstree->setAlternatingRowColors(true);
     d->fstree->setExpandsOnDoubleClick(false);
 
-    QHeaderView* const header  = d->fstree->header();
-    header->setSectionHidden(1, true);
-    header->setSectionHidden(2, true);
-    header->setSectionHidden(3, true);
-    header->setSectionHidden(4, true);
-
     QVBoxLayout* const layout  = new QVBoxLayout(this);
+    layout->addWidget(d->fsbar);
     layout->addWidget(d->fstree);
     layout->setContentsMargins(0, 0, spacing, 0);
 
     connect(d->fstree, SIGNAL(doubleClicked(QModelIndex)),
             this, SLOT(slotItemDoubleClicked(QModelIndex)));
+
+    connect(d->fsbar, SIGNAL(signalFolderViewModeChanged(int)),
+            this, SLOT(slotFolderViewModeChanged(int)));
 }
 
 ShowfotoFolderView::~ShowfotoFolderView()
@@ -107,41 +116,26 @@ ShowfotoFolderView::~ShowfotoFolderView()
     delete d;
 }
 
+void ShowfotoFolderView::slotFolderViewModeChanged(int mode)
+{
+    bool hidden                = (mode != ShowfotoFolderViewBar::FolderViewDetailled);
+
+    QHeaderView* const header  = d->fstree->header();
+    header->setSectionHidden(1, hidden);
+    header->setSectionHidden(2, hidden);
+    header->setSectionHidden(3, hidden);
+    header->setSectionHidden(4, hidden);
+}
+
 void ShowfotoFolderView::slotItemDoubleClicked(const QModelIndex&)
 {
-    emit signalItemDoubleClicked(currentPath());
+    emit signalCurrentPathChanged(currentPath());
 }
 
 QString ShowfotoFolderView::currentPath() const
 {
     return d->fsmodel->filePath(d->fstree->currentIndex());
 }
-
-void ShowfotoFolderView::setActive(bool active)
-{
-    if (active)
-    {
-//        AlbumManager::instance()->setCurrentAlbums(QList<Album*>() << d->albumFolderView->currentAlbum());
-    }
-}
-
-void ShowfotoFolderView::doLoadState()
-{
-//    d->albumFolderView->loadState();
-}
-
-void ShowfotoFolderView::doSaveState()
-{
-//    d->albumFolderView->saveState();
-}
-
-void ShowfotoFolderView::applySettings()
-{
-    ShowfotoSettings* const settings = ShowfotoSettings::instance();
-//    d->albumFolderView->setEnableToolTips(settings->getShowAlbumToolTips());
-//    d->albumFolderView->setExpandNewCurrentItem(settings->getExpandNewCurrentItem());
-}
-
 
 void ShowfotoFolderView::setCurrentPath(const QString& path)
 {
@@ -156,6 +150,39 @@ const QIcon ShowfotoFolderView::getIcon()
 const QString ShowfotoFolderView::getCaption()
 {
     return i18nc("@title: file system tree", "Folders");
+}
+
+void ShowfotoFolderView::doLoadState()
+{
+    KConfigGroup group = getConfigGroup();
+
+    d->fsbar->setFolderViewMode(group.readEntry(entryName(d->configFolderViewModeEntry), (int)ShowfotoFolderViewBar::FolderViewSimplified));
+    setCurrentPath(group.readEntry(entryName(d->configLastPathEntry), QDir::rootPath()));
+    slotItemDoubleClicked(d->fstree->currentIndex());
+}
+
+void ShowfotoFolderView::doSaveState()
+{
+    KConfigGroup group = getConfigGroup();
+
+    group.writeEntry(entryName(d->configFolderViewModeEntry), d->fsbar->folderViewMode());
+    group.writeEntry(entryName(d->configLastPathEntry),       currentPath());
+    group.sync();
+}
+
+void ShowfotoFolderView::applySettings()
+{
+    ShowfotoSettings* const settings = ShowfotoSettings::instance();
+//    d->albumFolderView->setEnableToolTips(settings->getShowAlbumToolTips());
+//    d->albumFolderView->setExpandNewCurrentItem(settings->getExpandNewCurrentItem());
+}
+
+void ShowfotoFolderView::setActive(bool active)
+{
+    if (active)
+    {
+//        AlbumManager::instance()->setCurrentAlbums(QList<Album*>() << d->albumFolderView->currentAlbum());
+    }
 }
 
 } // namespace ShowFoto

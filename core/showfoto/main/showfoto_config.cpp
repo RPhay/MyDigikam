@@ -76,8 +76,9 @@ void Showfoto::readSettings()
 
     d->lastOpenedDirectory = QUrl::fromLocalFile(defaultDir);
 
-    d->leftSideBar->loadState();
     d->rightSideBar->loadState();
+    d->leftSideBar->loadState();
+    d->folderView->loadState();
 
     Digikam::ThemeManager::instance()->setCurrentTheme(d->settings->getCurrentTheme());
 
@@ -94,6 +95,7 @@ void Showfoto::saveSettings()
 
     d->rightSideBar->saveState();
     d->leftSideBar->saveState();
+    d->folderView->saveState();
 }
 
 void Showfoto::applySettings()

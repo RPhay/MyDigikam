@@ -39,55 +39,34 @@ using namespace Digikam;
 namespace ShowFoto
 {
 
-class SlideToolBar : public DHBox
+class ShowfotoFolderViewBar : public DHBox
 {
     Q_OBJECT
 
 public:
 
-    explicit SlideToolBar(SlideShowSettings* const settings, QWidget* const parent);
-    ~SlideToolBar()                  override;
+    enum FolderViewMode
+    {
+        FolderViewSimplified = 0,
+        FolderViewDetailled
+    };
 
-    bool isPaused() const;
-    void pause(bool val);
+public:
 
-    void setEnabledPlay(bool val);
-    void setEnabledNext(bool val);
-    void setEnabledPrev(bool val);
+    explicit ShowfotoFolderViewBar(QWidget* const parent);
+    ~ShowfotoFolderViewBar() override;
 
-    void closeConfigurationDialog();
-
-protected:
-
-    void keyPressEvent(QKeyEvent* e) override;
+    void setFolderViewMode(int);
+    int  folderViewMode() const;
 
 Q_SIGNALS:
 
-    void signalNext();
-    void signalPrev();
-    void signalClose();
-    void signalPlay();
-    void signalPause();
-    void signalUpdateSettings();
-    void signalScreenSelected(int);
-    void signalRemoveImageFromList();
-
-private Q_SLOTS:
-
-    void slotPlayBtnToggled();
-    void slotNexPrevClicked();
-    void slotRemoveImage();
-    void slotScreenSelected(QAction*);
-    void slotMenuSlideShowConfiguration();
-    void slotConfigurationAccepted();
-    void slotChangeDelayButtonPressed();
+    void signalFolderViewModeChanged(int);
 
 private:
 
     class Private;
     Private* const d;
-
-    friend class SlideShowLoader;
 };
 
 } // namespace ShowFoto
