@@ -28,6 +28,7 @@
 #include <QToolButton>
 #include <QPixmap>
 #include <QButtonGroup>
+#include <QLineEdit>
 
 // KDE includes
 
@@ -49,7 +50,8 @@ public:
       : simplifiedBtn(nullptr),
         detailledBtn (nullptr),
         homeBtn      (nullptr),
-        btnsBox      (nullptr)
+        btnsBox      (nullptr),
+        pathEdit     (nullptr)
     {
     }
 
@@ -57,6 +59,7 @@ public:
     QToolButton*  detailledBtn;
     QToolButton*  homeBtn;
     QButtonGroup* btnsBox;
+    QLineEdit*    pathEdit;
 };
 
 ShowfotoFolderViewBar::ShowfotoFolderViewBar(QWidget* const parent)
@@ -74,7 +77,7 @@ ShowfotoFolderViewBar::ShowfotoFolderViewBar(QWidget* const parent)
     d->simplifiedBtn->setFocusPolicy(Qt::NoFocus);
     d->simplifiedBtn->setIconSize(QSize(22, 22));
     d->simplifiedBtn->setIcon(QIcon::fromTheme(QLatin1String("view-list-text")));
-    d->simplifiedBtn->setToolTip(i18nc("@info", "Folder view mode simplified"));
+    d->simplifiedBtn->setToolTip(i18nc("@info", "Folder-view mode simplified"));
     d->btnsBox->addButton(d->simplifiedBtn, FolderViewSimplified);
 
     d->detailledBtn   = new QToolButton(this);
@@ -83,7 +86,7 @@ ShowfotoFolderViewBar::ShowfotoFolderViewBar(QWidget* const parent)
     d->detailledBtn->setFocusPolicy(Qt::NoFocus);
     d->detailledBtn->setIconSize(QSize(22, 22));
     d->detailledBtn->setIcon(QIcon::fromTheme(QLatin1String("view-list-details")));
-    d->detailledBtn->setToolTip(i18nc("@info", "Folder view mode detailled"));
+    d->detailledBtn->setToolTip(i18nc("@info", "Folder-view mode detailled"));
     d->btnsBox->addButton(d->detailledBtn, FolderViewDetailled);
 
     connect(d->btnsBox, SIGNAL(buttonReleased(int)),
@@ -99,14 +102,28 @@ ShowfotoFolderViewBar::ShowfotoFolderViewBar(QWidget* const parent)
     connect(d->homeBtn, SIGNAL(clicked()),
             this, SIGNAL(signalGoHome()));
 
+    d->pathEdit = new QLineEdit(this);
+    d->pathEdit->setClearButtonEnabled(true);
+    d->pathEdit->setWhatsThis(i18nc("@info", "Enter the customized folder-view path"));
+    setStretchFactor(d->pathEdit, 10);
 
-    QWidget* const space = new QWidget(this);
-    setStretchFactor(space, 10);
+    connect(d->pathEdit, SIGNAL(returnPressed()),
+            this, SLOT(slotCustomPathChanged()));
 }
 
 ShowfotoFolderViewBar::~ShowfotoFolderViewBar()
 {
     delete d;
+}
+
+void ShowfotoFolderViewBar::setCurrentPath(const QString& path)
+{
+    d->pathEdit->setText(path);
+}
+
+void ShowfotoFolderViewBar::slotCustomPathChanged()
+{
+    emit signalCustomPathChanged(d->pathEdit->text());
 }
 
 void ShowfotoFolderViewBar::setFolderViewMode(int mode)

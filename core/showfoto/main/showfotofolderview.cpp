@@ -30,6 +30,7 @@
 #include <QIcon>
 #include <QVBoxLayout>
 #include <QFileSystemModel>
+#include <QFileInfo>
 #include <QTreeView>
 #include <QHeaderView>
 
@@ -112,6 +113,9 @@ ShowfotoFolderView::ShowfotoFolderView(QWidget* const parent)
 
     connect(d->fsbar, SIGNAL(signalGoHome()),
             this, SLOT(slotGoHome()));
+
+    connect(d->fsbar, SIGNAL(signalCustomPathChanged(QString)),
+            this, SLOT(slotCustomPathChanged(QString)));
 }
 
 ShowfotoFolderView::~ShowfotoFolderView()
@@ -130,9 +134,18 @@ void ShowfotoFolderView::slotFolderViewModeChanged(int mode)
     header->setSectionHidden(4, hidden);
 }
 
-void ShowfotoFolderView::slotItemDoubleClicked(const QModelIndex&)
+void ShowfotoFolderView::slotItemDoubleClicked(const QModelIndex& index)
 {
-    emit signalCurrentPathChanged(currentPath());
+    if (index.isValid())
+    {
+        emit signalCurrentPathChanged(currentPath());
+        d->fsbar->setCurrentPath(QFileInfo(currentPath()).absolutePath());
+    }
+}
+
+void ShowfotoFolderView::slotCustomPathChanged(const QString& path)
+{
+    setCurrentPath(path);
 }
 
 void ShowfotoFolderView::slotGoHome()
@@ -147,7 +160,16 @@ QString ShowfotoFolderView::currentPath() const
 
 void ShowfotoFolderView::setCurrentPath(const QString& path)
 {
-    d->fstree->setCurrentIndex(d->fsmodel->index(path));
+    QModelIndex index = d->fsmodel->index(path);
+
+    if (index.isValid())
+    {
+        d->fstree->setCurrentIndex(index);
+    }
+    else
+    {
+        d->fsbar->setCurrentPath(currentPath());
+    }
 }
 
 const QIcon ShowfotoFolderView::getIcon()

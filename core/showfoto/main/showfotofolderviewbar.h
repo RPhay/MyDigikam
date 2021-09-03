@@ -59,10 +59,17 @@ public:
     void setFolderViewMode(int);
     int  folderViewMode() const;
 
+    void setCurrentPath(const QString& path);
+
 Q_SIGNALS:
 
     void signalFolderViewModeChanged(int);
     void signalGoHome();
+    void signalCustomPathChanged(const QString&);
+
+private Q_SLOTS:
+
+    void slotCustomPathChanged();
 
 private:
 
