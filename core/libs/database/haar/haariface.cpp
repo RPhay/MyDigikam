@@ -240,10 +240,10 @@ QPair<double, QMap<qlonglong, double> > HaarIface::bestMatchesForImageWithThresh
                                     type);
 }
 
-QMap<qlonglong,double> HaarIface::bestMatchesForSignature(const QString& signature,
-                                                          const QList<int>& targetAlbums,
-                                                          int numberOfResults,
-                                                          SketchType type)
+QMap<qlonglong, double> HaarIface::bestMatchesForSignature(const QString& signature,
+                                                           const QList<int>& targetAlbums,
+                                                           int numberOfResults,
+                                                           SketchType type)
 {
     QByteArray bytes = QByteArray::fromBase64(signature.toLatin1());
 
@@ -374,7 +374,7 @@ QPair<double, QMap<qlonglong, double> > HaarIface::bestMatchesWithThreshold(qlon
     // similarity are returned. But users expect also to see images
     // with similarity 50,x.
 
-    double supremum = (floor(maximumPercentage*100 + 1.0))/100;
+    double supremum = (floor(maximumPercentage * 100 + 1.0)) / 100;
 
     QMap<qlonglong, double> bestMatches;
     double score, percentage, avgPercentage = 0.0;
@@ -447,7 +447,7 @@ bool HaarIface::fulfillsRestrictions(qlonglong imageId, int albumId,
                                      const QList<int>& targetAlbums,
                                      DuplicatesSearchRestrictions searchResultRestriction)
 {
-    if (imageId == originalImageId)
+    if      (imageId == originalImageId)
     {
         return true;
     }
@@ -502,6 +502,7 @@ QMap<qlonglong, double> HaarIface::searchDatabase(Haar::SignatureData* const que
         // then calculate the score.
 
         const qlonglong& imageId = it.key();
+
         if (fulfillsRestrictions(imageId, d->albumCache()->value(imageId), originalImageId,
                                  originalAlbumId, targetAlbums, searchResultRestriction))
         {
@@ -549,7 +550,8 @@ QImage HaarIface::loadQImage(const QString& filename)
 bool HaarIface::retrieveSignatureFromDB(qlonglong imageid, Haar::SignatureData& sig)
 {
     QList<QVariant> values;
-    SimilarityDbAccess().backend()->execSql(QString::fromUtf8("SELECT matrix FROM ImageHaarMatrix WHERE imageid=?"),
+    SimilarityDbAccess().backend()->execSql(QString::fromUtf8("SELECT matrix FROM ImageHaarMatrix "
+                                                              " WHERE imageid=?;"),
                                             imageid, &values);
 
     if (values.isEmpty())
@@ -849,7 +851,7 @@ double HaarIface::calculateScore(const Haar::SignatureData& querySig,
 
     // Step 2: Decrease the score if query and target have significant coefficients in common
 
-    int x                        = 0;
+    int x        = 0;
 
     for (int channel = 0 ; channel < 3 ; ++channel)
     {
