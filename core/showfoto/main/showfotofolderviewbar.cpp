@@ -28,7 +28,6 @@
 #include <QDir>
 #include <QToolButton>
 #include <QPixmap>
-#include <QButtonGroup>
 #include <QLineEdit>
 
 // KDE includes
@@ -48,20 +47,18 @@ class Q_DECL_HIDDEN ShowfotoFolderViewBar::Private
 public:
 
     explicit Private()
-      : simplifiedBtn(nullptr),
-        detailledBtn (nullptr),
-        upBtn        (nullptr),
-        homeBtn      (nullptr),
-        btnsBox      (nullptr),
-        pathEdit     (nullptr)
+      : previousBtn (nullptr),
+        nextBtn     (nullptr),
+        upBtn       (nullptr),
+        homeBtn     (nullptr),
+        pathEdit    (nullptr)
     {
     }
 
-    QToolButton*  simplifiedBtn;
-    QToolButton*  detailledBtn;
+    QToolButton*  previousBtn;
+    QToolButton*  nextBtn;
     QToolButton*  upBtn;
     QToolButton*  homeBtn;
-    QButtonGroup* btnsBox;
     QLineEdit*    pathEdit;
 };
 
@@ -71,30 +68,23 @@ ShowfotoFolderViewBar::ShowfotoFolderViewBar(QWidget* const parent)
 {
     setContentsMargins(QMargins());
 
-    d->btnsBox        = new QButtonGroup(this);
-    d->btnsBox->setExclusive(true);
+    d->previousBtn = new QToolButton(this);
+    d->previousBtn->setFocusPolicy(Qt::NoFocus);
+    d->previousBtn->setIcon(QIcon::fromTheme(QLatin1String("go-previous")));
+    d->previousBtn->setToolTip(i18nc("@info", "Go to previous place in folder-view hierarchy"));
 
-    d->simplifiedBtn  = new QToolButton(this);
-    d->simplifiedBtn->setCheckable(true);
-    d->simplifiedBtn->setChecked(true);
-    d->simplifiedBtn->setFocusPolicy(Qt::NoFocus);
-    d->simplifiedBtn->setIcon(QIcon::fromTheme(QLatin1String("view-list-text")));
-    d->simplifiedBtn->setToolTip(i18nc("@info", "Folder-view mode simplified"));
-    d->btnsBox->addButton(d->simplifiedBtn, FolderViewSimplified);
+    connect(d->previousBtn, SIGNAL(clicked()),
+            this, SIGNAL(signalGoPrevious()));
 
-    d->detailledBtn   = new QToolButton(this);
-    d->detailledBtn->setCheckable(true);
-    d->detailledBtn->setChecked(false);
-    d->detailledBtn->setFocusPolicy(Qt::NoFocus);
-    d->detailledBtn->setIcon(QIcon::fromTheme(QLatin1String("view-list-details")));
-    d->detailledBtn->setToolTip(i18nc("@info", "Folder-view mode detailled"));
-    d->btnsBox->addButton(d->detailledBtn, FolderViewDetailled);
+    d->nextBtn     = new QToolButton(this);
+    d->nextBtn->setFocusPolicy(Qt::NoFocus);
+    d->nextBtn->setIcon(QIcon::fromTheme(QLatin1String("go-next")));
+    d->nextBtn->setToolTip(i18nc("@info", "Go to next place in folder-view hierarchy"));
 
-    connect(d->btnsBox, SIGNAL(buttonReleased(int)),
-            this, SIGNAL(signalFolderViewModeChanged(int)));
+    connect(d->nextBtn, SIGNAL(clicked()),
+            this, SIGNAL(signalGoNext()));
 
     d->upBtn       = new QToolButton(this);
-    d->upBtn->setCheckable(false);
     d->upBtn->setFocusPolicy(Qt::NoFocus);
     d->upBtn->setIcon(QIcon::fromTheme(QLatin1String("go-up")));
     d->upBtn->setToolTip(i18nc("@info", "Go up in folder-view hierarchy"));
@@ -102,8 +92,7 @@ ShowfotoFolderViewBar::ShowfotoFolderViewBar(QWidget* const parent)
     connect(d->upBtn, SIGNAL(clicked()),
             this, SIGNAL(signalGoUp()));
 
-    d->homeBtn       = new QToolButton(this);
-    d->homeBtn->setCheckable(false);
+    d->homeBtn     = new QToolButton(this);
     d->homeBtn->setFocusPolicy(Qt::NoFocus);
     d->homeBtn->setIcon(QIcon::fromTheme(QLatin1String("go-home")));
     d->homeBtn->setToolTip(i18nc("@info", "Back to home directory"));
@@ -111,7 +100,7 @@ ShowfotoFolderViewBar::ShowfotoFolderViewBar(QWidget* const parent)
     connect(d->homeBtn, SIGNAL(clicked()),
             this, SIGNAL(signalGoHome()));
 
-    d->pathEdit = new QLineEdit(this);
+    d->pathEdit    = new QLineEdit(this);
     d->pathEdit->setClearButtonEnabled(true);
     d->pathEdit->setWhatsThis(i18nc("@info", "Enter the customized folder-view path"));
     setStretchFactor(d->pathEdit, 10);
@@ -135,30 +124,6 @@ void ShowfotoFolderViewBar::setCurrentPath(const QString& path)
 void ShowfotoFolderViewBar::slotCustomPathChanged()
 {
     emit signalCustomPathChanged(d->pathEdit->text());
-}
-
-void ShowfotoFolderViewBar::setFolderViewMode(int mode)
-{
-    if (mode == FolderViewDetailled)
-    {
-        d->detailledBtn->setChecked(true);
-    }
-    else
-    {
-        d->simplifiedBtn->setChecked(true);
-    }
-
-    emit signalFolderViewModeChanged(mode);
-}
-
-int ShowfotoFolderViewBar::folderViewMode() const
-{
-    if (d->simplifiedBtn->isChecked())
-    {
-        return FolderViewSimplified;
-    }
-
-    return FolderViewDetailled;
 }
 
 } // namespace ShowFoto

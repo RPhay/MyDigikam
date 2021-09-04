@@ -60,15 +60,13 @@ public:
     QString currentPath() const;
     void setCurrentPath(const QString& path);
 
-public Q_SLOTS:
-
-    void slotFolderViewModeChanged(int mode);
-
 private Q_SLOTS:
 
     void slotItemDoubleClicked(const QModelIndex& index);
     void slotGoHome();
     void slotGoUp();
+    void slotGoPrevious();
+    void slotGoNext();
     void slotCustomPathChanged(const QString&);
 
 Q_SIGNALS:

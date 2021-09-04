@@ -61,7 +61,6 @@ public:
     {
     }
 
-    static const QString   configFolderViewModeEntry;
     static const QString   configLastPathEntry;
 
     QFileSystemModel*      fsmodel;
@@ -69,7 +68,6 @@ public:
     ShowfotoFolderViewBar* fsbar;
 };
 
-const QString ShowfotoFolderView::Private::configFolderViewModeEntry(QLatin1String("Folder View Mode"));
 const QString ShowfotoFolderView::Private::configLastPathEntry(QLatin1String("Last Path"));
 
 ShowfotoFolderView::ShowfotoFolderView(QWidget* const parent)
@@ -116,14 +114,17 @@ ShowfotoFolderView::ShowfotoFolderView(QWidget* const parent)
     connect(d->fsview, SIGNAL(doubleClicked(QModelIndex)),
             this, SLOT(slotItemDoubleClicked(QModelIndex)));
 
-    connect(d->fsbar, SIGNAL(signalFolderViewModeChanged(int)),
-            this, SLOT(slotFolderViewModeChanged(int)));
-
     connect(d->fsbar, SIGNAL(signalGoHome()),
             this, SLOT(slotGoHome()));
 
     connect(d->fsbar, SIGNAL(signalGoUp()),
             this, SLOT(slotGoUp()));
+
+    connect(d->fsbar, SIGNAL(signalGoPrevious()),
+            this, SLOT(slotGoPrevious()));
+
+    connect(d->fsbar, SIGNAL(signalGoNext()),
+            this, SLOT(slotGoNext()));
 
     connect(d->fsbar, SIGNAL(signalCustomPathChanged(QString)),
             this, SLOT(slotCustomPathChanged(QString)));
@@ -132,19 +133,6 @@ ShowfotoFolderView::ShowfotoFolderView(QWidget* const parent)
 ShowfotoFolderView::~ShowfotoFolderView()
 {
     delete d;
-}
-
-void ShowfotoFolderView::slotFolderViewModeChanged(int mode)
-{
-/*
-    bool hidden                = (mode != ShowfotoFolderViewBar::FolderViewDetailled);
-
-    QHeaderView* const header  = d->fsview->header();
-    header->setSectionHidden(1, hidden);
-    header->setSectionHidden(2, hidden);
-    header->setSectionHidden(3, hidden);
-    header->setSectionHidden(4, hidden);
-*/
 }
 
 void ShowfotoFolderView::slotItemDoubleClicked(const QModelIndex& index)
@@ -182,6 +170,14 @@ void ShowfotoFolderView::slotGoUp()
     QDir dir(currentFolder());
     dir.cdUp();
     setCurrentPath(dir.absolutePath());
+}
+
+void ShowfotoFolderView::slotGoPrevious()
+{
+}
+
+void ShowfotoFolderView::slotGoNext()
+{
 }
 
 QString ShowfotoFolderView::currentFolder() const
@@ -241,7 +237,6 @@ void ShowfotoFolderView::doLoadState()
 {
     KConfigGroup group = getConfigGroup();
 
-    d->fsbar->setFolderViewMode(group.readEntry(entryName(d->configFolderViewModeEntry), (int)ShowfotoFolderViewBar::FolderViewSimplified));
     setCurrentPath(group.readEntry(entryName(d->configLastPathEntry), QDir::rootPath()));
     slotItemDoubleClicked(d->fsview->currentIndex());
 }
@@ -250,16 +245,17 @@ void ShowfotoFolderView::doSaveState()
 {
     KConfigGroup group = getConfigGroup();
 
-    group.writeEntry(entryName(d->configFolderViewModeEntry), d->fsbar->folderViewMode());
-    group.writeEntry(entryName(d->configLastPathEntry),       currentPath());
+    group.writeEntry(entryName(d->configLastPathEntry), currentPath());
     group.sync();
 }
 
 void ShowfotoFolderView::applySettings()
 {
+/*
     ShowfotoSettings* const settings = ShowfotoSettings::instance();
-//    d->albumFolderView->setEnableToolTips(settings->getShowAlbumToolTips());
-//    d->albumFolderView->setExpandNewCurrentItem(settings->getExpandNewCurrentItem());
+    d->albumFolderView->setEnableToolTips(settings->getShowAlbumToolTips());
+    d->albumFolderView->setExpandNewCurrentItem(settings->getExpandNewCurrentItem());
+*/
 }
 
 void ShowfotoFolderView::setActive(bool active)
