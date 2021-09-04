@@ -25,6 +25,7 @@
 
 // Qt includes
 
+#include <QDir>
 #include <QToolButton>
 #include <QPixmap>
 #include <QButtonGroup>
@@ -127,6 +128,8 @@ ShowfotoFolderViewBar::~ShowfotoFolderViewBar()
 void ShowfotoFolderViewBar::setCurrentPath(const QString& path)
 {
     d->pathEdit->setText(path);
+    QDir dir(path);
+    d->upBtn->setEnabled(dir.cdUp());
 }
 
 void ShowfotoFolderViewBar::slotCustomPathChanged()
