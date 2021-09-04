@@ -29,6 +29,7 @@
 #include <QListView>
 #include <QPixmap>
 #include <QWidget>
+#include <QEvent>
 #include <QModelIndex>
 
 // Local includes
@@ -64,12 +65,18 @@ public:
 
     QListView* listView()       const;
 
+private:
+
+    bool eventFilter(QObject* obj, QEvent* evt);
+    void loadContents(const QModelIndex& index);
+
 private Q_SLOTS:
 
     void slotItemDoubleClicked(const QModelIndex& index);
     void slotGoHome();
     void slotGoUp();
     void slotCustomPathChanged(const QString&);
+    void slotLoadContents();
 
 Q_SIGNALS:
 

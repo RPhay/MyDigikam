@@ -33,8 +33,10 @@
 #include <QFileInfo>
 #include <QHeaderView>
 #include <QDir>
+#include <QMenu>
 #include <QUndoStack>
 #include <QScrollBar>
+#include <QContextMenuEvent>
 
 // KDE includes
 
@@ -95,7 +97,8 @@ public:
       : fsmodel     (nullptr),
         fsview      (nullptr),
         fsbar       (nullptr),
-        fsstack     (nullptr)
+        fsstack     (nullptr),
+        fsmenu      (nullptr)
     {
     }
 
@@ -105,6 +108,7 @@ public:
     QListView*             fsview;
     ShowfotoFolderViewBar* fsbar;
     QUndoStack*            fsstack;
+    QMenu*                 fsmenu;
 };
 
 const QString ShowfotoFolderView::Private::configLastPathEntry(QLatin1String("Last Path"));
@@ -144,11 +148,38 @@ ShowfotoFolderView::ShowfotoFolderView(QWidget* const parent)
     d->fsview->setModel(d->fsmodel);
     d->fsview->setRootIndex(d->fsmodel->index(QDir::rootPath()));
     d->fsview->setAlternatingRowColors(true);
+    d->fsview->installEventFilter(this);
 
     QVBoxLayout* const layout  = new QVBoxLayout(this);
     layout->addWidget(d->fsbar);
     layout->addWidget(d->fsview);
     layout->setContentsMargins(0, 0, spacing, 0);
+
+    // --- Populate context menu
+
+    d->fsmenu                  = new QMenu(d->fsview);
+    d->fsmenu->setTitle(i18nc("@title", "Folder-View Options"));
+    d->fsmenu->addAction(QIcon::fromTheme(QLatin1String("go-previous")),
+                         i18nc("menu", "Go to Previous"),
+                         d->fsstack,
+                         SLOT(undo()));
+    d->fsmenu->addAction(QIcon::fromTheme(QLatin1String("go-next")),
+                         i18nc("menu", "Go to Next"),
+                         d->fsstack,
+                         SLOT(redo()));
+    d->fsmenu->addAction(QIcon::fromTheme(QLatin1String("go-home")),
+                         i18nc("menu", "Go Home"),
+                         this,
+                         SLOT(slotGoHome()));
+    d->fsmenu->addAction(QIcon::fromTheme(QLatin1String("go-up")),
+                         i18nc("menu", "Go Up"),
+                         this,
+                         SLOT(slotGoUp()));
+    d->fsmenu->addSeparator(),
+    d->fsmenu->addAction(QIcon::fromTheme(QLatin1String("folder-download")),
+                         i18nc("menu", "Load Contents"),
+                         this,
+                         SLOT(slotLoadContents()));
 
     // --- Setup connextions
 
@@ -190,14 +221,38 @@ QListView* ShowfotoFolderView::listView() const
     return d->fsview;
 }
 
+bool ShowfotoFolderView::eventFilter(QObject* obj, QEvent* evt)
+{
+    if (obj == d->fsview)
+    {
+        if (evt->type() == QEvent::ContextMenu)
+        {
+            QContextMenuEvent* const e = static_cast<QContextMenuEvent*>(evt);
+            d->fsmenu->exec(e->globalPos());
+        }
+    }
+
+    return QObject::eventFilter(obj, evt);
+}
+
+void ShowfotoFolderView::slotLoadContents()
+{
+    QModelIndex index = d->fsmodel->index(currentPath());
+    loadContents(index);
+    emit signalCurrentPathChanged(currentPath());
+}
+
 void ShowfotoFolderView::slotItemDoubleClicked(const QModelIndex& index)
+{
+    loadContents(index);
+}
+
+void ShowfotoFolderView::loadContents(const QModelIndex& index)
 {
     if (!index.isValid())
     {
         return;
     }
-
-    QString cpath = currentPath();
 
     if (d->fsmodel->isDir(index))
     {
@@ -206,7 +261,7 @@ void ShowfotoFolderView::slotItemDoubleClicked(const QModelIndex& index)
 
     if (QApplication::keyboardModifiers() & (Qt::ShiftModifier | Qt::ControlModifier))
     {
-        emit signalCurrentPathChanged(cpath);
+        emit signalCurrentPathChanged(currentPath());
     }
 }
 
