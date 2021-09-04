@@ -63,8 +63,6 @@ public:
     void setCurrentPath(const QString& newPathNative);
     void setCurrentPathWithoutUndo(const QString& newPath);
 
-    QListView* listView()       const;
-
 private:
 
     bool eventFilter(QObject* obj, QEvent* evt);

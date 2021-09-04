@@ -58,11 +58,11 @@ class Q_DECL_HIDDEN ShowfotoFolderView::Private
 
 public:
 
-    class UndoCommand : public QUndoCommand
+    class ShowfotoFolderViewUndo : public QUndoCommand
     {
     public:
 
-        UndoCommand(ShowfotoFolderView* const view, const QString& newPath)
+        ShowfotoFolderViewUndo(ShowfotoFolderView* const view, const QString& newPath)
             : m_view(view)
         {
             m_oldPath = m_view->currentFolder();
@@ -216,11 +216,6 @@ ShowfotoFolderView::~ShowfotoFolderView()
     delete d;
 }
 
-QListView* ShowfotoFolderView::listView() const
-{
-    return d->fsview;
-}
-
 bool ShowfotoFolderView::eventFilter(QObject* obj, QEvent* evt)
 {
     if (obj == d->fsview)
@@ -284,7 +279,8 @@ void ShowfotoFolderView::slotGoUp()
 
     if (d->fsstack->canUndo())
     {
-        const Private::UndoCommand* lastDir = static_cast<const Private::UndoCommand*>(d->fsstack->command(d->fsstack->index() - 1));
+        const Private::ShowfotoFolderViewUndo* lastDir = static_cast<const Private::ShowfotoFolderViewUndo*>
+                                                         (d->fsstack->command(d->fsstack->index() - 1));
 
         if (lastDir->undo_path() == dir.path())
         {
@@ -347,7 +343,7 @@ void ShowfotoFolderView::setCurrentPath(const QString& newPathNative)
 
         if (index.isValid())
         {
-            d->fsstack->push(new Private::UndoCommand(this, newPath));
+            d->fsstack->push(new Private::ShowfotoFolderViewUndo(this, newPath));
             d->fsmodel->setRootPath(newPath);
             d->fsview->setRootIndex(index);
         }
