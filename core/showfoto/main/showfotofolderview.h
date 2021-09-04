@@ -49,11 +49,11 @@ class ShowfotoFolderView : public QWidget,
 public:
 
     explicit ShowfotoFolderView(QWidget* const parent);
-    ~ShowfotoFolderView() override;
+    ~ShowfotoFolderView()           override;
 
     void          setActive(bool active);
-    void          doLoadState();
-    void          doSaveState();
+    void          doLoadState()     override;
+    void          doSaveState()     override;
     void          applySettings();
     const QIcon   getIcon();
     const QString getCaption();
