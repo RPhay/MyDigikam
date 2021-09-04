@@ -57,6 +57,11 @@ public:
 
     void setCurrentPath(const QString& path);
 
+public Q_SLOTS:
+
+    void slotPreviousEnabled(bool);
+    void slotNextEnabled(bool);
+
 Q_SIGNALS:
 
     void signalGoHome();

@@ -126,4 +126,14 @@ void ShowfotoFolderViewBar::slotCustomPathChanged()
     emit signalCustomPathChanged(d->pathEdit->text());
 }
 
+void ShowfotoFolderViewBar::slotPreviousEnabled(bool b)
+{
+    d->previousBtn->setEnabled(b);
+}
+
+void ShowfotoFolderViewBar::slotNextEnabled(bool b)
+{
+    d->nextBtn->setEnabled(b);
+}
+
 } // namespace ShowFoto

@@ -26,6 +26,7 @@
 
 // QT includes
 
+#include <QListView>
 #include <QPixmap>
 #include <QWidget>
 #include <QModelIndex>
@@ -59,14 +60,16 @@ public:
     QString currentFolder() const;
     QString currentPath() const;
     void setCurrentPath(const QString& path);
+    void setCurrentPathWithoutUndo(const QString& path);
+
+    QListView* listView() const;
 
 private Q_SLOTS:
 
+    void slotItemActivated(const QModelIndex& index);
     void slotItemDoubleClicked(const QModelIndex& index);
     void slotGoHome();
     void slotGoUp();
-    void slotGoPrevious();
-    void slotGoNext();
     void slotCustomPathChanged(const QString&);
 
 Q_SIGNALS:

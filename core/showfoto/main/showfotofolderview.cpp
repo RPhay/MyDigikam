@@ -31,9 +31,10 @@
 #include <QVBoxLayout>
 #include <QFileSystemModel>
 #include <QFileInfo>
-#include <QListView>
 #include <QHeaderView>
 #include <QDir>
+#include <QUndoStack>
+#include <QScrollBar>
 
 // KDE includes
 
@@ -52,12 +53,73 @@ namespace ShowFoto
 
 class Q_DECL_HIDDEN ShowfotoFolderView::Private
 {
+
+public:
+
+    class UndoCommand : public QUndoCommand
+    {
+    public:
+
+        UndoCommand(ShowfotoFolderView* const view, const QString& new_path)
+            : view_(view)
+        {
+            old_state_.path       = view_->currentFolder();
+            old_state_.scroll_pos = view_->listView()->verticalScrollBar()->value();
+            old_state_.index      = view_->listView()->currentIndex();
+            new_state_.path       = new_path;
+        }
+
+        QString undo_path() const
+        {
+            return old_state_.path;
+        }
+
+        void undo()
+        {
+            new_state_.scroll_pos = view_->listView()->verticalScrollBar()->value();
+            new_state_.index      = view_->listView()->currentIndex();
+            view_->setCurrentPathWithoutUndo(old_state_.path);
+            view_->listView()->setCurrentIndex(old_state_.index);
+            view_->listView()->verticalScrollBar()->setValue(old_state_.scroll_pos);
+        }
+
+        void redo()
+        {
+            view_->setCurrentPathWithoutUndo(new_state_.path);
+
+            if (new_state_.scroll_pos != -1)
+            {
+                view_->listView()->setCurrentIndex(new_state_.index);
+                view_->listView()->verticalScrollBar()->setValue(new_state_.scroll_pos);
+            }
+        }
+
+    private:
+
+        struct State
+        {
+            State()
+                : scroll_pos(-1)
+            {
+            }
+
+            QString     path;
+            QModelIndex index;
+            int         scroll_pos;
+        };
+
+        ShowfotoFolderView* view_;
+        State               old_state_;
+        State               new_state_;
+    };
+
 public:
 
     explicit Private()
       : fsmodel     (nullptr),
         fsview      (nullptr),
-        fsbar       (nullptr)
+        fsbar       (nullptr),
+        fsstack     (nullptr)
     {
     }
 
@@ -66,6 +128,7 @@ public:
     QFileSystemModel*      fsmodel;
     QListView*             fsview;
     ShowfotoFolderViewBar* fsbar;
+    QUndoStack*            fsstack;
 };
 
 const QString ShowfotoFolderView::Private::configLastPathEntry(QLatin1String("Last Path"));
@@ -92,6 +155,8 @@ ShowfotoFolderView::ShowfotoFolderView(QWidget* const parent)
     // if an item fails the filter, hide it
     d->fsmodel->setNameFilterDisables(false);
 
+    d->fsstack                 = new QUndoStack(this);
+
     // --- Popumate the view
 
     const int spacing          = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
@@ -111,6 +176,9 @@ ShowfotoFolderView::ShowfotoFolderView(QWidget* const parent)
 
     // --- Setup connextions
 
+    connect(d->fsview, SIGNAL(activated(QModelIndex)),
+            this, SLOT(slotItemActivated(QModelIndex)));
+
     connect(d->fsview, SIGNAL(doubleClicked(QModelIndex)),
             this, SLOT(slotItemDoubleClicked(QModelIndex)));
 
@@ -120,19 +188,40 @@ ShowfotoFolderView::ShowfotoFolderView(QWidget* const parent)
     connect(d->fsbar, SIGNAL(signalGoUp()),
             this, SLOT(slotGoUp()));
 
-    connect(d->fsbar, SIGNAL(signalGoPrevious()),
-            this, SLOT(slotGoPrevious()));
-
-    connect(d->fsbar, SIGNAL(signalGoNext()),
-            this, SLOT(slotGoNext()));
-
     connect(d->fsbar, SIGNAL(signalCustomPathChanged(QString)),
             this, SLOT(slotCustomPathChanged(QString)));
+
+    connect(d->fsstack, SIGNAL(canUndoChanged(bool)),
+            d->fsbar, SLOT(slotPreviousEnabled(bool)));
+
+    connect(d->fsstack, SIGNAL(canRedoChanged(bool)),
+            d->fsbar, SLOT(slotNextEnabled(bool)));
+
+    connect(d->fsbar, SIGNAL(signalGoNext()),
+            d->fsstack, SLOT(redo()));
+
+    connect(d->fsbar, SIGNAL(signalGoPrevious()),
+            d->fsstack, SLOT(undo()));
 }
 
 ShowfotoFolderView::~ShowfotoFolderView()
 {
     delete d;
+}
+
+QListView* ShowfotoFolderView::listView() const
+{
+    return d->fsview;
+}
+
+void ShowfotoFolderView::slotItemActivated(const QModelIndex& index)
+{
+/*
+    if (d->fsmodel->isDir(index))
+    {
+        setCurrentPath(d->fsmodel->filePath(index));
+    }
+*/
 }
 
 void ShowfotoFolderView::slotItemDoubleClicked(const QModelIndex& index)
@@ -146,7 +235,7 @@ void ShowfotoFolderView::slotItemDoubleClicked(const QModelIndex& index)
 
     if (d->fsmodel->isDir(index))
     {
-        setCurrentPath(cpath);
+        setCurrentPath(d->fsmodel->filePath(index));
     }
 
     if (QApplication::keyboardModifiers() & (Qt::ShiftModifier | Qt::ControlModifier))
@@ -169,15 +258,21 @@ void ShowfotoFolderView::slotGoUp()
 {
     QDir dir(currentFolder());
     dir.cdUp();
+
+    // Is this the same as going back?  If so just go back, so we can keep the view scroll position.
+
+    if (d->fsstack->canUndo())
+    {
+        const Private::UndoCommand* lastDir = static_cast<const Private::UndoCommand*>(d->fsstack->command(d->fsstack->index() - 1));
+
+        if (lastDir->undo_path() == dir.path())
+        {
+            d->fsstack->undo();
+            return;
+        }
+    }
+
     setCurrentPath(dir.absolutePath());
-}
-
-void ShowfotoFolderView::slotGoPrevious()
-{
-}
-
-void ShowfotoFolderView::slotGoNext()
-{
 }
 
 QString ShowfotoFolderView::currentFolder() const
@@ -190,8 +285,10 @@ QString ShowfotoFolderView::currentPath() const
     return d->fsmodel->filePath(d->fsview->currentIndex());
 }
 
-void ShowfotoFolderView::setCurrentPath(const QString& path)
+/*
+void ShowfotoFolderView::setCurrentPath(const QString& path, bool withUndo)
 {
+    QString oldPath = d->fsmodel->rootPath();
     QString newPath = QDir::fromNativeSeparators(path);
 
     QFileInfo info(newPath);
@@ -221,6 +318,62 @@ void ShowfotoFolderView::setCurrentPath(const QString& path)
     }
 
     d->fsbar->setCurrentPath(currentFolder());
+
+    if (withUndo && (oldPath != newPath))
+    {
+        d->fsstack->push(new Private::UndoCommand(this, newPath));
+    }
+}
+*/
+void ShowfotoFolderView::setCurrentPath(const QString& new_path_native)
+{
+    QString new_path = QDir::fromNativeSeparators(new_path_native);
+    QString old_path(d->fsmodel->rootPath());
+
+    if (old_path == new_path)
+    {
+        return;
+    }
+
+    QFileInfo info(new_path);
+
+    if (!info.exists())
+    {
+        return;
+    }
+
+    if (info.isDir())
+    {
+        QModelIndex index = d->fsmodel->setRootPath(new_path);
+
+        if (index.isValid())
+        {
+            d->fsview->setRootIndex(index);
+            d->fsstack->push(new Private::UndoCommand(this, new_path));
+qCDebug(DIGIKAM_SHOWFOTO_LOG) << new_path << new_path_native << old_path;
+        }
+    }
+    else
+    {
+        QModelIndex index = d->fsmodel->index(new_path);
+
+        if (index.isValid())
+        {
+            d->fsview->setCurrentIndex(index);
+        }
+    }
+}
+
+void ShowfotoFolderView::setCurrentPathWithoutUndo(const QString& new_path)
+{
+    QModelIndex index = d->fsmodel->setRootPath(new_path);
+
+    if (index.isValid())
+    {
+        d->fsview->setRootIndex(index);
+        d->fsbar->setCurrentPath(currentFolder());
+qCDebug(DIGIKAM_SHOWFOTO_LOG) << new_path;
+    }
 }
 
 const QIcon ShowfotoFolderView::getIcon()
