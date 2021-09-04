@@ -57,16 +57,15 @@ public:
     const QIcon   getIcon();
     const QString getCaption();
 
-    QString currentFolder() const;
-    QString currentPath() const;
-    void setCurrentPath(const QString& path);
-    void setCurrentPathWithoutUndo(const QString& path);
+    QString currentFolder()     const;
+    QString currentPath()       const;
+    void setCurrentPath(const QString& newPathNative);
+    void setCurrentPathWithoutUndo(const QString& newPath);
 
-    QListView* listView() const;
+    QListView* listView()       const;
 
 private Q_SLOTS:
 
-    void slotItemActivated(const QModelIndex& index);
     void slotItemDoubleClicked(const QModelIndex& index);
     void slotGoHome();
     void slotGoUp();

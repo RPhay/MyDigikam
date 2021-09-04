@@ -60,57 +60,33 @@ public:
     {
     public:
 
-        UndoCommand(ShowfotoFolderView* const view, const QString& new_path)
-            : view_(view)
+        UndoCommand(ShowfotoFolderView* const view, const QString& newPath)
+            : m_view(view)
         {
-            old_state_.path       = view_->currentFolder();
-            old_state_.scroll_pos = view_->listView()->verticalScrollBar()->value();
-            old_state_.index      = view_->listView()->currentIndex();
-            new_state_.path       = new_path;
+            m_oldPath = m_view->currentFolder();
+            m_newPath = newPath;
         }
 
         QString undo_path() const
         {
-            return old_state_.path;
+            return m_oldPath;
         }
 
         void undo()
         {
-            new_state_.scroll_pos = view_->listView()->verticalScrollBar()->value();
-            new_state_.index      = view_->listView()->currentIndex();
-            view_->setCurrentPathWithoutUndo(old_state_.path);
-            view_->listView()->setCurrentIndex(old_state_.index);
-            view_->listView()->verticalScrollBar()->setValue(old_state_.scroll_pos);
+            m_view->setCurrentPathWithoutUndo(m_oldPath);
         }
 
         void redo()
         {
-            view_->setCurrentPathWithoutUndo(new_state_.path);
-
-            if (new_state_.scroll_pos != -1)
-            {
-                view_->listView()->setCurrentIndex(new_state_.index);
-                view_->listView()->verticalScrollBar()->setValue(new_state_.scroll_pos);
-            }
+            m_view->setCurrentPathWithoutUndo(m_newPath);
         }
 
     private:
 
-        struct State
-        {
-            State()
-                : scroll_pos(-1)
-            {
-            }
-
-            QString     path;
-            QModelIndex index;
-            int         scroll_pos;
-        };
-
-        ShowfotoFolderView* view_;
-        State               old_state_;
-        State               new_state_;
+        ShowfotoFolderView* m_view;
+        QString             m_oldPath;
+        QString             m_newPath;
     };
 
 public:
@@ -214,16 +190,6 @@ QListView* ShowfotoFolderView::listView() const
     return d->fsview;
 }
 
-void ShowfotoFolderView::slotItemActivated(const QModelIndex& index)
-{
-/*
-    if (d->fsmodel->isDir(index))
-    {
-        setCurrentPath(d->fsmodel->filePath(index));
-    }
-*/
-}
-
 void ShowfotoFolderView::slotItemDoubleClicked(const QModelIndex& index)
 {
     if (!index.isValid())
@@ -277,19 +243,41 @@ void ShowfotoFolderView::slotGoUp()
 
 QString ShowfotoFolderView::currentFolder() const
 {
-    return d->fsmodel->rootPath();
+    QString path = d->fsmodel->rootPath();
+
+    if (!path.endsWith(QDir::separator()))
+    {
+        path.append(QDir::separator());
+    }
+
+    return path;
 }
 
 QString ShowfotoFolderView::currentPath() const
 {
-    return d->fsmodel->filePath(d->fsview->currentIndex());
+    return (d->fsmodel->filePath(d->fsview->currentIndex()));
 }
 
-/*
-void ShowfotoFolderView::setCurrentPath(const QString& path, bool withUndo)
+void ShowfotoFolderView::setCurrentPath(const QString& newPathNative)
 {
-    QString oldPath = d->fsmodel->rootPath();
-    QString newPath = QDir::fromNativeSeparators(path);
+    QString newPath = QDir::fromNativeSeparators(newPathNative);
+
+    if (!newPath.endsWith(QDir::separator()))
+    {
+        newPath.append(QDir::separator());
+    }
+
+    QString oldPath(d->fsmodel->rootPath());
+
+    if (!oldPath.endsWith(QDir::separator()))
+    {
+        oldPath.append(QDir::separator());
+    }
+
+    if (oldPath == newPath)
+    {
+        return;
+    }
 
     QFileInfo info(newPath);
 
@@ -300,10 +288,12 @@ void ShowfotoFolderView::setCurrentPath(const QString& path, bool withUndo)
 
     if (info.isDir())
     {
-        QModelIndex index = d->fsmodel->setRootPath(newPath);
+        QModelIndex index = d->fsmodel->index(newPath);
 
         if (index.isValid())
         {
+            d->fsstack->push(new Private::UndoCommand(this, newPath));
+            d->fsmodel->setRootPath(newPath);
             d->fsview->setRootIndex(index);
         }
     }
@@ -316,63 +306,16 @@ void ShowfotoFolderView::setCurrentPath(const QString& path, bool withUndo)
             d->fsview->setCurrentIndex(index);
         }
     }
-
-    d->fsbar->setCurrentPath(currentFolder());
-
-    if (withUndo && (oldPath != newPath))
-    {
-        d->fsstack->push(new Private::UndoCommand(this, newPath));
-    }
-}
-*/
-void ShowfotoFolderView::setCurrentPath(const QString& new_path_native)
-{
-    QString new_path = QDir::fromNativeSeparators(new_path_native);
-    QString old_path(d->fsmodel->rootPath());
-
-    if (old_path == new_path)
-    {
-        return;
-    }
-
-    QFileInfo info(new_path);
-
-    if (!info.exists())
-    {
-        return;
-    }
-
-    if (info.isDir())
-    {
-        QModelIndex index = d->fsmodel->setRootPath(new_path);
-
-        if (index.isValid())
-        {
-            d->fsview->setRootIndex(index);
-            d->fsstack->push(new Private::UndoCommand(this, new_path));
-qCDebug(DIGIKAM_SHOWFOTO_LOG) << new_path << new_path_native << old_path;
-        }
-    }
-    else
-    {
-        QModelIndex index = d->fsmodel->index(new_path);
-
-        if (index.isValid())
-        {
-            d->fsview->setCurrentIndex(index);
-        }
-    }
 }
 
-void ShowfotoFolderView::setCurrentPathWithoutUndo(const QString& new_path)
+void ShowfotoFolderView::setCurrentPathWithoutUndo(const QString& newPath)
 {
-    QModelIndex index = d->fsmodel->setRootPath(new_path);
+    QModelIndex index = d->fsmodel->setRootPath(newPath);
 
     if (index.isValid())
     {
         d->fsview->setRootIndex(index);
         d->fsbar->setCurrentPath(currentFolder());
-qCDebug(DIGIKAM_SHOWFOTO_LOG) << new_path;
     }
 }
 
@@ -390,7 +333,7 @@ void ShowfotoFolderView::doLoadState()
 {
     KConfigGroup group = getConfigGroup();
 
-    setCurrentPath(group.readEntry(entryName(d->configLastPathEntry), QDir::rootPath()));
+    setCurrentPathWithoutUndo(group.readEntry(entryName(d->configLastPathEntry), QDir::rootPath()));
     slotItemDoubleClicked(d->fsview->currentIndex());
 }
 
