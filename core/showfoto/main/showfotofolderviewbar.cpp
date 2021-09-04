@@ -77,7 +77,6 @@ ShowfotoFolderViewBar::ShowfotoFolderViewBar(QWidget* const parent)
     d->simplifiedBtn->setCheckable(true);
     d->simplifiedBtn->setChecked(true);
     d->simplifiedBtn->setFocusPolicy(Qt::NoFocus);
-    d->simplifiedBtn->setIconSize(QSize(22, 22));
     d->simplifiedBtn->setIcon(QIcon::fromTheme(QLatin1String("view-list-text")));
     d->simplifiedBtn->setToolTip(i18nc("@info", "Folder-view mode simplified"));
     d->btnsBox->addButton(d->simplifiedBtn, FolderViewSimplified);
@@ -86,7 +85,6 @@ ShowfotoFolderViewBar::ShowfotoFolderViewBar(QWidget* const parent)
     d->detailledBtn->setCheckable(true);
     d->detailledBtn->setChecked(false);
     d->detailledBtn->setFocusPolicy(Qt::NoFocus);
-    d->detailledBtn->setIconSize(QSize(22, 22));
     d->detailledBtn->setIcon(QIcon::fromTheme(QLatin1String("view-list-details")));
     d->detailledBtn->setToolTip(i18nc("@info", "Folder-view mode detailled"));
     d->btnsBox->addButton(d->detailledBtn, FolderViewDetailled);
@@ -97,7 +95,6 @@ ShowfotoFolderViewBar::ShowfotoFolderViewBar(QWidget* const parent)
     d->upBtn       = new QToolButton(this);
     d->upBtn->setCheckable(false);
     d->upBtn->setFocusPolicy(Qt::NoFocus);
-    d->upBtn->setIconSize(QSize(22, 22));
     d->upBtn->setIcon(QIcon::fromTheme(QLatin1String("go-up")));
     d->upBtn->setToolTip(i18nc("@info", "Go up in folder-view hierarchy"));
 
@@ -107,7 +104,6 @@ ShowfotoFolderViewBar::ShowfotoFolderViewBar(QWidget* const parent)
     d->homeBtn       = new QToolButton(this);
     d->homeBtn->setCheckable(false);
     d->homeBtn->setFocusPolicy(Qt::NoFocus);
-    d->homeBtn->setIconSize(QSize(22, 22));
     d->homeBtn->setIcon(QIcon::fromTheme(QLatin1String("go-home")));
     d->homeBtn->setToolTip(i18nc("@info", "Back to home directory"));
 

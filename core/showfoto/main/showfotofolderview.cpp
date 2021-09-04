@@ -31,7 +31,7 @@
 #include <QVBoxLayout>
 #include <QFileSystemModel>
 #include <QFileInfo>
-#include <QTreeView>
+#include <QListView>
 #include <QHeaderView>
 #include <QDir>
 
@@ -55,9 +55,9 @@ class Q_DECL_HIDDEN ShowfotoFolderView::Private
 public:
 
     explicit Private()
-      : fsmodel         (nullptr),
-        fstree          (nullptr),
-        fsbar           (nullptr)
+      : fsmodel     (nullptr),
+        fsview      (nullptr),
+        fsbar       (nullptr)
     {
     }
 
@@ -65,7 +65,7 @@ public:
     static const QString   configLastPathEntry;
 
     QFileSystemModel*      fsmodel;
-    QTreeView*             fstree;
+    QListView*             fsview;
     ShowfotoFolderViewBar* fsbar;
 };
 
@@ -79,9 +79,7 @@ ShowfotoFolderView::ShowfotoFolderView(QWidget* const parent)
 {
     setObjectName(QLatin1String("ShowfotoFolderView Sidebar"));
 
-    const int spacing          = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
-
-    d->fsbar                   = new ShowfotoFolderViewBar(this);
+    // --- Populate the model
 
     d->fsmodel                 = new QFileSystemModel(this);
     d->fsmodel->setRootPath(QDir::rootPath());
@@ -93,20 +91,29 @@ ShowfotoFolderView::ShowfotoFolderView(QWidget* const parent)
     patterns.append(filter.toUpper());
     d->fsmodel->setNameFilters(patterns.split(QLatin1Char(' ')));
 
-    d->fstree                  = new QTreeView(this);
-    d->fstree->setObjectName(QLatin1String("ShowfotoFolderView"));
-    d->fstree->setModel(d->fsmodel);
-    d->fstree->setRootIndex(d->fsmodel->index(QDir::rootPath()));
-    d->fstree->resizeColumnToContents(1);
-    d->fstree->setAlternatingRowColors(true);
-    d->fstree->setExpandsOnDoubleClick(false);
+    // if an item fails the filter, hide it
+    d->fsmodel->setNameFilterDisables(false);
+
+    // --- Popumate the view
+
+    const int spacing          = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
+
+    d->fsbar                   = new ShowfotoFolderViewBar(this);
+
+    d->fsview                  = new QListView(this);
+    d->fsview->setObjectName(QLatin1String("ShowfotoFolderView"));
+    d->fsview->setModel(d->fsmodel);
+    d->fsview->setRootIndex(d->fsmodel->index(QDir::rootPath()));
+    d->fsview->setAlternatingRowColors(true);
 
     QVBoxLayout* const layout  = new QVBoxLayout(this);
     layout->addWidget(d->fsbar);
-    layout->addWidget(d->fstree);
+    layout->addWidget(d->fsview);
     layout->setContentsMargins(0, 0, spacing, 0);
 
-    connect(d->fstree, SIGNAL(doubleClicked(QModelIndex)),
+    // --- Setup connextions
+
+    connect(d->fsview, SIGNAL(doubleClicked(QModelIndex)),
             this, SLOT(slotItemDoubleClicked(QModelIndex)));
 
     connect(d->fsbar, SIGNAL(signalFolderViewModeChanged(int)),
@@ -129,21 +136,34 @@ ShowfotoFolderView::~ShowfotoFolderView()
 
 void ShowfotoFolderView::slotFolderViewModeChanged(int mode)
 {
+/*
     bool hidden                = (mode != ShowfotoFolderViewBar::FolderViewDetailled);
 
-    QHeaderView* const header  = d->fstree->header();
+    QHeaderView* const header  = d->fsview->header();
     header->setSectionHidden(1, hidden);
     header->setSectionHidden(2, hidden);
     header->setSectionHidden(3, hidden);
     header->setSectionHidden(4, hidden);
+*/
 }
 
 void ShowfotoFolderView::slotItemDoubleClicked(const QModelIndex& index)
 {
-    if (index.isValid())
+    if (!index.isValid())
     {
-        emit signalCurrentPathChanged(currentPath());
-        d->fsbar->setCurrentPath(QFileInfo(currentPath()).absolutePath());
+        return;
+    }
+
+    QString cpath = currentPath();
+
+    if (d->fsmodel->isDir(index))
+    {
+        setCurrentPath(cpath);
+    }
+
+    if (QApplication::keyboardModifiers() & (Qt::ShiftModifier | Qt::ControlModifier))
+    {
+        emit signalCurrentPathChanged(cpath);
     }
 }
 
@@ -159,28 +179,52 @@ void ShowfotoFolderView::slotGoHome()
 
 void ShowfotoFolderView::slotGoUp()
 {
-    QDir dir(QFileInfo(currentPath()).absolutePath());
+    QDir dir(currentFolder());
     dir.cdUp();
     setCurrentPath(dir.absolutePath());
 }
 
+QString ShowfotoFolderView::currentFolder() const
+{
+    return d->fsmodel->rootPath();
+}
+
 QString ShowfotoFolderView::currentPath() const
 {
-    return d->fsmodel->filePath(d->fstree->currentIndex());
+    return d->fsmodel->filePath(d->fsview->currentIndex());
 }
 
 void ShowfotoFolderView::setCurrentPath(const QString& path)
 {
-    QModelIndex index = d->fsmodel->index(path);
+    QString newPath = QDir::fromNativeSeparators(path);
 
-    if (index.isValid())
+    QFileInfo info(newPath);
+
+    if (!info.exists())
     {
-        d->fstree->setCurrentIndex(index);
+        return;
+    }
+
+    if (info.isDir())
+    {
+        QModelIndex index = d->fsmodel->setRootPath(newPath);
+
+        if (index.isValid())
+        {
+            d->fsview->setRootIndex(index);
+        }
     }
     else
     {
-        d->fsbar->setCurrentPath(currentPath());
+        QModelIndex index = d->fsmodel->index(newPath);
+
+        if (index.isValid())
+        {
+            d->fsview->setCurrentIndex(index);
+        }
     }
+
+    d->fsbar->setCurrentPath(currentFolder());
 }
 
 const QIcon ShowfotoFolderView::getIcon()
@@ -199,7 +243,7 @@ void ShowfotoFolderView::doLoadState()
 
     d->fsbar->setFolderViewMode(group.readEntry(entryName(d->configFolderViewModeEntry), (int)ShowfotoFolderViewBar::FolderViewSimplified));
     setCurrentPath(group.readEntry(entryName(d->configLastPathEntry), QDir::rootPath()));
-    slotItemDoubleClicked(d->fstree->currentIndex());
+    slotItemDoubleClicked(d->fsview->currentIndex());
 }
 
 void ShowfotoFolderView::doSaveState()

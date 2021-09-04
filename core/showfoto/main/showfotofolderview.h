@@ -56,11 +56,12 @@ public:
     const QIcon   getIcon();
     const QString getCaption();
 
+    QString currentFolder() const;
     QString currentPath() const;
+    void setCurrentPath(const QString& path);
 
 public Q_SLOTS:
 
-    void setCurrentPath(const QString& path);
     void slotFolderViewModeChanged(int mode);
 
 private Q_SLOTS:
