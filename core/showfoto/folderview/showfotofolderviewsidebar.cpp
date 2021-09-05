@@ -29,7 +29,6 @@
 #include <QStyle>
 #include <QIcon>
 #include <QVBoxLayout>
-#include <QFileSystemModel>
 #include <QFileInfo>
 #include <QDir>
 #include <QUndoStack>
@@ -47,6 +46,7 @@
 #include "showfotofolderviewbar.h"
 #include "showfotofolderviewundo.h"
 #include "showfotofolderviewlist.h"
+#include "showfotofolderviewmodel.h"
 
 namespace ShowFoto
 {
@@ -60,18 +60,16 @@ public:
       : fsmodel     (nullptr),
         fsview      (nullptr),
         fsbar       (nullptr),
-        fsstack     (nullptr),
-        fsmenu      (nullptr)
+        fsstack     (nullptr)
     {
     }
 
-    static const QString   configLastPathEntry;
+    static const QString     configLastPathEntry;
 
-    QFileSystemModel*      fsmodel;
-    QListView*             fsview;
-    ShowfotoFolderViewBar* fsbar;
-    QUndoStack*            fsstack;
-    QMenu*                 fsmenu;
+    ShowfotoFolderViewModel* fsmodel;
+    QListView*               fsview;
+    ShowfotoFolderViewBar*   fsbar;
+    QUndoStack*              fsstack;
 };
 
 const QString ShowfotoFolderViewSideBar::Private::configLastPathEntry(QLatin1String("Last Path"));
@@ -85,20 +83,7 @@ ShowfotoFolderViewSideBar::ShowfotoFolderViewSideBar(QWidget* const parent)
 
     // --- Populate the model
 
-    d->fsmodel                 = new QFileSystemModel(this);
-    d->fsmodel->setRootPath(QDir::rootPath());
-
-    QString filter;
-    QStringList mimeTypes      = supportedImageMimeTypes(QIODevice::ReadOnly, filter);
-    QString patterns           = filter.toLower();
-    patterns.append(QLatin1Char(' '));
-    patterns.append(filter.toUpper());
-    d->fsmodel->setNameFilters(patterns.split(QLatin1Char(' ')));
-
-    // If an item fails the filter, hide it
-
-    d->fsmodel->setNameFilterDisables(false);
-
+    d->fsmodel                 = new ShowfotoFolderViewModel(this);
     d->fsstack                 = new QUndoStack(this);
 
     // --- Populate the view
@@ -150,6 +135,7 @@ void ShowfotoFolderViewSideBar::slotLoadContents()
 {
     QModelIndex index = d->fsmodel->index(currentPath());
     loadContents(index);
+
     emit signalCurrentPathChanged(currentPath());
 }
 
