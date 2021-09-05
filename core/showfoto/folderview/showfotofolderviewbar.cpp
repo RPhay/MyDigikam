@@ -52,6 +52,7 @@ public:
         nextBtn     (nullptr),
         upBtn       (nullptr),
         homeBtn     (nullptr),
+        loadBtn     (nullptr),
         pathEdit    (nullptr)
     {
     }
@@ -60,6 +61,7 @@ public:
     QToolButton*  nextBtn;
     QToolButton*  upBtn;
     QToolButton*  homeBtn;
+    QToolButton*  loadBtn;
     QLineEdit*    pathEdit;
 };
 
@@ -105,6 +107,14 @@ ShowfotoFolderViewBar::ShowfotoFolderViewBar(QWidget* const parent)
 
     QWidget* const space = new QWidget(btnBox);
     btnBox->setStretchFactor(space, 10);
+
+    d->loadBtn        = new QToolButton(btnBox);
+    d->loadBtn->setFocusPolicy(Qt::NoFocus);
+    d->loadBtn->setIcon(QIcon::fromTheme(QLatin1String("media-playlist-normal")));
+    d->loadBtn->setToolTip(i18nc("@info", "Load Contents to Editor"));
+
+    connect(d->loadBtn, SIGNAL(clicked()),
+            this, SIGNAL(signalLoadContents()));
 
     d->pathEdit       = new QLineEdit(this);
     d->pathEdit->setClearButtonEnabled(true);

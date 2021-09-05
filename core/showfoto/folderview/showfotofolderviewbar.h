@@ -61,6 +61,7 @@ Q_SIGNALS:
     void signalGoPrevious();
     void signalGoNext();
     void signalCustomPathChanged(const QString&);
+    void signalLoadContents();
 
 private Q_SLOTS:
 

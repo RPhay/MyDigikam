@@ -122,20 +122,23 @@ ShowfotoFolderViewSideBar::ShowfotoFolderViewSideBar(QWidget* const parent)
     connect(d->fsbar, SIGNAL(signalGoUp()),
             this, SLOT(slotGoUp()));
 
+    connect(d->fsbar, SIGNAL(signalLoadContents()),
+            this, SLOT(slotLoadContents()));
+
     connect(d->fsbar, SIGNAL(signalCustomPathChanged(QString)),
             this, SLOT(slotCustomPathChanged(QString)));
-
-    connect(d->fsstack, SIGNAL(canUndoChanged(bool)),
-            d->fsbar, SLOT(slotPreviousEnabled(bool)));
-
-    connect(d->fsstack, SIGNAL(canRedoChanged(bool)),
-            d->fsbar, SLOT(slotNextEnabled(bool)));
 
     connect(d->fsbar, SIGNAL(signalGoNext()),
             this, SLOT(slotRedo()));
 
     connect(d->fsbar, SIGNAL(signalGoPrevious()),
             this, SLOT(slotUndo()));
+
+    connect(d->fsstack, SIGNAL(canUndoChanged(bool)),
+            d->fsbar, SLOT(slotPreviousEnabled(bool)));
+
+    connect(d->fsstack, SIGNAL(canRedoChanged(bool)),
+            d->fsbar, SLOT(slotNextEnabled(bool)));
 }
 
 ShowfotoFolderViewSideBar::~ShowfotoFolderViewSideBar()

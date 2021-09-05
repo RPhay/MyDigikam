@@ -94,7 +94,7 @@ ShowfotoFolderViewList::ShowfotoFolderViewList(ShowfotoFolderViewSideBar* const 
 
     d->fsmenu->addSeparator(),
 
-    d->fsmenu->addAction(QIcon::fromTheme(QLatin1String("folder-download")),
+    d->fsmenu->addAction(QIcon::fromTheme(QLatin1String("media-playlist-normal")),
                          i18nc("menu", "Load Contents"),
                          d->view,
                          SLOT(slotLoadContents()));
