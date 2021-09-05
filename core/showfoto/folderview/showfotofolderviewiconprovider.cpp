@@ -59,7 +59,7 @@ public:
 
     ThumbnailImageCatcher*   catcher;       ///< Thumbnail thread catcher from main process.
     ThumbnailLoadThread*     thread;        ///< The separated thread to render thumbnail images. We will use the Showfoto core instance to optimize memory allocations.
-    ShowfotoFolderViewModel* model;         ///w The MVC model, especially used to share icon-size property from view.
+    ShowfotoFolderViewModel* model;         ///< The MVC model, especially used to share icon-size property from view.
 };
 
 ShowfotoFolderViewIconProvider::ShowfotoFolderViewIconProvider(ShowfotoFolderViewModel* const model)
@@ -126,6 +126,8 @@ QIcon ShowfotoFolderViewIconProvider::icon(const QFileInfo& info) const
             }
         }
     }
+
+    // For non-iages, we will use default provider implementation.
 
     return QFileIconProvider::icon(info);
 }
