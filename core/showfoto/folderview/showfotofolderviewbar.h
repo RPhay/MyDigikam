@@ -38,7 +38,7 @@ using namespace Digikam;
 namespace ShowFoto
 {
 
-class ShowfotoFolderViewBar : public DHBox
+class ShowfotoFolderViewBar : public DVBox
 {
     Q_OBJECT
 

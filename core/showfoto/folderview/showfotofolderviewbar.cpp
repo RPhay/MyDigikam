@@ -26,6 +26,7 @@
 // Qt includes
 
 #include <QDir>
+#include <QLayout>
 #include <QToolButton>
 #include <QPixmap>
 #include <QLineEdit>
@@ -63,12 +64,14 @@ public:
 };
 
 ShowfotoFolderViewBar::ShowfotoFolderViewBar(QWidget* const parent)
-    : DHBox(parent),
+    : DVBox(parent),
       d    (new Private)
 {
     setContentsMargins(QMargins());
 
-    d->previousBtn = new QToolButton(this);
+    DHBox* const btnBox = new DHBox(this);
+
+    d->previousBtn      = new QToolButton(btnBox);
     d->previousBtn->setFocusPolicy(Qt::NoFocus);
     d->previousBtn->setIcon(QIcon::fromTheme(QLatin1String("go-previous")));
     d->previousBtn->setToolTip(i18nc("@info", "Go to previous place in folder-view hierarchy"));
@@ -76,7 +79,7 @@ ShowfotoFolderViewBar::ShowfotoFolderViewBar(QWidget* const parent)
     connect(d->previousBtn, SIGNAL(clicked()),
             this, SIGNAL(signalGoPrevious()));
 
-    d->nextBtn     = new QToolButton(this);
+    d->nextBtn        = new QToolButton(btnBox);
     d->nextBtn->setFocusPolicy(Qt::NoFocus);
     d->nextBtn->setIcon(QIcon::fromTheme(QLatin1String("go-next")));
     d->nextBtn->setToolTip(i18nc("@info", "Go to next place in folder-view hierarchy"));
@@ -84,7 +87,7 @@ ShowfotoFolderViewBar::ShowfotoFolderViewBar(QWidget* const parent)
     connect(d->nextBtn, SIGNAL(clicked()),
             this, SIGNAL(signalGoNext()));
 
-    d->upBtn       = new QToolButton(this);
+    d->upBtn          = new QToolButton(btnBox);
     d->upBtn->setFocusPolicy(Qt::NoFocus);
     d->upBtn->setIcon(QIcon::fromTheme(QLatin1String("go-up")));
     d->upBtn->setToolTip(i18nc("@info", "Go up in folder-view hierarchy"));
@@ -92,7 +95,7 @@ ShowfotoFolderViewBar::ShowfotoFolderViewBar(QWidget* const parent)
     connect(d->upBtn, SIGNAL(clicked()),
             this, SIGNAL(signalGoUp()));
 
-    d->homeBtn     = new QToolButton(this);
+    d->homeBtn        = new QToolButton(btnBox);
     d->homeBtn->setFocusPolicy(Qt::NoFocus);
     d->homeBtn->setIcon(QIcon::fromTheme(QLatin1String("go-home")));
     d->homeBtn->setToolTip(i18nc("@info", "Back to home directory"));
@@ -100,10 +103,12 @@ ShowfotoFolderViewBar::ShowfotoFolderViewBar(QWidget* const parent)
     connect(d->homeBtn, SIGNAL(clicked()),
             this, SIGNAL(signalGoHome()));
 
-    d->pathEdit    = new QLineEdit(this);
+    QWidget* const space = new QWidget(btnBox);
+    btnBox->setStretchFactor(space, 10);
+
+    d->pathEdit       = new QLineEdit(this);
     d->pathEdit->setClearButtonEnabled(true);
     d->pathEdit->setWhatsThis(i18nc("@info", "Enter the customized folder-view path"));
-    setStretchFactor(d->pathEdit, 10);
 
     connect(d->pathEdit, SIGNAL(returnPressed()),
             this, SLOT(slotCustomPathChanged()));
