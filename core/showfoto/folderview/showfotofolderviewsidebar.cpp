@@ -21,7 +21,7 @@
  *
  * ============================================================ */
 
-#include "showfotofolderview.h"
+#include "showfotofolderviewsidebar.h"
 
 // Qt includes
 
@@ -54,7 +54,7 @@
 namespace ShowFoto
 {
 
-class Q_DECL_HIDDEN ShowfotoFolderView::Private
+class Q_DECL_HIDDEN ShowfotoFolderViewSideBar::Private
 {
 
 public:
@@ -77,9 +77,9 @@ public:
     QMenu*                 fsmenu;
 };
 
-const QString ShowfotoFolderView::Private::configLastPathEntry(QLatin1String("Last Path"));
+const QString ShowfotoFolderViewSideBar::Private::configLastPathEntry(QLatin1String("Last Path"));
 
-ShowfotoFolderView::ShowfotoFolderView(QWidget* const parent)
+ShowfotoFolderViewSideBar::ShowfotoFolderViewSideBar(QWidget* const parent)
     : QWidget          (parent),
       StateSavingObject(this),
       d                (new Private)
@@ -111,7 +111,7 @@ ShowfotoFolderView::ShowfotoFolderView(QWidget* const parent)
     d->fsbar                   = new ShowfotoFolderViewBar(this);
 
     d->fsview                  = new QListView(this);
-    d->fsview->setObjectName(QLatin1String("ShowfotoFolderView"));
+    d->fsview->setObjectName(QLatin1String("ShowfotoFolderViewSideBar"));
     d->fsview->setModel(d->fsmodel);
     d->fsview->setRootIndex(d->fsmodel->index(QDir::rootPath()));
     d->fsview->setAlternatingRowColors(true);
@@ -178,12 +178,12 @@ ShowfotoFolderView::ShowfotoFolderView(QWidget* const parent)
             d->fsstack, SLOT(undo()));
 }
 
-ShowfotoFolderView::~ShowfotoFolderView()
+ShowfotoFolderViewSideBar::~ShowfotoFolderViewSideBar()
 {
     delete d;
 }
 
-bool ShowfotoFolderView::eventFilter(QObject* obj, QEvent* evt)
+bool ShowfotoFolderViewSideBar::eventFilter(QObject* obj, QEvent* evt)
 {
     if (obj == d->fsview)
     {
@@ -197,19 +197,19 @@ bool ShowfotoFolderView::eventFilter(QObject* obj, QEvent* evt)
     return QObject::eventFilter(obj, evt);
 }
 
-void ShowfotoFolderView::slotLoadContents()
+void ShowfotoFolderViewSideBar::slotLoadContents()
 {
     QModelIndex index = d->fsmodel->index(currentPath());
     loadContents(index);
     emit signalCurrentPathChanged(currentPath());
 }
 
-void ShowfotoFolderView::slotItemDoubleClicked(const QModelIndex& index)
+void ShowfotoFolderViewSideBar::slotItemDoubleClicked(const QModelIndex& index)
 {
     loadContents(index);
 }
 
-void ShowfotoFolderView::loadContents(const QModelIndex& index)
+void ShowfotoFolderViewSideBar::loadContents(const QModelIndex& index)
 {
     if (!index.isValid())
     {
@@ -227,17 +227,17 @@ void ShowfotoFolderView::loadContents(const QModelIndex& index)
     }
 }
 
-void ShowfotoFolderView::slotCustomPathChanged(const QString& path)
+void ShowfotoFolderViewSideBar::slotCustomPathChanged(const QString& path)
 {
     setCurrentPath(path);
 }
 
-void ShowfotoFolderView::slotGoHome()
+void ShowfotoFolderViewSideBar::slotGoHome()
 {
     setCurrentPath(QDir::homePath());
 }
 
-void ShowfotoFolderView::slotGoUp()
+void ShowfotoFolderViewSideBar::slotGoUp()
 {
     QDir dir(currentFolder());
     dir.cdUp();
@@ -259,7 +259,7 @@ void ShowfotoFolderView::slotGoUp()
     setCurrentPath(dir.absolutePath());
 }
 
-QString ShowfotoFolderView::currentFolder() const
+QString ShowfotoFolderViewSideBar::currentFolder() const
 {
     QString path = d->fsmodel->rootPath();
 
@@ -271,12 +271,12 @@ QString ShowfotoFolderView::currentFolder() const
     return path;
 }
 
-QString ShowfotoFolderView::currentPath() const
+QString ShowfotoFolderViewSideBar::currentPath() const
 {
     return (d->fsmodel->filePath(d->fsview->currentIndex()));
 }
 
-void ShowfotoFolderView::setCurrentPath(const QString& newPathNative)
+void ShowfotoFolderViewSideBar::setCurrentPath(const QString& newPathNative)
 {
     QString newPath = QDir::fromNativeSeparators(newPathNative);
 
@@ -326,7 +326,7 @@ void ShowfotoFolderView::setCurrentPath(const QString& newPathNative)
     }
 }
 
-void ShowfotoFolderView::setCurrentPathWithoutUndo(const QString& newPath)
+void ShowfotoFolderViewSideBar::setCurrentPathWithoutUndo(const QString& newPath)
 {
     QModelIndex index = d->fsmodel->setRootPath(newPath);
 
@@ -337,17 +337,17 @@ void ShowfotoFolderView::setCurrentPathWithoutUndo(const QString& newPath)
     }
 }
 
-const QIcon ShowfotoFolderView::getIcon()
+const QIcon ShowfotoFolderViewSideBar::getIcon()
 {
     return QIcon::fromTheme(QLatin1String("document-open-folder"));
 }
 
-const QString ShowfotoFolderView::getCaption()
+const QString ShowfotoFolderViewSideBar::getCaption()
 {
     return i18nc("@title: file system tree", "Folders");
 }
 
-void ShowfotoFolderView::doLoadState()
+void ShowfotoFolderViewSideBar::doLoadState()
 {
     KConfigGroup group = getConfigGroup();
 
@@ -355,7 +355,7 @@ void ShowfotoFolderView::doLoadState()
     slotItemDoubleClicked(d->fsview->currentIndex());
 }
 
-void ShowfotoFolderView::doSaveState()
+void ShowfotoFolderViewSideBar::doSaveState()
 {
     KConfigGroup group = getConfigGroup();
 
@@ -363,7 +363,7 @@ void ShowfotoFolderView::doSaveState()
     group.sync();
 }
 
-void ShowfotoFolderView::applySettings()
+void ShowfotoFolderViewSideBar::applySettings()
 {
 /*
     ShowfotoSettings* const settings = ShowfotoSettings::instance();
@@ -372,7 +372,7 @@ void ShowfotoFolderView::applySettings()
 */
 }
 
-void ShowfotoFolderView::setActive(bool active)
+void ShowfotoFolderViewSideBar::setActive(bool active)
 {
     if (active)
     {

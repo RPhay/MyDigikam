@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef SHOWFOTO_FOLDER_VIEW_H
-#define SHOWFOTO_FOLDER_VIEW_H
+#ifndef SHOWFOTO_FOLDER_VIEW_SIDEBAR_H
+#define SHOWFOTO_FOLDER_VIEW_SIDEBAR_H
 
 // QT includes
 
@@ -41,15 +41,15 @@ using namespace Digikam;
 namespace ShowFoto
 {
 
-class ShowfotoFolderView : public QWidget,
-                           public StateSavingObject
+class ShowfotoFolderViewSideBar : public QWidget,
+                                  public StateSavingObject
 {
     Q_OBJECT
 
 public:
 
-    explicit ShowfotoFolderView(QWidget* const parent);
-    ~ShowfotoFolderView()           override;
+    explicit ShowfotoFolderViewSideBar(QWidget* const parent);
+    ~ShowfotoFolderViewSideBar()           override;
 
     void          setActive(bool active);
     void          doLoadState()     override;
@@ -88,4 +88,4 @@ private:
 
 } // namespace ShowFoto
 
-#endif // SHOWFOTO_FOLDER_VIEW_H
+#endif // SHOWFOTO_FOLDER_VIEW_SIDEBAR_H

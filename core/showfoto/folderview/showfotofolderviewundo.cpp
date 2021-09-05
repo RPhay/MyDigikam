@@ -31,7 +31,7 @@
 namespace ShowFoto
 {
 
-ShowfotoFolderViewUndo::ShowfotoFolderViewUndo(ShowfotoFolderView* const view,
+ShowfotoFolderViewUndo::ShowfotoFolderViewUndo(ShowfotoFolderViewSideBar* const view,
                                                const QString& newPath)
     : QUndoCommand(),
       m_view(view)

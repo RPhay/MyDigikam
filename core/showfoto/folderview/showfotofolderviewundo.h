@@ -31,7 +31,7 @@
 
 // Local includes
 
-#include "showfotofolderview.h"
+#include "showfotofolderviewsidebar.h"
 
 namespace ShowFoto
 {
@@ -41,7 +41,7 @@ class ShowfotoFolderViewUndo : public QUndoCommand
 
 public:
 
-    ShowfotoFolderViewUndo(ShowfotoFolderView* const view,
+    ShowfotoFolderViewUndo(ShowfotoFolderViewSideBar* const view,
                            const QString& newPath);
     ~ShowfotoFolderViewUndo();
 
@@ -52,9 +52,9 @@ public:
 
 private:
 
-    ShowfotoFolderView* m_view;
-    QString             m_oldPath;
-    QString             m_newPath;
+    ShowfotoFolderViewSideBar* m_view;
+    QString                    m_oldPath;
+    QString                    m_newPath;
 };
 
 } // namespace ShowFoto
