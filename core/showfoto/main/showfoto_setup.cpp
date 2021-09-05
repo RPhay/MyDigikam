@@ -143,11 +143,11 @@ void Showfoto::setupUserArea()
     // is found, it is honored and deleted. The state will from than on be saved
     // by viewContainers built-in mechanism.
 
-    Qt::DockWidgetArea dockArea = Qt::LeftDockWidgetArea;
+    Qt::DockWidgetArea dockArea = Qt::TopDockWidgetArea;
 
     d->thumbBarDock = new Digikam::ThumbBarDock(viewContainer, Qt::Tool);
     d->thumbBarDock->setObjectName(QLatin1String("editor_thumbbar"));
-    d->thumbBarDock->setAllowedAreas(Qt::LeftDockWidgetArea | Qt::TopDockWidgetArea  | Qt::BottomDockWidgetArea);
+    d->thumbBarDock->setAllowedAreas(Qt::TopDockWidgetArea  | Qt::BottomDockWidgetArea);
     d->thumbBar     = new ShowfotoThumbnailBar(d->thumbBarDock);
 
     d->thumbBarDock->setWidget(d->thumbBar);
