@@ -63,18 +63,19 @@ public:
     void setCurrentPath(const QString& newPathNative);
     void setCurrentPathWithoutUndo(const QString& newPath);
 
-private:
-
-    bool eventFilter(QObject* obj, QEvent* evt);
     void loadContents(const QModelIndex& index);
+
+public Q_SLOTS:
+
+    void slotUndo();
+    void slotRedo();
+    void slotGoHome();
+    void slotGoUp();
+    void slotLoadContents();
 
 private Q_SLOTS:
 
-    void slotItemDoubleClicked(const QModelIndex& index);
-    void slotGoHome();
-    void slotGoUp();
     void slotCustomPathChanged(const QString&);
-    void slotLoadContents();
 
 Q_SIGNALS:
 

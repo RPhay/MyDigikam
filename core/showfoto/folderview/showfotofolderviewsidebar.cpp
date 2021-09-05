@@ -31,12 +31,8 @@
 #include <QVBoxLayout>
 #include <QFileSystemModel>
 #include <QFileInfo>
-#include <QHeaderView>
 #include <QDir>
-#include <QMenu>
 #include <QUndoStack>
-#include <QScrollBar>
-#include <QContextMenuEvent>
 
 // KDE includes
 
@@ -50,6 +46,7 @@
 #include "showfotosettings.h"
 #include "showfotofolderviewbar.h"
 #include "showfotofolderviewundo.h"
+#include "showfotofolderviewlist.h"
 
 namespace ShowFoto
 {
@@ -98,63 +95,26 @@ ShowfotoFolderViewSideBar::ShowfotoFolderViewSideBar(QWidget* const parent)
     patterns.append(filter.toUpper());
     d->fsmodel->setNameFilters(patterns.split(QLatin1Char(' ')));
 
-    // if an item fails the filter, hide it
+    // If an item fails the filter, hide it
 
     d->fsmodel->setNameFilterDisables(false);
 
     d->fsstack                 = new QUndoStack(this);
 
-    // --- Popumate the view
+    // --- Populate the view
 
     const int spacing          = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
-
     d->fsbar                   = new ShowfotoFolderViewBar(this);
-
-    d->fsview                  = new QListView(this);
-    d->fsview->setObjectName(QLatin1String("ShowfotoFolderViewSideBar"));
+    d->fsview                  = new ShowfotoFolderViewList(this);
     d->fsview->setModel(d->fsmodel);
     d->fsview->setRootIndex(d->fsmodel->index(QDir::rootPath()));
-    d->fsview->setAlternatingRowColors(true);
-    d->fsview->installEventFilter(this);
-
+    
     QVBoxLayout* const layout  = new QVBoxLayout(this);
     layout->addWidget(d->fsbar);
     layout->addWidget(d->fsview);
     layout->setContentsMargins(0, 0, spacing, 0);
 
-    // --- Populate context menu
-
-    d->fsmenu                  = new QMenu(d->fsview);
-    d->fsmenu->setTitle(i18nc("@title", "Folder-View Options"));
-    d->fsmenu->addAction(QIcon::fromTheme(QLatin1String("go-previous")),
-                         i18nc("menu", "Go to Previous"),
-                         d->fsstack,
-                         SLOT(undo()));
-    d->fsmenu->addAction(QIcon::fromTheme(QLatin1String("go-next")),
-                         i18nc("menu", "Go to Next"),
-                         d->fsstack,
-                         SLOT(redo()));
-    d->fsmenu->addAction(QIcon::fromTheme(QLatin1String("go-home")),
-                         i18nc("menu", "Go Home"),
-                         this,
-                         SLOT(slotGoHome()));
-    d->fsmenu->addAction(QIcon::fromTheme(QLatin1String("go-up")),
-                         i18nc("menu", "Go Up"),
-                         this,
-                         SLOT(slotGoUp()));
-    d->fsmenu->addSeparator(),
-    d->fsmenu->addAction(QIcon::fromTheme(QLatin1String("folder-download")),
-                         i18nc("menu", "Load Contents"),
-                         this,
-                         SLOT(slotLoadContents()));
-
-    // --- Setup connextions
-
-    connect(d->fsview, SIGNAL(activated(QModelIndex)),
-            this, SLOT(slotItemActivated(QModelIndex)));
-
-    connect(d->fsview, SIGNAL(doubleClicked(QModelIndex)),
-            this, SLOT(slotItemDoubleClicked(QModelIndex)));
+    // --- Setup connections
 
     connect(d->fsbar, SIGNAL(signalGoHome()),
             this, SLOT(slotGoHome()));
@@ -172,10 +132,10 @@ ShowfotoFolderViewSideBar::ShowfotoFolderViewSideBar(QWidget* const parent)
             d->fsbar, SLOT(slotNextEnabled(bool)));
 
     connect(d->fsbar, SIGNAL(signalGoNext()),
-            d->fsstack, SLOT(redo()));
+            this, SLOT(slotRedo()));
 
     connect(d->fsbar, SIGNAL(signalGoPrevious()),
-            d->fsstack, SLOT(undo()));
+            this, SLOT(slotUndo()));
 }
 
 ShowfotoFolderViewSideBar::~ShowfotoFolderViewSideBar()
@@ -183,30 +143,11 @@ ShowfotoFolderViewSideBar::~ShowfotoFolderViewSideBar()
     delete d;
 }
 
-bool ShowfotoFolderViewSideBar::eventFilter(QObject* obj, QEvent* evt)
-{
-    if (obj == d->fsview)
-    {
-        if (evt->type() == QEvent::ContextMenu)
-        {
-            QContextMenuEvent* const e = static_cast<QContextMenuEvent*>(evt);
-            d->fsmenu->exec(e->globalPos());
-        }
-    }
-
-    return QObject::eventFilter(obj, evt);
-}
-
 void ShowfotoFolderViewSideBar::slotLoadContents()
 {
     QModelIndex index = d->fsmodel->index(currentPath());
     loadContents(index);
     emit signalCurrentPathChanged(currentPath());
-}
-
-void ShowfotoFolderViewSideBar::slotItemDoubleClicked(const QModelIndex& index)
-{
-    loadContents(index);
 }
 
 void ShowfotoFolderViewSideBar::loadContents(const QModelIndex& index)
@@ -230,6 +171,16 @@ void ShowfotoFolderViewSideBar::loadContents(const QModelIndex& index)
 void ShowfotoFolderViewSideBar::slotCustomPathChanged(const QString& path)
 {
     setCurrentPath(path);
+}
+
+void ShowfotoFolderViewSideBar::slotUndo()
+{
+    d->fsstack->undo();
+}
+
+void ShowfotoFolderViewSideBar::slotRedo()
+{
+    d->fsstack->redo();
 }
 
 void ShowfotoFolderViewSideBar::slotGoHome()
@@ -352,7 +303,7 @@ void ShowfotoFolderViewSideBar::doLoadState()
     KConfigGroup group = getConfigGroup();
 
     setCurrentPathWithoutUndo(group.readEntry(entryName(d->configLastPathEntry), QDir::rootPath()));
-    slotItemDoubleClicked(d->fsview->currentIndex());
+    loadContents(d->fsview->currentIndex());
 }
 
 void ShowfotoFolderViewSideBar::doSaveState()
@@ -365,19 +316,13 @@ void ShowfotoFolderViewSideBar::doSaveState()
 
 void ShowfotoFolderViewSideBar::applySettings()
 {
-/*
     ShowfotoSettings* const settings = ShowfotoSettings::instance();
-    d->albumFolderView->setEnableToolTips(settings->getShowAlbumToolTips());
-    d->albumFolderView->setExpandNewCurrentItem(settings->getExpandNewCurrentItem());
-*/
+    Q_UNUSED(settings);
 }
 
 void ShowfotoFolderViewSideBar::setActive(bool active)
 {
-    if (active)
-    {
-//        AlbumManager::instance()->setCurrentAlbums(QList<Album*>() << d->albumFolderView->currentAlbum());
-    }
+    Q_UNUSED(active);
 }
 
 } // namespace ShowFoto
