@@ -28,6 +28,7 @@
 #include <QApplication>
 #include <QMimeDatabase>
 #include <QStyle>
+#include <QPainter>
 #include <QPixmap>
 #include <QImage>
 
@@ -75,9 +76,7 @@ ShowfotoFolderViewIconProvider::~ShowfotoFolderViewIconProvider()
     d->catcher->thread()->stopAllTasks();
     d->catcher->cancel();
 
-    delete d->catcher->thread();
     delete d->catcher;
-    delete d->thread;
     delete d;
 }
 
@@ -92,20 +91,27 @@ QIcon ShowfotoFolderViewIconProvider::icon(const QFileInfo& info) const
 
         if (mtype.name().startsWith(QLatin1String("image/")))
         {
-            d->catcher->setActive(true);
+            d->catcher->setActive(true);    // ---
 
-            d->catcher->thread()->find(ThumbnailIdentifier(path));
-            d->catcher->enqueue();
-            QList<QImage> images = d->catcher->waitForThumbnails();
+                d->catcher->thread()->find(ThumbnailIdentifier(path));
+                d->catcher->enqueue();
+                QList<QImage> images = d->catcher->waitForThumbnails();
 
-            d->catcher->setActive(false);
+            d->catcher->setActive(false);   // ---
 
             if (!images.isEmpty())
             {
                 QPixmap pix = QPixmap::fromImage(images.first());
-                pix.scaled(d->model->iconSize(), Qt::KeepAspectRatio, Qt::FastTransformation);
+                pix         = pix.scaled(d->model->iconSize(), Qt::KeepAspectRatio, Qt::FastTransformation);
 
-                return pix;
+                QPixmap icon(d->model->iconSize());
+                icon.fill(Qt::transparent);
+                QPainter p(&icon);
+                p.drawPixmap((icon.width()  - pix.width() )  / 2,
+                             (icon.height() - pix.height())  / 2,
+                             pix);
+
+                return icon;
             }
         }
     }

@@ -73,6 +73,7 @@ ShowfotoFolderViewList::ShowfotoFolderViewList(ShowfotoFolderViewSideBar* const 
     setAlternatingRowColors(true);
     setViewMode(QListView::ListMode);
     setDragEnabled(true);
+    setIconSize(QSize(32, 32));
     setDragDropMode(QAbstractItemView::DragOnly);
     setSelectionMode(QAbstractItemView::ExtendedSelection);
     setSelectionBehavior(QAbstractItemView::SelectRows);
