@@ -67,7 +67,7 @@ ShowfotoFolderViewList::ShowfotoFolderViewList(ShowfotoFolderViewSideBar* const 
     : QListView(view),
       d        (new Private)
 {
-    d->view   = view;
+    d->view     = view;
 
     setObjectName(QLatin1String("ShowfotoFolderViewList"));
     setAlternatingRowColors(true);
@@ -79,7 +79,7 @@ ShowfotoFolderViewList::ShowfotoFolderViewList(ShowfotoFolderViewSideBar* const 
 
     // --- Populate context menu
 
-    d->fsmenu = new QMenu(this);
+    d->fsmenu   = new QMenu(this);
     d->fsmenu->setTitle(i18nc("@title", "Folder-View Options"));
     d->fsmenu->addAction(QIcon::fromTheme(QLatin1String("go-previous")),
                          i18nc("menu", "Go to Previous"),
