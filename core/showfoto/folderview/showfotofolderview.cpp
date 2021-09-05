@@ -49,47 +49,13 @@
 #include "digikam_globals.h"
 #include "showfotosettings.h"
 #include "showfotofolderviewbar.h"
+#include "showfotofolderviewundo.h"
 
 namespace ShowFoto
 {
 
 class Q_DECL_HIDDEN ShowfotoFolderView::Private
 {
-
-public:
-
-    class ShowfotoFolderViewUndo : public QUndoCommand
-    {
-    public:
-
-        ShowfotoFolderViewUndo(ShowfotoFolderView* const view, const QString& newPath)
-            : m_view(view)
-        {
-            m_oldPath = m_view->currentFolder();
-            m_newPath = newPath;
-        }
-
-        QString undo_path() const
-        {
-            return m_oldPath;
-        }
-
-        void undo()
-        {
-            m_view->setCurrentPathWithoutUndo(m_oldPath);
-        }
-
-        void redo()
-        {
-            m_view->setCurrentPathWithoutUndo(m_newPath);
-        }
-
-    private:
-
-        ShowfotoFolderView* m_view;
-        QString             m_oldPath;
-        QString             m_newPath;
-    };
 
 public:
 
@@ -133,6 +99,7 @@ ShowfotoFolderView::ShowfotoFolderView(QWidget* const parent)
     d->fsmodel->setNameFilters(patterns.split(QLatin1Char(' ')));
 
     // if an item fails the filter, hide it
+
     d->fsmodel->setNameFilterDisables(false);
 
     d->fsstack                 = new QUndoStack(this);
@@ -279,10 +246,10 @@ void ShowfotoFolderView::slotGoUp()
 
     if (d->fsstack->canUndo())
     {
-        const Private::ShowfotoFolderViewUndo* lastDir = static_cast<const Private::ShowfotoFolderViewUndo*>
-                                                         (d->fsstack->command(d->fsstack->index() - 1));
+        const ShowfotoFolderViewUndo* lastDir = static_cast<const ShowfotoFolderViewUndo*>
+                                                (d->fsstack->command(d->fsstack->index() - 1));
 
-        if (lastDir->undo_path() == dir.path())
+        if (lastDir->undoPath() == dir.path())
         {
             d->fsstack->undo();
             return;
@@ -343,7 +310,7 @@ void ShowfotoFolderView::setCurrentPath(const QString& newPathNative)
 
         if (index.isValid())
         {
-            d->fsstack->push(new Private::ShowfotoFolderViewUndo(this, newPath));
+            d->fsstack->push(new ShowfotoFolderViewUndo(this, newPath));
             d->fsmodel->setRootPath(newPath);
             d->fsview->setRootIndex(index);
         }

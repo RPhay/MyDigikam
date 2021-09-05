@@ -44,14 +44,6 @@ class ShowfotoFolderViewBar : public DHBox
 
 public:
 
-    enum FolderViewMode
-    {
-        FolderViewSimplified = 0,
-        FolderViewDetailled
-    };
-
-public:
-
     explicit ShowfotoFolderViewBar(QWidget* const parent);
     ~ShowfotoFolderViewBar() override;
 
