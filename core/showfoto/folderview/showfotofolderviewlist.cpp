@@ -32,6 +32,7 @@
 #include <QHeaderView>
 #include <QDir>
 #include <QMenu>
+#include <QMimeData>
 #include <QScrollBar>
 #include <QContextMenuEvent>
 
@@ -70,6 +71,11 @@ ShowfotoFolderViewList::ShowfotoFolderViewList(ShowfotoFolderViewSideBar* const 
 
     setObjectName(QLatin1String("ShowfotoFolderViewList"));
     setAlternatingRowColors(true);
+    setViewMode(QListView::ListMode);
+    setDragEnabled(true);
+    setDragDropMode(QAbstractItemView::DragOnly);
+    setSelectionMode(QAbstractItemView::ExtendedSelection);
+    setSelectionBehavior(QAbstractItemView::SelectRows);
 
     // --- Populate context menu
 

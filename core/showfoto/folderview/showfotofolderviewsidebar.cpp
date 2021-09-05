@@ -262,6 +262,7 @@ void ShowfotoFolderViewSideBar::setCurrentPath(const QString& newPathNative)
         if (index.isValid())
         {
             d->fsview->setCurrentIndex(index);
+            d->fsview->scrollTo(index);
         }
     }
 }
