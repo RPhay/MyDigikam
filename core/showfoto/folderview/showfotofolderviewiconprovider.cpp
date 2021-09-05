@@ -25,74 +25,87 @@
 
 // Qt includes
 
-#include <QPointer>
 #include <QApplication>
 #include <QMimeDatabase>
 #include <QStyle>
-#include <QLocale>
 #include <QPixmap>
 #include <QImage>
-#include <QScopedPointer>
 
 // Local includes
 
 #include "digikam_debug.h"
 #include "digikam_globals.h"
 #include "loadingdescription.h"
+#include "thumbnailloadthread.h"
+#include "showfotofolderviewmodel.h"
+
+using namespace Digikam;
 
 namespace ShowFoto
 {
 
-ShowfotoFolderViewIconProvider::ShowfotoFolderViewIconProvider()
-    : QFileIconProvider()
+class Q_DECL_HIDDEN ShowfotoFolderViewIconProvider::Private
 {
-    ThumbnailLoadThread* const thread = new ThumbnailLoadThread;
-    m_catcher                         = new ThumbnailImageCatcher(thread);
+
+public:
+
+    explicit Private()
+      : catcher     (nullptr),
+        thread      (nullptr),
+        model       (nullptr)
+    {
+    }
+
+    ThumbnailImageCatcher*   catcher;
+    ThumbnailLoadThread*     thread;
+    ShowfotoFolderViewModel* model;
+};
+
+ShowfotoFolderViewIconProvider::ShowfotoFolderViewIconProvider(ShowfotoFolderViewModel* const model)
+    : QFileIconProvider(),
+      d                (new Private)
+{
+    d->model   = model;
+    d->thread  = ThumbnailLoadThread::defaultThread();
+    d->catcher = new ThumbnailImageCatcher(d->thread);
 }
 
 ShowfotoFolderViewIconProvider::~ShowfotoFolderViewIconProvider()
 {
-    m_catcher->thread()->stopAllTasks();
-    m_catcher->cancel();
+    d->catcher->thread()->stopAllTasks();
+    d->catcher->cancel();
 
-    delete m_catcher->thread();
-    delete m_catcher;
+    delete d->catcher->thread();
+    delete d->catcher;
+    delete d->thread;
+    delete d;
 }
-
-/*
-QIcon ShowfotoFolderViewIconProvider::icon(const QFileInfo& info) const
-{
-    QString path    = info.absoluteFilePath();
-    qCDebug(DIGIKAM_GENERAL_LOG) << "request thumb icon for " << path;
-
-    QMimeType mtype = QMimeDatabase().mimeTypeForFile(path);
-
-    return QIcon::fromTheme(mtype.iconName());
-}
-*/
 
 QIcon ShowfotoFolderViewIconProvider::icon(const QFileInfo& info) const
 {
     if (info.isFile() && !info.isSymLink() && !info.isDir() && !info.isRoot())
     {
         QString path    = info.absoluteFilePath();
-        qCDebug(DIGIKAM_GENERAL_LOG) << "request thumb icon for " << path;
+        qCDebug(DIGIKAM_SHOWFOTO_LOG) << "request thumb icon for " << path;
 
         QMimeType mtype = QMimeDatabase().mimeTypeForFile(path);
 
         if (mtype.name().startsWith(QLatin1String("image/")))
         {
-            m_catcher->setActive(true);
+            d->catcher->setActive(true);
 
-            m_catcher->thread()->find(ThumbnailIdentifier(path));
-            m_catcher->enqueue();
-            QList<QImage> images = m_catcher->waitForThumbnails();
+            d->catcher->thread()->find(ThumbnailIdentifier(path));
+            d->catcher->enqueue();
+            QList<QImage> images = d->catcher->waitForThumbnails();
 
-            m_catcher->setActive(false);
+            d->catcher->setActive(false);
 
             if (!images.isEmpty())
             {
-                return QIcon(QPixmap::fromImage(images.first()));
+                QPixmap pix = QPixmap::fromImage(images.first());
+                pix.scaled(d->model->iconSize(), Qt::KeepAspectRatio, Qt::FastTransformation);
+
+                return pix;
             }
         }
     }

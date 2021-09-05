@@ -26,33 +26,29 @@
 
 // Qt includes
 
-#include <QUrl>
 #include <QFileIconProvider>
 #include <QIcon>
 #include <QFileInfo>
 
-// Local includes
-
-#include "thumbnailloadthread.h"
-
-using namespace Digikam;
-
 namespace ShowFoto
 {
+
+class ShowfotoFolderViewModel;
 
 class ShowfotoFolderViewIconProvider : public QFileIconProvider
 {
 
 public:
 
-    explicit ShowfotoFolderViewIconProvider();
+    explicit ShowfotoFolderViewIconProvider(ShowfotoFolderViewModel* const model);
     ~ShowfotoFolderViewIconProvider()       override;
 
     QIcon icon(const QFileInfo& info) const override;
 
 private:
 
-    ThumbnailImageCatcher* m_catcher;
+    class Private;
+    Private* const d;
 };
 
 } // namespace ShowFoto

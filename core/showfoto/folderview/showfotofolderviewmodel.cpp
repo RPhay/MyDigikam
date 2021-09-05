@@ -33,6 +33,7 @@
 #include "digikam_debug.h"
 #include "digikam_globals.h"
 #include "showfotofolderviewiconprovider.h"
+#include "showfotofolderviewlist.h"
 
 using namespace Digikam;
 
@@ -45,17 +46,21 @@ class Q_DECL_HIDDEN ShowfotoFolderViewModel::Private
 public:
 
     explicit Private()
-        : provider(nullptr)
+        : provider(nullptr),
+          view    (nullptr)
     {
     }
 
     ShowfotoFolderViewIconProvider* provider;
+    ShowfotoFolderViewList*         view;
 };
 
-ShowfotoFolderViewModel::ShowfotoFolderViewModel(QObject* const parent)
-    : QFileSystemModel(parent),
+ShowfotoFolderViewModel::ShowfotoFolderViewModel(ShowfotoFolderViewList* const view)
+    : QFileSystemModel(view),
       d               (new Private)
 {
+    d->view               = view;
+
     setObjectName(QLatin1String("ShowfotoFolderModel"));
 
     // --- Populate the model
@@ -73,7 +78,7 @@ ShowfotoFolderViewModel::ShowfotoFolderViewModel(QObject* const parent)
 
     setNameFilterDisables(false);
 
-    d->provider           = new ShowfotoFolderViewIconProvider();
+    d->provider           = new ShowfotoFolderViewIconProvider(this);
     setIconProvider(d->provider);
 }
 
@@ -81,6 +86,11 @@ ShowfotoFolderViewModel::~ShowfotoFolderViewModel()
 {
     delete d->provider;
     delete d;
+}
+
+QSize ShowfotoFolderViewModel::iconSize() const
+{
+    return (d->view->iconSize());
 }
 
 } // namespace ShowFoto

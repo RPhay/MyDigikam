@@ -31,14 +31,18 @@
 namespace ShowFoto
 {
 
+class ShowfotoFolderViewList;
+
 class ShowfotoFolderViewModel : public QFileSystemModel
 {
     Q_OBJECT
 
 public:
 
-    explicit ShowfotoFolderViewModel(QObject* const parent);
+    explicit ShowfotoFolderViewModel(ShowfotoFolderViewList* const view);
     ~ShowfotoFolderViewModel()           override;
+
+    QSize iconSize() const;
 
 private:
 

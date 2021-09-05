@@ -67,7 +67,7 @@ public:
     static const QString     configLastPathEntry;
 
     ShowfotoFolderViewModel* fsmodel;
-    QListView*               fsview;
+    ShowfotoFolderViewList*  fsview;
     ShowfotoFolderViewBar*   fsbar;
     QUndoStack*              fsstack;
 };
@@ -81,9 +81,6 @@ ShowfotoFolderViewSideBar::ShowfotoFolderViewSideBar(QWidget* const parent)
 {
     setObjectName(QLatin1String("ShowfotoFolderView Sidebar"));
 
-    // --- Populate the model
-
-    d->fsmodel                 = new ShowfotoFolderViewModel(this);
     d->fsstack                 = new QUndoStack(this);
 
     // --- Populate the view
@@ -91,6 +88,7 @@ ShowfotoFolderViewSideBar::ShowfotoFolderViewSideBar(QWidget* const parent)
     const int spacing          = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
     d->fsbar                   = new ShowfotoFolderViewBar(this);
     d->fsview                  = new ShowfotoFolderViewList(this);
+    d->fsmodel                 = new ShowfotoFolderViewModel(d->fsview);
     d->fsview->setModel(d->fsmodel);
     d->fsview->setRootIndex(d->fsmodel->index(QDir::rootPath()));
 
