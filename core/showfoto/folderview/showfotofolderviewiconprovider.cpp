@@ -57,9 +57,9 @@ public:
     {
     }
 
-    ThumbnailImageCatcher*   catcher;
-    ThumbnailLoadThread*     thread;
-    ShowfotoFolderViewModel* model;
+    ThumbnailImageCatcher*   catcher;       ///< Thumbnail thread catcher from main process.
+    ThumbnailLoadThread*     thread;        ///< The separated thread to render thumbnail images. We will use the Showfoto core instance to optimize memory allocations.
+    ShowfotoFolderViewModel* model;         ///w The MVC model, especially used to share icon-size property from view.
 };
 
 ShowfotoFolderViewIconProvider::ShowfotoFolderViewIconProvider(ShowfotoFolderViewModel* const model)
@@ -82,6 +82,8 @@ ShowfotoFolderViewIconProvider::~ShowfotoFolderViewIconProvider()
 
 QIcon ShowfotoFolderViewIconProvider::icon(const QFileInfo& info) const
 {
+    // We will only process image files supported by Showfoto
+
     if (info.isFile() && !info.isSymLink() && !info.isDir() && !info.isRoot())
     {
         QString path    = info.absoluteFilePath();
@@ -91,6 +93,11 @@ QIcon ShowfotoFolderViewIconProvider::icon(const QFileInfo& info) const
 
         if (mtype.name().startsWith(QLatin1String("image/")))
         {
+            // --- Critical section.
+
+            // NOTE: this part run in separated thread.
+            //       Do not use QPixmap here, as it's not re-entrant with X11 under Linux.
+
             d->catcher->setActive(true);    // ---
 
                 d->catcher->thread()->find(ThumbnailIdentifier(path));
@@ -99,8 +106,12 @@ QIcon ShowfotoFolderViewIconProvider::icon(const QFileInfo& info) const
 
             d->catcher->setActive(false);   // ---
 
+            // --- End of critical section.
+
             if (!images.isEmpty())
             {
+                // resize and center pixmap on target icon.
+
                 QPixmap pix = QPixmap::fromImage(images.first());
                 pix         = pix.scaled(d->model->iconSize(), Qt::KeepAspectRatio, Qt::FastTransformation);
 
