@@ -520,15 +520,7 @@ void SetupMisc::applySettings()
     settings->setStringComparisonType((ApplicationSettings::StringComparisonType)
                                       d->stringComparisonType->itemData(d->stringComparisonType->currentIndex()).toInt());
 
-    if (!d->scanAtStart->isChecked())
-    {
-        mSettings.useFastScan = false;
-    }
-    else
-    {
-        mSettings.useFastScan = d->useFastScan->isChecked();
-    }
-
+    mSettings.useFastScan = d->scanAtStart->isChecked() ? d->useFastScan->isChecked() : false;
     MetaEngineSettings::instance()->setSettings(mSettings);
 
     for (int i = 0 ; i != ApplicationSettings::Unspecified ; ++i)
