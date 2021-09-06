@@ -108,6 +108,7 @@ public:
     bool                            useXMPSidecar4Reading;
     bool                            useCompatibleFileName;
     bool                            useLazySync;
+    bool                            useFastScan;
 
     MetaEngine::MetadataWritingMode metadataWritingMode;
 

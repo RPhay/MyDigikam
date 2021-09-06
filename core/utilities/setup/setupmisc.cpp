@@ -55,6 +55,7 @@
 #include "dlayoutbox.h"
 #include "dfontselect.h"
 #include "thememanager.h"
+#include "metaenginesettings.h"
 #include "applicationsettings.h"
 #include "systemsettingswidget.h"
 #include "onlineversionchecker.h"
@@ -86,6 +87,7 @@ public:
         scrollItemToCenterCheck                 (nullptr),
         showOnlyPersonTagsInPeopleSidebarCheck  (nullptr),
         scanAtStart                             (nullptr),
+        useFastScan                             (nullptr),
         cleanAtStart                            (nullptr),
         updateType                              (nullptr),
         sidebarType                             (nullptr),
@@ -120,6 +122,7 @@ public:
     QCheckBox*                scrollItemToCenterCheck;
     QCheckBox*                showOnlyPersonTagsInPeopleSidebarCheck;
     QCheckBox*                scanAtStart;
+    QCheckBox*                useFastScan;
     QCheckBox*                cleanAtStart;
 
     QComboBox*                updateType;
@@ -149,7 +152,7 @@ SetupMisc::SetupMisc(QWidget* const parent)
     // -- Application Behavior Options --------------------------------------------------------
 
     QWidget* const behaviourPanel = new QWidget(d->tab);
-    QVBoxLayout* const layout     = new QVBoxLayout(behaviourPanel);
+    QGridLayout* const layout     = new QGridLayout(behaviourPanel);
 
     DHBox* const stringComparisonHbox = new DHBox(behaviourPanel);
     d->stringComparisonTypeLabel      = new QLabel(i18n("String comparison type:"), stringComparisonHbox);
@@ -178,6 +181,12 @@ SetupMisc::SetupMisc(QWidget* const parent)
                                     "this can introduce low latency, and it is recommended to disable this option and to plan\n"
                                     "a manual scan through the maintenance tool at the right moment."));
 
+    d->useFastScan                    = new QCheckBox(i18n("Fast scan (detects new, deleted and renamed items)"), behaviourPanel);
+    d->useFastScan->setToolTip(i18n("Set this option to significantly speed up the scan. New items, deleted and also "
+                                    "renamed items are found. In order to find items that have been changed, this "
+                                    "option must be deactivated."));
+
+    d->useFastScan->setEnabled(false);
 
     d->cleanAtStart                   = new QCheckBox(i18n("Remove obsolete core database objects (makes startup slower)"), behaviourPanel);
     d->cleanAtStart->setToolTip(i18n("Set this option to force digiKam to clean up the core database from obsolete item entries.\n"
@@ -258,18 +267,27 @@ SetupMisc::SetupMisc(QWidget* const parent)
 
     layout->setContentsMargins(spacing, spacing, spacing, spacing);
     layout->setSpacing(spacing);
-    layout->addWidget(stringComparisonHbox);
-    layout->addWidget(d->scanAtStart);
-    layout->addWidget(d->cleanAtStart);
-    layout->addWidget(d->showTrashDeleteDialogCheck);
-    layout->addWidget(d->showPermanentDeleteDialogCheck);
-    layout->addWidget(d->sidebarApplyDirectlyCheck);
-    layout->addWidget(d->expandNewCurrentItemCheck);
-    layout->addWidget(d->scrollItemToCenterCheck);
-    layout->addWidget(d->showOnlyPersonTagsInPeopleSidebarCheck);
-    layout->addWidget(minSimilarityBoundHbox);
-    layout->addWidget(upOptionsGroup);
-    layout->addStretch();
+    layout->addWidget(stringComparisonHbox,                       0, 0, 1, 4);
+    layout->addWidget(d->scanAtStart,                             1, 0, 1, 4);
+    layout->addWidget(d->useFastScan,                             2, 3, 1, 1);
+    layout->addWidget(d->cleanAtStart,                            3, 0, 1, 4);
+    layout->addWidget(d->showTrashDeleteDialogCheck,              4, 0, 1, 4);
+    layout->addWidget(d->showPermanentDeleteDialogCheck,          5, 0, 1, 4);
+    layout->addWidget(d->sidebarApplyDirectlyCheck,               6, 0, 1, 4);
+    layout->addWidget(d->expandNewCurrentItemCheck,               7, 0, 1, 4);
+    layout->addWidget(d->scrollItemToCenterCheck,                 8, 0, 1, 4);
+    layout->addWidget(d->showOnlyPersonTagsInPeopleSidebarCheck,  9, 0, 1, 4);
+    layout->addWidget(minSimilarityBoundHbox,                    10, 0, 1, 4);
+    layout->addWidget(upOptionsGroup,                            11, 0, 1, 4);
+    layout->setColumnStretch(3, 10);
+    layout->setRowStretch(12, 10);
+
+    // --------------------------------------------------------
+
+    connect(d->scanAtStart, SIGNAL(toggled(bool)),
+            d->useFastScan, SLOT(setEnabled(bool)));
+
+    // --------------------------------------------------------
 
     d->tab->insertTab(Behaviour, behaviourPanel, i18nc("@title:tab", "Behaviour"));
 
@@ -481,7 +499,8 @@ void SetupMisc::applySettings()
 {
     d->systemSettingsWidget->saveSettings();
 
-    ApplicationSettings* const settings = ApplicationSettings::instance();
+    ApplicationSettings* const settings   = ApplicationSettings::instance();
+    MetaEngineSettingsContainer mSettings = MetaEngineSettings::instance()->settings();
 
     settings->setShowSplashScreen(d->showSplashCheck->isChecked());
     settings->setShowTrashDeleteDialog(d->showTrashDeleteDialogCheck->isChecked());
@@ -500,6 +519,17 @@ void SetupMisc::applySettings()
     settings->setUpdateWithDebug(d->updateWithDebug->isChecked());
     settings->setStringComparisonType((ApplicationSettings::StringComparisonType)
                                       d->stringComparisonType->itemData(d->stringComparisonType->currentIndex()).toInt());
+
+    if (!d->scanAtStart->isChecked())
+    {
+        mSettings.useFastScan = false;
+    }
+    else
+    {
+        mSettings.useFastScan = d->useFastScan->isChecked();
+    }
+
+    MetaEngineSettings::instance()->setSettings(mSettings);
 
     for (int i = 0 ; i != ApplicationSettings::Unspecified ; ++i)
     {
@@ -545,6 +575,9 @@ void SetupMisc::readSettings()
     d->updateType->setCurrentIndex(settings->getUpdateType());
     d->updateWithDebug->setChecked(settings->getUpdateWithDebug());
     d->stringComparisonType->setCurrentIndex(settings->getStringComparisonType());
+
+    MetaEngineSettingsContainer mSettings = MetaEngineSettings::instance()->settings();
+    d->useFastScan->setChecked(mSettings.useFastScan);
 
     for (int i = 0 ; i != ApplicationSettings::Unspecified ; ++i)
     {

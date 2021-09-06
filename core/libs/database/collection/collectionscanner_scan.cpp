@@ -457,8 +457,9 @@ void CollectionScanner::scanAlbumRoot(const CollectionLocation& location)
     QMap<QString, QDateTime>::const_iterator it;
     const QMap<QString, QDateTime>& pathDateMap = CoreDbAccess().db()->
                                     getAlbumModificationMap(location.id());
+    bool useFastScan = MetaEngineSettings::instance()->settings().useFastScan;
 
-    if (pathDateMap.isEmpty())
+    if (!useFastScan || pathDateMap.isEmpty())
     {
         scanAlbum(location, QLatin1String("/"));
     }

@@ -59,6 +59,7 @@ MetaEngineSettingsContainer::MetaEngineSettingsContainer()
       useXMPSidecar4Reading (false),
       useCompatibleFileName (false),
       useLazySync           (false),
+      useFastScan           (false),
       metadataWritingMode   (MetaEngine::WRITE_TO_FILE_ONLY),
       rotationBehavior      (RotatingFlags | RotateByLosslessRotation),
       sidecarExtensions     (QStringList())
@@ -95,6 +96,7 @@ void MetaEngineSettingsContainer::readFromConfig(KConfigGroup& group)
     rescanImageIfModified = group.readEntry("Rescan File If Modified",     false);
     clearMetadataIfRescan = group.readEntry("Clear Metadata If Rescan",    false);
     useLazySync           = group.readEntry("Use Lazy Synchronization",    false);
+    useFastScan           = group.readEntry("Use Fast Scan At Startup",    false);
 
     rotationBehavior      = NoRotation;
 
@@ -153,6 +155,7 @@ void MetaEngineSettingsContainer::writeToConfig(KConfigGroup& group) const
     group.writeEntry("Rotate Contents Lossless",    bool(rotationBehavior & RotateByLosslessRotation));
     group.writeEntry("Rotate Contents Lossy",       bool(rotationBehavior & RotateByLossyRotation));
     group.writeEntry("Use Lazy Synchronization",    useLazySync);
+    group.writeEntry("Use Fast Scan At Startup",    useFastScan);
 
     group.writeEntry("Custom Sidecar Extensions",   sidecarExtensions);
 
