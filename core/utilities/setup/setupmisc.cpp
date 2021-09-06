@@ -182,8 +182,8 @@ SetupMisc::SetupMisc(QWidget* const parent)
                                     "a manual scan through the maintenance tool at the right moment."));
 
     d->useFastScan                    = new QCheckBox(i18n("Fast scan (detects new, deleted and renamed items)"), behaviourPanel);
-    d->useFastScan->setToolTip(i18n("Set this option to significantly speed up the scan. New items, deleted and also "
-                                    "renamed items are found. In order to find items that have been changed, this "
+    d->useFastScan->setToolTip(i18n("Set this option to significantly speed up the scan. New items, deleted and also\n"
+                                    "renamed items are found. In order to find items that have been changed, this\n"
                                     "option must be deactivated."));
 
     d->useFastScan->setEnabled(false);
