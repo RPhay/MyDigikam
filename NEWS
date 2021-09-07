@@ -144,7 +144,7 @@ BUGFIXES:
 131 ==> 441873 - Database migration failed.
 132 ==> 441411 - Album list Not Showing.
 133 ==> 440587 - Crash when using facial recognition tool.
-134 ==> 
+134 ==> 442142 - Trying to change date, device manufacturer, user comment, after clicking "Apply" causes previous value.
 135 ==> 
 136 ==> 
 137 ==> 
