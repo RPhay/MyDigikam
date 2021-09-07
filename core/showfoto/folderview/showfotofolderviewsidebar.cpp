@@ -216,9 +216,16 @@ QString ShowfotoFolderViewSideBar::currentPath() const
 
 void ShowfotoFolderViewSideBar::setCurrentPath(const QString& newPathNative)
 {
+    QFileInfo infoNative(newPathNative);
+
+    if (!infoNative.exists())
+    {
+        return;
+    }
+
     QString newPath = QDir::fromNativeSeparators(newPathNative);
 
-    if (!newPath.endsWith(QDir::separator()))
+    if (infoNative.isDir() && !newPath.endsWith(QDir::separator()))
     {
         newPath.append(QDir::separator());
     }
@@ -236,11 +243,6 @@ void ShowfotoFolderViewSideBar::setCurrentPath(const QString& newPathNative)
     }
 
     QFileInfo info(newPath);
-
-    if (!info.exists())
-    {
-        return;
-    }
 
     if (info.isDir())
     {
