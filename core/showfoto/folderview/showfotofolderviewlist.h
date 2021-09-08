@@ -38,13 +38,16 @@
 namespace ShowFoto
 {
 
+class ShowfotoFolderViewBar;
+
 class ShowfotoFolderViewList : public QListView
 {
     Q_OBJECT
 
 public:
 
-    explicit ShowfotoFolderViewList(ShowfotoFolderViewSideBar* const view);
+    explicit ShowfotoFolderViewList(ShowfotoFolderViewSideBar* const view,
+                                    ShowfotoFolderViewBar* const bar);
     ~ShowfotoFolderViewList()           override;
 
 private:

@@ -44,6 +44,7 @@
 
 #include "digikam_debug.h"
 #include "digikam_globals.h"
+#include "showfotofolderviewbar.h"
 
 namespace ShowFoto
 {
@@ -55,19 +56,23 @@ public:
 
     explicit Private()
       : fsmenu      (nullptr),
-        view        (nullptr)
+        view        (nullptr),
+        bar         (nullptr)
     {
     }
 
     QMenu*                     fsmenu;
     ShowfotoFolderViewSideBar* view;
+    ShowfotoFolderViewBar*     bar;
 };
 
-ShowfotoFolderViewList::ShowfotoFolderViewList(ShowfotoFolderViewSideBar* const view)
+ShowfotoFolderViewList::ShowfotoFolderViewList(ShowfotoFolderViewSideBar* const view,
+                                               ShowfotoFolderViewBar* const bar)
     : QListView(view),
       d        (new Private)
 {
-    d->view     = view;
+    d->view   = view;
+    d->bar    = bar;
 
     setObjectName(QLatin1String("ShowfotoFolderViewList"));
     setAlternatingRowColors(true);
@@ -80,31 +85,14 @@ ShowfotoFolderViewList::ShowfotoFolderViewList(ShowfotoFolderViewSideBar* const 
 
     // --- Populate context menu
 
-    d->fsmenu   = new QMenu(this);
+    d->fsmenu = new QMenu(this);
     d->fsmenu->setTitle(i18nc("@title", "Folder-View Options"));
-    d->fsmenu->addAction(QIcon::fromTheme(QLatin1String("go-previous")),
-                         i18nc("menu", "Go to Previous"),
-                         d->view,
-                         SLOT(slotUndo()));
-    d->fsmenu->addAction(QIcon::fromTheme(QLatin1String("go-next")),
-                         i18nc("menu", "Go to Next"),
-                         d->view,
-                         SLOT(slotRedo()));
-    d->fsmenu->addAction(QIcon::fromTheme(QLatin1String("go-home")),
-                         i18nc("menu", "Go Home"),
-                         d->view,
-                         SLOT(slotGoHome()));
-    d->fsmenu->addAction(QIcon::fromTheme(QLatin1String("go-up")),
-                         i18nc("menu", "Go Up"),
-                         d->view,
-                         SLOT(slotGoUp()));
-
+    d->fsmenu->addAction(d->bar->toolBarAction(QLatin1String("GoPrevious")));
+    d->fsmenu->addAction(d->bar->toolBarAction(QLatin1String("GoNext")));
+    d->fsmenu->addAction(d->bar->toolBarAction(QLatin1String("GoHome")));
+    d->fsmenu->addAction(d->bar->toolBarAction(QLatin1String("GoUp")));
     d->fsmenu->addSeparator(),
-
-    d->fsmenu->addAction(QIcon::fromTheme(QLatin1String("media-playlist-normal")),
-                         i18nc("menu", "Load Contents"),
-                         d->view,
-                         SLOT(slotLoadContents()));
+    d->fsmenu->addAction(d->bar->toolBarAction(QLatin1String("LoadContents")));
 }
 
 ShowfotoFolderViewList::~ShowfotoFolderViewList()

@@ -57,12 +57,13 @@ public:
     {
     }
 
-    QToolButton*  previousBtn;
-    QToolButton*  nextBtn;
-    QToolButton*  upBtn;
-    QToolButton*  homeBtn;
-    QToolButton*  loadBtn;
-    QLineEdit*    pathEdit;
+    QToolButton*            previousBtn;
+    QToolButton*            nextBtn;
+    QToolButton*            upBtn;
+    QToolButton*            homeBtn;
+    QToolButton*            loadBtn;
+    QLineEdit*              pathEdit;
+    QList<QAction*>         actionsList;
 };
 
 ShowfotoFolderViewBar::ShowfotoFolderViewBar(QWidget* const parent)
@@ -71,50 +72,101 @@ ShowfotoFolderViewBar::ShowfotoFolderViewBar(QWidget* const parent)
 {
     setContentsMargins(QMargins());
 
-    DHBox* const btnBox = new DHBox(this);
+    DHBox* const btnBox      = new DHBox(this);
+    QAction* btnAction       = nullptr;
 
-    d->previousBtn      = new QToolButton(btnBox);
-    d->previousBtn->setFocusPolicy(Qt::NoFocus);
-    d->previousBtn->setIcon(QIcon::fromTheme(QLatin1String("go-previous")));
-    d->previousBtn->setToolTip(i18nc("@info", "Go to previous place in folder-view hierarchy"));
+    // ---
 
-    connect(d->previousBtn, SIGNAL(clicked()),
+    btnAction                = new QAction(this);
+    btnAction->setObjectName(QLatin1String("GoPrevious"));
+    btnAction->setIcon(QIcon::fromTheme(QLatin1String("go-previous")));
+    btnAction->setText(i18nc("action", "Go to Previous"));
+    btnAction->setToolTip(i18nc("@info", "Go to previous place in folder-view hierarchy"));
+
+    connect(btnAction, SIGNAL(triggered(bool)),
             this, SIGNAL(signalGoPrevious()));
 
-    d->nextBtn        = new QToolButton(btnBox);
-    d->nextBtn->setFocusPolicy(Qt::NoFocus);
-    d->nextBtn->setIcon(QIcon::fromTheme(QLatin1String("go-next")));
-    d->nextBtn->setToolTip(i18nc("@info", "Go to next place in folder-view hierarchy"));
+    d->actionsList << btnAction;
 
-    connect(d->nextBtn, SIGNAL(clicked()),
+    d->previousBtn           = new QToolButton(btnBox);
+    d->previousBtn->setDefaultAction(btnAction);
+    d->previousBtn->setFocusPolicy(Qt::NoFocus);
+
+    // ---
+
+    btnAction                = new QAction(this);
+    btnAction->setObjectName(QLatin1String("GoNext"));
+    btnAction->setIcon(QIcon::fromTheme(QLatin1String("go-next")));
+    btnAction->setText(i18nc("action", "Go to Next"));
+    btnAction->setToolTip(i18nc("@info", "Go to next place in folder-view hierarchy"));
+
+    connect(btnAction, SIGNAL(triggered(bool)),
             this, SIGNAL(signalGoNext()));
 
-    d->upBtn          = new QToolButton(btnBox);
-    d->upBtn->setFocusPolicy(Qt::NoFocus);
-    d->upBtn->setIcon(QIcon::fromTheme(QLatin1String("go-up")));
-    d->upBtn->setToolTip(i18nc("@info", "Go up in folder-view hierarchy"));
+    d->actionsList << btnAction;
 
-    connect(d->upBtn, SIGNAL(clicked()),
+    d->nextBtn        = new QToolButton(btnBox);
+    d->nextBtn->setDefaultAction(btnAction);
+    d->nextBtn->setFocusPolicy(Qt::NoFocus);
+
+    // ---
+
+    btnAction                = new QAction(this);
+    btnAction->setObjectName(QLatin1String("GoUp"));
+    btnAction->setIcon(QIcon::fromTheme(QLatin1String("go-up")));
+    btnAction->setText(i18nc("action", "Go Up"));
+    btnAction->setToolTip(i18nc("@info", "Go up in folder-view hierarchy"));
+
+    connect(btnAction, SIGNAL(triggered(bool)),
             this, SIGNAL(signalGoUp()));
 
-    d->homeBtn        = new QToolButton(btnBox);
-    d->homeBtn->setFocusPolicy(Qt::NoFocus);
-    d->homeBtn->setIcon(QIcon::fromTheme(QLatin1String("go-home")));
-    d->homeBtn->setToolTip(i18nc("@info", "Back to home directory"));
+    d->actionsList << btnAction;
 
-    connect(d->homeBtn, SIGNAL(clicked()),
+    d->upBtn          = new QToolButton(btnBox);
+    d->upBtn->setDefaultAction(btnAction);
+    d->upBtn->setFocusPolicy(Qt::NoFocus);
+
+    // ---
+
+    btnAction                = new QAction(this);
+    btnAction->setObjectName(QLatin1String("GoHome"));
+    btnAction->setIcon(QIcon::fromTheme(QLatin1String("go-home")));
+    btnAction->setText(i18nc("action", "Go Home"));
+    btnAction->setToolTip(i18nc("@info", "Go to home directory"));
+
+    connect(btnAction, SIGNAL(triggered(bool)),
             this, SIGNAL(signalGoHome()));
+
+    d->actionsList << btnAction;
+
+    d->homeBtn        = new QToolButton(btnBox);
+    d->homeBtn->setDefaultAction(btnAction);
+    d->homeBtn->setFocusPolicy(Qt::NoFocus);
+
+    // ---
 
     QWidget* const space = new QWidget(btnBox);
     btnBox->setStretchFactor(space, 10);
 
+    btnAction                = new QAction(this);
+    btnAction->setObjectName(QLatin1String("LoadContents"));
+    btnAction->setIcon(QIcon::fromTheme(QLatin1String("media-playlist-normal")));
+    btnAction->setText(i18nc("action", "Load Contents"));
+    btnAction->setToolTip(i18nc("@info", "Load Contents to Editor"));
+
+    connect(btnAction, SIGNAL(triggered(bool)),
+            this, SIGNAL(signalLoadContents()));
+
+    d->actionsList << btnAction;
+
     d->loadBtn        = new QToolButton(btnBox);
+    d->loadBtn->setDefaultAction(btnAction);
     d->loadBtn->setFocusPolicy(Qt::NoFocus);
-    d->loadBtn->setIcon(QIcon::fromTheme(QLatin1String("media-playlist-normal")));
-    d->loadBtn->setToolTip(i18nc("@info", "Load Contents to Editor"));
 
     connect(d->loadBtn, SIGNAL(clicked()),
             this, SIGNAL(signalLoadContents()));
+
+    // ---
 
     d->pathEdit       = new QLineEdit(this);
     d->pathEdit->setClearButtonEnabled(true);
@@ -127,6 +179,19 @@ ShowfotoFolderViewBar::ShowfotoFolderViewBar(QWidget* const parent)
 ShowfotoFolderViewBar::~ShowfotoFolderViewBar()
 {
     delete d;
+}
+
+QAction* ShowfotoFolderViewBar::toolBarAction(const QString& name) const
+{
+    foreach (QAction* const act, d->actionsList)
+    {
+        if (act && (act->objectName() == name))
+        {
+            return act;
+        }
+    }
+
+    return nullptr;
 }
 
 void ShowfotoFolderViewBar::setCurrentPath(const QString& path)

@@ -38,6 +38,8 @@ using namespace Digikam;
 namespace ShowFoto
 {
 
+class ShowfotoFolderViewList;
+
 class ShowfotoFolderViewBar : public DVBox
 {
     Q_OBJECT
@@ -48,6 +50,8 @@ public:
     ~ShowfotoFolderViewBar() override;
 
     void setCurrentPath(const QString& path);
+
+    QAction* toolBarAction(const QString& name) const;
 
 public Q_SLOTS:
 
