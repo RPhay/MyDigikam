@@ -58,7 +58,7 @@ public:
     }
 
     ThumbnailImageCatcher*   catcher;       ///< Thumbnail thread catcher from main process.
-    ThumbnailLoadThread*     thread;        ///< The separated thread to render thumbnail images. We will use the Showfoto core instance to optimize memory allocations.
+    ThumbnailLoadThread*     thread;        ///< The separated thread to render thumbnail images.
     ShowfotoFolderViewModel* model;         ///< The MVC model, especially used to share icon-size property from view.
 };
 
@@ -67,7 +67,9 @@ ShowfotoFolderViewIconProvider::ShowfotoFolderViewIconProvider(ShowfotoFolderVie
       d                (new Private)
 {
     d->model   = model;
-    d->thread  = ThumbnailLoadThread::defaultThread();
+    d->thread  = new ThumbnailLoadThread;
+    d->thread->setThumbnailSize(128);
+    d->thread->setPixmapRequested(false);
     d->catcher = new ThumbnailImageCatcher(d->thread);
 }
 
@@ -76,6 +78,7 @@ ShowfotoFolderViewIconProvider::~ShowfotoFolderViewIconProvider()
     d->catcher->thread()->stopAllTasks();
     d->catcher->cancel();
 
+    delete d->catcher->thread();
     delete d->catcher;
     delete d;
 }
@@ -104,26 +107,27 @@ QIcon ShowfotoFolderViewIconProvider::icon(const QFileInfo& info) const
                 d->catcher->enqueue();
                 QList<QImage> images = d->catcher->waitForThumbnails();
 
+
+                // --- End of critical section.
+
+                if (!images.isEmpty())
+                {
+                    // resize and center pixmap on target icon.
+
+                    QPixmap pix = QPixmap::fromImage(images.first());
+                    pix         = pix.scaled(d->model->iconSize(), Qt::KeepAspectRatio, Qt::FastTransformation);
+
+                    QPixmap icon(d->model->iconSize());
+                    icon.fill(Qt::transparent);
+                    QPainter p(&icon);
+                    p.drawPixmap((icon.width()  - pix.width() )  / 2,
+                                 (icon.height() - pix.height())  / 2,
+                                 pix);
+
+                    return icon;
+                }
+
             d->catcher->setActive(false);   // ---
-
-            // --- End of critical section.
-
-            if (!images.isEmpty())
-            {
-                // resize and center pixmap on target icon.
-
-                QPixmap pix = QPixmap::fromImage(images.first());
-                pix         = pix.scaled(d->model->iconSize(), Qt::KeepAspectRatio, Qt::FastTransformation);
-
-                QPixmap icon(d->model->iconSize());
-                icon.fill(Qt::transparent);
-                QPainter p(&icon);
-                p.drawPixmap((icon.width()  - pix.width() )  / 2,
-                             (icon.height() - pix.height())  / 2,
-                             pix);
-
-                return icon;
-            }
         }
     }
 
