@@ -48,12 +48,27 @@ public:
 
     explicit ShowfotoFolderViewList(ShowfotoFolderViewSideBar* const view,
                                     ShowfotoFolderViewBar* const bar);
-    ~ShowfotoFolderViewList()           override;
+    ~ShowfotoFolderViewList()                                           override;
+
+    void setEnableToolTips(bool val);
 
 private:
 
-    void mouseDoubleClickEvent(QMouseEvent* e);
-    void contextMenuEvent(QContextMenuEvent *e);
+    void mouseDoubleClickEvent(QMouseEvent*)                            override;
+    void contextMenuEvent(QContextMenuEvent*)                           override;
+    void mouseMoveEvent(QMouseEvent*)                                   override;
+    void wheelEvent(QWheelEvent*)                                       override;
+    void keyPressEvent(QKeyEvent*)                                      override;
+    void focusOutEvent(QFocusEvent*)                                    override;
+    void leaveEvent(QEvent*)                                            override;
+
+
+    void hideToolTip();
+    bool acceptToolTip(const QModelIndex& pos)                  const;
+
+private Q_SLOTS:
+
+    void slotToolTip();
 
 private:
 

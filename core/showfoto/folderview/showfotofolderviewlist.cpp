@@ -31,7 +31,9 @@
 #include <QFileInfo>
 #include <QHeaderView>
 #include <QDir>
+#include <QTimer>
 #include <QMenu>
+#include <QModelIndex>
 #include <QMimeData>
 #include <QScrollBar>
 #include <QContextMenuEvent>
@@ -45,6 +47,8 @@
 #include "digikam_debug.h"
 #include "digikam_globals.h"
 #include "showfotofolderviewbar.h"
+#include "showfotofolderviewmodel.h"
+#include "showfotofolderviewtooltip.h"
 
 namespace ShowFoto
 {
@@ -57,13 +61,20 @@ public:
     explicit Private()
       : fsmenu      (nullptr),
         view        (nullptr),
-        bar         (nullptr)
+        bar         (nullptr),
+        showToolTips(false),
+        toolTipTimer(nullptr),
+        toolTip     (nullptr)
     {
     }
 
     QMenu*                     fsmenu;
     ShowfotoFolderViewSideBar* view;
     ShowfotoFolderViewBar*     bar;
+    bool                       showToolTips;
+    QTimer*                    toolTipTimer;
+    ShowfotoFolderViewToolTip* toolTip;
+    QModelIndex                toolTipIndex;
 };
 
 ShowfotoFolderViewList::ShowfotoFolderViewList(ShowfotoFolderViewSideBar* const view,
@@ -82,6 +93,7 @@ ShowfotoFolderViewList::ShowfotoFolderViewList(ShowfotoFolderViewSideBar* const 
     setDragDropMode(QAbstractItemView::DragOnly);
     setSelectionMode(QAbstractItemView::ExtendedSelection);
     setSelectionBehavior(QAbstractItemView::SelectRows);
+    viewport()->setMouseTracking(true);
 
     // --- Populate context menu
 
@@ -93,10 +105,17 @@ ShowfotoFolderViewList::ShowfotoFolderViewList(ShowfotoFolderViewSideBar* const 
     d->fsmenu->addAction(d->bar->toolBarAction(QLatin1String("GoUp")));
     d->fsmenu->addSeparator(),
     d->fsmenu->addAction(d->bar->toolBarAction(QLatin1String("LoadContents")));
+
+    d->toolTip       = new ShowfotoFolderViewToolTip(this);
+    d->toolTipTimer  = new QTimer(this);
+
+    connect(d->toolTipTimer, SIGNAL(timeout()),
+            this, SLOT(slotToolTip()));
 }
 
 ShowfotoFolderViewList::~ShowfotoFolderViewList()
 {
+    delete d->toolTip;
     delete d;
 }
 
@@ -112,6 +131,108 @@ void ShowfotoFolderViewList::mouseDoubleClickEvent(QMouseEvent* e)
     d->view->loadContents(currentIndex());
 
     QListView::mouseDoubleClickEvent(e);
+}
+
+void ShowfotoFolderViewList::setEnableToolTips(bool val)
+{
+    d->showToolTips = val;
+
+    if (!val)
+    {
+        hideToolTip();
+    }
+}
+
+void ShowfotoFolderViewList::hideToolTip()
+{
+    d->toolTipIndex = QModelIndex();
+    d->toolTipTimer->stop();
+    slotToolTip();
+}
+
+void ShowfotoFolderViewList::slotToolTip()
+{
+    d->toolTip->setIndex(d->toolTipIndex);
+}
+
+bool ShowfotoFolderViewList::acceptToolTip(const QModelIndex& index) const
+{
+    ShowfotoFolderViewModel* const model = dynamic_cast<ShowfotoFolderViewModel*>(this->model());
+
+    if (model)
+    {
+        QFileInfo info(model->filePath(index));
+
+        if (info.isFile() && !info.isSymLink() && !info.isDir() && !info.isRoot())
+        {
+            return true;
+        }
+    }
+
+    return false;
+}
+
+void ShowfotoFolderViewList::mouseMoveEvent(QMouseEvent* e)
+{
+    if (e->buttons() == Qt::NoButton)
+    {
+        QModelIndex index = indexAt(e->pos());
+
+        if (d->showToolTips)
+        {
+            if (!isActiveWindow())
+            {
+                hideToolTip();
+                return;
+            }
+
+            if (index != d->toolTipIndex)
+            {
+                hideToolTip();
+
+                if (acceptToolTip(index))
+                {
+                    d->toolTipIndex = index;
+                    d->toolTipTimer->setSingleShot(true);
+                    d->toolTipTimer->start(500);
+                }
+            }
+
+            if ((index == d->toolTipIndex) && !acceptToolTip(index))
+            {
+                hideToolTip();
+            }
+        }
+
+        return;
+    }
+
+    hideToolTip();
+    QListView::mouseMoveEvent(e);
+}
+
+void ShowfotoFolderViewList::wheelEvent(QWheelEvent* e)
+{
+    hideToolTip();
+    QListView::wheelEvent(e);
+}
+
+void ShowfotoFolderViewList::keyPressEvent(QKeyEvent* e)
+{
+    hideToolTip();
+    QListView::keyPressEvent(e);
+}
+
+void ShowfotoFolderViewList::focusOutEvent(QFocusEvent* e)
+{
+    hideToolTip();
+    QListView::focusOutEvent(e);
+}
+
+void ShowfotoFolderViewList::leaveEvent(QEvent* e)
+{
+    hideToolTip();
+    QListView::leaveEvent(e);
 }
 
 } // namespace ShowFoto

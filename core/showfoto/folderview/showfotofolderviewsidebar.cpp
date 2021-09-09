@@ -88,6 +88,7 @@ ShowfotoFolderViewSideBar::ShowfotoFolderViewSideBar(QWidget* const parent)
     const int spacing          = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
     d->fsbar                   = new ShowfotoFolderViewBar(this);
     d->fsview                  = new ShowfotoFolderViewList(this, d->fsbar);
+    d->fsview->setEnableToolTips(true);
     d->fsmodel                 = new ShowfotoFolderViewModel(d->fsview);
     d->fsview->setModel(d->fsmodel);
     d->fsview->setRootIndex(d->fsmodel->index(QDir::rootPath()));
