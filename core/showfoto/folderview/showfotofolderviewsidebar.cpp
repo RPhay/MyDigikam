@@ -64,6 +64,7 @@ public:
     {
     }
 
+    static const QString     configIconSizeEntry;
     static const QString     configLastPathEntry;
 
     ShowfotoFolderViewModel* fsmodel;
@@ -72,6 +73,7 @@ public:
     QUndoStack*              fsstack;
 };
 
+const QString ShowfotoFolderViewSideBar::Private::configIconSizeEntry(QLatin1String("Icon Size"));
 const QString ShowfotoFolderViewSideBar::Private::configLastPathEntry(QLatin1String("Last Path"));
 
 ShowfotoFolderViewSideBar::ShowfotoFolderViewSideBar(QWidget* const parent)
@@ -99,6 +101,9 @@ ShowfotoFolderViewSideBar::ShowfotoFolderViewSideBar(QWidget* const parent)
     layout->setContentsMargins(0, 0, spacing, 0);
 
     // --- Setup connections
+
+    connect(d->fsbar, SIGNAL(signalIconSizeChanged(int)),
+            d->fsview, SLOT(slotIconSizeChanged(int)));
 
     connect(d->fsbar, SIGNAL(signalGoHome()),
             this, SLOT(slotGoHome()));
@@ -293,6 +298,7 @@ void ShowfotoFolderViewSideBar::doLoadState()
 {
     KConfigGroup group = getConfigGroup();
 
+    d->fsbar->setIconSize(group.readEntry(entryName(d->configIconSizeEntry), 32));
     setCurrentPathWithoutUndo(group.readEntry(entryName(d->configLastPathEntry), QDir::rootPath()));
     loadContents(d->fsview->currentIndex());
 }
@@ -301,6 +307,7 @@ void ShowfotoFolderViewSideBar::doSaveState()
 {
     KConfigGroup group = getConfigGroup();
 
+    group.writeEntry(entryName(d->configIconSizeEntry), d->fsbar->iconSize());
     group.writeEntry(entryName(d->configLastPathEntry), currentPath());
     group.sync();
 }

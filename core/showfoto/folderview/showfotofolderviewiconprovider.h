@@ -45,6 +45,10 @@ public:
 
     QIcon icon(const QFileInfo& info) const override;
 
+public:
+
+    static int maxIconSize();
+
 private:
 
     class Private;

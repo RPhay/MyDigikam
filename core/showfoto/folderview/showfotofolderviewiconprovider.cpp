@@ -23,6 +23,10 @@
 
 #include "showfotofolderviewiconprovider.h"
 
+// C++ includes
+
+#include <cmath>
+
 // Qt includes
 
 #include <QApplication>
@@ -45,6 +49,7 @@ using namespace Digikam;
 namespace ShowFoto
 {
 
+
 class Q_DECL_HIDDEN ShowfotoFolderViewIconProvider::Private
 {
 
@@ -57,10 +62,14 @@ public:
     {
     }
 
-    ThumbnailImageCatcher*   catcher;       ///< Thumbnail thread catcher from main process.
-    ThumbnailLoadThread*     thread;        ///< The separated thread to render thumbnail images.
-    ShowfotoFolderViewModel* model;         ///< The MVC model, especially used to share icon-size property from view.
+    ThumbnailImageCatcher*   catcher;           ///< Thumbnail thread catcher from main process.
+    ThumbnailLoadThread*     thread;            ///< The separated thread to render thumbnail images.
+    ShowfotoFolderViewModel* model;             ///< The MVC model, especially used to share icon-size property from view.
+
+    static const int         s_maxSize;         ///< Max icon size.
 };
+
+const int ShowfotoFolderViewIconProvider::Private::s_maxSize = 256;
 
 ShowfotoFolderViewIconProvider::ShowfotoFolderViewIconProvider(ShowfotoFolderViewModel* const model)
     : QFileIconProvider(),
@@ -68,7 +77,7 @@ ShowfotoFolderViewIconProvider::ShowfotoFolderViewIconProvider(ShowfotoFolderVie
 {
     d->model   = model;
     d->thread  = new ThumbnailLoadThread;
-    d->thread->setThumbnailSize(128);
+    d->thread->setThumbnailSize(Private::s_maxSize);
     d->thread->setPixmapRequested(false);
     d->catcher = new ThumbnailImageCatcher(d->thread);
 }
@@ -81,6 +90,11 @@ ShowfotoFolderViewIconProvider::~ShowfotoFolderViewIconProvider()
     delete d->catcher->thread();
     delete d->catcher;
     delete d;
+}
+
+int ShowfotoFolderViewIconProvider::maxIconSize()
+{
+    return (Private::s_maxSize);
 }
 
 QIcon ShowfotoFolderViewIconProvider::icon(const QFileInfo& info) const
@@ -115,9 +129,9 @@ QIcon ShowfotoFolderViewIconProvider::icon(const QFileInfo& info) const
                     // resize and center pixmap on target icon.
 
                     QPixmap pix = QPixmap::fromImage(images.first());
-                    pix         = pix.scaled(d->model->iconSize(), Qt::KeepAspectRatio, Qt::FastTransformation);
+                    pix         = pix.scaled(QSize(maxIconSize(), maxIconSize()), Qt::KeepAspectRatio, Qt::FastTransformation);
 
-                    QPixmap icon(d->model->iconSize());
+                    QPixmap icon(QSize(maxIconSize(), maxIconSize()));
                     icon.fill(Qt::transparent);
                     QPainter p(&icon);
                     p.drawPixmap((icon.width()  - pix.width() )  / 2,

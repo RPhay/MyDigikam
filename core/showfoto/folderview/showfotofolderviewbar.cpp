@@ -26,6 +26,7 @@
 // Qt includes
 
 #include <QDir>
+#include <QSlider>
 #include <QLayout>
 #include <QToolButton>
 #include <QPixmap>
@@ -38,6 +39,7 @@
 // Local includes
 
 #include "digikam_debug.h"
+#include "showfotofolderviewiconprovider.h"
 
 namespace ShowFoto
 {
@@ -48,22 +50,24 @@ class Q_DECL_HIDDEN ShowfotoFolderViewBar::Private
 public:
 
     explicit Private()
-      : previousBtn (nullptr),
-        nextBtn     (nullptr),
-        upBtn       (nullptr),
-        homeBtn     (nullptr),
-        loadBtn     (nullptr),
-        pathEdit    (nullptr)
+      : previousBtn   (nullptr),
+        nextBtn       (nullptr),
+        upBtn         (nullptr),
+        homeBtn       (nullptr),
+        iconSizeSlider(nullptr),
+        loadBtn       (nullptr),
+        pathEdit      (nullptr)
     {
     }
 
-    QToolButton*            previousBtn;
-    QToolButton*            nextBtn;
-    QToolButton*            upBtn;
-    QToolButton*            homeBtn;
-    QToolButton*            loadBtn;
-    QLineEdit*              pathEdit;
-    QList<QAction*>         actionsList;
+    QToolButton*    previousBtn;
+    QToolButton*    nextBtn;
+    QToolButton*    upBtn;
+    QToolButton*    homeBtn;
+    QSlider*        iconSizeSlider;
+    QToolButton*    loadBtn;
+    QLineEdit*      pathEdit;
+    QList<QAction*> actionsList;
 };
 
 ShowfotoFolderViewBar::ShowfotoFolderViewBar(QWidget* const parent)
@@ -105,7 +109,7 @@ ShowfotoFolderViewBar::ShowfotoFolderViewBar(QWidget* const parent)
 
     d->actionsList << btnAction;
 
-    d->nextBtn        = new QToolButton(btnBox);
+    d->nextBtn               = new QToolButton(btnBox);
     d->nextBtn->setDefaultAction(btnAction);
     d->nextBtn->setFocusPolicy(Qt::NoFocus);
 
@@ -122,7 +126,7 @@ ShowfotoFolderViewBar::ShowfotoFolderViewBar(QWidget* const parent)
 
     d->actionsList << btnAction;
 
-    d->upBtn          = new QToolButton(btnBox);
+    d->upBtn                 = new QToolButton(btnBox);
     d->upBtn->setDefaultAction(btnAction);
     d->upBtn->setFocusPolicy(Qt::NoFocus);
 
@@ -139,14 +143,25 @@ ShowfotoFolderViewBar::ShowfotoFolderViewBar(QWidget* const parent)
 
     d->actionsList << btnAction;
 
-    d->homeBtn        = new QToolButton(btnBox);
+    d->homeBtn               = new QToolButton(btnBox);
     d->homeBtn->setDefaultAction(btnAction);
     d->homeBtn->setFocusPolicy(Qt::NoFocus);
 
     // ---
 
-    QWidget* const space = new QWidget(btnBox);
-    btnBox->setStretchFactor(space, 10);
+    d->iconSizeSlider        = new QSlider(Qt::Horizontal, btnBox);
+    d->iconSizeSlider->setRange(16, ShowfotoFolderViewIconProvider::maxIconSize());
+    d->iconSizeSlider->setSingleStep(10);
+    d->iconSizeSlider->setValue(32);
+    d->iconSizeSlider->setFocusPolicy(Qt::NoFocus);
+    btnBox->setStretchFactor(d->iconSizeSlider, 10);
+
+    connect(d->iconSizeSlider, SIGNAL(valueChanged(int)),
+            this, SLOT(slotIconSizeChanged(int)));
+
+    slotIconSizeChanged(32);
+
+    // ---
 
     btnAction                = new QAction(this);
     btnAction->setObjectName(QLatin1String("LoadContents"));
@@ -159,7 +174,7 @@ ShowfotoFolderViewBar::ShowfotoFolderViewBar(QWidget* const parent)
 
     d->actionsList << btnAction;
 
-    d->loadBtn        = new QToolButton(btnBox);
+    d->loadBtn               = new QToolButton(btnBox);
     d->loadBtn->setDefaultAction(btnAction);
     d->loadBtn->setFocusPolicy(Qt::NoFocus);
 
@@ -168,7 +183,7 @@ ShowfotoFolderViewBar::ShowfotoFolderViewBar(QWidget* const parent)
 
     // ---
 
-    d->pathEdit       = new QLineEdit(this);
+    d->pathEdit              = new QLineEdit(this);
     d->pathEdit->setClearButtonEnabled(true);
     d->pathEdit->setWhatsThis(i18nc("@info", "Enter the customized folder-view path"));
 
@@ -201,6 +216,16 @@ void ShowfotoFolderViewBar::setCurrentPath(const QString& path)
     d->upBtn->setEnabled(dir.cdUp());
 }
 
+void ShowfotoFolderViewBar::setIconSize(int size)
+{
+    d->iconSizeSlider->setValue(size);
+}
+
+int ShowfotoFolderViewBar::iconSize() const
+{
+    return d->iconSizeSlider->value();
+}
+
 void ShowfotoFolderViewBar::slotCustomPathChanged()
 {
     emit signalCustomPathChanged(d->pathEdit->text());
@@ -214,6 +239,13 @@ void ShowfotoFolderViewBar::slotPreviousEnabled(bool b)
 void ShowfotoFolderViewBar::slotNextEnabled(bool b)
 {
     d->nextBtn->setEnabled(b);
+}
+
+void ShowfotoFolderViewBar::slotIconSizeChanged(int size)
+{
+    d->iconSizeSlider->setToolTip(i18nc("@info", "Icon Size: %1", size));
+
+    emit signalIconSizeChanged(size);
 }
 
 } // namespace ShowFoto

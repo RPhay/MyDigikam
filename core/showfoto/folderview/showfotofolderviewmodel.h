@@ -42,8 +42,6 @@ public:
     explicit ShowfotoFolderViewModel(ShowfotoFolderViewList* const view);
     ~ShowfotoFolderViewModel()           override;
 
-    QSize iconSize() const;
-
 private:
 
     class Private;

@@ -49,6 +49,9 @@ public:
     explicit ShowfotoFolderViewBar(QWidget* const parent);
     ~ShowfotoFolderViewBar() override;
 
+    void setIconSize(int size);
+    int  iconSize() const;
+
     void setCurrentPath(const QString& path);
 
     QAction* toolBarAction(const QString& name) const;
@@ -60,6 +63,7 @@ public Q_SLOTS:
 
 Q_SIGNALS:
 
+    void signalIconSizeChanged(int);
     void signalGoHome();
     void signalGoUp();
     void signalGoPrevious();
@@ -70,6 +74,7 @@ Q_SIGNALS:
 private Q_SLOTS:
 
     void slotCustomPathChanged();
+    void slotIconSizeChanged(int);
 
 private:
 

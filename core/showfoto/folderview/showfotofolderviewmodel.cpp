@@ -88,9 +88,4 @@ ShowfotoFolderViewModel::~ShowfotoFolderViewModel()
     delete d;
 }
 
-QSize ShowfotoFolderViewModel::iconSize() const
-{
-    return (d->view->iconSize());
-}
-
 } // namespace ShowFoto

@@ -119,6 +119,11 @@ ShowfotoFolderViewList::~ShowfotoFolderViewList()
     delete d;
 }
 
+void ShowfotoFolderViewList::slotIconSizeChanged(int size)
+{
+    setIconSize(QSize(size, size));
+}
+
 void ShowfotoFolderViewList::contextMenuEvent(QContextMenuEvent* e)
 {
     d->fsmenu->exec(e->globalPos());
