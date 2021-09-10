@@ -185,6 +185,7 @@ ShowfotoFolderViewBar::ShowfotoFolderViewBar(QWidget* const parent)
 
     d->pathEdit              = new QLineEdit(this);
     d->pathEdit->setClearButtonEnabled(true);
+    d->pathEdit->setPlaceholderText(i18nc("@info: folder-view path edit", "Enter local path here..."));
     d->pathEdit->setWhatsThis(i18nc("@info", "Enter the customized folder-view path"));
 
     connect(d->pathEdit, SIGNAL(returnPressed()),
