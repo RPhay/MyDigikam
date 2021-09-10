@@ -73,6 +73,7 @@ private:
 private Q_SLOTS:
 
     void slotToolTip();
+    void slotOpenInFileManager();
 
 private:
 

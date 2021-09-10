@@ -49,6 +49,7 @@
 #include "showfotofolderviewbar.h"
 #include "showfotofolderviewmodel.h"
 #include "showfotofolderviewtooltip.h"
+#include "dfileoperations.h"
 
 namespace ShowFoto
 {
@@ -106,6 +107,14 @@ ShowfotoFolderViewList::ShowfotoFolderViewList(ShowfotoFolderViewSideBar* const 
     d->fsmenu->addSeparator(),
     d->fsmenu->addAction(d->bar->toolBarAction(QLatin1String("LoadContents")));
 
+    QAction* const openFileMngr = new QAction(QIcon::fromTheme(QLatin1String("folder-open")),
+                                              i18nc("@action: context menu", "Open in File Manager"), this);
+    d->fsmenu->addAction(openFileMngr);
+
+    connect(openFileMngr, SIGNAL(triggered()),
+            this, SLOT(slotOpenInFileManager()));
+
+
     d->toolTip       = new ShowfotoFolderViewToolTip(this);
     d->toolTipTimer  = new QTimer(this);
 
@@ -117,6 +126,23 @@ ShowfotoFolderViewList::~ShowfotoFolderViewList()
 {
     delete d->toolTip;
     delete d;
+}
+
+void ShowfotoFolderViewList::slotOpenInFileManager()
+{
+    QModelIndex index  = currentIndex();
+    QList<QUrl> urls;
+
+    if (index.isValid())
+    {
+        urls << QUrl::fromLocalFile(d->view->currentPath());
+    }
+    else
+    {
+        urls << QUrl::fromLocalFile(d->view->currentFolder());
+    }
+
+    DFileOperations::openInFileManager(urls);
 }
 
 void ShowfotoFolderViewList::slotIconSizeChanged(int size)
