@@ -135,9 +135,15 @@ void ShowfotoFolderViewList::slotOpenInFileManager()
 
     if (index.isValid())
     {
-        urls << QUrl::fromLocalFile(d->view->currentPath());
+        ShowfotoFolderViewModel* const model = dynamic_cast<ShowfotoFolderViewModel*>(this->model());
+
+        if (model)
+        {
+            urls << QUrl::fromLocalFile(model->filePath(index));
+        }
     }
-    else
+
+    if (urls.empty())
     {
         urls << QUrl::fromLocalFile(d->view->currentFolder());
     }
