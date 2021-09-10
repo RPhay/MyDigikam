@@ -243,14 +243,14 @@ void ShowfotoFolderViewSideBar::setCurrentPath(const QString& newPathNative)
         newPath.append(QDir::separator());
     }
 
-    QString oldPath(d->fsmodel->rootPath());
+    QString oldDir(d->fsmodel->rootPath());
 
-    if (!oldPath.endsWith(QDir::separator()))
+    if (!oldDir.endsWith(QDir::separator()))
     {
-        oldPath.append(QDir::separator());
+        oldDir.append(QDir::separator());
     }
 
-    if (oldPath == newPath)
+    if (oldDir == newPath)
     {
         return;
     }
@@ -274,6 +274,19 @@ void ShowfotoFolderViewSideBar::setCurrentPath(const QString& newPathNative)
 
         if (index.isValid())
         {
+            QString newDir = info.absolutePath();
+
+            if (!newDir.endsWith(QDir::separator()))
+            {
+                newDir.append(QDir::separator());
+            }
+
+            if (newDir != oldDir)
+            {
+                d->fsstack->push(new ShowfotoFolderViewUndo(this, newDir));
+                d->fsmodel->setRootPath(newDir);
+            }
+
             d->fsview->setCurrentIndex(index);
             d->fsview->scrollTo(index);
         }
