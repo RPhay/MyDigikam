@@ -78,7 +78,7 @@ public:
     QAction*        detailledAction;
     QToolButton*    loadBtn;
     QLineEdit*      pathEdit;
-    QList<QAction*> actionsList;
+    QList<QAction*> actionsList;                    ///< used to shared actions with list-view context menu.
 };
 
 ShowfotoFolderViewBar::ShowfotoFolderViewBar(QWidget* const parent)
@@ -184,12 +184,22 @@ ShowfotoFolderViewBar::ShowfotoFolderViewBar(QWidget* const parent)
     QActionGroup* const optGrp = new QActionGroup(this);
 
     d->shortAction             = d->optionsMenu->addAction(i18nc("@action:inmenu", "Short View"));
+    d->shortAction->setObjectName(QLatin1String("ShortView"));
+    d->shortAction->setIcon(QIcon::fromTheme(QLatin1String("view-list-text")));
+    d->shortAction->setToolTip(i18nc("@info", "Switch Folder-View to Short Mode"));
     d->shortAction->setCheckable(true);
     optGrp->addAction(d->shortAction);
 
-    d->detailledAction         = d->optionsMenu->addAction(i18nc("@action:inmenu", "Detailled-View"));
+    d->actionsList << d->shortAction;
+
+    d->detailledAction         = d->optionsMenu->addAction(i18nc("@action:inmenu", "Detailled View"));
+    d->detailledAction->setObjectName(QLatin1String("DetailledView"));
+    d->detailledAction->setIcon(QIcon::fromTheme(QLatin1String("view-list-details")));
+    d->detailledAction->setToolTip(i18nc("@info", "Switch Folder-View to Detailled Mode"));
     d->detailledAction->setCheckable(true);
     optGrp->addAction(d->detailledAction);
+
+    d->actionsList << d->detailledAction;
 
     optGrp->setExclusive(true);
     d->optionsBtn->setMenu(d->optionsMenu);

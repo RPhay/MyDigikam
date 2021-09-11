@@ -111,6 +111,9 @@ ShowfotoFolderViewList::ShowfotoFolderViewList(ShowfotoFolderViewSideBar* const 
     d->fsmenu->addAction(d->bar->toolBarAction(QLatin1String("GoHome")));
     d->fsmenu->addAction(d->bar->toolBarAction(QLatin1String("GoUp")));
     d->fsmenu->addSeparator(),
+    d->fsmenu->addAction(d->bar->toolBarAction(QLatin1String("ShortView")));
+    d->fsmenu->addAction(d->bar->toolBarAction(QLatin1String("DetailledView")));
+    d->fsmenu->addSeparator(),
     d->fsmenu->addAction(d->bar->toolBarAction(QLatin1String("LoadContents")));
 
     QAction* const openFileMngr = new QAction(QIcon::fromTheme(QLatin1String("folder-open")),
