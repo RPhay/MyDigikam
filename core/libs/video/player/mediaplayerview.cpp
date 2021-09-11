@@ -629,6 +629,7 @@ void MediaPlayerView::setCurrentItem(const QUrl& url, bool hasPrevious, bool has
             break;
     }
 
+    d->videoOutput->setOrientation(0);
     d->rotateFilter->uninstall();
 
     if (videoAngle != 0)
