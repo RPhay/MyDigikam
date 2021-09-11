@@ -94,6 +94,9 @@ ShowfotoFolderViewSideBar::ShowfotoFolderViewSideBar(QWidget* const parent)
     d->fsmodel                 = new ShowfotoFolderViewModel(d->fsview);
     d->fsview->setModel(d->fsmodel);
     d->fsview->setRootIndex(d->fsmodel->index(QDir::rootPath()));
+    d->fsview->setColumnHidden(1, true);
+    d->fsview->setColumnHidden(2, true);
+    d->fsview->setColumnHidden(3, true);
 
     QVBoxLayout* const layout  = new QVBoxLayout(this);
     layout->addWidget(d->fsbar);

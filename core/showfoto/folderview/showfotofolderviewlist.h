@@ -26,7 +26,7 @@
 
 // QT includes
 
-#include <QListView>
+#include <QTreeView>
 #include <QMouseEvent>
 #include <QContextMenuEvent>
 #include <QModelIndex>
@@ -40,7 +40,7 @@ namespace ShowFoto
 
 class ShowfotoFolderViewBar;
 
-class ShowfotoFolderViewList : public QListView
+class ShowfotoFolderViewList : public QTreeView
 {
     Q_OBJECT
 

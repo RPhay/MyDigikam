@@ -80,20 +80,27 @@ public:
 
 ShowfotoFolderViewList::ShowfotoFolderViewList(ShowfotoFolderViewSideBar* const view,
                                                ShowfotoFolderViewBar* const bar)
-    : QListView(view),
+    : QTreeView(view),
       d        (new Private)
 {
     d->view   = view;
     d->bar    = bar;
 
     setObjectName(QLatin1String("ShowfotoFolderViewList"));
+    setRootIsDecorated(false);
+    setItemsExpandable(false);
+    setExpandsOnDoubleClick(false);
     setAlternatingRowColors(true);
-    setViewMode(QListView::ListMode);
-    setDragEnabled(true);
     setIconSize(QSize(32, 32));
-    setDragDropMode(QAbstractItemView::DragOnly);
     setSelectionMode(QAbstractItemView::ExtendedSelection);
     setSelectionBehavior(QAbstractItemView::SelectRows);
+    setAllColumnsShowFocus(true);
+
+    setHeaderHidden(true);
+    resizeColumnToContents(0);
+
+    setDragEnabled(true);
+    setDragDropMode(QAbstractItemView::DragOnly);
     viewport()->setMouseTracking(true);
 
     // --- Populate context menu
@@ -160,14 +167,14 @@ void ShowfotoFolderViewList::contextMenuEvent(QContextMenuEvent* e)
 {
     d->fsmenu->exec(e->globalPos());
 
-    QListView::contextMenuEvent(e);
+    QTreeView::contextMenuEvent(e);
 }
 
 void ShowfotoFolderViewList::mouseDoubleClickEvent(QMouseEvent* e)
 {
     d->view->loadContents(currentIndex());
 
-    QListView::mouseDoubleClickEvent(e);
+    QTreeView::mouseDoubleClickEvent(e);
 }
 
 void ShowfotoFolderViewList::setEnableToolTips(bool val)
@@ -245,31 +252,31 @@ void ShowfotoFolderViewList::mouseMoveEvent(QMouseEvent* e)
     }
 
     hideToolTip();
-    QListView::mouseMoveEvent(e);
+    QTreeView::mouseMoveEvent(e);
 }
 
 void ShowfotoFolderViewList::wheelEvent(QWheelEvent* e)
 {
     hideToolTip();
-    QListView::wheelEvent(e);
+    QTreeView::wheelEvent(e);
 }
 
 void ShowfotoFolderViewList::keyPressEvent(QKeyEvent* e)
 {
     hideToolTip();
-    QListView::keyPressEvent(e);
+    QTreeView::keyPressEvent(e);
 }
 
 void ShowfotoFolderViewList::focusOutEvent(QFocusEvent* e)
 {
     hideToolTip();
-    QListView::focusOutEvent(e);
+    QTreeView::focusOutEvent(e);
 }
 
 void ShowfotoFolderViewList::leaveEvent(QEvent* e)
 {
     hideToolTip();
-    QListView::leaveEvent(e);
+    QTreeView::leaveEvent(e);
 }
 
 } // namespace ShowFoto
