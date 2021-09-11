@@ -53,6 +53,9 @@ public:
     void setIconSize(int size);
     int  iconSize() const;
 
+    void setFolderViewMode(int mode);
+    int  folderViewMode() const;
+
     void setCurrentPath(const QString& path);
 
     QAction* toolBarAction(const QString& name) const;

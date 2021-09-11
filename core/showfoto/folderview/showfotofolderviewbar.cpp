@@ -197,7 +197,6 @@ ShowfotoFolderViewBar::ShowfotoFolderViewBar(QWidget* const parent)
     connect(d->optionsMenu, SIGNAL(triggered(QAction*)),
             this, SLOT(slotOptionsChanged(QAction*)));
 
-
     // ---
 
     btnAction                = new QAction(this);
@@ -245,6 +244,28 @@ QAction* ShowfotoFolderViewBar::toolBarAction(const QString& name) const
     }
 
     return nullptr;
+}
+
+void ShowfotoFolderViewBar::setFolderViewMode(int mode)
+{
+    if (mode == ShowfotoFolderViewList::ShortView)
+    {
+        d->shortAction->setChecked(true);
+    }
+    else
+    {
+        d->detailledAction->setChecked(true);
+    }
+}
+
+int ShowfotoFolderViewBar::folderViewMode() const
+{
+    if (d->shortAction->isChecked())
+    {
+        return ShowfotoFolderViewList::ShortView;
+    }
+
+    return ShowfotoFolderViewList::DetailledView;
 }
 
 void ShowfotoFolderViewBar::setCurrentPath(const QString& path)

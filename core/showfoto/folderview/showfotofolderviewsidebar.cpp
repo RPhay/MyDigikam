@@ -66,6 +66,7 @@ public:
 
     static const QString     configIconSizeEntry;
     static const QString     configLastFolderEntry;
+    static const QString     configFolderViewModeEntry;
 
     ShowfotoFolderViewModel* fsmodel;
     ShowfotoFolderViewList*  fsview;
@@ -75,6 +76,7 @@ public:
 
 const QString ShowfotoFolderViewSideBar::Private::configIconSizeEntry(QLatin1String("Icon Size"));
 const QString ShowfotoFolderViewSideBar::Private::configLastFolderEntry(QLatin1String("Last Folder"));
+const QString ShowfotoFolderViewSideBar::Private::configFolderViewModeEntry(QLatin1String("Folder View Mode"));
 
 ShowfotoFolderViewSideBar::ShowfotoFolderViewSideBar(QWidget* const parent)
     : QWidget          (parent),
@@ -94,8 +96,7 @@ ShowfotoFolderViewSideBar::ShowfotoFolderViewSideBar(QWidget* const parent)
     d->fsmodel                 = new ShowfotoFolderViewModel(d->fsview);
     d->fsview->setModel(d->fsmodel);
     d->fsview->setRootIndex(d->fsmodel->index(QDir::rootPath()));
-    slotViewModeChanged(ShowfotoFolderViewList::ShortView);
-
+ 
     QVBoxLayout* const layout  = new QVBoxLayout(this);
     layout->addWidget(d->fsbar);
     layout->addWidget(d->fsview);
@@ -322,6 +323,8 @@ void ShowfotoFolderViewSideBar::doLoadState()
 {
     KConfigGroup group = getConfigGroup();
 
+    d->fsbar->setFolderViewMode(group.readEntry(entryName(d->configFolderViewModeEntry), (int)ShowfotoFolderViewList::ShortView));
+    slotViewModeChanged(d->fsbar->folderViewMode());
     d->fsbar->setIconSize(group.readEntry(entryName(d->configIconSizeEntry), 32));
     setCurrentPathWithoutUndo(group.readEntry(entryName(d->configLastFolderEntry), QDir::rootPath()));
     loadContents(d->fsview->currentIndex());
@@ -331,6 +334,7 @@ void ShowfotoFolderViewSideBar::doSaveState()
 {
     KConfigGroup group = getConfigGroup();
 
+    group.writeEntry(entryName(d->configFolderViewModeEntry), d->fsbar->folderViewMode());
     group.writeEntry(entryName(d->configIconSizeEntry), d->fsbar->iconSize());
     group.writeEntry(entryName(d->configLastFolderEntry), currentFolder());
     group.sync();
