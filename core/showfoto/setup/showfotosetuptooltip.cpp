@@ -105,9 +105,9 @@ ShowfotoSetupToolTip::ShowfotoSetupToolTip(QWidget* const parent)
     const int spacing         = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
 
     QVBoxLayout* const layout = new QVBoxLayout(panel);
-    d->showToolTipsBox        = new QCheckBox(i18n("Show Thumbbar items' toolti&ps"), panel);
+    d->showToolTipsBox        = new QCheckBox(i18n("Show items' toolti&ps"), panel);
     d->showToolTipsBox->setWhatsThis(i18n("Set this option to display the image information when "
-                                          "the mouse hovers over a thumbbar item."));
+                                          "the mouse hovers over a thumbbar or folder-view item."));
 
     d->fontSelect             = new Digikam::DFontSelect(i18n("Font:"), panel);
     d->fontSelect->setToolTip(i18n("Select here the font used to display text in tooltips."));

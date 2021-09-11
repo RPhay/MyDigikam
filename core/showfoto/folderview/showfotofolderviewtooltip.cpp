@@ -75,8 +75,7 @@ void ShowfotoFolderViewToolTip::setIndex(const QModelIndex& index)
 {
     d->index = index;
 
-    if (!d->index.isValid())
-//     || !ShowfotoSettings::instance()->showToolTipsIsValid())
+    if (!d->index.isValid() || !ShowfotoSettings::instance()->getShowToolTip())
     {
         hide();
     }
