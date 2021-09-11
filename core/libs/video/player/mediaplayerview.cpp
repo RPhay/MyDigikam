@@ -41,11 +41,12 @@
 
 // QtAV includes
 
-#include <QtAVWidgets/WidgetRenderer.h>   // krazy:exclude=includes
-#include <QtAV/AudioDecoder.h>            // krazy:exclude=includes
-#include <QtAV/VideoDecoder.h>            // krazy:exclude=includes
-#include <QtAV/VideoCapture.h>            // krazy:exclude=includes
-#include <QtAV/version.h>                 // krazy:exclude=includes
+#include <QtAV/AudioDecoder.h>   // krazy:exclude=includes
+#include <QtAV/VideoDecoder.h>   // krazy:exclude=includes
+#include <QtAV/VideoCapture.h>   // krazy:exclude=includes
+#include <QtAV/VideoOutput.h>    // krazy:exclude=includes
+#include <QtAV/LibAVFilter.h>    // krazy:exclude=includes
+#include <QtAV/version.h>        // krazy:exclude=includes
 
 // KDE includes
 
@@ -168,12 +169,12 @@ public:
         loopPlay        (nullptr),
         toolBar         (nullptr),
         iface           (nullptr),
-        videoWidget     (nullptr),
+        rotateFilter    (nullptr),
+        videoOutput     (nullptr),
         player          (nullptr),
         slider          (nullptr),
         volume          (nullptr),
         tlabel          (nullptr),
-        videoOrientation(0),
         capturePosition (0),
         sliderTime      (0)
     {
@@ -193,7 +194,8 @@ public:
 
     DInfoInterface*      iface;
 
-    WidgetRenderer*      videoWidget;
+    LibAVFilterVideo*    rotateFilter;
+    VideoOutput*         videoOutput;
     AVPlayer*            player;
 
     QSlider*             slider;
@@ -201,8 +203,6 @@ public:
     QLabel*              tlabel;
     QUrl                 currentItem;
 
-
-    int                  videoOrientation;
     qint64               capturePosition;
     qint64               sliderTime;
 };
@@ -241,41 +241,46 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
 
     // --------------------------------------------------------------------------
 
-    d->playerView     = new QFrame(this);
-    d->videoWidget    = new WidgetRenderer(this);
-    d->player         = new AVPlayer(this);
+    d->playerView          = new QFrame(this);
 
-    DHBox* const hbox = new DHBox(this);
-    d->slider         = new QSlider(Qt::Horizontal, hbox);
+    d->videoOutput         = new VideoOutput(this);
+    QWidget* const vWidget = d->videoOutput->widget() ? d->videoOutput->widget()
+                                                      : new QWidget(this);
+
+    d->player              = new AVPlayer(this);
+    d->rotateFilter        = new LibAVFilterVideo(d->player);
+
+    DHBox* const hbox      = new DHBox(this);
+    d->slider              = new QSlider(Qt::Horizontal, hbox);
     d->slider->setStyle(new PlayerVideoStyle());
     d->slider->setRange(0, 0);
-    d->tlabel         = new QLabel(hbox);
+    d->tlabel              = new QLabel(hbox);
     d->tlabel->setText(QLatin1String("00:00:00 / 00:00:00"));
-    d->loopPlay       = new QPushButton(hbox);
+    d->loopPlay            = new QPushButton(hbox);
     d->loopPlay->setIcon(QIcon::fromTheme(QLatin1String("media-playlist-normal")));
     d->loopPlay->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
     d->loopPlay->setToolTip(i18n("Toggle playing in a loop"));
     d->loopPlay->setFocusPolicy(Qt::NoFocus);
     d->loopPlay->setMinimumSize(22, 22);
     d->loopPlay->setCheckable(true);
-    QLabel* const spk = new QLabel(hbox);
+    QLabel* const spk      = new QLabel(hbox);
     spk->setPixmap(QIcon::fromTheme(QLatin1String("audio-volume-high")).pixmap(22, 22));
-    d->volume         = new QSlider(Qt::Horizontal, hbox);
+    d->volume              = new QSlider(Qt::Horizontal, hbox);
     d->volume->setRange(0, 100);
     d->volume->setValue(50);
     hbox->setContentsMargins(0, spacing, 0, 0);
     hbox->setStretchFactor(d->slider, 10);
     hbox->setSpacing(4);
 
-    d->videoWidget->setOutAspectRatioMode(VideoRenderer::VideoAspectRatio);
-    d->videoWidget->setMouseTracking(true);
-    d->player->setRenderer(d->videoWidget);
+    d->videoOutput->setOutAspectRatioMode(VideoRenderer::VideoAspectRatio);
+    d->player->setRenderer(d->videoOutput);
+    vWidget->setMouseTracking(true);
 
     d->playerView->setFrameStyle(QFrame::StyledPanel | QFrame::Plain);
     d->playerView->setLineWidth(1);
 
     QVBoxLayout* const vbox2 = new QVBoxLayout(d->playerView);
-    vbox2->addWidget(d->videoWidget, 10);
+    vbox2->addWidget(vWidget,        10);
     vbox2->addWidget(hbox,            0);
     vbox2->setContentsMargins(0, 0, 0, spacing);
     vbox2->setSpacing(spacing);
@@ -292,7 +297,7 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
     setPreviewMode(Private::PlayerView);
 
     d->errorView->installEventFilter(new MediaPlayerMouseClickFilter(this));
-    d->videoWidget->installEventFilter(new MediaPlayerMouseClickFilter(this));
+    vWidget->installEventFilter(new MediaPlayerMouseClickFilter(this));
 
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
     KConfigGroup group        = config->group("Media Player Settings");
@@ -382,20 +387,6 @@ void MediaPlayerView::slotPlayerStateChanged(QtAV::AVPlayer::State state)
 {
     if      (state == QtAV::AVPlayer::PlayingState)
     {
-        int rotate = 0;
-
-#if QTAV_VERSION > QTAV_VERSION_CHK(1, 12, 0)
-
-        // fix wrong rotation from QtAV git/master
-
-        rotate     = d->player->statistics().video_only.rotate;
-
-#endif
-
-        d->videoWidget->setOrientation((-rotate) + d->videoOrientation);
-        qCDebug(DIGIKAM_GENERAL_LOG) << "Found video orientation:"
-                                     << d->videoOrientation;
-
         d->playAction->setIcon(QIcon::fromTheme(QLatin1String("media-playback-pause")));
     }
     else if ((state == QtAV::AVPlayer::PausedState) ||
@@ -442,7 +433,7 @@ void MediaPlayerView::slotRotateVideo()
     {
         int orientation = 0;
 
-        switch (d->videoWidget->orientation())
+        switch (d->videoOutput->orientation())
         {
             case 0:
                 orientation = 90;
@@ -460,7 +451,7 @@ void MediaPlayerView::slotRotateVideo()
                 orientation = 0;
         }
 
-        d->videoWidget->setOrientation(orientation);
+        d->videoOutput->setOrientation(orientation);
     }
 }
 
@@ -601,6 +592,7 @@ void MediaPlayerView::setCurrentItem(const QUrl& url, bool hasPrevious, bool has
 
     d->player->stop();
 
+    int videoAngle      = 0;
     int orientation     = 0;
     bool supportedCodec = true;
 
@@ -621,20 +613,28 @@ void MediaPlayerView::setCurrentItem(const QUrl& url, bool hasPrevious, bool has
         case MetaEngine::ORIENTATION_ROT_90:
         case MetaEngine::ORIENTATION_ROT_90_HFLIP:
         case MetaEngine::ORIENTATION_ROT_90_VFLIP:
-            d->videoOrientation = 90;
+            videoAngle = 90;
             break;
 
         case MetaEngine::ORIENTATION_ROT_180:
-            d->videoOrientation = 180;
+            videoAngle = 180;
             break;
 
         case MetaEngine::ORIENTATION_ROT_270:
-            d->videoOrientation = 270;
+            videoAngle = 270;
             break;
 
         default:
-            d->videoOrientation = 0;
+            videoAngle = 0;
             break;
+    }
+
+    d->rotateFilter->uninstall();
+
+    if (videoAngle != 0)
+    {
+        d->rotateFilter->installTo(d->player);
+        d->rotateFilter->setOptions(QString::fromLatin1("rotate=PI*%1").arg(videoAngle));
     }
 
     if (supportedCodec)
