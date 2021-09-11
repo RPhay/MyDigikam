@@ -42,8 +42,8 @@
 
 // QtAV includes
 
-#include <QtAVWidgets/WidgetRenderer.h>   // krazy:exclude=includes
-#include <QtAV/version.h>                 // krazy:exclude=includes
+#include <QtAV/VideoOutput.h>    // krazy:exclude=includes
+#include <QtAV/version.h>        // krazy:exclude=includes
 
 // Local includes
 
@@ -85,19 +85,20 @@ public:
 
     explicit Private()
       : iface           (nullptr),
-        videoWidget     (nullptr),
+        videoOutput     (nullptr),
         player          (nullptr),
         slider          (nullptr),
         volume          (nullptr),
         tlabel          (nullptr),
         indicator       (nullptr),
-        videoOrientation(0)
+        videoOrientation(0),
+        sliderTime      (0)
     {
     }
 
     DInfoInterface*      iface;
 
-    WidgetRenderer*      videoWidget;
+    VideoOutput*         videoOutput;
     AVPlayer*            player;
 
     QSlider*             slider;
@@ -107,6 +108,7 @@ public:
     DHBox*               indicator;
 
     int                  videoOrientation;
+    qint64               sliderTime;
 };
 
 SlideVideo::SlideVideo(QWidget* const parent)
@@ -116,13 +118,15 @@ SlideVideo::SlideVideo(QWidget* const parent)
     setAttribute(Qt::WA_DeleteOnClose);
     setMouseTracking(true);
 
-    d->videoWidget    = new WidgetRenderer(this);
-    d->videoWidget->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
-    d->videoWidget->setOutAspectRatioMode(VideoRenderer::VideoAspectRatio);
-    d->videoWidget->setMouseTracking(true);
+    d->videoOutput         = new VideoOutput(this);
+    QWidget* const vWidget = d->videoOutput->widget() ? d->videoOutput->widget()
+                                                      : new QWidget(this);
 
-    d->player         = new AVPlayer(this);
-    d->player->setRenderer(d->videoWidget);
+    d->player              = new AVPlayer(this);
+
+    d->videoOutput->setOutAspectRatioMode(VideoRenderer::VideoAspectRatio);
+    d->player->setRenderer(d->videoOutput);
+    vWidget->setMouseTracking(true);
 
     d->indicator      = new DHBox(this);
     d->slider         = new QSlider(Qt::Horizontal, d->indicator);
@@ -141,10 +145,9 @@ SlideVideo::SlideVideo(QWidget* const parent)
     d->indicator->setAutoFillBackground(true);
     d->indicator->setSpacing(4);
 
-
     QGridLayout* const grid = new QGridLayout(this);
-    grid->addWidget(d->videoWidget, 0, 0, 2, 1);
-    grid->addWidget(d->indicator,   0, 0, 1, 1); // Widget will be over player to not change layout when visibility is changed.
+    grid->addWidget(vWidget,      0, 0, 2, 1);
+    grid->addWidget(d->indicator, 0, 0, 1, 1); // Widget will be over player to not change layout when visibility is changed.
     grid->setRowStretch(0, 1);
     grid->setRowStretch(1, 100);
     grid->setContentsMargins(QMargins());
@@ -257,13 +260,15 @@ void SlideVideo::setCurrentUrl(const QUrl& url)
 void SlideVideo::showIndicator(bool b)
 {
     d->indicator->setVisible(b);
+    d->indicator->raise();
 }
 
 void SlideVideo::slotPlayerStateChanged(QtAV::AVPlayer::State state)
 {
     if (state == QtAV::AVPlayer::PlayingState)
     {
-        int rotate = 0;
+        int rotate      = 0;
+        int orientation = 0;
 
 #if QTAV_VERSION > QTAV_VERSION_CHK(1, 12, 0)
 
@@ -272,7 +277,18 @@ void SlideVideo::slotPlayerStateChanged(QtAV::AVPlayer::State state)
         rotate     = d->player->statistics().video_only.rotate;
 
 #endif
-        d->videoWidget->setOrientation((-rotate) + d->videoOrientation);
+
+        if (d->videoOutput->opengl() && (d->videoOrientation > 0))
+        {
+            orientation = (-rotate) + (360 - d->videoOrientation);
+        }
+        else
+        {
+            orientation = (-rotate) + d->videoOrientation;
+        }
+
+        d->videoOutput->setOrientation(orientation);
+
         qCDebug(DIGIKAM_GENERAL_LOG) << "Found video orientation:"
                                      << d->videoOrientation;
     }
@@ -318,6 +334,14 @@ void SlideVideo::stop()
 
 void SlideVideo::slotPositionChanged(qint64 position)
 {
+    if ((d->sliderTime < position)       &&
+        ((d->sliderTime + 100) > position))
+    {
+        return;
+    }
+
+    d->sliderTime = position;
+
     if (!d->slider->isSliderDown())
     {
         d->slider->blockSignals(true);
