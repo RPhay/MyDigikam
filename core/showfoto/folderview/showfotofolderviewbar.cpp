@@ -33,6 +33,8 @@
 #include <QLineEdit>
 #include <QActionGroup>
 #include <QMenu>
+#include <QComboBox>
+#include <QUndoView>
 
 // KDE includes
 
@@ -63,30 +65,35 @@ public:
         shortAction    (nullptr),
         detailledAction(nullptr),
         loadBtn        (nullptr),
-        pathEdit       (nullptr)
+        pathEdit       (nullptr),
+        sidebar        (nullptr),
+        undoView       (nullptr)
     {
     }
 
-    QToolButton*    previousBtn;
-    QToolButton*    nextBtn;
-    QToolButton*    upBtn;
-    QToolButton*    homeBtn;
-    QSlider*        iconSizeSlider;
-    QToolButton*    optionsBtn;
-    QMenu*          optionsMenu;
-    QAction*        shortAction;
-    QAction*        detailledAction;
-    QToolButton*    loadBtn;
-    QLineEdit*      pathEdit;
-    QList<QAction*> actionsList;                    ///< used to shared actions with list-view context menu.
+    QToolButton*               previousBtn;
+    QToolButton*               nextBtn;
+    QToolButton*               upBtn;
+    QToolButton*               homeBtn;
+    QSlider*                   iconSizeSlider;
+    QToolButton*               optionsBtn;
+    QMenu*                     optionsMenu;
+    QAction*                   shortAction;
+    QAction*                   detailledAction;
+    QToolButton*               loadBtn;
+    QComboBox*                 pathEdit;
+    QList<QAction*>            actionsList;                    ///< used to shared actions with list-view context menu.
+    ShowfotoFolderViewSideBar* sidebar;
+    QUndoView*                 undoView;
 };
 
-ShowfotoFolderViewBar::ShowfotoFolderViewBar(QWidget* const parent)
-    : DVBox(parent),
+ShowfotoFolderViewBar::ShowfotoFolderViewBar(ShowfotoFolderViewSideBar* const sidebar)
+    : DVBox(sidebar),
       d    (new Private)
 {
     setContentsMargins(QMargins());
 
+    d->sidebar               = sidebar;
     DHBox* const btnBox      = new DHBox(this);
     QAction* btnAction       = nullptr;
 
@@ -229,13 +236,18 @@ ShowfotoFolderViewBar::ShowfotoFolderViewBar(QWidget* const parent)
 
     // ---
 
-    d->pathEdit              = new QLineEdit(this);
-    d->pathEdit->setClearButtonEnabled(true);
-    d->pathEdit->setPlaceholderText(i18nc("@info: folder-view path edit", "Enter local path here..."));
-    d->pathEdit->setWhatsThis(i18nc("@info", "Enter the customized folder-view path"));
+    d->pathEdit              = new QComboBox(this);
+    d->pathEdit->setEditable(true);
+    d->pathEdit->setDuplicatesEnabled(false);
+    d->pathEdit->setWhatsThis(i18nc("@info", "Enter the customized folder-view path or select from history"));
+    d->pathEdit->lineEdit()->setPlaceholderText(i18nc("@info: folder-view path edit", "Enter local path here..."));
+    d->pathEdit->lineEdit()->setClearButtonEnabled(true);
 
-    connect(d->pathEdit, SIGNAL(returnPressed()),
+    connect(d->pathEdit->lineEdit(), SIGNAL(returnPressed()),
             this, SLOT(slotCustomPathChanged()));
+
+    connect(d->pathEdit, SIGNAL(textActivated(QString)),
+            this, SIGNAL(signalCustomPathChanged(QString)));
 }
 
 ShowfotoFolderViewBar::~ShowfotoFolderViewBar()
@@ -280,7 +292,13 @@ int ShowfotoFolderViewBar::folderViewMode() const
 
 void ShowfotoFolderViewBar::setCurrentPath(const QString& path)
 {
-    d->pathEdit->setText(path);
+    d->pathEdit->lineEdit()->setText(path);
+
+    if (d->pathEdit->findText(path) == -1)
+    {
+        d->pathEdit->addItem(path);
+    }
+
     QDir dir(path);
     d->upBtn->setEnabled(dir.cdUp());
 }
@@ -297,7 +315,14 @@ int ShowfotoFolderViewBar::iconSize() const
 
 void ShowfotoFolderViewBar::slotCustomPathChanged()
 {
-    emit signalCustomPathChanged(d->pathEdit->text());
+    QString path = d->pathEdit->lineEdit()->text();
+
+    if (d->pathEdit->findText(path) == -1)
+    {
+        d->pathEdit->addItem(path);
+    }
+
+    emit signalCustomPathChanged(path);
 }
 
 void ShowfotoFolderViewBar::slotPreviousEnabled(bool b)

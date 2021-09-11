@@ -28,10 +28,10 @@
 #include <QApplication>
 #include <QStyle>
 #include <QIcon>
+#include <QUndoStack>
 #include <QVBoxLayout>
 #include <QFileInfo>
 #include <QDir>
-#include <QUndoStack>
 
 // KDE includes
 
@@ -96,7 +96,7 @@ ShowfotoFolderViewSideBar::ShowfotoFolderViewSideBar(QWidget* const parent)
     d->fsmodel                 = new ShowfotoFolderViewModel(d->fsview);
     d->fsview->setModel(d->fsmodel);
     d->fsview->setRootIndex(d->fsmodel->index(QDir::rootPath()));
- 
+
     QVBoxLayout* const layout  = new QVBoxLayout(this);
     layout->addWidget(d->fsbar);
     layout->addWidget(d->fsview);

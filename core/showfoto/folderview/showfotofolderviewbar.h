@@ -40,6 +40,7 @@ namespace ShowFoto
 {
 
 class ShowfotoFolderViewList;
+class ShowfotoFolderViewSideBar;
 
 class ShowfotoFolderViewBar : public DVBox
 {
@@ -47,7 +48,7 @@ class ShowfotoFolderViewBar : public DVBox
 
 public:
 
-    explicit ShowfotoFolderViewBar(QWidget* const parent);
+    explicit ShowfotoFolderViewBar(ShowfotoFolderViewSideBar* const parent);
     ~ShowfotoFolderViewBar() override;
 
     void setIconSize(int size);
