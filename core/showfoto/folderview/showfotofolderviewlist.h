@@ -46,6 +46,14 @@ class ShowfotoFolderViewList : public QTreeView
 
 public:
 
+    enum ViewMode
+    {
+        ShortView = 0,
+        DetailledView
+    };
+
+public:
+
     explicit ShowfotoFolderViewList(ShowfotoFolderViewSideBar* const view,
                                     ShowfotoFolderViewBar* const bar);
     ~ShowfotoFolderViewList()                                           override;

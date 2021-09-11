@@ -96,7 +96,6 @@ ShowfotoFolderViewList::ShowfotoFolderViewList(ShowfotoFolderViewSideBar* const 
     setSelectionBehavior(QAbstractItemView::SelectRows);
     setAllColumnsShowFocus(true);
 
-    setHeaderHidden(true);
     resizeColumnToContents(0);
 
     setDragEnabled(true);

@@ -76,6 +76,7 @@ public Q_SLOTS:
 private Q_SLOTS:
 
     void slotCustomPathChanged(const QString&);
+    void slotViewModeChanged(int);
 
 Q_SIGNALS:
 

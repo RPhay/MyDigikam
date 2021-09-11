@@ -94,9 +94,7 @@ ShowfotoFolderViewSideBar::ShowfotoFolderViewSideBar(QWidget* const parent)
     d->fsmodel                 = new ShowfotoFolderViewModel(d->fsview);
     d->fsview->setModel(d->fsmodel);
     d->fsview->setRootIndex(d->fsmodel->index(QDir::rootPath()));
-    d->fsview->setColumnHidden(1, true);
-    d->fsview->setColumnHidden(2, true);
-    d->fsview->setColumnHidden(3, true);
+    slotViewModeChanged(ShowfotoFolderViewList::ShortView);
 
     QVBoxLayout* const layout  = new QVBoxLayout(this);
     layout->addWidget(d->fsbar);
@@ -104,6 +102,9 @@ ShowfotoFolderViewSideBar::ShowfotoFolderViewSideBar(QWidget* const parent)
     layout->setContentsMargins(0, 0, spacing, 0);
 
     // --- Setup connections
+
+    connect(d->fsbar, SIGNAL(signalViewModeChanged(int)),
+            this, SLOT(slotViewModeChanged(int)));
 
     connect(d->fsbar, SIGNAL(signalIconSizeChanged(int)),
             d->fsview, SLOT(slotIconSizeChanged(int)));
@@ -344,6 +345,30 @@ void ShowfotoFolderViewSideBar::applySettings()
 void ShowfotoFolderViewSideBar::setActive(bool active)
 {
     Q_UNUSED(active);
+}
+
+void ShowfotoFolderViewSideBar::slotViewModeChanged(int mode)
+{
+    switch (mode)
+    {
+        case ShowfotoFolderViewList::ShortView:
+        {
+            d->fsview->setColumnHidden(1, true);
+            d->fsview->setColumnHidden(2, true);
+            d->fsview->setColumnHidden(3, true);
+            d->fsview->setHeaderHidden(true);
+            break;
+        }
+
+        default:    // ShowfotoFolderViewList::DetailledView
+        {
+            d->fsview->setColumnHidden(1, false);
+            d->fsview->setColumnHidden(2, false);
+            d->fsview->setColumnHidden(3, false);
+            d->fsview->setHeaderHidden(false);
+            break;
+        }
+    }
 }
 
 } // namespace ShowFoto

@@ -27,6 +27,7 @@
 // Qt includes
 
 #include <QWidget>
+#include <QAction>
 
 // Local includes
 
@@ -63,6 +64,7 @@ public Q_SLOTS:
 
 Q_SIGNALS:
 
+    void signalViewModeChanged(int);
     void signalIconSizeChanged(int);
     void signalGoHome();
     void signalGoUp();
@@ -75,6 +77,7 @@ private Q_SLOTS:
 
     void slotCustomPathChanged();
     void slotIconSizeChanged(int);
+    void slotOptionsChanged(QAction*);
 
 private:
 

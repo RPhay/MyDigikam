@@ -31,6 +31,8 @@
 #include <QToolButton>
 #include <QPixmap>
 #include <QLineEdit>
+#include <QActionGroup>
+#include <QMenu>
 
 // KDE includes
 
@@ -40,6 +42,7 @@
 
 #include "digikam_debug.h"
 #include "showfotofolderviewiconprovider.h"
+#include "showfotofolderviewlist.h"
 
 namespace ShowFoto
 {
@@ -50,13 +53,17 @@ class Q_DECL_HIDDEN ShowfotoFolderViewBar::Private
 public:
 
     explicit Private()
-      : previousBtn   (nullptr),
-        nextBtn       (nullptr),
-        upBtn         (nullptr),
-        homeBtn       (nullptr),
-        iconSizeSlider(nullptr),
-        loadBtn       (nullptr),
-        pathEdit      (nullptr)
+      : previousBtn    (nullptr),
+        nextBtn        (nullptr),
+        upBtn          (nullptr),
+        homeBtn        (nullptr),
+        iconSizeSlider (nullptr),
+        optionsBtn     (nullptr),
+        optionsMenu    (nullptr),
+        shortAction    (nullptr),
+        detailledAction(nullptr),
+        loadBtn        (nullptr),
+        pathEdit       (nullptr)
     {
     }
 
@@ -65,6 +72,10 @@ public:
     QToolButton*    upBtn;
     QToolButton*    homeBtn;
     QSlider*        iconSizeSlider;
+    QToolButton*    optionsBtn;
+    QMenu*          optionsMenu;
+    QAction*        shortAction;
+    QAction*        detailledAction;
     QToolButton*    loadBtn;
     QLineEdit*      pathEdit;
     QList<QAction*> actionsList;
@@ -163,6 +174,32 @@ ShowfotoFolderViewBar::ShowfotoFolderViewBar(QWidget* const parent)
 
     // ---
 
+    d->optionsBtn              = new QToolButton(btnBox);
+    d->optionsBtn->setToolTip(i18nc("@info: folder-view", "Folder-View Options"));
+    d->optionsBtn->setIcon(QIcon::fromTheme(QLatin1String("configure")));
+    d->optionsBtn->setPopupMode(QToolButton::InstantPopup);
+    d->optionsBtn->setWhatsThis(i18nc("@info: folder-view", "Selection options to render folder-view."));
+
+    d->optionsMenu             = new QMenu(d->optionsBtn);
+    QActionGroup* const optGrp = new QActionGroup(this);
+
+    d->shortAction             = d->optionsMenu->addAction(i18nc("@action:inmenu", "Short View"));
+    d->shortAction->setCheckable(true);
+    optGrp->addAction(d->shortAction);
+
+    d->detailledAction         = d->optionsMenu->addAction(i18nc("@action:inmenu", "Detailled-View"));
+    d->detailledAction->setCheckable(true);
+    optGrp->addAction(d->detailledAction);
+
+    optGrp->setExclusive(true);
+    d->optionsBtn->setMenu(d->optionsMenu);
+
+    connect(d->optionsMenu, SIGNAL(triggered(QAction*)),
+            this, SLOT(slotOptionsChanged(QAction*)));
+
+
+    // ---
+
     btnAction                = new QAction(this);
     btnAction->setObjectName(QLatin1String("LoadContents"));
     btnAction->setIcon(QIcon::fromTheme(QLatin1String("media-playlist-normal")));
@@ -247,6 +284,22 @@ void ShowfotoFolderViewBar::slotIconSizeChanged(int size)
     d->iconSizeSlider->setToolTip(i18nc("@info", "Icon Size: %1", size));
 
     emit signalIconSizeChanged(size);
+}
+
+void ShowfotoFolderViewBar::slotOptionsChanged(QAction* action)
+{
+    int mode;
+
+    if      (action == d->shortAction)
+    {
+        mode = ShowfotoFolderViewList::ShortView;
+    }
+    else if (action == d->detailledAction)
+    {
+        mode = ShowfotoFolderViewList::DetailledView;
+    }
+
+    emit signalViewModeChanged(mode);
 }
 
 } // namespace ShowFoto
