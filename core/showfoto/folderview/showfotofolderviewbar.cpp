@@ -63,7 +63,7 @@ public:
         optionsBtn        (nullptr),
         optionsMenu       (nullptr),
         shortAction       (nullptr),
-        detailledAction   (nullptr),
+        detailedAction    (nullptr),
         moreSettingsAction(nullptr),
         loadBtn           (nullptr),
         pathEdit          (nullptr),
@@ -79,7 +79,7 @@ public:
     QToolButton*               optionsBtn;
     QMenu*                     optionsMenu;
     QAction*                   shortAction;
-    QAction*                   detailledAction;
+    QAction*                   detailedAction;
     QAction*                   moreSettingsAction;
     QToolButton*               loadBtn;
     QComboBox*                 pathEdit;
@@ -199,14 +199,14 @@ ShowfotoFolderViewBar::ShowfotoFolderViewBar(ShowfotoFolderViewSideBar* const si
 
     d->actionsList << d->shortAction;
 
-    d->detailledAction         = d->optionsMenu->addAction(i18nc("@action:inmenu", "Detailed View"));
-    d->detailledAction->setObjectName(QLatin1String("DetailledView"));
-    d->detailledAction->setIcon(QIcon::fromTheme(QLatin1String("view-list-details")));
-    d->detailledAction->setToolTip(i18nc("@info", "Switch Folder-View to Detailed Mode"));
-    d->detailledAction->setCheckable(true);
-    optGrp->addAction(d->detailledAction);
+    d->detailedAction          = d->optionsMenu->addAction(i18nc("@action:inmenu", "Detailed View"));
+    d->detailedAction->setObjectName(QLatin1String("DetailledView"));
+    d->detailedAction->setIcon(QIcon::fromTheme(QLatin1String("view-list-details")));
+    d->detailedAction->setToolTip(i18nc("@info", "Switch Folder-View to Detailed Mode"));
+    d->detailedAction->setCheckable(true);
+    optGrp->addAction(d->detailedAction);
 
-    d->actionsList << d->detailledAction;
+    d->actionsList << d->detailedAction;
 
     optGrp->setExclusive(true);
 
@@ -284,7 +284,7 @@ void ShowfotoFolderViewBar::setFolderViewMode(int mode)
     }
     else
     {
-        d->detailledAction->setChecked(true);
+        d->detailedAction->setChecked(true);
     }
 }
 
@@ -358,7 +358,7 @@ void ShowfotoFolderViewBar::slotOptionsChanged(QAction* action)
     {
         mode = ShowfotoFolderViewList::ShortView;
     }
-    else if (action == d->detailledAction)
+    else if (action == d->detailedAction)
     {
         mode = ShowfotoFolderViewList::DetailledView;
     }

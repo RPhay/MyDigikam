@@ -3,12 +3,13 @@ digiKam 7.4.0 - Release date: 2021-xx-xx
 *****************************************************************************************************
 NEW FEATURES:
 
-Bundle : AppImage is now compiled under Mageia 7.1 instead 6.1 for a better binary compatibility with recent Linux.
-Bundle : AppImage use last Qt 5.15.2 and KF5 5.84 libraries.
-Plugins: New tool to share items on the network with a Motion JPEG stream server.
-General: Update internal Libraw to snapshot 20210827.
-General: Integration of Image Quality Sorter Google Summer of Code project 2021
-         from Phuoc Khanh LE <https://community.kde.org/GSoC/2021/StatusReports/PhuocKhanhLE>
+Bundle  : AppImage is now compiled under Mageia 7.1 instead 6.1 for a better binary compatibility with recent Linux.
+Bundle  : AppImage use last Qt 5.15.2 and KF5 5.84 libraries.
+General : Update internal Libraw to snapshot 20210827.
+General : Integration of Image Quality Sorter Google Summer of Code project 2021
+          from Phuoc Khanh LE <https://community.kde.org/GSoC/2021/StatusReports/PhuocKhanhLE>
+Plugins : New tool to share items on the network with a Motion JPEG stream server.
+Showfoto: Add new left sidebar hosting a folder-view to quickly explore images from local file system.
 
 *****************************************************************************************************
 BUGFIXES:

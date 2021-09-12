@@ -172,7 +172,11 @@ QStringList WelcomePageView::featuresTabContent() const
     newFeatures << i18n("Find duplicates items is now process in parallel using multi-cores.");
     newFeatures << i18n("New tool to export items to iNaturatist web service.");
     newFeatures << i18n("New metadata viewer based on ExifTool.");
-    newFeatures << i18n("Update internal RAW engine to last Libraw 0.20.2 release including Canon CR3 and Sony A7R4 support.");
+    newFeatures << i18n("Integration of  Google Summer of Code project 2021 "
+                        "<a href=\"https://community.kde.org/GSoC/2021/StatusReports/PhuocKhanhLE\">Image Quality Sorter</a>.");
+    newFeatures << i18n("New tool to share items on the network with a Motion JPEG stream server.");
+    newFeatures << i18n("Showfoto has a new left sidebar hosting a folder-view to quickly explore images from local file system.");
+    newFeatures << i18n("Update internal RAW engine to last Libraw 0.20.2 (snapshot 20210827) including Canon CR3 and Sony A7R4 support.");
     newFeatures << i18n("New camera supported: "
                         "Canon CR3, PowerShot G5 X Mark II, G7 X Mark III, SX70 HS, EOS R, EOS RP, EOS 90D, EOS 250D, EOS M6 Mark II, EOS M50, EOS M200, EOS 1DX Mark III (lossless files only) "
                         "DJI Mavic Air, Air2, Osmo Action, "
