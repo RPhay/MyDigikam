@@ -93,6 +93,9 @@ void Showfoto::setupConnections()
     connect(d->rightSideBar, SIGNAL(signalSetupExifTool()),
             this, SLOT(slotSetupExifTool()));
 
+    connect(d->folderView, SIGNAL(signalSetup()),
+            this, SLOT(slotSetup()));
+
     connect(d->dDHandler, SIGNAL(signalDroppedUrls(QList<QUrl>,bool)),
             this, SLOT(slotDroppedUrls(QList<QUrl>,bool)));
 }

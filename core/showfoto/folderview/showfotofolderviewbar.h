@@ -69,6 +69,7 @@ public Q_SLOTS:
 Q_SIGNALS:
 
     void signalViewModeChanged(int);
+    void signalSetup();
     void signalIconSizeChanged(int);
     void signalGoHome();
     void signalGoUp();

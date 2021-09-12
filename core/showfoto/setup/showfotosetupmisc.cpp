@@ -123,11 +123,11 @@ ShowfotoSetupMisc::ShowfotoSetupMisc(QWidget* const parent)
     : QScrollArea(parent),
       d          (new Private)
 {
-    d->tab = new QTabWidget(viewport());
+    d->tab            = new QTabWidget(viewport());
     setWidget(d->tab);
     setWidgetResizable(true);
 
-    const int spacing         = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
+    const int spacing = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
 
     // -- Application Behavior Options --------------------------------------------------------
 
@@ -158,7 +158,7 @@ ShowfotoSetupMisc::ShowfotoSetupMisc(QWidget* const parent)
 
     // Thumbnails Options -------------------------------------
 
-    QGroupBox* const thOptionsGroup = new QGroupBox(i18n("Thumbnails"), behaviourPanel);
+    QGroupBox* const thOptionsGroup = new QGroupBox(i18n("Thumbbar Items"), behaviourPanel);
     QVBoxLayout* const gLayout3     = new QVBoxLayout();
 
     d->showMimeOverImage = new QCheckBox(i18n("&Show image Format"),          thOptionsGroup);
@@ -254,6 +254,7 @@ ShowfotoSetupMisc::ShowfotoSetupMisc(QWidget* const parent)
 #ifndef HAVE_APPSTYLE_SUPPORT
 
     // See Bug #365262
+
     appStyleHbox->setVisible(false);
 
 #endif

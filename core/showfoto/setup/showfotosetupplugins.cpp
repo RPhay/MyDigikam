@@ -38,6 +38,8 @@
 #include "dpluginconfvieweditor.h"
 #include "dpluginconfviewdimg.h"
 
+using namespace Digikam;
+
 namespace ShowFoto
 {
 
@@ -53,11 +55,11 @@ public:
     {
     }
 
-    QTabWidget*            tab;
+    QTabWidget*   tab;
 
-    Digikam::DPluginSetup* setupGeneric;
-    Digikam::DPluginSetup* setupEditor;
-    Digikam::DPluginSetup* setupDImg;
+    DPluginSetup* setupGeneric;
+    DPluginSetup* setupEditor;
+    DPluginSetup* setupDImg;
 };
 
 ShowfotoSetupPlugins::ShowfotoSetupPlugins(QWidget* const parent)
@@ -70,19 +72,19 @@ ShowfotoSetupPlugins::ShowfotoSetupPlugins(QWidget* const parent)
 
     // --------------------
 
-    d->setupGeneric = new Digikam::DPluginSetup(d->tab);
+    d->setupGeneric = new DPluginSetup(d->tab);
     d->setupGeneric->setPluginConfView(new Digikam::DPluginConfViewGeneric(d->setupGeneric));
     d->tab->insertTab(Generic, d->setupGeneric, i18nc("@title:tab generic plugins list", "Generic"));
 
     // --------------------
 
-    d->setupEditor  = new Digikam::DPluginSetup(d->tab);
+    d->setupEditor  = new DPluginSetup(d->tab);
     d->setupEditor->setPluginConfView(new Digikam::DPluginConfViewEditor(d->setupEditor));
     d->tab->insertTab(Editor, d->setupEditor, i18nc("@title:tab editor plugins list", "Image Editor"));
 
     // --------------------
 
-    d->setupDImg    = new Digikam::DPluginSetup(d->tab);
+    d->setupDImg    = new DPluginSetup(d->tab);
     d->setupDImg->setPluginConfView(new Digikam::DPluginConfViewDImg(d->setupEditor));
     d->tab->insertTab(Loaders, d->setupDImg, i18nc("@title:tab loader plugins list", "Image Loaders"));
 }

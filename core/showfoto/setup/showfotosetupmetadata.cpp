@@ -50,6 +50,8 @@
 #include "dactivelabel.h"
 #include "exiftoolconfpanel.h"
 
+using namespace Digikam;
+
 namespace ShowFoto
 {
 
@@ -66,13 +68,13 @@ public:
     {
     }
 
-    QCheckBox*                  exifRotateBox;
-    QCheckBox*                  exifSetOrientationBox;
+    QCheckBox*         exifRotateBox;
+    QCheckBox*         exifSetOrientationBox;
 
-    QTabWidget*                 tab;
+    QTabWidget*        tab;
 
-    Digikam::MetadataPanel*     tagsCfgPanel;
-    Digikam::ExifToolConfPanel* exifToolView;
+    MetadataPanel*     tagsCfgPanel;
+    ExifToolConfPanel* exifToolView;
 };
 
 ShowfotoSetupMetadata::ShowfotoSetupMetadata(QWidget* const parent)
@@ -115,10 +117,10 @@ ShowfotoSetupMetadata::ShowfotoSetupMetadata(QWidget* const parent)
     QGridLayout* const grid = new QGridLayout(box);
     box->setFrameStyle(QFrame::StyledPanel | QFrame::Raised);
 
-    Digikam::DActiveLabel* const exiv2LogoLabel = new Digikam::DActiveLabel(QUrl(QLatin1String("https://www.exiv2.org")),
-                                                                            QStandardPaths::locate(QStandardPaths::GenericDataLocation,
-                                                                                                   QLatin1String("digikam/data/logo-exiv2.png")),
-                                                                            box);
+    DActiveLabel* const exiv2LogoLabel = new DActiveLabel(QUrl(QLatin1String("https://www.exiv2.org")),
+                                                          QStandardPaths::locate(QStandardPaths::GenericDataLocation,
+                                                          QLatin1String("digikam/data/logo-exiv2.png")),
+                                                          box);
     exiv2LogoLabel->setWhatsThis(i18nc("@info:whatsthis", "Visit Exiv2 project website"));
 
     QLabel* const explanation = new QLabel(box);
@@ -162,11 +164,11 @@ ShowfotoSetupMetadata::ShowfotoSetupMetadata(QWidget* const parent)
 
     // --------------------------------------------------------
 
-    d->tagsCfgPanel = new Digikam::MetadataPanel(d->tab);
+    d->tagsCfgPanel = new MetadataPanel(d->tab);
 
     // --------------------------------------------------------
 
-    d->exifToolView = new Digikam::ExifToolConfPanel(d->tab);
+    d->exifToolView = new ExifToolConfPanel(d->tab);
     d->tab->insertTab(ExifTool, d->exifToolView, i18nc("@title:tab", "ExifTool"));
 
     // --------------------------------------------------------
@@ -181,14 +183,14 @@ ShowfotoSetupMetadata::~ShowfotoSetupMetadata()
 
 void ShowfotoSetupMetadata::applySettings()
 {
-    Digikam::MetaEngineSettings* const mSettings = Digikam::MetaEngineSettings::instance();
+    MetaEngineSettings* const mSettings = MetaEngineSettings::instance();
 
     if (!mSettings)
     {
         return;
     }
 
-    Digikam::MetaEngineSettingsContainer set;
+    MetaEngineSettingsContainer set;
 
     set.exifRotate         = d->exifRotateBox->isChecked();
     set.exifSetOrientation = d->exifSetOrientationBox->isChecked();
@@ -200,14 +202,14 @@ void ShowfotoSetupMetadata::applySettings()
 
 void ShowfotoSetupMetadata::readSettings()
 {
-    Digikam::MetaEngineSettings* const mSettings = Digikam::MetaEngineSettings::instance();
+    MetaEngineSettings* const mSettings = MetaEngineSettings::instance();
 
     if (!mSettings)
     {
         return;
     }
 
-    Digikam::MetaEngineSettingsContainer set     = mSettings->settings();
+    MetaEngineSettingsContainer set     = mSettings->settings();
 
     d->exifRotateBox->setChecked(set.exifRotate);
     d->exifSetOrientationBox->setChecked(set.exifSetOrientation);

@@ -86,10 +86,10 @@ public:
     DConfigDlgWdgItem*            page_misc;
 
     ShowfotoSetupMetadata*        metadataPage;
-    ShowfotoSetupToolTip*                 toolTipPage;
+    ShowfotoSetupToolTip*         toolTipPage;
     ShowfotoSetupMisc*            miscPage;
-    ShowfotoSetupRaw*                     rawPage;
-    ShowfotoSetupPlugins*                 pluginsPage;
+    ShowfotoSetupRaw*             rawPage;
+    ShowfotoSetupPlugins*         pluginsPage;
 
     Digikam::SetupEditorIface*    editorIfacePage;
     Digikam::SetupIOFiles*        iofilesPage;
@@ -110,8 +110,8 @@ ShowfotoSetup::ShowfotoSetup(QWidget* const parent, ShowfotoSetup::Page page)
     setFaceType(DConfigDlg::List);
     setModal(true);
 
-    d->editorIfacePage     = new Digikam::SetupEditorIface();
-    d->page_editorIface    = addPage(d->editorIfacePage, i18n("Editor Window"));
+    d->editorIfacePage  = new Digikam::SetupEditorIface();
+    d->page_editorIface = addPage(d->editorIfacePage, i18n("Editor Window"));
     d->page_editorIface->setHeader(i18n("<qt>Editor Window Settings<br/>"
                                    "<i>Customize editor window behavior</i></qt>"));
     d->page_editorIface->setIcon(QIcon::fromTheme(QLatin1String("document-edit")));
@@ -124,7 +124,7 @@ ShowfotoSetup::ShowfotoSetup(QWidget* const parent, ShowfotoSetup::Page page)
 
     d->toolTipPage    = new ShowfotoSetupToolTip();
     d->page_tooltip   = addPage(d->toolTipPage, i18n("Tool Tip"));
-    d->page_tooltip->setHeader(i18n("<qt>Thumbbar Items Tool-Tip Settings<br/>"
+    d->page_tooltip->setHeader(i18n("<qt>Thumbbar and Folder-View Items Tool-Tip Settings<br/>"
                                     "<i>Customize information in tool-tips</i></qt>"));
     d->page_tooltip->setIcon(QIcon::fromTheme(QLatin1String("dialog-information")));
 
@@ -146,8 +146,8 @@ ShowfotoSetup::ShowfotoSetup(QWidget* const parent, ShowfotoSetup::Page page)
                                     "<i>Set default configuration used to save images</i></qt>"));
     d->page_iofiles->setIcon(QIcon::fromTheme(QLatin1String("document-save-all")));
 
-    d->pluginsPage  = new ShowfotoSetupPlugins();
-    d->page_plugins = addPage(d->pluginsPage, i18n("Plugins"));
+    d->pluginsPage    = new ShowfotoSetupPlugins();
+    d->page_plugins   = addPage(d->pluginsPage, i18n("Plugins"));
     d->page_plugins->setHeader(i18n("<qt>Main Interface Plug-in Settings<br/>"
                                     "<i>Set which plugins will be accessible from application</i></qt>"));
     d->page_plugins->setIcon(QIcon::fromTheme(QLatin1String("preferences-plugin")));
@@ -206,6 +206,7 @@ ShowfotoSetup::~ShowfotoSetup()
     group.writeEntry(QLatin1String("Setup Page"), (int)activePageIndex());
     Digikam::DXmlGuiWindow::saveWindowSize(windowHandle(), group);
     config->sync();
+
     delete d;
 }
 
@@ -243,36 +244,52 @@ void ShowfotoSetup::showPage(ShowfotoSetup::Page page)
     switch (page)
     {
         case ToolTipPage:
+        {
             setCurrentPage(d->page_tooltip);
             break;
+        }
 
         case RawPage:
+        {
             setCurrentPage(d->page_raw);
             break;
+        }
 
         case IOFilesPage:
+        {
             setCurrentPage(d->page_iofiles);
             break;
+        }
 
         case ICCPage:
+        {
             setCurrentPage(d->page_icc);
             break;
+        }
 
         case MetadataPage:
+        {
             setCurrentPage(d->page_metadata);
             break;
+        }
 
         case PluginsPage:
+        {
             setCurrentPage(d->page_plugins);
             break;
+        }
 
         case MiscellaneousPage:
+        {
             setCurrentPage(d->page_misc);
             break;
+        }
 
         default:
+        {
             setCurrentPage(d->page_editorIface);
             break;
+        }
     }
 }
 
@@ -323,31 +340,49 @@ DConfigDlgWdgItem* ShowfotoSetup::Private::pageItem(ShowfotoSetup::Page page) co
     switch (page)
     {
         case ShowfotoSetup::EditorPage:
+        {
             return page_editorIface;
+        }
 
         case ShowfotoSetup::MetadataPage:
+        {
             return page_metadata;
+        }
 
         case ShowfotoSetup::ToolTipPage:
+        {
             return page_tooltip;
+        }
 
         case ShowfotoSetup::RawPage:
+        {
             return page_raw;
+        }
 
         case ShowfotoSetup::IOFilesPage:
+        {
             return page_iofiles;
+        }
 
         case ShowfotoSetup::ICCPage:
+        {
             return page_icc;
+        }
 
         case ShowfotoSetup::PluginsPage:
+        {
             return page_plugins;
+        }
 
         case ShowfotoSetup::MiscellaneousPage:
+        {
             return page_misc;
+        }
 
         default:
+        {
             return nullptr;
+        }
     }
 }
 
@@ -362,7 +397,7 @@ bool ShowfotoSetup::execSinglePage(QWidget* const parent, Page page)
     setup->showPage(page);
     setup->setFaceType(Plain);
 
-    bool success          = (setup->DConfigDlg::exec() == QDialog::Accepted);
+    bool success                  = (setup->DConfigDlg::exec() == QDialog::Accepted);
     delete setup;
 
     return success;
@@ -390,7 +425,7 @@ bool ShowfotoSetup::execMetadataFilters(QWidget* const parent, int tab)
 
     widget->setActiveTab((ShowfotoSetupMetadata::MetadataTab)tab);
 
-    bool success                = (setup->DConfigDlg::exec() == QDialog::Accepted);
+    bool success                        = (setup->DConfigDlg::exec() == QDialog::Accepted);
     delete setup;
 
     return success;
@@ -402,7 +437,7 @@ bool ShowfotoSetup::execExifTool(QWidget* const parent)
     setup->showPage(MetadataPage);
     setup->setFaceType(Plain);
 
-    DConfigDlgWdgItem* const cur = setup->currentPage();
+    DConfigDlgWdgItem* const cur         = setup->currentPage();
 
     if (!cur)
     {
@@ -418,7 +453,7 @@ bool ShowfotoSetup::execExifTool(QWidget* const parent)
 
     widget->setActiveTab(ShowfotoSetupMetadata::ExifTool);
 
-    bool success                 = (setup->DConfigDlg::exec() == QDialog::Accepted);
+    bool success                         = (setup->DConfigDlg::exec() == QDialog::Accepted);
     delete setup;
 
     return success;
@@ -426,11 +461,11 @@ bool ShowfotoSetup::execExifTool(QWidget* const parent)
 
 void ShowfotoSetup::onlineVersionCheck()
 {
-    Digikam::OnlineVersionDlg* const dlg = new Digikam::OnlineVersionDlg(qApp->activeWindow(),
-                                                                         QLatin1String(digikam_version_short),
-                                                                         Digikam::digiKamBuildDate(),
-                                                                         ShowfotoSettings::instance()->getUpdateType(),
-                                                                         ShowfotoSettings::instance()->getUpdateWithDebug());
+    OnlineVersionDlg* const dlg = new OnlineVersionDlg(qApp->activeWindow(),
+                                                       QLatin1String(digikam_version_short),
+                                                       digiKamBuildDate(),
+                                                       ShowfotoSettings::instance()->getUpdateType(),
+                                                       ShowfotoSettings::instance()->getUpdateWithDebug());
 
     connect(dlg, &OnlineVersionDlg::signalSetupUpdate,
             [=]()

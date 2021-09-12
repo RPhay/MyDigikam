@@ -31,6 +31,8 @@
 
 #include "setupraw.h"
 
+using namespace Digikam;
+
 namespace ShowFoto
 {
 
@@ -44,8 +46,8 @@ public:
     {
     }
 
-    QTabWidget*        tab;
-    Digikam::SetupRaw* raw;
+    QTabWidget* tab;
+    SetupRaw*   raw;
 };
 
 ShowfotoSetupRaw::ShowfotoSetupRaw(QWidget* const parent)
@@ -53,7 +55,7 @@ ShowfotoSetupRaw::ShowfotoSetupRaw(QWidget* const parent)
       d          (new Private)
 {
     d->tab = new QTabWidget;
-    d->raw = new Digikam::SetupRaw(d->tab);
+    d->raw = new SetupRaw(d->tab);
 
     setWidget(d->tab);
     setWidgetResizable(true);

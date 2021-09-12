@@ -104,6 +104,9 @@ ShowfotoFolderViewSideBar::ShowfotoFolderViewSideBar(QWidget* const parent)
 
     // --- Setup connections
 
+    connect(d->fsbar, SIGNAL(signalSetup()),
+            this, SIGNAL(signalSetup()));
+
     connect(d->fsbar, SIGNAL(signalViewModeChanged(int)),
             this, SLOT(slotViewModeChanged(int)));
 

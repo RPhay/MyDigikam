@@ -34,7 +34,6 @@
 #include <QActionGroup>
 #include <QMenu>
 #include <QComboBox>
-#include <QUndoView>
 
 // KDE includes
 
@@ -45,6 +44,7 @@
 #include "digikam_debug.h"
 #include "showfotofolderviewiconprovider.h"
 #include "showfotofolderviewlist.h"
+#include "showfotosetup.h"
 
 namespace ShowFoto
 {
@@ -55,19 +55,19 @@ class Q_DECL_HIDDEN ShowfotoFolderViewBar::Private
 public:
 
     explicit Private()
-      : previousBtn    (nullptr),
-        nextBtn        (nullptr),
-        upBtn          (nullptr),
-        homeBtn        (nullptr),
-        iconSizeSlider (nullptr),
-        optionsBtn     (nullptr),
-        optionsMenu    (nullptr),
-        shortAction    (nullptr),
-        detailledAction(nullptr),
-        loadBtn        (nullptr),
-        pathEdit       (nullptr),
-        sidebar        (nullptr),
-        undoView       (nullptr)
+      : previousBtn       (nullptr),
+        nextBtn           (nullptr),
+        upBtn             (nullptr),
+        homeBtn           (nullptr),
+        iconSizeSlider    (nullptr),
+        optionsBtn        (nullptr),
+        optionsMenu       (nullptr),
+        shortAction       (nullptr),
+        detailledAction   (nullptr),
+        moreSettingsAction(nullptr),
+        loadBtn           (nullptr),
+        pathEdit          (nullptr),
+        sidebar           (nullptr)
     {
     }
 
@@ -80,11 +80,11 @@ public:
     QMenu*                     optionsMenu;
     QAction*                   shortAction;
     QAction*                   detailledAction;
+    QAction*                   moreSettingsAction;
     QToolButton*               loadBtn;
     QComboBox*                 pathEdit;
     QList<QAction*>            actionsList;                    ///< used to shared actions with list-view context menu.
     ShowfotoFolderViewSideBar* sidebar;
-    QUndoView*                 undoView;
 };
 
 ShowfotoFolderViewBar::ShowfotoFolderViewBar(ShowfotoFolderViewSideBar* const sidebar)
@@ -209,6 +209,14 @@ ShowfotoFolderViewBar::ShowfotoFolderViewBar(ShowfotoFolderViewSideBar* const si
     d->actionsList << d->detailledAction;
 
     optGrp->setExclusive(true);
+
+    d->moreSettingsAction      = d->optionsMenu->addAction(i18nc("@action:inmenu", "More Settings..."));
+    d->moreSettingsAction->setObjectName(QLatin1String("MoreSettings"));
+    d->moreSettingsAction->setIcon(QIcon::fromTheme(QLatin1String("configure")));
+    d->moreSettingsAction->setToolTip(i18nc("@info", "Open configure dialog with more settings options"));
+
+    d->actionsList << d->moreSettingsAction;
+
     d->optionsBtn->setMenu(d->optionsMenu);
 
     connect(d->optionsMenu, SIGNAL(triggered(QAction*)),
@@ -353,6 +361,11 @@ void ShowfotoFolderViewBar::slotOptionsChanged(QAction* action)
     else if (action == d->detailledAction)
     {
         mode = ShowfotoFolderViewList::DetailledView;
+    }
+    else if (action == d->moreSettingsAction)
+    {
+        emit signalSetup();
+        return;
     }
 
     emit signalViewModeChanged(mode);
