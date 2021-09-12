@@ -199,10 +199,10 @@ ShowfotoFolderViewBar::ShowfotoFolderViewBar(ShowfotoFolderViewSideBar* const si
 
     d->actionsList << d->shortAction;
 
-    d->detailledAction         = d->optionsMenu->addAction(i18nc("@action:inmenu", "Detailled View"));
+    d->detailledAction         = d->optionsMenu->addAction(i18nc("@action:inmenu", "Detailed View"));
     d->detailledAction->setObjectName(QLatin1String("DetailledView"));
     d->detailledAction->setIcon(QIcon::fromTheme(QLatin1String("view-list-details")));
-    d->detailledAction->setToolTip(i18nc("@info", "Switch Folder-View to Detailled Mode"));
+    d->detailledAction->setToolTip(i18nc("@info", "Switch Folder-View to Detailed Mode"));
     d->detailledAction->setCheckable(true);
     optGrp->addAction(d->detailledAction);
 
