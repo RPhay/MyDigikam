@@ -98,6 +98,7 @@
 #include "showfotothumbnailmodel.h"
 #include "showfotocategorizedview.h"
 #include "showfotofolderviewsidebar.h"
+#include "showfotofolderviewlist.h"
 #include "showfotosettings.h"
 #include "showfotoinfoiface.h"
 #include "dexpanderbox.h"

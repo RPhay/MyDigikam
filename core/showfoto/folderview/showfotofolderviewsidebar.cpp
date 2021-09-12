@@ -45,8 +45,8 @@
 #include "showfotosettings.h"
 #include "showfotofolderviewbar.h"
 #include "showfotofolderviewundo.h"
-#include "showfotofolderviewlist.h"
 #include "showfotofolderviewmodel.h"
+#include "showfotofolderviewlist.h"
 
 namespace ShowFoto
 {
@@ -60,18 +60,23 @@ public:
       : fsmodel     (nullptr),
         fsview      (nullptr),
         fsbar       (nullptr),
-        fsstack     (nullptr)
+        fsstack     (nullptr),
+        fsSortOrder (Qt::AscendingOrder),
+        fsRole      (ShowfotoFolderViewList::FileName)
     {
     }
 
-    static const QString     configIconSizeEntry;
-    static const QString     configLastFolderEntry;
-    static const QString     configFolderViewModeEntry;
+    static const QString                   configIconSizeEntry;
+    static const QString                   configLastFolderEntry;
+    static const QString                   configFolderViewModeEntry;
 
-    ShowfotoFolderViewModel* fsmodel;
-    ShowfotoFolderViewList*  fsview;
-    ShowfotoFolderViewBar*   fsbar;
-    QUndoStack*              fsstack;
+    ShowfotoFolderViewModel*               fsmodel;
+    ShowfotoFolderViewList*                fsview;
+    ShowfotoFolderViewBar*                 fsbar;
+    QUndoStack*                            fsstack;
+
+    Qt::SortOrder                          fsSortOrder;
+    ShowfotoFolderViewList::FolderViewRole fsRole;
 };
 
 const QString ShowfotoFolderViewSideBar::Private::configIconSizeEntry(QLatin1String("Icon Size"));
@@ -360,22 +365,34 @@ void ShowfotoFolderViewSideBar::slotViewModeChanged(int mode)
     {
         case ShowfotoFolderViewList::ShortView:
         {
-            d->fsview->setColumnHidden(1, true);
-            d->fsview->setColumnHidden(2, true);
-            d->fsview->setColumnHidden(3, true);
+            d->fsview->setColumnHidden(ShowfotoFolderViewList::FileSize, true);
+            d->fsview->setColumnHidden(ShowfotoFolderViewList::FileType, true);
+            d->fsview->setColumnHidden(ShowfotoFolderViewList::FileDate, true);
             d->fsview->setHeaderHidden(true);
             break;
         }
 
         default:    // ShowfotoFolderViewList::DetailledView
         {
-            d->fsview->setColumnHidden(1, false);
-            d->fsview->setColumnHidden(2, false);
-            d->fsview->setColumnHidden(3, false);
+            d->fsview->setColumnHidden(ShowfotoFolderViewList::FileSize, false);
+            d->fsview->setColumnHidden(ShowfotoFolderViewList::FileType, false);
+            d->fsview->setColumnHidden(ShowfotoFolderViewList::FileDate, false);
             d->fsview->setHeaderHidden(false);
             break;
         }
     }
+}
+
+void ShowfotoFolderViewSideBar::setSortOrder(int order)
+{
+    d->fsSortOrder = (order == ShowfotoItemSortSettings::AscendingOrder) ? Qt::DescendingOrder : Qt::AscendingOrder; // Inverted compared to Thumbbar.
+    d->fsmodel->sort(d->fsRole, d->fsSortOrder);
+}
+
+void ShowfotoFolderViewSideBar::setSortRole(int role)
+{
+    d->fsRole = (ShowfotoFolderViewList::FolderViewRole)role;
+    d->fsmodel->sort(d->fsRole, d->fsSortOrder);
 }
 
 } // namespace ShowFoto

@@ -46,10 +46,18 @@ class ShowfotoFolderViewList : public QTreeView
 
 public:
 
-    enum ViewMode
+    enum FolderViewMode
     {
         ShortView = 0,
         DetailledView
+    };
+
+    enum FolderViewRole
+    {
+        FileName = 0,
+        FileSize,
+        FileType,
+        FileDate            ///< Modifier date
     };
 
 public:

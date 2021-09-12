@@ -131,10 +131,12 @@ void Showfoto::applySettings()
     if (d->settings->getReverseSort())
     {
         d->filterModel->setSortOrder(ShowfotoItemSortSettings::DescendingOrder);
+        d->folderView->setSortOrder(ShowfotoItemSortSettings::DescendingOrder);
     }
     else
     {
         d->filterModel->setSortOrder(ShowfotoItemSortSettings::AscendingOrder);
+        d->folderView->setSortOrder(ShowfotoItemSortSettings::AscendingOrder);
     }
 
     switch (d->settings->getSortRole())
@@ -142,18 +144,21 @@ void Showfoto::applySettings()
         case ShowfotoSetupMisc::SortByName:
         {
             d->filterModel->setSortRole(ShowfotoItemSortSettings::SortByFileName);
+            d->folderView->setSortRole(ShowfotoFolderViewList::FileName);
             break;
         }
 
         case ShowfotoSetupMisc::SortByFileSize:
         {
             d->filterModel->setSortRole(ShowfotoItemSortSettings::SortByFileSize);
+            d->folderView->setSortRole(ShowfotoFolderViewList::FileSize);
             break;
         }
 
         default:
         {
             d->filterModel->setSortRole(ShowfotoItemSortSettings::SortByCreationDate);
+            d->folderView->setSortRole(ShowfotoFolderViewList::FileDate);
             break;
         }
     }

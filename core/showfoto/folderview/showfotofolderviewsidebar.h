@@ -35,6 +35,7 @@
 // Local includes
 
 #include "statesavingobject.h"
+#include "showfotoitemsortsettings.h"
 
 using namespace Digikam;
 
@@ -49,19 +50,23 @@ class ShowfotoFolderViewSideBar : public QWidget,
 public:
 
     explicit ShowfotoFolderViewSideBar(QWidget* const parent);
-    ~ShowfotoFolderViewSideBar()           override;
+    ~ShowfotoFolderViewSideBar()            override;
 
     void          setActive(bool active);
-    void          doLoadState()     override;
-    void          doSaveState()     override;
+    void          doLoadState()             override;
+    void          doSaveState()             override;
     void          applySettings();
     const QIcon   getIcon();
     const QString getCaption();
 
     QString currentFolder()     const;
     QString currentPath()       const;
+
     void setCurrentPath(const QString& newPathNative);
     void setCurrentPathWithoutUndo(const QString& newPath);
+
+    void setSortOrder(int order);
+    void setSortRole(int role);
 
     void loadContents(const QModelIndex& index);
 
