@@ -81,15 +81,14 @@ class DIGIKAM_EXPORT DFileIconProvider : public QFileIconProvider
 public:
 
     explicit DFileIconProvider();
-    ~DFileIconProvider() override;
+    ~DFileIconProvider()                    override;
 
-    QIcon icon(IconType type) const override;
     QIcon icon(const QFileInfo& info) const override;
-/*
+
 private:
 
-    ThumbnailImageCatcher* m_catcher;
-*/
+    class Private;
+    Private* const d;
 };
 
 // ------------------------------------------------------------------------

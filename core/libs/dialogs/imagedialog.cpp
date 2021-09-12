@@ -33,6 +33,7 @@
 #include <QStyle>
 #include <QLocale>
 #include <QPixmap>
+#include <QPainter>
 #include <QImage>
 #include <QScopedPointer>
 
@@ -332,70 +333,93 @@ void ImageDialogPreview::slotClearPreview()
 
 // ------------------------------------------------------------------------
 
-DFileIconProvider::DFileIconProvider()
-    : QFileIconProvider()
+class Q_DECL_HIDDEN DFileIconProvider::Private
 {
-/*
-    ThumbnailLoadThread* const thread = new ThumbnailLoadThread;
-    m_catcher                         = new ThumbnailImageCatcher(thread);
-*/
+
+public:
+
+    explicit Private()
+      : catcher     (nullptr),
+        thread      (nullptr)
+    {
+    }
+
+    ThumbnailImageCatcher*   catcher;           ///< Thumbnail thread catcher from main process.
+    ThumbnailLoadThread*     thread;            ///< The separated thread to render thumbnail images.
+};
+
+DFileIconProvider::DFileIconProvider()
+    : QFileIconProvider(),
+      d                (new Private)
+{
+    d->thread  = new ThumbnailLoadThread;
+    d->thread->setThumbnailSize(256);
+    d->thread->setPixmapRequested(false);
+    d->catcher = new ThumbnailImageCatcher(d->thread);
 }
 
 DFileIconProvider::~DFileIconProvider()
 {
-/*
-    m_catcher->thread()->stopAllTasks();
-    m_catcher->cancel();
+    d->catcher->thread()->stopAllTasks();
+    d->catcher->cancel();
 
-    delete m_catcher->thread();
-    delete m_catcher;
-*/
-}
-
-QIcon DFileIconProvider::icon(IconType type) const
-{
-    return QFileIconProvider::icon(type);
+    delete d->catcher->thread();
+    delete d->catcher;
+    delete d;
 }
 
 QIcon DFileIconProvider::icon(const QFileInfo& info) const
 {
-    QString path    = info.absoluteFilePath();
-    qCDebug(DIGIKAM_GENERAL_LOG) << "request thumb icon for " << path;
+    // We will only process image files
 
-    QMimeType mtype = QMimeDatabase().mimeTypeForFile(path);
-
-    return QIcon::fromTheme(mtype.iconName());
-}
-/*
-QIcon DFileIconProvider::icon(const QFileInfo& info) const
-{
-    QString path    = info.absoluteFilePath();
-    qCDebug(DIGIKAM_GENERAL_LOG) << "request thumb icon for " << path;
-
-    QMimeType mtype = QMimeDatabase().mimeTypeForFile(path);
-
-    if (!mtype.name().startsWith(QLatin1String("image/")) &&
-        !mtype.name().startsWith(QLatin1String("video/")))
+    if (info.isFile() && !info.isSymLink() && !info.isDir() && !info.isRoot())
     {
-        return QIcon::fromTheme(mtype.iconName());
+        QString path    = info.absoluteFilePath();
+        qCDebug(DIGIKAM_GENERAL_LOG) << "request thumb icon for " << path;
+
+        QMimeType mtype = QMimeDatabase().mimeTypeForFile(path);
+
+        if (mtype.name().startsWith(QLatin1String("image/")))
+        {
+            // --- Critical section.
+
+            // NOTE: this part run in separated thread.
+            //       Do not use QPixmap here, as it's not re-entrant with X11 under Linux.
+
+            d->catcher->setActive(true);    // ---
+
+                d->catcher->thread()->find(ThumbnailIdentifier(path));
+                d->catcher->enqueue();
+                QList<QImage> images = d->catcher->waitForThumbnails();
+
+                if (!images.isEmpty())
+                {
+                    // resize and center pixmap on target icon.
+
+                    QPixmap pix = QPixmap::fromImage(images.first());
+                    pix         = pix.scaled(QSize(256, 256), Qt::KeepAspectRatio, Qt::FastTransformation);
+
+                    QPixmap icon(QSize(256, 256));
+                    icon.fill(Qt::transparent);
+                    QPainter p(&icon);
+                    p.drawPixmap((icon.width()  - pix.width() )  / 2,
+                                 (icon.height() - pix.height())  / 2,
+                                 pix);
+
+                    return icon;
+                }
+
+            // --- End of critical section.
+
+            d->catcher->setActive(false);   // ---
+        }
     }
 
-    m_catcher->setActive(true);
+    // For non-iages, we will use default provider implementation.
 
-    m_catcher->thread()->find(ThumbnailIdentifier(path));
-    m_catcher->enqueue();
-    QList<QImage> images = m_catcher->waitForThumbnails();
-
-    m_catcher->setActive(false);
-
-    if (images.isEmpty())
-    {
-        return QIcon::fromTheme(mtype.iconName());
-    }
-
-    return QIcon(QPixmap::fromImage(images.first()));
+    return QFileIconProvider::icon(info);
 }
-*/
+
 // ------------------------------------------------------------------------
 
 class Q_DECL_HIDDEN ImageDialog::Private
