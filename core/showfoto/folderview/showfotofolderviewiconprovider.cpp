@@ -49,7 +49,6 @@ using namespace Digikam;
 namespace ShowFoto
 {
 
-
 class Q_DECL_HIDDEN ShowfotoFolderViewIconProvider::Private
 {
 
@@ -121,9 +120,6 @@ QIcon ShowfotoFolderViewIconProvider::icon(const QFileInfo& info) const
                 d->catcher->enqueue();
                 QList<QImage> images = d->catcher->waitForThumbnails();
 
-
-                // --- End of critical section.
-
                 if (!images.isEmpty())
                 {
                     // resize and center pixmap on target icon.
@@ -140,6 +136,8 @@ QIcon ShowfotoFolderViewIconProvider::icon(const QFileInfo& info) const
 
                     return icon;
                 }
+
+            // --- End of critical section.
 
             d->catcher->setActive(false);   // ---
         }
