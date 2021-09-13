@@ -147,7 +147,7 @@ BUGFIXES:
 133 ==> 440587 - Crash when using facial recognition tool.
 134 ==> 442142 - Trying to change date, device manufacturer, user comment, after clicking "Apply" causes previous value.
 135 ==> 442261 - Undefined references to `DIGIKAM_WEBSERVICES_LOG()'.
-136 ==> 
+136 ==> 442389 - Cannot import DNG files from Canon PowerShot SX730 HS.
 137 ==> 
 138 ==> 
 139 ==> 
