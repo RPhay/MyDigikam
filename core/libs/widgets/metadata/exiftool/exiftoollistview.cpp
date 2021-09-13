@@ -73,7 +73,6 @@ ExifToolListView::ExifToolListView(QWidget* const parent)
     setSelectionMode(QAbstractItemView::SingleSelection);
     header()->setSectionResizeMode(QHeaderView::Stretch);
     setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
-    setIndentation(QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing));
 
     d->parser = new ExifToolParser(this);
 
@@ -151,7 +150,7 @@ void ExifToolListView::slotSearchTextChanged(const SearchTextSettings& settings)
     bool query     = false;
     QString search = settings.text;
 
-    // Restore all MdKey items.
+    // Restore all Group items.
 
     QTreeWidgetItemIterator it2(this);
 
