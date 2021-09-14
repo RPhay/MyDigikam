@@ -378,8 +378,14 @@ QIcon DFileIconProvider::icon(const QFileInfo& info) const
         qCDebug(DIGIKAM_GENERAL_LOG) << "request thumb icon for " << path;
 
         QMimeType mtype = QMimeDatabase().mimeTypeForFile(path);
+        QString suffix  = info.suffix().toUpper();
 
-        if (mtype.name().startsWith(QLatin1String("image/")))
+        if (mtype.name().startsWith(QLatin1String("image/")) ||
+            (suffix == QLatin1String("PGF"))                 ||
+            (suffix == QLatin1String("KRA"))                 ||
+            (suffix == QLatin1String("CR3"))                 ||
+            (suffix == QLatin1String("HEIC"))                ||
+            (suffix == QLatin1String("HEIF")))
         {
             // --- Critical section.
 
