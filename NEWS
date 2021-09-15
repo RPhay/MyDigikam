@@ -148,7 +148,7 @@ BUGFIXES:
 134 ==> 442142 - Trying to change date, device manufacturer, user comment, after clicking "Apply" causes previous value.
 135 ==> 442261 - Undefined references to `DIGIKAM_WEBSERVICES_LOG()'.
 136 ==> 442389 - Cannot import DNG files from Canon PowerShot SX730 HS.
-137 ==> 
+137 ==> 440296 - Slow database operations and crashes with Mariadb 10.6.3.
 138 ==> 
 139 ==> 
 140 ==> 
