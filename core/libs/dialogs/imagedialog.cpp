@@ -41,16 +41,16 @@ public:
     {
     }
 
-    QStringList         fileFormats;
-    QList<QUrl>         urls;
-    DFileDialog*        dlg;
+    QStringList               fileFormats;
+    QList<QUrl>               urls;
+    DFileDialog*              dlg;
     ImageDialogIconProvider*  provider;
-    bool                showToolTips;
-    QTimer*             toolTipTimer;
-    ImageDialogToolTip* toolTip;
-    QAbstractItemView*  toolTipView;
-    QModelIndex         toolTipIndex;
-    QUrl                toolTipUrl;
+    bool                      showToolTips;
+    QTimer*                   toolTipTimer;
+    ImageDialogToolTip*       toolTip;
+    QAbstractItemView*        toolTipView;
+    QModelIndex               toolTipIndex;
+    QUrl                      toolTipUrl;
 };
 
 ImageDialog::ImageDialog(QWidget* const parent, const QUrl& url, bool singleSelect, const QString& caption)
@@ -79,6 +79,7 @@ ImageDialog::ImageDialog(QWidget* const parent, const QUrl& url, bool singleSele
 
     for (auto* item : d->dlg->findChildren<QAbstractItemView*>())
     {
+        qCDebug(DIGIKAM_GENERAL_LOG) << item;
         item->installEventFilter(this);
         item->setMouseTracking(true);
     }
