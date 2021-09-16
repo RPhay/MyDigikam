@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2008-03-13
- * Description : image files selector dialog.
+ * Description : Image files selection dialog.
  *
  * Copyright (C) 2008-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *

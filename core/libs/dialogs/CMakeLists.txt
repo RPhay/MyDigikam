@@ -35,6 +35,9 @@ set(libdialogs_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/filesaveoptionsdlg.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/iccprofileinfodlg.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/imagedialog.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/imagedialog_preview.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/imagedialog_iconprovider.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/imagedialog_tooltip.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/infodlg.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/libsinfodlg.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/rawcameradlg.cpp
