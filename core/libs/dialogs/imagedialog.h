@@ -113,7 +113,7 @@ class DIGIKAM_EXPORT ImageDialogIconProvider : public QFileIconProvider
 public:
 
     explicit ImageDialogIconProvider();
-    ~ImageDialogIconProvider()                    override;
+    ~ImageDialogIconProvider()              override;
 
     QIcon icon(const QFileInfo& info) const override;
 
@@ -143,8 +143,13 @@ public:
 
     void setEnableToolTips(bool val);
 
-    static QUrl        getImageURL(QWidget* const parent, const QUrl& url, const QString& caption=QString());
-    static QList<QUrl> getImageURLs(QWidget* const parent, const QUrl& url, const QString& caption=QString());
+    static QUrl        getImageURL(QWidget* const parent,
+                                   const QUrl& url,
+                                   const QString& caption = QString());
+
+    static QList<QUrl> getImageURLs(QWidget* const parent,
+                                    const QUrl& url,
+                                    const QString& caption = QString());
 
 private:
 

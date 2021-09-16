@@ -886,8 +886,7 @@ void DItemsList::slotAddItems()
     QUrl lastFileUrl        = QUrl::fromLocalFile(grp.readEntry("Last Image Path",
                                                   QStandardPaths::writableLocation(QStandardPaths::PicturesLocation)));
 
-    ImageDialog dlg(this, lastFileUrl, false);
-    QList<QUrl> urls        = dlg.urls();
+    QList<QUrl> urls        = ImageDialog::getImageURLs(this, lastFileUrl);
 
     if (!urls.isEmpty())
     {
