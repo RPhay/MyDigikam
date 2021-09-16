@@ -124,7 +124,6 @@ ShowfotoFolderViewList::ShowfotoFolderViewList(ShowfotoFolderViewSideBar* const 
     connect(openFileMngr, SIGNAL(triggered()),
             this, SLOT(slotOpenInFileManager()));
 
-
     d->toolTip       = new ShowfotoFolderViewToolTip(this);
     d->toolTipTimer  = new QTimer(this);
 

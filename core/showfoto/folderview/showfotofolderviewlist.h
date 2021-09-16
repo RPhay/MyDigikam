@@ -82,9 +82,8 @@ private:
     void focusOutEvent(QFocusEvent*)                                    override;
     void leaveEvent(QEvent*)                                            override;
 
-
     void hideToolTip();
-    bool acceptToolTip(const QModelIndex& pos)                  const;
+    bool acceptToolTip(const QModelIndex& index)                 const;
 
 private Q_SLOTS:
 
