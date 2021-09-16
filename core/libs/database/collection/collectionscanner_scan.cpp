@@ -701,9 +701,9 @@ void CollectionScanner::scanAlbum(const CollectionLocation& location, const QStr
 
     int albumID                          = checkAlbum(location, album);
     QDateTime albumDateTime              = QFileInfo(dir.path()).lastModified();
+    QDateTime albumModified              = CoreDbAccess().db()->getAlbumModificationDate(albumID);
 
-    if (checkDate &&
-        s_modificationDateEquals(albumDateTime, CoreDbAccess().db()->getAlbumModificationDate(albumID)))
+    if (checkDate && s_modificationDateEquals(albumDateTime, albumModified))
     {
         // mark album as scanned
 
@@ -847,7 +847,7 @@ void CollectionScanner::scanAlbum(const CollectionLocation& location, const QStr
         }
     }
 
-    if (!d->deferredFileScanning)
+    if (!d->deferredFileScanning && !s_modificationDateEquals(albumDateTime, albumModified))
     {
         CoreDbAccess().db()->setAlbumModificationDate(albumID, albumDateTime);
     }
