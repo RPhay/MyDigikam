@@ -470,7 +470,7 @@ QString ImageDialogToolTip::tipContents()
 
 // ------------------------------------------------------------------------
 
-class Q_DECL_HIDDEN DFileIconProvider::Private
+class Q_DECL_HIDDEN ImageDialogIconProvider::Private
 {
 
 public:
@@ -485,7 +485,7 @@ public:
     ThumbnailLoadThread*   thread;            ///< The separated thread to render thumbnail images.
 };
 
-DFileIconProvider::DFileIconProvider()
+ImageDialogIconProvider::ImageDialogIconProvider()
     : QFileIconProvider(),
       d                (new Private)
 {
@@ -495,7 +495,7 @@ DFileIconProvider::DFileIconProvider()
     d->catcher = new ThumbnailImageCatcher(d->thread);
 }
 
-DFileIconProvider::~DFileIconProvider()
+ImageDialogIconProvider::~ImageDialogIconProvider()
 {
     d->catcher->thread()->stopAllTasks();
     d->catcher->cancel();
@@ -505,7 +505,7 @@ DFileIconProvider::~DFileIconProvider()
     delete d;
 }
 
-QIcon DFileIconProvider::icon(const QFileInfo& info) const
+QIcon ImageDialogIconProvider::icon(const QFileInfo& info) const
 {
     // We will only process image files
 
@@ -583,7 +583,7 @@ public:
     QStringList         fileFormats;
     QList<QUrl>         urls;
     DFileDialog*        dlg;
-    DFileIconProvider*  provider;
+    ImageDialogIconProvider*  provider;
     bool                showToolTips;
     QTimer*             toolTipTimer;
     ImageDialogToolTip* toolTip;
@@ -606,7 +606,7 @@ ImageDialog::ImageDialog(QWidget* const parent, const QUrl& url, bool singleSele
     connect(d->toolTipTimer, SIGNAL(timeout()),
             this, SLOT(slotToolTip()));
 
-    d->provider    = new DFileIconProvider();
+    d->provider    = new ImageDialogIconProvider();
     d->dlg         = new DFileDialog(parent);
     d->dlg->setWindowTitle(caption);
     d->dlg->setDirectoryUrl(url);

@@ -107,13 +107,13 @@ private:
 
 // ------------------------------------------------------------------------
 
-class DIGIKAM_EXPORT DFileIconProvider : public QFileIconProvider
+class DIGIKAM_EXPORT ImageDialogIconProvider : public QFileIconProvider
 {
 
 public:
 
-    explicit DFileIconProvider();
-    ~DFileIconProvider()                    override;
+    explicit ImageDialogIconProvider();
+    ~ImageDialogIconProvider()                    override;
 
     QIcon icon(const QFileInfo& info) const override;
 
