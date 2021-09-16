@@ -34,8 +34,12 @@
 #include <QLocale>
 #include <QPixmap>
 #include <QPainter>
-#include <QImage>
 #include <QScopedPointer>
+#include <QToolTip>
+#include <QDir>
+#include <QTimer>
+#include <QWheelEvent>
+#include <QKeyEvent>
 
 // KDE includes
 
@@ -61,8 +65,8 @@ class Q_DECL_HIDDEN ImageDialogPreview::Private
 public:
 
     explicit Private()
-      : imageLabel(nullptr),
-        infoLabel(nullptr),
+      : imageLabel     (nullptr),
+        infoLabel      (nullptr),
         thumbLoadThread(nullptr)
     {
     }
@@ -77,7 +81,7 @@ public:
 
 ImageDialogPreview::ImageDialogPreview(QWidget* const parent)
     : QScrollArea(parent),
-      d(new Private)
+      d          (new Private)
 {
     d->thumbLoadThread = ThumbnailLoadThread::defaultThread();
 
@@ -132,169 +136,13 @@ void ImageDialogPreview::slotShowPreview(const QUrl& url)
     if (url != d->currentURL)
     {
         slotClearPreview();
-        d->currentURL                = url;
+        d->currentURL    = url;
         d->thumbLoadThread->find(ThumbnailIdentifier(d->currentURL.toLocalFile()));
 
-        QScopedPointer<DMetadata> meta(new DMetadata);
-        meta->load(d->currentURL.toLocalFile());
-        PhotoInfoContainer info      = meta->getPhotographInformation();
-        VideoInfoContainer videoInfo = meta->getVideoInformation();
+        QString identify = identifyItem(d->currentURL);
 
-        if (!info.isEmpty())
+        if (!identify.isEmpty())
         {
-            DToolTipStyleSheet cnt;
-            QString identify = QLatin1String("<qt><center>");
-            QString make, model, dateTime, aperture, focalLength, exposureTime, sensitivity;
-            QString aspectRatio, audioBitRate, audioChannelType, audioCodec, duration, frameRate, videoCodec;
-
-            if (info.make.isEmpty())
-            {
-                make = cnt.unavailable;
-            }
-            else
-            {
-                make = info.make;
-            }
-
-            if (info.model.isEmpty())
-            {
-                model = cnt.unavailable;
-            }
-            else
-            {
-                model = info.model;
-            }
-
-            if (!info.dateTime.isValid())
-            {
-                dateTime = cnt.unavailable;
-            }
-            else
-            {
-                dateTime = QLocale().toString(info.dateTime, QLocale::ShortFormat);
-            }
-
-            if (info.aperture.isEmpty())
-            {
-                aperture = cnt.unavailable;
-            }
-            else
-            {
-                aperture = info.aperture;
-            }
-
-            if (info.focalLength.isEmpty())
-            {
-                focalLength = cnt.unavailable;
-            }
-            else
-            {
-                focalLength = info.focalLength;
-            }
-
-            if (info.exposureTime.isEmpty())
-            {
-                exposureTime = cnt.unavailable;
-            }
-            else
-            {
-                exposureTime = info.exposureTime;
-            }
-
-            if (info.sensitivity.isEmpty())
-            {
-                sensitivity = cnt.unavailable;
-            }
-            else
-            {
-                sensitivity = i18n("%1 ISO", info.sensitivity);
-            }
-
-            if (videoInfo.aspectRatio.isEmpty())
-            {
-                aspectRatio = cnt.unavailable;
-            }
-            else
-            {
-                aspectRatio = videoInfo.aspectRatio;
-            }
-
-            if (videoInfo.audioBitRate.isEmpty())
-            {
-                audioBitRate = cnt.unavailable;
-            }
-            else
-            {
-                audioBitRate = videoInfo.audioBitRate;
-            }
-
-            if (videoInfo.audioChannelType.isEmpty())
-            {
-                audioChannelType = cnt.unavailable;
-            }
-            else
-            {
-                audioChannelType = videoInfo.audioChannelType;
-            }
-
-            if (videoInfo.audioCodec.isEmpty())
-            {
-                audioCodec = cnt.unavailable;
-            }
-            else
-            {
-                audioCodec = videoInfo.audioCodec;
-            }
-
-            if (videoInfo.duration.isEmpty())
-            {
-                duration = cnt.unavailable;
-            }
-            else
-            {
-                duration = videoInfo.duration;
-            }
-
-            if (videoInfo.frameRate.isEmpty())
-            {
-                frameRate = cnt.unavailable;
-            }
-            else
-            {
-                frameRate = videoInfo.frameRate;
-            }
-
-            if (videoInfo.videoCodec.isEmpty())
-            {
-                videoCodec = cnt.unavailable;
-            }
-            else
-            {
-                videoCodec = videoInfo.videoCodec;
-            }
-
-            identify += QLatin1String("<table cellspacing=0 cellpadding=0>");
-            identify += cnt.cellBeg + i18n("<i>Make:</i>")              + cnt.cellMid + make                + cnt.cellEnd;
-            identify += cnt.cellBeg + i18n("<i>Model:</i>")             + cnt.cellMid + model               + cnt.cellEnd;
-            identify += cnt.cellBeg + i18n("<i>Created:</i>")           + cnt.cellMid + dateTime            + cnt.cellEnd;
-            identify += cnt.cellBeg + i18n("<i>Aperture:</i>")          + cnt.cellMid + aperture            + cnt.cellEnd;
-            identify += cnt.cellBeg + i18n("<i>Focal:</i>")             + cnt.cellMid + focalLength         + cnt.cellEnd;
-            identify += cnt.cellBeg + i18n("<i>Exposure:</i>")          + cnt.cellMid + exposureTime        + cnt.cellEnd;
-            identify += cnt.cellBeg + i18n("<i>Sensitivity:</i>")       + cnt.cellMid + sensitivity         + cnt.cellEnd;
-
-            if (!videoInfo.isEmpty())
-            {
-                identify += cnt.cellBeg + i18n("<i>AspectRatio:</i>")       + cnt.cellMid + aspectRatio         + cnt.cellEnd;
-                identify += cnt.cellBeg + i18n("<i>AudioBitRate:</i>")      + cnt.cellMid + audioBitRate        + cnt.cellEnd;
-                identify += cnt.cellBeg + i18n("<i>AudioChannelType:</i>")  + cnt.cellMid + audioChannelType    + cnt.cellEnd;
-                identify += cnt.cellBeg + i18n("<i>AudioCodec:</i>")   + cnt.cellMid + audioCodec     + cnt.cellEnd;
-                identify += cnt.cellBeg + i18n("<i>Duration:</i>")          + cnt.cellMid + duration            + cnt.cellEnd;
-                identify += cnt.cellBeg + i18n("<i>FrameRate:</i>")         + cnt.cellMid + frameRate           + cnt.cellEnd;
-                identify += cnt.cellBeg + i18n("<i>VideoCodec:</i>")        + cnt.cellMid + videoCodec          + cnt.cellEnd;
-            }
-
-            identify += QLatin1String("</table></center></qt>");
-
             d->infoLabel->setText(identify);
         }
         else
@@ -302,6 +150,189 @@ void ImageDialogPreview::slotShowPreview(const QUrl& url)
             d->infoLabel->clear();
         }
     }
+}
+
+QString ImageDialogPreview::identifyItem(const QUrl& url, const QImage& preview)
+{
+    QString identify;
+    QScopedPointer<DMetadata> meta(new DMetadata);
+
+    // NOTE: even if metadata loading faild, continue to fill information with empty properties.
+
+    (void)meta->load(url.toLocalFile());
+
+    PhotoInfoContainer info      = meta->getPhotographInformation();
+    VideoInfoContainer videoInfo = meta->getVideoInformation();
+
+    DToolTipStyleSheet cnt;
+    identify = QLatin1String("<qt><center>");
+    QString make, model, dateTime, aperture, focalLength, exposureTime, sensitivity;
+    QString aspectRatio, audioBitRate, audioChannelType, audioCodec, duration, frameRate, videoCodec;
+
+    if (info.make.isEmpty())
+    {
+        make = cnt.unavailable;
+    }
+    else
+    {
+        make = info.make;
+    }
+
+    if (info.model.isEmpty())
+    {
+        model = cnt.unavailable;
+    }
+    else
+    {
+        model = info.model;
+    }
+
+    if (!info.dateTime.isValid())
+    {
+        dateTime = cnt.unavailable;
+    }
+    else
+    {
+        dateTime = QLocale().toString(info.dateTime, QLocale::ShortFormat);
+    }
+
+    if (info.aperture.isEmpty())
+    {
+        aperture = cnt.unavailable;
+    }
+    else
+    {
+        aperture = info.aperture;
+    }
+
+    if (info.focalLength.isEmpty())
+    {
+        focalLength = cnt.unavailable;
+    }
+    else
+    {
+        focalLength = info.focalLength;
+    }
+
+    if (info.exposureTime.isEmpty())
+    {
+        exposureTime = cnt.unavailable;
+    }
+    else
+    {
+        exposureTime = info.exposureTime;
+    }
+
+    if (info.sensitivity.isEmpty())
+    {
+        sensitivity = cnt.unavailable;
+    }
+    else
+    {
+        sensitivity = i18n("%1 ISO", info.sensitivity);
+    }
+
+    if (videoInfo.aspectRatio.isEmpty())
+    {
+        aspectRatio = cnt.unavailable;
+    }
+    else
+    {
+        aspectRatio = videoInfo.aspectRatio;
+    }
+
+    if (videoInfo.audioBitRate.isEmpty())
+    {
+        audioBitRate = cnt.unavailable;
+    }
+    else
+    {
+        audioBitRate = videoInfo.audioBitRate;
+    }
+
+    if (videoInfo.audioChannelType.isEmpty())
+    {
+        audioChannelType = cnt.unavailable;
+    }
+    else
+    {
+        audioChannelType = videoInfo.audioChannelType;
+    }
+
+    if (videoInfo.audioCodec.isEmpty())
+    {
+        audioCodec = cnt.unavailable;
+    }
+    else
+    {
+        audioCodec = videoInfo.audioCodec;
+    }
+
+    if (videoInfo.duration.isEmpty())
+    {
+        duration = cnt.unavailable;
+    }
+    else
+    {
+        duration = videoInfo.duration;
+    }
+
+    if (videoInfo.frameRate.isEmpty())
+    {
+        frameRate = cnt.unavailable;
+    }
+    else
+    {
+        frameRate = videoInfo.frameRate;
+    }
+
+    if (videoInfo.videoCodec.isEmpty())
+    {
+        videoCodec = cnt.unavailable;
+    }
+    else
+    {
+        videoCodec = videoInfo.videoCodec;
+    }
+
+    identify += QLatin1String("<table cellspacing=0 cellpadding=0>");
+
+    if (!preview.isNull())
+    {
+        QImage img = preview.scaled(QSize(64, 64), Qt::KeepAspectRatio);
+        QByteArray byteArray;
+        QBuffer    buffer(&byteArray);
+        img.save(&buffer, "PNG");
+        identify += cnt.cellBeg +
+                    i18n("<i>Preview:</i>") +
+                    cnt.cellMid +
+                    QString::fromLatin1("<img src=\"data:image/png;base64,%1\">").arg(QString::fromLatin1(byteArray.toBase64().data())) +
+                    cnt.cellEnd;
+    }
+
+    identify += cnt.cellBeg + i18n("<i>Make:</i>")              + cnt.cellMid + make                + cnt.cellEnd;
+    identify += cnt.cellBeg + i18n("<i>Model:</i>")             + cnt.cellMid + model               + cnt.cellEnd;
+    identify += cnt.cellBeg + i18n("<i>Created:</i>")           + cnt.cellMid + dateTime            + cnt.cellEnd;
+    identify += cnt.cellBeg + i18n("<i>Aperture:</i>")          + cnt.cellMid + aperture            + cnt.cellEnd;
+    identify += cnt.cellBeg + i18n("<i>Focal:</i>")             + cnt.cellMid + focalLength         + cnt.cellEnd;
+    identify += cnt.cellBeg + i18n("<i>Exposure:</i>")          + cnt.cellMid + exposureTime        + cnt.cellEnd;
+    identify += cnt.cellBeg + i18n("<i>Sensitivity:</i>")       + cnt.cellMid + sensitivity         + cnt.cellEnd;
+
+    if (QMimeDatabase().mimeTypeForFile(url.toLocalFile()).name().startsWith(QLatin1String("video/")) &&
+        !videoInfo.isEmpty())
+    {
+        identify += cnt.cellBeg + i18n("<i>AspectRatio:</i>")       + cnt.cellMid + aspectRatio         + cnt.cellEnd;
+        identify += cnt.cellBeg + i18n("<i>AudioBitRate:</i>")      + cnt.cellMid + audioBitRate        + cnt.cellEnd;
+        identify += cnt.cellBeg + i18n("<i>AudioChannelType:</i>")  + cnt.cellMid + audioChannelType    + cnt.cellEnd;
+        identify += cnt.cellBeg + i18n("<i>AudioCodec:</i>")        + cnt.cellMid + audioCodec          + cnt.cellEnd;
+        identify += cnt.cellBeg + i18n("<i>Duration:</i>")          + cnt.cellMid + duration            + cnt.cellEnd;
+        identify += cnt.cellBeg + i18n("<i>FrameRate:</i>")         + cnt.cellMid + frameRate           + cnt.cellEnd;
+        identify += cnt.cellBeg + i18n("<i>VideoCodec:</i>")        + cnt.cellMid + videoCodec          + cnt.cellEnd;
+    }
+
+    identify += QLatin1String("</table></center></qt>");
+
+    return identify;
 }
 
 void ImageDialogPreview::slotThumbnail(const LoadingDescription& desc, const QPixmap& pix)
@@ -333,6 +364,112 @@ void ImageDialogPreview::slotClearPreview()
 
 // ------------------------------------------------------------------------
 
+class Q_DECL_HIDDEN ImageDialogToolTip::Private
+{
+public:
+
+    explicit Private()
+      : view        (nullptr),
+        catcher     (nullptr),
+        thread      (nullptr)
+    {
+    }
+
+    QAbstractItemView*     view;
+    QModelIndex            index;
+    QUrl                   url;
+    QImage                 preview;
+    ThumbnailImageCatcher* catcher;
+    ThumbnailLoadThread*   thread;
+};
+
+ImageDialogToolTip::ImageDialogToolTip()
+    : DItemToolTip(),
+      d           (new Private)
+{
+    d->thread  = new ThumbnailLoadThread;
+    d->thread->setThumbnailSize(64);
+    d->thread->setPixmapRequested(false);
+    d->catcher = new ThumbnailImageCatcher(d->thread);
+}
+
+ImageDialogToolTip::~ImageDialogToolTip()
+{
+    d->catcher->thread()->stopAllTasks();
+    d->catcher->cancel();
+
+    delete d->catcher->thread();
+    delete d->catcher;
+    delete d;
+}
+
+void ImageDialogToolTip::setData(QAbstractItemView* const view,
+                                 const QModelIndex& index,
+                                 const QUrl& url)
+{
+    d->view    = view;
+    d->index   = index;
+    d->url     = url;
+
+    d->catcher->setActive(true);
+    d->catcher->thread()->find(ThumbnailIdentifier(d->url.toLocalFile()));
+    d->catcher->enqueue();
+    QList<QImage> images = d->catcher->waitForThumbnails();
+
+    if (!images.isEmpty())
+    {
+        d->preview = images.first();
+    }
+    else
+    {
+        d->preview = QImage();
+    }
+
+    d->catcher->setActive(false);
+
+    if (!d->index.isValid())
+    {
+        hide();
+    }
+    else
+    {
+        updateToolTip();
+        reposition();
+
+        if (isHidden() && !toolTipIsEmpty())
+        {
+            show();
+        }
+    }
+}
+
+QRect ImageDialogToolTip::repositionRect()
+{
+    if (!d->index.isValid())
+    {
+        return QRect();
+    }
+
+    QRect rect = d->view->visualRect(d->index);
+    rect.moveTopLeft(d->view->viewport()->mapToGlobal(rect.topLeft()));
+
+    return rect;
+}
+
+QString ImageDialogToolTip::tipContents()
+{
+    if (!d->index.isValid())
+    {
+        return QString();
+    }
+
+    QString identify = ImageDialogPreview::identifyItem(d->url, d->preview);
+
+    return identify;
+}
+
+// ------------------------------------------------------------------------
+
 class Q_DECL_HIDDEN DFileIconProvider::Private
 {
 
@@ -344,8 +481,8 @@ public:
     {
     }
 
-    ThumbnailImageCatcher*   catcher;           ///< Thumbnail thread catcher from main process.
-    ThumbnailLoadThread*     thread;            ///< The separated thread to render thumbnail images.
+    ThumbnailImageCatcher* catcher;           ///< Thumbnail thread catcher from main process.
+    ThumbnailLoadThread*   thread;            ///< The separated thread to render thumbnail images.
 };
 
 DFileIconProvider::DFileIconProvider()
@@ -434,42 +571,186 @@ class Q_DECL_HIDDEN ImageDialog::Private
 public:
 
     explicit Private()
+        : dlg         (nullptr),
+          provider    (nullptr),
+          showToolTips(true),
+          toolTipTimer(nullptr),
+          toolTip     (nullptr),
+          toolTipView (nullptr)
     {
     }
 
-    QStringList fileFormats;
-    QList<QUrl> urls;
+    QStringList         fileFormats;
+    QList<QUrl>         urls;
+    DFileDialog*        dlg;
+    DFileIconProvider*  provider;
+    bool                showToolTips;
+    QTimer*             toolTipTimer;
+    ImageDialogToolTip* toolTip;
+    QAbstractItemView*  toolTipView;
+    QModelIndex         toolTipIndex;
+    QUrl                toolTipUrl;
 };
 
 ImageDialog::ImageDialog(QWidget* const parent, const QUrl& url, bool singleSelect, const QString& caption)
-    : d(new Private)
+    : QObject(parent),
+      d      (new Private)
 {
     QString all;
     d->fileFormats = supportedImageMimeTypes(QIODevice::ReadOnly, all);
     qCDebug(DIGIKAM_GENERAL_LOG) << "file formats=" << d->fileFormats;
 
-    DFileIconProvider* const provider = new DFileIconProvider();
-    QPointer<DFileDialog> dlg         = new DFileDialog(parent);
-    dlg->setWindowTitle(caption);
-    dlg->setDirectoryUrl(url);
-    dlg->setIconProvider(provider);
-    dlg->setNameFilters(d->fileFormats);
-    dlg->selectNameFilter(d->fileFormats.last());
-    dlg->setAcceptMode(QFileDialog::AcceptOpen);
-    dlg->setFileMode(singleSelect ? QFileDialog::ExistingFile : QFileDialog::ExistingFiles);
+    d->toolTip       = new ImageDialogToolTip();
+    d->toolTipTimer  = new QTimer(this);
 
-    if (dlg->exec() == QDialog::Accepted)
+    connect(d->toolTipTimer, SIGNAL(timeout()),
+            this, SLOT(slotToolTip()));
+
+    d->provider    = new DFileIconProvider();
+    d->dlg         = new DFileDialog(parent);
+    d->dlg->setWindowTitle(caption);
+    d->dlg->setDirectoryUrl(url);
+    d->dlg->setIconProvider(d->provider);
+    d->dlg->setNameFilters(d->fileFormats);
+    d->dlg->selectNameFilter(d->fileFormats.last());
+    d->dlg->setAcceptMode(QFileDialog::AcceptOpen);
+    d->dlg->setFileMode(singleSelect ? QFileDialog::ExistingFile : QFileDialog::ExistingFiles);
+
+    for (auto* item : d->dlg->findChildren<QAbstractItemView*>())
     {
-        d->urls = dlg->selectedUrls();
+        item->installEventFilter(this);
+        item->setMouseTracking(true);
     }
 
-    delete dlg;
-    delete provider;
+    if (d->dlg->exec() == QDialog::Accepted)
+    {
+        d->urls = d->dlg->selectedUrls();
+    }
 }
 
 ImageDialog::~ImageDialog()
 {
+    delete d->toolTip;
+    delete d->dlg;
+    delete d->provider;
     delete d;
+}
+
+void ImageDialog::setEnableToolTips(bool val)
+{
+    d->showToolTips = val;
+
+    if (!val)
+    {
+        hideToolTip();
+    }
+}
+
+void ImageDialog::hideToolTip()
+{
+    d->toolTipIndex = QModelIndex();
+    d->toolTipTimer->stop();
+    slotToolTip();
+}
+
+void ImageDialog::slotToolTip()
+{
+    d->toolTip->setData(d->toolTipView, d->toolTipIndex, d->toolTipUrl);
+}
+
+bool ImageDialog::acceptToolTip(const QUrl& url) const
+{
+    if (url.isValid())
+    {
+        QFileInfo info(url.toLocalFile());
+
+        if (info.isFile() && !info.isSymLink() && !info.isDir() && !info.isRoot())
+        {
+            return true;
+        }
+    }
+
+    return false;
+}
+
+bool ImageDialog::eventFilter(QObject* obj, QEvent* ev)
+{
+    if (d->dlg)
+    {
+        QAbstractItemView* const view = dynamic_cast<QAbstractItemView*>(obj);
+
+        if (view)
+        {
+            if      ((ev->type() == QEvent::HoverMove) && (qApp->mouseButtons() == Qt::NoButton))
+            {
+                QHoverEvent* const hev = dynamic_cast<QHoverEvent*>(ev);
+
+                if (hev)
+                {
+                    QModelIndex index = view->indexAt(view->viewport()->mapFromGlobal(QCursor::pos()));
+
+                    if (index.isValid())
+                    {
+                        QString name = index.data(Qt::DisplayRole).toString();
+
+                        if (!name.isEmpty())
+                        {
+                            QUrl url = QUrl::fromLocalFile(QDir::fromNativeSeparators(d->dlg->directoryUrl().toLocalFile() +
+                                                                                      QLatin1Char('/') + name));
+
+                            if (d->showToolTips)
+                            {
+                                if (!d->dlg->isActiveWindow())
+                                {
+                                    hideToolTip();
+                                    return false;
+                                }
+
+                                if (index != d->toolTipIndex)
+                                {
+                                    hideToolTip();
+
+                                    if (acceptToolTip(url))
+                                    {
+                                        d->toolTipView  = view;
+                                        d->toolTipIndex = index;
+                                        d->toolTipUrl   = url;
+                                        d->toolTipTimer->setSingleShot(true);
+                                        d->toolTipTimer->start(500);
+                                    }
+                                }
+
+                                if ((index == d->toolTipIndex) && !acceptToolTip(url))
+                                {
+                                    hideToolTip();
+                                }
+                            }
+
+                            return false;
+                        }
+                    }
+                    else
+                    {
+                         hideToolTip();
+                         return false;
+                    }
+                }
+            }
+            else if ((ev->type() == QEvent::HoverLeave) ||
+                     (ev->type() == QEvent::FocusOut)   ||
+                     (ev->type() == QEvent::Wheel)      ||
+                     (ev->type() == QEvent::KeyPress)   ||
+                     (ev->type() == QEvent::Paint))
+            {
+                hideToolTip();
+                return false;
+            }
+        }
+    }
+
+    // pass the event on to the parent class
+
+    return QObject::eventFilter(obj, ev);
 }
 
 QStringList ImageDialog::fileFormats() const
