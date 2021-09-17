@@ -28,6 +28,12 @@
 
 #include <QFileSystemModel>
 
+// Local includes
+
+#include "loadingdescription.h"
+
+using namespace Digikam;
+
 namespace ShowFoto
 {
 
@@ -40,7 +46,15 @@ class ShowfotoFolderViewModel : public QFileSystemModel
 public:
 
     explicit ShowfotoFolderViewModel(ShowfotoFolderViewList* const view);
-    ~ShowfotoFolderViewModel()           override;
+    ~ShowfotoFolderViewModel()                              override;
+
+    static int maxIconSize();
+
+    QVariant data(const QModelIndex& index, int role) const override;
+
+private Q_SLOTS:
+
+    void refreshThumbnails(const LoadingDescription& desc, const QPixmap& pix);
 
 private:
 

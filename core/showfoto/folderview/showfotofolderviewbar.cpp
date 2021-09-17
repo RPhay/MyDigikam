@@ -42,7 +42,7 @@
 // Local includes
 
 #include "digikam_debug.h"
-#include "showfotofolderviewiconprovider.h"
+#include "showfotofolderviewmodel.h"
 #include "showfotofolderviewlist.h"
 #include "showfotosetup.h"
 
@@ -168,7 +168,7 @@ ShowfotoFolderViewBar::ShowfotoFolderViewBar(ShowfotoFolderViewSideBar* const si
     // ---
 
     d->iconSizeSlider        = new QSlider(Qt::Horizontal, btnBox);
-    d->iconSizeSlider->setRange(16, ShowfotoFolderViewIconProvider::maxIconSize());
+    d->iconSizeSlider->setRange(16, ShowfotoFolderViewModel::maxIconSize());
     d->iconSizeSlider->setSingleStep(10);
     d->iconSizeSlider->setValue(32);
     d->iconSizeSlider->setFocusPolicy(Qt::NoFocus);
