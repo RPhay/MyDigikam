@@ -50,10 +50,10 @@ class Q_DECL_HIDDEN GPSBookmarkModelHelper::Private
 public:
 
     explicit Private()
-      : model(nullptr),
+      : model          (nullptr),
         bookmarkManager(nullptr),
-        imageModel(nullptr),
-        visible(false)
+        imageModel     (nullptr),
+        visible        (false)
     {
     }
 
@@ -63,7 +63,7 @@ public:
 
     QStandardItemModel* model;
     BookmarksManager*   bookmarkManager;
-    GPSItemModel*      imageModel;
+    GPSItemModel*       imageModel;
     QPixmap             pixmap;
     QUrl                bookmarkIconUrl;
     bool                visible;
@@ -94,12 +94,11 @@ void GPSBookmarkModelHelper::Private::addBookmarkGroupToModel(BookmarkNode* cons
             else
             {
                 bool okay                        = false;
-                const GeoCoordinates coordinates =
-                    GeoCoordinates::fromGeoUrl(currentBookmark->url, &okay);
+                const GeoCoordinates coordinates = GeoCoordinates::fromGeoUrl(currentBookmark->url, &okay);
 
                 if (okay)
                 {
-                    QStandardItem* const item = new QStandardItem();
+                    QStandardItem* const item    = new QStandardItem();
                     item->setData(currentBookmark->title, Qt::DisplayRole);
                     item->setData(QVariant::fromValue(coordinates), GPSBookmarkModelHelper::CoordinatesRole);
                     model->appendRow(item);
@@ -233,7 +232,7 @@ void GPSBookmarkModelHelper::snapItemsTo(const QModelIndex& targetIndex,
     for (int i = 0 ; i < snappedIndices.count() ; ++i)
     {
         const QPersistentModelIndex itemIndex = snappedIndices.at(i);
-        GPSItemContainer* const item              = d->imageModel->itemFromIndex(itemIndex);
+        GPSItemContainer* const item          = d->imageModel->itemFromIndex(itemIndex);
 
         GPSDataContainer newData;
         newData.setCoordinates(targetCoordinates);

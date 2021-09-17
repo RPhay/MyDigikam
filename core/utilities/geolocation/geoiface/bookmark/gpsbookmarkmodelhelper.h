@@ -58,21 +58,21 @@ public:
     GPSBookmarkModelHelper(BookmarksManager* const bookmarkManager,
                            GPSItemModel* const imageModel,
                            QObject* const parent = nullptr);
-    ~GPSBookmarkModelHelper() override;
+    ~GPSBookmarkModelHelper()                                     override;
 
     void setVisible(const bool state);
 
-    QAbstractItemModel* model() const override;
-    QItemSelectionModel* selectionModel() const override;
+    QAbstractItemModel* model()                             const override;
+    QItemSelectionModel* selectionModel()                   const override;
     bool itemCoordinates(const QModelIndex& index,
-                                 GeoCoordinates* const coordinates) const override;
+                         GeoCoordinates* const coordinates) const override;
     bool itemIcon(const QModelIndex& index, QPoint* const offset,
-                          QSize* const size, QPixmap* const pixmap,
-                          QUrl* const url) const override;
+                  QSize* const size, QPixmap* const pixmap,
+                  QUrl* const url)                          const override;
     PropertyFlags modelFlags() const override;
-    PropertyFlags itemFlags(const QModelIndex& index) const override;
+    PropertyFlags itemFlags(const QModelIndex& index)       const override;
     void snapItemsTo(const QModelIndex& targetIndex,
-                             const QList<QModelIndex>& snappedIndices) override;
+                     const QList<QModelIndex>& snappedIndices)    override;
 
 private Q_SLOTS:
 

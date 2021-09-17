@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2017-05-15
- * Description : menu to manage GPS bookmarks
+ * Description : menu to manage bookmarks
  *
  * Copyright (C) 2017-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *

@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2017-05-15
- * Description : low level manager for GPS bookmarks
+ * Description : low level manager for bookmarks
  *
  * Copyright (C) 2017-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *

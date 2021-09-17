@@ -50,10 +50,10 @@ class Q_DECL_HIDDEN GPSBookmarkOwner::Private
 public:
 
     explicit Private()
-      : parent(nullptr),
-        bookmarkManager(nullptr),
-        bookmarkMenu(nullptr),
-        addBookmarkEnabled(true),
+      : parent             (nullptr),
+        bookmarkManager    (nullptr),
+        bookmarkMenu       (nullptr),
+        addBookmarkEnabled (true),
         bookmarkModelHelper(nullptr)
     {
     }
