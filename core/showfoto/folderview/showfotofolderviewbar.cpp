@@ -311,6 +311,11 @@ void ShowfotoFolderViewBar::setCurrentPath(const QString& path)
     d->upBtn->setEnabled(dir.cdUp());
 }
 
+QString ShowfotoFolderViewBar::currentPath() const
+{
+    return d->pathEdit->lineEdit()->text();
+}
+
 void ShowfotoFolderViewBar::setIconSize(int size)
 {
     d->iconSizeSlider->setValue(size);

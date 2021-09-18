@@ -47,6 +47,7 @@
 #include "showfotofolderviewundo.h"
 #include "showfotofolderviewmodel.h"
 #include "showfotofolderviewlist.h"
+#include "showfotofolderviewbookmarks.h"
 
 namespace ShowFoto
 {
@@ -60,6 +61,7 @@ public:
       : fsmodel     (nullptr),
         fsview      (nullptr),
         fsbar       (nullptr),
+        fsmarks     (nullptr),
         fsstack     (nullptr),
         fsSortOrder (Qt::AscendingOrder),
         fsRole      (ShowfotoFolderViewList::FileName)
@@ -73,6 +75,7 @@ public:
     ShowfotoFolderViewModel*               fsmodel;
     ShowfotoFolderViewList*                fsview;
     ShowfotoFolderViewBar*                 fsbar;
+    ShowfotoFolderViewBookmarks*           fsmarks;
     QUndoStack*                            fsstack;
 
     Qt::SortOrder                          fsSortOrder;
@@ -94,7 +97,6 @@ ShowfotoFolderViewSideBar::ShowfotoFolderViewSideBar(QWidget* const parent)
 
     // --- Populate the view
 
-    const int spacing          = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
     d->fsbar                   = new ShowfotoFolderViewBar(this);
     d->fsview                  = new ShowfotoFolderViewList(this, d->fsbar);
     d->fsview->setEnableToolTips(true);
@@ -102,10 +104,15 @@ ShowfotoFolderViewSideBar::ShowfotoFolderViewSideBar(QWidget* const parent)
     d->fsview->setModel(d->fsmodel);
     d->fsview->setRootIndex(d->fsmodel->index(QDir::rootPath()));
 
+    d->fsmarks                 = new ShowfotoFolderViewBookmarks(this);
+
     QVBoxLayout* const layout  = new QVBoxLayout(this);
     layout->addWidget(d->fsbar);
     layout->addWidget(d->fsview);
-    layout->setContentsMargins(0, 0, spacing, 0);
+    layout->addWidget(d->fsmarks);
+    layout->setStretchFactor(d->fsview, 10);
+    layout->setStretchFactor(d->fsmarks, 3);
+    layout->setContentsMargins(0, 0, 0, 0);
 
     // --- Setup connections
 
@@ -340,6 +347,7 @@ void ShowfotoFolderViewSideBar::doLoadState()
 {
     KConfigGroup group = getConfigGroup();
 
+    d->fsmarks->readSettings(group);
     d->fsbar->setFolderViewMode(group.readEntry(entryName(d->configFolderViewModeEntry), (int)ShowfotoFolderViewList::ShortView));
     slotViewModeChanged(d->fsbar->folderViewMode());
     d->fsbar->setIconSize(group.readEntry(entryName(d->configIconSizeEntry), 32));
@@ -351,9 +359,10 @@ void ShowfotoFolderViewSideBar::doSaveState()
 {
     KConfigGroup group = getConfigGroup();
 
+    d->fsmarks->saveSettings(group);
     group.writeEntry(entryName(d->configFolderViewModeEntry), d->fsbar->folderViewMode());
-    group.writeEntry(entryName(d->configIconSizeEntry), d->fsbar->iconSize());
-    group.writeEntry(entryName(d->configLastFolderEntry), currentFolder());
+    group.writeEntry(entryName(d->configIconSizeEntry),       d->fsbar->iconSize());
+    group.writeEntry(entryName(d->configLastFolderEntry),     currentFolder());
     group.sync();
 }
 

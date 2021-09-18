@@ -58,6 +58,7 @@ public:
     int  folderViewMode() const;
 
     void setCurrentPath(const QString& path);
+    QString currentPath() const;
 
     QAction* toolBarAction(const QString& name) const;
 

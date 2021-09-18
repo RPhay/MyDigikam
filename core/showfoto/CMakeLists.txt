@@ -45,6 +45,7 @@ set(showfoto_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/folderview/showfotofolderviewbar.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/folderview/showfotofolderviewundo.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/folderview/showfotofolderviewtooltip.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/folderview/showfotofolderviewbookmarks.cpp
 
     ${CMAKE_CURRENT_SOURCE_DIR}/main/showfotosettings.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/main/showfotoinfoiface.cpp
