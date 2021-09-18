@@ -286,11 +286,11 @@ void ShowfotoSettings::readSettings()
 
 #ifdef Q_OS_WIN
 
-    QString defaultStyle                 = QLatin1String("Fusion");
+    QString defaultStyle       = QLatin1String("Fusion");
 
 #else
 
-    QString defaultStyle                 = qApp->style()->objectName();
+    QString defaultStyle       = qApp->style()->objectName();
 
 #endif
 
