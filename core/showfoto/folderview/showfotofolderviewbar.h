@@ -57,6 +57,9 @@ public:
     void setFolderViewMode(int mode);
     int  folderViewMode() const;
 
+    void setBookmarksVisible(bool b);
+    bool bookmarksVisible() const;
+
     void setCurrentPath(const QString& path);
     QString currentPath() const;
 
@@ -70,6 +73,7 @@ public Q_SLOTS:
 Q_SIGNALS:
 
     void signalViewModeChanged(int);
+    void signalShowBookmarks(bool);
     void signalSetup();
     void signalIconSizeChanged(int);
     void signalGoHome();

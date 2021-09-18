@@ -113,6 +113,7 @@ ShowfotoFolderViewList::ShowfotoFolderViewList(ShowfotoFolderViewSideBar* const 
     d->fsmenu->addSeparator(),
     d->fsmenu->addAction(d->bar->toolBarAction(QLatin1String("ShortView")));
     d->fsmenu->addAction(d->bar->toolBarAction(QLatin1String("DetailledView")));
+    d->fsmenu->addAction(d->bar->toolBarAction(QLatin1String("ShowBookmarks")));
     d->fsmenu->addAction(d->bar->toolBarAction(QLatin1String("MoreSettings")));
     d->fsmenu->addSeparator(),
     d->fsmenu->addAction(d->bar->toolBarAction(QLatin1String("LoadContents")));

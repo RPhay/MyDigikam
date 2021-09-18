@@ -82,6 +82,7 @@ private Q_SLOTS:
 
     void slotCustomPathChanged(const QString&);
     void slotViewModeChanged(int);
+    void slotShowBookmarks(bool);
 
 Q_SIGNALS:
 

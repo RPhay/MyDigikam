@@ -71,6 +71,7 @@ public:
     static const QString                   configIconSizeEntry;
     static const QString                   configLastFolderEntry;
     static const QString                   configFolderViewModeEntry;
+    static const QString                   configBookmarksVisibleEntry;
 
     ShowfotoFolderViewModel*               fsmodel;
     ShowfotoFolderViewList*                fsview;
@@ -85,6 +86,7 @@ public:
 const QString ShowfotoFolderViewSideBar::Private::configIconSizeEntry(QLatin1String("Icon Size"));
 const QString ShowfotoFolderViewSideBar::Private::configLastFolderEntry(QLatin1String("Last Folder"));
 const QString ShowfotoFolderViewSideBar::Private::configFolderViewModeEntry(QLatin1String("Folder View Mode"));
+const QString ShowfotoFolderViewSideBar::Private::configBookmarksVisibleEntry(QLatin1String("Bookmarks Visible"));
 
 ShowfotoFolderViewSideBar::ShowfotoFolderViewSideBar(QWidget* const parent)
     : QWidget          (parent),
@@ -118,6 +120,9 @@ ShowfotoFolderViewSideBar::ShowfotoFolderViewSideBar(QWidget* const parent)
 
     connect(d->fsbar, SIGNAL(signalSetup()),
             this, SIGNAL(signalSetup()));
+
+    connect(d->fsbar, SIGNAL(signalShowBookmarks(bool)),
+            this, SLOT(slotShowBookmarks(bool)));
 
     connect(d->fsbar, SIGNAL(signalViewModeChanged(int)),
             this, SLOT(slotViewModeChanged(int)));
@@ -349,6 +354,7 @@ void ShowfotoFolderViewSideBar::doLoadState()
 
     d->fsmarks->readSettings(group);
     d->fsbar->setFolderViewMode(group.readEntry(entryName(d->configFolderViewModeEntry), (int)ShowfotoFolderViewList::ShortView));
+    d->fsbar->setBookmarksVisible(group.readEntry(entryName(d->configBookmarksVisibleEntry), false));
     slotViewModeChanged(d->fsbar->folderViewMode());
     d->fsbar->setIconSize(group.readEntry(entryName(d->configIconSizeEntry), 32));
     setCurrentPathWithoutUndo(group.readEntry(entryName(d->configLastFolderEntry), QDir::rootPath()));
@@ -360,9 +366,10 @@ void ShowfotoFolderViewSideBar::doSaveState()
     KConfigGroup group = getConfigGroup();
 
     d->fsmarks->saveSettings(group);
-    group.writeEntry(entryName(d->configFolderViewModeEntry), d->fsbar->folderViewMode());
-    group.writeEntry(entryName(d->configIconSizeEntry),       d->fsbar->iconSize());
-    group.writeEntry(entryName(d->configLastFolderEntry),     currentFolder());
+    group.writeEntry(entryName(d->configFolderViewModeEntry),   d->fsbar->folderViewMode());
+    group.writeEntry(entryName(d->configBookmarksVisibleEntry), d->fsbar->bookmarksVisible());
+    group.writeEntry(entryName(d->configIconSizeEntry),         d->fsbar->iconSize());
+    group.writeEntry(entryName(d->configLastFolderEntry),       currentFolder());
     group.sync();
 }
 
@@ -411,6 +418,11 @@ void ShowfotoFolderViewSideBar::setSortRole(int role)
 {
     d->fsRole = (ShowfotoFolderViewList::FolderViewRole)role;
     d->fsmodel->sort(d->fsRole, d->fsSortOrder);
+}
+
+void ShowfotoFolderViewSideBar::slotShowBookmarks(bool visible)
+{
+    d->fsmarks->setVisible(visible);
 }
 
 } // namespace ShowFoto

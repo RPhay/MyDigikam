@@ -55,19 +55,20 @@ class Q_DECL_HIDDEN ShowfotoFolderViewBar::Private
 public:
 
     explicit Private()
-      : previousBtn       (nullptr),
-        nextBtn           (nullptr),
-        upBtn             (nullptr),
-        homeBtn           (nullptr),
-        iconSizeSlider    (nullptr),
-        optionsBtn        (nullptr),
-        optionsMenu       (nullptr),
-        shortAction       (nullptr),
-        detailedAction    (nullptr),
-        moreSettingsAction(nullptr),
-        loadBtn           (nullptr),
-        pathEdit          (nullptr),
-        sidebar           (nullptr)
+      : previousBtn        (nullptr),
+        nextBtn            (nullptr),
+        upBtn              (nullptr),
+        homeBtn            (nullptr),
+        iconSizeSlider     (nullptr),
+        optionsBtn         (nullptr),
+        optionsMenu        (nullptr),
+        shortAction        (nullptr),
+        detailedAction     (nullptr),
+        showBookmarksAction(nullptr),
+        moreSettingsAction (nullptr),
+        loadBtn            (nullptr),
+        pathEdit           (nullptr),
+        sidebar            (nullptr)
     {
     }
 
@@ -80,6 +81,7 @@ public:
     QMenu*                     optionsMenu;
     QAction*                   shortAction;
     QAction*                   detailedAction;
+    QAction*                   showBookmarksAction;
     QAction*                   moreSettingsAction;
     QToolButton*               loadBtn;
     QComboBox*                 pathEdit;
@@ -210,6 +212,14 @@ ShowfotoFolderViewBar::ShowfotoFolderViewBar(ShowfotoFolderViewSideBar* const si
 
     optGrp->setExclusive(true);
 
+    d->showBookmarksAction      = d->optionsMenu->addAction(i18nc("@action:inmenu", "Show Bookmarks"));
+    d->showBookmarksAction->setObjectName(QLatin1String("ShowBookmarks"));
+    d->showBookmarksAction->setIcon(QIcon::fromTheme(QLatin1String("bookmarks")));
+    d->showBookmarksAction->setToolTip(i18nc("@info", "Show or Hide the Bookmarked places"));
+    d->showBookmarksAction->setCheckable(true);
+
+    d->actionsList << d->showBookmarksAction;
+
     d->moreSettingsAction      = d->optionsMenu->addAction(i18nc("@action:inmenu", "More Settings..."));
     d->moreSettingsAction->setObjectName(QLatin1String("MoreSettings"));
     d->moreSettingsAction->setIcon(QIcon::fromTheme(QLatin1String("configure")));
@@ -298,6 +308,17 @@ int ShowfotoFolderViewBar::folderViewMode() const
     return ShowfotoFolderViewList::DetailledView;
 }
 
+void ShowfotoFolderViewBar::setBookmarksVisible(bool b)
+{
+    d->showBookmarksAction->setChecked(b);
+    emit signalShowBookmarks(b);
+}
+
+bool ShowfotoFolderViewBar::bookmarksVisible() const
+{
+    return (d->showBookmarksAction->isChecked());
+}
+
 void ShowfotoFolderViewBar::setCurrentPath(const QString& path)
 {
     d->pathEdit->lineEdit()->setText(path);
@@ -366,6 +387,11 @@ void ShowfotoFolderViewBar::slotOptionsChanged(QAction* action)
     else if (action == d->detailedAction)
     {
         mode = ShowfotoFolderViewList::DetailledView;
+    }
+    else if (action == d->showBookmarksAction)
+    {
+        emit signalShowBookmarks(d->showBookmarksAction->isChecked());
+        return;
     }
     else if (action == d->moreSettingsAction)
     {
