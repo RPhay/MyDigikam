@@ -12,10 +12,15 @@ APPLY_COMMON_POLICIES()
 include_directories(BEFORE
                     $<TARGET_PROPERTY:Qt5::Network,INTERFACE_INCLUDE_DIRECTORIES>
 
+                    ${CMAKE_CURRENT_SOURCE_DIR}/folderview
                     ${CMAKE_CURRENT_SOURCE_DIR}/thumbbar
                     ${CMAKE_CURRENT_SOURCE_DIR}/setup
                     ${CMAKE_CURRENT_SOURCE_DIR}/main
 )
+
+if(KF5IconThemes_FOUND)
+    include_directories($<TARGET_PROPERTY:KF5::IconThemes,INTERFACE_INCLUDE_DIRECTORIES>)
+endif()
 
 set(showfoto_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/setup/showfotosetuptooltip.cpp
@@ -46,6 +51,7 @@ set(showfoto_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/folderview/showfotofolderviewundo.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/folderview/showfotofolderviewtooltip.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/folderview/showfotofolderviewbookmarks.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/folderview/showfotofolderviewbookmarkdlg.cpp
 
     ${CMAKE_CURRENT_SOURCE_DIR}/main/showfotosettings.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/main/showfotoinfoiface.cpp
@@ -105,6 +111,15 @@ if(KF5NotifyConfig_FOUND)
     target_link_libraries(showfoto
                           PUBLIC
                           KF5::NotifyConfig
+    )
+
+endif()
+
+if(KF5IconThemes_FOUND)
+
+    target_link_libraries(showfoto
+                          PUBLIC
+                          KF5::IconThemes
     )
 
 endif()

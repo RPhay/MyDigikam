@@ -34,7 +34,6 @@
 #include <QStyle>
 #include <QUrl>
 #include <QListWidget>
-#include <QInputDialog>
 #include <QIcon>
 
 // KDE includes
@@ -46,6 +45,7 @@
 
 #include "thumbnailsize.h"
 #include "showfotofolderviewsidebar.h"
+#include "showfotofolderviewbookmarkdlg.h"
 
 namespace ShowFoto
 {
@@ -229,18 +229,17 @@ void ShowfotoFolderViewBookmarks::slotEdtBookmark()
     if (!d->bookmarksList->selectedItems().isEmpty())
     {
         ShowfotoFolderViewBookmarkItem* const item = dynamic_cast<ShowfotoFolderViewBookmarkItem*>(d->bookmarksList->selectedItems().at(0));
-        QString bookmark = d->bookmarksList->selectedItems().at(0)->text();
 
-        bool ok;
-        QString path = QInputDialog::getText(this,
-                                             i18n("Edit \"%1\"",
-                                             item->text()),
-                                             i18n("Place:"),
-                                             QLineEdit::Normal,
-                                             item->path(),
-                                             &ok);
-        if (ok && !path.isEmpty())
+        QString title = item->text();
+        QString icon  = item->icon().name();
+        QString path  = item->path();
+
+        bool ok = ShowfotoFolderViewBookmarkDlg::bookmarkEdit(this, title, icon, path);
+
+        if (ok && !path.isEmpty() && !title.isEmpty())
         {
+            item->setText(title);
+            item->setIcon(QIcon::fromTheme(icon));
             item->setPath(path);
         }
     }
