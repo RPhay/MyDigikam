@@ -142,7 +142,7 @@ Comment[th]=การดาวน์โหลดจากกล้องหร�
 Comment[tr]=Bir kamera veya başka bir aygıttan indirme tamamlandı.
 Comment[uk]=Отримання даних з фотоапарата або іншого пристрою завершено.
 Comment[x-test]=xxA download from a camera or other device has finished.xx
-Comment[zh_CN]=从相机或者其它设备的下载作业已经完成。
+Comment[zh_CN]=从相机或者其他设备的下载作业已经完成。
 Comment[zh_TW]=從相機或其他裝置下載已經結束。
 Action=Popup
 
