@@ -32,6 +32,7 @@
 #include <QVBoxLayout>
 #include <QFileInfo>
 #include <QDir>
+#include <QSplitter>
 
 // KDE includes
 
@@ -63,6 +64,7 @@ public:
         fsbar       (nullptr),
         fsmarks     (nullptr),
         fsstack     (nullptr),
+        splitter    (nullptr),
         fsSortOrder (Qt::AscendingOrder),
         fsRole      (ShowfotoFolderViewList::FileName)
     {
@@ -72,12 +74,14 @@ public:
     static const QString                   configLastFolderEntry;
     static const QString                   configFolderViewModeEntry;
     static const QString                   configBookmarksVisibleEntry;
+    static const QString                   configSplitterStateEntry;
 
     ShowfotoFolderViewModel*               fsmodel;
     ShowfotoFolderViewList*                fsview;
     ShowfotoFolderViewBar*                 fsbar;
     ShowfotoFolderViewBookmarks*           fsmarks;
     QUndoStack*                            fsstack;
+    QSplitter*                             splitter;
 
     Qt::SortOrder                          fsSortOrder;
     ShowfotoFolderViewList::FolderViewRole fsRole;
@@ -87,6 +91,7 @@ const QString ShowfotoFolderViewSideBar::Private::configIconSizeEntry(QLatin1Str
 const QString ShowfotoFolderViewSideBar::Private::configLastFolderEntry(QLatin1String("Last Folder"));
 const QString ShowfotoFolderViewSideBar::Private::configFolderViewModeEntry(QLatin1String("Folder View Mode"));
 const QString ShowfotoFolderViewSideBar::Private::configBookmarksVisibleEntry(QLatin1String("Bookmarks Visible"));
+const QString ShowfotoFolderViewSideBar::Private::configSplitterStateEntry(QLatin1String("Splitter State"));
 
 ShowfotoFolderViewSideBar::ShowfotoFolderViewSideBar(QWidget* const parent)
     : QWidget          (parent),
@@ -108,12 +113,15 @@ ShowfotoFolderViewSideBar::ShowfotoFolderViewSideBar(QWidget* const parent)
 
     d->fsmarks                 = new ShowfotoFolderViewBookmarks(this);
 
+    d->splitter                = new QSplitter(Qt::Vertical, this);
+    d->splitter->addWidget(d->fsview);
+    d->splitter->addWidget(d->fsmarks);
+    d->splitter->setStretchFactor(0, 10);
+    d->splitter->setStretchFactor(1, 3);
+
     QVBoxLayout* const layout  = new QVBoxLayout(this);
     layout->addWidget(d->fsbar);
-    layout->addWidget(d->fsview);
-    layout->addWidget(d->fsmarks);
-    layout->setStretchFactor(d->fsview, 10);
-    layout->setStretchFactor(d->fsmarks, 3);
+    layout->addWidget(d->splitter);
     layout->setContentsMargins(0, 0, 0, 0);
 
     // --- Setup connections
@@ -360,6 +368,14 @@ void ShowfotoFolderViewSideBar::doLoadState()
     d->fsbar->setBookmarksVisible(group.readEntry(entryName(d->configBookmarksVisibleEntry), false));
     slotViewModeChanged(d->fsbar->folderViewMode());
     d->fsbar->setIconSize(group.readEntry(entryName(d->configIconSizeEntry), 32));
+
+    QByteArray state = group.readEntry(entryName(d->configSplitterStateEntry), QByteArray());
+
+    if (!state.isEmpty())
+    {
+        d->splitter->restoreState(QByteArray::fromBase64(state));
+    }
+
     setCurrentPathWithoutUndo(group.readEntry(entryName(d->configLastFolderEntry), QDir::rootPath()));
     loadContents(d->fsview->currentIndex());
 }
@@ -373,6 +389,7 @@ void ShowfotoFolderViewSideBar::doSaveState()
     group.writeEntry(entryName(d->configBookmarksVisibleEntry), d->fsbar->bookmarksVisible());
     group.writeEntry(entryName(d->configIconSizeEntry),         d->fsbar->iconSize());
     group.writeEntry(entryName(d->configLastFolderEntry),       currentFolder());
+    group.writeEntry(entryName(d->configSplitterStateEntry),    d->splitter->saveState().toBase64());
     group.sync();
 }
 
