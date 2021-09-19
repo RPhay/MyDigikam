@@ -36,13 +36,15 @@
 namespace ShowFoto
 {
 
+class ShowfotoFolderViewBookmarks;
+
 class ShowfotoFolderViewBookmarkDlg : public QDialog
 {
     Q_OBJECT
 
 public:
 
-    explicit ShowfotoFolderViewBookmarkDlg(QWidget* const parent, bool create = false);
+    explicit ShowfotoFolderViewBookmarkDlg(ShowfotoFolderViewBookmarks* const parent, bool create = false);
     ~ShowfotoFolderViewBookmarkDlg() override;
 
     void setTitle(const QString& title);
@@ -54,8 +56,8 @@ public:
     void setPath(const QString& path);
     QString path()     const;
 
-    static bool bookmarkEdit(QWidget* const parent, QString& title, QString& icon, QString& path);
-    static bool bookmarkCreate(QWidget* const parent, QString& title, QString& icon, QString& path);
+    static bool bookmarkEdit(ShowfotoFolderViewBookmarks* const parent, QString& title, QString& icon, QString& path);
+    static bool bookmarkCreate(ShowfotoFolderViewBookmarks* const parent, QString& title, QString& icon, QString& path);
 
 private Q_SLOTS:
 

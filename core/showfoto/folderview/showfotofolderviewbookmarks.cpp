@@ -35,6 +35,7 @@
 #include <QUrl>
 #include <QListWidget>
 #include <QIcon>
+#include <QMessageBox>
 
 // KDE includes
 
@@ -94,6 +95,30 @@ public:
         {
             return (QFileInfo(path).baseName());
         }
+    }
+
+    ShowfotoFolderViewBookmarkItem* isBookmarkExist(const QString& path) const
+    {
+        bool found                           = false;
+        ShowfotoFolderViewBookmarkItem* item = nullptr;
+
+        for (int i = 0 ; i < bookmarksList->count() ; ++i)
+        {
+            item = dynamic_cast<ShowfotoFolderViewBookmarkItem*>(bookmarksList->item(i));
+
+            if (path == item->path())
+            {
+                found = true;
+                break;
+            }
+        }
+
+        if (found)
+        {
+            return item;
+        }
+
+        return nullptr;
     }
 
 public:
@@ -188,27 +213,36 @@ void ShowfotoFolderViewBookmarks::slotAddBookmark()
         return;
     }
 
-    bool found = false;
+    ShowfotoFolderViewBookmarkItem* item = d->isBookmarkExist(newBookmark);
 
-    for (int i = 0 ; i < d->bookmarksList->count() ; ++i)
+    if (!item)
     {
-        QListWidgetItem* const item = d->bookmarksList->item(i);
+        QString title = d->bookmarkBaseName(newBookmark);
+        QString icon  = QLatin1String("folder");
+        QString path  = newBookmark;
 
-        if (newBookmark == item->text())
+        bool ok = ShowfotoFolderViewBookmarkDlg::bookmarkCreate(this, title, icon, path);
+
+        if (ok && !path.isEmpty() && !title.isEmpty())
         {
-            found = true;
-            break;
+            item = d->isBookmarkExist(path);
+
+            if (!item)
+            {
+                item = new ShowfotoFolderViewBookmarkItem(d->bookmarksList);
+                item->setText(title);
+                item->setIcon(QIcon::fromTheme(icon));
+                item->setPath(path);
+                d->bookmarksList->insertItem(d->bookmarksList->count(), item);
+                return;
+            }
         }
     }
 
-    if (!found)
-    {
-        ShowfotoFolderViewBookmarkItem* const item = new ShowfotoFolderViewBookmarkItem(d->bookmarksList);
-        item->setPath(newBookmark);
-        item->setText(d->bookmarkBaseName(newBookmark));
-        item->setIcon(QIcon::fromTheme(QLatin1String("folder")));
-        d->bookmarksList->insertItem(d->bookmarksList->count(), item);
-    }
+    QMessageBox::information(this,
+                             i18n("Add New Bookmark"),
+                             i18n("This bookmark referencing\n%1\nalready exists in the list with name \"%2\".",
+                             item->path(), item->text()));
 }
 
 void ShowfotoFolderViewBookmarks::slotDelBookmark()
@@ -238,9 +272,20 @@ void ShowfotoFolderViewBookmarks::slotEdtBookmark()
 
         if (ok && !path.isEmpty() && !title.isEmpty())
         {
-            item->setText(title);
-            item->setIcon(QIcon::fromTheme(icon));
-            item->setPath(path);
+            ShowfotoFolderViewBookmarkItem* const nitem = d->isBookmarkExist(path);
+
+            if (!nitem)
+            {
+                item->setText(title);
+                item->setIcon(QIcon::fromTheme(icon));
+                item->setPath(path);
+                return;
+            }
+
+            QMessageBox::information(this,
+                                     i18n("Edit Bookmark"),
+                                     i18n("This bookmark referencing\n%1\nalready exists in the list with name \"%2\".",
+                                     nitem->path(), nitem->text()));
         }
     }
 }

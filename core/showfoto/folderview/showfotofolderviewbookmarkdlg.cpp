@@ -31,6 +31,7 @@
 #include <QLineEdit>
 #include <QApplication>
 #include <QStyle>
+#include <QDir>
 #include <QStandardPaths>
 #include <QDialogButtonBox>
 #include <QVBoxLayout>
@@ -49,6 +50,7 @@
 #include "digikam_debug.h"
 #include "dfileselector.h"
 #include "dlayoutbox.h"
+#include "showfotofolderviewbookmarks.h"
 
 using namespace Digikam;
 
@@ -66,35 +68,38 @@ public:
         resetIconButton(nullptr),
         buttons        (nullptr),
         titleEdit      (nullptr),
-        pathEdit       (nullptr)
+        pathEdit       (nullptr),
+        list           (nullptr)
     {
     }
 
-    bool                create;
+    bool                         create;
 
-    QLabel*             topLabel;
+    QLabel*                      topLabel;
 
-    QString             icon;
+    QString                      icon;
 
-    QPushButton*        iconButton;
-    QPushButton*        resetIconButton;
+    QPushButton*                 iconButton;
+    QPushButton*                 resetIconButton;
 
-    QDialogButtonBox*   buttons;
+    QDialogButtonBox*            buttons;
 
-    QLineEdit*          titleEdit;
-    DFileSelector*      pathEdit;
+    QLineEdit*                   titleEdit;
+    DFileSelector*               pathEdit;
+    ShowfotoFolderViewBookmarks* list;
 };
 
-ShowfotoFolderViewBookmarkDlg::ShowfotoFolderViewBookmarkDlg(QWidget* const parent, bool create)
+ShowfotoFolderViewBookmarkDlg::ShowfotoFolderViewBookmarkDlg(ShowfotoFolderViewBookmarks* const parent, bool create)
     : QDialog(parent),
       d      (new Private)
 {
     setModal(true);
 
+    d->create  = create;
     d->buttons = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
     d->buttons->button(QDialogButtonBox::Ok)->setDefault(true);
 
-    if (create)
+    if (d->create)
     {
         setWindowTitle(i18n("New Bookmark"));
     }
@@ -103,7 +108,6 @@ ShowfotoFolderViewBookmarkDlg::ShowfotoFolderViewBookmarkDlg(QWidget* const pare
         setWindowTitle(i18n("Edit Bookmark"));
     }
 
-    d->create           = create;
     QWidget* const page = new QWidget(this);
 
     // --------------------------------------------------------
@@ -266,7 +270,8 @@ void ShowfotoFolderViewBookmarkDlg::slotIconChanged()
 
 }
 
-bool ShowfotoFolderViewBookmarkDlg::bookmarkEdit(QWidget* const parent, QString& title, QString& icon, QString& path)
+bool ShowfotoFolderViewBookmarkDlg::bookmarkEdit(ShowfotoFolderViewBookmarks* const parent,
+                                                 QString& title, QString& icon, QString& path)
 {
     QPointer<ShowfotoFolderViewBookmarkDlg> dlg = new ShowfotoFolderViewBookmarkDlg(parent);
     dlg->setTitle(title);
@@ -280,6 +285,11 @@ bool ShowfotoFolderViewBookmarkDlg::bookmarkEdit(QWidget* const parent, QString&
         title = dlg->title();
         icon  = dlg->icon();
         path  = dlg->path();
+
+        if (!path.endsWith(QDir::separator()))
+        {
+            path.append(QDir::separator());
+        }
     }
 
     delete dlg;
@@ -287,7 +297,8 @@ bool ShowfotoFolderViewBookmarkDlg::bookmarkEdit(QWidget* const parent, QString&
     return valRet;
 }
 
-bool ShowfotoFolderViewBookmarkDlg::bookmarkCreate(QWidget* const parent, QString& title, QString& icon, QString& path)
+bool ShowfotoFolderViewBookmarkDlg::bookmarkCreate(ShowfotoFolderViewBookmarks* const parent,
+                                                   QString& title, QString& icon, QString& path)
 {
     QPointer<ShowfotoFolderViewBookmarkDlg> dlg = new ShowfotoFolderViewBookmarkDlg(parent, true);
     dlg->setTitle(title);
@@ -301,6 +312,11 @@ bool ShowfotoFolderViewBookmarkDlg::bookmarkCreate(QWidget* const parent, QStrin
         title = dlg->title();
         icon  = dlg->icon();
         path  = dlg->path();
+
+        if (!path.endsWith(QDir::separator()))
+        {
+            path.append(QDir::separator());
+        }
     }
 
     delete dlg;
