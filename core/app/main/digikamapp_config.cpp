@@ -102,16 +102,11 @@ void DigikamApp::slotThemeChanged()
     {
         qApp->processEvents();
 
-        QColor color   = qApp->palette().color(qApp->activeWindow()->backgroundRole());
-        int colorValue = color.red();
-        colorValue    += color.blue();
-        colorValue    += color.green();
-        colorValue     = colorValue / 3;
-
+        QColor color = qApp->palette().color(qApp->activeWindow()->backgroundRole());
         QString iconTheme;
         QString msgText;
 
-        if (colorValue > 127)
+        if (color.lightness() > 127)
         {
             msgText   = i18n("You have chosen a bright color scheme. We switch "
                              "to a dark icon theme. The icon theme is "
