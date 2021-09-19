@@ -31,7 +31,6 @@
 #include <QPushButton>
 #include <QVBoxLayout>
 #include <QApplication>
-#include <QStyle>
 #include <QUrl>
 #include <QListWidget>
 #include <QIcon>
@@ -145,7 +144,6 @@ ShowfotoFolderViewBookmarks::ShowfotoFolderViewBookmarks(ShowfotoFolderViewSideB
       d      (new Private)
 {
     d->sidebar              = sidebar;
-    const int spacing       = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
     QGridLayout* const grid = new QGridLayout(this);
 
     QLabel* const title     = new QLabel(this);
@@ -182,7 +180,6 @@ ShowfotoFolderViewBookmarks::ShowfotoFolderViewBookmarks(ShowfotoFolderViewSideB
     grid->setRowStretch(1, 10);
     grid->setColumnStretch(1, 10);
     grid->setContentsMargins(0, 0, 0, 0);
-    grid->setSpacing(spacing);
 
     // --------------------------------------------------------
 
