@@ -433,9 +433,11 @@ void ItemScanner::scanFaces()
 
 void ItemScanner::commitFaces()
 {
+    FaceTagsEditor editor;
     QSize size      = d->img.size();
     int orientation = d->img.orientation();
     QMap<QString, QVariant>::const_iterator it;
+    const QList<QRect>& databaseRects = editor.getTagRects(d->scanInfo.id);
 
     for (it = d->commit.metadataFacesMap.constBegin() ; it != d->commit.metadataFacesMap.constEnd() ; ++it)
     {
@@ -461,7 +463,6 @@ void ItemScanner::commitFaces()
         QRect rect = TagRegion::relativeToAbsolute(rectF, size);
         TagRegion::adjustToOrientation(rect, orientation, size);
         TagRegion region(rect);
-        FaceTagsEditor editor;
 
         if (name.isEmpty())
         {
@@ -476,6 +477,14 @@ void ItemScanner::commitFaces()
 
             if (tagId)
             {
+                // We have a confirmed face, remove an unknown
+                // or unconfirmed face from the database.
+
+                if (databaseRects.contains(rect))
+                {
+                    editor.removeFace(d->scanInfo.id, rect);
+                }
+
                 editor.add(d->scanInfo.id, tagId, region, false);
             }
             else
