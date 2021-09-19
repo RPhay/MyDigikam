@@ -64,6 +64,7 @@ public:
     explicit Private()
       : create         (false),
         topLabel       (nullptr),
+        icon           (QLatin1String("folder")),
         iconButton     (nullptr),
         resetIconButton(nullptr),
         buttons        (nullptr),
@@ -108,13 +109,13 @@ ShowfotoFolderViewBookmarkDlg::ShowfotoFolderViewBookmarkDlg(ShowfotoFolderViewB
         setWindowTitle(i18n("Edit Bookmark"));
     }
 
-    QWidget* const page = new QWidget(this);
+    QWidget* const page      = new QWidget(this);
 
     // --------------------------------------------------------
 
-    QGridLayout* const grid = new QGridLayout(page);
+    QGridLayout* const grid  = new QGridLayout(page);
 
-    d->topLabel             = new QLabel(page);
+    d->topLabel              = new QLabel(page);
     d->topLabel->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
     d->topLabel->setWordWrap(false);
 
@@ -134,14 +135,11 @@ ShowfotoFolderViewBookmarkDlg::ShowfotoFolderViewBookmarkDlg(ShowfotoFolderViewB
 
     d->iconButton               = new QPushButton(page);
     d->iconButton->setFixedSize(40, 40);
-    d->iconButton->setIcon(QIcon::fromTheme(QLatin1String("folder")));
+    d->iconButton->setIcon(QIcon::fromTheme(d->icon));
     iconTextLabel->setBuddy(d->iconButton);
 
-    // In create mode, by default assign the icon of the parent (if not root) to this new tag.
-
-    d->icon = QLatin1String("folder");
-
-    d->resetIconButton = new QPushButton(QIcon::fromTheme(QLatin1String("view-refresh")), i18n("Reset"), page);
+    d->resetIconButton          = new QPushButton(QIcon::fromTheme(QLatin1String("view-refresh")),
+                                                  i18n("Reset"), page);
 
 #ifndef HAVE_KICONTHEMES
 

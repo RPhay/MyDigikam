@@ -165,8 +165,11 @@ ShowfotoFolderViewBookmarks::ShowfotoFolderViewBookmarks(ShowfotoFolderViewSideB
     d->edtBtn               = new QPushButton(this);
 
     d->addBtn->setIcon(QIcon::fromTheme(QLatin1String("list-add")));
+    d->addBtn->setToolTip(i18nc("@info", "Add new bookmark to the list"));
     d->delBtn->setIcon(QIcon::fromTheme(QLatin1String("list-remove")));
+    d->delBtn->setToolTip(i18nc("@info", "Remove selected bookmark from the list"));
     d->edtBtn->setIcon(QIcon::fromTheme(QLatin1String("document-edit")));
+    d->edtBtn->setToolTip(i18nc("@info", "Edit current bookmark from the list"));
     d->delBtn->setEnabled(false);
     d->edtBtn->setEnabled(false);
 
