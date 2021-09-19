@@ -1334,7 +1334,11 @@ void SidebarSplitter::restoreState(KConfigGroup& group, const QString& key)
     {
         QByteArray state;
         state = group.readEntry(key, state);
-        QSplitter::restoreState(QByteArray::fromBase64(state));
+
+        if (!state.isEmpty())
+        {
+            QSplitter::restoreState(QByteArray::fromBase64(state));
+        }
     }
 }
 
