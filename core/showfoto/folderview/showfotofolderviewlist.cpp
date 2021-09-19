@@ -118,6 +118,13 @@ ShowfotoFolderViewList::ShowfotoFolderViewList(ShowfotoFolderViewSideBar* const 
     d->fsmenu->addSeparator(),
     d->fsmenu->addAction(d->bar->toolBarAction(QLatin1String("LoadContents")));
 
+    QAction* const addBookmark  = new QAction(QIcon::fromTheme(QLatin1String("list-add")),
+                                              i18nc("@action: context menu", "Add Bokmark"), this);
+    d->fsmenu->addAction(addBookmark);
+
+    connect(addBookmark, SIGNAL(triggered()),
+            this, SIGNAL(signalAddBookmark()));
+
     QAction* const openFileMngr = new QAction(QIcon::fromTheme(QLatin1String("folder-open")),
                                               i18nc("@action: context menu", "Open in File Manager"), this);
     d->fsmenu->addAction(openFileMngr);

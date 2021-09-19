@@ -200,6 +200,9 @@ ShowfotoFolderViewBookmarks::ShowfotoFolderViewBookmarks(ShowfotoFolderViewSideB
 
     connect(d->edtBtn, SIGNAL(clicked()),
             this, SLOT(slotEdtBookmark()));
+
+    connect(d->sidebar, SIGNAL(signalAddBookmark()),
+            this, SLOT(slotAddBookmark()));
 }
 
 ShowfotoFolderViewBookmarks::~ShowfotoFolderViewBookmarks()

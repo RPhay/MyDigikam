@@ -72,6 +72,10 @@ public Q_SLOTS:
 
     void slotIconSizeChanged(int);
 
+Q_SIGNALS:
+
+    void signalAddBookmark();
+
 private:
 
     void mouseDoubleClickEvent(QMouseEvent*)                            override;

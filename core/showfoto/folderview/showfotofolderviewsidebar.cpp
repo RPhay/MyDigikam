@@ -153,6 +153,9 @@ ShowfotoFolderViewSideBar::ShowfotoFolderViewSideBar(QWidget* const parent)
 
     connect(d->fsstack, SIGNAL(canRedoChanged(bool)),
             d->fsbar, SLOT(slotNextEnabled(bool)));
+
+    connect(d->fsview, SIGNAL(signalAddBookmark()),
+            this, SIGNAL(signalAddBookmark()));
 }
 
 ShowfotoFolderViewSideBar::~ShowfotoFolderViewSideBar()

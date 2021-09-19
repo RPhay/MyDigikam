@@ -86,6 +86,7 @@ private Q_SLOTS:
 
 Q_SIGNALS:
 
+    void signalAddBookmark();
     void signalSetup();
     void signalCurrentPathChanged(const QString& path);
 
