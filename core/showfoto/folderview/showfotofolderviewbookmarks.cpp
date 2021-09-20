@@ -33,8 +33,6 @@
 #include <QVBoxLayout>
 #include <QApplication>
 #include <QUrl>
-#include <QTreeWidget>
-#include <QHeaderView>
 #include <QIcon>
 #include <QMessageBox>
 
@@ -48,32 +46,10 @@
 #include "thumbnailsize.h"
 #include "showfotofolderviewsidebar.h"
 #include "showfotofolderviewbookmarkdlg.h"
+#include "showfotofolderviewbookmarklist.h"
 
 namespace ShowFoto
 {
-
-ShowfotoFolderViewBookmarkItem::ShowfotoFolderViewBookmarkItem(QTreeWidgetItem* const parent)
-    : QTreeWidgetItem(parent)
-{
-    setDisabled(false);
-    setSelected(false);
-}
-
-ShowfotoFolderViewBookmarkItem::~ShowfotoFolderViewBookmarkItem()
-{
-}
-
-void ShowfotoFolderViewBookmarkItem::setPath(const QString& path)
-{
-    m_path = path;
-}
-
-QString ShowfotoFolderViewBookmarkItem::path() const
-{
-    return m_path;
-}
-
-// ---------------------------------------------------------------------
 
 class Q_DECL_HIDDEN ShowfotoFolderViewBookmarks::Private
 {
@@ -128,18 +104,18 @@ public:
 
 public:
 
-    static const QString       configBookmarkItemsEntry;
-    static const QString       configBookmarkPathPrefixEntry;
-    static const QString       configBookmarkTitlePrefixEntry;
-    static const QString       configBookmarkIconPrefixEntry;
+    static const QString            configBookmarkItemsEntry;
+    static const QString            configBookmarkPathPrefixEntry;
+    static const QString            configBookmarkTitlePrefixEntry;
+    static const QString            configBookmarkIconPrefixEntry;
 
-    QPushButton*               addBtn;
-    QPushButton*               delBtn;
-    QPushButton*               edtBtn;
-    QTreeWidget*               bookmarksList;
-    QTreeWidgetItem*           topBookmarks;
-    QTreeWidgetItem*           topUsualPlaces;
-    ShowfotoFolderViewSideBar* sidebar;
+    QPushButton*                    addBtn;
+    QPushButton*                    delBtn;
+    QPushButton*                    edtBtn;
+    ShowfotoFolderViewBookmarkList* bookmarksList;
+    QTreeWidgetItem*                topBookmarks;
+    QTreeWidgetItem*                topUsualPlaces;
+    ShowfotoFolderViewSideBar*      sidebar;
 };
 
 const QString ShowfotoFolderViewBookmarks::Private::configBookmarkItemsEntry(QLatin1String("BookmarkItems"));
@@ -159,18 +135,7 @@ ShowfotoFolderViewBookmarks::ShowfotoFolderViewBookmarks(ShowfotoFolderViewSideB
 
     // --------------------------------------------------------
 
-    d->bookmarksList        = new QTreeWidget(this);
-    d->bookmarksList->setWhatsThis(i18nc("@info", "You can add or remove bookmarked places here."));
-    d->bookmarksList->setAlternatingRowColors(true);
-    d->bookmarksList->setColumnCount(1);
-    d->bookmarksList->setHeaderHidden(true);
-    d->bookmarksList->setSortingEnabled(true);
-    d->bookmarksList->setAllColumnsShowFocus(true);
-    d->bookmarksList->sortByColumn(0, Qt::AscendingOrder);
-    d->bookmarksList->setSelectionMode(QAbstractItemView::SingleSelection);
-    d->bookmarksList->header()->setSectionResizeMode(QHeaderView::Stretch);
-    d->bookmarksList->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
-
+    d->bookmarksList        = new ShowfotoFolderViewBookmarkList(this);
     d->addBtn               = new QPushButton(this);
     d->delBtn               = new QPushButton(this);
     d->edtBtn               = new QPushButton(this);

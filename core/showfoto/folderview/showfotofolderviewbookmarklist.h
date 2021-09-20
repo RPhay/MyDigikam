@@ -21,41 +21,47 @@
  *
  * ============================================================ */
 
-#ifndef SHOWFOTO_FOLDER_VIEW_BOOKMARKS_H
-#define SHOWFOTO_FOLDER_VIEW_BOOKMARKS_H
+#ifndef SHOWFOTO_FOLDER_VIEW_BOOKMARK_LIST_H
+#define SHOWFOTO_FOLDER_VIEW_BOOKMARK_LIST_H
 
 // Qt includes
 
-#include <QWidget>
 #include <QString>
+#include <QTreeWidget>
 #include <QTreeWidgetItem>
-
-class KConfigGroup;
 
 namespace ShowFoto
 {
 
-class ShowfotoFolderViewSideBar;
+class ShowfotoFolderViewBookmarkItem : public QTreeWidgetItem
+{
 
-class ShowfotoFolderViewBookmarks : public QWidget
+public:
+
+    explicit ShowfotoFolderViewBookmarkItem(QTreeWidgetItem* const parent);
+    ~ShowfotoFolderViewBookmarkItem()    override;
+
+    void setPath(const QString&);
+    QString path()      const;
+
+private:
+
+    QString m_path;
+
+    Q_DISABLE_COPY(ShowfotoFolderViewBookmarkItem)
+};
+
+// -------------------------------------------------------------------
+
+
+class ShowfotoFolderViewBookmarkList : public QTreeWidget
 {
     Q_OBJECT
 
 public:
 
-    explicit ShowfotoFolderViewBookmarks(ShowfotoFolderViewSideBar* const sidebar);
-    ~ShowfotoFolderViewBookmarks() override;
-
-    void saveSettings(KConfigGroup&);
-    void readSettings(const KConfigGroup&);
-
-private Q_SLOTS:
-
-    void slotBookmarkDoubleClicked(QTreeWidgetItem*);
-    void slotBookmarkSelectionChanged();
-    void slotAddBookmark();
-    void slotDelBookmark();
-    void slotEdtBookmark();
+    explicit ShowfotoFolderViewBookmarkList(QWidget* const parent);
+    ~ShowfotoFolderViewBookmarkList() override;
 
 private:
 
@@ -65,4 +71,4 @@ private:
 
 } // namespace ShowFoto
 
-#endif // SHOWFOTO_FOLDER_VIEW_BOOKMARKS_H
+#endif // SHOWFOTO_FOLDER_VIEW_BOOKMARK_LIST_H
