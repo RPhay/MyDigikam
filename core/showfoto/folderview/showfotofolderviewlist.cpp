@@ -119,7 +119,7 @@ ShowfotoFolderViewList::ShowfotoFolderViewList(ShowfotoFolderViewSideBar* const 
     d->fsmenu->addAction(d->bar->toolBarAction(QLatin1String("LoadContents")));
 
     QAction* const addBookmark  = new QAction(QIcon::fromTheme(QLatin1String("list-add")),
-                                              i18nc("@action: context menu", "Add Bokmark"), this);
+                                              i18nc("@action: context menu", "Add Bookmark"), this);
     d->fsmenu->addAction(addBookmark);
 
     connect(addBookmark, SIGNAL(triggered()),
