@@ -105,7 +105,7 @@ public:
     QString                          title;
 
     Template                         copyrightTemplate;
-    QMap<QString,QVariant>           metadataFacesMap;
+    QMultiMap<QString, QVariant>     metadataFacesMap;
 
     QVariantList                     iptcCoreMetadataInfos;
 

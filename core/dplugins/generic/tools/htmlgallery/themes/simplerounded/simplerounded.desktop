@@ -289,7 +289,7 @@ Default=#d8ffd3
 
 [X-HTMLGallery Parameter listBackground]
 Name=Icon background
-Name[ca]=Fons per a les icones
+Name[ca]=Fons de les icones
 Name[ca@valencia]=Fons per a les icones
 Name[cs]=Pozadí ikony
 Name[de]=Symbol-Hintergrund
@@ -321,7 +321,7 @@ Default=#78ca97
 
 [X-HTMLGallery Parameter navigationColor]
 Name= Background of the navigation
-Name[ca]=Fons per a la navegació
+Name[ca]=Fons de la navegació
 Name[ca@valencia]=Fons per a la navegació
 Name[de]=Hintergrund der Navigationsleiste
 Name[el]= Φόντο της πλοήγησης
@@ -352,7 +352,7 @@ Default=#a7dccf
 
 [X-HTMLGallery Parameter thumbBorderColor]
 Name=Thumbnail border
-Name[ca]=Vora per a les miniatures
+Name[ca]=Vora de les miniatures
 Name[ca@valencia]=Vora per a les miniatures
 Name[cs]=Okraj náhledu
 Name[de]=Rand der Vorschaubilder

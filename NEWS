@@ -151,7 +151,7 @@ BUGFIXES:
 137 ==> 440296 - Slow database operations and crashes with Mariadb 10.6.3.
 138 ==> 442610 - Selection of albums for face scanning does not recurse.
 139 ==> 442641 - Showfoto have only 1 theme - Default.
-140 ==> 
+140 ==> 442686 - Face suggestion does not disappear if the same face has already been tagged in another device.
 141 ==> 
 142 ==> 
 143 ==> 
