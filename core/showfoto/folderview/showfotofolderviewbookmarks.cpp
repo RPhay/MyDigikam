@@ -155,12 +155,12 @@ ShowfotoFolderViewBookmarks::ShowfotoFolderViewBookmarks(ShowfotoFolderViewSideB
     QGridLayout* const grid = new QGridLayout(this);
 
     QLabel* const title     = new QLabel(this);
-    title->setText(i18n("Places"));
+    title->setText(i18nc("@title", "Places"));
 
     // --------------------------------------------------------
 
     d->bookmarksList        = new QTreeWidget(this);
-    d->bookmarksList->setWhatsThis(i18n("You can add or remove bookmarked places here."));
+    d->bookmarksList->setWhatsThis(i18nc("@info", "You can add or remove bookmarked places here."));
     d->bookmarksList->setAlternatingRowColors(true);
     d->bookmarksList->setColumnCount(1);
     d->bookmarksList->setHeaderHidden(true);
@@ -255,8 +255,8 @@ void ShowfotoFolderViewBookmarks::slotAddBookmark()
     }
 
     QMessageBox::information(this,
-                             i18n("Add New Bookmark"),
-                             i18n("This bookmark referencing\n%1\nalready exists in the list with name \"%2\".",
+                             i18nc("@title: window", "Add New Bookmark"),
+                             i18nc("@info", "This bookmark referencing\n%1\nalready exists in the list with name \"%2\".",
                              item->path(), item->text(0)));
 }
 
@@ -265,6 +265,13 @@ void ShowfotoFolderViewBookmarks::slotDelBookmark()
     QTreeWidgetItem* const item = d->bookmarksList->currentItem();
 
     if (!item || (item->parent() != d->topBookmarks))
+    {
+        return;
+    }
+
+    if (QMessageBox::question(this, i18nc("@title: window", "Confirm Bookmark Deletion"),
+                              i18nc("@info", "Are you sure you want to remove the bookmark \"%1\"?", item->text(0)))
+            != QMessageBox::Yes)
     {
         return;
     }
@@ -303,8 +310,8 @@ void ShowfotoFolderViewBookmarks::slotEdtBookmark()
             }
 
             QMessageBox::information(this,
-                                     i18n("Edit Bookmark"),
-                                     i18n("This bookmark referencing\n%1\nalready exists in the list with name \"%2\".",
+                                     i18nc("@title: window", "Edit Bookmark"),
+                                     i18nc("@info", "This bookmark referencing\n%1\nalready exists in the list with name \"%2\".",
                                      nitem->path(), nitem->text(0)));
         }
     }
@@ -366,7 +373,7 @@ void ShowfotoFolderViewBookmarks::readSettings(const KConfigGroup& group)
     d->topBookmarks->setFlags(Qt::ItemIsEnabled);
     d->topBookmarks->setExpanded(true);
     d->topBookmarks->setDisabled(false);
-    d->topBookmarks->setText(0, i18n("Bookmarks"));
+    d->topBookmarks->setText(0, i18nc("@title", "Bookmarks"));
 
     QString confEntry;
     int nbItems = group.readEntry(d->configBookmarkItemsEntry, 0);
@@ -397,41 +404,41 @@ void ShowfotoFolderViewBookmarks::readSettings(const KConfigGroup& group)
     d->topUsualPlaces->setFlags(Qt::ItemIsEnabled);
     d->topUsualPlaces->setExpanded(true);
     d->topUsualPlaces->setDisabled(false);
-    d->topUsualPlaces->setText(0, i18n("Usual"));
+    d->topUsualPlaces->setText(0, i18nc("@title", "Usual"));
 
     ShowfotoFolderViewBookmarkItem* uplace = nullptr;
     uplace                                 = new ShowfotoFolderViewBookmarkItem(d->topUsualPlaces);
-    uplace->setText(0, i18n("Home"));
+    uplace->setText(0, i18nc("@item", "Home"));
     uplace->setIcon(0, QIcon::fromTheme(QLatin1String("user-home")));
     uplace->setPath(QStandardPaths::writableLocation(QStandardPaths::HomeLocation));
 
     uplace                                 = new ShowfotoFolderViewBookmarkItem(d->topUsualPlaces);
-    uplace->setText(0, i18n("Pictures"));
+    uplace->setText(0, i18nc("@item", "Pictures"));
     uplace->setIcon(0, QIcon::fromTheme(QLatin1String("folder-image")));
     uplace->setPath(QStandardPaths::writableLocation(QStandardPaths::PicturesLocation));
 
     uplace                                 = new ShowfotoFolderViewBookmarkItem(d->topUsualPlaces);
-    uplace->setText(0, i18n("Documents"));
+    uplace->setText(0, i18nc("@item", "Documents"));
     uplace->setIcon(0, QIcon::fromTheme(QLatin1String("folder-document")));
     uplace->setPath(QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation));
 
     uplace                                 = new ShowfotoFolderViewBookmarkItem(d->topUsualPlaces);
-    uplace->setText(0, i18n("Downloads"));
+    uplace->setText(0, i18nc("@item", "Downloads"));
     uplace->setIcon(0, QIcon::fromTheme(QLatin1String("folder-downloads")));
     uplace->setPath(QStandardPaths::writableLocation(QStandardPaths::DownloadLocation));
 
     uplace                                 = new ShowfotoFolderViewBookmarkItem(d->topUsualPlaces);
-    uplace->setText(0, i18n("Desktop"));
+    uplace->setText(0, i18nc("@item", "Desktop"));
     uplace->setIcon(0, QIcon::fromTheme(QLatin1String("user-desktop")));
     uplace->setPath(QStandardPaths::writableLocation(QStandardPaths::DesktopLocation));
 
     uplace                                 = new ShowfotoFolderViewBookmarkItem(d->topUsualPlaces);
-    uplace->setText(0, i18n("Music"));
+    uplace->setText(0, i18nc("@item", "Music"));
     uplace->setIcon(0, QIcon::fromTheme(QLatin1String("folder-music")));
     uplace->setPath(QStandardPaths::writableLocation(QStandardPaths::MusicLocation));
 
     uplace                                 = new ShowfotoFolderViewBookmarkItem(d->topUsualPlaces);
-    uplace->setText(0, i18n("Videos"));
+    uplace->setText(0, i18nc("@item", "Videos"));
     uplace->setIcon(0, QIcon::fromTheme(QLatin1String("folder-videos")));
     uplace->setPath(QStandardPaths::writableLocation(QStandardPaths::MoviesLocation));
 }
