@@ -53,6 +53,7 @@ private Q_SLOTS:
 
     void slotBookmarkDoubleClicked(QTreeWidgetItem*);
     void slotBookmarkSelectionChanged();
+    void slotAddBookmark(const QString&);
     void slotAddBookmark();
     void slotDelBookmark();
     void slotEdtBookmark();

@@ -27,10 +27,19 @@
 
 #include <QTreeWidget>
 #include <QHeaderView>
+#include <QMimeData>
+#include <QFileInfo>
+#include <QUrl>
+#include <QList>
+#include <QDir>
 
 // KDE includes
 
 #include <klocalizedstring.h>
+
+// Local include
+
+#include "digikam_debug.h"
 
 namespace ShowFoto
 {
@@ -83,11 +92,69 @@ ShowfotoFolderViewBookmarkList::ShowfotoFolderViewBookmarkList(QWidget* const pa
     setSelectionMode(QAbstractItemView::SingleSelection);
     header()->setSectionResizeMode(QHeaderView::Stretch);
     setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+    setAcceptDrops(true);
+    viewport()->setAcceptDrops(true);
+    setDropIndicatorShown(true);
+    viewport()->setMouseTracking(true);
 }
 
 ShowfotoFolderViewBookmarkList::~ShowfotoFolderViewBookmarkList()
 {
     delete d;
+}
+
+void ShowfotoFolderViewBookmarkList::dragEnterEvent(QDragEnterEvent* e)
+{
+    QTreeWidget::dragEnterEvent(e);
+    e->accept();
+}
+
+void ShowfotoFolderViewBookmarkList::dragMoveEvent(QDragMoveEvent* e)
+{
+    if (e->mimeData()->hasUrls())
+    {
+        QList<QUrl> urls = e->mimeData()->urls();
+
+        QFileInfo inf(urls.first().toLocalFile());
+
+        if (inf.isDir())
+        {
+            QTreeWidget::dragMoveEvent(e);
+            e->accept();
+            return;
+        }
+    }
+
+    e->ignore();
+}
+
+void ShowfotoFolderViewBookmarkList::dropEvent(QDropEvent* e)
+{
+    if (e->mimeData()->hasUrls())
+    {
+        QList<QUrl> urls = e->mimeData()->urls();
+
+        QFileInfo inf(urls.first().toLocalFile());
+
+        if (inf.isDir())
+        {
+            QTreeWidget::dropEvent(e);
+
+            QString path = inf.filePath();
+
+            if (!path.endsWith(QDir::separator()))
+            {
+                path.append(QDir::separator());
+            }
+
+            emit signalAddBookmark(path);
+
+            e->acceptProposedAction();
+            return;
+        }
+    }
+
+    e->ignore();
 }
 
 } // namespace ShowFoto

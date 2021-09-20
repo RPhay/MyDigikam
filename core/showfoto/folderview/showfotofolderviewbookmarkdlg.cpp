@@ -196,9 +196,6 @@ ShowfotoFolderViewBookmarkDlg::ShowfotoFolderViewBookmarkDlg(ShowfotoFolderViewB
     connect(d->buttons->button(QDialogButtonBox::Cancel), SIGNAL(clicked()),
             this, SLOT(reject()));
 
-    connect(d->buttons->button(QDialogButtonBox::Help), SIGNAL(clicked()),
-            this, SLOT(slotHelp()));
-
     // --------------------------------------------------------
 
     d->titleEdit->setFocus();

@@ -43,6 +43,7 @@
 
 // Local includes
 
+#include "digikam_debug.h"
 #include "thumbnailsize.h"
 #include "showfotofolderviewsidebar.h"
 #include "showfotofolderviewbookmarkdlg.h"
@@ -178,6 +179,9 @@ ShowfotoFolderViewBookmarks::ShowfotoFolderViewBookmarks(ShowfotoFolderViewSideB
 
     connect(d->sidebar, SIGNAL(signalAddBookmark()),
             this, SLOT(slotAddBookmark()));
+
+    connect(d->bookmarksList, SIGNAL(signalAddBookmark(QString)),
+            this, SLOT(slotAddBookmark(QString)));
 }
 
 ShowfotoFolderViewBookmarks::~ShowfotoFolderViewBookmarks()
@@ -188,6 +192,12 @@ ShowfotoFolderViewBookmarks::~ShowfotoFolderViewBookmarks()
 void ShowfotoFolderViewBookmarks::slotAddBookmark()
 {
     QString newBookmark = d->sidebar->currentFolder();
+    slotAddBookmark(newBookmark);
+}
+
+void ShowfotoFolderViewBookmarks::slotAddBookmark(const QString& newBookmark)
+{
+    qCDebug(DIGIKAM_GENERAL_LOG) << newBookmark;
 
     if (newBookmark.isEmpty())
     {
@@ -216,6 +226,10 @@ void ShowfotoFolderViewBookmarks::slotAddBookmark()
                 item->setPath(path);
                 return;
             }
+        }
+        else
+        {
+            return;
         }
     }
 

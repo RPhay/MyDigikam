@@ -29,6 +29,9 @@
 #include <QString>
 #include <QTreeWidget>
 #include <QTreeWidgetItem>
+#include <QDragEnterEvent>
+#include <QDragMoveEvent>
+#include <QDropEvent>
 
 namespace ShowFoto
 {
@@ -62,6 +65,16 @@ public:
 
     explicit ShowfotoFolderViewBookmarkList(QWidget* const parent);
     ~ShowfotoFolderViewBookmarkList() override;
+
+Q_SIGNALS:
+
+    void signalAddBookmark(const QString& path);
+
+private:
+
+    void dragEnterEvent(QDragEnterEvent*);
+    void dragMoveEvent(QDragMoveEvent*);
+    void dropEvent(QDropEvent*);
 
 private:
 
