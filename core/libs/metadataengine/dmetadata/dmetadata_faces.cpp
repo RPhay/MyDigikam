@@ -132,26 +132,9 @@ bool DMetadata::getItemFacesMap(QMultiMap<QString, QVariant>& faces) const
 
         if (rect != QRectF(0.0, 0.0, 1.0, 1.0))
         {
-            // Do not add faces twice that have already
-            // been found in Xmp.MP.RegionInfo.
+            faces.insert(person, rect);
 
-            bool foundRect = false;
-
-            foreach (const QVariant& varRect, faces.values(person))
-            {
-                if (varRect.toRect() == rect.toRect())
-                {
-                    foundRect = true;
-                    break;
-                }
-            }
-
-            if (!foundRect)
-            {
-                faces.insert(person, rect);
-
-                qCDebug(DIGIKAM_METAENGINE_LOG) << "Found new rect:" << person << rect;
-            }
+            qCDebug(DIGIKAM_METAENGINE_LOG) << "Found new rect:" << person << rect;
         }
     }
 
