@@ -152,7 +152,7 @@ BUGFIXES:
 138 ==> 442610 - Selection of albums for face scanning does not recurse.
 139 ==> 442641 - Showfoto have only 1 theme - Default.
 140 ==> 442686 - Face suggestion does not disappear if the same face has already been tagged in another device.
-141 ==> 
+141 ==> 442713 - Shortcut key conflict (Ctrl+Alt+I).
 142 ==> 
 143 ==> 
 144 ==> 
