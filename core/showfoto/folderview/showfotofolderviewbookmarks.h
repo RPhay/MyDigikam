@@ -29,7 +29,7 @@
 #include <QWidget>
 #include <QIcon>
 #include <QString>
-#include <QListWidgetItem>
+#include <QTreeWidgetItem>
 
 class KConfigGroup;
 
@@ -38,12 +38,12 @@ namespace ShowFoto
 
 class ShowfotoFolderViewSideBar;
 
-class ShowfotoFolderViewBookmarkItem : public QListWidgetItem
+class ShowfotoFolderViewBookmarkItem : public QTreeWidgetItem
 {
 
 public:
 
-    explicit ShowfotoFolderViewBookmarkItem(QListWidget* const parent = nullptr);
+    explicit ShowfotoFolderViewBookmarkItem(QTreeWidgetItem* const parent);
     ~ShowfotoFolderViewBookmarkItem()    override;
 
     void setPath(const QString&);
@@ -73,7 +73,7 @@ public:
 
 private Q_SLOTS:
 
-    void slotBookmarkDoubleClicked(QListWidgetItem*);
+    void slotBookmarkDoubleClicked(QTreeWidgetItem*);
     void slotBookmarkSelectionChanged();
     void slotAddBookmark();
     void slotDelBookmark();
