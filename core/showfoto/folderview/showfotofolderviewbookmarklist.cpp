@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2021-08-27
- * Description : Showfoto folder view bookmark places
+ * Description : Showfoto folder view bookmarks list
  *
  * Copyright (C) 2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
@@ -211,30 +211,7 @@ void ShowfotoFolderViewBookmarkList::startDrag(Qt::DropActions /*supportedAction
     {
         return;
     }
-/*
-    QPixmap icon(QIcon::fromTheme(QLatin1String("image-jpeg")).pixmap(48));
-    int w = icon.width();
-    int h = icon.height();
 
-    QPixmap pix(w + 4, h + 4);
-    QString text(QString::number(items.count()));
-
-    QPainter p(&pix);
-    p.fillRect(0, 0, pix.width() - 1, pix.height() - 1, QColor(Qt::white));
-    p.setPen(QPen(Qt::black, 1));
-    p.drawRect(0, 0, pix.width() - 1, pix.height() - 1);
-    p.drawPixmap(2, 2, icon);
-    QRect r = p.boundingRect(2, 2, w, h, Qt::AlignLeft | Qt::AlignTop, text);
-    r.setWidth(qMax(r.width(), r.height()));
-    r.setHeight(qMax(r.width(), r.height()));
-    p.fillRect(r, QColor(0, 80, 0));
-    p.setPen(Qt::white);
-    QFont f(font());
-    f.setBold(true);
-    p.setFont(f);
-    p.drawText(r, Qt::AlignCenter, text);
-    p.end();
-*/
     QDrag* const drag = new QDrag(this);
     drag->setMimeData(mimeData(items));
     drag->exec();

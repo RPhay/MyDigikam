@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2021-08-27
- * Description : Showfoto folder view bookmark places
+ * Description : Showfoto folder view bookmarks list
  *
  * Copyright (C) 2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
