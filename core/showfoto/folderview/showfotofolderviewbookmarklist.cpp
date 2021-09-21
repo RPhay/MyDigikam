@@ -32,6 +32,7 @@
 #include <QUrl>
 #include <QList>
 #include <QDir>
+#include <QDrag>
 
 // KDE includes
 
@@ -98,6 +99,7 @@ ShowfotoFolderViewBookmarkList::ShowfotoFolderViewBookmarkList(ShowfotoFolderVie
     header()->setSectionResizeMode(QHeaderView::Stretch);
     setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     setAcceptDrops(true);
+    setDragEnabled(true);
     viewport()->setAcceptDrops(true);
     setDropIndicatorShown(true);
     viewport()->setMouseTracking(true);
@@ -178,6 +180,64 @@ void ShowfotoFolderViewBookmarkList::dropEvent(QDropEvent* e)
     }
 
     e->ignore();
+}
+
+// cppcheck-suppress passedByValue
+QMimeData* ShowfotoFolderViewBookmarkList::mimeData(const QList<QTreeWidgetItem*> items) const       // clazy:exclude=function-args-by-ref
+{
+    QList<QUrl> urls;
+
+    foreach (QTreeWidgetItem* const itm, items)
+    {
+        ShowfotoFolderViewBookmarkItem* const vitem = dynamic_cast<ShowfotoFolderViewBookmarkItem*>(itm);
+
+        if (vitem)
+        {
+            urls.append(QUrl::fromLocalFile(vitem->path()));
+        }
+    }
+
+    QMimeData* const data = new QMimeData;
+    data->setUrls(urls);
+
+    return data;
+}
+
+void ShowfotoFolderViewBookmarkList::startDrag(Qt::DropActions /*supportedActions*/)
+{
+    QList<QTreeWidgetItem*> items = selectedItems();
+
+    if (items.isEmpty())
+    {
+        return;
+    }
+/*
+    QPixmap icon(QIcon::fromTheme(QLatin1String("image-jpeg")).pixmap(48));
+    int w = icon.width();
+    int h = icon.height();
+
+    QPixmap pix(w + 4, h + 4);
+    QString text(QString::number(items.count()));
+
+    QPainter p(&pix);
+    p.fillRect(0, 0, pix.width() - 1, pix.height() - 1, QColor(Qt::white));
+    p.setPen(QPen(Qt::black, 1));
+    p.drawRect(0, 0, pix.width() - 1, pix.height() - 1);
+    p.drawPixmap(2, 2, icon);
+    QRect r = p.boundingRect(2, 2, w, h, Qt::AlignLeft | Qt::AlignTop, text);
+    r.setWidth(qMax(r.width(), r.height()));
+    r.setHeight(qMax(r.width(), r.height()));
+    p.fillRect(r, QColor(0, 80, 0));
+    p.setPen(Qt::white);
+    QFont f(font());
+    f.setBold(true);
+    p.setFont(f);
+    p.drawText(r, Qt::AlignCenter, text);
+    p.end();
+*/
+    QDrag* const drag = new QDrag(this);
+    drag->setMimeData(mimeData(items));
+    drag->exec();
 }
 
 } // namespace ShowFoto

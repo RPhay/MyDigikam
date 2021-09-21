@@ -65,7 +65,7 @@ class ShowfotoFolderViewBookmarkList : public QTreeWidget
 public:
 
     explicit ShowfotoFolderViewBookmarkList(ShowfotoFolderViewBookmarks* const parent);
-    ~ShowfotoFolderViewBookmarkList() override;
+    ~ShowfotoFolderViewBookmarkList()                              override;
 
 Q_SIGNALS:
 
@@ -76,6 +76,10 @@ private:
     void dragEnterEvent(QDragEnterEvent*);
     void dragMoveEvent(QDragMoveEvent*);
     void dropEvent(QDropEvent*);
+
+    // cppcheck-suppress passedByValue
+    QMimeData* mimeData(const QList<QTreeWidgetItem*> items) const override;
+    void       startDrag(Qt::DropActions supportedActions)         override;
 
 private:
 
