@@ -36,6 +36,8 @@
 namespace ShowFoto
 {
 
+class ShowfotoFolderViewBookmarks;
+
 class ShowfotoFolderViewBookmarkItem : public QTreeWidgetItem
 {
 
@@ -56,14 +58,13 @@ private:
 
 // -------------------------------------------------------------------
 
-
 class ShowfotoFolderViewBookmarkList : public QTreeWidget
 {
     Q_OBJECT
 
 public:
 
-    explicit ShowfotoFolderViewBookmarkList(QWidget* const parent);
+    explicit ShowfotoFolderViewBookmarkList(ShowfotoFolderViewBookmarks* const parent);
     ~ShowfotoFolderViewBookmarkList() override;
 
 Q_SIGNALS:

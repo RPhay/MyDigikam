@@ -40,6 +40,7 @@
 // Local include
 
 #include "digikam_debug.h"
+#include "showfotofolderviewbookmarks.h"
 
 namespace ShowFoto
 {
@@ -72,16 +73,20 @@ class Q_DECL_HIDDEN ShowfotoFolderViewBookmarkList::Private
 public:
 
     explicit Private()
+        : parent(nullptr)
     {
     }
 
 public:
+
+    ShowfotoFolderViewBookmarks* parent;
 };
 
-ShowfotoFolderViewBookmarkList::ShowfotoFolderViewBookmarkList(QWidget* const parent)
+ShowfotoFolderViewBookmarkList::ShowfotoFolderViewBookmarkList(ShowfotoFolderViewBookmarks* const parent)
     : QTreeWidget(parent),
       d          (new Private)
 {
+    d->parent = parent;
     setWhatsThis(i18nc("@info", "You can add or remove bookmarked places here."));
     setAlternatingRowColors(true);
     setColumnCount(1);
@@ -119,9 +124,18 @@ void ShowfotoFolderViewBookmarkList::dragMoveEvent(QDragMoveEvent* e)
 
         if (inf.isDir())
         {
-            QTreeWidget::dragMoveEvent(e);
-            e->accept();
-            return;
+            QTreeWidgetItem* const item                  = itemAt(e->pos());
+            ShowfotoFolderViewBookmarkItem* const fvitem = dynamic_cast<ShowfotoFolderViewBookmarkItem*>(item);
+
+            if (
+                (item == d->parent->topBookmarksItem()) ||
+                (fvitem && (fvitem->parent() == d->parent->topBookmarksItem()))
+               )
+            {
+                QTreeWidget::dragMoveEvent(e);
+                e->accept();
+                return;
+            }
         }
     }
 
@@ -138,19 +152,28 @@ void ShowfotoFolderViewBookmarkList::dropEvent(QDropEvent* e)
 
         if (inf.isDir())
         {
-            QTreeWidget::dropEvent(e);
+            QTreeWidgetItem* const item                  = itemAt(e->pos());
+            ShowfotoFolderViewBookmarkItem* const fvitem = dynamic_cast<ShowfotoFolderViewBookmarkItem*>(item);
 
-            QString path = inf.filePath();
-
-            if (!path.endsWith(QDir::separator()))
+            if (
+                (item == d->parent->topBookmarksItem()) ||
+                (fvitem && (fvitem->parent() == d->parent->topBookmarksItem()))
+               )
             {
-                path.append(QDir::separator());
+                QTreeWidget::dropEvent(e);
+
+                QString path = inf.filePath();
+
+                if (!path.endsWith(QDir::separator()))
+                {
+                    path.append(QDir::separator());
+                }
+
+                emit signalAddBookmark(path);
+
+                e->acceptProposedAction();
+                return;
             }
-
-            emit signalAddBookmark(path);
-
-            e->acceptProposedAction();
-            return;
         }
     }
 

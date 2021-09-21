@@ -189,6 +189,11 @@ ShowfotoFolderViewBookmarks::~ShowfotoFolderViewBookmarks()
     delete d;
 }
 
+QTreeWidgetItem* ShowfotoFolderViewBookmarks::topBookmarksItem() const
+{
+    return d->topBookmarks;
+}
+
 void ShowfotoFolderViewBookmarks::slotAddBookmark()
 {
     QString newBookmark = d->sidebar->currentFolder();

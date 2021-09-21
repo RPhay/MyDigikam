@@ -44,10 +44,12 @@ class ShowfotoFolderViewBookmarks : public QWidget
 public:
 
     explicit ShowfotoFolderViewBookmarks(ShowfotoFolderViewSideBar* const sidebar);
-    ~ShowfotoFolderViewBookmarks() override;
+    ~ShowfotoFolderViewBookmarks()            override;
 
     void saveSettings(KConfigGroup&);
     void readSettings(const KConfigGroup&);
+
+    QTreeWidgetItem* topBookmarksItem() const;
 
 private Q_SLOTS:
 
