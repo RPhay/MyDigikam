@@ -27,11 +27,13 @@
 // Qt includes
 
 #include <QString>
+#include <QPoint>
 #include <QTreeWidget>
 #include <QTreeWidgetItem>
 #include <QDragEnterEvent>
 #include <QDragMoveEvent>
 #include <QDropEvent>
+#include <QContextMenuEvent>
 
 namespace ShowFoto
 {
@@ -70,6 +72,10 @@ public:
 Q_SIGNALS:
 
     void signalAddBookmark(const QString& path);
+
+private Q_SLOTS:
+
+    void slotContextMenu(const QPoint& pos);
 
 private:
 

@@ -33,6 +33,7 @@
 #include <QList>
 #include <QDir>
 #include <QDrag>
+#include <QMenu>
 
 // KDE includes
 
@@ -74,12 +75,14 @@ class Q_DECL_HIDDEN ShowfotoFolderViewBookmarkList::Private
 public:
 
     explicit Private()
-        : parent(nullptr)
+        : ctxmenu(nullptr),
+          parent (nullptr)
     {
     }
 
 public:
 
+    QMenu*                       ctxmenu;
     ShowfotoFolderViewBookmarks* parent;
 };
 
@@ -103,11 +106,33 @@ ShowfotoFolderViewBookmarkList::ShowfotoFolderViewBookmarkList(ShowfotoFolderVie
     viewport()->setAcceptDrops(true);
     setDropIndicatorShown(true);
     viewport()->setMouseTracking(true);
+    setContextMenuPolicy(Qt::CustomContextMenu);
+
+    // --- Populate context menu
+
+    d->ctxmenu = new QMenu(this);
+    d->ctxmenu->setTitle(i18nc("@title", "Bookmarks"));
+    d->ctxmenu->addAction(d->parent->toolBarAction(QLatin1String("AddBookmark")));
+    d->ctxmenu->addAction(d->parent->toolBarAction(QLatin1String("DelBookmark")));
+    d->ctxmenu->addAction(d->parent->toolBarAction(QLatin1String("EditBookmark")));
+
+    connect(this, SIGNAL(customContextMenuRequested(QPoint)),
+            this, SLOT(slotContextMenu(QPoint)));
 }
 
 ShowfotoFolderViewBookmarkList::~ShowfotoFolderViewBookmarkList()
 {
     delete d;
+}
+
+void ShowfotoFolderViewBookmarkList::slotContextMenu(const QPoint& pos)
+{
+    ShowfotoFolderViewBookmarkItem* const fvitem = dynamic_cast<ShowfotoFolderViewBookmarkItem*>(itemAt(pos));
+
+    if (fvitem && (fvitem->parent() == d->parent->topBookmarksItem()))
+    {
+        d->ctxmenu->exec(mapToGlobal(pos));
+    }
 }
 
 void ShowfotoFolderViewBookmarkList::dragEnterEvent(QDragEnterEvent* e)

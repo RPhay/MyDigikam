@@ -26,6 +26,8 @@
 
 // Qt includes
 
+#include <QList>
+#include <QAction>
 #include <QWidget>
 #include <QString>
 #include <QTreeWidgetItem>
@@ -44,12 +46,14 @@ class ShowfotoFolderViewBookmarks : public QWidget
 public:
 
     explicit ShowfotoFolderViewBookmarks(ShowfotoFolderViewSideBar* const sidebar);
-    ~ShowfotoFolderViewBookmarks()            override;
+    ~ShowfotoFolderViewBookmarks()                     override;
 
     void saveSettings(KConfigGroup&);
     void readSettings(const KConfigGroup&);
 
-    QTreeWidgetItem* topBookmarksItem() const;
+    QTreeWidgetItem* topBookmarksItem()         const;
+
+    QAction* toolBarAction(const QString& name) const;
 
 private Q_SLOTS:
 

@@ -29,7 +29,7 @@
 #include <QStandardPaths>
 #include <QGridLayout>
 #include <QLabel>
-#include <QPushButton>
+#include <QToolButton>
 #include <QVBoxLayout>
 #include <QApplication>
 #include <QUrl>
@@ -110,9 +110,10 @@ public:
     static const QString            configBookmarkTitlePrefixEntry;
     static const QString            configBookmarkIconPrefixEntry;
 
-    QPushButton*                    addBtn;
-    QPushButton*                    delBtn;
-    QPushButton*                    edtBtn;
+    QList<QAction*>                 actionsList;                    ///< used to shared actions with list-view context menu.
+    QToolButton*                    addBtn;
+    QToolButton*                    delBtn;
+    QToolButton*                    edtBtn;
     ShowfotoFolderViewBookmarkList* bookmarksList;
     QTreeWidgetItem*                topBookmarks;
     QTreeWidgetItem*                topUsualPlaces;
@@ -136,19 +137,62 @@ ShowfotoFolderViewBookmarks::ShowfotoFolderViewBookmarks(ShowfotoFolderViewSideB
 
     // --------------------------------------------------------
 
-    d->bookmarksList        = new ShowfotoFolderViewBookmarkList(this);
-    d->addBtn               = new QPushButton(this);
-    d->delBtn               = new QPushButton(this);
-    d->edtBtn               = new QPushButton(this);
+    QAction* btnAction      = nullptr;
 
-    d->addBtn->setIcon(QIcon::fromTheme(QLatin1String("list-add")));
-    d->addBtn->setToolTip(i18nc("@info", "Add new bookmark to the list"));
-    d->delBtn->setIcon(QIcon::fromTheme(QLatin1String("list-remove")));
-    d->delBtn->setToolTip(i18nc("@info", "Remove selected bookmark from the list"));
-    d->edtBtn->setIcon(QIcon::fromTheme(QLatin1String("document-edit")));
-    d->edtBtn->setToolTip(i18nc("@info", "Edit current bookmark from the list"));
+    btnAction               = new QAction(this);
+    btnAction->setObjectName(QLatin1String("AddBookmark"));
+    btnAction->setIcon(QIcon::fromTheme(QLatin1String("list-add")));
+    btnAction->setText(i18nc("action", "Add Bookmark"));
+    btnAction->setToolTip(i18nc("@info", "Add new bookmark to the list"));
+
+    connect(btnAction, SIGNAL(triggered(bool)),
+            this, SLOT(slotAddBookmark()));
+
+    d->actionsList << btnAction;
+
+    d->addBtn               = new QToolButton(this);
+    d->addBtn->setDefaultAction(btnAction);
+    d->addBtn->setFocusPolicy(Qt::NoFocus);
+
+    // ---
+
+    btnAction               = new QAction(this);
+    btnAction->setObjectName(QLatin1String("DelBookmark"));
+    btnAction->setIcon(QIcon::fromTheme(QLatin1String("list-remove")));
+    btnAction->setText(i18nc("action", "Del Bookmark"));
+    btnAction->setToolTip(i18nc("@info", "Remove selected bookmark from the list"));
+
+    connect(btnAction, SIGNAL(triggered(bool)),
+            this, SLOT(slotDelBookmark()));
+
+    d->actionsList << btnAction;
+
+    d->delBtn               = new QToolButton(this);
+    d->delBtn->setDefaultAction(btnAction);
+    d->delBtn->setFocusPolicy(Qt::NoFocus);
     d->delBtn->setEnabled(false);
+
+    // ---
+
+    btnAction               = new QAction(this);
+    btnAction->setObjectName(QLatin1String("EditBookmark"));
+    btnAction->setIcon(QIcon::fromTheme(QLatin1String("document-edit")));
+    btnAction->setText(i18nc("action", "Edit Bookmark"));
+    btnAction->setToolTip(i18nc("@info", "Edit current bookmark from the list"));
+
+    connect(btnAction, SIGNAL(triggered(bool)),
+            this, SLOT(slotEdtBookmark()));
+
+    d->actionsList << btnAction;
+
+    d->edtBtn               = new QToolButton(this);
+    d->edtBtn->setDefaultAction(btnAction);
+    d->edtBtn->setFocusPolicy(Qt::NoFocus);
     d->edtBtn->setEnabled(false);
+
+    // ---
+
+    d->bookmarksList        = new ShowfotoFolderViewBookmarkList(this);
 
     grid->setAlignment(Qt::AlignTop);
     grid->addWidget(title,             0, 0, 1, 1);
@@ -168,15 +212,6 @@ ShowfotoFolderViewBookmarks::ShowfotoFolderViewBookmarks(ShowfotoFolderViewSideB
     connect(d->bookmarksList, SIGNAL(itemDoubleClicked(QTreeWidgetItem*,int)),
             this, SLOT(slotBookmarkDoubleClicked(QTreeWidgetItem*)));
 
-    connect(d->addBtn, SIGNAL(clicked()),
-            this, SLOT(slotAddBookmark()));
-
-    connect(d->delBtn, SIGNAL(clicked()),
-            this, SLOT(slotDelBookmark()));
-
-    connect(d->edtBtn, SIGNAL(clicked()),
-            this, SLOT(slotEdtBookmark()));
-
     connect(d->sidebar, SIGNAL(signalAddBookmark()),
             this, SLOT(slotAddBookmark()));
 
@@ -187,6 +222,19 @@ ShowfotoFolderViewBookmarks::ShowfotoFolderViewBookmarks(ShowfotoFolderViewSideB
 ShowfotoFolderViewBookmarks::~ShowfotoFolderViewBookmarks()
 {
     delete d;
+}
+
+QAction* ShowfotoFolderViewBookmarks::toolBarAction(const QString& name) const
+{
+    foreach (QAction* const act, d->actionsList)
+    {
+        if (act && (act->objectName() == name))
+        {
+            return act;
+        }
+    }
+
+    return nullptr;
 }
 
 QTreeWidgetItem* ShowfotoFolderViewBookmarks::topBookmarksItem() const
@@ -266,45 +314,42 @@ void ShowfotoFolderViewBookmarks::slotDelBookmark()
 
 void ShowfotoFolderViewBookmarks::slotEdtBookmark()
 {
-    if (!d->bookmarksList->selectedItems().isEmpty())
-    {
-        ShowfotoFolderViewBookmarkItem* const item = dynamic_cast<ShowfotoFolderViewBookmarkItem*>(d->bookmarksList->selectedItems().at(0));
+    ShowfotoFolderViewBookmarkItem* const item = dynamic_cast<ShowfotoFolderViewBookmarkItem*>(d->bookmarksList->currentItem());
 
-        if (!item || (item->parent() != d->topBookmarks))
+    if (!item || (item->parent() != d->topBookmarks))
+    {
+        return;
+    }
+
+    QString title = item->text(0);
+    QString icon  = item->icon(0).name();
+    QString path  = item->path();
+
+    bool ok = ShowfotoFolderViewBookmarkDlg::bookmarkEdit(this, title, icon, path);
+
+    if (ok && !path.isEmpty() && !title.isEmpty())
+    {
+        ShowfotoFolderViewBookmarkItem* const nitem = d->isBookmarkExist(path);
+
+        if (!nitem)
         {
+            item->setText(0, title);
+            item->setIcon(0, QIcon::fromTheme(icon));
+            item->setPath(path);
             return;
         }
 
-        QString title = item->text(0);
-        QString icon  = item->icon(0).name();
-        QString path  = item->path();
-
-        bool ok = ShowfotoFolderViewBookmarkDlg::bookmarkEdit(this, title, icon, path);
-
-        if (ok && !path.isEmpty() && !title.isEmpty())
-        {
-            ShowfotoFolderViewBookmarkItem* const nitem = d->isBookmarkExist(path);
-
-            if (!nitem)
-            {
-                item->setText(0, title);
-                item->setIcon(0, QIcon::fromTheme(icon));
-                item->setPath(path);
-                return;
-            }
-
-            QMessageBox::information(this,
-                                     i18nc("@title: window", "Edit Bookmark"),
-                                     i18nc("@info", "This bookmark referencing\n%1\nalready exists in the list with name \"%2\".",
-                                     nitem->path(), nitem->text(0)));
-        }
+        QMessageBox::information(this,
+                                 i18nc("@title: window", "Edit Bookmark"),
+                                 i18nc("@info", "This bookmark referencing\n%1\nalready exists in the list with name \"%2\".",
+                                 nitem->path(), nitem->text(0)));
     }
 }
 
 void ShowfotoFolderViewBookmarks::slotBookmarkSelectionChanged()
 {
     bool b                                     = true;
-    ShowfotoFolderViewBookmarkItem* const item = dynamic_cast<ShowfotoFolderViewBookmarkItem*>(d->bookmarksList->selectedItems().at(0));
+    ShowfotoFolderViewBookmarkItem* const item = dynamic_cast<ShowfotoFolderViewBookmarkItem*>(d->bookmarksList->currentItem());
 
     if (!item || (item->parent() != d->topBookmarks))
     {
