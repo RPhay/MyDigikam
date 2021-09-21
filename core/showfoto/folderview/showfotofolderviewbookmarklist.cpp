@@ -43,6 +43,9 @@
 
 #include "digikam_debug.h"
 #include "showfotofolderviewbookmarks.h"
+#include "dfileoperations.h"
+
+using namespace Digikam;
 
 namespace ShowFoto
 {
@@ -115,6 +118,14 @@ ShowfotoFolderViewBookmarkList::ShowfotoFolderViewBookmarkList(ShowfotoFolderVie
     d->ctxmenu->addAction(d->parent->toolBarAction(QLatin1String("AddBookmark")));
     d->ctxmenu->addAction(d->parent->toolBarAction(QLatin1String("DelBookmark")));
     d->ctxmenu->addAction(d->parent->toolBarAction(QLatin1String("EditBookmark")));
+    d->ctxmenu->addSeparator();
+
+    QAction* const openFileMngr = new QAction(QIcon::fromTheme(QLatin1String("folder-open")),
+                                              i18nc("@action: context menu", "Open in File Manager"), this);
+    d->ctxmenu->addAction(openFileMngr);
+
+    connect(openFileMngr, SIGNAL(triggered()),
+            this, SLOT(slotOpenInFileManager()));
 
     connect(this, SIGNAL(customContextMenuRequested(QPoint)),
             this, SLOT(slotContextMenu(QPoint)));
@@ -123,6 +134,19 @@ ShowfotoFolderViewBookmarkList::ShowfotoFolderViewBookmarkList(ShowfotoFolderVie
 ShowfotoFolderViewBookmarkList::~ShowfotoFolderViewBookmarkList()
 {
     delete d;
+}
+
+void ShowfotoFolderViewBookmarkList::slotOpenInFileManager()
+{
+    QList<QUrl> urls;
+    ShowfotoFolderViewBookmarkItem* const fvitem = dynamic_cast<ShowfotoFolderViewBookmarkItem*>(currentItem());
+
+    if (fvitem)
+    {
+        urls << QUrl::fromLocalFile(fvitem->path());
+    }
+
+    DFileOperations::openInFileManager(urls);
 }
 
 void ShowfotoFolderViewBookmarkList::slotContextMenu(const QPoint& pos)

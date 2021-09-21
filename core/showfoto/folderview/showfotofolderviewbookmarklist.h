@@ -76,6 +76,7 @@ Q_SIGNALS:
 private Q_SLOTS:
 
     void slotContextMenu(const QPoint& pos);
+    void slotOpenInFileManager();
 
 private:
 
