@@ -246,6 +246,7 @@ ShowfotoFolderViewBar::ShowfotoFolderViewBar(ShowfotoFolderViewSideBar* const si
     d->runMenu               = new QMenu(d->runBtn);
 
     btnAction                = d->runMenu->addAction(i18nc("@action:inmenu", "Load Contents"));
+    btnAction->setObjectName(QLatin1String("LoadContents"));
     btnAction->setIcon(QIcon::fromTheme(QLatin1String("media-playlist-normal")));
     btnAction->setText(i18nc("action", "Load Contents"));
     btnAction->setToolTip(i18nc("@info", "Load Contents to Editor"));
@@ -289,6 +290,11 @@ QAction* ShowfotoFolderViewBar::toolBarAction(const QString& name) const
     }
 
     return nullptr;
+}
+
+QList<QAction*> ShowfotoFolderViewBar::toolBarActions() const
+{
+    return d->actionsList;
 }
 
 void ShowfotoFolderViewBar::setFolderViewMode(int mode)
@@ -422,7 +428,7 @@ void ShowfotoFolderViewBar::registerPluginActions(const QList<DPluginAction*>& a
             act->setObjectName(dpact->objectName());
             act->setIcon(dpact->icon());
             act->setToolTip(dpact->toolTip());
-
+            act->setData(QLatin1String("DPlugin::Generic::View"));
 
             d->actionsList << act;
 

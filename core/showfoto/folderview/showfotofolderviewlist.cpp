@@ -60,8 +60,7 @@ class Q_DECL_HIDDEN ShowfotoFolderViewList::Private
 public:
 
     explicit Private()
-      : fsmenu      (nullptr),
-        view        (nullptr),
+      : view        (nullptr),
         bar         (nullptr),
         showToolTips(false),
         toolTipTimer(nullptr),
@@ -69,7 +68,6 @@ public:
     {
     }
 
-    QMenu*                     fsmenu;
     ShowfotoFolderViewSideBar* view;
     ShowfotoFolderViewBar*     bar;
     bool                       showToolTips;
@@ -101,36 +99,6 @@ ShowfotoFolderViewList::ShowfotoFolderViewList(ShowfotoFolderViewSideBar* const 
     setDragEnabled(true);
     setDragDropMode(QAbstractItemView::DragOnly);
     viewport()->setMouseTracking(true);
-
-    // --- Populate context menu
-
-    d->fsmenu = new QMenu(this);
-    d->fsmenu->setTitle(i18nc("@title", "Folder-View Options"));
-    d->fsmenu->addAction(d->bar->toolBarAction(QLatin1String("GoPrevious")));
-    d->fsmenu->addAction(d->bar->toolBarAction(QLatin1String("GoNext")));
-    d->fsmenu->addAction(d->bar->toolBarAction(QLatin1String("GoHome")));
-    d->fsmenu->addAction(d->bar->toolBarAction(QLatin1String("GoUp")));
-    d->fsmenu->addSeparator(),
-    d->fsmenu->addAction(d->bar->toolBarAction(QLatin1String("ShortView")));
-    d->fsmenu->addAction(d->bar->toolBarAction(QLatin1String("DetailledView")));
-    d->fsmenu->addAction(d->bar->toolBarAction(QLatin1String("ShowBookmarks")));
-    d->fsmenu->addAction(d->bar->toolBarAction(QLatin1String("MoreSettings")));
-    d->fsmenu->addSeparator(),
-    d->fsmenu->addAction(d->bar->toolBarAction(QLatin1String("LoadContents")));
-
-    QAction* const addBookmark  = new QAction(QIcon::fromTheme(QLatin1String("list-add")),
-                                              i18nc("@action: context menu", "Add Bookmark"), this);
-    d->fsmenu->addAction(addBookmark);
-
-    connect(addBookmark, SIGNAL(triggered()),
-            this, SIGNAL(signalAddBookmark()));
-
-    QAction* const openFileMngr = new QAction(QIcon::fromTheme(QLatin1String("folder-open")),
-                                              i18nc("@action: context menu", "Open in File Manager"), this);
-    d->fsmenu->addAction(openFileMngr);
-
-    connect(openFileMngr, SIGNAL(triggered()),
-            this, SLOT(slotOpenInFileManager()));
 
     d->toolTip       = new ShowfotoFolderViewToolTip(this);
     d->toolTipTimer  = new QTimer(this);
@@ -175,7 +143,47 @@ void ShowfotoFolderViewList::slotIconSizeChanged(int size)
 
 void ShowfotoFolderViewList::contextMenuEvent(QContextMenuEvent* e)
 {
-    d->fsmenu->exec(e->globalPos());
+    QMenu* const fsmenu = new QMenu(this);
+    fsmenu->setTitle(i18nc("@title", "Folder-View Options"));
+    fsmenu->addAction(d->bar->toolBarAction(QLatin1String("GoPrevious")));
+    fsmenu->addAction(d->bar->toolBarAction(QLatin1String("GoNext")));
+    fsmenu->addAction(d->bar->toolBarAction(QLatin1String("GoHome")));
+    fsmenu->addAction(d->bar->toolBarAction(QLatin1String("GoUp")));
+    fsmenu->addSeparator();
+    fsmenu->addAction(d->bar->toolBarAction(QLatin1String("ShortView")));
+    fsmenu->addAction(d->bar->toolBarAction(QLatin1String("DetailledView")));
+    fsmenu->addAction(d->bar->toolBarAction(QLatin1String("ShowBookmarks")));
+    fsmenu->addAction(d->bar->toolBarAction(QLatin1String("MoreSettings")));
+    fsmenu->addSeparator();
+    fsmenu->addAction(d->bar->toolBarAction(QLatin1String("LoadContents")));
+
+    foreach (QAction* const act, d->bar->toolBarActions())
+    {
+        if (act->data() == QLatin1String("DPlugin::Generic::View"))
+        {
+            fsmenu->addAction(act);
+        }
+    }
+
+    fsmenu->addSeparator();
+
+    QAction* const addBookmark  = new QAction(QIcon::fromTheme(QLatin1String("list-add")),
+                                              i18nc("@action: context menu", "Add Bookmark"), this);
+    fsmenu->addAction(addBookmark);
+
+    connect(addBookmark, SIGNAL(triggered()),
+            this, SIGNAL(signalAddBookmark()));
+
+    QAction* const openFileMngr = new QAction(QIcon::fromTheme(QLatin1String("folder-open")),
+                                              i18nc("@action: context menu", "Open in File Manager"), this);
+    fsmenu->addAction(openFileMngr);
+
+    connect(openFileMngr, SIGNAL(triggered()),
+            this, SLOT(slotOpenInFileManager()));
+
+    fsmenu->exec(e->globalPos());
+
+    delete fsmenu;
 
     QTreeView::contextMenuEvent(e);
 }

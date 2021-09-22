@@ -66,6 +66,7 @@ public:
     QString currentPath() const;
 
     QAction* toolBarAction(const QString& name) const;
+    QList<QAction*> toolBarActions()            const;
 
     void registerPluginActions(const QList<DPluginAction*>& actions);
 
