@@ -26,6 +26,7 @@
 // Qt includes
 
 #include <QDir>
+#include <QApplication>
 #include <QSlider>
 #include <QLayout>
 #include <QToolButton>
@@ -62,11 +63,12 @@ public:
         iconSizeSlider     (nullptr),
         optionsBtn         (nullptr),
         optionsMenu        (nullptr),
+        runBtn             (nullptr),
+        runMenu            (nullptr),
         shortAction        (nullptr),
         detailedAction     (nullptr),
         showBookmarksAction(nullptr),
         moreSettingsAction (nullptr),
-        loadBtn            (nullptr),
         pathEdit           (nullptr),
         sidebar            (nullptr)
     {
@@ -79,11 +81,12 @@ public:
     QSlider*                   iconSizeSlider;
     QToolButton*               optionsBtn;
     QMenu*                     optionsMenu;
+    QToolButton*               runBtn;
+    QMenu*                     runMenu;
     QAction*                   shortAction;
     QAction*                   detailedAction;
     QAction*                   showBookmarksAction;
     QAction*                   moreSettingsAction;
-    QToolButton*               loadBtn;
     QComboBox*                 pathEdit;
     QList<QAction*>            actionsList;                    ///< used to shared actions with list-view context menu.
     ShowfotoFolderViewSideBar* sidebar;
@@ -234,8 +237,15 @@ ShowfotoFolderViewBar::ShowfotoFolderViewBar(ShowfotoFolderViewSideBar* const si
 
     // ---
 
-    btnAction                = new QAction(this);
-    btnAction->setObjectName(QLatin1String("LoadContents"));
+    d->runBtn                = new QToolButton(btnBox);
+    d->runBtn->setToolTip(i18nc("@info: folder-view", "Folder-View Run Actions"));
+    d->runBtn->setIcon(QIcon::fromTheme(QLatin1String("media-playback-start")));
+    d->runBtn->setPopupMode(QToolButton::InstantPopup);
+    d->runBtn->setWhatsThis(i18nc("@info: folder-view", "Run actions to handle folder-view contents."));
+
+    d->runMenu               = new QMenu(d->runBtn);
+
+    btnAction                = d->runMenu->addAction(i18nc("@action:inmenu", "Load Contents"));
     btnAction->setIcon(QIcon::fromTheme(QLatin1String("media-playlist-normal")));
     btnAction->setText(i18nc("action", "Load Contents"));
     btnAction->setToolTip(i18nc("@info", "Load Contents to Editor"));
@@ -245,12 +255,7 @@ ShowfotoFolderViewBar::ShowfotoFolderViewBar(ShowfotoFolderViewSideBar* const si
 
     d->actionsList << btnAction;
 
-    d->loadBtn               = new QToolButton(btnBox);
-    d->loadBtn->setDefaultAction(btnAction);
-    d->loadBtn->setFocusPolicy(Qt::NoFocus);
-
-    connect(d->loadBtn, SIGNAL(clicked()),
-            this, SIGNAL(signalLoadContents()));
+    d->runBtn->setMenu(d->runMenu);
 
     // ---
 
@@ -400,6 +405,30 @@ void ShowfotoFolderViewBar::slotOptionsChanged(QAction* action)
     }
 
     emit signalViewModeChanged(mode);
+}
+
+void ShowfotoFolderViewBar::registerPluginActions(const QList<DPluginAction*>& actions)
+{
+    if (!actions.isEmpty())
+    {
+        d->runMenu->addSeparator();
+
+        connect(d->runMenu, SIGNAL(triggered(QAction*)),
+                this, SIGNAL(signalPluginActionTriggered(QAction*)));
+
+        foreach (QAction* const dpact, actions)
+        {
+            QAction* const act = d->optionsMenu->addAction(dpact->text());
+            act->setObjectName(dpact->objectName());
+            act->setIcon(dpact->icon());
+            act->setToolTip(dpact->toolTip());
+
+
+            d->actionsList << act;
+
+            d->runMenu->addAction(act);
+        }
+    }
 }
 
 } // namespace ShowFoto

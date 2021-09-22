@@ -27,12 +27,14 @@
 // Qt includes
 
 #include <QWidget>
+#include <QList>
 #include <QAction>
 
 // Local includes
 
 #include "slideshowsettings.h"
 #include "dlayoutbox.h"
+#include "dpluginaction.h"
 
 using namespace Digikam;
 
@@ -65,6 +67,8 @@ public:
 
     QAction* toolBarAction(const QString& name) const;
 
+    void registerPluginActions(const QList<DPluginAction*>& actions);
+
 public Q_SLOTS:
 
     void slotPreviousEnabled(bool);
@@ -82,6 +86,7 @@ Q_SIGNALS:
     void signalGoNext();
     void signalCustomPathChanged(const QString&);
     void signalLoadContents();
+    void signalPluginActionTriggered(QAction*);
 
 private Q_SLOTS:
 

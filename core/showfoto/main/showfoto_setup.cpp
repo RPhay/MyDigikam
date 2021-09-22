@@ -114,7 +114,7 @@ void Showfoto::setupUserArea()
     d->leftSideBar->setObjectName(QLatin1String("ShowFoto Sidebar Left"));
     d->leftSideBar->setContentsMargins(0, 0, spacing, 0);
 
-    d->folderView              = new ShowfotoFolderViewSideBar(widget);
+    d->folderView              = new ShowfotoFolderViewSideBar(this);
     d->leftSideBar->appendTab(d->folderView, d->folderView->getIcon(), d->folderView->getCaption());
 
     KMainWindow* const viewContainer = new KMainWindow(widget, Qt::Widget);

@@ -30,17 +30,21 @@
 #include <QPixmap>
 #include <QWidget>
 #include <QEvent>
+#include <QAction>
 #include <QModelIndex>
 
 // Local includes
 
 #include "statesavingobject.h"
 #include "showfotoitemsortsettings.h"
+#include "dpluginaction.h"
 
 using namespace Digikam;
 
 namespace ShowFoto
 {
+
+class Showfoto;
 
 class ShowfotoFolderViewSideBar : public QWidget,
                                   public StateSavingObject
@@ -49,7 +53,7 @@ class ShowfotoFolderViewSideBar : public QWidget,
 
 public:
 
-    explicit ShowfotoFolderViewSideBar(QWidget* const parent);
+    explicit ShowfotoFolderViewSideBar(Showfoto* const parent);
     ~ShowfotoFolderViewSideBar()            override;
 
     void          setActive(bool active);
@@ -70,6 +74,8 @@ public:
 
     void loadContents(const QModelIndex& index);
 
+    void registerPluginActions(const QList<DPluginAction*>& actions);
+
 public Q_SLOTS:
 
     void slotUndo();
@@ -83,6 +89,7 @@ private Q_SLOTS:
     void slotCustomPathChanged(const QString&);
     void slotViewModeChanged(int);
     void slotShowBookmarks(bool);
+    void slotPluginActionTriggered(QAction*);
 
 Q_SIGNALS:
 

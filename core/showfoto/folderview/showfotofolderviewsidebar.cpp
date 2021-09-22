@@ -32,6 +32,7 @@
 #include <QVBoxLayout>
 #include <QFileInfo>
 #include <QDir>
+#include <QTimer>
 #include <QSplitter>
 
 // KDE includes
@@ -44,6 +45,7 @@
 #include "digikam_debug.h"
 #include "digikam_globals.h"
 #include "showfotosettings.h"
+#include "showfoto.h"
 #include "showfotofolderviewbar.h"
 #include "showfotofolderviewundo.h"
 #include "showfotofolderviewmodel.h"
@@ -65,6 +67,7 @@ public:
         fsmarks     (nullptr),
         fsstack     (nullptr),
         splitter    (nullptr),
+        parent      (nullptr),
         fsSortOrder (Qt::AscendingOrder),
         fsRole      (ShowfotoFolderViewList::FileName)
     {
@@ -82,7 +85,8 @@ public:
     ShowfotoFolderViewBookmarks*           fsmarks;
     QUndoStack*                            fsstack;
     QSplitter*                             splitter;
-
+    Showfoto*                              parent;
+    QList<DPluginAction*>                  pluginActions;
     Qt::SortOrder                          fsSortOrder;
     ShowfotoFolderViewList::FolderViewRole fsRole;
 };
@@ -93,13 +97,14 @@ const QString ShowfotoFolderViewSideBar::Private::configFolderViewModeEntry(QLat
 const QString ShowfotoFolderViewSideBar::Private::configBookmarksVisibleEntry(QLatin1String("Bookmarks Visible"));
 const QString ShowfotoFolderViewSideBar::Private::configSplitterStateEntry(QLatin1String("Splitter State"));
 
-ShowfotoFolderViewSideBar::ShowfotoFolderViewSideBar(QWidget* const parent)
+ShowfotoFolderViewSideBar::ShowfotoFolderViewSideBar(Showfoto* const parent)
     : QWidget          (parent),
       StateSavingObject(this),
       d                (new Private)
 {
     setObjectName(QLatin1String("ShowfotoFolderView Sidebar"));
 
+    d->parent                  = parent;
     d->fsstack                 = new QUndoStack(this);
 
     // --- Populate the view
@@ -443,6 +448,29 @@ void ShowfotoFolderViewSideBar::setSortRole(int role)
 void ShowfotoFolderViewSideBar::slotShowBookmarks(bool visible)
 {
     d->fsmarks->setVisible(visible);
+}
+
+void ShowfotoFolderViewSideBar::registerPluginActions(const QList<DPluginAction*>& actions)
+{
+    d->pluginActions = actions;
+
+    d->fsbar->registerPluginActions(d->pluginActions);
+
+    connect(d->fsbar, SIGNAL(signalPluginActionTriggered(QAction*)),
+            this, SLOT(slotPluginActionTriggered(QAction*)));
+}
+
+void ShowfotoFolderViewSideBar::slotPluginActionTriggered(QAction* act)
+{
+    foreach (QAction* const dpact, d->pluginActions)
+    {
+        if (act->objectName() == dpact->objectName())
+        {
+            slotLoadContents();
+            QTimer::singleShot(1000, dpact, SLOT(trigger()));
+            return;
+        }
+    }
 }
 
 } // namespace ShowFoto
