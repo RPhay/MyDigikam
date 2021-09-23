@@ -109,6 +109,8 @@ public:
     static const QString            configBookmarkPathPrefixEntry;
     static const QString            configBookmarkTitlePrefixEntry;
     static const QString            configBookmarkIconPrefixEntry;
+    static const QString            configBookmarkTopItemExpandedEntry;
+    static const QString            configBookmarkTopUsualExpandedEntry;
 
     QList<QAction*>                 actionsList;                    ///< used to shared actions with list-view context menu.
     QToolButton*                    addBtn;
@@ -124,6 +126,8 @@ const QString ShowfotoFolderViewBookmarks::Private::configBookmarkItemsEntry(QLa
 const QString ShowfotoFolderViewBookmarks::Private::configBookmarkPathPrefixEntry(QLatin1String("BookmarkPath"));
 const QString ShowfotoFolderViewBookmarks::Private::configBookmarkTitlePrefixEntry(QLatin1String("BookmarkTitle"));
 const QString ShowfotoFolderViewBookmarks::Private::configBookmarkIconPrefixEntry(QLatin1String("BookmarkIcon"));
+const QString ShowfotoFolderViewBookmarks::Private::configBookmarkTopItemExpandedEntry(QLatin1String("BookmarkTopItemExpanded"));
+const QString ShowfotoFolderViewBookmarks::Private::configBookmarkTopUsualExpandedEntry(QLatin1String("BookmarkTopUsualExpanded"));
 
 ShowfotoFolderViewBookmarks::ShowfotoFolderViewBookmarks(ShowfotoFolderViewSideBar* const sidebar)
     : QWidget(sidebar),
@@ -376,7 +380,9 @@ void ShowfotoFolderViewBookmarks::saveSettings(KConfigGroup& group)
     ShowfotoFolderViewBookmarkItem* item = nullptr;
     int nbItems                          = d->topBookmarks->childCount();
 
-    group.writeEntry(d->configBookmarkItemsEntry, nbItems);
+    group.writeEntry(d->configBookmarkItemsEntry,            nbItems);
+    group.writeEntry(d->configBookmarkTopItemExpandedEntry,  d->topBookmarks->isExpanded());
+    group.writeEntry(d->configBookmarkTopUsualExpandedEntry, d->topUsualPlaces->isExpanded());
 
     for (int i = 0 ; i < nbItems ; ++i)
     {
@@ -400,7 +406,7 @@ void ShowfotoFolderViewBookmarks::readSettings(const KConfigGroup& group)
 
     d->topBookmarks          = new QTreeWidgetItem(d->bookmarksList);
     d->topBookmarks->setFlags(Qt::ItemIsEnabled);
-    d->topBookmarks->setExpanded(true);
+    d->topBookmarks->setExpanded(group.readEntry(d->configBookmarkTopItemExpandedEntry, true));
     d->topBookmarks->setDisabled(false);
     d->topBookmarks->setText(0, i18nc("@title", "Bookmarks"));
 
@@ -431,7 +437,7 @@ void ShowfotoFolderViewBookmarks::readSettings(const KConfigGroup& group)
 
     d->topUsualPlaces                      = new QTreeWidgetItem(d->bookmarksList);
     d->topUsualPlaces->setFlags(Qt::ItemIsEnabled);
-    d->topUsualPlaces->setExpanded(true);
+    d->topUsualPlaces->setExpanded(group.readEntry(d->configBookmarkTopUsualExpandedEntry, true));
     d->topUsualPlaces->setDisabled(false);
     d->topUsualPlaces->setText(0, i18nc("@title", "Usual"));
 
