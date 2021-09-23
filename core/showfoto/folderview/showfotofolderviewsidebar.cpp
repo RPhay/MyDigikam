@@ -76,6 +76,7 @@ public:
     static const QString                   configIconSizeEntry;
     static const QString                   configLastFolderEntry;
     static const QString                   configFolderViewModeEntry;
+    static const QString                   configFolderViewTypeMimeEntry;
     static const QString                   configBookmarksVisibleEntry;
     static const QString                   configSplitterStateEntry;
 
@@ -94,6 +95,7 @@ public:
 const QString ShowfotoFolderViewSideBar::Private::configIconSizeEntry(QLatin1String("Icon Size"));
 const QString ShowfotoFolderViewSideBar::Private::configLastFolderEntry(QLatin1String("Last Folder"));
 const QString ShowfotoFolderViewSideBar::Private::configFolderViewModeEntry(QLatin1String("Folder View Mode"));
+const QString ShowfotoFolderViewSideBar::Private::configFolderViewTypeMimeEntry(QLatin1String("Folder View Type Mime"));
 const QString ShowfotoFolderViewSideBar::Private::configBookmarksVisibleEntry(QLatin1String("Bookmarks Visible"));
 const QString ShowfotoFolderViewSideBar::Private::configSplitterStateEntry(QLatin1String("Splitter State"));
 
@@ -158,6 +160,9 @@ ShowfotoFolderViewSideBar::ShowfotoFolderViewSideBar(Showfoto* const parent)
     connect(d->fsbar, SIGNAL(signalCustomPathChanged(QString)),
             this, SLOT(slotCustomPathChanged(QString)));
 
+    connect(d->fsbar, SIGNAL(signalTypeMimesChanged(QString)),
+            this, SLOT(slotTypeMimesChanged(QString)));
+
     connect(d->fsbar, SIGNAL(signalGoNext()),
             this, SLOT(slotRedo()));
 
@@ -177,6 +182,11 @@ ShowfotoFolderViewSideBar::ShowfotoFolderViewSideBar(Showfoto* const parent)
 ShowfotoFolderViewSideBar::~ShowfotoFolderViewSideBar()
 {
     delete d;
+}
+
+void ShowfotoFolderViewSideBar::slotTypeMimesChanged(const QString& patterns)
+{
+    d->fsmodel->setNameFilters(patterns.split(QLatin1Char(' ')));
 }
 
 void ShowfotoFolderViewSideBar::slotLoadContents()
@@ -372,19 +382,20 @@ void ShowfotoFolderViewSideBar::doLoadState()
     KConfigGroup group = getConfigGroup();
 
     d->fsmarks->readSettings(group);
-    d->fsbar->setFolderViewMode(group.readEntry(entryName(d->configFolderViewModeEntry), (int)ShowfotoFolderViewList::ShortView));
-    d->fsbar->setBookmarksVisible(group.readEntry(entryName(d->configBookmarksVisibleEntry), false));
+    d->fsbar->setFolderViewMode(group.readEntry(entryName(d->configFolderViewModeEntry),         (int)ShowfotoFolderViewList::ShortView));
+    d->fsbar->setFolderViewTypeMime(group.readEntry(entryName(d->configFolderViewTypeMimeEntry), (int)ShowfotoFolderViewBar::TYPE_MIME_ALL));
+    d->fsbar->setBookmarksVisible(group.readEntry(entryName(d->configBookmarksVisibleEntry),     false));
     slotViewModeChanged(d->fsbar->folderViewMode());
-    d->fsbar->setIconSize(group.readEntry(entryName(d->configIconSizeEntry), 32));
+    d->fsbar->setIconSize(group.readEntry(entryName(d->configIconSizeEntry),                     32));
 
-    QByteArray state = group.readEntry(entryName(d->configSplitterStateEntry), QByteArray());
+    QByteArray state = group.readEntry(entryName(d->configSplitterStateEntry),                   QByteArray());
 
     if (!state.isEmpty())
     {
         d->splitter->restoreState(QByteArray::fromBase64(state));
     }
 
-    setCurrentPathWithoutUndo(group.readEntry(entryName(d->configLastFolderEntry), QDir::rootPath()));
+    setCurrentPathWithoutUndo(group.readEntry(entryName(d->configLastFolderEntry),               QDir::rootPath()));
     loadContents(d->fsview->currentIndex());
 }
 
@@ -393,11 +404,12 @@ void ShowfotoFolderViewSideBar::doSaveState()
     KConfigGroup group = getConfigGroup();
 
     d->fsmarks->saveSettings(group);
-    group.writeEntry(entryName(d->configFolderViewModeEntry),   d->fsbar->folderViewMode());
-    group.writeEntry(entryName(d->configBookmarksVisibleEntry), d->fsbar->bookmarksVisible());
-    group.writeEntry(entryName(d->configIconSizeEntry),         d->fsbar->iconSize());
-    group.writeEntry(entryName(d->configLastFolderEntry),       currentFolder());
-    group.writeEntry(entryName(d->configSplitterStateEntry),    d->splitter->saveState().toBase64());
+    group.writeEntry(entryName(d->configFolderViewModeEntry),       d->fsbar->folderViewMode());
+    group.writeEntry(entryName(d->configFolderViewTypeMimeEntry),   d->fsbar->folderViewTypeMime());
+    group.writeEntry(entryName(d->configBookmarksVisibleEntry),     d->fsbar->bookmarksVisible());
+    group.writeEntry(entryName(d->configIconSizeEntry),             d->fsbar->iconSize());
+    group.writeEntry(entryName(d->configLastFolderEntry),           currentFolder());
+    group.writeEntry(entryName(d->configSplitterStateEntry),        d->splitter->saveState().toBase64());
     group.sync();
 }
 

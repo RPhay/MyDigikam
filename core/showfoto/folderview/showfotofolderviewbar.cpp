@@ -43,9 +43,11 @@
 // Local includes
 
 #include "digikam_debug.h"
+#include "drawdecoder.h"
 #include "showfotofolderviewmodel.h"
 #include "showfotofolderviewlist.h"
 #include "showfotosetup.h"
+#include "squeezedcombobox.h"
 
 namespace ShowFoto
 {
@@ -71,7 +73,8 @@ public:
         showBookmarksAction(nullptr),
         moreSettingsAction (nullptr),
         pathEdit           (nullptr),
-        sidebar            (nullptr)
+        sidebar            (nullptr),
+        typeMimesCombo     (nullptr)
     {
     }
 
@@ -92,6 +95,7 @@ public:
     QComboBox*                 pathEdit;
     QList<QAction*>            actionsList;                    ///< used to shared actions with list-view context menu.
     ShowfotoFolderViewSideBar* sidebar;
+    SqueezedComboBox*          typeMimesCombo;
 };
 
 ShowfotoFolderViewBar::ShowfotoFolderViewBar(ShowfotoFolderViewSideBar* const sidebar)
@@ -274,11 +278,34 @@ ShowfotoFolderViewBar::ShowfotoFolderViewBar(ShowfotoFolderViewSideBar* const si
 
     connect(d->pathEdit, SIGNAL(textActivated(QString)),
             this, SIGNAL(signalCustomPathChanged(QString)));
+
+    // ---
+
+    d->typeMimesCombo = new SqueezedComboBox(this);
+    d->typeMimesCombo->insertSqueezedItem(i18n("JPEG images"),         TYPE_MIME_JPEG, QLatin1String("*.JPEG *.JPG *.JPE"));
+    d->typeMimesCombo->insertSqueezedItem(i18n("TIFF images"),         TYPE_MIME_TIFF, QLatin1String("*.TIFF *.TIF"));
+    d->typeMimesCombo->insertSqueezedItem(i18n("PNG images"),          TYPE_MIME_PNG,  QLatin1String("*.PNG"));
+    d->typeMimesCombo->insertSqueezedItem(i18n("RAW images"),          TYPE_MIME_RAW,  DRawDecoder::rawFiles());
+
+    QString filter;
+    QStringList mimeTypes = supportedImageMimeTypes(QIODevice::ReadOnly, filter);
+    QString patterns      = filter.toLower();
+    patterns.append(QLatin1Char(' '));
+    patterns.append(filter.toUpper());
+    d->typeMimesCombo->insertSqueezedItem(i18n("All supported files"), TYPE_MIME_ALL,  patterns);
+
+    connect(d->typeMimesCombo, SIGNAL(activated(int)),
+            this, SLOT(slotTypeMimesChanged(int)));
 }
 
 ShowfotoFolderViewBar::~ShowfotoFolderViewBar()
 {
     delete d;
+}
+
+void ShowfotoFolderViewBar::slotTypeMimesChanged(int index)
+{
+    emit signalTypeMimesChanged(d->typeMimesCombo->itemData(index).toString());
 }
 
 QAction* ShowfotoFolderViewBar::toolBarAction(const QString& name) const
@@ -307,6 +334,17 @@ QList<QAction*> ShowfotoFolderViewBar::pluginActions() const
     }
 
     return lst;
+}
+
+void ShowfotoFolderViewBar::setFolderViewTypeMime(int mime)
+{
+    d->typeMimesCombo->setCurrentIndex(mime);
+    slotTypeMimesChanged(d->typeMimesCombo->currentIndex());
+}
+
+int ShowfotoFolderViewBar::folderViewTypeMime() const
+{
+    return d->typeMimesCombo->currentIndex();
 }
 
 void ShowfotoFolderViewBar::setFolderViewMode(int mode)

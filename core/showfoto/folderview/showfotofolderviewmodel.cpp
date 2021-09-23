@@ -73,13 +73,6 @@ ShowfotoFolderViewModel::ShowfotoFolderViewModel(ShowfotoFolderViewList* const v
 
     setRootPath(QDir::rootPath());
 
-    QString filter;
-    QStringList mimeTypes = supportedImageMimeTypes(QIODevice::ReadOnly, filter);
-    QString patterns      = filter.toLower();
-    patterns.append(QLatin1Char(' '));
-    patterns.append(filter.toUpper());
-    setNameFilters(patterns.split(QLatin1Char(' ')));
-
     // If an item fails the filter, hide it
 
     setNameFilterDisables(false);

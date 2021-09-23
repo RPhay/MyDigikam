@@ -50,6 +50,17 @@ class ShowfotoFolderViewBar : public DVBox
 
 public:
 
+    enum FolderViewTypeMime
+    {
+        TYPE_MIME_JPEG = 0,
+        TYPE_MIME_TIFF,
+        TYPE_MIME_PNG,
+        TYPE_MIME_RAW,
+        TYPE_MIME_ALL
+    };
+
+public:
+
     explicit ShowfotoFolderViewBar(ShowfotoFolderViewSideBar* const parent);
     ~ShowfotoFolderViewBar()                          override;
 
@@ -58,6 +69,9 @@ public:
 
     void setFolderViewMode(int mode);
     int  folderViewMode()                       const;
+
+    void setFolderViewTypeMime(int mime);
+    int  folderViewTypeMime()                   const;
 
     void setBookmarksVisible(bool b);
     bool bookmarksVisible()                     const;
@@ -77,6 +91,7 @@ public Q_SLOTS:
 
 Q_SIGNALS:
 
+    void signalTypeMimesChanged(const QString&);
     void signalViewModeChanged(int);
     void signalShowBookmarks(bool);
     void signalSetup();
@@ -94,6 +109,7 @@ private Q_SLOTS:
     void slotCustomPathChanged();
     void slotIconSizeChanged(int);
     void slotOptionsChanged(QAction*);
+    void slotTypeMimesChanged(int index);
 
 private:
 

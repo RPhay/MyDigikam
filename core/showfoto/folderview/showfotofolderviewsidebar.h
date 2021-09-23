@@ -91,6 +91,7 @@ private Q_SLOTS:
     void slotViewModeChanged(int);
     void slotShowBookmarks(bool);
     void slotPluginActionTriggered(QAction*);
+    void slotTypeMimesChanged(const QString& patterns);
 
 Q_SIGNALS:
 
