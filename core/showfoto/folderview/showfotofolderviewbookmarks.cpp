@@ -472,4 +472,9 @@ void ShowfotoFolderViewBookmarks::readSettings(const KConfigGroup& group)
     uplace->setPath(QStandardPaths::writableLocation(QStandardPaths::MoviesLocation));
 }
 
+QList<QAction*> ShowfotoFolderViewBookmarks::pluginActions() const
+{
+    return d->sidebar->pluginActions();
+}
+
 } // namespace ShowFoto

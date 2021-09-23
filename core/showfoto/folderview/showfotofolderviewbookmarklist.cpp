@@ -78,14 +78,12 @@ class Q_DECL_HIDDEN ShowfotoFolderViewBookmarkList::Private
 public:
 
     explicit Private()
-        : ctxmenu(nullptr),
-          parent (nullptr)
+        : parent (nullptr)
     {
     }
 
 public:
 
-    QMenu*                       ctxmenu;
     ShowfotoFolderViewBookmarks* parent;
 };
 
@@ -110,22 +108,6 @@ ShowfotoFolderViewBookmarkList::ShowfotoFolderViewBookmarkList(ShowfotoFolderVie
     setDropIndicatorShown(true);
     viewport()->setMouseTracking(true);
     setContextMenuPolicy(Qt::CustomContextMenu);
-
-    // --- Populate context menu
-
-    d->ctxmenu = new QMenu(this);
-    d->ctxmenu->setTitle(i18nc("@title", "Bookmarks"));
-    d->ctxmenu->addAction(d->parent->toolBarAction(QLatin1String("AddBookmark")));
-    d->ctxmenu->addAction(d->parent->toolBarAction(QLatin1String("DelBookmark")));
-    d->ctxmenu->addAction(d->parent->toolBarAction(QLatin1String("EditBookmark")));
-    d->ctxmenu->addSeparator();
-
-    QAction* const openFileMngr = new QAction(QIcon::fromTheme(QLatin1String("folder-open")),
-                                              i18nc("@action: context menu", "Open in File Manager"), this);
-    d->ctxmenu->addAction(openFileMngr);
-
-    connect(openFileMngr, SIGNAL(triggered()),
-            this, SLOT(slotOpenInFileManager()));
 
     connect(this, SIGNAL(customContextMenuRequested(QPoint)),
             this, SLOT(slotContextMenu(QPoint)));
@@ -155,7 +137,26 @@ void ShowfotoFolderViewBookmarkList::slotContextMenu(const QPoint& pos)
 
     if (fvitem && (fvitem->parent() == d->parent->topBookmarksItem()))
     {
-        d->ctxmenu->exec(mapToGlobal(pos));
+        QMenu* const ctxmenu = new QMenu(this);
+        ctxmenu->setTitle(i18nc("@title", "Bookmarks"));
+        ctxmenu->addAction(d->parent->toolBarAction(QLatin1String("AddBookmark")));
+        ctxmenu->addAction(d->parent->toolBarAction(QLatin1String("DelBookmark")));
+        ctxmenu->addAction(d->parent->toolBarAction(QLatin1String("EditBookmark")));
+        ctxmenu->addSeparator();
+        ctxmenu->addAction(d->parent->toolBarAction(QLatin1String("LoadContents")));
+        ctxmenu->addActions(d->parent->pluginActions());
+        ctxmenu->addSeparator();
+
+        QAction* const openFileMngr = new QAction(QIcon::fromTheme(QLatin1String("folder-open")),
+                                                  i18nc("@action: context menu", "Open in File Manager"), ctxmenu);
+        ctxmenu->addAction(openFileMngr);
+
+        connect(openFileMngr, SIGNAL(triggered()),
+                this, SLOT(slotOpenInFileManager()));
+
+        ctxmenu->exec(mapToGlobal(pos));
+
+        delete ctxmenu;
     }
 }
 

@@ -473,4 +473,9 @@ void ShowfotoFolderViewSideBar::slotPluginActionTriggered(QAction* act)
     }
 }
 
+QList<QAction*> ShowfotoFolderViewSideBar::pluginActions() const
+{
+    return d->fsbar->pluginActions();
+}
+
 } // namespace ShowFoto

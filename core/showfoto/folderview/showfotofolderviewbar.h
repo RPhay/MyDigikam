@@ -51,22 +51,22 @@ class ShowfotoFolderViewBar : public DVBox
 public:
 
     explicit ShowfotoFolderViewBar(ShowfotoFolderViewSideBar* const parent);
-    ~ShowfotoFolderViewBar() override;
+    ~ShowfotoFolderViewBar()                          override;
 
     void setIconSize(int size);
-    int  iconSize() const;
+    int  iconSize()                             const;
 
     void setFolderViewMode(int mode);
-    int  folderViewMode() const;
+    int  folderViewMode()                       const;
 
     void setBookmarksVisible(bool b);
-    bool bookmarksVisible() const;
+    bool bookmarksVisible()                     const;
 
     void setCurrentPath(const QString& path);
-    QString currentPath() const;
+    QString currentPath()                       const;
 
     QAction* toolBarAction(const QString& name) const;
-    QList<QAction*> toolBarActions()            const;
+    QList<QAction*> pluginActions()             const;
 
     void registerPluginActions(const QList<DPluginAction*>& actions);
 

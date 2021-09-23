@@ -54,17 +54,17 @@ class ShowfotoFolderViewSideBar : public QWidget,
 public:
 
     explicit ShowfotoFolderViewSideBar(Showfoto* const parent);
-    ~ShowfotoFolderViewSideBar()            override;
+    ~ShowfotoFolderViewSideBar()              override;
 
     void          setActive(bool active);
-    void          doLoadState()             override;
-    void          doSaveState()             override;
+    void          doLoadState()               override;
+    void          doSaveState()               override;
     void          applySettings();
     const QIcon   getIcon();
     const QString getCaption();
 
-    QString currentFolder()     const;
-    QString currentPath()       const;
+    QString currentFolder()             const;
+    QString currentPath()               const;
 
     void setCurrentPath(const QString& newPathNative);
     void setCurrentPathWithoutUndo(const QString& newPath);
@@ -75,6 +75,7 @@ public:
     void loadContents(const QModelIndex& index);
 
     void registerPluginActions(const QList<DPluginAction*>& actions);
+    QList<QAction*> pluginActions()     const;
 
 public Q_SLOTS:
 

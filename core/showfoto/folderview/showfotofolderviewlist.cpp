@@ -143,47 +143,39 @@ void ShowfotoFolderViewList::slotIconSizeChanged(int size)
 
 void ShowfotoFolderViewList::contextMenuEvent(QContextMenuEvent* e)
 {
-    QMenu* const fsmenu = new QMenu(this);
-    fsmenu->setTitle(i18nc("@title", "Folder-View Options"));
-    fsmenu->addAction(d->bar->toolBarAction(QLatin1String("GoPrevious")));
-    fsmenu->addAction(d->bar->toolBarAction(QLatin1String("GoNext")));
-    fsmenu->addAction(d->bar->toolBarAction(QLatin1String("GoHome")));
-    fsmenu->addAction(d->bar->toolBarAction(QLatin1String("GoUp")));
-    fsmenu->addSeparator();
-    fsmenu->addAction(d->bar->toolBarAction(QLatin1String("ShortView")));
-    fsmenu->addAction(d->bar->toolBarAction(QLatin1String("DetailledView")));
-    fsmenu->addAction(d->bar->toolBarAction(QLatin1String("ShowBookmarks")));
-    fsmenu->addAction(d->bar->toolBarAction(QLatin1String("MoreSettings")));
-    fsmenu->addSeparator();
-    fsmenu->addAction(d->bar->toolBarAction(QLatin1String("LoadContents")));
-
-    foreach (QAction* const act, d->bar->toolBarActions())
-    {
-        if (act->data() == QLatin1String("DPlugin::Generic::View"))
-        {
-            fsmenu->addAction(act);
-        }
-    }
-
-    fsmenu->addSeparator();
+    QMenu* const ctxmenu = new QMenu(this);
+    ctxmenu->setTitle(i18nc("@title", "Folder-View Options"));
+    ctxmenu->addAction(d->bar->toolBarAction(QLatin1String("GoPrevious")));
+    ctxmenu->addAction(d->bar->toolBarAction(QLatin1String("GoNext")));
+    ctxmenu->addAction(d->bar->toolBarAction(QLatin1String("GoHome")));
+    ctxmenu->addAction(d->bar->toolBarAction(QLatin1String("GoUp")));
+    ctxmenu->addSeparator();
+    ctxmenu->addAction(d->bar->toolBarAction(QLatin1String("ShortView")));
+    ctxmenu->addAction(d->bar->toolBarAction(QLatin1String("DetailledView")));
+    ctxmenu->addAction(d->bar->toolBarAction(QLatin1String("ShowBookmarks")));
+    ctxmenu->addAction(d->bar->toolBarAction(QLatin1String("MoreSettings")));
+    ctxmenu->addSeparator();
+    ctxmenu->addAction(d->bar->toolBarAction(QLatin1String("LoadContents")));
+    ctxmenu->addActions(d->bar->pluginActions());
+    ctxmenu->addSeparator();
 
     QAction* const addBookmark  = new QAction(QIcon::fromTheme(QLatin1String("list-add")),
-                                              i18nc("@action: context menu", "Add Bookmark"), this);
-    fsmenu->addAction(addBookmark);
+                                              i18nc("@action: context menu", "Add Bookmark"), ctxmenu);
+    ctxmenu->addAction(addBookmark);
 
     connect(addBookmark, SIGNAL(triggered()),
             this, SIGNAL(signalAddBookmark()));
 
     QAction* const openFileMngr = new QAction(QIcon::fromTheme(QLatin1String("folder-open")),
-                                              i18nc("@action: context menu", "Open in File Manager"), this);
-    fsmenu->addAction(openFileMngr);
+                                              i18nc("@action: context menu", "Open in File Manager"), ctxmenu);
+    ctxmenu->addAction(openFileMngr);
 
     connect(openFileMngr, SIGNAL(triggered()),
             this, SLOT(slotOpenInFileManager()));
 
-    fsmenu->exec(e->globalPos());
+    ctxmenu->exec(e->globalPos());
 
-    delete fsmenu;
+    delete ctxmenu;
 
     QTreeView::contextMenuEvent(e);
 }

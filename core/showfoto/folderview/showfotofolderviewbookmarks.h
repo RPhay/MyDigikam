@@ -54,6 +54,7 @@ public:
     QTreeWidgetItem* topBookmarksItem()         const;
 
     QAction* toolBarAction(const QString& name) const;
+    QList<QAction*> pluginActions()             const;
 
 private Q_SLOTS:
 

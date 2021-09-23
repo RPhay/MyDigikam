@@ -56,7 +56,8 @@ class Q_DECL_HIDDEN ShowfotoFolderViewBar::Private
 public:
 
     explicit Private()
-      : previousBtn        (nullptr),
+      : pluginFingerPrint  (QLatin1String("DPlugin::Generic::View")),
+        previousBtn        (nullptr),
         nextBtn            (nullptr),
         upBtn              (nullptr),
         homeBtn            (nullptr),
@@ -74,6 +75,7 @@ public:
     {
     }
 
+    const QString              pluginFingerPrint;
     QToolButton*               previousBtn;
     QToolButton*               nextBtn;
     QToolButton*               upBtn;
@@ -292,9 +294,19 @@ QAction* ShowfotoFolderViewBar::toolBarAction(const QString& name) const
     return nullptr;
 }
 
-QList<QAction*> ShowfotoFolderViewBar::toolBarActions() const
+QList<QAction*> ShowfotoFolderViewBar::pluginActions() const
 {
-    return d->actionsList;
+    QList<QAction*> lst;
+
+    foreach (QAction* const act, d->actionsList)
+    {
+        if (act && (act->data() == d->pluginFingerPrint))
+        {
+            lst << act;
+        }
+    }
+
+    return lst;
 }
 
 void ShowfotoFolderViewBar::setFolderViewMode(int mode)
@@ -428,7 +440,7 @@ void ShowfotoFolderViewBar::registerPluginActions(const QList<DPluginAction*>& a
             act->setObjectName(dpact->objectName());
             act->setIcon(dpact->icon());
             act->setToolTip(dpact->toolTip());
-            act->setData(QLatin1String("DPlugin::Generic::View"));
+            act->setData(d->pluginFingerPrint);
 
             d->actionsList << act;
 
