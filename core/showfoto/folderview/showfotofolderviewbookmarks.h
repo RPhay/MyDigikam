@@ -56,8 +56,13 @@ public:
     QAction* toolBarAction(const QString& name) const;
     QList<QAction*> pluginActions()             const;
 
+Q_SIGNALS:
+
+    void signalLoadContents();
+
 private Q_SLOTS:
 
+    void slotLoadContents(const QString& path);
     void slotBookmarkDoubleClicked(QTreeWidgetItem*);
     void slotBookmarkSelectionChanged();
     void slotAddBookmark(const QString&);

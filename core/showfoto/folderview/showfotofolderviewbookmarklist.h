@@ -72,11 +72,13 @@ public:
 Q_SIGNALS:
 
     void signalAddBookmark(const QString& path);
+    void signalLoadContents(const QString& path);
 
 private Q_SLOTS:
 
     void slotContextMenu(const QPoint& pos);
     void slotOpenInFileManager();
+    void slotLoadContents();
 
 private:
 

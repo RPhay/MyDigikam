@@ -152,6 +152,9 @@ ShowfotoFolderViewSideBar::ShowfotoFolderViewSideBar(Showfoto* const parent)
     connect(d->fsbar, SIGNAL(signalLoadContents()),
             this, SLOT(slotLoadContents()));
 
+    connect(d->fsmarks, SIGNAL(signalLoadContents()),
+            this, SLOT(slotLoadContents()));
+
     connect(d->fsbar, SIGNAL(signalCustomPathChanged(QString)),
             this, SLOT(slotCustomPathChanged(QString)));
 

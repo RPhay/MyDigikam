@@ -436,7 +436,7 @@ void ShowfotoFolderViewBar::registerPluginActions(const QList<DPluginAction*>& a
 
         foreach (QAction* const dpact, actions)
         {
-            QAction* const act = d->optionsMenu->addAction(dpact->text());
+            QAction* const act = d->runMenu->addAction(dpact->text());
             act->setObjectName(dpact->objectName());
             act->setIcon(dpact->icon());
             act->setToolTip(dpact->toolTip());

@@ -221,6 +221,9 @@ ShowfotoFolderViewBookmarks::ShowfotoFolderViewBookmarks(ShowfotoFolderViewSideB
 
     connect(d->bookmarksList, SIGNAL(signalAddBookmark(QString)),
             this, SLOT(slotAddBookmark(QString)));
+
+    connect(d->bookmarksList, SIGNAL(signalLoadContents(QString)),
+            this, SLOT(slotLoadContents(QString)));
 }
 
 ShowfotoFolderViewBookmarks::~ShowfotoFolderViewBookmarks()
@@ -372,6 +375,12 @@ void ShowfotoFolderViewBookmarks::slotBookmarkDoubleClicked(QTreeWidgetItem* ite
     {
         d->sidebar->setCurrentPath(bitem->path());
     }
+}
+
+void ShowfotoFolderViewBookmarks::slotLoadContents(const QString& path)
+{
+    d->sidebar->setCurrentPath(path);
+    emit signalLoadContents();
 }
 
 void ShowfotoFolderViewBookmarks::saveSettings(KConfigGroup& group)

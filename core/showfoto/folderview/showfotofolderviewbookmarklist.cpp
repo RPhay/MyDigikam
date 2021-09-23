@@ -131,6 +131,16 @@ void ShowfotoFolderViewBookmarkList::slotOpenInFileManager()
     DFileOperations::openInFileManager(urls);
 }
 
+void ShowfotoFolderViewBookmarkList::slotLoadContents()
+{
+    ShowfotoFolderViewBookmarkItem* const fvitem = dynamic_cast<ShowfotoFolderViewBookmarkItem*>(currentItem());
+
+    if (fvitem)
+    {
+        emit signalLoadContents(fvitem->path());
+    }
+}
+
 void ShowfotoFolderViewBookmarkList::slotContextMenu(const QPoint& pos)
 {
     ShowfotoFolderViewBookmarkItem* const fvitem = dynamic_cast<ShowfotoFolderViewBookmarkItem*>(itemAt(pos));
@@ -146,6 +156,13 @@ void ShowfotoFolderViewBookmarkList::slotContextMenu(const QPoint& pos)
         ctxmenu->addAction(d->parent->toolBarAction(QLatin1String("LoadContents")));
         ctxmenu->addActions(d->parent->pluginActions());
         ctxmenu->addSeparator();
+
+        QAction* const loadContents = new QAction(QIcon::fromTheme(QLatin1String("media-playlist-normal")),
+                                                  i18nc("@action: context menu", "Load Contents"), ctxmenu);
+        ctxmenu->addAction(loadContents);
+
+        connect(loadContents, SIGNAL(triggered()),
+                this, SLOT(slotLoadContents()));
 
         QAction* const openFileMngr = new QAction(QIcon::fromTheme(QLatin1String("folder-open")),
                                                   i18nc("@action: context menu", "Open in File Manager"), ctxmenu);
