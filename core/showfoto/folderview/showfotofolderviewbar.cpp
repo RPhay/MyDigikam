@@ -291,14 +291,15 @@ ShowfotoFolderViewBar::ShowfotoFolderViewBar(ShowfotoFolderViewSideBar* const si
     d->typeMimesCombo->insertSqueezedItem(i18n("RAW images"),          TYPE_MIME_RAW,  DRawDecoder::rawFiles());
 
     QString filter;
-    QStringList mimeTypes = supportedImageMimeTypes(QIODevice::WriteOnly, filter);
-    QString patterns      = filter.toLower();
+    QString patterns;
+    (void)supportedImageMimeTypes(QIODevice::WriteOnly, filter);
+    patterns = filter.toLower();
     patterns.append(QLatin1Char(' '));
     patterns.append(filter.toUpper());
 
     d->typeMimesCombo->insertSqueezedItem(i18n("No RAW images"),       TYPE_MIME_NORAW,  patterns);
 
-    mimeTypes = supportedImageMimeTypes(QIODevice::ReadOnly, filter);
+    (void)supportedImageMimeTypes(QIODevice::ReadOnly, filter);
     patterns  = filter.toLower();
     patterns.append(QLatin1Char(' '));
     patterns.append(filter.toUpper());
@@ -450,15 +451,15 @@ void ShowfotoFolderViewBar::slotIconSizeChanged(int size)
 
 void ShowfotoFolderViewBar::slotOptionsChanged(QAction* action)
 {
-    int mode;
-
     if      (action == d->shortAction)
     {
-        mode = ShowfotoFolderViewList::ShortView;
+        emit signalViewModeChanged(ShowfotoFolderViewList::ShortView);
+        return;
     }
     else if (action == d->detailedAction)
     {
-        mode = ShowfotoFolderViewList::DetailledView;
+        emit signalViewModeChanged(ShowfotoFolderViewList::DetailledView);
+        return;
     }
     else if (action == d->showBookmarksAction)
     {
@@ -470,8 +471,6 @@ void ShowfotoFolderViewBar::slotOptionsChanged(QAction* action)
         emit signalSetup();
         return;
     }
-
-    emit signalViewModeChanged(mode);
 }
 
 void ShowfotoFolderViewBar::registerPluginActions(const QList<DPluginAction*>& actions)
