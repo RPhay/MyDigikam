@@ -53,6 +53,9 @@ public:
 
     QVariant data(const QModelIndex& index, int role) const override;
 
+    /**
+     * List all file paths from the current model root index selected in the view.
+     */
     QStringList currentFilesPath() const;
 
 private Q_SLOTS:

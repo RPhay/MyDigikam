@@ -55,7 +55,11 @@ public:
         TYPE_MIME_JPEG = 0,
         TYPE_MIME_TIFF,
         TYPE_MIME_PNG,
+        TYPE_MIME_PGF,
+        TYPE_MIME_HEIF,
+        TYPE_MIME_DNG,
         TYPE_MIME_RAW,
+        TYPE_MIME_NORAW,
         TYPE_MIME_ALL
     };
 

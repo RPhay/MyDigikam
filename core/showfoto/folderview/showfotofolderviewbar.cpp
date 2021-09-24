@@ -285,13 +285,24 @@ ShowfotoFolderViewBar::ShowfotoFolderViewBar(ShowfotoFolderViewSideBar* const si
     d->typeMimesCombo->insertSqueezedItem(i18n("JPEG images"),         TYPE_MIME_JPEG, QLatin1String("*.JPEG *.JPG *.JPE"));
     d->typeMimesCombo->insertSqueezedItem(i18n("TIFF images"),         TYPE_MIME_TIFF, QLatin1String("*.TIFF *.TIF"));
     d->typeMimesCombo->insertSqueezedItem(i18n("PNG images"),          TYPE_MIME_PNG,  QLatin1String("*.PNG"));
+    d->typeMimesCombo->insertSqueezedItem(i18n("PGF images"),          TYPE_MIME_PNG,  QLatin1String("*.PGF"));
+    d->typeMimesCombo->insertSqueezedItem(i18n("HEIF images"),         TYPE_MIME_HEIF, QLatin1String("*.HEIF *.HEIC"));
+    d->typeMimesCombo->insertSqueezedItem(i18n("DNG images"),          TYPE_MIME_HEIF, QLatin1String("*.DNG"));
     d->typeMimesCombo->insertSqueezedItem(i18n("RAW images"),          TYPE_MIME_RAW,  DRawDecoder::rawFiles());
 
     QString filter;
-    QStringList mimeTypes = supportedImageMimeTypes(QIODevice::ReadOnly, filter);
+    QStringList mimeTypes = supportedImageMimeTypes(QIODevice::WriteOnly, filter);
     QString patterns      = filter.toLower();
     patterns.append(QLatin1Char(' '));
     patterns.append(filter.toUpper());
+
+    d->typeMimesCombo->insertSqueezedItem(i18n("No RAW images"),       TYPE_MIME_NORAW,  patterns);
+
+    mimeTypes = supportedImageMimeTypes(QIODevice::ReadOnly, filter);
+    patterns  = filter.toLower();
+    patterns.append(QLatin1Char(' '));
+    patterns.append(filter.toUpper());
+
     d->typeMimesCombo->insertSqueezedItem(i18n("All supported files"), TYPE_MIME_ALL,  patterns);
 
     connect(d->typeMimesCombo, SIGNAL(activated(int)),
