@@ -27,6 +27,7 @@
 // QT includes
 
 #include <QFileSystemModel>
+#include <QStringList>
 
 // Local includes
 
@@ -51,6 +52,8 @@ public:
     static int maxIconSize();
 
     QVariant data(const QModelIndex& index, int role) const override;
+
+    QStringList currentFilesPath() const;
 
 private Q_SLOTS:
 

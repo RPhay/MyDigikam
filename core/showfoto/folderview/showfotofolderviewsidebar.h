@@ -31,6 +31,7 @@
 #include <QWidget>
 #include <QEvent>
 #include <QAction>
+#include <QStringList>
 #include <QModelIndex>
 
 // Local includes
@@ -97,7 +98,8 @@ Q_SIGNALS:
 
     void signalAddBookmark();
     void signalSetup();
-    void signalCurrentPathChanged(const QString& path);
+    void signalLoadContentsFromPath(const QString& path);
+    void signalLoadContentsFromFiles(const QStringList& files);
 
 private:
 

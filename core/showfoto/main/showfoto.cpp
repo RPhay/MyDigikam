@@ -276,6 +276,7 @@ void Showfoto::slotOpenFolderFromPath(const QString& path)
 
     QFileInfo inf(path);
     d->infoList.clear();
+    d->model->clearShowfotoItemInfos();
 
     if      (inf.isFile())
     {
@@ -421,6 +422,33 @@ void Showfoto::openFolder(const QUrl& url)
     QApplication::restoreOverrideCursor();
 }
 
+void Showfoto::slotOpenFilesfromPath(const QStringList& files)
+{
+    if (files.isEmpty())
+    {
+        return;
+    }
+
+    d->infoList.clear();
+    d->model->clearShowfotoItemInfos();
+
+    QList<QUrl> urls;
+
+    foreach (const QString& path, files)
+    {
+        urls << QUrl::fromLocalFile(path);
+    }
+
+    qCDebug(DIGIKAM_GENERAL_LOG) << "urls list" << urls;
+
+    openUrls(urls);
+
+    emit signalInfoList(d->infoList);
+
+    slotOpenUrl(d->thumbBar->currentInfo());
+    toggleNavigation(1);
+}
+
 void Showfoto::slotDroppedUrls(const QList<QUrl>& droppedUrls, bool dropped)
 {
     if (droppedUrls.isEmpty())
@@ -445,11 +473,14 @@ void Showfoto::slotDroppedUrls(const QList<QUrl>& droppedUrls, bool dropped)
             QMimeDatabase mimeDB;
             QString mimeType(mimeDB.mimeTypeForUrl(url).name());
 
-            if (mimeType.startsWith(QLatin1String("image/")) ||
+            if (
+                mimeType.startsWith(QLatin1String("image/")) ||
                 (suffix == QLatin1String("PGF"))             ||
                 (suffix == QLatin1String("KRA"))             ||
                 (suffix == QLatin1String("HEIC"))            ||
-                (suffix == QLatin1String("HEIF")))
+                (suffix == QLatin1String("HEIF"))            ||
+                DRawDecoder::rawFiles().contains(suffix)
+               )
             {
                 imagesUrls << url;
             }
@@ -497,7 +528,7 @@ void Showfoto::slotDroppedUrls(const QList<QUrl>& droppedUrls, bool dropped)
     else
     {
         QMessageBox::information(this, qApp->applicationName(),
-                                 i18n("There is no dropped item to process."));
+                                 i18n("There is no item to process."));
         qCWarning(DIGIKAM_SHOWFOTO_LOG) << "infolist is empty..";
     }
 }

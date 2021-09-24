@@ -29,6 +29,7 @@
 #include <QIODevice>
 #include <QModelIndex>
 #include <QMimeDatabase>
+#include <QFileInfo>
 
 // Local includes
 
@@ -107,7 +108,6 @@ QVariant ShowfotoFolderViewModel::data(const QModelIndex& index, int role) const
         if (info.isFile() && !info.isSymLink() && !info.isDir() && !info.isRoot())
         {
             QString path    = info.absoluteFilePath();
-            qCDebug(DIGIKAM_SHOWFOTO_LOG) << "request thumb icon for " << path;
 
             QMimeType mtype = QMimeDatabase().mimeTypeForFile(path);
             QString suffix  = info.suffix().toUpper();
@@ -150,6 +150,27 @@ void ShowfotoFolderViewModel::refreshThumbnails(const LoadingDescription& desc, 
     {
         emit dataChanged(current, current);
     }
+}
+
+QStringList ShowfotoFolderViewModel::currentFilesPath() const
+{
+    QStringList paths;
+    QModelIndex idx = index(rootPath());
+    QModelIndex child;
+    QString file;
+
+    for (int i = 0 ; i < rowCount(idx) ; ++i)
+    {
+        child = index(i, idx.column(), idx);
+        file  = filePath(child);
+
+        if (QFileInfo(file).isFile())
+        {
+            paths << file;
+        }
+    }
+
+    return paths;
 }
 
 } // namespace ShowFoto

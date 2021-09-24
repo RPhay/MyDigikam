@@ -193,13 +193,6 @@ void ShowfotoFolderViewSideBar::slotLoadContents()
 {
     QModelIndex index = d->fsmodel->index(currentPath());
     loadContents(index);
-
-    if (d->fsmodel->isDir(index))
-    {
-        // From tool bar, load contents will always open directory in editor (without CTRL|SHIFT keys modifiers)
-
-        emit signalCurrentPathChanged(currentPath());
-    }
 }
 
 void ShowfotoFolderViewSideBar::loadContents(const QModelIndex& index)
@@ -209,18 +202,24 @@ void ShowfotoFolderViewSideBar::loadContents(const QModelIndex& index)
         return;
     }
 
+    QStringList lst;
+
     if      (d->fsmodel->isDir(index))
     {
         setCurrentPath(d->fsmodel->filePath(index));
 
-        if (QApplication::keyboardModifiers() & (Qt::ShiftModifier | Qt::ControlModifier))
-        {
-            emit signalCurrentPathChanged(currentPath());
-        }
+        lst = d->fsmodel->currentFilesPath();
     }
     else if (d->fsmodel->fileInfo(index).isFile())
     {
-        emit signalCurrentPathChanged(currentPath());
+        lst = d->fsmodel->currentFilesPath();
+    }
+
+    qCDebug(DIGIKAM_SHOWFOTO_LOG) << "Load Contents from:" << currentPath() << "Files:" << lst;
+
+    if (!lst.isEmpty())
+    {
+        emit signalLoadContentsFromFiles(lst);
     }
 }
 
