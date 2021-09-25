@@ -44,7 +44,8 @@ class ShowfotoFolderViewBookmarkDlg : public QDialog
 
 public:
 
-    explicit ShowfotoFolderViewBookmarkDlg(ShowfotoFolderViewBookmarks* const parent, bool create = false);
+    explicit ShowfotoFolderViewBookmarkDlg(ShowfotoFolderViewBookmarks* const parent,
+                                           bool create = false);
     ~ShowfotoFolderViewBookmarkDlg() override;
 
     void setTitle(const QString& title);

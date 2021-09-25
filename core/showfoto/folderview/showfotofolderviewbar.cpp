@@ -113,7 +113,7 @@ ShowfotoFolderViewBar::ShowfotoFolderViewBar(ShowfotoFolderViewSideBar* const si
     btnAction                = new QAction(this);
     btnAction->setObjectName(QLatin1String("GoPrevious"));
     btnAction->setIcon(QIcon::fromTheme(QLatin1String("go-previous")));
-    btnAction->setText(i18nc("action", "Go to Previous"));
+    btnAction->setText(i18nc("@action", "Go to Previous"));
     btnAction->setToolTip(i18nc("@info", "Go to previous place in folder-view hierarchy"));
 
     connect(btnAction, SIGNAL(triggered(bool)),
@@ -130,7 +130,7 @@ ShowfotoFolderViewBar::ShowfotoFolderViewBar(ShowfotoFolderViewSideBar* const si
     btnAction                = new QAction(this);
     btnAction->setObjectName(QLatin1String("GoNext"));
     btnAction->setIcon(QIcon::fromTheme(QLatin1String("go-next")));
-    btnAction->setText(i18nc("action", "Go to Next"));
+    btnAction->setText(i18nc("@action", "Go to Next"));
     btnAction->setToolTip(i18nc("@info", "Go to next place in folder-view hierarchy"));
 
     connect(btnAction, SIGNAL(triggered(bool)),
@@ -147,7 +147,7 @@ ShowfotoFolderViewBar::ShowfotoFolderViewBar(ShowfotoFolderViewSideBar* const si
     btnAction                = new QAction(this);
     btnAction->setObjectName(QLatin1String("GoUp"));
     btnAction->setIcon(QIcon::fromTheme(QLatin1String("go-up")));
-    btnAction->setText(i18nc("action", "Go Up"));
+    btnAction->setText(i18nc("@action", "Go Up"));
     btnAction->setToolTip(i18nc("@info", "Go up in folder-view hierarchy"));
 
     connect(btnAction, SIGNAL(triggered(bool)),
@@ -164,7 +164,7 @@ ShowfotoFolderViewBar::ShowfotoFolderViewBar(ShowfotoFolderViewSideBar* const si
     btnAction                = new QAction(this);
     btnAction->setObjectName(QLatin1String("GoHome"));
     btnAction->setIcon(QIcon::fromTheme(QLatin1String("go-home")));
-    btnAction->setText(i18nc("action", "Go Home"));
+    btnAction->setText(i18nc("@action", "Go Home"));
     btnAction->setToolTip(i18nc("@info", "Go to home directory"));
 
     connect(btnAction, SIGNAL(triggered(bool)),
@@ -254,7 +254,7 @@ ShowfotoFolderViewBar::ShowfotoFolderViewBar(ShowfotoFolderViewSideBar* const si
     btnAction                = d->runMenu->addAction(i18nc("@action:inmenu", "Load Contents"));
     btnAction->setObjectName(QLatin1String("LoadContents"));
     btnAction->setIcon(QIcon::fromTheme(QLatin1String("media-playlist-normal")));
-    btnAction->setText(i18nc("action", "Load Contents"));
+    btnAction->setText(i18nc("@action", "Load Contents"));
     btnAction->setToolTip(i18nc("@info", "Load Contents to Editor"));
 
     connect(btnAction, SIGNAL(triggered(bool)),
@@ -282,13 +282,13 @@ ShowfotoFolderViewBar::ShowfotoFolderViewBar(ShowfotoFolderViewSideBar* const si
     // ---
 
     d->typeMimesCombo = new SqueezedComboBox(this);
-    d->typeMimesCombo->insertSqueezedItem(i18n("JPEG images"),         TYPE_MIME_JPEG, QLatin1String("*.JPEG *.JPG *.JPE"));
-    d->typeMimesCombo->insertSqueezedItem(i18n("TIFF images"),         TYPE_MIME_TIFF, QLatin1String("*.TIFF *.TIF"));
-    d->typeMimesCombo->insertSqueezedItem(i18n("PNG images"),          TYPE_MIME_PNG,  QLatin1String("*.PNG"));
-    d->typeMimesCombo->insertSqueezedItem(i18n("PGF images"),          TYPE_MIME_PNG,  QLatin1String("*.PGF"));
-    d->typeMimesCombo->insertSqueezedItem(i18n("HEIF images"),         TYPE_MIME_HEIF, QLatin1String("*.HEIF *.HEIC"));
-    d->typeMimesCombo->insertSqueezedItem(i18n("DNG images"),          TYPE_MIME_HEIF, QLatin1String("*.DNG"));
-    d->typeMimesCombo->insertSqueezedItem(i18n("RAW images"),          TYPE_MIME_RAW,  DRawDecoder::rawFiles());
+    d->typeMimesCombo->insertSqueezedItem(i18nc("@item: filter type mime", "JPEG images"),         TYPE_MIME_JPEG, QLatin1String("*.JPEG *.JPG *.JPE"));
+    d->typeMimesCombo->insertSqueezedItem(i18nc("@item: filter type mime", "TIFF images"),         TYPE_MIME_TIFF, QLatin1String("*.TIFF *.TIF"));
+    d->typeMimesCombo->insertSqueezedItem(i18nc("@item: filter type mime", "PNG images"),          TYPE_MIME_PNG,  QLatin1String("*.PNG"));
+    d->typeMimesCombo->insertSqueezedItem(i18nc("@item: filter type mime", "PGF images"),          TYPE_MIME_PNG,  QLatin1String("*.PGF"));
+    d->typeMimesCombo->insertSqueezedItem(i18nc("@item: filter type mime", "HEIF images"),         TYPE_MIME_HEIF, QLatin1String("*.HEIF *.HEIC"));
+    d->typeMimesCombo->insertSqueezedItem(i18nc("@item: filter type mime", "DNG images"),          TYPE_MIME_HEIF, QLatin1String("*.DNG"));
+    d->typeMimesCombo->insertSqueezedItem(i18nc("@item: filter type mime", "RAW images"),          TYPE_MIME_RAW,  DRawDecoder::rawFiles());
 
     QString filter;
     QString patterns;
@@ -297,14 +297,14 @@ ShowfotoFolderViewBar::ShowfotoFolderViewBar(ShowfotoFolderViewSideBar* const si
     patterns.append(QLatin1Char(' '));
     patterns.append(filter.toUpper());
 
-    d->typeMimesCombo->insertSqueezedItem(i18n("No RAW images"),       TYPE_MIME_NORAW,  patterns);
+    d->typeMimesCombo->insertSqueezedItem(i18nc("@item: filter type mime", "No RAW images"),       TYPE_MIME_NORAW,  patterns);
 
     (void)supportedImageMimeTypes(QIODevice::ReadOnly, filter);
     patterns  = filter.toLower();
     patterns.append(QLatin1Char(' '));
     patterns.append(filter.toUpper());
 
-    d->typeMimesCombo->insertSqueezedItem(i18n("All supported files"), TYPE_MIME_ALL,  patterns);
+    d->typeMimesCombo->insertSqueezedItem(i18nc("@item: filter type mime", "All supported files"), TYPE_MIME_ALL,  patterns);
 
     connect(d->typeMimesCombo, SIGNAL(activated(int)),
             this, SLOT(slotTypeMimesChanged(int)));

@@ -146,7 +146,7 @@ ShowfotoFolderViewBookmarks::ShowfotoFolderViewBookmarks(ShowfotoFolderViewSideB
     btnAction               = new QAction(this);
     btnAction->setObjectName(QLatin1String("AddBookmark"));
     btnAction->setIcon(QIcon::fromTheme(QLatin1String("list-add")));
-    btnAction->setText(i18nc("action", "Add Bookmark"));
+    btnAction->setText(i18nc("@action", "Add Bookmark"));
     btnAction->setToolTip(i18nc("@info", "Add new bookmark to the list"));
 
     connect(btnAction, SIGNAL(triggered(bool)),
@@ -163,7 +163,7 @@ ShowfotoFolderViewBookmarks::ShowfotoFolderViewBookmarks(ShowfotoFolderViewSideB
     btnAction               = new QAction(this);
     btnAction->setObjectName(QLatin1String("DelBookmark"));
     btnAction->setIcon(QIcon::fromTheme(QLatin1String("list-remove")));
-    btnAction->setText(i18nc("action", "Del Bookmark"));
+    btnAction->setText(i18nc("@action", "Del Bookmark"));
     btnAction->setToolTip(i18nc("@info", "Remove selected bookmark from the list"));
 
     connect(btnAction, SIGNAL(triggered(bool)),
@@ -181,7 +181,7 @@ ShowfotoFolderViewBookmarks::ShowfotoFolderViewBookmarks(ShowfotoFolderViewSideB
     btnAction               = new QAction(this);
     btnAction->setObjectName(QLatin1String("EditBookmark"));
     btnAction->setIcon(QIcon::fromTheme(QLatin1String("document-edit")));
-    btnAction->setText(i18nc("action", "Edit Bookmark"));
+    btnAction->setText(i18nc("@action", "Edit Bookmark"));
     btnAction->setToolTip(i18nc("@info", "Edit current bookmark from the list"));
 
     connect(btnAction, SIGNAL(triggered(bool)),

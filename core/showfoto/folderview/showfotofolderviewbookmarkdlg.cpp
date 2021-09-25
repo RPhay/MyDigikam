@@ -90,7 +90,8 @@ public:
     ShowfotoFolderViewBookmarks* list;
 };
 
-ShowfotoFolderViewBookmarkDlg::ShowfotoFolderViewBookmarkDlg(ShowfotoFolderViewBookmarks* const parent, bool create)
+ShowfotoFolderViewBookmarkDlg::ShowfotoFolderViewBookmarkDlg(ShowfotoFolderViewBookmarks* const parent,
+                                                             bool create)
     : QDialog(parent),
       d      (new Private)
 {
@@ -102,11 +103,11 @@ ShowfotoFolderViewBookmarkDlg::ShowfotoFolderViewBookmarkDlg(ShowfotoFolderViewB
 
     if (d->create)
     {
-        setWindowTitle(i18n("New Bookmark"));
+        setWindowTitle(i18nc("@title", "New Bookmark"));
     }
     else
     {
-        setWindowTitle(i18n("Edit Bookmark"));
+        setWindowTitle(i18nc("@title", "Edit Bookmark"));
     }
 
     QWidget* const page      = new QWidget(this);
@@ -131,7 +132,7 @@ ShowfotoFolderViewBookmarkDlg::ShowfotoFolderViewBookmarkDlg(ShowfotoFolderViewB
     // --------------------------------------------------------
 
     QLabel* const iconTextLabel = new QLabel(page);
-    iconTextLabel->setText(i18n("&Icon:"));
+    iconTextLabel->setText(i18nc("@label", "&Icon:"));
 
     d->iconButton               = new QPushButton(page);
     d->iconButton->setFixedSize(40, 40);
@@ -139,7 +140,7 @@ ShowfotoFolderViewBookmarkDlg::ShowfotoFolderViewBookmarkDlg(ShowfotoFolderViewB
     iconTextLabel->setBuddy(d->iconButton);
 
     d->resetIconButton          = new QPushButton(QIcon::fromTheme(QLatin1String("view-refresh")),
-                                                  i18n("Reset"), page);
+                                                  i18nc("@button", "Reset"), page);
 
 #ifndef HAVE_KICONTHEMES
 
@@ -157,7 +158,7 @@ ShowfotoFolderViewBookmarkDlg::ShowfotoFolderViewBookmarkDlg(ShowfotoFolderViewB
     d->pathEdit             = new DFileSelector(page);
     d->pathEdit->setFileDlgMode(QFileDialog::DirectoryOnly);
     d->pathEdit->setFileDlgOptions(QFileDialog::ShowDirsOnly);
-    d->pathEdit->lineEdit()->setPlaceholderText(i18n("Enter bookmark path here..."));
+    d->pathEdit->lineEdit()->setPlaceholderText(i18nc("@info", "Enter bookmark path here..."));
     pathLabel->setBuddy(d->pathEdit);
 
     // --------------------------------------------------------
