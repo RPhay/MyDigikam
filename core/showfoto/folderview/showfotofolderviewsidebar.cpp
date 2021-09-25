@@ -44,7 +44,6 @@
 
 #include "digikam_debug.h"
 #include "digikam_globals.h"
-#include "showfotosettings.h"
 #include "showfoto.h"
 #include "showfotofolderviewbar.h"
 #include "showfotofolderviewundo.h"
@@ -410,17 +409,6 @@ void ShowfotoFolderViewSideBar::doSaveState()
     group.writeEntry(entryName(d->configLastFolderEntry),           currentFolder());
     group.writeEntry(entryName(d->configSplitterStateEntry),        d->splitter->saveState().toBase64());
     group.sync();
-}
-
-void ShowfotoFolderViewSideBar::applySettings()
-{
-    ShowfotoSettings* const settings = ShowfotoSettings::instance();
-    Q_UNUSED(settings);
-}
-
-void ShowfotoFolderViewSideBar::setActive(bool active)
-{
-    Q_UNUSED(active);
 }
 
 void ShowfotoFolderViewSideBar::slotViewModeChanged(int mode)

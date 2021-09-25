@@ -56,6 +56,8 @@ public:
     void setPath(const QString& path);
     QString path()     const;
 
+public:
+
     static bool bookmarkEdit(ShowfotoFolderViewBookmarks* const parent, QString& title, QString& icon, QString& path);
     static bool bookmarkCreate(ShowfotoFolderViewBookmarks* const parent, QString& title, QString& icon, QString& path);
 

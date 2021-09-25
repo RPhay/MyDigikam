@@ -31,32 +31,49 @@
 namespace ShowFoto
 {
 
+class Q_DECL_HIDDEN ShowfotoFolderViewUndo::Private
+{
+
+public:
+
+    explicit Private()
+      : view(nullptr)
+    {
+    }
+
+    ShowfotoFolderViewSideBar* view;
+    QString                    oldPath;
+    QString                    newPath;
+};
+
 ShowfotoFolderViewUndo::ShowfotoFolderViewUndo(ShowfotoFolderViewSideBar* const view,
                                                const QString& newPath)
     : QUndoCommand(),
-      m_view(view)
+      d           (new Private)
 {
-    m_oldPath = m_view->currentFolder();
-    m_newPath = newPath;
+    d->view    = view;
+    d->oldPath = d->view->currentFolder();
+    d->newPath = newPath;
 }
 
 ShowfotoFolderViewUndo::~ShowfotoFolderViewUndo()
 {
+    delete d;
 }
 
 QString ShowfotoFolderViewUndo::undoPath() const
 {
-    return m_oldPath;
+    return d->oldPath;
 }
 
 void ShowfotoFolderViewUndo::undo()
 {
-    m_view->setCurrentPathWithoutUndo(m_oldPath);
+    d->view->setCurrentPathWithoutUndo(d->oldPath);
 }
 
 void ShowfotoFolderViewUndo::redo()
 {
-    m_view->setCurrentPathWithoutUndo(m_newPath);
+    d->view->setCurrentPathWithoutUndo(d->newPath);
 }
 
 } // namespace ShowFoto

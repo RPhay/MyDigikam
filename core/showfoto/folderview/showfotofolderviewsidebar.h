@@ -57,10 +57,8 @@ public:
     explicit ShowfotoFolderViewSideBar(Showfoto* const parent);
     ~ShowfotoFolderViewSideBar()              override;
 
-    void          setActive(bool active);
     void          doLoadState()               override;
     void          doSaveState()               override;
-    void          applySettings();
     const QIcon   getIcon();
     const QString getCaption();
 

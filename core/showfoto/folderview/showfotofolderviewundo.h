@@ -52,9 +52,8 @@ public:
 
 private:
 
-    ShowfotoFolderViewSideBar* m_view;
-    QString                    m_oldPath;
-    QString                    m_newPath;
+    class Private;
+    Private* const d;
 };
 
 } // namespace ShowFoto
