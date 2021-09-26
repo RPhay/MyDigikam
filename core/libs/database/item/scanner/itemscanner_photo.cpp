@@ -435,10 +435,15 @@ void ItemScanner::commitFaces()
 {
     FaceTagsEditor editor;
     QList<QRect> assignedRects;
+    QList<QRect> databaseRects;
     QMultiMap<QString, QVariant>::const_iterator it;
-    QSize size                        = d->img.size();
-    int orientation                   = d->img.orientation();
-    const QList<QRect>& databaseRects = editor.getTagRects(d->scanInfo.id);
+    QSize size                         = d->img.size();
+    int orientation                    = d->img.orientation();
+
+    foreach (const FaceTagsIface& face, editor.databaseFaces(d->scanInfo.id))
+    {
+        databaseRects << face.region().toRect();
+    }
 
     for (it = d->commit.metadataFacesMap.constBegin() ; it != d->commit.metadataFacesMap.constEnd() ; ++it)
     {
@@ -469,6 +474,35 @@ void ItemScanner::commitFaces()
             continue;
         }
 
+        QList<QRect>::iterator it1;
+
+        for (it1 = databaseRects.begin() ; it1 != databaseRects.end() ; )
+        {
+            // Is the face rectangle located
+            // inside or outside completely?
+
+            if ((*it1).contains(rect) ||
+                rect.contains((*it1)))
+            {
+                QPoint point = (*it1).center() - rect.center();
+                int smax     = qMax(size.width(), size.height());
+
+                // Check the percentage deviation from the center.
+
+                if ((point.manhattanLength() * 100 / smax) <= 5)
+                {
+                    // Remove the duplicate face in the database.
+
+                    editor.removeFace(d->scanInfo.id, (*it1));
+                    it1 = databaseRects.erase(it1);
+
+                    continue;
+                }
+            }
+
+            ++it1;
+        }
+
         TagRegion region(rect);
         assignedRects << rect;
 
@@ -485,14 +519,6 @@ void ItemScanner::commitFaces()
 
             if (tagId)
             {
-                // We have a confirmed face, remove an unknown
-                // or unconfirmed face from the database.
-
-                if (databaseRects.contains(rect))
-                {
-                    editor.removeFace(d->scanInfo.id, rect);
-                }
-
                 editor.add(d->scanInfo.id, tagId, region, false);
             }
             else

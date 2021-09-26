@@ -153,8 +153,8 @@ BUGFIXES:
 139 ==> 442641 - Showfoto have only 1 theme - Default.
 140 ==> 442686 - Face suggestion does not disappear if the same face has already been tagged in another device.
 141 ==> 442713 - Shortcut key conflict (Ctrl+Alt+I).
-142 ==> 
-143 ==> 
+142 ==> 440773 - Check for overlapping face regions.
+143 ==> 441378 - Prevent face bounding box overlap when same person.
 144 ==> 
 145 ==> 
 146 ==> 
