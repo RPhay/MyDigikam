@@ -434,9 +434,10 @@ void ItemScanner::scanFaces()
 void ItemScanner::commitFaces()
 {
     FaceTagsEditor editor;
-    QSize size      = d->img.size();
-    int orientation = d->img.orientation();
+    QList<QRect> assignedRects;
     QMultiMap<QString, QVariant>::const_iterator it;
+    QSize size                        = d->img.size();
+    int orientation                   = d->img.orientation();
     const QList<QRect>& databaseRects = editor.getTagRects(d->scanInfo.id);
 
     for (it = d->commit.metadataFacesMap.constBegin() ; it != d->commit.metadataFacesMap.constEnd() ; ++it)
@@ -462,7 +463,14 @@ void ItemScanner::commitFaces()
 
         QRect rect = TagRegion::relativeToAbsolute(rectF, size);
         TagRegion::adjustToOrientation(rect, orientation, size);
+
+        if (assignedRects.contains(rect))
+        {
+            continue;
+        }
+
         TagRegion region(rect);
+        assignedRects << rect;
 
         if (name.isEmpty())
         {
