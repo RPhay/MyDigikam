@@ -25,7 +25,6 @@
 
 // Qt includes
 
-#include <QTreeWidget>
 #include <QHeaderView>
 #include <QMimeData>
 #include <QFileInfo>
@@ -43,35 +42,13 @@
 
 #include "digikam_debug.h"
 #include "showfotofolderviewbookmarks.h"
+#include "showfotofolderviewbookmarkitem.h"
 #include "dfileoperations.h"
 
 using namespace Digikam;
 
 namespace ShowFoto
 {
-
-ShowfotoFolderViewBookmarkItem::ShowfotoFolderViewBookmarkItem(QTreeWidgetItem* const parent)
-    : QTreeWidgetItem(parent)
-{
-    setDisabled(false);
-    setSelected(false);
-}
-
-ShowfotoFolderViewBookmarkItem::~ShowfotoFolderViewBookmarkItem()
-{
-}
-
-void ShowfotoFolderViewBookmarkItem::setPath(const QString& path)
-{
-    m_path = path;
-}
-
-QString ShowfotoFolderViewBookmarkItem::path() const
-{
-    return m_path;
-}
-
-// ---------------------------------------------------------------------
 
 class Q_DECL_HIDDEN ShowfotoFolderViewBookmarkList::Private
 {

@@ -48,6 +48,7 @@
 #include "showfotofolderviewsidebar.h"
 #include "showfotofolderviewbookmarkdlg.h"
 #include "showfotofolderviewbookmarklist.h"
+#include "showfotofolderviewbookmarkitem.h"
 
 namespace ShowFoto
 {

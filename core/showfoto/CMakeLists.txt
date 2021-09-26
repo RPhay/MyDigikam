@@ -53,6 +53,7 @@ set(showfoto_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/folderview/showfotofolderviewbookmarks.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/folderview/showfotofolderviewbookmarkdlg.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/folderview/showfotofolderviewbookmarklist.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/folderview/showfotofolderviewbookmarkitem.cpp
 
     ${CMAKE_CURRENT_SOURCE_DIR}/main/showfotosettings.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/main/showfotoinfoiface.cpp

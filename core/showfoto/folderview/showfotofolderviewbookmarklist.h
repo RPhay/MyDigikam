@@ -40,26 +40,6 @@ namespace ShowFoto
 
 class ShowfotoFolderViewBookmarks;
 
-class ShowfotoFolderViewBookmarkItem : public QTreeWidgetItem
-{
-
-public:
-
-    explicit ShowfotoFolderViewBookmarkItem(QTreeWidgetItem* const parent);
-    ~ShowfotoFolderViewBookmarkItem()    override;
-
-    void setPath(const QString&);
-    QString path()      const;
-
-private:
-
-    QString m_path;
-
-    Q_DISABLE_COPY(ShowfotoFolderViewBookmarkItem)
-};
-
-// -------------------------------------------------------------------
-
 class ShowfotoFolderViewBookmarkList : public QTreeWidget
 {
     Q_OBJECT
