@@ -68,42 +68,6 @@ public:
     {
     }
 
-    QString bookmarkBaseName(const QString& path) const
-    {
-        if (path.endsWith(QDir::separator()))
-        {
-            return (path.section(QDir::separator(), -2).remove(QDir::separator()));
-        }
-        else
-        {
-            return (QFileInfo(path).baseName());
-        }
-    }
-
-    ShowfotoFolderViewBookmarkItem* isBookmarkExist(const QString& path) const
-    {
-        bool found                           = false;
-        ShowfotoFolderViewBookmarkItem* item = nullptr;
-
-        for (int i = 0 ; i < topBookmarks->childCount() ; ++i)
-        {
-            item = dynamic_cast<ShowfotoFolderViewBookmarkItem*>(topBookmarks->child(i));
-
-            if (path == item->path())
-            {
-                found = true;
-                break;
-            }
-        }
-
-        if (found)
-        {
-            return item;
-        }
-
-        return nullptr;
-    }
-
 public:
 
     static const QString            configBookmarkItemsEntry;
@@ -265,11 +229,11 @@ void ShowfotoFolderViewBookmarks::slotAddBookmark(const QString& newBookmark)
         return;
     }
 
-    ShowfotoFolderViewBookmarkItem* item = d->isBookmarkExist(newBookmark);
+    ShowfotoFolderViewBookmarkItem* item = d->bookmarksList->bookmarkExists(newBookmark);
 
     if (!item)
     {
-        QString title = d->bookmarkBaseName(newBookmark);
+        QString title = d->bookmarksList->bookmarkBaseName(newBookmark);
         QString icon  = QLatin1String("folder");
         QString path  = newBookmark;
 
@@ -277,7 +241,7 @@ void ShowfotoFolderViewBookmarks::slotAddBookmark(const QString& newBookmark)
 
         if (ok && !path.isEmpty() && !title.isEmpty())
         {
-            item = d->isBookmarkExist(path);
+            item = d->bookmarksList->bookmarkExists(path);
 
             if (!item)
             {
@@ -337,7 +301,7 @@ void ShowfotoFolderViewBookmarks::slotEdtBookmark()
 
     if (ok && !path.isEmpty() && !title.isEmpty())
     {
-        ShowfotoFolderViewBookmarkItem* const nitem = d->isBookmarkExist(path);
+        ShowfotoFolderViewBookmarkItem* const nitem = d->bookmarksList->bookmarkExists(path);
 
         if (!nitem)
         {
@@ -418,7 +382,7 @@ void ShowfotoFolderViewBookmarks::readSettings(const KConfigGroup& group)
     d->topBookmarks->setFlags(Qt::ItemIsEnabled);
     d->topBookmarks->setExpanded(group.readEntry(d->configBookmarkTopItemExpandedEntry, true));
     d->topBookmarks->setDisabled(false);
-    d->topBookmarks->setText(0, i18nc("@title", "Bookmarks"));
+    d->topBookmarks->setText(0, i18nc("@title", "Bookmarked"));
 
     QString confEntry;
     int nbItems = group.readEntry(d->configBookmarkItemsEntry, 0);
@@ -433,7 +397,7 @@ void ShowfotoFolderViewBookmarks::readSettings(const KConfigGroup& group)
         if (!item->path().isEmpty())
         {
             confEntry       = QString::fromLatin1("%1_%2").arg(d->configBookmarkTitlePrefixEntry).arg(i);
-            item->setText(0, group.readEntry(confEntry, d->bookmarkBaseName(item->path())));
+            item->setText(0, group.readEntry(confEntry, d->bookmarksList->bookmarkBaseName(item->path())));
 
             confEntry       = QString::fromLatin1("%1_%2").arg(d->configBookmarkIconPrefixEntry).arg(i);
             QString icoName = group.readEntry(confEntry, QString::fromLatin1("folder"));

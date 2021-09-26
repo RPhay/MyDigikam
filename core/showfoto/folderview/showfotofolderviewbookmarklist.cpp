@@ -260,4 +260,40 @@ void ShowfotoFolderViewBookmarkList::startDrag(Qt::DropActions /*supportedAction
     drag->exec();
 }
 
+ShowfotoFolderViewBookmarkItem* ShowfotoFolderViewBookmarkList::bookmarkExists(const QString& path) const
+{
+    bool found                           = false;
+    ShowfotoFolderViewBookmarkItem* item = nullptr;
+
+    for (int i = 0 ; i < d->parent->topBookmarksItem()->childCount() ; ++i)
+    {
+        item = dynamic_cast<ShowfotoFolderViewBookmarkItem*>(d->parent->topBookmarksItem()->child(i));
+
+        if (path == item->path())
+        {
+            found = true;
+            break;
+        }
+    }
+
+    if (found)
+    {
+        return item;
+    }
+
+    return nullptr;
+}
+
+QString ShowfotoFolderViewBookmarkList::bookmarkBaseName(const QString& path) const
+{
+    if (path.endsWith(QDir::separator()))
+    {
+        return (path.section(QDir::separator(), -2).remove(QDir::separator()));
+    }
+    else
+    {
+        return (QFileInfo(path).baseName());
+    }
+}
+
 } // namespace ShowFoto

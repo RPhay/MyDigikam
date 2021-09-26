@@ -39,6 +39,7 @@ namespace ShowFoto
 {
 
 class ShowfotoFolderViewBookmarks;
+class ShowfotoFolderViewBookmarkItem;
 
 class ShowfotoFolderViewBookmarkList : public QTreeWidget
 {
@@ -47,7 +48,10 @@ class ShowfotoFolderViewBookmarkList : public QTreeWidget
 public:
 
     explicit ShowfotoFolderViewBookmarkList(ShowfotoFolderViewBookmarks* const parent);
-    ~ShowfotoFolderViewBookmarkList()                              override;
+    ~ShowfotoFolderViewBookmarkList()                                         override;
+
+    ShowfotoFolderViewBookmarkItem* bookmarkExists(const QString& path) const;
+    QString bookmarkBaseName(const QString& path)                       const;
 
 Q_SIGNALS:
 
@@ -67,8 +71,8 @@ private:
     void dropEvent(QDropEvent*);
 
     // cppcheck-suppress passedByValue
-    QMimeData* mimeData(const QList<QTreeWidgetItem*> items) const override;
-    void       startDrag(Qt::DropActions supportedActions)         override;
+    QMimeData* mimeData(const QList<QTreeWidgetItem*> items)            const override;
+    void       startDrag(Qt::DropActions supportedActions)                    override;
 
 private:
 
