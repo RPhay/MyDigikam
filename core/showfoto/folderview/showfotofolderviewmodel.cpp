@@ -68,7 +68,7 @@ ShowfotoFolderViewModel::ShowfotoFolderViewModel(ShowfotoFolderViewList* const v
 {
     d->view               = view;
 
-    setObjectName(QLatin1String("ShowfotoFolderModel"));
+    setObjectName(QLatin1String("ShowfotoFolderViewModel"));
 
     // --- Populate the model
 
