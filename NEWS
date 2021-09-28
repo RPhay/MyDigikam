@@ -157,7 +157,7 @@ BUGFIXES:
 143 ==> 441378 - Prevent face bounding box overlap when same person.
 144 ==> 442189 - HEIC photos with GPS coordinates embeded in metadata are not used in digikam database for geolocation.
 145 ==> 395748 - Problem with printig.
-146 ==> 
+146 ==> 442589 - digiKam does not start after upgrade, can not update Sqlite DB schema.
 147 ==> 
 148 ==> 
 149 ==> 
