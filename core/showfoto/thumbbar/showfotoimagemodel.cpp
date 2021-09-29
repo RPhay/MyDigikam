@@ -504,6 +504,7 @@ void ShowfotoItemModel::removeRowPairs(const QList<QPair<int, int> >& toRemove)
 
                     removeFilePaths << it.key();
                     it = d->idHash.erase(it);
+
                     continue;
                 }
             }
@@ -566,6 +567,7 @@ QList<QPair<int, int> > ShowfotoItemModel::toContiguousPairs(const QList<int>& u
         if (index == pair.second + 1)
         {
             pair.second = index;
+
             continue;
         }
 

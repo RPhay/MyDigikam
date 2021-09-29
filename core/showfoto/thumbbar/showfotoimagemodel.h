@@ -48,6 +48,7 @@ class ShowfotoItemModel : public QAbstractListModel,
     Q_OBJECT
 
 public:
+
     enum ShowfotoItemModelRoles
     {
         /**
@@ -173,14 +174,18 @@ public:
     static ShowfotoItemInfo retrieveShowfotoItemInfo(const QModelIndex& index);
     static qlonglong        retrieveShowfotoItemId(const QModelIndex& index);
 
-    /// QAbstractListModel implementation
+    /**
+     * QAbstractListModel implementations
+     */
     int           rowCount(const QModelIndex& parent)                            const override;
     QVariant      data(const QModelIndex& index, int role)                       const override;
     QVariant      headerData(int section, Qt::Orientation orientation, int role) const override;
     Qt::ItemFlags flags(const QModelIndex& index)                                const override;
     QModelIndex   index(int row, int column, const QModelIndex& parent)          const override;
 
-    /// DragDrop methods
+    /**
+     * DragDrop methods
+     */
     DECLARE_MODEL_DRAG_DROP_METHODS
 
     /**
@@ -202,7 +207,6 @@ Q_SIGNALS:
      * This signal is sent after the model data is changed and views are informed.
      */
     void itemInfosAdded(const QList<ShowfotoItemInfo>& infos);
-
 
     /**
      * Informs that ShowfotoItemInfos will be removed from the model.
@@ -269,7 +273,7 @@ protected:
     /**
      * Called when the internal storage is cleared.
      */
-    virtual void showfotoItemInfosCleared() {};
+    virtual void showfotoItemInfosCleared()                                    {};
 
     /**
      * Called before rowsAboutToBeRemoved
