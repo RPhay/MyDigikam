@@ -160,6 +160,6 @@ BUGFIXES:
 146 ==> 442589 - digiKam does not start after upgrade, can not update Sqlite DB schema.
 147 ==> 443030 - Tag subtree shown, even if deselected.
 148 ==> 443063 - Find duplicates with more than one processor.
-149 ==> 
+149 ==> 440458 - Failed to update database.
 150 ==> 
 151 ==> 
