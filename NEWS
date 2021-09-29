@@ -161,5 +161,5 @@ BUGFIXES:
 147 ==> 443030 - Tag subtree shown, even if deselected.
 148 ==> 443063 - Find duplicates with more than one processor.
 149 ==> 440458 - Failed to update database.
-150 ==> 
+150 ==> 443115 - Request: Option to find pictures same of date across different years.
 151 ==> 
