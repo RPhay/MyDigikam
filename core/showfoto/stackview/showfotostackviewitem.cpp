@@ -25,6 +25,8 @@
 
 // Qt includes
 
+#include <QIcon>
+#include <QPainter>
 #include <QPixmap>
 #include <QLocale>
 #include <QDateTime>
@@ -74,7 +76,17 @@ ShowfotoItemInfo ShowfotoStackViewItem::itemInfo() const
 
 void ShowfotoStackViewItem::setThumbnail(const QImage& img)
 {
-    setIcon(0, QPixmap::fromImage(img));
+    QPixmap pix = QPixmap::fromImage(img).scaled(treeWidget()->iconSize(), Qt::KeepAspectRatio,
+                                                                           Qt::FastTransformation);
+
+    QPixmap icon(treeWidget()->iconSize());
+    icon.fill(Qt::transparent);
+    QPainter p(&icon);
+    p.drawPixmap((icon.width()  - pix.width() ) / 2,
+                 (icon.height() - pix.height()) / 2,
+                 pix);
+
+    setIcon(0, pix);
 }
 
 } // namespace ShowFoto
