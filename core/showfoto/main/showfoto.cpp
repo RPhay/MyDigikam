@@ -123,6 +123,7 @@ Showfoto::Showfoto(const QList<QUrl>& urlList, QWidget* const)
 
     d->leftSideBar->loadState();
     d->folderView->loadState();
+    d->stackView->loadState();
     d->rightSideBar->loadState();
 
     //--------------------------------------------------

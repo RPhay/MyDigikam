@@ -55,6 +55,12 @@ set(showfoto_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/folderview/showfotofolderviewbookmarklist.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/folderview/showfotofolderviewbookmarkitem.cpp
 
+    ${CMAKE_CURRENT_SOURCE_DIR}/stackview/showfotostackviewsidebar.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/stackview/showfotostackviewlist.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/stackview/showfotostackviewitem.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/stackview/showfotostackviewmodel.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/stackview/showfotostackviewtooltip.cpp
+
     ${CMAKE_CURRENT_SOURCE_DIR}/main/showfotosettings.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/main/showfotoinfoiface.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/main/showfoto.cpp

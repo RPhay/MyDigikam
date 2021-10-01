@@ -66,6 +66,9 @@ void Showfoto::setupConnections()
     connect(d->thumbBar, SIGNAL(showfotoItemInfoActivated(ShowfotoItemInfo)),
             this, SLOT(slotShowfotoItemInfoActivated(ShowfotoItemInfo)));
 
+    connect(d->stackView, SIGNAL(signalShowfotoItemInfoActivated(ShowfotoItemInfo)),
+            this, SLOT(slotShowfotoItemInfoActivated(ShowfotoItemInfo)));
+
     connect(d->folderView, SIGNAL(signalLoadContentsFromPath(QString)),
             this, SLOT(slotOpenFolderFromPath(QString)));
 
@@ -120,6 +123,9 @@ void Showfoto::setupUserArea()
     d->folderView              = new ShowfotoFolderViewSideBar(this);
     d->leftSideBar->appendTab(d->folderView, d->folderView->getIcon(), d->folderView->getCaption());
 
+    d->stackView               = new ShowfotoStackViewSideBar(this);
+    d->leftSideBar->appendTab(d->stackView, d->stackView->getIcon(), d->stackView->getCaption());
+
     KMainWindow* const viewContainer = new KMainWindow(widget, Qt::Widget);
     m_splitter->addWidget(viewContainer);
     m_stackView                      = new Digikam::EditorStackView(viewContainer);
@@ -163,6 +169,8 @@ void Showfoto::setupUserArea()
 
     d->model       = new ShowfotoThumbnailModel(d->thumbBar);
     d->model->setThumbnailLoadThread(d->thumbLoadThread);
+    d->model->setSendRemovalSignals(true);
+
     d->dDHandler   = new ShowfotoDragDropHandler(d->model);
     d->model->setDragDropHandler(d->dDHandler);
 
@@ -177,6 +185,7 @@ void Showfoto::setupUserArea()
     viewContainer->setAutoSaveSettings(QLatin1String("ImageViewer Thumbbar"), true);
 
     d->thumbBar->installOverlays();
+    d->stackView->setThumbbar(d->thumbBar);
 
     setCentralWidget(widget);
 }

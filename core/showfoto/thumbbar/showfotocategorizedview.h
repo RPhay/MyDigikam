@@ -163,10 +163,14 @@ Q_SIGNALS:
      */
     void deselected(const QList<ShowfotoItemInfo>& nowDeselectedInfos);
 
-    /// Emitted when the given ShowfotoItemInfo is activated. Info is never null.
+    /**
+     * Emitted when the given ShowfotoItemInfo is activated. Info is never null.
+     */
     void showfotoItemInfoActivated(const ShowfotoItemInfo& info);
 
-    /// Emitted when a new model is set
+    /**
+     * Emitted when a new model is set.
+     */
     void modelChanged();
 
 protected:

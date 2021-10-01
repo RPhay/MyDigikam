@@ -49,9 +49,9 @@ class Q_DECL_HIDDEN ShowfotoThumbnailBar::Private
 public:
 
     explicit Private()
-      : scrollPolicy(Qt::ScrollBarAlwaysOn),
+      : scrollPolicy    (Qt::ScrollBarAlwaysOn),
         duplicatesFilter(nullptr),
-        kScroller(nullptr)
+        kScroller       (nullptr)
     {
     }
 
@@ -62,7 +62,7 @@ public:
 
 ShowfotoThumbnailBar::ShowfotoThumbnailBar(QWidget* const parent)
     : ShowfotoCategorizedView(parent),
-      d(new Private())
+      d                      (new Private())
 {
     setItemDelegate(new ShowfotoThumbnailDelegate(this));
     setSpacing(3);

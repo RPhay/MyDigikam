@@ -79,6 +79,7 @@ void Showfoto::readSettings()
     d->rightSideBar->loadState();
     d->leftSideBar->loadState();
     d->folderView->loadState();
+    d->stackView->loadState();
 
     Digikam::ThemeManager::instance()->setCurrentTheme(d->settings->getCurrentTheme());
 
@@ -96,6 +97,7 @@ void Showfoto::saveSettings()
     d->rightSideBar->saveState();
     d->leftSideBar->saveState();
     d->folderView->saveState();
+    d->stackView->saveState();
 }
 
 void Showfoto::applySettings()

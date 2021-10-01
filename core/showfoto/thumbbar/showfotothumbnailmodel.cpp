@@ -191,13 +191,15 @@ bool ShowfotoThumbnailModel::setData(const QModelIndex& index, const QVariant& v
         switch (value.type())
         {
             case QVariant::Invalid:
+            {
                 d->thumbSize  = d->lastGlobalThumbSize;
                 d->detailRect = QRect();
 
                 break;
+            }
 
             case QVariant::Int:
-
+            {
                 if (value.isNull())
                 {
                     d->thumbSize = ThumbnailSize(d->lastGlobalThumbSize);
@@ -208,9 +210,10 @@ bool ShowfotoThumbnailModel::setData(const QModelIndex& index, const QVariant& v
                 }
 
                 break;
+            }
 
             case QVariant::Rect:
-
+            {
                 if (value.isNull())
                 {
                     d->detailRect = QRect();
@@ -221,9 +224,12 @@ bool ShowfotoThumbnailModel::setData(const QModelIndex& index, const QVariant& v
                 }
 
                 break;
+            }
 
             default:
+            {
                 break;
+            }
         }
     }
 
@@ -253,6 +259,8 @@ void ShowfotoThumbnailModel::slotThumbnailLoaded(const LoadingDescription& loadi
             {
                 emit dataChanged(index, index);
             }
+
+            emit signalItemThumbnail(showfotoItemInfo(index), thumb.toImage());
         }
     }
 }

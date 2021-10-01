@@ -29,6 +29,7 @@
 
 // Local includes
 
+#include "digikam_debug.h"
 #include "showfoto.h"
 #include "showfotoiteminfo.h"
 
@@ -265,6 +266,13 @@ void ShowfotoItemModel::addShowfotoItemInfosSynchronously(const QList<ShowfotoIt
 
 void ShowfotoItemModel::clearShowfotoItemInfos()
 {
+    QList<ShowfotoItemInfo> list = d->infos;
+
+    if (d->sendRemovalSignals)
+    {
+        emit itemInfosAboutToBeRemoved(list);
+    }
+
     beginResetModel();
 
     d->infos.clear();
@@ -275,6 +283,11 @@ void ShowfotoItemModel::clearShowfotoItemInfos()
 
     showfotoItemInfosCleared();
     endResetModel();
+
+    if (d->sendRemovalSignals)
+    {
+        emit itemInfosRemoved(list);
+    }
 }
 
 void ShowfotoItemModel::setShowfotoItemInfos(const QList<ShowfotoItemInfo>& infos)

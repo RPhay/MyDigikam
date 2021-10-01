@@ -32,7 +32,7 @@ namespace ShowFoto
 
 ShowfotoSortFilterModel::ShowfotoSortFilterModel(QObject* const parent)
     : DCategorizedSortFilterProxyModel(parent),
-      m_chainedModel(nullptr)
+      m_chainedModel                  (nullptr)
 {
 }
 
@@ -280,19 +280,29 @@ QVariant ShowfotoFilterModel::data(const QModelIndex& index, int role) const
     switch (role)
     {
         case DCategorizedSortFilterProxyModel::CategoryDisplayRole:
+        {
             return categoryIdentifier(d->showfotoItemModel->showfotoItemInfoRef(mapToSource(index)));
+        }
 
         case CategorizationModeRole:
+        {
             return d->sorter.categorizationMode;
+        }
 
         case SortOrderRole:
+        {
             return d->sorter.sortRole;
+        }
 
         case CategoryFormatRole:
+        {
             return d->showfotoItemModel->showfotoItemInfoRef(mapToSource(index)).mime;
+        }
 
         case ShowfotoFilterModelPointerRole:
+        {
             return QVariant::fromValue(const_cast<ShowfotoFilterModel*>(this));
+        }
     }
 
     return DCategorizedSortFilterProxyModel::data(index, role);
@@ -471,16 +481,24 @@ QString ShowfotoFilterModel::categoryIdentifier(const ShowfotoItemInfo& info) co
     switch (d->sorter.categorizationMode)
     {
         case ShowfotoItemSortSettings::NoCategories:
+        {
             return QString();
+        }
 
         case ShowfotoItemSortSettings::CategoryByFolder:
+        {
             return info.folder;
+        }
 
         case ShowfotoItemSortSettings::CategoryByFormat:
+        {
             return info.mime;
+        }
 
         default:
+        {
             return QString();
+        }
     }
 }
 

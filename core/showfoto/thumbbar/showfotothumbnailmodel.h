@@ -60,10 +60,14 @@ public:
     void setThumbnailLoadThread(ThumbnailLoadThread* thread);
     ThumbnailLoadThread* thumbnailLoadThread()                                              const;
 
-    /// Set the thumbnail size to use
+    /**
+     * Set the thumbnail size to use.
+     */
     void setThumbnailSize(const ThumbnailSize& thumbSize);
 
-    /// If you want to fix a size for preloading, do it here.
+    /**
+     * If you want to fix a size for preloading, do it here.
+     */
     void setPreloadThumbnailSize(const ThumbnailSize& thumbSize);
 
     void setExifRotate(bool rotate);
@@ -113,9 +117,11 @@ Q_SIGNALS:
 
     void signalThumbInfo(const ShowfotoItemInfo& info, const QImage& thumbnailImage)        const;   // clazy:exclude=const-signal-or-slot
 
+    void signalItemThumbnail(const ShowfotoItemInfo& info, const QImage& thumb);
+
 protected:
 
-    void showfotoItemInfosCleared()                                                             override;
+    void showfotoItemInfosCleared()                                                               override;
 
 protected Q_SLOTS:
 

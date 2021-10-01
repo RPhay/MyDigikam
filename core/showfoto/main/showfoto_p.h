@@ -99,6 +99,7 @@
 #include "showfotocategorizedview.h"
 #include "showfotofolderviewsidebar.h"
 #include "showfotofolderviewlist.h"
+#include "showfotostackviewsidebar.h"
 #include "showfotosettings.h"
 #include "showfotoinfoiface.h"
 #include "dexpanderbox.h"
@@ -133,7 +134,8 @@ public:
         rightSideBar            (nullptr),
         splash                  (nullptr),
         settings                (nullptr),
-        folderView              (nullptr)
+        folderView              (nullptr),
+        stackView               (nullptr)
     {
     }
 
@@ -162,6 +164,7 @@ public:
     Digikam::DSplashScreen*           splash;
     ShowfotoSettings*                 settings;
     ShowfotoFolderViewSideBar*        folderView;
+    ShowfotoStackViewSideBar*         stackView;
 };
 
 } // namespace ShowFoto

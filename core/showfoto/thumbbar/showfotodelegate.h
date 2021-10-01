@@ -49,7 +49,7 @@ class ShowfotoDelegate : public ShowfotoItemViewDelegate
 public:
 
     explicit ShowfotoDelegate(QObject* const parent = nullptr);
-    ~ShowfotoDelegate() override;
+    ~ShowfotoDelegate()                                                                                override;
 
     void setView(ShowfotoThumbnailBar* view);
 
@@ -137,7 +137,7 @@ class ShowfotoThumbnailDelegate : public ShowfotoDelegate
 public:
 
     explicit ShowfotoThumbnailDelegate(ShowfotoThumbnailBar* const parent);
-    ~ShowfotoThumbnailDelegate() override;
+    ~ShowfotoThumbnailDelegate()                                   override;
 
     void setFlow(QListView::Flow flow);
 
@@ -149,13 +149,15 @@ public:
     int minimumSize() const;
 
     void setDefaultViewOptions(const QStyleOptionViewItem& option) override;
-    bool acceptsActivation(const QPoint& pos, const QRect& visualRect, const QModelIndex& index,
-                                   QRect* activationRect) const override;
+    bool acceptsActivation(const QPoint& pos,
+                           const QRect& visualRect,
+                           const QModelIndex& index,
+                           QRect* activationRect) const            override;
 
 protected:
 
-    void updateContentWidth() override;
-    void updateRects() override;
+    void updateContentWidth()                                      override;
+    void updateRects()                                             override;
     int thumbnailPixmapSize(bool withHighlight, int size);
 
 private:
@@ -178,7 +180,7 @@ public:
 
     explicit ShowfotoNormalDelegate(ShowfotoThumbnailBar* const bar,
                                     QObject* const parent = nullptr);
-    ~ShowfotoNormalDelegate() override;
+    ~ShowfotoNormalDelegate()   override;
 
 protected:
 
@@ -186,7 +188,7 @@ protected:
                            ShowfotoThumbnailBar* const bar,
                            QObject* const parent = nullptr);
 
-    void updateRects() override;
+    void updateRects()          override;
 
 private:
 

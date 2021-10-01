@@ -308,7 +308,6 @@ void ShowfotoDelegate::setDefaultViewOptions(const QStyleOptionViewItem& option)
 
 void ShowfotoDelegate::invalidatePaintingCache()
 {
-
     ShowfotoItemViewDelegate::invalidatePaintingCache();
 }
 
