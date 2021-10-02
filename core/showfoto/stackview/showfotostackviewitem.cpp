@@ -92,10 +92,10 @@ ShowfotoItemInfo ShowfotoStackViewItem::info() const
     return m_info;
 }
 
-void ShowfotoStackViewItem::setThumbnail(const QImage& img)
+void ShowfotoStackViewItem::setThumbnail(const QPixmap& thumb)
 {
-    QPixmap pix = QPixmap::fromImage(img).scaled(treeWidget()->iconSize(), Qt::KeepAspectRatio,
-                                                                           Qt::FastTransformation);
+    QPixmap pix = thumb.scaled(treeWidget()->iconSize(), Qt::KeepAspectRatio,
+                                                         Qt::FastTransformation);
 
     QPixmap icon(treeWidget()->iconSize());
     icon.fill(Qt::transparent);
@@ -104,7 +104,7 @@ void ShowfotoStackViewItem::setThumbnail(const QImage& img)
                  (icon.height() - pix.height()) / 2,
                  pix);
 
-    setIcon(0, pix);
+    setIcon(0, icon);
 }
 
 } // namespace ShowFoto

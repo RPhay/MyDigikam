@@ -27,7 +27,7 @@
 // QT includes
 
 #include <QList>
-#include <QImage>
+#include <QPixmap>
 #include <QTreeWidget>
 #include <QMouseEvent>
 #include <QContextMenuEvent>
@@ -98,7 +98,7 @@ private Q_SLOTS:
     void slotOpenInFileManager();
     void slotItemsAdded(const QList<ShowfotoItemInfo>& items);
     void slotItemsRemoved(const QList<ShowfotoItemInfo>& items);
-    void slotItemThumbnail(const ShowfotoItemInfo& info, const QImage& img);
+    void slotItemThumbnail(const ShowfotoItemInfo& info, const QPixmap& pix);
     void slotItemsSelected(const QList<ShowfotoItemInfo> items);
     void slotItemsDeselected(const QList<ShowfotoItemInfo> items);
     void slotSelectionChanged(QTreeWidgetItem*);

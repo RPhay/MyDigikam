@@ -117,7 +117,7 @@ Q_SIGNALS:
 
     void signalThumbInfo(const ShowfotoItemInfo& info, const QImage& thumbnailImage)        const;   // clazy:exclude=const-signal-or-slot
 
-    void signalItemThumbnail(const ShowfotoItemInfo& info, const QImage& thumb);
+    void signalItemThumbnail(const ShowfotoItemInfo& info, const QPixmap& pix);
 
 protected:
 

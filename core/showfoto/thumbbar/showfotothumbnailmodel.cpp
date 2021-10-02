@@ -260,7 +260,7 @@ void ShowfotoThumbnailModel::slotThumbnailLoaded(const LoadingDescription& loadi
                 emit dataChanged(index, index);
             }
 
-            emit signalItemThumbnail(showfotoItemInfo(index), thumb.toImage());
+            emit signalItemThumbnail(showfotoItemInfo(index), thumb);
         }
     }
 }

@@ -27,7 +27,7 @@
 // Qt includes
 
 #include <QString>
-#include <QImage>
+#include <QPixmap>
 #include <QTreeWidgetItem>
 
 // Local includes
@@ -50,7 +50,7 @@ public:
     void setInfo(const ShowfotoItemInfo&);
     ShowfotoItemInfo info()      const;
 
-    void setThumbnail(const QImage&);
+    void setThumbnail(const QPixmap&);
 
 private:
 

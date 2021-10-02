@@ -133,8 +133,8 @@ void ShowfotoStackViewList::setThumbbar(ShowfotoThumbnailBar* const thumbbar)
     connect(d->thumbbar->showfotoItemModel(), SIGNAL(itemInfosAboutToBeRemoved(QList<ShowfotoItemInfo>)),
             this, SLOT(slotItemsRemoved(QList<ShowfotoItemInfo>)));
 
-    connect(d->thumbbar->showfotoThumbnailModel(), SIGNAL(signalItemThumbnail(ShowfotoItemInfo,QImage)),
-            this, SLOT(slotItemThumbnail(ShowfotoItemInfo,QImage)));
+    connect(d->thumbbar->showfotoThumbnailModel(), SIGNAL(signalItemThumbnail(ShowfotoItemInfo,QPixmap)),
+            this, SLOT(slotItemThumbnail(ShowfotoItemInfo,QPixmap)));
 
     connect(d->thumbbar, SIGNAL(selected(QList<ShowfotoItemInfo>)),
             this, SLOT(slotItemsSelected(QList<ShowfotoItemInfo>)));
@@ -245,7 +245,7 @@ void ShowfotoStackViewList::slotItemDoubleClicked(QTreeWidgetItem* item)
     }
 }
 
-void ShowfotoStackViewList::slotItemThumbnail(const ShowfotoItemInfo& info, const QImage& img)
+void ShowfotoStackViewList::slotItemThumbnail(const ShowfotoItemInfo& info, const QPixmap& pix)
 {
     QTreeWidgetItemIterator iter(this);
     ShowfotoStackViewItem* sitem = nullptr;
@@ -256,7 +256,7 @@ void ShowfotoStackViewList::slotItemThumbnail(const ShowfotoItemInfo& info, cons
 
         if (sitem && (sitem->info() == info))
         {
-            sitem->setThumbnail(img);
+            sitem->setThumbnail(pix);
             return;
         }
 
