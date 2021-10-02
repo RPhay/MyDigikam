@@ -322,7 +322,7 @@ void FaceUtils::addNormalTag(qlonglong imageId, int tagId)
      * Utilising a QTimer to ensure that a new TAlbum
      * is given time to be created, before assigning Icon.
      */
-    QTimer::singleShot(200, this, [=]()
+    QTimer::singleShot(200, [=]()
         {
             if (
                 !FaceTags::isTheIgnoredPerson(tagId)  &&
