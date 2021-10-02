@@ -54,7 +54,7 @@ public:
         FileName = 0,
         FileSize,
         FileType,
-        FileDate            ///< Modifier date
+        FileDate            ///< Metadata date if exists, else Modifier date
     };
 
 public:

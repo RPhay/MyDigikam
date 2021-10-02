@@ -60,14 +60,14 @@ class Q_DECL_HIDDEN ShowfotoStackViewSideBar::Private
 public:
 
     explicit Private()
-      : fsmodel     (nullptr),
-        fsview      (nullptr),
-/*      fsbar       (nullptr),
-        fsmarks     (nullptr),
-        splitter    (nullptr),
+      : model     (nullptr),
+        view      (nullptr),
+/*      bar       (nullptr),
+        marks     (nullptr),
+        splitter  (nullptr),
 */
-        fsSortOrder (Qt::AscendingOrder),
-        fsRole      (ShowfotoStackViewList::FileName)
+        sortOrder (Qt::AscendingOrder),
+        role      (ShowfotoStackViewList::FileName)
     {
     }
 
@@ -78,16 +78,16 @@ public:
     static const QString                 configBookmarksVisibleEntry;
     static const QString                 configSplitterStateEntry;
 
-    ShowfotoStackViewModel*              fsmodel;
-    ShowfotoStackViewList*               fsview;
+    ShowfotoStackViewModel*              model;
+    ShowfotoStackViewList*               view;
 /*
-    ShowfotoStackViewBar*                fsbar;
-    ShowfotoStackViewBookmarks*          fsmarks;
+    ShowfotoStackViewBar*                bar;
+    ShowfotoStackViewBookmarks*          marks;
     QSplitter*                           splitter;
 */
     QList<DPluginAction*>                pluginActions;
-    Qt::SortOrder                        fsSortOrder;
-    ShowfotoStackViewList::StackViewRole fsRole;
+    Qt::SortOrder                        sortOrder;
+    ShowfotoStackViewList::StackViewRole role;
 };
 
 const QString ShowfotoStackViewSideBar::Private::configIconSizeEntry(QLatin1String("Icon Size"));
@@ -106,73 +106,67 @@ ShowfotoStackViewSideBar::ShowfotoStackViewSideBar(Showfoto* const parent)
 
     // --- Populate the view
 
-//    d->fsbar                   = new ShowfotoStackViewBar(this);
-    d->fsview                  = new ShowfotoStackViewList(this);
-    d->fsview->setEnableToolTips(true);
+//    d->bar                   = new ShowfotoStackViewBar(this);
+    d->view                  = new ShowfotoStackViewList(this);
+    d->view->setEnableToolTips(true);
 /*
-    d->fsmarks                 = new ShowfotoStackViewBookmarks(this);
+    d->marks                 = new ShowfotoStackViewBookmarks(this);
 
     d->splitter                = new QSplitter(Qt::Vertical, this);
-    d->splitter->addWidget(d->fsview);
-    d->splitter->addWidget(d->fsmarks);
+    d->splitter->addWidget(d->view);
+    d->splitter->addWidget(d->marks);
     d->splitter->setStretchFactor(0, 10);
     d->splitter->setStretchFactor(1, 3);
 */
     QVBoxLayout* const layout  = new QVBoxLayout(this);
-//    layout->addWidget(d->fsbar);
+//    layout->addWidget(d->bar);
 //    layout->addWidget(d->splitter);
-    layout->addWidget(d->fsview);
+    layout->addWidget(d->view);
     layout->setContentsMargins(0, 0, 0, 0);
 
     // --- Setup connections
 /*
-    connect(d->fsbar, SIGNAL(signalSetup()),
+    connect(d->bar, SIGNAL(signalSetup()),
             this, SIGNAL(signalSetup()));
 
-    connect(d->fsbar, SIGNAL(signalShowBookmarks(bool)),
+    connect(d->bar, SIGNAL(signalShowBookmarks(bool)),
             this, SLOT(slotShowBookmarks(bool)));
 
-    connect(d->fsbar, SIGNAL(signalViewModeChanged(int)),
+    connect(d->bar, SIGNAL(signalViewModeChanged(int)),
             this, SLOT(slotViewModeChanged(int)));
 
-    connect(d->fsbar, SIGNAL(signalIconSizeChanged(int)),
-            d->fsview, SLOT(slotIconSizeChanged(int)));
+    connect(d->bar, SIGNAL(signalIconSizeChanged(int)),
+            d->view, SLOT(slotIconSizeChanged(int)));
 
-    connect(d->fsbar, SIGNAL(signalGoHome()),
+    connect(d->bar, SIGNAL(signalGoHome()),
             this, SLOT(slotGoHome()));
 
-    connect(d->fsbar, SIGNAL(signalGoUp()),
+    connect(d->bar, SIGNAL(signalGoUp()),
             this, SLOT(slotGoUp()));
 
-    connect(d->fsbar, SIGNAL(signalLoadContents()),
+    connect(d->bar, SIGNAL(signalLoadContents()),
             this, SLOT(slotLoadContents()));
 
-    connect(d->fsmarks, SIGNAL(signalLoadContents()),
+    connect(d->marks, SIGNAL(signalLoadContents()),
             this, SLOT(slotLoadContents()));
 
-    connect(d->fsbar, SIGNAL(signalCustomPathChanged(QString)),
+    connect(d->bar, SIGNAL(signalCustomPathChanged(QString)),
             this, SLOT(slotCustomPathChanged(QString)));
 
-    connect(d->fsbar, SIGNAL(signalTypeMimesChanged(QString)),
+    connect(d->bar, SIGNAL(signalTypeMimesChanged(QString)),
             this, SLOT(slotTypeMimesChanged(QString)));
 
-    connect(d->fsbar, SIGNAL(signalGoNext()),
+    connect(d->bar, SIGNAL(signalGoNext()),
             this, SLOT(slotRedo()));
 
-    connect(d->fsbar, SIGNAL(signalGoPrevious()),
+    connect(d->bar, SIGNAL(signalGoPrevious()),
             this, SLOT(slotUndo()));
 
-    connect(d->fsstack, SIGNAL(canUndoChanged(bool)),
-            d->fsbar, SLOT(slotPreviousEnabled(bool)));
-
-    connect(d->fsstack, SIGNAL(canRedoChanged(bool)),
-            d->fsbar, SLOT(slotNextEnabled(bool)));
-
-    connect(d->fsview, SIGNAL(signalAddBookmark()),
+    connect(d->view, SIGNAL(signalAddBookmark()),
             this, SIGNAL(signalAddBookmark()));
 */
 
-    connect(d->fsview, SIGNAL(signalShowfotoItemInfoActivated(ShowfotoItemInfo)),
+    connect(d->view, SIGNAL(signalShowfotoItemInfoActivated(ShowfotoItemInfo)),
             this, SIGNAL(signalShowfotoItemInfoActivated(ShowfotoItemInfo)));
 }
 
@@ -183,191 +177,22 @@ ShowfotoStackViewSideBar::~ShowfotoStackViewSideBar()
 
 void ShowfotoStackViewSideBar::setThumbbar(ShowfotoThumbnailBar* const thumbbar)
 {
-    d->fsview->setThumbbar(thumbbar);
+    d->view->setThumbbar(thumbbar);
+}
+
+void ShowfotoStackViewSideBar::setSortOrder(int order)
+{
+    d->sortOrder = (order == ShowfotoItemSortSettings::AscendingOrder) ? Qt::DescendingOrder : Qt::AscendingOrder; // Inverted compared to Thumbbar.
+    d->view->sortItems(d->role, d->sortOrder);
+}
+
+void ShowfotoStackViewSideBar::setSortRole(int role)
+{
+    d->role = (ShowfotoStackViewList::StackViewRole)role;
+    d->view->sortItems(d->role, d->sortOrder);
 }
 
 /*
-void ShowfotoStackViewSideBar::slotTypeMimesChanged(const QString& patterns)
-{
-    d->fsmodel->setNameFilters(patterns.split(QLatin1Char(' ')));
-}
-
-void ShowfotoStackViewSideBar::slotLoadContents()
-{
-    QModelIndex index = d->fsmodel->index(currentPath());
-    loadContents(index);
-}
-
-void ShowfotoStackViewSideBar::loadContents(const QModelIndex& index)
-{
-    if (!index.isValid())
-    {
-        return;
-    }
-
-    QStringList lst;
-
-    if      (d->fsmodel->isDir(index))
-    {
-        setCurrentPath(d->fsmodel->filePath(index));
-
-        lst = d->fsmodel->currentFilesPath();
-    }
-    else if (d->fsmodel->fileInfo(index).isFile())
-    {
-        lst = d->fsmodel->currentFilesPath();
-    }
-
-    qCDebug(DIGIKAM_SHOWFOTO_LOG) << "Load Contents from:" << currentPath() << "Files:" << lst;
-
-    if (!lst.isEmpty())
-    {
-        emit signalLoadContentsFromFiles(lst);
-    }
-}
-
-void ShowfotoStackViewSideBar::slotCustomPathChanged(const QString& path)
-{
-    setCurrentPath(path);
-}
-
-void ShowfotoStackViewSideBar::slotUndo()
-{
-    d->fsstack->undo();
-}
-
-void ShowfotoStackViewSideBar::slotRedo()
-{
-    d->fsstack->redo();
-}
-
-void ShowfotoStackViewSideBar::slotGoHome()
-{
-    setCurrentPath(QDir::homePath());
-}
-
-void ShowfotoStackViewSideBar::slotGoUp()
-{
-    QDir dir(currentFolder());
-    dir.cdUp();
-
-    // Is this the same as going back?  If so just go back, so we can keep the view scroll position.
-
-    if (d->fsstack->canUndo())
-    {
-        const ShowfotoStackViewUndo* lastDir = static_cast<const ShowfotoStackViewUndo*>
-                                                (d->fsstack->command(d->fsstack->index() - 1));
-
-        if (lastDir->undoPath() == dir.path())
-        {
-            d->fsstack->undo();
-            return;
-        }
-    }
-
-    setCurrentPath(dir.absolutePath());
-}
-
-QString ShowfotoStackViewSideBar::currentFolder() const
-{
-    QString path = d->fsmodel->rootPath();
-
-    if (!path.endsWith(QDir::separator()))
-    {
-        path.append(QDir::separator());
-    }
-
-    return path;
-}
-
-QString ShowfotoStackViewSideBar::currentPath() const
-{
-    QModelIndex index = d->fsview->currentIndex();
-
-    if (index.isValid())
-    {
-        return (d->fsmodel->filePath(index));
-    }
-
-    return currentFolder();
-}
-
-void ShowfotoStackViewSideBar::setCurrentPath(const QString& newPathNative)
-{
-    QFileInfo infoNative(newPathNative);
-
-    if (!infoNative.exists())
-    {
-        return;
-    }
-
-    QString newPath = QDir::fromNativeSeparators(newPathNative);
-
-    if (infoNative.isDir() && !newPath.endsWith(QDir::separator()))
-    {
-        newPath.append(QDir::separator());
-    }
-
-    QString oldDir(d->fsmodel->rootPath());
-
-    if (!oldDir.endsWith(QDir::separator()))
-    {
-        oldDir.append(QDir::separator());
-    }
-
-    if (oldDir == newPath)
-    {
-        return;
-    }
-
-    QFileInfo info(newPath);
-
-    if (info.isDir())
-    {
-        QModelIndex index = d->fsmodel->index(newPath);
-
-        if (index.isValid())
-        {
-            d->fsstack->push(new ShowfotoStackViewUndo(this, newPath));
-            d->fsmodel->setRootPath(newPath);
-            d->fsview->setRootIndex(index);
-        }
-    }
-    else
-    {
-        QModelIndex index = d->fsmodel->index(newPath);
-
-        if (index.isValid())
-        {
-            QString newDir = info.absolutePath();
-
-            if (!newDir.endsWith(QDir::separator()))
-            {
-                newDir.append(QDir::separator());
-            }
-
-            if (newDir != oldDir)
-            {
-                d->fsstack->push(new ShowfotoStackViewUndo(this, newDir));
-                d->fsmodel->setRootPath(newDir);
-            }
-
-            d->fsview->setCurrentIndex(index);
-            d->fsview->scrollTo(index);
-        }
-    }
-}
-
-void ShowfotoStackViewSideBar::setCurrentPathWithoutUndo(const QString& newPath)
-{
-    QModelIndex index = d->fsmodel->setRootPath(newPath);
-
-    if (index.isValid())
-    {
-        d->fsview->setRootIndex(index);
-        d->fsbar->setCurrentPath(currentFolder());
-    }
-}
 
 void ShowfotoStackViewSideBar::slotViewModeChanged(int mode)
 {
@@ -375,48 +200,36 @@ void ShowfotoStackViewSideBar::slotViewModeChanged(int mode)
     {
         case ShowfotoStackViewList::ShortView:
         {
-            d->fsview->setColumnHidden(ShowfotoStackViewList::FileSize, true);
-            d->fsview->setColumnHidden(ShowfotoStackViewList::FileType, true);
-            d->fsview->setColumnHidden(ShowfotoStackViewList::FileDate, true);
-            d->fsview->setHeaderHidden(true);
+            d->view->setColumnHidden(ShowfotoStackViewList::FileSize, true);
+            d->view->setColumnHidden(ShowfotoStackViewList::FileType, true);
+            d->view->setColumnHidden(ShowfotoStackViewList::FileDate, true);
+            d->view->setHeaderHidden(true);
             break;
         }
 
         default:    // ShowfotoStackViewList::DetailledView
         {
-            d->fsview->setColumnHidden(ShowfotoStackViewList::FileSize, false);
-            d->fsview->setColumnHidden(ShowfotoStackViewList::FileType, false);
-            d->fsview->setColumnHidden(ShowfotoStackViewList::FileDate, false);
-            d->fsview->setHeaderHidden(false);
+            d->view->setColumnHidden(ShowfotoStackViewList::FileSize, false);
+            d->view->setColumnHidden(ShowfotoStackViewList::FileType, false);
+            d->view->setColumnHidden(ShowfotoStackViewList::FileDate, false);
+            d->view->setHeaderHidden(false);
             break;
         }
     }
 }
 
-void ShowfotoStackViewSideBar::setSortOrder(int order)
-{
-    d->fsSortOrder = (order == ShowfotoItemSortSettings::AscendingOrder) ? Qt::DescendingOrder : Qt::AscendingOrder; // Inverted compared to Thumbbar.
-    d->fsmodel->sort(d->fsRole, d->fsSortOrder);
-}
-
-void ShowfotoStackViewSideBar::setSortRole(int role)
-{
-    d->fsRole = (ShowfotoStackViewList::FolderViewRole)role;
-    d->fsmodel->sort(d->fsRole, d->fsSortOrder);
-}
-
 void ShowfotoStackViewSideBar::slotShowBookmarks(bool visible)
 {
-    d->fsmarks->setVisible(visible);
+    d->marks->setVisible(visible);
 }
 
 void ShowfotoStackViewSideBar::registerPluginActions(const QList<DPluginAction*>& actions)
 {
     d->pluginActions = actions;
 
-    d->fsbar->registerPluginActions(d->pluginActions);
+    d->bar->registerPluginActions(d->pluginActions);
 
-    connect(d->fsbar, SIGNAL(signalPluginActionTriggered(QAction*)),
+    connect(d->bar, SIGNAL(signalPluginActionTriggered(QAction*)),
             this, SLOT(slotPluginActionTriggered(QAction*)));
 }
 
@@ -435,7 +248,7 @@ void ShowfotoStackViewSideBar::slotPluginActionTriggered(QAction* act)
 
 QList<QAction*> ShowfotoStackViewSideBar::pluginActions() const
 {
-    return d->fsbar->pluginActions();
+    return d->bar->pluginActions();
 }
 */
 const QIcon ShowfotoStackViewSideBar::getIcon()
@@ -452,12 +265,12 @@ void ShowfotoStackViewSideBar::doLoadState()
 {
     KConfigGroup group = getConfigGroup();
 /*
-    d->fsmarks->readSettings(group);
-    d->fsbar->setFolderViewMode(group.readEntry(entryName(d->configFolderViewModeEntry),         (int)ShowfotoStackViewList::ShortView));
-    d->fsbar->setFolderViewTypeMime(group.readEntry(entryName(d->configFolderViewTypeMimeEntry), (int)ShowfotoStackViewBar::TYPE_MIME_ALL));
-    d->fsbar->setBookmarksVisible(group.readEntry(entryName(d->configBookmarksVisibleEntry),     false));
-    slotViewModeChanged(d->fsbar->folderViewMode());
-    d->fsbar->setIconSize(group.readEntry(entryName(d->configIconSizeEntry),                     32));
+    d->marks->readSettings(group);
+    d->bar->setFolderViewMode(group.readEntry(entryName(d->configFolderViewModeEntry),         (int)ShowfotoStackViewList::ShortView));
+    d->bar->setFolderViewTypeMime(group.readEntry(entryName(d->configFolderViewTypeMimeEntry), (int)ShowfotoStackViewBar::TYPE_MIME_ALL));
+    d->bar->setBookmarksVisible(group.readEntry(entryName(d->configBookmarksVisibleEntry),     false));
+    slotViewModeChanged(d->bar->folderViewMode());
+    d->bar->setIconSize(group.readEntry(entryName(d->configIconSizeEntry),                     32));
 
     QByteArray state = group.readEntry(entryName(d->configSplitterStateEntry),                   QByteArray());
 
@@ -467,23 +280,23 @@ void ShowfotoStackViewSideBar::doLoadState()
     }
 
     setCurrentPathWithoutUndo(group.readEntry(entryName(d->configLastFolderEntry),               QDir::rootPath()));
-    loadContents(d->fsview->currentIndex());
-*/    
+    loadContents(d->view->currentIndex());
+*/
 }
 
 void ShowfotoStackViewSideBar::doSaveState()
 {
     KConfigGroup group = getConfigGroup();
 /*
-    d->fsmarks->saveSettings(group);
-    group.writeEntry(entryName(d->configFolderViewModeEntry),       d->fsbar->folderViewMode());
-    group.writeEntry(entryName(d->configFolderViewTypeMimeEntry),   d->fsbar->folderViewTypeMime());
-    group.writeEntry(entryName(d->configBookmarksVisibleEntry),     d->fsbar->bookmarksVisible());
-    group.writeEntry(entryName(d->configIconSizeEntry),             d->fsbar->iconSize());
+    d->marks->saveSettings(group);
+    group.writeEntry(entryName(d->configFolderViewModeEntry),       d->bar->folderViewMode());
+    group.writeEntry(entryName(d->configFolderViewTypeMimeEntry),   d->bar->folderViewTypeMime());
+    group.writeEntry(entryName(d->configBookmarksVisibleEntry),     d->bar->bookmarksVisible());
+    group.writeEntry(entryName(d->configIconSizeEntry),             d->bar->iconSize());
     group.writeEntry(entryName(d->configLastFolderEntry),           currentFolder());
     group.writeEntry(entryName(d->configSplitterStateEntry),        d->splitter->saveState().toBase64());
     group.sync();
-*/    
+*/
 }
 
 } // namespace ShowFoto

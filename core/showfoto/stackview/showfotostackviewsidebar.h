@@ -64,36 +64,19 @@ public:
     void          doSaveState()               override;
     const QIcon   getIcon();
     const QString getCaption();
-/*
-    QString currentFolder()             const;
-    QString currentPath()               const;
-
-    void setCurrentPath(const QString& newPathNative);
-    void setCurrentPathWithoutUndo(const QString& newPath);
 
     void setSortOrder(int order);
     void setSortRole(int role);
 
-    void loadContents(const QModelIndex& index);
-
+/*
     void registerPluginActions(const QList<DPluginAction*>& actions);
     QList<QAction*> pluginActions()     const;
 */
-public Q_SLOTS:
-/*
-    void slotUndo();
-    void slotRedo();
-    void slotGoHome();
-    void slotGoUp();
-    void slotLoadContents();
-*/
 private Q_SLOTS:
 /*
-    void slotCustomPathChanged(const QString&);
     void slotViewModeChanged(int);
     void slotShowBookmarks(bool);
     void slotPluginActionTriggered(QAction*);
-    void slotTypeMimesChanged(const QString& patterns);
 */
 Q_SIGNALS:
 
@@ -102,8 +85,6 @@ Q_SIGNALS:
 /*
     void signalAddBookmark();
     void signalSetup();
-    void signalLoadContentsFromPath(const QString& path);
-    void signalLoadContentsFromFiles(const QStringList& files);
 */
 private:
 

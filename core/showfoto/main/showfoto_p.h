@@ -100,6 +100,7 @@
 #include "showfotofolderviewsidebar.h"
 #include "showfotofolderviewlist.h"
 #include "showfotostackviewsidebar.h"
+#include "showfotostackviewlist.h"
 #include "showfotosettings.h"
 #include "showfotoinfoiface.h"
 #include "dexpanderbox.h"

@@ -136,7 +136,7 @@ ShowfotoSetupMisc::ShowfotoSetupMisc(QWidget* const parent)
 
     // -- Sort Order Options ----------------------------------
 
-    QGroupBox* const sortOptionsGroup = new QGroupBox(i18n("Thumbbar and Folder-View Items Sort Order"), behaviourPanel);
+    QGroupBox* const sortOptionsGroup = new QGroupBox(i18n("Thumbbar, Folder-View, and Stack-View Items Sort Order"), behaviourPanel);
     QVBoxLayout* const gLayout4       = new QVBoxLayout();
 
     DHBox* const sortBox = new DHBox(sortOptionsGroup);

@@ -134,11 +134,13 @@ void Showfoto::applySettings()
     {
         d->filterModel->setSortOrder(ShowfotoItemSortSettings::DescendingOrder);
         d->folderView->setSortOrder(ShowfotoItemSortSettings::DescendingOrder);
+        d->stackView->setSortOrder(ShowfotoItemSortSettings::DescendingOrder);
     }
     else
     {
         d->filterModel->setSortOrder(ShowfotoItemSortSettings::AscendingOrder);
         d->folderView->setSortOrder(ShowfotoItemSortSettings::AscendingOrder);
+        d->stackView->setSortOrder(ShowfotoItemSortSettings::AscendingOrder);
     }
 
     switch (d->settings->getSortRole())
@@ -147,6 +149,7 @@ void Showfoto::applySettings()
         {
             d->filterModel->setSortRole(ShowfotoItemSortSettings::SortByFileName);
             d->folderView->setSortRole(ShowfotoFolderViewList::FileName);
+            d->stackView->setSortRole(ShowfotoStackViewList::FileName);
             break;
         }
 
@@ -154,6 +157,7 @@ void Showfoto::applySettings()
         {
             d->filterModel->setSortRole(ShowfotoItemSortSettings::SortByFileSize);
             d->folderView->setSortRole(ShowfotoFolderViewList::FileSize);
+            d->stackView->setSortRole(ShowfotoStackViewList::FileSize);
             break;
         }
 
@@ -161,6 +165,7 @@ void Showfoto::applySettings()
         {
             d->filterModel->setSortRole(ShowfotoItemSortSettings::SortByCreationDate);
             d->folderView->setSortRole(ShowfotoFolderViewList::FileDate);
+            d->stackView->setSortRole(ShowfotoStackViewList::FileDate);
             break;
         }
     }
