@@ -96,10 +96,10 @@ ShowfotoStackViewList::ShowfotoStackViewList(ShowfotoStackViewSideBar* const vie
 
     setColumnCount(4);
     QStringList titles;
-    titles.append(i18nc("@title: item name", "Name"));
-    titles.append(i18nc("@title: item size", "File Size"));
-    titles.append(i18nc("@title: item type", "Type"));
-    titles.append(i18nc("@title: item date", "Date"));
+    titles.append(i18nc("@title: item file name",          "Name"));
+    titles.append(i18nc("@title: item file size",          "Size"));
+    titles.append(i18nc("@title: item file type",          "Type"));
+    titles.append(i18nc("@title: item date from metadata", "Date"));
     setHeaderLabels(titles);
     header()->setSectionResizeMode(FileName, QHeaderView::ResizeToContents);
     header()->setSectionResizeMode(FileSize, QHeaderView::Stretch);
@@ -151,28 +151,26 @@ void ShowfotoStackViewList::setThumbbar(ShowfotoThumbnailBar* const thumbbar)
 
 void ShowfotoStackViewList::slotItemsAdded(const QList<ShowfotoItemInfo>& items)
 {
-    foreach (const ShowfotoItemInfo& inf, items)
+    foreach (const ShowfotoItemInfo& info, items)
     {
         ShowfotoStackViewItem* const it = new ShowfotoStackViewItem(this);
-        it->setItemInfo(inf);
+        it->setInfo(info);
     }
 }
 
 void ShowfotoStackViewList::slotItemsRemoved(const QList<ShowfotoItemInfo>& items)
 {
-    qCDebug(DIGIKAM_SHOWFOTO_LOG) << "ITEMS TO REMOVE" << items;
-
     QTreeWidgetItemIterator iter(this);
-    ShowfotoStackViewItem* item = nullptr;
+    ShowfotoStackViewItem* sitem = nullptr;
     QList<ShowfotoStackViewItem*> list;
 
     while (*iter)
     {
-        item = dynamic_cast<ShowfotoStackViewItem*>(*iter);
+        sitem = dynamic_cast<ShowfotoStackViewItem*>(*iter);
 
-        if (item && (items.contains(item->itemInfo())))
+        if (sitem && (items.contains(sitem->info())))
         {
-            list << item;
+            list << sitem;
         }
 
         ++iter;
@@ -188,15 +186,15 @@ void ShowfotoStackViewList::slotItemsSelected(const QList<ShowfotoItemInfo> item
 {
     blockSignals(true);
     QTreeWidgetItemIterator iter(this);
-    ShowfotoStackViewItem* item = nullptr;
+    ShowfotoStackViewItem* sitem = nullptr;
 
     while (*iter)
     {
-        item = dynamic_cast<ShowfotoStackViewItem*>(*iter);
+        sitem = dynamic_cast<ShowfotoStackViewItem*>(*iter);
 
-        if (item && items.contains(item->itemInfo()))
+        if (sitem && items.contains(sitem->info()))
         {
-            item->setSelected(true);
+            sitem->setSelected(true);
         }
 
         ++iter;
@@ -210,15 +208,15 @@ void ShowfotoStackViewList::slotItemsDeselected(const QList<ShowfotoItemInfo> it
     blockSignals(true);
 
     QTreeWidgetItemIterator iter(this);
-    ShowfotoStackViewItem* item = nullptr;
+    ShowfotoStackViewItem* sitem = nullptr;
 
     while (*iter)
     {
-        item = dynamic_cast<ShowfotoStackViewItem*>(*iter);
+        sitem = dynamic_cast<ShowfotoStackViewItem*>(*iter);
 
-        if (item && items.contains(item->itemInfo()))
+        if (sitem && items.contains(sitem->info()))
         {
-            item->setSelected(false);
+            sitem->setSelected(false);
         }
 
         ++iter;
@@ -233,7 +231,7 @@ void ShowfotoStackViewList::slotSelectionChanged(QTreeWidgetItem* item)
 
     if (sitem)
     {
-        d->thumbbar->setCurrentInfo(sitem->itemInfo());
+        d->thumbbar->setCurrentInfo(sitem->info());
     }
 }
 
@@ -243,22 +241,22 @@ void ShowfotoStackViewList::slotItemDoubleClicked(QTreeWidgetItem* item)
 
     if (sitem)
     {
-        emit signalShowfotoItemInfoActivated(sitem->itemInfo());
+        emit signalShowfotoItemInfoActivated(sitem->info());
     }
 }
 
 void ShowfotoStackViewList::slotItemThumbnail(const ShowfotoItemInfo& info, const QImage& img)
 {
     QTreeWidgetItemIterator iter(this);
-    ShowfotoStackViewItem* item = nullptr;
+    ShowfotoStackViewItem* sitem = nullptr;
 
     while (*iter)
     {
-        item = dynamic_cast<ShowfotoStackViewItem*>(*iter);
+        sitem = dynamic_cast<ShowfotoStackViewItem*>(*iter);
 
-        if (item && (item->itemInfo() == info))
+        if (sitem && (sitem->info() == info))
         {
-            item->setThumbnail(img);
+            sitem->setThumbnail(img);
             return;
         }
 
@@ -272,9 +270,9 @@ void ShowfotoStackViewList::drawRow(QPainter* p, const QStyleOptionViewItem& opt
 
     if (!info.isNull() && index.isValid())
     {
-        ShowfotoStackViewItem* const item = dynamic_cast<ShowfotoStackViewItem*>(itemFromIndex(index));
+        ShowfotoStackViewItem* const sitem = dynamic_cast<ShowfotoStackViewItem*>(itemFromIndex(index));
 
-        if (item && item->icon(FileName).isNull())
+        if (sitem && sitem->icon(FileName).isNull())
         {
             d->thumbbar->showfotoThumbnailModel()->thumbnailLoadThread()->find(ThumbnailIdentifier(info.url.toLocalFile()));
         }
@@ -289,11 +287,11 @@ ShowfotoItemInfo ShowfotoStackViewList::infoFromIndex(const QModelIndex& index) 
 
     if (index.isValid())
     {
-        ShowfotoStackViewItem* const item = dynamic_cast<ShowfotoStackViewItem*>(itemFromIndex(index));
+        ShowfotoStackViewItem* const sitem = dynamic_cast<ShowfotoStackViewItem*>(itemFromIndex(index));
 
-        if (item)
+        if (sitem)
         {
-            info = item->itemInfo();
+            info = sitem->info();
         }
     }
 
@@ -369,13 +367,6 @@ void ShowfotoStackViewList::contextMenuEvent(QContextMenuEvent* e)
 
     QTreeView::contextMenuEvent(e);
 */
-}
-
-void ShowfotoStackViewList::mouseDoubleClickEvent(QMouseEvent* e)
-{
-//    d->view->loadContents(currentIndex());
-
-    QTreeView::mouseDoubleClickEvent(e);
 }
 
 void ShowfotoStackViewList::setEnableToolTips(bool val)

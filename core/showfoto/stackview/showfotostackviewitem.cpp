@@ -30,12 +30,19 @@
 #include <QPixmap>
 #include <QLocale>
 #include <QDateTime>
+#include <QMimeDatabase>
+#include <QFileInfo>
+
+// KDE includes
+
+#include <klocalizedstring.h>
 
 // Local include
 
 #include "digikam_debug.h"
 #include "showfotostackviewlist.h"
 #include "itempropertiestab.h"
+#include "drawdecoder.h"
 
 using namespace Digikam;
 
@@ -53,7 +60,7 @@ ShowfotoStackViewItem::~ShowfotoStackViewItem()
 {
 }
 
-void ShowfotoStackViewItem::setItemInfo(const ShowfotoItemInfo& info)
+void ShowfotoStackViewItem::setInfo(const ShowfotoItemInfo& info)
 {
     m_info                 = info;
     setText(ShowfotoStackViewList::FileName, m_info.name);
@@ -62,14 +69,25 @@ void ShowfotoStackViewItem::setItemInfo(const ShowfotoItemInfo& info)
     QString str            = QLocale().toString(createdDate, QLocale::ShortFormat);
     setText(ShowfotoStackViewList::FileDate, str);
 
-    setText(ShowfotoStackViewList::FileType, m_info.mime);
+    QFileInfo fileInfo(m_info.name);
+    QString rawFilesExt    = DRawDecoder::rawFiles();
+    QString ext            = fileInfo.suffix().toUpper();
+
+    if (!ext.isEmpty() && rawFilesExt.toUpper().contains(ext))
+    {
+        setText(ShowfotoStackViewList::FileType, i18nc("@info: item properties", "RAW Image"));
+    }
+    else
+    {
+        setText(ShowfotoStackViewList::FileType, QMimeDatabase().mimeTypeForFile(fileInfo).comment());
+    }
 
     QString localeFileSize = QLocale().toString(info.size);
     str                    = ItemPropertiesTab::humanReadableBytesCount(m_info.size);
     setText(ShowfotoStackViewList::FileSize, str);
 }
 
-ShowfotoItemInfo ShowfotoStackViewItem::itemInfo() const
+ShowfotoItemInfo ShowfotoStackViewItem::info() const
 {
     return m_info;
 }

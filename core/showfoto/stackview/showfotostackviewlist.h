@@ -78,7 +78,6 @@ Q_SIGNALS:
 
 private:
 
-    void mouseDoubleClickEvent(QMouseEvent*)                            override;
     void contextMenuEvent(QContextMenuEvent*)                           override;
     void mouseMoveEvent(QMouseEvent*)                                   override;
     void wheelEvent(QWheelEvent*)                                       override;

@@ -47,8 +47,8 @@ public:
     explicit ShowfotoStackViewItem(ShowfotoStackViewList* const parent);
     ~ShowfotoStackViewItem()               override;
 
-    void setItemInfo(const ShowfotoItemInfo&);
-    ShowfotoItemInfo itemInfo()      const;
+    void setInfo(const ShowfotoItemInfo&);
+    ShowfotoItemInfo info()      const;
 
     void setThumbnail(const QImage&);
 
