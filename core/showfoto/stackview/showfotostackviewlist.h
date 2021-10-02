@@ -36,7 +36,6 @@
 // Local includes
 
 #include "showfotostackviewsidebar.h"
-#include "showfotoimagemodel.h"
 
 namespace ShowFoto
 {

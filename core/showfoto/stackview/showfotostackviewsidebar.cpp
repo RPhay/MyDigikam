@@ -46,7 +46,6 @@
 #include "digikam_globals.h"
 #include "showfoto.h"
 #include "showfotostackviewlist.h"
-#include "showfotostackviewmodel.h"
 #include "showfotothumbnailbar.h"
 //#include "showfotostackviewbar.h"
 //#include "showfotostackviewbookmarks.h"
@@ -60,8 +59,7 @@ class Q_DECL_HIDDEN ShowfotoStackViewSideBar::Private
 public:
 
     explicit Private()
-      : model     (nullptr),
-        view      (nullptr),
+      : view      (nullptr),
 /*      bar       (nullptr),
         marks     (nullptr),
         splitter  (nullptr),
@@ -78,7 +76,6 @@ public:
     static const QString                 configBookmarksVisibleEntry;
     static const QString                 configSplitterStateEntry;
 
-    ShowfotoStackViewModel*              model;
     ShowfotoStackViewList*               view;
 /*
     ShowfotoStackViewBar*                bar;
