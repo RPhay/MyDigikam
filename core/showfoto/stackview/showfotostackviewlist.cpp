@@ -311,27 +311,20 @@ ShowfotoItemInfo ShowfotoStackViewList::infoFromIndex(const QModelIndex& index) 
 
 void ShowfotoStackViewList::slotOpenInFileManager()
 {
-/*
     QModelIndex index  = currentIndex();
     QList<QUrl> urls;
 
     if (index.isValid())
     {
-        ShowfotoStackViewModel* const model = dynamic_cast<ShowfotoStackViewModel*>(this->model());
+        ShowfotoStackViewItem* const sitem = dynamic_cast<ShowfotoStackViewItem*>(itemFromIndex(index));
 
-        if (model)
+        if (sitem)
         {
-            urls << QUrl::fromLocalFile(model->filePath(index));
+            urls << QUrl::fromLocalFile(sitem->info().url.toLocalFile());
+
+            DFileOperations::openInFileManager(urls);
         }
     }
-
-    if (urls.empty())
-    {
-        urls << QUrl::fromLocalFile(d->view->currentFolder());
-    }
-
-    DFileOperations::openInFileManager(urls);
-*/
 }
 
 void ShowfotoStackViewList::slotIconSizeChanged(int size)
@@ -341,29 +334,17 @@ void ShowfotoStackViewList::slotIconSizeChanged(int size)
 
 void ShowfotoStackViewList::contextMenuEvent(QContextMenuEvent* e)
 {
-/*
     QMenu* const ctxmenu = new QMenu(this);
-    ctxmenu->setTitle(i18nc("@title", "Folder-View Options"));
-    ctxmenu->addAction(d->bar->toolBarAction(QLatin1String("GoPrevious")));
-    ctxmenu->addAction(d->bar->toolBarAction(QLatin1String("GoNext")));
-    ctxmenu->addAction(d->bar->toolBarAction(QLatin1String("GoHome")));
-    ctxmenu->addAction(d->bar->toolBarAction(QLatin1String("GoUp")));
-    ctxmenu->addSeparator();
-    ctxmenu->addAction(d->bar->toolBarAction(QLatin1String("ShortView")));
-    ctxmenu->addAction(d->bar->toolBarAction(QLatin1String("DetailledView")));
-    ctxmenu->addAction(d->bar->toolBarAction(QLatin1String("ShowBookmarks")));
-    ctxmenu->addAction(d->bar->toolBarAction(QLatin1String("MoreSettings")));
-    ctxmenu->addSeparator();
-    ctxmenu->addAction(d->bar->toolBarAction(QLatin1String("LoadContents")));
-    ctxmenu->addActions(d->bar->pluginActions());
+    ctxmenu->setTitle(i18nc("@title", "Stack-View Options"));
+    ctxmenu->addActions(d->view->pluginActions());
     ctxmenu->addSeparator();
 
-    QAction* const addBookmark  = new QAction(QIcon::fromTheme(QLatin1String("list-add")),
-                                              i18nc("@action: context menu", "Add Bookmark"), ctxmenu);
-    ctxmenu->addAction(addBookmark);
+    QAction* const addFavorite  = new QAction(QIcon::fromTheme(QLatin1String("list-add")),
+                                              i18nc("@action: context menu", "Add as Favorite"), ctxmenu);
+    ctxmenu->addAction(addFavorite);
 
-    connect(addBookmark, SIGNAL(triggered()),
-            this, SIGNAL(signalAddBookmark()));
+    connect(addFavorite, SIGNAL(triggered()),
+            this, SIGNAL(signalAddFavorite()));
 
     QAction* const openFileMngr = new QAction(QIcon::fromTheme(QLatin1String("folder-open")),
                                               i18nc("@action: context menu", "Open in File Manager"), ctxmenu);
@@ -377,7 +358,6 @@ void ShowfotoStackViewList::contextMenuEvent(QContextMenuEvent* e)
     delete ctxmenu;
 
     QTreeView::contextMenuEvent(e);
-*/
 }
 
 void ShowfotoStackViewList::setEnableToolTips(bool val)

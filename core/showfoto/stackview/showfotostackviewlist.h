@@ -74,7 +74,7 @@ public Q_SLOTS:
 Q_SIGNALS:
 
     void signalItemListChanged(int nbitems);
-    void signalAddBookmark();
+    void signalAddFavorite();
     void signalShowfotoItemInfoActivated(const ShowfotoItemInfo& info);
 
 private:

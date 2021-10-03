@@ -163,9 +163,10 @@ ShowfotoStackViewSideBar::ShowfotoStackViewSideBar(Showfoto* const parent)
     connect(d->bar, SIGNAL(signalGoPrevious()),
             this, SLOT(slotUndo()));
 
-    connect(d->view, SIGNAL(signalAddBookmark()),
-            this, SIGNAL(signalAddBookmark()));
 */
+
+    connect(d->view, SIGNAL(signalAddFavorite()),
+            this, SIGNAL(signalAddFavorite()));
 
     connect(d->view, SIGNAL(signalShowfotoItemInfoActivated(ShowfotoItemInfo)),
             this, SIGNAL(signalShowfotoItemInfoActivated(ShowfotoItemInfo)));
