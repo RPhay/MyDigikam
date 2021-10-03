@@ -57,6 +57,8 @@ public:
     QAction* toolBarAction(const QString& name) const;
     QList<QAction*> pluginActions()             const;
 
+    void loadContents();
+
 public Q_SLOTS:
 
     void slotItemListChanged(int nbitems);
@@ -68,7 +70,6 @@ Q_SIGNALS:
 
 private Q_SLOTS:
 
-    void slotLoadContents(const QString& path);
     void slotFavoriteDoubleClicked(QTreeWidgetItem*);
     void slotFavoriteSelectionChanged();
     void slotAddFavorite();

@@ -211,6 +211,11 @@ QTreeWidgetItem* ShowfotoStackViewFavorites::topFavoritesItem() const
     return d->topFavorites;
 }
 
+void ShowfotoStackViewFavorites::loadContents()
+{
+    d->favoritesList->slotLoadContents();
+}
+
 void ShowfotoStackViewFavorites::slotAddFavorite()
 {
     QString name     = i18n("New Favorite");
@@ -320,12 +325,6 @@ void ShowfotoStackViewFavorites::slotFavoriteDoubleClicked(QTreeWidgetItem* item
 void ShowfotoStackViewFavorites::slotItemListChanged(int nbitems)
 {
     d->addBtn->setEnabled(nbitems > 0);
-}
-
-void ShowfotoStackViewFavorites::slotLoadContents(const QString& path)
-{
-// FIXME    d->sidebar->setCurrentPath(path);
-    emit signalLoadContents();
 }
 
 void ShowfotoStackViewFavorites::saveSettings(KConfigGroup& group)

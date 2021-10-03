@@ -57,11 +57,14 @@ Q_SIGNALS:
     void signalAddFavorite();
     void signalLoadContentsFromFiles(const QStringList& files);
 
+public Q_SLOTS:
+
+    void slotLoadContents();
+
 private Q_SLOTS:
 
     void slotContextMenu(const QPoint& pos);
     void slotOpenInFileManager();
-    void slotLoadContents();
 
 private:
 

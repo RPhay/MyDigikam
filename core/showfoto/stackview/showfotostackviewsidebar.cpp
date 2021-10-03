@@ -83,6 +83,7 @@ public:
     ShowfotoStackViewFavorites*          favts;
     QSplitter*                           splitter;
 
+    QList<DPluginAction*>                dpluginActions;
     QList<QAction*>                      pluginActions;
     Qt::SortOrder                        sortOrder;
     ShowfotoStackViewList::StackViewRole role;
@@ -233,7 +234,9 @@ void ShowfotoStackViewSideBar::slotShowBookfavts(bool visible)
 */
 void ShowfotoStackViewSideBar::registerPluginActions(const QList<DPluginAction*>& actions)
 {
-   foreach (QAction* const dpact, actions)
+    d->dpluginActions = actions;
+
+   foreach (QAction* const dpact, d->dpluginActions)
    {
        QAction* const act = new QAction(dpact->text(), this);
        act->setObjectName(dpact->objectName());
@@ -241,25 +244,27 @@ void ShowfotoStackViewSideBar::registerPluginActions(const QList<DPluginAction*>
        act->setToolTip(dpact->toolTip());
        act->setData(d->pluginFingerPrint);
 
+       connect(act, SIGNAL(triggered(bool)),
+               this, SLOT(slotPluginActionTriggered()));
+
        d->pluginActions << act;
     }
-/*
-    d->bar->registerPluginActions(d->pluginActions);
-
-    connect(d->bar, SIGNAL(signalPluginActionTriggered(QAction*)),
-            this, SLOT(slotPluginActionTriggered(QAction*)));
-*/
 }
 
-void ShowfotoStackViewSideBar::slotPluginActionTriggered(QAction* act)
+void ShowfotoStackViewSideBar::slotPluginActionTriggered()
 {
-    foreach (QAction* const dpact, d->pluginActions)
+    QAction* const act = dynamic_cast<QAction*>(sender());
+
+    if (act)
     {
-        if (act->objectName() == dpact->objectName())
+        foreach (QAction* const dpact, d->dpluginActions)
         {
-//FIXME            slotLoadContents();
-            QTimer::singleShot(1000, dpact, SLOT(trigger()));
-            return;
+            if (act->objectName() == dpact->objectName())
+            {
+                d->favts->loadContents();
+                QTimer::singleShot(1000, dpact, SLOT(trigger()));
+                return;
+            }
         }
     }
 }

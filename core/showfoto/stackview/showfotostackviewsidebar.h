@@ -80,7 +80,7 @@ private Q_SLOTS:
     void slotViewModeChanged(int);
     void slotShowBookmarks(bool);
 */
-    void slotPluginActionTriggered(QAction*);
+    void slotPluginActionTriggered();
 
 Q_SIGNALS:
 
