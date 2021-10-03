@@ -466,4 +466,25 @@ void ShowfotoStackViewList::leaveEvent(QEvent* e)
     QTreeView::leaveEvent(e);
 }
 
+QList<QUrl> ShowfotoStackViewList::urls()
+{
+    QTreeWidgetItemIterator iter(this);
+    ShowfotoStackViewItem* sitem = nullptr;
+    QList<QUrl> list;
+
+    while (*iter)
+    {
+        sitem = dynamic_cast<ShowfotoStackViewItem*>(*iter);
+
+        if (sitem)
+        {
+            list << sitem->info().url;
+        }
+
+        ++iter;
+    }
+
+    return list;
+}
+
 } // namespace ShowFoto

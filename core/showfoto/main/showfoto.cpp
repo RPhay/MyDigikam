@@ -96,6 +96,7 @@ Showfoto::Showfoto(const QList<QUrl>& urlList, QWidget* const)
     createGUI(xmlFile());
     registerPluginsActions();
     d->folderView->registerPluginActions(dpl->pluginsActions(DPluginAction::GenericView, this));
+    d->stackView->registerPluginActions(dpl->pluginsActions(DPluginAction::GenericView, this));
 
     cleanupActions();
 

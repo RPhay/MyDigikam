@@ -3,7 +3,7 @@
  * This file is a part of digiKam project
  * https://www.digikam.org
  *
- * Date        : 2021-08-27
+ * Date        : 2021-09-27
  * Description : Showfoto stack view item
  *
  * Copyright (C) 2021 by Gilles Caulier <caulier dot gilles at gmail dot com>

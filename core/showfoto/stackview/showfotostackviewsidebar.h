@@ -26,6 +26,8 @@
 
 // QT includes
 
+#include <QList>
+#include <QUrl>
 #include <QListView>
 #include <QPixmap>
 #include <QWidget>
@@ -68,16 +70,18 @@ public:
     void setSortOrder(int order);
     void setSortRole(int role);
 
-/*
     void registerPluginActions(const QList<DPluginAction*>& actions);
     QList<QAction*> pluginActions()     const;
-*/
+
+    QList<QUrl> urls()                  const;
+
 private Q_SLOTS:
 /*
     void slotViewModeChanged(int);
     void slotShowBookmarks(bool);
-    void slotPluginActionTriggered(QAction*);
 */
+    void slotPluginActionTriggered(QAction*);
+
 Q_SIGNALS:
 
     void signalShowfotoItemInfoActivated(const ShowfotoItemInfo& info);

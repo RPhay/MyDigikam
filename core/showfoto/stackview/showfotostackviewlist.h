@@ -65,6 +65,7 @@ public:
     void setEnableToolTips(bool val);
 
     ShowfotoItemInfo infoFromIndex(const QModelIndex& index) const;
+    QList<QUrl> urls();
 
 public Q_SLOTS:
 

@@ -47,8 +47,8 @@
 #include "showfoto.h"
 #include "showfotostackviewlist.h"
 #include "showfotothumbnailbar.h"
+#include "showfotostackviewfavorites.h"
 //#include "showfotostackviewbar.h"
-//#include "showfotostackviewbookmarks.h"
 
 namespace ShowFoto
 {
@@ -59,30 +59,31 @@ class Q_DECL_HIDDEN ShowfotoStackViewSideBar::Private
 public:
 
     explicit Private()
-      : view      (nullptr),
-/*      bar       (nullptr),
-        marks     (nullptr),
-        splitter  (nullptr),
-*/
-        sortOrder (Qt::AscendingOrder),
-        role      (ShowfotoStackViewList::FileName)
+      : pluginFingerPrint(QLatin1String("DPlugin::Generic::View")),
+        view             (nullptr),
+//      bar              (nullptr),
+        favts            (nullptr),
+        splitter         (nullptr),
+        sortOrder        (Qt::AscendingOrder),
+        role             (ShowfotoStackViewList::FileName)
     {
     }
 
+    const QString                        pluginFingerPrint;
     static const QString                 configIconSizeEntry;
     static const QString                 configLastFolderEntry;
     static const QString                 configFolderViewModeEntry;
     static const QString                 configFolderViewTypeMimeEntry;
-    static const QString                 configBookmarksVisibleEntry;
+    static const QString                 configBookfavtsVisibleEntry;
     static const QString                 configSplitterStateEntry;
 
     ShowfotoStackViewList*               view;
-/*
-    ShowfotoStackViewBar*                bar;
-    ShowfotoStackViewBookmarks*          marks;
+
+//    ShowfotoStackViewBar*                bar;
+    ShowfotoStackViewFavorites*          favts;
     QSplitter*                           splitter;
-*/
-    QList<DPluginAction*>                pluginActions;
+
+    QList<QAction*>                      pluginActions;
     Qt::SortOrder                        sortOrder;
     ShowfotoStackViewList::StackViewRole role;
 };
@@ -91,7 +92,7 @@ const QString ShowfotoStackViewSideBar::Private::configIconSizeEntry(QLatin1Stri
 const QString ShowfotoStackViewSideBar::Private::configLastFolderEntry(QLatin1String("Last Folder"));
 const QString ShowfotoStackViewSideBar::Private::configFolderViewModeEntry(QLatin1String("Folder View Mode"));
 const QString ShowfotoStackViewSideBar::Private::configFolderViewTypeMimeEntry(QLatin1String("Folder View Type Mime"));
-const QString ShowfotoStackViewSideBar::Private::configBookmarksVisibleEntry(QLatin1String("Bookmarks Visible"));
+const QString ShowfotoStackViewSideBar::Private::configBookfavtsVisibleEntry(QLatin1String("Bookfavts Visible"));
 const QString ShowfotoStackViewSideBar::Private::configSplitterStateEntry(QLatin1String("Splitter State"));
 
 ShowfotoStackViewSideBar::ShowfotoStackViewSideBar(Showfoto* const parent)
@@ -104,21 +105,21 @@ ShowfotoStackViewSideBar::ShowfotoStackViewSideBar(Showfoto* const parent)
     // --- Populate the view
 
 //    d->bar                   = new ShowfotoStackViewBar(this);
-    d->view                  = new ShowfotoStackViewList(this);
+    d->view                    = new ShowfotoStackViewList(this);
     d->view->setEnableToolTips(true);
-/*
-    d->marks                 = new ShowfotoStackViewBookmarks(this);
+
+    d->favts                   = new ShowfotoStackViewFavorites(this);
 
     d->splitter                = new QSplitter(Qt::Vertical, this);
     d->splitter->addWidget(d->view);
-    d->splitter->addWidget(d->marks);
+    d->splitter->addWidget(d->favts);
     d->splitter->setStretchFactor(0, 10);
     d->splitter->setStretchFactor(1, 3);
-*/
+
     QVBoxLayout* const layout  = new QVBoxLayout(this);
 //    layout->addWidget(d->bar);
-//    layout->addWidget(d->splitter);
-    layout->addWidget(d->view);
+    layout->addWidget(d->splitter);
+//    layout->addWidget(d->view);
     layout->setContentsMargins(0, 0, 0, 0);
 
     // --- Setup connections
@@ -126,8 +127,8 @@ ShowfotoStackViewSideBar::ShowfotoStackViewSideBar(Showfoto* const parent)
     connect(d->bar, SIGNAL(signalSetup()),
             this, SIGNAL(signalSetup()));
 
-    connect(d->bar, SIGNAL(signalShowBookmarks(bool)),
-            this, SLOT(slotShowBookmarks(bool)));
+    connect(d->bar, SIGNAL(signalShowBookfavts(bool)),
+            this, SLOT(slotShowBookfavts(bool)));
 
     connect(d->bar, SIGNAL(signalViewModeChanged(int)),
             this, SLOT(slotViewModeChanged(int)));
@@ -144,7 +145,7 @@ ShowfotoStackViewSideBar::ShowfotoStackViewSideBar(Showfoto* const parent)
     connect(d->bar, SIGNAL(signalLoadContents()),
             this, SLOT(slotLoadContents()));
 
-    connect(d->marks, SIGNAL(signalLoadContents()),
+    connect(d->favts, SIGNAL(signalLoadContents()),
             this, SLOT(slotLoadContents()));
 
     connect(d->bar, SIGNAL(signalCustomPathChanged(QString)),
@@ -175,6 +176,11 @@ ShowfotoStackViewSideBar::~ShowfotoStackViewSideBar()
 void ShowfotoStackViewSideBar::setThumbbar(ShowfotoThumbnailBar* const thumbbar)
 {
     d->view->setThumbbar(thumbbar);
+}
+
+QList<QUrl> ShowfotoStackViewSideBar::urls() const
+{
+    return d->view->urls();
 }
 
 void ShowfotoStackViewSideBar::setSortOrder(int order)
@@ -215,19 +221,29 @@ void ShowfotoStackViewSideBar::slotViewModeChanged(int mode)
     }
 }
 
-void ShowfotoStackViewSideBar::slotShowBookmarks(bool visible)
+void ShowfotoStackViewSideBar::slotShowBookfavts(bool visible)
 {
-    d->marks->setVisible(visible);
+    d->favts->setVisible(visible);
 }
-
+*/
 void ShowfotoStackViewSideBar::registerPluginActions(const QList<DPluginAction*>& actions)
 {
-    d->pluginActions = actions;
+   foreach (QAction* const dpact, actions)
+   {
+       QAction* const act = new QAction(dpact->text(), this);
+       act->setObjectName(dpact->objectName());
+       act->setIcon(dpact->icon());
+       act->setToolTip(dpact->toolTip());
+       act->setData(d->pluginFingerPrint);
 
+       d->pluginActions << act;
+    }
+/*
     d->bar->registerPluginActions(d->pluginActions);
 
     connect(d->bar, SIGNAL(signalPluginActionTriggered(QAction*)),
             this, SLOT(slotPluginActionTriggered(QAction*)));
+*/
 }
 
 void ShowfotoStackViewSideBar::slotPluginActionTriggered(QAction* act)
@@ -236,7 +252,7 @@ void ShowfotoStackViewSideBar::slotPluginActionTriggered(QAction* act)
     {
         if (act->objectName() == dpact->objectName())
         {
-            slotLoadContents();
+//FIXME            slotLoadContents();
             QTimer::singleShot(1000, dpact, SLOT(trigger()));
             return;
         }
@@ -245,9 +261,9 @@ void ShowfotoStackViewSideBar::slotPluginActionTriggered(QAction* act)
 
 QList<QAction*> ShowfotoStackViewSideBar::pluginActions() const
 {
-    return d->bar->pluginActions();
+    return d->pluginActions;
 }
-*/
+
 const QIcon ShowfotoStackViewSideBar::getIcon()
 {
     return QIcon::fromTheme(QLatin1String("photos"));
@@ -261,21 +277,22 @@ const QString ShowfotoStackViewSideBar::getCaption()
 void ShowfotoStackViewSideBar::doLoadState()
 {
     KConfigGroup group = getConfigGroup();
+
+    d->favts->readSettings(group);
 /*
-    d->marks->readSettings(group);
     d->bar->setFolderViewMode(group.readEntry(entryName(d->configFolderViewModeEntry),         (int)ShowfotoStackViewList::ShortView));
     d->bar->setFolderViewTypeMime(group.readEntry(entryName(d->configFolderViewTypeMimeEntry), (int)ShowfotoStackViewBar::TYPE_MIME_ALL));
-    d->bar->setBookmarksVisible(group.readEntry(entryName(d->configBookmarksVisibleEntry),     false));
+    d->bar->setBookfavtsVisible(group.readEntry(entryName(d->configBookfavtsVisibleEntry),     false));
     slotViewModeChanged(d->bar->folderViewMode());
     d->bar->setIconSize(group.readEntry(entryName(d->configIconSizeEntry),                     32));
-
+*/
     QByteArray state = group.readEntry(entryName(d->configSplitterStateEntry),                   QByteArray());
 
     if (!state.isEmpty())
     {
         d->splitter->restoreState(QByteArray::fromBase64(state));
     }
-
+/*
     setCurrentPathWithoutUndo(group.readEntry(entryName(d->configLastFolderEntry),               QDir::rootPath()));
     loadContents(d->view->currentIndex());
 */
@@ -284,16 +301,17 @@ void ShowfotoStackViewSideBar::doLoadState()
 void ShowfotoStackViewSideBar::doSaveState()
 {
     KConfigGroup group = getConfigGroup();
+
+    d->favts->saveSettings(group);
 /*
-    d->marks->saveSettings(group);
     group.writeEntry(entryName(d->configFolderViewModeEntry),       d->bar->folderViewMode());
     group.writeEntry(entryName(d->configFolderViewTypeMimeEntry),   d->bar->folderViewTypeMime());
-    group.writeEntry(entryName(d->configBookmarksVisibleEntry),     d->bar->bookmarksVisible());
+    group.writeEntry(entryName(d->configBookfavtsVisibleEntry),     d->bar->bookfavtsVisible());
     group.writeEntry(entryName(d->configIconSizeEntry),             d->bar->iconSize());
     group.writeEntry(entryName(d->configLastFolderEntry),           currentFolder());
+*/
     group.writeEntry(entryName(d->configSplitterStateEntry),        d->splitter->saveState().toBase64());
     group.sync();
-*/
 }
 
 } // namespace ShowFoto
