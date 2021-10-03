@@ -119,7 +119,6 @@ ShowfotoStackViewSideBar::ShowfotoStackViewSideBar(Showfoto* const parent)
     QVBoxLayout* const layout  = new QVBoxLayout(this);
 //    layout->addWidget(d->bar);
     layout->addWidget(d->splitter);
-//    layout->addWidget(d->view);
     layout->setContentsMargins(0, 0, 0, 0);
 
     // --- Setup connections

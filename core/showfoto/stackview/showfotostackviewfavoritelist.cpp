@@ -123,9 +123,9 @@ void ShowfotoStackViewFavoriteList::slotContextMenu(const QPoint& pos)
     {
         QMenu* const ctxmenu        = new QMenu(this);
         ctxmenu->setTitle(i18nc("@title", "Bookmarks"));
-        ctxmenu->addAction(d->parent->toolBarAction(QLatin1String("AddBookmark")));
-        ctxmenu->addAction(d->parent->toolBarAction(QLatin1String("DelBookmark")));
-        ctxmenu->addAction(d->parent->toolBarAction(QLatin1String("EditBookmark")));
+        ctxmenu->addAction(d->parent->toolBarAction(QLatin1String("AddFavorite")));
+        ctxmenu->addAction(d->parent->toolBarAction(QLatin1String("DelFavorite")));
+        ctxmenu->addAction(d->parent->toolBarAction(QLatin1String("EditFavorite")));
         ctxmenu->addSeparator();
         ctxmenu->addActions(d->parent->pluginActions());
         ctxmenu->addSeparator();
