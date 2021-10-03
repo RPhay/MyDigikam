@@ -75,6 +75,9 @@ void Showfoto::setupConnections()
     connect(d->folderView, SIGNAL(signalLoadContentsFromFiles(QStringList)),
             this, SLOT(slotOpenFilesfromPath(QStringList)));
 
+    connect(d->stackView, SIGNAL(signalLoadContentsFromFiles(QStringList)),
+            this, SLOT(slotOpenFilesfromPath(QStringList)));
+
     connect(this, SIGNAL(signalSelectionChanged(QRect)),
             d->rightSideBar, SLOT(slotImageSelectionChanged(QRect)));
 

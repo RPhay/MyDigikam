@@ -85,6 +85,7 @@ private Q_SLOTS:
 Q_SIGNALS:
 
     void signalShowfotoItemInfoActivated(const ShowfotoItemInfo& info);
+    void signalLoadContentsFromFiles(const QStringList& files);
 
 /*
     void signalAddBookmark();

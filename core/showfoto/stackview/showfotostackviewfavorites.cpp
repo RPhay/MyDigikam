@@ -308,11 +308,19 @@ void ShowfotoStackViewFavorites::slotFavoriteSelectionChanged()
 
 void ShowfotoStackViewFavorites::slotFavoriteDoubleClicked(QTreeWidgetItem* item)
 {
-    ShowfotoStackViewFavoriteItem* const bitem = dynamic_cast<ShowfotoStackViewFavoriteItem*>(item);
+    ShowfotoStackViewFavoriteItem* const fitem = dynamic_cast<ShowfotoStackViewFavoriteItem*>(item);
 
-    if (bitem)
+    if (fitem)
     {
-// FIXME        d->sidebar->setCurrentPath(bitem->path());
+        QList<QUrl> urls = fitem->urls();
+        QStringList files;
+
+        foreach (const QUrl& url, urls)
+        {
+            files << url.toLocalFile();
+        }
+
+        emit signalLoadContentsFromFiles(files);
     }
 }
 

@@ -123,6 +123,9 @@ ShowfotoStackViewSideBar::ShowfotoStackViewSideBar(Showfoto* const parent)
     layout->setContentsMargins(0, 0, 0, 0);
 
     // --- Setup connections
+
+    connect(d->favts, SIGNAL(signalLoadContentsFromFiles(QStringList)),
+            this, SIGNAL(signalLoadContentsFromFiles(QStringList)));
 /*
     connect(d->bar, SIGNAL(signalSetup()),
             this, SIGNAL(signalSetup()));

@@ -30,6 +30,7 @@
 #include <QAction>
 #include <QWidget>
 #include <QString>
+#include <QStringList>
 #include <QTreeWidgetItem>
 
 class KConfigGroup;
@@ -59,6 +60,7 @@ public:
 Q_SIGNALS:
 
     void signalLoadContents();
+    void signalLoadContentsFromFiles(const QStringList& files);
 
 private Q_SLOTS:
 
