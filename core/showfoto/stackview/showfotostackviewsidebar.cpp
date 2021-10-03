@@ -169,6 +169,9 @@ ShowfotoStackViewSideBar::ShowfotoStackViewSideBar(Showfoto* const parent)
 
     connect(d->view, SIGNAL(signalShowfotoItemInfoActivated(ShowfotoItemInfo)),
             this, SIGNAL(signalShowfotoItemInfoActivated(ShowfotoItemInfo)));
+
+    connect(d->view, SIGNAL(signalItemListChanged(int)),
+            d->favts, SLOT(slotItemListChanged(int)));
 }
 
 ShowfotoStackViewSideBar::~ShowfotoStackViewSideBar()

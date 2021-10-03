@@ -57,6 +57,10 @@ public:
     QAction* toolBarAction(const QString& name) const;
     QList<QAction*> pluginActions()             const;
 
+public Q_SLOTS:
+
+    void slotItemListChanged(int nbitems);
+
 Q_SIGNALS:
 
     void signalLoadContents();

@@ -118,6 +118,7 @@ ShowfotoStackViewFavorites::ShowfotoStackViewFavorites(ShowfotoStackViewSideBar*
     d->addBtn               = new QToolButton(this);
     d->addBtn->setDefaultAction(btnAction);
     d->addBtn->setFocusPolicy(Qt::NoFocus);
+    d->addBtn->setEnabled(false);
 
     // ---
 
@@ -322,6 +323,11 @@ void ShowfotoStackViewFavorites::slotFavoriteDoubleClicked(QTreeWidgetItem* item
 
         emit signalLoadContentsFromFiles(files);
     }
+}
+
+void ShowfotoStackViewFavorites::slotItemListChanged(int nbitems)
+{
+    d->addBtn->setEnabled(nbitems > 0);
 }
 
 void ShowfotoStackViewFavorites::slotLoadContents(const QString& path)

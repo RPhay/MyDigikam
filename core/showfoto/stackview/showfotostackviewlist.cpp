@@ -133,6 +133,12 @@ void ShowfotoStackViewList::setThumbbar(ShowfotoThumbnailBar* const thumbbar)
     connect(d->thumbbar->showfotoItemModel(), SIGNAL(itemInfosAboutToBeRemoved(QList<ShowfotoItemInfo>)),
             this, SLOT(slotItemsRemoved(QList<ShowfotoItemInfo>)));
 
+    connect(d->thumbbar->showfotoItemModel(), SIGNAL(itemInfosAdded(QList<ShowfotoItemInfo>)),
+            this, SLOT(slotItemsListChanged()));
+
+    connect(d->thumbbar->showfotoItemModel(), SIGNAL(itemInfosRemoved(QList<ShowfotoItemInfo>)),
+            this, SLOT(slotItemsListChanged()));
+
     connect(d->thumbbar->showfotoThumbnailModel(), SIGNAL(signalItemThumbnail(ShowfotoItemInfo,QPixmap)),
             this, SLOT(slotItemThumbnail(ShowfotoItemInfo,QPixmap)));
 
@@ -156,6 +162,11 @@ void ShowfotoStackViewList::slotItemsAdded(const QList<ShowfotoItemInfo>& items)
         ShowfotoStackViewItem* const it = new ShowfotoStackViewItem(this);
         it->setInfo(info);
     }
+}
+
+void ShowfotoStackViewList::slotItemsListChanged()
+{
+    emit signalItemListChanged(topLevelItemCount());
 }
 
 void ShowfotoStackViewList::slotItemsRemoved(const QList<ShowfotoItemInfo>& items)

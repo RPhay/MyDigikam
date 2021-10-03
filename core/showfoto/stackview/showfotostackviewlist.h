@@ -73,6 +73,7 @@ public Q_SLOTS:
 
 Q_SIGNALS:
 
+    void signalItemListChanged(int nbitems);
     void signalAddBookmark();
     void signalShowfotoItemInfoActivated(const ShowfotoItemInfo& info);
 
@@ -103,6 +104,7 @@ private Q_SLOTS:
     void slotItemsDeselected(const QList<ShowfotoItemInfo> items);
     void slotSelectionChanged(QTreeWidgetItem*);
     void slotItemDoubleClicked(QTreeWidgetItem*);
+    void slotItemsListChanged();
 
 private:
 
