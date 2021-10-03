@@ -27,6 +27,7 @@
 // Qt includes
 
 #include <QString>
+#include <QStringList>
 #include <QUrl>
 #include <QList>
 #include <QTreeWidget>
@@ -44,10 +45,12 @@ public:
     ~ShowfotoStackViewFavoriteItem()    override;
 
     void setName(const QString& name);
-    QString name()         const;
+    QString name()            const;
 
     void setUrls(const QList<QUrl>&);
-    QList<QUrl> urls()     const;
+    QList<QUrl> urls()        const;
+
+    QStringList urlsToPaths() const;
 
 private:
 

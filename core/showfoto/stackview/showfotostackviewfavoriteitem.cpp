@@ -61,4 +61,16 @@ QList<QUrl> ShowfotoStackViewFavoriteItem::urls() const
     return m_urls;
 }
 
+QStringList ShowfotoStackViewFavoriteItem::urlsToPaths() const
+{
+    QStringList files;
+
+    foreach (const QUrl& url, urls())
+    {
+        files << url.toLocalFile();
+    }
+
+    return files;
+}
+
 } // namespace ShowFoto

@@ -184,8 +184,8 @@ ShowfotoStackViewFavorites::ShowfotoStackViewFavorites(ShowfotoStackViewSideBar*
     connect(d->favoritesList, SIGNAL(signalAddFavorite()),
             this, SLOT(slotAddFavorite()));
 
-    connect(d->favoritesList, SIGNAL(signalLoadContents(QString)),
-            this, SLOT(slotLoadContents(QString)));
+    connect(d->favoritesList, SIGNAL(signalLoadContentsFromFiles(QStringList)),
+            this, SIGNAL(signalLoadContentsFromFiles(QStringList)));
 }
 
 ShowfotoStackViewFavorites::~ShowfotoStackViewFavorites()
@@ -313,15 +313,7 @@ void ShowfotoStackViewFavorites::slotFavoriteDoubleClicked(QTreeWidgetItem* item
 
     if (fitem)
     {
-        QList<QUrl> urls = fitem->urls();
-        QStringList files;
-
-        foreach (const QUrl& url, urls)
-        {
-            files << url.toLocalFile();
-        }
-
-        emit signalLoadContentsFromFiles(files);
+        emit signalLoadContentsFromFiles(fitem->urlsToPaths());
     }
 }
 

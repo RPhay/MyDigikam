@@ -97,15 +97,12 @@ ShowfotoStackViewFavoriteList::~ShowfotoStackViewFavoriteList()
 
 void ShowfotoStackViewFavoriteList::slotOpenInFileManager()
 {
-    QList<QUrl> urls;
     ShowfotoStackViewFavoriteItem* const fvitem = dynamic_cast<ShowfotoStackViewFavoriteItem*>(currentItem());
 
     if (fvitem)
     {
-        urls << fvitem->urls();
+        DFileOperations::openInFileManager(fvitem->urls());
     }
-
-    DFileOperations::openInFileManager(urls);
 }
 
 void ShowfotoStackViewFavoriteList::slotLoadContents()
@@ -114,7 +111,7 @@ void ShowfotoStackViewFavoriteList::slotLoadContents()
 
     if (fvitem)
     {
-//FIXME        emit signalLoadContents(fvitem->path());
+        emit signalLoadContentsFromFiles(fvitem->urlsToPaths());
     }
 }
 
