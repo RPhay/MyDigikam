@@ -56,6 +56,14 @@ public:
         FileDate            ///< Metadata date if exists, else Modifier date
     };
 
+    enum ThumbnailSize
+    {
+        SizeSmall  = 32,
+        SizeMedium = 48,
+        SizeLarge  = 64,
+        SizeHuge   = 96
+    };
+
 public:
 
     explicit ShowfotoStackViewList(ShowfotoStackViewSideBar* const view);

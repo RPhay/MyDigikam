@@ -88,7 +88,7 @@ ShowfotoStackViewList::ShowfotoStackViewList(ShowfotoStackViewSideBar* const vie
     setItemsExpandable(false);
     setExpandsOnDoubleClick(false);
     setAlternatingRowColors(true);
-    setIconSize(QSize(32, 32));
+    setIconSize(QSize(SizeSmall, SizeSmall));
     setSelectionMode(QAbstractItemView::SingleSelection);
     setSelectionBehavior(QAbstractItemView::SelectRows);
     setAllColumnsShowFocus(true);
@@ -283,7 +283,13 @@ void ShowfotoStackViewList::drawRow(QPainter* p, const QStyleOptionViewItem& opt
     {
         ShowfotoStackViewItem* const sitem = dynamic_cast<ShowfotoStackViewItem*>(itemFromIndex(index));
 
-        if (sitem && sitem->icon(FileName).isNull())
+        if (
+            sitem &&
+            (
+                sitem->icon(FileName).isNull() ||
+                (sitem->icon(FileName).actualSize(iconSize()) != iconSize())
+            )
+           )
         {
             d->thumbbar->showfotoThumbnailModel()->thumbnailLoadThread()->find(ThumbnailIdentifier(info.url.toLocalFile()));
         }
@@ -334,8 +340,59 @@ void ShowfotoStackViewList::slotIconSizeChanged(int size)
 
 void ShowfotoStackViewList::contextMenuEvent(QContextMenuEvent* e)
 {
-    QMenu* const ctxmenu = new QMenu(this);
+    QMenu* const ctxmenu        = new QMenu(this);
     ctxmenu->setTitle(i18nc("@title", "Stack-View Options"));
+
+    QMenu* const iconMenu       = new QMenu(i18n("Thumbnail Size"), ctxmenu);
+    QActionGroup* const sizeGrp = new QActionGroup(iconMenu);
+
+    QAction* const sizeSmall    = iconMenu->addAction(i18nc("@action:inmenu", "Small (%1x%2)", SizeSmall, SizeSmall));
+    sizeSmall->setCheckable(true);
+    sizeGrp->addAction(sizeSmall);
+
+    QAction* const sizeMedium   = iconMenu->addAction(i18nc("@action:inmenu", "Medium (%1x%2)", SizeMedium, SizeMedium));
+    sizeMedium->setCheckable(true);
+    sizeGrp->addAction(sizeMedium);
+
+    QAction* const sizeLarge    = iconMenu->addAction(i18nc("@action:inmenu", "Large (%1x%2)", SizeLarge, SizeLarge));
+    sizeLarge->setCheckable(true);
+    sizeGrp->addAction(sizeLarge);
+
+    QAction* const sizeHuge     = iconMenu->addAction(i18nc("@action:inmenu", "Huge (%1x%2)", SizeHuge, SizeHuge));
+    sizeHuge->setCheckable(true);
+    sizeGrp->addAction(sizeHuge);
+
+    sizeGrp->setExclusive(true);
+
+    switch (iconSize().width())
+    {
+        case SizeMedium:
+        {
+            sizeMedium->setChecked(true);
+            break;
+        }
+
+        case SizeLarge:
+        {
+            sizeLarge->setChecked(true);
+            break;
+        }
+
+        case SizeHuge:
+        {
+            sizeHuge->setChecked(true);
+            break;
+        }
+
+        default:
+        {
+            sizeSmall->setChecked(true);
+            break;
+        }
+    }
+
+    ctxmenu->addMenu(iconMenu);
+    ctxmenu->addSeparator();
     ctxmenu->addActions(d->view->pluginActions());
     ctxmenu->addSeparator();
 
@@ -354,6 +411,23 @@ void ShowfotoStackViewList::contextMenuEvent(QContextMenuEvent* e)
             this, SLOT(slotOpenInFileManager()));
 
     ctxmenu->exec(e->globalPos());
+
+    if      (sizeSmall->isChecked())
+    {
+        setIconSize(QSize(SizeSmall, SizeSmall));
+    }
+    else if (sizeMedium->isChecked())
+    {
+        setIconSize(QSize(SizeMedium, SizeMedium));
+    }
+    else if (sizeLarge->isChecked())
+    {
+        setIconSize(QSize(SizeLarge, SizeLarge));
+    }
+    else if (sizeHuge->isChecked())
+    {
+        setIconSize(QSize(SizeHuge, SizeHuge));
+    }
 
     delete ctxmenu;
 

@@ -71,10 +71,7 @@ public:
 
     const QString                        pluginFingerPrint;
     static const QString                 configIconSizeEntry;
-    static const QString                 configLastFolderEntry;
-    static const QString                 configFolderViewModeEntry;
-    static const QString                 configFolderViewTypeMimeEntry;
-    static const QString                 configBookfavtsVisibleEntry;
+    static const QString                 configFavoritesVisibleEntry;
     static const QString                 configSplitterStateEntry;
 
     ShowfotoStackViewList*               view;
@@ -90,10 +87,7 @@ public:
 };
 
 const QString ShowfotoStackViewSideBar::Private::configIconSizeEntry(QLatin1String("Icon Size"));
-const QString ShowfotoStackViewSideBar::Private::configLastFolderEntry(QLatin1String("Last Folder"));
-const QString ShowfotoStackViewSideBar::Private::configFolderViewModeEntry(QLatin1String("Folder View Mode"));
-const QString ShowfotoStackViewSideBar::Private::configFolderViewTypeMimeEntry(QLatin1String("Folder View Type Mime"));
-const QString ShowfotoStackViewSideBar::Private::configBookfavtsVisibleEntry(QLatin1String("Bookfavts Visible"));
+const QString ShowfotoStackViewSideBar::Private::configFavoritesVisibleEntry(QLatin1String("Favorites Visible"));
 const QString ShowfotoStackViewSideBar::Private::configSplitterStateEntry(QLatin1String("Splitter State"));
 
 ShowfotoStackViewSideBar::ShowfotoStackViewSideBar(Showfoto* const parent)
@@ -291,22 +285,16 @@ void ShowfotoStackViewSideBar::doLoadState()
 
     d->favts->readSettings(group);
 /*
-    d->bar->setFolderViewMode(group.readEntry(entryName(d->configFolderViewModeEntry),         (int)ShowfotoStackViewList::ShortView));
-    d->bar->setFolderViewTypeMime(group.readEntry(entryName(d->configFolderViewTypeMimeEntry), (int)ShowfotoStackViewBar::TYPE_MIME_ALL));
     d->bar->setBookfavtsVisible(group.readEntry(entryName(d->configBookfavtsVisibleEntry),     false));
-    slotViewModeChanged(d->bar->folderViewMode());
-    d->bar->setIconSize(group.readEntry(entryName(d->configIconSizeEntry),                     32));
 */
-    QByteArray state = group.readEntry(entryName(d->configSplitterStateEntry),                   QByteArray());
+    int iconSize     = group.readEntry(entryName(d->configIconSizeEntry),                      (int)ShowfotoStackViewList::SizeSmall);
+    d->view->setIconSize(QSize(iconSize, iconSize));
+    QByteArray state = group.readEntry(entryName(d->configSplitterStateEntry),                 QByteArray());
 
     if (!state.isEmpty())
     {
         d->splitter->restoreState(QByteArray::fromBase64(state));
     }
-/*
-    setCurrentPathWithoutUndo(group.readEntry(entryName(d->configLastFolderEntry),               QDir::rootPath()));
-    loadContents(d->view->currentIndex());
-*/
 }
 
 void ShowfotoStackViewSideBar::doSaveState()
@@ -315,12 +303,9 @@ void ShowfotoStackViewSideBar::doSaveState()
 
     d->favts->saveSettings(group);
 /*
-    group.writeEntry(entryName(d->configFolderViewModeEntry),       d->bar->folderViewMode());
-    group.writeEntry(entryName(d->configFolderViewTypeMimeEntry),   d->bar->folderViewTypeMime());
     group.writeEntry(entryName(d->configBookfavtsVisibleEntry),     d->bar->bookfavtsVisible());
-    group.writeEntry(entryName(d->configIconSizeEntry),             d->bar->iconSize());
-    group.writeEntry(entryName(d->configLastFolderEntry),           currentFolder());
 */
+    group.writeEntry(entryName(d->configIconSizeEntry),             d->view->iconSize().width());
     group.writeEntry(entryName(d->configSplitterStateEntry),        d->splitter->saveState().toBase64());
     group.sync();
 }
