@@ -78,7 +78,6 @@ public:
 private Q_SLOTS:
 /*
     void slotViewModeChanged(int);
-    void slotShowBookmarks(bool);
 */
     void slotPluginActionTriggered();
 
@@ -88,9 +87,6 @@ Q_SIGNALS:
     void signalLoadContentsFromFiles(const QStringList& files);
     void signalAddFavorite();
 
-/*
-    void signalSetup();
-*/
 private:
 
     class Private;

@@ -48,7 +48,6 @@
 #include "showfotostackviewlist.h"
 #include "showfotothumbnailbar.h"
 #include "showfotostackviewfavorites.h"
-//#include "showfotostackviewbar.h"
 
 namespace ShowFoto
 {
@@ -61,7 +60,6 @@ public:
     explicit Private()
       : pluginFingerPrint(QLatin1String("DPlugin::Generic::View")),
         view             (nullptr),
-//      bar              (nullptr),
         favts            (nullptr),
         splitter         (nullptr),
         sortOrder        (Qt::AscendingOrder),
@@ -71,12 +69,10 @@ public:
 
     const QString                        pluginFingerPrint;
     static const QString                 configIconSizeEntry;
-    static const QString                 configFavoritesVisibleEntry;
     static const QString                 configSplitterStateEntry;
 
     ShowfotoStackViewList*               view;
 
-//    ShowfotoStackViewBar*                bar;
     ShowfotoStackViewFavorites*          favts;
     QSplitter*                           splitter;
 
@@ -87,7 +83,6 @@ public:
 };
 
 const QString ShowfotoStackViewSideBar::Private::configIconSizeEntry(QLatin1String("Icon Size"));
-const QString ShowfotoStackViewSideBar::Private::configFavoritesVisibleEntry(QLatin1String("Favorites Visible"));
 const QString ShowfotoStackViewSideBar::Private::configSplitterStateEntry(QLatin1String("Splitter State"));
 
 ShowfotoStackViewSideBar::ShowfotoStackViewSideBar(Showfoto* const parent)
@@ -99,7 +94,6 @@ ShowfotoStackViewSideBar::ShowfotoStackViewSideBar(Showfoto* const parent)
 
     // --- Populate the view
 
-//    d->bar                   = new ShowfotoStackViewBar(this);
     d->view                    = new ShowfotoStackViewList(this);
     d->view->setEnableToolTips(true);
 
@@ -112,7 +106,6 @@ ShowfotoStackViewSideBar::ShowfotoStackViewSideBar(Showfoto* const parent)
     d->splitter->setStretchFactor(1, 3);
 
     QVBoxLayout* const layout  = new QVBoxLayout(this);
-//    layout->addWidget(d->bar);
     layout->addWidget(d->splitter);
     layout->setContentsMargins(0, 0, 0, 0);
 
@@ -120,44 +113,6 @@ ShowfotoStackViewSideBar::ShowfotoStackViewSideBar(Showfoto* const parent)
 
     connect(d->favts, SIGNAL(signalLoadContentsFromFiles(QStringList)),
             this, SIGNAL(signalLoadContentsFromFiles(QStringList)));
-/*
-    connect(d->bar, SIGNAL(signalSetup()),
-            this, SIGNAL(signalSetup()));
-
-    connect(d->bar, SIGNAL(signalShowBookfavts(bool)),
-            this, SLOT(slotShowBookfavts(bool)));
-
-    connect(d->bar, SIGNAL(signalViewModeChanged(int)),
-            this, SLOT(slotViewModeChanged(int)));
-
-    connect(d->bar, SIGNAL(signalIconSizeChanged(int)),
-            d->view, SLOT(slotIconSizeChanged(int)));
-
-    connect(d->bar, SIGNAL(signalGoHome()),
-            this, SLOT(slotGoHome()));
-
-    connect(d->bar, SIGNAL(signalGoUp()),
-            this, SLOT(slotGoUp()));
-
-    connect(d->bar, SIGNAL(signalLoadContents()),
-            this, SLOT(slotLoadContents()));
-
-    connect(d->favts, SIGNAL(signalLoadContents()),
-            this, SLOT(slotLoadContents()));
-
-    connect(d->bar, SIGNAL(signalCustomPathChanged(QString)),
-            this, SLOT(slotCustomPathChanged(QString)));
-
-    connect(d->bar, SIGNAL(signalTypeMimesChanged(QString)),
-            this, SLOT(slotTypeMimesChanged(QString)));
-
-    connect(d->bar, SIGNAL(signalGoNext()),
-            this, SLOT(slotRedo()));
-
-    connect(d->bar, SIGNAL(signalGoPrevious()),
-            this, SLOT(slotUndo()));
-
-*/
 
     connect(d->view, SIGNAL(signalAddFavorite()),
             this, SIGNAL(signalAddFavorite()));
@@ -197,7 +152,6 @@ void ShowfotoStackViewSideBar::setSortRole(int role)
 }
 
 /*
-
 void ShowfotoStackViewSideBar::slotViewModeChanged(int mode)
 {
     switch (mode)
@@ -222,14 +176,11 @@ void ShowfotoStackViewSideBar::slotViewModeChanged(int mode)
     }
 }
 
-void ShowfotoStackViewSideBar::slotShowBookfavts(bool visible)
-{
-    d->favts->setVisible(visible);
-}
 */
+
 void ShowfotoStackViewSideBar::registerPluginActions(const QList<DPluginAction*>& actions)
 {
-    d->dpluginActions = actions;
+   d->dpluginActions = actions;
 
    foreach (QAction* const dpact, d->dpluginActions)
    {
@@ -284,11 +235,10 @@ void ShowfotoStackViewSideBar::doLoadState()
     KConfigGroup group = getConfigGroup();
 
     d->favts->readSettings(group);
-/*
-    d->bar->setBookfavtsVisible(group.readEntry(entryName(d->configBookfavtsVisibleEntry),     false));
-*/
+
     int iconSize     = group.readEntry(entryName(d->configIconSizeEntry),                      (int)ShowfotoStackViewList::SizeSmall);
     d->view->setIconSize(QSize(iconSize, iconSize));
+
     QByteArray state = group.readEntry(entryName(d->configSplitterStateEntry),                 QByteArray());
 
     if (!state.isEmpty())
@@ -302,9 +252,7 @@ void ShowfotoStackViewSideBar::doSaveState()
     KConfigGroup group = getConfigGroup();
 
     d->favts->saveSettings(group);
-/*
-    group.writeEntry(entryName(d->configBookfavtsVisibleEntry),     d->bar->bookfavtsVisible());
-*/
+
     group.writeEntry(entryName(d->configIconSizeEntry),             d->view->iconSize().width());
     group.writeEntry(entryName(d->configSplitterStateEntry),        d->splitter->saveState().toBase64());
     group.sync();
