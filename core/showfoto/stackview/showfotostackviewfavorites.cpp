@@ -218,7 +218,7 @@ void ShowfotoStackViewFavorites::loadContents()
 
 void ShowfotoStackViewFavorites::slotAddFavorite()
 {
-    QString name     = i18n("New Favorite");
+    QString name     = i18nc("@title", "New Favorite");
     QString icon     = QLatin1String("folder-favorites");
     QList<QUrl> urls = d->sidebar->urls();
 
@@ -375,7 +375,7 @@ void ShowfotoStackViewFavorites::readSettings(const KConfigGroup& group)
         if (!item->urls().isEmpty())
         {
             confEntry       = QString::fromLatin1("%1_%2").arg(d->configFavoriteNamePrefixEntry).arg(i);
-            item->setName(group.readEntry(confEntry, i18n("Unnamed")));
+            item->setName(group.readEntry(confEntry, i18nc("@title", "Unnamed")));
 
             confEntry       = QString::fromLatin1("%1_%2").arg(d->configFavoriteIconPrefixEntry).arg(i);
             QString icoName = group.readEntry(confEntry, QString::fromLatin1("folder-favorites"));

@@ -343,7 +343,7 @@ void ShowfotoStackViewList::contextMenuEvent(QContextMenuEvent* e)
     QMenu* const ctxmenu        = new QMenu(this);
     ctxmenu->setTitle(i18nc("@title", "Stack-View Options"));
 
-    QMenu* const iconMenu       = new QMenu(i18n("Thumbnail Size"), ctxmenu);
+    QMenu* const iconMenu       = new QMenu(i18nc("@title:menu", "Thumbnail Size"), ctxmenu);
     QActionGroup* const sizeGrp = new QActionGroup(iconMenu);
 
     QAction* const sizeSmall    = iconMenu->addAction(i18nc("@action:inmenu", "Small (%1x%2)", SizeSmall, SizeSmall));
