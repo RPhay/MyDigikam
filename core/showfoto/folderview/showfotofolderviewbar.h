@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef SHOWFOTO_FOLDER_VIEW_TOOL_BAR_H
-#define SHOWFOTO_FOLDER_VIEW_TOOL_BAR_H
+#ifndef SHOWFOTO_FOLDER_VIEW_BAR_H
+#define SHOWFOTO_FOLDER_VIEW_BAR_H
 
 // Qt includes
 
@@ -123,4 +123,4 @@ private:
 
 } // namespace ShowFoto
 
-#endif // SHOWFOTO_FOLDER_VIEW_TOOL_BAR_H
+#endif // SHOWFOTO_FOLDER_VIEW_BAR_H
