@@ -129,7 +129,7 @@ ShowfotoStackViewFavoriteDlg::ShowfotoStackViewFavoriteDlg(ShowfotoStackViewFavo
     nameLabel->setText(i18nc("@label: favorite properties", "&Name:"));
 
     d->nameEdit             = new QLineEdit(page);
-    d->nameEdit->setPlaceholderText(i18n("Enter favorite name here..."));
+    d->nameEdit->setPlaceholderText(i18nc("#info", "Enter favorite name here..."));
     nameLabel->setBuddy(d->nameEdit);
 
     // --------------------------------------------------------
@@ -143,7 +143,7 @@ ShowfotoStackViewFavoriteDlg::ShowfotoStackViewFavoriteDlg(ShowfotoStackViewFavo
     iconTextLabel->setBuddy(d->iconButton);
 
     d->resetIconButton          = new QPushButton(QIcon::fromTheme(QLatin1String("view-refresh")),
-                                                  i18nc("@button", "Reset"), page);
+                                                  i18nc("@action:button", "Reset"), page);
 
 #ifndef HAVE_KICONTHEMES
 
@@ -166,9 +166,6 @@ ShowfotoStackViewFavoriteDlg::ShowfotoStackViewFavoriteDlg(ShowfotoStackViewFavo
 
     // --------------------------------------------------------
 
-    const int spacing = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
-    const int cmargin = QApplication::style()->pixelMetric(QStyle::PM_DefaultChildMargin);
-
     grid->addWidget(nameLabel,          0, 0, 1, 1);
     grid->addWidget(d->nameEdit,        0, 1, 1, 3);
     grid->addWidget(iconTextLabel,      1, 0, 1, 1);
@@ -178,8 +175,6 @@ ShowfotoStackViewFavoriteDlg::ShowfotoStackViewFavoriteDlg(ShowfotoStackViewFavo
     grid->addWidget(d->urlsEdit,        2, 1, 1, 3);
     grid->setRowStretch(3, 10);
     grid->setColumnStretch(1, 10);
-//    grid->setContentsMargins(cmargin, cmargin, cmargin, cmargin);
-//    grid->setSpacing(spacing);
 
     QVBoxLayout* const vbx = new QVBoxLayout(this);
     vbx->addWidget(page);

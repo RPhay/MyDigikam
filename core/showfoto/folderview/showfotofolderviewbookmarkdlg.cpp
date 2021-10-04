@@ -126,7 +126,7 @@ ShowfotoFolderViewBookmarkDlg::ShowfotoFolderViewBookmarkDlg(ShowfotoFolderViewB
     titleLabel->setText(i18nc("@label: bookmark properties", "&Title:"));
 
     d->titleEdit             = new QLineEdit(page);
-    d->titleEdit->setPlaceholderText(i18n("Enter bookmark name here..."));
+    d->titleEdit->setPlaceholderText(i18nc("#info", "Enter bookmark name here..."));
     titleLabel->setBuddy(d->titleEdit);
 
     // --------------------------------------------------------
@@ -140,7 +140,7 @@ ShowfotoFolderViewBookmarkDlg::ShowfotoFolderViewBookmarkDlg(ShowfotoFolderViewB
     iconTextLabel->setBuddy(d->iconButton);
 
     d->resetIconButton          = new QPushButton(QIcon::fromTheme(QLatin1String("view-refresh")),
-                                                  i18nc("@button", "Reset"), page);
+                                                  i18nc("@action:button", "Reset"), page);
 
 #ifndef HAVE_KICONTHEMES
 
