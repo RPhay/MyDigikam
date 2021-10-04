@@ -375,7 +375,7 @@ void ShowfotoStackViewFavorites::readSettings(const KConfigGroup& group)
         if (!item->urls().isEmpty())
         {
             confEntry       = QString::fromLatin1("%1_%2").arg(d->configFavoriteNamePrefixEntry).arg(i);
-            item->setName(group.readEntry(confEntry, i18n("Unamed")));
+            item->setName(group.readEntry(confEntry, i18n("Unnamed")));
 
             confEntry       = QString::fromLatin1("%1_%2").arg(d->configFavoriteIconPrefixEntry).arg(i);
             QString icoName = group.readEntry(confEntry, QString::fromLatin1("folder-favorites"));
