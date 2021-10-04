@@ -51,7 +51,9 @@
 
 #include "digikam_debug.h"
 #include "dlayoutbox.h"
+#include "ditemslist.h"
 #include "showfotostackviewfavorites.h"
+#include "showfotostackviewlist.h"
 
 using namespace Digikam;
 
@@ -87,7 +89,7 @@ public:
     QDialogButtonBox*            buttons;
 
     QLineEdit*                   nameEdit;
-    QListWidget*                 urlsEdit;
+    DItemsList*                  urlsEdit;
     ShowfotoStackViewFavorites*  list;
 };
 
@@ -156,7 +158,10 @@ ShowfotoStackViewFavoriteDlg::ShowfotoStackViewFavoriteDlg(ShowfotoStackViewFavo
     QLabel* const urlsLabel = new QLabel(page);
     urlsLabel->setText(i18nc("@label: favorites properties", "&Items:"));
 
-    d->urlsEdit             = new QListWidget(page);
+    d->urlsEdit             = new DItemsList(page, ShowfotoStackViewList::SizeSmall);
+    d->urlsEdit->setAllowRAW(true);
+    d->urlsEdit->setAllowDuplicate(false);
+    d->urlsEdit->setControlButtonsPlacement(DItemsList::NoControlButtons);
     urlsLabel->setBuddy(d->urlsEdit);
 
     // --------------------------------------------------------
@@ -218,14 +223,7 @@ QString ShowfotoStackViewFavoriteDlg::icon() const
 
 QList<QUrl> ShowfotoStackViewFavoriteDlg::urls() const
 {
-    QList<QUrl> urls;
-
-    for (int i = 0 ; i < d->urlsEdit->count() ; ++i)
-    {
-        urls << QUrl::fromLocalFile(d->urlsEdit->item(i)->text());
-    }
-
-    return urls;
+    return d->urlsEdit->imageUrls();
 }
 
 void ShowfotoStackViewFavoriteDlg::setName(const QString& name)
@@ -240,10 +238,7 @@ void ShowfotoStackViewFavoriteDlg::setIcon(const QString& icon)
 
 void ShowfotoStackViewFavoriteDlg::setUrls(const QList<QUrl>& urls)
 {
-    foreach (const QUrl& url, urls)
-    {
-        d->urlsEdit->addItem(url.toLocalFile());
-    }
+    d->urlsEdit->slotAddImages(urls);
 }
 
 void ShowfotoStackViewFavoriteDlg::slotIconResetClicked()
