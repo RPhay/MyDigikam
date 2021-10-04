@@ -108,8 +108,8 @@ private Q_SLOTS:
     void slotItemsAdded(const QList<ShowfotoItemInfo>& items);
     void slotItemsRemoved(const QList<ShowfotoItemInfo>& items);
     void slotItemThumbnail(const ShowfotoItemInfo& info, const QPixmap& pix);
-    void slotItemsSelected(const QList<ShowfotoItemInfo> items);
-    void slotItemsDeselected(const QList<ShowfotoItemInfo> items);
+    void slotItemsSelected(const QList<ShowfotoItemInfo>& items);
+    void slotItemsDeselected(const QList<ShowfotoItemInfo>& items);
     void slotSelectionChanged(QTreeWidgetItem*);
     void slotItemDoubleClicked(QTreeWidgetItem*);
     void slotItemsListChanged();

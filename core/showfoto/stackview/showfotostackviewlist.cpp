@@ -193,7 +193,7 @@ void ShowfotoStackViewList::slotItemsRemoved(const QList<ShowfotoItemInfo>& item
     }
 }
 
-void ShowfotoStackViewList::slotItemsSelected(const QList<ShowfotoItemInfo> items)
+void ShowfotoStackViewList::slotItemsSelected(const QList<ShowfotoItemInfo>& items)
 {
     blockSignals(true);
     QTreeWidgetItemIterator iter(this);
@@ -214,7 +214,7 @@ void ShowfotoStackViewList::slotItemsSelected(const QList<ShowfotoItemInfo> item
     blockSignals(false);
 }
 
-void ShowfotoStackViewList::slotItemsDeselected(const QList<ShowfotoItemInfo> items)
+void ShowfotoStackViewList::slotItemsDeselected(const QList<ShowfotoItemInfo>& items)
 {
     blockSignals(true);
 
