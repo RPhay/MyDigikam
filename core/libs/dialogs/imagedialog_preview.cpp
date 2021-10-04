@@ -123,7 +123,7 @@ QString ImageDialogPreview::identifyItem(const QUrl& url, const QImage& preview)
     QString identify;
     QScopedPointer<DMetadata> meta(new DMetadata);
 
-    // NOTE: even if metadata loading faild, continue to fill information with empty properties.
+    // NOTE: even if metadata loading fail, continue to fill information with empty properties.
 
     (void)meta->load(url.toLocalFile());
 
