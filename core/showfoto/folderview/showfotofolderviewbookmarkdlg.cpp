@@ -215,10 +215,17 @@ ShowfotoFolderViewBookmarkDlg::~ShowfotoFolderViewBookmarkDlg()
 
 bool ShowfotoFolderViewBookmarkDlg::canAccept() const
 {
+    bool b = true;
+
+    if (d->create)
+    {
+        b = !d->list->bookmarkExists(title());
+    }
+
     return (
             !title().isEmpty() &&
             !path().isEmpty()  &&
-            !d->list->bookmarkExists(title())
+            b
            );
 }
 

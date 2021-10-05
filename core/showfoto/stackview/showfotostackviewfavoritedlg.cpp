@@ -72,6 +72,7 @@ public:
         resetIconButton(nullptr),
         buttons        (nullptr),
         nameEdit       (nullptr),
+        descEdit       (nullptr),
         urlsEdit       (nullptr),
         list           (nullptr)
     {
@@ -89,6 +90,7 @@ public:
     QDialogButtonBox*               buttons;
 
     QLineEdit*                      nameEdit;
+    QLineEdit*                      descEdit;
     DItemsList*                     urlsEdit;
     ShowfotoStackViewFavoriteList*  list;
 };
@@ -135,6 +137,15 @@ ShowfotoStackViewFavoriteDlg::ShowfotoStackViewFavoriteDlg(ShowfotoStackViewFavo
 
     // --------------------------------------------------------
 
+    QLabel* const descLabel = new QLabel(page);
+    descLabel->setText(i18nc("@label: favorite properties", "&Description:"));
+
+    d->descEdit             = new QLineEdit(page);
+    d->descEdit->setPlaceholderText(i18nc("#info", "Enter favorite description here..."));
+    descLabel->setBuddy(d->descEdit);
+
+    // --------------------------------------------------------
+
     QLabel* const iconTextLabel = new QLabel(page);
     iconTextLabel->setText(i18nc("@label", "&Icon:"));
 
@@ -169,12 +180,14 @@ ShowfotoStackViewFavoriteDlg::ShowfotoStackViewFavoriteDlg(ShowfotoStackViewFavo
 
     grid->addWidget(nameLabel,          0, 0, 1, 1);
     grid->addWidget(d->nameEdit,        0, 1, 1, 3);
-    grid->addWidget(iconTextLabel,      1, 0, 1, 1);
-    grid->addWidget(d->iconButton,      1, 1, 1, 1);
-    grid->addWidget(d->resetIconButton, 1, 2, 1, 1);
-    grid->addWidget(urlsLabel,          2, 0, 1, 1);
-    grid->addWidget(d->urlsEdit,        2, 1, 1, 3);
-    grid->setRowStretch(3, 10);
+    grid->addWidget(descLabel,          1, 0, 1, 1);
+    grid->addWidget(d->descEdit,        1, 1, 1, 3);
+    grid->addWidget(iconTextLabel,      2, 0, 1, 1);
+    grid->addWidget(d->iconButton,      2, 1, 1, 1);
+    grid->addWidget(d->resetIconButton, 2, 2, 1, 1);
+    grid->addWidget(urlsLabel,          3, 0, 1, 1);
+    grid->addWidget(d->urlsEdit,        3, 1, 1, 3);
+    grid->setRowStretch(4, 10);
     grid->setColumnStretch(1, 10);
 
     QVBoxLayout* const vbx = new QVBoxLayout(this);
@@ -215,10 +228,17 @@ ShowfotoStackViewFavoriteDlg::~ShowfotoStackViewFavoriteDlg()
 
 bool ShowfotoStackViewFavoriteDlg::canAccept() const
 {
+    bool b = true;
+
+    if (d->create)
+    {
+        b = !d->list->favoriteExists(name());
+    }
+
     return (
             !name().isEmpty() &&
             !urls().isEmpty() &&
-            !d->list->favoriteExists(name())
+            b
            );
 }
 
@@ -240,6 +260,11 @@ QString ShowfotoStackViewFavoriteDlg::name() const
     return d->nameEdit->text();
 }
 
+QString ShowfotoStackViewFavoriteDlg::description() const
+{
+    return d->descEdit->text();
+}
+
 QString ShowfotoStackViewFavoriteDlg::icon() const
 {
     return d->icon;
@@ -253,6 +278,11 @@ QList<QUrl> ShowfotoStackViewFavoriteDlg::urls() const
 void ShowfotoStackViewFavoriteDlg::setName(const QString& name)
 {
     d->nameEdit->setText(name);
+}
+
+void ShowfotoStackViewFavoriteDlg::setDescription(const QString& desc)
+{
+    d->descEdit->setText(desc);
 }
 
 void ShowfotoStackViewFavoriteDlg::setIcon(const QString& icon)
@@ -294,10 +324,14 @@ void ShowfotoStackViewFavoriteDlg::slotIconChanged()
 }
 
 bool ShowfotoStackViewFavoriteDlg::favoriteEdit(ShowfotoStackViewFavoriteList* const parent,
-                                                QString& name, QString& icon, QList<QUrl>& urls)
+                                                  QString& name,
+                                                  QString& desc,
+                                                  QString& icon,
+                                                  QList<QUrl>& urls)
 {
     QPointer<ShowfotoStackViewFavoriteDlg> dlg = new ShowfotoStackViewFavoriteDlg(parent);
     dlg->setName(name);
+    dlg->setDescription(desc);
     dlg->setIcon(icon);
     dlg->setUrls(urls);
 
@@ -306,6 +340,7 @@ bool ShowfotoStackViewFavoriteDlg::favoriteEdit(ShowfotoStackViewFavoriteList* c
     if (valRet == QDialog::Accepted)
     {
         name = dlg->name();
+        desc = dlg->description();
         icon = dlg->icon();
         urls = dlg->urls();
     }
@@ -316,10 +351,14 @@ bool ShowfotoStackViewFavoriteDlg::favoriteEdit(ShowfotoStackViewFavoriteList* c
 }
 
 bool ShowfotoStackViewFavoriteDlg::favoriteCreate(ShowfotoStackViewFavoriteList* const parent,
-                                                  QString& name, QString& icon, QList<QUrl>& urls)
+                                                  QString& name,
+                                                  QString& desc,
+                                                  QString& icon,
+                                                  QList<QUrl>& urls)
 {
     QPointer<ShowfotoStackViewFavoriteDlg> dlg = new ShowfotoStackViewFavoriteDlg(parent, true);
     dlg->setName(name);
+    dlg->setDescription(desc);
     dlg->setIcon(icon);
     dlg->setUrls(urls);
 
@@ -328,6 +367,7 @@ bool ShowfotoStackViewFavoriteDlg::favoriteCreate(ShowfotoStackViewFavoriteList*
     if (valRet == QDialog::Accepted)
     {
         name = dlg->name();
+        desc = dlg->description();
         icon = dlg->icon();
         urls = dlg->urls();
     }

@@ -51,6 +51,21 @@ QString ShowfotoStackViewFavoriteItem::name() const
     return text(0);
 }
 
+void ShowfotoStackViewFavoriteItem::setDescription(const QString& desc)
+{
+    m_desc = desc;
+
+    if (!m_desc.isEmpty())
+    {
+        setToolTip(0, m_desc);
+    }
+}
+
+QString ShowfotoStackViewFavoriteItem::description() const
+{
+    return m_desc;
+}
+
 void ShowfotoStackViewFavoriteItem::setUrls(const QList<QUrl>& urls)
 {
     m_urls = urls;

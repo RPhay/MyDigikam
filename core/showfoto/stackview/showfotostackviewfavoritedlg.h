@@ -49,18 +49,29 @@ public:
     ~ShowfotoStackViewFavoriteDlg() override;
 
     void setName(const QString& name);
-    QString name()     const;
+    QString name()        const;
+
+    void setDescription(const QString& desc);
+    QString description() const;
 
     void setIcon(const QString& icon);
-    QString icon()     const;
+    QString icon()        const;
 
     void setUrls(const QList<QUrl>& urls);
-    QList<QUrl> urls() const;
+    QList<QUrl> urls()    const;
 
 public:
 
-    static bool favoriteEdit(ShowfotoStackViewFavoriteList* const parent, QString& name, QString& icon, QList<QUrl>& urls);
-    static bool favoriteCreate(ShowfotoStackViewFavoriteList* const parent, QString& name, QString& icon, QList<QUrl>& urls);
+    static bool favoriteEdit(ShowfotoStackViewFavoriteList* const parent,
+                             QString& name,
+                             QString& desc,
+                             QString& icon,
+                             QList<QUrl>& urls);
+    static bool favoriteCreate(ShowfotoStackViewFavoriteList* const parent,
+                               QString& name,
+                               QString& desc,
+                               QString& icon,
+                               QList<QUrl>& urls);
 
 private Q_SLOTS:
 

@@ -47,6 +47,9 @@ public:
     void setName(const QString& name);
     QString name()            const;
 
+    void setDescription(const QString& desc);
+    QString description()     const;
+
     void setUrls(const QList<QUrl>&);
     QList<QUrl> urls()        const;
 
@@ -55,6 +58,7 @@ public:
 private:
 
     QList<QUrl> m_urls;
+    QString     m_desc;
 
     Q_DISABLE_COPY(ShowfotoStackViewFavoriteItem)
 };

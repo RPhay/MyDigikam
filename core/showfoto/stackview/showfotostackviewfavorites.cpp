@@ -72,6 +72,7 @@ public:
     static const QString            configFavoriteItemsEntry;
     static const QString            configFavoriteUrlsPrefixEntry;
     static const QString            configFavoriteNamePrefixEntry;
+    static const QString            configFavoriteDescPrefixEntry;
     static const QString            configFavoriteIconPrefixEntry;
     static const QString            configFavoriteTopItemExpandedEntry;
 
@@ -87,6 +88,7 @@ public:
 const QString ShowfotoStackViewFavorites::Private::configFavoriteItemsEntry(QLatin1String("FavoriteItems"));
 const QString ShowfotoStackViewFavorites::Private::configFavoriteUrlsPrefixEntry(QLatin1String("FavoriteUrls"));
 const QString ShowfotoStackViewFavorites::Private::configFavoriteNamePrefixEntry(QLatin1String("FavoriteName"));
+const QString ShowfotoStackViewFavorites::Private::configFavoriteDescPrefixEntry(QLatin1String("FavoriteDesc"));
 const QString ShowfotoStackViewFavorites::Private::configFavoriteIconPrefixEntry(QLatin1String("FavoriteIcon"));
 const QString ShowfotoStackViewFavorites::Private::configFavoriteTopItemExpandedEntry(QLatin1String("FavoriteTopItemExpanded"));
 
@@ -219,15 +221,17 @@ void ShowfotoStackViewFavorites::loadContents()
 void ShowfotoStackViewFavorites::slotAddFavorite()
 {
     QString name;
+    QString desc;
     QString icon     = QLatin1String("folder-favorites");
     QList<QUrl> urls = d->sidebar->urls();
 
-    bool ok = ShowfotoStackViewFavoriteDlg::favoriteCreate(d->favoritesList, name, icon, urls);
+    bool ok = ShowfotoStackViewFavoriteDlg::favoriteCreate(d->favoritesList, name, desc, icon, urls);
 
     if (ok)
     {
         ShowfotoStackViewFavoriteItem* const item = new ShowfotoStackViewFavoriteItem(d->topFavorites);
         item->setName(name);
+        item->setDescription(desc);
         item->setIcon(0, QIcon::fromTheme(icon));
         item->setUrls(urls);
     }
@@ -263,14 +267,16 @@ void ShowfotoStackViewFavorites::slotEdtFavorite()
     }
 
     QString name     = item->name();
+    QString desc     = item->description();
     QString icon     = item->icon(0).name();
     QList<QUrl> urls = item->urls();
 
-    bool ok = ShowfotoStackViewFavoriteDlg::favoriteEdit(d->favoritesList, name, icon, urls);
+    bool ok = ShowfotoStackViewFavoriteDlg::favoriteEdit(d->favoritesList, name, desc, icon, urls);
 
     if (ok)
     {
         item->setName(name);
+        item->setDescription(desc);
         item->setIcon(0, QIcon::fromTheme(icon));
         item->setUrls(urls);
     }
@@ -324,6 +330,8 @@ void ShowfotoStackViewFavorites::saveSettings(KConfigGroup& group)
             group.writeEntry(confEntry, item->urls());
             confEntry = QString::fromLatin1("%1_%2").arg(d->configFavoriteNamePrefixEntry).arg(i);
             group.writeEntry(confEntry, item->name());
+            confEntry = QString::fromLatin1("%1_%2").arg(d->configFavoriteDescPrefixEntry).arg(i);
+            group.writeEntry(confEntry, item->description());
             confEntry = QString::fromLatin1("%1_%2").arg(d->configFavoriteIconPrefixEntry).arg(i);
             group.writeEntry(confEntry, item->icon(0).name());
         }
@@ -354,6 +362,9 @@ void ShowfotoStackViewFavorites::readSettings(const KConfigGroup& group)
         {
             confEntry       = QString::fromLatin1("%1_%2").arg(d->configFavoriteNamePrefixEntry).arg(i);
             item->setName(group.readEntry(confEntry, i18nc("@title", "Unnamed")));
+
+            confEntry       = QString::fromLatin1("%1_%2").arg(d->configFavoriteDescPrefixEntry).arg(i);
+            item->setDescription(group.readEntry(confEntry, QString()));
 
             confEntry       = QString::fromLatin1("%1_%2").arg(d->configFavoriteIconPrefixEntry).arg(i);
             QString icoName = group.readEntry(confEntry, QString::fromLatin1("folder-favorites"));
