@@ -260,6 +260,46 @@ QProcessEnvironment adjustedEnvironmentForAppImage()
         {
             env.remove(QLatin1String("PATH"));
         }
+
+        if (!env.value(QLatin1String("APPIMAGE_ORIGINAL_KDE_FULL_SESSION")).isEmpty())
+        {
+            env.insert(QLatin1String("KDE_FULL_SESSION"),
+                       env.value(QLatin1String("APPIMAGE_ORIGINAL_KDE_FULL_SESSION")));
+        }
+        else
+        {
+            env.remove(QLatin1String("KDE_FULL_SESSION"));
+        }
+
+        if (!env.value(QLatin1String("APPIMAGE_ORIGINAL_DESKTOP_SESSION")).isEmpty())
+        {
+            env.insert(QLatin1String("DESKTOP_SESSION"),
+                       env.value(QLatin1String("APPIMAGE_ORIGINAL_DESKTOP_SESSION")));
+        }
+        else
+        {
+            env.remove(QLatin1String("DESKTOP_SESSION"));
+        }
+
+        if (!env.value(QLatin1String("APPIMAGE_ORIGINAL_XDG_CURRENT_DESKTOP")).isEmpty())
+        {
+            env.insert(QLatin1String("XDG_CURRENT_DESKTOP"),
+                       env.value(QLatin1String("APPIMAGE_ORIGINAL_XDG_CURRENT_DESKTOP")));
+        }
+        else
+        {
+            env.remove(QLatin1String("XDG_CURRENT_DESKTOP"));
+        }
+
+        if (!env.value(QLatin1String("APPIMAGE_ORIGINAL_XDG_SESSION_DESKTOP")).isEmpty())
+        {
+            env.insert(QLatin1String("XDG_SESSION_DESKTOP"),
+                       env.value(QLatin1String("APPIMAGE_ORIGINAL_XDG_SESSION_DESKTOP")));
+        }
+        else
+        {
+            env.remove(QLatin1String("XDG_SESSION_DESKTOP"));
+        }
     }
 
     return env;
