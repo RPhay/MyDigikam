@@ -33,8 +33,6 @@
 #include <QStringList>
 #include <QTreeWidgetItem>
 
-class KConfigGroup;
-
 namespace ShowFoto
 {
 
@@ -49,8 +47,8 @@ public:
     explicit ShowfotoStackViewFavorites(ShowfotoStackViewSideBar* const sidebar);
     ~ShowfotoStackViewFavorites()                     override;
 
-    void saveSettings(KConfigGroup&);
-    void readSettings(const KConfigGroup&);
+    bool saveSettings();
+    bool readSettings();
 
     QTreeWidgetItem* topFavoritesItem()         const;
 

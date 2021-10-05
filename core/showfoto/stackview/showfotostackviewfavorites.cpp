@@ -35,10 +35,14 @@
 #include <QUrl>
 #include <QIcon>
 #include <QMessageBox>
+#include <QFile>
+#include <QDomDocument>
+#include <QDomElement>
+#include <QTextStream>
+#include <QTextCodec>
 
 // KDE includes
 
-#include <kconfiggroup.h>
 #include <klocalizedstring.h>
 
 // Local includes
@@ -65,6 +69,7 @@ public:
         topFavorites  (nullptr),
         sidebar       (nullptr)
     {
+        file = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QLatin1String("/favorites.xml");
     }
 
 public:
@@ -83,6 +88,7 @@ public:
     ShowfotoStackViewFavoriteList*  favoritesList;
     QTreeWidgetItem*                topFavorites;
     ShowfotoStackViewSideBar*       sidebar;
+    QString                         file;
 };
 
 const QString ShowfotoStackViewFavorites::Private::configFavoriteItemsEntry(QLatin1String("FavoriteItems"));
@@ -311,14 +317,21 @@ void ShowfotoStackViewFavorites::slotItemListChanged(int nbitems)
     d->addBtn->setEnabled(nbitems > 0);
 }
 
-void ShowfotoStackViewFavorites::saveSettings(KConfigGroup& group)
+bool ShowfotoStackViewFavorites::saveSettings()
 {
-    QString confEntry;
+    QDomDocument doc(QLatin1String("favorites"));
+    doc.setContent(QLatin1String("<!DOCTYPE XMLFavorites><favorites version=\"1.0\" client=\"showfoto\" encoding=\"UTF-8\"/>"));
+    QDomElement docElem = doc.documentElement();
+
     ShowfotoStackViewFavoriteItem* item = nullptr;
     int nbItems                         = d->topFavorites->childCount();
 
-    group.writeEntry(d->configFavoriteItemsEntry,            nbItems);
-    group.writeEntry(d->configFavoriteTopItemExpandedEntry,  d->topFavorites->isExpanded());
+    QDomElement elemExpand = doc.createElement(QLatin1String("TopExpanded"));
+    elemExpand.setAttribute(QLatin1String("value"), d->topFavorites->isExpanded());
+    docElem.appendChild(elemExpand);
+
+    QDomElement elemList = doc.createElement(QLatin1String("FavoritesList"));
+    docElem.appendChild(elemList);
 
     for (int i = 0 ; i < nbItems ; ++i)
     {
@@ -326,55 +339,169 @@ void ShowfotoStackViewFavorites::saveSettings(KConfigGroup& group)
 
         if (item)
         {
-            confEntry = QString::fromLatin1("%1_%2").arg(d->configFavoriteUrlsPrefixEntry).arg(i);
-            group.writeEntry(confEntry, item->urls());
-            confEntry = QString::fromLatin1("%1_%2").arg(d->configFavoriteNamePrefixEntry).arg(i);
-            group.writeEntry(confEntry, item->name());
-            confEntry = QString::fromLatin1("%1_%2").arg(d->configFavoriteDescPrefixEntry).arg(i);
-            group.writeEntry(confEntry, item->description());
-            confEntry = QString::fromLatin1("%1_%2").arg(d->configFavoriteIconPrefixEntry).arg(i);
-            group.writeEntry(confEntry, item->icon(0).name());
+            QDomElement elem = doc.createElement(QLatin1String("Favorite"));
+
+            QDomElement name = doc.createElement(QLatin1String("Name"));
+            name.setAttribute(QLatin1String("value"), item->name());
+            elem.appendChild(name);
+
+            QDomElement desc = doc.createElement(QLatin1String("Description"));
+            desc.setAttribute(QLatin1String("value"), item->description());
+            elem.appendChild(desc);
+
+            QDomElement icon = doc.createElement(QLatin1String("Icon"));
+            icon.setAttribute(QLatin1String("value"), item->icon(0).name());
+            elem.appendChild(icon);
+
+            QDomElement urls = doc.createElement(QLatin1String("UrlsList"));
+            elem.appendChild(urls);
+
+            foreach (const QUrl& url, item->urls())
+            {
+                QDomElement e = doc.createElement(QLatin1String("Url"));
+                e.setAttribute(QLatin1String("value"), url.toLocalFile());
+                urls.appendChild(e);
+            }
+
+            elemList.appendChild(elem);
         }
     }
+
+    QFile file(d->file);
+
+    if (!file.open(QIODevice::WriteOnly))
+    {
+        return false;
+    }
+
+    QTextStream stream(&file);
+    stream.setCodec(QTextCodec::codecForName("UTF-8"));
+    stream.setAutoDetectUnicode(true);
+    stream << doc.toString();
+    file.close();
+
+    return true;
 }
 
-void ShowfotoStackViewFavorites::readSettings(const KConfigGroup& group)
+bool ShowfotoStackViewFavorites::readSettings()
 {
     d->favoritesList->clear();
 
     d->topFavorites          = new QTreeWidgetItem(d->favoritesList);
     d->topFavorites->setFlags(Qt::ItemIsEnabled);
-    d->topFavorites->setExpanded(group.readEntry(d->configFavoriteTopItemExpandedEntry, true));
     d->topFavorites->setDisabled(false);
     d->topFavorites->setText(0, i18nc("@title", "My Favorites"));
 
-    QString confEntry;
-    int nbItems = group.readEntry(d->configFavoriteItemsEntry, 0);
+    QFile file(d->file);
 
-    for (int i = 0 ; i < nbItems ; ++i)
+    if (!file.open(QIODevice::ReadOnly))
     {
-        ShowfotoStackViewFavoriteItem* const item = new ShowfotoStackViewFavoriteItem(d->topFavorites);
+        return false;
+    }
 
-        confEntry       = QString::fromLatin1("%1_%2").arg(d->configFavoriteUrlsPrefixEntry).arg(i);
-        item->setUrls(group.readEntry(confEntry, QList<QUrl>()));
+    QDomDocument doc(QLatin1String("favorites"));
 
-        if (!item->urls().isEmpty())
+    if (!doc.setContent(&file))
+    {
+        return false;
+    }
+
+    QDomElement docElem = doc.documentElement();
+
+    if (docElem.tagName() != QLatin1String("favorites"))
+    {
+        return false;
+    }
+
+    for (QDomNode n1 = docElem.firstChild() ; !n1.isNull() ; n1 = n1.nextSibling())
+    {
+        QDomElement e1 = n1.toElement();
+
+        if (e1.isNull())
         {
-            confEntry       = QString::fromLatin1("%1_%2").arg(d->configFavoriteNamePrefixEntry).arg(i);
-            item->setName(group.readEntry(confEntry, i18nc("@title", "Unnamed")));
-
-            confEntry       = QString::fromLatin1("%1_%2").arg(d->configFavoriteDescPrefixEntry).arg(i);
-            item->setDescription(group.readEntry(confEntry, QString()));
-
-            confEntry       = QString::fromLatin1("%1_%2").arg(d->configFavoriteIconPrefixEntry).arg(i);
-            QString icoName = group.readEntry(confEntry, QString::fromLatin1("folder-favorites"));
-            item->setIcon(0, QIcon::fromTheme(icoName));
+            continue;
         }
-        else
+
+        if (e1.tagName() == QLatin1String("TopExpanded"))
         {
-            delete item;
+            d->topFavorites->setExpanded((bool)e1.attribute(QLatin1String("value")).toUInt());
+            continue;
+        }
+
+        if (e1.tagName() == QLatin1String("FavoritesList"))
+        {
+            for (QDomNode n2 = e1.firstChild() ; !n2.isNull() ; n2 = n2.nextSibling())
+            {
+                QDomElement e2 = n2.toElement();
+
+                if (e2.tagName() == QLatin1String("Favorite"))
+                {
+                    ShowfotoStackViewFavoriteItem* const item = new ShowfotoStackViewFavoriteItem(d->topFavorites);
+
+                    for (QDomNode n3 = e2.firstChild() ; !n3.isNull() ; n3 = n3.nextSibling())
+                    {
+                        QDomElement e3 = n3.toElement();
+                        QString name3  = e3.tagName();
+                        QString val3   = e3.attribute(QLatin1String("value"));
+
+                        if      (name3 == QLatin1String("Name"))
+                        {
+                            if (val3.isEmpty())
+                            {
+                                val3 = i18nc("@title", "Unnamed");
+                            }
+
+                            item->setName(val3);
+                        }
+                        else if (name3 == QLatin1String("Description"))
+                        {
+                            item->setDescription(val3);
+                        }
+                        else if (name3 == QLatin1String("Icon"))
+                        {
+                            if (val3.isEmpty())
+                            {
+                                val3 = QString::fromLatin1("folder-favorites");
+                            }
+
+                            item->setIcon(0, QIcon::fromTheme(val3));
+                        }
+                        else if (name3 == QLatin1String("UrlsList"))
+                        {
+                            QList<QUrl> urls;
+
+                            for (QDomNode n4 = e3.firstChild() ; !n4.isNull() ; n4 = n4.nextSibling())
+                            {
+                                QDomElement e4 = n4.toElement();
+                                QString name4  = e4.tagName();
+                                QString val4   = e4.attribute(QLatin1String("value"));
+
+                                if (name4 == QLatin1String("Url"))
+                                {
+                                    if (!val4.isEmpty())
+                                    {
+                                        urls.append(QUrl::fromLocalFile(val4));
+                                    }
+                                }
+                            }
+
+                            if (urls.isEmpty())
+                            {
+                                delete item;
+                                continue;
+                            }
+                            else
+                            {
+                                item->setUrls(urls);
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
+
+    return true;
 }
 
 QList<QAction*> ShowfotoStackViewFavorites::pluginActions() const

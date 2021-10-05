@@ -207,7 +207,7 @@ void ShowfotoStackViewSideBar::doLoadState()
 {
     KConfigGroup group = getConfigGroup();
 
-    d->favts->readSettings(group);
+    d->favts->readSettings();
 
     int iconSize     = group.readEntry(entryName(d->configIconSizeEntry),                      (int)ShowfotoStackViewList::SizeSmall);
     d->view->setIconSize(QSize(iconSize, iconSize));
@@ -224,7 +224,7 @@ void ShowfotoStackViewSideBar::doSaveState()
 {
     KConfigGroup group = getConfigGroup();
 
-    d->favts->saveSettings(group);
+    d->favts->saveSettings();
 
     group.writeEntry(entryName(d->configIconSizeEntry),             d->view->iconSize().width());
     group.writeEntry(entryName(d->configSplitterStateEntry),        d->splitter->saveState().toBase64());
