@@ -382,7 +382,7 @@ void ShowfotoFolderViewBookmarks::readSettings(const KConfigGroup& group)
     d->topBookmarks->setFlags(Qt::ItemIsEnabled);
     d->topBookmarks->setExpanded(group.readEntry(d->configBookmarkTopItemExpandedEntry, true));
     d->topBookmarks->setDisabled(false);
-    d->topBookmarks->setText(0, i18nc("@title", "Bookmarked"));
+    d->topBookmarks->setText(0, i18nc("@title", "My Bookmarks"));
 
     QString confEntry;
     int nbItems = group.readEntry(d->configBookmarkItemsEntry, 0);

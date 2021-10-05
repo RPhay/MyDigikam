@@ -163,9 +163,6 @@ ShowfotoFolderViewBookmarkDlg::ShowfotoFolderViewBookmarkDlg(ShowfotoFolderViewB
 
     // --------------------------------------------------------
 
-    const int spacing = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
-    const int cmargin = QApplication::style()->pixelMetric(QStyle::PM_DefaultChildMargin);
-
     grid->addWidget(titleLabel,         0, 0, 1, 1);
     grid->addWidget(d->titleEdit,       0, 1, 1, 3);
     grid->addWidget(iconTextLabel,      1, 0, 1, 1);
@@ -175,8 +172,6 @@ ShowfotoFolderViewBookmarkDlg::ShowfotoFolderViewBookmarkDlg(ShowfotoFolderViewB
     grid->addWidget(d->pathEdit,        2, 1, 1, 3);
     grid->setRowStretch(3, 10);
     grid->setColumnStretch(3, 10);
-    grid->setContentsMargins(cmargin, cmargin, cmargin, cmargin);
-    grid->setSpacing(spacing);
 
     QVBoxLayout* const vbx = new QVBoxLayout(this);
     vbx->addWidget(page);
@@ -185,6 +180,15 @@ ShowfotoFolderViewBookmarkDlg::ShowfotoFolderViewBookmarkDlg(ShowfotoFolderViewB
 
     // --------------------------------------------------------
 
+    connect(d->titleEdit, SIGNAL(textChanged(QString)),
+            this, SLOT(slotModified()));
+
+    connect(d->pathEdit->lineEdit(), SIGNAL(textChanged(QString)),
+            this, SLOT(slotModified()));
+
+    connect(d->pathEdit, SIGNAL(signalUrlSelected(QUrl)),
+            this, SLOT(slotModified()));
+
     connect(d->iconButton, SIGNAL(clicked()),
             this, SLOT(slotIconChanged()));
 
@@ -192,7 +196,7 @@ ShowfotoFolderViewBookmarkDlg::ShowfotoFolderViewBookmarkDlg(ShowfotoFolderViewB
             this, SLOT(slotIconResetClicked()));
 
     connect(d->buttons->button(QDialogButtonBox::Ok), SIGNAL(clicked()),
-            this, SLOT(accept()));
+            this, SLOT(slotAccept()));
 
     connect(d->buttons->button(QDialogButtonBox::Cancel), SIGNAL(clicked()),
             this, SLOT(reject()));
@@ -206,6 +210,24 @@ ShowfotoFolderViewBookmarkDlg::ShowfotoFolderViewBookmarkDlg(ShowfotoFolderViewB
 ShowfotoFolderViewBookmarkDlg::~ShowfotoFolderViewBookmarkDlg()
 {
     delete d;
+}
+
+bool ShowfotoFolderViewBookmarkDlg::canAccept() const
+{
+    return (!title().isEmpty() && !path().isEmpty());
+}
+
+void ShowfotoFolderViewBookmarkDlg::slotAccept()
+{
+    if (canAccept())
+    {
+        accept();
+    }
+}
+
+void ShowfotoFolderViewBookmarkDlg::slotModified()
+{
+    d->buttons->button(QDialogButtonBox::Ok)->setEnabled(canAccept());
 }
 
 QString ShowfotoFolderViewBookmarkDlg::title() const
