@@ -218,13 +218,13 @@ void ShowfotoStackViewFavorites::loadContents()
 
 void ShowfotoStackViewFavorites::slotAddFavorite()
 {
-    QString name     = i18nc("@title", "New Favorite");
+    QString name;
     QString icon     = QLatin1String("folder-favorites");
     QList<QUrl> urls = d->sidebar->urls();
 
     bool ok = ShowfotoStackViewFavoriteDlg::favoriteCreate(this, name, icon, urls);
 
-    if (ok && !urls.isEmpty() && !name.isEmpty())
+    if (ok)
     {
         ShowfotoStackViewFavoriteItem* item = d->favoritesList->favoriteExists(name);
 
@@ -234,6 +234,7 @@ void ShowfotoStackViewFavorites::slotAddFavorite()
             item->setName(name);
             item->setIcon(0, QIcon::fromTheme(icon));
             item->setUrls(urls);
+
             return;
         }
 
@@ -279,7 +280,7 @@ void ShowfotoStackViewFavorites::slotEdtFavorite()
 
     bool ok = ShowfotoStackViewFavoriteDlg::favoriteEdit(this, name, icon, urls);
 
-    if (ok && !urls.isEmpty() && !name.isEmpty())
+    if (ok)
     {
         ShowfotoStackViewFavoriteItem* const nitem = d->favoritesList->favoriteExists(name);
 
@@ -288,6 +289,7 @@ void ShowfotoStackViewFavorites::slotEdtFavorite()
             item->setName(name);
             item->setIcon(0, QIcon::fromTheme(icon));
             item->setUrls(urls);
+
             return;
         }
 

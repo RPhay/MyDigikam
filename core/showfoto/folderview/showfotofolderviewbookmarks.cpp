@@ -239,7 +239,7 @@ void ShowfotoFolderViewBookmarks::slotAddBookmark(const QString& newBookmark)
 
         bool ok = ShowfotoFolderViewBookmarkDlg::bookmarkCreate(this, title, icon, path);
 
-        if (ok && !path.isEmpty() && !title.isEmpty())
+        if (ok)
         {
             item = d->bookmarksList->bookmarkExists(path);
 
@@ -249,6 +249,7 @@ void ShowfotoFolderViewBookmarks::slotAddBookmark(const QString& newBookmark)
                 item->setText(0, title);
                 item->setIcon(0, QIcon::fromTheme(icon));
                 item->setPath(path);
+
                 return;
             }
         }
@@ -299,7 +300,7 @@ void ShowfotoFolderViewBookmarks::slotEdtBookmark()
 
     bool ok = ShowfotoFolderViewBookmarkDlg::bookmarkEdit(this, title, icon, path);
 
-    if (ok && !path.isEmpty() && !title.isEmpty())
+    if (ok)
     {
         ShowfotoFolderViewBookmarkItem* const nitem = d->bookmarksList->bookmarkExists(path);
 
@@ -308,6 +309,7 @@ void ShowfotoFolderViewBookmarks::slotEdtBookmark()
             item->setText(0, title);
             item->setIcon(0, QIcon::fromTheme(icon));
             item->setPath(path);
+
             return;
         }
 

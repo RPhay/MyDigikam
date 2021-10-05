@@ -183,6 +183,12 @@ ShowfotoStackViewFavoriteDlg::ShowfotoStackViewFavoriteDlg(ShowfotoStackViewFavo
 
     // --------------------------------------------------------
 
+    connect(d->nameEdit, SIGNAL(textChanged(QString)),
+            this, SLOT(slotModified()));
+
+    connect(d->urlsEdit, SIGNAL(signalImageListChanged()),
+            this, SLOT(slotModified()));
+
     connect(d->iconButton, SIGNAL(clicked()),
             this, SLOT(slotIconChanged()));
 
@@ -204,6 +210,24 @@ ShowfotoStackViewFavoriteDlg::ShowfotoStackViewFavoriteDlg(ShowfotoStackViewFavo
 ShowfotoStackViewFavoriteDlg::~ShowfotoStackViewFavoriteDlg()
 {
     delete d;
+}
+
+bool ShowfotoStackViewFavoriteDlg::canAccept() const
+{
+    return (!name().isEmpty() && !urls().isEmpty());
+}
+
+void ShowfotoStackViewFavoriteDlg::slotAccept()
+{
+    if (canAccept())
+    {
+        accept();
+    }
+}
+
+void ShowfotoStackViewFavoriteDlg::slotModified()
+{
+    d->buttons->button(QDialogButtonBox::Ok)->setEnabled(canAccept());
 }
 
 QString ShowfotoStackViewFavoriteDlg::name() const
