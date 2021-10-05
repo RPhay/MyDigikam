@@ -1466,6 +1466,7 @@ void ItemDescEditTab::slotRecentTagsMenuActivated(int id)
         if (album)
         {
             d->tagModel->setChecked(album, true);
+            d->tagCheckView->checkableAlbumFilterModel()->updateFilter();
         }
     }
 }

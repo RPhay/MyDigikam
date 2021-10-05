@@ -60,6 +60,12 @@ class Q_DECL_HIDDEN valStruct
 
 public:
 
+    valStruct()
+      : d(0.0),
+        i(0)
+    {
+    }
+
     Unit d;   ///< [f]abs(a[i])
     int  i;   ///< index i of a[i]
 
@@ -118,7 +124,7 @@ void ImageData::fillPixelData(const DImg& im)
             data1[cn] = ptr[2];
             data2[cn] = ptr[1];
             data3[cn] = ptr[0];
-            ptr       += 4;
+            ptr      += 4;
             ++cn;
         }
     }
@@ -155,7 +161,7 @@ WeightBin::WeightBin()
     {
         for (j = 0 ; j < 5 ; ++j)
         {
-            m_bin[i*128+j] = qMax(i, j);
+            m_bin[i * 128 + j] = qMax(i, j);
 
             // NOTE: imgBin[0] == 0
         }
@@ -316,7 +322,7 @@ void Calculator::getmLargests(Unit* const cdata, Idx* const sig)
 
     // Fill up the bounded queue. (Assuming NUM_PIXELS_SQUARED > NUM_COEFS)
 
-    for (i = 1 ; i < NumberOfCoefficients+1 ; ++i)
+    for (i = 1 ; i < NumberOfCoefficients + 1 ; ++i)
     {
         val.i = i;
         val.d = fabs(cdata[i]);
