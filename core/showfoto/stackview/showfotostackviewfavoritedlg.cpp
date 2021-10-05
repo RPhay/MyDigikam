@@ -133,6 +133,7 @@ ShowfotoStackViewFavoriteDlg::ShowfotoStackViewFavoriteDlg(ShowfotoStackViewFavo
 
     d->nameEdit             = new QLineEdit(page);
     d->nameEdit->setPlaceholderText(i18nc("#info", "Enter favorite name here..."));
+    d->nameEdit->setToolTip(i18nc("#info", "The favorite name which must be unique and not empty"));
     nameLabel->setBuddy(d->nameEdit);
 
     // --------------------------------------------------------

@@ -127,7 +127,8 @@ ShowfotoFolderViewBookmarkDlg::ShowfotoFolderViewBookmarkDlg(ShowfotoFolderViewB
     titleLabel->setText(i18nc("@label: bookmark properties", "&Title:"));
 
     d->titleEdit             = new QLineEdit(page);
-    d->titleEdit->setPlaceholderText(i18nc("#info", "Enter bookmark name here..."));
+    d->titleEdit->setPlaceholderText(i18nc("#info", "Enter bookmark title here..."));
+    d->titleEdit->setToolTip(i18nc("#info", "The bookmark title which must be unique and not empty"));
     titleLabel->setBuddy(d->titleEdit);
 
     // --------------------------------------------------------
