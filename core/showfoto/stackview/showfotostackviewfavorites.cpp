@@ -222,26 +222,14 @@ void ShowfotoStackViewFavorites::slotAddFavorite()
     QString icon     = QLatin1String("folder-favorites");
     QList<QUrl> urls = d->sidebar->urls();
 
-    bool ok = ShowfotoStackViewFavoriteDlg::favoriteCreate(this, name, icon, urls);
+    bool ok = ShowfotoStackViewFavoriteDlg::favoriteCreate(d->favoritesList, name, icon, urls);
 
     if (ok)
     {
-        ShowfotoStackViewFavoriteItem* item = d->favoritesList->favoriteExists(name);
-
-        if (!item)
-        {
-            item = new ShowfotoStackViewFavoriteItem(d->topFavorites);
-            item->setName(name);
-            item->setIcon(0, QIcon::fromTheme(icon));
-            item->setUrls(urls);
-
-            return;
-        }
-
-        QMessageBox::information(this,
-                                 i18nc("@title: window", "Add New Favorite"),
-                                 i18nc("@info", "The favorite named\n%1\nalready exists in the list.",
-                                 item->name()));
+        ShowfotoStackViewFavoriteItem* const item = new ShowfotoStackViewFavoriteItem(d->topFavorites);
+        item->setName(name);
+        item->setIcon(0, QIcon::fromTheme(icon));
+        item->setUrls(urls);
     }
 }
 
@@ -278,25 +266,13 @@ void ShowfotoStackViewFavorites::slotEdtFavorite()
     QString icon     = item->icon(0).name();
     QList<QUrl> urls = item->urls();
 
-    bool ok = ShowfotoStackViewFavoriteDlg::favoriteEdit(this, name, icon, urls);
+    bool ok = ShowfotoStackViewFavoriteDlg::favoriteEdit(d->favoritesList, name, icon, urls);
 
     if (ok)
     {
-        ShowfotoStackViewFavoriteItem* const nitem = d->favoritesList->favoriteExists(name);
-
-        if (!nitem)
-        {
-            item->setName(name);
-            item->setIcon(0, QIcon::fromTheme(icon));
-            item->setUrls(urls);
-
-            return;
-        }
-
-        QMessageBox::information(this,
-                                 i18nc("@title: window", "Edit Favorite"),
-                                 i18nc("@info", "The favorite named\n%1\nalready exists in the list.",
-                                 nitem->name()));
+        item->setName(name);
+        item->setIcon(0, QIcon::fromTheme(icon));
+        item->setUrls(urls);
     }
 }
 

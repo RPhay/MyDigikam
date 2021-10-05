@@ -52,7 +52,7 @@
 #include "digikam_debug.h"
 #include "dlayoutbox.h"
 #include "ditemslist.h"
-#include "showfotostackviewfavorites.h"
+#include "showfotostackviewfavoritelist.h"
 #include "showfotostackviewlist.h"
 
 using namespace Digikam;
@@ -77,23 +77,23 @@ public:
     {
     }
 
-    bool                         create;
+    bool                            create;
 
-    QLabel*                      topLabel;
+    QLabel*                         topLabel;
 
-    QString                      icon;
+    QString                         icon;
 
-    QPushButton*                 iconButton;
-    QPushButton*                 resetIconButton;
+    QPushButton*                    iconButton;
+    QPushButton*                    resetIconButton;
 
-    QDialogButtonBox*            buttons;
+    QDialogButtonBox*               buttons;
 
-    QLineEdit*                   nameEdit;
-    DItemsList*                  urlsEdit;
-    ShowfotoStackViewFavorites*  list;
+    QLineEdit*                      nameEdit;
+    DItemsList*                     urlsEdit;
+    ShowfotoStackViewFavoriteList*  list;
 };
 
-ShowfotoStackViewFavoriteDlg::ShowfotoStackViewFavoriteDlg(ShowfotoStackViewFavorites* const parent,
+ShowfotoStackViewFavoriteDlg::ShowfotoStackViewFavoriteDlg(ShowfotoStackViewFavoriteList* const parent,
                                                            bool create)
     : QDialog(parent),
       d      (new Private)
@@ -101,6 +101,7 @@ ShowfotoStackViewFavoriteDlg::ShowfotoStackViewFavoriteDlg(ShowfotoStackViewFavo
     setModal(true);
 
     d->create  = create;
+    d->list    = parent;
     d->buttons = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
     d->buttons->button(QDialogButtonBox::Ok)->setDefault(true);
 
@@ -214,7 +215,11 @@ ShowfotoStackViewFavoriteDlg::~ShowfotoStackViewFavoriteDlg()
 
 bool ShowfotoStackViewFavoriteDlg::canAccept() const
 {
-    return (!name().isEmpty() && !urls().isEmpty());
+    return (
+            !name().isEmpty() &&
+            !urls().isEmpty() &&
+            !d->list->favoriteExists(name())
+           );
 }
 
 void ShowfotoStackViewFavoriteDlg::slotAccept()
@@ -288,7 +293,7 @@ void ShowfotoStackViewFavoriteDlg::slotIconChanged()
 
 }
 
-bool ShowfotoStackViewFavoriteDlg::favoriteEdit(ShowfotoStackViewFavorites* const parent,
+bool ShowfotoStackViewFavoriteDlg::favoriteEdit(ShowfotoStackViewFavoriteList* const parent,
                                                 QString& name, QString& icon, QList<QUrl>& urls)
 {
     QPointer<ShowfotoStackViewFavoriteDlg> dlg = new ShowfotoStackViewFavoriteDlg(parent);
@@ -310,7 +315,7 @@ bool ShowfotoStackViewFavoriteDlg::favoriteEdit(ShowfotoStackViewFavorites* cons
     return valRet;
 }
 
-bool ShowfotoStackViewFavoriteDlg::favoriteCreate(ShowfotoStackViewFavorites* const parent,
+bool ShowfotoStackViewFavoriteDlg::favoriteCreate(ShowfotoStackViewFavoriteList* const parent,
                                                   QString& name, QString& icon, QList<QUrl>& urls)
 {
     QPointer<ShowfotoStackViewFavoriteDlg> dlg = new ShowfotoStackViewFavoriteDlg(parent, true);

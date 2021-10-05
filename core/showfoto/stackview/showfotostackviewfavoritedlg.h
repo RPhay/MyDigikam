@@ -36,7 +36,7 @@
 namespace ShowFoto
 {
 
-class ShowfotoStackViewFavorites;
+class ShowfotoStackViewFavoriteList;
 
 class ShowfotoStackViewFavoriteDlg : public QDialog
 {
@@ -44,7 +44,7 @@ class ShowfotoStackViewFavoriteDlg : public QDialog
 
 public:
 
-    explicit ShowfotoStackViewFavoriteDlg(ShowfotoStackViewFavorites* const parent,
+    explicit ShowfotoStackViewFavoriteDlg(ShowfotoStackViewFavoriteList* const parent,
                                           bool create = false);
     ~ShowfotoStackViewFavoriteDlg() override;
 
@@ -59,8 +59,8 @@ public:
 
 public:
 
-    static bool favoriteEdit(ShowfotoStackViewFavorites* const parent, QString& name, QString& icon, QList<QUrl>& urls);
-    static bool favoriteCreate(ShowfotoStackViewFavorites* const parent, QString& name, QString& icon, QList<QUrl>& urls);
+    static bool favoriteEdit(ShowfotoStackViewFavoriteList* const parent, QString& name, QString& icon, QList<QUrl>& urls);
+    static bool favoriteCreate(ShowfotoStackViewFavoriteList* const parent, QString& name, QString& icon, QList<QUrl>& urls);
 
 private Q_SLOTS:
 
