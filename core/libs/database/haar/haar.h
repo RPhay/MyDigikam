@@ -105,9 +105,9 @@ class ImageData
 {
 public:
 
-    Unit data1[NumberOfPixelsSquared];
-    Unit data2[NumberOfPixelsSquared];
-    Unit data3[NumberOfPixelsSquared];
+    Unit data1[NumberOfPixelsSquared] = { 0.0 };
+    Unit data2[NumberOfPixelsSquared] = { 0.0 };
+    Unit data3[NumberOfPixelsSquared] = { 0.0 };
 
     void fillPixelData(const QImage& image);
     void fillPixelData(const DImg& image);
@@ -122,12 +122,12 @@ public:
     /**
      * Y/I/Q positions with largest magnitude
      */
-    Haar::Idx sig[3][Haar::NumberOfCoefficients];
+    Haar::Idx sig[3][Haar::NumberOfCoefficients] = { 0 };
 
     /**
      * YIQ for position [0,0]
      */
-    double    avg[3];
+    double    avg[3] = { 0.0 };
 };
 
 // ---------------------------------------------------------------------------------
@@ -189,7 +189,7 @@ private:
 public:
 
     typedef bool  MapIndexType;
-    MapIndexType* m_indexList;
+    MapIndexType* m_indexList  = nullptr;
 
 private:
 
@@ -221,7 +221,7 @@ public:
      * Each entry x = i*NUM_PIXELS + j, gets value max(i,j) saturated at 5.
      * To be treated as a constant.
      */
-    unsigned char m_bin[16384];
+    unsigned char m_bin[16384] = { 0 };
 };
 
 // ---------------------------------------------------------------------------------
