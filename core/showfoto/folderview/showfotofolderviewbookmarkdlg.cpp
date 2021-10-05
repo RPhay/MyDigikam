@@ -50,7 +50,7 @@
 #include "digikam_debug.h"
 #include "dfileselector.h"
 #include "dlayoutbox.h"
-#include "showfotofolderviewbookmarks.h"
+#include "showfotofolderviewbookmarklist.h"
 
 using namespace Digikam;
 
@@ -74,23 +74,23 @@ public:
     {
     }
 
-    bool                         create;
+    bool                            create;
 
-    QLabel*                      topLabel;
+    QLabel*                         topLabel;
 
-    QString                      icon;
+    QString                         icon;
 
-    QPushButton*                 iconButton;
-    QPushButton*                 resetIconButton;
+    QPushButton*                    iconButton;
+    QPushButton*                    resetIconButton;
 
-    QDialogButtonBox*            buttons;
+    QDialogButtonBox*               buttons;
 
-    QLineEdit*                   titleEdit;
-    DFileSelector*               pathEdit;
-    ShowfotoFolderViewBookmarks* list;
+    QLineEdit*                      titleEdit;
+    DFileSelector*                  pathEdit;
+    ShowfotoFolderViewBookmarkList* list;
 };
 
-ShowfotoFolderViewBookmarkDlg::ShowfotoFolderViewBookmarkDlg(ShowfotoFolderViewBookmarks* const parent,
+ShowfotoFolderViewBookmarkDlg::ShowfotoFolderViewBookmarkDlg(ShowfotoFolderViewBookmarkList* const parent,
                                                              bool create)
     : QDialog(parent),
       d      (new Private)
@@ -98,6 +98,7 @@ ShowfotoFolderViewBookmarkDlg::ShowfotoFolderViewBookmarkDlg(ShowfotoFolderViewB
     setModal(true);
 
     d->create  = create;
+    d->list    = parent;
     d->buttons = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
     d->buttons->button(QDialogButtonBox::Ok)->setDefault(true);
 
@@ -214,7 +215,11 @@ ShowfotoFolderViewBookmarkDlg::~ShowfotoFolderViewBookmarkDlg()
 
 bool ShowfotoFolderViewBookmarkDlg::canAccept() const
 {
-    return (!title().isEmpty() && !path().isEmpty());
+    return (
+            !title().isEmpty() &&
+            !path().isEmpty()  &&
+            !d->list->bookmarkExists(title())
+           );
 }
 
 void ShowfotoFolderViewBookmarkDlg::slotAccept()
@@ -288,7 +293,7 @@ void ShowfotoFolderViewBookmarkDlg::slotIconChanged()
 
 }
 
-bool ShowfotoFolderViewBookmarkDlg::bookmarkEdit(ShowfotoFolderViewBookmarks* const parent,
+bool ShowfotoFolderViewBookmarkDlg::bookmarkEdit(ShowfotoFolderViewBookmarkList* const parent,
                                                  QString& title, QString& icon, QString& path)
 {
     QPointer<ShowfotoFolderViewBookmarkDlg> dlg = new ShowfotoFolderViewBookmarkDlg(parent);
@@ -315,7 +320,7 @@ bool ShowfotoFolderViewBookmarkDlg::bookmarkEdit(ShowfotoFolderViewBookmarks* co
     return valRet;
 }
 
-bool ShowfotoFolderViewBookmarkDlg::bookmarkCreate(ShowfotoFolderViewBookmarks* const parent,
+bool ShowfotoFolderViewBookmarkDlg::bookmarkCreate(ShowfotoFolderViewBookmarkList* const parent,
                                                    QString& title, QString& icon, QString& path)
 {
     QPointer<ShowfotoFolderViewBookmarkDlg> dlg = new ShowfotoFolderViewBookmarkDlg(parent, true);

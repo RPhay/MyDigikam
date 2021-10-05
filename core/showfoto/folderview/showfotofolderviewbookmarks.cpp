@@ -237,26 +237,17 @@ void ShowfotoFolderViewBookmarks::slotAddBookmark(const QString& newBookmark)
         QString icon  = QLatin1String("folder");
         QString path  = newBookmark;
 
-        bool ok = ShowfotoFolderViewBookmarkDlg::bookmarkCreate(this, title, icon, path);
+        bool ok = ShowfotoFolderViewBookmarkDlg::bookmarkCreate(d->bookmarksList, title, icon, path);
 
         if (ok)
         {
-            item = d->bookmarksList->bookmarkExists(path);
-
-            if (!item)
-            {
-                item = new ShowfotoFolderViewBookmarkItem(d->topBookmarks);
-                item->setText(0, title);
-                item->setIcon(0, QIcon::fromTheme(icon));
-                item->setPath(path);
-
-                return;
-            }
+            item = new ShowfotoFolderViewBookmarkItem(d->topBookmarks);
+            item->setText(0, title);
+            item->setIcon(0, QIcon::fromTheme(icon));
+            item->setPath(path);
         }
-        else
-        {
-            return;
-        }
+
+        return;
     }
 
     QMessageBox::information(this,
@@ -298,25 +289,13 @@ void ShowfotoFolderViewBookmarks::slotEdtBookmark()
     QString icon  = item->icon(0).name();
     QString path  = item->path();
 
-    bool ok = ShowfotoFolderViewBookmarkDlg::bookmarkEdit(this, title, icon, path);
+    bool ok = ShowfotoFolderViewBookmarkDlg::bookmarkEdit(d->bookmarksList, title, icon, path);
 
     if (ok)
     {
-        ShowfotoFolderViewBookmarkItem* const nitem = d->bookmarksList->bookmarkExists(path);
-
-        if (!nitem)
-        {
-            item->setText(0, title);
-            item->setIcon(0, QIcon::fromTheme(icon));
-            item->setPath(path);
-
-            return;
-        }
-
-        QMessageBox::information(this,
-                                 i18nc("@title: window", "Edit Bookmark"),
-                                 i18nc("@info", "This bookmark referencing\n%1\nalready exists in the list with name \"%2\".",
-                                 nitem->path(), nitem->text(0)));
+        item->setText(0, title);
+        item->setIcon(0, QIcon::fromTheme(icon));
+        item->setPath(path);
     }
 }
 
