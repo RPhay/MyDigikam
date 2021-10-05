@@ -151,33 +151,6 @@ void ShowfotoStackViewSideBar::setSortRole(int role)
     d->view->sortItems(d->role, d->sortOrder);
 }
 
-/*
-void ShowfotoStackViewSideBar::slotViewModeChanged(int mode)
-{
-    switch (mode)
-    {
-        case ShowfotoStackViewList::ShortView:
-        {
-            d->view->setColumnHidden(ShowfotoStackViewList::FileSize, true);
-            d->view->setColumnHidden(ShowfotoStackViewList::FileType, true);
-            d->view->setColumnHidden(ShowfotoStackViewList::FileDate, true);
-            d->view->setHeaderHidden(true);
-            break;
-        }
-
-        default:    // ShowfotoStackViewList::DetailledView
-        {
-            d->view->setColumnHidden(ShowfotoStackViewList::FileSize, false);
-            d->view->setColumnHidden(ShowfotoStackViewList::FileType, false);
-            d->view->setColumnHidden(ShowfotoStackViewList::FileDate, false);
-            d->view->setHeaderHidden(false);
-            break;
-        }
-    }
-}
-
-*/
-
 void ShowfotoStackViewSideBar::registerPluginActions(const QList<DPluginAction*>& actions)
 {
    d->dpluginActions = actions;

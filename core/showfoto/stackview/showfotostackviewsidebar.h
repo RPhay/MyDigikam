@@ -76,9 +76,7 @@ public:
     QList<QUrl> urls()                  const;
 
 private Q_SLOTS:
-/*
-    void slotViewModeChanged(int);
-*/
+
     void slotPluginActionTriggered();
 
 Q_SIGNALS:
