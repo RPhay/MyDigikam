@@ -57,6 +57,10 @@ public:
 
 private:
 
+    void updateToolTip();
+
+private:
+
     QList<QUrl> m_urls;
     QString     m_desc;
 

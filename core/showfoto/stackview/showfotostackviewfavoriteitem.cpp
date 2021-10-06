@@ -23,6 +23,10 @@
 
 #include "showfotostackviewfavoriteitem.h"
 
+// KDE includes
+
+#include <klocalizedstring.h>
+
 // Local include
 
 #include "digikam_debug.h"
@@ -44,6 +48,8 @@ ShowfotoStackViewFavoriteItem::~ShowfotoStackViewFavoriteItem()
 void ShowfotoStackViewFavoriteItem::setName(const QString& name)
 {
     setText(0, name);
+
+    updateToolTip();
 }
 
 QString ShowfotoStackViewFavoriteItem::name() const
@@ -55,10 +61,7 @@ void ShowfotoStackViewFavoriteItem::setDescription(const QString& desc)
 {
     m_desc = desc;
 
-    if (!m_desc.isEmpty())
-    {
-        setToolTip(0, m_desc);
-    }
+    updateToolTip();
 }
 
 QString ShowfotoStackViewFavoriteItem::description() const
@@ -69,6 +72,8 @@ QString ShowfotoStackViewFavoriteItem::description() const
 void ShowfotoStackViewFavoriteItem::setUrls(const QList<QUrl>& urls)
 {
     m_urls = urls;
+
+    updateToolTip();
 }
 
 QList<QUrl> ShowfotoStackViewFavoriteItem::urls() const
@@ -86,6 +91,16 @@ QStringList ShowfotoStackViewFavoriteItem::urlsToPaths() const
     }
 
     return files;
+}
+
+void ShowfotoStackViewFavoriteItem::updateToolTip()
+{
+    QString desc = description().isEmpty() ? QLatin1String("-") : description();
+    QString tip  = i18n("Name: %1\n", name());
+    tip         += i18n("Items: %1\n", urls().count());
+    tip         += i18n("Description: %1", desc);
+
+    setToolTip(0, tip);
 }
 
 } // namespace ShowFoto
