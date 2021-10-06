@@ -27,6 +27,7 @@
 // Qt includes
 
 #include <QList>
+#include <QUrl>
 #include <QAction>
 #include <QWidget>
 #include <QString>
@@ -70,6 +71,7 @@ private Q_SLOTS:
 
     void slotFavoriteDoubleClicked(QTreeWidgetItem*);
     void slotFavoriteSelectionChanged();
+    void slotAddFavorite(const QList<QUrl>& newUrls);
     void slotAddFavorite();
     void slotDelFavorite();
     void slotEdtFavorite();

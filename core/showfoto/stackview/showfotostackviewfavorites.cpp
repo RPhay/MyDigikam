@@ -32,7 +32,6 @@
 #include <QToolButton>
 #include <QVBoxLayout>
 #include <QApplication>
-#include <QUrl>
 #include <QIcon>
 #include <QMessageBox>
 #include <QFile>
@@ -192,6 +191,9 @@ ShowfotoStackViewFavorites::ShowfotoStackViewFavorites(ShowfotoStackViewSideBar*
     connect(d->favoritesList, SIGNAL(signalAddFavorite()),
             this, SLOT(slotAddFavorite()));
 
+    connect(d->favoritesList, SIGNAL(signalAddFavorite(QList<QUrl>)),
+            this, SLOT(slotAddFavorite(QList<QUrl>)));
+
     connect(d->favoritesList, SIGNAL(signalLoadContentsFromFiles(QStringList)),
             this, SIGNAL(signalLoadContentsFromFiles(QStringList)));
 }
@@ -226,12 +228,17 @@ void ShowfotoStackViewFavorites::loadContents()
 
 void ShowfotoStackViewFavorites::slotAddFavorite()
 {
+    slotAddFavorite(d->sidebar->urls());
+}
+
+void ShowfotoStackViewFavorites::slotAddFavorite(const QList<QUrl>& newUrls)
+{
     QString name;
     QString desc;
     QString icon     = QLatin1String("folder-favorites");
-    QList<QUrl> urls = d->sidebar->urls();
+    QList<QUrl> urls = newUrls;
 
-    bool ok = ShowfotoStackViewFavoriteDlg::favoriteCreate(d->favoritesList, name, desc, icon, urls);
+    bool ok          = ShowfotoStackViewFavoriteDlg::favoriteCreate(d->favoritesList, name, desc, icon, urls);
 
     if (ok)
     {

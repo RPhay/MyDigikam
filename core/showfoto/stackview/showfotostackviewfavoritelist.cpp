@@ -28,11 +28,11 @@
 #include <QHeaderView>
 #include <QMimeData>
 #include <QFileInfo>
-#include <QUrl>
-#include <QList>
 #include <QDir>
 #include <QDrag>
 #include <QMenu>
+#include <QMimeType>
+#include <QMimeDatabase>
 
 // KDE includes
 
@@ -160,11 +160,32 @@ void ShowfotoStackViewFavoriteList::dragMoveEvent(QDragMoveEvent* e)
 {
     if (e->mimeData()->hasUrls())
     {
-        QList<QUrl> urls = e->mimeData()->urls();
+        QList<QUrl> mimeurls = e->mimeData()->urls();
+        QList<QUrl> urls;
 
-        QFileInfo inf(urls.first().toLocalFile());
+        foreach (const QUrl& url, mimeurls)
+        {
+            QFileInfo info(url.toLocalFile());
 
-        if (inf.isDir())
+            if (info.isFile() && !info.isSymLink() && !info.isDir() && !info.isRoot())
+            {
+                QString path    = info.absoluteFilePath();
+                QMimeType mtype = QMimeDatabase().mimeTypeForFile(path);
+                QString suffix  = info.suffix().toUpper();
+
+                if (mtype.name().startsWith(QLatin1String("image/")) ||
+                    (suffix == QLatin1String("PGF"))                 ||
+                    (suffix == QLatin1String("KRA"))                 ||
+                    (suffix == QLatin1String("CR3"))                 ||
+                    (suffix == QLatin1String("HEIC"))                ||
+                    (suffix == QLatin1String("HEIF")))
+                {
+                    urls << url;
+                }
+            }
+        }
+
+        if (!urls.isEmpty())
         {
             QTreeWidgetItem* const item                 = itemAt(e->pos());
             ShowfotoStackViewFavoriteItem* const fvitem = dynamic_cast<ShowfotoStackViewFavoriteItem*>(item);
@@ -188,13 +209,34 @@ void ShowfotoStackViewFavoriteList::dropEvent(QDropEvent* e)
 {
     if (e->mimeData()->hasUrls())
     {
-        QList<QUrl> urls = e->mimeData()->urls();
+        QList<QUrl> mimeurls = e->mimeData()->urls();
+        QList<QUrl> urls;
 
-        QFileInfo inf(urls.first().toLocalFile());
-
-        if (inf.isDir())
+        foreach (const QUrl& url, mimeurls)
         {
-            QTreeWidgetItem* const item                  = itemAt(e->pos());
+            QFileInfo info(url.toLocalFile());
+
+            if (info.isFile() && !info.isSymLink() && !info.isDir() && !info.isRoot())
+            {
+                QString path    = info.absoluteFilePath();
+                QMimeType mtype = QMimeDatabase().mimeTypeForFile(path);
+                QString suffix  = info.suffix().toUpper();
+
+                if (mtype.name().startsWith(QLatin1String("image/")) ||
+                    (suffix == QLatin1String("PGF"))                 ||
+                    (suffix == QLatin1String("KRA"))                 ||
+                    (suffix == QLatin1String("CR3"))                 ||
+                    (suffix == QLatin1String("HEIC"))                ||
+                    (suffix == QLatin1String("HEIF")))
+                {
+                    urls << url;
+                }
+            }
+        }
+
+        if (!urls.isEmpty())
+        {
+            QTreeWidgetItem* const item                 = itemAt(e->pos());
             ShowfotoStackViewFavoriteItem* const fvitem = dynamic_cast<ShowfotoStackViewFavoriteItem*>(item);
 
             if (
@@ -204,9 +246,7 @@ void ShowfotoStackViewFavoriteList::dropEvent(QDropEvent* e)
             {
                 QTreeWidget::dropEvent(e);
 
-                QString path = inf.filePath();
-
-// FIXME                emit signalAddBookmark(path);
+                emit signalAddFavorite(urls);
 
                 e->acceptProposedAction();
                 return;

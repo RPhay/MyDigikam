@@ -26,6 +26,8 @@
 
 // Qt includes
 
+#include <QList>
+#include <QUrl>
 #include <QString>
 #include <QPoint>
 #include <QTreeWidget>
@@ -55,6 +57,7 @@ public:
 Q_SIGNALS:
 
     void signalAddFavorite();
+    void signalAddFavorite(const QList<QUrl>&);
     void signalLoadContentsFromFiles(const QStringList& files);
 
 public Q_SLOTS:
