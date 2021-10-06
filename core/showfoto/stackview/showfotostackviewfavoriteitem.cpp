@@ -30,6 +30,10 @@
 // Local include
 
 #include "digikam_debug.h"
+#include "showfotosettings.h"
+#include "ditemtooltip.h"
+
+using namespace Digikam;
 
 namespace ShowFoto
 {
@@ -95,10 +99,27 @@ QStringList ShowfotoStackViewFavoriteItem::urlsToPaths() const
 
 void ShowfotoStackViewFavoriteItem::updateToolTip()
 {
-    QString desc = description().isEmpty() ? QLatin1String("-") : description();
-    QString tip  = i18n("Name: %1\n", name());
-    tip         += i18n("Items: %1\n", urls().count());
-    tip         += i18n("Description: %1", desc);
+    if (!ShowfotoSettings::instance()->getShowToolTip())
+    {
+        return;
+    }
+
+    QString desc = description().isEmpty() ? QLatin1String("---") : description();
+    DToolTipStyleSheet cnt(ShowfotoSettings::instance()->getToolTipFont());
+    QString tip  = cnt.tipHeader;
+
+    tip += cnt.headBeg + i18n("Favorite Properties") + cnt.headEnd;
+
+    tip += cnt.cellBeg + i18nc("@info: item properties", "Name:") + cnt.cellMid;
+    tip += name() + cnt.cellEnd;
+
+    tip += cnt.cellBeg + i18n("Items:") + cnt.cellMid;
+    tip += QString::number(urls().count()) + cnt.cellEnd;
+
+    tip += cnt.cellSpecBeg + i18nc("@info: item properties", "Description:") + cnt.cellSpecMid +
+           cnt.breakString(desc) + cnt.cellSpecEnd;
+
+    tip += cnt.tipFooter;
 
     setToolTip(0, tip);
 }
