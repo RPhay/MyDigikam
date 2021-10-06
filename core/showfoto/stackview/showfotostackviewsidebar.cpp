@@ -95,7 +95,6 @@ ShowfotoStackViewSideBar::ShowfotoStackViewSideBar(Showfoto* const parent)
     // --- Populate the view
 
     d->view                    = new ShowfotoStackViewList(this);
-    d->view->setEnableToolTips(true);
 
     d->favts                   = new ShowfotoStackViewFavorites(this);
 

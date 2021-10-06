@@ -70,7 +70,6 @@ public:
     ~ShowfotoStackViewList()                                           override;
 
     void setThumbbar(ShowfotoThumbnailBar* const thumbbar);
-    void setEnableToolTips(bool val);
 
     ShowfotoItemInfo infoFromIndex(const QModelIndex& index) const;
     QList<QUrl> urls();

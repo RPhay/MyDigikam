@@ -66,8 +66,6 @@ public:
                                     ShowfotoFolderViewBar* const bar);
     ~ShowfotoFolderViewList()                                           override;
 
-    void setEnableToolTips(bool val);
-
 public Q_SLOTS:
 
     void slotIconSizeChanged(int);

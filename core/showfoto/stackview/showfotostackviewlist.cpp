@@ -50,6 +50,7 @@
 #include "showfotoiteminfo.h"
 #include "showfotostackviewtooltip.h"
 #include "showfotostackviewitem.h"
+#include "showfotosettings.h"
 #include "dfileoperations.h"
 
 namespace ShowFoto
@@ -63,7 +64,6 @@ public:
     explicit Private()
       : view        (nullptr),
         thumbbar    (nullptr),
-        showToolTips(false),
         toolTipTimer(nullptr),
         toolTip     (nullptr)
     {
@@ -71,7 +71,6 @@ public:
 
     ShowfotoStackViewSideBar* view;
     ShowfotoThumbnailBar*     thumbbar;
-    bool                      showToolTips;
     QTimer*                   toolTipTimer;
     ShowfotoStackViewToolTip* toolTip;
     QModelIndex               toolTipIndex;
@@ -434,16 +433,6 @@ void ShowfotoStackViewList::contextMenuEvent(QContextMenuEvent* e)
     QTreeView::contextMenuEvent(e);
 }
 
-void ShowfotoStackViewList::setEnableToolTips(bool val)
-{
-    d->showToolTips = val;
-
-    if (!val)
-    {
-        hideToolTip();
-    }
-}
-
 void ShowfotoStackViewList::hideToolTip()
 {
     d->toolTipIndex = QModelIndex();
@@ -474,7 +463,7 @@ void ShowfotoStackViewList::mouseMoveEvent(QMouseEvent* e)
     {
         QModelIndex index = indexAt(e->pos());
 
-        if (d->showToolTips)
+        if (ShowfotoSettings::instance()->getShowToolTip())
         {
             if (!isActiveWindow())
             {

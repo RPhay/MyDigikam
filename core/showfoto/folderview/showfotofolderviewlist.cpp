@@ -49,6 +49,7 @@
 #include "showfotofolderviewbar.h"
 #include "showfotofolderviewmodel.h"
 #include "showfotofolderviewtooltip.h"
+#include "showfotosettings.h"
 #include "dfileoperations.h"
 
 namespace ShowFoto
@@ -62,7 +63,6 @@ public:
     explicit Private()
       : view        (nullptr),
         bar         (nullptr),
-        showToolTips(false),
         toolTipTimer(nullptr),
         toolTip     (nullptr)
     {
@@ -70,7 +70,6 @@ public:
 
     ShowfotoFolderViewSideBar* view;
     ShowfotoFolderViewBar*     bar;
-    bool                       showToolTips;
     QTimer*                    toolTipTimer;
     ShowfotoFolderViewToolTip* toolTip;
     QModelIndex                toolTipIndex;
@@ -187,16 +186,6 @@ void ShowfotoFolderViewList::mouseDoubleClickEvent(QMouseEvent* e)
     QTreeView::mouseDoubleClickEvent(e);
 }
 
-void ShowfotoFolderViewList::setEnableToolTips(bool val)
-{
-    d->showToolTips = val;
-
-    if (!val)
-    {
-        hideToolTip();
-    }
-}
-
 void ShowfotoFolderViewList::hideToolTip()
 {
     d->toolTipIndex = QModelIndex();
@@ -232,7 +221,7 @@ void ShowfotoFolderViewList::mouseMoveEvent(QMouseEvent* e)
     {
         QModelIndex index = indexAt(e->pos());
 
-        if (d->showToolTips)
+        if (ShowfotoSettings::instance()->getShowToolTip())
         {
             if (!isActiveWindow())
             {

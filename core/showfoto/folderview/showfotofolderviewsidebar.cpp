@@ -112,7 +112,6 @@ ShowfotoFolderViewSideBar::ShowfotoFolderViewSideBar(Showfoto* const parent)
 
     d->fsbar                   = new ShowfotoFolderViewBar(this);
     d->fsview                  = new ShowfotoFolderViewList(this, d->fsbar);
-    d->fsview->setEnableToolTips(true);
     d->fsmodel                 = new ShowfotoFolderViewModel(d->fsview);
     d->fsview->setModel(d->fsmodel);
     d->fsview->setRootIndex(d->fsmodel->index(QDir::rootPath()));
