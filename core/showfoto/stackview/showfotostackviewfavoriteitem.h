@@ -29,6 +29,7 @@
 #include <QString>
 #include <QStringList>
 #include <QUrl>
+#include <QDate>
 #include <QList>
 #include <QTreeWidget>
 #include <QTreeWidgetItem>
@@ -50,6 +51,9 @@ public:
     void setDescription(const QString& desc);
     QString description()     const;
 
+    void setDate(const QDate& date);
+    QDate date()              const;
+
     void setUrls(const QList<QUrl>&);
     QList<QUrl> urls()        const;
 
@@ -63,6 +67,7 @@ private:
 
     QList<QUrl> m_urls;
     QString     m_desc;
+    QDate       m_date;
 
     Q_DISABLE_COPY(ShowfotoStackViewFavoriteItem)
 };

@@ -73,6 +73,18 @@ QString ShowfotoStackViewFavoriteItem::description() const
     return m_desc;
 }
 
+void ShowfotoStackViewFavoriteItem::setDate(const QDate& date)
+{
+    m_date = date;
+
+    updateToolTip();
+}
+
+QDate ShowfotoStackViewFavoriteItem::date() const
+{
+    return m_date;
+}
+
 void ShowfotoStackViewFavoriteItem::setUrls(const QList<QUrl>& urls)
 {
     m_urls = urls;
@@ -108,15 +120,18 @@ void ShowfotoStackViewFavoriteItem::updateToolTip()
     DToolTipStyleSheet cnt(ShowfotoSettings::instance()->getToolTipFont());
     QString tip  = cnt.tipHeader;
 
-    tip += cnt.headBeg + i18n("Favorite Properties") + cnt.headEnd;
+    tip += cnt.headBeg + i18nc("@title", "Favorite Properties") + cnt.headEnd;
 
-    tip += cnt.cellBeg + i18nc("@info: item properties", "Name:") + cnt.cellMid;
+    tip += cnt.cellBeg + i18nc("@info: item title property", "Name:") + cnt.cellMid;
     tip += name() + cnt.cellEnd;
 
-    tip += cnt.cellBeg + i18n("Items:") + cnt.cellMid;
+    tip += cnt.cellBeg + i18nc("@info: item date property", "Created:") + cnt.cellMid;
+    tip += date().toString() + cnt.cellEnd;
+
+    tip += cnt.cellBeg + i18nc("@info; item count elements property", "Items:") + cnt.cellMid;
     tip += QString::number(urls().count()) + cnt.cellEnd;
 
-    tip += cnt.cellSpecBeg + i18nc("@info: item properties", "Description:") + cnt.cellSpecMid +
+    tip += cnt.cellSpecBeg + i18nc("@info: item caption property", "Description:") + cnt.cellSpecMid +
            cnt.breakString(desc) + cnt.cellSpecEnd;
 
     tip += cnt.tipFooter;

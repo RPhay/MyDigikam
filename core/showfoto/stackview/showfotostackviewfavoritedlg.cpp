@@ -32,12 +32,11 @@
 #include <QApplication>
 #include <QStyle>
 #include <QDir>
-#include <QUrl>
 #include <QStandardPaths>
 #include <QDialogButtonBox>
 #include <QVBoxLayout>
 #include <QPushButton>
-#include <QListWidget>
+#include <QDateTimeEdit>
 
 // KDE includes
 
@@ -73,6 +72,7 @@ public:
         buttons        (nullptr),
         nameEdit       (nullptr),
         descEdit       (nullptr),
+        dateEdit       (nullptr),
         urlsEdit       (nullptr),
         list           (nullptr)
     {
@@ -91,6 +91,7 @@ public:
 
     QLineEdit*                      nameEdit;
     QLineEdit*                      descEdit;
+    QDateTimeEdit*                  dateEdit;
     DItemsList*                     urlsEdit;
     ShowfotoStackViewFavoriteList*  list;
 };
@@ -129,7 +130,7 @@ ShowfotoStackViewFavoriteDlg::ShowfotoStackViewFavoriteDlg(ShowfotoStackViewFavo
     // --------------------------------------------------------
 
     QLabel* const nameLabel = new QLabel(page);
-    nameLabel->setText(i18nc("@label: favorite properties", "&Name:"));
+    nameLabel->setText(i18nc("@label: favorite title properties", "&Name:"));
 
     d->nameEdit             = new QLineEdit(page);
     d->nameEdit->setPlaceholderText(i18nc("#info", "Enter favorite name here..."));
@@ -139,11 +140,23 @@ ShowfotoStackViewFavoriteDlg::ShowfotoStackViewFavoriteDlg(ShowfotoStackViewFavo
     // --------------------------------------------------------
 
     QLabel* const descLabel = new QLabel(page);
-    descLabel->setText(i18nc("@label: favorite properties", "&Description:"));
+    descLabel->setText(i18nc("@label: favorite caption properties", "&Description:"));
 
     d->descEdit             = new QLineEdit(page);
     d->descEdit->setPlaceholderText(i18nc("#info", "Enter favorite description here..."));
     descLabel->setBuddy(d->descEdit);
+
+    // --------------------------------------------------------
+
+    QLabel* const dateLabel = new QLabel(page);
+    dateLabel->setText(i18nc("@label: favorite date properties", "&Created:"));
+
+    d->dateEdit             = new QDateTimeEdit(QDate::currentDate(), page);
+    d->dateEdit->setMinimumDate(QDate(1970, 1, 1));
+    d->dateEdit->setMaximumDate(QDate::currentDate().addDays(365));
+    d->dateEdit->setDisplayFormat(QLatin1String("yyyy.MM.dd"));
+    d->dateEdit->setCalendarPopup(true);
+    dateLabel->setBuddy(d->dateEdit);
 
     // --------------------------------------------------------
 
@@ -183,12 +196,14 @@ ShowfotoStackViewFavoriteDlg::ShowfotoStackViewFavoriteDlg(ShowfotoStackViewFavo
     grid->addWidget(d->nameEdit,        0, 1, 1, 3);
     grid->addWidget(descLabel,          1, 0, 1, 1);
     grid->addWidget(d->descEdit,        1, 1, 1, 3);
-    grid->addWidget(iconTextLabel,      2, 0, 1, 1);
-    grid->addWidget(d->iconButton,      2, 1, 1, 1);
-    grid->addWidget(d->resetIconButton, 2, 2, 1, 1);
-    grid->addWidget(urlsLabel,          3, 0, 1, 1);
-    grid->addWidget(d->urlsEdit,        3, 1, 1, 3);
-    grid->setRowStretch(4, 10);
+    grid->addWidget(dateLabel,          2, 0, 1, 1);
+    grid->addWidget(d->dateEdit,        2, 1, 1, 3);
+    grid->addWidget(iconTextLabel,      3, 0, 1, 1);
+    grid->addWidget(d->iconButton,      3, 1, 1, 1);
+    grid->addWidget(d->resetIconButton, 3, 2, 1, 1);
+    grid->addWidget(urlsLabel,          4, 0, 1, 1);
+    grid->addWidget(d->urlsEdit,        4, 1, 1, 3);
+    grid->setRowStretch(5, 10);
     grid->setColumnStretch(1, 10);
 
     QVBoxLayout* const vbx = new QVBoxLayout(this);
@@ -266,6 +281,11 @@ QString ShowfotoStackViewFavoriteDlg::description() const
     return d->descEdit->text();
 }
 
+QDate ShowfotoStackViewFavoriteDlg::date() const
+{
+    return d->dateEdit->date();
+}
+
 QString ShowfotoStackViewFavoriteDlg::icon() const
 {
     return d->icon;
@@ -284,6 +304,11 @@ void ShowfotoStackViewFavoriteDlg::setName(const QString& name)
 void ShowfotoStackViewFavoriteDlg::setDescription(const QString& desc)
 {
     d->descEdit->setText(desc);
+}
+
+void ShowfotoStackViewFavoriteDlg::setDate(const QDate& date)
+{
+    d->dateEdit->setDate(date);
 }
 
 void ShowfotoStackViewFavoriteDlg::setIcon(const QString& icon)
@@ -325,14 +350,16 @@ void ShowfotoStackViewFavoriteDlg::slotIconChanged()
 }
 
 bool ShowfotoStackViewFavoriteDlg::favoriteEdit(ShowfotoStackViewFavoriteList* const parent,
-                                                  QString& name,
-                                                  QString& desc,
-                                                  QString& icon,
-                                                  QList<QUrl>& urls)
+                                                QString& name,
+                                                QString& desc,
+                                                QDate& date,
+                                                QString& icon,
+                                                QList<QUrl>& urls)
 {
     QPointer<ShowfotoStackViewFavoriteDlg> dlg = new ShowfotoStackViewFavoriteDlg(parent);
     dlg->setName(name);
     dlg->setDescription(desc);
+    dlg->setDate(date);
     dlg->setIcon(icon);
     dlg->setUrls(urls);
 
@@ -342,6 +369,7 @@ bool ShowfotoStackViewFavoriteDlg::favoriteEdit(ShowfotoStackViewFavoriteList* c
     {
         name = dlg->name();
         desc = dlg->description();
+        date = dlg->date();
         icon = dlg->icon();
         urls = dlg->urls();
     }
@@ -354,12 +382,14 @@ bool ShowfotoStackViewFavoriteDlg::favoriteEdit(ShowfotoStackViewFavoriteList* c
 bool ShowfotoStackViewFavoriteDlg::favoriteCreate(ShowfotoStackViewFavoriteList* const parent,
                                                   QString& name,
                                                   QString& desc,
+                                                  QDate& date,
                                                   QString& icon,
                                                   QList<QUrl>& urls)
 {
     QPointer<ShowfotoStackViewFavoriteDlg> dlg = new ShowfotoStackViewFavoriteDlg(parent, true);
     dlg->setName(name);
     dlg->setDescription(desc);
+    dlg->setDate(date);
     dlg->setIcon(icon);
     dlg->setUrls(urls);
 
@@ -369,6 +399,7 @@ bool ShowfotoStackViewFavoriteDlg::favoriteCreate(ShowfotoStackViewFavoriteList*
     {
         name = dlg->name();
         desc = dlg->description();
+        date = dlg->date();
         icon = dlg->icon();
         urls = dlg->urls();
     }

@@ -27,7 +27,10 @@
 // Qt includes
 
 #include <QString>
+#include <QDate>
 #include <QDialog>
+#include <QList>
+#include <QUrl>
 
 // Local includes
 
@@ -54,6 +57,9 @@ public:
     void setDescription(const QString& desc);
     QString description() const;
 
+    void setDate(const QDate& name);
+    QDate date()          const;
+
     void setIcon(const QString& icon);
     QString icon()        const;
 
@@ -65,11 +71,13 @@ public:
     static bool favoriteEdit(ShowfotoStackViewFavoriteList* const parent,
                              QString& name,
                              QString& desc,
+                             QDate& date,
                              QString& icon,
                              QList<QUrl>& urls);
     static bool favoriteCreate(ShowfotoStackViewFavoriteList* const parent,
                                QString& name,
                                QString& desc,
+                               QDate& date,
                                QString& icon,
                                QList<QUrl>& urls);
 

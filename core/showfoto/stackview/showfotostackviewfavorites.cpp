@@ -35,6 +35,7 @@
 #include <QIcon>
 #include <QMessageBox>
 #include <QFile>
+#include <QDate>
 #include <QDomDocument>
 #include <QDomElement>
 #include <QTextStream>
@@ -73,13 +74,6 @@ public:
 
 public:
 
-    static const QString            configFavoriteItemsEntry;
-    static const QString            configFavoriteUrlsPrefixEntry;
-    static const QString            configFavoriteNamePrefixEntry;
-    static const QString            configFavoriteDescPrefixEntry;
-    static const QString            configFavoriteIconPrefixEntry;
-    static const QString            configFavoriteTopItemExpandedEntry;
-
     QList<QAction*>                 actionsList;                    ///< used to shared actions with list-view context menu.
     QToolButton*                    addBtn;
     QToolButton*                    delBtn;
@@ -89,13 +83,6 @@ public:
     ShowfotoStackViewSideBar*       sidebar;
     QString                         file;
 };
-
-const QString ShowfotoStackViewFavorites::Private::configFavoriteItemsEntry(QLatin1String("FavoriteItems"));
-const QString ShowfotoStackViewFavorites::Private::configFavoriteUrlsPrefixEntry(QLatin1String("FavoriteUrls"));
-const QString ShowfotoStackViewFavorites::Private::configFavoriteNamePrefixEntry(QLatin1String("FavoriteName"));
-const QString ShowfotoStackViewFavorites::Private::configFavoriteDescPrefixEntry(QLatin1String("FavoriteDesc"));
-const QString ShowfotoStackViewFavorites::Private::configFavoriteIconPrefixEntry(QLatin1String("FavoriteIcon"));
-const QString ShowfotoStackViewFavorites::Private::configFavoriteTopItemExpandedEntry(QLatin1String("FavoriteTopItemExpanded"));
 
 ShowfotoStackViewFavorites::ShowfotoStackViewFavorites(ShowfotoStackViewSideBar* const sidebar)
     : QWidget(sidebar),
@@ -235,16 +222,18 @@ void ShowfotoStackViewFavorites::slotAddFavorite(const QList<QUrl>& newUrls)
 {
     QString name;
     QString desc;
+    QDate date       = QDate::currentDate();;
     QString icon     = QLatin1String("folder-favorites");
     QList<QUrl> urls = newUrls;
 
-    bool ok          = ShowfotoStackViewFavoriteDlg::favoriteCreate(d->favoritesList, name, desc, icon, urls);
+    bool ok          = ShowfotoStackViewFavoriteDlg::favoriteCreate(d->favoritesList, name, desc, date, icon, urls);
 
     if (ok)
     {
         ShowfotoStackViewFavoriteItem* const item = new ShowfotoStackViewFavoriteItem(d->topFavorites);
         item->setName(name);
         item->setDescription(desc);
+        item->setDate(date);
         item->setIcon(0, QIcon::fromTheme(icon));
         item->setUrls(urls);
     }
@@ -281,15 +270,17 @@ void ShowfotoStackViewFavorites::slotEdtFavorite()
 
     QString name     = item->name();
     QString desc     = item->description();
+    QDate date       = item->date();
     QString icon     = item->icon(0).name();
     QList<QUrl> urls = item->urls();
 
-    bool ok = ShowfotoStackViewFavoriteDlg::favoriteEdit(d->favoritesList, name, desc, icon, urls);
+    bool ok = ShowfotoStackViewFavoriteDlg::favoriteEdit(d->favoritesList, name, desc, date, icon, urls);
 
     if (ok)
     {
         item->setName(name);
         item->setDescription(desc);
+        item->setDate(date);
         item->setIcon(0, QIcon::fromTheme(icon));
         item->setUrls(urls);
     }
@@ -355,6 +346,10 @@ bool ShowfotoStackViewFavorites::saveSettings()
             QDomElement desc = doc.createElement(QLatin1String("Description"));
             desc.setAttribute(QLatin1String("value"), item->description());
             elem.appendChild(desc);
+
+            QDomElement date = doc.createElement(QLatin1String("Date"));
+            date.setAttribute(QLatin1String("value"), item->date().toString());
+            elem.appendChild(date);
 
             QDomElement icon = doc.createElement(QLatin1String("Icon"));
             icon.setAttribute(QLatin1String("value"), item->icon(0).name());
@@ -463,6 +458,17 @@ bool ShowfotoStackViewFavorites::readSettings()
                         else if (name3 == QLatin1String("Description"))
                         {
                             item->setDescription(val3);
+                        }
+                        if      (name3 == QLatin1String("Date"))
+                        {
+                            QDate date = QDate::currentDate();
+
+                            if (!val3.isEmpty())
+                            {
+                                date = QDate::fromString(val3);
+                            }
+
+                            item->setDate(date);
                         }
                         else if (name3 == QLatin1String("Icon"))
                         {
