@@ -155,6 +155,7 @@ void ShowfotoFolderViewList::contextMenuEvent(QContextMenuEvent* e)
     ctxmenu->addAction(d->bar->toolBarAction(QLatin1String("MoreSettings")));
     ctxmenu->addSeparator();
     ctxmenu->addAction(d->bar->toolBarAction(QLatin1String("LoadContents")));
+    ctxmenu->addAction(d->bar->toolBarAction(QLatin1String("AppendContents")));
     ctxmenu->addActions(d->bar->pluginActions());
     ctxmenu->addSeparator();
 

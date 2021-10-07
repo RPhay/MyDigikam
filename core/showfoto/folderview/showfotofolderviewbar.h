@@ -106,6 +106,7 @@ Q_SIGNALS:
     void signalGoNext();
     void signalCustomPathChanged(const QString&);
     void signalLoadContents();
+    void signalAppendContents();
     void signalPluginActionTriggered(QAction*);
 
 private Q_SLOTS:

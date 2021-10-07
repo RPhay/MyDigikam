@@ -262,6 +262,17 @@ ShowfotoFolderViewBar::ShowfotoFolderViewBar(ShowfotoFolderViewSideBar* const si
 
     d->actionsList << btnAction;
 
+    btnAction                = d->runMenu->addAction(i18nc("@action:inmenu", "Append Contents"));
+    btnAction->setObjectName(QLatin1String("AppendContents"));
+    btnAction->setIcon(QIcon::fromTheme(QLatin1String("media-playlist-append")));
+    btnAction->setText(i18nc("@action", "Append Contents"));
+    btnAction->setToolTip(i18nc("@info", "Append contents to editor stack"));
+
+    connect(btnAction, SIGNAL(triggered(bool)),
+            this, SIGNAL(signalAppendContents()));
+
+    d->actionsList << btnAction;
+
     d->runBtn->setMenu(d->runMenu);
 
     // ---

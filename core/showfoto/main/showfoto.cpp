@@ -451,6 +451,23 @@ void Showfoto::slotOpenFilesfromPath(const QStringList& files)
     toggleNavigation(1);
 }
 
+void Showfoto::slotAppendFilesfromPath(const QStringList& files)
+{
+    if (files.isEmpty())
+    {
+        return;
+    }
+
+    QList<QUrl> urls;
+
+    foreach (const QString& file, files)
+    {
+        urls << QUrl::fromLocalFile(file);
+    }
+
+    slotDroppedUrls(urls, false);
+}
+
 void Showfoto::slotDroppedUrls(const QList<QUrl>& droppedUrls, bool dropped)
 {
     if (droppedUrls.isEmpty())

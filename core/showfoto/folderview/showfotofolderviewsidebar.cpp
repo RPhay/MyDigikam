@@ -152,6 +152,9 @@ ShowfotoFolderViewSideBar::ShowfotoFolderViewSideBar(Showfoto* const parent)
     connect(d->fsbar, SIGNAL(signalLoadContents()),
             this, SLOT(slotLoadContents()));
 
+    connect(d->fsbar, SIGNAL(signalAppendContents()),
+            this, SLOT(slotAppendContents()));
+
     connect(d->fsmarks, SIGNAL(signalLoadContents()),
             this, SLOT(slotLoadContents()));
 
@@ -193,7 +196,13 @@ void ShowfotoFolderViewSideBar::slotLoadContents()
     loadContents(index);
 }
 
-void ShowfotoFolderViewSideBar::loadContents(const QModelIndex& index)
+void ShowfotoFolderViewSideBar::slotAppendContents()
+{
+    QModelIndex index = d->fsmodel->index(currentPath());
+    loadContents(index, true);
+}
+
+void ShowfotoFolderViewSideBar::loadContents(const QModelIndex& index, bool append)
 {
     if (!index.isValid())
     {
@@ -217,7 +226,14 @@ void ShowfotoFolderViewSideBar::loadContents(const QModelIndex& index)
 
     if (!lst.isEmpty())
     {
-        emit signalLoadContentsFromFiles(lst);
+        if (!append)
+        {
+            emit signalLoadContentsFromFiles(lst);
+        }
+        else
+        {
+            emit signalAppendContentsFromFiles(lst);
+        }
     }
 }
 

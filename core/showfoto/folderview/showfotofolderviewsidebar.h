@@ -71,7 +71,7 @@ public:
     void setSortOrder(int order);
     void setSortRole(int role);
 
-    void loadContents(const QModelIndex& index);
+    void loadContents(const QModelIndex& index, bool append = false);
 
     void registerPluginActions(const QList<DPluginAction*>& actions);
     QList<QAction*> pluginActions()     const;
@@ -83,6 +83,7 @@ public Q_SLOTS:
     void slotGoHome();
     void slotGoUp();
     void slotLoadContents();
+    void slotAppendContents();
 
 private Q_SLOTS:
 
@@ -98,6 +99,7 @@ Q_SIGNALS:
     void signalSetup();
     void signalLoadContentsFromPath(const QString& path);
     void signalLoadContentsFromFiles(const QStringList& files);
+    void signalAppendContentsFromFiles(const QStringList& files);
 
 private:
 
