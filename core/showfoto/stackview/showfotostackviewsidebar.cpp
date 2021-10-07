@@ -194,12 +194,12 @@ QList<QAction*> ShowfotoStackViewSideBar::pluginActions() const
 
 const QIcon ShowfotoStackViewSideBar::getIcon()
 {
-    return QIcon::fromTheme(QLatin1String("photos"));
+    return QIcon::fromTheme(QLatin1String("layer-visible-on"));
 }
 
 const QString ShowfotoStackViewSideBar::getCaption()
 {
-    return i18nc("@title: file system tree", "Stack");
+    return i18nc("@title: stack-view list on items", "Stack");
 }
 
 void ShowfotoStackViewSideBar::doLoadState()

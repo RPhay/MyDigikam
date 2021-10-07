@@ -244,10 +244,10 @@ ShowfotoFolderViewBar::ShowfotoFolderViewBar(ShowfotoFolderViewSideBar* const si
     // ---
 
     d->runBtn                = new QToolButton(btnBox);
-    d->runBtn->setToolTip(i18nc("@info: folder-view", "Folder-View Run Actions"));
-    d->runBtn->setIcon(QIcon::fromTheme(QLatin1String("media-playback-start")));
+    d->runBtn->setToolTip(i18nc("@info: folder-view", "Stack Options"));
+    d->runBtn->setIcon(QIcon::fromTheme(QLatin1String("layer-visible-on")));
     d->runBtn->setPopupMode(QToolButton::InstantPopup);
-    d->runBtn->setWhatsThis(i18nc("@info: folder-view", "Run actions to handle folder-view contents."));
+    d->runBtn->setWhatsThis(i18nc("@info: folder-view", "Stack options to handle folder-view contents."));
 
     d->runMenu               = new QMenu(d->runBtn);
 
@@ -255,7 +255,7 @@ ShowfotoFolderViewBar::ShowfotoFolderViewBar(ShowfotoFolderViewSideBar* const si
     btnAction->setObjectName(QLatin1String("LoadContents"));
     btnAction->setIcon(QIcon::fromTheme(QLatin1String("media-playlist-normal")));
     btnAction->setText(i18nc("@action", "Load Contents"));
-    btnAction->setToolTip(i18nc("@info", "Load Contents to Editor"));
+    btnAction->setToolTip(i18nc("@info", "Load contents to editor stack"));
 
     connect(btnAction, SIGNAL(triggered(bool)),
             this, SIGNAL(signalLoadContents()));
