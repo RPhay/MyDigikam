@@ -47,7 +47,6 @@
 #include "showfotofolderviewmodel.h"
 #include "showfotofolderviewlist.h"
 #include "showfotosetup.h"
-#include "squeezedcombobox.h"
 
 namespace ShowFoto
 {
@@ -95,7 +94,7 @@ public:
     QComboBox*                 pathEdit;
     QList<QAction*>            actionsList;                    ///< used to shared actions with list-view context menu.
     ShowfotoFolderViewSideBar* sidebar;
-    SqueezedComboBox*          typeMimesCombo;
+    QComboBox*                 typeMimesCombo;
 };
 
 ShowfotoFolderViewBar::ShowfotoFolderViewBar(ShowfotoFolderViewSideBar* const sidebar)
@@ -292,14 +291,14 @@ ShowfotoFolderViewBar::ShowfotoFolderViewBar(ShowfotoFolderViewSideBar* const si
 
     // ---
 
-    d->typeMimesCombo = new SqueezedComboBox(this);
-    d->typeMimesCombo->insertSqueezedItem(i18nc("@item: filter type mime", "JPEG images"),         TYPE_MIME_JPEG, QLatin1String("*.JPEG *.JPG *.JPE"));
-    d->typeMimesCombo->insertSqueezedItem(i18nc("@item: filter type mime", "TIFF images"),         TYPE_MIME_TIFF, QLatin1String("*.TIFF *.TIF"));
-    d->typeMimesCombo->insertSqueezedItem(i18nc("@item: filter type mime", "PNG images"),          TYPE_MIME_PNG,  QLatin1String("*.PNG"));
-    d->typeMimesCombo->insertSqueezedItem(i18nc("@item: filter type mime", "PGF images"),          TYPE_MIME_PNG,  QLatin1String("*.PGF"));
-    d->typeMimesCombo->insertSqueezedItem(i18nc("@item: filter type mime", "HEIF images"),         TYPE_MIME_HEIF, QLatin1String("*.HEIF *.HEIC"));
-    d->typeMimesCombo->insertSqueezedItem(i18nc("@item: filter type mime", "DNG images"),          TYPE_MIME_HEIF, QLatin1String("*.DNG"));
-    d->typeMimesCombo->insertSqueezedItem(i18nc("@item: filter type mime", "RAW images"),          TYPE_MIME_RAW,  DRawDecoder::rawFiles());
+    d->typeMimesCombo = new QComboBox(this);
+    d->typeMimesCombo->insertItem(TYPE_MIME_JPEG,  i18nc("@item: filter type mime", "JPEG images"),         QLatin1String("*.JPEG *.JPG *.JPE"));
+    d->typeMimesCombo->insertItem(TYPE_MIME_TIFF,  i18nc("@item: filter type mime", "TIFF images"),         QLatin1String("*.TIFF *.TIF"));
+    d->typeMimesCombo->insertItem(TYPE_MIME_PNG,   i18nc("@item: filter type mime", "PNG images"),          QLatin1String("*.PNG"));
+    d->typeMimesCombo->insertItem(TYPE_MIME_PNG,   i18nc("@item: filter type mime", "PGF images"),          QLatin1String("*.PGF"));
+    d->typeMimesCombo->insertItem(TYPE_MIME_HEIF,  i18nc("@item: filter type mime", "HEIF images"),         QLatin1String("*.HEIF *.HEIC"));
+    d->typeMimesCombo->insertItem(TYPE_MIME_HEIF,  i18nc("@item: filter type mime", "DNG images"),          QLatin1String("*.DNG"));
+    d->typeMimesCombo->insertItem(TYPE_MIME_RAW,   i18nc("@item: filter type mime", "RAW images"),          DRawDecoder::rawFiles());
 
     QString filter;
     QString patterns;
@@ -308,14 +307,14 @@ ShowfotoFolderViewBar::ShowfotoFolderViewBar(ShowfotoFolderViewSideBar* const si
     patterns.append(QLatin1Char(' '));
     patterns.append(filter.toUpper());
 
-    d->typeMimesCombo->insertSqueezedItem(i18nc("@item: filter type mime", "No RAW images"),       TYPE_MIME_NORAW,  patterns);
+    d->typeMimesCombo->insertItem(TYPE_MIME_NORAW, i18nc("@item: filter type mime", "No RAW images"),       patterns);
 
     (void)supportedImageMimeTypes(QIODevice::ReadOnly, filter);
     patterns  = filter.toLower();
     patterns.append(QLatin1Char(' '));
     patterns.append(filter.toUpper());
 
-    d->typeMimesCombo->insertSqueezedItem(i18nc("@item: filter type mime", "All supported files"), TYPE_MIME_ALL,  patterns);
+    d->typeMimesCombo->insertItem( TYPE_MIME_ALL,  i18nc("@item: filter type mime", "All supported files"), patterns);
 
     connect(d->typeMimesCombo, SIGNAL(activated(int)),
             this, SLOT(slotTypeMimesChanged(int)));
