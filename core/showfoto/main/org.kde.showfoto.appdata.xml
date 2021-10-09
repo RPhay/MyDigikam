@@ -21,6 +21,7 @@
   <name xml:lang="hi">शोफोटो</name>
   <name xml:lang="hu">Showfoto</name>
   <name xml:lang="id">Showfoto</name>
+  <name xml:lang="is">Showfoto</name>
   <name xml:lang="it">Showfoto</name>
   <name xml:lang="ja">Showfoto</name>
   <name xml:lang="ko">Showfoto</name>
@@ -54,6 +55,7 @@
   <summary xml:lang="hi">छवि संपादक</summary>
   <summary xml:lang="hu">Képszerkesztő</summary>
   <summary xml:lang="id">Editor Citra</summary>
+  <summary xml:lang="is">Myndvinnsluforrit</summary>
   <summary xml:lang="it">Editor di immagini</summary>
   <summary xml:lang="ja">画像エディタ</summary>
   <summary xml:lang="ko">사진 편집기</summary>
@@ -92,6 +94,7 @@
     <p xml:lang="hi">शोफोटो शक्तिशाली छवि संपादन के साधनों के साथ एक तेज़ छवि संपादक है। आप इसका उपयोग अपनी तस्वीरों को देखने और उन्हें बेहतर बनाने के लिए कर सकते हैं। शोफोटो डिजीकैम प्रोजेक्ट का स्वतंत्र छवि संपादक है।</p>
     <p xml:lang="hu">A Showfoto egy gyors képszerkesztő hatékony szerkesztőeszközökkel. A használatával megnézheti és javíthatja a fényképeit. A Showfoto a digiKam projekt önálló képszerkesztője.</p>
     <p xml:lang="id">Showfoto adalah sebuah Editor Citra yang cepat dengan peralatan pengeditan citra yang unggul. Kamu bisa menggunakannya untuk menampilkan fotografikmu dan memperbaikinya. Showfoto adalah sebuah editor citra yang mandiri dari projek digiKam.</p>
+    <p xml:lang="is">Showfoto er hraðvirkt myndvinnsluforrit með ýmsum öflugum verkfærum. Það má nota til að skoða myndir og bæta þær. Showfoto er sjálfstæður myndvinnsluritinn innan digiKam verkefnisins.</p>
     <p xml:lang="it">Showfoto è un editor di immagini veloce, con strumenti di modifica potenti. Puoi usarlo per visualizzare le tue fotografie e migliorarle. Showfoto è un editor di immagini autonomo all'interno del progetto digiKam.</p>
     <p xml:lang="ja">Showfoto は高速でパワフルな画像編集ツールです。画像を表示したり、それらを改善したりできます。Showfoto は digiKam プロジェクトから切り離された画像エディタです。</p>
     <p xml:lang="ko">Showfoto는 강력한 사진 편집 도구가 있는 빠른 사진 편집기입니다. 디지털 사진을 보고 보정할 수 있습니다. Showfoto는 digiKam 프로젝트의 단독 사진 편집기입니다.</p>
@@ -131,6 +134,7 @@
       <caption xml:lang="hi">शोफोटो में फोटो का संपादन</caption>
       <caption xml:lang="hu">Fénykép szerkesztése Showfotoval</caption>
       <caption xml:lang="id">Pengeditan foto di Showfoto</caption>
+      <caption xml:lang="is">Breytingar mynda í Showfoto</caption>
       <caption xml:lang="it">Modifica di fotografie in Showfoto</caption>
       <caption xml:lang="ja">Showfoto で画像を編集</caption>
       <caption xml:lang="ko">Showfoto로 사진 편집하기</caption>
@@ -246,6 +250,7 @@
   <developer_name xml:lang="hi">डिज़ीकैम परियोजना</developer_name>
   <developer_name xml:lang="hu">digiKam projekt</developer_name>
   <developer_name xml:lang="id">Projek digiKam</developer_name>
+  <developer_name xml:lang="is">digiKam verkefnið</developer_name>
   <developer_name xml:lang="it">Progetto digiKam</developer_name>
   <developer_name xml:lang="ja">digiKam プロジェクト</developer_name>
   <developer_name xml:lang="ko">digiKam 프로젝트</developer_name>
