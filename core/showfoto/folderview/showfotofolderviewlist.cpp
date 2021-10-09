@@ -154,9 +154,10 @@ void ShowfotoFolderViewList::contextMenuEvent(QContextMenuEvent* e)
     ctxmenu->addAction(d->bar->toolBarAction(QLatin1String("ShowBookmarks")));
     ctxmenu->addAction(d->bar->toolBarAction(QLatin1String("MoreSettings")));
     ctxmenu->addSeparator();
-    ctxmenu->addAction(d->bar->toolBarAction(QLatin1String("LoadContents")));
-    ctxmenu->addAction(d->bar->toolBarAction(QLatin1String("AppendContents")));
-    ctxmenu->addActions(d->bar->pluginActions());
+    QMenu* const stackMenu = ctxmenu->addMenu(i18nc("@title", "Stack"));
+    stackMenu->addAction(d->bar->toolBarAction(QLatin1String("LoadContents")));
+    stackMenu->addAction(d->bar->toolBarAction(QLatin1String("AppendContents")));
+    stackMenu->addActions(d->bar->pluginActions());
     ctxmenu->addSeparator();
 
     QAction* const addBookmark  = new QAction(QIcon::fromTheme(QLatin1String("list-add")),
