@@ -84,6 +84,7 @@ Q_SIGNALS:
     void signalShowfotoItemInfoActivated(const ShowfotoItemInfo& info);
     void signalLoadContentsFromFiles(const QStringList& files);
     void signalAddFavorite();
+    void signalClearItemsList();
 
 private:
 

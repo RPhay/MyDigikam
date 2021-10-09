@@ -228,8 +228,7 @@ void Showfoto::slotOpenFile()
 
     if      (urls.count() > 1)
     {
-        d->infoList.clear();
-        d->model->clearShowfotoItemInfos();
+        slotClearThumbBar();
 
         openUrls(urls);
         emit signalInfoList(d->infoList);
@@ -239,8 +238,7 @@ void Showfoto::slotOpenFile()
     }
     else if (urls.count() == 1)
     {
-        d->infoList.clear();
-        d->model->clearShowfotoItemInfos();
+        slotClearThumbBar();
 
         openFolder(urls.first().adjusted(QUrl::RemoveFilename));
         emit signalInfoList(d->infoList);
@@ -261,8 +259,7 @@ void Showfoto::slotOpenFolder()
                                                     d->lastOpenedDirectory);
     if (!url.isEmpty())
     {
-        d->infoList.clear();
-        d->model->clearShowfotoItemInfos();
+        slotClearThumbBar();
 
         openFolder(url);
         emit signalInfoList(d->infoList);
@@ -277,8 +274,7 @@ void Showfoto::slotOpenFolderFromPath(const QString& path)
     qCDebug(DIGIKAM_SHOWFOTO_LOG) << "Open folder from path =" << path;
 
     QFileInfo inf(path);
-    d->infoList.clear();
-    d->model->clearShowfotoItemInfos();
+    slotClearThumbBar();
 
     if      (inf.isFile())
     {
@@ -424,6 +420,12 @@ void Showfoto::openFolder(const QUrl& url)
     QApplication::restoreOverrideCursor();
 }
 
+void Showfoto::slotClearThumbBar()
+{
+    d->infoList.clear();
+    d->model->clearShowfotoItemInfos();
+}
+
 void Showfoto::slotOpenFilesfromPath(const QStringList& files)
 {
     if (files.isEmpty())
@@ -431,9 +433,7 @@ void Showfoto::slotOpenFilesfromPath(const QStringList& files)
         return;
     }
 
-    d->infoList.clear();
-    d->model->clearShowfotoItemInfos();
-
+    slotClearThumbBar();
     QList<QUrl> urls;
 
     foreach (const QString& path, files)

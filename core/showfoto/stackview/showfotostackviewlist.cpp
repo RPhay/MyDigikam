@@ -395,19 +395,27 @@ void ShowfotoStackViewList::contextMenuEvent(QContextMenuEvent* e)
     ctxmenu->addActions(d->view->pluginActions());
     ctxmenu->addSeparator();
 
-    QAction* const addFavorite  = new QAction(QIcon::fromTheme(QLatin1String("list-add")),
-                                              i18nc("@action: context menu", "Add as Favorite"), ctxmenu);
+    QAction* const addFavorite     = new QAction(QIcon::fromTheme(QLatin1String("list-add")),
+                                                 i18nc("@action: context menu", "Add as Favorite"), ctxmenu);
     ctxmenu->addAction(addFavorite);
 
     connect(addFavorite, SIGNAL(triggered()),
             this, SIGNAL(signalAddFavorite()));
 
-    QAction* const openFileMngr = new QAction(QIcon::fromTheme(QLatin1String("folder-open")),
-                                              i18nc("@action: context menu", "Open in File Manager"), ctxmenu);
+    QAction* const openFileMngr    = new QAction(QIcon::fromTheme(QLatin1String("folder-open")),
+                                                 i18nc("@action: context menu", "Open in File Manager"), ctxmenu);
     ctxmenu->addAction(openFileMngr);
 
     connect(openFileMngr, SIGNAL(triggered()),
             this, SLOT(slotOpenInFileManager()));
+
+    QAction* const clearListAction = new QAction(QIcon::fromTheme(QLatin1String("edit-clear")),
+                                                 i18nc("@action: context menu", "Clear All Items"), this);
+
+    ctxmenu->addAction(clearListAction);
+
+    connect(clearListAction, SIGNAL(triggered()),
+            this, SIGNAL(signalClearItemsList()));
 
     ctxmenu->exec(e->globalPos());
 

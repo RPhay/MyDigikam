@@ -82,6 +82,7 @@ Q_SIGNALS:
 
     void signalItemListChanged(int nbitems);
     void signalAddFavorite();
+    void signalClearItemsList();
     void signalShowfotoItemInfoActivated(const ShowfotoItemInfo& info);
 
 private:

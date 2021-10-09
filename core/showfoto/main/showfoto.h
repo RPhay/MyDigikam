@@ -88,6 +88,7 @@ private Q_SLOTS:
     void slotFileWithDefaultApplication()                   override;
     void slotOpenWith(QAction* action = nullptr)            override;
     void slotShowfotoItemInfoActivated(const ShowfotoItemInfo& info);
+    void slotClearThumbBar();
 
     void slotOpenFile();
     void slotOpenFolder();
