@@ -122,7 +122,7 @@ void ShowfotoStackViewFavoriteList::slotContextMenu(const QPoint& pos)
     if (fvitem && (fvitem->parent() == d->parent->topFavoritesItem()))
     {
         QMenu* const ctxmenu        = new QMenu(this);
-        ctxmenu->setTitle(i18nc("@title", "Bookmarks"));
+        ctxmenu->setTitle(i18nc("@title", "Favorites"));
         ctxmenu->addAction(d->parent->toolBarAction(QLatin1String("AddFavorite")));
         ctxmenu->addAction(d->parent->toolBarAction(QLatin1String("DelFavorite")));
         ctxmenu->addAction(d->parent->toolBarAction(QLatin1String("EditFavorite")));

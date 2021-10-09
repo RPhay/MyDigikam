@@ -340,7 +340,7 @@ void ShowfotoStackViewList::slotIconSizeChanged(int size)
 void ShowfotoStackViewList::contextMenuEvent(QContextMenuEvent* e)
 {
     QMenu* const ctxmenu        = new QMenu(this);
-    ctxmenu->setTitle(i18nc("@title", "Stack-View Options"));
+    ctxmenu->setTitle(i18nc("@title", "Stack-View"));
 
     QMenu* const iconMenu       = new QMenu(i18nc("@title:menu", "Thumbnail Size"), ctxmenu);
     QActionGroup* const sizeGrp = new QActionGroup(iconMenu);

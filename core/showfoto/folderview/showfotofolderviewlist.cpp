@@ -143,7 +143,7 @@ void ShowfotoFolderViewList::slotIconSizeChanged(int size)
 void ShowfotoFolderViewList::contextMenuEvent(QContextMenuEvent* e)
 {
     QMenu* const ctxmenu = new QMenu(this);
-    ctxmenu->setTitle(i18nc("@title", "Folder-View Options"));
+    ctxmenu->setTitle(i18nc("@title", "Folder-View"));
     ctxmenu->addAction(d->bar->toolBarAction(QLatin1String("GoPrevious")));
     ctxmenu->addAction(d->bar->toolBarAction(QLatin1String("GoNext")));
     ctxmenu->addAction(d->bar->toolBarAction(QLatin1String("GoHome")));

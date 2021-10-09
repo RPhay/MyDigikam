@@ -193,7 +193,7 @@ ShowfotoFolderViewBar::ShowfotoFolderViewBar(ShowfotoFolderViewSideBar* const si
     // ---
 
     d->optionsBtn              = new QToolButton(btnBox);
-    d->optionsBtn->setToolTip(i18nc("@info: folder-view", "Folder-View Options"));
+    d->optionsBtn->setToolTip(i18nc("@info: folder-view", "View Options"));
     d->optionsBtn->setIcon(QIcon::fromTheme(QLatin1String("configure")));
     d->optionsBtn->setPopupMode(QToolButton::InstantPopup);
     d->optionsBtn->setWhatsThis(i18nc("@info: folder-view", "Selection options to render folder-view."));
