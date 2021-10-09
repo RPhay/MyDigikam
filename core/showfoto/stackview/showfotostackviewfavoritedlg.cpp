@@ -32,6 +32,7 @@
 #include <QApplication>
 #include <QStyle>
 #include <QDir>
+#include <QFont>
 #include <QStandardPaths>
 #include <QDialogButtonBox>
 #include <QVBoxLayout>
@@ -74,6 +75,7 @@ public:
         descEdit       (nullptr),
         dateEdit       (nullptr),
         urlsEdit       (nullptr),
+        nbImagesLabel  (nullptr),
         list           (nullptr)
     {
     }
@@ -93,6 +95,7 @@ public:
     QLineEdit*                      descEdit;
     QDateTimeEdit*                  dateEdit;
     DItemsList*                     urlsEdit;
+    QLabel*                         nbImagesLabel;
     ShowfotoStackViewFavoriteList*  list;
 };
 
@@ -184,10 +187,16 @@ ShowfotoStackViewFavoriteDlg::ShowfotoStackViewFavoriteDlg(ShowfotoStackViewFavo
     QLabel* const urlsLabel = new QLabel(page);
     urlsLabel->setText(i18nc("@label: favorites properties", "&Items:"));
 
+    d->nbImagesLabel        = new QLabel(page);
+    QFont fnt;
+    fnt.setItalic(true);
+    d->nbImagesLabel->setFont(fnt);
+
     d->urlsEdit             = new DItemsList(page, ShowfotoStackViewList::SizeSmall);
     d->urlsEdit->setAllowRAW(true);
     d->urlsEdit->setAllowDuplicate(false);
-    d->urlsEdit->setControlButtonsPlacement(DItemsList::NoControlButtons);
+    d->urlsEdit->setControlButtonsPlacement(DItemsList::ControlButtonsBelow);
+    d->urlsEdit->setControlButtons(DItemsList::Add | DItemsList::Remove | DItemsList::Clear);
     urlsLabel->setBuddy(d->urlsEdit);
 
     // --------------------------------------------------------
@@ -201,10 +210,11 @@ ShowfotoStackViewFavoriteDlg::ShowfotoStackViewFavoriteDlg(ShowfotoStackViewFavo
     grid->addWidget(iconTextLabel,      3, 0, 1, 1);
     grid->addWidget(d->iconButton,      3, 1, 1, 1);
     grid->addWidget(d->resetIconButton, 3, 2, 1, 1);
-    grid->addWidget(urlsLabel,          4, 0, 1, 1);
-    grid->addWidget(d->urlsEdit,        4, 1, 1, 3);
-    grid->setRowStretch(5, 10);
-    grid->setColumnStretch(1, 10);
+    grid->addWidget(d->urlsEdit,        4, 1, 4, 3);
+    grid->addWidget(urlsLabel,          5, 0, 1, 1);
+    grid->addWidget(d->nbImagesLabel,   6, 0, 1, 1);
+    grid->setRowStretch(7, 10);
+    grid->setColumnStretch(2, 10);
 
     QVBoxLayout* const vbx = new QVBoxLayout(this);
     vbx->addWidget(page);
@@ -269,6 +279,9 @@ void ShowfotoStackViewFavoriteDlg::slotAccept()
 void ShowfotoStackViewFavoriteDlg::slotModified()
 {
     d->buttons->button(QDialogButtonBox::Ok)->setEnabled(canAccept());
+
+    int numberOfImages = d->urlsEdit->imageUrls().count();
+    d->nbImagesLabel->setText(i18np("%1 image", "%1 images", numberOfImages));
 }
 
 QString ShowfotoStackViewFavoriteDlg::name() const
