@@ -83,6 +83,7 @@ Q_SIGNALS:
     void signalItemListChanged(int nbitems);
     void signalAddFavorite();
     void signalClearItemsList();
+    void signalRemoveItemInfos(const QList<ShowfotoItemInfo>& infos);
     void signalShowfotoItemInfoActivated(const ShowfotoItemInfo& info);
 
 private:
@@ -113,6 +114,7 @@ private Q_SLOTS:
     void slotSelectionChanged(QTreeWidgetItem*);
     void slotItemDoubleClicked(QTreeWidgetItem*);
     void slotItemsListChanged();
+    void slotRemoveItems();
 
 private:
 

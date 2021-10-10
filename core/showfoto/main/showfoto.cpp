@@ -426,6 +426,16 @@ void Showfoto::slotClearThumbBar()
     d->model->clearShowfotoItemInfos();
 }
 
+void Showfoto::slotRemoveItemInfos(const QList<ShowfotoItemInfo>& infos)
+{
+    foreach (const ShowfotoItemInfo& inf, infos)
+    {
+        d->infoList.removeAll(inf);
+    }
+
+    d->model->removeShowfotoItemInfos(infos);
+}
+
 void Showfoto::slotOpenFilesfromPath(const QStringList& files)
 {
     if (files.isEmpty())

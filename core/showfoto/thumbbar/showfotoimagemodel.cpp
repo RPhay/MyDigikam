@@ -429,6 +429,20 @@ static bool pairsContain(const List& list, T value)
     return false;
 }
 */
+
+void ShowfotoItemModel::removeShowfotoItemInfo(const ShowfotoItemInfo& info)
+{
+    removeIndex(indexForShowfotoItemInfo(info));
+}
+
+void ShowfotoItemModel::removeShowfotoItemInfos(const QList<ShowfotoItemInfo>& infos)
+{
+    foreach (const ShowfotoItemInfo& inf, infos)
+    {
+        removeIndex(indexForShowfotoItemInfo(inf));
+    }
+}
+
 void ShowfotoItemModel::removeIndex(const QModelIndex& index)
 {
     removeIndexs(QList<QModelIndex>() << index);

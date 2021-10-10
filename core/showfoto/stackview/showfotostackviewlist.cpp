@@ -417,6 +417,14 @@ void ShowfotoStackViewList::contextMenuEvent(QContextMenuEvent* e)
     connect(clearListAction, SIGNAL(triggered()),
             this, SIGNAL(signalClearItemsList()));
 
+    QAction* const removeItemsAction = new QAction(QIcon::fromTheme(QLatin1String("edit-clear")),
+                                                   i18nc("@action: context menu", "Remove Items"), this);
+
+    ctxmenu->addAction(removeItemsAction);
+
+    connect(removeItemsAction, SIGNAL(triggered()),
+            this, SLOT(slotRemoveItems()));
+
     ctxmenu->exec(e->globalPos());
 
     if      (sizeSmall->isChecked())
@@ -439,6 +447,30 @@ void ShowfotoStackViewList::contextMenuEvent(QContextMenuEvent* e)
     delete ctxmenu;
 
     QTreeView::contextMenuEvent(e);
+}
+
+void ShowfotoStackViewList::slotRemoveItems()
+{
+    QList<QTreeWidgetItem*> sel = selectedItems();
+
+    if (sel.isEmpty())
+    {
+        return;
+    }
+
+    QList<ShowfotoItemInfo> infos;
+
+    foreach (QTreeWidgetItem* const item, sel)
+    {
+        ShowfotoStackViewItem* const sitem = dynamic_cast<ShowfotoStackViewItem*>(item);
+
+        if (sitem)
+        {
+            infos << sitem->info();
+        }
+    }
+
+    emit signalRemoveItemInfos(infos);
 }
 
 void ShowfotoStackViewList::hideToolTip()

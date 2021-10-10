@@ -85,6 +85,7 @@ Q_SIGNALS:
     void signalLoadContentsFromFiles(const QStringList& files);
     void signalAddFavorite();
     void signalClearItemsList();
+    void signalRemoveItemInfos(const QList<ShowfotoItemInfo>& infos);
 
 private:
 

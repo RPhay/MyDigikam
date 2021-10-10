@@ -84,6 +84,9 @@ void Showfoto::setupConnections()
     connect(d->stackView, SIGNAL(signalClearItemsList()),
             this, SLOT(slotClearThumbBar()));
 
+    connect(d->stackView, SIGNAL(signalRemoveItemInfos(QList<ShowfotoItemInfo>)),
+            this, SLOT(slotRemoveItemInfos(QList<ShowfotoItemInfo>)));
+
     connect(this, SIGNAL(signalSelectionChanged(QRect)),
             d->rightSideBar, SLOT(slotImageSelectionChanged(QRect)));
 

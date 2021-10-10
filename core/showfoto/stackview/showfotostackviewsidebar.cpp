@@ -119,6 +119,9 @@ ShowfotoStackViewSideBar::ShowfotoStackViewSideBar(Showfoto* const parent)
     connect(d->view, SIGNAL(signalClearItemsList()),
             this, SIGNAL(signalClearItemsList()));
 
+    connect(d->view, SIGNAL(signalRemoveItemInfos(QList<ShowfotoItemInfo>)),
+            this, SIGNAL(signalRemoveItemInfos(QList<ShowfotoItemInfo>)));
+
     connect(d->view, SIGNAL(signalShowfotoItemInfoActivated(ShowfotoItemInfo)),
             this, SIGNAL(signalShowfotoItemInfoActivated(ShowfotoItemInfo)));
 
