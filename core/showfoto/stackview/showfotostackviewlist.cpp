@@ -467,6 +467,7 @@ void ShowfotoStackViewList::slotRemoveItems()
         if (sitem)
         {
             infos << sitem->info();
+            delete sitem;
         }
     }
 

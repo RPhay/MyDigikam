@@ -214,7 +214,7 @@ ShowfotoStackViewFavoriteDlg::ShowfotoStackViewFavoriteDlg(ShowfotoStackViewFavo
     grid->addWidget(urlsLabel,          5, 0, 1, 1);
     grid->addWidget(d->nbImagesLabel,   6, 0, 1, 1);
     grid->setRowStretch(7, 10);
-    grid->setColumnStretch(2, 10);
+    grid->setColumnStretch(3, 10);
 
     QVBoxLayout* const vbx = new QVBoxLayout(this);
     vbx->addWidget(page);

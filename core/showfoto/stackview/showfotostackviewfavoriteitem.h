@@ -43,7 +43,7 @@ class ShowfotoStackViewFavoriteItem : public QTreeWidgetItem
 public:
 
     explicit ShowfotoStackViewFavoriteItem(QTreeWidgetItem* const parent);
-    ~ShowfotoStackViewFavoriteItem()    override;
+    ~ShowfotoStackViewFavoriteItem() override;
 
     void setName(const QString& name);
     QString name()            const;
