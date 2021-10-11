@@ -120,84 +120,87 @@ void Showfoto::setupConnections()
 
 void Showfoto::setupUserArea()
 {
-    KSharedConfig::Ptr config  = KSharedConfig::openConfig();
-    KConfigGroup group         = config->group(configGroupName());
+    // --- Top level view
 
-    QWidget* const widget      = new QWidget(this);
-    QHBoxLayout* const hlay    = new QHBoxLayout(widget);
-    m_splitter                 = new Digikam::SidebarSplitter(widget);
-
-    const int spacing          = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
-    d->leftSideBar             = new Digikam::Sidebar(widget, m_splitter, Qt::LeftEdge);
-    d->leftSideBar->setObjectName(QLatin1String("ShowFoto Sidebar Left"));
-    d->leftSideBar->setContentsMargins(0, 0, spacing, 0);
-
-    d->folderView              = new ShowfotoFolderViewSideBar(this);
-    d->leftSideBar->appendTab(d->folderView, d->folderView->getIcon(), d->folderView->getCaption());
-
-    d->stackView               = new ShowfotoStackViewSideBar(this);
-    d->leftSideBar->appendTab(d->stackView, d->stackView->getIcon(), d->stackView->getCaption());
-
-    KMainWindow* const viewContainer = new KMainWindow(widget, Qt::Widget);
-    m_splitter->addWidget(viewContainer);
-    m_stackView                      = new Digikam::EditorStackView(viewContainer);
-    m_canvas                         = new Digikam::Canvas(m_stackView);
-    viewContainer->setCentralWidget(m_stackView);
-
+    QWidget* const widget            = new QWidget(this);
+    m_splitter                       = new Digikam::SidebarSplitter(widget);
     m_splitter->setFrameStyle(QFrame::NoFrame);
     m_splitter->setFrameShape(QFrame::NoFrame);
     m_splitter->setFrameShadow(QFrame::Plain);
     m_splitter->setStretchFactor(1, 10);      // set Canvas default size to max.
     m_splitter->setOpaqueResize(false);
 
+    // --- Left side
+
+    const int spacing                = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
+    d->leftSideBar                   = new Digikam::Sidebar(widget, m_splitter, Qt::LeftEdge);
+    d->leftSideBar->setObjectName(QLatin1String("ShowFoto Sidebar Left"));
+    d->leftSideBar->setContentsMargins(0, 0, spacing, 0);
+
+    d->folderView                    = new ShowfotoFolderViewSideBar(this);
+    d->leftSideBar->appendTab(d->folderView, d->folderView->getIcon(), d->folderView->getCaption());
+
+    d->stackView                     = new ShowfotoStackViewSideBar(this);
+    d->leftSideBar->appendTab(d->stackView, d->stackView->getIcon(), d->stackView->getCaption());
+
+    // --- Central view
+
+    KMainWindow* const viewContainer = new KMainWindow(widget, Qt::Widget);
+    viewContainer->setAutoSaveSettings(QLatin1String("ImageViewer Thumbbar"), true);
+    m_splitter->addWidget(viewContainer);
+    m_stackView                      = new Digikam::EditorStackView(viewContainer);
+    m_canvas                         = new Digikam::Canvas(m_stackView);
+    viewContainer->setCentralWidget(m_stackView);
+
     m_canvas->makeDefaultEditingCanvas();
     m_stackView->setCanvas(m_canvas);
     m_stackView->setViewMode(Digikam::EditorStackView::CanvasMode);
 
-    d->rightSideBar = new Digikam::ItemPropertiesSideBar(widget, m_splitter, Qt::RightEdge);
+    // --- Right side
+
+    d->rightSideBar                  = new Digikam::ItemPropertiesSideBar(widget, m_splitter, Qt::RightEdge);
     d->rightSideBar->setObjectName(QLatin1String("ShowFoto Sidebar Right"));
 
-    hlay->addWidget(d->leftSideBar);
-    hlay->addWidget(m_splitter);
-    hlay->addWidget(d->rightSideBar);
-    hlay->setContentsMargins(QMargins());
-    hlay->setSpacing(0);
+    // --- Thumb bar
 
-    // Code to check for the now depreciated HorizontalThumbar directive. It
+    d->thumbBarDock                  = new Digikam::ThumbBarDock(viewContainer, Qt::Tool);
+    d->thumbBar                      = new ShowfotoThumbnailBar(d->thumbBarDock);
+    d->thumbBarDock->setObjectName(QLatin1String("editor_thumbbar"));
+    d->thumbBarDock->setAllowedAreas(Qt::TopDockWidgetArea  | Qt::BottomDockWidgetArea);
+    d->thumbBarDock->setFloating(false);
+    d->thumbBarDock->setWidget(d->thumbBar);
+
+    // NOTE: this code check for the now depreciated HorizontalThumbar directive. If
     // is found, it is honored and deleted. The state will from than on be saved
     // by viewContainers built-in mechanism.
 
-    Qt::DockWidgetArea dockArea = Qt::TopDockWidgetArea;
+    viewContainer->addDockWidget(Qt::TopDockWidgetArea, d->thumbBarDock);
 
-    d->thumbBarDock = new Digikam::ThumbBarDock(viewContainer, Qt::Tool);
-    d->thumbBarDock->setObjectName(QLatin1String("editor_thumbbar"));
-    d->thumbBarDock->setAllowedAreas(Qt::TopDockWidgetArea  | Qt::BottomDockWidgetArea);
-    d->thumbBar     = new ShowfotoThumbnailBar(d->thumbBarDock);
-
-    d->thumbBarDock->setWidget(d->thumbBar);
-
-    viewContainer->addDockWidget(dockArea, d->thumbBarDock);
-    d->thumbBarDock->setFloating(false);
-
-    d->model       = new ShowfotoThumbnailModel(d->thumbBar);
+    d->model                         = new ShowfotoThumbnailModel(d->thumbBar);
     d->model->setThumbnailLoadThread(d->thumbLoadThread);
     d->model->setSendRemovalSignals(true);
 
-    d->dDHandler   = new ShowfotoDragDropHandler(d->model);
+    d->dDHandler                     = new ShowfotoDragDropHandler(d->model);
     d->model->setDragDropHandler(d->dDHandler);
 
-    d->filterModel = new ShowfotoFilterModel(d->thumbBar);
+    d->filterModel                   = new ShowfotoFilterModel(d->thumbBar);
     d->filterModel->setSourceShowfotoModel(d->model);
     d->filterModel->setCategorizationMode(ShowfotoItemSortSettings::NoCategories);
     d->filterModel->sort(0);
 
     d->thumbBar->setModels(d->model, d->filterModel);
     d->thumbBar->setSelectionMode(QAbstractItemView::SingleSelection);
-
-    viewContainer->setAutoSaveSettings(QLatin1String("ImageViewer Thumbbar"), true);
-
     d->thumbBar->installOverlays();
     d->stackView->setThumbbar(d->thumbBar);
+
+    // --- Main layout
+
+    QHBoxLayout* const hlay          = new QHBoxLayout(widget);
+    hlay->addWidget(d->leftSideBar);
+    hlay->addWidget(m_splitter);
+    hlay->addWidget(d->rightSideBar);
+    hlay->setContentsMargins(QMargins());
+    hlay->setSpacing(0);
 
     setCentralWidget(widget);
 }
