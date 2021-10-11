@@ -190,6 +190,9 @@
 #if defined(qDNGLittleEndian)
 #define qDNGBigEndian !qDNGLittleEndian
 
+#elif defined(__s390__) || defined(__s390x__)
+#define qDNGBigEndian 1
+
 #elif defined(__POWERPC__)
 #define qDNGBigEndian 1
 
