@@ -166,7 +166,7 @@ BUGFIXES:
 151 ==> 443084 - digiKam 7.2.0 on windows 10 cannot download the last update 7.3.0.
 152 ==> 443238 - Unable to connect to ubuntu 20.04 installed Mysql server 8.0.26.
 153 ==> 443348 - Selected "Recent tag" not shown when "Tags already assigned" is activated.
-154 ==> 
+154 ==> 443606 - digiKam fails to build on s390x.
 155 ==> 
 156 ==> 
 157 ==> 
