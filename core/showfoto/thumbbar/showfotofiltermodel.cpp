@@ -411,7 +411,9 @@ void ShowfotoFilterModel::setDirectSourceShowfotoModel(ShowfotoItemModel* const 
         connect(d, SIGNAL(reAddingFinished()),
                 d->showfotoItemModel, SLOT(reAddingFinished()));
 
-        TODO: connect(d->showfotoItemModel, SIGNAL(modelReset()), this, SLOT(slotModelReset()));
+        TODO
+        connect(d->showfotoItemModel, SIGNAL(modelReset()),
+                this, SLOT(slotModelReset()));
 */
     }
 
@@ -432,7 +434,8 @@ int ShowfotoFilterModel::compareCategories(const QModelIndex& left, const QModel
         return (-1);
     }
 
-    return compareInfosCategories(d->showfotoItemModel->showfotoItemInfoRef(left), d->showfotoItemModel->showfotoItemInfoRef(right));
+    return compareInfosCategories(d->showfotoItemModel->showfotoItemInfoRef(left),
+                                  d->showfotoItemModel->showfotoItemInfoRef(right));
 }
 
 bool ShowfotoFilterModel::subSortLessThan(const QModelIndex& left, const QModelIndex& right) const

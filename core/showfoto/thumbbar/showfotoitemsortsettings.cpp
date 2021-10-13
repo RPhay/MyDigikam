@@ -31,14 +31,14 @@ namespace ShowFoto
 {
 
 ShowfotoItemSortSettings::ShowfotoItemSortSettings()
-    : categorizationMode(NoCategories),
-      categorizationSortOrder(DefaultOrder),
+    : categorizationMode            (NoCategories),
+      categorizationSortOrder       (DefaultOrder),
       currentCategorizationSortOrder(Qt::AscendingOrder),
-      categorizationCaseSensitivity(Qt::CaseSensitive),
-      sortOrder(DefaultOrder),
-      sortRole(SortByFileName),
-      currentSortOrder(Qt::AscendingOrder),
-      sortCaseSensitivity(Qt::CaseSensitive)
+      categorizationCaseSensitivity (Qt::CaseSensitive),
+      sortOrder                     (DefaultOrder),
+      sortRole                      (SortByFileName),
+      currentSortOrder              (Qt::AscendingOrder),
+      sortCaseSensitivity           (Qt::CaseSensitive)
 {
 }
 
@@ -114,7 +114,9 @@ Qt::SortOrder ShowfotoItemSortSettings::defaultSortOrderForCategorizationMode(Ca
         case CategoryByFolder:
         case CategoryByFormat:
         default:
+        {
             return Qt::AscendingOrder;
+        }
     }
 }
 
@@ -124,13 +126,19 @@ Qt::SortOrder ShowfotoItemSortSettings::defaultSortOrderForSortRole(SortRole rol
     {
         case SortByFileName:
         case SortByFileSize:
+        {
             return Qt::DescendingOrder;
+        }
 
         case SortByCreationDate:
+        {
             return Qt::AscendingOrder;
+        }
 
         default:
+        {
             return Qt::AscendingOrder;
+        }
     }
 }
 
@@ -140,13 +148,19 @@ int ShowfotoItemSortSettings::compareCategories(const ShowfotoItemInfo& left, co
     {
         case NoCategories:
         case CategoryByFolder:
+        {
             return naturalCompare(left.folder, right.folder, currentCategorizationSortOrder, categorizationCaseSensitivity);
+        }
 
         case CategoryByFormat:
+        {
             return naturalCompare(left.mime, right.mime, currentCategorizationSortOrder, categorizationCaseSensitivity);
+        }
 
         default:
+        {
             return 0;
+        }
     }
 }
 
@@ -187,19 +201,30 @@ int ShowfotoItemSortSettings::compare(const ShowfotoItemInfo& left, const Showfo
     switch (role)
     {
         case SortByFileName:
+        {
             return naturalCompare(left.name, right.name, currentSortOrder, sortCaseSensitivity);
+        }
 
         case SortByFileSize:
+        {
             return compareByOrder(left.size, right.size, currentSortOrder);
 
-            // FIXME: Change it to creation date instead of modification date.
-            // TODO : complete the needed functions
+        }
+
+        // FIXME: Change it to creation date instead of modification date.
+        // TODO : complete the needed functions
 
         case SortByCreationDate:
-            return compareByOrder(left.ctime, right.ctime, currentSortOrder);
+        {
+            return compareByOrder((left.ctime.isValid()  ? left.ctime  : left.dtime),
+                                  (right.ctime.isValid() ? right.ctime : right.dtime),
+                                  currentSortOrder);
+        }
 
         default:
+        {
             return 1;
+        }
     }
 }
 
@@ -213,28 +238,44 @@ bool ShowfotoItemSortSettings::lessThan(const QVariant& left, const QVariant& ri
     switch (left.type())
     {
         case QVariant::Int:
+        {
             return compareByOrder(left.toInt(), right.toInt(), currentSortOrder);
+        }
 
         case QVariant::UInt:
+        {
             return compareByOrder(left.toUInt(), right.toUInt(), currentSortOrder);
+        }
 
         case QVariant::LongLong:
+        {
             return compareByOrder(left.toLongLong(), right.toLongLong(), currentSortOrder);
+        }
 
         case QVariant::ULongLong:
+        {
             return compareByOrder(left.toULongLong(), right.toULongLong(), currentSortOrder);
+        }
 
         case QVariant::Double:
+        {
             return compareByOrder(left.toDouble(), right.toDouble(), currentSortOrder);
+        }
 /*
         case QVariant::Date:
+        {
             return compareByOrder(left.toDate(), right.toDate(), currentSortOrder);
+        }
 
         case QVariant::DateTime:
+        {
             return compareByOrder(left.toDateTime(), right.toDateTime(), currentSortOrder);
+        }
 
         case QVariant::Time:
+        {
             return compareByOrder(left.toTime(), right.toTime(), currentSortOrder);
+        }
 */
         case QVariant::Rect:
         case QVariant::RectF:

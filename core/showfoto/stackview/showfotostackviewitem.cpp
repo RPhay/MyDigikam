@@ -41,6 +41,7 @@
 
 #include "digikam_debug.h"
 #include "showfotostackviewlist.h"
+#include "showfotoitemsortsettings.h"
 #include "itempropertiestab.h"
 #include "drawdecoder.h"
 
@@ -111,37 +112,55 @@ void ShowfotoStackViewItem::setThumbnail(const QPixmap& thumb)
 
 bool ShowfotoStackViewItem::operator<(const QTreeWidgetItem& other) const
 {
-    bool result = false;
-    int column  = treeWidget()->sortColumn();
+    ShowfotoStackViewList* const parent = dynamic_cast<ShowfotoStackViewList*>(treeWidget());
+
+    if (!parent)
+    {
+        return false;
+    }
+
+    int result                     = 0;
+    int column                     = parent->sortColumn();
+    Qt::SortOrder currentSortOrder = (Qt::SortOrder)parent->sortOrder();
 
     switch (column)
     {
         case ShowfotoStackViewList::FileSize:
         {
-            result = (data(ShowfotoStackViewList::FileSize, Qt::UserRole).toInt() < other.data(ShowfotoStackViewList::FileSize, Qt::UserRole).toInt());
+            result = (ShowfotoItemSortSettings::compareByOrder(data(ShowfotoStackViewList::FileSize, Qt::UserRole).toInt(),
+                                                               other.data(ShowfotoStackViewList::FileSize, Qt::UserRole).toInt(),
+                                                               currentSortOrder));
             break;
         }
 
         case ShowfotoStackViewList::FileType:
         {
-            result = (text(ShowfotoStackViewList::FileType) < other.text(ShowfotoStackViewList::FileType));
+            result = (ShowfotoItemSortSettings::naturalCompare(text(ShowfotoStackViewList::FileType),
+                                                               other.text(ShowfotoStackViewList::FileType),
+                                                               currentSortOrder,
+                                                               Qt::CaseSensitive));
             break;
         }
 
         case ShowfotoStackViewList::FileDate:
         {
-            result = (data(ShowfotoStackViewList::FileDate, Qt::UserRole).toDateTime() < other.data(ShowfotoStackViewList::FileDate, Qt::UserRole).toDateTime());
+            result = (ShowfotoItemSortSettings::compareByOrder(data(ShowfotoStackViewList::FileDate, Qt::UserRole).toDateTime(),
+                                                               other.data(ShowfotoStackViewList::FileDate, Qt::UserRole).toDateTime(),
+                                                               currentSortOrder));
             break;
         }
 
         default:    // ShowfotoStackViewList::FileName
         {
-            result = (text(ShowfotoStackViewList::FileName) < other.text(ShowfotoStackViewList::FileName));
+            result = (ShowfotoItemSortSettings::naturalCompare(text(ShowfotoStackViewList::FileName),
+                                                               other.text(ShowfotoStackViewList::FileName),
+                                                               currentSortOrder,
+                                                               Qt::CaseSensitive));
             break;
         }
     }
 
-    return result;
+    return (result < 0);
 }
 
 } // namespace ShowFoto

@@ -74,6 +74,9 @@ public:
     ShowfotoItemInfo infoFromIndex(const QModelIndex& index)      const;
     QList<QUrl> urls();
 
+    int sortOrder()                                               const;
+    int sortRole()                                                const;
+
 public Q_SLOTS:
 
     void slotIconSizeChanged(int);

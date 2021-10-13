@@ -68,7 +68,10 @@ public:
     const QString getCaption();
 
     void setSortOrder(int order);
+    int sortOrder()                     const;
+
     void setSortRole(int role);
+    int sortRole()                      const;
 
     void registerPluginActions(const QList<DPluginAction*>& actions);
     QList<QAction*> pluginActions()     const;

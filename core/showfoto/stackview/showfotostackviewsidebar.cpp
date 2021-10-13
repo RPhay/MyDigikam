@@ -150,10 +150,20 @@ void ShowfotoStackViewSideBar::setSortOrder(int order)
     d->view->sortItems(d->role, d->sortOrder);
 }
 
+int ShowfotoStackViewSideBar::sortOrder() const
+{
+    return d->sortOrder;
+}
+
 void ShowfotoStackViewSideBar::setSortRole(int role)
 {
     d->role = (ShowfotoStackViewList::StackViewRole)role;
     d->view->sortItems(d->role, d->sortOrder);
+}
+
+int ShowfotoStackViewSideBar::sortRole() const
+{
+    return d->role;
 }
 
 void ShowfotoStackViewSideBar::registerPluginActions(const QList<DPluginAction*>& actions)

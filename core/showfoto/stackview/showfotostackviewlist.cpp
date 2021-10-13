@@ -122,6 +122,16 @@ ShowfotoStackViewList::~ShowfotoStackViewList()
     delete d;
 }
 
+int ShowfotoStackViewList::sortOrder() const
+{
+    return d->view->sortOrder();
+}
+
+int ShowfotoStackViewList::sortRole() const
+{
+    return d->view->sortRole();
+}
+
 void ShowfotoStackViewList::setThumbbar(ShowfotoThumbnailBar* const thumbbar)
 {
     d->thumbbar = thumbbar;

@@ -221,7 +221,7 @@ void ShowfotoDelegate::paint(QPainter* p, const QStyleOptionViewItem& option, co
 
     if (!d->dateRect.isNull())
     {
-        drawCreationDate(p, d->dateRect, info.ctime);
+        drawCreationDate(p, d->dateRect, (info.ctime.isValid() ? info.ctime : info.dtime));
     }
 
     if (!d->sizeRect.isNull())
