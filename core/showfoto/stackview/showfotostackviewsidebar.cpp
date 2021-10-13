@@ -146,7 +146,7 @@ QList<QUrl> ShowfotoStackViewSideBar::urls() const
 
 void ShowfotoStackViewSideBar::setSortOrder(int order)
 {
-    d->sortOrder = (order == ShowfotoItemSortSettings::AscendingOrder) ? Qt::DescendingOrder : Qt::AscendingOrder; // Inverted compared to Thumbbar.
+    d->sortOrder = (Qt::SortOrder)order;
     d->view->sortItems(d->role, d->sortOrder);
 }
 

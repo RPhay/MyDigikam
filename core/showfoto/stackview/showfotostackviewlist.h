@@ -67,11 +67,11 @@ public:
 public:
 
     explicit ShowfotoStackViewList(ShowfotoStackViewSideBar* const view);
-    ~ShowfotoStackViewList()                                           override;
+    ~ShowfotoStackViewList()                                            override;
 
     void setThumbbar(ShowfotoThumbnailBar* const thumbbar);
 
-    ShowfotoItemInfo infoFromIndex(const QModelIndex& index) const;
+    ShowfotoItemInfo infoFromIndex(const QModelIndex& index)      const;
     QList<QUrl> urls();
 
 public Q_SLOTS:

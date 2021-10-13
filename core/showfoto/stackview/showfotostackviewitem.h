@@ -45,12 +45,14 @@ class ShowfotoStackViewItem : public QTreeWidgetItem
 public:
 
     explicit ShowfotoStackViewItem(ShowfotoStackViewList* const parent);
-    ~ShowfotoStackViewItem()               override;
+    ~ShowfotoStackViewItem()                           override;
 
     void setInfo(const ShowfotoItemInfo&);
-    ShowfotoItemInfo info()      const;
+    ShowfotoItemInfo info()                      const;
 
     void setThumbnail(const QPixmap&);
+
+    bool operator<(const QTreeWidgetItem& other) const override;
 
 private:
 

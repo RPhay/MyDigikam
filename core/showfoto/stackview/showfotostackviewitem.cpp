@@ -68,6 +68,7 @@ void ShowfotoStackViewItem::setInfo(const ShowfotoItemInfo& info)
     QDateTime dt           = (m_info.ctime.isValid() ? m_info.ctime : m_info.dtime);
     QString str            = QLocale().toString(dt, QLocale::ShortFormat);
     setText(ShowfotoStackViewList::FileDate, str);
+    setData(ShowfotoStackViewList::FileDate, Qt::UserRole, dt);
 
     QFileInfo fileInfo(m_info.name);
     QString rawFilesExt    = DRawDecoder::rawFiles();
@@ -85,6 +86,7 @@ void ShowfotoStackViewItem::setInfo(const ShowfotoItemInfo& info)
     QString localeFileSize = QLocale().toString(info.size);
     str                    = ItemPropertiesTab::humanReadableBytesCount(m_info.size);
     setText(ShowfotoStackViewList::FileSize, str);
+    setData(ShowfotoStackViewList::FileSize, Qt::UserRole, info.size);
 }
 
 ShowfotoItemInfo ShowfotoStackViewItem::info() const
@@ -105,6 +107,41 @@ void ShowfotoStackViewItem::setThumbnail(const QPixmap& thumb)
                  pix);
 
     setIcon(0, icon);
+}
+
+bool ShowfotoStackViewItem::operator<(const QTreeWidgetItem& other) const
+{
+    bool result = false;
+    int column  = treeWidget()->sortColumn();
+
+    switch (column)
+    {
+        case ShowfotoStackViewList::FileSize:
+        {
+            result = (data(ShowfotoStackViewList::FileSize, Qt::UserRole).toInt() < other.data(ShowfotoStackViewList::FileSize, Qt::UserRole).toInt());
+            break;
+        }
+
+        case ShowfotoStackViewList::FileType:
+        {
+            result = (text(ShowfotoStackViewList::FileType) < other.text(ShowfotoStackViewList::FileType));
+            break;
+        }
+
+        case ShowfotoStackViewList::FileDate:
+        {
+            result = (data(ShowfotoStackViewList::FileDate, Qt::UserRole).toDateTime() < other.data(ShowfotoStackViewList::FileDate, Qt::UserRole).toDateTime());
+            break;
+        }
+
+        default:    // ShowfotoStackViewList::FileName
+        {
+            result = (text(ShowfotoStackViewList::FileName) < other.text(ShowfotoStackViewList::FileName));
+            break;
+        }
+    }
+
+    return result;
 }
 
 } // namespace ShowFoto
