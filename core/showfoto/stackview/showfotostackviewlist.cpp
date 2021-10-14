@@ -592,4 +592,16 @@ QList<QUrl> ShowfotoStackViewList::urls()
     return list;
 }
 
+QUrl ShowfotoStackViewList::currentUrl() const
+{
+    ShowfotoStackViewItem* sitem = dynamic_cast<ShowfotoStackViewItem*>(currentItem());
+
+    if (sitem)
+    {
+        return (sitem->info().url);
+    }
+
+    return QUrl();
+}
+
 } // namespace ShowFoto

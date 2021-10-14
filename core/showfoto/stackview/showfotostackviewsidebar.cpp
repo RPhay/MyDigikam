@@ -144,6 +144,11 @@ QList<QUrl> ShowfotoStackViewSideBar::urls() const
     return d->view->urls();
 }
 
+QUrl ShowfotoStackViewSideBar::currentUrl() const
+{
+    return d->view->currentUrl();
+}
+
 void ShowfotoStackViewSideBar::setSortOrder(int order)
 {
     d->sortOrder = (Qt::SortOrder)order;

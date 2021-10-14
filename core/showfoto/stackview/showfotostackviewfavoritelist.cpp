@@ -111,8 +111,7 @@ void ShowfotoStackViewFavoriteList::slotLoadContents()
 
     if (fvitem)
     {
-        QStringList lst = fvitem->urlsToPaths();
-        emit signalLoadContentsFromFiles(lst, (!lst.isEmpty() ? lst.first() : QString()));
+        emit signalLoadContentsFromFiles(fvitem->urlsToPaths(), fvitem->currentUrl().toLocalFile());
     }
 }
 
@@ -247,7 +246,7 @@ void ShowfotoStackViewFavoriteList::dropEvent(QDropEvent* e)
             {
                 QTreeWidget::dropEvent(e);
 
-                emit signalAddFavorite(urls);
+                emit signalAddFavorite(urls, urls.first());
 
                 e->acceptProposedAction();
                 return;

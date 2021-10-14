@@ -71,7 +71,7 @@ private Q_SLOTS:
 
     void slotFavoriteDoubleClicked(QTreeWidgetItem*);
     void slotFavoriteSelectionChanged();
-    void slotAddFavorite(const QList<QUrl>& newUrls);
+    void slotAddFavorite(const QList<QUrl>& newUrls, const QUrl& current);
     void slotAddFavorite();
     void slotDelFavorite();
     void slotEdtFavorite();

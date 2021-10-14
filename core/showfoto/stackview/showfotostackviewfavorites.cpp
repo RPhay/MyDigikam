@@ -178,8 +178,8 @@ ShowfotoStackViewFavorites::ShowfotoStackViewFavorites(ShowfotoStackViewSideBar*
     connect(d->favoritesList, SIGNAL(signalAddFavorite()),
             this, SLOT(slotAddFavorite()));
 
-    connect(d->favoritesList, SIGNAL(signalAddFavorite(QList<QUrl>)),
-            this, SLOT(slotAddFavorite(QList<QUrl>)));
+    connect(d->favoritesList, SIGNAL(signalAddFavorite(QList<QUrl>,QUrl)),
+            this, SLOT(slotAddFavorite(QList<QUrl>,QUrl)));
 
     connect(d->favoritesList, SIGNAL(signalLoadContentsFromFiles(QStringList,QString)),
             this, SIGNAL(signalLoadContentsFromFiles(QStringList,QString)));
@@ -215,18 +215,19 @@ void ShowfotoStackViewFavorites::loadContents()
 
 void ShowfotoStackViewFavorites::slotAddFavorite()
 {
-    slotAddFavorite(d->sidebar->urls());
+    slotAddFavorite(d->sidebar->urls(), d->sidebar->currentUrl());
 }
 
-void ShowfotoStackViewFavorites::slotAddFavorite(const QList<QUrl>& newUrls)
+void ShowfotoStackViewFavorites::slotAddFavorite(const QList<QUrl>& newUrls, const QUrl& current)
 {
     QString name;
     QString desc;
-    QDate date       = QDate::currentDate();;
+    QDate date       = QDate::currentDate();
     QString icon     = QLatin1String("folder-favorites");
     QList<QUrl> urls = newUrls;
+    QUrl currentUrl  = current;
 
-    bool ok          = ShowfotoStackViewFavoriteDlg::favoriteCreate(d->favoritesList, name, desc, date, icon, urls);
+    bool ok          = ShowfotoStackViewFavoriteDlg::favoriteCreate(d->favoritesList, name, desc, date, icon, urls, currentUrl);
 
     if (ok)
     {
@@ -236,6 +237,7 @@ void ShowfotoStackViewFavorites::slotAddFavorite(const QList<QUrl>& newUrls)
         item->setDate(date);
         item->setIcon(0, QIcon::fromTheme(icon));
         item->setUrls(urls);
+        item->setCurrentUrl(currentUrl);
     }
 }
 
@@ -273,8 +275,9 @@ void ShowfotoStackViewFavorites::slotEdtFavorite()
     QDate date       = item->date();
     QString icon     = item->icon(0).name();
     QList<QUrl> urls = item->urls();
+    QUrl currentUrl  = item->currentUrl();
 
-    bool ok = ShowfotoStackViewFavoriteDlg::favoriteEdit(d->favoritesList, name, desc, date, icon, urls);
+    bool ok = ShowfotoStackViewFavoriteDlg::favoriteEdit(d->favoritesList, name, desc, date, icon, urls, currentUrl);
 
     if (ok)
     {
@@ -283,6 +286,7 @@ void ShowfotoStackViewFavorites::slotEdtFavorite()
         item->setDate(date);
         item->setIcon(0, QIcon::fromTheme(icon));
         item->setUrls(urls);
+        item->setCurrentUrl(currentUrl);
     }
 }
 
@@ -302,12 +306,11 @@ void ShowfotoStackViewFavorites::slotFavoriteSelectionChanged()
 
 void ShowfotoStackViewFavorites::slotFavoriteDoubleClicked(QTreeWidgetItem* item)
 {
-    ShowfotoStackViewFavoriteItem* const fitem = dynamic_cast<ShowfotoStackViewFavoriteItem*>(item);
+    ShowfotoStackViewFavoriteItem* const fvitem = dynamic_cast<ShowfotoStackViewFavoriteItem*>(item);
 
-    if (fitem)
+    if (fvitem)
     {
-        QStringList files = fitem->urlsToPaths();
-        emit signalLoadContentsFromFiles(fitem->urlsToPaths(), (!files.isEmpty() ? files.first() : QString()));
+        emit signalLoadContentsFromFiles(fvitem->urlsToPaths(), fvitem->currentUrl().toLocalFile());
     }
 }
 
@@ -365,6 +368,10 @@ bool ShowfotoStackViewFavorites::saveSettings()
                 e.setAttribute(QLatin1String("value"), url.toLocalFile());
                 urls.appendChild(e);
             }
+
+            QDomElement curr = doc.createElement(QLatin1String("CurrentUrl"));
+            curr.setAttribute(QLatin1String("value"), item->currentUrl().toLocalFile());
+            elem.appendChild(curr);
 
             elemList.appendChild(elem);
         }
@@ -508,6 +515,15 @@ bool ShowfotoStackViewFavorites::readSettings()
                             {
                                 item->setUrls(urls);
                             }
+                        }
+                        else if (name3 == QLatin1String("CurrentUrl"))
+                        {
+                            if (val3.isEmpty())
+                            {
+                                val3 = QString();
+                            }
+
+                            item->setCurrentUrl(QUrl::fromLocalFile(val3));
                         }
                     }
                 }

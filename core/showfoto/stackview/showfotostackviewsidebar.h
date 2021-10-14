@@ -77,6 +77,7 @@ public:
     QList<QAction*> pluginActions()     const;
 
     QList<QUrl> urls()                  const;
+    QUrl currentUrl()                   const;
 
 private Q_SLOTS:
 

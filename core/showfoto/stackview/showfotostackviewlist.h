@@ -73,6 +73,7 @@ public:
 
     ShowfotoItemInfo infoFromIndex(const QModelIndex& index)      const;
     QList<QUrl> urls();
+    QUrl        currentUrl()                                      const;
 
     int sortOrder()                                               const;
     int sortRole()                                                const;

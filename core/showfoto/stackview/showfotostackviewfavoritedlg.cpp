@@ -309,6 +309,11 @@ QList<QUrl> ShowfotoStackViewFavoriteDlg::urls() const
     return d->urlsEdit->imageUrls();
 }
 
+QUrl ShowfotoStackViewFavoriteDlg::currentUrl() const
+{
+    return d->urlsEdit->getCurrentUrl();
+}
+
 void ShowfotoStackViewFavoriteDlg::setName(const QString& name)
 {
     d->nameEdit->setText(name);
@@ -332,6 +337,11 @@ void ShowfotoStackViewFavoriteDlg::setIcon(const QString& icon)
 void ShowfotoStackViewFavoriteDlg::setUrls(const QList<QUrl>& urls)
 {
     d->urlsEdit->slotAddImages(urls);
+}
+
+void ShowfotoStackViewFavoriteDlg::setCurrentUrl(const QUrl& url)
+{
+    d->urlsEdit->setCurrentUrl(url);
 }
 
 void ShowfotoStackViewFavoriteDlg::slotIconResetClicked()
@@ -367,7 +377,8 @@ bool ShowfotoStackViewFavoriteDlg::favoriteEdit(ShowfotoStackViewFavoriteList* c
                                                 QString& desc,
                                                 QDate& date,
                                                 QString& icon,
-                                                QList<QUrl>& urls)
+                                                QList<QUrl>& urls,
+                                                QUrl& current)
 {
     QPointer<ShowfotoStackViewFavoriteDlg> dlg = new ShowfotoStackViewFavoriteDlg(parent);
     dlg->setName(name);
@@ -375,16 +386,18 @@ bool ShowfotoStackViewFavoriteDlg::favoriteEdit(ShowfotoStackViewFavoriteList* c
     dlg->setDate(date);
     dlg->setIcon(icon);
     dlg->setUrls(urls);
+    dlg->setCurrentUrl(current);
 
     bool valRet = dlg->exec();
 
     if (valRet == QDialog::Accepted)
     {
-        name = dlg->name();
-        desc = dlg->description();
-        date = dlg->date();
-        icon = dlg->icon();
-        urls = dlg->urls();
+        name    = dlg->name();
+        desc    = dlg->description();
+        date    = dlg->date();
+        icon    = dlg->icon();
+        urls    = dlg->urls();
+        current = dlg->currentUrl();
     }
 
     delete dlg;
@@ -397,7 +410,8 @@ bool ShowfotoStackViewFavoriteDlg::favoriteCreate(ShowfotoStackViewFavoriteList*
                                                   QString& desc,
                                                   QDate& date,
                                                   QString& icon,
-                                                  QList<QUrl>& urls)
+                                                  QList<QUrl>& urls,
+                                                  QUrl& current)
 {
     QPointer<ShowfotoStackViewFavoriteDlg> dlg = new ShowfotoStackViewFavoriteDlg(parent, true);
     dlg->setName(name);
@@ -405,16 +419,18 @@ bool ShowfotoStackViewFavoriteDlg::favoriteCreate(ShowfotoStackViewFavoriteList*
     dlg->setDate(date);
     dlg->setIcon(icon);
     dlg->setUrls(urls);
+    dlg->setCurrentUrl(current);
 
     bool valRet = dlg->exec();
 
     if (valRet == QDialog::Accepted)
     {
-        name = dlg->name();
-        desc = dlg->description();
-        date = dlg->date();
-        icon = dlg->icon();
-        urls = dlg->urls();
+        name    = dlg->name();
+        desc    = dlg->description();
+        date    = dlg->date();
+        icon    = dlg->icon();
+        urls    = dlg->urls();
+        current = dlg->currentUrl();
     }
 
     delete dlg;

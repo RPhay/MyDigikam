@@ -97,6 +97,16 @@ QList<QUrl> ShowfotoStackViewFavoriteItem::urls() const
     return m_urls;
 }
 
+void ShowfotoStackViewFavoriteItem::setCurrentUrl(const QUrl& url)
+{
+    m_current = url;
+}
+
+QUrl ShowfotoStackViewFavoriteItem::currentUrl() const
+{
+    return m_current;
+}
+
 QStringList ShowfotoStackViewFavoriteItem::urlsToPaths() const
 {
     QStringList files;

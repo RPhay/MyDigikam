@@ -57,7 +57,7 @@ public:
 Q_SIGNALS:
 
     void signalAddFavorite();
-    void signalAddFavorite(const QList<QUrl>&);
+    void signalAddFavorite(const QList<QUrl>&, const QUrl& current);
     void signalLoadContentsFromFiles(const QStringList& files, const QString& current);
 
 public Q_SLOTS:

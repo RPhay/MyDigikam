@@ -66,6 +66,9 @@ public:
     void setUrls(const QList<QUrl>& urls);
     QList<QUrl> urls()    const;
 
+    void setCurrentUrl(const QUrl& url);
+    QUrl currentUrl()     const;
+
 public:
 
     static bool favoriteEdit(ShowfotoStackViewFavoriteList* const parent,
@@ -73,13 +76,15 @@ public:
                              QString& desc,
                              QDate& date,
                              QString& icon,
-                             QList<QUrl>& urls);
+                             QList<QUrl>& urls,
+                             QUrl& current);
     static bool favoriteCreate(ShowfotoStackViewFavoriteList* const parent,
                                QString& name,
                                QString& desc,
                                QDate& date,
                                QString& icon,
-                               QList<QUrl>& urls);
+                               QList<QUrl>& urls,
+                               QUrl& current);
 
 private Q_SLOTS:
 

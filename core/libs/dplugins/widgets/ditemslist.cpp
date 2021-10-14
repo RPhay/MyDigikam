@@ -1369,4 +1369,22 @@ QUrl DItemsList::getCurrentUrl() const
     return currentItem->url();
 }
 
+void DItemsList::setCurrentUrl(const QUrl& url)
+{
+    QTreeWidgetItemIterator it(d->listView);
+
+    while (*it)
+    {
+        DItemsListViewItem* const item = dynamic_cast<DItemsListViewItem*>(*it);
+
+        if (item && (item->url() == url))
+        {
+            d->listView->setCurrentItem(item);
+            return;
+        }
+
+        ++it;
+    }
+}
+
 } // namespace Digikam

@@ -145,6 +145,7 @@ public:
     DItemsListViewItem* findItem(const QUrl& url);
     QModelIndex indexFromItem(DItemsListViewItem* item,
                               int column = 0)   const;
+
     DItemsListViewItem* getCurrentItem()        const;
 
     DInfoInterface* iface()                     const;
@@ -261,6 +262,8 @@ public:
 
     virtual QList<QUrl> imageUrls(bool onlyUnprocessed = false)     const;
     virtual void        removeItemByUrl(const QUrl& url);
+
+    void                setCurrentUrl(const QUrl& url);
     QUrl                getCurrentUrl()                             const;
 
     void setIface(DInfoInterface* const iface);

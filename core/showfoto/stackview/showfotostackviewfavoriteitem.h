@@ -57,6 +57,9 @@ public:
     void setUrls(const QList<QUrl>&);
     QList<QUrl> urls()        const;
 
+    void setCurrentUrl(const QUrl& url);
+    QUrl currentUrl()         const;
+
     QStringList urlsToPaths() const;
 
 private:
@@ -68,6 +71,7 @@ private:
     QList<QUrl> m_urls;
     QString     m_desc;
     QDate       m_date;
+    QUrl        m_current;
 
     Q_DISABLE_COPY(ShowfotoStackViewFavoriteItem)
 };
