@@ -111,7 +111,8 @@ void ShowfotoStackViewFavoriteList::slotLoadContents()
 
     if (fvitem)
     {
-        emit signalLoadContentsFromFiles(fvitem->urlsToPaths());
+        QStringList lst = fvitem->urlsToPaths();
+        emit signalLoadContentsFromFiles(lst, (!lst.isEmpty() ? lst.first() : QString()));
     }
 }
 

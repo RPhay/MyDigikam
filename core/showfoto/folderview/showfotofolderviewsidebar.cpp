@@ -210,16 +210,19 @@ void ShowfotoFolderViewSideBar::loadContents(const QModelIndex& index, bool appe
     }
 
     QStringList lst;
+    QString currentFile;
 
     if      (d->fsmodel->isDir(index))
     {
         setCurrentPath(d->fsmodel->filePath(index));
 
-        lst = d->fsmodel->currentFilesPath();
+        lst         = d->fsmodel->currentFilesPath();
+        currentFile = !lst.isEmpty() ? lst.first() : QString();
     }
     else if (d->fsmodel->fileInfo(index).isFile())
     {
-        lst = d->fsmodel->currentFilesPath();
+        lst         = d->fsmodel->currentFilesPath();
+        currentFile = d->fsmodel->fileInfo(index).filePath();
     }
 
     qCDebug(DIGIKAM_SHOWFOTO_LOG) << "Load Contents from:" << currentPath() << "Files:" << lst;
@@ -228,7 +231,7 @@ void ShowfotoFolderViewSideBar::loadContents(const QModelIndex& index, bool appe
     {
         if (!append)
         {
-            emit signalLoadContentsFromFiles(lst);
+            emit signalLoadContentsFromFiles(lst, currentFile);
         }
         else
         {

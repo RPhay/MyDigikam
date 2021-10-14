@@ -85,7 +85,7 @@ private Q_SLOTS:
 Q_SIGNALS:
 
     void signalShowfotoItemInfoActivated(const ShowfotoItemInfo& info);
-    void signalLoadContentsFromFiles(const QStringList& files);
+    void signalLoadContentsFromFiles(const QStringList& files, const QString& current);
     void signalAddFavorite();
     void signalClearItemsList();
     void signalRemoveItemInfos(const QList<ShowfotoItemInfo>& infos);

@@ -438,7 +438,7 @@ void Showfoto::slotRemoveItemInfos(const QList<ShowfotoItemInfo>& infos)
     d->model->removeShowfotoItemInfos(infos);
 }
 
-void Showfoto::slotOpenFilesfromPath(const QStringList& files)
+void Showfoto::slotOpenFilesfromPath(const QStringList& files, const QString& current)
 {
     if (files.isEmpty())
     {
@@ -453,16 +453,22 @@ void Showfoto::slotOpenFilesfromPath(const QStringList& files)
         urls << QUrl::fromLocalFile(path);
     }
 
-    qCDebug(DIGIKAM_GENERAL_LOG) << "urls list" << urls;
+    qCDebug(DIGIKAM_GENERAL_LOG) << "slotOpenFilesfromPath:: urls list" << urls;
 
     openUrls(urls);
 
     emit signalInfoList(d->infoList);
 
-    slotOpenUrl(d->thumbBar->currentInfo());
-    toggleNavigation(1);
+    QUrl curl = QUrl::fromLocalFile(current);
+    slotOpenUrl(d->thumbBar->showfotoItemModel()->showfotoItemInfo(curl));
+
+    int index = d->thumbBar->thumbnailIndexForUrl(curl);
+    toggleNavigation(index);
+
+    qCDebug(DIGIKAM_GENERAL_LOG) << "slotOpenFilesfromPath:: switch to thumb index" << index;
 
     applySortSettings();
+    d->thumbBar->setCurrentUrl(curl);
 }
 
 void Showfoto::slotAppendFilesfromPath(const QStringList& files)
@@ -644,25 +650,11 @@ void Showfoto::slotChanged()
 void Showfoto::slotUpdateItemInfo()
 {
     d->itemsNb = d->thumbBar->showfotoItemInfos().size();
-    int index  = 0;
+    int index  = d->thumbBar->thumbnailIndexForUrl(d->thumbBar->currentUrl());
     QString text;
 
     if (d->itemsNb > 0)
     {
-        index = 1;
-
-        for (int i = 0 ; i < d->itemsNb ; ++i)
-        {
-            QUrl url = d->thumbBar->showfotoItemInfos().at(i).url;
-
-            if (url.matches(d->thumbBar->currentUrl(), QUrl::None))
-            {
-                break;
-            }
-
-            ++index;
-        }
-
         text = i18nc("<Image file name> (<Image number> of <Images in album>)",
                      "%1 (%2 of %3)", d->thumbBar->currentInfo().name,
                      index, d->itemsNb);

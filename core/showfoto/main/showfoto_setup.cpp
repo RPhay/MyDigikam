@@ -72,14 +72,14 @@ void Showfoto::setupConnections()
     connect(d->folderView, SIGNAL(signalLoadContentsFromPath(QString)),
             this, SLOT(slotOpenFolderFromPath(QString)));
 
-    connect(d->folderView, SIGNAL(signalLoadContentsFromFiles(QStringList)),
-            this, SLOT(slotOpenFilesfromPath(QStringList)));
+    connect(d->folderView, SIGNAL(signalLoadContentsFromFiles(QStringList,QString)),
+            this, SLOT(slotOpenFilesfromPath(QStringList,QString)));
 
     connect(d->folderView, SIGNAL(signalAppendContentsFromFiles(QStringList)),
             this, SLOT(slotAppendFilesfromPath(QStringList)));
 
-    connect(d->stackView, SIGNAL(signalLoadContentsFromFiles(QStringList)),
-            this, SLOT(slotOpenFilesfromPath(QStringList)));
+    connect(d->stackView, SIGNAL(signalLoadContentsFromFiles(QStringList,QString)),
+            this, SLOT(slotOpenFilesfromPath(QStringList,QString)));
 
     connect(d->stackView, SIGNAL(signalClearItemsList()),
             this, SLOT(slotClearThumbBar()));

@@ -88,6 +88,25 @@ ShowfotoThumbnailBar::~ShowfotoThumbnailBar()
     delete d;
 }
 
+int ShowfotoThumbnailBar::thumbnailIndexForUrl(const QUrl& url) const
+{
+    int index = 0;
+
+    for (int i = 0 ; i < showfotoItemInfos().size() ; ++i)
+    {
+        QUrl iurl = showfotoItemInfos().at(i).url;
+
+        if (iurl.matches(url, QUrl::None))
+        {
+            index = i + 1;
+        }
+    }
+
+    qCDebug(DIGIKAM_GENERAL_LOG) << "Thumb index for" << url << ":" << index;
+
+    return index;
+}
+
 void ShowfotoThumbnailBar::installOverlays()
 {
     addOverlay(new ShowfotoCoordinatesOverlay(this));

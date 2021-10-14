@@ -65,7 +65,7 @@ public Q_SLOTS:
 Q_SIGNALS:
 
     void signalLoadContents();
-    void signalLoadContentsFromFiles(const QStringList& files);
+    void signalLoadContentsFromFiles(const QStringList& files, const QString& current);
 
 private Q_SLOTS:
 

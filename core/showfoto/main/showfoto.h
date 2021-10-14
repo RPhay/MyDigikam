@@ -97,7 +97,7 @@ private Q_SLOTS:
     void slotOpenUrl(const ShowfotoItemInfo& info);
     void slotDroppedUrls(const QList<QUrl>& droppedUrls,
                          bool dropped);
-    void slotOpenFilesfromPath(const QStringList& files);
+    void slotOpenFilesfromPath(const QStringList& files, const QString& current);
     void slotAppendFilesfromPath(const QStringList& files);
     void slotRemoveImageFromAlbum(const QUrl& url);
 

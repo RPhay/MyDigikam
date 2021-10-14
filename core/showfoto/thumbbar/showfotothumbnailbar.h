@@ -54,6 +54,8 @@ public:
     QModelIndex firstIndex()                            const;
     QModelIndex lastIndex()                             const;
 
+    int thumbnailIndexForUrl(const QUrl& url)           const;
+
     /**
      * Sets the policy always for the one scroll bar which is relevant, depending on orientation.
      */

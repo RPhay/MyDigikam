@@ -110,8 +110,8 @@ ShowfotoStackViewSideBar::ShowfotoStackViewSideBar(Showfoto* const parent)
 
     // --- Setup connections
 
-    connect(d->favts, SIGNAL(signalLoadContentsFromFiles(QStringList)),
-            this, SIGNAL(signalLoadContentsFromFiles(QStringList)));
+    connect(d->favts, SIGNAL(signalLoadContentsFromFiles(QStringList,QString)),
+            this, SIGNAL(signalLoadContentsFromFiles(QStringList,QString)));
 
     connect(d->view, SIGNAL(signalAddFavorite()),
             this, SIGNAL(signalAddFavorite()));
