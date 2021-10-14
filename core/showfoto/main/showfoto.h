@@ -136,6 +136,12 @@ private:
 
     bool setup(bool iccSetupPage = false);
     void applySettings();
+
+    /**
+     * Determine sort ordering for the entries from the Showfoto settings.
+     */
+    void applySortSettings();
+
     void readSettings()                                     override;
     void saveSettings()                                     override;
 

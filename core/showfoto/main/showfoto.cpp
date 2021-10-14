@@ -298,6 +298,8 @@ void Showfoto::slotOpenFolderFromPath(const QString& path)
     {
         return;
     }
+
+    applySortSettings();
 }
 
 void Showfoto::openUrls(const QList<QUrl>& urls)
@@ -459,6 +461,8 @@ void Showfoto::slotOpenFilesfromPath(const QStringList& files)
 
     slotOpenUrl(d->thumbBar->currentInfo());
     toggleNavigation(1);
+
+    applySortSettings();
 }
 
 void Showfoto::slotAppendFilesfromPath(const QStringList& files)
@@ -476,6 +480,7 @@ void Showfoto::slotAppendFilesfromPath(const QStringList& files)
     }
 
     slotDroppedUrls(urls, false);
+    applySortSettings();
 }
 
 void Showfoto::slotDroppedUrls(const QList<QUrl>& droppedUrls, bool dropped)

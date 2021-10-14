@@ -128,8 +128,11 @@ void Showfoto::applySettings()
 
     d->rightSideBar->slotLoadMetadataFilters();
 
-    // Determine sort ordering for the entries from the Showfoto settings:
+    applySortSettings();
+}
 
+void Showfoto::applySortSettings()
+{
     if (d->settings->getReverseSort())
     {
         d->filterModel->setSortOrder(ShowfotoItemSortSettings::DescendingOrder);
