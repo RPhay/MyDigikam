@@ -72,6 +72,7 @@ set(showfoto_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/main/showfoto_setup.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/main/showfoto_config.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/main/showfoto_import.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/main/showfoto_thumbbar.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/main/main.cpp
 )
 

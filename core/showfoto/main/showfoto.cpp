@@ -217,39 +217,6 @@ void Showfoto::show()
     }
 }
 
-void Showfoto::slotClearThumbBar()
-{
-    d->infoList.clear();
-    d->model->clearShowfotoItemInfos();
-}
-
-void Showfoto::slotRemoveItemInfos(const QList<ShowfotoItemInfo>& infos)
-{
-    foreach (const ShowfotoItemInfo& inf, infos)
-    {
-        d->infoList.removeAll(inf);
-    }
-
-    d->model->removeShowfotoItemInfos(infos);
-}
-
-void Showfoto::slotShowfotoItemInfoActivated(const ShowfotoItemInfo& info)
-{
-    if (!d->thumbBar->currentInfo().isNull() && !promptUserSave(d->currentLoadedUrl))
-    {
-        d->thumbBar->setCurrentUrl(d->currentLoadedUrl);
-
-        return;
-    }
-
-    slotOpenUrl(info);
-}
-
-Digikam::ThumbBarDock* Showfoto::thumbBar() const
-{
-    return d->thumbBarDock;
-}
-
 Digikam::Sidebar* Showfoto::rightSideBar() const
 {
     return (dynamic_cast<Digikam::Sidebar*>(d->rightSideBar));
@@ -299,62 +266,6 @@ void Showfoto::slotUpdateItemInfo()
 
     m_nameLabel->setText(text);
     toggleNavigation(index);
-}
-
-void Showfoto::slotFirst()
-{
-    if (!d->thumbBar->currentInfo().isNull() && !promptUserSave(d->thumbBar->currentUrl()))
-    {
-        return;
-    }
-
-    d->thumbBar->toFirstIndex();
-    d->thumbBar->setCurrentInfo(d->thumbBar->showfotoItemInfos().first());
-    slotOpenUrl(d->thumbBar->showfotoItemInfos().first());
-}
-
-void Showfoto::slotLast()
-{
-    if (!d->thumbBar->currentInfo().isNull() && !promptUserSave(d->thumbBar->currentUrl()))
-    {
-        return;
-    }
-
-    d->thumbBar->toLastIndex();
-    d->thumbBar->setCurrentInfo(d->thumbBar->showfotoItemInfos().last());
-    slotOpenUrl(d->thumbBar->showfotoItemInfos().last());
-}
-
-void Showfoto::slotForward()
-{
-    if (!d->thumbBar->currentInfo().isNull() && !promptUserSave(d->thumbBar->currentUrl()))
-    {
-        return;
-    }
-
-    bool currentIsNull = d->thumbBar->currentInfo().isNull();
-
-    if (!currentIsNull)
-    {
-         d->thumbBar->toNextIndex();
-         slotOpenUrl(d->thumbBar->currentInfo());
-    }
-}
-
-void Showfoto::slotBackward()
-{
-    if (!d->thumbBar->currentInfo().isNull() && !promptUserSave(d->thumbBar->currentUrl()))
-    {
-        return;
-    }
-
-    bool currentIsNull = d->thumbBar->currentInfo().isNull();
-
-    if (!currentIsNull)
-    {
-         d->thumbBar->toPreviousIndex();
-         slotOpenUrl(d->thumbBar->currentInfo());
-    }
 }
 
 DInfoInterface* Showfoto::infoIface(DPluginAction* const)
