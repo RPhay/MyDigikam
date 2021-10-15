@@ -197,9 +197,9 @@ ShowfotoStackViewFavoriteDlg::ShowfotoStackViewFavoriteDlg(ShowfotoStackViewFavo
     d->urlsEdit->setAllowDuplicate(false);
     d->urlsEdit->setControlButtonsPlacement(DItemsList::ControlButtonsBelow);
     d->urlsEdit->setControlButtons(DItemsList::Add | DItemsList::Remove | DItemsList::Clear);
-    d->urlsEdit->setToolTip(i18nc("@info", "This is the list of items hosted by this favorite. "
-                                           "The current selected item from this list will be automatically show "
-                                           "in editor when favorite is open."));
+    d->urlsEdit->setToolTip(i18nc("@info", "This is the list of items hosted by this favorite.\n"
+                                           "The current selected item from this list will be automatically\n"
+                                           "shown in editor when favorite is open."));
     urlsLabel->setBuddy(d->urlsEdit);
 
     // --------------------------------------------------------
