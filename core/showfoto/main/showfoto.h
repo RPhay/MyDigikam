@@ -59,6 +59,32 @@ private:
 
     bool queryClose()                                       override;
 
+    Digikam::ThumbBarDock* thumbBar()                 const override;
+    Digikam::Sidebar*      rightSideBar()             const override;
+
+private Q_SLOTS:
+
+    void slotForward()                                      override;
+    void slotBackward()                                     override;
+    void slotLast()                                         override;
+    void slotFirst()                                        override;
+    void slotShowfotoItemInfoActivated(const ShowfotoItemInfo& info);
+    void slotClearThumbBar();
+    void slotRemoveItemInfos(const QList<ShowfotoItemInfo>& infos);
+
+    void slotChanged()                                      override;
+    void slotUpdateItemInfo()                               override;
+
+    void slotOnlineVersionCheck()                           override;
+
+Q_SIGNALS:
+
+    void signalInfoList(const ShowfotoItemInfoList&);
+
+// -- Internal IO file methods implemented in showfoto_iofiles.cpp ----------------------------------------
+
+private:
+
     bool save()                                             override;
     bool saveAs()                                           override;
     void moveFile()                                         override;
@@ -73,24 +99,10 @@ private:
     void saveAsIsComplete()                                 override;
     void saveVersionIsComplete()                            override;
 
-    Digikam::ThumbBarDock* thumbBar()                 const override;
-    Digikam::Sidebar*      rightSideBar()             const override;
-
 private Q_SLOTS:
-
-    void slotForward()                                      override;
-    void slotBackward()                                     override;
-    void slotLast()                                         override;
-    void slotFirst()                                        override;
-    void slotShowfotoItemInfoActivated(const ShowfotoItemInfo& info);
-    void slotClearThumbBar();
-    void slotRemoveItemInfos(const QList<ShowfotoItemInfo>& infos);
 
     void slotRemoveImageFromAlbum(const QUrl& url);
     void slotDeleteCurrentItem()                            override;
-
-    void slotChanged()                                      override;
-    void slotUpdateItemInfo()                               override;
 
     void slotPrepareToLoad()                                override;
     void slotLoadingStarted(const QString& filename)        override;
@@ -100,12 +112,9 @@ private Q_SLOTS:
 
     void slotRevert()                                       override;
 
-    void slotOnlineVersionCheck()                           override;
-
 Q_SIGNALS:
 
     void signalLoadCurrentItem(const QList<QUrl>& urlList);
-    void signalInfoList(const ShowfotoItemInfoList&);
 
 // -- Internal open file methods implemented in showfoto_open.cpp ----------------------------------------
 
