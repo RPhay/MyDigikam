@@ -73,9 +73,6 @@ private:
     void saveAsIsComplete()                                 override;
     void saveVersionIsComplete()                            override;
 
-    void openFolder(const QUrl& url);
-    void openUrls(const QList<QUrl>& urls);
-
     Digikam::ThumbBarDock* thumbBar()                 const override;
     Digikam::Sidebar*      rightSideBar()             const override;
 
@@ -85,22 +82,11 @@ private Q_SLOTS:
     void slotBackward()                                     override;
     void slotLast()                                         override;
     void slotFirst()                                        override;
-    void slotFileWithDefaultApplication()                   override;
-    void slotOpenWith(QAction* action = nullptr)            override;
     void slotShowfotoItemInfoActivated(const ShowfotoItemInfo& info);
     void slotClearThumbBar();
     void slotRemoveItemInfos(const QList<ShowfotoItemInfo>& infos);
 
-    void slotOpenFile();
-    void slotOpenFolder();
-    void slotOpenFolderFromPath(const QString& path);
-    void slotOpenUrl(const ShowfotoItemInfo& info);
-    void slotDroppedUrls(const QList<QUrl>& droppedUrls,
-                         bool dropped);
-    void slotOpenFilesfromPath(const QStringList& files, const QString& current);
-    void slotAppendFilesfromPath(const QStringList& files);
     void slotRemoveImageFromAlbum(const QUrl& url);
-
     void slotDeleteCurrentItem()                            override;
 
     void slotChanged()                                      override;
@@ -114,16 +100,37 @@ private Q_SLOTS:
 
     void slotRevert()                                       override;
 
-    void slotAddedDropedItems(QDropEvent*)                  override;
-
     void slotOnlineVersionCheck()                           override;
 
 Q_SIGNALS:
 
     void signalLoadCurrentItem(const QList<QUrl>& urlList);
+    void signalInfoList(const ShowfotoItemInfoList&);
+
+// -- Internal open file methods implemented in showfoto_open.cpp ----------------------------------------
+
+private:
+
+    void openFolder(const QUrl& url);
+    void openUrls(const QList<QUrl>& urls);
+
+private Q_SLOTS:
+
+    void slotFileWithDefaultApplication()                   override;
+    void slotOpenWith(QAction* action = nullptr)            override;
+    void slotOpenFile();
+    void slotOpenFolder();
+    void slotOpenFolderFromPath(const QString& path);
+    void slotOpenUrl(const ShowfotoItemInfo& info);
+    void slotAddedDropedItems(QDropEvent*)                  override;
+    void slotDroppedUrls(const QList<QUrl>& droppedUrls, bool dropped);
+    void slotOpenFilesfromPath(const QStringList& files, const QString& current);
+    void slotAppendFilesfromPath(const QStringList& files);
+
+Q_SIGNALS:
+
     void signalOpenFolder(const QUrl&);
     void signalOpenFile(const QList<QUrl>& urls);
-    void signalInfoList(const ShowfotoItemInfoList&);
 
 // -- Internal setup methods implemented in showfoto_config.cpp ----------------------------------------
 

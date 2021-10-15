@@ -174,4 +174,14 @@ void Showfoto::applySortSettings()
     }
 }
 
+void Showfoto::slotSetupMetadataFilters(int tab)
+{
+    ShowfotoSetup::execMetadataFilters(this, tab+1);
+}
+
+void Showfoto::slotSetupExifTool()
+{
+    ShowfotoSetup::execExifTool(this);
+}
+
 } // namespace ShowFoto
