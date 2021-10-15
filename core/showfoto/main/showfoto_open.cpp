@@ -87,14 +87,14 @@ void Showfoto::slotOpenFolderFromPath(const QString& path)
 
     if      (inf.isFile())
     {
-        slotDroppedUrls(QList<QUrl>() << QUrl::fromLocalFile(inf.absolutePath()), false);
+        slotDroppedUrls(QList<QUrl>() << QUrl::fromLocalFile(inf.absolutePath()), false, QUrl());
         d->thumbBar->setCurrentUrl(QUrl::fromLocalFile(path));
         slotOpenUrl(d->thumbBar->currentInfo());
     }
     else if (inf.isDir())
     {
         QString dpath(path.endsWith(QLatin1Char('/')) ? path : path + QLatin1Char('/'));
-        slotDroppedUrls(QList<QUrl>() << QUrl::fromLocalFile(dpath), false);
+        slotDroppedUrls(QList<QUrl>() << QUrl::fromLocalFile(dpath), false, QUrl());
         QList<QUrl> urls = d->thumbBar->urls();
 
         if (!urls.isEmpty())
@@ -264,7 +264,7 @@ void Showfoto::slotOpenFilesfromPath(const QStringList& files, const QString& cu
     d->thumbBar->setCurrentUrl(curl);
 }
 
-void Showfoto::slotAppendFilesfromPath(const QStringList& files)
+void Showfoto::slotAppendFilesfromPath(const QStringList& files, const QString& current)
 {
     if (files.isEmpty())
     {
@@ -278,11 +278,11 @@ void Showfoto::slotAppendFilesfromPath(const QStringList& files)
         urls << QUrl::fromLocalFile(file);
     }
 
-    slotDroppedUrls(urls, false);
+    slotDroppedUrls(urls, false, QUrl::fromLocalFile(current));
     applySortSettings();
 }
 
-void Showfoto::slotDroppedUrls(const QList<QUrl>& droppedUrls, bool dropped)
+void Showfoto::slotDroppedUrls(const QList<QUrl>& droppedUrls, bool dropped, const QUrl& current)
 {
     if (droppedUrls.isEmpty())
     {
@@ -346,8 +346,8 @@ void Showfoto::slotDroppedUrls(const QList<QUrl>& droppedUrls, bool dropped)
             d->model->clearShowfotoItemInfos();
             emit signalInfoList(d->infoList);
 
-            slotOpenUrl(d->thumbBar->findItemByUrl(imagesUrls.first()));
-            d->thumbBar->setCurrentUrl(imagesUrls.first());
+            slotOpenUrl(d->thumbBar->findItemByUrl(current.isValid() ? current : imagesUrls.first()));
+            d->thumbBar->setCurrentUrl(current.isValid() ? current : imagesUrls.first());
 
             return;
         }
@@ -416,7 +416,7 @@ void Showfoto::slotAddedDropedItems(QDropEvent* e)
 
     if (!urls.isEmpty())
     {
-        slotDroppedUrls(urls, true);
+        slotDroppedUrls(urls, true, QUrl());
     }
 }
 

@@ -235,7 +235,7 @@ void ShowfotoFolderViewSideBar::loadContents(const QModelIndex& index, bool appe
         }
         else
         {
-            emit signalAppendContentsFromFiles(lst);
+            emit signalAppendContentsFromFiles(lst, currentFile);
         }
     }
 }

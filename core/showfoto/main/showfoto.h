@@ -132,9 +132,9 @@ private Q_SLOTS:
     void slotOpenFolderFromPath(const QString& path);
     void slotOpenUrl(const ShowfotoItemInfo& info);
     void slotAddedDropedItems(QDropEvent*)                  override;
-    void slotDroppedUrls(const QList<QUrl>& droppedUrls, bool dropped);
+    void slotDroppedUrls(const QList<QUrl>& droppedUrls, bool dropped, const QUrl& current);
     void slotOpenFilesfromPath(const QStringList& files, const QString& current);
-    void slotAppendFilesfromPath(const QStringList& files);
+    void slotAppendFilesfromPath(const QStringList& files, const QString& current);
 
 Q_SIGNALS:
 

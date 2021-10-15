@@ -133,7 +133,7 @@ Showfoto::Showfoto(const QList<QUrl>& urlList, QWidget* const)
 
     // -- Load current items ---------------------------
 
-    slotDroppedUrls(urlList, false);
+    slotDroppedUrls(urlList, false, QUrl());
 }
 
 Showfoto::~Showfoto()

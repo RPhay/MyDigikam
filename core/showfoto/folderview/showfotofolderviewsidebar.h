@@ -99,7 +99,7 @@ Q_SIGNALS:
     void signalSetup();
     void signalLoadContentsFromPath(const QString& path);
     void signalLoadContentsFromFiles(const QStringList& files, const QString& current);
-    void signalAppendContentsFromFiles(const QStringList& files);
+    void signalAppendContentsFromFiles(const QStringList& files, const QString& current);
 
 private:
 

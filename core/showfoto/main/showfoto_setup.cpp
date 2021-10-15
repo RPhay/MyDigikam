@@ -75,8 +75,8 @@ void Showfoto::setupConnections()
     connect(d->folderView, SIGNAL(signalLoadContentsFromFiles(QStringList,QString)),
             this, SLOT(slotOpenFilesfromPath(QStringList,QString)));
 
-    connect(d->folderView, SIGNAL(signalAppendContentsFromFiles(QStringList)),
-            this, SLOT(slotAppendFilesfromPath(QStringList)));
+    connect(d->folderView, SIGNAL(signalAppendContentsFromFiles(QStringList,QString)),
+            this, SLOT(slotAppendFilesfromPath(QStringList,QString)));
 
     connect(d->stackView, SIGNAL(signalLoadContentsFromFiles(QStringList,QString)),
             this, SLOT(slotOpenFilesfromPath(QStringList,QString)));
@@ -114,8 +114,8 @@ void Showfoto::setupConnections()
     connect(d->folderView, SIGNAL(signalSetup()),
             this, SLOT(slotSetup()));
 
-    connect(d->dDHandler, SIGNAL(signalDroppedUrls(QList<QUrl>,bool)),
-            this, SLOT(slotDroppedUrls(QList<QUrl>,bool)));
+    connect(d->dDHandler, SIGNAL(signalDroppedUrls(QList<QUrl>,bool,QUrl)),
+            this, SLOT(slotDroppedUrls(QList<QUrl>,bool,QUrl)));
 }
 
 void Showfoto::setupUserArea()

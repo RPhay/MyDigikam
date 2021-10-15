@@ -54,7 +54,7 @@ public:
 
 Q_SIGNALS:
 
-    void signalDroppedUrls(const QList<QUrl>& droppedUrls, bool dropped);
+    void signalDroppedUrls(const QList<QUrl>& droppedUrls, bool dropped, const QUrl& current);
 
 private:
 
