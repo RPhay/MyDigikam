@@ -41,7 +41,7 @@
 
 // Local includes
 
-#include "showfotoimagemodel.h"
+#include "showfotoitemmodel.h"
 #include "showfotofiltermodel.h"
 #include "showfotothumbnailbar.h"
 #include "showfotoiteminfo.h"

@@ -31,7 +31,7 @@
 // Local includes
 
 #include "abstractitemdragdrophandler.h"
-#include "showfotoimagemodel.h"
+#include "showfotoitemmodel.h"
 #include "ddragobjects.h"
 
 namespace ShowFoto

@@ -21,7 +21,7 @@
  *
  * ============================================================ */
 
-#include "showfotoimagemodel.h"
+#include "showfotoitemmodel.h"
 
 // Qt includes
 
@@ -60,17 +60,17 @@ public:
 
 public:
 
-    ShowfotoItemInfoList                      infos;
-    QMultiHash<qlonglong, int>                idHash;
-    QHash<QString, qlonglong>                 fileUrlHash;
+    ShowfotoItemInfoList       infos;
+    QMultiHash<qlonglong, int> idHash;
+    QHash<QString, qlonglong>  fileUrlHash;
 
-    bool                                      keepFileUrlCache;
+    bool                       keepFileUrlCache;
 
-    bool                                      refreshing;
-    bool                                      reAdding;
-    bool                                      incrementalRefreshRequested;
+    bool                       refreshing;
+    bool                       reAdding;
+    bool                       incrementalRefreshRequested;
 
-    bool                                      sendRemovalSignals;
+    bool                       sendRemovalSignals;
 };
 
 // ----------------------------------------------------------------------------------------------------
@@ -261,6 +261,7 @@ void ShowfotoItemModel::addShowfotoItemInfosSynchronously(const QList<ShowfotoIt
     }
 
     publiciseInfos(infos);
+
     emit processAdded(infos);
 }
 

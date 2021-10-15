@@ -26,7 +26,7 @@
 
 // Local Include
 
-#include "showfotoimagemodel.h"
+#include "showfotoitemmodel.h"
 #include "thumbnailsize.h"
 #include "loadingdescription.h"
 #include "thumbnailloadthread.h"

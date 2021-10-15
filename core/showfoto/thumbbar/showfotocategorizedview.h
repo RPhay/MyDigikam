@@ -27,7 +27,7 @@
 // Local includes
 
 #include "itemviewcategorized.h"
-#include "showfotoimagemodel.h"
+#include "showfotoitemmodel.h"
 #include "showfotofiltermodel.h"
 #include "showfotothumbnailmodel.h"
 #include "showfotoiteminfo.h"

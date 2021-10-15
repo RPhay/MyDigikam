@@ -31,7 +31,7 @@
 // Local includes
 
 #include "dcategorizedsortfilterproxymodel.h"
-#include "showfotoimagemodel.h"
+#include "showfotoitemmodel.h"
 #include "showfotothumbnailmodel.h"
 #include "showfotoitemsortsettings.h"
 

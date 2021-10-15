@@ -31,7 +31,7 @@ set(showfoto_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/setup/showfotosetup.cpp
 
     ${CMAKE_CURRENT_SOURCE_DIR}/thumbbar/showfotoiteminfo.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/thumbbar/showfotoimagemodel.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/thumbbar/showfotoitemmodel.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/thumbbar/showfotothumbnailmodel.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/thumbbar/showfotofiltermodel.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/thumbbar/showfotodragdrophandler.cpp

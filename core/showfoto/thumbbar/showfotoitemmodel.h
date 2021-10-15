@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef SHOW_FOTO_IMAGE_MODEL_H
-#define SHOW_FOTO_IMAGE_MODEL_H
+#ifndef SHOW_FOTO_ITEM_MODEL_H
+#define SHOW_FOTO_ITEM_MODEL_H
 
 // Qt includes
 
@@ -92,38 +92,38 @@ public:
      * For ShowfotoItemInfo and ShowfotoItemInfoId If the index is not valid they will return a null ShowfotoItemInfo, and 0
      * respectively, ShowfotoItemInfoRef must not be called with an invalid index as it will crash.
      */
-    ShowfotoItemInfo      showfotoItemInfo(const QModelIndex& index)           const;
-    ShowfotoItemInfo&     showfotoItemInfoRef(const QModelIndex& index)        const;
-    qlonglong             showfotoItemId(const QModelIndex& index)             const;
-    ShowfotoItemInfoList  showfotoItemInfos(const QList<QModelIndex>& indexes) const;
-    QList<qlonglong>      showfotoItemIds(const QList<QModelIndex>& indexes)   const;
+    ShowfotoItemInfo      showfotoItemInfo(const QModelIndex& index)                const;
+    ShowfotoItemInfo&     showfotoItemInfoRef(const QModelIndex& index)             const;
+    qlonglong             showfotoItemId(const QModelIndex& index)                  const;
+    ShowfotoItemInfoList  showfotoItemInfos(const QList<QModelIndex>& indexes)      const;
+    QList<qlonglong>      showfotoItemIds(const QList<QModelIndex>& indexes)        const;
 
     /**
      * Returns the ShowfotoItemInfo object, reference from the underlying data of
      * the given row (parent is the invalid QModelIndex, column is 0).
      * Note that ShowfotoItemInfoRef must not be called with an invalid index as it will crash.
      */
-    ShowfotoItemInfo  showfotoItemInfo(int row)    const;
-    ShowfotoItemInfo& showfotoItemInfoRef(int row) const;
-    qlonglong         showfotoItemId(int row)      const;
+    ShowfotoItemInfo  showfotoItemInfo(int row)                                     const;
+    ShowfotoItemInfo& showfotoItemInfoRef(int row)                                  const;
+    qlonglong         showfotoItemId(int row)                                       const;
 
     /**
      * Return the index of a given ShowfotoItemInfo, if it exists in the model.
      */
-    QModelIndex        indexForShowfotoItemInfo(const ShowfotoItemInfo& info)   const;
-    QList<QModelIndex> indexesForShowfotoItemInfo(const ShowfotoItemInfo& info) const;
-    QModelIndex        indexForShowfotoItemId(qlonglong id)                     const;
-    QList<QModelIndex> indexesForShowfotoItemId(qlonglong id)                   const;
+    QModelIndex        indexForShowfotoItemInfo(const ShowfotoItemInfo& info)       const;
+    QList<QModelIndex> indexesForShowfotoItemInfo(const ShowfotoItemInfo& info)     const;
+    QModelIndex        indexForShowfotoItemId(qlonglong id)                         const;
+    QList<QModelIndex> indexesForShowfotoItemId(qlonglong id)                       const;
 
     /**
      * Returns the index or ShowfotoItemInfo object from the underlying data for
      * the given file url. In case of multiple occurrences of the same file, the simpler
      * overrides returns any one found first, use the QList methods to retrieve all occurrences.
      */
-    QModelIndex             indexForUrl(const QUrl& fileUrl)        const;
-    QList<QModelIndex>      indexesForUrl(const QUrl& fileUrl)      const;
-    ShowfotoItemInfo        showfotoItemInfo(const QUrl& fileUrl)   const;
-    QList<ShowfotoItemInfo> showfotoItemInfos(const QUrl& fileUrl)  const;
+    QModelIndex             indexForUrl(const QUrl& fileUrl)                        const;
+    QList<QModelIndex>      indexesForUrl(const QUrl& fileUrl)                      const;
+    ShowfotoItemInfo        showfotoItemInfo(const QUrl& fileUrl)                   const;
+    QList<ShowfotoItemInfo> showfotoItemInfos(const QUrl& fileUrl)                  const;
 
     void addShowfotoItemInfo(const ShowfotoItemInfo& info);
     void addShowfotoItemInfos(const QList<ShowfotoItemInfo>& infos);
@@ -147,14 +147,14 @@ public:
      */
     void setShowfotoItemInfos(const QList<ShowfotoItemInfo>& infos);
 
-    QList<ShowfotoItemInfo> showfotoItemInfos()       const;
-    QList<qlonglong>        showfotoItemIds()         const;
-    QList<ShowfotoItemInfo> uniqueShowfotoItemInfos() const;
+    QList<ShowfotoItemInfo> showfotoItemInfos()                                     const;
+    QList<qlonglong>        showfotoItemIds()                                       const;
+    QList<ShowfotoItemInfo> uniqueShowfotoItemInfos()                               const;
 
-    bool hasImage(qlonglong id) const;
-    bool hasImage(const ShowfotoItemInfo& info)  const;
+    bool hasImage(qlonglong id)                                                     const;
+    bool hasImage(const ShowfotoItemInfo& info)                                     const;
 
-    bool isEmpty() const;
+    bool isEmpty()                                                                  const;
 
     /**
      * Remove the given infos or indexes directly from the model.
@@ -164,8 +164,8 @@ public:
     void removeShowfotoItemInfo(const ShowfotoItemInfo& info);
     void removeShowfotoItemInfos(const QList<ShowfotoItemInfo>& infos);
 
-    int numberOfIndexesForShowfotoItemInfo(const ShowfotoItemInfo& info) const;
-    int numberOfIndexesForShowfotoItemId(qlonglong id)                       const;
+    int numberOfIndexesForShowfotoItemInfo(const ShowfotoItemInfo& info)            const;
+    int numberOfIndexesForShowfotoItemId(qlonglong id)                              const;
 
     /**
      * Retrieve the ShowfotoItemInfo object from the data() function of the given index
@@ -177,11 +177,11 @@ public:
     /**
      * QAbstractListModel implementations
      */
-    int           rowCount(const QModelIndex& parent)                            const override;
-    QVariant      data(const QModelIndex& index, int role)                       const override;
-    QVariant      headerData(int section, Qt::Orientation orientation, int role) const override;
-    Qt::ItemFlags flags(const QModelIndex& index)                                const override;
-    QModelIndex   index(int row, int column, const QModelIndex& parent)          const override;
+    int           rowCount(const QModelIndex& parent)                               const override;
+    QVariant      data(const QModelIndex& index, int role)                          const override;
+    QVariant      headerData(int section, Qt::Orientation orientation, int role)    const override;
+    Qt::ItemFlags flags(const QModelIndex& index)                                   const override;
+    QModelIndex   index(int row, int column, const QModelIndex& parent)             const override;
 
     /**
      * DragDrop methods
