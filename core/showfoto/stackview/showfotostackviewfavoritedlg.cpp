@@ -137,7 +137,7 @@ ShowfotoStackViewFavoriteDlg::ShowfotoStackViewFavoriteDlg(ShowfotoStackViewFavo
 
     d->nameEdit             = new QLineEdit(page);
     d->nameEdit->setPlaceholderText(i18nc("#info", "Enter favorite name here..."));
-    d->nameEdit->setToolTip(i18nc("#info", "The favorite name which must be unique and not empty"));
+    d->nameEdit->setToolTip(i18nc("@info", "The favorite name which must be unique and not empty"));
     nameLabel->setBuddy(d->nameEdit);
 
     // --------------------------------------------------------
@@ -146,7 +146,7 @@ ShowfotoStackViewFavoriteDlg::ShowfotoStackViewFavoriteDlg(ShowfotoStackViewFavo
     descLabel->setText(i18nc("@label: favorite caption properties", "&Description:"));
 
     d->descEdit             = new QLineEdit(page);
-    d->descEdit->setPlaceholderText(i18nc("#info", "Enter favorite description here..."));
+    d->descEdit->setPlaceholderText(i18nc("@info", "Enter favorite description here..."));
     descLabel->setBuddy(d->descEdit);
 
     // --------------------------------------------------------
@@ -197,6 +197,9 @@ ShowfotoStackViewFavoriteDlg::ShowfotoStackViewFavoriteDlg(ShowfotoStackViewFavo
     d->urlsEdit->setAllowDuplicate(false);
     d->urlsEdit->setControlButtonsPlacement(DItemsList::ControlButtonsBelow);
     d->urlsEdit->setControlButtons(DItemsList::Add | DItemsList::Remove | DItemsList::Clear);
+    d->urlsEdit->setToolTip(i18nc("@info", "This is the list of items hosted by this favorite. "
+                                           "The current selected item from this list will be automatically show "
+                                           "in editor when favorite is open."));
     urlsLabel->setBuddy(d->urlsEdit);
 
     // --------------------------------------------------------
