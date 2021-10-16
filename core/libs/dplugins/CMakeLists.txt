@@ -59,6 +59,8 @@ set(libdpluginsinterface_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/widgets/dpreviewmanager.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/widgets/dpreviewimage.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/widgets/ditemslist.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/ditemslist_item.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/ditemslist_view.cpp
 
     ${CMAKE_CURRENT_SOURCE_DIR}/webservices/wscomboboxdelegate.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/webservices/wscomboboxintermediate.cpp
