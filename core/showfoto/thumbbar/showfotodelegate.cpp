@@ -519,6 +519,7 @@ bool ShowfotoThumbnailDelegate::acceptsActivation(const QPoint& pos, const QRect
 void ShowfotoThumbnailDelegate::updateContentWidth()
 {
     Q_D(ShowfotoThumbnailDelegate);
+
     int maxSize;
 
     if (d->flow == QListView::LeftToRight)
@@ -537,7 +538,7 @@ void ShowfotoThumbnailDelegate::updateContentWidth()
 
 int ShowfotoThumbnailDelegate::thumbnailPixmapSize(bool withHighlight, int size)
 {
-    if (withHighlight && size >= 10)
+    if (withHighlight && (size >= 10))
     {
         return (size + 2);
     }
@@ -581,6 +582,7 @@ ShowfotoNormalDelegate::ShowfotoNormalDelegate(ShowfotoThumbnailBar* const bar,
     : ShowfotoDelegate(*new ShowfotoNormalDelegatePrivate, bar)
 {
     Q_D(ShowfotoNormalDelegate);
+
     d->init(this, bar);
 }
 
@@ -589,8 +591,8 @@ ShowfotoNormalDelegate::ShowfotoNormalDelegate(ShowfotoNormalDelegatePrivate& dd
                                                QObject* const)
     : ShowfotoDelegate(dd, bar)
 {
-
     Q_D(ShowfotoNormalDelegate);
+
     d->init(this, bar);
 }
 

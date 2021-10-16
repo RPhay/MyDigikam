@@ -65,16 +65,16 @@ class Q_DECL_HIDDEN ShowfotoKineticScroller::Private
 public:
 
     explicit Private()
-      : isPressed(false),
-        isMoving(false),
-        lastMouseYPos(0),
-        lastMouseXPos(0),
+      : isPressed            (false),
+        isMoving             (false),
+        lastMouseYPos        (0),
+        lastMouseXPos        (0),
         lastScrollBarPosition(0),
-        velocity(0),
-        ignoredMouseMoves(0),
-        ignoredMouseActions(0),
-        scrollArea(nullptr),
-        scrollFlow(QListView::TopToBottom)
+        velocity             (0),
+        ignoredMouseMoves    (0),
+        ignoredMouseActions  (0),
+        scrollArea           (nullptr),
+        scrollFlow           (QListView::TopToBottom)
     {
     }
 
@@ -103,7 +103,7 @@ public:
 
 ShowfotoKineticScroller::ShowfotoKineticScroller(QObject* const parent)
     : QObject(parent),
-      d(new Private())
+      d      (new Private())
 {
     connect(&d->kineticTimer, &QTimer::timeout,
             this, &ShowfotoKineticScroller::onKineticTimerElapsed);
@@ -150,7 +150,7 @@ bool ShowfotoKineticScroller::eventFilter(QObject* object, QEvent* event)
         return false;
     }
 
-    if (isMouseAction && d->ignoredMouseActions-- > 0) // don't filter simulated click
+    if (isMouseAction && (d->ignoredMouseActions-- > 0)) // don't filter simulated click
     {
         return false;
     }
@@ -258,8 +258,10 @@ bool ShowfotoKineticScroller::eventFilter(QObject* object, QEvent* event)
         }
 
         default:
+        {
             // Nothing to do here.
             break;
+        }
     }
 
     return true; // filter event
@@ -290,11 +292,10 @@ void ShowfotoKineticScroller::onKineticTimerElapsed()
 
         d->velocity = qBound(-gMaxDecelerationSpeed, d->velocity, gMaxDecelerationSpeed);
 
-        if (d->velocity > 0)
+        if      (d->velocity > 0)
         {
             d->velocity -= gFriction;
         }
-
         else if (d->velocity < 0)
         {
             d->velocity += gFriction;

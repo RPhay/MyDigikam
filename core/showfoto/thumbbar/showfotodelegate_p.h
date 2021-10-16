@@ -99,7 +99,7 @@ class Q_DECL_HIDDEN ShowfotoThumbnailDelegatePrivate : public ShowfotoDelegate::
 public:
 
     ShowfotoThumbnailDelegatePrivate()
-      : flow(QListView::LeftToRight)
+      : flow              (QListView::LeftToRight)
     {
         // switch off drawing of frames
 

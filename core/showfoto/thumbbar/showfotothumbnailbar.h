@@ -41,7 +41,7 @@ class ShowfotoThumbnailBar : public ShowfotoCategorizedView
 public:
 
     explicit ShowfotoThumbnailBar(QWidget* const parent = nullptr);
-    ~ShowfotoThumbnailBar() override;
+    ~ShowfotoThumbnailBar()                                   override;
 
     /**
      * This installs a duplicate filter model, if the ShwofotoItemModel may contain duplicates.
@@ -72,8 +72,8 @@ public Q_SLOTS:
 
 protected:
 
-    void slotSetupChanged() override;
-    bool event(QEvent*)     override;
+    void slotSetupChanged()                                   override;
+    bool event(QEvent*)                                       override;
 
 private:
 

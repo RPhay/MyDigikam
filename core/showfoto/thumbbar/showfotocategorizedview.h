@@ -88,15 +88,8 @@ public:
      */
     ShowfotoItemInfo nextInOrder(const ShowfotoItemInfo& startingPoint, int nth);
 
-    ShowfotoItemInfo previousInfo(const ShowfotoItemInfo& info)
-    {
-        return nextInOrder(info, -1);
-    }
-
-    ShowfotoItemInfo nextInfo(const ShowfotoItemInfo& info)
-    {
-        return nextInOrder(info, 1);
-    }
+    ShowfotoItemInfo previousInfo(const ShowfotoItemInfo& info);
+    ShowfotoItemInfo nextInfo(const ShowfotoItemInfo& info);
 
     /**
      * Add and remove an overlay. It will as well be removed automatically when destroyed.
@@ -176,16 +169,16 @@ Q_SIGNALS:
 protected:
 
     /// reimplemented from parent class
-    QSortFilterProxyModel*       filterModel()     const                                                                   override;
-    AbstractItemDragDropHandler* dragDropHandler() const                                                                   override;
+    QSortFilterProxyModel*       filterModel()                                                                       const override;
+    AbstractItemDragDropHandler* dragDropHandler()                                                                   const override;
     QModelIndex                  nextIndexHint(const QModelIndex& indexToAnchor, const QItemSelectionRange& removed) const override;
 
     void setItemDelegate(ShowfotoDelegate* delegate);
-    void indexActivated(const QModelIndex& index, Qt::KeyboardModifiers modifiers) override;
-    void currentChanged(const QModelIndex& index, const QModelIndex& previous)     override;
-    void paintEvent(QPaintEvent* e)                                                override;
-    void selectionChanged(const QItemSelection&, const QItemSelection&)            override;
-    void updateGeometries()                                                        override;
+    void indexActivated(const QModelIndex& index, Qt::KeyboardModifiers modifiers)                                         override;
+    void currentChanged(const QModelIndex& index, const QModelIndex& previous)                                             override;
+    void paintEvent(QPaintEvent* e)                                                                                        override;
+    void selectionChanged(const QItemSelection&, const QItemSelection&)                                                    override;
+    void updateGeometries()                                                                                                override;
 
     /// Reimplement these in a subclass
     virtual void activated(const ShowfotoItemInfo& info, Qt::KeyboardModifiers modifiers);

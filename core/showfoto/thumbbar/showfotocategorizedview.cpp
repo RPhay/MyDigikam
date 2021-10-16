@@ -316,7 +316,7 @@ QModelIndex ShowfotoCategorizedView::nextIndexHint(const QModelIndex& anchor, co
 
     //qCDebug(DIGIKAM_SHOWFOTO_LOG) << "Having initial hint" << hint << "for" << anchor << d->model->numberOfIndexesForShowfotoItemInfo(info);
 
-    // Fixes a special case of multiple (face) entries for the same image.
+    // Fixes a special case of multiple entries for the same image.
     // If one is removed, any entry of the same image shall be preferred.
 
     if (d->model->indexesForShowfotoItemInfo(info).size() > 1)
@@ -589,6 +589,16 @@ QItemSelectionModel* ShowfotoCategorizedView::getSelectionModel() const
 AbstractItemDragDropHandler* ShowfotoCategorizedView::dragDropHandler() const
 {
     return d->model->dragDropHandler();
+}
+
+ShowfotoItemInfo ShowfotoCategorizedView::previousInfo(const ShowfotoItemInfo& info)
+{
+    return nextInOrder(info, -1);
+}
+
+ShowfotoItemInfo ShowfotoCategorizedView::nextInfo(const ShowfotoItemInfo& info)
+{
+    return nextInOrder(info, 1);
 }
 
 } // namespace Showfoto

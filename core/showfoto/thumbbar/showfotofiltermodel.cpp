@@ -348,9 +348,11 @@ void ShowfotoFilterModel::setSendShowfotoItemInfoSignals(bool sendSignals)
 {
     if (sendSignals)
     {
-        connect(this, &ShowfotoFilterModel::rowsInserted, this, &ShowfotoFilterModel::slotRowsInserted);
+        connect(this, &ShowfotoFilterModel::rowsInserted,
+                this, &ShowfotoFilterModel::slotRowsInserted);
 
-        connect(this, &ShowfotoFilterModel::rowsAboutToBeRemoved, this, &ShowfotoFilterModel::slotRowsAboutToBeRemoved);
+        connect(this, &ShowfotoFilterModel::rowsAboutToBeRemoved,
+                this, &ShowfotoFilterModel::slotRowsAboutToBeRemoved);
     }
     else
     {

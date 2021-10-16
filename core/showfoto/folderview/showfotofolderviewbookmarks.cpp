@@ -394,7 +394,7 @@ void ShowfotoFolderViewBookmarks::readSettings(const KConfigGroup& group)
     d->topUsualPlaces->setFlags(Qt::ItemIsEnabled);
     d->topUsualPlaces->setExpanded(group.readEntry(d->configBookmarkTopUsualExpandedEntry, true));
     d->topUsualPlaces->setDisabled(false);
-    d->topUsualPlaces->setText(0, i18nc("@title", "Usual"));
+    d->topUsualPlaces->setText(0, i18nc("@title", "Usual Places"));
 
     ShowfotoFolderViewBookmarkItem* uplace = nullptr;
     uplace                                 = new ShowfotoFolderViewBookmarkItem(d->topUsualPlaces);

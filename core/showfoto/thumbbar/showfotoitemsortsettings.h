@@ -43,7 +43,7 @@ public:
     {
         AscendingOrder  = Qt::AscendingOrder,
         DescendingOrder = Qt::DescendingOrder,
-        DefaultOrder                            //< sort order depends on the chosen sort role
+        DefaultOrder                            ///< sort order depends on the chosen sort role
     };
 
     enum CategorizationMode

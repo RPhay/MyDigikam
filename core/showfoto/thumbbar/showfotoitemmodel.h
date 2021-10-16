@@ -61,25 +61,25 @@ public:
          * Returns a thumbnail pixmap. May be implemented by subclasses.
          * Returns either a valid pixmap or a null QVariant.
          */
-        ThumbnailRole                 = Qt::UserRole + 2,
+        ThumbnailRole                = Qt::UserRole + 2,
 
         /**
          * Return (optional) extraData field
          */
-        ExtraDataRole                 = Qt::UserRole + 3,
+        ExtraDataRole                = Qt::UserRole + 3,
 
         /**
          * Returns the number of duplicate indexes for the same image id
          */
-        ExtraDataDuplicateCount       = Qt::UserRole + 6,
+        ExtraDataDuplicateCount      = Qt::UserRole + 6,
 
-        FilterModelRoles              = Qt::UserRole + 100
+        FilterModelRoles             = Qt::UserRole + 100
     };
 
 public:
 
      explicit ShowfotoItemModel(QObject* const parent);
-    ~ShowfotoItemModel() override;
+    ~ShowfotoItemModel()                                                                  override;
 
     /**
      * If a cache is kept, lookup by file path is fast,

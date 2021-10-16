@@ -46,9 +46,11 @@ class ShowfotoKineticScroller: public QObject
 public:
 
     explicit ShowfotoKineticScroller(QObject* const parent = nullptr);
-    ~ShowfotoKineticScroller() override;
+    ~ShowfotoKineticScroller()                       override;
 
-    //! enabled for one widget only, new calls remove previous association
+    /**
+     * NOTE: enabled for one widget only, new calls remove previous association
+     */
     void enableKineticScrollFor(QAbstractScrollArea* const scrollArea);
     void setScrollFlow(QListView::Flow flow);
 
