@@ -168,7 +168,7 @@ BUGFIXES:
 153 ==> 443348 - Selected "Recent tag" not shown when "Tags already assigned" is activated.
 154 ==> 443606 - digiKam fails to build on s390x.
 155 ==> 443682 - Add "copy file path" option to right-click menu.
-156 ==> 
+156 ==> 443685 - When converting canon CR3 files to dng files in parallel digiKam crashes.
 157 ==> 
 158 ==> 
 159 ==> 

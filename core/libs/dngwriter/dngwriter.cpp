@@ -51,12 +51,12 @@ namespace Digikam
 DNGWriter::DNGWriter()
     : d(new Private(this))
 {
-    dng_xmp_sdk::InitializeSDK();
+    //dng_xmp_sdk::InitializeSDK();
 }
 
 DNGWriter::~DNGWriter()
 {
-    dng_xmp_sdk::TerminateSDK();
+    //dng_xmp_sdk::TerminateSDK();
 
     delete d;
 }
