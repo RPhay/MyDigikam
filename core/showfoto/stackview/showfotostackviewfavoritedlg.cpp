@@ -197,6 +197,8 @@ ShowfotoStackViewFavoriteDlg::ShowfotoStackViewFavoriteDlg(ShowfotoStackViewFavo
     d->urlsEdit->setAllowDuplicate(false);
     d->urlsEdit->setControlButtonsPlacement(DItemsList::ControlButtonsBelow);
     d->urlsEdit->setControlButtons(DItemsList::Add | DItemsList::Remove | DItemsList::Clear);
+    d->urlsEdit->listView()->setColumn(DItemsListView::User1, i18n("Path"), true);
+
     d->urlsEdit->setToolTip(i18nc("@info", "This is the list of items hosted by this favorite.\n"
                                            "The current selected item from this list will be automatically\n"
                                            "shown in editor when favorite is open."));
@@ -237,6 +239,9 @@ ShowfotoStackViewFavoriteDlg::ShowfotoStackViewFavoriteDlg(ShowfotoStackViewFavo
 
     connect(d->resetIconButton, SIGNAL(clicked()),
             this, SLOT(slotIconResetClicked()));
+
+    connect(d->urlsEdit, SIGNAL(signalImageListChanged()),
+            this, SLOT(slotUpdatePaths()));
 
     connect(d->buttons->button(QDialogButtonBox::Ok), SIGNAL(clicked()),
             this, SLOT(accept()));
@@ -373,6 +378,23 @@ void ShowfotoStackViewFavoriteDlg::slotIconChanged()
 
 #endif
 
+}
+
+void ShowfotoStackViewFavoriteDlg::slotUpdatePaths()
+{
+    QTreeWidgetItemIterator it(d->urlsEdit->listView());
+
+    while (*it)
+    {
+        DItemsListViewItem* const lvItem = dynamic_cast<DItemsListViewItem*>(*it);
+
+        if (lvItem)
+        {
+            lvItem->setText(DItemsListView::User1, QFileInfo(lvItem->url().toLocalFile()).absolutePath());
+        }
+
+        ++it;
+    }
 }
 
 bool ShowfotoStackViewFavoriteDlg::favoriteEdit(ShowfotoStackViewFavoriteList* const parent,
