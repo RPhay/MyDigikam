@@ -32,6 +32,7 @@
 #include <QApplication>
 #include <QStyle>
 #include <QDir>
+#include <QFileInfo>
 #include <QFont>
 #include <QStandardPaths>
 #include <QDialogButtonBox>
@@ -201,7 +202,8 @@ ShowfotoStackViewFavoriteDlg::ShowfotoStackViewFavoriteDlg(ShowfotoStackViewFavo
 
     d->urlsEdit->setToolTip(i18nc("@info", "This is the list of items hosted by this favorite.\n"
                                            "The current selected item from this list will be automatically\n"
-                                           "shown in editor when favorite is open."));
+                                           "shown in editor when favorite is open. If none is selected,\n"
+                                           "first one from the list will be displayed."));
     urlsLabel->setBuddy(d->urlsEdit);
 
     // --------------------------------------------------------
