@@ -202,6 +202,7 @@ void ShowfotoStackViewSideBar::slotPluginActionTriggered()
             {
                 d->favts->loadContents();
                 QTimer::singleShot(1000, dpact, SLOT(trigger()));
+
                 return;
             }
         }
@@ -229,10 +230,10 @@ void ShowfotoStackViewSideBar::doLoadState()
 
     d->favts->readSettings();
 
-    int iconSize     = group.readEntry(entryName(d->configIconSizeEntry),                      (int)ShowfotoStackViewList::SizeSmall);
+    int iconSize       = group.readEntry(entryName(d->configIconSizeEntry),      (int)ShowfotoStackViewList::SizeSmall);
     d->view->setIconSize(QSize(iconSize, iconSize));
 
-    QByteArray state = group.readEntry(entryName(d->configSplitterStateEntry),                 QByteArray());
+    QByteArray state   = group.readEntry(entryName(d->configSplitterStateEntry), QByteArray());
 
     if (!state.isEmpty())
     {
@@ -246,8 +247,8 @@ void ShowfotoStackViewSideBar::doSaveState()
 
     d->favts->saveSettings();
 
-    group.writeEntry(entryName(d->configIconSizeEntry),             d->view->iconSize().width());
-    group.writeEntry(entryName(d->configSplitterStateEntry),        d->splitter->saveState().toBase64());
+    group.writeEntry(entryName(d->configIconSizeEntry),      d->view->iconSize().width());
+    group.writeEntry(entryName(d->configSplitterStateEntry), d->splitter->saveState().toBase64());
     group.sync();
 }
 

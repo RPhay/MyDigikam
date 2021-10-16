@@ -23,11 +23,6 @@
 
 #include "showfotostackviewtooltip.h"
 
-// Qt includes
-
-#include <QPixmap>
-#include <QTextDocument>
-
 // Local includes
 
 #include "digikam_debug.h"
