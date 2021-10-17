@@ -435,13 +435,6 @@ bool DMetadata::setItemRating(int rating, const DMetadataSettingsContainer& sett
             continue;
         }
 
-        if ((entry.convertRatio.size() - 1) < RatingMax)
-        {
-            qCWarning(DIGIKAM_METAENGINE_LOG) << "Wrong count of rating conversion values in the config!";
-
-            continue;
-        }
-
         const std::string myStr = entry.namespaceName.toStdString();
         const char* nameSpace   = myStr.data();
 

@@ -556,11 +556,25 @@ void DMetadataSettingsContainer::readOneGroup(KConfigGroup& group, const QString
         ns.secondNameOpts    = (NamespaceEntry::SpecialOptions)gr.readEntry("secondNameOpts").toInt();
         ns.isDefault         = gr.readEntry(QLatin1String("isDefault"), QVariant(true)).toBool();
         ns.isDisabled        = gr.readEntry(QLatin1String("isDisabled"), QVariant(false)).toBool();
-        QString conversion   = gr.readEntry("convertRatio");
+        QStringList convList = gr.readEntry("convertRatio").split(QLatin1String(","));
 
-        foreach (const QString& str, conversion.split(QLatin1String(",")))
+        if (ns.nsType == NamespaceEntry::RATING)
         {
-            ns.convertRatio.append(str.toInt());
+            if (convList.size() == 6)
+            {
+                foreach (const QString& str, convList)
+                {
+                    ns.convertRatio.append(str.toInt());
+                }
+            }
+            else
+            {
+                qCWarning(DIGIKAM_METAENGINE_LOG) << "Wrong count of rating conversion values in the config!";
+
+                // fallback to default rating conversion values
+
+                ns.convertRatio = QList<int>({0, 1, 2, 3, 4, 5});
+            }
         }
 
         container.append(ns);
