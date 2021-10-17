@@ -520,7 +520,14 @@ bool ShowfotoStackViewFavorites::readSettings()
                         {
                             if (val3.isEmpty())
                             {
-                                val3 = QString();
+                                if (!item->urls().isEmpty())
+                                {
+                                    val3 = item->urls().first().toLocalFile();
+                                }
+                                else
+                                {
+                                    val3 = QString();
+                                }
                             }
 
                             item->setCurrentUrl(QUrl::fromLocalFile(val3));

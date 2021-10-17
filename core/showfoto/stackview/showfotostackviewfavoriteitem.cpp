@@ -104,6 +104,11 @@ void ShowfotoStackViewFavoriteItem::setCurrentUrl(const QUrl& url)
 
 QUrl ShowfotoStackViewFavoriteItem::currentUrl() const
 {
+    if (!m_current.isValid() && !urls().isEmpty())
+    {
+        urls().first();
+    }
+
     return m_current;
 }
 
