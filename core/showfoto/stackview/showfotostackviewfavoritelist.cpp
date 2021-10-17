@@ -41,6 +41,7 @@
 // Local include
 
 #include "digikam_debug.h"
+#include "digikam_globals.h"
 #include "showfotostackviewfavorites.h"
 #include "showfotostackviewfavoriteitem.h"
 #include "dfileoperations.h"
@@ -166,24 +167,9 @@ void ShowfotoStackViewFavoriteList::dragMoveEvent(QDragMoveEvent* e)
 
         foreach (const QUrl& url, mimeurls)
         {
-            QFileInfo info(url.toLocalFile());
-
-            if (info.isFile() && !info.isSymLink() && !info.isDir() && !info.isRoot())
+            if (isReadableImageFile(url.toLocalFile()))
             {
-                QString path    = info.absoluteFilePath();
-                QMimeType mtype = QMimeDatabase().mimeTypeForFile(path);
-                QString suffix  = info.suffix().toUpper();
-
-                if (mtype.name().startsWith(QLatin1String("image/")) ||
-                    (suffix == QLatin1String("PGF"))                 ||
-                    (suffix == QLatin1String("KRA"))                 ||
-                    (suffix == QLatin1String("CR3"))                 ||
-                    (suffix == QLatin1String("HEIC"))                ||
-                    (suffix == QLatin1String("HEIF"))                ||
-                    DRawDecoder::rawFiles().contains(suffix))
-                {
-                    urls << url;
-                }
+                urls << url;
             }
         }
 
@@ -216,24 +202,9 @@ void ShowfotoStackViewFavoriteList::dropEvent(QDropEvent* e)
 
         foreach (const QUrl& url, mimeurls)
         {
-            QFileInfo info(url.toLocalFile());
-
-            if (info.isFile() && !info.isSymLink() && !info.isDir() && !info.isRoot())
+            if (isReadableImageFile(url.toLocalFile()))
             {
-                QString path    = info.absoluteFilePath();
-                QMimeType mtype = QMimeDatabase().mimeTypeForFile(path);
-                QString suffix  = info.suffix().toUpper();
-
-                if (mtype.name().startsWith(QLatin1String("image/")) ||
-                    (suffix == QLatin1String("PGF"))                 ||
-                    (suffix == QLatin1String("KRA"))                 ||
-                    (suffix == QLatin1String("CR3"))                 ||
-                    (suffix == QLatin1String("HEIC"))                ||
-                    (suffix == QLatin1String("HEIF"))                ||
-                    DRawDecoder::rawFiles().contains(suffix))
-                {
-                    urls << url;
-                }
+                urls << url;
             }
         }
 

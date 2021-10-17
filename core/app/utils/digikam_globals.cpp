@@ -36,6 +36,8 @@
 #include <QStandardPaths>
 #include <QLibrary>
 #include <QSysInfo>
+#include <QMimeType>
+#include <QMimeDatabase>
 
 // KDE includes
 
@@ -188,6 +190,34 @@ QStringList supportedImageMimeTypes(QIODevice::OpenModeFlag mode, QString& allTy
     }
 
     return formats;
+}
+
+bool isReadableImageFile(const QString& filePath)
+{
+    QFileInfo info(filePath);
+
+    if (info.isFile() && !info.isSymLink() && !info.isDir() && !info.isRoot())
+    {
+        QString path    = info.absoluteFilePath();
+        QMimeType mtype = QMimeDatabase().mimeTypeForFile(path);
+        QString suffix  = info.suffix().toUpper();
+
+        // Add extra check of the image extensions that are still
+        // unknown in older Qt versions or have an application mime type.
+
+        if (mtype.name().startsWith(QLatin1String("image/")) ||
+            (suffix == QLatin1String("PGF"))                 ||
+            (suffix == QLatin1String("KRA"))                 ||
+            (suffix == QLatin1String("CR3"))                 ||
+            (suffix == QLatin1String("HEIC"))                ||
+            (suffix == QLatin1String("HEIF"))                ||
+            DRawDecoder::rawFiles().contains(suffix))
+        {
+            return true;
+        }
+    }
+
+    return false;
 }
 
 void showRawCameraList()

@@ -166,6 +166,11 @@ DIGIKAM_EXPORT QShortcut* defineShortcut(QWidget* const w, const QKeySequence& k
 DIGIKAM_EXPORT QStringList supportedImageMimeTypes(QIODevice::OpenModeFlag mode, QString& allTypes);
 
 /**
+ * Return true if filePath is an image readable by application for thumbnail, preview, or edit.
+ */
+DIGIKAM_EXPORT bool isReadableImageFile(const QString& filePath);
+
+/**
  * Show a dialog with all RAW camera supported by digiKam, through libraw.
  */
 DIGIKAM_EXPORT void showRawCameraList();

@@ -297,23 +297,9 @@ void Showfoto::slotDroppedUrls(const QList<QUrl>& droppedUrls, bool dropped, con
         if (drop.isValid())
         {
             QFileInfo info(drop.toLocalFile());
-            QString suffix(info.suffix().toUpper());
             QUrl url(QUrl::fromLocalFile(info.canonicalFilePath()));
 
-            // Add extra check of the image extensions that are still
-            // unknown in older Qt versions or have an application mime type.
-
-            QMimeDatabase mimeDB;
-            QString mimeType(mimeDB.mimeTypeForUrl(url).name());
-
-            if (
-                mimeType.startsWith(QLatin1String("image/")) ||
-                (suffix == QLatin1String("PGF"))             ||
-                (suffix == QLatin1String("KRA"))             ||
-                (suffix == QLatin1String("HEIC"))            ||
-                (suffix == QLatin1String("HEIF"))            ||
-                DRawDecoder::rawFiles().contains(suffix)
-               )
+            if (isReadableImageFile(info.absoluteFilePath()))
             {
                 imagesUrls << url;
             }

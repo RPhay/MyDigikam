@@ -104,38 +104,25 @@ QVariant ShowfotoFolderViewModel::data(const QModelIndex& index, int role) const
 {
     if ((role == Qt::DecorationRole) && (index.column() == 0))
     {
-        QFileInfo info(fileInfo(index));
+        QString path = fileInfo(index).absoluteFilePath();
 
-        if (info.isFile() && !info.isSymLink() && !info.isDir() && !info.isRoot())
+        if (isReadableImageFile(path))
         {
-            QString path    = info.absoluteFilePath();
-            QMimeType mtype = QMimeDatabase().mimeTypeForFile(path);
-            QString suffix  = info.suffix().toUpper();
+            QPixmap pix;
 
-            if (mtype.name().startsWith(QLatin1String("image/")) ||
-                (suffix == QLatin1String("PGF"))                 ||
-                (suffix == QLatin1String("KRA"))                 ||
-                (suffix == QLatin1String("CR3"))                 ||
-                (suffix == QLatin1String("HEIC"))                ||
-                (suffix == QLatin1String("HEIF"))                ||
-                DRawDecoder::rawFiles().contains(suffix))
+            if (d->thumbnailThread->find(ThumbnailIdentifier(path), pix))
             {
-                QPixmap pix;
+                pix = pix.scaled(d->view->iconSize(), Qt::KeepAspectRatio,
+                                                      Qt::FastTransformation);
 
-                if (d->thumbnailThread->find(ThumbnailIdentifier(path), pix))
-                {
-                    pix = pix.scaled(d->view->iconSize(), Qt::KeepAspectRatio,
-                                                          Qt::FastTransformation);
+                QPixmap icon(d->view->iconSize());
+                icon.fill(Qt::transparent);
+                QPainter p(&icon);
+                p.drawPixmap((icon.width()  - pix.width() ) / 2,
+                             (icon.height() - pix.height()) / 2,
+                             pix);
 
-                    QPixmap icon(d->view->iconSize());
-                    icon.fill(Qt::transparent);
-                    QPainter p(&icon);
-                    p.drawPixmap((icon.width()  - pix.width() ) / 2,
-                                 (icon.height() - pix.height()) / 2,
-                                 pix);
-
-                    return icon;
-                }
+                return icon;
             }
         }
     }
