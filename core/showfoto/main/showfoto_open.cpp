@@ -119,32 +119,11 @@ void Showfoto::openUrls(const QList<QUrl>& urls)
     }
 
     ShowfotoItemInfo iteminfo;
-    QScopedPointer<DMetadata> meta(new DMetadata);
 
     for (QList<QUrl>::const_iterator it = urls.constBegin() ; it != urls.constEnd() ; ++it)
     {
         QFileInfo fi((*it).toLocalFile());
-        iteminfo.name      = fi.fileName();
-        iteminfo.mime      = fi.suffix();
-        iteminfo.size      = fi.size();
-        iteminfo.folder    = fi.path();
-        iteminfo.url       = QUrl::fromLocalFile(fi.filePath());
-
-#if (QT_VERSION >= QT_VERSION_CHECK(5, 10, 0))
-
-        iteminfo.dtime     = fi.birthTime();
-
-#else
-
-        iteminfo.dtime     = fi.created();
-
-#endif
-
-        meta->load(fi.filePath());
-        iteminfo.ctime     = meta->getItemDateTime();
-        iteminfo.width     = meta->getItemDimensions().width();
-        iteminfo.height    = meta->getItemDimensions().height();
-        iteminfo.photoInfo = meta->getPhotographInformation();
+        iteminfo = ShowfotoItemInfo::itemInfoFromFile(fi);
 
         if (!d->infoList.contains(iteminfo))
         {
@@ -194,33 +173,12 @@ void Showfoto::openFolder(const QUrl& url)
 
     QFileInfoList::const_iterator fi;
     ShowfotoItemInfo iteminfo;
-    QScopedPointer<DMetadata> meta(new DMetadata);
 
     // And open all items in image editor.
 
     for (fi = fileinfolist.constBegin() ; fi != fileinfolist.constEnd() ; ++fi)
     {
-        iteminfo.name      = (*fi).fileName();
-        iteminfo.mime      = (*fi).suffix();
-        iteminfo.size      = (*fi).size();
-        iteminfo.folder    = (*fi).path();
-        iteminfo.url       = QUrl::fromLocalFile((*fi).filePath());
-
-#if (QT_VERSION >= QT_VERSION_CHECK(5, 10, 0))
-
-        iteminfo.dtime     = (*fi).birthTime();
-
-#else
-
-        iteminfo.dtime     = (*fi).created();
-
-#endif
-
-        meta->load((*fi).filePath());
-        iteminfo.ctime     = meta->getItemDateTime();
-        iteminfo.width     = meta->getItemDimensions().width();
-        iteminfo.height    = meta->getItemDimensions().height();
-        iteminfo.photoInfo = meta->getPhotographInformation();
+        iteminfo = ShowfotoItemInfo::itemInfoFromFile(*fi);
 
         if (!d->infoList.contains(iteminfo))
         {

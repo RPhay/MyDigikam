@@ -27,6 +27,12 @@
 
 #include <QDataStream>
 
+// Local includes
+
+#include "dmetadata.h"
+
+using namespace Digikam;
+
 namespace ShowFoto
 {
 
@@ -108,6 +114,38 @@ QDebug operator<<(QDebug dbg, const ShowfotoItemInfo& info)
                   << info.id << endl << endl;
 
     return dbg.space();
+}
+
+ShowfotoItemInfo ShowfotoItemInfo::itemInfoFromFile(const QFileInfo& inf)
+{
+    ShowfotoItemInfo iteminfo;
+    QScopedPointer<DMetadata> meta(new DMetadata);
+
+    // And open all items in image editor.
+
+    iteminfo.name      = inf.fileName();
+    iteminfo.mime      = inf.suffix();
+    iteminfo.size      = inf.size();
+    iteminfo.folder    = inf.path();
+    iteminfo.url       = QUrl::fromLocalFile(inf.filePath());
+
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 10, 0))
+
+    iteminfo.dtime     = inf.birthTime();
+
+#else
+
+    iteminfo.dtime     = inf.created();
+
+#endif
+
+    meta->load(inf.filePath());
+    iteminfo.ctime     = meta->getItemDateTime();
+    iteminfo.width     = meta->getItemDimensions().width();
+    iteminfo.height    = meta->getItemDimensions().height();
+    iteminfo.photoInfo = meta->getPhotographInformation();
+
+    return iteminfo;
 }
 
 } // namespace Showfoto

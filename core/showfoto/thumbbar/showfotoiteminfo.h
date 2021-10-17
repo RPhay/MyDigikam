@@ -30,6 +30,7 @@
 #include <QByteArray>
 #include <QDebug>
 #include <QUrl>
+#include <QFileInfo>
 
 // Local includes
 
@@ -60,6 +61,8 @@ public:
      */
     bool operator==(const ShowfotoItemInfo& info) const;
     bool operator!=(const ShowfotoItemInfo& info) const;
+
+    static ShowfotoItemInfo itemInfoFromFile(const QFileInfo& inf);
 
 public:
 

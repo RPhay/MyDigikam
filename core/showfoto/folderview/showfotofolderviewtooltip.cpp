@@ -36,7 +36,6 @@
 
 #include "digikam_debug.h"
 #include "digikam_globals.h"
-#include "dmetadata.h"
 #include "showfotosettings.h"
 #include "showfotoiteminfo.h"
 #include "showfotofolderviewlist.h"
@@ -118,33 +117,8 @@ QString ShowfotoFolderViewToolTip::tipContents()
         return QString();
     }
 
-    QString path                         = model->filePath(d->index);
-
-    ShowfotoItemInfo iteminfo;
-    QScopedPointer<DMetadata> meta(new DMetadata);
-
-    QFileInfo fi(path);
-    iteminfo.name      = fi.fileName();
-    iteminfo.mime      = fi.suffix();
-    iteminfo.size      = fi.size();
-    iteminfo.folder    = fi.path();
-    iteminfo.url       = QUrl::fromLocalFile(fi.filePath());
-
-#if (QT_VERSION >= QT_VERSION_CHECK(5, 10, 0))
-
-    iteminfo.dtime     = fi.birthTime();
-
-#else
-
-    iteminfo.dtime     = fi.created();
-
-#endif
-
-    meta->load(fi.filePath());
-    iteminfo.ctime     = meta->getItemDateTime();
-    iteminfo.width     = meta->getItemDimensions().width();
-    iteminfo.height    = meta->getItemDimensions().height();
-    iteminfo.photoInfo = meta->getPhotographInformation();
+    QString path              = model->filePath(d->index);
+    ShowfotoItemInfo iteminfo = ShowfotoItemInfo::itemInfoFromFile(QFileInfo(path));
 
     return ShowfotoToolTipFiller::ShowfotoItemInfoTipContents(iteminfo);
 }
