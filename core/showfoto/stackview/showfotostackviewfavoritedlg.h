@@ -92,7 +92,7 @@ private Q_SLOTS:
     void slotIconResetClicked();
     void slotAccept();
     void slotModified();
-    void slotUpdatePaths();
+    void slotUpdateMetadata();
 
 private:
 

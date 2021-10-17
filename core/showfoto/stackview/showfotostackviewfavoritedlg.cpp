@@ -34,11 +34,13 @@
 #include <QDir>
 #include <QFileInfo>
 #include <QFont>
+#include <QLocale>
 #include <QStandardPaths>
 #include <QDialogButtonBox>
 #include <QVBoxLayout>
 #include <QPushButton>
 #include <QDateTimeEdit>
+#include <QMimeDatabase>
 
 // KDE includes
 
@@ -52,9 +54,12 @@
 
 #include "digikam_debug.h"
 #include "dlayoutbox.h"
+#include "drawdecoder.h"
 #include "ditemslist.h"
 #include "showfotostackviewfavoritelist.h"
 #include "showfotostackviewlist.h"
+#include "showfotoitemsortsettings.h"
+#include "itempropertiestab.h"
 
 using namespace Digikam;
 
@@ -198,7 +203,10 @@ ShowfotoStackViewFavoriteDlg::ShowfotoStackViewFavoriteDlg(ShowfotoStackViewFavo
     d->urlsEdit->setAllowDuplicate(false);
     d->urlsEdit->setControlButtonsPlacement(DItemsList::ControlButtonsBelow);
     d->urlsEdit->setControlButtons(DItemsList::Add | DItemsList::Remove | DItemsList::Clear);
-    d->urlsEdit->listView()->setColumn(DItemsListView::User1, i18n("Path"), true);
+    d->urlsEdit->listView()->setColumn(DItemsListView::User1, i18n("Size"), true);
+    d->urlsEdit->listView()->setColumn(DItemsListView::User2, i18n("Type"), true);
+    d->urlsEdit->listView()->setColumn(DItemsListView::User3, i18n("Date"), true);
+    d->urlsEdit->listView()->setColumn(DItemsListView::User4, i18n("Path"), true);
 
     d->urlsEdit->setToolTip(i18nc("@info", "This is the list of items hosted by this favorite.\n"
                                            "The current selected item from this list will be automatically\n"
@@ -243,7 +251,7 @@ ShowfotoStackViewFavoriteDlg::ShowfotoStackViewFavoriteDlg(ShowfotoStackViewFavo
             this, SLOT(slotIconResetClicked()));
 
     connect(d->urlsEdit, SIGNAL(signalImageListChanged()),
-            this, SLOT(slotUpdatePaths()));
+            this, SLOT(slotUpdateMetadata()));
 
     connect(d->buttons->button(QDialogButtonBox::Ok), SIGNAL(clicked()),
             this, SLOT(accept()));
@@ -382,7 +390,7 @@ void ShowfotoStackViewFavoriteDlg::slotIconChanged()
 
 }
 
-void ShowfotoStackViewFavoriteDlg::slotUpdatePaths()
+void ShowfotoStackViewFavoriteDlg::slotUpdateMetadata()
 {
     QTreeWidgetItemIterator it(d->urlsEdit->listView());
 
@@ -392,7 +400,33 @@ void ShowfotoStackViewFavoriteDlg::slotUpdatePaths()
 
         if (lvItem)
         {
-            lvItem->setText(DItemsListView::User1, QFileInfo(lvItem->url().toLocalFile()).absolutePath());
+            QFileInfo inf(lvItem->url().toLocalFile());
+            ShowfotoItemInfo iteminf = ShowfotoItemInfo::itemInfoFromFile(inf);
+
+            QString localeFileSize   = QLocale().toString(iteminf.size);
+            QString str              = ItemPropertiesTab::humanReadableBytesCount(iteminf.size);
+            lvItem->setText(DItemsListView::User1, str);
+            lvItem->setData(DItemsListView::User1, Qt::UserRole, iteminf.size);
+
+            QFileInfo fileInfo(iteminf.name);
+            QString rawFilesExt      = DRawDecoder::rawFiles();
+            QString ext              = fileInfo.suffix().toUpper();
+
+            if (!ext.isEmpty() && rawFilesExt.toUpper().contains(ext))
+            {
+                lvItem->setText(DItemsListView::User2, i18nc("@info: item properties", "RAW Image"));
+            }
+            else
+            {
+                lvItem->setText(DItemsListView::User2, QMimeDatabase().mimeTypeForFile(fileInfo).comment());
+            }
+
+            QDateTime dt             = (iteminf.ctime.isValid() ? iteminf.ctime : iteminf.dtime);
+            str                      = QLocale().toString(dt, QLocale::ShortFormat);
+            lvItem->setText(DItemsListView::User3, str);
+            lvItem->setData(DItemsListView::User3, Qt::UserRole, dt);
+
+            lvItem->setText(DItemsListView::User4, inf.absolutePath());
         }
 
         ++it;
