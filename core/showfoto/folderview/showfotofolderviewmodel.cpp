@@ -35,6 +35,7 @@
 
 #include "digikam_debug.h"
 #include "digikam_globals.h"
+#include "drawdecoder.h"
 #include "thumbnailloadthread.h"
 #include "showfotofolderviewlist.h"
 
@@ -108,7 +109,6 @@ QVariant ShowfotoFolderViewModel::data(const QModelIndex& index, int role) const
         if (info.isFile() && !info.isSymLink() && !info.isDir() && !info.isRoot())
         {
             QString path    = info.absoluteFilePath();
-
             QMimeType mtype = QMimeDatabase().mimeTypeForFile(path);
             QString suffix  = info.suffix().toUpper();
 
@@ -117,7 +117,8 @@ QVariant ShowfotoFolderViewModel::data(const QModelIndex& index, int role) const
                 (suffix == QLatin1String("KRA"))                 ||
                 (suffix == QLatin1String("CR3"))                 ||
                 (suffix == QLatin1String("HEIC"))                ||
-                (suffix == QLatin1String("HEIF")))
+                (suffix == QLatin1String("HEIF"))                ||
+                DRawDecoder::rawFiles().contains(suffix))
             {
                 QPixmap pix;
 

@@ -44,6 +44,7 @@
 #include "showfotostackviewfavorites.h"
 #include "showfotostackviewfavoriteitem.h"
 #include "dfileoperations.h"
+#include "drawdecoder.h"
 
 using namespace Digikam;
 
@@ -178,7 +179,8 @@ void ShowfotoStackViewFavoriteList::dragMoveEvent(QDragMoveEvent* e)
                     (suffix == QLatin1String("KRA"))                 ||
                     (suffix == QLatin1String("CR3"))                 ||
                     (suffix == QLatin1String("HEIC"))                ||
-                    (suffix == QLatin1String("HEIF")))
+                    (suffix == QLatin1String("HEIF"))                ||
+                    DRawDecoder::rawFiles().contains(suffix))
                 {
                     urls << url;
                 }
@@ -227,7 +229,8 @@ void ShowfotoStackViewFavoriteList::dropEvent(QDropEvent* e)
                     (suffix == QLatin1String("KRA"))                 ||
                     (suffix == QLatin1String("CR3"))                 ||
                     (suffix == QLatin1String("HEIC"))                ||
-                    (suffix == QLatin1String("HEIF")))
+                    (suffix == QLatin1String("HEIF"))                ||
+                    DRawDecoder::rawFiles().contains(suffix))
                 {
                     urls << url;
                 }
