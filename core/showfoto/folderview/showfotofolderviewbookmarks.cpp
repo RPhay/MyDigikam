@@ -398,37 +398,37 @@ void ShowfotoFolderViewBookmarks::readSettings(const KConfigGroup& group)
 
     ShowfotoFolderViewBookmarkItem* uplace = nullptr;
     uplace                                 = new ShowfotoFolderViewBookmarkItem(d->topUsualPlaces);
-    uplace->setText(0, i18nc("@item", "Home"));
+    uplace->setText(0, QStandardPaths::displayName(QStandardPaths::HomeLocation));
     uplace->setIcon(0, QIcon::fromTheme(QLatin1String("user-home")));
     uplace->setPath(QStandardPaths::writableLocation(QStandardPaths::HomeLocation));
 
     uplace                                 = new ShowfotoFolderViewBookmarkItem(d->topUsualPlaces);
-    uplace->setText(0, i18nc("@item", "Pictures"));
+    uplace->setText(0, QStandardPaths::displayName(QStandardPaths::PicturesLocation));
     uplace->setIcon(0, QIcon::fromTheme(QLatin1String("folder-image")));
     uplace->setPath(QStandardPaths::writableLocation(QStandardPaths::PicturesLocation));
 
     uplace                                 = new ShowfotoFolderViewBookmarkItem(d->topUsualPlaces);
-    uplace->setText(0, i18nc("@item", "Documents"));
+    uplace->setText(0, QStandardPaths::displayName(QStandardPaths::DocumentsLocation));
     uplace->setIcon(0, QIcon::fromTheme(QLatin1String("folder-document")));
     uplace->setPath(QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation));
 
     uplace                                 = new ShowfotoFolderViewBookmarkItem(d->topUsualPlaces);
-    uplace->setText(0, i18nc("@item", "Downloads"));
+    uplace->setText(0, QStandardPaths::displayName(QStandardPaths::DownloadLocation));
     uplace->setIcon(0, QIcon::fromTheme(QLatin1String("folder-downloads")));
     uplace->setPath(QStandardPaths::writableLocation(QStandardPaths::DownloadLocation));
 
     uplace                                 = new ShowfotoFolderViewBookmarkItem(d->topUsualPlaces);
-    uplace->setText(0, i18nc("@item", "Desktop"));
+    uplace->setText(0, QStandardPaths::displayName(QStandardPaths::DesktopLocation));
     uplace->setIcon(0, QIcon::fromTheme(QLatin1String("user-desktop")));
     uplace->setPath(QStandardPaths::writableLocation(QStandardPaths::DesktopLocation));
 
     uplace                                 = new ShowfotoFolderViewBookmarkItem(d->topUsualPlaces);
-    uplace->setText(0, i18nc("@item", "Music"));
+    uplace->setText(0, QStandardPaths::displayName(QStandardPaths::MusicLocation));
     uplace->setIcon(0, QIcon::fromTheme(QLatin1String("folder-music")));
     uplace->setPath(QStandardPaths::writableLocation(QStandardPaths::MusicLocation));
 
     uplace                                 = new ShowfotoFolderViewBookmarkItem(d->topUsualPlaces);
-    uplace->setText(0, i18nc("@item", "Videos"));
+    uplace->setText(0, QStandardPaths::displayName(QStandardPaths::MoviesLocation));
     uplace->setIcon(0, QIcon::fromTheme(QLatin1String("folder-videos")));
     uplace->setPath(QStandardPaths::writableLocation(QStandardPaths::MoviesLocation));
 }
