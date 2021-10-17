@@ -169,7 +169,7 @@ BUGFIXES:
 154 ==> 443606 - digiKam fails to build on s390x.
 155 ==> 443682 - Add "copy file path" option to right-click menu.
 156 ==> 443685 - When converting canon CR3 files to dng files in parallel digiKam crashes.
-157 ==> 
+157 ==> 443851 - Windows-64 new install does not create databases.
 158 ==> 
 159 ==> 
 160 ==> 
