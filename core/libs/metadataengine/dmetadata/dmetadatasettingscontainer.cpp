@@ -485,7 +485,6 @@ void DMetadataSettingsContainer::defaultCommentValues()
     commNs7.index           = 6;
     commNs7.subspace        = NamespaceEntry::IPTC;
 
-
     getReadMapping(NamespaceEntry::DM_COMMENT_CONTAINER()) << commNs1
                                                            << commNs2
                                                            << commNs3
@@ -521,9 +520,9 @@ void DMetadataSettingsContainer::defaultColorLabelValues()
     commNs3.index           = 2;
     commNs3.subspace        = NamespaceEntry::XMP;
 
-     getReadMapping(NamespaceEntry::DM_COLORLABEL_CONTAINER()) << commNs1
-                                                               << commNs2
-                                                               << commNs3;
+    getReadMapping(NamespaceEntry::DM_COLORLABEL_CONTAINER()) << commNs1
+                                                              << commNs2
+                                                              << commNs3;
 
     d->writeMappings[NamespaceEntry::DM_COLORLABEL_CONTAINER()]
         = QList<NamespaceEntry>(getReadMapping(NamespaceEntry::DM_COLORLABEL_CONTAINER()));
