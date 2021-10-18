@@ -79,6 +79,8 @@ public:
     QList<QUrl> urls()                  const;
     QUrl currentUrl()                   const;
 
+    int iconSize()                      const;
+
 private Q_SLOTS:
 
     void slotPluginActionTriggered();

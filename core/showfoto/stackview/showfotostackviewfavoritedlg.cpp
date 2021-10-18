@@ -105,15 +105,15 @@ public:
     ShowfotoStackViewFavoriteList*  list;
 };
 
-ShowfotoStackViewFavoriteDlg::ShowfotoStackViewFavoriteDlg(ShowfotoStackViewFavoriteList* const parent,
+ShowfotoStackViewFavoriteDlg::ShowfotoStackViewFavoriteDlg(ShowfotoStackViewFavoriteList* const list,
                                                            bool create)
-    : QDialog(parent),
+    : QDialog(list),
       d      (new Private)
 {
     setModal(true);
 
     d->create  = create;
-    d->list    = parent;
+    d->list    = list;
     d->buttons = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
     d->buttons->button(QDialogButtonBox::Ok)->setDefault(true);
 
@@ -198,20 +198,22 @@ ShowfotoStackViewFavoriteDlg::ShowfotoStackViewFavoriteDlg(ShowfotoStackViewFavo
     fnt.setItalic(true);
     d->nbImagesLabel->setFont(fnt);
 
-    d->urlsEdit             = new DItemsList(page, ShowfotoStackViewList::SizeSmall);
+    d->urlsEdit             = new DItemsList(page);
+    d->urlsEdit->setIconSize(d->list->iconSize().width());
     d->urlsEdit->setAllowRAW(true);
     d->urlsEdit->setAllowDuplicate(false);
     d->urlsEdit->setControlButtonsPlacement(DItemsList::ControlButtonsBelow);
     d->urlsEdit->setControlButtons(DItemsList::Add | DItemsList::Remove | DItemsList::Clear);
-    d->urlsEdit->listView()->setColumn(DItemsListView::User1, i18n("Size"), true);
-    d->urlsEdit->listView()->setColumn(DItemsListView::User2, i18n("Type"), true);
-    d->urlsEdit->listView()->setColumn(DItemsListView::User3, i18n("Date"), true);
-    d->urlsEdit->listView()->setColumn(DItemsListView::User4, i18n("Path"), true);
+    d->urlsEdit->listView()->setColumn(DItemsListView::Filename, i18n("Name"), true);
+    d->urlsEdit->listView()->setColumn(DItemsListView::User1,    i18n("Size"), true);
+    d->urlsEdit->listView()->setColumn(DItemsListView::User2,    i18n("Type"), true);
+    d->urlsEdit->listView()->setColumn(DItemsListView::User3,    i18n("Date"), true);
+    d->urlsEdit->listView()->setColumn(DItemsListView::User4,    i18n("Path"), true);
 
-    d->urlsEdit->setToolTip(i18nc("@info", "This is the list of items hosted by this favorite.\n"
-                                           "The current selected item from this list will be automatically\n"
-                                           "shown in editor when favorite is open. If none is selected,\n"
-                                           "first one from the list will be displayed."));
+    d->urlsEdit->setWhatsThis(i18nc("@info", "This is the list of items hosted by this favorite.\n"
+                                             "The current selected item from this list will be automatically\n"
+                                             "shown in editor when favorite is open. If none is selected,\n"
+                                             "first one from the list will be displayed."));
     urlsLabel->setBuddy(d->urlsEdit);
 
     // --------------------------------------------------------
@@ -362,6 +364,11 @@ void ShowfotoStackViewFavoriteDlg::setCurrentUrl(const QUrl& url)
     d->urlsEdit->setCurrentUrl(url);
 }
 
+void ShowfotoStackViewFavoriteDlg::setIconSize(int size)
+{
+    d->urlsEdit->setIconSize(size);
+}
+
 void ShowfotoStackViewFavoriteDlg::slotIconResetClicked()
 {
     d->icon = QLatin1String("folder-favorites");
@@ -433,21 +440,23 @@ void ShowfotoStackViewFavoriteDlg::slotUpdateMetadata()
     }
 }
 
-bool ShowfotoStackViewFavoriteDlg::favoriteEdit(ShowfotoStackViewFavoriteList* const parent,
+bool ShowfotoStackViewFavoriteDlg::favoriteEdit(ShowfotoStackViewFavoriteList* const list,
                                                 QString& name,
                                                 QString& desc,
                                                 QDate& date,
                                                 QString& icon,
                                                 QList<QUrl>& urls,
-                                                QUrl& current)
+                                                QUrl& current,
+                                                int iconSize)
 {
-    QPointer<ShowfotoStackViewFavoriteDlg> dlg = new ShowfotoStackViewFavoriteDlg(parent);
+    QPointer<ShowfotoStackViewFavoriteDlg> dlg = new ShowfotoStackViewFavoriteDlg(list);
     dlg->setName(name);
     dlg->setDescription(desc);
     dlg->setDate(date);
     dlg->setIcon(icon);
     dlg->setUrls(urls);
     dlg->setCurrentUrl(current);
+    dlg->setIconSize(iconSize);
 
     bool valRet = dlg->exec();
 
@@ -466,21 +475,23 @@ bool ShowfotoStackViewFavoriteDlg::favoriteEdit(ShowfotoStackViewFavoriteList* c
     return valRet;
 }
 
-bool ShowfotoStackViewFavoriteDlg::favoriteCreate(ShowfotoStackViewFavoriteList* const parent,
+bool ShowfotoStackViewFavoriteDlg::favoriteCreate(ShowfotoStackViewFavoriteList* const list,
                                                   QString& name,
                                                   QString& desc,
                                                   QDate& date,
                                                   QString& icon,
                                                   QList<QUrl>& urls,
-                                                  QUrl& current)
+                                                  QUrl& current,
+                                                  int iconSize)
 {
-    QPointer<ShowfotoStackViewFavoriteDlg> dlg = new ShowfotoStackViewFavoriteDlg(parent, true);
+    QPointer<ShowfotoStackViewFavoriteDlg> dlg = new ShowfotoStackViewFavoriteDlg(list, true);
     dlg->setName(name);
     dlg->setDescription(desc);
     dlg->setDate(date);
     dlg->setIcon(icon);
     dlg->setUrls(urls);
     dlg->setCurrentUrl(current);
+    dlg->setIconSize(iconSize);
 
     bool valRet = dlg->exec();
 

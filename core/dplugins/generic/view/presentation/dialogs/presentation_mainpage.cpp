@@ -93,7 +93,8 @@ PresentationMainPage::PresentationMainPage(QWidget* const parent,
     // --------------------------------------------------------
 
     QVBoxLayout* const listBoxContainerLayout = new QVBoxLayout;
-    d->imagesFilesListBox                     = new DItemsList(m_ImagesFilesListBoxContainer, 32);
+    d->imagesFilesListBox                     = new DItemsList(m_ImagesFilesListBoxContainer);
+    d->imagesFilesListBox->setIconSize(32);
     d->imagesFilesListBox->setObjectName(QLatin1String("Presentation ImagesList"));
     d->imagesFilesListBox->listView()->header()->hide();
     d->imagesFilesListBox->enableControlButtons(true);

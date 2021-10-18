@@ -171,6 +171,11 @@ int ShowfotoStackViewSideBar::sortRole() const
     return d->role;
 }
 
+int ShowfotoStackViewSideBar::iconSize() const
+{
+    return d->view->iconSize().width();
+}
+
 void ShowfotoStackViewSideBar::registerPluginActions(const QList<DPluginAction*>& actions)
 {
    d->dpluginActions = actions;

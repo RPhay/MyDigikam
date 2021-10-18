@@ -47,7 +47,7 @@ class ShowfotoStackViewFavoriteDlg : public QDialog
 
 public:
 
-    explicit ShowfotoStackViewFavoriteDlg(ShowfotoStackViewFavoriteList* const parent,
+    explicit ShowfotoStackViewFavoriteDlg(ShowfotoStackViewFavoriteList* const list,
                                           bool create = false);
     ~ShowfotoStackViewFavoriteDlg() override;
 
@@ -69,22 +69,26 @@ public:
     void setCurrentUrl(const QUrl& url);
     QUrl currentUrl()     const;
 
+    void setIconSize(int size);
+
 public:
 
-    static bool favoriteEdit(ShowfotoStackViewFavoriteList* const parent,
+    static bool favoriteEdit(ShowfotoStackViewFavoriteList* const list,
                              QString& name,
                              QString& desc,
                              QDate& date,
                              QString& icon,
                              QList<QUrl>& urls,
-                             QUrl& current);
-    static bool favoriteCreate(ShowfotoStackViewFavoriteList* const parent,
+                             QUrl& current,
+                             int iconSize);
+    static bool favoriteCreate(ShowfotoStackViewFavoriteList* const list,
                                QString& name,
                                QString& desc,
                                QDate& date,
                                QString& icon,
                                QList<QUrl>& urls,
-                               QUrl& current);
+                               QUrl& current,
+                               int iconSize);
 
 private Q_SLOTS:
 

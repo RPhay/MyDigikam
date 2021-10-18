@@ -227,7 +227,14 @@ void ShowfotoStackViewFavorites::slotAddFavorite(const QList<QUrl>& newUrls, con
     QList<QUrl> urls = newUrls;
     QUrl currentUrl  = current;
 
-    bool ok          = ShowfotoStackViewFavoriteDlg::favoriteCreate(d->favoritesList, name, desc, date, icon, urls, currentUrl);
+    bool ok          = ShowfotoStackViewFavoriteDlg::favoriteCreate(d->favoritesList,
+                                                                    name,
+                                                                    desc,
+                                                                    date,
+                                                                    icon,
+                                                                    urls,
+                                                                    currentUrl,
+                                                                    d->sidebar->iconSize());
 
     if (ok)
     {
@@ -277,7 +284,14 @@ void ShowfotoStackViewFavorites::slotEdtFavorite()
     QList<QUrl> urls = item->urls();
     QUrl currentUrl  = item->currentUrl();
 
-    bool ok = ShowfotoStackViewFavoriteDlg::favoriteEdit(d->favoritesList, name, desc, date, icon, urls, currentUrl);
+    bool ok = ShowfotoStackViewFavoriteDlg::favoriteEdit(d->favoritesList,
+                                                         name,
+                                                         desc,
+                                                         date,
+                                                         icon,
+                                                         urls,
+                                                         currentUrl,
+                                                         d->sidebar->iconSize());
 
     if (ok)
     {

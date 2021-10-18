@@ -31,36 +31,9 @@ DItemsListView::DItemsListView(DItemsList* const parent)
     : QTreeWidget (parent),
       m_itemDraged(nullptr)
 {
-    setup(DEFAULTSIZE);
-}
-
-DItemsListView::DItemsListView(int iconSize, DItemsList* const parent)
-    : QTreeWidget (parent),
-      m_itemDraged(nullptr)
-{
-    setup(iconSize);
-}
-
-DItemsListView::~DItemsListView()
-{
-}
-
-DInfoInterface* DItemsListView::iface() const
-{
-    DItemsList* const p = dynamic_cast<DItemsList*>(parent());
-
-    if (p)
-    {
-        return p->iface();
-    }
-
-    return nullptr;
-}
-
-void DItemsListView::setup(int iconSize)
-{
-    m_iconSize = iconSize;
-    setIconSize(QSize(m_iconSize, m_iconSize));
+    setRootIsDecorated(false);
+    setItemsExpandable(false);
+    setExpandsOnDoubleClick(false);
     setAlternatingRowColors(true);
     setSelectionMode(QAbstractItemView::ExtendedSelection);
 
@@ -68,7 +41,6 @@ void DItemsListView::setup(int iconSize)
 
     setSortingEnabled(false);
     setAllColumnsShowFocus(true);
-    setRootIsDecorated(false);
     setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
 
     setColumnCount(8);
@@ -96,6 +68,22 @@ void DItemsListView::setup(int iconSize)
 
     connect(this, &DItemsListView::itemClicked,
             this, &DItemsListView::slotItemClicked);
+}
+
+DItemsListView::~DItemsListView()
+{
+}
+
+DInfoInterface* DItemsListView::iface() const
+{
+    DItemsList* const p = dynamic_cast<DItemsList*>(parent());
+
+    if (p)
+    {
+        return p->iface();
+    }
+
+    return nullptr;
 }
 
 void DItemsListView::enableDragAndDrop(const bool enable)

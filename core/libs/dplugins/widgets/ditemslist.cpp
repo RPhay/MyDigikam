@@ -92,19 +92,12 @@ public:
     DInfoInterface*            iface;
 };
 
-DItemsList::DItemsList(QWidget* const parent, int iconSize)
+DItemsList::DItemsList(QWidget* const parent)
     : QWidget(parent),
       d      (new Private)
 {
-    if (iconSize != -1)  // default = ICONSIZE
-    {
-        setIconSize(iconSize);
-    }
-
-    // --------------------------------------------------------
-
     d->progressPix    = new DWorkingPixmap(this);
-    d->listView       = new DItemsListView(d->iconSize, this);
+    d->listView       = new DItemsListView(this);
     d->listView->setSelectionMode(QAbstractItemView::ExtendedSelection);
 
     // --------------------------------------------------------
@@ -336,6 +329,8 @@ void DItemsList::setIconSize(int size)
     {
         d->iconSize = size;
     }
+
+    d->listView->setIconSize(QSize(iconSize(), iconSize()));
 }
 
 int DItemsList::iconSize() const
@@ -825,7 +820,9 @@ void DItemsList::processed(const QUrl& url, bool success)
                                : DItemsListViewItem::Failed);
 
         if (d->processItems.isEmpty())
+        {
             d->progressTimer->stop();
+        }
     }
 }
 

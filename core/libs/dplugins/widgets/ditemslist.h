@@ -134,8 +134,7 @@ public:
 
 public:
 
-    explicit DItemsListView(DItemsList* const parent = nullptr);
-    explicit DItemsListView(int iconSize, DItemsList* const parent = nullptr);
+    DItemsListView(DItemsList* const parent);
     ~DItemsListView()                                 override;
 
     void setColumnLabel(ColumnType column, const QString& label);
@@ -171,15 +170,12 @@ private:
     void dropEvent(QDropEvent* e)                     override;
     void contextMenuEvent(QContextMenuEvent* e)       override;
 
-    void setup(int iconSize);
-
     void drawRow(QPainter* p,
                  const QStyleOptionViewItem& opt,
                  const QModelIndex& index)      const override;
 
 private:
 
-    int              m_iconSize;
     QTreeWidgetItem* m_itemDraged;
 };
 
@@ -226,7 +222,7 @@ public:
 
 public:
 
-    explicit DItemsList(QWidget* const parent, int iconSize = -1);
+    explicit DItemsList(QWidget* const parent);
     ~DItemsList()                                                     override;
 
     void                setAllowRAW(bool allow);
@@ -244,6 +240,7 @@ public:
      */
     bool                checkSelection();
 
+    void setIconSize(int size);
     int                 iconSize()                                  const;
 
     DItemsListView*     listView()                                  const;
@@ -302,9 +299,6 @@ protected Q_SLOTS:
     virtual void slotThumbnail(const LoadingDescription&, const QPixmap&);
     virtual void slotImageListChanged();
 
-private:
-
-    void setIconSize(int size);
 
 private:
 
