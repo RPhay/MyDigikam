@@ -196,6 +196,7 @@ void RawTherapeeRawImportPlugin::slotProcessFinished(int code, QProcess::ExitSta
     qCDebug(DIGIKAM_GENERAL_LOG) << "RawTherapee :: return code:" << code << ":: Exit status:" << status;
 
     d->decoded = DImg(d->tempName);
+    d->decoded.setAttribute(QLatin1String("isReadOnly"), true);
 
     if (d->decoded.isNull())
     {
