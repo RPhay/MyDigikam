@@ -120,9 +120,9 @@ int main(int argc, char* argv[])
 
     KLocalizedString::setApplicationDomain("digikam");
 
-    KAboutData aboutData(QLatin1String("showfoto"), // component name
-                         i18n("Showfoto"),          // display name
-                         digiKamVersion());         // NOTE: showFoto version = digiKam version
+    KAboutData aboutData(QLatin1String("showfoto"),     // component name
+                         i18nc("@title", "Showfoto"),   // display name
+                         digiKamVersion());             // NOTE: showFoto version = digiKam version
 
     aboutData.setShortDescription(QString::fromUtf8("%1 - %2").arg(DAboutData::digiKamSlogan()).arg(DAboutData::digiKamFamily()));
     aboutData.setLicense(KAboutLicense::GPL);
@@ -138,7 +138,7 @@ int main(int argc, char* argv[])
     QCommandLineParser parser;
     KAboutData::setApplicationData(aboutData);
     aboutData.setupCommandLine(&parser);
-    parser.addPositionalArgument(QLatin1String("files"), i18n("File(s) or folder(s) to open"), QLatin1String("[file(s) or folder(s)]"));
+    parser.addPositionalArgument(QLatin1String("files"), i18nc("command line option", "File(s) or folder(s) to open"), QLatin1String("[file(s) or folder(s)]"));
     parser.process(app);
     aboutData.processCommandLine(&parser);
 
@@ -218,9 +218,9 @@ int main(int argc, char* argv[])
     {
         QMessageBox::critical(qApp->activeWindow(),
                               qApp->applicationName(),
-                              i18n("<p>You are running Showfoto as a 32-bit version on a 64-bit Windows.</p>"
-                                   "<p>Please install the 64-bit version of Showfoto to get "
-                                   "a better experience with Showfoto.</p>"));
+                              i18nc("#info", "<p>You are running Showfoto as a 32-bit version on a 64-bit Windows.</p>"
+                                    "<p>Please install the 64-bit version of Showfoto to get "
+                                    "a better experience with Showfoto.</p>"));
     }
 
 #endif
