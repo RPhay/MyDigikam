@@ -48,6 +48,11 @@ namespace Digikam
 class DItemsList;
 class DItemsListView;
 
+/**
+ * Type of static fonction used to customize sort items in list.
+ * Sort items call this method in DItemsListViewItem::operator<.
+ * To setup this method, uses DItemList::setIsLessThanHandler().
+ */
 typedef bool (*DItemsListIsLessThanHandler)(const QTreeWidgetItem* current, const QTreeWidgetItem& other);
 
 class DIGIKAM_EXPORT DItemsListViewItem : public QTreeWidgetItem
@@ -61,10 +66,6 @@ public:
         Success,
         Failed
     };
-
-public:
-
-    typedef bool (*IsLessThanHandler)(const QTreeWidgetItem* current, const QTreeWidgetItem& other);
 
 public:
 
@@ -97,7 +98,7 @@ public:
     void setIsLessThanHandler(DItemsListIsLessThanHandler fncptr);
 
     /**
-     * implement this, if you have special item widgets, e.g. an edit line
+     * Implement this, if you have special item widgets, e.g. an edit line
      * they will be set automatically when adding items, changing order, etc.
      */
     virtual void updateItemWidgets() {};
@@ -276,8 +277,14 @@ public:
     void setIface(DInfoInterface* const iface);
     DInfoInterface* iface()                                         const;
 
+    ///@{
+    /**
+     * Methods to handle function pointer used to customize sort items in list.
+     * See DItemsListIsLessThanHandler type for details.
+     */
     void setIsLessThanHandler(DItemsListIsLessThanHandler fncptr);
     DItemsListIsLessThanHandler isLessThanHandler() const;
+    ///@}
 
 Q_SIGNALS:
 
