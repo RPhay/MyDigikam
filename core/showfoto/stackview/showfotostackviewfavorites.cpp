@@ -227,7 +227,7 @@ void ShowfotoStackViewFavorites::slotAddFavorite(const QList<QUrl>& newUrls, con
     QList<QUrl> urls = newUrls;
     QUrl currentUrl  = current;
 
-    bool ok          = ShowfotoStackViewFavoriteDlg::favoriteCreate(d->favoritesList,
+    bool ok          = ShowfotoStackViewFavoriteDlg::favoriteDialog(d->favoritesList,
                                                                     name,
                                                                     desc,
                                                                     date,
@@ -236,7 +236,8 @@ void ShowfotoStackViewFavorites::slotAddFavorite(const QList<QUrl>& newUrls, con
                                                                     currentUrl,
                                                                     d->sidebar->iconSize(),
                                                                     d->sidebar->sortOrder(),
-                                                                    d->sidebar->sortRole()
+                                                                    d->sidebar->sortRole(),
+                                                                    true
                                                                    );
 
     if (ok)
@@ -287,17 +288,17 @@ void ShowfotoStackViewFavorites::slotEdtFavorite()
     QList<QUrl> urls = item->urls();
     QUrl currentUrl  = item->currentUrl();
 
-    bool ok = ShowfotoStackViewFavoriteDlg::favoriteEdit(d->favoritesList,
-                                                         name,
-                                                         desc,
-                                                         date,
-                                                         icon,
-                                                         urls,
-                                                         currentUrl,
-                                                         d->sidebar->iconSize(),
-                                                         d->sidebar->sortOrder(),
-                                                         d->sidebar->sortRole()
-                                                        );
+    bool ok = ShowfotoStackViewFavoriteDlg::favoriteDialog(d->favoritesList,
+                                                           name,
+                                                           desc,
+                                                           date,
+                                                           icon,
+                                                           urls,
+                                                           currentUrl,
+                                                           d->sidebar->iconSize(),
+                                                           d->sidebar->sortOrder(),
+                                                           d->sidebar->sortRole()
+                                                          );
 
     if (ok)
     {

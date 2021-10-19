@@ -453,46 +453,7 @@ void ShowfotoStackViewFavoriteDlg::slotUpdateMetadata()
     }
 }
 
-bool ShowfotoStackViewFavoriteDlg::favoriteEdit(ShowfotoStackViewFavoriteList* const list,
-                                                QString& name,
-                                                QString& desc,
-                                                QDate& date,
-                                                QString& icon,
-                                                QList<QUrl>& urls,
-                                                QUrl& current,
-                                                int iconSize,
-                                                int sortOrder,
-                                                int sortRole)
-{
-    QPointer<ShowfotoStackViewFavoriteDlg> dlg = new ShowfotoStackViewFavoriteDlg(list);
-    dlg->setName(name);
-    dlg->setDescription(desc);
-    dlg->setDate(date);
-    dlg->setIcon(icon);
-    dlg->setUrls(urls);
-    dlg->setCurrentUrl(current);
-    dlg->setIconSize(iconSize);
-    dlg->setSortOrder(sortOrder);
-    dlg->setSortRole(sortRole);
-
-    bool valRet = dlg->exec();
-
-    if (valRet == QDialog::Accepted)
-    {
-        name    = dlg->name();
-        desc    = dlg->description();
-        date    = dlg->date();
-        icon    = dlg->icon();
-        urls    = dlg->urls();
-        current = dlg->currentUrl();
-    }
-
-    delete dlg;
-
-    return valRet;
-}
-
-bool ShowfotoStackViewFavoriteDlg::favoriteCreate(ShowfotoStackViewFavoriteList* const list,
+bool ShowfotoStackViewFavoriteDlg::favoriteDialog(ShowfotoStackViewFavoriteList* const list,
                                                   QString& name,
                                                   QString& desc,
                                                   QDate& date,
@@ -501,9 +462,10 @@ bool ShowfotoStackViewFavoriteDlg::favoriteCreate(ShowfotoStackViewFavoriteList*
                                                   QUrl& current,
                                                   int iconSize,
                                                   int sortOrder,
-                                                  int sortRole)
+                                                  int sortRole,
+                                                  bool create)
 {
-    QPointer<ShowfotoStackViewFavoriteDlg> dlg = new ShowfotoStackViewFavoriteDlg(list, true);
+    QPointer<ShowfotoStackViewFavoriteDlg> dlg = new ShowfotoStackViewFavoriteDlg(list, create);
     dlg->setName(name);
     dlg->setDescription(desc);
     dlg->setDate(date);

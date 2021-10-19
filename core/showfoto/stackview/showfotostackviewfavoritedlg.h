@@ -78,17 +78,7 @@ public:
 
 public:
 
-    static bool favoriteEdit(ShowfotoStackViewFavoriteList* const list,
-                             QString& name,
-                             QString& desc,
-                             QDate& date,
-                             QString& icon,
-                             QList<QUrl>& urls,
-                             QUrl& current,
-                             int iconSize,
-                             int sortOrder,
-                             int sortRole);
-    static bool favoriteCreate(ShowfotoStackViewFavoriteList* const list,
+    static bool favoriteDialog(ShowfotoStackViewFavoriteList* const list,
                                QString& name,
                                QString& desc,
                                QDate& date,
@@ -97,7 +87,8 @@ public:
                                QUrl& current,
                                int iconSize,
                                int sortOrder,
-                               int sortRole);
+                               int sortRole,
+                               bool create = false);
 
 private:
 
