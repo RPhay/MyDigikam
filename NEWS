@@ -173,7 +173,7 @@ BUGFIXES:
 158 ==> 443646 - digiKam does not delete duplicate picture over NFS share.
 159 ==> 444052 - While editing a raw (.DNG) image, original image can be corrupted.
 160 ==> 443966 - Move to trash not working.
-161 ==> 
+161 ==> 435507 - New install digiKam 7.2 on Windows Error opening database.
 162 ==> 
 163 ==> 
 164 ==> 
