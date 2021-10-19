@@ -237,7 +237,7 @@ void ShowfotoFolderViewBookmarks::slotAddBookmark(const QString& newBookmark)
         QString icon  = QLatin1String("folder");
         QString path  = newBookmark;
 
-        bool ok = ShowfotoFolderViewBookmarkDlg::bookmarkCreate(d->bookmarksList, title, icon, path);
+        bool ok = ShowfotoFolderViewBookmarkDlg::bookmarkDialog(d->bookmarksList, title, icon, path, true);
 
         if (ok)
         {
@@ -289,7 +289,7 @@ void ShowfotoFolderViewBookmarks::slotEdtBookmark()
     QString icon  = item->icon(0).name();
     QString path  = item->path();
 
-    bool ok = ShowfotoFolderViewBookmarkDlg::bookmarkEdit(d->bookmarksList, title, icon, path);
+    bool ok = ShowfotoFolderViewBookmarkDlg::bookmarkDialog(d->bookmarksList, title, icon, path);
 
     if (ok)
     {

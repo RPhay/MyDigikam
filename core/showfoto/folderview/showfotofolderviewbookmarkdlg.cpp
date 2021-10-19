@@ -301,37 +301,13 @@ void ShowfotoFolderViewBookmarkDlg::slotIconChanged()
 
 }
 
-bool ShowfotoFolderViewBookmarkDlg::bookmarkEdit(ShowfotoFolderViewBookmarkList* const parent,
-                                                 QString& title, QString& icon, QString& path)
+bool ShowfotoFolderViewBookmarkDlg::bookmarkDialog(ShowfotoFolderViewBookmarkList* const parent,
+                                                   QString& title,
+                                                   QString& icon,
+                                                   QString& path,
+                                                   bool create)
 {
-    QPointer<ShowfotoFolderViewBookmarkDlg> dlg = new ShowfotoFolderViewBookmarkDlg(parent);
-    dlg->setTitle(title);
-    dlg->setIcon(icon);
-    dlg->setPath(path);
-
-    bool valRet = dlg->exec();
-
-    if (valRet == QDialog::Accepted)
-    {
-        title = dlg->title();
-        icon  = dlg->icon();
-        path  = dlg->path();
-
-        if (!path.endsWith(QDir::separator()))
-        {
-            path.append(QDir::separator());
-        }
-    }
-
-    delete dlg;
-
-    return valRet;
-}
-
-bool ShowfotoFolderViewBookmarkDlg::bookmarkCreate(ShowfotoFolderViewBookmarkList* const parent,
-                                                   QString& title, QString& icon, QString& path)
-{
-    QPointer<ShowfotoFolderViewBookmarkDlg> dlg = new ShowfotoFolderViewBookmarkDlg(parent, true);
+    QPointer<ShowfotoFolderViewBookmarkDlg> dlg = new ShowfotoFolderViewBookmarkDlg(parent, create);
     dlg->setTitle(title);
     dlg->setIcon(icon);
     dlg->setPath(path);

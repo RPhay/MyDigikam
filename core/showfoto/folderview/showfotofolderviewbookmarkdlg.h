@@ -59,8 +59,11 @@ public:
 
 public:
 
-    static bool bookmarkEdit(ShowfotoFolderViewBookmarkList* const parent, QString& title, QString& icon, QString& path);
-    static bool bookmarkCreate(ShowfotoFolderViewBookmarkList* const parent, QString& title, QString& icon, QString& path);
+    static bool bookmarkDialog(ShowfotoFolderViewBookmarkList* const parent,
+                               QString& title,
+                               QString& icon,
+                               QString& path,
+                               bool create = false);
 
 private Q_SLOTS:
 
