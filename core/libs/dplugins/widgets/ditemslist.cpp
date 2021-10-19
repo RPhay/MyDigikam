@@ -63,33 +63,35 @@ public:
         progressCount        (0),
         progressTimer        (nullptr),
         listView             (nullptr),
-        iface                (nullptr)
+        iface                (nullptr),
+        isLessThan           (nullptr)
     {
         thumbLoadThread = ThumbnailLoadThread::defaultThread();
     }
 
-    bool                       allowRAW;
-    bool                       allowDuplicate;
-    bool                       controlButtonsEnabled;
-    int                        iconSize;
+    bool                        allowRAW;
+    bool                        allowDuplicate;
+    bool                        controlButtonsEnabled;
+    int                         iconSize;
 
-    CtrlButton*                addButton;
-    CtrlButton*                removeButton;
-    CtrlButton*                moveUpButton;
-    CtrlButton*                moveDownButton;
-    CtrlButton*                clearButton;
-    CtrlButton*                loadButton;
-    CtrlButton*                saveButton;
+    CtrlButton*                 addButton;
+    CtrlButton*                 removeButton;
+    CtrlButton*                 moveUpButton;
+    CtrlButton*                 moveDownButton;
+    CtrlButton*                 clearButton;
+    CtrlButton*                 loadButton;
+    CtrlButton*                 saveButton;
 
-    QList<QUrl>                processItems;
-    DWorkingPixmap*            progressPix;
-    int                        progressCount;
-    QTimer*                    progressTimer;
+    QList<QUrl>                 processItems;
+    DWorkingPixmap*             progressPix;
+    int                         progressCount;
+    QTimer*                     progressTimer;
 
-    DItemsListView*            listView;
-    ThumbnailLoadThread*       thumbLoadThread;
+    DItemsListView*             listView;
+    ThumbnailLoadThread*        thumbLoadThread;
 
-    DInfoInterface*            iface;
+    DInfoInterface*             iface;
+    DItemsListIsLessThanHandler isLessThan;
 };
 
 DItemsList::DItemsList(QWidget* const parent)
@@ -949,6 +951,16 @@ void DItemsList::setCurrentUrl(const QUrl& url)
 
         ++it;
     }
+}
+
+void DItemsList::setIsLessThanHandler(DItemsListIsLessThanHandler fncptr)
+{
+    d->isLessThan = fncptr;
+}
+
+DItemsListIsLessThanHandler DItemsList::isLessThanHandler() const
+{
+    return d->isLessThan;
 }
 
 } // namespace Digikam

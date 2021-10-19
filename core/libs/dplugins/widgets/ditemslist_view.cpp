@@ -224,4 +224,16 @@ void DItemsListView::dropEvent(QDropEvent* e)
     scrollToItem(m_itemDraged);
 }
 
+DItemsListIsLessThanHandler DItemsListView::isLessThanHandler() const
+{
+    DItemsList* const p = dynamic_cast<DItemsList*>(parent());
+
+    if (p)
+    {
+        return p->isLessThanHandler();
+    }
+
+    return nullptr;
+}
+
 } // namespace Digikam

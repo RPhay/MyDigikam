@@ -35,6 +35,9 @@
 // Local includes
 
 #include "digikam_config.h"
+#include "ditemslist.h"
+
+using namespace Digikam;
 
 namespace ShowFoto
 {
@@ -70,6 +73,8 @@ public:
     QUrl currentUrl()     const;
 
     void setIconSize(int size);
+    void setSortOrder(int order);
+    void setSortRole(int role);
 
 public:
 
@@ -80,7 +85,9 @@ public:
                              QString& icon,
                              QList<QUrl>& urls,
                              QUrl& current,
-                             int iconSize);
+                             int iconSize,
+                             int sortOrder,
+                             int sortRole);
     static bool favoriteCreate(ShowfotoStackViewFavoriteList* const list,
                                QString& name,
                                QString& desc,
@@ -88,7 +95,13 @@ public:
                                QString& icon,
                                QList<QUrl>& urls,
                                QUrl& current,
-                               int iconSize);
+                               int iconSize,
+                               int sortOrder,
+                               int sortRole);
+
+private:
+
+    static bool myIsLessThanHandler(const QTreeWidgetItem* current, const QTreeWidgetItem& other);
 
 private Q_SLOTS:
 

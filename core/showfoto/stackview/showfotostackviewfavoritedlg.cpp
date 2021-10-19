@@ -55,13 +55,10 @@
 #include "digikam_debug.h"
 #include "dlayoutbox.h"
 #include "drawdecoder.h"
-#include "ditemslist.h"
 #include "showfotostackviewfavoritelist.h"
 #include "showfotostackviewlist.h"
 #include "showfotoitemsortsettings.h"
 #include "itempropertiestab.h"
-
-using namespace Digikam;
 
 namespace ShowFoto
 {
@@ -86,24 +83,27 @@ public:
     {
     }
 
-    bool                            create;
+    bool                                        create;
 
-    QLabel*                         topLabel;
+    QLabel*                                     topLabel;
 
-    QString                         icon;
+    QString                                     icon;
 
-    QPushButton*                    iconButton;
-    QPushButton*                    resetIconButton;
+    QPushButton*                                iconButton;
+    QPushButton*                                resetIconButton;
 
-    QDialogButtonBox*               buttons;
+    QDialogButtonBox*                           buttons;
 
-    QLineEdit*                      nameEdit;
-    QLineEdit*                      descEdit;
-    QDateTimeEdit*                  dateEdit;
-    DItemsList*                     urlsEdit;
-    QLabel*                         nbImagesLabel;
-    ShowfotoStackViewFavoriteList*  list;
+    QLineEdit*                                  nameEdit;
+    QLineEdit*                                  descEdit;
+    QDateTimeEdit*                              dateEdit;
+    DItemsList*                                 urlsEdit;
+    QLabel*                                     nbImagesLabel;
+    ShowfotoStackViewFavoriteList*              list;
 };
+
+static Qt::SortOrder                        s_sortOrder(Qt::AscendingOrder);
+static ShowfotoStackViewList::StackViewRole s_sortRole(ShowfotoStackViewList::FileName);
 
 ShowfotoStackViewFavoriteDlg::ShowfotoStackViewFavoriteDlg(ShowfotoStackViewFavoriteList* const list,
                                                            bool create)
@@ -199,6 +199,7 @@ ShowfotoStackViewFavoriteDlg::ShowfotoStackViewFavoriteDlg(ShowfotoStackViewFavo
     d->nbImagesLabel->setFont(fnt);
 
     d->urlsEdit             = new DItemsList(page);
+    d->urlsEdit->setIsLessThanHandler(myIsLessThanHandler);
     d->urlsEdit->setIconSize(d->list->iconSize().width());
     d->urlsEdit->setAllowRAW(true);
     d->urlsEdit->setAllowDuplicate(false);
@@ -369,6 +370,18 @@ void ShowfotoStackViewFavoriteDlg::setIconSize(int size)
     d->urlsEdit->setIconSize(size);
 }
 
+void ShowfotoStackViewFavoriteDlg::setSortOrder(int order)
+{
+    s_sortOrder = (Qt::SortOrder)order;
+    d->urlsEdit->listView()->sortItems(s_sortRole + DItemsListView::Filename, s_sortOrder);
+}
+
+void ShowfotoStackViewFavoriteDlg::setSortRole(int role)
+{
+    s_sortRole = (ShowfotoStackViewList::StackViewRole)role;
+    d->urlsEdit->listView()->sortItems(s_sortRole + DItemsListView::Filename, s_sortOrder);
+}
+
 void ShowfotoStackViewFavoriteDlg::slotIconResetClicked()
 {
     d->icon = QLatin1String("folder-favorites");
@@ -447,7 +460,9 @@ bool ShowfotoStackViewFavoriteDlg::favoriteEdit(ShowfotoStackViewFavoriteList* c
                                                 QString& icon,
                                                 QList<QUrl>& urls,
                                                 QUrl& current,
-                                                int iconSize)
+                                                int iconSize,
+                                                int sortOrder,
+                                                int sortRole)
 {
     QPointer<ShowfotoStackViewFavoriteDlg> dlg = new ShowfotoStackViewFavoriteDlg(list);
     dlg->setName(name);
@@ -457,6 +472,8 @@ bool ShowfotoStackViewFavoriteDlg::favoriteEdit(ShowfotoStackViewFavoriteList* c
     dlg->setUrls(urls);
     dlg->setCurrentUrl(current);
     dlg->setIconSize(iconSize);
+    dlg->setSortOrder(sortOrder);
+    dlg->setSortRole(sortRole);
 
     bool valRet = dlg->exec();
 
@@ -482,7 +499,9 @@ bool ShowfotoStackViewFavoriteDlg::favoriteCreate(ShowfotoStackViewFavoriteList*
                                                   QString& icon,
                                                   QList<QUrl>& urls,
                                                   QUrl& current,
-                                                  int iconSize)
+                                                  int iconSize,
+                                                  int sortOrder,
+                                                  int sortRole)
 {
     QPointer<ShowfotoStackViewFavoriteDlg> dlg = new ShowfotoStackViewFavoriteDlg(list, true);
     dlg->setName(name);
@@ -492,6 +511,8 @@ bool ShowfotoStackViewFavoriteDlg::favoriteCreate(ShowfotoStackViewFavoriteList*
     dlg->setUrls(urls);
     dlg->setCurrentUrl(current);
     dlg->setIconSize(iconSize);
+    dlg->setSortOrder(sortOrder);
+    dlg->setSortRole(sortRole);
 
     bool valRet = dlg->exec();
 
@@ -508,6 +529,50 @@ bool ShowfotoStackViewFavoriteDlg::favoriteCreate(ShowfotoStackViewFavoriteList*
     delete dlg;
 
     return valRet;
+}
+
+bool ShowfotoStackViewFavoriteDlg::myIsLessThanHandler(const QTreeWidgetItem* current, const QTreeWidgetItem& other)
+{
+    int result = 0;
+
+    switch (s_sortRole + DItemsListView::Filename)
+    {
+        case DItemsListView::User1:     // Size
+        {
+            result = (ShowfotoItemSortSettings::compareByOrder(current->data(DItemsListView::User1, Qt::UserRole).toInt(),
+                                                               other.data(DItemsListView::User1, Qt::UserRole).toInt(),
+                                                               s_sortOrder));
+            break;
+        }
+
+        case DItemsListView::User2:     // Type
+        {
+            result = (ShowfotoItemSortSettings::naturalCompare(current->text(DItemsListView::User2),
+                                                               other.text(DItemsListView::User2),
+                                                               s_sortOrder,
+                                                               Qt::CaseSensitive));
+            break;
+        }
+
+        case DItemsListView::User3:     // Date
+        {
+            result = (ShowfotoItemSortSettings::compareByOrder(current->data(DItemsListView::User3, Qt::UserRole).toDateTime(),
+                                                               other.data(DItemsListView::User3, Qt::UserRole).toDateTime(),
+                                                               s_sortOrder));
+            break;
+        }
+
+        default:                        // Name
+        {
+            result = (ShowfotoItemSortSettings::naturalCompare(current->text(DItemsListView::Filename),
+                                                               other.text(DItemsListView::Filename),
+                                                               s_sortOrder,
+                                                               Qt::CaseSensitive));
+            break;
+        }
+    }
+
+    return (result < 0);
 }
 
 } // namespace ShowFoto

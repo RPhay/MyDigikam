@@ -48,6 +48,8 @@ namespace Digikam
 class DItemsList;
 class DItemsListView;
 
+typedef bool (*DItemsListIsLessThanHandler)(const QTreeWidgetItem* current, const QTreeWidgetItem& other);
+
 class DIGIKAM_EXPORT DItemsListViewItem : public QTreeWidgetItem
 {
 
@@ -59,6 +61,10 @@ public:
         Success,
         Failed
     };
+
+public:
+
+    typedef bool (*IsLessThanHandler)(const QTreeWidgetItem* current, const QTreeWidgetItem& other);
 
 public:
 
@@ -88,6 +94,8 @@ public:
 
     void updateInformation();
 
+    void setIsLessThanHandler(DItemsListIsLessThanHandler fncptr);
+
     /**
      * implement this, if you have special item widgets, e.g. an edit line
      * they will be set automatically when adding items, changing order, etc.
@@ -101,6 +109,7 @@ protected:
 private:
 
     void setPixmap(const QPixmap& pix);
+    bool operator<(const QTreeWidgetItem& other) const override;
 
 private:
 
@@ -143,11 +152,12 @@ public:
 
     DItemsListViewItem* findItem(const QUrl& url);
     QModelIndex indexFromItem(DItemsListViewItem* item,
-                              int column = 0)   const;
+                              int column = 0)       const;
 
-    DItemsListViewItem* getCurrentItem()        const;
+    DItemsListViewItem* getCurrentItem()            const;
 
-    DInfoInterface* iface()                     const;
+    DInfoInterface* iface()                         const;
+    DItemsListIsLessThanHandler isLessThanHandler() const;
 
 Q_SIGNALS:
 
@@ -265,6 +275,9 @@ public:
 
     void setIface(DInfoInterface* const iface);
     DInfoInterface* iface()                                         const;
+
+    void setIsLessThanHandler(DItemsListIsLessThanHandler fncptr);
+    DItemsListIsLessThanHandler isLessThanHandler() const;
 
 Q_SIGNALS:
 

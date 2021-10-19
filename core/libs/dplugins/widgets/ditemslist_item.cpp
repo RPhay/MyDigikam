@@ -32,22 +32,22 @@ class Q_DECL_HIDDEN DItemsListViewItem::Private
 public:
 
     explicit Private()
-      : hasThumb(false),
-        rating  (-1),
-        view    (nullptr),
-        state   (Waiting)
+      : hasThumb  (false),
+        rating    (-1),
+        view      (nullptr),
+        state     (Waiting)
     {
     }
 
-    bool             hasThumb;       ///< True if thumbnails is a real photo thumbs
+    bool                        hasThumb;       ///< True if thumbnails is a real photo thumbs
 
-    int              rating;         ///< Image Rating from host.
-    QString          comments;       ///< Image comments from host.
-    QStringList      tags;           ///< List of keywords from host.
-    QUrl             url;            ///< Image url provided by host.
-    QPixmap          thumb;          ///< Image thumbnail.
-    DItemsListView*  view;
-    State            state;
+    int                         rating;         ///< Image Rating from host.
+    QString                     comments;       ///< Image comments from host.
+    QStringList                 tags;           ///< List of keywords from host.
+    QUrl                        url;            ///< Image url provided by host.
+    QPixmap                     thumb;          ///< Image thumbnail.
+    DItemsListView*             view;
+    State                       state;
 };
 
 DItemsListViewItem::DItemsListViewItem(DItemsListView* const view, const QUrl& url)
@@ -204,6 +204,16 @@ DItemsListViewItem::State DItemsListViewItem::state() const
 DItemsListView* DItemsListViewItem::view() const
 {
     return d->view;
+}
+
+bool DItemsListViewItem::operator<(const QTreeWidgetItem& other) const
+{
+    if (d->view->isLessThanHandler())
+    {
+        return d->view->isLessThanHandler()(this, other);
+    }
+
+    return QTreeWidgetItem::operator<(other);
 }
 
 } // namespace Digikam

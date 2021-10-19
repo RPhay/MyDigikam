@@ -234,7 +234,10 @@ void ShowfotoStackViewFavorites::slotAddFavorite(const QList<QUrl>& newUrls, con
                                                                     icon,
                                                                     urls,
                                                                     currentUrl,
-                                                                    d->sidebar->iconSize());
+                                                                    d->sidebar->iconSize(),
+                                                                    d->sidebar->sortOrder(),
+                                                                    d->sidebar->sortRole()
+                                                                   );
 
     if (ok)
     {
@@ -291,7 +294,10 @@ void ShowfotoStackViewFavorites::slotEdtFavorite()
                                                          icon,
                                                          urls,
                                                          currentUrl,
-                                                         d->sidebar->iconSize());
+                                                         d->sidebar->iconSize(),
+                                                         d->sidebar->sortOrder(),
+                                                         d->sidebar->sortRole()
+                                                        );
 
     if (ok)
     {
