@@ -53,6 +53,16 @@ void ShowfotoStackViewFavoriteFolder::setName(const QString& name)
 {
     setText(0, name);
 
+    QString hierarchy = QLatin1String("/");
+    ShowfotoStackViewFavoriteFolder* const sitem = dynamic_cast<ShowfotoStackViewFavoriteFolder*>(parent());
+
+    if (sitem)
+    {
+        hierarchy = sitem->hierarchy();
+    }
+
+    setHierarchy(hierarchy + name + QLatin1String("/"));
+
     updateToolTip();
 }
 
@@ -64,8 +74,6 @@ QString ShowfotoStackViewFavoriteFolder::name() const
 void ShowfotoStackViewFavoriteFolder::setHierarchy(const QString& hierarchy)
 {
     m_hierarchy = hierarchy;
-
-    updateToolTip();
 }
 
 QString ShowfotoStackViewFavoriteFolder::hierarchy() const
@@ -78,8 +86,6 @@ QString ShowfotoStackViewFavoriteFolder::hierarchy() const
 ShowfotoStackViewFavoriteItem::ShowfotoStackViewFavoriteItem(QTreeWidgetItem* const parent)
     : ShowfotoStackViewFavoriteFolder(parent)
 {
-    setDisabled(false);
-    setSelected(false);
 }
 
 ShowfotoStackViewFavoriteItem::~ShowfotoStackViewFavoriteItem()
@@ -167,6 +173,9 @@ void ShowfotoStackViewFavoriteItem::updateToolTip()
 
     tip += cnt.cellBeg + i18nc("@info: item date property", "Created:") + cnt.cellMid;
     tip += date().toString() + cnt.cellEnd;
+
+    tip += cnt.cellBeg + i18nc("@info: item hierarchy property", "Hierarchy:") + cnt.cellMid;
+    tip += hierarchy() + cnt.cellEnd;
 
     tip += cnt.cellBeg + i18nc("@info; item count elements property", "Items:") + cnt.cellMid;
     tip += QString::number(urls().count()) + cnt.cellEnd;
