@@ -37,16 +37,40 @@
 namespace ShowFoto
 {
 
-class ShowfotoStackViewFavoriteItem : public QTreeWidgetItem
+class ShowfotoStackViewFavoriteFolder : public QTreeWidgetItem
+{
+
+public:
+
+    explicit ShowfotoStackViewFavoriteFolder(QTreeWidgetItem* const parent);
+    ~ShowfotoStackViewFavoriteFolder() override;
+
+    void setName(const QString& name);
+    QString name()            const;
+
+    void setHierarchy(const QString& desc);
+    QString hierarchy()       const;
+
+protected:
+
+    virtual void updateToolTip() {};
+
+private:
+
+    QString     m_hierarchy;
+
+    Q_DISABLE_COPY(ShowfotoStackViewFavoriteFolder)
+};
+
+// ------------------------------------------------------------------------------------
+
+class ShowfotoStackViewFavoriteItem : public ShowfotoStackViewFavoriteFolder
 {
 
 public:
 
     explicit ShowfotoStackViewFavoriteItem(QTreeWidgetItem* const parent);
     ~ShowfotoStackViewFavoriteItem() override;
-
-    void setName(const QString& name);
-    QString name()            const;
 
     void setDescription(const QString& desc);
     QString description()     const;

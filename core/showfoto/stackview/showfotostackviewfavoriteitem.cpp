@@ -38,8 +38,45 @@ using namespace Digikam;
 namespace ShowFoto
 {
 
-ShowfotoStackViewFavoriteItem::ShowfotoStackViewFavoriteItem(QTreeWidgetItem* const parent)
+ShowfotoStackViewFavoriteFolder::ShowfotoStackViewFavoriteFolder(QTreeWidgetItem* const parent)
     : QTreeWidgetItem(parent)
+{
+    setDisabled(false);
+    setSelected(false);
+}
+
+ShowfotoStackViewFavoriteFolder::~ShowfotoStackViewFavoriteFolder()
+{
+}
+
+void ShowfotoStackViewFavoriteFolder::setName(const QString& name)
+{
+    setText(0, name);
+
+    updateToolTip();
+}
+
+QString ShowfotoStackViewFavoriteFolder::name() const
+{
+    return text(0);
+}
+
+void ShowfotoStackViewFavoriteFolder::setHierarchy(const QString& hierarchy)
+{
+    m_hierarchy = hierarchy;
+
+    updateToolTip();
+}
+
+QString ShowfotoStackViewFavoriteFolder::hierarchy() const
+{
+    return m_hierarchy;
+}
+
+// ------------------------------------------------------------------------------------------
+
+ShowfotoStackViewFavoriteItem::ShowfotoStackViewFavoriteItem(QTreeWidgetItem* const parent)
+    : ShowfotoStackViewFavoriteFolder(parent)
 {
     setDisabled(false);
     setSelected(false);
@@ -47,18 +84,6 @@ ShowfotoStackViewFavoriteItem::ShowfotoStackViewFavoriteItem(QTreeWidgetItem* co
 
 ShowfotoStackViewFavoriteItem::~ShowfotoStackViewFavoriteItem()
 {
-}
-
-void ShowfotoStackViewFavoriteItem::setName(const QString& name)
-{
-    setText(0, name);
-
-    updateToolTip();
-}
-
-QString ShowfotoStackViewFavoriteItem::name() const
-{
-    return text(0);
 }
 
 void ShowfotoStackViewFavoriteItem::setDescription(const QString& desc)
