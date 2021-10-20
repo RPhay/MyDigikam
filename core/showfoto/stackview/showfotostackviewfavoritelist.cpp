@@ -290,4 +290,28 @@ ShowfotoStackViewFavoriteItem* ShowfotoStackViewFavoriteList::favoriteExists(con
     return nullptr;
 }
 
+ShowfotoStackViewFavoriteFolder* ShowfotoStackViewFavoriteList::findFavoriteByHierarchy(const QString& hierarchy) const
+{
+    bool found                            = false;
+    ShowfotoStackViewFavoriteFolder* item = nullptr;
+
+    for (int i = 0 ; i < d->parent->topFavoritesItem()->childCount() ; ++i)
+    {
+        item = dynamic_cast<ShowfotoStackViewFavoriteFolder*>(d->parent->topFavoritesItem()->child(i));
+
+        if (hierarchy == item->hierarchy())
+        {
+            found = true;
+            break;
+        }
+    }
+
+    if (found)
+    {
+        return item;
+    }
+
+    return nullptr;
+}
+
 } // namespace ShowFoto

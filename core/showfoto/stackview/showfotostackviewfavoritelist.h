@@ -42,6 +42,7 @@ namespace ShowFoto
 
 class ShowfotoStackViewFavorites;
 class ShowfotoStackViewFavoriteItem;
+class ShowfotoStackViewFavoriteFolder;
 
 class ShowfotoStackViewFavoriteList : public QTreeWidget
 {
@@ -53,6 +54,8 @@ public:
     ~ShowfotoStackViewFavoriteList()                                         override;
 
     ShowfotoStackViewFavoriteItem* favoriteExists(const QString& name) const;
+
+    ShowfotoStackViewFavoriteFolder* findFavoriteByHierarchy(const QString& hierarchy) const;
 
 Q_SIGNALS:
 

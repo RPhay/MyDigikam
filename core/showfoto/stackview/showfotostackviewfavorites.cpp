@@ -372,6 +372,10 @@ bool ShowfotoStackViewFavorites::saveSettings()
             desc.setAttribute(QLatin1String("value"), item->description());
             elem.appendChild(desc);
 
+            QDomElement hier = doc.createElement(QLatin1String("Hierarchy"));
+            hier.setAttribute(QLatin1String("value"), item->hierarchy());
+            elem.appendChild(hier);
+
             QDomElement date = doc.createElement(QLatin1String("Date"));
             date.setAttribute(QLatin1String("value"), item->date().toString());
             elem.appendChild(date);
@@ -461,6 +465,8 @@ bool ShowfotoStackViewFavorites::readSettings()
 
         if (e1.tagName() == QLatin1String("FavoritesList"))
         {
+            int unamedID = 1;
+
             for (QDomNode n2 = e1.firstChild() ; !n2.isNull() ; n2 = n2.nextSibling())
             {
                 QDomElement e2 = n2.toElement();
@@ -479,7 +485,8 @@ bool ShowfotoStackViewFavorites::readSettings()
                         {
                             if (val3.isEmpty())
                             {
-                                val3 = i18nc("@title", "Unnamed");
+                                val3 = i18nc("@title", "Unnamed") + QString::fromLatin1("_%1").arg(unamedID);
+                                unamedID++;
                             }
 
                             item->setName(val3);
@@ -487,6 +494,10 @@ bool ShowfotoStackViewFavorites::readSettings()
                         else if (name3 == QLatin1String("Description"))
                         {
                             item->setDescription(val3);
+                        }
+                        else if (name3 == QLatin1String("Hierarchy"))
+                        {
+                            item->setHierarchy(val3);
                         }
                         if      (name3 == QLatin1String("Date"))
                         {
@@ -553,6 +564,11 @@ bool ShowfotoStackViewFavorites::readSettings()
 
                             item->setCurrentUrl(QUrl::fromLocalFile(val3));
                         }
+                    }
+
+                    if (item->hierarchy().isEmpty())
+                    {
+                        item->setHierarchy(QLatin1String("/") + item->name() + QLatin1String("/"));
                     }
                 }
             }
