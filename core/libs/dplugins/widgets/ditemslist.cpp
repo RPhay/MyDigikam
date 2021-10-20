@@ -27,22 +27,6 @@
 namespace Digikam
 {
 
-CtrlButton::CtrlButton(const QIcon& icon, QWidget* const parent)
-    : QPushButton(parent)
-{
-    const int btnSize = 32;
-
-    setMinimumSize(btnSize, btnSize);
-    setMaximumSize(btnSize, btnSize);
-    setIcon(icon);
-}
-
-CtrlButton::~CtrlButton()
-{
-}
-
-// ---------------------------------------------------------------------------
-
 class Q_DECL_HIDDEN DItemsList::Private
 {
 public:
@@ -51,7 +35,7 @@ public:
       : allowRAW             (true),
         allowDuplicate       (false),
         controlButtonsEnabled(true),
-        iconSize             (DEFAULTSIZE),
+        iconSize             (48),
         addButton            (nullptr),
         removeButton         (nullptr),
         moveUpButton         (nullptr),

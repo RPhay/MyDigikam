@@ -144,8 +144,8 @@ public:
 
 public:
 
-    DItemsListView(DItemsList* const parent);
-    ~DItemsListView()                                 override;
+    explicit DItemsListView(DItemsList* const parent);
+    ~DItemsListView()                                     override;
 
     void setColumnLabel(ColumnType column, const QString& label);
     void setColumnEnabled(ColumnType column, bool enable);
@@ -176,30 +176,18 @@ public:
 
 private:
 
-    void dragEnterEvent(QDragEnterEvent* e)           override;
-    void dragMoveEvent(QDragMoveEvent* e)             override;
-    void dropEvent(QDropEvent* e)                     override;
-    void contextMenuEvent(QContextMenuEvent* e)       override;
+    void dragEnterEvent(QDragEnterEvent* e)               override;
+    void dragMoveEvent(QDragMoveEvent* e)                 override;
+    void dropEvent(QDropEvent* e)                         override;
+    void contextMenuEvent(QContextMenuEvent* e)           override;
 
     void drawRow(QPainter* p,
                  const QStyleOptionViewItem& opt,
-                 const QModelIndex& index)      const override;
+                 const QModelIndex& index)          const override;
 
 private:
 
     QTreeWidgetItem* m_itemDraged;
-};
-
-// -------------------------------------------------------------------------
-
-class DIGIKAM_EXPORT CtrlButton : public QPushButton
-{
-    Q_OBJECT
-
-public:
-
-    explicit CtrlButton(const QIcon& icon, QWidget* parent = nullptr);
-    ~CtrlButton() override;
 };
 
 // -------------------------------------------------------------------------

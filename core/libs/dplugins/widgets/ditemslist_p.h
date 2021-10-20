@@ -69,7 +69,26 @@
 namespace Digikam
 {
 
-static const int DEFAULTSIZE = 48;
+class Q_DECL_HIDDEN CtrlButton : public QPushButton
+{
+    Q_OBJECT
+
+public:
+
+    explicit CtrlButton(const QIcon& icon, QWidget* parent = nullptr)
+       : QPushButton(parent)
+    {
+        const int btnSize = 32;
+
+        setMinimumSize(btnSize, btnSize);
+        setMaximumSize(btnSize, btnSize);
+        setIcon(icon);
+    }
+
+    ~CtrlButton() override
+    {
+    }
+};
 
 } // namespace Digikam
 
