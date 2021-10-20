@@ -167,6 +167,11 @@ DigikamApp::DigikamApp()
 
     // Read albums from database
 
+    if (d->splashScreen)
+    {
+        d->splashScreen->setMessage(i18n("Loading albums..."));
+    }
+
     if (CoreDbAccess().backend()->isOpen())
     {
         AlbumManager::instance()->startScan();

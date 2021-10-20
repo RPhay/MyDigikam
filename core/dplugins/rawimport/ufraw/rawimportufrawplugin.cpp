@@ -189,6 +189,7 @@ void UFRawRawImportPlugin::slotProcessFinished(int code, QProcess::ExitStatus st
     qCDebug(DIGIKAM_GENERAL_LOG) << "UFRaw :: return code:" << code << ":: Exit status:" << status;
 
     d->decoded = DImg(d->tempFile->fileName());
+    d->decoded.setAttribute(QLatin1String("isReadOnly"), true);
 
     if (d->decoded.isNull())
     {

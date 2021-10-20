@@ -251,6 +251,7 @@ void DarkTableRawImportPlugin::slotProcessFinished(int code, QProcess::ExitStatu
     qCDebug(DIGIKAM_GENERAL_LOG) << "DarkTable :: return code:" << code << ":: Exit status:" << status;
 
     d->decoded = DImg(d->tempName);
+    d->decoded.setAttribute(QLatin1String("isReadOnly"), true);
 
     if (d->decoded.isNull())
     {

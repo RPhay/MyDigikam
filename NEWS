@@ -171,5 +171,11 @@ BUGFIXES:
 156 ==> 443685 - When converting canon CR3 files to dng files in parallel digiKam crashes.
 157 ==> 443851 - Windows-64 new install does not create databases.
 158 ==> 443646 - digiKam does not delete duplicate picture over NFS share.
-159 ==> 
-160 ==> 
+159 ==> 444052 - While editing a raw (.DNG) image, original image can be corrupted.
+160 ==> 443966 - Move to trash not working.
+161 ==> 435507 - New install digiKam 7.2 on Windows Error opening database.
+162 ==> 
+163 ==> 
+164 ==> 
+165 ==> 
+166 ==> 
