@@ -142,7 +142,7 @@ ShowfotoStackViewFavoriteDlg::ShowfotoStackViewFavoriteDlg(ShowfotoStackViewFavo
     nameLabel->setText(i18nc("@label: favorite title properties", "&Name:"));
 
     d->nameEdit             = new QLineEdit(page);
-    d->nameEdit->setPlaceholderText(i18nc("#info", "Enter favorite name here..."));
+    d->nameEdit->setPlaceholderText(i18nc("@info", "Enter favorite name here..."));
     d->nameEdit->setToolTip(i18nc("@info", "The favorite name which must be unique and not empty"));
     nameLabel->setBuddy(d->nameEdit);
 
@@ -205,11 +205,11 @@ ShowfotoStackViewFavoriteDlg::ShowfotoStackViewFavoriteDlg(ShowfotoStackViewFavo
     d->urlsEdit->setAllowDuplicate(false);
     d->urlsEdit->setControlButtonsPlacement(DItemsList::ControlButtonsBelow);
     d->urlsEdit->setControlButtons(DItemsList::Add | DItemsList::Remove | DItemsList::Clear);
-    d->urlsEdit->listView()->setColumn(DItemsListView::Filename, i18n("Name"), true);
-    d->urlsEdit->listView()->setColumn(DItemsListView::User1,    i18n("Size"), true);
-    d->urlsEdit->listView()->setColumn(DItemsListView::User2,    i18n("Type"), true);
-    d->urlsEdit->listView()->setColumn(DItemsListView::User3,    i18n("Date"), true);
-    d->urlsEdit->listView()->setColumn(DItemsListView::User4,    i18n("Path"), true);
+    d->urlsEdit->listView()->setColumn(DItemsListView::Filename, i18nc("@title", "Name"), true);
+    d->urlsEdit->listView()->setColumn(DItemsListView::User1,    i18nc("@title", "Size"), true);
+    d->urlsEdit->listView()->setColumn(DItemsListView::User2,    i18nc("@title", "Type"), true);
+    d->urlsEdit->listView()->setColumn(DItemsListView::User3,    i18nc("@title", "Date"), true);
+    d->urlsEdit->listView()->setColumn(DItemsListView::User4,    i18nc("@title", "Path"), true);
 
     d->urlsEdit->setWhatsThis(i18nc("@info", "This is the list of items hosted by this favorite.\n"
                                              "The current selected item from this list will be automatically\n"
@@ -302,7 +302,7 @@ void ShowfotoStackViewFavoriteDlg::slotModified()
     d->buttons->button(QDialogButtonBox::Ok)->setEnabled(canAccept());
 
     int numberOfImages = d->urlsEdit->imageUrls().count();
-    d->nbImagesLabel->setText(i18np("%1 image", "%1 images", numberOfImages));
+    d->nbImagesLabel->setText(i18ncp("@info", "%1 image", "%1 images", numberOfImages));
 }
 
 QString ShowfotoStackViewFavoriteDlg::name() const
