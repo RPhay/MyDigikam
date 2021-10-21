@@ -73,12 +73,24 @@ QString ShowfotoStackViewFavoriteFolder::name() const
 
 void ShowfotoStackViewFavoriteFolder::setHierarchy(const QString& hierarchy)
 {
-    m_hierarchy = hierarchy;
+    if (hierarchy.isEmpty())
+    {
+        m_hierarchy = QLatin1String("/") + name() + QLatin1String("/");
+    }
+    else
+    {
+        m_hierarchy = hierarchy;
+    }
 }
 
 QString ShowfotoStackViewFavoriteFolder::hierarchy() const
 {
     return m_hierarchy;
+}
+
+int ShowfotoStackViewFavoriteFolder::type() const
+{
+    return FavoriteFolder;
 }
 
 // ------------------------------------------------------------------------------------------
@@ -186,6 +198,11 @@ void ShowfotoStackViewFavoriteItem::updateToolTip()
     tip += cnt.tipFooter;
 
     setToolTip(0, tip);
+}
+
+int ShowfotoStackViewFavoriteItem::type() const
+{
+    return FavoriteItem;
 }
 
 } // namespace ShowFoto

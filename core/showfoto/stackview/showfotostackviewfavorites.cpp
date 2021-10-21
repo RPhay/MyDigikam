@@ -344,21 +344,53 @@ bool ShowfotoStackViewFavorites::saveSettings()
 {
     QDomDocument doc(QLatin1String("favorites"));
     doc.setContent(QLatin1String("<!DOCTYPE XMLFavorites><favorites version=\"1.0\" client=\"showfoto\" encoding=\"UTF-8\"/>"));
-    QDomElement docElem = doc.documentElement();
+    QDomElement docElem    = doc.documentElement();
 
-    ShowfotoStackViewFavoriteItem* item = nullptr;
-    int nbItems                         = d->topFavorites->childCount();
+    int nbItems            = d->topFavorites->childCount();
+
+    // ---
 
     QDomElement elemExpand = doc.createElement(QLatin1String("TopExpanded"));
     elemExpand.setAttribute(QLatin1String("value"), d->topFavorites->isExpanded());
     docElem.appendChild(elemExpand);
+
+    // ---
+
+    QDomElement foldList   = doc.createElement(QLatin1String("FoldersList"));
+    docElem.appendChild(foldList);
+
+    for (int i = 0 ; i < nbItems ; ++i)
+    {
+        ShowfotoStackViewFavoriteFolder* const folder = dynamic_cast<ShowfotoStackViewFavoriteFolder*>(d->topFavorites->child(i));
+
+        if (folder && (folder->type() == ShowfotoStackViewFavoriteFolder::FavoriteFolder))
+        {
+            QDomElement elem = doc.createElement(QLatin1String("Folder"));
+
+            QDomElement name = doc.createElement(QLatin1String("Name"));
+            name.setAttribute(QLatin1String("value"), folder->name());
+            elem.appendChild(name);
+
+            QDomElement hier = doc.createElement(QLatin1String("Hierarchy"));
+            hier.setAttribute(QLatin1String("value"), folder->hierarchy());
+            elem.appendChild(hier);
+
+            QDomElement fexp = doc.createElement(QLatin1String("Expanded"));
+            fexp.setAttribute(QLatin1String("value"), folder->isExpanded());
+            elem.appendChild(fexp);
+
+            foldList.appendChild(elem);
+        }
+    }
+
+    // ---
 
     QDomElement elemList = doc.createElement(QLatin1String("FavoritesList"));
     docElem.appendChild(elemList);
 
     for (int i = 0 ; i < nbItems ; ++i)
     {
-        item = dynamic_cast<ShowfotoStackViewFavoriteItem*>(d->topFavorites->child(i));
+        ShowfotoStackViewFavoriteItem* const item = dynamic_cast<ShowfotoStackViewFavoriteItem*>(d->topFavorites->child(i));
 
         if (item)
         {
@@ -383,6 +415,10 @@ bool ShowfotoStackViewFavorites::saveSettings()
             QDomElement icon = doc.createElement(QLatin1String("Icon"));
             icon.setAttribute(QLatin1String("value"), item->icon(0).name());
             elem.appendChild(icon);
+
+            QDomElement iexp = doc.createElement(QLatin1String("IsExpanded"));
+            iexp.setAttribute(QLatin1String("value"), item->isExpanded());
+            elem.appendChild(iexp);
 
             QDomElement urls = doc.createElement(QLatin1String("UrlsList"));
             elem.appendChild(urls);
@@ -463,6 +499,59 @@ bool ShowfotoStackViewFavorites::readSettings()
             continue;
         }
 
+        // ---
+
+        if (e1.tagName() == QLatin1String("FoldersList"))
+        {
+            for (QDomNode n2 = e1.firstChild() ; !n2.isNull() ; n2 = n2.nextSibling())
+            {
+                QDomElement e2 = n2.toElement();
+
+                if (e2.tagName() == QLatin1String("Folder"))
+                {
+                    bool isExpanded = false;
+                    QString name;
+                    QString hierarchy;
+
+                    for (QDomNode n3 = e2.firstChild() ; !n3.isNull() ; n3 = n3.nextSibling())
+                    {
+                        QDomElement e3  = n3.toElement();
+                        QString name3   = e3.tagName();
+                        QString val3    = e3.attribute(QLatin1String("value"));
+
+                        if      (name3 == QLatin1String("Name"))
+                        {
+                            name = val3;
+                        }
+                        else if (name3 == QLatin1String("Hierarchy"))
+                        {
+                            hierarchy = val3;
+                        }
+                        else if (name3 == QLatin1String("IsExpanded"))
+                        {
+                            isExpanded = val3.toUInt();
+                        }
+                    }
+
+                    QTreeWidgetItem* parent = d->favoritesList->findFavoriteByHierarchy(hierarchy);
+
+                    if (!parent)
+                    {
+                        parent = d->topFavorites;
+                    }
+
+                    ShowfotoStackViewFavoriteFolder* const folder = new ShowfotoStackViewFavoriteFolder(parent);
+                    folder->setName(name);
+                    folder->setHierarchy(hierarchy);
+                    folder->setExpanded(isExpanded);
+                }
+            }
+
+            continue;
+        }
+
+        // ---
+
         if (e1.tagName() == QLatin1String("FavoritesList"))
         {
             int unamedID = 1;
@@ -473,13 +562,20 @@ bool ShowfotoStackViewFavorites::readSettings()
 
                 if (e2.tagName() == QLatin1String("Favorite"))
                 {
-                    ShowfotoStackViewFavoriteItem* const item = new ShowfotoStackViewFavoriteItem(d->topFavorites);
+                    bool isExpanded = true;
+                    QDate date      = QDate::currentDate();
+                    QString icon    = QString::fromLatin1("folder-favorites");
+                    QString name;
+                    QString desc;
+                    QString hierarchy;
+                    QList<QUrl> urls;
+                    QString curr;
 
                     for (QDomNode n3 = e2.firstChild() ; !n3.isNull() ; n3 = n3.nextSibling())
                     {
-                        QDomElement e3 = n3.toElement();
-                        QString name3  = e3.tagName();
-                        QString val3   = e3.attribute(QLatin1String("value"));
+                        QDomElement e3  = n3.toElement();
+                        QString name3   = e3.tagName();
+                        QString val3    = e3.attribute(QLatin1String("value"));
 
                         if      (name3 == QLatin1String("Name"))
                         {
@@ -489,40 +585,39 @@ bool ShowfotoStackViewFavorites::readSettings()
                                 unamedID++;
                             }
 
-                            item->setName(val3);
+                            name = val3;
                         }
                         else if (name3 == QLatin1String("Description"))
                         {
-                            item->setDescription(val3);
+                            desc = val3;
                         }
                         else if (name3 == QLatin1String("Hierarchy"))
                         {
-                            item->setHierarchy(val3);
+                            hierarchy = val3;
                         }
-                        if      (name3 == QLatin1String("Date"))
+                        else if (name3 == QLatin1String("Date"))
                         {
-                            QDate date = QDate::currentDate();
-
                             if (!val3.isEmpty())
                             {
                                 date = QDate::fromString(val3);
                             }
-
-                            item->setDate(date);
                         }
                         else if (name3 == QLatin1String("Icon"))
                         {
-                            if (val3.isEmpty())
+                            if (!val3.isEmpty())
                             {
-                                val3 = QString::fromLatin1("folder-favorites");
+                                icon = val3;
                             }
-
-                            item->setIcon(0, QIcon::fromTheme(val3));
+                        }
+                        else if (name3 == QLatin1String("IsExpanded"))
+                        {
+                            if (!val3.isEmpty())
+                            {
+                                isExpanded = val3.toUInt();
+                            }
                         }
                         else if (name3 == QLatin1String("UrlsList"))
                         {
-                            QList<QUrl> urls;
-
                             for (QDomNode n4 = e3.firstChild() ; !n4.isNull() ; n4 = n4.nextSibling())
                             {
                                 QDomElement e4 = n4.toElement();
@@ -537,41 +632,55 @@ bool ShowfotoStackViewFavorites::readSettings()
                                     }
                                 }
                             }
-
-                            if (urls.isEmpty())
-                            {
-                                delete item;
-                                continue;
-                            }
-                            else
-                            {
-                                item->setUrls(urls);
-                            }
                         }
                         else if (name3 == QLatin1String("CurrentUrl"))
                         {
-                            if (val3.isEmpty())
-                            {
-                                if (!item->urls().isEmpty())
-                                {
-                                    val3 = item->urls().first().toLocalFile();
-                                }
-                                else
-                                {
-                                    val3 = QString();
-                                }
-                            }
-
-                            item->setCurrentUrl(QUrl::fromLocalFile(val3));
+                            curr = val3;
                         }
                     }
 
-                    if (item->hierarchy().isEmpty())
+                    QTreeWidgetItem* parent                   = d->favoritesList->findFavoriteByHierarchy(hierarchy);
+
+                    if (!parent)
                     {
-                        item->setHierarchy(QLatin1String("/") + item->name() + QLatin1String("/"));
+                        parent = d->topFavorites;
                     }
+
+                    ShowfotoStackViewFavoriteItem* const item = new ShowfotoStackViewFavoriteItem(parent);
+                    item->setName(name);
+                    item->setDescription(desc);
+                    item->setHierarchy(hierarchy);
+                    item->setDate(date);
+                    item->setIcon(0, QIcon::fromTheme(icon));
+                    item->setExpanded(isExpanded);
+
+                    if (urls.isEmpty())
+                    {
+                        delete item;
+                        continue;
+                    }
+                    else
+                    {
+                        item->setUrls(urls);
+                    }
+
+                    if (curr.isEmpty())
+                    {
+                        if (!item->urls().isEmpty())
+                        {
+                            curr = item->urls().first().toLocalFile();
+                        }
+                        else
+                        {
+                            curr = QString();
+                        }
+                    }
+
+                    item->setCurrentUrl(QUrl::fromLocalFile(curr));
                 }
             }
+
+            continue;
         }
     }
 

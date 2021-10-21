@@ -42,6 +42,14 @@ class ShowfotoStackViewFavoriteFolder : public QTreeWidgetItem
 
 public:
 
+    enum FavoriteType
+    {
+        FavoriteFolder = 0,
+        FavoriteItem
+    };
+
+public:
+
     explicit ShowfotoStackViewFavoriteFolder(QTreeWidgetItem* const parent);
     ~ShowfotoStackViewFavoriteFolder() override;
 
@@ -50,6 +58,8 @@ public:
 
     void setHierarchy(const QString& desc);
     QString hierarchy()       const;
+
+    virtual int type()        const;
 
 protected:
 
@@ -86,9 +96,11 @@ public:
 
     QStringList urlsToPaths() const;
 
+    int type()                const override;
+
 private:
 
-    void updateToolTip();
+    void updateToolTip()            override;
 
 private:
 
