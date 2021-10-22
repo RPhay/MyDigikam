@@ -119,16 +119,16 @@ void ShowfotoStackViewFavoriteList::slotLoadContents()
 
 void ShowfotoStackViewFavoriteList::slotContextMenu(const QPoint& pos)
 {
-    ShowfotoStackViewFavoriteItem* const fvitem = dynamic_cast<ShowfotoStackViewFavoriteItem*>(itemAt(pos));
+    ShowfotoStackViewFavoriteFolder* const fvitem = dynamic_cast<ShowfotoStackViewFavoriteFolder*>(itemAt(pos));
 
-    if (fvitem && (fvitem->parent() == d->parent->topFavoritesItem()))
+    if (fvitem)
     {
         QMenu* const ctxmenu        = new QMenu(this);
         ctxmenu->setTitle(i18nc("@title", "Favorites"));
         ctxmenu->addAction(d->parent->toolBarAction(QLatin1String("AddFavorite")));
         ctxmenu->addAction(d->parent->toolBarAction(QLatin1String("AddFolder")));
-        ctxmenu->addAction(d->parent->toolBarAction(QLatin1String("DelFavorite")));
-        ctxmenu->addAction(d->parent->toolBarAction(QLatin1String("EditFavorite")));
+        ctxmenu->addAction(d->parent->toolBarAction(QLatin1String("DelItem")));
+        ctxmenu->addAction(d->parent->toolBarAction(QLatin1String("EditItem")));
         ctxmenu->addSeparator();
         ctxmenu->addActions(d->parent->pluginActions());
         ctxmenu->addSeparator();

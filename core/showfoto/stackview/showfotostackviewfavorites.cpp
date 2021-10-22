@@ -138,10 +138,10 @@ ShowfotoStackViewFavorites::ShowfotoStackViewFavorites(ShowfotoStackViewSideBar*
     // ---
 
     btnAction               = new QAction(this);
-    btnAction->setObjectName(QLatin1String("DelFavorite"));
+    btnAction->setObjectName(QLatin1String("DelItem"));
     btnAction->setIcon(QIcon::fromTheme(QLatin1String("list-remove")));
-    btnAction->setText(i18nc("@action", "Del Favorite"));
-    btnAction->setToolTip(i18nc("@info", "Remove selected bookmark from the list"));
+    btnAction->setText(i18nc("@action", "Delete Item"));
+    btnAction->setToolTip(i18nc("@info", "Remove selected item from the list"));
 
     connect(btnAction, SIGNAL(triggered(bool)),
             this, SLOT(slotDelFavorite()));
@@ -156,10 +156,10 @@ ShowfotoStackViewFavorites::ShowfotoStackViewFavorites(ShowfotoStackViewSideBar*
     // ---
 
     btnAction               = new QAction(this);
-    btnAction->setObjectName(QLatin1String("EditFavorite"));
+    btnAction->setObjectName(QLatin1String("EditItem"));
     btnAction->setIcon(QIcon::fromTheme(QLatin1String("document-edit")));
-    btnAction->setText(i18nc("@action", "Edit Favorite"));
-    btnAction->setToolTip(i18nc("@info", "Edit current bookmark from the list"));
+    btnAction->setText(i18nc("@action", "Edit Item"));
+    btnAction->setToolTip(i18nc("@info", "Edit current item from the list"));
 
     connect(btnAction, SIGNAL(triggered(bool)),
             this, SLOT(slotEdtFavorite()));
@@ -256,11 +256,12 @@ void ShowfotoStackViewFavorites::slotAddSubFolder()
         return;
     }
 
-        QTreeWidgetItem* const parent = d->favoritesList->currentItem() ? d->favoritesList->currentItem()
-                                                                        : d->topFavorites;
+    QTreeWidgetItem* const parent = d->favoritesList->currentItem() ? d->favoritesList->currentItem()
+                                                                    : d->topFavorites;
 
-        ShowfotoStackViewFavoriteFolder* const folder = new ShowfotoStackViewFavoriteFolder(parent);
-        folder->setName(name);
+    ShowfotoStackViewFavoriteFolder* const folder = new ShowfotoStackViewFavoriteFolder(parent);
+    folder->setName(name);
+    parent->setExpanded(true);
 }
 
 void ShowfotoStackViewFavorites::slotAddFavorite(const QList<QUrl>& newUrls, const QUrl& current)
@@ -302,60 +303,82 @@ void ShowfotoStackViewFavorites::slotAddFavorite(const QList<QUrl>& newUrls, con
 
 void ShowfotoStackViewFavorites::slotDelFavorite()
 {
-    QTreeWidgetItem* const item = d->favoritesList->currentItem();
+    ShowfotoStackViewFavoriteFolder* const fitem = dynamic_cast<ShowfotoStackViewFavoriteFolder*>(d->favoritesList->currentItem());
 
-    if (!item || (item->parent() != d->topFavorites))
+    if (!fitem)
     {
         return;
     }
 
-    if (QMessageBox::question(this, i18nc("@title: window", "Confirm Favorite Deletion"),
-                              i18nc("@info", "Are you sure you want to remove the favorite \"%1\"?", item->text(0)))
+    if (QMessageBox::question(this, i18nc("@title: window", "Confirm Item Deletion"),
+                              i18nc("@info", "Are you sure you want to remove the item \"%1\"\n"
+                                             "and all nested items if any?", fitem->name()))
             != QMessageBox::Yes)
     {
         return;
     }
 
-    d->favoritesList->removeItemWidget(item, 0);
-    delete item;
+    d->favoritesList->removeItemWidget(fitem, 0);
+    delete fitem;
 }
 
 void ShowfotoStackViewFavorites::slotEdtFavorite()
 {
     ShowfotoStackViewFavoriteItem* const item = dynamic_cast<ShowfotoStackViewFavoriteItem*>(d->favoritesList->currentItem());
 
-    if (!item || (item->parent() != d->topFavorites))
+    if (item)
     {
+        QString name     = item->name();
+        QString desc     = item->description();
+        QDate date       = item->date();
+        QString icon     = item->icon(0).name();
+        QList<QUrl> urls = item->urls();
+        QUrl currentUrl  = item->currentUrl();
+
+        bool ok = ShowfotoStackViewFavoriteDlg::favoriteDialog(d->favoritesList,
+                                                               name,
+                                                               desc,
+                                                               date,
+                                                               icon,
+                                                               urls,
+                                                               currentUrl,
+                                                               d->sidebar->iconSize(),
+                                                               d->sidebar->sortOrder(),
+                                                               d->sidebar->sortRole()
+                                                              );
+
+        if (ok)
+        {
+            item->setName(name);
+            item->setDescription(desc);
+            item->setDate(date);
+            item->setIcon(0, QIcon::fromTheme(icon));
+            item->setUrls(urls);
+            item->setCurrentUrl(currentUrl);
+        }
+
         return;
     }
 
-    QString name     = item->name();
-    QString desc     = item->description();
-    QDate date       = item->date();
-    QString icon     = item->icon(0).name();
-    QList<QUrl> urls = item->urls();
-    QUrl currentUrl  = item->currentUrl();
+    ShowfotoStackViewFavoriteFolder* const fitem = dynamic_cast<ShowfotoStackViewFavoriteFolder*>(d->favoritesList->currentItem());
 
-    bool ok = ShowfotoStackViewFavoriteDlg::favoriteDialog(d->favoritesList,
-                                                           name,
-                                                           desc,
-                                                           date,
-                                                           icon,
-                                                           urls,
-                                                           currentUrl,
-                                                           d->sidebar->iconSize(),
-                                                           d->sidebar->sortOrder(),
-                                                           d->sidebar->sortRole()
-                                                          );
-
-    if (ok)
+    if (fitem)
     {
-        item->setName(name);
-        item->setDescription(desc);
-        item->setDate(date);
-        item->setIcon(0, QIcon::fromTheme(icon));
-        item->setUrls(urls);
-        item->setCurrentUrl(currentUrl);
+        bool ok = false;
+
+        QString name = QInputDialog::getText(this,
+                                             i18nc("@title", "Edit Sub-Folder"),
+                                             i18nc("@label", "Sub-Folder Name:"),
+                                             QLineEdit::Normal,
+                                             fitem->name(),
+                                             &ok);
+
+        if (!ok || name.isEmpty() || (name == fitem->name()))
+        {
+            return;
+        }
+
+        fitem->setName(name);
     }
 }
 
@@ -423,7 +446,7 @@ bool ShowfotoStackViewFavorites::saveSettings()
             hier.setAttribute(QLatin1String("value"), item->hierarchy());
             elem.appendChild(hier);
 
-            QDomElement fexp = doc.createElement(QLatin1String("Expanded"));
+            QDomElement fexp = doc.createElement(QLatin1String("IsExpanded"));
             fexp.setAttribute(QLatin1String("value"), item->isExpanded());
             elem.appendChild(fexp);
 
