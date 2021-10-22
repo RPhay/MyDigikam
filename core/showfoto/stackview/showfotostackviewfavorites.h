@@ -73,6 +73,7 @@ private Q_SLOTS:
     void slotFavoriteSelectionChanged();
     void slotAddFavorite(const QList<QUrl>& newUrls, const QUrl& current);
     void slotAddFavorite();
+    void slotAddSubFolder();
     void slotDelFavorite();
     void slotEdtFavorite();
 

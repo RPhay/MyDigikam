@@ -126,6 +126,7 @@ void ShowfotoStackViewFavoriteList::slotContextMenu(const QPoint& pos)
         QMenu* const ctxmenu        = new QMenu(this);
         ctxmenu->setTitle(i18nc("@title", "Favorites"));
         ctxmenu->addAction(d->parent->toolBarAction(QLatin1String("AddFavorite")));
+        ctxmenu->addAction(d->parent->toolBarAction(QLatin1String("AddFolder")));
         ctxmenu->addAction(d->parent->toolBarAction(QLatin1String("DelFavorite")));
         ctxmenu->addAction(d->parent->toolBarAction(QLatin1String("EditFavorite")));
         ctxmenu->addSeparator();
@@ -266,20 +267,23 @@ void ShowfotoStackViewFavoriteList::startDrag(Qt::DropActions /*supportedActions
     drag->exec();
 }
 
-ShowfotoStackViewFavoriteItem* ShowfotoStackViewFavoriteList::favoriteExists(const QString& name) const
+ShowfotoStackViewFavoriteFolder* ShowfotoStackViewFavoriteList::favoriteExists(const QString& name)
 {
-    bool found                          = false;
-    ShowfotoStackViewFavoriteItem* item = nullptr;
+    bool found                            = false;
+    ShowfotoStackViewFavoriteFolder* item = nullptr;
+    QTreeWidgetItemIterator it(this);
 
-    for (int i = 0 ; i < d->parent->topFavoritesItem()->childCount() ; ++i)
+    while (*it)
     {
-        item = dynamic_cast<ShowfotoStackViewFavoriteItem*>(d->parent->topFavoritesItem()->child(i));
+        item = dynamic_cast<ShowfotoStackViewFavoriteFolder*>(*it);
 
-        if (name == item->name())
+        if (item && (name == item->name()))
         {
             found = true;
             break;
         }
+
+        ++it;
     }
 
     if (found)
@@ -290,20 +294,23 @@ ShowfotoStackViewFavoriteItem* ShowfotoStackViewFavoriteList::favoriteExists(con
     return nullptr;
 }
 
-ShowfotoStackViewFavoriteFolder* ShowfotoStackViewFavoriteList::findFavoriteByHierarchy(const QString& hierarchy) const
+ShowfotoStackViewFavoriteBase* ShowfotoStackViewFavoriteList::findFavoriteByHierarchy(const QString& hierarchy)
 {
-    bool found                            = false;
-    ShowfotoStackViewFavoriteFolder* item = nullptr;
+    bool found                          = false;
+    ShowfotoStackViewFavoriteBase* item = nullptr;
+    QTreeWidgetItemIterator it(this);
 
-    for (int i = 0 ; i < d->parent->topFavoritesItem()->childCount() ; ++i)
+    while (*it)
     {
-        item = dynamic_cast<ShowfotoStackViewFavoriteFolder*>(d->parent->topFavoritesItem()->child(i));
+        item = dynamic_cast<ShowfotoStackViewFavoriteBase*>(*it);
 
-        if (hierarchy == item->hierarchy())
+        if (item && (hierarchy == item->hierarchy()))
         {
-            found = true;
+            found  = true;
             break;
         }
+
+        ++it;
     }
 
     if (found)
@@ -312,6 +319,16 @@ ShowfotoStackViewFavoriteFolder* ShowfotoStackViewFavoriteList::findFavoriteByHi
     }
 
     return nullptr;
+}
+
+void ShowfotoStackViewFavoriteList::replaceItem(QTreeWidgetItem* const olditem,
+                                                QTreeWidgetItem* const newitem)
+{
+    QTreeWidgetItem* const parent = olditem->parent();
+    int itemIndex                 = parent->indexOfChild(olditem);
+    parent->removeChild(olditem);
+    parent->insertChild(itemIndex, newitem);
+    delete olditem;
 }
 
 } // namespace ShowFoto

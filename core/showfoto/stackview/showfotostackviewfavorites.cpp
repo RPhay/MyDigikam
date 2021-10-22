@@ -40,6 +40,7 @@
 #include <QDomElement>
 #include <QTextStream>
 #include <QTextCodec>
+#include <QInputDialog>
 
 // KDE includes
 
@@ -63,6 +64,7 @@ public:
 
     explicit Private()
       : addBtn        (nullptr),
+        fldBtn        (nullptr),
         delBtn        (nullptr),
         edtBtn        (nullptr),
         favoritesList (nullptr),
@@ -75,11 +77,12 @@ public:
 public:
 
     QList<QAction*>                 actionsList;                    ///< used to shared actions with list-view context menu.
-    QToolButton*                    addBtn;
+    QToolButton*                    addBtn;                         ///< Add favorite button.
+    QToolButton*                    fldBtn;                         ///< Add sub-folder button.
     QToolButton*                    delBtn;
     QToolButton*                    edtBtn;
     ShowfotoStackViewFavoriteList*  favoritesList;
-    QTreeWidgetItem*                topFavorites;
+    ShowfotoStackViewFavoriteRoot*  topFavorites;
     ShowfotoStackViewSideBar*       sidebar;
     QString                         file;
 };
@@ -112,7 +115,25 @@ ShowfotoStackViewFavorites::ShowfotoStackViewFavorites(ShowfotoStackViewSideBar*
     d->addBtn               = new QToolButton(this);
     d->addBtn->setDefaultAction(btnAction);
     d->addBtn->setFocusPolicy(Qt::NoFocus);
-    d->addBtn->setEnabled(false);
+    d->addBtn->setEnabled(true);
+
+    // ---
+
+    btnAction               = new QAction(this);
+    btnAction->setObjectName(QLatin1String("AddFolder"));
+    btnAction->setIcon(QIcon::fromTheme(QLatin1String("folder-new")));
+    btnAction->setText(i18nc("@action", "Add Sub-Folder"));
+    btnAction->setToolTip(i18nc("@info", "Add new sub-folder to the list"));
+
+    connect(btnAction, SIGNAL(triggered(bool)),
+            this, SLOT(slotAddSubFolder()));
+
+    d->actionsList << btnAction;
+
+    d->fldBtn               = new QToolButton(this);
+    d->fldBtn->setDefaultAction(btnAction);
+    d->fldBtn->setFocusPolicy(Qt::NoFocus);
+    d->fldBtn->setEnabled(true);
 
     // ---
 
@@ -157,9 +178,10 @@ ShowfotoStackViewFavorites::ShowfotoStackViewFavorites(ShowfotoStackViewSideBar*
     grid->setAlignment(Qt::AlignTop);
     grid->addWidget(title,             0, 0, 1, 1);
     grid->addWidget(d->addBtn,         0, 2, 1, 1);
-    grid->addWidget(d->delBtn,         0, 3, 1, 1);
-    grid->addWidget(d->edtBtn,         0, 4, 1, 1);
-    grid->addWidget(d->favoritesList,  1, 0, 1, 5);
+    grid->addWidget(d->fldBtn,         0, 3, 1, 1);
+    grid->addWidget(d->delBtn,         0, 4, 1, 1);
+    grid->addWidget(d->edtBtn,         0, 5, 1, 1);
+    grid->addWidget(d->favoritesList,  1, 0, 1, 6);
     grid->setRowStretch(1, 10);
     grid->setColumnStretch(1, 10);
     grid->setContentsMargins(0, 0, 0, 0);
@@ -218,6 +240,29 @@ void ShowfotoStackViewFavorites::slotAddFavorite()
     slotAddFavorite(d->sidebar->urls(), d->sidebar->currentUrl());
 }
 
+void ShowfotoStackViewFavorites::slotAddSubFolder()
+{
+    bool ok = false;
+
+    QString name = QInputDialog::getText(this,
+                                         i18nc("@title", "New Sub-Folder"),
+                                         i18nc("@label", "Sub-Folder Name:"),
+                                         QLineEdit::Normal,
+                                         QString(),
+                                         &ok);
+
+    if (!ok || name.isEmpty())
+    {
+        return;
+    }
+
+        QTreeWidgetItem* const parent = d->favoritesList->currentItem() ? d->favoritesList->currentItem()
+                                                                        : d->topFavorites;
+
+        ShowfotoStackViewFavoriteFolder* const folder = new ShowfotoStackViewFavoriteFolder(parent);
+        folder->setName(name);
+}
+
 void ShowfotoStackViewFavorites::slotAddFavorite(const QList<QUrl>& newUrls, const QUrl& current)
 {
     QString name;
@@ -242,7 +287,10 @@ void ShowfotoStackViewFavorites::slotAddFavorite(const QList<QUrl>& newUrls, con
 
     if (ok)
     {
-        ShowfotoStackViewFavoriteItem* const item = new ShowfotoStackViewFavoriteItem(d->topFavorites);
+        QTreeWidgetItem* const parent = d->favoritesList->currentItem() ? d->favoritesList->currentItem()
+                                                                        : d->topFavorites;
+
+        ShowfotoStackViewFavoriteItem* const item = new ShowfotoStackViewFavoriteItem(parent);
         item->setName(name);
         item->setDescription(desc);
         item->setDate(date);
@@ -313,10 +361,11 @@ void ShowfotoStackViewFavorites::slotEdtFavorite()
 
 void ShowfotoStackViewFavorites::slotFavoriteSelectionChanged()
 {
-    bool b                                    = true;
-    ShowfotoStackViewFavoriteItem* const item = dynamic_cast<ShowfotoStackViewFavoriteItem*>(d->favoritesList->currentItem());
+    bool b                                       = true;
+    QTreeWidgetItem* const item                  = d->favoritesList->currentItem();
+    ShowfotoStackViewFavoriteFolder* const fitem = dynamic_cast<ShowfotoStackViewFavoriteFolder*>(item);
 
-    if (!item || (item->parent() != d->topFavorites))
+    if (!item || (item != d->topFavorites) || !fitem)
     {
         b = false;
     }
@@ -346,8 +395,6 @@ bool ShowfotoStackViewFavorites::saveSettings()
     doc.setContent(QLatin1String("<!DOCTYPE XMLFavorites><favorites version=\"1.0\" client=\"showfoto\" encoding=\"UTF-8\"/>"));
     QDomElement docElem    = doc.documentElement();
 
-    int nbItems            = d->topFavorites->childCount();
-
     // ---
 
     QDomElement elemExpand = doc.createElement(QLatin1String("TopExpanded"));
@@ -358,39 +405,43 @@ bool ShowfotoStackViewFavorites::saveSettings()
 
     QDomElement foldList   = doc.createElement(QLatin1String("FoldersList"));
     docElem.appendChild(foldList);
+    QTreeWidgetItemIterator it(d->favoritesList);
 
-    for (int i = 0 ; i < nbItems ; ++i)
+    while (*it)
     {
-        ShowfotoStackViewFavoriteFolder* const folder = dynamic_cast<ShowfotoStackViewFavoriteFolder*>(d->topFavorites->child(i));
+        ShowfotoStackViewFavoriteBase* const item = dynamic_cast<ShowfotoStackViewFavoriteBase*>(*it);
 
-        if (folder && (folder->type() == ShowfotoStackViewFavoriteFolder::FavoriteFolder))
+        if (item && (item->type() != ShowfotoStackViewFavoriteFolder::FavoriteRoot))
         {
             QDomElement elem = doc.createElement(QLatin1String("Folder"));
 
             QDomElement name = doc.createElement(QLatin1String("Name"));
-            name.setAttribute(QLatin1String("value"), folder->name());
+            name.setAttribute(QLatin1String("value"), item->name());
             elem.appendChild(name);
 
             QDomElement hier = doc.createElement(QLatin1String("Hierarchy"));
-            hier.setAttribute(QLatin1String("value"), folder->hierarchy());
+            hier.setAttribute(QLatin1String("value"), item->hierarchy());
             elem.appendChild(hier);
 
             QDomElement fexp = doc.createElement(QLatin1String("Expanded"));
-            fexp.setAttribute(QLatin1String("value"), folder->isExpanded());
+            fexp.setAttribute(QLatin1String("value"), item->isExpanded());
             elem.appendChild(fexp);
 
             foldList.appendChild(elem);
         }
+
+        ++it;
     }
 
     // ---
 
     QDomElement elemList = doc.createElement(QLatin1String("FavoritesList"));
     docElem.appendChild(elemList);
+    QTreeWidgetItemIterator it2(d->favoritesList);
 
-    for (int i = 0 ; i < nbItems ; ++i)
+    while (*it2)
     {
-        ShowfotoStackViewFavoriteItem* const item = dynamic_cast<ShowfotoStackViewFavoriteItem*>(d->topFavorites->child(i));
+        ShowfotoStackViewFavoriteItem* const item = dynamic_cast<ShowfotoStackViewFavoriteItem*>(*it2);
 
         if (item)
         {
@@ -436,6 +487,8 @@ bool ShowfotoStackViewFavorites::saveSettings()
 
             elemList.appendChild(elem);
         }
+
+        ++it2;
     }
 
     QFile file(d->file);
@@ -458,10 +511,7 @@ bool ShowfotoStackViewFavorites::readSettings()
 {
     d->favoritesList->clear();
 
-    d->topFavorites          = new QTreeWidgetItem(d->favoritesList);
-    d->topFavorites->setFlags(Qt::ItemIsEnabled);
-    d->topFavorites->setDisabled(false);
-    d->topFavorites->setText(0, i18nc("@title", "My Favorites"));
+    d->topFavorites          = new ShowfotoStackViewFavoriteRoot(d->favoritesList);
 
     QFile file(d->file);
 
@@ -533,11 +583,12 @@ bool ShowfotoStackViewFavorites::readSettings()
                         }
                     }
 
-                    QTreeWidgetItem* parent = d->favoritesList->findFavoriteByHierarchy(hierarchy);
+                    QString phierarchy      = hierarchy.section(QLatin1Char('/'), 0, -3) + QLatin1String("/");
+                    QTreeWidgetItem* parent = d->favoritesList->findFavoriteByHierarchy(phierarchy);
 
                     if (!parent)
                     {
-                        parent = d->topFavorites;
+                        continue;
                     }
 
                     ShowfotoStackViewFavoriteFolder* const folder = new ShowfotoStackViewFavoriteFolder(parent);
@@ -639,14 +690,16 @@ bool ShowfotoStackViewFavorites::readSettings()
                         }
                     }
 
-                    QTreeWidgetItem* parent                   = d->favoritesList->findFavoriteByHierarchy(hierarchy);
+                    QTreeWidgetItem* fitem                    = d->favoritesList->findFavoriteByHierarchy(hierarchy);
 
-                    if (!parent)
+                    if (!fitem)
                     {
-                        parent = d->topFavorites;
+                        continue;
                     }
 
-                    ShowfotoStackViewFavoriteItem* const item = new ShowfotoStackViewFavoriteItem(parent);
+                    ShowfotoStackViewFavoriteItem* const item = new ShowfotoStackViewFavoriteItem(d->topFavorites);
+                    d->favoritesList->replaceItem(fitem, item);
+
                     item->setName(name);
                     item->setDescription(desc);
                     item->setHierarchy(hierarchy);

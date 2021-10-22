@@ -23,6 +23,10 @@
 
 #include "showfotostackviewfavoriteitem.h"
 
+// Qt includes
+
+#include <QIcon>
+
 // KDE includes
 
 #include <klocalizedstring.h>
@@ -38,54 +42,85 @@ using namespace Digikam;
 namespace ShowFoto
 {
 
-ShowfotoStackViewFavoriteFolder::ShowfotoStackViewFavoriteFolder(QTreeWidgetItem* const parent)
+ShowfotoStackViewFavoriteBase::ShowfotoStackViewFavoriteBase(QTreeWidget* const parent)
     : QTreeWidgetItem(parent)
 {
     setDisabled(false);
     setSelected(false);
 }
 
-ShowfotoStackViewFavoriteFolder::~ShowfotoStackViewFavoriteFolder()
+ShowfotoStackViewFavoriteBase::ShowfotoStackViewFavoriteBase(QTreeWidgetItem* const parent)
+    : QTreeWidgetItem(parent)
+{
+    setDisabled(false);
+    setSelected(false);
+}
+
+ShowfotoStackViewFavoriteBase::~ShowfotoStackViewFavoriteBase()
 {
 }
 
-void ShowfotoStackViewFavoriteFolder::setName(const QString& name)
+void ShowfotoStackViewFavoriteBase::setName(const QString& name)
 {
     setText(0, name);
 
-    QString hierarchy = QLatin1String("/");
-    ShowfotoStackViewFavoriteFolder* const sitem = dynamic_cast<ShowfotoStackViewFavoriteFolder*>(parent());
+    QString hierarchy                          = QLatin1String("/");
+    ShowfotoStackViewFavoriteBase* const pitem = dynamic_cast<ShowfotoStackViewFavoriteBase*>(parent());
 
-    if (sitem)
+    if (pitem)
     {
-        hierarchy = sitem->hierarchy();
+        hierarchy = pitem->hierarchy() + name + QLatin1String("/");
     }
 
-    setHierarchy(hierarchy + name + QLatin1String("/"));
+    setHierarchy(hierarchy);
 
     updateToolTip();
 }
 
-QString ShowfotoStackViewFavoriteFolder::name() const
+QString ShowfotoStackViewFavoriteBase::name() const
 {
     return text(0);
 }
 
-void ShowfotoStackViewFavoriteFolder::setHierarchy(const QString& hierarchy)
+void ShowfotoStackViewFavoriteBase::setHierarchy(const QString& hierarchy)
 {
-    if (hierarchy.isEmpty())
-    {
-        m_hierarchy = QLatin1String("/") + name() + QLatin1String("/");
-    }
-    else
-    {
-        m_hierarchy = hierarchy;
-    }
+    m_hierarchy = hierarchy;
 }
 
-QString ShowfotoStackViewFavoriteFolder::hierarchy() const
+QString ShowfotoStackViewFavoriteBase::hierarchy() const
 {
     return m_hierarchy;
+}
+
+// ------------------------------------------------------------------------------------------
+
+ShowfotoStackViewFavoriteRoot::ShowfotoStackViewFavoriteRoot(QTreeWidget* const parent)
+    : ShowfotoStackViewFavoriteBase(parent)
+{
+    setFlags(Qt::ItemIsEnabled);
+    setName(i18nc("@title", "My Favorites"));
+    setIcon(0, QIcon::fromTheme(QLatin1String("folder-root")));
+}
+
+ShowfotoStackViewFavoriteRoot::~ShowfotoStackViewFavoriteRoot()
+{
+}
+
+int ShowfotoStackViewFavoriteRoot::type() const
+{
+    return FavoriteRoot;
+}
+
+// ------------------------------------------------------------------------------------------
+
+ShowfotoStackViewFavoriteFolder::ShowfotoStackViewFavoriteFolder(QTreeWidgetItem* const parent)
+    : ShowfotoStackViewFavoriteBase(parent)
+{
+    setIcon(0, QIcon::fromTheme(QLatin1String("folder")));
+}
+
+ShowfotoStackViewFavoriteFolder::~ShowfotoStackViewFavoriteFolder()
+{
 }
 
 int ShowfotoStackViewFavoriteFolder::type() const

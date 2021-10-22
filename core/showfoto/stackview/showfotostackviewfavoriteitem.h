@@ -37,21 +37,23 @@
 namespace ShowFoto
 {
 
-class ShowfotoStackViewFavoriteFolder : public QTreeWidgetItem
+class ShowfotoStackViewFavoriteBase : public QTreeWidgetItem
 {
 
 public:
 
     enum FavoriteType
     {
-        FavoriteFolder = 0,
+        FavoriteRoot = 0,
+        FavoriteFolder,
         FavoriteItem
     };
 
 public:
 
-    explicit ShowfotoStackViewFavoriteFolder(QTreeWidgetItem* const parent);
-    ~ShowfotoStackViewFavoriteFolder() override;
+    ShowfotoStackViewFavoriteBase(QTreeWidget* const parent);
+    ShowfotoStackViewFavoriteBase(QTreeWidgetItem* const parent);
+    ~ShowfotoStackViewFavoriteBase() override;
 
     void setName(const QString& name);
     QString name()            const;
@@ -59,7 +61,7 @@ public:
     void setHierarchy(const QString& desc);
     QString hierarchy()       const;
 
-    virtual int type()        const;
+    virtual int type()        const = 0;
 
 protected:
 
@@ -68,6 +70,40 @@ protected:
 private:
 
     QString     m_hierarchy;
+
+    Q_DISABLE_COPY(ShowfotoStackViewFavoriteBase)
+};
+
+// ------------------------------------------------------------------------------------
+
+class ShowfotoStackViewFavoriteRoot : public ShowfotoStackViewFavoriteBase
+{
+
+public:
+
+    explicit ShowfotoStackViewFavoriteRoot(QTreeWidget* const parent);
+    ~ShowfotoStackViewFavoriteRoot() override;
+
+    int type()                 const override;
+
+private:
+
+    Q_DISABLE_COPY(ShowfotoStackViewFavoriteRoot)
+};
+
+// ------------------------------------------------------------------------------------
+
+class ShowfotoStackViewFavoriteFolder : public ShowfotoStackViewFavoriteBase
+{
+
+public:
+
+    explicit ShowfotoStackViewFavoriteFolder(QTreeWidgetItem* const parent);
+    ~ShowfotoStackViewFavoriteFolder() override;
+
+    int type()                   const override;
+
+private:
 
     Q_DISABLE_COPY(ShowfotoStackViewFavoriteFolder)
 };
