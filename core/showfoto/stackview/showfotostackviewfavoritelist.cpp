@@ -119,17 +119,15 @@ void ShowfotoStackViewFavoriteList::slotLoadContents()
 
 void ShowfotoStackViewFavoriteList::slotContextMenu(const QPoint& pos)
 {
+    QMenu* const ctxmenu        = new QMenu(this);
+    ctxmenu->setTitle(i18nc("@title", "Favorites"));
+    ctxmenu->addAction(d->parent->toolBarAction(QLatin1String("AddFavorite")));
+    ctxmenu->addAction(d->parent->toolBarAction(QLatin1String("AddFolder")));
+
     ShowfotoStackViewFavoriteBase* const fvitem = dynamic_cast<ShowfotoStackViewFavoriteBase*>(itemAt(pos));
 
     if (fvitem)
     {
-        QMenu* const ctxmenu        = new QMenu(this);
-        ctxmenu->setTitle(i18nc("@title", "Favorites"));
-        ctxmenu->addAction(d->parent->toolBarAction(QLatin1String("AddFavorite")));
-        ctxmenu->addAction(d->parent->toolBarAction(QLatin1String("AddFolder")));
-
-    qCDebug(DIGIKAM_SHOWFOTO_LOG) << "FV item type:" << fvitem->type();
-
         if (fvitem->type() != ShowfotoStackViewFavoriteBase::FavoriteRoot)
         {
             ctxmenu->addAction(d->parent->toolBarAction(QLatin1String("DelItem")));
@@ -157,11 +155,11 @@ void ShowfotoStackViewFavoriteList::slotContextMenu(const QPoint& pos)
             connect(openFileMngr, SIGNAL(triggered()),
                     this, SLOT(slotOpenInFileManager()));
         }
-
-        ctxmenu->exec(mapToGlobal(pos));
-
-        delete ctxmenu;
     }
+
+    ctxmenu->exec(mapToGlobal(pos));
+
+    delete ctxmenu;
 }
 
 void ShowfotoStackViewFavoriteList::dragEnterEvent(QDragEnterEvent* e)
