@@ -119,7 +119,7 @@ void ShowfotoStackViewFavoriteList::slotLoadContents()
 
 void ShowfotoStackViewFavoriteList::slotContextMenu(const QPoint& pos)
 {
-    ShowfotoStackViewFavoriteFolder* const fvitem = dynamic_cast<ShowfotoStackViewFavoriteFolder*>(itemAt(pos));
+    ShowfotoStackViewFavoriteBase* const fvitem = dynamic_cast<ShowfotoStackViewFavoriteBase*>(itemAt(pos));
 
     if (fvitem)
     {
@@ -127,25 +127,36 @@ void ShowfotoStackViewFavoriteList::slotContextMenu(const QPoint& pos)
         ctxmenu->setTitle(i18nc("@title", "Favorites"));
         ctxmenu->addAction(d->parent->toolBarAction(QLatin1String("AddFavorite")));
         ctxmenu->addAction(d->parent->toolBarAction(QLatin1String("AddFolder")));
-        ctxmenu->addAction(d->parent->toolBarAction(QLatin1String("DelItem")));
-        ctxmenu->addAction(d->parent->toolBarAction(QLatin1String("EditItem")));
+
+    qCDebug(DIGIKAM_SHOWFOTO_LOG) << "FV item type:" << fvitem->type();
+
+        if (fvitem->type() != ShowfotoStackViewFavoriteBase::FavoriteRoot)
+        {
+            ctxmenu->addAction(d->parent->toolBarAction(QLatin1String("DelItem")));
+            ctxmenu->addAction(d->parent->toolBarAction(QLatin1String("EditItem")));
+        }
+
         ctxmenu->addSeparator();
-        ctxmenu->addActions(d->parent->pluginActions());
-        ctxmenu->addSeparator();
 
-        QAction* const loadContents = new QAction(QIcon::fromTheme(QLatin1String("media-playlist-normal")),
-                                                  i18nc("@action: context menu", "Load Contents"), ctxmenu);
-        ctxmenu->addAction(loadContents);
+        if (fvitem->type() == ShowfotoStackViewFavoriteBase::FavoriteItem)
+        {
+            ctxmenu->addActions(d->parent->pluginActions());
+            ctxmenu->addSeparator();
 
-        connect(loadContents, SIGNAL(triggered()),
-                this, SLOT(slotLoadContents()));
+            QAction* const loadContents = new QAction(QIcon::fromTheme(QLatin1String("media-playlist-normal")),
+                                                      i18nc("@action: context menu", "Load Contents"), ctxmenu);
+            ctxmenu->addAction(loadContents);
 
-        QAction* const openFileMngr = new QAction(QIcon::fromTheme(QLatin1String("folder-open")),
-                                                  i18nc("@action: context menu", "Open in File Manager"), ctxmenu);
-        ctxmenu->addAction(openFileMngr);
+            connect(loadContents, SIGNAL(triggered()),
+                    this, SLOT(slotLoadContents()));
 
-        connect(openFileMngr, SIGNAL(triggered()),
-                this, SLOT(slotOpenInFileManager()));
+            QAction* const openFileMngr = new QAction(QIcon::fromTheme(QLatin1String("folder-open")),
+                                                      i18nc("@action: context menu", "Open in File Manager"), ctxmenu);
+            ctxmenu->addAction(openFileMngr);
+
+            connect(openFileMngr, SIGNAL(triggered()),
+                    this, SLOT(slotOpenInFileManager()));
+        }
 
         ctxmenu->exec(mapToGlobal(pos));
 
