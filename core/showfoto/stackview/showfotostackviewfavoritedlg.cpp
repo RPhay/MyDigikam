@@ -56,6 +56,7 @@
 #include "dlayoutbox.h"
 #include "drawdecoder.h"
 #include "showfotostackviewfavoritelist.h"
+#include "showfotostackviewfavoriteitem.h"
 #include "showfotostackviewlist.h"
 #include "showfotoitemsortsettings.h"
 #include "itempropertiestab.h"
@@ -79,7 +80,8 @@ public:
         dateEdit       (nullptr),
         urlsEdit       (nullptr),
         nbImagesLabel  (nullptr),
-        list           (nullptr)
+        list           (nullptr),
+        pitem          (nullptr)
     {
     }
 
@@ -100,6 +102,7 @@ public:
     DItemsList*                                 urlsEdit;
     QLabel*                                     nbImagesLabel;
     ShowfotoStackViewFavoriteList*              list;
+    ShowfotoStackViewFavoriteBase*              pitem;
 };
 
 static Qt::SortOrder                        s_sortOrder(Qt::AscendingOrder);
@@ -275,17 +278,10 @@ ShowfotoStackViewFavoriteDlg::~ShowfotoStackViewFavoriteDlg()
 
 bool ShowfotoStackViewFavoriteDlg::canAccept() const
 {
-    bool b = true;
-
-    if (d->create)
-    {
-        b = !d->list->favoriteExists(name());
-    }
-
     return (
             !name().isEmpty() &&
             !urls().isEmpty() &&
-            b
+            !d->list->findFavoriteByHierarchy(ShowfotoStackViewFavoriteBase::hierarchyFromParent(name(), d->pitem))
            );
 }
 
@@ -382,6 +378,11 @@ void ShowfotoStackViewFavoriteDlg::setSortRole(int role)
     d->urlsEdit->listView()->sortItems(s_sortRole + DItemsListView::Filename, s_sortOrder);
 }
 
+void ShowfotoStackViewFavoriteDlg::setParentItem(ShowfotoStackViewFavoriteBase* const pitem)
+{
+    d->pitem = pitem;
+}
+
 void ShowfotoStackViewFavoriteDlg::slotIconResetClicked()
 {
     d->icon = QLatin1String("folder-favorites");
@@ -463,6 +464,7 @@ bool ShowfotoStackViewFavoriteDlg::favoriteDialog(ShowfotoStackViewFavoriteList*
                                                   int iconSize,
                                                   int sortOrder,
                                                   int sortRole,
+                                                  ShowfotoStackViewFavoriteBase* const pitem,
                                                   bool create)
 {
     QPointer<ShowfotoStackViewFavoriteDlg> dlg = new ShowfotoStackViewFavoriteDlg(list, create);
@@ -475,6 +477,7 @@ bool ShowfotoStackViewFavoriteDlg::favoriteDialog(ShowfotoStackViewFavoriteList*
     dlg->setIconSize(iconSize);
     dlg->setSortOrder(sortOrder);
     dlg->setSortRole(sortRole);
+    dlg->setParentItem(pitem);
 
     bool valRet = dlg->exec();
 

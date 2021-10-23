@@ -276,33 +276,6 @@ void ShowfotoStackViewFavoriteList::startDrag(Qt::DropActions /*supportedActions
     drag->exec();
 }
 
-ShowfotoStackViewFavoriteFolder* ShowfotoStackViewFavoriteList::favoriteExists(const QString& name)
-{
-    bool found                            = false;
-    ShowfotoStackViewFavoriteFolder* item = nullptr;
-    QTreeWidgetItemIterator it(this);
-
-    while (*it)
-    {
-        item = dynamic_cast<ShowfotoStackViewFavoriteFolder*>(*it);
-
-        if (item && (name == item->name()))
-        {
-            found = true;
-            break;
-        }
-
-        ++it;
-    }
-
-    if (found)
-    {
-        return item;
-    }
-
-    return nullptr;
-}
-
 ShowfotoStackViewFavoriteBase* ShowfotoStackViewFavoriteList::findFavoriteByHierarchy(const QString& hierarchy)
 {
     bool found                          = false;

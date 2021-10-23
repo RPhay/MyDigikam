@@ -63,6 +63,8 @@ public:
 
     virtual int type()        const = 0;
 
+    static QString hierarchyFromParent(const QString& name, ShowfotoStackViewFavoriteBase* const pitem);
+
 protected:
 
     virtual void updateToolTip() {};

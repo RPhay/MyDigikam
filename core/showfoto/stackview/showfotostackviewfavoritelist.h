@@ -54,8 +54,6 @@ public:
     explicit ShowfotoStackViewFavoriteList(ShowfotoStackViewFavorites* const parent);
     ~ShowfotoStackViewFavoriteList()                                         override;
 
-    ShowfotoStackViewFavoriteFolder* favoriteExists(const QString& name);
-
     ShowfotoStackViewFavoriteBase* findFavoriteByHierarchy(const QString& hierarchy);
 
     void replaceItem(QTreeWidgetItem* const olditem,

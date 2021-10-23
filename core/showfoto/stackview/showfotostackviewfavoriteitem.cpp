@@ -63,18 +63,20 @@ ShowfotoStackViewFavoriteBase::~ShowfotoStackViewFavoriteBase()
 void ShowfotoStackViewFavoriteBase::setName(const QString& name)
 {
     setText(0, name);
+    setHierarchy(hierarchyFromParent(name, dynamic_cast<ShowfotoStackViewFavoriteBase*>(parent())));
+    updateToolTip();
+}
 
-    QString hierarchy                          = QLatin1String("/");
-    ShowfotoStackViewFavoriteBase* const pitem = dynamic_cast<ShowfotoStackViewFavoriteBase*>(parent());
+QString ShowfotoStackViewFavoriteBase::hierarchyFromParent(const QString& name, ShowfotoStackViewFavoriteBase* const pitem)
+{
+    QString hierarchy = QLatin1String("/");
 
     if (pitem)
     {
         hierarchy = pitem->hierarchy() + name + QLatin1String("/");
     }
 
-    setHierarchy(hierarchy);
-
-    updateToolTip();
+    return hierarchy;
 }
 
 QString ShowfotoStackViewFavoriteBase::name() const

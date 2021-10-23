@@ -43,6 +43,7 @@ namespace ShowFoto
 {
 
 class ShowfotoStackViewFavoriteList;
+class ShowfotoStackViewFavoriteBase;
 
 class ShowfotoStackViewFavoriteDlg : public QDialog
 {
@@ -75,6 +76,7 @@ public:
     void setIconSize(int size);
     void setSortOrder(int order);
     void setSortRole(int role);
+    void setParentItem(ShowfotoStackViewFavoriteBase* const pitem);
 
 public:
 
@@ -88,6 +90,7 @@ public:
                                int iconSize,
                                int sortOrder,
                                int sortRole,
+                               ShowfotoStackViewFavoriteBase* const pitem,
                                bool create = false);
 
 private:
