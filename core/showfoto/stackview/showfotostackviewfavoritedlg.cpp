@@ -80,6 +80,7 @@ public:
         dateEdit       (nullptr),
         urlsEdit       (nullptr),
         nbImagesLabel  (nullptr),
+        helpLabel      (nullptr),
         list           (nullptr),
         pitem          (nullptr)
     {
@@ -101,6 +102,7 @@ public:
     QDateTimeEdit*                              dateEdit;
     DItemsList*                                 urlsEdit;
     QLabel*                                     nbImagesLabel;
+    QLabel*                                     helpLabel;
     ShowfotoStackViewFavoriteList*              list;
     ShowfotoStackViewFavoriteBase*              pitem;
 };
@@ -220,6 +222,11 @@ ShowfotoStackViewFavoriteDlg::ShowfotoStackViewFavoriteDlg(ShowfotoStackViewFavo
                                              "first one from the list will be displayed."));
     urlsLabel->setBuddy(d->urlsEdit);
 
+    d->helpLabel = new QLabel(page);
+    QPalette pal = d->helpLabel->palette();
+    pal.setColor(QPalette::WindowText, Qt::red);
+    d->helpLabel->setPalette(pal);
+
     // --------------------------------------------------------
 
     grid->addWidget(nameLabel,          0, 0, 1, 1);
@@ -234,6 +241,7 @@ ShowfotoStackViewFavoriteDlg::ShowfotoStackViewFavoriteDlg(ShowfotoStackViewFavo
     grid->addWidget(d->urlsEdit,        4, 1, 4, 3);
     grid->addWidget(urlsLabel,          5, 0, 1, 1);
     grid->addWidget(d->nbImagesLabel,   6, 0, 1, 1);
+    grid->addWidget(d->helpLabel,       8, 0, 1, 3);
     grid->setRowStretch(7, 10);
     grid->setColumnStretch(3, 10);
 
@@ -278,10 +286,35 @@ ShowfotoStackViewFavoriteDlg::~ShowfotoStackViewFavoriteDlg()
 
 bool ShowfotoStackViewFavoriteDlg::canAccept() const
 {
+    bool b1 = name().isEmpty();
+    bool b2 = urls().isEmpty();
+    bool b3 = d->list->findFavoriteByHierarchy(ShowfotoStackViewFavoriteBase::hierarchyFromParent(name(), d->pitem));
+    bool b4 = (!b1 && !b2 && !b3);
+
+    if (b4)
+    {
+        d->helpLabel->clear();
+    }
+    else
+    {
+        if      (b1)
+        {
+            d->helpLabel->setText(i18nc("@label", "Note: name cannot be empty!"));
+        }
+        else if (b2)
+        {
+            d->helpLabel->setText(i18nc("@label", "Note: items list cannot be empty!"));
+        }
+        else if (b3)
+        {
+            d->helpLabel->setText(i18nc("@label", "Note: name already exists in favorites list!"));
+        }
+    }
+
     return (
-            !name().isEmpty() &&
-            !urls().isEmpty() &&
-            !d->list->findFavoriteByHierarchy(ShowfotoStackViewFavoriteBase::hierarchyFromParent(name(), d->pitem))
+            !b1 &&
+            !b2 &&
+            !b3
            );
 }
 
