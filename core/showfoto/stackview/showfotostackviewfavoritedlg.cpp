@@ -70,7 +70,7 @@ public:
 
     explicit Private()
       : create         (false),
-        topLabel       (nullptr),
+        hierarchyLabel (nullptr),
         icon           (QLatin1String("folder-favorites")),
         iconButton     (nullptr),
         resetIconButton(nullptr),
@@ -88,7 +88,7 @@ public:
 
     bool                                        create;
 
-    QLabel*                                     topLabel;
+    QLabel*                                     hierarchyLabel;
 
     QString                                     icon;
 
@@ -132,14 +132,7 @@ ShowfotoStackViewFavoriteDlg::ShowfotoStackViewFavoriteDlg(ShowfotoStackViewFavo
     }
 
     QWidget* const page     = new QWidget(this);
-
-    // --------------------------------------------------------
-
     QGridLayout* const grid = new QGridLayout(page);
-
-    d->topLabel             = new QLabel(page);
-    d->topLabel->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
-    d->topLabel->setWordWrap(false);
 
     // --------------------------------------------------------
 
@@ -150,6 +143,14 @@ ShowfotoStackViewFavoriteDlg::ShowfotoStackViewFavoriteDlg(ShowfotoStackViewFavo
     d->nameEdit->setPlaceholderText(i18nc("@info", "Enter favorite name here..."));
     d->nameEdit->setToolTip(i18nc("@info", "The favorite name which must be unique and not empty"));
     nameLabel->setBuddy(d->nameEdit);
+
+    // --------------------------------------------------------
+
+    QLabel* const hierLabel = new QLabel(page);
+    hierLabel->setText(i18nc("@label: favorite hierarchy properties", "&Hierarchy:"));
+
+    d->hierarchyLabel       = new QLabel(page);
+    d->hierarchyLabel->setToolTip(i18nc("@info", "The favorite hierarchy which must be unique in tree-view"));
 
     // --------------------------------------------------------
 
@@ -231,18 +232,20 @@ ShowfotoStackViewFavoriteDlg::ShowfotoStackViewFavoriteDlg(ShowfotoStackViewFavo
 
     grid->addWidget(nameLabel,          0, 0, 1, 1);
     grid->addWidget(d->nameEdit,        0, 1, 1, 3);
-    grid->addWidget(descLabel,          1, 0, 1, 1);
-    grid->addWidget(d->descEdit,        1, 1, 1, 3);
-    grid->addWidget(dateLabel,          2, 0, 1, 1);
-    grid->addWidget(d->dateEdit,        2, 1, 1, 3);
-    grid->addWidget(iconTextLabel,      3, 0, 1, 1);
-    grid->addWidget(d->iconButton,      3, 1, 1, 1);
-    grid->addWidget(d->resetIconButton, 3, 2, 1, 1);
-    grid->addWidget(d->urlsEdit,        4, 1, 4, 3);
-    grid->addWidget(urlsLabel,          5, 0, 1, 1);
-    grid->addWidget(d->nbImagesLabel,   6, 0, 1, 1);
-    grid->addWidget(d->helpLabel,       8, 0, 1, 3);
-    grid->setRowStretch(7, 10);
+    grid->addWidget(hierLabel,          1, 0, 1, 1);
+    grid->addWidget(d->hierarchyLabel,  1, 1, 1, 3);
+    grid->addWidget(descLabel,          2, 0, 1, 1);
+    grid->addWidget(d->descEdit,        3, 1, 1, 3);
+    grid->addWidget(dateLabel,          3, 0, 1, 1);
+    grid->addWidget(d->dateEdit,        3, 1, 1, 3);
+    grid->addWidget(iconTextLabel,      4, 0, 1, 1);
+    grid->addWidget(d->iconButton,      4, 1, 1, 1);
+    grid->addWidget(d->resetIconButton, 4, 2, 1, 1);
+    grid->addWidget(d->urlsEdit,        5, 1, 4, 3);
+    grid->addWidget(urlsLabel,          6, 0, 1, 1);
+    grid->addWidget(d->nbImagesLabel,   7, 0, 1, 1);
+    grid->addWidget(d->helpLabel,       9, 0, 1, 3);
+    grid->setRowStretch(8, 10);
     grid->setColumnStretch(3, 10);
 
     QVBoxLayout* const vbx = new QVBoxLayout(this);
@@ -329,7 +332,7 @@ void ShowfotoStackViewFavoriteDlg::slotAccept()
 void ShowfotoStackViewFavoriteDlg::slotModified()
 {
     d->buttons->button(QDialogButtonBox::Ok)->setEnabled(canAccept());
-
+    d->hierarchyLabel->setText(ShowfotoStackViewFavoriteBase::hierarchyFromParent(name(), d->pitem));
     int numberOfImages = d->urlsEdit->imageUrls().count();
     d->nbImagesLabel->setText(i18ncp("@info", "%1 image", "%1 images", numberOfImages));
 }
