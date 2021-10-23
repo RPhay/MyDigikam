@@ -144,7 +144,7 @@ ShowfotoStackViewFavorites::ShowfotoStackViewFavorites(ShowfotoStackViewSideBar*
     btnAction->setToolTip(i18nc("@info", "Remove selected item from the list"));
 
     connect(btnAction, SIGNAL(triggered(bool)),
-            this, SLOT(slotDelFavorite()));
+            this, SLOT(slotDelItem()));
 
     d->actionsList << btnAction;
 
@@ -162,7 +162,7 @@ ShowfotoStackViewFavorites::ShowfotoStackViewFavorites(ShowfotoStackViewSideBar*
     btnAction->setToolTip(i18nc("@info", "Edit current item from the list"));
 
     connect(btnAction, SIGNAL(triggered(bool)),
-            this, SLOT(slotEdtFavorite()));
+            this, SLOT(slotEditItem()));
 
     d->actionsList << btnAction;
 
@@ -242,7 +242,9 @@ void ShowfotoStackViewFavorites::slotAddFavorite()
 
 void ShowfotoStackViewFavorites::slotAddSubFolder()
 {
-    bool ok = false;
+    bool ok                                     = false;
+    ShowfotoStackViewFavoriteBase* const parent = d->favoritesList->currentItem() ? dynamic_cast<ShowfotoStackViewFavoriteBase*>(d->favoritesList->currentItem())
+                                                                                  : d->topFavorites;
 
     QString name = QInputDialog::getText(this,
                                          i18nc("@title", "New Sub-Folder"),
@@ -251,13 +253,14 @@ void ShowfotoStackViewFavorites::slotAddSubFolder()
                                          QString(),
                                          &ok);
 
-    if (!ok || name.isEmpty())
+    if (
+        !ok            ||
+        name.isEmpty() ||
+        !d->favoritesList->findFavoriteByHierarchy(ShowfotoStackViewFavoriteBase::hierarchyFromParent(name, parent))
+       )
     {
         return;
     }
-
-    QTreeWidgetItem* const parent = d->favoritesList->currentItem() ? d->favoritesList->currentItem()
-                                                                    : d->topFavorites;
 
     ShowfotoStackViewFavoriteFolder* const folder = new ShowfotoStackViewFavoriteFolder(parent);
     folder->setName(name);
@@ -301,7 +304,7 @@ void ShowfotoStackViewFavorites::slotAddFavorite(const QList<QUrl>& newUrls, con
     }
 }
 
-void ShowfotoStackViewFavorites::slotDelFavorite()
+void ShowfotoStackViewFavorites::slotDelItem()
 {
     ShowfotoStackViewFavoriteFolder* const fitem = dynamic_cast<ShowfotoStackViewFavoriteFolder*>(d->favoritesList->currentItem());
 
@@ -322,7 +325,7 @@ void ShowfotoStackViewFavorites::slotDelFavorite()
     delete fitem;
 }
 
-void ShowfotoStackViewFavorites::slotEdtFavorite()
+void ShowfotoStackViewFavorites::slotEditItem()
 {
     ShowfotoStackViewFavoriteItem* const item = dynamic_cast<ShowfotoStackViewFavoriteItem*>(d->favoritesList->currentItem());
 
@@ -366,7 +369,8 @@ void ShowfotoStackViewFavorites::slotEdtFavorite()
 
     if (fitem)
     {
-        bool ok = false;
+        bool ok                                     = false;
+        ShowfotoStackViewFavoriteBase* const parent = dynamic_cast<ShowfotoStackViewFavoriteBase*>(fitem->parent());
 
         QString name = QInputDialog::getText(this,
                                              i18nc("@title", "Edit Sub-Folder"),
@@ -375,7 +379,12 @@ void ShowfotoStackViewFavorites::slotEdtFavorite()
                                              fitem->name(),
                                              &ok);
 
-        if (!ok || name.isEmpty() || (name == fitem->name()))
+        if (
+            !ok                     ||
+            name.isEmpty()          ||
+            (name == fitem->name()) ||
+            !d->favoritesList->findFavoriteByHierarchy(ShowfotoStackViewFavoriteBase::hierarchyFromParent(name, parent))
+           )
         {
             return;
         }
