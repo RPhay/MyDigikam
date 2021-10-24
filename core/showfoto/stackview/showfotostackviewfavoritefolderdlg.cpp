@@ -115,6 +115,7 @@ ShowfotoStackViewFavoriteFolderDlg::ShowfotoStackViewFavoriteFolderDlg(ShowfotoS
     nameLabel->setText(i18nc("@label: favorite folder title properties", "&Name:"));
 
     d->nameEdit             = new QLineEdit(page);
+    d->nameEdit->setClearButtonEnabled(true);
     d->nameEdit->setPlaceholderText(i18nc("@info", "Enter favorite folder name here..."));
     d->nameEdit->setToolTip(i18nc("@info", "The favorite folder name which must be unique and not empty"));
     nameLabel->setBuddy(d->nameEdit);
@@ -208,14 +209,6 @@ bool ShowfotoStackViewFavoriteFolderDlg::canAccept() const
            );
 }
 
-void ShowfotoStackViewFavoriteFolderDlg::slotAccept()
-{
-    if (canAccept())
-    {
-        accept();
-    }
-}
-
 void ShowfotoStackViewFavoriteFolderDlg::slotModified()
 {
     d->buttons->button(QDialogButtonBox::Ok)->setEnabled(canAccept());
@@ -231,6 +224,7 @@ void ShowfotoStackViewFavoriteFolderDlg::setName(const QString& name)
 {
     d->nameEdit->setText(name);
     d->originalName = name;
+    slotModified();
 }
 
 void ShowfotoStackViewFavoriteFolderDlg::setParentItem(ShowfotoStackViewFavoriteBase* const pitem)

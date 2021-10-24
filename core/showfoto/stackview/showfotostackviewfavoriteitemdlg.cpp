@@ -142,6 +142,7 @@ ShowfotoStackViewFavoriteItemDlg::ShowfotoStackViewFavoriteItemDlg(ShowfotoStack
     nameLabel->setText(i18nc("@label: favorite item title properties", "&Name:"));
 
     d->nameEdit             = new QLineEdit(page);
+    d->nameEdit->setClearButtonEnabled(true);
     d->nameEdit->setPlaceholderText(i18nc("@info", "Enter favorite item name here..."));
     d->nameEdit->setToolTip(i18nc("@info", "The favorite item name which must be unique and not empty"));
     nameLabel->setBuddy(d->nameEdit);
@@ -160,6 +161,7 @@ ShowfotoStackViewFavoriteItemDlg::ShowfotoStackViewFavoriteItemDlg(ShowfotoStack
     descLabel->setText(i18nc("@label: favorite item caption properties", "&Description:"));
 
     d->descEdit             = new QLineEdit(page);
+    d->descEdit->setClearButtonEnabled(true);
     d->descEdit->setPlaceholderText(i18nc("@info", "Enter favorite item description here..."));
     descLabel->setBuddy(d->descEdit);
 
@@ -239,7 +241,7 @@ ShowfotoStackViewFavoriteItemDlg::ShowfotoStackViewFavoriteItemDlg(ShowfotoStack
     grid->addWidget(hierLabel,          1, 0, 1, 1);
     grid->addWidget(d->hierarchyLabel,  1, 1, 1, 3);
     grid->addWidget(descLabel,          2, 0, 1, 1);
-    grid->addWidget(d->descEdit,        3, 1, 1, 3);
+    grid->addWidget(d->descEdit,        2, 1, 1, 3);
     grid->addWidget(dateLabel,          3, 0, 1, 1);
     grid->addWidget(d->dateEdit,        3, 1, 1, 3);
     grid->addWidget(iconTextLabel,      4, 0, 1, 1);
@@ -332,14 +334,6 @@ bool ShowfotoStackViewFavoriteItemDlg::canAccept() const
             !b2 &&
             !b3
            );
-}
-
-void ShowfotoStackViewFavoriteItemDlg::slotAccept()
-{
-    if (canAccept())
-    {
-        accept();
-    }
 }
 
 void ShowfotoStackViewFavoriteItemDlg::slotModified()

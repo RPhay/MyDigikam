@@ -101,7 +101,6 @@ private Q_SLOTS:
 
     void slotIconChanged();
     void slotIconResetClicked();
-    void slotAccept();
     void slotModified();
     void slotUpdateMetadata();
 

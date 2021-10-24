@@ -63,7 +63,6 @@ public:
 
 private Q_SLOTS:
 
-    void slotAccept();
     void slotModified();
 
 private:

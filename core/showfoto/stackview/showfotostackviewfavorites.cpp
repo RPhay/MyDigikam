@@ -40,7 +40,6 @@
 #include <QDomElement>
 #include <QTextStream>
 #include <QTextCodec>
-#include <QInputDialog>
 
 // KDE includes
 
@@ -52,6 +51,7 @@
 #include "thumbnailsize.h"
 #include "showfotostackviewsidebar.h"
 #include "showfotostackviewfavoriteitemdlg.h"
+#include "showfotostackviewfavoritefolderdlg.h"
 #include "showfotostackviewfavoritelist.h"
 #include "showfotostackviewfavoriteitem.h"
 
@@ -242,29 +242,22 @@ void ShowfotoStackViewFavorites::slotAddFavorite()
 
 void ShowfotoStackViewFavorites::slotAddSubFolder()
 {
-    bool ok                                     = false;
+    QString name;
     ShowfotoStackViewFavoriteBase* const parent = d->favoritesList->currentItem() ? dynamic_cast<ShowfotoStackViewFavoriteBase*>(d->favoritesList->currentItem())
                                                                                   : d->topFavorites;
 
-    QString name = QInputDialog::getText(this,
-                                         i18nc("@title", "New Sub-Folder"),
-                                         i18nc("@label", "Sub-Folder Name:"),
-                                         QLineEdit::Normal,
-                                         QString(),
-                                         &ok);
+    bool ok = ShowfotoStackViewFavoriteFolderDlg::favoriteFolderDialog(d->favoritesList,
+                                                                       name,
+                                                                       parent,
+                                                                       true
+                                                                      );
 
-    if (
-        !ok            ||
-        name.isEmpty() ||
-        !d->favoritesList->findFavoriteByHierarchy(ShowfotoStackViewFavoriteBase::hierarchyFromParent(name, parent))
-       )
+    if (ok)
     {
-        return;
+        ShowfotoStackViewFavoriteFolder* const folder = new ShowfotoStackViewFavoriteFolder(parent);
+        folder->setName(name);
+        parent->setExpanded(true);
     }
-
-    ShowfotoStackViewFavoriteFolder* const folder = new ShowfotoStackViewFavoriteFolder(parent);
-    folder->setName(name);
-    parent->setExpanded(true);
 }
 
 void ShowfotoStackViewFavorites::slotAddFavorite(const QList<QUrl>& newUrls, const QUrl& current)
@@ -369,27 +362,18 @@ void ShowfotoStackViewFavorites::slotEditItem()
 
     if (fitem)
     {
-        bool ok                                     = false;
+        QString name = fitem->name();
         ShowfotoStackViewFavoriteBase* const parent = dynamic_cast<ShowfotoStackViewFavoriteBase*>(fitem->parent());
 
-        QString name = QInputDialog::getText(this,
-                                             i18nc("@title", "Edit Sub-Folder"),
-                                             i18nc("@label", "Sub-Folder Name:"),
-                                             QLineEdit::Normal,
-                                             fitem->name(),
-                                             &ok);
+        bool ok = ShowfotoStackViewFavoriteFolderDlg::favoriteFolderDialog(d->favoritesList,
+                                                                           name,
+                                                                           parent
+                                                                          );
 
-        if (
-            !ok                     ||
-            name.isEmpty()          ||
-            (name == fitem->name()) ||
-            !d->favoritesList->findFavoriteByHierarchy(ShowfotoStackViewFavoriteBase::hierarchyFromParent(name, parent))
-           )
+        if (ok)
         {
-            return;
+            fitem->setName(name);
         }
-
-        fitem->setName(name);
     }
 }
 
