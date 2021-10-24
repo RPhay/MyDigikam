@@ -84,6 +84,8 @@ private:
     QMimeData* mimeData(const QList<QTreeWidgetItem*> items)            const override;
     void       startDrag(Qt::DropActions supportedActions)                    override;
 
+    void rebaseHierarchy(ShowfotoStackViewFavoriteBase* const parent);
+
 private:
 
     class Private;

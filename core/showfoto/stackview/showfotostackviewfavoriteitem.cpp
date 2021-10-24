@@ -99,7 +99,6 @@ QString ShowfotoStackViewFavoriteBase::hierarchy() const
 ShowfotoStackViewFavoriteRoot::ShowfotoStackViewFavoriteRoot(QTreeWidget* const parent)
     : ShowfotoStackViewFavoriteBase(parent, FavoriteRoot)
 {
-    setFlags(Qt::ItemIsEnabled);
     setName(i18nc("@title", "My Favorites"));
     setIcon(0, QIcon::fromTheme(QLatin1String("folder-root")));
 }
