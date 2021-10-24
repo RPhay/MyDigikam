@@ -278,19 +278,19 @@ void ShowfotoStackViewFavorites::slotAddFavorite(const QList<QUrl>& newUrls, con
     ShowfotoStackViewFavoriteBase* const parent = d->favoritesList->currentItem() ? dynamic_cast<ShowfotoStackViewFavoriteBase*>(d->favoritesList->currentItem())
                                                                                   : d->topFavorites;
 
-    bool ok          = ShowfotoStackViewFavoriteItemDlg::favoriteDialog(d->favoritesList,
-                                                                    name,
-                                                                    desc,
-                                                                    date,
-                                                                    icon,
-                                                                    urls,
-                                                                    currentUrl,
-                                                                    d->sidebar->iconSize(),
-                                                                    d->sidebar->sortOrder(),
-                                                                    d->sidebar->sortRole(),
-                                                                    parent,
-                                                                    true
-                                                                   );
+    bool ok          = ShowfotoStackViewFavoriteItemDlg::favoriteItemDialog(d->favoritesList,
+                                                                            name,
+                                                                            desc,
+                                                                            date,
+                                                                            icon,
+                                                                            urls,
+                                                                            currentUrl,
+                                                                            d->sidebar->iconSize(),
+                                                                            d->sidebar->sortOrder(),
+                                                                            d->sidebar->sortRole(),
+                                                                            parent,
+                                                                            true
+                                                                           );
 
     if (ok)
     {
@@ -339,18 +339,18 @@ void ShowfotoStackViewFavorites::slotEditItem()
         QUrl currentUrl                             = item->currentUrl();
         ShowfotoStackViewFavoriteBase* const parent = dynamic_cast<ShowfotoStackViewFavoriteBase*>(item->parent());
 
-        bool ok = ShowfotoStackViewFavoriteItemDlg::favoriteDialog(d->favoritesList,
-                                                               name,
-                                                               desc,
-                                                               date,
-                                                               icon,
-                                                               urls,
-                                                               currentUrl,
-                                                               d->sidebar->iconSize(),
-                                                               d->sidebar->sortOrder(),
-                                                               d->sidebar->sortRole(),
-                                                               parent
-                                                              );
+        bool ok = ShowfotoStackViewFavoriteItemDlg::favoriteItemDialog(d->favoritesList,
+                                                                       name,
+                                                                       desc,
+                                                                       date,
+                                                                       icon,
+                                                                       urls,
+                                                                       currentUrl,
+                                                                       d->sidebar->iconSize(),
+                                                                       d->sidebar->sortOrder(),
+                                                                       d->sidebar->sortRole(),
+                                                                       parent
+                                                                      );
 
         if (ok)
         {

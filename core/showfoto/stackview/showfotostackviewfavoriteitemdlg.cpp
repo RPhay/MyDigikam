@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2021-09-27
- * Description : Showfoto stack view favorite edit dialog
+ * Description : Showfoto stack view favorite item edit dialog
  *
  * Copyright (C) 2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
@@ -113,7 +113,7 @@ static Qt::SortOrder                        s_sortOrder(Qt::AscendingOrder);
 static ShowfotoStackViewList::StackViewRole s_sortRole(ShowfotoStackViewList::FileName);
 
 ShowfotoStackViewFavoriteItemDlg::ShowfotoStackViewFavoriteItemDlg(ShowfotoStackViewFavoriteList* const list,
-                                                           bool create)
+                                                                   bool create)
     : QDialog(list),
       d      (new Private)
 {
@@ -126,11 +126,11 @@ ShowfotoStackViewFavoriteItemDlg::ShowfotoStackViewFavoriteItemDlg(ShowfotoStack
 
     if (d->create)
     {
-        setWindowTitle(i18nc("@title", "New Favorite"));
+        setWindowTitle(i18nc("@title", "New Favorite Item"));
     }
     else
     {
-        setWindowTitle(i18nc("@title", "Edit Favorite"));
+        setWindowTitle(i18nc("@title", "Edit Favorite Item"));
     }
 
     QWidget* const page     = new QWidget(this);
@@ -139,34 +139,34 @@ ShowfotoStackViewFavoriteItemDlg::ShowfotoStackViewFavoriteItemDlg(ShowfotoStack
     // --------------------------------------------------------
 
     QLabel* const nameLabel = new QLabel(page);
-    nameLabel->setText(i18nc("@label: favorite title properties", "&Name:"));
+    nameLabel->setText(i18nc("@label: favorite item title properties", "&Name:"));
 
     d->nameEdit             = new QLineEdit(page);
-    d->nameEdit->setPlaceholderText(i18nc("@info", "Enter favorite name here..."));
-    d->nameEdit->setToolTip(i18nc("@info", "The favorite name which must be unique and not empty"));
+    d->nameEdit->setPlaceholderText(i18nc("@info", "Enter favorite item name here..."));
+    d->nameEdit->setToolTip(i18nc("@info", "The favorite item name which must be unique and not empty"));
     nameLabel->setBuddy(d->nameEdit);
 
     // --------------------------------------------------------
 
     QLabel* const hierLabel = new QLabel(page);
-    hierLabel->setText(i18nc("@label: favorite hierarchy properties", "Hierarchy:"));
+    hierLabel->setText(i18nc("@label: favorite item hierarchy properties", "Hierarchy:"));
 
     d->hierarchyLabel       = new DAdjustableLabel(page);
-    d->hierarchyLabel->setToolTip(i18nc("@info", "The favorite hierarchy which must be unique in tree-view"));
+    d->hierarchyLabel->setToolTip(i18nc("@info", "The favorite item hierarchy which must be unique in tree-view"));
 
     // --------------------------------------------------------
 
     QLabel* const descLabel = new QLabel(page);
-    descLabel->setText(i18nc("@label: favorite caption properties", "&Description:"));
+    descLabel->setText(i18nc("@label: favorite item caption properties", "&Description:"));
 
     d->descEdit             = new QLineEdit(page);
-    d->descEdit->setPlaceholderText(i18nc("@info", "Enter favorite description here..."));
+    d->descEdit->setPlaceholderText(i18nc("@info", "Enter favorite item description here..."));
     descLabel->setBuddy(d->descEdit);
 
     // --------------------------------------------------------
 
     QLabel* const dateLabel = new QLabel(page);
-    dateLabel->setText(i18nc("@label: favorite date properties", "&Created:"));
+    dateLabel->setText(i18nc("@label: favorite item date properties", "&Created:"));
 
     d->dateEdit             = new QDateTimeEdit(QDate::currentDate(), page);
     d->dateEdit->setMinimumDate(QDate(1970, 1, 1));
@@ -199,7 +199,7 @@ ShowfotoStackViewFavoriteItemDlg::ShowfotoStackViewFavoriteItemDlg(ShowfotoStack
     // --------------------------------------------------------
 
     QLabel* const urlsLabel = new QLabel(page);
-    urlsLabel->setText(i18nc("@label: favorites properties", "&Items:"));
+    urlsLabel->setText(i18nc("@label: favorites item file properties", "&Items:"));
 
     d->nbImagesLabel        = new QLabel(page);
     QFont fnt;
@@ -219,8 +219,8 @@ ShowfotoStackViewFavoriteItemDlg::ShowfotoStackViewFavoriteItemDlg(ShowfotoStack
     d->urlsEdit->listView()->setColumn(DItemsListView::User3,    i18nc("@title", "Date"), true);
     d->urlsEdit->listView()->setColumn(DItemsListView::User4,    i18nc("@title", "Path"), true);
 
-    d->urlsEdit->setWhatsThis(i18nc("@info", "This is the list of items hosted by this favorite.\n"
-                                             "The current selected item from this list will be automatically\n"
+    d->urlsEdit->setWhatsThis(i18nc("@info", "This is the list of files hosted by this favorite item.\n"
+                                             "The current selected file from this list will be automatically\n"
                                              "shown in editor when favorite is open. If none is selected,\n"
                                              "first one from the list will be displayed."));
     urlsLabel->setBuddy(d->urlsEdit);
@@ -315,15 +315,15 @@ bool ShowfotoStackViewFavoriteItemDlg::canAccept() const
     {
         if      (b1)
         {
-            d->helpLabel->setAdjustedText(i18nc("@label", "Note: name cannot be empty!"));
+            d->helpLabel->setAdjustedText(i18nc("@label", "Note: item name cannot be empty!"));
         }
         else if (b2)
         {
-            d->helpLabel->setAdjustedText(i18nc("@label", "Note: items list cannot be empty!"));
+            d->helpLabel->setAdjustedText(i18nc("@label", "Note: files list cannot be empty!"));
         }
         else if (b3)
         {
-            d->helpLabel->setAdjustedText(i18nc("@label", "Note: name already exists in favorites list!"));
+            d->helpLabel->setAdjustedText(i18nc("@label", "Note: item name already exists in favorites list!"));
         }
     }
 
@@ -347,7 +347,7 @@ void ShowfotoStackViewFavoriteItemDlg::slotModified()
     d->buttons->button(QDialogButtonBox::Ok)->setEnabled(canAccept());
     d->hierarchyLabel->setAdjustedText(ShowfotoStackViewFavoriteBase::hierarchyFromParent(name(), d->pitem));
     int numberOfImages = d->urlsEdit->imageUrls().count();
-    d->nbImagesLabel->setText(i18ncp("@info", "%1 image", "%1 images", numberOfImages));
+    d->nbImagesLabel->setText(i18ncp("@info", "%1 file", "%1 files", numberOfImages));
 }
 
 QString ShowfotoStackViewFavoriteItemDlg::name() const
@@ -504,18 +504,18 @@ void ShowfotoStackViewFavoriteItemDlg::slotUpdateMetadata()
     }
 }
 
-bool ShowfotoStackViewFavoriteItemDlg::favoriteDialog(ShowfotoStackViewFavoriteList* const list,
-                                                  QString& name,
-                                                  QString& desc,
-                                                  QDate& date,
-                                                  QString& icon,
-                                                  QList<QUrl>& urls,
-                                                  QUrl& current,
-                                                  int iconSize,
-                                                  int sortOrder,
-                                                  int sortRole,
-                                                  ShowfotoStackViewFavoriteBase* const pitem,
-                                                  bool create)
+bool ShowfotoStackViewFavoriteItemDlg::favoriteItemDialog(ShowfotoStackViewFavoriteList* const list,
+                                                          QString& name,
+                                                          QString& desc,
+                                                          QDate& date,
+                                                          QString& icon,
+                                                          QList<QUrl>& urls,
+                                                          QUrl& current,
+                                                          int iconSize,
+                                                          int sortOrder,
+                                                          int sortRole,
+                                                          ShowfotoStackViewFavoriteBase* const pitem,
+                                                          bool create)
 {
     QPointer<ShowfotoStackViewFavoriteItemDlg> dlg = new ShowfotoStackViewFavoriteItemDlg(list, create);
     dlg->setName(name);

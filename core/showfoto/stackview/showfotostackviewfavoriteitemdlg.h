@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2021-09-27
- * Description : Showfoto stack view favorite edit dialog
+ * Description : Showfoto stack view favorite item edit dialog
  *
  * Copyright (C) 2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
@@ -52,7 +52,7 @@ class ShowfotoStackViewFavoriteItemDlg : public QDialog
 public:
 
     explicit ShowfotoStackViewFavoriteItemDlg(ShowfotoStackViewFavoriteList* const list,
-                                          bool create = false);
+                                              bool create = false);
     ~ShowfotoStackViewFavoriteItemDlg() override;
 
     void setName(const QString& name);
@@ -80,18 +80,18 @@ public:
 
 public:
 
-    static bool favoriteDialog(ShowfotoStackViewFavoriteList* const list,
-                               QString& name,
-                               QString& desc,
-                               QDate& date,
-                               QString& icon,
-                               QList<QUrl>& urls,
-                               QUrl& current,
-                               int iconSize,
-                               int sortOrder,
-                               int sortRole,
-                               ShowfotoStackViewFavoriteBase* const pitem,
-                               bool create = false);
+    static bool favoriteItemDialog(ShowfotoStackViewFavoriteList* const list,
+                                   QString& name,
+                                   QString& desc,
+                                   QDate& date,
+                                   QString& icon,
+                                   QList<QUrl>& urls,
+                                   QUrl& current,
+                                   int iconSize,
+                                   int sortOrder,
+                                   int sortRole,
+                                   ShowfotoStackViewFavoriteBase* const pitem,
+                                   bool create = false);
 
 private:
 
