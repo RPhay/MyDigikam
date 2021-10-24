@@ -175,7 +175,7 @@ BUGFIXES:
 160 ==> 443966 - Move to trash not working.
 161 ==> 435507 - New install digiKam 7.2 on Windows Error opening database.
 162 ==> 444220 - digiKam start and stop (old libjasper).
-163 ==> 
+163 ==> 444341 - Flags for picks not displaying.
 164 ==> 
 165 ==> 
 166 ==> 
