@@ -189,7 +189,7 @@ ShowfotoStackViewFavorites::ShowfotoStackViewFavorites(ShowfotoStackViewSideBar*
     // --------------------------------------------------------
 
     connect(d->favoritesList, SIGNAL(itemSelectionChanged()),
-            this, SLOT(slotFavoriteSelectionChanged()));
+            this, SLOT(slotItemSelectionChanged()));
 
     connect(d->favoritesList, SIGNAL(itemDoubleClicked(QTreeWidgetItem*,int)),
             this, SLOT(slotFavoriteDoubleClicked(QTreeWidgetItem*)));
@@ -393,15 +393,19 @@ void ShowfotoStackViewFavorites::slotEditItem()
     }
 }
 
-void ShowfotoStackViewFavorites::slotFavoriteSelectionChanged()
+void ShowfotoStackViewFavorites::slotItemSelectionChanged()
 {
-    bool b                                       = true;
-    QTreeWidgetItem* const item                  = d->favoritesList->currentItem();
-    ShowfotoStackViewFavoriteFolder* const fitem = dynamic_cast<ShowfotoStackViewFavoriteFolder*>(item);
+    bool b                      = false;
+    QTreeWidgetItem* const item = d->favoritesList->currentItem();
 
-    if (!item || (item != d->topFavorites) || !fitem)
+    if (item)
     {
-        b = false;
+        ShowfotoStackViewFavoriteBase* const fitem = dynamic_cast<ShowfotoStackViewFavoriteBase*>(item);
+
+        if (fitem->type() != ShowfotoStackViewFavoriteBase::FavoriteRoot)
+        {
+            b = true;
+        }
     }
 
     d->delBtn->setEnabled(b);

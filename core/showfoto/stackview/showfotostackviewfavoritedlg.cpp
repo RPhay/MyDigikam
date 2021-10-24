@@ -54,6 +54,7 @@
 
 #include "digikam_debug.h"
 #include "dlayoutbox.h"
+#include "dexpanderbox.h"
 #include "drawdecoder.h"
 #include "showfotostackviewfavoritelist.h"
 #include "showfotostackviewfavoriteitem.h"
@@ -88,9 +89,10 @@ public:
 
     bool                                        create;
 
-    QLabel*                                     hierarchyLabel;
+    DAdjustableLabel*                           hierarchyLabel;
 
     QString                                     icon;
+    QString                                     originalName;
 
     QPushButton*                                iconButton;
     QPushButton*                                resetIconButton;
@@ -102,7 +104,7 @@ public:
     QDateTimeEdit*                              dateEdit;
     DItemsList*                                 urlsEdit;
     QLabel*                                     nbImagesLabel;
-    QLabel*                                     helpLabel;
+    DAdjustableLabel*                           helpLabel;
     ShowfotoStackViewFavoriteList*              list;
     ShowfotoStackViewFavoriteBase*              pitem;
 };
@@ -147,9 +149,9 @@ ShowfotoStackViewFavoriteDlg::ShowfotoStackViewFavoriteDlg(ShowfotoStackViewFavo
     // --------------------------------------------------------
 
     QLabel* const hierLabel = new QLabel(page);
-    hierLabel->setText(i18nc("@label: favorite hierarchy properties", "&Hierarchy:"));
+    hierLabel->setText(i18nc("@label: favorite hierarchy properties", "Hierarchy:"));
 
-    d->hierarchyLabel       = new QLabel(page);
+    d->hierarchyLabel       = new DAdjustableLabel(page);
     d->hierarchyLabel->setToolTip(i18nc("@info", "The favorite hierarchy which must be unique in tree-view"));
 
     // --------------------------------------------------------
@@ -223,7 +225,9 @@ ShowfotoStackViewFavoriteDlg::ShowfotoStackViewFavoriteDlg(ShowfotoStackViewFavo
                                              "first one from the list will be displayed."));
     urlsLabel->setBuddy(d->urlsEdit);
 
-    d->helpLabel = new QLabel(page);
+    // --------------------------------------------------------
+
+    d->helpLabel = new DAdjustableLabel(page);
     QPalette pal = d->helpLabel->palette();
     pal.setColor(QPalette::WindowText, Qt::red);
     d->helpLabel->setPalette(pal);
@@ -291,26 +295,35 @@ bool ShowfotoStackViewFavoriteDlg::canAccept() const
 {
     bool b1 = name().isEmpty();
     bool b2 = urls().isEmpty();
-    bool b3 = d->list->findFavoriteByHierarchy(ShowfotoStackViewFavoriteBase::hierarchyFromParent(name(), d->pitem));
+    bool b3 = false;     // If dialog in edit mode, the original name can be accepted.
+
+    if (
+        d->create ||
+        (!d->create && (name() != d->originalName))
+       )
+    {
+        b3 = d->list->findFavoriteByHierarchy(ShowfotoStackViewFavoriteBase::hierarchyFromParent(name(), d->pitem));
+    }
+
     bool b4 = (!b1 && !b2 && !b3);
 
     if (b4)
     {
-        d->helpLabel->clear();
+        d->helpLabel->setAdjustedText(QString());
     }
     else
     {
         if      (b1)
         {
-            d->helpLabel->setText(i18nc("@label", "Note: name cannot be empty!"));
+            d->helpLabel->setAdjustedText(i18nc("@label", "Note: name cannot be empty!"));
         }
         else if (b2)
         {
-            d->helpLabel->setText(i18nc("@label", "Note: items list cannot be empty!"));
+            d->helpLabel->setAdjustedText(i18nc("@label", "Note: items list cannot be empty!"));
         }
         else if (b3)
         {
-            d->helpLabel->setText(i18nc("@label", "Note: name already exists in favorites list!"));
+            d->helpLabel->setAdjustedText(i18nc("@label", "Note: name already exists in favorites list!"));
         }
     }
 
@@ -332,7 +345,7 @@ void ShowfotoStackViewFavoriteDlg::slotAccept()
 void ShowfotoStackViewFavoriteDlg::slotModified()
 {
     d->buttons->button(QDialogButtonBox::Ok)->setEnabled(canAccept());
-    d->hierarchyLabel->setText(ShowfotoStackViewFavoriteBase::hierarchyFromParent(name(), d->pitem));
+    d->hierarchyLabel->setAdjustedText(ShowfotoStackViewFavoriteBase::hierarchyFromParent(name(), d->pitem));
     int numberOfImages = d->urlsEdit->imageUrls().count();
     d->nbImagesLabel->setText(i18ncp("@info", "%1 image", "%1 images", numberOfImages));
 }
@@ -370,6 +383,7 @@ QUrl ShowfotoStackViewFavoriteDlg::currentUrl() const
 void ShowfotoStackViewFavoriteDlg::setName(const QString& name)
 {
     d->nameEdit->setText(name);
+    d->originalName = name;
 }
 
 void ShowfotoStackViewFavoriteDlg::setDescription(const QString& desc)

@@ -71,7 +71,7 @@ QString ShowfotoStackViewFavoriteBase::hierarchyFromParent(const QString& name, 
 {
     QString hierarchy = QLatin1String("/");
 
-    if (pitem)
+    if (pitem && !name.isEmpty())
     {
         hierarchy = pitem->hierarchy() + name + QLatin1String("/");
     }
