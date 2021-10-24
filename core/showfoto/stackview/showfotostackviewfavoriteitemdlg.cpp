@@ -21,7 +21,7 @@
  *
  * ============================================================ */
 
-#include "showfotostackviewfavoritedlg.h"
+#include "showfotostackviewfavoriteitemdlg.h"
 
 // Qt includes
 
@@ -65,7 +65,7 @@
 namespace ShowFoto
 {
 
-class Q_DECL_HIDDEN ShowfotoStackViewFavoriteDlg::Private
+class Q_DECL_HIDDEN ShowfotoStackViewFavoriteItemDlg::Private
 {
 public:
 
@@ -112,7 +112,7 @@ public:
 static Qt::SortOrder                        s_sortOrder(Qt::AscendingOrder);
 static ShowfotoStackViewList::StackViewRole s_sortRole(ShowfotoStackViewList::FileName);
 
-ShowfotoStackViewFavoriteDlg::ShowfotoStackViewFavoriteDlg(ShowfotoStackViewFavoriteList* const list,
+ShowfotoStackViewFavoriteItemDlg::ShowfotoStackViewFavoriteItemDlg(ShowfotoStackViewFavoriteList* const list,
                                                            bool create)
     : QDialog(list),
       d      (new Private)
@@ -286,12 +286,12 @@ ShowfotoStackViewFavoriteDlg::ShowfotoStackViewFavoriteDlg(ShowfotoStackViewFavo
     adjustSize();
 }
 
-ShowfotoStackViewFavoriteDlg::~ShowfotoStackViewFavoriteDlg()
+ShowfotoStackViewFavoriteItemDlg::~ShowfotoStackViewFavoriteItemDlg()
 {
     delete d;
 }
 
-bool ShowfotoStackViewFavoriteDlg::canAccept() const
+bool ShowfotoStackViewFavoriteItemDlg::canAccept() const
 {
     bool b1 = name().isEmpty();
     bool b2 = urls().isEmpty();
@@ -334,7 +334,7 @@ bool ShowfotoStackViewFavoriteDlg::canAccept() const
            );
 }
 
-void ShowfotoStackViewFavoriteDlg::slotAccept()
+void ShowfotoStackViewFavoriteItemDlg::slotAccept()
 {
     if (canAccept())
     {
@@ -342,7 +342,7 @@ void ShowfotoStackViewFavoriteDlg::slotAccept()
     }
 }
 
-void ShowfotoStackViewFavoriteDlg::slotModified()
+void ShowfotoStackViewFavoriteItemDlg::slotModified()
 {
     d->buttons->button(QDialogButtonBox::Ok)->setEnabled(canAccept());
     d->hierarchyLabel->setAdjustedText(ShowfotoStackViewFavoriteBase::hierarchyFromParent(name(), d->pitem));
@@ -350,96 +350,96 @@ void ShowfotoStackViewFavoriteDlg::slotModified()
     d->nbImagesLabel->setText(i18ncp("@info", "%1 image", "%1 images", numberOfImages));
 }
 
-QString ShowfotoStackViewFavoriteDlg::name() const
+QString ShowfotoStackViewFavoriteItemDlg::name() const
 {
     return d->nameEdit->text();
 }
 
-QString ShowfotoStackViewFavoriteDlg::description() const
+QString ShowfotoStackViewFavoriteItemDlg::description() const
 {
     return d->descEdit->text();
 }
 
-QDate ShowfotoStackViewFavoriteDlg::date() const
+QDate ShowfotoStackViewFavoriteItemDlg::date() const
 {
     return d->dateEdit->date();
 }
 
-QString ShowfotoStackViewFavoriteDlg::icon() const
+QString ShowfotoStackViewFavoriteItemDlg::icon() const
 {
     return d->icon;
 }
 
-QList<QUrl> ShowfotoStackViewFavoriteDlg::urls() const
+QList<QUrl> ShowfotoStackViewFavoriteItemDlg::urls() const
 {
     return d->urlsEdit->imageUrls();
 }
 
-QUrl ShowfotoStackViewFavoriteDlg::currentUrl() const
+QUrl ShowfotoStackViewFavoriteItemDlg::currentUrl() const
 {
     return d->urlsEdit->getCurrentUrl();
 }
 
-void ShowfotoStackViewFavoriteDlg::setName(const QString& name)
+void ShowfotoStackViewFavoriteItemDlg::setName(const QString& name)
 {
     d->nameEdit->setText(name);
     d->originalName = name;
 }
 
-void ShowfotoStackViewFavoriteDlg::setDescription(const QString& desc)
+void ShowfotoStackViewFavoriteItemDlg::setDescription(const QString& desc)
 {
     d->descEdit->setText(desc);
 }
 
-void ShowfotoStackViewFavoriteDlg::setDate(const QDate& date)
+void ShowfotoStackViewFavoriteItemDlg::setDate(const QDate& date)
 {
     d->dateEdit->setDate(date);
 }
 
-void ShowfotoStackViewFavoriteDlg::setIcon(const QString& icon)
+void ShowfotoStackViewFavoriteItemDlg::setIcon(const QString& icon)
 {
     d->icon = icon;
 }
 
-void ShowfotoStackViewFavoriteDlg::setUrls(const QList<QUrl>& urls)
+void ShowfotoStackViewFavoriteItemDlg::setUrls(const QList<QUrl>& urls)
 {
     d->urlsEdit->slotAddImages(urls);
 }
 
-void ShowfotoStackViewFavoriteDlg::setCurrentUrl(const QUrl& url)
+void ShowfotoStackViewFavoriteItemDlg::setCurrentUrl(const QUrl& url)
 {
     d->urlsEdit->setCurrentUrl(url);
 }
 
-void ShowfotoStackViewFavoriteDlg::setIconSize(int size)
+void ShowfotoStackViewFavoriteItemDlg::setIconSize(int size)
 {
     d->urlsEdit->setIconSize(size);
 }
 
-void ShowfotoStackViewFavoriteDlg::setSortOrder(int order)
+void ShowfotoStackViewFavoriteItemDlg::setSortOrder(int order)
 {
     s_sortOrder = (Qt::SortOrder)order;
     d->urlsEdit->listView()->sortItems(s_sortRole + DItemsListView::Filename, s_sortOrder);
 }
 
-void ShowfotoStackViewFavoriteDlg::setSortRole(int role)
+void ShowfotoStackViewFavoriteItemDlg::setSortRole(int role)
 {
     s_sortRole = (ShowfotoStackViewList::StackViewRole)role;
     d->urlsEdit->listView()->sortItems(s_sortRole + DItemsListView::Filename, s_sortOrder);
 }
 
-void ShowfotoStackViewFavoriteDlg::setParentItem(ShowfotoStackViewFavoriteBase* const pitem)
+void ShowfotoStackViewFavoriteItemDlg::setParentItem(ShowfotoStackViewFavoriteBase* const pitem)
 {
     d->pitem = pitem;
 }
 
-void ShowfotoStackViewFavoriteDlg::slotIconResetClicked()
+void ShowfotoStackViewFavoriteItemDlg::slotIconResetClicked()
 {
     d->icon = QLatin1String("folder-favorites");
     d->iconButton->setIcon(QIcon::fromTheme(d->icon));
 }
 
-void ShowfotoStackViewFavoriteDlg::slotIconChanged()
+void ShowfotoStackViewFavoriteItemDlg::slotIconChanged()
 {
 
 #ifdef HAVE_KICONTHEMES
@@ -461,7 +461,7 @@ void ShowfotoStackViewFavoriteDlg::slotIconChanged()
 
 }
 
-void ShowfotoStackViewFavoriteDlg::slotUpdateMetadata()
+void ShowfotoStackViewFavoriteItemDlg::slotUpdateMetadata()
 {
     QTreeWidgetItemIterator it(d->urlsEdit->listView());
 
@@ -504,7 +504,7 @@ void ShowfotoStackViewFavoriteDlg::slotUpdateMetadata()
     }
 }
 
-bool ShowfotoStackViewFavoriteDlg::favoriteDialog(ShowfotoStackViewFavoriteList* const list,
+bool ShowfotoStackViewFavoriteItemDlg::favoriteDialog(ShowfotoStackViewFavoriteList* const list,
                                                   QString& name,
                                                   QString& desc,
                                                   QDate& date,
@@ -517,7 +517,7 @@ bool ShowfotoStackViewFavoriteDlg::favoriteDialog(ShowfotoStackViewFavoriteList*
                                                   ShowfotoStackViewFavoriteBase* const pitem,
                                                   bool create)
 {
-    QPointer<ShowfotoStackViewFavoriteDlg> dlg = new ShowfotoStackViewFavoriteDlg(list, create);
+    QPointer<ShowfotoStackViewFavoriteItemDlg> dlg = new ShowfotoStackViewFavoriteItemDlg(list, create);
     dlg->setName(name);
     dlg->setDescription(desc);
     dlg->setDate(date);
@@ -546,7 +546,7 @@ bool ShowfotoStackViewFavoriteDlg::favoriteDialog(ShowfotoStackViewFavoriteList*
     return valRet;
 }
 
-bool ShowfotoStackViewFavoriteDlg::myIsLessThanHandler(const QTreeWidgetItem* current, const QTreeWidgetItem& other)
+bool ShowfotoStackViewFavoriteItemDlg::myIsLessThanHandler(const QTreeWidgetItem* current, const QTreeWidgetItem& other)
 {
     int result = 0;
 

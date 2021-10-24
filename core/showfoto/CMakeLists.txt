@@ -60,7 +60,7 @@ set(showfoto_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/stackview/showfotostackviewitem.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/stackview/showfotostackviewtooltip.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/stackview/showfotostackviewfavorites.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/stackview/showfotostackviewfavoritedlg.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/stackview/showfotostackviewfavoriteitemdlg.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/stackview/showfotostackviewfavoritelist.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/stackview/showfotostackviewfavoriteitem.cpp
 

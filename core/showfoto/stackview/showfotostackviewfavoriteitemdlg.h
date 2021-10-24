@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef SHOWFOTO_STACK_VIEW_FAVORITE_DLG_H
-#define SHOWFOTO_STACK_VIEW_FAVORITE_DLG_H
+#ifndef SHOWFOTO_STACK_VIEW_FAVORITE_ITEM_DLG_H
+#define SHOWFOTO_STACK_VIEW_FAVORITE_ITEM_DLG_H
 
 // Qt includes
 
@@ -45,15 +45,15 @@ namespace ShowFoto
 class ShowfotoStackViewFavoriteList;
 class ShowfotoStackViewFavoriteBase;
 
-class ShowfotoStackViewFavoriteDlg : public QDialog
+class ShowfotoStackViewFavoriteItemDlg : public QDialog
 {
     Q_OBJECT
 
 public:
 
-    explicit ShowfotoStackViewFavoriteDlg(ShowfotoStackViewFavoriteList* const list,
+    explicit ShowfotoStackViewFavoriteItemDlg(ShowfotoStackViewFavoriteList* const list,
                                           bool create = false);
-    ~ShowfotoStackViewFavoriteDlg() override;
+    ~ShowfotoStackViewFavoriteItemDlg() override;
 
     void setName(const QString& name);
     QString name()        const;
@@ -117,4 +117,4 @@ private:
 
 } // namespace ShowFoto
 
-#endif // SHOWFOTO_STACK_VIEW_FAVORITE_DLG_H
+#endif // SHOWFOTO_STACK_VIEW_FAVORITE_ITEM_DLG_H

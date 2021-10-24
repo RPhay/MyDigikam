@@ -51,7 +51,7 @@
 #include "digikam_debug.h"
 #include "thumbnailsize.h"
 #include "showfotostackviewsidebar.h"
-#include "showfotostackviewfavoritedlg.h"
+#include "showfotostackviewfavoriteitemdlg.h"
 #include "showfotostackviewfavoritelist.h"
 #include "showfotostackviewfavoriteitem.h"
 
@@ -278,7 +278,7 @@ void ShowfotoStackViewFavorites::slotAddFavorite(const QList<QUrl>& newUrls, con
     ShowfotoStackViewFavoriteBase* const parent = d->favoritesList->currentItem() ? dynamic_cast<ShowfotoStackViewFavoriteBase*>(d->favoritesList->currentItem())
                                                                                   : d->topFavorites;
 
-    bool ok          = ShowfotoStackViewFavoriteDlg::favoriteDialog(d->favoritesList,
+    bool ok          = ShowfotoStackViewFavoriteItemDlg::favoriteDialog(d->favoritesList,
                                                                     name,
                                                                     desc,
                                                                     date,
@@ -339,7 +339,7 @@ void ShowfotoStackViewFavorites::slotEditItem()
         QUrl currentUrl                             = item->currentUrl();
         ShowfotoStackViewFavoriteBase* const parent = dynamic_cast<ShowfotoStackViewFavoriteBase*>(item->parent());
 
-        bool ok = ShowfotoStackViewFavoriteDlg::favoriteDialog(d->favoritesList,
+        bool ok = ShowfotoStackViewFavoriteItemDlg::favoriteDialog(d->favoritesList,
                                                                name,
                                                                desc,
                                                                date,
