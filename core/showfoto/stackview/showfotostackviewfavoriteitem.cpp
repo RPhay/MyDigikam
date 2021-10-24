@@ -42,15 +42,15 @@ using namespace Digikam;
 namespace ShowFoto
 {
 
-ShowfotoStackViewFavoriteBase::ShowfotoStackViewFavoriteBase(QTreeWidget* const parent)
-    : QTreeWidgetItem(parent)
+ShowfotoStackViewFavoriteBase::ShowfotoStackViewFavoriteBase(QTreeWidget* const parent, int type)
+    : QTreeWidgetItem(parent, type)
 {
     setDisabled(false);
     setSelected(false);
 }
 
-ShowfotoStackViewFavoriteBase::ShowfotoStackViewFavoriteBase(QTreeWidgetItem* const parent)
-    : QTreeWidgetItem(parent)
+ShowfotoStackViewFavoriteBase::ShowfotoStackViewFavoriteBase(QTreeWidgetItem* const parent, int type)
+    : QTreeWidgetItem(parent, type)
 {
     setDisabled(false);
     setSelected(false);
@@ -97,7 +97,7 @@ QString ShowfotoStackViewFavoriteBase::hierarchy() const
 // ------------------------------------------------------------------------------------------
 
 ShowfotoStackViewFavoriteRoot::ShowfotoStackViewFavoriteRoot(QTreeWidget* const parent)
-    : ShowfotoStackViewFavoriteBase(parent)
+    : ShowfotoStackViewFavoriteBase(parent, FavoriteRoot)
 {
     setFlags(Qt::ItemIsEnabled);
     setName(i18nc("@title", "My Favorites"));
@@ -108,15 +108,10 @@ ShowfotoStackViewFavoriteRoot::~ShowfotoStackViewFavoriteRoot()
 {
 }
 
-int ShowfotoStackViewFavoriteRoot::type() const
-{
-    return FavoriteRoot;
-}
-
 // ------------------------------------------------------------------------------------------
 
-ShowfotoStackViewFavoriteFolder::ShowfotoStackViewFavoriteFolder(QTreeWidgetItem* const parent)
-    : ShowfotoStackViewFavoriteBase(parent)
+ShowfotoStackViewFavoriteFolder::ShowfotoStackViewFavoriteFolder(QTreeWidgetItem* const parent, int type)
+    : ShowfotoStackViewFavoriteBase(parent, type)
 {
     setIcon(0, QIcon::fromTheme(QLatin1String("folder")));
 }
@@ -125,15 +120,10 @@ ShowfotoStackViewFavoriteFolder::~ShowfotoStackViewFavoriteFolder()
 {
 }
 
-int ShowfotoStackViewFavoriteFolder::type() const
-{
-    return FavoriteFolder;
-}
-
 // ------------------------------------------------------------------------------------------
 
 ShowfotoStackViewFavoriteItem::ShowfotoStackViewFavoriteItem(QTreeWidgetItem* const parent)
-    : ShowfotoStackViewFavoriteFolder(parent)
+    : ShowfotoStackViewFavoriteFolder(parent, FavoriteItem)
 {
 }
 
@@ -235,11 +225,6 @@ void ShowfotoStackViewFavoriteItem::updateToolTip()
     tip += cnt.tipFooter;
 
     setToolTip(0, tip);
-}
-
-int ShowfotoStackViewFavoriteItem::type() const
-{
-    return FavoriteItem;
 }
 
 } // namespace ShowFoto

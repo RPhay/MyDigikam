@@ -44,15 +44,15 @@ public:
 
     enum FavoriteType
     {
-        FavoriteRoot = 0,
+        FavoriteRoot = QTreeWidgetItem::UserType,
         FavoriteFolder,
         FavoriteItem
     };
 
 public:
 
-    ShowfotoStackViewFavoriteBase(QTreeWidget* const parent);
-    ShowfotoStackViewFavoriteBase(QTreeWidgetItem* const parent);
+    ShowfotoStackViewFavoriteBase(QTreeWidget* const parent, int type);
+    ShowfotoStackViewFavoriteBase(QTreeWidgetItem* const parent, int type);
     ~ShowfotoStackViewFavoriteBase() override;
 
     void setName(const QString& name);
@@ -60,8 +60,6 @@ public:
 
     void setHierarchy(const QString& desc);
     QString hierarchy()       const;
-
-    virtual int type()        const = 0;
 
     static QString hierarchyFromParent(const QString& name, ShowfotoStackViewFavoriteBase* const pitem);
 
@@ -86,8 +84,6 @@ public:
     explicit ShowfotoStackViewFavoriteRoot(QTreeWidget* const parent);
     ~ShowfotoStackViewFavoriteRoot() override;
 
-    int type()                 const override;
-
 private:
 
     Q_DISABLE_COPY(ShowfotoStackViewFavoriteRoot)
@@ -100,10 +96,8 @@ class ShowfotoStackViewFavoriteFolder : public ShowfotoStackViewFavoriteBase
 
 public:
 
-    explicit ShowfotoStackViewFavoriteFolder(QTreeWidgetItem* const parent);
+    explicit ShowfotoStackViewFavoriteFolder(QTreeWidgetItem* const parent, int type = FavoriteFolder);
     ~ShowfotoStackViewFavoriteFolder() override;
-
-    int type()                   const override;
 
 private:
 
@@ -133,8 +127,6 @@ public:
     QUrl currentUrl()         const;
 
     QStringList urlsToPaths() const;
-
-    int type()                const override;
 
 private:
 
