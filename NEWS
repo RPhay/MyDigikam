@@ -174,7 +174,7 @@ BUGFIXES:
 159 ==> 444052 - While editing a raw (.DNG) image, original image can be corrupted.
 160 ==> 443966 - Move to trash not working.
 161 ==> 435507 - New install digiKam 7.2 on Windows Error opening database.
-162 ==> 
+162 ==> 444220 - digiKam start and stop (old libjasper).
 163 ==> 
 164 ==> 
 165 ==> 
