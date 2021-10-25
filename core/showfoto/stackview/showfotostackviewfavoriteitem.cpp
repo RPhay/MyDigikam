@@ -119,11 +119,35 @@ ShowfotoStackViewFavoriteFolder::~ShowfotoStackViewFavoriteFolder()
 {
 }
 
+void ShowfotoStackViewFavoriteFolder::updateToolTip()
+{
+    if (!ShowfotoSettings::instance()->getShowToolTip())
+    {
+        return;
+    }
+
+    DToolTipStyleSheet cnt(ShowfotoSettings::instance()->getToolTipFont());
+    QString tip  = cnt.tipHeader;
+
+    tip += cnt.headBeg + i18nc("@title", "Favorite Folder Properties") + cnt.headEnd;
+
+    tip += cnt.cellBeg + i18nc("@info: favorite folder title property", "Name:") + cnt.cellMid;
+    tip += name() + cnt.cellEnd;
+
+    tip += cnt.cellBeg + i18nc("@info: favorite folder hierarchy property", "Hierarchy:") + cnt.cellMid;
+    tip += hierarchy() + cnt.cellEnd;
+
+    tip += cnt.tipFooter;
+
+    setToolTip(0, tip);
+}
+
 // ------------------------------------------------------------------------------------------
 
 ShowfotoStackViewFavoriteItem::ShowfotoStackViewFavoriteItem(QTreeWidgetItem* const parent)
     : ShowfotoStackViewFavoriteFolder(parent, FavoriteItem)
 {
+    setIcon(0, QIcon::fromTheme(QLatin1String("folder-favorites")));
 }
 
 ShowfotoStackViewFavoriteItem::~ShowfotoStackViewFavoriteItem()
@@ -204,21 +228,21 @@ void ShowfotoStackViewFavoriteItem::updateToolTip()
     DToolTipStyleSheet cnt(ShowfotoSettings::instance()->getToolTipFont());
     QString tip  = cnt.tipHeader;
 
-    tip += cnt.headBeg + i18nc("@title", "Favorite Properties") + cnt.headEnd;
+    tip += cnt.headBeg + i18nc("@title", "Favorite Item Properties") + cnt.headEnd;
 
-    tip += cnt.cellBeg + i18nc("@info: item title property", "Name:") + cnt.cellMid;
+    tip += cnt.cellBeg + i18nc("@info: favorite item title property", "Name:") + cnt.cellMid;
     tip += name() + cnt.cellEnd;
 
-    tip += cnt.cellBeg + i18nc("@info: item date property", "Created:") + cnt.cellMid;
+    tip += cnt.cellBeg + i18nc("@info: favorite item date property", "Created:") + cnt.cellMid;
     tip += date().toString() + cnt.cellEnd;
 
-    tip += cnt.cellBeg + i18nc("@info: item hierarchy property", "Hierarchy:") + cnt.cellMid;
+    tip += cnt.cellBeg + i18nc("@info: favorite item hierarchy property", "Hierarchy:") + cnt.cellMid;
     tip += hierarchy() + cnt.cellEnd;
 
-    tip += cnt.cellBeg + i18nc("@info; item count elements property", "Items:") + cnt.cellMid;
+    tip += cnt.cellBeg + i18nc("@info; favorite item count elements property", "Items:") + cnt.cellMid;
     tip += QString::number(urls().count()) + cnt.cellEnd;
 
-    tip += cnt.cellSpecBeg + i18nc("@info: item caption property", "Description:") + cnt.cellSpecMid +
+    tip += cnt.cellSpecBeg + i18nc("@info: favorite item caption property", "Description:") + cnt.cellSpecMid +
            cnt.breakString(desc) + cnt.cellSpecEnd;
 
     tip += cnt.tipFooter;

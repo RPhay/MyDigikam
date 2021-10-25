@@ -101,6 +101,10 @@ public:
 
 private:
 
+    void updateToolTip()               override;
+
+private:
+
     Q_DISABLE_COPY(ShowfotoStackViewFavoriteFolder)
 };
 

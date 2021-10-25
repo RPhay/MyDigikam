@@ -29,6 +29,8 @@
 #include <QMimeData>
 #include <QFileInfo>
 #include <QDir>
+#include <QPainter>
+#include <QPixmap>
 #include <QDrag>
 #include <QMenu>
 #include <QMimeType>
@@ -81,13 +83,13 @@ ShowfotoStackViewFavoriteList::ShowfotoStackViewFavoriteList(ShowfotoStackViewFa
     setSelectionMode(QAbstractItemView::SingleSelection);
     header()->setSectionResizeMode(QHeaderView::Stretch);
     setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+    setContextMenuPolicy(Qt::CustomContextMenu);
     setAcceptDrops(true);
     setDragEnabled(true);
     setDragDropMode(QAbstractItemView::InternalMove);
-    viewport()->setAcceptDrops(true);
     setDropIndicatorShown(true);
+    viewport()->setAcceptDrops(true);
     viewport()->setMouseTracking(true);
-    setContextMenuPolicy(Qt::CustomContextMenu);
 
     connect(this, SIGNAL(customContextMenuRequested(QPoint)),
             this, SLOT(slotContextMenu(QPoint)));
@@ -161,6 +163,11 @@ void ShowfotoStackViewFavoriteList::slotContextMenu(const QPoint& pos)
     ctxmenu->exec(mapToGlobal(pos));
 
     delete ctxmenu;
+}
+
+Qt::DropActions ShowfotoStackViewFavoriteList::supportedDropActions() const
+{
+    return (Qt::CopyAction | Qt::MoveAction);
 }
 
 void ShowfotoStackViewFavoriteList::dragEnterEvent(QDragEnterEvent* e)
@@ -250,7 +257,7 @@ void ShowfotoStackViewFavoriteList::dropEvent(QDropEvent* e)
     if (e->source() == this)
     {
         QTreeWidget::dropEvent(e);
-        e->accept();
+        e->acceptProposedAction();
         ShowfotoStackViewFavoriteBase* const parent = dynamic_cast<ShowfotoStackViewFavoriteBase*>(itemAt(e->pos()));
 
         if (parent)
@@ -289,7 +296,7 @@ void ShowfotoStackViewFavoriteList::startDrag(Qt::DropActions /*supportedActions
 {
     QList<QTreeWidgetItem*> items = selectedItems();
 
-    if (items.isEmpty())
+    if (!items.isEmpty())
     {
         return;
     }
