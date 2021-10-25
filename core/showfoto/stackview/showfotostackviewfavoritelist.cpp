@@ -29,8 +29,6 @@
 #include <QMimeData>
 #include <QFileInfo>
 #include <QDir>
-#include <QPainter>
-#include <QPixmap>
 #include <QDrag>
 #include <QMenu>
 #include <QMimeType>
@@ -73,17 +71,19 @@ ShowfotoStackViewFavoriteList::ShowfotoStackViewFavoriteList(ShowfotoStackViewFa
       d          (new Private)
 {
     d->parent = parent;
+
     setWhatsThis(i18nc("@info", "You can add or remove favorite stacks here."));
     setAlternatingRowColors(true);
     setColumnCount(1);
-    setHeaderHidden(true);
     setSortingEnabled(true);
     setAllColumnsShowFocus(true);
     sortByColumn(0, Qt::AscendingOrder);
     setSelectionMode(QAbstractItemView::SingleSelection);
+    setHeaderHidden(true);
     header()->setSectionResizeMode(QHeaderView::Stretch);
     setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     setContextMenuPolicy(Qt::CustomContextMenu);
+
     setAcceptDrops(true);
     setDragEnabled(true);
     setDragDropMode(QAbstractItemView::InternalMove);
@@ -165,6 +165,11 @@ void ShowfotoStackViewFavoriteList::slotContextMenu(const QPoint& pos)
     delete ctxmenu;
 }
 
+QStringList ShowfotoStackViewFavoriteList::mimeTypes() const
+{
+    return QStringList(QLatin1String("text/uri-list"));
+}
+
 Qt::DropActions ShowfotoStackViewFavoriteList::supportedDropActions() const
 {
     return (Qt::CopyAction | Qt::MoveAction);
@@ -178,6 +183,15 @@ void ShowfotoStackViewFavoriteList::dragEnterEvent(QDragEnterEvent* e)
 
 void ShowfotoStackViewFavoriteList::dragMoveEvent(QDragMoveEvent* e)
 {
+    if ((e->source() == this) &&
+        (dynamic_cast<ShowfotoStackViewFavoriteItem*>(itemAt(e->pos())) != d->parent->topFavoritesItem()))
+    {
+        QTreeWidget::dragMoveEvent(e);
+        e->accept();
+
+        return;
+    }
+
     if (e->mimeData()->hasUrls())
     {
         QList<QUrl> mimeurls = e->mimeData()->urls();
@@ -208,19 +222,26 @@ void ShowfotoStackViewFavoriteList::dragMoveEvent(QDragMoveEvent* e)
         }
     }
 
-    if ((e->source() == this) &&
-        (dynamic_cast<ShowfotoStackViewFavoriteItem*>(itemAt(e->pos())) != d->parent->topFavoritesItem()))
-    {
-        QTreeWidget::dragMoveEvent(e);
-        e->accept();
-        return;
-    }
 
     e->ignore();
 }
 
 void ShowfotoStackViewFavoriteList::dropEvent(QDropEvent* e)
 {
+    if (e->source() == this)
+    {
+        QTreeWidget::dropEvent(e);
+        e->acceptProposedAction();
+        ShowfotoStackViewFavoriteBase* const parent = dynamic_cast<ShowfotoStackViewFavoriteBase*>(itemAt(e->pos()));
+
+        if (parent)
+        {
+            rebaseHierarchy(parent);
+        }
+
+        return;
+    }
+
     if (e->mimeData()->hasUrls())
     {
         QList<QUrl> mimeurls = e->mimeData()->urls();
@@ -254,20 +275,6 @@ void ShowfotoStackViewFavoriteList::dropEvent(QDropEvent* e)
         }
     }
 
-    if (e->source() == this)
-    {
-        QTreeWidget::dropEvent(e);
-        e->acceptProposedAction();
-        ShowfotoStackViewFavoriteBase* const parent = dynamic_cast<ShowfotoStackViewFavoriteBase*>(itemAt(e->pos()));
-
-        if (parent)
-        {
-            rebaseHierarchy(parent);
-        }
-
-        return;
-    }
-
     e->ignore();
 }
 
@@ -296,7 +303,7 @@ void ShowfotoStackViewFavoriteList::startDrag(Qt::DropActions /*supportedActions
 {
     QList<QTreeWidgetItem*> items = selectedItems();
 
-    if (!items.isEmpty())
+    if (items.isEmpty())
     {
         return;
     }

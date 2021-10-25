@@ -29,6 +29,7 @@
 #include <QList>
 #include <QUrl>
 #include <QString>
+#include <QStringList>
 #include <QPoint>
 #include <QTreeWidget>
 #include <QTreeWidgetItem>
@@ -83,7 +84,8 @@ private:
     // cppcheck-suppress passedByValue
     QMimeData* mimeData(const QList<QTreeWidgetItem*> items)            const override;
     Qt::DropActions supportedDropActions()                              const override;
-    void       startDrag(Qt::DropActions supportedActions)                    override;
+    void startDrag(Qt::DropActions supportedActions)                          override;
+    QStringList mimeTypes()                                             const override;
 
     void rebaseHierarchy(ShowfotoStackViewFavoriteBase* const parent);
 
