@@ -316,7 +316,7 @@ QueueListView::QueueListView(QWidget* const parent)
     QStringList titles;
     titles.append(i18nc("@title: preview item",       "Thumbnail"));
     titles.append(i18nc("@title: original item name", "Original"));
-    titles.append(i18nc("@title: targey item name",   "Target"));
+    titles.append(i18nc("@title: target item name",   "Target"));
     setHeaderLabels(titles);
     header()->setSectionResizeMode(0, QHeaderView::ResizeToContents);
     header()->setSectionResizeMode(1, QHeaderView::Stretch);
@@ -768,18 +768,21 @@ void QueueListView::slotThumbnailLoaded(const LoadingDescription& desc, const QP
 void QueueListView::slotClearList()
 {
     removeItems(Private::ItemsAll);
+
     emit signalQueueContentsChanged();
 }
 
 void QueueListView::slotRemoveSelectedItems()
 {
     removeItems(Private::ItemsSelected);
+
     emit signalQueueContentsChanged();
 }
 
 void QueueListView::slotRemoveItemsDone()
 {
     removeItems(Private::ItemsDone);
+
     emit signalQueueContentsChanged();
 }
 
@@ -824,7 +827,7 @@ void QueueListView::removeItems(int removeType)
                         break;
                     }
 
-                    default:  // ItemsAll
+                    default:  // Private::ItemsAll
                     {
                         delete item;
                         find = true;
