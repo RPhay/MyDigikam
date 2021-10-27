@@ -57,13 +57,15 @@ class Q_DECL_HIDDEN ShowfotoStackViewFavoriteList::Private
 public:
 
     explicit Private()
-        : parent (nullptr)
+        : parent     (nullptr),
+          draggedItem(nullptr)
     {
     }
 
 public:
 
     ShowfotoStackViewFavorites* parent;
+    QTreeWidgetItem*            draggedItem;
 };
 
 ShowfotoStackViewFavoriteList::ShowfotoStackViewFavoriteList(ShowfotoStackViewFavorites* const parent)
@@ -175,6 +177,22 @@ Qt::DropActions ShowfotoStackViewFavoriteList::supportedDropActions() const
     return (Qt::CopyAction | Qt::MoveAction);
 }
 
+void ShowfotoStackViewFavoriteList::startDrag(Qt::DropActions /*supportedActions*/)
+{
+    QList<QTreeWidgetItem*> items = selectedItems();
+
+    if (items.isEmpty())
+    {
+        return;
+    }
+
+    d->draggedItem    = items.first();
+
+    QDrag* const drag = new QDrag(this);
+    drag->setMimeData(mimeData(items));
+    drag->exec();
+}
+
 void ShowfotoStackViewFavoriteList::dragEnterEvent(QDragEnterEvent* e)
 {
     QTreeWidget::dragEnterEvent(e);
@@ -213,7 +231,6 @@ void ShowfotoStackViewFavoriteList::dragMoveEvent(QDragMoveEvent* e)
         }
     }
 
-
     e->ignore();
 }
 
@@ -221,14 +238,36 @@ void ShowfotoStackViewFavoriteList::dropEvent(QDropEvent* e)
 {
     if (e->source() == this)
     {
+        ShowfotoStackViewFavoriteItem* const src = dynamic_cast<ShowfotoStackViewFavoriteItem*>(d->draggedItem);
+
+        if (!src)
+        {
+            return;
+        }
+
+        ShowfotoStackViewFavoriteItem* const tgt = dynamic_cast<ShowfotoStackViewFavoriteItem*>(itemAt(e->pos()));
+
+        if (!tgt)
+        {
+            return;
+        }
+
+        for (int i = 0 ; i < tgt->childCount() ; ++i)
+        {
+            ShowfotoStackViewFavoriteItem* const chl = dynamic_cast<ShowfotoStackViewFavoriteItem*>(tgt->child(i));
+
+            if (chl && (chl->name() == src->name()))
+            {
+                // Ignore event if a target child item with same name than source already exist.
+                return;
+            }
+        }
+
         QTreeWidget::dropEvent(e);
         e->acceptProposedAction();
-        ShowfotoStackViewFavoriteItem* const parent = dynamic_cast<ShowfotoStackViewFavoriteItem*>(itemAt(e->pos()));
 
-        if (parent)
-        {
-            rebaseHierarchy(parent);
-        }
+        rebaseHierarchy(tgt);
+        d->draggedItem = nullptr;
 
         return;
     }
@@ -281,19 +320,6 @@ QMimeData* ShowfotoStackViewFavoriteList::mimeData(const QList<QTreeWidgetItem*>
     return data;
 }
 
-void ShowfotoStackViewFavoriteList::startDrag(Qt::DropActions /*supportedActions*/)
-{
-    QList<QTreeWidgetItem*> items = selectedItems();
-
-    if (items.isEmpty())
-    {
-        return;
-    }
-
-    QDrag* const drag = new QDrag(this);
-    drag->setMimeData(mimeData(items));
-    drag->exec();
-}
 
 ShowfotoStackViewFavoriteItem* ShowfotoStackViewFavoriteList::findFavoriteByHierarchy(const QString& hierarchy)
 {
