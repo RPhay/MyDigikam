@@ -82,7 +82,7 @@ public:
     QLineEdit*                                  nameEdit;
     DAdjustableLabel*                           helpLabel;
     ShowfotoStackViewFavoriteList*              list;
-    ShowfotoStackViewFavoriteBase*              pitem;
+    ShowfotoStackViewFavoriteItem*              pitem;
 };
 
 ShowfotoStackViewFavoriteFolderDlg::ShowfotoStackViewFavoriteFolderDlg(ShowfotoStackViewFavoriteList* const list,
@@ -182,7 +182,7 @@ bool ShowfotoStackViewFavoriteFolderDlg::canAccept() const
         (!d->create && (name() != d->originalName))
        )
     {
-        b3 = d->list->findFavoriteByHierarchy(ShowfotoStackViewFavoriteBase::hierarchyFromParent(name(), d->pitem));
+        b3 = d->list->findFavoriteByHierarchy(ShowfotoStackViewFavoriteItem::hierarchyFromParent(name(), d->pitem));
     }
 
     bool b4 = (!b1 && !b3);
@@ -212,7 +212,7 @@ bool ShowfotoStackViewFavoriteFolderDlg::canAccept() const
 void ShowfotoStackViewFavoriteFolderDlg::slotModified()
 {
     d->buttons->button(QDialogButtonBox::Ok)->setEnabled(canAccept());
-    d->hierarchyLabel->setAdjustedText(ShowfotoStackViewFavoriteBase::hierarchyFromParent(name(), d->pitem));
+    d->hierarchyLabel->setAdjustedText(ShowfotoStackViewFavoriteItem::hierarchyFromParent(name(), d->pitem));
 }
 
 QString ShowfotoStackViewFavoriteFolderDlg::name() const
@@ -227,14 +227,14 @@ void ShowfotoStackViewFavoriteFolderDlg::setName(const QString& name)
     slotModified();
 }
 
-void ShowfotoStackViewFavoriteFolderDlg::setParentItem(ShowfotoStackViewFavoriteBase* const pitem)
+void ShowfotoStackViewFavoriteFolderDlg::setParentItem(ShowfotoStackViewFavoriteItem* const pitem)
 {
     d->pitem = pitem;
 }
 
 bool ShowfotoStackViewFavoriteFolderDlg::favoriteFolderDialog(ShowfotoStackViewFavoriteList* const list,
                                                             QString& name,
-                                                            ShowfotoStackViewFavoriteBase* const pitem,
+                                                            ShowfotoStackViewFavoriteItem* const pitem,
                                                             bool create)
 {
     QPointer<ShowfotoStackViewFavoriteFolderDlg> dlg = new ShowfotoStackViewFavoriteFolderDlg(list, create);

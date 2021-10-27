@@ -42,32 +42,34 @@ using namespace Digikam;
 namespace ShowFoto
 {
 
-ShowfotoStackViewFavoriteBase::ShowfotoStackViewFavoriteBase(QTreeWidget* const parent, int type)
-    : QTreeWidgetItem(parent, type)
+ShowfotoStackViewFavoriteItem::ShowfotoStackViewFavoriteItem(QTreeWidget* const parent)
+    : QTreeWidgetItem(parent)
 {
     setDisabled(false);
     setSelected(false);
+    setFavoriteType(FavoriteRoot);
 }
 
-ShowfotoStackViewFavoriteBase::ShowfotoStackViewFavoriteBase(QTreeWidgetItem* const parent, int type)
-    : QTreeWidgetItem(parent, type)
+ShowfotoStackViewFavoriteItem::ShowfotoStackViewFavoriteItem(QTreeWidgetItem* const parent, int favType)
+    : QTreeWidgetItem(parent)
 {
     setDisabled(false);
     setSelected(false);
+    setFavoriteType(favType);
 }
 
-ShowfotoStackViewFavoriteBase::~ShowfotoStackViewFavoriteBase()
+ShowfotoStackViewFavoriteItem::~ShowfotoStackViewFavoriteItem()
 {
 }
 
-void ShowfotoStackViewFavoriteBase::setName(const QString& name)
+void ShowfotoStackViewFavoriteItem::setName(const QString& name)
 {
     setText(0, name);
-    setHierarchy(hierarchyFromParent(name, dynamic_cast<ShowfotoStackViewFavoriteBase*>(parent())));
+    setHierarchy(hierarchyFromParent(name, dynamic_cast<ShowfotoStackViewFavoriteItem*>(parent())));
     updateToolTip();
 }
 
-QString ShowfotoStackViewFavoriteBase::hierarchyFromParent(const QString& name, ShowfotoStackViewFavoriteBase* const pitem)
+QString ShowfotoStackViewFavoriteItem::hierarchyFromParent(const QString& name, ShowfotoStackViewFavoriteItem* const pitem)
 {
     QString hierarchy = QLatin1String("/");
 
@@ -79,79 +81,51 @@ QString ShowfotoStackViewFavoriteBase::hierarchyFromParent(const QString& name, 
     return hierarchy;
 }
 
-QString ShowfotoStackViewFavoriteBase::name() const
+QString ShowfotoStackViewFavoriteItem::name() const
 {
     return text(0);
 }
 
-void ShowfotoStackViewFavoriteBase::setHierarchy(const QString& hierarchy)
+void ShowfotoStackViewFavoriteItem::setHierarchy(const QString& hierarchy)
 {
     m_hierarchy = hierarchy;
 }
 
-QString ShowfotoStackViewFavoriteBase::hierarchy() const
+QString ShowfotoStackViewFavoriteItem::hierarchy() const
 {
     return m_hierarchy;
 }
 
-// ------------------------------------------------------------------------------------------
-
-ShowfotoStackViewFavoriteRoot::ShowfotoStackViewFavoriteRoot(QTreeWidget* const parent)
-    : ShowfotoStackViewFavoriteBase(parent, FavoriteRoot)
+void ShowfotoStackViewFavoriteItem::setFavoriteType(int favoriteType)
 {
-    setName(i18nc("@title", "My Favorites"));
-    setIcon(0, QIcon::fromTheme(QLatin1String("folder-root")));
-}
+    m_favoriteType = favoriteType;
 
-ShowfotoStackViewFavoriteRoot::~ShowfotoStackViewFavoriteRoot()
-{
-}
-
-// ------------------------------------------------------------------------------------------
-
-ShowfotoStackViewFavoriteFolder::ShowfotoStackViewFavoriteFolder(QTreeWidgetItem* const parent, int type)
-    : ShowfotoStackViewFavoriteBase(parent, type)
-{
-    setIcon(0, QIcon::fromTheme(QLatin1String("folder")));
-}
-
-ShowfotoStackViewFavoriteFolder::~ShowfotoStackViewFavoriteFolder()
-{
-}
-
-void ShowfotoStackViewFavoriteFolder::updateToolTip()
-{
-    if (!ShowfotoSettings::instance()->getShowToolTip())
+    switch (m_favoriteType)
     {
-        return;
+        case FavoriteRoot:
+        {
+            setName(i18nc("@title", "My Favorites"));
+            setIcon(0, QIcon::fromTheme(QLatin1String("folder-root")));
+            break;
+        }
+
+        case FavoriteFolder:
+        {
+            setIcon(0, QIcon::fromTheme(QLatin1String("folder")));
+            break;
+        }
+
+        default:    // FavoriteItem
+        {
+            setIcon(0, QIcon::fromTheme(QLatin1String("folder-favorites")));
+            break;
+        }
     }
-
-    DToolTipStyleSheet cnt(ShowfotoSettings::instance()->getToolTipFont());
-    QString tip  = cnt.tipHeader;
-
-    tip += cnt.headBeg + i18nc("@title", "Favorite Folder Properties") + cnt.headEnd;
-
-    tip += cnt.cellBeg + i18nc("@info: favorite folder title property", "Name:") + cnt.cellMid;
-    tip += name() + cnt.cellEnd;
-
-    tip += cnt.cellBeg + i18nc("@info: favorite folder hierarchy property", "Hierarchy:") + cnt.cellMid;
-    tip += hierarchy() + cnt.cellEnd;
-
-    tip += cnt.tipFooter;
-
-    setToolTip(0, tip);
 }
 
-// ------------------------------------------------------------------------------------------
-
-ShowfotoStackViewFavoriteItem::ShowfotoStackViewFavoriteItem(QTreeWidgetItem* const parent)
-    : ShowfotoStackViewFavoriteFolder(parent, FavoriteItem)
+int ShowfotoStackViewFavoriteItem::favoriteType() const
 {
-    setIcon(0, QIcon::fromTheme(QLatin1String("folder-favorites")));
-}
-
-ShowfotoStackViewFavoriteItem::~ShowfotoStackViewFavoriteItem()
-{
+    return m_favoriteType;
 }
 
 void ShowfotoStackViewFavoriteItem::setDescription(const QString& desc)
@@ -224,30 +198,61 @@ void ShowfotoStackViewFavoriteItem::updateToolTip()
         return;
     }
 
-    QString desc = description().isEmpty() ? QLatin1String("---") : description();
-    DToolTipStyleSheet cnt(ShowfotoSettings::instance()->getToolTipFont());
-    QString tip  = cnt.tipHeader;
+    switch (m_favoriteType)
+    {
+        case FavoriteRoot:
+        {
+            break;
+        }
 
-    tip += cnt.headBeg + i18nc("@title", "Favorite Item Properties") + cnt.headEnd;
+        case FavoriteFolder:
+        {
+            DToolTipStyleSheet cnt(ShowfotoSettings::instance()->getToolTipFont());
+            QString tip  = cnt.tipHeader;
 
-    tip += cnt.cellBeg + i18nc("@info: favorite item title property", "Name:") + cnt.cellMid;
-    tip += name() + cnt.cellEnd;
+            tip += cnt.headBeg + i18nc("@title", "Favorite Folder Properties") + cnt.headEnd;
 
-    tip += cnt.cellBeg + i18nc("@info: favorite item date property", "Created:") + cnt.cellMid;
-    tip += date().toString() + cnt.cellEnd;
+            tip += cnt.cellBeg + i18nc("@info: favorite folder title property", "Name:") + cnt.cellMid;
+            tip += name() + cnt.cellEnd;
 
-    tip += cnt.cellBeg + i18nc("@info: favorite item hierarchy property", "Hierarchy:") + cnt.cellMid;
-    tip += hierarchy() + cnt.cellEnd;
+            tip += cnt.cellBeg + i18nc("@info: favorite folder hierarchy property", "Hierarchy:") + cnt.cellMid;
+            tip += hierarchy() + cnt.cellEnd;
 
-    tip += cnt.cellBeg + i18nc("@info; favorite item count elements property", "Items:") + cnt.cellMid;
-    tip += QString::number(urls().count()) + cnt.cellEnd;
+            tip += cnt.tipFooter;
 
-    tip += cnt.cellSpecBeg + i18nc("@info: favorite item caption property", "Description:") + cnt.cellSpecMid +
-           cnt.breakString(desc) + cnt.cellSpecEnd;
+            setToolTip(0, tip);
+            break;
+        }
 
-    tip += cnt.tipFooter;
+        default:    // FavoriteItem
+        {
+            QString desc = description().isEmpty() ? QLatin1String("---") : description();
+            DToolTipStyleSheet cnt(ShowfotoSettings::instance()->getToolTipFont());
+            QString tip  = cnt.tipHeader;
 
-    setToolTip(0, tip);
+            tip += cnt.headBeg + i18nc("@title", "Favorite Item Properties") + cnt.headEnd;
+
+            tip += cnt.cellBeg + i18nc("@info: favorite item title property", "Name:") + cnt.cellMid;
+            tip += name() + cnt.cellEnd;
+
+            tip += cnt.cellBeg + i18nc("@info: favorite item date property", "Created:") + cnt.cellMid;
+            tip += date().toString() + cnt.cellEnd;
+
+            tip += cnt.cellBeg + i18nc("@info: favorite item hierarchy property", "Hierarchy:") + cnt.cellMid;
+            tip += hierarchy() + cnt.cellEnd;
+
+            tip += cnt.cellBeg + i18nc("@info; favorite item count elements property", "Items:") + cnt.cellMid;
+            tip += QString::number(urls().count()) + cnt.cellEnd;
+
+            tip += cnt.cellSpecBeg + i18nc("@info: favorite item caption property", "Description:") + cnt.cellSpecMid +
+                   cnt.breakString(desc) + cnt.cellSpecEnd;
+
+            tip += cnt.tipFooter;
+
+            setToolTip(0, tip);
+            break;
+        }
+    }
 }
 
 } // namespace ShowFoto

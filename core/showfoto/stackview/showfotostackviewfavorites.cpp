@@ -82,7 +82,7 @@ public:
     QToolButton*                    delBtn;
     QToolButton*                    edtBtn;
     ShowfotoStackViewFavoriteList*  favoritesList;
-    ShowfotoStackViewFavoriteRoot*  topFavorites;
+    ShowfotoStackViewFavoriteItem*  topFavorites;
     ShowfotoStackViewSideBar*       sidebar;
     QString                         file;
 };
@@ -243,7 +243,7 @@ void ShowfotoStackViewFavorites::slotAddFavorite()
 void ShowfotoStackViewFavorites::slotAddSubFolder()
 {
     QString name;
-    ShowfotoStackViewFavoriteBase* const parent = d->favoritesList->currentItem() ? dynamic_cast<ShowfotoStackViewFavoriteBase*>(d->favoritesList->currentItem())
+    ShowfotoStackViewFavoriteItem* const parent = d->favoritesList->currentItem() ? dynamic_cast<ShowfotoStackViewFavoriteItem*>(d->favoritesList->currentItem())
                                                                                   : d->topFavorites;
 
     bool ok = ShowfotoStackViewFavoriteFolderDlg::favoriteFolderDialog(d->favoritesList,
@@ -254,7 +254,7 @@ void ShowfotoStackViewFavorites::slotAddSubFolder()
 
     if (ok)
     {
-        ShowfotoStackViewFavoriteFolder* const folder = new ShowfotoStackViewFavoriteFolder(parent);
+        ShowfotoStackViewFavoriteItem* const folder = new ShowfotoStackViewFavoriteItem(parent, ShowfotoStackViewFavoriteItem::FavoriteFolder);
         folder->setName(name);
         parent->setExpanded(true);
     }
@@ -268,7 +268,7 @@ void ShowfotoStackViewFavorites::slotAddFavorite(const QList<QUrl>& newUrls, con
     QString icon                                = QLatin1String("folder-favorites");
     QList<QUrl> urls                            = newUrls;
     QUrl currentUrl                             = current;
-    ShowfotoStackViewFavoriteBase* const parent = d->favoritesList->currentItem() ? dynamic_cast<ShowfotoStackViewFavoriteBase*>(d->favoritesList->currentItem())
+    ShowfotoStackViewFavoriteItem* const parent = d->favoritesList->currentItem() ? dynamic_cast<ShowfotoStackViewFavoriteItem*>(d->favoritesList->currentItem())
                                                                                   : d->topFavorites;
 
     bool ok          = ShowfotoStackViewFavoriteItemDlg::favoriteItemDialog(d->favoritesList,
@@ -287,19 +287,20 @@ void ShowfotoStackViewFavorites::slotAddFavorite(const QList<QUrl>& newUrls, con
 
     if (ok)
     {
-        ShowfotoStackViewFavoriteItem* const item = new ShowfotoStackViewFavoriteItem(parent);
+        ShowfotoStackViewFavoriteItem* const item = new ShowfotoStackViewFavoriteItem(parent, ShowfotoStackViewFavoriteItem::FavoriteItem);
         item->setName(name);
         item->setDescription(desc);
         item->setDate(date);
         item->setIcon(0, QIcon::fromTheme(icon));
         item->setUrls(urls);
         item->setCurrentUrl(currentUrl);
+        parent->setExpanded(true);
     }
 }
 
 void ShowfotoStackViewFavorites::slotDelItem()
 {
-    ShowfotoStackViewFavoriteFolder* const fitem = dynamic_cast<ShowfotoStackViewFavoriteFolder*>(d->favoritesList->currentItem());
+    ShowfotoStackViewFavoriteItem* const fitem = dynamic_cast<ShowfotoStackViewFavoriteItem*>(d->favoritesList->currentItem());
 
     if (!fitem)
     {
@@ -322,7 +323,7 @@ void ShowfotoStackViewFavorites::slotEditItem()
 {
     ShowfotoStackViewFavoriteItem* const item = dynamic_cast<ShowfotoStackViewFavoriteItem*>(d->favoritesList->currentItem());
 
-    if (item)
+    if (item && (item->favoriteType() == ShowfotoStackViewFavoriteItem::FavoriteItem))
     {
         QString name                                = item->name();
         QString desc                                = item->description();
@@ -330,7 +331,7 @@ void ShowfotoStackViewFavorites::slotEditItem()
         QString icon                                = item->icon(0).name();
         QList<QUrl> urls                            = item->urls();
         QUrl currentUrl                             = item->currentUrl();
-        ShowfotoStackViewFavoriteBase* const parent = dynamic_cast<ShowfotoStackViewFavoriteBase*>(item->parent());
+        ShowfotoStackViewFavoriteItem* const parent = dynamic_cast<ShowfotoStackViewFavoriteItem*>(item->parent());
 
         bool ok = ShowfotoStackViewFavoriteItemDlg::favoriteItemDialog(d->favoritesList,
                                                                        name,
@@ -358,12 +359,10 @@ void ShowfotoStackViewFavorites::slotEditItem()
         return;
     }
 
-    ShowfotoStackViewFavoriteFolder* const fitem = dynamic_cast<ShowfotoStackViewFavoriteFolder*>(d->favoritesList->currentItem());
-
-    if (fitem)
+    if (item && (item->favoriteType() == ShowfotoStackViewFavoriteItem::FavoriteFolder))
     {
-        QString name = fitem->name();
-        ShowfotoStackViewFavoriteBase* const parent = dynamic_cast<ShowfotoStackViewFavoriteBase*>(fitem->parent());
+        QString name = item->name();
+        ShowfotoStackViewFavoriteItem* const parent = dynamic_cast<ShowfotoStackViewFavoriteItem*>(item->parent());
 
         bool ok = ShowfotoStackViewFavoriteFolderDlg::favoriteFolderDialog(d->favoritesList,
                                                                            name,
@@ -372,7 +371,7 @@ void ShowfotoStackViewFavorites::slotEditItem()
 
         if (ok)
         {
-            fitem->setName(name);
+            item->setName(name);
         }
     }
 }
@@ -384,9 +383,9 @@ void ShowfotoStackViewFavorites::slotItemSelectionChanged()
 
     if (item)
     {
-        ShowfotoStackViewFavoriteBase* const fitem = dynamic_cast<ShowfotoStackViewFavoriteBase*>(item);
+        ShowfotoStackViewFavoriteItem* const fitem = dynamic_cast<ShowfotoStackViewFavoriteItem*>(item);
 
-        if (fitem->type() != ShowfotoStackViewFavoriteBase::FavoriteRoot)
+        if (fitem && (fitem->favoriteType() != ShowfotoStackViewFavoriteItem::FavoriteRoot))
         {
             b = true;
         }
@@ -400,7 +399,7 @@ void ShowfotoStackViewFavorites::slotFavoriteDoubleClicked(QTreeWidgetItem* item
 {
     ShowfotoStackViewFavoriteItem* const fvitem = dynamic_cast<ShowfotoStackViewFavoriteItem*>(item);
 
-    if (fvitem)
+    if (fvitem && (fvitem->favoriteType() == ShowfotoStackViewFavoriteItem::FavoriteItem))
     {
         emit signalLoadContentsFromFiles(fvitem->urlsToPaths(), fvitem->currentUrl().toLocalFile());
     }
@@ -425,38 +424,6 @@ bool ShowfotoStackViewFavorites::saveSettings()
 
     // ---
 
-    QDomElement foldList   = doc.createElement(QLatin1String("FoldersList"));
-    docElem.appendChild(foldList);
-    QTreeWidgetItemIterator it(d->favoritesList);
-
-    while (*it)
-    {
-        ShowfotoStackViewFavoriteBase* const item = dynamic_cast<ShowfotoStackViewFavoriteBase*>(*it);
-
-        if (item && (item->type() != ShowfotoStackViewFavoriteFolder::FavoriteRoot))
-        {
-            QDomElement elem = doc.createElement(QLatin1String("Folder"));
-
-            QDomElement name = doc.createElement(QLatin1String("Name"));
-            name.setAttribute(QLatin1String("value"), item->name());
-            elem.appendChild(name);
-
-            QDomElement hier = doc.createElement(QLatin1String("Hierarchy"));
-            hier.setAttribute(QLatin1String("value"), item->hierarchy());
-            elem.appendChild(hier);
-
-            QDomElement fexp = doc.createElement(QLatin1String("IsExpanded"));
-            fexp.setAttribute(QLatin1String("value"), item->isExpanded());
-            elem.appendChild(fexp);
-
-            foldList.appendChild(elem);
-        }
-
-        ++it;
-    }
-
-    // ---
-
     QDomElement elemList = doc.createElement(QLatin1String("FavoritesList"));
     docElem.appendChild(elemList);
     QTreeWidgetItemIterator it2(d->favoritesList);
@@ -465,9 +432,13 @@ bool ShowfotoStackViewFavorites::saveSettings()
     {
         ShowfotoStackViewFavoriteItem* const item = dynamic_cast<ShowfotoStackViewFavoriteItem*>(*it2);
 
-        if (item)
+        if (item && (item->favoriteType() != ShowfotoStackViewFavoriteItem::FavoriteRoot))
         {
             QDomElement elem = doc.createElement(QLatin1String("Favorite"));
+
+            QDomElement type = doc.createElement(QLatin1String("Type"));
+            type.setAttribute(QLatin1String("value"), item->favoriteType());
+            elem.appendChild(type);
 
             QDomElement name = doc.createElement(QLatin1String("Name"));
             name.setAttribute(QLatin1String("value"), item->name());
@@ -533,7 +504,7 @@ bool ShowfotoStackViewFavorites::readSettings()
 {
     d->favoritesList->clear();
 
-    d->topFavorites          = new ShowfotoStackViewFavoriteRoot(d->favoritesList);
+    d->topFavorites = new ShowfotoStackViewFavoriteItem(d->favoritesList);;
 
     QFile file(d->file);
 
@@ -573,58 +544,6 @@ bool ShowfotoStackViewFavorites::readSettings()
 
         // ---
 
-        if (e1.tagName() == QLatin1String("FoldersList"))
-        {
-            for (QDomNode n2 = e1.firstChild() ; !n2.isNull() ; n2 = n2.nextSibling())
-            {
-                QDomElement e2 = n2.toElement();
-
-                if (e2.tagName() == QLatin1String("Folder"))
-                {
-                    bool isExpanded = false;
-                    QString name;
-                    QString hierarchy;
-
-                    for (QDomNode n3 = e2.firstChild() ; !n3.isNull() ; n3 = n3.nextSibling())
-                    {
-                        QDomElement e3  = n3.toElement();
-                        QString name3   = e3.tagName();
-                        QString val3    = e3.attribute(QLatin1String("value"));
-
-                        if      (name3 == QLatin1String("Name"))
-                        {
-                            name = val3;
-                        }
-                        else if (name3 == QLatin1String("Hierarchy"))
-                        {
-                            hierarchy = val3;
-                        }
-                        else if (name3 == QLatin1String("IsExpanded"))
-                        {
-                            isExpanded = val3.toUInt();
-                        }
-                    }
-
-                    QString phierarchy      = hierarchy.section(QLatin1Char('/'), 0, -3) + QLatin1String("/");
-                    QTreeWidgetItem* parent = d->favoritesList->findFavoriteByHierarchy(phierarchy);
-
-                    if (!parent)
-                    {
-                        continue;
-                    }
-
-                    ShowfotoStackViewFavoriteFolder* const folder = new ShowfotoStackViewFavoriteFolder(parent);
-                    folder->setName(name);
-                    folder->setHierarchy(hierarchy);
-                    folder->setExpanded(isExpanded);
-                }
-            }
-
-            continue;
-        }
-
-        // ---
-
         if (e1.tagName() == QLatin1String("FavoritesList"))
         {
             int unamedID = 1;
@@ -636,6 +555,7 @@ bool ShowfotoStackViewFavorites::readSettings()
                 if (e2.tagName() == QLatin1String("Favorite"))
                 {
                     bool isExpanded = true;
+                    int type        = ShowfotoStackViewFavoriteItem::FavoriteFolder;
                     QDate date      = QDate::currentDate();
                     QString icon    = QString::fromLatin1("folder-favorites");
                     QString name;
@@ -659,6 +579,10 @@ bool ShowfotoStackViewFavorites::readSettings()
                             }
 
                             name = val3;
+                        }
+                        else if (name3 == QLatin1String("Type"))
+                        {
+                            type = val3.toInt();
                         }
                         else if (name3 == QLatin1String("Description"))
                         {
@@ -712,46 +636,49 @@ bool ShowfotoStackViewFavorites::readSettings()
                         }
                     }
 
-                    QTreeWidgetItem* fitem                    = d->favoritesList->findFavoriteByHierarchy(hierarchy);
+                    QString phierarchy            = hierarchy.section(QLatin1Char('/'), 0, -3) + QLatin1String("/");
+                    QTreeWidgetItem* const parent = d->favoritesList->findFavoriteByHierarchy(phierarchy);
 
-                    if (!fitem)
+                    if (!parent)
                     {
                         continue;
                     }
 
-                    ShowfotoStackViewFavoriteItem* const item = new ShowfotoStackViewFavoriteItem(d->topFavorites);
-                    d->favoritesList->replaceItem(fitem, item);
+                    ShowfotoStackViewFavoriteItem* const fitem = new ShowfotoStackViewFavoriteItem(parent, type);
+                    fitem->setName(name);
+                    fitem->setHierarchy(hierarchy);
+                    fitem->setExpanded(isExpanded);
 
-                    item->setName(name);
-                    item->setDescription(desc);
-                    item->setHierarchy(hierarchy);
-                    item->setDate(date);
-                    item->setIcon(0, QIcon::fromTheme(icon));
-                    item->setExpanded(isExpanded);
+                    if (type == ShowfotoStackViewFavoriteItem::FavoriteItem)
+                    {
+                        fitem->setDescription(desc);
+                        fitem->setDate(date);
+                        fitem->setIcon(0, QIcon::fromTheme(icon));
 
-                    if (urls.isEmpty())
-                    {
-                        delete item;
-                        continue;
-                    }
-                    else
-                    {
-                        item->setUrls(urls);
-                    }
-
-                    if (curr.isEmpty())
-                    {
-                        if (!item->urls().isEmpty())
+                        if (urls.isEmpty())
                         {
-                            curr = item->urls().first().toLocalFile();
+                            delete fitem;
+                            continue;
                         }
                         else
                         {
-                            curr = QString();
+                            fitem->setUrls(urls);
                         }
-                    }
 
-                    item->setCurrentUrl(QUrl::fromLocalFile(curr));
+                        if (curr.isEmpty())
+                        {
+                            if (!fitem->urls().isEmpty())
+                            {
+                                curr = fitem->urls().first().toLocalFile();
+                            }
+                            else
+                            {
+                                curr = QString();
+                            }
+                        }
+
+                        fitem->setCurrentUrl(QUrl::fromLocalFile(curr));
+                    }
                 }
             }
 

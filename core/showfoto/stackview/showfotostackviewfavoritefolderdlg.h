@@ -37,7 +37,7 @@ namespace ShowFoto
 {
 
 class ShowfotoStackViewFavoriteList;
-class ShowfotoStackViewFavoriteBase;
+class ShowfotoStackViewFavoriteItem;
 
 class ShowfotoStackViewFavoriteFolderDlg : public QDialog
 {
@@ -52,13 +52,13 @@ public:
     void setName(const QString& name);
     QString name()        const;
 
-    void setParentItem(ShowfotoStackViewFavoriteBase* const pitem);
+    void setParentItem(ShowfotoStackViewFavoriteItem* const pitem);
 
 public:
 
     static bool favoriteFolderDialog(ShowfotoStackViewFavoriteList* const list,
                                      QString& name,
-                                     ShowfotoStackViewFavoriteBase* const pitem,
+                                     ShowfotoStackViewFavoriteItem* const pitem,
                                      bool create = false);
 
 private Q_SLOTS:

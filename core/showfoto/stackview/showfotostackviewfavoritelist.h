@@ -42,9 +42,9 @@ namespace ShowFoto
 {
 
 class ShowfotoStackViewFavorites;
-class ShowfotoStackViewFavoriteBase;
 class ShowfotoStackViewFavoriteItem;
-class ShowfotoStackViewFavoriteFolder;
+class ShowfotoStackViewFavoriteItem;
+class ShowfotoStackViewFavoriteItem;
 
 class ShowfotoStackViewFavoriteList : public QTreeWidget
 {
@@ -55,10 +55,7 @@ public:
     explicit ShowfotoStackViewFavoriteList(ShowfotoStackViewFavorites* const parent);
     ~ShowfotoStackViewFavoriteList()                                         override;
 
-    ShowfotoStackViewFavoriteBase* findFavoriteByHierarchy(const QString& hierarchy);
-
-    void replaceItem(QTreeWidgetItem* const olditem,
-                     QTreeWidgetItem* const newitem);
+    ShowfotoStackViewFavoriteItem* findFavoriteByHierarchy(const QString& hierarchy);
 
 Q_SIGNALS:
 
@@ -87,7 +84,7 @@ private:
     void startDrag(Qt::DropActions supportedActions)                          override;
     QStringList mimeTypes()                                             const override;
 
-    void rebaseHierarchy(ShowfotoStackViewFavoriteBase* const parent);
+    void rebaseHierarchy(ShowfotoStackViewFavoriteItem* const parent);
 
 private:
 

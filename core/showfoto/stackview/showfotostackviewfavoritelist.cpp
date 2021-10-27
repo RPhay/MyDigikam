@@ -127,11 +127,11 @@ void ShowfotoStackViewFavoriteList::slotContextMenu(const QPoint& pos)
     ctxmenu->addAction(d->parent->toolBarAction(QLatin1String("AddFavorite")));
     ctxmenu->addAction(d->parent->toolBarAction(QLatin1String("AddFolder")));
 
-    ShowfotoStackViewFavoriteBase* const fvitem = dynamic_cast<ShowfotoStackViewFavoriteBase*>(itemAt(pos));
+    ShowfotoStackViewFavoriteItem* const fvitem = dynamic_cast<ShowfotoStackViewFavoriteItem*>(itemAt(pos));
 
     if (fvitem)
     {
-        if (fvitem->type() != ShowfotoStackViewFavoriteBase::FavoriteRoot)
+        if (fvitem->favoriteType() != ShowfotoStackViewFavoriteItem::FavoriteRoot)
         {
             ctxmenu->addAction(d->parent->toolBarAction(QLatin1String("DelItem")));
             ctxmenu->addAction(d->parent->toolBarAction(QLatin1String("EditItem")));
@@ -139,7 +139,7 @@ void ShowfotoStackViewFavoriteList::slotContextMenu(const QPoint& pos)
 
         ctxmenu->addSeparator();
 
-        if (fvitem->type() == ShowfotoStackViewFavoriteBase::FavoriteItem)
+        if (fvitem->favoriteType() == ShowfotoStackViewFavoriteItem::FavoriteItem)
         {
             ctxmenu->addActions(d->parent->pluginActions());
             ctxmenu->addSeparator();
@@ -207,18 +207,9 @@ void ShowfotoStackViewFavoriteList::dragMoveEvent(QDragMoveEvent* e)
 
         if (!urls.isEmpty())
         {
-            QTreeWidgetItem* const item                 = itemAt(e->pos());
-            ShowfotoStackViewFavoriteItem* const fvitem = dynamic_cast<ShowfotoStackViewFavoriteItem*>(item);
-
-            if (
-                (item == d->parent->topFavoritesItem()) ||
-                (fvitem && (fvitem->parent() == d->parent->topFavoritesItem()))
-               )
-            {
-                QTreeWidget::dragMoveEvent(e);
-                e->accept();
-                return;
-            }
+            QTreeWidget::dragMoveEvent(e);
+            e->accept();
+            return;
         }
     }
 
@@ -232,7 +223,7 @@ void ShowfotoStackViewFavoriteList::dropEvent(QDropEvent* e)
     {
         QTreeWidget::dropEvent(e);
         e->acceptProposedAction();
-        ShowfotoStackViewFavoriteBase* const parent = dynamic_cast<ShowfotoStackViewFavoriteBase*>(itemAt(e->pos()));
+        ShowfotoStackViewFavoriteItem* const parent = dynamic_cast<ShowfotoStackViewFavoriteItem*>(itemAt(e->pos()));
 
         if (parent)
         {
@@ -257,21 +248,12 @@ void ShowfotoStackViewFavoriteList::dropEvent(QDropEvent* e)
 
         if (!urls.isEmpty())
         {
-            QTreeWidgetItem* const item                 = itemAt(e->pos());
-            ShowfotoStackViewFavoriteItem* const fvitem = dynamic_cast<ShowfotoStackViewFavoriteItem*>(item);
+            QTreeWidget::dropEvent(e);
 
-            if (
-                (item == d->parent->topFavoritesItem()) ||
-                (fvitem && (fvitem->parent() == d->parent->topFavoritesItem()))
-               )
-            {
-                QTreeWidget::dropEvent(e);
+            emit signalAddFavorite(urls, urls.first());
 
-                emit signalAddFavorite(urls, urls.first());
-
-                e->acceptProposedAction();
-                return;
-            }
+            e->acceptProposedAction();
+            return;
         }
     }
 
@@ -313,34 +295,27 @@ void ShowfotoStackViewFavoriteList::startDrag(Qt::DropActions /*supportedActions
     drag->exec();
 }
 
-ShowfotoStackViewFavoriteBase* ShowfotoStackViewFavoriteList::findFavoriteByHierarchy(const QString& hierarchy)
+ShowfotoStackViewFavoriteItem* ShowfotoStackViewFavoriteList::findFavoriteByHierarchy(const QString& hierarchy)
 {
-    bool found                          = false;
-    ShowfotoStackViewFavoriteBase* item = nullptr;
+    ShowfotoStackViewFavoriteItem* item = nullptr;
     QTreeWidgetItemIterator it(this);
 
     while (*it)
     {
-        item = dynamic_cast<ShowfotoStackViewFavoriteBase*>(*it);
+        item = dynamic_cast<ShowfotoStackViewFavoriteItem*>(*it);
 
         if (item && (hierarchy == item->hierarchy()))
         {
-            found  = true;
-            break;
+            return item;
         }
 
         ++it;
     }
 
-    if (found)
-    {
-        return item;
-    }
-
     return nullptr;
 }
 
-void ShowfotoStackViewFavoriteList::rebaseHierarchy(ShowfotoStackViewFavoriteBase* const parent)
+void ShowfotoStackViewFavoriteList::rebaseHierarchy(ShowfotoStackViewFavoriteItem* const parent)
 {
     if (parent)
     {
@@ -348,7 +323,7 @@ void ShowfotoStackViewFavoriteList::rebaseHierarchy(ShowfotoStackViewFavoriteBas
 
         while (*it)
         {
-            ShowfotoStackViewFavoriteBase* const item = dynamic_cast<ShowfotoStackViewFavoriteBase*>(*it);
+            ShowfotoStackViewFavoriteItem* const item = dynamic_cast<ShowfotoStackViewFavoriteItem*>(*it);
 
             if (item)
             {
@@ -358,16 +333,6 @@ void ShowfotoStackViewFavoriteList::rebaseHierarchy(ShowfotoStackViewFavoriteBas
             ++it;
         }
     }
-}
-
-void ShowfotoStackViewFavoriteList::replaceItem(QTreeWidgetItem* const olditem,
-                                                QTreeWidgetItem* const newitem)
-{
-    QTreeWidgetItem* const parent = olditem->parent();
-    int itemIndex                 = parent->indexOfChild(olditem);
-    parent->removeChild(olditem);
-    parent->insertChild(itemIndex, newitem);
-    delete olditem;
 }
 
 } // namespace ShowFoto

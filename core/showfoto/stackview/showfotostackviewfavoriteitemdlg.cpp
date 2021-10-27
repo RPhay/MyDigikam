@@ -106,7 +106,7 @@ public:
     QLabel*                                     nbImagesLabel;
     DAdjustableLabel*                           helpLabel;
     ShowfotoStackViewFavoriteList*              list;
-    ShowfotoStackViewFavoriteBase*              pitem;
+    ShowfotoStackViewFavoriteItem*              pitem;
 };
 
 static Qt::SortOrder                        s_sortOrder(Qt::AscendingOrder);
@@ -304,7 +304,7 @@ bool ShowfotoStackViewFavoriteItemDlg::canAccept() const
         (!d->create && (name() != d->originalName))
        )
     {
-        b3 = d->list->findFavoriteByHierarchy(ShowfotoStackViewFavoriteBase::hierarchyFromParent(name(), d->pitem));
+        b3 = d->list->findFavoriteByHierarchy(ShowfotoStackViewFavoriteItem::hierarchyFromParent(name(), d->pitem));
     }
 
     bool b4 = (!b1 && !b2 && !b3);
@@ -339,7 +339,7 @@ bool ShowfotoStackViewFavoriteItemDlg::canAccept() const
 void ShowfotoStackViewFavoriteItemDlg::slotModified()
 {
     d->buttons->button(QDialogButtonBox::Ok)->setEnabled(canAccept());
-    d->hierarchyLabel->setAdjustedText(ShowfotoStackViewFavoriteBase::hierarchyFromParent(name(), d->pitem));
+    d->hierarchyLabel->setAdjustedText(ShowfotoStackViewFavoriteItem::hierarchyFromParent(name(), d->pitem));
     int numberOfImages = d->urlsEdit->imageUrls().count();
     d->nbImagesLabel->setText(i18ncp("@info", "%1 file", "%1 files", numberOfImages));
 }
@@ -422,7 +422,7 @@ void ShowfotoStackViewFavoriteItemDlg::setSortRole(int role)
     d->urlsEdit->listView()->sortItems(s_sortRole + DItemsListView::Filename, s_sortOrder);
 }
 
-void ShowfotoStackViewFavoriteItemDlg::setParentItem(ShowfotoStackViewFavoriteBase* const pitem)
+void ShowfotoStackViewFavoriteItemDlg::setParentItem(ShowfotoStackViewFavoriteItem* const pitem)
 {
     d->pitem = pitem;
 }
@@ -508,7 +508,7 @@ bool ShowfotoStackViewFavoriteItemDlg::favoriteItemDialog(ShowfotoStackViewFavor
                                                           int iconSize,
                                                           int sortOrder,
                                                           int sortRole,
-                                                          ShowfotoStackViewFavoriteBase* const pitem,
+                                                          ShowfotoStackViewFavoriteItem* const pitem,
                                                           bool create)
 {
     QPointer<ShowfotoStackViewFavoriteItemDlg> dlg = new ShowfotoStackViewFavoriteItemDlg(list, create);
