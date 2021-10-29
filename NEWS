@@ -11,6 +11,7 @@ General : Integration of Image Quality Sorter Google Summer of Code project 2021
 Plugins : New tool to share items on the network with a Motion JPEG stream server.
 Showfoto: Add new left sidebar hosting a folder-view to quickly explore images from local file system.
 Showfoto: Add new left sidebar hosting a stack-view to host favorite contents.
+Database: Add the ability to use a local SQLite thumbnail database with an external MySQL configuration.
 
 *****************************************************************************************************
 BUGFIXES:
