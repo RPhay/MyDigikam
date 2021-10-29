@@ -85,6 +85,7 @@ private:
     void setupMainArea();
     void handleInternalServer(int index);
     void setDatabaseInputFields(int index);
+    bool isNotEqualToThumbName(const QString& name);
     bool checkMysqlServerConnection(QString& error);
     bool checkMysqlServerConnectionConfig(QString& error);
     bool checkMysqlServerDbNamesConfig(QString& error);

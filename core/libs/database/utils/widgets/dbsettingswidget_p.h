@@ -83,7 +83,6 @@ public:
     explicit Private()
       : mysqlCmdBox             (nullptr),
         dbNameCore              (nullptr),
-        dbNameThumbs            (nullptr),
         dbNameFace              (nullptr),
         dbNameSimilarity        (nullptr),
         hostName                (nullptr),
@@ -93,12 +92,14 @@ public:
         hostPort                (nullptr),
         dbType                  (nullptr),
         dbPathLabel             (nullptr),
+        dbThumbsLabel           (nullptr),
         sqlInit                 (nullptr),
         expertSettings          (nullptr),
         dbNoticeBox             (nullptr),
         dbDetailsBox            (nullptr),
         tab                     (nullptr),
         dbPathEdit              (nullptr),
+        dbNameThumbs            (nullptr),
         dbBinariesWidget        (nullptr),
         ignoreDirectoriesBox    (nullptr),
         ignoreDirectoriesEdit   (nullptr),
@@ -109,7 +110,6 @@ public:
     DVBox*             mysqlCmdBox;
 
     QLineEdit*         dbNameCore;
-    QLineEdit*         dbNameThumbs;
     QLineEdit*         dbNameFace;
     QLineEdit*         dbNameSimilarity;
     QLineEdit*         hostName;
@@ -121,6 +121,7 @@ public:
 
     QComboBox*         dbType;
     QLabel*            dbPathLabel;
+    QLabel*            dbThumbsLabel;
     QTextBrowser*      sqlInit;
     QGroupBox*         expertSettings;
     QGroupBox*         dbNoticeBox;
@@ -128,6 +129,7 @@ public:
     QTabWidget*        tab;
 
     DFileSelector*     dbPathEdit;
+    DFileSelector*     dbNameThumbs;
 
     DBinarySearch*     dbBinariesWidget;
 

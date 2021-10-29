@@ -177,5 +177,5 @@ BUGFIXES:
 162 ==> 444220 - digiKam start and stop (old libjasper).
 163 ==> 444341 - Flags for picks not displaying.
 164 ==> 444251 - digiKam crashes when importing photos from HD.
-165 ==> 
+165 ==> 297922 - THUMBDB : different database locations for thumbnails.
 166 ==> 

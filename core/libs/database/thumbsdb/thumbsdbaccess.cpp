@@ -199,7 +199,7 @@ void ThumbsDbAccess::setParameters(const DbEngineParameters& parameters)
 
     d->parameters = parameters;
 
-    if (d->parameters.isMySQL())
+    if (d->parameters.isMySQL() && !d->parameters.internalServer)
     {
         QFileInfo thumbDB(d->parameters.databaseNameCore);
 
