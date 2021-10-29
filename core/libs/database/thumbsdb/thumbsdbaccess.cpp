@@ -27,6 +27,7 @@
 // Qt includes
 
 #include <QMutex>
+#include <QFileInfo>
 #include <QSqlDatabase>
 
 // KDE includes
@@ -197,6 +198,17 @@ void ThumbsDbAccess::setParameters(const DbEngineParameters& parameters)
     }
 
     d->parameters = parameters;
+
+    if (d->parameters.isMySQL())
+    {
+        QFileInfo thumbDB(d->parameters.databaseNameCore);
+
+        if (thumbDB.exists() && thumbDB.isDir())
+        {
+            d->parameters.databaseType     = QLatin1String("QSQLITE");
+            d->parameters.databaseNameCore = DbEngineParameters::thumbnailDatabaseFileSQLite(thumbDB.filePath());
+        }
+    }
 
     if (!d->backend || !d->backend->isCompatible(parameters))
     {
