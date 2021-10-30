@@ -172,25 +172,31 @@ void DatabaseSettingsWidget::setupMainArea()
     QLabel* const hostNameLabel                      = new QLabel(i18n("Host Name:"));
     d->hostName                                      = new QLineEdit();
     d->hostName->setPlaceholderText(i18n("Set the host computer name"));
-    d->hostName->setToolTip(i18n("This is the computer name running MySQL server.\nThis can be \"localhost\" for a local server, "
-                                 "or the network computer\n name (or IP address) in case of remote computer."));
+    d->hostName->setToolTip(i18n("This is the computer name running MySQL server.\n"
+                                 "This can be \"localhost\" for a local server, "
+                                 "or the network computer\n"
+                                 "name (or IP address) in case of remote computer."));
 
     QLabel* const connectOptsLabel                   = new QLabel(i18n("<a href=\"https://doc.qt.io/qt-5/"
                                                                        "qsqldatabase.html#setConnectOptions\">Connect options:</a>"));
     connectOptsLabel->setOpenExternalLinks(true);
     d->connectOpts                                   = new QLineEdit();
     d->connectOpts->setPlaceholderText(i18n("Set the database connection options"));
-    d->connectOpts->setToolTip(i18n("Set the MySQL server connection options.\nFor advanced users only."));
+    d->connectOpts->setToolTip(i18n("Set the MySQL server connection options.\n"
+                                    "For advanced users only."));
 
     QLabel* const userNameLabel                      = new QLabel(i18n("User:"));
     d->userName                                      = new QLineEdit();
     d->userName->setPlaceholderText(i18n("Set the database account name"));
-    d->userName->setToolTip(i18n("Set the MySQL server account name used\nby digiKam to be connected to the server.\n"
-                                 "This account must be available on the remote MySQL server when database have been created."));
+    d->userName->setToolTip(i18n("Set the MySQL server account name used\n"
+                                 "by digiKam to be connected to the server.\n"
+                                 "This account must be available on the remote\n"
+                                 "MySQL server when database have been created."));
 
     QLabel* const passwordLabel                      = new QLabel(i18n("Password:"));
     d->password                                      = new QLineEdit();
-    d->password->setToolTip(i18n("Set the MySQL server account password used\nby digiKam to be connected to the server.\n"
+    d->password->setToolTip(i18n("Set the MySQL server account password used\n"
+                                 "by digiKam to be connected to the server.\n"
                                  "You can left this field empty to use an account set without password."));
     d->password->setEchoMode(QLineEdit::Password);
 
@@ -213,7 +219,8 @@ void DatabaseSettingsWidget::setupMainArea()
     QLabel* const dbNameCoreLabel                    = new QLabel(i18n("Core Db Name:"));
     d->dbNameCore                                    = new QLineEdit();
     d->dbNameCore->setPlaceholderText(i18n("Set the core database name"));
-    d->dbNameCore->setToolTip(i18n("The core database is lead digiKam container used to store\nalbums, items, and searches metadata."));
+    d->dbNameCore->setToolTip(i18n("The core database is lead digiKam container used to store\n"
+                                   "albums, items, and searches metadata."));
     d->dbNameCore->setValidator(asciiValidator);
 
     d->dbThumbsLabel                                 = new QLabel(i18n("Thumbs Db Name:"));
@@ -221,22 +228,26 @@ void DatabaseSettingsWidget::setupMainArea()
     d->dbNameThumbs->setFileDlgMode(QFileDialog::Directory);
     d->dbNameThumbs->setFileDlgOptions(QFileDialog::ShowDirsOnly);
     d->dbNameThumbs->lineEdit()->setPlaceholderText(i18n("Set the thumbnails database name or folder"));
-    d->dbNameThumbs->setToolTip(i18n("The thumbnails database is used by digiKam to host\nimage thumbs with wavelets compression images.\n"
-                                     "This one can use quickly a lots of space,\nespecially if you have huge collections."));
-    d->dbNameThumbs->lineEdit()->setValidator(asciiValidator);
+    d->dbNameThumbs->setToolTip(i18n("The thumbnails database is used by digiKam to host\n"
+                                     "image thumbs with wavelets compression images.\n"
+                                     "This one can use quickly a lots of space,\n"
+                                     "especially if you have huge collections.\n"
+                                     "Choose a local folder to use a SQLite database."));
 
     QLabel* const dbNameFaceLabel                    = new QLabel(i18n("Face Db Name:"));
     d->dbNameFace                                    = new QLineEdit();
     d->dbNameFace->setPlaceholderText(i18n("Set the face database name"));
-    d->dbNameFace->setToolTip(i18n("The face database is used by digiKam to host image histograms\ndedicated to faces recognition process.\n"
-                                   "This one can use quickly a lots of space, especially\nif you a lots of image with people faces detected "
-                                   "and tagged."));
+    d->dbNameFace->setToolTip(i18n("The face database is used by digiKam to host image histograms\n"
+                                   "dedicated to faces recognition process.\n"
+                                   "This one can use quickly a lots of space, especially\n"
+                                   "if you a lots of image with people faces detected and tagged."));
     d->dbNameFace->setValidator(asciiValidator);
 
     QLabel* const dbNameSimilarityLabel              = new QLabel(i18n("Similarity Db Name:"));
     d->dbNameSimilarity                              = new QLineEdit();
     d->dbNameSimilarity->setPlaceholderText(i18n("Set the similarity database name"));
-    d->dbNameSimilarity->setToolTip(i18n("The similarity database is used by digiKam to host image Haar matrix data for the similarity search."));
+    d->dbNameSimilarity->setToolTip(i18n("The similarity database is used by digiKam to host\n"
+                                         "image Haar matrix data for the similarity search."));
     d->dbNameSimilarity->setValidator(asciiValidator);
 
     QPushButton* const defaultValuesBtn              = new QPushButton(i18n("Default Settings"));
