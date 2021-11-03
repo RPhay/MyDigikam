@@ -105,6 +105,8 @@ bool AlbumManager::setDatabase(const DbEngineParameters& params, bool priority, 
 
     QString databaseError;
 
+    ApplicationSettings* const settings = ApplicationSettings::instance();
+
     if      (params.internalServer && suggestedAlbumRoot.isEmpty())
     {
         if      (!QFileInfo::exists(params.internalServerPath()))
@@ -122,7 +124,7 @@ bool AlbumManager::setDatabase(const DbEngineParameters& params, bool priority, 
                                  "set the correct location in the next dialog.");
         }
     }
-    else if (params.isSQLite() && suggestedAlbumRoot.isEmpty())
+    else if (params.isSQLite() && suggestedAlbumRoot.isEmpty() && !settings->getDatabaseDirSetAtCmd())
     {
         if (!QFileInfo::exists(params.databaseNameCore))
         {
