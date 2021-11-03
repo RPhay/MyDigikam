@@ -182,6 +182,6 @@ BUGFIXES:
 166 ==> 444721 - Globe in Map Search loses green overlay when panned to certain angles.
 167 ==> 443349 - Pictures in "Presentation" oversharpened.
 168 ==> 444872 - Create new database.
-169 ==> 
+169 ==> 444881 - Charcoal drawing doesn't remember previous pencil size.
 170 ==> 
 171 ==> 
