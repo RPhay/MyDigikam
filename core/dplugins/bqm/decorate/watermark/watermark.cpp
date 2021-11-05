@@ -248,19 +248,20 @@ void WaterMark::registerSettingsWidget()
     addTransparencyToWatermarkImageHBox->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
     addTransparencyToWatermarkImageHBox->setSpacing(5);
 
-    d->addTransparencyToWatermarkImageCheckBox = new QCheckBox(addTransparencyToWatermarkImageHBox);
-    d->addTransparencyToWatermarkImageCheckBox->setWhatsThis(i18n("Check this if you want watermark to be transparent"));
-    QLabel* const addTransparencyToWatermarkLabel = new QLabel(addTransparencyToWatermarkImageHBox);
-    addTransparencyToWatermarkLabel->setText(i18n("Add transparency to watermark image"));
+    d->addTransparencyToWatermarkImageCheckBox       = new QCheckBox(addTransparencyToWatermarkImageHBox);
+    d->addTransparencyToWatermarkImageCheckBox->setWhatsThis(i18n("Check this if you want watermark to be transparent."));
     d->addTransparencyToWatermarkImageCheckBox->setChecked(false);
+
+    QLabel* const addTransparencyToWatermarkLabel    = new QLabel(addTransparencyToWatermarkImageHBox);
+    addTransparencyToWatermarkLabel->setText(i18n("Add transparency to watermark image"));
     imageSettingsGroupBoxLayout->addWidget(addTransparencyToWatermarkImageHBox);
 
     DVBox* const watermarkImageOpacityBox = new DVBox();
     watermarkImageOpacityBox->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
     watermarkImageOpacityBox->setSpacing(5);
 
-    QLabel* const opacityLabel = new QLabel(watermarkImageOpacityBox);
-    d->waterMarkOpacityPercent = new DIntNumInput(watermarkImageOpacityBox);
+    QLabel* const opacityLabel            = new QLabel(watermarkImageOpacityBox);
+    d->waterMarkOpacityPercent            = new DIntNumInput(watermarkImageOpacityBox);
     d->waterMarkOpacityPercent->setRange(0, 100, 1);
     d->waterMarkOpacityPercent->setDefaultValue(100);
     d->waterMarkOpacityPercent->setWhatsThis(i18n("Opacity of watermark"));
@@ -461,7 +462,7 @@ void WaterMark::registerSettingsWidget()
             this, SLOT(slotSettingsChanged()));
 
     connect(d->addTransparencyToWatermarkImageCheckBox, SIGNAL(toggled(bool)),
-	    this, SLOT(slotSettingsChanged()));
+            this, SLOT(slotSettingsChanged()));
 
     connect(d->useAbsoluteSizeCheckBox, SIGNAL(toggled(bool)),
             this, SLOT(slotSettingsChanged()));
@@ -579,6 +580,7 @@ void WaterMark::slotSettingsChanged()
     d->randomizeRotationCheckBox->setEnabled(((int)d->placementTypeComboBox->currentIndex() == Private::RandomRepetition));
     d->rotationComboBox->setEnabled(!(d->randomizeRotationCheckBox->isEnabled() && d->randomizeRotationCheckBox->isChecked()));
     d->waterMarkOpacityPercent->setEnabled(d->addTransparencyToWatermarkImageCheckBox->isChecked());
+
     if (d->changeSettings)
     {
         BatchToolSettings settings;
@@ -602,8 +604,8 @@ void WaterMark::slotSettingsChanged()
         settings.insert(QLatin1String("Watermark size"),                (int)d->waterMarkSizePercent->value());
         settings.insert(QLatin1String("X margin"),                      (int)d->xMarginInput->value());
         settings.insert(QLatin1String("Y margin"),                      (int)d->yMarginInput->value());
-	settings.insert(QLatin1String("Opacity"),                       (int)d->waterMarkOpacityPercent->value());
-	settings.insert(QLatin1String("Add transparency"),              d->addTransparencyToWatermarkImageCheckBox->isChecked());
+        settings.insert(QLatin1String("Opacity"),                       (int)d->waterMarkOpacityPercent->value());
+        settings.insert(QLatin1String("Add transparency"),              d->addTransparencyToWatermarkImageCheckBox->isChecked());
         BatchTool::slotSettingsChanged(settings);
     }
 }
@@ -695,24 +697,24 @@ bool WaterMark::toolOperations()
                                                         watermarkAspectRatioMode);
             watermarkImage = tempImage;
         }
+
         if (addTransparency)
         {
-		if (!watermarkImage.hasAlpha())
+            if (!watermarkImage.hasAlpha())
+            {
+                return false;
+            }
+
+            for (uint i = 0 ; i < watermarkImage.width() ; ++i)
+            {
+                for (uint j = 0 ; j < watermarkImage.height() ; ++j)
                 {
-                    return false;
+                    DColor color = watermarkImage.getPixelColor(i, j);
+                    color.setAlpha((int)(opacity*color.alpha()));
+                    watermarkImage.setPixelColor(i, j, color);
                 }
-                for (uint i = 0 ; i < watermarkImage.width() ; i++)
-                {
-                    for (uint j = 0 ; j < watermarkImage.height() ; j++)
-                    {
-                        DColor color = watermarkImage.getPixelColor(i, j);
-                        color.setAlpha((int)(opacity*color.alpha()));
-                        watermarkImage.setPixelColor(i, j, color);
-                    }
-                }
+            }
         }
-
-
     }
     else
     {
