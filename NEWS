@@ -185,4 +185,9 @@ BUGFIXES:
 168 ==> 444872 - Create new database.
 169 ==> 444881 - Charcoal drawing doesn't remember previous pencil size.
 170 ==> 445021 - Customize where database is saved.
-171 ==> 
+171 ==> 444028 - When starting digiKam it hangs for a very long time checking ICC repository.
+172 ==> 
+173 ==> 
+174 ==> 
+175 ==> 
+
