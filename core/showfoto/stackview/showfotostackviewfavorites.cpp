@@ -176,7 +176,10 @@ ShowfotoStackViewFavorites::ShowfotoStackViewFavorites(ShowfotoStackViewSideBar*
     // ---
 
     d->favoritesList        = new ShowfotoStackViewFavoriteList(this);
-    d->favoritesFilter      = new SearchTextBar(this, QLatin1String("FavoritesSearchBar"));
+    d->favoritesFilter      = new SearchTextBar(this,
+                                                QLatin1String("FavoritesSearchBar"),
+                                                i18nc("@info: search text bar", "Search in Favorites...")
+                                               );
 
     grid->setAlignment(Qt::AlignTop);
     grid->addWidget(title,              0, 0, 1, 1);
