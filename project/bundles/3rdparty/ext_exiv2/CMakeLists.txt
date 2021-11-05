@@ -50,7 +50,7 @@ if(MINGW)
         GIT_REPOSITORY https://github.com/Exiv2/exiv2.git
 
         # To use official release tag
-        GIT_TAG v0.27.4
+        GIT_TAG v0.27.5
 #        GIT_TAG 0.27-maintenance
 
         CONFIGURE_COMMAND cp -f ${CMAKE_CURRENT_SOURCE_DIR}/../../../../bootstrap.mxe <SOURCE_DIR>/. &&
@@ -77,7 +77,7 @@ elseif(APPLE)
         GIT_REPOSITORY https://github.com/Exiv2/exiv2.git
 
         # To use official release tag
-        GIT_TAG v0.27.4
+        GIT_TAG v0.27.5
 #        GIT_TAG 0.27-maintenance
 
         CONFIGURE_COMMAND cp -f ${CMAKE_CURRENT_SOURCE_DIR}/../../../../bootstrap.macports <SOURCE_DIR>/. &&
@@ -101,7 +101,7 @@ else() # Linux
         GIT_REPOSITORY https://github.com/Exiv2/exiv2.git
 
         # To use official release tag
-        GIT_TAG v0.27.4
+        GIT_TAG v0.27.5
 #        GIT_TAG 0.27-maintenance
 
         CONFIGURE_COMMAND cd <SOURCE_DIR> &&

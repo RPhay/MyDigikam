@@ -3,8 +3,9 @@ digiKam 7.4.0 - Release date: 2021-xx-xx
 *****************************************************************************************************
 NEW FEATURES:
 
-Bundle  : AppImage is now compiled under Mageia 7.1 instead 6.1 for a better binary compatibility with recent Linux.
-Bundle  : AppImage use last Qt 5.15.2 and KF5 5.84 libraries.
+Bundles : AppImage is now compiled under Mageia 7.1 instead 6.1 for a better binary compatibility with recent Linux.
+Bundles : AppImage use last Qt 5.15.2 and KF5 5.84 libraries.
+Bundles : Last stable Exiv2 0.27.5 is now used to compile Windows, AppImage, and MacOS bundles.
 General : Update internal Libraw to snapshot 20210827.
 General : Integration of Image Quality Sorter Google Summer of Code project 2021
           from Phuoc Khanh LE <https://community.kde.org/GSoC/2021/StatusReports/PhuocKhanhLE>
