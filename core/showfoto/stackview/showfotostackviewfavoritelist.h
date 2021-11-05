@@ -57,11 +57,28 @@ public:
 
     ShowfotoStackViewFavoriteItem* findFavoriteByHierarchy(const QString& hierarchy);
 
+    /**
+     * Set the string used to filter the favorites list. signalSearchResult() is emitted when all is done.
+     */
+    void setFilter(const QString& filter, Qt::CaseSensitivity cs);
+
+    /**
+     * Return the current string used to filter the favorites list.
+     */
+    QString filter()                                                    const;
+
 Q_SIGNALS:
 
     void signalAddFavorite();
     void signalAddFavorite(const QList<QUrl>&, const QUrl& current);
     void signalLoadContentsFromFiles(const QStringList& files, const QString& current);
+
+    /**
+     * Signal emitted when filtering is done through slotSetFilter().
+     * Number of favorites found is sent when item relevant of filtering match the query.
+     */
+    void signalSearchResult(int);
+
 
 public Q_SLOTS:
 

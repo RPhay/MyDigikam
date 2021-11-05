@@ -66,6 +66,7 @@ public:
 
     ShowfotoStackViewFavorites* parent;
     QTreeWidgetItem*            draggedItem;
+    QString                     filter;
 };
 
 ShowfotoStackViewFavoriteList::ShowfotoStackViewFavoriteList(ShowfotoStackViewFavorites* const parent)
@@ -359,6 +360,46 @@ void ShowfotoStackViewFavoriteList::rebaseHierarchy(ShowfotoStackViewFavoriteIte
             ++it;
         }
     }
+}
+
+void ShowfotoStackViewFavoriteList::setFilter(const QString& filter, Qt::CaseSensitivity cs)
+{
+    d->filter                            = filter;
+    int query                            = 0;
+    ShowfotoStackViewFavoriteItem* fitem = nullptr;
+    QTreeWidgetItemIterator it(this);
+
+    while (*it)
+    {
+        fitem = dynamic_cast<ShowfotoStackViewFavoriteItem*>(*it);
+
+        if (fitem && fitem->name().contains(filter, cs))
+        {
+            query++;
+
+            QTreeWidgetItem* item = *it;
+
+            do
+            {
+                item->setHidden(false);
+                item = item->parent();
+            }
+            while (item);
+        }
+        else
+        {
+            fitem->setHidden(true);
+        }
+
+        ++it;
+    }
+
+    emit signalSearchResult(query);
+}
+
+QString ShowfotoStackViewFavoriteList::filter() const
+{
+    return d->filter;
 }
 
 } // namespace ShowFoto
